@@ -55,6 +55,11 @@ namespace Model
     /**
      * Application id
      */
+    inline bool ApplicationIdHasBeenSet() const { return m_applicationIdHasBeenSet; }
+
+    /**
+     * Application id
+     */
     inline void SetApplicationId(const Aws::String& value) { m_applicationIdHasBeenSet = true; m_applicationId = value; }
 
     /**
@@ -87,6 +92,11 @@ namespace Model
      * The date that the settings were last updated in ISO 8601 format.
      */
     inline const Aws::String& GetCreationDate() const{ return m_creationDate; }
+
+    /**
+     * The date that the settings were last updated in ISO 8601 format.
+     */
+    inline bool CreationDateHasBeenSet() const { return m_creationDateHasBeenSet; }
 
     /**
      * The date that the settings were last updated in ISO 8601 format.
@@ -127,6 +137,11 @@ namespace Model
     /**
      * If the channel is enabled for sending messages.
      */
+    inline bool EnabledHasBeenSet() const { return m_enabledHasBeenSet; }
+
+    /**
+     * If the channel is enabled for sending messages.
+     */
     inline void SetEnabled(bool value) { m_enabledHasBeenSet = true; m_enabled = value; }
 
     /**
@@ -139,6 +154,9 @@ namespace Model
     inline bool GetHasCredential() const{ return m_hasCredential; }
 
     
+    inline bool HasCredentialHasBeenSet() const { return m_hasCredentialHasBeenSet; }
+
+    
     inline void SetHasCredential(bool value) { m_hasCredentialHasBeenSet = true; m_hasCredential = value; }
 
     
@@ -149,6 +167,11 @@ namespace Model
      * Channel ID. Not used, only for backwards compatibility.
      */
     inline const Aws::String& GetId() const{ return m_id; }
+
+    /**
+     * Channel ID. Not used, only for backwards compatibility.
+     */
+    inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
 
     /**
      * Channel ID. Not used, only for backwards compatibility.
@@ -189,6 +212,11 @@ namespace Model
     /**
      * Is this channel archived
      */
+    inline bool IsArchivedHasBeenSet() const { return m_isArchivedHasBeenSet; }
+
+    /**
+     * Is this channel archived
+     */
     inline void SetIsArchived(bool value) { m_isArchivedHasBeenSet = true; m_isArchived = value; }
 
     /**
@@ -201,6 +229,11 @@ namespace Model
      * Who made the last change
      */
     inline const Aws::String& GetLastModifiedBy() const{ return m_lastModifiedBy; }
+
+    /**
+     * Who made the last change
+     */
+    inline bool LastModifiedByHasBeenSet() const { return m_lastModifiedByHasBeenSet; }
 
     /**
      * Who made the last change
@@ -241,6 +274,11 @@ namespace Model
     /**
      * Last date this was updated
      */
+    inline bool LastModifiedDateHasBeenSet() const { return m_lastModifiedDateHasBeenSet; }
+
+    /**
+     * Last date this was updated
+     */
     inline void SetLastModifiedDate(const Aws::String& value) { m_lastModifiedDateHasBeenSet = true; m_lastModifiedDate = value; }
 
     /**
@@ -277,6 +315,11 @@ namespace Model
     /**
      * Platform type. Will be "Voice"
      */
+    inline bool PlatformHasBeenSet() const { return m_platformHasBeenSet; }
+
+    /**
+     * Platform type. Will be "Voice"
+     */
     inline void SetPlatform(const Aws::String& value) { m_platformHasBeenSet = true; m_platform = value; }
 
     /**
@@ -309,6 +352,11 @@ namespace Model
      * Version of channel
      */
     inline int GetVersion() const{ return m_version; }
+
+    /**
+     * Version of channel
+     */
+    inline bool VersionHasBeenSet() const { return m_versionHasBeenSet; }
 
     /**
      * Version of channel

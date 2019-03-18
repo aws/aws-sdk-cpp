@@ -59,6 +59,12 @@ namespace Model
      * The type of algorithm that is used for the encryption (such as aes128, aes192,
      * or aes256).
      */
+    inline bool AlgorithmHasBeenSet() const { return m_algorithmHasBeenSet; }
+
+    /**
+     * The type of algorithm that is used for the encryption (such as aes128, aes192,
+     * or aes256).
+     */
     inline void SetAlgorithm(const Algorithm& value) { m_algorithmHasBeenSet = true; m_algorithm = value; }
 
     /**
@@ -90,6 +96,12 @@ namespace Model
      * The type of key that is used for the encryption. If no keyType is provided, the
      * service will use the default setting (static-key).
      */
+    inline bool KeyTypeHasBeenSet() const { return m_keyTypeHasBeenSet; }
+
+    /**
+     * The type of key that is used for the encryption. If no keyType is provided, the
+     * service will use the default setting (static-key).
+     */
     inline void SetKeyType(const KeyType& value) { m_keyTypeHasBeenSet = true; m_keyType = value; }
 
     /**
@@ -116,6 +128,12 @@ namespace Model
      * MediaConnect as a trusted entity).
      */
     inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
+
+    /**
+     * The ARN of the role that you created during setup (when you set up AWS Elemental
+     * MediaConnect as a trusted entity).
+     */
+    inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
 
     /**
      * The ARN of the role that you created during setup (when you set up AWS Elemental
@@ -159,6 +177,12 @@ namespace Model
      * to store the encryption key.
      */
     inline const Aws::String& GetSecretArn() const{ return m_secretArn; }
+
+    /**
+     * The ARN that was assigned to the secret that you created in AWS Secrets Manager
+     * to store the encryption key.
+     */
+    inline bool SecretArnHasBeenSet() const { return m_secretArnHasBeenSet; }
 
     /**
      * The ARN that was assigned to the secret that you created in AWS Secrets Manager

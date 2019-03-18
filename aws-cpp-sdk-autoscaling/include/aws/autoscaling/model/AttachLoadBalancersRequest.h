@@ -55,6 +55,11 @@ namespace Model
     /**
      * <p>The name of the Auto Scaling group.</p>
      */
+    inline bool AutoScalingGroupNameHasBeenSet() const { return m_autoScalingGroupNameHasBeenSet; }
+
+    /**
+     * <p>The name of the Auto Scaling group.</p>
+     */
     inline void SetAutoScalingGroupName(const Aws::String& value) { m_autoScalingGroupNameHasBeenSet = true; m_autoScalingGroupName = value; }
 
     /**
@@ -87,6 +92,11 @@ namespace Model
      * <p>The names of the load balancers. You can specify up to 10 load balancers.</p>
      */
     inline const Aws::Vector<Aws::String>& GetLoadBalancerNames() const{ return m_loadBalancerNames; }
+
+    /**
+     * <p>The names of the load balancers. You can specify up to 10 load balancers.</p>
+     */
+    inline bool LoadBalancerNamesHasBeenSet() const { return m_loadBalancerNamesHasBeenSet; }
 
     /**
      * <p>The names of the load balancers. You can specify up to 10 load balancers.</p>

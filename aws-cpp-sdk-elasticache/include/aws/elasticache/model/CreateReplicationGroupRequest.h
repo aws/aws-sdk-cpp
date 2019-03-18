@@ -69,6 +69,15 @@ namespace Model
      * be a letter.</p> </li> <li> <p>A name cannot end with a hyphen or contain two
      * consecutive hyphens.</p> </li> </ul>
      */
+    inline bool ReplicationGroupIdHasBeenSet() const { return m_replicationGroupIdHasBeenSet; }
+
+    /**
+     * <p>The replication group identifier. This parameter is stored as a lowercase
+     * string.</p> <p>Constraints:</p> <ul> <li> <p>A name must contain from 1 to 20
+     * alphanumeric characters or hyphens.</p> </li> <li> <p>The first character must
+     * be a letter.</p> </li> <li> <p>A name cannot end with a hyphen or contain two
+     * consecutive hyphens.</p> </li> </ul>
+     */
     inline void SetReplicationGroupId(const Aws::String& value) { m_replicationGroupIdHasBeenSet = true; m_replicationGroupId = value; }
 
     /**
@@ -125,6 +134,11 @@ namespace Model
     /**
      * <p>A user-created description for the replication group.</p>
      */
+    inline bool ReplicationGroupDescriptionHasBeenSet() const { return m_replicationGroupDescriptionHasBeenSet; }
+
+    /**
+     * <p>A user-created description for the replication group.</p>
+     */
     inline void SetReplicationGroupDescription(const Aws::String& value) { m_replicationGroupDescriptionHasBeenSet = true; m_replicationGroupDescription = value; }
 
     /**
@@ -161,6 +175,15 @@ namespace Model
      * <code>ReplicasPerNodeGroup</code> is specified.</p>
      */
     inline const Aws::String& GetPrimaryClusterId() const{ return m_primaryClusterId; }
+
+    /**
+     * <p>The identifier of the cluster that serves as the primary for this replication
+     * group. This cluster must already exist and have a status of
+     * <code>available</code>.</p> <p>This parameter is not required if
+     * <code>NumCacheClusters</code>, <code>NumNodeGroups</code>, or
+     * <code>ReplicasPerNodeGroup</code> is specified.</p>
+     */
+    inline bool PrimaryClusterIdHasBeenSet() const { return m_primaryClusterIdHasBeenSet; }
 
     /**
      * <p>The identifier of the cluster that serves as the primary for this replication
@@ -241,6 +264,19 @@ namespace Model
      * </li> <li> <p>Redis (cluster mode disabled): T1 and T2 cache node types.</p>
      * </li> <li> <p>Redis (cluster mode enabled): T1 node types.</p> </li> </ul>
      */
+    inline bool AutomaticFailoverEnabledHasBeenSet() const { return m_automaticFailoverEnabledHasBeenSet; }
+
+    /**
+     * <p>Specifies whether a read-only replica is automatically promoted to read/write
+     * primary if the existing primary fails.</p> <p>If <code>true</code>, Multi-AZ is
+     * enabled for this replication group. If <code>false</code>, Multi-AZ is disabled
+     * for this replication group.</p> <p> <code>AutomaticFailoverEnabled</code> must
+     * be enabled for Redis (cluster mode enabled) replication groups.</p> <p>Default:
+     * false</p> <p>Amazon ElastiCache for Redis does not support Multi-AZ with
+     * automatic failover on:</p> <ul> <li> <p>Redis versions earlier than 2.8.6.</p>
+     * </li> <li> <p>Redis (cluster mode disabled): T1 and T2 cache node types.</p>
+     * </li> <li> <p>Redis (cluster mode enabled): T1 node types.</p> </li> </ul>
+     */
     inline void SetAutomaticFailoverEnabled(bool value) { m_automaticFailoverEnabledHasBeenSet = true; m_automaticFailoverEnabled = value; }
 
     /**
@@ -268,6 +304,18 @@ namespace Model
      * value for <code>NumCacheClusters</code> is 6 (1 primary plus 5 replicas).</p>
      */
     inline int GetNumCacheClusters() const{ return m_numCacheClusters; }
+
+    /**
+     * <p>The number of clusters this replication group initially has.</p> <p>This
+     * parameter is not used if there is more than one node group (shard). You should
+     * use <code>ReplicasPerNodeGroup</code> instead.</p> <p>If
+     * <code>AutomaticFailoverEnabled</code> is <code>true</code>, the value of this
+     * parameter must be at least 2. If <code>AutomaticFailoverEnabled</code> is
+     * <code>false</code> you can omit this parameter (it will default to 1), or you
+     * can explicitly set it to a value between 2 and 6.</p> <p>The maximum permitted
+     * value for <code>NumCacheClusters</code> is 6 (1 primary plus 5 replicas).</p>
+     */
+    inline bool NumCacheClustersHasBeenSet() const { return m_numCacheClustersHasBeenSet; }
 
     /**
      * <p>The number of clusters this replication group initially has.</p> <p>This
@@ -307,6 +355,20 @@ namespace Model
      * system chosen Availability Zones.</p>
      */
     inline const Aws::Vector<Aws::String>& GetPreferredCacheClusterAZs() const{ return m_preferredCacheClusterAZs; }
+
+    /**
+     * <p>A list of EC2 Availability Zones in which the replication group's clusters
+     * are created. The order of the Availability Zones in the list is the order in
+     * which clusters are allocated. The primary cluster is created in the first AZ in
+     * the list.</p> <p>This parameter is not used if there is more than one node group
+     * (shard). You should use <code>NodeGroupConfiguration</code> instead.</p> <note>
+     * <p>If you are creating your replication group in an Amazon VPC (recommended),
+     * you can only locate clusters in Availability Zones associated with the subnets
+     * in the selected subnet group.</p> <p>The number of Availability Zones listed
+     * must equal the value of <code>NumCacheClusters</code>.</p> </note> <p>Default:
+     * system chosen Availability Zones.</p>
+     */
+    inline bool PreferredCacheClusterAZsHasBeenSet() const { return m_preferredCacheClusterAZsHasBeenSet; }
 
     /**
      * <p>A list of EC2 Availability Zones in which the replication group's clusters
@@ -419,6 +481,13 @@ namespace Model
      * this Redis (cluster mode enabled) replication group. For Redis (cluster mode
      * disabled) either omit this parameter or set it to 1.</p> <p>Default: 1</p>
      */
+    inline bool NumNodeGroupsHasBeenSet() const { return m_numNodeGroupsHasBeenSet; }
+
+    /**
+     * <p>An optional parameter that specifies the number of node groups (shards) for
+     * this Redis (cluster mode enabled) replication group. For Redis (cluster mode
+     * disabled) either omit this parameter or set it to 1.</p> <p>Default: 1</p>
+     */
     inline void SetNumNodeGroups(int value) { m_numNodeGroupsHasBeenSet = true; m_numNodeGroups = value; }
 
     /**
@@ -434,6 +503,12 @@ namespace Model
      * group (shard). Valid values are 0 to 5.</p>
      */
     inline int GetReplicasPerNodeGroup() const{ return m_replicasPerNodeGroup; }
+
+    /**
+     * <p>An optional parameter that specifies the number of replica nodes in each node
+     * group (shard). Valid values are 0 to 5.</p>
+     */
+    inline bool ReplicasPerNodeGroupHasBeenSet() const { return m_replicasPerNodeGroupHasBeenSet; }
 
     /**
      * <p>An optional parameter that specifies the number of replica nodes in each node
@@ -460,6 +535,19 @@ namespace Model
      * specify the slots for each node group.</p>
      */
     inline const Aws::Vector<NodeGroupConfiguration>& GetNodeGroupConfiguration() const{ return m_nodeGroupConfiguration; }
+
+    /**
+     * <p>A list of node group (shard) configuration options. Each node group (shard)
+     * configuration has the following members: <code>PrimaryAvailabilityZone</code>,
+     * <code>ReplicaAvailabilityZones</code>, <code>ReplicaCount</code>, and
+     * <code>Slots</code>.</p> <p>If you're creating a Redis (cluster mode disabled) or
+     * a Redis (cluster mode enabled) replication group, you can use this parameter to
+     * individually configure each node group (shard), or you can omit this parameter.
+     * However, when seeding a Redis (cluster mode enabled) cluster from a S3 rdb file,
+     * you must configure each node group (shard) using this parameter because you must
+     * specify the slots for each node group.</p>
+     */
+    inline bool NodeGroupConfigurationHasBeenSet() const { return m_nodeGroupConfigurationHasBeenSet; }
 
     /**
      * <p>A list of node group (shard) configuration options. Each node group (shard)
@@ -583,6 +671,50 @@ namespace Model
      * Node Type-Specific Parameters for Redis</a> </p> </li> </ul>
      */
     inline const Aws::String& GetCacheNodeType() const{ return m_cacheNodeType; }
+
+    /**
+     * <p>The compute and memory capacity of the nodes in the node group (shard).</p>
+     * <p>The following node types are supported by ElastiCache. Generally speaking,
+     * the current generation types provide more memory and computational power at
+     * lower cost when compared to their equivalent previous generation
+     * counterparts.</p> <ul> <li> <p>General purpose:</p> <ul> <li> <p>Current
+     * generation: </p> <p> <b>T2 node types:</b> <code>cache.t2.micro</code>,
+     * <code>cache.t2.small</code>, <code>cache.t2.medium</code> </p> <p> <b>M3 node
+     * types:</b> <code>cache.m3.medium</code>, <code>cache.m3.large</code>,
+     * <code>cache.m3.xlarge</code>, <code>cache.m3.2xlarge</code> </p> <p> <b>M4 node
+     * types:</b> <code>cache.m4.large</code>, <code>cache.m4.xlarge</code>,
+     * <code>cache.m4.2xlarge</code>, <code>cache.m4.4xlarge</code>,
+     * <code>cache.m4.10xlarge</code> </p> </li> <li> <p>Previous generation: (not
+     * recommended)</p> <p> <b>T1 node types:</b> <code>cache.t1.micro</code> </p> <p>
+     * <b>M1 node types:</b> <code>cache.m1.small</code>, <code>cache.m1.medium</code>,
+     * <code>cache.m1.large</code>, <code>cache.m1.xlarge</code> </p> </li> </ul> </li>
+     * <li> <p>Compute optimized:</p> <ul> <li> <p>Previous generation: (not
+     * recommended)</p> <p> <b>C1 node types:</b> <code>cache.c1.xlarge</code> </p>
+     * </li> </ul> </li> <li> <p>Memory optimized:</p> <ul> <li> <p>Current generation:
+     * </p> <p> <b>R3 node types:</b> <code>cache.r3.large</code>,
+     * <code>cache.r3.xlarge</code>, <code>cache.r3.2xlarge</code>,
+     * <code>cache.r3.4xlarge</code>, <code>cache.r3.8xlarge</code> </p> <p> <b>R4 node
+     * types;</b> <code>cache.r4.large</code>, <code>cache.r4.xlarge</code>,
+     * <code>cache.r4.2xlarge</code>, <code>cache.r4.4xlarge</code>,
+     * <code>cache.r4.8xlarge</code>, <code>cache.r4.16xlarge</code> </p> </li> <li>
+     * <p>Previous generation: (not recommended)</p> <p> <b>M2 node types:</b>
+     * <code>cache.m2.xlarge</code>, <code>cache.m2.2xlarge</code>,
+     * <code>cache.m2.4xlarge</code> </p> </li> </ul> </li> </ul> <p> <b>Notes:</b>
+     * </p> <ul> <li> <p>All T2 instances are created in an Amazon Virtual Private
+     * Cloud (Amazon VPC).</p> </li> <li> <p>Redis (cluster mode disabled): Redis
+     * backup/restore is not supported on T1 and T2 instances. </p> </li> <li> <p>Redis
+     * (cluster mode enabled): Backup/restore is not supported on T1 instances.</p>
+     * </li> <li> <p>Redis Append-only files (AOF) functionality is not supported for
+     * T1 or T2 instances.</p> </li> </ul> <p>For a complete listing of node types and
+     * specifications, see:</p> <ul> <li> <p> <a
+     * href="http://aws.amazon.com/elasticache/details">Amazon ElastiCache Product
+     * Features and Details</a> </p> </li> <li> <p> <a
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/mem-ug/ParameterGroups.Memcached.html#ParameterGroups.Memcached.NodeSpecific">Cache
+     * Node Type-Specific Parameters for Memcached</a> </p> </li> <li> <p> <a
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/ParameterGroups.Redis.html#ParameterGroups.Redis.NodeSpecific">Cache
+     * Node Type-Specific Parameters for Redis</a> </p> </li> </ul>
+     */
+    inline bool CacheNodeTypeHasBeenSet() const { return m_cacheNodeTypeHasBeenSet; }
 
     /**
      * <p>The compute and memory capacity of the nodes in the node group (shard).</p>
@@ -859,6 +991,12 @@ namespace Model
      * <p>The name of the cache engine to be used for the clusters in this replication
      * group.</p>
      */
+    inline bool EngineHasBeenSet() const { return m_engineHasBeenSet; }
+
+    /**
+     * <p>The name of the cache engine to be used for the clusters in this replication
+     * group.</p>
+     */
     inline void SetEngine(const Aws::String& value) { m_engineHasBeenSet = true; m_engine = value; }
 
     /**
@@ -904,6 +1042,19 @@ namespace Model
      * create it anew with the earlier engine version. </p>
      */
     inline const Aws::String& GetEngineVersion() const{ return m_engineVersion; }
+
+    /**
+     * <p>The version number of the cache engine to be used for the clusters in this
+     * replication group. To view the supported cache engine versions, use the
+     * <code>DescribeCacheEngineVersions</code> operation.</p> <p> <b>Important:</b>
+     * You can upgrade to a newer engine version (see <a
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/SelectEngine.html#VersionManagement">Selecting
+     * a Cache Engine and Version</a>) in the <i>ElastiCache User Guide</i>, but you
+     * cannot downgrade to an earlier engine version. If you want to use an earlier
+     * engine version, you must delete the existing cluster or replication group and
+     * create it anew with the earlier engine version. </p>
+     */
+    inline bool EngineVersionHasBeenSet() const { return m_engineVersionHasBeenSet; }
 
     /**
      * <p>The version number of the cache engine to be used for the clusters in this
@@ -1010,6 +1161,20 @@ namespace Model
      * <code>CacheParameterGroupName=default.redis3.2.cluster.on</code>.</p> </li>
      * </ul>
      */
+    inline bool CacheParameterGroupNameHasBeenSet() const { return m_cacheParameterGroupNameHasBeenSet; }
+
+    /**
+     * <p>The name of the parameter group to associate with this replication group. If
+     * this argument is omitted, the default cache parameter group for the specified
+     * engine is used.</p> <p>If you are running Redis version 3.2.4 or later, only one
+     * node group (shard), and want to use a default parameter group, we recommend that
+     * you specify the parameter group by name. </p> <ul> <li> <p>To create a Redis
+     * (cluster mode disabled) replication group, use
+     * <code>CacheParameterGroupName=default.redis3.2</code>.</p> </li> <li> <p>To
+     * create a Redis (cluster mode enabled) replication group, use
+     * <code>CacheParameterGroupName=default.redis3.2.cluster.on</code>.</p> </li>
+     * </ul>
+     */
     inline void SetCacheParameterGroupName(const Aws::String& value) { m_cacheParameterGroupNameHasBeenSet = true; m_cacheParameterGroupName = value; }
 
     /**
@@ -1101,6 +1266,16 @@ namespace Model
      * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/SubnetGroups.html">Subnets
      * and Subnet Groups</a>.</p> </important>
      */
+    inline bool CacheSubnetGroupNameHasBeenSet() const { return m_cacheSubnetGroupNameHasBeenSet; }
+
+    /**
+     * <p>The name of the cache subnet group to be used for the replication group.</p>
+     * <important> <p>If you're going to launch your cluster in an Amazon VPC, you need
+     * to create a subnet group before you start creating a cluster. For more
+     * information, see <a
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/SubnetGroups.html">Subnets
+     * and Subnet Groups</a>.</p> </important>
+     */
     inline void SetCacheSubnetGroupName(const Aws::String& value) { m_cacheSubnetGroupNameHasBeenSet = true; m_cacheSubnetGroupName = value; }
 
     /**
@@ -1164,6 +1339,12 @@ namespace Model
      * <p>A list of cache security group names to associate with this replication
      * group.</p>
      */
+    inline bool CacheSecurityGroupNamesHasBeenSet() const { return m_cacheSecurityGroupNamesHasBeenSet; }
+
+    /**
+     * <p>A list of cache security group names to associate with this replication
+     * group.</p>
+     */
     inline void SetCacheSecurityGroupNames(const Aws::Vector<Aws::String>& value) { m_cacheSecurityGroupNamesHasBeenSet = true; m_cacheSecurityGroupNames = value; }
 
     /**
@@ -1209,6 +1390,13 @@ namespace Model
      * in an Amazon Virtual Private Cloud (Amazon VPC).</p>
      */
     inline const Aws::Vector<Aws::String>& GetSecurityGroupIds() const{ return m_securityGroupIds; }
+
+    /**
+     * <p>One or more Amazon VPC security groups associated with this replication
+     * group.</p> <p>Use this parameter only when you are creating a replication group
+     * in an Amazon Virtual Private Cloud (Amazon VPC).</p>
+     */
+    inline bool SecurityGroupIdsHasBeenSet() const { return m_securityGroupIdsHasBeenSet; }
 
     /**
      * <p>One or more Amazon VPC security groups associated with this replication
@@ -1270,6 +1458,12 @@ namespace Model
      * <p>A list of cost allocation tags to be added to this resource. A tag is a
      * key-value pair.</p>
      */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
+
+    /**
+     * <p>A list of cost allocation tags to be added to this resource. A tag is a
+     * key-value pair.</p>
+     */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     /**
@@ -1314,6 +1508,18 @@ namespace Model
      * <code>arn:aws:s3:::my_bucket/snapshot1.rdb</code> </p>
      */
     inline const Aws::Vector<Aws::String>& GetSnapshotArns() const{ return m_snapshotArns; }
+
+    /**
+     * <p>A list of Amazon Resource Names (ARN) that uniquely identify the Redis RDB
+     * snapshot files stored in Amazon S3. The snapshot files are used to populate the
+     * new replication group. The Amazon S3 object name in the ARN cannot contain any
+     * commas. The new replication group will have the number of node groups (console:
+     * shards) specified by the parameter <i>NumNodeGroups</i> or the number of node
+     * groups configured by <i>NodeGroupConfiguration</i> regardless of the number of
+     * ARNs specified here.</p> <p>Example of an Amazon S3 ARN:
+     * <code>arn:aws:s3:::my_bucket/snapshot1.rdb</code> </p>
+     */
+    inline bool SnapshotArnsHasBeenSet() const { return m_snapshotArnsHasBeenSet; }
 
     /**
      * <p>A list of Amazon Resource Names (ARN) that uniquely identify the Redis RDB
@@ -1412,6 +1618,13 @@ namespace Model
      * group. The snapshot status changes to <code>restoring</code> while the new
      * replication group is being created.</p>
      */
+    inline bool SnapshotNameHasBeenSet() const { return m_snapshotNameHasBeenSet; }
+
+    /**
+     * <p>The name of a snapshot from which to restore data into the new replication
+     * group. The snapshot status changes to <code>restoring</code> while the new
+     * replication group is being created.</p>
+     */
     inline void SetSnapshotName(const Aws::String& value) { m_snapshotNameHasBeenSet = true; m_snapshotName = value; }
 
     /**
@@ -1465,6 +1678,22 @@ namespace Model
      * </p>
      */
     inline const Aws::String& GetPreferredMaintenanceWindow() const{ return m_preferredMaintenanceWindow; }
+
+    /**
+     * <p>Specifies the weekly time range during which maintenance on the cluster is
+     * performed. It is specified as a range in the format ddd:hh24:mi-ddd:hh24:mi (24H
+     * Clock UTC). The minimum maintenance window is a 60 minute period. Valid values
+     * for <code>ddd</code> are:</p> <p>Specifies the weekly time range during which
+     * maintenance on the cluster is performed. It is specified as a range in the
+     * format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance window
+     * is a 60 minute period.</p> <p>Valid values for <code>ddd</code> are:</p> <ul>
+     * <li> <p> <code>sun</code> </p> </li> <li> <p> <code>mon</code> </p> </li> <li>
+     * <p> <code>tue</code> </p> </li> <li> <p> <code>wed</code> </p> </li> <li> <p>
+     * <code>thu</code> </p> </li> <li> <p> <code>fri</code> </p> </li> <li> <p>
+     * <code>sat</code> </p> </li> </ul> <p>Example: <code>sun:23:00-mon:01:30</code>
+     * </p>
+     */
+    inline bool PreferredMaintenanceWindowHasBeenSet() const { return m_preferredMaintenanceWindowHasBeenSet; }
 
     /**
      * <p>Specifies the weekly time range during which maintenance on the cluster is
@@ -1573,6 +1802,12 @@ namespace Model
      * <p>The port number on which each member of the replication group accepts
      * connections.</p>
      */
+    inline bool PortHasBeenSet() const { return m_portHasBeenSet; }
+
+    /**
+     * <p>The port number on which each member of the replication group accepts
+     * connections.</p>
+     */
     inline void SetPort(int value) { m_portHasBeenSet = true; m_port = value; }
 
     /**
@@ -1588,6 +1823,13 @@ namespace Model
      * owner must be the same as the cluster owner.</p> </note>
      */
     inline const Aws::String& GetNotificationTopicArn() const{ return m_notificationTopicArn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the Amazon Simple Notification Service
+     * (SNS) topic to which notifications are sent.</p> <note> <p>The Amazon SNS topic
+     * owner must be the same as the cluster owner.</p> </note>
+     */
+    inline bool NotificationTopicArnHasBeenSet() const { return m_notificationTopicArnHasBeenSet; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the Amazon Simple Notification Service
@@ -1640,6 +1882,11 @@ namespace Model
     /**
      * <p>This parameter is currently disabled.</p>
      */
+    inline bool AutoMinorVersionUpgradeHasBeenSet() const { return m_autoMinorVersionUpgradeHasBeenSet; }
+
+    /**
+     * <p>This parameter is currently disabled.</p>
+     */
     inline void SetAutoMinorVersionUpgrade(bool value) { m_autoMinorVersionUpgradeHasBeenSet = true; m_autoMinorVersionUpgrade = value; }
 
     /**
@@ -1655,6 +1902,14 @@ namespace Model
      * <p>Default: 0 (i.e., automatic backups are disabled for this cluster).</p>
      */
     inline int GetSnapshotRetentionLimit() const{ return m_snapshotRetentionLimit; }
+
+    /**
+     * <p>The number of days for which ElastiCache retains automatic snapshots before
+     * deleting them. For example, if you set <code>SnapshotRetentionLimit</code> to 5,
+     * a snapshot that was taken today is retained for 5 days before being deleted.</p>
+     * <p>Default: 0 (i.e., automatic backups are disabled for this cluster).</p>
+     */
+    inline bool SnapshotRetentionLimitHasBeenSet() const { return m_snapshotRetentionLimitHasBeenSet; }
 
     /**
      * <p>The number of days for which ElastiCache retains automatic snapshots before
@@ -1680,6 +1935,14 @@ namespace Model
      * an appropriate time range.</p>
      */
     inline const Aws::String& GetSnapshotWindow() const{ return m_snapshotWindow; }
+
+    /**
+     * <p>The daily time range (in UTC) during which ElastiCache begins taking a daily
+     * snapshot of your node group (shard).</p> <p>Example: <code>05:00-09:00</code>
+     * </p> <p>If you do not specify this parameter, ElastiCache automatically chooses
+     * an appropriate time range.</p>
+     */
+    inline bool SnapshotWindowHasBeenSet() const { return m_snapshotWindowHasBeenSet; }
 
     /**
      * <p>The daily time range (in UTC) during which ElastiCache begins taking a daily
@@ -1745,6 +2008,22 @@ namespace Model
      * http://redis.io/commands/AUTH.</p>
      */
     inline const Aws::String& GetAuthToken() const{ return m_authToken; }
+
+    /**
+     * <p> <b>Reserved parameter.</b> The password used to access a password protected
+     * server.</p> <p> <code>AuthToken</code> can be specified only on replication
+     * groups where <code>TransitEncryptionEnabled</code> is <code>true</code>.</p>
+     * <important> <p>For HIPAA compliance, you must specify
+     * <code>TransitEncryptionEnabled</code> as <code>true</code>, an
+     * <code>AuthToken</code>, and a <code>CacheSubnetGroup</code>.</p> </important>
+     * <p>Password constraints:</p> <ul> <li> <p>Must be only printable ASCII
+     * characters.</p> </li> <li> <p>Must be at least 16 characters and no more than
+     * 128 characters in length.</p> </li> <li> <p>Cannot contain any of the following
+     * characters: '/', '"', or '@'. </p> </li> </ul> <p>For more information, see <a
+     * href="http://redis.io/commands/AUTH">AUTH password</a> at
+     * http://redis.io/commands/AUTH.</p>
+     */
+    inline bool AuthTokenHasBeenSet() const { return m_authTokenHasBeenSet; }
 
     /**
      * <p> <b>Reserved parameter.</b> The password used to access a password protected
@@ -1877,6 +2156,24 @@ namespace Model
      * <code>TransitEncryptionEnabled</code> as <code>true</code>, an
      * <code>AuthToken</code>, and a <code>CacheSubnetGroup</code>.</p> </important>
      */
+    inline bool TransitEncryptionEnabledHasBeenSet() const { return m_transitEncryptionEnabledHasBeenSet; }
+
+    /**
+     * <p>A flag that enables in-transit encryption when set to <code>true</code>.</p>
+     * <p>You cannot modify the value of <code>TransitEncryptionEnabled</code> after
+     * the cluster is created. To enable in-transit encryption on a cluster you must
+     * set <code>TransitEncryptionEnabled</code> to <code>true</code> when you create a
+     * cluster.</p> <p>This parameter is valid only if the <code>Engine</code>
+     * parameter is <code>redis</code>, the <code>EngineVersion</code> parameter is
+     * <code>3.2.6</code> or <code>4.x</code>, and the cluster is being created in an
+     * Amazon VPC.</p> <p>If you enable in-transit encryption, you must also specify a
+     * value for <code>CacheSubnetGroup</code>.</p> <p> <b>Required:</b> Only available
+     * when creating a replication group in an Amazon VPC using redis version
+     * <code>3.2.6</code> or <code>4.x</code>.</p> <p>Default: <code>false</code> </p>
+     * <important> <p>For HIPAA compliance, you must specify
+     * <code>TransitEncryptionEnabled</code> as <code>true</code>, an
+     * <code>AuthToken</code>, and a <code>CacheSubnetGroup</code>.</p> </important>
+     */
     inline void SetTransitEncryptionEnabled(bool value) { m_transitEncryptionEnabledHasBeenSet = true; m_transitEncryptionEnabled = value; }
 
     /**
@@ -1908,6 +2205,17 @@ namespace Model
      * <code>3.2.6</code> or <code>4.x</code>.</p> <p>Default: <code>false</code> </p>
      */
     inline bool GetAtRestEncryptionEnabled() const{ return m_atRestEncryptionEnabled; }
+
+    /**
+     * <p>A flag that enables encryption at rest when set to <code>true</code>.</p>
+     * <p>You cannot modify the value of <code>AtRestEncryptionEnabled</code> after the
+     * replication group is created. To enable encryption at rest on a replication
+     * group you must set <code>AtRestEncryptionEnabled</code> to <code>true</code>
+     * when you create the replication group. </p> <p> <b>Required:</b> Only available
+     * when creating a replication group in an Amazon VPC using redis version
+     * <code>3.2.6</code> or <code>4.x</code>.</p> <p>Default: <code>false</code> </p>
+     */
+    inline bool AtRestEncryptionEnabledHasBeenSet() const { return m_atRestEncryptionEnabledHasBeenSet; }
 
     /**
      * <p>A flag that enables encryption at rest when set to <code>true</code>.</p>

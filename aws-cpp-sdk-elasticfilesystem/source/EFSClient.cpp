@@ -188,6 +188,11 @@ void EFSClient::CreateMountTargetAsyncHelper(const CreateMountTargetRequest& req
 
 CreateTagsOutcome EFSClient::CreateTags(const CreateTagsRequest& request) const
 {
+  if (!request.FileSystemIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("CreateTags", "Required field: FileSystemId, is not set");
+    return CreateTagsOutcome(Aws::Client::AWSError<EFSErrors>(EFSErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [FileSystemId]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/2015-02-01/create-tags/";
@@ -224,6 +229,11 @@ void EFSClient::CreateTagsAsyncHelper(const CreateTagsRequest& request, const Cr
 
 DeleteFileSystemOutcome EFSClient::DeleteFileSystem(const DeleteFileSystemRequest& request) const
 {
+  if (!request.FileSystemIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteFileSystem", "Required field: FileSystemId, is not set");
+    return DeleteFileSystemOutcome(Aws::Client::AWSError<EFSErrors>(EFSErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [FileSystemId]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/2015-02-01/file-systems/";
@@ -260,6 +270,11 @@ void EFSClient::DeleteFileSystemAsyncHelper(const DeleteFileSystemRequest& reque
 
 DeleteMountTargetOutcome EFSClient::DeleteMountTarget(const DeleteMountTargetRequest& request) const
 {
+  if (!request.MountTargetIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteMountTarget", "Required field: MountTargetId, is not set");
+    return DeleteMountTargetOutcome(Aws::Client::AWSError<EFSErrors>(EFSErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [MountTargetId]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/2015-02-01/mount-targets/";
@@ -296,6 +311,11 @@ void EFSClient::DeleteMountTargetAsyncHelper(const DeleteMountTargetRequest& req
 
 DeleteTagsOutcome EFSClient::DeleteTags(const DeleteTagsRequest& request) const
 {
+  if (!request.FileSystemIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteTags", "Required field: FileSystemId, is not set");
+    return DeleteTagsOutcome(Aws::Client::AWSError<EFSErrors>(EFSErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [FileSystemId]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/2015-02-01/delete-tags/";
@@ -367,6 +387,11 @@ void EFSClient::DescribeFileSystemsAsyncHelper(const DescribeFileSystemsRequest&
 
 DescribeLifecycleConfigurationOutcome EFSClient::DescribeLifecycleConfiguration(const DescribeLifecycleConfigurationRequest& request) const
 {
+  if (!request.FileSystemIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DescribeLifecycleConfiguration", "Required field: FileSystemId, is not set");
+    return DescribeLifecycleConfigurationOutcome(Aws::Client::AWSError<EFSErrors>(EFSErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [FileSystemId]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/2015-02-01/file-systems/";
@@ -404,6 +429,11 @@ void EFSClient::DescribeLifecycleConfigurationAsyncHelper(const DescribeLifecycl
 
 DescribeMountTargetSecurityGroupsOutcome EFSClient::DescribeMountTargetSecurityGroups(const DescribeMountTargetSecurityGroupsRequest& request) const
 {
+  if (!request.MountTargetIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DescribeMountTargetSecurityGroups", "Required field: MountTargetId, is not set");
+    return DescribeMountTargetSecurityGroupsOutcome(Aws::Client::AWSError<EFSErrors>(EFSErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [MountTargetId]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/2015-02-01/mount-targets/";
@@ -476,6 +506,11 @@ void EFSClient::DescribeMountTargetsAsyncHelper(const DescribeMountTargetsReques
 
 DescribeTagsOutcome EFSClient::DescribeTags(const DescribeTagsRequest& request) const
 {
+  if (!request.FileSystemIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DescribeTags", "Required field: FileSystemId, is not set");
+    return DescribeTagsOutcome(Aws::Client::AWSError<EFSErrors>(EFSErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [FileSystemId]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/2015-02-01/tags/";
@@ -513,6 +548,11 @@ void EFSClient::DescribeTagsAsyncHelper(const DescribeTagsRequest& request, cons
 
 ModifyMountTargetSecurityGroupsOutcome EFSClient::ModifyMountTargetSecurityGroups(const ModifyMountTargetSecurityGroupsRequest& request) const
 {
+  if (!request.MountTargetIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ModifyMountTargetSecurityGroups", "Required field: MountTargetId, is not set");
+    return ModifyMountTargetSecurityGroupsOutcome(Aws::Client::AWSError<EFSErrors>(EFSErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [MountTargetId]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/2015-02-01/mount-targets/";
@@ -550,6 +590,11 @@ void EFSClient::ModifyMountTargetSecurityGroupsAsyncHelper(const ModifyMountTarg
 
 PutLifecycleConfigurationOutcome EFSClient::PutLifecycleConfiguration(const PutLifecycleConfigurationRequest& request) const
 {
+  if (!request.FileSystemIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("PutLifecycleConfiguration", "Required field: FileSystemId, is not set");
+    return PutLifecycleConfigurationOutcome(Aws::Client::AWSError<EFSErrors>(EFSErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [FileSystemId]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/2015-02-01/file-systems/";
@@ -587,6 +632,11 @@ void EFSClient::PutLifecycleConfigurationAsyncHelper(const PutLifecycleConfigura
 
 UpdateFileSystemOutcome EFSClient::UpdateFileSystem(const UpdateFileSystemRequest& request) const
 {
+  if (!request.FileSystemIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateFileSystem", "Required field: FileSystemId, is not set");
+    return UpdateFileSystemOutcome(Aws::Client::AWSError<EFSErrors>(EFSErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [FileSystemId]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/2015-02-01/file-systems/";

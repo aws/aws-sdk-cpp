@@ -120,6 +120,16 @@ void QuickSightClient::OverrideEndpoint(const Aws::String& endpoint)
 }
 CreateGroupOutcome QuickSightClient::CreateGroup(const CreateGroupRequest& request) const
 {
+  if (!request.AwsAccountIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("CreateGroup", "Required field: AwsAccountId, is not set");
+    return CreateGroupOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AwsAccountId]", false));
+  }
+  if (!request.NamespaceHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("CreateGroup", "Required field: Namespace, is not set");
+    return CreateGroupOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Namespace]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/accounts/";
@@ -159,6 +169,26 @@ void QuickSightClient::CreateGroupAsyncHelper(const CreateGroupRequest& request,
 
 CreateGroupMembershipOutcome QuickSightClient::CreateGroupMembership(const CreateGroupMembershipRequest& request) const
 {
+  if (!request.MemberNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("CreateGroupMembership", "Required field: MemberName, is not set");
+    return CreateGroupMembershipOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [MemberName]", false));
+  }
+  if (!request.GroupNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("CreateGroupMembership", "Required field: GroupName, is not set");
+    return CreateGroupMembershipOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [GroupName]", false));
+  }
+  if (!request.AwsAccountIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("CreateGroupMembership", "Required field: AwsAccountId, is not set");
+    return CreateGroupMembershipOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AwsAccountId]", false));
+  }
+  if (!request.NamespaceHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("CreateGroupMembership", "Required field: Namespace, is not set");
+    return CreateGroupMembershipOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Namespace]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/accounts/";
@@ -201,6 +231,21 @@ void QuickSightClient::CreateGroupMembershipAsyncHelper(const CreateGroupMembers
 
 DeleteGroupOutcome QuickSightClient::DeleteGroup(const DeleteGroupRequest& request) const
 {
+  if (!request.GroupNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteGroup", "Required field: GroupName, is not set");
+    return DeleteGroupOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [GroupName]", false));
+  }
+  if (!request.AwsAccountIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteGroup", "Required field: AwsAccountId, is not set");
+    return DeleteGroupOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AwsAccountId]", false));
+  }
+  if (!request.NamespaceHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteGroup", "Required field: Namespace, is not set");
+    return DeleteGroupOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Namespace]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/accounts/";
@@ -241,6 +286,26 @@ void QuickSightClient::DeleteGroupAsyncHelper(const DeleteGroupRequest& request,
 
 DeleteGroupMembershipOutcome QuickSightClient::DeleteGroupMembership(const DeleteGroupMembershipRequest& request) const
 {
+  if (!request.MemberNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteGroupMembership", "Required field: MemberName, is not set");
+    return DeleteGroupMembershipOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [MemberName]", false));
+  }
+  if (!request.GroupNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteGroupMembership", "Required field: GroupName, is not set");
+    return DeleteGroupMembershipOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [GroupName]", false));
+  }
+  if (!request.AwsAccountIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteGroupMembership", "Required field: AwsAccountId, is not set");
+    return DeleteGroupMembershipOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AwsAccountId]", false));
+  }
+  if (!request.NamespaceHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteGroupMembership", "Required field: Namespace, is not set");
+    return DeleteGroupMembershipOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Namespace]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/accounts/";
@@ -283,6 +348,21 @@ void QuickSightClient::DeleteGroupMembershipAsyncHelper(const DeleteGroupMembers
 
 DeleteUserOutcome QuickSightClient::DeleteUser(const DeleteUserRequest& request) const
 {
+  if (!request.UserNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteUser", "Required field: UserName, is not set");
+    return DeleteUserOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [UserName]", false));
+  }
+  if (!request.AwsAccountIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteUser", "Required field: AwsAccountId, is not set");
+    return DeleteUserOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AwsAccountId]", false));
+  }
+  if (!request.NamespaceHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteUser", "Required field: Namespace, is not set");
+    return DeleteUserOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Namespace]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/accounts/";
@@ -323,6 +403,21 @@ void QuickSightClient::DeleteUserAsyncHelper(const DeleteUserRequest& request, c
 
 DeleteUserByPrincipalIdOutcome QuickSightClient::DeleteUserByPrincipalId(const DeleteUserByPrincipalIdRequest& request) const
 {
+  if (!request.PrincipalIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteUserByPrincipalId", "Required field: PrincipalId, is not set");
+    return DeleteUserByPrincipalIdOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [PrincipalId]", false));
+  }
+  if (!request.AwsAccountIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteUserByPrincipalId", "Required field: AwsAccountId, is not set");
+    return DeleteUserByPrincipalIdOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AwsAccountId]", false));
+  }
+  if (!request.NamespaceHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteUserByPrincipalId", "Required field: Namespace, is not set");
+    return DeleteUserByPrincipalIdOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Namespace]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/accounts/";
@@ -363,6 +458,21 @@ void QuickSightClient::DeleteUserByPrincipalIdAsyncHelper(const DeleteUserByPrin
 
 DescribeGroupOutcome QuickSightClient::DescribeGroup(const DescribeGroupRequest& request) const
 {
+  if (!request.GroupNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DescribeGroup", "Required field: GroupName, is not set");
+    return DescribeGroupOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [GroupName]", false));
+  }
+  if (!request.AwsAccountIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DescribeGroup", "Required field: AwsAccountId, is not set");
+    return DescribeGroupOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AwsAccountId]", false));
+  }
+  if (!request.NamespaceHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DescribeGroup", "Required field: Namespace, is not set");
+    return DescribeGroupOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Namespace]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/accounts/";
@@ -403,6 +513,21 @@ void QuickSightClient::DescribeGroupAsyncHelper(const DescribeGroupRequest& requ
 
 DescribeUserOutcome QuickSightClient::DescribeUser(const DescribeUserRequest& request) const
 {
+  if (!request.UserNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DescribeUser", "Required field: UserName, is not set");
+    return DescribeUserOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [UserName]", false));
+  }
+  if (!request.AwsAccountIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DescribeUser", "Required field: AwsAccountId, is not set");
+    return DescribeUserOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AwsAccountId]", false));
+  }
+  if (!request.NamespaceHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DescribeUser", "Required field: Namespace, is not set");
+    return DescribeUserOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Namespace]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/accounts/";
@@ -443,6 +568,21 @@ void QuickSightClient::DescribeUserAsyncHelper(const DescribeUserRequest& reques
 
 GetDashboardEmbedUrlOutcome QuickSightClient::GetDashboardEmbedUrl(const GetDashboardEmbedUrlRequest& request) const
 {
+  if (!request.AwsAccountIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetDashboardEmbedUrl", "Required field: AwsAccountId, is not set");
+    return GetDashboardEmbedUrlOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AwsAccountId]", false));
+  }
+  if (!request.DashboardIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetDashboardEmbedUrl", "Required field: DashboardId, is not set");
+    return GetDashboardEmbedUrlOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DashboardId]", false));
+  }
+  if (!request.IdentityTypeHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetDashboardEmbedUrl", "Required field: IdentityType, is not set");
+    return GetDashboardEmbedUrlOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [IdentityType]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/accounts/";
@@ -482,6 +622,21 @@ void QuickSightClient::GetDashboardEmbedUrlAsyncHelper(const GetDashboardEmbedUr
 
 ListGroupMembershipsOutcome QuickSightClient::ListGroupMemberships(const ListGroupMembershipsRequest& request) const
 {
+  if (!request.GroupNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListGroupMemberships", "Required field: GroupName, is not set");
+    return ListGroupMembershipsOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [GroupName]", false));
+  }
+  if (!request.AwsAccountIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListGroupMemberships", "Required field: AwsAccountId, is not set");
+    return ListGroupMembershipsOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AwsAccountId]", false));
+  }
+  if (!request.NamespaceHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListGroupMemberships", "Required field: Namespace, is not set");
+    return ListGroupMembershipsOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Namespace]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/accounts/";
@@ -523,6 +678,16 @@ void QuickSightClient::ListGroupMembershipsAsyncHelper(const ListGroupMembership
 
 ListGroupsOutcome QuickSightClient::ListGroups(const ListGroupsRequest& request) const
 {
+  if (!request.AwsAccountIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListGroups", "Required field: AwsAccountId, is not set");
+    return ListGroupsOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AwsAccountId]", false));
+  }
+  if (!request.NamespaceHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListGroups", "Required field: Namespace, is not set");
+    return ListGroupsOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Namespace]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/accounts/";
@@ -562,6 +727,21 @@ void QuickSightClient::ListGroupsAsyncHelper(const ListGroupsRequest& request, c
 
 ListUserGroupsOutcome QuickSightClient::ListUserGroups(const ListUserGroupsRequest& request) const
 {
+  if (!request.UserNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListUserGroups", "Required field: UserName, is not set");
+    return ListUserGroupsOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [UserName]", false));
+  }
+  if (!request.AwsAccountIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListUserGroups", "Required field: AwsAccountId, is not set");
+    return ListUserGroupsOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AwsAccountId]", false));
+  }
+  if (!request.NamespaceHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListUserGroups", "Required field: Namespace, is not set");
+    return ListUserGroupsOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Namespace]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/accounts/";
@@ -603,6 +783,16 @@ void QuickSightClient::ListUserGroupsAsyncHelper(const ListUserGroupsRequest& re
 
 ListUsersOutcome QuickSightClient::ListUsers(const ListUsersRequest& request) const
 {
+  if (!request.AwsAccountIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListUsers", "Required field: AwsAccountId, is not set");
+    return ListUsersOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AwsAccountId]", false));
+  }
+  if (!request.NamespaceHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListUsers", "Required field: Namespace, is not set");
+    return ListUsersOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Namespace]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/accounts/";
@@ -642,6 +832,16 @@ void QuickSightClient::ListUsersAsyncHelper(const ListUsersRequest& request, con
 
 RegisterUserOutcome QuickSightClient::RegisterUser(const RegisterUserRequest& request) const
 {
+  if (!request.AwsAccountIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("RegisterUser", "Required field: AwsAccountId, is not set");
+    return RegisterUserOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AwsAccountId]", false));
+  }
+  if (!request.NamespaceHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("RegisterUser", "Required field: Namespace, is not set");
+    return RegisterUserOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Namespace]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/accounts/";
@@ -681,6 +881,21 @@ void QuickSightClient::RegisterUserAsyncHelper(const RegisterUserRequest& reques
 
 UpdateGroupOutcome QuickSightClient::UpdateGroup(const UpdateGroupRequest& request) const
 {
+  if (!request.GroupNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateGroup", "Required field: GroupName, is not set");
+    return UpdateGroupOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [GroupName]", false));
+  }
+  if (!request.AwsAccountIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateGroup", "Required field: AwsAccountId, is not set");
+    return UpdateGroupOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AwsAccountId]", false));
+  }
+  if (!request.NamespaceHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateGroup", "Required field: Namespace, is not set");
+    return UpdateGroupOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Namespace]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/accounts/";
@@ -721,6 +936,21 @@ void QuickSightClient::UpdateGroupAsyncHelper(const UpdateGroupRequest& request,
 
 UpdateUserOutcome QuickSightClient::UpdateUser(const UpdateUserRequest& request) const
 {
+  if (!request.UserNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateUser", "Required field: UserName, is not set");
+    return UpdateUserOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [UserName]", false));
+  }
+  if (!request.AwsAccountIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateUser", "Required field: AwsAccountId, is not set");
+    return UpdateUserOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AwsAccountId]", false));
+  }
+  if (!request.NamespaceHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateUser", "Required field: Namespace, is not set");
+    return UpdateUserOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Namespace]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/accounts/";

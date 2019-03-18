@@ -54,6 +54,11 @@ namespace Model
     /**
      * <p>The current configuration information for the identity.</p>
      */
+    inline bool CloudFrontOriginAccessIdentityConfigHasBeenSet() const { return m_cloudFrontOriginAccessIdentityConfigHasBeenSet; }
+
+    /**
+     * <p>The current configuration information for the identity.</p>
+     */
     inline void SetCloudFrontOriginAccessIdentityConfig(const CloudFrontOriginAccessIdentityConfig& value) { m_cloudFrontOriginAccessIdentityConfigHasBeenSet = true; m_cloudFrontOriginAccessIdentityConfig = value; }
 
     /**

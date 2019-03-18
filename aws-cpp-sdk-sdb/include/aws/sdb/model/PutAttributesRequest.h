@@ -57,6 +57,11 @@ namespace Model
     /**
      * The name of the domain in which to perform the operation.
      */
+    inline bool DomainNameHasBeenSet() const { return m_domainNameHasBeenSet; }
+
+    /**
+     * The name of the domain in which to perform the operation.
+     */
     inline void SetDomainName(const Aws::String& value) { m_domainNameHasBeenSet = true; m_domainName = value; }
 
     /**
@@ -89,6 +94,11 @@ namespace Model
      * The name of the item.
      */
     inline const Aws::String& GetItemName() const{ return m_itemName; }
+
+    /**
+     * The name of the item.
+     */
+    inline bool ItemNameHasBeenSet() const { return m_itemNameHasBeenSet; }
 
     /**
      * The name of the item.
@@ -129,6 +139,11 @@ namespace Model
     /**
      * The list of attributes.
      */
+    inline bool AttributesHasBeenSet() const { return m_attributesHasBeenSet; }
+
+    /**
+     * The list of attributes.
+     */
     inline void SetAttributes(const Aws::Vector<ReplaceableAttribute>& value) { m_attributesHasBeenSet = true; m_attributes = value; }
 
     /**
@@ -163,6 +178,13 @@ namespace Model
      * order for this request to be processed and the attributes to be updated.
      */
     inline const UpdateCondition& GetExpected() const{ return m_expected; }
+
+    /**
+     * The update condition which, if specified, determines whether the specified
+     * attributes will be updated or not. The update condition must be satisfied in
+     * order for this request to be processed and the attributes to be updated.
+     */
+    inline bool ExpectedHasBeenSet() const { return m_expectedHasBeenSet; }
 
     /**
      * The update condition which, if specified, determines whether the specified

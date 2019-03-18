@@ -67,6 +67,15 @@ namespace Model
      * Kinesis Streams Key Concepts</a> in the <i>Amazon Kinesis Streams Developer
      * Guide</i>.</p>
      */
+    inline bool PartitionKeyPathHasBeenSet() const { return m_partitionKeyPathHasBeenSet; }
+
+    /**
+     * <p>The JSON path to be extracted from the event and used as the partition key.
+     * For more information, see <a
+     * href="http://docs.aws.amazon.com/streams/latest/dev/key-concepts.html#partition-key">Amazon
+     * Kinesis Streams Key Concepts</a> in the <i>Amazon Kinesis Streams Developer
+     * Guide</i>.</p>
+     */
     inline void SetPartitionKeyPath(const Aws::String& value) { m_partitionKeyPathHasBeenSet = true; m_partitionKeyPath = value; }
 
     /**

@@ -64,6 +64,12 @@ namespace Model
      * <p>The ID of the launch template. You must specify either a template ID or a
      * template name.</p>
      */
+    inline bool LaunchTemplateIdHasBeenSet() const { return m_launchTemplateIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the launch template. You must specify either a template ID or a
+     * template name.</p>
+     */
     inline void SetLaunchTemplateId(const Aws::String& value) { m_launchTemplateIdHasBeenSet = true; m_launchTemplateId = value; }
 
     /**
@@ -102,6 +108,12 @@ namespace Model
      * template ID.</p>
      */
     inline const Aws::String& GetLaunchTemplateName() const{ return m_launchTemplateName; }
+
+    /**
+     * <p>The name of the launch template. You must specify either a template name or a
+     * template ID.</p>
+     */
+    inline bool LaunchTemplateNameHasBeenSet() const { return m_launchTemplateNameHasBeenSet; }
 
     /**
      * <p>The name of the launch template. You must specify either a template name or a
@@ -149,6 +161,16 @@ namespace Model
      * <code>$Default</code>.</p>
      */
     inline const Aws::String& GetVersion() const{ return m_version; }
+
+    /**
+     * <p>The version number, <code>$Latest</code>, or <code>$Default</code>. If the
+     * value is <code>$Latest</code>, Amazon EC2 Auto Scaling selects the latest
+     * version of the launch template when launching instances. If the value is
+     * <code>$Default</code>, Amazon EC2 Auto Scaling selects the default version of
+     * the launch template when launching instances. The default value is
+     * <code>$Default</code>.</p>
+     */
+    inline bool VersionHasBeenSet() const { return m_versionHasBeenSet; }
 
     /**
      * <p>The version number, <code>$Latest</code>, or <code>$Default</code>. If the

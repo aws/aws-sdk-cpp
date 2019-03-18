@@ -53,6 +53,11 @@ namespace Model
     /**
      * <p>The list of UserStackAssociation objects.</p>
      */
+    inline bool UserStackAssociationsHasBeenSet() const { return m_userStackAssociationsHasBeenSet; }
+
+    /**
+     * <p>The list of UserStackAssociation objects.</p>
+     */
     inline void SetUserStackAssociations(const Aws::Vector<UserStackAssociation>& value) { m_userStackAssociationsHasBeenSet = true; m_userStackAssociations = value; }
 
     /**

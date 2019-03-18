@@ -55,6 +55,11 @@ namespace Model
     /**
      * <p>The name of the parameter.</p>
      */
+    inline bool ParameterNameHasBeenSet() const { return m_parameterNameHasBeenSet; }
+
+    /**
+     * <p>The name of the parameter.</p>
+     */
     inline void SetParameterName(const Aws::String& value) { m_parameterNameHasBeenSet = true; m_parameterName = value; }
 
     /**
@@ -87,6 +92,11 @@ namespace Model
      * <p>The value of the parameter.</p>
      */
     inline const Aws::String& GetParameterValue() const{ return m_parameterValue; }
+
+    /**
+     * <p>The value of the parameter.</p>
+     */
+    inline bool ParameterValueHasBeenSet() const { return m_parameterValueHasBeenSet; }
 
     /**
      * <p>The value of the parameter.</p>

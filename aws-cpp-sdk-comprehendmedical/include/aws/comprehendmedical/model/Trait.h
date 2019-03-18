@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p> Provides a name or contextual description about the trait. </p>
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p> Provides a name or contextual description about the trait. </p>
+     */
     inline void SetName(const AttributeName& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
@@ -79,6 +84,12 @@ namespace Model
      * trait.</p>
      */
     inline double GetScore() const{ return m_score; }
+
+    /**
+     * <p> The level of confidence that Comprehend Medical has in the accuracy of this
+     * trait.</p>
+     */
+    inline bool ScoreHasBeenSet() const { return m_scoreHasBeenSet; }
 
     /**
      * <p> The level of confidence that Comprehend Medical has in the accuracy of this

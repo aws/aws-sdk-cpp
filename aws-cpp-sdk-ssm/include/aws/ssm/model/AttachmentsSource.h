@@ -60,6 +60,12 @@ namespace Model
      * <p>The key of a key and value pair that identifies the location of an attachment
      * to a document.</p>
      */
+    inline bool KeyHasBeenSet() const { return m_keyHasBeenSet; }
+
+    /**
+     * <p>The key of a key and value pair that identifies the location of an attachment
+     * to a document.</p>
+     */
     inline void SetKey(const AttachmentsSourceKey& value) { m_keyHasBeenSet = true; m_key = value; }
 
     /**
@@ -86,6 +92,12 @@ namespace Model
      * Amazon S3 bucket.</p>
      */
     inline const Aws::Vector<Aws::String>& GetValues() const{ return m_values; }
+
+    /**
+     * <p>The URL of the location of a document attachment, such as the URL of an
+     * Amazon S3 bucket.</p>
+     */
+    inline bool ValuesHasBeenSet() const { return m_valuesHasBeenSet; }
 
     /**
      * <p>The URL of the location of a document attachment, such as the URL of an

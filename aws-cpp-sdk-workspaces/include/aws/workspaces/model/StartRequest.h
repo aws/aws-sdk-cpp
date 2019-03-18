@@ -55,6 +55,11 @@ namespace Model
     /**
      * <p>The identifier of the WorkSpace.</p>
      */
+    inline bool WorkspaceIdHasBeenSet() const { return m_workspaceIdHasBeenSet; }
+
+    /**
+     * <p>The identifier of the WorkSpace.</p>
+     */
     inline void SetWorkspaceId(const Aws::String& value) { m_workspaceIdHasBeenSet = true; m_workspaceId = value; }
 
     /**

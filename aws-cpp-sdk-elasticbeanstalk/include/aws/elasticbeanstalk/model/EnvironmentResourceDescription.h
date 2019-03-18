@@ -66,6 +66,11 @@ namespace Model
     /**
      * <p>The name of the environment.</p>
      */
+    inline bool EnvironmentNameHasBeenSet() const { return m_environmentNameHasBeenSet; }
+
+    /**
+     * <p>The name of the environment.</p>
+     */
     inline void SetEnvironmentName(const Aws::String& value) { m_environmentNameHasBeenSet = true; m_environmentName = value; }
 
     /**
@@ -98,6 +103,11 @@ namespace Model
      * <p> The <code>AutoScalingGroups</code> used by this environment. </p>
      */
     inline const Aws::Vector<AutoScalingGroup>& GetAutoScalingGroups() const{ return m_autoScalingGroups; }
+
+    /**
+     * <p> The <code>AutoScalingGroups</code> used by this environment. </p>
+     */
+    inline bool AutoScalingGroupsHasBeenSet() const { return m_autoScalingGroupsHasBeenSet; }
 
     /**
      * <p> The <code>AutoScalingGroups</code> used by this environment. </p>
@@ -138,6 +148,11 @@ namespace Model
     /**
      * <p>The Amazon EC2 instances used by this environment.</p>
      */
+    inline bool InstancesHasBeenSet() const { return m_instancesHasBeenSet; }
+
+    /**
+     * <p>The Amazon EC2 instances used by this environment.</p>
+     */
     inline void SetInstances(const Aws::Vector<Instance>& value) { m_instancesHasBeenSet = true; m_instances = value; }
 
     /**
@@ -170,6 +185,11 @@ namespace Model
      * <p>The Auto Scaling launch configurations in use by this environment.</p>
      */
     inline const Aws::Vector<LaunchConfiguration>& GetLaunchConfigurations() const{ return m_launchConfigurations; }
+
+    /**
+     * <p>The Auto Scaling launch configurations in use by this environment.</p>
+     */
+    inline bool LaunchConfigurationsHasBeenSet() const { return m_launchConfigurationsHasBeenSet; }
 
     /**
      * <p>The Auto Scaling launch configurations in use by this environment.</p>
@@ -210,6 +230,11 @@ namespace Model
     /**
      * <p>The Amazon EC2 launch templates in use by this environment.</p>
      */
+    inline bool LaunchTemplatesHasBeenSet() const { return m_launchTemplatesHasBeenSet; }
+
+    /**
+     * <p>The Amazon EC2 launch templates in use by this environment.</p>
+     */
     inline void SetLaunchTemplates(const Aws::Vector<LaunchTemplate>& value) { m_launchTemplatesHasBeenSet = true; m_launchTemplates = value; }
 
     /**
@@ -242,6 +267,11 @@ namespace Model
      * <p>The LoadBalancers in use by this environment.</p>
      */
     inline const Aws::Vector<LoadBalancer>& GetLoadBalancers() const{ return m_loadBalancers; }
+
+    /**
+     * <p>The LoadBalancers in use by this environment.</p>
+     */
+    inline bool LoadBalancersHasBeenSet() const { return m_loadBalancersHasBeenSet; }
 
     /**
      * <p>The LoadBalancers in use by this environment.</p>
@@ -282,6 +312,11 @@ namespace Model
     /**
      * <p>The <code>AutoScaling</code> triggers in use by this environment. </p>
      */
+    inline bool TriggersHasBeenSet() const { return m_triggersHasBeenSet; }
+
+    /**
+     * <p>The <code>AutoScaling</code> triggers in use by this environment. </p>
+     */
     inline void SetTriggers(const Aws::Vector<Trigger>& value) { m_triggersHasBeenSet = true; m_triggers = value; }
 
     /**
@@ -314,6 +349,11 @@ namespace Model
      * <p>The queues used by this environment.</p>
      */
     inline const Aws::Vector<Queue>& GetQueues() const{ return m_queues; }
+
+    /**
+     * <p>The queues used by this environment.</p>
+     */
+    inline bool QueuesHasBeenSet() const { return m_queuesHasBeenSet; }
 
     /**
      * <p>The queues used by this environment.</p>

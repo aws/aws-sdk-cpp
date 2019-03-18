@@ -53,6 +53,11 @@ namespace Model
     /**
      * <p>The name of the thing type to deprecate.</p>
      */
+    inline bool ThingTypeNameHasBeenSet() const { return m_thingTypeNameHasBeenSet; }
+
+    /**
+     * <p>The name of the thing type to deprecate.</p>
+     */
     inline void SetThingTypeName(const Aws::String& value) { m_thingTypeNameHasBeenSet = true; m_thingTypeName = value; }
 
     /**
@@ -86,6 +91,12 @@ namespace Model
      * type will not be deprecated anymore and you can associate it with things.</p>
      */
     inline bool GetUndoDeprecate() const{ return m_undoDeprecate; }
+
+    /**
+     * <p>Whether to undeprecate a deprecated thing type. If <b>true</b>, the thing
+     * type will not be deprecated anymore and you can associate it with things.</p>
+     */
+    inline bool UndoDeprecateHasBeenSet() const { return m_undoDeprecateHasBeenSet; }
 
     /**
      * <p>Whether to undeprecate a deprecated thing type. If <b>true</b>, the thing

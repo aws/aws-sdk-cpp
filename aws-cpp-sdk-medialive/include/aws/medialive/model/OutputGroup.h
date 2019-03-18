@@ -61,6 +61,12 @@ namespace Model
      * Custom output group name optionally defined by the user.  Only letters, numbers,
      * and the underscore character allowed; only 32 characters allowed.
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * Custom output group name optionally defined by the user.  Only letters, numbers,
+     * and the underscore character allowed; only 32 characters allowed.
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
@@ -102,6 +108,11 @@ namespace Model
     /**
      * Settings associated with the output group.
      */
+    inline bool OutputGroupSettingsHasBeenSet() const { return m_outputGroupSettingsHasBeenSet; }
+
+    /**
+     * Settings associated with the output group.
+     */
     inline void SetOutputGroupSettings(const OutputGroupSettings& value) { m_outputGroupSettingsHasBeenSet = true; m_outputGroupSettings = value; }
 
     /**
@@ -122,6 +133,9 @@ namespace Model
 
     
     inline const Aws::Vector<Output>& GetOutputs() const{ return m_outputs; }
+
+    
+    inline bool OutputsHasBeenSet() const { return m_outputsHasBeenSet; }
 
     
     inline void SetOutputs(const Aws::Vector<Output>& value) { m_outputsHasBeenSet = true; m_outputs = value; }

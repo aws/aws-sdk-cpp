@@ -63,6 +63,13 @@ namespace Model
      * a replacement environment for a blue/green deployment. Cannot be used in the
      * same call as ec2TagSet.</p>
      */
+    inline bool TagFiltersHasBeenSet() const { return m_tagFiltersHasBeenSet; }
+
+    /**
+     * <p>The tag filter key, type, and value used to identify Amazon EC2 instances in
+     * a replacement environment for a blue/green deployment. Cannot be used in the
+     * same call as ec2TagSet.</p>
+     */
     inline void SetTagFilters(const Aws::Vector<EC2TagFilter>& value) { m_tagFiltersHasBeenSet = true; m_tagFilters = value; }
 
     /**
@@ -106,6 +113,12 @@ namespace Model
      * environment for a blue/green deployment.</p>
      */
     inline const Aws::Vector<Aws::String>& GetAutoScalingGroups() const{ return m_autoScalingGroups; }
+
+    /**
+     * <p>The names of one or more Auto Scaling groups to identify a replacement
+     * environment for a blue/green deployment.</p>
+     */
+    inline bool AutoScalingGroupsHasBeenSet() const { return m_autoScalingGroupsHasBeenSet; }
 
     /**
      * <p>The names of one or more Auto Scaling groups to identify a replacement
@@ -156,6 +169,13 @@ namespace Model
      * a blue/green deployment. Cannot be used in the same call as tagFilters.</p>
      */
     inline const EC2TagSet& GetEc2TagSet() const{ return m_ec2TagSet; }
+
+    /**
+     * <p>Information about the groups of EC2 instance tags that an instance must be
+     * identified by in order for it to be included in the replacement environment for
+     * a blue/green deployment. Cannot be used in the same call as tagFilters.</p>
+     */
+    inline bool Ec2TagSetHasBeenSet() const { return m_ec2TagSetHasBeenSet; }
 
     /**
      * <p>Information about the groups of EC2 instance tags that an instance must be

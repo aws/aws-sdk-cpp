@@ -56,6 +56,9 @@ namespace Model
     inline const Aws::String& GetId() const{ return m_id; }
 
     
+    inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
+
+    
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
     
@@ -79,6 +82,12 @@ namespace Model
      * will publish a message when it detects events of the specified type.</p>
      */
     inline const Aws::String& GetQueueArn() const{ return m_queueArn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the Amazon SQS queue to which Amazon S3
+     * will publish a message when it detects events of the specified type.</p>
+     */
+    inline bool QueueArnHasBeenSet() const { return m_queueArnHasBeenSet; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the Amazon SQS queue to which Amazon S3
@@ -125,6 +134,11 @@ namespace Model
     /**
      * <p/>
      */
+    inline bool EventsHasBeenSet() const { return m_eventsHasBeenSet; }
+
+    /**
+     * <p/>
+     */
     inline void SetEvents(const Aws::Vector<Event>& value) { m_eventsHasBeenSet = true; m_events = value; }
 
     /**
@@ -155,6 +169,9 @@ namespace Model
 
     
     inline const NotificationConfigurationFilter& GetFilter() const{ return m_filter; }
+
+    
+    inline bool FilterHasBeenSet() const { return m_filterHasBeenSet; }
 
     
     inline void SetFilter(const NotificationConfigurationFilter& value) { m_filterHasBeenSet = true; m_filter = value; }

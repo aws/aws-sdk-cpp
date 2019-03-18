@@ -64,6 +64,13 @@ namespace Model
      * alphanumeric string formatted as shown in this example:
      * case-<i>12345678910-2013-c4c1d2bf33c5cf47</i> </p>
      */
+    inline bool CaseIdHasBeenSet() const { return m_caseIdHasBeenSet; }
+
+    /**
+     * <p>The AWS Support case ID requested or returned in the call. The case ID is an
+     * alphanumeric string formatted as shown in this example:
+     * case-<i>12345678910-2013-c4c1d2bf33c5cf47</i> </p>
+     */
     inline void SetCaseId(const Aws::String& value) { m_caseIdHasBeenSet = true; m_caseId = value; }
 
     /**
@@ -110,6 +117,11 @@ namespace Model
     /**
      * <p>The text of the communication between the customer and AWS Support.</p>
      */
+    inline bool BodyHasBeenSet() const { return m_bodyHasBeenSet; }
+
+    /**
+     * <p>The text of the communication between the customer and AWS Support.</p>
+     */
     inline void SetBody(const Aws::String& value) { m_bodyHasBeenSet = true; m_body = value; }
 
     /**
@@ -142,6 +154,11 @@ namespace Model
      * <p>The email address of the account that submitted the AWS Support case.</p>
      */
     inline const Aws::String& GetSubmittedBy() const{ return m_submittedBy; }
+
+    /**
+     * <p>The email address of the account that submitted the AWS Support case.</p>
+     */
+    inline bool SubmittedByHasBeenSet() const { return m_submittedByHasBeenSet; }
 
     /**
      * <p>The email address of the account that submitted the AWS Support case.</p>
@@ -182,6 +199,11 @@ namespace Model
     /**
      * <p>The time the communication was created.</p>
      */
+    inline bool TimeCreatedHasBeenSet() const { return m_timeCreatedHasBeenSet; }
+
+    /**
+     * <p>The time the communication was created.</p>
+     */
     inline void SetTimeCreated(const Aws::String& value) { m_timeCreatedHasBeenSet = true; m_timeCreated = value; }
 
     /**
@@ -214,6 +236,11 @@ namespace Model
      * <p>Information about the attachments to the case communication.</p>
      */
     inline const Aws::Vector<AttachmentDetails>& GetAttachmentSet() const{ return m_attachmentSet; }
+
+    /**
+     * <p>Information about the attachments to the case communication.</p>
+     */
+    inline bool AttachmentSetHasBeenSet() const { return m_attachmentSetHasBeenSet; }
 
     /**
      * <p>Information about the attachments to the case communication.</p>

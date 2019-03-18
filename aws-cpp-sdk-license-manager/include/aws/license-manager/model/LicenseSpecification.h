@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>ARN of the <code>LicenseConfiguration</code> object.</p>
      */
+    inline bool LicenseConfigurationArnHasBeenSet() const { return m_licenseConfigurationArnHasBeenSet; }
+
+    /**
+     * <p>ARN of the <code>LicenseConfiguration</code> object.</p>
+     */
     inline void SetLicenseConfigurationArn(const Aws::String& value) { m_licenseConfigurationArnHasBeenSet = true; m_licenseConfigurationArn = value; }
 
     /**

@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p> The unique ID of a deployment. </p>
      */
+    inline bool DeploymentIdHasBeenSet() const { return m_deploymentIdHasBeenSet; }
+
+    /**
+     * <p> The unique ID of a deployment. </p>
+     */
     inline void SetDeploymentId(const Aws::String& value) { m_deploymentIdHasBeenSet = true; m_deploymentId = value; }
 
     /**
@@ -94,6 +99,11 @@ namespace Model
     /**
      * <p>The status of the most recent deployment.</p>
      */
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
+
+    /**
+     * <p>The status of the most recent deployment.</p>
+     */
     inline void SetStatus(const DeploymentStatus& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
@@ -117,6 +127,12 @@ namespace Model
      * group was complete.</p>
      */
     inline const Aws::Utils::DateTime& GetEndTime() const{ return m_endTime; }
+
+    /**
+     * <p>A timestamp that indicates when the most recent deployment to the deployment
+     * group was complete.</p>
+     */
+    inline bool EndTimeHasBeenSet() const { return m_endTimeHasBeenSet; }
 
     /**
      * <p>A timestamp that indicates when the most recent deployment to the deployment
@@ -148,6 +164,12 @@ namespace Model
      * group started.</p>
      */
     inline const Aws::Utils::DateTime& GetCreateTime() const{ return m_createTime; }
+
+    /**
+     * <p>A timestamp that indicates when the most recent deployment to the deployment
+     * group started.</p>
+     */
+    inline bool CreateTimeHasBeenSet() const { return m_createTimeHasBeenSet; }
 
     /**
      * <p>A timestamp that indicates when the most recent deployment to the deployment

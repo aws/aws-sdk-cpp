@@ -61,6 +61,13 @@ namespace Model
      * constrains the provider type for the action. Valid categories are limited to one
      * of the values below.</p>
      */
+    inline bool CategoryHasBeenSet() const { return m_categoryHasBeenSet; }
+
+    /**
+     * <p>A category defines what kind of action can be taken in the stage, and
+     * constrains the provider type for the action. Valid categories are limited to one
+     * of the values below.</p>
+     */
     inline void SetCategory(const ActionCategory& value) { m_categoryHasBeenSet = true; m_category = value; }
 
     /**
@@ -93,6 +100,11 @@ namespace Model
     /**
      * <p>The creator of the action being called.</p>
      */
+    inline bool OwnerHasBeenSet() const { return m_ownerHasBeenSet; }
+
+    /**
+     * <p>The creator of the action being called.</p>
+     */
     inline void SetOwner(const ActionOwner& value) { m_ownerHasBeenSet = true; m_owner = value; }
 
     /**
@@ -118,6 +130,14 @@ namespace Model
      * CodeDeploy.</p>
      */
     inline const Aws::String& GetProvider() const{ return m_provider; }
+
+    /**
+     * <p>The provider of the service being called by the action. Valid providers are
+     * determined by the action category. For example, an action in the Deploy category
+     * type might have a provider of AWS CodeDeploy, which would be specified as
+     * CodeDeploy.</p>
+     */
+    inline bool ProviderHasBeenSet() const { return m_providerHasBeenSet; }
 
     /**
      * <p>The provider of the service being called by the action. Valid providers are
@@ -172,6 +192,11 @@ namespace Model
      * <p>A string that describes the action version.</p>
      */
     inline const Aws::String& GetVersion() const{ return m_version; }
+
+    /**
+     * <p>A string that describes the action version.</p>
+     */
+    inline bool VersionHasBeenSet() const { return m_versionHasBeenSet; }
 
     /**
      * <p>A string that describes the action version.</p>

@@ -56,6 +56,11 @@ namespace Model
     /**
      * The type of change pending for the ActiveMQ user.
      */
+    inline bool PendingChangeHasBeenSet() const { return m_pendingChangeHasBeenSet; }
+
+    /**
+     * The type of change pending for the ActiveMQ user.
+     */
     inline void SetPendingChange(const ChangeType& value) { m_pendingChangeHasBeenSet = true; m_pendingChange = value; }
 
     /**
@@ -80,6 +85,13 @@ namespace Model
      * This value must be 2-100 characters long.
      */
     inline const Aws::String& GetUsername() const{ return m_username; }
+
+    /**
+     * Required. The username of the ActiveMQ user. This value can contain only
+     * alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~).
+     * This value must be 2-100 characters long.
+     */
+    inline bool UsernameHasBeenSet() const { return m_usernameHasBeenSet; }
 
     /**
      * Required. The username of the ActiveMQ user. This value can contain only

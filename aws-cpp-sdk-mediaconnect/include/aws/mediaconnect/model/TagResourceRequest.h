@@ -56,6 +56,11 @@ namespace Model
     /**
      * The Amazon Resource Name (ARN) of the resource that you want to add tags to.
      */
+    inline bool ResourceArnHasBeenSet() const { return m_resourceArnHasBeenSet; }
+
+    /**
+     * The Amazon Resource Name (ARN) of the resource that you want to add tags to.
+     */
     inline void SetResourceArn(const Aws::String& value) { m_resourceArnHasBeenSet = true; m_resourceArn = value; }
 
     /**
@@ -89,6 +94,12 @@ namespace Model
      * 128 characters, and tag values can have a maximum length of 256 characters.
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
+
+    /**
+     * A map from tag keys to values. Tag keys can have a maximum character length of
+     * 128 characters, and tag values can have a maximum length of 256 characters.
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
      * A map from tag keys to values. Tag keys can have a maximum character length of

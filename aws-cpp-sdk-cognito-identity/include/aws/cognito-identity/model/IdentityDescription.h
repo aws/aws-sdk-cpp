@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>A unique identifier in the format REGION:GUID.</p>
      */
+    inline bool IdentityIdHasBeenSet() const { return m_identityIdHasBeenSet; }
+
+    /**
+     * <p>A unique identifier in the format REGION:GUID.</p>
+     */
     inline void SetIdentityId(const Aws::String& value) { m_identityIdHasBeenSet = true; m_identityId = value; }
 
     /**
@@ -90,6 +95,12 @@ namespace Model
      * tokens.</p>
      */
     inline const Aws::Vector<Aws::String>& GetLogins() const{ return m_logins; }
+
+    /**
+     * <p>A set of optional name-value pairs that map provider names to provider
+     * tokens.</p>
+     */
+    inline bool LoginsHasBeenSet() const { return m_loginsHasBeenSet; }
 
     /**
      * <p>A set of optional name-value pairs that map provider names to provider
@@ -142,6 +153,11 @@ namespace Model
     /**
      * <p>Date on which the identity was created.</p>
      */
+    inline bool CreationDateHasBeenSet() const { return m_creationDateHasBeenSet; }
+
+    /**
+     * <p>Date on which the identity was created.</p>
+     */
     inline void SetCreationDate(const Aws::Utils::DateTime& value) { m_creationDateHasBeenSet = true; m_creationDate = value; }
 
     /**
@@ -164,6 +180,11 @@ namespace Model
      * <p>Date on which the identity was last modified.</p>
      */
     inline const Aws::Utils::DateTime& GetLastModifiedDate() const{ return m_lastModifiedDate; }
+
+    /**
+     * <p>Date on which the identity was last modified.</p>
+     */
+    inline bool LastModifiedDateHasBeenSet() const { return m_lastModifiedDateHasBeenSet; }
 
     /**
      * <p>Date on which the identity was last modified.</p>

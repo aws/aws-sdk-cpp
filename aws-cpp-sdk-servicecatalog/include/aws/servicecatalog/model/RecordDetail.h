@@ -60,6 +60,11 @@ namespace Model
     /**
      * <p>The identifier of the record.</p>
      */
+    inline bool RecordIdHasBeenSet() const { return m_recordIdHasBeenSet; }
+
+    /**
+     * <p>The identifier of the record.</p>
+     */
     inline void SetRecordId(const Aws::String& value) { m_recordIdHasBeenSet = true; m_recordId = value; }
 
     /**
@@ -92,6 +97,11 @@ namespace Model
      * <p>The user-friendly name of the provisioned product.</p>
      */
     inline const Aws::String& GetProvisionedProductName() const{ return m_provisionedProductName; }
+
+    /**
+     * <p>The user-friendly name of the provisioned product.</p>
+     */
+    inline bool ProvisionedProductNameHasBeenSet() const { return m_provisionedProductNameHasBeenSet; }
 
     /**
      * <p>The user-friendly name of the provisioned product.</p>
@@ -136,6 +146,19 @@ namespace Model
      * error messages returned.</p> </li> </ul>
      */
     inline const RecordStatus& GetStatus() const{ return m_status; }
+
+    /**
+     * <p>The status of the provisioned product.</p> <ul> <li> <p> <code>CREATED</code>
+     * - The request was created but the operation has not started.</p> </li> <li> <p>
+     * <code>IN_PROGRESS</code> - The requested operation is in progress.</p> </li>
+     * <li> <p> <code>IN_PROGRESS_IN_ERROR</code> - The provisioned product is under
+     * change but the requested operation failed and some remediation is occurring. For
+     * example, a rollback.</p> </li> <li> <p> <code>SUCCEEDED</code> - The requested
+     * operation has successfully completed.</p> </li> <li> <p> <code>FAILED</code> -
+     * The requested operation has unsuccessfully completed. Investigate using the
+     * error messages returned.</p> </li> </ul>
+     */
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
     /**
      * <p>The status of the provisioned product.</p> <ul> <li> <p> <code>CREATED</code>
@@ -198,6 +221,11 @@ namespace Model
     /**
      * <p>The UTC time stamp of the creation time.</p>
      */
+    inline bool CreatedTimeHasBeenSet() const { return m_createdTimeHasBeenSet; }
+
+    /**
+     * <p>The UTC time stamp of the creation time.</p>
+     */
     inline void SetCreatedTime(const Aws::Utils::DateTime& value) { m_createdTimeHasBeenSet = true; m_createdTime = value; }
 
     /**
@@ -220,6 +248,11 @@ namespace Model
      * <p>The time when the record was last updated.</p>
      */
     inline const Aws::Utils::DateTime& GetUpdatedTime() const{ return m_updatedTime; }
+
+    /**
+     * <p>The time when the record was last updated.</p>
+     */
+    inline bool UpdatedTimeHasBeenSet() const { return m_updatedTimeHasBeenSet; }
 
     /**
      * <p>The time when the record was last updated.</p>
@@ -247,6 +280,12 @@ namespace Model
      * <code>CFN_STACK</code> and <code>CFN_STACKSET</code>.</p>
      */
     inline const Aws::String& GetProvisionedProductType() const{ return m_provisionedProductType; }
+
+    /**
+     * <p>The type of provisioned product. The supported values are
+     * <code>CFN_STACK</code> and <code>CFN_STACKSET</code>.</p>
+     */
+    inline bool ProvisionedProductTypeHasBeenSet() const { return m_provisionedProductTypeHasBeenSet; }
 
     /**
      * <p>The type of provisioned product. The supported values are
@@ -291,6 +330,13 @@ namespace Model
      * <code>TERMINATE_PROVISIONED_PRODUCT</code> </p> </li> </ul>
      */
     inline const Aws::String& GetRecordType() const{ return m_recordType; }
+
+    /**
+     * <p>The record type.</p> <ul> <li> <p> <code>PROVISION_PRODUCT</code> </p> </li>
+     * <li> <p> <code>UPDATE_PROVISIONED_PRODUCT</code> </p> </li> <li> <p>
+     * <code>TERMINATE_PROVISIONED_PRODUCT</code> </p> </li> </ul>
+     */
+    inline bool RecordTypeHasBeenSet() const { return m_recordTypeHasBeenSet; }
 
     /**
      * <p>The record type.</p> <ul> <li> <p> <code>PROVISION_PRODUCT</code> </p> </li>
@@ -343,6 +389,11 @@ namespace Model
     /**
      * <p>The identifier of the provisioned product.</p>
      */
+    inline bool ProvisionedProductIdHasBeenSet() const { return m_provisionedProductIdHasBeenSet; }
+
+    /**
+     * <p>The identifier of the provisioned product.</p>
+     */
     inline void SetProvisionedProductId(const Aws::String& value) { m_provisionedProductIdHasBeenSet = true; m_provisionedProductId = value; }
 
     /**
@@ -375,6 +426,11 @@ namespace Model
      * <p>The product identifier.</p>
      */
     inline const Aws::String& GetProductId() const{ return m_productId; }
+
+    /**
+     * <p>The product identifier.</p>
+     */
+    inline bool ProductIdHasBeenSet() const { return m_productIdHasBeenSet; }
 
     /**
      * <p>The product identifier.</p>
@@ -415,6 +471,11 @@ namespace Model
     /**
      * <p>The identifier of the provisioning artifact.</p>
      */
+    inline bool ProvisioningArtifactIdHasBeenSet() const { return m_provisioningArtifactIdHasBeenSet; }
+
+    /**
+     * <p>The identifier of the provisioning artifact.</p>
+     */
     inline void SetProvisioningArtifactId(const Aws::String& value) { m_provisioningArtifactIdHasBeenSet = true; m_provisioningArtifactId = value; }
 
     /**
@@ -447,6 +508,11 @@ namespace Model
      * <p>The path identifier.</p>
      */
     inline const Aws::String& GetPathId() const{ return m_pathId; }
+
+    /**
+     * <p>The path identifier.</p>
+     */
+    inline bool PathIdHasBeenSet() const { return m_pathIdHasBeenSet; }
 
     /**
      * <p>The path identifier.</p>
@@ -487,6 +553,11 @@ namespace Model
     /**
      * <p>The errors that occurred.</p>
      */
+    inline bool RecordErrorsHasBeenSet() const { return m_recordErrorsHasBeenSet; }
+
+    /**
+     * <p>The errors that occurred.</p>
+     */
     inline void SetRecordErrors(const Aws::Vector<RecordError>& value) { m_recordErrorsHasBeenSet = true; m_recordErrors = value; }
 
     /**
@@ -519,6 +590,11 @@ namespace Model
      * <p>One or more tags.</p>
      */
     inline const Aws::Vector<RecordTag>& GetRecordTags() const{ return m_recordTags; }
+
+    /**
+     * <p>One or more tags.</p>
+     */
+    inline bool RecordTagsHasBeenSet() const { return m_recordTagsHasBeenSet; }
 
     /**
      * <p>One or more tags.</p>

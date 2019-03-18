@@ -53,6 +53,11 @@ namespace Model
     /**
      * <p>The name of the service mesh to delete the virtual router in.</p>
      */
+    inline bool MeshNameHasBeenSet() const { return m_meshNameHasBeenSet; }
+
+    /**
+     * <p>The name of the service mesh to delete the virtual router in.</p>
+     */
     inline void SetMeshName(const Aws::String& value) { m_meshNameHasBeenSet = true; m_meshName = value; }
 
     /**
@@ -85,6 +90,11 @@ namespace Model
      * <p>The name of the virtual router to delete.</p>
      */
     inline const Aws::String& GetVirtualRouterName() const{ return m_virtualRouterName; }
+
+    /**
+     * <p>The name of the virtual router to delete.</p>
+     */
+    inline bool VirtualRouterNameHasBeenSet() const { return m_virtualRouterNameHasBeenSet; }
 
     /**
      * <p>The name of the virtual router to delete.</p>

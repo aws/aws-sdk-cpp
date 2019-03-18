@@ -60,6 +60,12 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the IAM role that is associated with the DB
      * instance.</p>
      */
+    inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the IAM role that is associated with the DB
+     * instance.</p>
+     */
     inline void SetRoleArn(const Aws::String& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
 
     /**
@@ -99,6 +105,13 @@ namespace Model
      * <a>DBEngineVersion</a>. </p>
      */
     inline const Aws::String& GetFeatureName() const{ return m_featureName; }
+
+    /**
+     * <p>The name of the feature associated with the AWS Identity and Access
+     * Management (IAM) role. For the list of supported feature names, see
+     * <a>DBEngineVersion</a>. </p>
+     */
+    inline bool FeatureNameHasBeenSet() const { return m_featureNameHasBeenSet; }
 
     /**
      * <p>The name of the feature associated with the AWS Identity and Access
@@ -154,6 +167,18 @@ namespace Model
      * role in order to access other AWS services on your behalf.</p> </li> </ul>
      */
     inline const Aws::String& GetStatus() const{ return m_status; }
+
+    /**
+     * <p>Describes the state of association between the IAM role and the DB instance.
+     * The Status property returns one of the following values:</p> <ul> <li> <p>
+     * <code>ACTIVE</code> - the IAM role ARN is associated with the DB instance and
+     * can be used to access other AWS services on your behalf.</p> </li> <li> <p>
+     * <code>PENDING</code> - the IAM role ARN is being associated with the DB
+     * instance.</p> </li> <li> <p> <code>INVALID</code> - the IAM role ARN is
+     * associated with the DB instance, but the DB instance is unable to assume the IAM
+     * role in order to access other AWS services on your behalf.</p> </li> </ul>
+     */
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
     /**
      * <p>Describes the state of association between the IAM role and the DB instance.

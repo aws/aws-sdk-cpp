@@ -58,6 +58,12 @@ namespace Model
      * <p>A type of <code>SuggestionQuery</code>. Defines a property name hint. Only
      * property names that match the specified hint are included in the response.</p>
      */
+    inline bool PropertyNameQueryHasBeenSet() const { return m_propertyNameQueryHasBeenSet; }
+
+    /**
+     * <p>A type of <code>SuggestionQuery</code>. Defines a property name hint. Only
+     * property names that match the specified hint are included in the response.</p>
+     */
     inline void SetPropertyNameQuery(const PropertyNameQuery& value) { m_propertyNameQueryHasBeenSet = true; m_propertyNameQuery = value; }
 
     /**

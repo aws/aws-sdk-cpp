@@ -58,6 +58,12 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of an AWS Certificate Manager SSL certificate.
      * You use this certificate for the subdomain of your custom domain.</p>
      */
+    inline bool CertificateArnHasBeenSet() const { return m_certificateArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of an AWS Certificate Manager SSL certificate.
+     * You use this certificate for the subdomain of your custom domain.</p>
+     */
     inline void SetCertificateArn(const Aws::String& value) { m_certificateArnHasBeenSet = true; m_certificateArn = value; }
 
     /**

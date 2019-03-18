@@ -55,6 +55,11 @@ namespace Model
     /**
      * <p>One or more instance IDs.</p>
      */
+    inline bool InstanceIdsHasBeenSet() const { return m_instanceIdsHasBeenSet; }
+
+    /**
+     * <p>One or more instance IDs.</p>
+     */
     inline void SetInstanceIds(const Aws::Vector<Aws::String>& value) { m_instanceIdsHasBeenSet = true; m_instanceIds = value; }
 
     /**
@@ -106,6 +111,16 @@ namespace Model
      * Your Instance</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p> <p>
      * Default: <code>false</code> </p>
      */
+    inline bool HibernateHasBeenSet() const { return m_hibernateHasBeenSet; }
+
+    /**
+     * <p>Hibernates the instance if the instance was enabled for hibernation at
+     * launch. If the instance cannot hibernate successfully, a normal shutdown occurs.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html">Hibernate
+     * Your Instance</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p> <p>
+     * Default: <code>false</code> </p>
+     */
     inline void SetHibernate(bool value) { m_hibernateHasBeenSet = true; m_hibernate = value; }
 
     /**
@@ -133,6 +148,14 @@ namespace Model
      * required permissions, the error response is <code>DryRunOperation</code>.
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
+    inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
+
+    /**
+     * <p>Checks whether you have the required permissions for the action, without
+     * actually making the request, and provides an error response. If you have the
+     * required permissions, the error response is <code>DryRunOperation</code>.
+     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+     */
     inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
 
     /**
@@ -151,6 +174,14 @@ namespace Model
      * recommended for Windows instances.</p> <p>Default: <code>false</code> </p>
      */
     inline bool GetForce() const{ return m_force; }
+
+    /**
+     * <p>Forces the instances to stop. The instances do not have an opportunity to
+     * flush file system caches or file system metadata. If you use this option, you
+     * must perform file system check and repair procedures. This option is not
+     * recommended for Windows instances.</p> <p>Default: <code>false</code> </p>
+     */
+    inline bool ForceHasBeenSet() const { return m_forceHasBeenSet; }
 
     /**
      * <p>Forces the instances to stop. The instances do not have an opportunity to

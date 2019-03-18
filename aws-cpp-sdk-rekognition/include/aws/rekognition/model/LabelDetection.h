@@ -58,6 +58,12 @@ namespace Model
      * <p>Time, in milliseconds from the start of the video, that the label was
      * detected.</p>
      */
+    inline bool TimestampHasBeenSet() const { return m_timestampHasBeenSet; }
+
+    /**
+     * <p>Time, in milliseconds from the start of the video, that the label was
+     * detected.</p>
+     */
     inline void SetTimestamp(long long value) { m_timestampHasBeenSet = true; m_timestamp = value; }
 
     /**
@@ -71,6 +77,11 @@ namespace Model
      * <p>Details about the detected label.</p>
      */
     inline const Label& GetLabel() const{ return m_label; }
+
+    /**
+     * <p>Details about the detected label.</p>
+     */
+    inline bool LabelHasBeenSet() const { return m_labelHasBeenSet; }
 
     /**
      * <p>Details about the detected label.</p>

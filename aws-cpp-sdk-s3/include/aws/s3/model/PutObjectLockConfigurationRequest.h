@@ -63,6 +63,11 @@ namespace Model
     /**
      * <p>The bucket whose Object Lock configuration you want to create or replace.</p>
      */
+    inline bool BucketHasBeenSet() const { return m_bucketHasBeenSet; }
+
+    /**
+     * <p>The bucket whose Object Lock configuration you want to create or replace.</p>
+     */
     inline void SetBucket(const Aws::String& value) { m_bucketHasBeenSet = true; m_bucket = value; }
 
     /**
@@ -101,6 +106,12 @@ namespace Model
      * <p>The Object Lock configuration that you want to apply to the specified
      * bucket.</p>
      */
+    inline bool ObjectLockConfigurationHasBeenSet() const { return m_objectLockConfigurationHasBeenSet; }
+
+    /**
+     * <p>The Object Lock configuration that you want to apply to the specified
+     * bucket.</p>
+     */
     inline void SetObjectLockConfiguration(const ObjectLockConfiguration& value) { m_objectLockConfigurationHasBeenSet = true; m_objectLockConfiguration = value; }
 
     /**
@@ -126,6 +137,9 @@ namespace Model
     inline const RequestPayer& GetRequestPayer() const{ return m_requestPayer; }
 
     
+    inline bool RequestPayerHasBeenSet() const { return m_requestPayerHasBeenSet; }
+
+    
     inline void SetRequestPayer(const RequestPayer& value) { m_requestPayerHasBeenSet = true; m_requestPayer = value; }
 
     
@@ -142,6 +156,11 @@ namespace Model
      * <p>A token to allow Object Lock to be enabled for an existing bucket.</p>
      */
     inline const Aws::String& GetToken() const{ return m_token; }
+
+    /**
+     * <p>A token to allow Object Lock to be enabled for an existing bucket.</p>
+     */
+    inline bool TokenHasBeenSet() const { return m_tokenHasBeenSet; }
 
     /**
      * <p>A token to allow Object Lock to be enabled for an existing bucket.</p>
@@ -182,6 +201,11 @@ namespace Model
     /**
      * <p>The MD5 hash for the request body.</p>
      */
+    inline bool ContentMD5HasBeenSet() const { return m_contentMD5HasBeenSet; }
+
+    /**
+     * <p>The MD5 hash for the request body.</p>
+     */
     inline void SetContentMD5(const Aws::String& value) { m_contentMD5HasBeenSet = true; m_contentMD5 = value; }
 
     /**
@@ -212,6 +236,9 @@ namespace Model
 
     
     inline const Aws::Map<Aws::String, Aws::String>& GetCustomizedAccessLogTag() const{ return m_customizedAccessLogTag; }
+
+    
+    inline bool CustomizedAccessLogTagHasBeenSet() const { return m_customizedAccessLogTagHasBeenSet; }
 
     
     inline void SetCustomizedAccessLogTag(const Aws::Map<Aws::String, Aws::String>& value) { m_customizedAccessLogTagHasBeenSet = true; m_customizedAccessLogTag = value; }

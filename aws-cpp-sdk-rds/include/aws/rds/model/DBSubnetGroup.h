@@ -61,6 +61,11 @@ namespace Model
     /**
      * <p>The name of the DB subnet group.</p>
      */
+    inline bool DBSubnetGroupNameHasBeenSet() const { return m_dBSubnetGroupNameHasBeenSet; }
+
+    /**
+     * <p>The name of the DB subnet group.</p>
+     */
     inline void SetDBSubnetGroupName(const Aws::String& value) { m_dBSubnetGroupNameHasBeenSet = true; m_dBSubnetGroupName = value; }
 
     /**
@@ -93,6 +98,11 @@ namespace Model
      * <p>Provides the description of the DB subnet group.</p>
      */
     inline const Aws::String& GetDBSubnetGroupDescription() const{ return m_dBSubnetGroupDescription; }
+
+    /**
+     * <p>Provides the description of the DB subnet group.</p>
+     */
+    inline bool DBSubnetGroupDescriptionHasBeenSet() const { return m_dBSubnetGroupDescriptionHasBeenSet; }
 
     /**
      * <p>Provides the description of the DB subnet group.</p>
@@ -133,6 +143,11 @@ namespace Model
     /**
      * <p>Provides the VpcId of the DB subnet group.</p>
      */
+    inline bool VpcIdHasBeenSet() const { return m_vpcIdHasBeenSet; }
+
+    /**
+     * <p>Provides the VpcId of the DB subnet group.</p>
+     */
     inline void SetVpcId(const Aws::String& value) { m_vpcIdHasBeenSet = true; m_vpcId = value; }
 
     /**
@@ -165,6 +180,11 @@ namespace Model
      * <p>Provides the status of the DB subnet group.</p>
      */
     inline const Aws::String& GetSubnetGroupStatus() const{ return m_subnetGroupStatus; }
+
+    /**
+     * <p>Provides the status of the DB subnet group.</p>
+     */
+    inline bool SubnetGroupStatusHasBeenSet() const { return m_subnetGroupStatusHasBeenSet; }
 
     /**
      * <p>Provides the status of the DB subnet group.</p>
@@ -205,6 +225,11 @@ namespace Model
     /**
      * <p> Contains a list of <a>Subnet</a> elements. </p>
      */
+    inline bool SubnetsHasBeenSet() const { return m_subnetsHasBeenSet; }
+
+    /**
+     * <p> Contains a list of <a>Subnet</a> elements. </p>
+     */
     inline void SetSubnets(const Aws::Vector<Subnet>& value) { m_subnetsHasBeenSet = true; m_subnets = value; }
 
     /**
@@ -237,6 +262,11 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) for the DB subnet group.</p>
      */
     inline const Aws::String& GetDBSubnetGroupArn() const{ return m_dBSubnetGroupArn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) for the DB subnet group.</p>
+     */
+    inline bool DBSubnetGroupArnHasBeenSet() const { return m_dBSubnetGroupArnHasBeenSet; }
 
     /**
      * <p>The Amazon Resource Name (ARN) for the DB subnet group.</p>

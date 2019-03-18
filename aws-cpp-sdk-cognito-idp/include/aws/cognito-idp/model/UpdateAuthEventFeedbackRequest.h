@@ -53,6 +53,11 @@ namespace Model
     /**
      * <p>The user pool ID.</p>
      */
+    inline bool UserPoolIdHasBeenSet() const { return m_userPoolIdHasBeenSet; }
+
+    /**
+     * <p>The user pool ID.</p>
+     */
     inline void SetUserPoolId(const Aws::String& value) { m_userPoolIdHasBeenSet = true; m_userPoolId = value; }
 
     /**
@@ -85,6 +90,11 @@ namespace Model
      * <p>The user pool username.</p>
      */
     inline const Aws::String& GetUsername() const{ return m_username; }
+
+    /**
+     * <p>The user pool username.</p>
+     */
+    inline bool UsernameHasBeenSet() const { return m_usernameHasBeenSet; }
 
     /**
      * <p>The user pool username.</p>
@@ -125,6 +135,11 @@ namespace Model
     /**
      * <p>The event ID.</p>
      */
+    inline bool EventIdHasBeenSet() const { return m_eventIdHasBeenSet; }
+
+    /**
+     * <p>The event ID.</p>
+     */
     inline void SetEventId(const Aws::String& value) { m_eventIdHasBeenSet = true; m_eventId = value; }
 
     /**
@@ -161,6 +176,11 @@ namespace Model
     /**
      * <p>The feedback token.</p>
      */
+    inline bool FeedbackTokenHasBeenSet() const { return m_feedbackTokenHasBeenSet; }
+
+    /**
+     * <p>The feedback token.</p>
+     */
     inline void SetFeedbackToken(const Aws::String& value) { m_feedbackTokenHasBeenSet = true; m_feedbackToken = value; }
 
     /**
@@ -193,6 +213,11 @@ namespace Model
      * <p>The authentication event feedback value.</p>
      */
     inline const FeedbackValueType& GetFeedbackValue() const{ return m_feedbackValue; }
+
+    /**
+     * <p>The authentication event feedback value.</p>
+     */
+    inline bool FeedbackValueHasBeenSet() const { return m_feedbackValueHasBeenSet; }
 
     /**
      * <p>The authentication event feedback value.</p>

@@ -68,6 +68,12 @@ namespace Model
      * Specifies the video codec. This must be equal to one of the enum values defined
      * by the object  VideoCodec.
      */
+    inline bool CodecHasBeenSet() const { return m_codecHasBeenSet; }
+
+    /**
+     * Specifies the video codec. This must be equal to one of the enum values defined
+     * by the object  VideoCodec.
+     */
     inline void SetCodec(const VideoCodec& value) { m_codecHasBeenSet = true; m_codec = value; }
 
     /**
@@ -93,6 +99,9 @@ namespace Model
     inline const FrameCaptureSettings& GetFrameCaptureSettings() const{ return m_frameCaptureSettings; }
 
     
+    inline bool FrameCaptureSettingsHasBeenSet() const { return m_frameCaptureSettingsHasBeenSet; }
+
+    
     inline void SetFrameCaptureSettings(const FrameCaptureSettings& value) { m_frameCaptureSettingsHasBeenSet = true; m_frameCaptureSettings = value; }
 
     
@@ -107,6 +116,9 @@ namespace Model
 
     
     inline const H264Settings& GetH264Settings() const{ return m_h264Settings; }
+
+    
+    inline bool H264SettingsHasBeenSet() const { return m_h264SettingsHasBeenSet; }
 
     
     inline void SetH264Settings(const H264Settings& value) { m_h264SettingsHasBeenSet = true; m_h264Settings = value; }
@@ -125,6 +137,9 @@ namespace Model
     inline const H265Settings& GetH265Settings() const{ return m_h265Settings; }
 
     
+    inline bool H265SettingsHasBeenSet() const { return m_h265SettingsHasBeenSet; }
+
+    
     inline void SetH265Settings(const H265Settings& value) { m_h265SettingsHasBeenSet = true; m_h265Settings = value; }
 
     
@@ -141,6 +156,9 @@ namespace Model
     inline const Mpeg2Settings& GetMpeg2Settings() const{ return m_mpeg2Settings; }
 
     
+    inline bool Mpeg2SettingsHasBeenSet() const { return m_mpeg2SettingsHasBeenSet; }
+
+    
     inline void SetMpeg2Settings(const Mpeg2Settings& value) { m_mpeg2SettingsHasBeenSet = true; m_mpeg2Settings = value; }
 
     
@@ -155,6 +173,9 @@ namespace Model
 
     
     inline const ProresSettings& GetProresSettings() const{ return m_proresSettings; }
+
+    
+    inline bool ProresSettingsHasBeenSet() const { return m_proresSettingsHasBeenSet; }
 
     
     inline void SetProresSettings(const ProresSettings& value) { m_proresSettingsHasBeenSet = true; m_proresSettings = value; }

@@ -61,6 +61,11 @@ namespace Model
     /**
      * <p>The input provided to the workflow execution.</p>
      */
+    inline bool InputHasBeenSet() const { return m_inputHasBeenSet; }
+
+    /**
+     * <p>The input provided to the workflow execution.</p>
+     */
     inline void SetInput(const Aws::String& value) { m_inputHasBeenSet = true; m_input = value; }
 
     /**
@@ -95,6 +100,13 @@ namespace Model
      * can use <code>NONE</code> to specify unlimited duration.</p>
      */
     inline const Aws::String& GetExecutionStartToCloseTimeout() const{ return m_executionStartToCloseTimeout; }
+
+    /**
+     * <p>The maximum duration for this workflow execution.</p> <p>The duration is
+     * specified in seconds, an integer greater than or equal to <code>0</code>. You
+     * can use <code>NONE</code> to specify unlimited duration.</p>
+     */
+    inline bool ExecutionStartToCloseTimeoutHasBeenSet() const { return m_executionStartToCloseTimeoutHasBeenSet; }
 
     /**
      * <p>The maximum duration for this workflow execution.</p> <p>The duration is
@@ -145,6 +157,13 @@ namespace Model
      * <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p>
      */
     inline const Aws::String& GetTaskStartToCloseTimeout() const{ return m_taskStartToCloseTimeout; }
+
+    /**
+     * <p>The maximum duration of decision tasks for this workflow type.</p> <p>The
+     * duration is specified in seconds, an integer greater than or equal to
+     * <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p>
+     */
+    inline bool TaskStartToCloseTimeoutHasBeenSet() const { return m_taskStartToCloseTimeoutHasBeenSet; }
 
     /**
      * <p>The maximum duration of decision tasks for this workflow type.</p> <p>The
@@ -215,6 +234,20 @@ namespace Model
      * with this event.</p> </li> <li> <p> <code>ABANDON</code> – No action is taken.
      * The child executions continue to run.</p> </li> </ul>
      */
+    inline bool ChildPolicyHasBeenSet() const { return m_childPolicyHasBeenSet; }
+
+    /**
+     * <p>The policy to use for the child workflow executions if this workflow
+     * execution is terminated, by calling the <a>TerminateWorkflowExecution</a> action
+     * explicitly or due to an expired timeout.</p> <p>The supported child policies
+     * are:</p> <ul> <li> <p> <code>TERMINATE</code> – The child executions are
+     * terminated.</p> </li> <li> <p> <code>REQUEST_CANCEL</code> – A request to cancel
+     * is attempted for each child execution by recording a
+     * <code>WorkflowExecutionCancelRequested</code> event in its history. It is up to
+     * the decider to take appropriate actions when it receives an execution history
+     * with this event.</p> </li> <li> <p> <code>ABANDON</code> – No action is taken.
+     * The child executions continue to run.</p> </li> </ul>
+     */
     inline void SetChildPolicy(const ChildPolicy& value) { m_childPolicyHasBeenSet = true; m_childPolicy = value; }
 
     /**
@@ -270,6 +303,12 @@ namespace Model
      * <p>The name of the task list for scheduling the decision tasks for this workflow
      * execution.</p>
      */
+    inline bool TaskListHasBeenSet() const { return m_taskListHasBeenSet; }
+
+    /**
+     * <p>The name of the task list for scheduling the decision tasks for this workflow
+     * execution.</p>
+     */
     inline void SetTaskList(const TaskList& value) { m_taskListHasBeenSet = true; m_taskList = value; }
 
     /**
@@ -295,6 +334,11 @@ namespace Model
      * <p>The priority of the decision tasks in the workflow execution.</p>
      */
     inline const Aws::String& GetTaskPriority() const{ return m_taskPriority; }
+
+    /**
+     * <p>The priority of the decision tasks in the workflow execution.</p>
+     */
+    inline bool TaskPriorityHasBeenSet() const { return m_taskPriorityHasBeenSet; }
 
     /**
      * <p>The priority of the decision tasks in the workflow execution.</p>
@@ -335,6 +379,11 @@ namespace Model
     /**
      * <p>The workflow type of this execution.</p>
      */
+    inline bool WorkflowTypeHasBeenSet() const { return m_workflowTypeHasBeenSet; }
+
+    /**
+     * <p>The workflow type of this execution.</p>
+     */
     inline void SetWorkflowType(const WorkflowType& value) { m_workflowTypeHasBeenSet = true; m_workflowType = value; }
 
     /**
@@ -358,6 +407,12 @@ namespace Model
      * have up to 5 tags.</p>
      */
     inline const Aws::Vector<Aws::String>& GetTagList() const{ return m_tagList; }
+
+    /**
+     * <p>The list of tags associated with this workflow execution. An execution can
+     * have up to 5 tags.</p>
+     */
+    inline bool TagListHasBeenSet() const { return m_tagListHasBeenSet; }
 
     /**
      * <p>The list of tags associated with this workflow execution. An execution can
@@ -409,6 +464,14 @@ namespace Model
      * continued as this execution.</p>
      */
     inline const Aws::String& GetContinuedExecutionRunId() const{ return m_continuedExecutionRunId; }
+
+    /**
+     * <p>If this workflow execution was started due to a
+     * <code>ContinueAsNewWorkflowExecution</code> decision, then it contains the
+     * <code>runId</code> of the previous workflow execution that was closed and
+     * continued as this execution.</p>
+     */
+    inline bool ContinuedExecutionRunIdHasBeenSet() const { return m_continuedExecutionRunIdHasBeenSet; }
 
     /**
      * <p>If this workflow execution was started due to a
@@ -469,6 +532,12 @@ namespace Model
      * <p>The source workflow execution that started this workflow execution. The
      * member isn't set if the workflow execution was not started by a workflow.</p>
      */
+    inline bool ParentWorkflowExecutionHasBeenSet() const { return m_parentWorkflowExecutionHasBeenSet; }
+
+    /**
+     * <p>The source workflow execution that started this workflow execution. The
+     * member isn't set if the workflow execution was not started by a workflow.</p>
+     */
     inline void SetParentWorkflowExecution(const WorkflowExecution& value) { m_parentWorkflowExecutionHasBeenSet = true; m_parentWorkflowExecution = value; }
 
     /**
@@ -508,6 +577,16 @@ namespace Model
      * diagnosing problems by tracing back the chain of events leading up to this
      * event.</p>
      */
+    inline bool ParentInitiatedEventIdHasBeenSet() const { return m_parentInitiatedEventIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the <code>StartChildWorkflowExecutionInitiated</code> event
+     * corresponding to the <code>StartChildWorkflowExecution</code> <a>Decision</a> to
+     * start this workflow execution. The source event with this ID can be found in the
+     * history of the source workflow execution. This information can be useful for
+     * diagnosing problems by tracing back the chain of events leading up to this
+     * event.</p>
+     */
     inline void SetParentInitiatedEventId(long long value) { m_parentInitiatedEventIdHasBeenSet = true; m_parentInitiatedEventId = value; }
 
     /**
@@ -525,6 +604,11 @@ namespace Model
      * <p>The IAM role attached to the workflow execution.</p>
      */
     inline const Aws::String& GetLambdaRole() const{ return m_lambdaRole; }
+
+    /**
+     * <p>The IAM role attached to the workflow execution.</p>
+     */
+    inline bool LambdaRoleHasBeenSet() const { return m_lambdaRoleHasBeenSet; }
 
     /**
      * <p>The IAM role attached to the workflow execution.</p>

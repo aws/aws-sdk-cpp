@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The attachment ID for the network interface.</p>
      */
+    inline bool AttachmentIdHasBeenSet() const { return m_attachmentIdHasBeenSet; }
+
+    /**
+     * <p>The attachment ID for the network interface.</p>
+     */
     inline void SetAttachmentId(const Aws::String& value) { m_attachmentIdHasBeenSet = true; m_attachmentId = value; }
 
     /**
@@ -92,6 +97,11 @@ namespace Model
     /**
      * <p>The private IPv4 address for the network interface.</p>
      */
+    inline bool PrivateIpv4AddressHasBeenSet() const { return m_privateIpv4AddressHasBeenSet; }
+
+    /**
+     * <p>The private IPv4 address for the network interface.</p>
+     */
     inline void SetPrivateIpv4Address(const Aws::String& value) { m_privateIpv4AddressHasBeenSet = true; m_privateIpv4Address = value; }
 
     /**
@@ -124,6 +134,11 @@ namespace Model
      * <p>The private IPv6 address for the network interface.</p>
      */
     inline const Aws::String& GetIpv6Address() const{ return m_ipv6Address; }
+
+    /**
+     * <p>The private IPv6 address for the network interface.</p>
+     */
+    inline bool Ipv6AddressHasBeenSet() const { return m_ipv6AddressHasBeenSet; }
 
     /**
      * <p>The private IPv6 address for the network interface.</p>

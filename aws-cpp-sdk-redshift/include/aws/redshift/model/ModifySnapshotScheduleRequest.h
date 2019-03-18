@@ -55,6 +55,11 @@ namespace Model
     /**
      * <p>A unique alphanumeric identifier of the schedule to modify.</p>
      */
+    inline bool ScheduleIdentifierHasBeenSet() const { return m_scheduleIdentifierHasBeenSet; }
+
+    /**
+     * <p>A unique alphanumeric identifier of the schedule to modify.</p>
+     */
     inline void SetScheduleIdentifier(const Aws::String& value) { m_scheduleIdentifierHasBeenSet = true; m_scheduleIdentifier = value; }
 
     /**
@@ -88,6 +93,12 @@ namespace Model
      * schedule expressions, for example, "cron(30 12 *)" or "rate(12 hours)".</p>
      */
     inline const Aws::Vector<Aws::String>& GetScheduleDefinitions() const{ return m_scheduleDefinitions; }
+
+    /**
+     * <p>An updated list of schedule definitions. A schedule definition is made up of
+     * schedule expressions, for example, "cron(30 12 *)" or "rate(12 hours)".</p>
+     */
+    inline bool ScheduleDefinitionsHasBeenSet() const { return m_scheduleDefinitionsHasBeenSet; }
 
     /**
      * <p>An updated list of schedule definitions. A schedule definition is made up of

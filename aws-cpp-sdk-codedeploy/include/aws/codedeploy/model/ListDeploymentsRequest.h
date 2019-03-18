@@ -61,6 +61,12 @@ namespace Model
      * <p>The name of an AWS CodeDeploy application associated with the IAM user or AWS
      * account.</p>
      */
+    inline bool ApplicationNameHasBeenSet() const { return m_applicationNameHasBeenSet; }
+
+    /**
+     * <p>The name of an AWS CodeDeploy application associated with the IAM user or AWS
+     * account.</p>
+     */
     inline void SetApplicationName(const Aws::String& value) { m_applicationNameHasBeenSet = true; m_applicationName = value; }
 
     /**
@@ -98,6 +104,11 @@ namespace Model
      * <p>The name of a deployment group for the specified application.</p>
      */
     inline const Aws::String& GetDeploymentGroupName() const{ return m_deploymentGroupName; }
+
+    /**
+     * <p>The name of a deployment group for the specified application.</p>
+     */
+    inline bool DeploymentGroupNameHasBeenSet() const { return m_deploymentGroupNameHasBeenSet; }
 
     /**
      * <p>The name of a deployment group for the specified application.</p>
@@ -140,6 +151,17 @@ namespace Model
      * Include stopped deployments in the resulting list.</p> </li> </ul>
      */
     inline const Aws::Vector<DeploymentStatus>& GetIncludeOnlyStatuses() const{ return m_includeOnlyStatuses; }
+
+    /**
+     * <p>A subset of deployments to list by status:</p> <ul> <li> <p>Created: Include
+     * created deployments in the resulting list.</p> </li> <li> <p>Queued: Include
+     * queued deployments in the resulting list.</p> </li> <li> <p>In Progress: Include
+     * in-progress deployments in the resulting list.</p> </li> <li> <p>Succeeded:
+     * Include successful deployments in the resulting list.</p> </li> <li> <p>Failed:
+     * Include failed deployments in the resulting list.</p> </li> <li> <p>Stopped:
+     * Include stopped deployments in the resulting list.</p> </li> </ul>
+     */
+    inline bool IncludeOnlyStatusesHasBeenSet() const { return m_includeOnlyStatusesHasBeenSet; }
 
     /**
      * <p>A subset of deployments to list by status:</p> <ul> <li> <p>Created: Include
@@ -218,6 +240,12 @@ namespace Model
      * <p>A time range (start and end) for returning a subset of the list of
      * deployments.</p>
      */
+    inline bool CreateTimeRangeHasBeenSet() const { return m_createTimeRangeHasBeenSet; }
+
+    /**
+     * <p>A time range (start and end) for returning a subset of the list of
+     * deployments.</p>
+     */
     inline void SetCreateTimeRange(const TimeRange& value) { m_createTimeRangeHasBeenSet = true; m_createTimeRange = value; }
 
     /**
@@ -244,6 +272,12 @@ namespace Model
      * used to return the next set of deployments in the list.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
+    /**
+     * <p>An identifier returned from the previous list deployments call. It can be
+     * used to return the next set of deployments in the list.</p>
+     */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
      * <p>An identifier returned from the previous list deployments call. It can be

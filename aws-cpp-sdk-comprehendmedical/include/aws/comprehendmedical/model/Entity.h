@@ -63,6 +63,12 @@ namespace Model
      * <p> The numeric identifier for the entity. This is a monotonically increasing id
      * unique within this response rather than a global unique identifier. </p>
      */
+    inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
+
+    /**
+     * <p> The numeric identifier for the entity. This is a monotonically increasing id
+     * unique within this response rather than a global unique identifier. </p>
+     */
     inline void SetId(int value) { m_idHasBeenSet = true; m_id = value; }
 
     /**
@@ -77,6 +83,12 @@ namespace Model
      * begins. The offset returns the UTF-8 code point in the string. </p>
      */
     inline int GetBeginOffset() const{ return m_beginOffset; }
+
+    /**
+     * <p> The 0-based character offset in the input text that shows where the entity
+     * begins. The offset returns the UTF-8 code point in the string. </p>
+     */
+    inline bool BeginOffsetHasBeenSet() const { return m_beginOffsetHasBeenSet; }
 
     /**
      * <p> The 0-based character offset in the input text that shows where the entity
@@ -101,6 +113,12 @@ namespace Model
      * <p> The 0-based character offset in the input text that shows where the entity
      * ends. The offset returns the UTF-8 code point in the string. </p>
      */
+    inline bool EndOffsetHasBeenSet() const { return m_endOffsetHasBeenSet; }
+
+    /**
+     * <p> The 0-based character offset in the input text that shows where the entity
+     * ends. The offset returns the UTF-8 code point in the string. </p>
+     */
     inline void SetEndOffset(int value) { m_endOffsetHasBeenSet = true; m_endOffset = value; }
 
     /**
@@ -120,6 +138,12 @@ namespace Model
      * <p>The level of confidence that Comprehend Medical has in the accuracy of the
      * detection.</p>
      */
+    inline bool ScoreHasBeenSet() const { return m_scoreHasBeenSet; }
+
+    /**
+     * <p>The level of confidence that Comprehend Medical has in the accuracy of the
+     * detection.</p>
+     */
     inline void SetScore(double value) { m_scoreHasBeenSet = true; m_score = value; }
 
     /**
@@ -133,6 +157,11 @@ namespace Model
      * <p> The segment of input text extracted as this entity.</p>
      */
     inline const Aws::String& GetText() const{ return m_text; }
+
+    /**
+     * <p> The segment of input text extracted as this entity.</p>
+     */
+    inline bool TextHasBeenSet() const { return m_textHasBeenSet; }
 
     /**
      * <p> The segment of input text extracted as this entity.</p>
@@ -173,6 +202,11 @@ namespace Model
     /**
      * <p> The category of the entity.</p>
      */
+    inline bool CategoryHasBeenSet() const { return m_categoryHasBeenSet; }
+
+    /**
+     * <p> The category of the entity.</p>
+     */
     inline void SetCategory(const EntityType& value) { m_categoryHasBeenSet = true; m_category = value; }
 
     /**
@@ -199,6 +233,11 @@ namespace Model
     /**
      * <p> Describes the specific type of entity with category of entities. </p>
      */
+    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
+
+    /**
+     * <p> Describes the specific type of entity with category of entities. </p>
+     */
     inline void SetType(const EntitySubType& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
@@ -221,6 +260,11 @@ namespace Model
      * <p>Contextual information for the entity</p>
      */
     inline const Aws::Vector<Trait>& GetTraits() const{ return m_traits; }
+
+    /**
+     * <p>Contextual information for the entity</p>
+     */
+    inline bool TraitsHasBeenSet() const { return m_traitsHasBeenSet; }
 
     /**
      * <p>Contextual information for the entity</p>
@@ -257,6 +301,11 @@ namespace Model
      * <p> The extracted attributes that relate to this entity.</p>
      */
     inline const Aws::Vector<Attribute>& GetAttributes() const{ return m_attributes; }
+
+    /**
+     * <p> The extracted attributes that relate to this entity.</p>
+     */
+    inline bool AttributesHasBeenSet() const { return m_attributesHasBeenSet; }
 
     /**
      * <p> The extracted attributes that relate to this entity.</p>

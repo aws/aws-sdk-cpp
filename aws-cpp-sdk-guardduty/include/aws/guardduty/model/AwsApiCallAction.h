@@ -58,6 +58,11 @@ namespace Model
     /**
      * AWS API name.
      */
+    inline bool ApiHasBeenSet() const { return m_apiHasBeenSet; }
+
+    /**
+     * AWS API name.
+     */
     inline void SetApi(const Aws::String& value) { m_apiHasBeenSet = true; m_api = value; }
 
     /**
@@ -90,6 +95,11 @@ namespace Model
      * AWS API caller type.
      */
     inline const Aws::String& GetCallerType() const{ return m_callerType; }
+
+    /**
+     * AWS API caller type.
+     */
+    inline bool CallerTypeHasBeenSet() const { return m_callerTypeHasBeenSet; }
 
     /**
      * AWS API caller type.
@@ -130,6 +140,11 @@ namespace Model
     /**
      * Domain information for the AWS API call.
      */
+    inline bool DomainDetailsHasBeenSet() const { return m_domainDetailsHasBeenSet; }
+
+    /**
+     * Domain information for the AWS API call.
+     */
     inline void SetDomainDetails(const DomainDetails& value) { m_domainDetailsHasBeenSet = true; m_domainDetails = value; }
 
     /**
@@ -156,6 +171,11 @@ namespace Model
     /**
      * Remote IP information of the connection.
      */
+    inline bool RemoteIpDetailsHasBeenSet() const { return m_remoteIpDetailsHasBeenSet; }
+
+    /**
+     * Remote IP information of the connection.
+     */
     inline void SetRemoteIpDetails(const RemoteIpDetails& value) { m_remoteIpDetailsHasBeenSet = true; m_remoteIpDetails = value; }
 
     /**
@@ -178,6 +198,11 @@ namespace Model
      * AWS service name whose API was invoked.
      */
     inline const Aws::String& GetServiceName() const{ return m_serviceName; }
+
+    /**
+     * AWS service name whose API was invoked.
+     */
+    inline bool ServiceNameHasBeenSet() const { return m_serviceNameHasBeenSet; }
 
     /**
      * AWS service name whose API was invoked.

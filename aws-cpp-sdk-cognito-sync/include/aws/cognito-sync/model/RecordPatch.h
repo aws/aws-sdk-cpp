@@ -57,6 +57,11 @@ namespace Model
     /**
      * An operation, either replace or remove.
      */
+    inline bool OpHasBeenSet() const { return m_opHasBeenSet; }
+
+    /**
+     * An operation, either replace or remove.
+     */
     inline void SetOp(const Operation& value) { m_opHasBeenSet = true; m_op = value; }
 
     /**
@@ -79,6 +84,11 @@ namespace Model
      * The key associated with the record patch.
      */
     inline const Aws::String& GetKey() const{ return m_key; }
+
+    /**
+     * The key associated with the record patch.
+     */
+    inline bool KeyHasBeenSet() const { return m_keyHasBeenSet; }
 
     /**
      * The key associated with the record patch.
@@ -119,6 +129,11 @@ namespace Model
     /**
      * The value associated with the record patch.
      */
+    inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
+
+    /**
+     * The value associated with the record patch.
+     */
     inline void SetValue(const Aws::String& value) { m_valueHasBeenSet = true; m_value = value; }
 
     /**
@@ -155,6 +170,11 @@ namespace Model
     /**
      * Last known server sync count for this record. Set to 0 if unknown.
      */
+    inline bool SyncCountHasBeenSet() const { return m_syncCountHasBeenSet; }
+
+    /**
+     * Last known server sync count for this record. Set to 0 if unknown.
+     */
     inline void SetSyncCount(long long value) { m_syncCountHasBeenSet = true; m_syncCount = value; }
 
     /**
@@ -167,6 +187,11 @@ namespace Model
      * The last modified date of the client device.
      */
     inline const Aws::Utils::DateTime& GetDeviceLastModifiedDate() const{ return m_deviceLastModifiedDate; }
+
+    /**
+     * The last modified date of the client device.
+     */
+    inline bool DeviceLastModifiedDateHasBeenSet() const { return m_deviceLastModifiedDateHasBeenSet; }
 
     /**
      * The last modified date of the client device.

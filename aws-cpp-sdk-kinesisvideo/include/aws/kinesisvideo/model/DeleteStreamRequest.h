@@ -50,6 +50,11 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the stream that you want to delete. </p>
      */
+    inline bool StreamARNHasBeenSet() const { return m_streamARNHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the stream that you want to delete. </p>
+     */
     inline void SetStreamARN(const Aws::String& value) { m_streamARNHasBeenSet = true; m_streamARN = value; }
 
     /**
@@ -86,6 +91,15 @@ namespace Model
      * stream.</p>
      */
     inline const Aws::String& GetCurrentVersion() const{ return m_currentVersion; }
+
+    /**
+     * <p>Optional: The version of the stream that you want to delete. </p> <p>Specify
+     * the version as a safeguard to ensure that your are deleting the correct stream.
+     * To get the stream version, use the <code>DescribeStream</code> API.</p> <p>If
+     * not specified, only the <code>CreationTime</code> is checked before deleting the
+     * stream.</p>
+     */
+    inline bool CurrentVersionHasBeenSet() const { return m_currentVersionHasBeenSet; }
 
     /**
      * <p>Optional: The version of the stream that you want to delete. </p> <p>Specify

@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p>The name of the filter key.</p>
      */
+    inline bool KeyHasBeenSet() const { return m_keyHasBeenSet; }
+
+    /**
+     * <p>The name of the filter key.</p>
+     */
     inline void SetKey(const Aws::String& value) { m_keyHasBeenSet = true; m_key = value; }
 
     /**
@@ -92,6 +97,13 @@ namespace Model
      * i-a12b3c4d5e6g, i-1a2b3c4d5e6,Type=Equal </p>
      */
     inline const Aws::Vector<Aws::String>& GetValues() const{ return m_values; }
+
+    /**
+     * <p>Inventory filter values. Example: inventory filter where instance IDs are
+     * specified as values Key=AWS:InstanceInformation.InstanceId,Values=
+     * i-a12b3c4d5e6g, i-1a2b3c4d5e6,Type=Equal </p>
+     */
+    inline bool ValuesHasBeenSet() const { return m_valuesHasBeenSet; }
 
     /**
      * <p>Inventory filter values. Example: inventory filter where instance IDs are
@@ -148,6 +160,12 @@ namespace Model
      * "Equal"|"NotEqual"|"BeginWith"|"LessThan"|"GreaterThan"</p>
      */
     inline const InventoryQueryOperatorType& GetType() const{ return m_type; }
+
+    /**
+     * <p>The type of filter. Valid values include the following:
+     * "Equal"|"NotEqual"|"BeginWith"|"LessThan"|"GreaterThan"</p>
+     */
+    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
 
     /**
      * <p>The type of filter. Valid values include the following:

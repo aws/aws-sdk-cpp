@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The attack type, for example, SNMP reflection or SYN flood.</p>
      */
+    inline bool VectorTypeHasBeenSet() const { return m_vectorTypeHasBeenSet; }
+
+    /**
+     * <p>The attack type, for example, SNMP reflection or SYN flood.</p>
+     */
     inline void SetVectorType(const Aws::String& value) { m_vectorTypeHasBeenSet = true; m_vectorType = value; }
 
     /**
@@ -89,6 +94,11 @@ namespace Model
      * <p>The list of counters that describe the details of the attack.</p>
      */
     inline const Aws::Vector<SummarizedCounter>& GetVectorCounters() const{ return m_vectorCounters; }
+
+    /**
+     * <p>The list of counters that describe the details of the attack.</p>
+     */
+    inline bool VectorCountersHasBeenSet() const { return m_vectorCountersHasBeenSet; }
 
     /**
      * <p>The list of counters that describe the details of the attack.</p>

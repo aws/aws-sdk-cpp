@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p>The field identifier.</p>
      */
+    inline bool KeyHasBeenSet() const { return m_keyHasBeenSet; }
+
+    /**
+     * <p>The field identifier.</p>
+     */
     inline void SetKey(const Aws::String& value) { m_keyHasBeenSet = true; m_key = value; }
 
     /**
@@ -94,6 +99,11 @@ namespace Model
     /**
      * <p>The field value, expressed as a String.</p>
      */
+    inline bool StringValueHasBeenSet() const { return m_stringValueHasBeenSet; }
+
+    /**
+     * <p>The field value, expressed as a String.</p>
+     */
     inline void SetStringValue(const Aws::String& value) { m_stringValueHasBeenSet = true; m_stringValue = value; }
 
     /**
@@ -126,6 +136,11 @@ namespace Model
      * <p>The field value, expressed as the identifier of another object.</p>
      */
     inline const Aws::String& GetRefValue() const{ return m_refValue; }
+
+    /**
+     * <p>The field value, expressed as the identifier of another object.</p>
+     */
+    inline bool RefValueHasBeenSet() const { return m_refValueHasBeenSet; }
 
     /**
      * <p>The field value, expressed as the identifier of another object.</p>

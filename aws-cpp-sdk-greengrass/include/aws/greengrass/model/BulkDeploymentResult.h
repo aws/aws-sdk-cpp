@@ -59,6 +59,11 @@ namespace Model
     /**
      * The time, in ISO format, when the deployment was created.
      */
+    inline bool CreatedAtHasBeenSet() const { return m_createdAtHasBeenSet; }
+
+    /**
+     * The time, in ISO format, when the deployment was created.
+     */
     inline void SetCreatedAt(const Aws::String& value) { m_createdAtHasBeenSet = true; m_createdAt = value; }
 
     /**
@@ -91,6 +96,11 @@ namespace Model
      * The ARN of the group deployment.
      */
     inline const Aws::String& GetDeploymentArn() const{ return m_deploymentArn; }
+
+    /**
+     * The ARN of the group deployment.
+     */
+    inline bool DeploymentArnHasBeenSet() const { return m_deploymentArnHasBeenSet; }
 
     /**
      * The ARN of the group deployment.
@@ -131,6 +141,11 @@ namespace Model
     /**
      * The ID of the group deployment.
      */
+    inline bool DeploymentIdHasBeenSet() const { return m_deploymentIdHasBeenSet; }
+
+    /**
+     * The ID of the group deployment.
+     */
     inline void SetDeploymentId(const Aws::String& value) { m_deploymentIdHasBeenSet = true; m_deploymentId = value; }
 
     /**
@@ -164,6 +179,12 @@ namespace Model
      * ''Success'', or ''Failure''.
      */
     inline const Aws::String& GetDeploymentStatus() const{ return m_deploymentStatus; }
+
+    /**
+     * The current status of the group deployment: ''InProgress'', ''Building'',
+     * ''Success'', or ''Failure''.
+     */
+    inline bool DeploymentStatusHasBeenSet() const { return m_deploymentStatusHasBeenSet; }
 
     /**
      * The current status of the group deployment: ''InProgress'', ''Building'',
@@ -210,6 +231,11 @@ namespace Model
     /**
      * The type of the deployment.
      */
+    inline bool DeploymentTypeHasBeenSet() const { return m_deploymentTypeHasBeenSet; }
+
+    /**
+     * The type of the deployment.
+     */
     inline void SetDeploymentType(const DeploymentType& value) { m_deploymentTypeHasBeenSet = true; m_deploymentType = value; }
 
     /**
@@ -232,6 +258,11 @@ namespace Model
      * Details about the error.
      */
     inline const Aws::Vector<ErrorDetail>& GetErrorDetails() const{ return m_errorDetails; }
+
+    /**
+     * Details about the error.
+     */
+    inline bool ErrorDetailsHasBeenSet() const { return m_errorDetailsHasBeenSet; }
 
     /**
      * Details about the error.
@@ -272,6 +303,11 @@ namespace Model
     /**
      * The error message for a failed deployment
      */
+    inline bool ErrorMessageHasBeenSet() const { return m_errorMessageHasBeenSet; }
+
+    /**
+     * The error message for a failed deployment
+     */
     inline void SetErrorMessage(const Aws::String& value) { m_errorMessageHasBeenSet = true; m_errorMessage = value; }
 
     /**
@@ -304,6 +340,11 @@ namespace Model
      * The ARN of the Greengrass group.
      */
     inline const Aws::String& GetGroupArn() const{ return m_groupArn; }
+
+    /**
+     * The ARN of the Greengrass group.
+     */
+    inline bool GroupArnHasBeenSet() const { return m_groupArnHasBeenSet; }
 
     /**
      * The ARN of the Greengrass group.

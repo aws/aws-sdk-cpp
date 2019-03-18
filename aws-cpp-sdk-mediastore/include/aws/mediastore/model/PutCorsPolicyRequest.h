@@ -54,6 +54,11 @@ namespace Model
     /**
      * <p>The name of the container that you want to assign the CORS policy to.</p>
      */
+    inline bool ContainerNameHasBeenSet() const { return m_containerNameHasBeenSet; }
+
+    /**
+     * <p>The name of the container that you want to assign the CORS policy to.</p>
+     */
     inline void SetContainerName(const Aws::String& value) { m_containerNameHasBeenSet = true; m_containerName = value; }
 
     /**
@@ -86,6 +91,11 @@ namespace Model
      * <p>The CORS policy to apply to the container. </p>
      */
     inline const Aws::Vector<CorsRule>& GetCorsPolicy() const{ return m_corsPolicy; }
+
+    /**
+     * <p>The CORS policy to apply to the container. </p>
+     */
+    inline bool CorsPolicyHasBeenSet() const { return m_corsPolicyHasBeenSet; }
 
     /**
      * <p>The CORS policy to apply to the container. </p>

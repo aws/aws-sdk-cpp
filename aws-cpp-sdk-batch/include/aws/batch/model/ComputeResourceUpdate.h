@@ -54,6 +54,11 @@ namespace Model
     /**
      * <p>The minimum number of EC2 vCPUs that an environment should maintain.</p>
      */
+    inline bool MinvCpusHasBeenSet() const { return m_minvCpusHasBeenSet; }
+
+    /**
+     * <p>The minimum number of EC2 vCPUs that an environment should maintain.</p>
+     */
     inline void SetMinvCpus(int value) { m_minvCpusHasBeenSet = true; m_minvCpus = value; }
 
     /**
@@ -70,6 +75,11 @@ namespace Model
     /**
      * <p>The maximum number of EC2 vCPUs that an environment can reach.</p>
      */
+    inline bool MaxvCpusHasBeenSet() const { return m_maxvCpusHasBeenSet; }
+
+    /**
+     * <p>The maximum number of EC2 vCPUs that an environment can reach.</p>
+     */
     inline void SetMaxvCpus(int value) { m_maxvCpusHasBeenSet = true; m_maxvCpus = value; }
 
     /**
@@ -82,6 +92,11 @@ namespace Model
      * <p>The desired number of EC2 vCPUS in the compute environment.</p>
      */
     inline int GetDesiredvCpus() const{ return m_desiredvCpus; }
+
+    /**
+     * <p>The desired number of EC2 vCPUS in the compute environment.</p>
+     */
+    inline bool DesiredvCpusHasBeenSet() const { return m_desiredvCpusHasBeenSet; }
 
     /**
      * <p>The desired number of EC2 vCPUS in the compute environment.</p>

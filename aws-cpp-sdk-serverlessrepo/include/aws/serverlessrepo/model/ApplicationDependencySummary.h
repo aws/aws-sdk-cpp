@@ -55,6 +55,11 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the nested application.</p>
      */
+    inline bool ApplicationIdHasBeenSet() const { return m_applicationIdHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the nested application.</p>
+     */
     inline void SetApplicationId(const Aws::String& value) { m_applicationIdHasBeenSet = true; m_applicationId = value; }
 
     /**
@@ -87,6 +92,11 @@ namespace Model
      * <p>The semantic version of the nested application.</p>
      */
     inline const Aws::String& GetSemanticVersion() const{ return m_semanticVersion; }
+
+    /**
+     * <p>The semantic version of the nested application.</p>
+     */
+    inline bool SemanticVersionHasBeenSet() const { return m_semanticVersionHasBeenSet; }
 
     /**
      * <p>The semantic version of the nested application.</p>

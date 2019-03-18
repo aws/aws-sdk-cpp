@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The version number of the Amazon ECS container agent.</p>
      */
+    inline bool AgentVersionHasBeenSet() const { return m_agentVersionHasBeenSet; }
+
+    /**
+     * <p>The version number of the Amazon ECS container agent.</p>
+     */
     inline void SetAgentVersion(const Aws::String& value) { m_agentVersionHasBeenSet = true; m_agentVersion = value; }
 
     /**
@@ -90,6 +95,13 @@ namespace Model
      * </a> GitHub repository.</p>
      */
     inline const Aws::String& GetAgentHash() const{ return m_agentHash; }
+
+    /**
+     * <p>The Git commit hash for the Amazon ECS container agent build on the <a
+     * href="https://github.com/aws/amazon-ecs-agent/commits/master">amazon-ecs-agent
+     * </a> GitHub repository.</p>
+     */
+    inline bool AgentHashHasBeenSet() const { return m_agentHashHasBeenSet; }
 
     /**
      * <p>The Git commit hash for the Amazon ECS container agent build on the <a
@@ -138,6 +150,11 @@ namespace Model
      * <p>The Docker version running on the container instance.</p>
      */
     inline const Aws::String& GetDockerVersion() const{ return m_dockerVersion; }
+
+    /**
+     * <p>The Docker version running on the container instance.</p>
+     */
+    inline bool DockerVersionHasBeenSet() const { return m_dockerVersionHasBeenSet; }
 
     /**
      * <p>The Docker version running on the container instance.</p>

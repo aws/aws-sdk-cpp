@@ -50,6 +50,11 @@ namespace Model
     /**
      * <p>The case-sensitive name of the group.</p>
      */
+    inline bool GroupNameHasBeenSet() const { return m_groupNameHasBeenSet; }
+
+    /**
+     * <p>The case-sensitive name of the group.</p>
+     */
     inline void SetGroupName(const Aws::String& value) { m_groupNameHasBeenSet = true; m_groupName = value; }
 
     /**
@@ -82,6 +87,11 @@ namespace Model
      * <p>The ARN of the group that was generated on creation.</p>
      */
     inline const Aws::String& GetGroupARN() const{ return m_groupARN; }
+
+    /**
+     * <p>The ARN of the group that was generated on creation.</p>
+     */
+    inline bool GroupARNHasBeenSet() const { return m_groupARNHasBeenSet; }
 
     /**
      * <p>The ARN of the group that was generated on creation.</p>

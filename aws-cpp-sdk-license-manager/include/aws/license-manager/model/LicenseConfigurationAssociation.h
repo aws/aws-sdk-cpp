@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p>ARN of the resource associated with the license configuration.</p>
      */
+    inline bool ResourceArnHasBeenSet() const { return m_resourceArnHasBeenSet; }
+
+    /**
+     * <p>ARN of the resource associated with the license configuration.</p>
+     */
     inline void SetResourceArn(const Aws::String& value) { m_resourceArnHasBeenSet = true; m_resourceArn = value; }
 
     /**
@@ -94,6 +99,11 @@ namespace Model
     /**
      * <p>Type of server resource.</p>
      */
+    inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
+
+    /**
+     * <p>Type of server resource.</p>
+     */
     inline void SetResourceType(const ResourceType& value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
 
     /**
@@ -116,6 +126,11 @@ namespace Model
      * <p>ID of the AWS account that owns the resource consuming licenses.</p>
      */
     inline const Aws::String& GetResourceOwnerId() const{ return m_resourceOwnerId; }
+
+    /**
+     * <p>ID of the AWS account that owns the resource consuming licenses.</p>
+     */
+    inline bool ResourceOwnerIdHasBeenSet() const { return m_resourceOwnerIdHasBeenSet; }
 
     /**
      * <p>ID of the AWS account that owns the resource consuming licenses.</p>
@@ -152,6 +167,11 @@ namespace Model
      * <p>Time when the license configuration was associated with the resource.</p>
      */
     inline const Aws::Utils::DateTime& GetAssociationTime() const{ return m_associationTime; }
+
+    /**
+     * <p>Time when the license configuration was associated with the resource.</p>
+     */
+    inline bool AssociationTimeHasBeenSet() const { return m_associationTimeHasBeenSet; }
 
     /**
      * <p>Time when the license configuration was associated with the resource.</p>

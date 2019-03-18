@@ -53,6 +53,11 @@ namespace Model
     /**
      * The unique ID that Amazon MQ generates for the configuration.
      */
+    inline bool ConfigurationIdHasBeenSet() const { return m_configurationIdHasBeenSet; }
+
+    /**
+     * The unique ID that Amazon MQ generates for the configuration.
+     */
     inline void SetConfigurationId(const Aws::String& value) { m_configurationIdHasBeenSet = true; m_configurationId = value; }
 
     /**
@@ -89,6 +94,11 @@ namespace Model
     /**
      * Required. The base64-encoded XML configuration.
      */
+    inline bool DataHasBeenSet() const { return m_dataHasBeenSet; }
+
+    /**
+     * Required. The base64-encoded XML configuration.
+     */
     inline void SetData(const Aws::String& value) { m_dataHasBeenSet = true; m_data = value; }
 
     /**
@@ -121,6 +131,11 @@ namespace Model
      * The description of the configuration.
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
+
+    /**
+     * The description of the configuration.
+     */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
 
     /**
      * The description of the configuration.

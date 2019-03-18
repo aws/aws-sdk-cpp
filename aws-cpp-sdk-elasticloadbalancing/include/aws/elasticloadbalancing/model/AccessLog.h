@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p>Specifies whether access logs are enabled for the load balancer.</p>
      */
+    inline bool EnabledHasBeenSet() const { return m_enabledHasBeenSet; }
+
+    /**
+     * <p>Specifies whether access logs are enabled for the load balancer.</p>
+     */
     inline void SetEnabled(bool value) { m_enabledHasBeenSet = true; m_enabled = value; }
 
     /**
@@ -70,6 +75,11 @@ namespace Model
      * <p>The name of the Amazon S3 bucket where the access logs are stored.</p>
      */
     inline const Aws::String& GetS3BucketName() const{ return m_s3BucketName; }
+
+    /**
+     * <p>The name of the Amazon S3 bucket where the access logs are stored.</p>
+     */
+    inline bool S3BucketNameHasBeenSet() const { return m_s3BucketNameHasBeenSet; }
 
     /**
      * <p>The name of the Amazon S3 bucket where the access logs are stored.</p>
@@ -112,6 +122,12 @@ namespace Model
      * <p>The interval for publishing the access logs. You can specify an interval of
      * either 5 minutes or 60 minutes.</p> <p>Default: 60 minutes</p>
      */
+    inline bool EmitIntervalHasBeenSet() const { return m_emitIntervalHasBeenSet; }
+
+    /**
+     * <p>The interval for publishing the access logs. You can specify an interval of
+     * either 5 minutes or 60 minutes.</p> <p>Default: 60 minutes</p>
+     */
     inline void SetEmitInterval(int value) { m_emitIntervalHasBeenSet = true; m_emitInterval = value; }
 
     /**
@@ -127,6 +143,13 @@ namespace Model
      * placed at the root level of the bucket.</p>
      */
     inline const Aws::String& GetS3BucketPrefix() const{ return m_s3BucketPrefix; }
+
+    /**
+     * <p>The logical hierarchy you created for your Amazon S3 bucket, for example
+     * <code>my-bucket-prefix/prod</code>. If the prefix is not provided, the log is
+     * placed at the root level of the bucket.</p>
+     */
+    inline bool S3BucketPrefixHasBeenSet() const { return m_s3BucketPrefixHasBeenSet; }
 
     /**
      * <p>The logical hierarchy you created for your Amazon S3 bucket, for example

@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p>The ID of the folder.</p>
      */
+    inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
+
+    /**
+     * <p>The ID of the folder.</p>
+     */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
     /**
@@ -90,6 +95,11 @@ namespace Model
      * <p>The name of the folder.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
+
+    /**
+     * <p>The name of the folder.</p>
+     */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
      * <p>The name of the folder.</p>
@@ -130,6 +140,11 @@ namespace Model
     /**
      * <p>The ID of the creator.</p>
      */
+    inline bool CreatorIdHasBeenSet() const { return m_creatorIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the creator.</p>
+     */
     inline void SetCreatorId(const Aws::String& value) { m_creatorIdHasBeenSet = true; m_creatorId = value; }
 
     /**
@@ -162,6 +177,11 @@ namespace Model
      * <p>The ID of the parent folder.</p>
      */
     inline const Aws::String& GetParentFolderId() const{ return m_parentFolderId; }
+
+    /**
+     * <p>The ID of the parent folder.</p>
+     */
+    inline bool ParentFolderIdHasBeenSet() const { return m_parentFolderIdHasBeenSet; }
 
     /**
      * <p>The ID of the parent folder.</p>
@@ -202,6 +222,11 @@ namespace Model
     /**
      * <p>The time when the folder was created.</p>
      */
+    inline bool CreatedTimestampHasBeenSet() const { return m_createdTimestampHasBeenSet; }
+
+    /**
+     * <p>The time when the folder was created.</p>
+     */
     inline void SetCreatedTimestamp(const Aws::Utils::DateTime& value) { m_createdTimestampHasBeenSet = true; m_createdTimestamp = value; }
 
     /**
@@ -224,6 +249,11 @@ namespace Model
      * <p>The time when the folder was updated.</p>
      */
     inline const Aws::Utils::DateTime& GetModifiedTimestamp() const{ return m_modifiedTimestamp; }
+
+    /**
+     * <p>The time when the folder was updated.</p>
+     */
+    inline bool ModifiedTimestampHasBeenSet() const { return m_modifiedTimestampHasBeenSet; }
 
     /**
      * <p>The time when the folder was updated.</p>
@@ -254,6 +284,11 @@ namespace Model
     /**
      * <p>The resource state of the folder.</p>
      */
+    inline bool ResourceStateHasBeenSet() const { return m_resourceStateHasBeenSet; }
+
+    /**
+     * <p>The resource state of the folder.</p>
+     */
     inline void SetResourceState(const ResourceStateType& value) { m_resourceStateHasBeenSet = true; m_resourceState = value; }
 
     /**
@@ -277,6 +312,12 @@ namespace Model
      * folder.</p>
      */
     inline const Aws::String& GetSignature() const{ return m_signature; }
+
+    /**
+     * <p>The unique identifier created from the subfolders and documents of the
+     * folder.</p>
+     */
+    inline bool SignatureHasBeenSet() const { return m_signatureHasBeenSet; }
 
     /**
      * <p>The unique identifier created from the subfolders and documents of the
@@ -323,6 +364,11 @@ namespace Model
     /**
      * <p>List of labels on the folder.</p>
      */
+    inline bool LabelsHasBeenSet() const { return m_labelsHasBeenSet; }
+
+    /**
+     * <p>List of labels on the folder.</p>
+     */
     inline void SetLabels(const Aws::Vector<Aws::String>& value) { m_labelsHasBeenSet = true; m_labels = value; }
 
     /**
@@ -364,6 +410,11 @@ namespace Model
     /**
      * <p>The size of the folder metadata.</p>
      */
+    inline bool SizeHasBeenSet() const { return m_sizeHasBeenSet; }
+
+    /**
+     * <p>The size of the folder metadata.</p>
+     */
     inline void SetSize(long long value) { m_sizeHasBeenSet = true; m_size = value; }
 
     /**
@@ -376,6 +427,11 @@ namespace Model
      * <p>The size of the latest version of the folder metadata.</p>
      */
     inline long long GetLatestVersionSize() const{ return m_latestVersionSize; }
+
+    /**
+     * <p>The size of the latest version of the folder metadata.</p>
+     */
+    inline bool LatestVersionSizeHasBeenSet() const { return m_latestVersionSizeHasBeenSet; }
 
     /**
      * <p>The size of the latest version of the folder metadata.</p>

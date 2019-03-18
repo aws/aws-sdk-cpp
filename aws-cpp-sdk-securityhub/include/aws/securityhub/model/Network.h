@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>Indicates the direction of network traffic associated with a finding.</p>
      */
+    inline bool DirectionHasBeenSet() const { return m_directionHasBeenSet; }
+
+    /**
+     * <p>Indicates the direction of network traffic associated with a finding.</p>
+     */
     inline void SetDirection(const NetworkDirection& value) { m_directionHasBeenSet = true; m_direction = value; }
 
     /**
@@ -79,6 +84,11 @@ namespace Model
      * <p>The protocol of network-related information about a finding.</p>
      */
     inline const Aws::String& GetProtocol() const{ return m_protocol; }
+
+    /**
+     * <p>The protocol of network-related information about a finding.</p>
+     */
+    inline bool ProtocolHasBeenSet() const { return m_protocolHasBeenSet; }
 
     /**
      * <p>The protocol of network-related information about a finding.</p>
@@ -119,6 +129,11 @@ namespace Model
     /**
      * <p>The source IPv4 address of network-related information about a finding.</p>
      */
+    inline bool SourceIpV4HasBeenSet() const { return m_sourceIpV4HasBeenSet; }
+
+    /**
+     * <p>The source IPv4 address of network-related information about a finding.</p>
+     */
     inline void SetSourceIpV4(const Aws::String& value) { m_sourceIpV4HasBeenSet = true; m_sourceIpV4 = value; }
 
     /**
@@ -151,6 +166,11 @@ namespace Model
      * <p>The source IPv6 address of network-related information about a finding.</p>
      */
     inline const Aws::String& GetSourceIpV6() const{ return m_sourceIpV6; }
+
+    /**
+     * <p>The source IPv6 address of network-related information about a finding.</p>
+     */
+    inline bool SourceIpV6HasBeenSet() const { return m_sourceIpV6HasBeenSet; }
 
     /**
      * <p>The source IPv6 address of network-related information about a finding.</p>
@@ -191,6 +211,11 @@ namespace Model
     /**
      * <p>The source port of network-related information about a finding.</p>
      */
+    inline bool SourcePortHasBeenSet() const { return m_sourcePortHasBeenSet; }
+
+    /**
+     * <p>The source port of network-related information about a finding.</p>
+     */
     inline void SetSourcePort(int value) { m_sourcePortHasBeenSet = true; m_sourcePort = value; }
 
     /**
@@ -203,6 +228,11 @@ namespace Model
      * <p>The source domain of network-related information about a finding.</p>
      */
     inline const Aws::String& GetSourceDomain() const{ return m_sourceDomain; }
+
+    /**
+     * <p>The source domain of network-related information about a finding.</p>
+     */
+    inline bool SourceDomainHasBeenSet() const { return m_sourceDomainHasBeenSet; }
 
     /**
      * <p>The source domain of network-related information about a finding.</p>
@@ -240,6 +270,12 @@ namespace Model
      * about a finding.</p>
      */
     inline const Aws::String& GetSourceMac() const{ return m_sourceMac; }
+
+    /**
+     * <p>The source media access control (MAC) address of network-related information
+     * about a finding.</p>
+     */
+    inline bool SourceMacHasBeenSet() const { return m_sourceMacHasBeenSet; }
 
     /**
      * <p>The source media access control (MAC) address of network-related information
@@ -288,6 +324,12 @@ namespace Model
      * <p>The destination IPv4 address of network-related information about a
      * finding.</p>
      */
+    inline bool DestinationIpV4HasBeenSet() const { return m_destinationIpV4HasBeenSet; }
+
+    /**
+     * <p>The destination IPv4 address of network-related information about a
+     * finding.</p>
+     */
     inline void SetDestinationIpV4(const Aws::String& value) { m_destinationIpV4HasBeenSet = true; m_destinationIpV4 = value; }
 
     /**
@@ -326,6 +368,12 @@ namespace Model
      * finding.</p>
      */
     inline const Aws::String& GetDestinationIpV6() const{ return m_destinationIpV6; }
+
+    /**
+     * <p>The destination IPv6 address of network-related information about a
+     * finding.</p>
+     */
+    inline bool DestinationIpV6HasBeenSet() const { return m_destinationIpV6HasBeenSet; }
 
     /**
      * <p>The destination IPv6 address of network-related information about a
@@ -372,6 +420,11 @@ namespace Model
     /**
      * <p>The destination port of network-related information about a finding.</p>
      */
+    inline bool DestinationPortHasBeenSet() const { return m_destinationPortHasBeenSet; }
+
+    /**
+     * <p>The destination port of network-related information about a finding.</p>
+     */
     inline void SetDestinationPort(int value) { m_destinationPortHasBeenSet = true; m_destinationPort = value; }
 
     /**
@@ -384,6 +437,11 @@ namespace Model
      * <p>The destination domain of network-related information about a finding.</p>
      */
     inline const Aws::String& GetDestinationDomain() const{ return m_destinationDomain; }
+
+    /**
+     * <p>The destination domain of network-related information about a finding.</p>
+     */
+    inline bool DestinationDomainHasBeenSet() const { return m_destinationDomainHasBeenSet; }
 
     /**
      * <p>The destination domain of network-related information about a finding.</p>

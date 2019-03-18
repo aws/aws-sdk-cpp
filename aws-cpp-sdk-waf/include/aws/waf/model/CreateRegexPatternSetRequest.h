@@ -54,6 +54,12 @@ namespace Model
      * <p>A friendly name or description of the <a>RegexPatternSet</a>. You can't
      * change <code>Name</code> after you create a <code>RegexPatternSet</code>.</p>
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>A friendly name or description of the <a>RegexPatternSet</a>. You can't
+     * change <code>Name</code> after you create a <code>RegexPatternSet</code>.</p>
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
@@ -91,6 +97,11 @@ namespace Model
      * <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
      */
     inline const Aws::String& GetChangeToken() const{ return m_changeToken; }
+
+    /**
+     * <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
+     */
+    inline bool ChangeTokenHasBeenSet() const { return m_changeTokenHasBeenSet; }
 
     /**
      * <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>

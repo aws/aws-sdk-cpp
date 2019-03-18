@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The name of the rule.</p>
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>The name of the rule.</p>
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
@@ -89,6 +94,11 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the rule.</p>
      */
     inline const Aws::String& GetArn() const{ return m_arn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the rule.</p>
+     */
+    inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the rule.</p>
@@ -127,6 +137,13 @@ namespace Model
      * and Event Patterns</a> in the <i>Amazon CloudWatch Events User Guide</i>.</p>
      */
     inline const Aws::String& GetEventPattern() const{ return m_eventPattern; }
+
+    /**
+     * <p>The event pattern of the rule. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/events/CloudWatchEventsandEventPatterns.html">Events
+     * and Event Patterns</a> in the <i>Amazon CloudWatch Events User Guide</i>.</p>
+     */
+    inline bool EventPatternHasBeenSet() const { return m_eventPatternHasBeenSet; }
 
     /**
      * <p>The event pattern of the rule. For more information, see <a
@@ -179,6 +196,11 @@ namespace Model
     /**
      * <p>The state of the rule.</p>
      */
+    inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
+
+    /**
+     * <p>The state of the rule.</p>
+     */
     inline void SetState(const RuleState& value) { m_stateHasBeenSet = true; m_state = value; }
 
     /**
@@ -201,6 +223,11 @@ namespace Model
      * <p>The description of the rule.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
+
+    /**
+     * <p>The description of the rule.</p>
+     */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
 
     /**
      * <p>The description of the rule.</p>
@@ -238,6 +265,12 @@ namespace Model
      * minutes)".</p>
      */
     inline const Aws::String& GetScheduleExpression() const{ return m_scheduleExpression; }
+
+    /**
+     * <p>The scheduling expression. For example, "cron(0 20 * * ? *)", "rate(5
+     * minutes)".</p>
+     */
+    inline bool ScheduleExpressionHasBeenSet() const { return m_scheduleExpressionHasBeenSet; }
 
     /**
      * <p>The scheduling expression. For example, "cron(0 20 * * ? *)", "rate(5
@@ -286,6 +319,12 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the role that is used for target
      * invocation.</p>
      */
+    inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the role that is used for target
+     * invocation.</p>
+     */
     inline void SetRoleArn(const Aws::String& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
 
     /**
@@ -324,6 +363,12 @@ namespace Model
      * field displays the principal name of the service that created the rule.</p>
      */
     inline const Aws::String& GetManagedBy() const{ return m_managedBy; }
+
+    /**
+     * <p>If the rule was created on behalf of your account by an AWS service, this
+     * field displays the principal name of the service that created the rule.</p>
+     */
+    inline bool ManagedByHasBeenSet() const { return m_managedByHasBeenSet; }
 
     /**
      * <p>If the rule was created on behalf of your account by an AWS service, this

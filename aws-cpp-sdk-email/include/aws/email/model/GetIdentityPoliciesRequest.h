@@ -70,6 +70,15 @@ namespace Model
      * <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>.</p> <p>To
      * successfully call this API, you must own the identity.</p>
      */
+    inline bool IdentityHasBeenSet() const { return m_identityHasBeenSet; }
+
+    /**
+     * <p>The identity for which the policies will be retrieved. You can specify an
+     * identity by using its name or by using its Amazon Resource Name (ARN). Examples:
+     * <code>user@example.com</code>, <code>example.com</code>,
+     * <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>.</p> <p>To
+     * successfully call this API, you must own the identity.</p>
+     */
     inline void SetIdentity(const Aws::String& value) { m_identityHasBeenSet = true; m_identity = value; }
 
     /**
@@ -124,6 +133,13 @@ namespace Model
      * attached to the identity, you can use <code>ListIdentityPolicies</code>.</p>
      */
     inline const Aws::Vector<Aws::String>& GetPolicyNames() const{ return m_policyNames; }
+
+    /**
+     * <p>A list of the names of policies to be retrieved. You can retrieve a maximum
+     * of 20 policies at a time. If you do not know the names of the policies that are
+     * attached to the identity, you can use <code>ListIdentityPolicies</code>.</p>
+     */
+    inline bool PolicyNamesHasBeenSet() const { return m_policyNamesHasBeenSet; }
 
     /**
      * <p>A list of the names of policies to be retrieved. You can retrieve a maximum

@@ -52,6 +52,11 @@ namespace Model
     /**
      * <p>The layer ID.</p>
      */
+    inline bool LayerIdHasBeenSet() const { return m_layerIdHasBeenSet; }
+
+    /**
+     * <p>The layer ID.</p>
+     */
     inline void SetLayerId(const Aws::String& value) { m_layerIdHasBeenSet = true; m_layerId = value; }
 
     /**

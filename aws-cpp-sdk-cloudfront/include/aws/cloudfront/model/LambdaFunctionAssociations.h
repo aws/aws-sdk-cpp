@@ -66,6 +66,11 @@ namespace Model
     /**
      * <p>The number of Lambda function associations for this cache behavior.</p>
      */
+    inline bool QuantityHasBeenSet() const { return m_quantityHasBeenSet; }
+
+    /**
+     * <p>The number of Lambda function associations for this cache behavior.</p>
+     */
     inline void SetQuantity(int value) { m_quantityHasBeenSet = true; m_quantity = value; }
 
     /**
@@ -80,6 +85,13 @@ namespace Model
      * <code>Quantity</code> is <code>0</code>, you can omit <code>Items</code>.</p>
      */
     inline const Aws::Vector<LambdaFunctionAssociation>& GetItems() const{ return m_items; }
+
+    /**
+     * <p> <b>Optional</b>: A complex type that contains
+     * <code>LambdaFunctionAssociation</code> items for this cache behavior. If
+     * <code>Quantity</code> is <code>0</code>, you can omit <code>Items</code>.</p>
+     */
+    inline bool ItemsHasBeenSet() const { return m_itemsHasBeenSet; }
 
     /**
      * <p> <b>Optional</b>: A complex type that contains

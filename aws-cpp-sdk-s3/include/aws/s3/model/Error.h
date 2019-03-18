@@ -55,6 +55,11 @@ namespace Model
     /**
      * <p/>
      */
+    inline bool KeyHasBeenSet() const { return m_keyHasBeenSet; }
+
+    /**
+     * <p/>
+     */
     inline void SetKey(const Aws::String& value) { m_keyHasBeenSet = true; m_key = value; }
 
     /**
@@ -87,6 +92,11 @@ namespace Model
      * <p/>
      */
     inline const Aws::String& GetVersionId() const{ return m_versionId; }
+
+    /**
+     * <p/>
+     */
+    inline bool VersionIdHasBeenSet() const { return m_versionIdHasBeenSet; }
 
     /**
      * <p/>
@@ -127,6 +137,11 @@ namespace Model
     /**
      * <p/>
      */
+    inline bool CodeHasBeenSet() const { return m_codeHasBeenSet; }
+
+    /**
+     * <p/>
+     */
     inline void SetCode(const Aws::String& value) { m_codeHasBeenSet = true; m_code = value; }
 
     /**
@@ -159,6 +174,11 @@ namespace Model
      * <p/>
      */
     inline const Aws::String& GetMessage() const{ return m_message; }
+
+    /**
+     * <p/>
+     */
+    inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
 
     /**
      * <p/>

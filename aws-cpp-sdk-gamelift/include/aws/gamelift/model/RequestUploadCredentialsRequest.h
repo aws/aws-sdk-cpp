@@ -55,6 +55,11 @@ namespace Model
     /**
      * <p>Unique identifier for a build to get credentials for.</p>
      */
+    inline bool BuildIdHasBeenSet() const { return m_buildIdHasBeenSet; }
+
+    /**
+     * <p>Unique identifier for a build to get credentials for.</p>
+     */
     inline void SetBuildId(const Aws::String& value) { m_buildIdHasBeenSet = true; m_buildId = value; }
 
     /**

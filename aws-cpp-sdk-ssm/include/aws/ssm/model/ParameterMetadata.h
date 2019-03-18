@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p>The parameter name.</p>
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>The parameter name.</p>
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
@@ -96,6 +101,12 @@ namespace Model
      * <p>The type of parameter. Valid parameter types include the following: String,
      * String list, Secure string.</p>
      */
+    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
+
+    /**
+     * <p>The type of parameter. Valid parameter types include the following: String,
+     * String list, Secure string.</p>
+     */
     inline void SetType(const ParameterType& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
@@ -121,6 +132,11 @@ namespace Model
      * <p>The ID of the query key used for this parameter.</p>
      */
     inline const Aws::String& GetKeyId() const{ return m_keyId; }
+
+    /**
+     * <p>The ID of the query key used for this parameter.</p>
+     */
+    inline bool KeyIdHasBeenSet() const { return m_keyIdHasBeenSet; }
 
     /**
      * <p>The ID of the query key used for this parameter.</p>
@@ -161,6 +177,11 @@ namespace Model
     /**
      * <p>Date the parameter was last changed or updated.</p>
      */
+    inline bool LastModifiedDateHasBeenSet() const { return m_lastModifiedDateHasBeenSet; }
+
+    /**
+     * <p>Date the parameter was last changed or updated.</p>
+     */
     inline void SetLastModifiedDate(const Aws::Utils::DateTime& value) { m_lastModifiedDateHasBeenSet = true; m_lastModifiedDate = value; }
 
     /**
@@ -184,6 +205,12 @@ namespace Model
      * parameter.</p>
      */
     inline const Aws::String& GetLastModifiedUser() const{ return m_lastModifiedUser; }
+
+    /**
+     * <p>Amazon Resource Name (ARN) of the AWS user who last changed the
+     * parameter.</p>
+     */
+    inline bool LastModifiedUserHasBeenSet() const { return m_lastModifiedUserHasBeenSet; }
 
     /**
      * <p>Amazon Resource Name (ARN) of the AWS user who last changed the
@@ -230,6 +257,11 @@ namespace Model
     /**
      * <p>Description of the parameter actions.</p>
      */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
+
+    /**
+     * <p>Description of the parameter actions.</p>
+     */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
@@ -263,6 +295,12 @@ namespace Model
      * <p>a-zA-Z0-9_.-</p>
      */
     inline const Aws::String& GetAllowedPattern() const{ return m_allowedPattern; }
+
+    /**
+     * <p>A parameter name can include only the following letters and symbols.</p>
+     * <p>a-zA-Z0-9_.-</p>
+     */
+    inline bool AllowedPatternHasBeenSet() const { return m_allowedPatternHasBeenSet; }
 
     /**
      * <p>A parameter name can include only the following letters and symbols.</p>
@@ -305,6 +343,11 @@ namespace Model
      * <p>The parameter version.</p>
      */
     inline long long GetVersion() const{ return m_version; }
+
+    /**
+     * <p>The parameter version.</p>
+     */
+    inline bool VersionHasBeenSet() const { return m_versionHasBeenSet; }
 
     /**
      * <p>The parameter version.</p>

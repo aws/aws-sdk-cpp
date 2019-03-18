@@ -92,6 +92,26 @@ namespace Model
      * the same Availability Zone group.</p> <p>Default: Instances are launched in any
      * available Availability Zone.</p>
      */
+    inline bool AvailabilityZoneGroupHasBeenSet() const { return m_availabilityZoneGroupHasBeenSet; }
+
+    /**
+     * <p>The user-specified name for a logical grouping of requests.</p> <p>When you
+     * specify an Availability Zone group in a Spot Instance request, all Spot
+     * Instances in the request are launched in the same Availability Zone. Instance
+     * proximity is maintained with this parameter, but the choice of Availability Zone
+     * is not. The group applies only to requests for Spot Instances of the same
+     * instance type. Any additional Spot Instance requests that are specified with the
+     * same Availability Zone group name are launched in that same Availability Zone,
+     * as long as at least one instance from the group is still active.</p> <p>If there
+     * is no active instance running in the Availability Zone group that you specify
+     * for a new Spot Instance request (all instances are terminated, the request is
+     * expired, or the maximum price you specified falls below current Spot price),
+     * then Amazon EC2 launches the instance in any Availability Zone where the
+     * constraint can be met. Consequently, the subsequent set of Spot Instances could
+     * be placed in a different zone from the original request, even if you specified
+     * the same Availability Zone group.</p> <p>Default: Instances are launched in any
+     * available Availability Zone.</p>
+     */
     inline void SetAvailabilityZoneGroup(const Aws::String& value) { m_availabilityZoneGroupHasBeenSet = true; m_availabilityZoneGroup = value; }
 
     /**
@@ -217,6 +237,18 @@ namespace Model
      * specify an Availability Zone group or a launch group if you specify a
      * duration.</p>
      */
+    inline bool BlockDurationMinutesHasBeenSet() const { return m_blockDurationMinutesHasBeenSet; }
+
+    /**
+     * <p>The required duration for the Spot Instances (also known as Spot blocks), in
+     * minutes. This value must be a multiple of 60 (60, 120, 180, 240, 300, or
+     * 360).</p> <p>The duration period starts as soon as your Spot Instance receives
+     * its instance ID. At the end of the duration period, Amazon EC2 marks the Spot
+     * Instance for termination and provides a Spot Instance termination notice, which
+     * gives the instance a two-minute warning before it terminates.</p> <p>You can't
+     * specify an Availability Zone group or a launch group if you specify a
+     * duration.</p>
+     */
     inline void SetBlockDurationMinutes(int value) { m_blockDurationMinutesHasBeenSet = true; m_blockDurationMinutes = value; }
 
     /**
@@ -240,6 +272,15 @@ namespace Model
      * Instances</i>.</p>
      */
     inline const Aws::String& GetClientToken() const{ return m_clientToken; }
+
+    /**
+     * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
+     * of the request. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How
+     * to Ensure Idempotency</a> in the <i>Amazon EC2 User Guide for Linux
+     * Instances</i>.</p>
+     */
+    inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
 
     /**
      * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
@@ -310,6 +351,14 @@ namespace Model
      * required permissions, the error response is <code>DryRunOperation</code>.
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
+    inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
+
+    /**
+     * <p>Checks whether you have the required permissions for the action, without
+     * actually making the request, and provides an error response. If you have the
+     * required permissions, the error response is <code>DryRunOperation</code>.
+     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+     */
     inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
 
     /**
@@ -329,6 +378,11 @@ namespace Model
     /**
      * <p>The maximum number of Spot Instances to launch.</p> <p>Default: 1</p>
      */
+    inline bool InstanceCountHasBeenSet() const { return m_instanceCountHasBeenSet; }
+
+    /**
+     * <p>The maximum number of Spot Instances to launch.</p> <p>Default: 1</p>
+     */
     inline void SetInstanceCount(int value) { m_instanceCountHasBeenSet = true; m_instanceCount = value; }
 
     /**
@@ -343,6 +397,13 @@ namespace Model
      * terminated individually</p>
      */
     inline const Aws::String& GetLaunchGroup() const{ return m_launchGroup; }
+
+    /**
+     * <p>The instance launch group. Launch groups are Spot Instances that launch
+     * together and terminate together.</p> <p>Default: Instances are launched and
+     * terminated individually</p>
+     */
+    inline bool LaunchGroupHasBeenSet() const { return m_launchGroupHasBeenSet; }
 
     /**
      * <p>The instance launch group. Launch groups are Spot Instances that launch
@@ -395,6 +456,11 @@ namespace Model
     /**
      * <p>The launch specification.</p>
      */
+    inline bool LaunchSpecificationHasBeenSet() const { return m_launchSpecificationHasBeenSet; }
+
+    /**
+     * <p>The launch specification.</p>
+     */
     inline void SetLaunchSpecification(const RequestSpotLaunchSpecification& value) { m_launchSpecificationHasBeenSet = true; m_launchSpecification = value; }
 
     /**
@@ -418,6 +484,12 @@ namespace Model
      * The default is the On-Demand price.</p>
      */
     inline const Aws::String& GetSpotPrice() const{ return m_spotPrice; }
+
+    /**
+     * <p>The maximum price per hour that you are willing to pay for a Spot Instance.
+     * The default is the On-Demand price.</p>
+     */
+    inline bool SpotPriceHasBeenSet() const { return m_spotPriceHasBeenSet; }
 
     /**
      * <p>The maximum price per hour that you are willing to pay for a Spot Instance.
@@ -464,6 +536,11 @@ namespace Model
     /**
      * <p>The Spot Instance request type.</p> <p>Default: <code>one-time</code> </p>
      */
+    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
+
+    /**
+     * <p>The Spot Instance request type.</p> <p>Default: <code>one-time</code> </p>
+     */
     inline void SetType(const SpotInstanceType& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
@@ -490,6 +567,15 @@ namespace Model
      * until it expires or is canceled.</p>
      */
     inline const Aws::Utils::DateTime& GetValidFrom() const{ return m_validFrom; }
+
+    /**
+     * <p>The start date of the request. If this is a one-time request, the request
+     * becomes active at this date and time and remains active until all instances
+     * launch, the request expires, or the request is canceled. If the request is
+     * persistent, the request becomes active at this date and time and remains active
+     * until it expires or is canceled.</p>
+     */
+    inline bool ValidFromHasBeenSet() const { return m_validFromHasBeenSet; }
 
     /**
      * <p>The start date of the request. If this is a one-time request, the request
@@ -544,6 +630,15 @@ namespace Model
      * or this date is reached. The default end date is 7 days from the current
      * date.</p>
      */
+    inline bool ValidUntilHasBeenSet() const { return m_validUntilHasBeenSet; }
+
+    /**
+     * <p>The end date of the request. If this is a one-time request, the request
+     * remains active until all instances launch, the request is canceled, or this date
+     * is reached. If the request is persistent, it remains active until it is canceled
+     * or this date is reached. The default end date is 7 days from the current
+     * date.</p>
+     */
     inline void SetValidUntil(const Aws::Utils::DateTime& value) { m_validUntilHasBeenSet = true; m_validUntil = value; }
 
     /**
@@ -579,6 +674,12 @@ namespace Model
      * <code>terminate</code>.</p>
      */
     inline const InstanceInterruptionBehavior& GetInstanceInterruptionBehavior() const{ return m_instanceInterruptionBehavior; }
+
+    /**
+     * <p>The behavior when a Spot Instance is interrupted. The default is
+     * <code>terminate</code>.</p>
+     */
+    inline bool InstanceInterruptionBehaviorHasBeenSet() const { return m_instanceInterruptionBehaviorHasBeenSet; }
 
     /**
      * <p>The behavior when a Spot Instance is interrupted. The default is

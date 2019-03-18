@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The delivery medium (email message or SMS message) to send the MFA code.</p>
      */
+    inline bool DeliveryMediumHasBeenSet() const { return m_deliveryMediumHasBeenSet; }
+
+    /**
+     * <p>The delivery medium (email message or SMS message) to send the MFA code.</p>
+     */
     inline void SetDeliveryMedium(const DeliveryMediumType& value) { m_deliveryMediumHasBeenSet = true; m_deliveryMedium = value; }
 
     /**
@@ -79,6 +84,11 @@ namespace Model
      * <p>The attribute name of the MFA option type.</p>
      */
     inline const Aws::String& GetAttributeName() const{ return m_attributeName; }
+
+    /**
+     * <p>The attribute name of the MFA option type.</p>
+     */
+    inline bool AttributeNameHasBeenSet() const { return m_attributeNameHasBeenSet; }
 
     /**
      * <p>The attribute name of the MFA option type.</p>

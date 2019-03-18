@@ -50,6 +50,11 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the application.</p>
      */
+    inline bool ApplicationIdHasBeenSet() const { return m_applicationIdHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the application.</p>
+     */
     inline void SetApplicationId(const Aws::String& value) { m_applicationIdHasBeenSet = true; m_applicationId = value; }
 
     /**
@@ -85,6 +90,14 @@ namespace Model
  </p>
      */
     inline const Aws::String& GetSemanticVersion() const{ return m_semanticVersion; }
+
+    /**
+     * <p>The semantic version of the application:</p><p>
+ <a
+     * href="https://semver.org/">https://semver.org/</a>
+ </p>
+     */
+    inline bool SemanticVersionHasBeenSet() const { return m_semanticVersionHasBeenSet; }
 
     /**
      * <p>The semantic version of the application:</p><p>

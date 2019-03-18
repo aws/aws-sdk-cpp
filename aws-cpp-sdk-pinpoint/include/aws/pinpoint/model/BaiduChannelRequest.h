@@ -55,6 +55,11 @@ namespace Model
     /**
      * Platform credential API key from Baidu.
      */
+    inline bool ApiKeyHasBeenSet() const { return m_apiKeyHasBeenSet; }
+
+    /**
+     * Platform credential API key from Baidu.
+     */
     inline void SetApiKey(const Aws::String& value) { m_apiKeyHasBeenSet = true; m_apiKey = value; }
 
     /**
@@ -91,6 +96,11 @@ namespace Model
     /**
      * If the channel is enabled for sending messages.
      */
+    inline bool EnabledHasBeenSet() const { return m_enabledHasBeenSet; }
+
+    /**
+     * If the channel is enabled for sending messages.
+     */
     inline void SetEnabled(bool value) { m_enabledHasBeenSet = true; m_enabled = value; }
 
     /**
@@ -103,6 +113,11 @@ namespace Model
      * Platform credential Secret key from Baidu.
      */
     inline const Aws::String& GetSecretKey() const{ return m_secretKey; }
+
+    /**
+     * Platform credential Secret key from Baidu.
+     */
+    inline bool SecretKeyHasBeenSet() const { return m_secretKeyHasBeenSet; }
 
     /**
      * Platform credential Secret key from Baidu.

@@ -55,6 +55,11 @@ namespace Model
     /**
      * <p>Ciphertext of the data to reencrypt.</p>
      */
+    inline bool CiphertextBlobHasBeenSet() const { return m_ciphertextBlobHasBeenSet; }
+
+    /**
+     * <p>Ciphertext of the data to reencrypt.</p>
+     */
     inline void SetCiphertextBlob(const Aws::Utils::ByteBuffer& value) { m_ciphertextBlobHasBeenSet = true; m_ciphertextBlob = value; }
 
     /**
@@ -78,6 +83,12 @@ namespace Model
      * <code>CiphertextBlob</code> parameter.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetSourceEncryptionContext() const{ return m_sourceEncryptionContext; }
+
+    /**
+     * <p>Encryption context used to encrypt and decrypt the data specified in the
+     * <code>CiphertextBlob</code> parameter.</p>
+     */
+    inline bool SourceEncryptionContextHasBeenSet() const { return m_sourceEncryptionContextHasBeenSet; }
 
     /**
      * <p>Encryption context used to encrypt and decrypt the data specified in the
@@ -161,6 +172,22 @@ namespace Model
      * <a>ListAliases</a>.</p>
      */
     inline const Aws::String& GetDestinationKeyId() const{ return m_destinationKeyId; }
+
+    /**
+     * <p>A unique identifier for the CMK that is used to reencrypt the data.</p> <p>To
+     * specify a CMK, use its key ID, Amazon Resource Name (ARN), alias name, or alias
+     * ARN. When using an alias name, prefix it with "alias/". To specify a CMK in a
+     * different AWS account, you must use the key ARN or alias ARN.</p> <p>For
+     * example:</p> <ul> <li> <p>Key ID:
+     * <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li> <li> <p>Key ARN:
+     * <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
+     * </p> </li> <li> <p>Alias name: <code>alias/ExampleAlias</code> </p> </li> <li>
+     * <p>Alias ARN: <code>arn:aws:kms:us-east-2:111122223333:alias/ExampleAlias</code>
+     * </p> </li> </ul> <p>To get the key ID and key ARN for a CMK, use <a>ListKeys</a>
+     * or <a>DescribeKey</a>. To get the alias name and alias ARN, use
+     * <a>ListAliases</a>.</p>
+     */
+    inline bool DestinationKeyIdHasBeenSet() const { return m_destinationKeyIdHasBeenSet; }
 
     /**
      * <p>A unique identifier for the CMK that is used to reencrypt the data.</p> <p>To
@@ -267,6 +294,11 @@ namespace Model
     /**
      * <p>Encryption context to use when the data is reencrypted.</p>
      */
+    inline bool DestinationEncryptionContextHasBeenSet() const { return m_destinationEncryptionContextHasBeenSet; }
+
+    /**
+     * <p>Encryption context to use when the data is reencrypted.</p>
+     */
     inline void SetDestinationEncryptionContext(const Aws::Map<Aws::String, Aws::String>& value) { m_destinationEncryptionContextHasBeenSet = true; m_destinationEncryptionContext = value; }
 
     /**
@@ -326,6 +358,13 @@ namespace Model
      * Tokens</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
      */
     inline const Aws::Vector<Aws::String>& GetGrantTokens() const{ return m_grantTokens; }
+
+    /**
+     * <p>A list of grant tokens.</p> <p>For more information, see <a
+     * href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token">Grant
+     * Tokens</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
+     */
+    inline bool GrantTokensHasBeenSet() const { return m_grantTokensHasBeenSet; }
 
     /**
      * <p>A list of grant tokens.</p> <p>For more information, see <a

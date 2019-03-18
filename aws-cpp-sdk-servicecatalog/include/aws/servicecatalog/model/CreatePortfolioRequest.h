@@ -59,6 +59,13 @@ namespace Model
      * </li> <li> <p> <code>jp</code> - Japanese</p> </li> <li> <p> <code>zh</code> -
      * Chinese</p> </li> </ul>
      */
+    inline bool AcceptLanguageHasBeenSet() const { return m_acceptLanguageHasBeenSet; }
+
+    /**
+     * <p>The language code.</p> <ul> <li> <p> <code>en</code> - English (default)</p>
+     * </li> <li> <p> <code>jp</code> - Japanese</p> </li> <li> <p> <code>zh</code> -
+     * Chinese</p> </li> </ul>
+     */
     inline void SetAcceptLanguage(const Aws::String& value) { m_acceptLanguageHasBeenSet = true; m_acceptLanguage = value; }
 
     /**
@@ -105,6 +112,11 @@ namespace Model
     /**
      * <p>The name to use for display purposes.</p>
      */
+    inline bool DisplayNameHasBeenSet() const { return m_displayNameHasBeenSet; }
+
+    /**
+     * <p>The name to use for display purposes.</p>
+     */
     inline void SetDisplayName(const Aws::String& value) { m_displayNameHasBeenSet = true; m_displayName = value; }
 
     /**
@@ -137,6 +149,11 @@ namespace Model
      * <p>The description of the portfolio.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
+
+    /**
+     * <p>The description of the portfolio.</p>
+     */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
 
     /**
      * <p>The description of the portfolio.</p>
@@ -177,6 +194,11 @@ namespace Model
     /**
      * <p>The name of the portfolio provider.</p>
      */
+    inline bool ProviderNameHasBeenSet() const { return m_providerNameHasBeenSet; }
+
+    /**
+     * <p>The name of the portfolio provider.</p>
+     */
     inline void SetProviderName(const Aws::String& value) { m_providerNameHasBeenSet = true; m_providerName = value; }
 
     /**
@@ -209,6 +231,11 @@ namespace Model
      * <p>One or more tags.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>One or more tags.</p>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
      * <p>One or more tags.</p>
@@ -247,6 +274,13 @@ namespace Model
      * each repeated request.</p>
      */
     inline const Aws::String& GetIdempotencyToken() const{ return m_idempotencyToken; }
+
+    /**
+     * <p>A unique identifier that you provide to ensure idempotency. If multiple
+     * requests differ only by the idempotency token, the same response is returned for
+     * each repeated request.</p>
+     */
+    inline bool IdempotencyTokenHasBeenSet() const { return m_idempotencyTokenHasBeenSet; }
 
     /**
      * <p>A unique identifier that you provide to ensure idempotency. If multiple

@@ -76,6 +76,15 @@ namespace Model
      * matches this list or is a superset of this list, the grant allows the operation.
      * Otherwise, the grant does not allow the operation.</p>
      */
+    inline bool EncryptionContextSubsetHasBeenSet() const { return m_encryptionContextSubsetHasBeenSet; }
+
+    /**
+     * <p>A list of key-value pairs, all of which must be present in the encryption
+     * context of certain subsequent operations that the grant allows. When certain
+     * subsequent operations allowed by the grant include encryption context that
+     * matches this list or is a superset of this list, the grant allows the operation.
+     * Otherwise, the grant does not allow the operation.</p>
+     */
     inline void SetEncryptionContextSubset(const Aws::Map<Aws::String, Aws::String>& value) { m_encryptionContextSubsetHasBeenSet = true; m_encryptionContextSubset = value; }
 
     /**
@@ -177,6 +186,15 @@ namespace Model
      * operation.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetEncryptionContextEquals() const{ return m_encryptionContextEquals; }
+
+    /**
+     * <p>A list of key-value pairs that must be present in the encryption context of
+     * certain subsequent operations that the grant allows. When certain subsequent
+     * operations allowed by the grant include encryption context that matches this
+     * list, the grant allows the operation. Otherwise, the grant does not allow the
+     * operation.</p>
+     */
+    inline bool EncryptionContextEqualsHasBeenSet() const { return m_encryptionContextEqualsHasBeenSet; }
 
     /**
      * <p>A list of key-value pairs that must be present in the encryption context of

@@ -55,6 +55,11 @@ namespace Model
     /**
      * <p>The origin access identity's ID.</p>
      */
+    inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
+
+    /**
+     * <p>The origin access identity's ID.</p>
+     */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
     /**
@@ -89,6 +94,13 @@ namespace Model
      * <code>E2QWRUHAPOMQZL</code>.</p>
      */
     inline const Aws::String& GetIfMatch() const{ return m_ifMatch; }
+
+    /**
+     * <p>The value of the <code>ETag</code> header you received from a previous
+     * <code>GET</code> or <code>PUT</code> request. For example:
+     * <code>E2QWRUHAPOMQZL</code>.</p>
+     */
+    inline bool IfMatchHasBeenSet() const { return m_ifMatchHasBeenSet; }
 
     /**
      * <p>The value of the <code>ETag</code> header you received from a previous

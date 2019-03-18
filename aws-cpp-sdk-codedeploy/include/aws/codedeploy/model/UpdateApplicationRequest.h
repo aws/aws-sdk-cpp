@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The current name of the application you want to change.</p>
      */
+    inline bool ApplicationNameHasBeenSet() const { return m_applicationNameHasBeenSet; }
+
+    /**
+     * <p>The current name of the application you want to change.</p>
+     */
     inline void SetApplicationName(const Aws::String& value) { m_applicationNameHasBeenSet = true; m_applicationName = value; }
 
     /**
@@ -88,6 +93,11 @@ namespace Model
      * <p>The new name to give the application.</p>
      */
     inline const Aws::String& GetNewApplicationName() const{ return m_newApplicationName; }
+
+    /**
+     * <p>The new name to give the application.</p>
+     */
+    inline bool NewApplicationNameHasBeenSet() const { return m_newApplicationNameHasBeenSet; }
 
     /**
      * <p>The new name to give the application.</p>

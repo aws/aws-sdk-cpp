@@ -56,6 +56,13 @@ namespace Model
      * delete. <code>GeoMatchSetId</code> is returned by <a>CreateGeoMatchSet</a> and
      * by <a>ListGeoMatchSets</a>.</p>
      */
+    inline bool GeoMatchSetIdHasBeenSet() const { return m_geoMatchSetIdHasBeenSet; }
+
+    /**
+     * <p>The <code>GeoMatchSetID</code> of the <a>GeoMatchSet</a> that you want to
+     * delete. <code>GeoMatchSetId</code> is returned by <a>CreateGeoMatchSet</a> and
+     * by <a>ListGeoMatchSets</a>.</p>
+     */
     inline void SetGeoMatchSetId(const Aws::String& value) { m_geoMatchSetIdHasBeenSet = true; m_geoMatchSetId = value; }
 
     /**
@@ -98,6 +105,11 @@ namespace Model
      * <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
      */
     inline const Aws::String& GetChangeToken() const{ return m_changeToken; }
+
+    /**
+     * <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
+     */
+    inline bool ChangeTokenHasBeenSet() const { return m_changeTokenHasBeenSet; }
 
     /**
      * <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>

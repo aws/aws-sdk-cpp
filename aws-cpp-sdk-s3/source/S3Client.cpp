@@ -197,6 +197,21 @@ void S3Client::OverrideEndpoint(const Aws::String& endpoint)
 }
 AbortMultipartUploadOutcome S3Client::AbortMultipartUpload(const AbortMultipartUploadRequest& request) const
 {
+  if (!request.BucketHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("AbortMultipartUpload", "Required field: Bucket, is not set");
+    return AbortMultipartUploadOutcome(Aws::Client::AWSError<S3Errors>(S3Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Bucket]", false));
+  }
+  if (!request.KeyHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("AbortMultipartUpload", "Required field: Key, is not set");
+    return AbortMultipartUploadOutcome(Aws::Client::AWSError<S3Errors>(S3Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Key]", false));
+  }
+  if (!request.UploadIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("AbortMultipartUpload", "Required field: UploadId, is not set");
+    return AbortMultipartUploadOutcome(Aws::Client::AWSError<S3Errors>(S3Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [UploadId]", false));
+  }
   Aws::Http::URI uri = ComputeEndpointString(request.GetBucket());
   Aws::StringStream ss;
   ss << "/";
@@ -233,6 +248,21 @@ void S3Client::AbortMultipartUploadAsyncHelper(const AbortMultipartUploadRequest
 
 CompleteMultipartUploadOutcome S3Client::CompleteMultipartUpload(const CompleteMultipartUploadRequest& request) const
 {
+  if (!request.BucketHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("CompleteMultipartUpload", "Required field: Bucket, is not set");
+    return CompleteMultipartUploadOutcome(Aws::Client::AWSError<S3Errors>(S3Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Bucket]", false));
+  }
+  if (!request.KeyHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("CompleteMultipartUpload", "Required field: Key, is not set");
+    return CompleteMultipartUploadOutcome(Aws::Client::AWSError<S3Errors>(S3Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Key]", false));
+  }
+  if (!request.UploadIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("CompleteMultipartUpload", "Required field: UploadId, is not set");
+    return CompleteMultipartUploadOutcome(Aws::Client::AWSError<S3Errors>(S3Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [UploadId]", false));
+  }
   Aws::Http::URI uri = ComputeEndpointString(request.GetBucket());
   Aws::StringStream ss;
   ss << "/";
@@ -269,6 +299,21 @@ void S3Client::CompleteMultipartUploadAsyncHelper(const CompleteMultipartUploadR
 
 CopyObjectOutcome S3Client::CopyObject(const CopyObjectRequest& request) const
 {
+  if (!request.BucketHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("CopyObject", "Required field: Bucket, is not set");
+    return CopyObjectOutcome(Aws::Client::AWSError<S3Errors>(S3Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Bucket]", false));
+  }
+  if (!request.CopySourceHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("CopyObject", "Required field: CopySource, is not set");
+    return CopyObjectOutcome(Aws::Client::AWSError<S3Errors>(S3Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [CopySource]", false));
+  }
+  if (!request.KeyHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("CopyObject", "Required field: Key, is not set");
+    return CopyObjectOutcome(Aws::Client::AWSError<S3Errors>(S3Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Key]", false));
+  }
   Aws::Http::URI uri = ComputeEndpointString(request.GetBucket());
   Aws::StringStream ss;
   ss << "/";
@@ -305,6 +350,11 @@ void S3Client::CopyObjectAsyncHelper(const CopyObjectRequest& request, const Cop
 
 CreateBucketOutcome S3Client::CreateBucket(const CreateBucketRequest& request) const
 {
+  if (!request.BucketHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("CreateBucket", "Required field: Bucket, is not set");
+    return CreateBucketOutcome(Aws::Client::AWSError<S3Errors>(S3Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Bucket]", false));
+  }
   Aws::Http::URI uri = ComputeEndpointString();
   Aws::StringStream ss;
   ss << "/";
@@ -341,6 +391,16 @@ void S3Client::CreateBucketAsyncHelper(const CreateBucketRequest& request, const
 
 CreateMultipartUploadOutcome S3Client::CreateMultipartUpload(const CreateMultipartUploadRequest& request) const
 {
+  if (!request.BucketHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("CreateMultipartUpload", "Required field: Bucket, is not set");
+    return CreateMultipartUploadOutcome(Aws::Client::AWSError<S3Errors>(S3Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Bucket]", false));
+  }
+  if (!request.KeyHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("CreateMultipartUpload", "Required field: Key, is not set");
+    return CreateMultipartUploadOutcome(Aws::Client::AWSError<S3Errors>(S3Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Key]", false));
+  }
   Aws::Http::URI uri = ComputeEndpointString(request.GetBucket());
   Aws::StringStream ss;
   ss << "/";
@@ -379,6 +439,11 @@ void S3Client::CreateMultipartUploadAsyncHelper(const CreateMultipartUploadReque
 
 DeleteBucketOutcome S3Client::DeleteBucket(const DeleteBucketRequest& request) const
 {
+  if (!request.BucketHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteBucket", "Required field: Bucket, is not set");
+    return DeleteBucketOutcome(Aws::Client::AWSError<S3Errors>(S3Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Bucket]", false));
+  }
   Aws::Http::URI uri = ComputeEndpointString(request.GetBucket());
   Aws::StringStream ss;
   uri.SetPath(uri.GetPath() + ss.str());
@@ -413,6 +478,16 @@ void S3Client::DeleteBucketAsyncHelper(const DeleteBucketRequest& request, const
 
 DeleteBucketAnalyticsConfigurationOutcome S3Client::DeleteBucketAnalyticsConfiguration(const DeleteBucketAnalyticsConfigurationRequest& request) const
 {
+  if (!request.BucketHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteBucketAnalyticsConfiguration", "Required field: Bucket, is not set");
+    return DeleteBucketAnalyticsConfigurationOutcome(Aws::Client::AWSError<S3Errors>(S3Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Bucket]", false));
+  }
+  if (!request.IdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteBucketAnalyticsConfiguration", "Required field: Id, is not set");
+    return DeleteBucketAnalyticsConfigurationOutcome(Aws::Client::AWSError<S3Errors>(S3Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Id]", false));
+  }
   Aws::Http::URI uri = ComputeEndpointString(request.GetBucket());
   Aws::StringStream ss;
   ss.str("?analytics");
@@ -448,6 +523,11 @@ void S3Client::DeleteBucketAnalyticsConfigurationAsyncHelper(const DeleteBucketA
 
 DeleteBucketCorsOutcome S3Client::DeleteBucketCors(const DeleteBucketCorsRequest& request) const
 {
+  if (!request.BucketHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteBucketCors", "Required field: Bucket, is not set");
+    return DeleteBucketCorsOutcome(Aws::Client::AWSError<S3Errors>(S3Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Bucket]", false));
+  }
   Aws::Http::URI uri = ComputeEndpointString(request.GetBucket());
   Aws::StringStream ss;
   ss.str("?cors");
@@ -483,6 +563,11 @@ void S3Client::DeleteBucketCorsAsyncHelper(const DeleteBucketCorsRequest& reques
 
 DeleteBucketEncryptionOutcome S3Client::DeleteBucketEncryption(const DeleteBucketEncryptionRequest& request) const
 {
+  if (!request.BucketHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteBucketEncryption", "Required field: Bucket, is not set");
+    return DeleteBucketEncryptionOutcome(Aws::Client::AWSError<S3Errors>(S3Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Bucket]", false));
+  }
   Aws::Http::URI uri = ComputeEndpointString(request.GetBucket());
   Aws::StringStream ss;
   ss.str("?encryption");
@@ -518,6 +603,16 @@ void S3Client::DeleteBucketEncryptionAsyncHelper(const DeleteBucketEncryptionReq
 
 DeleteBucketInventoryConfigurationOutcome S3Client::DeleteBucketInventoryConfiguration(const DeleteBucketInventoryConfigurationRequest& request) const
 {
+  if (!request.BucketHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteBucketInventoryConfiguration", "Required field: Bucket, is not set");
+    return DeleteBucketInventoryConfigurationOutcome(Aws::Client::AWSError<S3Errors>(S3Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Bucket]", false));
+  }
+  if (!request.IdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteBucketInventoryConfiguration", "Required field: Id, is not set");
+    return DeleteBucketInventoryConfigurationOutcome(Aws::Client::AWSError<S3Errors>(S3Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Id]", false));
+  }
   Aws::Http::URI uri = ComputeEndpointString(request.GetBucket());
   Aws::StringStream ss;
   ss.str("?inventory");
@@ -553,6 +648,11 @@ void S3Client::DeleteBucketInventoryConfigurationAsyncHelper(const DeleteBucketI
 
 DeleteBucketLifecycleOutcome S3Client::DeleteBucketLifecycle(const DeleteBucketLifecycleRequest& request) const
 {
+  if (!request.BucketHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteBucketLifecycle", "Required field: Bucket, is not set");
+    return DeleteBucketLifecycleOutcome(Aws::Client::AWSError<S3Errors>(S3Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Bucket]", false));
+  }
   Aws::Http::URI uri = ComputeEndpointString(request.GetBucket());
   Aws::StringStream ss;
   ss.str("?lifecycle");
@@ -588,6 +688,16 @@ void S3Client::DeleteBucketLifecycleAsyncHelper(const DeleteBucketLifecycleReque
 
 DeleteBucketMetricsConfigurationOutcome S3Client::DeleteBucketMetricsConfiguration(const DeleteBucketMetricsConfigurationRequest& request) const
 {
+  if (!request.BucketHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteBucketMetricsConfiguration", "Required field: Bucket, is not set");
+    return DeleteBucketMetricsConfigurationOutcome(Aws::Client::AWSError<S3Errors>(S3Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Bucket]", false));
+  }
+  if (!request.IdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteBucketMetricsConfiguration", "Required field: Id, is not set");
+    return DeleteBucketMetricsConfigurationOutcome(Aws::Client::AWSError<S3Errors>(S3Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Id]", false));
+  }
   Aws::Http::URI uri = ComputeEndpointString(request.GetBucket());
   Aws::StringStream ss;
   ss.str("?metrics");
@@ -623,6 +733,11 @@ void S3Client::DeleteBucketMetricsConfigurationAsyncHelper(const DeleteBucketMet
 
 DeleteBucketPolicyOutcome S3Client::DeleteBucketPolicy(const DeleteBucketPolicyRequest& request) const
 {
+  if (!request.BucketHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteBucketPolicy", "Required field: Bucket, is not set");
+    return DeleteBucketPolicyOutcome(Aws::Client::AWSError<S3Errors>(S3Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Bucket]", false));
+  }
   Aws::Http::URI uri = ComputeEndpointString(request.GetBucket());
   Aws::StringStream ss;
   ss.str("?policy");
@@ -658,6 +773,11 @@ void S3Client::DeleteBucketPolicyAsyncHelper(const DeleteBucketPolicyRequest& re
 
 DeleteBucketReplicationOutcome S3Client::DeleteBucketReplication(const DeleteBucketReplicationRequest& request) const
 {
+  if (!request.BucketHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteBucketReplication", "Required field: Bucket, is not set");
+    return DeleteBucketReplicationOutcome(Aws::Client::AWSError<S3Errors>(S3Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Bucket]", false));
+  }
   Aws::Http::URI uri = ComputeEndpointString(request.GetBucket());
   Aws::StringStream ss;
   ss.str("?replication");
@@ -693,6 +813,11 @@ void S3Client::DeleteBucketReplicationAsyncHelper(const DeleteBucketReplicationR
 
 DeleteBucketTaggingOutcome S3Client::DeleteBucketTagging(const DeleteBucketTaggingRequest& request) const
 {
+  if (!request.BucketHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteBucketTagging", "Required field: Bucket, is not set");
+    return DeleteBucketTaggingOutcome(Aws::Client::AWSError<S3Errors>(S3Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Bucket]", false));
+  }
   Aws::Http::URI uri = ComputeEndpointString(request.GetBucket());
   Aws::StringStream ss;
   ss.str("?tagging");
@@ -728,6 +853,11 @@ void S3Client::DeleteBucketTaggingAsyncHelper(const DeleteBucketTaggingRequest& 
 
 DeleteBucketWebsiteOutcome S3Client::DeleteBucketWebsite(const DeleteBucketWebsiteRequest& request) const
 {
+  if (!request.BucketHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteBucketWebsite", "Required field: Bucket, is not set");
+    return DeleteBucketWebsiteOutcome(Aws::Client::AWSError<S3Errors>(S3Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Bucket]", false));
+  }
   Aws::Http::URI uri = ComputeEndpointString(request.GetBucket());
   Aws::StringStream ss;
   ss.str("?website");
@@ -763,6 +893,16 @@ void S3Client::DeleteBucketWebsiteAsyncHelper(const DeleteBucketWebsiteRequest& 
 
 DeleteObjectOutcome S3Client::DeleteObject(const DeleteObjectRequest& request) const
 {
+  if (!request.BucketHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteObject", "Required field: Bucket, is not set");
+    return DeleteObjectOutcome(Aws::Client::AWSError<S3Errors>(S3Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Bucket]", false));
+  }
+  if (!request.KeyHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteObject", "Required field: Key, is not set");
+    return DeleteObjectOutcome(Aws::Client::AWSError<S3Errors>(S3Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Key]", false));
+  }
   Aws::Http::URI uri = ComputeEndpointString(request.GetBucket());
   Aws::StringStream ss;
   ss << "/";
@@ -799,6 +939,16 @@ void S3Client::DeleteObjectAsyncHelper(const DeleteObjectRequest& request, const
 
 DeleteObjectTaggingOutcome S3Client::DeleteObjectTagging(const DeleteObjectTaggingRequest& request) const
 {
+  if (!request.BucketHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteObjectTagging", "Required field: Bucket, is not set");
+    return DeleteObjectTaggingOutcome(Aws::Client::AWSError<S3Errors>(S3Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Bucket]", false));
+  }
+  if (!request.KeyHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteObjectTagging", "Required field: Key, is not set");
+    return DeleteObjectTaggingOutcome(Aws::Client::AWSError<S3Errors>(S3Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Key]", false));
+  }
   Aws::Http::URI uri = ComputeEndpointString(request.GetBucket());
   Aws::StringStream ss;
   ss << "/";
@@ -837,6 +987,11 @@ void S3Client::DeleteObjectTaggingAsyncHelper(const DeleteObjectTaggingRequest& 
 
 DeleteObjectsOutcome S3Client::DeleteObjects(const DeleteObjectsRequest& request) const
 {
+  if (!request.BucketHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteObjects", "Required field: Bucket, is not set");
+    return DeleteObjectsOutcome(Aws::Client::AWSError<S3Errors>(S3Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Bucket]", false));
+  }
   Aws::Http::URI uri = ComputeEndpointString(request.GetBucket());
   Aws::StringStream ss;
   ss.str("?delete");
@@ -872,6 +1027,11 @@ void S3Client::DeleteObjectsAsyncHelper(const DeleteObjectsRequest& request, con
 
 DeletePublicAccessBlockOutcome S3Client::DeletePublicAccessBlock(const DeletePublicAccessBlockRequest& request) const
 {
+  if (!request.BucketHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeletePublicAccessBlock", "Required field: Bucket, is not set");
+    return DeletePublicAccessBlockOutcome(Aws::Client::AWSError<S3Errors>(S3Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Bucket]", false));
+  }
   Aws::Http::URI uri = ComputeEndpointString(request.GetBucket());
   Aws::StringStream ss;
   ss.str("?publicAccessBlock");
@@ -907,6 +1067,11 @@ void S3Client::DeletePublicAccessBlockAsyncHelper(const DeletePublicAccessBlockR
 
 GetBucketAccelerateConfigurationOutcome S3Client::GetBucketAccelerateConfiguration(const GetBucketAccelerateConfigurationRequest& request) const
 {
+  if (!request.BucketHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetBucketAccelerateConfiguration", "Required field: Bucket, is not set");
+    return GetBucketAccelerateConfigurationOutcome(Aws::Client::AWSError<S3Errors>(S3Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Bucket]", false));
+  }
   Aws::Http::URI uri = ComputeEndpointString(request.GetBucket());
   Aws::StringStream ss;
   ss.str("?accelerate");
@@ -942,6 +1107,11 @@ void S3Client::GetBucketAccelerateConfigurationAsyncHelper(const GetBucketAccele
 
 GetBucketAclOutcome S3Client::GetBucketAcl(const GetBucketAclRequest& request) const
 {
+  if (!request.BucketHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetBucketAcl", "Required field: Bucket, is not set");
+    return GetBucketAclOutcome(Aws::Client::AWSError<S3Errors>(S3Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Bucket]", false));
+  }
   Aws::Http::URI uri = ComputeEndpointString(request.GetBucket());
   Aws::StringStream ss;
   ss.str("?acl");
@@ -977,6 +1147,16 @@ void S3Client::GetBucketAclAsyncHelper(const GetBucketAclRequest& request, const
 
 GetBucketAnalyticsConfigurationOutcome S3Client::GetBucketAnalyticsConfiguration(const GetBucketAnalyticsConfigurationRequest& request) const
 {
+  if (!request.BucketHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetBucketAnalyticsConfiguration", "Required field: Bucket, is not set");
+    return GetBucketAnalyticsConfigurationOutcome(Aws::Client::AWSError<S3Errors>(S3Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Bucket]", false));
+  }
+  if (!request.IdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetBucketAnalyticsConfiguration", "Required field: Id, is not set");
+    return GetBucketAnalyticsConfigurationOutcome(Aws::Client::AWSError<S3Errors>(S3Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Id]", false));
+  }
   Aws::Http::URI uri = ComputeEndpointString(request.GetBucket());
   Aws::StringStream ss;
   ss.str("?analytics");
@@ -1012,6 +1192,11 @@ void S3Client::GetBucketAnalyticsConfigurationAsyncHelper(const GetBucketAnalyti
 
 GetBucketCorsOutcome S3Client::GetBucketCors(const GetBucketCorsRequest& request) const
 {
+  if (!request.BucketHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetBucketCors", "Required field: Bucket, is not set");
+    return GetBucketCorsOutcome(Aws::Client::AWSError<S3Errors>(S3Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Bucket]", false));
+  }
   Aws::Http::URI uri = ComputeEndpointString(request.GetBucket());
   Aws::StringStream ss;
   ss.str("?cors");
@@ -1047,6 +1232,11 @@ void S3Client::GetBucketCorsAsyncHelper(const GetBucketCorsRequest& request, con
 
 GetBucketEncryptionOutcome S3Client::GetBucketEncryption(const GetBucketEncryptionRequest& request) const
 {
+  if (!request.BucketHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetBucketEncryption", "Required field: Bucket, is not set");
+    return GetBucketEncryptionOutcome(Aws::Client::AWSError<S3Errors>(S3Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Bucket]", false));
+  }
   Aws::Http::URI uri = ComputeEndpointString(request.GetBucket());
   Aws::StringStream ss;
   ss.str("?encryption");
@@ -1082,6 +1272,16 @@ void S3Client::GetBucketEncryptionAsyncHelper(const GetBucketEncryptionRequest& 
 
 GetBucketInventoryConfigurationOutcome S3Client::GetBucketInventoryConfiguration(const GetBucketInventoryConfigurationRequest& request) const
 {
+  if (!request.BucketHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetBucketInventoryConfiguration", "Required field: Bucket, is not set");
+    return GetBucketInventoryConfigurationOutcome(Aws::Client::AWSError<S3Errors>(S3Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Bucket]", false));
+  }
+  if (!request.IdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetBucketInventoryConfiguration", "Required field: Id, is not set");
+    return GetBucketInventoryConfigurationOutcome(Aws::Client::AWSError<S3Errors>(S3Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Id]", false));
+  }
   Aws::Http::URI uri = ComputeEndpointString(request.GetBucket());
   Aws::StringStream ss;
   ss.str("?inventory");
@@ -1117,6 +1317,11 @@ void S3Client::GetBucketInventoryConfigurationAsyncHelper(const GetBucketInvento
 
 GetBucketLifecycleConfigurationOutcome S3Client::GetBucketLifecycleConfiguration(const GetBucketLifecycleConfigurationRequest& request) const
 {
+  if (!request.BucketHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetBucketLifecycleConfiguration", "Required field: Bucket, is not set");
+    return GetBucketLifecycleConfigurationOutcome(Aws::Client::AWSError<S3Errors>(S3Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Bucket]", false));
+  }
   Aws::Http::URI uri = ComputeEndpointString(request.GetBucket());
   Aws::StringStream ss;
   ss.str("?lifecycle");
@@ -1152,6 +1357,11 @@ void S3Client::GetBucketLifecycleConfigurationAsyncHelper(const GetBucketLifecyc
 
 GetBucketLocationOutcome S3Client::GetBucketLocation(const GetBucketLocationRequest& request) const
 {
+  if (!request.BucketHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetBucketLocation", "Required field: Bucket, is not set");
+    return GetBucketLocationOutcome(Aws::Client::AWSError<S3Errors>(S3Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Bucket]", false));
+  }
   Aws::Http::URI uri = ComputeEndpointString(request.GetBucket());
   Aws::StringStream ss;
   ss.str("?location");
@@ -1187,6 +1397,11 @@ void S3Client::GetBucketLocationAsyncHelper(const GetBucketLocationRequest& requ
 
 GetBucketLoggingOutcome S3Client::GetBucketLogging(const GetBucketLoggingRequest& request) const
 {
+  if (!request.BucketHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetBucketLogging", "Required field: Bucket, is not set");
+    return GetBucketLoggingOutcome(Aws::Client::AWSError<S3Errors>(S3Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Bucket]", false));
+  }
   Aws::Http::URI uri = ComputeEndpointString(request.GetBucket());
   Aws::StringStream ss;
   ss.str("?logging");
@@ -1222,6 +1437,16 @@ void S3Client::GetBucketLoggingAsyncHelper(const GetBucketLoggingRequest& reques
 
 GetBucketMetricsConfigurationOutcome S3Client::GetBucketMetricsConfiguration(const GetBucketMetricsConfigurationRequest& request) const
 {
+  if (!request.BucketHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetBucketMetricsConfiguration", "Required field: Bucket, is not set");
+    return GetBucketMetricsConfigurationOutcome(Aws::Client::AWSError<S3Errors>(S3Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Bucket]", false));
+  }
+  if (!request.IdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetBucketMetricsConfiguration", "Required field: Id, is not set");
+    return GetBucketMetricsConfigurationOutcome(Aws::Client::AWSError<S3Errors>(S3Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Id]", false));
+  }
   Aws::Http::URI uri = ComputeEndpointString(request.GetBucket());
   Aws::StringStream ss;
   ss.str("?metrics");
@@ -1257,6 +1482,11 @@ void S3Client::GetBucketMetricsConfigurationAsyncHelper(const GetBucketMetricsCo
 
 GetBucketNotificationConfigurationOutcome S3Client::GetBucketNotificationConfiguration(const GetBucketNotificationConfigurationRequest& request) const
 {
+  if (!request.BucketHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetBucketNotificationConfiguration", "Required field: Bucket, is not set");
+    return GetBucketNotificationConfigurationOutcome(Aws::Client::AWSError<S3Errors>(S3Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Bucket]", false));
+  }
   Aws::Http::URI uri = ComputeEndpointString(request.GetBucket());
   Aws::StringStream ss;
   ss.str("?notification");
@@ -1292,6 +1522,11 @@ void S3Client::GetBucketNotificationConfigurationAsyncHelper(const GetBucketNoti
 
 GetBucketPolicyOutcome S3Client::GetBucketPolicy(const GetBucketPolicyRequest& request) const
 {
+  if (!request.BucketHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetBucketPolicy", "Required field: Bucket, is not set");
+    return GetBucketPolicyOutcome(Aws::Client::AWSError<S3Errors>(S3Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Bucket]", false));
+  }
   Aws::Http::URI uri = ComputeEndpointString(request.GetBucket());
   Aws::StringStream ss;
   ss.str("?policy");
@@ -1327,6 +1562,11 @@ void S3Client::GetBucketPolicyAsyncHelper(const GetBucketPolicyRequest& request,
 
 GetBucketPolicyStatusOutcome S3Client::GetBucketPolicyStatus(const GetBucketPolicyStatusRequest& request) const
 {
+  if (!request.BucketHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetBucketPolicyStatus", "Required field: Bucket, is not set");
+    return GetBucketPolicyStatusOutcome(Aws::Client::AWSError<S3Errors>(S3Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Bucket]", false));
+  }
   Aws::Http::URI uri = ComputeEndpointString(request.GetBucket());
   Aws::StringStream ss;
   ss.str("?policyStatus");
@@ -1362,6 +1602,11 @@ void S3Client::GetBucketPolicyStatusAsyncHelper(const GetBucketPolicyStatusReque
 
 GetBucketReplicationOutcome S3Client::GetBucketReplication(const GetBucketReplicationRequest& request) const
 {
+  if (!request.BucketHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetBucketReplication", "Required field: Bucket, is not set");
+    return GetBucketReplicationOutcome(Aws::Client::AWSError<S3Errors>(S3Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Bucket]", false));
+  }
   Aws::Http::URI uri = ComputeEndpointString(request.GetBucket());
   Aws::StringStream ss;
   ss.str("?replication");
@@ -1397,6 +1642,11 @@ void S3Client::GetBucketReplicationAsyncHelper(const GetBucketReplicationRequest
 
 GetBucketRequestPaymentOutcome S3Client::GetBucketRequestPayment(const GetBucketRequestPaymentRequest& request) const
 {
+  if (!request.BucketHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetBucketRequestPayment", "Required field: Bucket, is not set");
+    return GetBucketRequestPaymentOutcome(Aws::Client::AWSError<S3Errors>(S3Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Bucket]", false));
+  }
   Aws::Http::URI uri = ComputeEndpointString(request.GetBucket());
   Aws::StringStream ss;
   ss.str("?requestPayment");
@@ -1432,6 +1682,11 @@ void S3Client::GetBucketRequestPaymentAsyncHelper(const GetBucketRequestPaymentR
 
 GetBucketTaggingOutcome S3Client::GetBucketTagging(const GetBucketTaggingRequest& request) const
 {
+  if (!request.BucketHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetBucketTagging", "Required field: Bucket, is not set");
+    return GetBucketTaggingOutcome(Aws::Client::AWSError<S3Errors>(S3Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Bucket]", false));
+  }
   Aws::Http::URI uri = ComputeEndpointString(request.GetBucket());
   Aws::StringStream ss;
   ss.str("?tagging");
@@ -1467,6 +1722,11 @@ void S3Client::GetBucketTaggingAsyncHelper(const GetBucketTaggingRequest& reques
 
 GetBucketVersioningOutcome S3Client::GetBucketVersioning(const GetBucketVersioningRequest& request) const
 {
+  if (!request.BucketHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetBucketVersioning", "Required field: Bucket, is not set");
+    return GetBucketVersioningOutcome(Aws::Client::AWSError<S3Errors>(S3Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Bucket]", false));
+  }
   Aws::Http::URI uri = ComputeEndpointString(request.GetBucket());
   Aws::StringStream ss;
   ss.str("?versioning");
@@ -1502,6 +1762,11 @@ void S3Client::GetBucketVersioningAsyncHelper(const GetBucketVersioningRequest& 
 
 GetBucketWebsiteOutcome S3Client::GetBucketWebsite(const GetBucketWebsiteRequest& request) const
 {
+  if (!request.BucketHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetBucketWebsite", "Required field: Bucket, is not set");
+    return GetBucketWebsiteOutcome(Aws::Client::AWSError<S3Errors>(S3Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Bucket]", false));
+  }
   Aws::Http::URI uri = ComputeEndpointString(request.GetBucket());
   Aws::StringStream ss;
   ss.str("?website");
@@ -1537,6 +1802,16 @@ void S3Client::GetBucketWebsiteAsyncHelper(const GetBucketWebsiteRequest& reques
 
 GetObjectOutcome S3Client::GetObject(const GetObjectRequest& request) const
 {
+  if (!request.BucketHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetObject", "Required field: Bucket, is not set");
+    return GetObjectOutcome(Aws::Client::AWSError<S3Errors>(S3Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Bucket]", false));
+  }
+  if (!request.KeyHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetObject", "Required field: Key, is not set");
+    return GetObjectOutcome(Aws::Client::AWSError<S3Errors>(S3Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Key]", false));
+  }
   Aws::Http::URI uri = ComputeEndpointString(request.GetBucket());
   Aws::StringStream ss;
   ss << "/";
@@ -1573,6 +1848,16 @@ void S3Client::GetObjectAsyncHelper(const GetObjectRequest& request, const GetOb
 
 GetObjectAclOutcome S3Client::GetObjectAcl(const GetObjectAclRequest& request) const
 {
+  if (!request.BucketHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetObjectAcl", "Required field: Bucket, is not set");
+    return GetObjectAclOutcome(Aws::Client::AWSError<S3Errors>(S3Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Bucket]", false));
+  }
+  if (!request.KeyHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetObjectAcl", "Required field: Key, is not set");
+    return GetObjectAclOutcome(Aws::Client::AWSError<S3Errors>(S3Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Key]", false));
+  }
   Aws::Http::URI uri = ComputeEndpointString(request.GetBucket());
   Aws::StringStream ss;
   ss << "/";
@@ -1611,6 +1896,16 @@ void S3Client::GetObjectAclAsyncHelper(const GetObjectAclRequest& request, const
 
 GetObjectLegalHoldOutcome S3Client::GetObjectLegalHold(const GetObjectLegalHoldRequest& request) const
 {
+  if (!request.BucketHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetObjectLegalHold", "Required field: Bucket, is not set");
+    return GetObjectLegalHoldOutcome(Aws::Client::AWSError<S3Errors>(S3Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Bucket]", false));
+  }
+  if (!request.KeyHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetObjectLegalHold", "Required field: Key, is not set");
+    return GetObjectLegalHoldOutcome(Aws::Client::AWSError<S3Errors>(S3Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Key]", false));
+  }
   Aws::Http::URI uri = ComputeEndpointString(request.GetBucket());
   Aws::StringStream ss;
   ss << "/";
@@ -1649,6 +1944,11 @@ void S3Client::GetObjectLegalHoldAsyncHelper(const GetObjectLegalHoldRequest& re
 
 GetObjectLockConfigurationOutcome S3Client::GetObjectLockConfiguration(const GetObjectLockConfigurationRequest& request) const
 {
+  if (!request.BucketHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetObjectLockConfiguration", "Required field: Bucket, is not set");
+    return GetObjectLockConfigurationOutcome(Aws::Client::AWSError<S3Errors>(S3Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Bucket]", false));
+  }
   Aws::Http::URI uri = ComputeEndpointString(request.GetBucket());
   Aws::StringStream ss;
   ss.str("?object-lock");
@@ -1684,6 +1984,16 @@ void S3Client::GetObjectLockConfigurationAsyncHelper(const GetObjectLockConfigur
 
 GetObjectRetentionOutcome S3Client::GetObjectRetention(const GetObjectRetentionRequest& request) const
 {
+  if (!request.BucketHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetObjectRetention", "Required field: Bucket, is not set");
+    return GetObjectRetentionOutcome(Aws::Client::AWSError<S3Errors>(S3Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Bucket]", false));
+  }
+  if (!request.KeyHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetObjectRetention", "Required field: Key, is not set");
+    return GetObjectRetentionOutcome(Aws::Client::AWSError<S3Errors>(S3Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Key]", false));
+  }
   Aws::Http::URI uri = ComputeEndpointString(request.GetBucket());
   Aws::StringStream ss;
   ss << "/";
@@ -1722,6 +2032,16 @@ void S3Client::GetObjectRetentionAsyncHelper(const GetObjectRetentionRequest& re
 
 GetObjectTaggingOutcome S3Client::GetObjectTagging(const GetObjectTaggingRequest& request) const
 {
+  if (!request.BucketHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetObjectTagging", "Required field: Bucket, is not set");
+    return GetObjectTaggingOutcome(Aws::Client::AWSError<S3Errors>(S3Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Bucket]", false));
+  }
+  if (!request.KeyHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetObjectTagging", "Required field: Key, is not set");
+    return GetObjectTaggingOutcome(Aws::Client::AWSError<S3Errors>(S3Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Key]", false));
+  }
   Aws::Http::URI uri = ComputeEndpointString(request.GetBucket());
   Aws::StringStream ss;
   ss << "/";
@@ -1760,6 +2080,16 @@ void S3Client::GetObjectTaggingAsyncHelper(const GetObjectTaggingRequest& reques
 
 GetObjectTorrentOutcome S3Client::GetObjectTorrent(const GetObjectTorrentRequest& request) const
 {
+  if (!request.BucketHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetObjectTorrent", "Required field: Bucket, is not set");
+    return GetObjectTorrentOutcome(Aws::Client::AWSError<S3Errors>(S3Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Bucket]", false));
+  }
+  if (!request.KeyHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetObjectTorrent", "Required field: Key, is not set");
+    return GetObjectTorrentOutcome(Aws::Client::AWSError<S3Errors>(S3Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Key]", false));
+  }
   Aws::Http::URI uri = ComputeEndpointString(request.GetBucket());
   Aws::StringStream ss;
   ss << "/";
@@ -1798,6 +2128,11 @@ void S3Client::GetObjectTorrentAsyncHelper(const GetObjectTorrentRequest& reques
 
 GetPublicAccessBlockOutcome S3Client::GetPublicAccessBlock(const GetPublicAccessBlockRequest& request) const
 {
+  if (!request.BucketHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetPublicAccessBlock", "Required field: Bucket, is not set");
+    return GetPublicAccessBlockOutcome(Aws::Client::AWSError<S3Errors>(S3Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Bucket]", false));
+  }
   Aws::Http::URI uri = ComputeEndpointString(request.GetBucket());
   Aws::StringStream ss;
   ss.str("?publicAccessBlock");
@@ -1833,6 +2168,11 @@ void S3Client::GetPublicAccessBlockAsyncHelper(const GetPublicAccessBlockRequest
 
 HeadBucketOutcome S3Client::HeadBucket(const HeadBucketRequest& request) const
 {
+  if (!request.BucketHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("HeadBucket", "Required field: Bucket, is not set");
+    return HeadBucketOutcome(Aws::Client::AWSError<S3Errors>(S3Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Bucket]", false));
+  }
   Aws::Http::URI uri = ComputeEndpointString(request.GetBucket());
   Aws::StringStream ss;
   uri.SetPath(uri.GetPath() + ss.str());
@@ -1867,6 +2207,16 @@ void S3Client::HeadBucketAsyncHelper(const HeadBucketRequest& request, const Hea
 
 HeadObjectOutcome S3Client::HeadObject(const HeadObjectRequest& request) const
 {
+  if (!request.BucketHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("HeadObject", "Required field: Bucket, is not set");
+    return HeadObjectOutcome(Aws::Client::AWSError<S3Errors>(S3Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Bucket]", false));
+  }
+  if (!request.KeyHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("HeadObject", "Required field: Key, is not set");
+    return HeadObjectOutcome(Aws::Client::AWSError<S3Errors>(S3Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Key]", false));
+  }
   Aws::Http::URI uri = ComputeEndpointString(request.GetBucket());
   Aws::StringStream ss;
   ss << "/";
@@ -1903,6 +2253,11 @@ void S3Client::HeadObjectAsyncHelper(const HeadObjectRequest& request, const Hea
 
 ListBucketAnalyticsConfigurationsOutcome S3Client::ListBucketAnalyticsConfigurations(const ListBucketAnalyticsConfigurationsRequest& request) const
 {
+  if (!request.BucketHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListBucketAnalyticsConfigurations", "Required field: Bucket, is not set");
+    return ListBucketAnalyticsConfigurationsOutcome(Aws::Client::AWSError<S3Errors>(S3Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Bucket]", false));
+  }
   Aws::Http::URI uri = ComputeEndpointString(request.GetBucket());
   Aws::StringStream ss;
   ss.str("?analytics");
@@ -1938,6 +2293,11 @@ void S3Client::ListBucketAnalyticsConfigurationsAsyncHelper(const ListBucketAnal
 
 ListBucketInventoryConfigurationsOutcome S3Client::ListBucketInventoryConfigurations(const ListBucketInventoryConfigurationsRequest& request) const
 {
+  if (!request.BucketHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListBucketInventoryConfigurations", "Required field: Bucket, is not set");
+    return ListBucketInventoryConfigurationsOutcome(Aws::Client::AWSError<S3Errors>(S3Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Bucket]", false));
+  }
   Aws::Http::URI uri = ComputeEndpointString(request.GetBucket());
   Aws::StringStream ss;
   ss.str("?inventory");
@@ -1973,6 +2333,11 @@ void S3Client::ListBucketInventoryConfigurationsAsyncHelper(const ListBucketInve
 
 ListBucketMetricsConfigurationsOutcome S3Client::ListBucketMetricsConfigurations(const ListBucketMetricsConfigurationsRequest& request) const
 {
+  if (!request.BucketHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListBucketMetricsConfigurations", "Required field: Bucket, is not set");
+    return ListBucketMetricsConfigurationsOutcome(Aws::Client::AWSError<S3Errors>(S3Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Bucket]", false));
+  }
   Aws::Http::URI uri = ComputeEndpointString(request.GetBucket());
   Aws::StringStream ss;
   ss.str("?metrics");
@@ -2041,6 +2406,11 @@ void S3Client::ListBucketsAsyncHelper(const ListBucketsResponseReceivedHandler& 
 
 ListMultipartUploadsOutcome S3Client::ListMultipartUploads(const ListMultipartUploadsRequest& request) const
 {
+  if (!request.BucketHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListMultipartUploads", "Required field: Bucket, is not set");
+    return ListMultipartUploadsOutcome(Aws::Client::AWSError<S3Errors>(S3Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Bucket]", false));
+  }
   Aws::Http::URI uri = ComputeEndpointString(request.GetBucket());
   Aws::StringStream ss;
   ss.str("?uploads");
@@ -2076,6 +2446,11 @@ void S3Client::ListMultipartUploadsAsyncHelper(const ListMultipartUploadsRequest
 
 ListObjectVersionsOutcome S3Client::ListObjectVersions(const ListObjectVersionsRequest& request) const
 {
+  if (!request.BucketHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListObjectVersions", "Required field: Bucket, is not set");
+    return ListObjectVersionsOutcome(Aws::Client::AWSError<S3Errors>(S3Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Bucket]", false));
+  }
   Aws::Http::URI uri = ComputeEndpointString(request.GetBucket());
   Aws::StringStream ss;
   ss.str("?versions");
@@ -2111,6 +2486,11 @@ void S3Client::ListObjectVersionsAsyncHelper(const ListObjectVersionsRequest& re
 
 ListObjectsOutcome S3Client::ListObjects(const ListObjectsRequest& request) const
 {
+  if (!request.BucketHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListObjects", "Required field: Bucket, is not set");
+    return ListObjectsOutcome(Aws::Client::AWSError<S3Errors>(S3Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Bucket]", false));
+  }
   Aws::Http::URI uri = ComputeEndpointString(request.GetBucket());
   Aws::StringStream ss;
   uri.SetPath(uri.GetPath() + ss.str());
@@ -2145,6 +2525,11 @@ void S3Client::ListObjectsAsyncHelper(const ListObjectsRequest& request, const L
 
 ListObjectsV2Outcome S3Client::ListObjectsV2(const ListObjectsV2Request& request) const
 {
+  if (!request.BucketHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListObjectsV2", "Required field: Bucket, is not set");
+    return ListObjectsV2Outcome(Aws::Client::AWSError<S3Errors>(S3Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Bucket]", false));
+  }
   Aws::Http::URI uri = ComputeEndpointString(request.GetBucket());
   Aws::StringStream ss;
   ss.str("?list-type=2");
@@ -2180,6 +2565,21 @@ void S3Client::ListObjectsV2AsyncHelper(const ListObjectsV2Request& request, con
 
 ListPartsOutcome S3Client::ListParts(const ListPartsRequest& request) const
 {
+  if (!request.BucketHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListParts", "Required field: Bucket, is not set");
+    return ListPartsOutcome(Aws::Client::AWSError<S3Errors>(S3Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Bucket]", false));
+  }
+  if (!request.KeyHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListParts", "Required field: Key, is not set");
+    return ListPartsOutcome(Aws::Client::AWSError<S3Errors>(S3Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Key]", false));
+  }
+  if (!request.UploadIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListParts", "Required field: UploadId, is not set");
+    return ListPartsOutcome(Aws::Client::AWSError<S3Errors>(S3Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [UploadId]", false));
+  }
   Aws::Http::URI uri = ComputeEndpointString(request.GetBucket());
   Aws::StringStream ss;
   ss << "/";
@@ -2216,6 +2616,11 @@ void S3Client::ListPartsAsyncHelper(const ListPartsRequest& request, const ListP
 
 PutBucketAccelerateConfigurationOutcome S3Client::PutBucketAccelerateConfiguration(const PutBucketAccelerateConfigurationRequest& request) const
 {
+  if (!request.BucketHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("PutBucketAccelerateConfiguration", "Required field: Bucket, is not set");
+    return PutBucketAccelerateConfigurationOutcome(Aws::Client::AWSError<S3Errors>(S3Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Bucket]", false));
+  }
   Aws::Http::URI uri = ComputeEndpointString(request.GetBucket());
   Aws::StringStream ss;
   ss.str("?accelerate");
@@ -2251,6 +2656,11 @@ void S3Client::PutBucketAccelerateConfigurationAsyncHelper(const PutBucketAccele
 
 PutBucketAclOutcome S3Client::PutBucketAcl(const PutBucketAclRequest& request) const
 {
+  if (!request.BucketHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("PutBucketAcl", "Required field: Bucket, is not set");
+    return PutBucketAclOutcome(Aws::Client::AWSError<S3Errors>(S3Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Bucket]", false));
+  }
   Aws::Http::URI uri = ComputeEndpointString(request.GetBucket());
   Aws::StringStream ss;
   ss.str("?acl");
@@ -2286,6 +2696,16 @@ void S3Client::PutBucketAclAsyncHelper(const PutBucketAclRequest& request, const
 
 PutBucketAnalyticsConfigurationOutcome S3Client::PutBucketAnalyticsConfiguration(const PutBucketAnalyticsConfigurationRequest& request) const
 {
+  if (!request.BucketHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("PutBucketAnalyticsConfiguration", "Required field: Bucket, is not set");
+    return PutBucketAnalyticsConfigurationOutcome(Aws::Client::AWSError<S3Errors>(S3Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Bucket]", false));
+  }
+  if (!request.IdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("PutBucketAnalyticsConfiguration", "Required field: Id, is not set");
+    return PutBucketAnalyticsConfigurationOutcome(Aws::Client::AWSError<S3Errors>(S3Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Id]", false));
+  }
   Aws::Http::URI uri = ComputeEndpointString(request.GetBucket());
   Aws::StringStream ss;
   ss.str("?analytics");
@@ -2321,6 +2741,11 @@ void S3Client::PutBucketAnalyticsConfigurationAsyncHelper(const PutBucketAnalyti
 
 PutBucketCorsOutcome S3Client::PutBucketCors(const PutBucketCorsRequest& request) const
 {
+  if (!request.BucketHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("PutBucketCors", "Required field: Bucket, is not set");
+    return PutBucketCorsOutcome(Aws::Client::AWSError<S3Errors>(S3Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Bucket]", false));
+  }
   Aws::Http::URI uri = ComputeEndpointString(request.GetBucket());
   Aws::StringStream ss;
   ss.str("?cors");
@@ -2356,6 +2781,11 @@ void S3Client::PutBucketCorsAsyncHelper(const PutBucketCorsRequest& request, con
 
 PutBucketEncryptionOutcome S3Client::PutBucketEncryption(const PutBucketEncryptionRequest& request) const
 {
+  if (!request.BucketHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("PutBucketEncryption", "Required field: Bucket, is not set");
+    return PutBucketEncryptionOutcome(Aws::Client::AWSError<S3Errors>(S3Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Bucket]", false));
+  }
   Aws::Http::URI uri = ComputeEndpointString(request.GetBucket());
   Aws::StringStream ss;
   ss.str("?encryption");
@@ -2391,6 +2821,16 @@ void S3Client::PutBucketEncryptionAsyncHelper(const PutBucketEncryptionRequest& 
 
 PutBucketInventoryConfigurationOutcome S3Client::PutBucketInventoryConfiguration(const PutBucketInventoryConfigurationRequest& request) const
 {
+  if (!request.BucketHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("PutBucketInventoryConfiguration", "Required field: Bucket, is not set");
+    return PutBucketInventoryConfigurationOutcome(Aws::Client::AWSError<S3Errors>(S3Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Bucket]", false));
+  }
+  if (!request.IdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("PutBucketInventoryConfiguration", "Required field: Id, is not set");
+    return PutBucketInventoryConfigurationOutcome(Aws::Client::AWSError<S3Errors>(S3Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Id]", false));
+  }
   Aws::Http::URI uri = ComputeEndpointString(request.GetBucket());
   Aws::StringStream ss;
   ss.str("?inventory");
@@ -2426,6 +2866,11 @@ void S3Client::PutBucketInventoryConfigurationAsyncHelper(const PutBucketInvento
 
 PutBucketLifecycleConfigurationOutcome S3Client::PutBucketLifecycleConfiguration(const PutBucketLifecycleConfigurationRequest& request) const
 {
+  if (!request.BucketHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("PutBucketLifecycleConfiguration", "Required field: Bucket, is not set");
+    return PutBucketLifecycleConfigurationOutcome(Aws::Client::AWSError<S3Errors>(S3Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Bucket]", false));
+  }
   Aws::Http::URI uri = ComputeEndpointString(request.GetBucket());
   Aws::StringStream ss;
   ss.str("?lifecycle");
@@ -2461,6 +2906,11 @@ void S3Client::PutBucketLifecycleConfigurationAsyncHelper(const PutBucketLifecyc
 
 PutBucketLoggingOutcome S3Client::PutBucketLogging(const PutBucketLoggingRequest& request) const
 {
+  if (!request.BucketHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("PutBucketLogging", "Required field: Bucket, is not set");
+    return PutBucketLoggingOutcome(Aws::Client::AWSError<S3Errors>(S3Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Bucket]", false));
+  }
   Aws::Http::URI uri = ComputeEndpointString(request.GetBucket());
   Aws::StringStream ss;
   ss.str("?logging");
@@ -2496,6 +2946,16 @@ void S3Client::PutBucketLoggingAsyncHelper(const PutBucketLoggingRequest& reques
 
 PutBucketMetricsConfigurationOutcome S3Client::PutBucketMetricsConfiguration(const PutBucketMetricsConfigurationRequest& request) const
 {
+  if (!request.BucketHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("PutBucketMetricsConfiguration", "Required field: Bucket, is not set");
+    return PutBucketMetricsConfigurationOutcome(Aws::Client::AWSError<S3Errors>(S3Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Bucket]", false));
+  }
+  if (!request.IdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("PutBucketMetricsConfiguration", "Required field: Id, is not set");
+    return PutBucketMetricsConfigurationOutcome(Aws::Client::AWSError<S3Errors>(S3Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Id]", false));
+  }
   Aws::Http::URI uri = ComputeEndpointString(request.GetBucket());
   Aws::StringStream ss;
   ss.str("?metrics");
@@ -2531,6 +2991,11 @@ void S3Client::PutBucketMetricsConfigurationAsyncHelper(const PutBucketMetricsCo
 
 PutBucketNotificationConfigurationOutcome S3Client::PutBucketNotificationConfiguration(const PutBucketNotificationConfigurationRequest& request) const
 {
+  if (!request.BucketHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("PutBucketNotificationConfiguration", "Required field: Bucket, is not set");
+    return PutBucketNotificationConfigurationOutcome(Aws::Client::AWSError<S3Errors>(S3Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Bucket]", false));
+  }
   Aws::Http::URI uri = ComputeEndpointString(request.GetBucket());
   Aws::StringStream ss;
   ss.str("?notification");
@@ -2566,6 +3031,11 @@ void S3Client::PutBucketNotificationConfigurationAsyncHelper(const PutBucketNoti
 
 PutBucketPolicyOutcome S3Client::PutBucketPolicy(const PutBucketPolicyRequest& request) const
 {
+  if (!request.BucketHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("PutBucketPolicy", "Required field: Bucket, is not set");
+    return PutBucketPolicyOutcome(Aws::Client::AWSError<S3Errors>(S3Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Bucket]", false));
+  }
   Aws::Http::URI uri = ComputeEndpointString(request.GetBucket());
   Aws::StringStream ss;
   ss.str("?policy");
@@ -2601,6 +3071,11 @@ void S3Client::PutBucketPolicyAsyncHelper(const PutBucketPolicyRequest& request,
 
 PutBucketReplicationOutcome S3Client::PutBucketReplication(const PutBucketReplicationRequest& request) const
 {
+  if (!request.BucketHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("PutBucketReplication", "Required field: Bucket, is not set");
+    return PutBucketReplicationOutcome(Aws::Client::AWSError<S3Errors>(S3Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Bucket]", false));
+  }
   Aws::Http::URI uri = ComputeEndpointString(request.GetBucket());
   Aws::StringStream ss;
   ss.str("?replication");
@@ -2636,6 +3111,11 @@ void S3Client::PutBucketReplicationAsyncHelper(const PutBucketReplicationRequest
 
 PutBucketRequestPaymentOutcome S3Client::PutBucketRequestPayment(const PutBucketRequestPaymentRequest& request) const
 {
+  if (!request.BucketHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("PutBucketRequestPayment", "Required field: Bucket, is not set");
+    return PutBucketRequestPaymentOutcome(Aws::Client::AWSError<S3Errors>(S3Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Bucket]", false));
+  }
   Aws::Http::URI uri = ComputeEndpointString(request.GetBucket());
   Aws::StringStream ss;
   ss.str("?requestPayment");
@@ -2671,6 +3151,11 @@ void S3Client::PutBucketRequestPaymentAsyncHelper(const PutBucketRequestPaymentR
 
 PutBucketTaggingOutcome S3Client::PutBucketTagging(const PutBucketTaggingRequest& request) const
 {
+  if (!request.BucketHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("PutBucketTagging", "Required field: Bucket, is not set");
+    return PutBucketTaggingOutcome(Aws::Client::AWSError<S3Errors>(S3Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Bucket]", false));
+  }
   Aws::Http::URI uri = ComputeEndpointString(request.GetBucket());
   Aws::StringStream ss;
   ss.str("?tagging");
@@ -2706,6 +3191,11 @@ void S3Client::PutBucketTaggingAsyncHelper(const PutBucketTaggingRequest& reques
 
 PutBucketVersioningOutcome S3Client::PutBucketVersioning(const PutBucketVersioningRequest& request) const
 {
+  if (!request.BucketHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("PutBucketVersioning", "Required field: Bucket, is not set");
+    return PutBucketVersioningOutcome(Aws::Client::AWSError<S3Errors>(S3Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Bucket]", false));
+  }
   Aws::Http::URI uri = ComputeEndpointString(request.GetBucket());
   Aws::StringStream ss;
   ss.str("?versioning");
@@ -2741,6 +3231,11 @@ void S3Client::PutBucketVersioningAsyncHelper(const PutBucketVersioningRequest& 
 
 PutBucketWebsiteOutcome S3Client::PutBucketWebsite(const PutBucketWebsiteRequest& request) const
 {
+  if (!request.BucketHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("PutBucketWebsite", "Required field: Bucket, is not set");
+    return PutBucketWebsiteOutcome(Aws::Client::AWSError<S3Errors>(S3Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Bucket]", false));
+  }
   Aws::Http::URI uri = ComputeEndpointString(request.GetBucket());
   Aws::StringStream ss;
   ss.str("?website");
@@ -2776,6 +3271,16 @@ void S3Client::PutBucketWebsiteAsyncHelper(const PutBucketWebsiteRequest& reques
 
 PutObjectOutcome S3Client::PutObject(const PutObjectRequest& request) const
 {
+  if (!request.BucketHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("PutObject", "Required field: Bucket, is not set");
+    return PutObjectOutcome(Aws::Client::AWSError<S3Errors>(S3Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Bucket]", false));
+  }
+  if (!request.KeyHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("PutObject", "Required field: Key, is not set");
+    return PutObjectOutcome(Aws::Client::AWSError<S3Errors>(S3Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Key]", false));
+  }
   Aws::Http::URI uri = ComputeEndpointString(request.GetBucket());
   Aws::StringStream ss;
   ss << "/";
@@ -2812,6 +3317,16 @@ void S3Client::PutObjectAsyncHelper(const PutObjectRequest& request, const PutOb
 
 PutObjectAclOutcome S3Client::PutObjectAcl(const PutObjectAclRequest& request) const
 {
+  if (!request.BucketHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("PutObjectAcl", "Required field: Bucket, is not set");
+    return PutObjectAclOutcome(Aws::Client::AWSError<S3Errors>(S3Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Bucket]", false));
+  }
+  if (!request.KeyHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("PutObjectAcl", "Required field: Key, is not set");
+    return PutObjectAclOutcome(Aws::Client::AWSError<S3Errors>(S3Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Key]", false));
+  }
   Aws::Http::URI uri = ComputeEndpointString(request.GetBucket());
   Aws::StringStream ss;
   ss << "/";
@@ -2850,6 +3365,16 @@ void S3Client::PutObjectAclAsyncHelper(const PutObjectAclRequest& request, const
 
 PutObjectLegalHoldOutcome S3Client::PutObjectLegalHold(const PutObjectLegalHoldRequest& request) const
 {
+  if (!request.BucketHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("PutObjectLegalHold", "Required field: Bucket, is not set");
+    return PutObjectLegalHoldOutcome(Aws::Client::AWSError<S3Errors>(S3Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Bucket]", false));
+  }
+  if (!request.KeyHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("PutObjectLegalHold", "Required field: Key, is not set");
+    return PutObjectLegalHoldOutcome(Aws::Client::AWSError<S3Errors>(S3Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Key]", false));
+  }
   Aws::Http::URI uri = ComputeEndpointString(request.GetBucket());
   Aws::StringStream ss;
   ss << "/";
@@ -2888,6 +3413,11 @@ void S3Client::PutObjectLegalHoldAsyncHelper(const PutObjectLegalHoldRequest& re
 
 PutObjectLockConfigurationOutcome S3Client::PutObjectLockConfiguration(const PutObjectLockConfigurationRequest& request) const
 {
+  if (!request.BucketHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("PutObjectLockConfiguration", "Required field: Bucket, is not set");
+    return PutObjectLockConfigurationOutcome(Aws::Client::AWSError<S3Errors>(S3Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Bucket]", false));
+  }
   Aws::Http::URI uri = ComputeEndpointString(request.GetBucket());
   Aws::StringStream ss;
   ss.str("?object-lock");
@@ -2923,6 +3453,16 @@ void S3Client::PutObjectLockConfigurationAsyncHelper(const PutObjectLockConfigur
 
 PutObjectRetentionOutcome S3Client::PutObjectRetention(const PutObjectRetentionRequest& request) const
 {
+  if (!request.BucketHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("PutObjectRetention", "Required field: Bucket, is not set");
+    return PutObjectRetentionOutcome(Aws::Client::AWSError<S3Errors>(S3Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Bucket]", false));
+  }
+  if (!request.KeyHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("PutObjectRetention", "Required field: Key, is not set");
+    return PutObjectRetentionOutcome(Aws::Client::AWSError<S3Errors>(S3Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Key]", false));
+  }
   Aws::Http::URI uri = ComputeEndpointString(request.GetBucket());
   Aws::StringStream ss;
   ss << "/";
@@ -2961,6 +3501,16 @@ void S3Client::PutObjectRetentionAsyncHelper(const PutObjectRetentionRequest& re
 
 PutObjectTaggingOutcome S3Client::PutObjectTagging(const PutObjectTaggingRequest& request) const
 {
+  if (!request.BucketHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("PutObjectTagging", "Required field: Bucket, is not set");
+    return PutObjectTaggingOutcome(Aws::Client::AWSError<S3Errors>(S3Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Bucket]", false));
+  }
+  if (!request.KeyHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("PutObjectTagging", "Required field: Key, is not set");
+    return PutObjectTaggingOutcome(Aws::Client::AWSError<S3Errors>(S3Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Key]", false));
+  }
   Aws::Http::URI uri = ComputeEndpointString(request.GetBucket());
   Aws::StringStream ss;
   ss << "/";
@@ -2999,6 +3549,11 @@ void S3Client::PutObjectTaggingAsyncHelper(const PutObjectTaggingRequest& reques
 
 PutPublicAccessBlockOutcome S3Client::PutPublicAccessBlock(const PutPublicAccessBlockRequest& request) const
 {
+  if (!request.BucketHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("PutPublicAccessBlock", "Required field: Bucket, is not set");
+    return PutPublicAccessBlockOutcome(Aws::Client::AWSError<S3Errors>(S3Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Bucket]", false));
+  }
   Aws::Http::URI uri = ComputeEndpointString(request.GetBucket());
   Aws::StringStream ss;
   ss.str("?publicAccessBlock");
@@ -3034,6 +3589,16 @@ void S3Client::PutPublicAccessBlockAsyncHelper(const PutPublicAccessBlockRequest
 
 RestoreObjectOutcome S3Client::RestoreObject(const RestoreObjectRequest& request) const
 {
+  if (!request.BucketHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("RestoreObject", "Required field: Bucket, is not set");
+    return RestoreObjectOutcome(Aws::Client::AWSError<S3Errors>(S3Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Bucket]", false));
+  }
+  if (!request.KeyHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("RestoreObject", "Required field: Key, is not set");
+    return RestoreObjectOutcome(Aws::Client::AWSError<S3Errors>(S3Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Key]", false));
+  }
   Aws::Http::URI uri = ComputeEndpointString(request.GetBucket());
   Aws::StringStream ss;
   ss << "/";
@@ -3072,6 +3637,16 @@ void S3Client::RestoreObjectAsyncHelper(const RestoreObjectRequest& request, con
 
 SelectObjectContentOutcome S3Client::SelectObjectContent(SelectObjectContentRequest& request) const
 {
+  if (!request.BucketHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("SelectObjectContent", "Required field: Bucket, is not set");
+    return SelectObjectContentOutcome(Aws::Client::AWSError<S3Errors>(S3Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Bucket]", false));
+  }
+  if (!request.KeyHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("SelectObjectContent", "Required field: Key, is not set");
+    return SelectObjectContentOutcome(Aws::Client::AWSError<S3Errors>(S3Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Key]", false));
+  }
   Aws::Http::URI uri = ComputeEndpointString(request.GetBucket());
   Aws::StringStream ss;
   ss << "/";
@@ -3114,6 +3689,26 @@ void S3Client::SelectObjectContentAsyncHelper(SelectObjectContentRequest& reques
 
 UploadPartOutcome S3Client::UploadPart(const UploadPartRequest& request) const
 {
+  if (!request.BucketHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UploadPart", "Required field: Bucket, is not set");
+    return UploadPartOutcome(Aws::Client::AWSError<S3Errors>(S3Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Bucket]", false));
+  }
+  if (!request.KeyHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UploadPart", "Required field: Key, is not set");
+    return UploadPartOutcome(Aws::Client::AWSError<S3Errors>(S3Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Key]", false));
+  }
+  if (!request.PartNumberHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UploadPart", "Required field: PartNumber, is not set");
+    return UploadPartOutcome(Aws::Client::AWSError<S3Errors>(S3Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [PartNumber]", false));
+  }
+  if (!request.UploadIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UploadPart", "Required field: UploadId, is not set");
+    return UploadPartOutcome(Aws::Client::AWSError<S3Errors>(S3Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [UploadId]", false));
+  }
   Aws::Http::URI uri = ComputeEndpointString(request.GetBucket());
   Aws::StringStream ss;
   ss << "/";
@@ -3150,6 +3745,31 @@ void S3Client::UploadPartAsyncHelper(const UploadPartRequest& request, const Upl
 
 UploadPartCopyOutcome S3Client::UploadPartCopy(const UploadPartCopyRequest& request) const
 {
+  if (!request.BucketHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UploadPartCopy", "Required field: Bucket, is not set");
+    return UploadPartCopyOutcome(Aws::Client::AWSError<S3Errors>(S3Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Bucket]", false));
+  }
+  if (!request.CopySourceHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UploadPartCopy", "Required field: CopySource, is not set");
+    return UploadPartCopyOutcome(Aws::Client::AWSError<S3Errors>(S3Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [CopySource]", false));
+  }
+  if (!request.KeyHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UploadPartCopy", "Required field: Key, is not set");
+    return UploadPartCopyOutcome(Aws::Client::AWSError<S3Errors>(S3Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Key]", false));
+  }
+  if (!request.PartNumberHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UploadPartCopy", "Required field: PartNumber, is not set");
+    return UploadPartCopyOutcome(Aws::Client::AWSError<S3Errors>(S3Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [PartNumber]", false));
+  }
+  if (!request.UploadIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UploadPartCopy", "Required field: UploadId, is not set");
+    return UploadPartCopyOutcome(Aws::Client::AWSError<S3Errors>(S3Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [UploadId]", false));
+  }
   Aws::Http::URI uri = ComputeEndpointString(request.GetBucket());
   Aws::StringStream ss;
   ss << "/";

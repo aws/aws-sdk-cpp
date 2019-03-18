@@ -204,6 +204,11 @@ namespace Model
     /**
      * <p>The date and time when the event occurred.</p>
      */
+    inline bool EventTimestampHasBeenSet() const { return m_eventTimestampHasBeenSet; }
+
+    /**
+     * <p>The date and time when the event occurred.</p>
+     */
     inline void SetEventTimestamp(const Aws::Utils::DateTime& value) { m_eventTimestampHasBeenSet = true; m_eventTimestamp = value; }
 
     /**
@@ -226,6 +231,11 @@ namespace Model
      * <p>The type of the history event.</p>
      */
     inline const EventType& GetEventType() const{ return m_eventType; }
+
+    /**
+     * <p>The type of the history event.</p>
+     */
+    inline bool EventTypeHasBeenSet() const { return m_eventTypeHasBeenSet; }
 
     /**
      * <p>The type of the history event.</p>
@@ -258,6 +268,12 @@ namespace Model
      * <p>The system generated ID of the event. This ID uniquely identifies the event
      * with in the workflow execution history.</p>
      */
+    inline bool EventIdHasBeenSet() const { return m_eventIdHasBeenSet; }
+
+    /**
+     * <p>The system generated ID of the event. This ID uniquely identifies the event
+     * with in the workflow execution history.</p>
+     */
     inline void SetEventId(long long value) { m_eventIdHasBeenSet = true; m_eventId = value; }
 
     /**
@@ -273,6 +289,13 @@ namespace Model
      * for other event types.</p>
      */
     inline const WorkflowExecutionStartedEventAttributes& GetWorkflowExecutionStartedEventAttributes() const{ return m_workflowExecutionStartedEventAttributes; }
+
+    /**
+     * <p>If the event is of type <code>WorkflowExecutionStarted</code> then this
+     * member is set and provides detailed information about the event. It isn't set
+     * for other event types.</p>
+     */
+    inline bool WorkflowExecutionStartedEventAttributesHasBeenSet() const { return m_workflowExecutionStartedEventAttributesHasBeenSet; }
 
     /**
      * <p>If the event is of type <code>WorkflowExecutionStarted</code> then this
@@ -315,6 +338,13 @@ namespace Model
      * member is set and provides detailed information about the event. It isn't set
      * for other event types.</p>
      */
+    inline bool WorkflowExecutionCompletedEventAttributesHasBeenSet() const { return m_workflowExecutionCompletedEventAttributesHasBeenSet; }
+
+    /**
+     * <p>If the event is of type <code>WorkflowExecutionCompleted</code> then this
+     * member is set and provides detailed information about the event. It isn't set
+     * for other event types.</p>
+     */
     inline void SetWorkflowExecutionCompletedEventAttributes(const WorkflowExecutionCompletedEventAttributes& value) { m_workflowExecutionCompletedEventAttributesHasBeenSet = true; m_workflowExecutionCompletedEventAttributes = value; }
 
     /**
@@ -345,6 +375,13 @@ namespace Model
      * set for other event types.</p>
      */
     inline const CompleteWorkflowExecutionFailedEventAttributes& GetCompleteWorkflowExecutionFailedEventAttributes() const{ return m_completeWorkflowExecutionFailedEventAttributes; }
+
+    /**
+     * <p>If the event is of type <code>CompleteWorkflowExecutionFailed</code> then
+     * this member is set and provides detailed information about the event. It isn't
+     * set for other event types.</p>
+     */
+    inline bool CompleteWorkflowExecutionFailedEventAttributesHasBeenSet() const { return m_completeWorkflowExecutionFailedEventAttributesHasBeenSet; }
 
     /**
      * <p>If the event is of type <code>CompleteWorkflowExecutionFailed</code> then
@@ -387,6 +424,13 @@ namespace Model
      * is set and provides detailed information about the event. It isn't set for other
      * event types.</p>
      */
+    inline bool WorkflowExecutionFailedEventAttributesHasBeenSet() const { return m_workflowExecutionFailedEventAttributesHasBeenSet; }
+
+    /**
+     * <p>If the event is of type <code>WorkflowExecutionFailed</code> then this member
+     * is set and provides detailed information about the event. It isn't set for other
+     * event types.</p>
+     */
     inline void SetWorkflowExecutionFailedEventAttributes(const WorkflowExecutionFailedEventAttributes& value) { m_workflowExecutionFailedEventAttributesHasBeenSet = true; m_workflowExecutionFailedEventAttributes = value; }
 
     /**
@@ -417,6 +461,13 @@ namespace Model
      * for other event types.</p>
      */
     inline const FailWorkflowExecutionFailedEventAttributes& GetFailWorkflowExecutionFailedEventAttributes() const{ return m_failWorkflowExecutionFailedEventAttributes; }
+
+    /**
+     * <p>If the event is of type <code>FailWorkflowExecutionFailed</code> then this
+     * member is set and provides detailed information about the event. It isn't set
+     * for other event types.</p>
+     */
+    inline bool FailWorkflowExecutionFailedEventAttributesHasBeenSet() const { return m_failWorkflowExecutionFailedEventAttributesHasBeenSet; }
 
     /**
      * <p>If the event is of type <code>FailWorkflowExecutionFailed</code> then this
@@ -459,6 +510,13 @@ namespace Model
      * member is set and provides detailed information about the event. It isn't set
      * for other event types.</p>
      */
+    inline bool WorkflowExecutionTimedOutEventAttributesHasBeenSet() const { return m_workflowExecutionTimedOutEventAttributesHasBeenSet; }
+
+    /**
+     * <p>If the event is of type <code>WorkflowExecutionTimedOut</code> then this
+     * member is set and provides detailed information about the event. It isn't set
+     * for other event types.</p>
+     */
     inline void SetWorkflowExecutionTimedOutEventAttributes(const WorkflowExecutionTimedOutEventAttributes& value) { m_workflowExecutionTimedOutEventAttributesHasBeenSet = true; m_workflowExecutionTimedOutEventAttributes = value; }
 
     /**
@@ -489,6 +547,13 @@ namespace Model
      * for other event types.</p>
      */
     inline const WorkflowExecutionCanceledEventAttributes& GetWorkflowExecutionCanceledEventAttributes() const{ return m_workflowExecutionCanceledEventAttributes; }
+
+    /**
+     * <p>If the event is of type <code>WorkflowExecutionCanceled</code> then this
+     * member is set and provides detailed information about the event. It isn't set
+     * for other event types.</p>
+     */
+    inline bool WorkflowExecutionCanceledEventAttributesHasBeenSet() const { return m_workflowExecutionCanceledEventAttributesHasBeenSet; }
 
     /**
      * <p>If the event is of type <code>WorkflowExecutionCanceled</code> then this
@@ -531,6 +596,13 @@ namespace Model
      * member is set and provides detailed information about the event. It isn't set
      * for other event types.</p>
      */
+    inline bool CancelWorkflowExecutionFailedEventAttributesHasBeenSet() const { return m_cancelWorkflowExecutionFailedEventAttributesHasBeenSet; }
+
+    /**
+     * <p>If the event is of type <code>CancelWorkflowExecutionFailed</code> then this
+     * member is set and provides detailed information about the event. It isn't set
+     * for other event types.</p>
+     */
     inline void SetCancelWorkflowExecutionFailedEventAttributes(const CancelWorkflowExecutionFailedEventAttributes& value) { m_cancelWorkflowExecutionFailedEventAttributesHasBeenSet = true; m_cancelWorkflowExecutionFailedEventAttributes = value; }
 
     /**
@@ -561,6 +633,13 @@ namespace Model
      * set for other event types.</p>
      */
     inline const WorkflowExecutionContinuedAsNewEventAttributes& GetWorkflowExecutionContinuedAsNewEventAttributes() const{ return m_workflowExecutionContinuedAsNewEventAttributes; }
+
+    /**
+     * <p>If the event is of type <code>WorkflowExecutionContinuedAsNew</code> then
+     * this member is set and provides detailed information about the event. It isn't
+     * set for other event types.</p>
+     */
+    inline bool WorkflowExecutionContinuedAsNewEventAttributesHasBeenSet() const { return m_workflowExecutionContinuedAsNewEventAttributesHasBeenSet; }
 
     /**
      * <p>If the event is of type <code>WorkflowExecutionContinuedAsNew</code> then
@@ -603,6 +682,13 @@ namespace Model
      * then this member is set and provides detailed information about the event. It
      * isn't set for other event types.</p>
      */
+    inline bool ContinueAsNewWorkflowExecutionFailedEventAttributesHasBeenSet() const { return m_continueAsNewWorkflowExecutionFailedEventAttributesHasBeenSet; }
+
+    /**
+     * <p>If the event is of type <code>ContinueAsNewWorkflowExecutionFailed</code>
+     * then this member is set and provides detailed information about the event. It
+     * isn't set for other event types.</p>
+     */
     inline void SetContinueAsNewWorkflowExecutionFailedEventAttributes(const ContinueAsNewWorkflowExecutionFailedEventAttributes& value) { m_continueAsNewWorkflowExecutionFailedEventAttributesHasBeenSet = true; m_continueAsNewWorkflowExecutionFailedEventAttributes = value; }
 
     /**
@@ -633,6 +719,13 @@ namespace Model
      * for other event types.</p>
      */
     inline const WorkflowExecutionTerminatedEventAttributes& GetWorkflowExecutionTerminatedEventAttributes() const{ return m_workflowExecutionTerminatedEventAttributes; }
+
+    /**
+     * <p>If the event is of type <code>WorkflowExecutionTerminated</code> then this
+     * member is set and provides detailed information about the event. It isn't set
+     * for other event types.</p>
+     */
+    inline bool WorkflowExecutionTerminatedEventAttributesHasBeenSet() const { return m_workflowExecutionTerminatedEventAttributesHasBeenSet; }
 
     /**
      * <p>If the event is of type <code>WorkflowExecutionTerminated</code> then this
@@ -675,6 +768,13 @@ namespace Model
      * this member is set and provides detailed information about the event. It isn't
      * set for other event types.</p>
      */
+    inline bool WorkflowExecutionCancelRequestedEventAttributesHasBeenSet() const { return m_workflowExecutionCancelRequestedEventAttributesHasBeenSet; }
+
+    /**
+     * <p>If the event is of type <code>WorkflowExecutionCancelRequested</code> then
+     * this member is set and provides detailed information about the event. It isn't
+     * set for other event types.</p>
+     */
     inline void SetWorkflowExecutionCancelRequestedEventAttributes(const WorkflowExecutionCancelRequestedEventAttributes& value) { m_workflowExecutionCancelRequestedEventAttributesHasBeenSet = true; m_workflowExecutionCancelRequestedEventAttributes = value; }
 
     /**
@@ -705,6 +805,13 @@ namespace Model
      * event types.</p>
      */
     inline const DecisionTaskScheduledEventAttributes& GetDecisionTaskScheduledEventAttributes() const{ return m_decisionTaskScheduledEventAttributes; }
+
+    /**
+     * <p>If the event is of type <code>DecisionTaskScheduled</code> then this member
+     * is set and provides detailed information about the event. It isn't set for other
+     * event types.</p>
+     */
+    inline bool DecisionTaskScheduledEventAttributesHasBeenSet() const { return m_decisionTaskScheduledEventAttributesHasBeenSet; }
 
     /**
      * <p>If the event is of type <code>DecisionTaskScheduled</code> then this member
@@ -747,6 +854,13 @@ namespace Model
      * set and provides detailed information about the event. It isn't set for other
      * event types.</p>
      */
+    inline bool DecisionTaskStartedEventAttributesHasBeenSet() const { return m_decisionTaskStartedEventAttributesHasBeenSet; }
+
+    /**
+     * <p>If the event is of type <code>DecisionTaskStarted</code> then this member is
+     * set and provides detailed information about the event. It isn't set for other
+     * event types.</p>
+     */
     inline void SetDecisionTaskStartedEventAttributes(const DecisionTaskStartedEventAttributes& value) { m_decisionTaskStartedEventAttributesHasBeenSet = true; m_decisionTaskStartedEventAttributes = value; }
 
     /**
@@ -777,6 +891,13 @@ namespace Model
      * event types.</p>
      */
     inline const DecisionTaskCompletedEventAttributes& GetDecisionTaskCompletedEventAttributes() const{ return m_decisionTaskCompletedEventAttributes; }
+
+    /**
+     * <p>If the event is of type <code>DecisionTaskCompleted</code> then this member
+     * is set and provides detailed information about the event. It isn't set for other
+     * event types.</p>
+     */
+    inline bool DecisionTaskCompletedEventAttributesHasBeenSet() const { return m_decisionTaskCompletedEventAttributesHasBeenSet; }
 
     /**
      * <p>If the event is of type <code>DecisionTaskCompleted</code> then this member
@@ -819,6 +940,13 @@ namespace Model
      * set and provides detailed information about the event. It isn't set for other
      * event types.</p>
      */
+    inline bool DecisionTaskTimedOutEventAttributesHasBeenSet() const { return m_decisionTaskTimedOutEventAttributesHasBeenSet; }
+
+    /**
+     * <p>If the event is of type <code>DecisionTaskTimedOut</code> then this member is
+     * set and provides detailed information about the event. It isn't set for other
+     * event types.</p>
+     */
     inline void SetDecisionTaskTimedOutEventAttributes(const DecisionTaskTimedOutEventAttributes& value) { m_decisionTaskTimedOutEventAttributesHasBeenSet = true; m_decisionTaskTimedOutEventAttributes = value; }
 
     /**
@@ -849,6 +977,13 @@ namespace Model
      * event types.</p>
      */
     inline const ActivityTaskScheduledEventAttributes& GetActivityTaskScheduledEventAttributes() const{ return m_activityTaskScheduledEventAttributes; }
+
+    /**
+     * <p>If the event is of type <code>ActivityTaskScheduled</code> then this member
+     * is set and provides detailed information about the event. It isn't set for other
+     * event types.</p>
+     */
+    inline bool ActivityTaskScheduledEventAttributesHasBeenSet() const { return m_activityTaskScheduledEventAttributesHasBeenSet; }
 
     /**
      * <p>If the event is of type <code>ActivityTaskScheduled</code> then this member
@@ -891,6 +1026,13 @@ namespace Model
      * set and provides detailed information about the event. It isn't set for other
      * event types.</p>
      */
+    inline bool ActivityTaskStartedEventAttributesHasBeenSet() const { return m_activityTaskStartedEventAttributesHasBeenSet; }
+
+    /**
+     * <p>If the event is of type <code>ActivityTaskStarted</code> then this member is
+     * set and provides detailed information about the event. It isn't set for other
+     * event types.</p>
+     */
     inline void SetActivityTaskStartedEventAttributes(const ActivityTaskStartedEventAttributes& value) { m_activityTaskStartedEventAttributesHasBeenSet = true; m_activityTaskStartedEventAttributes = value; }
 
     /**
@@ -921,6 +1063,13 @@ namespace Model
      * event types.</p>
      */
     inline const ActivityTaskCompletedEventAttributes& GetActivityTaskCompletedEventAttributes() const{ return m_activityTaskCompletedEventAttributes; }
+
+    /**
+     * <p>If the event is of type <code>ActivityTaskCompleted</code> then this member
+     * is set and provides detailed information about the event. It isn't set for other
+     * event types.</p>
+     */
+    inline bool ActivityTaskCompletedEventAttributesHasBeenSet() const { return m_activityTaskCompletedEventAttributesHasBeenSet; }
 
     /**
      * <p>If the event is of type <code>ActivityTaskCompleted</code> then this member
@@ -963,6 +1112,13 @@ namespace Model
      * set and provides detailed information about the event. It isn't set for other
      * event types.</p>
      */
+    inline bool ActivityTaskFailedEventAttributesHasBeenSet() const { return m_activityTaskFailedEventAttributesHasBeenSet; }
+
+    /**
+     * <p>If the event is of type <code>ActivityTaskFailed</code> then this member is
+     * set and provides detailed information about the event. It isn't set for other
+     * event types.</p>
+     */
     inline void SetActivityTaskFailedEventAttributes(const ActivityTaskFailedEventAttributes& value) { m_activityTaskFailedEventAttributesHasBeenSet = true; m_activityTaskFailedEventAttributes = value; }
 
     /**
@@ -993,6 +1149,13 @@ namespace Model
      * event types.</p>
      */
     inline const ActivityTaskTimedOutEventAttributes& GetActivityTaskTimedOutEventAttributes() const{ return m_activityTaskTimedOutEventAttributes; }
+
+    /**
+     * <p>If the event is of type <code>ActivityTaskTimedOut</code> then this member is
+     * set and provides detailed information about the event. It isn't set for other
+     * event types.</p>
+     */
+    inline bool ActivityTaskTimedOutEventAttributesHasBeenSet() const { return m_activityTaskTimedOutEventAttributesHasBeenSet; }
 
     /**
      * <p>If the event is of type <code>ActivityTaskTimedOut</code> then this member is
@@ -1035,6 +1198,13 @@ namespace Model
      * set and provides detailed information about the event. It isn't set for other
      * event types.</p>
      */
+    inline bool ActivityTaskCanceledEventAttributesHasBeenSet() const { return m_activityTaskCanceledEventAttributesHasBeenSet; }
+
+    /**
+     * <p>If the event is of type <code>ActivityTaskCanceled</code> then this member is
+     * set and provides detailed information about the event. It isn't set for other
+     * event types.</p>
+     */
     inline void SetActivityTaskCanceledEventAttributes(const ActivityTaskCanceledEventAttributes& value) { m_activityTaskCanceledEventAttributesHasBeenSet = true; m_activityTaskCanceledEventAttributes = value; }
 
     /**
@@ -1065,6 +1235,13 @@ namespace Model
      * for other event types.</p>
      */
     inline const ActivityTaskCancelRequestedEventAttributes& GetActivityTaskCancelRequestedEventAttributes() const{ return m_activityTaskCancelRequestedEventAttributes; }
+
+    /**
+     * <p>If the event is of type <code>ActivityTaskcancelRequested</code> then this
+     * member is set and provides detailed information about the event. It isn't set
+     * for other event types.</p>
+     */
+    inline bool ActivityTaskCancelRequestedEventAttributesHasBeenSet() const { return m_activityTaskCancelRequestedEventAttributesHasBeenSet; }
 
     /**
      * <p>If the event is of type <code>ActivityTaskcancelRequested</code> then this
@@ -1107,6 +1284,13 @@ namespace Model
      * member is set and provides detailed information about the event. It isn't set
      * for other event types.</p>
      */
+    inline bool WorkflowExecutionSignaledEventAttributesHasBeenSet() const { return m_workflowExecutionSignaledEventAttributesHasBeenSet; }
+
+    /**
+     * <p>If the event is of type <code>WorkflowExecutionSignaled</code> then this
+     * member is set and provides detailed information about the event. It isn't set
+     * for other event types.</p>
+     */
     inline void SetWorkflowExecutionSignaledEventAttributes(const WorkflowExecutionSignaledEventAttributes& value) { m_workflowExecutionSignaledEventAttributesHasBeenSet = true; m_workflowExecutionSignaledEventAttributes = value; }
 
     /**
@@ -1137,6 +1321,13 @@ namespace Model
      * types.</p>
      */
     inline const MarkerRecordedEventAttributes& GetMarkerRecordedEventAttributes() const{ return m_markerRecordedEventAttributes; }
+
+    /**
+     * <p>If the event is of type <code>MarkerRecorded</code> then this member is set
+     * and provides detailed information about the event. It isn't set for other event
+     * types.</p>
+     */
+    inline bool MarkerRecordedEventAttributesHasBeenSet() const { return m_markerRecordedEventAttributesHasBeenSet; }
 
     /**
      * <p>If the event is of type <code>MarkerRecorded</code> then this member is set
@@ -1179,6 +1370,13 @@ namespace Model
      * set and provides detailed information about the event. It isn't set for other
      * event types.</p>
      */
+    inline bool RecordMarkerFailedEventAttributesHasBeenSet() const { return m_recordMarkerFailedEventAttributesHasBeenSet; }
+
+    /**
+     * <p>If the event is of type <code>DecisionTaskFailed</code> then this member is
+     * set and provides detailed information about the event. It isn't set for other
+     * event types.</p>
+     */
     inline void SetRecordMarkerFailedEventAttributes(const RecordMarkerFailedEventAttributes& value) { m_recordMarkerFailedEventAttributesHasBeenSet = true; m_recordMarkerFailedEventAttributes = value; }
 
     /**
@@ -1209,6 +1407,13 @@ namespace Model
      * types.</p>
      */
     inline const TimerStartedEventAttributes& GetTimerStartedEventAttributes() const{ return m_timerStartedEventAttributes; }
+
+    /**
+     * <p>If the event is of type <code>TimerStarted</code> then this member is set and
+     * provides detailed information about the event. It isn't set for other event
+     * types.</p>
+     */
+    inline bool TimerStartedEventAttributesHasBeenSet() const { return m_timerStartedEventAttributesHasBeenSet; }
 
     /**
      * <p>If the event is of type <code>TimerStarted</code> then this member is set and
@@ -1251,6 +1456,13 @@ namespace Model
      * provides detailed information about the event. It isn't set for other event
      * types.</p>
      */
+    inline bool TimerFiredEventAttributesHasBeenSet() const { return m_timerFiredEventAttributesHasBeenSet; }
+
+    /**
+     * <p>If the event is of type <code>TimerFired</code> then this member is set and
+     * provides detailed information about the event. It isn't set for other event
+     * types.</p>
+     */
     inline void SetTimerFiredEventAttributes(const TimerFiredEventAttributes& value) { m_timerFiredEventAttributesHasBeenSet = true; m_timerFiredEventAttributes = value; }
 
     /**
@@ -1281,6 +1493,13 @@ namespace Model
      * types.</p>
      */
     inline const TimerCanceledEventAttributes& GetTimerCanceledEventAttributes() const{ return m_timerCanceledEventAttributes; }
+
+    /**
+     * <p>If the event is of type <code>TimerCanceled</code> then this member is set
+     * and provides detailed information about the event. It isn't set for other event
+     * types.</p>
+     */
+    inline bool TimerCanceledEventAttributesHasBeenSet() const { return m_timerCanceledEventAttributesHasBeenSet; }
 
     /**
      * <p>If the event is of type <code>TimerCanceled</code> then this member is set
@@ -1323,6 +1542,13 @@ namespace Model
      * then this member is set and provides detailed information about the event. It
      * isn't set for other event types.</p>
      */
+    inline bool StartChildWorkflowExecutionInitiatedEventAttributesHasBeenSet() const { return m_startChildWorkflowExecutionInitiatedEventAttributesHasBeenSet; }
+
+    /**
+     * <p>If the event is of type <code>StartChildWorkflowExecutionInitiated</code>
+     * then this member is set and provides detailed information about the event. It
+     * isn't set for other event types.</p>
+     */
     inline void SetStartChildWorkflowExecutionInitiatedEventAttributes(const StartChildWorkflowExecutionInitiatedEventAttributes& value) { m_startChildWorkflowExecutionInitiatedEventAttributesHasBeenSet = true; m_startChildWorkflowExecutionInitiatedEventAttributes = value; }
 
     /**
@@ -1353,6 +1579,13 @@ namespace Model
      * for other event types.</p>
      */
     inline const ChildWorkflowExecutionStartedEventAttributes& GetChildWorkflowExecutionStartedEventAttributes() const{ return m_childWorkflowExecutionStartedEventAttributes; }
+
+    /**
+     * <p>If the event is of type <code>ChildWorkflowExecutionStarted</code> then this
+     * member is set and provides detailed information about the event. It isn't set
+     * for other event types.</p>
+     */
+    inline bool ChildWorkflowExecutionStartedEventAttributesHasBeenSet() const { return m_childWorkflowExecutionStartedEventAttributesHasBeenSet; }
 
     /**
      * <p>If the event is of type <code>ChildWorkflowExecutionStarted</code> then this
@@ -1395,6 +1628,13 @@ namespace Model
      * this member is set and provides detailed information about the event. It isn't
      * set for other event types.</p>
      */
+    inline bool ChildWorkflowExecutionCompletedEventAttributesHasBeenSet() const { return m_childWorkflowExecutionCompletedEventAttributesHasBeenSet; }
+
+    /**
+     * <p>If the event is of type <code>ChildWorkflowExecutionCompleted</code> then
+     * this member is set and provides detailed information about the event. It isn't
+     * set for other event types.</p>
+     */
     inline void SetChildWorkflowExecutionCompletedEventAttributes(const ChildWorkflowExecutionCompletedEventAttributes& value) { m_childWorkflowExecutionCompletedEventAttributesHasBeenSet = true; m_childWorkflowExecutionCompletedEventAttributes = value; }
 
     /**
@@ -1425,6 +1665,13 @@ namespace Model
      * for other event types.</p>
      */
     inline const ChildWorkflowExecutionFailedEventAttributes& GetChildWorkflowExecutionFailedEventAttributes() const{ return m_childWorkflowExecutionFailedEventAttributes; }
+
+    /**
+     * <p>If the event is of type <code>ChildWorkflowExecutionFailed</code> then this
+     * member is set and provides detailed information about the event. It isn't set
+     * for other event types.</p>
+     */
+    inline bool ChildWorkflowExecutionFailedEventAttributesHasBeenSet() const { return m_childWorkflowExecutionFailedEventAttributesHasBeenSet; }
 
     /**
      * <p>If the event is of type <code>ChildWorkflowExecutionFailed</code> then this
@@ -1467,6 +1714,13 @@ namespace Model
      * member is set and provides detailed information about the event. It isn't set
      * for other event types.</p>
      */
+    inline bool ChildWorkflowExecutionTimedOutEventAttributesHasBeenSet() const { return m_childWorkflowExecutionTimedOutEventAttributesHasBeenSet; }
+
+    /**
+     * <p>If the event is of type <code>ChildWorkflowExecutionTimedOut</code> then this
+     * member is set and provides detailed information about the event. It isn't set
+     * for other event types.</p>
+     */
     inline void SetChildWorkflowExecutionTimedOutEventAttributes(const ChildWorkflowExecutionTimedOutEventAttributes& value) { m_childWorkflowExecutionTimedOutEventAttributesHasBeenSet = true; m_childWorkflowExecutionTimedOutEventAttributes = value; }
 
     /**
@@ -1497,6 +1751,13 @@ namespace Model
      * for other event types.</p>
      */
     inline const ChildWorkflowExecutionCanceledEventAttributes& GetChildWorkflowExecutionCanceledEventAttributes() const{ return m_childWorkflowExecutionCanceledEventAttributes; }
+
+    /**
+     * <p>If the event is of type <code>ChildWorkflowExecutionCanceled</code> then this
+     * member is set and provides detailed information about the event. It isn't set
+     * for other event types.</p>
+     */
+    inline bool ChildWorkflowExecutionCanceledEventAttributesHasBeenSet() const { return m_childWorkflowExecutionCanceledEventAttributesHasBeenSet; }
 
     /**
      * <p>If the event is of type <code>ChildWorkflowExecutionCanceled</code> then this
@@ -1539,6 +1800,13 @@ namespace Model
      * this member is set and provides detailed information about the event. It isn't
      * set for other event types.</p>
      */
+    inline bool ChildWorkflowExecutionTerminatedEventAttributesHasBeenSet() const { return m_childWorkflowExecutionTerminatedEventAttributesHasBeenSet; }
+
+    /**
+     * <p>If the event is of type <code>ChildWorkflowExecutionTerminated</code> then
+     * this member is set and provides detailed information about the event. It isn't
+     * set for other event types.</p>
+     */
     inline void SetChildWorkflowExecutionTerminatedEventAttributes(const ChildWorkflowExecutionTerminatedEventAttributes& value) { m_childWorkflowExecutionTerminatedEventAttributesHasBeenSet = true; m_childWorkflowExecutionTerminatedEventAttributes = value; }
 
     /**
@@ -1569,6 +1837,13 @@ namespace Model
      * isn't set for other event types.</p>
      */
     inline const SignalExternalWorkflowExecutionInitiatedEventAttributes& GetSignalExternalWorkflowExecutionInitiatedEventAttributes() const{ return m_signalExternalWorkflowExecutionInitiatedEventAttributes; }
+
+    /**
+     * <p>If the event is of type <code>SignalExternalWorkflowExecutionInitiated</code>
+     * then this member is set and provides detailed information about the event. It
+     * isn't set for other event types.</p>
+     */
+    inline bool SignalExternalWorkflowExecutionInitiatedEventAttributesHasBeenSet() const { return m_signalExternalWorkflowExecutionInitiatedEventAttributesHasBeenSet; }
 
     /**
      * <p>If the event is of type <code>SignalExternalWorkflowExecutionInitiated</code>
@@ -1611,6 +1886,13 @@ namespace Model
      * this member is set and provides detailed information about the event. It isn't
      * set for other event types.</p>
      */
+    inline bool ExternalWorkflowExecutionSignaledEventAttributesHasBeenSet() const { return m_externalWorkflowExecutionSignaledEventAttributesHasBeenSet; }
+
+    /**
+     * <p>If the event is of type <code>ExternalWorkflowExecutionSignaled</code> then
+     * this member is set and provides detailed information about the event. It isn't
+     * set for other event types.</p>
+     */
     inline void SetExternalWorkflowExecutionSignaledEventAttributes(const ExternalWorkflowExecutionSignaledEventAttributes& value) { m_externalWorkflowExecutionSignaledEventAttributesHasBeenSet = true; m_externalWorkflowExecutionSignaledEventAttributes = value; }
 
     /**
@@ -1641,6 +1923,13 @@ namespace Model
      * isn't set for other event types.</p>
      */
     inline const SignalExternalWorkflowExecutionFailedEventAttributes& GetSignalExternalWorkflowExecutionFailedEventAttributes() const{ return m_signalExternalWorkflowExecutionFailedEventAttributes; }
+
+    /**
+     * <p>If the event is of type <code>SignalExternalWorkflowExecutionFailed</code>
+     * then this member is set and provides detailed information about the event. It
+     * isn't set for other event types.</p>
+     */
+    inline bool SignalExternalWorkflowExecutionFailedEventAttributesHasBeenSet() const { return m_signalExternalWorkflowExecutionFailedEventAttributesHasBeenSet; }
 
     /**
      * <p>If the event is of type <code>SignalExternalWorkflowExecutionFailed</code>
@@ -1683,6 +1972,13 @@ namespace Model
      * then this member is set and provides detailed information about the event. It
      * isn't set for other event types. </p>
      */
+    inline bool ExternalWorkflowExecutionCancelRequestedEventAttributesHasBeenSet() const { return m_externalWorkflowExecutionCancelRequestedEventAttributesHasBeenSet; }
+
+    /**
+     * <p>If the event is of type <code>ExternalWorkflowExecutionCancelRequested</code>
+     * then this member is set and provides detailed information about the event. It
+     * isn't set for other event types. </p>
+     */
     inline void SetExternalWorkflowExecutionCancelRequestedEventAttributes(const ExternalWorkflowExecutionCancelRequestedEventAttributes& value) { m_externalWorkflowExecutionCancelRequestedEventAttributesHasBeenSet = true; m_externalWorkflowExecutionCancelRequestedEventAttributes = value; }
 
     /**
@@ -1714,6 +2010,14 @@ namespace Model
      * event types.</p>
      */
     inline const RequestCancelExternalWorkflowExecutionInitiatedEventAttributes& GetRequestCancelExternalWorkflowExecutionInitiatedEventAttributes() const{ return m_requestCancelExternalWorkflowExecutionInitiatedEventAttributes; }
+
+    /**
+     * <p>If the event is of type
+     * <code>RequestCancelExternalWorkflowExecutionInitiated</code> then this member is
+     * set and provides detailed information about the event. It isn't set for other
+     * event types.</p>
+     */
+    inline bool RequestCancelExternalWorkflowExecutionInitiatedEventAttributesHasBeenSet() const { return m_requestCancelExternalWorkflowExecutionInitiatedEventAttributesHasBeenSet; }
 
     /**
      * <p>If the event is of type
@@ -1762,6 +2066,14 @@ namespace Model
      * set and provides detailed information about the event. It isn't set for other
      * event types.</p>
      */
+    inline bool RequestCancelExternalWorkflowExecutionFailedEventAttributesHasBeenSet() const { return m_requestCancelExternalWorkflowExecutionFailedEventAttributesHasBeenSet; }
+
+    /**
+     * <p>If the event is of type
+     * <code>RequestCancelExternalWorkflowExecutionFailed</code> then this member is
+     * set and provides detailed information about the event. It isn't set for other
+     * event types.</p>
+     */
     inline void SetRequestCancelExternalWorkflowExecutionFailedEventAttributes(const RequestCancelExternalWorkflowExecutionFailedEventAttributes& value) { m_requestCancelExternalWorkflowExecutionFailedEventAttributesHasBeenSet = true; m_requestCancelExternalWorkflowExecutionFailedEventAttributes = value; }
 
     /**
@@ -1795,6 +2107,13 @@ namespace Model
      * for other event types.</p>
      */
     inline const ScheduleActivityTaskFailedEventAttributes& GetScheduleActivityTaskFailedEventAttributes() const{ return m_scheduleActivityTaskFailedEventAttributes; }
+
+    /**
+     * <p>If the event is of type <code>ScheduleActivityTaskFailed</code> then this
+     * member is set and provides detailed information about the event. It isn't set
+     * for other event types.</p>
+     */
+    inline bool ScheduleActivityTaskFailedEventAttributesHasBeenSet() const { return m_scheduleActivityTaskFailedEventAttributesHasBeenSet; }
 
     /**
      * <p>If the event is of type <code>ScheduleActivityTaskFailed</code> then this
@@ -1837,6 +2156,13 @@ namespace Model
      * this member is set and provides detailed information about the event. It isn't
      * set for other event types.</p>
      */
+    inline bool RequestCancelActivityTaskFailedEventAttributesHasBeenSet() const { return m_requestCancelActivityTaskFailedEventAttributesHasBeenSet; }
+
+    /**
+     * <p>If the event is of type <code>RequestCancelActivityTaskFailed</code> then
+     * this member is set and provides detailed information about the event. It isn't
+     * set for other event types.</p>
+     */
     inline void SetRequestCancelActivityTaskFailedEventAttributes(const RequestCancelActivityTaskFailedEventAttributes& value) { m_requestCancelActivityTaskFailedEventAttributesHasBeenSet = true; m_requestCancelActivityTaskFailedEventAttributes = value; }
 
     /**
@@ -1867,6 +2193,13 @@ namespace Model
      * types.</p>
      */
     inline const StartTimerFailedEventAttributes& GetStartTimerFailedEventAttributes() const{ return m_startTimerFailedEventAttributes; }
+
+    /**
+     * <p>If the event is of type <code>StartTimerFailed</code> then this member is set
+     * and provides detailed information about the event. It isn't set for other event
+     * types.</p>
+     */
+    inline bool StartTimerFailedEventAttributesHasBeenSet() const { return m_startTimerFailedEventAttributesHasBeenSet; }
 
     /**
      * <p>If the event is of type <code>StartTimerFailed</code> then this member is set
@@ -1909,6 +2242,13 @@ namespace Model
      * set and provides detailed information about the event. It isn't set for other
      * event types.</p>
      */
+    inline bool CancelTimerFailedEventAttributesHasBeenSet() const { return m_cancelTimerFailedEventAttributesHasBeenSet; }
+
+    /**
+     * <p>If the event is of type <code>CancelTimerFailed</code> then this member is
+     * set and provides detailed information about the event. It isn't set for other
+     * event types.</p>
+     */
     inline void SetCancelTimerFailedEventAttributes(const CancelTimerFailedEventAttributes& value) { m_cancelTimerFailedEventAttributesHasBeenSet = true; m_cancelTimerFailedEventAttributes = value; }
 
     /**
@@ -1939,6 +2279,13 @@ namespace Model
      * set for other event types.</p>
      */
     inline const StartChildWorkflowExecutionFailedEventAttributes& GetStartChildWorkflowExecutionFailedEventAttributes() const{ return m_startChildWorkflowExecutionFailedEventAttributes; }
+
+    /**
+     * <p>If the event is of type <code>StartChildWorkflowExecutionFailed</code> then
+     * this member is set and provides detailed information about the event. It isn't
+     * set for other event types.</p>
+     */
+    inline bool StartChildWorkflowExecutionFailedEventAttributesHasBeenSet() const { return m_startChildWorkflowExecutionFailedEventAttributesHasBeenSet; }
 
     /**
      * <p>If the event is of type <code>StartChildWorkflowExecutionFailed</code> then
@@ -1979,6 +2326,12 @@ namespace Model
      * <p>Provides the details of the <code>LambdaFunctionScheduled</code> event. It
      * isn't set for other event types.</p>
      */
+    inline bool LambdaFunctionScheduledEventAttributesHasBeenSet() const { return m_lambdaFunctionScheduledEventAttributesHasBeenSet; }
+
+    /**
+     * <p>Provides the details of the <code>LambdaFunctionScheduled</code> event. It
+     * isn't set for other event types.</p>
+     */
     inline void SetLambdaFunctionScheduledEventAttributes(const LambdaFunctionScheduledEventAttributes& value) { m_lambdaFunctionScheduledEventAttributesHasBeenSet = true; m_lambdaFunctionScheduledEventAttributes = value; }
 
     /**
@@ -2005,6 +2358,12 @@ namespace Model
      * isn't set for other event types.</p>
      */
     inline const LambdaFunctionStartedEventAttributes& GetLambdaFunctionStartedEventAttributes() const{ return m_lambdaFunctionStartedEventAttributes; }
+
+    /**
+     * <p>Provides the details of the <code>LambdaFunctionStarted</code> event. It
+     * isn't set for other event types.</p>
+     */
+    inline bool LambdaFunctionStartedEventAttributesHasBeenSet() const { return m_lambdaFunctionStartedEventAttributesHasBeenSet; }
 
     /**
      * <p>Provides the details of the <code>LambdaFunctionStarted</code> event. It
@@ -2041,6 +2400,12 @@ namespace Model
      * <p>Provides the details of the <code>LambdaFunctionCompleted</code> event. It
      * isn't set for other event types.</p>
      */
+    inline bool LambdaFunctionCompletedEventAttributesHasBeenSet() const { return m_lambdaFunctionCompletedEventAttributesHasBeenSet; }
+
+    /**
+     * <p>Provides the details of the <code>LambdaFunctionCompleted</code> event. It
+     * isn't set for other event types.</p>
+     */
     inline void SetLambdaFunctionCompletedEventAttributes(const LambdaFunctionCompletedEventAttributes& value) { m_lambdaFunctionCompletedEventAttributesHasBeenSet = true; m_lambdaFunctionCompletedEventAttributes = value; }
 
     /**
@@ -2067,6 +2432,12 @@ namespace Model
      * set for other event types.</p>
      */
     inline const LambdaFunctionFailedEventAttributes& GetLambdaFunctionFailedEventAttributes() const{ return m_lambdaFunctionFailedEventAttributes; }
+
+    /**
+     * <p>Provides the details of the <code>LambdaFunctionFailed</code> event. It isn't
+     * set for other event types.</p>
+     */
+    inline bool LambdaFunctionFailedEventAttributesHasBeenSet() const { return m_lambdaFunctionFailedEventAttributesHasBeenSet; }
 
     /**
      * <p>Provides the details of the <code>LambdaFunctionFailed</code> event. It isn't
@@ -2103,6 +2474,12 @@ namespace Model
      * <p>Provides the details of the <code>LambdaFunctionTimedOut</code> event. It
      * isn't set for other event types.</p>
      */
+    inline bool LambdaFunctionTimedOutEventAttributesHasBeenSet() const { return m_lambdaFunctionTimedOutEventAttributesHasBeenSet; }
+
+    /**
+     * <p>Provides the details of the <code>LambdaFunctionTimedOut</code> event. It
+     * isn't set for other event types.</p>
+     */
     inline void SetLambdaFunctionTimedOutEventAttributes(const LambdaFunctionTimedOutEventAttributes& value) { m_lambdaFunctionTimedOutEventAttributesHasBeenSet = true; m_lambdaFunctionTimedOutEventAttributes = value; }
 
     /**
@@ -2134,6 +2511,12 @@ namespace Model
      * <p>Provides the details of the <code>ScheduleLambdaFunctionFailed</code> event.
      * It isn't set for other event types.</p>
      */
+    inline bool ScheduleLambdaFunctionFailedEventAttributesHasBeenSet() const { return m_scheduleLambdaFunctionFailedEventAttributesHasBeenSet; }
+
+    /**
+     * <p>Provides the details of the <code>ScheduleLambdaFunctionFailed</code> event.
+     * It isn't set for other event types.</p>
+     */
     inline void SetScheduleLambdaFunctionFailedEventAttributes(const ScheduleLambdaFunctionFailedEventAttributes& value) { m_scheduleLambdaFunctionFailedEventAttributesHasBeenSet = true; m_scheduleLambdaFunctionFailedEventAttributes = value; }
 
     /**
@@ -2160,6 +2543,12 @@ namespace Model
      * isn't set for other event types.</p>
      */
     inline const StartLambdaFunctionFailedEventAttributes& GetStartLambdaFunctionFailedEventAttributes() const{ return m_startLambdaFunctionFailedEventAttributes; }
+
+    /**
+     * <p>Provides the details of the <code>StartLambdaFunctionFailed</code> event. It
+     * isn't set for other event types.</p>
+     */
+    inline bool StartLambdaFunctionFailedEventAttributesHasBeenSet() const { return m_startLambdaFunctionFailedEventAttributesHasBeenSet; }
 
     /**
      * <p>Provides the details of the <code>StartLambdaFunctionFailed</code> event. It

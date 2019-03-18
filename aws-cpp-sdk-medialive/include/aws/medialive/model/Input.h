@@ -62,6 +62,11 @@ namespace Model
     /**
      * The Unique ARN of the input (generated, immutable).
      */
+    inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
+
+    /**
+     * The Unique ARN of the input (generated, immutable).
+     */
     inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
 
     /**
@@ -95,6 +100,12 @@ namespace Model
      * only be attached to one channel).
      */
     inline const Aws::Vector<Aws::String>& GetAttachedChannels() const{ return m_attachedChannels; }
+
+    /**
+     * A list of channel IDs that that input is attached to (currently an input can
+     * only be attached to one channel).
+     */
+    inline bool AttachedChannelsHasBeenSet() const { return m_attachedChannelsHasBeenSet; }
 
     /**
      * A list of channel IDs that that input is attached to (currently an input can
@@ -147,6 +158,11 @@ namespace Model
     /**
      * A list of the destinations of the input (PUSH-type).
      */
+    inline bool DestinationsHasBeenSet() const { return m_destinationsHasBeenSet; }
+
+    /**
+     * A list of the destinations of the input (PUSH-type).
+     */
     inline void SetDestinations(const Aws::Vector<InputDestination>& value) { m_destinationsHasBeenSet = true; m_destinations = value; }
 
     /**
@@ -179,6 +195,11 @@ namespace Model
      * The generated ID of the input (unique for user account, immutable).
      */
     inline const Aws::String& GetId() const{ return m_id; }
+
+    /**
+     * The generated ID of the input (unique for user account, immutable).
+     */
+    inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
 
     /**
      * The generated ID of the input (unique for user account, immutable).
@@ -219,6 +240,11 @@ namespace Model
     /**
      * A list of MediaConnect Flows for this input.
      */
+    inline bool MediaConnectFlowsHasBeenSet() const { return m_mediaConnectFlowsHasBeenSet; }
+
+    /**
+     * A list of MediaConnect Flows for this input.
+     */
     inline void SetMediaConnectFlows(const Aws::Vector<MediaConnectFlow>& value) { m_mediaConnectFlowsHasBeenSet = true; m_mediaConnectFlows = value; }
 
     /**
@@ -251,6 +277,11 @@ namespace Model
      * The user-assigned name (This is a mutable value).
      */
     inline const Aws::String& GetName() const{ return m_name; }
+
+    /**
+     * The user-assigned name (This is a mutable value).
+     */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
      * The user-assigned name (This is a mutable value).
@@ -288,6 +319,12 @@ namespace Model
      * creation.
      */
     inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
+
+    /**
+     * The Amazon Resource Name (ARN) of the role this input assumes during and after
+     * creation.
+     */
+    inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
 
     /**
      * The Amazon Resource Name (ARN) of the role this input assumes during and after
@@ -334,6 +371,11 @@ namespace Model
     /**
      * A list of IDs for all the Input Security Groups attached to the input.
      */
+    inline bool SecurityGroupsHasBeenSet() const { return m_securityGroupsHasBeenSet; }
+
+    /**
+     * A list of IDs for all the Input Security Groups attached to the input.
+     */
     inline void SetSecurityGroups(const Aws::Vector<Aws::String>& value) { m_securityGroupsHasBeenSet = true; m_securityGroups = value; }
 
     /**
@@ -375,6 +417,11 @@ namespace Model
     /**
      * A list of the sources of the input (PULL-type).
      */
+    inline bool SourcesHasBeenSet() const { return m_sourcesHasBeenSet; }
+
+    /**
+     * A list of the sources of the input (PULL-type).
+     */
     inline void SetSources(const Aws::Vector<InputSource>& value) { m_sourcesHasBeenSet = true; m_sources = value; }
 
     /**
@@ -407,6 +454,9 @@ namespace Model
     inline const InputState& GetState() const{ return m_state; }
 
     
+    inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
+
+    
     inline void SetState(const InputState& value) { m_stateHasBeenSet = true; m_state = value; }
 
     
@@ -423,6 +473,11 @@ namespace Model
      * A collection of key-value pairs.
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
+
+    /**
+     * A collection of key-value pairs.
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
      * A collection of key-value pairs.
@@ -482,6 +537,9 @@ namespace Model
 
     
     inline const InputType& GetType() const{ return m_type; }
+
+    
+    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
 
     
     inline void SetType(const InputType& value) { m_typeHasBeenSet = true; m_type = value; }

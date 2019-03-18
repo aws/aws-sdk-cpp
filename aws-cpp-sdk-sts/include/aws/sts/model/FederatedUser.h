@@ -60,6 +60,12 @@ namespace Model
      * <p>The string that identifies the federated user associated with the
      * credentials, similar to the unique ID of an IAM user.</p>
      */
+    inline bool FederatedUserIdHasBeenSet() const { return m_federatedUserIdHasBeenSet; }
+
+    /**
+     * <p>The string that identifies the federated user associated with the
+     * credentials, similar to the unique ID of an IAM user.</p>
+     */
     inline void SetFederatedUserId(const Aws::String& value) { m_federatedUserIdHasBeenSet = true; m_federatedUserId = value; }
 
     /**
@@ -101,6 +107,15 @@ namespace Model
      * Identifiers</a> in <i>Using IAM</i>. </p>
      */
     inline const Aws::String& GetArn() const{ return m_arn; }
+
+    /**
+     * <p>The ARN that specifies the federated user that is associated with the
+     * credentials. For more information about ARNs and how to use them in policies,
+     * see <a
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM
+     * Identifiers</a> in <i>Using IAM</i>. </p>
+     */
+    inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
 
     /**
      * <p>The ARN that specifies the federated user that is associated with the

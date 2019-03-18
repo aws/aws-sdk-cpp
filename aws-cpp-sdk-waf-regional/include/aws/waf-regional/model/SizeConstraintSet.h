@@ -79,6 +79,20 @@ namespace Model
      * returned by <a>CreateSizeConstraintSet</a> and by
      * <a>ListSizeConstraintSets</a>.</p>
      */
+    inline bool SizeConstraintSetIdHasBeenSet() const { return m_sizeConstraintSetIdHasBeenSet; }
+
+    /**
+     * <p>A unique identifier for a <code>SizeConstraintSet</code>. You use
+     * <code>SizeConstraintSetId</code> to get information about a
+     * <code>SizeConstraintSet</code> (see <a>GetSizeConstraintSet</a>), update a
+     * <code>SizeConstraintSet</code> (see <a>UpdateSizeConstraintSet</a>), insert a
+     * <code>SizeConstraintSet</code> into a <code>Rule</code> or delete one from a
+     * <code>Rule</code> (see <a>UpdateRule</a>), and delete a
+     * <code>SizeConstraintSet</code> from AWS WAF (see
+     * <a>DeleteSizeConstraintSet</a>).</p> <p> <code>SizeConstraintSetId</code> is
+     * returned by <a>CreateSizeConstraintSet</a> and by
+     * <a>ListSizeConstraintSets</a>.</p>
+     */
     inline void SetSizeConstraintSetId(const Aws::String& value) { m_sizeConstraintSetIdHasBeenSet = true; m_sizeConstraintSetId = value; }
 
     /**
@@ -160,6 +174,11 @@ namespace Model
     /**
      * <p>The name, if any, of the <code>SizeConstraintSet</code>.</p>
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>The name, if any, of the <code>SizeConstraintSet</code>.</p>
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
@@ -192,6 +211,11 @@ namespace Model
      * <p>Specifies the parts of web requests that you want to inspect the size of.</p>
      */
     inline const Aws::Vector<SizeConstraint>& GetSizeConstraints() const{ return m_sizeConstraints; }
+
+    /**
+     * <p>Specifies the parts of web requests that you want to inspect the size of.</p>
+     */
+    inline bool SizeConstraintsHasBeenSet() const { return m_sizeConstraintsHasBeenSet; }
 
     /**
      * <p>Specifies the parts of web requests that you want to inspect the size of.</p>

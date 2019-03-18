@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The name of an attachment.</p>
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>The name of an attachment.</p>
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
@@ -93,6 +98,11 @@ namespace Model
     /**
      * <p>The size of an attachment in bytes.</p>
      */
+    inline bool SizeHasBeenSet() const { return m_sizeHasBeenSet; }
+
+    /**
+     * <p>The size of an attachment in bytes.</p>
+     */
     inline void SetSize(long long value) { m_sizeHasBeenSet = true; m_size = value; }
 
     /**
@@ -105,6 +115,11 @@ namespace Model
      * <p>The cryptographic hash value of the document content.</p>
      */
     inline const Aws::String& GetHash() const{ return m_hash; }
+
+    /**
+     * <p>The cryptographic hash value of the document content.</p>
+     */
+    inline bool HashHasBeenSet() const { return m_hashHasBeenSet; }
 
     /**
      * <p>The cryptographic hash value of the document content.</p>
@@ -145,6 +160,11 @@ namespace Model
     /**
      * <p>The hash algorithm used to calculate the hash value.</p>
      */
+    inline bool HashTypeHasBeenSet() const { return m_hashTypeHasBeenSet; }
+
+    /**
+     * <p>The hash algorithm used to calculate the hash value.</p>
+     */
     inline void SetHashType(const AttachmentHashType& value) { m_hashTypeHasBeenSet = true; m_hashType = value; }
 
     /**
@@ -167,6 +187,11 @@ namespace Model
      * <p>The URL location of the attachment content.</p>
      */
     inline const Aws::String& GetUrl() const{ return m_url; }
+
+    /**
+     * <p>The URL location of the attachment content.</p>
+     */
+    inline bool UrlHasBeenSet() const { return m_urlHasBeenSet; }
 
     /**
      * <p>The URL location of the attachment content.</p>

@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The type of the device, such as "button".</p>
      */
+    inline bool DeviceTypeHasBeenSet() const { return m_deviceTypeHasBeenSet; }
+
+    /**
+     * <p>The type of the device, such as "button".</p>
+     */
     inline void SetDeviceType(const Aws::String& value) { m_deviceTypeHasBeenSet = true; m_deviceType = value; }
 
     /**
@@ -96,6 +101,13 @@ namespace Model
      * value
  of 100 is used.</p>
      */
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
+
+    /**
+     * <p>The maximum number of results to return per request. If not set, a default
+     * value
+ of 100 is used.</p>
+     */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
@@ -110,6 +122,11 @@ namespace Model
      * <p>The token to retrieve the next set of results.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
+    /**
+     * <p>The token to retrieve the next set of results.</p>
+     */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
      * <p>The token to retrieve the next set of results.</p>

@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>A list of values. For example, the ARN of the assumed role. </p>
      */
+    inline bool ValuesHasBeenSet() const { return m_valuesHasBeenSet; }
+
+    /**
+     * <p>A list of values. For example, the ARN of the assumed role. </p>
+     */
     inline void SetValues(const Aws::Vector<Aws::String>& value) { m_valuesHasBeenSet = true; m_values = value; }
 
     /**

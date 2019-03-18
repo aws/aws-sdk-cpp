@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p>The amount of instance usage that the reservation covered, in hours.</p>
      */
+    inline bool CoverageHoursHasBeenSet() const { return m_coverageHoursHasBeenSet; }
+
+    /**
+     * <p>The amount of instance usage that the reservation covered, in hours.</p>
+     */
     inline void SetCoverageHours(const CoverageHours& value) { m_coverageHoursHasBeenSet = true; m_coverageHours = value; }
 
     /**
@@ -81,6 +86,12 @@ namespace Model
      * units.</p>
      */
     inline const CoverageNormalizedUnits& GetCoverageNormalizedUnits() const{ return m_coverageNormalizedUnits; }
+
+    /**
+     * <p>The amount of instance usage that the reservation covered, in normalized
+     * units.</p>
+     */
+    inline bool CoverageNormalizedUnitsHasBeenSet() const { return m_coverageNormalizedUnitsHasBeenSet; }
 
     /**
      * <p>The amount of instance usage that the reservation covered, in normalized
@@ -111,6 +122,11 @@ namespace Model
      * <p>The amount of cost that the reservation covered.</p>
      */
     inline const CoverageCost& GetCoverageCost() const{ return m_coverageCost; }
+
+    /**
+     * <p>The amount of cost that the reservation covered.</p>
+     */
+    inline bool CoverageCostHasBeenSet() const { return m_coverageCostHasBeenSet; }
 
     /**
      * <p>The amount of cost that the reservation covered.</p>

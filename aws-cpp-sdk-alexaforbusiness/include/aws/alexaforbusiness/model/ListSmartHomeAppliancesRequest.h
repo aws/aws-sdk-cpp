@@ -52,6 +52,11 @@ namespace Model
     /**
      * <p>The room that the appliances are associated with.</p>
      */
+    inline bool RoomArnHasBeenSet() const { return m_roomArnHasBeenSet; }
+
+    /**
+     * <p>The room that the appliances are associated with.</p>
+     */
     inline void SetRoomArn(const Aws::String& value) { m_roomArnHasBeenSet = true; m_roomArn = value; }
 
     /**
@@ -88,6 +93,11 @@ namespace Model
     /**
      * <p>The maximum number of appliances to be returned, per paginated calls.</p>
      */
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
+
+    /**
+     * <p>The maximum number of appliances to be returned, per paginated calls.</p>
+     */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
@@ -100,6 +110,11 @@ namespace Model
      * <p>The tokens used for pagination.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
+    /**
+     * <p>The tokens used for pagination.</p>
+     */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
      * <p>The tokens used for pagination.</p>

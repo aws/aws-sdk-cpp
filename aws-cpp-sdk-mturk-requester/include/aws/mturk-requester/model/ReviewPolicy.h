@@ -60,6 +60,12 @@ namespace Model
      * <p> Name of a Review Policy: SimplePlurality/2011-09-01 or
      * ScoreMyKnownAnswers/2011-09-01 </p>
      */
+    inline bool PolicyNameHasBeenSet() const { return m_policyNameHasBeenSet; }
+
+    /**
+     * <p> Name of a Review Policy: SimplePlurality/2011-09-01 or
+     * ScoreMyKnownAnswers/2011-09-01 </p>
+     */
     inline void SetPolicyName(const Aws::String& value) { m_policyNameHasBeenSet = true; m_policyName = value; }
 
     /**
@@ -97,6 +103,11 @@ namespace Model
      * <p>Name of the parameter from the Review policy.</p>
      */
     inline const Aws::Vector<PolicyParameter>& GetParameters() const{ return m_parameters; }
+
+    /**
+     * <p>Name of the parameter from the Review policy.</p>
+     */
+    inline bool ParametersHasBeenSet() const { return m_parametersHasBeenSet; }
 
     /**
      * <p>Name of the parameter from the Review policy.</p>

@@ -57,6 +57,11 @@ namespace Model
     /**
      * List of actions that have been deleted from the schedule.
      */
+    inline bool ScheduleActionsHasBeenSet() const { return m_scheduleActionsHasBeenSet; }
+
+    /**
+     * List of actions that have been deleted from the schedule.
+     */
     inline void SetScheduleActions(const Aws::Vector<ScheduleAction>& value) { m_scheduleActionsHasBeenSet = true; m_scheduleActions = value; }
 
     /**

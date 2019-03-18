@@ -55,6 +55,11 @@ namespace Model
     /**
      * <p>A unique name for the image builder.</p>
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>A unique name for the image builder.</p>
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
@@ -87,6 +92,11 @@ namespace Model
      * <p>The name of the image used to create the image builder.</p>
      */
     inline const Aws::String& GetImageName() const{ return m_imageName; }
+
+    /**
+     * <p>The name of the image used to create the image builder.</p>
+     */
+    inline bool ImageNameHasBeenSet() const { return m_imageNameHasBeenSet; }
 
     /**
      * <p>The name of the image used to create the image builder.</p>
@@ -127,6 +137,11 @@ namespace Model
     /**
      * <p>The ARN of the public, private, or shared image to use.</p>
      */
+    inline bool ImageArnHasBeenSet() const { return m_imageArnHasBeenSet; }
+
+    /**
+     * <p>The ARN of the public, private, or shared image to use.</p>
+     */
     inline void SetImageArn(const Aws::String& value) { m_imageArnHasBeenSet = true; m_imageArn = value; }
 
     /**
@@ -159,6 +174,11 @@ namespace Model
      * <p>The instance type to use when launching the image builder.</p>
      */
     inline const Aws::String& GetInstanceType() const{ return m_instanceType; }
+
+    /**
+     * <p>The instance type to use when launching the image builder.</p>
+     */
+    inline bool InstanceTypeHasBeenSet() const { return m_instanceTypeHasBeenSet; }
 
     /**
      * <p>The instance type to use when launching the image builder.</p>
@@ -199,6 +219,11 @@ namespace Model
     /**
      * <p>The description to display.</p>
      */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
+
+    /**
+     * <p>The description to display.</p>
+     */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
@@ -231,6 +256,11 @@ namespace Model
      * <p>The image builder name to display.</p>
      */
     inline const Aws::String& GetDisplayName() const{ return m_displayName; }
+
+    /**
+     * <p>The image builder name to display.</p>
+     */
+    inline bool DisplayNameHasBeenSet() const { return m_displayNameHasBeenSet; }
 
     /**
      * <p>The image builder name to display.</p>
@@ -273,6 +303,12 @@ namespace Model
      * <p>The VPC configuration for the image builder. You can specify only one
      * subnet.</p>
      */
+    inline bool VpcConfigHasBeenSet() const { return m_vpcConfigHasBeenSet; }
+
+    /**
+     * <p>The VPC configuration for the image builder. You can specify only one
+     * subnet.</p>
+     */
     inline void SetVpcConfig(const VpcConfig& value) { m_vpcConfigHasBeenSet = true; m_vpcConfig = value; }
 
     /**
@@ -302,6 +338,11 @@ namespace Model
     /**
      * <p>Enables or disables default internet access for the image builder.</p>
      */
+    inline bool EnableDefaultInternetAccessHasBeenSet() const { return m_enableDefaultInternetAccessHasBeenSet; }
+
+    /**
+     * <p>Enables or disables default internet access for the image builder.</p>
+     */
     inline void SetEnableDefaultInternetAccess(bool value) { m_enableDefaultInternetAccessHasBeenSet = true; m_enableDefaultInternetAccess = value; }
 
     /**
@@ -315,6 +356,12 @@ namespace Model
      * image builder to a Microsoft Active Directory domain. </p>
      */
     inline const DomainJoinInfo& GetDomainJoinInfo() const{ return m_domainJoinInfo; }
+
+    /**
+     * <p>The name of the directory and organizational unit (OU) to use to join the
+     * image builder to a Microsoft Active Directory domain. </p>
+     */
+    inline bool DomainJoinInfoHasBeenSet() const { return m_domainJoinInfoHasBeenSet; }
 
     /**
      * <p>The name of the directory and organizational unit (OU) to use to join the
@@ -346,6 +393,12 @@ namespace Model
      * the latest version of the AppStream 2.0 agent, specify [LATEST]. </p>
      */
     inline const Aws::String& GetAppstreamAgentVersion() const{ return m_appstreamAgentVersion; }
+
+    /**
+     * <p>The version of the AppStream 2.0 agent to use for this image builder. To use
+     * the latest version of the AppStream 2.0 agent, specify [LATEST]. </p>
+     */
+    inline bool AppstreamAgentVersionHasBeenSet() const { return m_appstreamAgentVersionHasBeenSet; }
 
     /**
      * <p>The version of the AppStream 2.0 agent to use for this image builder. To use
@@ -393,6 +446,16 @@ namespace Model
      * Your Resources</a> in the <i>Amazon AppStream 2.0 Developer Guide</i>.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>The tags to associate with the image builder. A tag is a key-value pair, and
+     * the value is optional. For example, Environment=Test. If you do not specify a
+     * value, Environment=. </p> <p>If you do not specify a value, the value is set to
+     * an empty string.</p> <p>For more information about tags, see <a
+     * href="https://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html">Tagging
+     * Your Resources</a> in the <i>Amazon AppStream 2.0 Developer Guide</i>.</p>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
      * <p>The tags to associate with the image builder. A tag is a key-value pair, and

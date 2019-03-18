@@ -57,6 +57,12 @@ namespace Model
      * <p>The name of the repository that contains the branch for which you want to
      * retrieve information.</p>
      */
+    inline bool RepositoryNameHasBeenSet() const { return m_repositoryNameHasBeenSet; }
+
+    /**
+     * <p>The name of the repository that contains the branch for which you want to
+     * retrieve information.</p>
+     */
     inline void SetRepositoryName(const Aws::String& value) { m_repositoryNameHasBeenSet = true; m_repositoryName = value; }
 
     /**
@@ -94,6 +100,11 @@ namespace Model
      * <p>The name of the branch for which you want to retrieve information.</p>
      */
     inline const Aws::String& GetBranchName() const{ return m_branchName; }
+
+    /**
+     * <p>The name of the branch for which you want to retrieve information.</p>
+     */
+    inline bool BranchNameHasBeenSet() const { return m_branchNameHasBeenSet; }
 
     /**
      * <p>The name of the branch for which you want to retrieve information.</p>

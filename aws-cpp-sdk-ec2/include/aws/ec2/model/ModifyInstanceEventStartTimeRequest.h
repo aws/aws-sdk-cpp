@@ -61,6 +61,14 @@ namespace Model
      * required permissions, the error response is <code>DryRunOperation</code>.
      * Otherwise, it is <code>UnauthorizedOperation.</code> </p>
      */
+    inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
+
+    /**
+     * <p>Checks whether you have the required permissions for the action, without
+     * actually making the request, and provides an error response. If you have the
+     * required permissions, the error response is <code>DryRunOperation</code>.
+     * Otherwise, it is <code>UnauthorizedOperation.</code> </p>
+     */
     inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
 
     /**
@@ -76,6 +84,11 @@ namespace Model
      * <p>The ID of the instance with the scheduled event.</p>
      */
     inline const Aws::String& GetInstanceId() const{ return m_instanceId; }
+
+    /**
+     * <p>The ID of the instance with the scheduled event.</p>
+     */
+    inline bool InstanceIdHasBeenSet() const { return m_instanceIdHasBeenSet; }
 
     /**
      * <p>The ID of the instance with the scheduled event.</p>
@@ -116,6 +129,11 @@ namespace Model
     /**
      * <p>The ID of the event whose date and time you are modifying.</p>
      */
+    inline bool InstanceEventIdHasBeenSet() const { return m_instanceEventIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the event whose date and time you are modifying.</p>
+     */
     inline void SetInstanceEventId(const Aws::String& value) { m_instanceEventIdHasBeenSet = true; m_instanceEventId = value; }
 
     /**
@@ -148,6 +166,11 @@ namespace Model
      * <p>The new date and time when the event will take place.</p>
      */
     inline const Aws::Utils::DateTime& GetNotBefore() const{ return m_notBefore; }
+
+    /**
+     * <p>The new date and time when the event will take place.</p>
+     */
+    inline bool NotBeforeHasBeenSet() const { return m_notBeforeHasBeenSet; }
 
     /**
      * <p>The new date and time when the event will take place.</p>

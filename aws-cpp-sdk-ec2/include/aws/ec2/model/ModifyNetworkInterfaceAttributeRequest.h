@@ -64,6 +64,12 @@ namespace Model
      * <p>Information about the interface attachment. If modifying the 'delete on
      * termination' attribute, you must specify the ID of the interface attachment.</p>
      */
+    inline bool AttachmentHasBeenSet() const { return m_attachmentHasBeenSet; }
+
+    /**
+     * <p>Information about the interface attachment. If modifying the 'delete on
+     * termination' attribute, you must specify the ID of the interface attachment.</p>
+     */
     inline void SetAttachment(const NetworkInterfaceAttachmentChanges& value) { m_attachmentHasBeenSet = true; m_attachment = value; }
 
     /**
@@ -89,6 +95,11 @@ namespace Model
      * <p>A description for the network interface.</p>
      */
     inline const AttributeValue& GetDescription() const{ return m_description; }
+
+    /**
+     * <p>A description for the network interface.</p>
+     */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
 
     /**
      * <p>A description for the network interface.</p>
@@ -125,6 +136,14 @@ namespace Model
      * required permissions, the error response is <code>DryRunOperation</code>.
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
+    inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
+
+    /**
+     * <p>Checks whether you have the required permissions for the action, without
+     * actually making the request, and provides an error response. If you have the
+     * required permissions, the error response is <code>DryRunOperation</code>.
+     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+     */
     inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
 
     /**
@@ -143,6 +162,14 @@ namespace Model
      * the security group, not the name.</p>
      */
     inline const Aws::Vector<Aws::String>& GetGroups() const{ return m_groups; }
+
+    /**
+     * <p>Changes the security groups for the network interface. The new set of groups
+     * you specify replaces the current set. You must specify at least one group, even
+     * if it's just the default security group in the VPC. You must specify the ID of
+     * the security group, not the name.</p>
+     */
+    inline bool GroupsHasBeenSet() const { return m_groupsHasBeenSet; }
 
     /**
      * <p>Changes the security groups for the network interface. The new set of groups
@@ -209,6 +236,11 @@ namespace Model
     /**
      * <p>The ID of the network interface.</p>
      */
+    inline bool NetworkInterfaceIdHasBeenSet() const { return m_networkInterfaceIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the network interface.</p>
+     */
     inline void SetNetworkInterfaceId(const Aws::String& value) { m_networkInterfaceIdHasBeenSet = true; m_networkInterfaceId = value; }
 
     /**
@@ -246,6 +278,16 @@ namespace Model
      * Instances</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p>
      */
     inline const AttributeBooleanValue& GetSourceDestCheck() const{ return m_sourceDestCheck; }
+
+    /**
+     * <p>Indicates whether source/destination checking is enabled. A value of
+     * <code>true</code> means checking is enabled, and <code>false</code> means
+     * checking is disabled. This value must be <code>false</code> for a NAT instance
+     * to perform NAT. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_NAT_Instance.html">NAT
+     * Instances</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p>
+     */
+    inline bool SourceDestCheckHasBeenSet() const { return m_sourceDestCheckHasBeenSet; }
 
     /**
      * <p>Indicates whether source/destination checking is enabled. A value of

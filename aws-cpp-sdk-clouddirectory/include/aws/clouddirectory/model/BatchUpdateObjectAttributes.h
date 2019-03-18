@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p>Reference that identifies the object.</p>
      */
+    inline bool ObjectReferenceHasBeenSet() const { return m_objectReferenceHasBeenSet; }
+
+    /**
+     * <p>Reference that identifies the object.</p>
+     */
     inline void SetObjectReference(const ObjectReference& value) { m_objectReferenceHasBeenSet = true; m_objectReference = value; }
 
     /**
@@ -80,6 +85,11 @@ namespace Model
      * <p>Attributes update structure.</p>
      */
     inline const Aws::Vector<ObjectAttributeUpdate>& GetAttributeUpdates() const{ return m_attributeUpdates; }
+
+    /**
+     * <p>Attributes update structure.</p>
+     */
+    inline bool AttributeUpdatesHasBeenSet() const { return m_attributeUpdatesHasBeenSet; }
 
     /**
      * <p>Attributes update structure.</p>

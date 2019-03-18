@@ -51,6 +51,11 @@ namespace Model
     /**
      * <p>The list of standards that you want to enable.</p>
      */
+    inline bool StandardsSubscriptionRequestsHasBeenSet() const { return m_standardsSubscriptionRequestsHasBeenSet; }
+
+    /**
+     * <p>The list of standards that you want to enable.</p>
+     */
     inline void SetStandardsSubscriptionRequests(const Aws::Vector<StandardsSubscriptionRequest>& value) { m_standardsSubscriptionRequestsHasBeenSet = true; m_standardsSubscriptionRequests = value; }
 
     /**

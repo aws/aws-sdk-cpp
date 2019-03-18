@@ -59,6 +59,11 @@ namespace Model
     /**
      * <p>The name of the filter.</p>
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>The name of the filter.</p>
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
@@ -93,6 +98,13 @@ namespace Model
      * <code>Ubuntu</code> for the value.</p>
      */
     inline const Aws::Vector<Aws::String>& GetValues() const{ return m_values; }
+
+    /**
+     * <p>A string value on which to filter. For example, if you choose the
+     * <code>destinationServer.osVersion</code> filter name, you could specify
+     * <code>Ubuntu</code> for the value.</p>
+     */
+    inline bool ValuesHasBeenSet() const { return m_valuesHasBeenSet; }
 
     /**
      * <p>A string value on which to filter. For example, if you choose the
@@ -154,6 +166,17 @@ namespace Model
      * items.</p>
      */
     inline const Aws::String& GetCondition() const{ return m_condition; }
+
+    /**
+     * <p>A conditional operator. The following operators are valid: EQUALS,
+     * NOT_EQUALS, CONTAINS, NOT_CONTAINS. If you specify multiple filters, the system
+     * utilizes all filters as though concatenated by <i>AND</i>. If you specify
+     * multiple values for a particular filter, the system differentiates the values
+     * using <i>OR</i>. Calling either <i>DescribeConfigurations</i> or
+     * <i>ListConfigurations</i> returns attributes of matching configuration
+     * items.</p>
+     */
+    inline bool ConditionHasBeenSet() const { return m_conditionHasBeenSet; }
 
     /**
      * <p>A conditional operator. The following operators are valid: EQUALS,

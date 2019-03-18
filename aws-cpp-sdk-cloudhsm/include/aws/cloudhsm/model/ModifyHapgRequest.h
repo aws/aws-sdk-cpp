@@ -53,6 +53,11 @@ namespace Model
     /**
      * <p>The ARN of the high-availability partition group to modify.</p>
      */
+    inline bool HapgArnHasBeenSet() const { return m_hapgArnHasBeenSet; }
+
+    /**
+     * <p>The ARN of the high-availability partition group to modify.</p>
+     */
     inline void SetHapgArn(const Aws::String& value) { m_hapgArnHasBeenSet = true; m_hapgArn = value; }
 
     /**
@@ -85,6 +90,11 @@ namespace Model
      * <p>The new label for the high-availability partition group.</p>
      */
     inline const Aws::String& GetLabel() const{ return m_label; }
+
+    /**
+     * <p>The new label for the high-availability partition group.</p>
+     */
+    inline bool LabelHasBeenSet() const { return m_labelHasBeenSet; }
 
     /**
      * <p>The new label for the high-availability partition group.</p>
@@ -122,6 +132,12 @@ namespace Model
      * partition group.</p>
      */
     inline const Aws::Vector<Aws::String>& GetPartitionSerialList() const{ return m_partitionSerialList; }
+
+    /**
+     * <p>The list of partition serial numbers to make members of the high-availability
+     * partition group.</p>
+     */
+    inline bool PartitionSerialListHasBeenSet() const { return m_partitionSerialListHasBeenSet; }
 
     /**
      * <p>The list of partition serial numbers to make members of the high-availability

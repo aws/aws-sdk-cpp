@@ -55,6 +55,11 @@ namespace Model
     /**
      * <p>The interval of the content range.</p>
      */
+    inline bool IntervalHasBeenSet() const { return m_intervalHasBeenSet; }
+
+    /**
+     * <p>The interval of the content range.</p>
+     */
     inline void SetInterval(const BusinessReportInterval& value) { m_intervalHasBeenSet = true; m_interval = value; }
 
     /**

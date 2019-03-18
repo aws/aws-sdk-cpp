@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The name of the 'channel' activity.</p>
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>The name of the 'channel' activity.</p>
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
@@ -92,6 +97,11 @@ namespace Model
     /**
      * <p>The name of the channel from which the messages are processed.</p>
      */
+    inline bool ChannelNameHasBeenSet() const { return m_channelNameHasBeenSet; }
+
+    /**
+     * <p>The name of the channel from which the messages are processed.</p>
+     */
     inline void SetChannelName(const Aws::String& value) { m_channelNameHasBeenSet = true; m_channelName = value; }
 
     /**
@@ -124,6 +134,11 @@ namespace Model
      * <p>The next activity in the pipeline.</p>
      */
     inline const Aws::String& GetNext() const{ return m_next; }
+
+    /**
+     * <p>The next activity in the pipeline.</p>
+     */
+    inline bool NextHasBeenSet() const { return m_nextHasBeenSet; }
 
     /**
      * <p>The next activity in the pipeline.</p>

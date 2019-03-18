@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the destination Lambda function.</p>
      */
+    inline bool ResourceARNHasBeenSet() const { return m_resourceARNHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the destination Lambda function.</p>
+     */
     inline void SetResourceARN(const Aws::String& value) { m_resourceARNHasBeenSet = true; m_resourceARN = value; }
 
     /**
@@ -93,6 +98,15 @@ namespace Model
      * </note>
      */
     inline const Aws::String& GetRoleARN() const{ return m_roleARN; }
+
+    /**
+     * <p>The ARN of the IAM role that Kinesis Data Analytics can assume to write to
+     * the destination function.</p> <note> <p>Provided for backward compatibility.
+     * Applications that are created with the current API version have an
+     * application-level service execution role rather than a resource-level role.</p>
+     * </note>
+     */
+    inline bool RoleARNHasBeenSet() const { return m_roleARNHasBeenSet; }
 
     /**
      * <p>The ARN of the IAM role that Kinesis Data Analytics can assume to write to

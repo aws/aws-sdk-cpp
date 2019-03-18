@@ -60,6 +60,11 @@ namespace Model
     /**
      * <p>Any VPCs attached to the internet gateway.</p>
      */
+    inline bool AttachmentsHasBeenSet() const { return m_attachmentsHasBeenSet; }
+
+    /**
+     * <p>Any VPCs attached to the internet gateway.</p>
+     */
     inline void SetAttachments(const Aws::Vector<InternetGatewayAttachment>& value) { m_attachmentsHasBeenSet = true; m_attachments = value; }
 
     /**
@@ -92,6 +97,11 @@ namespace Model
      * <p>The ID of the internet gateway.</p>
      */
     inline const Aws::String& GetInternetGatewayId() const{ return m_internetGatewayId; }
+
+    /**
+     * <p>The ID of the internet gateway.</p>
+     */
+    inline bool InternetGatewayIdHasBeenSet() const { return m_internetGatewayIdHasBeenSet; }
 
     /**
      * <p>The ID of the internet gateway.</p>
@@ -132,6 +142,11 @@ namespace Model
     /**
      * <p>The ID of the AWS account that owns the internet gateway.</p>
      */
+    inline bool OwnerIdHasBeenSet() const { return m_ownerIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the AWS account that owns the internet gateway.</p>
+     */
     inline void SetOwnerId(const Aws::String& value) { m_ownerIdHasBeenSet = true; m_ownerId = value; }
 
     /**
@@ -164,6 +179,11 @@ namespace Model
      * <p>Any tags assigned to the internet gateway.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>Any tags assigned to the internet gateway.</p>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
      * <p>Any tags assigned to the internet gateway.</p>

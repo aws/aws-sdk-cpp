@@ -52,6 +52,11 @@ namespace Model
     /**
      * <p>The ID of the LAG.</p>
      */
+    inline bool LagIdHasBeenSet() const { return m_lagIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the LAG.</p>
+     */
     inline void SetLagId(const Aws::String& value) { m_lagIdHasBeenSet = true; m_lagId = value; }
 
     /**
@@ -84,6 +89,11 @@ namespace Model
      * <p>The name of the LAG.</p>
      */
     inline const Aws::String& GetLagName() const{ return m_lagName; }
+
+    /**
+     * <p>The name of the LAG.</p>
+     */
+    inline bool LagNameHasBeenSet() const { return m_lagNameHasBeenSet; }
 
     /**
      * <p>The name of the LAG.</p>
@@ -121,6 +131,12 @@ namespace Model
      * LAG itself to be operational.</p>
      */
     inline int GetMinimumLinks() const{ return m_minimumLinks; }
+
+    /**
+     * <p>The minimum number of physical connections that must be operational for the
+     * LAG itself to be operational.</p>
+     */
+    inline bool MinimumLinksHasBeenSet() const { return m_minimumLinksHasBeenSet; }
 
     /**
      * <p>The minimum number of physical connections that must be operational for the

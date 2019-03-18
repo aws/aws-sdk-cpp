@@ -80,6 +80,22 @@ markers (comments) taken directly from the input HTTP Live Streaming (HLS)
 messages in the input source.
 
      */
+    inline bool AdMarkersHasBeenSet() const { return m_adMarkersHasBeenSet; }
+
+    /**
+     * This setting controls how ad markers are included in the packaged
+     * OriginEndpoint.
+"NONE" will omit all SCTE-35 ad markers from the
+     * output.
+"PASSTHROUGH" causes the manifest to contain a copy of the SCTE-35
+     * ad
+markers (comments) taken directly from the input HTTP Live Streaming (HLS)
+     * manifest.
+"SCTE35_ENHANCED" generates ad markers and blackout tags based on
+     * SCTE-35
+messages in the input source.
+
+     */
     inline void SetAdMarkers(const AdMarkers& value) { m_adMarkersHasBeenSet = true; m_adMarkers = value; }
 
     /**
@@ -135,6 +151,9 @@ messages in the input source.
     inline const HlsEncryption& GetEncryption() const{ return m_encryption; }
 
     
+    inline bool EncryptionHasBeenSet() const { return m_encryptionHasBeenSet; }
+
+    
     inline void SetEncryption(const HlsEncryption& value) { m_encryptionHasBeenSet = true; m_encryption = value; }
 
     
@@ -151,6 +170,11 @@ messages in the input source.
      * When enabled, an I-Frame only stream will be included in the output.
      */
     inline bool GetIncludeIframeOnlyStream() const{ return m_includeIframeOnlyStream; }
+
+    /**
+     * When enabled, an I-Frame only stream will be included in the output.
+     */
+    inline bool IncludeIframeOnlyStreamHasBeenSet() const { return m_includeIframeOnlyStreamHasBeenSet; }
 
     /**
      * When enabled, an I-Frame only stream will be included in the output.
@@ -172,6 +196,16 @@ entry will be included in the
 
      */
     inline const PlaylistType& GetPlaylistType() const{ return m_playlistType; }
+
+    /**
+     * The HTTP Live Streaming (HLS) playlist type.
+When either "EVENT" or "VOD" is
+     * specified, a corresponding EXT-X-PLAYLIST-TYPE
+entry will be included in the
+     * media playlist.
+
+     */
+    inline bool PlaylistTypeHasBeenSet() const { return m_playlistTypeHasBeenSet; }
 
     /**
      * The HTTP Live Streaming (HLS) playlist type.
@@ -222,6 +256,11 @@ entry will be included in the
     /**
      * Time window (in seconds) contained in each parent manifest.
      */
+    inline bool PlaylistWindowSecondsHasBeenSet() const { return m_playlistWindowSecondsHasBeenSet; }
+
+    /**
+     * Time window (in seconds) contained in each parent manifest.
+     */
     inline void SetPlaylistWindowSeconds(int value) { m_playlistWindowSecondsHasBeenSet = true; m_playlistWindowSeconds = value; }
 
     /**
@@ -250,6 +289,27 @@ it will
 
      */
     inline int GetProgramDateTimeIntervalSeconds() const{ return m_programDateTimeIntervalSeconds; }
+
+    /**
+     * The interval (in seconds) between each EXT-X-PROGRAM-DATE-TIME tag
+inserted into
+     * manifests. Additionally, when an interval is specified
+ID3Timed Metadata
+     * messages will be generated every 5 seconds using the
+ingest time of the
+     * content.
+If the interval is not specified, or set to 0, then
+no
+     * EXT-X-PROGRAM-DATE-TIME tags will be inserted into manifests and no
+ID3Timed
+     * Metadata messages will be generated. Note that irrespective
+of this parameter,
+     * if any ID3 Timed Metadata is found in HTTP Live Streaming (HLS) input,
+it will
+     * be passed through to HLS output.
+
+     */
+    inline bool ProgramDateTimeIntervalSecondsHasBeenSet() const { return m_programDateTimeIntervalSecondsHasBeenSet; }
 
     /**
      * The interval (in seconds) between each EXT-X-PROGRAM-DATE-TIME tag
@@ -308,6 +368,14 @@ rounded to the
      * nearest multiple of the source fragment duration.
 
      */
+    inline bool SegmentDurationSecondsHasBeenSet() const { return m_segmentDurationSecondsHasBeenSet; }
+
+    /**
+     * Duration (in seconds) of each fragment. Actual fragments will be
+rounded to the
+     * nearest multiple of the source fragment duration.
+
+     */
     inline void SetSegmentDurationSeconds(int value) { m_segmentDurationSecondsHasBeenSet = true; m_segmentDurationSeconds = value; }
 
     /**
@@ -321,6 +389,9 @@ rounded to the
 
     
     inline const StreamSelection& GetStreamSelection() const{ return m_streamSelection; }
+
+    
+    inline bool StreamSelectionHasBeenSet() const { return m_streamSelectionHasBeenSet; }
 
     
     inline void SetStreamSelection(const StreamSelection& value) { m_streamSelectionHasBeenSet = true; m_streamSelection = value; }
@@ -339,6 +410,11 @@ rounded to the
      * When enabled, audio streams will be placed in rendition groups in the output.
      */
     inline bool GetUseAudioRenditionGroup() const{ return m_useAudioRenditionGroup; }
+
+    /**
+     * When enabled, audio streams will be placed in rendition groups in the output.
+     */
+    inline bool UseAudioRenditionGroupHasBeenSet() const { return m_useAudioRenditionGroupHasBeenSet; }
 
     /**
      * When enabled, audio streams will be placed in rendition groups in the output.

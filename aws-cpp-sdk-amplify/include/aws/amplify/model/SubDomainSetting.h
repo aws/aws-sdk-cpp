@@ -55,6 +55,11 @@ namespace Model
     /**
      * <p> Prefix setting for the Subdomain. </p>
      */
+    inline bool PrefixHasBeenSet() const { return m_prefixHasBeenSet; }
+
+    /**
+     * <p> Prefix setting for the Subdomain. </p>
+     */
     inline void SetPrefix(const Aws::String& value) { m_prefixHasBeenSet = true; m_prefix = value; }
 
     /**
@@ -87,6 +92,11 @@ namespace Model
      * <p> Branch name setting for the Subdomain. </p>
      */
     inline const Aws::String& GetBranchName() const{ return m_branchName; }
+
+    /**
+     * <p> Branch name setting for the Subdomain. </p>
+     */
+    inline bool BranchNameHasBeenSet() const { return m_branchNameHasBeenSet; }
 
     /**
      * <p> Branch name setting for the Subdomain. </p>

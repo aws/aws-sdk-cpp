@@ -56,6 +56,12 @@ namespace Model
      * A list of account IDs of the AWS accounts that sent invitations to the current
      * member account that you want to delete invitations from.
      */
+    inline bool AccountIdsHasBeenSet() const { return m_accountIdsHasBeenSet; }
+
+    /**
+     * A list of account IDs of the AWS accounts that sent invitations to the current
+     * member account that you want to delete invitations from.
+     */
     inline void SetAccountIds(const Aws::Vector<Aws::String>& value) { m_accountIdsHasBeenSet = true; m_accountIds = value; }
 
     /**

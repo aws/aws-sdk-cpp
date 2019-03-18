@@ -64,6 +64,16 @@ namespace Model
      * with no spaces. You can also include any of the following characters:
      * =,.@:/-</p>
      */
+    inline bool SerialNumberHasBeenSet() const { return m_serialNumberHasBeenSet; }
+
+    /**
+     * <p>The serial number that uniquely identifies the MFA device. For virtual MFA
+     * devices, the serial number is the same as the ARN.</p> <p>This parameter allows
+     * (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a
+     * string of characters consisting of upper and lowercase alphanumeric characters
+     * with no spaces. You can also include any of the following characters:
+     * =,.@:/-</p>
+     */
     inline void SetSerialNumber(const Aws::String& value) { m_serialNumberHasBeenSet = true; m_serialNumber = value; }
 
     /**

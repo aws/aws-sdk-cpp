@@ -56,6 +56,13 @@ namespace Model
      * compatible with your network and in CIDR notation (that is, specify the range as
      * an IPv4 CIDR block).</p>
      */
+    inline bool ManagementCidrRangeConstraintHasBeenSet() const { return m_managementCidrRangeConstraintHasBeenSet; }
+
+    /**
+     * <p>The IP address range to search. Specify an IP address range that is
+     * compatible with your network and in CIDR notation (that is, specify the range as
+     * an IPv4 CIDR block).</p>
+     */
     inline void SetManagementCidrRangeConstraint(const Aws::String& value) { m_managementCidrRangeConstraintHasBeenSet = true; m_managementCidrRangeConstraint = value; }
 
     /**
@@ -102,6 +109,11 @@ namespace Model
     /**
      * <p>The maximum number of items to return.</p>
      */
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
+
+    /**
+     * <p>The maximum number of items to return.</p>
+     */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
@@ -115,6 +127,12 @@ namespace Model
      * paginated, provide this token to receive the next set of results.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
+    /**
+     * <p>If you received a <code>NextToken</code> from a previous call that was
+     * paginated, provide this token to receive the next set of results.</p>
+     */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
      * <p>If you received a <code>NextToken</code> from a previous call that was

@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p>The identifier of the WorkSpace.</p>
      */
+    inline bool WorkspaceIdHasBeenSet() const { return m_workspaceIdHasBeenSet; }
+
+    /**
+     * <p>The identifier of the WorkSpace.</p>
+     */
     inline void SetWorkspaceId(const Aws::String& value) { m_workspaceIdHasBeenSet = true; m_workspaceId = value; }
 
     /**
@@ -90,6 +95,11 @@ namespace Model
      * <p>The error code that is returned if the WorkSpace cannot be rebooted.</p>
      */
     inline const Aws::String& GetErrorCode() const{ return m_errorCode; }
+
+    /**
+     * <p>The error code that is returned if the WorkSpace cannot be rebooted.</p>
+     */
+    inline bool ErrorCodeHasBeenSet() const { return m_errorCodeHasBeenSet; }
 
     /**
      * <p>The error code that is returned if the WorkSpace cannot be rebooted.</p>
@@ -127,6 +137,12 @@ namespace Model
      * rebooted.</p>
      */
     inline const Aws::String& GetErrorMessage() const{ return m_errorMessage; }
+
+    /**
+     * <p>The text of the error message that is returned if the WorkSpace cannot be
+     * rebooted.</p>
+     */
+    inline bool ErrorMessageHasBeenSet() const { return m_errorMessageHasBeenSet; }
 
     /**
      * <p>The text of the error message that is returned if the WorkSpace cannot be

@@ -59,6 +59,11 @@ namespace Model
     /**
      * <p>Information about the error.</p>
      */
+    inline bool ErrorHasBeenSet() const { return m_errorHasBeenSet; }
+
+    /**
+     * <p>Information about the error.</p>
+     */
     inline void SetError(const UnsuccessfulItemError& value) { m_errorHasBeenSet = true; m_error = value; }
 
     /**
@@ -81,6 +86,11 @@ namespace Model
      * <p>The ID of the resource.</p>
      */
     inline const Aws::String& GetResourceId() const{ return m_resourceId; }
+
+    /**
+     * <p>The ID of the resource.</p>
+     */
+    inline bool ResourceIdHasBeenSet() const { return m_resourceIdHasBeenSet; }
 
     /**
      * <p>The ID of the resource.</p>

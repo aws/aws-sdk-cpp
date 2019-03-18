@@ -84,6 +84,11 @@ namespace Model
     /**
      * <p>The date and time the event occurred.</p>
      */
+    inline bool TimestampHasBeenSet() const { return m_timestampHasBeenSet; }
+
+    /**
+     * <p>The date and time the event occurred.</p>
+     */
     inline void SetTimestamp(const Aws::Utils::DateTime& value) { m_timestampHasBeenSet = true; m_timestamp = value; }
 
     /**
@@ -106,6 +111,11 @@ namespace Model
      * <p>The type of the event.</p>
      */
     inline const HistoryEventType& GetType() const{ return m_type; }
+
+    /**
+     * <p>The type of the event.</p>
+     */
+    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
 
     /**
      * <p>The type of the event.</p>
@@ -136,6 +146,11 @@ namespace Model
     /**
      * <p>The id of the event. Events are numbered sequentially, starting at one.</p>
      */
+    inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
+
+    /**
+     * <p>The id of the event. Events are numbered sequentially, starting at one.</p>
+     */
     inline void SetId(long long value) { m_idHasBeenSet = true; m_id = value; }
 
     /**
@@ -152,6 +167,11 @@ namespace Model
     /**
      * <p>The id of the previous event.</p>
      */
+    inline bool PreviousEventIdHasBeenSet() const { return m_previousEventIdHasBeenSet; }
+
+    /**
+     * <p>The id of the previous event.</p>
+     */
     inline void SetPreviousEventId(long long value) { m_previousEventIdHasBeenSet = true; m_previousEventId = value; }
 
     /**
@@ -162,6 +182,9 @@ namespace Model
 
     
     inline const ActivityFailedEventDetails& GetActivityFailedEventDetails() const{ return m_activityFailedEventDetails; }
+
+    
+    inline bool ActivityFailedEventDetailsHasBeenSet() const { return m_activityFailedEventDetailsHasBeenSet; }
 
     
     inline void SetActivityFailedEventDetails(const ActivityFailedEventDetails& value) { m_activityFailedEventDetailsHasBeenSet = true; m_activityFailedEventDetails = value; }
@@ -181,6 +204,12 @@ namespace Model
      * execution.</p>
      */
     inline const ActivityScheduleFailedEventDetails& GetActivityScheduleFailedEventDetails() const{ return m_activityScheduleFailedEventDetails; }
+
+    /**
+     * <p>Contains details about an activity schedule event that failed during an
+     * execution.</p>
+     */
+    inline bool ActivityScheduleFailedEventDetailsHasBeenSet() const { return m_activityScheduleFailedEventDetailsHasBeenSet; }
 
     /**
      * <p>Contains details about an activity schedule event that failed during an
@@ -211,6 +240,9 @@ namespace Model
     inline const ActivityScheduledEventDetails& GetActivityScheduledEventDetails() const{ return m_activityScheduledEventDetails; }
 
     
+    inline bool ActivityScheduledEventDetailsHasBeenSet() const { return m_activityScheduledEventDetailsHasBeenSet; }
+
+    
     inline void SetActivityScheduledEventDetails(const ActivityScheduledEventDetails& value) { m_activityScheduledEventDetailsHasBeenSet = true; m_activityScheduledEventDetails = value; }
 
     
@@ -225,6 +257,9 @@ namespace Model
 
     
     inline const ActivityStartedEventDetails& GetActivityStartedEventDetails() const{ return m_activityStartedEventDetails; }
+
+    
+    inline bool ActivityStartedEventDetailsHasBeenSet() const { return m_activityStartedEventDetailsHasBeenSet; }
 
     
     inline void SetActivityStartedEventDetails(const ActivityStartedEventDetails& value) { m_activityStartedEventDetailsHasBeenSet = true; m_activityStartedEventDetails = value; }
@@ -243,6 +278,9 @@ namespace Model
     inline const ActivitySucceededEventDetails& GetActivitySucceededEventDetails() const{ return m_activitySucceededEventDetails; }
 
     
+    inline bool ActivitySucceededEventDetailsHasBeenSet() const { return m_activitySucceededEventDetailsHasBeenSet; }
+
+    
     inline void SetActivitySucceededEventDetails(const ActivitySucceededEventDetails& value) { m_activitySucceededEventDetailsHasBeenSet = true; m_activitySucceededEventDetails = value; }
 
     
@@ -257,6 +295,9 @@ namespace Model
 
     
     inline const ActivityTimedOutEventDetails& GetActivityTimedOutEventDetails() const{ return m_activityTimedOutEventDetails; }
+
+    
+    inline bool ActivityTimedOutEventDetailsHasBeenSet() const { return m_activityTimedOutEventDetailsHasBeenSet; }
 
     
     inline void SetActivityTimedOutEventDetails(const ActivityTimedOutEventDetails& value) { m_activityTimedOutEventDetailsHasBeenSet = true; m_activityTimedOutEventDetails = value; }
@@ -275,6 +316,11 @@ namespace Model
      * <p>Contains details about the failure of a task.</p>
      */
     inline const TaskFailedEventDetails& GetTaskFailedEventDetails() const{ return m_taskFailedEventDetails; }
+
+    /**
+     * <p>Contains details about the failure of a task.</p>
+     */
+    inline bool TaskFailedEventDetailsHasBeenSet() const { return m_taskFailedEventDetailsHasBeenSet; }
 
     /**
      * <p>Contains details about the failure of a task.</p>
@@ -305,6 +351,11 @@ namespace Model
     /**
      * <p>Contains details about a task that was scheduled.</p>
      */
+    inline bool TaskScheduledEventDetailsHasBeenSet() const { return m_taskScheduledEventDetailsHasBeenSet; }
+
+    /**
+     * <p>Contains details about a task that was scheduled.</p>
+     */
     inline void SetTaskScheduledEventDetails(const TaskScheduledEventDetails& value) { m_taskScheduledEventDetailsHasBeenSet = true; m_taskScheduledEventDetails = value; }
 
     /**
@@ -327,6 +378,11 @@ namespace Model
      * <p>Contains details about a task that failed to start.</p>
      */
     inline const TaskStartFailedEventDetails& GetTaskStartFailedEventDetails() const{ return m_taskStartFailedEventDetails; }
+
+    /**
+     * <p>Contains details about a task that failed to start.</p>
+     */
+    inline bool TaskStartFailedEventDetailsHasBeenSet() const { return m_taskStartFailedEventDetailsHasBeenSet; }
 
     /**
      * <p>Contains details about a task that failed to start.</p>
@@ -357,6 +413,11 @@ namespace Model
     /**
      * <p>Contains details about a task that was started.</p>
      */
+    inline bool TaskStartedEventDetailsHasBeenSet() const { return m_taskStartedEventDetailsHasBeenSet; }
+
+    /**
+     * <p>Contains details about a task that was started.</p>
+     */
     inline void SetTaskStartedEventDetails(const TaskStartedEventDetails& value) { m_taskStartedEventDetailsHasBeenSet = true; m_taskStartedEventDetails = value; }
 
     /**
@@ -379,6 +440,11 @@ namespace Model
      * <p>Contains details about a task that where the submit failed.</p>
      */
     inline const TaskSubmitFailedEventDetails& GetTaskSubmitFailedEventDetails() const{ return m_taskSubmitFailedEventDetails; }
+
+    /**
+     * <p>Contains details about a task that where the submit failed.</p>
+     */
+    inline bool TaskSubmitFailedEventDetailsHasBeenSet() const { return m_taskSubmitFailedEventDetailsHasBeenSet; }
 
     /**
      * <p>Contains details about a task that where the submit failed.</p>
@@ -409,6 +475,11 @@ namespace Model
     /**
      * <p>Contains details about a submitted task.</p>
      */
+    inline bool TaskSubmittedEventDetailsHasBeenSet() const { return m_taskSubmittedEventDetailsHasBeenSet; }
+
+    /**
+     * <p>Contains details about a submitted task.</p>
+     */
     inline void SetTaskSubmittedEventDetails(const TaskSubmittedEventDetails& value) { m_taskSubmittedEventDetailsHasBeenSet = true; m_taskSubmittedEventDetails = value; }
 
     /**
@@ -431,6 +502,11 @@ namespace Model
      * <p>Contains details about a task that succeeded.</p>
      */
     inline const TaskSucceededEventDetails& GetTaskSucceededEventDetails() const{ return m_taskSucceededEventDetails; }
+
+    /**
+     * <p>Contains details about a task that succeeded.</p>
+     */
+    inline bool TaskSucceededEventDetailsHasBeenSet() const { return m_taskSucceededEventDetailsHasBeenSet; }
 
     /**
      * <p>Contains details about a task that succeeded.</p>
@@ -461,6 +537,11 @@ namespace Model
     /**
      * <p>Contains details about a task that timed out.</p>
      */
+    inline bool TaskTimedOutEventDetailsHasBeenSet() const { return m_taskTimedOutEventDetailsHasBeenSet; }
+
+    /**
+     * <p>Contains details about a task that timed out.</p>
+     */
     inline void SetTaskTimedOutEventDetails(const TaskTimedOutEventDetails& value) { m_taskTimedOutEventDetailsHasBeenSet = true; m_taskTimedOutEventDetails = value; }
 
     /**
@@ -483,6 +564,9 @@ namespace Model
     inline const ExecutionFailedEventDetails& GetExecutionFailedEventDetails() const{ return m_executionFailedEventDetails; }
 
     
+    inline bool ExecutionFailedEventDetailsHasBeenSet() const { return m_executionFailedEventDetailsHasBeenSet; }
+
+    
     inline void SetExecutionFailedEventDetails(const ExecutionFailedEventDetails& value) { m_executionFailedEventDetailsHasBeenSet = true; m_executionFailedEventDetails = value; }
 
     
@@ -497,6 +581,9 @@ namespace Model
 
     
     inline const ExecutionStartedEventDetails& GetExecutionStartedEventDetails() const{ return m_executionStartedEventDetails; }
+
+    
+    inline bool ExecutionStartedEventDetailsHasBeenSet() const { return m_executionStartedEventDetailsHasBeenSet; }
 
     
     inline void SetExecutionStartedEventDetails(const ExecutionStartedEventDetails& value) { m_executionStartedEventDetailsHasBeenSet = true; m_executionStartedEventDetails = value; }
@@ -515,6 +602,9 @@ namespace Model
     inline const ExecutionSucceededEventDetails& GetExecutionSucceededEventDetails() const{ return m_executionSucceededEventDetails; }
 
     
+    inline bool ExecutionSucceededEventDetailsHasBeenSet() const { return m_executionSucceededEventDetailsHasBeenSet; }
+
+    
     inline void SetExecutionSucceededEventDetails(const ExecutionSucceededEventDetails& value) { m_executionSucceededEventDetailsHasBeenSet = true; m_executionSucceededEventDetails = value; }
 
     
@@ -529,6 +619,9 @@ namespace Model
 
     
     inline const ExecutionAbortedEventDetails& GetExecutionAbortedEventDetails() const{ return m_executionAbortedEventDetails; }
+
+    
+    inline bool ExecutionAbortedEventDetailsHasBeenSet() const { return m_executionAbortedEventDetailsHasBeenSet; }
 
     
     inline void SetExecutionAbortedEventDetails(const ExecutionAbortedEventDetails& value) { m_executionAbortedEventDetailsHasBeenSet = true; m_executionAbortedEventDetails = value; }
@@ -547,6 +640,9 @@ namespace Model
     inline const ExecutionTimedOutEventDetails& GetExecutionTimedOutEventDetails() const{ return m_executionTimedOutEventDetails; }
 
     
+    inline bool ExecutionTimedOutEventDetailsHasBeenSet() const { return m_executionTimedOutEventDetailsHasBeenSet; }
+
+    
     inline void SetExecutionTimedOutEventDetails(const ExecutionTimedOutEventDetails& value) { m_executionTimedOutEventDetailsHasBeenSet = true; m_executionTimedOutEventDetails = value; }
 
     
@@ -561,6 +657,9 @@ namespace Model
 
     
     inline const LambdaFunctionFailedEventDetails& GetLambdaFunctionFailedEventDetails() const{ return m_lambdaFunctionFailedEventDetails; }
+
+    
+    inline bool LambdaFunctionFailedEventDetailsHasBeenSet() const { return m_lambdaFunctionFailedEventDetailsHasBeenSet; }
 
     
     inline void SetLambdaFunctionFailedEventDetails(const LambdaFunctionFailedEventDetails& value) { m_lambdaFunctionFailedEventDetailsHasBeenSet = true; m_lambdaFunctionFailedEventDetails = value; }
@@ -579,6 +678,9 @@ namespace Model
     inline const LambdaFunctionScheduleFailedEventDetails& GetLambdaFunctionScheduleFailedEventDetails() const{ return m_lambdaFunctionScheduleFailedEventDetails; }
 
     
+    inline bool LambdaFunctionScheduleFailedEventDetailsHasBeenSet() const { return m_lambdaFunctionScheduleFailedEventDetailsHasBeenSet; }
+
+    
     inline void SetLambdaFunctionScheduleFailedEventDetails(const LambdaFunctionScheduleFailedEventDetails& value) { m_lambdaFunctionScheduleFailedEventDetailsHasBeenSet = true; m_lambdaFunctionScheduleFailedEventDetails = value; }
 
     
@@ -593,6 +695,9 @@ namespace Model
 
     
     inline const LambdaFunctionScheduledEventDetails& GetLambdaFunctionScheduledEventDetails() const{ return m_lambdaFunctionScheduledEventDetails; }
+
+    
+    inline bool LambdaFunctionScheduledEventDetailsHasBeenSet() const { return m_lambdaFunctionScheduledEventDetailsHasBeenSet; }
 
     
     inline void SetLambdaFunctionScheduledEventDetails(const LambdaFunctionScheduledEventDetails& value) { m_lambdaFunctionScheduledEventDetailsHasBeenSet = true; m_lambdaFunctionScheduledEventDetails = value; }
@@ -612,6 +717,12 @@ namespace Model
      * execution.</p>
      */
     inline const LambdaFunctionStartFailedEventDetails& GetLambdaFunctionStartFailedEventDetails() const{ return m_lambdaFunctionStartFailedEventDetails; }
+
+    /**
+     * <p>Contains details about a lambda function that failed to start during an
+     * execution.</p>
+     */
+    inline bool LambdaFunctionStartFailedEventDetailsHasBeenSet() const { return m_lambdaFunctionStartFailedEventDetailsHasBeenSet; }
 
     /**
      * <p>Contains details about a lambda function that failed to start during an
@@ -648,6 +759,12 @@ namespace Model
      * <p>Contains details about a lambda function that terminated successfully during
      * an execution.</p>
      */
+    inline bool LambdaFunctionSucceededEventDetailsHasBeenSet() const { return m_lambdaFunctionSucceededEventDetailsHasBeenSet; }
+
+    /**
+     * <p>Contains details about a lambda function that terminated successfully during
+     * an execution.</p>
+     */
     inline void SetLambdaFunctionSucceededEventDetails(const LambdaFunctionSucceededEventDetails& value) { m_lambdaFunctionSucceededEventDetailsHasBeenSet = true; m_lambdaFunctionSucceededEventDetails = value; }
 
     /**
@@ -673,6 +790,9 @@ namespace Model
     inline const LambdaFunctionTimedOutEventDetails& GetLambdaFunctionTimedOutEventDetails() const{ return m_lambdaFunctionTimedOutEventDetails; }
 
     
+    inline bool LambdaFunctionTimedOutEventDetailsHasBeenSet() const { return m_lambdaFunctionTimedOutEventDetailsHasBeenSet; }
+
+    
     inline void SetLambdaFunctionTimedOutEventDetails(const LambdaFunctionTimedOutEventDetails& value) { m_lambdaFunctionTimedOutEventDetailsHasBeenSet = true; m_lambdaFunctionTimedOutEventDetails = value; }
 
     
@@ -689,6 +809,9 @@ namespace Model
     inline const StateEnteredEventDetails& GetStateEnteredEventDetails() const{ return m_stateEnteredEventDetails; }
 
     
+    inline bool StateEnteredEventDetailsHasBeenSet() const { return m_stateEnteredEventDetailsHasBeenSet; }
+
+    
     inline void SetStateEnteredEventDetails(const StateEnteredEventDetails& value) { m_stateEnteredEventDetailsHasBeenSet = true; m_stateEnteredEventDetails = value; }
 
     
@@ -703,6 +826,9 @@ namespace Model
 
     
     inline const StateExitedEventDetails& GetStateExitedEventDetails() const{ return m_stateExitedEventDetails; }
+
+    
+    inline bool StateExitedEventDetailsHasBeenSet() const { return m_stateExitedEventDetailsHasBeenSet; }
 
     
     inline void SetStateExitedEventDetails(const StateExitedEventDetails& value) { m_stateExitedEventDetailsHasBeenSet = true; m_stateExitedEventDetails = value; }

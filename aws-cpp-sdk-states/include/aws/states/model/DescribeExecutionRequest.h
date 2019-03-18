@@ -52,6 +52,11 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the execution to describe.</p>
      */
+    inline bool ExecutionArnHasBeenSet() const { return m_executionArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the execution to describe.</p>
+     */
     inline void SetExecutionArn(const Aws::String& value) { m_executionArnHasBeenSet = true; m_executionArn = value; }
 
     /**

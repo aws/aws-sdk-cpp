@@ -58,6 +58,12 @@ namespace Model
      * <p>The provider name for an Amazon Cognito Identity User Pool. For example,
      * <code>cognito-idp.us-east-1.amazonaws.com/us-east-1_123456789</code>.</p>
      */
+    inline bool ProviderNameHasBeenSet() const { return m_providerNameHasBeenSet; }
+
+    /**
+     * <p>The provider name for an Amazon Cognito Identity User Pool. For example,
+     * <code>cognito-idp.us-east-1.amazonaws.com/us-east-1_123456789</code>.</p>
+     */
     inline void SetProviderName(const Aws::String& value) { m_providerNameHasBeenSet = true; m_providerName = value; }
 
     /**
@@ -99,6 +105,11 @@ namespace Model
     /**
      * <p>The client ID for the Amazon Cognito Identity User Pool.</p>
      */
+    inline bool ClientIdHasBeenSet() const { return m_clientIdHasBeenSet; }
+
+    /**
+     * <p>The client ID for the Amazon Cognito Identity User Pool.</p>
+     */
     inline void SetClientId(const Aws::String& value) { m_clientIdHasBeenSet = true; m_clientId = value; }
 
     /**
@@ -132,6 +143,12 @@ namespace Model
      * token.</p>
      */
     inline bool GetServerSideTokenCheck() const{ return m_serverSideTokenCheck; }
+
+    /**
+     * <p>TRUE if server-side token validation is enabled for the identity provider’s
+     * token.</p>
+     */
+    inline bool ServerSideTokenCheckHasBeenSet() const { return m_serverSideTokenCheckHasBeenSet; }
 
     /**
      * <p>TRUE if server-side token validation is enabled for the identity provider’s

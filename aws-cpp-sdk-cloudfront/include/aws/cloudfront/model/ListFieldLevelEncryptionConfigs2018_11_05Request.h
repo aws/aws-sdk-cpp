@@ -64,6 +64,15 @@ namespace Model
      * value of the <code>NextMarker</code> from the current page's response (which is
      * also the ID of the last configuration on that page). </p>
      */
+    inline bool MarkerHasBeenSet() const { return m_markerHasBeenSet; }
+
+    /**
+     * <p>Use this when paginating results to indicate where to begin in your list of
+     * configurations. The results include configurations in the list that occur after
+     * the marker. To get the next page of results, set the <code>Marker</code> to the
+     * value of the <code>NextMarker</code> from the current page's response (which is
+     * also the ID of the last configuration on that page). </p>
+     */
     inline void SetMarker(const Aws::String& value) { m_markerHasBeenSet = true; m_marker = value; }
 
     /**
@@ -117,6 +126,12 @@ namespace Model
      * response body. </p>
      */
     inline const Aws::String& GetMaxItems() const{ return m_maxItems; }
+
+    /**
+     * <p>The maximum number of field-level encryption configurations you want in the
+     * response body. </p>
+     */
+    inline bool MaxItemsHasBeenSet() const { return m_maxItemsHasBeenSet; }
 
     /**
      * <p>The maximum number of field-level encryption configurations you want in the

@@ -64,6 +64,16 @@ namespace Model
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
      * Resource Names (ARNs) and AWS Service Namespaces</a>. </p>
      */
+    inline bool CertificateArnHasBeenSet() const { return m_certificateArnHasBeenSet; }
+
+    /**
+     * <p>String that contains the ARN of the ACM Certificate with one or more tags
+     * that you want to remove. This must be of the form:</p> <p>
+     * <code>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</code>
+     * </p> <p>For more information about ARNs, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * Resource Names (ARNs) and AWS Service Namespaces</a>. </p>
+     */
     inline void SetCertificateArn(const Aws::String& value) { m_certificateArnHasBeenSet = true; m_certificateArn = value; }
 
     /**
@@ -121,6 +131,11 @@ namespace Model
      * <p>The key-value pair that defines the tag to remove.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>The key-value pair that defines the tag to remove.</p>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
      * <p>The key-value pair that defines the tag to remove.</p>

@@ -59,6 +59,12 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the directory where you want to list the
      * typed links.</p>
      */
+    inline bool DirectoryArnHasBeenSet() const { return m_directoryArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the directory where you want to list the
+     * typed links.</p>
+     */
     inline void SetDirectoryArn(const Aws::String& value) { m_directoryArnHasBeenSet = true; m_directoryArn = value; }
 
     /**
@@ -100,6 +106,11 @@ namespace Model
     /**
      * <p>Reference that identifies the object whose attributes will be listed.</p>
      */
+    inline bool ObjectReferenceHasBeenSet() const { return m_objectReferenceHasBeenSet; }
+
+    /**
+     * <p>Reference that identifies the object whose attributes will be listed.</p>
+     */
     inline void SetObjectReference(const ObjectReference& value) { m_objectReferenceHasBeenSet = true; m_objectReference = value; }
 
     /**
@@ -125,6 +136,14 @@ namespace Model
      * range.</p>
      */
     inline const Aws::Vector<TypedLinkAttributeRange>& GetFilterAttributeRanges() const{ return m_filterAttributeRanges; }
+
+    /**
+     * <p>Provides range filters for multiple attributes. When providing ranges to
+     * typed link selection, any inexact ranges must be specified at the end. Any
+     * attributes that do not have a range specified are presumed to match the entire
+     * range.</p>
+     */
+    inline bool FilterAttributeRangesHasBeenSet() const { return m_filterAttributeRangesHasBeenSet; }
 
     /**
      * <p>Provides range filters for multiple attributes. When providing ranges to
@@ -185,6 +204,12 @@ namespace Model
      * <p>Filters are interpreted in the order of the attributes on the typed link
      * facet, not the order in which they are supplied to any API calls.</p>
      */
+    inline bool FilterTypedLinkHasBeenSet() const { return m_filterTypedLinkHasBeenSet; }
+
+    /**
+     * <p>Filters are interpreted in the order of the attributes on the typed link
+     * facet, not the order in which they are supplied to any API calls.</p>
+     */
     inline void SetFilterTypedLink(const TypedLinkSchemaAndFacetName& value) { m_filterTypedLinkHasBeenSet = true; m_filterTypedLink = value; }
 
     /**
@@ -210,6 +235,11 @@ namespace Model
      * <p>The pagination token.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
+    /**
+     * <p>The pagination token.</p>
+     */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
      * <p>The pagination token.</p>
@@ -250,6 +280,11 @@ namespace Model
     /**
      * <p>The maximum number of results to retrieve.</p>
      */
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
+
+    /**
+     * <p>The maximum number of results to retrieve.</p>
+     */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
@@ -262,6 +297,11 @@ namespace Model
      * <p>The consistency level to execute the request at.</p>
      */
     inline const ConsistencyLevel& GetConsistencyLevel() const{ return m_consistencyLevel; }
+
+    /**
+     * <p>The consistency level to execute the request at.</p>
+     */
+    inline bool ConsistencyLevelHasBeenSet() const { return m_consistencyLevelHasBeenSet; }
 
     /**
      * <p>The consistency level to execute the request at.</p>

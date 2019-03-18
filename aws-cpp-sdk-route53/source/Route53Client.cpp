@@ -161,6 +161,11 @@ void Route53Client::OverrideEndpoint(const Aws::String& endpoint)
 }
 AssociateVPCWithHostedZoneOutcome Route53Client::AssociateVPCWithHostedZone(const AssociateVPCWithHostedZoneRequest& request) const
 {
+  if (!request.HostedZoneIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("AssociateVPCWithHostedZone", "Required field: HostedZoneId, is not set");
+    return AssociateVPCWithHostedZoneOutcome(Aws::Client::AWSError<Route53Errors>(Route53Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [HostedZoneId]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/2013-04-01/hostedzone/";
@@ -198,6 +203,11 @@ void Route53Client::AssociateVPCWithHostedZoneAsyncHelper(const AssociateVPCWith
 
 ChangeResourceRecordSetsOutcome Route53Client::ChangeResourceRecordSets(const ChangeResourceRecordSetsRequest& request) const
 {
+  if (!request.HostedZoneIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ChangeResourceRecordSets", "Required field: HostedZoneId, is not set");
+    return ChangeResourceRecordSetsOutcome(Aws::Client::AWSError<Route53Errors>(Route53Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [HostedZoneId]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/2013-04-01/hostedzone/";
@@ -235,6 +245,16 @@ void Route53Client::ChangeResourceRecordSetsAsyncHelper(const ChangeResourceReco
 
 ChangeTagsForResourceOutcome Route53Client::ChangeTagsForResource(const ChangeTagsForResourceRequest& request) const
 {
+  if (!request.ResourceTypeHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ChangeTagsForResource", "Required field: ResourceType, is not set");
+    return ChangeTagsForResourceOutcome(Aws::Client::AWSError<Route53Errors>(Route53Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceType]", false));
+  }
+  if (!request.ResourceIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ChangeTagsForResource", "Required field: ResourceId, is not set");
+    return ChangeTagsForResourceOutcome(Aws::Client::AWSError<Route53Errors>(Route53Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceId]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/2013-04-01/tags/";
@@ -483,6 +503,11 @@ void Route53Client::CreateTrafficPolicyInstanceAsyncHelper(const CreateTrafficPo
 
 CreateTrafficPolicyVersionOutcome Route53Client::CreateTrafficPolicyVersion(const CreateTrafficPolicyVersionRequest& request) const
 {
+  if (!request.IdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("CreateTrafficPolicyVersion", "Required field: Id, is not set");
+    return CreateTrafficPolicyVersionOutcome(Aws::Client::AWSError<Route53Errors>(Route53Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Id]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/2013-04-01/trafficpolicy/";
@@ -519,6 +544,11 @@ void Route53Client::CreateTrafficPolicyVersionAsyncHelper(const CreateTrafficPol
 
 CreateVPCAssociationAuthorizationOutcome Route53Client::CreateVPCAssociationAuthorization(const CreateVPCAssociationAuthorizationRequest& request) const
 {
+  if (!request.HostedZoneIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("CreateVPCAssociationAuthorization", "Required field: HostedZoneId, is not set");
+    return CreateVPCAssociationAuthorizationOutcome(Aws::Client::AWSError<Route53Errors>(Route53Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [HostedZoneId]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/2013-04-01/hostedzone/";
@@ -556,6 +586,11 @@ void Route53Client::CreateVPCAssociationAuthorizationAsyncHelper(const CreateVPC
 
 DeleteHealthCheckOutcome Route53Client::DeleteHealthCheck(const DeleteHealthCheckRequest& request) const
 {
+  if (!request.HealthCheckIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteHealthCheck", "Required field: HealthCheckId, is not set");
+    return DeleteHealthCheckOutcome(Aws::Client::AWSError<Route53Errors>(Route53Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [HealthCheckId]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/2013-04-01/healthcheck/";
@@ -592,6 +627,11 @@ void Route53Client::DeleteHealthCheckAsyncHelper(const DeleteHealthCheckRequest&
 
 DeleteHostedZoneOutcome Route53Client::DeleteHostedZone(const DeleteHostedZoneRequest& request) const
 {
+  if (!request.IdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteHostedZone", "Required field: Id, is not set");
+    return DeleteHostedZoneOutcome(Aws::Client::AWSError<Route53Errors>(Route53Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Id]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/2013-04-01/hostedzone/";
@@ -628,6 +668,11 @@ void Route53Client::DeleteHostedZoneAsyncHelper(const DeleteHostedZoneRequest& r
 
 DeleteQueryLoggingConfigOutcome Route53Client::DeleteQueryLoggingConfig(const DeleteQueryLoggingConfigRequest& request) const
 {
+  if (!request.IdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteQueryLoggingConfig", "Required field: Id, is not set");
+    return DeleteQueryLoggingConfigOutcome(Aws::Client::AWSError<Route53Errors>(Route53Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Id]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/2013-04-01/queryloggingconfig/";
@@ -664,6 +709,11 @@ void Route53Client::DeleteQueryLoggingConfigAsyncHelper(const DeleteQueryLogging
 
 DeleteReusableDelegationSetOutcome Route53Client::DeleteReusableDelegationSet(const DeleteReusableDelegationSetRequest& request) const
 {
+  if (!request.IdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteReusableDelegationSet", "Required field: Id, is not set");
+    return DeleteReusableDelegationSetOutcome(Aws::Client::AWSError<Route53Errors>(Route53Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Id]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/2013-04-01/delegationset/";
@@ -700,6 +750,16 @@ void Route53Client::DeleteReusableDelegationSetAsyncHelper(const DeleteReusableD
 
 DeleteTrafficPolicyOutcome Route53Client::DeleteTrafficPolicy(const DeleteTrafficPolicyRequest& request) const
 {
+  if (!request.IdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteTrafficPolicy", "Required field: Id, is not set");
+    return DeleteTrafficPolicyOutcome(Aws::Client::AWSError<Route53Errors>(Route53Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Id]", false));
+  }
+  if (!request.VersionHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteTrafficPolicy", "Required field: Version, is not set");
+    return DeleteTrafficPolicyOutcome(Aws::Client::AWSError<Route53Errors>(Route53Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Version]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/2013-04-01/trafficpolicy/";
@@ -738,6 +798,11 @@ void Route53Client::DeleteTrafficPolicyAsyncHelper(const DeleteTrafficPolicyRequ
 
 DeleteTrafficPolicyInstanceOutcome Route53Client::DeleteTrafficPolicyInstance(const DeleteTrafficPolicyInstanceRequest& request) const
 {
+  if (!request.IdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteTrafficPolicyInstance", "Required field: Id, is not set");
+    return DeleteTrafficPolicyInstanceOutcome(Aws::Client::AWSError<Route53Errors>(Route53Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Id]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/2013-04-01/trafficpolicyinstance/";
@@ -774,6 +839,11 @@ void Route53Client::DeleteTrafficPolicyInstanceAsyncHelper(const DeleteTrafficPo
 
 DeleteVPCAssociationAuthorizationOutcome Route53Client::DeleteVPCAssociationAuthorization(const DeleteVPCAssociationAuthorizationRequest& request) const
 {
+  if (!request.HostedZoneIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteVPCAssociationAuthorization", "Required field: HostedZoneId, is not set");
+    return DeleteVPCAssociationAuthorizationOutcome(Aws::Client::AWSError<Route53Errors>(Route53Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [HostedZoneId]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/2013-04-01/hostedzone/";
@@ -811,6 +881,11 @@ void Route53Client::DeleteVPCAssociationAuthorizationAsyncHelper(const DeleteVPC
 
 DisassociateVPCFromHostedZoneOutcome Route53Client::DisassociateVPCFromHostedZone(const DisassociateVPCFromHostedZoneRequest& request) const
 {
+  if (!request.HostedZoneIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DisassociateVPCFromHostedZone", "Required field: HostedZoneId, is not set");
+    return DisassociateVPCFromHostedZoneOutcome(Aws::Client::AWSError<Route53Errors>(Route53Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [HostedZoneId]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/2013-04-01/hostedzone/";
@@ -848,6 +923,11 @@ void Route53Client::DisassociateVPCFromHostedZoneAsyncHelper(const DisassociateV
 
 GetAccountLimitOutcome Route53Client::GetAccountLimit(const GetAccountLimitRequest& request) const
 {
+  if (!request.TypeHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetAccountLimit", "Required field: Type, is not set");
+    return GetAccountLimitOutcome(Aws::Client::AWSError<Route53Errors>(Route53Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Type]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/2013-04-01/accountlimit/";
@@ -884,6 +964,11 @@ void Route53Client::GetAccountLimitAsyncHelper(const GetAccountLimitRequest& req
 
 GetChangeOutcome Route53Client::GetChange(const GetChangeRequest& request) const
 {
+  if (!request.IdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetChange", "Required field: Id, is not set");
+    return GetChangeOutcome(Aws::Client::AWSError<Route53Errors>(Route53Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Id]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/2013-04-01/change/";
@@ -990,6 +1075,11 @@ void Route53Client::GetGeoLocationAsyncHelper(const GetGeoLocationRequest& reque
 
 GetHealthCheckOutcome Route53Client::GetHealthCheck(const GetHealthCheckRequest& request) const
 {
+  if (!request.HealthCheckIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetHealthCheck", "Required field: HealthCheckId, is not set");
+    return GetHealthCheckOutcome(Aws::Client::AWSError<Route53Errors>(Route53Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [HealthCheckId]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/2013-04-01/healthcheck/";
@@ -1061,6 +1151,11 @@ void Route53Client::GetHealthCheckCountAsyncHelper(const GetHealthCheckCountRequ
 
 GetHealthCheckLastFailureReasonOutcome Route53Client::GetHealthCheckLastFailureReason(const GetHealthCheckLastFailureReasonRequest& request) const
 {
+  if (!request.HealthCheckIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetHealthCheckLastFailureReason", "Required field: HealthCheckId, is not set");
+    return GetHealthCheckLastFailureReasonOutcome(Aws::Client::AWSError<Route53Errors>(Route53Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [HealthCheckId]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/2013-04-01/healthcheck/";
@@ -1098,6 +1193,11 @@ void Route53Client::GetHealthCheckLastFailureReasonAsyncHelper(const GetHealthCh
 
 GetHealthCheckStatusOutcome Route53Client::GetHealthCheckStatus(const GetHealthCheckStatusRequest& request) const
 {
+  if (!request.HealthCheckIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetHealthCheckStatus", "Required field: HealthCheckId, is not set");
+    return GetHealthCheckStatusOutcome(Aws::Client::AWSError<Route53Errors>(Route53Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [HealthCheckId]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/2013-04-01/healthcheck/";
@@ -1135,6 +1235,11 @@ void Route53Client::GetHealthCheckStatusAsyncHelper(const GetHealthCheckStatusRe
 
 GetHostedZoneOutcome Route53Client::GetHostedZone(const GetHostedZoneRequest& request) const
 {
+  if (!request.IdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetHostedZone", "Required field: Id, is not set");
+    return GetHostedZoneOutcome(Aws::Client::AWSError<Route53Errors>(Route53Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Id]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/2013-04-01/hostedzone/";
@@ -1206,6 +1311,16 @@ void Route53Client::GetHostedZoneCountAsyncHelper(const GetHostedZoneCountReques
 
 GetHostedZoneLimitOutcome Route53Client::GetHostedZoneLimit(const GetHostedZoneLimitRequest& request) const
 {
+  if (!request.TypeHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetHostedZoneLimit", "Required field: Type, is not set");
+    return GetHostedZoneLimitOutcome(Aws::Client::AWSError<Route53Errors>(Route53Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Type]", false));
+  }
+  if (!request.HostedZoneIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetHostedZoneLimit", "Required field: HostedZoneId, is not set");
+    return GetHostedZoneLimitOutcome(Aws::Client::AWSError<Route53Errors>(Route53Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [HostedZoneId]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/2013-04-01/hostedzonelimit/";
@@ -1244,6 +1359,11 @@ void Route53Client::GetHostedZoneLimitAsyncHelper(const GetHostedZoneLimitReques
 
 GetQueryLoggingConfigOutcome Route53Client::GetQueryLoggingConfig(const GetQueryLoggingConfigRequest& request) const
 {
+  if (!request.IdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetQueryLoggingConfig", "Required field: Id, is not set");
+    return GetQueryLoggingConfigOutcome(Aws::Client::AWSError<Route53Errors>(Route53Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Id]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/2013-04-01/queryloggingconfig/";
@@ -1280,6 +1400,11 @@ void Route53Client::GetQueryLoggingConfigAsyncHelper(const GetQueryLoggingConfig
 
 GetReusableDelegationSetOutcome Route53Client::GetReusableDelegationSet(const GetReusableDelegationSetRequest& request) const
 {
+  if (!request.IdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetReusableDelegationSet", "Required field: Id, is not set");
+    return GetReusableDelegationSetOutcome(Aws::Client::AWSError<Route53Errors>(Route53Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Id]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/2013-04-01/delegationset/";
@@ -1316,6 +1441,16 @@ void Route53Client::GetReusableDelegationSetAsyncHelper(const GetReusableDelegat
 
 GetReusableDelegationSetLimitOutcome Route53Client::GetReusableDelegationSetLimit(const GetReusableDelegationSetLimitRequest& request) const
 {
+  if (!request.TypeHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetReusableDelegationSetLimit", "Required field: Type, is not set");
+    return GetReusableDelegationSetLimitOutcome(Aws::Client::AWSError<Route53Errors>(Route53Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Type]", false));
+  }
+  if (!request.DelegationSetIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetReusableDelegationSetLimit", "Required field: DelegationSetId, is not set");
+    return GetReusableDelegationSetLimitOutcome(Aws::Client::AWSError<Route53Errors>(Route53Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DelegationSetId]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/2013-04-01/reusabledelegationsetlimit/";
@@ -1354,6 +1489,16 @@ void Route53Client::GetReusableDelegationSetLimitAsyncHelper(const GetReusableDe
 
 GetTrafficPolicyOutcome Route53Client::GetTrafficPolicy(const GetTrafficPolicyRequest& request) const
 {
+  if (!request.IdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetTrafficPolicy", "Required field: Id, is not set");
+    return GetTrafficPolicyOutcome(Aws::Client::AWSError<Route53Errors>(Route53Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Id]", false));
+  }
+  if (!request.VersionHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetTrafficPolicy", "Required field: Version, is not set");
+    return GetTrafficPolicyOutcome(Aws::Client::AWSError<Route53Errors>(Route53Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Version]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/2013-04-01/trafficpolicy/";
@@ -1392,6 +1537,11 @@ void Route53Client::GetTrafficPolicyAsyncHelper(const GetTrafficPolicyRequest& r
 
 GetTrafficPolicyInstanceOutcome Route53Client::GetTrafficPolicyInstance(const GetTrafficPolicyInstanceRequest& request) const
 {
+  if (!request.IdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetTrafficPolicyInstance", "Required field: Id, is not set");
+    return GetTrafficPolicyInstanceOutcome(Aws::Client::AWSError<Route53Errors>(Route53Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Id]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/2013-04-01/trafficpolicyinstance/";
@@ -1638,6 +1788,11 @@ void Route53Client::ListQueryLoggingConfigsAsyncHelper(const ListQueryLoggingCon
 
 ListResourceRecordSetsOutcome Route53Client::ListResourceRecordSets(const ListResourceRecordSetsRequest& request) const
 {
+  if (!request.HostedZoneIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListResourceRecordSets", "Required field: HostedZoneId, is not set");
+    return ListResourceRecordSetsOutcome(Aws::Client::AWSError<Route53Errors>(Route53Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [HostedZoneId]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/2013-04-01/hostedzone/";
@@ -1710,6 +1865,16 @@ void Route53Client::ListReusableDelegationSetsAsyncHelper(const ListReusableDele
 
 ListTagsForResourceOutcome Route53Client::ListTagsForResource(const ListTagsForResourceRequest& request) const
 {
+  if (!request.ResourceTypeHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListTagsForResource", "Required field: ResourceType, is not set");
+    return ListTagsForResourceOutcome(Aws::Client::AWSError<Route53Errors>(Route53Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceType]", false));
+  }
+  if (!request.ResourceIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListTagsForResource", "Required field: ResourceId, is not set");
+    return ListTagsForResourceOutcome(Aws::Client::AWSError<Route53Errors>(Route53Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceId]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/2013-04-01/tags/";
@@ -1748,6 +1913,11 @@ void Route53Client::ListTagsForResourceAsyncHelper(const ListTagsForResourceRequ
 
 ListTagsForResourcesOutcome Route53Client::ListTagsForResources(const ListTagsForResourcesRequest& request) const
 {
+  if (!request.ResourceTypeHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListTagsForResources", "Required field: ResourceType, is not set");
+    return ListTagsForResourcesOutcome(Aws::Client::AWSError<Route53Errors>(Route53Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceType]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/2013-04-01/tags/";
@@ -1854,6 +2024,11 @@ void Route53Client::ListTrafficPolicyInstancesAsyncHelper(const ListTrafficPolic
 
 ListTrafficPolicyInstancesByHostedZoneOutcome Route53Client::ListTrafficPolicyInstancesByHostedZone(const ListTrafficPolicyInstancesByHostedZoneRequest& request) const
 {
+  if (!request.HostedZoneIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListTrafficPolicyInstancesByHostedZone", "Required field: HostedZoneId, is not set");
+    return ListTrafficPolicyInstancesByHostedZoneOutcome(Aws::Client::AWSError<Route53Errors>(Route53Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [HostedZoneId]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/2013-04-01/trafficpolicyinstances/hostedzone";
@@ -1889,6 +2064,16 @@ void Route53Client::ListTrafficPolicyInstancesByHostedZoneAsyncHelper(const List
 
 ListTrafficPolicyInstancesByPolicyOutcome Route53Client::ListTrafficPolicyInstancesByPolicy(const ListTrafficPolicyInstancesByPolicyRequest& request) const
 {
+  if (!request.TrafficPolicyIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListTrafficPolicyInstancesByPolicy", "Required field: TrafficPolicyId, is not set");
+    return ListTrafficPolicyInstancesByPolicyOutcome(Aws::Client::AWSError<Route53Errors>(Route53Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [TrafficPolicyId]", false));
+  }
+  if (!request.TrafficPolicyVersionHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListTrafficPolicyInstancesByPolicy", "Required field: TrafficPolicyVersion, is not set");
+    return ListTrafficPolicyInstancesByPolicyOutcome(Aws::Client::AWSError<Route53Errors>(Route53Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [TrafficPolicyVersion]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/2013-04-01/trafficpolicyinstances/trafficpolicy";
@@ -1924,6 +2109,11 @@ void Route53Client::ListTrafficPolicyInstancesByPolicyAsyncHelper(const ListTraf
 
 ListTrafficPolicyVersionsOutcome Route53Client::ListTrafficPolicyVersions(const ListTrafficPolicyVersionsRequest& request) const
 {
+  if (!request.IdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListTrafficPolicyVersions", "Required field: Id, is not set");
+    return ListTrafficPolicyVersionsOutcome(Aws::Client::AWSError<Route53Errors>(Route53Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Id]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/2013-04-01/trafficpolicies/";
@@ -1961,6 +2151,11 @@ void Route53Client::ListTrafficPolicyVersionsAsyncHelper(const ListTrafficPolicy
 
 ListVPCAssociationAuthorizationsOutcome Route53Client::ListVPCAssociationAuthorizations(const ListVPCAssociationAuthorizationsRequest& request) const
 {
+  if (!request.HostedZoneIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListVPCAssociationAuthorizations", "Required field: HostedZoneId, is not set");
+    return ListVPCAssociationAuthorizationsOutcome(Aws::Client::AWSError<Route53Errors>(Route53Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [HostedZoneId]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/2013-04-01/hostedzone/";
@@ -1998,6 +2193,21 @@ void Route53Client::ListVPCAssociationAuthorizationsAsyncHelper(const ListVPCAss
 
 TestDNSAnswerOutcome Route53Client::TestDNSAnswer(const TestDNSAnswerRequest& request) const
 {
+  if (!request.HostedZoneIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("TestDNSAnswer", "Required field: HostedZoneId, is not set");
+    return TestDNSAnswerOutcome(Aws::Client::AWSError<Route53Errors>(Route53Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [HostedZoneId]", false));
+  }
+  if (!request.RecordNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("TestDNSAnswer", "Required field: RecordName, is not set");
+    return TestDNSAnswerOutcome(Aws::Client::AWSError<Route53Errors>(Route53Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [RecordName]", false));
+  }
+  if (!request.RecordTypeHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("TestDNSAnswer", "Required field: RecordType, is not set");
+    return TestDNSAnswerOutcome(Aws::Client::AWSError<Route53Errors>(Route53Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [RecordType]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/2013-04-01/testdnsanswer";
@@ -2033,6 +2243,11 @@ void Route53Client::TestDNSAnswerAsyncHelper(const TestDNSAnswerRequest& request
 
 UpdateHealthCheckOutcome Route53Client::UpdateHealthCheck(const UpdateHealthCheckRequest& request) const
 {
+  if (!request.HealthCheckIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateHealthCheck", "Required field: HealthCheckId, is not set");
+    return UpdateHealthCheckOutcome(Aws::Client::AWSError<Route53Errors>(Route53Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [HealthCheckId]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/2013-04-01/healthcheck/";
@@ -2069,6 +2284,11 @@ void Route53Client::UpdateHealthCheckAsyncHelper(const UpdateHealthCheckRequest&
 
 UpdateHostedZoneCommentOutcome Route53Client::UpdateHostedZoneComment(const UpdateHostedZoneCommentRequest& request) const
 {
+  if (!request.IdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateHostedZoneComment", "Required field: Id, is not set");
+    return UpdateHostedZoneCommentOutcome(Aws::Client::AWSError<Route53Errors>(Route53Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Id]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/2013-04-01/hostedzone/";
@@ -2105,6 +2325,16 @@ void Route53Client::UpdateHostedZoneCommentAsyncHelper(const UpdateHostedZoneCom
 
 UpdateTrafficPolicyCommentOutcome Route53Client::UpdateTrafficPolicyComment(const UpdateTrafficPolicyCommentRequest& request) const
 {
+  if (!request.IdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateTrafficPolicyComment", "Required field: Id, is not set");
+    return UpdateTrafficPolicyCommentOutcome(Aws::Client::AWSError<Route53Errors>(Route53Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Id]", false));
+  }
+  if (!request.VersionHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateTrafficPolicyComment", "Required field: Version, is not set");
+    return UpdateTrafficPolicyCommentOutcome(Aws::Client::AWSError<Route53Errors>(Route53Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Version]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/2013-04-01/trafficpolicy/";
@@ -2143,6 +2373,11 @@ void Route53Client::UpdateTrafficPolicyCommentAsyncHelper(const UpdateTrafficPol
 
 UpdateTrafficPolicyInstanceOutcome Route53Client::UpdateTrafficPolicyInstance(const UpdateTrafficPolicyInstanceRequest& request) const
 {
+  if (!request.IdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateTrafficPolicyInstance", "Required field: Id, is not set");
+    return UpdateTrafficPolicyInstanceOutcome(Aws::Client::AWSError<Route53Errors>(Route53Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Id]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/2013-04-01/trafficpolicyinstance/";

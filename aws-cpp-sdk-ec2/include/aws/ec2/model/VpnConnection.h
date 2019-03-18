@@ -72,6 +72,15 @@ namespace Model
      * <a>DescribeVpnConnections</a> response only if the VPN connection is in the
      * <code>pending</code> or <code>available</code> state.</p>
      */
+    inline bool CustomerGatewayConfigurationHasBeenSet() const { return m_customerGatewayConfigurationHasBeenSet; }
+
+    /**
+     * <p>The configuration information for the VPN connection's customer gateway (in
+     * the native XML format). This element is always present in the
+     * <a>CreateVpnConnection</a> response; however, it's present in the
+     * <a>DescribeVpnConnections</a> response only if the VPN connection is in the
+     * <code>pending</code> or <code>available</code> state.</p>
+     */
     inline void SetCustomerGatewayConfiguration(const Aws::String& value) { m_customerGatewayConfigurationHasBeenSet = true; m_customerGatewayConfiguration = value; }
 
     /**
@@ -128,6 +137,11 @@ namespace Model
     /**
      * <p>The ID of the customer gateway at your end of the VPN connection.</p>
      */
+    inline bool CustomerGatewayIdHasBeenSet() const { return m_customerGatewayIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the customer gateway at your end of the VPN connection.</p>
+     */
     inline void SetCustomerGatewayId(const Aws::String& value) { m_customerGatewayIdHasBeenSet = true; m_customerGatewayId = value; }
 
     /**
@@ -162,6 +176,13 @@ namespace Model
      * VPN connection.</p>
      */
     inline const Aws::String& GetCategory() const{ return m_category; }
+
+    /**
+     * <p>The category of the VPN connection. A value of <code>VPN</code> indicates an
+     * AWS VPN connection. A value of <code>VPN-Classic</code> indicates an AWS Classic
+     * VPN connection.</p>
+     */
+    inline bool CategoryHasBeenSet() const { return m_categoryHasBeenSet; }
 
     /**
      * <p>The category of the VPN connection. A value of <code>VPN</code> indicates an
@@ -214,6 +235,11 @@ namespace Model
     /**
      * <p>The current state of the VPN connection.</p>
      */
+    inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
+
+    /**
+     * <p>The current state of the VPN connection.</p>
+     */
     inline void SetState(const VpnState& value) { m_stateHasBeenSet = true; m_state = value; }
 
     /**
@@ -240,6 +266,11 @@ namespace Model
     /**
      * <p>The type of VPN connection.</p>
      */
+    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
+
+    /**
+     * <p>The type of VPN connection.</p>
+     */
     inline void SetType(const GatewayType& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
@@ -262,6 +293,11 @@ namespace Model
      * <p>The ID of the VPN connection.</p>
      */
     inline const Aws::String& GetVpnConnectionId() const{ return m_vpnConnectionId; }
+
+    /**
+     * <p>The ID of the VPN connection.</p>
+     */
+    inline bool VpnConnectionIdHasBeenSet() const { return m_vpnConnectionIdHasBeenSet; }
 
     /**
      * <p>The ID of the VPN connection.</p>
@@ -299,6 +335,12 @@ namespace Model
      * connection.</p>
      */
     inline const Aws::String& GetVpnGatewayId() const{ return m_vpnGatewayId; }
+
+    /**
+     * <p>The ID of the virtual private gateway at the AWS side of the VPN
+     * connection.</p>
+     */
+    inline bool VpnGatewayIdHasBeenSet() const { return m_vpnGatewayIdHasBeenSet; }
 
     /**
      * <p>The ID of the virtual private gateway at the AWS side of the VPN
@@ -345,6 +387,11 @@ namespace Model
     /**
      * <p>The ID of the transit gateway associated with the VPN connection.</p>
      */
+    inline bool TransitGatewayIdHasBeenSet() const { return m_transitGatewayIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the transit gateway associated with the VPN connection.</p>
+     */
     inline void SetTransitGatewayId(const Aws::String& value) { m_transitGatewayIdHasBeenSet = true; m_transitGatewayId = value; }
 
     /**
@@ -381,6 +428,11 @@ namespace Model
     /**
      * <p>The VPN connection options.</p>
      */
+    inline bool OptionsHasBeenSet() const { return m_optionsHasBeenSet; }
+
+    /**
+     * <p>The VPN connection options.</p>
+     */
     inline void SetOptions(const VpnConnectionOptions& value) { m_optionsHasBeenSet = true; m_options = value; }
 
     /**
@@ -403,6 +455,11 @@ namespace Model
      * <p>The static routes associated with the VPN connection.</p>
      */
     inline const Aws::Vector<VpnStaticRoute>& GetRoutes() const{ return m_routes; }
+
+    /**
+     * <p>The static routes associated with the VPN connection.</p>
+     */
+    inline bool RoutesHasBeenSet() const { return m_routesHasBeenSet; }
 
     /**
      * <p>The static routes associated with the VPN connection.</p>
@@ -443,6 +500,11 @@ namespace Model
     /**
      * <p>Any tags assigned to the VPN connection.</p>
      */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
+
+    /**
+     * <p>Any tags assigned to the VPN connection.</p>
+     */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     /**
@@ -475,6 +537,11 @@ namespace Model
      * <p>Information about the VPN tunnel.</p>
      */
     inline const Aws::Vector<VgwTelemetry>& GetVgwTelemetry() const{ return m_vgwTelemetry; }
+
+    /**
+     * <p>Information about the VPN tunnel.</p>
+     */
+    inline bool VgwTelemetryHasBeenSet() const { return m_vgwTelemetryHasBeenSet; }
 
     /**
      * <p>Information about the VPN tunnel.</p>

@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The endpoint.</p>
      */
+    inline bool EndpointHasBeenSet() const { return m_endpointHasBeenSet; }
+
+    /**
+     * <p>The endpoint.</p>
+     */
     inline void SetEndpoint(const Aws::String& value) { m_endpointHasBeenSet = true; m_endpoint = value; }
 
     /**
@@ -88,6 +93,11 @@ namespace Model
      * <p>The AWS Region.</p>
      */
     inline const Aws::String& GetAwsRegion() const{ return m_awsRegion; }
+
+    /**
+     * <p>The AWS Region.</p>
+     */
+    inline bool AwsRegionHasBeenSet() const { return m_awsRegionHasBeenSet; }
 
     /**
      * <p>The AWS Region.</p>

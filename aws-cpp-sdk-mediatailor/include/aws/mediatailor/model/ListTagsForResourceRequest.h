@@ -52,6 +52,12 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) for the playback configuration. You can get
      * this from the response to any playback configuration request. </p>
      */
+    inline bool ResourceArnHasBeenSet() const { return m_resourceArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) for the playback configuration. You can get
+     * this from the response to any playback configuration request. </p>
+     */
     inline void SetResourceArn(const Aws::String& value) { m_resourceArnHasBeenSet = true; m_resourceArn = value; }
 
     /**

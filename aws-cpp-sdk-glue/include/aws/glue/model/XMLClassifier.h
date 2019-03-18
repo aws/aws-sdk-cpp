@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The name of the classifier.</p>
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>The name of the classifier.</p>
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
@@ -88,6 +93,11 @@ namespace Model
      * <p>An identifier of the data format that the classifier matches.</p>
      */
     inline const Aws::String& GetClassification() const{ return m_classification; }
+
+    /**
+     * <p>An identifier of the data format that the classifier matches.</p>
+     */
+    inline bool ClassificationHasBeenSet() const { return m_classificationHasBeenSet; }
 
     /**
      * <p>An identifier of the data format that the classifier matches.</p>
@@ -128,6 +138,11 @@ namespace Model
     /**
      * <p>The time this classifier was registered.</p>
      */
+    inline bool CreationTimeHasBeenSet() const { return m_creationTimeHasBeenSet; }
+
+    /**
+     * <p>The time this classifier was registered.</p>
+     */
     inline void SetCreationTime(const Aws::Utils::DateTime& value) { m_creationTimeHasBeenSet = true; m_creationTime = value; }
 
     /**
@@ -150,6 +165,11 @@ namespace Model
      * <p>The time this classifier was last updated.</p>
      */
     inline const Aws::Utils::DateTime& GetLastUpdated() const{ return m_lastUpdated; }
+
+    /**
+     * <p>The time this classifier was last updated.</p>
+     */
+    inline bool LastUpdatedHasBeenSet() const { return m_lastUpdatedHasBeenSet; }
 
     /**
      * <p>The time this classifier was last updated.</p>
@@ -180,6 +200,11 @@ namespace Model
     /**
      * <p>The version of this classifier.</p>
      */
+    inline bool VersionHasBeenSet() const { return m_versionHasBeenSet; }
+
+    /**
+     * <p>The version of this classifier.</p>
+     */
     inline void SetVersion(long long value) { m_versionHasBeenSet = true; m_version = value; }
 
     /**
@@ -197,6 +222,16 @@ namespace Model
      * <code>&lt;row item_a="A" item_b="B" /&gt;</code> is not).</p>
      */
     inline const Aws::String& GetRowTag() const{ return m_rowTag; }
+
+    /**
+     * <p>The XML tag designating the element that contains each record in an XML
+     * document being parsed. Note that this cannot identify a self-closing element
+     * (closed by <code>/&gt;</code>). An empty row element that contains only
+     * attributes can be parsed as long as it ends with a closing tag (for example,
+     * <code>&lt;row item_a="A" item_b="B"&gt;&lt;/row&gt;</code> is okay, but
+     * <code>&lt;row item_a="A" item_b="B" /&gt;</code> is not).</p>
+     */
+    inline bool RowTagHasBeenSet() const { return m_rowTagHasBeenSet; }
 
     /**
      * <p>The XML tag designating the element that contains each record in an XML

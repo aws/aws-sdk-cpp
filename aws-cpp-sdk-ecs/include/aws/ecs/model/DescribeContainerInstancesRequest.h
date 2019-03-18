@@ -58,6 +58,13 @@ namespace Model
      * the container instances to describe. If you do not specify a cluster, the
      * default cluster is assumed.</p>
      */
+    inline bool ClusterHasBeenSet() const { return m_clusterHasBeenSet; }
+
+    /**
+     * <p>The short name or full Amazon Resource Name (ARN) of the cluster that hosts
+     * the container instances to describe. If you do not specify a cluster, the
+     * default cluster is assumed.</p>
+     */
     inline void SetCluster(const Aws::String& value) { m_clusterHasBeenSet = true; m_cluster = value; }
 
     /**
@@ -101,6 +108,12 @@ namespace Model
      * entries.</p>
      */
     inline const Aws::Vector<Aws::String>& GetContainerInstances() const{ return m_containerInstances; }
+
+    /**
+     * <p>A list of up to 100 container instance IDs or full Amazon Resource Name (ARN)
+     * entries.</p>
+     */
+    inline bool ContainerInstancesHasBeenSet() const { return m_containerInstancesHasBeenSet; }
 
     /**
      * <p>A list of up to 100 container instance IDs or full Amazon Resource Name (ARN)
@@ -151,6 +164,13 @@ namespace Model
      * response. If this field is omitted, tags are not included in the response.</p>
      */
     inline const Aws::Vector<ContainerInstanceField>& GetInclude() const{ return m_include; }
+
+    /**
+     * <p>Specifies whether you want to see the resource tags for the container
+     * instance. If <code>TAGS</code> is specified, the tags are included in the
+     * response. If this field is omitted, tags are not included in the response.</p>
+     */
+    inline bool IncludeHasBeenSet() const { return m_includeHasBeenSet; }
 
     /**
      * <p>Specifies whether you want to see the resource tags for the container

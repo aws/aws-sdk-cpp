@@ -55,6 +55,11 @@ namespace Model
     /**
      * The idempotency token for the create request.
      */
+    inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
+
+    /**
+     * The idempotency token for the create request.
+     */
     inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
 
     /**
@@ -91,6 +96,11 @@ namespace Model
     /**
      * A boolean value that specifies whether the detector is to be enabled.
      */
+    inline bool EnableHasBeenSet() const { return m_enableHasBeenSet; }
+
+    /**
+     * A boolean value that specifies whether the detector is to be enabled.
+     */
     inline void SetEnable(bool value) { m_enableHasBeenSet = true; m_enable = value; }
 
     /**
@@ -104,6 +114,12 @@ namespace Model
      * published.
      */
     inline const FindingPublishingFrequency& GetFindingPublishingFrequency() const{ return m_findingPublishingFrequency; }
+
+    /**
+     * A enum value that specifies how frequently customer got Finding updates
+     * published.
+     */
+    inline bool FindingPublishingFrequencyHasBeenSet() const { return m_findingPublishingFrequencyHasBeenSet; }
 
     /**
      * A enum value that specifies how frequently customer got Finding updates

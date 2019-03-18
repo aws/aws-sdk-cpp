@@ -59,6 +59,11 @@ namespace Model
     /**
      * <p>The user ID.</p>
      */
+    inline bool UserIdHasBeenSet() const { return m_userIdHasBeenSet; }
+
+    /**
+     * <p>The user ID.</p>
+     */
     inline void SetUserId(const Aws::String& value) { m_userIdHasBeenSet = true; m_userId = value; }
 
     /**
@@ -91,6 +96,11 @@ namespace Model
      * <p>The Amazon Chime account ID.</p>
      */
     inline const Aws::String& GetAccountId() const{ return m_accountId; }
+
+    /**
+     * <p>The Amazon Chime account ID.</p>
+     */
+    inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
 
     /**
      * <p>The Amazon Chime account ID.</p>
@@ -131,6 +141,11 @@ namespace Model
     /**
      * <p>The primary email address of the user.</p>
      */
+    inline bool PrimaryEmailHasBeenSet() const { return m_primaryEmailHasBeenSet; }
+
+    /**
+     * <p>The primary email address of the user.</p>
+     */
     inline void SetPrimaryEmail(const Aws::String& value) { m_primaryEmailHasBeenSet = true; m_primaryEmail = value; }
 
     /**
@@ -160,9 +175,55 @@ namespace Model
 
 
     /**
+     * <p>The primary phone number associated with the user.</p>
+     */
+    inline const Aws::String& GetPrimaryProvisionedNumber() const{ return m_primaryProvisionedNumber; }
+
+    /**
+     * <p>The primary phone number associated with the user.</p>
+     */
+    inline bool PrimaryProvisionedNumberHasBeenSet() const { return m_primaryProvisionedNumberHasBeenSet; }
+
+    /**
+     * <p>The primary phone number associated with the user.</p>
+     */
+    inline void SetPrimaryProvisionedNumber(const Aws::String& value) { m_primaryProvisionedNumberHasBeenSet = true; m_primaryProvisionedNumber = value; }
+
+    /**
+     * <p>The primary phone number associated with the user.</p>
+     */
+    inline void SetPrimaryProvisionedNumber(Aws::String&& value) { m_primaryProvisionedNumberHasBeenSet = true; m_primaryProvisionedNumber = std::move(value); }
+
+    /**
+     * <p>The primary phone number associated with the user.</p>
+     */
+    inline void SetPrimaryProvisionedNumber(const char* value) { m_primaryProvisionedNumberHasBeenSet = true; m_primaryProvisionedNumber.assign(value); }
+
+    /**
+     * <p>The primary phone number associated with the user.</p>
+     */
+    inline User& WithPrimaryProvisionedNumber(const Aws::String& value) { SetPrimaryProvisionedNumber(value); return *this;}
+
+    /**
+     * <p>The primary phone number associated with the user.</p>
+     */
+    inline User& WithPrimaryProvisionedNumber(Aws::String&& value) { SetPrimaryProvisionedNumber(std::move(value)); return *this;}
+
+    /**
+     * <p>The primary phone number associated with the user.</p>
+     */
+    inline User& WithPrimaryProvisionedNumber(const char* value) { SetPrimaryProvisionedNumber(value); return *this;}
+
+
+    /**
      * <p>The display name of the user.</p>
      */
     inline const Aws::String& GetDisplayName() const{ return m_displayName; }
+
+    /**
+     * <p>The display name of the user.</p>
+     */
+    inline bool DisplayNameHasBeenSet() const { return m_displayNameHasBeenSet; }
 
     /**
      * <p>The display name of the user.</p>
@@ -203,6 +264,11 @@ namespace Model
     /**
      * <p>The license type for the user.</p>
      */
+    inline bool LicenseTypeHasBeenSet() const { return m_licenseTypeHasBeenSet; }
+
+    /**
+     * <p>The license type for the user.</p>
+     */
     inline void SetLicenseType(const License& value) { m_licenseTypeHasBeenSet = true; m_licenseType = value; }
 
     /**
@@ -225,6 +291,11 @@ namespace Model
      * <p>The user registration status.</p>
      */
     inline const RegistrationStatus& GetUserRegistrationStatus() const{ return m_userRegistrationStatus; }
+
+    /**
+     * <p>The user registration status.</p>
+     */
+    inline bool UserRegistrationStatusHasBeenSet() const { return m_userRegistrationStatusHasBeenSet; }
 
     /**
      * <p>The user registration status.</p>
@@ -255,6 +326,11 @@ namespace Model
     /**
      * <p>The user invite status.</p>
      */
+    inline bool UserInvitationStatusHasBeenSet() const { return m_userInvitationStatusHasBeenSet; }
+
+    /**
+     * <p>The user invite status.</p>
+     */
     inline void SetUserInvitationStatus(const InviteStatus& value) { m_userInvitationStatusHasBeenSet = true; m_userInvitationStatus = value; }
 
     /**
@@ -277,6 +353,11 @@ namespace Model
      * <p>Date and time when the user is registered, in ISO 8601 format.</p>
      */
     inline const Aws::Utils::DateTime& GetRegisteredOn() const{ return m_registeredOn; }
+
+    /**
+     * <p>Date and time when the user is registered, in ISO 8601 format.</p>
+     */
+    inline bool RegisteredOnHasBeenSet() const { return m_registeredOnHasBeenSet; }
 
     /**
      * <p>Date and time when the user is registered, in ISO 8601 format.</p>
@@ -309,6 +390,12 @@ namespace Model
      * <p>Date and time when the user is invited to the Amazon Chime account, in ISO
      * 8601 format.</p>
      */
+    inline bool InvitedOnHasBeenSet() const { return m_invitedOnHasBeenSet; }
+
+    /**
+     * <p>Date and time when the user is invited to the Amazon Chime account, in ISO
+     * 8601 format.</p>
+     */
     inline void SetInvitedOn(const Aws::Utils::DateTime& value) { m_invitedOnHasBeenSet = true; m_invitedOn = value; }
 
     /**
@@ -334,6 +421,11 @@ namespace Model
      * <p>The user's personal meeting PIN.</p>
      */
     inline const Aws::String& GetPersonalPIN() const{ return m_personalPIN; }
+
+    /**
+     * <p>The user's personal meeting PIN.</p>
+     */
+    inline bool PersonalPINHasBeenSet() const { return m_personalPINHasBeenSet; }
 
     /**
      * <p>The user's personal meeting PIN.</p>
@@ -375,6 +467,9 @@ namespace Model
 
     Aws::String m_primaryEmail;
     bool m_primaryEmailHasBeenSet;
+
+    Aws::String m_primaryProvisionedNumber;
+    bool m_primaryProvisionedNumberHasBeenSet;
 
     Aws::String m_displayName;
     bool m_displayNameHasBeenSet;

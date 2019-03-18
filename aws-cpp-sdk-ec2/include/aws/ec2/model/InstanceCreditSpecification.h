@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p>The ID of the instance.</p>
      */
+    inline bool InstanceIdHasBeenSet() const { return m_instanceIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the instance.</p>
+     */
     inline void SetInstanceId(const Aws::String& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
 
     /**
@@ -91,6 +96,12 @@ namespace Model
      * <code>standard</code> and <code>unlimited</code>.</p>
      */
     inline const Aws::String& GetCpuCredits() const{ return m_cpuCredits; }
+
+    /**
+     * <p>The credit option for CPU usage of the instance. Valid values are
+     * <code>standard</code> and <code>unlimited</code>.</p>
+     */
+    inline bool CpuCreditsHasBeenSet() const { return m_cpuCreditsHasBeenSet; }
 
     /**
      * <p>The credit option for CPU usage of the instance. Valid values are

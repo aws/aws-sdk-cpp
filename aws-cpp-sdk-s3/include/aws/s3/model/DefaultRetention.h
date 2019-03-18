@@ -59,6 +59,12 @@ namespace Model
      * <p>The default Object Lock retention mode you want to apply to new objects
      * placed in the specified bucket.</p>
      */
+    inline bool ModeHasBeenSet() const { return m_modeHasBeenSet; }
+
+    /**
+     * <p>The default Object Lock retention mode you want to apply to new objects
+     * placed in the specified bucket.</p>
+     */
     inline void SetMode(const ObjectLockRetentionMode& value) { m_modeHasBeenSet = true; m_mode = value; }
 
     /**
@@ -90,6 +96,12 @@ namespace Model
      * <p>The number of days that you want to specify for the default retention
      * period.</p>
      */
+    inline bool DaysHasBeenSet() const { return m_daysHasBeenSet; }
+
+    /**
+     * <p>The number of days that you want to specify for the default retention
+     * period.</p>
+     */
     inline void SetDays(int value) { m_daysHasBeenSet = true; m_days = value; }
 
     /**
@@ -104,6 +116,12 @@ namespace Model
      * period.</p>
      */
     inline int GetYears() const{ return m_years; }
+
+    /**
+     * <p>The number of years that you want to specify for the default retention
+     * period.</p>
+     */
+    inline bool YearsHasBeenSet() const { return m_yearsHasBeenSet; }
 
     /**
      * <p>The number of years that you want to specify for the default retention

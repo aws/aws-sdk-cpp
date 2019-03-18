@@ -60,6 +60,12 @@ namespace Model
      * <p>The name of the cache parameter group to delete.</p> <note> <p>The specified
      * cache security group must not be associated with any clusters.</p> </note>
      */
+    inline bool CacheParameterGroupNameHasBeenSet() const { return m_cacheParameterGroupNameHasBeenSet; }
+
+    /**
+     * <p>The name of the cache parameter group to delete.</p> <note> <p>The specified
+     * cache security group must not be associated with any clusters.</p> </note>
+     */
     inline void SetCacheParameterGroupName(const Aws::String& value) { m_cacheParameterGroupNameHasBeenSet = true; m_cacheParameterGroupName = value; }
 
     /**

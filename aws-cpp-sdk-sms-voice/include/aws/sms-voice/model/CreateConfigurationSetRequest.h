@@ -53,6 +53,11 @@ namespace Model
     /**
      * The name that you want to give the configuration set.
      */
+    inline bool ConfigurationSetNameHasBeenSet() const { return m_configurationSetNameHasBeenSet; }
+
+    /**
+     * The name that you want to give the configuration set.
+     */
     inline void SetConfigurationSetName(const Aws::String& value) { m_configurationSetNameHasBeenSet = true; m_configurationSetName = value; }
 
     /**

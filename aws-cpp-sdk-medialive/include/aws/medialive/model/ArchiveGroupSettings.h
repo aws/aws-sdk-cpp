@@ -55,6 +55,11 @@ namespace Model
     /**
      * A directory and base filename where archive files should be written.
      */
+    inline bool DestinationHasBeenSet() const { return m_destinationHasBeenSet; }
+
+    /**
+     * A directory and base filename where archive files should be written.
+     */
     inline void SetDestination(const OutputLocationRef& value) { m_destinationHasBeenSet = true; m_destination = value; }
 
     /**
@@ -78,6 +83,12 @@ namespace Model
      * one.
      */
     inline int GetRolloverInterval() const{ return m_rolloverInterval; }
+
+    /**
+     * Number of seconds to write to archive file before closing and starting a new
+     * one.
+     */
+    inline bool RolloverIntervalHasBeenSet() const { return m_rolloverIntervalHasBeenSet; }
 
     /**
      * Number of seconds to write to archive file before closing and starting a new

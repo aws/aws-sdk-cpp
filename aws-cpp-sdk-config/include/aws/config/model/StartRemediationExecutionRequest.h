@@ -56,6 +56,12 @@ namespace Model
      * <p>The list of names of AWS Config rules that you want to run remediation
      * execution for.</p>
      */
+    inline bool ConfigRuleNameHasBeenSet() const { return m_configRuleNameHasBeenSet; }
+
+    /**
+     * <p>The list of names of AWS Config rules that you want to run remediation
+     * execution for.</p>
+     */
     inline void SetConfigRuleName(const Aws::String& value) { m_configRuleNameHasBeenSet = true; m_configRuleName = value; }
 
     /**
@@ -94,6 +100,12 @@ namespace Model
      * element in the list consists of the resource type and resource ID. </p>
      */
     inline const Aws::Vector<ResourceKey>& GetResourceKeys() const{ return m_resourceKeys; }
+
+    /**
+     * <p>A list of resource keys to be processed with the current request. Each
+     * element in the list consists of the resource type and resource ID. </p>
+     */
+    inline bool ResourceKeysHasBeenSet() const { return m_resourceKeysHasBeenSet; }
 
     /**
      * <p>A list of resource keys to be processed with the current request. Each

@@ -56,6 +56,12 @@ namespace Model
      * <p>The number of AWS resources or AWS Config rules responsible for the current
      * compliance of the item.</p>
      */
+    inline bool CappedCountHasBeenSet() const { return m_cappedCountHasBeenSet; }
+
+    /**
+     * <p>The number of AWS resources or AWS Config rules responsible for the current
+     * compliance of the item.</p>
+     */
     inline void SetCappedCount(int value) { m_cappedCountHasBeenSet = true; m_cappedCount = value; }
 
     /**
@@ -69,6 +75,11 @@ namespace Model
      * <p>Indicates whether the maximum count is reached.</p>
      */
     inline bool GetCapExceeded() const{ return m_capExceeded; }
+
+    /**
+     * <p>Indicates whether the maximum count is reached.</p>
+     */
+    inline bool CapExceededHasBeenSet() const { return m_capExceededHasBeenSet; }
 
     /**
      * <p>Indicates whether the maximum count is reached.</p>

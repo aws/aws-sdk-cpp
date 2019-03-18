@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The Amazon S3 bucket location of the manifest file for labeled data. </p>
      */
+    inline bool OutputDatasetS3UriHasBeenSet() const { return m_outputDatasetS3UriHasBeenSet; }
+
+    /**
+     * <p>The Amazon S3 bucket location of the manifest file for labeled data. </p>
+     */
     inline void SetOutputDatasetS3Uri(const Aws::String& value) { m_outputDatasetS3UriHasBeenSet = true; m_outputDatasetS3Uri = value; }
 
     /**
@@ -89,6 +94,12 @@ namespace Model
      * trained as part of automated data labeling. </p>
      */
     inline const Aws::String& GetFinalActiveLearningModelArn() const{ return m_finalActiveLearningModelArn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) for the most recent Amazon SageMaker model
+     * trained as part of automated data labeling. </p>
+     */
+    inline bool FinalActiveLearningModelArnHasBeenSet() const { return m_finalActiveLearningModelArnHasBeenSet; }
 
     /**
      * <p>The Amazon Resource Name (ARN) for the most recent Amazon SageMaker model

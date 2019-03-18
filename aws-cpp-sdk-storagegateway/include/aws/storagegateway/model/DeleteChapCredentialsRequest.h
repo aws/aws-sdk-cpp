@@ -62,6 +62,13 @@ namespace Model
      * <a>DescribeStorediSCSIVolumes</a> operation to return to retrieve the TargetARN
      * for specified VolumeARN.</p>
      */
+    inline bool TargetARNHasBeenSet() const { return m_targetARNHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the iSCSI volume target. Use the
+     * <a>DescribeStorediSCSIVolumes</a> operation to return to retrieve the TargetARN
+     * for specified VolumeARN.</p>
+     */
     inline void SetTargetARN(const Aws::String& value) { m_targetARNHasBeenSet = true; m_targetARN = value; }
 
     /**
@@ -104,6 +111,11 @@ namespace Model
      * <p>The iSCSI initiator that connects to the target.</p>
      */
     inline const Aws::String& GetInitiatorName() const{ return m_initiatorName; }
+
+    /**
+     * <p>The iSCSI initiator that connects to the target.</p>
+     */
+    inline bool InitiatorNameHasBeenSet() const { return m_initiatorNameHasBeenSet; }
 
     /**
      * <p>The iSCSI initiator that connects to the target.</p>

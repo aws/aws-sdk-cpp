@@ -59,6 +59,11 @@ namespace Model
     /**
      * <p>The values of the partition.</p>
      */
+    inline bool ValuesHasBeenSet() const { return m_valuesHasBeenSet; }
+
+    /**
+     * <p>The values of the partition.</p>
+     */
     inline void SetValues(const Aws::Vector<Aws::String>& value) { m_valuesHasBeenSet = true; m_values = value; }
 
     /**
@@ -100,6 +105,11 @@ namespace Model
     /**
      * <p>The name of the catalog database where the table in question is located.</p>
      */
+    inline bool DatabaseNameHasBeenSet() const { return m_databaseNameHasBeenSet; }
+
+    /**
+     * <p>The name of the catalog database where the table in question is located.</p>
+     */
     inline void SetDatabaseName(const Aws::String& value) { m_databaseNameHasBeenSet = true; m_databaseName = value; }
 
     /**
@@ -132,6 +142,11 @@ namespace Model
      * <p>The name of the table in question.</p>
      */
     inline const Aws::String& GetTableName() const{ return m_tableName; }
+
+    /**
+     * <p>The name of the table in question.</p>
+     */
+    inline bool TableNameHasBeenSet() const { return m_tableNameHasBeenSet; }
 
     /**
      * <p>The name of the table in question.</p>
@@ -172,6 +187,11 @@ namespace Model
     /**
      * <p>The time at which the partition was created.</p>
      */
+    inline bool CreationTimeHasBeenSet() const { return m_creationTimeHasBeenSet; }
+
+    /**
+     * <p>The time at which the partition was created.</p>
+     */
     inline void SetCreationTime(const Aws::Utils::DateTime& value) { m_creationTimeHasBeenSet = true; m_creationTime = value; }
 
     /**
@@ -194,6 +214,11 @@ namespace Model
      * <p>The last time at which the partition was accessed.</p>
      */
     inline const Aws::Utils::DateTime& GetLastAccessTime() const{ return m_lastAccessTime; }
+
+    /**
+     * <p>The last time at which the partition was accessed.</p>
+     */
+    inline bool LastAccessTimeHasBeenSet() const { return m_lastAccessTimeHasBeenSet; }
 
     /**
      * <p>The last time at which the partition was accessed.</p>
@@ -226,6 +251,12 @@ namespace Model
      * <p>Provides information about the physical location where the partition is
      * stored.</p>
      */
+    inline bool StorageDescriptorHasBeenSet() const { return m_storageDescriptorHasBeenSet; }
+
+    /**
+     * <p>Provides information about the physical location where the partition is
+     * stored.</p>
+     */
     inline void SetStorageDescriptor(const StorageDescriptor& value) { m_storageDescriptorHasBeenSet = true; m_storageDescriptor = value; }
 
     /**
@@ -251,6 +282,11 @@ namespace Model
      * <p>These key-value pairs define partition parameters.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetParameters() const{ return m_parameters; }
+
+    /**
+     * <p>These key-value pairs define partition parameters.</p>
+     */
+    inline bool ParametersHasBeenSet() const { return m_parametersHasBeenSet; }
 
     /**
      * <p>These key-value pairs define partition parameters.</p>
@@ -313,6 +349,12 @@ namespace Model
      * partition.</p>
      */
     inline const Aws::Utils::DateTime& GetLastAnalyzedTime() const{ return m_lastAnalyzedTime; }
+
+    /**
+     * <p>The last time at which column statistics were computed for this
+     * partition.</p>
+     */
+    inline bool LastAnalyzedTimeHasBeenSet() const { return m_lastAnalyzedTimeHasBeenSet; }
 
     /**
      * <p>The last time at which column statistics were computed for this

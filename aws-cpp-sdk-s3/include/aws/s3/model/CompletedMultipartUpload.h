@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p/>
      */
+    inline bool PartsHasBeenSet() const { return m_partsHasBeenSet; }
+
+    /**
+     * <p/>
+     */
     inline void SetParts(const Aws::Vector<CompletedPart>& value) { m_partsHasBeenSet = true; m_parts = value; }
 
     /**

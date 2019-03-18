@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p>The <code>Id</code> of an entry in a batch request.</p>
      */
+    inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
+
+    /**
+     * <p>The <code>Id</code> of an entry in a batch request.</p>
+     */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
     /**
@@ -94,6 +99,11 @@ namespace Model
     /**
      * <p>Specifies whether the error happened due to the producer.</p>
      */
+    inline bool SenderFaultHasBeenSet() const { return m_senderFaultHasBeenSet; }
+
+    /**
+     * <p>Specifies whether the error happened due to the producer.</p>
+     */
     inline void SetSenderFault(bool value) { m_senderFaultHasBeenSet = true; m_senderFault = value; }
 
     /**
@@ -106,6 +116,11 @@ namespace Model
      * <p>An error code representing why the action failed on this entry.</p>
      */
     inline const Aws::String& GetCode() const{ return m_code; }
+
+    /**
+     * <p>An error code representing why the action failed on this entry.</p>
+     */
+    inline bool CodeHasBeenSet() const { return m_codeHasBeenSet; }
 
     /**
      * <p>An error code representing why the action failed on this entry.</p>
@@ -142,6 +157,11 @@ namespace Model
      * <p>A message explaining why the action failed on this entry.</p>
      */
     inline const Aws::String& GetMessage() const{ return m_message; }
+
+    /**
+     * <p>A message explaining why the action failed on this entry.</p>
+     */
+    inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
 
     /**
      * <p>A message explaining why the action failed on this entry.</p>

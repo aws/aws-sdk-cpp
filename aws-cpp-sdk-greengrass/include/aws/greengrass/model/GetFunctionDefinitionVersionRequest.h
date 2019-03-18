@@ -56,6 +56,11 @@ namespace Model
     /**
      * The ID of the Lambda function definition.
      */
+    inline bool FunctionDefinitionIdHasBeenSet() const { return m_functionDefinitionIdHasBeenSet; }
+
+    /**
+     * The ID of the Lambda function definition.
+     */
     inline void SetFunctionDefinitionId(const Aws::String& value) { m_functionDefinitionIdHasBeenSet = true; m_functionDefinitionId = value; }
 
     /**
@@ -88,6 +93,11 @@ namespace Model
      * The ID of the function definition version.
      */
     inline const Aws::String& GetFunctionDefinitionVersionId() const{ return m_functionDefinitionVersionId; }
+
+    /**
+     * The ID of the function definition version.
+     */
+    inline bool FunctionDefinitionVersionIdHasBeenSet() const { return m_functionDefinitionVersionIdHasBeenSet; }
 
     /**
      * The ID of the function definition version.
@@ -125,6 +135,12 @@ namespace Model
      * results.
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
+    /**
+     * The token for the next set of results, or ''null'' if there are no additional
+     * results.
+     */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
      * The token for the next set of results, or ''null'' if there are no additional

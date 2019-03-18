@@ -55,6 +55,11 @@ namespace Model
     /**
      * <p>A value for the keyword.</p>
      */
+    inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
+
+    /**
+     * <p>A value for the keyword.</p>
+     */
     inline void SetValue(const Aws::String& value) { m_valueHasBeenSet = true; m_value = value; }
 
     /**

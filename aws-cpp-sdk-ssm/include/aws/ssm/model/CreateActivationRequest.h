@@ -59,6 +59,13 @@ namespace Model
      * Amazon EC2. </p> <important> <p>Do not enter personally identifiable information
      * in this field.</p> </important>
      */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
+
+    /**
+     * <p>A user-defined description of the resource that you want to register with
+     * Amazon EC2. </p> <important> <p>Do not enter personally identifiable information
+     * in this field.</p> </important>
+     */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
@@ -104,6 +111,14 @@ namespace Model
      * in this field.</p> </important>
      */
     inline const Aws::String& GetDefaultInstanceName() const{ return m_defaultInstanceName; }
+
+    /**
+     * <p>The name of the registered, managed instance as it will appear in the Amazon
+     * EC2 console or when you use the AWS command line tools to list EC2
+     * resources.</p> <important> <p>Do not enter personally identifiable information
+     * in this field.</p> </important>
+     */
+    inline bool DefaultInstanceNameHasBeenSet() const { return m_defaultInstanceNameHasBeenSet; }
 
     /**
      * <p>The name of the registered, managed instance as it will appear in the Amazon
@@ -164,6 +179,12 @@ namespace Model
      * <p>The Amazon Identity and Access Management (IAM) role that you want to assign
      * to the managed instance. </p>
      */
+    inline bool IamRoleHasBeenSet() const { return m_iamRoleHasBeenSet; }
+
+    /**
+     * <p>The Amazon Identity and Access Management (IAM) role that you want to assign
+     * to the managed instance. </p>
+     */
     inline void SetIamRole(const Aws::String& value) { m_iamRoleHasBeenSet = true; m_iamRole = value; }
 
     /**
@@ -207,6 +228,12 @@ namespace Model
      * <p>Specify the maximum number of managed instances you want to register. The
      * default value is 1 instance.</p>
      */
+    inline bool RegistrationLimitHasBeenSet() const { return m_registrationLimitHasBeenSet; }
+
+    /**
+     * <p>Specify the maximum number of managed instances you want to register. The
+     * default value is 1 instance.</p>
+     */
     inline void SetRegistrationLimit(int value) { m_registrationLimitHasBeenSet = true; m_registrationLimit = value; }
 
     /**
@@ -221,6 +248,12 @@ namespace Model
      * 24 hours.</p>
      */
     inline const Aws::Utils::DateTime& GetExpirationDate() const{ return m_expirationDate; }
+
+    /**
+     * <p>The date by which this activation request should expire. The default value is
+     * 24 hours.</p>
+     */
+    inline bool ExpirationDateHasBeenSet() const { return m_expirationDateHasBeenSet; }
 
     /**
      * <p>The date by which this activation request should expire. The default value is
@@ -267,6 +300,27 @@ namespace Model
      * remove tags from your managed instances, see <a>RemoveTagsFromResource</a>.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>Optional metadata that you assign to a resource. Tags enable you to
+     * categorize a resource in different ways, such as by purpose, owner, or
+     * environment. For example, you might want to tag an activation to identify which
+     * servers or virtual machines (VMs) in your on-premises environment you intend to
+     * activate. In this case, you could specify the following key name/value
+     * pairs:</p> <ul> <li> <p> <code>Key=OS,Value=Windows</code> </p> </li> <li> <p>
+     * <code>Key=Environment,Value=Production</code> </p> </li> </ul> <important>
+     * <p>When you install SSM Agent on your on-premises servers and VMs, you specify
+     * an activation ID and code. When you specify the activation ID and code, tags
+     * assigned to the activation are automatically applied to the on-premises servers
+     * or VMs.</p> </important> <p>You can't add tags to or delete tags from an
+     * existing activation. You can tag your on-premises servers and VMs after they
+     * connect to Systems Manager for the first time and are assigned a managed
+     * instance ID. This means they are listed in the AWS Systems Manager console with
+     * an ID that is prefixed with "mi-". For information about how to add tags to your
+     * managed instances, see <a>AddTagsToResource</a>. For information about how to
+     * remove tags from your managed instances, see <a>RemoveTagsFromResource</a>.</p>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
      * <p>Optional metadata that you assign to a resource. Tags enable you to

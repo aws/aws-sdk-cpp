@@ -64,6 +64,14 @@ namespace Model
      * initiating an inventory job and do not specify a Format field, JSON is the
      * default format. Valid values are "CSV" and "JSON".</p>
      */
+    inline bool FormatHasBeenSet() const { return m_formatHasBeenSet; }
+
+    /**
+     * <p>When initiating a job to retrieve a vault inventory, you can optionally add
+     * this parameter to your request to specify the output format. If you are
+     * initiating an inventory job and do not specify a Format field, JSON is the
+     * default format. Valid values are "CSV" and "JSON".</p>
+     */
     inline void SetFormat(const Aws::String& value) { m_formatHasBeenSet = true; m_format = value; }
 
     /**
@@ -119,6 +127,13 @@ namespace Model
      * retrieve an archive, or get an inventory of a vault. Valid values are "select",
      * "archive-retrieval" and "inventory-retrieval".</p>
      */
+    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
+
+    /**
+     * <p>The job type. You can initiate a job to perform a select query on an archive,
+     * retrieve an archive, or get an inventory of a vault. Valid values are "select",
+     * "archive-retrieval" and "inventory-retrieval".</p>
+     */
     inline void SetType(const Aws::String& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
@@ -164,6 +179,14 @@ namespace Model
      * request parameter for an inventory retrieval job request. </p>
      */
     inline const Aws::String& GetArchiveId() const{ return m_archiveId; }
+
+    /**
+     * <p>The ID of the archive that you want to retrieve. This field is required only
+     * if <code>Type</code> is set to <code>select</code> or
+     * <code>archive-retrieval</code>code&gt;. An error occurs if you specify this
+     * request parameter for an inventory retrieval job request. </p>
+     */
+    inline bool ArchiveIdHasBeenSet() const { return m_archiveIdHasBeenSet; }
 
     /**
      * <p>The ID of the archive that you want to retrieve. This field is required only
@@ -226,6 +249,13 @@ namespace Model
      * equal to 1,024 bytes. The allowable characters are 7-bit ASCII without control
      * codes-specifically, ASCII values 32-126 decimal or 0x20-0x7E hexadecimal.</p>
      */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
+
+    /**
+     * <p>The optional description for the job. The description must be less than or
+     * equal to 1,024 bytes. The allowable characters are 7-bit ASCII without control
+     * codes-specifically, ASCII values 32-126 decimal or 0x20-0x7E hexadecimal.</p>
+     */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
@@ -271,6 +301,14 @@ namespace Model
      * exist.</p>
      */
     inline const Aws::String& GetSNSTopic() const{ return m_sNSTopic; }
+
+    /**
+     * <p>The Amazon SNS topic ARN to which Amazon Glacier sends a notification when
+     * the job is completed and the output is ready for you to download. The specified
+     * topic publishes the notification to its subscribers. The SNS topic must
+     * exist.</p>
+     */
+    inline bool SNSTopicHasBeenSet() const { return m_sNSTopicHasBeenSet; }
 
     /**
      * <p>The Amazon SNS topic ARN to which Amazon Glacier sends a notification when
@@ -332,6 +370,18 @@ namespace Model
      * occurs if you specify this field for an inventory retrieval job request.</p>
      */
     inline const Aws::String& GetRetrievalByteRange() const{ return m_retrievalByteRange; }
+
+    /**
+     * <p>The byte range to retrieve for an archive retrieval. in the form
+     * "<i>StartByteValue</i>-<i>EndByteValue</i>" If not specified, the whole archive
+     * is retrieved. If specified, the byte range must be megabyte (1024*1024) aligned
+     * which means that <i>StartByteValue</i> must be divisible by 1 MB and
+     * <i>EndByteValue</i> plus 1 must be divisible by 1 MB or be the end of the
+     * archive specified as the archive byte size value minus 1. If RetrievalByteRange
+     * is not megabyte aligned, this operation returns a 400 response. </p> <p>An error
+     * occurs if you specify this field for an inventory retrieval job request.</p>
+     */
+    inline bool RetrievalByteRangeHasBeenSet() const { return m_retrievalByteRangeHasBeenSet; }
 
     /**
      * <p>The byte range to retrieve for an archive retrieval. in the form
@@ -418,6 +468,13 @@ namespace Model
      * <code>Expedited</code>, <code>Standard</code>, or <code>Bulk</code>.
      * <code>Standard</code> is the default.</p>
      */
+    inline bool TierHasBeenSet() const { return m_tierHasBeenSet; }
+
+    /**
+     * <p>The tier to use for a select or an archive retrieval job. Valid values are
+     * <code>Expedited</code>, <code>Standard</code>, or <code>Bulk</code>.
+     * <code>Standard</code> is the default.</p>
+     */
     inline void SetTier(const Aws::String& value) { m_tierHasBeenSet = true; m_tier = value; }
 
     /**
@@ -464,6 +521,11 @@ namespace Model
     /**
      * <p>Input parameters used for range inventory retrieval.</p>
      */
+    inline bool InventoryRetrievalParametersHasBeenSet() const { return m_inventoryRetrievalParametersHasBeenSet; }
+
+    /**
+     * <p>Input parameters used for range inventory retrieval.</p>
+     */
     inline void SetInventoryRetrievalParameters(const InventoryRetrievalJobInput& value) { m_inventoryRetrievalParametersHasBeenSet = true; m_inventoryRetrievalParameters = value; }
 
     /**
@@ -486,6 +548,11 @@ namespace Model
      * <p>Contains the parameters that define a job.</p>
      */
     inline const SelectParameters& GetSelectParameters() const{ return m_selectParameters; }
+
+    /**
+     * <p>Contains the parameters that define a job.</p>
+     */
+    inline bool SelectParametersHasBeenSet() const { return m_selectParametersHasBeenSet; }
 
     /**
      * <p>Contains the parameters that define a job.</p>
@@ -513,6 +580,12 @@ namespace Model
      * stored.</p>
      */
     inline const OutputLocation& GetOutputLocation() const{ return m_outputLocation; }
+
+    /**
+     * <p>Contains information about the location where the select job results are
+     * stored.</p>
+     */
+    inline bool OutputLocationHasBeenSet() const { return m_outputLocationHasBeenSet; }
 
     /**
      * <p>Contains information about the location where the select job results are

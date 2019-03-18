@@ -55,6 +55,11 @@ namespace Model
     /**
      * key used to extract the password from EC2 Parameter store
      */
+    inline bool PasswordParamHasBeenSet() const { return m_passwordParamHasBeenSet; }
+
+    /**
+     * key used to extract the password from EC2 Parameter store
+     */
     inline void SetPasswordParam(const Aws::String& value) { m_passwordParamHasBeenSet = true; m_passwordParam = value; }
 
     /**
@@ -89,6 +94,13 @@ namespace Model
      * RTMP destination should have a uri simliar to: "rtmp://fmsserver/live".
      */
     inline const Aws::String& GetUri() const{ return m_uri; }
+
+    /**
+     * Uniform Resource Identifier - This should be a path to a file accessible to the
+     * Live system (eg. a http:// URI) depending on the output type. For example, a
+     * RTMP destination should have a uri simliar to: "rtmp://fmsserver/live".
+     */
+    inline bool UriHasBeenSet() const { return m_uriHasBeenSet; }
 
     /**
      * Uniform Resource Identifier - This should be a path to a file accessible to the
@@ -137,6 +149,11 @@ namespace Model
      * Documentation update needed
      */
     inline const Aws::String& GetUsername() const{ return m_username; }
+
+    /**
+     * Documentation update needed
+     */
+    inline bool UsernameHasBeenSet() const { return m_usernameHasBeenSet; }
 
     /**
      * Documentation update needed

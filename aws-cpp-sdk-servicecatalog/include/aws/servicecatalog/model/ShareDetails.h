@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p>List of accounts for whom the operation succeeded.</p>
      */
+    inline bool SuccessfulSharesHasBeenSet() const { return m_successfulSharesHasBeenSet; }
+
+    /**
+     * <p>List of accounts for whom the operation succeeded.</p>
+     */
     inline void SetSuccessfulShares(const Aws::Vector<Aws::String>& value) { m_successfulSharesHasBeenSet = true; m_successfulShares = value; }
 
     /**
@@ -95,6 +100,11 @@ namespace Model
      * <p>List of errors.</p>
      */
     inline const Aws::Vector<ShareError>& GetShareErrors() const{ return m_shareErrors; }
+
+    /**
+     * <p>List of errors.</p>
+     */
+    inline bool ShareErrorsHasBeenSet() const { return m_shareErrorsHasBeenSet; }
 
     /**
      * <p>List of errors.</p>

@@ -59,6 +59,11 @@ namespace Model
     /**
      * <p>The association ID for the IPv4 CIDR block.</p>
      */
+    inline bool AssociationIdHasBeenSet() const { return m_associationIdHasBeenSet; }
+
+    /**
+     * <p>The association ID for the IPv4 CIDR block.</p>
+     */
     inline void SetAssociationId(const Aws::String& value) { m_associationIdHasBeenSet = true; m_associationId = value; }
 
     /**
@@ -95,6 +100,11 @@ namespace Model
     /**
      * <p>The IPv4 CIDR block.</p>
      */
+    inline bool CidrBlockHasBeenSet() const { return m_cidrBlockHasBeenSet; }
+
+    /**
+     * <p>The IPv4 CIDR block.</p>
+     */
     inline void SetCidrBlock(const Aws::String& value) { m_cidrBlockHasBeenSet = true; m_cidrBlock = value; }
 
     /**
@@ -127,6 +137,11 @@ namespace Model
      * <p>Information about the state of the CIDR block.</p>
      */
     inline const VpcCidrBlockState& GetCidrBlockState() const{ return m_cidrBlockState; }
+
+    /**
+     * <p>Information about the state of the CIDR block.</p>
+     */
+    inline bool CidrBlockStateHasBeenSet() const { return m_cidrBlockStateHasBeenSet; }
 
     /**
      * <p>Information about the state of the CIDR block.</p>

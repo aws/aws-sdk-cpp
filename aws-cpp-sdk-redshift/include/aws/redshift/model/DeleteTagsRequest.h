@@ -61,6 +61,12 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) from which you want to remove the tag or tags.
      * For example, <code>arn:aws:redshift:us-east-1:123456789:cluster:t1</code>. </p>
      */
+    inline bool ResourceNameHasBeenSet() const { return m_resourceNameHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) from which you want to remove the tag or tags.
+     * For example, <code>arn:aws:redshift:us-east-1:123456789:cluster:t1</code>. </p>
+     */
     inline void SetResourceName(const Aws::String& value) { m_resourceNameHasBeenSet = true; m_resourceName = value; }
 
     /**
@@ -98,6 +104,11 @@ namespace Model
      * <p>The tag key that you want to delete.</p>
      */
     inline const Aws::Vector<Aws::String>& GetTagKeys() const{ return m_tagKeys; }
+
+    /**
+     * <p>The tag key that you want to delete.</p>
+     */
+    inline bool TagKeysHasBeenSet() const { return m_tagKeysHasBeenSet; }
 
     /**
      * <p>The tag key that you want to delete.</p>

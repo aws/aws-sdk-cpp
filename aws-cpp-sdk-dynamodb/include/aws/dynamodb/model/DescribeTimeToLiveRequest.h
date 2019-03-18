@@ -52,6 +52,11 @@ namespace Model
     /**
      * <p>The name of the table to be described.</p>
      */
+    inline bool TableNameHasBeenSet() const { return m_tableNameHasBeenSet; }
+
+    /**
+     * <p>The name of the table to be described.</p>
+     */
     inline void SetTableName(const Aws::String& value) { m_tableNameHasBeenSet = true; m_tableName = value; }
 
     /**

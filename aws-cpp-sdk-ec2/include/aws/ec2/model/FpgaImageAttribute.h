@@ -60,6 +60,11 @@ namespace Model
     /**
      * <p>The ID of the AFI.</p>
      */
+    inline bool FpgaImageIdHasBeenSet() const { return m_fpgaImageIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the AFI.</p>
+     */
     inline void SetFpgaImageId(const Aws::String& value) { m_fpgaImageIdHasBeenSet = true; m_fpgaImageId = value; }
 
     /**
@@ -92,6 +97,11 @@ namespace Model
      * <p>The name of the AFI.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
+
+    /**
+     * <p>The name of the AFI.</p>
+     */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
      * <p>The name of the AFI.</p>
@@ -132,6 +142,11 @@ namespace Model
     /**
      * <p>The description of the AFI.</p>
      */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
+
+    /**
+     * <p>The description of the AFI.</p>
+     */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
@@ -168,6 +183,11 @@ namespace Model
     /**
      * <p>One or more load permissions.</p>
      */
+    inline bool LoadPermissionsHasBeenSet() const { return m_loadPermissionsHasBeenSet; }
+
+    /**
+     * <p>One or more load permissions.</p>
+     */
     inline void SetLoadPermissions(const Aws::Vector<LoadPermission>& value) { m_loadPermissionsHasBeenSet = true; m_loadPermissions = value; }
 
     /**
@@ -200,6 +220,11 @@ namespace Model
      * <p>One or more product codes.</p>
      */
     inline const Aws::Vector<ProductCode>& GetProductCodes() const{ return m_productCodes; }
+
+    /**
+     * <p>One or more product codes.</p>
+     */
+    inline bool ProductCodesHasBeenSet() const { return m_productCodesHasBeenSet; }
 
     /**
      * <p>One or more product codes.</p>

@@ -52,6 +52,11 @@ namespace Model
     /**
      * <p>The identifier of the streaming session.</p>
      */
+    inline bool SessionIdHasBeenSet() const { return m_sessionIdHasBeenSet; }
+
+    /**
+     * <p>The identifier of the streaming session.</p>
+     */
     inline void SetSessionId(const Aws::String& value) { m_sessionIdHasBeenSet = true; m_sessionId = value; }
 
     /**

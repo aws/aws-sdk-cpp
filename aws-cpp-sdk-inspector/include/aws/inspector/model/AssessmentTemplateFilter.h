@@ -64,6 +64,14 @@ namespace Model
      * the <b>assessmentTemplateName</b> property of the <a>AssessmentTemplate</a> data
      * type.</p>
      */
+    inline bool NamePatternHasBeenSet() const { return m_namePatternHasBeenSet; }
+
+    /**
+     * <p>For a record to match a filter, an explicit value or a string that contains a
+     * wildcard that is specified for this data type property must match the value of
+     * the <b>assessmentTemplateName</b> property of the <a>AssessmentTemplate</a> data
+     * type.</p>
+     */
     inline void SetNamePattern(const Aws::String& value) { m_namePatternHasBeenSet = true; m_namePattern = value; }
 
     /**
@@ -121,6 +129,14 @@ namespace Model
      * maximum values of the <b>durationInSeconds</b> property of the
      * <a>AssessmentTemplate</a> data type.</p>
      */
+    inline bool DurationRangeHasBeenSet() const { return m_durationRangeHasBeenSet; }
+
+    /**
+     * <p>For a record to match a filter, the value specified for this data type
+     * property must inclusively match any value between the specified minimum and
+     * maximum values of the <b>durationInSeconds</b> property of the
+     * <a>AssessmentTemplate</a> data type.</p>
+     */
     inline void SetDurationRange(const DurationRange& value) { m_durationRangeHasBeenSet = true; m_durationRange = value; }
 
     /**
@@ -154,6 +170,13 @@ namespace Model
      * <b>rulesPackageArns</b> property of the <a>AssessmentTemplate</a> data type.</p>
      */
     inline const Aws::Vector<Aws::String>& GetRulesPackageArns() const{ return m_rulesPackageArns; }
+
+    /**
+     * <p>For a record to match a filter, the values that are specified for this data
+     * type property must be contained in the list of values of the
+     * <b>rulesPackageArns</b> property of the <a>AssessmentTemplate</a> data type.</p>
+     */
+    inline bool RulesPackageArnsHasBeenSet() const { return m_rulesPackageArnsHasBeenSet; }
 
     /**
      * <p>For a record to match a filter, the values that are specified for this data

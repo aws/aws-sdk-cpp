@@ -53,6 +53,11 @@ namespace Model
     /**
      * <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
      */
+    inline bool RestApiIdHasBeenSet() const { return m_restApiIdHasBeenSet; }
+
+    /**
+     * <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
+     */
     inline void SetRestApiId(const Aws::String& value) { m_restApiIdHasBeenSet = true; m_restApiId = value; }
 
     /**
@@ -85,6 +90,11 @@ namespace Model
      * <p>[Required] The name of the stage to flush its cache.</p>
      */
     inline const Aws::String& GetStageName() const{ return m_stageName; }
+
+    /**
+     * <p>[Required] The name of the stage to flush its cache.</p>
+     */
+    inline bool StageNameHasBeenSet() const { return m_stageNameHasBeenSet; }
 
     /**
      * <p>[Required] The name of the stage to flush its cache.</p>

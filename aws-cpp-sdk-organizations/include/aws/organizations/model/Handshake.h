@@ -73,6 +73,14 @@ namespace Model
      * href="http://wikipedia.org/wiki/regex">regex pattern</a> for handshake ID string
      * requires "h-" followed by from 8 to 32 lower-case letters or digits.</p>
      */
+    inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
+
+    /**
+     * <p>The unique identifier (ID) of a handshake. The originating account creates
+     * the ID when it initiates the handshake.</p> <p>The <a
+     * href="http://wikipedia.org/wiki/regex">regex pattern</a> for handshake ID string
+     * requires "h-" followed by from 8 to 32 lower-case letters or digits.</p>
+     */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
     /**
@@ -124,6 +132,15 @@ namespace Model
      * Guide</i>.</p>
      */
     inline const Aws::String& GetArn() const{ return m_arn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of a handshake.</p> <p>For more information
+     * about ARNs in Organizations, see <a
+     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_permissions.html#orgs-permissions-arns">ARN
+     * Formats Supported by Organizations</a> in the <i>AWS Organizations User
+     * Guide</i>.</p>
+     */
+    inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of a handshake.</p> <p>For more information
@@ -190,6 +207,12 @@ namespace Model
      * <p>Information about the two accounts that are participating in the
      * handshake.</p>
      */
+    inline bool PartiesHasBeenSet() const { return m_partiesHasBeenSet; }
+
+    /**
+     * <p>Information about the two accounts that are participating in the
+     * handshake.</p>
+     */
     inline void SetParties(const Aws::Vector<HandshakeParty>& value) { m_partiesHasBeenSet = true; m_parties = value; }
 
     /**
@@ -242,6 +265,26 @@ namespace Model
      * (15 days).</p> </li> </ul>
      */
     inline const HandshakeState& GetState() const{ return m_state; }
+
+    /**
+     * <p>The current state of the handshake. Use the state to trace the flow of the
+     * handshake through the process from its creation to its acceptance. The meaning
+     * of each of the valid values is as follows:</p> <ul> <li> <p> <b>REQUESTED</b>:
+     * This handshake was sent to multiple recipients (applicable to only some
+     * handshake types) and not all recipients have responded yet. The request stays in
+     * this state until all recipients respond.</p> </li> <li> <p> <b>OPEN</b>: This
+     * handshake was sent to multiple recipients (applicable to only some policy types)
+     * and all recipients have responded, allowing the originator to complete the
+     * handshake action.</p> </li> <li> <p> <b>CANCELED</b>: This handshake is no
+     * longer active because it was canceled by the originating account.</p> </li> <li>
+     * <p> <b>ACCEPTED</b>: This handshake is complete because it has been accepted by
+     * the recipient.</p> </li> <li> <p> <b>DECLINED</b>: This handshake is no longer
+     * active because it was declined by the recipient account.</p> </li> <li> <p>
+     * <b>EXPIRED</b>: This handshake is no longer active because the originator did
+     * not receive a response of any kind from the recipient before the expiration time
+     * (15 days).</p> </li> </ul>
+     */
+    inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
 
     /**
      * <p>The current state of the handshake. Use the state to trace the flow of the
@@ -332,6 +375,11 @@ namespace Model
     /**
      * <p>The date and time that the handshake request was made.</p>
      */
+    inline bool RequestedTimestampHasBeenSet() const { return m_requestedTimestampHasBeenSet; }
+
+    /**
+     * <p>The date and time that the handshake request was made.</p>
+     */
     inline void SetRequestedTimestamp(const Aws::Utils::DateTime& value) { m_requestedTimestampHasBeenSet = true; m_requestedTimestamp = value; }
 
     /**
@@ -356,6 +404,13 @@ namespace Model
      * handshake becomes inactive and is no longer valid.</p>
      */
     inline const Aws::Utils::DateTime& GetExpirationTimestamp() const{ return m_expirationTimestamp; }
+
+    /**
+     * <p>The date and time that the handshake expires. If the recipient of the
+     * handshake request fails to respond before the specified date and time, the
+     * handshake becomes inactive and is no longer valid.</p>
+     */
+    inline bool ExpirationTimestampHasBeenSet() const { return m_expirationTimestampHasBeenSet; }
 
     /**
      * <p>The date and time that the handshake expires. If the recipient of the
@@ -403,6 +458,24 @@ namespace Model
      * features.</p> </li> </ul>
      */
     inline const ActionType& GetAction() const{ return m_action; }
+
+    /**
+     * <p>The type of handshake, indicating what action occurs when the recipient
+     * accepts the handshake. The following handshake types are supported:</p> <ul>
+     * <li> <p> <b>INVITE</b>: This type of handshake represents a request to join an
+     * organization. It is always sent from the master account to only non-member
+     * accounts.</p> </li> <li> <p> <b>ENABLE_ALL_FEATURES</b>: This type of handshake
+     * represents a request to enable all features in an organization. It is always
+     * sent from the master account to only <i>invited</i> member accounts. Created
+     * accounts do not receive this because those accounts were created by the
+     * organization's master account and approval is inferred.</p> </li> <li> <p>
+     * <b>APPROVE_ALL_FEATURES</b>: This type of handshake is sent from the
+     * Organizations service when all member accounts have approved the
+     * <code>ENABLE_ALL_FEATURES</code> invitation. It is sent only to the master
+     * account and signals the master that it can finalize the process to enable all
+     * features.</p> </li> </ul>
+     */
+    inline bool ActionHasBeenSet() const { return m_actionHasBeenSet; }
 
     /**
      * <p>The type of handshake, indicating what action occurs when the recipient
@@ -481,6 +554,11 @@ namespace Model
      * <p>Additional information that is needed to process the handshake.</p>
      */
     inline const Aws::Vector<HandshakeResource>& GetResources() const{ return m_resources; }
+
+    /**
+     * <p>Additional information that is needed to process the handshake.</p>
+     */
+    inline bool ResourcesHasBeenSet() const { return m_resourcesHasBeenSet; }
 
     /**
      * <p>Additional information that is needed to process the handshake.</p>

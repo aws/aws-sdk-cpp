@@ -61,6 +61,11 @@ namespace Model
     /**
      * <p>The ID of the activity.</p>
      */
+    inline bool ActivityIdHasBeenSet() const { return m_activityIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the activity.</p>
+     */
     inline void SetActivityId(const Aws::String& value) { m_activityIdHasBeenSet = true; m_activityId = value; }
 
     /**
@@ -93,6 +98,11 @@ namespace Model
      * <p>The name of the Auto Scaling group.</p>
      */
     inline const Aws::String& GetAutoScalingGroupName() const{ return m_autoScalingGroupName; }
+
+    /**
+     * <p>The name of the Auto Scaling group.</p>
+     */
+    inline bool AutoScalingGroupNameHasBeenSet() const { return m_autoScalingGroupNameHasBeenSet; }
 
     /**
      * <p>The name of the Auto Scaling group.</p>
@@ -133,6 +143,11 @@ namespace Model
     /**
      * <p>A friendly, more verbose description of the activity.</p>
      */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
+
+    /**
+     * <p>A friendly, more verbose description of the activity.</p>
+     */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
@@ -165,6 +180,11 @@ namespace Model
      * <p>The reason the activity began.</p>
      */
     inline const Aws::String& GetCause() const{ return m_cause; }
+
+    /**
+     * <p>The reason the activity began.</p>
+     */
+    inline bool CauseHasBeenSet() const { return m_causeHasBeenSet; }
 
     /**
      * <p>The reason the activity began.</p>
@@ -205,6 +225,11 @@ namespace Model
     /**
      * <p>The start time of the activity.</p>
      */
+    inline bool StartTimeHasBeenSet() const { return m_startTimeHasBeenSet; }
+
+    /**
+     * <p>The start time of the activity.</p>
+     */
     inline void SetStartTime(const Aws::Utils::DateTime& value) { m_startTimeHasBeenSet = true; m_startTime = value; }
 
     /**
@@ -227,6 +252,11 @@ namespace Model
      * <p>The end time of the activity.</p>
      */
     inline const Aws::Utils::DateTime& GetEndTime() const{ return m_endTime; }
+
+    /**
+     * <p>The end time of the activity.</p>
+     */
+    inline bool EndTimeHasBeenSet() const { return m_endTimeHasBeenSet; }
 
     /**
      * <p>The end time of the activity.</p>
@@ -257,6 +287,11 @@ namespace Model
     /**
      * <p>The current status of the activity.</p>
      */
+    inline bool StatusCodeHasBeenSet() const { return m_statusCodeHasBeenSet; }
+
+    /**
+     * <p>The current status of the activity.</p>
+     */
     inline void SetStatusCode(const ScalingActivityStatusCode& value) { m_statusCodeHasBeenSet = true; m_statusCode = value; }
 
     /**
@@ -279,6 +314,11 @@ namespace Model
      * <p>A friendly, more verbose description of the activity status.</p>
      */
     inline const Aws::String& GetStatusMessage() const{ return m_statusMessage; }
+
+    /**
+     * <p>A friendly, more verbose description of the activity status.</p>
+     */
+    inline bool StatusMessageHasBeenSet() const { return m_statusMessageHasBeenSet; }
 
     /**
      * <p>A friendly, more verbose description of the activity status.</p>
@@ -319,6 +359,11 @@ namespace Model
     /**
      * <p>A value between 0 and 100 that indicates the progress of the activity.</p>
      */
+    inline bool ProgressHasBeenSet() const { return m_progressHasBeenSet; }
+
+    /**
+     * <p>A value between 0 and 100 that indicates the progress of the activity.</p>
+     */
     inline void SetProgress(int value) { m_progressHasBeenSet = true; m_progress = value; }
 
     /**
@@ -331,6 +376,11 @@ namespace Model
      * <p>The details about the activity.</p>
      */
     inline const Aws::String& GetDetails() const{ return m_details; }
+
+    /**
+     * <p>The details about the activity.</p>
+     */
+    inline bool DetailsHasBeenSet() const { return m_detailsHasBeenSet; }
 
     /**
      * <p>The details about the activity.</p>

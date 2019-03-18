@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>Specifies the Cognito options for the specified Elasticsearch domain.</p>
      */
+    inline bool OptionsHasBeenSet() const { return m_optionsHasBeenSet; }
+
+    /**
+     * <p>Specifies the Cognito options for the specified Elasticsearch domain.</p>
+     */
     inline void SetOptions(const CognitoOptions& value) { m_optionsHasBeenSet = true; m_options = value; }
 
     /**
@@ -80,6 +85,12 @@ namespace Model
      * domain.</p>
      */
     inline const OptionStatus& GetStatus() const{ return m_status; }
+
+    /**
+     * <p>Specifies the status of the Cognito options for the specified Elasticsearch
+     * domain.</p>
+     */
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
     /**
      * <p>Specifies the status of the Cognito options for the specified Elasticsearch

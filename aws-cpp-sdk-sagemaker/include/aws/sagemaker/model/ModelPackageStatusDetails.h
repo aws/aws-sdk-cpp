@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The validation status of the model package.</p>
      */
+    inline bool ValidationStatusesHasBeenSet() const { return m_validationStatusesHasBeenSet; }
+
+    /**
+     * <p>The validation status of the model package.</p>
+     */
     inline void SetValidationStatuses(const Aws::Vector<ModelPackageStatusItem>& value) { m_validationStatusesHasBeenSet = true; m_validationStatuses = value; }
 
     /**
@@ -90,6 +95,12 @@ namespace Model
      * package.</p>
      */
     inline const Aws::Vector<ModelPackageStatusItem>& GetImageScanStatuses() const{ return m_imageScanStatuses; }
+
+    /**
+     * <p>The status of the scan of the Docker image container for the model
+     * package.</p>
+     */
+    inline bool ImageScanStatusesHasBeenSet() const { return m_imageScanStatusesHasBeenSet; }
 
     /**
      * <p>The status of the scan of the Docker image container for the model

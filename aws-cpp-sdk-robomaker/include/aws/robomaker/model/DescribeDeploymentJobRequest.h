@@ -50,6 +50,11 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the deployment job.</p>
      */
+    inline bool JobHasBeenSet() const { return m_jobHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the deployment job.</p>
+     */
     inline void SetJob(const Aws::String& value) { m_jobHasBeenSet = true; m_job = value; }
 
     /**

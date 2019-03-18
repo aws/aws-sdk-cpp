@@ -59,6 +59,12 @@ namespace Model
      * <p>The name of the Amazon S3 bucket where the application revision is
      * stored.</p>
      */
+    inline bool BucketHasBeenSet() const { return m_bucketHasBeenSet; }
+
+    /**
+     * <p>The name of the Amazon S3 bucket where the application revision is
+     * stored.</p>
+     */
     inline void SetBucket(const Aws::String& value) { m_bucketHasBeenSet = true; m_bucket = value; }
 
     /**
@@ -97,6 +103,12 @@ namespace Model
      * the application revision.</p>
      */
     inline const Aws::String& GetKey() const{ return m_key; }
+
+    /**
+     * <p>The name of the Amazon S3 object that represents the bundled artifacts for
+     * the application revision.</p>
+     */
+    inline bool KeyHasBeenSet() const { return m_keyHasBeenSet; }
 
     /**
      * <p>The name of the Amazon S3 object that represents the bundled artifacts for
@@ -147,6 +159,13 @@ namespace Model
      * <ul> <li> <p>tar: A tar archive file.</p> </li> <li> <p>tgz: A compressed tar
      * archive file.</p> </li> <li> <p>zip: A zip archive file.</p> </li> </ul>
      */
+    inline bool BundleTypeHasBeenSet() const { return m_bundleTypeHasBeenSet; }
+
+    /**
+     * <p>The file type of the application revision. Must be one of the following:</p>
+     * <ul> <li> <p>tar: A tar archive file.</p> </li> <li> <p>tgz: A compressed tar
+     * archive file.</p> </li> <li> <p>zip: A zip archive file.</p> </li> </ul>
+     */
     inline void SetBundleType(const BundleType& value) { m_bundleTypeHasBeenSet = true; m_bundleType = value; }
 
     /**
@@ -177,6 +196,13 @@ namespace Model
      * the system uses the most recent version by default.</p>
      */
     inline const Aws::String& GetVersion() const{ return m_version; }
+
+    /**
+     * <p>A specific version of the Amazon S3 object that represents the bundled
+     * artifacts for the application revision.</p> <p>If the version is not specified,
+     * the system uses the most recent version by default.</p>
+     */
+    inline bool VersionHasBeenSet() const { return m_versionHasBeenSet; }
 
     /**
      * <p>A specific version of the Amazon S3 object that represents the bundled
@@ -227,6 +253,13 @@ namespace Model
      * parameter, ETag validation of the object is skipped.</p>
      */
     inline const Aws::String& GetETag() const{ return m_eTag; }
+
+    /**
+     * <p>The ETag of the Amazon S3 object that represents the bundled artifacts for
+     * the application revision.</p> <p>If the ETag is not specified as an input
+     * parameter, ETag validation of the object is skipped.</p>
+     */
+    inline bool ETagHasBeenSet() const { return m_eTagHasBeenSet; }
 
     /**
      * <p>The ETag of the Amazon S3 object that represents the bundled artifacts for

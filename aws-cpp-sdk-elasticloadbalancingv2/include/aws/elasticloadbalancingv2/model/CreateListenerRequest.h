@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the load balancer.</p>
      */
+    inline bool LoadBalancerArnHasBeenSet() const { return m_loadBalancerArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the load balancer.</p>
+     */
     inline void SetLoadBalancerArn(const Aws::String& value) { m_loadBalancerArnHasBeenSet = true; m_loadBalancerArn = value; }
 
     /**
@@ -98,6 +103,13 @@ namespace Model
      * Application Load Balancers, the supported protocols are HTTP and HTTPS. For
      * Network Load Balancers, the supported protocols are TCP and TLS.</p>
      */
+    inline bool ProtocolHasBeenSet() const { return m_protocolHasBeenSet; }
+
+    /**
+     * <p>The protocol for connections from clients to the load balancer. For
+     * Application Load Balancers, the supported protocols are HTTP and HTTPS. For
+     * Network Load Balancers, the supported protocols are TCP and TLS.</p>
+     */
     inline void SetProtocol(const ProtocolEnum& value) { m_protocolHasBeenSet = true; m_protocol = value; }
 
     /**
@@ -130,6 +142,11 @@ namespace Model
     /**
      * <p>The port on which the load balancer is listening.</p>
      */
+    inline bool PortHasBeenSet() const { return m_portHasBeenSet; }
+
+    /**
+     * <p>The port on which the load balancer is listening.</p>
+     */
     inline void SetPort(int value) { m_portHasBeenSet = true; m_port = value; }
 
     /**
@@ -144,6 +161,13 @@ namespace Model
      * policy.</p>
      */
     inline const Aws::String& GetSslPolicy() const{ return m_sslPolicy; }
+
+    /**
+     * <p>[HTTPS and TLS listeners] The security policy that defines which ciphers and
+     * protocols are supported. The default is the current predefined security
+     * policy.</p>
+     */
+    inline bool SslPolicyHasBeenSet() const { return m_sslPolicyHasBeenSet; }
 
     /**
      * <p>[HTTPS and TLS listeners] The security policy that defines which ciphers and
@@ -195,6 +219,14 @@ namespace Model
      * certificate list, use <a>AddListenerCertificates</a>.</p>
      */
     inline const Aws::Vector<Certificate>& GetCertificates() const{ return m_certificates; }
+
+    /**
+     * <p>[HTTPS and TLS listeners] The default SSL server certificate. You must
+     * provide exactly one certificate. Set <code>CertificateArn</code> to the
+     * certificate ARN but do not set <code>IsDefault</code>.</p> <p>To create a
+     * certificate list, use <a>AddListenerCertificates</a>.</p>
+     */
+    inline bool CertificatesHasBeenSet() const { return m_certificatesHasBeenSet; }
 
     /**
      * <p>[HTTPS and TLS listeners] The default SSL server certificate. You must
@@ -262,6 +294,24 @@ namespace Model
      * custom HTTP response.</p>
      */
     inline const Aws::Vector<Action>& GetDefaultActions() const{ return m_defaultActions; }
+
+    /**
+     * <p>The actions for the default rule. The rule must include one forward action or
+     * one or more fixed-response actions.</p> <p>If the action type is
+     * <code>forward</code>, you specify a target group. The protocol of the target
+     * group must be HTTP or HTTPS for an Application Load Balancer. The protocol of
+     * the target group must be TCP or TLS for a Network Load Balancer.</p> <p>[HTTPS
+     * listeners] If the action type is <code>authenticate-oidc</code>, you
+     * authenticate users through an identity provider that is OpenID Connect (OIDC)
+     * compliant.</p> <p>[HTTPS listeners] If the action type is
+     * <code>authenticate-cognito</code>, you authenticate users through the user pools
+     * supported by Amazon Cognito.</p> <p>[Application Load Balancer] If the action
+     * type is <code>redirect</code>, you redirect specified client requests from one
+     * URL to another.</p> <p>[Application Load Balancer] If the action type is
+     * <code>fixed-response</code>, you drop specified client requests and return a
+     * custom HTTP response.</p>
+     */
+    inline bool DefaultActionsHasBeenSet() const { return m_defaultActionsHasBeenSet; }
 
     /**
      * <p>The actions for the default rule. The rule must include one forward action or

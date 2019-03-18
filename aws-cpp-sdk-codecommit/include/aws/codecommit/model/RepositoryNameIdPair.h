@@ -55,6 +55,11 @@ namespace Model
     /**
      * <p>The name associated with the repository.</p>
      */
+    inline bool RepositoryNameHasBeenSet() const { return m_repositoryNameHasBeenSet; }
+
+    /**
+     * <p>The name associated with the repository.</p>
+     */
     inline void SetRepositoryName(const Aws::String& value) { m_repositoryNameHasBeenSet = true; m_repositoryName = value; }
 
     /**
@@ -87,6 +92,11 @@ namespace Model
      * <p>The ID associated with the repository.</p>
      */
     inline const Aws::String& GetRepositoryId() const{ return m_repositoryId; }
+
+    /**
+     * <p>The ID associated with the repository.</p>
+     */
+    inline bool RepositoryIdHasBeenSet() const { return m_repositoryIdHasBeenSet; }
 
     /**
      * <p>The ID associated with the repository.</p>

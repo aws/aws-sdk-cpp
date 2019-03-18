@@ -54,6 +54,12 @@ namespace Model
      * <p>Name of the table for which the customer wants to check the continuous
      * backups and point in time recovery settings.</p>
      */
+    inline bool TableNameHasBeenSet() const { return m_tableNameHasBeenSet; }
+
+    /**
+     * <p>Name of the table for which the customer wants to check the continuous
+     * backups and point in time recovery settings.</p>
+     */
     inline void SetTableName(const Aws::String& value) { m_tableNameHasBeenSet = true; m_tableName = value; }
 
     /**

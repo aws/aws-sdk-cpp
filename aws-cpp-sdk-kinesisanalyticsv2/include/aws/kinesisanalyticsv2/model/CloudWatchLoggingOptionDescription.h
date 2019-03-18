@@ -55,6 +55,11 @@ namespace Model
     /**
      * <p>The ID of the CloudWatch logging option description.</p>
      */
+    inline bool CloudWatchLoggingOptionIdHasBeenSet() const { return m_cloudWatchLoggingOptionIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the CloudWatch logging option description.</p>
+     */
     inline void SetCloudWatchLoggingOptionId(const Aws::String& value) { m_cloudWatchLoggingOptionIdHasBeenSet = true; m_cloudWatchLoggingOptionId = value; }
 
     /**
@@ -88,6 +93,12 @@ namespace Model
      * messages.</p>
      */
     inline const Aws::String& GetLogStreamARN() const{ return m_logStreamARN; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the CloudWatch log to receive application
+     * messages.</p>
+     */
+    inline bool LogStreamARNHasBeenSet() const { return m_logStreamARNHasBeenSet; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the CloudWatch log to receive application
@@ -133,6 +144,14 @@ namespace Model
      * resource-level role.</p> </note>
      */
     inline const Aws::String& GetRoleARN() const{ return m_roleARN; }
+
+    /**
+     * <p>The IAM ARN of the role to use to send application messages. </p> <note>
+     * <p>Provided for backward compatibility. Applications created with the current
+     * API version have an application-level service execution role rather than a
+     * resource-level role.</p> </note>
+     */
+    inline bool RoleARNHasBeenSet() const { return m_roleARNHasBeenSet; }
 
     /**
      * <p>The IAM ARN of the role to use to send application messages. </p> <note>

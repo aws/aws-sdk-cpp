@@ -55,6 +55,11 @@ namespace Model
     /**
      * <p>The region where the replica needs to be created.</p>
      */
+    inline bool RegionNameHasBeenSet() const { return m_regionNameHasBeenSet; }
+
+    /**
+     * <p>The region where the replica needs to be created.</p>
+     */
     inline void SetRegionName(const Aws::String& value) { m_regionNameHasBeenSet = true; m_regionName = value; }
 
     /**

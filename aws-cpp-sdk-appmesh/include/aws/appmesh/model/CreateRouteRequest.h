@@ -61,6 +61,14 @@ request. Up to 36 letters, numbers, hyphens, and underscores are
 request. Up to 36 letters, numbers, hyphens, and underscores are
      * allowed.</p>
      */
+    inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
+
+    /**
+     * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
+     * of the
+request. Up to 36 letters, numbers, hyphens, and underscores are
+     * allowed.</p>
+     */
     inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
 
     /**
@@ -112,6 +120,11 @@ request. Up to 36 letters, numbers, hyphens, and underscores are
     /**
      * <p>The name of the service mesh in which to create the route.</p>
      */
+    inline bool MeshNameHasBeenSet() const { return m_meshNameHasBeenSet; }
+
+    /**
+     * <p>The name of the service mesh in which to create the route.</p>
+     */
     inline void SetMeshName(const Aws::String& value) { m_meshNameHasBeenSet = true; m_meshName = value; }
 
     /**
@@ -144,6 +157,11 @@ request. Up to 36 letters, numbers, hyphens, and underscores are
      * <p>The name to use for the route.</p>
      */
     inline const Aws::String& GetRouteName() const{ return m_routeName; }
+
+    /**
+     * <p>The name to use for the route.</p>
+     */
+    inline bool RouteNameHasBeenSet() const { return m_routeNameHasBeenSet; }
 
     /**
      * <p>The name to use for the route.</p>
@@ -184,6 +202,11 @@ request. Up to 36 letters, numbers, hyphens, and underscores are
     /**
      * <p>The route specification to apply.</p>
      */
+    inline bool SpecHasBeenSet() const { return m_specHasBeenSet; }
+
+    /**
+     * <p>The route specification to apply.</p>
+     */
     inline void SetSpec(const RouteSpec& value) { m_specHasBeenSet = true; m_spec = value; }
 
     /**
@@ -206,6 +229,11 @@ request. Up to 36 letters, numbers, hyphens, and underscores are
      * <p>The name of the virtual router in which to create the route.</p>
      */
     inline const Aws::String& GetVirtualRouterName() const{ return m_virtualRouterName; }
+
+    /**
+     * <p>The name of the virtual router in which to create the route.</p>
+     */
+    inline bool VirtualRouterNameHasBeenSet() const { return m_virtualRouterNameHasBeenSet; }
 
     /**
      * <p>The name of the virtual router in which to create the route.</p>

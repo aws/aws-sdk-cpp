@@ -55,6 +55,12 @@ namespace Model
      * <p> The unique ID of a blue/green deployment for which you want to start
      * rerouting traffic to the replacement environment. </p>
      */
+    inline bool DeploymentIdHasBeenSet() const { return m_deploymentIdHasBeenSet; }
+
+    /**
+     * <p> The unique ID of a blue/green deployment for which you want to start
+     * rerouting traffic to the replacement environment. </p>
+     */
     inline void SetDeploymentId(const Aws::String& value) { m_deploymentIdHasBeenSet = true; m_deploymentId = value; }
 
     /**
@@ -94,6 +100,13 @@ namespace Model
      * traffic is shifted, but the original target is not terminated. </p>
      */
     inline const DeploymentWaitType& GetDeploymentWaitType() const{ return m_deploymentWaitType; }
+
+    /**
+     * <p> The status of the deployment's waiting period. READY_WAIT indicates the
+     * deployment is ready to start shifting traffic. TERMINATION_WAIT indicates the
+     * traffic is shifted, but the original target is not terminated. </p>
+     */
+    inline bool DeploymentWaitTypeHasBeenSet() const { return m_deploymentWaitTypeHasBeenSet; }
 
     /**
      * <p> The status of the deployment's waiting period. READY_WAIT indicates the

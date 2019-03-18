@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>Identifier of a server group.</p>
      */
+    inline bool ServerGroupIdHasBeenSet() const { return m_serverGroupIdHasBeenSet; }
+
+    /**
+     * <p>Identifier of a server group.</p>
+     */
     inline void SetServerGroupId(const Aws::String& value) { m_serverGroupIdHasBeenSet = true; m_serverGroupId = value; }
 
     /**
@@ -93,6 +98,11 @@ namespace Model
     /**
      * <p>Name of a server group.</p>
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>Name of a server group.</p>
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
@@ -125,6 +135,11 @@ namespace Model
      * <p>List of servers belonging to a server group.</p>
      */
     inline const Aws::Vector<Server>& GetServerList() const{ return m_serverList; }
+
+    /**
+     * <p>List of servers belonging to a server group.</p>
+     */
+    inline bool ServerListHasBeenSet() const { return m_serverListHasBeenSet; }
 
     /**
      * <p>List of servers belonging to a server group.</p>

@@ -61,6 +61,14 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html">
      * Schedule Expressions for Rules</a> in the Amazon CloudWatch documentation.</p>
      */
+    inline bool ExpressionHasBeenSet() const { return m_expressionHasBeenSet; }
+
+    /**
+     * <p>The expression that defines when to trigger an update. For more information,
+     * see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html">
+     * Schedule Expressions for Rules</a> in the Amazon CloudWatch documentation.</p>
+     */
     inline void SetExpression(const Aws::String& value) { m_expressionHasBeenSet = true; m_expression = value; }
 
     /**

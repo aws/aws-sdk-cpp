@@ -56,6 +56,13 @@ namespace Model
      * <a>DescribeStorediSCSIVolumes</a> operation to return to retrieve the TargetARN
      * for specified VolumeARN.</p>
      */
+    inline bool VolumeARNHasBeenSet() const { return m_volumeARNHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the iSCSI volume target. Use the
+     * <a>DescribeStorediSCSIVolumes</a> operation to return to retrieve the TargetARN
+     * for specified VolumeARN.</p>
+     */
     inline void SetVolumeARN(const Aws::String& value) { m_volumeARNHasBeenSet = true; m_volumeARN = value; }
 
     /**
@@ -100,6 +107,13 @@ namespace Model
      * AWS Storage Gateway snapshot <b>Details</b> pane, <b>Description</b> field</p>
      */
     inline const Aws::String& GetSnapshotDescription() const{ return m_snapshotDescription; }
+
+    /**
+     * <p>Textual description of the snapshot that appears in the Amazon EC2 console,
+     * Elastic Block Store snapshots panel in the <b>Description</b> field, and in the
+     * AWS Storage Gateway snapshot <b>Details</b> pane, <b>Description</b> field</p>
+     */
+    inline bool SnapshotDescriptionHasBeenSet() const { return m_snapshotDescriptionHasBeenSet; }
 
     /**
      * <p>Textual description of the snapshot that appears in the Amazon EC2 console,

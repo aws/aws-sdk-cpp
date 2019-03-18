@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p>The current version of Elasticsearch on which a domain is.</p>
      */
+    inline bool SourceVersionHasBeenSet() const { return m_sourceVersionHasBeenSet; }
+
+    /**
+     * <p>The current version of Elasticsearch on which a domain is.</p>
+     */
     inline void SetSourceVersion(const Aws::String& value) { m_sourceVersionHasBeenSet = true; m_sourceVersion = value; }
 
     /**
@@ -88,6 +93,9 @@ namespace Model
 
     
     inline const Aws::Vector<Aws::String>& GetTargetVersions() const{ return m_targetVersions; }
+
+    
+    inline bool TargetVersionsHasBeenSet() const { return m_targetVersionsHasBeenSet; }
 
     
     inline void SetTargetVersions(const Aws::Vector<Aws::String>& value) { m_targetVersionsHasBeenSet = true; m_targetVersions = value; }

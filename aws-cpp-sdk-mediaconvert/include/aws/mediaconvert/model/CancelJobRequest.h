@@ -50,6 +50,11 @@ namespace Model
     /**
      * The Job ID of the job to be cancelled.
      */
+    inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
+
+    /**
+     * The Job ID of the job to be cancelled.
+     */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
     /**

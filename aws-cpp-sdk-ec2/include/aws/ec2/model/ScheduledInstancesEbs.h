@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p>Indicates whether the volume is deleted on instance termination.</p>
      */
+    inline bool DeleteOnTerminationHasBeenSet() const { return m_deleteOnTerminationHasBeenSet; }
+
+    /**
+     * <p>Indicates whether the volume is deleted on instance termination.</p>
+     */
     inline void SetDeleteOnTermination(bool value) { m_deleteOnTerminationHasBeenSet = true; m_deleteOnTermination = value; }
 
     /**
@@ -71,6 +76,12 @@ namespace Model
      * only to instances that support them.</p>
      */
     inline bool GetEncrypted() const{ return m_encrypted; }
+
+    /**
+     * <p>Indicates whether the volume is encrypted. You can attached encrypted volumes
+     * only to instances that support them.</p>
+     */
+    inline bool EncryptedHasBeenSet() const { return m_encryptedHasBeenSet; }
 
     /**
      * <p>Indicates whether the volume is encrypted. You can attached encrypted volumes
@@ -117,6 +128,23 @@ namespace Model
      * requests to create <code>gp2</code>, <code>st1</code>, <code>sc1</code>, or
      * <code>standard</code> volumes.</p>
      */
+    inline bool IopsHasBeenSet() const { return m_iopsHasBeenSet; }
+
+    /**
+     * <p>The number of I/O operations per second (IOPS) that the volume supports. For
+     * io1 volumes, this represents the number of IOPS that are provisioned for the
+     * volume. For <code>gp2</code> volumes, this represents the baseline performance
+     * of the volume and the rate at which the volume accumulates I/O credits for
+     * bursting. For more information about <code>gp2</code> baseline performance, I/O
+     * credits, and bursting, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon
+     * EBS Volume Types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     * <p>Constraint: Range is 100-20000 IOPS for <code>io1</code> volumes and
+     * 100-10000 IOPS for <code>gp2</code> volumes.</p> <p>Condition: This parameter is
+     * required for requests to create <code>io1</code>volumes; it is not used in
+     * requests to create <code>gp2</code>, <code>st1</code>, <code>sc1</code>, or
+     * <code>standard</code> volumes.</p>
+     */
     inline void SetIops(int value) { m_iopsHasBeenSet = true; m_iops = value; }
 
     /**
@@ -141,6 +169,11 @@ namespace Model
      * <p>The ID of the snapshot.</p>
      */
     inline const Aws::String& GetSnapshotId() const{ return m_snapshotId; }
+
+    /**
+     * <p>The ID of the snapshot.</p>
+     */
+    inline bool SnapshotIdHasBeenSet() const { return m_snapshotIdHasBeenSet; }
 
     /**
      * <p>The ID of the snapshot.</p>
@@ -185,6 +218,13 @@ namespace Model
      * from a snapshot and don't specify a volume size, the default is the snapshot
      * size.</p>
      */
+    inline bool VolumeSizeHasBeenSet() const { return m_volumeSizeHasBeenSet; }
+
+    /**
+     * <p>The size of the volume, in GiB.</p> <p>Default: If you're creating the volume
+     * from a snapshot and don't specify a volume size, the default is the snapshot
+     * size.</p>
+     */
     inline void SetVolumeSize(int value) { m_volumeSizeHasBeenSet = true; m_volumeSize = value; }
 
     /**
@@ -202,6 +242,14 @@ namespace Model
      * <code>standard</code> </p>
      */
     inline const Aws::String& GetVolumeType() const{ return m_volumeType; }
+
+    /**
+     * <p>The volume type. <code>gp2</code> for General Purpose SSD, <code>io1</code>
+     * for Provisioned IOPS SSD, Throughput Optimized HDD for <code>st1</code>, Cold
+     * HDD for <code>sc1</code>, or <code>standard</code> for Magnetic.</p> <p>Default:
+     * <code>standard</code> </p>
+     */
+    inline bool VolumeTypeHasBeenSet() const { return m_volumeTypeHasBeenSet; }
 
     /**
      * <p>The volume type. <code>gp2</code> for General Purpose SSD, <code>io1</code>

@@ -59,6 +59,11 @@ namespace Model
     /**
      * <p>The error code.</p>
      */
+    inline bool CodeHasBeenSet() const { return m_codeHasBeenSet; }
+
+    /**
+     * <p>The error code.</p>
+     */
     inline void SetCode(const LaunchTemplateErrorCode& value) { m_codeHasBeenSet = true; m_code = value; }
 
     /**
@@ -81,6 +86,11 @@ namespace Model
      * <p>The error message, if applicable.</p>
      */
     inline const Aws::String& GetMessage() const{ return m_message; }
+
+    /**
+     * <p>The error message, if applicable.</p>
+     */
+    inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
 
     /**
      * <p>The error message, if applicable.</p>

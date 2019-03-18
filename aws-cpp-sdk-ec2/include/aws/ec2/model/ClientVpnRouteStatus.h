@@ -59,6 +59,11 @@ namespace Model
     /**
      * <p>The state of the Client VPN endpoint route.</p>
      */
+    inline bool CodeHasBeenSet() const { return m_codeHasBeenSet; }
+
+    /**
+     * <p>The state of the Client VPN endpoint route.</p>
+     */
     inline void SetCode(const ClientVpnRouteStatusCode& value) { m_codeHasBeenSet = true; m_code = value; }
 
     /**
@@ -82,6 +87,12 @@ namespace Model
      * applicable.</p>
      */
     inline const Aws::String& GetMessage() const{ return m_message; }
+
+    /**
+     * <p>A message about the status of the Client VPN endpoint route, if
+     * applicable.</p>
+     */
+    inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
 
     /**
      * <p>A message about the status of the Client VPN endpoint route, if

@@ -61,6 +61,11 @@ namespace Model
     /**
      * <p>The name of the option that has settings that you can set.</p>
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>The name of the option that has settings that you can set.</p>
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
@@ -93,6 +98,11 @@ namespace Model
      * <p>The current value of the option setting.</p>
      */
     inline const Aws::String& GetValue() const{ return m_value; }
+
+    /**
+     * <p>The current value of the option setting.</p>
+     */
+    inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
 
     /**
      * <p>The current value of the option setting.</p>
@@ -133,6 +143,11 @@ namespace Model
     /**
      * <p>The default value of the option setting.</p>
      */
+    inline bool DefaultValueHasBeenSet() const { return m_defaultValueHasBeenSet; }
+
+    /**
+     * <p>The default value of the option setting.</p>
+     */
     inline void SetDefaultValue(const Aws::String& value) { m_defaultValueHasBeenSet = true; m_defaultValue = value; }
 
     /**
@@ -165,6 +180,11 @@ namespace Model
      * <p>The description of the option setting.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
+
+    /**
+     * <p>The description of the option setting.</p>
+     */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
 
     /**
      * <p>The description of the option setting.</p>
@@ -205,6 +225,11 @@ namespace Model
     /**
      * <p>The DB engine specific parameter type.</p>
      */
+    inline bool ApplyTypeHasBeenSet() const { return m_applyTypeHasBeenSet; }
+
+    /**
+     * <p>The DB engine specific parameter type.</p>
+     */
     inline void SetApplyType(const Aws::String& value) { m_applyTypeHasBeenSet = true; m_applyType = value; }
 
     /**
@@ -241,6 +266,11 @@ namespace Model
     /**
      * <p>The data type of the option setting.</p>
      */
+    inline bool DataTypeHasBeenSet() const { return m_dataTypeHasBeenSet; }
+
+    /**
+     * <p>The data type of the option setting.</p>
+     */
     inline void SetDataType(const Aws::String& value) { m_dataTypeHasBeenSet = true; m_dataType = value; }
 
     /**
@@ -273,6 +303,11 @@ namespace Model
      * <p>The allowed values of the option setting.</p>
      */
     inline const Aws::String& GetAllowedValues() const{ return m_allowedValues; }
+
+    /**
+     * <p>The allowed values of the option setting.</p>
+     */
+    inline bool AllowedValuesHasBeenSet() const { return m_allowedValuesHasBeenSet; }
 
     /**
      * <p>The allowed values of the option setting.</p>
@@ -315,6 +350,12 @@ namespace Model
      * <p>A Boolean value that, when true, indicates the option setting can be modified
      * from the default.</p>
      */
+    inline bool IsModifiableHasBeenSet() const { return m_isModifiableHasBeenSet; }
+
+    /**
+     * <p>A Boolean value that, when true, indicates the option setting can be modified
+     * from the default.</p>
+     */
     inline void SetIsModifiable(bool value) { m_isModifiableHasBeenSet = true; m_isModifiable = value; }
 
     /**
@@ -328,6 +369,11 @@ namespace Model
      * <p>Indicates if the option setting is part of a collection.</p>
      */
     inline bool GetIsCollection() const{ return m_isCollection; }
+
+    /**
+     * <p>Indicates if the option setting is part of a collection.</p>
+     */
+    inline bool IsCollectionHasBeenSet() const { return m_isCollectionHasBeenSet; }
 
     /**
      * <p>Indicates if the option setting is part of a collection.</p>

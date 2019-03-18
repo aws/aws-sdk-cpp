@@ -54,6 +54,11 @@ namespace Model
     /**
      * <p>The name of the dashboard to be described.</p>
      */
+    inline bool DashboardNameHasBeenSet() const { return m_dashboardNameHasBeenSet; }
+
+    /**
+     * <p>The name of the dashboard to be described.</p>
+     */
     inline void SetDashboardName(const Aws::String& value) { m_dashboardNameHasBeenSet = true; m_dashboardName = value; }
 
     /**

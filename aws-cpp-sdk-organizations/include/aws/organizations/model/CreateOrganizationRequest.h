@@ -72,6 +72,21 @@ namespace Model
      * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_getting-started_concepts.html#feature-set-all">All
      * features</a> in the <i>AWS Organizations User Guide</i>.</p> </li> </ul>
      */
+    inline bool FeatureSetHasBeenSet() const { return m_featureSetHasBeenSet; }
+
+    /**
+     * <p>Specifies the feature set supported by the new organization. Each feature set
+     * supports different levels of functionality.</p> <ul> <li> <p>
+     * <i>CONSOLIDATED_BILLING</i>: All member accounts have their bills consolidated
+     * to and paid by the master account. For more information, see <a
+     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_getting-started_concepts.html#feature-set-cb-only">Consolidated
+     * billing</a> in the <i>AWS Organizations User Guide</i>.</p> </li> <li> <p>
+     * <i>ALL</i>: In addition to all the features supported by the consolidated
+     * billing feature set, the master account can also apply any type of policy to any
+     * member account in the organization. For more information, see <a
+     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_getting-started_concepts.html#feature-set-all">All
+     * features</a> in the <i>AWS Organizations User Guide</i>.</p> </li> </ul>
+     */
     inline void SetFeatureSet(const OrganizationFeatureSet& value) { m_featureSetHasBeenSet = true; m_featureSet = value; }
 
     /**

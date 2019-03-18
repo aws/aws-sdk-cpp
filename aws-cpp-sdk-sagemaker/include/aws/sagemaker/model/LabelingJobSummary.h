@@ -61,6 +61,11 @@ namespace Model
     /**
      * <p>The name of the labeling job.</p>
      */
+    inline bool LabelingJobNameHasBeenSet() const { return m_labelingJobNameHasBeenSet; }
+
+    /**
+     * <p>The name of the labeling job.</p>
+     */
     inline void SetLabelingJobName(const Aws::String& value) { m_labelingJobNameHasBeenSet = true; m_labelingJobName = value; }
 
     /**
@@ -94,6 +99,12 @@ namespace Model
      * created.</p>
      */
     inline const Aws::String& GetLabelingJobArn() const{ return m_labelingJobArn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) assigned to the labeling job when it was
+     * created.</p>
+     */
+    inline bool LabelingJobArnHasBeenSet() const { return m_labelingJobArnHasBeenSet; }
 
     /**
      * <p>The Amazon Resource Name (ARN) assigned to the labeling job when it was
@@ -140,6 +151,11 @@ namespace Model
     /**
      * <p>The date and time that the job was created (timestamp).</p>
      */
+    inline bool CreationTimeHasBeenSet() const { return m_creationTimeHasBeenSet; }
+
+    /**
+     * <p>The date and time that the job was created (timestamp).</p>
+     */
     inline void SetCreationTime(const Aws::Utils::DateTime& value) { m_creationTimeHasBeenSet = true; m_creationTime = value; }
 
     /**
@@ -162,6 +178,11 @@ namespace Model
      * <p>The date and time that the job was last modified (timestamp).</p>
      */
     inline const Aws::Utils::DateTime& GetLastModifiedTime() const{ return m_lastModifiedTime; }
+
+    /**
+     * <p>The date and time that the job was last modified (timestamp).</p>
+     */
+    inline bool LastModifiedTimeHasBeenSet() const { return m_lastModifiedTimeHasBeenSet; }
 
     /**
      * <p>The date and time that the job was last modified (timestamp).</p>
@@ -192,6 +213,11 @@ namespace Model
     /**
      * <p>The current status of the labeling job. </p>
      */
+    inline bool LabelingJobStatusHasBeenSet() const { return m_labelingJobStatusHasBeenSet; }
+
+    /**
+     * <p>The current status of the labeling job. </p>
+     */
     inline void SetLabelingJobStatus(const LabelingJobStatus& value) { m_labelingJobStatusHasBeenSet = true; m_labelingJobStatus = value; }
 
     /**
@@ -218,6 +244,11 @@ namespace Model
     /**
      * <p>Counts showing the progress of the labeling job.</p>
      */
+    inline bool LabelCountersHasBeenSet() const { return m_labelCountersHasBeenSet; }
+
+    /**
+     * <p>Counts showing the progress of the labeling job.</p>
+     */
     inline void SetLabelCounters(const LabelCounters& value) { m_labelCountersHasBeenSet = true; m_labelCounters = value; }
 
     /**
@@ -240,6 +271,11 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the work team assigned to the job.</p>
      */
     inline const Aws::String& GetWorkteamArn() const{ return m_workteamArn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the work team assigned to the job.</p>
+     */
+    inline bool WorkteamArnHasBeenSet() const { return m_workteamArnHasBeenSet; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the work team assigned to the job.</p>
@@ -277,6 +313,12 @@ namespace Model
      * before each data object is sent to a worker.</p>
      */
     inline const Aws::String& GetPreHumanTaskLambdaArn() const{ return m_preHumanTaskLambdaArn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of a Lambda function. The function is run
+     * before each data object is sent to a worker.</p>
+     */
+    inline bool PreHumanTaskLambdaArnHasBeenSet() const { return m_preHumanTaskLambdaArnHasBeenSet; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of a Lambda function. The function is run
@@ -323,6 +365,15 @@ namespace Model
      * Consolidation</a>.</p>
      */
     inline const Aws::String& GetAnnotationConsolidationLambdaArn() const{ return m_annotationConsolidationLambdaArn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the Lambda function used to consolidate the
+     * annotations from individual workers into a label for a data object. For more
+     * information, see <a
+     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/sms-annotation-consolidation.html">Annotation
+     * Consolidation</a>.</p>
+     */
+    inline bool AnnotationConsolidationLambdaArnHasBeenSet() const { return m_annotationConsolidationLambdaArnHasBeenSet; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the Lambda function used to consolidate the
@@ -389,6 +440,12 @@ namespace Model
      * <p>If the <code>LabelingJobStatus</code> field is <code>Failed</code>, this
      * field contains a description of the error.</p>
      */
+    inline bool FailureReasonHasBeenSet() const { return m_failureReasonHasBeenSet; }
+
+    /**
+     * <p>If the <code>LabelingJobStatus</code> field is <code>Failed</code>, this
+     * field contains a description of the error.</p>
+     */
     inline void SetFailureReason(const Aws::String& value) { m_failureReasonHasBeenSet = true; m_failureReason = value; }
 
     /**
@@ -430,6 +487,11 @@ namespace Model
     /**
      * <p>The location of the output produced by the labeling job.</p>
      */
+    inline bool LabelingJobOutputHasBeenSet() const { return m_labelingJobOutputHasBeenSet; }
+
+    /**
+     * <p>The location of the output produced by the labeling job.</p>
+     */
     inline void SetLabelingJobOutput(const LabelingJobOutput& value) { m_labelingJobOutputHasBeenSet = true; m_labelingJobOutput = value; }
 
     /**
@@ -452,6 +514,11 @@ namespace Model
      * <p>Input configuration for the labeling job.</p>
      */
     inline const LabelingJobInputConfig& GetInputConfig() const{ return m_inputConfig; }
+
+    /**
+     * <p>Input configuration for the labeling job.</p>
+     */
+    inline bool InputConfigHasBeenSet() const { return m_inputConfigHasBeenSet; }
 
     /**
      * <p>Input configuration for the labeling job.</p>

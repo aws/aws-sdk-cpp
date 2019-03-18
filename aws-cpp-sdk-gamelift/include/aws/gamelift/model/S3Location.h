@@ -59,6 +59,11 @@ namespace Model
     /**
      * <p>Amazon S3 bucket identifier. This is the name of your S3 bucket.</p>
      */
+    inline bool BucketHasBeenSet() const { return m_bucketHasBeenSet; }
+
+    /**
+     * <p>Amazon S3 bucket identifier. This is the name of your S3 bucket.</p>
+     */
     inline void SetBucket(const Aws::String& value) { m_bucketHasBeenSet = true; m_bucket = value; }
 
     /**
@@ -91,6 +96,11 @@ namespace Model
      * <p>Name of the zip file containing your build files. </p>
      */
     inline const Aws::String& GetKey() const{ return m_key; }
+
+    /**
+     * <p>Name of the zip file containing your build files. </p>
+     */
+    inline bool KeyHasBeenSet() const { return m_keyHasBeenSet; }
 
     /**
      * <p>Name of the zip file containing your build files. </p>
@@ -129,6 +139,13 @@ namespace Model
      * for the access role that allows Amazon GameLift to access your S3 bucket.</p>
      */
     inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
+
+    /**
+     * <p>Amazon Resource Name (<a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
+     * for the access role that allows Amazon GameLift to access your S3 bucket.</p>
+     */
+    inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
 
     /**
      * <p>Amazon Resource Name (<a

@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>Represents the model selection expression of a route response.</p>
      */
+    inline bool ModelSelectionExpressionHasBeenSet() const { return m_modelSelectionExpressionHasBeenSet; }
+
+    /**
+     * <p>Represents the model selection expression of a route response.</p>
+     */
     inline void SetModelSelectionExpression(const Aws::String& value) { m_modelSelectionExpressionHasBeenSet = true; m_modelSelectionExpression = value; }
 
     /**
@@ -89,6 +94,11 @@ namespace Model
      * <p>Represents the response models of a route response.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetResponseModels() const{ return m_responseModels; }
+
+    /**
+     * <p>Represents the response models of a route response.</p>
+     */
+    inline bool ResponseModelsHasBeenSet() const { return m_responseModelsHasBeenSet; }
 
     /**
      * <p>Represents the response models of a route response.</p>
@@ -154,6 +164,11 @@ namespace Model
     /**
      * <p>Represents the response parameters of a route response.</p>
      */
+    inline bool ResponseParametersHasBeenSet() const { return m_responseParametersHasBeenSet; }
+
+    /**
+     * <p>Represents the response parameters of a route response.</p>
+     */
     inline void SetResponseParameters(const Aws::Map<Aws::String, ParameterConstraints>& value) { m_responseParametersHasBeenSet = true; m_responseParameters = value; }
 
     /**
@@ -210,6 +225,11 @@ namespace Model
     /**
      * <p>Represents the identifier of a route response.</p>
      */
+    inline bool RouteResponseIdHasBeenSet() const { return m_routeResponseIdHasBeenSet; }
+
+    /**
+     * <p>Represents the identifier of a route response.</p>
+     */
     inline void SetRouteResponseId(const Aws::String& value) { m_routeResponseIdHasBeenSet = true; m_routeResponseId = value; }
 
     /**
@@ -242,6 +262,11 @@ namespace Model
      * <p>Represents the route response key of a route response.</p>
      */
     inline const Aws::String& GetRouteResponseKey() const{ return m_routeResponseKey; }
+
+    /**
+     * <p>Represents the route response key of a route response.</p>
+     */
+    inline bool RouteResponseKeyHasBeenSet() const { return m_routeResponseKeyHasBeenSet; }
 
     /**
      * <p>Represents the route response key of a route response.</p>

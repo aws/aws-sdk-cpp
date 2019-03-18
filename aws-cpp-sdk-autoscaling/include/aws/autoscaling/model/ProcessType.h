@@ -72,6 +72,17 @@ namespace Model
      * <code>ReplaceUnhealthy</code> </p> </li> <li> <p> <code>ScheduledActions</code>
      * </p> </li> </ul>
      */
+    inline bool ProcessNameHasBeenSet() const { return m_processNameHasBeenSet; }
+
+    /**
+     * <p>One of the following processes:</p> <ul> <li> <p> <code>Launch</code> </p>
+     * </li> <li> <p> <code>Terminate</code> </p> </li> <li> <p>
+     * <code>AddToLoadBalancer</code> </p> </li> <li> <p>
+     * <code>AlarmNotification</code> </p> </li> <li> <p> <code>AZRebalance</code> </p>
+     * </li> <li> <p> <code>HealthCheck</code> </p> </li> <li> <p>
+     * <code>ReplaceUnhealthy</code> </p> </li> <li> <p> <code>ScheduledActions</code>
+     * </p> </li> </ul>
+     */
     inline void SetProcessName(const Aws::String& value) { m_processNameHasBeenSet = true; m_processName = value; }
 
     /**

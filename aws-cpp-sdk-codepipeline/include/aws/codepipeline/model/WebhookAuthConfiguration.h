@@ -60,6 +60,13 @@ namespace Model
      * range. For IP, only the AllowedIPRange property must be set, and this property
      * must be set to a valid CIDR range.</p>
      */
+    inline bool AllowedIPRangeHasBeenSet() const { return m_allowedIPRangeHasBeenSet; }
+
+    /**
+     * <p>The property used to configure acceptance of webhooks within a specific IP
+     * range. For IP, only the AllowedIPRange property must be set, and this property
+     * must be set to a valid CIDR range.</p>
+     */
     inline void SetAllowedIPRange(const Aws::String& value) { m_allowedIPRangeHasBeenSet = true; m_allowedIPRange = value; }
 
     /**
@@ -103,6 +110,12 @@ namespace Model
      * the SecretToken property must be set.</p>
      */
     inline const Aws::String& GetSecretToken() const{ return m_secretToken; }
+
+    /**
+     * <p>The property used to configure GitHub authentication. For GITHUB_HMAC, only
+     * the SecretToken property must be set.</p>
+     */
+    inline bool SecretTokenHasBeenSet() const { return m_secretTokenHasBeenSet; }
 
     /**
      * <p>The property used to configure GitHub authentication. For GITHUB_HMAC, only

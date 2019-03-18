@@ -54,6 +54,11 @@ namespace Model
     /**
      * <p>The name of the template that you want to render.</p>
      */
+    inline bool TemplateNameHasBeenSet() const { return m_templateNameHasBeenSet; }
+
+    /**
+     * <p>The name of the template that you want to render.</p>
+     */
     inline void SetTemplateName(const Aws::String& value) { m_templateNameHasBeenSet = true; m_templateName = value; }
 
     /**
@@ -88,6 +93,13 @@ namespace Model
      * correspond to replacement tags in the email template.</p>
      */
     inline const Aws::String& GetTemplateData() const{ return m_templateData; }
+
+    /**
+     * <p>A list of replacement values to apply to the template. This parameter is a
+     * JSON object, typically consisting of key-value pairs in which the keys
+     * correspond to replacement tags in the email template.</p>
+     */
+    inline bool TemplateDataHasBeenSet() const { return m_templateDataHasBeenSet; }
 
     /**
      * <p>A list of replacement values to apply to the template. This parameter is a

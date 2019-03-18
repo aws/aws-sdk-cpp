@@ -54,6 +54,11 @@ namespace Model
     /**
      * <p>The number of expiring images.</p>
      */
+    inline bool ExpiringImageTotalCountHasBeenSet() const { return m_expiringImageTotalCountHasBeenSet; }
+
+    /**
+     * <p>The number of expiring images.</p>
+     */
     inline void SetExpiringImageTotalCount(int value) { m_expiringImageTotalCountHasBeenSet = true; m_expiringImageTotalCount = value; }
 
     /**

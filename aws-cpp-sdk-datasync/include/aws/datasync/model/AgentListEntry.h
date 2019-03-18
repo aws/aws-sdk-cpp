@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the agent.</p>
      */
+    inline bool AgentArnHasBeenSet() const { return m_agentArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the agent.</p>
+     */
     inline void SetAgentArn(const Aws::String& value) { m_agentArnHasBeenSet = true; m_agentArn = value; }
 
     /**
@@ -94,6 +99,11 @@ namespace Model
     /**
      * <p>The name of the agent.</p>
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>The name of the agent.</p>
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
@@ -126,6 +136,11 @@ namespace Model
      * <p>The status of the agent.</p>
      */
     inline const AgentStatus& GetStatus() const{ return m_status; }
+
+    /**
+     * <p>The status of the agent.</p>
+     */
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
     /**
      * <p>The status of the agent.</p>

@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p>The ARN of the S3 bucket that contains the data.</p>
      */
+    inline bool BucketARNHasBeenSet() const { return m_bucketARNHasBeenSet; }
+
+    /**
+     * <p>The ARN of the S3 bucket that contains the data.</p>
+     */
     inline void SetBucketARN(const Aws::String& value) { m_bucketARNHasBeenSet = true; m_bucketARN = value; }
 
     /**
@@ -90,6 +95,11 @@ namespace Model
      * <p>The name of the object that contains the data.</p>
      */
     inline const Aws::String& GetFileKey() const{ return m_fileKey; }
+
+    /**
+     * <p>The name of the object that contains the data.</p>
+     */
+    inline bool FileKeyHasBeenSet() const { return m_fileKeyHasBeenSet; }
 
     /**
      * <p>The name of the object that contains the data.</p>

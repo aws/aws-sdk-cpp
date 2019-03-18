@@ -90,6 +90,29 @@ namespace Model
      * Elemental MediaStore, or it can have the same name. The file name can include or
      * omit an extension. </p>
      */
+    inline bool PathHasBeenSet() const { return m_pathHasBeenSet; }
+
+    /**
+     * <p>The path (including the file name) where the object is stored in the
+     * container. Format: &lt;folder name&gt;/&lt;folder name&gt;/&lt;file name&gt;</p>
+     * <p>For example, to upload the file <code>mlaw.avi</code> to the folder path
+     * <code>premium\canada</code> in the container <code>movies</code>, enter the path
+     * <code>premium/canada/mlaw.avi</code>.</p> <p>Do not include the container name
+     * in this path.</p> <p>If the path includes any folders that don't exist yet, the
+     * service creates them. For example, suppose you have an existing
+     * <code>premium/usa</code> subfolder. If you specify <code>premium/canada</code>,
+     * the service creates a <code>canada</code> subfolder in the <code>premium</code>
+     * folder. You then have two subfolders, <code>usa</code> and <code>canada</code>,
+     * in the <code>premium</code> folder. </p> <p>There is no correlation between the
+     * path to the source and the path (folders) in the container in AWS Elemental
+     * MediaStore.</p> <p>For more information about folders and how they exist in a
+     * container, see the <a
+     * href="http://docs.aws.amazon.com/mediastore/latest/ug/">AWS Elemental MediaStore
+     * User Guide</a>.</p> <p>The file name is the name that is assigned to the file
+     * that you upload. The file can have the same name inside and outside of AWS
+     * Elemental MediaStore, or it can have the same name. The file name can include or
+     * omit an extension. </p>
+     */
     inline void SetPath(const Aws::String& value) { m_pathHasBeenSet = true; m_path = value; }
 
     /**
@@ -224,6 +247,15 @@ namespace Model
      * href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9">https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9</a>.</p>
      * <p>Headers with a custom user-defined value are also accepted.</p>
      */
+    inline bool CacheControlHasBeenSet() const { return m_cacheControlHasBeenSet; }
+
+    /**
+     * <p>An optional <code>CacheControl</code> header that allows the caller to
+     * control the object's cache behavior. Headers can be passed in as specified in
+     * the HTTP at <a
+     * href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9">https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9</a>.</p>
+     * <p>Headers with a custom user-defined value are also accepted.</p>
+     */
     inline void SetCacheControl(const Aws::String& value) { m_cacheControlHasBeenSet = true; m_cacheControl = value; }
 
     /**
@@ -278,6 +310,13 @@ namespace Model
      * storage shortly after being received.</p>
      */
     inline const StorageClass& GetStorageClass() const{ return m_storageClass; }
+
+    /**
+     * <p>Indicates the storage class of a <code>Put</code> request. Defaults to
+     * high-performance temporal storage class, and objects are persisted into durable
+     * storage shortly after being received.</p>
+     */
+    inline bool StorageClassHasBeenSet() const { return m_storageClassHasBeenSet; }
 
     /**
      * <p>Indicates the storage class of a <code>Put</code> request. Defaults to

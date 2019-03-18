@@ -59,6 +59,14 @@ namespace Model
      * <code>Username</code> can include up to 64 characters from
      * [a-zA-Z0-9_-.\@]+.</p>
      */
+    inline bool UsernameHasBeenSet() const { return m_usernameHasBeenSet; }
+
+    /**
+     * <p>The user name in Amazon Connect for the account to create. If you are using
+     * SAML for identity management in your Amazon Connect, the value for
+     * <code>Username</code> can include up to 64 characters from
+     * [a-zA-Z0-9_-.\@]+.</p>
+     */
     inline void SetUsername(const Aws::String& value) { m_usernameHasBeenSet = true; m_username = value; }
 
     /**
@@ -109,6 +117,14 @@ namespace Model
      * is returned.</p>
      */
     inline const Aws::String& GetPassword() const{ return m_password; }
+
+    /**
+     * <p>The password for the user account to create. This is required if you are
+     * using Amazon Connect for identity management. If you are using SAML for identity
+     * management and include this parameter, an <code>InvalidRequestException</code>
+     * is returned.</p>
+     */
+    inline bool PasswordHasBeenSet() const { return m_passwordHasBeenSet; }
 
     /**
      * <p>The password for the user account to create. This is required if you are
@@ -169,6 +185,12 @@ namespace Model
      * <p>Information about the user, including email address, first name, and last
      * name.</p>
      */
+    inline bool IdentityInfoHasBeenSet() const { return m_identityInfoHasBeenSet; }
+
+    /**
+     * <p>Information about the user, including email address, first name, and last
+     * name.</p>
+     */
     inline void SetIdentityInfo(const UserIdentityInfo& value) { m_identityInfoHasBeenSet = true; m_identityInfo = value; }
 
     /**
@@ -196,6 +218,13 @@ namespace Model
      * <code>DeskPhoneNumber</code>, and <code>PhoneType</code>.</p>
      */
     inline const UserPhoneConfig& GetPhoneConfig() const{ return m_phoneConfig; }
+
+    /**
+     * <p>Specifies the phone settings for the user, including
+     * <code>AfterContactWorkTimeLimit</code>, <code>AutoAccept</code>,
+     * <code>DeskPhoneNumber</code>, and <code>PhoneType</code>.</p>
+     */
+    inline bool PhoneConfigHasBeenSet() const { return m_phoneConfigHasBeenSet; }
 
     /**
      * <p>Specifies the phone settings for the user, including
@@ -240,6 +269,21 @@ namespace Model
      * is returned.</p>
      */
     inline const Aws::String& GetDirectoryUserId() const{ return m_directoryUserId; }
+
+    /**
+     * <p>The unique identifier for the user account in the directory service directory
+     * used for identity management. If Amazon Connect is unable to access the existing
+     * directory, you can use the <code>DirectoryUserId</code> to authenticate users.
+     * If you include the parameter, it is assumed that Amazon Connect cannot access
+     * the directory. If the parameter is not included, the
+     * <code>UserIdentityInfo</code> is used to authenticate users from your existing
+     * directory.</p> <p>This parameter is required if you are using an existing
+     * directory for identity management in Amazon Connect when Amazon Connect cannot
+     * access your directory to authenticate users. If you are using SAML for identity
+     * management and include this parameter, an <code>InvalidRequestException</code>
+     * is returned.</p>
+     */
+    inline bool DirectoryUserIdHasBeenSet() const { return m_directoryUserIdHasBeenSet; }
 
     /**
      * <p>The unique identifier for the user account in the directory service directory
@@ -342,6 +386,12 @@ namespace Model
      * <p>The unique identifier of the security profile to assign to the user
      * created.</p>
      */
+    inline bool SecurityProfileIdsHasBeenSet() const { return m_securityProfileIdsHasBeenSet; }
+
+    /**
+     * <p>The unique identifier of the security profile to assign to the user
+     * created.</p>
+     */
     inline void SetSecurityProfileIds(const Aws::Vector<Aws::String>& value) { m_securityProfileIdsHasBeenSet = true; m_securityProfileIds = value; }
 
     /**
@@ -391,6 +441,12 @@ namespace Model
      * <p>The unique identifier for the routing profile to assign to the user
      * created.</p>
      */
+    inline bool RoutingProfileIdHasBeenSet() const { return m_routingProfileIdHasBeenSet; }
+
+    /**
+     * <p>The unique identifier for the routing profile to assign to the user
+     * created.</p>
+     */
     inline void SetRoutingProfileId(const Aws::String& value) { m_routingProfileIdHasBeenSet = true; m_routingProfileId = value; }
 
     /**
@@ -429,6 +485,12 @@ namespace Model
      * created.</p>
      */
     inline const Aws::String& GetHierarchyGroupId() const{ return m_hierarchyGroupId; }
+
+    /**
+     * <p>The unique identifier for the hierarchy group to assign to the user
+     * created.</p>
+     */
+    inline bool HierarchyGroupIdHasBeenSet() const { return m_hierarchyGroupIdHasBeenSet; }
 
     /**
      * <p>The unique identifier for the hierarchy group to assign to the user
@@ -476,6 +538,16 @@ namespace Model
      * 10a4c4eb-f57e-4d4c-b602-bf39176ced07.</p>
      */
     inline const Aws::String& GetInstanceId() const{ return m_instanceId; }
+
+    /**
+     * <p>The identifier for your Amazon Connect instance. To find the ID of your
+     * instance, open the AWS console and select Amazon Connect. Select the alias of
+     * the instance in the Instance alias column. The instance ID is displayed in the
+     * Overview section of your instance settings. For example, the instance ID is the
+     * set of characters at the end of the instance ARN, after instance/, such as
+     * 10a4c4eb-f57e-4d4c-b602-bf39176ced07.</p>
+     */
+    inline bool InstanceIdHasBeenSet() const { return m_instanceIdHasBeenSet; }
 
     /**
      * <p>The identifier for your Amazon Connect instance. To find the ID of your

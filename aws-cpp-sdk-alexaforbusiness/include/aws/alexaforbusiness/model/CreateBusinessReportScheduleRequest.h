@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The name identifier of the schedule.</p>
      */
+    inline bool ScheduleNameHasBeenSet() const { return m_scheduleNameHasBeenSet; }
+
+    /**
+     * <p>The name identifier of the schedule.</p>
+     */
     inline void SetScheduleName(const Aws::String& value) { m_scheduleNameHasBeenSet = true; m_scheduleName = value; }
 
     /**
@@ -90,6 +95,13 @@ namespace Model
      * </p>
      */
     inline const Aws::String& GetS3BucketName() const{ return m_s3BucketName; }
+
+    /**
+     * <p>The S3 bucket name of the output reports. If this isn't specified, the report
+     * can be retrieved from a download link by calling ListBusinessReportSchedule.
+     * </p>
+     */
+    inline bool S3BucketNameHasBeenSet() const { return m_s3BucketNameHasBeenSet; }
 
     /**
      * <p>The S3 bucket name of the output reports. If this isn't specified, the report
@@ -142,6 +154,11 @@ namespace Model
     /**
      * <p>The S3 key where the report is delivered.</p>
      */
+    inline bool S3KeyPrefixHasBeenSet() const { return m_s3KeyPrefixHasBeenSet; }
+
+    /**
+     * <p>The S3 key where the report is delivered.</p>
+     */
     inline void SetS3KeyPrefix(const Aws::String& value) { m_s3KeyPrefixHasBeenSet = true; m_s3KeyPrefix = value; }
 
     /**
@@ -180,6 +197,12 @@ namespace Model
      * <p>The format of the generated report (individual CSV files or zipped files of
      * individual files).</p>
      */
+    inline bool FormatHasBeenSet() const { return m_formatHasBeenSet; }
+
+    /**
+     * <p>The format of the generated report (individual CSV files or zipped files of
+     * individual files).</p>
+     */
     inline void SetFormat(const BusinessReportFormat& value) { m_formatHasBeenSet = true; m_format = value; }
 
     /**
@@ -205,6 +228,11 @@ namespace Model
      * <p>The content range of the reports.</p>
      */
     inline const BusinessReportContentRange& GetContentRange() const{ return m_contentRange; }
+
+    /**
+     * <p>The content range of the reports.</p>
+     */
+    inline bool ContentRangeHasBeenSet() const { return m_contentRangeHasBeenSet; }
 
     /**
      * <p>The content range of the reports.</p>
@@ -237,6 +265,12 @@ namespace Model
      * <p>The recurrence of the reports. If this isn't specified, the report will only
      * be delivered one time when the API is called. </p>
      */
+    inline bool RecurrenceHasBeenSet() const { return m_recurrenceHasBeenSet; }
+
+    /**
+     * <p>The recurrence of the reports. If this isn't specified, the report will only
+     * be delivered one time when the API is called. </p>
+     */
     inline void SetRecurrence(const BusinessReportRecurrence& value) { m_recurrenceHasBeenSet = true; m_recurrence = value; }
 
     /**
@@ -262,6 +296,11 @@ namespace Model
      * <p>The client request token.</p>
      */
     inline const Aws::String& GetClientRequestToken() const{ return m_clientRequestToken; }
+
+    /**
+     * <p>The client request token.</p>
+     */
+    inline bool ClientRequestTokenHasBeenSet() const { return m_clientRequestTokenHasBeenSet; }
 
     /**
      * <p>The client request token.</p>

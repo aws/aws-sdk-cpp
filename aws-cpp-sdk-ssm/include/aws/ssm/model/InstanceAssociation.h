@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The association ID.</p>
      */
+    inline bool AssociationIdHasBeenSet() const { return m_associationIdHasBeenSet; }
+
+    /**
+     * <p>The association ID.</p>
+     */
     inline void SetAssociationId(const Aws::String& value) { m_associationIdHasBeenSet = true; m_associationId = value; }
 
     /**
@@ -88,6 +93,11 @@ namespace Model
      * <p>The instance ID.</p>
      */
     inline const Aws::String& GetInstanceId() const{ return m_instanceId; }
+
+    /**
+     * <p>The instance ID.</p>
+     */
+    inline bool InstanceIdHasBeenSet() const { return m_instanceIdHasBeenSet; }
 
     /**
      * <p>The instance ID.</p>
@@ -128,6 +138,11 @@ namespace Model
     /**
      * <p>The content of the association document for the instance(s).</p>
      */
+    inline bool ContentHasBeenSet() const { return m_contentHasBeenSet; }
+
+    /**
+     * <p>The content of the association document for the instance(s).</p>
+     */
     inline void SetContent(const Aws::String& value) { m_contentHasBeenSet = true; m_content = value; }
 
     /**
@@ -160,6 +175,11 @@ namespace Model
      * <p>Version information for the association on the instance.</p>
      */
     inline const Aws::String& GetAssociationVersion() const{ return m_associationVersion; }
+
+    /**
+     * <p>Version information for the association on the instance.</p>
+     */
+    inline bool AssociationVersionHasBeenSet() const { return m_associationVersionHasBeenSet; }
 
     /**
      * <p>Version information for the association on the instance.</p>

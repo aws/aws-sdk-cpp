@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p>The type of AWS resource that was evaluated.</p>
      */
+    inline bool ComplianceResourceTypeHasBeenSet() const { return m_complianceResourceTypeHasBeenSet; }
+
+    /**
+     * <p>The type of AWS resource that was evaluated.</p>
+     */
     inline void SetComplianceResourceType(const Aws::String& value) { m_complianceResourceTypeHasBeenSet = true; m_complianceResourceType = value; }
 
     /**
@@ -90,6 +95,11 @@ namespace Model
      * <p>The ID of the AWS resource that was evaluated.</p>
      */
     inline const Aws::String& GetComplianceResourceId() const{ return m_complianceResourceId; }
+
+    /**
+     * <p>The ID of the AWS resource that was evaluated.</p>
+     */
+    inline bool ComplianceResourceIdHasBeenSet() const { return m_complianceResourceIdHasBeenSet; }
 
     /**
      * <p>The ID of the AWS resource that was evaluated.</p>
@@ -134,6 +144,19 @@ namespace Model
      * <code>INSUFFICIENT_DATA</code> value to AWS Config.</p>
      */
     inline const ComplianceType& GetComplianceType() const{ return m_complianceType; }
+
+    /**
+     * <p>Indicates whether the AWS resource complies with the AWS Config rule that it
+     * was evaluated against.</p> <p>For the <code>Evaluation</code> data type, AWS
+     * Config supports only the <code>COMPLIANT</code>, <code>NON_COMPLIANT</code>, and
+     * <code>NOT_APPLICABLE</code> values. AWS Config does not support the
+     * <code>INSUFFICIENT_DATA</code> value for this data type.</p> <p>Similarly, AWS
+     * Config does not accept <code>INSUFFICIENT_DATA</code> as the value for
+     * <code>ComplianceType</code> from a <code>PutEvaluations</code> request. For
+     * example, an AWS Lambda function for a custom AWS Config rule cannot pass an
+     * <code>INSUFFICIENT_DATA</code> value to AWS Config.</p>
+     */
+    inline bool ComplianceTypeHasBeenSet() const { return m_complianceTypeHasBeenSet; }
 
     /**
      * <p>Indicates whether the AWS resource complies with the AWS Config rule that it
@@ -198,6 +221,12 @@ namespace Model
      * <p>Supplementary information about how the evaluation determined the
      * compliance.</p>
      */
+    inline bool AnnotationHasBeenSet() const { return m_annotationHasBeenSet; }
+
+    /**
+     * <p>Supplementary information about how the evaluation determined the
+     * compliance.</p>
+     */
     inline void SetAnnotation(const Aws::String& value) { m_annotationHasBeenSet = true; m_annotation = value; }
 
     /**
@@ -239,6 +268,15 @@ namespace Model
      * you specified (for example, every 24 hours).</p>
      */
     inline const Aws::Utils::DateTime& GetOrderingTimestamp() const{ return m_orderingTimestamp; }
+
+    /**
+     * <p>The time of the event in AWS Config that triggered the evaluation. For
+     * event-based evaluations, the time indicates when AWS Config created the
+     * configuration item that triggered the evaluation. For periodic evaluations, the
+     * time indicates when AWS Config triggered the evaluation at the frequency that
+     * you specified (for example, every 24 hours).</p>
+     */
+    inline bool OrderingTimestampHasBeenSet() const { return m_orderingTimestampHasBeenSet; }
 
     /**
      * <p>The time of the event in AWS Config that triggered the evaluation. For

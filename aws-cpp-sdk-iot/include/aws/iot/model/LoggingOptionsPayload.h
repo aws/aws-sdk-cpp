@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The ARN of the IAM role that grants access.</p>
      */
+    inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
+
+    /**
+     * <p>The ARN of the IAM role that grants access.</p>
+     */
     inline void SetRoleArn(const Aws::String& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
 
     /**
@@ -88,6 +93,11 @@ namespace Model
      * <p>The log level.</p>
      */
     inline const LogLevel& GetLogLevel() const{ return m_logLevel; }
+
+    /**
+     * <p>The log level.</p>
+     */
+    inline bool LogLevelHasBeenSet() const { return m_logLevelHasBeenSet; }
 
     /**
      * <p>The log level.</p>

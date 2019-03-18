@@ -81,6 +81,19 @@ namespace Model
      * address with <code>rfc 822;</code>, as described in <a
      * href="https://tools.ietf.org/html/rfc3798">RFC 3798</a>.</p> </note>
      */
+    inline bool FinalRecipientHasBeenSet() const { return m_finalRecipientHasBeenSet; }
+
+    /**
+     * <p>The email address that the message was ultimately delivered to. This
+     * corresponds to the <code>Final-Recipient</code> in the DSN. If not specified,
+     * <code>FinalRecipient</code> will be set to the <code>Recipient</code> specified
+     * in the <code>BouncedRecipientInfo</code> structure. Either
+     * <code>FinalRecipient</code> or the recipient in
+     * <code>BouncedRecipientInfo</code> must be a recipient of the original bounced
+     * message.</p> <note> <p>Do not prepend the <code>FinalRecipient</code> email
+     * address with <code>rfc 822;</code>, as described in <a
+     * href="https://tools.ietf.org/html/rfc3798">RFC 3798</a>.</p> </note>
+     */
     inline void SetFinalRecipient(const Aws::String& value) { m_finalRecipientHasBeenSet = true; m_finalRecipient = value; }
 
     /**
@@ -161,6 +174,13 @@ namespace Model
      * of its attempt to deliver the message to the recipient address. This is required
      * by <a href="https://tools.ietf.org/html/rfc3464">RFC 3464</a>.</p>
      */
+    inline bool ActionHasBeenSet() const { return m_actionHasBeenSet; }
+
+    /**
+     * <p>The action performed by the reporting mail transfer agent (MTA) as a result
+     * of its attempt to deliver the message to the recipient address. This is required
+     * by <a href="https://tools.ietf.org/html/rfc3464">RFC 3464</a>.</p>
+     */
     inline void SetAction(const DsnAction& value) { m_actionHasBeenSet = true; m_action = value; }
 
     /**
@@ -192,6 +212,14 @@ namespace Model
      * propagating synchronous bounces.</p>
      */
     inline const Aws::String& GetRemoteMta() const{ return m_remoteMta; }
+
+    /**
+     * <p>The MTA to which the remote MTA attempted to deliver the message, formatted
+     * as specified in <a href="https://tools.ietf.org/html/rfc3464">RFC 3464</a>
+     * (<code>mta-name-type; mta-name</code>). This parameter typically applies only to
+     * propagating synchronous bounces.</p>
+     */
+    inline bool RemoteMtaHasBeenSet() const { return m_remoteMtaHasBeenSet; }
 
     /**
      * <p>The MTA to which the remote MTA attempted to deliver the message, formatted
@@ -252,6 +280,12 @@ namespace Model
      * <p>The status code that indicates what went wrong. This is required by <a
      * href="https://tools.ietf.org/html/rfc3464">RFC 3464</a>.</p>
      */
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
+
+    /**
+     * <p>The status code that indicates what went wrong. This is required by <a
+     * href="https://tools.ietf.org/html/rfc3464">RFC 3464</a>.</p>
+     */
     inline void SetStatus(const Aws::String& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
@@ -291,6 +325,13 @@ namespace Model
      * formatting of this parameter.</p>
      */
     inline const Aws::String& GetDiagnosticCode() const{ return m_diagnosticCode; }
+
+    /**
+     * <p>An extended explanation of what went wrong; this is usually an SMTP response.
+     * See <a href="https://tools.ietf.org/html/rfc3463">RFC 3463</a> for the correct
+     * formatting of this parameter.</p>
+     */
+    inline bool DiagnosticCodeHasBeenSet() const { return m_diagnosticCodeHasBeenSet; }
 
     /**
      * <p>An extended explanation of what went wrong; this is usually an SMTP response.
@@ -345,6 +386,12 @@ namespace Model
      * <p>The time the final delivery attempt was made, in <a
      * href="https://www.ietf.org/rfc/rfc0822.txt">RFC 822</a> date-time format.</p>
      */
+    inline bool LastAttemptDateHasBeenSet() const { return m_lastAttemptDateHasBeenSet; }
+
+    /**
+     * <p>The time the final delivery attempt was made, in <a
+     * href="https://www.ietf.org/rfc/rfc0822.txt">RFC 822</a> date-time format.</p>
+     */
     inline void SetLastAttemptDate(const Aws::Utils::DateTime& value) { m_lastAttemptDateHasBeenSet = true; m_lastAttemptDate = value; }
 
     /**
@@ -370,6 +417,11 @@ namespace Model
      * <p>Additional X-headers to include in the DSN.</p>
      */
     inline const Aws::Vector<ExtensionField>& GetExtensionFields() const{ return m_extensionFields; }
+
+    /**
+     * <p>Additional X-headers to include in the DSN.</p>
+     */
+    inline bool ExtensionFieldsHasBeenSet() const { return m_extensionFieldsHasBeenSet; }
 
     /**
      * <p>Additional X-headers to include in the DSN.</p>

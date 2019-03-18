@@ -63,6 +63,12 @@ namespace Model
      * <p>The name of the Redis (cluster mode enabled) cluster (replication group) on
      * which the shards are to be configured.</p>
      */
+    inline bool ReplicationGroupIdHasBeenSet() const { return m_replicationGroupIdHasBeenSet; }
+
+    /**
+     * <p>The name of the Redis (cluster mode enabled) cluster (replication group) on
+     * which the shards are to be configured.</p>
+     */
     inline void SetReplicationGroupId(const Aws::String& value) { m_replicationGroupIdHasBeenSet = true; m_replicationGroupId = value; }
 
     /**
@@ -106,6 +112,12 @@ namespace Model
      * <p>The number of node groups (shards) that results from the modification of the
      * shard configuration.</p>
      */
+    inline bool NodeGroupCountHasBeenSet() const { return m_nodeGroupCountHasBeenSet; }
+
+    /**
+     * <p>The number of node groups (shards) that results from the modification of the
+     * shard configuration.</p>
+     */
     inline void SetNodeGroupCount(int value) { m_nodeGroupCountHasBeenSet = true; m_nodeGroupCount = value; }
 
     /**
@@ -121,6 +133,13 @@ namespace Model
      * <p>Value: true</p>
      */
     inline bool GetApplyImmediately() const{ return m_applyImmediately; }
+
+    /**
+     * <p>Indicates that the shard reconfiguration process begins immediately. At
+     * present, the only permitted value for this parameter is <code>true</code>.</p>
+     * <p>Value: true</p>
+     */
+    inline bool ApplyImmediatelyHasBeenSet() const { return m_applyImmediatelyHasBeenSet; }
 
     /**
      * <p>Indicates that the shard reconfiguration process begins immediately. At
@@ -147,6 +166,17 @@ namespace Model
      * current number of node groups (shards).</p>
      */
     inline const Aws::Vector<ReshardingConfiguration>& GetReshardingConfiguration() const{ return m_reshardingConfiguration; }
+
+    /**
+     * <p>Specifies the preferred availability zones for each node group in the
+     * cluster. If the value of <code>NodeGroupCount</code> is greater than the current
+     * number of node groups (shards), you can use this parameter to specify the
+     * preferred availability zones of the cluster's shards. If you omit this parameter
+     * ElastiCache selects availability zones for you.</p> <p>You can specify this
+     * parameter only if the value of <code>NodeGroupCount</code> is greater than the
+     * current number of node groups (shards).</p>
+     */
+    inline bool ReshardingConfigurationHasBeenSet() const { return m_reshardingConfigurationHasBeenSet; }
 
     /**
      * <p>Specifies the preferred availability zones for each node group in the
@@ -233,6 +263,16 @@ namespace Model
      * remove all node groups listed by <code>NodeGroupsToRemove</code> from the
      * cluster.</p>
      */
+    inline bool NodeGroupsToRemoveHasBeenSet() const { return m_nodeGroupsToRemoveHasBeenSet; }
+
+    /**
+     * <p>If the value of <code>NodeGroupCount</code> is less than the current number
+     * of node groups (shards), the <code>NodeGroupsToRemove</code> or
+     * <code>NodeGroupsToRetain</code> is a required list of node group ids to remove
+     * from or retain in the cluster.</p> <p>ElastiCache for Redis will attempt to
+     * remove all node groups listed by <code>NodeGroupsToRemove</code> from the
+     * cluster.</p>
+     */
     inline void SetNodeGroupsToRemove(const Aws::Vector<Aws::String>& value) { m_nodeGroupsToRemoveHasBeenSet = true; m_nodeGroupsToRemove = value; }
 
     /**
@@ -305,6 +345,16 @@ namespace Model
      * from the cluster.</p>
      */
     inline const Aws::Vector<Aws::String>& GetNodeGroupsToRetain() const{ return m_nodeGroupsToRetain; }
+
+    /**
+     * <p>If the value of <code>NodeGroupCount</code> is less than the current number
+     * of node groups (shards), the <code>NodeGroupsToRemove</code> or
+     * <code>NodeGroupsToRetain</code> is a required list of node group ids to remove
+     * from or retain in the cluster.</p> <p>ElastiCache for Redis will attempt to
+     * remove all node groups except those listed by <code>NodeGroupsToRetain</code>
+     * from the cluster.</p>
+     */
+    inline bool NodeGroupsToRetainHasBeenSet() const { return m_nodeGroupsToRetainHasBeenSet; }
 
     /**
      * <p>If the value of <code>NodeGroupCount</code> is less than the current number

@@ -62,6 +62,11 @@ namespace Model
     /**
      * <p>The identifier of the replication job.</p>
      */
+    inline bool ReplicationJobIdHasBeenSet() const { return m_replicationJobIdHasBeenSet; }
+
+    /**
+     * <p>The identifier of the replication job.</p>
+     */
     inline void SetReplicationJobId(const Aws::String& value) { m_replicationJobIdHasBeenSet = true; m_replicationJobId = value; }
 
     /**
@@ -94,6 +99,11 @@ namespace Model
      * <p>The identifier of the server.</p>
      */
     inline const Aws::String& GetServerId() const{ return m_serverId; }
+
+    /**
+     * <p>The identifier of the server.</p>
+     */
+    inline bool ServerIdHasBeenSet() const { return m_serverIdHasBeenSet; }
 
     /**
      * <p>The identifier of the server.</p>
@@ -134,6 +144,11 @@ namespace Model
     /**
      * <p>The type of server.</p>
      */
+    inline bool ServerTypeHasBeenSet() const { return m_serverTypeHasBeenSet; }
+
+    /**
+     * <p>The type of server.</p>
+     */
     inline void SetServerType(const ServerType& value) { m_serverTypeHasBeenSet = true; m_serverType = value; }
 
     /**
@@ -156,6 +171,11 @@ namespace Model
      * <p>Information about the VM server.</p>
      */
     inline const VmServer& GetVmServer() const{ return m_vmServer; }
+
+    /**
+     * <p>Information about the VM server.</p>
+     */
+    inline bool VmServerHasBeenSet() const { return m_vmServerHasBeenSet; }
 
     /**
      * <p>Information about the VM server.</p>
@@ -186,6 +206,11 @@ namespace Model
     /**
      * <p>The seed replication time.</p>
      */
+    inline bool SeedReplicationTimeHasBeenSet() const { return m_seedReplicationTimeHasBeenSet; }
+
+    /**
+     * <p>The seed replication time.</p>
+     */
     inline void SetSeedReplicationTime(const Aws::Utils::DateTime& value) { m_seedReplicationTimeHasBeenSet = true; m_seedReplicationTime = value; }
 
     /**
@@ -212,6 +237,11 @@ namespace Model
     /**
      * <p>The time between consecutive replication runs, in hours.</p>
      */
+    inline bool FrequencyHasBeenSet() const { return m_frequencyHasBeenSet; }
+
+    /**
+     * <p>The time between consecutive replication runs, in hours.</p>
+     */
     inline void SetFrequency(int value) { m_frequencyHasBeenSet = true; m_frequency = value; }
 
     /**
@@ -228,6 +258,11 @@ namespace Model
     /**
      * <p/>
      */
+    inline bool RunOnceHasBeenSet() const { return m_runOnceHasBeenSet; }
+
+    /**
+     * <p/>
+     */
     inline void SetRunOnce(bool value) { m_runOnceHasBeenSet = true; m_runOnce = value; }
 
     /**
@@ -240,6 +275,11 @@ namespace Model
      * <p>The start time of the next replication run.</p>
      */
     inline const Aws::Utils::DateTime& GetNextReplicationRunStartTime() const{ return m_nextReplicationRunStartTime; }
+
+    /**
+     * <p>The start time of the next replication run.</p>
+     */
+    inline bool NextReplicationRunStartTimeHasBeenSet() const { return m_nextReplicationRunStartTimeHasBeenSet; }
 
     /**
      * <p>The start time of the next replication run.</p>
@@ -272,6 +312,12 @@ namespace Model
      * <p>The license type to be used for the AMI created by a successful replication
      * run.</p>
      */
+    inline bool LicenseTypeHasBeenSet() const { return m_licenseTypeHasBeenSet; }
+
+    /**
+     * <p>The license type to be used for the AMI created by a successful replication
+     * run.</p>
+     */
     inline void SetLicenseType(const LicenseType& value) { m_licenseTypeHasBeenSet = true; m_licenseType = value; }
 
     /**
@@ -297,6 +343,11 @@ namespace Model
      * <p>The name of the IAM role to be used by the Server Migration Service.</p>
      */
     inline const Aws::String& GetRoleName() const{ return m_roleName; }
+
+    /**
+     * <p>The name of the IAM role to be used by the Server Migration Service.</p>
+     */
+    inline bool RoleNameHasBeenSet() const { return m_roleNameHasBeenSet; }
 
     /**
      * <p>The name of the IAM role to be used by the Server Migration Service.</p>
@@ -337,6 +388,11 @@ namespace Model
     /**
      * <p>The ID of the latest Amazon Machine Image (AMI).</p>
      */
+    inline bool LatestAmiIdHasBeenSet() const { return m_latestAmiIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the latest Amazon Machine Image (AMI).</p>
+     */
     inline void SetLatestAmiId(const Aws::String& value) { m_latestAmiIdHasBeenSet = true; m_latestAmiId = value; }
 
     /**
@@ -373,6 +429,11 @@ namespace Model
     /**
      * <p>The state of the replication job.</p>
      */
+    inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
+
+    /**
+     * <p>The state of the replication job.</p>
+     */
     inline void SetState(const ReplicationJobState& value) { m_stateHasBeenSet = true; m_state = value; }
 
     /**
@@ -395,6 +456,11 @@ namespace Model
      * <p>The description of the current status of the replication job.</p>
      */
     inline const Aws::String& GetStatusMessage() const{ return m_statusMessage; }
+
+    /**
+     * <p>The description of the current status of the replication job.</p>
+     */
+    inline bool StatusMessageHasBeenSet() const { return m_statusMessageHasBeenSet; }
 
     /**
      * <p>The description of the current status of the replication job.</p>
@@ -431,6 +497,11 @@ namespace Model
      * <p>The description of the replication job.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
+
+    /**
+     * <p>The description of the replication job.</p>
+     */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
 
     /**
      * <p>The description of the replication job.</p>
@@ -473,6 +544,12 @@ namespace Model
      * <p>Number of recent AMIs to keep in the customer's account for a replication
      * job. By default the value is set to zero, meaning that all AMIs are kept.</p>
      */
+    inline bool NumberOfRecentAmisToKeepHasBeenSet() const { return m_numberOfRecentAmisToKeepHasBeenSet; }
+
+    /**
+     * <p>Number of recent AMIs to keep in the customer's account for a replication
+     * job. By default the value is set to zero, meaning that all AMIs are kept.</p>
+     */
     inline void SetNumberOfRecentAmisToKeep(int value) { m_numberOfRecentAmisToKeepHasBeenSet = true; m_numberOfRecentAmisToKeep = value; }
 
     /**
@@ -487,6 +564,12 @@ namespace Model
      * <code>KmsKeyId</code> below.</p>
      */
     inline bool GetEncrypted() const{ return m_encrypted; }
+
+    /**
+     * <p>Whether the replication job should produce encrypted AMIs or not. See also
+     * <code>KmsKeyId</code> below.</p>
+     */
+    inline bool EncryptedHasBeenSet() const { return m_encryptedHasBeenSet; }
 
     /**
      * <p>Whether the replication job should produce encrypted AMIs or not. See also
@@ -509,6 +592,15 @@ namespace Model
      * not specified, the customer's default KMS key for EBS is used. </p>
      */
     inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
+
+    /**
+     * <p>KMS key ID for replication jobs that produce encrypted AMIs. Can be any of
+     * the following: </p> <ul> <li> <p>KMS key ID</p> </li> <li> <p>KMS key alias</p>
+     * </li> <li> <p>ARN referring to KMS key ID</p> </li> <li> <p>ARN referring to KMS
+     * key alias</p> </li> </ul> <p> If encrypted is <i>true</i> but a KMS key id is
+     * not specified, the customer's default KMS key for EBS is used. </p>
+     */
+    inline bool KmsKeyIdHasBeenSet() const { return m_kmsKeyIdHasBeenSet; }
 
     /**
      * <p>KMS key ID for replication jobs that produce encrypted AMIs. Can be any of
@@ -569,6 +661,11 @@ namespace Model
      * <p>Information about the replication runs.</p>
      */
     inline const Aws::Vector<ReplicationRun>& GetReplicationRunList() const{ return m_replicationRunList; }
+
+    /**
+     * <p>Information about the replication runs.</p>
+     */
+    inline bool ReplicationRunListHasBeenSet() const { return m_replicationRunListHasBeenSet; }
 
     /**
      * <p>Information about the replication runs.</p>

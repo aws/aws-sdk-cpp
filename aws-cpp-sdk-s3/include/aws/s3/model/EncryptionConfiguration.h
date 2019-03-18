@@ -58,6 +58,12 @@ namespace Model
      * <p>The ID of the AWS KMS key for the AWS Region where the destination bucket
      * resides. Amazon S3 uses this key to encrypt the replica object. </p>
      */
+    inline bool ReplicaKmsKeyIDHasBeenSet() const { return m_replicaKmsKeyIDHasBeenSet; }
+
+    /**
+     * <p>The ID of the AWS KMS key for the AWS Region where the destination bucket
+     * resides. Amazon S3 uses this key to encrypt the replica object. </p>
+     */
     inline void SetReplicaKmsKeyID(const Aws::String& value) { m_replicaKmsKeyIDHasBeenSet = true; m_replicaKmsKeyID = value; }
 
     /**

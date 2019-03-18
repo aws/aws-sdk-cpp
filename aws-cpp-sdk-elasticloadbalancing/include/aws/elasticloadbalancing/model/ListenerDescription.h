@@ -59,6 +59,11 @@ namespace Model
     /**
      * <p>The listener.</p>
      */
+    inline bool ListenerHasBeenSet() const { return m_listenerHasBeenSet; }
+
+    /**
+     * <p>The listener.</p>
+     */
     inline void SetListener(const Listener& value) { m_listenerHasBeenSet = true; m_listener = value; }
 
     /**
@@ -81,6 +86,11 @@ namespace Model
      * <p>The policies. If there are no policies enabled, the list is empty.</p>
      */
     inline const Aws::Vector<Aws::String>& GetPolicyNames() const{ return m_policyNames; }
+
+    /**
+     * <p>The policies. If there are no policies enabled, the list is empty.</p>
+     */
+    inline bool PolicyNamesHasBeenSet() const { return m_policyNamesHasBeenSet; }
 
     /**
      * <p>The policies. If there are no policies enabled, the list is empty.</p>

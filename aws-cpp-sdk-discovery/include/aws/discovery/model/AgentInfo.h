@@ -62,6 +62,11 @@ namespace Model
     /**
      * <p>The agent or connector ID.</p>
      */
+    inline bool AgentIdHasBeenSet() const { return m_agentIdHasBeenSet; }
+
+    /**
+     * <p>The agent or connector ID.</p>
+     */
     inline void SetAgentId(const Aws::String& value) { m_agentIdHasBeenSet = true; m_agentId = value; }
 
     /**
@@ -95,6 +100,12 @@ namespace Model
      * server or virtual machine.</p>
      */
     inline const Aws::String& GetHostName() const{ return m_hostName; }
+
+    /**
+     * <p>The name of the host where the agent or connector resides. The host can be a
+     * server or virtual machine.</p>
+     */
+    inline bool HostNameHasBeenSet() const { return m_hostNameHasBeenSet; }
 
     /**
      * <p>The name of the host where the agent or connector resides. The host can be a
@@ -141,6 +152,11 @@ namespace Model
     /**
      * <p>Network details about the host where the agent or connector resides.</p>
      */
+    inline bool AgentNetworkInfoListHasBeenSet() const { return m_agentNetworkInfoListHasBeenSet; }
+
+    /**
+     * <p>Network details about the host where the agent or connector resides.</p>
+     */
     inline void SetAgentNetworkInfoList(const Aws::Vector<AgentNetworkInfo>& value) { m_agentNetworkInfoListHasBeenSet = true; m_agentNetworkInfoList = value; }
 
     /**
@@ -173,6 +189,11 @@ namespace Model
      * <p>The ID of the connector.</p>
      */
     inline const Aws::String& GetConnectorId() const{ return m_connectorId; }
+
+    /**
+     * <p>The ID of the connector.</p>
+     */
+    inline bool ConnectorIdHasBeenSet() const { return m_connectorIdHasBeenSet; }
 
     /**
      * <p>The ID of the connector.</p>
@@ -213,6 +234,11 @@ namespace Model
     /**
      * <p>The agent or connector version.</p>
      */
+    inline bool VersionHasBeenSet() const { return m_versionHasBeenSet; }
+
+    /**
+     * <p>The agent or connector version.</p>
+     */
     inline void SetVersion(const Aws::String& value) { m_versionHasBeenSet = true; m_version = value; }
 
     /**
@@ -249,6 +275,11 @@ namespace Model
     /**
      * <p>The health of the agent or connector.</p>
      */
+    inline bool HealthHasBeenSet() const { return m_healthHasBeenSet; }
+
+    /**
+     * <p>The health of the agent or connector.</p>
+     */
     inline void SetHealth(const AgentStatus& value) { m_healthHasBeenSet = true; m_health = value; }
 
     /**
@@ -271,6 +302,11 @@ namespace Model
      * <p>Time since agent or connector health was reported.</p>
      */
     inline const Aws::String& GetLastHealthPingTime() const{ return m_lastHealthPingTime; }
+
+    /**
+     * <p>Time since agent or connector health was reported.</p>
+     */
+    inline bool LastHealthPingTimeHasBeenSet() const { return m_lastHealthPingTimeHasBeenSet; }
 
     /**
      * <p>Time since agent or connector health was reported.</p>
@@ -311,6 +347,11 @@ namespace Model
     /**
      * <p>Status of the collection process for an agent or connector.</p>
      */
+    inline bool CollectionStatusHasBeenSet() const { return m_collectionStatusHasBeenSet; }
+
+    /**
+     * <p>Status of the collection process for an agent or connector.</p>
+     */
     inline void SetCollectionStatus(const Aws::String& value) { m_collectionStatusHasBeenSet = true; m_collectionStatus = value; }
 
     /**
@@ -347,6 +388,11 @@ namespace Model
     /**
      * <p>Type of agent.</p>
      */
+    inline bool AgentTypeHasBeenSet() const { return m_agentTypeHasBeenSet; }
+
+    /**
+     * <p>Type of agent.</p>
+     */
     inline void SetAgentType(const Aws::String& value) { m_agentTypeHasBeenSet = true; m_agentType = value; }
 
     /**
@@ -379,6 +425,11 @@ namespace Model
      * <p>Agent's first registration timestamp in UTC.</p>
      */
     inline const Aws::String& GetRegisteredTime() const{ return m_registeredTime; }
+
+    /**
+     * <p>Agent's first registration timestamp in UTC.</p>
+     */
+    inline bool RegisteredTimeHasBeenSet() const { return m_registeredTimeHasBeenSet; }
 
     /**
      * <p>Agent's first registration timestamp in UTC.</p>

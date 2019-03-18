@@ -55,6 +55,12 @@ namespace Model
      * <p>The minimum length of the password policy that you have set. Cannot be less
      * than 6.</p>
      */
+    inline bool MinimumLengthHasBeenSet() const { return m_minimumLengthHasBeenSet; }
+
+    /**
+     * <p>The minimum length of the password policy that you have set. Cannot be less
+     * than 6.</p>
+     */
     inline void SetMinimumLength(int value) { m_minimumLengthHasBeenSet = true; m_minimumLength = value; }
 
     /**
@@ -69,6 +75,12 @@ namespace Model
      * users to use at least one uppercase letter in their password.</p>
      */
     inline bool GetRequireUppercase() const{ return m_requireUppercase; }
+
+    /**
+     * <p>In the password policy that you have set, refers to whether you have required
+     * users to use at least one uppercase letter in their password.</p>
+     */
+    inline bool RequireUppercaseHasBeenSet() const { return m_requireUppercaseHasBeenSet; }
 
     /**
      * <p>In the password policy that you have set, refers to whether you have required
@@ -93,6 +105,12 @@ namespace Model
      * <p>In the password policy that you have set, refers to whether you have required
      * users to use at least one lowercase letter in their password.</p>
      */
+    inline bool RequireLowercaseHasBeenSet() const { return m_requireLowercaseHasBeenSet; }
+
+    /**
+     * <p>In the password policy that you have set, refers to whether you have required
+     * users to use at least one lowercase letter in their password.</p>
+     */
     inline void SetRequireLowercase(bool value) { m_requireLowercaseHasBeenSet = true; m_requireLowercase = value; }
 
     /**
@@ -112,6 +130,12 @@ namespace Model
      * <p>In the password policy that you have set, refers to whether you have required
      * users to use at least one number in their password.</p>
      */
+    inline bool RequireNumbersHasBeenSet() const { return m_requireNumbersHasBeenSet; }
+
+    /**
+     * <p>In the password policy that you have set, refers to whether you have required
+     * users to use at least one number in their password.</p>
+     */
     inline void SetRequireNumbers(bool value) { m_requireNumbersHasBeenSet = true; m_requireNumbers = value; }
 
     /**
@@ -126,6 +150,12 @@ namespace Model
      * users to use at least one symbol in their password.</p>
      */
     inline bool GetRequireSymbols() const{ return m_requireSymbols; }
+
+    /**
+     * <p>In the password policy that you have set, refers to whether you have required
+     * users to use at least one symbol in their password.</p>
+     */
+    inline bool RequireSymbolsHasBeenSet() const { return m_requireSymbolsHasBeenSet; }
 
     /**
      * <p>In the password policy that you have set, refers to whether you have required

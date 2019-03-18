@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p>The AWS account ID.</p>
      */
+    inline bool UserIdHasBeenSet() const { return m_userIdHasBeenSet; }
+
+    /**
+     * <p>The AWS account ID.</p>
+     */
     inline void SetUserId(const Aws::String& value) { m_userIdHasBeenSet = true; m_userId = value; }
 
     /**
@@ -90,6 +95,11 @@ namespace Model
      * <p>The name of the group.</p>
      */
     inline const PermissionGroup& GetGroup() const{ return m_group; }
+
+    /**
+     * <p>The name of the group.</p>
+     */
+    inline bool GroupHasBeenSet() const { return m_groupHasBeenSet; }
 
     /**
      * <p>The name of the group.</p>

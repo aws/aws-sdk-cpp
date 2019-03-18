@@ -54,6 +54,9 @@ namespace Model
     inline const HlsAkamaiSettings& GetHlsAkamaiSettings() const{ return m_hlsAkamaiSettings; }
 
     
+    inline bool HlsAkamaiSettingsHasBeenSet() const { return m_hlsAkamaiSettingsHasBeenSet; }
+
+    
     inline void SetHlsAkamaiSettings(const HlsAkamaiSettings& value) { m_hlsAkamaiSettingsHasBeenSet = true; m_hlsAkamaiSettings = value; }
 
     
@@ -68,6 +71,9 @@ namespace Model
 
     
     inline const HlsBasicPutSettings& GetHlsBasicPutSettings() const{ return m_hlsBasicPutSettings; }
+
+    
+    inline bool HlsBasicPutSettingsHasBeenSet() const { return m_hlsBasicPutSettingsHasBeenSet; }
 
     
     inline void SetHlsBasicPutSettings(const HlsBasicPutSettings& value) { m_hlsBasicPutSettingsHasBeenSet = true; m_hlsBasicPutSettings = value; }
@@ -86,6 +92,9 @@ namespace Model
     inline const HlsMediaStoreSettings& GetHlsMediaStoreSettings() const{ return m_hlsMediaStoreSettings; }
 
     
+    inline bool HlsMediaStoreSettingsHasBeenSet() const { return m_hlsMediaStoreSettingsHasBeenSet; }
+
+    
     inline void SetHlsMediaStoreSettings(const HlsMediaStoreSettings& value) { m_hlsMediaStoreSettingsHasBeenSet = true; m_hlsMediaStoreSettings = value; }
 
     
@@ -100,6 +109,9 @@ namespace Model
 
     
     inline const HlsWebdavSettings& GetHlsWebdavSettings() const{ return m_hlsWebdavSettings; }
+
+    
+    inline bool HlsWebdavSettingsHasBeenSet() const { return m_hlsWebdavSettingsHasBeenSet; }
 
     
     inline void SetHlsWebdavSettings(const HlsWebdavSettings& value) { m_hlsWebdavSettingsHasBeenSet = true; m_hlsWebdavSettings = value; }

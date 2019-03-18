@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The ID of the Active Directory used for authentication.</p>
      */
+    inline bool DirectoryIdHasBeenSet() const { return m_directoryIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the Active Directory used for authentication.</p>
+     */
     inline void SetDirectoryId(const Aws::String& value) { m_directoryIdHasBeenSet = true; m_directoryId = value; }
 
     /**

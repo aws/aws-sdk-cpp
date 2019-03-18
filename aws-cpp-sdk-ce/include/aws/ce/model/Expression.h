@@ -82,6 +82,11 @@ namespace Model
     /**
      * <p>Return results that match either <code>Dimension</code> object.</p>
      */
+    inline bool OrHasBeenSet() const { return m_orHasBeenSet; }
+
+    /**
+     * <p>Return results that match either <code>Dimension</code> object.</p>
+     */
     inline void SetOr(const Aws::Vector<Expression>& value) { m_orHasBeenSet = true; m_or = value; }
 
     /**
@@ -114,6 +119,11 @@ namespace Model
      * <p>Return results that match both <code>Dimension</code> objects.</p>
      */
     inline const Aws::Vector<Expression>& GetAnd() const{ return m_and; }
+
+    /**
+     * <p>Return results that match both <code>Dimension</code> objects.</p>
+     */
+    inline bool AndHasBeenSet() const { return m_andHasBeenSet; }
 
     /**
      * <p>Return results that match both <code>Dimension</code> objects.</p>
@@ -154,6 +164,11 @@ namespace Model
     /**
      * <p>Return results that don't match a <code>Dimension</code> object.</p>
      */
+    inline bool NotHasBeenSet() const { return m_notHasBeenSet; }
+
+    /**
+     * <p>Return results that don't match a <code>Dimension</code> object.</p>
+     */
     inline void SetNot(const Expression& value) { m_notHasBeenSet = true; m_not.resize(1); m_not[0] = value; }
 
     /**
@@ -180,6 +195,11 @@ namespace Model
     /**
      * <p>The specific <code>Dimension</code> to use for <code>Expression</code>.</p>
      */
+    inline bool DimensionsHasBeenSet() const { return m_dimensionsHasBeenSet; }
+
+    /**
+     * <p>The specific <code>Dimension</code> to use for <code>Expression</code>.</p>
+     */
     inline void SetDimensions(const DimensionValues& value) { m_dimensionsHasBeenSet = true; m_dimensions = value; }
 
     /**
@@ -202,6 +222,11 @@ namespace Model
      * <p>The specific <code>Tag</code> to use for <code>Expression</code>.</p>
      */
     inline const TagValues& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>The specific <code>Tag</code> to use for <code>Expression</code>.</p>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
      * <p>The specific <code>Tag</code> to use for <code>Expression</code>.</p>

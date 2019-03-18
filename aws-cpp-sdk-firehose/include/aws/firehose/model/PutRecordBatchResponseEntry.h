@@ -59,6 +59,11 @@ namespace Model
     /**
      * <p>The ID of the record.</p>
      */
+    inline bool RecordIdHasBeenSet() const { return m_recordIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the record.</p>
+     */
     inline void SetRecordId(const Aws::String& value) { m_recordIdHasBeenSet = true; m_recordId = value; }
 
     /**
@@ -95,6 +100,11 @@ namespace Model
     /**
      * <p>The error code for an individual record result.</p>
      */
+    inline bool ErrorCodeHasBeenSet() const { return m_errorCodeHasBeenSet; }
+
+    /**
+     * <p>The error code for an individual record result.</p>
+     */
     inline void SetErrorCode(const Aws::String& value) { m_errorCodeHasBeenSet = true; m_errorCode = value; }
 
     /**
@@ -127,6 +137,11 @@ namespace Model
      * <p>The error message for an individual record result.</p>
      */
     inline const Aws::String& GetErrorMessage() const{ return m_errorMessage; }
+
+    /**
+     * <p>The error message for an individual record result.</p>
+     */
+    inline bool ErrorMessageHasBeenSet() const { return m_errorMessageHasBeenSet; }
 
     /**
      * <p>The error message for an individual record result.</p>

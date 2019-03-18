@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The certificate ARN.</p>
      */
+    inline bool CertificateArnHasBeenSet() const { return m_certificateArnHasBeenSet; }
+
+    /**
+     * <p>The certificate ARN.</p>
+     */
     inline void SetCertificateArn(const Aws::String& value) { m_certificateArnHasBeenSet = true; m_certificateArn = value; }
 
     /**
@@ -89,6 +94,11 @@ namespace Model
      * <p>The certificate ID.</p>
      */
     inline const Aws::String& GetCertificateId() const{ return m_certificateId; }
+
+    /**
+     * <p>The certificate ID.</p>
+     */
+    inline bool CertificateIdHasBeenSet() const { return m_certificateIdHasBeenSet; }
 
     /**
      * <p>The certificate ID.</p>
@@ -129,6 +139,11 @@ namespace Model
     /**
      * <p>The AWS account to which the transfer was made.</p>
      */
+    inline bool TransferredToHasBeenSet() const { return m_transferredToHasBeenSet; }
+
+    /**
+     * <p>The AWS account to which the transfer was made.</p>
+     */
     inline void SetTransferredTo(const Aws::String& value) { m_transferredToHasBeenSet = true; m_transferredTo = value; }
 
     /**
@@ -165,6 +180,11 @@ namespace Model
     /**
      * <p>The date the transfer was initiated.</p>
      */
+    inline bool TransferDateHasBeenSet() const { return m_transferDateHasBeenSet; }
+
+    /**
+     * <p>The date the transfer was initiated.</p>
+     */
     inline void SetTransferDate(const Aws::Utils::DateTime& value) { m_transferDateHasBeenSet = true; m_transferDate = value; }
 
     /**
@@ -187,6 +207,11 @@ namespace Model
      * <p>The transfer message.</p>
      */
     inline const Aws::String& GetTransferMessage() const{ return m_transferMessage; }
+
+    /**
+     * <p>The transfer message.</p>
+     */
+    inline bool TransferMessageHasBeenSet() const { return m_transferMessageHasBeenSet; }
 
     /**
      * <p>The transfer message.</p>
@@ -223,6 +248,11 @@ namespace Model
      * <p>The certificate creation date.</p>
      */
     inline const Aws::Utils::DateTime& GetCreationDate() const{ return m_creationDate; }
+
+    /**
+     * <p>The certificate creation date.</p>
+     */
+    inline bool CreationDateHasBeenSet() const { return m_creationDateHasBeenSet; }
 
     /**
      * <p>The certificate creation date.</p>

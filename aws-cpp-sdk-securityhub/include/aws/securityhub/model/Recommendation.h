@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The recommendation of what to do about the issue described in a finding. </p>
      */
+    inline bool TextHasBeenSet() const { return m_textHasBeenSet; }
+
+    /**
+     * <p>The recommendation of what to do about the issue described in a finding. </p>
+     */
     inline void SetText(const Aws::String& value) { m_textHasBeenSet = true; m_text = value; }
 
     /**
@@ -89,6 +94,12 @@ namespace Model
      * finding. </p>
      */
     inline const Aws::String& GetUrl() const{ return m_url; }
+
+    /**
+     * <p>A URL to link to general remediation information for the finding type of a
+     * finding. </p>
+     */
+    inline bool UrlHasBeenSet() const { return m_urlHasBeenSet; }
 
     /**
      * <p>A URL to link to general remediation information for the finding type of a

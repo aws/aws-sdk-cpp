@@ -53,6 +53,11 @@ namespace Model
     /**
      * <p>The name or Amazon Resource Name (ARN) of the layer.</p>
      */
+    inline bool LayerNameHasBeenSet() const { return m_layerNameHasBeenSet; }
+
+    /**
+     * <p>The name or Amazon Resource Name (ARN) of the layer.</p>
+     */
     inline void SetLayerName(const Aws::String& value) { m_layerNameHasBeenSet = true; m_layerName = value; }
 
     /**
@@ -85,6 +90,11 @@ namespace Model
      * <p>The description of the version.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
+
+    /**
+     * <p>The description of the version.</p>
+     */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
 
     /**
      * <p>The description of the version.</p>
@@ -125,6 +135,11 @@ namespace Model
     /**
      * <p>The function layer archive.</p>
      */
+    inline bool ContentHasBeenSet() const { return m_contentHasBeenSet; }
+
+    /**
+     * <p>The function layer archive.</p>
+     */
     inline void SetContent(const LayerVersionContentInput& value) { m_contentHasBeenSet = true; m_content = value; }
 
     /**
@@ -150,6 +165,14 @@ namespace Model
      * <a>ListLayerVersions</a>.</p>
      */
     inline const Aws::Vector<Runtime>& GetCompatibleRuntimes() const{ return m_compatibleRuntimes; }
+
+    /**
+     * <p>A list of compatible <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html">function
+     * runtimes</a>. Used for filtering with <a>ListLayers</a> and
+     * <a>ListLayerVersions</a>.</p>
+     */
+    inline bool CompatibleRuntimesHasBeenSet() const { return m_compatibleRuntimesHasBeenSet; }
 
     /**
      * <p>A list of compatible <a
@@ -208,6 +231,15 @@ namespace Model
      * </li> <li> <p>The full text of the license.</p> </li> </ul>
      */
     inline const Aws::String& GetLicenseInfo() const{ return m_licenseInfo; }
+
+    /**
+     * <p>The layer's software license. It can be any of the following:</p> <ul> <li>
+     * <p>An <a href="https://spdx.org/licenses/">SPDX license identifier</a>. For
+     * example, <code>MIT</code>.</p> </li> <li> <p>The URL of a license hosted on the
+     * internet. For example, <code>https://opensource.org/licenses/MIT</code>.</p>
+     * </li> <li> <p>The full text of the license.</p> </li> </ul>
+     */
+    inline bool LicenseInfoHasBeenSet() const { return m_licenseInfoHasBeenSet; }
 
     /**
      * <p>The layer's software license. It can be any of the following:</p> <ul> <li>

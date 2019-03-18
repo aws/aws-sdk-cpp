@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The name of the user who made the specified commit.</p>
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>The name of the user who made the specified commit.</p>
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
@@ -88,6 +93,11 @@ namespace Model
      * <p>The email address associated with the user who made the commit, if any.</p>
      */
     inline const Aws::String& GetEmail() const{ return m_email; }
+
+    /**
+     * <p>The email address associated with the user who made the commit, if any.</p>
+     */
+    inline bool EmailHasBeenSet() const { return m_emailHasBeenSet; }
 
     /**
      * <p>The email address associated with the user who made the commit, if any.</p>
@@ -125,6 +135,12 @@ namespace Model
      * offset.</p>
      */
     inline const Aws::String& GetDate() const{ return m_date; }
+
+    /**
+     * <p>The date when the specified commit was commited, in timestamp format with GMT
+     * offset.</p>
+     */
+    inline bool DateHasBeenSet() const { return m_dateHasBeenSet; }
 
     /**
      * <p>The date when the specified commit was commited, in timestamp format with GMT

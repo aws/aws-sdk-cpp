@@ -63,6 +63,12 @@ namespace Model
      * <p>The HTTP Event Collector (HEC) endpoint to which Kinesis Data Firehose sends
      * your data.</p>
      */
+    inline bool HECEndpointHasBeenSet() const { return m_hECEndpointHasBeenSet; }
+
+    /**
+     * <p>The HTTP Event Collector (HEC) endpoint to which Kinesis Data Firehose sends
+     * your data.</p>
+     */
     inline void SetHECEndpoint(const Aws::String& value) { m_hECEndpointHasBeenSet = true; m_hECEndpoint = value; }
 
     /**
@@ -104,6 +110,11 @@ namespace Model
     /**
      * <p>This type can be either "Raw" or "Event."</p>
      */
+    inline bool HECEndpointTypeHasBeenSet() const { return m_hECEndpointTypeHasBeenSet; }
+
+    /**
+     * <p>This type can be either "Raw" or "Event."</p>
+     */
     inline void SetHECEndpointType(const HECEndpointType& value) { m_hECEndpointTypeHasBeenSet = true; m_hECEndpointType = value; }
 
     /**
@@ -127,6 +138,12 @@ namespace Model
      * endpoint.</p>
      */
     inline const Aws::String& GetHECToken() const{ return m_hECToken; }
+
+    /**
+     * <p>A GUID you obtain from your Splunk cluster when you create a new HEC
+     * endpoint.</p>
+     */
+    inline bool HECTokenHasBeenSet() const { return m_hECTokenHasBeenSet; }
 
     /**
      * <p>A GUID you obtain from your Splunk cluster when you create a new HEC
@@ -179,6 +196,14 @@ namespace Model
      * period, Kinesis Data Firehose either tries to send the data again or considers
      * it an error, based on your retry settings.</p>
      */
+    inline bool HECAcknowledgmentTimeoutInSecondsHasBeenSet() const { return m_hECAcknowledgmentTimeoutInSecondsHasBeenSet; }
+
+    /**
+     * <p>The amount of time that Kinesis Data Firehose waits to receive an
+     * acknowledgment from Splunk after it sends it data. At the end of the timeout
+     * period, Kinesis Data Firehose either tries to send the data again or considers
+     * it an error, based on your retry settings.</p>
+     */
     inline void SetHECAcknowledgmentTimeoutInSeconds(int value) { m_hECAcknowledgmentTimeoutInSecondsHasBeenSet = true; m_hECAcknowledgmentTimeoutInSeconds = value; }
 
     /**
@@ -195,6 +220,12 @@ namespace Model
      * Splunk or if it doesn't receive an acknowledgment of receipt from Splunk.</p>
      */
     inline const SplunkRetryOptions& GetRetryOptions() const{ return m_retryOptions; }
+
+    /**
+     * <p>The retry behavior in case Kinesis Data Firehose is unable to deliver data to
+     * Splunk or if it doesn't receive an acknowledgment of receipt from Splunk.</p>
+     */
+    inline bool RetryOptionsHasBeenSet() const { return m_retryOptionsHasBeenSet; }
 
     /**
      * <p>The retry behavior in case Kinesis Data Firehose is unable to deliver data to
@@ -230,6 +261,16 @@ namespace Model
      * <code>FailedDocumentsOnly</code>. </p>
      */
     inline const SplunkS3BackupMode& GetS3BackupMode() const{ return m_s3BackupMode; }
+
+    /**
+     * <p>Defines how documents should be delivered to Amazon S3. When set to
+     * <code>FailedDocumentsOnly</code>, Kinesis Data Firehose writes any data that
+     * could not be indexed to the configured Amazon S3 destination. When set to
+     * <code>AllDocuments</code>, Kinesis Data Firehose delivers all incoming records
+     * to Amazon S3, and also writes failed documents to Amazon S3. Default value is
+     * <code>FailedDocumentsOnly</code>. </p>
+     */
+    inline bool S3BackupModeHasBeenSet() const { return m_s3BackupModeHasBeenSet; }
 
     /**
      * <p>Defines how documents should be delivered to Amazon S3. When set to
@@ -280,6 +321,11 @@ namespace Model
     /**
      * <p>The Amazon S3 destination.&gt;</p>
      */
+    inline bool S3DestinationDescriptionHasBeenSet() const { return m_s3DestinationDescriptionHasBeenSet; }
+
+    /**
+     * <p>The Amazon S3 destination.&gt;</p>
+     */
     inline void SetS3DestinationDescription(const S3DestinationDescription& value) { m_s3DestinationDescriptionHasBeenSet = true; m_s3DestinationDescription = value; }
 
     /**
@@ -306,6 +352,11 @@ namespace Model
     /**
      * <p>The data processing configuration.</p>
      */
+    inline bool ProcessingConfigurationHasBeenSet() const { return m_processingConfigurationHasBeenSet; }
+
+    /**
+     * <p>The data processing configuration.</p>
+     */
     inline void SetProcessingConfiguration(const ProcessingConfiguration& value) { m_processingConfigurationHasBeenSet = true; m_processingConfiguration = value; }
 
     /**
@@ -328,6 +379,11 @@ namespace Model
      * <p>The Amazon CloudWatch logging options for your delivery stream.</p>
      */
     inline const CloudWatchLoggingOptions& GetCloudWatchLoggingOptions() const{ return m_cloudWatchLoggingOptions; }
+
+    /**
+     * <p>The Amazon CloudWatch logging options for your delivery stream.</p>
+     */
+    inline bool CloudWatchLoggingOptionsHasBeenSet() const { return m_cloudWatchLoggingOptionsHasBeenSet; }
 
     /**
      * <p>The Amazon CloudWatch logging options for your delivery stream.</p>

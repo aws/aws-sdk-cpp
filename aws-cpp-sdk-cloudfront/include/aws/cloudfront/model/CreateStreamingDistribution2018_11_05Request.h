@@ -54,6 +54,11 @@ namespace Model
     /**
      * <p>The streaming distribution's configuration information.</p>
      */
+    inline bool StreamingDistributionConfigHasBeenSet() const { return m_streamingDistributionConfigHasBeenSet; }
+
+    /**
+     * <p>The streaming distribution's configuration information.</p>
+     */
     inline void SetStreamingDistributionConfig(const StreamingDistributionConfig& value) { m_streamingDistributionConfigHasBeenSet = true; m_streamingDistributionConfig = value; }
 
     /**

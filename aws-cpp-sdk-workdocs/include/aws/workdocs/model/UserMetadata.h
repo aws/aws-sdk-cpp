@@ -55,6 +55,11 @@ namespace Model
     /**
      * <p>The ID of the user.</p>
      */
+    inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
+
+    /**
+     * <p>The ID of the user.</p>
+     */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
     /**
@@ -87,6 +92,11 @@ namespace Model
      * <p>The name of the user.</p>
      */
     inline const Aws::String& GetUsername() const{ return m_username; }
+
+    /**
+     * <p>The name of the user.</p>
+     */
+    inline bool UsernameHasBeenSet() const { return m_usernameHasBeenSet; }
 
     /**
      * <p>The name of the user.</p>
@@ -127,6 +137,11 @@ namespace Model
     /**
      * <p>The given name of the user before a rename operation.</p>
      */
+    inline bool GivenNameHasBeenSet() const { return m_givenNameHasBeenSet; }
+
+    /**
+     * <p>The given name of the user before a rename operation.</p>
+     */
     inline void SetGivenName(const Aws::String& value) { m_givenNameHasBeenSet = true; m_givenName = value; }
 
     /**
@@ -163,6 +178,11 @@ namespace Model
     /**
      * <p>The surname of the user.</p>
      */
+    inline bool SurnameHasBeenSet() const { return m_surnameHasBeenSet; }
+
+    /**
+     * <p>The surname of the user.</p>
+     */
     inline void SetSurname(const Aws::String& value) { m_surnameHasBeenSet = true; m_surname = value; }
 
     /**
@@ -195,6 +215,11 @@ namespace Model
      * <p>The email address of the user.</p>
      */
     inline const Aws::String& GetEmailAddress() const{ return m_emailAddress; }
+
+    /**
+     * <p>The email address of the user.</p>
+     */
+    inline bool EmailAddressHasBeenSet() const { return m_emailAddressHasBeenSet; }
 
     /**
      * <p>The email address of the user.</p>

@@ -55,6 +55,12 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the directory where the object and index
      * exist.</p>
      */
+    inline bool DirectoryArnHasBeenSet() const { return m_directoryArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the directory where the object and index
+     * exist.</p>
+     */
     inline void SetDirectoryArn(const Aws::String& value) { m_directoryArnHasBeenSet = true; m_directoryArn = value; }
 
     /**
@@ -96,6 +102,11 @@ namespace Model
     /**
      * <p>A reference to the index that you are attaching the object to.</p>
      */
+    inline bool IndexReferenceHasBeenSet() const { return m_indexReferenceHasBeenSet; }
+
+    /**
+     * <p>A reference to the index that you are attaching the object to.</p>
+     */
     inline void SetIndexReference(const ObjectReference& value) { m_indexReferenceHasBeenSet = true; m_indexReference = value; }
 
     /**
@@ -118,6 +129,11 @@ namespace Model
      * <p>A reference to the object that you are attaching to the index.</p>
      */
     inline const ObjectReference& GetTargetReference() const{ return m_targetReference; }
+
+    /**
+     * <p>A reference to the object that you are attaching to the index.</p>
+     */
+    inline bool TargetReferenceHasBeenSet() const { return m_targetReferenceHasBeenSet; }
 
     /**
      * <p>A reference to the object that you are attaching to the index.</p>

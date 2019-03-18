@@ -55,6 +55,13 @@ namespace Model
      * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">API
      * Key Selection Expressions</a>.</p>
      */
+    inline bool ApiKeySelectionExpressionHasBeenSet() const { return m_apiKeySelectionExpressionHasBeenSet; }
+
+    /**
+     * <p>An API key selection expression. See <a
+     * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">API
+     * Key Selection Expressions</a>.</p>
+     */
     inline void SetApiKeySelectionExpression(const Aws::String& value) { m_apiKeySelectionExpressionHasBeenSet = true; m_apiKeySelectionExpression = value; }
 
     /**
@@ -101,6 +108,11 @@ namespace Model
     /**
      * <p>The description of the API.</p>
      */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
+
+    /**
+     * <p>The description of the API.</p>
+     */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
@@ -137,6 +149,11 @@ namespace Model
     /**
      * <p>Avoid validating models when creating a deployment.</p>
      */
+    inline bool DisableSchemaValidationHasBeenSet() const { return m_disableSchemaValidationHasBeenSet; }
+
+    /**
+     * <p>Avoid validating models when creating a deployment.</p>
+     */
     inline void SetDisableSchemaValidation(bool value) { m_disableSchemaValidationHasBeenSet = true; m_disableSchemaValidation = value; }
 
     /**
@@ -149,6 +166,11 @@ namespace Model
      * <p>The name of the API.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
+
+    /**
+     * <p>The name of the API.</p>
+     */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
      * <p>The name of the API.</p>
@@ -189,6 +211,11 @@ namespace Model
     /**
      * <p>The API protocol: Currently only WEBSOCKET is supported.</p>
      */
+    inline bool ProtocolTypeHasBeenSet() const { return m_protocolTypeHasBeenSet; }
+
+    /**
+     * <p>The API protocol: Currently only WEBSOCKET is supported.</p>
+     */
     inline void SetProtocolType(const ProtocolType& value) { m_protocolTypeHasBeenSet = true; m_protocolType = value; }
 
     /**
@@ -211,6 +238,11 @@ namespace Model
      * <p>The route selection expression for the API.</p>
      */
     inline const Aws::String& GetRouteSelectionExpression() const{ return m_routeSelectionExpression; }
+
+    /**
+     * <p>The route selection expression for the API.</p>
+     */
+    inline bool RouteSelectionExpressionHasBeenSet() const { return m_routeSelectionExpressionHasBeenSet; }
 
     /**
      * <p>The route selection expression for the API.</p>
@@ -247,6 +279,11 @@ namespace Model
      * <p>A version identifier for the API.</p>
      */
     inline const Aws::String& GetVersion() const{ return m_version; }
+
+    /**
+     * <p>A version identifier for the API.</p>
+     */
+    inline bool VersionHasBeenSet() const { return m_versionHasBeenSet; }
 
     /**
      * <p>A version identifier for the API.</p>

@@ -56,6 +56,12 @@ namespace Model
      * <p>A string of up to 64 ASCII characters. Amazon EFS uses this to ensure
      * idempotent creation.</p>
      */
+    inline bool CreationTokenHasBeenSet() const { return m_creationTokenHasBeenSet; }
+
+    /**
+     * <p>A string of up to 64 ASCII characters. Amazon EFS uses this to ensure
+     * idempotent creation.</p>
+     */
     inline void SetCreationToken(const Aws::String& value) { m_creationTokenHasBeenSet = true; m_creationToken = value; }
 
     /**
@@ -98,6 +104,16 @@ namespace Model
      * after the file system has been created.</p>
      */
     inline const PerformanceMode& GetPerformanceMode() const{ return m_performanceMode; }
+
+    /**
+     * <p>The performance mode of the file system. We recommend
+     * <code>generalPurpose</code> performance mode for most file systems. File systems
+     * using the <code>maxIO</code> performance mode can scale to higher levels of
+     * aggregate throughput and operations per second with a tradeoff of slightly
+     * higher latencies for most file operations. The performance mode can't be changed
+     * after the file system has been created.</p>
+     */
+    inline bool PerformanceModeHasBeenSet() const { return m_performanceModeHasBeenSet; }
 
     /**
      * <p>The performance mode of the file system. We recommend
@@ -158,6 +174,16 @@ namespace Model
      * the default CMK for Amazon EFS, <code>/aws/elasticfilesystem</code>, is used to
      * protect the encrypted file system. </p>
      */
+    inline bool EncryptedHasBeenSet() const { return m_encryptedHasBeenSet; }
+
+    /**
+     * <p>A Boolean value that, if true, creates an encrypted file system. When
+     * creating an encrypted file system, you have the option of specifying
+     * <a>CreateFileSystemRequest$KmsKeyId</a> for an existing AWS Key Management
+     * Service (AWS KMS) customer master key (CMK). If you don't specify a CMK, then
+     * the default CMK for Amazon EFS, <code>/aws/elasticfilesystem</code>, is used to
+     * protect the encrypted file system. </p>
+     */
     inline void SetEncrypted(bool value) { m_encryptedHasBeenSet = true; m_encrypted = value; }
 
     /**
@@ -188,6 +214,24 @@ namespace Model
      * <a>CreateFileSystemRequest$Encrypted</a> parameter must be set to true.</p>
      */
     inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
+
+    /**
+     * <p>The ID of the AWS KMS CMK to be used to protect the encrypted file system.
+     * This parameter is only required if you want to use a nondefault CMK. If this
+     * parameter is not specified, the default CMK for Amazon EFS is used. This ID can
+     * be in one of the following formats:</p> <ul> <li> <p>Key ID - A unique
+     * identifier of the key, for example
+     * <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p> </li> <li> <p>ARN - An
+     * Amazon Resource Name (ARN) for the key, for example
+     * <code>arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p>
+     * </li> <li> <p>Key alias - A previously created display name for a key, for
+     * example <code>alias/projectKey1</code>.</p> </li> <li> <p>Key alias ARN - An ARN
+     * for a key alias, for example
+     * <code>arn:aws:kms:us-west-2:444455556666:alias/projectKey1</code>.</p> </li>
+     * </ul> <p>If <code>KmsKeyId</code> is specified, the
+     * <a>CreateFileSystemRequest$Encrypted</a> parameter must be set to true.</p>
+     */
+    inline bool KmsKeyIdHasBeenSet() const { return m_kmsKeyIdHasBeenSet; }
 
     /**
      * <p>The ID of the AWS KMS CMK to be used to protect the encrypted file system.
@@ -314,6 +358,15 @@ namespace Model
      * change between the throughput modes as long as it’s been more than 24 hours
      * since the last decrease or throughput mode change.</p>
      */
+    inline bool ThroughputModeHasBeenSet() const { return m_throughputModeHasBeenSet; }
+
+    /**
+     * <p>The throughput mode for the file system to be created. There are two
+     * throughput modes to choose from for your file system: bursting and provisioned.
+     * You can decrease your file system's throughput in Provisioned Throughput mode or
+     * change between the throughput modes as long as it’s been more than 24 hours
+     * since the last decrease or throughput mode change.</p>
+     */
     inline void SetThroughputMode(const ThroughputMode& value) { m_throughputModeHasBeenSet = true; m_throughputMode = value; }
 
     /**
@@ -360,6 +413,15 @@ namespace Model
      * href="https://docs.aws.amazon.com/efs/latest/ug/limits.html#soft-limits">Amazon
      * EFS Limits That You Can Increase</a> in the <i>Amazon EFS User Guide.</i> </p>
      */
+    inline bool ProvisionedThroughputInMibpsHasBeenSet() const { return m_provisionedThroughputInMibpsHasBeenSet; }
+
+    /**
+     * <p>The throughput, measured in MiB/s, that you want to provision for a file
+     * system that you're creating. The limit on throughput is 1024 MiB/s. You can get
+     * these limits increased by contacting AWS Support. For more information, see <a
+     * href="https://docs.aws.amazon.com/efs/latest/ug/limits.html#soft-limits">Amazon
+     * EFS Limits That You Can Increase</a> in the <i>Amazon EFS User Guide.</i> </p>
+     */
     inline void SetProvisionedThroughputInMibps(double value) { m_provisionedThroughputInMibpsHasBeenSet = true; m_provisionedThroughputInMibps = value; }
 
     /**
@@ -379,6 +441,14 @@ namespace Model
      * pair.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>A value that specifies to create one or more tags associated with the file
+     * system. Each tag is a user-defined key-value pair. Name your file system on
+     * creation by including a <code>"Key":"Name","Value":"{value}"</code> key-value
+     * pair.</p>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
      * <p>A value that specifies to create one or more tags associated with the file

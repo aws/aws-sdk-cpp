@@ -60,6 +60,11 @@ namespace Model
     /**
      * <p>The name of the AWS Config rule.</p>
      */
+    inline bool ConfigRuleNameHasBeenSet() const { return m_configRuleNameHasBeenSet; }
+
+    /**
+     * <p>The name of the AWS Config rule.</p>
+     */
     inline void SetConfigRuleName(const Aws::String& value) { m_configRuleNameHasBeenSet = true; m_configRuleName = value; }
 
     /**
@@ -98,6 +103,12 @@ namespace Model
      * <p>The type of the target. Target executes remediation. For example, SSM
      * document.</p>
      */
+    inline bool TargetTypeHasBeenSet() const { return m_targetTypeHasBeenSet; }
+
+    /**
+     * <p>The type of the target. Target executes remediation. For example, SSM
+     * document.</p>
+     */
     inline void SetTargetType(const RemediationTargetType& value) { m_targetTypeHasBeenSet = true; m_targetType = value; }
 
     /**
@@ -123,6 +134,11 @@ namespace Model
      * <p>Target ID is the name of the public document.</p>
      */
     inline const Aws::String& GetTargetId() const{ return m_targetId; }
+
+    /**
+     * <p>Target ID is the name of the public document.</p>
+     */
+    inline bool TargetIdHasBeenSet() const { return m_targetIdHasBeenSet; }
 
     /**
      * <p>Target ID is the name of the public document.</p>
@@ -163,6 +179,11 @@ namespace Model
     /**
      * <p>Version of the target. For example, version of the SSM document.</p>
      */
+    inline bool TargetVersionHasBeenSet() const { return m_targetVersionHasBeenSet; }
+
+    /**
+     * <p>Version of the target. For example, version of the SSM document.</p>
+     */
     inline void SetTargetVersion(const Aws::String& value) { m_targetVersionHasBeenSet = true; m_targetVersion = value; }
 
     /**
@@ -195,6 +216,11 @@ namespace Model
      * <p>An object of the RemediationParameterValue.</p>
      */
     inline const Aws::Map<Aws::String, RemediationParameterValue>& GetParameters() const{ return m_parameters; }
+
+    /**
+     * <p>An object of the RemediationParameterValue.</p>
+     */
+    inline bool ParametersHasBeenSet() const { return m_parametersHasBeenSet; }
 
     /**
      * <p>An object of the RemediationParameterValue.</p>
@@ -251,6 +277,11 @@ namespace Model
      * <p>The type of a resource. </p>
      */
     inline const Aws::String& GetResourceType() const{ return m_resourceType; }
+
+    /**
+     * <p>The type of a resource. </p>
+     */
+    inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
 
     /**
      * <p>The type of a resource. </p>

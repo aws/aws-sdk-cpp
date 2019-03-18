@@ -56,6 +56,13 @@ namespace Model
      * delete. <code>ByteMatchSetId</code> is returned by <a>CreateByteMatchSet</a> and
      * by <a>ListByteMatchSets</a>.</p>
      */
+    inline bool ByteMatchSetIdHasBeenSet() const { return m_byteMatchSetIdHasBeenSet; }
+
+    /**
+     * <p>The <code>ByteMatchSetId</code> of the <a>ByteMatchSet</a> that you want to
+     * delete. <code>ByteMatchSetId</code> is returned by <a>CreateByteMatchSet</a> and
+     * by <a>ListByteMatchSets</a>.</p>
+     */
     inline void SetByteMatchSetId(const Aws::String& value) { m_byteMatchSetIdHasBeenSet = true; m_byteMatchSetId = value; }
 
     /**
@@ -98,6 +105,11 @@ namespace Model
      * <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
      */
     inline const Aws::String& GetChangeToken() const{ return m_changeToken; }
+
+    /**
+     * <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
+     */
+    inline bool ChangeTokenHasBeenSet() const { return m_changeTokenHasBeenSet; }
 
     /**
      * <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>

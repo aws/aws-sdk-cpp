@@ -49,6 +49,11 @@ namespace Model
     /**
      * <p>The identifier of the connection that a specific client is using.</p>
      */
+    inline bool ConnectionIdHasBeenSet() const { return m_connectionIdHasBeenSet; }
+
+    /**
+     * <p>The identifier of the connection that a specific client is using.</p>
+     */
     inline void SetConnectionId(const Aws::String& value) { m_connectionIdHasBeenSet = true; m_connectionId = value; }
 
     /**

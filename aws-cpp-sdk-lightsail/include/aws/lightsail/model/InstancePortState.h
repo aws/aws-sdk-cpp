@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The first port in the range.</p>
      */
+    inline bool FromPortHasBeenSet() const { return m_fromPortHasBeenSet; }
+
+    /**
+     * <p>The first port in the range.</p>
+     */
     inline void SetFromPort(int value) { m_fromPortHasBeenSet = true; m_fromPort = value; }
 
     /**
@@ -68,6 +73,11 @@ namespace Model
      * <p>The last port in the range.</p>
      */
     inline int GetToPort() const{ return m_toPort; }
+
+    /**
+     * <p>The last port in the range.</p>
+     */
+    inline bool ToPortHasBeenSet() const { return m_toPortHasBeenSet; }
 
     /**
      * <p>The last port in the range.</p>
@@ -98,6 +108,25 @@ namespace Model
      * reliable data stream service, use TCP instead.</p> </li> </ul>
      */
     inline const NetworkProtocol& GetProtocol() const{ return m_protocol; }
+
+    /**
+     * <p>The protocol being used. Can be one of the following.</p> <ul> <li> <p>
+     * <code>tcp</code> - Transmission Control Protocol (TCP) provides reliable,
+     * ordered, and error-checked delivery of streamed data between applications
+     * running on hosts communicating by an IP network. If you have an application that
+     * doesn't require reliable data stream service, use UDP instead.</p> </li> <li>
+     * <p> <code>all</code> - All transport layer protocol types. For more general
+     * information, see <a
+     * href="https://en.wikipedia.org/wiki/Transport_layer">Transport layer</a> on
+     * Wikipedia.</p> </li> <li> <p> <code>udp</code> - With User Datagram Protocol
+     * (UDP), computer applications can send messages (or datagrams) to other hosts on
+     * an Internet Protocol (IP) network. Prior communications are not required to set
+     * up transmission channels or data paths. Applications that don't require reliable
+     * data stream service can use UDP, which provides a connectionless datagram
+     * service that emphasizes reduced latency over reliability. If you do require
+     * reliable data stream service, use TCP instead.</p> </li> </ul>
+     */
+    inline bool ProtocolHasBeenSet() const { return m_protocolHasBeenSet; }
 
     /**
      * <p>The protocol being used. Can be one of the following.</p> <ul> <li> <p>
@@ -181,6 +210,12 @@ namespace Model
      * <code>closed</code>.</p>
      */
     inline const PortState& GetState() const{ return m_state; }
+
+    /**
+     * <p>Specifies whether the instance port is <code>open</code> or
+     * <code>closed</code>.</p>
+     */
+    inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
 
     /**
      * <p>Specifies whether the instance port is <code>open</code> or

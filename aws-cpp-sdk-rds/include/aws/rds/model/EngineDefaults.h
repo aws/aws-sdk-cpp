@@ -62,6 +62,12 @@ namespace Model
      * <p>Specifies the name of the DB parameter group family that the engine default
      * parameters apply to.</p>
      */
+    inline bool DBParameterGroupFamilyHasBeenSet() const { return m_dBParameterGroupFamilyHasBeenSet; }
+
+    /**
+     * <p>Specifies the name of the DB parameter group family that the engine default
+     * parameters apply to.</p>
+     */
     inline void SetDBParameterGroupFamily(const Aws::String& value) { m_dBParameterGroupFamilyHasBeenSet = true; m_dBParameterGroupFamily = value; }
 
     /**
@@ -101,6 +107,13 @@ namespace Model
      * marker, up to the value specified by <code>MaxRecords</code> . </p>
      */
     inline const Aws::String& GetMarker() const{ return m_marker; }
+
+    /**
+     * <p> An optional pagination token provided by a previous EngineDefaults request.
+     * If this parameter is specified, the response includes only records beyond the
+     * marker, up to the value specified by <code>MaxRecords</code> . </p>
+     */
+    inline bool MarkerHasBeenSet() const { return m_markerHasBeenSet; }
 
     /**
      * <p> An optional pagination token provided by a previous EngineDefaults request.
@@ -149,6 +162,11 @@ namespace Model
      * <p>Contains a list of engine default parameters.</p>
      */
     inline const Aws::Vector<Parameter>& GetParameters() const{ return m_parameters; }
+
+    /**
+     * <p>Contains a list of engine default parameters.</p>
+     */
+    inline bool ParametersHasBeenSet() const { return m_parametersHasBeenSet; }
 
     /**
      * <p>Contains a list of engine default parameters.</p>

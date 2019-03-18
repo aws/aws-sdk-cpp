@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The ID of the pipeline.</p>
      */
+    inline bool PipelineIdHasBeenSet() const { return m_pipelineIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the pipeline.</p>
+     */
     inline void SetPipelineId(const Aws::String& value) { m_pipelineIdHasBeenSet = true; m_pipelineId = value; }
 
     /**
@@ -88,6 +93,11 @@ namespace Model
      * <p>The keys of the tags to remove.</p>
      */
     inline const Aws::Vector<Aws::String>& GetTagKeys() const{ return m_tagKeys; }
+
+    /**
+     * <p>The keys of the tags to remove.</p>
+     */
+    inline bool TagKeysHasBeenSet() const { return m_tagKeysHasBeenSet; }
 
     /**
      * <p>The keys of the tags to remove.</p>

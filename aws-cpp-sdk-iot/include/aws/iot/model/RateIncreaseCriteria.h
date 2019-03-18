@@ -56,6 +56,12 @@ namespace Model
      * <p>The threshold for number of notified things that will initiate the increase
      * in rate of rollout.</p>
      */
+    inline bool NumberOfNotifiedThingsHasBeenSet() const { return m_numberOfNotifiedThingsHasBeenSet; }
+
+    /**
+     * <p>The threshold for number of notified things that will initiate the increase
+     * in rate of rollout.</p>
+     */
     inline void SetNumberOfNotifiedThings(int value) { m_numberOfNotifiedThingsHasBeenSet = true; m_numberOfNotifiedThings = value; }
 
     /**
@@ -70,6 +76,12 @@ namespace Model
      * in rate of rollout.</p>
      */
     inline int GetNumberOfSucceededThings() const{ return m_numberOfSucceededThings; }
+
+    /**
+     * <p>The threshold for number of succeeded things that will initiate the increase
+     * in rate of rollout.</p>
+     */
+    inline bool NumberOfSucceededThingsHasBeenSet() const { return m_numberOfSucceededThingsHasBeenSet; }
 
     /**
      * <p>The threshold for number of succeeded things that will initiate the increase

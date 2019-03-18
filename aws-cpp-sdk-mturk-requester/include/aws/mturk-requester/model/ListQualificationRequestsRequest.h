@@ -52,6 +52,11 @@ namespace Model
     /**
      * <p>The ID of the QualificationType.</p>
      */
+    inline bool QualificationTypeIdHasBeenSet() const { return m_qualificationTypeIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the QualificationType.</p>
+     */
     inline void SetQualificationTypeId(const Aws::String& value) { m_qualificationTypeIdHasBeenSet = true; m_qualificationTypeId = value; }
 
     /**
@@ -84,6 +89,9 @@ namespace Model
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
+
+    
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
     
@@ -106,6 +114,11 @@ namespace Model
      * <p> The maximum number of results to return in a single call. </p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
+
+    /**
+     * <p> The maximum number of results to return in a single call. </p>
+     */
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
 
     /**
      * <p> The maximum number of results to return in a single call. </p>

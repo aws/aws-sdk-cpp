@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p>The stream ID.</p>
      */
+    inline bool StreamIdHasBeenSet() const { return m_streamIdHasBeenSet; }
+
+    /**
+     * <p>The stream ID.</p>
+     */
     inline void SetStreamId(const Aws::String& value) { m_streamIdHasBeenSet = true; m_streamId = value; }
 
     /**
@@ -90,6 +95,11 @@ namespace Model
      * <p>The stream ARN.</p>
      */
     inline const Aws::String& GetStreamArn() const{ return m_streamArn; }
+
+    /**
+     * <p>The stream ARN.</p>
+     */
+    inline bool StreamArnHasBeenSet() const { return m_streamArnHasBeenSet; }
 
     /**
      * <p>The stream ARN.</p>
@@ -130,6 +140,11 @@ namespace Model
     /**
      * <p>The stream version.</p>
      */
+    inline bool StreamVersionHasBeenSet() const { return m_streamVersionHasBeenSet; }
+
+    /**
+     * <p>The stream version.</p>
+     */
     inline void SetStreamVersion(int value) { m_streamVersionHasBeenSet = true; m_streamVersion = value; }
 
     /**
@@ -142,6 +157,11 @@ namespace Model
      * <p>The description of the stream.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
+
+    /**
+     * <p>The description of the stream.</p>
+     */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
 
     /**
      * <p>The description of the stream.</p>
@@ -182,6 +202,11 @@ namespace Model
     /**
      * <p>The files to stream.</p>
      */
+    inline bool FilesHasBeenSet() const { return m_filesHasBeenSet; }
+
+    /**
+     * <p>The files to stream.</p>
+     */
     inline void SetFiles(const Aws::Vector<StreamFile>& value) { m_filesHasBeenSet = true; m_files = value; }
 
     /**
@@ -218,6 +243,11 @@ namespace Model
     /**
      * <p>The date when the stream was created.</p>
      */
+    inline bool CreatedAtHasBeenSet() const { return m_createdAtHasBeenSet; }
+
+    /**
+     * <p>The date when the stream was created.</p>
+     */
     inline void SetCreatedAt(const Aws::Utils::DateTime& value) { m_createdAtHasBeenSet = true; m_createdAt = value; }
 
     /**
@@ -244,6 +274,11 @@ namespace Model
     /**
      * <p>The date when the stream was last updated.</p>
      */
+    inline bool LastUpdatedAtHasBeenSet() const { return m_lastUpdatedAtHasBeenSet; }
+
+    /**
+     * <p>The date when the stream was last updated.</p>
+     */
     inline void SetLastUpdatedAt(const Aws::Utils::DateTime& value) { m_lastUpdatedAtHasBeenSet = true; m_lastUpdatedAt = value; }
 
     /**
@@ -266,6 +301,11 @@ namespace Model
      * <p>An IAM role AWS IoT assumes to access your S3 files.</p>
      */
     inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
+
+    /**
+     * <p>An IAM role AWS IoT assumes to access your S3 files.</p>
+     */
+    inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
 
     /**
      * <p>An IAM role AWS IoT assumes to access your S3 files.</p>

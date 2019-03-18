@@ -67,6 +67,15 @@ namespace Model
      * <code>arn:aws:health:us-east-1:111222333444:entity/AVh5GGT7ul1arKr1sE1K</code>
      * </p>
      */
+    inline bool EntityArnHasBeenSet() const { return m_entityArnHasBeenSet; }
+
+    /**
+     * <p>The unique identifier for the entity. Format:
+     * <code>arn:aws:health:<i>entity-region</i>:<i>aws-account</i>:entity/<i>entity-id</i>
+     * </code>. Example:
+     * <code>arn:aws:health:us-east-1:111222333444:entity/AVh5GGT7ul1arKr1sE1K</code>
+     * </p>
+     */
     inline void SetEntityArn(const Aws::String& value) { m_entityArnHasBeenSet = true; m_entityArn = value; }
 
     /**
@@ -131,6 +140,15 @@ namespace Model
      * arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-DEF456</code>
      * </p>
      */
+    inline bool EventArnHasBeenSet() const { return m_eventArnHasBeenSet; }
+
+    /**
+     * <p>The unique identifier for the event. Format:
+     * <code>arn:aws:health:<i>event-region</i>::event/<i>SERVICE</i>/<i>EVENT_TYPE_CODE</i>/<i>EVENT_TYPE_PLUS_ID</i>
+     * </code>. Example: <code>Example:
+     * arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-DEF456</code>
+     * </p>
+     */
     inline void SetEventArn(const Aws::String& value) { m_eventArnHasBeenSet = true; m_eventArn = value; }
 
     /**
@@ -187,6 +205,11 @@ namespace Model
     /**
      * <p>The ID of the affected entity.</p>
      */
+    inline bool EntityValueHasBeenSet() const { return m_entityValueHasBeenSet; }
+
+    /**
+     * <p>The ID of the affected entity.</p>
+     */
     inline void SetEntityValue(const Aws::String& value) { m_entityValueHasBeenSet = true; m_entityValue = value; }
 
     /**
@@ -219,6 +242,9 @@ namespace Model
     inline const Aws::String& GetEntityUrl() const{ return m_entityUrl; }
 
     
+    inline bool EntityUrlHasBeenSet() const { return m_entityUrlHasBeenSet; }
+
+    
     inline void SetEntityUrl(const Aws::String& value) { m_entityUrlHasBeenSet = true; m_entityUrl = value; }
 
     
@@ -241,6 +267,11 @@ namespace Model
      * <p>The 12-digit AWS account number that contains the affected entity.</p>
      */
     inline const Aws::String& GetAwsAccountId() const{ return m_awsAccountId; }
+
+    /**
+     * <p>The 12-digit AWS account number that contains the affected entity.</p>
+     */
+    inline bool AwsAccountIdHasBeenSet() const { return m_awsAccountIdHasBeenSet; }
 
     /**
      * <p>The 12-digit AWS account number that contains the affected entity.</p>
@@ -281,6 +312,11 @@ namespace Model
     /**
      * <p>The most recent time that the entity was updated.</p>
      */
+    inline bool LastUpdatedTimeHasBeenSet() const { return m_lastUpdatedTimeHasBeenSet; }
+
+    /**
+     * <p>The most recent time that the entity was updated.</p>
+     */
     inline void SetLastUpdatedTime(const Aws::Utils::DateTime& value) { m_lastUpdatedTimeHasBeenSet = true; m_lastUpdatedTime = value; }
 
     /**
@@ -305,6 +341,13 @@ namespace Model
      * <code>UNKNOWN</code>.</p>
      */
     inline const EntityStatusCode& GetStatusCode() const{ return m_statusCode; }
+
+    /**
+     * <p>The most recent status of the entity affected by the event. The possible
+     * values are <code>IMPAIRED</code>, <code>UNIMPAIRED</code>, and
+     * <code>UNKNOWN</code>.</p>
+     */
+    inline bool StatusCodeHasBeenSet() const { return m_statusCodeHasBeenSet; }
 
     /**
      * <p>The most recent status of the entity affected by the event. The possible
@@ -339,6 +382,11 @@ namespace Model
      * <p>A map of entity tags attached to the affected entity.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>A map of entity tags attached to the affected entity.</p>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
      * <p>A map of entity tags attached to the affected entity.</p>

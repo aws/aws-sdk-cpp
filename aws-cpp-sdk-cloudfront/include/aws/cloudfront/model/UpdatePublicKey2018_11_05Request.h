@@ -53,6 +53,11 @@ namespace Model
     /**
      * <p>Request to update public key information.</p>
      */
+    inline bool PublicKeyConfigHasBeenSet() const { return m_publicKeyConfigHasBeenSet; }
+
+    /**
+     * <p>Request to update public key information.</p>
+     */
     inline void SetPublicKeyConfig(const PublicKeyConfig& value) { m_publicKeyConfigHasBeenSet = true; m_publicKeyConfig = value; }
 
     /**
@@ -75,6 +80,11 @@ namespace Model
      * <p>ID of the public key to be updated.</p>
      */
     inline const Aws::String& GetId() const{ return m_id; }
+
+    /**
+     * <p>ID of the public key to be updated.</p>
+     */
+    inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
 
     /**
      * <p>ID of the public key to be updated.</p>
@@ -112,6 +122,12 @@ namespace Model
      * the public key to update. For example: <code>E2QWRUHAPOMQZL</code>.</p>
      */
     inline const Aws::String& GetIfMatch() const{ return m_ifMatch; }
+
+    /**
+     * <p>The value of the <code>ETag</code> header that you received when retrieving
+     * the public key to update. For example: <code>E2QWRUHAPOMQZL</code>.</p>
+     */
+    inline bool IfMatchHasBeenSet() const { return m_ifMatchHasBeenSet; }
 
     /**
      * <p>The value of the <code>ETag</code> header that you received when retrieving

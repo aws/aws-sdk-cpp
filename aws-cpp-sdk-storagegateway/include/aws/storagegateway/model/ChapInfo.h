@@ -59,6 +59,12 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the volume.</p> <p> Valid Values: 50 to 500
      * lowercase letters, numbers, periods (.), and hyphens (-).</p>
      */
+    inline bool TargetARNHasBeenSet() const { return m_targetARNHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the volume.</p> <p> Valid Values: 50 to 500
+     * lowercase letters, numbers, periods (.), and hyphens (-).</p>
+     */
     inline void SetTargetARN(const Aws::String& value) { m_targetARNHasBeenSet = true; m_targetARN = value; }
 
     /**
@@ -97,6 +103,12 @@ namespace Model
      * provide to participate in mutual CHAP with the target.</p>
      */
     inline const Aws::String& GetSecretToAuthenticateInitiator() const{ return m_secretToAuthenticateInitiator; }
+
+    /**
+     * <p>The secret key that the initiator (for example, the Windows client) must
+     * provide to participate in mutual CHAP with the target.</p>
+     */
+    inline bool SecretToAuthenticateInitiatorHasBeenSet() const { return m_secretToAuthenticateInitiatorHasBeenSet; }
 
     /**
      * <p>The secret key that the initiator (for example, the Windows client) must
@@ -143,6 +155,11 @@ namespace Model
     /**
      * <p>The iSCSI initiator that connects to the target.</p>
      */
+    inline bool InitiatorNameHasBeenSet() const { return m_initiatorNameHasBeenSet; }
+
+    /**
+     * <p>The iSCSI initiator that connects to the target.</p>
+     */
     inline void SetInitiatorName(const Aws::String& value) { m_initiatorNameHasBeenSet = true; m_initiatorName = value; }
 
     /**
@@ -176,6 +193,12 @@ namespace Model
      * with the initiator (e.g. Windows client).</p>
      */
     inline const Aws::String& GetSecretToAuthenticateTarget() const{ return m_secretToAuthenticateTarget; }
+
+    /**
+     * <p>The secret key that the target must provide to participate in mutual CHAP
+     * with the initiator (e.g. Windows client).</p>
+     */
+    inline bool SecretToAuthenticateTargetHasBeenSet() const { return m_secretToAuthenticateTargetHasBeenSet; }
 
     /**
      * <p>The secret key that the target must provide to participate in mutual CHAP

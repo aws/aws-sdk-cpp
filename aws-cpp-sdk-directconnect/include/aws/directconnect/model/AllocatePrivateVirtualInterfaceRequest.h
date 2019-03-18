@@ -55,6 +55,12 @@ namespace Model
      * <p>The ID of the connection on which the private virtual interface is
      * provisioned.</p>
      */
+    inline bool ConnectionIdHasBeenSet() const { return m_connectionIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the connection on which the private virtual interface is
+     * provisioned.</p>
+     */
     inline void SetConnectionId(const Aws::String& value) { m_connectionIdHasBeenSet = true; m_connectionId = value; }
 
     /**
@@ -96,6 +102,11 @@ namespace Model
     /**
      * <p>The ID of the AWS account that owns the virtual private interface.</p>
      */
+    inline bool OwnerAccountHasBeenSet() const { return m_ownerAccountHasBeenSet; }
+
+    /**
+     * <p>The ID of the AWS account that owns the virtual private interface.</p>
+     */
     inline void SetOwnerAccount(const Aws::String& value) { m_ownerAccountHasBeenSet = true; m_ownerAccount = value; }
 
     /**
@@ -128,6 +139,11 @@ namespace Model
      * <p>Information about the private virtual interface.</p>
      */
     inline const NewPrivateVirtualInterfaceAllocation& GetNewPrivateVirtualInterfaceAllocation() const{ return m_newPrivateVirtualInterfaceAllocation; }
+
+    /**
+     * <p>Information about the private virtual interface.</p>
+     */
+    inline bool NewPrivateVirtualInterfaceAllocationHasBeenSet() const { return m_newPrivateVirtualInterfaceAllocationHasBeenSet; }
 
     /**
      * <p>Information about the private virtual interface.</p>

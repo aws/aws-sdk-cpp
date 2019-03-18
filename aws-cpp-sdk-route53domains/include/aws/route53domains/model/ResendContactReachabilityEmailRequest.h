@@ -54,6 +54,12 @@ namespace Model
      * <p>The name of the domain for which you want Amazon Route 53 to resend a
      * confirmation email to the registrant contact.</p>
      */
+    inline bool DomainNameHasBeenSet() const { return m_domainNameHasBeenSet; }
+
+    /**
+     * <p>The name of the domain for which you want Amazon Route 53 to resend a
+     * confirmation email to the registrant contact.</p>
+     */
     inline void SetDomainName(const Aws::String& value) { m_domainNameHasBeenSet = true; m_domainName = value; }
 
     /**

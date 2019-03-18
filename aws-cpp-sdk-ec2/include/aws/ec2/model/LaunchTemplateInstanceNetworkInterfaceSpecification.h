@@ -62,6 +62,12 @@ namespace Model
      * <p>Indicates whether to associate a public IPv4 address with eth0 for a new
      * network interface.</p>
      */
+    inline bool AssociatePublicIpAddressHasBeenSet() const { return m_associatePublicIpAddressHasBeenSet; }
+
+    /**
+     * <p>Indicates whether to associate a public IPv4 address with eth0 for a new
+     * network interface.</p>
+     */
     inline void SetAssociatePublicIpAddress(bool value) { m_associatePublicIpAddressHasBeenSet = true; m_associatePublicIpAddress = value; }
 
     /**
@@ -81,6 +87,12 @@ namespace Model
      * <p>Indicates whether the network interface is deleted when the instance is
      * terminated.</p>
      */
+    inline bool DeleteOnTerminationHasBeenSet() const { return m_deleteOnTerminationHasBeenSet; }
+
+    /**
+     * <p>Indicates whether the network interface is deleted when the instance is
+     * terminated.</p>
+     */
     inline void SetDeleteOnTermination(bool value) { m_deleteOnTerminationHasBeenSet = true; m_deleteOnTermination = value; }
 
     /**
@@ -94,6 +106,11 @@ namespace Model
      * <p>A description for the network interface.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
+
+    /**
+     * <p>A description for the network interface.</p>
+     */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
 
     /**
      * <p>A description for the network interface.</p>
@@ -134,6 +151,11 @@ namespace Model
     /**
      * <p>The device index for the network interface attachment.</p>
      */
+    inline bool DeviceIndexHasBeenSet() const { return m_deviceIndexHasBeenSet; }
+
+    /**
+     * <p>The device index for the network interface attachment.</p>
+     */
     inline void SetDeviceIndex(int value) { m_deviceIndexHasBeenSet = true; m_deviceIndex = value; }
 
     /**
@@ -146,6 +168,11 @@ namespace Model
      * <p>The IDs of one or more security groups.</p>
      */
     inline const Aws::Vector<Aws::String>& GetGroups() const{ return m_groups; }
+
+    /**
+     * <p>The IDs of one or more security groups.</p>
+     */
+    inline bool GroupsHasBeenSet() const { return m_groupsHasBeenSet; }
 
     /**
      * <p>The IDs of one or more security groups.</p>
@@ -191,6 +218,11 @@ namespace Model
     /**
      * <p>The number of IPv6 addresses for the network interface.</p>
      */
+    inline bool Ipv6AddressCountHasBeenSet() const { return m_ipv6AddressCountHasBeenSet; }
+
+    /**
+     * <p>The number of IPv6 addresses for the network interface.</p>
+     */
     inline void SetIpv6AddressCount(int value) { m_ipv6AddressCountHasBeenSet = true; m_ipv6AddressCount = value; }
 
     /**
@@ -203,6 +235,11 @@ namespace Model
      * <p>The IPv6 addresses for the network interface.</p>
      */
     inline const Aws::Vector<InstanceIpv6Address>& GetIpv6Addresses() const{ return m_ipv6Addresses; }
+
+    /**
+     * <p>The IPv6 addresses for the network interface.</p>
+     */
+    inline bool Ipv6AddressesHasBeenSet() const { return m_ipv6AddressesHasBeenSet; }
 
     /**
      * <p>The IPv6 addresses for the network interface.</p>
@@ -243,6 +280,11 @@ namespace Model
     /**
      * <p>The ID of the network interface.</p>
      */
+    inline bool NetworkInterfaceIdHasBeenSet() const { return m_networkInterfaceIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the network interface.</p>
+     */
     inline void SetNetworkInterfaceId(const Aws::String& value) { m_networkInterfaceIdHasBeenSet = true; m_networkInterfaceId = value; }
 
     /**
@@ -275,6 +317,11 @@ namespace Model
      * <p>The primary private IPv4 address of the network interface.</p>
      */
     inline const Aws::String& GetPrivateIpAddress() const{ return m_privateIpAddress; }
+
+    /**
+     * <p>The primary private IPv4 address of the network interface.</p>
+     */
+    inline bool PrivateIpAddressHasBeenSet() const { return m_privateIpAddressHasBeenSet; }
 
     /**
      * <p>The primary private IPv4 address of the network interface.</p>
@@ -315,6 +362,11 @@ namespace Model
     /**
      * <p>One or more private IPv4 addresses.</p>
      */
+    inline bool PrivateIpAddressesHasBeenSet() const { return m_privateIpAddressesHasBeenSet; }
+
+    /**
+     * <p>One or more private IPv4 addresses.</p>
+     */
     inline void SetPrivateIpAddresses(const Aws::Vector<PrivateIpAddressSpecification>& value) { m_privateIpAddressesHasBeenSet = true; m_privateIpAddresses = value; }
 
     /**
@@ -351,6 +403,11 @@ namespace Model
     /**
      * <p>The number of secondary private IPv4 addresses for the network interface.</p>
      */
+    inline bool SecondaryPrivateIpAddressCountHasBeenSet() const { return m_secondaryPrivateIpAddressCountHasBeenSet; }
+
+    /**
+     * <p>The number of secondary private IPv4 addresses for the network interface.</p>
+     */
     inline void SetSecondaryPrivateIpAddressCount(int value) { m_secondaryPrivateIpAddressCountHasBeenSet = true; m_secondaryPrivateIpAddressCount = value; }
 
     /**
@@ -363,6 +420,11 @@ namespace Model
      * <p>The ID of the subnet for the network interface.</p>
      */
     inline const Aws::String& GetSubnetId() const{ return m_subnetId; }
+
+    /**
+     * <p>The ID of the subnet for the network interface.</p>
+     */
+    inline bool SubnetIdHasBeenSet() const { return m_subnetIdHasBeenSet; }
 
     /**
      * <p>The ID of the subnet for the network interface.</p>

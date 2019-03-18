@@ -52,6 +52,9 @@ namespace Model
     inline const AudioLanguageSelection& GetAudioLanguageSelection() const{ return m_audioLanguageSelection; }
 
     
+    inline bool AudioLanguageSelectionHasBeenSet() const { return m_audioLanguageSelectionHasBeenSet; }
+
+    
     inline void SetAudioLanguageSelection(const AudioLanguageSelection& value) { m_audioLanguageSelectionHasBeenSet = true; m_audioLanguageSelection = value; }
 
     
@@ -66,6 +69,9 @@ namespace Model
 
     
     inline const AudioPidSelection& GetAudioPidSelection() const{ return m_audioPidSelection; }
+
+    
+    inline bool AudioPidSelectionHasBeenSet() const { return m_audioPidSelectionHasBeenSet; }
 
     
     inline void SetAudioPidSelection(const AudioPidSelection& value) { m_audioPidSelectionHasBeenSet = true; m_audioPidSelection = value; }

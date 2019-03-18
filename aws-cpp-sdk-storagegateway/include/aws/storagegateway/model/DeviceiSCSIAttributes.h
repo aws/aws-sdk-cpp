@@ -57,6 +57,12 @@ namespace Model
      * <p>Specifies the unique Amazon Resource Name (ARN) that encodes the iSCSI
      * qualified name(iqn) of a tape drive or media changer target.</p>
      */
+    inline bool TargetARNHasBeenSet() const { return m_targetARNHasBeenSet; }
+
+    /**
+     * <p>Specifies the unique Amazon Resource Name (ARN) that encodes the iSCSI
+     * qualified name(iqn) of a tape drive or media changer target.</p>
+     */
     inline void SetTargetARN(const Aws::String& value) { m_targetARNHasBeenSet = true; m_targetARN = value; }
 
     /**
@@ -98,6 +104,11 @@ namespace Model
     /**
      * <p>The network interface identifier of the VTL device.</p>
      */
+    inline bool NetworkInterfaceIdHasBeenSet() const { return m_networkInterfaceIdHasBeenSet; }
+
+    /**
+     * <p>The network interface identifier of the VTL device.</p>
+     */
     inline void SetNetworkInterfaceId(const Aws::String& value) { m_networkInterfaceIdHasBeenSet = true; m_networkInterfaceId = value; }
 
     /**
@@ -134,6 +145,11 @@ namespace Model
     /**
      * <p>The port used to communicate with iSCSI VTL device targets.</p>
      */
+    inline bool NetworkInterfacePortHasBeenSet() const { return m_networkInterfacePortHasBeenSet; }
+
+    /**
+     * <p>The port used to communicate with iSCSI VTL device targets.</p>
+     */
     inline void SetNetworkInterfacePort(int value) { m_networkInterfacePortHasBeenSet = true; m_networkInterfacePort = value; }
 
     /**
@@ -146,6 +162,11 @@ namespace Model
      * <p>Indicates whether mutual CHAP is enabled for the iSCSI target.</p>
      */
     inline bool GetChapEnabled() const{ return m_chapEnabled; }
+
+    /**
+     * <p>Indicates whether mutual CHAP is enabled for the iSCSI target.</p>
+     */
+    inline bool ChapEnabledHasBeenSet() const { return m_chapEnabledHasBeenSet; }
 
     /**
      * <p>Indicates whether mutual CHAP is enabled for the iSCSI target.</p>

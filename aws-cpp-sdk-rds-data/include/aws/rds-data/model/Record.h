@@ -56,6 +56,11 @@ namespace Model
     /**
      * Record
      */
+    inline bool ValuesHasBeenSet() const { return m_valuesHasBeenSet; }
+
+    /**
+     * Record
+     */
     inline void SetValues(const Aws::Vector<Value>& value) { m_valuesHasBeenSet = true; m_values = value; }
 
     /**

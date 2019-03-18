@@ -55,6 +55,11 @@ namespace Model
     /**
      * Homogenous array base SQL type from java.sql.Types.
      */
+    inline bool ArrayBaseColumnTypeHasBeenSet() const { return m_arrayBaseColumnTypeHasBeenSet; }
+
+    /**
+     * Homogenous array base SQL type from java.sql.Types.
+     */
     inline void SetArrayBaseColumnType(int value) { m_arrayBaseColumnTypeHasBeenSet = true; m_arrayBaseColumnType = value; }
 
     /**
@@ -67,6 +72,11 @@ namespace Model
      * Whether the designated column is automatically numbered
      */
     inline bool GetIsAutoIncrement() const{ return m_isAutoIncrement; }
+
+    /**
+     * Whether the designated column is automatically numbered
+     */
+    inline bool IsAutoIncrementHasBeenSet() const { return m_isAutoIncrementHasBeenSet; }
 
     /**
      * Whether the designated column is automatically numbered
@@ -87,6 +97,11 @@ namespace Model
     /**
      * Whether values in the designated column's case matters
      */
+    inline bool IsCaseSensitiveHasBeenSet() const { return m_isCaseSensitiveHasBeenSet; }
+
+    /**
+     * Whether values in the designated column's case matters
+     */
     inline void SetIsCaseSensitive(bool value) { m_isCaseSensitiveHasBeenSet = true; m_isCaseSensitive = value; }
 
     /**
@@ -99,6 +114,11 @@ namespace Model
      * Whether values in the designated column is a cash value
      */
     inline bool GetIsCurrency() const{ return m_isCurrency; }
+
+    /**
+     * Whether values in the designated column is a cash value
+     */
+    inline bool IsCurrencyHasBeenSet() const { return m_isCurrencyHasBeenSet; }
 
     /**
      * Whether values in the designated column is a cash value
@@ -119,6 +139,11 @@ namespace Model
     /**
      * Whether values in the designated column are signed numbers
      */
+    inline bool IsSignedHasBeenSet() const { return m_isSignedHasBeenSet; }
+
+    /**
+     * Whether values in the designated column are signed numbers
+     */
     inline void SetIsSigned(bool value) { m_isSignedHasBeenSet = true; m_isSigned = value; }
 
     /**
@@ -131,6 +156,11 @@ namespace Model
      * Usually specified by the SQL AS. If not specified, return column name.
      */
     inline const Aws::String& GetLabel() const{ return m_label; }
+
+    /**
+     * Usually specified by the SQL AS. If not specified, return column name.
+     */
+    inline bool LabelHasBeenSet() const { return m_labelHasBeenSet; }
 
     /**
      * Usually specified by the SQL AS. If not specified, return column name.
@@ -167,6 +197,11 @@ namespace Model
      * Name of the column.
      */
     inline const Aws::String& GetName() const{ return m_name; }
+
+    /**
+     * Name of the column.
+     */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
      * Name of the column.
@@ -209,6 +244,12 @@ namespace Model
      * Indicates the nullability of values in the designated column. One of
      * columnNoNulls (0), columnNullable (1), columnNullableUnknown (2)
      */
+    inline bool NullableHasBeenSet() const { return m_nullableHasBeenSet; }
+
+    /**
+     * Indicates the nullability of values in the designated column. One of
+     * columnNoNulls (0), columnNullable (1), columnNullableUnknown (2)
+     */
     inline void SetNullable(int value) { m_nullableHasBeenSet = true; m_nullable = value; }
 
     /**
@@ -228,6 +269,17 @@ namespace Model
      * column size is not applicable.
      */
     inline int GetPrecision() const{ return m_precision; }
+
+    /**
+     * Get the designated column's specified column size.For numeric data, this is the
+     * maximum precision.  For character data, this is the length in characters. For
+     * datetime datatypes, this is the length in characters of the String
+     * representation (assuming the maximum allowed precision of the fractional seconds
+     * component). For binary data, this is the length in bytes.  For the ROWID
+     * datatype, this is the length in bytes. 0 is returned for data types where the
+     * column size is not applicable.
+     */
+    inline bool PrecisionHasBeenSet() const { return m_precisionHasBeenSet; }
 
     /**
      * Get the designated column's specified column size.For numeric data, this is the
@@ -262,6 +314,12 @@ namespace Model
      * Designated column's number of digits to right of the decimal point. 0 is
      * returned for data types where the scale is not applicable.
      */
+    inline bool ScaleHasBeenSet() const { return m_scaleHasBeenSet; }
+
+    /**
+     * Designated column's number of digits to right of the decimal point. 0 is
+     * returned for data types where the scale is not applicable.
+     */
     inline void SetScale(int value) { m_scaleHasBeenSet = true; m_scale = value; }
 
     /**
@@ -275,6 +333,11 @@ namespace Model
      * Designated column's table's schema
      */
     inline const Aws::String& GetSchemaName() const{ return m_schemaName; }
+
+    /**
+     * Designated column's table's schema
+     */
+    inline bool SchemaNameHasBeenSet() const { return m_schemaNameHasBeenSet; }
 
     /**
      * Designated column's table's schema
@@ -315,6 +378,11 @@ namespace Model
     /**
      * Designated column's table name
      */
+    inline bool TableNameHasBeenSet() const { return m_tableNameHasBeenSet; }
+
+    /**
+     * Designated column's table name
+     */
     inline void SetTableName(const Aws::String& value) { m_tableNameHasBeenSet = true; m_tableName = value; }
 
     /**
@@ -351,6 +419,11 @@ namespace Model
     /**
      * SQL type from java.sql.Types.
      */
+    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
+
+    /**
+     * SQL type from java.sql.Types.
+     */
     inline void SetType(int value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
@@ -363,6 +436,11 @@ namespace Model
      * Database-specific type name.
      */
     inline const Aws::String& GetTypeName() const{ return m_typeName; }
+
+    /**
+     * Database-specific type name.
+     */
+    inline bool TypeNameHasBeenSet() const { return m_typeNameHasBeenSet; }
 
     /**
      * Database-specific type name.

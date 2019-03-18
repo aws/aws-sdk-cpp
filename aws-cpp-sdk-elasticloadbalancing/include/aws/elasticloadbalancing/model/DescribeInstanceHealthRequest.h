@@ -60,6 +60,11 @@ namespace Model
     /**
      * <p>The name of the load balancer.</p>
      */
+    inline bool LoadBalancerNameHasBeenSet() const { return m_loadBalancerNameHasBeenSet; }
+
+    /**
+     * <p>The name of the load balancer.</p>
+     */
     inline void SetLoadBalancerName(const Aws::String& value) { m_loadBalancerNameHasBeenSet = true; m_loadBalancerName = value; }
 
     /**
@@ -92,6 +97,11 @@ namespace Model
      * <p>The IDs of the instances.</p>
      */
     inline const Aws::Vector<Instance>& GetInstances() const{ return m_instances; }
+
+    /**
+     * <p>The IDs of the instances.</p>
+     */
+    inline bool InstancesHasBeenSet() const { return m_instancesHasBeenSet; }
 
     /**
      * <p>The IDs of the instances.</p>

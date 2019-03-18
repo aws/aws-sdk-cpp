@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p>An optional display name for a backup rule.</p>
      */
+    inline bool RuleNameHasBeenSet() const { return m_ruleNameHasBeenSet; }
+
+    /**
+     * <p>An optional display name for a backup rule.</p>
+     */
     inline void SetRuleName(const Aws::String& value) { m_ruleNameHasBeenSet = true; m_ruleName = value; }
 
     /**
@@ -93,6 +98,14 @@ namespace Model
      * and hyphens.</p>
      */
     inline const Aws::String& GetTargetBackupVaultName() const{ return m_targetBackupVaultName; }
+
+    /**
+     * <p>The name of a logical container where backups are stored. Backup vaults are
+     * identified by names that are unique to the account used to create them and the
+     * AWS Region where they are created. They consist of lowercase letters, numbers,
+     * and hyphens.</p>
+     */
+    inline bool TargetBackupVaultNameHasBeenSet() const { return m_targetBackupVaultNameHasBeenSet; }
 
     /**
      * <p>The name of a logical container where backups are stored. Backup vaults are
@@ -151,6 +164,11 @@ namespace Model
     /**
      * <p>A CRON expression specifying when AWS Backup initiates a backup job.</p>
      */
+    inline bool ScheduleExpressionHasBeenSet() const { return m_scheduleExpressionHasBeenSet; }
+
+    /**
+     * <p>A CRON expression specifying when AWS Backup initiates a backup job.</p>
+     */
     inline void SetScheduleExpression(const Aws::String& value) { m_scheduleExpressionHasBeenSet = true; m_scheduleExpression = value; }
 
     /**
@@ -189,6 +207,12 @@ namespace Model
      * <p>An optional value that specifies a period of time in minutes after a backup
      * is scheduled before a job is canceled if it doesn't start successfully.</p>
      */
+    inline bool StartWindowMinutesHasBeenSet() const { return m_startWindowMinutesHasBeenSet; }
+
+    /**
+     * <p>An optional value that specifies a period of time in minutes after a backup
+     * is scheduled before a job is canceled if it doesn't start successfully.</p>
+     */
     inline void SetStartWindowMinutes(long long value) { m_startWindowMinutesHasBeenSet = true; m_startWindowMinutes = value; }
 
     /**
@@ -203,6 +227,12 @@ namespace Model
      * be completed or it is canceled by AWS Backup. This value is optional.</p>
      */
     inline long long GetCompletionWindowMinutes() const{ return m_completionWindowMinutes; }
+
+    /**
+     * <p>A value in minutes after a backup job is successfully started before it must
+     * be completed or it is canceled by AWS Backup. This value is optional.</p>
+     */
+    inline bool CompletionWindowMinutesHasBeenSet() const { return m_completionWindowMinutesHasBeenSet; }
 
     /**
      * <p>A value in minutes after a backup job is successfully started before it must
@@ -227,6 +257,17 @@ namespace Model
      * setting cannot be changed after a backup has been transitioned to cold. </p>
      */
     inline const Lifecycle& GetLifecycle() const{ return m_lifecycle; }
+
+    /**
+     * <p>The lifecycle defines when a protected resource is transitioned to cold
+     * storage and when it expires. AWS Backup transitions and expires backups
+     * automatically according to the lifecycle that you define. </p> <p>Backups
+     * transitioned to cold storage must be stored in cold storage for a minimum of 90
+     * days. Therefore, the “expire after days” setting must be 90 days greater than
+     * the “transition to cold after days” setting. The “transition to cold after days”
+     * setting cannot be changed after a backup has been transitioned to cold. </p>
+     */
+    inline bool LifecycleHasBeenSet() const { return m_lifecycleHasBeenSet; }
 
     /**
      * <p>The lifecycle defines when a protected resource is transitioned to cold
@@ -278,6 +319,12 @@ namespace Model
      * associated with this rule when restored from backup.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetRecoveryPointTags() const{ return m_recoveryPointTags; }
+
+    /**
+     * <p>An array of key-value pair strings that are assigned to resources that are
+     * associated with this rule when restored from backup.</p>
+     */
+    inline bool RecoveryPointTagsHasBeenSet() const { return m_recoveryPointTagsHasBeenSet; }
 
     /**
      * <p>An array of key-value pair strings that are assigned to resources that are
@@ -351,6 +398,12 @@ namespace Model
      * of resources.</p>
      */
     inline const Aws::String& GetRuleId() const{ return m_ruleId; }
+
+    /**
+     * <p>Uniquely identifies a rule that is used to schedule the backup of a selection
+     * of resources.</p>
+     */
+    inline bool RuleIdHasBeenSet() const { return m_ruleIdHasBeenSet; }
 
     /**
      * <p>Uniquely identifies a rule that is used to schedule the backup of a selection

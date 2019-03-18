@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>A unique identifier in the format REGION:GUID.</p>
      */
+    inline bool IdentityIdHasBeenSet() const { return m_identityIdHasBeenSet; }
+
+    /**
+     * <p>A unique identifier in the format REGION:GUID.</p>
+     */
     inline void SetIdentityId(const Aws::String& value) { m_identityIdHasBeenSet = true; m_identityId = value; }
 
     /**
@@ -90,6 +95,12 @@ namespace Model
      * tokens.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetLogins() const{ return m_logins; }
+
+    /**
+     * <p>A set of optional name-value pairs that map provider names to provider
+     * tokens.</p>
+     */
+    inline bool LoginsHasBeenSet() const { return m_loginsHasBeenSet; }
 
     /**
      * <p>A set of optional name-value pairs that map provider names to provider
@@ -165,6 +176,14 @@ namespace Model
      * support role customization.</p>
      */
     inline const Aws::String& GetCustomRoleArn() const{ return m_customRoleArn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the role to be assumed when multiple roles
+     * were received in the token from the identity provider. For example, a SAML-based
+     * identity provider. This parameter is optional for identity providers that do not
+     * support role customization.</p>
+     */
+    inline bool CustomRoleArnHasBeenSet() const { return m_customRoleArnHasBeenSet; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the role to be assumed when multiple roles

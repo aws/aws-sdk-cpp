@@ -52,6 +52,11 @@ namespace Model
     /**
      * <p>ID of the collection the face belongs to.</p>
      */
+    inline bool CollectionIdHasBeenSet() const { return m_collectionIdHasBeenSet; }
+
+    /**
+     * <p>ID of the collection the face belongs to.</p>
+     */
     inline void SetCollectionId(const Aws::String& value) { m_collectionIdHasBeenSet = true; m_collectionId = value; }
 
     /**
@@ -84,6 +89,11 @@ namespace Model
      * <p>ID of a face to find matches for in the collection.</p>
      */
     inline const Aws::String& GetFaceId() const{ return m_faceId; }
+
+    /**
+     * <p>ID of a face to find matches for in the collection.</p>
+     */
+    inline bool FaceIdHasBeenSet() const { return m_faceIdHasBeenSet; }
 
     /**
      * <p>ID of a face to find matches for in the collection.</p>
@@ -126,6 +136,12 @@ namespace Model
      * <p>Maximum number of faces to return. The operation returns the maximum number
      * of faces with the highest confidence in the match.</p>
      */
+    inline bool MaxFacesHasBeenSet() const { return m_maxFacesHasBeenSet; }
+
+    /**
+     * <p>Maximum number of faces to return. The operation returns the maximum number
+     * of faces with the highest confidence in the match.</p>
+     */
     inline void SetMaxFaces(int value) { m_maxFacesHasBeenSet = true; m_maxFaces = value; }
 
     /**
@@ -141,6 +157,13 @@ namespace Model
      * 70%.</p>
      */
     inline double GetFaceMatchThreshold() const{ return m_faceMatchThreshold; }
+
+    /**
+     * <p>Optional value specifying the minimum confidence in the face match to return.
+     * For example, don't return any matches where confidence in matches is less than
+     * 70%.</p>
+     */
+    inline bool FaceMatchThresholdHasBeenSet() const { return m_faceMatchThresholdHasBeenSet; }
 
     /**
      * <p>Optional value specifying the minimum confidence in the face match to return.

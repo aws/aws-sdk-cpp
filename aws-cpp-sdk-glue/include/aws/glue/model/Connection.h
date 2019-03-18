@@ -61,6 +61,11 @@ namespace Model
     /**
      * <p>The name of the connection definition.</p>
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>The name of the connection definition.</p>
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
@@ -93,6 +98,11 @@ namespace Model
      * <p>The description of the connection.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
+
+    /**
+     * <p>The description of the connection.</p>
+     */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
 
     /**
      * <p>The description of the connection.</p>
@@ -135,6 +145,12 @@ namespace Model
      * <p>The type of the connection. Currently, only JDBC is supported; SFTP is not
      * supported.</p>
      */
+    inline bool ConnectionTypeHasBeenSet() const { return m_connectionTypeHasBeenSet; }
+
+    /**
+     * <p>The type of the connection. Currently, only JDBC is supported; SFTP is not
+     * supported.</p>
+     */
     inline void SetConnectionType(const ConnectionType& value) { m_connectionTypeHasBeenSet = true; m_connectionType = value; }
 
     /**
@@ -160,6 +176,11 @@ namespace Model
      * <p>A list of criteria that can be used in selecting this connection.</p>
      */
     inline const Aws::Vector<Aws::String>& GetMatchCriteria() const{ return m_matchCriteria; }
+
+    /**
+     * <p>A list of criteria that can be used in selecting this connection.</p>
+     */
+    inline bool MatchCriteriaHasBeenSet() const { return m_matchCriteriaHasBeenSet; }
 
     /**
      * <p>A list of criteria that can be used in selecting this connection.</p>
@@ -223,6 +244,33 @@ namespace Model
      * false.</p> </li> </ul>
      */
     inline const Aws::Map<ConnectionPropertyKey, Aws::String>& GetConnectionProperties() const{ return m_connectionProperties; }
+
+    /**
+     * <p>These key-value pairs define parameters for the connection:</p> <ul> <li> <p>
+     * <code>HOST</code> - The host URI: either the fully qualified domain name (FQDN)
+     * or the IPv4 address of the database host.</p> </li> <li> <p> <code>PORT</code> -
+     * The port number, between 1024 and 65535, of the port on which the database host
+     * is listening for database connections.</p> </li> <li> <p> <code>USER_NAME</code>
+     * - The name under which to log in to the database. The value string for
+     * <code>USER_NAME</code> is "<code>USERNAME</code>".</p> </li> <li> <p>
+     * <code>PASSWORD</code> - A password, if one is used, for the user name.</p> </li>
+     * <li> <p> <code>ENCRYPTED_PASSWORD</code> - When you enable connection password
+     * protection by setting <code>ConnectionPasswordEncryption</code> in the Data
+     * Catalog encryption settings, this field stores the encrypted password.</p> </li>
+     * <li> <p> <code>JDBC_DRIVER_JAR_URI</code> - The Amazon S3 path of the JAR file
+     * that contains the JDBC driver to use.</p> </li> <li> <p>
+     * <code>JDBC_DRIVER_CLASS_NAME</code> - The class name of the JDBC driver to
+     * use.</p> </li> <li> <p> <code>JDBC_ENGINE</code> - The name of the JDBC engine
+     * to use.</p> </li> <li> <p> <code>JDBC_ENGINE_VERSION</code> - The version of the
+     * JDBC engine to use.</p> </li> <li> <p> <code>CONFIG_FILES</code> - (Reserved for
+     * future use).</p> </li> <li> <p> <code>INSTANCE_ID</code> - The instance ID to
+     * use.</p> </li> <li> <p> <code>JDBC_CONNECTION_URL</code> - The URL for the JDBC
+     * connection.</p> </li> <li> <p> <code>JDBC_ENFORCE_SSL</code> - A Boolean string
+     * (true, false) specifying whether Secure Sockets Layer (SSL) with hostname
+     * matching will be enforced for the JDBC connection on the client. The default is
+     * false.</p> </li> </ul>
+     */
+    inline bool ConnectionPropertiesHasBeenSet() const { return m_connectionPropertiesHasBeenSet; }
 
     /**
      * <p>These key-value pairs define parameters for the connection:</p> <ul> <li> <p>
@@ -507,6 +555,13 @@ namespace Model
      * (VPC) and <code>SecurityGroup</code>, that are needed to make this connection
      * successfully.</p>
      */
+    inline bool PhysicalConnectionRequirementsHasBeenSet() const { return m_physicalConnectionRequirementsHasBeenSet; }
+
+    /**
+     * <p>A map of physical connection requirements, such as virtual private cloud
+     * (VPC) and <code>SecurityGroup</code>, that are needed to make this connection
+     * successfully.</p>
+     */
     inline void SetPhysicalConnectionRequirements(const PhysicalConnectionRequirements& value) { m_physicalConnectionRequirementsHasBeenSet = true; m_physicalConnectionRequirements = value; }
 
     /**
@@ -539,6 +594,11 @@ namespace Model
     /**
      * <p>The time that this connection definition was created.</p>
      */
+    inline bool CreationTimeHasBeenSet() const { return m_creationTimeHasBeenSet; }
+
+    /**
+     * <p>The time that this connection definition was created.</p>
+     */
     inline void SetCreationTime(const Aws::Utils::DateTime& value) { m_creationTimeHasBeenSet = true; m_creationTime = value; }
 
     /**
@@ -565,6 +625,11 @@ namespace Model
     /**
      * <p>The last time that this connection definition was updated.</p>
      */
+    inline bool LastUpdatedTimeHasBeenSet() const { return m_lastUpdatedTimeHasBeenSet; }
+
+    /**
+     * <p>The last time that this connection definition was updated.</p>
+     */
     inline void SetLastUpdatedTime(const Aws::Utils::DateTime& value) { m_lastUpdatedTimeHasBeenSet = true; m_lastUpdatedTime = value; }
 
     /**
@@ -587,6 +652,11 @@ namespace Model
      * <p>The user, group, or role that last updated this connection definition.</p>
      */
     inline const Aws::String& GetLastUpdatedBy() const{ return m_lastUpdatedBy; }
+
+    /**
+     * <p>The user, group, or role that last updated this connection definition.</p>
+     */
+    inline bool LastUpdatedByHasBeenSet() const { return m_lastUpdatedByHasBeenSet; }
 
     /**
      * <p>The user, group, or role that last updated this connection definition.</p>

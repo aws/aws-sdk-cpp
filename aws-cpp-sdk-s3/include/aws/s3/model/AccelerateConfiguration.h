@@ -55,6 +55,11 @@ namespace Model
     /**
      * <p>The accelerate configuration of the bucket.</p>
      */
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
+
+    /**
+     * <p>The accelerate configuration of the bucket.</p>
+     */
     inline void SetStatus(const BucketAccelerateStatus& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**

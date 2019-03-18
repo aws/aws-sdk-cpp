@@ -60,6 +60,12 @@ namespace Model
      * <p>The set of UsageRecords to submit. BatchMeterUsage accepts up to 25
      * UsageRecords at a time.</p>
      */
+    inline bool UsageRecordsHasBeenSet() const { return m_usageRecordsHasBeenSet; }
+
+    /**
+     * <p>The set of UsageRecords to submit. BatchMeterUsage accepts up to 25
+     * UsageRecords at a time.</p>
+     */
     inline void SetUsageRecords(const Aws::Vector<UsageRecord>& value) { m_usageRecordsHasBeenSet = true; m_usageRecords = value; }
 
     /**
@@ -99,6 +105,13 @@ namespace Model
      * product.</p>
      */
     inline const Aws::String& GetProductCode() const{ return m_productCode; }
+
+    /**
+     * <p>Product code is used to uniquely identify a product in AWS Marketplace. The
+     * product code should be the same as the one used during the publishing of a new
+     * product.</p>
+     */
+    inline bool ProductCodeHasBeenSet() const { return m_productCodeHasBeenSet; }
 
     /**
      * <p>Product code is used to uniquely identify a product in AWS Marketplace. The

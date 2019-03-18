@@ -50,6 +50,11 @@ namespace Model
     /**
      * <p>The name of the bot.</p>
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>The name of the bot.</p>
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
@@ -84,6 +89,13 @@ namespace Model
      * <a>DeleteBot</a> operation.</p>
      */
     inline const Aws::String& GetVersion() const{ return m_version; }
+
+    /**
+     * <p>The version of the bot to delete. You cannot delete the <code>$LATEST</code>
+     * version of the bot. To delete the <code>$LATEST</code> version, use the
+     * <a>DeleteBot</a> operation.</p>
+     */
+    inline bool VersionHasBeenSet() const { return m_versionHasBeenSet; }
 
     /**
      * <p>The version of the bot to delete. You cannot delete the <code>$LATEST</code>

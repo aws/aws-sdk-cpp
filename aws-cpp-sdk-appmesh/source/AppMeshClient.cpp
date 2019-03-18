@@ -163,6 +163,16 @@ void AppMeshClient::CreateMeshAsyncHelper(const CreateMeshRequest& request, cons
 
 CreateRouteOutcome AppMeshClient::CreateRoute(const CreateRouteRequest& request) const
 {
+  if (!request.MeshNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("CreateRoute", "Required field: MeshName, is not set");
+    return CreateRouteOutcome(Aws::Client::AWSError<AppMeshErrors>(AppMeshErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [MeshName]", false));
+  }
+  if (!request.VirtualRouterNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("CreateRoute", "Required field: VirtualRouterName, is not set");
+    return CreateRouteOutcome(Aws::Client::AWSError<AppMeshErrors>(AppMeshErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [VirtualRouterName]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/v20190125/meshes/";
@@ -202,6 +212,11 @@ void AppMeshClient::CreateRouteAsyncHelper(const CreateRouteRequest& request, co
 
 CreateVirtualNodeOutcome AppMeshClient::CreateVirtualNode(const CreateVirtualNodeRequest& request) const
 {
+  if (!request.MeshNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("CreateVirtualNode", "Required field: MeshName, is not set");
+    return CreateVirtualNodeOutcome(Aws::Client::AWSError<AppMeshErrors>(AppMeshErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [MeshName]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/v20190125/meshes/";
@@ -239,6 +254,11 @@ void AppMeshClient::CreateVirtualNodeAsyncHelper(const CreateVirtualNodeRequest&
 
 CreateVirtualRouterOutcome AppMeshClient::CreateVirtualRouter(const CreateVirtualRouterRequest& request) const
 {
+  if (!request.MeshNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("CreateVirtualRouter", "Required field: MeshName, is not set");
+    return CreateVirtualRouterOutcome(Aws::Client::AWSError<AppMeshErrors>(AppMeshErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [MeshName]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/v20190125/meshes/";
@@ -276,6 +296,11 @@ void AppMeshClient::CreateVirtualRouterAsyncHelper(const CreateVirtualRouterRequ
 
 CreateVirtualServiceOutcome AppMeshClient::CreateVirtualService(const CreateVirtualServiceRequest& request) const
 {
+  if (!request.MeshNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("CreateVirtualService", "Required field: MeshName, is not set");
+    return CreateVirtualServiceOutcome(Aws::Client::AWSError<AppMeshErrors>(AppMeshErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [MeshName]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/v20190125/meshes/";
@@ -313,6 +338,11 @@ void AppMeshClient::CreateVirtualServiceAsyncHelper(const CreateVirtualServiceRe
 
 DeleteMeshOutcome AppMeshClient::DeleteMesh(const DeleteMeshRequest& request) const
 {
+  if (!request.MeshNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteMesh", "Required field: MeshName, is not set");
+    return DeleteMeshOutcome(Aws::Client::AWSError<AppMeshErrors>(AppMeshErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [MeshName]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/v20190125/meshes/";
@@ -349,6 +379,21 @@ void AppMeshClient::DeleteMeshAsyncHelper(const DeleteMeshRequest& request, cons
 
 DeleteRouteOutcome AppMeshClient::DeleteRoute(const DeleteRouteRequest& request) const
 {
+  if (!request.MeshNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteRoute", "Required field: MeshName, is not set");
+    return DeleteRouteOutcome(Aws::Client::AWSError<AppMeshErrors>(AppMeshErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [MeshName]", false));
+  }
+  if (!request.RouteNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteRoute", "Required field: RouteName, is not set");
+    return DeleteRouteOutcome(Aws::Client::AWSError<AppMeshErrors>(AppMeshErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [RouteName]", false));
+  }
+  if (!request.VirtualRouterNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteRoute", "Required field: VirtualRouterName, is not set");
+    return DeleteRouteOutcome(Aws::Client::AWSError<AppMeshErrors>(AppMeshErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [VirtualRouterName]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/v20190125/meshes/";
@@ -389,6 +434,16 @@ void AppMeshClient::DeleteRouteAsyncHelper(const DeleteRouteRequest& request, co
 
 DeleteVirtualNodeOutcome AppMeshClient::DeleteVirtualNode(const DeleteVirtualNodeRequest& request) const
 {
+  if (!request.MeshNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteVirtualNode", "Required field: MeshName, is not set");
+    return DeleteVirtualNodeOutcome(Aws::Client::AWSError<AppMeshErrors>(AppMeshErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [MeshName]", false));
+  }
+  if (!request.VirtualNodeNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteVirtualNode", "Required field: VirtualNodeName, is not set");
+    return DeleteVirtualNodeOutcome(Aws::Client::AWSError<AppMeshErrors>(AppMeshErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [VirtualNodeName]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/v20190125/meshes/";
@@ -427,6 +482,16 @@ void AppMeshClient::DeleteVirtualNodeAsyncHelper(const DeleteVirtualNodeRequest&
 
 DeleteVirtualRouterOutcome AppMeshClient::DeleteVirtualRouter(const DeleteVirtualRouterRequest& request) const
 {
+  if (!request.MeshNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteVirtualRouter", "Required field: MeshName, is not set");
+    return DeleteVirtualRouterOutcome(Aws::Client::AWSError<AppMeshErrors>(AppMeshErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [MeshName]", false));
+  }
+  if (!request.VirtualRouterNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteVirtualRouter", "Required field: VirtualRouterName, is not set");
+    return DeleteVirtualRouterOutcome(Aws::Client::AWSError<AppMeshErrors>(AppMeshErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [VirtualRouterName]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/v20190125/meshes/";
@@ -465,6 +530,16 @@ void AppMeshClient::DeleteVirtualRouterAsyncHelper(const DeleteVirtualRouterRequ
 
 DeleteVirtualServiceOutcome AppMeshClient::DeleteVirtualService(const DeleteVirtualServiceRequest& request) const
 {
+  if (!request.MeshNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteVirtualService", "Required field: MeshName, is not set");
+    return DeleteVirtualServiceOutcome(Aws::Client::AWSError<AppMeshErrors>(AppMeshErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [MeshName]", false));
+  }
+  if (!request.VirtualServiceNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteVirtualService", "Required field: VirtualServiceName, is not set");
+    return DeleteVirtualServiceOutcome(Aws::Client::AWSError<AppMeshErrors>(AppMeshErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [VirtualServiceName]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/v20190125/meshes/";
@@ -503,6 +578,11 @@ void AppMeshClient::DeleteVirtualServiceAsyncHelper(const DeleteVirtualServiceRe
 
 DescribeMeshOutcome AppMeshClient::DescribeMesh(const DescribeMeshRequest& request) const
 {
+  if (!request.MeshNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DescribeMesh", "Required field: MeshName, is not set");
+    return DescribeMeshOutcome(Aws::Client::AWSError<AppMeshErrors>(AppMeshErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [MeshName]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/v20190125/meshes/";
@@ -539,6 +619,21 @@ void AppMeshClient::DescribeMeshAsyncHelper(const DescribeMeshRequest& request, 
 
 DescribeRouteOutcome AppMeshClient::DescribeRoute(const DescribeRouteRequest& request) const
 {
+  if (!request.MeshNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DescribeRoute", "Required field: MeshName, is not set");
+    return DescribeRouteOutcome(Aws::Client::AWSError<AppMeshErrors>(AppMeshErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [MeshName]", false));
+  }
+  if (!request.RouteNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DescribeRoute", "Required field: RouteName, is not set");
+    return DescribeRouteOutcome(Aws::Client::AWSError<AppMeshErrors>(AppMeshErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [RouteName]", false));
+  }
+  if (!request.VirtualRouterNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DescribeRoute", "Required field: VirtualRouterName, is not set");
+    return DescribeRouteOutcome(Aws::Client::AWSError<AppMeshErrors>(AppMeshErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [VirtualRouterName]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/v20190125/meshes/";
@@ -579,6 +674,16 @@ void AppMeshClient::DescribeRouteAsyncHelper(const DescribeRouteRequest& request
 
 DescribeVirtualNodeOutcome AppMeshClient::DescribeVirtualNode(const DescribeVirtualNodeRequest& request) const
 {
+  if (!request.MeshNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DescribeVirtualNode", "Required field: MeshName, is not set");
+    return DescribeVirtualNodeOutcome(Aws::Client::AWSError<AppMeshErrors>(AppMeshErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [MeshName]", false));
+  }
+  if (!request.VirtualNodeNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DescribeVirtualNode", "Required field: VirtualNodeName, is not set");
+    return DescribeVirtualNodeOutcome(Aws::Client::AWSError<AppMeshErrors>(AppMeshErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [VirtualNodeName]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/v20190125/meshes/";
@@ -617,6 +722,16 @@ void AppMeshClient::DescribeVirtualNodeAsyncHelper(const DescribeVirtualNodeRequ
 
 DescribeVirtualRouterOutcome AppMeshClient::DescribeVirtualRouter(const DescribeVirtualRouterRequest& request) const
 {
+  if (!request.MeshNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DescribeVirtualRouter", "Required field: MeshName, is not set");
+    return DescribeVirtualRouterOutcome(Aws::Client::AWSError<AppMeshErrors>(AppMeshErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [MeshName]", false));
+  }
+  if (!request.VirtualRouterNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DescribeVirtualRouter", "Required field: VirtualRouterName, is not set");
+    return DescribeVirtualRouterOutcome(Aws::Client::AWSError<AppMeshErrors>(AppMeshErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [VirtualRouterName]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/v20190125/meshes/";
@@ -655,6 +770,16 @@ void AppMeshClient::DescribeVirtualRouterAsyncHelper(const DescribeVirtualRouter
 
 DescribeVirtualServiceOutcome AppMeshClient::DescribeVirtualService(const DescribeVirtualServiceRequest& request) const
 {
+  if (!request.MeshNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DescribeVirtualService", "Required field: MeshName, is not set");
+    return DescribeVirtualServiceOutcome(Aws::Client::AWSError<AppMeshErrors>(AppMeshErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [MeshName]", false));
+  }
+  if (!request.VirtualServiceNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DescribeVirtualService", "Required field: VirtualServiceName, is not set");
+    return DescribeVirtualServiceOutcome(Aws::Client::AWSError<AppMeshErrors>(AppMeshErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [VirtualServiceName]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/v20190125/meshes/";
@@ -728,6 +853,16 @@ void AppMeshClient::ListMeshesAsyncHelper(const ListMeshesRequest& request, cons
 
 ListRoutesOutcome AppMeshClient::ListRoutes(const ListRoutesRequest& request) const
 {
+  if (!request.MeshNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListRoutes", "Required field: MeshName, is not set");
+    return ListRoutesOutcome(Aws::Client::AWSError<AppMeshErrors>(AppMeshErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [MeshName]", false));
+  }
+  if (!request.VirtualRouterNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListRoutes", "Required field: VirtualRouterName, is not set");
+    return ListRoutesOutcome(Aws::Client::AWSError<AppMeshErrors>(AppMeshErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [VirtualRouterName]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/v20190125/meshes/";
@@ -767,6 +902,11 @@ void AppMeshClient::ListRoutesAsyncHelper(const ListRoutesRequest& request, cons
 
 ListVirtualNodesOutcome AppMeshClient::ListVirtualNodes(const ListVirtualNodesRequest& request) const
 {
+  if (!request.MeshNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListVirtualNodes", "Required field: MeshName, is not set");
+    return ListVirtualNodesOutcome(Aws::Client::AWSError<AppMeshErrors>(AppMeshErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [MeshName]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/v20190125/meshes/";
@@ -804,6 +944,11 @@ void AppMeshClient::ListVirtualNodesAsyncHelper(const ListVirtualNodesRequest& r
 
 ListVirtualRoutersOutcome AppMeshClient::ListVirtualRouters(const ListVirtualRoutersRequest& request) const
 {
+  if (!request.MeshNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListVirtualRouters", "Required field: MeshName, is not set");
+    return ListVirtualRoutersOutcome(Aws::Client::AWSError<AppMeshErrors>(AppMeshErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [MeshName]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/v20190125/meshes/";
@@ -841,6 +986,11 @@ void AppMeshClient::ListVirtualRoutersAsyncHelper(const ListVirtualRoutersReques
 
 ListVirtualServicesOutcome AppMeshClient::ListVirtualServices(const ListVirtualServicesRequest& request) const
 {
+  if (!request.MeshNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListVirtualServices", "Required field: MeshName, is not set");
+    return ListVirtualServicesOutcome(Aws::Client::AWSError<AppMeshErrors>(AppMeshErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [MeshName]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/v20190125/meshes/";
@@ -878,6 +1028,21 @@ void AppMeshClient::ListVirtualServicesAsyncHelper(const ListVirtualServicesRequ
 
 UpdateRouteOutcome AppMeshClient::UpdateRoute(const UpdateRouteRequest& request) const
 {
+  if (!request.MeshNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateRoute", "Required field: MeshName, is not set");
+    return UpdateRouteOutcome(Aws::Client::AWSError<AppMeshErrors>(AppMeshErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [MeshName]", false));
+  }
+  if (!request.RouteNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateRoute", "Required field: RouteName, is not set");
+    return UpdateRouteOutcome(Aws::Client::AWSError<AppMeshErrors>(AppMeshErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [RouteName]", false));
+  }
+  if (!request.VirtualRouterNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateRoute", "Required field: VirtualRouterName, is not set");
+    return UpdateRouteOutcome(Aws::Client::AWSError<AppMeshErrors>(AppMeshErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [VirtualRouterName]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/v20190125/meshes/";
@@ -918,6 +1083,16 @@ void AppMeshClient::UpdateRouteAsyncHelper(const UpdateRouteRequest& request, co
 
 UpdateVirtualNodeOutcome AppMeshClient::UpdateVirtualNode(const UpdateVirtualNodeRequest& request) const
 {
+  if (!request.MeshNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateVirtualNode", "Required field: MeshName, is not set");
+    return UpdateVirtualNodeOutcome(Aws::Client::AWSError<AppMeshErrors>(AppMeshErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [MeshName]", false));
+  }
+  if (!request.VirtualNodeNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateVirtualNode", "Required field: VirtualNodeName, is not set");
+    return UpdateVirtualNodeOutcome(Aws::Client::AWSError<AppMeshErrors>(AppMeshErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [VirtualNodeName]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/v20190125/meshes/";
@@ -956,6 +1131,16 @@ void AppMeshClient::UpdateVirtualNodeAsyncHelper(const UpdateVirtualNodeRequest&
 
 UpdateVirtualRouterOutcome AppMeshClient::UpdateVirtualRouter(const UpdateVirtualRouterRequest& request) const
 {
+  if (!request.MeshNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateVirtualRouter", "Required field: MeshName, is not set");
+    return UpdateVirtualRouterOutcome(Aws::Client::AWSError<AppMeshErrors>(AppMeshErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [MeshName]", false));
+  }
+  if (!request.VirtualRouterNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateVirtualRouter", "Required field: VirtualRouterName, is not set");
+    return UpdateVirtualRouterOutcome(Aws::Client::AWSError<AppMeshErrors>(AppMeshErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [VirtualRouterName]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/v20190125/meshes/";
@@ -994,6 +1179,16 @@ void AppMeshClient::UpdateVirtualRouterAsyncHelper(const UpdateVirtualRouterRequ
 
 UpdateVirtualServiceOutcome AppMeshClient::UpdateVirtualService(const UpdateVirtualServiceRequest& request) const
 {
+  if (!request.MeshNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateVirtualService", "Required field: MeshName, is not set");
+    return UpdateVirtualServiceOutcome(Aws::Client::AWSError<AppMeshErrors>(AppMeshErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [MeshName]", false));
+  }
+  if (!request.VirtualServiceNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateVirtualService", "Required field: VirtualServiceName, is not set");
+    return UpdateVirtualServiceOutcome(Aws::Client::AWSError<AppMeshErrors>(AppMeshErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [VirtualServiceName]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/v20190125/meshes/";

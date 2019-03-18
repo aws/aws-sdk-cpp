@@ -63,6 +63,13 @@ namespace Model
      * Analytics assigns when you add the reference data source to your application
      * using the <a>CreateApplication</a> or <a>UpdateApplication</a> operation.</p>
      */
+    inline bool ReferenceIdHasBeenSet() const { return m_referenceIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the reference data source. This is the ID that Kinesis Data
+     * Analytics assigns when you add the reference data source to your application
+     * using the <a>CreateApplication</a> or <a>UpdateApplication</a> operation.</p>
+     */
     inline void SetReferenceId(const Aws::String& value) { m_referenceIdHasBeenSet = true; m_referenceId = value; }
 
     /**
@@ -111,6 +118,12 @@ namespace Model
      * <p>The in-application table name created by the specific reference data source
      * configuration.</p>
      */
+    inline bool TableNameHasBeenSet() const { return m_tableNameHasBeenSet; }
+
+    /**
+     * <p>The in-application table name created by the specific reference data source
+     * configuration.</p>
+     */
     inline void SetTableName(const Aws::String& value) { m_tableNameHasBeenSet = true; m_tableName = value; }
 
     /**
@@ -154,6 +167,12 @@ namespace Model
      * <p>Provides the Amazon S3 bucket name, the object key name that contains the
      * reference data. </p>
      */
+    inline bool S3ReferenceDataSourceDescriptionHasBeenSet() const { return m_s3ReferenceDataSourceDescriptionHasBeenSet; }
+
+    /**
+     * <p>Provides the Amazon S3 bucket name, the object key name that contains the
+     * reference data. </p>
+     */
     inline void SetS3ReferenceDataSourceDescription(const S3ReferenceDataSourceDescription& value) { m_s3ReferenceDataSourceDescriptionHasBeenSet = true; m_s3ReferenceDataSourceDescription = value; }
 
     /**
@@ -180,6 +199,12 @@ namespace Model
      * element maps to corresponding columns created in the in-application stream.</p>
      */
     inline const SourceSchema& GetReferenceSchema() const{ return m_referenceSchema; }
+
+    /**
+     * <p>Describes the format of the data in the streaming source, and how each data
+     * element maps to corresponding columns created in the in-application stream.</p>
+     */
+    inline bool ReferenceSchemaHasBeenSet() const { return m_referenceSchemaHasBeenSet; }
 
     /**
      * <p>Describes the format of the data in the streaming source, and how each data

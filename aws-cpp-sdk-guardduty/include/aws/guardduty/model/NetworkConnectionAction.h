@@ -59,6 +59,11 @@ namespace Model
     /**
      * Network connection blocked information.
      */
+    inline bool BlockedHasBeenSet() const { return m_blockedHasBeenSet; }
+
+    /**
+     * Network connection blocked information.
+     */
     inline void SetBlocked(bool value) { m_blockedHasBeenSet = true; m_blocked = value; }
 
     /**
@@ -71,6 +76,11 @@ namespace Model
      * Network connection direction.
      */
     inline const Aws::String& GetConnectionDirection() const{ return m_connectionDirection; }
+
+    /**
+     * Network connection direction.
+     */
+    inline bool ConnectionDirectionHasBeenSet() const { return m_connectionDirectionHasBeenSet; }
 
     /**
      * Network connection direction.
@@ -111,6 +121,11 @@ namespace Model
     /**
      * Local port information of the connection.
      */
+    inline bool LocalPortDetailsHasBeenSet() const { return m_localPortDetailsHasBeenSet; }
+
+    /**
+     * Local port information of the connection.
+     */
     inline void SetLocalPortDetails(const LocalPortDetails& value) { m_localPortDetailsHasBeenSet = true; m_localPortDetails = value; }
 
     /**
@@ -133,6 +148,11 @@ namespace Model
      * Network connection protocol.
      */
     inline const Aws::String& GetProtocol() const{ return m_protocol; }
+
+    /**
+     * Network connection protocol.
+     */
+    inline bool ProtocolHasBeenSet() const { return m_protocolHasBeenSet; }
 
     /**
      * Network connection protocol.
@@ -173,6 +193,11 @@ namespace Model
     /**
      * Remote IP information of the connection.
      */
+    inline bool RemoteIpDetailsHasBeenSet() const { return m_remoteIpDetailsHasBeenSet; }
+
+    /**
+     * Remote IP information of the connection.
+     */
     inline void SetRemoteIpDetails(const RemoteIpDetails& value) { m_remoteIpDetailsHasBeenSet = true; m_remoteIpDetails = value; }
 
     /**
@@ -195,6 +220,11 @@ namespace Model
      * Remote port information of the connection.
      */
     inline const RemotePortDetails& GetRemotePortDetails() const{ return m_remotePortDetails; }
+
+    /**
+     * Remote port information of the connection.
+     */
+    inline bool RemotePortDetailsHasBeenSet() const { return m_remotePortDetailsHasBeenSet; }
 
     /**
      * Remote port information of the connection.

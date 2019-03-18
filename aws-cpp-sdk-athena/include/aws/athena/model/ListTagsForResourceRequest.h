@@ -52,6 +52,11 @@ namespace Model
     /**
      * <p>Lists the tags for the workgroup resource with the specified ARN.</p>
      */
+    inline bool ResourceARNHasBeenSet() const { return m_resourceARNHasBeenSet; }
+
+    /**
+     * <p>Lists the tags for the workgroup resource with the specified ARN.</p>
+     */
     inline void SetResourceARN(const Aws::String& value) { m_resourceARNHasBeenSet = true; m_resourceARN = value; }
 
     /**
@@ -86,6 +91,13 @@ namespace Model
      * resource with the specified ARN.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
+    /**
+     * <p>The token for the next set of results, or null if there are no additional
+     * results for this request, where the request lists the tags for the workgroup
+     * resource with the specified ARN.</p>
+     */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
      * <p>The token for the next set of results, or null if there are no additional
@@ -135,6 +147,12 @@ namespace Model
      * for the workgroup resource.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
+
+    /**
+     * <p>The maximum number of results to be returned per request that lists the tags
+     * for the workgroup resource.</p>
+     */
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
 
     /**
      * <p>The maximum number of results to be returned per request that lists the tags

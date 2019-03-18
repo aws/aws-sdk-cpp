@@ -58,6 +58,12 @@ namespace Model
      * <p>Describes updates to whether the application uses the default checkpointing
      * behavior of Kinesis Data Analytics.</p>
      */
+    inline bool ConfigurationTypeUpdateHasBeenSet() const { return m_configurationTypeUpdateHasBeenSet; }
+
+    /**
+     * <p>Describes updates to whether the application uses the default checkpointing
+     * behavior of Kinesis Data Analytics.</p>
+     */
     inline void SetConfigurationTypeUpdate(const ConfigurationType& value) { m_configurationTypeUpdateHasBeenSet = true; m_configurationTypeUpdate = value; }
 
     /**
@@ -87,6 +93,11 @@ namespace Model
     /**
      * <p>Describes updates to whether checkpointing is enabled for an application.</p>
      */
+    inline bool CheckpointingEnabledUpdateHasBeenSet() const { return m_checkpointingEnabledUpdateHasBeenSet; }
+
+    /**
+     * <p>Describes updates to whether checkpointing is enabled for an application.</p>
+     */
     inline void SetCheckpointingEnabledUpdate(bool value) { m_checkpointingEnabledUpdateHasBeenSet = true; m_checkpointingEnabledUpdate = value; }
 
     /**
@@ -100,6 +111,12 @@ namespace Model
      * operations.</p>
      */
     inline long long GetCheckpointIntervalUpdate() const{ return m_checkpointIntervalUpdate; }
+
+    /**
+     * <p>Describes updates to the interval in milliseconds between checkpoint
+     * operations.</p>
+     */
+    inline bool CheckpointIntervalUpdateHasBeenSet() const { return m_checkpointIntervalUpdateHasBeenSet; }
 
     /**
      * <p>Describes updates to the interval in milliseconds between checkpoint
@@ -119,6 +136,12 @@ namespace Model
      * operation completes that a new checkpoint operation can start.</p>
      */
     inline long long GetMinPauseBetweenCheckpointsUpdate() const{ return m_minPauseBetweenCheckpointsUpdate; }
+
+    /**
+     * <p>Describes updates to the minimum time in milliseconds after a checkpoint
+     * operation completes that a new checkpoint operation can start.</p>
+     */
+    inline bool MinPauseBetweenCheckpointsUpdateHasBeenSet() const { return m_minPauseBetweenCheckpointsUpdateHasBeenSet; }
 
     /**
      * <p>Describes updates to the minimum time in milliseconds after a checkpoint

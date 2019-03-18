@@ -54,6 +54,11 @@ namespace Model
     /**
      * <p>The identifier of the snapshot whose setting you want to modify.</p>
      */
+    inline bool SnapshotIdentifierHasBeenSet() const { return m_snapshotIdentifierHasBeenSet; }
+
+    /**
+     * <p>The identifier of the snapshot whose setting you want to modify.</p>
+     */
     inline void SetSnapshotIdentifier(const Aws::String& value) { m_snapshotIdentifierHasBeenSet = true; m_snapshotIdentifier = value; }
 
     /**
@@ -98,6 +103,15 @@ namespace Model
      * immediately delete the snapshot.</p> <p>The value must be either -1 or an
      * integer between 1 and 3,653.</p>
      */
+    inline bool ManualSnapshotRetentionPeriodHasBeenSet() const { return m_manualSnapshotRetentionPeriodHasBeenSet; }
+
+    /**
+     * <p>The number of days that a manual snapshot is retained. If the value is -1,
+     * the manual snapshot is retained indefinitely.</p> <p>If the manual snapshot
+     * falls outside of the new retention period, you can specify the force option to
+     * immediately delete the snapshot.</p> <p>The value must be either -1 or an
+     * integer between 1 and 3,653.</p>
+     */
     inline void SetManualSnapshotRetentionPeriod(int value) { m_manualSnapshotRetentionPeriodHasBeenSet = true; m_manualSnapshotRetentionPeriod = value; }
 
     /**
@@ -115,6 +129,12 @@ namespace Model
      * passed.</p>
      */
     inline bool GetForce() const{ return m_force; }
+
+    /**
+     * <p>A Boolean option to override an exception if the retention period has already
+     * passed.</p>
+     */
+    inline bool ForceHasBeenSet() const { return m_forceHasBeenSet; }
 
     /**
      * <p>A Boolean option to override an exception if the retention period has already

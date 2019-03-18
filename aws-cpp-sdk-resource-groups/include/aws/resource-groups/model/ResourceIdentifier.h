@@ -55,6 +55,11 @@ namespace Model
     /**
      * <p>The ARN of a resource.</p>
      */
+    inline bool ResourceArnHasBeenSet() const { return m_resourceArnHasBeenSet; }
+
+    /**
+     * <p>The ARN of a resource.</p>
+     */
     inline void SetResourceArn(const Aws::String& value) { m_resourceArnHasBeenSet = true; m_resourceArn = value; }
 
     /**
@@ -87,6 +92,11 @@ namespace Model
      * <p>The resource type of a resource, such as <code>AWS::EC2::Instance</code>.</p>
      */
     inline const Aws::String& GetResourceType() const{ return m_resourceType; }
+
+    /**
+     * <p>The resource type of a resource, such as <code>AWS::EC2::Instance</code>.</p>
+     */
+    inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
 
     /**
      * <p>The resource type of a resource, such as <code>AWS::EC2::Instance</code>.</p>

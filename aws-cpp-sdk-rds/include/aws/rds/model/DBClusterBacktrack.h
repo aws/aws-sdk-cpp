@@ -62,6 +62,12 @@ namespace Model
      * <p>Contains a user-supplied DB cluster identifier. This identifier is the unique
      * key that identifies a DB cluster.</p>
      */
+    inline bool DBClusterIdentifierHasBeenSet() const { return m_dBClusterIdentifierHasBeenSet; }
+
+    /**
+     * <p>Contains a user-supplied DB cluster identifier. This identifier is the unique
+     * key that identifies a DB cluster.</p>
+     */
     inline void SetDBClusterIdentifier(const Aws::String& value) { m_dBClusterIdentifierHasBeenSet = true; m_dBClusterIdentifier = value; }
 
     /**
@@ -103,6 +109,11 @@ namespace Model
     /**
      * <p>Contains the backtrack identifier.</p>
      */
+    inline bool BacktrackIdentifierHasBeenSet() const { return m_backtrackIdentifierHasBeenSet; }
+
+    /**
+     * <p>Contains the backtrack identifier.</p>
+     */
     inline void SetBacktrackIdentifier(const Aws::String& value) { m_backtrackIdentifierHasBeenSet = true; m_backtrackIdentifier = value; }
 
     /**
@@ -139,6 +150,11 @@ namespace Model
     /**
      * <p>The timestamp of the time to which the DB cluster was backtracked.</p>
      */
+    inline bool BacktrackToHasBeenSet() const { return m_backtrackToHasBeenSet; }
+
+    /**
+     * <p>The timestamp of the time to which the DB cluster was backtracked.</p>
+     */
     inline void SetBacktrackTo(const Aws::Utils::DateTime& value) { m_backtrackToHasBeenSet = true; m_backtrackTo = value; }
 
     /**
@@ -165,6 +181,11 @@ namespace Model
     /**
      * <p>The timestamp of the time from which the DB cluster was backtracked.</p>
      */
+    inline bool BacktrackedFromHasBeenSet() const { return m_backtrackedFromHasBeenSet; }
+
+    /**
+     * <p>The timestamp of the time from which the DB cluster was backtracked.</p>
+     */
     inline void SetBacktrackedFrom(const Aws::Utils::DateTime& value) { m_backtrackedFromHasBeenSet = true; m_backtrackedFrom = value; }
 
     /**
@@ -187,6 +208,11 @@ namespace Model
      * <p>The timestamp of the time at which the backtrack was requested.</p>
      */
     inline const Aws::Utils::DateTime& GetBacktrackRequestCreationTime() const{ return m_backtrackRequestCreationTime; }
+
+    /**
+     * <p>The timestamp of the time at which the backtrack was requested.</p>
+     */
+    inline bool BacktrackRequestCreationTimeHasBeenSet() const { return m_backtrackRequestCreationTimeHasBeenSet; }
 
     /**
      * <p>The timestamp of the time at which the backtrack was requested.</p>
@@ -220,6 +246,18 @@ namespace Model
      * pending application to or rollback from the DB cluster.</p> </li> </ul>
      */
     inline const Aws::String& GetStatus() const{ return m_status; }
+
+    /**
+     * <p>The status of the backtrack. This property returns one of the following
+     * values:</p> <ul> <li> <p> <code>applying</code> - The backtrack is currently
+     * being applied to or rolled back from the DB cluster.</p> </li> <li> <p>
+     * <code>completed</code> - The backtrack has successfully been applied to or
+     * rolled back from the DB cluster.</p> </li> <li> <p> <code>failed</code> - An
+     * error occurred while the backtrack was applied to or rolled back from the DB
+     * cluster.</p> </li> <li> <p> <code>pending</code> - The backtrack is currently
+     * pending application to or rollback from the DB cluster.</p> </li> </ul>
+     */
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
     /**
      * <p>The status of the backtrack. This property returns one of the following
@@ -296,6 +334,9 @@ namespace Model
 
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
+
+    
+    inline bool ResponseMetadataHasBeenSet() const { return m_responseMetadataHasBeenSet; }
 
     
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = value; }

@@ -55,6 +55,11 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the task execution to cancel.</p>
      */
+    inline bool TaskExecutionArnHasBeenSet() const { return m_taskExecutionArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the task execution to cancel.</p>
+     */
     inline void SetTaskExecutionArn(const Aws::String& value) { m_taskExecutionArnHasBeenSet = true; m_taskExecutionArn = value; }
 
     /**

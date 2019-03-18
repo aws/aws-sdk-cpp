@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The query name.</p>
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>The query name.</p>
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
@@ -88,6 +93,11 @@ namespace Model
      * <p>The query description.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
+
+    /**
+     * <p>The query description.</p>
+     */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
 
     /**
      * <p>The query description.</p>
@@ -128,6 +138,11 @@ namespace Model
     /**
      * <p>The database to which the query belongs.</p>
      */
+    inline bool DatabaseHasBeenSet() const { return m_databaseHasBeenSet; }
+
+    /**
+     * <p>The database to which the query belongs.</p>
+     */
     inline void SetDatabase(const Aws::String& value) { m_databaseHasBeenSet = true; m_database = value; }
 
     /**
@@ -160,6 +175,11 @@ namespace Model
      * <p>The SQL query statements that comprise the query.</p>
      */
     inline const Aws::String& GetQueryString() const{ return m_queryString; }
+
+    /**
+     * <p>The SQL query statements that comprise the query.</p>
+     */
+    inline bool QueryStringHasBeenSet() const { return m_queryStringHasBeenSet; }
 
     /**
      * <p>The SQL query statements that comprise the query.</p>
@@ -200,6 +220,11 @@ namespace Model
     /**
      * <p>The unique identifier of the query.</p>
      */
+    inline bool NamedQueryIdHasBeenSet() const { return m_namedQueryIdHasBeenSet; }
+
+    /**
+     * <p>The unique identifier of the query.</p>
+     */
     inline void SetNamedQueryId(const Aws::String& value) { m_namedQueryIdHasBeenSet = true; m_namedQueryId = value; }
 
     /**
@@ -232,6 +257,11 @@ namespace Model
      * <p>The name of the workgroup that contains the named query.</p>
      */
     inline const Aws::String& GetWorkGroup() const{ return m_workGroup; }
+
+    /**
+     * <p>The name of the workgroup that contains the named query.</p>
+     */
+    inline bool WorkGroupHasBeenSet() const { return m_workGroupHasBeenSet; }
 
     /**
      * <p>The name of the workgroup that contains the named query.</p>

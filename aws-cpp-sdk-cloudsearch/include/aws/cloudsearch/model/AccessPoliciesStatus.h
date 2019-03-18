@@ -55,6 +55,9 @@ namespace Model
     inline const Aws::String& GetOptions() const{ return m_options; }
 
     
+    inline bool OptionsHasBeenSet() const { return m_optionsHasBeenSet; }
+
+    
     inline void SetOptions(const Aws::String& value) { m_optionsHasBeenSet = true; m_options = value; }
 
     
@@ -75,6 +78,9 @@ namespace Model
 
     
     inline const OptionStatus& GetStatus() const{ return m_status; }
+
+    
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
     
     inline void SetStatus(const OptionStatus& value) { m_statusHasBeenSet = true; m_status = value; }

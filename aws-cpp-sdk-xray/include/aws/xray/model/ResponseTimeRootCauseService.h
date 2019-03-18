@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p>The service name.</p>
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>The service name.</p>
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
@@ -90,6 +95,11 @@ namespace Model
      * <p>A collection of associated service names.</p>
      */
     inline const Aws::Vector<Aws::String>& GetNames() const{ return m_names; }
+
+    /**
+     * <p>A collection of associated service names.</p>
+     */
+    inline bool NamesHasBeenSet() const { return m_namesHasBeenSet; }
 
     /**
      * <p>A collection of associated service names.</p>
@@ -135,6 +145,11 @@ namespace Model
     /**
      * <p>The type associated to the service.</p>
      */
+    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
+
+    /**
+     * <p>The type associated to the service.</p>
+     */
     inline void SetType(const Aws::String& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
@@ -167,6 +182,11 @@ namespace Model
      * <p>The account ID associated to the service.</p>
      */
     inline const Aws::String& GetAccountId() const{ return m_accountId; }
+
+    /**
+     * <p>The account ID associated to the service.</p>
+     */
+    inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
 
     /**
      * <p>The account ID associated to the service.</p>
@@ -207,6 +227,11 @@ namespace Model
     /**
      * <p>The path of root cause entities found on the service. </p>
      */
+    inline bool EntityPathHasBeenSet() const { return m_entityPathHasBeenSet; }
+
+    /**
+     * <p>The path of root cause entities found on the service. </p>
+     */
     inline void SetEntityPath(const Aws::Vector<ResponseTimeRootCauseEntity>& value) { m_entityPathHasBeenSet = true; m_entityPath = value; }
 
     /**
@@ -239,6 +264,11 @@ namespace Model
      * <p>A Boolean value indicating if the service is inferred from the trace.</p>
      */
     inline bool GetInferred() const{ return m_inferred; }
+
+    /**
+     * <p>A Boolean value indicating if the service is inferred from the trace.</p>
+     */
+    inline bool InferredHasBeenSet() const { return m_inferredHasBeenSet; }
 
     /**
      * <p>A Boolean value indicating if the service is inferred from the trace.</p>

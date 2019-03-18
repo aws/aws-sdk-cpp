@@ -55,6 +55,11 @@ namespace Model
     /**
      * <p>The period of time that you want the forecast to cover.</p>
      */
+    inline bool TimePeriodHasBeenSet() const { return m_timePeriodHasBeenSet; }
+
+    /**
+     * <p>The period of time that you want the forecast to cover.</p>
+     */
     inline void SetTimePeriod(const DateInterval& value) { m_timePeriodHasBeenSet = true; m_timePeriod = value; }
 
     /**
@@ -84,6 +89,18 @@ namespace Model
      * <p>UnblendedCost</p> </li> </ul>
      */
     inline const Metric& GetMetric() const{ return m_metric; }
+
+    /**
+     * <p>Which metric Cost Explorer uses to create your forecast. For more information
+     * about blended and unblended rates, see <a
+     * href="https://aws.amazon.com/premiumsupport/knowledge-center/blended-rates-intro/">Why
+     * does the "blended" annotation appear on some line items in my bill?</a>. </p>
+     * <p>Valid values for a <code>GetCostForecast</code> call are the following:</p>
+     * <ul> <li> <p>AmortizedCost</p> </li> <li> <p>BlendedCost</p> </li> <li>
+     * <p>NetAmortizedCost</p> </li> <li> <p>NetUnblendedCost</p> </li> <li>
+     * <p>UnblendedCost</p> </li> </ul>
+     */
+    inline bool MetricHasBeenSet() const { return m_metricHasBeenSet; }
 
     /**
      * <p>Which metric Cost Explorer uses to create your forecast. For more information
@@ -148,6 +165,14 @@ namespace Model
      * <p>The <code>GetCostForecast</code> operation supports only <code>DAILY</code>
      * and <code>MONTHLY</code> granularities.</p>
      */
+    inline bool GranularityHasBeenSet() const { return m_granularityHasBeenSet; }
+
+    /**
+     * <p>How granular you want the forecast to be. You can get 3 months of
+     * <code>DAILY</code> forecasts or 12 months of <code>MONTHLY</code> forecasts.</p>
+     * <p>The <code>GetCostForecast</code> operation supports only <code>DAILY</code>
+     * and <code>MONTHLY</code> granularities.</p>
+     */
     inline void SetGranularity(const Granularity& value) { m_granularityHasBeenSet = true; m_granularity = value; }
 
     /**
@@ -185,6 +210,12 @@ namespace Model
      * <p>The filters that you want to use to filter your forecast. Cost Explorer API
      * supports all of the Cost Explorer filters.</p>
      */
+    inline bool FilterHasBeenSet() const { return m_filterHasBeenSet; }
+
+    /**
+     * <p>The filters that you want to use to filter your forecast. Cost Explorer API
+     * supports all of the Cost Explorer filters.</p>
+     */
     inline void SetFilter(const Expression& value) { m_filterHasBeenSet = true; m_filter = value; }
 
     /**
@@ -214,6 +245,15 @@ namespace Model
      * in wider prediction intervals.</p>
      */
     inline int GetPredictionIntervalLevel() const{ return m_predictionIntervalLevel; }
+
+    /**
+     * <p>Cost Explorer always returns the mean forecast as a single point. You can
+     * request a prediction interval around the mean by specifying a confidence level.
+     * The higher the confidence level, the more confident Cost Explorer is about the
+     * actual value falling in the prediction interval. Higher confidence levels result
+     * in wider prediction intervals.</p>
+     */
+    inline bool PredictionIntervalLevelHasBeenSet() const { return m_predictionIntervalLevelHasBeenSet; }
 
     /**
      * <p>Cost Explorer always returns the mean forecast as a single point. You can

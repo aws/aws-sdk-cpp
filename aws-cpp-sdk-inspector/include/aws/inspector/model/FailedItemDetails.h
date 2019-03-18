@@ -55,6 +55,11 @@ namespace Model
     /**
      * <p>The status code of a failed item.</p>
      */
+    inline bool FailureCodeHasBeenSet() const { return m_failureCodeHasBeenSet; }
+
+    /**
+     * <p>The status code of a failed item.</p>
+     */
     inline void SetFailureCode(const FailedItemErrorCode& value) { m_failureCodeHasBeenSet = true; m_failureCode = value; }
 
     /**
@@ -78,6 +83,12 @@ namespace Model
      * specified resource.</p>
      */
     inline bool GetRetryable() const{ return m_retryable; }
+
+    /**
+     * <p>Indicates whether you can immediately retry a request for this item for a
+     * specified resource.</p>
+     */
+    inline bool RetryableHasBeenSet() const { return m_retryableHasBeenSet; }
 
     /**
      * <p>Indicates whether you can immediately retry a request for this item for a

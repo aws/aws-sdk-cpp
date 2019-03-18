@@ -65,6 +65,12 @@ namespace Model
      * <p>The VPC security group IDs, in the form sg-xxxxxxxx. Specify the security
      * groups for the VPC that is specified in the <code>Subnets</code> field.</p>
      */
+    inline bool SecurityGroupIdsHasBeenSet() const { return m_securityGroupIdsHasBeenSet; }
+
+    /**
+     * <p>The VPC security group IDs, in the form sg-xxxxxxxx. Specify the security
+     * groups for the VPC that is specified in the <code>Subnets</code> field.</p>
+     */
     inline void SetSecurityGroupIds(const Aws::Vector<Aws::String>& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds = value; }
 
     /**
@@ -109,6 +115,12 @@ namespace Model
      * job or model. </p>
      */
     inline const Aws::Vector<Aws::String>& GetSubnets() const{ return m_subnets; }
+
+    /**
+     * <p>The ID of the subnets in the VPC to which you want to connect your training
+     * job or model. </p>
+     */
+    inline bool SubnetsHasBeenSet() const { return m_subnetsHasBeenSet; }
 
     /**
      * <p>The ID of the subnets in the VPC to which you want to connect your training

@@ -54,6 +54,11 @@ namespace Model
     /**
      * A client token used to correlate requests and responses.
      */
+    inline bool AmznClientTokenHasBeenSet() const { return m_amznClientTokenHasBeenSet; }
+
+    /**
+     * A client token used to correlate requests and responses.
+     */
     inline void SetAmznClientToken(const Aws::String& value) { m_amznClientTokenHasBeenSet = true; m_amznClientToken = value; }
 
     /**
@@ -86,6 +91,11 @@ namespace Model
      * The ID of the connector definition.
      */
     inline const Aws::String& GetConnectorDefinitionId() const{ return m_connectorDefinitionId; }
+
+    /**
+     * The ID of the connector definition.
+     */
+    inline bool ConnectorDefinitionIdHasBeenSet() const { return m_connectorDefinitionIdHasBeenSet; }
 
     /**
      * The ID of the connector definition.
@@ -123,6 +133,12 @@ namespace Model
      * configuration settings.
      */
     inline const Aws::Vector<Connector>& GetConnectors() const{ return m_connectors; }
+
+    /**
+     * A list of references to connectors in this version, with their corresponding
+     * configuration settings.
+     */
+    inline bool ConnectorsHasBeenSet() const { return m_connectorsHasBeenSet; }
 
     /**
      * A list of references to connectors in this version, with their corresponding

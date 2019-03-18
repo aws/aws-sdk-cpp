@@ -53,6 +53,11 @@ namespace Model
     /**
      * <p>The name of the source instance or disk snapshot to be copied.</p>
      */
+    inline bool SourceSnapshotNameHasBeenSet() const { return m_sourceSnapshotNameHasBeenSet; }
+
+    /**
+     * <p>The name of the source instance or disk snapshot to be copied.</p>
+     */
     inline void SetSourceSnapshotName(const Aws::String& value) { m_sourceSnapshotNameHasBeenSet = true; m_sourceSnapshotName = value; }
 
     /**
@@ -89,6 +94,11 @@ namespace Model
     /**
      * <p>The name of the new instance or disk snapshot to be created as a copy.</p>
      */
+    inline bool TargetSnapshotNameHasBeenSet() const { return m_targetSnapshotNameHasBeenSet; }
+
+    /**
+     * <p>The name of the new instance or disk snapshot to be created as a copy.</p>
+     */
     inline void SetTargetSnapshotName(const Aws::String& value) { m_targetSnapshotNameHasBeenSet = true; m_targetSnapshotName = value; }
 
     /**
@@ -121,6 +131,11 @@ namespace Model
      * <p>The AWS Region where the source snapshot is located.</p>
      */
     inline const RegionName& GetSourceRegion() const{ return m_sourceRegion; }
+
+    /**
+     * <p>The AWS Region where the source snapshot is located.</p>
+     */
+    inline bool SourceRegionHasBeenSet() const { return m_sourceRegionHasBeenSet; }
 
     /**
      * <p>The AWS Region where the source snapshot is located.</p>

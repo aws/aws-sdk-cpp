@@ -55,6 +55,11 @@ namespace Model
     /**
      * <p>The date the billing group was created.</p>
      */
+    inline bool CreationDateHasBeenSet() const { return m_creationDateHasBeenSet; }
+
+    /**
+     * <p>The date the billing group was created.</p>
+     */
     inline void SetCreationDate(const Aws::Utils::DateTime& value) { m_creationDateHasBeenSet = true; m_creationDate = value; }
 
     /**

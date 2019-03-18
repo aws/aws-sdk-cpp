@@ -63,6 +63,12 @@ namespace Model
      * <p>The name of the processor feature. Valid names are <code>coreCount</code> and
      * <code>threadsPerCore</code>.</p>
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>The name of the processor feature. Valid names are <code>coreCount</code> and
+     * <code>threadsPerCore</code>.</p>
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
@@ -104,6 +110,11 @@ namespace Model
     /**
      * <p>The default value for the processor feature of the DB instance class.</p>
      */
+    inline bool DefaultValueHasBeenSet() const { return m_defaultValueHasBeenSet; }
+
+    /**
+     * <p>The default value for the processor feature of the DB instance class.</p>
+     */
     inline void SetDefaultValue(const Aws::String& value) { m_defaultValueHasBeenSet = true; m_defaultValue = value; }
 
     /**
@@ -136,6 +147,11 @@ namespace Model
      * <p>The allowed values for the processor feature of the DB instance class.</p>
      */
     inline const Aws::String& GetAllowedValues() const{ return m_allowedValues; }
+
+    /**
+     * <p>The allowed values for the processor feature of the DB instance class.</p>
+     */
+    inline bool AllowedValuesHasBeenSet() const { return m_allowedValuesHasBeenSet; }
 
     /**
      * <p>The allowed values for the processor feature of the DB instance class.</p>

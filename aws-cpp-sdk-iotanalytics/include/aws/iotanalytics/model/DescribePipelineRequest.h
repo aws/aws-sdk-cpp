@@ -50,6 +50,11 @@ namespace Model
     /**
      * <p>The name of the pipeline whose information is retrieved.</p>
      */
+    inline bool PipelineNameHasBeenSet() const { return m_pipelineNameHasBeenSet; }
+
+    /**
+     * <p>The name of the pipeline whose information is retrieved.</p>
+     */
     inline void SetPipelineName(const Aws::String& value) { m_pipelineNameHasBeenSet = true; m_pipelineName = value; }
 
     /**

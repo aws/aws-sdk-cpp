@@ -61,6 +61,11 @@ namespace Model
     /**
      * <p>The domain that you want to use for tracking open and click events.</p>
      */
+    inline bool CustomRedirectDomainHasBeenSet() const { return m_customRedirectDomainHasBeenSet; }
+
+    /**
+     * <p>The domain that you want to use for tracking open and click events.</p>
+     */
     inline void SetCustomRedirectDomain(const Aws::String& value) { m_customRedirectDomainHasBeenSet = true; m_customRedirectDomain = value; }
 
     /**

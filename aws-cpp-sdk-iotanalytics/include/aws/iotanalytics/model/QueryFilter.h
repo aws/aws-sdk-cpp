@@ -58,6 +58,12 @@ namespace Model
      * <p>Used to limit data to that which has arrived since the last execution of the
      * action.</p>
      */
+    inline bool DeltaTimeHasBeenSet() const { return m_deltaTimeHasBeenSet; }
+
+    /**
+     * <p>Used to limit data to that which has arrived since the last execution of the
+     * action.</p>
+     */
     inline void SetDeltaTime(const DeltaTime& value) { m_deltaTimeHasBeenSet = true; m_deltaTime = value; }
 
     /**

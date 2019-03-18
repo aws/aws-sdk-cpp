@@ -60,6 +60,11 @@ namespace Model
     /**
      * <p>The ID of the audit that generated this result (finding)</p>
      */
+    inline bool TaskIdHasBeenSet() const { return m_taskIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the audit that generated this result (finding)</p>
+     */
     inline void SetTaskId(const Aws::String& value) { m_taskIdHasBeenSet = true; m_taskId = value; }
 
     /**
@@ -92,6 +97,11 @@ namespace Model
      * <p>The audit check that generated this result.</p>
      */
     inline const Aws::String& GetCheckName() const{ return m_checkName; }
+
+    /**
+     * <p>The audit check that generated this result.</p>
+     */
+    inline bool CheckNameHasBeenSet() const { return m_checkNameHasBeenSet; }
 
     /**
      * <p>The audit check that generated this result.</p>
@@ -132,6 +142,11 @@ namespace Model
     /**
      * <p>The time the audit started.</p>
      */
+    inline bool TaskStartTimeHasBeenSet() const { return m_taskStartTimeHasBeenSet; }
+
+    /**
+     * <p>The time the audit started.</p>
+     */
     inline void SetTaskStartTime(const Aws::Utils::DateTime& value) { m_taskStartTimeHasBeenSet = true; m_taskStartTime = value; }
 
     /**
@@ -154,6 +169,11 @@ namespace Model
      * <p>The time the result (finding) was discovered.</p>
      */
     inline const Aws::Utils::DateTime& GetFindingTime() const{ return m_findingTime; }
+
+    /**
+     * <p>The time the result (finding) was discovered.</p>
+     */
+    inline bool FindingTimeHasBeenSet() const { return m_findingTimeHasBeenSet; }
 
     /**
      * <p>The time the result (finding) was discovered.</p>
@@ -184,6 +204,11 @@ namespace Model
     /**
      * <p>The severity of the result (finding).</p>
      */
+    inline bool SeverityHasBeenSet() const { return m_severityHasBeenSet; }
+
+    /**
+     * <p>The severity of the result (finding).</p>
+     */
     inline void SetSeverity(const AuditFindingSeverity& value) { m_severityHasBeenSet = true; m_severity = value; }
 
     /**
@@ -210,6 +235,11 @@ namespace Model
     /**
      * <p>The resource that was found to be non-compliant with the audit check.</p>
      */
+    inline bool NonCompliantResourceHasBeenSet() const { return m_nonCompliantResourceHasBeenSet; }
+
+    /**
+     * <p>The resource that was found to be non-compliant with the audit check.</p>
+     */
     inline void SetNonCompliantResource(const NonCompliantResource& value) { m_nonCompliantResourceHasBeenSet = true; m_nonCompliantResource = value; }
 
     /**
@@ -232,6 +262,11 @@ namespace Model
      * <p>The list of related resources.</p>
      */
     inline const Aws::Vector<RelatedResource>& GetRelatedResources() const{ return m_relatedResources; }
+
+    /**
+     * <p>The list of related resources.</p>
+     */
+    inline bool RelatedResourcesHasBeenSet() const { return m_relatedResourcesHasBeenSet; }
 
     /**
      * <p>The list of related resources.</p>
@@ -272,6 +307,11 @@ namespace Model
     /**
      * <p>The reason the resource was non-compliant.</p>
      */
+    inline bool ReasonForNonComplianceHasBeenSet() const { return m_reasonForNonComplianceHasBeenSet; }
+
+    /**
+     * <p>The reason the resource was non-compliant.</p>
+     */
     inline void SetReasonForNonCompliance(const Aws::String& value) { m_reasonForNonComplianceHasBeenSet = true; m_reasonForNonCompliance = value; }
 
     /**
@@ -304,6 +344,11 @@ namespace Model
      * <p>A code which indicates the reason that the resource was non-compliant.</p>
      */
     inline const Aws::String& GetReasonForNonComplianceCode() const{ return m_reasonForNonComplianceCode; }
+
+    /**
+     * <p>A code which indicates the reason that the resource was non-compliant.</p>
+     */
+    inline bool ReasonForNonComplianceCodeHasBeenSet() const { return m_reasonForNonComplianceCodeHasBeenSet; }
 
     /**
      * <p>A code which indicates the reason that the resource was non-compliant.</p>

@@ -50,6 +50,11 @@ namespace Model
     /**
      * The ID of the subscription definition.
      */
+    inline bool SubscriptionDefinitionIdHasBeenSet() const { return m_subscriptionDefinitionIdHasBeenSet; }
+
+    /**
+     * The ID of the subscription definition.
+     */
     inline void SetSubscriptionDefinitionId(const Aws::String& value) { m_subscriptionDefinitionIdHasBeenSet = true; m_subscriptionDefinitionId = value; }
 
     /**

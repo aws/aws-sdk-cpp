@@ -52,6 +52,11 @@ namespace Model
     /**
      * <p> The unique ID of a deployment. </p>
      */
+    inline bool DeploymentIdHasBeenSet() const { return m_deploymentIdHasBeenSet; }
+
+    /**
+     * <p> The unique ID of a deployment. </p>
+     */
     inline void SetDeploymentId(const Aws::String& value) { m_deploymentIdHasBeenSet = true; m_deploymentId = value; }
 
     /**
@@ -84,6 +89,11 @@ namespace Model
      * <p> The unique ID of a deployment target. </p>
      */
     inline const Aws::String& GetTargetId() const{ return m_targetId; }
+
+    /**
+     * <p> The unique ID of a deployment target. </p>
+     */
+    inline bool TargetIdHasBeenSet() const { return m_targetIdHasBeenSet; }
 
     /**
      * <p> The unique ID of a deployment target. </p>

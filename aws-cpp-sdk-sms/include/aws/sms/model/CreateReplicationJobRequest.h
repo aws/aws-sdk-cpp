@@ -54,6 +54,11 @@ namespace Model
     /**
      * <p>The identifier of the server.</p>
      */
+    inline bool ServerIdHasBeenSet() const { return m_serverIdHasBeenSet; }
+
+    /**
+     * <p>The identifier of the server.</p>
+     */
     inline void SetServerId(const Aws::String& value) { m_serverIdHasBeenSet = true; m_serverId = value; }
 
     /**
@@ -90,6 +95,11 @@ namespace Model
     /**
      * <p>The seed replication time.</p>
      */
+    inline bool SeedReplicationTimeHasBeenSet() const { return m_seedReplicationTimeHasBeenSet; }
+
+    /**
+     * <p>The seed replication time.</p>
+     */
     inline void SetSeedReplicationTime(const Aws::Utils::DateTime& value) { m_seedReplicationTimeHasBeenSet = true; m_seedReplicationTime = value; }
 
     /**
@@ -116,6 +126,11 @@ namespace Model
     /**
      * <p>The time between consecutive replication runs, in hours.</p>
      */
+    inline bool FrequencyHasBeenSet() const { return m_frequencyHasBeenSet; }
+
+    /**
+     * <p>The time between consecutive replication runs, in hours.</p>
+     */
     inline void SetFrequency(int value) { m_frequencyHasBeenSet = true; m_frequency = value; }
 
     /**
@@ -128,6 +143,11 @@ namespace Model
      * <p/>
      */
     inline bool GetRunOnce() const{ return m_runOnce; }
+
+    /**
+     * <p/>
+     */
+    inline bool RunOnceHasBeenSet() const { return m_runOnceHasBeenSet; }
 
     /**
      * <p/>
@@ -145,6 +165,12 @@ namespace Model
      * run.</p>
      */
     inline const LicenseType& GetLicenseType() const{ return m_licenseType; }
+
+    /**
+     * <p>The license type to be used for the AMI created by a successful replication
+     * run.</p>
+     */
+    inline bool LicenseTypeHasBeenSet() const { return m_licenseTypeHasBeenSet; }
 
     /**
      * <p>The license type to be used for the AMI created by a successful replication
@@ -175,6 +201,11 @@ namespace Model
      * <p>The name of the IAM role to be used by the AWS SMS.</p>
      */
     inline const Aws::String& GetRoleName() const{ return m_roleName; }
+
+    /**
+     * <p>The name of the IAM role to be used by the AWS SMS.</p>
+     */
+    inline bool RoleNameHasBeenSet() const { return m_roleNameHasBeenSet; }
 
     /**
      * <p>The name of the IAM role to be used by the AWS SMS.</p>
@@ -211,6 +242,11 @@ namespace Model
      * <p>The description of the replication job.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
+
+    /**
+     * <p>The description of the replication job.</p>
+     */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
 
     /**
      * <p>The description of the replication job.</p>
@@ -253,6 +289,12 @@ namespace Model
      * <p>The maximum number of SMS-created AMIs to retain. The oldest will be deleted
      * once the maximum number is reached and a new AMI is created.</p>
      */
+    inline bool NumberOfRecentAmisToKeepHasBeenSet() const { return m_numberOfRecentAmisToKeepHasBeenSet; }
+
+    /**
+     * <p>The maximum number of SMS-created AMIs to retain. The oldest will be deleted
+     * once the maximum number is reached and a new AMI is created.</p>
+     */
     inline void SetNumberOfRecentAmisToKeep(int value) { m_numberOfRecentAmisToKeepHasBeenSet = true; m_numberOfRecentAmisToKeep = value; }
 
     /**
@@ -267,6 +309,12 @@ namespace Model
      * <code>KmsKeyId</code> below.</p>
      */
     inline bool GetEncrypted() const{ return m_encrypted; }
+
+    /**
+     * <p>When <i>true</i>, the replication job produces encrypted AMIs. See also
+     * <code>KmsKeyId</code> below.</p>
+     */
+    inline bool EncryptedHasBeenSet() const { return m_encryptedHasBeenSet; }
 
     /**
      * <p>When <i>true</i>, the replication job produces encrypted AMIs. See also
@@ -289,6 +337,15 @@ namespace Model
      * not specified, the customer's default KMS key for EBS is used. </p>
      */
     inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
+
+    /**
+     * <p>KMS key ID for replication jobs that produce encrypted AMIs. Can be any of
+     * the following: </p> <ul> <li> <p>KMS key ID</p> </li> <li> <p>KMS key alias</p>
+     * </li> <li> <p>ARN referring to KMS key ID</p> </li> <li> <p>ARN referring to KMS
+     * key alias</p> </li> </ul> <p> If encrypted is <i>true</i> but a KMS key id is
+     * not specified, the customer's default KMS key for EBS is used. </p>
+     */
+    inline bool KmsKeyIdHasBeenSet() const { return m_kmsKeyIdHasBeenSet; }
 
     /**
      * <p>KMS key ID for replication jobs that produce encrypted AMIs. Can be any of

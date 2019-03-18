@@ -61,6 +61,11 @@ namespace Model
     /**
      * <p>The date that the public key was added to the user account.</p>
      */
+    inline bool DateImportedHasBeenSet() const { return m_dateImportedHasBeenSet; }
+
+    /**
+     * <p>The date that the public key was added to the user account.</p>
+     */
     inline void SetDateImported(const Aws::Utils::DateTime& value) { m_dateImportedHasBeenSet = true; m_dateImported = value; }
 
     /**
@@ -84,6 +89,12 @@ namespace Model
      * <code>PublicKeyId</code>.</p>
      */
     inline const Aws::String& GetSshPublicKeyBody() const{ return m_sshPublicKeyBody; }
+
+    /**
+     * <p>The content of the SSH public key as specified by the
+     * <code>PublicKeyId</code>.</p>
+     */
+    inline bool SshPublicKeyBodyHasBeenSet() const { return m_sshPublicKeyBodyHasBeenSet; }
 
     /**
      * <p>The content of the SSH public key as specified by the
@@ -127,6 +138,12 @@ namespace Model
      * public key.</p>
      */
     inline const Aws::String& GetSshPublicKeyId() const{ return m_sshPublicKeyId; }
+
+    /**
+     * <p>The <code>SshPublicKeyId</code> parameter contains the identifier of the
+     * public key.</p>
+     */
+    inline bool SshPublicKeyIdHasBeenSet() const { return m_sshPublicKeyIdHasBeenSet; }
 
     /**
      * <p>The <code>SshPublicKeyId</code> parameter contains the identifier of the

@@ -56,6 +56,9 @@ namespace Model
     inline const Aws::String& GetDomainName() const{ return m_domainName; }
 
     
+    inline bool DomainNameHasBeenSet() const { return m_domainNameHasBeenSet; }
+
+    
     inline void SetDomainName(const Aws::String& value) { m_domainNameHasBeenSet = true; m_domainName = value; }
 
     
@@ -81,6 +84,14 @@ namespace Model
      * option to <code>false</code>. </p>
      */
     inline bool GetMultiAZ() const{ return m_multiAZ; }
+
+    /**
+     * <p>You expand an existing search domain to a second Availability Zone by setting
+     * the Multi-AZ option to true. Similarly, you can turn off the Multi-AZ option to
+     * downgrade the domain to a single Availability Zone by setting the Multi-AZ
+     * option to <code>false</code>. </p>
+     */
+    inline bool MultiAZHasBeenSet() const { return m_multiAZHasBeenSet; }
 
     /**
      * <p>You expand an existing search domain to a second Availability Zone by setting

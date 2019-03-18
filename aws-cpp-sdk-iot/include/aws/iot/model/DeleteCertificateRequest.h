@@ -61,6 +61,12 @@ namespace Model
      * <p>The ID of the certificate. (The last part of the certificate ARN contains the
      * certificate ID.)</p>
      */
+    inline bool CertificateIdHasBeenSet() const { return m_certificateIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the certificate. (The last part of the certificate ARN contains the
+     * certificate ID.)</p>
+     */
     inline void SetCertificateId(const Aws::String& value) { m_certificateIdHasBeenSet = true; m_certificateId = value; }
 
     /**
@@ -98,6 +104,11 @@ namespace Model
      * <p>Forces a certificate request to be deleted.</p>
      */
     inline bool GetForceDelete() const{ return m_forceDelete; }
+
+    /**
+     * <p>Forces a certificate request to be deleted.</p>
+     */
+    inline bool ForceDeleteHasBeenSet() const { return m_forceDeleteHasBeenSet; }
 
     /**
      * <p>Forces a certificate request to be deleted.</p>

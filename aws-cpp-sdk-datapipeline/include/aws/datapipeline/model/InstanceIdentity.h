@@ -66,6 +66,13 @@ namespace Model
      * launched and exposed to the instance via the instance metadata service in the
      * form of a JSON representation of an object.</p>
      */
+    inline bool DocumentHasBeenSet() const { return m_documentHasBeenSet; }
+
+    /**
+     * <p>A description of an EC2 instance that is generated when the instance is
+     * launched and exposed to the instance via the instance metadata service in the
+     * form of a JSON representation of an object.</p>
+     */
     inline void SetDocument(const Aws::String& value) { m_documentHasBeenSet = true; m_document = value; }
 
     /**
@@ -109,6 +116,12 @@ namespace Model
      * information provided in the instance identity document.</p>
      */
     inline const Aws::String& GetSignature() const{ return m_signature; }
+
+    /**
+     * <p>A signature which can be used to verify the accuracy and authenticity of the
+     * information provided in the instance identity document.</p>
+     */
+    inline bool SignatureHasBeenSet() const { return m_signatureHasBeenSet; }
 
     /**
      * <p>A signature which can be used to verify the accuracy and authenticity of the

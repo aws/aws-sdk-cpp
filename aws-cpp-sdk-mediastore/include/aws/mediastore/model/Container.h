@@ -64,6 +64,14 @@ namespace Model
      * value when the container is created. Once the value has been assigned, it does
      * not change.</p>
      */
+    inline bool EndpointHasBeenSet() const { return m_endpointHasBeenSet; }
+
+    /**
+     * <p>The DNS endpoint of the container. Use the endpoint to identify the specific
+     * container when sending requests to the data plane. The service assigns this
+     * value when the container is created. Once the value has been assigned, it does
+     * not change.</p>
+     */
     inline void SetEndpoint(const Aws::String& value) { m_endpointHasBeenSet = true; m_endpoint = value; }
 
     /**
@@ -115,6 +123,11 @@ namespace Model
     /**
      * <p>Unix timestamp.</p>
      */
+    inline bool CreationTimeHasBeenSet() const { return m_creationTimeHasBeenSet; }
+
+    /**
+     * <p>Unix timestamp.</p>
+     */
     inline void SetCreationTime(const Aws::Utils::DateTime& value) { m_creationTimeHasBeenSet = true; m_creationTime = value; }
 
     /**
@@ -140,6 +153,14 @@ namespace Model
      * arn:aws:mediastore:us-west-2:111122223333:container/movies </p>
      */
     inline const Aws::String& GetARN() const{ return m_aRN; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the container. The ARN has the following
+     * format:</p> <p>arn:aws:&lt;region&gt;:&lt;account that owns this
+     * container&gt;:container/&lt;name of container&gt; </p> <p>For example:
+     * arn:aws:mediastore:us-west-2:111122223333:container/movies </p>
+     */
+    inline bool ARNHasBeenSet() const { return m_aRNHasBeenSet; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the container. The ARN has the following
@@ -198,6 +219,11 @@ namespace Model
     /**
      * <p>The name of the container.</p>
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>The name of the container.</p>
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
@@ -234,6 +260,15 @@ namespace Model
      * <code>ACTIVE</code>.</p>
      */
     inline const ContainerStatus& GetStatus() const{ return m_status; }
+
+    /**
+     * <p>The status of container creation or deletion. The status is one of the
+     * following: <code>CREATING</code>, <code>ACTIVE</code>, or <code>DELETING</code>.
+     * While the service is creating the container, the status is
+     * <code>CREATING</code>. When the endpoint is available, the status changes to
+     * <code>ACTIVE</code>.</p>
+     */
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
     /**
      * <p>The status of container creation or deletion. The status is one of the
@@ -281,6 +316,16 @@ namespace Model
      * CloudWatch Logs.</p>
      */
     inline bool GetAccessLoggingEnabled() const{ return m_accessLoggingEnabled; }
+
+    /**
+     * <p>The state of access logging on the container. This value is
+     * <code>false</code> by default, indicating that AWS Elemental MediaStore does not
+     * send access logs to Amazon CloudWatch Logs. When you enable access logging on
+     * the container, MediaStore changes this value to <code>true</code>, indicating
+     * that the service delivers access logs for objects stored in that container to
+     * CloudWatch Logs.</p>
+     */
+    inline bool AccessLoggingEnabledHasBeenSet() const { return m_accessLoggingEnabledHasBeenSet; }
 
     /**
      * <p>The state of access logging on the container. This value is

@@ -54,6 +54,11 @@ namespace Model
     /**
      * <p>The name of the DB instance to associate the IAM role with.</p>
      */
+    inline bool DBInstanceIdentifierHasBeenSet() const { return m_dBInstanceIdentifierHasBeenSet; }
+
+    /**
+     * <p>The name of the DB instance to associate the IAM role with.</p>
+     */
     inline void SetDBInstanceIdentifier(const Aws::String& value) { m_dBInstanceIdentifierHasBeenSet = true; m_dBInstanceIdentifier = value; }
 
     /**
@@ -88,6 +93,13 @@ namespace Model
      * </p>
      */
     inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the IAM role to associate with the DB
+     * instance, for example <code>arn:aws:iam::123456789012:role/AccessRole</code>.
+     * </p>
+     */
+    inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the IAM role to associate with the DB
@@ -138,6 +150,13 @@ namespace Model
      * <a>DBEngineVersion</a>. </p>
      */
     inline const Aws::String& GetFeatureName() const{ return m_featureName; }
+
+    /**
+     * <p>The name of the feature for the DB instance that the IAM role is to be
+     * associated with. For the list of supported feature names, see
+     * <a>DBEngineVersion</a>. </p>
+     */
+    inline bool FeatureNameHasBeenSet() const { return m_featureNameHasBeenSet; }
 
     /**
      * <p>The name of the feature for the DB instance that the IAM role is to be

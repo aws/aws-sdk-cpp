@@ -61,6 +61,11 @@ namespace Model
     /**
      * <p>The name of the security profile you want to update.</p>
      */
+    inline bool SecurityProfileNameHasBeenSet() const { return m_securityProfileNameHasBeenSet; }
+
+    /**
+     * <p>The name of the security profile you want to update.</p>
+     */
     inline void SetSecurityProfileName(const Aws::String& value) { m_securityProfileNameHasBeenSet = true; m_securityProfileName = value; }
 
     /**
@@ -93,6 +98,11 @@ namespace Model
      * <p>A description of the security profile.</p>
      */
     inline const Aws::String& GetSecurityProfileDescription() const{ return m_securityProfileDescription; }
+
+    /**
+     * <p>A description of the security profile.</p>
+     */
+    inline bool SecurityProfileDescriptionHasBeenSet() const { return m_securityProfileDescriptionHasBeenSet; }
 
     /**
      * <p>A description of the security profile.</p>
@@ -135,6 +145,12 @@ namespace Model
      * <p>Specifies the behaviors that, when violated by a device (thing), cause an
      * alert.</p>
      */
+    inline bool BehaviorsHasBeenSet() const { return m_behaviorsHasBeenSet; }
+
+    /**
+     * <p>Specifies the behaviors that, when violated by a device (thing), cause an
+     * alert.</p>
+     */
     inline void SetBehaviors(const Aws::Vector<Behavior>& value) { m_behaviorsHasBeenSet = true; m_behaviors = value; }
 
     /**
@@ -172,6 +188,11 @@ namespace Model
      * <p>Where the alerts are sent. (Alerts are always sent to the console.)</p>
      */
     inline const Aws::Map<AlertTargetType, AlertTarget>& GetAlertTargets() const{ return m_alertTargets; }
+
+    /**
+     * <p>Where the alerts are sent. (Alerts are always sent to the console.)</p>
+     */
+    inline bool AlertTargetsHasBeenSet() const { return m_alertTargetsHasBeenSet; }
 
     /**
      * <p>Where the alerts are sent. (Alerts are always sent to the console.)</p>
@@ -220,6 +241,13 @@ namespace Model
      * also retained for any metric specified here.</p>
      */
     inline const Aws::Vector<Aws::String>& GetAdditionalMetricsToRetain() const{ return m_additionalMetricsToRetain; }
+
+    /**
+     * <p>A list of metrics whose data is retained (stored). By default, data is
+     * retained for any metric used in the profile's <code>behaviors</code> but it is
+     * also retained for any metric specified here.</p>
+     */
+    inline bool AdditionalMetricsToRetainHasBeenSet() const { return m_additionalMetricsToRetainHasBeenSet; }
 
     /**
      * <p>A list of metrics whose data is retained (stored). By default, data is
@@ -283,6 +311,13 @@ namespace Model
      * If any <code>behaviors</code> are defined in the current invocation an exception
      * occurs.</p>
      */
+    inline bool DeleteBehaviorsHasBeenSet() const { return m_deleteBehaviorsHasBeenSet; }
+
+    /**
+     * <p>If true, delete all <code>behaviors</code> defined for this security profile.
+     * If any <code>behaviors</code> are defined in the current invocation an exception
+     * occurs.</p>
+     */
     inline void SetDeleteBehaviors(bool value) { m_deleteBehaviorsHasBeenSet = true; m_deleteBehaviors = value; }
 
     /**
@@ -299,6 +334,13 @@ namespace Model
      * an exception occurs.</p>
      */
     inline bool GetDeleteAlertTargets() const{ return m_deleteAlertTargets; }
+
+    /**
+     * <p>If true, delete all <code>alertTargets</code> defined for this security
+     * profile. If any <code>alertTargets</code> are defined in the current invocation
+     * an exception occurs.</p>
+     */
+    inline bool DeleteAlertTargetsHasBeenSet() const { return m_deleteAlertTargetsHasBeenSet; }
 
     /**
      * <p>If true, delete all <code>alertTargets</code> defined for this security
@@ -327,6 +369,13 @@ namespace Model
      * security profile. If any <code>additionalMetricsToRetain</code> are defined in
      * the current invocation an exception occurs.</p>
      */
+    inline bool DeleteAdditionalMetricsToRetainHasBeenSet() const { return m_deleteAdditionalMetricsToRetainHasBeenSet; }
+
+    /**
+     * <p>If true, delete all <code>additionalMetricsToRetain</code> defined for this
+     * security profile. If any <code>additionalMetricsToRetain</code> are defined in
+     * the current invocation an exception occurs.</p>
+     */
     inline void SetDeleteAdditionalMetricsToRetain(bool value) { m_deleteAdditionalMetricsToRetainHasBeenSet = true; m_deleteAdditionalMetricsToRetain = value; }
 
     /**
@@ -344,6 +393,14 @@ namespace Model
      * thrown.</p>
      */
     inline long long GetExpectedVersion() const{ return m_expectedVersion; }
+
+    /**
+     * <p>The expected version of the security profile. A new version is generated
+     * whenever the security profile is updated. If you specify a value that is
+     * different than the actual version, a <code>VersionConflictException</code> is
+     * thrown.</p>
+     */
+    inline bool ExpectedVersionHasBeenSet() const { return m_expectedVersionHasBeenSet; }
 
     /**
      * <p>The expected version of the security profile. A new version is generated

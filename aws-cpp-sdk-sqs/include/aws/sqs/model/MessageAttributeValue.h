@@ -72,6 +72,14 @@ namespace Model
      * href="http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters">ASCII
      * Printable Characters</a>.</p>
      */
+    inline bool StringValueHasBeenSet() const { return m_stringValueHasBeenSet; }
+
+    /**
+     * <p>Strings are Unicode with UTF-8 binary encoding. For a list of code values,
+     * see <a
+     * href="http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters">ASCII
+     * Printable Characters</a>.</p>
+     */
     inline void SetStringValue(const Aws::String& value) { m_stringValueHasBeenSet = true; m_stringValue = value; }
 
     /**
@@ -125,6 +133,12 @@ namespace Model
      * <p>Binary type attributes can store any binary data, such as compressed data,
      * encrypted data, or images.</p>
      */
+    inline bool BinaryValueHasBeenSet() const { return m_binaryValueHasBeenSet; }
+
+    /**
+     * <p>Binary type attributes can store any binary data, such as compressed data,
+     * encrypted data, or images.</p>
+     */
     inline void SetBinaryValue(const Aws::Utils::ByteBuffer& value) { m_binaryValueHasBeenSet = true; m_binaryValue = value; }
 
     /**
@@ -150,6 +164,11 @@ namespace Model
      * <p>Not implemented. Reserved for future use.</p>
      */
     inline const Aws::Vector<Aws::String>& GetStringListValues() const{ return m_stringListValues; }
+
+    /**
+     * <p>Not implemented. Reserved for future use.</p>
+     */
+    inline bool StringListValuesHasBeenSet() const { return m_stringListValuesHasBeenSet; }
 
     /**
      * <p>Not implemented. Reserved for future use.</p>
@@ -195,6 +214,11 @@ namespace Model
     /**
      * <p>Not implemented. Reserved for future use.</p>
      */
+    inline bool BinaryListValuesHasBeenSet() const { return m_binaryListValuesHasBeenSet; }
+
+    /**
+     * <p>Not implemented. Reserved for future use.</p>
+     */
     inline void SetBinaryListValues(const Aws::Vector<Aws::Utils::ByteBuffer>& value) { m_binaryListValuesHasBeenSet = true; m_binaryListValues = value; }
 
     /**
@@ -233,6 +257,17 @@ namespace Model
      * Guide</i>.</p>
      */
     inline const Aws::String& GetDataType() const{ return m_dataType; }
+
+    /**
+     * <p>Amazon SQS supports the following logical data types: <code>String</code>,
+     * <code>Number</code>, and <code>Binary</code>. For the <code>Number</code> data
+     * type, you must use <code>StringValue</code>.</p> <p>You can also append custom
+     * labels. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-attributes.html">Amazon
+     * SQS Message Attributes</a> in the <i>Amazon Simple Queue Service Developer
+     * Guide</i>.</p>
+     */
+    inline bool DataTypeHasBeenSet() const { return m_dataTypeHasBeenSet; }
 
     /**
      * <p>Amazon SQS supports the following logical data types: <code>String</code>,

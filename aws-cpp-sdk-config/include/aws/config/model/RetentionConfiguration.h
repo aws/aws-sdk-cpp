@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The name of the retention configuration object.</p>
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>The name of the retention configuration object.</p>
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
@@ -90,6 +95,12 @@ namespace Model
      * <p>Currently, only applicable to the configuration item history.</p> </note>
      */
     inline int GetRetentionPeriodInDays() const{ return m_retentionPeriodInDays; }
+
+    /**
+     * <p>Number of days AWS Config stores your historical information.</p> <note>
+     * <p>Currently, only applicable to the configuration item history.</p> </note>
+     */
+    inline bool RetentionPeriodInDaysHasBeenSet() const { return m_retentionPeriodInDaysHasBeenSet; }
 
     /**
      * <p>Number of days AWS Config stores your historical information.</p> <note>

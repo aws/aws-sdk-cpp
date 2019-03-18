@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The ID of the OTA update to be created.</p>
      */
+    inline bool OtaUpdateIdHasBeenSet() const { return m_otaUpdateIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the OTA update to be created.</p>
+     */
     inline void SetOtaUpdateId(const Aws::String& value) { m_otaUpdateIdHasBeenSet = true; m_otaUpdateId = value; }
 
     /**
@@ -92,6 +97,11 @@ namespace Model
     /**
      * <p>The description of the OTA update.</p>
      */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
+
+    /**
+     * <p>The description of the OTA update.</p>
+     */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
@@ -124,6 +134,11 @@ namespace Model
      * <p>The targeted devices to receive OTA updates.</p>
      */
     inline const Aws::Vector<Aws::String>& GetTargets() const{ return m_targets; }
+
+    /**
+     * <p>The targeted devices to receive OTA updates.</p>
+     */
+    inline bool TargetsHasBeenSet() const { return m_targetsHasBeenSet; }
 
     /**
      * <p>The targeted devices to receive OTA updates.</p>
@@ -179,6 +194,16 @@ namespace Model
      * thing is added to a target group, even after the update was completed by all
      * things originally in the group. Valid values: CONTINUOUS | SNAPSHOT.</p>
      */
+    inline bool TargetSelectionHasBeenSet() const { return m_targetSelectionHasBeenSet; }
+
+    /**
+     * <p>Specifies whether the update will continue to run (CONTINUOUS), or will be
+     * complete after all the things specified as targets have completed the update
+     * (SNAPSHOT). If continuous, the update may also be run on a thing when a change
+     * is detected in a target. For example, an update will run on a thing when the
+     * thing is added to a target group, even after the update was completed by all
+     * things originally in the group. Valid values: CONTINUOUS | SNAPSHOT.</p>
+     */
     inline void SetTargetSelection(const TargetSelection& value) { m_targetSelectionHasBeenSet = true; m_targetSelection = value; }
 
     /**
@@ -220,6 +245,11 @@ namespace Model
     /**
      * <p>Configuration for the rollout of OTA updates.</p>
      */
+    inline bool AwsJobExecutionsRolloutConfigHasBeenSet() const { return m_awsJobExecutionsRolloutConfigHasBeenSet; }
+
+    /**
+     * <p>Configuration for the rollout of OTA updates.</p>
+     */
     inline void SetAwsJobExecutionsRolloutConfig(const AwsJobExecutionsRolloutConfig& value) { m_awsJobExecutionsRolloutConfigHasBeenSet = true; m_awsJobExecutionsRolloutConfig = value; }
 
     /**
@@ -242,6 +272,11 @@ namespace Model
      * <p>The files to be streamed by the OTA update.</p>
      */
     inline const Aws::Vector<OTAUpdateFile>& GetFiles() const{ return m_files; }
+
+    /**
+     * <p>The files to be streamed by the OTA update.</p>
+     */
+    inline bool FilesHasBeenSet() const { return m_filesHasBeenSet; }
 
     /**
      * <p>The files to be streamed by the OTA update.</p>
@@ -282,6 +317,11 @@ namespace Model
     /**
      * <p>The IAM role that allows access to the AWS IoT Jobs service.</p>
      */
+    inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
+
+    /**
+     * <p>The IAM role that allows access to the AWS IoT Jobs service.</p>
+     */
     inline void SetRoleArn(const Aws::String& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
 
     /**
@@ -314,6 +354,11 @@ namespace Model
      * <p>A list of additional OTA update parameters which are name-value pairs.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetAdditionalParameters() const{ return m_additionalParameters; }
+
+    /**
+     * <p>A list of additional OTA update parameters which are name-value pairs.</p>
+     */
+    inline bool AdditionalParametersHasBeenSet() const { return m_additionalParametersHasBeenSet; }
 
     /**
      * <p>A list of additional OTA update parameters which are name-value pairs.</p>
@@ -375,6 +420,11 @@ namespace Model
      * <p>Metadata which can be used to manage updates.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>Metadata which can be used to manage updates.</p>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
      * <p>Metadata which can be used to manage updates.</p>

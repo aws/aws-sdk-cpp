@@ -52,6 +52,12 @@ namespace Model
      * The ARN of the ACM certificate that you want to disassociate from your
      * MediaConvert resource.
      */
+    inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
+
+    /**
+     * The ARN of the ACM certificate that you want to disassociate from your
+     * MediaConvert resource.
+     */
     inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
 
     /**

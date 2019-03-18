@@ -60,6 +60,13 @@ namespace Model
      * themselves as the job name. The name must also be unique within an AWS
      * account.</p>
      */
+    inline bool TranscriptionJobNameHasBeenSet() const { return m_transcriptionJobNameHasBeenSet; }
+
+    /**
+     * <p>The name of the job. Note that you can't use the strings "." or ".." by
+     * themselves as the job name. The name must also be unique within an AWS
+     * account.</p>
+     */
     inline void SetTranscriptionJobName(const Aws::String& value) { m_transcriptionJobNameHasBeenSet = true; m_transcriptionJobName = value; }
 
     /**
@@ -106,6 +113,11 @@ namespace Model
     /**
      * <p>The language code for the language used in the input media file.</p>
      */
+    inline bool LanguageCodeHasBeenSet() const { return m_languageCodeHasBeenSet; }
+
+    /**
+     * <p>The language code for the language used in the input media file.</p>
+     */
     inline void SetLanguageCode(const LanguageCode& value) { m_languageCodeHasBeenSet = true; m_languageCode = value; }
 
     /**
@@ -132,6 +144,11 @@ namespace Model
     /**
      * <p>The sample rate, in Hertz, of the audio track in the input media file. </p>
      */
+    inline bool MediaSampleRateHertzHasBeenSet() const { return m_mediaSampleRateHertzHasBeenSet; }
+
+    /**
+     * <p>The sample rate, in Hertz, of the audio track in the input media file. </p>
+     */
     inline void SetMediaSampleRateHertz(int value) { m_mediaSampleRateHertzHasBeenSet = true; m_mediaSampleRateHertz = value; }
 
     /**
@@ -144,6 +161,11 @@ namespace Model
      * <p>The format of the input media file.</p>
      */
     inline const MediaFormat& GetMediaFormat() const{ return m_mediaFormat; }
+
+    /**
+     * <p>The format of the input media file.</p>
+     */
+    inline bool MediaFormatHasBeenSet() const { return m_mediaFormatHasBeenSet; }
 
     /**
      * <p>The format of the input media file.</p>
@@ -170,6 +192,11 @@ namespace Model
      * <p>An object that describes the input media for a transcription job.</p>
      */
     inline const Media& GetMedia() const{ return m_media; }
+
+    /**
+     * <p>An object that describes the input media for a transcription job.</p>
+     */
+    inline bool MediaHasBeenSet() const { return m_mediaHasBeenSet; }
 
     /**
      * <p>An object that describes the input media for a transcription job.</p>
@@ -207,6 +234,22 @@ namespace Model
      * transcription.</p>
      */
     inline const Aws::String& GetOutputBucketName() const{ return m_outputBucketName; }
+
+    /**
+     * <p>The location where the transcription is stored.</p> <p>If you set the
+     * <code>OutputBucketName</code>, Amazon Transcribe puts the transcription in the
+     * specified S3 bucket. When you call the <a>GetTranscriptionJob</a> operation, the
+     * operation returns this location in the <code>TranscriptFileUri</code> field. The
+     * S3 bucket must have permissions that allow Amazon Transcribe to put files in the
+     * bucket. For more information, see <a
+     * href="https://docs.aws.amazon.com/transcribe/latest/dg/access-control-managing-permissions.html#auth-role-iam-user">Permissions
+     * Required for IAM User Roles</a>.</p> <p>If you don't set the
+     * <code>OutputBucketName</code>, Amazon Transcribe generates a pre-signed URL, a
+     * shareable URL that provides secure access to your transcription, and returns it
+     * in the <code>TranscriptFileUri</code> field. Use this URL to download the
+     * transcription.</p>
+     */
+    inline bool OutputBucketNameHasBeenSet() const { return m_outputBucketNameHasBeenSet; }
 
     /**
      * <p>The location where the transcription is stored.</p> <p>If you set the
@@ -310,6 +353,12 @@ namespace Model
      * transcription job.</p>
      */
     inline const Settings& GetSettings() const{ return m_settings; }
+
+    /**
+     * <p>A <code>Settings</code> object that provides optional settings for a
+     * transcription job.</p>
+     */
+    inline bool SettingsHasBeenSet() const { return m_settingsHasBeenSet; }
 
     /**
      * <p>A <code>Settings</code> object that provides optional settings for a

@@ -52,6 +52,11 @@ namespace Model
     /**
      * <p>The identifier for the organization under which the group exists.</p>
      */
+    inline bool OrganizationIdHasBeenSet() const { return m_organizationIdHasBeenSet; }
+
+    /**
+     * <p>The identifier for the organization under which the group exists.</p>
+     */
     inline void SetOrganizationId(const Aws::String& value) { m_organizationIdHasBeenSet = true; m_organizationId = value; }
 
     /**
@@ -84,6 +89,11 @@ namespace Model
      * <p>The identifier for the group to be described.</p>
      */
     inline const Aws::String& GetGroupId() const{ return m_groupId; }
+
+    /**
+     * <p>The identifier for the group to be described.</p>
+     */
+    inline bool GroupIdHasBeenSet() const { return m_groupIdHasBeenSet; }
 
     /**
      * <p>The identifier for the group to be described.</p>

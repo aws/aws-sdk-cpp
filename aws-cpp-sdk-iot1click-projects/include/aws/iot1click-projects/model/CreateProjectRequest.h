@@ -51,6 +51,11 @@ namespace Model
     /**
      * <p>The name of the project to create.</p>
      */
+    inline bool ProjectNameHasBeenSet() const { return m_projectNameHasBeenSet; }
+
+    /**
+     * <p>The name of the project to create.</p>
+     */
     inline void SetProjectName(const Aws::String& value) { m_projectNameHasBeenSet = true; m_projectName = value; }
 
     /**
@@ -83,6 +88,11 @@ namespace Model
      * <p>An optional description for the project.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
+
+    /**
+     * <p>An optional description for the project.</p>
+     */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
 
     /**
      * <p>An optional description for the project.</p>
@@ -123,6 +133,15 @@ namespace Model
      * <code>UpdateProject</code> API.</p>
      */
     inline const PlacementTemplate& GetPlacementTemplate() const{ return m_placementTemplate; }
+
+    /**
+     * <p>The schema defining the placement to be created. A placement template defines
+     * placement default attributes and device templates. You cannot add or remove
+     * device templates after the project has been created. However, you can update
+     * <code>callbackOverrides</code> for the device templates using the
+     * <code>UpdateProject</code> API.</p>
+     */
+    inline bool PlacementTemplateHasBeenSet() const { return m_placementTemplateHasBeenSet; }
 
     /**
      * <p>The schema defining the placement to be created. A placement template defines

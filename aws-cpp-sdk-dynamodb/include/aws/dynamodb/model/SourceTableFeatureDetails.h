@@ -65,6 +65,13 @@ namespace Model
      * includes the IndexName, KeySchema and Projection for the LSIs on the table at
      * the time of backup. </p>
      */
+    inline bool LocalSecondaryIndexesHasBeenSet() const { return m_localSecondaryIndexesHasBeenSet; }
+
+    /**
+     * <p>Represents the LSI properties for the table when the backup was created. It
+     * includes the IndexName, KeySchema and Projection for the LSIs on the table at
+     * the time of backup. </p>
+     */
     inline void SetLocalSecondaryIndexes(const Aws::Vector<LocalSecondaryIndexInfo>& value) { m_localSecondaryIndexesHasBeenSet = true; m_localSecondaryIndexes = value; }
 
     /**
@@ -109,6 +116,13 @@ namespace Model
      * GSIs on the table at the time of backup. </p>
      */
     inline const Aws::Vector<GlobalSecondaryIndexInfo>& GetGlobalSecondaryIndexes() const{ return m_globalSecondaryIndexes; }
+
+    /**
+     * <p>Represents the GSI properties for the table when the backup was created. It
+     * includes the IndexName, KeySchema, Projection and ProvisionedThroughput for the
+     * GSIs on the table at the time of backup. </p>
+     */
+    inline bool GlobalSecondaryIndexesHasBeenSet() const { return m_globalSecondaryIndexesHasBeenSet; }
 
     /**
      * <p>Represents the GSI properties for the table when the backup was created. It
@@ -161,6 +175,11 @@ namespace Model
     /**
      * <p>Stream settings on the table when the backup was created.</p>
      */
+    inline bool StreamDescriptionHasBeenSet() const { return m_streamDescriptionHasBeenSet; }
+
+    /**
+     * <p>Stream settings on the table when the backup was created.</p>
+     */
     inline void SetStreamDescription(const StreamSpecification& value) { m_streamDescriptionHasBeenSet = true; m_streamDescription = value; }
 
     /**
@@ -183,6 +202,11 @@ namespace Model
      * <p>Time to Live settings on the table when the backup was created.</p>
      */
     inline const TimeToLiveDescription& GetTimeToLiveDescription() const{ return m_timeToLiveDescription; }
+
+    /**
+     * <p>Time to Live settings on the table when the backup was created.</p>
+     */
+    inline bool TimeToLiveDescriptionHasBeenSet() const { return m_timeToLiveDescriptionHasBeenSet; }
 
     /**
      * <p>Time to Live settings on the table when the backup was created.</p>
@@ -210,6 +234,12 @@ namespace Model
      * backup was created.</p>
      */
     inline const SSEDescription& GetSSEDescription() const{ return m_sSEDescription; }
+
+    /**
+     * <p>The description of the server-side encryption status on the table when the
+     * backup was created.</p>
+     */
+    inline bool SSEDescriptionHasBeenSet() const { return m_sSEDescriptionHasBeenSet; }
 
     /**
      * <p>The description of the server-side encryption status on the table when the

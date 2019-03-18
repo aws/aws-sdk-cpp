@@ -59,6 +59,11 @@ namespace Model
     /**
      * <p>The identifier of the replication run.</p>
      */
+    inline bool ReplicationRunIdHasBeenSet() const { return m_replicationRunIdHasBeenSet; }
+
+    /**
+     * <p>The identifier of the replication run.</p>
+     */
     inline void SetReplicationRunId(const Aws::String& value) { m_replicationRunIdHasBeenSet = true; m_replicationRunId = value; }
 
     /**
@@ -95,6 +100,11 @@ namespace Model
     /**
      * <p>The state of the replication run.</p>
      */
+    inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
+
+    /**
+     * <p>The state of the replication run.</p>
+     */
     inline void SetState(const ReplicationRunState& value) { m_stateHasBeenSet = true; m_state = value; }
 
     /**
@@ -117,6 +127,11 @@ namespace Model
      * <p>The type of replication run.</p>
      */
     inline const ReplicationRunType& GetType() const{ return m_type; }
+
+    /**
+     * <p>The type of replication run.</p>
+     */
+    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
 
     /**
      * <p>The type of replication run.</p>
@@ -147,6 +162,11 @@ namespace Model
     /**
      * <p>Details of the current stage of the replication run.</p>
      */
+    inline bool StageDetailsHasBeenSet() const { return m_stageDetailsHasBeenSet; }
+
+    /**
+     * <p>Details of the current stage of the replication run.</p>
+     */
     inline void SetStageDetails(const ReplicationRunStageDetails& value) { m_stageDetailsHasBeenSet = true; m_stageDetails = value; }
 
     /**
@@ -169,6 +189,11 @@ namespace Model
      * <p>The description of the current status of the replication job.</p>
      */
     inline const Aws::String& GetStatusMessage() const{ return m_statusMessage; }
+
+    /**
+     * <p>The description of the current status of the replication job.</p>
+     */
+    inline bool StatusMessageHasBeenSet() const { return m_statusMessageHasBeenSet; }
 
     /**
      * <p>The description of the current status of the replication job.</p>
@@ -206,6 +231,12 @@ namespace Model
      * run.</p>
      */
     inline const Aws::String& GetAmiId() const{ return m_amiId; }
+
+    /**
+     * <p>The identifier of the Amazon Machine Image (AMI) from the replication
+     * run.</p>
+     */
+    inline bool AmiIdHasBeenSet() const { return m_amiIdHasBeenSet; }
 
     /**
      * <p>The identifier of the Amazon Machine Image (AMI) from the replication
@@ -252,6 +283,11 @@ namespace Model
     /**
      * <p>The start time of the next replication run.</p>
      */
+    inline bool ScheduledStartTimeHasBeenSet() const { return m_scheduledStartTimeHasBeenSet; }
+
+    /**
+     * <p>The start time of the next replication run.</p>
+     */
     inline void SetScheduledStartTime(const Aws::Utils::DateTime& value) { m_scheduledStartTimeHasBeenSet = true; m_scheduledStartTime = value; }
 
     /**
@@ -278,6 +314,11 @@ namespace Model
     /**
      * <p>The completion time of the last replication run.</p>
      */
+    inline bool CompletedTimeHasBeenSet() const { return m_completedTimeHasBeenSet; }
+
+    /**
+     * <p>The completion time of the last replication run.</p>
+     */
     inline void SetCompletedTime(const Aws::Utils::DateTime& value) { m_completedTimeHasBeenSet = true; m_completedTime = value; }
 
     /**
@@ -300,6 +341,11 @@ namespace Model
      * <p>The description of the replication run.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
+
+    /**
+     * <p>The description of the replication run.</p>
+     */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
 
     /**
      * <p>The description of the replication run.</p>
@@ -342,6 +388,12 @@ namespace Model
      * <p>Whether the replication run should produce encrypted AMI or not. See also
      * <code>KmsKeyId</code> below.</p>
      */
+    inline bool EncryptedHasBeenSet() const { return m_encryptedHasBeenSet; }
+
+    /**
+     * <p>Whether the replication run should produce encrypted AMI or not. See also
+     * <code>KmsKeyId</code> below.</p>
+     */
     inline void SetEncrypted(bool value) { m_encryptedHasBeenSet = true; m_encrypted = value; }
 
     /**
@@ -359,6 +411,15 @@ namespace Model
      * not specified, the customer's default KMS key for EBS is used. </p>
      */
     inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
+
+    /**
+     * <p>KMS key ID for replication jobs that produce encrypted AMIs. Can be any of
+     * the following: </p> <ul> <li> <p>KMS key ID</p> </li> <li> <p>KMS key alias</p>
+     * </li> <li> <p>ARN referring to KMS key ID</p> </li> <li> <p>ARN referring to KMS
+     * key alias</p> </li> </ul> <p> If encrypted is <i>true</i> but a KMS key id is
+     * not specified, the customer's default KMS key for EBS is used. </p>
+     */
+    inline bool KmsKeyIdHasBeenSet() const { return m_kmsKeyIdHasBeenSet; }
 
     /**
      * <p>KMS key ID for replication jobs that produce encrypted AMIs. Can be any of

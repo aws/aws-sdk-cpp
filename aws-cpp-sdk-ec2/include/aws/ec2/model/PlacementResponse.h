@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The name of the placement group the instance is in.</p>
      */
+    inline bool GroupNameHasBeenSet() const { return m_groupNameHasBeenSet; }
+
+    /**
+     * <p>The name of the placement group the instance is in.</p>
+     */
     inline void SetGroupName(const Aws::String& value) { m_groupNameHasBeenSet = true; m_groupName = value; }
 
     /**

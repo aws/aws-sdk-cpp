@@ -62,6 +62,12 @@ namespace Model
      * <p>The Amazon DocumentDB resource that the tags are added to. This value is an
      * Amazon Resource Name (ARN).</p>
      */
+    inline bool ResourceNameHasBeenSet() const { return m_resourceNameHasBeenSet; }
+
+    /**
+     * <p>The Amazon DocumentDB resource that the tags are added to. This value is an
+     * Amazon Resource Name (ARN).</p>
+     */
     inline void SetResourceName(const Aws::String& value) { m_resourceNameHasBeenSet = true; m_resourceName = value; }
 
     /**
@@ -99,6 +105,11 @@ namespace Model
      * <p>The tags to be assigned to the Amazon DocumentDB resource. </p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>The tags to be assigned to the Amazon DocumentDB resource. </p>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
      * <p>The tags to be assigned to the Amazon DocumentDB resource. </p>

@@ -55,6 +55,12 @@ namespace Model
      * <p>The ID of the Data Catalog for which to set the security configuration. If
      * none is provided, the AWS account ID is used by default.</p>
      */
+    inline bool CatalogIdHasBeenSet() const { return m_catalogIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the Data Catalog for which to set the security configuration. If
+     * none is provided, the AWS account ID is used by default.</p>
+     */
     inline void SetCatalogId(const Aws::String& value) { m_catalogIdHasBeenSet = true; m_catalogId = value; }
 
     /**
@@ -92,6 +98,11 @@ namespace Model
      * <p>The security configuration to set.</p>
      */
     inline const DataCatalogEncryptionSettings& GetDataCatalogEncryptionSettings() const{ return m_dataCatalogEncryptionSettings; }
+
+    /**
+     * <p>The security configuration to set.</p>
+     */
+    inline bool DataCatalogEncryptionSettingsHasBeenSet() const { return m_dataCatalogEncryptionSettingsHasBeenSet; }
 
     /**
      * <p>The security configuration to set.</p>

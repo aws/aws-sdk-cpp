@@ -55,6 +55,12 @@ namespace Model
      * <p>The name of the Amazon SageMaker resource to Search for. The only valid
      * <code>Resource</code> value is <code>TrainingJob</code>.</p>
      */
+    inline bool ResourceHasBeenSet() const { return m_resourceHasBeenSet; }
+
+    /**
+     * <p>The name of the Amazon SageMaker resource to Search for. The only valid
+     * <code>Resource</code> value is <code>TrainingJob</code>.</p>
+     */
     inline void SetResource(const ResourceType& value) { m_resourceHasBeenSet = true; m_resource = value; }
 
     /**
@@ -80,6 +86,11 @@ namespace Model
      * <p>Limits the property names that are included in the response.</p>
      */
     inline const SuggestionQuery& GetSuggestionQuery() const{ return m_suggestionQuery; }
+
+    /**
+     * <p>Limits the property names that are included in the response.</p>
+     */
+    inline bool SuggestionQueryHasBeenSet() const { return m_suggestionQueryHasBeenSet; }
 
     /**
      * <p>Limits the property names that are included in the response.</p>

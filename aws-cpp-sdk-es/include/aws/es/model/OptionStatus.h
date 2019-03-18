@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>Timestamp which tells the creation date for the entity.</p>
      */
+    inline bool CreationDateHasBeenSet() const { return m_creationDateHasBeenSet; }
+
+    /**
+     * <p>Timestamp which tells the creation date for the entity.</p>
+     */
     inline void SetCreationDate(const Aws::Utils::DateTime& value) { m_creationDateHasBeenSet = true; m_creationDate = value; }
 
     /**
@@ -78,6 +83,11 @@ namespace Model
      * <p>Timestamp which tells the last updated time for the entity.</p>
      */
     inline const Aws::Utils::DateTime& GetUpdateDate() const{ return m_updateDate; }
+
+    /**
+     * <p>Timestamp which tells the last updated time for the entity.</p>
+     */
+    inline bool UpdateDateHasBeenSet() const { return m_updateDateHasBeenSet; }
 
     /**
      * <p>Timestamp which tells the last updated time for the entity.</p>
@@ -108,6 +118,11 @@ namespace Model
     /**
      * <p>Specifies the latest version for the entity.</p>
      */
+    inline bool UpdateVersionHasBeenSet() const { return m_updateVersionHasBeenSet; }
+
+    /**
+     * <p>Specifies the latest version for the entity.</p>
+     */
     inline void SetUpdateVersion(int value) { m_updateVersionHasBeenSet = true; m_updateVersion = value; }
 
     /**
@@ -120,6 +135,11 @@ namespace Model
      * <p>Provides the <code>OptionState</code> for the Elasticsearch domain.</p>
      */
     inline const OptionState& GetState() const{ return m_state; }
+
+    /**
+     * <p>Provides the <code>OptionState</code> for the Elasticsearch domain.</p>
+     */
+    inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
 
     /**
      * <p>Provides the <code>OptionState</code> for the Elasticsearch domain.</p>
@@ -146,6 +166,11 @@ namespace Model
      * <p>Indicates whether the Elasticsearch domain is being deleted.</p>
      */
     inline bool GetPendingDeletion() const{ return m_pendingDeletion; }
+
+    /**
+     * <p>Indicates whether the Elasticsearch domain is being deleted.</p>
+     */
+    inline bool PendingDeletionHasBeenSet() const { return m_pendingDeletionHasBeenSet; }
 
     /**
      * <p>Indicates whether the Elasticsearch domain is being deleted.</p>

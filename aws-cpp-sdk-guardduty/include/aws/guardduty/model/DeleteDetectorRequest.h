@@ -50,6 +50,11 @@ namespace Model
     /**
      * The unique ID that specifies the detector that you want to delete.
      */
+    inline bool DetectorIdHasBeenSet() const { return m_detectorIdHasBeenSet; }
+
+    /**
+     * The unique ID that specifies the detector that you want to delete.
+     */
     inline void SetDetectorId(const Aws::String& value) { m_detectorIdHasBeenSet = true; m_detectorId = value; }
 
     /**

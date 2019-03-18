@@ -50,6 +50,11 @@ namespace Model
     /**
      * <p>Uniquely identifies a request to AWS Backup to back up a resource.</p>
      */
+    inline bool BackupJobIdHasBeenSet() const { return m_backupJobIdHasBeenSet; }
+
+    /**
+     * <p>Uniquely identifies a request to AWS Backup to back up a resource.</p>
+     */
     inline void SetBackupJobId(const Aws::String& value) { m_backupJobIdHasBeenSet = true; m_backupJobId = value; }
 
     /**

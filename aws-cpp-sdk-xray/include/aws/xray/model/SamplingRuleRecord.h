@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The sampling rule.</p>
      */
+    inline bool SamplingRuleHasBeenSet() const { return m_samplingRuleHasBeenSet; }
+
+    /**
+     * <p>The sampling rule.</p>
+     */
     inline void SetSamplingRule(const SamplingRule& value) { m_samplingRuleHasBeenSet = true; m_samplingRule = value; }
 
     /**
@@ -82,6 +87,11 @@ namespace Model
     /**
      * <p>When the rule was created.</p>
      */
+    inline bool CreatedAtHasBeenSet() const { return m_createdAtHasBeenSet; }
+
+    /**
+     * <p>When the rule was created.</p>
+     */
     inline void SetCreatedAt(const Aws::Utils::DateTime& value) { m_createdAtHasBeenSet = true; m_createdAt = value; }
 
     /**
@@ -104,6 +114,11 @@ namespace Model
      * <p>When the rule was last modified.</p>
      */
     inline const Aws::Utils::DateTime& GetModifiedAt() const{ return m_modifiedAt; }
+
+    /**
+     * <p>When the rule was last modified.</p>
+     */
+    inline bool ModifiedAtHasBeenSet() const { return m_modifiedAtHasBeenSet; }
 
     /**
      * <p>When the rule was last modified.</p>

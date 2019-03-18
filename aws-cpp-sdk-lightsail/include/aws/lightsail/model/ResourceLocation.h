@@ -58,6 +58,12 @@ namespace Model
      * <p>The Availability Zone. Follows the format <code>us-east-2a</code>
      * (case-sensitive).</p>
      */
+    inline bool AvailabilityZoneHasBeenSet() const { return m_availabilityZoneHasBeenSet; }
+
+    /**
+     * <p>The Availability Zone. Follows the format <code>us-east-2a</code>
+     * (case-sensitive).</p>
+     */
     inline void SetAvailabilityZone(const Aws::String& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = value; }
 
     /**
@@ -95,6 +101,11 @@ namespace Model
      * <p>The AWS Region name.</p>
      */
     inline const RegionName& GetRegionName() const{ return m_regionName; }
+
+    /**
+     * <p>The AWS Region name.</p>
+     */
+    inline bool RegionNameHasBeenSet() const { return m_regionNameHasBeenSet; }
 
     /**
      * <p>The AWS Region name.</p>

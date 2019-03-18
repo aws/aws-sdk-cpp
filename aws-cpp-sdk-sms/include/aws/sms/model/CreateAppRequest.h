@@ -55,6 +55,11 @@ namespace Model
     /**
      * <p>Name of the new application.</p>
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>Name of the new application.</p>
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
@@ -87,6 +92,11 @@ namespace Model
      * <p>Description of the new application</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
+
+    /**
+     * <p>Description of the new application</p>
+     */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
 
     /**
      * <p>Description of the new application</p>
@@ -127,6 +137,11 @@ namespace Model
     /**
      * <p>Name of service role in customer's account to be used by AWS SMS.</p>
      */
+    inline bool RoleNameHasBeenSet() const { return m_roleNameHasBeenSet; }
+
+    /**
+     * <p>Name of service role in customer's account to be used by AWS SMS.</p>
+     */
     inline void SetRoleName(const Aws::String& value) { m_roleNameHasBeenSet = true; m_roleName = value; }
 
     /**
@@ -160,6 +175,12 @@ namespace Model
      * application creation.</p>
      */
     inline const Aws::String& GetClientToken() const{ return m_clientToken; }
+
+    /**
+     * <p>A unique, case-sensitive identifier you provide to ensure idempotency of
+     * application creation.</p>
+     */
+    inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
 
     /**
      * <p>A unique, case-sensitive identifier you provide to ensure idempotency of
@@ -206,6 +227,11 @@ namespace Model
     /**
      * <p>List of server groups to include in the application.</p>
      */
+    inline bool ServerGroupsHasBeenSet() const { return m_serverGroupsHasBeenSet; }
+
+    /**
+     * <p>List of server groups to include in the application.</p>
+     */
     inline void SetServerGroups(const Aws::Vector<ServerGroup>& value) { m_serverGroupsHasBeenSet = true; m_serverGroups = value; }
 
     /**
@@ -238,6 +264,11 @@ namespace Model
      * <p>List of tags to be associated with the application.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>List of tags to be associated with the application.</p>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
      * <p>List of tags to be associated with the application.</p>

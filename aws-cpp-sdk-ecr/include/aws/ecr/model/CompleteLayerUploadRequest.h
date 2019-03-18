@@ -55,6 +55,12 @@ namespace Model
      * <p>The AWS account ID associated with the registry to which to upload layers. If
      * you do not specify a registry, the default registry is assumed.</p>
      */
+    inline bool RegistryIdHasBeenSet() const { return m_registryIdHasBeenSet; }
+
+    /**
+     * <p>The AWS account ID associated with the registry to which to upload layers. If
+     * you do not specify a registry, the default registry is assumed.</p>
+     */
     inline void SetRegistryId(const Aws::String& value) { m_registryIdHasBeenSet = true; m_registryId = value; }
 
     /**
@@ -92,6 +98,11 @@ namespace Model
      * <p>The name of the repository to associate with the image layer.</p>
      */
     inline const Aws::String& GetRepositoryName() const{ return m_repositoryName; }
+
+    /**
+     * <p>The name of the repository to associate with the image layer.</p>
+     */
+    inline bool RepositoryNameHasBeenSet() const { return m_repositoryNameHasBeenSet; }
 
     /**
      * <p>The name of the repository to associate with the image layer.</p>
@@ -134,6 +145,12 @@ namespace Model
      * <p>The upload ID from a previous <a>InitiateLayerUpload</a> operation to
      * associate with the image layer.</p>
      */
+    inline bool UploadIdHasBeenSet() const { return m_uploadIdHasBeenSet; }
+
+    /**
+     * <p>The upload ID from a previous <a>InitiateLayerUpload</a> operation to
+     * associate with the image layer.</p>
+     */
     inline void SetUploadId(const Aws::String& value) { m_uploadIdHasBeenSet = true; m_uploadId = value; }
 
     /**
@@ -171,6 +188,11 @@ namespace Model
      * <p>The <code>sha256</code> digest of the image layer.</p>
      */
     inline const Aws::Vector<Aws::String>& GetLayerDigests() const{ return m_layerDigests; }
+
+    /**
+     * <p>The <code>sha256</code> digest of the image layer.</p>
+     */
+    inline bool LayerDigestsHasBeenSet() const { return m_layerDigestsHasBeenSet; }
 
     /**
      * <p>The <code>sha256</code> digest of the image layer.</p>

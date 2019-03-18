@@ -53,6 +53,11 @@ namespace Model
     /**
      * <p>The WorkSpace to rebuild. You can specify a single WorkSpace.</p>
      */
+    inline bool RebuildWorkspaceRequestsHasBeenSet() const { return m_rebuildWorkspaceRequestsHasBeenSet; }
+
+    /**
+     * <p>The WorkSpace to rebuild. You can specify a single WorkSpace.</p>
+     */
     inline void SetRebuildWorkspaceRequests(const Aws::Vector<RebuildRequest>& value) { m_rebuildWorkspaceRequestsHasBeenSet = true; m_rebuildWorkspaceRequests = value; }
 
     /**

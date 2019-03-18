@@ -55,6 +55,11 @@ namespace Model
     /**
      * <p>The compute type.</p>
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>The compute type.</p>
+     */
     inline void SetName(const Compute& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**

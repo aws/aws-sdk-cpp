@@ -53,6 +53,12 @@ namespace Model
      * <p>An ARN that uniquely identifies a recovery point; for example,
      * <code>arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45</code>.</p>
      */
+    inline bool RecoveryPointArnHasBeenSet() const { return m_recoveryPointArnHasBeenSet; }
+
+    /**
+     * <p>An ARN that uniquely identifies a recovery point; for example,
+     * <code>arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45</code>.</p>
+     */
     inline void SetRecoveryPointArn(const Aws::String& value) { m_recoveryPointArnHasBeenSet = true; m_recoveryPointArn = value; }
 
     /**
@@ -91,6 +97,12 @@ namespace Model
      * was created with.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetMetadata() const{ return m_metadata; }
+
+    /**
+     * <p>A set of metadata key-value pairs. Lists the metadata that the recovery point
+     * was created with.</p>
+     */
+    inline bool MetadataHasBeenSet() const { return m_metadataHasBeenSet; }
 
     /**
      * <p>A set of metadata key-value pairs. Lists the metadata that the recovery point
@@ -171,6 +183,13 @@ namespace Model
      * the target recovery point; for example,
      * <code>arn:aws:iam::123456789012:role/S3Access</code>.</p>
      */
+    inline bool IamRoleArnHasBeenSet() const { return m_iamRoleArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the IAM role that AWS Backup uses to create
+     * the target recovery point; for example,
+     * <code>arn:aws:iam::123456789012:role/S3Access</code>.</p>
+     */
     inline void SetIamRoleArn(const Aws::String& value) { m_iamRoleArnHasBeenSet = true; m_iamRoleArn = value; }
 
     /**
@@ -219,6 +238,17 @@ namespace Model
      * restores. </p>
      */
     inline const Aws::String& GetIdempotencyToken() const{ return m_idempotencyToken; }
+
+    /**
+     * <p>A customer chosen string that can be used to distinguish between calls to
+     * <code>StartRestoreJob</code>. Idempotency tokens time out after one hour.
+     * Therefore, if you call <code>StartRestoreJob</code> multiple times with the same
+     * idempotency token within one hour, AWS Backup recognizes that you are requesting
+     * only one restore job and initiates only one. If you change the idempotency token
+     * for each call, AWS Backup recognizes that you are requesting to start multiple
+     * restores. </p>
+     */
+    inline bool IdempotencyTokenHasBeenSet() const { return m_idempotencyTokenHasBeenSet; }
 
     /**
      * <p>A customer chosen string that can be used to distinguish between calls to
@@ -296,6 +326,16 @@ namespace Model
      * Amazon Elastic File System</p> </li> </ul>
      */
     inline const Aws::String& GetResourceType() const{ return m_resourceType; }
+
+    /**
+     * <p>Starts a job to restore a recovery point for one of the following
+     * resources:</p> <ul> <li> <p> <code>EBS</code> for Amazon Elastic Block Store</p>
+     * </li> <li> <p> <code>SGW</code> for AWS Storage Gateway</p> </li> <li> <p>
+     * <code>RDS</code> for Amazon Relational Database Service</p> </li> <li> <p>
+     * <code>DDB</code> for Amazon DynamoDB</p> </li> <li> <p> <code>EFS</code> for
+     * Amazon Elastic File System</p> </li> </ul>
+     */
+    inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
 
     /**
      * <p>Starts a job to restore a recovery point for one of the following

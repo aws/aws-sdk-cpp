@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The status code of the export task.</p>
      */
+    inline bool CodeHasBeenSet() const { return m_codeHasBeenSet; }
+
+    /**
+     * <p>The status code of the export task.</p>
+     */
     inline void SetCode(const ExportTaskStatusCode& value) { m_codeHasBeenSet = true; m_code = value; }
 
     /**
@@ -78,6 +83,11 @@ namespace Model
      * <p>The status message related to the status code.</p>
      */
     inline const Aws::String& GetMessage() const{ return m_message; }
+
+    /**
+     * <p>The status message related to the status code.</p>
+     */
+    inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
 
     /**
      * <p>The status message related to the status code.</p>

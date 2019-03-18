@@ -55,6 +55,11 @@ namespace Model
     /**
      * <p>The unique case-sensitive name of the group.</p>
      */
+    inline bool GroupNameHasBeenSet() const { return m_groupNameHasBeenSet; }
+
+    /**
+     * <p>The unique case-sensitive name of the group.</p>
+     */
     inline void SetGroupName(const Aws::String& value) { m_groupNameHasBeenSet = true; m_groupName = value; }
 
     /**
@@ -91,6 +96,11 @@ namespace Model
     /**
      * <p>The ARN of the group generated based on the GroupName.</p>
      */
+    inline bool GroupARNHasBeenSet() const { return m_groupARNHasBeenSet; }
+
+    /**
+     * <p>The ARN of the group generated based on the GroupName.</p>
+     */
     inline void SetGroupARN(const Aws::String& value) { m_groupARNHasBeenSet = true; m_groupARN = value; }
 
     /**
@@ -123,6 +133,11 @@ namespace Model
      * <p>The filter expression defining the parameters to include traces.</p>
      */
     inline const Aws::String& GetFilterExpression() const{ return m_filterExpression; }
+
+    /**
+     * <p>The filter expression defining the parameters to include traces.</p>
+     */
+    inline bool FilterExpressionHasBeenSet() const { return m_filterExpressionHasBeenSet; }
 
     /**
      * <p>The filter expression defining the parameters to include traces.</p>

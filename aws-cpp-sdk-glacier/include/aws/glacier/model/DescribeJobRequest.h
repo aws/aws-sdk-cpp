@@ -62,6 +62,15 @@ namespace Model
      * associated with the credentials used to sign the request. If you use an account
      * ID, do not include any hyphens ('-') in the ID. </p>
      */
+    inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
+
+    /**
+     * <p>The <code>AccountId</code> value is the AWS account ID of the account that
+     * owns the vault. You can either specify an AWS account ID or optionally a single
+     * '<code>-</code>' (hyphen), in which case Amazon Glacier uses the AWS account ID
+     * associated with the credentials used to sign the request. If you use an account
+     * ID, do not include any hyphens ('-') in the ID. </p>
+     */
     inline void SetAccountId(const Aws::String& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
 
     /**
@@ -118,6 +127,11 @@ namespace Model
     /**
      * <p>The name of the vault.</p>
      */
+    inline bool VaultNameHasBeenSet() const { return m_vaultNameHasBeenSet; }
+
+    /**
+     * <p>The name of the vault.</p>
+     */
     inline void SetVaultName(const Aws::String& value) { m_vaultNameHasBeenSet = true; m_vaultName = value; }
 
     /**
@@ -150,6 +164,11 @@ namespace Model
      * <p>The ID of the job to describe.</p>
      */
     inline const Aws::String& GetJobId() const{ return m_jobId; }
+
+    /**
+     * <p>The ID of the job to describe.</p>
+     */
+    inline bool JobIdHasBeenSet() const { return m_jobIdHasBeenSet; }
 
     /**
      * <p>The ID of the job to describe.</p>

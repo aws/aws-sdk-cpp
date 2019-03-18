@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p>The ID of the file system you want to delete.</p>
      */
+    inline bool FileSystemIdHasBeenSet() const { return m_fileSystemIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the file system you want to delete.</p>
+     */
     inline void SetFileSystemId(const Aws::String& value) { m_fileSystemIdHasBeenSet = true; m_fileSystemId = value; }
 
     /**
@@ -92,6 +97,13 @@ namespace Model
      * using the AWS CLI or SDK.</p>
      */
     inline const Aws::String& GetClientRequestToken() const{ return m_clientRequestToken; }
+
+    /**
+     * <p>(Optional) A string of up to 64 ASCII characters that Amazon FSx uses to
+     * ensure idempotent deletion. This is automatically filled on your behalf when
+     * using the AWS CLI or SDK.</p>
+     */
+    inline bool ClientRequestTokenHasBeenSet() const { return m_clientRequestTokenHasBeenSet; }
 
     /**
      * <p>(Optional) A string of up to 64 ASCII characters that Amazon FSx uses to
@@ -138,6 +150,9 @@ namespace Model
 
     
     inline const DeleteFileSystemWindowsConfiguration& GetWindowsConfiguration() const{ return m_windowsConfiguration; }
+
+    
+    inline bool WindowsConfigurationHasBeenSet() const { return m_windowsConfigurationHasBeenSet; }
 
     
     inline void SetWindowsConfiguration(const DeleteFileSystemWindowsConfiguration& value) { m_windowsConfigurationHasBeenSet = true; m_windowsConfiguration = value; }

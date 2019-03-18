@@ -57,6 +57,12 @@ namespace Model
      * <p>The original disk path exposed to the instance (for example,
      * <code>/dev/sdh</code>).</p>
      */
+    inline bool OriginalDiskPathHasBeenSet() const { return m_originalDiskPathHasBeenSet; }
+
+    /**
+     * <p>The original disk path exposed to the instance (for example,
+     * <code>/dev/sdh</code>).</p>
+     */
     inline void SetOriginalDiskPath(const Aws::String& value) { m_originalDiskPathHasBeenSet = true; m_originalDiskPath = value; }
 
     /**
@@ -94,6 +100,11 @@ namespace Model
      * <p>The new disk name (e.g., <code>my-new-disk</code>).</p>
      */
     inline const Aws::String& GetNewDiskName() const{ return m_newDiskName; }
+
+    /**
+     * <p>The new disk name (e.g., <code>my-new-disk</code>).</p>
+     */
+    inline bool NewDiskNameHasBeenSet() const { return m_newDiskNameHasBeenSet; }
 
     /**
      * <p>The new disk name (e.g., <code>my-new-disk</code>).</p>

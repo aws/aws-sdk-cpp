@@ -52,6 +52,11 @@ namespace Model
     /**
      * <p>The ID of the desired Maintenance Window.</p>
      */
+    inline bool WindowIdHasBeenSet() const { return m_windowIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the desired Maintenance Window.</p>
+     */
     inline void SetWindowId(const Aws::String& value) { m_windowIdHasBeenSet = true; m_windowId = value; }
 
     /**

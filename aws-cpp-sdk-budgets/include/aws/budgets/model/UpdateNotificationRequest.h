@@ -58,6 +58,12 @@ namespace Model
      * <p>The <code>accountId</code> that is associated with the budget whose
      * notification you want to update.</p>
      */
+    inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
+
+    /**
+     * <p>The <code>accountId</code> that is associated with the budget whose
+     * notification you want to update.</p>
+     */
     inline void SetAccountId(const Aws::String& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
 
     /**
@@ -99,6 +105,11 @@ namespace Model
     /**
      * <p>The name of the budget whose notification you want to update.</p>
      */
+    inline bool BudgetNameHasBeenSet() const { return m_budgetNameHasBeenSet; }
+
+    /**
+     * <p>The name of the budget whose notification you want to update.</p>
+     */
     inline void SetBudgetName(const Aws::String& value) { m_budgetNameHasBeenSet = true; m_budgetName = value; }
 
     /**
@@ -135,6 +146,11 @@ namespace Model
     /**
      * <p>The previous notification that is associated with a budget.</p>
      */
+    inline bool OldNotificationHasBeenSet() const { return m_oldNotificationHasBeenSet; }
+
+    /**
+     * <p>The previous notification that is associated with a budget.</p>
+     */
     inline void SetOldNotification(const Notification& value) { m_oldNotificationHasBeenSet = true; m_oldNotification = value; }
 
     /**
@@ -157,6 +173,11 @@ namespace Model
      * <p>The updated notification to be associated with a budget.</p>
      */
     inline const Notification& GetNewNotification() const{ return m_newNotification; }
+
+    /**
+     * <p>The updated notification to be associated with a budget.</p>
+     */
+    inline bool NewNotificationHasBeenSet() const { return m_newNotificationHasBeenSet; }
 
     /**
      * <p>The updated notification to be associated with a budget.</p>

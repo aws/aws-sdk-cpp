@@ -52,6 +52,11 @@ namespace Model
     /**
      * <p>The ID of the resolver endpoint that you want to delete.</p>
      */
+    inline bool ResolverEndpointIdHasBeenSet() const { return m_resolverEndpointIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the resolver endpoint that you want to delete.</p>
+     */
     inline void SetResolverEndpointId(const Aws::String& value) { m_resolverEndpointIdHasBeenSet = true; m_resolverEndpointId = value; }
 
     /**

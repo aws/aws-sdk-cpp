@@ -60,6 +60,11 @@ namespace Model
     /**
      * A value to use for the field if the field isn't specified for a document.
      */
+    inline bool DefaultValueHasBeenSet() const { return m_defaultValueHasBeenSet; }
+
+    /**
+     * A value to use for the field if the field isn't specified for a document.
+     */
     inline void SetDefaultValue(const Aws::String& value) { m_defaultValueHasBeenSet = true; m_defaultValue = value; }
 
     /**
@@ -92,6 +97,11 @@ namespace Model
      * <p>A list of source fields to map to the field. </p>
      */
     inline const Aws::String& GetSourceFields() const{ return m_sourceFields; }
+
+    /**
+     * <p>A list of source fields to map to the field. </p>
+     */
+    inline bool SourceFieldsHasBeenSet() const { return m_sourceFieldsHasBeenSet; }
 
     /**
      * <p>A list of source fields to map to the field. </p>
@@ -132,6 +142,11 @@ namespace Model
     /**
      * <p>Whether facet information can be returned for the field.</p>
      */
+    inline bool FacetEnabledHasBeenSet() const { return m_facetEnabledHasBeenSet; }
+
+    /**
+     * <p>Whether facet information can be returned for the field.</p>
+     */
     inline void SetFacetEnabled(bool value) { m_facetEnabledHasBeenSet = true; m_facetEnabled = value; }
 
     /**
@@ -148,6 +163,11 @@ namespace Model
     /**
      * <p>Whether the contents of the field are searchable.</p>
      */
+    inline bool SearchEnabledHasBeenSet() const { return m_searchEnabledHasBeenSet; }
+
+    /**
+     * <p>Whether the contents of the field are searchable.</p>
+     */
     inline void SetSearchEnabled(bool value) { m_searchEnabledHasBeenSet = true; m_searchEnabled = value; }
 
     /**
@@ -160,6 +180,11 @@ namespace Model
      * <p>Whether the contents of the field can be returned in the search results.</p>
      */
     inline bool GetReturnEnabled() const{ return m_returnEnabled; }
+
+    /**
+     * <p>Whether the contents of the field can be returned in the search results.</p>
+     */
+    inline bool ReturnEnabledHasBeenSet() const { return m_returnEnabledHasBeenSet; }
 
     /**
      * <p>Whether the contents of the field can be returned in the search results.</p>

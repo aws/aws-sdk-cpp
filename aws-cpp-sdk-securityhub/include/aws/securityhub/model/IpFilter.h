@@ -55,6 +55,11 @@ namespace Model
     /**
      * <p>Finding's CIDR value.</p>
      */
+    inline bool CidrHasBeenSet() const { return m_cidrHasBeenSet; }
+
+    /**
+     * <p>Finding's CIDR value.</p>
+     */
     inline void SetCidr(const Aws::String& value) { m_cidrHasBeenSet = true; m_cidr = value; }
 
     /**

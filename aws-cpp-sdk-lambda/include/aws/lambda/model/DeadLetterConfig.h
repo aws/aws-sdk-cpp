@@ -59,6 +59,12 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of an Amazon SQS queue or Amazon SNS
      * topic.</p>
      */
+    inline bool TargetArnHasBeenSet() const { return m_targetArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of an Amazon SQS queue or Amazon SNS
+     * topic.</p>
+     */
     inline void SetTargetArn(const Aws::String& value) { m_targetArnHasBeenSet = true; m_targetArn = value; }
 
     /**

@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>Identifier (ID) of the directory associated with the IP addresses.</p>
      */
+    inline bool DirectoryIdHasBeenSet() const { return m_directoryIdHasBeenSet; }
+
+    /**
+     * <p>Identifier (ID) of the directory associated with the IP addresses.</p>
+     */
     inline void SetDirectoryId(const Aws::String& value) { m_directoryIdHasBeenSet = true; m_directoryId = value; }
 
     /**
@@ -89,6 +94,11 @@ namespace Model
      * <p>IP address block in the <a>IpRoute</a>.</p>
      */
     inline const Aws::String& GetCidrIp() const{ return m_cidrIp; }
+
+    /**
+     * <p>IP address block in the <a>IpRoute</a>.</p>
+     */
+    inline bool CidrIpHasBeenSet() const { return m_cidrIpHasBeenSet; }
 
     /**
      * <p>IP address block in the <a>IpRoute</a>.</p>
@@ -129,6 +139,11 @@ namespace Model
     /**
      * <p>The status of the IP address block.</p>
      */
+    inline bool IpRouteStatusMsgHasBeenSet() const { return m_ipRouteStatusMsgHasBeenSet; }
+
+    /**
+     * <p>The status of the IP address block.</p>
+     */
     inline void SetIpRouteStatusMsg(const IpRouteStatusMsg& value) { m_ipRouteStatusMsgHasBeenSet = true; m_ipRouteStatusMsg = value; }
 
     /**
@@ -155,6 +170,11 @@ namespace Model
     /**
      * <p>The date and time the address block was added to the directory.</p>
      */
+    inline bool AddedDateTimeHasBeenSet() const { return m_addedDateTimeHasBeenSet; }
+
+    /**
+     * <p>The date and time the address block was added to the directory.</p>
+     */
     inline void SetAddedDateTime(const Aws::Utils::DateTime& value) { m_addedDateTimeHasBeenSet = true; m_addedDateTime = value; }
 
     /**
@@ -177,6 +197,11 @@ namespace Model
      * <p>The reason for the IpRouteStatusMsg.</p>
      */
     inline const Aws::String& GetIpRouteStatusReason() const{ return m_ipRouteStatusReason; }
+
+    /**
+     * <p>The reason for the IpRouteStatusMsg.</p>
+     */
+    inline bool IpRouteStatusReasonHasBeenSet() const { return m_ipRouteStatusReasonHasBeenSet; }
 
     /**
      * <p>The reason for the IpRouteStatusMsg.</p>
@@ -213,6 +238,11 @@ namespace Model
      * <p>Description of the <a>IpRouteInfo</a>.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
+
+    /**
+     * <p>Description of the <a>IpRouteInfo</a>.</p>
+     */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
 
     /**
      * <p>Description of the <a>IpRouteInfo</a>.</p>

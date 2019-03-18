@@ -57,6 +57,11 @@ namespace Model
     /**
      * The id of the Input Security Group to update.
      */
+    inline bool InputSecurityGroupIdHasBeenSet() const { return m_inputSecurityGroupIdHasBeenSet; }
+
+    /**
+     * The id of the Input Security Group to update.
+     */
     inline void SetInputSecurityGroupId(const Aws::String& value) { m_inputSecurityGroupIdHasBeenSet = true; m_inputSecurityGroupId = value; }
 
     /**
@@ -89,6 +94,11 @@ namespace Model
      * A collection of key-value pairs.
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
+
+    /**
+     * A collection of key-value pairs.
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
      * A collection of key-value pairs.
@@ -150,6 +160,11 @@ namespace Model
      * List of IPv4 CIDR addresses to whitelist
      */
     inline const Aws::Vector<InputWhitelistRuleCidr>& GetWhitelistRules() const{ return m_whitelistRules; }
+
+    /**
+     * List of IPv4 CIDR addresses to whitelist
+     */
+    inline bool WhitelistRulesHasBeenSet() const { return m_whitelistRulesHasBeenSet; }
 
     /**
      * List of IPv4 CIDR addresses to whitelist

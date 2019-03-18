@@ -63,6 +63,12 @@ namespace Model
      * <p>Describes whether the application uses Amazon Kinesis Data Analytics' default
      * checkpointing behavior. </p>
      */
+    inline bool ConfigurationTypeHasBeenSet() const { return m_configurationTypeHasBeenSet; }
+
+    /**
+     * <p>Describes whether the application uses Amazon Kinesis Data Analytics' default
+     * checkpointing behavior. </p>
+     */
     inline void SetConfigurationType(const ConfigurationType& value) { m_configurationTypeHasBeenSet = true; m_configurationType = value; }
 
     /**
@@ -94,6 +100,12 @@ namespace Model
      * <p>Describes whether checkpointing is enabled for a Java-based Kinesis Data
      * Analytics application.</p>
      */
+    inline bool CheckpointingEnabledHasBeenSet() const { return m_checkpointingEnabledHasBeenSet; }
+
+    /**
+     * <p>Describes whether checkpointing is enabled for a Java-based Kinesis Data
+     * Analytics application.</p>
+     */
     inline void SetCheckpointingEnabled(bool value) { m_checkpointingEnabledHasBeenSet = true; m_checkpointingEnabled = value; }
 
     /**
@@ -107,6 +119,11 @@ namespace Model
      * <p>Describes the interval in milliseconds between checkpoint operations. </p>
      */
     inline long long GetCheckpointInterval() const{ return m_checkpointInterval; }
+
+    /**
+     * <p>Describes the interval in milliseconds between checkpoint operations. </p>
+     */
+    inline bool CheckpointIntervalHasBeenSet() const { return m_checkpointIntervalHasBeenSet; }
 
     /**
      * <p>Describes the interval in milliseconds between checkpoint operations. </p>
@@ -130,6 +147,18 @@ namespace Model
      * Documentation</a>.</p>
      */
     inline long long GetMinPauseBetweenCheckpoints() const{ return m_minPauseBetweenCheckpoints; }
+
+    /**
+     * <p>Describes the minimum time in milliseconds after a checkpoint operation
+     * completes that a new checkpoint operation can start. If a checkpoint operation
+     * takes longer than the <code>CheckpointInterval</code>, the application otherwise
+     * performs continual checkpoint operations. For more information, see <a
+     * href="https://ci.apache.org/projects/flink/flink-docs-stable/ops/state/large_state_tuning.html#tuning-checkpointing">
+     * Tuning Checkpointing</a> in the <a
+     * href="https://ci.apache.org/projects/flink/flink-docs-release-1.6/">Apache Flink
+     * Documentation</a>.</p>
+     */
+    inline bool MinPauseBetweenCheckpointsHasBeenSet() const { return m_minPauseBetweenCheckpointsHasBeenSet; }
 
     /**
      * <p>Describes the minimum time in milliseconds after a checkpoint operation

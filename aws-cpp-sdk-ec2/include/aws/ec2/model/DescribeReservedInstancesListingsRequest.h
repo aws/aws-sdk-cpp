@@ -72,6 +72,17 @@ namespace Model
      * <code>cancelled</code> | <code>closed</code>).</p> </li> <li> <p>
      * <code>status-message</code> - The reason for the status.</p> </li> </ul>
      */
+    inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
+
+    /**
+     * <p>One or more filters.</p> <ul> <li> <p> <code>reserved-instances-id</code> -
+     * The ID of the Reserved Instances.</p> </li> <li> <p>
+     * <code>reserved-instances-listing-id</code> - The ID of the Reserved Instances
+     * listing.</p> </li> <li> <p> <code>status</code> - The status of the Reserved
+     * Instance listing (<code>pending</code> | <code>active</code> |
+     * <code>cancelled</code> | <code>closed</code>).</p> </li> <li> <p>
+     * <code>status-message</code> - The reason for the status.</p> </li> </ul>
+     */
     inline void SetFilters(const Aws::Vector<Filter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
 
     /**
@@ -138,6 +149,11 @@ namespace Model
     /**
      * <p>One or more Reserved Instance IDs.</p>
      */
+    inline bool ReservedInstancesIdHasBeenSet() const { return m_reservedInstancesIdHasBeenSet; }
+
+    /**
+     * <p>One or more Reserved Instance IDs.</p>
+     */
     inline void SetReservedInstancesId(const Aws::String& value) { m_reservedInstancesIdHasBeenSet = true; m_reservedInstancesId = value; }
 
     /**
@@ -170,6 +186,11 @@ namespace Model
      * <p>One or more Reserved Instance listing IDs.</p>
      */
     inline const Aws::String& GetReservedInstancesListingId() const{ return m_reservedInstancesListingId; }
+
+    /**
+     * <p>One or more Reserved Instance listing IDs.</p>
+     */
+    inline bool ReservedInstancesListingIdHasBeenSet() const { return m_reservedInstancesListingIdHasBeenSet; }
 
     /**
      * <p>One or more Reserved Instance listing IDs.</p>

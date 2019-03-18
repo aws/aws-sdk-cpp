@@ -54,6 +54,12 @@ namespace Model
      * <p>Identifier of the shared directory in the directory consumer account. This
      * identifier is different for each directory owner account.</p>
      */
+    inline bool SharedDirectoryIdHasBeenSet() const { return m_sharedDirectoryIdHasBeenSet; }
+
+    /**
+     * <p>Identifier of the shared directory in the directory consumer account. This
+     * identifier is different for each directory owner account.</p>
+     */
     inline void SetSharedDirectoryId(const Aws::String& value) { m_sharedDirectoryIdHasBeenSet = true; m_sharedDirectoryId = value; }
 
     /**

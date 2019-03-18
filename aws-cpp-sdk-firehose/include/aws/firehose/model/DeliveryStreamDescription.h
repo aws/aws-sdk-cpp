@@ -62,6 +62,11 @@ namespace Model
     /**
      * <p>The name of the delivery stream.</p>
      */
+    inline bool DeliveryStreamNameHasBeenSet() const { return m_deliveryStreamNameHasBeenSet; }
+
+    /**
+     * <p>The name of the delivery stream.</p>
+     */
     inline void SetDeliveryStreamName(const Aws::String& value) { m_deliveryStreamNameHasBeenSet = true; m_deliveryStreamName = value; }
 
     /**
@@ -97,6 +102,14 @@ namespace Model
      * Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
      */
     inline const Aws::String& GetDeliveryStreamARN() const{ return m_deliveryStreamARN; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the delivery stream. For more information,
+     * see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
+     */
+    inline bool DeliveryStreamARNHasBeenSet() const { return m_deliveryStreamARNHasBeenSet; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the delivery stream. For more information,
@@ -155,6 +168,11 @@ namespace Model
     /**
      * <p>The status of the delivery stream.</p>
      */
+    inline bool DeliveryStreamStatusHasBeenSet() const { return m_deliveryStreamStatusHasBeenSet; }
+
+    /**
+     * <p>The status of the delivery stream.</p>
+     */
     inline void SetDeliveryStreamStatus(const DeliveryStreamStatus& value) { m_deliveryStreamStatusHasBeenSet = true; m_deliveryStreamStatus = value; }
 
     /**
@@ -178,6 +196,12 @@ namespace Model
      * stream.</p>
      */
     inline const DeliveryStreamEncryptionConfiguration& GetDeliveryStreamEncryptionConfiguration() const{ return m_deliveryStreamEncryptionConfiguration; }
+
+    /**
+     * <p>Indicates the server-side encryption (SSE) status for the delivery
+     * stream.</p>
+     */
+    inline bool DeliveryStreamEncryptionConfigurationHasBeenSet() const { return m_deliveryStreamEncryptionConfigurationHasBeenSet; }
 
     /**
      * <p>Indicates the server-side encryption (SSE) status for the delivery
@@ -211,6 +235,14 @@ namespace Model
      * delivery stream uses a Kinesis data stream as a source.</p> </li> </ul>
      */
     inline const DeliveryStreamType& GetDeliveryStreamType() const{ return m_deliveryStreamType; }
+
+    /**
+     * <p>The delivery stream type. This can be one of the following values:</p> <ul>
+     * <li> <p> <code>DirectPut</code>: Provider applications access the delivery
+     * stream directly.</p> </li> <li> <p> <code>KinesisStreamAsSource</code>: The
+     * delivery stream uses a Kinesis data stream as a source.</p> </li> </ul>
+     */
+    inline bool DeliveryStreamTypeHasBeenSet() const { return m_deliveryStreamTypeHasBeenSet; }
 
     /**
      * <p>The delivery stream type. This can be one of the following values:</p> <ul>
@@ -252,6 +284,14 @@ namespace Model
      * version of the delivery stream.</p>
      */
     inline const Aws::String& GetVersionId() const{ return m_versionId; }
+
+    /**
+     * <p>Each time the destination is updated for a delivery stream, the version ID is
+     * changed, and the current version ID is required when updating the destination.
+     * This is so that the service knows it is applying the changes to the correct
+     * version of the delivery stream.</p>
+     */
+    inline bool VersionIdHasBeenSet() const { return m_versionIdHasBeenSet; }
 
     /**
      * <p>Each time the destination is updated for a delivery stream, the version ID is
@@ -310,6 +350,11 @@ namespace Model
     /**
      * <p>The date and time that the delivery stream was created.</p>
      */
+    inline bool CreateTimestampHasBeenSet() const { return m_createTimestampHasBeenSet; }
+
+    /**
+     * <p>The date and time that the delivery stream was created.</p>
+     */
     inline void SetCreateTimestamp(const Aws::Utils::DateTime& value) { m_createTimestampHasBeenSet = true; m_createTimestamp = value; }
 
     /**
@@ -332,6 +377,11 @@ namespace Model
      * <p>The date and time that the delivery stream was last updated.</p>
      */
     inline const Aws::Utils::DateTime& GetLastUpdateTimestamp() const{ return m_lastUpdateTimestamp; }
+
+    /**
+     * <p>The date and time that the delivery stream was last updated.</p>
+     */
+    inline bool LastUpdateTimestampHasBeenSet() const { return m_lastUpdateTimestampHasBeenSet; }
 
     /**
      * <p>The date and time that the delivery stream was last updated.</p>
@@ -360,6 +410,13 @@ namespace Model
      * the source Kinesis data stream.</p>
      */
     inline const SourceDescription& GetSource() const{ return m_source; }
+
+    /**
+     * <p>If the <code>DeliveryStreamType</code> parameter is
+     * <code>KinesisStreamAsSource</code>, a <a>SourceDescription</a> object describing
+     * the source Kinesis data stream.</p>
+     */
+    inline bool SourceHasBeenSet() const { return m_sourceHasBeenSet; }
 
     /**
      * <p>If the <code>DeliveryStreamType</code> parameter is
@@ -398,6 +455,11 @@ namespace Model
     /**
      * <p>The destinations.</p>
      */
+    inline bool DestinationsHasBeenSet() const { return m_destinationsHasBeenSet; }
+
+    /**
+     * <p>The destinations.</p>
+     */
     inline void SetDestinations(const Aws::Vector<DestinationDescription>& value) { m_destinationsHasBeenSet = true; m_destinations = value; }
 
     /**
@@ -430,6 +492,11 @@ namespace Model
      * <p>Indicates whether there are more destinations available to list.</p>
      */
     inline bool GetHasMoreDestinations() const{ return m_hasMoreDestinations; }
+
+    /**
+     * <p>Indicates whether there are more destinations available to list.</p>
+     */
+    inline bool HasMoreDestinationsHasBeenSet() const { return m_hasMoreDestinationsHasBeenSet; }
 
     /**
      * <p>Indicates whether there are more destinations available to list.</p>

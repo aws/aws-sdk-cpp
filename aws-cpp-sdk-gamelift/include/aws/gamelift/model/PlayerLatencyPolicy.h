@@ -63,6 +63,12 @@ namespace Model
      * <p>The maximum latency value that is allowed for any player, in milliseconds.
      * All policies must have a value set for this property.</p>
      */
+    inline bool MaximumIndividualPlayerLatencyMillisecondsHasBeenSet() const { return m_maximumIndividualPlayerLatencyMillisecondsHasBeenSet; }
+
+    /**
+     * <p>The maximum latency value that is allowed for any player, in milliseconds.
+     * All policies must have a value set for this property.</p>
+     */
     inline void SetMaximumIndividualPlayerLatencyMilliseconds(int value) { m_maximumIndividualPlayerLatencyMillisecondsHasBeenSet = true; m_maximumIndividualPlayerLatencyMilliseconds = value; }
 
     /**
@@ -78,6 +84,13 @@ namespace Model
      * enforced until the queue times out.</p>
      */
     inline int GetPolicyDurationSeconds() const{ return m_policyDurationSeconds; }
+
+    /**
+     * <p>The length of time, in seconds, that the policy is enforced while placing a
+     * new game session. A null value for this property means that the policy is
+     * enforced until the queue times out.</p>
+     */
+    inline bool PolicyDurationSecondsHasBeenSet() const { return m_policyDurationSecondsHasBeenSet; }
 
     /**
      * <p>The length of time, in seconds, that the policy is enforced while placing a

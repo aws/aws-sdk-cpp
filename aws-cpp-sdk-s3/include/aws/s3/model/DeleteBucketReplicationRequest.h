@@ -59,6 +59,12 @@ namespace Model
      * <p> The bucket name. </p> <note> <p>It can take a while to propagate the
      * deletion of a replication configuration to all Amazon S3 systems.</p> </note>
      */
+    inline bool BucketHasBeenSet() const { return m_bucketHasBeenSet; }
+
+    /**
+     * <p> The bucket name. </p> <note> <p>It can take a while to propagate the
+     * deletion of a replication configuration to all Amazon S3 systems.</p> </note>
+     */
     inline void SetBucket(const Aws::String& value) { m_bucketHasBeenSet = true; m_bucket = value; }
 
     /**
@@ -94,6 +100,9 @@ namespace Model
 
     
     inline const Aws::Map<Aws::String, Aws::String>& GetCustomizedAccessLogTag() const{ return m_customizedAccessLogTag; }
+
+    
+    inline bool CustomizedAccessLogTagHasBeenSet() const { return m_customizedAccessLogTagHasBeenSet; }
 
     
     inline void SetCustomizedAccessLogTag(const Aws::Map<Aws::String, Aws::String>& value) { m_customizedAccessLogTagHasBeenSet = true; m_customizedAccessLogTag = value; }

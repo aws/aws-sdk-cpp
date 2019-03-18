@@ -52,6 +52,11 @@ namespace Model
     /**
      * <p>The name of the trigger to retrieve.</p>
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>The name of the trigger to retrieve.</p>
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**

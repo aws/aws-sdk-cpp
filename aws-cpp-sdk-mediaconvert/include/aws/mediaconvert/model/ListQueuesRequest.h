@@ -54,6 +54,9 @@ namespace Model
     inline const QueueListBy& GetListBy() const{ return m_listBy; }
 
     
+    inline bool ListByHasBeenSet() const { return m_listByHasBeenSet; }
+
+    
     inline void SetListBy(const QueueListBy& value) { m_listByHasBeenSet = true; m_listBy = value; }
 
     
@@ -74,6 +77,11 @@ namespace Model
     /**
      * Optional. Number of queues, up to twenty, that will be returned at one time.
      */
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
+
+    /**
+     * Optional. Number of queues, up to twenty, that will be returned at one time.
+     */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
@@ -87,6 +95,12 @@ namespace Model
      * the next batch of queues.
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
+    /**
+     * Use this string, provided with the response to a previous request, to request
+     * the next batch of queues.
+     */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
      * Use this string, provided with the response to a previous request, to request
@@ -127,6 +141,9 @@ namespace Model
 
     
     inline const Order& GetOrder() const{ return m_order; }
+
+    
+    inline bool OrderHasBeenSet() const { return m_orderHasBeenSet; }
 
     
     inline void SetOrder(const Order& value) { m_orderHasBeenSet = true; m_order = value; }

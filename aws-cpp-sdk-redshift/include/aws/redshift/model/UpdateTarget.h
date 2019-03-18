@@ -60,6 +60,11 @@ namespace Model
     /**
      * <p>The name of the new maintenance track.</p>
      */
+    inline bool MaintenanceTrackNameHasBeenSet() const { return m_maintenanceTrackNameHasBeenSet; }
+
+    /**
+     * <p>The name of the new maintenance track.</p>
+     */
     inline void SetMaintenanceTrackName(const Aws::String& value) { m_maintenanceTrackNameHasBeenSet = true; m_maintenanceTrackName = value; }
 
     /**
@@ -96,6 +101,11 @@ namespace Model
     /**
      * <p>The cluster version for the new maintenance track.</p>
      */
+    inline bool DatabaseVersionHasBeenSet() const { return m_databaseVersionHasBeenSet; }
+
+    /**
+     * <p>The cluster version for the new maintenance track.</p>
+     */
     inline void SetDatabaseVersion(const Aws::String& value) { m_databaseVersionHasBeenSet = true; m_databaseVersion = value; }
 
     /**
@@ -128,6 +138,11 @@ namespace Model
      * <p>A list of operations supported by the maintenance track.</p>
      */
     inline const Aws::Vector<SupportedOperation>& GetSupportedOperations() const{ return m_supportedOperations; }
+
+    /**
+     * <p>A list of operations supported by the maintenance track.</p>
+     */
+    inline bool SupportedOperationsHasBeenSet() const { return m_supportedOperationsHasBeenSet; }
 
     /**
      * <p>A list of operations supported by the maintenance track.</p>

@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The identifier of the WorkSpace.</p>
      */
+    inline bool WorkspaceIdHasBeenSet() const { return m_workspaceIdHasBeenSet; }
+
+    /**
+     * <p>The identifier of the WorkSpace.</p>
+     */
     inline void SetWorkspaceId(const Aws::String& value) { m_workspaceIdHasBeenSet = true; m_workspaceId = value; }
 
     /**
@@ -95,6 +100,12 @@ namespace Model
      * <p>The connection state of the WorkSpace. The connection state is unknown if the
      * WorkSpace is stopped.</p>
      */
+    inline bool ConnectionStateHasBeenSet() const { return m_connectionStateHasBeenSet; }
+
+    /**
+     * <p>The connection state of the WorkSpace. The connection state is unknown if the
+     * WorkSpace is stopped.</p>
+     */
     inline void SetConnectionState(const ConnectionState& value) { m_connectionStateHasBeenSet = true; m_connectionState = value; }
 
     /**
@@ -124,6 +135,11 @@ namespace Model
     /**
      * <p>The timestamp of the connection status check.</p>
      */
+    inline bool ConnectionStateCheckTimestampHasBeenSet() const { return m_connectionStateCheckTimestampHasBeenSet; }
+
+    /**
+     * <p>The timestamp of the connection status check.</p>
+     */
     inline void SetConnectionStateCheckTimestamp(const Aws::Utils::DateTime& value) { m_connectionStateCheckTimestampHasBeenSet = true; m_connectionStateCheckTimestamp = value; }
 
     /**
@@ -146,6 +162,11 @@ namespace Model
      * <p>The timestamp of the last known user connection.</p>
      */
     inline const Aws::Utils::DateTime& GetLastKnownUserConnectionTimestamp() const{ return m_lastKnownUserConnectionTimestamp; }
+
+    /**
+     * <p>The timestamp of the last known user connection.</p>
+     */
+    inline bool LastKnownUserConnectionTimestampHasBeenSet() const { return m_lastKnownUserConnectionTimestampHasBeenSet; }
 
     /**
      * <p>The timestamp of the last known user connection.</p>

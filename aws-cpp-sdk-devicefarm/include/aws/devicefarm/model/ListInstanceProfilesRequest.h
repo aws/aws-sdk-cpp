@@ -54,6 +54,12 @@ namespace Model
      * <p>An integer specifying the maximum number of items you want to return in the
      * API response.</p>
      */
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
+
+    /**
+     * <p>An integer specifying the maximum number of items you want to return in the
+     * API response.</p>
+     */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
@@ -68,6 +74,12 @@ namespace Model
      * which can be used to return the next set of items in the list.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
+    /**
+     * <p>An identifier that was returned from the previous call to this operation,
+     * which can be used to return the next set of items in the list.</p>
+     */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
      * <p>An identifier that was returned from the previous call to this operation,

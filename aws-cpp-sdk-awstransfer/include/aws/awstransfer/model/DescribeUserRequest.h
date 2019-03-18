@@ -54,6 +54,12 @@ namespace Model
      * <p>A system-assigned unique identifier for an SFTP server that has this user
      * assigned.</p>
      */
+    inline bool ServerIdHasBeenSet() const { return m_serverIdHasBeenSet; }
+
+    /**
+     * <p>A system-assigned unique identifier for an SFTP server that has this user
+     * assigned.</p>
+     */
     inline void SetServerId(const Aws::String& value) { m_serverIdHasBeenSet = true; m_serverId = value; }
 
     /**
@@ -93,6 +99,13 @@ namespace Model
      * transfer tasks.</p>
      */
     inline const Aws::String& GetUserName() const{ return m_userName; }
+
+    /**
+     * <p>The name of the user assigned to one or more servers. User names are part of
+     * the sign-in credentials to use the AWS Transfer service and perform file
+     * transfer tasks.</p>
+     */
+    inline bool UserNameHasBeenSet() const { return m_userNameHasBeenSet; }
 
     /**
      * <p>The name of the user assigned to one or more servers. User names are part of

@@ -59,6 +59,11 @@ namespace Model
     /**
      * <p>Allows a typed link specifier to be accepted as input.</p>
      */
+    inline bool TypedLinkSpecifierHasBeenSet() const { return m_typedLinkSpecifierHasBeenSet; }
+
+    /**
+     * <p>Allows a typed link specifier to be accepted as input.</p>
+     */
     inline void SetTypedLinkSpecifier(const TypedLinkSpecifier& value) { m_typedLinkSpecifierHasBeenSet = true; m_typedLinkSpecifier = value; }
 
     /**
@@ -81,6 +86,11 @@ namespace Model
      * <p>A list of attribute names whose values will be retrieved.</p>
      */
     inline const Aws::Vector<Aws::String>& GetAttributeNames() const{ return m_attributeNames; }
+
+    /**
+     * <p>A list of attribute names whose values will be retrieved.</p>
+     */
+    inline bool AttributeNamesHasBeenSet() const { return m_attributeNamesHasBeenSet; }
 
     /**
      * <p>A list of attribute names whose values will be retrieved.</p>

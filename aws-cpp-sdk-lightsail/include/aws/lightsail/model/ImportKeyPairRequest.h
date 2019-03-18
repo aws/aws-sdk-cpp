@@ -52,6 +52,11 @@ namespace Model
     /**
      * <p>The name of the key pair for which you want to import the public key.</p>
      */
+    inline bool KeyPairNameHasBeenSet() const { return m_keyPairNameHasBeenSet; }
+
+    /**
+     * <p>The name of the key pair for which you want to import the public key.</p>
+     */
     inline void SetKeyPairName(const Aws::String& value) { m_keyPairNameHasBeenSet = true; m_keyPairName = value; }
 
     /**
@@ -84,6 +89,11 @@ namespace Model
      * <p>A base64-encoded public key of the <code>ssh-rsa</code> type.</p>
      */
     inline const Aws::String& GetPublicKeyBase64() const{ return m_publicKeyBase64; }
+
+    /**
+     * <p>A base64-encoded public key of the <code>ssh-rsa</code> type.</p>
+     */
+    inline bool PublicKeyBase64HasBeenSet() const { return m_publicKeyBase64HasBeenSet; }
 
     /**
      * <p>A base64-encoded public key of the <code>ssh-rsa</code> type.</p>

@@ -65,6 +65,14 @@ namespace Model
      * required permissions, the error response is <code>DryRunOperation</code>.
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
+    inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
+
+    /**
+     * <p>Checks whether you have the required permissions for the action, without
+     * actually making the request, and provides an error response. If you have the
+     * required permissions, the error response is <code>DryRunOperation</code>.
+     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+     */
     inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
 
     /**
@@ -80,6 +88,11 @@ namespace Model
      * <p>The IDs of the Spot Fleet requests.</p>
      */
     inline const Aws::Vector<Aws::String>& GetSpotFleetRequestIds() const{ return m_spotFleetRequestIds; }
+
+    /**
+     * <p>The IDs of the Spot Fleet requests.</p>
+     */
+    inline bool SpotFleetRequestIdsHasBeenSet() const { return m_spotFleetRequestIdsHasBeenSet; }
 
     /**
      * <p>The IDs of the Spot Fleet requests.</p>
@@ -122,6 +135,12 @@ namespace Model
      * canceled successfully.</p>
      */
     inline bool GetTerminateInstances() const{ return m_terminateInstances; }
+
+    /**
+     * <p>Indicates whether to terminate instances for a Spot Fleet request if it is
+     * canceled successfully.</p>
+     */
+    inline bool TerminateInstancesHasBeenSet() const { return m_terminateInstancesHasBeenSet; }
 
     /**
      * <p>Indicates whether to terminate instances for a Spot Fleet request if it is

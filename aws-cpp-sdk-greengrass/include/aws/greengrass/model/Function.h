@@ -56,6 +56,11 @@ namespace Model
     /**
      * The ARN of the Lambda function.
      */
+    inline bool FunctionArnHasBeenSet() const { return m_functionArnHasBeenSet; }
+
+    /**
+     * The ARN of the Lambda function.
+     */
     inline void SetFunctionArn(const Aws::String& value) { m_functionArnHasBeenSet = true; m_functionArn = value; }
 
     /**
@@ -92,6 +97,11 @@ namespace Model
     /**
      * The configuration of the Lambda function.
      */
+    inline bool FunctionConfigurationHasBeenSet() const { return m_functionConfigurationHasBeenSet; }
+
+    /**
+     * The configuration of the Lambda function.
+     */
     inline void SetFunctionConfiguration(const FunctionConfiguration& value) { m_functionConfigurationHasBeenSet = true; m_functionConfiguration = value; }
 
     /**
@@ -116,6 +126,13 @@ namespace Model
      * ''[a-zA-Z0-9:_-]+''.
      */
     inline const Aws::String& GetId() const{ return m_id; }
+
+    /**
+     * A descriptive or arbitrary ID for the function. This value must be unique within
+     * the function definition version. Max length is 128 characters with pattern
+     * ''[a-zA-Z0-9:_-]+''.
+     */
+    inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
 
     /**
      * A descriptive or arbitrary ID for the function. This value must be unique within

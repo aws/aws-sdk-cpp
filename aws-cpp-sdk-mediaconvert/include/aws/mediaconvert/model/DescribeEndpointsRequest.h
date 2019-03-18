@@ -56,6 +56,12 @@ namespace Model
      * Optional. Max number of endpoints, up to twenty, that will be returned at one
      * time.
      */
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
+
+    /**
+     * Optional. Max number of endpoints, up to twenty, that will be returned at one
+     * time.
+     */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
@@ -67,6 +73,9 @@ namespace Model
 
     
     inline const DescribeEndpointsMode& GetMode() const{ return m_mode; }
+
+    
+    inline bool ModeHasBeenSet() const { return m_modeHasBeenSet; }
 
     
     inline void SetMode(const DescribeEndpointsMode& value) { m_modeHasBeenSet = true; m_mode = value; }
@@ -86,6 +95,12 @@ namespace Model
      * the next batch of endpoints.
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
+    /**
+     * Use this string, provided with the response to a previous request, to request
+     * the next batch of endpoints.
+     */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
      * Use this string, provided with the response to a previous request, to request

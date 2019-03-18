@@ -58,6 +58,12 @@ namespace Model
      * <p>Type of entity from the list of entity types in the metadata of an entity
      * recognizer. </p>
      */
+    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
+
+    /**
+     * <p>Type of entity from the list of entity types in the metadata of an entity
+     * recognizer. </p>
+     */
     inline void SetType(const Aws::String& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**

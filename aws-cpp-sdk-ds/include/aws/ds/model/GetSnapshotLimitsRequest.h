@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>Contains the identifier of the directory to obtain the limits for.</p>
      */
+    inline bool DirectoryIdHasBeenSet() const { return m_directoryIdHasBeenSet; }
+
+    /**
+     * <p>Contains the identifier of the directory to obtain the limits for.</p>
+     */
     inline void SetDirectoryId(const Aws::String& value) { m_directoryIdHasBeenSet = true; m_directoryId = value; }
 
     /**

@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>An ARN that uniquely identifies the result of a migration task.</p>
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>An ARN that uniquely identifies the result of a migration task.</p>
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
@@ -89,6 +94,12 @@ namespace Model
      * the artifact for clarity or for later reference.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
+
+    /**
+     * <p>A description that can be free-form text to record additional detail about
+     * the artifact for clarity or for later reference.</p>
+     */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
 
     /**
      * <p>A description that can be free-form text to record additional detail about

@@ -63,6 +63,12 @@ namespace Model
      * <p>For the metric that the CloudWatch alarm is associated with, the number of
      * periods that the metric is compared to the threshold.</p>
      */
+    inline bool EvaluationPeriodsHasBeenSet() const { return m_evaluationPeriodsHasBeenSet; }
+
+    /**
+     * <p>For the metric that the CloudWatch alarm is associated with, the number of
+     * periods that the metric is compared to the threshold.</p>
+     */
     inline void SetEvaluationPeriods(int value) { m_evaluationPeriodsHasBeenSet = true; m_evaluationPeriods = value; }
 
     /**
@@ -82,6 +88,12 @@ namespace Model
      * <p>For the metric that the CloudWatch alarm is associated with, the value the
      * metric is compared with.</p>
      */
+    inline bool ThresholdHasBeenSet() const { return m_thresholdHasBeenSet; }
+
+    /**
+     * <p>For the metric that the CloudWatch alarm is associated with, the value the
+     * metric is compared with.</p>
+     */
     inline void SetThreshold(double value) { m_thresholdHasBeenSet = true; m_threshold = value; }
 
     /**
@@ -96,6 +108,12 @@ namespace Model
      * operation that is used for the comparison.</p>
      */
     inline const ComparisonOperator& GetComparisonOperator() const{ return m_comparisonOperator; }
+
+    /**
+     * <p>For the metric that the CloudWatch alarm is associated with, the arithmetic
+     * operation that is used for the comparison.</p>
+     */
+    inline bool ComparisonOperatorHasBeenSet() const { return m_comparisonOperatorHasBeenSet; }
 
     /**
      * <p>For the metric that the CloudWatch alarm is associated with, the arithmetic
@@ -132,6 +150,12 @@ namespace Model
      * <p>For the metric that the CloudWatch alarm is associated with, the duration of
      * one evaluation period in seconds.</p>
      */
+    inline bool PeriodHasBeenSet() const { return m_periodHasBeenSet; }
+
+    /**
+     * <p>For the metric that the CloudWatch alarm is associated with, the duration of
+     * one evaluation period in seconds.</p>
+     */
     inline void SetPeriod(int value) { m_periodHasBeenSet = true; m_period = value; }
 
     /**
@@ -145,6 +169,11 @@ namespace Model
      * <p>The name of the CloudWatch metric that the alarm is associated with.</p>
      */
     inline const Aws::String& GetMetricName() const{ return m_metricName; }
+
+    /**
+     * <p>The name of the CloudWatch metric that the alarm is associated with.</p>
+     */
+    inline bool MetricNameHasBeenSet() const { return m_metricNameHasBeenSet; }
 
     /**
      * <p>The name of the CloudWatch metric that the alarm is associated with.</p>
@@ -185,6 +214,15 @@ namespace Model
      * CloudWatch User Guide</i>.</p>
      */
     inline const Aws::String& GetNamespace() const{ return m_namespace; }
+
+    /**
+     * <p>The namespace of the metric that the alarm is associated with. For more
+     * information, see <a
+     * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/CW_Support_For_AWS.html">Amazon
+     * CloudWatch Namespaces, Dimensions, and Metrics Reference</a> in the <i>Amazon
+     * CloudWatch User Guide</i>.</p>
+     */
+    inline bool NamespaceHasBeenSet() const { return m_namespaceHasBeenSet; }
 
     /**
      * <p>The namespace of the metric that the alarm is associated with. For more
@@ -251,6 +289,12 @@ namespace Model
      * <p>For the metric that the CloudWatch alarm is associated with, the statistic
      * that is applied to the metric.</p>
      */
+    inline bool StatisticHasBeenSet() const { return m_statisticHasBeenSet; }
+
+    /**
+     * <p>For the metric that the CloudWatch alarm is associated with, the statistic
+     * that is applied to the metric.</p>
+     */
     inline void SetStatistic(const Statistic& value) { m_statisticHasBeenSet = true; m_statistic = value; }
 
     /**
@@ -281,6 +325,16 @@ namespace Model
      * CloudWatch User Guide</i>.</p>
      */
     inline const Aws::Vector<Dimension>& GetDimensions() const{ return m_dimensions; }
+
+    /**
+     * <p>For the metric that the CloudWatch alarm is associated with, a complex type
+     * that contains information about the dimensions for the metric. For information,
+     * see <a
+     * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/CW_Support_For_AWS.html">Amazon
+     * CloudWatch Namespaces, Dimensions, and Metrics Reference</a> in the <i>Amazon
+     * CloudWatch User Guide</i>.</p>
+     */
+    inline bool DimensionsHasBeenSet() const { return m_dimensionsHasBeenSet; }
 
     /**
      * <p>For the metric that the CloudWatch alarm is associated with, a complex type

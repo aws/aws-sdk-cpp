@@ -60,6 +60,13 @@ namespace Model
      * </li> <li> <p> <code>jp</code> - Japanese</p> </li> <li> <p> <code>zh</code> -
      * Chinese</p> </li> </ul>
      */
+    inline bool AcceptLanguageHasBeenSet() const { return m_acceptLanguageHasBeenSet; }
+
+    /**
+     * <p>The language code.</p> <ul> <li> <p> <code>en</code> - English (default)</p>
+     * </li> <li> <p> <code>jp</code> - Japanese</p> </li> <li> <p> <code>zh</code> -
+     * Chinese</p> </li> </ul>
+     */
     inline void SetAcceptLanguage(const Aws::String& value) { m_acceptLanguageHasBeenSet = true; m_acceptLanguage = value; }
 
     /**
@@ -108,6 +115,12 @@ namespace Model
      * <p>The updated name of the provisioned product. You cannot specify both
      * <code>ProvisionedProductName</code> and <code>ProvisionedProductId</code>.</p>
      */
+    inline bool ProvisionedProductNameHasBeenSet() const { return m_provisionedProductNameHasBeenSet; }
+
+    /**
+     * <p>The updated name of the provisioned product. You cannot specify both
+     * <code>ProvisionedProductName</code> and <code>ProvisionedProductId</code>.</p>
+     */
     inline void SetProvisionedProductName(const Aws::String& value) { m_provisionedProductNameHasBeenSet = true; m_provisionedProductName = value; }
 
     /**
@@ -146,6 +159,12 @@ namespace Model
      * <code>ProvisionedProductName</code> and <code>ProvisionedProductId</code>.</p>
      */
     inline const Aws::String& GetProvisionedProductId() const{ return m_provisionedProductId; }
+
+    /**
+     * <p>The identifier of the provisioned product. You cannot specify both
+     * <code>ProvisionedProductName</code> and <code>ProvisionedProductId</code>.</p>
+     */
+    inline bool ProvisionedProductIdHasBeenSet() const { return m_provisionedProductIdHasBeenSet; }
 
     /**
      * <p>The identifier of the provisioned product. You cannot specify both
@@ -192,6 +211,11 @@ namespace Model
     /**
      * <p>The identifier of the product.</p>
      */
+    inline bool ProductIdHasBeenSet() const { return m_productIdHasBeenSet; }
+
+    /**
+     * <p>The identifier of the product.</p>
+     */
     inline void SetProductId(const Aws::String& value) { m_productIdHasBeenSet = true; m_productId = value; }
 
     /**
@@ -224,6 +248,11 @@ namespace Model
      * <p>The identifier of the provisioning artifact.</p>
      */
     inline const Aws::String& GetProvisioningArtifactId() const{ return m_provisioningArtifactId; }
+
+    /**
+     * <p>The identifier of the provisioning artifact.</p>
+     */
+    inline bool ProvisioningArtifactIdHasBeenSet() const { return m_provisioningArtifactIdHasBeenSet; }
 
     /**
      * <p>The identifier of the provisioning artifact.</p>
@@ -261,6 +290,12 @@ namespace Model
      * path, and required if the product has more than one path.</p>
      */
     inline const Aws::String& GetPathId() const{ return m_pathId; }
+
+    /**
+     * <p>The new path identifier. This value is optional if the product has a default
+     * path, and required if the product has more than one path.</p>
+     */
+    inline bool PathIdHasBeenSet() const { return m_pathIdHasBeenSet; }
 
     /**
      * <p>The new path identifier. This value is optional if the product has a default
@@ -307,6 +342,11 @@ namespace Model
     /**
      * <p>The new parameters.</p>
      */
+    inline bool ProvisioningParametersHasBeenSet() const { return m_provisioningParametersHasBeenSet; }
+
+    /**
+     * <p>The new parameters.</p>
+     */
     inline void SetProvisioningParameters(const Aws::Vector<UpdateProvisioningParameter>& value) { m_provisioningParametersHasBeenSet = true; m_provisioningParameters = value; }
 
     /**
@@ -345,6 +385,12 @@ namespace Model
      * <p>An object that contains information about the provisioning preferences for a
      * stack set.</p>
      */
+    inline bool ProvisioningPreferencesHasBeenSet() const { return m_provisioningPreferencesHasBeenSet; }
+
+    /**
+     * <p>An object that contains information about the provisioning preferences for a
+     * stack set.</p>
+     */
     inline void SetProvisioningPreferences(const UpdateProvisioningPreferences& value) { m_provisioningPreferencesHasBeenSet = true; m_provisioningPreferences = value; }
 
     /**
@@ -371,6 +417,12 @@ namespace Model
      * request.</p>
      */
     inline const Aws::String& GetUpdateToken() const{ return m_updateToken; }
+
+    /**
+     * <p>The idempotency token that uniquely identifies the provisioning update
+     * request.</p>
+     */
+    inline bool UpdateTokenHasBeenSet() const { return m_updateTokenHasBeenSet; }
 
     /**
      * <p>The idempotency token that uniquely identifies the provisioning update

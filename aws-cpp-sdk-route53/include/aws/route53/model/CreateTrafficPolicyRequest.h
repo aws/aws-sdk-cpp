@@ -54,6 +54,11 @@ namespace Model
     /**
      * <p>The name of the traffic policy.</p>
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>The name of the traffic policy.</p>
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
@@ -89,6 +94,14 @@ namespace Model
      * Policy Document Format</a>.</p>
      */
     inline const Aws::String& GetDocument() const{ return m_document; }
+
+    /**
+     * <p>The definition of this traffic policy in JSON format. For more information,
+     * see <a
+     * href="http://docs.aws.amazon.com/Route53/latest/APIReference/api-policies-traffic-policy-document-format.html">Traffic
+     * Policy Document Format</a>.</p>
+     */
+    inline bool DocumentHasBeenSet() const { return m_documentHasBeenSet; }
 
     /**
      * <p>The definition of this traffic policy in JSON format. For more information,
@@ -144,6 +157,12 @@ namespace Model
      * policy.</p>
      */
     inline const Aws::String& GetComment() const{ return m_comment; }
+
+    /**
+     * <p>(Optional) Any comments that you want to include about the traffic
+     * policy.</p>
+     */
+    inline bool CommentHasBeenSet() const { return m_commentHasBeenSet; }
 
     /**
      * <p>(Optional) Any comments that you want to include about the traffic

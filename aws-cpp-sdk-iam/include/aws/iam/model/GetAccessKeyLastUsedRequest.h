@@ -58,6 +58,13 @@ namespace Model
      * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
      * that can consist of any upper or lowercased letter or digit.</p>
      */
+    inline bool AccessKeyIdHasBeenSet() const { return m_accessKeyIdHasBeenSet; }
+
+    /**
+     * <p>The identifier of an access key.</p> <p>This parameter allows (through its <a
+     * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
+     * that can consist of any upper or lowercased letter or digit.</p>
+     */
     inline void SetAccessKeyId(const Aws::String& value) { m_accessKeyIdHasBeenSet = true; m_accessKeyId = value; }
 
     /**

@@ -58,6 +58,14 @@ namespace Model
      * returned. Either the HITId parameter or the AssignmentId parameter must be
      * specified</p>
      */
+    inline bool HITIdHasBeenSet() const { return m_hITIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the HIT associated with the bonus payments to retrieve. If not
+     * specified, all bonus payments for all assignments for the given HIT are
+     * returned. Either the HITId parameter or the AssignmentId parameter must be
+     * specified</p>
+     */
     inline void SetHITId(const Aws::String& value) { m_hITIdHasBeenSet = true; m_hITId = value; }
 
     /**
@@ -113,6 +121,13 @@ namespace Model
      * specified, only bonus payments for the given assignment are returned. Either the
      * HITId parameter or the AssignmentId parameter must be specified</p>
      */
+    inline bool AssignmentIdHasBeenSet() const { return m_assignmentIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the assignment associated with the bonus payments to retrieve. If
+     * specified, only bonus payments for the given assignment are returned. Either the
+     * HITId parameter or the AssignmentId parameter must be specified</p>
+     */
     inline void SetAssignmentId(const Aws::String& value) { m_assignmentIdHasBeenSet = true; m_assignmentId = value; }
 
     /**
@@ -159,6 +174,11 @@ namespace Model
     /**
      * <p>Pagination token</p>
      */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
+
+    /**
+     * <p>Pagination token</p>
+     */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
     /**
@@ -189,6 +209,9 @@ namespace Model
 
     
     inline int GetMaxResults() const{ return m_maxResults; }
+
+    
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
 
     
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }

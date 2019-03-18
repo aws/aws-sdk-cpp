@@ -67,6 +67,13 @@ namespace Model
      * Secrets Manager. </p> <note> <p> The <code>credential</code> can use the name of
      * the credentials only if they exist in your current region. </p> </note>
      */
+    inline bool CredentialHasBeenSet() const { return m_credentialHasBeenSet; }
+
+    /**
+     * <p> The Amazon Resource Name (ARN) or name of credentials created using AWS
+     * Secrets Manager. </p> <note> <p> The <code>credential</code> can use the name of
+     * the credentials only if they exist in your current region. </p> </note>
+     */
     inline void SetCredential(const Aws::String& value) { m_credentialHasBeenSet = true; m_credential = value; }
 
     /**
@@ -110,6 +117,12 @@ namespace Model
      * registry. The valid value, SECRETS_MANAGER, is for AWS Secrets Manager. </p>
      */
     inline const CredentialProviderType& GetCredentialProvider() const{ return m_credentialProvider; }
+
+    /**
+     * <p> The service that created the credentials to access a private Docker
+     * registry. The valid value, SECRETS_MANAGER, is for AWS Secrets Manager. </p>
+     */
+    inline bool CredentialProviderHasBeenSet() const { return m_credentialProviderHasBeenSet; }
 
     /**
      * <p> The service that created the credentials to access a private Docker

@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p>The unique identifier for the attachment.</p>
      */
+    inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
+
+    /**
+     * <p>The unique identifier for the attachment.</p>
+     */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
     /**
@@ -90,6 +95,11 @@ namespace Model
      * <p>The type of the attachment, such as <code>ElasticNetworkInterface</code>.</p>
      */
     inline const Aws::String& GetType() const{ return m_type; }
+
+    /**
+     * <p>The type of the attachment, such as <code>ElasticNetworkInterface</code>.</p>
+     */
+    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
 
     /**
      * <p>The type of the attachment, such as <code>ElasticNetworkInterface</code>.</p>
@@ -128,6 +138,13 @@ namespace Model
      * <code>DETACHING</code>, <code>DETACHED</code>, and <code>DELETED</code>.</p>
      */
     inline const Aws::String& GetStatus() const{ return m_status; }
+
+    /**
+     * <p> The status of the attachment. Valid values are <code>PRECREATED</code>,
+     * <code>CREATED</code>, <code>ATTACHING</code>, <code>ATTACHED</code>,
+     * <code>DETACHING</code>, <code>DETACHED</code>, and <code>DELETED</code>.</p>
+     */
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
     /**
      * <p> The status of the attachment. Valid values are <code>PRECREATED</code>,
@@ -178,6 +195,13 @@ namespace Model
      * address.</p>
      */
     inline const Aws::Vector<KeyValuePair>& GetDetails() const{ return m_details; }
+
+    /**
+     * <p>Details of the attachment. For elastic network interfaces, this includes the
+     * network interface ID, the MAC address, the subnet ID, and the private IPv4
+     * address.</p>
+     */
+    inline bool DetailsHasBeenSet() const { return m_detailsHasBeenSet; }
 
     /**
      * <p>Details of the attachment. For elastic network interfaces, this includes the

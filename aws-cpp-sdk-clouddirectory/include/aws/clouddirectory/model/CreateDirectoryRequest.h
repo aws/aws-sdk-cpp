@@ -54,6 +54,12 @@ namespace Model
      * <p>The name of the <a>Directory</a>. Should be unique per account, per
      * region.</p>
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>The name of the <a>Directory</a>. Should be unique per account, per
+     * region.</p>
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
@@ -92,6 +98,12 @@ namespace Model
      * into the data <a>Directory</a>. For more information, see <a>arns</a>.</p>
      */
     inline const Aws::String& GetSchemaArn() const{ return m_schemaArn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the published schema that will be copied
+     * into the data <a>Directory</a>. For more information, see <a>arns</a>.</p>
+     */
+    inline bool SchemaArnHasBeenSet() const { return m_schemaArnHasBeenSet; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the published schema that will be copied

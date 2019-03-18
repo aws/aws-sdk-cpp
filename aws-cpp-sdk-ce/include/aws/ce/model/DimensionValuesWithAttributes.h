@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p>The value of a dimension with a specific attribute.</p>
      */
+    inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
+
+    /**
+     * <p>The value of a dimension with a specific attribute.</p>
+     */
     inline void SetValue(const Aws::String& value) { m_valueHasBeenSet = true; m_value = value; }
 
     /**
@@ -90,6 +95,11 @@ namespace Model
      * <p>The attribute that applies to a specific <code>Dimension</code>.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetAttributes() const{ return m_attributes; }
+
+    /**
+     * <p>The attribute that applies to a specific <code>Dimension</code>.</p>
+     */
+    inline bool AttributesHasBeenSet() const { return m_attributesHasBeenSet; }
 
     /**
      * <p>The attribute that applies to a specific <code>Dimension</code>.</p>

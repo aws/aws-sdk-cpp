@@ -52,6 +52,11 @@ namespace Model
     /**
      * <p>The ARN of the room to update.</p>
      */
+    inline bool AddressBookArnHasBeenSet() const { return m_addressBookArnHasBeenSet; }
+
+    /**
+     * <p>The ARN of the room to update.</p>
+     */
     inline void SetAddressBookArn(const Aws::String& value) { m_addressBookArnHasBeenSet = true; m_addressBookArn = value; }
 
     /**
@@ -88,6 +93,11 @@ namespace Model
     /**
      * <p>The updated name of the room.</p>
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>The updated name of the room.</p>
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
@@ -120,6 +130,11 @@ namespace Model
      * <p>The updated description of the room.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
+
+    /**
+     * <p>The updated description of the room.</p>
+     */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
 
     /**
      * <p>The updated description of the room.</p>

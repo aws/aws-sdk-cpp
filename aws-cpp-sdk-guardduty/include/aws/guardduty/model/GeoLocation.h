@@ -53,6 +53,11 @@ namespace Model
     /**
      * Latitude information of remote IP address.
      */
+    inline bool LatHasBeenSet() const { return m_latHasBeenSet; }
+
+    /**
+     * Latitude information of remote IP address.
+     */
     inline void SetLat(double value) { m_latHasBeenSet = true; m_lat = value; }
 
     /**
@@ -65,6 +70,11 @@ namespace Model
      * Longitude information of remote IP address.
      */
     inline double GetLon() const{ return m_lon; }
+
+    /**
+     * Longitude information of remote IP address.
+     */
+    inline bool LonHasBeenSet() const { return m_lonHasBeenSet; }
 
     /**
      * Longitude information of remote IP address.

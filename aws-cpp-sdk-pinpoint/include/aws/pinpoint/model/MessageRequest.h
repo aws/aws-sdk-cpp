@@ -63,6 +63,13 @@ namespace Model
      * AddressConfiguration object. An address can be a push notification token, a
      * phone number, or an email address.
      */
+    inline bool AddressesHasBeenSet() const { return m_addressesHasBeenSet; }
+
+    /**
+     * A map of key-value pairs, where each key is an address and each value is an
+     * AddressConfiguration object. An address can be a push notification token, a
+     * phone number, or an email address.
+     */
     inline void SetAddresses(const Aws::Map<Aws::String, AddressConfiguration>& value) { m_addressesHasBeenSet = true; m_addresses = value; }
 
     /**
@@ -135,6 +142,13 @@ namespace Model
      * the email/sms delivery receipt event attributes.
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetContext() const{ return m_context; }
+
+    /**
+     * A map of custom attributes to attributes to be attached to the message. This
+     * payload is added to the push notification's 'data.pinpoint' object or added to
+     * the email/sms delivery receipt event attributes.
+     */
+    inline bool ContextHasBeenSet() const { return m_contextHasBeenSet; }
 
     /**
      * A map of custom attributes to attributes to be attached to the message. This
@@ -228,6 +242,14 @@ namespace Model
      * you can tailor the message for an endpoint by specifying message overrides or
      * substitutions.
      */
+    inline bool EndpointsHasBeenSet() const { return m_endpointsHasBeenSet; }
+
+    /**
+     * A map of key-value pairs, where each key is an endpoint ID and each value is an
+     * EndpointSendConfiguration object. Within an EndpointSendConfiguration object,
+     * you can tailor the message for an endpoint by specifying message overrides or
+     * substitutions.
+     */
     inline void SetEndpoints(const Aws::Map<Aws::String, EndpointSendConfiguration>& value) { m_endpointsHasBeenSet = true; m_endpoints = value; }
 
     /**
@@ -311,6 +333,11 @@ namespace Model
     /**
      * Message configuration.
      */
+    inline bool MessageConfigurationHasBeenSet() const { return m_messageConfigurationHasBeenSet; }
+
+    /**
+     * Message configuration.
+     */
     inline void SetMessageConfiguration(const DirectMessageConfiguration& value) { m_messageConfigurationHasBeenSet = true; m_messageConfiguration = value; }
 
     /**
@@ -334,6 +361,12 @@ namespace Model
      * recipients.
      */
     inline const Aws::String& GetTraceId() const{ return m_traceId; }
+
+    /**
+     * A unique ID that you can use to trace a message. This ID is visible to
+     * recipients.
+     */
+    inline bool TraceIdHasBeenSet() const { return m_traceIdHasBeenSet; }
 
     /**
      * A unique ID that you can use to trace a message. This ID is visible to

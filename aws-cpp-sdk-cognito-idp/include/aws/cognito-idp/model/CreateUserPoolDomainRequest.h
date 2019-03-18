@@ -53,6 +53,11 @@ namespace Model
     /**
      * <p>The domain string.</p>
      */
+    inline bool DomainHasBeenSet() const { return m_domainHasBeenSet; }
+
+    /**
+     * <p>The domain string.</p>
+     */
     inline void SetDomain(const Aws::String& value) { m_domainHasBeenSet = true; m_domain = value; }
 
     /**
@@ -85,6 +90,11 @@ namespace Model
      * <p>The user pool ID.</p>
      */
     inline const Aws::String& GetUserPoolId() const{ return m_userPoolId; }
+
+    /**
+     * <p>The user pool ID.</p>
+     */
+    inline bool UserPoolIdHasBeenSet() const { return m_userPoolIdHasBeenSet; }
 
     /**
      * <p>The user pool ID.</p>
@@ -127,6 +137,17 @@ namespace Model
      * a User Pool Domain</a>.</p>
      */
     inline const CustomDomainConfigType& GetCustomDomainConfig() const{ return m_customDomainConfig; }
+
+    /**
+     * <p>The configuration for a custom domain that hosts the sign-up and sign-in
+     * webpages for your application.</p> <p>Provide this parameter only if you want to
+     * use a custom domain for your user pool. Otherwise, you can exclude this
+     * parameter and use the Amazon Cognito hosted domain instead.</p> <p>For more
+     * information about the hosted domain and custom domains, see <a
+     * href="http://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-assign-domain.html">Configuring
+     * a User Pool Domain</a>.</p>
+     */
+    inline bool CustomDomainConfigHasBeenSet() const { return m_customDomainConfigHasBeenSet; }
 
     /**
      * <p>The configuration for a custom domain that hosts the sign-up and sign-in

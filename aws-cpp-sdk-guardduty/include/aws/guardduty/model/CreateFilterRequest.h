@@ -58,6 +58,12 @@ namespace Model
      * Specifies the action that is to be applied to the findings that match the
      * filter.
      */
+    inline bool ActionHasBeenSet() const { return m_actionHasBeenSet; }
+
+    /**
+     * Specifies the action that is to be applied to the findings that match the
+     * filter.
+     */
     inline void SetAction(const FilterAction& value) { m_actionHasBeenSet = true; m_action = value; }
 
     /**
@@ -83,6 +89,11 @@ namespace Model
      * The idempotency token for the create request.
      */
     inline const Aws::String& GetClientToken() const{ return m_clientToken; }
+
+    /**
+     * The idempotency token for the create request.
+     */
+    inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
 
     /**
      * The idempotency token for the create request.
@@ -123,6 +134,11 @@ namespace Model
     /**
      * The description of the filter.
      */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
+
+    /**
+     * The description of the filter.
+     */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
@@ -155,6 +171,11 @@ namespace Model
      * The unique ID of the detector that you want to update.
      */
     inline const Aws::String& GetDetectorId() const{ return m_detectorId; }
+
+    /**
+     * The unique ID of the detector that you want to update.
+     */
+    inline bool DetectorIdHasBeenSet() const { return m_detectorIdHasBeenSet; }
 
     /**
      * The unique ID of the detector that you want to update.
@@ -195,6 +216,11 @@ namespace Model
     /**
      * Represents the criteria to be used in the filter for querying findings.
      */
+    inline bool FindingCriteriaHasBeenSet() const { return m_findingCriteriaHasBeenSet; }
+
+    /**
+     * Represents the criteria to be used in the filter for querying findings.
+     */
     inline void SetFindingCriteria(const FindingCriteria& value) { m_findingCriteriaHasBeenSet = true; m_findingCriteria = value; }
 
     /**
@@ -217,6 +243,11 @@ namespace Model
      * The name of the filter.
      */
     inline const Aws::String& GetName() const{ return m_name; }
+
+    /**
+     * The name of the filter.
+     */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
      * The name of the filter.
@@ -254,6 +285,12 @@ namespace Model
      * specifies the order in which this filter is applied to the findings.
      */
     inline int GetRank() const{ return m_rank; }
+
+    /**
+     * Specifies the position of the filter in the list of current filters. Also
+     * specifies the order in which this filter is applied to the findings.
+     */
+    inline bool RankHasBeenSet() const { return m_rankHasBeenSet; }
 
     /**
      * Specifies the position of the filter in the list of current filters. Also

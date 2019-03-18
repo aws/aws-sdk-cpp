@@ -61,6 +61,11 @@ namespace Model
     /**
      * <p>The ID of the operation that you want to get information about.</p>
      */
+    inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
+
+    /**
+     * <p>The ID of the operation that you want to get information about.</p>
+     */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
     /**
@@ -97,6 +102,11 @@ namespace Model
     /**
      * <p>The name of the operation that is associated with the specified ID.</p>
      */
+    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
+
+    /**
+     * <p>The name of the operation that is associated with the specified ID.</p>
+     */
     inline void SetType(const OperationType& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
@@ -124,6 +134,16 @@ namespace Model
      * <code>ErrorMessage</code>.</p> </li> </ul>
      */
     inline const OperationStatus& GetStatus() const{ return m_status; }
+
+    /**
+     * <p>The status of the operation. Values include the following:</p> <ul> <li> <p>
+     * <b>SUBMITTED</b>: This is the initial state immediately after you submit a
+     * request.</p> </li> <li> <p> <b>PENDING</b>: AWS Cloud Map is performing the
+     * operation.</p> </li> <li> <p> <b>SUCCESS</b>: The operation succeeded.</p> </li>
+     * <li> <p> <b>FAIL</b>: The operation failed. For the failure reason, see
+     * <code>ErrorMessage</code>.</p> </li> </ul>
+     */
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
     /**
      * <p>The status of the operation. Values include the following:</p> <ul> <li> <p>
@@ -176,6 +196,12 @@ namespace Model
      * <p>If the value of <code>Status</code> is <code>FAIL</code>, the reason that the
      * operation failed.</p>
      */
+    inline bool ErrorMessageHasBeenSet() const { return m_errorMessageHasBeenSet; }
+
+    /**
+     * <p>If the value of <code>Status</code> is <code>FAIL</code>, the reason that the
+     * operation failed.</p>
+     */
     inline void SetErrorMessage(const Aws::String& value) { m_errorMessageHasBeenSet = true; m_errorMessage = value; }
 
     /**
@@ -221,6 +247,19 @@ namespace Model
      * <code>THROTTLED_REQUEST</code> </p> </li> </ul>
      */
     inline const Aws::String& GetErrorCode() const{ return m_errorCode; }
+
+    /**
+     * <p>The code associated with <code>ErrorMessage</code>. Values for
+     * <code>ErrorCode</code> include the following:</p> <ul> <li> <p>
+     * <code>ACCESS_DENIED</code> </p> </li> <li> <p>
+     * <code>CANNOT_CREATE_HOSTED_ZONE</code> </p> </li> <li> <p>
+     * <code>EXPIRED_TOKEN</code> </p> </li> <li> <p>
+     * <code>HOSTED_ZONE_NOT_FOUND</code> </p> </li> <li> <p>
+     * <code>INTERNAL_FAILURE</code> </p> </li> <li> <p>
+     * <code>INVALID_CHANGE_BATCH</code> </p> </li> <li> <p>
+     * <code>THROTTLED_REQUEST</code> </p> </li> </ul>
+     */
+    inline bool ErrorCodeHasBeenSet() const { return m_errorCodeHasBeenSet; }
 
     /**
      * <p>The code associated with <code>ErrorMessage</code>. Values for
@@ -315,6 +354,14 @@ namespace Model
      * accurate to milliseconds. For example, the value <code>1516925490.087</code>
      * represents Friday, January 26, 2018 12:11:30.087 AM.</p>
      */
+    inline bool CreateDateHasBeenSet() const { return m_createDateHasBeenSet; }
+
+    /**
+     * <p>The date and time that the request was submitted, in Unix date/time format
+     * and Coordinated Universal Time (UTC). The value of <code>CreateDate</code> is
+     * accurate to milliseconds. For example, the value <code>1516925490.087</code>
+     * represents Friday, January 26, 2018 12:11:30.087 AM.</p>
+     */
     inline void SetCreateDate(const Aws::Utils::DateTime& value) { m_createDateHasBeenSet = true; m_createDate = value; }
 
     /**
@@ -350,6 +397,15 @@ namespace Model
      * 12:11:30.087 AM.</p>
      */
     inline const Aws::Utils::DateTime& GetUpdateDate() const{ return m_updateDate; }
+
+    /**
+     * <p>The date and time that the value of <code>Status</code> changed to the
+     * current value, in Unix date/time format and Coordinated Universal Time (UTC).
+     * The value of <code>UpdateDate</code> is accurate to milliseconds. For example,
+     * the value <code>1516925490.087</code> represents Friday, January 26, 2018
+     * 12:11:30.087 AM.</p>
+     */
+    inline bool UpdateDateHasBeenSet() const { return m_updateDateHasBeenSet; }
 
     /**
      * <p>The date and time that the value of <code>Status</code> changed to the
@@ -397,6 +453,16 @@ namespace Model
      * property.</p> </li> </ul>
      */
     inline const Aws::Map<OperationTargetType, Aws::String>& GetTargets() const{ return m_targets; }
+
+    /**
+     * <p>The name of the target entity that is associated with the operation:</p> <ul>
+     * <li> <p> <b>NAMESPACE</b>: The namespace ID is returned in the
+     * <code>ResourceId</code> property.</p> </li> <li> <p> <b>SERVICE</b>: The service
+     * ID is returned in the <code>ResourceId</code> property.</p> </li> <li> <p>
+     * <b>INSTANCE</b>: The instance ID is returned in the <code>ResourceId</code>
+     * property.</p> </li> </ul>
+     */
+    inline bool TargetsHasBeenSet() const { return m_targetsHasBeenSet; }
 
     /**
      * <p>The name of the target entity that is associated with the operation:</p> <ul>

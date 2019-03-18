@@ -52,6 +52,12 @@ namespace Model
      * The detector ID that specifies the GuardDuty service where you want to list the
      * details of the specified filter.
      */
+    inline bool DetectorIdHasBeenSet() const { return m_detectorIdHasBeenSet; }
+
+    /**
+     * The detector ID that specifies the GuardDuty service where you want to list the
+     * details of the specified filter.
+     */
     inline void SetDetectorId(const Aws::String& value) { m_detectorIdHasBeenSet = true; m_detectorId = value; }
 
     /**
@@ -89,6 +95,11 @@ namespace Model
      * The name of the filter whose details you want to get.
      */
     inline const Aws::String& GetFilterName() const{ return m_filterName; }
+
+    /**
+     * The name of the filter whose details you want to get.
+     */
+    inline bool FilterNameHasBeenSet() const { return m_filterNameHasBeenSet; }
 
     /**
      * The name of the filter whose details you want to get.

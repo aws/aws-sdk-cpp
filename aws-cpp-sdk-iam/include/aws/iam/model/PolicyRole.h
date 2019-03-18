@@ -63,6 +63,11 @@ namespace Model
     /**
      * <p>The name (friendly name, not ARN) identifying the role.</p>
      */
+    inline bool RoleNameHasBeenSet() const { return m_roleNameHasBeenSet; }
+
+    /**
+     * <p>The name (friendly name, not ARN) identifying the role.</p>
+     */
     inline void SetRoleName(const Aws::String& value) { m_roleNameHasBeenSet = true; m_roleName = value; }
 
     /**
@@ -98,6 +103,14 @@ namespace Model
      * Identifiers</a> in the <i>IAM User Guide</i>.</p>
      */
     inline const Aws::String& GetRoleId() const{ return m_roleId; }
+
+    /**
+     * <p>The stable and unique string identifying the role. For more information about
+     * IDs, see <a
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM
+     * Identifiers</a> in the <i>IAM User Guide</i>.</p>
+     */
+    inline bool RoleIdHasBeenSet() const { return m_roleIdHasBeenSet; }
 
     /**
      * <p>The stable and unique string identifying the role. For more information about

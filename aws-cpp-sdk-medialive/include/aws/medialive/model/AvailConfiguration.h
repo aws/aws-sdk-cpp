@@ -55,6 +55,11 @@ namespace Model
     /**
      * Ad avail settings.
      */
+    inline bool AvailSettingsHasBeenSet() const { return m_availSettingsHasBeenSet; }
+
+    /**
+     * Ad avail settings.
+     */
     inline void SetAvailSettings(const AvailSettings& value) { m_availSettingsHasBeenSet = true; m_availSettings = value; }
 
     /**

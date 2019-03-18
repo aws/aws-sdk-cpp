@@ -81,6 +81,17 @@ namespace Model
      * TerminalRoutingStrategyException with the <a>RoutingStrategy</a> message
      * embedded.</p> </li> </ul>
      */
+    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
+
+    /**
+     * <p>Type of routing strategy.</p> <p>Possible routing types include the
+     * following:</p> <ul> <li> <p> <b>SIMPLE</b> -- The alias resolves to one specific
+     * fleet. Use this type when routing to active fleets.</p> </li> <li> <p>
+     * <b>TERMINAL</b> -- The alias does not resolve to a fleet but instead can be used
+     * to display a message to the user. A terminal alias throws a
+     * TerminalRoutingStrategyException with the <a>RoutingStrategy</a> message
+     * embedded.</p> </li> </ul>
+     */
     inline void SetType(const RoutingStrategyType& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
@@ -125,6 +136,11 @@ namespace Model
     /**
      * <p>Unique identifier for a fleet that the alias points to.</p>
      */
+    inline bool FleetIdHasBeenSet() const { return m_fleetIdHasBeenSet; }
+
+    /**
+     * <p>Unique identifier for a fleet that the alias points to.</p>
+     */
     inline void SetFleetId(const Aws::String& value) { m_fleetIdHasBeenSet = true; m_fleetId = value; }
 
     /**
@@ -157,6 +173,11 @@ namespace Model
      * <p>Message text to be used with a terminal routing strategy.</p>
      */
     inline const Aws::String& GetMessage() const{ return m_message; }
+
+    /**
+     * <p>Message text to be used with a terminal routing strategy.</p>
+     */
+    inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
 
     /**
      * <p>Message text to be used with a terminal routing strategy.</p>

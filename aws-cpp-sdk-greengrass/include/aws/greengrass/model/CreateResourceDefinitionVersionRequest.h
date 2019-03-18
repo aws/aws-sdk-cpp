@@ -54,6 +54,11 @@ namespace Model
     /**
      * A client token used to correlate requests and responses.
      */
+    inline bool AmznClientTokenHasBeenSet() const { return m_amznClientTokenHasBeenSet; }
+
+    /**
+     * A client token used to correlate requests and responses.
+     */
     inline void SetAmznClientToken(const Aws::String& value) { m_amznClientTokenHasBeenSet = true; m_amznClientToken = value; }
 
     /**
@@ -90,6 +95,11 @@ namespace Model
     /**
      * The ID of the resource definition.
      */
+    inline bool ResourceDefinitionIdHasBeenSet() const { return m_resourceDefinitionIdHasBeenSet; }
+
+    /**
+     * The ID of the resource definition.
+     */
     inline void SetResourceDefinitionId(const Aws::String& value) { m_resourceDefinitionIdHasBeenSet = true; m_resourceDefinitionId = value; }
 
     /**
@@ -122,6 +132,11 @@ namespace Model
      * A list of resources.
      */
     inline const Aws::Vector<Resource>& GetResources() const{ return m_resources; }
+
+    /**
+     * A list of resources.
+     */
+    inline bool ResourcesHasBeenSet() const { return m_resourcesHasBeenSet; }
 
     /**
      * A list of resources.

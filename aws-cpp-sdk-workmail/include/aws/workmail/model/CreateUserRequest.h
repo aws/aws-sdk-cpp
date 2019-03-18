@@ -52,6 +52,11 @@ namespace Model
     /**
      * <p>The identifier of the organization for which the user is created.</p>
      */
+    inline bool OrganizationIdHasBeenSet() const { return m_organizationIdHasBeenSet; }
+
+    /**
+     * <p>The identifier of the organization for which the user is created.</p>
+     */
     inline void SetOrganizationId(const Aws::String& value) { m_organizationIdHasBeenSet = true; m_organizationId = value; }
 
     /**
@@ -84,6 +89,11 @@ namespace Model
      * <p>The name for the user to be created.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
+
+    /**
+     * <p>The name for the user to be created.</p>
+     */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
      * <p>The name for the user to be created.</p>
@@ -124,6 +134,11 @@ namespace Model
     /**
      * <p>The display name for the user to be created.</p>
      */
+    inline bool DisplayNameHasBeenSet() const { return m_displayNameHasBeenSet; }
+
+    /**
+     * <p>The display name for the user to be created.</p>
+     */
     inline void SetDisplayName(const Aws::String& value) { m_displayNameHasBeenSet = true; m_displayName = value; }
 
     /**
@@ -156,6 +171,11 @@ namespace Model
      * <p>The password for the user to be created.</p>
      */
     inline const Aws::String& GetPassword() const{ return m_password; }
+
+    /**
+     * <p>The password for the user to be created.</p>
+     */
+    inline bool PasswordHasBeenSet() const { return m_passwordHasBeenSet; }
 
     /**
      * <p>The password for the user to be created.</p>

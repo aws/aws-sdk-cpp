@@ -54,6 +54,12 @@ namespace Model
      * <p>The unique identifier (ID) for the <a>Protection</a> object to be
      * deleted.</p>
      */
+    inline bool ProtectionIdHasBeenSet() const { return m_protectionIdHasBeenSet; }
+
+    /**
+     * <p>The unique identifier (ID) for the <a>Protection</a> object to be
+     * deleted.</p>
+     */
     inline void SetProtectionId(const Aws::String& value) { m_protectionIdHasBeenSet = true; m_protectionId = value; }
 
     /**

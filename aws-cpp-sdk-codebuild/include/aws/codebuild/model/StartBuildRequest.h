@@ -66,6 +66,11 @@ namespace Model
     /**
      * <p>The name of the AWS CodeBuild build project to start running a build.</p>
      */
+    inline bool ProjectNameHasBeenSet() const { return m_projectNameHasBeenSet; }
+
+    /**
+     * <p>The name of the AWS CodeBuild build project to start running a build.</p>
+     */
     inline void SetProjectName(const Aws::String& value) { m_projectNameHasBeenSet = true; m_projectName = value; }
 
     /**
@@ -98,6 +103,11 @@ namespace Model
      * <p> An array of <code>ProjectSource</code> objects. </p>
      */
     inline const Aws::Vector<ProjectSource>& GetSecondarySourcesOverride() const{ return m_secondarySourcesOverride; }
+
+    /**
+     * <p> An array of <code>ProjectSource</code> objects. </p>
+     */
+    inline bool SecondarySourcesOverrideHasBeenSet() const { return m_secondarySourcesOverrideHasBeenSet; }
 
     /**
      * <p> An array of <code>ProjectSource</code> objects. </p>
@@ -136,6 +146,13 @@ namespace Model
      * </p>
      */
     inline const Aws::Vector<ProjectSourceVersion>& GetSecondarySourcesVersionOverride() const{ return m_secondarySourcesVersionOverride; }
+
+    /**
+     * <p> An array of <code>ProjectSourceVersion</code> objects that specify one or
+     * more versions of the project's secondary sources to be used for this build only.
+     * </p>
+     */
+    inline bool SecondarySourcesVersionOverrideHasBeenSet() const { return m_secondarySourcesVersionOverrideHasBeenSet; }
 
     /**
      * <p> An array of <code>ProjectSourceVersion</code> objects that specify one or
@@ -197,6 +214,24 @@ namespace Model
      * build input ZIP file to use.</p> </li> </ul>
      */
     inline const Aws::String& GetSourceVersion() const{ return m_sourceVersion; }
+
+    /**
+     * <p>A version of the build input to be built, for this build only. If not
+     * specified, the latest version is used. If specified, must be one of:</p> <ul>
+     * <li> <p>For AWS CodeCommit: the commit ID to use.</p> </li> <li> <p>For GitHub:
+     * the commit ID, pull request ID, branch name, or tag name that corresponds to the
+     * version of the source code you want to build. If a pull request ID is specified,
+     * it must use the format <code>pr/pull-request-ID</code> (for example
+     * <code>pr/25</code>). If a branch name is specified, the branch's HEAD commit ID
+     * is used. If not specified, the default branch's HEAD commit ID is used.</p>
+     * </li> <li> <p>For Bitbucket: the commit ID, branch name, or tag name that
+     * corresponds to the version of the source code you want to build. If a branch
+     * name is specified, the branch's HEAD commit ID is used. If not specified, the
+     * default branch's HEAD commit ID is used.</p> </li> <li> <p>For Amazon Simple
+     * Storage Service (Amazon S3): the version ID of the object that represents the
+     * build input ZIP file to use.</p> </li> </ul>
+     */
+    inline bool SourceVersionHasBeenSet() const { return m_sourceVersionHasBeenSet; }
 
     /**
      * <p>A version of the build input to be built, for this build only. If not
@@ -317,6 +352,12 @@ namespace Model
      * <p>Build output artifact settings that override, for this build only, the latest
      * ones already defined in the build project.</p>
      */
+    inline bool ArtifactsOverrideHasBeenSet() const { return m_artifactsOverrideHasBeenSet; }
+
+    /**
+     * <p>Build output artifact settings that override, for this build only, the latest
+     * ones already defined in the build project.</p>
+     */
     inline void SetArtifactsOverride(const ProjectArtifacts& value) { m_artifactsOverrideHasBeenSet = true; m_artifactsOverride = value; }
 
     /**
@@ -342,6 +383,11 @@ namespace Model
      * <p> An array of <code>ProjectArtifacts</code> objects. </p>
      */
     inline const Aws::Vector<ProjectArtifacts>& GetSecondaryArtifactsOverride() const{ return m_secondaryArtifactsOverride; }
+
+    /**
+     * <p> An array of <code>ProjectArtifacts</code> objects. </p>
+     */
+    inline bool SecondaryArtifactsOverrideHasBeenSet() const { return m_secondaryArtifactsOverrideHasBeenSet; }
 
     /**
      * <p> An array of <code>ProjectArtifacts</code> objects. </p>
@@ -379,6 +425,12 @@ namespace Model
      * latest ones already defined in the build project.</p>
      */
     inline const Aws::Vector<EnvironmentVariable>& GetEnvironmentVariablesOverride() const{ return m_environmentVariablesOverride; }
+
+    /**
+     * <p>A set of environment variables that overrides, for this build only, the
+     * latest ones already defined in the build project.</p>
+     */
+    inline bool EnvironmentVariablesOverrideHasBeenSet() const { return m_environmentVariablesOverrideHasBeenSet; }
 
     /**
      * <p>A set of environment variables that overrides, for this build only, the
@@ -427,6 +479,12 @@ namespace Model
      * <p>A source input type, for this build, that overrides the source input defined
      * in the build project.</p>
      */
+    inline bool SourceTypeOverrideHasBeenSet() const { return m_sourceTypeOverrideHasBeenSet; }
+
+    /**
+     * <p>A source input type, for this build, that overrides the source input defined
+     * in the build project.</p>
+     */
     inline void SetSourceTypeOverride(const SourceType& value) { m_sourceTypeOverrideHasBeenSet = true; m_sourceTypeOverride = value; }
 
     /**
@@ -453,6 +511,12 @@ namespace Model
      * defined in the build project.</p>
      */
     inline const Aws::String& GetSourceLocationOverride() const{ return m_sourceLocationOverride; }
+
+    /**
+     * <p>A location that overrides, for this build, the source location for the one
+     * defined in the build project.</p>
+     */
+    inline bool SourceLocationOverrideHasBeenSet() const { return m_sourceLocationOverrideHasBeenSet; }
 
     /**
      * <p>A location that overrides, for this build, the source location for the one
@@ -503,6 +567,13 @@ namespace Model
      * build project. This override applies only if the build project's source is
      * BitBucket or GitHub.</p>
      */
+    inline bool SourceAuthOverrideHasBeenSet() const { return m_sourceAuthOverrideHasBeenSet; }
+
+    /**
+     * <p>An authorization type for this build that overrides the one defined in the
+     * build project. This override applies only if the build project's source is
+     * BitBucket or GitHub.</p>
+     */
     inline void SetSourceAuthOverride(const SourceAuth& value) { m_sourceAuthOverrideHasBeenSet = true; m_sourceAuthOverride = value; }
 
     /**
@@ -539,6 +610,13 @@ namespace Model
      * for this build only, any previous depth of history defined in the build
      * project.</p>
      */
+    inline bool GitCloneDepthOverrideHasBeenSet() const { return m_gitCloneDepthOverrideHasBeenSet; }
+
+    /**
+     * <p>The user-defined depth of history, with a minimum value of 0, that overrides,
+     * for this build only, any previous depth of history defined in the build
+     * project.</p>
+     */
     inline void SetGitCloneDepthOverride(int value) { m_gitCloneDepthOverrideHasBeenSet = true; m_gitCloneDepthOverride = value; }
 
     /**
@@ -554,6 +632,12 @@ namespace Model
      * CodeBuild build project. </p>
      */
     inline const GitSubmodulesConfig& GetGitSubmodulesConfigOverride() const{ return m_gitSubmodulesConfigOverride; }
+
+    /**
+     * <p> Information about the Git submodules configuration for this build of an AWS
+     * CodeBuild build project. </p>
+     */
+    inline bool GitSubmodulesConfigOverrideHasBeenSet() const { return m_gitSubmodulesConfigOverrideHasBeenSet; }
 
     /**
      * <p> Information about the Git submodules configuration for this build of an AWS
@@ -585,6 +669,12 @@ namespace Model
      * already defined in the build project.</p>
      */
     inline const Aws::String& GetBuildspecOverride() const{ return m_buildspecOverride; }
+
+    /**
+     * <p>A build spec declaration that overrides, for this build only, the latest one
+     * already defined in the build project.</p>
+     */
+    inline bool BuildspecOverrideHasBeenSet() const { return m_buildspecOverrideHasBeenSet; }
 
     /**
      * <p>A build spec declaration that overrides, for this build only, the latest one
@@ -637,6 +727,14 @@ namespace Model
      * warnings while connecting to the project source code. This override applies only
      * if the build's source is GitHub Enterprise.</p>
      */
+    inline bool InsecureSslOverrideHasBeenSet() const { return m_insecureSslOverrideHasBeenSet; }
+
+    /**
+     * <p>Enable this flag to override the insecure SSL setting that is specified in
+     * the build project. The insecure SSL setting determines whether to ignore SSL
+     * warnings while connecting to the project source code. This override applies only
+     * if the build's source is GitHub Enterprise.</p>
+     */
     inline void SetInsecureSslOverride(bool value) { m_insecureSslOverrideHasBeenSet = true; m_insecureSslOverride = value; }
 
     /**
@@ -660,6 +758,13 @@ namespace Model
      * and completion. If you use this option with a source provider other than GitHub,
      * GitHub Enterprise, or Bitbucket, an invalidInputException is thrown. </p>
      */
+    inline bool ReportBuildStatusOverrideHasBeenSet() const { return m_reportBuildStatusOverrideHasBeenSet; }
+
+    /**
+     * <p> Set to true to report to your source provider the status of a build's start
+     * and completion. If you use this option with a source provider other than GitHub,
+     * GitHub Enterprise, or Bitbucket, an invalidInputException is thrown. </p>
+     */
     inline void SetReportBuildStatusOverride(bool value) { m_reportBuildStatusOverrideHasBeenSet = true; m_reportBuildStatusOverride = value; }
 
     /**
@@ -675,6 +780,12 @@ namespace Model
      * project.</p>
      */
     inline const EnvironmentType& GetEnvironmentTypeOverride() const{ return m_environmentTypeOverride; }
+
+    /**
+     * <p>A container type for this build that overrides the one specified in the build
+     * project.</p>
+     */
+    inline bool EnvironmentTypeOverrideHasBeenSet() const { return m_environmentTypeOverrideHasBeenSet; }
 
     /**
      * <p>A container type for this build that overrides the one specified in the build
@@ -706,6 +817,12 @@ namespace Model
      * build project.</p>
      */
     inline const Aws::String& GetImageOverride() const{ return m_imageOverride; }
+
+    /**
+     * <p>The name of an image for this build that overrides the one specified in the
+     * build project.</p>
+     */
+    inline bool ImageOverrideHasBeenSet() const { return m_imageOverrideHasBeenSet; }
 
     /**
      * <p>The name of an image for this build that overrides the one specified in the
@@ -754,6 +871,12 @@ namespace Model
      * <p>The name of a compute type for this build that overrides the one specified in
      * the build project.</p>
      */
+    inline bool ComputeTypeOverrideHasBeenSet() const { return m_computeTypeOverrideHasBeenSet; }
+
+    /**
+     * <p>The name of a compute type for this build that overrides the one specified in
+     * the build project.</p>
+     */
     inline void SetComputeTypeOverride(const ComputeType& value) { m_computeTypeOverrideHasBeenSet = true; m_computeTypeOverride = value; }
 
     /**
@@ -780,6 +903,12 @@ namespace Model
      * the build project.</p>
      */
     inline const Aws::String& GetCertificateOverride() const{ return m_certificateOverride; }
+
+    /**
+     * <p>The name of a certificate for this build that overrides the one specified in
+     * the build project.</p>
+     */
+    inline bool CertificateOverrideHasBeenSet() const { return m_certificateOverrideHasBeenSet; }
 
     /**
      * <p>The name of a certificate for this build that overrides the one specified in
@@ -828,6 +957,12 @@ namespace Model
      * <p>A ProjectCache object specified for this build that overrides the one defined
      * in the build project.</p>
      */
+    inline bool CacheOverrideHasBeenSet() const { return m_cacheOverrideHasBeenSet; }
+
+    /**
+     * <p>A ProjectCache object specified for this build that overrides the one defined
+     * in the build project.</p>
+     */
     inline void SetCacheOverride(const ProjectCache& value) { m_cacheOverrideHasBeenSet = true; m_cacheOverride = value; }
 
     /**
@@ -854,6 +989,12 @@ namespace Model
      * the build project.</p>
      */
     inline const Aws::String& GetServiceRoleOverride() const{ return m_serviceRoleOverride; }
+
+    /**
+     * <p>The name of a service role for this build that overrides the one specified in
+     * the build project.</p>
+     */
+    inline bool ServiceRoleOverrideHasBeenSet() const { return m_serviceRoleOverrideHasBeenSet; }
 
     /**
      * <p>The name of a service role for this build that overrides the one specified in
@@ -900,6 +1041,11 @@ namespace Model
     /**
      * <p>Enable this flag to override privileged mode in the build project.</p>
      */
+    inline bool PrivilegedModeOverrideHasBeenSet() const { return m_privilegedModeOverrideHasBeenSet; }
+
+    /**
+     * <p>Enable this flag to override privileged mode in the build project.</p>
+     */
     inline void SetPrivilegedModeOverride(bool value) { m_privilegedModeOverrideHasBeenSet = true; m_privilegedModeOverride = value; }
 
     /**
@@ -914,6 +1060,13 @@ namespace Model
      * project.</p>
      */
     inline int GetTimeoutInMinutesOverride() const{ return m_timeoutInMinutesOverride; }
+
+    /**
+     * <p>The number of build timeout minutes, from 5 to 480 (8 hours), that overrides,
+     * for this build only, the latest setting already defined in the build
+     * project.</p>
+     */
+    inline bool TimeoutInMinutesOverrideHasBeenSet() const { return m_timeoutInMinutesOverrideHasBeenSet; }
 
     /**
      * <p>The number of build timeout minutes, from 5 to 480 (8 hours), that overrides,
@@ -940,6 +1093,12 @@ namespace Model
      * <p> The number of minutes a build is allowed to be queued before it times out.
      * </p>
      */
+    inline bool QueuedTimeoutInMinutesOverrideHasBeenSet() const { return m_queuedTimeoutInMinutesOverrideHasBeenSet; }
+
+    /**
+     * <p> The number of minutes a build is allowed to be queued before it times out.
+     * </p>
+     */
     inline void SetQueuedTimeoutInMinutesOverride(int value) { m_queuedTimeoutInMinutesOverrideHasBeenSet = true; m_queuedTimeoutInMinutesOverride = value; }
 
     /**
@@ -956,6 +1115,14 @@ namespace Model
      * but change a parameter, AWS CodeBuild returns a parameter mismatch error. </p>
      */
     inline const Aws::String& GetIdempotencyToken() const{ return m_idempotencyToken; }
+
+    /**
+     * <p>A unique, case sensitive identifier you provide to ensure the idempotency of
+     * the StartBuild request. The token is included in the StartBuild request and is
+     * valid for 12 hours. If you repeat the StartBuild request with the same token,
+     * but change a parameter, AWS CodeBuild returns a parameter mismatch error. </p>
+     */
+    inline bool IdempotencyTokenHasBeenSet() const { return m_idempotencyTokenHasBeenSet; }
 
     /**
      * <p>A unique, case sensitive identifier you provide to ensure the idempotency of
@@ -1016,6 +1183,12 @@ namespace Model
      * <p> Log settings for this build that override the log settings defined in the
      * build project. </p>
      */
+    inline bool LogsConfigOverrideHasBeenSet() const { return m_logsConfigOverrideHasBeenSet; }
+
+    /**
+     * <p> Log settings for this build that override the log settings defined in the
+     * build project. </p>
+     */
     inline void SetLogsConfigOverride(const LogsConfig& value) { m_logsConfigOverrideHasBeenSet = true; m_logsConfigOverride = value; }
 
     /**
@@ -1041,6 +1214,11 @@ namespace Model
      * <p> The credentials for access to a private registry. </p>
      */
     inline const RegistryCredential& GetRegistryCredentialOverride() const{ return m_registryCredentialOverride; }
+
+    /**
+     * <p> The credentials for access to a private registry. </p>
+     */
+    inline bool RegistryCredentialOverrideHasBeenSet() const { return m_registryCredentialOverrideHasBeenSet; }
 
     /**
      * <p> The credentials for access to a private registry. </p>
@@ -1074,6 +1252,18 @@ namespace Model
      * CodeBuild curated image, you must use CODEBUILD credentials. </p>
      */
     inline const ImagePullCredentialsType& GetImagePullCredentialsTypeOverride() const{ return m_imagePullCredentialsTypeOverride; }
+
+    /**
+     * <p> The type of credentials AWS CodeBuild uses to pull images in your build.
+     * There are two valid values: </p> <ul> <li> <p> <code>CODEBUILD</code> specifies
+     * that AWS CodeBuild uses its own credentials. This requires that you modify your
+     * ECR repository policy to trust AWS CodeBuild's service principal.</p> </li> <li>
+     * <p> <code>SERVICE_ROLE</code> specifies that AWS CodeBuild uses your build
+     * project's service role. </p> </li> </ul> <p> When using a cross-account or
+     * private registry image, you must use SERVICE_ROLE credentials. When using an AWS
+     * CodeBuild curated image, you must use CODEBUILD credentials. </p>
+     */
+    inline bool ImagePullCredentialsTypeOverrideHasBeenSet() const { return m_imagePullCredentialsTypeOverrideHasBeenSet; }
 
     /**
      * <p> The type of credentials AWS CodeBuild uses to pull images in your build.

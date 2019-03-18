@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p>The name of the bucket where the inventory configuration will be stored.</p>
      */
+    inline bool BucketHasBeenSet() const { return m_bucketHasBeenSet; }
+
+    /**
+     * <p>The name of the bucket where the inventory configuration will be stored.</p>
+     */
     inline void SetBucket(const Aws::String& value) { m_bucketHasBeenSet = true; m_bucket = value; }
 
     /**
@@ -90,6 +95,11 @@ namespace Model
      * <p>The ID used to identify the inventory configuration.</p>
      */
     inline const Aws::String& GetId() const{ return m_id; }
+
+    /**
+     * <p>The ID used to identify the inventory configuration.</p>
+     */
+    inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
 
     /**
      * <p>The ID used to identify the inventory configuration.</p>
@@ -130,6 +140,11 @@ namespace Model
     /**
      * <p>Specifies the inventory configuration.</p>
      */
+    inline bool InventoryConfigurationHasBeenSet() const { return m_inventoryConfigurationHasBeenSet; }
+
+    /**
+     * <p>Specifies the inventory configuration.</p>
+     */
     inline void SetInventoryConfiguration(const InventoryConfiguration& value) { m_inventoryConfigurationHasBeenSet = true; m_inventoryConfiguration = value; }
 
     /**
@@ -150,6 +165,9 @@ namespace Model
 
     
     inline const Aws::Map<Aws::String, Aws::String>& GetCustomizedAccessLogTag() const{ return m_customizedAccessLogTag; }
+
+    
+    inline bool CustomizedAccessLogTagHasBeenSet() const { return m_customizedAccessLogTagHasBeenSet; }
 
     
     inline void SetCustomizedAccessLogTag(const Aws::Map<Aws::String, Aws::String>& value) { m_customizedAccessLogTagHasBeenSet = true; m_customizedAccessLogTag = value; }

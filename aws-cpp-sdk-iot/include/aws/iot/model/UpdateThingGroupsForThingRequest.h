@@ -51,6 +51,11 @@ namespace Model
     /**
      * <p>The thing whose group memberships will be updated.</p>
      */
+    inline bool ThingNameHasBeenSet() const { return m_thingNameHasBeenSet; }
+
+    /**
+     * <p>The thing whose group memberships will be updated.</p>
+     */
     inline void SetThingName(const Aws::String& value) { m_thingNameHasBeenSet = true; m_thingName = value; }
 
     /**
@@ -83,6 +88,11 @@ namespace Model
      * <p>The groups to which the thing will be added.</p>
      */
     inline const Aws::Vector<Aws::String>& GetThingGroupsToAdd() const{ return m_thingGroupsToAdd; }
+
+    /**
+     * <p>The groups to which the thing will be added.</p>
+     */
+    inline bool ThingGroupsToAddHasBeenSet() const { return m_thingGroupsToAddHasBeenSet; }
 
     /**
      * <p>The groups to which the thing will be added.</p>
@@ -128,6 +138,11 @@ namespace Model
     /**
      * <p>The groups from which the thing will be removed.</p>
      */
+    inline bool ThingGroupsToRemoveHasBeenSet() const { return m_thingGroupsToRemoveHasBeenSet; }
+
+    /**
+     * <p>The groups from which the thing will be removed.</p>
+     */
     inline void SetThingGroupsToRemove(const Aws::Vector<Aws::String>& value) { m_thingGroupsToRemoveHasBeenSet = true; m_thingGroupsToRemove = value; }
 
     /**
@@ -168,6 +183,14 @@ namespace Model
      * from the last dynamic group.</p>
      */
     inline bool GetOverrideDynamicGroups() const{ return m_overrideDynamicGroups; }
+
+    /**
+     * <p>Override dynamic thing groups with static thing groups when 10-group limit is
+     * reached. If a thing belongs to 10 thing groups, and one or more of those groups
+     * are dynamic thing groups, adding a thing to a static group removes the thing
+     * from the last dynamic group.</p>
+     */
+    inline bool OverrideDynamicGroupsHasBeenSet() const { return m_overrideDynamicGroupsHasBeenSet; }
 
     /**
      * <p>Override dynamic thing groups with static thing groups when 10-group limit is

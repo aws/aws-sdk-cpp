@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The user pool ID for which you want to confirm user registration.</p>
      */
+    inline bool UserPoolIdHasBeenSet() const { return m_userPoolIdHasBeenSet; }
+
+    /**
+     * <p>The user pool ID for which you want to confirm user registration.</p>
+     */
     inline void SetUserPoolId(const Aws::String& value) { m_userPoolIdHasBeenSet = true; m_userPoolId = value; }
 
     /**
@@ -88,6 +93,11 @@ namespace Model
      * <p>The user name for which you want to confirm user registration.</p>
      */
     inline const Aws::String& GetUsername() const{ return m_username; }
+
+    /**
+     * <p>The user name for which you want to confirm user registration.</p>
+     */
+    inline bool UsernameHasBeenSet() const { return m_usernameHasBeenSet; }
 
     /**
      * <p>The user name for which you want to confirm user registration.</p>

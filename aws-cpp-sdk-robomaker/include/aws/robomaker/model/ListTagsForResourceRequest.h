@@ -50,6 +50,11 @@ namespace Model
     /**
      * <p>The AWS RoboMaker Amazon Resource Name (ARN) with tags to be listed.</p>
      */
+    inline bool ResourceArnHasBeenSet() const { return m_resourceArnHasBeenSet; }
+
+    /**
+     * <p>The AWS RoboMaker Amazon Resource Name (ARN) with tags to be listed.</p>
+     */
     inline void SetResourceArn(const Aws::String& value) { m_resourceArnHasBeenSet = true; m_resourceArn = value; }
 
     /**

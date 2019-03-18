@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The total number of resources that are compliant.</p>
      */
+    inline bool CompliantCountHasBeenSet() const { return m_compliantCountHasBeenSet; }
+
+    /**
+     * <p>The total number of resources that are compliant.</p>
+     */
     inline void SetCompliantCount(int value) { m_compliantCountHasBeenSet = true; m_compliantCount = value; }
 
     /**
@@ -68,6 +73,11 @@ namespace Model
      * <p>A summary of the compliance severity by compliance type.</p>
      */
     inline const SeveritySummary& GetSeveritySummary() const{ return m_severitySummary; }
+
+    /**
+     * <p>A summary of the compliance severity by compliance type.</p>
+     */
+    inline bool SeveritySummaryHasBeenSet() const { return m_severitySummaryHasBeenSet; }
 
     /**
      * <p>A summary of the compliance severity by compliance type.</p>

@@ -62,6 +62,15 @@ namespace Model
      * consisting of upper and lowercase alphanumeric characters with no spaces. You
      * can also include any of the following characters: _+=,.@-</p>
      */
+    inline bool GroupNameHasBeenSet() const { return m_groupNameHasBeenSet; }
+
+    /**
+     * <p>Name of the IAM group to update. If you're changing the name of the group,
+     * this is the original name.</p> <p>This parameter allows (through its <a
+     * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
+     * consisting of upper and lowercase alphanumeric characters with no spaces. You
+     * can also include any of the following characters: _+=,.@-</p>
+     */
     inline void SetGroupName(const Aws::String& value) { m_groupNameHasBeenSet = true; m_groupName = value; }
 
     /**
@@ -120,6 +129,17 @@ namespace Model
      * punctuation characters, digits, and upper and lowercased letters.</p>
      */
     inline const Aws::String& GetNewPath() const{ return m_newPath; }
+
+    /**
+     * <p>New path for the IAM group. Only include this if changing the group's
+     * path.</p> <p>This parameter allows (through its <a
+     * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
+     * consisting of either a forward slash (/) by itself or a string that must begin
+     * and end with forward slashes. In addition, it can contain any ASCII character
+     * from the ! (\u0021) through the DEL character (\u007F), including most
+     * punctuation characters, digits, and upper and lowercased letters.</p>
+     */
+    inline bool NewPathHasBeenSet() const { return m_newPathHasBeenSet; }
 
     /**
      * <p>New path for the IAM group. Only include this if changing the group's
@@ -196,6 +216,15 @@ namespace Model
      * can also include any of the following characters: _+=,.@-</p>
      */
     inline const Aws::String& GetNewGroupName() const{ return m_newGroupName; }
+
+    /**
+     * <p>New name for the IAM group. Only include this if changing the group's
+     * name.</p> <p>This parameter allows (through its <a
+     * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
+     * consisting of upper and lowercase alphanumeric characters with no spaces. You
+     * can also include any of the following characters: _+=,.@-</p>
+     */
+    inline bool NewGroupNameHasBeenSet() const { return m_newGroupNameHasBeenSet; }
 
     /**
      * <p>New name for the IAM group. Only include this if changing the group's

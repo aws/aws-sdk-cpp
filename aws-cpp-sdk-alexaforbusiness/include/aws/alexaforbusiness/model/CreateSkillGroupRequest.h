@@ -53,6 +53,11 @@ namespace Model
     /**
      * <p>The name for the skill group.</p>
      */
+    inline bool SkillGroupNameHasBeenSet() const { return m_skillGroupNameHasBeenSet; }
+
+    /**
+     * <p>The name for the skill group.</p>
+     */
     inline void SetSkillGroupName(const Aws::String& value) { m_skillGroupNameHasBeenSet = true; m_skillGroupName = value; }
 
     /**
@@ -85,6 +90,11 @@ namespace Model
      * <p>The description for the skill group.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
+
+    /**
+     * <p>The description for the skill group.</p>
+     */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
 
     /**
      * <p>The description for the skill group.</p>
@@ -122,6 +132,12 @@ namespace Model
      * idempotency. </p>
      */
     inline const Aws::String& GetClientRequestToken() const{ return m_clientRequestToken; }
+
+    /**
+     * <p>A unique, user-specified identifier for this request that ensures
+     * idempotency. </p>
+     */
+    inline bool ClientRequestTokenHasBeenSet() const { return m_clientRequestTokenHasBeenSet; }
 
     /**
      * <p>A unique, user-specified identifier for this request that ensures

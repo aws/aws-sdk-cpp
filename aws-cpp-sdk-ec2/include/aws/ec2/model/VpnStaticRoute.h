@@ -61,6 +61,12 @@ namespace Model
      * <p>The CIDR block associated with the local subnet of the customer data
      * center.</p>
      */
+    inline bool DestinationCidrBlockHasBeenSet() const { return m_destinationCidrBlockHasBeenSet; }
+
+    /**
+     * <p>The CIDR block associated with the local subnet of the customer data
+     * center.</p>
+     */
     inline void SetDestinationCidrBlock(const Aws::String& value) { m_destinationCidrBlockHasBeenSet = true; m_destinationCidrBlock = value; }
 
     /**
@@ -102,6 +108,11 @@ namespace Model
     /**
      * <p>Indicates how the routes were provided.</p>
      */
+    inline bool SourceHasBeenSet() const { return m_sourceHasBeenSet; }
+
+    /**
+     * <p>Indicates how the routes were provided.</p>
+     */
     inline void SetSource(const VpnStaticRouteSource& value) { m_sourceHasBeenSet = true; m_source = value; }
 
     /**
@@ -124,6 +135,11 @@ namespace Model
      * <p>The current state of the static route.</p>
      */
     inline const VpnState& GetState() const{ return m_state; }
+
+    /**
+     * <p>The current state of the static route.</p>
+     */
+    inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
 
     /**
      * <p>The current state of the static route.</p>

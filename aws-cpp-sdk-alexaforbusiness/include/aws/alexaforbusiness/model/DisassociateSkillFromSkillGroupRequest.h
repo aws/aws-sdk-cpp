@@ -52,6 +52,11 @@ namespace Model
     /**
      * <p>The unique identifier of a skill. Required.</p>
      */
+    inline bool SkillGroupArnHasBeenSet() const { return m_skillGroupArnHasBeenSet; }
+
+    /**
+     * <p>The unique identifier of a skill. Required.</p>
+     */
     inline void SetSkillGroupArn(const Aws::String& value) { m_skillGroupArnHasBeenSet = true; m_skillGroupArn = value; }
 
     /**
@@ -84,6 +89,11 @@ namespace Model
      * <p>The ARN of a skill group to associate to a skill.</p>
      */
     inline const Aws::String& GetSkillId() const{ return m_skillId; }
+
+    /**
+     * <p>The ARN of a skill group to associate to a skill.</p>
+     */
+    inline bool SkillIdHasBeenSet() const { return m_skillIdHasBeenSet; }
 
     /**
      * <p>The ARN of a skill group to associate to a skill.</p>

@@ -63,6 +63,12 @@ namespace Model
      * <p>The ID of the hosted zone that you want to list traffic policy instances
      * for.</p>
      */
+    inline bool HostedZoneIdHasBeenSet() const { return m_hostedZoneIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the hosted zone that you want to list traffic policy instances
+     * for.</p>
+     */
     inline void SetHostedZoneId(const Aws::String& value) { m_hostedZoneIdHasBeenSet = true; m_hostedZoneId = value; }
 
     /**
@@ -108,6 +114,19 @@ namespace Model
      * instances to get.</p>
      */
     inline const Aws::String& GetTrafficPolicyInstanceNameMarker() const{ return m_trafficPolicyInstanceNameMarker; }
+
+    /**
+     * <p>If the value of <code>IsTruncated</code> in the previous response is true,
+     * you have more traffic policy instances. To get more traffic policy instances,
+     * submit another <code>ListTrafficPolicyInstances</code> request. For the value of
+     * <code>trafficpolicyinstancename</code>, specify the value of
+     * <code>TrafficPolicyInstanceNameMarker</code> from the previous response, which
+     * is the name of the first traffic policy instance in the next group of traffic
+     * policy instances.</p> <p>If the value of <code>IsTruncated</code> in the
+     * previous response was <code>false</code>, there are no more traffic policy
+     * instances to get.</p>
+     */
+    inline bool TrafficPolicyInstanceNameMarkerHasBeenSet() const { return m_trafficPolicyInstanceNameMarkerHasBeenSet; }
 
     /**
      * <p>If the value of <code>IsTruncated</code> in the previous response is true,
@@ -212,6 +231,19 @@ namespace Model
      * previous response was <code>false</code>, there are no more traffic policy
      * instances to get.</p>
      */
+    inline bool TrafficPolicyInstanceTypeMarkerHasBeenSet() const { return m_trafficPolicyInstanceTypeMarkerHasBeenSet; }
+
+    /**
+     * <p>If the value of <code>IsTruncated</code> in the previous response is true,
+     * you have more traffic policy instances. To get more traffic policy instances,
+     * submit another <code>ListTrafficPolicyInstances</code> request. For the value of
+     * <code>trafficpolicyinstancetype</code>, specify the value of
+     * <code>TrafficPolicyInstanceTypeMarker</code> from the previous response, which
+     * is the type of the first traffic policy instance in the next group of traffic
+     * policy instances.</p> <p>If the value of <code>IsTruncated</code> in the
+     * previous response was <code>false</code>, there are no more traffic policy
+     * instances to get.</p>
+     */
     inline void SetTrafficPolicyInstanceTypeMarker(const RRType& value) { m_trafficPolicyInstanceTypeMarkerHasBeenSet = true; m_trafficPolicyInstanceTypeMarker = value; }
 
     /**
@@ -265,6 +297,18 @@ namespace Model
      * request.</p>
      */
     inline const Aws::String& GetMaxItems() const{ return m_maxItems; }
+
+    /**
+     * <p>The maximum number of traffic policy instances to be included in the response
+     * body for this request. If you have more than <code>MaxItems</code> traffic
+     * policy instances, the value of the <code>IsTruncated</code> element in the
+     * response is <code>true</code>, and the values of
+     * <code>HostedZoneIdMarker</code>, <code>TrafficPolicyInstanceNameMarker</code>,
+     * and <code>TrafficPolicyInstanceTypeMarker</code> represent the first traffic
+     * policy instance that Amazon Route 53 will return if you submit another
+     * request.</p>
+     */
+    inline bool MaxItemsHasBeenSet() const { return m_maxItemsHasBeenSet; }
 
     /**
      * <p>The maximum number of traffic policy instances to be included in the response

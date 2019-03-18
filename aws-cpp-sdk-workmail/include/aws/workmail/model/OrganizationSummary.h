@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The identifier associated with the organization.</p>
      */
+    inline bool OrganizationIdHasBeenSet() const { return m_organizationIdHasBeenSet; }
+
+    /**
+     * <p>The identifier associated with the organization.</p>
+     */
     inline void SetOrganizationId(const Aws::String& value) { m_organizationIdHasBeenSet = true; m_organizationId = value; }
 
     /**
@@ -88,6 +93,11 @@ namespace Model
      * <p>The alias associated with the organization.</p>
      */
     inline const Aws::String& GetAlias() const{ return m_alias; }
+
+    /**
+     * <p>The alias associated with the organization.</p>
+     */
+    inline bool AliasHasBeenSet() const { return m_aliasHasBeenSet; }
 
     /**
      * <p>The alias associated with the organization.</p>
@@ -126,6 +136,13 @@ namespace Model
      * insight or solutions regarding unexpected behavior.</p>
      */
     inline const Aws::String& GetErrorMessage() const{ return m_errorMessage; }
+
+    /**
+     * <p>The error message associated with the organization. It is only present if
+     * unexpected behavior has occurred with regards to the organization. It provides
+     * insight or solutions regarding unexpected behavior.</p>
+     */
+    inline bool ErrorMessageHasBeenSet() const { return m_errorMessageHasBeenSet; }
 
     /**
      * <p>The error message associated with the organization. It is only present if
@@ -174,6 +191,11 @@ namespace Model
      * <p>The state associated with the organization.</p>
      */
     inline const Aws::String& GetState() const{ return m_state; }
+
+    /**
+     * <p>The state associated with the organization.</p>
+     */
+    inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
 
     /**
      * <p>The state associated with the organization.</p>

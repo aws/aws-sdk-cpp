@@ -78,6 +78,22 @@ namespace Model
      * <code>arn:aws:rds:us-east-1:123456789012:cluster-pg:custom-cluster-group1</code>.</p>
      * </li> </ul>
      */
+    inline bool SourceDBClusterParameterGroupIdentifierHasBeenSet() const { return m_sourceDBClusterParameterGroupIdentifierHasBeenSet; }
+
+    /**
+     * <p>The identifier or Amazon Resource Name (ARN) for the source DB cluster
+     * parameter group. For information about creating an ARN, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing">
+     * Constructing an ARN for Amazon RDS</a> in the <i>Amazon Aurora User Guide</i>.
+     * </p> <p>Constraints:</p> <ul> <li> <p>Must specify a valid DB cluster parameter
+     * group.</p> </li> <li> <p>If the source DB cluster parameter group is in the same
+     * AWS Region as the copy, specify a valid DB parameter group identifier, for
+     * example <code>my-db-cluster-param-group</code>, or a valid ARN.</p> </li> <li>
+     * <p>If the source DB parameter group is in a different AWS Region than the copy,
+     * specify a valid DB cluster parameter group ARN, for example
+     * <code>arn:aws:rds:us-east-1:123456789012:cluster-pg:custom-cluster-group1</code>.</p>
+     * </li> </ul>
+     */
     inline void SetSourceDBClusterParameterGroupIdentifier(const Aws::String& value) { m_sourceDBClusterParameterGroupIdentifierHasBeenSet = true; m_sourceDBClusterParameterGroupIdentifier = value; }
 
     /**
@@ -179,6 +195,16 @@ namespace Model
      * contain two consecutive hyphens</p> </li> </ul> <p>Example:
      * <code>my-cluster-param-group1</code> </p>
      */
+    inline bool TargetDBClusterParameterGroupIdentifierHasBeenSet() const { return m_targetDBClusterParameterGroupIdentifierHasBeenSet; }
+
+    /**
+     * <p>The identifier for the copied DB cluster parameter group.</p>
+     * <p>Constraints:</p> <ul> <li> <p>Can't be null, empty, or blank</p> </li> <li>
+     * <p>Must contain from 1 to 255 letters, numbers, or hyphens</p> </li> <li>
+     * <p>First character must be a letter</p> </li> <li> <p>Can't end with a hyphen or
+     * contain two consecutive hyphens</p> </li> </ul> <p>Example:
+     * <code>my-cluster-param-group1</code> </p>
+     */
     inline void SetTargetDBClusterParameterGroupIdentifier(const Aws::String& value) { m_targetDBClusterParameterGroupIdentifierHasBeenSet = true; m_targetDBClusterParameterGroupIdentifier = value; }
 
     /**
@@ -240,6 +266,11 @@ namespace Model
     /**
      * <p>A description for the copied DB cluster parameter group.</p>
      */
+    inline bool TargetDBClusterParameterGroupDescriptionHasBeenSet() const { return m_targetDBClusterParameterGroupDescriptionHasBeenSet; }
+
+    /**
+     * <p>A description for the copied DB cluster parameter group.</p>
+     */
     inline void SetTargetDBClusterParameterGroupDescription(const Aws::String& value) { m_targetDBClusterParameterGroupDescriptionHasBeenSet = true; m_targetDBClusterParameterGroupDescription = value; }
 
     /**
@@ -270,6 +301,9 @@ namespace Model
 
     
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+
+    
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }

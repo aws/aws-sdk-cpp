@@ -59,6 +59,13 @@ namespace Model
      * associate the virtual tape with. Use the <a>ListGateways</a> operation to return
      * a list of gateways for your account and region.</p>
      */
+    inline bool GatewayARNHasBeenSet() const { return m_gatewayARNHasBeenSet; }
+
+    /**
+     * <p>The unique Amazon Resource Name (ARN) that represents the gateway to
+     * associate the virtual tape with. Use the <a>ListGateways</a> operation to return
+     * a list of gateways for your account and region.</p>
+     */
     inline void SetGatewayARN(const Aws::String& value) { m_gatewayARNHasBeenSet = true; m_gatewayARN = value; }
 
     /**
@@ -107,6 +114,12 @@ namespace Model
      * <p>The size, in bytes, of the virtual tape that you want to create.</p> <note>
      * <p>The size must be aligned by gigabyte (1024*1024*1024 byte).</p> </note>
      */
+    inline bool TapeSizeInBytesHasBeenSet() const { return m_tapeSizeInBytesHasBeenSet; }
+
+    /**
+     * <p>The size, in bytes, of the virtual tape that you want to create.</p> <note>
+     * <p>The size must be aligned by gigabyte (1024*1024*1024 byte).</p> </note>
+     */
     inline void SetTapeSizeInBytes(long long value) { m_tapeSizeInBytesHasBeenSet = true; m_tapeSizeInBytes = value; }
 
     /**
@@ -122,6 +135,13 @@ namespace Model
      * deleted.</p> </note>
      */
     inline const Aws::String& GetTapeBarcode() const{ return m_tapeBarcode; }
+
+    /**
+     * <p>The barcode that you want to assign to the tape.</p> <note> <p>Barcodes
+     * cannot be reused. This includes barcodes used for tapes that have been
+     * deleted.</p> </note>
+     */
+    inline bool TapeBarcodeHasBeenSet() const { return m_tapeBarcodeHasBeenSet; }
 
     /**
      * <p>The barcode that you want to assign to the tape.</p> <note> <p>Barcodes
@@ -176,6 +196,12 @@ namespace Model
      * <p>True to use Amazon S3 server side encryption with your own AWS KMS key, or
      * false to use a key managed by Amazon S3. Optional.</p>
      */
+    inline bool KMSEncryptedHasBeenSet() const { return m_kMSEncryptedHasBeenSet; }
+
+    /**
+     * <p>True to use Amazon S3 server side encryption with your own AWS KMS key, or
+     * false to use a key managed by Amazon S3. Optional.</p>
+     */
     inline void SetKMSEncrypted(bool value) { m_kMSEncryptedHasBeenSet = true; m_kMSEncrypted = value; }
 
     /**
@@ -191,6 +217,13 @@ namespace Model
      * Optional.</p>
      */
     inline const Aws::String& GetKMSKey() const{ return m_kMSKey; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the AWS KMS Key used for Amazon S3 server
+     * side encryption. This value can only be set when KMSEncrypted is true.
+     * Optional.</p>
+     */
+    inline bool KMSKeyHasBeenSet() const { return m_kMSKeyHasBeenSet; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the AWS KMS Key used for Amazon S3 server

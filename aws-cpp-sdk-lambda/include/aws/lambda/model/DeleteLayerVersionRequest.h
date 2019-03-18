@@ -50,6 +50,11 @@ namespace Model
     /**
      * <p>The name or Amazon Resource Name (ARN) of the layer.</p>
      */
+    inline bool LayerNameHasBeenSet() const { return m_layerNameHasBeenSet; }
+
+    /**
+     * <p>The name or Amazon Resource Name (ARN) of the layer.</p>
+     */
     inline void SetLayerName(const Aws::String& value) { m_layerNameHasBeenSet = true; m_layerName = value; }
 
     /**
@@ -82,6 +87,11 @@ namespace Model
      * <p>The version number.</p>
      */
     inline long long GetVersionNumber() const{ return m_versionNumber; }
+
+    /**
+     * <p>The version number.</p>
+     */
+    inline bool VersionNumberHasBeenSet() const { return m_versionNumberHasBeenSet; }
 
     /**
      * <p>The version number.</p>

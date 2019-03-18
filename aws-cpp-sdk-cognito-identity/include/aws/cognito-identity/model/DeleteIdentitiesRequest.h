@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>A list of 1-60 identities that you want to delete.</p>
      */
+    inline bool IdentityIdsToDeleteHasBeenSet() const { return m_identityIdsToDeleteHasBeenSet; }
+
+    /**
+     * <p>A list of 1-60 identities that you want to delete.</p>
+     */
     inline void SetIdentityIdsToDelete(const Aws::Vector<Aws::String>& value) { m_identityIdsToDeleteHasBeenSet = true; m_identityIdsToDelete = value; }
 
     /**

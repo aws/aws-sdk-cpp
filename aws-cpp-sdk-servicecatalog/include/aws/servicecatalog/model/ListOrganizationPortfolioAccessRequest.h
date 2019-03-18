@@ -57,6 +57,13 @@ namespace Model
      * </li> <li> <p> <code>jp</code> - Japanese</p> </li> <li> <p> <code>zh</code> -
      * Chinese</p> </li> </ul>
      */
+    inline bool AcceptLanguageHasBeenSet() const { return m_acceptLanguageHasBeenSet; }
+
+    /**
+     * <p>The language code.</p> <ul> <li> <p> <code>en</code> - English (default)</p>
+     * </li> <li> <p> <code>jp</code> - Japanese</p> </li> <li> <p> <code>zh</code> -
+     * Chinese</p> </li> </ul>
+     */
     inline void SetAcceptLanguage(const Aws::String& value) { m_acceptLanguageHasBeenSet = true; m_acceptLanguage = value; }
 
     /**
@@ -103,6 +110,11 @@ namespace Model
     /**
      * <p>The portfolio identifier. For example, <code>port-2abcdext3y5fk</code>.</p>
      */
+    inline bool PortfolioIdHasBeenSet() const { return m_portfolioIdHasBeenSet; }
+
+    /**
+     * <p>The portfolio identifier. For example, <code>port-2abcdext3y5fk</code>.</p>
+     */
     inline void SetPortfolioId(const Aws::String& value) { m_portfolioIdHasBeenSet = true; m_portfolioId = value; }
 
     /**
@@ -140,6 +152,16 @@ namespace Model
      * organization.</p> </li> </ul>
      */
     inline const OrganizationNodeType& GetOrganizationNodeType() const{ return m_organizationNodeType; }
+
+    /**
+     * <p>The organization node type that will be returned in the output.</p> <ul> <li>
+     * <p> <code>ORGANIZATION</code> - Organization that has access to the portfolio.
+     * </p> </li> <li> <p> <code>ORGANIZATIONAL_UNIT</code> - Organizational unit that
+     * has access to the portfolio within your organization.</p> </li> <li> <p>
+     * <code>ACCOUNT</code> - Account that has access to the portfolio within your
+     * organization.</p> </li> </ul>
+     */
+    inline bool OrganizationNodeTypeHasBeenSet() const { return m_organizationNodeTypeHasBeenSet; }
 
     /**
      * <p>The organization node type that will be returned in the output.</p> <ul> <li>
@@ -192,6 +214,12 @@ namespace Model
      * <p>The page token for the next set of results. To retrieve the first set of
      * results, use null.</p>
      */
+    inline bool PageTokenHasBeenSet() const { return m_pageTokenHasBeenSet; }
+
+    /**
+     * <p>The page token for the next set of results. To retrieve the first set of
+     * results, use null.</p>
+     */
     inline void SetPageToken(const Aws::String& value) { m_pageTokenHasBeenSet = true; m_pageToken = value; }
 
     /**
@@ -229,6 +257,11 @@ namespace Model
      * <p>The maximum number of items to return with this call.</p>
      */
     inline int GetPageSize() const{ return m_pageSize; }
+
+    /**
+     * <p>The maximum number of items to return with this call.</p>
+     */
+    inline bool PageSizeHasBeenSet() const { return m_pageSizeHasBeenSet; }
 
     /**
      * <p>The maximum number of items to return with this call.</p>

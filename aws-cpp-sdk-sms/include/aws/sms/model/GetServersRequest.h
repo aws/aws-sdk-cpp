@@ -54,6 +54,11 @@ namespace Model
     /**
      * <p>The token for the next set of results.</p>
      */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
+
+    /**
+     * <p>The token for the next set of results.</p>
+     */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
     /**
@@ -94,6 +99,13 @@ namespace Model
      * is 50. To retrieve the remaining results, make another call with the returned
      * <code>NextToken</code> value.</p>
      */
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
+
+    /**
+     * <p>The maximum number of results to return in a single call. The default value
+     * is 50. To retrieve the remaining results, make another call with the returned
+     * <code>NextToken</code> value.</p>
+     */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
@@ -108,6 +120,11 @@ namespace Model
      * <p>List of <code>VmServerAddress</code> objects</p>
      */
     inline const Aws::Vector<VmServerAddress>& GetVmServerAddressList() const{ return m_vmServerAddressList; }
+
+    /**
+     * <p>List of <code>VmServerAddress</code> objects</p>
+     */
+    inline bool VmServerAddressListHasBeenSet() const { return m_vmServerAddressListHasBeenSet; }
 
     /**
      * <p>List of <code>VmServerAddress</code> objects</p>

@@ -64,6 +64,11 @@ namespace Model
     /**
      * The unique arn of the channel.
      */
+    inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
+
+    /**
+     * The unique arn of the channel.
+     */
     inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
 
     /**
@@ -101,6 +106,16 @@ one destination per
 
      */
     inline const Aws::Vector<OutputDestination>& GetDestinations() const{ return m_destinations; }
+
+    /**
+     * A list of destinations of the channel. For UDP outputs, there is one
+destination
+     * per output. For other types (HLS, for example), there is
+one destination per
+     * packager.
+
+     */
+    inline bool DestinationsHasBeenSet() const { return m_destinationsHasBeenSet; }
 
     /**
      * A list of destinations of the channel. For UDP outputs, there is one
@@ -171,6 +186,11 @@ one destination per
     /**
      * The endpoints where outgoing connections initiate from
      */
+    inline bool EgressEndpointsHasBeenSet() const { return m_egressEndpointsHasBeenSet; }
+
+    /**
+     * The endpoints where outgoing connections initiate from
+     */
     inline void SetEgressEndpoints(const Aws::Vector<ChannelEgressEndpoint>& value) { m_egressEndpointsHasBeenSet = true; m_egressEndpoints = value; }
 
     /**
@@ -203,6 +223,9 @@ one destination per
     inline const EncoderSettings& GetEncoderSettings() const{ return m_encoderSettings; }
 
     
+    inline bool EncoderSettingsHasBeenSet() const { return m_encoderSettingsHasBeenSet; }
+
+    
     inline void SetEncoderSettings(const EncoderSettings& value) { m_encoderSettingsHasBeenSet = true; m_encoderSettings = value; }
 
     
@@ -219,6 +242,11 @@ one destination per
      * The unique id of the channel.
      */
     inline const Aws::String& GetId() const{ return m_id; }
+
+    /**
+     * The unique id of the channel.
+     */
+    inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
 
     /**
      * The unique id of the channel.
@@ -259,6 +287,11 @@ one destination per
     /**
      * List of input attachments for channel.
      */
+    inline bool InputAttachmentsHasBeenSet() const { return m_inputAttachmentsHasBeenSet; }
+
+    /**
+     * List of input attachments for channel.
+     */
     inline void SetInputAttachments(const Aws::Vector<InputAttachment>& value) { m_inputAttachmentsHasBeenSet = true; m_inputAttachments = value; }
 
     /**
@@ -291,6 +324,9 @@ one destination per
     inline const InputSpecification& GetInputSpecification() const{ return m_inputSpecification; }
 
     
+    inline bool InputSpecificationHasBeenSet() const { return m_inputSpecificationHasBeenSet; }
+
+    
     inline void SetInputSpecification(const InputSpecification& value) { m_inputSpecificationHasBeenSet = true; m_inputSpecification = value; }
 
     
@@ -307,6 +343,11 @@ one destination per
      * The log level being written to CloudWatch Logs.
      */
     inline const LogLevel& GetLogLevel() const{ return m_logLevel; }
+
+    /**
+     * The log level being written to CloudWatch Logs.
+     */
+    inline bool LogLevelHasBeenSet() const { return m_logLevelHasBeenSet; }
 
     /**
      * The log level being written to CloudWatch Logs.
@@ -333,6 +374,11 @@ one destination per
      * The name of the channel. (user-mutable)
      */
     inline const Aws::String& GetName() const{ return m_name; }
+
+    /**
+     * The name of the channel. (user-mutable)
+     */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
      * The name of the channel. (user-mutable)
@@ -373,6 +419,11 @@ one destination per
     /**
      * The number of currently healthy pipelines.
      */
+    inline bool PipelinesRunningCountHasBeenSet() const { return m_pipelinesRunningCountHasBeenSet; }
+
+    /**
+     * The number of currently healthy pipelines.
+     */
     inline void SetPipelinesRunningCount(int value) { m_pipelinesRunningCountHasBeenSet = true; m_pipelinesRunningCount = value; }
 
     /**
@@ -385,6 +436,11 @@ one destination per
      * The Amazon Resource Name (ARN) of the role assumed when running the Channel.
      */
     inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
+
+    /**
+     * The Amazon Resource Name (ARN) of the role assumed when running the Channel.
+     */
+    inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
 
     /**
      * The Amazon Resource Name (ARN) of the role assumed when running the Channel.
@@ -421,6 +477,9 @@ one destination per
     inline const ChannelState& GetState() const{ return m_state; }
 
     
+    inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
+
+    
     inline void SetState(const ChannelState& value) { m_stateHasBeenSet = true; m_state = value; }
 
     
@@ -437,6 +496,11 @@ one destination per
      * A collection of key-value pairs.
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
+
+    /**
+     * A collection of key-value pairs.
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
      * A collection of key-value pairs.

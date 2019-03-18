@@ -52,6 +52,11 @@ namespace Model
     /**
      * <p>The name of the Direct Connect gateway.</p>
      */
+    inline bool DirectConnectGatewayNameHasBeenSet() const { return m_directConnectGatewayNameHasBeenSet; }
+
+    /**
+     * <p>The name of the Direct Connect gateway.</p>
+     */
     inline void SetDirectConnectGatewayName(const Aws::String& value) { m_directConnectGatewayNameHasBeenSet = true; m_directConnectGatewayName = value; }
 
     /**
@@ -87,6 +92,14 @@ namespace Model
      * 64512.</p>
      */
     inline long long GetAmazonSideAsn() const{ return m_amazonSideAsn; }
+
+    /**
+     * <p>The autonomous system number (ASN) for Border Gateway Protocol (BGP) to be
+     * configured on the Amazon side of the connection. The ASN must be in the private
+     * range of 64,512 to 65,534 or 4,200,000,000 to 4,294,967,294. The default is
+     * 64512.</p>
+     */
+    inline bool AmazonSideAsnHasBeenSet() const { return m_amazonSideAsnHasBeenSet; }
 
     /**
      * <p>The autonomous system number (ASN) for Border Gateway Protocol (BGP) to be

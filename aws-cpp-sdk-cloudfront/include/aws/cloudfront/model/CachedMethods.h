@@ -69,6 +69,14 @@ namespace Model
      * <code>HEAD</code> requests) and <code>3</code> (for caching responses to
      * <code>GET</code>, <code>HEAD</code>, and <code>OPTIONS</code> requests).</p>
      */
+    inline bool QuantityHasBeenSet() const { return m_quantityHasBeenSet; }
+
+    /**
+     * <p>The number of HTTP methods for which you want CloudFront to cache responses.
+     * Valid values are <code>2</code> (for caching responses to <code>GET</code> and
+     * <code>HEAD</code> requests) and <code>3</code> (for caching responses to
+     * <code>GET</code>, <code>HEAD</code>, and <code>OPTIONS</code> requests).</p>
+     */
     inline void SetQuantity(int value) { m_quantityHasBeenSet = true; m_quantity = value; }
 
     /**
@@ -85,6 +93,12 @@ namespace Model
      * cache responses to.</p>
      */
     inline const Aws::Vector<Method>& GetItems() const{ return m_items; }
+
+    /**
+     * <p>A complex type that contains the HTTP methods that you want CloudFront to
+     * cache responses to.</p>
+     */
+    inline bool ItemsHasBeenSet() const { return m_itemsHasBeenSet; }
 
     /**
      * <p>A complex type that contains the HTTP methods that you want CloudFront to

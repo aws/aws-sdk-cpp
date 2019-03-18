@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>A valid configuration identified by Application Discovery Service. </p>
      */
+    inline bool ConfigurationTypeHasBeenSet() const { return m_configurationTypeHasBeenSet; }
+
+    /**
+     * <p>A valid configuration identified by Application Discovery Service. </p>
+     */
     inline void SetConfigurationType(const ConfigurationItemType& value) { m_configurationTypeHasBeenSet = true; m_configurationType = value; }
 
     /**
@@ -83,6 +88,16 @@ namespace Model
      * Discovered Configuration Items</a>. </p>
      */
     inline const Aws::Vector<Filter>& GetFilters() const{ return m_filters; }
+
+    /**
+     * <p>You can filter the request using various logical operators and a
+     * <i>key</i>-<i>value</i> format. For example: </p> <p> <code>{"key":
+     * "serverType", "value": "webServer"}</code> </p> <p>For a complete list of filter
+     * options and guidance about using them with this action, see <a
+     * href="http://docs.aws.amazon.com/application-discovery/latest/APIReference/discovery-api-queries.html#ListConfigurations">Querying
+     * Discovered Configuration Items</a>. </p>
+     */
+    inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
 
     /**
      * <p>You can filter the request using various logical operators and a
@@ -153,6 +168,11 @@ namespace Model
     /**
      * <p>The total number of items to return. The maximum value is 100.</p>
      */
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
+
+    /**
+     * <p>The total number of items to return. The maximum value is 100.</p>
+     */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
@@ -169,6 +189,15 @@ namespace Model
      * of 10.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
+    /**
+     * <p>Token to retrieve the next set of results. For example, if a previous call to
+     * ListConfigurations returned 100 items, but you set
+     * <code>ListConfigurationsRequest$maxResults</code> to 10, you received a set of
+     * 10 results along with a token. Use that token in this query to get the next set
+     * of 10.</p>
+     */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
      * <p>Token to retrieve the next set of results. For example, if a previous call to
@@ -232,6 +261,14 @@ namespace Model
      * the ListConfigurations Action</a>.</p>
      */
     inline const Aws::Vector<OrderByElement>& GetOrderBy() const{ return m_orderBy; }
+
+    /**
+     * <p>Certain filter criteria return output that can be sorted in ascending or
+     * descending order. For a list of output characteristics for each filter, see <a
+     * href="http://docs.aws.amazon.com/application-discovery/latest/APIReference/discovery-api-queries.html#ListConfigurations">Using
+     * the ListConfigurations Action</a>.</p>
+     */
+    inline bool OrderByHasBeenSet() const { return m_orderByHasBeenSet; }
 
     /**
      * <p>Certain filter criteria return output that can be sorted in ascending or

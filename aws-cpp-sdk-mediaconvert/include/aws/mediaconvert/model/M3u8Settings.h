@@ -59,6 +59,11 @@ namespace Model
     /**
      * The number of audio frames to insert for each PES packet.
      */
+    inline bool AudioFramesPerPesHasBeenSet() const { return m_audioFramesPerPesHasBeenSet; }
+
+    /**
+     * The number of audio frames to insert for each PES packet.
+     */
     inline void SetAudioFramesPerPes(int value) { m_audioFramesPerPesHasBeenSet = true; m_audioFramesPerPes = value; }
 
     /**
@@ -73,6 +78,13 @@ namespace Model
      * comma separation.
      */
     inline const Aws::Vector<int>& GetAudioPids() const{ return m_audioPids; }
+
+    /**
+     * Packet Identifier (PID) of the elementary audio stream(s) in the transport
+     * stream. Multiple values are accepted, and can be entered in ranges and/or by
+     * comma separation.
+     */
+    inline bool AudioPidsHasBeenSet() const { return m_audioPidsHasBeenSet; }
 
     /**
      * Packet Identifier (PID) of the elementary audio stream(s) in the transport
@@ -114,6 +126,9 @@ namespace Model
     inline const M3u8NielsenId3& GetNielsenId3() const{ return m_nielsenId3; }
 
     
+    inline bool NielsenId3HasBeenSet() const { return m_nielsenId3HasBeenSet; }
+
+    
     inline void SetNielsenId3(const M3u8NielsenId3& value) { m_nielsenId3HasBeenSet = true; m_nielsenId3 = value; }
 
     
@@ -136,6 +151,12 @@ namespace Model
      * The number of milliseconds between instances of this table in the output
      * transport stream.
      */
+    inline bool PatIntervalHasBeenSet() const { return m_patIntervalHasBeenSet; }
+
+    /**
+     * The number of milliseconds between instances of this table in the output
+     * transport stream.
+     */
     inline void SetPatInterval(int value) { m_patIntervalHasBeenSet = true; m_patInterval = value; }
 
     /**
@@ -147,6 +168,9 @@ namespace Model
 
     
     inline const M3u8PcrControl& GetPcrControl() const{ return m_pcrControl; }
+
+    
+    inline bool PcrControlHasBeenSet() const { return m_pcrControlHasBeenSet; }
 
     
     inline void SetPcrControl(const M3u8PcrControl& value) { m_pcrControlHasBeenSet = true; m_pcrControl = value; }
@@ -173,6 +197,13 @@ namespace Model
      * stream. When no value is given, the encoder will assign the same value as the
      * Video PID.
      */
+    inline bool PcrPidHasBeenSet() const { return m_pcrPidHasBeenSet; }
+
+    /**
+     * Packet Identifier (PID) of the Program Clock Reference (PCR) in the transport
+     * stream. When no value is given, the encoder will assign the same value as the
+     * Video PID.
+     */
     inline void SetPcrPid(int value) { m_pcrPidHasBeenSet = true; m_pcrPid = value; }
 
     /**
@@ -188,6 +219,12 @@ namespace Model
      * transport stream.
      */
     inline int GetPmtInterval() const{ return m_pmtInterval; }
+
+    /**
+     * The number of milliseconds between instances of this table in the output
+     * transport stream.
+     */
+    inline bool PmtIntervalHasBeenSet() const { return m_pmtIntervalHasBeenSet; }
 
     /**
      * The number of milliseconds between instances of this table in the output
@@ -210,6 +247,11 @@ namespace Model
     /**
      * Packet Identifier (PID) for the Program Map Table (PMT) in the transport stream.
      */
+    inline bool PmtPidHasBeenSet() const { return m_pmtPidHasBeenSet; }
+
+    /**
+     * Packet Identifier (PID) for the Program Map Table (PMT) in the transport stream.
+     */
     inline void SetPmtPid(int value) { m_pmtPidHasBeenSet = true; m_pmtPid = value; }
 
     /**
@@ -222,6 +264,11 @@ namespace Model
      * Packet Identifier (PID) of the private metadata stream in the transport stream.
      */
     inline int GetPrivateMetadataPid() const{ return m_privateMetadataPid; }
+
+    /**
+     * Packet Identifier (PID) of the private metadata stream in the transport stream.
+     */
+    inline bool PrivateMetadataPidHasBeenSet() const { return m_privateMetadataPidHasBeenSet; }
 
     /**
      * Packet Identifier (PID) of the private metadata stream in the transport stream.
@@ -242,6 +289,11 @@ namespace Model
     /**
      * The value of the program number field in the Program Map Table.
      */
+    inline bool ProgramNumberHasBeenSet() const { return m_programNumberHasBeenSet; }
+
+    /**
+     * The value of the program number field in the Program Map Table.
+     */
     inline void SetProgramNumber(int value) { m_programNumberHasBeenSet = true; m_programNumber = value; }
 
     /**
@@ -258,6 +310,11 @@ namespace Model
     /**
      * Packet Identifier (PID) of the SCTE-35 stream in the transport stream.
      */
+    inline bool Scte35PidHasBeenSet() const { return m_scte35PidHasBeenSet; }
+
+    /**
+     * Packet Identifier (PID) of the SCTE-35 stream in the transport stream.
+     */
     inline void SetScte35Pid(int value) { m_scte35PidHasBeenSet = true; m_scte35Pid = value; }
 
     /**
@@ -268,6 +325,9 @@ namespace Model
 
     
     inline const M3u8Scte35Source& GetScte35Source() const{ return m_scte35Source; }
+
+    
+    inline bool Scte35SourceHasBeenSet() const { return m_scte35SourceHasBeenSet; }
 
     
     inline void SetScte35Source(const M3u8Scte35Source& value) { m_scte35SourceHasBeenSet = true; m_scte35Source = value; }
@@ -284,6 +344,9 @@ namespace Model
 
     
     inline const TimedMetadata& GetTimedMetadata() const{ return m_timedMetadata; }
+
+    
+    inline bool TimedMetadataHasBeenSet() const { return m_timedMetadataHasBeenSet; }
 
     
     inline void SetTimedMetadata(const TimedMetadata& value) { m_timedMetadataHasBeenSet = true; m_timedMetadata = value; }
@@ -306,6 +369,11 @@ namespace Model
     /**
      * Packet Identifier (PID) of the timed metadata stream in the transport stream.
      */
+    inline bool TimedMetadataPidHasBeenSet() const { return m_timedMetadataPidHasBeenSet; }
+
+    /**
+     * Packet Identifier (PID) of the timed metadata stream in the transport stream.
+     */
     inline void SetTimedMetadataPid(int value) { m_timedMetadataPidHasBeenSet = true; m_timedMetadataPid = value; }
 
     /**
@@ -322,6 +390,11 @@ namespace Model
     /**
      * The value of the transport stream ID field in the Program Map Table.
      */
+    inline bool TransportStreamIdHasBeenSet() const { return m_transportStreamIdHasBeenSet; }
+
+    /**
+     * The value of the transport stream ID field in the Program Map Table.
+     */
     inline void SetTransportStreamId(int value) { m_transportStreamIdHasBeenSet = true; m_transportStreamId = value; }
 
     /**
@@ -334,6 +407,11 @@ namespace Model
      * Packet Identifier (PID) of the elementary video stream in the transport stream.
      */
     inline int GetVideoPid() const{ return m_videoPid; }
+
+    /**
+     * Packet Identifier (PID) of the elementary video stream in the transport stream.
+     */
+    inline bool VideoPidHasBeenSet() const { return m_videoPidHasBeenSet; }
 
     /**
      * Packet Identifier (PID) of the elementary video stream in the transport stream.

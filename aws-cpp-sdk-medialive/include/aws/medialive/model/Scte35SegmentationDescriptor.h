@@ -57,6 +57,11 @@ namespace Model
     /**
      * Holds the four SCTE-35 delivery restriction parameters.
      */
+    inline bool DeliveryRestrictionsHasBeenSet() const { return m_deliveryRestrictionsHasBeenSet; }
+
+    /**
+     * Holds the four SCTE-35 delivery restriction parameters.
+     */
     inline void SetDeliveryRestrictions(const Scte35DeliveryRestrictions& value) { m_deliveryRestrictionsHasBeenSet = true; m_deliveryRestrictions = value; }
 
     /**
@@ -85,6 +90,12 @@ namespace Model
      * Corresponds to SCTE-35 segment_num. A value that is valid for the specified
      * segmentation_type_id.
      */
+    inline bool SegmentNumHasBeenSet() const { return m_segmentNumHasBeenSet; }
+
+    /**
+     * Corresponds to SCTE-35 segment_num. A value that is valid for the specified
+     * segmentation_type_id.
+     */
     inline void SetSegmentNum(int value) { m_segmentNumHasBeenSet = true; m_segmentNum = value; }
 
     /**
@@ -98,6 +109,11 @@ namespace Model
      * Corresponds to SCTE-35 segmentation_event_cancel_indicator.
      */
     inline const Scte35SegmentationCancelIndicator& GetSegmentationCancelIndicator() const{ return m_segmentationCancelIndicator; }
+
+    /**
+     * Corresponds to SCTE-35 segmentation_event_cancel_indicator.
+     */
+    inline bool SegmentationCancelIndicatorHasBeenSet() const { return m_segmentationCancelIndicatorHasBeenSet; }
 
     /**
      * Corresponds to SCTE-35 segmentation_event_cancel_indicator.
@@ -134,6 +150,14 @@ namespace Model
      * by 90,000. Enter time in 90 KHz clock ticks. If you do not enter a duration, the
      * time_signal will continue until you insert a cancellation message.
      */
+    inline bool SegmentationDurationHasBeenSet() const { return m_segmentationDurationHasBeenSet; }
+
+    /**
+     * Corresponds to SCTE-35 segmentation_duration. Optional. The duration for the
+     * time_signal, in 90 KHz ticks. To convert seconds to ticks, multiple the seconds
+     * by 90,000. Enter time in 90 KHz clock ticks. If you do not enter a duration, the
+     * time_signal will continue until you insert a cancellation message.
+     */
     inline void SetSegmentationDuration(long long value) { m_segmentationDurationHasBeenSet = true; m_segmentationDuration = value; }
 
     /**
@@ -149,6 +173,11 @@ namespace Model
      * Corresponds to SCTE-35 segmentation_event_id. 
      */
     inline long long GetSegmentationEventId() const{ return m_segmentationEventId; }
+
+    /**
+     * Corresponds to SCTE-35 segmentation_event_id. 
+     */
+    inline bool SegmentationEventIdHasBeenSet() const { return m_segmentationEventIdHasBeenSet; }
 
     /**
      * Corresponds to SCTE-35 segmentation_event_id. 
@@ -175,6 +204,14 @@ namespace Model
      * decimal (for example, "52"). In the CLI, API, or an SDK, enter the ID in hex
      * (for example, "0x34") or decimal (for example, "52").
      */
+    inline bool SegmentationTypeIdHasBeenSet() const { return m_segmentationTypeIdHasBeenSet; }
+
+    /**
+     * Corresponds to SCTE-35 segmentation_type_id. One of the segmentation_type_id
+     * values listed in the SCTE-35 specification. On the console, enter the ID in
+     * decimal (for example, "52"). In the CLI, API, or an SDK, enter the ID in hex
+     * (for example, "0x34") or decimal (for example, "52").
+     */
     inline void SetSegmentationTypeId(int value) { m_segmentationTypeIdHasBeenSet = true; m_segmentationTypeId = value; }
 
     /**
@@ -194,6 +231,15 @@ namespace Model
      * becomes hex "41445320496e666f726d6174696f6e.
      */
     inline const Aws::String& GetSegmentationUpid() const{ return m_segmentationUpid; }
+
+    /**
+     * Corresponds to SCTE-35 segmentation_upid. Enter a string containing the
+     * hexadecimal representation of the characters that make up the SCTE-35
+     * segmentation_upid value. Must contain an even number of hex characters. Do not
+     * include spaces between each hex pair. For example, the ASCII "ADS Information"
+     * becomes hex "41445320496e666f726d6174696f6e.
+     */
+    inline bool SegmentationUpidHasBeenSet() const { return m_segmentationUpidHasBeenSet; }
 
     /**
      * Corresponds to SCTE-35 segmentation_upid. Enter a string containing the
@@ -266,6 +312,15 @@ namespace Model
      * SDK, enter one of the types listed in the SCTE-35 specification, in either hex
      * (for example, "0x0C" ) or in decimal (for example, "12").
      */
+    inline bool SegmentationUpidTypeHasBeenSet() const { return m_segmentationUpidTypeHasBeenSet; }
+
+    /**
+     * Corresponds to SCTE-35 segmentation_upid_type. On the console, enter one of the
+     * types listed in the SCTE-35 specification, converted to a decimal. For example,
+     * "0x0C" hex from the specification is "12" in decimal. In the CLI, API, or an
+     * SDK, enter one of the types listed in the SCTE-35 specification, in either hex
+     * (for example, "0x0C" ) or in decimal (for example, "12").
+     */
     inline void SetSegmentationUpidType(int value) { m_segmentationUpidTypeHasBeenSet = true; m_segmentationUpidType = value; }
 
     /**
@@ -283,6 +338,12 @@ namespace Model
      * specified segmentation_type_id.
      */
     inline int GetSegmentsExpected() const{ return m_segmentsExpected; }
+
+    /**
+     * Corresponds to SCTE-35 segments_expected. A value that is valid for the
+     * specified segmentation_type_id.
+     */
+    inline bool SegmentsExpectedHasBeenSet() const { return m_segmentsExpectedHasBeenSet; }
 
     /**
      * Corresponds to SCTE-35 segments_expected. A value that is valid for the
@@ -307,6 +368,12 @@ namespace Model
      * Corresponds to SCTE-35 sub_segment_num. A value that is valid for the specified
      * segmentation_type_id.
      */
+    inline bool SubSegmentNumHasBeenSet() const { return m_subSegmentNumHasBeenSet; }
+
+    /**
+     * Corresponds to SCTE-35 sub_segment_num. A value that is valid for the specified
+     * segmentation_type_id.
+     */
     inline void SetSubSegmentNum(int value) { m_subSegmentNumHasBeenSet = true; m_subSegmentNum = value; }
 
     /**
@@ -321,6 +388,12 @@ namespace Model
      * specified segmentation_type_id.
      */
     inline int GetSubSegmentsExpected() const{ return m_subSegmentsExpected; }
+
+    /**
+     * Corresponds to SCTE-35 sub_segments_expected. A value that is valid for the
+     * specified segmentation_type_id.
+     */
+    inline bool SubSegmentsExpectedHasBeenSet() const { return m_subSegmentsExpectedHasBeenSet; }
 
     /**
      * Corresponds to SCTE-35 sub_segments_expected. A value that is valid for the

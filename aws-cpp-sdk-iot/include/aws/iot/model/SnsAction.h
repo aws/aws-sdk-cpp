@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The ARN of the SNS topic.</p>
      */
+    inline bool TargetArnHasBeenSet() const { return m_targetArnHasBeenSet; }
+
+    /**
+     * <p>The ARN of the SNS topic.</p>
+     */
     inline void SetTargetArn(const Aws::String& value) { m_targetArnHasBeenSet = true; m_targetArn = value; }
 
     /**
@@ -89,6 +94,11 @@ namespace Model
      * <p>The ARN of the IAM role that grants access.</p>
      */
     inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
+
+    /**
+     * <p>The ARN of the IAM role that grants access.</p>
+     */
+    inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
 
     /**
      * <p>The ARN of the IAM role that grants access.</p>
@@ -131,6 +141,17 @@ namespace Model
      * refer to their official documentation.</p>
      */
     inline const MessageFormat& GetMessageFormat() const{ return m_messageFormat; }
+
+    /**
+     * <p>(Optional) The message format of the message to publish. Accepted values are
+     * "JSON" and "RAW". The default value of the attribute is "RAW". SNS uses this
+     * setting to determine if the payload should be parsed and relevant
+     * platform-specific bits of the payload should be extracted. To read more about
+     * SNS message formats, see <a
+     * href="https://docs.aws.amazon.com/sns/latest/dg/json-formats.html">https://docs.aws.amazon.com/sns/latest/dg/json-formats.html</a>
+     * refer to their official documentation.</p>
+     */
+    inline bool MessageFormatHasBeenSet() const { return m_messageFormatHasBeenSet; }
 
     /**
      * <p>(Optional) The message format of the message to publish. Accepted values are

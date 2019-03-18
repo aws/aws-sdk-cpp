@@ -68,6 +68,12 @@ namespace Model
      * <p>An array of custom recipe names to be run following a <code>setup</code>
      * event.</p>
      */
+    inline bool SetupHasBeenSet() const { return m_setupHasBeenSet; }
+
+    /**
+     * <p>An array of custom recipe names to be run following a <code>setup</code>
+     * event.</p>
+     */
     inline void SetSetup(const Aws::Vector<Aws::String>& value) { m_setupHasBeenSet = true; m_setup = value; }
 
     /**
@@ -112,6 +118,12 @@ namespace Model
      * event.</p>
      */
     inline const Aws::Vector<Aws::String>& GetConfigure() const{ return m_configure; }
+
+    /**
+     * <p>An array of custom recipe names to be run following a <code>configure</code>
+     * event.</p>
+     */
+    inline bool ConfigureHasBeenSet() const { return m_configureHasBeenSet; }
 
     /**
      * <p>An array of custom recipe names to be run following a <code>configure</code>
@@ -166,6 +178,12 @@ namespace Model
      * <p>An array of custom recipe names to be run following a <code>deploy</code>
      * event.</p>
      */
+    inline bool DeployHasBeenSet() const { return m_deployHasBeenSet; }
+
+    /**
+     * <p>An array of custom recipe names to be run following a <code>deploy</code>
+     * event.</p>
+     */
     inline void SetDeploy(const Aws::Vector<Aws::String>& value) { m_deployHasBeenSet = true; m_deploy = value; }
 
     /**
@@ -215,6 +233,12 @@ namespace Model
      * <p>An array of custom recipe names to be run following a <code>undeploy</code>
      * event.</p>
      */
+    inline bool UndeployHasBeenSet() const { return m_undeployHasBeenSet; }
+
+    /**
+     * <p>An array of custom recipe names to be run following a <code>undeploy</code>
+     * event.</p>
+     */
     inline void SetUndeploy(const Aws::Vector<Aws::String>& value) { m_undeployHasBeenSet = true; m_undeploy = value; }
 
     /**
@@ -259,6 +283,12 @@ namespace Model
      * event.</p>
      */
     inline const Aws::Vector<Aws::String>& GetShutdown() const{ return m_shutdown; }
+
+    /**
+     * <p>An array of custom recipe names to be run following a <code>shutdown</code>
+     * event.</p>
+     */
+    inline bool ShutdownHasBeenSet() const { return m_shutdownHasBeenSet; }
 
     /**
      * <p>An array of custom recipe names to be run following a <code>shutdown</code>

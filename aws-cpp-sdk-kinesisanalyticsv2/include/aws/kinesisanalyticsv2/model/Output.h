@@ -63,6 +63,11 @@ namespace Model
     /**
      * <p>The name of the in-application stream.</p>
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>The name of the in-application stream.</p>
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
@@ -99,6 +104,11 @@ namespace Model
     /**
      * <p>Identifies an Amazon Kinesis data stream as the destination.</p>
      */
+    inline bool KinesisStreamsOutputHasBeenSet() const { return m_kinesisStreamsOutputHasBeenSet; }
+
+    /**
+     * <p>Identifies an Amazon Kinesis data stream as the destination.</p>
+     */
     inline void SetKinesisStreamsOutput(const KinesisStreamsOutput& value) { m_kinesisStreamsOutputHasBeenSet = true; m_kinesisStreamsOutput = value; }
 
     /**
@@ -122,6 +132,12 @@ namespace Model
      * destination.</p>
      */
     inline const KinesisFirehoseOutput& GetKinesisFirehoseOutput() const{ return m_kinesisFirehoseOutput; }
+
+    /**
+     * <p>Identifies an Amazon Kinesis Data Firehose delivery stream as the
+     * destination.</p>
+     */
+    inline bool KinesisFirehoseOutputHasBeenSet() const { return m_kinesisFirehoseOutputHasBeenSet; }
 
     /**
      * <p>Identifies an Amazon Kinesis Data Firehose delivery stream as the
@@ -156,6 +172,11 @@ namespace Model
     /**
      * <p>Identifies an AWS Lambda function as the destination.</p>
      */
+    inline bool LambdaOutputHasBeenSet() const { return m_lambdaOutputHasBeenSet; }
+
+    /**
+     * <p>Identifies an AWS Lambda function as the destination.</p>
+     */
     inline void SetLambdaOutput(const LambdaOutput& value) { m_lambdaOutputHasBeenSet = true; m_lambdaOutput = value; }
 
     /**
@@ -178,6 +199,11 @@ namespace Model
      * <p>Describes the data format when records are written to the destination. </p>
      */
     inline const DestinationSchema& GetDestinationSchema() const{ return m_destinationSchema; }
+
+    /**
+     * <p>Describes the data format when records are written to the destination. </p>
+     */
+    inline bool DestinationSchemaHasBeenSet() const { return m_destinationSchemaHasBeenSet; }
 
     /**
      * <p>Describes the data format when records are written to the destination. </p>

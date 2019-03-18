@@ -60,6 +60,12 @@ namespace Model
      * <p>The user pool ID for the user pool where you want to update user
      * attributes.</p>
      */
+    inline bool UserPoolIdHasBeenSet() const { return m_userPoolIdHasBeenSet; }
+
+    /**
+     * <p>The user pool ID for the user pool where you want to update user
+     * attributes.</p>
+     */
     inline void SetUserPoolId(const Aws::String& value) { m_userPoolIdHasBeenSet = true; m_userPoolId = value; }
 
     /**
@@ -101,6 +107,11 @@ namespace Model
     /**
      * <p>The user name of the user for whom you want to update user attributes.</p>
      */
+    inline bool UsernameHasBeenSet() const { return m_usernameHasBeenSet; }
+
+    /**
+     * <p>The user name of the user for whom you want to update user attributes.</p>
+     */
     inline void SetUsername(const Aws::String& value) { m_usernameHasBeenSet = true; m_username = value; }
 
     /**
@@ -135,6 +146,13 @@ namespace Model
      * name.</p>
      */
     inline const Aws::Vector<AttributeType>& GetUserAttributes() const{ return m_userAttributes; }
+
+    /**
+     * <p>An array of name-value pairs representing user attributes.</p> <p>For custom
+     * attributes, you must prepend the <code>custom:</code> prefix to the attribute
+     * name.</p>
+     */
+    inline bool UserAttributesHasBeenSet() const { return m_userAttributesHasBeenSet; }
 
     /**
      * <p>An array of name-value pairs representing user attributes.</p> <p>For custom

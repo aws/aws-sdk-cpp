@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The name of the AWS Config rule.</p>
      */
+    inline bool ConfigRuleNameHasBeenSet() const { return m_configRuleNameHasBeenSet; }
+
+    /**
+     * <p>The name of the AWS Config rule.</p>
+     */
     inline void SetConfigRuleName(const Aws::String& value) { m_configRuleNameHasBeenSet = true; m_configRuleName = value; }
 
     /**
@@ -93,6 +98,15 @@ namespace Model
      * values.</p>
      */
     inline const ComplianceType& GetComplianceType() const{ return m_complianceType; }
+
+    /**
+     * <p>The rule compliance status.</p> <p>For the
+     * <code>ConfigRuleComplianceFilters</code> data type, AWS Config supports only
+     * <code>COMPLIANT</code> and <code>NON_COMPLIANT</code>. AWS Config does not
+     * support the <code>NOT_APPLICABLE</code> and the <code>INSUFFICIENT_DATA</code>
+     * values.</p>
+     */
+    inline bool ComplianceTypeHasBeenSet() const { return m_complianceTypeHasBeenSet; }
 
     /**
      * <p>The rule compliance status.</p> <p>For the
@@ -139,6 +153,11 @@ namespace Model
     /**
      * <p>The 12-digit account ID of the source account. </p>
      */
+    inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
+
+    /**
+     * <p>The 12-digit account ID of the source account. </p>
+     */
     inline void SetAccountId(const Aws::String& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
 
     /**
@@ -171,6 +190,11 @@ namespace Model
      * <p>The source region where the data is aggregated. </p>
      */
     inline const Aws::String& GetAwsRegion() const{ return m_awsRegion; }
+
+    /**
+     * <p>The source region where the data is aggregated. </p>
+     */
+    inline bool AwsRegionHasBeenSet() const { return m_awsRegionHasBeenSet; }
 
     /**
      * <p>The source region where the data is aggregated. </p>

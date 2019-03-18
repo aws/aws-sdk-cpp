@@ -55,6 +55,11 @@ namespace Model
     /**
      * <p>The VPC attribute.</p>
      */
+    inline bool AttributeHasBeenSet() const { return m_attributeHasBeenSet; }
+
+    /**
+     * <p>The VPC attribute.</p>
+     */
     inline void SetAttribute(const VpcAttributeName& value) { m_attributeHasBeenSet = true; m_attribute = value; }
 
     /**
@@ -77,6 +82,11 @@ namespace Model
      * <p>The ID of the VPC.</p>
      */
     inline const Aws::String& GetVpcId() const{ return m_vpcId; }
+
+    /**
+     * <p>The ID of the VPC.</p>
+     */
+    inline bool VpcIdHasBeenSet() const { return m_vpcIdHasBeenSet; }
 
     /**
      * <p>The ID of the VPC.</p>
@@ -116,6 +126,14 @@ namespace Model
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
     inline bool GetDryRun() const{ return m_dryRun; }
+
+    /**
+     * <p>Checks whether you have the required permissions for the action, without
+     * actually making the request, and provides an error response. If you have the
+     * required permissions, the error response is <code>DryRunOperation</code>.
+     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+     */
+    inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
 
     /**
      * <p>Checks whether you have the required permissions for the action, without

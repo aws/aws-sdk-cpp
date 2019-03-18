@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>Specifies the DNS information for the virtual node.</p>
      */
+    inline bool DnsHasBeenSet() const { return m_dnsHasBeenSet; }
+
+    /**
+     * <p>Specifies the DNS information for the virtual node.</p>
+     */
     inline void SetDns(const DnsServiceDiscovery& value) { m_dnsHasBeenSet = true; m_dns = value; }
 
     /**

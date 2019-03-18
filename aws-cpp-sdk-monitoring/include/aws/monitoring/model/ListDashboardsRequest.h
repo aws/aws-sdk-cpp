@@ -58,6 +58,13 @@ namespace Model
      * the specified string are listed. The maximum length is 255, and valid characters
      * are A-Z, a-z, 0-9, ".", "-", and "_". </p>
      */
+    inline bool DashboardNamePrefixHasBeenSet() const { return m_dashboardNamePrefixHasBeenSet; }
+
+    /**
+     * <p>If you specify this parameter, only the dashboards with names starting with
+     * the specified string are listed. The maximum length is 255, and valid characters
+     * are A-Z, a-z, 0-9, ".", "-", and "_". </p>
+     */
     inline void SetDashboardNamePrefix(const Aws::String& value) { m_dashboardNamePrefixHasBeenSet = true; m_dashboardNamePrefix = value; }
 
     /**
@@ -101,6 +108,12 @@ namespace Model
      * available.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
+    /**
+     * <p>The token returned by a previous call to indicate that there is more data
+     * available.</p>
+     */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
      * <p>The token returned by a previous call to indicate that there is more data

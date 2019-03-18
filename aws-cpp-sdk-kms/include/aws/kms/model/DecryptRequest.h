@@ -55,6 +55,11 @@ namespace Model
     /**
      * <p>Ciphertext to be decrypted. The blob includes metadata.</p>
      */
+    inline bool CiphertextBlobHasBeenSet() const { return m_ciphertextBlobHasBeenSet; }
+
+    /**
+     * <p>Ciphertext to be decrypted. The blob includes metadata.</p>
+     */
     inline void SetCiphertextBlob(const Aws::Utils::ByteBuffer& value) { m_ciphertextBlobHasBeenSet = true; m_ciphertextBlob = value; }
 
     /**
@@ -81,6 +86,15 @@ namespace Model
      * Context</a>.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetEncryptionContext() const{ return m_encryptionContext; }
+
+    /**
+     * <p>The encryption context. If this was specified in the <a>Encrypt</a> function,
+     * it must be specified here or the decryption operation will fail. For more
+     * information, see <a
+     * href="http://docs.aws.amazon.com/kms/latest/developerguide/encryption-context.html">Encryption
+     * Context</a>.</p>
+     */
+    inline bool EncryptionContextHasBeenSet() const { return m_encryptionContextHasBeenSet; }
 
     /**
      * <p>The encryption context. If this was specified in the <a>Encrypt</a> function,
@@ -188,6 +202,13 @@ namespace Model
      * Tokens</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
      */
     inline const Aws::Vector<Aws::String>& GetGrantTokens() const{ return m_grantTokens; }
+
+    /**
+     * <p>A list of grant tokens.</p> <p>For more information, see <a
+     * href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token">Grant
+     * Tokens</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
+     */
+    inline bool GrantTokensHasBeenSet() const { return m_grantTokensHasBeenSet; }
 
     /**
      * <p>A list of grant tokens.</p> <p>For more information, see <a

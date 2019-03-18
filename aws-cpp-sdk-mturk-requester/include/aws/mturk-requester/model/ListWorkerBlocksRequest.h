@@ -52,6 +52,11 @@ namespace Model
     /**
      * <p>Pagination token</p>
      */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
+
+    /**
+     * <p>Pagination token</p>
+     */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
     /**
@@ -82,6 +87,9 @@ namespace Model
 
     
     inline int GetMaxResults() const{ return m_maxResults; }
+
+    
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
 
     
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }

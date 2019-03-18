@@ -61,6 +61,12 @@ namespace Model
      * <p>The launch template to use. You must specify either the launch template ID or
      * launch template name in the request. </p>
      */
+    inline bool LaunchTemplateSpecificationHasBeenSet() const { return m_launchTemplateSpecificationHasBeenSet; }
+
+    /**
+     * <p>The launch template to use. You must specify either the launch template ID or
+     * launch template name in the request. </p>
+     */
     inline void SetLaunchTemplateSpecification(const FleetLaunchTemplateSpecificationRequest& value) { m_launchTemplateSpecificationHasBeenSet = true; m_launchTemplateSpecification = value; }
 
     /**
@@ -87,6 +93,12 @@ namespace Model
      * template.</p>
      */
     inline const Aws::Vector<FleetLaunchTemplateOverridesRequest>& GetOverrides() const{ return m_overrides; }
+
+    /**
+     * <p>Any parameters that you specify override the same parameters in the launch
+     * template.</p>
+     */
+    inline bool OverridesHasBeenSet() const { return m_overridesHasBeenSet; }
 
     /**
      * <p>Any parameters that you specify override the same parameters in the launch

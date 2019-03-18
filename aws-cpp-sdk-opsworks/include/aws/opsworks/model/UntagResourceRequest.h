@@ -53,6 +53,11 @@ namespace Model
     /**
      * <p>The stack or layer's Amazon Resource Number (ARN).</p>
      */
+    inline bool ResourceArnHasBeenSet() const { return m_resourceArnHasBeenSet; }
+
+    /**
+     * <p>The stack or layer's Amazon Resource Number (ARN).</p>
+     */
     inline void SetResourceArn(const Aws::String& value) { m_resourceArnHasBeenSet = true; m_resourceArn = value; }
 
     /**
@@ -85,6 +90,11 @@ namespace Model
      * <p>A list of the keys of tags to be removed from a stack or layer.</p>
      */
     inline const Aws::Vector<Aws::String>& GetTagKeys() const{ return m_tagKeys; }
+
+    /**
+     * <p>A list of the keys of tags to be removed from a stack or layer.</p>
+     */
+    inline bool TagKeysHasBeenSet() const { return m_tagKeysHasBeenSet; }
 
     /**
      * <p>A list of the keys of tags to be removed from a stack or layer.</p>

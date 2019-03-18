@@ -55,6 +55,12 @@ namespace Model
      * <p>A user-supplied identifier that uniquely identifies the
      * <code>DataSource</code>. </p>
      */
+    inline bool DataSourceIdHasBeenSet() const { return m_dataSourceIdHasBeenSet; }
+
+    /**
+     * <p>A user-supplied identifier that uniquely identifies the
+     * <code>DataSource</code>. </p>
+     */
     inline void SetDataSourceId(const Aws::String& value) { m_dataSourceIdHasBeenSet = true; m_dataSourceId = value; }
 
     /**
@@ -92,6 +98,11 @@ namespace Model
      * <p>A user-supplied name or description of the <code>DataSource</code>. </p>
      */
     inline const Aws::String& GetDataSourceName() const{ return m_dataSourceName; }
+
+    /**
+     * <p>A user-supplied name or description of the <code>DataSource</code>. </p>
+     */
+    inline bool DataSourceNameHasBeenSet() const { return m_dataSourceNameHasBeenSet; }
 
     /**
      * <p>A user-supplied name or description of the <code>DataSource</code>. </p>
@@ -137,6 +148,20 @@ namespace Model
      * </ul>
      */
     inline const S3DataSpec& GetDataSpec() const{ return m_dataSpec; }
+
+    /**
+     * <p>The data specification of a <code>DataSource</code>:</p> <ul>
+     * <li><p>DataLocationS3 - The Amazon S3 location of the observation data.</p></li>
+     * <li><p>DataSchemaLocationS3 - The Amazon S3 location of the
+     * <code>DataSchema</code>.</p></li> <li><p>DataSchema - A JSON string representing
+     * the schema. This is not required if <code>DataSchemaUri</code> is specified.
+     * </p></li> <li> <p>DataRearrangement - A JSON string that represents the
+     * splitting and rearrangement requirements for the <code>Datasource</code>. </p>
+     * <p> Sample - <code>
+     * "{\"splitting\":{\"percentBegin\":10,\"percentEnd\":60}}"</code> </p> </li>
+     * </ul>
+     */
+    inline bool DataSpecHasBeenSet() const { return m_dataSpecHasBeenSet; }
 
     /**
      * <p>The data specification of a <code>DataSource</code>:</p> <ul>
@@ -204,6 +229,16 @@ namespace Model
      * training.</p>
      */
     inline bool GetComputeStatistics() const{ return m_computeStatistics; }
+
+    /**
+     * <p>The compute statistics for a <code>DataSource</code>. The statistics are
+     * generated from the observation data referenced by a <code>DataSource</code>.
+     * Amazon ML uses the statistics internally during <code>MLModel</code> training.
+     * This parameter must be set to <code>true</code> if the
+     * <code></code>DataSource<code></code> needs to be used for <code>MLModel</code>
+     * training.</p>
+     */
+    inline bool ComputeStatisticsHasBeenSet() const { return m_computeStatisticsHasBeenSet; }
 
     /**
      * <p>The compute statistics for a <code>DataSource</code>. The statistics are

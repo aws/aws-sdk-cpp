@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p>PlatformApplicationArn for platform application object.</p>
      */
+    inline bool PlatformApplicationArnHasBeenSet() const { return m_platformApplicationArnHasBeenSet; }
+
+    /**
+     * <p>PlatformApplicationArn for platform application object.</p>
+     */
     inline void SetPlatformApplicationArn(const Aws::String& value) { m_platformApplicationArnHasBeenSet = true; m_platformApplicationArn = value; }
 
     /**
@@ -90,6 +95,11 @@ namespace Model
      * <p>Attributes for platform application object.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetAttributes() const{ return m_attributes; }
+
+    /**
+     * <p>Attributes for platform application object.</p>
+     */
+    inline bool AttributesHasBeenSet() const { return m_attributesHasBeenSet; }
 
     /**
      * <p>Attributes for platform application object.</p>

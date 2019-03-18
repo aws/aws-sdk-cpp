@@ -56,6 +56,13 @@ namespace Model
      * user when they log in to the server using their client. An example would be:
      * <code>/home/<i>username</i> </code>.</p>
      */
+    inline bool HomeDirectoryHasBeenSet() const { return m_homeDirectoryHasBeenSet; }
+
+    /**
+     * <p>The HomeDirectory parameter specifies the landing directory (folder) for a
+     * user when they log in to the server using their client. An example would be:
+     * <code>/home/<i>username</i> </code>.</p>
+     */
     inline void SetHomeDirectory(const Aws::String& value) { m_homeDirectoryHasBeenSet = true; m_homeDirectory = value; }
 
     /**
@@ -103,6 +110,16 @@ namespace Model
      * <code>${Transfer:HomeBucket}</code>.</p>
      */
     inline const Aws::String& GetPolicy() const{ return m_policy; }
+
+    /**
+     * <p>Allows you to supply a scope-down policy for your user so you can use the
+     * same AWS Identity and Access Management (IAM) role across multiple users. The
+     * policy scopes down users access to portions of your Amazon S3 bucket. Variables
+     * you can use inside this policy include <code>${Transfer:UserName}</code>,
+     * <code>${Transfer:HomeDirectory}</code>, and
+     * <code>${Transfer:HomeBucket}</code>.</p>
+     */
+    inline bool PolicyHasBeenSet() const { return m_policyHasBeenSet; }
 
     /**
      * <p>Allows you to supply a scope-down policy for your user so you can use the
@@ -183,6 +200,16 @@ namespace Model
      * the Secure File Transfer Protocol (SFTP) server to access your resources when
      * servicing your SFTP user’s transfer requests.</p>
      */
+    inline bool RoleHasBeenSet() const { return m_roleHasBeenSet; }
+
+    /**
+     * <p>The IAM role that controls your user’s access to your Amazon S3 bucket. The
+     * policies attached to this role will determine the level of access you want to
+     * provide your users when transferring files into and out of your Amazon S3 bucket
+     * or buckets. The IAM role should also contain a trust relationship that allows
+     * the Secure File Transfer Protocol (SFTP) server to access your resources when
+     * servicing your SFTP user’s transfer requests.</p>
+     */
     inline void SetRole(const Aws::String& value) { m_roleHasBeenSet = true; m_role = value; }
 
     /**
@@ -246,6 +273,12 @@ namespace Model
      * <p>A system-assigned unique identifier for an SFTP server instance that the user
      * account is assigned to.</p>
      */
+    inline bool ServerIdHasBeenSet() const { return m_serverIdHasBeenSet; }
+
+    /**
+     * <p>A system-assigned unique identifier for an SFTP server instance that the user
+     * account is assigned to.</p>
+     */
     inline void SetServerId(const Aws::String& value) { m_serverIdHasBeenSet = true; m_serverId = value; }
 
     /**
@@ -285,6 +318,13 @@ namespace Model
      * when they log in to your SFTP server.</p>
      */
     inline const Aws::String& GetUserName() const{ return m_userName; }
+
+    /**
+     * <p>A unique string that identifies a user and is associated with a server as
+     * specified by the ServerId. This is the string that will be used by your user
+     * when they log in to your SFTP server.</p>
+     */
+    inline bool UserNameHasBeenSet() const { return m_userNameHasBeenSet; }
 
     /**
      * <p>A unique string that identifies a user and is associated with a server as

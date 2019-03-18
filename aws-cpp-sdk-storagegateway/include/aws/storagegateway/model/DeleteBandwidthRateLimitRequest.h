@@ -53,6 +53,9 @@ namespace Model
     inline const Aws::String& GetGatewayARN() const{ return m_gatewayARN; }
 
     
+    inline bool GatewayARNHasBeenSet() const { return m_gatewayARNHasBeenSet; }
+
+    
     inline void SetGatewayARN(const Aws::String& value) { m_gatewayARNHasBeenSet = true; m_gatewayARN = value; }
 
     
@@ -77,6 +80,13 @@ namespace Model
      * <code>Download</code>, <code>All</code>.</p>
      */
     inline const Aws::String& GetBandwidthType() const{ return m_bandwidthType; }
+
+    /**
+     * <p>One of the BandwidthType values that indicates the gateway bandwidth rate
+     * limit to delete.</p> <p>Valid Values: <code>Upload</code>,
+     * <code>Download</code>, <code>All</code>.</p>
+     */
+    inline bool BandwidthTypeHasBeenSet() const { return m_bandwidthTypeHasBeenSet; }
 
     /**
      * <p>One of the BandwidthType values that indicates the gateway bandwidth rate

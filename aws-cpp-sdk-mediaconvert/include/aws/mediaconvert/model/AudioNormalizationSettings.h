@@ -54,6 +54,9 @@ namespace Model
     inline const AudioNormalizationAlgorithm& GetAlgorithm() const{ return m_algorithm; }
 
     
+    inline bool AlgorithmHasBeenSet() const { return m_algorithmHasBeenSet; }
+
+    
     inline void SetAlgorithm(const AudioNormalizationAlgorithm& value) { m_algorithmHasBeenSet = true; m_algorithm = value; }
 
     
@@ -68,6 +71,9 @@ namespace Model
 
     
     inline const AudioNormalizationAlgorithmControl& GetAlgorithmControl() const{ return m_algorithmControl; }
+
+    
+    inline bool AlgorithmControlHasBeenSet() const { return m_algorithmControlHasBeenSet; }
 
     
     inline void SetAlgorithmControl(const AudioNormalizationAlgorithmControl& value) { m_algorithmControlHasBeenSet = true; m_algorithmControl = value; }
@@ -94,6 +100,13 @@ namespace Model
      * Content measuring below this level will not be corrected. Gating only applies
      * when not using real_time_correction.
      */
+    inline bool CorrectionGateLevelHasBeenSet() const { return m_correctionGateLevelHasBeenSet; }
+
+    /**
+     * Content measuring above this level will be corrected to the target level.
+     * Content measuring below this level will not be corrected. Gating only applies
+     * when not using real_time_correction.
+     */
     inline void SetCorrectionGateLevel(int value) { m_correctionGateLevelHasBeenSet = true; m_correctionGateLevel = value; }
 
     /**
@@ -106,6 +119,9 @@ namespace Model
 
     
     inline const AudioNormalizationLoudnessLogging& GetLoudnessLogging() const{ return m_loudnessLogging; }
+
+    
+    inline bool LoudnessLoggingHasBeenSet() const { return m_loudnessLoggingHasBeenSet; }
 
     
     inline void SetLoudnessLogging(const AudioNormalizationLoudnessLogging& value) { m_loudnessLoggingHasBeenSet = true; m_loudnessLogging = value; }
@@ -122,6 +138,9 @@ namespace Model
 
     
     inline const AudioNormalizationPeakCalculation& GetPeakCalculation() const{ return m_peakCalculation; }
+
+    
+    inline bool PeakCalculationHasBeenSet() const { return m_peakCalculationHasBeenSet; }
 
     
     inline void SetPeakCalculation(const AudioNormalizationPeakCalculation& value) { m_peakCalculationHasBeenSet = true; m_peakCalculation = value; }
@@ -143,6 +162,14 @@ namespace Model
      * a target of -23 LKFS.
      */
     inline double GetTargetLkfs() const{ return m_targetLkfs; }
+
+    /**
+     * Target LKFS(loudness) to adjust volume to. If no value is entered, a default
+     * value will be used according to the chosen algorithm. The CALM Act (1770-1)
+     * recommends a target of -24 LKFS. The EBU R-128 specification (1770-2) recommends
+     * a target of -23 LKFS.
+     */
+    inline bool TargetLkfsHasBeenSet() const { return m_targetLkfsHasBeenSet; }
 
     /**
      * Target LKFS(loudness) to adjust volume to. If no value is entered, a default

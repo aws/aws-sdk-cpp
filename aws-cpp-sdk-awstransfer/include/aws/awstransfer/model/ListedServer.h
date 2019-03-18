@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p>The unique Amazon Resource Name (ARN) for the server to be listed.</p>
      */
+    inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
+
+    /**
+     * <p>The unique Amazon Resource Name (ARN) for the server to be listed.</p>
+     */
     inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
 
     /**
@@ -93,6 +98,14 @@ namespace Model
      * <code>SERVICE_MANAGED</code> or <code>API_GATEWAY</code>.</p>
      */
     inline const IdentityProviderType& GetIdentityProviderType() const{ return m_identityProviderType; }
+
+    /**
+     * <p>The authentication method used to validate a user for the server that was
+     * specified. listed. This can include Secure Shell (SSH), user name and password
+     * combinations, or your own custom authentication method. Valid values include
+     * <code>SERVICE_MANAGED</code> or <code>API_GATEWAY</code>.</p>
+     */
+    inline bool IdentityProviderTypeHasBeenSet() const { return m_identityProviderTypeHasBeenSet; }
 
     /**
      * <p>The authentication method used to validate a user for the server that was
@@ -137,6 +150,12 @@ namespace Model
      * <p>The AWS Identity and Access Management entity that allows the server to turn
      * on Amazon CloudWatch logging.</p>
      */
+    inline bool LoggingRoleHasBeenSet() const { return m_loggingRoleHasBeenSet; }
+
+    /**
+     * <p>The AWS Identity and Access Management entity that allows the server to turn
+     * on Amazon CloudWatch logging.</p>
+     */
     inline void SetLoggingRole(const Aws::String& value) { m_loggingRoleHasBeenSet = true; m_loggingRole = value; }
 
     /**
@@ -175,6 +194,12 @@ namespace Model
      * were listed.</p>
      */
     inline const Aws::String& GetServerId() const{ return m_serverId; }
+
+    /**
+     * <p>This value is the unique system assigned identifier for the SFTP servers that
+     * were listed.</p>
+     */
+    inline bool ServerIdHasBeenSet() const { return m_serverIdHasBeenSet; }
 
     /**
      * <p>This value is the unique system assigned identifier for the SFTP servers that
@@ -235,6 +260,18 @@ namespace Model
      * respond, or not fully offline. The values of <code>START_FAILED</code> or
      * <code>STOP_FAILED</code> can indicate an error condition.</p>
      */
+    inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
+
+    /**
+     * <p>This property describes the condition of the SFTP server for the server that
+     * was described. A value of <code>ONLINE</code>&gt; indicates that the server can
+     * accept jobs and transfer files. A <code>State</code> value of
+     * <code>OFFLINE</code> means that the server cannot perform file transfer
+     * operations.</p> <p>The states of <code>STARTING</code> and <code>STOPPING</code>
+     * indicated that the server is in an intermediate state, either not fully able to
+     * respond, or not fully offline. The values of <code>START_FAILED</code> or
+     * <code>STOP_FAILED</code> can indicate an error condition.</p>
+     */
     inline void SetState(const State& value) { m_stateHasBeenSet = true; m_state = value; }
 
     /**
@@ -279,6 +316,12 @@ namespace Model
      * assigned to the SFTP server you specified with the <code>ServerId</code>.</p>
      */
     inline int GetUserCount() const{ return m_userCount; }
+
+    /**
+     * <p>This property is a numeric value that indicates the number of users that are
+     * assigned to the SFTP server you specified with the <code>ServerId</code>.</p>
+     */
+    inline bool UserCountHasBeenSet() const { return m_userCountHasBeenSet; }
 
     /**
      * <p>This property is a numeric value that indicates the number of users that are

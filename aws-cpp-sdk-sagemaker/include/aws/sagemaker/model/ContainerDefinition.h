@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>This parameter is ignored.</p>
      */
+    inline bool ContainerHostnameHasBeenSet() const { return m_containerHostnameHasBeenSet; }
+
+    /**
+     * <p>This parameter is ignored.</p>
+     */
     inline void SetContainerHostname(const Aws::String& value) { m_containerHostnameHasBeenSet = true; m_containerHostname = value; }
 
     /**
@@ -97,6 +102,19 @@ namespace Model
      * Your Own Algorithms with Amazon SageMaker</a> </p>
      */
     inline const Aws::String& GetImage() const{ return m_image; }
+
+    /**
+     * <p>The Amazon EC2 Container Registry (Amazon ECR) path where inference code is
+     * stored. If you are using your own custom algorithm instead of an algorithm
+     * provided by Amazon SageMaker, the inference code must meet Amazon SageMaker
+     * requirements. Amazon SageMaker supports both
+     * <code>registry/repository[:tag]</code> and
+     * <code>registry/repository[@digest]</code> image path formats. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms.html">Using
+     * Your Own Algorithms with Amazon SageMaker</a> </p>
+     */
+    inline bool ImageHasBeenSet() const { return m_imageHasBeenSet; }
 
     /**
      * <p>The Amazon EC2 Container Registry (Amazon ECR) path where inference code is
@@ -203,6 +221,20 @@ namespace Model
      * and Deactivating AWS STS in an AWS Region</a> in the <i>AWS Identity and Access
      * Management User Guide</i>.</p>
      */
+    inline bool ModelDataUrlHasBeenSet() const { return m_modelDataUrlHasBeenSet; }
+
+    /**
+     * <p>The S3 path where the model artifacts, which result from model training, are
+     * stored. This path must point to a single gzip compressed tar archive (.tar.gz
+     * suffix). </p> <p>If you provide a value for this parameter, Amazon SageMaker
+     * uses AWS Security Token Service to download model artifacts from the S3 path you
+     * provide. AWS STS is activated in your IAM user account by default. If you
+     * previously deactivated AWS STS for a region, you need to reactivate AWS STS for
+     * that region. For more information, see <a
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Activating
+     * and Deactivating AWS STS in an AWS Region</a> in the <i>AWS Identity and Access
+     * Management User Guide</i>.</p>
+     */
     inline void SetModelDataUrl(const Aws::String& value) { m_modelDataUrlHasBeenSet = true; m_modelDataUrl = value; }
 
     /**
@@ -288,6 +320,13 @@ namespace Model
      * in the <code>Environment</code> string to string map can have length of up to
      * 1024. We support up to 16 entries in the map. </p>
      */
+    inline bool EnvironmentHasBeenSet() const { return m_environmentHasBeenSet; }
+
+    /**
+     * <p>The environment variables to set in the Docker container. Each key and value
+     * in the <code>Environment</code> string to string map can have length of up to
+     * 1024. We support up to 16 entries in the map. </p>
+     */
     inline void SetEnvironment(const Aws::Map<Aws::String, Aws::String>& value) { m_environmentHasBeenSet = true; m_environment = value; }
 
     /**
@@ -365,6 +404,11 @@ namespace Model
      * <p>The name of the model package to use to create the model.</p>
      */
     inline const Aws::String& GetModelPackageName() const{ return m_modelPackageName; }
+
+    /**
+     * <p>The name of the model package to use to create the model.</p>
+     */
+    inline bool ModelPackageNameHasBeenSet() const { return m_modelPackageNameHasBeenSet; }
 
     /**
      * <p>The name of the model package to use to create the model.</p>

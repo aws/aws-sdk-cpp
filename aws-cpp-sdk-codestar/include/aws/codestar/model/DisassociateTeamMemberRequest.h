@@ -54,6 +54,12 @@ namespace Model
      * <p>The ID of the AWS CodeStar project from which you want to remove a team
      * member.</p>
      */
+    inline bool ProjectIdHasBeenSet() const { return m_projectIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the AWS CodeStar project from which you want to remove a team
+     * member.</p>
+     */
     inline void SetProjectId(const Aws::String& value) { m_projectIdHasBeenSet = true; m_projectId = value; }
 
     /**
@@ -92,6 +98,12 @@ namespace Model
      * remove from the project.</p>
      */
     inline const Aws::String& GetUserArn() const{ return m_userArn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the IAM user or group whom you want to
+     * remove from the project.</p>
+     */
+    inline bool UserArnHasBeenSet() const { return m_userArnHasBeenSet; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the IAM user or group whom you want to

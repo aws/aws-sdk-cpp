@@ -58,6 +58,12 @@ namespace Model
      * <p>The configuration recorder object that records each configuration change made
      * to the resources.</p>
      */
+    inline bool ConfigurationRecorderHasBeenSet() const { return m_configurationRecorderHasBeenSet; }
+
+    /**
+     * <p>The configuration recorder object that records each configuration change made
+     * to the resources.</p>
+     */
     inline void SetConfigurationRecorder(const ConfigurationRecorder& value) { m_configurationRecorderHasBeenSet = true; m_configurationRecorder = value; }
 
     /**

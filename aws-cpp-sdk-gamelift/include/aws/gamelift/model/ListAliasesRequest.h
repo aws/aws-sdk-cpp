@@ -70,6 +70,18 @@ namespace Model
      * A terminal alias throws a TerminalRoutingStrategyException with the
      * <a>RoutingStrategy</a> message embedded.</p> </li> </ul>
      */
+    inline bool RoutingStrategyTypeHasBeenSet() const { return m_routingStrategyTypeHasBeenSet; }
+
+    /**
+     * <p>Type of routing to filter results on. Use this parameter to retrieve only
+     * aliases of a certain type. To retrieve all aliases, leave this parameter
+     * empty.</p> <p>Possible routing types include the following:</p> <ul> <li> <p>
+     * <b>SIMPLE</b> -- The alias resolves to one specific fleet. Use this type when
+     * routing to active fleets.</p> </li> <li> <p> <b>TERMINAL</b> -- The alias does
+     * not resolve to a fleet but instead can be used to display a message to the user.
+     * A terminal alias throws a TerminalRoutingStrategyException with the
+     * <a>RoutingStrategy</a> message embedded.</p> </li> </ul>
+     */
     inline void SetRoutingStrategyType(const RoutingStrategyType& value) { m_routingStrategyTypeHasBeenSet = true; m_routingStrategyType = value; }
 
     /**
@@ -119,6 +131,12 @@ namespace Model
      * <p>Descriptive label that is associated with an alias. Alias names do not need
      * to be unique.</p>
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>Descriptive label that is associated with an alias. Alias names do not need
+     * to be unique.</p>
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
@@ -162,6 +180,12 @@ namespace Model
      * <p>Maximum number of results to return. Use this parameter with
      * <code>NextToken</code> to get results as a set of sequential pages.</p>
      */
+    inline bool LimitHasBeenSet() const { return m_limitHasBeenSet; }
+
+    /**
+     * <p>Maximum number of results to return. Use this parameter with
+     * <code>NextToken</code> to get results as a set of sequential pages.</p>
+     */
     inline void SetLimit(int value) { m_limitHasBeenSet = true; m_limit = value; }
 
     /**
@@ -177,6 +201,13 @@ namespace Model
      * beginning of the result set, do not specify a value.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
+    /**
+     * <p>Token that indicates the start of the next sequential page of results. Use
+     * the token that is returned with a previous call to this action. To start at the
+     * beginning of the result set, do not specify a value.</p>
+     */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
      * <p>Token that indicates the start of the next sequential page of results. Use

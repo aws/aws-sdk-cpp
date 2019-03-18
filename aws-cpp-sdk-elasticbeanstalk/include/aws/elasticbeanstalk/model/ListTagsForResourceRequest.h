@@ -56,6 +56,12 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the resouce for which a tag list is
      * requested.</p> <p>Must be the ARN of an Elastic Beanstalk environment.</p>
      */
+    inline bool ResourceArnHasBeenSet() const { return m_resourceArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the resouce for which a tag list is
+     * requested.</p> <p>Must be the ARN of an Elastic Beanstalk environment.</p>
+     */
     inline void SetResourceArn(const Aws::String& value) { m_resourceArnHasBeenSet = true; m_resourceArn = value; }
 
     /**

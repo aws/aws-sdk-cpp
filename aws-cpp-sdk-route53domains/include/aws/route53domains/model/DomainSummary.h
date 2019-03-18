@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The name of the domain that the summary information applies to.</p>
      */
+    inline bool DomainNameHasBeenSet() const { return m_domainNameHasBeenSet; }
+
+    /**
+     * <p>The name of the domain that the summary information applies to.</p>
+     */
     inline void SetDomainName(const Aws::String& value) { m_domainNameHasBeenSet = true; m_domainName = value; }
 
     /**
@@ -92,6 +97,11 @@ namespace Model
     /**
      * <p>Indicates whether the domain is automatically renewed upon expiration.</p>
      */
+    inline bool AutoRenewHasBeenSet() const { return m_autoRenewHasBeenSet; }
+
+    /**
+     * <p>Indicates whether the domain is automatically renewed upon expiration.</p>
+     */
     inline void SetAutoRenew(bool value) { m_autoRenewHasBeenSet = true; m_autoRenew = value; }
 
     /**
@@ -110,6 +120,12 @@ namespace Model
      * <p>Indicates whether a domain is locked from unauthorized transfer to another
      * party.</p>
      */
+    inline bool TransferLockHasBeenSet() const { return m_transferLockHasBeenSet; }
+
+    /**
+     * <p>Indicates whether a domain is locked from unauthorized transfer to another
+     * party.</p>
+     */
     inline void SetTransferLock(bool value) { m_transferLockHasBeenSet = true; m_transferLock = value; }
 
     /**
@@ -123,6 +139,11 @@ namespace Model
      * <p>Expiration date of the domain in Coordinated Universal Time (UTC).</p>
      */
     inline const Aws::Utils::DateTime& GetExpiry() const{ return m_expiry; }
+
+    /**
+     * <p>Expiration date of the domain in Coordinated Universal Time (UTC).</p>
+     */
+    inline bool ExpiryHasBeenSet() const { return m_expiryHasBeenSet; }
 
     /**
      * <p>Expiration date of the domain in Coordinated Universal Time (UTC).</p>

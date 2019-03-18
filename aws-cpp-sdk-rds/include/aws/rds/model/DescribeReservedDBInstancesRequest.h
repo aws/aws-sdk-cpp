@@ -61,6 +61,12 @@ namespace Model
      * <p>The reserved DB instance identifier filter value. Specify this parameter to
      * show only the reservation that matches the specified reservation ID.</p>
      */
+    inline bool ReservedDBInstanceIdHasBeenSet() const { return m_reservedDBInstanceIdHasBeenSet; }
+
+    /**
+     * <p>The reserved DB instance identifier filter value. Specify this parameter to
+     * show only the reservation that matches the specified reservation ID.</p>
+     */
     inline void SetReservedDBInstanceId(const Aws::String& value) { m_reservedDBInstanceIdHasBeenSet = true; m_reservedDBInstanceId = value; }
 
     /**
@@ -99,6 +105,12 @@ namespace Model
      * purchased reservations matching the specified offering identifier.</p>
      */
     inline const Aws::String& GetReservedDBInstancesOfferingId() const{ return m_reservedDBInstancesOfferingId; }
+
+    /**
+     * <p>The offering identifier filter value. Specify this parameter to show only
+     * purchased reservations matching the specified offering identifier.</p>
+     */
+    inline bool ReservedDBInstancesOfferingIdHasBeenSet() const { return m_reservedDBInstancesOfferingIdHasBeenSet; }
 
     /**
      * <p>The offering identifier filter value. Specify this parameter to show only
@@ -147,6 +159,12 @@ namespace Model
      * <p>The DB instance class filter value. Specify this parameter to show only those
      * reservations matching the specified DB instances class.</p>
      */
+    inline bool DBInstanceClassHasBeenSet() const { return m_dBInstanceClassHasBeenSet; }
+
+    /**
+     * <p>The DB instance class filter value. Specify this parameter to show only those
+     * reservations matching the specified DB instances class.</p>
+     */
     inline void SetDBInstanceClass(const Aws::String& value) { m_dBInstanceClassHasBeenSet = true; m_dBInstanceClass = value; }
 
     /**
@@ -186,6 +204,13 @@ namespace Model
      * <code>1 | 3 | 31536000 | 94608000</code> </p>
      */
     inline const Aws::String& GetDuration() const{ return m_duration; }
+
+    /**
+     * <p>The duration filter value, specified in years or seconds. Specify this
+     * parameter to show only reservations for this duration.</p> <p>Valid Values:
+     * <code>1 | 3 | 31536000 | 94608000</code> </p>
+     */
+    inline bool DurationHasBeenSet() const { return m_durationHasBeenSet; }
 
     /**
      * <p>The duration filter value, specified in years or seconds. Specify this
@@ -240,6 +265,12 @@ namespace Model
      * <p>The product description filter value. Specify this parameter to show only
      * those reservations matching the specified product description.</p>
      */
+    inline bool ProductDescriptionHasBeenSet() const { return m_productDescriptionHasBeenSet; }
+
+    /**
+     * <p>The product description filter value. Specify this parameter to show only
+     * those reservations matching the specified product description.</p>
+     */
     inline void SetProductDescription(const Aws::String& value) { m_productDescriptionHasBeenSet = true; m_productDescription = value; }
 
     /**
@@ -279,6 +310,13 @@ namespace Model
      * <code>"Partial Upfront" | "All Upfront" | "No Upfront" </code> </p>
      */
     inline const Aws::String& GetOfferingType() const{ return m_offeringType; }
+
+    /**
+     * <p>The offering type filter value. Specify this parameter to show only the
+     * available offerings matching the specified offering type.</p> <p>Valid Values:
+     * <code>"Partial Upfront" | "All Upfront" | "No Upfront" </code> </p>
+     */
+    inline bool OfferingTypeHasBeenSet() const { return m_offeringTypeHasBeenSet; }
 
     /**
      * <p>The offering type filter value. Specify this parameter to show only the
@@ -333,6 +371,12 @@ namespace Model
      * <p>The Multi-AZ filter value. Specify this parameter to show only those
      * reservations matching the specified Multi-AZ parameter.</p>
      */
+    inline bool MultiAZHasBeenSet() const { return m_multiAZHasBeenSet; }
+
+    /**
+     * <p>The Multi-AZ filter value. Specify this parameter to show only those
+     * reservations matching the specified Multi-AZ parameter.</p>
+     */
     inline void SetMultiAZ(bool value) { m_multiAZHasBeenSet = true; m_multiAZ = value; }
 
     /**
@@ -346,6 +390,11 @@ namespace Model
      * <p>This parameter is not currently supported.</p>
      */
     inline const Aws::Vector<Filter>& GetFilters() const{ return m_filters; }
+
+    /**
+     * <p>This parameter is not currently supported.</p>
+     */
+    inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
 
     /**
      * <p>This parameter is not currently supported.</p>
@@ -392,6 +441,14 @@ namespace Model
      * is included in the response so that the following results can be retrieved. </p>
      * <p>Default: 100</p> <p>Constraints: Minimum 20, maximum 100.</p>
      */
+    inline bool MaxRecordsHasBeenSet() const { return m_maxRecordsHasBeenSet; }
+
+    /**
+     * <p> The maximum number of records to include in the response. If more than the
+     * <code>MaxRecords</code> value is available, a pagination token called a marker
+     * is included in the response so that the following results can be retrieved. </p>
+     * <p>Default: 100</p> <p>Constraints: Minimum 20, maximum 100.</p>
+     */
     inline void SetMaxRecords(int value) { m_maxRecordsHasBeenSet = true; m_maxRecords = value; }
 
     /**
@@ -409,6 +466,13 @@ namespace Model
      * to the value specified by <code>MaxRecords</code>. </p>
      */
     inline const Aws::String& GetMarker() const{ return m_marker; }
+
+    /**
+     * <p> An optional pagination token provided by a previous request. If this
+     * parameter is specified, the response includes only records beyond the marker, up
+     * to the value specified by <code>MaxRecords</code>. </p>
+     */
+    inline bool MarkerHasBeenSet() const { return m_markerHasBeenSet; }
 
     /**
      * <p> An optional pagination token provided by a previous request. If this

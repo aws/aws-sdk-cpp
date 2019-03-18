@@ -32,6 +32,7 @@ User::User() :
     m_userIdHasBeenSet(false),
     m_accountIdHasBeenSet(false),
     m_primaryEmailHasBeenSet(false),
+    m_primaryProvisionedNumberHasBeenSet(false),
     m_displayNameHasBeenSet(false),
     m_licenseType(License::NOT_SET),
     m_licenseTypeHasBeenSet(false),
@@ -49,6 +50,7 @@ User::User(JsonView jsonValue) :
     m_userIdHasBeenSet(false),
     m_accountIdHasBeenSet(false),
     m_primaryEmailHasBeenSet(false),
+    m_primaryProvisionedNumberHasBeenSet(false),
     m_displayNameHasBeenSet(false),
     m_licenseType(License::NOT_SET),
     m_licenseTypeHasBeenSet(false),
@@ -84,6 +86,13 @@ User& User::operator =(JsonView jsonValue)
     m_primaryEmail = jsonValue.GetString("PrimaryEmail");
 
     m_primaryEmailHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("PrimaryProvisionedNumber"))
+  {
+    m_primaryProvisionedNumber = jsonValue.GetString("PrimaryProvisionedNumber");
+
+    m_primaryProvisionedNumberHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("DisplayName"))
@@ -157,6 +166,12 @@ JsonValue User::Jsonize() const
   if(m_primaryEmailHasBeenSet)
   {
    payload.WithString("PrimaryEmail", m_primaryEmail);
+
+  }
+
+  if(m_primaryProvisionedNumberHasBeenSet)
+  {
+   payload.WithString("PrimaryProvisionedNumber", m_primaryProvisionedNumber);
 
   }
 

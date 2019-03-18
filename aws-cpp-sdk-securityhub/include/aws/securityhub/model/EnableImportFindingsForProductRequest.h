@@ -52,6 +52,12 @@ namespace Model
      * <p>The ARN of the product that generates findings that you want to import into
      * Security Hub.</p>
      */
+    inline bool ProductArnHasBeenSet() const { return m_productArnHasBeenSet; }
+
+    /**
+     * <p>The ARN of the product that generates findings that you want to import into
+     * Security Hub.</p>
+     */
     inline void SetProductArn(const Aws::String& value) { m_productArnHasBeenSet = true; m_productArn = value; }
 
     /**

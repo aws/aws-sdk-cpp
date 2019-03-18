@@ -66,6 +66,12 @@ namespace Model
      * <p>A list of dimensions upon which to categorize your emails when you publish
      * email sending events to Amazon CloudWatch.</p>
      */
+    inline bool DimensionConfigurationsHasBeenSet() const { return m_dimensionConfigurationsHasBeenSet; }
+
+    /**
+     * <p>A list of dimensions upon which to categorize your emails when you publish
+     * email sending events to Amazon CloudWatch.</p>
+     */
     inline void SetDimensionConfigurations(const Aws::Vector<CloudWatchDimensionConfiguration>& value) { m_dimensionConfigurationsHasBeenSet = true; m_dimensionConfigurations = value; }
 
     /**

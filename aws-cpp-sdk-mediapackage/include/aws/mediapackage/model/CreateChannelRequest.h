@@ -54,6 +54,11 @@ namespace Model
     /**
      * A short text description of the Channel.
      */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
+
+    /**
+     * A short text description of the Channel.
+     */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
@@ -89,6 +94,14 @@ cannot be
 
      */
     inline const Aws::String& GetId() const{ return m_id; }
+
+    /**
+     * The ID of the Channel. The ID must be unique within the region and it
+cannot be
+     * changed after a Channel is created.
+
+     */
+    inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
 
     /**
      * The ID of the Channel. The ID must be unique within the region and it
@@ -141,6 +154,9 @@ cannot be
 
     
     inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
+
+    
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     
     inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }

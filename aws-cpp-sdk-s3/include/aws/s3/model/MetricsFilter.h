@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The prefix used when evaluating a metrics filter.</p>
      */
+    inline bool PrefixHasBeenSet() const { return m_prefixHasBeenSet; }
+
+    /**
+     * <p>The prefix used when evaluating a metrics filter.</p>
+     */
     inline void SetPrefix(const Aws::String& value) { m_prefixHasBeenSet = true; m_prefix = value; }
 
     /**
@@ -93,6 +98,11 @@ namespace Model
     /**
      * <p>The tag used when evaluating a metrics filter.</p>
      */
+    inline bool TagHasBeenSet() const { return m_tagHasBeenSet; }
+
+    /**
+     * <p>The tag used when evaluating a metrics filter.</p>
+     */
     inline void SetTag(const Tag& value) { m_tagHasBeenSet = true; m_tag = value; }
 
     /**
@@ -117,6 +127,13 @@ namespace Model
      * must match all of the predicates in order for the filter to apply.</p>
      */
     inline const MetricsAndOperator& GetAnd() const{ return m_and; }
+
+    /**
+     * <p>A conjunction (logical AND) of predicates, which is used in evaluating a
+     * metrics filter. The operator must have at least two predicates, and an object
+     * must match all of the predicates in order for the filter to apply.</p>
+     */
+    inline bool AndHasBeenSet() const { return m_andHasBeenSet; }
 
     /**
      * <p>A conjunction (logical AND) of predicates, which is used in evaluating a

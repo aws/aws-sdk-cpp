@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The instance family of the recommended reservation.</p>
      */
+    inline bool FamilyHasBeenSet() const { return m_familyHasBeenSet; }
+
+    /**
+     * <p>The instance family of the recommended reservation.</p>
+     */
     inline void SetFamily(const Aws::String& value) { m_familyHasBeenSet = true; m_family = value; }
 
     /**
@@ -88,6 +93,11 @@ namespace Model
      * <p>The type of node that AWS recommends.</p>
      */
     inline const Aws::String& GetNodeType() const{ return m_nodeType; }
+
+    /**
+     * <p>The type of node that AWS recommends.</p>
+     */
+    inline bool NodeTypeHasBeenSet() const { return m_nodeTypeHasBeenSet; }
 
     /**
      * <p>The type of node that AWS recommends.</p>
@@ -128,6 +138,11 @@ namespace Model
     /**
      * <p>The AWS Region of the recommended reservation.</p>
      */
+    inline bool RegionHasBeenSet() const { return m_regionHasBeenSet; }
+
+    /**
+     * <p>The AWS Region of the recommended reservation.</p>
+     */
     inline void SetRegion(const Aws::String& value) { m_regionHasBeenSet = true; m_region = value; }
 
     /**
@@ -160,6 +175,11 @@ namespace Model
      * <p>The description of the recommended reservation.</p>
      */
     inline const Aws::String& GetProductDescription() const{ return m_productDescription; }
+
+    /**
+     * <p>The description of the recommended reservation.</p>
+     */
+    inline bool ProductDescriptionHasBeenSet() const { return m_productDescriptionHasBeenSet; }
 
     /**
      * <p>The description of the recommended reservation.</p>
@@ -200,6 +220,11 @@ namespace Model
     /**
      * <p>Whether the recommendation is for a current generation instance.</p>
      */
+    inline bool CurrentGenerationHasBeenSet() const { return m_currentGenerationHasBeenSet; }
+
+    /**
+     * <p>Whether the recommendation is for a current generation instance.</p>
+     */
     inline void SetCurrentGeneration(bool value) { m_currentGenerationHasBeenSet = true; m_currentGeneration = value; }
 
     /**
@@ -212,6 +237,11 @@ namespace Model
      * <p>Whether the recommended reservation is size flexible.</p>
      */
     inline bool GetSizeFlexEligible() const{ return m_sizeFlexEligible; }
+
+    /**
+     * <p>Whether the recommended reservation is size flexible.</p>
+     */
+    inline bool SizeFlexEligibleHasBeenSet() const { return m_sizeFlexEligibleHasBeenSet; }
 
     /**
      * <p>Whether the recommended reservation is size flexible.</p>

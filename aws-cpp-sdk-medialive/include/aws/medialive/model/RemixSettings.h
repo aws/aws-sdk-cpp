@@ -56,6 +56,11 @@ namespace Model
     /**
      * Mapping of input channels to output channels, with appropriate gain adjustments.
      */
+    inline bool ChannelMappingsHasBeenSet() const { return m_channelMappingsHasBeenSet; }
+
+    /**
+     * Mapping of input channels to output channels, with appropriate gain adjustments.
+     */
     inline void SetChannelMappings(const Aws::Vector<AudioChannelMapping>& value) { m_channelMappingsHasBeenSet = true; m_channelMappings = value; }
 
     /**
@@ -92,6 +97,11 @@ namespace Model
     /**
      * Number of input channels to be used.
      */
+    inline bool ChannelsInHasBeenSet() const { return m_channelsInHasBeenSet; }
+
+    /**
+     * Number of input channels to be used.
+     */
     inline void SetChannelsIn(int value) { m_channelsInHasBeenSet = true; m_channelsIn = value; }
 
     /**
@@ -105,6 +115,12 @@ namespace Model
 Valid values: 1, 2, 4, 6, 8
      */
     inline int GetChannelsOut() const{ return m_channelsOut; }
+
+    /**
+     * Number of output channels to be produced.
+Valid values: 1, 2, 4, 6, 8
+     */
+    inline bool ChannelsOutHasBeenSet() const { return m_channelsOutHasBeenSet; }
 
     /**
      * Number of output channels to be produced.

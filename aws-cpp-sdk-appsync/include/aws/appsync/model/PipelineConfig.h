@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>A list of <code>Function</code> objects.</p>
      */
+    inline bool FunctionsHasBeenSet() const { return m_functionsHasBeenSet; }
+
+    /**
+     * <p>A list of <code>Function</code> objects.</p>
+     */
     inline void SetFunctions(const Aws::Vector<Aws::String>& value) { m_functionsHasBeenSet = true; m_functions = value; }
 
     /**

@@ -58,6 +58,12 @@ namespace Model
      * A token returned from a previous call to the API that indicates the position in
      * the list of results.
      */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
+
+    /**
+     * A token returned from a previous call to the API that indicates the position in
+     * the list of results.
+     */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
     /**
@@ -95,6 +101,11 @@ namespace Model
      * Used to specify the number of items that should be returned in the response.
      */
     inline const Aws::String& GetPageSize() const{ return m_pageSize; }
+
+    /**
+     * Used to specify the number of items that should be returned in the response.
+     */
+    inline bool PageSizeHasBeenSet() const { return m_pageSizeHasBeenSet; }
 
     /**
      * Used to specify the number of items that should be returned in the response.

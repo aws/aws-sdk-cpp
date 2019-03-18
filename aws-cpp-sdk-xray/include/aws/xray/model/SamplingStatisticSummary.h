@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The name of the sampling rule.</p>
      */
+    inline bool RuleNameHasBeenSet() const { return m_ruleNameHasBeenSet; }
+
+    /**
+     * <p>The name of the sampling rule.</p>
+     */
     inline void SetRuleName(const Aws::String& value) { m_ruleNameHasBeenSet = true; m_ruleName = value; }
 
     /**
@@ -93,6 +98,11 @@ namespace Model
     /**
      * <p>The start time of the reporting window.</p>
      */
+    inline bool TimestampHasBeenSet() const { return m_timestampHasBeenSet; }
+
+    /**
+     * <p>The start time of the reporting window.</p>
+     */
     inline void SetTimestamp(const Aws::Utils::DateTime& value) { m_timestampHasBeenSet = true; m_timestamp = value; }
 
     /**
@@ -119,6 +129,11 @@ namespace Model
     /**
      * <p>The number of requests that matched the rule.</p>
      */
+    inline bool RequestCountHasBeenSet() const { return m_requestCountHasBeenSet; }
+
+    /**
+     * <p>The number of requests that matched the rule.</p>
+     */
     inline void SetRequestCount(int value) { m_requestCountHasBeenSet = true; m_requestCount = value; }
 
     /**
@@ -135,6 +150,11 @@ namespace Model
     /**
      * <p>The number of requests recorded with borrowed reservoir quota.</p>
      */
+    inline bool BorrowCountHasBeenSet() const { return m_borrowCountHasBeenSet; }
+
+    /**
+     * <p>The number of requests recorded with borrowed reservoir quota.</p>
+     */
     inline void SetBorrowCount(int value) { m_borrowCountHasBeenSet = true; m_borrowCount = value; }
 
     /**
@@ -147,6 +167,11 @@ namespace Model
      * <p>The number of requests recorded.</p>
      */
     inline int GetSampledCount() const{ return m_sampledCount; }
+
+    /**
+     * <p>The number of requests recorded.</p>
+     */
+    inline bool SampledCountHasBeenSet() const { return m_sampledCountHasBeenSet; }
 
     /**
      * <p>The number of requests recorded.</p>

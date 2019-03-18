@@ -50,6 +50,11 @@ namespace Model
     /**
      * The thing name.
      */
+    inline bool ThingNameHasBeenSet() const { return m_thingNameHasBeenSet; }
+
+    /**
+     * The thing name.
+     */
     inline void SetThingName(const Aws::String& value) { m_thingNameHasBeenSet = true; m_thingName = value; }
 
     /**

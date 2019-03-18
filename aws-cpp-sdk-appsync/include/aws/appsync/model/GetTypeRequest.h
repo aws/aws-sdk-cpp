@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The API ID.</p>
      */
+    inline bool ApiIdHasBeenSet() const { return m_apiIdHasBeenSet; }
+
+    /**
+     * <p>The API ID.</p>
+     */
     inline void SetApiId(const Aws::String& value) { m_apiIdHasBeenSet = true; m_apiId = value; }
 
     /**
@@ -93,6 +98,11 @@ namespace Model
     /**
      * <p>The type name.</p>
      */
+    inline bool TypeNameHasBeenSet() const { return m_typeNameHasBeenSet; }
+
+    /**
+     * <p>The type name.</p>
+     */
     inline void SetTypeName(const Aws::String& value) { m_typeNameHasBeenSet = true; m_typeName = value; }
 
     /**
@@ -125,6 +135,11 @@ namespace Model
      * <p>The type format: SDL or JSON.</p>
      */
     inline const TypeDefinitionFormat& GetFormat() const{ return m_format; }
+
+    /**
+     * <p>The type format: SDL or JSON.</p>
+     */
+    inline bool FormatHasBeenSet() const { return m_formatHasBeenSet; }
 
     /**
      * <p>The type format: SDL or JSON.</p>

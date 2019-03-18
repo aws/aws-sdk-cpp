@@ -52,6 +52,11 @@ namespace Model
     /**
      * <p>The name of the retention configuration to delete.</p>
      */
+    inline bool RetentionConfigurationNameHasBeenSet() const { return m_retentionConfigurationNameHasBeenSet; }
+
+    /**
+     * <p>The name of the retention configuration to delete.</p>
+     */
     inline void SetRetentionConfigurationName(const Aws::String& value) { m_retentionConfigurationNameHasBeenSet = true; m_retentionConfigurationName = value; }
 
     /**

@@ -53,6 +53,11 @@ namespace Model
     /**
      * <p>The unique ID of the query to delete.</p>
      */
+    inline bool NamedQueryIdHasBeenSet() const { return m_namedQueryIdHasBeenSet; }
+
+    /**
+     * <p>The unique ID of the query to delete.</p>
+     */
     inline void SetNamedQueryId(const Aws::String& value) { m_namedQueryIdHasBeenSet = true; m_namedQueryId = value; }
 
     /**

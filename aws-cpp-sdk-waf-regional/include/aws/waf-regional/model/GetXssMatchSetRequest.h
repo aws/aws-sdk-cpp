@@ -59,6 +59,13 @@ namespace Model
      * get. <code>XssMatchSetId</code> is returned by <a>CreateXssMatchSet</a> and by
      * <a>ListXssMatchSets</a>.</p>
      */
+    inline bool XssMatchSetIdHasBeenSet() const { return m_xssMatchSetIdHasBeenSet; }
+
+    /**
+     * <p>The <code>XssMatchSetId</code> of the <a>XssMatchSet</a> that you want to
+     * get. <code>XssMatchSetId</code> is returned by <a>CreateXssMatchSet</a> and by
+     * <a>ListXssMatchSets</a>.</p>
+     */
     inline void SetXssMatchSetId(const Aws::String& value) { m_xssMatchSetIdHasBeenSet = true; m_xssMatchSetId = value; }
 
     /**

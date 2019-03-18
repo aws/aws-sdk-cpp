@@ -58,6 +58,14 @@ namespace Model
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
      * Identifiers</a>.</p>
      */
+    inline bool IamUserArnHasBeenSet() const { return m_iamUserArnHasBeenSet; }
+
+    /**
+     * <p>The user's IAM ARN. This can also be a federated user's ARN. For more
+     * information about IAM ARNs, see <a
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
+     * Identifiers</a>.</p>
+     */
     inline void SetIamUserArn(const Aws::String& value) { m_iamUserArnHasBeenSet = true; m_iamUserArn = value; }
 
     /**
@@ -105,6 +113,11 @@ namespace Model
      * <p>The stack ID.</p>
      */
     inline const Aws::String& GetStackId() const{ return m_stackId; }
+
+    /**
+     * <p>The stack ID.</p>
+     */
+    inline bool StackIdHasBeenSet() const { return m_stackIdHasBeenSet; }
 
     /**
      * <p>The stack ID.</p>

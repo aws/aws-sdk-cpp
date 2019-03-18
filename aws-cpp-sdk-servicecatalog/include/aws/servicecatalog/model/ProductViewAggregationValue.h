@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The value of the product view aggregation.</p>
      */
+    inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
+
+    /**
+     * <p>The value of the product view aggregation.</p>
+     */
     inline void SetValue(const Aws::String& value) { m_valueHasBeenSet = true; m_value = value; }
 
     /**
@@ -88,6 +93,11 @@ namespace Model
      * <p>An approximate count of the products that match the value.</p>
      */
     inline int GetApproximateCount() const{ return m_approximateCount; }
+
+    /**
+     * <p>An approximate count of the products that match the value.</p>
+     */
+    inline bool ApproximateCountHasBeenSet() const { return m_approximateCountHasBeenSet; }
 
     /**
      * <p>An approximate count of the products that match the value.</p>

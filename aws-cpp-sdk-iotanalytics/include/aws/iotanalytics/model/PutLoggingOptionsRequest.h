@@ -50,6 +50,11 @@ namespace Model
     /**
      * <p>The new values of the AWS IoT Analytics logging options.</p>
      */
+    inline bool LoggingOptionsHasBeenSet() const { return m_loggingOptionsHasBeenSet; }
+
+    /**
+     * <p>The new values of the AWS IoT Analytics logging options.</p>
+     */
     inline void SetLoggingOptions(const LoggingOptions& value) { m_loggingOptionsHasBeenSet = true; m_loggingOptions = value; }
 
     /**

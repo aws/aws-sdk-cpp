@@ -66,6 +66,14 @@ namespace Model
      * case sensitive.</p> <p>Constraints:</p> <ul> <li> <p>If provided, must match an
      * existing <code>DBClusterIdentifier</code>.</p> </li> </ul>
      */
+    inline bool DBClusterIdentifierHasBeenSet() const { return m_dBClusterIdentifierHasBeenSet; }
+
+    /**
+     * <p>The user-provided DB cluster identifier. If this parameter is specified,
+     * information from only the specific DB cluster is returned. This parameter isn't
+     * case sensitive.</p> <p>Constraints:</p> <ul> <li> <p>If provided, must match an
+     * existing <code>DBClusterIdentifier</code>.</p> </li> </ul>
+     */
     inline void SetDBClusterIdentifier(const Aws::String& value) { m_dBClusterIdentifierHasBeenSet = true; m_dBClusterIdentifier = value; }
 
     /**
@@ -117,6 +125,15 @@ namespace Model
      * </ul>
      */
     inline const Aws::Vector<Filter>& GetFilters() const{ return m_filters; }
+
+    /**
+     * <p>A filter that specifies one or more DB clusters to describe.</p> <p>Supported
+     * filters:</p> <ul> <li> <p> <code>db-cluster-id</code> - Accepts DB cluster
+     * identifiers and DB cluster Amazon Resource Names (ARNs). The results list only
+     * includes information about the DB clusters identified by these ARNs.</p> </li>
+     * </ul>
+     */
+    inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
 
     /**
      * <p>A filter that specifies one or more DB clusters to describe.</p> <p>Supported
@@ -187,6 +204,14 @@ namespace Model
      * (marker) is included in the response so that the remaining results can be
      * retrieved.</p> <p>Default: 100</p> <p>Constraints: Minimum 20, maximum 100.</p>
      */
+    inline bool MaxRecordsHasBeenSet() const { return m_maxRecordsHasBeenSet; }
+
+    /**
+     * <p> The maximum number of records to include in the response. If more records
+     * exist than the specified <code>MaxRecords</code> value, a pagination token
+     * (marker) is included in the response so that the remaining results can be
+     * retrieved.</p> <p>Default: 100</p> <p>Constraints: Minimum 20, maximum 100.</p>
+     */
     inline void SetMaxRecords(int value) { m_maxRecordsHasBeenSet = true; m_maxRecords = value; }
 
     /**
@@ -204,6 +229,13 @@ namespace Model
      * to the value specified by <code>MaxRecords</code>.</p>
      */
     inline const Aws::String& GetMarker() const{ return m_marker; }
+
+    /**
+     * <p>An optional pagination token provided by a previous request. If this
+     * parameter is specified, the response includes only records beyond the marker, up
+     * to the value specified by <code>MaxRecords</code>.</p>
+     */
+    inline bool MarkerHasBeenSet() const { return m_markerHasBeenSet; }
 
     /**
      * <p>An optional pagination token provided by a previous request. If this

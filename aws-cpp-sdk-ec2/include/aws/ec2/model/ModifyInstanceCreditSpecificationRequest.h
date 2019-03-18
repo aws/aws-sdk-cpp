@@ -62,6 +62,14 @@ namespace Model
      * required permissions, the error response is <code>DryRunOperation</code>.
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
+    inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
+
+    /**
+     * <p>Checks whether you have the required permissions for the action, without
+     * actually making the request, and provides an error response. If you have the
+     * required permissions, the error response is <code>DryRunOperation</code>.
+     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+     */
     inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
 
     /**
@@ -80,6 +88,14 @@ namespace Model
      * Idempotency</a>.</p>
      */
     inline const Aws::String& GetClientToken() const{ return m_clientToken; }
+
+    /**
+     * <p>A unique, case-sensitive token that you provide to ensure idempotency of your
+     * modification request. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
+     * Idempotency</a>.</p>
+     */
+    inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
 
     /**
      * <p>A unique, case-sensitive token that you provide to ensure idempotency of your
@@ -134,6 +150,11 @@ namespace Model
      * <p>Information about the credit option for CPU usage.</p>
      */
     inline const Aws::Vector<InstanceCreditSpecificationRequest>& GetInstanceCreditSpecifications() const{ return m_instanceCreditSpecifications; }
+
+    /**
+     * <p>Information about the credit option for CPU usage.</p>
+     */
+    inline bool InstanceCreditSpecificationsHasBeenSet() const { return m_instanceCreditSpecificationsHasBeenSet; }
 
     /**
      * <p>Information about the credit option for CPU usage.</p>

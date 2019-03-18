@@ -55,6 +55,11 @@ namespace Model
     /**
      * <p>The name of the stack for which you want to detect drift. </p>
      */
+    inline bool StackNameHasBeenSet() const { return m_stackNameHasBeenSet; }
+
+    /**
+     * <p>The name of the stack for which you want to detect drift. </p>
+     */
     inline void SetStackName(const Aws::String& value) { m_stackNameHasBeenSet = true; m_stackName = value; }
 
     /**
@@ -87,6 +92,11 @@ namespace Model
      * <p>The logical names of any resources you want to use as filters.</p>
      */
     inline const Aws::Vector<Aws::String>& GetLogicalResourceIds() const{ return m_logicalResourceIds; }
+
+    /**
+     * <p>The logical names of any resources you want to use as filters.</p>
+     */
+    inline bool LogicalResourceIdsHasBeenSet() const { return m_logicalResourceIdsHasBeenSet; }
 
     /**
      * <p>The logical names of any resources you want to use as filters.</p>

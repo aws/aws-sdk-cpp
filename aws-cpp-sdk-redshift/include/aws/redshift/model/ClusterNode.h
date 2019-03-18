@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>Whether the node is a leader node or a compute node.</p>
      */
+    inline bool NodeRoleHasBeenSet() const { return m_nodeRoleHasBeenSet; }
+
+    /**
+     * <p>Whether the node is a leader node or a compute node.</p>
+     */
     inline void SetNodeRole(const Aws::String& value) { m_nodeRoleHasBeenSet = true; m_nodeRole = value; }
 
     /**
@@ -93,6 +98,11 @@ namespace Model
     /**
      * <p>The private IP address of a node within a cluster.</p>
      */
+    inline bool PrivateIPAddressHasBeenSet() const { return m_privateIPAddressHasBeenSet; }
+
+    /**
+     * <p>The private IP address of a node within a cluster.</p>
+     */
     inline void SetPrivateIPAddress(const Aws::String& value) { m_privateIPAddressHasBeenSet = true; m_privateIPAddress = value; }
 
     /**
@@ -125,6 +135,11 @@ namespace Model
      * <p>The public IP address of a node within a cluster.</p>
      */
     inline const Aws::String& GetPublicIPAddress() const{ return m_publicIPAddress; }
+
+    /**
+     * <p>The public IP address of a node within a cluster.</p>
+     */
+    inline bool PublicIPAddressHasBeenSet() const { return m_publicIPAddressHasBeenSet; }
 
     /**
      * <p>The public IP address of a node within a cluster.</p>

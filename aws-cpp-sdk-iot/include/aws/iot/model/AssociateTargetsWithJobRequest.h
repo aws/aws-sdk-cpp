@@ -51,6 +51,11 @@ namespace Model
     /**
      * <p>A list of thing group ARNs that define the targets of the job.</p>
      */
+    inline bool TargetsHasBeenSet() const { return m_targetsHasBeenSet; }
+
+    /**
+     * <p>A list of thing group ARNs that define the targets of the job.</p>
+     */
     inline void SetTargets(const Aws::Vector<Aws::String>& value) { m_targetsHasBeenSet = true; m_targets = value; }
 
     /**
@@ -92,6 +97,11 @@ namespace Model
     /**
      * <p>The unique identifier you assigned to this job when it was created.</p>
      */
+    inline bool JobIdHasBeenSet() const { return m_jobIdHasBeenSet; }
+
+    /**
+     * <p>The unique identifier you assigned to this job when it was created.</p>
+     */
     inline void SetJobId(const Aws::String& value) { m_jobIdHasBeenSet = true; m_jobId = value; }
 
     /**
@@ -125,6 +135,12 @@ namespace Model
      * targets.</p>
      */
     inline const Aws::String& GetComment() const{ return m_comment; }
+
+    /**
+     * <p>An optional comment string describing why the job was associated with the
+     * targets.</p>
+     */
+    inline bool CommentHasBeenSet() const { return m_commentHasBeenSet; }
 
     /**
      * <p>An optional comment string describing why the job was associated with the

@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The identity's configuration information.</p>
      */
+    inline bool CloudFrontOriginAccessIdentityConfigHasBeenSet() const { return m_cloudFrontOriginAccessIdentityConfigHasBeenSet; }
+
+    /**
+     * <p>The identity's configuration information.</p>
+     */
     inline void SetCloudFrontOriginAccessIdentityConfig(const CloudFrontOriginAccessIdentityConfig& value) { m_cloudFrontOriginAccessIdentityConfigHasBeenSet = true; m_cloudFrontOriginAccessIdentityConfig = value; }
 
     /**
@@ -79,6 +84,11 @@ namespace Model
      * <p>The identity's id.</p>
      */
     inline const Aws::String& GetId() const{ return m_id; }
+
+    /**
+     * <p>The identity's id.</p>
+     */
+    inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
 
     /**
      * <p>The identity's id.</p>
@@ -116,6 +126,12 @@ namespace Model
      * the identity's configuration. For example: <code>E2QWRUHAPOMQZL</code>.</p>
      */
     inline const Aws::String& GetIfMatch() const{ return m_ifMatch; }
+
+    /**
+     * <p>The value of the <code>ETag</code> header that you received when retrieving
+     * the identity's configuration. For example: <code>E2QWRUHAPOMQZL</code>.</p>
+     */
+    inline bool IfMatchHasBeenSet() const { return m_ifMatchHasBeenSet; }
 
     /**
      * <p>The value of the <code>ETag</code> header that you received when retrieving

@@ -60,6 +60,13 @@ namespace Model
      * Instead, Systems Manager automatically determines the Amazon S3 bucket
      * region.</p>
      */
+    inline bool OutputS3RegionHasBeenSet() const { return m_outputS3RegionHasBeenSet; }
+
+    /**
+     * <p>(Deprecated) You can no longer specify this parameter. The system ignores it.
+     * Instead, Systems Manager automatically determines the Amazon S3 bucket
+     * region.</p>
+     */
     inline void SetOutputS3Region(const Aws::String& value) { m_outputS3RegionHasBeenSet = true; m_outputS3Region = value; }
 
     /**
@@ -106,6 +113,11 @@ namespace Model
     /**
      * <p>The name of the Amazon S3 bucket.</p>
      */
+    inline bool OutputS3BucketNameHasBeenSet() const { return m_outputS3BucketNameHasBeenSet; }
+
+    /**
+     * <p>The name of the Amazon S3 bucket.</p>
+     */
     inline void SetOutputS3BucketName(const Aws::String& value) { m_outputS3BucketNameHasBeenSet = true; m_outputS3BucketName = value; }
 
     /**
@@ -138,6 +150,11 @@ namespace Model
      * <p>The Amazon S3 bucket subfolder.</p>
      */
     inline const Aws::String& GetOutputS3KeyPrefix() const{ return m_outputS3KeyPrefix; }
+
+    /**
+     * <p>The Amazon S3 bucket subfolder.</p>
+     */
+    inline bool OutputS3KeyPrefixHasBeenSet() const { return m_outputS3KeyPrefixHasBeenSet; }
 
     /**
      * <p>The Amazon S3 bucket subfolder.</p>

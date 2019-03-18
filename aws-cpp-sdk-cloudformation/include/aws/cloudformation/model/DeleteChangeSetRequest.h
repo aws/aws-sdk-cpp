@@ -60,6 +60,12 @@ namespace Model
      * <p>The name or Amazon Resource Name (ARN) of the change set that you want to
      * delete.</p>
      */
+    inline bool ChangeSetNameHasBeenSet() const { return m_changeSetNameHasBeenSet; }
+
+    /**
+     * <p>The name or Amazon Resource Name (ARN) of the change set that you want to
+     * delete.</p>
+     */
     inline void SetChangeSetName(const Aws::String& value) { m_changeSetNameHasBeenSet = true; m_changeSetName = value; }
 
     /**
@@ -98,6 +104,12 @@ namespace Model
      * or ID (ARN) that is associated with it.</p>
      */
     inline const Aws::String& GetStackName() const{ return m_stackName; }
+
+    /**
+     * <p>If you specified the name of a change set to delete, specify the stack name
+     * or ID (ARN) that is associated with it.</p>
+     */
+    inline bool StackNameHasBeenSet() const { return m_stackNameHasBeenSet; }
 
     /**
      * <p>If you specified the name of a change set to delete, specify the stack name

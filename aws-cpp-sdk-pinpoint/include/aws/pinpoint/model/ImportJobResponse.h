@@ -58,6 +58,11 @@ namespace Model
     /**
      * The unique ID of the application to which the import job applies.
      */
+    inline bool ApplicationIdHasBeenSet() const { return m_applicationIdHasBeenSet; }
+
+    /**
+     * The unique ID of the application to which the import job applies.
+     */
     inline void SetApplicationId(const Aws::String& value) { m_applicationIdHasBeenSet = true; m_applicationId = value; }
 
     /**
@@ -96,6 +101,12 @@ namespace Model
      * The number of pieces that have successfully imported as of the time of the
      * request.
      */
+    inline bool CompletedPiecesHasBeenSet() const { return m_completedPiecesHasBeenSet; }
+
+    /**
+     * The number of pieces that have successfully imported as of the time of the
+     * request.
+     */
     inline void SetCompletedPieces(int value) { m_completedPiecesHasBeenSet = true; m_completedPieces = value; }
 
     /**
@@ -109,6 +120,11 @@ namespace Model
      * The date the import job completed in ISO 8601 format.
      */
     inline const Aws::String& GetCompletionDate() const{ return m_completionDate; }
+
+    /**
+     * The date the import job completed in ISO 8601 format.
+     */
+    inline bool CompletionDateHasBeenSet() const { return m_completionDateHasBeenSet; }
 
     /**
      * The date the import job completed in ISO 8601 format.
@@ -149,6 +165,11 @@ namespace Model
     /**
      * The date the import job was created in ISO 8601 format.
      */
+    inline bool CreationDateHasBeenSet() const { return m_creationDateHasBeenSet; }
+
+    /**
+     * The date the import job was created in ISO 8601 format.
+     */
     inline void SetCreationDate(const Aws::String& value) { m_creationDateHasBeenSet = true; m_creationDate = value; }
 
     /**
@@ -185,6 +206,11 @@ namespace Model
     /**
      * The import job settings.
      */
+    inline bool DefinitionHasBeenSet() const { return m_definitionHasBeenSet; }
+
+    /**
+     * The import job settings.
+     */
     inline void SetDefinition(const ImportJobResource& value) { m_definitionHasBeenSet = true; m_definition = value; }
 
     /**
@@ -211,6 +237,11 @@ namespace Model
     /**
      * The number of pieces that have failed to import as of the time of the request.
      */
+    inline bool FailedPiecesHasBeenSet() const { return m_failedPiecesHasBeenSet; }
+
+    /**
+     * The number of pieces that have failed to import as of the time of the request.
+     */
     inline void SetFailedPieces(int value) { m_failedPiecesHasBeenSet = true; m_failedPieces = value; }
 
     /**
@@ -223,6 +254,11 @@ namespace Model
      * Provides up to 100 of the first failed entries for the job, if any exist.
      */
     inline const Aws::Vector<Aws::String>& GetFailures() const{ return m_failures; }
+
+    /**
+     * Provides up to 100 of the first failed entries for the job, if any exist.
+     */
+    inline bool FailuresHasBeenSet() const { return m_failuresHasBeenSet; }
 
     /**
      * Provides up to 100 of the first failed entries for the job, if any exist.
@@ -268,6 +304,11 @@ namespace Model
     /**
      * The unique ID of the import job.
      */
+    inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
+
+    /**
+     * The unique ID of the import job.
+     */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
     /**
@@ -305,6 +346,16 @@ The job status is FAILED if one or more
      * pieces failed to import.
      */
     inline const JobStatus& GetJobStatus() const{ return m_jobStatus; }
+
+    /**
+     * The status of the import job.
+Valid values: CREATED, INITIALIZING, PROCESSING,
+     * COMPLETING, COMPLETED, FAILING, FAILED
+
+The job status is FAILED if one or more
+     * pieces failed to import.
+     */
+    inline bool JobStatusHasBeenSet() const { return m_jobStatusHasBeenSet; }
 
     /**
      * The status of the import job.
@@ -357,6 +408,12 @@ The job status is FAILED if one or more
      * The number of endpoints that failed to import; for example, because of syntax
      * errors.
      */
+    inline bool TotalFailuresHasBeenSet() const { return m_totalFailuresHasBeenSet; }
+
+    /**
+     * The number of endpoints that failed to import; for example, because of syntax
+     * errors.
+     */
     inline void SetTotalFailures(int value) { m_totalFailuresHasBeenSet = true; m_totalFailures = value; }
 
     /**
@@ -371,6 +428,12 @@ The job status is FAILED if one or more
      * is an approximately equal portion of the endpoints to import.
      */
     inline int GetTotalPieces() const{ return m_totalPieces; }
+
+    /**
+     * The total number of pieces that must be imported to finish the job. Each piece
+     * is an approximately equal portion of the endpoints to import.
+     */
+    inline bool TotalPiecesHasBeenSet() const { return m_totalPiecesHasBeenSet; }
 
     /**
      * The total number of pieces that must be imported to finish the job. Each piece
@@ -393,6 +456,11 @@ The job status is FAILED if one or more
     /**
      * The number of endpoints that were processed by the import job.
      */
+    inline bool TotalProcessedHasBeenSet() const { return m_totalProcessedHasBeenSet; }
+
+    /**
+     * The number of endpoints that were processed by the import job.
+     */
     inline void SetTotalProcessed(int value) { m_totalProcessedHasBeenSet = true; m_totalProcessed = value; }
 
     /**
@@ -405,6 +473,11 @@ The job status is FAILED if one or more
      * The job type. Will be Import.
      */
     inline const Aws::String& GetType() const{ return m_type; }
+
+    /**
+     * The job type. Will be Import.
+     */
+    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
 
     /**
      * The job type. Will be Import.

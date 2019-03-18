@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The ARN of the target (SNS topic) to which audit notifications are sent.</p>
      */
+    inline bool TargetArnHasBeenSet() const { return m_targetArnHasBeenSet; }
+
+    /**
+     * <p>The ARN of the target (SNS topic) to which audit notifications are sent.</p>
+     */
     inline void SetTargetArn(const Aws::String& value) { m_targetArnHasBeenSet = true; m_targetArn = value; }
 
     /**
@@ -89,6 +94,12 @@ namespace Model
      * target.</p>
      */
     inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
+
+    /**
+     * <p>The ARN of the role that grants permission to send notifications to the
+     * target.</p>
+     */
+    inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
 
     /**
      * <p>The ARN of the role that grants permission to send notifications to the
@@ -131,6 +142,11 @@ namespace Model
      * <p>True if notifications to the target are enabled.</p>
      */
     inline bool GetEnabled() const{ return m_enabled; }
+
+    /**
+     * <p>True if notifications to the target are enabled.</p>
+     */
+    inline bool EnabledHasBeenSet() const { return m_enabledHasBeenSet; }
 
     /**
      * <p>True if notifications to the target are enabled.</p>

@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of a AWS CloudFormation stack.</p>
      */
+    inline bool CloudFormationStackARNHasBeenSet() const { return m_cloudFormationStackARNHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of a AWS CloudFormation stack.</p>
+     */
     inline void SetCloudFormationStackARN(const Aws::String& value) { m_cloudFormationStackARNHasBeenSet = true; m_cloudFormationStackARN = value; }
 
     /**
@@ -89,6 +94,11 @@ namespace Model
      * <p>A set of tags (up to 50).</p>
      */
     inline const Aws::Vector<TagFilter>& GetTagFilters() const{ return m_tagFilters; }
+
+    /**
+     * <p>A set of tags (up to 50).</p>
+     */
+    inline bool TagFiltersHasBeenSet() const { return m_tagFiltersHasBeenSet; }
 
     /**
      * <p>A set of tags (up to 50).</p>

@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p>IAM ARN of the role used to access the data.</p>
      */
+    inline bool RoleARNHasBeenSet() const { return m_roleARNHasBeenSet; }
+
+    /**
+     * <p>IAM ARN of the role used to access the data.</p>
+     */
     inline void SetRoleARN(const Aws::String& value) { m_roleARNHasBeenSet = true; m_roleARN = value; }
 
     /**
@@ -94,6 +99,11 @@ namespace Model
     /**
      * <p>ARN of the S3 bucket that contains the data.</p>
      */
+    inline bool BucketARNHasBeenSet() const { return m_bucketARNHasBeenSet; }
+
+    /**
+     * <p>ARN of the S3 bucket that contains the data.</p>
+     */
     inline void SetBucketARN(const Aws::String& value) { m_bucketARNHasBeenSet = true; m_bucketARN = value; }
 
     /**
@@ -126,6 +136,11 @@ namespace Model
      * <p>The name of the object that contains the data.</p>
      */
     inline const Aws::String& GetFileKey() const{ return m_fileKey; }
+
+    /**
+     * <p>The name of the object that contains the data.</p>
+     */
+    inline bool FileKeyHasBeenSet() const { return m_fileKeyHasBeenSet; }
 
     /**
      * <p>The name of the object that contains the data.</p>

@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p>The attributes for this group of reservations.</p>
      */
+    inline bool AttributesHasBeenSet() const { return m_attributesHasBeenSet; }
+
+    /**
+     * <p>The attributes for this group of reservations.</p>
+     */
     inline void SetAttributes(const Aws::Map<Aws::String, Aws::String>& value) { m_attributesHasBeenSet = true; m_attributes = value; }
 
     /**
@@ -115,6 +120,11 @@ namespace Model
      * <p>How much instance usage this group of reservations covered.</p>
      */
     inline const Coverage& GetCoverage() const{ return m_coverage; }
+
+    /**
+     * <p>How much instance usage this group of reservations covered.</p>
+     */
+    inline bool CoverageHasBeenSet() const { return m_coverageHasBeenSet; }
 
     /**
      * <p>How much instance usage this group of reservations covered.</p>

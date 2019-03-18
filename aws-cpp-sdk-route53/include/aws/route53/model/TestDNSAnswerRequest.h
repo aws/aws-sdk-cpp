@@ -65,6 +65,12 @@ namespace Model
      * <p>The ID of the hosted zone that you want Amazon Route 53 to simulate a query
      * for.</p>
      */
+    inline bool HostedZoneIdHasBeenSet() const { return m_hostedZoneIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the hosted zone that you want Amazon Route 53 to simulate a query
+     * for.</p>
+     */
     inline void SetHostedZoneId(const Aws::String& value) { m_hostedZoneIdHasBeenSet = true; m_hostedZoneId = value; }
 
     /**
@@ -103,6 +109,12 @@ namespace Model
      * a query for.</p>
      */
     inline const Aws::String& GetRecordName() const{ return m_recordName; }
+
+    /**
+     * <p>The name of the resource record set that you want Amazon Route 53 to simulate
+     * a query for.</p>
+     */
+    inline bool RecordNameHasBeenSet() const { return m_recordNameHasBeenSet; }
 
     /**
      * <p>The name of the resource record set that you want Amazon Route 53 to simulate
@@ -149,6 +161,11 @@ namespace Model
     /**
      * <p>The type of the resource record set.</p>
      */
+    inline bool RecordTypeHasBeenSet() const { return m_recordTypeHasBeenSet; }
+
+    /**
+     * <p>The type of the resource record set.</p>
+     */
     inline void SetRecordType(const RRType& value) { m_recordTypeHasBeenSet = true; m_recordType = value; }
 
     /**
@@ -174,6 +191,14 @@ namespace Model
      * (<code>us-east-1</code>).</p>
      */
     inline const Aws::String& GetResolverIP() const{ return m_resolverIP; }
+
+    /**
+     * <p>If you want to simulate a request from a specific DNS resolver, specify the
+     * IP address for that resolver. If you omit this value, <code>TestDnsAnswer</code>
+     * uses the IP address of a DNS resolver in the AWS US East (N. Virginia) Region
+     * (<code>us-east-1</code>).</p>
+     */
+    inline bool ResolverIPHasBeenSet() const { return m_resolverIPHasBeenSet; }
 
     /**
      * <p>If you want to simulate a request from a specific DNS resolver, specify the
@@ -236,6 +261,13 @@ namespace Model
      * IPv4 or IPv6 address of a client in the applicable location, for example,
      * <code>192.0.2.44</code> or <code>2001:db8:85a3::8a2e:370:7334</code>.</p>
      */
+    inline bool EDNS0ClientSubnetIPHasBeenSet() const { return m_eDNS0ClientSubnetIPHasBeenSet; }
+
+    /**
+     * <p>If the resolver that you specified for resolverip supports EDNS0, specify the
+     * IPv4 or IPv6 address of a client in the applicable location, for example,
+     * <code>192.0.2.44</code> or <code>2001:db8:85a3::8a2e:370:7334</code>.</p>
+     */
     inline void SetEDNS0ClientSubnetIP(const Aws::String& value) { m_eDNS0ClientSubnetIPHasBeenSet = true; m_eDNS0ClientSubnetIP = value; }
 
     /**
@@ -287,6 +319,20 @@ namespace Model
      * <b>IPv6</b>: Specify a value between 0 and 128</p> </li> </ul>
      */
     inline const Aws::String& GetEDNS0ClientSubnetMask() const{ return m_eDNS0ClientSubnetMask; }
+
+    /**
+     * <p>If you specify an IP address for <code>edns0clientsubnetip</code>, you can
+     * optionally specify the number of bits of the IP address that you want the
+     * checking tool to include in the DNS query. For example, if you specify
+     * <code>192.0.2.44</code> for <code>edns0clientsubnetip</code> and <code>24</code>
+     * for <code>edns0clientsubnetmask</code>, the checking tool will simulate a
+     * request from 192.0.2.0/24. The default value is 24 bits for IPv4 addresses and
+     * 64 bits for IPv6 addresses.</p> <p>The range of valid values depends on whether
+     * <code>edns0clientsubnetip</code> is an IPv4 or an IPv6 address:</p> <ul> <li>
+     * <p> <b>IPv4</b>: Specify a value between 0 and 32</p> </li> <li> <p>
+     * <b>IPv6</b>: Specify a value between 0 and 128</p> </li> </ul>
+     */
+    inline bool EDNS0ClientSubnetMaskHasBeenSet() const { return m_eDNS0ClientSubnetMaskHasBeenSet; }
 
     /**
      * <p>If you specify an IP address for <code>edns0clientsubnetip</code>, you can

@@ -53,6 +53,11 @@ namespace Model
     /**
      * <p>An array of layer IDs.</p>
      */
+    inline bool LayerIdsHasBeenSet() const { return m_layerIdsHasBeenSet; }
+
+    /**
+     * <p>An array of layer IDs.</p>
+     */
     inline void SetLayerIds(const Aws::Vector<Aws::String>& value) { m_layerIdsHasBeenSet = true; m_layerIds = value; }
 
     /**

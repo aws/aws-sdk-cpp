@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The content of the Liquid template for the worker user interface.</p>
      */
+    inline bool ContentHasBeenSet() const { return m_contentHasBeenSet; }
+
+    /**
+     * <p>The content of the Liquid template for the worker user interface.</p>
+     */
     inline void SetContent(const Aws::String& value) { m_contentHasBeenSet = true; m_content = value; }
 
     /**

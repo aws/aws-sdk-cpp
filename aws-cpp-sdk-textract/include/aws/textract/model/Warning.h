@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p>The error code for the warning.</p>
      */
+    inline bool ErrorCodeHasBeenSet() const { return m_errorCodeHasBeenSet; }
+
+    /**
+     * <p>The error code for the warning.</p>
+     */
     inline void SetErrorCode(const Aws::String& value) { m_errorCodeHasBeenSet = true; m_errorCode = value; }
 
     /**
@@ -90,6 +95,11 @@ namespace Model
      * <p>A list of the pages that the warning applies to.</p>
      */
     inline const Aws::Vector<int>& GetPages() const{ return m_pages; }
+
+    /**
+     * <p>A list of the pages that the warning applies to.</p>
+     */
+    inline bool PagesHasBeenSet() const { return m_pagesHasBeenSet; }
 
     /**
      * <p>A list of the pages that the warning applies to.</p>

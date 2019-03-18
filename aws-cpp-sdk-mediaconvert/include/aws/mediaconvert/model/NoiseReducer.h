@@ -57,6 +57,9 @@ namespace Model
     inline const NoiseReducerFilter& GetFilter() const{ return m_filter; }
 
     
+    inline bool FilterHasBeenSet() const { return m_filterHasBeenSet; }
+
+    
     inline void SetFilter(const NoiseReducerFilter& value) { m_filterHasBeenSet = true; m_filter = value; }
 
     
@@ -73,6 +76,9 @@ namespace Model
     inline const NoiseReducerFilterSettings& GetFilterSettings() const{ return m_filterSettings; }
 
     
+    inline bool FilterSettingsHasBeenSet() const { return m_filterSettingsHasBeenSet; }
+
+    
     inline void SetFilterSettings(const NoiseReducerFilterSettings& value) { m_filterSettingsHasBeenSet = true; m_filterSettings = value; }
 
     
@@ -87,6 +93,9 @@ namespace Model
 
     
     inline const NoiseReducerSpatialFilterSettings& GetSpatialFilterSettings() const{ return m_spatialFilterSettings; }
+
+    
+    inline bool SpatialFilterSettingsHasBeenSet() const { return m_spatialFilterSettingsHasBeenSet; }
 
     
     inline void SetSpatialFilterSettings(const NoiseReducerSpatialFilterSettings& value) { m_spatialFilterSettingsHasBeenSet = true; m_spatialFilterSettings = value; }

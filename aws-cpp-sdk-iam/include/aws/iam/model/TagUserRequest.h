@@ -64,6 +64,15 @@ namespace Model
      * alphanumeric characters with no spaces. You can also include any of the
      * following characters: =,.@-</p>
      */
+    inline bool UserNameHasBeenSet() const { return m_userNameHasBeenSet; }
+
+    /**
+     * <p>The name of the user that you want to add tags to.</p> <p>This parameter
+     * accepts (through its <a href="http://wikipedia.org/wiki/regex">regex
+     * pattern</a>) a string of characters that consist of upper and lowercase
+     * alphanumeric characters with no spaces. You can also include any of the
+     * following characters: =,.@-</p>
+     */
     inline void SetUserName(const Aws::String& value) { m_userNameHasBeenSet = true; m_userName = value; }
 
     /**
@@ -117,6 +126,12 @@ namespace Model
      * key name and an associated value.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>The list of tags that you want to attach to the user. Each tag consists of a
+     * key name and an associated value.</p>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
      * <p>The list of tags that you want to attach to the user. Each tag consists of a

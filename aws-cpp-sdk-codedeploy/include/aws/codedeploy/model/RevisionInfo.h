@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>Information about the location and type of an application revision.</p>
      */
+    inline bool RevisionLocationHasBeenSet() const { return m_revisionLocationHasBeenSet; }
+
+    /**
+     * <p>Information about the location and type of an application revision.</p>
+     */
     inline void SetRevisionLocation(const RevisionLocation& value) { m_revisionLocationHasBeenSet = true; m_revisionLocation = value; }
 
     /**
@@ -79,6 +84,12 @@ namespace Model
      * associated deployment groups.</p>
      */
     inline const GenericRevisionInfo& GetGenericRevisionInfo() const{ return m_genericRevisionInfo; }
+
+    /**
+     * <p>Information about an application revision, including usage details and
+     * associated deployment groups.</p>
+     */
+    inline bool GenericRevisionInfoHasBeenSet() const { return m_genericRevisionInfoHasBeenSet; }
 
     /**
      * <p>Information about an application revision, including usage details and

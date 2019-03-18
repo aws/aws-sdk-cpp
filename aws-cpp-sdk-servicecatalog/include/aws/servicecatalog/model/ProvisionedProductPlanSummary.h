@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The name of the plan.</p>
      */
+    inline bool PlanNameHasBeenSet() const { return m_planNameHasBeenSet; }
+
+    /**
+     * <p>The name of the plan.</p>
+     */
     inline void SetPlanName(const Aws::String& value) { m_planNameHasBeenSet = true; m_planName = value; }
 
     /**
@@ -88,6 +93,11 @@ namespace Model
      * <p>The plan identifier.</p>
      */
     inline const Aws::String& GetPlanId() const{ return m_planId; }
+
+    /**
+     * <p>The plan identifier.</p>
+     */
+    inline bool PlanIdHasBeenSet() const { return m_planIdHasBeenSet; }
 
     /**
      * <p>The plan identifier.</p>
@@ -128,6 +138,11 @@ namespace Model
     /**
      * <p>The product identifier.</p>
      */
+    inline bool ProvisionProductIdHasBeenSet() const { return m_provisionProductIdHasBeenSet; }
+
+    /**
+     * <p>The product identifier.</p>
+     */
     inline void SetProvisionProductId(const Aws::String& value) { m_provisionProductIdHasBeenSet = true; m_provisionProductId = value; }
 
     /**
@@ -160,6 +175,11 @@ namespace Model
      * <p>The user-friendly name of the provisioned product.</p>
      */
     inline const Aws::String& GetProvisionProductName() const{ return m_provisionProductName; }
+
+    /**
+     * <p>The user-friendly name of the provisioned product.</p>
+     */
+    inline bool ProvisionProductNameHasBeenSet() const { return m_provisionProductNameHasBeenSet; }
 
     /**
      * <p>The user-friendly name of the provisioned product.</p>
@@ -200,6 +220,11 @@ namespace Model
     /**
      * <p>The plan type.</p>
      */
+    inline bool PlanTypeHasBeenSet() const { return m_planTypeHasBeenSet; }
+
+    /**
+     * <p>The plan type.</p>
+     */
     inline void SetPlanType(const ProvisionedProductPlanType& value) { m_planTypeHasBeenSet = true; m_planType = value; }
 
     /**
@@ -222,6 +247,11 @@ namespace Model
      * <p>The identifier of the provisioning artifact.</p>
      */
     inline const Aws::String& GetProvisioningArtifactId() const{ return m_provisioningArtifactId; }
+
+    /**
+     * <p>The identifier of the provisioning artifact.</p>
+     */
+    inline bool ProvisioningArtifactIdHasBeenSet() const { return m_provisioningArtifactIdHasBeenSet; }
 
     /**
      * <p>The identifier of the provisioning artifact.</p>

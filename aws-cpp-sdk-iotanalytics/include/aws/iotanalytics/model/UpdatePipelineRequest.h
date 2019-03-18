@@ -52,6 +52,11 @@ namespace Model
     /**
      * <p>The name of the pipeline to update.</p>
      */
+    inline bool PipelineNameHasBeenSet() const { return m_pipelineNameHasBeenSet; }
+
+    /**
+     * <p>The name of the pipeline to update.</p>
+     */
     inline void SetPipelineName(const Aws::String& value) { m_pipelineNameHasBeenSet = true; m_pipelineName = value; }
 
     /**
@@ -89,6 +94,16 @@ namespace Model
      * device data.</p>
      */
     inline const Aws::Vector<PipelineActivity>& GetPipelineActivities() const{ return m_pipelineActivities; }
+
+    /**
+     * <p>A list of "PipelineActivity" objects.</p> <p>The list can be 1-25
+     * <b>PipelineActivity</b> objects. Activities perform transformations on your
+     * messages, such as removing, renaming or adding message attributes; filtering
+     * messages based on attribute values; invoking your Lambda functions on messages
+     * for advanced processing; or performing mathematical transformations to normalize
+     * device data.</p>
+     */
+    inline bool PipelineActivitiesHasBeenSet() const { return m_pipelineActivitiesHasBeenSet; }
 
     /**
      * <p>A list of "PipelineActivity" objects.</p> <p>The list can be 1-25

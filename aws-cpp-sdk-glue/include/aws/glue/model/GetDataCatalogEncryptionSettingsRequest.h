@@ -54,6 +54,12 @@ namespace Model
      * <p>The ID of the Data Catalog for which to retrieve the security configuration.
      * If none is provided, the AWS account ID is used by default.</p>
      */
+    inline bool CatalogIdHasBeenSet() const { return m_catalogIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the Data Catalog for which to retrieve the security configuration.
+     * If none is provided, the AWS account ID is used by default.</p>
+     */
     inline void SetCatalogId(const Aws::String& value) { m_catalogIdHasBeenSet = true; m_catalogId = value; }
 
     /**

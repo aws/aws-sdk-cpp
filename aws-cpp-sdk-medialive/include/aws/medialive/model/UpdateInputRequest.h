@@ -57,6 +57,11 @@ namespace Model
     /**
      * Destination settings for PUSH type inputs.
      */
+    inline bool DestinationsHasBeenSet() const { return m_destinationsHasBeenSet; }
+
+    /**
+     * Destination settings for PUSH type inputs.
+     */
     inline void SetDestinations(const Aws::Vector<InputDestinationRequest>& value) { m_destinationsHasBeenSet = true; m_destinations = value; }
 
     /**
@@ -93,6 +98,11 @@ namespace Model
     /**
      * Unique ID of the input.
      */
+    inline bool InputIdHasBeenSet() const { return m_inputIdHasBeenSet; }
+
+    /**
+     * Unique ID of the input.
+     */
     inline void SetInputId(const Aws::String& value) { m_inputIdHasBeenSet = true; m_inputId = value; }
 
     /**
@@ -125,6 +135,11 @@ namespace Model
      * A list of security groups referenced by IDs to attach to the input.
      */
     inline const Aws::Vector<Aws::String>& GetInputSecurityGroups() const{ return m_inputSecurityGroups; }
+
+    /**
+     * A list of security groups referenced by IDs to attach to the input.
+     */
+    inline bool InputSecurityGroupsHasBeenSet() const { return m_inputSecurityGroupsHasBeenSet; }
 
     /**
      * A list of security groups referenced by IDs to attach to the input.
@@ -173,6 +188,18 @@ separate Availability Zone as this ensures your EML input is redundant to AZ
 
      */
     inline const Aws::Vector<MediaConnectFlowRequest>& GetMediaConnectFlows() const{ return m_mediaConnectFlows; }
+
+    /**
+     * A list of the MediaConnect Flow ARNs that you want to use as the source of the
+     * input. You can specify as few as one
+Flow and presently, as many as two. The
+     * only requirement is when you have more than one is that each Flow is in
+     * a
+separate Availability Zone as this ensures your EML input is redundant to AZ
+     * issues.
+
+     */
+    inline bool MediaConnectFlowsHasBeenSet() const { return m_mediaConnectFlowsHasBeenSet; }
 
     /**
      * A list of the MediaConnect Flow ARNs that you want to use as the source of the
@@ -255,6 +282,11 @@ separate Availability Zone as this ensures your EML input is redundant to AZ
     /**
      * Name of the input.
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * Name of the input.
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
@@ -288,6 +320,12 @@ separate Availability Zone as this ensures your EML input is redundant to AZ
      * creation.
      */
     inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
+
+    /**
+     * The Amazon Resource Name (ARN) of the role this input assumes during and after
+     * creation.
+     */
+    inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
 
     /**
      * The Amazon Resource Name (ARN) of the role this input assumes during and after
@@ -335,6 +373,16 @@ Only specify sources for PULL type Inputs. Leave
 
      */
     inline const Aws::Vector<InputSourceRequest>& GetSources() const{ return m_sources; }
+
+    /**
+     * The source URLs for a PULL-type input. Every PULL type input needs
+exactly two
+     * source URLs for redundancy.
+Only specify sources for PULL type Inputs. Leave
+     * Destinations empty.
+
+     */
+    inline bool SourcesHasBeenSet() const { return m_sourcesHasBeenSet; }
 
     /**
      * The source URLs for a PULL-type input. Every PULL type input needs

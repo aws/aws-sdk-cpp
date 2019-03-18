@@ -63,6 +63,13 @@ namespace Model
      * information see <a
      * href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#parameter-types">timestamp</a>.</p>
      */
+    inline bool StartTimeHasBeenSet() const { return m_startTimeHasBeenSet; }
+
+    /**
+     * <p>The start time of the subscription, in Unix time in seconds. For more
+     * information see <a
+     * href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#parameter-types">timestamp</a>.</p>
+     */
     inline void SetStartTime(const Aws::Utils::DateTime& value) { m_startTimeHasBeenSet = true; m_startTime = value; }
 
     /**
@@ -95,6 +102,11 @@ namespace Model
     /**
      * <p>The date and time your subscription will end.</p>
      */
+    inline bool EndTimeHasBeenSet() const { return m_endTimeHasBeenSet; }
+
+    /**
+     * <p>The date and time your subscription will end.</p>
+     */
     inline void SetEndTime(const Aws::Utils::DateTime& value) { m_endTimeHasBeenSet = true; m_endTime = value; }
 
     /**
@@ -123,6 +135,12 @@ namespace Model
      * <p>The length, in seconds, of the AWS Shield Advanced subscription for the
      * account.</p>
      */
+    inline bool TimeCommitmentInSecondsHasBeenSet() const { return m_timeCommitmentInSecondsHasBeenSet; }
+
+    /**
+     * <p>The length, in seconds, of the AWS Shield Advanced subscription for the
+     * account.</p>
+     */
     inline void SetTimeCommitmentInSeconds(long long value) { m_timeCommitmentInSecondsHasBeenSet = true; m_timeCommitmentInSeconds = value; }
 
     /**
@@ -142,6 +160,17 @@ namespace Model
      * unchanged.</p>
      */
     inline const AutoRenew& GetAutoRenew() const{ return m_autoRenew; }
+
+    /**
+     * <p>If <code>ENABLED</code>, the subscription will be automatically renewed at
+     * the end of the existing subscription period.</p> <p>When you initally create a
+     * subscription, <code>AutoRenew</code> is set to <code>ENABLED</code>. You can
+     * change this by submitting an <code>UpdateSubscription</code> request. If the
+     * <code>UpdateSubscription</code> request does not included a value for
+     * <code>AutoRenew</code>, the existing value for <code>AutoRenew</code> remains
+     * unchanged.</p>
+     */
+    inline bool AutoRenewHasBeenSet() const { return m_autoRenewHasBeenSet; }
 
     /**
      * <p>If <code>ENABLED</code>, the subscription will be automatically renewed at
@@ -192,6 +221,11 @@ namespace Model
      * <p>Specifies how many protections of a given type you can create.</p>
      */
     inline const Aws::Vector<Limit>& GetLimits() const{ return m_limits; }
+
+    /**
+     * <p>Specifies how many protections of a given type you can create.</p>
+     */
+    inline bool LimitsHasBeenSet() const { return m_limitsHasBeenSet; }
 
     /**
      * <p>Specifies how many protections of a given type you can create.</p>

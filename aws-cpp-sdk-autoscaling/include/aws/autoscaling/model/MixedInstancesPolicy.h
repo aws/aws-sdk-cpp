@@ -71,6 +71,13 @@ namespace Model
      * creating an Auto Scaling group with a mixed instances policy, but is not
      * required when updating the group.</p>
      */
+    inline bool LaunchTemplateHasBeenSet() const { return m_launchTemplateHasBeenSet; }
+
+    /**
+     * <p>The launch template and overrides.</p> <p>This parameter is required when
+     * creating an Auto Scaling group with a mixed instances policy, but is not
+     * required when updating the group.</p>
+     */
     inline void SetLaunchTemplate(const LaunchTemplate& value) { m_launchTemplateHasBeenSet = true; m_launchTemplate = value; }
 
     /**
@@ -100,6 +107,12 @@ namespace Model
      * unspecified when creating the group, the default values are used.</p>
      */
     inline const InstancesDistribution& GetInstancesDistribution() const{ return m_instancesDistribution; }
+
+    /**
+     * <p>The instances distribution to use. </p> <p>If you leave this parameter
+     * unspecified when creating the group, the default values are used.</p>
+     */
+    inline bool InstancesDistributionHasBeenSet() const { return m_instancesDistributionHasBeenSet; }
 
     /**
      * <p>The instances distribution to use. </p> <p>If you leave this parameter

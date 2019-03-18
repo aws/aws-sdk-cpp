@@ -61,6 +61,12 @@ namespace Model
      * <p>The start of the port range for the TCP and UDP protocols, or an ICMP type
      * number. A value of <code>-1</code> indicates all ICMP types. </p>
      */
+    inline bool FromPortHasBeenSet() const { return m_fromPortHasBeenSet; }
+
+    /**
+     * <p>The start of the port range for the TCP and UDP protocols, or an ICMP type
+     * number. A value of <code>-1</code> indicates all ICMP types. </p>
+     */
     inline void SetFromPort(int value) { m_fromPortHasBeenSet = true; m_fromPort = value; }
 
     /**
@@ -77,6 +83,14 @@ namespace Model
      * Numbers)</a>.</p>
      */
     inline const Aws::String& GetIpProtocol() const{ return m_ipProtocol; }
+
+    /**
+     * <p>The IP protocol name (for <code>tcp</code>, <code>udp</code>, and
+     * <code>icmp</code>) or number (see <a
+     * href="http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml">Protocol
+     * Numbers)</a>.</p>
+     */
+    inline bool IpProtocolHasBeenSet() const { return m_ipProtocolHasBeenSet; }
 
     /**
      * <p>The IP protocol name (for <code>tcp</code>, <code>udp</code>, and
@@ -135,6 +149,11 @@ namespace Model
     /**
      * <p>One or more IP ranges. Not applicable for stale security group rules.</p>
      */
+    inline bool IpRangesHasBeenSet() const { return m_ipRangesHasBeenSet; }
+
+    /**
+     * <p>One or more IP ranges. Not applicable for stale security group rules.</p>
+     */
     inline void SetIpRanges(const Aws::Vector<Aws::String>& value) { m_ipRangesHasBeenSet = true; m_ipRanges = value; }
 
     /**
@@ -173,6 +192,12 @@ namespace Model
      * security group rules.</p>
      */
     inline const Aws::Vector<Aws::String>& GetPrefixListIds() const{ return m_prefixListIds; }
+
+    /**
+     * <p>One or more prefix list IDs for an AWS service. Not applicable for stale
+     * security group rules.</p>
+     */
+    inline bool PrefixListIdsHasBeenSet() const { return m_prefixListIdsHasBeenSet; }
 
     /**
      * <p>One or more prefix list IDs for an AWS service. Not applicable for stale
@@ -227,6 +252,12 @@ namespace Model
      * <p>The end of the port range for the TCP and UDP protocols, or an ICMP type
      * number. A value of <code>-1</code> indicates all ICMP types. </p>
      */
+    inline bool ToPortHasBeenSet() const { return m_toPortHasBeenSet; }
+
+    /**
+     * <p>The end of the port range for the TCP and UDP protocols, or an ICMP type
+     * number. A value of <code>-1</code> indicates all ICMP types. </p>
+     */
     inline void SetToPort(int value) { m_toPortHasBeenSet = true; m_toPort = value; }
 
     /**
@@ -241,6 +272,12 @@ namespace Model
      * group and VPC, and the ID and status of the VPC peering connection.</p>
      */
     inline const Aws::Vector<UserIdGroupPair>& GetUserIdGroupPairs() const{ return m_userIdGroupPairs; }
+
+    /**
+     * <p>One or more security group pairs. Returns the ID of the referenced security
+     * group and VPC, and the ID and status of the VPC peering connection.</p>
+     */
+    inline bool UserIdGroupPairsHasBeenSet() const { return m_userIdGroupPairsHasBeenSet; }
 
     /**
      * <p>One or more security group pairs. Returns the ID of the referenced security

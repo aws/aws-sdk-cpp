@@ -59,6 +59,11 @@ namespace Model
     /**
      * <p>The distribution of broker nodes across Availability Zones.</p>
      */
+    inline bool BrokerAZDistributionHasBeenSet() const { return m_brokerAZDistributionHasBeenSet; }
+
+    /**
+     * <p>The distribution of broker nodes across Availability Zones.</p>
+     */
     inline void SetBrokerAZDistribution(const BrokerAZDistribution& value) { m_brokerAZDistributionHasBeenSet = true; m_brokerAZDistribution = value; }
 
     /**
@@ -84,6 +89,14 @@ namespace Model
      * be in Availability Zone us-east-1e.</p>
      */
     inline const Aws::Vector<Aws::String>& GetClientSubnets() const{ return m_clientSubnets; }
+
+    /**
+     * <p>The list of subnets to connect to in the client virtual private cloud (VPC).
+     * AWS creates elastic network interfaces inside these subnets. Client applications
+     * use elastic network interfaces to produce and consume data. Client subnets can't
+     * be in Availability Zone us-east-1e.</p>
+     */
+    inline bool ClientSubnetsHasBeenSet() const { return m_clientSubnetsHasBeenSet; }
 
     /**
      * <p>The list of subnets to connect to in the client virtual private cloud (VPC).
@@ -158,6 +171,15 @@ kafka.m5.4xlarge, kafka.m5.12xlarge, and
 kafka.m5.4xlarge, kafka.m5.12xlarge, and
      * kafka.m5.24xlarge.</p>
      */
+    inline bool InstanceTypeHasBeenSet() const { return m_instanceTypeHasBeenSet; }
+
+    /**
+     * <p>The type of Amazon EC2 instances to use for Kafka brokers. The following
+     * instance types are allowed: kafka.m5.large, kafka.m5.xlarge,
+     * kafka.m5.2xlarge,
+kafka.m5.4xlarge, kafka.m5.12xlarge, and
+     * kafka.m5.24xlarge.</p>
+     */
     inline void SetInstanceType(const Aws::String& value) { m_instanceTypeHasBeenSet = true; m_instanceType = value; }
 
     /**
@@ -218,6 +240,13 @@ kafka.m5.4xlarge, kafka.m5.12xlarge, and
      * order to specify who can connect to and communicate with the Amazon MSK
      * cluster.</p>
      */
+    inline bool SecurityGroupsHasBeenSet() const { return m_securityGroupsHasBeenSet; }
+
+    /**
+     * <p>The AWS security groups to associate with the elastic network interfaces in
+     * order to specify who can connect to and communicate with the Amazon MSK
+     * cluster.</p>
+     */
     inline void SetSecurityGroups(const Aws::Vector<Aws::String>& value) { m_securityGroupsHasBeenSet = true; m_securityGroups = value; }
 
     /**
@@ -267,6 +296,11 @@ kafka.m5.4xlarge, kafka.m5.12xlarge, and
      * <p>Contains information about storage volumes attached to MSK broker nodes.</p>
      */
     inline const StorageInfo& GetStorageInfo() const{ return m_storageInfo; }
+
+    /**
+     * <p>Contains information about storage volumes attached to MSK broker nodes.</p>
+     */
+    inline bool StorageInfoHasBeenSet() const { return m_storageInfoHasBeenSet; }
 
     /**
      * <p>Contains information about storage volumes attached to MSK broker nodes.</p>

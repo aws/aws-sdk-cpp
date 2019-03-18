@@ -53,6 +53,11 @@ namespace Model
     /**
      * <p>The percentage of robots receiving the deployment at the same time.</p>
      */
+    inline bool ConcurrentDeploymentPercentageHasBeenSet() const { return m_concurrentDeploymentPercentageHasBeenSet; }
+
+    /**
+     * <p>The percentage of robots receiving the deployment at the same time.</p>
+     */
     inline void SetConcurrentDeploymentPercentage(int value) { m_concurrentDeploymentPercentageHasBeenSet = true; m_concurrentDeploymentPercentage = value; }
 
     /**
@@ -66,6 +71,12 @@ namespace Model
      * deployment.</p>
      */
     inline int GetFailureThresholdPercentage() const{ return m_failureThresholdPercentage; }
+
+    /**
+     * <p>The percentage of deployments that need to fail before stopping
+     * deployment.</p>
+     */
+    inline bool FailureThresholdPercentageHasBeenSet() const { return m_failureThresholdPercentageHasBeenSet; }
 
     /**
      * <p>The percentage of deployments that need to fail before stopping

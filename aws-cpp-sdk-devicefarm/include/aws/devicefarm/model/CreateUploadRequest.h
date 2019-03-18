@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The ARN of the project for the upload.</p>
      */
+    inline bool ProjectArnHasBeenSet() const { return m_projectArnHasBeenSet; }
+
+    /**
+     * <p>The ARN of the project for the upload.</p>
+     */
     inline void SetProjectArn(const Aws::String& value) { m_projectArnHasBeenSet = true; m_projectArn = value; }
 
     /**
@@ -93,6 +98,15 @@ namespace Model
      * <code>.zip</code> file extension.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
+
+    /**
+     * <p>The upload's file name. The name should not contain the '/' character. If
+     * uploading an iOS app, the file name needs to end with the <code>.ipa</code>
+     * extension. If uploading an Android app, the file name needs to end with the
+     * <code>.apk</code> extension. For all others, the file name must end with the
+     * <code>.zip</code> file extension.</p>
+     */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
      * <p>The upload's file name. The name should not contain the '/' character. If
@@ -192,6 +206,50 @@ namespace Model
      * <code>ArgumentException</code> error.</p>
      */
     inline const UploadType& GetType() const{ return m_type; }
+
+    /**
+     * <p>The upload's upload type.</p> <p>Must be one of the following values:</p>
+     * <ul> <li> <p>ANDROID_APP: An Android upload.</p> </li> <li> <p>IOS_APP: An iOS
+     * upload.</p> </li> <li> <p>WEB_APP: A web application upload.</p> </li> <li>
+     * <p>EXTERNAL_DATA: An external data upload.</p> </li> <li>
+     * <p>APPIUM_JAVA_JUNIT_TEST_PACKAGE: An Appium Java JUnit test package upload.</p>
+     * </li> <li> <p>APPIUM_JAVA_TESTNG_TEST_PACKAGE: An Appium Java TestNG test
+     * package upload.</p> </li> <li> <p>APPIUM_PYTHON_TEST_PACKAGE: An Appium Python
+     * test package upload.</p> </li> <li> <p>APPIUM_NODE_TEST_PACKAGE: An Appium
+     * Node.js test package upload.</p> </li> <li> <p>APPIUM_RUBY_TEST_PACKAGE: An
+     * Appium Ruby test package upload.</p> </li> <li>
+     * <p>APPIUM_WEB_JAVA_JUNIT_TEST_PACKAGE: An Appium Java JUnit test package upload
+     * for a web app.</p> </li> <li> <p>APPIUM_WEB_JAVA_TESTNG_TEST_PACKAGE: An Appium
+     * Java TestNG test package upload for a web app.</p> </li> <li>
+     * <p>APPIUM_WEB_PYTHON_TEST_PACKAGE: An Appium Python test package upload for a
+     * web app.</p> </li> <li> <p>APPIUM_WEB_NODE_TEST_PACKAGE: An Appium Node.js test
+     * package upload for a web app.</p> </li> <li> <p>APPIUM_WEB_RUBY_TEST_PACKAGE: An
+     * Appium Ruby test package upload for a web app.</p> </li> <li>
+     * <p>CALABASH_TEST_PACKAGE: A Calabash test package upload.</p> </li> <li>
+     * <p>INSTRUMENTATION_TEST_PACKAGE: An instrumentation upload.</p> </li> <li>
+     * <p>UIAUTOMATION_TEST_PACKAGE: A uiautomation test package upload.</p> </li> <li>
+     * <p>UIAUTOMATOR_TEST_PACKAGE: A uiautomator test package upload.</p> </li> <li>
+     * <p>XCTEST_TEST_PACKAGE: An XCode test package upload.</p> </li> <li>
+     * <p>XCTEST_UI_TEST_PACKAGE: An XCode UI test package upload.</p> </li> <li>
+     * <p>APPIUM_JAVA_JUNIT_TEST_SPEC: An Appium Java JUnit test spec upload.</p> </li>
+     * <li> <p>APPIUM_JAVA_TESTNG_TEST_SPEC: An Appium Java TestNG test spec
+     * upload.</p> </li> <li> <p>APPIUM_PYTHON_TEST_SPEC: An Appium Python test spec
+     * upload.</p> </li> <li> <p>APPIUM_NODE_TEST_SPEC: An Appium Node.js test spec
+     * upload.</p> </li> <li> <p>APPIUM_RUBY_TEST_SPEC: An Appium Ruby test spec
+     * upload.</p> </li> <li> <p>APPIUM_WEB_JAVA_JUNIT_TEST_SPEC: An Appium Java JUnit
+     * test spec upload for a web app.</p> </li> <li>
+     * <p>APPIUM_WEB_JAVA_TESTNG_TEST_SPEC: An Appium Java TestNG test spec upload for
+     * a web app.</p> </li> <li> <p>APPIUM_WEB_PYTHON_TEST_SPEC: An Appium Python test
+     * spec upload for a web app.</p> </li> <li> <p>APPIUM_WEB_NODE_TEST_SPEC: An
+     * Appium Node.js test spec upload for a web app.</p> </li> <li>
+     * <p>APPIUM_WEB_RUBY_TEST_SPEC: An Appium Ruby test spec upload for a web app.</p>
+     * </li> <li> <p>INSTRUMENTATION_TEST_SPEC: An instrumentation test spec
+     * upload.</p> </li> <li> <p>XCTEST_UI_TEST_SPEC: An XCode UI test spec upload.</p>
+     * </li> </ul> <p> <b>Note</b> If you call <code>CreateUpload</code> with
+     * <code>WEB_APP</code> specified, AWS Device Farm throws an
+     * <code>ArgumentException</code> error.</p>
+     */
+    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
 
     /**
      * <p>The upload's upload type.</p> <p>Must be one of the following values:</p>
@@ -374,6 +432,11 @@ namespace Model
      * <p>The upload's content type (for example, "application/octet-stream").</p>
      */
     inline const Aws::String& GetContentType() const{ return m_contentType; }
+
+    /**
+     * <p>The upload's content type (for example, "application/octet-stream").</p>
+     */
+    inline bool ContentTypeHasBeenSet() const { return m_contentTypeHasBeenSet; }
 
     /**
      * <p>The upload's content type (for example, "application/octet-stream").</p>

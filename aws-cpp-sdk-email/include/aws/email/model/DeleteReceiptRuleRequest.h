@@ -62,6 +62,12 @@ namespace Model
      * <p>The name of the receipt rule set that contains the receipt rule to
      * delete.</p>
      */
+    inline bool RuleSetNameHasBeenSet() const { return m_ruleSetNameHasBeenSet; }
+
+    /**
+     * <p>The name of the receipt rule set that contains the receipt rule to
+     * delete.</p>
+     */
     inline void SetRuleSetName(const Aws::String& value) { m_ruleSetNameHasBeenSet = true; m_ruleSetName = value; }
 
     /**
@@ -99,6 +105,11 @@ namespace Model
      * <p>The name of the receipt rule to delete.</p>
      */
     inline const Aws::String& GetRuleName() const{ return m_ruleName; }
+
+    /**
+     * <p>The name of the receipt rule to delete.</p>
+     */
+    inline bool RuleNameHasBeenSet() const { return m_ruleNameHasBeenSet; }
 
     /**
      * <p>The name of the receipt rule to delete.</p>

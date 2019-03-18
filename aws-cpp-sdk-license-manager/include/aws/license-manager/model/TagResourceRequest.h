@@ -54,6 +54,11 @@ namespace Model
     /**
      * <p>Resource of the ARN to be tagged.</p>
      */
+    inline bool ResourceArnHasBeenSet() const { return m_resourceArnHasBeenSet; }
+
+    /**
+     * <p>Resource of the ARN to be tagged.</p>
+     */
     inline void SetResourceArn(const Aws::String& value) { m_resourceArnHasBeenSet = true; m_resourceArn = value; }
 
     /**
@@ -86,6 +91,11 @@ namespace Model
      * <p>Names of the tags to attach to the resource.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>Names of the tags to attach to the resource.</p>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
      * <p>Names of the tags to attach to the resource.</p>

@@ -55,6 +55,11 @@ namespace Model
     /**
      * <p>The name of the document classifier.</p>
      */
+    inline bool DocumentClassifierNameHasBeenSet() const { return m_documentClassifierNameHasBeenSet; }
+
+    /**
+     * <p>The name of the document classifier.</p>
+     */
     inline void SetDocumentClassifierName(const Aws::String& value) { m_documentClassifierNameHasBeenSet = true; m_documentClassifierName = value; }
 
     /**
@@ -88,6 +93,12 @@ namespace Model
      * that grants Amazon Comprehend read access to your input data.</p>
      */
     inline const Aws::String& GetDataAccessRoleArn() const{ return m_dataAccessRoleArn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the AWS Identity and Management (IAM) role
+     * that grants Amazon Comprehend read access to your input data.</p>
+     */
+    inline bool DataAccessRoleArnHasBeenSet() const { return m_dataAccessRoleArnHasBeenSet; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the AWS Identity and Management (IAM) role
@@ -134,6 +145,11 @@ namespace Model
     /**
      * <p>Specifies the format and location of the input data for the job.</p>
      */
+    inline bool InputDataConfigHasBeenSet() const { return m_inputDataConfigHasBeenSet; }
+
+    /**
+     * <p>Specifies the format and location of the input data for the job.</p>
+     */
     inline void SetInputDataConfig(const DocumentClassifierInputDataConfig& value) { m_inputDataConfigHasBeenSet = true; m_inputDataConfig = value; }
 
     /**
@@ -157,6 +173,12 @@ namespace Model
      * token, Amazon Comprehend generates one.</p>
      */
     inline const Aws::String& GetClientRequestToken() const{ return m_clientRequestToken; }
+
+    /**
+     * <p>A unique identifier for the request. If you don't set the client request
+     * token, Amazon Comprehend generates one.</p>
+     */
+    inline bool ClientRequestTokenHasBeenSet() const { return m_clientRequestTokenHasBeenSet; }
 
     /**
      * <p>A unique identifier for the request. If you don't set the client request
@@ -200,6 +222,12 @@ namespace Model
      * Spanish ("es"). All documents must be in the same language.</p>
      */
     inline const LanguageCode& GetLanguageCode() const{ return m_languageCode; }
+
+    /**
+     * <p>The language of the input documents. You can specify English ("en") or
+     * Spanish ("es"). All documents must be in the same language.</p>
+     */
+    inline bool LanguageCodeHasBeenSet() const { return m_languageCodeHasBeenSet; }
 
     /**
      * <p>The language of the input documents. You can specify English ("en") or

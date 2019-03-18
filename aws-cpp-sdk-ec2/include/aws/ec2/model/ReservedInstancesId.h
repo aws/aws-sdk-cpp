@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The ID of the Reserved Instance.</p>
      */
+    inline bool ReservedInstancesIdHasBeenSet() const { return m_reservedInstancesIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the Reserved Instance.</p>
+     */
     inline void SetReservedInstancesId(const Aws::String& value) { m_reservedInstancesIdHasBeenSet = true; m_reservedInstancesId = value; }
 
     /**

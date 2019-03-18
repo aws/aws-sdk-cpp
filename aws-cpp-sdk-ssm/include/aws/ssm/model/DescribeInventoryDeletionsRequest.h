@@ -54,6 +54,12 @@ namespace Model
      * <p>Specify the delete inventory ID for which you want information. This ID was
      * returned by the <code>DeleteInventory</code> action.</p>
      */
+    inline bool DeletionIdHasBeenSet() const { return m_deletionIdHasBeenSet; }
+
+    /**
+     * <p>Specify the delete inventory ID for which you want information. This ID was
+     * returned by the <code>DeleteInventory</code> action.</p>
+     */
     inline void SetDeletionId(const Aws::String& value) { m_deletionIdHasBeenSet = true; m_deletionId = value; }
 
     /**
@@ -92,6 +98,12 @@ namespace Model
      * </p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
+    /**
+     * <p>A token to start the list. Use this token to get the next set of results.
+     * </p>
+     */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
      * <p>A token to start the list. Use this token to get the next set of results.
@@ -136,6 +148,13 @@ namespace Model
      * results.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
+
+    /**
+     * <p>The maximum number of items to return for this call. The call also returns a
+     * token that you can specify in a subsequent call to get the next set of
+     * results.</p>
+     */
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
 
     /**
      * <p>The maximum number of items to return for this call. The call also returns a

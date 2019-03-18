@@ -61,6 +61,11 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) that identifies the document classifier.</p>
      */
+    inline bool DocumentClassifierArnHasBeenSet() const { return m_documentClassifierArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) that identifies the document classifier.</p>
+     */
     inline void SetDocumentClassifierArn(const Aws::String& value) { m_documentClassifierArnHasBeenSet = true; m_documentClassifierArn = value; }
 
     /**
@@ -99,6 +104,12 @@ namespace Model
      * <p>The language code for the language of the documents that the classifier was
      * trained on.</p>
      */
+    inline bool LanguageCodeHasBeenSet() const { return m_languageCodeHasBeenSet; }
+
+    /**
+     * <p>The language code for the language of the documents that the classifier was
+     * trained on.</p>
+     */
     inline void SetLanguageCode(const LanguageCode& value) { m_languageCodeHasBeenSet = true; m_languageCode = value; }
 
     /**
@@ -127,6 +138,14 @@ namespace Model
      * <code>Message</code> field.</p>
      */
     inline const ModelStatus& GetStatus() const{ return m_status; }
+
+    /**
+     * <p>The status of the document classifier. If the status is <code>TRAINED</code>
+     * the classifier is ready to use. If the status is <code>FAILED</code> you can see
+     * additional information about why the classifier wasn't trained in the
+     * <code>Message</code> field.</p>
+     */
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
     /**
      * <p>The status of the document classifier. If the status is <code>TRAINED</code>
@@ -169,6 +188,11 @@ namespace Model
     /**
      * <p>Additional information about the status of the classifier.</p>
      */
+    inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
+
+    /**
+     * <p>Additional information about the status of the classifier.</p>
+     */
     inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
 
     /**
@@ -205,6 +229,11 @@ namespace Model
     /**
      * <p>The time that the document classifier was submitted for training.</p>
      */
+    inline bool SubmitTimeHasBeenSet() const { return m_submitTimeHasBeenSet; }
+
+    /**
+     * <p>The time that the document classifier was submitted for training.</p>
+     */
     inline void SetSubmitTime(const Aws::Utils::DateTime& value) { m_submitTimeHasBeenSet = true; m_submitTime = value; }
 
     /**
@@ -227,6 +256,11 @@ namespace Model
      * <p>The time that training the document classifier completed.</p>
      */
     inline const Aws::Utils::DateTime& GetEndTime() const{ return m_endTime; }
+
+    /**
+     * <p>The time that training the document classifier completed.</p>
+     */
+    inline bool EndTimeHasBeenSet() const { return m_endTimeHasBeenSet; }
 
     /**
      * <p>The time that training the document classifier completed.</p>
@@ -255,6 +289,13 @@ namespace Model
      * TrainingEndTime. </p>
      */
     inline const Aws::Utils::DateTime& GetTrainingStartTime() const{ return m_trainingStartTime; }
+
+    /**
+     * <p>Indicates the time when the training starts on documentation classifiers. You
+     * are billed for the time interval between this time and the value of
+     * TrainingEndTime. </p>
+     */
+    inline bool TrainingStartTimeHasBeenSet() const { return m_trainingStartTimeHasBeenSet; }
 
     /**
      * <p>Indicates the time when the training starts on documentation classifiers. You
@@ -299,6 +340,14 @@ namespace Model
      * billed for the time interval between this time and the value of
      * TrainingStartTime.</p>
      */
+    inline bool TrainingEndTimeHasBeenSet() const { return m_trainingEndTimeHasBeenSet; }
+
+    /**
+     * <p>The time that training of the document classifier was completed. Indicates
+     * the time when the training completes on documentation classifiers. You are
+     * billed for the time interval between this time and the value of
+     * TrainingStartTime.</p>
+     */
     inline void SetTrainingEndTime(const Aws::Utils::DateTime& value) { m_trainingEndTimeHasBeenSet = true; m_trainingEndTime = value; }
 
     /**
@@ -331,6 +380,12 @@ namespace Model
      * classifier for training.</p>
      */
     inline const DocumentClassifierInputDataConfig& GetInputDataConfig() const{ return m_inputDataConfig; }
+
+    /**
+     * <p>The input data configuration that you supplied when you created the document
+     * classifier for training.</p>
+     */
+    inline bool InputDataConfigHasBeenSet() const { return m_inputDataConfigHasBeenSet; }
 
     /**
      * <p>The input data configuration that you supplied when you created the document
@@ -369,6 +424,13 @@ namespace Model
      * used for training the classifier, the number of documents used for test the
      * classifier, and an accuracy rating.</p>
      */
+    inline bool ClassifierMetadataHasBeenSet() const { return m_classifierMetadataHasBeenSet; }
+
+    /**
+     * <p>Information about the document classifier, including the number of documents
+     * used for training the classifier, the number of documents used for test the
+     * classifier, and an accuracy rating.</p>
+     */
     inline void SetClassifierMetadata(const ClassifierMetadata& value) { m_classifierMetadataHasBeenSet = true; m_classifierMetadata = value; }
 
     /**
@@ -398,6 +460,12 @@ namespace Model
      * that grants Amazon Comprehend read access to your input data.</p>
      */
     inline const Aws::String& GetDataAccessRoleArn() const{ return m_dataAccessRoleArn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the AWS Identity and Management (IAM) role
+     * that grants Amazon Comprehend read access to your input data.</p>
+     */
+    inline bool DataAccessRoleArnHasBeenSet() const { return m_dataAccessRoleArnHasBeenSet; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the AWS Identity and Management (IAM) role

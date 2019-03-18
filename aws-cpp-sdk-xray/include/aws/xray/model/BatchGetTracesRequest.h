@@ -51,6 +51,11 @@ namespace Model
     /**
      * <p>Specify the trace IDs of requests for which to retrieve segments.</p>
      */
+    inline bool TraceIdsHasBeenSet() const { return m_traceIdsHasBeenSet; }
+
+    /**
+     * <p>Specify the trace IDs of requests for which to retrieve segments.</p>
+     */
     inline void SetTraceIds(const Aws::Vector<Aws::String>& value) { m_traceIdsHasBeenSet = true; m_traceIds = value; }
 
     /**
@@ -88,6 +93,11 @@ namespace Model
      * <p>Pagination token. Not used.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
+    /**
+     * <p>Pagination token. Not used.</p>
+     */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
      * <p>Pagination token. Not used.</p>

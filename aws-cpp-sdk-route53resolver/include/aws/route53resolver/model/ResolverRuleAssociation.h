@@ -61,6 +61,12 @@ namespace Model
      * <p>The ID of the association between a resolver rule and a VPC. Resolver assigns
      * this value when you submit an <a>AssociateResolverRule</a> request.</p>
      */
+    inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
+
+    /**
+     * <p>The ID of the association between a resolver rule and a VPC. Resolver assigns
+     * this value when you submit an <a>AssociateResolverRule</a> request.</p>
+     */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
     /**
@@ -99,6 +105,12 @@ namespace Model
      * specified by <code>VPCId</code>.</p>
      */
     inline const Aws::String& GetResolverRuleId() const{ return m_resolverRuleId; }
+
+    /**
+     * <p>The ID of the resolver rule that you associated with the VPC that is
+     * specified by <code>VPCId</code>.</p>
+     */
+    inline bool ResolverRuleIdHasBeenSet() const { return m_resolverRuleIdHasBeenSet; }
 
     /**
      * <p>The ID of the resolver rule that you associated with the VPC that is
@@ -145,6 +157,11 @@ namespace Model
     /**
      * <p>The name of an association between a resolver rule and a VPC.</p>
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>The name of an association between a resolver rule and a VPC.</p>
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
@@ -177,6 +194,11 @@ namespace Model
      * <p>The ID of the VPC that you associated the resolver rule with.</p>
      */
     inline const Aws::String& GetVPCId() const{ return m_vPCId; }
+
+    /**
+     * <p>The ID of the VPC that you associated the resolver rule with.</p>
+     */
+    inline bool VPCIdHasBeenSet() const { return m_vPCIdHasBeenSet; }
 
     /**
      * <p>The ID of the VPC that you associated the resolver rule with.</p>
@@ -219,6 +241,12 @@ namespace Model
      * <p>A code that specifies the current status of the association between a
      * resolver rule and a VPC.</p>
      */
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
+
+    /**
+     * <p>A code that specifies the current status of the association between a
+     * resolver rule and a VPC.</p>
+     */
     inline void SetStatus(const ResolverRuleAssociationStatus& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
@@ -245,6 +273,12 @@ namespace Model
      * rule and a VPC.</p>
      */
     inline const Aws::String& GetStatusMessage() const{ return m_statusMessage; }
+
+    /**
+     * <p>A detailed description of the status of the association between a resolver
+     * rule and a VPC.</p>
+     */
+    inline bool StatusMessageHasBeenSet() const { return m_statusMessageHasBeenSet; }
 
     /**
      * <p>A detailed description of the status of the association between a resolver

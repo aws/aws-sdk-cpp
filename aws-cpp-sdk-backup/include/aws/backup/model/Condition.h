@@ -61,6 +61,12 @@ namespace Model
      * <p>An operation, such as <code>StringEquals</code>, that is applied to a
      * key-value pair used to filter resources in a selection.</p>
      */
+    inline bool ConditionTypeHasBeenSet() const { return m_conditionTypeHasBeenSet; }
+
+    /**
+     * <p>An operation, such as <code>StringEquals</code>, that is applied to a
+     * key-value pair used to filter resources in a selection.</p>
+     */
     inline void SetConditionType(const ConditionType& value) { m_conditionTypeHasBeenSet = true; m_conditionType = value; }
 
     /**
@@ -88,6 +94,13 @@ namespace Model
      * <code>"ec2:ResourceTag/Department"</code> is the key.</p>
      */
     inline const Aws::String& GetConditionKey() const{ return m_conditionKey; }
+
+    /**
+     * <p>The key in a key-value pair. For example, in
+     * <code>"ec2:ResourceTag/Department": "accounting"</code>,
+     * <code>"ec2:ResourceTag/Department"</code> is the key.</p>
+     */
+    inline bool ConditionKeyHasBeenSet() const { return m_conditionKeyHasBeenSet; }
 
     /**
      * <p>The key in a key-value pair. For example, in
@@ -138,6 +151,13 @@ namespace Model
      * <code>"accounting"</code> is the value.</p>
      */
     inline const Aws::String& GetConditionValue() const{ return m_conditionValue; }
+
+    /**
+     * <p>The value in a key-value pair. For example, in
+     * <code>"ec2:ResourceTag/Department": "accounting"</code>,
+     * <code>"accounting"</code> is the value.</p>
+     */
+    inline bool ConditionValueHasBeenSet() const { return m_conditionValueHasBeenSet; }
 
     /**
      * <p>The value in a key-value pair. For example, in

@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p>An array of resource ARN(s).</p>
      */
+    inline bool ResourceARNHasBeenSet() const { return m_resourceARNHasBeenSet; }
+
+    /**
+     * <p>An array of resource ARN(s).</p>
+     */
     inline void SetResourceARN(const Aws::String& value) { m_resourceARNHasBeenSet = true; m_resourceARN = value; }
 
     /**
@@ -90,6 +95,11 @@ namespace Model
      * <p>The tags that have been applied to one or more AWS resources.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>The tags that have been applied to one or more AWS resources.</p>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
      * <p>The tags that have been applied to one or more AWS resources.</p>

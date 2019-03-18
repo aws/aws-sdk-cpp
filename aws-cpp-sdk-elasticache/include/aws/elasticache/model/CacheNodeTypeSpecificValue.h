@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p>The cache node type for which this value applies.</p>
      */
+    inline bool CacheNodeTypeHasBeenSet() const { return m_cacheNodeTypeHasBeenSet; }
+
+    /**
+     * <p>The cache node type for which this value applies.</p>
+     */
     inline void SetCacheNodeType(const Aws::String& value) { m_cacheNodeTypeHasBeenSet = true; m_cacheNodeType = value; }
 
     /**
@@ -90,6 +95,11 @@ namespace Model
      * <p>The value for the cache node type.</p>
      */
     inline const Aws::String& GetValue() const{ return m_value; }
+
+    /**
+     * <p>The value for the cache node type.</p>
+     */
+    inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
 
     /**
      * <p>The value for the cache node type.</p>

@@ -59,6 +59,11 @@ namespace Model
     /**
      * City information of the remote IP address.
      */
+    inline bool CityHasBeenSet() const { return m_cityHasBeenSet; }
+
+    /**
+     * City information of the remote IP address.
+     */
     inline void SetCity(const City& value) { m_cityHasBeenSet = true; m_city = value; }
 
     /**
@@ -81,6 +86,11 @@ namespace Model
      * Country code of the remote IP address.
      */
     inline const Country& GetCountry() const{ return m_country; }
+
+    /**
+     * Country code of the remote IP address.
+     */
+    inline bool CountryHasBeenSet() const { return m_countryHasBeenSet; }
 
     /**
      * Country code of the remote IP address.
@@ -111,6 +121,11 @@ namespace Model
     /**
      * Location information of the remote IP address.
      */
+    inline bool GeoLocationHasBeenSet() const { return m_geoLocationHasBeenSet; }
+
+    /**
+     * Location information of the remote IP address.
+     */
     inline void SetGeoLocation(const GeoLocation& value) { m_geoLocationHasBeenSet = true; m_geoLocation = value; }
 
     /**
@@ -133,6 +148,11 @@ namespace Model
      * IPV4 remote address of the connection.
      */
     inline const Aws::String& GetIpAddressV4() const{ return m_ipAddressV4; }
+
+    /**
+     * IPV4 remote address of the connection.
+     */
+    inline bool IpAddressV4HasBeenSet() const { return m_ipAddressV4HasBeenSet; }
 
     /**
      * IPV4 remote address of the connection.
@@ -169,6 +189,11 @@ namespace Model
      * ISP Organization information of the remote IP address.
      */
     inline const Organization& GetOrganization() const{ return m_organization; }
+
+    /**
+     * ISP Organization information of the remote IP address.
+     */
+    inline bool OrganizationHasBeenSet() const { return m_organizationHasBeenSet; }
 
     /**
      * ISP Organization information of the remote IP address.

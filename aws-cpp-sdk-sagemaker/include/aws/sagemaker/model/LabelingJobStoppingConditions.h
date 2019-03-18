@@ -55,6 +55,11 @@ namespace Model
     /**
      * <p>The maximum number of objects that can be labeled by human workers.</p>
      */
+    inline bool MaxHumanLabeledObjectCountHasBeenSet() const { return m_maxHumanLabeledObjectCountHasBeenSet; }
+
+    /**
+     * <p>The maximum number of objects that can be labeled by human workers.</p>
+     */
     inline void SetMaxHumanLabeledObjectCount(int value) { m_maxHumanLabeledObjectCountHasBeenSet = true; m_maxHumanLabeledObjectCount = value; }
 
     /**
@@ -67,6 +72,11 @@ namespace Model
      * <p>The maximum number of input data objects that should be labeled.</p>
      */
     inline int GetMaxPercentageOfInputDatasetLabeled() const{ return m_maxPercentageOfInputDatasetLabeled; }
+
+    /**
+     * <p>The maximum number of input data objects that should be labeled.</p>
+     */
+    inline bool MaxPercentageOfInputDatasetLabeledHasBeenSet() const { return m_maxPercentageOfInputDatasetLabeledHasBeenSet; }
 
     /**
      * <p>The maximum number of input data objects that should be labeled.</p>

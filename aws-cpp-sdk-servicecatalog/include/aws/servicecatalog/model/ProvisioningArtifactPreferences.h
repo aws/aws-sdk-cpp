@@ -70,6 +70,15 @@ namespace Model
      * <code>UpdateProvisioningPreferences$StackSetAccounts</code>.</p> <p>Applicable
      * only to a <code>CFN_STACKSET</code> provisioned product type.</p>
      */
+    inline bool StackSetAccountsHasBeenSet() const { return m_stackSetAccountsHasBeenSet; }
+
+    /**
+     * <p>One or more AWS accounts where stack instances are deployed from the stack
+     * set. These accounts can be scoped in
+     * <code>ProvisioningPreferences$StackSetAccounts</code> and
+     * <code>UpdateProvisioningPreferences$StackSetAccounts</code>.</p> <p>Applicable
+     * only to a <code>CFN_STACKSET</code> provisioned product type.</p>
+     */
     inline void SetStackSetAccounts(const Aws::Vector<Aws::String>& value) { m_stackSetAccountsHasBeenSet = true; m_stackSetAccounts = value; }
 
     /**
@@ -135,6 +144,15 @@ namespace Model
      * only to a <code>CFN_STACKSET</code> provisioned product type.</p>
      */
     inline const Aws::Vector<Aws::String>& GetStackSetRegions() const{ return m_stackSetRegions; }
+
+    /**
+     * <p>One or more AWS Regions where stack instances are deployed from the stack
+     * set. These regions can be scoped in
+     * <code>ProvisioningPreferences$StackSetRegions</code> and
+     * <code>UpdateProvisioningPreferences$StackSetRegions</code>.</p> <p>Applicable
+     * only to a <code>CFN_STACKSET</code> provisioned product type.</p>
+     */
+    inline bool StackSetRegionsHasBeenSet() const { return m_stackSetRegionsHasBeenSet; }
 
     /**
      * <p>One or more AWS Regions where stack instances are deployed from the stack

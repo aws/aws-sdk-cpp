@@ -59,6 +59,12 @@ namespace Model
      * <p>Whether the transition between stages is enabled (true) or disabled
      * (false).</p>
      */
+    inline bool EnabledHasBeenSet() const { return m_enabledHasBeenSet; }
+
+    /**
+     * <p>Whether the transition between stages is enabled (true) or disabled
+     * (false).</p>
+     */
     inline void SetEnabled(bool value) { m_enabledHasBeenSet = true; m_enabled = value; }
 
     /**
@@ -72,6 +78,11 @@ namespace Model
      * <p>The ID of the user who last changed the transition state.</p>
      */
     inline const Aws::String& GetLastChangedBy() const{ return m_lastChangedBy; }
+
+    /**
+     * <p>The ID of the user who last changed the transition state.</p>
+     */
+    inline bool LastChangedByHasBeenSet() const { return m_lastChangedByHasBeenSet; }
 
     /**
      * <p>The ID of the user who last changed the transition state.</p>
@@ -112,6 +123,11 @@ namespace Model
     /**
      * <p>The timestamp when the transition state was last changed.</p>
      */
+    inline bool LastChangedAtHasBeenSet() const { return m_lastChangedAtHasBeenSet; }
+
+    /**
+     * <p>The timestamp when the transition state was last changed.</p>
+     */
     inline void SetLastChangedAt(const Aws::Utils::DateTime& value) { m_lastChangedAtHasBeenSet = true; m_lastChangedAt = value; }
 
     /**
@@ -135,6 +151,12 @@ namespace Model
      * was disabled.</p>
      */
     inline const Aws::String& GetDisabledReason() const{ return m_disabledReason; }
+
+    /**
+     * <p>The user-specified reason why the transition between two stages of a pipeline
+     * was disabled.</p>
+     */
+    inline bool DisabledReasonHasBeenSet() const { return m_disabledReasonHasBeenSet; }
 
     /**
      * <p>The user-specified reason why the transition between two stages of a pipeline

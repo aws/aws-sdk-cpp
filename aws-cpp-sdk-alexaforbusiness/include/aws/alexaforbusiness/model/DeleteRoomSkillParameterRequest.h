@@ -54,6 +54,12 @@ namespace Model
      * <p>The ARN of the room from which to remove the room skill parameter
      * details.</p>
      */
+    inline bool RoomArnHasBeenSet() const { return m_roomArnHasBeenSet; }
+
+    /**
+     * <p>The ARN of the room from which to remove the room skill parameter
+     * details.</p>
+     */
     inline void SetRoomArn(const Aws::String& value) { m_roomArnHasBeenSet = true; m_roomArn = value; }
 
     /**
@@ -97,6 +103,12 @@ namespace Model
      * <p>The ID of the skill from which to remove the room skill parameter
      * details.</p>
      */
+    inline bool SkillIdHasBeenSet() const { return m_skillIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the skill from which to remove the room skill parameter
+     * details.</p>
+     */
     inline void SetSkillId(const Aws::String& value) { m_skillIdHasBeenSet = true; m_skillId = value; }
 
     /**
@@ -134,6 +146,11 @@ namespace Model
      * <p>The room skill parameter key for which to remove details.</p>
      */
     inline const Aws::String& GetParameterKey() const{ return m_parameterKey; }
+
+    /**
+     * <p>The room skill parameter key for which to remove details.</p>
+     */
+    inline bool ParameterKeyHasBeenSet() const { return m_parameterKeyHasBeenSet; }
 
     /**
      * <p>The room skill parameter key for which to remove details.</p>

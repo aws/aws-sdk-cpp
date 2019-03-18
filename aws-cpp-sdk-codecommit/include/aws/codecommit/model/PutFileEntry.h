@@ -61,6 +61,12 @@ namespace Model
      * <p>The full path to the file in the repository, including the name of the
      * file.</p>
      */
+    inline bool FilePathHasBeenSet() const { return m_filePathHasBeenSet; }
+
+    /**
+     * <p>The full path to the file in the repository, including the name of the
+     * file.</p>
+     */
     inline void SetFilePath(const Aws::String& value) { m_filePathHasBeenSet = true; m_filePath = value; }
 
     /**
@@ -104,6 +110,12 @@ namespace Model
      * <p>The extrapolated file mode permissions for the file. Valid values include
      * EXECUTABLE and NORMAL.</p>
      */
+    inline bool FileModeHasBeenSet() const { return m_fileModeHasBeenSet; }
+
+    /**
+     * <p>The extrapolated file mode permissions for the file. Valid values include
+     * EXECUTABLE and NORMAL.</p>
+     */
     inline void SetFileMode(const FileModeTypeEnum& value) { m_fileModeHasBeenSet = true; m_fileMode = value; }
 
     /**
@@ -133,6 +145,11 @@ namespace Model
     /**
      * <p>The content of the file, if a source file is not specified.</p>
      */
+    inline bool FileContentHasBeenSet() const { return m_fileContentHasBeenSet; }
+
+    /**
+     * <p>The content of the file, if a source file is not specified.</p>
+     */
     inline void SetFileContent(const Aws::Utils::ByteBuffer& value) { m_fileContentHasBeenSet = true; m_fileContent = value; }
 
     /**
@@ -156,6 +173,12 @@ namespace Model
      * as part of the commit, if you are not providing the file content directly.</p>
      */
     inline const SourceFileSpecifier& GetSourceFile() const{ return m_sourceFile; }
+
+    /**
+     * <p>The name and full path of the file that contains the changes you want to make
+     * as part of the commit, if you are not providing the file content directly.</p>
+     */
+    inline bool SourceFileHasBeenSet() const { return m_sourceFileHasBeenSet; }
 
     /**
      * <p>The name and full path of the file that contains the changes you want to make

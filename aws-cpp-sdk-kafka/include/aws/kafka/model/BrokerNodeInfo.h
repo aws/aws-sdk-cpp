@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The attached elastic network interface of the broker.</p>
      */
+    inline bool AttachedENIIdHasBeenSet() const { return m_attachedENIIdHasBeenSet; }
+
+    /**
+     * <p>The attached elastic network interface of the broker.</p>
+     */
     inline void SetAttachedENIId(const Aws::String& value) { m_attachedENIIdHasBeenSet = true; m_attachedENIId = value; }
 
     /**
@@ -92,6 +97,11 @@ namespace Model
     /**
      * <p>The ID of the broker.</p>
      */
+    inline bool BrokerIdHasBeenSet() const { return m_brokerIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the broker.</p>
+     */
     inline void SetBrokerId(double value) { m_brokerIdHasBeenSet = true; m_brokerId = value; }
 
     /**
@@ -104,6 +114,11 @@ namespace Model
      * <p>The client subnet to which this broker node belongs.</p>
      */
     inline const Aws::String& GetClientSubnet() const{ return m_clientSubnet; }
+
+    /**
+     * <p>The client subnet to which this broker node belongs.</p>
+     */
+    inline bool ClientSubnetHasBeenSet() const { return m_clientSubnetHasBeenSet; }
 
     /**
      * <p>The client subnet to which this broker node belongs.</p>
@@ -144,6 +159,11 @@ namespace Model
     /**
      * <p>The virtual private cloud (VPC) of the client.</p>
      */
+    inline bool ClientVpcIpAddressHasBeenSet() const { return m_clientVpcIpAddressHasBeenSet; }
+
+    /**
+     * <p>The virtual private cloud (VPC) of the client.</p>
+     */
     inline void SetClientVpcIpAddress(const Aws::String& value) { m_clientVpcIpAddressHasBeenSet = true; m_clientVpcIpAddress = value; }
 
     /**
@@ -177,6 +197,12 @@ namespace Model
      * brokers in the cluster.</p>
      */
     inline const BrokerSoftwareInfo& GetCurrentBrokerSoftwareInfo() const{ return m_currentBrokerSoftwareInfo; }
+
+    /**
+     * <p>Information about the version of software currently deployed on the Kafka
+     * brokers in the cluster.</p>
+     */
+    inline bool CurrentBrokerSoftwareInfoHasBeenSet() const { return m_currentBrokerSoftwareInfoHasBeenSet; }
 
     /**
      * <p>Information about the version of software currently deployed on the Kafka

@@ -59,6 +59,12 @@ namespace Model
      * <p>The account ID of the master Security Hub account who sent the invitation.
      * </p>
      */
+    inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
+
+    /**
+     * <p>The account ID of the master Security Hub account who sent the invitation.
+     * </p>
+     */
     inline void SetAccountId(const Aws::String& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
 
     /**
@@ -100,6 +106,11 @@ namespace Model
     /**
      * <p>The ID of the invitation sent by the master Security Hub account.</p>
      */
+    inline bool InvitationIdHasBeenSet() const { return m_invitationIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the invitation sent by the master Security Hub account.</p>
+     */
     inline void SetInvitationId(const Aws::String& value) { m_invitationIdHasBeenSet = true; m_invitationId = value; }
 
     /**
@@ -136,6 +147,11 @@ namespace Model
     /**
      * <p>The timestamp of when the invitation was sent.</p>
      */
+    inline bool InvitedAtHasBeenSet() const { return m_invitedAtHasBeenSet; }
+
+    /**
+     * <p>The timestamp of when the invitation was sent.</p>
+     */
     inline void SetInvitedAt(const Aws::Utils::DateTime& value) { m_invitedAtHasBeenSet = true; m_invitedAt = value; }
 
     /**
@@ -158,6 +174,11 @@ namespace Model
      * <p>The current relationship status between the inviter and invitee accounts.</p>
      */
     inline const Aws::String& GetMemberStatus() const{ return m_memberStatus; }
+
+    /**
+     * <p>The current relationship status between the inviter and invitee accounts.</p>
+     */
+    inline bool MemberStatusHasBeenSet() const { return m_memberStatusHasBeenSet; }
 
     /**
      * <p>The current relationship status between the inviter and invitee accounts.</p>

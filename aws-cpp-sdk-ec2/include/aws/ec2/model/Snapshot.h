@@ -74,6 +74,17 @@ namespace Model
      * lineage. This parameter is only returned by the <a>DescribeSnapshots</a> API
      * operation.</p>
      */
+    inline bool DataEncryptionKeyIdHasBeenSet() const { return m_dataEncryptionKeyIdHasBeenSet; }
+
+    /**
+     * <p>The data encryption key identifier for the snapshot. This value is a unique
+     * identifier that corresponds to the data encryption key that was used to encrypt
+     * the original volume or snapshot copy. Because data encryption keys are inherited
+     * by volumes created from snapshots, and vice versa, if snapshots share the same
+     * data encryption key identifier, then they belong to the same volume/snapshot
+     * lineage. This parameter is only returned by the <a>DescribeSnapshots</a> API
+     * operation.</p>
+     */
     inline void SetDataEncryptionKeyId(const Aws::String& value) { m_dataEncryptionKeyIdHasBeenSet = true; m_dataEncryptionKeyId = value; }
 
     /**
@@ -140,6 +151,11 @@ namespace Model
     /**
      * <p>The description for the snapshot.</p>
      */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
+
+    /**
+     * <p>The description for the snapshot.</p>
+     */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
@@ -176,6 +192,11 @@ namespace Model
     /**
      * <p>Indicates whether the snapshot is encrypted.</p>
      */
+    inline bool EncryptedHasBeenSet() const { return m_encryptedHasBeenSet; }
+
+    /**
+     * <p>Indicates whether the snapshot is encrypted.</p>
+     */
     inline void SetEncrypted(bool value) { m_encryptedHasBeenSet = true; m_encrypted = value; }
 
     /**
@@ -190,6 +211,13 @@ namespace Model
      * volume.</p>
      */
     inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
+
+    /**
+     * <p>The full ARN of the AWS Key Management Service (AWS KMS) customer master key
+     * (CMK) that was used to protect the volume encryption key for the parent
+     * volume.</p>
+     */
+    inline bool KmsKeyIdHasBeenSet() const { return m_kmsKeyIdHasBeenSet; }
 
     /**
      * <p>The full ARN of the AWS Key Management Service (AWS KMS) customer master key
@@ -242,6 +270,11 @@ namespace Model
     /**
      * <p>The AWS account ID of the EBS snapshot owner.</p>
      */
+    inline bool OwnerIdHasBeenSet() const { return m_ownerIdHasBeenSet; }
+
+    /**
+     * <p>The AWS account ID of the EBS snapshot owner.</p>
+     */
     inline void SetOwnerId(const Aws::String& value) { m_ownerIdHasBeenSet = true; m_ownerId = value; }
 
     /**
@@ -274,6 +307,11 @@ namespace Model
      * <p>The progress of the snapshot, as a percentage.</p>
      */
     inline const Aws::String& GetProgress() const{ return m_progress; }
+
+    /**
+     * <p>The progress of the snapshot, as a percentage.</p>
+     */
+    inline bool ProgressHasBeenSet() const { return m_progressHasBeenSet; }
 
     /**
      * <p>The progress of the snapshot, as a percentage.</p>
@@ -311,6 +349,12 @@ namespace Model
      * created.</p>
      */
     inline const Aws::String& GetSnapshotId() const{ return m_snapshotId; }
+
+    /**
+     * <p>The ID of the snapshot. Each snapshot receives a unique identifier when it is
+     * created.</p>
+     */
+    inline bool SnapshotIdHasBeenSet() const { return m_snapshotIdHasBeenSet; }
 
     /**
      * <p>The ID of the snapshot. Each snapshot receives a unique identifier when it is
@@ -357,6 +401,11 @@ namespace Model
     /**
      * <p>The time stamp when the snapshot was initiated.</p>
      */
+    inline bool StartTimeHasBeenSet() const { return m_startTimeHasBeenSet; }
+
+    /**
+     * <p>The time stamp when the snapshot was initiated.</p>
+     */
     inline void SetStartTime(const Aws::Utils::DateTime& value) { m_startTimeHasBeenSet = true; m_startTime = value; }
 
     /**
@@ -379,6 +428,11 @@ namespace Model
      * <p>The snapshot state.</p>
      */
     inline const SnapshotState& GetState() const{ return m_state; }
+
+    /**
+     * <p>The snapshot state.</p>
+     */
+    inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
 
     /**
      * <p>The snapshot state.</p>
@@ -409,6 +463,15 @@ namespace Model
      * <a>DescribeSnapshots</a> API operation.</p>
      */
     inline const Aws::String& GetStateMessage() const{ return m_stateMessage; }
+
+    /**
+     * <p>Encrypted Amazon EBS snapshots are copied asynchronously. If a snapshot copy
+     * operation fails (for example, if the proper AWS Key Management Service (AWS KMS)
+     * permissions are not obtained) this field displays error state details to help
+     * you diagnose why the error occurred. This parameter is only returned by the
+     * <a>DescribeSnapshots</a> API operation.</p>
+     */
+    inline bool StateMessageHasBeenSet() const { return m_stateMessageHasBeenSet; }
 
     /**
      * <p>Encrypted Amazon EBS snapshots are copied asynchronously. If a snapshot copy
@@ -477,6 +540,13 @@ namespace Model
      * by the <a>CopySnapshot</a> action have an arbitrary volume ID that should not be
      * used for any purpose.</p>
      */
+    inline bool VolumeIdHasBeenSet() const { return m_volumeIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the volume that was used to create the snapshot. Snapshots created
+     * by the <a>CopySnapshot</a> action have an arbitrary volume ID that should not be
+     * used for any purpose.</p>
+     */
     inline void SetVolumeId(const Aws::String& value) { m_volumeIdHasBeenSet = true; m_volumeId = value; }
 
     /**
@@ -523,6 +593,11 @@ namespace Model
     /**
      * <p>The size of the volume, in GiB.</p>
      */
+    inline bool VolumeSizeHasBeenSet() const { return m_volumeSizeHasBeenSet; }
+
+    /**
+     * <p>The size of the volume, in GiB.</p>
+     */
     inline void SetVolumeSize(int value) { m_volumeSizeHasBeenSet = true; m_volumeSize = value; }
 
     /**
@@ -538,6 +613,14 @@ namespace Model
      * IAM console. </p>
      */
     inline const Aws::String& GetOwnerAlias() const{ return m_ownerAlias; }
+
+    /**
+     * <p> Value from an Amazon-maintained list (<code>amazon</code> |
+     * <code>aws-marketplace</code> | <code>microsoft</code>) of snapshot owners. Not
+     * to be confused with the user-configured AWS account alias, which is set from the
+     * IAM console. </p>
+     */
+    inline bool OwnerAliasHasBeenSet() const { return m_ownerAliasHasBeenSet; }
 
     /**
      * <p> Value from an Amazon-maintained list (<code>amazon</code> |
@@ -596,6 +679,11 @@ namespace Model
     /**
      * <p>Any tags assigned to the snapshot.</p>
      */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
+
+    /**
+     * <p>Any tags assigned to the snapshot.</p>
+     */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     /**
@@ -626,6 +714,9 @@ namespace Model
 
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
+
+    
+    inline bool ResponseMetadataHasBeenSet() const { return m_responseMetadataHasBeenSet; }
 
     
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = value; }

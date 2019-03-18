@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p>The Amazon S3 bucket that contains the input document.</p>
      */
+    inline bool S3ObjectHasBeenSet() const { return m_s3ObjectHasBeenSet; }
+
+    /**
+     * <p>The Amazon S3 bucket that contains the input document.</p>
+     */
     inline void SetS3Object(const S3Object& value) { m_s3ObjectHasBeenSet = true; m_s3Object = value; }
 
     /**

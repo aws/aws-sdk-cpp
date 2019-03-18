@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The owner of the security group.</p>
      */
+    inline bool OwnerAliasHasBeenSet() const { return m_ownerAliasHasBeenSet; }
+
+    /**
+     * <p>The owner of the security group.</p>
+     */
     inline void SetOwnerAlias(const Aws::String& value) { m_ownerAliasHasBeenSet = true; m_ownerAlias = value; }
 
     /**
@@ -89,6 +94,11 @@ namespace Model
      * <p>The name of the security group.</p>
      */
     inline const Aws::String& GetGroupName() const{ return m_groupName; }
+
+    /**
+     * <p>The name of the security group.</p>
+     */
+    inline bool GroupNameHasBeenSet() const { return m_groupNameHasBeenSet; }
 
     /**
      * <p>The name of the security group.</p>

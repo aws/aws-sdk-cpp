@@ -64,6 +64,11 @@ namespace Model
     /**
      * <p>The short name you specified to represent this metric.</p>
      */
+    inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
+
+    /**
+     * <p>The short name you specified to represent this metric.</p>
+     */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
     /**
@@ -96,6 +101,11 @@ namespace Model
      * <p>The human-readable label associated with the data.</p>
      */
     inline const Aws::String& GetLabel() const{ return m_label; }
+
+    /**
+     * <p>The human-readable label associated with the data.</p>
+     */
+    inline bool LabelHasBeenSet() const { return m_labelHasBeenSet; }
 
     /**
      * <p>The human-readable label associated with the data.</p>
@@ -134,6 +144,13 @@ namespace Model
      * Timestamps[x] is Values[x].</p>
      */
     inline const Aws::Vector<Aws::Utils::DateTime>& GetTimestamps() const{ return m_timestamps; }
+
+    /**
+     * <p>The timestamps for the data points, formatted in Unix timestamp format. The
+     * number of timestamps always matches the number of values and the value for
+     * Timestamps[x] is Values[x].</p>
+     */
+    inline bool TimestampsHasBeenSet() const { return m_timestampsHasBeenSet; }
 
     /**
      * <p>The timestamps for the data points, formatted in Unix timestamp format. The
@@ -184,6 +201,13 @@ namespace Model
      * Values[x] is Timestamps[x].</p>
      */
     inline const Aws::Vector<double>& GetValues() const{ return m_values; }
+
+    /**
+     * <p>The data points for the metric corresponding to <code>Timestamps</code>. The
+     * number of values always matches the number of timestamps and the timestamp for
+     * Values[x] is Timestamps[x].</p>
+     */
+    inline bool ValuesHasBeenSet() const { return m_valuesHasBeenSet; }
 
     /**
      * <p>The data points for the metric corresponding to <code>Timestamps</code>. The
@@ -241,6 +265,17 @@ namespace Model
      * math expression. <code>InternalError</code> indicates that an error occurred.
      * Retry your request using <code>NextToken</code>, if present.</p>
      */
+    inline bool StatusCodeHasBeenSet() const { return m_statusCodeHasBeenSet; }
+
+    /**
+     * <p>The status of the returned data. <code>Complete</code> indicates that all
+     * data points in the requested time range were returned. <code>PartialData</code>
+     * means that an incomplete set of data points were returned. You can use the
+     * <code>NextToken</code> value that was returned and repeat your request to get
+     * more data points. <code>NextToken</code> is not returned if you are performing a
+     * math expression. <code>InternalError</code> indicates that an error occurred.
+     * Retry your request using <code>NextToken</code>, if present.</p>
+     */
     inline void SetStatusCode(const StatusCode& value) { m_statusCodeHasBeenSet = true; m_statusCode = value; }
 
     /**
@@ -281,6 +316,11 @@ namespace Model
      * <p>A list of messages with additional information about the data returned.</p>
      */
     inline const Aws::Vector<MessageData>& GetMessages() const{ return m_messages; }
+
+    /**
+     * <p>A list of messages with additional information about the data returned.</p>
+     */
+    inline bool MessagesHasBeenSet() const { return m_messagesHasBeenSet; }
 
     /**
      * <p>A list of messages with additional information about the data returned.</p>

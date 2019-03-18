@@ -51,6 +51,11 @@ namespace Model
     /**
      * <p>The Amazon Chime account ID.</p>
      */
+    inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
+
+    /**
+     * <p>The Amazon Chime account ID.</p>
+     */
     inline void SetAccountId(const Aws::String& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
 
     /**
@@ -83,6 +88,11 @@ namespace Model
      * <p>The request containing the user IDs to suspend.</p>
      */
     inline const Aws::Vector<Aws::String>& GetUserIdList() const{ return m_userIdList; }
+
+    /**
+     * <p>The request containing the user IDs to suspend.</p>
+     */
+    inline bool UserIdListHasBeenSet() const { return m_userIdListHasBeenSet; }
 
     /**
      * <p>The request containing the user IDs to suspend.</p>

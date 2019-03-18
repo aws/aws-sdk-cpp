@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p>The type of storage connector.</p>
      */
+    inline bool ConnectorTypeHasBeenSet() const { return m_connectorTypeHasBeenSet; }
+
+    /**
+     * <p>The type of storage connector.</p>
+     */
     inline void SetConnectorType(const StorageConnectorType& value) { m_connectorTypeHasBeenSet = true; m_connectorType = value; }
 
     /**
@@ -80,6 +85,11 @@ namespace Model
      * <p>The ARN of the storage connector.</p>
      */
     inline const Aws::String& GetResourceIdentifier() const{ return m_resourceIdentifier; }
+
+    /**
+     * <p>The ARN of the storage connector.</p>
+     */
+    inline bool ResourceIdentifierHasBeenSet() const { return m_resourceIdentifierHasBeenSet; }
 
     /**
      * <p>The ARN of the storage connector.</p>
@@ -116,6 +126,11 @@ namespace Model
      * <p>The names of the domains for the account.</p>
      */
     inline const Aws::Vector<Aws::String>& GetDomains() const{ return m_domains; }
+
+    /**
+     * <p>The names of the domains for the account.</p>
+     */
+    inline bool DomainsHasBeenSet() const { return m_domainsHasBeenSet; }
 
     /**
      * <p>The names of the domains for the account.</p>

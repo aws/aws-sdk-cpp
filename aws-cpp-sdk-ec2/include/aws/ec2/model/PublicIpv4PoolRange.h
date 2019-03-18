@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p>The first IP address in the range.</p>
      */
+    inline bool FirstAddressHasBeenSet() const { return m_firstAddressHasBeenSet; }
+
+    /**
+     * <p>The first IP address in the range.</p>
+     */
     inline void SetFirstAddress(const Aws::String& value) { m_firstAddressHasBeenSet = true; m_firstAddress = value; }
 
     /**
@@ -90,6 +95,11 @@ namespace Model
      * <p>The last IP address in the range.</p>
      */
     inline const Aws::String& GetLastAddress() const{ return m_lastAddress; }
+
+    /**
+     * <p>The last IP address in the range.</p>
+     */
+    inline bool LastAddressHasBeenSet() const { return m_lastAddressHasBeenSet; }
 
     /**
      * <p>The last IP address in the range.</p>
@@ -130,6 +140,11 @@ namespace Model
     /**
      * <p>The number of addresses in the range.</p>
      */
+    inline bool AddressCountHasBeenSet() const { return m_addressCountHasBeenSet; }
+
+    /**
+     * <p>The number of addresses in the range.</p>
+     */
     inline void SetAddressCount(int value) { m_addressCountHasBeenSet = true; m_addressCount = value; }
 
     /**
@@ -142,6 +157,11 @@ namespace Model
      * <p>The number of available addresses in the range.</p>
      */
     inline int GetAvailableAddressCount() const{ return m_availableAddressCount; }
+
+    /**
+     * <p>The number of available addresses in the range.</p>
+     */
+    inline bool AvailableAddressCountHasBeenSet() const { return m_availableAddressCountHasBeenSet; }
 
     /**
      * <p>The number of available addresses in the range.</p>

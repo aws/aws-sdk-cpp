@@ -63,6 +63,11 @@ namespace Model
     /**
      * <p>The ARN of the application.</p>
      */
+    inline bool ApplicationARNHasBeenSet() const { return m_applicationARNHasBeenSet; }
+
+    /**
+     * <p>The ARN of the application.</p>
+     */
     inline void SetApplicationARN(const Aws::String& value) { m_applicationARNHasBeenSet = true; m_applicationARN = value; }
 
     /**
@@ -99,6 +104,11 @@ namespace Model
     /**
      * <p>The description of the application.</p>
      */
+    inline bool ApplicationDescriptionHasBeenSet() const { return m_applicationDescriptionHasBeenSet; }
+
+    /**
+     * <p>The description of the application.</p>
+     */
     inline void SetApplicationDescription(const Aws::String& value) { m_applicationDescriptionHasBeenSet = true; m_applicationDescription = value; }
 
     /**
@@ -131,6 +141,11 @@ namespace Model
      * <p>The name of the application.</p>
      */
     inline const Aws::String& GetApplicationName() const{ return m_applicationName; }
+
+    /**
+     * <p>The name of the application.</p>
+     */
+    inline bool ApplicationNameHasBeenSet() const { return m_applicationNameHasBeenSet; }
 
     /**
      * <p>The name of the application.</p>
@@ -173,6 +188,12 @@ namespace Model
      * <p>The runtime environment for the application (<code>SQL-1.0</code> or
      * <code>JAVA-8-FLINK-1.5</code>).</p>
      */
+    inline bool RuntimeEnvironmentHasBeenSet() const { return m_runtimeEnvironmentHasBeenSet; }
+
+    /**
+     * <p>The runtime environment for the application (<code>SQL-1.0</code> or
+     * <code>JAVA-8-FLINK-1.5</code>).</p>
+     */
     inline void SetRuntimeEnvironment(const RuntimeEnvironment& value) { m_runtimeEnvironmentHasBeenSet = true; m_runtimeEnvironment = value; }
 
     /**
@@ -199,6 +220,12 @@ namespace Model
      * resources.</p>
      */
     inline const Aws::String& GetServiceExecutionRole() const{ return m_serviceExecutionRole; }
+
+    /**
+     * <p>Specifies the IAM role that the application uses to access external
+     * resources.</p>
+     */
+    inline bool ServiceExecutionRoleHasBeenSet() const { return m_serviceExecutionRoleHasBeenSet; }
 
     /**
      * <p>Specifies the IAM role that the application uses to access external
@@ -245,6 +272,11 @@ namespace Model
     /**
      * <p>The status of the application.</p>
      */
+    inline bool ApplicationStatusHasBeenSet() const { return m_applicationStatusHasBeenSet; }
+
+    /**
+     * <p>The status of the application.</p>
+     */
     inline void SetApplicationStatus(const ApplicationStatus& value) { m_applicationStatusHasBeenSet = true; m_applicationStatus = value; }
 
     /**
@@ -273,6 +305,12 @@ namespace Model
      * <p>Provides the current application version. Kinesis Data Analytics updates the
      * <code>ApplicationVersionId</code> each time you update the application.</p>
      */
+    inline bool ApplicationVersionIdHasBeenSet() const { return m_applicationVersionIdHasBeenSet; }
+
+    /**
+     * <p>Provides the current application version. Kinesis Data Analytics updates the
+     * <code>ApplicationVersionId</code> each time you update the application.</p>
+     */
     inline void SetApplicationVersionId(long long value) { m_applicationVersionIdHasBeenSet = true; m_applicationVersionId = value; }
 
     /**
@@ -286,6 +324,11 @@ namespace Model
      * <p>The current timestamp when the application was created.</p>
      */
     inline const Aws::Utils::DateTime& GetCreateTimestamp() const{ return m_createTimestamp; }
+
+    /**
+     * <p>The current timestamp when the application was created.</p>
+     */
+    inline bool CreateTimestampHasBeenSet() const { return m_createTimestampHasBeenSet; }
 
     /**
      * <p>The current timestamp when the application was created.</p>
@@ -312,6 +355,11 @@ namespace Model
      * <p>The current timestamp when the application was last updated.</p>
      */
     inline const Aws::Utils::DateTime& GetLastUpdateTimestamp() const{ return m_lastUpdateTimestamp; }
+
+    /**
+     * <p>The current timestamp when the application was last updated.</p>
+     */
+    inline bool LastUpdateTimestampHasBeenSet() const { return m_lastUpdateTimestampHasBeenSet; }
 
     /**
      * <p>The current timestamp when the application was last updated.</p>
@@ -344,6 +392,12 @@ namespace Model
      * <p>Provides details about the application's SQL or Java code and starting
      * parameters.</p>
      */
+    inline bool ApplicationConfigurationDescriptionHasBeenSet() const { return m_applicationConfigurationDescriptionHasBeenSet; }
+
+    /**
+     * <p>Provides details about the application's SQL or Java code and starting
+     * parameters.</p>
+     */
     inline void SetApplicationConfigurationDescription(const ApplicationConfigurationDescription& value) { m_applicationConfigurationDescriptionHasBeenSet = true; m_applicationConfigurationDescription = value; }
 
     /**
@@ -369,6 +423,11 @@ namespace Model
      * <p>Describes the application Amazon CloudWatch logging options.</p>
      */
     inline const Aws::Vector<CloudWatchLoggingOptionDescription>& GetCloudWatchLoggingOptionDescriptions() const{ return m_cloudWatchLoggingOptionDescriptions; }
+
+    /**
+     * <p>Describes the application Amazon CloudWatch logging options.</p>
+     */
+    inline bool CloudWatchLoggingOptionDescriptionsHasBeenSet() const { return m_cloudWatchLoggingOptionDescriptionsHasBeenSet; }
 
     /**
      * <p>Describes the application Amazon CloudWatch logging options.</p>

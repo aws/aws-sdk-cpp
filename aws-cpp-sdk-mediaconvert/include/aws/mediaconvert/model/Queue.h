@@ -65,6 +65,11 @@ namespace Model
     /**
      * An identifier for this resource that is unique within all of AWS.
      */
+    inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
+
+    /**
+     * An identifier for this resource that is unique within all of AWS.
+     */
     inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
 
     /**
@@ -101,6 +106,11 @@ namespace Model
     /**
      * The timestamp in epoch seconds for when you created the queue.
      */
+    inline bool CreatedAtHasBeenSet() const { return m_createdAtHasBeenSet; }
+
+    /**
+     * The timestamp in epoch seconds for when you created the queue.
+     */
     inline void SetCreatedAt(const Aws::Utils::DateTime& value) { m_createdAtHasBeenSet = true; m_createdAt = value; }
 
     /**
@@ -123,6 +133,11 @@ namespace Model
      * An optional description that you create for each queue.
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
+
+    /**
+     * An optional description that you create for each queue.
+     */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
 
     /**
      * An optional description that you create for each queue.
@@ -163,6 +178,11 @@ namespace Model
     /**
      * The timestamp in epoch seconds for when you most recently updated the queue.
      */
+    inline bool LastUpdatedHasBeenSet() const { return m_lastUpdatedHasBeenSet; }
+
+    /**
+     * The timestamp in epoch seconds for when you most recently updated the queue.
+     */
     inline void SetLastUpdated(const Aws::Utils::DateTime& value) { m_lastUpdatedHasBeenSet = true; m_lastUpdated = value; }
 
     /**
@@ -186,6 +206,12 @@ namespace Model
      * account.
      */
     inline const Aws::String& GetName() const{ return m_name; }
+
+    /**
+     * A name that you create for each queue. Each name must be unique within your
+     * account.
+     */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
      * A name that you create for each queue. Each name must be unique within your
@@ -238,6 +264,14 @@ namespace Model
      * you pay for the transcoding capacity of the entire queue, regardless of how much
      * or how little you use it. Reserved pricing requires a 12-month commitment.
      */
+    inline bool PricingPlanHasBeenSet() const { return m_pricingPlanHasBeenSet; }
+
+    /**
+     * Specifies whether the pricing plan for the queue is on-demand or reserved. For
+     * on-demand, you pay per minute, billed in increments of .01 minute. For reserved,
+     * you pay for the transcoding capacity of the entire queue, regardless of how much
+     * or how little you use it. Reserved pricing requires a 12-month commitment.
+     */
     inline void SetPricingPlan(const PricingPlan& value) { m_pricingPlanHasBeenSet = true; m_pricingPlan = value; }
 
     /**
@@ -273,6 +307,11 @@ namespace Model
     /**
      * The estimated number of jobs with a PROGRESSING status.
      */
+    inline bool ProgressingJobsCountHasBeenSet() const { return m_progressingJobsCountHasBeenSet; }
+
+    /**
+     * The estimated number of jobs with a PROGRESSING status.
+     */
     inline void SetProgressingJobsCount(int value) { m_progressingJobsCountHasBeenSet = true; m_progressingJobsCount = value; }
 
     /**
@@ -286,6 +325,12 @@ namespace Model
      * queues and not applicable to on-demand queues.
      */
     inline const ReservationPlan& GetReservationPlan() const{ return m_reservationPlan; }
+
+    /**
+     * Details about the pricing plan for your reserved queue. Required for reserved
+     * queues and not applicable to on-demand queues.
+     */
+    inline bool ReservationPlanHasBeenSet() const { return m_reservationPlanHasBeenSet; }
 
     /**
      * Details about the pricing plan for your reserved queue. Required for reserved
@@ -324,6 +369,13 @@ namespace Model
      * processing jobs in that queue. Jobs that are running when you pause the queue
      * continue to run until they finish or result in an error.
      */
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
+
+    /**
+     * Queues can be ACTIVE or PAUSED. If you pause a queue, the service won't begin
+     * processing jobs in that queue. Jobs that are running when you pause the queue
+     * continue to run until they finish or result in an error.
+     */
     inline void SetStatus(const QueueStatus& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
@@ -356,6 +408,11 @@ namespace Model
     /**
      * The estimated number of jobs with a SUBMITTED status.
      */
+    inline bool SubmittedJobsCountHasBeenSet() const { return m_submittedJobsCountHasBeenSet; }
+
+    /**
+     * The estimated number of jobs with a SUBMITTED status.
+     */
     inline void SetSubmittedJobsCount(int value) { m_submittedJobsCountHasBeenSet = true; m_submittedJobsCount = value; }
 
     /**
@@ -370,6 +427,13 @@ namespace Model
      * custom queues.
      */
     inline const Type& GetType() const{ return m_type; }
+
+    /**
+     * Specifies whether this on-demand queue is system or custom. System queues are
+     * built in. You can't modify or delete system queues. You can create and modify
+     * custom queues.
+     */
+    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
 
     /**
      * Specifies whether this on-demand queue is system or custom. System queues are

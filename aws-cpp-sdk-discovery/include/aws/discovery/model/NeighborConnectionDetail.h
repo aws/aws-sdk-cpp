@@ -55,6 +55,11 @@ namespace Model
     /**
      * <p>The ID of the server that opened the network connection.</p>
      */
+    inline bool SourceServerIdHasBeenSet() const { return m_sourceServerIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the server that opened the network connection.</p>
+     */
     inline void SetSourceServerId(const Aws::String& value) { m_sourceServerIdHasBeenSet = true; m_sourceServerId = value; }
 
     /**
@@ -87,6 +92,11 @@ namespace Model
      * <p>The ID of the server that accepted the network connection.</p>
      */
     inline const Aws::String& GetDestinationServerId() const{ return m_destinationServerId; }
+
+    /**
+     * <p>The ID of the server that accepted the network connection.</p>
+     */
+    inline bool DestinationServerIdHasBeenSet() const { return m_destinationServerIdHasBeenSet; }
 
     /**
      * <p>The ID of the server that accepted the network connection.</p>
@@ -127,6 +137,11 @@ namespace Model
     /**
      * <p>The destination network port for the connection.</p>
      */
+    inline bool DestinationPortHasBeenSet() const { return m_destinationPortHasBeenSet; }
+
+    /**
+     * <p>The destination network port for the connection.</p>
+     */
     inline void SetDestinationPort(int value) { m_destinationPortHasBeenSet = true; m_destinationPort = value; }
 
     /**
@@ -139,6 +154,11 @@ namespace Model
      * <p>The network protocol used for the connection.</p>
      */
     inline const Aws::String& GetTransportProtocol() const{ return m_transportProtocol; }
+
+    /**
+     * <p>The network protocol used for the connection.</p>
+     */
+    inline bool TransportProtocolHasBeenSet() const { return m_transportProtocolHasBeenSet; }
 
     /**
      * <p>The network protocol used for the connection.</p>
@@ -175,6 +195,11 @@ namespace Model
      * <p>The number of open network connections with the neighboring server.</p>
      */
     inline long long GetConnectionsCount() const{ return m_connectionsCount; }
+
+    /**
+     * <p>The number of open network connections with the neighboring server.</p>
+     */
+    inline bool ConnectionsCountHasBeenSet() const { return m_connectionsCountHasBeenSet; }
 
     /**
      * <p>The number of open network connections with the neighboring server.</p>

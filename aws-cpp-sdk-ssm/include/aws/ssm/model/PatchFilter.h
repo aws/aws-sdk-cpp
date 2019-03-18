@@ -214,6 +214,12 @@ namespace Model
      * <p>The key for the filter.</p> <p>See <a>PatchFilter</a> for lists of valid keys
      * for each operating system type.</p>
      */
+    inline bool KeyHasBeenSet() const { return m_keyHasBeenSet; }
+
+    /**
+     * <p>The key for the filter.</p> <p>See <a>PatchFilter</a> for lists of valid keys
+     * for each operating system type.</p>
+     */
     inline void SetKey(const PatchFilterKey& value) { m_keyHasBeenSet = true; m_key = value; }
 
     /**
@@ -240,6 +246,12 @@ namespace Model
      * valid values for each key based on operating system type.</p>
      */
     inline const Aws::Vector<Aws::String>& GetValues() const{ return m_values; }
+
+    /**
+     * <p>The value for the filter key.</p> <p>See <a>PatchFilter</a> for lists of
+     * valid values for each key based on operating system type.</p>
+     */
+    inline bool ValuesHasBeenSet() const { return m_valuesHasBeenSet; }
 
     /**
      * <p>The value for the filter key.</p> <p>See <a>PatchFilter</a> for lists of

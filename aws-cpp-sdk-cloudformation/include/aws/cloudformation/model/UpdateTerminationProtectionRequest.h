@@ -54,6 +54,11 @@ namespace Model
     /**
      * <p>Whether to enable termination protection on the specified stack.</p>
      */
+    inline bool EnableTerminationProtectionHasBeenSet() const { return m_enableTerminationProtectionHasBeenSet; }
+
+    /**
+     * <p>Whether to enable termination protection on the specified stack.</p>
+     */
     inline void SetEnableTerminationProtection(bool value) { m_enableTerminationProtectionHasBeenSet = true; m_enableTerminationProtection = value; }
 
     /**
@@ -67,6 +72,12 @@ namespace Model
      * protection.</p>
      */
     inline const Aws::String& GetStackName() const{ return m_stackName; }
+
+    /**
+     * <p>The name or unique ID of the stack for which you want to set termination
+     * protection.</p>
+     */
+    inline bool StackNameHasBeenSet() const { return m_stackNameHasBeenSet; }
 
     /**
      * <p>The name or unique ID of the stack for which you want to set termination

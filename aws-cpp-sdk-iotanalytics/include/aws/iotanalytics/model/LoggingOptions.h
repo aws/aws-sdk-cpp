@@ -58,6 +58,12 @@ namespace Model
      * <p>The ARN of the role that grants permission to AWS IoT Analytics to perform
      * logging.</p>
      */
+    inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
+
+    /**
+     * <p>The ARN of the role that grants permission to AWS IoT Analytics to perform
+     * logging.</p>
+     */
     inline void SetRoleArn(const Aws::String& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
 
     /**
@@ -99,6 +105,11 @@ namespace Model
     /**
      * <p>The logging level. Currently, only "ERROR" is supported.</p>
      */
+    inline bool LevelHasBeenSet() const { return m_levelHasBeenSet; }
+
+    /**
+     * <p>The logging level. Currently, only "ERROR" is supported.</p>
+     */
     inline void SetLevel(const LoggingLevel& value) { m_levelHasBeenSet = true; m_level = value; }
 
     /**
@@ -121,6 +132,11 @@ namespace Model
      * <p>If true, logging is enabled for AWS IoT Analytics.</p>
      */
     inline bool GetEnabled() const{ return m_enabled; }
+
+    /**
+     * <p>If true, logging is enabled for AWS IoT Analytics.</p>
+     */
+    inline bool EnabledHasBeenSet() const { return m_enabledHasBeenSet; }
 
     /**
      * <p>If true, logging is enabled for AWS IoT Analytics.</p>

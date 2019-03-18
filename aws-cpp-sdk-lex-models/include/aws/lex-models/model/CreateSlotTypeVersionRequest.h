@@ -52,6 +52,12 @@ namespace Model
      * <p>The name of the slot type that you want to create a new version for. The name
      * is case sensitive. </p>
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>The name of the slot type that you want to create a new version for. The name
+     * is case sensitive. </p>
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
@@ -94,6 +100,16 @@ namespace Model
      * <code>$LATEST</code> version.</p>
      */
     inline const Aws::String& GetChecksum() const{ return m_checksum; }
+
+    /**
+     * <p>Checksum for the <code>$LATEST</code> version of the slot type that you want
+     * to publish. If you specify a checksum and the <code>$LATEST</code> version of
+     * the slot type has a different checksum, Amazon Lex returns a
+     * <code>PreconditionFailedException</code> exception and doesn't publish the new
+     * version. If you don't specify a checksum, Amazon Lex publishes the
+     * <code>$LATEST</code> version.</p>
+     */
+    inline bool ChecksumHasBeenSet() const { return m_checksumHasBeenSet; }
 
     /**
      * <p>Checksum for the <code>$LATEST</code> version of the slot type that you want

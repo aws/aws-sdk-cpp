@@ -65,6 +65,15 @@ namespace Model
      * up to remove actions with a start time of more than 1 hour ago (approximately)
      * so at that point a name can be reused.
      */
+    inline bool ActionNameHasBeenSet() const { return m_actionNameHasBeenSet; }
+
+    /**
+     * The name of the action, must be unique within the schedule. This name provides
+     * the main reference to an action once it is added to the schedule. A name is
+     * unique if it is no longer in the schedule. The schedule is automatically cleaned
+     * up to remove actions with a start time of more than 1 hour ago (approximately)
+     * so at that point a name can be reused.
+     */
     inline void SetActionName(const Aws::String& value) { m_actionNameHasBeenSet = true; m_actionName = value; }
 
     /**
@@ -121,6 +130,11 @@ namespace Model
     /**
      * Settings for this schedule action.
      */
+    inline bool ScheduleActionSettingsHasBeenSet() const { return m_scheduleActionSettingsHasBeenSet; }
+
+    /**
+     * Settings for this schedule action.
+     */
     inline void SetScheduleActionSettings(const ScheduleActionSettings& value) { m_scheduleActionSettingsHasBeenSet = true; m_scheduleActionSettings = value; }
 
     /**
@@ -143,6 +157,11 @@ namespace Model
      * The time for the action to start in the channel.
      */
     inline const ScheduleActionStartSettings& GetScheduleActionStartSettings() const{ return m_scheduleActionStartSettings; }
+
+    /**
+     * The time for the action to start in the channel.
+     */
+    inline bool ScheduleActionStartSettingsHasBeenSet() const { return m_scheduleActionStartSettingsHasBeenSet; }
 
     /**
      * The time for the action to start in the channel.

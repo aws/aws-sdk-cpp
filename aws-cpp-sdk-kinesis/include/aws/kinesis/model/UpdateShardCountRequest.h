@@ -53,6 +53,11 @@ namespace Model
     /**
      * <p>The name of the stream.</p>
      */
+    inline bool StreamNameHasBeenSet() const { return m_streamNameHasBeenSet; }
+
+    /**
+     * <p>The name of the stream.</p>
+     */
     inline void SetStreamName(const Aws::String& value) { m_streamNameHasBeenSet = true; m_streamName = value; }
 
     /**
@@ -89,6 +94,11 @@ namespace Model
     /**
      * <p>The new number of shards.</p>
      */
+    inline bool TargetShardCountHasBeenSet() const { return m_targetShardCountHasBeenSet; }
+
+    /**
+     * <p>The new number of shards.</p>
+     */
     inline void SetTargetShardCount(int value) { m_targetShardCountHasBeenSet = true; m_targetShardCount = value; }
 
     /**
@@ -101,6 +111,11 @@ namespace Model
      * <p>The scaling type. Uniform scaling creates shards of equal size.</p>
      */
     inline const ScalingType& GetScalingType() const{ return m_scalingType; }
+
+    /**
+     * <p>The scaling type. Uniform scaling creates shards of equal size.</p>
+     */
+    inline bool ScalingTypeHasBeenSet() const { return m_scalingTypeHasBeenSet; }
 
     /**
      * <p>The scaling type. Uniform scaling creates shards of equal size.</p>

@@ -59,6 +59,13 @@ namespace Model
      * identifies the rule set it uses by this name value. (Note: The rule set name is
      * different from the optional "name" field in the rule set body.) </p>
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>Unique identifier for a matchmaking rule set. A matchmaking configuration
+     * identifies the rule set it uses by this name value. (Note: The rule set name is
+     * different from the optional "name" field in the rule set body.) </p>
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
@@ -103,6 +110,13 @@ namespace Model
      * field.</p>
      */
     inline const Aws::String& GetRuleSetBody() const{ return m_ruleSetBody; }
+
+    /**
+     * <p>Collection of matchmaking rules, formatted as a JSON string. Note that
+     * comments are not allowed in JSON, but most elements support a description
+     * field.</p>
+     */
+    inline bool RuleSetBodyHasBeenSet() const { return m_ruleSetBodyHasBeenSet; }
 
     /**
      * <p>Collection of matchmaking rules, formatted as a JSON string. Note that

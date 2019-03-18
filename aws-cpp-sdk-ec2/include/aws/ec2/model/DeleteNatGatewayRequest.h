@@ -54,6 +54,11 @@ namespace Model
     /**
      * <p>The ID of the NAT gateway.</p>
      */
+    inline bool NatGatewayIdHasBeenSet() const { return m_natGatewayIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the NAT gateway.</p>
+     */
     inline void SetNatGatewayId(const Aws::String& value) { m_natGatewayIdHasBeenSet = true; m_natGatewayId = value; }
 
     /**

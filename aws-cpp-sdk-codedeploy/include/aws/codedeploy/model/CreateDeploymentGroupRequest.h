@@ -70,6 +70,12 @@ namespace Model
      * <p>The name of an AWS CodeDeploy application associated with the IAM user or AWS
      * account.</p>
      */
+    inline bool ApplicationNameHasBeenSet() const { return m_applicationNameHasBeenSet; }
+
+    /**
+     * <p>The name of an AWS CodeDeploy application associated with the IAM user or AWS
+     * account.</p>
+     */
     inline void SetApplicationName(const Aws::String& value) { m_applicationNameHasBeenSet = true; m_applicationName = value; }
 
     /**
@@ -107,6 +113,11 @@ namespace Model
      * <p>The name of a new deployment group for the specified application.</p>
      */
     inline const Aws::String& GetDeploymentGroupName() const{ return m_deploymentGroupName; }
+
+    /**
+     * <p>The name of a new deployment group for the specified application.</p>
+     */
+    inline bool DeploymentGroupNameHasBeenSet() const { return m_deploymentGroupNameHasBeenSet; }
 
     /**
      * <p>The name of a new deployment group for the specified application.</p>
@@ -152,6 +163,20 @@ namespace Model
      * Guide.</p>
      */
     inline const Aws::String& GetDeploymentConfigName() const{ return m_deploymentConfigName; }
+
+    /**
+     * <p>If specified, the deployment configuration name can be either one of the
+     * predefined configurations provided with AWS CodeDeploy or a custom deployment
+     * configuration that you create by calling the create deployment configuration
+     * operation.</p> <p>CodeDeployDefault.OneAtATime is the default deployment
+     * configuration. It is used if a configuration isn't specified for the deployment
+     * or deployment group.</p> <p>For more information about the predefined deployment
+     * configurations in AWS CodeDeploy, see <a
+     * href="https://docs.aws.amazon.com/codedeploy/latest/userguide/deployment-configurations.html">Working
+     * with Deployment Groups in AWS CodeDeploy</a> in the AWS CodeDeploy User
+     * Guide.</p>
+     */
+    inline bool DeploymentConfigNameHasBeenSet() const { return m_deploymentConfigNameHasBeenSet; }
 
     /**
      * <p>If specified, the deployment configuration name can be either one of the
@@ -250,6 +275,13 @@ namespace Model
      * instances with any of the specified tags. Cannot be used in the same call as
      * ec2TagSet.</p>
      */
+    inline bool Ec2TagFiltersHasBeenSet() const { return m_ec2TagFiltersHasBeenSet; }
+
+    /**
+     * <p>The Amazon EC2 tags on which to filter. The deployment group includes EC2
+     * instances with any of the specified tags. Cannot be used in the same call as
+     * ec2TagSet.</p>
+     */
     inline void SetEc2TagFilters(const Aws::Vector<EC2TagFilter>& value) { m_ec2TagFiltersHasBeenSet = true; m_ec2TagFilters = value; }
 
     /**
@@ -294,6 +326,13 @@ namespace Model
      * the same call as OnPremisesTagSet.</p>
      */
     inline const Aws::Vector<TagFilter>& GetOnPremisesInstanceTagFilters() const{ return m_onPremisesInstanceTagFilters; }
+
+    /**
+     * <p>The on-premises instance tags on which to filter. The deployment group
+     * includes on-premises instances with any of the specified tags. Cannot be used in
+     * the same call as OnPremisesTagSet.</p>
+     */
+    inline bool OnPremisesInstanceTagFiltersHasBeenSet() const { return m_onPremisesInstanceTagFiltersHasBeenSet; }
 
     /**
      * <p>The on-premises instance tags on which to filter. The deployment group
@@ -346,6 +385,11 @@ namespace Model
     /**
      * <p>A list of associated Amazon EC2 Auto Scaling groups.</p>
      */
+    inline bool AutoScalingGroupsHasBeenSet() const { return m_autoScalingGroupsHasBeenSet; }
+
+    /**
+     * <p>A list of associated Amazon EC2 Auto Scaling groups.</p>
+     */
     inline void SetAutoScalingGroups(const Aws::Vector<Aws::String>& value) { m_autoScalingGroupsHasBeenSet = true; m_autoScalingGroups = value; }
 
     /**
@@ -384,6 +428,12 @@ namespace Model
      * when interacting with AWS services.</p>
      */
     inline const Aws::String& GetServiceRoleArn() const{ return m_serviceRoleArn; }
+
+    /**
+     * <p>A service role ARN that allows AWS CodeDeploy to act on the user's behalf
+     * when interacting with AWS services.</p>
+     */
+    inline bool ServiceRoleArnHasBeenSet() const { return m_serviceRoleArnHasBeenSet; }
 
     /**
      * <p>A service role ARN that allows AWS CodeDeploy to act on the user's behalf
@@ -429,6 +479,14 @@ namespace Model
      * a Trigger for an AWS CodeDeploy Event</a> in the AWS CodeDeploy User Guide.</p>
      */
     inline const Aws::Vector<TriggerConfig>& GetTriggerConfigurations() const{ return m_triggerConfigurations; }
+
+    /**
+     * <p>Information about triggers to create when the deployment group is created.
+     * For examples, see <a
+     * href="https://docs.aws.amazon.com/codedeploy/latest/userguide/how-to-notify-sns.html">Create
+     * a Trigger for an AWS CodeDeploy Event</a> in the AWS CodeDeploy User Guide.</p>
+     */
+    inline bool TriggerConfigurationsHasBeenSet() const { return m_triggerConfigurationsHasBeenSet; }
 
     /**
      * <p>Information about triggers to create when the deployment group is created.
@@ -489,6 +547,12 @@ namespace Model
      * <p>Information to add about Amazon CloudWatch alarms when the deployment group
      * is created.</p>
      */
+    inline bool AlarmConfigurationHasBeenSet() const { return m_alarmConfigurationHasBeenSet; }
+
+    /**
+     * <p>Information to add about Amazon CloudWatch alarms when the deployment group
+     * is created.</p>
+     */
     inline void SetAlarmConfiguration(const AlarmConfiguration& value) { m_alarmConfigurationHasBeenSet = true; m_alarmConfiguration = value; }
 
     /**
@@ -515,6 +579,12 @@ namespace Model
      * deployment group is created.</p>
      */
     inline const AutoRollbackConfiguration& GetAutoRollbackConfiguration() const{ return m_autoRollbackConfiguration; }
+
+    /**
+     * <p>Configuration information for an automatic rollback that is added when a
+     * deployment group is created.</p>
+     */
+    inline bool AutoRollbackConfigurationHasBeenSet() const { return m_autoRollbackConfigurationHasBeenSet; }
 
     /**
      * <p>Configuration information for an automatic rollback that is added when a
@@ -551,6 +621,12 @@ namespace Model
      * <p>Information about the type of deployment, in-place or blue/green, that you
      * want to run and whether to route deployment traffic behind a load balancer.</p>
      */
+    inline bool DeploymentStyleHasBeenSet() const { return m_deploymentStyleHasBeenSet; }
+
+    /**
+     * <p>Information about the type of deployment, in-place or blue/green, that you
+     * want to run and whether to route deployment traffic behind a load balancer.</p>
+     */
     inline void SetDeploymentStyle(const DeploymentStyle& value) { m_deploymentStyleHasBeenSet = true; m_deploymentStyle = value; }
 
     /**
@@ -576,6 +652,11 @@ namespace Model
      * <p>Information about blue/green deployment options for a deployment group.</p>
      */
     inline const BlueGreenDeploymentConfiguration& GetBlueGreenDeploymentConfiguration() const{ return m_blueGreenDeploymentConfiguration; }
+
+    /**
+     * <p>Information about blue/green deployment options for a deployment group.</p>
+     */
+    inline bool BlueGreenDeploymentConfigurationHasBeenSet() const { return m_blueGreenDeploymentConfigurationHasBeenSet; }
 
     /**
      * <p>Information about blue/green deployment options for a deployment group.</p>
@@ -606,6 +687,11 @@ namespace Model
     /**
      * <p>Information about the load balancer used in a deployment.</p>
      */
+    inline bool LoadBalancerInfoHasBeenSet() const { return m_loadBalancerInfoHasBeenSet; }
+
+    /**
+     * <p>Information about the load balancer used in a deployment.</p>
+     */
     inline void SetLoadBalancerInfo(const LoadBalancerInfo& value) { m_loadBalancerInfoHasBeenSet = true; m_loadBalancerInfo = value; }
 
     /**
@@ -630,6 +716,13 @@ namespace Model
      * used in the same call as ec2TagFilters.</p>
      */
     inline const EC2TagSet& GetEc2TagSet() const{ return m_ec2TagSet; }
+
+    /**
+     * <p>Information about groups of tags applied to EC2 instances. The deployment
+     * group includes only EC2 instances identified by all the tag groups. Cannot be
+     * used in the same call as ec2TagFilters.</p>
+     */
+    inline bool Ec2TagSetHasBeenSet() const { return m_ec2TagSetHasBeenSet; }
 
     /**
      * <p>Information about groups of tags applied to EC2 instances. The deployment
@@ -667,6 +760,14 @@ namespace Model
      * format <code>&lt;clustername&gt;:&lt;servicename&gt;</code>. </p>
      */
     inline const Aws::Vector<ECSService>& GetEcsServices() const{ return m_ecsServices; }
+
+    /**
+     * <p> The target Amazon ECS services in the deployment group. This applies only to
+     * deployment groups that use the Amazon ECS compute platform. A target Amazon ECS
+     * service is specified as an Amazon ECS cluster and service name pair using the
+     * format <code>&lt;clustername&gt;:&lt;servicename&gt;</code>. </p>
+     */
+    inline bool EcsServicesHasBeenSet() const { return m_ecsServicesHasBeenSet; }
 
     /**
      * <p> The target Amazon ECS services in the deployment group. This applies only to
@@ -723,6 +824,13 @@ namespace Model
      * tag groups. Cannot be used in the same call as onPremisesInstanceTagFilters.</p>
      */
     inline const OnPremisesTagSet& GetOnPremisesTagSet() const{ return m_onPremisesTagSet; }
+
+    /**
+     * <p>Information about groups of tags applied to on-premises instances. The
+     * deployment group includes only on-premises instances identified by all of the
+     * tag groups. Cannot be used in the same call as onPremisesInstanceTagFilters.</p>
+     */
+    inline bool OnPremisesTagSetHasBeenSet() const { return m_onPremisesTagSetHasBeenSet; }
 
     /**
      * <p>Information about groups of tags applied to on-premises instances. The

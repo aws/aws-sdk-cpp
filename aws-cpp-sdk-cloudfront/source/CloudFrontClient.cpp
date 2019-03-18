@@ -327,6 +327,11 @@ void CloudFrontClient::CreateFieldLevelEncryptionProfile2018_11_05AsyncHelper(co
 
 CreateInvalidation2018_11_05Outcome CloudFrontClient::CreateInvalidation2018_11_05(const CreateInvalidation2018_11_05Request& request) const
 {
+  if (!request.DistributionIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("CreateInvalidation2018_11_05", "Required field: DistributionId, is not set");
+    return CreateInvalidation2018_11_05Outcome(Aws::Client::AWSError<CloudFrontErrors>(CloudFrontErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DistributionId]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/2018-11-05/distribution/";
@@ -471,6 +476,11 @@ void CloudFrontClient::CreateStreamingDistributionWithTags2018_11_05AsyncHelper(
 
 DeleteCloudFrontOriginAccessIdentity2018_11_05Outcome CloudFrontClient::DeleteCloudFrontOriginAccessIdentity2018_11_05(const DeleteCloudFrontOriginAccessIdentity2018_11_05Request& request) const
 {
+  if (!request.IdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteCloudFrontOriginAccessIdentity2018_11_05", "Required field: Id, is not set");
+    return DeleteCloudFrontOriginAccessIdentity2018_11_05Outcome(Aws::Client::AWSError<CloudFrontErrors>(CloudFrontErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Id]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/2018-11-05/origin-access-identity/cloudfront/";
@@ -507,6 +517,11 @@ void CloudFrontClient::DeleteCloudFrontOriginAccessIdentity2018_11_05AsyncHelper
 
 DeleteDistribution2018_11_05Outcome CloudFrontClient::DeleteDistribution2018_11_05(const DeleteDistribution2018_11_05Request& request) const
 {
+  if (!request.IdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteDistribution2018_11_05", "Required field: Id, is not set");
+    return DeleteDistribution2018_11_05Outcome(Aws::Client::AWSError<CloudFrontErrors>(CloudFrontErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Id]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/2018-11-05/distribution/";
@@ -543,6 +558,11 @@ void CloudFrontClient::DeleteDistribution2018_11_05AsyncHelper(const DeleteDistr
 
 DeleteFieldLevelEncryptionConfig2018_11_05Outcome CloudFrontClient::DeleteFieldLevelEncryptionConfig2018_11_05(const DeleteFieldLevelEncryptionConfig2018_11_05Request& request) const
 {
+  if (!request.IdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteFieldLevelEncryptionConfig2018_11_05", "Required field: Id, is not set");
+    return DeleteFieldLevelEncryptionConfig2018_11_05Outcome(Aws::Client::AWSError<CloudFrontErrors>(CloudFrontErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Id]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/2018-11-05/field-level-encryption/";
@@ -579,6 +599,11 @@ void CloudFrontClient::DeleteFieldLevelEncryptionConfig2018_11_05AsyncHelper(con
 
 DeleteFieldLevelEncryptionProfile2018_11_05Outcome CloudFrontClient::DeleteFieldLevelEncryptionProfile2018_11_05(const DeleteFieldLevelEncryptionProfile2018_11_05Request& request) const
 {
+  if (!request.IdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteFieldLevelEncryptionProfile2018_11_05", "Required field: Id, is not set");
+    return DeleteFieldLevelEncryptionProfile2018_11_05Outcome(Aws::Client::AWSError<CloudFrontErrors>(CloudFrontErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Id]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/2018-11-05/field-level-encryption-profile/";
@@ -615,6 +640,11 @@ void CloudFrontClient::DeleteFieldLevelEncryptionProfile2018_11_05AsyncHelper(co
 
 DeletePublicKey2018_11_05Outcome CloudFrontClient::DeletePublicKey2018_11_05(const DeletePublicKey2018_11_05Request& request) const
 {
+  if (!request.IdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeletePublicKey2018_11_05", "Required field: Id, is not set");
+    return DeletePublicKey2018_11_05Outcome(Aws::Client::AWSError<CloudFrontErrors>(CloudFrontErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Id]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/2018-11-05/public-key/";
@@ -651,6 +681,11 @@ void CloudFrontClient::DeletePublicKey2018_11_05AsyncHelper(const DeletePublicKe
 
 DeleteStreamingDistribution2018_11_05Outcome CloudFrontClient::DeleteStreamingDistribution2018_11_05(const DeleteStreamingDistribution2018_11_05Request& request) const
 {
+  if (!request.IdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteStreamingDistribution2018_11_05", "Required field: Id, is not set");
+    return DeleteStreamingDistribution2018_11_05Outcome(Aws::Client::AWSError<CloudFrontErrors>(CloudFrontErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Id]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/2018-11-05/streaming-distribution/";
@@ -687,6 +722,11 @@ void CloudFrontClient::DeleteStreamingDistribution2018_11_05AsyncHelper(const De
 
 GetCloudFrontOriginAccessIdentity2018_11_05Outcome CloudFrontClient::GetCloudFrontOriginAccessIdentity2018_11_05(const GetCloudFrontOriginAccessIdentity2018_11_05Request& request) const
 {
+  if (!request.IdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetCloudFrontOriginAccessIdentity2018_11_05", "Required field: Id, is not set");
+    return GetCloudFrontOriginAccessIdentity2018_11_05Outcome(Aws::Client::AWSError<CloudFrontErrors>(CloudFrontErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Id]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/2018-11-05/origin-access-identity/cloudfront/";
@@ -723,6 +763,11 @@ void CloudFrontClient::GetCloudFrontOriginAccessIdentity2018_11_05AsyncHelper(co
 
 GetCloudFrontOriginAccessIdentityConfig2018_11_05Outcome CloudFrontClient::GetCloudFrontOriginAccessIdentityConfig2018_11_05(const GetCloudFrontOriginAccessIdentityConfig2018_11_05Request& request) const
 {
+  if (!request.IdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetCloudFrontOriginAccessIdentityConfig2018_11_05", "Required field: Id, is not set");
+    return GetCloudFrontOriginAccessIdentityConfig2018_11_05Outcome(Aws::Client::AWSError<CloudFrontErrors>(CloudFrontErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Id]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/2018-11-05/origin-access-identity/cloudfront/";
@@ -760,6 +805,11 @@ void CloudFrontClient::GetCloudFrontOriginAccessIdentityConfig2018_11_05AsyncHel
 
 GetDistribution2018_11_05Outcome CloudFrontClient::GetDistribution2018_11_05(const GetDistribution2018_11_05Request& request) const
 {
+  if (!request.IdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetDistribution2018_11_05", "Required field: Id, is not set");
+    return GetDistribution2018_11_05Outcome(Aws::Client::AWSError<CloudFrontErrors>(CloudFrontErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Id]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/2018-11-05/distribution/";
@@ -796,6 +846,11 @@ void CloudFrontClient::GetDistribution2018_11_05AsyncHelper(const GetDistributio
 
 GetDistributionConfig2018_11_05Outcome CloudFrontClient::GetDistributionConfig2018_11_05(const GetDistributionConfig2018_11_05Request& request) const
 {
+  if (!request.IdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetDistributionConfig2018_11_05", "Required field: Id, is not set");
+    return GetDistributionConfig2018_11_05Outcome(Aws::Client::AWSError<CloudFrontErrors>(CloudFrontErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Id]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/2018-11-05/distribution/";
@@ -833,6 +888,11 @@ void CloudFrontClient::GetDistributionConfig2018_11_05AsyncHelper(const GetDistr
 
 GetFieldLevelEncryption2018_11_05Outcome CloudFrontClient::GetFieldLevelEncryption2018_11_05(const GetFieldLevelEncryption2018_11_05Request& request) const
 {
+  if (!request.IdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetFieldLevelEncryption2018_11_05", "Required field: Id, is not set");
+    return GetFieldLevelEncryption2018_11_05Outcome(Aws::Client::AWSError<CloudFrontErrors>(CloudFrontErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Id]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/2018-11-05/field-level-encryption/";
@@ -869,6 +929,11 @@ void CloudFrontClient::GetFieldLevelEncryption2018_11_05AsyncHelper(const GetFie
 
 GetFieldLevelEncryptionConfig2018_11_05Outcome CloudFrontClient::GetFieldLevelEncryptionConfig2018_11_05(const GetFieldLevelEncryptionConfig2018_11_05Request& request) const
 {
+  if (!request.IdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetFieldLevelEncryptionConfig2018_11_05", "Required field: Id, is not set");
+    return GetFieldLevelEncryptionConfig2018_11_05Outcome(Aws::Client::AWSError<CloudFrontErrors>(CloudFrontErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Id]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/2018-11-05/field-level-encryption/";
@@ -906,6 +971,11 @@ void CloudFrontClient::GetFieldLevelEncryptionConfig2018_11_05AsyncHelper(const 
 
 GetFieldLevelEncryptionProfile2018_11_05Outcome CloudFrontClient::GetFieldLevelEncryptionProfile2018_11_05(const GetFieldLevelEncryptionProfile2018_11_05Request& request) const
 {
+  if (!request.IdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetFieldLevelEncryptionProfile2018_11_05", "Required field: Id, is not set");
+    return GetFieldLevelEncryptionProfile2018_11_05Outcome(Aws::Client::AWSError<CloudFrontErrors>(CloudFrontErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Id]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/2018-11-05/field-level-encryption-profile/";
@@ -942,6 +1012,11 @@ void CloudFrontClient::GetFieldLevelEncryptionProfile2018_11_05AsyncHelper(const
 
 GetFieldLevelEncryptionProfileConfig2018_11_05Outcome CloudFrontClient::GetFieldLevelEncryptionProfileConfig2018_11_05(const GetFieldLevelEncryptionProfileConfig2018_11_05Request& request) const
 {
+  if (!request.IdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetFieldLevelEncryptionProfileConfig2018_11_05", "Required field: Id, is not set");
+    return GetFieldLevelEncryptionProfileConfig2018_11_05Outcome(Aws::Client::AWSError<CloudFrontErrors>(CloudFrontErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Id]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/2018-11-05/field-level-encryption-profile/";
@@ -979,6 +1054,16 @@ void CloudFrontClient::GetFieldLevelEncryptionProfileConfig2018_11_05AsyncHelper
 
 GetInvalidation2018_11_05Outcome CloudFrontClient::GetInvalidation2018_11_05(const GetInvalidation2018_11_05Request& request) const
 {
+  if (!request.DistributionIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetInvalidation2018_11_05", "Required field: DistributionId, is not set");
+    return GetInvalidation2018_11_05Outcome(Aws::Client::AWSError<CloudFrontErrors>(CloudFrontErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DistributionId]", false));
+  }
+  if (!request.IdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetInvalidation2018_11_05", "Required field: Id, is not set");
+    return GetInvalidation2018_11_05Outcome(Aws::Client::AWSError<CloudFrontErrors>(CloudFrontErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Id]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/2018-11-05/distribution/";
@@ -1017,6 +1102,11 @@ void CloudFrontClient::GetInvalidation2018_11_05AsyncHelper(const GetInvalidatio
 
 GetPublicKey2018_11_05Outcome CloudFrontClient::GetPublicKey2018_11_05(const GetPublicKey2018_11_05Request& request) const
 {
+  if (!request.IdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetPublicKey2018_11_05", "Required field: Id, is not set");
+    return GetPublicKey2018_11_05Outcome(Aws::Client::AWSError<CloudFrontErrors>(CloudFrontErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Id]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/2018-11-05/public-key/";
@@ -1053,6 +1143,11 @@ void CloudFrontClient::GetPublicKey2018_11_05AsyncHelper(const GetPublicKey2018_
 
 GetPublicKeyConfig2018_11_05Outcome CloudFrontClient::GetPublicKeyConfig2018_11_05(const GetPublicKeyConfig2018_11_05Request& request) const
 {
+  if (!request.IdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetPublicKeyConfig2018_11_05", "Required field: Id, is not set");
+    return GetPublicKeyConfig2018_11_05Outcome(Aws::Client::AWSError<CloudFrontErrors>(CloudFrontErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Id]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/2018-11-05/public-key/";
@@ -1090,6 +1185,11 @@ void CloudFrontClient::GetPublicKeyConfig2018_11_05AsyncHelper(const GetPublicKe
 
 GetStreamingDistribution2018_11_05Outcome CloudFrontClient::GetStreamingDistribution2018_11_05(const GetStreamingDistribution2018_11_05Request& request) const
 {
+  if (!request.IdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetStreamingDistribution2018_11_05", "Required field: Id, is not set");
+    return GetStreamingDistribution2018_11_05Outcome(Aws::Client::AWSError<CloudFrontErrors>(CloudFrontErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Id]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/2018-11-05/streaming-distribution/";
@@ -1126,6 +1226,11 @@ void CloudFrontClient::GetStreamingDistribution2018_11_05AsyncHelper(const GetSt
 
 GetStreamingDistributionConfig2018_11_05Outcome CloudFrontClient::GetStreamingDistributionConfig2018_11_05(const GetStreamingDistributionConfig2018_11_05Request& request) const
 {
+  if (!request.IdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetStreamingDistributionConfig2018_11_05", "Required field: Id, is not set");
+    return GetStreamingDistributionConfig2018_11_05Outcome(Aws::Client::AWSError<CloudFrontErrors>(CloudFrontErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Id]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/2018-11-05/streaming-distribution/";
@@ -1233,6 +1338,11 @@ void CloudFrontClient::ListDistributions2018_11_05AsyncHelper(const ListDistribu
 
 ListDistributionsByWebACLId2018_11_05Outcome CloudFrontClient::ListDistributionsByWebACLId2018_11_05(const ListDistributionsByWebACLId2018_11_05Request& request) const
 {
+  if (!request.WebACLIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListDistributionsByWebACLId2018_11_05", "Required field: WebACLId, is not set");
+    return ListDistributionsByWebACLId2018_11_05Outcome(Aws::Client::AWSError<CloudFrontErrors>(CloudFrontErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [WebACLId]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/2018-11-05/distributionsByWebACLId/";
@@ -1339,6 +1449,11 @@ void CloudFrontClient::ListFieldLevelEncryptionProfiles2018_11_05AsyncHelper(con
 
 ListInvalidations2018_11_05Outcome CloudFrontClient::ListInvalidations2018_11_05(const ListInvalidations2018_11_05Request& request) const
 {
+  if (!request.DistributionIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListInvalidations2018_11_05", "Required field: DistributionId, is not set");
+    return ListInvalidations2018_11_05Outcome(Aws::Client::AWSError<CloudFrontErrors>(CloudFrontErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DistributionId]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/2018-11-05/distribution/";
@@ -1446,6 +1561,11 @@ void CloudFrontClient::ListStreamingDistributions2018_11_05AsyncHelper(const Lis
 
 ListTagsForResource2018_11_05Outcome CloudFrontClient::ListTagsForResource2018_11_05(const ListTagsForResource2018_11_05Request& request) const
 {
+  if (!request.ResourceHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListTagsForResource2018_11_05", "Required field: Resource, is not set");
+    return ListTagsForResource2018_11_05Outcome(Aws::Client::AWSError<CloudFrontErrors>(CloudFrontErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Resource]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/2018-11-05/tagging";
@@ -1481,6 +1601,11 @@ void CloudFrontClient::ListTagsForResource2018_11_05AsyncHelper(const ListTagsFo
 
 TagResource2018_11_05Outcome CloudFrontClient::TagResource2018_11_05(const TagResource2018_11_05Request& request) const
 {
+  if (!request.ResourceHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("TagResource2018_11_05", "Required field: Resource, is not set");
+    return TagResource2018_11_05Outcome(Aws::Client::AWSError<CloudFrontErrors>(CloudFrontErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Resource]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/2018-11-05/tagging";
@@ -1518,6 +1643,11 @@ void CloudFrontClient::TagResource2018_11_05AsyncHelper(const TagResource2018_11
 
 UntagResource2018_11_05Outcome CloudFrontClient::UntagResource2018_11_05(const UntagResource2018_11_05Request& request) const
 {
+  if (!request.ResourceHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UntagResource2018_11_05", "Required field: Resource, is not set");
+    return UntagResource2018_11_05Outcome(Aws::Client::AWSError<CloudFrontErrors>(CloudFrontErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Resource]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/2018-11-05/tagging";
@@ -1555,6 +1685,11 @@ void CloudFrontClient::UntagResource2018_11_05AsyncHelper(const UntagResource201
 
 UpdateCloudFrontOriginAccessIdentity2018_11_05Outcome CloudFrontClient::UpdateCloudFrontOriginAccessIdentity2018_11_05(const UpdateCloudFrontOriginAccessIdentity2018_11_05Request& request) const
 {
+  if (!request.IdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateCloudFrontOriginAccessIdentity2018_11_05", "Required field: Id, is not set");
+    return UpdateCloudFrontOriginAccessIdentity2018_11_05Outcome(Aws::Client::AWSError<CloudFrontErrors>(CloudFrontErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Id]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/2018-11-05/origin-access-identity/cloudfront/";
@@ -1592,6 +1727,11 @@ void CloudFrontClient::UpdateCloudFrontOriginAccessIdentity2018_11_05AsyncHelper
 
 UpdateDistribution2018_11_05Outcome CloudFrontClient::UpdateDistribution2018_11_05(const UpdateDistribution2018_11_05Request& request) const
 {
+  if (!request.IdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateDistribution2018_11_05", "Required field: Id, is not set");
+    return UpdateDistribution2018_11_05Outcome(Aws::Client::AWSError<CloudFrontErrors>(CloudFrontErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Id]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/2018-11-05/distribution/";
@@ -1629,6 +1769,11 @@ void CloudFrontClient::UpdateDistribution2018_11_05AsyncHelper(const UpdateDistr
 
 UpdateFieldLevelEncryptionConfig2018_11_05Outcome CloudFrontClient::UpdateFieldLevelEncryptionConfig2018_11_05(const UpdateFieldLevelEncryptionConfig2018_11_05Request& request) const
 {
+  if (!request.IdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateFieldLevelEncryptionConfig2018_11_05", "Required field: Id, is not set");
+    return UpdateFieldLevelEncryptionConfig2018_11_05Outcome(Aws::Client::AWSError<CloudFrontErrors>(CloudFrontErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Id]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/2018-11-05/field-level-encryption/";
@@ -1666,6 +1811,11 @@ void CloudFrontClient::UpdateFieldLevelEncryptionConfig2018_11_05AsyncHelper(con
 
 UpdateFieldLevelEncryptionProfile2018_11_05Outcome CloudFrontClient::UpdateFieldLevelEncryptionProfile2018_11_05(const UpdateFieldLevelEncryptionProfile2018_11_05Request& request) const
 {
+  if (!request.IdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateFieldLevelEncryptionProfile2018_11_05", "Required field: Id, is not set");
+    return UpdateFieldLevelEncryptionProfile2018_11_05Outcome(Aws::Client::AWSError<CloudFrontErrors>(CloudFrontErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Id]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/2018-11-05/field-level-encryption-profile/";
@@ -1703,6 +1853,11 @@ void CloudFrontClient::UpdateFieldLevelEncryptionProfile2018_11_05AsyncHelper(co
 
 UpdatePublicKey2018_11_05Outcome CloudFrontClient::UpdatePublicKey2018_11_05(const UpdatePublicKey2018_11_05Request& request) const
 {
+  if (!request.IdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdatePublicKey2018_11_05", "Required field: Id, is not set");
+    return UpdatePublicKey2018_11_05Outcome(Aws::Client::AWSError<CloudFrontErrors>(CloudFrontErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Id]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/2018-11-05/public-key/";
@@ -1740,6 +1895,11 @@ void CloudFrontClient::UpdatePublicKey2018_11_05AsyncHelper(const UpdatePublicKe
 
 UpdateStreamingDistribution2018_11_05Outcome CloudFrontClient::UpdateStreamingDistribution2018_11_05(const UpdateStreamingDistribution2018_11_05Request& request) const
 {
+  if (!request.IdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateStreamingDistribution2018_11_05", "Required field: Id, is not set");
+    return UpdateStreamingDistribution2018_11_05Outcome(Aws::Client::AWSError<CloudFrontErrors>(CloudFrontErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Id]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/2018-11-05/streaming-distribution/";

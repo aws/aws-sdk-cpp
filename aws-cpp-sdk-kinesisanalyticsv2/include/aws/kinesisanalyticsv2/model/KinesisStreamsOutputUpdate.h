@@ -60,6 +60,12 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the Kinesis data stream where you want to
      * write the output.</p>
      */
+    inline bool ResourceARNUpdateHasBeenSet() const { return m_resourceARNUpdateHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the Kinesis data stream where you want to
+     * write the output.</p>
+     */
     inline void SetResourceARNUpdate(const Aws::String& value) { m_resourceARNUpdateHasBeenSet = true; m_resourceARNUpdate = value; }
 
     /**

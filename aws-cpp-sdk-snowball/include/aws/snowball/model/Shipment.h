@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>Status information for a shipment.</p>
      */
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
+
+    /**
+     * <p>Status information for a shipment.</p>
+     */
     inline void SetStatus(const Aws::String& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
@@ -91,6 +96,14 @@ namespace Model
      * UPS is the carrier.</p>
      */
     inline const Aws::String& GetTrackingNumber() const{ return m_trackingNumber; }
+
+    /**
+     * <p>The tracking number for this job. Using this tracking number with your
+     * region's carrier's website, you can track a Snowball as the carrier transports
+     * it.</p> <p>For India, the carrier is Amazon Logistics. For all other regions,
+     * UPS is the carrier.</p>
+     */
+    inline bool TrackingNumberHasBeenSet() const { return m_trackingNumberHasBeenSet; }
 
     /**
      * <p>The tracking number for this job. Using this tracking number with your

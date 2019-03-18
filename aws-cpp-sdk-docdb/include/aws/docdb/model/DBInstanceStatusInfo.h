@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p>This value is currently "<code>read replication</code>."</p>
      */
+    inline bool StatusTypeHasBeenSet() const { return m_statusTypeHasBeenSet; }
+
+    /**
+     * <p>This value is currently "<code>read replication</code>."</p>
+     */
     inline void SetStatusType(const Aws::String& value) { m_statusTypeHasBeenSet = true; m_statusType = value; }
 
     /**
@@ -96,6 +101,12 @@ namespace Model
      * <p>A Boolean value that is <code>true</code> if the instance is operating
      * normally, or <code>false</code> if the instance is in an error state.</p>
      */
+    inline bool NormalHasBeenSet() const { return m_normalHasBeenSet; }
+
+    /**
+     * <p>A Boolean value that is <code>true</code> if the instance is operating
+     * normally, or <code>false</code> if the instance is in an error state.</p>
+     */
     inline void SetNormal(bool value) { m_normalHasBeenSet = true; m_normal = value; }
 
     /**
@@ -111,6 +122,13 @@ namespace Model
      * <code>terminated</code>.</p>
      */
     inline const Aws::String& GetStatus() const{ return m_status; }
+
+    /**
+     * <p>Status of the DB instance. For a <code>StatusType</code> of read replica, the
+     * values can be <code>replicating</code>, error, <code>stopped</code>, or
+     * <code>terminated</code>.</p>
+     */
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
     /**
      * <p>Status of the DB instance. For a <code>StatusType</code> of read replica, the
@@ -160,6 +178,12 @@ namespace Model
      * is not in an error state, this value is blank.</p>
      */
     inline const Aws::String& GetMessage() const{ return m_message; }
+
+    /**
+     * <p>Details of the error if there is an error for the instance. If the instance
+     * is not in an error state, this value is blank.</p>
+     */
+    inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
 
     /**
      * <p>Details of the error if there is an error for the instance. If the instance

@@ -64,6 +64,14 @@ namespace Model
      * using encoded-word syntax, as described in <a
      * href="https://tools.ietf.org/html/rfc2047">RFC 2047</a>.</p>
      */
+    inline bool SubjectHasBeenSet() const { return m_subjectHasBeenSet; }
+
+    /**
+     * <p>The subject line of the email. The subject line can only contain 7-bit ASCII
+     * characters. However, you can specify non-ASCII characters in the subject line by
+     * using encoded-word syntax, as described in <a
+     * href="https://tools.ietf.org/html/rfc2047">RFC 2047</a>.</p>
+     */
     inline void SetSubject(const Content& value) { m_subjectHasBeenSet = true; m_subject = value; }
 
     /**
@@ -96,6 +104,12 @@ namespace Model
      * text-only version of the message, or both.</p>
      */
     inline const Body& GetBody() const{ return m_body; }
+
+    /**
+     * <p>The body of the message. You can specify an HTML version of the message, a
+     * text-only version of the message, or both.</p>
+     */
+    inline bool BodyHasBeenSet() const { return m_bodyHasBeenSet; }
 
     /**
      * <p>The body of the message. You can specify an HTML version of the message, a

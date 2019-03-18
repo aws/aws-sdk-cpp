@@ -61,6 +61,13 @@ namespace Model
      * the fleet instance or image builder instance. Fleet instances use one or two
      * subnets. Image builder instances use one subnet.</p>
      */
+    inline bool SubnetIdsHasBeenSet() const { return m_subnetIdsHasBeenSet; }
+
+    /**
+     * <p>The identifiers of the subnets to which a network interface is attached from
+     * the fleet instance or image builder instance. Fleet instances use one or two
+     * subnets. Image builder instances use one subnet.</p>
+     */
     inline void SetSubnetIds(const Aws::Vector<Aws::String>& value) { m_subnetIdsHasBeenSet = true; m_subnetIds = value; }
 
     /**
@@ -110,6 +117,11 @@ namespace Model
      * <p>The identifiers of the security groups for the fleet or image builder.</p>
      */
     inline const Aws::Vector<Aws::String>& GetSecurityGroupIds() const{ return m_securityGroupIds; }
+
+    /**
+     * <p>The identifiers of the security groups for the fleet or image builder.</p>
+     */
+    inline bool SecurityGroupIdsHasBeenSet() const { return m_securityGroupIdsHasBeenSet; }
 
     /**
      * <p>The identifiers of the security groups for the fleet or image builder.</p>

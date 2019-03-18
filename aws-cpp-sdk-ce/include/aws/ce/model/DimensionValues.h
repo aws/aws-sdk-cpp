@@ -61,6 +61,12 @@ namespace Model
      * <p>The names of the metadata types that you can use to filter and group your
      * results. For example, <code>AZ</code> returns a list of Availability Zones.</p>
      */
+    inline bool KeyHasBeenSet() const { return m_keyHasBeenSet; }
+
+    /**
+     * <p>The names of the metadata types that you can use to filter and group your
+     * results. For example, <code>AZ</code> returns a list of Availability Zones.</p>
+     */
     inline void SetKey(const Dimension& value) { m_keyHasBeenSet = true; m_key = value; }
 
     /**
@@ -91,6 +97,16 @@ namespace Model
      * Database Service</code>.</p>
      */
     inline const Aws::Vector<Aws::String>& GetValues() const{ return m_values; }
+
+    /**
+     * <p>The metadata values that you can use to filter and group your results. You
+     * can use <code>GetDimensionValues</code> to find specific values.</p> <p>Valid
+     * values for the <code>SERVICE</code> dimension are <code>Amazon Elastic Compute
+     * Cloud - Compute</code>, <code>Amazon Elasticsearch Service</code>, <code>Amazon
+     * ElastiCache</code>, <code>Amazon Redshift</code>, and <code>Amazon Relational
+     * Database Service</code>.</p>
+     */
+    inline bool ValuesHasBeenSet() const { return m_valuesHasBeenSet; }
 
     /**
      * <p>The metadata values that you can use to filter and group your results. You

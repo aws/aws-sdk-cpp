@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The name of the rule.</p>
      */
+    inline bool RuleNameHasBeenSet() const { return m_ruleNameHasBeenSet; }
+
+    /**
+     * <p>The name of the rule.</p>
+     */
     inline void SetRuleName(const Aws::String& value) { m_ruleNameHasBeenSet = true; m_ruleName = value; }
 
     /**
@@ -92,6 +97,11 @@ namespace Model
     /**
      * <p>The rule payload.</p>
      */
+    inline bool TopicRulePayloadHasBeenSet() const { return m_topicRulePayloadHasBeenSet; }
+
+    /**
+     * <p>The rule payload.</p>
+     */
     inline void SetTopicRulePayload(const TopicRulePayload& value) { m_topicRulePayloadHasBeenSet = true; m_topicRulePayload = value; }
 
     /**
@@ -118,6 +128,15 @@ namespace Model
      * "tags": "key1=value1&amp;key2=value2..."</p> </note>
      */
     inline const Aws::String& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>Metadata which can be used to manage the topic rule.</p> <note> <p>For URI
+     * Request parameters use format: ...key1=value1&amp;key2=value2...</p> <p>For the
+     * CLI command-line parameter use format: --tags
+     * "key1=value1&amp;key2=value2..."</p> <p>For the cli-input-json file use format:
+     * "tags": "key1=value1&amp;key2=value2..."</p> </note>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
      * <p>Metadata which can be used to manage the topic rule.</p> <note> <p>For URI

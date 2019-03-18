@@ -55,6 +55,11 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the load balancer.</p>
      */
+    inline bool LoadBalancerArnHasBeenSet() const { return m_loadBalancerArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the load balancer.</p>
+     */
     inline void SetLoadBalancerArn(const Aws::String& value) { m_loadBalancerArnHasBeenSet = true; m_loadBalancerArn = value; }
 
     /**
@@ -89,6 +94,13 @@ namespace Model
      * load balancers must use <code>ipv4</code>.</p>
      */
     inline const IpAddressType& GetIpAddressType() const{ return m_ipAddressType; }
+
+    /**
+     * <p>The IP address type. The possible values are <code>ipv4</code> (for IPv4
+     * addresses) and <code>dualstack</code> (for IPv4 and IPv6 addresses). Internal
+     * load balancers must use <code>ipv4</code>.</p>
+     */
+    inline bool IpAddressTypeHasBeenSet() const { return m_ipAddressTypeHasBeenSet; }
 
     /**
      * <p>The IP address type. The possible values are <code>ipv4</code> (for IPv4

@@ -61,6 +61,12 @@ namespace Model
      * <p>The type of source that is generating the events.</p> <p>Valid values:
      * db-instance | db-parameter-group | db-security-group | db-snapshot</p>
      */
+    inline bool SourceTypeHasBeenSet() const { return m_sourceTypeHasBeenSet; }
+
+    /**
+     * <p>The type of source that is generating the events.</p> <p>Valid values:
+     * db-instance | db-parameter-group | db-security-group | db-snapshot</p>
+     */
     inline void SetSourceType(const Aws::String& value) { m_sourceTypeHasBeenSet = true; m_sourceType = value; }
 
     /**
@@ -98,6 +104,11 @@ namespace Model
      * <p>This parameter is not currently supported.</p>
      */
     inline const Aws::Vector<Filter>& GetFilters() const{ return m_filters; }
+
+    /**
+     * <p>This parameter is not currently supported.</p>
+     */
+    inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
 
     /**
      * <p>This parameter is not currently supported.</p>

@@ -55,6 +55,11 @@ namespace Model
     /**
      * The unique ID of the application to which the SMS channel belongs.
      */
+    inline bool ApplicationIdHasBeenSet() const { return m_applicationIdHasBeenSet; }
+
+    /**
+     * The unique ID of the application to which the SMS channel belongs.
+     */
     inline void SetApplicationId(const Aws::String& value) { m_applicationIdHasBeenSet = true; m_applicationId = value; }
 
     /**
@@ -87,6 +92,11 @@ namespace Model
      * The date that the settings were last updated in ISO 8601 format.
      */
     inline const Aws::String& GetCreationDate() const{ return m_creationDate; }
+
+    /**
+     * The date that the settings were last updated in ISO 8601 format.
+     */
+    inline bool CreationDateHasBeenSet() const { return m_creationDateHasBeenSet; }
 
     /**
      * The date that the settings were last updated in ISO 8601 format.
@@ -127,6 +137,11 @@ namespace Model
     /**
      * If the channel is enabled for sending messages.
      */
+    inline bool EnabledHasBeenSet() const { return m_enabledHasBeenSet; }
+
+    /**
+     * If the channel is enabled for sending messages.
+     */
     inline void SetEnabled(bool value) { m_enabledHasBeenSet = true; m_enabled = value; }
 
     /**
@@ -143,6 +158,11 @@ namespace Model
     /**
      * Not used. Retained for backwards compatibility.
      */
+    inline bool HasCredentialHasBeenSet() const { return m_hasCredentialHasBeenSet; }
+
+    /**
+     * Not used. Retained for backwards compatibility.
+     */
     inline void SetHasCredential(bool value) { m_hasCredentialHasBeenSet = true; m_hasCredential = value; }
 
     /**
@@ -155,6 +175,11 @@ namespace Model
      * Channel ID. Not used, only for backwards compatibility.
      */
     inline const Aws::String& GetId() const{ return m_id; }
+
+    /**
+     * Channel ID. Not used, only for backwards compatibility.
+     */
+    inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
 
     /**
      * Channel ID. Not used, only for backwards compatibility.
@@ -195,6 +220,11 @@ namespace Model
     /**
      * Is this channel archived
      */
+    inline bool IsArchivedHasBeenSet() const { return m_isArchivedHasBeenSet; }
+
+    /**
+     * Is this channel archived
+     */
     inline void SetIsArchived(bool value) { m_isArchivedHasBeenSet = true; m_isArchived = value; }
 
     /**
@@ -207,6 +237,11 @@ namespace Model
      * Who last updated this entry
      */
     inline const Aws::String& GetLastModifiedBy() const{ return m_lastModifiedBy; }
+
+    /**
+     * Who last updated this entry
+     */
+    inline bool LastModifiedByHasBeenSet() const { return m_lastModifiedByHasBeenSet; }
 
     /**
      * Who last updated this entry
@@ -247,6 +282,11 @@ namespace Model
     /**
      * Last date this was updated
      */
+    inline bool LastModifiedDateHasBeenSet() const { return m_lastModifiedDateHasBeenSet; }
+
+    /**
+     * Last date this was updated
+     */
     inline void SetLastModifiedDate(const Aws::String& value) { m_lastModifiedDateHasBeenSet = true; m_lastModifiedDate = value; }
 
     /**
@@ -279,6 +319,11 @@ namespace Model
      * Platform type. Will be "SMS"
      */
     inline const Aws::String& GetPlatform() const{ return m_platform; }
+
+    /**
+     * Platform type. Will be "SMS"
+     */
+    inline bool PlatformHasBeenSet() const { return m_platformHasBeenSet; }
 
     /**
      * Platform type. Will be "SMS"
@@ -319,6 +364,11 @@ namespace Model
     /**
      * Promotional messages per second that can be sent
      */
+    inline bool PromotionalMessagesPerSecondHasBeenSet() const { return m_promotionalMessagesPerSecondHasBeenSet; }
+
+    /**
+     * Promotional messages per second that can be sent
+     */
     inline void SetPromotionalMessagesPerSecond(int value) { m_promotionalMessagesPerSecondHasBeenSet = true; m_promotionalMessagesPerSecond = value; }
 
     /**
@@ -331,6 +381,11 @@ namespace Model
      * Sender identifier of your messages.
      */
     inline const Aws::String& GetSenderId() const{ return m_senderId; }
+
+    /**
+     * Sender identifier of your messages.
+     */
+    inline bool SenderIdHasBeenSet() const { return m_senderIdHasBeenSet; }
 
     /**
      * Sender identifier of your messages.
@@ -371,6 +426,11 @@ namespace Model
     /**
      * The short code registered with the phone provider.
      */
+    inline bool ShortCodeHasBeenSet() const { return m_shortCodeHasBeenSet; }
+
+    /**
+     * The short code registered with the phone provider.
+     */
     inline void SetShortCode(const Aws::String& value) { m_shortCodeHasBeenSet = true; m_shortCode = value; }
 
     /**
@@ -407,6 +467,11 @@ namespace Model
     /**
      * Transactional messages per second that can be sent
      */
+    inline bool TransactionalMessagesPerSecondHasBeenSet() const { return m_transactionalMessagesPerSecondHasBeenSet; }
+
+    /**
+     * Transactional messages per second that can be sent
+     */
     inline void SetTransactionalMessagesPerSecond(int value) { m_transactionalMessagesPerSecondHasBeenSet = true; m_transactionalMessagesPerSecond = value; }
 
     /**
@@ -419,6 +484,11 @@ namespace Model
      * Version of channel
      */
     inline int GetVersion() const{ return m_version; }
+
+    /**
+     * Version of channel
+     */
+    inline bool VersionHasBeenSet() const { return m_versionHasBeenSet; }
 
     /**
      * Version of channel

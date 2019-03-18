@@ -181,6 +181,11 @@ void BackupClient::CreateBackupPlanAsyncHelper(const CreateBackupPlanRequest& re
 
 CreateBackupSelectionOutcome BackupClient::CreateBackupSelection(const CreateBackupSelectionRequest& request) const
 {
+  if (!request.BackupPlanIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("CreateBackupSelection", "Required field: BackupPlanId, is not set");
+    return CreateBackupSelectionOutcome(Aws::Client::AWSError<BackupErrors>(BackupErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [BackupPlanId]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/backup/plans/";
@@ -218,6 +223,11 @@ void BackupClient::CreateBackupSelectionAsyncHelper(const CreateBackupSelectionR
 
 CreateBackupVaultOutcome BackupClient::CreateBackupVault(const CreateBackupVaultRequest& request) const
 {
+  if (!request.BackupVaultNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("CreateBackupVault", "Required field: BackupVaultName, is not set");
+    return CreateBackupVaultOutcome(Aws::Client::AWSError<BackupErrors>(BackupErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [BackupVaultName]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/backup-vaults/";
@@ -254,6 +264,11 @@ void BackupClient::CreateBackupVaultAsyncHelper(const CreateBackupVaultRequest& 
 
 DeleteBackupPlanOutcome BackupClient::DeleteBackupPlan(const DeleteBackupPlanRequest& request) const
 {
+  if (!request.BackupPlanIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteBackupPlan", "Required field: BackupPlanId, is not set");
+    return DeleteBackupPlanOutcome(Aws::Client::AWSError<BackupErrors>(BackupErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [BackupPlanId]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/backup/plans/";
@@ -290,6 +305,16 @@ void BackupClient::DeleteBackupPlanAsyncHelper(const DeleteBackupPlanRequest& re
 
 DeleteBackupSelectionOutcome BackupClient::DeleteBackupSelection(const DeleteBackupSelectionRequest& request) const
 {
+  if (!request.BackupPlanIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteBackupSelection", "Required field: BackupPlanId, is not set");
+    return DeleteBackupSelectionOutcome(Aws::Client::AWSError<BackupErrors>(BackupErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [BackupPlanId]", false));
+  }
+  if (!request.SelectionIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteBackupSelection", "Required field: SelectionId, is not set");
+    return DeleteBackupSelectionOutcome(Aws::Client::AWSError<BackupErrors>(BackupErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [SelectionId]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/backup/plans/";
@@ -328,6 +353,11 @@ void BackupClient::DeleteBackupSelectionAsyncHelper(const DeleteBackupSelectionR
 
 DeleteBackupVaultOutcome BackupClient::DeleteBackupVault(const DeleteBackupVaultRequest& request) const
 {
+  if (!request.BackupVaultNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteBackupVault", "Required field: BackupVaultName, is not set");
+    return DeleteBackupVaultOutcome(Aws::Client::AWSError<BackupErrors>(BackupErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [BackupVaultName]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/backup-vaults/";
@@ -364,6 +394,11 @@ void BackupClient::DeleteBackupVaultAsyncHelper(const DeleteBackupVaultRequest& 
 
 DeleteBackupVaultAccessPolicyOutcome BackupClient::DeleteBackupVaultAccessPolicy(const DeleteBackupVaultAccessPolicyRequest& request) const
 {
+  if (!request.BackupVaultNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteBackupVaultAccessPolicy", "Required field: BackupVaultName, is not set");
+    return DeleteBackupVaultAccessPolicyOutcome(Aws::Client::AWSError<BackupErrors>(BackupErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [BackupVaultName]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/backup-vaults/";
@@ -401,6 +436,11 @@ void BackupClient::DeleteBackupVaultAccessPolicyAsyncHelper(const DeleteBackupVa
 
 DeleteBackupVaultNotificationsOutcome BackupClient::DeleteBackupVaultNotifications(const DeleteBackupVaultNotificationsRequest& request) const
 {
+  if (!request.BackupVaultNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteBackupVaultNotifications", "Required field: BackupVaultName, is not set");
+    return DeleteBackupVaultNotificationsOutcome(Aws::Client::AWSError<BackupErrors>(BackupErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [BackupVaultName]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/backup-vaults/";
@@ -438,6 +478,16 @@ void BackupClient::DeleteBackupVaultNotificationsAsyncHelper(const DeleteBackupV
 
 DeleteRecoveryPointOutcome BackupClient::DeleteRecoveryPoint(const DeleteRecoveryPointRequest& request) const
 {
+  if (!request.BackupVaultNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteRecoveryPoint", "Required field: BackupVaultName, is not set");
+    return DeleteRecoveryPointOutcome(Aws::Client::AWSError<BackupErrors>(BackupErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [BackupVaultName]", false));
+  }
+  if (!request.RecoveryPointArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteRecoveryPoint", "Required field: RecoveryPointArn, is not set");
+    return DeleteRecoveryPointOutcome(Aws::Client::AWSError<BackupErrors>(BackupErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [RecoveryPointArn]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/backup-vaults/";
@@ -476,6 +526,11 @@ void BackupClient::DeleteRecoveryPointAsyncHelper(const DeleteRecoveryPointReque
 
 DescribeBackupJobOutcome BackupClient::DescribeBackupJob(const DescribeBackupJobRequest& request) const
 {
+  if (!request.BackupJobIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DescribeBackupJob", "Required field: BackupJobId, is not set");
+    return DescribeBackupJobOutcome(Aws::Client::AWSError<BackupErrors>(BackupErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [BackupJobId]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/backup-jobs/";
@@ -512,6 +567,11 @@ void BackupClient::DescribeBackupJobAsyncHelper(const DescribeBackupJobRequest& 
 
 DescribeBackupVaultOutcome BackupClient::DescribeBackupVault(const DescribeBackupVaultRequest& request) const
 {
+  if (!request.BackupVaultNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DescribeBackupVault", "Required field: BackupVaultName, is not set");
+    return DescribeBackupVaultOutcome(Aws::Client::AWSError<BackupErrors>(BackupErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [BackupVaultName]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/backup-vaults/";
@@ -548,6 +608,11 @@ void BackupClient::DescribeBackupVaultAsyncHelper(const DescribeBackupVaultReque
 
 DescribeProtectedResourceOutcome BackupClient::DescribeProtectedResource(const DescribeProtectedResourceRequest& request) const
 {
+  if (!request.ResourceArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DescribeProtectedResource", "Required field: ResourceArn, is not set");
+    return DescribeProtectedResourceOutcome(Aws::Client::AWSError<BackupErrors>(BackupErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceArn]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/resources/";
@@ -584,6 +649,16 @@ void BackupClient::DescribeProtectedResourceAsyncHelper(const DescribeProtectedR
 
 DescribeRecoveryPointOutcome BackupClient::DescribeRecoveryPoint(const DescribeRecoveryPointRequest& request) const
 {
+  if (!request.BackupVaultNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DescribeRecoveryPoint", "Required field: BackupVaultName, is not set");
+    return DescribeRecoveryPointOutcome(Aws::Client::AWSError<BackupErrors>(BackupErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [BackupVaultName]", false));
+  }
+  if (!request.RecoveryPointArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DescribeRecoveryPoint", "Required field: RecoveryPointArn, is not set");
+    return DescribeRecoveryPointOutcome(Aws::Client::AWSError<BackupErrors>(BackupErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [RecoveryPointArn]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/backup-vaults/";
@@ -622,6 +697,11 @@ void BackupClient::DescribeRecoveryPointAsyncHelper(const DescribeRecoveryPointR
 
 DescribeRestoreJobOutcome BackupClient::DescribeRestoreJob(const DescribeRestoreJobRequest& request) const
 {
+  if (!request.RestoreJobIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DescribeRestoreJob", "Required field: RestoreJobId, is not set");
+    return DescribeRestoreJobOutcome(Aws::Client::AWSError<BackupErrors>(BackupErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [RestoreJobId]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/restore-jobs/";
@@ -658,6 +738,11 @@ void BackupClient::DescribeRestoreJobAsyncHelper(const DescribeRestoreJobRequest
 
 ExportBackupPlanTemplateOutcome BackupClient::ExportBackupPlanTemplate(const ExportBackupPlanTemplateRequest& request) const
 {
+  if (!request.BackupPlanIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ExportBackupPlanTemplate", "Required field: BackupPlanId, is not set");
+    return ExportBackupPlanTemplateOutcome(Aws::Client::AWSError<BackupErrors>(BackupErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [BackupPlanId]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/backup/plans/";
@@ -695,6 +780,11 @@ void BackupClient::ExportBackupPlanTemplateAsyncHelper(const ExportBackupPlanTem
 
 GetBackupPlanOutcome BackupClient::GetBackupPlan(const GetBackupPlanRequest& request) const
 {
+  if (!request.BackupPlanIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetBackupPlan", "Required field: BackupPlanId, is not set");
+    return GetBackupPlanOutcome(Aws::Client::AWSError<BackupErrors>(BackupErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [BackupPlanId]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/backup/plans/";
@@ -767,6 +857,11 @@ void BackupClient::GetBackupPlanFromJSONAsyncHelper(const GetBackupPlanFromJSONR
 
 GetBackupPlanFromTemplateOutcome BackupClient::GetBackupPlanFromTemplate(const GetBackupPlanFromTemplateRequest& request) const
 {
+  if (!request.BackupPlanTemplateIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetBackupPlanFromTemplate", "Required field: BackupPlanTemplateId, is not set");
+    return GetBackupPlanFromTemplateOutcome(Aws::Client::AWSError<BackupErrors>(BackupErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [BackupPlanTemplateId]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/backup/template/plans/";
@@ -804,6 +899,16 @@ void BackupClient::GetBackupPlanFromTemplateAsyncHelper(const GetBackupPlanFromT
 
 GetBackupSelectionOutcome BackupClient::GetBackupSelection(const GetBackupSelectionRequest& request) const
 {
+  if (!request.BackupPlanIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetBackupSelection", "Required field: BackupPlanId, is not set");
+    return GetBackupSelectionOutcome(Aws::Client::AWSError<BackupErrors>(BackupErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [BackupPlanId]", false));
+  }
+  if (!request.SelectionIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetBackupSelection", "Required field: SelectionId, is not set");
+    return GetBackupSelectionOutcome(Aws::Client::AWSError<BackupErrors>(BackupErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [SelectionId]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/backup/plans/";
@@ -842,6 +947,11 @@ void BackupClient::GetBackupSelectionAsyncHelper(const GetBackupSelectionRequest
 
 GetBackupVaultAccessPolicyOutcome BackupClient::GetBackupVaultAccessPolicy(const GetBackupVaultAccessPolicyRequest& request) const
 {
+  if (!request.BackupVaultNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetBackupVaultAccessPolicy", "Required field: BackupVaultName, is not set");
+    return GetBackupVaultAccessPolicyOutcome(Aws::Client::AWSError<BackupErrors>(BackupErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [BackupVaultName]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/backup-vaults/";
@@ -879,6 +989,11 @@ void BackupClient::GetBackupVaultAccessPolicyAsyncHelper(const GetBackupVaultAcc
 
 GetBackupVaultNotificationsOutcome BackupClient::GetBackupVaultNotifications(const GetBackupVaultNotificationsRequest& request) const
 {
+  if (!request.BackupVaultNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetBackupVaultNotifications", "Required field: BackupVaultName, is not set");
+    return GetBackupVaultNotificationsOutcome(Aws::Client::AWSError<BackupErrors>(BackupErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [BackupVaultName]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/backup-vaults/";
@@ -916,6 +1031,16 @@ void BackupClient::GetBackupVaultNotificationsAsyncHelper(const GetBackupVaultNo
 
 GetRecoveryPointRestoreMetadataOutcome BackupClient::GetRecoveryPointRestoreMetadata(const GetRecoveryPointRestoreMetadataRequest& request) const
 {
+  if (!request.BackupVaultNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetRecoveryPointRestoreMetadata", "Required field: BackupVaultName, is not set");
+    return GetRecoveryPointRestoreMetadataOutcome(Aws::Client::AWSError<BackupErrors>(BackupErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [BackupVaultName]", false));
+  }
+  if (!request.RecoveryPointArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetRecoveryPointRestoreMetadata", "Required field: RecoveryPointArn, is not set");
+    return GetRecoveryPointRestoreMetadataOutcome(Aws::Client::AWSError<BackupErrors>(BackupErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [RecoveryPointArn]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/backup-vaults/";
@@ -1058,6 +1183,11 @@ void BackupClient::ListBackupPlanTemplatesAsyncHelper(const ListBackupPlanTempla
 
 ListBackupPlanVersionsOutcome BackupClient::ListBackupPlanVersions(const ListBackupPlanVersionsRequest& request) const
 {
+  if (!request.BackupPlanIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListBackupPlanVersions", "Required field: BackupPlanId, is not set");
+    return ListBackupPlanVersionsOutcome(Aws::Client::AWSError<BackupErrors>(BackupErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [BackupPlanId]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/backup/plans/";
@@ -1130,6 +1260,11 @@ void BackupClient::ListBackupPlansAsyncHelper(const ListBackupPlansRequest& requ
 
 ListBackupSelectionsOutcome BackupClient::ListBackupSelections(const ListBackupSelectionsRequest& request) const
 {
+  if (!request.BackupPlanIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListBackupSelections", "Required field: BackupPlanId, is not set");
+    return ListBackupSelectionsOutcome(Aws::Client::AWSError<BackupErrors>(BackupErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [BackupPlanId]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/backup/plans/";
@@ -1237,6 +1372,11 @@ void BackupClient::ListProtectedResourcesAsyncHelper(const ListProtectedResource
 
 ListRecoveryPointsByBackupVaultOutcome BackupClient::ListRecoveryPointsByBackupVault(const ListRecoveryPointsByBackupVaultRequest& request) const
 {
+  if (!request.BackupVaultNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListRecoveryPointsByBackupVault", "Required field: BackupVaultName, is not set");
+    return ListRecoveryPointsByBackupVaultOutcome(Aws::Client::AWSError<BackupErrors>(BackupErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [BackupVaultName]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/backup-vaults/";
@@ -1274,6 +1414,11 @@ void BackupClient::ListRecoveryPointsByBackupVaultAsyncHelper(const ListRecovery
 
 ListRecoveryPointsByResourceOutcome BackupClient::ListRecoveryPointsByResource(const ListRecoveryPointsByResourceRequest& request) const
 {
+  if (!request.ResourceArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListRecoveryPointsByResource", "Required field: ResourceArn, is not set");
+    return ListRecoveryPointsByResourceOutcome(Aws::Client::AWSError<BackupErrors>(BackupErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceArn]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/resources/";
@@ -1346,6 +1491,11 @@ void BackupClient::ListRestoreJobsAsyncHelper(const ListRestoreJobsRequest& requ
 
 ListTagsOutcome BackupClient::ListTags(const ListTagsRequest& request) const
 {
+  if (!request.ResourceArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListTags", "Required field: ResourceArn, is not set");
+    return ListTagsOutcome(Aws::Client::AWSError<BackupErrors>(BackupErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceArn]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/tags/";
@@ -1383,6 +1533,11 @@ void BackupClient::ListTagsAsyncHelper(const ListTagsRequest& request, const Lis
 
 PutBackupVaultAccessPolicyOutcome BackupClient::PutBackupVaultAccessPolicy(const PutBackupVaultAccessPolicyRequest& request) const
 {
+  if (!request.BackupVaultNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("PutBackupVaultAccessPolicy", "Required field: BackupVaultName, is not set");
+    return PutBackupVaultAccessPolicyOutcome(Aws::Client::AWSError<BackupErrors>(BackupErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [BackupVaultName]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/backup-vaults/";
@@ -1420,6 +1575,11 @@ void BackupClient::PutBackupVaultAccessPolicyAsyncHelper(const PutBackupVaultAcc
 
 PutBackupVaultNotificationsOutcome BackupClient::PutBackupVaultNotifications(const PutBackupVaultNotificationsRequest& request) const
 {
+  if (!request.BackupVaultNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("PutBackupVaultNotifications", "Required field: BackupVaultName, is not set");
+    return PutBackupVaultNotificationsOutcome(Aws::Client::AWSError<BackupErrors>(BackupErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [BackupVaultName]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/backup-vaults/";
@@ -1527,6 +1687,11 @@ void BackupClient::StartRestoreJobAsyncHelper(const StartRestoreJobRequest& requ
 
 StopBackupJobOutcome BackupClient::StopBackupJob(const StopBackupJobRequest& request) const
 {
+  if (!request.BackupJobIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("StopBackupJob", "Required field: BackupJobId, is not set");
+    return StopBackupJobOutcome(Aws::Client::AWSError<BackupErrors>(BackupErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [BackupJobId]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/backup-jobs/";
@@ -1563,6 +1728,11 @@ void BackupClient::StopBackupJobAsyncHelper(const StopBackupJobRequest& request,
 
 TagResourceOutcome BackupClient::TagResource(const TagResourceRequest& request) const
 {
+  if (!request.ResourceArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("TagResource", "Required field: ResourceArn, is not set");
+    return TagResourceOutcome(Aws::Client::AWSError<BackupErrors>(BackupErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceArn]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/tags/";
@@ -1599,6 +1769,11 @@ void BackupClient::TagResourceAsyncHelper(const TagResourceRequest& request, con
 
 UntagResourceOutcome BackupClient::UntagResource(const UntagResourceRequest& request) const
 {
+  if (!request.ResourceArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UntagResource", "Required field: ResourceArn, is not set");
+    return UntagResourceOutcome(Aws::Client::AWSError<BackupErrors>(BackupErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceArn]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/untag/";
@@ -1635,6 +1810,11 @@ void BackupClient::UntagResourceAsyncHelper(const UntagResourceRequest& request,
 
 UpdateBackupPlanOutcome BackupClient::UpdateBackupPlan(const UpdateBackupPlanRequest& request) const
 {
+  if (!request.BackupPlanIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateBackupPlan", "Required field: BackupPlanId, is not set");
+    return UpdateBackupPlanOutcome(Aws::Client::AWSError<BackupErrors>(BackupErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [BackupPlanId]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/backup/plans/";
@@ -1671,6 +1851,16 @@ void BackupClient::UpdateBackupPlanAsyncHelper(const UpdateBackupPlanRequest& re
 
 UpdateRecoveryPointLifecycleOutcome BackupClient::UpdateRecoveryPointLifecycle(const UpdateRecoveryPointLifecycleRequest& request) const
 {
+  if (!request.BackupVaultNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateRecoveryPointLifecycle", "Required field: BackupVaultName, is not set");
+    return UpdateRecoveryPointLifecycleOutcome(Aws::Client::AWSError<BackupErrors>(BackupErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [BackupVaultName]", false));
+  }
+  if (!request.RecoveryPointArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateRecoveryPointLifecycle", "Required field: RecoveryPointArn, is not set");
+    return UpdateRecoveryPointLifecycleOutcome(Aws::Client::AWSError<BackupErrors>(BackupErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [RecoveryPointArn]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/backup-vaults/";

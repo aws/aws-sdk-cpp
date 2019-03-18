@@ -53,6 +53,11 @@ namespace Model
     /**
      * <p>The name of the service mesh that the route resides in.</p>
      */
+    inline bool MeshNameHasBeenSet() const { return m_meshNameHasBeenSet; }
+
+    /**
+     * <p>The name of the service mesh that the route resides in.</p>
+     */
     inline void SetMeshName(const Aws::String& value) { m_meshNameHasBeenSet = true; m_meshName = value; }
 
     /**
@@ -89,6 +94,11 @@ namespace Model
     /**
      * <p>The name of the route to describe.</p>
      */
+    inline bool RouteNameHasBeenSet() const { return m_routeNameHasBeenSet; }
+
+    /**
+     * <p>The name of the route to describe.</p>
+     */
     inline void SetRouteName(const Aws::String& value) { m_routeNameHasBeenSet = true; m_routeName = value; }
 
     /**
@@ -121,6 +131,11 @@ namespace Model
      * <p>The name of the virtual router that the route is associated with.</p>
      */
     inline const Aws::String& GetVirtualRouterName() const{ return m_virtualRouterName; }
+
+    /**
+     * <p>The name of the virtual router that the route is associated with.</p>
+     */
+    inline bool VirtualRouterNameHasBeenSet() const { return m_virtualRouterNameHasBeenSet; }
 
     /**
      * <p>The name of the virtual router that the route is associated with.</p>

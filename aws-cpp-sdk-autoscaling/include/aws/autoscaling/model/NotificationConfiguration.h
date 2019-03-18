@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The name of the Auto Scaling group.</p>
      */
+    inline bool AutoScalingGroupNameHasBeenSet() const { return m_autoScalingGroupNameHasBeenSet; }
+
+    /**
+     * <p>The name of the Auto Scaling group.</p>
+     */
     inline void SetAutoScalingGroupName(const Aws::String& value) { m_autoScalingGroupNameHasBeenSet = true; m_autoScalingGroupName = value; }
 
     /**
@@ -90,6 +95,12 @@ namespace Model
      * (Amazon SNS) topic.</p>
      */
     inline const Aws::String& GetTopicARN() const{ return m_topicARN; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the Amazon Simple Notification Service
+     * (Amazon SNS) topic.</p>
+     */
+    inline bool TopicARNHasBeenSet() const { return m_topicARNHasBeenSet; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the Amazon Simple Notification Service
@@ -137,6 +148,16 @@ namespace Model
      * <code>autoscaling:TEST_NOTIFICATION</code> </p> </li> </ul>
      */
     inline const Aws::String& GetNotificationType() const{ return m_notificationType; }
+
+    /**
+     * <p>One of the following event notification types:</p> <ul> <li> <p>
+     * <code>autoscaling:EC2_INSTANCE_LAUNCH</code> </p> </li> <li> <p>
+     * <code>autoscaling:EC2_INSTANCE_LAUNCH_ERROR</code> </p> </li> <li> <p>
+     * <code>autoscaling:EC2_INSTANCE_TERMINATE</code> </p> </li> <li> <p>
+     * <code>autoscaling:EC2_INSTANCE_TERMINATE_ERROR</code> </p> </li> <li> <p>
+     * <code>autoscaling:TEST_NOTIFICATION</code> </p> </li> </ul>
+     */
+    inline bool NotificationTypeHasBeenSet() const { return m_notificationTypeHasBeenSet; }
 
     /**
      * <p>One of the following event notification types:</p> <ul> <li> <p>

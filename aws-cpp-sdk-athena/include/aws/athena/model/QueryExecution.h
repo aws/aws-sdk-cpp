@@ -61,6 +61,11 @@ namespace Model
     /**
      * <p>The unique identifier for each query execution.</p>
      */
+    inline bool QueryExecutionIdHasBeenSet() const { return m_queryExecutionIdHasBeenSet; }
+
+    /**
+     * <p>The unique identifier for each query execution.</p>
+     */
     inline void SetQueryExecutionId(const Aws::String& value) { m_queryExecutionIdHasBeenSet = true; m_queryExecutionId = value; }
 
     /**
@@ -93,6 +98,11 @@ namespace Model
      * <p>The SQL query statements which the query execution ran.</p>
      */
     inline const Aws::String& GetQuery() const{ return m_query; }
+
+    /**
+     * <p>The SQL query statements which the query execution ran.</p>
+     */
+    inline bool QueryHasBeenSet() const { return m_queryHasBeenSet; }
 
     /**
      * <p>The SQL query statements which the query execution ran.</p>
@@ -133,6 +143,15 @@ namespace Model
      * <code>SHOW CREATE TABLE</code>, or <code>DESCRIBE &lt;table&gt;</code>.</p>
      */
     inline const StatementType& GetStatementType() const{ return m_statementType; }
+
+    /**
+     * <p>The type of query statement that was run. <code>DDL</code> indicates DDL
+     * query statements. <code>DML</code> indicates DML (Data Manipulation Language)
+     * query statements, such as <code>CREATE TABLE AS SELECT</code>.
+     * <code>UTILITY</code> indicates query statements other than DDL and DML, such as
+     * <code>SHOW CREATE TABLE</code>, or <code>DESCRIBE &lt;table&gt;</code>.</p>
+     */
+    inline bool StatementTypeHasBeenSet() const { return m_statementTypeHasBeenSet; }
 
     /**
      * <p>The type of query statement that was run. <code>DDL</code> indicates DDL
@@ -187,6 +206,15 @@ namespace Model
      * uses the location for the query results and the encryption configuration that
      * are specified for the workgroup.</p>
      */
+    inline bool ResultConfigurationHasBeenSet() const { return m_resultConfigurationHasBeenSet; }
+
+    /**
+     * <p>The location in Amazon S3 where query results were stored and the encryption
+     * option, if any, used for query results. These are known as "client-side
+     * settings". If workgroup settings override client-side settings, then the query
+     * uses the location for the query results and the encryption configuration that
+     * are specified for the workgroup.</p>
+     */
     inline void SetResultConfiguration(const ResultConfiguration& value) { m_resultConfigurationHasBeenSet = true; m_resultConfiguration = value; }
 
     /**
@@ -225,6 +253,11 @@ namespace Model
     /**
      * <p>The database in which the query execution occurred.</p>
      */
+    inline bool QueryExecutionContextHasBeenSet() const { return m_queryExecutionContextHasBeenSet; }
+
+    /**
+     * <p>The database in which the query execution occurred.</p>
+     */
     inline void SetQueryExecutionContext(const QueryExecutionContext& value) { m_queryExecutionContextHasBeenSet = true; m_queryExecutionContext = value; }
 
     /**
@@ -248,6 +281,12 @@ namespace Model
      * (if applicable) for the query execution.</p>
      */
     inline const QueryExecutionStatus& GetStatus() const{ return m_status; }
+
+    /**
+     * <p>The completion date, current state, submission time, and state change reason
+     * (if applicable) for the query execution.</p>
+     */
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
     /**
      * <p>The completion date, current state, submission time, and state change reason
@@ -284,6 +323,12 @@ namespace Model
      * <p>The amount of data scanned during the query execution and the amount of time
      * that it took to execute, and the type of statement that was run.</p>
      */
+    inline bool StatisticsHasBeenSet() const { return m_statisticsHasBeenSet; }
+
+    /**
+     * <p>The amount of data scanned during the query execution and the amount of time
+     * that it took to execute, and the type of statement that was run.</p>
+     */
     inline void SetStatistics(const QueryExecutionStatistics& value) { m_statisticsHasBeenSet = true; m_statistics = value; }
 
     /**
@@ -309,6 +354,11 @@ namespace Model
      * <p>The name of the workgroup in which the query ran.</p>
      */
     inline const Aws::String& GetWorkGroup() const{ return m_workGroup; }
+
+    /**
+     * <p>The name of the workgroup in which the query ran.</p>
+     */
+    inline bool WorkGroupHasBeenSet() const { return m_workGroupHasBeenSet; }
 
     /**
      * <p>The name of the workgroup in which the query ran.</p>

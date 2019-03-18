@@ -59,6 +59,11 @@ namespace Model
     /**
      * <p>The date that the DailyVolume metrics apply to, in Unix time.</p>
      */
+    inline bool StartDateHasBeenSet() const { return m_startDateHasBeenSet; }
+
+    /**
+     * <p>The date that the DailyVolume metrics apply to, in Unix time.</p>
+     */
     inline void SetStartDate(const Aws::Utils::DateTime& value) { m_startDateHasBeenSet = true; m_startDate = value; }
 
     /**
@@ -82,6 +87,12 @@ namespace Model
      * analysis period.</p>
      */
     inline const VolumeStatistics& GetVolumeStatistics() const{ return m_volumeStatistics; }
+
+    /**
+     * <p>An object that contains inbox placement metrics for a specific day in the
+     * analysis period.</p>
+     */
+    inline bool VolumeStatisticsHasBeenSet() const { return m_volumeStatisticsHasBeenSet; }
 
     /**
      * <p>An object that contains inbox placement metrics for a specific day in the
@@ -113,6 +124,12 @@ namespace Model
      * analysis period, broken out by the recipient's email provider.</p>
      */
     inline const Aws::Vector<DomainIspPlacement>& GetDomainIspPlacements() const{ return m_domainIspPlacements; }
+
+    /**
+     * <p>An object that contains inbox placement metrics for a specifid day in the
+     * analysis period, broken out by the recipient's email provider.</p>
+     */
+    inline bool DomainIspPlacementsHasBeenSet() const { return m_domainIspPlacementsHasBeenSet; }
 
     /**
      * <p>An object that contains inbox placement metrics for a specifid day in the

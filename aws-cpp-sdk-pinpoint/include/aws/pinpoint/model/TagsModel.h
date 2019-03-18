@@ -47,6 +47,9 @@ namespace Model
     inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
 
     
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
+
+    
     inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     

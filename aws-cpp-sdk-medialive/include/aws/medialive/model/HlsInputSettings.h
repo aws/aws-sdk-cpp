@@ -59,6 +59,14 @@ namespace Model
      * will be chosen.  The bitrate is specified in bits per second, as in an HLS
      * manifest.
      */
+    inline bool BandwidthHasBeenSet() const { return m_bandwidthHasBeenSet; }
+
+    /**
+     * When specified the HLS stream with the m3u8 BANDWIDTH that most closely matches
+     * this value will be chosen, otherwise the highest bandwidth stream in the m3u8
+     * will be chosen.  The bitrate is specified in bits per second, as in an HLS
+     * manifest.
+     */
     inline void SetBandwidth(int value) { m_bandwidthHasBeenSet = true; m_bandwidth = value; }
 
     /**
@@ -76,6 +84,13 @@ namespace Model
      * will begin with the first segment specified in the m3u8.
      */
     inline int GetBufferSegments() const{ return m_bufferSegments; }
+
+    /**
+     * When specified, reading of the HLS input will begin this many buffer segments
+     * from the end (most recently written segment).  When not specified, the HLS input
+     * will begin with the first segment specified in the m3u8.
+     */
+    inline bool BufferSegmentsHasBeenSet() const { return m_bufferSegmentsHasBeenSet; }
 
     /**
      * When specified, reading of the HLS input will begin this many buffer segments
@@ -102,6 +117,12 @@ namespace Model
      * The number of consecutive times that attempts to read a manifest or segment must
      * fail before the input is considered unavailable.
      */
+    inline bool RetriesHasBeenSet() const { return m_retriesHasBeenSet; }
+
+    /**
+     * The number of consecutive times that attempts to read a manifest or segment must
+     * fail before the input is considered unavailable.
+     */
     inline void SetRetries(int value) { m_retriesHasBeenSet = true; m_retries = value; }
 
     /**
@@ -116,6 +137,12 @@ namespace Model
      * segment fails.
      */
     inline int GetRetryInterval() const{ return m_retryInterval; }
+
+    /**
+     * The number of seconds between retries when an attempt to read a manifest or
+     * segment fails.
+     */
+    inline bool RetryIntervalHasBeenSet() const { return m_retryIntervalHasBeenSet; }
 
     /**
      * The number of seconds between retries when an attempt to read a manifest or

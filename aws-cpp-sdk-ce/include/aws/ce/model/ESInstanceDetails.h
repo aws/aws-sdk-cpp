@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The class of instance that AWS recommends.</p>
      */
+    inline bool InstanceClassHasBeenSet() const { return m_instanceClassHasBeenSet; }
+
+    /**
+     * <p>The class of instance that AWS recommends.</p>
+     */
     inline void SetInstanceClass(const Aws::String& value) { m_instanceClassHasBeenSet = true; m_instanceClass = value; }
 
     /**
@@ -88,6 +93,11 @@ namespace Model
      * <p>The size of instance that AWS recommends.</p>
      */
     inline const Aws::String& GetInstanceSize() const{ return m_instanceSize; }
+
+    /**
+     * <p>The size of instance that AWS recommends.</p>
+     */
+    inline bool InstanceSizeHasBeenSet() const { return m_instanceSizeHasBeenSet; }
 
     /**
      * <p>The size of instance that AWS recommends.</p>
@@ -128,6 +138,11 @@ namespace Model
     /**
      * <p>The AWS Region of the recommended reservation.</p>
      */
+    inline bool RegionHasBeenSet() const { return m_regionHasBeenSet; }
+
+    /**
+     * <p>The AWS Region of the recommended reservation.</p>
+     */
     inline void SetRegion(const Aws::String& value) { m_regionHasBeenSet = true; m_region = value; }
 
     /**
@@ -164,6 +179,11 @@ namespace Model
     /**
      * <p>Whether the recommendation is for a current-generation instance.</p>
      */
+    inline bool CurrentGenerationHasBeenSet() const { return m_currentGenerationHasBeenSet; }
+
+    /**
+     * <p>Whether the recommendation is for a current-generation instance.</p>
+     */
     inline void SetCurrentGeneration(bool value) { m_currentGenerationHasBeenSet = true; m_currentGeneration = value; }
 
     /**
@@ -176,6 +196,11 @@ namespace Model
      * <p>Whether the recommended reservation is size flexible.</p>
      */
     inline bool GetSizeFlexEligible() const{ return m_sizeFlexEligible; }
+
+    /**
+     * <p>Whether the recommended reservation is size flexible.</p>
+     */
+    inline bool SizeFlexEligibleHasBeenSet() const { return m_sizeFlexEligibleHasBeenSet; }
 
     /**
      * <p>Whether the recommended reservation is size flexible.</p>

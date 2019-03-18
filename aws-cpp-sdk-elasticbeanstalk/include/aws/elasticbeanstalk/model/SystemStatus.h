@@ -59,6 +59,11 @@ namespace Model
     /**
      * <p>CPU utilization metrics for the instance.</p>
      */
+    inline bool CPUUtilizationHasBeenSet() const { return m_cPUUtilizationHasBeenSet; }
+
+    /**
+     * <p>CPU utilization metrics for the instance.</p>
+     */
     inline void SetCPUUtilization(const CPUUtilization& value) { m_cPUUtilizationHasBeenSet = true; m_cPUUtilization = value; }
 
     /**
@@ -84,6 +89,14 @@ namespace Model
      * System Metrics</a>.</p>
      */
     inline const Aws::Vector<double>& GetLoadAverage() const{ return m_loadAverage; }
+
+    /**
+     * <p>Load average in the last 1-minute, 5-minute, and 15-minute periods. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-metrics.html#health-enhanced-metrics-os">Operating
+     * System Metrics</a>.</p>
+     */
+    inline bool LoadAverageHasBeenSet() const { return m_loadAverageHasBeenSet; }
 
     /**
      * <p>Load average in the last 1-minute, 5-minute, and 15-minute periods. For more

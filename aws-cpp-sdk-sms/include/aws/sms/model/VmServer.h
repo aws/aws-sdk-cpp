@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>Information about the VM server location.</p>
      */
+    inline bool VmServerAddressHasBeenSet() const { return m_vmServerAddressHasBeenSet; }
+
+    /**
+     * <p>Information about the VM server location.</p>
+     */
     inline void SetVmServerAddress(const VmServerAddress& value) { m_vmServerAddressHasBeenSet = true; m_vmServerAddress = value; }
 
     /**
@@ -79,6 +84,11 @@ namespace Model
      * <p>The name of the VM.</p>
      */
     inline const Aws::String& GetVmName() const{ return m_vmName; }
+
+    /**
+     * <p>The name of the VM.</p>
+     */
+    inline bool VmNameHasBeenSet() const { return m_vmNameHasBeenSet; }
 
     /**
      * <p>The name of the VM.</p>
@@ -119,6 +129,11 @@ namespace Model
     /**
      * <p>The name of the VM manager.</p>
      */
+    inline bool VmManagerNameHasBeenSet() const { return m_vmManagerNameHasBeenSet; }
+
+    /**
+     * <p>The name of the VM manager.</p>
+     */
     inline void SetVmManagerName(const Aws::String& value) { m_vmManagerNameHasBeenSet = true; m_vmManagerName = value; }
 
     /**
@@ -155,6 +170,11 @@ namespace Model
     /**
      * <p>The type of VM management product.</p>
      */
+    inline bool VmManagerTypeHasBeenSet() const { return m_vmManagerTypeHasBeenSet; }
+
+    /**
+     * <p>The type of VM management product.</p>
+     */
     inline void SetVmManagerType(const VmManagerType& value) { m_vmManagerTypeHasBeenSet = true; m_vmManagerType = value; }
 
     /**
@@ -177,6 +197,11 @@ namespace Model
      * <p>The VM folder path in the vCenter Server virtual machine inventory tree.</p>
      */
     inline const Aws::String& GetVmPath() const{ return m_vmPath; }
+
+    /**
+     * <p>The VM folder path in the vCenter Server virtual machine inventory tree.</p>
+     */
+    inline bool VmPathHasBeenSet() const { return m_vmPathHasBeenSet; }
 
     /**
      * <p>The VM folder path in the vCenter Server virtual machine inventory tree.</p>

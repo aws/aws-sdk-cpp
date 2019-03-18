@@ -53,6 +53,11 @@ namespace Model
     /**
      * <p>The name of the job queue.</p>
      */
+    inline bool JobQueueNameHasBeenSet() const { return m_jobQueueNameHasBeenSet; }
+
+    /**
+     * <p>The name of the job queue.</p>
+     */
     inline void SetJobQueueName(const Aws::String& value) { m_jobQueueNameHasBeenSet = true; m_jobQueueName = value; }
 
     /**
@@ -86,6 +91,12 @@ namespace Model
      * it is able to accept jobs.</p>
      */
     inline const JQState& GetState() const{ return m_state; }
+
+    /**
+     * <p>The state of the job queue. If the job queue state is <code>ENABLED</code>,
+     * it is able to accept jobs.</p>
+     */
+    inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
 
     /**
      * <p>The state of the job queue. If the job queue state is <code>ENABLED</code>,
@@ -130,6 +141,16 @@ namespace Model
      * <code>10</code> is given scheduling preference over a job queue with a priority
      * value of <code>1</code>.</p>
      */
+    inline bool PriorityHasBeenSet() const { return m_priorityHasBeenSet; }
+
+    /**
+     * <p>The priority of the job queue. Job queues with a higher priority (or a higher
+     * integer value for the <code>priority</code> parameter) are evaluated first when
+     * associated with the same compute environment. Priority is determined in
+     * descending order, for example, a job queue with a priority value of
+     * <code>10</code> is given scheduling preference over a job queue with a priority
+     * value of <code>1</code>.</p>
+     */
     inline void SetPriority(int value) { m_priorityHasBeenSet = true; m_priority = value; }
 
     /**
@@ -151,6 +172,15 @@ namespace Model
      * can associate up to three compute environments with a job queue.</p>
      */
     inline const Aws::Vector<ComputeEnvironmentOrder>& GetComputeEnvironmentOrder() const{ return m_computeEnvironmentOrder; }
+
+    /**
+     * <p>The set of compute environments mapped to a job queue and their order
+     * relative to each other. The job scheduler uses this parameter to determine which
+     * compute environment should execute a given job. Compute environments must be in
+     * the <code>VALID</code> state before you can associate them with a job queue. You
+     * can associate up to three compute environments with a job queue.</p>
+     */
+    inline bool ComputeEnvironmentOrderHasBeenSet() const { return m_computeEnvironmentOrderHasBeenSet; }
 
     /**
      * <p>The set of compute environments mapped to a job queue and their order

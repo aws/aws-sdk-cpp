@@ -55,6 +55,11 @@ namespace Model
     /**
      * <p>The request URL.</p>
      */
+    inline bool HttpURLHasBeenSet() const { return m_httpURLHasBeenSet; }
+
+    /**
+     * <p>The request URL.</p>
+     */
     inline void SetHttpURL(const Aws::String& value) { m_httpURLHasBeenSet = true; m_httpURL = value; }
 
     /**
@@ -91,6 +96,11 @@ namespace Model
     /**
      * <p>The response status.</p>
      */
+    inline bool HttpStatusHasBeenSet() const { return m_httpStatusHasBeenSet; }
+
+    /**
+     * <p>The response status.</p>
+     */
     inline void SetHttpStatus(int value) { m_httpStatusHasBeenSet = true; m_httpStatus = value; }
 
     /**
@@ -103,6 +113,11 @@ namespace Model
      * <p>The request method.</p>
      */
     inline const Aws::String& GetHttpMethod() const{ return m_httpMethod; }
+
+    /**
+     * <p>The request method.</p>
+     */
+    inline bool HttpMethodHasBeenSet() const { return m_httpMethodHasBeenSet; }
 
     /**
      * <p>The request method.</p>
@@ -143,6 +158,11 @@ namespace Model
     /**
      * <p>The request's user agent string.</p>
      */
+    inline bool UserAgentHasBeenSet() const { return m_userAgentHasBeenSet; }
+
+    /**
+     * <p>The request's user agent string.</p>
+     */
     inline void SetUserAgent(const Aws::String& value) { m_userAgentHasBeenSet = true; m_userAgent = value; }
 
     /**
@@ -175,6 +195,11 @@ namespace Model
      * <p>The IP address of the requestor.</p>
      */
     inline const Aws::String& GetClientIp() const{ return m_clientIp; }
+
+    /**
+     * <p>The IP address of the requestor.</p>
+     */
+    inline bool ClientIpHasBeenSet() const { return m_clientIpHasBeenSet; }
 
     /**
      * <p>The IP address of the requestor.</p>

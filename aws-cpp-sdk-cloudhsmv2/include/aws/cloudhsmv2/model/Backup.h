@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p>The identifier (ID) of the backup.</p>
      */
+    inline bool BackupIdHasBeenSet() const { return m_backupIdHasBeenSet; }
+
+    /**
+     * <p>The identifier (ID) of the backup.</p>
+     */
     inline void SetBackupId(const Aws::String& value) { m_backupIdHasBeenSet = true; m_backupId = value; }
 
     /**
@@ -94,6 +99,11 @@ namespace Model
     /**
      * <p>The state of the backup.</p>
      */
+    inline bool BackupStateHasBeenSet() const { return m_backupStateHasBeenSet; }
+
+    /**
+     * <p>The state of the backup.</p>
+     */
     inline void SetBackupState(const BackupState& value) { m_backupStateHasBeenSet = true; m_backupState = value; }
 
     /**
@@ -116,6 +126,11 @@ namespace Model
      * <p>The identifier (ID) of the cluster that was backed up.</p>
      */
     inline const Aws::String& GetClusterId() const{ return m_clusterId; }
+
+    /**
+     * <p>The identifier (ID) of the cluster that was backed up.</p>
+     */
+    inline bool ClusterIdHasBeenSet() const { return m_clusterIdHasBeenSet; }
 
     /**
      * <p>The identifier (ID) of the cluster that was backed up.</p>
@@ -156,6 +171,11 @@ namespace Model
     /**
      * <p>The date and time when the backup was created.</p>
      */
+    inline bool CreateTimestampHasBeenSet() const { return m_createTimestampHasBeenSet; }
+
+    /**
+     * <p>The date and time when the backup was created.</p>
+     */
     inline void SetCreateTimestamp(const Aws::Utils::DateTime& value) { m_createTimestampHasBeenSet = true; m_createTimestamp = value; }
 
     /**
@@ -178,6 +198,9 @@ namespace Model
     inline const Aws::Utils::DateTime& GetCopyTimestamp() const{ return m_copyTimestamp; }
 
     
+    inline bool CopyTimestampHasBeenSet() const { return m_copyTimestampHasBeenSet; }
+
+    
     inline void SetCopyTimestamp(const Aws::Utils::DateTime& value) { m_copyTimestampHasBeenSet = true; m_copyTimestamp = value; }
 
     
@@ -192,6 +215,9 @@ namespace Model
 
     
     inline const Aws::String& GetSourceRegion() const{ return m_sourceRegion; }
+
+    
+    inline bool SourceRegionHasBeenSet() const { return m_sourceRegionHasBeenSet; }
 
     
     inline void SetSourceRegion(const Aws::String& value) { m_sourceRegionHasBeenSet = true; m_sourceRegion = value; }
@@ -216,6 +242,9 @@ namespace Model
     inline const Aws::String& GetSourceBackup() const{ return m_sourceBackup; }
 
     
+    inline bool SourceBackupHasBeenSet() const { return m_sourceBackupHasBeenSet; }
+
+    
     inline void SetSourceBackup(const Aws::String& value) { m_sourceBackupHasBeenSet = true; m_sourceBackup = value; }
 
     
@@ -236,6 +265,9 @@ namespace Model
 
     
     inline const Aws::String& GetSourceCluster() const{ return m_sourceCluster; }
+
+    
+    inline bool SourceClusterHasBeenSet() const { return m_sourceClusterHasBeenSet; }
 
     
     inline void SetSourceCluster(const Aws::String& value) { m_sourceClusterHasBeenSet = true; m_sourceCluster = value; }
@@ -260,6 +292,11 @@ namespace Model
      * <p>The date and time when the backup will be permanently deleted.</p>
      */
     inline const Aws::Utils::DateTime& GetDeleteTimestamp() const{ return m_deleteTimestamp; }
+
+    /**
+     * <p>The date and time when the backup will be permanently deleted.</p>
+     */
+    inline bool DeleteTimestampHasBeenSet() const { return m_deleteTimestampHasBeenSet; }
 
     /**
      * <p>The date and time when the backup will be permanently deleted.</p>

@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The ARN for the Lambda function.</p>
      */
+    inline bool LambdaFunctionArnHasBeenSet() const { return m_lambdaFunctionArnHasBeenSet; }
+
+    /**
+     * <p>The ARN for the Lambda function.</p>
+     */
     inline void SetLambdaFunctionArn(const Aws::String& value) { m_lambdaFunctionArnHasBeenSet = true; m_lambdaFunctionArn = value; }
 
     /**

@@ -54,6 +54,11 @@ namespace Model
     /**
      * A list of account IDs of the GuardDuty member accounts that you want to delete.
      */
+    inline bool AccountIdsHasBeenSet() const { return m_accountIdsHasBeenSet; }
+
+    /**
+     * A list of account IDs of the GuardDuty member accounts that you want to delete.
+     */
     inline void SetAccountIds(const Aws::Vector<Aws::String>& value) { m_accountIdsHasBeenSet = true; m_accountIds = value; }
 
     /**
@@ -92,6 +97,12 @@ namespace Model
      * delete.
      */
     inline const Aws::String& GetDetectorId() const{ return m_detectorId; }
+
+    /**
+     * The unique ID of the detector of the GuardDuty account whose members you want to
+     * delete.
+     */
+    inline bool DetectorIdHasBeenSet() const { return m_detectorIdHasBeenSet; }
 
     /**
      * The unique ID of the detector of the GuardDuty account whose members you want to

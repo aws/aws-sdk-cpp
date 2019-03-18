@@ -68,6 +68,15 @@ namespace Model
      * YAML-formatted or JSON-formatted string (AWS Lambda deployments only).</p> </li>
      * </ul>
      */
+    inline bool RevisionTypeHasBeenSet() const { return m_revisionTypeHasBeenSet; }
+
+    /**
+     * <p>The type of application revision:</p> <ul> <li> <p>S3: An application
+     * revision stored in Amazon S3.</p> </li> <li> <p>GitHub: An application revision
+     * stored in GitHub (EC2/On-premises deployments only).</p> </li> <li> <p>String: A
+     * YAML-formatted or JSON-formatted string (AWS Lambda deployments only).</p> </li>
+     * </ul>
+     */
     inline void SetRevisionType(const RevisionLocationType& value) { m_revisionTypeHasBeenSet = true; m_revisionType = value; }
 
     /**
@@ -106,6 +115,11 @@ namespace Model
     /**
      * <p>Information about the location of a revision stored in Amazon S3. </p>
      */
+    inline bool S3LocationHasBeenSet() const { return m_s3LocationHasBeenSet; }
+
+    /**
+     * <p>Information about the location of a revision stored in Amazon S3. </p>
+     */
     inline void SetS3Location(const S3Location& value) { m_s3LocationHasBeenSet = true; m_s3Location = value; }
 
     /**
@@ -128,6 +142,11 @@ namespace Model
      * <p>Information about the location of application artifacts stored in GitHub.</p>
      */
     inline const GitHubLocation& GetGitHubLocation() const{ return m_gitHubLocation; }
+
+    /**
+     * <p>Information about the location of application artifacts stored in GitHub.</p>
+     */
+    inline bool GitHubLocationHasBeenSet() const { return m_gitHubLocationHasBeenSet; }
 
     /**
      * <p>Information about the location of application artifacts stored in GitHub.</p>
@@ -160,6 +179,12 @@ namespace Model
      * <p>Information about the location of an AWS Lambda deployment revision stored as
      * a RawString.</p>
      */
+    inline bool StringHasBeenSet() const { return m_stringHasBeenSet; }
+
+    /**
+     * <p>Information about the location of an AWS Lambda deployment revision stored as
+     * a RawString.</p>
+     */
     inline void SetString(const RawString& value) { m_stringHasBeenSet = true; m_string = value; }
 
     /**
@@ -186,6 +211,12 @@ namespace Model
      * The content is formatted as JSON or YAML and stored as a RawString. </p>
      */
     inline const AppSpecContent& GetAppSpecContent() const{ return m_appSpecContent; }
+
+    /**
+     * <p> The content of an AppSpec file for an AWS Lambda or Amazon ECS deployment.
+     * The content is formatted as JSON or YAML and stored as a RawString. </p>
+     */
+    inline bool AppSpecContentHasBeenSet() const { return m_appSpecContentHasBeenSet; }
 
     /**
      * <p> The content of an AppSpec file for an AWS Lambda or Amazon ECS deployment.

@@ -60,6 +60,13 @@ namespace Model
      * submits a registration token through the browser. The registration token is
      * resolved to obtain a CustomerIdentifier and product code.</p>
      */
+    inline bool RegistrationTokenHasBeenSet() const { return m_registrationTokenHasBeenSet; }
+
+    /**
+     * <p>When a buyer visits your website during the registration process, the buyer
+     * submits a registration token through the browser. The registration token is
+     * resolved to obtain a CustomerIdentifier and product code.</p>
+     */
     inline void SetRegistrationToken(const Aws::String& value) { m_registrationTokenHasBeenSet = true; m_registrationToken = value; }
 
     /**

@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) for the run you wish to delete.</p>
      */
+    inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) for the run you wish to delete.</p>
+     */
     inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
 
     /**

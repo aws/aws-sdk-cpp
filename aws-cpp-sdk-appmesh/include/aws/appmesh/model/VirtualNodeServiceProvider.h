@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The name of the virtual node that is acting as a service provider.</p>
      */
+    inline bool VirtualNodeNameHasBeenSet() const { return m_virtualNodeNameHasBeenSet; }
+
+    /**
+     * <p>The name of the virtual node that is acting as a service provider.</p>
+     */
     inline void SetVirtualNodeName(const Aws::String& value) { m_virtualNodeNameHasBeenSet = true; m_virtualNodeName = value; }
 
     /**

@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p>Provides the name of the DB cluster parameter group.</p>
      */
+    inline bool DBClusterParameterGroupNameHasBeenSet() const { return m_dBClusterParameterGroupNameHasBeenSet; }
+
+    /**
+     * <p>Provides the name of the DB cluster parameter group.</p>
+     */
     inline void SetDBClusterParameterGroupName(const Aws::String& value) { m_dBClusterParameterGroupNameHasBeenSet = true; m_dBClusterParameterGroupName = value; }
 
     /**
@@ -91,6 +96,12 @@ namespace Model
      * parameter group is compatible with.</p>
      */
     inline const Aws::String& GetDBParameterGroupFamily() const{ return m_dBParameterGroupFamily; }
+
+    /**
+     * <p>Provides the name of the DB parameter group family that this DB cluster
+     * parameter group is compatible with.</p>
+     */
+    inline bool DBParameterGroupFamilyHasBeenSet() const { return m_dBParameterGroupFamilyHasBeenSet; }
 
     /**
      * <p>Provides the name of the DB parameter group family that this DB cluster
@@ -139,6 +150,12 @@ namespace Model
      * <p>Provides the customer-specified description for this DB cluster parameter
      * group.</p>
      */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
+
+    /**
+     * <p>Provides the customer-specified description for this DB cluster parameter
+     * group.</p>
+     */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
@@ -176,6 +193,11 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) for the DB cluster parameter group.</p>
      */
     inline const Aws::String& GetDBClusterParameterGroupArn() const{ return m_dBClusterParameterGroupArn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) for the DB cluster parameter group.</p>
+     */
+    inline bool DBClusterParameterGroupArnHasBeenSet() const { return m_dBClusterParameterGroupArnHasBeenSet; }
 
     /**
      * <p>The Amazon Resource Name (ARN) for the DB cluster parameter group.</p>

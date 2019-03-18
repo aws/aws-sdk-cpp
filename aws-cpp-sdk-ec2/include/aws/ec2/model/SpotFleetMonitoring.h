@@ -55,6 +55,11 @@ namespace Model
     /**
      * <p>Enables monitoring for the instance.</p> <p>Default: <code>false</code> </p>
      */
+    inline bool EnabledHasBeenSet() const { return m_enabledHasBeenSet; }
+
+    /**
+     * <p>Enables monitoring for the instance.</p> <p>Default: <code>false</code> </p>
+     */
     inline void SetEnabled(bool value) { m_enabledHasBeenSet = true; m_enabled = value; }
 
     /**

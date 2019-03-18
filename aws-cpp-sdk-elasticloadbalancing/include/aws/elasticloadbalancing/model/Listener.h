@@ -63,6 +63,12 @@ namespace Model
      * <p>The load balancer transport protocol to use for routing: HTTP, HTTPS, TCP, or
      * SSL.</p>
      */
+    inline bool ProtocolHasBeenSet() const { return m_protocolHasBeenSet; }
+
+    /**
+     * <p>The load balancer transport protocol to use for routing: HTTP, HTTPS, TCP, or
+     * SSL.</p>
+     */
     inline void SetProtocol(const Aws::String& value) { m_protocolHasBeenSet = true; m_protocol = value; }
 
     /**
@@ -108,6 +114,13 @@ namespace Model
      * any port from the range 1-65535. On EC2-Classic, you can specify any port from
      * the following list: 25, 80, 443, 465, 587, 1024-65535.</p>
      */
+    inline bool LoadBalancerPortHasBeenSet() const { return m_loadBalancerPortHasBeenSet; }
+
+    /**
+     * <p>The port on which the load balancer is listening. On EC2-VPC, you can specify
+     * any port from the range 1-65535. On EC2-Classic, you can specify any port from
+     * the following list: 25, 80, 443, 465, 587, 1024-65535.</p>
+     */
     inline void SetLoadBalancerPort(int value) { m_loadBalancerPortHasBeenSet = true; m_loadBalancerPort = value; }
 
     /**
@@ -130,6 +143,19 @@ namespace Model
      * <code>InstanceProtocol</code> must be HTTP or TCP.</p>
      */
     inline const Aws::String& GetInstanceProtocol() const{ return m_instanceProtocol; }
+
+    /**
+     * <p>The protocol to use for routing traffic to instances: HTTP, HTTPS, TCP, or
+     * SSL.</p> <p>If the front-end protocol is HTTP, HTTPS, TCP, or SSL,
+     * <code>InstanceProtocol</code> must be at the same protocol.</p> <p>If there is
+     * another listener with the same <code>InstancePort</code> whose
+     * <code>InstanceProtocol</code> is secure, (HTTPS or SSL), the listener's
+     * <code>InstanceProtocol</code> must also be secure.</p> <p>If there is another
+     * listener with the same <code>InstancePort</code> whose
+     * <code>InstanceProtocol</code> is HTTP or TCP, the listener's
+     * <code>InstanceProtocol</code> must be HTTP or TCP.</p>
+     */
+    inline bool InstanceProtocolHasBeenSet() const { return m_instanceProtocolHasBeenSet; }
 
     /**
      * <p>The protocol to use for routing traffic to instances: HTTP, HTTPS, TCP, or
@@ -218,6 +244,11 @@ namespace Model
     /**
      * <p>The port on which the instance is listening.</p>
      */
+    inline bool InstancePortHasBeenSet() const { return m_instancePortHasBeenSet; }
+
+    /**
+     * <p>The port on which the instance is listening.</p>
+     */
     inline void SetInstancePort(int value) { m_instancePortHasBeenSet = true; m_instancePort = value; }
 
     /**
@@ -230,6 +261,11 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the server certificate.</p>
      */
     inline const Aws::String& GetSSLCertificateId() const{ return m_sSLCertificateId; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the server certificate.</p>
+     */
+    inline bool SSLCertificateIdHasBeenSet() const { return m_sSLCertificateIdHasBeenSet; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the server certificate.</p>

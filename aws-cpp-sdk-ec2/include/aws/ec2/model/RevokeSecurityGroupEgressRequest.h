@@ -62,6 +62,14 @@ namespace Model
      * required permissions, the error response is <code>DryRunOperation</code>.
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
+    inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
+
+    /**
+     * <p>Checks whether you have the required permissions for the action, without
+     * actually making the request, and provides an error response. If you have the
+     * required permissions, the error response is <code>DryRunOperation</code>.
+     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+     */
     inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
 
     /**
@@ -77,6 +85,11 @@ namespace Model
      * <p>The ID of the security group.</p>
      */
     inline const Aws::String& GetGroupId() const{ return m_groupId; }
+
+    /**
+     * <p>The ID of the security group.</p>
+     */
+    inline bool GroupIdHasBeenSet() const { return m_groupIdHasBeenSet; }
 
     /**
      * <p>The ID of the security group.</p>
@@ -114,6 +127,12 @@ namespace Model
      * group and a CIDR IP address range in the same set of permissions.</p>
      */
     inline const Aws::Vector<IpPermission>& GetIpPermissions() const{ return m_ipPermissions; }
+
+    /**
+     * <p>One or more sets of IP permissions. You can't specify a destination security
+     * group and a CIDR IP address range in the same set of permissions.</p>
+     */
+    inline bool IpPermissionsHasBeenSet() const { return m_ipPermissionsHasBeenSet; }
 
     /**
      * <p>One or more sets of IP permissions. You can't specify a destination security
@@ -160,6 +179,11 @@ namespace Model
     /**
      * <p>Not supported. Use a set of IP permissions to specify the CIDR.</p>
      */
+    inline bool CidrIpHasBeenSet() const { return m_cidrIpHasBeenSet; }
+
+    /**
+     * <p>Not supported. Use a set of IP permissions to specify the CIDR.</p>
+     */
     inline void SetCidrIp(const Aws::String& value) { m_cidrIpHasBeenSet = true; m_cidrIp = value; }
 
     /**
@@ -196,6 +220,11 @@ namespace Model
     /**
      * <p>Not supported. Use a set of IP permissions to specify the port.</p>
      */
+    inline bool FromPortHasBeenSet() const { return m_fromPortHasBeenSet; }
+
+    /**
+     * <p>Not supported. Use a set of IP permissions to specify the port.</p>
+     */
     inline void SetFromPort(int value) { m_fromPortHasBeenSet = true; m_fromPort = value; }
 
     /**
@@ -209,6 +238,12 @@ namespace Model
      * number.</p>
      */
     inline const Aws::String& GetIpProtocol() const{ return m_ipProtocol; }
+
+    /**
+     * <p>Not supported. Use a set of IP permissions to specify the protocol name or
+     * number.</p>
+     */
+    inline bool IpProtocolHasBeenSet() const { return m_ipProtocolHasBeenSet; }
 
     /**
      * <p>Not supported. Use a set of IP permissions to specify the protocol name or
@@ -255,6 +290,11 @@ namespace Model
     /**
      * <p>Not supported. Use a set of IP permissions to specify the port.</p>
      */
+    inline bool ToPortHasBeenSet() const { return m_toPortHasBeenSet; }
+
+    /**
+     * <p>Not supported. Use a set of IP permissions to specify the port.</p>
+     */
     inline void SetToPort(int value) { m_toPortHasBeenSet = true; m_toPort = value; }
 
     /**
@@ -268,6 +308,12 @@ namespace Model
      * group.</p>
      */
     inline const Aws::String& GetSourceSecurityGroupName() const{ return m_sourceSecurityGroupName; }
+
+    /**
+     * <p>Not supported. Use a set of IP permissions to specify a destination security
+     * group.</p>
+     */
+    inline bool SourceSecurityGroupNameHasBeenSet() const { return m_sourceSecurityGroupNameHasBeenSet; }
 
     /**
      * <p>Not supported. Use a set of IP permissions to specify a destination security
@@ -311,6 +357,12 @@ namespace Model
      * group.</p>
      */
     inline const Aws::String& GetSourceSecurityGroupOwnerId() const{ return m_sourceSecurityGroupOwnerId; }
+
+    /**
+     * <p>Not supported. Use a set of IP permissions to specify a destination security
+     * group.</p>
+     */
+    inline bool SourceSecurityGroupOwnerIdHasBeenSet() const { return m_sourceSecurityGroupOwnerIdHasBeenSet; }
 
     /**
      * <p>Not supported. Use a set of IP permissions to specify a destination security

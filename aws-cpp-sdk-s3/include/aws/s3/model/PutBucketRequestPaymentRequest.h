@@ -60,6 +60,11 @@ namespace Model
     /**
      * <p/>
      */
+    inline bool BucketHasBeenSet() const { return m_bucketHasBeenSet; }
+
+    /**
+     * <p/>
+     */
     inline void SetBucket(const Aws::String& value) { m_bucketHasBeenSet = true; m_bucket = value; }
 
     /**
@@ -92,6 +97,11 @@ namespace Model
      * <p/>
      */
     inline const Aws::String& GetContentMD5() const{ return m_contentMD5; }
+
+    /**
+     * <p/>
+     */
+    inline bool ContentMD5HasBeenSet() const { return m_contentMD5HasBeenSet; }
 
     /**
      * <p/>
@@ -132,6 +142,11 @@ namespace Model
     /**
      * <p/>
      */
+    inline bool RequestPaymentConfigurationHasBeenSet() const { return m_requestPaymentConfigurationHasBeenSet; }
+
+    /**
+     * <p/>
+     */
     inline void SetRequestPaymentConfiguration(const RequestPaymentConfiguration& value) { m_requestPaymentConfigurationHasBeenSet = true; m_requestPaymentConfiguration = value; }
 
     /**
@@ -152,6 +167,9 @@ namespace Model
 
     
     inline const Aws::Map<Aws::String, Aws::String>& GetCustomizedAccessLogTag() const{ return m_customizedAccessLogTag; }
+
+    
+    inline bool CustomizedAccessLogTagHasBeenSet() const { return m_customizedAccessLogTagHasBeenSet; }
 
     
     inline void SetCustomizedAccessLogTag(const Aws::Map<Aws::String, Aws::String>& value) { m_customizedAccessLogTagHasBeenSet = true; m_customizedAccessLogTag = value; }

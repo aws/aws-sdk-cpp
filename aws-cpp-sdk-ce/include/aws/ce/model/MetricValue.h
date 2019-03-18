@@ -55,6 +55,11 @@ namespace Model
     /**
      * <p>The actual number that represents the metric.</p>
      */
+    inline bool AmountHasBeenSet() const { return m_amountHasBeenSet; }
+
+    /**
+     * <p>The actual number that represents the metric.</p>
+     */
     inline void SetAmount(const Aws::String& value) { m_amountHasBeenSet = true; m_amount = value; }
 
     /**
@@ -87,6 +92,11 @@ namespace Model
      * <p>The unit that the metric is given in.</p>
      */
     inline const Aws::String& GetUnit() const{ return m_unit; }
+
+    /**
+     * <p>The unit that the metric is given in.</p>
+     */
+    inline bool UnitHasBeenSet() const { return m_unitHasBeenSet; }
 
     /**
      * <p>The unit that the metric is given in.</p>

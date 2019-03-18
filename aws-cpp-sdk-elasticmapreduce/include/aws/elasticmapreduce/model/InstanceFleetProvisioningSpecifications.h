@@ -60,6 +60,12 @@ namespace Model
      * <p>The launch specification for Spot instances in the fleet, which determines
      * the defined duration and provisioning timeout behavior.</p>
      */
+    inline bool SpotSpecificationHasBeenSet() const { return m_spotSpecificationHasBeenSet; }
+
+    /**
+     * <p>The launch specification for Spot instances in the fleet, which determines
+     * the defined duration and provisioning timeout behavior.</p>
+     */
     inline void SetSpotSpecification(const SpotProvisioningSpecification& value) { m_spotSpecificationHasBeenSet = true; m_spotSpecification = value; }
 
     /**

@@ -56,6 +56,12 @@ namespace Model
      * <p>The name (friendly name, not ARN) of the IAM user from which you want to
      * remove the permissions boundary.</p>
      */
+    inline bool UserNameHasBeenSet() const { return m_userNameHasBeenSet; }
+
+    /**
+     * <p>The name (friendly name, not ARN) of the IAM user from which you want to
+     * remove the permissions boundary.</p>
+     */
     inline void SetUserName(const Aws::String& value) { m_userNameHasBeenSet = true; m_userName = value; }
 
     /**

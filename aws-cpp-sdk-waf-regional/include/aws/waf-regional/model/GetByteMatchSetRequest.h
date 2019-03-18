@@ -56,6 +56,13 @@ namespace Model
      * get. <code>ByteMatchSetId</code> is returned by <a>CreateByteMatchSet</a> and by
      * <a>ListByteMatchSets</a>.</p>
      */
+    inline bool ByteMatchSetIdHasBeenSet() const { return m_byteMatchSetIdHasBeenSet; }
+
+    /**
+     * <p>The <code>ByteMatchSetId</code> of the <a>ByteMatchSet</a> that you want to
+     * get. <code>ByteMatchSetId</code> is returned by <a>CreateByteMatchSet</a> and by
+     * <a>ListByteMatchSets</a>.</p>
+     */
     inline void SetByteMatchSetId(const Aws::String& value) { m_byteMatchSetIdHasBeenSet = true; m_byteMatchSetId = value; }
 
     /**

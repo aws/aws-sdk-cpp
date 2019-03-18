@@ -52,6 +52,11 @@ namespace Model
     /**
      * <p>The name of the patch group whose patch snapshot should be retrieved.</p>
      */
+    inline bool PatchGroupHasBeenSet() const { return m_patchGroupHasBeenSet; }
+
+    /**
+     * <p>The name of the patch group whose patch snapshot should be retrieved.</p>
+     */
     inline void SetPatchGroup(const Aws::String& value) { m_patchGroupHasBeenSet = true; m_patchGroup = value; }
 
     /**

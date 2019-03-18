@@ -58,6 +58,12 @@ namespace Model
      * <p>The <code>accountId</code> that is associated with the budget whose
      * subscribers you want descriptions of.</p>
      */
+    inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
+
+    /**
+     * <p>The <code>accountId</code> that is associated with the budget whose
+     * subscribers you want descriptions of.</p>
+     */
     inline void SetAccountId(const Aws::String& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
 
     /**
@@ -99,6 +105,11 @@ namespace Model
     /**
      * <p>The name of the budget whose subscribers you want descriptions of.</p>
      */
+    inline bool BudgetNameHasBeenSet() const { return m_budgetNameHasBeenSet; }
+
+    /**
+     * <p>The name of the budget whose subscribers you want descriptions of.</p>
+     */
     inline void SetBudgetName(const Aws::String& value) { m_budgetNameHasBeenSet = true; m_budgetName = value; }
 
     /**
@@ -135,6 +146,11 @@ namespace Model
     /**
      * <p>The notification whose subscribers you want to list.</p>
      */
+    inline bool NotificationHasBeenSet() const { return m_notificationHasBeenSet; }
+
+    /**
+     * <p>The notification whose subscribers you want to list.</p>
+     */
     inline void SetNotification(const Notification& value) { m_notificationHasBeenSet = true; m_notification = value; }
 
     /**
@@ -163,6 +179,12 @@ namespace Model
      * <p>An optional integer that represents how many entries a paginated response
      * contains. The maximum is 100.</p>
      */
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
+
+    /**
+     * <p>An optional integer that represents how many entries a paginated response
+     * contains. The maximum is 100.</p>
+     */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
@@ -177,6 +199,12 @@ namespace Model
      * set of results that you want to retrieve.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
+    /**
+     * <p>The pagination token that you include in your request to indicate the next
+     * set of results that you want to retrieve.</p>
+     */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
      * <p>The pagination token that you include in your request to indicate the next

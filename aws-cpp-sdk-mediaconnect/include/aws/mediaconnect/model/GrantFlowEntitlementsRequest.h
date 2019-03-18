@@ -55,6 +55,11 @@ namespace Model
     /**
      * The list of entitlements that you want to grant.
      */
+    inline bool EntitlementsHasBeenSet() const { return m_entitlementsHasBeenSet; }
+
+    /**
+     * The list of entitlements that you want to grant.
+     */
     inline void SetEntitlements(const Aws::Vector<GrantEntitlementRequest>& value) { m_entitlementsHasBeenSet = true; m_entitlements = value; }
 
     /**
@@ -87,6 +92,11 @@ namespace Model
      * The flow that you want to grant entitlements on.
      */
     inline const Aws::String& GetFlowArn() const{ return m_flowArn; }
+
+    /**
+     * The flow that you want to grant entitlements on.
+     */
+    inline bool FlowArnHasBeenSet() const { return m_flowArnHasBeenSet; }
 
     /**
      * The flow that you want to grant entitlements on.

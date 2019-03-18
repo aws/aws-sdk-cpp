@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The name of the lifecycle configuration.</p>
      */
+    inline bool NotebookInstanceLifecycleConfigNameHasBeenSet() const { return m_notebookInstanceLifecycleConfigNameHasBeenSet; }
+
+    /**
+     * <p>The name of the lifecycle configuration.</p>
+     */
     inline void SetNotebookInstanceLifecycleConfigName(const Aws::String& value) { m_notebookInstanceLifecycleConfigNameHasBeenSet = true; m_notebookInstanceLifecycleConfigName = value; }
 
     /**
@@ -89,6 +94,11 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the lifecycle configuration.</p>
      */
     inline const Aws::String& GetNotebookInstanceLifecycleConfigArn() const{ return m_notebookInstanceLifecycleConfigArn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the lifecycle configuration.</p>
+     */
+    inline bool NotebookInstanceLifecycleConfigArnHasBeenSet() const { return m_notebookInstanceLifecycleConfigArnHasBeenSet; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the lifecycle configuration.</p>
@@ -129,6 +139,11 @@ namespace Model
     /**
      * <p>A timestamp that tells when the lifecycle configuration was created.</p>
      */
+    inline bool CreationTimeHasBeenSet() const { return m_creationTimeHasBeenSet; }
+
+    /**
+     * <p>A timestamp that tells when the lifecycle configuration was created.</p>
+     */
     inline void SetCreationTime(const Aws::Utils::DateTime& value) { m_creationTimeHasBeenSet = true; m_creationTime = value; }
 
     /**
@@ -152,6 +167,12 @@ namespace Model
      * modified.</p>
      */
     inline const Aws::Utils::DateTime& GetLastModifiedTime() const{ return m_lastModifiedTime; }
+
+    /**
+     * <p>A timestamp that tells when the lifecycle configuration was last
+     * modified.</p>
+     */
+    inline bool LastModifiedTimeHasBeenSet() const { return m_lastModifiedTimeHasBeenSet; }
 
     /**
      * <p>A timestamp that tells when the lifecycle configuration was last

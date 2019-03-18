@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The details of the step.</p>
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>The details of the step.</p>
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
@@ -93,6 +98,11 @@ namespace Model
     /**
      * <p>The valid status of the step.</p>
      */
+    inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
+
+    /**
+     * <p>The valid status of the step.</p>
+     */
     inline void SetState(const RemediationExecutionStepState& value) { m_stateHasBeenSet = true; m_state = value; }
 
     /**
@@ -115,6 +125,11 @@ namespace Model
      * <p>An error message if the step was interrupted during execution.</p>
      */
     inline const Aws::String& GetErrorMessage() const{ return m_errorMessage; }
+
+    /**
+     * <p>An error message if the step was interrupted during execution.</p>
+     */
+    inline bool ErrorMessageHasBeenSet() const { return m_errorMessageHasBeenSet; }
 
     /**
      * <p>An error message if the step was interrupted during execution.</p>
@@ -155,6 +170,11 @@ namespace Model
     /**
      * <p>The time when the step started.</p>
      */
+    inline bool StartTimeHasBeenSet() const { return m_startTimeHasBeenSet; }
+
+    /**
+     * <p>The time when the step started.</p>
+     */
     inline void SetStartTime(const Aws::Utils::DateTime& value) { m_startTimeHasBeenSet = true; m_startTime = value; }
 
     /**
@@ -177,6 +197,11 @@ namespace Model
      * <p>The time when the step stopped.</p>
      */
     inline const Aws::Utils::DateTime& GetStopTime() const{ return m_stopTime; }
+
+    /**
+     * <p>The time when the step stopped.</p>
+     */
+    inline bool StopTimeHasBeenSet() const { return m_stopTimeHasBeenSet; }
 
     /**
      * <p>The time when the step stopped.</p>

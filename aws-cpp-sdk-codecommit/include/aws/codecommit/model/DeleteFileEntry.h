@@ -58,6 +58,12 @@ namespace Model
      * <p>The full path of the file that will be deleted, including the name of the
      * file.</p>
      */
+    inline bool FilePathHasBeenSet() const { return m_filePathHasBeenSet; }
+
+    /**
+     * <p>The full path of the file that will be deleted, including the name of the
+     * file.</p>
+     */
     inline void SetFilePath(const Aws::String& value) { m_filePathHasBeenSet = true; m_filePath = value; }
 
     /**

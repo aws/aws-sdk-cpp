@@ -63,6 +63,9 @@ namespace Model
     inline const AacSettings& GetAacSettings() const{ return m_aacSettings; }
 
     
+    inline bool AacSettingsHasBeenSet() const { return m_aacSettingsHasBeenSet; }
+
+    
     inline void SetAacSettings(const AacSettings& value) { m_aacSettingsHasBeenSet = true; m_aacSettings = value; }
 
     
@@ -77,6 +80,9 @@ namespace Model
 
     
     inline const Ac3Settings& GetAc3Settings() const{ return m_ac3Settings; }
+
+    
+    inline bool Ac3SettingsHasBeenSet() const { return m_ac3SettingsHasBeenSet; }
 
     
     inline void SetAc3Settings(const Ac3Settings& value) { m_ac3SettingsHasBeenSet = true; m_ac3Settings = value; }
@@ -95,6 +101,9 @@ namespace Model
     inline const AiffSettings& GetAiffSettings() const{ return m_aiffSettings; }
 
     
+    inline bool AiffSettingsHasBeenSet() const { return m_aiffSettingsHasBeenSet; }
+
+    
     inline void SetAiffSettings(const AiffSettings& value) { m_aiffSettingsHasBeenSet = true; m_aiffSettings = value; }
 
     
@@ -109,6 +118,9 @@ namespace Model
 
     
     inline const AudioCodec& GetCodec() const{ return m_codec; }
+
+    
+    inline bool CodecHasBeenSet() const { return m_codecHasBeenSet; }
 
     
     inline void SetCodec(const AudioCodec& value) { m_codecHasBeenSet = true; m_codec = value; }
@@ -127,6 +139,9 @@ namespace Model
     inline const Eac3Settings& GetEac3Settings() const{ return m_eac3Settings; }
 
     
+    inline bool Eac3SettingsHasBeenSet() const { return m_eac3SettingsHasBeenSet; }
+
+    
     inline void SetEac3Settings(const Eac3Settings& value) { m_eac3SettingsHasBeenSet = true; m_eac3Settings = value; }
 
     
@@ -143,6 +158,9 @@ namespace Model
     inline const Mp2Settings& GetMp2Settings() const{ return m_mp2Settings; }
 
     
+    inline bool Mp2SettingsHasBeenSet() const { return m_mp2SettingsHasBeenSet; }
+
+    
     inline void SetMp2Settings(const Mp2Settings& value) { m_mp2SettingsHasBeenSet = true; m_mp2Settings = value; }
 
     
@@ -157,6 +175,9 @@ namespace Model
 
     
     inline const WavSettings& GetWavSettings() const{ return m_wavSettings; }
+
+    
+    inline bool WavSettingsHasBeenSet() const { return m_wavSettingsHasBeenSet; }
 
     
     inline void SetWavSettings(const WavSettings& value) { m_wavSettingsHasBeenSet = true; m_wavSettings = value; }

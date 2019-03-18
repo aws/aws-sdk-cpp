@@ -64,6 +64,14 @@ namespace Model
      * Your thing index will contain registry and shadow data.</p> </li> <li> <p>OFF -
      * Thing indexing is disabled.</p> </li> </ul>
      */
+    inline bool ThingIndexingModeHasBeenSet() const { return m_thingIndexingModeHasBeenSet; }
+
+    /**
+     * <p>Thing indexing mode. Valid values are:</p> <ul> <li> <p>REGISTRY – Your thing
+     * index will contain only registry data.</p> </li> <li> <p>REGISTRY_AND_SHADOW -
+     * Your thing index will contain registry and shadow data.</p> </li> <li> <p>OFF -
+     * Thing indexing is disabled.</p> </li> </ul>
+     */
     inline void SetThingIndexingMode(const ThingIndexingMode& value) { m_thingIndexingModeHasBeenSet = true; m_thingIndexingMode = value; }
 
     /**
@@ -98,6 +106,14 @@ namespace Model
      * <p>OFF - Thing connectivity status indexing is disabled.</p> </li> </ul>
      */
     inline const ThingConnectivityIndexingMode& GetThingConnectivityIndexingMode() const{ return m_thingConnectivityIndexingMode; }
+
+    /**
+     * <p>Thing connectivity indexing mode. Valid values are: </p> <ul> <li> <p>STATUS
+     * – Your thing index will contain connectivity status. In order to enable thing
+     * connectivity indexing, thingIndexMode must not be set to OFF.</p> </li> <li>
+     * <p>OFF - Thing connectivity status indexing is disabled.</p> </li> </ul>
+     */
+    inline bool ThingConnectivityIndexingModeHasBeenSet() const { return m_thingConnectivityIndexingModeHasBeenSet; }
 
     /**
      * <p>Thing connectivity indexing mode. Valid values are: </p> <ul> <li> <p>STATUS

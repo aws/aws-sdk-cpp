@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p>The keys that are included in this group.</p>
      */
+    inline bool KeysHasBeenSet() const { return m_keysHasBeenSet; }
+
+    /**
+     * <p>The keys that are included in this group.</p>
+     */
     inline void SetKeys(const Aws::Vector<Aws::String>& value) { m_keysHasBeenSet = true; m_keys = value; }
 
     /**
@@ -95,6 +100,11 @@ namespace Model
      * <p>The metrics that are included in this group.</p>
      */
     inline const Aws::Map<Aws::String, MetricValue>& GetMetrics() const{ return m_metrics; }
+
+    /**
+     * <p>The metrics that are included in this group.</p>
+     */
+    inline bool MetricsHasBeenSet() const { return m_metricsHasBeenSet; }
 
     /**
      * <p>The metrics that are included in this group.</p>

@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The thing name.</p>
      */
+    inline bool ThingNameHasBeenSet() const { return m_thingNameHasBeenSet; }
+
+    /**
+     * <p>The thing name.</p>
+     */
     inline void SetThingName(const Aws::String& value) { m_thingNameHasBeenSet = true; m_thingName = value; }
 
     /**
@@ -95,6 +100,12 @@ namespace Model
      * <p>An optional filter that lets you search for jobs that have the specified
      * status.</p>
      */
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
+
+    /**
+     * <p>An optional filter that lets you search for jobs that have the specified
+     * status.</p>
+     */
     inline void SetStatus(const JobExecutionStatus& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
@@ -124,6 +135,11 @@ namespace Model
     /**
      * <p>The maximum number of results to be returned per request.</p>
      */
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
+
+    /**
+     * <p>The maximum number of results to be returned per request.</p>
+     */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
@@ -136,6 +152,11 @@ namespace Model
      * <p>The token to retrieve the next set of results.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
+    /**
+     * <p>The token to retrieve the next set of results.</p>
+     */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
      * <p>The token to retrieve the next set of results.</p>

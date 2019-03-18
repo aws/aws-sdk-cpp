@@ -61,6 +61,11 @@ namespace Model
     /**
      * <p>The ARN of the stack.</p>
      */
+    inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
+
+    /**
+     * <p>The ARN of the stack.</p>
+     */
     inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
 
     /**
@@ -93,6 +98,11 @@ namespace Model
      * <p>The name of the stack.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
+
+    /**
+     * <p>The name of the stack.</p>
+     */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
      * <p>The name of the stack.</p>
@@ -133,6 +143,11 @@ namespace Model
     /**
      * <p>The description to display.</p>
      */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
+
+    /**
+     * <p>The description to display.</p>
+     */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
@@ -165,6 +180,11 @@ namespace Model
      * <p>The stack name to display.</p>
      */
     inline const Aws::String& GetDisplayName() const{ return m_displayName; }
+
+    /**
+     * <p>The stack name to display.</p>
+     */
+    inline bool DisplayNameHasBeenSet() const { return m_displayNameHasBeenSet; }
 
     /**
      * <p>The stack name to display.</p>
@@ -205,6 +225,11 @@ namespace Model
     /**
      * <p>The time the stack was created.</p>
      */
+    inline bool CreatedTimeHasBeenSet() const { return m_createdTimeHasBeenSet; }
+
+    /**
+     * <p>The time the stack was created.</p>
+     */
     inline void SetCreatedTime(const Aws::Utils::DateTime& value) { m_createdTimeHasBeenSet = true; m_createdTime = value; }
 
     /**
@@ -227,6 +252,11 @@ namespace Model
      * <p>The storage connectors to enable.</p>
      */
     inline const Aws::Vector<StorageConnector>& GetStorageConnectors() const{ return m_storageConnectors; }
+
+    /**
+     * <p>The storage connectors to enable.</p>
+     */
+    inline bool StorageConnectorsHasBeenSet() const { return m_storageConnectorsHasBeenSet; }
 
     /**
      * <p>The storage connectors to enable.</p>
@@ -267,6 +297,11 @@ namespace Model
     /**
      * <p>The URL that users are redirected to after their streaming session ends.</p>
      */
+    inline bool RedirectURLHasBeenSet() const { return m_redirectURLHasBeenSet; }
+
+    /**
+     * <p>The URL that users are redirected to after their streaming session ends.</p>
+     */
     inline void SetRedirectURL(const Aws::String& value) { m_redirectURLHasBeenSet = true; m_redirectURL = value; }
 
     /**
@@ -300,6 +335,12 @@ namespace Model
      * If no URL is specified, no Send Feedback link is displayed.</p>
      */
     inline const Aws::String& GetFeedbackURL() const{ return m_feedbackURL; }
+
+    /**
+     * <p>The URL that users are redirected to after they click the Send Feedback link.
+     * If no URL is specified, no Send Feedback link is displayed.</p>
+     */
+    inline bool FeedbackURLHasBeenSet() const { return m_feedbackURLHasBeenSet; }
 
     /**
      * <p>The URL that users are redirected to after they click the Send Feedback link.
@@ -346,6 +387,11 @@ namespace Model
     /**
      * <p>The errors for the stack.</p>
      */
+    inline bool StackErrorsHasBeenSet() const { return m_stackErrorsHasBeenSet; }
+
+    /**
+     * <p>The errors for the stack.</p>
+     */
     inline void SetStackErrors(const Aws::Vector<StackError>& value) { m_stackErrorsHasBeenSet = true; m_stackErrors = value; }
 
     /**
@@ -379,6 +425,12 @@ namespace Model
      * sessions. By default these actions are enabled.</p>
      */
     inline const Aws::Vector<UserSetting>& GetUserSettings() const{ return m_userSettings; }
+
+    /**
+     * <p>The actions that are enabled or disabled for users during their streaming
+     * sessions. By default these actions are enabled.</p>
+     */
+    inline bool UserSettingsHasBeenSet() const { return m_userSettingsHasBeenSet; }
 
     /**
      * <p>The actions that are enabled or disabled for users during their streaming
@@ -421,6 +473,11 @@ namespace Model
      * <p>The persistent application settings for users of the stack.</p>
      */
     inline const ApplicationSettingsResponse& GetApplicationSettings() const{ return m_applicationSettings; }
+
+    /**
+     * <p>The persistent application settings for users of the stack.</p>
+     */
+    inline bool ApplicationSettingsHasBeenSet() const { return m_applicationSettingsHasBeenSet; }
 
     /**
      * <p>The persistent application settings for users of the stack.</p>

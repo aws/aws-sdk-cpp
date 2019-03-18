@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p> The IAM role that has permission to access the Amazon S3 bucket. </p>
      */
+    inline bool ServiceAccessRoleArnHasBeenSet() const { return m_serviceAccessRoleArnHasBeenSet; }
+
+    /**
+     * <p> The IAM role that has permission to access the Amazon S3 bucket. </p>
+     */
     inline void SetServiceAccessRoleArn(const Aws::String& value) { m_serviceAccessRoleArnHasBeenSet = true; m_serviceAccessRoleArn = value; }
 
     /**
@@ -88,6 +93,11 @@ namespace Model
      * <p> The name of the S3 bucket to use. </p>
      */
     inline const Aws::String& GetBucketName() const{ return m_bucketName; }
+
+    /**
+     * <p> The name of the S3 bucket to use. </p>
+     */
+    inline bool BucketNameHasBeenSet() const { return m_bucketNameHasBeenSet; }
 
     /**
      * <p> The name of the S3 bucket to use. </p>

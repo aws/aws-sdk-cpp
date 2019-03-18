@@ -58,6 +58,12 @@ namespace Model
      * <p> The type of AWS DMS resource that generates events. </p> <p>Valid values:
      * replication-instance | replication-server | security-group | migration-task</p>
      */
+    inline bool SourceTypeHasBeenSet() const { return m_sourceTypeHasBeenSet; }
+
+    /**
+     * <p> The type of AWS DMS resource that generates events. </p> <p>Valid values:
+     * replication-instance | replication-server | security-group | migration-task</p>
+     */
     inline void SetSourceType(const Aws::String& value) { m_sourceTypeHasBeenSet = true; m_sourceType = value; }
 
     /**
@@ -96,6 +102,12 @@ namespace Model
      * subscribe to. </p>
      */
     inline const Aws::Vector<Aws::String>& GetEventCategories() const{ return m_eventCategories; }
+
+    /**
+     * <p> A list of event categories for a <code>SourceType</code> that you want to
+     * subscribe to. </p>
+     */
+    inline bool EventCategoriesHasBeenSet() const { return m_eventCategoriesHasBeenSet; }
 
     /**
      * <p> A list of event categories for a <code>SourceType</code> that you want to

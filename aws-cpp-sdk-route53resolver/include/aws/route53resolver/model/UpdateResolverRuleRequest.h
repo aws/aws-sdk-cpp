@@ -53,6 +53,11 @@ namespace Model
     /**
      * <p>The ID of the resolver rule that you want to update.</p>
      */
+    inline bool ResolverRuleIdHasBeenSet() const { return m_resolverRuleIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the resolver rule that you want to update.</p>
+     */
     inline void SetResolverRuleId(const Aws::String& value) { m_resolverRuleIdHasBeenSet = true; m_resolverRuleId = value; }
 
     /**
@@ -85,6 +90,11 @@ namespace Model
      * <p>The new settings for the resolver rule.</p>
      */
     inline const ResolverRuleConfig& GetConfig() const{ return m_config; }
+
+    /**
+     * <p>The new settings for the resolver rule.</p>
+     */
+    inline bool ConfigHasBeenSet() const { return m_configHasBeenSet; }
 
     /**
      * <p>The new settings for the resolver rule.</p>

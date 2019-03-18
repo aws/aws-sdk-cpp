@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>Indicates whether the alarm configuration is enabled.</p>
      */
+    inline bool EnabledHasBeenSet() const { return m_enabledHasBeenSet; }
+
+    /**
+     * <p>Indicates whether the alarm configuration is enabled.</p>
+     */
     inline void SetEnabled(bool value) { m_enabledHasBeenSet = true; m_enabled = value; }
 
     /**
@@ -74,6 +79,16 @@ namespace Model
      * from Amazon CloudWatch.</p> </li> </ul>
      */
     inline bool GetIgnorePollAlarmFailure() const{ return m_ignorePollAlarmFailure; }
+
+    /**
+     * <p>Indicates whether a deployment should continue if information about the
+     * current state of alarms cannot be retrieved from Amazon CloudWatch. The default
+     * value is false.</p> <ul> <li> <p>true: The deployment proceeds even if alarm
+     * status information can't be retrieved from Amazon CloudWatch.</p> </li> <li>
+     * <p>false: The deployment stops if alarm status information can't be retrieved
+     * from Amazon CloudWatch.</p> </li> </ul>
+     */
+    inline bool IgnorePollAlarmFailureHasBeenSet() const { return m_ignorePollAlarmFailureHasBeenSet; }
 
     /**
      * <p>Indicates whether a deployment should continue if information about the
@@ -101,6 +116,12 @@ namespace Model
      * can be added to a deployment group.</p>
      */
     inline const Aws::Vector<Alarm>& GetAlarms() const{ return m_alarms; }
+
+    /**
+     * <p>A list of alarms configured for the deployment group. A maximum of 10 alarms
+     * can be added to a deployment group.</p>
+     */
+    inline bool AlarmsHasBeenSet() const { return m_alarmsHasBeenSet; }
 
     /**
      * <p>A list of alarms configured for the deployment group. A maximum of 10 alarms

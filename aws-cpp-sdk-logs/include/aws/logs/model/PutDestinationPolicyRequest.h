@@ -52,6 +52,11 @@ namespace Model
     /**
      * <p>A name for an existing destination.</p>
      */
+    inline bool DestinationNameHasBeenSet() const { return m_destinationNameHasBeenSet; }
+
+    /**
+     * <p>A name for an existing destination.</p>
+     */
     inline void SetDestinationName(const Aws::String& value) { m_destinationNameHasBeenSet = true; m_destinationName = value; }
 
     /**
@@ -85,6 +90,12 @@ namespace Model
      * log events to the associated destination.</p>
      */
     inline const Aws::String& GetAccessPolicy() const{ return m_accessPolicy; }
+
+    /**
+     * <p>An IAM policy document that authorizes cross-account users to deliver their
+     * log events to the associated destination.</p>
+     */
+    inline bool AccessPolicyHasBeenSet() const { return m_accessPolicyHasBeenSet; }
 
     /**
      * <p>An IAM policy document that authorizes cross-account users to deliver their

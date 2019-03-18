@@ -57,6 +57,12 @@ namespace Model
      * <p>Unique identifier for a matchmaking rule set to be deleted. (Note: The rule
      * set name is different from the optional "name" field in the rule set body.) </p>
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>Unique identifier for a matchmaking rule set to be deleted. (Note: The rule
+     * set name is different from the optional "name" field in the rule set body.) </p>
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**

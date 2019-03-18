@@ -51,6 +51,11 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the resource share.</p>
      */
+    inline bool ResourceShareArnHasBeenSet() const { return m_resourceShareArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the resource share.</p>
+     */
     inline void SetResourceShareArn(const Aws::String& value) { m_resourceShareArnHasBeenSet = true; m_resourceShareArn = value; }
 
     /**
@@ -83,6 +88,11 @@ namespace Model
      * <p>The Amazon Resource Names (ARN) of the resources.</p>
      */
     inline const Aws::Vector<Aws::String>& GetResourceArns() const{ return m_resourceArns; }
+
+    /**
+     * <p>The Amazon Resource Names (ARN) of the resources.</p>
+     */
+    inline bool ResourceArnsHasBeenSet() const { return m_resourceArnsHasBeenSet; }
 
     /**
      * <p>The Amazon Resource Names (ARN) of the resources.</p>
@@ -128,6 +138,11 @@ namespace Model
     /**
      * <p>The principals.</p>
      */
+    inline bool PrincipalsHasBeenSet() const { return m_principalsHasBeenSet; }
+
+    /**
+     * <p>The principals.</p>
+     */
     inline void SetPrincipals(const Aws::Vector<Aws::String>& value) { m_principalsHasBeenSet = true; m_principals = value; }
 
     /**
@@ -166,6 +181,12 @@ namespace Model
      * idempotency of the request.</p>
      */
     inline const Aws::String& GetClientToken() const{ return m_clientToken; }
+
+    /**
+     * <p>A unique, case-sensitive identifier that you provide to ensure the
+     * idempotency of the request.</p>
+     */
+    inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
 
     /**
      * <p>A unique, case-sensitive identifier that you provide to ensure the

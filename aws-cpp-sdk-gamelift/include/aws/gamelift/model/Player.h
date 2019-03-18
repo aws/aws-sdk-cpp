@@ -59,6 +59,11 @@ namespace Model
     /**
      * <p>Unique identifier for a player</p>
      */
+    inline bool PlayerIdHasBeenSet() const { return m_playerIdHasBeenSet; }
+
+    /**
+     * <p>Unique identifier for a player</p>
+     */
     inline void SetPlayerId(const Aws::String& value) { m_playerIdHasBeenSet = true; m_playerId = value; }
 
     /**
@@ -94,6 +99,14 @@ namespace Model
      * "23"}, "gameMode": {"S": "deathmatch"}}</code>.</p>
      */
     inline const Aws::Map<Aws::String, AttributeValue>& GetPlayerAttributes() const{ return m_playerAttributes; }
+
+    /**
+     * <p>Collection of key:value pairs containing player information for use in
+     * matchmaking. Player attribute keys must match the <i>playerAttributes</i> used
+     * in a matchmaking rule set. Example: <code>"PlayerAttributes": {"skill": {"N":
+     * "23"}, "gameMode": {"S": "deathmatch"}}</code>.</p>
+     */
+    inline bool PlayerAttributesHasBeenSet() const { return m_playerAttributesHasBeenSet; }
 
     /**
      * <p>Collection of key:value pairs containing player information for use in
@@ -186,6 +199,12 @@ namespace Model
      * <p>Name of the team that the player is assigned to in a match. Team names are
      * defined in a matchmaking rule set.</p>
      */
+    inline bool TeamHasBeenSet() const { return m_teamHasBeenSet; }
+
+    /**
+     * <p>Name of the team that the player is assigned to in a match. Team names are
+     * defined in a matchmaking rule set.</p>
+     */
     inline void SetTeam(const Aws::String& value) { m_teamHasBeenSet = true; m_team = value; }
 
     /**
@@ -229,6 +248,17 @@ namespace Model
      * the ticket is not matchable. </p>
      */
     inline const Aws::Map<Aws::String, int>& GetLatencyInMs() const{ return m_latencyInMs; }
+
+    /**
+     * <p>Set of values, expressed in milliseconds, indicating the amount of latency
+     * that a player experiences when connected to AWS regions. If this property is
+     * present, FlexMatch considers placing the match only in regions for which latency
+     * is reported. </p> <p>If a matchmaker has a rule that evaluates player latency,
+     * players must report latency in order to be matched. If no latency is reported in
+     * this scenario, FlexMatch assumes that no regions are available to the player and
+     * the ticket is not matchable. </p>
+     */
+    inline bool LatencyInMsHasBeenSet() const { return m_latencyInMsHasBeenSet; }
 
     /**
      * <p>Set of values, expressed in milliseconds, indicating the amount of latency

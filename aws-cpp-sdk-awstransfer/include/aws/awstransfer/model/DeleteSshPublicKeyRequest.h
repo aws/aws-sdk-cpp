@@ -54,6 +54,12 @@ namespace Model
      * <p>A system-assigned unique identifier for a Secure File Transfer Protocol
      * (SFTP) server instance that has the user assigned to it.</p>
      */
+    inline bool ServerIdHasBeenSet() const { return m_serverIdHasBeenSet; }
+
+    /**
+     * <p>A system-assigned unique identifier for a Secure File Transfer Protocol
+     * (SFTP) server instance that has the user assigned to it.</p>
+     */
     inline void SetServerId(const Aws::String& value) { m_serverIdHasBeenSet = true; m_serverId = value; }
 
     /**
@@ -95,6 +101,11 @@ namespace Model
     /**
      * <p>A unique identifier used to reference your user’s specific SSH key.</p>
      */
+    inline bool SshPublicKeyIdHasBeenSet() const { return m_sshPublicKeyIdHasBeenSet; }
+
+    /**
+     * <p>A unique identifier used to reference your user’s specific SSH key.</p>
+     */
     inline void SetSshPublicKeyId(const Aws::String& value) { m_sshPublicKeyIdHasBeenSet = true; m_sshPublicKeyId = value; }
 
     /**
@@ -127,6 +138,11 @@ namespace Model
      * <p>A unique string that identifies a user whose public key is being deleted.</p>
      */
     inline const Aws::String& GetUserName() const{ return m_userName; }
+
+    /**
+     * <p>A unique string that identifies a user whose public key is being deleted.</p>
+     */
+    inline bool UserNameHasBeenSet() const { return m_userNameHasBeenSet; }
 
     /**
      * <p>A unique string that identifies a user whose public key is being deleted.</p>

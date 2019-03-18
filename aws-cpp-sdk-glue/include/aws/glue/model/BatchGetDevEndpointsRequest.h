@@ -55,6 +55,12 @@ namespace Model
      * <p>The list of DevEndpoint names, which may be the names returned from the
      * <code>ListDevEndpoint</code> operation.</p>
      */
+    inline bool DevEndpointNamesHasBeenSet() const { return m_devEndpointNamesHasBeenSet; }
+
+    /**
+     * <p>The list of DevEndpoint names, which may be the names returned from the
+     * <code>ListDevEndpoint</code> operation.</p>
+     */
     inline void SetDevEndpointNames(const Aws::Vector<Aws::String>& value) { m_devEndpointNamesHasBeenSet = true; m_devEndpointNames = value; }
 
     /**

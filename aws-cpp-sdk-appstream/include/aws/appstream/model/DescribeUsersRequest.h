@@ -55,6 +55,12 @@ namespace Model
      * <p>The authentication type for the users in the user pool to describe. You must
      * specify USERPOOL.</p>
      */
+    inline bool AuthenticationTypeHasBeenSet() const { return m_authenticationTypeHasBeenSet; }
+
+    /**
+     * <p>The authentication type for the users in the user pool to describe. You must
+     * specify USERPOOL.</p>
+     */
     inline void SetAuthenticationType(const AuthenticationType& value) { m_authenticationTypeHasBeenSet = true; m_authenticationType = value; }
 
     /**
@@ -84,6 +90,11 @@ namespace Model
     /**
      * <p>The maximum size of each page of results.</p>
      */
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
+
+    /**
+     * <p>The maximum size of each page of results.</p>
+     */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
@@ -97,6 +108,12 @@ namespace Model
      * operation. If this value is null, it retrieves the first page.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
+    /**
+     * <p>The pagination token to use to retrieve the next page of results for this
+     * operation. If this value is null, it retrieves the first page.</p>
+     */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
      * <p>The pagination token to use to retrieve the next page of results for this

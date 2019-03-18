@@ -59,6 +59,12 @@ namespace Model
      * <p>The dedicated IP address that you want to update the warm-up attributes
      * for.</p>
      */
+    inline bool IpHasBeenSet() const { return m_ipHasBeenSet; }
+
+    /**
+     * <p>The dedicated IP address that you want to update the warm-up attributes
+     * for.</p>
+     */
     inline void SetIp(const Aws::String& value) { m_ipHasBeenSet = true; m_ip = value; }
 
     /**
@@ -97,6 +103,12 @@ namespace Model
      * address.</p>
      */
     inline int GetWarmupPercentage() const{ return m_warmupPercentage; }
+
+    /**
+     * <p>The warm-up percentage that you want to associate with the dedicated IP
+     * address.</p>
+     */
+    inline bool WarmupPercentageHasBeenSet() const { return m_warmupPercentageHasBeenSet; }
 
     /**
      * <p>The warm-up percentage that you want to associate with the dedicated IP

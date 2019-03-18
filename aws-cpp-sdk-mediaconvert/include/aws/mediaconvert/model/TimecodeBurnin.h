@@ -59,6 +59,12 @@ namespace Model
      * Use Font Size (FontSize) to set the font size of any burned-in timecode. Valid
      * values are 10, 16, 32, 48.
      */
+    inline bool FontSizeHasBeenSet() const { return m_fontSizeHasBeenSet; }
+
+    /**
+     * Use Font Size (FontSize) to set the font size of any burned-in timecode. Valid
+     * values are 10, 16, 32, 48.
+     */
     inline void SetFontSize(int value) { m_fontSizeHasBeenSet = true; m_fontSize = value; }
 
     /**
@@ -70,6 +76,9 @@ namespace Model
 
     
     inline const TimecodeBurninPosition& GetPosition() const{ return m_position; }
+
+    
+    inline bool PositionHasBeenSet() const { return m_positionHasBeenSet; }
 
     
     inline void SetPosition(const TimecodeBurninPosition& value) { m_positionHasBeenSet = true; m_position = value; }
@@ -92,6 +101,15 @@ namespace Model
      * all special characters represented on a standard English keyboard.
      */
     inline const Aws::String& GetPrefix() const{ return m_prefix; }
+
+    /**
+     * Use Prefix (Prefix) to place ASCII characters before any burned-in timecode. For
+     * example, a prefix of "EZ-" will result in the timecode "EZ-00:00:00:00". Provide
+     * either the characters themselves or the ASCII code equivalents. The supported
+     * range of characters is 0x20 through 0x7e. This includes letters, numbers, and
+     * all special characters represented on a standard English keyboard.
+     */
+    inline bool PrefixHasBeenSet() const { return m_prefixHasBeenSet; }
 
     /**
      * Use Prefix (Prefix) to place ASCII characters before any burned-in timecode. For

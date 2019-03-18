@@ -64,6 +64,16 @@ namespace Model
      * the credentials used to sign the request. If you specify your account ID, do not
      * include any hyphens ('-') in the ID.</p>
      */
+    inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
+
+    /**
+     * <p>The <code>AccountId</code> value is the AWS account ID. This value must match
+     * the AWS account ID associated with the credentials used to sign the request. You
+     * can either specify an AWS account ID or optionally a single '<code>-</code>'
+     * (hyphen), in which case Amazon Glacier uses the AWS account ID associated with
+     * the credentials used to sign the request. If you specify your account ID, do not
+     * include any hyphens ('-') in the ID.</p>
+     */
     inline void SetAccountId(const Aws::String& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
 
     /**
@@ -121,6 +131,11 @@ namespace Model
      * <p>The data retrieval policy in JSON format.</p>
      */
     inline const DataRetrievalPolicy& GetPolicy() const{ return m_policy; }
+
+    /**
+     * <p>The data retrieval policy in JSON format.</p>
+     */
+    inline bool PolicyHasBeenSet() const { return m_policyHasBeenSet; }
 
     /**
      * <p>The data retrieval policy in JSON format.</p>

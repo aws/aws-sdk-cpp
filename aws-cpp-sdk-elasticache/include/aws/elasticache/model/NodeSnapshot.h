@@ -60,6 +60,11 @@ namespace Model
     /**
      * <p>A unique identifier for the source cluster.</p>
      */
+    inline bool CacheClusterIdHasBeenSet() const { return m_cacheClusterIdHasBeenSet; }
+
+    /**
+     * <p>A unique identifier for the source cluster.</p>
+     */
     inline void SetCacheClusterId(const Aws::String& value) { m_cacheClusterIdHasBeenSet = true; m_cacheClusterId = value; }
 
     /**
@@ -92,6 +97,11 @@ namespace Model
      * <p>A unique identifier for the source node group (shard).</p>
      */
     inline const Aws::String& GetNodeGroupId() const{ return m_nodeGroupId; }
+
+    /**
+     * <p>A unique identifier for the source node group (shard).</p>
+     */
+    inline bool NodeGroupIdHasBeenSet() const { return m_nodeGroupIdHasBeenSet; }
 
     /**
      * <p>A unique identifier for the source node group (shard).</p>
@@ -132,6 +142,11 @@ namespace Model
     /**
      * <p>The cache node identifier for the node in the source cluster.</p>
      */
+    inline bool CacheNodeIdHasBeenSet() const { return m_cacheNodeIdHasBeenSet; }
+
+    /**
+     * <p>The cache node identifier for the node in the source cluster.</p>
+     */
     inline void SetCacheNodeId(const Aws::String& value) { m_cacheNodeIdHasBeenSet = true; m_cacheNodeId = value; }
 
     /**
@@ -168,6 +183,11 @@ namespace Model
     /**
      * <p>The configuration for the source node group (shard).</p>
      */
+    inline bool NodeGroupConfigurationHasBeenSet() const { return m_nodeGroupConfigurationHasBeenSet; }
+
+    /**
+     * <p>The configuration for the source node group (shard).</p>
+     */
     inline void SetNodeGroupConfiguration(const NodeGroupConfiguration& value) { m_nodeGroupConfigurationHasBeenSet = true; m_nodeGroupConfiguration = value; }
 
     /**
@@ -190,6 +210,11 @@ namespace Model
      * <p>The size of the cache on the source cache node.</p>
      */
     inline const Aws::String& GetCacheSize() const{ return m_cacheSize; }
+
+    /**
+     * <p>The size of the cache on the source cache node.</p>
+     */
+    inline bool CacheSizeHasBeenSet() const { return m_cacheSizeHasBeenSet; }
 
     /**
      * <p>The size of the cache on the source cache node.</p>
@@ -230,6 +255,11 @@ namespace Model
     /**
      * <p>The date and time when the cache node was created in the source cluster.</p>
      */
+    inline bool CacheNodeCreateTimeHasBeenSet() const { return m_cacheNodeCreateTimeHasBeenSet; }
+
+    /**
+     * <p>The date and time when the cache node was created in the source cluster.</p>
+     */
     inline void SetCacheNodeCreateTime(const Aws::Utils::DateTime& value) { m_cacheNodeCreateTimeHasBeenSet = true; m_cacheNodeCreateTime = value; }
 
     /**
@@ -253,6 +283,12 @@ namespace Model
      * obtained for the snapshot.</p>
      */
     inline const Aws::Utils::DateTime& GetSnapshotCreateTime() const{ return m_snapshotCreateTime; }
+
+    /**
+     * <p>The date and time when the source node's metadata and cache data set was
+     * obtained for the snapshot.</p>
+     */
+    inline bool SnapshotCreateTimeHasBeenSet() const { return m_snapshotCreateTimeHasBeenSet; }
 
     /**
      * <p>The date and time when the source node's metadata and cache data set was

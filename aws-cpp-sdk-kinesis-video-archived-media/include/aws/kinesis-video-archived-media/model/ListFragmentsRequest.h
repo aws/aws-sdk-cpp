@@ -51,6 +51,11 @@ namespace Model
     /**
      * <p>The name of the stream from which to retrieve a fragment list.</p>
      */
+    inline bool StreamNameHasBeenSet() const { return m_streamNameHasBeenSet; }
+
+    /**
+     * <p>The name of the stream from which to retrieve a fragment list.</p>
+     */
     inline void SetStreamName(const Aws::String& value) { m_streamNameHasBeenSet = true; m_streamName = value; }
 
     /**
@@ -93,6 +98,14 @@ namespace Model
      * <a>ListFragmentsOutput$NextToken</a> is provided in the output that you can use
      * to resume pagination.</p>
      */
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
+
+    /**
+     * <p>The total number of fragments to return. If the total number of fragments
+     * available is more than the value specified in <code>max-results</code>, then a
+     * <a>ListFragmentsOutput$NextToken</a> is provided in the output that you can use
+     * to resume pagination.</p>
+     */
     inline void SetMaxResults(long long value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
@@ -109,6 +122,12 @@ namespace Model
      * <a>ListFragmentsOutput$NextToken</a> from a previously truncated response.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
+    /**
+     * <p>A token to specify where to start paginating. This is the
+     * <a>ListFragmentsOutput$NextToken</a> from a previously truncated response.</p>
+     */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
      * <p>A token to specify where to start paginating. This is the
@@ -152,6 +171,12 @@ namespace Model
      * to return.</p>
      */
     inline const FragmentSelector& GetFragmentSelector() const{ return m_fragmentSelector; }
+
+    /**
+     * <p>Describes the timestamp range and timestamp origin for the range of fragments
+     * to return.</p>
+     */
+    inline bool FragmentSelectorHasBeenSet() const { return m_fragmentSelectorHasBeenSet; }
 
     /**
      * <p>Describes the timestamp range and timestamp origin for the range of fragments

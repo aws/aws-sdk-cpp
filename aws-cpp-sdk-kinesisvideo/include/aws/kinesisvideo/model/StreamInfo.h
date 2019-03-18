@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The name of the device that is associated with the stream.</p>
      */
+    inline bool DeviceNameHasBeenSet() const { return m_deviceNameHasBeenSet; }
+
+    /**
+     * <p>The name of the device that is associated with the stream.</p>
+     */
     inline void SetDeviceName(const Aws::String& value) { m_deviceNameHasBeenSet = true; m_deviceName = value; }
 
     /**
@@ -89,6 +94,11 @@ namespace Model
      * <p>The name of the stream.</p>
      */
     inline const Aws::String& GetStreamName() const{ return m_streamName; }
+
+    /**
+     * <p>The name of the stream.</p>
+     */
+    inline bool StreamNameHasBeenSet() const { return m_streamNameHasBeenSet; }
 
     /**
      * <p>The name of the stream.</p>
@@ -129,6 +139,11 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the stream.</p>
      */
+    inline bool StreamARNHasBeenSet() const { return m_streamARNHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the stream.</p>
+     */
     inline void SetStreamARN(const Aws::String& value) { m_streamARNHasBeenSet = true; m_streamARN = value; }
 
     /**
@@ -161,6 +176,11 @@ namespace Model
      * <p>The <code>MediaType</code> of the stream. </p>
      */
     inline const Aws::String& GetMediaType() const{ return m_mediaType; }
+
+    /**
+     * <p>The <code>MediaType</code> of the stream. </p>
+     */
+    inline bool MediaTypeHasBeenSet() const { return m_mediaTypeHasBeenSet; }
 
     /**
      * <p>The <code>MediaType</code> of the stream. </p>
@@ -198,6 +218,12 @@ namespace Model
      * Streams uses to encrypt data on the stream.</p>
      */
     inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
+
+    /**
+     * <p>The ID of the AWS Key Management Service (AWS KMS) key that Kinesis Video
+     * Streams uses to encrypt data on the stream.</p>
+     */
+    inline bool KmsKeyIdHasBeenSet() const { return m_kmsKeyIdHasBeenSet; }
 
     /**
      * <p>The ID of the AWS Key Management Service (AWS KMS) key that Kinesis Video
@@ -244,6 +270,11 @@ namespace Model
     /**
      * <p>The version of the stream.</p>
      */
+    inline bool VersionHasBeenSet() const { return m_versionHasBeenSet; }
+
+    /**
+     * <p>The version of the stream.</p>
+     */
     inline void SetVersion(const Aws::String& value) { m_versionHasBeenSet = true; m_version = value; }
 
     /**
@@ -280,6 +311,11 @@ namespace Model
     /**
      * <p>The status of the stream.</p>
      */
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
+
+    /**
+     * <p>The status of the stream.</p>
+     */
     inline void SetStatus(const Status& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
@@ -306,6 +342,11 @@ namespace Model
     /**
      * <p>A time stamp that indicates when the stream was created.</p>
      */
+    inline bool CreationTimeHasBeenSet() const { return m_creationTimeHasBeenSet; }
+
+    /**
+     * <p>A time stamp that indicates when the stream was created.</p>
+     */
     inline void SetCreationTime(const Aws::Utils::DateTime& value) { m_creationTimeHasBeenSet = true; m_creationTime = value; }
 
     /**
@@ -328,6 +369,11 @@ namespace Model
      * <p>How long the stream retains data, in hours.</p>
      */
     inline int GetDataRetentionInHours() const{ return m_dataRetentionInHours; }
+
+    /**
+     * <p>How long the stream retains data, in hours.</p>
+     */
+    inline bool DataRetentionInHoursHasBeenSet() const { return m_dataRetentionInHoursHasBeenSet; }
 
     /**
      * <p>How long the stream retains data, in hours.</p>

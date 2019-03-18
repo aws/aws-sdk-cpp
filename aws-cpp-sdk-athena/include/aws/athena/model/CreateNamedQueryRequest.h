@@ -53,6 +53,11 @@ namespace Model
     /**
      * <p>The query name.</p>
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>The query name.</p>
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
@@ -85,6 +90,11 @@ namespace Model
      * <p>The query description.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
+
+    /**
+     * <p>The query description.</p>
+     */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
 
     /**
      * <p>The query description.</p>
@@ -125,6 +135,11 @@ namespace Model
     /**
      * <p>The database to which the query belongs.</p>
      */
+    inline bool DatabaseHasBeenSet() const { return m_databaseHasBeenSet; }
+
+    /**
+     * <p>The database to which the query belongs.</p>
+     */
     inline void SetDatabase(const Aws::String& value) { m_databaseHasBeenSet = true; m_database = value; }
 
     /**
@@ -157,6 +172,11 @@ namespace Model
      * <p>The contents of the query with all query statements.</p>
      */
     inline const Aws::String& GetQueryString() const{ return m_queryString; }
+
+    /**
+     * <p>The contents of the query with all query statements.</p>
+     */
+    inline bool QueryStringHasBeenSet() const { return m_queryStringHasBeenSet; }
 
     /**
      * <p>The contents of the query with all query statements.</p>
@@ -200,6 +220,18 @@ namespace Model
      * token or the action will fail.</p> </important>
      */
     inline const Aws::String& GetClientRequestToken() const{ return m_clientRequestToken; }
+
+    /**
+     * <p>A unique case-sensitive string used to ensure the request to create the query
+     * is idempotent (executes only once). If another <code>CreateNamedQuery</code>
+     * request is received, the same response is returned and another query is not
+     * created. If a parameter has changed, for example, the <code>QueryString</code>,
+     * an error is returned.</p> <important> <p>This token is listed as not required
+     * because AWS SDKs (for example the AWS SDK for Java) auto-generate the token for
+     * users. If you are not using the AWS SDK or the AWS CLI, you must provide this
+     * token or the action will fail.</p> </important>
+     */
+    inline bool ClientRequestTokenHasBeenSet() const { return m_clientRequestTokenHasBeenSet; }
 
     /**
      * <p>A unique case-sensitive string used to ensure the request to create the query
@@ -278,6 +310,11 @@ namespace Model
      * <p>The name of the workgroup in which the named query is being created.</p>
      */
     inline const Aws::String& GetWorkGroup() const{ return m_workGroup; }
+
+    /**
+     * <p>The name of the workgroup in which the named query is being created.</p>
+     */
+    inline bool WorkGroupHasBeenSet() const { return m_workGroupHasBeenSet; }
 
     /**
      * <p>The name of the workgroup in which the named query is being created.</p>

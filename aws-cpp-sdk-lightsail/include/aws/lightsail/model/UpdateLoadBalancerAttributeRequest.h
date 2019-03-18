@@ -55,6 +55,12 @@ namespace Model
      * <p>The name of the load balancer that you want to modify (e.g.,
      * <code>my-load-balancer</code>.</p>
      */
+    inline bool LoadBalancerNameHasBeenSet() const { return m_loadBalancerNameHasBeenSet; }
+
+    /**
+     * <p>The name of the load balancer that you want to modify (e.g.,
+     * <code>my-load-balancer</code>.</p>
+     */
     inline void SetLoadBalancerName(const Aws::String& value) { m_loadBalancerNameHasBeenSet = true; m_loadBalancerName = value; }
 
     /**
@@ -96,6 +102,11 @@ namespace Model
     /**
      * <p>The name of the attribute you want to update. Valid values are below.</p>
      */
+    inline bool AttributeNameHasBeenSet() const { return m_attributeNameHasBeenSet; }
+
+    /**
+     * <p>The name of the attribute you want to update. Valid values are below.</p>
+     */
     inline void SetAttributeName(const LoadBalancerAttributeName& value) { m_attributeNameHasBeenSet = true; m_attributeName = value; }
 
     /**
@@ -118,6 +129,11 @@ namespace Model
      * <p>The value that you want to specify for the attribute name.</p>
      */
     inline const Aws::String& GetAttributeValue() const{ return m_attributeValue; }
+
+    /**
+     * <p>The value that you want to specify for the attribute name.</p>
+     */
+    inline bool AttributeValueHasBeenSet() const { return m_attributeValueHasBeenSet; }
 
     /**
      * <p>The value that you want to specify for the attribute name.</p>

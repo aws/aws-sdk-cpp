@@ -59,6 +59,11 @@ namespace Model
     /**
      * <p>The name of the DB cluster parameter group to reset.</p>
      */
+    inline bool DBClusterParameterGroupNameHasBeenSet() const { return m_dBClusterParameterGroupNameHasBeenSet; }
+
+    /**
+     * <p>The name of the DB cluster parameter group to reset.</p>
+     */
     inline void SetDBClusterParameterGroupName(const Aws::String& value) { m_dBClusterParameterGroupNameHasBeenSet = true; m_dBClusterParameterGroupName = value; }
 
     /**
@@ -101,6 +106,14 @@ namespace Model
      * otherwise. You can't use this parameter if there is a list of parameter names
      * specified for the <code>Parameters</code> parameter.</p>
      */
+    inline bool ResetAllParametersHasBeenSet() const { return m_resetAllParametersHasBeenSet; }
+
+    /**
+     * <p>A value that is set to <code>true</code> to reset all parameters in the DB
+     * cluster parameter group to their default values, and <code>false</code>
+     * otherwise. You can't use this parameter if there is a list of parameter names
+     * specified for the <code>Parameters</code> parameter.</p>
+     */
     inline void SetResetAllParameters(bool value) { m_resetAllParametersHasBeenSet = true; m_resetAllParameters = value; }
 
     /**
@@ -118,6 +131,13 @@ namespace Model
      * <code>ResetAllParameters</code> parameter is set to <code>true</code>.</p>
      */
     inline const Aws::Vector<Parameter>& GetParameters() const{ return m_parameters; }
+
+    /**
+     * <p>A list of parameter names in the DB cluster parameter group to reset to the
+     * default values. You can't use this parameter if the
+     * <code>ResetAllParameters</code> parameter is set to <code>true</code>.</p>
+     */
+    inline bool ParametersHasBeenSet() const { return m_parametersHasBeenSet; }
 
     /**
      * <p>A list of parameter names in the DB cluster parameter group to reset to the

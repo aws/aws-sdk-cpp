@@ -62,6 +62,12 @@ namespace Model
      * <p>The row delimiter. For example, in a CSV format, <i>'\n'</i> is the typical
      * row delimiter.</p>
      */
+    inline bool RecordRowDelimiterHasBeenSet() const { return m_recordRowDelimiterHasBeenSet; }
+
+    /**
+     * <p>The row delimiter. For example, in a CSV format, <i>'\n'</i> is the typical
+     * row delimiter.</p>
+     */
     inline void SetRecordRowDelimiter(const Aws::String& value) { m_recordRowDelimiterHasBeenSet = true; m_recordRowDelimiter = value; }
 
     /**
@@ -100,6 +106,12 @@ namespace Model
      * typical column delimiter.</p>
      */
     inline const Aws::String& GetRecordColumnDelimiter() const{ return m_recordColumnDelimiter; }
+
+    /**
+     * <p>The column delimiter. For example, in a CSV format, a comma (",") is the
+     * typical column delimiter.</p>
+     */
+    inline bool RecordColumnDelimiterHasBeenSet() const { return m_recordColumnDelimiterHasBeenSet; }
 
     /**
      * <p>The column delimiter. For example, in a CSV format, a comma (",") is the

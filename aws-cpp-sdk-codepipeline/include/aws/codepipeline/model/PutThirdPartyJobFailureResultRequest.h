@@ -59,6 +59,12 @@ namespace Model
      * <p>The ID of the job that failed. This is the same ID returned from
      * PollForThirdPartyJobs.</p>
      */
+    inline bool JobIdHasBeenSet() const { return m_jobIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the job that failed. This is the same ID returned from
+     * PollForThirdPartyJobs.</p>
+     */
     inline void SetJobId(const Aws::String& value) { m_jobIdHasBeenSet = true; m_jobId = value; }
 
     /**
@@ -102,6 +108,12 @@ namespace Model
      * <p>The clientToken portion of the clientId and clientToken pair used to verify
      * that the calling entity is allowed access to the job and its details.</p>
      */
+    inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
+
+    /**
+     * <p>The clientToken portion of the clientId and clientToken pair used to verify
+     * that the calling entity is allowed access to the job and its details.</p>
+     */
     inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
 
     /**
@@ -139,6 +151,11 @@ namespace Model
      * <p>Represents information about failure details.</p>
      */
     inline const FailureDetails& GetFailureDetails() const{ return m_failureDetails; }
+
+    /**
+     * <p>Represents information about failure details.</p>
+     */
+    inline bool FailureDetailsHasBeenSet() const { return m_failureDetailsHasBeenSet; }
 
     /**
      * <p>Represents information about failure details.</p>

@@ -73,6 +73,12 @@ namespace Model
      * Choose one or more ad marker types to pass SCTE35 signals through to this group
      * of Apple HLS outputs.
      */
+    inline bool AdMarkersHasBeenSet() const { return m_adMarkersHasBeenSet; }
+
+    /**
+     * Choose one or more ad marker types to pass SCTE35 signals through to this group
+     * of Apple HLS outputs.
+     */
     inline void SetAdMarkers(const Aws::Vector<HlsAdMarkers>& value) { m_adMarkersHasBeenSet = true; m_adMarkers = value; }
 
     /**
@@ -112,6 +118,13 @@ namespace Model
      * main .m3u8 file.
      */
     inline const Aws::String& GetBaseUrl() const{ return m_baseUrl; }
+
+    /**
+     * A partial URI prefix that will be prepended to each output in the media .m3u8
+     * file. Can be used if base manifest is delivered from a different URL than the
+     * main .m3u8 file.
+     */
+    inline bool BaseUrlHasBeenSet() const { return m_baseUrlHasBeenSet; }
 
     /**
      * A partial URI prefix that will be prepended to each output in the media .m3u8
@@ -164,6 +177,11 @@ namespace Model
     /**
      * Language to be used on Caption outputs
      */
+    inline bool CaptionLanguageMappingsHasBeenSet() const { return m_captionLanguageMappingsHasBeenSet; }
+
+    /**
+     * Language to be used on Caption outputs
+     */
     inline void SetCaptionLanguageMappings(const Aws::Vector<HlsCaptionLanguageMapping>& value) { m_captionLanguageMappingsHasBeenSet = true; m_captionLanguageMappings = value; }
 
     /**
@@ -196,6 +214,9 @@ namespace Model
     inline const HlsCaptionLanguageSetting& GetCaptionLanguageSetting() const{ return m_captionLanguageSetting; }
 
     
+    inline bool CaptionLanguageSettingHasBeenSet() const { return m_captionLanguageSettingHasBeenSet; }
+
+    
     inline void SetCaptionLanguageSetting(const HlsCaptionLanguageSetting& value) { m_captionLanguageSettingHasBeenSet = true; m_captionLanguageSetting = value; }
 
     
@@ -212,6 +233,9 @@ namespace Model
     inline const HlsClientCache& GetClientCache() const{ return m_clientCache; }
 
     
+    inline bool ClientCacheHasBeenSet() const { return m_clientCacheHasBeenSet; }
+
+    
     inline void SetClientCache(const HlsClientCache& value) { m_clientCacheHasBeenSet = true; m_clientCache = value; }
 
     
@@ -226,6 +250,9 @@ namespace Model
 
     
     inline const HlsCodecSpecification& GetCodecSpecification() const{ return m_codecSpecification; }
+
+    
+    inline bool CodecSpecificationHasBeenSet() const { return m_codecSpecificationHasBeenSet; }
 
     
     inline void SetCodecSpecification(const HlsCodecSpecification& value) { m_codecSpecificationHasBeenSet = true; m_codecSpecification = value; }
@@ -248,6 +275,15 @@ namespace Model
      * input file.
      */
     inline const Aws::String& GetDestination() const{ return m_destination; }
+
+    /**
+     * Use Destination (Destination) to specify the S3 output location and the output
+     * filename base. Destination accepts format identifiers. If you do not specify the
+     * base filename in the URI, the service will use the filename of the input file.
+     * If your job has multiple inputs, the service uses the filename of the first
+     * input file.
+     */
+    inline bool DestinationHasBeenSet() const { return m_destinationHasBeenSet; }
 
     /**
      * Use Destination (Destination) to specify the S3 output location and the output
@@ -308,6 +344,9 @@ namespace Model
     inline const HlsDirectoryStructure& GetDirectoryStructure() const{ return m_directoryStructure; }
 
     
+    inline bool DirectoryStructureHasBeenSet() const { return m_directoryStructureHasBeenSet; }
+
+    
     inline void SetDirectoryStructure(const HlsDirectoryStructure& value) { m_directoryStructureHasBeenSet = true; m_directoryStructure = value; }
 
     
@@ -324,6 +363,11 @@ namespace Model
      * DRM settings.
      */
     inline const HlsEncryptionSettings& GetEncryption() const{ return m_encryption; }
+
+    /**
+     * DRM settings.
+     */
+    inline bool EncryptionHasBeenSet() const { return m_encryptionHasBeenSet; }
 
     /**
      * DRM settings.
@@ -350,6 +394,9 @@ namespace Model
     inline const HlsManifestCompression& GetManifestCompression() const{ return m_manifestCompression; }
 
     
+    inline bool ManifestCompressionHasBeenSet() const { return m_manifestCompressionHasBeenSet; }
+
+    
     inline void SetManifestCompression(const HlsManifestCompression& value) { m_manifestCompressionHasBeenSet = true; m_manifestCompression = value; }
 
     
@@ -364,6 +411,9 @@ namespace Model
 
     
     inline const HlsManifestDurationFormat& GetManifestDurationFormat() const{ return m_manifestDurationFormat; }
+
+    
+    inline bool ManifestDurationFormatHasBeenSet() const { return m_manifestDurationFormatHasBeenSet; }
 
     
     inline void SetManifestDurationFormat(const HlsManifestDurationFormat& value) { m_manifestDurationFormatHasBeenSet = true; m_manifestDurationFormat = value; }
@@ -406,6 +456,21 @@ namespace Model
      * length; when you set the minimum final segment length to 1, your final segment
      * is 3.5 seconds.
      */
+    inline bool MinFinalSegmentLengthHasBeenSet() const { return m_minFinalSegmentLengthHasBeenSet; }
+
+    /**
+     * Keep this setting at the default value of 0, unless you are troubleshooting a
+     * problem with how devices play back the end of your video asset. If you know that
+     * player devices are hanging on the final segment of your video because the length
+     * of your final segment is too short, use this setting to specify a minimum final
+     * segment length, in seconds. Choose a value that is greater than or equal to 1
+     * and less than your segment length. When you specify a value for this setting,
+     * the encoder will combine any final segment that is shorter than the length that
+     * you specify with the previous segment. For example, your segment length is 3
+     * seconds and your final segment is .5 seconds without a minimum final segment
+     * length; when you set the minimum final segment length to 1, your final segment
+     * is 3.5 seconds.
+     */
     inline void SetMinFinalSegmentLength(double value) { m_minFinalSegmentLengthHasBeenSet = true; m_minFinalSegmentLength = value; }
 
     /**
@@ -434,6 +499,12 @@ namespace Model
      * When set, Minimum Segment Size is enforced by looking ahead and back within the
      * specified range for a nearby avail and extending the segment size if needed.
      */
+    inline bool MinSegmentLengthHasBeenSet() const { return m_minSegmentLengthHasBeenSet; }
+
+    /**
+     * When set, Minimum Segment Size is enforced by looking ahead and back within the
+     * specified range for a nearby avail and extending the segment size if needed.
+     */
     inline void SetMinSegmentLength(int value) { m_minSegmentLengthHasBeenSet = true; m_minSegmentLength = value; }
 
     /**
@@ -445,6 +516,9 @@ namespace Model
 
     
     inline const HlsOutputSelection& GetOutputSelection() const{ return m_outputSelection; }
+
+    
+    inline bool OutputSelectionHasBeenSet() const { return m_outputSelectionHasBeenSet; }
 
     
     inline void SetOutputSelection(const HlsOutputSelection& value) { m_outputSelectionHasBeenSet = true; m_outputSelection = value; }
@@ -461,6 +535,9 @@ namespace Model
 
     
     inline const HlsProgramDateTime& GetProgramDateTime() const{ return m_programDateTime; }
+
+    
+    inline bool ProgramDateTimeHasBeenSet() const { return m_programDateTimeHasBeenSet; }
 
     
     inline void SetProgramDateTime(const HlsProgramDateTime& value) { m_programDateTimeHasBeenSet = true; m_programDateTime = value; }
@@ -483,6 +560,11 @@ namespace Model
     /**
      * Period of insertion of EXT-X-PROGRAM-DATE-TIME entry, in seconds.
      */
+    inline bool ProgramDateTimePeriodHasBeenSet() const { return m_programDateTimePeriodHasBeenSet; }
+
+    /**
+     * Period of insertion of EXT-X-PROGRAM-DATE-TIME entry, in seconds.
+     */
     inline void SetProgramDateTimePeriod(int value) { m_programDateTimePeriodHasBeenSet = true; m_programDateTimePeriod = value; }
 
     /**
@@ -493,6 +575,9 @@ namespace Model
 
     
     inline const HlsSegmentControl& GetSegmentControl() const{ return m_segmentControl; }
+
+    
+    inline bool SegmentControlHasBeenSet() const { return m_segmentControlHasBeenSet; }
 
     
     inline void SetSegmentControl(const HlsSegmentControl& value) { m_segmentControlHasBeenSet = true; m_segmentControl = value; }
@@ -519,6 +604,13 @@ namespace Model
      * segments will end on the next keyframe after this number of seconds, so actual
      * segment length may be longer.
      */
+    inline bool SegmentLengthHasBeenSet() const { return m_segmentLengthHasBeenSet; }
+
+    /**
+     * Length of MPEG-2 Transport Stream segments to create (in seconds). Note that
+     * segments will end on the next keyframe after this number of seconds, so actual
+     * segment length may be longer.
+     */
     inline void SetSegmentLength(int value) { m_segmentLengthHasBeenSet = true; m_segmentLength = value; }
 
     /**
@@ -539,6 +631,12 @@ namespace Model
      * Number of segments to write to a subdirectory before starting a new one.
      * directoryStructure must be SINGLE_DIRECTORY for this setting to have an effect.
      */
+    inline bool SegmentsPerSubdirectoryHasBeenSet() const { return m_segmentsPerSubdirectoryHasBeenSet; }
+
+    /**
+     * Number of segments to write to a subdirectory before starting a new one.
+     * directoryStructure must be SINGLE_DIRECTORY for this setting to have an effect.
+     */
     inline void SetSegmentsPerSubdirectory(int value) { m_segmentsPerSubdirectoryHasBeenSet = true; m_segmentsPerSubdirectory = value; }
 
     /**
@@ -550,6 +648,9 @@ namespace Model
 
     
     inline const HlsStreamInfResolution& GetStreamInfResolution() const{ return m_streamInfResolution; }
+
+    
+    inline bool StreamInfResolutionHasBeenSet() const { return m_streamInfResolutionHasBeenSet; }
 
     
     inline void SetStreamInfResolution(const HlsStreamInfResolution& value) { m_streamInfResolutionHasBeenSet = true; m_streamInfResolution = value; }
@@ -566,6 +667,9 @@ namespace Model
 
     
     inline const HlsTimedMetadataId3Frame& GetTimedMetadataId3Frame() const{ return m_timedMetadataId3Frame; }
+
+    
+    inline bool TimedMetadataId3FrameHasBeenSet() const { return m_timedMetadataId3FrameHasBeenSet; }
 
     
     inline void SetTimedMetadataId3Frame(const HlsTimedMetadataId3Frame& value) { m_timedMetadataId3FrameHasBeenSet = true; m_timedMetadataId3Frame = value; }
@@ -588,6 +692,11 @@ namespace Model
     /**
      * Timed Metadata interval in seconds.
      */
+    inline bool TimedMetadataId3PeriodHasBeenSet() const { return m_timedMetadataId3PeriodHasBeenSet; }
+
+    /**
+     * Timed Metadata interval in seconds.
+     */
     inline void SetTimedMetadataId3Period(int value) { m_timedMetadataId3PeriodHasBeenSet = true; m_timedMetadataId3Period = value; }
 
     /**
@@ -600,6 +709,11 @@ namespace Model
      * Provides an extra millisecond delta offset to fine tune the timestamps.
      */
     inline int GetTimestampDeltaMilliseconds() const{ return m_timestampDeltaMilliseconds; }
+
+    /**
+     * Provides an extra millisecond delta offset to fine tune the timestamps.
+     */
+    inline bool TimestampDeltaMillisecondsHasBeenSet() const { return m_timestampDeltaMillisecondsHasBeenSet; }
 
     /**
      * Provides an extra millisecond delta offset to fine tune the timestamps.

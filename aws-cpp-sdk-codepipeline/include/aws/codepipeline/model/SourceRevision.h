@@ -58,6 +58,12 @@ namespace Model
      * <p>The name of the action that processed the revision to the source
      * artifact.</p>
      */
+    inline bool ActionNameHasBeenSet() const { return m_actionNameHasBeenSet; }
+
+    /**
+     * <p>The name of the action that processed the revision to the source
+     * artifact.</p>
+     */
     inline void SetActionName(const Aws::String& value) { m_actionNameHasBeenSet = true; m_actionName = value; }
 
     /**
@@ -96,6 +102,12 @@ namespace Model
      * artifact.</p>
      */
     inline const Aws::String& GetRevisionId() const{ return m_revisionId; }
+
+    /**
+     * <p>The system-generated unique ID that identifies the revision number of the
+     * artifact.</p>
+     */
+    inline bool RevisionIdHasBeenSet() const { return m_revisionIdHasBeenSet; }
 
     /**
      * <p>The system-generated unique ID that identifies the revision number of the
@@ -142,6 +154,15 @@ namespace Model
      * metadata.</p>
      */
     inline const Aws::String& GetRevisionSummary() const{ return m_revisionSummary; }
+
+    /**
+     * <p>Summary information about the most recent revision of the artifact. For
+     * GitHub and AWS CodeCommit repositories, the commit message. For Amazon S3
+     * buckets or actions, the user-provided content of a
+     * <code>codepipeline-artifact-revision-summary</code> key specified in the object
+     * metadata.</p>
+     */
+    inline bool RevisionSummaryHasBeenSet() const { return m_revisionSummaryHasBeenSet; }
 
     /**
      * <p>Summary information about the most recent revision of the artifact. For
@@ -204,6 +225,13 @@ namespace Model
      * page.</p>
      */
     inline const Aws::String& GetRevisionUrl() const{ return m_revisionUrl; }
+
+    /**
+     * <p>The commit ID for the artifact revision. For artifacts stored in GitHub or
+     * AWS CodeCommit repositories, the commit ID is linked to a commit details
+     * page.</p>
+     */
+    inline bool RevisionUrlHasBeenSet() const { return m_revisionUrlHasBeenSet; }
 
     /**
      * <p>The commit ID for the artifact revision. For artifacts stored in GitHub or

@@ -53,6 +53,11 @@ namespace Model
     /**
      * Selects a specific PID from within a video source.
      */
+    inline bool PidHasBeenSet() const { return m_pidHasBeenSet; }
+
+    /**
+     * Selects a specific PID from within a video source.
+     */
     inline void SetPid(int value) { m_pidHasBeenSet = true; m_pid = value; }
 
     /**

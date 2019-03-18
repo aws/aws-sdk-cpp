@@ -61,6 +61,11 @@ namespace Model
     /**
      * <p> An ARN of a CloudFront resource.</p>
      */
+    inline bool ResourceHasBeenSet() const { return m_resourceHasBeenSet; }
+
+    /**
+     * <p> An ARN of a CloudFront resource.</p>
+     */
     inline void SetResource(const Aws::String& value) { m_resourceHasBeenSet = true; m_resource = value; }
 
     /**
@@ -93,6 +98,11 @@ namespace Model
      * <p> A complex type that contains zero or more <code>Tag</code> elements.</p>
      */
     inline const Tags& GetTags() const{ return m_tags; }
+
+    /**
+     * <p> A complex type that contains zero or more <code>Tag</code> elements.</p>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
      * <p> A complex type that contains zero or more <code>Tag</code> elements.</p>

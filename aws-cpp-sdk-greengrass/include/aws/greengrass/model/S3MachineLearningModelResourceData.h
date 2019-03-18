@@ -56,6 +56,11 @@ namespace Model
     /**
      * The absolute local path of the resource inside the Lambda environment.
      */
+    inline bool DestinationPathHasBeenSet() const { return m_destinationPathHasBeenSet; }
+
+    /**
+     * The absolute local path of the resource inside the Lambda environment.
+     */
     inline void SetDestinationPath(const Aws::String& value) { m_destinationPathHasBeenSet = true; m_destinationPath = value; }
 
     /**
@@ -89,6 +94,12 @@ namespace Model
      * or .zip format.
      */
     inline const Aws::String& GetS3Uri() const{ return m_s3Uri; }
+
+    /**
+     * The URI of the source model in an S3 bucket. The model package must be in tar.gz
+     * or .zip format.
+     */
+    inline bool S3UriHasBeenSet() const { return m_s3UriHasBeenSet; }
 
     /**
      * The URI of the source model in an S3 bucket. The model package must be in tar.gz

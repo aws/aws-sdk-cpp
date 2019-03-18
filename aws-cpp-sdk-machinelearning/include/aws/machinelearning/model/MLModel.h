@@ -63,6 +63,11 @@ namespace Model
     /**
      * <p>The ID assigned to the <code>MLModel</code> at creation.</p>
      */
+    inline bool MLModelIdHasBeenSet() const { return m_mLModelIdHasBeenSet; }
+
+    /**
+     * <p>The ID assigned to the <code>MLModel</code> at creation.</p>
+     */
     inline void SetMLModelId(const Aws::String& value) { m_mLModelIdHasBeenSet = true; m_mLModelId = value; }
 
     /**
@@ -97,6 +102,13 @@ namespace Model
      * <code>TrainingDataSourceId</code>.</p>
      */
     inline const Aws::String& GetTrainingDataSourceId() const{ return m_trainingDataSourceId; }
+
+    /**
+     * <p>The ID of the training <code>DataSource</code>. The
+     * <code>CreateMLModel</code> operation uses the
+     * <code>TrainingDataSourceId</code>.</p>
+     */
+    inline bool TrainingDataSourceIdHasBeenSet() const { return m_trainingDataSourceIdHasBeenSet; }
 
     /**
      * <p>The ID of the training <code>DataSource</code>. The
@@ -153,6 +165,13 @@ namespace Model
      * account type can be either an AWS root account or an AWS Identity and Access
      * Management (IAM) user account.</p>
      */
+    inline bool CreatedByIamUserHasBeenSet() const { return m_createdByIamUserHasBeenSet; }
+
+    /**
+     * <p>The AWS user account from which the <code>MLModel</code> was created. The
+     * account type can be either an AWS root account or an AWS Identity and Access
+     * Management (IAM) user account.</p>
+     */
     inline void SetCreatedByIamUser(const Aws::String& value) { m_createdByIamUserHasBeenSet = true; m_createdByIamUser = value; }
 
     /**
@@ -201,6 +220,12 @@ namespace Model
      * <p>The time that the <code>MLModel</code> was created. The time is expressed in
      * epoch time.</p>
      */
+    inline bool CreatedAtHasBeenSet() const { return m_createdAtHasBeenSet; }
+
+    /**
+     * <p>The time that the <code>MLModel</code> was created. The time is expressed in
+     * epoch time.</p>
+     */
     inline void SetCreatedAt(const Aws::Utils::DateTime& value) { m_createdAtHasBeenSet = true; m_createdAt = value; }
 
     /**
@@ -232,6 +257,12 @@ namespace Model
      * <p>The time of the most recent edit to the <code>MLModel</code>. The time is
      * expressed in epoch time.</p>
      */
+    inline bool LastUpdatedAtHasBeenSet() const { return m_lastUpdatedAtHasBeenSet; }
+
+    /**
+     * <p>The time of the most recent edit to the <code>MLModel</code>. The time is
+     * expressed in epoch time.</p>
+     */
     inline void SetLastUpdatedAt(const Aws::Utils::DateTime& value) { m_lastUpdatedAtHasBeenSet = true; m_lastUpdatedAt = value; }
 
     /**
@@ -257,6 +288,11 @@ namespace Model
      * <p>A user-supplied name or description of the <code>MLModel</code>.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
+
+    /**
+     * <p>A user-supplied name or description of the <code>MLModel</code>.</p>
+     */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
      * <p>A user-supplied name or description of the <code>MLModel</code>.</p>
@@ -311,6 +347,18 @@ namespace Model
      * creation process completed successfully.</li> <li> <code>DELETED</code> - The
      * <code>MLModel</code> is marked as deleted. It isn't usable.</li> </ul>
      */
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
+
+    /**
+     * <p>The current status of an <code>MLModel</code>. This element can have one of
+     * the following values: </p> <ul> <li> <code>PENDING</code> - Amazon Machine
+     * Learning (Amazon ML) submitted a request to create an <code>MLModel</code>.</li>
+     * <li> <code>INPROGRESS</code> - The creation process is underway.</li> <li>
+     * <code>FAILED</code> - The request to create an <code>MLModel</code> didn't run
+     * to completion. The model isn't usable.</li> <li> <code>COMPLETED</code> - The
+     * creation process completed successfully.</li> <li> <code>DELETED</code> - The
+     * <code>MLModel</code> is marked as deleted. It isn't usable.</li> </ul>
+     */
     inline void SetStatus(const EntityStatus& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
@@ -354,6 +402,9 @@ namespace Model
     inline long long GetSizeInBytes() const{ return m_sizeInBytes; }
 
     
+    inline bool SizeInBytesHasBeenSet() const { return m_sizeInBytesHasBeenSet; }
+
+    
     inline void SetSizeInBytes(long long value) { m_sizeInBytesHasBeenSet = true; m_sizeInBytes = value; }
 
     
@@ -364,6 +415,11 @@ namespace Model
      * <p>The current endpoint of the <code>MLModel</code>.</p>
      */
     inline const RealtimeEndpointInfo& GetEndpointInfo() const{ return m_endpointInfo; }
+
+    /**
+     * <p>The current endpoint of the <code>MLModel</code>.</p>
+     */
+    inline bool EndpointInfoHasBeenSet() const { return m_endpointInfoHasBeenSet; }
 
     /**
      * <p>The current endpoint of the <code>MLModel</code>.</p>
@@ -418,6 +474,39 @@ namespace Model
      * <code>L1</code> is specified. Use this parameter sparingly.</p> </li> </ul>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetTrainingParameters() const{ return m_trainingParameters; }
+
+    /**
+     * <p>A list of the training parameters in the <code>MLModel</code>. The list is
+     * implemented as a map of key-value pairs.</p> <p>The following is the current set
+     * of training parameters: </p> <ul> <li> <p><code>sgd.maxMLModelSizeInBytes</code>
+     * - The maximum allowed size of the model. Depending on the input data, the size
+     * of the model might affect its performance.</p> <p> The value is an integer that
+     * ranges from <code>100000</code> to <code>2147483648</code>. The default value is
+     * <code>33554432</code>.</p> </li> <li><p><code>sgd.maxPasses</code> - The number
+     * of times that the training process traverses the observations to build the
+     * <code>MLModel</code>. The value is an integer that ranges from <code>1</code> to
+     * <code>10000</code>. The default value is <code>10</code>.</p></li>
+     * <li><p><code>sgd.shuffleType</code> - Whether Amazon ML shuffles the training
+     * data. Shuffling the data improves a model's ability to find the optimal solution
+     * for a variety of data types. The valid values are <code>auto</code> and
+     * <code>none</code>. The default value is <code>none</code>.</p></li> <li>
+     * <p><code>sgd.l1RegularizationAmount</code> - The coefficient regularization L1
+     * norm, which controls overfitting the data by penalizing large coefficients. This
+     * parameter tends to drive coefficients to zero, resulting in sparse feature set.
+     * If you use this parameter, start by specifying a small value, such as
+     * <code>1.0E-08</code>.</p> <p>The value is a double that ranges from
+     * <code>0</code> to <code>MAX_DOUBLE</code>. The default is to not use L1
+     * normalization. This parameter can't be used when <code>L2</code> is specified.
+     * Use this parameter sparingly.</p> </li> <li>
+     * <p><code>sgd.l2RegularizationAmount</code> - The coefficient regularization L2
+     * norm, which controls overfitting the data by penalizing large coefficients. This
+     * tends to drive coefficients to small, nonzero values. If you use this parameter,
+     * start by specifying a small value, such as <code>1.0E-08</code>.</p> <p>The
+     * value is a double that ranges from <code>0</code> to <code>MAX_DOUBLE</code>.
+     * The default is to not use L2 normalization. This parameter can't be used when
+     * <code>L1</code> is specified. Use this parameter sparingly.</p> </li> </ul>
+     */
+    inline bool TrainingParametersHasBeenSet() const { return m_trainingParametersHasBeenSet; }
 
     /**
      * <p>A list of the training parameters in the <code>MLModel</code>. The list is
@@ -793,6 +882,12 @@ namespace Model
      * <p>The location of the data file or directory in Amazon Simple Storage Service
      * (Amazon S3).</p>
      */
+    inline bool InputDataLocationS3HasBeenSet() const { return m_inputDataLocationS3HasBeenSet; }
+
+    /**
+     * <p>The location of the data file or directory in Amazon Simple Storage Service
+     * (Amazon S3).</p>
+     */
     inline void SetInputDataLocationS3(const Aws::String& value) { m_inputDataLocationS3HasBeenSet = true; m_inputDataLocationS3 = value; }
 
     /**
@@ -833,6 +928,14 @@ namespace Model
      * </ul>
      */
     inline const Algorithm& GetAlgorithm() const{ return m_algorithm; }
+
+    /**
+     * <p>The algorithm used to train the <code>MLModel</code>. The following algorithm
+     * is supported:</p> <ul> <li> <code>SGD</code> -- Stochastic gradient descent. The
+     * goal of <code>SGD</code> is to minimize the gradient of the loss function. </li>
+     * </ul>
+     */
+    inline bool AlgorithmHasBeenSet() const { return m_algorithmHasBeenSet; }
 
     /**
      * <p>The algorithm used to train the <code>MLModel</code>. The following algorithm
@@ -891,6 +994,19 @@ namespace Model
      * author="annbech" timestamp="20160328T175050-0700">-<?oxy_insert_end>risk
      * trade?".</li> </ul>
      */
+    inline bool MLModelTypeHasBeenSet() const { return m_mLModelTypeHasBeenSet; }
+
+    /**
+     * <p>Identifies the <code>MLModel</code> category. The following are the available
+     * types:</p> <ul> <li> <code>REGRESSION</code> - Produces a numeric result. For
+     * example, "What price should a house be listed at?"</li> <li> <code>BINARY</code>
+     * - Produces one of two possible results. For example, "Is this a child-friendly
+     * web site?".</li> <li> <code>MULTICLASS</code> - Produces one of several possible
+     * results. For example, "Is this a HIGH-, LOW-, or MEDIUM<?oxy_delete
+     * author="annbech" timestamp="20160328T175050-0700" content=" "><?oxy_insert_start
+     * author="annbech" timestamp="20160328T175050-0700">-<?oxy_insert_end>risk
+     * trade?".</li> </ul>
+     */
     inline void SetMLModelType(const MLModelType& value) { m_mLModelTypeHasBeenSet = true; m_mLModelType = value; }
 
     /**
@@ -937,6 +1053,9 @@ namespace Model
     inline double GetScoreThreshold() const{ return m_scoreThreshold; }
 
     
+    inline bool ScoreThresholdHasBeenSet() const { return m_scoreThresholdHasBeenSet; }
+
+    
     inline void SetScoreThreshold(double value) { m_scoreThresholdHasBeenSet = true; m_scoreThreshold = value; }
 
     
@@ -948,6 +1067,12 @@ namespace Model
      * is expressed in epoch time.</p>
      */
     inline const Aws::Utils::DateTime& GetScoreThresholdLastUpdatedAt() const{ return m_scoreThresholdLastUpdatedAt; }
+
+    /**
+     * <p>The time of the most recent edit to the <code>ScoreThreshold</code>. The time
+     * is expressed in epoch time.</p>
+     */
+    inline bool ScoreThresholdLastUpdatedAtHasBeenSet() const { return m_scoreThresholdLastUpdatedAtHasBeenSet; }
 
     /**
      * <p>The time of the most recent edit to the <code>ScoreThreshold</code>. The time
@@ -979,6 +1104,12 @@ namespace Model
      * <code>MLModel</code>.</p>
      */
     inline const Aws::String& GetMessage() const{ return m_message; }
+
+    /**
+     * <p>A description of the most recent details about accessing the
+     * <code>MLModel</code>.</p>
+     */
+    inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
 
     /**
      * <p>A description of the most recent details about accessing the
@@ -1021,6 +1152,9 @@ namespace Model
     inline long long GetComputeTime() const{ return m_computeTime; }
 
     
+    inline bool ComputeTimeHasBeenSet() const { return m_computeTimeHasBeenSet; }
+
+    
     inline void SetComputeTime(long long value) { m_computeTimeHasBeenSet = true; m_computeTime = value; }
 
     
@@ -1029,6 +1163,9 @@ namespace Model
 
     
     inline const Aws::Utils::DateTime& GetFinishedAt() const{ return m_finishedAt; }
+
+    
+    inline bool FinishedAtHasBeenSet() const { return m_finishedAtHasBeenSet; }
 
     
     inline void SetFinishedAt(const Aws::Utils::DateTime& value) { m_finishedAtHasBeenSet = true; m_finishedAt = value; }
@@ -1045,6 +1182,9 @@ namespace Model
 
     
     inline const Aws::Utils::DateTime& GetStartedAt() const{ return m_startedAt; }
+
+    
+    inline bool StartedAtHasBeenSet() const { return m_startedAtHasBeenSet; }
 
     
     inline void SetStartedAt(const Aws::Utils::DateTime& value) { m_startedAtHasBeenSet = true; m_startedAt = value; }

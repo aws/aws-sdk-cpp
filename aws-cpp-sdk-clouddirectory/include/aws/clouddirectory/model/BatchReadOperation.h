@@ -69,6 +69,11 @@ namespace Model
     /**
      * <p>Lists all attributes that are associated with an object.</p>
      */
+    inline bool ListObjectAttributesHasBeenSet() const { return m_listObjectAttributesHasBeenSet; }
+
+    /**
+     * <p>Lists all attributes that are associated with an object.</p>
+     */
     inline void SetListObjectAttributes(const BatchListObjectAttributes& value) { m_listObjectAttributesHasBeenSet = true; m_listObjectAttributes = value; }
 
     /**
@@ -92,6 +97,12 @@ namespace Model
      * object.</p>
      */
     inline const BatchListObjectChildren& GetListObjectChildren() const{ return m_listObjectChildren; }
+
+    /**
+     * <p>Returns a paginated list of child objects that are associated with a given
+     * object.</p>
+     */
+    inline bool ListObjectChildrenHasBeenSet() const { return m_listObjectChildrenHasBeenSet; }
 
     /**
      * <p>Returns a paginated list of child objects that are associated with a given
@@ -126,6 +137,11 @@ namespace Model
     /**
      * <p>Lists indices attached to an object.</p>
      */
+    inline bool ListAttachedIndicesHasBeenSet() const { return m_listAttachedIndicesHasBeenSet; }
+
+    /**
+     * <p>Lists indices attached to an object.</p>
+     */
     inline void SetListAttachedIndices(const BatchListAttachedIndices& value) { m_listAttachedIndicesHasBeenSet = true; m_listAttachedIndices = value; }
 
     /**
@@ -152,6 +168,15 @@ namespace Model
      * Structure</a>.</p>
      */
     inline const BatchListObjectParentPaths& GetListObjectParentPaths() const{ return m_listObjectParentPaths; }
+
+    /**
+     * <p>Retrieves all available parent paths for any object type such as node, leaf
+     * node, policy node, and index node objects. For more information about objects,
+     * see <a
+     * href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/key_concepts_directorystructure.html">Directory
+     * Structure</a>.</p>
+     */
+    inline bool ListObjectParentPathsHasBeenSet() const { return m_listObjectParentPathsHasBeenSet; }
 
     /**
      * <p>Retrieves all available parent paths for any object type such as node, leaf
@@ -198,6 +223,11 @@ namespace Model
     /**
      * <p>Retrieves metadata about an object.</p>
      */
+    inline bool GetObjectInformationHasBeenSet() const { return m_getObjectInformationHasBeenSet; }
+
+    /**
+     * <p>Retrieves metadata about an object.</p>
+     */
     inline void SetGetObjectInformation(const BatchGetObjectInformation& value) { m_getObjectInformationHasBeenSet = true; m_getObjectInformation = value; }
 
     /**
@@ -224,6 +254,11 @@ namespace Model
     /**
      * <p>Retrieves attributes within a facet that are associated with an object.</p>
      */
+    inline bool GetObjectAttributesHasBeenSet() const { return m_getObjectAttributesHasBeenSet; }
+
+    /**
+     * <p>Retrieves attributes within a facet that are associated with an object.</p>
+     */
     inline void SetGetObjectAttributes(const BatchGetObjectAttributes& value) { m_getObjectAttributesHasBeenSet = true; m_getObjectAttributes = value; }
 
     /**
@@ -246,6 +281,9 @@ namespace Model
     inline const BatchListObjectParents& GetListObjectParents() const{ return m_listObjectParents; }
 
     
+    inline bool ListObjectParentsHasBeenSet() const { return m_listObjectParentsHasBeenSet; }
+
+    
     inline void SetListObjectParents(const BatchListObjectParents& value) { m_listObjectParentsHasBeenSet = true; m_listObjectParents = value; }
 
     
@@ -262,6 +300,11 @@ namespace Model
      * <p>Returns policies attached to an object in pagination fashion.</p>
      */
     inline const BatchListObjectPolicies& GetListObjectPolicies() const{ return m_listObjectPolicies; }
+
+    /**
+     * <p>Returns policies attached to an object in pagination fashion.</p>
+     */
+    inline bool ListObjectPoliciesHasBeenSet() const { return m_listObjectPoliciesHasBeenSet; }
 
     /**
      * <p>Returns policies attached to an object in pagination fashion.</p>
@@ -289,6 +332,12 @@ namespace Model
      * attached.</p>
      */
     inline const BatchListPolicyAttachments& GetListPolicyAttachments() const{ return m_listPolicyAttachments; }
+
+    /**
+     * <p>Returns all of the <code>ObjectIdentifiers</code> to which a given policy is
+     * attached.</p>
+     */
+    inline bool ListPolicyAttachmentsHasBeenSet() const { return m_listPolicyAttachmentsHasBeenSet; }
 
     /**
      * <p>Returns all of the <code>ObjectIdentifiers</code> to which a given policy is
@@ -326,6 +375,18 @@ namespace Model
      * href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/key_concepts_directory.html#key_concepts_policies">Policies</a>.</p>
      */
     inline const BatchLookupPolicy& GetLookupPolicy() const{ return m_lookupPolicy; }
+
+    /**
+     * <p>Lists all policies from the root of the <a>Directory</a> to the object
+     * specified. If there are no policies present, an empty list is returned. If
+     * policies are present, and if some objects don't have the policies attached, it
+     * returns the <code>ObjectIdentifier</code> for such objects. If policies are
+     * present, it returns <code>ObjectIdentifier</code>, <code>policyId</code>, and
+     * <code>policyType</code>. Paths that don't lead to the root from the target
+     * object are ignored. For more information, see <a
+     * href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/key_concepts_directory.html#key_concepts_policies">Policies</a>.</p>
+     */
+    inline bool LookupPolicyHasBeenSet() const { return m_lookupPolicyHasBeenSet; }
 
     /**
      * <p>Lists all policies from the root of the <a>Directory</a> to the object
@@ -384,6 +445,11 @@ namespace Model
     /**
      * <p>Lists objects attached to the specified index.</p>
      */
+    inline bool ListIndexHasBeenSet() const { return m_listIndexHasBeenSet; }
+
+    /**
+     * <p>Lists objects attached to the specified index.</p>
+     */
     inline void SetListIndex(const BatchListIndex& value) { m_listIndexHasBeenSet = true; m_listIndex = value; }
 
     /**
@@ -410,6 +476,15 @@ namespace Model
      * Links</a>.</p>
      */
     inline const BatchListOutgoingTypedLinks& GetListOutgoingTypedLinks() const{ return m_listOutgoingTypedLinks; }
+
+    /**
+     * <p>Returns a paginated list of all the outgoing <a>TypedLinkSpecifier</a>
+     * information for an object. It also supports filtering by typed link facet and
+     * identity attributes. For more information, see <a
+     * href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink">Typed
+     * Links</a>.</p>
+     */
+    inline bool ListOutgoingTypedLinksHasBeenSet() const { return m_listOutgoingTypedLinksHasBeenSet; }
 
     /**
      * <p>Returns a paginated list of all the outgoing <a>TypedLinkSpecifier</a>
@@ -464,6 +539,15 @@ namespace Model
      * href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink">Typed
      * Links</a>.</p>
      */
+    inline bool ListIncomingTypedLinksHasBeenSet() const { return m_listIncomingTypedLinksHasBeenSet; }
+
+    /**
+     * <p>Returns a paginated list of all the incoming <a>TypedLinkSpecifier</a>
+     * information for an object. It also supports filtering by typed link facet and
+     * identity attributes. For more information, see <a
+     * href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink">Typed
+     * Links</a>.</p>
+     */
     inline void SetListIncomingTypedLinks(const BatchListIncomingTypedLinks& value) { m_listIncomingTypedLinksHasBeenSet = true; m_listIncomingTypedLinks = value; }
 
     /**
@@ -498,6 +582,11 @@ namespace Model
      * <p>Retrieves attributes that are associated with a typed link.</p>
      */
     inline const BatchGetLinkAttributes& GetGetLinkAttributes() const{ return m_getLinkAttributes; }
+
+    /**
+     * <p>Retrieves attributes that are associated with a typed link.</p>
+     */
+    inline bool GetLinkAttributesHasBeenSet() const { return m_getLinkAttributesHasBeenSet; }
 
     /**
      * <p>Retrieves attributes that are associated with a typed link.</p>

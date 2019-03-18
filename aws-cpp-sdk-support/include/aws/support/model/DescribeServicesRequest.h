@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>A JSON-formatted list of service codes available for AWS services.</p>
      */
+    inline bool ServiceCodeListHasBeenSet() const { return m_serviceCodeListHasBeenSet; }
+
+    /**
+     * <p>A JSON-formatted list of service codes available for AWS services.</p>
+     */
     inline void SetServiceCodeList(const Aws::Vector<Aws::String>& value) { m_serviceCodeListHasBeenSet = true; m_serviceCodeList = value; }
 
     /**
@@ -95,6 +100,13 @@ namespace Model
      * parameters must be passed explicitly for operations that take them.</p>
      */
     inline const Aws::String& GetLanguage() const{ return m_language; }
+
+    /**
+     * <p>The ISO 639-1 code for the language in which AWS provides support. AWS
+     * Support currently supports English ("en") and Japanese ("ja"). Language
+     * parameters must be passed explicitly for operations that take them.</p>
+     */
+    inline bool LanguageHasBeenSet() const { return m_languageHasBeenSet; }
 
     /**
      * <p>The ISO 639-1 code for the language in which AWS provides support. AWS

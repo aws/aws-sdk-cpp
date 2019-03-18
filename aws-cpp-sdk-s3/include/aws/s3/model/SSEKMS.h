@@ -58,6 +58,12 @@ namespace Model
      * <p>Specifies the ID of the AWS Key Management Service (KMS) master encryption
      * key to use for encrypting Inventory reports.</p>
      */
+    inline bool KeyIdHasBeenSet() const { return m_keyIdHasBeenSet; }
+
+    /**
+     * <p>Specifies the ID of the AWS Key Management Service (KMS) master encryption
+     * key to use for encrypting Inventory reports.</p>
+     */
     inline void SetKeyId(const Aws::String& value) { m_keyIdHasBeenSet = true; m_keyId = value; }
 
     /**

@@ -52,6 +52,11 @@ namespace Model
     /**
      * <p>The ID of the Maintenance Window execution for which the task is a part.</p>
      */
+    inline bool WindowExecutionIdHasBeenSet() const { return m_windowExecutionIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the Maintenance Window execution for which the task is a part.</p>
+     */
     inline void SetWindowExecutionId(const Aws::String& value) { m_windowExecutionIdHasBeenSet = true; m_windowExecutionId = value; }
 
     /**
@@ -85,6 +90,12 @@ namespace Model
      * retrieved. </p>
      */
     inline const Aws::String& GetTaskId() const{ return m_taskId; }
+
+    /**
+     * <p>The ID of the specific task in the Maintenance Window task that should be
+     * retrieved. </p>
+     */
+    inline bool TaskIdHasBeenSet() const { return m_taskIdHasBeenSet; }
 
     /**
      * <p>The ID of the specific task in the Maintenance Window task that should be
@@ -127,6 +138,11 @@ namespace Model
      * <p>The invocation ID to retrieve.</p>
      */
     inline const Aws::String& GetInvocationId() const{ return m_invocationId; }
+
+    /**
+     * <p>The invocation ID to retrieve.</p>
+     */
+    inline bool InvocationIdHasBeenSet() const { return m_invocationIdHasBeenSet; }
 
     /**
      * <p>The invocation ID to retrieve.</p>

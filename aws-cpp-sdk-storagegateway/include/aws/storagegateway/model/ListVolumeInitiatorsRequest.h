@@ -57,6 +57,12 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the volume. Use the <a>ListVolumes</a>
      * operation to return a list of gateway volumes for the gateway.</p>
      */
+    inline bool VolumeARNHasBeenSet() const { return m_volumeARNHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the volume. Use the <a>ListVolumes</a>
+     * operation to return a list of gateway volumes for the gateway.</p>
+     */
     inline void SetVolumeARN(const Aws::String& value) { m_volumeARNHasBeenSet = true; m_volumeARN = value; }
 
     /**

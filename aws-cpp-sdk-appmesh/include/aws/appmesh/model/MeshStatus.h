@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The current mesh status.</p>
      */
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
+
+    /**
+     * <p>The current mesh status.</p>
+     */
     inline void SetStatus(const MeshStatusCode& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**

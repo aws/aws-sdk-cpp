@@ -58,6 +58,12 @@ namespace Model
      * <p>The IDs of the pipelines to describe. You can pass as many as 25 identifiers
      * in a single call. To obtain pipeline IDs, call <a>ListPipelines</a>.</p>
      */
+    inline bool PipelineIdsHasBeenSet() const { return m_pipelineIdsHasBeenSet; }
+
+    /**
+     * <p>The IDs of the pipelines to describe. You can pass as many as 25 identifiers
+     * in a single call. To obtain pipeline IDs, call <a>ListPipelines</a>.</p>
+     */
     inline void SetPipelineIds(const Aws::Vector<Aws::String>& value) { m_pipelineIdsHasBeenSet = true; m_pipelineIds = value; }
 
     /**

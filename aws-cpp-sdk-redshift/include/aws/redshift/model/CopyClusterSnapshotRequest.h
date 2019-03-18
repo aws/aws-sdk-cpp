@@ -61,6 +61,13 @@ namespace Model
      * <p>Must be the identifier for a valid automated snapshot whose state is
      * <code>available</code>.</p> </li> </ul>
      */
+    inline bool SourceSnapshotIdentifierHasBeenSet() const { return m_sourceSnapshotIdentifierHasBeenSet; }
+
+    /**
+     * <p>The identifier for the source snapshot.</p> <p>Constraints:</p> <ul> <li>
+     * <p>Must be the identifier for a valid automated snapshot whose state is
+     * <code>available</code>.</p> </li> </ul>
+     */
     inline void SetSourceSnapshotIdentifier(const Aws::String& value) { m_sourceSnapshotIdentifierHasBeenSet = true; m_sourceSnapshotIdentifier = value; }
 
     /**
@@ -107,6 +114,15 @@ namespace Model
      * </li> </ul>
      */
     inline const Aws::String& GetSourceSnapshotClusterIdentifier() const{ return m_sourceSnapshotClusterIdentifier; }
+
+    /**
+     * <p>The identifier of the cluster the source snapshot was created from. This
+     * parameter is required if your IAM user has a policy containing a snapshot
+     * resource element that specifies anything other than * for the cluster name.</p>
+     * <p>Constraints:</p> <ul> <li> <p>Must be the identifier for a valid cluster.</p>
+     * </li> </ul>
+     */
+    inline bool SourceSnapshotClusterIdentifierHasBeenSet() const { return m_sourceSnapshotClusterIdentifierHasBeenSet; }
 
     /**
      * <p>The identifier of the cluster the source snapshot was created from. This
@@ -181,6 +197,16 @@ namespace Model
      * consecutive hyphens.</p> </li> <li> <p>Must be unique for the AWS account that
      * is making the request.</p> </li> </ul>
      */
+    inline bool TargetSnapshotIdentifierHasBeenSet() const { return m_targetSnapshotIdentifierHasBeenSet; }
+
+    /**
+     * <p>The identifier given to the new manual snapshot.</p> <p>Constraints:</p> <ul>
+     * <li> <p>Cannot be null, empty, or blank.</p> </li> <li> <p>Must contain from 1
+     * to 255 alphanumeric characters or hyphens.</p> </li> <li> <p>First character
+     * must be a letter.</p> </li> <li> <p>Cannot end with a hyphen or contain two
+     * consecutive hyphens.</p> </li> <li> <p>Must be unique for the AWS account that
+     * is making the request.</p> </li> </ul>
+     */
     inline void SetTargetSnapshotIdentifier(const Aws::String& value) { m_targetSnapshotIdentifierHasBeenSet = true; m_targetSnapshotIdentifier = value; }
 
     /**
@@ -240,6 +266,13 @@ namespace Model
      * -1 or an integer between 1 and 3,653.</p> <p>The default value is -1.</p>
      */
     inline int GetManualSnapshotRetentionPeriod() const{ return m_manualSnapshotRetentionPeriod; }
+
+    /**
+     * <p>The number of days that a manual snapshot is retained. If the value is -1,
+     * the manual snapshot is retained indefinitely. </p> <p>The value must be either
+     * -1 or an integer between 1 and 3,653.</p> <p>The default value is -1.</p>
+     */
+    inline bool ManualSnapshotRetentionPeriodHasBeenSet() const { return m_manualSnapshotRetentionPeriodHasBeenSet; }
 
     /**
      * <p>The number of days that a manual snapshot is retained. If the value is -1,

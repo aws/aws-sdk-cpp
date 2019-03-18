@@ -59,6 +59,13 @@ namespace Model
      * Elemental MediaConnect console and will not be seen by the subscriber or end
      * user.
      */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
+
+    /**
+     * A description of the entitlement. This description appears only on the AWS
+     * Elemental MediaConnect console and will not be seen by the subscriber or end
+     * user.
+     */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
@@ -107,6 +114,12 @@ namespace Model
      * The type of encryption that will be used on the output associated with this
      * entitlement.
      */
+    inline bool EncryptionHasBeenSet() const { return m_encryptionHasBeenSet; }
+
+    /**
+     * The type of encryption that will be used on the output associated with this
+     * entitlement.
+     */
     inline void SetEncryption(const UpdateEncryption& value) { m_encryptionHasBeenSet = true; m_encryption = value; }
 
     /**
@@ -132,6 +145,11 @@ namespace Model
      * The ARN of the entitlement that you want to update.
      */
     inline const Aws::String& GetEntitlementArn() const{ return m_entitlementArn; }
+
+    /**
+     * The ARN of the entitlement that you want to update.
+     */
+    inline bool EntitlementArnHasBeenSet() const { return m_entitlementArnHasBeenSet; }
 
     /**
      * The ARN of the entitlement that you want to update.
@@ -172,6 +190,11 @@ namespace Model
     /**
      * The flow that is associated with the entitlement that you want to update.
      */
+    inline bool FlowArnHasBeenSet() const { return m_flowArnHasBeenSet; }
+
+    /**
+     * The flow that is associated with the entitlement that you want to update.
+     */
     inline void SetFlowArn(const Aws::String& value) { m_flowArnHasBeenSet = true; m_flowArn = value; }
 
     /**
@@ -206,6 +229,13 @@ namespace Model
      * content as the source.
      */
     inline const Aws::Vector<Aws::String>& GetSubscribers() const{ return m_subscribers; }
+
+    /**
+     * The AWS account IDs that you want to share your content with. The receiving
+     * accounts (subscribers) will be allowed to create their own flow using your
+     * content as the source.
+     */
+    inline bool SubscribersHasBeenSet() const { return m_subscribersHasBeenSet; }
 
     /**
      * The AWS account IDs that you want to share your content with. The receiving

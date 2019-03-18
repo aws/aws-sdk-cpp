@@ -58,6 +58,12 @@ namespace Model
      * <p>A <code>HierarchyLevel</code> object that contains information about the
      * hierarchy group level.</p>
      */
+    inline bool LevelOneHasBeenSet() const { return m_levelOneHasBeenSet; }
+
+    /**
+     * <p>A <code>HierarchyLevel</code> object that contains information about the
+     * hierarchy group level.</p>
+     */
     inline void SetLevelOne(const HierarchyLevel& value) { m_levelOneHasBeenSet = true; m_levelOne = value; }
 
     /**
@@ -84,6 +90,12 @@ namespace Model
      * hierarchy group level.</p>
      */
     inline const HierarchyLevel& GetLevelTwo() const{ return m_levelTwo; }
+
+    /**
+     * <p>A <code>HierarchyLevel</code> object that contains information about the
+     * hierarchy group level.</p>
+     */
+    inline bool LevelTwoHasBeenSet() const { return m_levelTwoHasBeenSet; }
 
     /**
      * <p>A <code>HierarchyLevel</code> object that contains information about the
@@ -120,6 +132,12 @@ namespace Model
      * <p>A <code>HierarchyLevel</code> object that contains information about the
      * hierarchy group level.</p>
      */
+    inline bool LevelThreeHasBeenSet() const { return m_levelThreeHasBeenSet; }
+
+    /**
+     * <p>A <code>HierarchyLevel</code> object that contains information about the
+     * hierarchy group level.</p>
+     */
     inline void SetLevelThree(const HierarchyLevel& value) { m_levelThreeHasBeenSet = true; m_levelThree = value; }
 
     /**
@@ -151,6 +169,12 @@ namespace Model
      * <p>A <code>HierarchyLevel</code> object that contains information about the
      * hierarchy group level.</p>
      */
+    inline bool LevelFourHasBeenSet() const { return m_levelFourHasBeenSet; }
+
+    /**
+     * <p>A <code>HierarchyLevel</code> object that contains information about the
+     * hierarchy group level.</p>
+     */
     inline void SetLevelFour(const HierarchyLevel& value) { m_levelFourHasBeenSet = true; m_levelFour = value; }
 
     /**
@@ -177,6 +201,12 @@ namespace Model
      * hierarchy group level.</p>
      */
     inline const HierarchyLevel& GetLevelFive() const{ return m_levelFive; }
+
+    /**
+     * <p>A <code>HierarchyLevel</code> object that contains information about the
+     * hierarchy group level.</p>
+     */
+    inline bool LevelFiveHasBeenSet() const { return m_levelFiveHasBeenSet; }
 
     /**
      * <p>A <code>HierarchyLevel</code> object that contains information about the

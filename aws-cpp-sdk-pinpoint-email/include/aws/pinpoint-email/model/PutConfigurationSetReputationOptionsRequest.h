@@ -58,6 +58,12 @@ namespace Model
      * <p>The name of the configuration set that you want to enable or disable
      * reputation metric tracking for.</p>
      */
+    inline bool ConfigurationSetNameHasBeenSet() const { return m_configurationSetNameHasBeenSet; }
+
+    /**
+     * <p>The name of the configuration set that you want to enable or disable
+     * reputation metric tracking for.</p>
+     */
     inline void SetConfigurationSetName(const Aws::String& value) { m_configurationSetNameHasBeenSet = true; m_configurationSetName = value; }
 
     /**
@@ -97,6 +103,13 @@ namespace Model
      * disabled for the configuration set.</p>
      */
     inline bool GetReputationMetricsEnabled() const{ return m_reputationMetricsEnabled; }
+
+    /**
+     * <p>If <code>true</code>, tracking of reputation metrics is enabled for the
+     * configuration set. If <code>false</code>, tracking of reputation metrics is
+     * disabled for the configuration set.</p>
+     */
+    inline bool ReputationMetricsEnabledHasBeenSet() const { return m_reputationMetricsEnabledHasBeenSet; }
 
     /**
      * <p>If <code>true</code>, tracking of reputation metrics is enabled for the

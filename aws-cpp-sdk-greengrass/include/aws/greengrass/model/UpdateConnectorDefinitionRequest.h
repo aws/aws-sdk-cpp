@@ -50,6 +50,11 @@ namespace Model
     /**
      * The ID of the connector definition.
      */
+    inline bool ConnectorDefinitionIdHasBeenSet() const { return m_connectorDefinitionIdHasBeenSet; }
+
+    /**
+     * The ID of the connector definition.
+     */
     inline void SetConnectorDefinitionId(const Aws::String& value) { m_connectorDefinitionIdHasBeenSet = true; m_connectorDefinitionId = value; }
 
     /**
@@ -82,6 +87,11 @@ namespace Model
      * The name of the definition.
      */
     inline const Aws::String& GetName() const{ return m_name; }
+
+    /**
+     * The name of the definition.
+     */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
      * The name of the definition.

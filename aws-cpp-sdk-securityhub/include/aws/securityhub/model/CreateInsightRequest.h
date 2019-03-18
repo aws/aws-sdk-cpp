@@ -53,6 +53,12 @@ namespace Model
      * <p>The user-defined name that identifies the insight that you want to
      * create.</p>
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>The user-defined name that identifies the insight that you want to
+     * create.</p>
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
@@ -98,6 +104,13 @@ namespace Model
      * Hub-aggregated findings and that result in a subset of findings that are
      * included in this insight.</p>
      */
+    inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
+
+    /**
+     * <p>A collection of attributes that are applied to all active Security
+     * Hub-aggregated findings and that result in a subset of findings that are
+     * included in this insight.</p>
+     */
     inline void SetFilters(const AwsSecurityFindingFilters& value) { m_filtersHasBeenSet = true; m_filters = value; }
 
     /**
@@ -128,6 +141,13 @@ namespace Model
      * related findings under a single operand. </p>
      */
     inline const Aws::String& GetGroupByAttribute() const{ return m_groupByAttribute; }
+
+    /**
+     * <p>The attribute by which the insight's findings are grouped. This attribute is
+     * used as a findings aggregator for the purposes of viewing and managing multiple
+     * related findings under a single operand. </p>
+     */
+    inline bool GroupByAttributeHasBeenSet() const { return m_groupByAttributeHasBeenSet; }
 
     /**
      * <p>The attribute by which the insight's findings are grouped. This attribute is

@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p>The AWS account ID to add to the list of launch permissions for the AMI.</p>
      */
+    inline bool AddHasBeenSet() const { return m_addHasBeenSet; }
+
+    /**
+     * <p>The AWS account ID to add to the list of launch permissions for the AMI.</p>
+     */
     inline void SetAdd(const Aws::Vector<LaunchPermission>& value) { m_addHasBeenSet = true; m_add = value; }
 
     /**
@@ -91,6 +96,12 @@ namespace Model
      * AMI.</p>
      */
     inline const Aws::Vector<LaunchPermission>& GetRemove() const{ return m_remove; }
+
+    /**
+     * <p>The AWS account ID to remove from the list of launch permissions for the
+     * AMI.</p>
+     */
+    inline bool RemoveHasBeenSet() const { return m_removeHasBeenSet; }
 
     /**
      * <p>The AWS account ID to remove from the list of launch permissions for the

@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p>The name of the layer.</p>
      */
+    inline bool LayerNameHasBeenSet() const { return m_layerNameHasBeenSet; }
+
+    /**
+     * <p>The name of the layer.</p>
+     */
     inline void SetLayerName(const Aws::String& value) { m_layerNameHasBeenSet = true; m_layerName = value; }
 
     /**
@@ -94,6 +99,11 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the function layer.</p>
      */
+    inline bool LayerArnHasBeenSet() const { return m_layerArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the function layer.</p>
+     */
     inline void SetLayerArn(const Aws::String& value) { m_layerArnHasBeenSet = true; m_layerArn = value; }
 
     /**
@@ -126,6 +136,11 @@ namespace Model
      * <p>The newest version of the layer.</p>
      */
     inline const LayerVersionsListItem& GetLatestMatchingVersion() const{ return m_latestMatchingVersion; }
+
+    /**
+     * <p>The newest version of the layer.</p>
+     */
+    inline bool LatestMatchingVersionHasBeenSet() const { return m_latestMatchingVersionHasBeenSet; }
 
     /**
      * <p>The newest version of the layer.</p>

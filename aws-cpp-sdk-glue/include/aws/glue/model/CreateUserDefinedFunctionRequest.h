@@ -55,6 +55,12 @@ namespace Model
      * <p>The ID of the Data Catalog in which to create the function. If none is
      * supplied, the AWS account ID is used by default.</p>
      */
+    inline bool CatalogIdHasBeenSet() const { return m_catalogIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the Data Catalog in which to create the function. If none is
+     * supplied, the AWS account ID is used by default.</p>
+     */
     inline void SetCatalogId(const Aws::String& value) { m_catalogIdHasBeenSet = true; m_catalogId = value; }
 
     /**
@@ -96,6 +102,11 @@ namespace Model
     /**
      * <p>The name of the catalog database in which to create the function.</p>
      */
+    inline bool DatabaseNameHasBeenSet() const { return m_databaseNameHasBeenSet; }
+
+    /**
+     * <p>The name of the catalog database in which to create the function.</p>
+     */
     inline void SetDatabaseName(const Aws::String& value) { m_databaseNameHasBeenSet = true; m_databaseName = value; }
 
     /**
@@ -129,6 +140,12 @@ namespace Model
      * the Data Catalog.</p>
      */
     inline const UserDefinedFunctionInput& GetFunctionInput() const{ return m_functionInput; }
+
+    /**
+     * <p>A <code>FunctionInput</code> object that defines the function to create in
+     * the Data Catalog.</p>
+     */
+    inline bool FunctionInputHasBeenSet() const { return m_functionInputHasBeenSet; }
 
     /**
      * <p>A <code>FunctionInput</code> object that defines the function to create in

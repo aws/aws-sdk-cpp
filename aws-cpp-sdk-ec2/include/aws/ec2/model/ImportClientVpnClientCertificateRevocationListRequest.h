@@ -56,6 +56,12 @@ namespace Model
      * <p>The ID of the Client VPN endpoint to which the client certificate revocation
      * list applies.</p>
      */
+    inline bool ClientVpnEndpointIdHasBeenSet() const { return m_clientVpnEndpointIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the Client VPN endpoint to which the client certificate revocation
+     * list applies.</p>
+     */
     inline void SetClientVpnEndpointId(const Aws::String& value) { m_clientVpnEndpointIdHasBeenSet = true; m_clientVpnEndpointId = value; }
 
     /**
@@ -96,6 +102,14 @@ namespace Model
      * Guide</i>.</p>
      */
     inline const Aws::String& GetCertificateRevocationList() const{ return m_certificateRevocationList; }
+
+    /**
+     * <p>The client certificate revocation list file. For more information, see <a
+     * href="https://docs.aws.amazon.com/vpn/latest/clientvpn-admin/cvpn-working-certificates.html#cvpn-working-certificates-generate">Generate
+     * a Client Certificate Revocation List</a> in the <i>AWS Client VPN Administrator
+     * Guide</i>.</p>
+     */
+    inline bool CertificateRevocationListHasBeenSet() const { return m_certificateRevocationListHasBeenSet; }
 
     /**
      * <p>The client certificate revocation list file. For more information, see <a
@@ -153,6 +167,14 @@ namespace Model
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
     inline bool GetDryRun() const{ return m_dryRun; }
+
+    /**
+     * <p>Checks whether you have the required permissions for the action, without
+     * actually making the request, and provides an error response. If you have the
+     * required permissions, the error response is <code>DryRunOperation</code>.
+     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+     */
+    inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
 
     /**
      * <p>Checks whether you have the required permissions for the action, without

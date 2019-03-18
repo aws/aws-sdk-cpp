@@ -53,6 +53,11 @@ namespace Model
     /**
      * <p>The name of the application to delete.</p>
      */
+    inline bool ApplicationNameHasBeenSet() const { return m_applicationNameHasBeenSet; }
+
+    /**
+     * <p>The name of the application to delete.</p>
+     */
     inline void SetApplicationName(const Aws::String& value) { m_applicationNameHasBeenSet = true; m_applicationName = value; }
 
     /**
@@ -85,6 +90,11 @@ namespace Model
      * <p>Use the <code>DescribeApplication</code> operation to get this value.</p>
      */
     inline const Aws::Utils::DateTime& GetCreateTimestamp() const{ return m_createTimestamp; }
+
+    /**
+     * <p>Use the <code>DescribeApplication</code> operation to get this value.</p>
+     */
+    inline bool CreateTimestampHasBeenSet() const { return m_createTimestampHasBeenSet; }
 
     /**
      * <p>Use the <code>DescribeApplication</code> operation to get this value.</p>

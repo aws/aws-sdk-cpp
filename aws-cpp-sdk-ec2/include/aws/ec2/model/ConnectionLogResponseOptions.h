@@ -60,6 +60,12 @@ namespace Model
      * <p>Indicates whether client connection logging is enabled for the Client VPN
      * endpoint.</p>
      */
+    inline bool EnabledHasBeenSet() const { return m_enabledHasBeenSet; }
+
+    /**
+     * <p>Indicates whether client connection logging is enabled for the Client VPN
+     * endpoint.</p>
+     */
     inline void SetEnabled(bool value) { m_enabledHasBeenSet = true; m_enabled = value; }
 
     /**
@@ -74,6 +80,12 @@ namespace Model
      * data is published.</p>
      */
     inline const Aws::String& GetCloudwatchLogGroup() const{ return m_cloudwatchLogGroup; }
+
+    /**
+     * <p>The name of the Amazon CloudWatch Logs log group to which connection logging
+     * data is published.</p>
+     */
+    inline bool CloudwatchLogGroupHasBeenSet() const { return m_cloudwatchLogGroupHasBeenSet; }
 
     /**
      * <p>The name of the Amazon CloudWatch Logs log group to which connection logging
@@ -117,6 +129,12 @@ namespace Model
      * data is published.</p>
      */
     inline const Aws::String& GetCloudwatchLogStream() const{ return m_cloudwatchLogStream; }
+
+    /**
+     * <p>The name of the Amazon CloudWatch Logs log stream to which connection logging
+     * data is published.</p>
+     */
+    inline bool CloudwatchLogStreamHasBeenSet() const { return m_cloudwatchLogStreamHasBeenSet; }
 
     /**
      * <p>The name of the Amazon CloudWatch Logs log stream to which connection logging

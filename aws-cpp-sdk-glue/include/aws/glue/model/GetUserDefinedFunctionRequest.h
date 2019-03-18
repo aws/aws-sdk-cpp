@@ -54,6 +54,12 @@ namespace Model
      * <p>The ID of the Data Catalog where the function to be retrieved is located. If
      * none is supplied, the AWS account ID is used by default.</p>
      */
+    inline bool CatalogIdHasBeenSet() const { return m_catalogIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the Data Catalog where the function to be retrieved is located. If
+     * none is supplied, the AWS account ID is used by default.</p>
+     */
     inline void SetCatalogId(const Aws::String& value) { m_catalogIdHasBeenSet = true; m_catalogId = value; }
 
     /**
@@ -95,6 +101,11 @@ namespace Model
     /**
      * <p>The name of the catalog database where the function is located.</p>
      */
+    inline bool DatabaseNameHasBeenSet() const { return m_databaseNameHasBeenSet; }
+
+    /**
+     * <p>The name of the catalog database where the function is located.</p>
+     */
     inline void SetDatabaseName(const Aws::String& value) { m_databaseNameHasBeenSet = true; m_databaseName = value; }
 
     /**
@@ -127,6 +138,11 @@ namespace Model
      * <p>The name of the function.</p>
      */
     inline const Aws::String& GetFunctionName() const{ return m_functionName; }
+
+    /**
+     * <p>The name of the function.</p>
+     */
+    inline bool FunctionNameHasBeenSet() const { return m_functionNameHasBeenSet; }
 
     /**
      * <p>The name of the function.</p>

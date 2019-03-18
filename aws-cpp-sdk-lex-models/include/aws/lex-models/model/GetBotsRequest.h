@@ -62,6 +62,14 @@ namespace Model
      * To fetch the next page of bots, specify the pagination token in the next
      * request. </p>
      */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
+
+    /**
+     * <p>A pagination token that fetches the next page of bots. If the response to
+     * this call is truncated, Amazon Lex returns a pagination token in the response.
+     * To fetch the next page of bots, specify the pagination token in the next
+     * request. </p>
+     */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
     /**
@@ -115,6 +123,12 @@ namespace Model
      * <p>The maximum number of bots to return in the response that the request will
      * return. The default is 10.</p>
      */
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
+
+    /**
+     * <p>The maximum number of bots to return in the response that the request will
+     * return. The default is 10.</p>
+     */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
@@ -130,6 +144,13 @@ namespace Model
      * "abcxyz."</p>
      */
     inline const Aws::String& GetNameContains() const{ return m_nameContains; }
+
+    /**
+     * <p>Substring to match in bot names. A bot will be returned if any part of its
+     * name matches the substring. For example, "xyz" matches both "xyzabc" and
+     * "abcxyz."</p>
+     */
+    inline bool NameContainsHasBeenSet() const { return m_nameContainsHasBeenSet; }
 
     /**
      * <p>Substring to match in bot names. A bot will be returned if any part of its

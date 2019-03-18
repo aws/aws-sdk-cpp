@@ -55,6 +55,11 @@ namespace Model
     /**
      * SCTE-35 Descriptor Settings.
      */
+    inline bool Scte35DescriptorSettingsHasBeenSet() const { return m_scte35DescriptorSettingsHasBeenSet; }
+
+    /**
+     * SCTE-35 Descriptor Settings.
+     */
     inline void SetScte35DescriptorSettings(const Scte35DescriptorSettings& value) { m_scte35DescriptorSettingsHasBeenSet = true; m_scte35DescriptorSettings = value; }
 
     /**

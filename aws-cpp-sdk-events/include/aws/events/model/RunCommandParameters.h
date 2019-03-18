@@ -60,6 +60,12 @@ namespace Model
      * <p>Currently, we support including only one RunCommandTarget block, which
      * specifies either an array of InstanceIds or a tag.</p>
      */
+    inline bool RunCommandTargetsHasBeenSet() const { return m_runCommandTargetsHasBeenSet; }
+
+    /**
+     * <p>Currently, we support including only one RunCommandTarget block, which
+     * specifies either an array of InstanceIds or a tag.</p>
+     */
     inline void SetRunCommandTargets(const Aws::Vector<RunCommandTarget>& value) { m_runCommandTargetsHasBeenSet = true; m_runCommandTargets = value; }
 
     /**

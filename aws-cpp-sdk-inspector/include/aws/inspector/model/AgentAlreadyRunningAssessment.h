@@ -59,6 +59,12 @@ namespace Model
      * <p>ID of the agent that is running on an EC2 instance that is already
      * participating in another started assessment run.</p>
      */
+    inline bool AgentIdHasBeenSet() const { return m_agentIdHasBeenSet; }
+
+    /**
+     * <p>ID of the agent that is running on an EC2 instance that is already
+     * participating in another started assessment run.</p>
+     */
     inline void SetAgentId(const Aws::String& value) { m_agentIdHasBeenSet = true; m_agentId = value; }
 
     /**
@@ -96,6 +102,11 @@ namespace Model
      * <p>The ARN of the assessment run that has already been started.</p>
      */
     inline const Aws::String& GetAssessmentRunArn() const{ return m_assessmentRunArn; }
+
+    /**
+     * <p>The ARN of the assessment run that has already been started.</p>
+     */
+    inline bool AssessmentRunArnHasBeenSet() const { return m_assessmentRunArnHasBeenSet; }
 
     /**
      * <p>The ARN of the assessment run that has already been started.</p>

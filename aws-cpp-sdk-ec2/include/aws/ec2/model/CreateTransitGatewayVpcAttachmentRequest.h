@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The ID of the transit gateway.</p>
      */
+    inline bool TransitGatewayIdHasBeenSet() const { return m_transitGatewayIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the transit gateway.</p>
+     */
     inline void SetTransitGatewayId(const Aws::String& value) { m_transitGatewayIdHasBeenSet = true; m_transitGatewayId = value; }
 
     /**
@@ -89,6 +94,11 @@ namespace Model
      * <p>The ID of the VPC.</p>
      */
     inline const Aws::String& GetVpcId() const{ return m_vpcId; }
+
+    /**
+     * <p>The ID of the VPC.</p>
+     */
+    inline bool VpcIdHasBeenSet() const { return m_vpcIdHasBeenSet; }
 
     /**
      * <p>The ID of the VPC.</p>
@@ -128,6 +138,14 @@ namespace Model
      * address from each specified subnet.</p>
      */
     inline const Aws::Vector<Aws::String>& GetSubnetIds() const{ return m_subnetIds; }
+
+    /**
+     * <p>The IDs of one or more subnets. You can specify only one subnet per
+     * Availability Zone. You must specify at least one subnet, but we recommend that
+     * you specify two subnets for better availability. The transit gateway uses one IP
+     * address from each specified subnet.</p>
+     */
+    inline bool SubnetIdsHasBeenSet() const { return m_subnetIdsHasBeenSet; }
 
     /**
      * <p>The IDs of one or more subnets. You can specify only one subnet per
@@ -194,6 +212,11 @@ namespace Model
     /**
      * <p>The VPC attachment options.</p>
      */
+    inline bool OptionsHasBeenSet() const { return m_optionsHasBeenSet; }
+
+    /**
+     * <p>The VPC attachment options.</p>
+     */
     inline void SetOptions(const CreateTransitGatewayVpcAttachmentRequestOptions& value) { m_optionsHasBeenSet = true; m_options = value; }
 
     /**
@@ -216,6 +239,11 @@ namespace Model
      * <p>The tags to apply to the VPC attachment.</p>
      */
     inline const Aws::Vector<TagSpecification>& GetTagSpecifications() const{ return m_tagSpecifications; }
+
+    /**
+     * <p>The tags to apply to the VPC attachment.</p>
+     */
+    inline bool TagSpecificationsHasBeenSet() const { return m_tagSpecificationsHasBeenSet; }
 
     /**
      * <p>The tags to apply to the VPC attachment.</p>
@@ -255,6 +283,14 @@ namespace Model
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
     inline bool GetDryRun() const{ return m_dryRun; }
+
+    /**
+     * <p>Checks whether you have the required permissions for the action, without
+     * actually making the request, and provides an error response. If you have the
+     * required permissions, the error response is <code>DryRunOperation</code>.
+     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+     */
+    inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
 
     /**
      * <p>Checks whether you have the required permissions for the action, without

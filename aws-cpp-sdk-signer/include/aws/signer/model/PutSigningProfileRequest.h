@@ -53,6 +53,11 @@ namespace Model
     /**
      * <p>The name of the signing profile to be created.</p>
      */
+    inline bool ProfileNameHasBeenSet() const { return m_profileNameHasBeenSet; }
+
+    /**
+     * <p>The name of the signing profile to be created.</p>
+     */
     inline void SetProfileName(const Aws::String& value) { m_profileNameHasBeenSet = true; m_profileName = value; }
 
     /**
@@ -91,6 +96,12 @@ namespace Model
      * <p>The AWS Certificate Manager certificate that will be used to sign code with
      * the new signing profile.</p>
      */
+    inline bool SigningMaterialHasBeenSet() const { return m_signingMaterialHasBeenSet; }
+
+    /**
+     * <p>The AWS Certificate Manager certificate that will be used to sign code with
+     * the new signing profile.</p>
+     */
     inline void SetSigningMaterial(const SigningMaterial& value) { m_signingMaterialHasBeenSet = true; m_signingMaterial = value; }
 
     /**
@@ -116,6 +127,11 @@ namespace Model
      * <p>The ID of the signing profile to be created.</p>
      */
     inline const Aws::String& GetPlatformId() const{ return m_platformId; }
+
+    /**
+     * <p>The ID of the signing profile to be created.</p>
+     */
+    inline bool PlatformIdHasBeenSet() const { return m_platformIdHasBeenSet; }
 
     /**
      * <p>The ID of the signing profile to be created.</p>
@@ -160,6 +176,13 @@ namespace Model
      * configuration options that you want to apply to the chosen platform (such as a
      * different <code>hash-algorithm</code> or <code>signing-algorithm</code>).</p>
      */
+    inline bool OverridesHasBeenSet() const { return m_overridesHasBeenSet; }
+
+    /**
+     * <p>A subfield of <code>platform</code>. This specifies any different
+     * configuration options that you want to apply to the chosen platform (such as a
+     * different <code>hash-algorithm</code> or <code>signing-algorithm</code>).</p>
+     */
     inline void SetOverrides(const SigningPlatformOverrides& value) { m_overridesHasBeenSet = true; m_overrides = value; }
 
     /**
@@ -189,6 +212,12 @@ namespace Model
      * you want to use during signing.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetSigningParameters() const{ return m_signingParameters; }
+
+    /**
+     * <p>Map of key-value pairs for signing. These can include any information that
+     * you want to use during signing.</p>
+     */
+    inline bool SigningParametersHasBeenSet() const { return m_signingParametersHasBeenSet; }
 
     /**
      * <p>Map of key-value pairs for signing. These can include any information that

@@ -50,6 +50,11 @@ namespace Model
     /**
      * <p>The identifier for the playback configuration.</p>
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>The identifier for the playback configuration.</p>
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**

@@ -60,6 +60,11 @@ namespace Model
     /**
      * <p>The ID of the association.</p>
      */
+    inline bool AssociationIdHasBeenSet() const { return m_associationIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the association.</p>
+     */
     inline void SetAssociationId(const Aws::String& value) { m_associationIdHasBeenSet = true; m_associationId = value; }
 
     /**
@@ -92,6 +97,11 @@ namespace Model
      * <p>The ID of the VPC in which the target network (subnet) is located.</p>
      */
     inline const Aws::String& GetVpcId() const{ return m_vpcId; }
+
+    /**
+     * <p>The ID of the VPC in which the target network (subnet) is located.</p>
+     */
+    inline bool VpcIdHasBeenSet() const { return m_vpcIdHasBeenSet; }
 
     /**
      * <p>The ID of the VPC in which the target network (subnet) is located.</p>
@@ -132,6 +142,11 @@ namespace Model
     /**
      * <p>The ID of the subnet specified as the target network.</p>
      */
+    inline bool TargetNetworkIdHasBeenSet() const { return m_targetNetworkIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the subnet specified as the target network.</p>
+     */
     inline void SetTargetNetworkId(const Aws::String& value) { m_targetNetworkIdHasBeenSet = true; m_targetNetworkId = value; }
 
     /**
@@ -165,6 +180,12 @@ namespace Model
      * associated.</p>
      */
     inline const Aws::String& GetClientVpnEndpointId() const{ return m_clientVpnEndpointId; }
+
+    /**
+     * <p>The ID of the Client VPN endpoint with which the target network is
+     * associated.</p>
+     */
+    inline bool ClientVpnEndpointIdHasBeenSet() const { return m_clientVpnEndpointIdHasBeenSet; }
 
     /**
      * <p>The ID of the Client VPN endpoint with which the target network is
@@ -211,6 +232,11 @@ namespace Model
     /**
      * <p>The current state of the target network association.</p>
      */
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
+
+    /**
+     * <p>The current state of the target network association.</p>
+     */
     inline void SetStatus(const AssociationStatus& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
@@ -233,6 +259,11 @@ namespace Model
      * <p>The IDs of the security groups applied to the target network association.</p>
      */
     inline const Aws::Vector<Aws::String>& GetSecurityGroups() const{ return m_securityGroups; }
+
+    /**
+     * <p>The IDs of the security groups applied to the target network association.</p>
+     */
+    inline bool SecurityGroupsHasBeenSet() const { return m_securityGroupsHasBeenSet; }
 
     /**
      * <p>The IDs of the security groups applied to the target network association.</p>

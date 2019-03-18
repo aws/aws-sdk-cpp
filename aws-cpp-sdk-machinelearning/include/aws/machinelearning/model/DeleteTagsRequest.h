@@ -54,6 +54,11 @@ namespace Model
     /**
      * <p>One or more tags to delete.</p>
      */
+    inline bool TagKeysHasBeenSet() const { return m_tagKeysHasBeenSet; }
+
+    /**
+     * <p>One or more tags to delete.</p>
+     */
     inline void SetTagKeys(const Aws::Vector<Aws::String>& value) { m_tagKeysHasBeenSet = true; m_tagKeys = value; }
 
     /**
@@ -95,6 +100,11 @@ namespace Model
     /**
      * <p>The ID of the tagged ML object. For example, <code>exampleModelId</code>.</p>
      */
+    inline bool ResourceIdHasBeenSet() const { return m_resourceIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the tagged ML object. For example, <code>exampleModelId</code>.</p>
+     */
     inline void SetResourceId(const Aws::String& value) { m_resourceIdHasBeenSet = true; m_resourceId = value; }
 
     /**
@@ -127,6 +137,11 @@ namespace Model
      * <p>The type of the tagged ML object.</p>
      */
     inline const TaggableResourceType& GetResourceType() const{ return m_resourceType; }
+
+    /**
+     * <p>The type of the tagged ML object.</p>
+     */
+    inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
 
     /**
      * <p>The type of the tagged ML object.</p>

@@ -60,6 +60,11 @@ namespace Model
     /**
      * <p>The name, status, or import task ID for a specific import task.</p>
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>The name, status, or import task ID for a specific import task.</p>
+     */
     inline void SetName(const ImportTaskFilterName& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
@@ -84,6 +89,13 @@ namespace Model
      * queries.</p>
      */
     inline const Aws::Vector<Aws::String>& GetValues() const{ return m_values; }
+
+    /**
+     * <p>An array of strings that you can provide to match against a specific name,
+     * status, or import task ID to filter the results for your import task
+     * queries.</p>
+     */
+    inline bool ValuesHasBeenSet() const { return m_valuesHasBeenSet; }
 
     /**
      * <p>An array of strings that you can provide to match against a specific name,

@@ -74,6 +74,20 @@ namespace Model
      * is returned by <a>CreateSqlInjectionMatchSet</a> and by
      * <a>ListSqlInjectionMatchSets</a>.</p>
      */
+    inline bool SqlInjectionMatchSetIdHasBeenSet() const { return m_sqlInjectionMatchSetIdHasBeenSet; }
+
+    /**
+     * <p>A unique identifier for a <code>SqlInjectionMatchSet</code>. You use
+     * <code>SqlInjectionMatchSetId</code> to get information about a
+     * <code>SqlInjectionMatchSet</code> (see <a>GetSqlInjectionMatchSet</a>), update a
+     * <code>SqlInjectionMatchSet</code> (see <a>UpdateSqlInjectionMatchSet</a>),
+     * insert a <code>SqlInjectionMatchSet</code> into a <code>Rule</code> or delete
+     * one from a <code>Rule</code> (see <a>UpdateRule</a>), and delete a
+     * <code>SqlInjectionMatchSet</code> from AWS WAF (see
+     * <a>DeleteSqlInjectionMatchSet</a>).</p> <p> <code>SqlInjectionMatchSetId</code>
+     * is returned by <a>CreateSqlInjectionMatchSet</a> and by
+     * <a>ListSqlInjectionMatchSets</a>.</p>
+     */
     inline void SetSqlInjectionMatchSetId(const Aws::String& value) { m_sqlInjectionMatchSetIdHasBeenSet = true; m_sqlInjectionMatchSetId = value; }
 
     /**
@@ -152,6 +166,12 @@ namespace Model
      * <code>Id</code>.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
+
+    /**
+     * <p>The name of the <code>SqlInjectionMatchSet</code>, if any, specified by
+     * <code>Id</code>.</p>
+     */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
      * <p>The name of the <code>SqlInjectionMatchSet</code>, if any, specified by

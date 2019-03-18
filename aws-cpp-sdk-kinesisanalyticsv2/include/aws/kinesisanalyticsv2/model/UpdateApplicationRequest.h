@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The name of the application to update.</p>
      */
+    inline bool ApplicationNameHasBeenSet() const { return m_applicationNameHasBeenSet; }
+
+    /**
+     * <p>The name of the application to update.</p>
+     */
     inline void SetApplicationName(const Aws::String& value) { m_applicationNameHasBeenSet = true; m_applicationName = value; }
 
     /**
@@ -94,6 +99,12 @@ namespace Model
      * <p>The current application version ID. You can retrieve the application version
      * ID using <a>DescribeApplication</a>.</p>
      */
+    inline bool CurrentApplicationVersionIdHasBeenSet() const { return m_currentApplicationVersionIdHasBeenSet; }
+
+    /**
+     * <p>The current application version ID. You can retrieve the application version
+     * ID using <a>DescribeApplication</a>.</p>
+     */
     inline void SetCurrentApplicationVersionId(long long value) { m_currentApplicationVersionIdHasBeenSet = true; m_currentApplicationVersionId = value; }
 
     /**
@@ -107,6 +118,11 @@ namespace Model
      * <p>Describes application configuration updates.</p>
      */
     inline const ApplicationConfigurationUpdate& GetApplicationConfigurationUpdate() const{ return m_applicationConfigurationUpdate; }
+
+    /**
+     * <p>Describes application configuration updates.</p>
+     */
+    inline bool ApplicationConfigurationUpdateHasBeenSet() const { return m_applicationConfigurationUpdateHasBeenSet; }
 
     /**
      * <p>Describes application configuration updates.</p>
@@ -133,6 +149,11 @@ namespace Model
      * <p>Describes updates to the service execution role.</p>
      */
     inline const Aws::String& GetServiceExecutionRoleUpdate() const{ return m_serviceExecutionRoleUpdate; }
+
+    /**
+     * <p>Describes updates to the service execution role.</p>
+     */
+    inline bool ServiceExecutionRoleUpdateHasBeenSet() const { return m_serviceExecutionRoleUpdateHasBeenSet; }
 
     /**
      * <p>Describes updates to the service execution role.</p>
@@ -173,6 +194,11 @@ namespace Model
     /**
      * <p>Describes updates to the application's starting parameters.</p>
      */
+    inline bool RunConfigurationUpdateHasBeenSet() const { return m_runConfigurationUpdateHasBeenSet; }
+
+    /**
+     * <p>Describes updates to the application's starting parameters.</p>
+     */
     inline void SetRunConfigurationUpdate(const RunConfigurationUpdate& value) { m_runConfigurationUpdateHasBeenSet = true; m_runConfigurationUpdate = value; }
 
     /**
@@ -197,6 +223,13 @@ namespace Model
      * CloudWatch logging option, use <a>AddApplicationCloudWatchLoggingOption</a>.</p>
      */
     inline const Aws::Vector<CloudWatchLoggingOptionUpdate>& GetCloudWatchLoggingOptionUpdates() const{ return m_cloudWatchLoggingOptionUpdates; }
+
+    /**
+     * <p>Describes application Amazon CloudWatch logging option updates. You can only
+     * update existing CloudWatch logging options with this action. To add a new
+     * CloudWatch logging option, use <a>AddApplicationCloudWatchLoggingOption</a>.</p>
+     */
+    inline bool CloudWatchLoggingOptionUpdatesHasBeenSet() const { return m_cloudWatchLoggingOptionUpdatesHasBeenSet; }
 
     /**
      * <p>Describes application Amazon CloudWatch logging option updates. You can only

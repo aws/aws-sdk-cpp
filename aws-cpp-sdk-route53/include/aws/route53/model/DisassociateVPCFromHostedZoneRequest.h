@@ -57,6 +57,12 @@ namespace Model
      * <p>The ID of the private hosted zone that you want to disassociate a VPC
      * from.</p>
      */
+    inline bool HostedZoneIdHasBeenSet() const { return m_hostedZoneIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the private hosted zone that you want to disassociate a VPC
+     * from.</p>
+     */
     inline void SetHostedZoneId(const Aws::String& value) { m_hostedZoneIdHasBeenSet = true; m_hostedZoneId = value; }
 
     /**
@@ -100,6 +106,12 @@ namespace Model
      * <p>A complex type that contains information about the VPC that you're
      * disassociating from the specified hosted zone.</p>
      */
+    inline bool VPCHasBeenSet() const { return m_vPCHasBeenSet; }
+
+    /**
+     * <p>A complex type that contains information about the VPC that you're
+     * disassociating from the specified hosted zone.</p>
+     */
     inline void SetVPC(const VPC& value) { m_vPCHasBeenSet = true; m_vPC = value; }
 
     /**
@@ -125,6 +137,11 @@ namespace Model
      * <p> <i>Optional:</i> A comment about the disassociation request.</p>
      */
     inline const Aws::String& GetComment() const{ return m_comment; }
+
+    /**
+     * <p> <i>Optional:</i> A comment about the disassociation request.</p>
+     */
+    inline bool CommentHasBeenSet() const { return m_commentHasBeenSet; }
 
     /**
      * <p> <i>Optional:</i> A comment about the disassociation request.</p>

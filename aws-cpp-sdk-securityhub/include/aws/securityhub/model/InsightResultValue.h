@@ -58,6 +58,12 @@ namespace Model
      * <p>The value of the attribute by which the findings are grouped for the
      * insight's whose results are returned by the GetInsightResults operation.</p>
      */
+    inline bool GroupByAttributeValueHasBeenSet() const { return m_groupByAttributeValueHasBeenSet; }
+
+    /**
+     * <p>The value of the attribute by which the findings are grouped for the
+     * insight's whose results are returned by the GetInsightResults operation.</p>
+     */
     inline void SetGroupByAttributeValue(const Aws::String& value) { m_groupByAttributeValueHasBeenSet = true; m_groupByAttributeValue = value; }
 
     /**
@@ -95,6 +101,11 @@ namespace Model
      * <p>The number of findings returned for each GroupByAttributeValue.</p>
      */
     inline int GetCount() const{ return m_count; }
+
+    /**
+     * <p>The number of findings returned for each GroupByAttributeValue.</p>
+     */
+    inline bool CountHasBeenSet() const { return m_countHasBeenSet; }
 
     /**
      * <p>The number of findings returned for each GroupByAttributeValue.</p>

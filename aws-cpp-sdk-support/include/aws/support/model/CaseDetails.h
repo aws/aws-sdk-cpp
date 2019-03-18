@@ -86,6 +86,13 @@ namespace Model
      * alphanumeric string formatted as shown in this example:
      * case-<i>12345678910-2013-c4c1d2bf33c5cf47</i> </p>
      */
+    inline bool CaseIdHasBeenSet() const { return m_caseIdHasBeenSet; }
+
+    /**
+     * <p>The AWS Support case ID requested or returned in the call. The case ID is an
+     * alphanumeric string formatted as shown in this example:
+     * case-<i>12345678910-2013-c4c1d2bf33c5cf47</i> </p>
+     */
     inline void SetCaseId(const Aws::String& value) { m_caseIdHasBeenSet = true; m_caseId = value; }
 
     /**
@@ -134,6 +141,12 @@ namespace Model
      * <p>The ID displayed for the case in the AWS Support Center. This is a numeric
      * string.</p>
      */
+    inline bool DisplayIdHasBeenSet() const { return m_displayIdHasBeenSet; }
+
+    /**
+     * <p>The ID displayed for the case in the AWS Support Center. This is a numeric
+     * string.</p>
+     */
     inline void SetDisplayId(const Aws::String& value) { m_displayIdHasBeenSet = true; m_displayId = value; }
 
     /**
@@ -175,6 +188,11 @@ namespace Model
     /**
      * <p>The subject line for the case in the AWS Support Center.</p>
      */
+    inline bool SubjectHasBeenSet() const { return m_subjectHasBeenSet; }
+
+    /**
+     * <p>The subject line for the case in the AWS Support Center.</p>
+     */
     inline void SetSubject(const Aws::String& value) { m_subjectHasBeenSet = true; m_subject = value; }
 
     /**
@@ -207,6 +225,11 @@ namespace Model
      * <p>The status of the case.</p>
      */
     inline const Aws::String& GetStatus() const{ return m_status; }
+
+    /**
+     * <p>The status of the case.</p>
+     */
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
     /**
      * <p>The status of the case.</p>
@@ -244,6 +267,12 @@ namespace Model
      * <a>DescribeServices</a>.</p>
      */
     inline const Aws::String& GetServiceCode() const{ return m_serviceCode; }
+
+    /**
+     * <p>The code for the AWS service returned by the call to
+     * <a>DescribeServices</a>.</p>
+     */
+    inline bool ServiceCodeHasBeenSet() const { return m_serviceCodeHasBeenSet; }
 
     /**
      * <p>The code for the AWS service returned by the call to
@@ -290,6 +319,11 @@ namespace Model
     /**
      * <p>The category of problem for the AWS Support case.</p>
      */
+    inline bool CategoryCodeHasBeenSet() const { return m_categoryCodeHasBeenSet; }
+
+    /**
+     * <p>The category of problem for the AWS Support case.</p>
+     */
     inline void SetCategoryCode(const Aws::String& value) { m_categoryCodeHasBeenSet = true; m_categoryCode = value; }
 
     /**
@@ -323,6 +357,12 @@ namespace Model
      * <a>DescribeSeverityLevels</a>.</p>
      */
     inline const Aws::String& GetSeverityCode() const{ return m_severityCode; }
+
+    /**
+     * <p>The code for the severity level returned by the call to
+     * <a>DescribeSeverityLevels</a>.</p>
+     */
+    inline bool SeverityCodeHasBeenSet() const { return m_severityCodeHasBeenSet; }
 
     /**
      * <p>The code for the severity level returned by the call to
@@ -369,6 +409,11 @@ namespace Model
     /**
      * <p>The email address of the account that submitted the case.</p>
      */
+    inline bool SubmittedByHasBeenSet() const { return m_submittedByHasBeenSet; }
+
+    /**
+     * <p>The email address of the account that submitted the case.</p>
+     */
     inline void SetSubmittedBy(const Aws::String& value) { m_submittedByHasBeenSet = true; m_submittedBy = value; }
 
     /**
@@ -401,6 +446,11 @@ namespace Model
      * <p>The time that the case was case created in the AWS Support Center.</p>
      */
     inline const Aws::String& GetTimeCreated() const{ return m_timeCreated; }
+
+    /**
+     * <p>The time that the case was case created in the AWS Support Center.</p>
+     */
+    inline bool TimeCreatedHasBeenSet() const { return m_timeCreatedHasBeenSet; }
 
     /**
      * <p>The time that the case was case created in the AWS Support Center.</p>
@@ -445,6 +495,13 @@ namespace Model
      * including the IDs of any attachments to the communications. Also includes a
      * <code>nextToken</code> that you can use to retrieve earlier communications.</p>
      */
+    inline bool RecentCommunicationsHasBeenSet() const { return m_recentCommunicationsHasBeenSet; }
+
+    /**
+     * <p>The five most recent communications between you and AWS Support Center,
+     * including the IDs of any attachments to the communications. Also includes a
+     * <code>nextToken</code> that you can use to retrieve earlier communications.</p>
+     */
     inline void SetRecentCommunications(const RecentCaseCommunications& value) { m_recentCommunicationsHasBeenSet = true; m_recentCommunications = value; }
 
     /**
@@ -473,6 +530,11 @@ namespace Model
      * <p>The email addresses that receive copies of communication about the case.</p>
      */
     inline const Aws::Vector<Aws::String>& GetCcEmailAddresses() const{ return m_ccEmailAddresses; }
+
+    /**
+     * <p>The email addresses that receive copies of communication about the case.</p>
+     */
+    inline bool CcEmailAddressesHasBeenSet() const { return m_ccEmailAddressesHasBeenSet; }
 
     /**
      * <p>The email addresses that receive copies of communication about the case.</p>
@@ -516,6 +578,13 @@ namespace Model
      * parameters must be passed explicitly for operations that take them.</p>
      */
     inline const Aws::String& GetLanguage() const{ return m_language; }
+
+    /**
+     * <p>The ISO 639-1 code for the language in which AWS provides support. AWS
+     * Support currently supports English ("en") and Japanese ("ja"). Language
+     * parameters must be passed explicitly for operations that take them.</p>
+     */
+    inline bool LanguageHasBeenSet() const { return m_languageHasBeenSet; }
 
     /**
      * <p>The ISO 639-1 code for the language in which AWS provides support. AWS

@@ -87,6 +87,20 @@ namespace Model
      * a container</a> section of the <a
      * href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a>.</p>
      */
+    inline bool CommandHasBeenSet() const { return m_commandHasBeenSet; }
+
+    /**
+     * <p>A string array representing the command that the container runs to determine
+     * if it is healthy. The string array must start with <code>CMD</code> to execute
+     * the command arguments directly, or <code>CMD-SHELL</code> to run the command
+     * with the container's default shell. For example:</p> <p> <code>[ "CMD-SHELL",
+     * "curl -f http://localhost/ || exit 1" ]</code> </p> <p>An exit code of 0
+     * indicates success, and non-zero exit code indicates failure. For more
+     * information, see <code>HealthCheck</code> in the <a
+     * href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create
+     * a container</a> section of the <a
+     * href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a>.</p>
+     */
     inline void SetCommand(const Aws::Vector<Aws::String>& value) { m_commandHasBeenSet = true; m_command = value; }
 
     /**
@@ -184,6 +198,12 @@ namespace Model
      * <p>The time period in seconds between each health check execution. You may
      * specify between 5 and 300 seconds. The default value is 30 seconds.</p>
      */
+    inline bool IntervalHasBeenSet() const { return m_intervalHasBeenSet; }
+
+    /**
+     * <p>The time period in seconds between each health check execution. You may
+     * specify between 5 and 300 seconds. The default value is 30 seconds.</p>
+     */
     inline void SetInterval(int value) { m_intervalHasBeenSet = true; m_interval = value; }
 
     /**
@@ -199,6 +219,13 @@ namespace Model
      * value is 5.</p>
      */
     inline int GetTimeout() const{ return m_timeout; }
+
+    /**
+     * <p>The time period in seconds to wait for a health check to succeed before it is
+     * considered a failure. You may specify between 2 and 60 seconds. The default
+     * value is 5.</p>
+     */
+    inline bool TimeoutHasBeenSet() const { return m_timeoutHasBeenSet; }
 
     /**
      * <p>The time period in seconds to wait for a health check to succeed before it is
@@ -227,6 +254,13 @@ namespace Model
      * considered unhealthy. You may specify between 1 and 10 retries. The default
      * value is 3.</p>
      */
+    inline bool RetriesHasBeenSet() const { return m_retriesHasBeenSet; }
+
+    /**
+     * <p>The number of times to retry a failed health check before the container is
+     * considered unhealthy. You may specify between 1 and 10 retries. The default
+     * value is 3.</p>
+     */
     inline void SetRetries(int value) { m_retriesHasBeenSet = true; m_retries = value; }
 
     /**
@@ -246,6 +280,16 @@ namespace Model
      * subsequent failures count toward the maximum number of retries.</p> </note>
      */
     inline int GetStartPeriod() const{ return m_startPeriod; }
+
+    /**
+     * <p>The optional grace period within which to provide containers time to
+     * bootstrap before failed health checks count towards the maximum number of
+     * retries. You may specify between 0 and 300 seconds. The <code>startPeriod</code>
+     * is disabled by default.</p> <note> <p>If a health check succeeds within the
+     * <code>startPeriod</code>, then the container is considered healthy and any
+     * subsequent failures count toward the maximum number of retries.</p> </note>
+     */
+    inline bool StartPeriodHasBeenSet() const { return m_startPeriodHasBeenSet; }
 
     /**
      * <p>The optional grace period within which to provide containers time to

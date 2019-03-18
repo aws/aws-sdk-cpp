@@ -63,6 +63,12 @@ namespace Model
      * The Availability Zone that you want to create the flow in. These options are
      * limited to the Availability Zones within the current AWS.
      */
+    inline bool AvailabilityZoneHasBeenSet() const { return m_availabilityZoneHasBeenSet; }
+
+    /**
+     * The Availability Zone that you want to create the flow in. These options are
+     * limited to the Availability Zones within the current AWS.
+     */
     inline void SetAvailabilityZone(const Aws::String& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = value; }
 
     /**
@@ -101,6 +107,12 @@ namespace Model
      * AWS Elemental MediaConnect account.
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
+
+    /**
+     * A description of the flow. This value is not used or seen outside of the current
+     * AWS Elemental MediaConnect account.
+     */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
 
     /**
      * A description of the flow. This value is not used or seen outside of the current
@@ -147,6 +159,11 @@ namespace Model
     /**
      * The IP address from which video will be sent to output destinations.
      */
+    inline bool EgressIpHasBeenSet() const { return m_egressIpHasBeenSet; }
+
+    /**
+     * The IP address from which video will be sent to output destinations.
+     */
     inline void SetEgressIp(const Aws::String& value) { m_egressIpHasBeenSet = true; m_egressIp = value; }
 
     /**
@@ -179,6 +196,11 @@ namespace Model
      * The entitlements in this flow.
      */
     inline const Aws::Vector<Entitlement>& GetEntitlements() const{ return m_entitlements; }
+
+    /**
+     * The entitlements in this flow.
+     */
+    inline bool EntitlementsHasBeenSet() const { return m_entitlementsHasBeenSet; }
 
     /**
      * The entitlements in this flow.
@@ -216,6 +238,12 @@ namespace Model
      * flow.
      */
     inline const Aws::String& GetFlowArn() const{ return m_flowArn; }
+
+    /**
+     * The Amazon Resource Name (ARN), a unique identifier for any AWS resource, of the
+     * flow.
+     */
+    inline bool FlowArnHasBeenSet() const { return m_flowArnHasBeenSet; }
 
     /**
      * The Amazon Resource Name (ARN), a unique identifier for any AWS resource, of the
@@ -262,6 +290,11 @@ namespace Model
     /**
      * The name of the flow.
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * The name of the flow.
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
@@ -298,6 +331,11 @@ namespace Model
     /**
      * The outputs in this flow.
      */
+    inline bool OutputsHasBeenSet() const { return m_outputsHasBeenSet; }
+
+    /**
+     * The outputs in this flow.
+     */
     inline void SetOutputs(const Aws::Vector<Output>& value) { m_outputsHasBeenSet = true; m_outputs = value; }
 
     /**
@@ -330,6 +368,9 @@ namespace Model
     inline const Source& GetSource() const{ return m_source; }
 
     
+    inline bool SourceHasBeenSet() const { return m_sourceHasBeenSet; }
+
+    
     inline void SetSource(const Source& value) { m_sourceHasBeenSet = true; m_source = value; }
 
     
@@ -346,6 +387,11 @@ namespace Model
      * The current status of the flow.
      */
     inline const Status& GetStatus() const{ return m_status; }
+
+    /**
+     * The current status of the flow.
+     */
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
     /**
      * The current status of the flow.

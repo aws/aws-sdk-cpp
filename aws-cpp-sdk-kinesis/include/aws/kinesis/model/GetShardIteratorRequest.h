@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p>The name of the Amazon Kinesis data stream.</p>
      */
+    inline bool StreamNameHasBeenSet() const { return m_streamNameHasBeenSet; }
+
+    /**
+     * <p>The name of the Amazon Kinesis data stream.</p>
+     */
     inline void SetStreamName(const Aws::String& value) { m_streamNameHasBeenSet = true; m_streamName = value; }
 
     /**
@@ -90,6 +95,11 @@ namespace Model
      * <p>The shard ID of the Kinesis Data Streams shard to get the iterator for.</p>
      */
     inline const Aws::String& GetShardId() const{ return m_shardId; }
+
+    /**
+     * <p>The shard ID of the Kinesis Data Streams shard to get the iterator for.</p>
+     */
+    inline bool ShardIdHasBeenSet() const { return m_shardIdHasBeenSet; }
 
     /**
      * <p>The shard ID of the Kinesis Data Streams shard to get the iterator for.</p>
@@ -138,6 +148,23 @@ namespace Model
      * read the most recent data in the shard.</p> </li> </ul>
      */
     inline const ShardIteratorType& GetShardIteratorType() const{ return m_shardIteratorType; }
+
+    /**
+     * <p>Determines how the shard iterator is used to start reading data records from
+     * the shard.</p> <p>The following are the valid Amazon Kinesis shard iterator
+     * types:</p> <ul> <li> <p>AT_SEQUENCE_NUMBER - Start reading from the position
+     * denoted by a specific sequence number, provided in the value
+     * <code>StartingSequenceNumber</code>.</p> </li> <li> <p>AFTER_SEQUENCE_NUMBER -
+     * Start reading right after the position denoted by a specific sequence number,
+     * provided in the value <code>StartingSequenceNumber</code>.</p> </li> <li>
+     * <p>AT_TIMESTAMP - Start reading from the position denoted by a specific time
+     * stamp, provided in the value <code>Timestamp</code>.</p> </li> <li>
+     * <p>TRIM_HORIZON - Start reading at the last untrimmed record in the shard in the
+     * system, which is the oldest data record in the shard.</p> </li> <li> <p>LATEST -
+     * Start reading just after the most recent record in the shard, so that you always
+     * read the most recent data in the shard.</p> </li> </ul>
+     */
+    inline bool ShardIteratorTypeHasBeenSet() const { return m_shardIteratorTypeHasBeenSet; }
 
     /**
      * <p>Determines how the shard iterator is used to start reading data records from
@@ -220,6 +247,13 @@ namespace Model
      * reading. Used with shard iterator type AT_SEQUENCE_NUMBER and
      * AFTER_SEQUENCE_NUMBER.</p>
      */
+    inline bool StartingSequenceNumberHasBeenSet() const { return m_startingSequenceNumberHasBeenSet; }
+
+    /**
+     * <p>The sequence number of the data record in the shard from which to start
+     * reading. Used with shard iterator type AT_SEQUENCE_NUMBER and
+     * AFTER_SEQUENCE_NUMBER.</p>
+     */
     inline void SetStartingSequenceNumber(const Aws::String& value) { m_startingSequenceNumberHasBeenSet = true; m_startingSequenceNumber = value; }
 
     /**
@@ -269,6 +303,18 @@ namespace Model
      * (TRIM_HORIZON).</p>
      */
     inline const Aws::Utils::DateTime& GetTimestamp() const{ return m_timestamp; }
+
+    /**
+     * <p>The time stamp of the data record from which to start reading. Used with
+     * shard iterator type AT_TIMESTAMP. A time stamp is the Unix epoch date with
+     * precision in milliseconds. For example,
+     * <code>2016-04-04T19:58:46.480-00:00</code> or <code>1459799926.480</code>. If a
+     * record with this exact time stamp does not exist, the iterator returned is for
+     * the next (later) record. If the time stamp is older than the current trim
+     * horizon, the iterator returned is for the oldest untrimmed data record
+     * (TRIM_HORIZON).</p>
+     */
+    inline bool TimestampHasBeenSet() const { return m_timestampHasBeenSet; }
 
     /**
      * <p>The time stamp of the data record from which to start reading. Used with

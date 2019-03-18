@@ -57,6 +57,12 @@ namespace Model
      * (Optional) The two-character ISO country code for the country or region where
      * the phone number was originally registered.
      */
+    inline bool IsoCountryCodeHasBeenSet() const { return m_isoCountryCodeHasBeenSet; }
+
+    /**
+     * (Optional) The two-character ISO country code for the country or region where
+     * the phone number was originally registered.
+     */
     inline void SetIsoCountryCode(const Aws::String& value) { m_isoCountryCodeHasBeenSet = true; m_isoCountryCode = value; }
 
     /**
@@ -96,6 +102,13 @@ namespace Model
      * code, the operation might result in an error.
      */
     inline const Aws::String& GetPhoneNumber() const{ return m_phoneNumber; }
+
+    /**
+     * The phone number to get information about. The phone number that you provide
+     * should include a country code. If the number doesn't include a valid country
+     * code, the operation might result in an error.
+     */
+    inline bool PhoneNumberHasBeenSet() const { return m_phoneNumberHasBeenSet; }
 
     /**
      * The phone number to get information about. The phone number that you provide

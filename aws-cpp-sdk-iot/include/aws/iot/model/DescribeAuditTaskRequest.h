@@ -50,6 +50,11 @@ namespace Model
     /**
      * <p>The ID of the audit whose information you want to get.</p>
      */
+    inline bool TaskIdHasBeenSet() const { return m_taskIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the audit whose information you want to get.</p>
+     */
     inline void SetTaskId(const Aws::String& value) { m_taskIdHasBeenSet = true; m_taskId = value; }
 
     /**

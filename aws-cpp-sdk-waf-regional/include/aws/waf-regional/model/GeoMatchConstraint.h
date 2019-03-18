@@ -59,6 +59,12 @@ namespace Model
      * <p>The type of geographical area you want AWS WAF to search for. Currently
      * <code>Country</code> is the only valid value.</p>
      */
+    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
+
+    /**
+     * <p>The type of geographical area you want AWS WAF to search for. Currently
+     * <code>Country</code> is the only valid value.</p>
+     */
     inline void SetType(const GeoMatchConstraintType& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
@@ -84,6 +90,11 @@ namespace Model
      * <p>The country that you want AWS WAF to search for.</p>
      */
     inline const GeoMatchConstraintValue& GetValue() const{ return m_value; }
+
+    /**
+     * <p>The country that you want AWS WAF to search for.</p>
+     */
+    inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
 
     /**
      * <p>The country that you want AWS WAF to search for.</p>

@@ -52,6 +52,11 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the accelerator to describe.</p>
      */
+    inline bool AcceleratorArnHasBeenSet() const { return m_acceleratorArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the accelerator to describe.</p>
+     */
     inline void SetAcceleratorArn(const Aws::String& value) { m_acceleratorArnHasBeenSet = true; m_acceleratorArn = value; }
 
     /**

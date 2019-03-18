@@ -63,6 +63,14 @@ namespace Model
      * <a href="http://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html">Amazon SNS
      * Developer Guide</a>.</p>
      */
+    inline bool TopicArnHasBeenSet() const { return m_topicArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the Amazon SNS topic that you want to
+     * publish email events to. For more information about Amazon SNS topics, see the
+     * <a href="http://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html">Amazon SNS
+     * Developer Guide</a>.</p>
+     */
     inline void SetTopicArn(const Aws::String& value) { m_topicArnHasBeenSet = true; m_topicArn = value; }
 
     /**

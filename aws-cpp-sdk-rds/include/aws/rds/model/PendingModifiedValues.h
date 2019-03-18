@@ -63,6 +63,12 @@ namespace Model
      * <p> Contains the new <code>DBInstanceClass</code> for the DB instance that will
      * be applied or is currently being applied. </p>
      */
+    inline bool DBInstanceClassHasBeenSet() const { return m_dBInstanceClassHasBeenSet; }
+
+    /**
+     * <p> Contains the new <code>DBInstanceClass</code> for the DB instance that will
+     * be applied or is currently being applied. </p>
+     */
     inline void SetDBInstanceClass(const Aws::String& value) { m_dBInstanceClassHasBeenSet = true; m_dBInstanceClass = value; }
 
     /**
@@ -106,6 +112,12 @@ namespace Model
      * <p> Contains the new <code>AllocatedStorage</code> size for the DB instance that
      * will be applied or is currently being applied. </p>
      */
+    inline bool AllocatedStorageHasBeenSet() const { return m_allocatedStorageHasBeenSet; }
+
+    /**
+     * <p> Contains the new <code>AllocatedStorage</code> size for the DB instance that
+     * will be applied or is currently being applied. </p>
+     */
     inline void SetAllocatedStorage(int value) { m_allocatedStorageHasBeenSet = true; m_allocatedStorage = value; }
 
     /**
@@ -120,6 +132,12 @@ namespace Model
      * credentials for the DB instance.</p>
      */
     inline const Aws::String& GetMasterUserPassword() const{ return m_masterUserPassword; }
+
+    /**
+     * <p>Contains the pending or currently-in-progress change of the master
+     * credentials for the DB instance.</p>
+     */
+    inline bool MasterUserPasswordHasBeenSet() const { return m_masterUserPasswordHasBeenSet; }
 
     /**
      * <p>Contains the pending or currently-in-progress change of the master
@@ -166,6 +184,11 @@ namespace Model
     /**
      * <p>Specifies the pending port for the DB instance.</p>
      */
+    inline bool PortHasBeenSet() const { return m_portHasBeenSet; }
+
+    /**
+     * <p>Specifies the pending port for the DB instance.</p>
+     */
     inline void SetPort(int value) { m_portHasBeenSet = true; m_port = value; }
 
     /**
@@ -179,6 +202,12 @@ namespace Model
      * retained.</p>
      */
     inline int GetBackupRetentionPeriod() const{ return m_backupRetentionPeriod; }
+
+    /**
+     * <p>Specifies the pending number of days for which automated backups are
+     * retained.</p>
+     */
+    inline bool BackupRetentionPeriodHasBeenSet() const { return m_backupRetentionPeriodHasBeenSet; }
 
     /**
      * <p>Specifies the pending number of days for which automated backups are
@@ -203,6 +232,12 @@ namespace Model
      * <p>Indicates that the Single-AZ DB instance is to change to a Multi-AZ
      * deployment.</p>
      */
+    inline bool MultiAZHasBeenSet() const { return m_multiAZHasBeenSet; }
+
+    /**
+     * <p>Indicates that the Single-AZ DB instance is to change to a Multi-AZ
+     * deployment.</p>
+     */
     inline void SetMultiAZ(bool value) { m_multiAZHasBeenSet = true; m_multiAZ = value; }
 
     /**
@@ -216,6 +251,11 @@ namespace Model
      * <p>Indicates the database engine version.</p>
      */
     inline const Aws::String& GetEngineVersion() const{ return m_engineVersion; }
+
+    /**
+     * <p>Indicates the database engine version.</p>
+     */
+    inline bool EngineVersionHasBeenSet() const { return m_engineVersionHasBeenSet; }
 
     /**
      * <p>Indicates the database engine version.</p>
@@ -254,6 +294,13 @@ namespace Model
      * <code>general-public-license</code> </p>
      */
     inline const Aws::String& GetLicenseModel() const{ return m_licenseModel; }
+
+    /**
+     * <p>The license model for the DB instance.</p> <p>Valid values:
+     * <code>license-included</code> | <code>bring-your-own-license</code> |
+     * <code>general-public-license</code> </p>
+     */
+    inline bool LicenseModelHasBeenSet() const { return m_licenseModelHasBeenSet; }
 
     /**
      * <p>The license model for the DB instance.</p> <p>Valid values:
@@ -308,6 +355,12 @@ namespace Model
      * <p>Specifies the new Provisioned IOPS value for the DB instance that will be
      * applied or is currently being applied.</p>
      */
+    inline bool IopsHasBeenSet() const { return m_iopsHasBeenSet; }
+
+    /**
+     * <p>Specifies the new Provisioned IOPS value for the DB instance that will be
+     * applied or is currently being applied.</p>
+     */
     inline void SetIops(int value) { m_iopsHasBeenSet = true; m_iops = value; }
 
     /**
@@ -322,6 +375,12 @@ namespace Model
      * will be applied or is currently being applied. </p>
      */
     inline const Aws::String& GetDBInstanceIdentifier() const{ return m_dBInstanceIdentifier; }
+
+    /**
+     * <p> Contains the new <code>DBInstanceIdentifier</code> for the DB instance that
+     * will be applied or is currently being applied. </p>
+     */
+    inline bool DBInstanceIdentifierHasBeenSet() const { return m_dBInstanceIdentifierHasBeenSet; }
 
     /**
      * <p> Contains the new <code>DBInstanceIdentifier</code> for the DB instance that
@@ -368,6 +427,11 @@ namespace Model
     /**
      * <p>Specifies the storage type to be associated with the DB instance.</p>
      */
+    inline bool StorageTypeHasBeenSet() const { return m_storageTypeHasBeenSet; }
+
+    /**
+     * <p>Specifies the storage type to be associated with the DB instance.</p>
+     */
     inline void SetStorageType(const Aws::String& value) { m_storageTypeHasBeenSet = true; m_storageType = value; }
 
     /**
@@ -400,6 +464,11 @@ namespace Model
      * <p>Specifies the identifier of the CA certificate for the DB instance.</p>
      */
     inline const Aws::String& GetCACertificateIdentifier() const{ return m_cACertificateIdentifier; }
+
+    /**
+     * <p>Specifies the identifier of the CA certificate for the DB instance.</p>
+     */
+    inline bool CACertificateIdentifierHasBeenSet() const { return m_cACertificateIdentifierHasBeenSet; }
 
     /**
      * <p>Specifies the identifier of the CA certificate for the DB instance.</p>
@@ -440,6 +509,11 @@ namespace Model
     /**
      * <p>The new DB subnet group for the DB instance. </p>
      */
+    inline bool DBSubnetGroupNameHasBeenSet() const { return m_dBSubnetGroupNameHasBeenSet; }
+
+    /**
+     * <p>The new DB subnet group for the DB instance. </p>
+     */
     inline void SetDBSubnetGroupName(const Aws::String& value) { m_dBSubnetGroupNameHasBeenSet = true; m_dBSubnetGroupName = value; }
 
     /**
@@ -472,6 +546,9 @@ namespace Model
     inline const PendingCloudwatchLogsExports& GetPendingCloudwatchLogsExports() const{ return m_pendingCloudwatchLogsExports; }
 
     
+    inline bool PendingCloudwatchLogsExportsHasBeenSet() const { return m_pendingCloudwatchLogsExportsHasBeenSet; }
+
+    
     inline void SetPendingCloudwatchLogsExports(const PendingCloudwatchLogsExports& value) { m_pendingCloudwatchLogsExportsHasBeenSet = true; m_pendingCloudwatchLogsExports = value; }
 
     
@@ -489,6 +566,12 @@ namespace Model
      * instance class of the DB instance.</p>
      */
     inline const Aws::Vector<ProcessorFeature>& GetProcessorFeatures() const{ return m_processorFeatures; }
+
+    /**
+     * <p>The number of CPU cores and the number of threads per core for the DB
+     * instance class of the DB instance.</p>
+     */
+    inline bool ProcessorFeaturesHasBeenSet() const { return m_processorFeaturesHasBeenSet; }
 
     /**
      * <p>The number of CPU cores and the number of threads per core for the DB

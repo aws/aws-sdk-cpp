@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>Information that identifies the security profile.</p>
      */
+    inline bool SecurityProfileIdentifierHasBeenSet() const { return m_securityProfileIdentifierHasBeenSet; }
+
+    /**
+     * <p>Information that identifies the security profile.</p>
+     */
     inline void SetSecurityProfileIdentifier(const SecurityProfileIdentifier& value) { m_securityProfileIdentifierHasBeenSet = true; m_securityProfileIdentifier = value; }
 
     /**
@@ -80,6 +85,12 @@ namespace Model
      * profile.</p>
      */
     inline const SecurityProfileTarget& GetTarget() const{ return m_target; }
+
+    /**
+     * <p>Information about the target (thing group) associated with the security
+     * profile.</p>
+     */
+    inline bool TargetHasBeenSet() const { return m_targetHasBeenSet; }
 
     /**
      * <p>Information about the target (thing group) associated with the security

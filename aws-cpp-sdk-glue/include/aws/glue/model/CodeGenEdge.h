@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The ID of the node at which the edge starts.</p>
      */
+    inline bool SourceHasBeenSet() const { return m_sourceHasBeenSet; }
+
+    /**
+     * <p>The ID of the node at which the edge starts.</p>
+     */
     inline void SetSource(const Aws::String& value) { m_sourceHasBeenSet = true; m_source = value; }
 
     /**
@@ -92,6 +97,11 @@ namespace Model
     /**
      * <p>The ID of the node at which the edge ends.</p>
      */
+    inline bool TargetHasBeenSet() const { return m_targetHasBeenSet; }
+
+    /**
+     * <p>The ID of the node at which the edge ends.</p>
+     */
     inline void SetTarget(const Aws::String& value) { m_targetHasBeenSet = true; m_target = value; }
 
     /**
@@ -124,6 +134,11 @@ namespace Model
      * <p>The target of the edge.</p>
      */
     inline const Aws::String& GetTargetParameter() const{ return m_targetParameter; }
+
+    /**
+     * <p>The target of the edge.</p>
+     */
+    inline bool TargetParameterHasBeenSet() const { return m_targetParameterHasBeenSet; }
 
     /**
      * <p>The target of the edge.</p>

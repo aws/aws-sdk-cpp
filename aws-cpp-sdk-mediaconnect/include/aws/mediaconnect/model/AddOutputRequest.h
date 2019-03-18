@@ -59,6 +59,12 @@ namespace Model
      * A description of the output. This description appears only on the AWS Elemental
      * MediaConnect console and will not be seen by the end user.
      */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
+
+    /**
+     * A description of the output. This description appears only on the AWS Elemental
+     * MediaConnect console and will not be seen by the end user.
+     */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
@@ -96,6 +102,11 @@ namespace Model
      * The IP address from which video will be sent to output destinations.
      */
     inline const Aws::String& GetDestination() const{ return m_destination; }
+
+    /**
+     * The IP address from which video will be sent to output destinations.
+     */
+    inline bool DestinationHasBeenSet() const { return m_destinationHasBeenSet; }
 
     /**
      * The IP address from which video will be sent to output destinations.
@@ -138,6 +149,12 @@ namespace Model
      * The type of key used for the encryption. If no keyType is provided, the service
      * will use the default setting (static-key).
      */
+    inline bool EncryptionHasBeenSet() const { return m_encryptionHasBeenSet; }
+
+    /**
+     * The type of key used for the encryption. If no keyType is provided, the service
+     * will use the default setting (static-key).
+     */
     inline void SetEncryption(const Encryption& value) { m_encryptionHasBeenSet = true; m_encryption = value; }
 
     /**
@@ -167,6 +184,11 @@ namespace Model
     /**
      * The maximum latency in milliseconds for Zixi-based streams.
      */
+    inline bool MaxLatencyHasBeenSet() const { return m_maxLatencyHasBeenSet; }
+
+    /**
+     * The maximum latency in milliseconds for Zixi-based streams.
+     */
     inline void SetMaxLatency(int value) { m_maxLatencyHasBeenSet = true; m_maxLatency = value; }
 
     /**
@@ -179,6 +201,11 @@ namespace Model
      * The name of the output. This value must be unique within the current flow.
      */
     inline const Aws::String& GetName() const{ return m_name; }
+
+    /**
+     * The name of the output. This value must be unique within the current flow.
+     */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
      * The name of the output. This value must be unique within the current flow.
@@ -219,6 +246,11 @@ namespace Model
     /**
      * The port to use when content is distributed to this output.
      */
+    inline bool PortHasBeenSet() const { return m_portHasBeenSet; }
+
+    /**
+     * The port to use when content is distributed to this output.
+     */
     inline void SetPort(int value) { m_portHasBeenSet = true; m_port = value; }
 
     /**
@@ -231,6 +263,11 @@ namespace Model
      * The protocol to use for the output.
      */
     inline const Protocol& GetProtocol() const{ return m_protocol; }
+
+    /**
+     * The protocol to use for the output.
+     */
+    inline bool ProtocolHasBeenSet() const { return m_protocolHasBeenSet; }
 
     /**
      * The protocol to use for the output.
@@ -261,6 +298,11 @@ namespace Model
     /**
      * The smoothing latency in milliseconds for RTP and RTP-FEC streams.
      */
+    inline bool SmoothingLatencyHasBeenSet() const { return m_smoothingLatencyHasBeenSet; }
+
+    /**
+     * The smoothing latency in milliseconds for RTP and RTP-FEC streams.
+     */
     inline void SetSmoothingLatency(int value) { m_smoothingLatencyHasBeenSet = true; m_smoothingLatency = value; }
 
     /**
@@ -274,6 +316,12 @@ namespace Model
      * only to Zixi-based streams.
      */
     inline const Aws::String& GetStreamId() const{ return m_streamId; }
+
+    /**
+     * The stream ID that you want to use for this transport. This parameter applies
+     * only to Zixi-based streams.
+     */
+    inline bool StreamIdHasBeenSet() const { return m_streamIdHasBeenSet; }
 
     /**
      * The stream ID that you want to use for this transport. This parameter applies

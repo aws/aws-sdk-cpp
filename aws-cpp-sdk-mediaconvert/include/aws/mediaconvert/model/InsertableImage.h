@@ -58,6 +58,12 @@ namespace Model
      * Specify the time, in milliseconds, for the image to remain on the output video.
      * This duration includes fade-in time but not fade-out time.
      */
+    inline bool DurationHasBeenSet() const { return m_durationHasBeenSet; }
+
+    /**
+     * Specify the time, in milliseconds, for the image to remain on the output video.
+     * This duration includes fade-in time but not fade-out time.
+     */
     inline void SetDuration(int value) { m_durationHasBeenSet = true; m_duration = value; }
 
     /**
@@ -75,6 +81,15 @@ namespace Model
      * overlay start time.
      */
     inline int GetFadeIn() const{ return m_fadeIn; }
+
+    /**
+     * Specify the length of time, in milliseconds, between the Start time that you
+     * specify for the image insertion and the time that the image appears at full
+     * opacity. Full opacity is the level that you specify for the opacity setting. If
+     * you don't specify a value for Fade-in, the image will appear abruptly at the
+     * overlay start time.
+     */
+    inline bool FadeInHasBeenSet() const { return m_fadeInHasBeenSet; }
 
     /**
      * Specify the length of time, in milliseconds, between the Start time that you
@@ -109,6 +124,14 @@ namespace Model
      * has faded to total transparency. If you don't specify a value for Fade-out, the
      * image will disappear abruptly at the end of the inserted image duration.
      */
+    inline bool FadeOutHasBeenSet() const { return m_fadeOutHasBeenSet; }
+
+    /**
+     * Specify the length of time, in milliseconds, between the end of the time that
+     * you have specified for the image overlay Duration and when the overlaid image
+     * has faded to total transparency. If you don't specify a value for Fade-out, the
+     * image will disappear abruptly at the end of the inserted image duration.
+     */
     inline void SetFadeOut(int value) { m_fadeOutHasBeenSet = true; m_fadeOut = value; }
 
     /**
@@ -134,6 +157,14 @@ namespace Model
      * overlaid image to fit. To use the native height of the image, keep this setting
      * blank.
      */
+    inline bool HeightHasBeenSet() const { return m_heightHasBeenSet; }
+
+    /**
+     * Specify the height of the inserted image in pixels. If you specify a value
+     * that's larger than the video resolution height, the service will crop your
+     * overlaid image to fit. To use the native height of the image, keep this setting
+     * blank.
+     */
     inline void SetHeight(int value) { m_heightHasBeenSet = true; m_height = value; }
 
     /**
@@ -150,6 +181,12 @@ namespace Model
      * video. Use a PNG or TGA file.
      */
     inline const Aws::String& GetImageInserterInput() const{ return m_imageInserterInput; }
+
+    /**
+     * Specify the Amazon S3 location of the image that you want to overlay on the
+     * video. Use a PNG or TGA file.
+     */
+    inline bool ImageInserterInputHasBeenSet() const { return m_imageInserterInputHasBeenSet; }
 
     /**
      * Specify the Amazon S3 location of the image that you want to overlay on the
@@ -198,6 +235,12 @@ namespace Model
      * Specify the distance, in pixels, between the inserted image and the left edge of
      * the video frame. Required for any image overlay that you specify.
      */
+    inline bool ImageXHasBeenSet() const { return m_imageXHasBeenSet; }
+
+    /**
+     * Specify the distance, in pixels, between the inserted image and the left edge of
+     * the video frame. Required for any image overlay that you specify.
+     */
     inline void SetImageX(int value) { m_imageXHasBeenSet = true; m_imageX = value; }
 
     /**
@@ -212,6 +255,12 @@ namespace Model
      * the video frame. Required for any image overlay that you specify.
      */
     inline int GetImageY() const{ return m_imageY; }
+
+    /**
+     * Specify the distance, in pixels, between the overlaid image and the top edge of
+     * the video frame. Required for any image overlay that you specify.
+     */
+    inline bool ImageYHasBeenSet() const { return m_imageYHasBeenSet; }
 
     /**
      * Specify the distance, in pixels, between the overlaid image and the top edge of
@@ -236,6 +285,12 @@ namespace Model
      * Specify how overlapping inserted images appear. Images with higher values for
      * Layer appear on top of images with lower values for Layer.
      */
+    inline bool LayerHasBeenSet() const { return m_layerHasBeenSet; }
+
+    /**
+     * Specify how overlapping inserted images appear. Images with higher values for
+     * Layer appear on top of images with lower values for Layer.
+     */
     inline void SetLayer(int value) { m_layerHasBeenSet = true; m_layer = value; }
 
     /**
@@ -250,6 +305,12 @@ namespace Model
      * the inserted image. 0 is transparent and 100 is fully opaque. Default is 50.
      */
     inline int GetOpacity() const{ return m_opacity; }
+
+    /**
+     * Use Opacity (Opacity) to specify how much of the underlying video shows through
+     * the inserted image. 0 is transparent and 100 is fully opaque. Default is 50.
+     */
+    inline bool OpacityHasBeenSet() const { return m_opacityHasBeenSet; }
 
     /**
      * Use Opacity (Opacity) to specify how much of the underlying video shows through
@@ -270,6 +331,13 @@ namespace Model
      * into account your timecode source settings.
      */
     inline const Aws::String& GetStartTime() const{ return m_startTime; }
+
+    /**
+     * Specify the timecode of the frame that you want the overlay to first appear on.
+     * This must be in timecode (HH:MM:SS:FF or HH:MM:SS;FF) format. Remember to take
+     * into account your timecode source settings.
+     */
+    inline bool StartTimeHasBeenSet() const { return m_startTimeHasBeenSet; }
 
     /**
      * Specify the timecode of the frame that you want the overlay to first appear on.
@@ -320,6 +388,13 @@ namespace Model
      * image to fit. To use the native width of the image, keep this setting blank.
      */
     inline int GetWidth() const{ return m_width; }
+
+    /**
+     * Specify the width of the inserted image in pixels. If you specify a value that's
+     * larger than the video resolution width, the service will crop your overlaid
+     * image to fit. To use the native width of the image, keep this setting blank.
+     */
+    inline bool WidthHasBeenSet() const { return m_widthHasBeenSet; }
 
     /**
      * Specify the width of the inserted image in pixels. If you specify a value that's

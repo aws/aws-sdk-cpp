@@ -60,6 +60,11 @@ namespace Model
     /**
      * <p>The name of the template to be deleted.</p>
      */
+    inline bool TemplateNameHasBeenSet() const { return m_templateNameHasBeenSet; }
+
+    /**
+     * <p>The name of the template to be deleted.</p>
+     */
     inline void SetTemplateName(const Aws::String& value) { m_templateNameHasBeenSet = true; m_templateName = value; }
 
     /**

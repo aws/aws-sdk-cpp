@@ -60,6 +60,12 @@ namespace Model
      * <p> A list of ReviewResults objects for each action specified in the Review
      * Policy. </p>
      */
+    inline bool ReviewResultsHasBeenSet() const { return m_reviewResultsHasBeenSet; }
+
+    /**
+     * <p> A list of ReviewResults objects for each action specified in the Review
+     * Policy. </p>
+     */
     inline void SetReviewResults(const Aws::Vector<ReviewResultDetail>& value) { m_reviewResultsHasBeenSet = true; m_reviewResults = value; }
 
     /**
@@ -98,6 +104,12 @@ namespace Model
      * Policy. </p>
      */
     inline const Aws::Vector<ReviewActionDetail>& GetReviewActions() const{ return m_reviewActions; }
+
+    /**
+     * <p> A list of ReviewAction objects for each action specified in the Review
+     * Policy. </p>
+     */
+    inline bool ReviewActionsHasBeenSet() const { return m_reviewActionsHasBeenSet; }
 
     /**
      * <p> A list of ReviewAction objects for each action specified in the Review

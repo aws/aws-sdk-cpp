@@ -54,6 +54,11 @@ namespace Model
     /**
      * <p>The list of ARNs that specify the exclusions that you want to describe.</p>
      */
+    inline bool ExclusionArnsHasBeenSet() const { return m_exclusionArnsHasBeenSet; }
+
+    /**
+     * <p>The list of ARNs that specify the exclusions that you want to describe.</p>
+     */
     inline void SetExclusionArns(const Aws::Vector<Aws::String>& value) { m_exclusionArnsHasBeenSet = true; m_exclusionArns = value; }
 
     /**
@@ -92,6 +97,12 @@ namespace Model
      * description, and recommendation.</p>
      */
     inline const Locale& GetLocale() const{ return m_locale; }
+
+    /**
+     * <p>The locale into which you want to translate the exclusion's title,
+     * description, and recommendation.</p>
+     */
+    inline bool LocaleHasBeenSet() const { return m_localeHasBeenSet; }
 
     /**
      * <p>The locale into which you want to translate the exclusion's title,

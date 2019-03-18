@@ -63,6 +63,14 @@ namespace Model
      * is used by the AWS Data Pipeline API. If the field is not set on the object, the
      * condition fails.</p>
      */
+    inline bool FieldNameHasBeenSet() const { return m_fieldNameHasBeenSet; }
+
+    /**
+     * <p>The name of the field that the operator will be applied to. The field name is
+     * the "key" portion of the field definition in the pipeline definition syntax that
+     * is used by the AWS Data Pipeline API. If the field is not set on the object, the
+     * condition fails.</p>
+     */
     inline void SetFieldName(const Aws::String& value) { m_fieldNameHasBeenSet = true; m_fieldName = value; }
 
     /**
@@ -108,6 +116,9 @@ namespace Model
 
     
     inline const Operator& GetOperator() const{ return m_operator; }
+
+    
+    inline bool OperatorHasBeenSet() const { return m_operatorHasBeenSet; }
 
     
     inline void SetOperator(const Operator& value) { m_operatorHasBeenSet = true; m_operator = value; }

@@ -60,6 +60,11 @@ namespace Model
     /**
      * <p>A description of the resource being exported.</p>
      */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
+
+    /**
+     * <p>A description of the resource being exported.</p>
+     */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
@@ -92,6 +97,11 @@ namespace Model
      * <p>The ID of the export task.</p>
      */
     inline const Aws::String& GetExportTaskId() const{ return m_exportTaskId; }
+
+    /**
+     * <p>The ID of the export task.</p>
+     */
+    inline bool ExportTaskIdHasBeenSet() const { return m_exportTaskIdHasBeenSet; }
 
     /**
      * <p>The ID of the export task.</p>
@@ -132,6 +142,11 @@ namespace Model
     /**
      * <p>Information about the export task.</p>
      */
+    inline bool ExportToS3TaskHasBeenSet() const { return m_exportToS3TaskHasBeenSet; }
+
+    /**
+     * <p>Information about the export task.</p>
+     */
     inline void SetExportToS3Task(const ExportToS3Task& value) { m_exportToS3TaskHasBeenSet = true; m_exportToS3Task = value; }
 
     /**
@@ -154,6 +169,11 @@ namespace Model
      * <p>Information about the instance to export.</p>
      */
     inline const InstanceExportDetails& GetInstanceExportDetails() const{ return m_instanceExportDetails; }
+
+    /**
+     * <p>Information about the instance to export.</p>
+     */
+    inline bool InstanceExportDetailsHasBeenSet() const { return m_instanceExportDetailsHasBeenSet; }
 
     /**
      * <p>Information about the instance to export.</p>
@@ -184,6 +204,11 @@ namespace Model
     /**
      * <p>The state of the export task.</p>
      */
+    inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
+
+    /**
+     * <p>The state of the export task.</p>
+     */
     inline void SetState(const ExportTaskState& value) { m_stateHasBeenSet = true; m_state = value; }
 
     /**
@@ -206,6 +231,11 @@ namespace Model
      * <p>The status message related to the export task.</p>
      */
     inline const Aws::String& GetStatusMessage() const{ return m_statusMessage; }
+
+    /**
+     * <p>The status message related to the export task.</p>
+     */
+    inline bool StatusMessageHasBeenSet() const { return m_statusMessageHasBeenSet; }
 
     /**
      * <p>The status message related to the export task.</p>

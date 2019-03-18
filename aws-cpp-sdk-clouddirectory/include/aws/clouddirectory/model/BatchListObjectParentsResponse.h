@@ -48,6 +48,9 @@ namespace Model
     inline const Aws::Vector<ObjectIdentifierAndLinkNameTuple>& GetParentLinks() const{ return m_parentLinks; }
 
     
+    inline bool ParentLinksHasBeenSet() const { return m_parentLinksHasBeenSet; }
+
+    
     inline void SetParentLinks(const Aws::Vector<ObjectIdentifierAndLinkNameTuple>& value) { m_parentLinksHasBeenSet = true; m_parentLinks = value; }
 
     
@@ -68,6 +71,9 @@ namespace Model
 
     
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
+    
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }

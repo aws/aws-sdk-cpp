@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the robot.</p>
      */
+    inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the robot.</p>
+     */
     inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
 
     /**
@@ -90,6 +95,11 @@ namespace Model
      * <p>The name of the robot.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
+
+    /**
+     * <p>The name of the robot.</p>
+     */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
      * <p>The name of the robot.</p>
@@ -130,6 +140,11 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the fleet.</p>
      */
+    inline bool FleetArnHasBeenSet() const { return m_fleetArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the fleet.</p>
+     */
     inline void SetFleetArn(const Aws::String& value) { m_fleetArnHasBeenSet = true; m_fleetArn = value; }
 
     /**
@@ -166,6 +181,11 @@ namespace Model
     /**
      * <p>The status of the robot.</p>
      */
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
+
+    /**
+     * <p>The status of the robot.</p>
+     */
     inline void SetStatus(const RobotStatus& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
@@ -188,6 +208,11 @@ namespace Model
      * <p>The Greengrass group associated with the robot.</p>
      */
     inline const Aws::String& GetGreenGrassGroupId() const{ return m_greenGrassGroupId; }
+
+    /**
+     * <p>The Greengrass group associated with the robot.</p>
+     */
+    inline bool GreenGrassGroupIdHasBeenSet() const { return m_greenGrassGroupIdHasBeenSet; }
 
     /**
      * <p>The Greengrass group associated with the robot.</p>
@@ -228,6 +253,11 @@ namespace Model
     /**
      * <p>The time, in milliseconds since the epoch, when the robot was created.</p>
      */
+    inline bool CreatedAtHasBeenSet() const { return m_createdAtHasBeenSet; }
+
+    /**
+     * <p>The time, in milliseconds since the epoch, when the robot was created.</p>
+     */
     inline void SetCreatedAt(const Aws::Utils::DateTime& value) { m_createdAtHasBeenSet = true; m_createdAt = value; }
 
     /**
@@ -254,6 +284,11 @@ namespace Model
     /**
      * <p>The architecture of the robot.</p>
      */
+    inline bool ArchitectureHasBeenSet() const { return m_architectureHasBeenSet; }
+
+    /**
+     * <p>The architecture of the robot.</p>
+     */
     inline void SetArchitecture(const Architecture& value) { m_architectureHasBeenSet = true; m_architecture = value; }
 
     /**
@@ -276,6 +311,11 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the last deployment job.</p>
      */
     inline const Aws::String& GetLastDeploymentJob() const{ return m_lastDeploymentJob; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the last deployment job.</p>
+     */
+    inline bool LastDeploymentJobHasBeenSet() const { return m_lastDeploymentJobHasBeenSet; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the last deployment job.</p>
@@ -312,6 +352,11 @@ namespace Model
      * <p>The time of the last deployment.</p>
      */
     inline const Aws::Utils::DateTime& GetLastDeploymentTime() const{ return m_lastDeploymentTime; }
+
+    /**
+     * <p>The time of the last deployment.</p>
+     */
+    inline bool LastDeploymentTimeHasBeenSet() const { return m_lastDeploymentTimeHasBeenSet; }
 
     /**
      * <p>The time of the last deployment.</p>

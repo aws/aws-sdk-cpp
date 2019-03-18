@@ -57,6 +57,12 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the gateway that you want to attach the
      * volume to.</p>
      */
+    inline bool GatewayARNHasBeenSet() const { return m_gatewayARNHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the gateway that you want to attach the
+     * volume to.</p>
+     */
     inline void SetGatewayARN(const Aws::String& value) { m_gatewayARNHasBeenSet = true; m_gatewayARN = value; }
 
     /**
@@ -100,6 +106,17 @@ namespace Model
      * for this volume as the new target name.</p>
      */
     inline const Aws::String& GetTargetName() const{ return m_targetName; }
+
+    /**
+     * <p>The name of the iSCSI target used by an initiator to connect to a volume and
+     * used as a suffix for the target ARN. For example, specifying
+     * <code>TargetName</code> as <i>myvolume</i> results in the target ARN of
+     * <code>arn:aws:storagegateway:us-east-2:111122223333:gateway/sgw-12A3456B/target/iqn.1997-05.com.amazon:myvolume</code>.
+     * The target name must be unique across all volumes on a gateway.</p> <p>If you
+     * don't specify a value, Storage Gateway uses the value that was previously used
+     * for this volume as the new target name.</p>
+     */
+    inline bool TargetNameHasBeenSet() const { return m_targetNameHasBeenSet; }
 
     /**
      * <p>The name of the iSCSI target used by an initiator to connect to a volume and
@@ -178,6 +195,12 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the volume to attach to the specified
      * gateway.</p>
      */
+    inline bool VolumeARNHasBeenSet() const { return m_volumeARNHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the volume to attach to the specified
+     * gateway.</p>
+     */
     inline void SetVolumeARN(const Aws::String& value) { m_volumeARNHasBeenSet = true; m_volumeARN = value; }
 
     /**
@@ -218,6 +241,14 @@ namespace Model
      * valid IP address.</p>
      */
     inline const Aws::String& GetNetworkInterfaceId() const{ return m_networkInterfaceId; }
+
+    /**
+     * <p>The network interface of the gateway on which to expose the iSCSI target.
+     * Only IPv4 addresses are accepted. Use <a>DescribeGatewayInformation</a> to get a
+     * list of the network interfaces available on a gateway.</p> <p> Valid Values: A
+     * valid IP address.</p>
+     */
+    inline bool NetworkInterfaceIdHasBeenSet() const { return m_networkInterfaceIdHasBeenSet; }
 
     /**
      * <p>The network interface of the gateway on which to expose the iSCSI target.
@@ -274,6 +305,13 @@ namespace Model
      * attaching a stored volume.</p>
      */
     inline const Aws::String& GetDiskId() const{ return m_diskId; }
+
+    /**
+     * <p>The unique device ID or other distinguishing data that identifies the local
+     * disk used to create the volume. This value is only required when you are
+     * attaching a stored volume.</p>
+     */
+    inline bool DiskIdHasBeenSet() const { return m_diskIdHasBeenSet; }
 
     /**
      * <p>The unique device ID or other distinguishing data that identifies the local

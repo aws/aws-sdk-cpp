@@ -73,6 +73,12 @@ namespace Model
      * <p>Amazon Resource Name (ARN) for your private certificate authority (CA). The
      * format is <code> <i>12345678-1234-1234-1234-123456789012</i> </code>.</p>
      */
+    inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
+
+    /**
+     * <p>Amazon Resource Name (ARN) for your private certificate authority (CA). The
+     * format is <code> <i>12345678-1234-1234-1234-123456789012</i> </code>.</p>
+     */
     inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
 
     /**
@@ -114,6 +120,11 @@ namespace Model
     /**
      * <p>Date and time at which your private CA was created.</p>
      */
+    inline bool CreatedAtHasBeenSet() const { return m_createdAtHasBeenSet; }
+
+    /**
+     * <p>Date and time at which your private CA was created.</p>
+     */
     inline void SetCreatedAt(const Aws::Utils::DateTime& value) { m_createdAtHasBeenSet = true; m_createdAt = value; }
 
     /**
@@ -136,6 +147,11 @@ namespace Model
      * <p>Date and time at which your private CA was last updated.</p>
      */
     inline const Aws::Utils::DateTime& GetLastStateChangeAt() const{ return m_lastStateChangeAt; }
+
+    /**
+     * <p>Date and time at which your private CA was last updated.</p>
+     */
+    inline bool LastStateChangeAtHasBeenSet() const { return m_lastStateChangeAtHasBeenSet; }
 
     /**
      * <p>Date and time at which your private CA was last updated.</p>
@@ -166,6 +182,11 @@ namespace Model
     /**
      * <p>Type of your private CA.</p>
      */
+    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
+
+    /**
+     * <p>Type of your private CA.</p>
+     */
     inline void SetType(const CertificateAuthorityType& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
@@ -188,6 +209,11 @@ namespace Model
      * <p>Serial number of your private CA.</p>
      */
     inline const Aws::String& GetSerial() const{ return m_serial; }
+
+    /**
+     * <p>Serial number of your private CA.</p>
+     */
+    inline bool SerialHasBeenSet() const { return m_serialHasBeenSet; }
 
     /**
      * <p>Serial number of your private CA.</p>
@@ -228,6 +254,11 @@ namespace Model
     /**
      * <p>Status of your private CA.</p>
      */
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
+
+    /**
+     * <p>Status of your private CA.</p>
+     */
     inline void SetStatus(const CertificateAuthorityStatus& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
@@ -250,6 +281,11 @@ namespace Model
      * <p>Date and time before which your private CA certificate is not valid.</p>
      */
     inline const Aws::Utils::DateTime& GetNotBefore() const{ return m_notBefore; }
+
+    /**
+     * <p>Date and time before which your private CA certificate is not valid.</p>
+     */
+    inline bool NotBeforeHasBeenSet() const { return m_notBeforeHasBeenSet; }
 
     /**
      * <p>Date and time before which your private CA certificate is not valid.</p>
@@ -280,6 +316,11 @@ namespace Model
     /**
      * <p>Date and time after which your private CA certificate is not valid.</p>
      */
+    inline bool NotAfterHasBeenSet() const { return m_notAfterHasBeenSet; }
+
+    /**
+     * <p>Date and time after which your private CA certificate is not valid.</p>
+     */
     inline void SetNotAfter(const Aws::Utils::DateTime& value) { m_notAfterHasBeenSet = true; m_notAfter = value; }
 
     /**
@@ -306,6 +347,11 @@ namespace Model
     /**
      * <p>Reason the request to create your private CA failed.</p>
      */
+    inline bool FailureReasonHasBeenSet() const { return m_failureReasonHasBeenSet; }
+
+    /**
+     * <p>Reason the request to create your private CA failed.</p>
+     */
     inline void SetFailureReason(const FailureReason& value) { m_failureReasonHasBeenSet = true; m_failureReason = value; }
 
     /**
@@ -328,6 +374,11 @@ namespace Model
      * <p>Your private CA configuration.</p>
      */
     inline const CertificateAuthorityConfiguration& GetCertificateAuthorityConfiguration() const{ return m_certificateAuthorityConfiguration; }
+
+    /**
+     * <p>Your private CA configuration.</p>
+     */
+    inline bool CertificateAuthorityConfigurationHasBeenSet() const { return m_certificateAuthorityConfigurationHasBeenSet; }
 
     /**
      * <p>Your private CA configuration.</p>
@@ -360,6 +411,12 @@ namespace Model
      * <p>Information about the certificate revocation list (CRL) created and
      * maintained by your private CA. </p>
      */
+    inline bool RevocationConfigurationHasBeenSet() const { return m_revocationConfigurationHasBeenSet; }
+
+    /**
+     * <p>Information about the certificate revocation list (CRL) created and
+     * maintained by your private CA. </p>
+     */
     inline void SetRevocationConfiguration(const RevocationConfiguration& value) { m_revocationConfigurationHasBeenSet = true; m_revocationConfiguration = value; }
 
     /**
@@ -387,6 +444,13 @@ namespace Model
      * <a>DeleteCertificateAuthorityRequest</a> operation. </p>
      */
     inline const Aws::Utils::DateTime& GetRestorableUntil() const{ return m_restorableUntil; }
+
+    /**
+     * <p>The period during which a deleted CA can be restored. For more information,
+     * see the <code>PermanentDeletionTimeInDays</code> parameter of the
+     * <a>DeleteCertificateAuthorityRequest</a> operation. </p>
+     */
+    inline bool RestorableUntilHasBeenSet() const { return m_restorableUntilHasBeenSet; }
 
     /**
      * <p>The period during which a deleted CA can be restored. For more information,

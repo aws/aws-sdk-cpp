@@ -67,6 +67,11 @@ namespace Model
     /**
      * <p>The To: field(s) of the message.</p>
      */
+    inline bool ToAddressesHasBeenSet() const { return m_toAddressesHasBeenSet; }
+
+    /**
+     * <p>The To: field(s) of the message.</p>
+     */
     inline void SetToAddresses(const Aws::Vector<Aws::String>& value) { m_toAddressesHasBeenSet = true; m_toAddresses = value; }
 
     /**
@@ -108,6 +113,11 @@ namespace Model
     /**
      * <p>The CC: field(s) of the message.</p>
      */
+    inline bool CcAddressesHasBeenSet() const { return m_ccAddressesHasBeenSet; }
+
+    /**
+     * <p>The CC: field(s) of the message.</p>
+     */
     inline void SetCcAddresses(const Aws::Vector<Aws::String>& value) { m_ccAddressesHasBeenSet = true; m_ccAddresses = value; }
 
     /**
@@ -145,6 +155,11 @@ namespace Model
      * <p>The BCC: field(s) of the message.</p>
      */
     inline const Aws::Vector<Aws::String>& GetBccAddresses() const{ return m_bccAddresses; }
+
+    /**
+     * <p>The BCC: field(s) of the message.</p>
+     */
+    inline bool BccAddressesHasBeenSet() const { return m_bccAddressesHasBeenSet; }
 
     /**
      * <p>The BCC: field(s) of the message.</p>

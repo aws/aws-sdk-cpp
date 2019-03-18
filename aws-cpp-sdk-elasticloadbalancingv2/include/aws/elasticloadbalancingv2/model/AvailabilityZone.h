@@ -59,6 +59,11 @@ namespace Model
     /**
      * <p>The name of the Availability Zone.</p>
      */
+    inline bool ZoneNameHasBeenSet() const { return m_zoneNameHasBeenSet; }
+
+    /**
+     * <p>The name of the Availability Zone.</p>
+     */
     inline void SetZoneName(const Aws::String& value) { m_zoneNameHasBeenSet = true; m_zoneName = value; }
 
     /**
@@ -95,6 +100,11 @@ namespace Model
     /**
      * <p>The ID of the subnet.</p>
      */
+    inline bool SubnetIdHasBeenSet() const { return m_subnetIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the subnet.</p>
+     */
     inline void SetSubnetId(const Aws::String& value) { m_subnetIdHasBeenSet = true; m_subnetId = value; }
 
     /**
@@ -127,6 +137,11 @@ namespace Model
      * <p>[Network Load Balancers] The static IP address.</p>
      */
     inline const Aws::Vector<LoadBalancerAddress>& GetLoadBalancerAddresses() const{ return m_loadBalancerAddresses; }
+
+    /**
+     * <p>[Network Load Balancers] The static IP address.</p>
+     */
+    inline bool LoadBalancerAddressesHasBeenSet() const { return m_loadBalancerAddressesHasBeenSet; }
 
     /**
      * <p>[Network Load Balancers] The static IP address.</p>

@@ -57,6 +57,9 @@ namespace Model
     inline const Aws::String& GetSuggesterName() const{ return m_suggesterName; }
 
     
+    inline bool SuggesterNameHasBeenSet() const { return m_suggesterNameHasBeenSet; }
+
+    
     inline void SetSuggesterName(const Aws::String& value) { m_suggesterNameHasBeenSet = true; m_suggesterName = value; }
 
     
@@ -77,6 +80,9 @@ namespace Model
 
     
     inline const DocumentSuggesterOptions& GetDocumentSuggesterOptions() const{ return m_documentSuggesterOptions; }
+
+    
+    inline bool DocumentSuggesterOptionsHasBeenSet() const { return m_documentSuggesterOptionsHasBeenSet; }
 
     
     inline void SetDocumentSuggesterOptions(const DocumentSuggesterOptions& value) { m_documentSuggesterOptionsHasBeenSet = true; m_documentSuggesterOptions = value; }

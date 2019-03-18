@@ -52,6 +52,11 @@ namespace Model
     /**
      * <p>The name of the log group.</p>
      */
+    inline bool LogGroupNameHasBeenSet() const { return m_logGroupNameHasBeenSet; }
+
+    /**
+     * <p>The name of the log group.</p>
+     */
     inline void SetLogGroupName(const Aws::String& value) { m_logGroupNameHasBeenSet = true; m_logGroupName = value; }
 
     /**
@@ -84,6 +89,11 @@ namespace Model
      * <p>The name of the log stream.</p>
      */
     inline const Aws::String& GetLogStreamName() const{ return m_logStreamName; }
+
+    /**
+     * <p>The name of the log stream.</p>
+     */
+    inline bool LogStreamNameHasBeenSet() const { return m_logStreamNameHasBeenSet; }
 
     /**
      * <p>The name of the log stream.</p>
@@ -130,6 +140,14 @@ namespace Model
      * than this time are included. Events with a timestamp earlier than this time are
      * not included.</p>
      */
+    inline bool StartTimeHasBeenSet() const { return m_startTimeHasBeenSet; }
+
+    /**
+     * <p>The start of the time range, expressed as the number of milliseconds after
+     * Jan 1, 1970 00:00:00 UTC. Events with a timestamp equal to this time or later
+     * than this time are included. Events with a timestamp earlier than this time are
+     * not included.</p>
+     */
     inline void SetStartTime(long long value) { m_startTimeHasBeenSet = true; m_startTime = value; }
 
     /**
@@ -153,6 +171,13 @@ namespace Model
      * 1, 1970 00:00:00 UTC. Events with a timestamp equal to or later than this time
      * are not included.</p>
      */
+    inline bool EndTimeHasBeenSet() const { return m_endTimeHasBeenSet; }
+
+    /**
+     * <p>The end of the time range, expressed as the number of milliseconds after Jan
+     * 1, 1970 00:00:00 UTC. Events with a timestamp equal to or later than this time
+     * are not included.</p>
+     */
     inline void SetEndTime(long long value) { m_endTimeHasBeenSet = true; m_endTime = value; }
 
     /**
@@ -168,6 +193,12 @@ namespace Model
      * a previous call.)</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
+    /**
+     * <p>The token for the next set of items to return. (You received this token from
+     * a previous call.)</p>
+     */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
      * <p>The token for the next set of items to return. (You received this token from
@@ -218,6 +249,13 @@ namespace Model
      * maximum is as many log events as can fit in a response size of 1 MB, up to
      * 10,000 log events.</p>
      */
+    inline bool LimitHasBeenSet() const { return m_limitHasBeenSet; }
+
+    /**
+     * <p>The maximum number of log events returned. If you don't specify a value, the
+     * maximum is as many log events as can fit in a response size of 1 MB, up to
+     * 10,000 log events.</p>
+     */
     inline void SetLimit(int value) { m_limitHasBeenSet = true; m_limit = value; }
 
     /**
@@ -234,6 +272,13 @@ namespace Model
      * false.</p>
      */
     inline bool GetStartFromHead() const{ return m_startFromHead; }
+
+    /**
+     * <p>If the value is true, the earliest log events are returned first. If the
+     * value is false, the latest log events are returned first. The default value is
+     * false.</p>
+     */
+    inline bool StartFromHeadHasBeenSet() const { return m_startFromHeadHasBeenSet; }
 
     /**
      * <p>If the value is true, the earliest log events are returned first. If the

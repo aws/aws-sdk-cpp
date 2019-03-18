@@ -54,6 +54,11 @@ namespace Model
     /**
      * <p>The distribution's ID.</p>
      */
+    inline bool DistributionIdHasBeenSet() const { return m_distributionIdHasBeenSet; }
+
+    /**
+     * <p>The distribution's ID.</p>
+     */
     inline void SetDistributionId(const Aws::String& value) { m_distributionIdHasBeenSet = true; m_distributionId = value; }
 
     /**
@@ -87,6 +92,12 @@ namespace Model
      * <code>IDFDVBD632BHDS5</code>.</p>
      */
     inline const Aws::String& GetId() const{ return m_id; }
+
+    /**
+     * <p>The identifier for the invalidation request, for example,
+     * <code>IDFDVBD632BHDS5</code>.</p>
+     */
+    inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
 
     /**
      * <p>The identifier for the invalidation request, for example,

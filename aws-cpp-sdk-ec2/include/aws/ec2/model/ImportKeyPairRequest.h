@@ -61,6 +61,14 @@ namespace Model
      * required permissions, the error response is <code>DryRunOperation</code>.
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
+    inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
+
+    /**
+     * <p>Checks whether you have the required permissions for the action, without
+     * actually making the request, and provides an error response. If you have the
+     * required permissions, the error response is <code>DryRunOperation</code>.
+     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+     */
     inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
 
     /**
@@ -76,6 +84,11 @@ namespace Model
      * <p>A unique name for the key pair.</p>
      */
     inline const Aws::String& GetKeyName() const{ return m_keyName; }
+
+    /**
+     * <p>A unique name for the key pair.</p>
+     */
+    inline bool KeyNameHasBeenSet() const { return m_keyNameHasBeenSet; }
 
     /**
      * <p>A unique name for the key pair.</p>
@@ -113,6 +126,12 @@ namespace Model
      * line tools, base64 encoding is performed for you.</p>
      */
     inline const Aws::Utils::ByteBuffer& GetPublicKeyMaterial() const{ return m_publicKeyMaterial; }
+
+    /**
+     * <p>The public key. For API calls, the text must be base64-encoded. For command
+     * line tools, base64 encoding is performed for you.</p>
+     */
+    inline bool PublicKeyMaterialHasBeenSet() const { return m_publicKeyMaterialHasBeenSet; }
 
     /**
      * <p>The public key. For API calls, the text must be base64-encoded. For command

@@ -56,6 +56,12 @@ namespace Model
      * <p>Describes updates to whether snapshots are enabled for a Java-based Kinesis
      * Data Analytics application.</p>
      */
+    inline bool SnapshotsEnabledUpdateHasBeenSet() const { return m_snapshotsEnabledUpdateHasBeenSet; }
+
+    /**
+     * <p>Describes updates to whether snapshots are enabled for a Java-based Kinesis
+     * Data Analytics application.</p>
+     */
     inline void SetSnapshotsEnabledUpdate(bool value) { m_snapshotsEnabledUpdateHasBeenSet = true; m_snapshotsEnabledUpdate = value; }
 
     /**

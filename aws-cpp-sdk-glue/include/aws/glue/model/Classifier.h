@@ -65,6 +65,11 @@ namespace Model
     /**
      * <p>A <code>GrokClassifier</code> object.</p>
      */
+    inline bool GrokClassifierHasBeenSet() const { return m_grokClassifierHasBeenSet; }
+
+    /**
+     * <p>A <code>GrokClassifier</code> object.</p>
+     */
     inline void SetGrokClassifier(const GrokClassifier& value) { m_grokClassifierHasBeenSet = true; m_grokClassifier = value; }
 
     /**
@@ -91,6 +96,11 @@ namespace Model
     /**
      * <p>An <code>XMLClassifier</code> object.</p>
      */
+    inline bool XMLClassifierHasBeenSet() const { return m_xMLClassifierHasBeenSet; }
+
+    /**
+     * <p>An <code>XMLClassifier</code> object.</p>
+     */
     inline void SetXMLClassifier(const XMLClassifier& value) { m_xMLClassifierHasBeenSet = true; m_xMLClassifier = value; }
 
     /**
@@ -113,6 +123,11 @@ namespace Model
      * <p>A <code>JsonClassifier</code> object.</p>
      */
     inline const JsonClassifier& GetJsonClassifier() const{ return m_jsonClassifier; }
+
+    /**
+     * <p>A <code>JsonClassifier</code> object.</p>
+     */
+    inline bool JsonClassifierHasBeenSet() const { return m_jsonClassifierHasBeenSet; }
 
     /**
      * <p>A <code>JsonClassifier</code> object.</p>

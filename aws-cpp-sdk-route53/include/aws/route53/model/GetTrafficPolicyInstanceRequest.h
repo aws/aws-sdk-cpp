@@ -56,6 +56,12 @@ namespace Model
      * <p>The ID of the traffic policy instance that you want to get information
      * about.</p>
      */
+    inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
+
+    /**
+     * <p>The ID of the traffic policy instance that you want to get information
+     * about.</p>
+     */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
     /**

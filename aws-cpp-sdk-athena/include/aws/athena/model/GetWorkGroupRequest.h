@@ -52,6 +52,11 @@ namespace Model
     /**
      * <p>The name of the workgroup.</p>
      */
+    inline bool WorkGroupHasBeenSet() const { return m_workGroupHasBeenSet; }
+
+    /**
+     * <p>The name of the workgroup.</p>
+     */
     inline void SetWorkGroup(const Aws::String& value) { m_workGroupHasBeenSet = true; m_workGroup = value; }
 
     /**

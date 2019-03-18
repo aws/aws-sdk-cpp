@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p>ARN of the resource associated with a license configuration.</p>
      */
+    inline bool ResourceArnHasBeenSet() const { return m_resourceArnHasBeenSet; }
+
+    /**
+     * <p>ARN of the resource associated with a license configuration.</p>
+     */
     inline void SetResourceArn(const Aws::String& value) { m_resourceArnHasBeenSet = true; m_resourceArn = value; }
 
     /**
@@ -94,6 +99,11 @@ namespace Model
     /**
      * <p>Type of resource associated with athe license configuration.</p>
      */
+    inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
+
+    /**
+     * <p>Type of resource associated with athe license configuration.</p>
+     */
     inline void SetResourceType(const ResourceType& value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
 
     /**
@@ -116,6 +126,11 @@ namespace Model
      * <p>Status of a resource associated with the license configuration.</p>
      */
     inline const Aws::String& GetResourceStatus() const{ return m_resourceStatus; }
+
+    /**
+     * <p>Status of a resource associated with the license configuration.</p>
+     */
+    inline bool ResourceStatusHasBeenSet() const { return m_resourceStatusHasBeenSet; }
 
     /**
      * <p>Status of a resource associated with the license configuration.</p>
@@ -153,6 +168,12 @@ namespace Model
      * configuration.</p>
      */
     inline const Aws::String& GetResourceOwnerId() const{ return m_resourceOwnerId; }
+
+    /**
+     * <p>ID of the account that owns a resource that is associated with the license
+     * configuration.</p>
+     */
+    inline bool ResourceOwnerIdHasBeenSet() const { return m_resourceOwnerIdHasBeenSet; }
 
     /**
      * <p>ID of the account that owns a resource that is associated with the license
@@ -201,6 +222,12 @@ namespace Model
      * <p>Time when the license configuration was initially associated with a
      * resource.</p>
      */
+    inline bool AssociationTimeHasBeenSet() const { return m_associationTimeHasBeenSet; }
+
+    /**
+     * <p>Time when the license configuration was initially associated with a
+     * resource.</p>
+     */
     inline void SetAssociationTime(const Aws::Utils::DateTime& value) { m_associationTimeHasBeenSet = true; m_associationTime = value; }
 
     /**
@@ -227,6 +254,12 @@ namespace Model
      * configuration.</p>
      */
     inline long long GetConsumedLicenses() const{ return m_consumedLicenses; }
+
+    /**
+     * <p>Number of licenses consumed out of the total provisioned in the license
+     * configuration.</p>
+     */
+    inline bool ConsumedLicensesHasBeenSet() const { return m_consumedLicensesHasBeenSet; }
 
     /**
      * <p>Number of licenses consumed out of the total provisioned in the license

@@ -65,6 +65,12 @@ namespace Model
      * <p>The ARN of the IAM role under which Amazon SES publishes email sending events
      * to the Amazon Kinesis Firehose stream.</p>
      */
+    inline bool IAMRoleARNHasBeenSet() const { return m_iAMRoleARNHasBeenSet; }
+
+    /**
+     * <p>The ARN of the IAM role under which Amazon SES publishes email sending events
+     * to the Amazon Kinesis Firehose stream.</p>
+     */
     inline void SetIAMRoleARN(const Aws::String& value) { m_iAMRoleARNHasBeenSet = true; m_iAMRoleARN = value; }
 
     /**
@@ -103,6 +109,12 @@ namespace Model
      * should be published to.</p>
      */
     inline const Aws::String& GetDeliveryStreamARN() const{ return m_deliveryStreamARN; }
+
+    /**
+     * <p>The ARN of the Amazon Kinesis Firehose stream that email sending events
+     * should be published to.</p>
+     */
+    inline bool DeliveryStreamARNHasBeenSet() const { return m_deliveryStreamARNHasBeenSet; }
 
     /**
      * <p>The ARN of the Amazon Kinesis Firehose stream that email sending events

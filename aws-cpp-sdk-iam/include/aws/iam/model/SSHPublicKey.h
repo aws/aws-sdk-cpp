@@ -61,6 +61,11 @@ namespace Model
     /**
      * <p>The name of the IAM user associated with the SSH public key.</p>
      */
+    inline bool UserNameHasBeenSet() const { return m_userNameHasBeenSet; }
+
+    /**
+     * <p>The name of the IAM user associated with the SSH public key.</p>
+     */
     inline void SetUserName(const Aws::String& value) { m_userNameHasBeenSet = true; m_userName = value; }
 
     /**
@@ -93,6 +98,11 @@ namespace Model
      * <p>The unique identifier for the SSH public key.</p>
      */
     inline const Aws::String& GetSSHPublicKeyId() const{ return m_sSHPublicKeyId; }
+
+    /**
+     * <p>The unique identifier for the SSH public key.</p>
+     */
+    inline bool SSHPublicKeyIdHasBeenSet() const { return m_sSHPublicKeyIdHasBeenSet; }
 
     /**
      * <p>The unique identifier for the SSH public key.</p>
@@ -133,6 +143,11 @@ namespace Model
     /**
      * <p>The MD5 message digest of the SSH public key.</p>
      */
+    inline bool FingerprintHasBeenSet() const { return m_fingerprintHasBeenSet; }
+
+    /**
+     * <p>The MD5 message digest of the SSH public key.</p>
+     */
     inline void SetFingerprint(const Aws::String& value) { m_fingerprintHasBeenSet = true; m_fingerprint = value; }
 
     /**
@@ -165,6 +180,11 @@ namespace Model
      * <p>The SSH public key.</p>
      */
     inline const Aws::String& GetSSHPublicKeyBody() const{ return m_sSHPublicKeyBody; }
+
+    /**
+     * <p>The SSH public key.</p>
+     */
+    inline bool SSHPublicKeyBodyHasBeenSet() const { return m_sSHPublicKeyBodyHasBeenSet; }
 
     /**
      * <p>The SSH public key.</p>
@@ -209,6 +229,13 @@ namespace Model
      * be used for authentication with an AWS CodeCommit repository.
      * <code>Inactive</code> means that the key cannot be used.</p>
      */
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
+
+    /**
+     * <p>The status of the SSH public key. <code>Active</code> means that the key can
+     * be used for authentication with an AWS CodeCommit repository.
+     * <code>Inactive</code> means that the key cannot be used.</p>
+     */
     inline void SetStatus(const StatusType& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
@@ -238,6 +265,12 @@ namespace Model
      * date-time format</a>, when the SSH public key was uploaded.</p>
      */
     inline const Aws::Utils::DateTime& GetUploadDate() const{ return m_uploadDate; }
+
+    /**
+     * <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601
+     * date-time format</a>, when the SSH public key was uploaded.</p>
+     */
+    inline bool UploadDateHasBeenSet() const { return m_uploadDateHasBeenSet; }
 
     /**
      * <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601

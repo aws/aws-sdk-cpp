@@ -56,6 +56,11 @@ namespace Model
     /**
      * key used to extract the password from EC2 Parameter store
      */
+    inline bool PasswordParamHasBeenSet() const { return m_passwordParamHasBeenSet; }
+
+    /**
+     * key used to extract the password from EC2 Parameter store
+     */
     inline void SetPasswordParam(const Aws::String& value) { m_passwordParamHasBeenSet = true; m_passwordParam = value; }
 
     /**
@@ -88,6 +93,11 @@ namespace Model
      * Stream name for RTMP destinations (URLs of type rtmp://)
      */
     inline const Aws::String& GetStreamName() const{ return m_streamName; }
+
+    /**
+     * Stream name for RTMP destinations (URLs of type rtmp://)
+     */
+    inline bool StreamNameHasBeenSet() const { return m_streamNameHasBeenSet; }
 
     /**
      * Stream name for RTMP destinations (URLs of type rtmp://)
@@ -128,6 +138,11 @@ namespace Model
     /**
      * A URL specifying a destination
      */
+    inline bool UrlHasBeenSet() const { return m_urlHasBeenSet; }
+
+    /**
+     * A URL specifying a destination
+     */
     inline void SetUrl(const Aws::String& value) { m_urlHasBeenSet = true; m_url = value; }
 
     /**
@@ -160,6 +175,11 @@ namespace Model
      * username for destination
      */
     inline const Aws::String& GetUsername() const{ return m_username; }
+
+    /**
+     * username for destination
+     */
+    inline bool UsernameHasBeenSet() const { return m_usernameHasBeenSet; }
 
     /**
      * username for destination

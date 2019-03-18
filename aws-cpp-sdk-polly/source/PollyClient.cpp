@@ -113,6 +113,11 @@ void PollyClient::OverrideEndpoint(const Aws::String& endpoint)
 }
 DeleteLexiconOutcome PollyClient::DeleteLexicon(const DeleteLexiconRequest& request) const
 {
+  if (!request.NameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteLexicon", "Required field: Name, is not set");
+    return DeleteLexiconOutcome(Aws::Client::AWSError<PollyErrors>(PollyErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Name]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/v1/lexicons/";
@@ -184,6 +189,11 @@ void PollyClient::DescribeVoicesAsyncHelper(const DescribeVoicesRequest& request
 
 GetLexiconOutcome PollyClient::GetLexicon(const GetLexiconRequest& request) const
 {
+  if (!request.NameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetLexicon", "Required field: Name, is not set");
+    return GetLexiconOutcome(Aws::Client::AWSError<PollyErrors>(PollyErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Name]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/v1/lexicons/";
@@ -220,6 +230,11 @@ void PollyClient::GetLexiconAsyncHelper(const GetLexiconRequest& request, const 
 
 GetSpeechSynthesisTaskOutcome PollyClient::GetSpeechSynthesisTask(const GetSpeechSynthesisTaskRequest& request) const
 {
+  if (!request.TaskIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetSpeechSynthesisTask", "Required field: TaskId, is not set");
+    return GetSpeechSynthesisTaskOutcome(Aws::Client::AWSError<PollyErrors>(PollyErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [TaskId]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/v1/synthesisTasks/";
@@ -326,6 +341,11 @@ void PollyClient::ListSpeechSynthesisTasksAsyncHelper(const ListSpeechSynthesisT
 
 PutLexiconOutcome PollyClient::PutLexicon(const PutLexiconRequest& request) const
 {
+  if (!request.NameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("PutLexicon", "Required field: Name, is not set");
+    return PutLexiconOutcome(Aws::Client::AWSError<PollyErrors>(PollyErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Name]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/v1/lexicons/";

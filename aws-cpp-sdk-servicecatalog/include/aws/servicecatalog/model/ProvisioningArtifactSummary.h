@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p>The identifier of the provisioning artifact.</p>
      */
+    inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
+
+    /**
+     * <p>The identifier of the provisioning artifact.</p>
+     */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
     /**
@@ -90,6 +95,11 @@ namespace Model
      * <p>The name of the provisioning artifact.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
+
+    /**
+     * <p>The name of the provisioning artifact.</p>
+     */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
      * <p>The name of the provisioning artifact.</p>
@@ -130,6 +140,11 @@ namespace Model
     /**
      * <p>The description of the provisioning artifact.</p>
      */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
+
+    /**
+     * <p>The description of the provisioning artifact.</p>
+     */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
@@ -166,6 +181,11 @@ namespace Model
     /**
      * <p>The UTC time stamp of the creation time.</p>
      */
+    inline bool CreatedTimeHasBeenSet() const { return m_createdTimeHasBeenSet; }
+
+    /**
+     * <p>The UTC time stamp of the creation time.</p>
+     */
     inline void SetCreatedTime(const Aws::Utils::DateTime& value) { m_createdTimeHasBeenSet = true; m_createdTime = value; }
 
     /**
@@ -189,6 +209,12 @@ namespace Model
      * products.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetProvisioningArtifactMetadata() const{ return m_provisioningArtifactMetadata; }
+
+    /**
+     * <p>The metadata for the provisioning artifact. This is used with AWS Marketplace
+     * products.</p>
+     */
+    inline bool ProvisioningArtifactMetadataHasBeenSet() const { return m_provisioningArtifactMetadataHasBeenSet; }
 
     /**
      * <p>The metadata for the provisioning artifact. This is used with AWS Marketplace

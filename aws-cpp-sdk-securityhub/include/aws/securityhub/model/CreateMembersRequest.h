@@ -53,6 +53,12 @@ namespace Model
      * <p>A list of account ID and email address pairs of the accounts that you want to
      * associate with the master Security Hub account.</p>
      */
+    inline bool AccountDetailsHasBeenSet() const { return m_accountDetailsHasBeenSet; }
+
+    /**
+     * <p>A list of account ID and email address pairs of the accounts that you want to
+     * associate with the master Security Hub account.</p>
+     */
     inline void SetAccountDetails(const Aws::Vector<AccountDetails>& value) { m_accountDetailsHasBeenSet = true; m_accountDetails = value; }
 
     /**

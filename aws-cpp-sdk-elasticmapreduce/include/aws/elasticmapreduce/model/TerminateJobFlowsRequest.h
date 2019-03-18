@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>A list of job flows to be shutdown.</p>
      */
+    inline bool JobFlowIdsHasBeenSet() const { return m_jobFlowIdsHasBeenSet; }
+
+    /**
+     * <p>A list of job flows to be shutdown.</p>
+     */
     inline void SetJobFlowIds(const Aws::Vector<Aws::String>& value) { m_jobFlowIdsHasBeenSet = true; m_jobFlowIds = value; }
 
     /**

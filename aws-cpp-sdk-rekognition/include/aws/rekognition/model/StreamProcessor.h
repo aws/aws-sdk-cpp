@@ -60,6 +60,11 @@ namespace Model
     /**
      * <p>Name of the Amazon Rekognition stream processor. </p>
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>Name of the Amazon Rekognition stream processor. </p>
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
@@ -92,6 +97,11 @@ namespace Model
      * <p>Current status of the Amazon Rekognition stream processor.</p>
      */
     inline const StreamProcessorStatus& GetStatus() const{ return m_status; }
+
+    /**
+     * <p>Current status of the Amazon Rekognition stream processor.</p>
+     */
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
     /**
      * <p>Current status of the Amazon Rekognition stream processor.</p>

@@ -59,6 +59,11 @@ namespace Model
     /**
      * <p>The public IPv4 address range, in CIDR notation.</p>
      */
+    inline bool CidrHasBeenSet() const { return m_cidrHasBeenSet; }
+
+    /**
+     * <p>The public IPv4 address range, in CIDR notation.</p>
+     */
     inline void SetCidr(const Aws::String& value) { m_cidrHasBeenSet = true; m_cidr = value; }
 
     /**
@@ -91,6 +96,11 @@ namespace Model
      * <p>The description of the address range.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
+
+    /**
+     * <p>The description of the address range.</p>
+     */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
 
     /**
      * <p>The description of the address range.</p>
@@ -133,6 +143,12 @@ namespace Model
      * <p>Upon success, contains the ID of the address pool. Otherwise, contains an
      * error message.</p>
      */
+    inline bool StatusMessageHasBeenSet() const { return m_statusMessageHasBeenSet; }
+
+    /**
+     * <p>Upon success, contains the ID of the address pool. Otherwise, contains an
+     * error message.</p>
+     */
     inline void SetStatusMessage(const Aws::String& value) { m_statusMessageHasBeenSet = true; m_statusMessage = value; }
 
     /**
@@ -170,6 +186,11 @@ namespace Model
      * <p>The state of the address pool.</p>
      */
     inline const ByoipCidrState& GetState() const{ return m_state; }
+
+    /**
+     * <p>The state of the address pool.</p>
+     */
+    inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
 
     /**
      * <p>The state of the address pool.</p>

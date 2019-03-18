@@ -62,6 +62,12 @@ namespace Model
      * <p> Contains a user-supplied global database cluster identifier. This identifier
      * is the unique key that identifies a global database cluster. </p>
      */
+    inline bool GlobalClusterIdentifierHasBeenSet() const { return m_globalClusterIdentifierHasBeenSet; }
+
+    /**
+     * <p> Contains a user-supplied global database cluster identifier. This identifier
+     * is the unique key that identifies a global database cluster. </p>
+     */
     inline void SetGlobalClusterIdentifier(const Aws::String& value) { m_globalClusterIdentifierHasBeenSet = true; m_globalClusterIdentifier = value; }
 
     /**
@@ -101,6 +107,13 @@ namespace Model
      * for the DB cluster is accessed. </p>
      */
     inline const Aws::String& GetGlobalClusterResourceId() const{ return m_globalClusterResourceId; }
+
+    /**
+     * <p> The AWS Region-unique, immutable identifier for the global database cluster.
+     * This identifier is found in AWS CloudTrail log entries whenever the AWS KMS key
+     * for the DB cluster is accessed. </p>
+     */
+    inline bool GlobalClusterResourceIdHasBeenSet() const { return m_globalClusterResourceIdHasBeenSet; }
 
     /**
      * <p> The AWS Region-unique, immutable identifier for the global database cluster.
@@ -153,6 +166,11 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) for the global database cluster.</p>
      */
+    inline bool GlobalClusterArnHasBeenSet() const { return m_globalClusterArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) for the global database cluster.</p>
+     */
     inline void SetGlobalClusterArn(const Aws::String& value) { m_globalClusterArnHasBeenSet = true; m_globalClusterArn = value; }
 
     /**
@@ -185,6 +203,11 @@ namespace Model
      * <p>Specifies the current state of this global database cluster.</p>
      */
     inline const Aws::String& GetStatus() const{ return m_status; }
+
+    /**
+     * <p>Specifies the current state of this global database cluster.</p>
+     */
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
     /**
      * <p>Specifies the current state of this global database cluster.</p>
@@ -225,6 +248,11 @@ namespace Model
     /**
      * <p> The Aurora database engine used by the global database cluster. </p>
      */
+    inline bool EngineHasBeenSet() const { return m_engineHasBeenSet; }
+
+    /**
+     * <p> The Aurora database engine used by the global database cluster. </p>
+     */
     inline void SetEngine(const Aws::String& value) { m_engineHasBeenSet = true; m_engine = value; }
 
     /**
@@ -257,6 +285,11 @@ namespace Model
      * <p>Indicates the database engine version.</p>
      */
     inline const Aws::String& GetEngineVersion() const{ return m_engineVersion; }
+
+    /**
+     * <p>Indicates the database engine version.</p>
+     */
+    inline bool EngineVersionHasBeenSet() const { return m_engineVersionHasBeenSet; }
 
     /**
      * <p>Indicates the database engine version.</p>
@@ -297,6 +330,11 @@ namespace Model
     /**
      * <p> The default database name within the new global database cluster. </p>
      */
+    inline bool DatabaseNameHasBeenSet() const { return m_databaseNameHasBeenSet; }
+
+    /**
+     * <p> The default database name within the new global database cluster. </p>
+     */
     inline void SetDatabaseName(const Aws::String& value) { m_databaseNameHasBeenSet = true; m_databaseName = value; }
 
     /**
@@ -333,6 +371,11 @@ namespace Model
     /**
      * <p> The storage encryption setting for the global database cluster. </p>
      */
+    inline bool StorageEncryptedHasBeenSet() const { return m_storageEncryptedHasBeenSet; }
+
+    /**
+     * <p> The storage encryption setting for the global database cluster. </p>
+     */
     inline void SetStorageEncrypted(bool value) { m_storageEncryptedHasBeenSet = true; m_storageEncrypted = value; }
 
     /**
@@ -345,6 +388,11 @@ namespace Model
      * <p> The deletion protection setting for the new global database cluster. </p>
      */
     inline bool GetDeletionProtection() const{ return m_deletionProtection; }
+
+    /**
+     * <p> The deletion protection setting for the new global database cluster. </p>
+     */
+    inline bool DeletionProtectionHasBeenSet() const { return m_deletionProtectionHasBeenSet; }
 
     /**
      * <p> The deletion protection setting for the new global database cluster. </p>
@@ -362,6 +410,12 @@ namespace Model
      * cluster. Currently limited to 1 item. </p>
      */
     inline const Aws::Vector<GlobalClusterMember>& GetGlobalClusterMembers() const{ return m_globalClusterMembers; }
+
+    /**
+     * <p> The list of cluster IDs for secondary clusters within the global database
+     * cluster. Currently limited to 1 item. </p>
+     */
+    inline bool GlobalClusterMembersHasBeenSet() const { return m_globalClusterMembersHasBeenSet; }
 
     /**
      * <p> The list of cluster IDs for secondary clusters within the global database

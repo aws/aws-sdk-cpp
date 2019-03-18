@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p>The ID of the virtual private gateway.</p>
      */
+    inline bool GatewayIdHasBeenSet() const { return m_gatewayIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the virtual private gateway.</p>
+     */
     inline void SetGatewayId(const Aws::String& value) { m_gatewayIdHasBeenSet = true; m_gatewayId = value; }
 
     /**

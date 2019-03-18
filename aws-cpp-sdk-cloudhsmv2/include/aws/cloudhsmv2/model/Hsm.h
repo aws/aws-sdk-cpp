@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The Availability Zone that contains the HSM.</p>
      */
+    inline bool AvailabilityZoneHasBeenSet() const { return m_availabilityZoneHasBeenSet; }
+
+    /**
+     * <p>The Availability Zone that contains the HSM.</p>
+     */
     inline void SetAvailabilityZone(const Aws::String& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = value; }
 
     /**
@@ -89,6 +94,11 @@ namespace Model
      * <p>The identifier (ID) of the cluster that contains the HSM.</p>
      */
     inline const Aws::String& GetClusterId() const{ return m_clusterId; }
+
+    /**
+     * <p>The identifier (ID) of the cluster that contains the HSM.</p>
+     */
+    inline bool ClusterIdHasBeenSet() const { return m_clusterIdHasBeenSet; }
 
     /**
      * <p>The identifier (ID) of the cluster that contains the HSM.</p>
@@ -129,6 +139,11 @@ namespace Model
     /**
      * <p>The subnet that contains the HSM's elastic network interface (ENI).</p>
      */
+    inline bool SubnetIdHasBeenSet() const { return m_subnetIdHasBeenSet; }
+
+    /**
+     * <p>The subnet that contains the HSM's elastic network interface (ENI).</p>
+     */
     inline void SetSubnetId(const Aws::String& value) { m_subnetIdHasBeenSet = true; m_subnetId = value; }
 
     /**
@@ -161,6 +176,11 @@ namespace Model
      * <p>The identifier (ID) of the HSM's elastic network interface (ENI).</p>
      */
     inline const Aws::String& GetEniId() const{ return m_eniId; }
+
+    /**
+     * <p>The identifier (ID) of the HSM's elastic network interface (ENI).</p>
+     */
+    inline bool EniIdHasBeenSet() const { return m_eniIdHasBeenSet; }
 
     /**
      * <p>The identifier (ID) of the HSM's elastic network interface (ENI).</p>
@@ -201,6 +221,11 @@ namespace Model
     /**
      * <p>The IP address of the HSM's elastic network interface (ENI).</p>
      */
+    inline bool EniIpHasBeenSet() const { return m_eniIpHasBeenSet; }
+
+    /**
+     * <p>The IP address of the HSM's elastic network interface (ENI).</p>
+     */
     inline void SetEniIp(const Aws::String& value) { m_eniIpHasBeenSet = true; m_eniIp = value; }
 
     /**
@@ -233,6 +258,11 @@ namespace Model
      * <p>The HSM's identifier (ID).</p>
      */
     inline const Aws::String& GetHsmId() const{ return m_hsmId; }
+
+    /**
+     * <p>The HSM's identifier (ID).</p>
+     */
+    inline bool HsmIdHasBeenSet() const { return m_hsmIdHasBeenSet; }
 
     /**
      * <p>The HSM's identifier (ID).</p>
@@ -273,6 +303,11 @@ namespace Model
     /**
      * <p>The HSM's state.</p>
      */
+    inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
+
+    /**
+     * <p>The HSM's state.</p>
+     */
     inline void SetState(const HsmState& value) { m_stateHasBeenSet = true; m_state = value; }
 
     /**
@@ -295,6 +330,11 @@ namespace Model
      * <p>A description of the HSM's state.</p>
      */
     inline const Aws::String& GetStateMessage() const{ return m_stateMessage; }
+
+    /**
+     * <p>A description of the HSM's state.</p>
+     */
+    inline bool StateMessageHasBeenSet() const { return m_stateMessageHasBeenSet; }
 
     /**
      * <p>A description of the HSM's state.</p>

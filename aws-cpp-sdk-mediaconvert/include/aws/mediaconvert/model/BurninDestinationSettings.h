@@ -57,6 +57,9 @@ namespace Model
     inline const BurninSubtitleAlignment& GetAlignment() const{ return m_alignment; }
 
     
+    inline bool AlignmentHasBeenSet() const { return m_alignmentHasBeenSet; }
+
+    
     inline void SetAlignment(const BurninSubtitleAlignment& value) { m_alignmentHasBeenSet = true; m_alignment = value; }
 
     
@@ -71,6 +74,9 @@ namespace Model
 
     
     inline const BurninSubtitleBackgroundColor& GetBackgroundColor() const{ return m_backgroundColor; }
+
+    
+    inline bool BackgroundColorHasBeenSet() const { return m_backgroundColorHasBeenSet; }
 
     
     inline void SetBackgroundColor(const BurninSubtitleBackgroundColor& value) { m_backgroundColorHasBeenSet = true; m_backgroundColor = value; }
@@ -97,6 +103,13 @@ namespace Model
      * transparent. Leaving this parameter blank is equivalent to setting it to 0
      * (transparent). All burn-in and DVB-Sub font settings must match.
      */
+    inline bool BackgroundOpacityHasBeenSet() const { return m_backgroundOpacityHasBeenSet; }
+
+    /**
+     * Specifies the opacity of the background rectangle. 255 is opaque; 0 is
+     * transparent. Leaving this parameter blank is equivalent to setting it to 0
+     * (transparent). All burn-in and DVB-Sub font settings must match.
+     */
     inline void SetBackgroundOpacity(int value) { m_backgroundOpacityHasBeenSet = true; m_backgroundOpacity = value; }
 
     /**
@@ -109,6 +122,9 @@ namespace Model
 
     
     inline const BurninSubtitleFontColor& GetFontColor() const{ return m_fontColor; }
+
+    
+    inline bool FontColorHasBeenSet() const { return m_fontColorHasBeenSet; }
 
     
     inline void SetFontColor(const BurninSubtitleFontColor& value) { m_fontColorHasBeenSet = true; m_fontColor = value; }
@@ -129,6 +145,13 @@ namespace Model
 All burn-in and DVB-Sub font settings must match.
      */
     inline int GetFontOpacity() const{ return m_fontOpacity; }
+
+    /**
+     * Specifies the opacity of the burned-in captions. 255 is opaque; 0 is
+     * transparent.
+All burn-in and DVB-Sub font settings must match.
+     */
+    inline bool FontOpacityHasBeenSet() const { return m_fontOpacityHasBeenSet; }
 
     /**
      * Specifies the opacity of the burned-in captions. 255 is opaque; 0 is
@@ -157,6 +180,13 @@ All burn-in and
 All burn-in and
      * DVB-Sub font settings must match.
      */
+    inline bool FontResolutionHasBeenSet() const { return m_fontResolutionHasBeenSet; }
+
+    /**
+     * Font resolution in DPI (dots per inch); default is 96 dpi.
+All burn-in and
+     * DVB-Sub font settings must match.
+     */
     inline void SetFontResolution(int value) { m_fontResolutionHasBeenSet = true; m_fontResolution = value; }
 
     /**
@@ -174,6 +204,14 @@ All burn-in and
      * to help determine the appropriate font for rendering burn-in captions.
      */
     inline const FontScript& GetFontScript() const{ return m_fontScript; }
+
+    /**
+     * Provide the font script, using an ISO 15924 script code, if the LanguageCode is
+     * not sufficient for determining the script type. Where LanguageCode or
+     * CustomLanguageCode is sufficient, use "AUTOMATIC" or leave unset. This is used
+     * to help determine the appropriate font for rendering burn-in captions.
+     */
+    inline bool FontScriptHasBeenSet() const { return m_fontScriptHasBeenSet; }
 
     /**
      * Provide the font script, using an ISO 15924 script code, if the LanguageCode is
@@ -218,6 +256,12 @@ All burn-in and
      * A positive integer indicates the exact font size in points. Set to 0 for
      * automatic font size selection. All burn-in and DVB-Sub font settings must match.
      */
+    inline bool FontSizeHasBeenSet() const { return m_fontSizeHasBeenSet; }
+
+    /**
+     * A positive integer indicates the exact font size in points. Set to 0 for
+     * automatic font size selection. All burn-in and DVB-Sub font settings must match.
+     */
     inline void SetFontSize(int value) { m_fontSizeHasBeenSet = true; m_fontSize = value; }
 
     /**
@@ -229,6 +273,9 @@ All burn-in and
 
     
     inline const BurninSubtitleOutlineColor& GetOutlineColor() const{ return m_outlineColor; }
+
+    
+    inline bool OutlineColorHasBeenSet() const { return m_outlineColorHasBeenSet; }
 
     
     inline void SetOutlineColor(const BurninSubtitleOutlineColor& value) { m_outlineColorHasBeenSet = true; m_outlineColor = value; }
@@ -257,6 +304,14 @@ All burn-in and
      * already pre-defined by the caption stream. All burn-in and DVB-Sub font settings
      * must match.
      */
+    inline bool OutlineSizeHasBeenSet() const { return m_outlineSizeHasBeenSet; }
+
+    /**
+     * Specifies font outline size in pixels. This option is not valid for source
+     * captions that are either 608/embedded or teletext. These source settings are
+     * already pre-defined by the caption stream. All burn-in and DVB-Sub font settings
+     * must match.
+     */
     inline void SetOutlineSize(int value) { m_outlineSizeHasBeenSet = true; m_outlineSize = value; }
 
     /**
@@ -270,6 +325,9 @@ All burn-in and
 
     
     inline const BurninSubtitleShadowColor& GetShadowColor() const{ return m_shadowColor; }
+
+    
+    inline bool ShadowColorHasBeenSet() const { return m_shadowColorHasBeenSet; }
 
     
     inline void SetShadowColor(const BurninSubtitleShadowColor& value) { m_shadowColorHasBeenSet = true; m_shadowColor = value; }
@@ -290,6 +348,13 @@ All burn-in and
      * and DVB-Sub font settings must match.
      */
     inline int GetShadowOpacity() const{ return m_shadowOpacity; }
+
+    /**
+     * Specifies the opacity of the shadow. 255 is opaque; 0 is transparent. Leaving
+     * this parameter blank is equivalent to setting it to 0 (transparent). All burn-in
+     * and DVB-Sub font settings must match.
+     */
+    inline bool ShadowOpacityHasBeenSet() const { return m_shadowOpacityHasBeenSet; }
 
     /**
      * Specifies the opacity of the shadow. 255 is opaque; 0 is transparent. Leaving
@@ -318,6 +383,13 @@ All burn-in and
      * pixels. A value of -2 would result in a shadow offset 2 pixels to the left. All
      * burn-in and DVB-Sub font settings must match.
      */
+    inline bool ShadowXOffsetHasBeenSet() const { return m_shadowXOffsetHasBeenSet; }
+
+    /**
+     * Specifies the horizontal offset of the shadow relative to the captions in
+     * pixels. A value of -2 would result in a shadow offset 2 pixels to the left. All
+     * burn-in and DVB-Sub font settings must match.
+     */
     inline void SetShadowXOffset(int value) { m_shadowXOffsetHasBeenSet = true; m_shadowXOffset = value; }
 
     /**
@@ -340,6 +412,13 @@ All burn-in and
      * A value of -2 would result in a shadow offset 2 pixels above the text. All
      * burn-in and DVB-Sub font settings must match.
      */
+    inline bool ShadowYOffsetHasBeenSet() const { return m_shadowYOffsetHasBeenSet; }
+
+    /**
+     * Specifies the vertical offset of the shadow relative to the captions in pixels.
+     * A value of -2 would result in a shadow offset 2 pixels above the text. All
+     * burn-in and DVB-Sub font settings must match.
+     */
     inline void SetShadowYOffset(int value) { m_shadowYOffsetHasBeenSet = true; m_shadowYOffset = value; }
 
     /**
@@ -352,6 +431,9 @@ All burn-in and
 
     
     inline const BurninSubtitleTeletextSpacing& GetTeletextSpacing() const{ return m_teletextSpacing; }
+
+    
+    inline bool TeletextSpacingHasBeenSet() const { return m_teletextSpacingHasBeenSet; }
 
     
     inline void SetTeletextSpacing(const BurninSubtitleTeletextSpacing& value) { m_teletextSpacingHasBeenSet = true; m_teletextSpacing = value; }
@@ -386,6 +468,17 @@ All burn-in and
      * These source settings are already pre-defined by the caption stream. All burn-in
      * and DVB-Sub font settings must match.
      */
+    inline bool XPositionHasBeenSet() const { return m_xPositionHasBeenSet; }
+
+    /**
+     * Specifies the horizontal position of the caption relative to the left side of
+     * the output in pixels. A value of 10 would result in the captions starting 10
+     * pixels from the left of the output. If no explicit x_position is provided, the
+     * horizontal caption position will be determined by the alignment parameter. This
+     * option is not valid for source captions that are STL, 608/embedded or teletext.
+     * These source settings are already pre-defined by the caption stream. All burn-in
+     * and DVB-Sub font settings must match.
+     */
     inline void SetXPosition(int value) { m_xPositionHasBeenSet = true; m_xPosition = value; }
 
     /**
@@ -410,6 +503,17 @@ All burn-in and
      * settings must match.
      */
     inline int GetYPosition() const{ return m_yPosition; }
+
+    /**
+     * Specifies the vertical position of the caption relative to the top of the output
+     * in pixels. A value of 10 would result in the captions starting 10 pixels from
+     * the top of the output. If no explicit y_position is provided, the caption will
+     * be positioned towards the bottom of the output. This option is not valid for
+     * source captions that are STL, 608/embedded or teletext. These source settings
+     * are already pre-defined by the caption stream. All burn-in and DVB-Sub font
+     * settings must match.
+     */
+    inline bool YPositionHasBeenSet() const { return m_yPositionHasBeenSet; }
 
     /**
      * Specifies the vertical position of the caption relative to the top of the output

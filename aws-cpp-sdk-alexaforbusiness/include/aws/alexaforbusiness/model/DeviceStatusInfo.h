@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>One or more device status detail descriptions.</p>
      */
+    inline bool DeviceStatusDetailsHasBeenSet() const { return m_deviceStatusDetailsHasBeenSet; }
+
+    /**
+     * <p>One or more device status detail descriptions.</p>
+     */
     inline void SetDeviceStatusDetails(const Aws::Vector<DeviceStatusDetail>& value) { m_deviceStatusDetailsHasBeenSet = true; m_deviceStatusDetails = value; }
 
     /**
@@ -90,6 +95,12 @@ namespace Model
      * </p>
      */
     inline const ConnectionStatus& GetConnectionStatus() const{ return m_connectionStatus; }
+
+    /**
+     * <p>The latest available information about the connection status of a device.
+     * </p>
+     */
+    inline bool ConnectionStatusHasBeenSet() const { return m_connectionStatusHasBeenSet; }
 
     /**
      * <p>The latest available information about the connection status of a device.

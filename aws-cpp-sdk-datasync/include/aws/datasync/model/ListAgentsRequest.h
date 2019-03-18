@@ -55,6 +55,11 @@ namespace Model
     /**
      * <p>The maximum number of agents to list.</p>
      */
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
+
+    /**
+     * <p>The maximum number of agents to list.</p>
+     */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
@@ -68,6 +73,12 @@ namespace Model
      * of agents.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
+    /**
+     * <p>An opaque string that indicates the position at which to begin the next list
+     * of agents.</p>
+     */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
      * <p>An opaque string that indicates the position at which to begin the next list

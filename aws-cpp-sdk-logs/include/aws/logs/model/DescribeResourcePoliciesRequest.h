@@ -48,6 +48,9 @@ namespace Model
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
+
+    
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
     
@@ -71,6 +74,12 @@ namespace Model
      * API.</p>
      */
     inline int GetLimit() const{ return m_limit; }
+
+    /**
+     * <p>The maximum number of resource policies to be displayed with one call of this
+     * API.</p>
+     */
+    inline bool LimitHasBeenSet() const { return m_limitHasBeenSet; }
 
     /**
      * <p>The maximum number of resource policies to be displayed with one call of this

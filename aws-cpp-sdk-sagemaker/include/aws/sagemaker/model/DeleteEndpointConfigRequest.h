@@ -52,6 +52,11 @@ namespace Model
     /**
      * <p>The name of the endpoint configuration that you want to delete.</p>
      */
+    inline bool EndpointConfigNameHasBeenSet() const { return m_endpointConfigNameHasBeenSet; }
+
+    /**
+     * <p>The name of the endpoint configuration that you want to delete.</p>
+     */
     inline void SetEndpointConfigName(const Aws::String& value) { m_endpointConfigNameHasBeenSet = true; m_endpointConfigName = value; }
 
     /**

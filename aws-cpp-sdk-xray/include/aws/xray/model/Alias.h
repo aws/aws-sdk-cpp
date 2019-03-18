@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The canonical name of the alias.</p>
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>The canonical name of the alias.</p>
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
@@ -88,6 +93,11 @@ namespace Model
      * <p>A list of names for the alias, including the canonical name.</p>
      */
     inline const Aws::Vector<Aws::String>& GetNames() const{ return m_names; }
+
+    /**
+     * <p>A list of names for the alias, including the canonical name.</p>
+     */
+    inline bool NamesHasBeenSet() const { return m_namesHasBeenSet; }
 
     /**
      * <p>A list of names for the alias, including the canonical name.</p>
@@ -129,6 +139,11 @@ namespace Model
      * <p>The type of the alias.</p>
      */
     inline const Aws::String& GetType() const{ return m_type; }
+
+    /**
+     * <p>The type of the alias.</p>
+     */
+    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
 
     /**
      * <p>The type of the alias.</p>

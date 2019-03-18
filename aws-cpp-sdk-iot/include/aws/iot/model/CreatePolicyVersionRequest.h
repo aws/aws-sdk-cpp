@@ -60,6 +60,11 @@ namespace Model
     /**
      * <p>The policy name.</p>
      */
+    inline bool PolicyNameHasBeenSet() const { return m_policyNameHasBeenSet; }
+
+    /**
+     * <p>The policy name.</p>
+     */
     inline void SetPolicyName(const Aws::String& value) { m_policyNameHasBeenSet = true; m_policyName = value; }
 
     /**
@@ -93,6 +98,12 @@ namespace Model
      * length of 2048, excluding whitespace.</p>
      */
     inline const Aws::String& GetPolicyDocument() const{ return m_policyDocument; }
+
+    /**
+     * <p>The JSON document that describes the policy. Minimum length of 1. Maximum
+     * length of 2048, excluding whitespace.</p>
+     */
+    inline bool PolicyDocumentHasBeenSet() const { return m_policyDocumentHasBeenSet; }
 
     /**
      * <p>The JSON document that describes the policy. Minimum length of 1. Maximum
@@ -138,6 +149,14 @@ namespace Model
      * attached).</p>
      */
     inline bool GetSetAsDefault() const{ return m_setAsDefault; }
+
+    /**
+     * <p>Specifies whether the policy version is set as the default. When this
+     * parameter is true, the new policy version becomes the operative version (that
+     * is, the version that is in effect for the certificates to which the policy is
+     * attached).</p>
+     */
+    inline bool SetAsDefaultHasBeenSet() const { return m_setAsDefaultHasBeenSet; }
 
     /**
      * <p>Specifies whether the policy version is set as the default. When this

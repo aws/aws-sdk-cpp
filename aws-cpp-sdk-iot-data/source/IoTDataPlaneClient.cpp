@@ -108,6 +108,11 @@ void IoTDataPlaneClient::OverrideEndpoint(const Aws::String& endpoint)
 }
 DeleteThingShadowOutcome IoTDataPlaneClient::DeleteThingShadow(const DeleteThingShadowRequest& request) const
 {
+  if (!request.ThingNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteThingShadow", "Required field: ThingName, is not set");
+    return DeleteThingShadowOutcome(Aws::Client::AWSError<IoTDataPlaneErrors>(IoTDataPlaneErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ThingName]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/things/";
@@ -145,6 +150,11 @@ void IoTDataPlaneClient::DeleteThingShadowAsyncHelper(const DeleteThingShadowReq
 
 GetThingShadowOutcome IoTDataPlaneClient::GetThingShadow(const GetThingShadowRequest& request) const
 {
+  if (!request.ThingNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetThingShadow", "Required field: ThingName, is not set");
+    return GetThingShadowOutcome(Aws::Client::AWSError<IoTDataPlaneErrors>(IoTDataPlaneErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ThingName]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/things/";
@@ -182,6 +192,11 @@ void IoTDataPlaneClient::GetThingShadowAsyncHelper(const GetThingShadowRequest& 
 
 PublishOutcome IoTDataPlaneClient::Publish(const PublishRequest& request) const
 {
+  if (!request.TopicHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("Publish", "Required field: Topic, is not set");
+    return PublishOutcome(Aws::Client::AWSError<IoTDataPlaneErrors>(IoTDataPlaneErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Topic]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/topics/";
@@ -218,6 +233,11 @@ void IoTDataPlaneClient::PublishAsyncHelper(const PublishRequest& request, const
 
 UpdateThingShadowOutcome IoTDataPlaneClient::UpdateThingShadow(const UpdateThingShadowRequest& request) const
 {
+  if (!request.ThingNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateThingShadow", "Required field: ThingName, is not set");
+    return UpdateThingShadowOutcome(Aws::Client::AWSError<IoTDataPlaneErrors>(IoTDataPlaneErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ThingName]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/things/";

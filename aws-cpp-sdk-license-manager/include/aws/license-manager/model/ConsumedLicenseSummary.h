@@ -57,6 +57,12 @@ namespace Model
      * <p>Resource type of the resource consuming a license (instance, host, or
      * AMI).</p>
      */
+    inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
+
+    /**
+     * <p>Resource type of the resource consuming a license (instance, host, or
+     * AMI).</p>
+     */
     inline void SetResourceType(const ResourceType& value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
 
     /**
@@ -82,6 +88,11 @@ namespace Model
      * <p>Number of licenses consumed by a resource.</p>
      */
     inline long long GetConsumedLicenses() const{ return m_consumedLicenses; }
+
+    /**
+     * <p>Number of licenses consumed by a resource.</p>
+     */
+    inline bool ConsumedLicensesHasBeenSet() const { return m_consumedLicensesHasBeenSet; }
 
     /**
      * <p>Number of licenses consumed by a resource.</p>

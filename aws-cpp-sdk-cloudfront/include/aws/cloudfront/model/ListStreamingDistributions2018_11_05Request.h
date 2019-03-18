@@ -62,6 +62,12 @@ namespace Model
      * <p>The value that you provided for the <code>Marker</code> request
      * parameter.</p>
      */
+    inline bool MarkerHasBeenSet() const { return m_markerHasBeenSet; }
+
+    /**
+     * <p>The value that you provided for the <code>Marker</code> request
+     * parameter.</p>
+     */
     inline void SetMarker(const Aws::String& value) { m_markerHasBeenSet = true; m_marker = value; }
 
     /**
@@ -100,6 +106,12 @@ namespace Model
      * parameter.</p>
      */
     inline const Aws::String& GetMaxItems() const{ return m_maxItems; }
+
+    /**
+     * <p>The value that you provided for the <code>MaxItems</code> request
+     * parameter.</p>
+     */
+    inline bool MaxItemsHasBeenSet() const { return m_maxItemsHasBeenSet; }
 
     /**
      * <p>The value that you provided for the <code>MaxItems</code> request

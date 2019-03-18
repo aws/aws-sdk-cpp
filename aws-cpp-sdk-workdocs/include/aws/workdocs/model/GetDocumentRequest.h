@@ -60,6 +60,12 @@ namespace Model
      * <p>Amazon WorkDocs authentication token. Do not set this field when using
      * administrative API actions, as in accessing the API using AWS credentials.</p>
      */
+    inline bool AuthenticationTokenHasBeenSet() const { return m_authenticationTokenHasBeenSet; }
+
+    /**
+     * <p>Amazon WorkDocs authentication token. Do not set this field when using
+     * administrative API actions, as in accessing the API using AWS credentials.</p>
+     */
     inline void SetAuthenticationToken(const Aws::String& value) { m_authenticationTokenHasBeenSet = true; m_authenticationToken = value; }
 
     /**
@@ -101,6 +107,11 @@ namespace Model
     /**
      * <p>The ID of the document.</p>
      */
+    inline bool DocumentIdHasBeenSet() const { return m_documentIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the document.</p>
+     */
     inline void SetDocumentId(const Aws::String& value) { m_documentIdHasBeenSet = true; m_documentId = value; }
 
     /**
@@ -133,6 +144,11 @@ namespace Model
      * <p>Set this to <code>TRUE</code> to include custom metadata in the response.</p>
      */
     inline bool GetIncludeCustomMetadata() const{ return m_includeCustomMetadata; }
+
+    /**
+     * <p>Set this to <code>TRUE</code> to include custom metadata in the response.</p>
+     */
+    inline bool IncludeCustomMetadataHasBeenSet() const { return m_includeCustomMetadataHasBeenSet; }
 
     /**
      * <p>Set this to <code>TRUE</code> to include custom metadata in the response.</p>

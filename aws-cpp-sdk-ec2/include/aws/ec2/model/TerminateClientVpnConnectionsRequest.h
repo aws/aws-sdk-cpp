@@ -54,6 +54,11 @@ namespace Model
     /**
      * <p>The ID of the Client VPN endpoint to which the client is connected.</p>
      */
+    inline bool ClientVpnEndpointIdHasBeenSet() const { return m_clientVpnEndpointIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the Client VPN endpoint to which the client is connected.</p>
+     */
     inline void SetClientVpnEndpointId(const Aws::String& value) { m_clientVpnEndpointIdHasBeenSet = true; m_clientVpnEndpointId = value; }
 
     /**
@@ -86,6 +91,11 @@ namespace Model
      * <p>The ID of the client connection to be terminated.</p>
      */
     inline const Aws::String& GetConnectionId() const{ return m_connectionId; }
+
+    /**
+     * <p>The ID of the client connection to be terminated.</p>
+     */
+    inline bool ConnectionIdHasBeenSet() const { return m_connectionIdHasBeenSet; }
 
     /**
      * <p>The ID of the client connection to be terminated.</p>
@@ -124,6 +134,13 @@ namespace Model
      * used if the user has established up to five connections.</p>
      */
     inline const Aws::String& GetUsername() const{ return m_username; }
+
+    /**
+     * <p>The name of the user who initiated the connection. Use this option to
+     * terminate all active connections for the specified user. This option can only be
+     * used if the user has established up to five connections.</p>
+     */
+    inline bool UsernameHasBeenSet() const { return m_usernameHasBeenSet; }
 
     /**
      * <p>The name of the user who initiated the connection. Use this option to
@@ -175,6 +192,14 @@ namespace Model
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
     inline bool GetDryRun() const{ return m_dryRun; }
+
+    /**
+     * <p>Checks whether you have the required permissions for the action, without
+     * actually making the request, and provides an error response. If you have the
+     * required permissions, the error response is <code>DryRunOperation</code>.
+     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+     */
+    inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
 
     /**
      * <p>Checks whether you have the required permissions for the action, without

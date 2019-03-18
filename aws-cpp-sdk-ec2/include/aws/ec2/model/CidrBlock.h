@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The IPv4 CIDR block.</p>
      */
+    inline bool CidrBlockHasBeenSet() const { return m_cidrBlockHasBeenSet; }
+
+    /**
+     * <p>The IPv4 CIDR block.</p>
+     */
     inline void SetCidrBlock(const Aws::String& value) { m_cidrBlockHasBeenSet = true; m_cidrBlock = value; }
 
     /**

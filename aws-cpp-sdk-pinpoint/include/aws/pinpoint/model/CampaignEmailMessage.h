@@ -55,6 +55,11 @@ namespace Model
     /**
      * The email text body.
      */
+    inline bool BodyHasBeenSet() const { return m_bodyHasBeenSet; }
+
+    /**
+     * The email text body.
+     */
     inline void SetBody(const Aws::String& value) { m_bodyHasBeenSet = true; m_body = value; }
 
     /**
@@ -88,6 +93,12 @@ namespace Model
      * specified in the Email Channel.
      */
     inline const Aws::String& GetFromAddress() const{ return m_fromAddress; }
+
+    /**
+     * The email address used to send the email from. Defaults to use FromAddress
+     * specified in the Email Channel.
+     */
+    inline bool FromAddressHasBeenSet() const { return m_fromAddressHasBeenSet; }
 
     /**
      * The email address used to send the email from. Defaults to use FromAddress
@@ -134,6 +145,11 @@ namespace Model
     /**
      * The email html body.
      */
+    inline bool HtmlBodyHasBeenSet() const { return m_htmlBodyHasBeenSet; }
+
+    /**
+     * The email html body.
+     */
     inline void SetHtmlBody(const Aws::String& value) { m_htmlBodyHasBeenSet = true; m_htmlBody = value; }
 
     /**
@@ -166,6 +182,11 @@ namespace Model
      * The email title (Or subject).
      */
     inline const Aws::String& GetTitle() const{ return m_title; }
+
+    /**
+     * The email title (Or subject).
+     */
+    inline bool TitleHasBeenSet() const { return m_titleHasBeenSet; }
 
     /**
      * The email title (Or subject).

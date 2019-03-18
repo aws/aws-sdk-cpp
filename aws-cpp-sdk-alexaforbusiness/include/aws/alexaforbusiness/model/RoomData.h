@@ -55,6 +55,11 @@ namespace Model
     /**
      * <p>The ARN of a room.</p>
      */
+    inline bool RoomArnHasBeenSet() const { return m_roomArnHasBeenSet; }
+
+    /**
+     * <p>The ARN of a room.</p>
+     */
     inline void SetRoomArn(const Aws::String& value) { m_roomArnHasBeenSet = true; m_roomArn = value; }
 
     /**
@@ -87,6 +92,11 @@ namespace Model
      * <p>The name of a room.</p>
      */
     inline const Aws::String& GetRoomName() const{ return m_roomName; }
+
+    /**
+     * <p>The name of a room.</p>
+     */
+    inline bool RoomNameHasBeenSet() const { return m_roomNameHasBeenSet; }
 
     /**
      * <p>The name of a room.</p>
@@ -127,6 +137,11 @@ namespace Model
     /**
      * <p>The description of a room.</p>
      */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
+
+    /**
+     * <p>The description of a room.</p>
+     */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
@@ -159,6 +174,11 @@ namespace Model
      * <p>The provider calendar ARN of a room.</p>
      */
     inline const Aws::String& GetProviderCalendarId() const{ return m_providerCalendarId; }
+
+    /**
+     * <p>The provider calendar ARN of a room.</p>
+     */
+    inline bool ProviderCalendarIdHasBeenSet() const { return m_providerCalendarIdHasBeenSet; }
 
     /**
      * <p>The provider calendar ARN of a room.</p>
@@ -199,6 +219,11 @@ namespace Model
     /**
      * <p>The profile ARN of a room.</p>
      */
+    inline bool ProfileArnHasBeenSet() const { return m_profileArnHasBeenSet; }
+
+    /**
+     * <p>The profile ARN of a room.</p>
+     */
     inline void SetProfileArn(const Aws::String& value) { m_profileArnHasBeenSet = true; m_profileArn = value; }
 
     /**
@@ -231,6 +256,11 @@ namespace Model
      * <p>The profile name of a room.</p>
      */
     inline const Aws::String& GetProfileName() const{ return m_profileName; }
+
+    /**
+     * <p>The profile name of a room.</p>
+     */
+    inline bool ProfileNameHasBeenSet() const { return m_profileNameHasBeenSet; }
 
     /**
      * <p>The profile name of a room.</p>

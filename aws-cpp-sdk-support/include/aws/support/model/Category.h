@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The category code for the support case.</p>
      */
+    inline bool CodeHasBeenSet() const { return m_codeHasBeenSet; }
+
+    /**
+     * <p>The category code for the support case.</p>
+     */
     inline void SetCode(const Aws::String& value) { m_codeHasBeenSet = true; m_code = value; }
 
     /**
@@ -89,6 +94,11 @@ namespace Model
      * <p>The category name for the support case.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
+
+    /**
+     * <p>The category name for the support case.</p>
+     */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
      * <p>The category name for the support case.</p>

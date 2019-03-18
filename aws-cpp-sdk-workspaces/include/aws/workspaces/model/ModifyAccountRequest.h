@@ -53,6 +53,11 @@ namespace Model
     /**
      * <p>The status of BYOL.</p>
      */
+    inline bool DedicatedTenancySupportHasBeenSet() const { return m_dedicatedTenancySupportHasBeenSet; }
+
+    /**
+     * <p>The status of BYOL.</p>
+     */
     inline void SetDedicatedTenancySupport(const DedicatedTenancySupportEnum& value) { m_dedicatedTenancySupportHasBeenSet = true; m_dedicatedTenancySupport = value; }
 
     /**
@@ -80,6 +85,16 @@ namespace Model
      * operation.</p>
      */
     inline const Aws::String& GetDedicatedTenancyManagementCidrRange() const{ return m_dedicatedTenancyManagementCidrRange; }
+
+    /**
+     * <p>The IP address range, specified as an IPv4 CIDR block, for the management
+     * network interface. Specify an IP address range that is compatible with your
+     * network and in CIDR notation (that is, specify the range as an IPv4 CIDR block).
+     * The CIDR block size must be /16 (for example, 203.0.113.25/16). It must also be
+     * specified as available by the <code>ListAvailableManagementCidrRanges</code>
+     * operation.</p>
+     */
+    inline bool DedicatedTenancyManagementCidrRangeHasBeenSet() const { return m_dedicatedTenancyManagementCidrRangeHasBeenSet; }
 
     /**
      * <p>The IP address range, specified as an IPv4 CIDR block, for the management

@@ -61,6 +61,11 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) that identifies the entity recognizer.</p>
      */
+    inline bool EntityRecognizerArnHasBeenSet() const { return m_entityRecognizerArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) that identifies the entity recognizer.</p>
+     */
     inline void SetEntityRecognizerArn(const Aws::String& value) { m_entityRecognizerArnHasBeenSet = true; m_entityRecognizerArn = value; }
 
     /**
@@ -99,6 +104,12 @@ namespace Model
      * <p> The language of the input documents. All documents must be in the same
      * language. Only English ("en") is currently supported.</p>
      */
+    inline bool LanguageCodeHasBeenSet() const { return m_languageCodeHasBeenSet; }
+
+    /**
+     * <p> The language of the input documents. All documents must be in the same
+     * language. Only English ("en") is currently supported.</p>
+     */
     inline void SetLanguageCode(const LanguageCode& value) { m_languageCodeHasBeenSet = true; m_languageCode = value; }
 
     /**
@@ -128,6 +139,11 @@ namespace Model
     /**
      * <p>Provides the status of the entity recognizer.</p>
      */
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
+
+    /**
+     * <p>Provides the status of the entity recognizer.</p>
+     */
     inline void SetStatus(const ModelStatus& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
@@ -150,6 +166,11 @@ namespace Model
      * <p> A description of the status of the recognizer.</p>
      */
     inline const Aws::String& GetMessage() const{ return m_message; }
+
+    /**
+     * <p> A description of the status of the recognizer.</p>
+     */
+    inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
 
     /**
      * <p> A description of the status of the recognizer.</p>
@@ -190,6 +211,11 @@ namespace Model
     /**
      * <p>The time that the recognizer was submitted for processing.</p>
      */
+    inline bool SubmitTimeHasBeenSet() const { return m_submitTimeHasBeenSet; }
+
+    /**
+     * <p>The time that the recognizer was submitted for processing.</p>
+     */
     inline void SetSubmitTime(const Aws::Utils::DateTime& value) { m_submitTimeHasBeenSet = true; m_submitTime = value; }
 
     /**
@@ -212,6 +238,11 @@ namespace Model
      * <p>The time that the recognizer creation completed.</p>
      */
     inline const Aws::Utils::DateTime& GetEndTime() const{ return m_endTime; }
+
+    /**
+     * <p>The time that the recognizer creation completed.</p>
+     */
+    inline bool EndTimeHasBeenSet() const { return m_endTimeHasBeenSet; }
 
     /**
      * <p>The time that the recognizer creation completed.</p>
@@ -242,6 +273,11 @@ namespace Model
     /**
      * <p>The time that training of the entity recognizer started.</p>
      */
+    inline bool TrainingStartTimeHasBeenSet() const { return m_trainingStartTimeHasBeenSet; }
+
+    /**
+     * <p>The time that training of the entity recognizer started.</p>
+     */
     inline void SetTrainingStartTime(const Aws::Utils::DateTime& value) { m_trainingStartTimeHasBeenSet = true; m_trainingStartTime = value; }
 
     /**
@@ -264,6 +300,11 @@ namespace Model
      * <p>The time that training of the entity recognizer was completed.</p>
      */
     inline const Aws::Utils::DateTime& GetTrainingEndTime() const{ return m_trainingEndTime; }
+
+    /**
+     * <p>The time that training of the entity recognizer was completed.</p>
+     */
+    inline bool TrainingEndTimeHasBeenSet() const { return m_trainingEndTimeHasBeenSet; }
 
     /**
      * <p>The time that training of the entity recognizer was completed.</p>
@@ -294,6 +335,11 @@ namespace Model
     /**
      * <p>The input data properties of an entity recognizer.</p>
      */
+    inline bool InputDataConfigHasBeenSet() const { return m_inputDataConfigHasBeenSet; }
+
+    /**
+     * <p>The input data properties of an entity recognizer.</p>
+     */
     inline void SetInputDataConfig(const EntityRecognizerInputDataConfig& value) { m_inputDataConfigHasBeenSet = true; m_inputDataConfig = value; }
 
     /**
@@ -316,6 +362,11 @@ namespace Model
      * <p> Provides information about an entity recognizer.</p>
      */
     inline const EntityRecognizerMetadata& GetRecognizerMetadata() const{ return m_recognizerMetadata; }
+
+    /**
+     * <p> Provides information about an entity recognizer.</p>
+     */
+    inline bool RecognizerMetadataHasBeenSet() const { return m_recognizerMetadataHasBeenSet; }
 
     /**
      * <p> Provides information about an entity recognizer.</p>
@@ -343,6 +394,12 @@ namespace Model
      * that grants Amazon Comprehend read access to your input data.</p>
      */
     inline const Aws::String& GetDataAccessRoleArn() const{ return m_dataAccessRoleArn; }
+
+    /**
+     * <p> The Amazon Resource Name (ARN) of the AWS Identity and Management (IAM) role
+     * that grants Amazon Comprehend read access to your input data.</p>
+     */
+    inline bool DataAccessRoleArnHasBeenSet() const { return m_dataAccessRoleArnHasBeenSet; }
 
     /**
      * <p> The Amazon Resource Name (ARN) of the AWS Identity and Management (IAM) role

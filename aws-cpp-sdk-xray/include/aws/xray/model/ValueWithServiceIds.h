@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>Values of the annotation.</p>
      */
+    inline bool AnnotationValueHasBeenSet() const { return m_annotationValueHasBeenSet; }
+
+    /**
+     * <p>Values of the annotation.</p>
+     */
     inline void SetAnnotationValue(const AnnotationValue& value) { m_annotationValueHasBeenSet = true; m_annotationValue = value; }
 
     /**
@@ -79,6 +84,11 @@ namespace Model
      * <p>Services to which the annotation applies.</p>
      */
     inline const Aws::Vector<ServiceId>& GetServiceIds() const{ return m_serviceIds; }
+
+    /**
+     * <p>Services to which the annotation applies.</p>
+     */
+    inline bool ServiceIdsHasBeenSet() const { return m_serviceIdsHasBeenSet; }
 
     /**
      * <p>Services to which the annotation applies.</p>

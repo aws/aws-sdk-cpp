@@ -59,6 +59,12 @@ namespace Model
      * <p> The type of elastic inference accelerator. The possible values are
      * eia1.small, eia1.medium, and eia1.large. </p>
      */
+    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
+
+    /**
+     * <p> The type of elastic inference accelerator. The possible values are
+     * eia1.small, eia1.medium, and eia1.large. </p>
+     */
     inline void SetType(const Aws::String& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**

@@ -60,6 +60,12 @@ namespace Model
      * <p>Perform the action for these events. The default is to perform all events if
      * no event filter is specified.</p>
      */
+    inline bool EventFilterHasBeenSet() const { return m_eventFilterHasBeenSet; }
+
+    /**
+     * <p>Perform the action for these events. The default is to perform all events if
+     * no event filter is specified.</p>
+     */
     inline void SetEventFilter(const Aws::Vector<EventFilterType>& value) { m_eventFilterHasBeenSet = true; m_eventFilter = value; }
 
     /**
@@ -97,6 +103,11 @@ namespace Model
      * <p>The compromised credentials risk configuration actions.</p>
      */
     inline const CompromisedCredentialsActionsType& GetActions() const{ return m_actions; }
+
+    /**
+     * <p>The compromised credentials risk configuration actions.</p>
+     */
+    inline bool ActionsHasBeenSet() const { return m_actionsHasBeenSet; }
 
     /**
      * <p>The compromised credentials risk configuration actions.</p>

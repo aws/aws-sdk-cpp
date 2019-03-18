@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The Amazon Cognito user group that is part of the work team.</p>
      */
+    inline bool CognitoMemberDefinitionHasBeenSet() const { return m_cognitoMemberDefinitionHasBeenSet; }
+
+    /**
+     * <p>The Amazon Cognito user group that is part of the work team.</p>
+     */
     inline void SetCognitoMemberDefinition(const CognitoMemberDefinition& value) { m_cognitoMemberDefinitionHasBeenSet = true; m_cognitoMemberDefinition = value; }
 
     /**

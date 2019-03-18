@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The name of the data set.</p>
      */
+    inline bool DatasetNameHasBeenSet() const { return m_datasetNameHasBeenSet; }
+
+    /**
+     * <p>The name of the data set.</p>
+     */
     inline void SetDatasetName(const Aws::String& value) { m_datasetNameHasBeenSet = true; m_datasetName = value; }
 
     /**
@@ -88,6 +93,11 @@ namespace Model
      * <p>A list of actions that create the data set contents.</p>
      */
     inline const Aws::Vector<DatasetAction>& GetActions() const{ return m_actions; }
+
+    /**
+     * <p>A list of actions that create the data set contents.</p>
+     */
+    inline bool ActionsHasBeenSet() const { return m_actionsHasBeenSet; }
 
     /**
      * <p>A list of actions that create the data set contents.</p>
@@ -127,6 +137,14 @@ namespace Model
      * objects.</p>
      */
     inline const Aws::Vector<DatasetTrigger>& GetTriggers() const{ return m_triggers; }
+
+    /**
+     * <p>A list of triggers. A trigger causes data set contents to be populated at a
+     * specified time interval or when another data set's contents are created. The
+     * list of triggers can be empty or contain up to five <b>DataSetTrigger</b>
+     * objects.</p>
+     */
+    inline bool TriggersHasBeenSet() const { return m_triggersHasBeenSet; }
 
     /**
      * <p>A list of triggers. A trigger causes data set contents to be populated at a
@@ -187,6 +205,12 @@ namespace Model
      * <p>When data set contents are created they are delivered to destinations
      * specified here.</p>
      */
+    inline bool ContentDeliveryRulesHasBeenSet() const { return m_contentDeliveryRulesHasBeenSet; }
+
+    /**
+     * <p>When data set contents are created they are delivered to destinations
+     * specified here.</p>
+     */
     inline void SetContentDeliveryRules(const Aws::Vector<DatasetContentDeliveryRule>& value) { m_contentDeliveryRulesHasBeenSet = true; m_contentDeliveryRules = value; }
 
     /**
@@ -232,6 +256,13 @@ namespace Model
      * given or set to null, the latest version of the dataset content plus the latest
      * succeeded version (if they are different) are retained for at most 90 days.</p>
      */
+    inline bool RetentionPeriodHasBeenSet() const { return m_retentionPeriodHasBeenSet; }
+
+    /**
+     * <p>[Optional] How long, in days, message data is kept for the data set. If not
+     * given or set to null, the latest version of the dataset content plus the latest
+     * succeeded version (if they are different) are retained for at most 90 days.</p>
+     */
     inline void SetRetentionPeriod(const RetentionPeriod& value) { m_retentionPeriodHasBeenSet = true; m_retentionPeriod = value; }
 
     /**
@@ -260,6 +291,11 @@ namespace Model
      * <p>Metadata which can be used to manage the data set.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>Metadata which can be used to manage the data set.</p>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
      * <p>Metadata which can be used to manage the data set.</p>

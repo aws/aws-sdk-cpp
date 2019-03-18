@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>A list of the algorithms that were used to create a model package.</p>
      */
+    inline bool SourceAlgorithmsHasBeenSet() const { return m_sourceAlgorithmsHasBeenSet; }
+
+    /**
+     * <p>A list of the algorithms that were used to create a model package.</p>
+     */
     inline void SetSourceAlgorithms(const Aws::Vector<SourceAlgorithm>& value) { m_sourceAlgorithmsHasBeenSet = true; m_sourceAlgorithms = value; }
 
     /**

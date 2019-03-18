@@ -60,6 +60,11 @@ namespace Model
     /**
      * <p>The details of an AWS EC2 instance.</p>
      */
+    inline bool AwsEc2InstanceHasBeenSet() const { return m_awsEc2InstanceHasBeenSet; }
+
+    /**
+     * <p>The details of an AWS EC2 instance.</p>
+     */
     inline void SetAwsEc2Instance(const AwsEc2InstanceDetails& value) { m_awsEc2InstanceHasBeenSet = true; m_awsEc2Instance = value; }
 
     /**
@@ -82,6 +87,11 @@ namespace Model
      * <p>The details of an AWS S3 Bucket.</p>
      */
     inline const AwsS3BucketDetails& GetAwsS3Bucket() const{ return m_awsS3Bucket; }
+
+    /**
+     * <p>The details of an AWS S3 Bucket.</p>
+     */
+    inline bool AwsS3BucketHasBeenSet() const { return m_awsS3BucketHasBeenSet; }
 
     /**
      * <p>The details of an AWS S3 Bucket.</p>
@@ -112,6 +122,11 @@ namespace Model
     /**
      * <p>AWS IAM access key details related to a finding.</p>
      */
+    inline bool AwsIamAccessKeyHasBeenSet() const { return m_awsIamAccessKeyHasBeenSet; }
+
+    /**
+     * <p>AWS IAM access key details related to a finding.</p>
+     */
     inline void SetAwsIamAccessKey(const AwsIamAccessKeyDetails& value) { m_awsIamAccessKeyHasBeenSet = true; m_awsIamAccessKey = value; }
 
     /**
@@ -134,6 +149,11 @@ namespace Model
      * <p>Container details related to a finding.</p>
      */
     inline const ContainerDetails& GetContainer() const{ return m_container; }
+
+    /**
+     * <p>Container details related to a finding.</p>
+     */
+    inline bool ContainerHasBeenSet() const { return m_containerHasBeenSet; }
 
     /**
      * <p>Container details related to a finding.</p>
@@ -161,6 +181,12 @@ namespace Model
      * resource type defined.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetOther() const{ return m_other; }
+
+    /**
+     * <p>The details of a resource that does not have a specific sub-field for the
+     * resource type defined.</p>
+     */
+    inline bool OtherHasBeenSet() const { return m_otherHasBeenSet; }
 
     /**
      * <p>The details of a resource that does not have a specific sub-field for the

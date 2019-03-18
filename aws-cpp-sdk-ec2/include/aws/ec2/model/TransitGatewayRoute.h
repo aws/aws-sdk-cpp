@@ -62,6 +62,11 @@ namespace Model
     /**
      * <p>The CIDR block used for destination matches.</p>
      */
+    inline bool DestinationCidrBlockHasBeenSet() const { return m_destinationCidrBlockHasBeenSet; }
+
+    /**
+     * <p>The CIDR block used for destination matches.</p>
+     */
     inline void SetDestinationCidrBlock(const Aws::String& value) { m_destinationCidrBlockHasBeenSet = true; m_destinationCidrBlock = value; }
 
     /**
@@ -94,6 +99,11 @@ namespace Model
      * <p>The attachments.</p>
      */
     inline const Aws::Vector<TransitGatewayRouteAttachment>& GetTransitGatewayAttachments() const{ return m_transitGatewayAttachments; }
+
+    /**
+     * <p>The attachments.</p>
+     */
+    inline bool TransitGatewayAttachmentsHasBeenSet() const { return m_transitGatewayAttachmentsHasBeenSet; }
 
     /**
      * <p>The attachments.</p>
@@ -134,6 +144,11 @@ namespace Model
     /**
      * <p>The route type.</p>
      */
+    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
+
+    /**
+     * <p>The route type.</p>
+     */
     inline void SetType(const TransitGatewayRouteType& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
@@ -156,6 +171,11 @@ namespace Model
      * <p>The state of the route.</p>
      */
     inline const TransitGatewayRouteState& GetState() const{ return m_state; }
+
+    /**
+     * <p>The state of the route.</p>
+     */
+    inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
 
     /**
      * <p>The state of the route.</p>

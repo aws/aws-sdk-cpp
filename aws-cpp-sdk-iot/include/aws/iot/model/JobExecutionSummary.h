@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The status of the job execution.</p>
      */
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
+
+    /**
+     * <p>The status of the job execution.</p>
+     */
     inline void SetStatus(const JobExecutionStatus& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
@@ -82,6 +87,11 @@ namespace Model
     /**
      * <p>The time, in seconds since the epoch, when the job execution was queued.</p>
      */
+    inline bool QueuedAtHasBeenSet() const { return m_queuedAtHasBeenSet; }
+
+    /**
+     * <p>The time, in seconds since the epoch, when the job execution was queued.</p>
+     */
     inline void SetQueuedAt(const Aws::Utils::DateTime& value) { m_queuedAtHasBeenSet = true; m_queuedAt = value; }
 
     /**
@@ -104,6 +114,11 @@ namespace Model
      * <p>The time, in seconds since the epoch, when the job execution started.</p>
      */
     inline const Aws::Utils::DateTime& GetStartedAt() const{ return m_startedAt; }
+
+    /**
+     * <p>The time, in seconds since the epoch, when the job execution started.</p>
+     */
+    inline bool StartedAtHasBeenSet() const { return m_startedAtHasBeenSet; }
 
     /**
      * <p>The time, in seconds since the epoch, when the job execution started.</p>
@@ -136,6 +151,12 @@ namespace Model
      * <p>The time, in seconds since the epoch, when the job execution was last
      * updated.</p>
      */
+    inline bool LastUpdatedAtHasBeenSet() const { return m_lastUpdatedAtHasBeenSet; }
+
+    /**
+     * <p>The time, in seconds since the epoch, when the job execution was last
+     * updated.</p>
+     */
     inline void SetLastUpdatedAt(const Aws::Utils::DateTime& value) { m_lastUpdatedAtHasBeenSet = true; m_lastUpdatedAt = value; }
 
     /**
@@ -163,6 +184,13 @@ namespace Model
      * commands which return or update job execution information.</p>
      */
     inline long long GetExecutionNumber() const{ return m_executionNumber; }
+
+    /**
+     * <p>A string (consisting of the digits "0" through "9") which identifies this
+     * particular job execution on this particular device. It can be used later in
+     * commands which return or update job execution information.</p>
+     */
+    inline bool ExecutionNumberHasBeenSet() const { return m_executionNumberHasBeenSet; }
 
     /**
      * <p>A string (consisting of the digits "0" through "9") which identifies this

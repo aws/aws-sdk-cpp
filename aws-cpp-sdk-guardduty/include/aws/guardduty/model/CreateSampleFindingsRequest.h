@@ -54,6 +54,11 @@ namespace Model
     /**
      * The ID of the detector to create sample findings for.
      */
+    inline bool DetectorIdHasBeenSet() const { return m_detectorIdHasBeenSet; }
+
+    /**
+     * The ID of the detector to create sample findings for.
+     */
     inline void SetDetectorId(const Aws::String& value) { m_detectorIdHasBeenSet = true; m_detectorId = value; }
 
     /**
@@ -86,6 +91,11 @@ namespace Model
      * Types of sample findings that you want to generate.
      */
     inline const Aws::Vector<Aws::String>& GetFindingTypes() const{ return m_findingTypes; }
+
+    /**
+     * Types of sample findings that you want to generate.
+     */
+    inline bool FindingTypesHasBeenSet() const { return m_findingTypesHasBeenSet; }
 
     /**
      * Types of sample findings that you want to generate.

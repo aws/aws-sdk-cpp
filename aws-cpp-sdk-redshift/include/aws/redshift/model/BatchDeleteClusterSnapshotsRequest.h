@@ -55,6 +55,11 @@ namespace Model
     /**
      * <p>A list of identifiers for the snapshots that you want to delete.</p>
      */
+    inline bool IdentifiersHasBeenSet() const { return m_identifiersHasBeenSet; }
+
+    /**
+     * <p>A list of identifiers for the snapshots that you want to delete.</p>
+     */
     inline void SetIdentifiers(const Aws::Vector<DeleteClusterSnapshotMessage>& value) { m_identifiersHasBeenSet = true; m_identifiers = value; }
 
     /**

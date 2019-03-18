@@ -52,6 +52,11 @@ namespace Model
     /**
      * <p>The room where smart home appliance discovery was initiated.</p>
      */
+    inline bool RoomArnHasBeenSet() const { return m_roomArnHasBeenSet; }
+
+    /**
+     * <p>The room where smart home appliance discovery was initiated.</p>
+     */
     inline void SetRoomArn(const Aws::String& value) { m_roomArnHasBeenSet = true; m_roomArn = value; }
 
     /**

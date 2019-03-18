@@ -67,6 +67,11 @@ namespace Model
     /**
      * <p>The unique ID for the build.</p>
      */
+    inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
+
+    /**
+     * <p>The unique ID for the build.</p>
+     */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
     /**
@@ -99,6 +104,11 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the build.</p>
      */
     inline const Aws::String& GetArn() const{ return m_arn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the build.</p>
+     */
+    inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the build.</p>
@@ -139,6 +149,11 @@ namespace Model
     /**
      * <p>When the build process started, expressed in Unix time format.</p>
      */
+    inline bool StartTimeHasBeenSet() const { return m_startTimeHasBeenSet; }
+
+    /**
+     * <p>When the build process started, expressed in Unix time format.</p>
+     */
     inline void SetStartTime(const Aws::Utils::DateTime& value) { m_startTimeHasBeenSet = true; m_startTime = value; }
 
     /**
@@ -165,6 +180,11 @@ namespace Model
     /**
      * <p>When the build process ended, expressed in Unix time format.</p>
      */
+    inline bool EndTimeHasBeenSet() const { return m_endTimeHasBeenSet; }
+
+    /**
+     * <p>When the build process ended, expressed in Unix time format.</p>
+     */
     inline void SetEndTime(const Aws::Utils::DateTime& value) { m_endTimeHasBeenSet = true; m_endTime = value; }
 
     /**
@@ -187,6 +207,11 @@ namespace Model
      * <p>The current build phase.</p>
      */
     inline const Aws::String& GetCurrentPhase() const{ return m_currentPhase; }
+
+    /**
+     * <p>The current build phase.</p>
+     */
+    inline bool CurrentPhaseHasBeenSet() const { return m_currentPhaseHasBeenSet; }
 
     /**
      * <p>The current build phase.</p>
@@ -237,6 +262,16 @@ namespace Model
      * stopped.</p> </li> <li> <p> <code>SUCCEEDED</code>: The build succeeded.</p>
      * </li> <li> <p> <code>TIMED_OUT</code>: The build timed out.</p> </li> </ul>
      */
+    inline bool BuildStatusHasBeenSet() const { return m_buildStatusHasBeenSet; }
+
+    /**
+     * <p>The current status of the build. Valid values include:</p> <ul> <li> <p>
+     * <code>FAILED</code>: The build failed.</p> </li> <li> <p> <code>FAULT</code>:
+     * The build faulted.</p> </li> <li> <p> <code>IN_PROGRESS</code>: The build is
+     * still in progress.</p> </li> <li> <p> <code>STOPPED</code>: The build
+     * stopped.</p> </li> <li> <p> <code>SUCCEEDED</code>: The build succeeded.</p>
+     * </li> <li> <p> <code>TIMED_OUT</code>: The build timed out.</p> </li> </ul>
+     */
     inline void SetBuildStatus(const StatusType& value) { m_buildStatusHasBeenSet = true; m_buildStatus = value; }
 
     /**
@@ -278,6 +313,11 @@ namespace Model
     /**
      * <p>Any version identifier for the version of the source code to be built.</p>
      */
+    inline bool SourceVersionHasBeenSet() const { return m_sourceVersionHasBeenSet; }
+
+    /**
+     * <p>Any version identifier for the version of the source code to be built.</p>
+     */
     inline void SetSourceVersion(const Aws::String& value) { m_sourceVersionHasBeenSet = true; m_sourceVersion = value; }
 
     /**
@@ -314,6 +354,15 @@ namespace Model
      * this does not apply. </p> </li> </ul>
      */
     inline const Aws::String& GetResolvedSourceVersion() const{ return m_resolvedSourceVersion; }
+
+    /**
+     * <p> An identifier for the version of this build's source code. </p> <ul> <li>
+     * <p> For AWS CodeCommit, GitHub, GitHub Enterprise, and BitBucket, the commit ID.
+     * </p> </li> <li> <p> For AWS CodePipeline, the source revision provided by AWS
+     * CodePipeline. </p> </li> <li> <p> For Amazon Simple Storage Service (Amazon S3),
+     * this does not apply. </p> </li> </ul>
+     */
+    inline bool ResolvedSourceVersionHasBeenSet() const { return m_resolvedSourceVersionHasBeenSet; }
 
     /**
      * <p> An identifier for the version of this build's source code. </p> <ul> <li>
@@ -378,6 +427,11 @@ namespace Model
     /**
      * <p>The name of the AWS CodeBuild project.</p>
      */
+    inline bool ProjectNameHasBeenSet() const { return m_projectNameHasBeenSet; }
+
+    /**
+     * <p>The name of the AWS CodeBuild project.</p>
+     */
     inline void SetProjectName(const Aws::String& value) { m_projectNameHasBeenSet = true; m_projectName = value; }
 
     /**
@@ -411,6 +465,12 @@ namespace Model
      * about any current build phase that is not yet complete.</p>
      */
     inline const Aws::Vector<BuildPhase>& GetPhases() const{ return m_phases; }
+
+    /**
+     * <p>Information about all previous build phases that are complete and information
+     * about any current build phase that is not yet complete.</p>
+     */
+    inline bool PhasesHasBeenSet() const { return m_phasesHasBeenSet; }
 
     /**
      * <p>Information about all previous build phases that are complete and information
@@ -457,6 +517,11 @@ namespace Model
     /**
      * <p>Information about the source code to be built.</p>
      */
+    inline bool SourceHasBeenSet() const { return m_sourceHasBeenSet; }
+
+    /**
+     * <p>Information about the source code to be built.</p>
+     */
     inline void SetSource(const ProjectSource& value) { m_sourceHasBeenSet = true; m_source = value; }
 
     /**
@@ -479,6 +544,11 @@ namespace Model
      * <p> An array of <code>ProjectSource</code> objects. </p>
      */
     inline const Aws::Vector<ProjectSource>& GetSecondarySources() const{ return m_secondarySources; }
+
+    /**
+     * <p> An array of <code>ProjectSource</code> objects. </p>
+     */
+    inline bool SecondarySourcesHasBeenSet() const { return m_secondarySourcesHasBeenSet; }
 
     /**
      * <p> An array of <code>ProjectSource</code> objects. </p>
@@ -528,6 +598,24 @@ namespace Model
      * use.</p> </li> </ul>
      */
     inline const Aws::Vector<ProjectSourceVersion>& GetSecondarySourceVersions() const{ return m_secondarySourceVersions; }
+
+    /**
+     * <p> An array of <code>ProjectSourceVersion</code> objects. Each
+     * <code>ProjectSourceVersion</code> must be one of: </p> <ul> <li> <p>For AWS
+     * CodeCommit: the commit ID to use.</p> </li> <li> <p>For GitHub: the commit ID,
+     * pull request ID, branch name, or tag name that corresponds to the version of the
+     * source code you want to build. If a pull request ID is specified, it must use
+     * the format <code>pr/pull-request-ID</code> (for example, <code>pr/25</code>). If
+     * a branch name is specified, the branch's HEAD commit ID is used. If not
+     * specified, the default branch's HEAD commit ID is used.</p> </li> <li> <p>For
+     * Bitbucket: the commit ID, branch name, or tag name that corresponds to the
+     * version of the source code you want to build. If a branch name is specified, the
+     * branch's HEAD commit ID is used. If not specified, the default branch's HEAD
+     * commit ID is used.</p> </li> <li> <p>For Amazon Simple Storage Service (Amazon
+     * S3): the version ID of the object that represents the build input ZIP file to
+     * use.</p> </li> </ul>
+     */
+    inline bool SecondarySourceVersionsHasBeenSet() const { return m_secondarySourceVersionsHasBeenSet; }
 
     /**
      * <p> An array of <code>ProjectSourceVersion</code> objects. Each
@@ -646,6 +734,11 @@ namespace Model
     /**
      * <p>Information about the output artifacts for the build.</p>
      */
+    inline bool ArtifactsHasBeenSet() const { return m_artifactsHasBeenSet; }
+
+    /**
+     * <p>Information about the output artifacts for the build.</p>
+     */
     inline void SetArtifacts(const BuildArtifacts& value) { m_artifactsHasBeenSet = true; m_artifacts = value; }
 
     /**
@@ -668,6 +761,11 @@ namespace Model
      * <p> An array of <code>ProjectArtifacts</code> objects. </p>
      */
     inline const Aws::Vector<BuildArtifacts>& GetSecondaryArtifacts() const{ return m_secondaryArtifacts; }
+
+    /**
+     * <p> An array of <code>ProjectArtifacts</code> objects. </p>
+     */
+    inline bool SecondaryArtifactsHasBeenSet() const { return m_secondaryArtifactsHasBeenSet; }
 
     /**
      * <p> An array of <code>ProjectArtifacts</code> objects. </p>
@@ -708,6 +806,11 @@ namespace Model
     /**
      * <p>Information about the cache for the build.</p>
      */
+    inline bool CacheHasBeenSet() const { return m_cacheHasBeenSet; }
+
+    /**
+     * <p>Information about the cache for the build.</p>
+     */
     inline void SetCache(const ProjectCache& value) { m_cacheHasBeenSet = true; m_cache = value; }
 
     /**
@@ -734,6 +837,11 @@ namespace Model
     /**
      * <p>Information about the build environment for this build.</p>
      */
+    inline bool EnvironmentHasBeenSet() const { return m_environmentHasBeenSet; }
+
+    /**
+     * <p>Information about the build environment for this build.</p>
+     */
     inline void SetEnvironment(const ProjectEnvironment& value) { m_environmentHasBeenSet = true; m_environment = value; }
 
     /**
@@ -756,6 +864,11 @@ namespace Model
      * <p>The name of a service role used for this build.</p>
      */
     inline const Aws::String& GetServiceRole() const{ return m_serviceRole; }
+
+    /**
+     * <p>The name of a service role used for this build.</p>
+     */
+    inline bool ServiceRoleHasBeenSet() const { return m_serviceRoleHasBeenSet; }
 
     /**
      * <p>The name of a service role used for this build.</p>
@@ -796,6 +909,11 @@ namespace Model
     /**
      * <p>Information about the build's logs in Amazon CloudWatch Logs.</p>
      */
+    inline bool LogsHasBeenSet() const { return m_logsHasBeenSet; }
+
+    /**
+     * <p>Information about the build's logs in Amazon CloudWatch Logs.</p>
+     */
     inline void SetLogs(const LogsLocation& value) { m_logsHasBeenSet = true; m_logs = value; }
 
     /**
@@ -824,6 +942,12 @@ namespace Model
      * <p>How long, in minutes, for AWS CodeBuild to wait before timing out this build
      * if it does not get marked as completed.</p>
      */
+    inline bool TimeoutInMinutesHasBeenSet() const { return m_timeoutInMinutesHasBeenSet; }
+
+    /**
+     * <p>How long, in minutes, for AWS CodeBuild to wait before timing out this build
+     * if it does not get marked as completed.</p>
+     */
     inline void SetTimeoutInMinutes(int value) { m_timeoutInMinutesHasBeenSet = true; m_timeoutInMinutes = value; }
 
     /**
@@ -838,6 +962,12 @@ namespace Model
      * </p>
      */
     inline int GetQueuedTimeoutInMinutes() const{ return m_queuedTimeoutInMinutes; }
+
+    /**
+     * <p> The number of minutes a build is allowed to be queued before it times out.
+     * </p>
+     */
+    inline bool QueuedTimeoutInMinutesHasBeenSet() const { return m_queuedTimeoutInMinutesHasBeenSet; }
 
     /**
      * <p> The number of minutes a build is allowed to be queued before it times out.
@@ -860,6 +990,11 @@ namespace Model
     /**
      * <p>Whether the build is complete. True if complete; otherwise, false.</p>
      */
+    inline bool BuildCompleteHasBeenSet() const { return m_buildCompleteHasBeenSet; }
+
+    /**
+     * <p>Whether the build is complete. True if complete; otherwise, false.</p>
+     */
     inline void SetBuildComplete(bool value) { m_buildCompleteHasBeenSet = true; m_buildComplete = value; }
 
     /**
@@ -878,6 +1013,17 @@ namespace Model
      * <code>CodeBuild-Jenkins-Plugin</code>.</p> </li> </ul>
      */
     inline const Aws::String& GetInitiator() const{ return m_initiator; }
+
+    /**
+     * <p>The entity that started the build. Valid values include:</p> <ul> <li> <p>If
+     * AWS CodePipeline started the build, the pipeline's name (for example,
+     * <code>codepipeline/my-demo-pipeline</code>).</p> </li> <li> <p>If an AWS
+     * Identity and Access Management (IAM) user started the build, the user's name
+     * (for example, <code>MyUserName</code>).</p> </li> <li> <p>If the Jenkins plugin
+     * for AWS CodeBuild started the build, the string
+     * <code>CodeBuild-Jenkins-Plugin</code>.</p> </li> </ul>
+     */
+    inline bool InitiatorHasBeenSet() const { return m_initiatorHasBeenSet; }
 
     /**
      * <p>The entity that started the build. Valid values include:</p> <ul> <li> <p>If
@@ -960,6 +1106,14 @@ namespace Model
      * IDs and subnet IDs. The security groups and subnets must belong to the same VPC.
      * You must provide at least one security group and one subnet ID.</p>
      */
+    inline bool VpcConfigHasBeenSet() const { return m_vpcConfigHasBeenSet; }
+
+    /**
+     * <p>If your AWS CodeBuild project accesses resources in an Amazon VPC, you
+     * provide this parameter that identifies the VPC ID and the list of security group
+     * IDs and subnet IDs. The security groups and subnets must belong to the same VPC.
+     * You must provide at least one security group and one subnet ID.</p>
+     */
     inline void SetVpcConfig(const VpcConfig& value) { m_vpcConfigHasBeenSet = true; m_vpcConfig = value; }
 
     /**
@@ -995,6 +1149,11 @@ namespace Model
     /**
      * <p>Describes a network interface.</p>
      */
+    inline bool NetworkInterfaceHasBeenSet() const { return m_networkInterfaceHasBeenSet; }
+
+    /**
+     * <p>Describes a network interface.</p>
+     */
     inline void SetNetworkInterface(const NetworkInterface& value) { m_networkInterfaceHasBeenSet = true; m_networkInterface = value; }
 
     /**
@@ -1022,6 +1181,16 @@ namespace Model
      * format <code>alias/<i>alias-name</i> </code>).</p>
      */
     inline const Aws::String& GetEncryptionKey() const{ return m_encryptionKey; }
+
+    /**
+     * <p>The AWS Key Management Service (AWS KMS) customer master key (CMK) to be used
+     * for encrypting the build output artifacts.</p> <note> <p> You can use a
+     * cross-account KMS key to encrypt the build output artifacts if your service role
+     * has permission to that key. </p> </note> <p>You can specify either the Amazon
+     * Resource Name (ARN) of the CMK or, if available, the CMK's alias (using the
+     * format <code>alias/<i>alias-name</i> </code>).</p>
+     */
+    inline bool EncryptionKeyHasBeenSet() const { return m_encryptionKeyHasBeenSet; }
 
     /**
      * <p>The AWS Key Management Service (AWS KMS) customer master key (CMK) to be used

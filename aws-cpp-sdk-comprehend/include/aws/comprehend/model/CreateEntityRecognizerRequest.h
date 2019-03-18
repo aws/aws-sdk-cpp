@@ -59,6 +59,13 @@ namespace Model
      * maximum of 256 characters. Alphanumeric characters, hyphens (-) and underscores
      * (_) are allowed. The name must be unique in the account/region.</p>
      */
+    inline bool RecognizerNameHasBeenSet() const { return m_recognizerNameHasBeenSet; }
+
+    /**
+     * <p>The name given to the newly created recognizer. Recognizer names can be a
+     * maximum of 256 characters. Alphanumeric characters, hyphens (-) and underscores
+     * (_) are allowed. The name must be unique in the account/region.</p>
+     */
     inline void SetRecognizerName(const Aws::String& value) { m_recognizerNameHasBeenSet = true; m_recognizerName = value; }
 
     /**
@@ -102,6 +109,12 @@ namespace Model
      * that grants Amazon Comprehend read access to your input data.</p>
      */
     inline const Aws::String& GetDataAccessRoleArn() const{ return m_dataAccessRoleArn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the AWS Identity and Management (IAM) role
+     * that grants Amazon Comprehend read access to your input data.</p>
+     */
+    inline bool DataAccessRoleArnHasBeenSet() const { return m_dataAccessRoleArnHasBeenSet; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the AWS Identity and Management (IAM) role
@@ -152,6 +165,13 @@ namespace Model
      * the input data must be located in the same region as the entity recognizer being
      * created. </p>
      */
+    inline bool InputDataConfigHasBeenSet() const { return m_inputDataConfigHasBeenSet; }
+
+    /**
+     * <p>Specifies the format and location of the input data. The S3 bucket containing
+     * the input data must be located in the same region as the entity recognizer being
+     * created. </p>
+     */
     inline void SetInputDataConfig(const EntityRecognizerInputDataConfig& value) { m_inputDataConfigHasBeenSet = true; m_inputDataConfig = value; }
 
     /**
@@ -181,6 +201,12 @@ namespace Model
      * token, Amazon Comprehend generates one.</p>
      */
     inline const Aws::String& GetClientRequestToken() const{ return m_clientRequestToken; }
+
+    /**
+     * <p> A unique identifier for the request. If you don't set the client request
+     * token, Amazon Comprehend generates one.</p>
+     */
+    inline bool ClientRequestTokenHasBeenSet() const { return m_clientRequestTokenHasBeenSet; }
 
     /**
      * <p> A unique identifier for the request. If you don't set the client request
@@ -224,6 +250,12 @@ namespace Model
      * language. Only English ("en") is currently supported. </p>
      */
     inline const LanguageCode& GetLanguageCode() const{ return m_languageCode; }
+
+    /**
+     * <p> The language of the input documents. All documents must be in the same
+     * language. Only English ("en") is currently supported. </p>
+     */
+    inline bool LanguageCodeHasBeenSet() const { return m_languageCodeHasBeenSet; }
 
     /**
      * <p> The language of the input documents. All documents must be in the same

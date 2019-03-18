@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The ID of the pipeline.</p>
      */
+    inline bool PipelineIdHasBeenSet() const { return m_pipelineIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the pipeline.</p>
+     */
     inline void SetPipelineId(const Aws::String& value) { m_pipelineIdHasBeenSet = true; m_pipelineId = value; }
 
     /**
@@ -89,6 +94,11 @@ namespace Model
      * <p>The tags to add, as key/value pairs.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>The tags to add, as key/value pairs.</p>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
      * <p>The tags to add, as key/value pairs.</p>

@@ -62,6 +62,12 @@ namespace Model
      * <p>The creation and update parameters for an SQL-based Kinesis Data Analytics
      * application.</p>
      */
+    inline bool SqlApplicationConfigurationHasBeenSet() const { return m_sqlApplicationConfigurationHasBeenSet; }
+
+    /**
+     * <p>The creation and update parameters for an SQL-based Kinesis Data Analytics
+     * application.</p>
+     */
     inline void SetSqlApplicationConfiguration(const SqlApplicationConfiguration& value) { m_sqlApplicationConfigurationHasBeenSet = true; m_sqlApplicationConfiguration = value; }
 
     /**
@@ -88,6 +94,12 @@ namespace Model
      * application.</p>
      */
     inline const FlinkApplicationConfiguration& GetFlinkApplicationConfiguration() const{ return m_flinkApplicationConfiguration; }
+
+    /**
+     * <p>The creation and update parameters for a Java-based Kinesis Data Analytics
+     * application.</p>
+     */
+    inline bool FlinkApplicationConfigurationHasBeenSet() const { return m_flinkApplicationConfigurationHasBeenSet; }
 
     /**
      * <p>The creation and update parameters for a Java-based Kinesis Data Analytics
@@ -124,6 +136,12 @@ namespace Model
      * <p>Describes execution properties for a Java-based Kinesis Data Analytics
      * application.</p>
      */
+    inline bool EnvironmentPropertiesHasBeenSet() const { return m_environmentPropertiesHasBeenSet; }
+
+    /**
+     * <p>Describes execution properties for a Java-based Kinesis Data Analytics
+     * application.</p>
+     */
     inline void SetEnvironmentProperties(const EnvironmentProperties& value) { m_environmentPropertiesHasBeenSet = true; m_environmentProperties = value; }
 
     /**
@@ -155,6 +173,12 @@ namespace Model
      * <p>The code location and type parameters for a Java-based Kinesis Data Analytics
      * application.</p>
      */
+    inline bool ApplicationCodeConfigurationHasBeenSet() const { return m_applicationCodeConfigurationHasBeenSet; }
+
+    /**
+     * <p>The code location and type parameters for a Java-based Kinesis Data Analytics
+     * application.</p>
+     */
     inline void SetApplicationCodeConfiguration(const ApplicationCodeConfiguration& value) { m_applicationCodeConfigurationHasBeenSet = true; m_applicationCodeConfiguration = value; }
 
     /**
@@ -181,6 +205,12 @@ namespace Model
      * Analytics application.</p>
      */
     inline const ApplicationSnapshotConfiguration& GetApplicationSnapshotConfiguration() const{ return m_applicationSnapshotConfiguration; }
+
+    /**
+     * <p>Describes whether snapshots are enabled for a Java-based Kinesis Data
+     * Analytics application.</p>
+     */
+    inline bool ApplicationSnapshotConfigurationHasBeenSet() const { return m_applicationSnapshotConfigurationHasBeenSet; }
 
     /**
      * <p>Describes whether snapshots are enabled for a Java-based Kinesis Data

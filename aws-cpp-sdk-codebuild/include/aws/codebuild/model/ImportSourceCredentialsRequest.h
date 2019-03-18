@@ -56,6 +56,12 @@ namespace Model
      * <p> The Bitbucket username when the <code>authType</code> is BASIC_AUTH. This
      * parameter is not valid for other types of source providers or connections. </p>
      */
+    inline bool UsernameHasBeenSet() const { return m_usernameHasBeenSet; }
+
+    /**
+     * <p> The Bitbucket username when the <code>authType</code> is BASIC_AUTH. This
+     * parameter is not valid for other types of source providers or connections. </p>
+     */
     inline void SetUsername(const Aws::String& value) { m_usernameHasBeenSet = true; m_username = value; }
 
     /**
@@ -94,6 +100,12 @@ namespace Model
      * Bitbucket, this is the app password. </p>
      */
     inline const Aws::String& GetToken() const{ return m_token; }
+
+    /**
+     * <p> For GitHub or GitHub Enterprise, this is the personal access token. For
+     * Bitbucket, this is the app password. </p>
+     */
+    inline bool TokenHasBeenSet() const { return m_tokenHasBeenSet; }
 
     /**
      * <p> For GitHub or GitHub Enterprise, this is the personal access token. For
@@ -140,6 +152,11 @@ namespace Model
     /**
      * <p> The source provider used for this project. </p>
      */
+    inline bool ServerTypeHasBeenSet() const { return m_serverTypeHasBeenSet; }
+
+    /**
+     * <p> The source provider used for this project. </p>
+     */
     inline void SetServerType(const ServerType& value) { m_serverTypeHasBeenSet = true; m_serverType = value; }
 
     /**
@@ -164,6 +181,13 @@ namespace Model
      * must be created using the AWS CodeBuild console. </p>
      */
     inline const AuthType& GetAuthType() const{ return m_authType; }
+
+    /**
+     * <p> The type of authentication used to connect to a GitHub, GitHub Enterprise,
+     * or Bitbucket repository. An OAUTH connection is not supported by the API and
+     * must be created using the AWS CodeBuild console. </p>
+     */
+    inline bool AuthTypeHasBeenSet() const { return m_authTypeHasBeenSet; }
 
     /**
      * <p> The type of authentication used to connect to a GitHub, GitHub Enterprise,

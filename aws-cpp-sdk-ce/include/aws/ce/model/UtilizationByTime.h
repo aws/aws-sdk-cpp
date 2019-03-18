@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p>The period of time that this utilization was used for.</p>
      */
+    inline bool TimePeriodHasBeenSet() const { return m_timePeriodHasBeenSet; }
+
+    /**
+     * <p>The period of time that this utilization was used for.</p>
+     */
     inline void SetTimePeriod(const DateInterval& value) { m_timePeriodHasBeenSet = true; m_timePeriod = value; }
 
     /**
@@ -80,6 +85,11 @@ namespace Model
      * <p>The groups that this utilization result uses.</p>
      */
     inline const Aws::Vector<ReservationUtilizationGroup>& GetGroups() const{ return m_groups; }
+
+    /**
+     * <p>The groups that this utilization result uses.</p>
+     */
+    inline bool GroupsHasBeenSet() const { return m_groupsHasBeenSet; }
 
     /**
      * <p>The groups that this utilization result uses.</p>
@@ -116,6 +126,11 @@ namespace Model
      * <p>The total number of reservation hours that were used.</p>
      */
     inline const ReservationAggregates& GetTotal() const{ return m_total; }
+
+    /**
+     * <p>The total number of reservation hours that were used.</p>
+     */
+    inline bool TotalHasBeenSet() const { return m_totalHasBeenSet; }
 
     /**
      * <p>The total number of reservation hours that were used.</p>

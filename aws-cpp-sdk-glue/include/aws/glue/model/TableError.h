@@ -58,6 +58,12 @@ namespace Model
      * <p>Name of the table. For Hive compatibility, this must be entirely
      * lowercase.</p>
      */
+    inline bool TableNameHasBeenSet() const { return m_tableNameHasBeenSet; }
+
+    /**
+     * <p>Name of the table. For Hive compatibility, this must be entirely
+     * lowercase.</p>
+     */
     inline void SetTableName(const Aws::String& value) { m_tableNameHasBeenSet = true; m_tableName = value; }
 
     /**
@@ -95,6 +101,11 @@ namespace Model
      * <p>Detail about the error.</p>
      */
     inline const ErrorDetail& GetErrorDetail() const{ return m_errorDetail; }
+
+    /**
+     * <p>Detail about the error.</p>
+     */
+    inline bool ErrorDetailHasBeenSet() const { return m_errorDetailHasBeenSet; }
 
     /**
      * <p>Detail about the error.</p>

@@ -52,6 +52,9 @@ namespace Model
     inline const GeoRestriction& GetGeoRestriction() const{ return m_geoRestriction; }
 
     
+    inline bool GeoRestrictionHasBeenSet() const { return m_geoRestrictionHasBeenSet; }
+
+    
     inline void SetGeoRestriction(const GeoRestriction& value) { m_geoRestrictionHasBeenSet = true; m_geoRestriction = value; }
 
     

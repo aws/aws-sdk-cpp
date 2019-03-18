@@ -106,6 +106,34 @@ namespace Model
      * The status of the volume (<code>ok</code> | <code>impaired</code> |
      * <code>warning</code> | <code>insufficient-data</code>).</p> </li> </ul>
      */
+    inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
+
+    /**
+     * <p>One or more filters.</p> <ul> <li> <p> <code>action.code</code> - The action
+     * code for the event (for example, <code>enable-volume-io</code>).</p> </li> <li>
+     * <p> <code>action.description</code> - A description of the action.</p> </li>
+     * <li> <p> <code>action.event-id</code> - The event ID associated with the
+     * action.</p> </li> <li> <p> <code>availability-zone</code> - The Availability
+     * Zone of the instance.</p> </li> <li> <p> <code>event.description</code> - A
+     * description of the event.</p> </li> <li> <p> <code>event.event-id</code> - The
+     * event ID.</p> </li> <li> <p> <code>event.event-type</code> - The event type (for
+     * <code>io-enabled</code>: <code>passed</code> | <code>failed</code>; for
+     * <code>io-performance</code>: <code>io-performance:degraded</code> |
+     * <code>io-performance:severely-degraded</code> |
+     * <code>io-performance:stalled</code>).</p> </li> <li> <p>
+     * <code>event.not-after</code> - The latest end time for the event.</p> </li> <li>
+     * <p> <code>event.not-before</code> - The earliest start time for the event.</p>
+     * </li> <li> <p> <code>volume-status.details-name</code> - The cause for
+     * <code>volume-status.status</code> (<code>io-enabled</code> |
+     * <code>io-performance</code>).</p> </li> <li> <p>
+     * <code>volume-status.details-status</code> - The status of
+     * <code>volume-status.details-name</code> (for <code>io-enabled</code>:
+     * <code>passed</code> | <code>failed</code>; for <code>io-performance</code>:
+     * <code>normal</code> | <code>degraded</code> | <code>severely-degraded</code> |
+     * <code>stalled</code>).</p> </li> <li> <p> <code>volume-status.status</code> -
+     * The status of the volume (<code>ok</code> | <code>impaired</code> |
+     * <code>warning</code> | <code>insufficient-data</code>).</p> </li> </ul>
+     */
     inline void SetFilters(const Aws::Vector<Filter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
 
     /**
@@ -275,6 +303,20 @@ namespace Model
      * returns all results. You cannot specify this parameter and the volume IDs
      * parameter in the same request.</p>
      */
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
+
+    /**
+     * <p>The maximum number of volume results returned by
+     * <code>DescribeVolumeStatus</code> in paginated output. When this parameter is
+     * used, the request only returns <code>MaxResults</code> results in a single page
+     * along with a <code>NextToken</code> response element. The remaining results of
+     * the initial request can be seen by sending another request with the returned
+     * <code>NextToken</code> value. This value can be between 5 and 1000; if
+     * <code>MaxResults</code> is given a value larger than 1000, only 1000 results are
+     * returned. If this parameter is not used, then <code>DescribeVolumeStatus</code>
+     * returns all results. You cannot specify this parameter and the volume IDs
+     * parameter in the same request.</p>
+     */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
@@ -300,6 +342,15 @@ namespace Model
      * return.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
+    /**
+     * <p>The <code>NextToken</code> value to include in a future
+     * <code>DescribeVolumeStatus</code> request. When the results of the request
+     * exceed <code>MaxResults</code>, this value can be used to retrieve the next page
+     * of results. This value is <code>null</code> when there are no more results to
+     * return.</p>
+     */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
      * <p>The <code>NextToken</code> value to include in a future
@@ -364,6 +415,11 @@ namespace Model
     /**
      * <p>One or more volume IDs.</p> <p>Default: Describes all your volumes.</p>
      */
+    inline bool VolumeIdsHasBeenSet() const { return m_volumeIdsHasBeenSet; }
+
+    /**
+     * <p>One or more volume IDs.</p> <p>Default: Describes all your volumes.</p>
+     */
     inline void SetVolumeIds(const Aws::Vector<Aws::String>& value) { m_volumeIdsHasBeenSet = true; m_volumeIds = value; }
 
     /**
@@ -404,6 +460,14 @@ namespace Model
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
     inline bool GetDryRun() const{ return m_dryRun; }
+
+    /**
+     * <p>Checks whether you have the required permissions for the action, without
+     * actually making the request, and provides an error response. If you have the
+     * required permissions, the error response is <code>DryRunOperation</code>.
+     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+     */
+    inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
 
     /**
      * <p>Checks whether you have the required permissions for the action, without

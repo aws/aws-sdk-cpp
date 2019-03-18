@@ -52,6 +52,12 @@ namespace Model
      * <p>The ARN of a resource that represents your subscription to a supported
      * product.</p>
      */
+    inline bool ProductSubscriptionArnHasBeenSet() const { return m_productSubscriptionArnHasBeenSet; }
+
+    /**
+     * <p>The ARN of a resource that represents your subscription to a supported
+     * product.</p>
+     */
     inline void SetProductSubscriptionArn(const Aws::String& value) { m_productSubscriptionArnHasBeenSet = true; m_productSubscriptionArn = value; }
 
     /**

@@ -59,6 +59,11 @@ namespace Model
     /**
      * <p>The description of the target.</p>
      */
+    inline bool TargetHasBeenSet() const { return m_targetHasBeenSet; }
+
+    /**
+     * <p>The description of the target.</p>
+     */
     inline void SetTarget(const TargetDescription& value) { m_targetHasBeenSet = true; m_target = value; }
 
     /**
@@ -81,6 +86,11 @@ namespace Model
      * <p>The port to use to connect with the target.</p>
      */
     inline const Aws::String& GetHealthCheckPort() const{ return m_healthCheckPort; }
+
+    /**
+     * <p>The port to use to connect with the target.</p>
+     */
+    inline bool HealthCheckPortHasBeenSet() const { return m_healthCheckPortHasBeenSet; }
 
     /**
      * <p>The port to use to connect with the target.</p>
@@ -117,6 +127,11 @@ namespace Model
      * <p>The health information for the target.</p>
      */
     inline const TargetHealth& GetTargetHealth() const{ return m_targetHealth; }
+
+    /**
+     * <p>The health information for the target.</p>
+     */
+    inline bool TargetHealthHasBeenSet() const { return m_targetHealthHasBeenSet; }
 
     /**
      * <p>The health information for the target.</p>

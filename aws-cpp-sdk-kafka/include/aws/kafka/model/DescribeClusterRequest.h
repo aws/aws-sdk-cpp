@@ -50,6 +50,11 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) that uniquely identifies the cluster.</p>
      */
+    inline bool ClusterArnHasBeenSet() const { return m_clusterArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) that uniquely identifies the cluster.</p>
+     */
     inline void SetClusterArn(const Aws::String& value) { m_clusterArnHasBeenSet = true; m_clusterArn = value; }
 
     /**

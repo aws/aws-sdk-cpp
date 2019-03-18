@@ -50,6 +50,11 @@ namespace Model
     /**
      * <p>The API identifier.</p>
      */
+    inline bool ApiIdHasBeenSet() const { return m_apiIdHasBeenSet; }
+
+    /**
+     * <p>The API identifier.</p>
+     */
     inline void SetApiId(const Aws::String& value) { m_apiIdHasBeenSet = true; m_apiId = value; }
 
     /**
@@ -86,6 +91,11 @@ namespace Model
     /**
      * <p>The route ID.</p>
      */
+    inline bool RouteIdHasBeenSet() const { return m_routeIdHasBeenSet; }
+
+    /**
+     * <p>The route ID.</p>
+     */
     inline void SetRouteId(const Aws::String& value) { m_routeIdHasBeenSet = true; m_routeId = value; }
 
     /**
@@ -118,6 +128,11 @@ namespace Model
      * <p>The route response ID.</p>
      */
     inline const Aws::String& GetRouteResponseId() const{ return m_routeResponseId; }
+
+    /**
+     * <p>The route response ID.</p>
+     */
+    inline bool RouteResponseIdHasBeenSet() const { return m_routeResponseIdHasBeenSet; }
 
     /**
      * <p>The route response ID.</p>

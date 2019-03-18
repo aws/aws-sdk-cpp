@@ -60,6 +60,12 @@ namespace Model
      * <p>The allocation ID of the Elastic IP address that's associated with the NAT
      * gateway.</p>
      */
+    inline bool AllocationIdHasBeenSet() const { return m_allocationIdHasBeenSet; }
+
+    /**
+     * <p>The allocation ID of the Elastic IP address that's associated with the NAT
+     * gateway.</p>
+     */
     inline void SetAllocationId(const Aws::String& value) { m_allocationIdHasBeenSet = true; m_allocationId = value; }
 
     /**
@@ -101,6 +107,11 @@ namespace Model
     /**
      * <p>The ID of the network interface associated with the NAT gateway.</p>
      */
+    inline bool NetworkInterfaceIdHasBeenSet() const { return m_networkInterfaceIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the network interface associated with the NAT gateway.</p>
+     */
     inline void SetNetworkInterfaceId(const Aws::String& value) { m_networkInterfaceIdHasBeenSet = true; m_networkInterfaceId = value; }
 
     /**
@@ -137,6 +148,11 @@ namespace Model
     /**
      * <p>The private IP address associated with the Elastic IP address.</p>
      */
+    inline bool PrivateIpHasBeenSet() const { return m_privateIpHasBeenSet; }
+
+    /**
+     * <p>The private IP address associated with the Elastic IP address.</p>
+     */
     inline void SetPrivateIp(const Aws::String& value) { m_privateIpHasBeenSet = true; m_privateIp = value; }
 
     /**
@@ -169,6 +185,11 @@ namespace Model
      * <p>The Elastic IP address associated with the NAT gateway.</p>
      */
     inline const Aws::String& GetPublicIp() const{ return m_publicIp; }
+
+    /**
+     * <p>The Elastic IP address associated with the NAT gateway.</p>
+     */
+    inline bool PublicIpHasBeenSet() const { return m_publicIpHasBeenSet; }
 
     /**
      * <p>The Elastic IP address associated with the NAT gateway.</p>

@@ -55,6 +55,11 @@ namespace Model
     /**
      * <p>The Elasticsearch domain that you want to get information about.</p>
      */
+    inline bool DomainNameHasBeenSet() const { return m_domainNameHasBeenSet; }
+
+    /**
+     * <p>The Elasticsearch domain that you want to get information about.</p>
+     */
     inline void SetDomainName(const Aws::String& value) { m_domainNameHasBeenSet = true; m_domainName = value; }
 
     /**

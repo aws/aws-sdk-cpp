@@ -60,6 +60,12 @@ namespace Model
      * <p>The identity to be removed from the list of identities for the AWS
      * Account.</p>
      */
+    inline bool IdentityHasBeenSet() const { return m_identityHasBeenSet; }
+
+    /**
+     * <p>The identity to be removed from the list of identities for the AWS
+     * Account.</p>
+     */
     inline void SetIdentity(const Aws::String& value) { m_identityHasBeenSet = true; m_identity = value; }
 
     /**

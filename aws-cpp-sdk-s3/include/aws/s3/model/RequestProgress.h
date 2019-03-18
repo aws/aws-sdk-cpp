@@ -55,6 +55,12 @@ namespace Model
      * <p>Specifies whether periodic QueryProgress frames should be sent. Valid values:
      * TRUE, FALSE. Default value: FALSE.</p>
      */
+    inline bool EnabledHasBeenSet() const { return m_enabledHasBeenSet; }
+
+    /**
+     * <p>Specifies whether periodic QueryProgress frames should be sent. Valid values:
+     * TRUE, FALSE. Default value: FALSE.</p>
+     */
     inline void SetEnabled(bool value) { m_enabledHasBeenSet = true; m_enabled = value; }
 
     /**

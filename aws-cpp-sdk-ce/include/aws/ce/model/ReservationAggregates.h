@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The percentage of reservation time that you used.</p>
      */
+    inline bool UtilizationPercentageHasBeenSet() const { return m_utilizationPercentageHasBeenSet; }
+
+    /**
+     * <p>The percentage of reservation time that you used.</p>
+     */
     inline void SetUtilizationPercentage(const Aws::String& value) { m_utilizationPercentageHasBeenSet = true; m_utilizationPercentage = value; }
 
     /**
@@ -90,6 +95,13 @@ namespace Model
      * November 11, 2017.</p>
      */
     inline const Aws::String& GetUtilizationPercentageInUnits() const{ return m_utilizationPercentageInUnits; }
+
+    /**
+     * <p>The percentage of Amazon EC2 reservation time that you used, converted to
+     * normalized units. Normalized units are available only for Amazon EC2 usage after
+     * November 11, 2017.</p>
+     */
+    inline bool UtilizationPercentageInUnitsHasBeenSet() const { return m_utilizationPercentageInUnitsHasBeenSet; }
 
     /**
      * <p>The percentage of Amazon EC2 reservation time that you used, converted to
@@ -142,6 +154,11 @@ namespace Model
     /**
      * <p>How many reservation hours that you purchased.</p>
      */
+    inline bool PurchasedHoursHasBeenSet() const { return m_purchasedHoursHasBeenSet; }
+
+    /**
+     * <p>How many reservation hours that you purchased.</p>
+     */
     inline void SetPurchasedHours(const Aws::String& value) { m_purchasedHoursHasBeenSet = true; m_purchasedHours = value; }
 
     /**
@@ -176,6 +193,13 @@ namespace Model
      * November 11, 2017.</p>
      */
     inline const Aws::String& GetPurchasedUnits() const{ return m_purchasedUnits; }
+
+    /**
+     * <p>How many Amazon EC2 reservation hours that you purchased, converted to
+     * normalized units. Normalized units are available only for Amazon EC2 usage after
+     * November 11, 2017.</p>
+     */
+    inline bool PurchasedUnitsHasBeenSet() const { return m_purchasedUnitsHasBeenSet; }
 
     /**
      * <p>How many Amazon EC2 reservation hours that you purchased, converted to
@@ -228,6 +252,11 @@ namespace Model
     /**
      * <p>The total number of reservation hours that you used.</p>
      */
+    inline bool TotalActualHoursHasBeenSet() const { return m_totalActualHoursHasBeenSet; }
+
+    /**
+     * <p>The total number of reservation hours that you used.</p>
+     */
     inline void SetTotalActualHours(const Aws::String& value) { m_totalActualHoursHasBeenSet = true; m_totalActualHours = value; }
 
     /**
@@ -262,6 +291,13 @@ namespace Model
      * November 11, 2017.</p>
      */
     inline const Aws::String& GetTotalActualUnits() const{ return m_totalActualUnits; }
+
+    /**
+     * <p>The total number of Amazon EC2 reservation hours that you used, converted to
+     * normalized units. Normalized units are available only for Amazon EC2 usage after
+     * November 11, 2017.</p>
+     */
+    inline bool TotalActualUnitsHasBeenSet() const { return m_totalActualUnitsHasBeenSet; }
 
     /**
      * <p>The total number of Amazon EC2 reservation hours that you used, converted to
@@ -314,6 +350,11 @@ namespace Model
     /**
      * <p>The number of reservation hours that you didn't use.</p>
      */
+    inline bool UnusedHoursHasBeenSet() const { return m_unusedHoursHasBeenSet; }
+
+    /**
+     * <p>The number of reservation hours that you didn't use.</p>
+     */
     inline void SetUnusedHours(const Aws::String& value) { m_unusedHoursHasBeenSet = true; m_unusedHours = value; }
 
     /**
@@ -348,6 +389,13 @@ namespace Model
      * November 11, 2017.</p>
      */
     inline const Aws::String& GetUnusedUnits() const{ return m_unusedUnits; }
+
+    /**
+     * <p>The number of Amazon EC2 reservation hours that you didn't use, converted to
+     * normalized units. Normalized units are available only for Amazon EC2 usage after
+     * November 11, 2017.</p>
+     */
+    inline bool UnusedUnitsHasBeenSet() const { return m_unusedUnitsHasBeenSet; }
 
     /**
      * <p>The number of Amazon EC2 reservation hours that you didn't use, converted to
@@ -400,6 +448,11 @@ namespace Model
     /**
      * <p>How much your reservation would cost if charged On-Demand rates.</p>
      */
+    inline bool OnDemandCostOfRIHoursUsedHasBeenSet() const { return m_onDemandCostOfRIHoursUsedHasBeenSet; }
+
+    /**
+     * <p>How much your reservation would cost if charged On-Demand rates.</p>
+     */
     inline void SetOnDemandCostOfRIHoursUsed(const Aws::String& value) { m_onDemandCostOfRIHoursUsedHasBeenSet = true; m_onDemandCostOfRIHoursUsed = value; }
 
     /**
@@ -434,6 +487,13 @@ namespace Model
      * <code>OnDemandCostOfRIHoursUsed</code>.</p>
      */
     inline const Aws::String& GetNetRISavings() const{ return m_netRISavings; }
+
+    /**
+     * <p>How much you saved due to purchasing and utilizing reservation. AWS
+     * calculates this by subtracting <code>TotalAmortizedFee</code> from
+     * <code>OnDemandCostOfRIHoursUsed</code>.</p>
+     */
+    inline bool NetRISavingsHasBeenSet() const { return m_netRISavingsHasBeenSet; }
 
     /**
      * <p>How much you saved due to purchasing and utilizing reservation. AWS
@@ -486,6 +546,11 @@ namespace Model
     /**
      * <p>How much you could save if you use your entire reservation.</p>
      */
+    inline bool TotalPotentialRISavingsHasBeenSet() const { return m_totalPotentialRISavingsHasBeenSet; }
+
+    /**
+     * <p>How much you could save if you use your entire reservation.</p>
+     */
     inline void SetTotalPotentialRISavings(const Aws::String& value) { m_totalPotentialRISavingsHasBeenSet = true; m_totalPotentialRISavings = value; }
 
     /**
@@ -519,6 +584,12 @@ namespace Model
      * period.</p>
      */
     inline const Aws::String& GetAmortizedUpfrontFee() const{ return m_amortizedUpfrontFee; }
+
+    /**
+     * <p>The upfront cost of your reservation, amortized over the reservation
+     * period.</p>
+     */
+    inline bool AmortizedUpfrontFeeHasBeenSet() const { return m_amortizedUpfrontFeeHasBeenSet; }
 
     /**
      * <p>The upfront cost of your reservation, amortized over the reservation
@@ -567,6 +638,12 @@ namespace Model
      * <p>The monthly cost of your reservation, amortized over the reservation
      * period.</p>
      */
+    inline bool AmortizedRecurringFeeHasBeenSet() const { return m_amortizedRecurringFeeHasBeenSet; }
+
+    /**
+     * <p>The monthly cost of your reservation, amortized over the reservation
+     * period.</p>
+     */
     inline void SetAmortizedRecurringFee(const Aws::String& value) { m_amortizedRecurringFeeHasBeenSet = true; m_amortizedRecurringFee = value; }
 
     /**
@@ -605,6 +682,12 @@ namespace Model
      * period.</p>
      */
     inline const Aws::String& GetTotalAmortizedFee() const{ return m_totalAmortizedFee; }
+
+    /**
+     * <p>The total cost of your reservation, amortized over the reservation
+     * period.</p>
+     */
+    inline bool TotalAmortizedFeeHasBeenSet() const { return m_totalAmortizedFeeHasBeenSet; }
 
     /**
      * <p>The total cost of your reservation, amortized over the reservation

@@ -55,6 +55,11 @@ namespace Model
     /**
      * <p>The S3 bucket for output.</p>
      */
+    inline bool S3BucketHasBeenSet() const { return m_s3BucketHasBeenSet; }
+
+    /**
+     * <p>The S3 bucket for output.</p>
+     */
     inline void SetS3Bucket(const Aws::String& value) { m_s3BucketHasBeenSet = true; m_s3Bucket = value; }
 
     /**
@@ -88,6 +93,12 @@ namespace Model
      * placed.</p>
      */
     inline const Aws::String& GetS3Prefix() const{ return m_s3Prefix; }
+
+    /**
+     * <p>The S3 folder in the <code>s3Bucket</code> where output files will be
+     * placed.</p>
+     */
+    inline bool S3PrefixHasBeenSet() const { return m_s3PrefixHasBeenSet; }
 
     /**
      * <p>The S3 folder in the <code>s3Bucket</code> where output files will be

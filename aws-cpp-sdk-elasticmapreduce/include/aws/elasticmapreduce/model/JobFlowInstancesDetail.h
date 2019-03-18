@@ -59,6 +59,11 @@ namespace Model
     /**
      * <p>The Amazon EC2 master node instance type.</p>
      */
+    inline bool MasterInstanceTypeHasBeenSet() const { return m_masterInstanceTypeHasBeenSet; }
+
+    /**
+     * <p>The Amazon EC2 master node instance type.</p>
+     */
     inline void SetMasterInstanceType(const Aws::String& value) { m_masterInstanceTypeHasBeenSet = true; m_masterInstanceType = value; }
 
     /**
@@ -92,6 +97,12 @@ namespace Model
      * is the private DNS name. On a public subnet, this is the public DNS name.</p>
      */
     inline const Aws::String& GetMasterPublicDnsName() const{ return m_masterPublicDnsName; }
+
+    /**
+     * <p>The DNS name of the master node. If the cluster is on a private subnet, this
+     * is the private DNS name. On a public subnet, this is the public DNS name.</p>
+     */
+    inline bool MasterPublicDnsNameHasBeenSet() const { return m_masterPublicDnsNameHasBeenSet; }
 
     /**
      * <p>The DNS name of the master node. If the cluster is on a private subnet, this
@@ -138,6 +149,11 @@ namespace Model
     /**
      * <p>The Amazon EC2 instance identifier of the master node.</p>
      */
+    inline bool MasterInstanceIdHasBeenSet() const { return m_masterInstanceIdHasBeenSet; }
+
+    /**
+     * <p>The Amazon EC2 instance identifier of the master node.</p>
+     */
     inline void SetMasterInstanceId(const Aws::String& value) { m_masterInstanceIdHasBeenSet = true; m_masterInstanceId = value; }
 
     /**
@@ -170,6 +186,11 @@ namespace Model
      * <p>The Amazon EC2 core and task node instance type.</p>
      */
     inline const Aws::String& GetSlaveInstanceType() const{ return m_slaveInstanceType; }
+
+    /**
+     * <p>The Amazon EC2 core and task node instance type.</p>
+     */
+    inline bool SlaveInstanceTypeHasBeenSet() const { return m_slaveInstanceTypeHasBeenSet; }
 
     /**
      * <p>The Amazon EC2 core and task node instance type.</p>
@@ -216,6 +237,14 @@ namespace Model
      * greater than 1, one instance is the master node and all others are core and task
      * nodes.</p>
      */
+    inline bool InstanceCountHasBeenSet() const { return m_instanceCountHasBeenSet; }
+
+    /**
+     * <p>The number of Amazon EC2 instances in the cluster. If the value is 1, the
+     * same instance serves as both the master and core and task node. If the value is
+     * greater than 1, one instance is the master node and all others are core and task
+     * nodes.</p>
+     */
     inline void SetInstanceCount(int value) { m_instanceCountHasBeenSet = true; m_instanceCount = value; }
 
     /**
@@ -231,6 +260,11 @@ namespace Model
      * <p>Details about the instance groups in a cluster.</p>
      */
     inline const Aws::Vector<InstanceGroupDetail>& GetInstanceGroups() const{ return m_instanceGroups; }
+
+    /**
+     * <p>Details about the instance groups in a cluster.</p>
+     */
+    inline bool InstanceGroupsHasBeenSet() const { return m_instanceGroupsHasBeenSet; }
 
     /**
      * <p>Details about the instance groups in a cluster.</p>
@@ -281,6 +315,16 @@ namespace Model
      * incremented by four. This result is only an approximation and does not reflect
      * the actual billing rate.</p>
      */
+    inline bool NormalizedInstanceHoursHasBeenSet() const { return m_normalizedInstanceHoursHasBeenSet; }
+
+    /**
+     * <p>An approximation of the cost of the cluster, represented in m1.small/hours.
+     * This value is incremented one time for every hour that an m1.small runs. Larger
+     * instances are weighted more, so an Amazon EC2 instance that is roughly four
+     * times more expensive would result in the normalized instance hours being
+     * incremented by four. This result is only an approximation and does not reflect
+     * the actual billing rate.</p>
+     */
     inline void SetNormalizedInstanceHours(int value) { m_normalizedInstanceHoursHasBeenSet = true; m_normalizedInstanceHours = value; }
 
     /**
@@ -299,6 +343,12 @@ namespace Model
      * node.</p>
      */
     inline const Aws::String& GetEc2KeyName() const{ return m_ec2KeyName; }
+
+    /**
+     * <p>The name of an Amazon EC2 key pair that can be used to ssh to the master
+     * node.</p>
+     */
+    inline bool Ec2KeyNameHasBeenSet() const { return m_ec2KeyNameHasBeenSet; }
 
     /**
      * <p>The name of an Amazon EC2 key pair that can be used to ssh to the master
@@ -347,6 +397,12 @@ namespace Model
      * <p>For clusters launched within Amazon Virtual Private Cloud, this is the
      * identifier of the subnet where the cluster was launched.</p>
      */
+    inline bool Ec2SubnetIdHasBeenSet() const { return m_ec2SubnetIdHasBeenSet; }
+
+    /**
+     * <p>For clusters launched within Amazon Virtual Private Cloud, this is the
+     * identifier of the subnet where the cluster was launched.</p>
+     */
     inline void SetEc2SubnetId(const Aws::String& value) { m_ec2SubnetIdHasBeenSet = true; m_ec2SubnetId = value; }
 
     /**
@@ -388,6 +444,11 @@ namespace Model
     /**
      * <p>The Amazon EC2 Availability Zone for the cluster.</p>
      */
+    inline bool PlacementHasBeenSet() const { return m_placementHasBeenSet; }
+
+    /**
+     * <p>The Amazon EC2 Availability Zone for the cluster.</p>
+     */
     inline void SetPlacement(const PlacementType& value) { m_placementHasBeenSet = true; m_placement = value; }
 
     /**
@@ -416,6 +477,12 @@ namespace Model
      * <p>Specifies whether the cluster should remain available after completing all
      * steps.</p>
      */
+    inline bool KeepJobFlowAliveWhenNoStepsHasBeenSet() const { return m_keepJobFlowAliveWhenNoStepsHasBeenSet; }
+
+    /**
+     * <p>Specifies whether the cluster should remain available after completing all
+     * steps.</p>
+     */
     inline void SetKeepJobFlowAliveWhenNoSteps(bool value) { m_keepJobFlowAliveWhenNoStepsHasBeenSet = true; m_keepJobFlowAliveWhenNoSteps = value; }
 
     /**
@@ -437,6 +504,13 @@ namespace Model
      * termination by API calls, user intervention, or in the event of a job-flow
      * error.</p>
      */
+    inline bool TerminationProtectedHasBeenSet() const { return m_terminationProtectedHasBeenSet; }
+
+    /**
+     * <p>Specifies whether the Amazon EC2 instances in the cluster are protected from
+     * termination by API calls, user intervention, or in the event of a job-flow
+     * error.</p>
+     */
     inline void SetTerminationProtected(bool value) { m_terminationProtectedHasBeenSet = true; m_terminationProtected = value; }
 
     /**
@@ -451,6 +525,11 @@ namespace Model
      * <p>The Hadoop version for the cluster.</p>
      */
     inline const Aws::String& GetHadoopVersion() const{ return m_hadoopVersion; }
+
+    /**
+     * <p>The Hadoop version for the cluster.</p>
+     */
+    inline bool HadoopVersionHasBeenSet() const { return m_hadoopVersionHasBeenSet; }
 
     /**
      * <p>The Hadoop version for the cluster.</p>

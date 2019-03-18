@@ -54,6 +54,11 @@ namespace Model
     /**
      * <p>Specifies information about the public port(s).</p>
      */
+    inline bool PortInfosHasBeenSet() const { return m_portInfosHasBeenSet; }
+
+    /**
+     * <p>Specifies information about the public port(s).</p>
+     */
     inline void SetPortInfos(const Aws::Vector<PortInfo>& value) { m_portInfosHasBeenSet = true; m_portInfos = value; }
 
     /**
@@ -86,6 +91,11 @@ namespace Model
      * <p>The Lightsail instance name of the public port(s) you are setting.</p>
      */
     inline const Aws::String& GetInstanceName() const{ return m_instanceName; }
+
+    /**
+     * <p>The Lightsail instance name of the public port(s) you are setting.</p>
+     */
+    inline bool InstanceNameHasBeenSet() const { return m_instanceNameHasBeenSet; }
 
     /**
      * <p>The Lightsail instance name of the public port(s) you are setting.</p>

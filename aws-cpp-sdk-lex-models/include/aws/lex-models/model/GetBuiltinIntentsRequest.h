@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>A list of locales that the intent supports.</p>
      */
+    inline bool LocaleHasBeenSet() const { return m_localeHasBeenSet; }
+
+    /**
+     * <p>A list of locales that the intent supports.</p>
+     */
     inline void SetLocale(const Locale& value) { m_localeHasBeenSet = true; m_locale = value; }
 
     /**
@@ -83,6 +88,15 @@ namespace Model
      * Built-in Intents</a> in the <i>Alexa Skills Kit</i>.</p>
      */
     inline const Aws::String& GetSignatureContains() const{ return m_signatureContains; }
+
+    /**
+     * <p>Substring to match in built-in intent signatures. An intent will be returned
+     * if any part of its signature matches the substring. For example, "xyz" matches
+     * both "xyzabc" and "abcxyz." To find the signature for an intent, see <a
+     * href="https://developer.amazon.com/public/solutions/alexa/alexa-skills-kit/docs/built-in-intent-ref/standard-intents">Standard
+     * Built-in Intents</a> in the <i>Alexa Skills Kit</i>.</p>
+     */
+    inline bool SignatureContainsHasBeenSet() const { return m_signatureContainsHasBeenSet; }
 
     /**
      * <p>Substring to match in built-in intent signatures. An intent will be returned
@@ -151,6 +165,13 @@ namespace Model
      * truncated, Amazon Lex returns a pagination token in the response. To fetch the
      * next page of intents, use the pagination token in the next request.</p>
      */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
+
+    /**
+     * <p>A pagination token that fetches the next page of intents. If this API call is
+     * truncated, Amazon Lex returns a pagination token in the response. To fetch the
+     * next page of intents, use the pagination token in the next request.</p>
+     */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
     /**
@@ -194,6 +215,12 @@ namespace Model
      * 10.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
+
+    /**
+     * <p>The maximum number of intents to return in the response. The default is
+     * 10.</p>
+     */
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
 
     /**
      * <p>The maximum number of intents to return in the response. The default is

@@ -62,6 +62,12 @@ namespace Model
      * <p>The values of the partition. Although this parameter is not required by the
      * SDK, you must specify this parameter for a valid input.</p>
      */
+    inline bool ValuesHasBeenSet() const { return m_valuesHasBeenSet; }
+
+    /**
+     * <p>The values of the partition. Although this parameter is not required by the
+     * SDK, you must specify this parameter for a valid input.</p>
+     */
     inline void SetValues(const Aws::Vector<Aws::String>& value) { m_valuesHasBeenSet = true; m_values = value; }
 
     /**
@@ -109,6 +115,11 @@ namespace Model
     /**
      * <p>The last time at which the partition was accessed.</p>
      */
+    inline bool LastAccessTimeHasBeenSet() const { return m_lastAccessTimeHasBeenSet; }
+
+    /**
+     * <p>The last time at which the partition was accessed.</p>
+     */
     inline void SetLastAccessTime(const Aws::Utils::DateTime& value) { m_lastAccessTimeHasBeenSet = true; m_lastAccessTime = value; }
 
     /**
@@ -132,6 +143,12 @@ namespace Model
      * stored.</p>
      */
     inline const StorageDescriptor& GetStorageDescriptor() const{ return m_storageDescriptor; }
+
+    /**
+     * <p>Provides information about the physical location where the partition is
+     * stored.</p>
+     */
+    inline bool StorageDescriptorHasBeenSet() const { return m_storageDescriptorHasBeenSet; }
 
     /**
      * <p>Provides information about the physical location where the partition is
@@ -162,6 +179,11 @@ namespace Model
      * <p>These key-value pairs define partition parameters.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetParameters() const{ return m_parameters; }
+
+    /**
+     * <p>These key-value pairs define partition parameters.</p>
+     */
+    inline bool ParametersHasBeenSet() const { return m_parametersHasBeenSet; }
 
     /**
      * <p>These key-value pairs define partition parameters.</p>
@@ -224,6 +246,12 @@ namespace Model
      * partition.</p>
      */
     inline const Aws::Utils::DateTime& GetLastAnalyzedTime() const{ return m_lastAnalyzedTime; }
+
+    /**
+     * <p>The last time at which column statistics were computed for this
+     * partition.</p>
+     */
+    inline bool LastAnalyzedTimeHasBeenSet() const { return m_lastAnalyzedTimeHasBeenSet; }
 
     /**
      * <p>The last time at which column statistics were computed for this

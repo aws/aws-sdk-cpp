@@ -63,6 +63,13 @@ namespace Model
      * created, enter <code>true</code>. To list pipelines in reverse chronological
      * order, enter <code>false</code>.</p>
      */
+    inline bool AscendingHasBeenSet() const { return m_ascendingHasBeenSet; }
+
+    /**
+     * <p>To list pipelines in chronological order by the date and time that they were
+     * created, enter <code>true</code>. To list pipelines in reverse chronological
+     * order, enter <code>false</code>.</p>
+     */
     inline void SetAscending(const Aws::String& value) { m_ascendingHasBeenSet = true; m_ascending = value; }
 
     /**
@@ -107,6 +114,13 @@ namespace Model
      * successive page of results. </p>
      */
     inline const Aws::String& GetPageToken() const{ return m_pageToken; }
+
+    /**
+     * <p>When Elastic Transcoder returns more than one page of results, use
+     * <code>pageToken</code> in subsequent <code>GET</code> requests to get each
+     * successive page of results. </p>
+     */
+    inline bool PageTokenHasBeenSet() const { return m_pageTokenHasBeenSet; }
 
     /**
      * <p>When Elastic Transcoder returns more than one page of results, use

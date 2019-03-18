@@ -61,6 +61,11 @@ namespace Model
     /**
      * <p/>
      */
+    inline bool BucketHasBeenSet() const { return m_bucketHasBeenSet; }
+
+    /**
+     * <p/>
+     */
     inline void SetBucket(const Aws::String& value) { m_bucketHasBeenSet = true; m_bucket = value; }
 
     /**
@@ -94,6 +99,12 @@ namespace Model
      * a slash (/). Must be URL-encoded.</p>
      */
     inline const Aws::String& GetCopySource() const{ return m_copySource; }
+
+    /**
+     * <p>The name of the source bucket and key name of the source object, separated by
+     * a slash (/). Must be URL-encoded.</p>
+     */
+    inline bool CopySourceHasBeenSet() const { return m_copySourceHasBeenSet; }
 
     /**
      * <p>The name of the source bucket and key name of the source object, separated by
@@ -140,6 +151,11 @@ namespace Model
     /**
      * <p>Copies the object if its entity tag (ETag) matches the specified tag.</p>
      */
+    inline bool CopySourceIfMatchHasBeenSet() const { return m_copySourceIfMatchHasBeenSet; }
+
+    /**
+     * <p>Copies the object if its entity tag (ETag) matches the specified tag.</p>
+     */
     inline void SetCopySourceIfMatch(const Aws::String& value) { m_copySourceIfMatchHasBeenSet = true; m_copySourceIfMatch = value; }
 
     /**
@@ -176,6 +192,11 @@ namespace Model
     /**
      * <p>Copies the object if it has been modified since the specified time.</p>
      */
+    inline bool CopySourceIfModifiedSinceHasBeenSet() const { return m_copySourceIfModifiedSinceHasBeenSet; }
+
+    /**
+     * <p>Copies the object if it has been modified since the specified time.</p>
+     */
     inline void SetCopySourceIfModifiedSince(const Aws::Utils::DateTime& value) { m_copySourceIfModifiedSinceHasBeenSet = true; m_copySourceIfModifiedSince = value; }
 
     /**
@@ -199,6 +220,12 @@ namespace Model
      * ETag.</p>
      */
     inline const Aws::String& GetCopySourceIfNoneMatch() const{ return m_copySourceIfNoneMatch; }
+
+    /**
+     * <p>Copies the object if its entity tag (ETag) is different than the specified
+     * ETag.</p>
+     */
+    inline bool CopySourceIfNoneMatchHasBeenSet() const { return m_copySourceIfNoneMatchHasBeenSet; }
 
     /**
      * <p>Copies the object if its entity tag (ETag) is different than the specified
@@ -245,6 +272,11 @@ namespace Model
     /**
      * <p>Copies the object if it hasn't been modified since the specified time.</p>
      */
+    inline bool CopySourceIfUnmodifiedSinceHasBeenSet() const { return m_copySourceIfUnmodifiedSinceHasBeenSet; }
+
+    /**
+     * <p>Copies the object if it hasn't been modified since the specified time.</p>
+     */
     inline void SetCopySourceIfUnmodifiedSince(const Aws::Utils::DateTime& value) { m_copySourceIfUnmodifiedSinceHasBeenSet = true; m_copySourceIfUnmodifiedSince = value; }
 
     /**
@@ -271,6 +303,15 @@ namespace Model
      * greater than 5 MB.</p>
      */
     inline const Aws::String& GetCopySourceRange() const{ return m_copySourceRange; }
+
+    /**
+     * <p>The range of bytes to copy from the source object. The range value must use
+     * the form bytes=first-last, where the first and last are the zero-based byte
+     * offsets to copy. For example, bytes=0-9 indicates that you want to copy the
+     * first ten bytes of the source. You can copy a range only if the source object is
+     * greater than 5 MB.</p>
+     */
+    inline bool CopySourceRangeHasBeenSet() const { return m_copySourceRangeHasBeenSet; }
 
     /**
      * <p>The range of bytes to copy from the source object. The range value must use
@@ -335,6 +376,11 @@ namespace Model
     /**
      * <p/>
      */
+    inline bool KeyHasBeenSet() const { return m_keyHasBeenSet; }
+
+    /**
+     * <p/>
+     */
     inline void SetKey(const Aws::String& value) { m_keyHasBeenSet = true; m_key = value; }
 
     /**
@@ -373,6 +419,12 @@ namespace Model
      * <p>Part number of part being copied. This is a positive integer between 1 and
      * 10,000.</p>
      */
+    inline bool PartNumberHasBeenSet() const { return m_partNumberHasBeenSet; }
+
+    /**
+     * <p>Part number of part being copied. This is a positive integer between 1 and
+     * 10,000.</p>
+     */
     inline void SetPartNumber(int value) { m_partNumberHasBeenSet = true; m_partNumber = value; }
 
     /**
@@ -386,6 +438,11 @@ namespace Model
      * <p>Upload ID identifying the multipart upload whose part is being copied.</p>
      */
     inline const Aws::String& GetUploadId() const{ return m_uploadId; }
+
+    /**
+     * <p>Upload ID identifying the multipart upload whose part is being copied.</p>
+     */
+    inline bool UploadIdHasBeenSet() const { return m_uploadIdHasBeenSet; }
 
     /**
      * <p>Upload ID identifying the multipart upload whose part is being copied.</p>
@@ -423,6 +480,12 @@ namespace Model
      * AES256).</p>
      */
     inline const Aws::String& GetSSECustomerAlgorithm() const{ return m_sSECustomerAlgorithm; }
+
+    /**
+     * <p>Specifies the algorithm to use to when encrypting the object (e.g.,
+     * AES256).</p>
+     */
+    inline bool SSECustomerAlgorithmHasBeenSet() const { return m_sSECustomerAlgorithmHasBeenSet; }
 
     /**
      * <p>Specifies the algorithm to use to when encrypting the object (e.g.,
@@ -470,6 +533,16 @@ namespace Model
      * encryption key specified in the initiate multipart upload request.</p>
      */
     inline const Aws::String& GetSSECustomerKey() const{ return m_sSECustomerKey; }
+
+    /**
+     * <p>Specifies the customer-provided encryption key for Amazon S3 to use in
+     * encrypting data. This value is used to store the object and then it is
+     * discarded; Amazon does not store the encryption key. The key must be appropriate
+     * for use with the algorithm specified in the
+     * x-amz-server-side​-encryption​-customer-algorithm header. This must be the same
+     * encryption key specified in the initiate multipart upload request.</p>
+     */
+    inline bool SSECustomerKeyHasBeenSet() const { return m_sSECustomerKeyHasBeenSet; }
 
     /**
      * <p>Specifies the customer-provided encryption key for Amazon S3 to use in
@@ -544,6 +617,13 @@ namespace Model
      * Amazon S3 uses this header for a message integrity check to ensure the
      * encryption key was transmitted without error.</p>
      */
+    inline bool SSECustomerKeyMD5HasBeenSet() const { return m_sSECustomerKeyMD5HasBeenSet; }
+
+    /**
+     * <p>Specifies the 128-bit MD5 digest of the encryption key according to RFC 1321.
+     * Amazon S3 uses this header for a message integrity check to ensure the
+     * encryption key was transmitted without error.</p>
+     */
     inline void SetSSECustomerKeyMD5(const Aws::String& value) { m_sSECustomerKeyMD5HasBeenSet = true; m_sSECustomerKeyMD5 = value; }
 
     /**
@@ -592,6 +672,12 @@ namespace Model
      * <p>Specifies the algorithm to use when decrypting the source object (e.g.,
      * AES256).</p>
      */
+    inline bool CopySourceSSECustomerAlgorithmHasBeenSet() const { return m_copySourceSSECustomerAlgorithmHasBeenSet; }
+
+    /**
+     * <p>Specifies the algorithm to use when decrypting the source object (e.g.,
+     * AES256).</p>
+     */
     inline void SetCopySourceSSECustomerAlgorithm(const Aws::String& value) { m_copySourceSSECustomerAlgorithmHasBeenSet = true; m_copySourceSSECustomerAlgorithm = value; }
 
     /**
@@ -631,6 +717,13 @@ namespace Model
      * one that was used when the source object was created.</p>
      */
     inline const Aws::String& GetCopySourceSSECustomerKey() const{ return m_copySourceSSECustomerKey; }
+
+    /**
+     * <p>Specifies the customer-provided encryption key for Amazon S3 to use to
+     * decrypt the source object. The encryption key provided in this header must be
+     * one that was used when the source object was created.</p>
+     */
+    inline bool CopySourceSSECustomerKeyHasBeenSet() const { return m_copySourceSSECustomerKeyHasBeenSet; }
 
     /**
      * <p>Specifies the customer-provided encryption key for Amazon S3 to use to
@@ -687,6 +780,13 @@ namespace Model
      * Amazon S3 uses this header for a message integrity check to ensure the
      * encryption key was transmitted without error.</p>
      */
+    inline bool CopySourceSSECustomerKeyMD5HasBeenSet() const { return m_copySourceSSECustomerKeyMD5HasBeenSet; }
+
+    /**
+     * <p>Specifies the 128-bit MD5 digest of the encryption key according to RFC 1321.
+     * Amazon S3 uses this header for a message integrity check to ensure the
+     * encryption key was transmitted without error.</p>
+     */
     inline void SetCopySourceSSECustomerKeyMD5(const Aws::String& value) { m_copySourceSSECustomerKeyMD5HasBeenSet = true; m_copySourceSSECustomerKeyMD5 = value; }
 
     /**
@@ -729,6 +829,9 @@ namespace Model
     inline const RequestPayer& GetRequestPayer() const{ return m_requestPayer; }
 
     
+    inline bool RequestPayerHasBeenSet() const { return m_requestPayerHasBeenSet; }
+
+    
     inline void SetRequestPayer(const RequestPayer& value) { m_requestPayerHasBeenSet = true; m_requestPayer = value; }
 
     
@@ -743,6 +846,9 @@ namespace Model
 
     
     inline const Aws::Map<Aws::String, Aws::String>& GetCustomizedAccessLogTag() const{ return m_customizedAccessLogTag; }
+
+    
+    inline bool CustomizedAccessLogTagHasBeenSet() const { return m_customizedAccessLogTagHasBeenSet; }
 
     
     inline void SetCustomizedAccessLogTag(const Aws::Map<Aws::String, Aws::String>& value) { m_customizedAccessLogTagHasBeenSet = true; m_customizedAccessLogTag = value; }

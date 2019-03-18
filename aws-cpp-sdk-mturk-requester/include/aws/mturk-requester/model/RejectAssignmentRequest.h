@@ -54,6 +54,12 @@ namespace Model
      * <p> The ID of the assignment. The assignment must correspond to a HIT created by
      * the Requester. </p>
      */
+    inline bool AssignmentIdHasBeenSet() const { return m_assignmentIdHasBeenSet; }
+
+    /**
+     * <p> The ID of the assignment. The assignment must correspond to a HIT created by
+     * the Requester. </p>
+     */
     inline void SetAssignmentId(const Aws::String& value) { m_assignmentIdHasBeenSet = true; m_assignmentId = value; }
 
     /**
@@ -92,6 +98,12 @@ namespace Model
      * the web site. </p>
      */
     inline const Aws::String& GetRequesterFeedback() const{ return m_requesterFeedback; }
+
+    /**
+     * <p> A message for the Worker, which the Worker can see in the Status section of
+     * the web site. </p>
+     */
+    inline bool RequesterFeedbackHasBeenSet() const { return m_requesterFeedbackHasBeenSet; }
 
     /**
      * <p> A message for the Worker, which the Worker can see in the Status section of

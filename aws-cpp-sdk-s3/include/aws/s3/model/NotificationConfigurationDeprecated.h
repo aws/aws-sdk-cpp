@@ -52,6 +52,11 @@ namespace Model
     /**
      * <p/>
      */
+    inline bool TopicConfigurationHasBeenSet() const { return m_topicConfigurationHasBeenSet; }
+
+    /**
+     * <p/>
+     */
     inline void SetTopicConfiguration(const TopicConfigurationDeprecated& value) { m_topicConfigurationHasBeenSet = true; m_topicConfiguration = value; }
 
     /**
@@ -78,6 +83,11 @@ namespace Model
     /**
      * <p/>
      */
+    inline bool QueueConfigurationHasBeenSet() const { return m_queueConfigurationHasBeenSet; }
+
+    /**
+     * <p/>
+     */
     inline void SetQueueConfiguration(const QueueConfigurationDeprecated& value) { m_queueConfigurationHasBeenSet = true; m_queueConfiguration = value; }
 
     /**
@@ -100,6 +110,11 @@ namespace Model
      * <p/>
      */
     inline const CloudFunctionConfiguration& GetCloudFunctionConfiguration() const{ return m_cloudFunctionConfiguration; }
+
+    /**
+     * <p/>
+     */
+    inline bool CloudFunctionConfigurationHasBeenSet() const { return m_cloudFunctionConfigurationHasBeenSet; }
 
     /**
      * <p/>

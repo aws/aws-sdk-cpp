@@ -52,6 +52,11 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the application.</p>
      */
+    inline bool ApplicationIdHasBeenSet() const { return m_applicationIdHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the application.</p>
+     */
     inline void SetApplicationId(const Aws::String& value) { m_applicationIdHasBeenSet = true; m_applicationId = value; }
 
     /**
@@ -84,6 +89,11 @@ namespace Model
      * <p>An array of policy statements applied to the application.</p>
      */
     inline const Aws::Vector<ApplicationPolicyStatement>& GetStatements() const{ return m_statements; }
+
+    /**
+     * <p>An array of policy statements applied to the application.</p>
+     */
+    inline bool StatementsHasBeenSet() const { return m_statementsHasBeenSet; }
 
     /**
      * <p>An array of policy statements applied to the application.</p>

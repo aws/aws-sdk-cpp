@@ -54,6 +54,11 @@ namespace Model
     /**
      * <p>The API ID.</p>
      */
+    inline bool ApiIdHasBeenSet() const { return m_apiIdHasBeenSet; }
+
+    /**
+     * <p>The API ID.</p>
+     */
     inline void SetApiId(const Aws::String& value) { m_apiIdHasBeenSet = true; m_apiId = value; }
 
     /**
@@ -86,6 +91,11 @@ namespace Model
      * <p>The new name for the <code>GraphqlApi</code> object.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
+
+    /**
+     * <p>The new name for the <code>GraphqlApi</code> object.</p>
+     */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
      * <p>The new name for the <code>GraphqlApi</code> object.</p>
@@ -128,6 +138,12 @@ namespace Model
      * <p>The Amazon CloudWatch Logs configuration for the <code>GraphqlApi</code>
      * object.</p>
      */
+    inline bool LogConfigHasBeenSet() const { return m_logConfigHasBeenSet; }
+
+    /**
+     * <p>The Amazon CloudWatch Logs configuration for the <code>GraphqlApi</code>
+     * object.</p>
+     */
     inline void SetLogConfig(const LogConfig& value) { m_logConfigHasBeenSet = true; m_logConfig = value; }
 
     /**
@@ -153,6 +169,11 @@ namespace Model
      * <p>The new authentication type for the <code>GraphqlApi</code> object.</p>
      */
     inline const AuthenticationType& GetAuthenticationType() const{ return m_authenticationType; }
+
+    /**
+     * <p>The new authentication type for the <code>GraphqlApi</code> object.</p>
+     */
+    inline bool AuthenticationTypeHasBeenSet() const { return m_authenticationTypeHasBeenSet; }
 
     /**
      * <p>The new authentication type for the <code>GraphqlApi</code> object.</p>
@@ -185,6 +206,12 @@ namespace Model
      * <p>The new Amazon Cognito user pool configuration for the
      * <code>GraphqlApi</code> object.</p>
      */
+    inline bool UserPoolConfigHasBeenSet() const { return m_userPoolConfigHasBeenSet; }
+
+    /**
+     * <p>The new Amazon Cognito user pool configuration for the
+     * <code>GraphqlApi</code> object.</p>
+     */
     inline void SetUserPoolConfig(const UserPoolConfig& value) { m_userPoolConfigHasBeenSet = true; m_userPoolConfig = value; }
 
     /**
@@ -210,6 +237,11 @@ namespace Model
      * <p>The OpenID Connect configuration for the <code>GraphqlApi</code> object.</p>
      */
     inline const OpenIDConnectConfig& GetOpenIDConnectConfig() const{ return m_openIDConnectConfig; }
+
+    /**
+     * <p>The OpenID Connect configuration for the <code>GraphqlApi</code> object.</p>
+     */
+    inline bool OpenIDConnectConfigHasBeenSet() const { return m_openIDConnectConfigHasBeenSet; }
 
     /**
      * <p>The OpenID Connect configuration for the <code>GraphqlApi</code> object.</p>

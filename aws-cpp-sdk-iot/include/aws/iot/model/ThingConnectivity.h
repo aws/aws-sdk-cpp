@@ -55,6 +55,12 @@ namespace Model
      * <p>True if the thing is connected to the AWS IoT service, false if it is not
      * connected.</p>
      */
+    inline bool ConnectedHasBeenSet() const { return m_connectedHasBeenSet; }
+
+    /**
+     * <p>True if the thing is connected to the AWS IoT service, false if it is not
+     * connected.</p>
+     */
     inline void SetConnected(bool value) { m_connectedHasBeenSet = true; m_connected = value; }
 
     /**
@@ -70,6 +76,13 @@ namespace Model
      * weeks, the time value can be missing.</p>
      */
     inline long long GetTimestamp() const{ return m_timestamp; }
+
+    /**
+     * <p>The epoch time (in milliseconds) when the thing last connected or
+     * disconnected. Note that if the thing has been disconnected for more than a few
+     * weeks, the time value can be missing.</p>
+     */
+    inline bool TimestampHasBeenSet() const { return m_timestampHasBeenSet; }
 
     /**
      * <p>The epoch time (in milliseconds) when the thing last connected or

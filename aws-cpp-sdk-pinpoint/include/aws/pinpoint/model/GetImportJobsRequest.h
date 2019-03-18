@@ -56,6 +56,11 @@ namespace Model
     /**
      * The unique ID of your Amazon Pinpoint application.
      */
+    inline bool ApplicationIdHasBeenSet() const { return m_applicationIdHasBeenSet; }
+
+    /**
+     * The unique ID of your Amazon Pinpoint application.
+     */
     inline void SetApplicationId(const Aws::String& value) { m_applicationIdHasBeenSet = true; m_applicationId = value; }
 
     /**
@@ -88,6 +93,11 @@ namespace Model
      * The number of entries you want on each page in the response.
      */
     inline const Aws::String& GetPageSize() const{ return m_pageSize; }
+
+    /**
+     * The number of entries you want on each page in the response.
+     */
+    inline bool PageSizeHasBeenSet() const { return m_pageSizeHasBeenSet; }
 
     /**
      * The number of entries you want on each page in the response.
@@ -125,6 +135,12 @@ namespace Model
      * page of results in a paginated response.
      */
     inline const Aws::String& GetToken() const{ return m_token; }
+
+    /**
+     * The NextToken string returned on a previous page that you use to get the next
+     * page of results in a paginated response.
+     */
+    inline bool TokenHasBeenSet() const { return m_tokenHasBeenSet; }
 
     /**
      * The NextToken string returned on a previous page that you use to get the next

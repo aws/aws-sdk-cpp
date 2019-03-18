@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The name of the group.</p>
      */
+    inline bool GroupNameHasBeenSet() const { return m_groupNameHasBeenSet; }
+
+    /**
+     * <p>The name of the group.</p>
+     */
     inline void SetGroupName(const Aws::String& value) { m_groupNameHasBeenSet = true; m_groupName = value; }
 
     /**
@@ -88,6 +93,11 @@ namespace Model
      * <p>The user pool ID for the user pool.</p>
      */
     inline const Aws::String& GetUserPoolId() const{ return m_userPoolId; }
+
+    /**
+     * <p>The user pool ID for the user pool.</p>
+     */
+    inline bool UserPoolIdHasBeenSet() const { return m_userPoolIdHasBeenSet; }
 
     /**
      * <p>The user pool ID for the user pool.</p>
@@ -128,6 +138,11 @@ namespace Model
     /**
      * <p>A string containing the description of the group.</p>
      */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
+
+    /**
+     * <p>A string containing the description of the group.</p>
+     */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
@@ -160,6 +175,11 @@ namespace Model
      * <p>The role ARN for the group.</p>
      */
     inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
+
+    /**
+     * <p>The role ARN for the group.</p>
+     */
+    inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
 
     /**
      * <p>The role ARN for the group.</p>
@@ -226,6 +246,24 @@ namespace Model
      * claim is not set in users' tokens.</p> <p>The default <code>Precedence</code>
      * value is null.</p>
      */
+    inline bool PrecedenceHasBeenSet() const { return m_precedenceHasBeenSet; }
+
+    /**
+     * <p>A nonnegative integer value that specifies the precedence of this group
+     * relative to the other groups that a user can belong to in the user pool. If a
+     * user belongs to two or more groups, it is the group with the highest precedence
+     * whose role ARN will be used in the <code>cognito:roles</code> and
+     * <code>cognito:preferred_role</code> claims in the user's tokens. Groups with
+     * higher <code>Precedence</code> values take precedence over groups with lower
+     * <code>Precedence</code> values or with null <code>Precedence</code> values.</p>
+     * <p>Two groups can have the same <code>Precedence</code> value. If this happens,
+     * neither group takes precedence over the other. If two groups with the same
+     * <code>Precedence</code> have the same role ARN, that role is used in the
+     * <code>cognito:preferred_role</code> claim in tokens for users in each group. If
+     * the two groups have different role ARNs, the <code>cognito:preferred_role</code>
+     * claim is not set in users' tokens.</p> <p>The default <code>Precedence</code>
+     * value is null.</p>
+     */
     inline void SetPrecedence(int value) { m_precedenceHasBeenSet = true; m_precedence = value; }
 
     /**
@@ -255,6 +293,11 @@ namespace Model
     /**
      * <p>The date the group was last modified.</p>
      */
+    inline bool LastModifiedDateHasBeenSet() const { return m_lastModifiedDateHasBeenSet; }
+
+    /**
+     * <p>The date the group was last modified.</p>
+     */
     inline void SetLastModifiedDate(const Aws::Utils::DateTime& value) { m_lastModifiedDateHasBeenSet = true; m_lastModifiedDate = value; }
 
     /**
@@ -277,6 +320,11 @@ namespace Model
      * <p>The date the group was created.</p>
      */
     inline const Aws::Utils::DateTime& GetCreationDate() const{ return m_creationDate; }
+
+    /**
+     * <p>The date the group was created.</p>
+     */
+    inline bool CreationDateHasBeenSet() const { return m_creationDateHasBeenSet; }
 
     /**
      * <p>The date the group was created.</p>

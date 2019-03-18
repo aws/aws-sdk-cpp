@@ -55,6 +55,11 @@ namespace Model
     /**
      * <p>The value of the datum.</p>
      */
+    inline bool VarCharValueHasBeenSet() const { return m_varCharValueHasBeenSet; }
+
+    /**
+     * <p>The value of the datum.</p>
+     */
     inline void SetVarCharValue(const Aws::String& value) { m_varCharValueHasBeenSet = true; m_varCharValue = value; }
 
     /**

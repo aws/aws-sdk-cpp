@@ -50,6 +50,11 @@ namespace Model
     /**
      * <p>The function's Amazon Resource Name (ARN).</p>
      */
+    inline bool ResourceHasBeenSet() const { return m_resourceHasBeenSet; }
+
+    /**
+     * <p>The function's Amazon Resource Name (ARN).</p>
+     */
     inline void SetResource(const Aws::String& value) { m_resourceHasBeenSet = true; m_resource = value; }
 
     /**

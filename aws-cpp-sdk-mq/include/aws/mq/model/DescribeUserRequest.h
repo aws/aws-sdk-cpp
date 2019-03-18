@@ -50,6 +50,11 @@ namespace Model
     /**
      * The unique ID that Amazon MQ generates for the broker.
      */
+    inline bool BrokerIdHasBeenSet() const { return m_brokerIdHasBeenSet; }
+
+    /**
+     * The unique ID that Amazon MQ generates for the broker.
+     */
     inline void SetBrokerId(const Aws::String& value) { m_brokerIdHasBeenSet = true; m_brokerId = value; }
 
     /**
@@ -84,6 +89,13 @@ namespace Model
      * be 2-100 characters long.
      */
     inline const Aws::String& GetUsername() const{ return m_username; }
+
+    /**
+     * The username of the ActiveMQ user. This value can contain only alphanumeric
+     * characters, dashes, periods, underscores, and tildes (- . _ ~). This value must
+     * be 2-100 characters long.
+     */
+    inline bool UsernameHasBeenSet() const { return m_usernameHasBeenSet; }
 
     /**
      * The username of the ActiveMQ user. This value can contain only alphanumeric

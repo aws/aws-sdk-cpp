@@ -57,6 +57,11 @@ namespace Model
     /**
      * ResultSet Metadata.
      */
+    inline bool RecordsHasBeenSet() const { return m_recordsHasBeenSet; }
+
+    /**
+     * ResultSet Metadata.
+     */
     inline void SetRecords(const Aws::Vector<Record>& value) { m_recordsHasBeenSet = true; m_records = value; }
 
     /**
@@ -89,6 +94,11 @@ namespace Model
      * ResultSet Metadata.
      */
     inline const ResultSetMetadata& GetResultSetMetadata() const{ return m_resultSetMetadata; }
+
+    /**
+     * ResultSet Metadata.
+     */
+    inline bool ResultSetMetadataHasBeenSet() const { return m_resultSetMetadataHasBeenSet; }
 
     /**
      * ResultSet Metadata.

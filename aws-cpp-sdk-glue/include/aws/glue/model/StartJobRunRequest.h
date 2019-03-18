@@ -54,6 +54,11 @@ namespace Model
     /**
      * <p>The name of the job definition to use.</p>
      */
+    inline bool JobNameHasBeenSet() const { return m_jobNameHasBeenSet; }
+
+    /**
+     * <p>The name of the job definition to use.</p>
+     */
     inline void SetJobName(const Aws::String& value) { m_jobNameHasBeenSet = true; m_jobName = value; }
 
     /**
@@ -86,6 +91,11 @@ namespace Model
      * <p>The ID of a previous JobRun to retry.</p>
      */
     inline const Aws::String& GetJobRunId() const{ return m_jobRunId; }
+
+    /**
+     * <p>The ID of a previous JobRun to retry.</p>
+     */
+    inline bool JobRunIdHasBeenSet() const { return m_jobRunIdHasBeenSet; }
 
     /**
      * <p>The ID of a previous JobRun to retry.</p>
@@ -131,6 +141,20 @@ namespace Model
      * Parameters Used by AWS Glue</a> topic in the developer guide.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetArguments() const{ return m_arguments; }
+
+    /**
+     * <p>The job arguments specifically for this run. For this job run, they replace
+     * the default arguments set in the job definition itself.</p> <p>You can specify
+     * arguments here that your own job-execution script consumes, as well as arguments
+     * that AWS Glue itself consumes.</p> <p>For information about how to specify and
+     * consume your own Job arguments, see the <a
+     * href="http://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-calling.html">Calling
+     * AWS Glue APIs in Python</a> topic in the developer guide.</p> <p>For information
+     * about the key-value pairs that AWS Glue consumes to set up your job, see the <a
+     * href="http://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-etl-glue-arguments.html">Special
+     * Parameters Used by AWS Glue</a> topic in the developer guide.</p>
+     */
+    inline bool ArgumentsHasBeenSet() const { return m_argumentsHasBeenSet; }
 
     /**
      * <p>The job arguments specifically for this run. For this job run, they replace
@@ -301,6 +325,14 @@ namespace Model
      * status. The default is 2,880 minutes (48 hours). This overrides the timeout
      * value set in the parent job.</p>
      */
+    inline bool TimeoutHasBeenSet() const { return m_timeoutHasBeenSet; }
+
+    /**
+     * <p>The JobRun timeout in minutes. This is the maximum time that a job run can
+     * consume resources before it is terminated and enters <code>TIMEOUT</code>
+     * status. The default is 2,880 minutes (48 hours). This overrides the timeout
+     * value set in the parent job.</p>
+     */
     inline void SetTimeout(int value) { m_timeoutHasBeenSet = true; m_timeout = value; }
 
     /**
@@ -327,6 +359,22 @@ namespace Model
      * allocation.</p> </li> </ul>
      */
     inline double GetMaxCapacity() const{ return m_maxCapacity; }
+
+    /**
+     * <p>The number of AWS Glue data processing units (DPUs) that can be allocated
+     * when this job runs. A DPU is a relative measure of processing power that
+     * consists of 4 vCPUs of compute capacity and 16 GB of memory. For more
+     * information, see the <a href="https://aws.amazon.com/glue/pricing/">AWS Glue
+     * pricing page</a>.</p> <p>The value that can be allocated for
+     * <code>MaxCapacity</code> depends on whether you are running a python shell job,
+     * or an Apache Spark ETL job:</p> <ul> <li> <p>When you specify a python shell job
+     * (<code>JobCommand.Name</code>="pythonshell"), you can allocate either 0.0625 or
+     * 1 DPU. The default is 0.0625 DPU.</p> </li> <li> <p>When you specify an Apache
+     * Spark ETL job (<code>JobCommand.Name</code>="glueetl"), you can allocate from 2
+     * to 100 DPUs. The default is 10 DPUs. This job type cannot have a fractional DPU
+     * allocation.</p> </li> </ul>
+     */
+    inline bool MaxCapacityHasBeenSet() const { return m_maxCapacityHasBeenSet; }
 
     /**
      * <p>The number of AWS Glue data processing units (DPUs) that can be allocated
@@ -369,6 +417,11 @@ namespace Model
     /**
      * <p>Specifies configuration properties of a job run notification.</p>
      */
+    inline bool NotificationPropertyHasBeenSet() const { return m_notificationPropertyHasBeenSet; }
+
+    /**
+     * <p>Specifies configuration properties of a job run notification.</p>
+     */
     inline void SetNotificationProperty(const NotificationProperty& value) { m_notificationPropertyHasBeenSet = true; m_notificationProperty = value; }
 
     /**
@@ -392,6 +445,12 @@ namespace Model
      * run.</p>
      */
     inline const Aws::String& GetSecurityConfiguration() const{ return m_securityConfiguration; }
+
+    /**
+     * <p>The name of the SecurityConfiguration structure to be used with this job
+     * run.</p>
+     */
+    inline bool SecurityConfigurationHasBeenSet() const { return m_securityConfigurationHasBeenSet; }
 
     /**
      * <p>The name of the SecurityConfiguration structure to be used with this job

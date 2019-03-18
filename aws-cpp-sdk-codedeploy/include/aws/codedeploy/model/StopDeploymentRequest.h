@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p> The unique ID of a deployment. </p>
      */
+    inline bool DeploymentIdHasBeenSet() const { return m_deploymentIdHasBeenSet; }
+
+    /**
+     * <p> The unique ID of a deployment. </p>
+     */
     inline void SetDeploymentId(const Aws::String& value) { m_deploymentIdHasBeenSet = true; m_deploymentId = value; }
 
     /**
@@ -90,6 +95,13 @@ namespace Model
      * revision. </p>
      */
     inline bool GetAutoRollbackEnabled() const{ return m_autoRollbackEnabled; }
+
+    /**
+     * <p> Indicates, when a deployment is stopped, whether instances that have been
+     * updated should be rolled back to the previous version of the application
+     * revision. </p>
+     */
+    inline bool AutoRollbackEnabledHasBeenSet() const { return m_autoRollbackEnabledHasBeenSet; }
 
     /**
      * <p> Indicates, when a deployment is stopped, whether instances that have been

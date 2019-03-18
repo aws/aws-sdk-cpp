@@ -60,6 +60,11 @@ namespace Model
     /**
      * <p>The number of objects that you want to invalidate.</p>
      */
+    inline bool QuantityHasBeenSet() const { return m_quantityHasBeenSet; }
+
+    /**
+     * <p>The number of objects that you want to invalidate.</p>
+     */
     inline void SetQuantity(int value) { m_quantityHasBeenSet = true; m_quantity = value; }
 
     /**
@@ -73,6 +78,12 @@ namespace Model
      * invalidate.</p>
      */
     inline const Aws::Vector<Aws::String>& GetItems() const{ return m_items; }
+
+    /**
+     * <p>A complex type that contains a list of the paths that you want to
+     * invalidate.</p>
+     */
+    inline bool ItemsHasBeenSet() const { return m_itemsHasBeenSet; }
 
     /**
      * <p>A complex type that contains a list of the paths that you want to

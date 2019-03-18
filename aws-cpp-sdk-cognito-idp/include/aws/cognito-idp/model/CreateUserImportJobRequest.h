@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The job name for the user import job.</p>
      */
+    inline bool JobNameHasBeenSet() const { return m_jobNameHasBeenSet; }
+
+    /**
+     * <p>The job name for the user import job.</p>
+     */
     inline void SetJobName(const Aws::String& value) { m_jobNameHasBeenSet = true; m_jobName = value; }
 
     /**
@@ -89,6 +94,12 @@ namespace Model
      * into.</p>
      */
     inline const Aws::String& GetUserPoolId() const{ return m_userPoolId; }
+
+    /**
+     * <p>The user pool ID for the user pool that the users are being imported
+     * into.</p>
+     */
+    inline bool UserPoolIdHasBeenSet() const { return m_userPoolIdHasBeenSet; }
 
     /**
      * <p>The user pool ID for the user pool that the users are being imported
@@ -132,6 +143,12 @@ namespace Model
      * job.</p>
      */
     inline const Aws::String& GetCloudWatchLogsRoleArn() const{ return m_cloudWatchLogsRoleArn; }
+
+    /**
+     * <p>The role ARN for the Amazon CloudWatch Logging role for the user import
+     * job.</p>
+     */
+    inline bool CloudWatchLogsRoleArnHasBeenSet() const { return m_cloudWatchLogsRoleArnHasBeenSet; }
 
     /**
      * <p>The role ARN for the Amazon CloudWatch Logging role for the user import

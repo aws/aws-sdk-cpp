@@ -52,6 +52,11 @@ namespace Model
     /**
      * <p>The name of the disk snapshot (e.g., <code>my-disk-snapshot</code>).</p>
      */
+    inline bool DiskSnapshotNameHasBeenSet() const { return m_diskSnapshotNameHasBeenSet; }
+
+    /**
+     * <p>The name of the disk snapshot (e.g., <code>my-disk-snapshot</code>).</p>
+     */
     inline void SetDiskSnapshotName(const Aws::String& value) { m_diskSnapshotNameHasBeenSet = true; m_diskSnapshotName = value; }
 
     /**

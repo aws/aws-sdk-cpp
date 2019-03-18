@@ -56,6 +56,12 @@ namespace Model
      * <p>A string representing the node identifier of the DC1 Reserved Node to be
      * exchanged.</p>
      */
+    inline bool ReservedNodeIdHasBeenSet() const { return m_reservedNodeIdHasBeenSet; }
+
+    /**
+     * <p>A string representing the node identifier of the DC1 Reserved Node to be
+     * exchanged.</p>
+     */
     inline void SetReservedNodeId(const Aws::String& value) { m_reservedNodeIdHasBeenSet = true; m_reservedNodeId = value; }
 
     /**
@@ -95,6 +101,13 @@ namespace Model
      * <a>GetReservedNodeExchangeOfferings</a> </p>
      */
     inline const Aws::String& GetTargetReservedNodeOfferingId() const{ return m_targetReservedNodeOfferingId; }
+
+    /**
+     * <p>The unique identifier of the DC2 Reserved Node offering to be used for the
+     * exchange. You can obtain the value for the parameter by calling
+     * <a>GetReservedNodeExchangeOfferings</a> </p>
+     */
+    inline bool TargetReservedNodeOfferingIdHasBeenSet() const { return m_targetReservedNodeOfferingIdHasBeenSet; }
 
     /**
      * <p>The unique identifier of the DC2 Reserved Node offering to be used for the

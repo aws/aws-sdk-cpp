@@ -55,6 +55,11 @@ namespace Model
     /**
      * <p>An identity pool ID in the format REGION:GUID.</p>
      */
+    inline bool IdentityPoolIdHasBeenSet() const { return m_identityPoolIdHasBeenSet; }
+
+    /**
+     * <p>An identity pool ID in the format REGION:GUID.</p>
+     */
     inline void SetIdentityPoolId(const Aws::String& value) { m_identityPoolIdHasBeenSet = true; m_identityPoolId = value; }
 
     /**

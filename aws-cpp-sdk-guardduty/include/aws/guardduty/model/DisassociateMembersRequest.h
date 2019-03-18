@@ -56,6 +56,12 @@ namespace Model
      * A list of account IDs of the GuardDuty member accounts that you want to
      * disassociate from master.
      */
+    inline bool AccountIdsHasBeenSet() const { return m_accountIdsHasBeenSet; }
+
+    /**
+     * A list of account IDs of the GuardDuty member accounts that you want to
+     * disassociate from master.
+     */
     inline void SetAccountIds(const Aws::Vector<Aws::String>& value) { m_accountIdsHasBeenSet = true; m_accountIds = value; }
 
     /**
@@ -100,6 +106,12 @@ namespace Model
      * disassociate from master.
      */
     inline const Aws::String& GetDetectorId() const{ return m_detectorId; }
+
+    /**
+     * The unique ID of the detector of the GuardDuty account whose members you want to
+     * disassociate from master.
+     */
+    inline bool DetectorIdHasBeenSet() const { return m_detectorIdHasBeenSet; }
 
     /**
      * The unique ID of the detector of the GuardDuty account whose members you want to

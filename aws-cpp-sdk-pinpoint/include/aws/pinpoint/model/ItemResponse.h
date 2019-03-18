@@ -59,6 +59,11 @@ namespace Model
     /**
      * The response received after the endpoint was accepted.
      */
+    inline bool EndpointItemResponseHasBeenSet() const { return m_endpointItemResponseHasBeenSet; }
+
+    /**
+     * The response received after the endpoint was accepted.
+     */
     inline void SetEndpointItemResponse(const EndpointItemResponse& value) { m_endpointItemResponseHasBeenSet = true; m_endpointItemResponse = value; }
 
     /**
@@ -83,6 +88,13 @@ namespace Model
      * object is the value.
      */
     inline const Aws::Map<Aws::String, EventItemResponse>& GetEventsItemResponse() const{ return m_eventsItemResponse; }
+
+    /**
+     * A multipart response object that contains a key and value for each event ID in
+     * the request. In each object, the event ID is the key, and an EventItemResponse
+     * object is the value.
+     */
+    inline bool EventsItemResponseHasBeenSet() const { return m_eventsItemResponseHasBeenSet; }
 
     /**
      * A multipart response object that contains a key and value for each event ID in

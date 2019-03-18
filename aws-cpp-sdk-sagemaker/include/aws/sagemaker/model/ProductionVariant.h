@@ -60,6 +60,11 @@ namespace Model
     /**
      * <p>The name of the production variant.</p>
      */
+    inline bool VariantNameHasBeenSet() const { return m_variantNameHasBeenSet; }
+
+    /**
+     * <p>The name of the production variant.</p>
+     */
     inline void SetVariantName(const Aws::String& value) { m_variantNameHasBeenSet = true; m_variantName = value; }
 
     /**
@@ -93,6 +98,12 @@ namespace Model
      * specified when creating the model.</p>
      */
     inline const Aws::String& GetModelName() const{ return m_modelName; }
+
+    /**
+     * <p>The name of the model that you want to host. This is the name that you
+     * specified when creating the model.</p>
+     */
+    inline bool ModelNameHasBeenSet() const { return m_modelNameHasBeenSet; }
 
     /**
      * <p>The name of the model that you want to host. This is the name that you
@@ -139,6 +150,11 @@ namespace Model
     /**
      * <p>Number of instances to launch initially.</p>
      */
+    inline bool InitialInstanceCountHasBeenSet() const { return m_initialInstanceCountHasBeenSet; }
+
+    /**
+     * <p>Number of instances to launch initially.</p>
+     */
     inline void SetInitialInstanceCount(int value) { m_initialInstanceCountHasBeenSet = true; m_initialInstanceCount = value; }
 
     /**
@@ -151,6 +167,11 @@ namespace Model
      * <p>The ML compute instance type.</p>
      */
     inline const ProductionVariantInstanceType& GetInstanceType() const{ return m_instanceType; }
+
+    /**
+     * <p>The ML compute instance type.</p>
+     */
+    inline bool InstanceTypeHasBeenSet() const { return m_instanceTypeHasBeenSet; }
 
     /**
      * <p>The ML compute instance type.</p>
@@ -189,6 +210,15 @@ namespace Model
      * <code>VariantWeight</code> values across all ProductionVariants. If unspecified,
      * it defaults to 1.0. </p>
      */
+    inline bool InitialVariantWeightHasBeenSet() const { return m_initialVariantWeightHasBeenSet; }
+
+    /**
+     * <p>Determines initial traffic distribution among all of the models that you
+     * specify in the endpoint configuration. The traffic to a production variant is
+     * determined by the ratio of the <code>VariantWeight</code> to the sum of all
+     * <code>VariantWeight</code> values across all ProductionVariants. If unspecified,
+     * it defaults to 1.0. </p>
+     */
     inline void SetInitialVariantWeight(double value) { m_initialVariantWeightHasBeenSet = true; m_initialVariantWeight = value; }
 
     /**
@@ -211,6 +241,17 @@ namespace Model
      * Inference in Amazon SageMaker</a>.</p>
      */
     inline const ProductionVariantAcceleratorType& GetAcceleratorType() const{ return m_acceleratorType; }
+
+    /**
+     * <p>The size of the Elastic Inference (EI) instance to use for the production
+     * variant. EI instances provide on-demand GPU computing for inference. For more
+     * information, see <a
+     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/ei.html">Using Elastic
+     * Inference in Amazon SageMaker</a>. For more information, see <a
+     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/ei.html">Using Elastic
+     * Inference in Amazon SageMaker</a>.</p>
+     */
+    inline bool AcceleratorTypeHasBeenSet() const { return m_acceleratorTypeHasBeenSet; }
 
     /**
      * <p>The size of the Elastic Inference (EI) instance to use for the production

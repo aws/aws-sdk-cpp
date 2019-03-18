@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The database that the database event relates to.</p>
      */
+    inline bool ResourceHasBeenSet() const { return m_resourceHasBeenSet; }
+
+    /**
+     * <p>The database that the database event relates to.</p>
+     */
     inline void SetResource(const Aws::String& value) { m_resourceHasBeenSet = true; m_resource = value; }
 
     /**
@@ -93,6 +98,11 @@ namespace Model
     /**
      * <p>The timestamp when the database event was created.</p>
      */
+    inline bool CreatedAtHasBeenSet() const { return m_createdAtHasBeenSet; }
+
+    /**
+     * <p>The timestamp when the database event was created.</p>
+     */
     inline void SetCreatedAt(const Aws::Utils::DateTime& value) { m_createdAtHasBeenSet = true; m_createdAt = value; }
 
     /**
@@ -115,6 +125,11 @@ namespace Model
      * <p>The message of the database event.</p>
      */
     inline const Aws::String& GetMessage() const{ return m_message; }
+
+    /**
+     * <p>The message of the database event.</p>
+     */
+    inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
 
     /**
      * <p>The message of the database event.</p>
@@ -151,6 +166,11 @@ namespace Model
      * <p>The category that the database event belongs to.</p>
      */
     inline const Aws::Vector<Aws::String>& GetEventCategories() const{ return m_eventCategories; }
+
+    /**
+     * <p>The category that the database event belongs to.</p>
+     */
+    inline bool EventCategoriesHasBeenSet() const { return m_eventCategoriesHasBeenSet; }
 
     /**
      * <p>The category that the database event belongs to.</p>

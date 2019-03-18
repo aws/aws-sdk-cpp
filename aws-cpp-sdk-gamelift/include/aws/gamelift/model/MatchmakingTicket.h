@@ -64,6 +64,11 @@ namespace Model
     /**
      * <p>Unique identifier for a matchmaking ticket.</p>
      */
+    inline bool TicketIdHasBeenSet() const { return m_ticketIdHasBeenSet; }
+
+    /**
+     * <p>Unique identifier for a matchmaking ticket.</p>
+     */
     inline void SetTicketId(const Aws::String& value) { m_ticketIdHasBeenSet = true; m_ticketId = value; }
 
     /**
@@ -98,6 +103,13 @@ namespace Model
      * how a new game session is created for the match.</p>
      */
     inline const Aws::String& GetConfigurationName() const{ return m_configurationName; }
+
+    /**
+     * <p>Name of the <a>MatchmakingConfiguration</a> that is used with this ticket.
+     * Matchmaking configurations determine how players are grouped into a match and
+     * how a new game session is created for the match.</p>
+     */
+    inline bool ConfigurationNameHasBeenSet() const { return m_configurationNameHasBeenSet; }
 
     /**
      * <p>Name of the <a>MatchmakingConfiguration</a> that is used with this ticket.
@@ -165,6 +177,30 @@ namespace Model
      * as new requests with new ticket IDs.</p> </note>
      */
     inline const MatchmakingConfigurationStatus& GetStatus() const{ return m_status; }
+
+    /**
+     * <p>Current status of the matchmaking request.</p> <ul> <li> <p> <b>QUEUED</b> --
+     * The matchmaking request has been received and is currently waiting to be
+     * processed.</p> </li> <li> <p> <b>SEARCHING</b> -- The matchmaking request is
+     * currently being processed. </p> </li> <li> <p> <b>REQUIRES_ACCEPTANCE</b> -- A
+     * match has been proposed and the players must accept the match (see
+     * <a>AcceptMatch</a>). This status is used only with requests that use a
+     * matchmaking configuration with a player acceptance requirement.</p> </li> <li>
+     * <p> <b>PLACING</b> -- The FlexMatch engine has matched players and is in the
+     * process of placing a new game session for the match.</p> </li> <li> <p>
+     * <b>COMPLETED</b> -- Players have been matched and a game session is ready to
+     * host the players. A ticket in this state contains the necessary connection
+     * information for players.</p> </li> <li> <p> <b>FAILED</b> -- The matchmaking
+     * request was not completed. Tickets with players who fail to accept a proposed
+     * match are placed in <code>FAILED</code> status.</p> </li> <li> <p>
+     * <b>CANCELLED</b> -- The matchmaking request was canceled with a call to
+     * <a>StopMatchmaking</a>.</p> </li> <li> <p> <b>TIMED_OUT</b> -- The matchmaking
+     * request was not successful within the duration specified in the matchmaking
+     * configuration. </p> </li> </ul> <note> <p>Matchmaking requests that fail to
+     * successfully complete (statuses FAILED, CANCELLED, TIMED_OUT) can be resubmitted
+     * as new requests with new ticket IDs.</p> </note>
+     */
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
     /**
      * <p>Current status of the matchmaking request.</p> <ul> <li> <p> <b>QUEUED</b> --
@@ -275,6 +311,13 @@ namespace Model
      * when a ticket has returned to <code>SEARCHING</code> status after a proposed
      * match fails to receive player acceptances.</p>
      */
+    inline bool StatusReasonHasBeenSet() const { return m_statusReasonHasBeenSet; }
+
+    /**
+     * <p>Code to explain the current status. For example, a status reason may indicate
+     * when a ticket has returned to <code>SEARCHING</code> status after a proposed
+     * match fails to receive player acceptances.</p>
+     */
     inline void SetStatusReason(const Aws::String& value) { m_statusReasonHasBeenSet = true; m_statusReason = value; }
 
     /**
@@ -321,6 +364,11 @@ namespace Model
     /**
      * <p>Additional information about the current status.</p>
      */
+    inline bool StatusMessageHasBeenSet() const { return m_statusMessageHasBeenSet; }
+
+    /**
+     * <p>Additional information about the current status.</p>
+     */
     inline void SetStatusMessage(const Aws::String& value) { m_statusMessageHasBeenSet = true; m_statusMessage = value; }
 
     /**
@@ -355,6 +403,13 @@ namespace Model
      * "1469498468.057").</p>
      */
     inline const Aws::Utils::DateTime& GetStartTime() const{ return m_startTime; }
+
+    /**
+     * <p>Time stamp indicating when this matchmaking request was received. Format is a
+     * number expressed in Unix time as milliseconds (for example
+     * "1469498468.057").</p>
+     */
+    inline bool StartTimeHasBeenSet() const { return m_startTimeHasBeenSet; }
 
     /**
      * <p>Time stamp indicating when this matchmaking request was received. Format is a
@@ -397,6 +452,13 @@ namespace Model
      * due to success, failure, or cancellation. Format is a number expressed in Unix
      * time as milliseconds (for example "1469498468.057").</p>
      */
+    inline bool EndTimeHasBeenSet() const { return m_endTimeHasBeenSet; }
+
+    /**
+     * <p>Time stamp indicating when this matchmaking request stopped being processed
+     * due to success, failure, or cancellation. Format is a number expressed in Unix
+     * time as milliseconds (for example "1469498468.057").</p>
+     */
     inline void SetEndTime(const Aws::Utils::DateTime& value) { m_endTimeHasBeenSet = true; m_endTime = value; }
 
     /**
@@ -429,6 +491,15 @@ namespace Model
      * players were assigned to in the resulting match.</p>
      */
     inline const Aws::Vector<Player>& GetPlayers() const{ return m_players; }
+
+    /**
+     * <p>A set of <code>Player</code> objects, each representing a player to find
+     * matches for. Players are identified by a unique player ID and may include
+     * latency data for use during matchmaking. If the ticket is in status
+     * <code>COMPLETED</code>, the <code>Player</code> objects include the team the
+     * players were assigned to in the resulting match.</p>
+     */
+    inline bool PlayersHasBeenSet() const { return m_playersHasBeenSet; }
 
     /**
      * <p>A set of <code>Player</code> objects, each representing a player to find
@@ -497,6 +568,13 @@ namespace Model
      * match. This information is added to the ticket only after the matchmaking
      * request has been successfully completed.</p>
      */
+    inline bool GameSessionConnectionInfoHasBeenSet() const { return m_gameSessionConnectionInfoHasBeenSet; }
+
+    /**
+     * <p>Identifier and connection information of the game session created for the
+     * match. This information is added to the ticket only after the matchmaking
+     * request has been successfully completed.</p>
+     */
     inline void SetGameSessionConnectionInfo(const GameSessionConnectionInfo& value) { m_gameSessionConnectionInfoHasBeenSet = true; m_gameSessionConnectionInfo = value; }
 
     /**
@@ -526,6 +604,12 @@ namespace Model
      * match. If there is not enough recent data, this property may be empty.</p>
      */
     inline int GetEstimatedWaitTime() const{ return m_estimatedWaitTime; }
+
+    /**
+     * <p>Average amount of time (in seconds) that players are currently waiting for a
+     * match. If there is not enough recent data, this property may be empty.</p>
+     */
+    inline bool EstimatedWaitTimeHasBeenSet() const { return m_estimatedWaitTimeHasBeenSet; }
 
     /**
      * <p>Average amount of time (in seconds) that players are currently waiting for a

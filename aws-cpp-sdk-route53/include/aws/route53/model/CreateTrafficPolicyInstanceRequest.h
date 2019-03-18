@@ -57,6 +57,12 @@ namespace Model
      * <p>The ID of the hosted zone that you want Amazon Route 53 to create resource
      * record sets in by using the configuration in a traffic policy.</p>
      */
+    inline bool HostedZoneIdHasBeenSet() const { return m_hostedZoneIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the hosted zone that you want Amazon Route 53 to create resource
+     * record sets in by using the configuration in a traffic policy.</p>
+     */
     inline void SetHostedZoneId(const Aws::String& value) { m_hostedZoneIdHasBeenSet = true; m_hostedZoneId = value; }
 
     /**
@@ -96,6 +102,13 @@ namespace Model
      * resource record sets that Route 53 creates for this traffic policy instance.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
+
+    /**
+     * <p>The domain name (such as example.com) or subdomain name (such as
+     * www.example.com) for which Amazon Route 53 responds to DNS queries by using the
+     * resource record sets that Route 53 creates for this traffic policy instance.</p>
+     */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
      * <p>The domain name (such as example.com) or subdomain name (such as
@@ -150,6 +163,12 @@ namespace Model
      * <p>(Optional) The TTL that you want Amazon Route 53 to assign to all of the
      * resource record sets that it creates in the specified hosted zone.</p>
      */
+    inline bool TTLHasBeenSet() const { return m_tTLHasBeenSet; }
+
+    /**
+     * <p>(Optional) The TTL that you want Amazon Route 53 to assign to all of the
+     * resource record sets that it creates in the specified hosted zone.</p>
+     */
     inline void SetTTL(long long value) { m_tTLHasBeenSet = true; m_tTL = value; }
 
     /**
@@ -164,6 +183,12 @@ namespace Model
      * sets in the specified hosted zone.</p>
      */
     inline const Aws::String& GetTrafficPolicyId() const{ return m_trafficPolicyId; }
+
+    /**
+     * <p>The ID of the traffic policy that you want to use to create resource record
+     * sets in the specified hosted zone.</p>
+     */
+    inline bool TrafficPolicyIdHasBeenSet() const { return m_trafficPolicyIdHasBeenSet; }
 
     /**
      * <p>The ID of the traffic policy that you want to use to create resource record
@@ -207,6 +232,12 @@ namespace Model
      * record sets in the specified hosted zone.</p>
      */
     inline int GetTrafficPolicyVersion() const{ return m_trafficPolicyVersion; }
+
+    /**
+     * <p>The version of the traffic policy that you want to use to create resource
+     * record sets in the specified hosted zone.</p>
+     */
+    inline bool TrafficPolicyVersionHasBeenSet() const { return m_trafficPolicyVersionHasBeenSet; }
 
     /**
      * <p>The version of the traffic policy that you want to use to create resource

@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p> Specifies the EBS options for the specified Elasticsearch domain.</p>
      */
+    inline bool OptionsHasBeenSet() const { return m_optionsHasBeenSet; }
+
+    /**
+     * <p> Specifies the EBS options for the specified Elasticsearch domain.</p>
+     */
     inline void SetOptions(const EBSOptions& value) { m_optionsHasBeenSet = true; m_options = value; }
 
     /**
@@ -80,6 +85,12 @@ namespace Model
      * domain.</p>
      */
     inline const OptionStatus& GetStatus() const{ return m_status; }
+
+    /**
+     * <p> Specifies the status of the EBS options for the specified Elasticsearch
+     * domain.</p>
+     */
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
     /**
      * <p> Specifies the status of the EBS options for the specified Elasticsearch

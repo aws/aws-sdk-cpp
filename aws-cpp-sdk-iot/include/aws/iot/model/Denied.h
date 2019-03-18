@@ -60,6 +60,13 @@ namespace Model
      * explicitly deny or allow an action on a resource it is considered an implicit
      * deny.</p>
      */
+    inline bool ImplicitDenyHasBeenSet() const { return m_implicitDenyHasBeenSet; }
+
+    /**
+     * <p>Information that implicitly denies the authorization. When a policy doesn't
+     * explicitly deny or allow an action on a resource it is considered an implicit
+     * deny.</p>
+     */
     inline void SetImplicitDeny(const ImplicitDeny& value) { m_implicitDenyHasBeenSet = true; m_implicitDeny = value; }
 
     /**
@@ -88,6 +95,11 @@ namespace Model
      * <p>Information that explicitly denies the authorization. </p>
      */
     inline const ExplicitDeny& GetExplicitDeny() const{ return m_explicitDeny; }
+
+    /**
+     * <p>Information that explicitly denies the authorization. </p>
+     */
+    inline bool ExplicitDenyHasBeenSet() const { return m_explicitDenyHasBeenSet; }
 
     /**
      * <p>Information that explicitly denies the authorization. </p>

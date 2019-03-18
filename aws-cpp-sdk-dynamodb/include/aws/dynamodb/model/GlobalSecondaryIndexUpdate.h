@@ -63,6 +63,12 @@ namespace Model
      * <p>The name of an existing global secondary index, along with new provisioned
      * throughput settings to be applied to that index.</p>
      */
+    inline bool UpdateHasBeenSet() const { return m_updateHasBeenSet; }
+
+    /**
+     * <p>The name of an existing global secondary index, along with new provisioned
+     * throughput settings to be applied to that index.</p>
+     */
     inline void SetUpdate(const UpdateGlobalSecondaryIndexAction& value) { m_updateHasBeenSet = true; m_update = value; }
 
     /**
@@ -92,6 +98,15 @@ namespace Model
      * <code>ProvisionedThroughput </code> </p> </li> </ul>
      */
     inline const CreateGlobalSecondaryIndexAction& GetCreate() const{ return m_create; }
+
+    /**
+     * <p>The parameters required for creating a global secondary index on an existing
+     * table:</p> <ul> <li> <p> <code>IndexName </code> </p> </li> <li> <p>
+     * <code>KeySchema </code> </p> </li> <li> <p> <code>AttributeDefinitions </code>
+     * </p> </li> <li> <p> <code>Projection </code> </p> </li> <li> <p>
+     * <code>ProvisionedThroughput </code> </p> </li> </ul>
+     */
+    inline bool CreateHasBeenSet() const { return m_createHasBeenSet; }
 
     /**
      * <p>The parameters required for creating a global secondary index on an existing
@@ -134,6 +149,11 @@ namespace Model
      * <p>The name of an existing global secondary index to be removed.</p>
      */
     inline const DeleteGlobalSecondaryIndexAction& GetDelete() const{ return m_delete; }
+
+    /**
+     * <p>The name of an existing global secondary index to be removed.</p>
+     */
+    inline bool DeleteHasBeenSet() const { return m_deleteHasBeenSet; }
 
     /**
      * <p>The name of an existing global secondary index to be removed.</p>

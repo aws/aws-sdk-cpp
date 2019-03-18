@@ -60,6 +60,11 @@ namespace Model
     /**
      * <p/>
      */
+    inline bool BucketHasBeenSet() const { return m_bucketHasBeenSet; }
+
+    /**
+     * <p/>
+     */
     inline void SetBucket(const Aws::String& value) { m_bucketHasBeenSet = true; m_bucket = value; }
 
     /**
@@ -92,6 +97,11 @@ namespace Model
      * <p/>
      */
     inline const Aws::String& GetKey() const{ return m_key; }
+
+    /**
+     * <p/>
+     */
+    inline bool KeyHasBeenSet() const { return m_keyHasBeenSet; }
 
     /**
      * <p/>
@@ -132,6 +142,11 @@ namespace Model
     /**
      * <p>VersionId used to reference a specific version of the object.</p>
      */
+    inline bool VersionIdHasBeenSet() const { return m_versionIdHasBeenSet; }
+
+    /**
+     * <p>VersionId used to reference a specific version of the object.</p>
+     */
     inline void SetVersionId(const Aws::String& value) { m_versionIdHasBeenSet = true; m_versionId = value; }
 
     /**
@@ -164,6 +179,9 @@ namespace Model
     inline const RequestPayer& GetRequestPayer() const{ return m_requestPayer; }
 
     
+    inline bool RequestPayerHasBeenSet() const { return m_requestPayerHasBeenSet; }
+
+    
     inline void SetRequestPayer(const RequestPayer& value) { m_requestPayerHasBeenSet = true; m_requestPayer = value; }
 
     
@@ -178,6 +196,9 @@ namespace Model
 
     
     inline const Aws::Map<Aws::String, Aws::String>& GetCustomizedAccessLogTag() const{ return m_customizedAccessLogTag; }
+
+    
+    inline bool CustomizedAccessLogTagHasBeenSet() const { return m_customizedAccessLogTagHasBeenSet; }
 
     
     inline void SetCustomizedAccessLogTag(const Aws::Map<Aws::String, Aws::String>& value) { m_customizedAccessLogTagHasBeenSet = true; m_customizedAccessLogTag = value; }

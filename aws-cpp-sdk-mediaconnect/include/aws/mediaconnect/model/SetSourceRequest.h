@@ -57,6 +57,11 @@ namespace Model
     /**
      * The type of encryption that is used on the content ingested from this source.
      */
+    inline bool DecryptionHasBeenSet() const { return m_decryptionHasBeenSet; }
+
+    /**
+     * The type of encryption that is used on the content ingested from this source.
+     */
     inline void SetDecryption(const Encryption& value) { m_decryptionHasBeenSet = true; m_decryption = value; }
 
     /**
@@ -80,6 +85,12 @@ namespace Model
      * current AWS Elemental MediaConnect account.
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
+
+    /**
+     * A description for the source. This value is not used or seen outside of the
+     * current AWS Elemental MediaConnect account.
+     */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
 
     /**
      * A description for the source. This value is not used or seen outside of the
@@ -124,6 +135,13 @@ namespace Model
      * the originator's flow.
      */
     inline const Aws::String& GetEntitlementArn() const{ return m_entitlementArn; }
+
+    /**
+     * The ARN of the entitlement that allows you to subscribe to this flow. The
+     * entitlement is set by the flow originator, and the ARN is generated as part of
+     * the originator's flow.
+     */
+    inline bool EntitlementArnHasBeenSet() const { return m_entitlementArnHasBeenSet; }
 
     /**
      * The ARN of the entitlement that allows you to subscribe to this flow. The
@@ -176,6 +194,11 @@ namespace Model
     /**
      * The port that the flow will be listening on for incoming content.
      */
+    inline bool IngestPortHasBeenSet() const { return m_ingestPortHasBeenSet; }
+
+    /**
+     * The port that the flow will be listening on for incoming content.
+     */
     inline void SetIngestPort(int value) { m_ingestPortHasBeenSet = true; m_ingestPort = value; }
 
     /**
@@ -188,6 +211,11 @@ namespace Model
      * The smoothing max bitrate for RTP and RTP-FEC streams.
      */
     inline int GetMaxBitrate() const{ return m_maxBitrate; }
+
+    /**
+     * The smoothing max bitrate for RTP and RTP-FEC streams.
+     */
+    inline bool MaxBitrateHasBeenSet() const { return m_maxBitrateHasBeenSet; }
 
     /**
      * The smoothing max bitrate for RTP and RTP-FEC streams.
@@ -208,6 +236,11 @@ namespace Model
     /**
      * The maximum latency in milliseconds for Zixi-based streams.
      */
+    inline bool MaxLatencyHasBeenSet() const { return m_maxLatencyHasBeenSet; }
+
+    /**
+     * The maximum latency in milliseconds for Zixi-based streams.
+     */
     inline void SetMaxLatency(int value) { m_maxLatencyHasBeenSet = true; m_maxLatency = value; }
 
     /**
@@ -220,6 +253,11 @@ namespace Model
      * The name of the source.
      */
     inline const Aws::String& GetName() const{ return m_name; }
+
+    /**
+     * The name of the source.
+     */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
      * The name of the source.
@@ -260,6 +298,11 @@ namespace Model
     /**
      * The protocol that is used by the source.
      */
+    inline bool ProtocolHasBeenSet() const { return m_protocolHasBeenSet; }
+
+    /**
+     * The protocol that is used by the source.
+     */
     inline void SetProtocol(const Protocol& value) { m_protocolHasBeenSet = true; m_protocol = value; }
 
     /**
@@ -283,6 +326,12 @@ namespace Model
      * only to Zixi-based streams.
      */
     inline const Aws::String& GetStreamId() const{ return m_streamId; }
+
+    /**
+     * The stream ID that you want to use for this transport. This parameter applies
+     * only to Zixi-based streams.
+     */
+    inline bool StreamIdHasBeenSet() const { return m_streamIdHasBeenSet; }
 
     /**
      * The stream ID that you want to use for this transport. This parameter applies
@@ -327,6 +376,13 @@ namespace Model
      * Routing (CIDR) block; for example, 10.0.0.0/16.
      */
     inline const Aws::String& GetWhitelistCidr() const{ return m_whitelistCidr; }
+
+    /**
+     * The range of IP addresses that should be allowed to contribute content to your
+     * source. These IP addresses should in the form of a Classless Inter-Domain
+     * Routing (CIDR) block; for example, 10.0.0.0/16.
+     */
+    inline bool WhitelistCidrHasBeenSet() const { return m_whitelistCidrHasBeenSet; }
 
     /**
      * The range of IP addresses that should be allowed to contribute content to your

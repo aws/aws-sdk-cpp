@@ -54,6 +54,11 @@ namespace Model
     /**
      * <p>The name of your load balancer.</p>
      */
+    inline bool LoadBalancerNameHasBeenSet() const { return m_loadBalancerNameHasBeenSet; }
+
+    /**
+     * <p>The name of your load balancer.</p>
+     */
     inline void SetLoadBalancerName(const Aws::String& value) { m_loadBalancerNameHasBeenSet = true; m_loadBalancerName = value; }
 
     /**
@@ -90,6 +95,11 @@ namespace Model
     /**
      * <p>The instance port where you're creating your load balancer.</p>
      */
+    inline bool InstancePortHasBeenSet() const { return m_instancePortHasBeenSet; }
+
+    /**
+     * <p>The instance port where you're creating your load balancer.</p>
+     */
     inline void SetInstancePort(int value) { m_instancePortHasBeenSet = true; m_instancePort = value; }
 
     /**
@@ -106,6 +116,15 @@ namespace Model
      * has a lot of media or scripting on it.</p>
      */
     inline const Aws::String& GetHealthCheckPath() const{ return m_healthCheckPath; }
+
+    /**
+     * <p>The path you provided to perform the load balancer health check. If you
+     * didn't specify a health check path, Lightsail uses the root path of your website
+     * (e.g., <code>"/"</code>).</p> <p>You may want to specify a custom health check
+     * path other than the root of your application if your home page loads slowly or
+     * has a lot of media or scripting on it.</p>
+     */
+    inline bool HealthCheckPathHasBeenSet() const { return m_healthCheckPathHasBeenSet; }
 
     /**
      * <p>The path you provided to perform the load balancer health check. If you
@@ -174,6 +193,13 @@ namespace Model
      * <code>certificateName</code>, then <code>certificateDomainName</code> is
      * required (and vice-versa).</p>
      */
+    inline bool CertificateNameHasBeenSet() const { return m_certificateNameHasBeenSet; }
+
+    /**
+     * <p>The name of the SSL/TLS certificate.</p> <p>If you specify
+     * <code>certificateName</code>, then <code>certificateDomainName</code> is
+     * required (and vice-versa).</p>
+     */
     inline void SetCertificateName(const Aws::String& value) { m_certificateNameHasBeenSet = true; m_certificateName = value; }
 
     /**
@@ -219,6 +245,14 @@ namespace Model
      * required (and vice-versa).</p>
      */
     inline const Aws::String& GetCertificateDomainName() const{ return m_certificateDomainName; }
+
+    /**
+     * <p>The domain name with which your certificate is associated (e.g.,
+     * <code>example.com</code>).</p> <p>If you specify
+     * <code>certificateDomainName</code>, then <code>certificateName</code> is
+     * required (and vice-versa).</p>
+     */
+    inline bool CertificateDomainNameHasBeenSet() const { return m_certificateDomainNameHasBeenSet; }
 
     /**
      * <p>The domain name with which your certificate is associated (e.g.,
@@ -281,6 +315,13 @@ namespace Model
      * certificate (e.g., <code>www.example.com</code>, <code>example.com</code>,
      * <code>m.example.com</code>, <code>blog.example.com</code>).</p>
      */
+    inline bool CertificateAlternativeNamesHasBeenSet() const { return m_certificateAlternativeNamesHasBeenSet; }
+
+    /**
+     * <p>The optional alternative domains and subdomains to use with your SSL/TLS
+     * certificate (e.g., <code>www.example.com</code>, <code>example.com</code>,
+     * <code>m.example.com</code>, <code>blog.example.com</code>).</p>
+     */
     inline void SetCertificateAlternativeNames(const Aws::Vector<Aws::String>& value) { m_certificateAlternativeNamesHasBeenSet = true; m_certificateAlternativeNames = value; }
 
     /**
@@ -332,6 +373,13 @@ namespace Model
      * resource</code> operation.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>The tag keys and optional values to add to the resource during create.</p>
+     * <p>To tag a resource after it has been created, see the <code>tag
+     * resource</code> operation.</p>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
      * <p>The tag keys and optional values to add to the resource during create.</p>

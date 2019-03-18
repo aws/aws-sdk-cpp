@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>Indicates whether monitoring is enabled.</p>
      */
+    inline bool EnabledHasBeenSet() const { return m_enabledHasBeenSet; }
+
+    /**
+     * <p>Indicates whether monitoring is enabled.</p>
+     */
     inline void SetEnabled(bool value) { m_enabledHasBeenSet = true; m_enabled = value; }
 
     /**

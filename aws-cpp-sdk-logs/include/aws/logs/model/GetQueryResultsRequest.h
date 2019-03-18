@@ -52,6 +52,11 @@ namespace Model
     /**
      * <p>The ID number of the query.</p>
      */
+    inline bool QueryIdHasBeenSet() const { return m_queryIdHasBeenSet; }
+
+    /**
+     * <p>The ID number of the query.</p>
+     */
     inline void SetQueryId(const Aws::String& value) { m_queryIdHasBeenSet = true; m_queryId = value; }
 
     /**

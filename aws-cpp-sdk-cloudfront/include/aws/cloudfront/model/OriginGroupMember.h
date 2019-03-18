@@ -55,6 +55,11 @@ namespace Model
     /**
      * <p>The ID for an origin in an origin group.</p>
      */
+    inline bool OriginIdHasBeenSet() const { return m_originIdHasBeenSet; }
+
+    /**
+     * <p>The ID for an origin in an origin group.</p>
+     */
     inline void SetOriginId(const Aws::String& value) { m_originIdHasBeenSet = true; m_originId = value; }
 
     /**

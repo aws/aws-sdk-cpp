@@ -59,6 +59,11 @@ namespace Model
     /**
      * <p>The ID of the client connection.</p>
      */
+    inline bool ConnectionIdHasBeenSet() const { return m_connectionIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the client connection.</p>
+     */
     inline void SetConnectionId(const Aws::String& value) { m_connectionIdHasBeenSet = true; m_connectionId = value; }
 
     /**
@@ -95,6 +100,11 @@ namespace Model
     /**
      * <p>The state of the client connection.</p>
      */
+    inline bool PreviousStatusHasBeenSet() const { return m_previousStatusHasBeenSet; }
+
+    /**
+     * <p>The state of the client connection.</p>
+     */
     inline void SetPreviousStatus(const ClientVpnConnectionStatus& value) { m_previousStatusHasBeenSet = true; m_previousStatus = value; }
 
     /**
@@ -117,6 +127,11 @@ namespace Model
      * <p>A message about the status of the client connection, if applicable.</p>
      */
     inline const ClientVpnConnectionStatus& GetCurrentStatus() const{ return m_currentStatus; }
+
+    /**
+     * <p>A message about the status of the client connection, if applicable.</p>
+     */
+    inline bool CurrentStatusHasBeenSet() const { return m_currentStatusHasBeenSet; }
 
     /**
      * <p>A message about the status of the client connection, if applicable.</p>

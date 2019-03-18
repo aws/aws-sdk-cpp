@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The domain name.</p>
      */
+    inline bool DomainNameHasBeenSet() const { return m_domainNameHasBeenSet; }
+
+    /**
+     * <p>The domain name.</p>
+     */
     inline void SetDomainName(const Aws::String& value) { m_domainNameHasBeenSet = true; m_domainName = value; }
 
     /**
@@ -88,6 +93,11 @@ namespace Model
      * <p>The maximum number of elements to be returned for this resource.</p>
      */
     inline const Aws::String& GetMaxResults() const{ return m_maxResults; }
+
+    /**
+     * <p>The maximum number of elements to be returned for this resource.</p>
+     */
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
 
     /**
      * <p>The maximum number of elements to be returned for this resource.</p>
@@ -126,6 +136,13 @@ namespace Model
  the collection.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
+    /**
+     * <p>The next page of elements from this collection. Not valid for the last
+     * element of
+ the collection.</p>
+     */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
      * <p>The next page of elements from this collection. Not valid for the last

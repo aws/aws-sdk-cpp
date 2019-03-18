@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p>The access key for the session.</p>
      */
+    inline bool AccessKeyIdHasBeenSet() const { return m_accessKeyIdHasBeenSet; }
+
+    /**
+     * <p>The access key for the session.</p>
+     */
     inline void SetAccessKeyId(const Aws::String& value) { m_accessKeyIdHasBeenSet = true; m_accessKeyId = value; }
 
     /**
@@ -94,6 +99,11 @@ namespace Model
     /**
      * <p>The secret access key for the session.</p>
      */
+    inline bool SecretAccessKeyHasBeenSet() const { return m_secretAccessKeyHasBeenSet; }
+
+    /**
+     * <p>The secret access key for the session.</p>
+     */
     inline void SetSecretAccessKey(const Aws::String& value) { m_secretAccessKeyHasBeenSet = true; m_secretAccessKey = value; }
 
     /**
@@ -126,6 +136,11 @@ namespace Model
      * <p>The token for the session.</p>
      */
     inline const Aws::String& GetSessionToken() const{ return m_sessionToken; }
+
+    /**
+     * <p>The token for the session.</p>
+     */
+    inline bool SessionTokenHasBeenSet() const { return m_sessionTokenHasBeenSet; }
 
     /**
      * <p>The token for the session.</p>

@@ -62,6 +62,11 @@ namespace Model
     /**
      * <p>The name of the receipt rule set to reorder.</p>
      */
+    inline bool RuleSetNameHasBeenSet() const { return m_ruleSetNameHasBeenSet; }
+
+    /**
+     * <p>The name of the receipt rule set to reorder.</p>
+     */
     inline void SetRuleSetName(const Aws::String& value) { m_ruleSetNameHasBeenSet = true; m_ruleSetName = value; }
 
     /**
@@ -95,6 +100,12 @@ namespace Model
      * you want to put them.</p>
      */
     inline const Aws::Vector<Aws::String>& GetRuleNames() const{ return m_ruleNames; }
+
+    /**
+     * <p>A list of the specified receipt rule set's receipt rules in the order that
+     * you want to put them.</p>
+     */
+    inline bool RuleNamesHasBeenSet() const { return m_ruleNamesHasBeenSet; }
 
     /**
      * <p>A list of the specified receipt rule set's receipt rules in the order that

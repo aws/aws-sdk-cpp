@@ -60,6 +60,11 @@ namespace Model
     /**
      * <p> The ID of the Qualification type for the Qualification.</p>
      */
+    inline bool QualificationTypeIdHasBeenSet() const { return m_qualificationTypeIdHasBeenSet; }
+
+    /**
+     * <p> The ID of the Qualification type for the Qualification.</p>
+     */
     inline void SetQualificationTypeId(const Aws::String& value) { m_qualificationTypeIdHasBeenSet = true; m_qualificationTypeId = value; }
 
     /**
@@ -92,6 +97,11 @@ namespace Model
      * <p> The ID of the Worker who possesses the Qualification. </p>
      */
     inline const Aws::String& GetWorkerId() const{ return m_workerId; }
+
+    /**
+     * <p> The ID of the Worker who possesses the Qualification. </p>
+     */
+    inline bool WorkerIdHasBeenSet() const { return m_workerIdHasBeenSet; }
 
     /**
      * <p> The ID of the Worker who possesses the Qualification. </p>
@@ -138,6 +148,14 @@ namespace Model
      * Qualification request, GrantTime is the date and time of the last call to the
      * AcceptQualificationRequest operation.</p>
      */
+    inline bool GrantTimeHasBeenSet() const { return m_grantTimeHasBeenSet; }
+
+    /**
+     * <p> The date and time the Qualification was granted to the Worker. If the
+     * Worker's Qualification was revoked, and then re-granted based on a new
+     * Qualification request, GrantTime is the date and time of the last call to the
+     * AcceptQualificationRequest operation.</p>
+     */
     inline void SetGrantTime(const Aws::Utils::DateTime& value) { m_grantTimeHasBeenSet = true; m_grantTime = value; }
 
     /**
@@ -175,6 +193,12 @@ namespace Model
      * <p> The value (score) of the Qualification, if the Qualification has an integer
      * value.</p>
      */
+    inline bool IntegerValueHasBeenSet() const { return m_integerValueHasBeenSet; }
+
+    /**
+     * <p> The value (score) of the Qualification, if the Qualification has an integer
+     * value.</p>
+     */
     inline void SetIntegerValue(int value) { m_integerValueHasBeenSet = true; m_integerValue = value; }
 
     /**
@@ -186,6 +210,9 @@ namespace Model
 
     
     inline const Locale& GetLocaleValue() const{ return m_localeValue; }
+
+    
+    inline bool LocaleValueHasBeenSet() const { return m_localeValueHasBeenSet; }
 
     
     inline void SetLocaleValue(const Locale& value) { m_localeValueHasBeenSet = true; m_localeValue = value; }
@@ -204,6 +231,11 @@ namespace Model
      * <p> The status of the Qualification. Valid values are Granted | Revoked.</p>
      */
     inline const QualificationStatus& GetStatus() const{ return m_status; }
+
+    /**
+     * <p> The status of the Qualification. Valid values are Granted | Revoked.</p>
+     */
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
     /**
      * <p> The status of the Qualification. Valid values are Granted | Revoked.</p>

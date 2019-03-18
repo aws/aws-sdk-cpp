@@ -57,6 +57,12 @@ namespace Model
      * <p>The issuer for the OpenID Connect configuration. The issuer returned by
      * discovery must exactly match the value of <code>iss</code> in the ID token.</p>
      */
+    inline bool IssuerHasBeenSet() const { return m_issuerHasBeenSet; }
+
+    /**
+     * <p>The issuer for the OpenID Connect configuration. The issuer returned by
+     * discovery must exactly match the value of <code>iss</code> in the ID token.</p>
+     */
     inline void SetIssuer(const Aws::String& value) { m_issuerHasBeenSet = true; m_issuer = value; }
 
     /**
@@ -97,6 +103,14 @@ namespace Model
      * AppSync can validate against multiple client identifiers at a time.</p>
      */
     inline const Aws::String& GetClientId() const{ return m_clientId; }
+
+    /**
+     * <p>The client identifier of the Relying party at the OpenID identity provider.
+     * This identifier is typically obtained when the Relying party is registered with
+     * the OpenID identity provider. You can specify a regular expression so the AWS
+     * AppSync can validate against multiple client identifiers at a time.</p>
+     */
+    inline bool ClientIdHasBeenSet() const { return m_clientIdHasBeenSet; }
 
     /**
      * <p>The client identifier of the Relying party at the OpenID identity provider.
@@ -155,6 +169,11 @@ namespace Model
     /**
      * <p>The number of milliseconds a token is valid after being issued to a user.</p>
      */
+    inline bool IatTTLHasBeenSet() const { return m_iatTTLHasBeenSet; }
+
+    /**
+     * <p>The number of milliseconds a token is valid after being issued to a user.</p>
+     */
     inline void SetIatTTL(long long value) { m_iatTTLHasBeenSet = true; m_iatTTL = value; }
 
     /**
@@ -167,6 +186,11 @@ namespace Model
      * <p>The number of milliseconds a token is valid after being authenticated.</p>
      */
     inline long long GetAuthTTL() const{ return m_authTTL; }
+
+    /**
+     * <p>The number of milliseconds a token is valid after being authenticated.</p>
+     */
+    inline bool AuthTTLHasBeenSet() const { return m_authTTLHasBeenSet; }
 
     /**
      * <p>The number of milliseconds a token is valid after being authenticated.</p>

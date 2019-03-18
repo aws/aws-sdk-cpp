@@ -62,6 +62,12 @@ namespace Model
      * <p>The Unix file mode in the form "nnnn". For example, "0666" represents the
      * default file mode inside the file share. The default value is 0666. </p>
      */
+    inline bool FileModeHasBeenSet() const { return m_fileModeHasBeenSet; }
+
+    /**
+     * <p>The Unix file mode in the form "nnnn". For example, "0666" represents the
+     * default file mode inside the file share. The default value is 0666. </p>
+     */
     inline void SetFileMode(const Aws::String& value) { m_fileModeHasBeenSet = true; m_fileMode = value; }
 
     /**
@@ -101,6 +107,13 @@ namespace Model
      * value is 0777.</p>
      */
     inline const Aws::String& GetDirectoryMode() const{ return m_directoryMode; }
+
+    /**
+     * <p>The Unix directory mode in the form "nnnn". For example, "0666" represents
+     * the default access mode for all directories inside the file share. The default
+     * value is 0777.</p>
+     */
+    inline bool DirectoryModeHasBeenSet() const { return m_directoryModeHasBeenSet; }
 
     /**
      * <p>The Unix directory mode in the form "nnnn". For example, "0666" represents
@@ -155,6 +168,12 @@ namespace Model
      * <p>The default group ID for the file share (unless the files have another group
      * ID specified). The default value is nfsnobody. </p>
      */
+    inline bool GroupIdHasBeenSet() const { return m_groupIdHasBeenSet; }
+
+    /**
+     * <p>The default group ID for the file share (unless the files have another group
+     * ID specified). The default value is nfsnobody. </p>
+     */
     inline void SetGroupId(long long value) { m_groupIdHasBeenSet = true; m_groupId = value; }
 
     /**
@@ -169,6 +188,12 @@ namespace Model
      * another owner ID specified). The default value is nfsnobody. </p>
      */
     inline long long GetOwnerId() const{ return m_ownerId; }
+
+    /**
+     * <p>The default owner ID for files in the file share (unless the files have
+     * another owner ID specified). The default value is nfsnobody. </p>
+     */
+    inline bool OwnerIdHasBeenSet() const { return m_ownerIdHasBeenSet; }
 
     /**
      * <p>The default owner ID for files in the file share (unless the files have

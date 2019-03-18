@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The ARN of the HSM to delete.</p>
      */
+    inline bool HsmArnHasBeenSet() const { return m_hsmArnHasBeenSet; }
+
+    /**
+     * <p>The ARN of the HSM to delete.</p>
+     */
     inline void SetHsmArn(const Aws::String& value) { m_hsmArnHasBeenSet = true; m_hsmArn = value; }
 
     /**

@@ -53,6 +53,11 @@ namespace Model
     /**
      * <p>The name for the new security configuration.</p>
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>The name for the new security configuration.</p>
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
@@ -85,6 +90,11 @@ namespace Model
      * <p>The encryption configuration for the new security configuration.</p>
      */
     inline const EncryptionConfiguration& GetEncryptionConfiguration() const{ return m_encryptionConfiguration; }
+
+    /**
+     * <p>The encryption configuration for the new security configuration.</p>
+     */
+    inline bool EncryptionConfigurationHasBeenSet() const { return m_encryptionConfigurationHasBeenSet; }
 
     /**
      * <p>The encryption configuration for the new security configuration.</p>

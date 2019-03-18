@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p>The subscription's ARN.</p>
      */
+    inline bool SubscriptionArnHasBeenSet() const { return m_subscriptionArnHasBeenSet; }
+
+    /**
+     * <p>The subscription's ARN.</p>
+     */
     inline void SetSubscriptionArn(const Aws::String& value) { m_subscriptionArnHasBeenSet = true; m_subscriptionArn = value; }
 
     /**
@@ -90,6 +95,11 @@ namespace Model
      * <p>The subscription's owner.</p>
      */
     inline const Aws::String& GetOwner() const{ return m_owner; }
+
+    /**
+     * <p>The subscription's owner.</p>
+     */
+    inline bool OwnerHasBeenSet() const { return m_ownerHasBeenSet; }
 
     /**
      * <p>The subscription's owner.</p>
@@ -130,6 +140,11 @@ namespace Model
     /**
      * <p>The subscription's protocol.</p>
      */
+    inline bool ProtocolHasBeenSet() const { return m_protocolHasBeenSet; }
+
+    /**
+     * <p>The subscription's protocol.</p>
+     */
     inline void SetProtocol(const Aws::String& value) { m_protocolHasBeenSet = true; m_protocol = value; }
 
     /**
@@ -166,6 +181,11 @@ namespace Model
     /**
      * <p>The subscription's endpoint (format depends on the protocol).</p>
      */
+    inline bool EndpointHasBeenSet() const { return m_endpointHasBeenSet; }
+
+    /**
+     * <p>The subscription's endpoint (format depends on the protocol).</p>
+     */
     inline void SetEndpoint(const Aws::String& value) { m_endpointHasBeenSet = true; m_endpoint = value; }
 
     /**
@@ -198,6 +218,11 @@ namespace Model
      * <p>The ARN of the subscription's topic.</p>
      */
     inline const Aws::String& GetTopicArn() const{ return m_topicArn; }
+
+    /**
+     * <p>The ARN of the subscription's topic.</p>
+     */
+    inline bool TopicArnHasBeenSet() const { return m_topicArnHasBeenSet; }
 
     /**
      * <p>The ARN of the subscription's topic.</p>

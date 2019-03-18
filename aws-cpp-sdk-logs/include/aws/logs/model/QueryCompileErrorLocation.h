@@ -53,6 +53,11 @@ namespace Model
     /**
      * <p>Reserved.</p>
      */
+    inline bool StartCharOffsetHasBeenSet() const { return m_startCharOffsetHasBeenSet; }
+
+    /**
+     * <p>Reserved.</p>
+     */
     inline void SetStartCharOffset(int value) { m_startCharOffsetHasBeenSet = true; m_startCharOffset = value; }
 
     /**
@@ -65,6 +70,11 @@ namespace Model
      * <p>Reserved.</p>
      */
     inline int GetEndCharOffset() const{ return m_endCharOffset; }
+
+    /**
+     * <p>Reserved.</p>
+     */
+    inline bool EndCharOffsetHasBeenSet() const { return m_endCharOffsetHasBeenSet; }
 
     /**
      * <p>Reserved.</p>

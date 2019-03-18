@@ -63,6 +63,13 @@ namespace Model
      * </note> <p>The authorization type to use. The only valid value is
      * <code>OAUTH</code>, which represents the OAuth authorization type.</p>
      */
+    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
+
+    /**
+     * <note> <p> This data type is deprecated and is no longer accurate or used. </p>
+     * </note> <p>The authorization type to use. The only valid value is
+     * <code>OAUTH</code>, which represents the OAuth authorization type.</p>
+     */
     inline void SetType(const SourceAuthType& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
@@ -91,6 +98,11 @@ namespace Model
      * <p>The resource value that applies to the specified authorization type.</p>
      */
     inline const Aws::String& GetResource() const{ return m_resource; }
+
+    /**
+     * <p>The resource value that applies to the specified authorization type.</p>
+     */
+    inline bool ResourceHasBeenSet() const { return m_resourceHasBeenSet; }
 
     /**
      * <p>The resource value that applies to the specified authorization type.</p>

@@ -52,6 +52,11 @@ namespace Model
     /**
      * <p>The ARN of the room from which to get the room skill parameter details. </p>
      */
+    inline bool RoomArnHasBeenSet() const { return m_roomArnHasBeenSet; }
+
+    /**
+     * <p>The ARN of the room from which to get the room skill parameter details. </p>
+     */
     inline void SetRoomArn(const Aws::String& value) { m_roomArnHasBeenSet = true; m_roomArn = value; }
 
     /**
@@ -85,6 +90,12 @@ namespace Model
      * Required.</p>
      */
     inline const Aws::String& GetSkillId() const{ return m_skillId; }
+
+    /**
+     * <p>The ARN of the skill from which to get the room skill parameter details.
+     * Required.</p>
+     */
+    inline bool SkillIdHasBeenSet() const { return m_skillIdHasBeenSet; }
 
     /**
      * <p>The ARN of the skill from which to get the room skill parameter details.
@@ -127,6 +138,11 @@ namespace Model
      * <p>The room skill parameter key for which to get details. Required.</p>
      */
     inline const Aws::String& GetParameterKey() const{ return m_parameterKey; }
+
+    /**
+     * <p>The room skill parameter key for which to get details. Required.</p>
+     */
+    inline bool ParameterKeyHasBeenSet() const { return m_parameterKeyHasBeenSet; }
 
     /**
      * <p>The room skill parameter key for which to get details. Required.</p>

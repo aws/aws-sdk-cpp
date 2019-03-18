@@ -61,6 +61,11 @@ namespace Model
     /**
      * <p>A unique resource name for a time-based scaling configuration option.</p>
      */
+    inline bool ResourceNameHasBeenSet() const { return m_resourceNameHasBeenSet; }
+
+    /**
+     * <p>A unique resource name for a time-based scaling configuration option.</p>
+     */
     inline void SetResourceName(const Aws::String& value) { m_resourceNameHasBeenSet = true; m_resourceName = value; }
 
     /**
@@ -93,6 +98,11 @@ namespace Model
      * <p>A unique namespace identifying the option's associated AWS resource.</p>
      */
     inline const Aws::String& GetNamespace() const{ return m_namespace; }
+
+    /**
+     * <p>A unique namespace identifying the option's associated AWS resource.</p>
+     */
+    inline bool NamespaceHasBeenSet() const { return m_namespaceHasBeenSet; }
 
     /**
      * <p>A unique namespace identifying the option's associated AWS resource.</p>
@@ -133,6 +143,11 @@ namespace Model
     /**
      * <p>The name of the configuration option.</p>
      */
+    inline bool OptionNameHasBeenSet() const { return m_optionNameHasBeenSet; }
+
+    /**
+     * <p>The name of the configuration option.</p>
+     */
     inline void SetOptionName(const Aws::String& value) { m_optionNameHasBeenSet = true; m_optionName = value; }
 
     /**
@@ -165,6 +180,11 @@ namespace Model
      * <p>The current value for the configuration option.</p>
      */
     inline const Aws::String& GetValue() const{ return m_value; }
+
+    /**
+     * <p>The current value for the configuration option.</p>
+     */
+    inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
 
     /**
      * <p>The current value for the configuration option.</p>

@@ -63,6 +63,11 @@ namespace Model
     /**
      * <p>Represents information about an action type.</p>
      */
+    inline bool ActionTypeIdHasBeenSet() const { return m_actionTypeIdHasBeenSet; }
+
+    /**
+     * <p>Represents information about an action type.</p>
+     */
     inline void SetActionTypeId(const ActionTypeId& value) { m_actionTypeIdHasBeenSet = true; m_actionTypeId = value; }
 
     /**
@@ -85,6 +90,11 @@ namespace Model
      * <p>Represents information about an action configuration.</p>
      */
     inline const ActionConfiguration& GetActionConfiguration() const{ return m_actionConfiguration; }
+
+    /**
+     * <p>Represents information about an action configuration.</p>
+     */
+    inline bool ActionConfigurationHasBeenSet() const { return m_actionConfigurationHasBeenSet; }
 
     /**
      * <p>Represents information about an action configuration.</p>
@@ -115,6 +125,11 @@ namespace Model
     /**
      * <p>Represents information about a pipeline to a job worker.</p>
      */
+    inline bool PipelineContextHasBeenSet() const { return m_pipelineContextHasBeenSet; }
+
+    /**
+     * <p>Represents information about a pipeline to a job worker.</p>
+     */
     inline void SetPipelineContext(const PipelineContext& value) { m_pipelineContextHasBeenSet = true; m_pipelineContext = value; }
 
     /**
@@ -137,6 +152,11 @@ namespace Model
      * <p>The artifact supplied to the job.</p>
      */
     inline const Aws::Vector<Artifact>& GetInputArtifacts() const{ return m_inputArtifacts; }
+
+    /**
+     * <p>The artifact supplied to the job.</p>
+     */
+    inline bool InputArtifactsHasBeenSet() const { return m_inputArtifactsHasBeenSet; }
 
     /**
      * <p>The artifact supplied to the job.</p>
@@ -173,6 +193,11 @@ namespace Model
      * <p>The output of the job.</p>
      */
     inline const Aws::Vector<Artifact>& GetOutputArtifacts() const{ return m_outputArtifacts; }
+
+    /**
+     * <p>The output of the job.</p>
+     */
+    inline bool OutputArtifactsHasBeenSet() const { return m_outputArtifactsHasBeenSet; }
 
     /**
      * <p>The output of the job.</p>
@@ -219,6 +244,14 @@ namespace Model
      * to access input and output artifacts in the Amazon S3 bucket used to store
      * artifact for the pipeline in AWS CodePipeline.</p>
      */
+    inline bool ArtifactCredentialsHasBeenSet() const { return m_artifactCredentialsHasBeenSet; }
+
+    /**
+     * <p>Represents an AWS session credentials object. These credentials are temporary
+     * credentials that are issued by AWS Secure Token Service (STS). They can be used
+     * to access input and output artifacts in the Amazon S3 bucket used to store
+     * artifact for the pipeline in AWS CodePipeline.</p>
+     */
     inline void SetArtifactCredentials(const AWSSessionCredentials& value) { m_artifactCredentialsHasBeenSet = true; m_artifactCredentials = value; }
 
     /**
@@ -251,6 +284,12 @@ namespace Model
      * requires in order to continue the job asynchronously.</p>
      */
     inline const Aws::String& GetContinuationToken() const{ return m_continuationToken; }
+
+    /**
+     * <p>A system-generated token, such as a AWS CodeDeploy deployment ID, that a job
+     * requires in order to continue the job asynchronously.</p>
+     */
+    inline bool ContinuationTokenHasBeenSet() const { return m_continuationTokenHasBeenSet; }
 
     /**
      * <p>A system-generated token, such as a AWS CodeDeploy deployment ID, that a job
@@ -294,6 +333,12 @@ namespace Model
      * store, such as an AWS Key Management Service (AWS KMS) key. </p>
      */
     inline const EncryptionKey& GetEncryptionKey() const{ return m_encryptionKey; }
+
+    /**
+     * <p>Represents information about the key used to encrypt data in the artifact
+     * store, such as an AWS Key Management Service (AWS KMS) key. </p>
+     */
+    inline bool EncryptionKeyHasBeenSet() const { return m_encryptionKeyHasBeenSet; }
 
     /**
      * <p>Represents information about the key used to encrypt data in the artifact

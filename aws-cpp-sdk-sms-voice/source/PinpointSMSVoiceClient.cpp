@@ -147,6 +147,11 @@ void PinpointSMSVoiceClient::CreateConfigurationSetAsyncHelper(const CreateConfi
 
 CreateConfigurationSetEventDestinationOutcome PinpointSMSVoiceClient::CreateConfigurationSetEventDestination(const CreateConfigurationSetEventDestinationRequest& request) const
 {
+  if (!request.ConfigurationSetNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("CreateConfigurationSetEventDestination", "Required field: ConfigurationSetName, is not set");
+    return CreateConfigurationSetEventDestinationOutcome(Aws::Client::AWSError<PinpointSMSVoiceErrors>(PinpointSMSVoiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ConfigurationSetName]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/v1/sms-voice/configuration-sets/";
@@ -184,6 +189,11 @@ void PinpointSMSVoiceClient::CreateConfigurationSetEventDestinationAsyncHelper(c
 
 DeleteConfigurationSetOutcome PinpointSMSVoiceClient::DeleteConfigurationSet(const DeleteConfigurationSetRequest& request) const
 {
+  if (!request.ConfigurationSetNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteConfigurationSet", "Required field: ConfigurationSetName, is not set");
+    return DeleteConfigurationSetOutcome(Aws::Client::AWSError<PinpointSMSVoiceErrors>(PinpointSMSVoiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ConfigurationSetName]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/v1/sms-voice/configuration-sets/";
@@ -220,6 +230,16 @@ void PinpointSMSVoiceClient::DeleteConfigurationSetAsyncHelper(const DeleteConfi
 
 DeleteConfigurationSetEventDestinationOutcome PinpointSMSVoiceClient::DeleteConfigurationSetEventDestination(const DeleteConfigurationSetEventDestinationRequest& request) const
 {
+  if (!request.ConfigurationSetNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteConfigurationSetEventDestination", "Required field: ConfigurationSetName, is not set");
+    return DeleteConfigurationSetEventDestinationOutcome(Aws::Client::AWSError<PinpointSMSVoiceErrors>(PinpointSMSVoiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ConfigurationSetName]", false));
+  }
+  if (!request.EventDestinationNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteConfigurationSetEventDestination", "Required field: EventDestinationName, is not set");
+    return DeleteConfigurationSetEventDestinationOutcome(Aws::Client::AWSError<PinpointSMSVoiceErrors>(PinpointSMSVoiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [EventDestinationName]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/v1/sms-voice/configuration-sets/";
@@ -258,6 +278,11 @@ void PinpointSMSVoiceClient::DeleteConfigurationSetEventDestinationAsyncHelper(c
 
 GetConfigurationSetEventDestinationsOutcome PinpointSMSVoiceClient::GetConfigurationSetEventDestinations(const GetConfigurationSetEventDestinationsRequest& request) const
 {
+  if (!request.ConfigurationSetNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetConfigurationSetEventDestinations", "Required field: ConfigurationSetName, is not set");
+    return GetConfigurationSetEventDestinationsOutcome(Aws::Client::AWSError<PinpointSMSVoiceErrors>(PinpointSMSVoiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ConfigurationSetName]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/v1/sms-voice/configuration-sets/";
@@ -365,6 +390,16 @@ void PinpointSMSVoiceClient::SendVoiceMessageAsyncHelper(const SendVoiceMessageR
 
 UpdateConfigurationSetEventDestinationOutcome PinpointSMSVoiceClient::UpdateConfigurationSetEventDestination(const UpdateConfigurationSetEventDestinationRequest& request) const
 {
+  if (!request.ConfigurationSetNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateConfigurationSetEventDestination", "Required field: ConfigurationSetName, is not set");
+    return UpdateConfigurationSetEventDestinationOutcome(Aws::Client::AWSError<PinpointSMSVoiceErrors>(PinpointSMSVoiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ConfigurationSetName]", false));
+  }
+  if (!request.EventDestinationNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateConfigurationSetEventDestination", "Required field: EventDestinationName, is not set");
+    return UpdateConfigurationSetEventDestinationOutcome(Aws::Client::AWSError<PinpointSMSVoiceErrors>(PinpointSMSVoiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [EventDestinationName]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/v1/sms-voice/configuration-sets/";

@@ -53,6 +53,12 @@ namespace Model
      * <p>A list of account IDs of the Security Hub member accounts that you want to
      * delete. </p>
      */
+    inline bool AccountIdsHasBeenSet() const { return m_accountIdsHasBeenSet; }
+
+    /**
+     * <p>A list of account IDs of the Security Hub member accounts that you want to
+     * delete. </p>
+     */
     inline void SetAccountIds(const Aws::Vector<Aws::String>& value) { m_accountIdsHasBeenSet = true; m_accountIds = value; }
 
     /**

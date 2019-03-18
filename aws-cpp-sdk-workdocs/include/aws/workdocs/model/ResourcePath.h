@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The components of the resource path.</p>
      */
+    inline bool ComponentsHasBeenSet() const { return m_componentsHasBeenSet; }
+
+    /**
+     * <p>The components of the resource path.</p>
+     */
     inline void SetComponents(const Aws::Vector<ResourcePathComponent>& value) { m_componentsHasBeenSet = true; m_components = value; }
 
     /**

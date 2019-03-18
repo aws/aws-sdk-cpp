@@ -58,6 +58,15 @@ namespace Model
      * request. If you use an account ID, don't include any hyphens ('-') in the ID.
      * </p>
      */
+    inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
+
+    /**
+     * <p>The AWS account ID of the account that owns the vault. You can either specify
+     * an AWS account ID or optionally a single '-' (hyphen), in which case Amazon
+     * Glacier uses the AWS account ID associated with the credentials used to sign the
+     * request. If you use an account ID, don't include any hyphens ('-') in the ID.
+     * </p>
+     */
     inline void SetAccountId(const Aws::String& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
 
     /**

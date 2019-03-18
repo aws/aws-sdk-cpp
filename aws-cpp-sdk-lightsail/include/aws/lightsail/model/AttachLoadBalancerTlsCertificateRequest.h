@@ -54,6 +54,12 @@ namespace Model
      * <p>The name of the load balancer to which you want to associate the SSL/TLS
      * certificate.</p>
      */
+    inline bool LoadBalancerNameHasBeenSet() const { return m_loadBalancerNameHasBeenSet; }
+
+    /**
+     * <p>The name of the load balancer to which you want to associate the SSL/TLS
+     * certificate.</p>
+     */
     inline void SetLoadBalancerName(const Aws::String& value) { m_loadBalancerNameHasBeenSet = true; m_loadBalancerName = value; }
 
     /**
@@ -91,6 +97,11 @@ namespace Model
      * <p>The name of your SSL/TLS certificate.</p>
      */
     inline const Aws::String& GetCertificateName() const{ return m_certificateName; }
+
+    /**
+     * <p>The name of your SSL/TLS certificate.</p>
+     */
+    inline bool CertificateNameHasBeenSet() const { return m_certificateNameHasBeenSet; }
 
     /**
      * <p>The name of your SSL/TLS certificate.</p>

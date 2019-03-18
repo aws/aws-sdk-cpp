@@ -60,6 +60,11 @@ namespace Model
     /**
      * <p>One or more DHCP options in the set.</p>
      */
+    inline bool DhcpConfigurationsHasBeenSet() const { return m_dhcpConfigurationsHasBeenSet; }
+
+    /**
+     * <p>One or more DHCP options in the set.</p>
+     */
     inline void SetDhcpConfigurations(const Aws::Vector<DhcpConfiguration>& value) { m_dhcpConfigurationsHasBeenSet = true; m_dhcpConfigurations = value; }
 
     /**
@@ -92,6 +97,11 @@ namespace Model
      * <p>The ID of the set of DHCP options.</p>
      */
     inline const Aws::String& GetDhcpOptionsId() const{ return m_dhcpOptionsId; }
+
+    /**
+     * <p>The ID of the set of DHCP options.</p>
+     */
+    inline bool DhcpOptionsIdHasBeenSet() const { return m_dhcpOptionsIdHasBeenSet; }
 
     /**
      * <p>The ID of the set of DHCP options.</p>
@@ -132,6 +142,11 @@ namespace Model
     /**
      * <p>The ID of the AWS account that owns the DHCP options set.</p>
      */
+    inline bool OwnerIdHasBeenSet() const { return m_ownerIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the AWS account that owns the DHCP options set.</p>
+     */
     inline void SetOwnerId(const Aws::String& value) { m_ownerIdHasBeenSet = true; m_ownerId = value; }
 
     /**
@@ -164,6 +179,11 @@ namespace Model
      * <p>Any tags assigned to the DHCP options set.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>Any tags assigned to the DHCP options set.</p>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
      * <p>Any tags assigned to the DHCP options set.</p>

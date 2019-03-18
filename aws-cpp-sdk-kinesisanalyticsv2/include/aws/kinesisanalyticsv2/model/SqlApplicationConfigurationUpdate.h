@@ -62,6 +62,12 @@ namespace Model
      * <p>The array of <a>InputUpdate</a> objects describing the new input streams used
      * by the application.</p>
      */
+    inline bool InputUpdatesHasBeenSet() const { return m_inputUpdatesHasBeenSet; }
+
+    /**
+     * <p>The array of <a>InputUpdate</a> objects describing the new input streams used
+     * by the application.</p>
+     */
     inline void SetInputUpdates(const Aws::Vector<InputUpdate>& value) { m_inputUpdatesHasBeenSet = true; m_inputUpdates = value; }
 
     /**
@@ -105,6 +111,12 @@ namespace Model
      * <p>The array of <a>OutputUpdate</a> objects describing the new destination
      * streams used by the application.</p>
      */
+    inline bool OutputUpdatesHasBeenSet() const { return m_outputUpdatesHasBeenSet; }
+
+    /**
+     * <p>The array of <a>OutputUpdate</a> objects describing the new destination
+     * streams used by the application.</p>
+     */
     inline void SetOutputUpdates(const Aws::Vector<OutputUpdate>& value) { m_outputUpdatesHasBeenSet = true; m_outputUpdates = value; }
 
     /**
@@ -143,6 +155,12 @@ namespace Model
      * reference data sources used by the application.</p>
      */
     inline const Aws::Vector<ReferenceDataSourceUpdate>& GetReferenceDataSourceUpdates() const{ return m_referenceDataSourceUpdates; }
+
+    /**
+     * <p>The array of <a>ReferenceDataSourceUpdate</a> objects describing the new
+     * reference data sources used by the application.</p>
+     */
+    inline bool ReferenceDataSourceUpdatesHasBeenSet() const { return m_referenceDataSourceUpdatesHasBeenSet; }
 
     /**
      * <p>The array of <a>ReferenceDataSourceUpdate</a> objects describing the new

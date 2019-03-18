@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The name of the certificate.</p>
      */
+    inline bool CertificateNameHasBeenSet() const { return m_certificateNameHasBeenSet; }
+
+    /**
+     * <p>The name of the certificate.</p>
+     */
     inline void SetCertificateName(const Aws::String& value) { m_certificateNameHasBeenSet = true; m_certificateName = value; }
 
     /**
@@ -89,6 +94,12 @@ namespace Model
      * chain.</p>
      */
     inline const Aws::String& GetInlineDocument() const{ return m_inlineDocument; }
+
+    /**
+     * <p>A base64 encoded binary representation of the code signing certificate
+     * chain.</p>
+     */
+    inline bool InlineDocumentHasBeenSet() const { return m_inlineDocumentHasBeenSet; }
 
     /**
      * <p>A base64 encoded binary representation of the code signing certificate

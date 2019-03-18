@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>A message describing the backup creation failure.</p>
      */
+    inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
+
+    /**
+     * <p>A message describing the backup creation failure.</p>
+     */
     inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
 
     /**

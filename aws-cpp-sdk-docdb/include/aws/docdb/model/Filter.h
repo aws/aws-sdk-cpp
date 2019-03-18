@@ -60,6 +60,11 @@ namespace Model
     /**
      * <p>The name of the filter. Filter names are case sensitive.</p>
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>The name of the filter. Filter names are case sensitive.</p>
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
@@ -92,6 +97,11 @@ namespace Model
      * <p>One or more filter values. Filter values are case sensitive.</p>
      */
     inline const Aws::Vector<Aws::String>& GetValues() const{ return m_values; }
+
+    /**
+     * <p>One or more filter values. Filter values are case sensitive.</p>
+     */
+    inline bool ValuesHasBeenSet() const { return m_valuesHasBeenSet; }
 
     /**
      * <p>One or more filter values. Filter values are case sensitive.</p>

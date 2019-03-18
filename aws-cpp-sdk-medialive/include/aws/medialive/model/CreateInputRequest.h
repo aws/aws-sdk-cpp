@@ -61,6 +61,11 @@ namespace Model
     /**
      * Destination settings for PUSH type inputs.
      */
+    inline bool DestinationsHasBeenSet() const { return m_destinationsHasBeenSet; }
+
+    /**
+     * Destination settings for PUSH type inputs.
+     */
     inline void SetDestinations(const Aws::Vector<InputDestinationRequest>& value) { m_destinationsHasBeenSet = true; m_destinations = value; }
 
     /**
@@ -93,6 +98,11 @@ namespace Model
      * A list of security groups referenced by IDs to attach to the input.
      */
     inline const Aws::Vector<Aws::String>& GetInputSecurityGroups() const{ return m_inputSecurityGroups; }
+
+    /**
+     * A list of security groups referenced by IDs to attach to the input.
+     */
+    inline bool InputSecurityGroupsHasBeenSet() const { return m_inputSecurityGroupsHasBeenSet; }
 
     /**
      * A list of security groups referenced by IDs to attach to the input.
@@ -140,6 +150,17 @@ separate Availability
 
      */
     inline const Aws::Vector<MediaConnectFlowRequest>& GetMediaConnectFlows() const{ return m_mediaConnectFlows; }
+
+    /**
+     * A list of the MediaConnect Flows that you want to use in this input. You can
+     * specify as few as one
+Flow and presently, as many as two. The only requirement
+     * is when you have more than one is that each Flow is in a
+separate Availability
+     * Zone as this ensures your EML input is redundant to AZ issues.
+
+     */
+    inline bool MediaConnectFlowsHasBeenSet() const { return m_mediaConnectFlowsHasBeenSet; }
 
     /**
      * A list of the MediaConnect Flows that you want to use in this input. You can
@@ -216,6 +237,11 @@ separate Availability
     /**
      * Name of the input.
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * Name of the input.
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
@@ -251,6 +277,14 @@ exactly once
 
      */
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    /**
+     * Unique identifier of the request to ensure the request is handled
+exactly once
+     * in case of retries.
+
+     */
+    inline bool RequestIdHasBeenSet() const { return m_requestIdHasBeenSet; }
 
     /**
      * Unique identifier of the request to ensure the request is handled
@@ -311,6 +345,12 @@ exactly once
      * The Amazon Resource Name (ARN) of the role this input assumes during and after
      * creation.
      */
+    inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
+
+    /**
+     * The Amazon Resource Name (ARN) of the role this input assumes during and after
+     * creation.
+     */
     inline void SetRoleArn(const Aws::String& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
 
     /**
@@ -353,6 +393,16 @@ Only specify sources for PULL type Inputs. Leave
 
      */
     inline const Aws::Vector<InputSourceRequest>& GetSources() const{ return m_sources; }
+
+    /**
+     * The source URLs for a PULL-type input. Every PULL type input needs
+exactly two
+     * source URLs for redundancy.
+Only specify sources for PULL type Inputs. Leave
+     * Destinations empty.
+
+     */
+    inline bool SourcesHasBeenSet() const { return m_sourcesHasBeenSet; }
 
     /**
      * The source URLs for a PULL-type input. Every PULL type input needs
@@ -423,6 +473,11 @@ Only specify sources for PULL type Inputs. Leave
     /**
      * A collection of key-value pairs.
      */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
+
+    /**
+     * A collection of key-value pairs.
+     */
     inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     /**
@@ -480,6 +535,9 @@ Only specify sources for PULL type Inputs. Leave
     inline const InputType& GetType() const{ return m_type; }
 
     
+    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
+
+    
     inline void SetType(const InputType& value) { m_typeHasBeenSet = true; m_type = value; }
 
     
@@ -494,6 +552,9 @@ Only specify sources for PULL type Inputs. Leave
 
     
     inline const InputVpcRequest& GetVpc() const{ return m_vpc; }
+
+    
+    inline bool VpcHasBeenSet() const { return m_vpcHasBeenSet; }
 
     
     inline void SetVpc(const InputVpcRequest& value) { m_vpcHasBeenSet = true; m_vpc = value; }

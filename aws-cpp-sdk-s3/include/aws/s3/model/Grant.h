@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p/>
      */
+    inline bool GranteeHasBeenSet() const { return m_granteeHasBeenSet; }
+
+    /**
+     * <p/>
+     */
     inline void SetGrantee(const Grantee& value) { m_granteeHasBeenSet = true; m_grantee = value; }
 
     /**
@@ -78,6 +83,11 @@ namespace Model
      * <p>Specifies the permission given to the grantee.</p>
      */
     inline const Permission& GetPermission() const{ return m_permission; }
+
+    /**
+     * <p>Specifies the permission given to the grantee.</p>
+     */
+    inline bool PermissionHasBeenSet() const { return m_permissionHasBeenSet; }
 
     /**
      * <p>Specifies the permission given to the grantee.</p>

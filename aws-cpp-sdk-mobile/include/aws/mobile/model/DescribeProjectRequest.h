@@ -60,6 +60,11 @@ namespace Model
     /**
      * <p> Unique project identifier. </p>
      */
+    inline bool ProjectIdHasBeenSet() const { return m_projectIdHasBeenSet; }
+
+    /**
+     * <p> Unique project identifier. </p>
+     */
     inline void SetProjectId(const Aws::String& value) { m_projectIdHasBeenSet = true; m_projectId = value; }
 
     /**
@@ -94,6 +99,13 @@ namespace Model
      * project. </p>
      */
     inline bool GetSyncFromResources() const{ return m_syncFromResources; }
+
+    /**
+     * <p> If set to true, causes AWS Mobile Hub to synchronize information from other
+     * services, e.g., update state of AWS CloudFormation stacks in the AWS Mobile Hub
+     * project. </p>
+     */
+    inline bool SyncFromResourcesHasBeenSet() const { return m_syncFromResourcesHasBeenSet; }
 
     /**
      * <p> If set to true, causes AWS Mobile Hub to synchronize information from other

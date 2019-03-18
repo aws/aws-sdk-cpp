@@ -59,6 +59,11 @@ namespace Model
     /**
      * <p>The unique identifier for an individual Snowball Edge AMI.</p>
      */
+    inline bool AmiIdHasBeenSet() const { return m_amiIdHasBeenSet; }
+
+    /**
+     * <p>The unique identifier for an individual Snowball Edge AMI.</p>
+     */
     inline void SetAmiId(const Aws::String& value) { m_amiIdHasBeenSet = true; m_amiId = value; }
 
     /**
@@ -91,6 +96,11 @@ namespace Model
      * <p>The optional name of a compatible image.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
+
+    /**
+     * <p>The optional name of a compatible image.</p>
+     */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
      * <p>The optional name of a compatible image.</p>

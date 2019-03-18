@@ -53,6 +53,12 @@ namespace Model
      * <p>A string containing a JSON document defining one or more segments or
      * subsegments.</p>
      */
+    inline bool TraceSegmentDocumentsHasBeenSet() const { return m_traceSegmentDocumentsHasBeenSet; }
+
+    /**
+     * <p>A string containing a JSON document defining one or more segments or
+     * subsegments.</p>
+     */
     inline void SetTraceSegmentDocuments(const Aws::Vector<Aws::String>& value) { m_traceSegmentDocumentsHasBeenSet = true; m_traceSegmentDocuments = value; }
 
     /**

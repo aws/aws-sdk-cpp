@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>Name of the host where requests will be redirected.</p>
      */
+    inline bool HostNameHasBeenSet() const { return m_hostNameHasBeenSet; }
+
+    /**
+     * <p>Name of the host where requests will be redirected.</p>
+     */
     inline void SetHostName(const Aws::String& value) { m_hostNameHasBeenSet = true; m_hostName = value; }
 
     /**
@@ -89,6 +94,12 @@ namespace Model
      * protocol that is used in the original request.</p>
      */
     inline const Protocol& GetProtocol() const{ return m_protocol; }
+
+    /**
+     * <p>Protocol to use (http, https) when redirecting requests. The default is the
+     * protocol that is used in the original request.</p>
+     */
+    inline bool ProtocolHasBeenSet() const { return m_protocolHasBeenSet; }
 
     /**
      * <p>Protocol to use (http, https) when redirecting requests. The default is the

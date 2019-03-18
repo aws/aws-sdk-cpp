@@ -55,6 +55,11 @@ namespace Model
     /**
      * <p>Name of the new crawler.</p>
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>Name of the new crawler.</p>
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
@@ -88,6 +93,12 @@ namespace Model
      * customer resources.</p>
      */
     inline const Aws::String& GetRole() const{ return m_role; }
+
+    /**
+     * <p>The IAM role (or ARN of an IAM role) used by the new crawler to access
+     * customer resources.</p>
+     */
+    inline bool RoleHasBeenSet() const { return m_roleHasBeenSet; }
 
     /**
      * <p>The IAM role (or ARN of an IAM role) used by the new crawler to access
@@ -136,6 +147,12 @@ namespace Model
      * <p>The AWS Glue database where results are stored, such as:
      * <code>arn:aws:daylight:us-east-1::database/sometable/ *</code>.</p>
      */
+    inline bool DatabaseNameHasBeenSet() const { return m_databaseNameHasBeenSet; }
+
+    /**
+     * <p>The AWS Glue database where results are stored, such as:
+     * <code>arn:aws:daylight:us-east-1::database/sometable/ *</code>.</p>
+     */
     inline void SetDatabaseName(const Aws::String& value) { m_databaseNameHasBeenSet = true; m_databaseName = value; }
 
     /**
@@ -177,6 +194,11 @@ namespace Model
     /**
      * <p>A description of the new crawler.</p>
      */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
+
+    /**
+     * <p>A description of the new crawler.</p>
+     */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
@@ -213,6 +235,11 @@ namespace Model
     /**
      * <p>A list of targets to crawl.</p>
      */
+    inline bool TargetsHasBeenSet() const { return m_targetsHasBeenSet; }
+
+    /**
+     * <p>A list of targets to crawl.</p>
+     */
     inline void SetTargets(const CrawlerTargets& value) { m_targetsHasBeenSet = true; m_targets = value; }
 
     /**
@@ -238,6 +265,14 @@ namespace Model
      * 12:15 UTC, you would specify: <code>cron(15 12 * * ? *)</code>.</p>
      */
     inline const Aws::String& GetSchedule() const{ return m_schedule; }
+
+    /**
+     * <p>A <code>cron</code> expression used to specify the schedule (see <a
+     * href="http://docs.aws.amazon.com/glue/latest/dg/monitor-data-warehouse-schedule.html">Time-Based
+     * Schedules for Jobs and Crawlers</a>. For example, to run something every day at
+     * 12:15 UTC, you would specify: <code>cron(15 12 * * ? *)</code>.</p>
+     */
+    inline bool ScheduleHasBeenSet() const { return m_scheduleHasBeenSet; }
 
     /**
      * <p>A <code>cron</code> expression used to specify the schedule (see <a
@@ -300,6 +335,13 @@ namespace Model
      * built-in classifiers are included in a crawl, but these custom classifiers
      * always override the default classifiers for a given classification.</p>
      */
+    inline bool ClassifiersHasBeenSet() const { return m_classifiersHasBeenSet; }
+
+    /**
+     * <p>A list of custom classifiers that the user has registered. By default, all
+     * built-in classifiers are included in a crawl, but these custom classifiers
+     * always override the default classifiers for a given classification.</p>
+     */
     inline void SetClassifiers(const Aws::Vector<Aws::String>& value) { m_classifiersHasBeenSet = true; m_classifiers = value; }
 
     /**
@@ -353,6 +395,11 @@ namespace Model
     /**
      * <p>The table prefix used for catalog tables that are created.</p>
      */
+    inline bool TablePrefixHasBeenSet() const { return m_tablePrefixHasBeenSet; }
+
+    /**
+     * <p>The table prefix used for catalog tables that are created.</p>
+     */
     inline void SetTablePrefix(const Aws::String& value) { m_tablePrefixHasBeenSet = true; m_tablePrefix = value; }
 
     /**
@@ -389,6 +436,11 @@ namespace Model
     /**
      * <p>Policy for the crawler's update and deletion behavior.</p>
      */
+    inline bool SchemaChangePolicyHasBeenSet() const { return m_schemaChangePolicyHasBeenSet; }
+
+    /**
+     * <p>Policy for the crawler's update and deletion behavior.</p>
+     */
     inline void SetSchemaChangePolicy(const SchemaChangePolicy& value) { m_schemaChangePolicyHasBeenSet = true; m_schemaChangePolicy = value; }
 
     /**
@@ -414,6 +466,14 @@ namespace Model
      * a Crawler</a>.</p>
      */
     inline const Aws::String& GetConfiguration() const{ return m_configuration; }
+
+    /**
+     * <p>Crawler configuration information. This versioned JSON string allows users to
+     * specify aspects of a crawler's behavior. For more information, see <a
+     * href="http://docs.aws.amazon.com/glue/latest/dg/crawler-configuration.html">Configuring
+     * a Crawler</a>.</p>
+     */
+    inline bool ConfigurationHasBeenSet() const { return m_configurationHasBeenSet; }
 
     /**
      * <p>Crawler configuration information. This versioned JSON string allows users to
@@ -469,6 +529,12 @@ namespace Model
      * Crawler.</p>
      */
     inline const Aws::String& GetCrawlerSecurityConfiguration() const{ return m_crawlerSecurityConfiguration; }
+
+    /**
+     * <p>The name of the SecurityConfiguration structure to be used by this
+     * Crawler.</p>
+     */
+    inline bool CrawlerSecurityConfigurationHasBeenSet() const { return m_crawlerSecurityConfigurationHasBeenSet; }
 
     /**
      * <p>The name of the SecurityConfiguration structure to be used by this

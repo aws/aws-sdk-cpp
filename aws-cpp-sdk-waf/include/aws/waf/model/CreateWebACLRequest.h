@@ -55,6 +55,12 @@ namespace Model
      * <p>A friendly name or description of the <a>WebACL</a>. You can't change
      * <code>Name</code> after you create the <code>WebACL</code>.</p>
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>A friendly name or description of the <a>WebACL</a>. You can't change
+     * <code>Name</code> after you create the <code>WebACL</code>.</p>
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
@@ -95,6 +101,14 @@ namespace Model
      * create the <code>WebACL</code>.</p>
      */
     inline const Aws::String& GetMetricName() const{ return m_metricName; }
+
+    /**
+     * <p>A friendly name or description for the metrics for this <code>WebACL</code>.
+     * The name can contain only alphanumeric characters (A-Z, a-z, 0-9); the name
+     * can't contain white space. You can't change <code>MetricName</code> after you
+     * create the <code>WebACL</code>.</p>
+     */
+    inline bool MetricNameHasBeenSet() const { return m_metricNameHasBeenSet; }
 
     /**
      * <p>A friendly name or description for the metrics for this <code>WebACL</code>.
@@ -157,6 +171,13 @@ namespace Model
      * criteria specified in any of the <code>Rule</code> objects that are associated
      * with the <code>WebACL</code>.</p>
      */
+    inline bool DefaultActionHasBeenSet() const { return m_defaultActionHasBeenSet; }
+
+    /**
+     * <p>The action that you want AWS WAF to take when a request doesn't match the
+     * criteria specified in any of the <code>Rule</code> objects that are associated
+     * with the <code>WebACL</code>.</p>
+     */
     inline void SetDefaultAction(const WafAction& value) { m_defaultActionHasBeenSet = true; m_defaultAction = value; }
 
     /**
@@ -185,6 +206,11 @@ namespace Model
      * <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
      */
     inline const Aws::String& GetChangeToken() const{ return m_changeToken; }
+
+    /**
+     * <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
+     */
+    inline bool ChangeTokenHasBeenSet() const { return m_changeTokenHasBeenSet; }
 
     /**
      * <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>

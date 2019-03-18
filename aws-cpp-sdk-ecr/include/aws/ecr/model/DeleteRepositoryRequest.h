@@ -56,6 +56,13 @@ namespace Model
      * to delete. If you do not specify a registry, the default registry is
      * assumed.</p>
      */
+    inline bool RegistryIdHasBeenSet() const { return m_registryIdHasBeenSet; }
+
+    /**
+     * <p>The AWS account ID associated with the registry that contains the repository
+     * to delete. If you do not specify a registry, the default registry is
+     * assumed.</p>
+     */
     inline void SetRegistryId(const Aws::String& value) { m_registryIdHasBeenSet = true; m_registryId = value; }
 
     /**
@@ -102,6 +109,11 @@ namespace Model
     /**
      * <p>The name of the repository to delete.</p>
      */
+    inline bool RepositoryNameHasBeenSet() const { return m_repositoryNameHasBeenSet; }
+
+    /**
+     * <p>The name of the repository to delete.</p>
+     */
     inline void SetRepositoryName(const Aws::String& value) { m_repositoryNameHasBeenSet = true; m_repositoryName = value; }
 
     /**
@@ -134,6 +146,11 @@ namespace Model
      * <p> If a repository contains images, forces the deletion.</p>
      */
     inline bool GetForce() const{ return m_force; }
+
+    /**
+     * <p> If a repository contains images, forces the deletion.</p>
+     */
+    inline bool ForceHasBeenSet() const { return m_forceHasBeenSet; }
 
     /**
      * <p> If a repository contains images, forces the deletion.</p>

@@ -55,6 +55,11 @@ namespace Model
     /**
      * <p/>
      */
+    inline bool PrefixHasBeenSet() const { return m_prefixHasBeenSet; }
+
+    /**
+     * <p/>
+     */
     inline void SetPrefix(const Aws::String& value) { m_prefixHasBeenSet = true; m_prefix = value; }
 
     /**

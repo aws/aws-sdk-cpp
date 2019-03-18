@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the file share you want to refresh.</p>
      */
+    inline bool FileShareARNHasBeenSet() const { return m_fileShareARNHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the file share you want to refresh.</p>
+     */
     inline void SetFileShareARN(const Aws::String& value) { m_fileShareARNHasBeenSet = true; m_fileShareARN = value; }
 
     /**
@@ -91,6 +96,14 @@ namespace Model
      * entire S3 bucket that the file share has access to is refreshed.</p>
      */
     inline const Aws::Vector<Aws::String>& GetFolderList() const{ return m_folderList; }
+
+    /**
+     * <p>A comma-separated list of the paths of folders to refresh in the cache. The
+     * default is [<code>"/"</code>]. The default refreshes objects and folders at the
+     * root of the Amazon S3 bucket. If <code>Recursive</code> is set to "true", the
+     * entire S3 bucket that the file share has access to is refreshed.</p>
+     */
+    inline bool FolderListHasBeenSet() const { return m_folderListHasBeenSet; }
 
     /**
      * <p>A comma-separated list of the paths of folders to refresh in the cache. The
@@ -159,6 +172,17 @@ namespace Model
      * update. The default is "true".</p>
      */
     inline bool GetRecursive() const{ return m_recursive; }
+
+    /**
+     * <p>A value that specifies whether to recursively refresh folders in the cache.
+     * The refresh includes folders that were in the cache the last time the gateway
+     * listed the folder's contents. If this value set to "true", each folder that is
+     * listed in <code>FolderList</code> is recursively updated. Otherwise, subfolders
+     * listed in <code>FolderList</code> are not refreshed. Only objects that are in
+     * folders listed directly under <code>FolderList</code> are found and used for the
+     * update. The default is "true".</p>
+     */
+    inline bool RecursiveHasBeenSet() const { return m_recursiveHasBeenSet; }
 
     /**
      * <p>A value that specifies whether to recursively refresh folders in the cache.

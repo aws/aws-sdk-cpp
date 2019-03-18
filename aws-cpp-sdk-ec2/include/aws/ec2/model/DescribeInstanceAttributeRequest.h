@@ -57,6 +57,12 @@ namespace Model
      * <p>The instance attribute.</p> <p>Note: The <code>enaSupport</code> attribute is
      * not supported at this time.</p>
      */
+    inline bool AttributeHasBeenSet() const { return m_attributeHasBeenSet; }
+
+    /**
+     * <p>The instance attribute.</p> <p>Note: The <code>enaSupport</code> attribute is
+     * not supported at this time.</p>
+     */
     inline void SetAttribute(const InstanceAttributeName& value) { m_attributeHasBeenSet = true; m_attribute = value; }
 
     /**
@@ -92,6 +98,14 @@ namespace Model
      * required permissions, the error response is <code>DryRunOperation</code>.
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
+    inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
+
+    /**
+     * <p>Checks whether you have the required permissions for the action, without
+     * actually making the request, and provides an error response. If you have the
+     * required permissions, the error response is <code>DryRunOperation</code>.
+     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+     */
     inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
 
     /**
@@ -107,6 +121,11 @@ namespace Model
      * <p>The ID of the instance.</p>
      */
     inline const Aws::String& GetInstanceId() const{ return m_instanceId; }
+
+    /**
+     * <p>The ID of the instance.</p>
+     */
+    inline bool InstanceIdHasBeenSet() const { return m_instanceIdHasBeenSet; }
 
     /**
      * <p>The ID of the instance.</p>

@@ -62,6 +62,13 @@ namespace Model
      * <code>RuleGroup</code>. Use <code>DELETE</code> to remove an
      * <code>ActivatedRule</code> from a <code>RuleGroup</code>.</p>
      */
+    inline bool ActionHasBeenSet() const { return m_actionHasBeenSet; }
+
+    /**
+     * <p>Specify <code>INSERT</code> to add an <code>ActivatedRule</code> to a
+     * <code>RuleGroup</code>. Use <code>DELETE</code> to remove an
+     * <code>ActivatedRule</code> from a <code>RuleGroup</code>.</p>
+     */
     inline void SetAction(const ChangeAction& value) { m_actionHasBeenSet = true; m_action = value; }
 
     /**
@@ -94,6 +101,15 @@ namespace Model
      * or <code>COUNT</code>).</p>
      */
     inline const ActivatedRule& GetActivatedRule() const{ return m_activatedRule; }
+
+    /**
+     * <p>The <code>ActivatedRule</code> object specifies a <code>Rule</code> that you
+     * want to insert or delete, the priority of the <code>Rule</code> in the
+     * <code>WebACL</code>, and the action that you want AWS WAF to take when a web
+     * request matches the <code>Rule</code> (<code>ALLOW</code>, <code>BLOCK</code>,
+     * or <code>COUNT</code>).</p>
+     */
+    inline bool ActivatedRuleHasBeenSet() const { return m_activatedRuleHasBeenSet; }
 
     /**
      * <p>The <code>ActivatedRule</code> object specifies a <code>Rule</code> that you

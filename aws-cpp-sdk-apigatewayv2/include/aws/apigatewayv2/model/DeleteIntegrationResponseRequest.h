@@ -50,6 +50,11 @@ namespace Model
     /**
      * <p>The API identifier.</p>
      */
+    inline bool ApiIdHasBeenSet() const { return m_apiIdHasBeenSet; }
+
+    /**
+     * <p>The API identifier.</p>
+     */
     inline void SetApiId(const Aws::String& value) { m_apiIdHasBeenSet = true; m_apiId = value; }
 
     /**
@@ -86,6 +91,11 @@ namespace Model
     /**
      * <p>The integration ID.</p>
      */
+    inline bool IntegrationIdHasBeenSet() const { return m_integrationIdHasBeenSet; }
+
+    /**
+     * <p>The integration ID.</p>
+     */
     inline void SetIntegrationId(const Aws::String& value) { m_integrationIdHasBeenSet = true; m_integrationId = value; }
 
     /**
@@ -118,6 +128,11 @@ namespace Model
      * <p>The integration response ID.</p>
      */
     inline const Aws::String& GetIntegrationResponseId() const{ return m_integrationResponseId; }
+
+    /**
+     * <p>The integration response ID.</p>
+     */
+    inline bool IntegrationResponseIdHasBeenSet() const { return m_integrationResponseIdHasBeenSet; }
 
     /**
      * <p>The integration response ID.</p>

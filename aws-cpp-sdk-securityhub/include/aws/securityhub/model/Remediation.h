@@ -57,6 +57,12 @@ namespace Model
      * <p>Provides a recommendation on how to remediate the issue identified within a
      * finding.</p>
      */
+    inline bool RecommendationHasBeenSet() const { return m_recommendationHasBeenSet; }
+
+    /**
+     * <p>Provides a recommendation on how to remediate the issue identified within a
+     * finding.</p>
+     */
     inline void SetRecommendation(const Recommendation& value) { m_recommendationHasBeenSet = true; m_recommendation = value; }
 
     /**

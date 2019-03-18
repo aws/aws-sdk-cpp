@@ -66,6 +66,11 @@ namespace Model
     /**
      * <p>The classification within a configuration.</p>
      */
+    inline bool ClassificationHasBeenSet() const { return m_classificationHasBeenSet; }
+
+    /**
+     * <p>The classification within a configuration.</p>
+     */
     inline void SetClassification(const Aws::String& value) { m_classificationHasBeenSet = true; m_classification = value; }
 
     /**
@@ -99,6 +104,12 @@ namespace Model
      * object.</p>
      */
     inline const Aws::Vector<Configuration>& GetConfigurations() const{ return m_configurations; }
+
+    /**
+     * <p>A list of additional configurations to apply within a configuration
+     * object.</p>
+     */
+    inline bool ConfigurationsHasBeenSet() const { return m_configurationsHasBeenSet; }
 
     /**
      * <p>A list of additional configurations to apply within a configuration
@@ -141,6 +152,11 @@ namespace Model
      * <p>A set of properties specified within a configuration classification.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetProperties() const{ return m_properties; }
+
+    /**
+     * <p>A set of properties specified within a configuration classification.</p>
+     */
+    inline bool PropertiesHasBeenSet() const { return m_propertiesHasBeenSet; }
 
     /**
      * <p>A set of properties specified within a configuration classification.</p>

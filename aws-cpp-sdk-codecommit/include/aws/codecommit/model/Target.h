@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The name of the repository that contains the pull request.</p>
      */
+    inline bool RepositoryNameHasBeenSet() const { return m_repositoryNameHasBeenSet; }
+
+    /**
+     * <p>The name of the repository that contains the pull request.</p>
+     */
     inline void SetRepositoryName(const Aws::String& value) { m_repositoryNameHasBeenSet = true; m_repositoryName = value; }
 
     /**
@@ -89,6 +94,12 @@ namespace Model
      * Also known as the source branch.</p>
      */
     inline const Aws::String& GetSourceReference() const{ return m_sourceReference; }
+
+    /**
+     * <p>The branch of the repository that contains the changes for the pull request.
+     * Also known as the source branch.</p>
+     */
+    inline bool SourceReferenceHasBeenSet() const { return m_sourceReferenceHasBeenSet; }
 
     /**
      * <p>The branch of the repository that contains the changes for the pull request.
@@ -132,6 +143,12 @@ namespace Model
      * into. Also known as the destination branch.</p>
      */
     inline const Aws::String& GetDestinationReference() const{ return m_destinationReference; }
+
+    /**
+     * <p>The branch of the repository where the pull request changes will be merged
+     * into. Also known as the destination branch.</p>
+     */
+    inline bool DestinationReferenceHasBeenSet() const { return m_destinationReferenceHasBeenSet; }
 
     /**
      * <p>The branch of the repository where the pull request changes will be merged

@@ -55,6 +55,11 @@ namespace Model
     /**
      * <p>The stream ID.</p>
      */
+    inline bool StreamIdHasBeenSet() const { return m_streamIdHasBeenSet; }
+
+    /**
+     * <p>The stream ID.</p>
+     */
     inline void SetStreamId(const Aws::String& value) { m_streamIdHasBeenSet = true; m_streamId = value; }
 
     /**
@@ -87,6 +92,11 @@ namespace Model
      * <p>The stream ARN.</p>
      */
     inline const Aws::String& GetStreamArn() const{ return m_streamArn; }
+
+    /**
+     * <p>The stream ARN.</p>
+     */
+    inline bool StreamArnHasBeenSet() const { return m_streamArnHasBeenSet; }
 
     /**
      * <p>The stream ARN.</p>
@@ -127,6 +137,11 @@ namespace Model
     /**
      * <p>The stream version.</p>
      */
+    inline bool StreamVersionHasBeenSet() const { return m_streamVersionHasBeenSet; }
+
+    /**
+     * <p>The stream version.</p>
+     */
     inline void SetStreamVersion(int value) { m_streamVersionHasBeenSet = true; m_streamVersion = value; }
 
     /**
@@ -139,6 +154,11 @@ namespace Model
      * <p>A description of the stream.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
+
+    /**
+     * <p>A description of the stream.</p>
+     */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
 
     /**
      * <p>A description of the stream.</p>

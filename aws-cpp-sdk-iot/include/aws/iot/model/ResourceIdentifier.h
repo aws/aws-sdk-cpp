@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The ID of the certificate attached to the resource.</p>
      */
+    inline bool DeviceCertificateIdHasBeenSet() const { return m_deviceCertificateIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the certificate attached to the resource.</p>
+     */
     inline void SetDeviceCertificateId(const Aws::String& value) { m_deviceCertificateIdHasBeenSet = true; m_deviceCertificateId = value; }
 
     /**
@@ -89,6 +94,11 @@ namespace Model
      * <p>The ID of the CA certificate used to authorize the certificate.</p>
      */
     inline const Aws::String& GetCaCertificateId() const{ return m_caCertificateId; }
+
+    /**
+     * <p>The ID of the CA certificate used to authorize the certificate.</p>
+     */
+    inline bool CaCertificateIdHasBeenSet() const { return m_caCertificateIdHasBeenSet; }
 
     /**
      * <p>The ID of the CA certificate used to authorize the certificate.</p>
@@ -129,6 +139,11 @@ namespace Model
     /**
      * <p>The ID of the Cognito Identity Pool.</p>
      */
+    inline bool CognitoIdentityPoolIdHasBeenSet() const { return m_cognitoIdentityPoolIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the Cognito Identity Pool.</p>
+     */
     inline void SetCognitoIdentityPoolId(const Aws::String& value) { m_cognitoIdentityPoolIdHasBeenSet = true; m_cognitoIdentityPoolId = value; }
 
     /**
@@ -161,6 +176,11 @@ namespace Model
      * <p>The client ID.</p>
      */
     inline const Aws::String& GetClientId() const{ return m_clientId; }
+
+    /**
+     * <p>The client ID.</p>
+     */
+    inline bool ClientIdHasBeenSet() const { return m_clientIdHasBeenSet; }
 
     /**
      * <p>The client ID.</p>
@@ -201,6 +221,11 @@ namespace Model
     /**
      * <p>The version of the policy associated with the resource.</p>
      */
+    inline bool PolicyVersionIdentifierHasBeenSet() const { return m_policyVersionIdentifierHasBeenSet; }
+
+    /**
+     * <p>The version of the policy associated with the resource.</p>
+     */
     inline void SetPolicyVersionIdentifier(const PolicyVersionIdentifier& value) { m_policyVersionIdentifierHasBeenSet = true; m_policyVersionIdentifier = value; }
 
     /**
@@ -223,6 +248,11 @@ namespace Model
      * <p>The account with which the resource is associated.</p>
      */
     inline const Aws::String& GetAccount() const{ return m_account; }
+
+    /**
+     * <p>The account with which the resource is associated.</p>
+     */
+    inline bool AccountHasBeenSet() const { return m_accountHasBeenSet; }
 
     /**
      * <p>The account with which the resource is associated.</p>

@@ -67,6 +67,13 @@ namespace Model
      * where query results are stored and the encryption option, if any, used for query
      * results.</p>
      */
+    inline bool ResultConfigurationHasBeenSet() const { return m_resultConfigurationHasBeenSet; }
+
+    /**
+     * <p>The configuration for the workgroup, which includes the location in Amazon S3
+     * where query results are stored and the encryption option, if any, used for query
+     * results.</p>
+     */
     inline void SetResultConfiguration(const ResultConfiguration& value) { m_resultConfigurationHasBeenSet = true; m_resultConfiguration = value; }
 
     /**
@@ -107,6 +114,15 @@ namespace Model
      * href="https://docs.aws.amazon.com/athena/latest/ug/workgroups-settings-override.html">Workgroup
      * Settings Override Client-Side Settings</a>.</p>
      */
+    inline bool EnforceWorkGroupConfigurationHasBeenSet() const { return m_enforceWorkGroupConfigurationHasBeenSet; }
+
+    /**
+     * <p>If set to "true", the settings for the workgroup override client-side
+     * settings. If set to "false", client-side settings are used. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/athena/latest/ug/workgroups-settings-override.html">Workgroup
+     * Settings Override Client-Side Settings</a>.</p>
+     */
     inline void SetEnforceWorkGroupConfiguration(bool value) { m_enforceWorkGroupConfigurationHasBeenSet = true; m_enforceWorkGroupConfiguration = value; }
 
     /**
@@ -129,6 +145,12 @@ namespace Model
      * <p>Indicates that the Amazon CloudWatch metrics are enabled for the
      * workgroup.</p>
      */
+    inline bool PublishCloudWatchMetricsEnabledHasBeenSet() const { return m_publishCloudWatchMetricsEnabledHasBeenSet; }
+
+    /**
+     * <p>Indicates that the Amazon CloudWatch metrics are enabled for the
+     * workgroup.</p>
+     */
     inline void SetPublishCloudWatchMetricsEnabled(bool value) { m_publishCloudWatchMetricsEnabledHasBeenSet = true; m_publishCloudWatchMetricsEnabled = value; }
 
     /**
@@ -143,6 +165,12 @@ namespace Model
      * a workgroup is allowed to scan.</p>
      */
     inline long long GetBytesScannedCutoffPerQuery() const{ return m_bytesScannedCutoffPerQuery; }
+
+    /**
+     * <p>The upper data usage limit (cutoff) for the amount of bytes a single query in
+     * a workgroup is allowed to scan.</p>
+     */
+    inline bool BytesScannedCutoffPerQueryHasBeenSet() const { return m_bytesScannedCutoffPerQueryHasBeenSet; }
 
     /**
      * <p>The upper data usage limit (cutoff) for the amount of bytes a single query in

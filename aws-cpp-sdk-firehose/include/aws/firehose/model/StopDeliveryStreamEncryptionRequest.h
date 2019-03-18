@@ -54,6 +54,12 @@ namespace Model
      * <p>The name of the delivery stream for which you want to disable server-side
      * encryption (SSE).</p>
      */
+    inline bool DeliveryStreamNameHasBeenSet() const { return m_deliveryStreamNameHasBeenSet; }
+
+    /**
+     * <p>The name of the delivery stream for which you want to disable server-side
+     * encryption (SSE).</p>
+     */
     inline void SetDeliveryStreamName(const Aws::String& value) { m_deliveryStreamNameHasBeenSet = true; m_deliveryStreamName = value; }
 
     /**

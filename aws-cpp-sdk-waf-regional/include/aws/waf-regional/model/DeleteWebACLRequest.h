@@ -56,6 +56,13 @@ namespace Model
      * <code>WebACLId</code> is returned by <a>CreateWebACL</a> and by
      * <a>ListWebACLs</a>.</p>
      */
+    inline bool WebACLIdHasBeenSet() const { return m_webACLIdHasBeenSet; }
+
+    /**
+     * <p>The <code>WebACLId</code> of the <a>WebACL</a> that you want to delete.
+     * <code>WebACLId</code> is returned by <a>CreateWebACL</a> and by
+     * <a>ListWebACLs</a>.</p>
+     */
     inline void SetWebACLId(const Aws::String& value) { m_webACLIdHasBeenSet = true; m_webACLId = value; }
 
     /**
@@ -98,6 +105,11 @@ namespace Model
      * <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
      */
     inline const Aws::String& GetChangeToken() const{ return m_changeToken; }
+
+    /**
+     * <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
+     */
+    inline bool ChangeTokenHasBeenSet() const { return m_changeTokenHasBeenSet; }
 
     /**
      * <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>

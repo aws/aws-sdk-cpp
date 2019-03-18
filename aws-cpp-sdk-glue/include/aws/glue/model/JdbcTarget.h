@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The name of the connection to use to connect to the JDBC target.</p>
      */
+    inline bool ConnectionNameHasBeenSet() const { return m_connectionNameHasBeenSet; }
+
+    /**
+     * <p>The name of the connection to use to connect to the JDBC target.</p>
+     */
     inline void SetConnectionName(const Aws::String& value) { m_connectionNameHasBeenSet = true; m_connectionName = value; }
 
     /**
@@ -88,6 +93,11 @@ namespace Model
      * <p>The path of the JDBC target.</p>
      */
     inline const Aws::String& GetPath() const{ return m_path; }
+
+    /**
+     * <p>The path of the JDBC target.</p>
+     */
+    inline bool PathHasBeenSet() const { return m_pathHasBeenSet; }
 
     /**
      * <p>The path of the JDBC target.</p>
@@ -126,6 +136,13 @@ namespace Model
      * Tables with a Crawler</a>.</p>
      */
     inline const Aws::Vector<Aws::String>& GetExclusions() const{ return m_exclusions; }
+
+    /**
+     * <p>A list of glob patterns used to exclude from the crawl. For more information,
+     * see <a href="http://docs.aws.amazon.com/glue/latest/dg/add-crawler.html">Catalog
+     * Tables with a Crawler</a>.</p>
+     */
+    inline bool ExclusionsHasBeenSet() const { return m_exclusionsHasBeenSet; }
 
     /**
      * <p>A list of glob patterns used to exclude from the crawl. For more information,

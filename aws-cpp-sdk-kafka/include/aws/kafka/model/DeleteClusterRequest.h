@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) that uniquely identifies the cluster.</p>
      */
+    inline bool ClusterArnHasBeenSet() const { return m_clusterArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) that uniquely identifies the cluster.</p>
+     */
     inline void SetClusterArn(const Aws::String& value) { m_clusterArnHasBeenSet = true; m_clusterArn = value; }
 
     /**
@@ -88,6 +93,11 @@ namespace Model
      * <p>The current version of the MSK cluster.</p>
      */
     inline const Aws::String& GetCurrentVersion() const{ return m_currentVersion; }
+
+    /**
+     * <p>The current version of the MSK cluster.</p>
+     */
+    inline bool CurrentVersionHasBeenSet() const { return m_currentVersionHasBeenSet; }
 
     /**
      * <p>The current version of the MSK cluster.</p>

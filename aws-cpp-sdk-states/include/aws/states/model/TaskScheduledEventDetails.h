@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The action of the resource called by a task state.</p>
      */
+    inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
+
+    /**
+     * <p>The action of the resource called by a task state.</p>
+     */
     inline void SetResourceType(const Aws::String& value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
 
     /**
@@ -88,6 +93,11 @@ namespace Model
      * <p>The service name of the resource in a task state.</p>
      */
     inline const Aws::String& GetResource() const{ return m_resource; }
+
+    /**
+     * <p>The service name of the resource in a task state.</p>
+     */
+    inline bool ResourceHasBeenSet() const { return m_resourceHasBeenSet; }
 
     /**
      * <p>The service name of the resource in a task state.</p>
@@ -128,6 +138,11 @@ namespace Model
     /**
      * <p>The region of the scheduled task</p>
      */
+    inline bool RegionHasBeenSet() const { return m_regionHasBeenSet; }
+
+    /**
+     * <p>The region of the scheduled task</p>
+     */
     inline void SetRegion(const Aws::String& value) { m_regionHasBeenSet = true; m_region = value; }
 
     /**
@@ -164,6 +179,11 @@ namespace Model
     /**
      * <p>The JSON data passed to the resource referenced in a task state.</p>
      */
+    inline bool ParametersHasBeenSet() const { return m_parametersHasBeenSet; }
+
+    /**
+     * <p>The JSON data passed to the resource referenced in a task state.</p>
+     */
     inline void SetParameters(const Aws::String& value) { m_parametersHasBeenSet = true; m_parameters = value; }
 
     /**
@@ -196,6 +216,11 @@ namespace Model
      * <p>The maximum allowed duration of the task.</p>
      */
     inline long long GetTimeoutInSeconds() const{ return m_timeoutInSeconds; }
+
+    /**
+     * <p>The maximum allowed duration of the task.</p>
+     */
+    inline bool TimeoutInSecondsHasBeenSet() const { return m_timeoutInSecondsHasBeenSet; }
 
     /**
      * <p>The maximum allowed duration of the task.</p>

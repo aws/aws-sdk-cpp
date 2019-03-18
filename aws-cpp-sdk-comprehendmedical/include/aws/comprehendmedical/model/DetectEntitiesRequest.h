@@ -54,6 +54,12 @@ namespace Model
      * <p> A UTF-8 text string containing the clinical content being examined for
      * entities. Each string must contain fewer than 20,000 bytes of characters.</p>
      */
+    inline bool TextHasBeenSet() const { return m_textHasBeenSet; }
+
+    /**
+     * <p> A UTF-8 text string containing the clinical content being examined for
+     * entities. Each string must contain fewer than 20,000 bytes of characters.</p>
+     */
     inline void SetText(const Aws::String& value) { m_textHasBeenSet = true; m_text = value; }
 
     /**

@@ -59,6 +59,11 @@ namespace Model
     /**
      * <p>The name of the service mesh that the virtual router resides in.</p>
      */
+    inline bool MeshNameHasBeenSet() const { return m_meshNameHasBeenSet; }
+
+    /**
+     * <p>The name of the service mesh that the virtual router resides in.</p>
+     */
     inline void SetMeshName(const Aws::String& value) { m_meshNameHasBeenSet = true; m_meshName = value; }
 
     /**
@@ -95,6 +100,11 @@ namespace Model
     /**
      * <p>The associated metadata for the virtual router.</p>
      */
+    inline bool MetadataHasBeenSet() const { return m_metadataHasBeenSet; }
+
+    /**
+     * <p>The associated metadata for the virtual router.</p>
+     */
     inline void SetMetadata(const ResourceMetadata& value) { m_metadataHasBeenSet = true; m_metadata = value; }
 
     /**
@@ -117,6 +127,11 @@ namespace Model
      * <p>The specifications of the virtual router.</p>
      */
     inline const VirtualRouterSpec& GetSpec() const{ return m_spec; }
+
+    /**
+     * <p>The specifications of the virtual router.</p>
+     */
+    inline bool SpecHasBeenSet() const { return m_specHasBeenSet; }
 
     /**
      * <p>The specifications of the virtual router.</p>
@@ -147,6 +162,11 @@ namespace Model
     /**
      * <p>The current status of the virtual router.</p>
      */
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
+
+    /**
+     * <p>The current status of the virtual router.</p>
+     */
     inline void SetStatus(const VirtualRouterStatus& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
@@ -169,6 +189,11 @@ namespace Model
      * <p>The name of the virtual router.</p>
      */
     inline const Aws::String& GetVirtualRouterName() const{ return m_virtualRouterName; }
+
+    /**
+     * <p>The name of the virtual router.</p>
+     */
+    inline bool VirtualRouterNameHasBeenSet() const { return m_virtualRouterNameHasBeenSet; }
 
     /**
      * <p>The name of the virtual router.</p>

@@ -61,6 +61,12 @@ namespace Model
      * <p>The URL of the Amazon SQS queue to which batched messages are sent.</p>
      * <p>Queue URLs and names are case-sensitive.</p>
      */
+    inline bool QueueUrlHasBeenSet() const { return m_queueUrlHasBeenSet; }
+
+    /**
+     * <p>The URL of the Amazon SQS queue to which batched messages are sent.</p>
+     * <p>Queue URLs and names are case-sensitive.</p>
+     */
     inline void SetQueueUrl(const Aws::String& value) { m_queueUrlHasBeenSet = true; m_queueUrl = value; }
 
     /**
@@ -98,6 +104,11 @@ namespace Model
      * <p>A list of <code> <a>SendMessageBatchRequestEntry</a> </code> items.</p>
      */
     inline const Aws::Vector<SendMessageBatchRequestEntry>& GetEntries() const{ return m_entries; }
+
+    /**
+     * <p>A list of <code> <a>SendMessageBatchRequestEntry</a> </code> items.</p>
+     */
+    inline bool EntriesHasBeenSet() const { return m_entriesHasBeenSet; }
 
     /**
      * <p>A list of <code> <a>SendMessageBatchRequestEntry</a> </code> items.</p>

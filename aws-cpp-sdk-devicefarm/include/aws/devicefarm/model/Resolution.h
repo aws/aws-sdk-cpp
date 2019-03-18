@@ -54,6 +54,11 @@ namespace Model
     /**
      * <p>The screen resolution's width, expressed in pixels.</p>
      */
+    inline bool WidthHasBeenSet() const { return m_widthHasBeenSet; }
+
+    /**
+     * <p>The screen resolution's width, expressed in pixels.</p>
+     */
     inline void SetWidth(int value) { m_widthHasBeenSet = true; m_width = value; }
 
     /**
@@ -66,6 +71,11 @@ namespace Model
      * <p>The screen resolution's height, expressed in pixels.</p>
      */
     inline int GetHeight() const{ return m_height; }
+
+    /**
+     * <p>The screen resolution's height, expressed in pixels.</p>
+     */
+    inline bool HeightHasBeenSet() const { return m_heightHasBeenSet; }
 
     /**
      * <p>The screen resolution's height, expressed in pixels.</p>

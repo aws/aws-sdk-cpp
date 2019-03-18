@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The set of patch filters that make up the group.</p>
      */
+    inline bool PatchFiltersHasBeenSet() const { return m_patchFiltersHasBeenSet; }
+
+    /**
+     * <p>The set of patch filters that make up the group.</p>
+     */
     inline void SetPatchFilters(const Aws::Vector<PatchFilter>& value) { m_patchFiltersHasBeenSet = true; m_patchFilters = value; }
 
     /**

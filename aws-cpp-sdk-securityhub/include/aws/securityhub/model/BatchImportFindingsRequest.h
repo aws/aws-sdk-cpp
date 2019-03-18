@@ -53,6 +53,12 @@ namespace Model
      * <p>A list of findings that you want to import. Must be submitted in the
      * AWSSecurityFinding format.</p>
      */
+    inline bool FindingsHasBeenSet() const { return m_findingsHasBeenSet; }
+
+    /**
+     * <p>A list of findings that you want to import. Must be submitted in the
+     * AWSSecurityFinding format.</p>
+     */
     inline void SetFindings(const Aws::Vector<AwsSecurityFinding>& value) { m_findingsHasBeenSet = true; m_findings = value; }
 
     /**

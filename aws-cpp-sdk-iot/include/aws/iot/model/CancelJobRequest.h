@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The unique identifier you assigned to this job when it was created.</p>
      */
+    inline bool JobIdHasBeenSet() const { return m_jobIdHasBeenSet; }
+
+    /**
+     * <p>The unique identifier you assigned to this job when it was created.</p>
+     */
     inline void SetJobId(const Aws::String& value) { m_jobIdHasBeenSet = true; m_jobId = value; }
 
     /**
@@ -92,6 +97,11 @@ namespace Model
     /**
      * <p>(Optional)A reason code string that explains why the job was canceled.</p>
      */
+    inline bool ReasonCodeHasBeenSet() const { return m_reasonCodeHasBeenSet; }
+
+    /**
+     * <p>(Optional)A reason code string that explains why the job was canceled.</p>
+     */
     inline void SetReasonCode(const Aws::String& value) { m_reasonCodeHasBeenSet = true; m_reasonCode = value; }
 
     /**
@@ -124,6 +134,11 @@ namespace Model
      * <p>An optional comment string describing why the job was canceled.</p>
      */
     inline const Aws::String& GetComment() const{ return m_comment; }
+
+    /**
+     * <p>An optional comment string describing why the job was canceled.</p>
+     */
+    inline bool CommentHasBeenSet() const { return m_commentHasBeenSet; }
 
     /**
      * <p>An optional comment string describing why the job was canceled.</p>
@@ -165,6 +180,16 @@ namespace Model
      * executing a job which is canceled is able to recover to a valid state.</p>
      */
     inline bool GetForce() const{ return m_force; }
+
+    /**
+     * <p>(Optional) If <code>true</code> job executions with status "IN_PROGRESS" and
+     * "QUEUED" are canceled, otherwise only job executions with status "QUEUED" are
+     * canceled. The default is <code>false</code>.</p> <p>Canceling a job which is
+     * "IN_PROGRESS", will cause a device which is executing the job to be unable to
+     * update the job execution status. Use caution and ensure that each device
+     * executing a job which is canceled is able to recover to a valid state.</p>
+     */
+    inline bool ForceHasBeenSet() const { return m_forceHasBeenSet; }
 
     /**
      * <p>(Optional) If <code>true</code> job executions with status "IN_PROGRESS" and

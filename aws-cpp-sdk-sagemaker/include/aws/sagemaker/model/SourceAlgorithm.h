@@ -62,6 +62,13 @@ namespace Model
      * training, are stored. This path must point to a single <code>gzip</code>
      * compressed tar archive (<code>.tar.gz</code> suffix).</p>
      */
+    inline bool ModelDataUrlHasBeenSet() const { return m_modelDataUrlHasBeenSet; }
+
+    /**
+     * <p>The Amazon S3 path where the model artifacts, which result from model
+     * training, are stored. This path must point to a single <code>gzip</code>
+     * compressed tar archive (<code>.tar.gz</code> suffix).</p>
+     */
     inline void SetModelDataUrl(const Aws::String& value) { m_modelDataUrlHasBeenSet = true; m_modelDataUrl = value; }
 
     /**
@@ -106,6 +113,13 @@ namespace Model
      * or an algorithm in AWS Marketplace that you are subscribed to.</p>
      */
     inline const Aws::String& GetAlgorithmName() const{ return m_algorithmName; }
+
+    /**
+     * <p>The name of an algorithm that was used to create the model package. The
+     * algorithm must be either an algorithm resource in your Amazon SageMaker account
+     * or an algorithm in AWS Marketplace that you are subscribed to.</p>
+     */
+    inline bool AlgorithmNameHasBeenSet() const { return m_algorithmNameHasBeenSet; }
 
     /**
      * <p>The name of an algorithm that was used to create the model package. The

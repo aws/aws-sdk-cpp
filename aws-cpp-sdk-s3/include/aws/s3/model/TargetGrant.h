@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p/>
      */
+    inline bool GranteeHasBeenSet() const { return m_granteeHasBeenSet; }
+
+    /**
+     * <p/>
+     */
     inline void SetGrantee(const Grantee& value) { m_granteeHasBeenSet = true; m_grantee = value; }
 
     /**
@@ -78,6 +83,11 @@ namespace Model
      * <p>Logging permissions assigned to the Grantee for the bucket.</p>
      */
     inline const BucketLogsPermission& GetPermission() const{ return m_permission; }
+
+    /**
+     * <p>Logging permissions assigned to the Grantee for the bucket.</p>
+     */
+    inline bool PermissionHasBeenSet() const { return m_permissionHasBeenSet; }
 
     /**
      * <p>Logging permissions assigned to the Grantee for the bucket.</p>

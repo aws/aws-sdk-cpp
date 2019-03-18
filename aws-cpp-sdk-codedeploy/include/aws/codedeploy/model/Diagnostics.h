@@ -71,6 +71,18 @@ namespace Model
      * <li> <p>UnknownError: The specified script did not run for an unknown
      * reason.</p> </li> </ul>
      */
+    inline bool ErrorCodeHasBeenSet() const { return m_errorCodeHasBeenSet; }
+
+    /**
+     * <p>The associated error code:</p> <ul> <li> <p>Success: The specified script
+     * ran.</p> </li> <li> <p>ScriptMissing: The specified script was not found in the
+     * specified location.</p> </li> <li> <p>ScriptNotExecutable: The specified script
+     * is not a recognized executable file type.</p> </li> <li> <p>ScriptTimedOut: The
+     * specified script did not finish running in the specified time period.</p> </li>
+     * <li> <p>ScriptFailed: The specified script failed to run as expected.</p> </li>
+     * <li> <p>UnknownError: The specified script did not run for an unknown
+     * reason.</p> </li> </ul>
+     */
     inline void SetErrorCode(const LifecycleErrorCode& value) { m_errorCodeHasBeenSet = true; m_errorCode = value; }
 
     /**
@@ -118,6 +130,11 @@ namespace Model
     /**
      * <p>The name of the script.</p>
      */
+    inline bool ScriptNameHasBeenSet() const { return m_scriptNameHasBeenSet; }
+
+    /**
+     * <p>The name of the script.</p>
+     */
     inline void SetScriptName(const Aws::String& value) { m_scriptNameHasBeenSet = true; m_scriptName = value; }
 
     /**
@@ -150,6 +167,11 @@ namespace Model
      * <p>The message associated with the error.</p>
      */
     inline const Aws::String& GetMessage() const{ return m_message; }
+
+    /**
+     * <p>The message associated with the error.</p>
+     */
+    inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
 
     /**
      * <p>The message associated with the error.</p>
@@ -187,6 +209,12 @@ namespace Model
      * returns up to the last 4 KB of the diagnostic log.</p>
      */
     inline const Aws::String& GetLogTail() const{ return m_logTail; }
+
+    /**
+     * <p>The last portion of the diagnostic log.</p> <p>If available, AWS CodeDeploy
+     * returns up to the last 4 KB of the diagnostic log.</p>
+     */
+    inline bool LogTailHasBeenSet() const { return m_logTailHasBeenSet; }
 
     /**
      * <p>The last portion of the diagnostic log.</p> <p>If available, AWS CodeDeploy

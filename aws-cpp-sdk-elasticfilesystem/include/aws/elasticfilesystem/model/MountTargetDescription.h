@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>AWS account ID that owns the resource.</p>
      */
+    inline bool OwnerIdHasBeenSet() const { return m_ownerIdHasBeenSet; }
+
+    /**
+     * <p>AWS account ID that owns the resource.</p>
+     */
     inline void SetOwnerId(const Aws::String& value) { m_ownerIdHasBeenSet = true; m_ownerId = value; }
 
     /**
@@ -88,6 +93,11 @@ namespace Model
      * <p>System-assigned mount target ID.</p>
      */
     inline const Aws::String& GetMountTargetId() const{ return m_mountTargetId; }
+
+    /**
+     * <p>System-assigned mount target ID.</p>
+     */
+    inline bool MountTargetIdHasBeenSet() const { return m_mountTargetIdHasBeenSet; }
 
     /**
      * <p>System-assigned mount target ID.</p>
@@ -128,6 +138,11 @@ namespace Model
     /**
      * <p>The ID of the file system for which the mount target is intended.</p>
      */
+    inline bool FileSystemIdHasBeenSet() const { return m_fileSystemIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the file system for which the mount target is intended.</p>
+     */
     inline void SetFileSystemId(const Aws::String& value) { m_fileSystemIdHasBeenSet = true; m_fileSystemId = value; }
 
     /**
@@ -160,6 +175,11 @@ namespace Model
      * <p>The ID of the mount target's subnet.</p>
      */
     inline const Aws::String& GetSubnetId() const{ return m_subnetId; }
+
+    /**
+     * <p>The ID of the mount target's subnet.</p>
+     */
+    inline bool SubnetIdHasBeenSet() const { return m_subnetIdHasBeenSet; }
 
     /**
      * <p>The ID of the mount target's subnet.</p>
@@ -200,6 +220,11 @@ namespace Model
     /**
      * <p>Lifecycle state of the mount target.</p>
      */
+    inline bool LifeCycleStateHasBeenSet() const { return m_lifeCycleStateHasBeenSet; }
+
+    /**
+     * <p>Lifecycle state of the mount target.</p>
+     */
     inline void SetLifeCycleState(const LifeCycleState& value) { m_lifeCycleStateHasBeenSet = true; m_lifeCycleState = value; }
 
     /**
@@ -223,6 +248,12 @@ namespace Model
      * target.</p>
      */
     inline const Aws::String& GetIpAddress() const{ return m_ipAddress; }
+
+    /**
+     * <p>Address at which the file system can be mounted by using the mount
+     * target.</p>
+     */
+    inline bool IpAddressHasBeenSet() const { return m_ipAddressHasBeenSet; }
 
     /**
      * <p>Address at which the file system can be mounted by using the mount
@@ -266,6 +297,12 @@ namespace Model
      * mount target.</p>
      */
     inline const Aws::String& GetNetworkInterfaceId() const{ return m_networkInterfaceId; }
+
+    /**
+     * <p>The ID of the network interface that Amazon EFS created when it created the
+     * mount target.</p>
+     */
+    inline bool NetworkInterfaceIdHasBeenSet() const { return m_networkInterfaceIdHasBeenSet; }
 
     /**
      * <p>The ID of the network interface that Amazon EFS created when it created the

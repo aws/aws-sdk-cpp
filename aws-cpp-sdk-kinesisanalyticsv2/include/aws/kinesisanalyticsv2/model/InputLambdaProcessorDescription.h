@@ -59,6 +59,12 @@ namespace Model
      * <p>The ARN of the AWS Lambda function that is used to preprocess the records in
      * the stream.</p>
      */
+    inline bool ResourceARNHasBeenSet() const { return m_resourceARNHasBeenSet; }
+
+    /**
+     * <p>The ARN of the AWS Lambda function that is used to preprocess the records in
+     * the stream.</p>
+     */
     inline void SetResourceARN(const Aws::String& value) { m_resourceARNHasBeenSet = true; m_resourceARN = value; }
 
     /**
@@ -99,6 +105,14 @@ namespace Model
      * rather than a resource-level role.</p> </note>
      */
     inline const Aws::String& GetRoleARN() const{ return m_roleARN; }
+
+    /**
+     * <p>The ARN of the IAM role that is used to access the AWS Lambda function.</p>
+     * <note> <p>Provided for backward compatibility. Applications that are created
+     * with the current API version have an application-level service execution role
+     * rather than a resource-level role.</p> </note>
+     */
+    inline bool RoleARNHasBeenSet() const { return m_roleARNHasBeenSet; }
 
     /**
      * <p>The ARN of the IAM role that is used to access the AWS Lambda function.</p>

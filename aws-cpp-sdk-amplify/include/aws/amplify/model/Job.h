@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p> Summary for an execution job for an Amplify App. </p>
      */
+    inline bool SummaryHasBeenSet() const { return m_summaryHasBeenSet; }
+
+    /**
+     * <p> Summary for an execution job for an Amplify App. </p>
+     */
     inline void SetSummary(const JobSummary& value) { m_summaryHasBeenSet = true; m_summary = value; }
 
     /**
@@ -79,6 +84,11 @@ namespace Model
      * <p> Execution steps for an execution job, for an Amplify App. </p>
      */
     inline const Aws::Vector<Step>& GetSteps() const{ return m_steps; }
+
+    /**
+     * <p> Execution steps for an execution job, for an Amplify App. </p>
+     */
+    inline bool StepsHasBeenSet() const { return m_stepsHasBeenSet; }
 
     /**
      * <p> Execution steps for an execution job, for an Amplify App. </p>

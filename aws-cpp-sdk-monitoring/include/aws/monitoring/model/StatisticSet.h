@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The number of samples used for the statistic set.</p>
      */
+    inline bool SampleCountHasBeenSet() const { return m_sampleCountHasBeenSet; }
+
+    /**
+     * <p>The number of samples used for the statistic set.</p>
+     */
     inline void SetSampleCount(double value) { m_sampleCountHasBeenSet = true; m_sampleCount = value; }
 
     /**
@@ -68,6 +73,11 @@ namespace Model
      * <p>The sum of values for the sample set.</p>
      */
     inline double GetSum() const{ return m_sum; }
+
+    /**
+     * <p>The sum of values for the sample set.</p>
+     */
+    inline bool SumHasBeenSet() const { return m_sumHasBeenSet; }
 
     /**
      * <p>The sum of values for the sample set.</p>
@@ -88,6 +98,11 @@ namespace Model
     /**
      * <p>The minimum value of the sample set.</p>
      */
+    inline bool MinimumHasBeenSet() const { return m_minimumHasBeenSet; }
+
+    /**
+     * <p>The minimum value of the sample set.</p>
+     */
     inline void SetMinimum(double value) { m_minimumHasBeenSet = true; m_minimum = value; }
 
     /**
@@ -100,6 +115,11 @@ namespace Model
      * <p>The maximum value of the sample set.</p>
      */
     inline double GetMaximum() const{ return m_maximum; }
+
+    /**
+     * <p>The maximum value of the sample set.</p>
+     */
+    inline bool MaximumHasBeenSet() const { return m_maximumHasBeenSet; }
 
     /**
      * <p>The maximum value of the sample set.</p>

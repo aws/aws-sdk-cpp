@@ -68,6 +68,15 @@ namespace Model
      * letter.</p> </li> <li> <p>Cannot end with a hyphen or contain two consecutive
      * hyphens.</p> </li> </ul> <p>Example: <code>myrepinstance</code> </p>
      */
+    inline bool ReplicationInstanceIdentifierHasBeenSet() const { return m_replicationInstanceIdentifierHasBeenSet; }
+
+    /**
+     * <p>The replication instance identifier. This parameter is stored as a lowercase
+     * string.</p> <p>Constraints:</p> <ul> <li> <p>Must contain from 1 to 63
+     * alphanumeric characters or hyphens.</p> </li> <li> <p>First character must be a
+     * letter.</p> </li> <li> <p>Cannot end with a hyphen or contain two consecutive
+     * hyphens.</p> </li> </ul> <p>Example: <code>myrepinstance</code> </p>
+     */
     inline void SetReplicationInstanceIdentifier(const Aws::String& value) { m_replicationInstanceIdentifierHasBeenSet = true; m_replicationInstanceIdentifier = value; }
 
     /**
@@ -128,6 +137,13 @@ namespace Model
      * Values: <code>dms.t2.micro | dms.t2.small | dms.t2.medium | dms.t2.large |
      * dms.c4.large | dms.c4.xlarge | dms.c4.2xlarge | dms.c4.4xlarge </code> </p>
      */
+    inline bool ReplicationInstanceClassHasBeenSet() const { return m_replicationInstanceClassHasBeenSet; }
+
+    /**
+     * <p>The compute and memory capacity of the replication instance.</p> <p> Valid
+     * Values: <code>dms.t2.micro | dms.t2.small | dms.t2.medium | dms.t2.large |
+     * dms.c4.large | dms.c4.xlarge | dms.c4.2xlarge | dms.c4.4xlarge </code> </p>
+     */
     inline void SetReplicationInstanceClass(const Aws::String& value) { m_replicationInstanceClassHasBeenSet = true; m_replicationInstanceClass = value; }
 
     /**
@@ -174,6 +190,11 @@ namespace Model
     /**
      * <p>The status of the replication instance.</p>
      */
+    inline bool ReplicationInstanceStatusHasBeenSet() const { return m_replicationInstanceStatusHasBeenSet; }
+
+    /**
+     * <p>The status of the replication instance.</p>
+     */
     inline void SetReplicationInstanceStatus(const Aws::String& value) { m_replicationInstanceStatusHasBeenSet = true; m_replicationInstanceStatus = value; }
 
     /**
@@ -212,6 +233,12 @@ namespace Model
      * <p>The amount of storage (in gigabytes) that is allocated for the replication
      * instance.</p>
      */
+    inline bool AllocatedStorageHasBeenSet() const { return m_allocatedStorageHasBeenSet; }
+
+    /**
+     * <p>The amount of storage (in gigabytes) that is allocated for the replication
+     * instance.</p>
+     */
     inline void SetAllocatedStorage(int value) { m_allocatedStorageHasBeenSet = true; m_allocatedStorage = value; }
 
     /**
@@ -225,6 +252,11 @@ namespace Model
      * <p>The time the replication instance was created.</p>
      */
     inline const Aws::Utils::DateTime& GetInstanceCreateTime() const{ return m_instanceCreateTime; }
+
+    /**
+     * <p>The time the replication instance was created.</p>
+     */
+    inline bool InstanceCreateTimeHasBeenSet() const { return m_instanceCreateTimeHasBeenSet; }
 
     /**
      * <p>The time the replication instance was created.</p>
@@ -251,6 +283,11 @@ namespace Model
      * <p>The VPC security group for the instance.</p>
      */
     inline const Aws::Vector<VpcSecurityGroupMembership>& GetVpcSecurityGroups() const{ return m_vpcSecurityGroups; }
+
+    /**
+     * <p>The VPC security group for the instance.</p>
+     */
+    inline bool VpcSecurityGroupsHasBeenSet() const { return m_vpcSecurityGroupsHasBeenSet; }
 
     /**
      * <p>The VPC security group for the instance.</p>
@@ -291,6 +328,11 @@ namespace Model
     /**
      * <p>The Availability Zone for the instance.</p>
      */
+    inline bool AvailabilityZoneHasBeenSet() const { return m_availabilityZoneHasBeenSet; }
+
+    /**
+     * <p>The Availability Zone for the instance.</p>
+     */
     inline void SetAvailabilityZone(const Aws::String& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = value; }
 
     /**
@@ -327,6 +369,11 @@ namespace Model
     /**
      * <p>The subnet group for the replication instance.</p>
      */
+    inline bool ReplicationSubnetGroupHasBeenSet() const { return m_replicationSubnetGroupHasBeenSet; }
+
+    /**
+     * <p>The subnet group for the replication instance.</p>
+     */
     inline void SetReplicationSubnetGroup(const ReplicationSubnetGroup& value) { m_replicationSubnetGroupHasBeenSet = true; m_replicationSubnetGroup = value; }
 
     /**
@@ -349,6 +396,11 @@ namespace Model
      * <p>The maintenance window times for the replication instance.</p>
      */
     inline const Aws::String& GetPreferredMaintenanceWindow() const{ return m_preferredMaintenanceWindow; }
+
+    /**
+     * <p>The maintenance window times for the replication instance.</p>
+     */
+    inline bool PreferredMaintenanceWindowHasBeenSet() const { return m_preferredMaintenanceWindowHasBeenSet; }
 
     /**
      * <p>The maintenance window times for the replication instance.</p>
@@ -389,6 +441,11 @@ namespace Model
     /**
      * <p>The pending modification values.</p>
      */
+    inline bool PendingModifiedValuesHasBeenSet() const { return m_pendingModifiedValuesHasBeenSet; }
+
+    /**
+     * <p>The pending modification values.</p>
+     */
     inline void SetPendingModifiedValues(const ReplicationPendingModifiedValues& value) { m_pendingModifiedValuesHasBeenSet = true; m_pendingModifiedValues = value; }
 
     /**
@@ -419,6 +476,13 @@ namespace Model
      * set the <code>AvailabilityZone</code> parameter if the Multi-AZ parameter is set
      * to <code>true</code>. </p>
      */
+    inline bool MultiAZHasBeenSet() const { return m_multiAZHasBeenSet; }
+
+    /**
+     * <p> Specifies if the replication instance is a Multi-AZ deployment. You cannot
+     * set the <code>AvailabilityZone</code> parameter if the Multi-AZ parameter is set
+     * to <code>true</code>. </p>
+     */
     inline void SetMultiAZ(bool value) { m_multiAZHasBeenSet = true; m_multiAZ = value; }
 
     /**
@@ -433,6 +497,11 @@ namespace Model
      * <p>The engine version number of the replication instance.</p>
      */
     inline const Aws::String& GetEngineVersion() const{ return m_engineVersion; }
+
+    /**
+     * <p>The engine version number of the replication instance.</p>
+     */
+    inline bool EngineVersionHasBeenSet() const { return m_engineVersionHasBeenSet; }
 
     /**
      * <p>The engine version number of the replication instance.</p>
@@ -475,6 +544,12 @@ namespace Model
      * <p>Boolean value indicating if minor version upgrades will be automatically
      * applied to the instance.</p>
      */
+    inline bool AutoMinorVersionUpgradeHasBeenSet() const { return m_autoMinorVersionUpgradeHasBeenSet; }
+
+    /**
+     * <p>Boolean value indicating if minor version upgrades will be automatically
+     * applied to the instance.</p>
+     */
     inline void SetAutoMinorVersionUpgrade(bool value) { m_autoMinorVersionUpgradeHasBeenSet = true; m_autoMinorVersionUpgrade = value; }
 
     /**
@@ -492,6 +567,15 @@ namespace Model
      * default encryption key for each AWS Region.</p>
      */
     inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
+
+    /**
+     * <p>The AWS KMS key identifier that is used to encrypt the content on the
+     * replication instance. If you don't specify a value for the <code>KmsKeyId</code>
+     * parameter, then AWS DMS uses your default encryption key. AWS KMS creates the
+     * default encryption key for your AWS account. Your AWS account has a different
+     * default encryption key for each AWS Region.</p>
+     */
+    inline bool KmsKeyIdHasBeenSet() const { return m_kmsKeyIdHasBeenSet; }
 
     /**
      * <p>The AWS KMS key identifier that is used to encrypt the content on the
@@ -556,6 +640,11 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the replication instance.</p>
      */
+    inline bool ReplicationInstanceArnHasBeenSet() const { return m_replicationInstanceArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the replication instance.</p>
+     */
     inline void SetReplicationInstanceArn(const Aws::String& value) { m_replicationInstanceArnHasBeenSet = true; m_replicationInstanceArn = value; }
 
     /**
@@ -588,6 +677,11 @@ namespace Model
      * <p>The public IP address of the replication instance.</p>
      */
     inline const Aws::Vector<Aws::String>& GetReplicationInstancePublicIpAddresses() const{ return m_replicationInstancePublicIpAddresses; }
+
+    /**
+     * <p>The public IP address of the replication instance.</p>
+     */
+    inline bool ReplicationInstancePublicIpAddressesHasBeenSet() const { return m_replicationInstancePublicIpAddressesHasBeenSet; }
 
     /**
      * <p>The public IP address of the replication instance.</p>
@@ -629,6 +723,11 @@ namespace Model
      * <p>The private IP address of the replication instance.</p>
      */
     inline const Aws::Vector<Aws::String>& GetReplicationInstancePrivateIpAddresses() const{ return m_replicationInstancePrivateIpAddresses; }
+
+    /**
+     * <p>The private IP address of the replication instance.</p>
+     */
+    inline bool ReplicationInstancePrivateIpAddressesHasBeenSet() const { return m_replicationInstancePrivateIpAddressesHasBeenSet; }
 
     /**
      * <p>The private IP address of the replication instance.</p>
@@ -680,6 +779,14 @@ namespace Model
      * <code>false</code> represents an instance with a private IP address. The default
      * value is <code>true</code>. </p>
      */
+    inline bool PubliclyAccessibleHasBeenSet() const { return m_publiclyAccessibleHasBeenSet; }
+
+    /**
+     * <p> Specifies the accessibility options for the replication instance. A value of
+     * <code>true</code> represents an instance with a public IP address. A value of
+     * <code>false</code> represents an instance with a private IP address. The default
+     * value is <code>true</code>. </p>
+     */
     inline void SetPubliclyAccessible(bool value) { m_publiclyAccessibleHasBeenSet = true; m_publiclyAccessible = value; }
 
     /**
@@ -696,6 +803,12 @@ namespace Model
      * deployment.</p>
      */
     inline const Aws::String& GetSecondaryAvailabilityZone() const{ return m_secondaryAvailabilityZone; }
+
+    /**
+     * <p>The availability zone of the standby replication instance in a Multi-AZ
+     * deployment.</p>
+     */
+    inline bool SecondaryAvailabilityZoneHasBeenSet() const { return m_secondaryAvailabilityZoneHasBeenSet; }
 
     /**
      * <p>The availability zone of the standby replication instance in a Multi-AZ
@@ -744,6 +857,12 @@ namespace Model
      * <p> The expiration date of the free replication instance that is part of the
      * Free DMS program. </p>
      */
+    inline bool FreeUntilHasBeenSet() const { return m_freeUntilHasBeenSet; }
+
+    /**
+     * <p> The expiration date of the free replication instance that is part of the
+     * Free DMS program. </p>
+     */
     inline void SetFreeUntil(const Aws::Utils::DateTime& value) { m_freeUntilHasBeenSet = true; m_freeUntil = value; }
 
     /**
@@ -769,6 +888,11 @@ namespace Model
      * <p>The DNS name servers for the replication instance.</p>
      */
     inline const Aws::String& GetDnsNameServers() const{ return m_dnsNameServers; }
+
+    /**
+     * <p>The DNS name servers for the replication instance.</p>
+     */
+    inline bool DnsNameServersHasBeenSet() const { return m_dnsNameServersHasBeenSet; }
 
     /**
      * <p>The DNS name servers for the replication instance.</p>

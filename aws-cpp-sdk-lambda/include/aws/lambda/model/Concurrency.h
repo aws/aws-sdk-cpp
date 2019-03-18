@@ -54,6 +54,14 @@ namespace Model
      * href="https://docs.aws.amazon.com/lambda/latest/dg/concurrent-executions.html">Managing
      * Concurrency</a>.</p>
      */
+    inline bool ReservedConcurrentExecutionsHasBeenSet() const { return m_reservedConcurrentExecutionsHasBeenSet; }
+
+    /**
+     * <p>The number of concurrent executions that are reserved for this function. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/concurrent-executions.html">Managing
+     * Concurrency</a>.</p>
+     */
     inline void SetReservedConcurrentExecutions(int value) { m_reservedConcurrentExecutionsHasBeenSet = true; m_reservedConcurrentExecutions = value; }
 
     /**

@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p> A complex type that contains <code>Tag</code> key elements.</p>
      */
+    inline bool ItemsHasBeenSet() const { return m_itemsHasBeenSet; }
+
+    /**
+     * <p> A complex type that contains <code>Tag</code> key elements.</p>
+     */
     inline void SetItems(const Aws::Vector<Aws::String>& value) { m_itemsHasBeenSet = true; m_items = value; }
 
     /**

@@ -52,6 +52,11 @@ namespace Model
     /**
      * <p>The ARN of the client.</p>
      */
+    inline bool ClientArnHasBeenSet() const { return m_clientArnHasBeenSet; }
+
+    /**
+     * <p>The ARN of the client.</p>
+     */
     inline void SetClientArn(const Aws::String& value) { m_clientArnHasBeenSet = true; m_clientArn = value; }
 
     /**
@@ -84,6 +89,11 @@ namespace Model
      * <p>The certificate fingerprint.</p>
      */
     inline const Aws::String& GetCertificateFingerprint() const{ return m_certificateFingerprint; }
+
+    /**
+     * <p>The certificate fingerprint.</p>
+     */
+    inline bool CertificateFingerprintHasBeenSet() const { return m_certificateFingerprintHasBeenSet; }
 
     /**
      * <p>The certificate fingerprint.</p>

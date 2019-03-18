@@ -62,6 +62,14 @@ namespace Model
      * required permissions, the error response is <code>DryRunOperation</code>.
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
+    inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
+
+    /**
+     * <p>Checks whether you have the required permissions for the action, without
+     * actually making the request, and provides an error response. If you have the
+     * required permissions, the error response is <code>DryRunOperation</code>.
+     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+     */
     inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
 
     /**
@@ -79,6 +87,13 @@ namespace Model
      * batches.</p>
      */
     inline const Aws::Vector<Aws::String>& GetResources() const{ return m_resources; }
+
+    /**
+     * <p>The IDs of one or more resources, separated by spaces.</p> <p>Constraints: Up
+     * to 1000 resource IDs. We recommend breaking up this request into smaller
+     * batches.</p>
+     */
+    inline bool ResourcesHasBeenSet() const { return m_resourcesHasBeenSet; }
 
     /**
      * <p>The IDs of one or more resources, separated by spaces.</p> <p>Constraints: Up
@@ -136,6 +151,13 @@ namespace Model
      * set the value to an empty string. </p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>One or more tags. The <code>value</code> parameter is required, but if you
+     * don't want the tag to have a value, specify the parameter with no value, and we
+     * set the value to an empty string. </p>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
      * <p>One or more tags. The <code>value</code> parameter is required, but if you

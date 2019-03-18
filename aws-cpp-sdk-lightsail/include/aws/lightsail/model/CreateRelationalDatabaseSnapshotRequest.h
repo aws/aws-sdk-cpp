@@ -54,6 +54,11 @@ namespace Model
     /**
      * <p>The name of the database on which to base your new snapshot.</p>
      */
+    inline bool RelationalDatabaseNameHasBeenSet() const { return m_relationalDatabaseNameHasBeenSet; }
+
+    /**
+     * <p>The name of the database on which to base your new snapshot.</p>
+     */
     inline void SetRelationalDatabaseName(const Aws::String& value) { m_relationalDatabaseNameHasBeenSet = true; m_relationalDatabaseName = value; }
 
     /**
@@ -88,6 +93,13 @@ namespace Model
      * <li> <p>The first and last character must be a letter or number.</p> </li> </ul>
      */
     inline const Aws::String& GetRelationalDatabaseSnapshotName() const{ return m_relationalDatabaseSnapshotName; }
+
+    /**
+     * <p>The name for your new database snapshot.</p> <p>Constraints:</p> <ul> <li>
+     * <p>Must contain from 2 to 255 alphanumeric characters, or hyphens.</p> </li>
+     * <li> <p>The first and last character must be a letter or number.</p> </li> </ul>
+     */
+    inline bool RelationalDatabaseSnapshotNameHasBeenSet() const { return m_relationalDatabaseSnapshotNameHasBeenSet; }
 
     /**
      * <p>The name for your new database snapshot.</p> <p>Constraints:</p> <ul> <li>
@@ -138,6 +150,13 @@ namespace Model
      * resource</code> operation.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>The tag keys and optional values to add to the resource during create.</p>
+     * <p>To tag a resource after it has been created, see the <code>tag
+     * resource</code> operation.</p>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
      * <p>The tag keys and optional values to add to the resource during create.</p>

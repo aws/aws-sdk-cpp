@@ -53,6 +53,12 @@ namespace Model
      * <p>The list of standards subscription ARNS that you want to list and
      * describe.</p>
      */
+    inline bool StandardsSubscriptionArnsHasBeenSet() const { return m_standardsSubscriptionArnsHasBeenSet; }
+
+    /**
+     * <p>The list of standards subscription ARNS that you want to list and
+     * describe.</p>
+     */
     inline void SetStandardsSubscriptionArns(const Aws::Vector<Aws::String>& value) { m_standardsSubscriptionArnsHasBeenSet = true; m_standardsSubscriptionArns = value; }
 
     /**
@@ -99,6 +105,14 @@ namespace Model
      * response to continue listing data.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
+    /**
+     * <p>Paginates results. Set the value of this parameter to NULL on your first call
+     * to the GetEnabledStandards operation. For subsequent calls to the operation,
+     * fill nextToken in the request with the value of nextToken from the previous
+     * response to continue listing data.</p>
+     */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
      * <p>Paginates results. Set the value of this parameter to NULL on your first call
@@ -153,6 +167,11 @@ namespace Model
      * <p>Indicates the maximum number of items that you want in the response.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
+
+    /**
+     * <p>Indicates the maximum number of items that you want in the response.</p>
+     */
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
 
     /**
      * <p>Indicates the maximum number of items that you want in the response.</p>

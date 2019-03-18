@@ -52,6 +52,11 @@ namespace Model
     /**
      * <p>The ARN of the assessment target that you want to update.</p>
      */
+    inline bool AssessmentTargetArnHasBeenSet() const { return m_assessmentTargetArnHasBeenSet; }
+
+    /**
+     * <p>The ARN of the assessment target that you want to update.</p>
+     */
     inline void SetAssessmentTargetArn(const Aws::String& value) { m_assessmentTargetArnHasBeenSet = true; m_assessmentTargetArn = value; }
 
     /**
@@ -84,6 +89,11 @@ namespace Model
      * <p>The name of the assessment target that you want to update.</p>
      */
     inline const Aws::String& GetAssessmentTargetName() const{ return m_assessmentTargetName; }
+
+    /**
+     * <p>The name of the assessment target that you want to update.</p>
+     */
+    inline bool AssessmentTargetNameHasBeenSet() const { return m_assessmentTargetNameHasBeenSet; }
 
     /**
      * <p>The name of the assessment target that you want to update.</p>
@@ -121,6 +131,12 @@ namespace Model
      * to associate with the assessment target.</p>
      */
     inline const Aws::String& GetResourceGroupArn() const{ return m_resourceGroupArn; }
+
+    /**
+     * <p>The ARN of the resource group that is used to specify the new resource group
+     * to associate with the assessment target.</p>
+     */
+    inline bool ResourceGroupArnHasBeenSet() const { return m_resourceGroupArnHasBeenSet; }
 
     /**
      * <p>The ARN of the resource group that is used to specify the new resource group

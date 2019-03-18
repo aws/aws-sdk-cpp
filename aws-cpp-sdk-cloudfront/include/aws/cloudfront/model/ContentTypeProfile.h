@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The format for a field-level encryption content type-profile mapping. </p>
      */
+    inline bool FormatHasBeenSet() const { return m_formatHasBeenSet; }
+
+    /**
+     * <p>The format for a field-level encryption content type-profile mapping. </p>
+     */
     inline void SetFormat(const Format& value) { m_formatHasBeenSet = true; m_format = value; }
 
     /**
@@ -79,6 +84,12 @@ namespace Model
      * </p>
      */
     inline const Aws::String& GetProfileId() const{ return m_profileId; }
+
+    /**
+     * <p>The profile ID for a field-level encryption content type-profile mapping.
+     * </p>
+     */
+    inline bool ProfileIdHasBeenSet() const { return m_profileIdHasBeenSet; }
 
     /**
      * <p>The profile ID for a field-level encryption content type-profile mapping.
@@ -122,6 +133,12 @@ namespace Model
      * </p>
      */
     inline const Aws::String& GetContentType() const{ return m_contentType; }
+
+    /**
+     * <p>The content type for a field-level encryption content type-profile mapping.
+     * </p>
+     */
+    inline bool ContentTypeHasBeenSet() const { return m_contentTypeHasBeenSet; }
 
     /**
      * <p>The content type for a field-level encryption content type-profile mapping.

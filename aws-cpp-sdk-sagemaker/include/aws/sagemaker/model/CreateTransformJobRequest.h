@@ -61,6 +61,12 @@ namespace Model
      * <p>The name of the transform job. The name must be unique within an AWS Region
      * in an AWS account. </p>
      */
+    inline bool TransformJobNameHasBeenSet() const { return m_transformJobNameHasBeenSet; }
+
+    /**
+     * <p>The name of the transform job. The name must be unique within an AWS Region
+     * in an AWS account. </p>
+     */
     inline void SetTransformJobName(const Aws::String& value) { m_transformJobNameHasBeenSet = true; m_transformJobName = value; }
 
     /**
@@ -100,6 +106,13 @@ namespace Model
      * within an AWS Region in an AWS account.</p>
      */
     inline const Aws::String& GetModelName() const{ return m_modelName; }
+
+    /**
+     * <p>The name of the model that you want to use for the transform job.
+     * <code>ModelName</code> must be the name of an existing Amazon SageMaker model
+     * within an AWS Region in an AWS account.</p>
+     */
+    inline bool ModelNameHasBeenSet() const { return m_modelNameHasBeenSet; }
 
     /**
      * <p>The name of the model that you want to use for the transform job.
@@ -158,6 +171,14 @@ namespace Model
      * to determine the appropriate number for <code>MaxConcurrentTransforms</code>,
      * set the value to <code>0</code>.</p>
      */
+    inline bool MaxConcurrentTransformsHasBeenSet() const { return m_maxConcurrentTransformsHasBeenSet; }
+
+    /**
+     * <p>The maximum number of parallel requests that can be sent to each instance in
+     * a transform job. The default value is <code>1</code>. To allow Amazon SageMaker
+     * to determine the appropriate number for <code>MaxConcurrentTransforms</code>,
+     * set the value to <code>0</code>.</p>
+     */
     inline void SetMaxConcurrentTransforms(int value) { m_maxConcurrentTransformsHasBeenSet = true; m_maxConcurrentTransforms = value; }
 
     /**
@@ -182,6 +203,20 @@ namespace Model
      * algorithms do not support HTTP chunked encoding.</p>
      */
     inline int GetMaxPayloadInMB() const{ return m_maxPayloadInMB; }
+
+    /**
+     * <p>The maximum allowed size of the payload, in MB. A <i>payload</i> is the data
+     * portion of a record (without metadata). The value in <code>MaxPayloadInMB</code>
+     * must be greater than, or equal to, the size of a single record. To estimate the
+     * size of a record in MB, divide the size of your dataset by the number of
+     * records. To ensure that the records fit within the maximum payload size, we
+     * recommend using a slightly larger value. The default value is <code>6</code> MB.
+     * </p> <p>For cases where the payload might be arbitrarily large and is
+     * transmitted using HTTP chunked encoding, set the value to <code>0</code>. This
+     * feature works only in supported algorithms. Currently, Amazon SageMaker built-in
+     * algorithms do not support HTTP chunked encoding.</p>
+     */
+    inline bool MaxPayloadInMBHasBeenSet() const { return m_maxPayloadInMBHasBeenSet; }
 
     /**
      * <p>The maximum allowed size of the payload, in MB. A <i>payload</i> is the data
@@ -226,6 +261,21 @@ namespace Model
      * <code>SplitType</code> to <code>Line</code>.</p>
      */
     inline const BatchStrategy& GetBatchStrategy() const{ return m_batchStrategy; }
+
+    /**
+     * <p>Specifies the number of records to include in a mini-batch for an HTTP
+     * inference request. A <i>record</i> <i/> is a single unit of input data that
+     * inference can be made on. For example, a single line in a CSV file is a record.
+     * </p> <p>To enable the batch strategy, you must set <code>SplitType</code> to
+     * <code>Line</code>, <code>RecordIO</code>, or <code>TFRecord</code>.</p> <p>To
+     * use only one record when making an HTTP invocation request to a container, set
+     * <code>BatchStrategy</code> to <code>SingleRecord</code> and
+     * <code>SplitType</code> to <code>Line</code>.</p> <p>To fit as many records in a
+     * mini-batch as can fit within the <code>MaxPayloadInMB</code> limit, set
+     * <code>BatchStrategy</code> to <code>MultiRecord</code> and
+     * <code>SplitType</code> to <code>Line</code>.</p>
+     */
+    inline bool BatchStrategyHasBeenSet() const { return m_batchStrategyHasBeenSet; }
 
     /**
      * <p>Specifies the number of records to include in a mini-batch for an HTTP
@@ -293,6 +343,12 @@ namespace Model
      * key and values entries in the map.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetEnvironment() const{ return m_environment; }
+
+    /**
+     * <p>The environment variables to set in the Docker container. We support up to 16
+     * key and values entries in the map.</p>
+     */
+    inline bool EnvironmentHasBeenSet() const { return m_environmentHasBeenSet; }
 
     /**
      * <p>The environment variables to set in the Docker container. We support up to 16
@@ -369,6 +425,11 @@ namespace Model
     /**
      * <p>Describes the input source and the way the transform job consumes it.</p>
      */
+    inline bool TransformInputHasBeenSet() const { return m_transformInputHasBeenSet; }
+
+    /**
+     * <p>Describes the input source and the way the transform job consumes it.</p>
+     */
     inline void SetTransformInput(const TransformInput& value) { m_transformInputHasBeenSet = true; m_transformInput = value; }
 
     /**
@@ -391,6 +452,11 @@ namespace Model
      * <p>Describes the results of the transform job.</p>
      */
     inline const TransformOutput& GetTransformOutput() const{ return m_transformOutput; }
+
+    /**
+     * <p>Describes the results of the transform job.</p>
+     */
+    inline bool TransformOutputHasBeenSet() const { return m_transformOutputHasBeenSet; }
 
     /**
      * <p>Describes the results of the transform job.</p>
@@ -418,6 +484,12 @@ namespace Model
      * to use for the transform job.</p>
      */
     inline const TransformResources& GetTransformResources() const{ return m_transformResources; }
+
+    /**
+     * <p>Describes the resources, including ML instance types and ML instance count,
+     * to use for the transform job.</p>
+     */
+    inline bool TransformResourcesHasBeenSet() const { return m_transformResourcesHasBeenSet; }
 
     /**
      * <p>Describes the resources, including ML instance types and ML instance count,
@@ -451,6 +523,14 @@ namespace Model
      * Guide</i>.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>(Optional) An array of key-value pairs. For more information, see <a
+     * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-what">Using
+     * Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management User
+     * Guide</i>.</p>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
      * <p>(Optional) An array of key-value pairs. For more information, see <a

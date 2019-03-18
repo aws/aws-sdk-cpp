@@ -65,6 +65,14 @@ namespace Model
      * with Classic Load Balancers.</p> <note> <p> Adding more than one load balancer
      * to the array is not supported. </p> </note>
      */
+    inline bool ElbInfoListHasBeenSet() const { return m_elbInfoListHasBeenSet; }
+
+    /**
+     * <p>An array that contains information about the load balancer to use for load
+     * balancing in a deployment. In Elastic Load Balancing, load balancers are used
+     * with Classic Load Balancers.</p> <note> <p> Adding more than one load balancer
+     * to the array is not supported. </p> </note>
+     */
     inline void SetElbInfoList(const Aws::Vector<ELBInfo>& value) { m_elbInfoListHasBeenSet = true; m_elbInfoList = value; }
 
     /**
@@ -122,6 +130,14 @@ namespace Model
      * with Application Load Balancers.</p> <note> <p> Adding more than one target
      * group to the array is not supported. </p> </note>
      */
+    inline bool TargetGroupInfoListHasBeenSet() const { return m_targetGroupInfoListHasBeenSet; }
+
+    /**
+     * <p>An array that contains information about the target group to use for load
+     * balancing in a deployment. In Elastic Load Balancing, target groups are used
+     * with Application Load Balancers.</p> <note> <p> Adding more than one target
+     * group to the array is not supported. </p> </note>
+     */
     inline void SetTargetGroupInfoList(const Aws::Vector<TargetGroupInfo>& value) { m_targetGroupInfoListHasBeenSet = true; m_targetGroupInfoList = value; }
 
     /**
@@ -170,6 +186,12 @@ namespace Model
      * <code>TargeGroupPairInfo</code> objects with a maximum size of one. </p>
      */
     inline const Aws::Vector<TargetGroupPairInfo>& GetTargetGroupPairInfoList() const{ return m_targetGroupPairInfoList; }
+
+    /**
+     * <p> The target group pair information. This is an array of
+     * <code>TargeGroupPairInfo</code> objects with a maximum size of one. </p>
+     */
+    inline bool TargetGroupPairInfoListHasBeenSet() const { return m_targetGroupPairInfoListHasBeenSet; }
 
     /**
      * <p> The target group pair information. This is an array of

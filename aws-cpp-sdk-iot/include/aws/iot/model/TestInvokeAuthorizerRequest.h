@@ -50,6 +50,11 @@ namespace Model
     /**
      * <p>The custom authorizer name.</p>
      */
+    inline bool AuthorizerNameHasBeenSet() const { return m_authorizerNameHasBeenSet; }
+
+    /**
+     * <p>The custom authorizer name.</p>
+     */
     inline void SetAuthorizerName(const Aws::String& value) { m_authorizerNameHasBeenSet = true; m_authorizerName = value; }
 
     /**
@@ -82,6 +87,11 @@ namespace Model
      * <p>The token returned by your custom authentication service.</p>
      */
     inline const Aws::String& GetToken() const{ return m_token; }
+
+    /**
+     * <p>The token returned by your custom authentication service.</p>
+     */
+    inline bool TokenHasBeenSet() const { return m_tokenHasBeenSet; }
 
     /**
      * <p>The token returned by your custom authentication service.</p>
@@ -119,6 +129,12 @@ namespace Model
      * private key.</p>
      */
     inline const Aws::String& GetTokenSignature() const{ return m_tokenSignature; }
+
+    /**
+     * <p>The signature made with the token and your custom authentication service's
+     * private key.</p>
+     */
+    inline bool TokenSignatureHasBeenSet() const { return m_tokenSignatureHasBeenSet; }
 
     /**
      * <p>The signature made with the token and your custom authentication service's

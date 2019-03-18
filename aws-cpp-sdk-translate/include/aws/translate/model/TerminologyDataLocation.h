@@ -55,6 +55,11 @@ namespace Model
     /**
      * <p>The repository type for the custom terminology data.</p>
      */
+    inline bool RepositoryTypeHasBeenSet() const { return m_repositoryTypeHasBeenSet; }
+
+    /**
+     * <p>The repository type for the custom terminology data.</p>
+     */
     inline void SetRepositoryType(const Aws::String& value) { m_repositoryTypeHasBeenSet = true; m_repositoryType = value; }
 
     /**
@@ -87,6 +92,11 @@ namespace Model
      * <p>The location of the custom terminology data.</p>
      */
     inline const Aws::String& GetLocation() const{ return m_location; }
+
+    /**
+     * <p>The location of the custom terminology data.</p>
+     */
+    inline bool LocationHasBeenSet() const { return m_locationHasBeenSet; }
 
     /**
      * <p>The location of the custom terminology data.</p>

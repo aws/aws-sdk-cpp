@@ -52,6 +52,11 @@ namespace Model
     /**
      * <p>The ARN associated with the backup.</p>
      */
+    inline bool BackupArnHasBeenSet() const { return m_backupArnHasBeenSet; }
+
+    /**
+     * <p>The ARN associated with the backup.</p>
+     */
     inline void SetBackupArn(const Aws::String& value) { m_backupArnHasBeenSet = true; m_backupArn = value; }
 
     /**

@@ -59,6 +59,12 @@ namespace Model
      * <p>Indicates whether detailed monitoring is enabled. Otherwise, basic monitoring
      * is enabled.</p>
      */
+    inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
+
+    /**
+     * <p>Indicates whether detailed monitoring is enabled. Otherwise, basic monitoring
+     * is enabled.</p>
+     */
     inline void SetState(const MonitoringState& value) { m_stateHasBeenSet = true; m_state = value; }
 
     /**

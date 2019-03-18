@@ -54,6 +54,11 @@ namespace Model
     /**
      * <p>The name of the configuration aggregator.</p>
      */
+    inline bool ConfigurationAggregatorNameHasBeenSet() const { return m_configurationAggregatorNameHasBeenSet; }
+
+    /**
+     * <p>The name of the configuration aggregator.</p>
+     */
     inline void SetConfigurationAggregatorName(const Aws::String& value) { m_configurationAggregatorNameHasBeenSet = true; m_configurationAggregatorName = value; }
 
     /**
@@ -86,6 +91,11 @@ namespace Model
      * <p>A list of aggregate ResourceIdentifiers objects. </p>
      */
     inline const Aws::Vector<AggregateResourceIdentifier>& GetResourceIdentifiers() const{ return m_resourceIdentifiers; }
+
+    /**
+     * <p>A list of aggregate ResourceIdentifiers objects. </p>
+     */
+    inline bool ResourceIdentifiersHasBeenSet() const { return m_resourceIdentifiersHasBeenSet; }
 
     /**
      * <p>A list of aggregate ResourceIdentifiers objects. </p>

@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The ID of the virtual private gateway.</p>
      */
+    inline bool VirtualGatewayIdHasBeenSet() const { return m_virtualGatewayIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the virtual private gateway.</p>
+     */
     inline void SetVirtualGatewayId(const Aws::String& value) { m_virtualGatewayIdHasBeenSet = true; m_virtualGatewayId = value; }
 
     /**
@@ -94,6 +99,17 @@ namespace Model
      * virtual interface is unable to send traffic over this gateway.</p> </li> </ul>
      */
     inline const Aws::String& GetVirtualGatewayState() const{ return m_virtualGatewayState; }
+
+    /**
+     * <p>The state of the virtual private gateway. The following are the possible
+     * values:</p> <ul> <li> <p> <code>pending</code>: Initial state after creating the
+     * virtual private gateway.</p> </li> <li> <p> <code>available</code>: Ready for
+     * use by a private virtual interface.</p> </li> <li> <p> <code>deleting</code>:
+     * Initial state after deleting the virtual private gateway.</p> </li> <li> <p>
+     * <code>deleted</code>: The virtual private gateway is deleted. The private
+     * virtual interface is unable to send traffic over this gateway.</p> </li> </ul>
+     */
+    inline bool VirtualGatewayStateHasBeenSet() const { return m_virtualGatewayStateHasBeenSet; }
 
     /**
      * <p>The state of the virtual private gateway. The following are the possible

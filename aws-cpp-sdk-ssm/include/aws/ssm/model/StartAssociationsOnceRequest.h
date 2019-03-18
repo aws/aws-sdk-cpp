@@ -55,6 +55,12 @@ namespace Model
      * <p>The association IDs that you want to execute immediately and only one
      * time.</p>
      */
+    inline bool AssociationIdsHasBeenSet() const { return m_associationIdsHasBeenSet; }
+
+    /**
+     * <p>The association IDs that you want to execute immediately and only one
+     * time.</p>
+     */
     inline void SetAssociationIds(const Aws::Vector<Aws::String>& value) { m_associationIdsHasBeenSet = true; m_associationIds = value; }
 
     /**

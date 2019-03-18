@@ -50,6 +50,11 @@ namespace Model
     /**
      * The ID of the channel the IngestEndpoint is on.
      */
+    inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
+
+    /**
+     * The ID of the channel the IngestEndpoint is on.
+     */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
     /**
@@ -82,6 +87,11 @@ namespace Model
      * The id of the IngestEndpoint whose credentials should be rotated
      */
     inline const Aws::String& GetIngestEndpointId() const{ return m_ingestEndpointId; }
+
+    /**
+     * The id of the IngestEndpoint whose credentials should be rotated
+     */
+    inline bool IngestEndpointIdHasBeenSet() const { return m_ingestEndpointIdHasBeenSet; }
 
     /**
      * The id of the IngestEndpoint whose credentials should be rotated

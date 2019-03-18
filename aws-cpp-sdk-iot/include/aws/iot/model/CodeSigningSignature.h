@@ -55,6 +55,11 @@ namespace Model
     /**
      * <p>A base64 encoded binary representation of the code signing signature.</p>
      */
+    inline bool InlineDocumentHasBeenSet() const { return m_inlineDocumentHasBeenSet; }
+
+    /**
+     * <p>A base64 encoded binary representation of the code signing signature.</p>
+     */
     inline void SetInlineDocument(const Aws::Utils::ByteBuffer& value) { m_inlineDocumentHasBeenSet = true; m_inlineDocument = value; }
 
     /**

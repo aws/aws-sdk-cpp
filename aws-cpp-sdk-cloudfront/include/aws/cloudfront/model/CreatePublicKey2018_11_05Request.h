@@ -50,6 +50,11 @@ namespace Model
     /**
      * <p>The request to add a public key to CloudFront.</p>
      */
+    inline bool PublicKeyConfigHasBeenSet() const { return m_publicKeyConfigHasBeenSet; }
+
+    /**
+     * <p>The request to add a public key to CloudFront.</p>
+     */
     inline void SetPublicKeyConfig(const PublicKeyConfig& value) { m_publicKeyConfigHasBeenSet = true; m_publicKeyConfig = value; }
 
     /**

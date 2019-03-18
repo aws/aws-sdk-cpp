@@ -53,6 +53,11 @@ namespace Model
     /**
      * <p>The maximum number of OTA update job executions started per minute.</p>
      */
+    inline bool MaximumPerMinuteHasBeenSet() const { return m_maximumPerMinuteHasBeenSet; }
+
+    /**
+     * <p>The maximum number of OTA update job executions started per minute.</p>
+     */
     inline void SetMaximumPerMinute(int value) { m_maximumPerMinuteHasBeenSet = true; m_maximumPerMinute = value; }
 
     /**

@@ -55,6 +55,11 @@ namespace Model
     /**
      * Pipeline ID to pause ("PIPELINE_0" or "PIPELINE_1").
      */
+    inline bool PipelineIdHasBeenSet() const { return m_pipelineIdHasBeenSet; }
+
+    /**
+     * Pipeline ID to pause ("PIPELINE_0" or "PIPELINE_1").
+     */
     inline void SetPipelineId(const PipelineId& value) { m_pipelineIdHasBeenSet = true; m_pipelineId = value; }
 
     /**

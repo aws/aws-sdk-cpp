@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p> Unique Id for an Amplify App. </p>
      */
+    inline bool AppIdHasBeenSet() const { return m_appIdHasBeenSet; }
+
+    /**
+     * <p> Unique Id for an Amplify App. </p>
+     */
     inline void SetAppId(const Aws::String& value) { m_appIdHasBeenSet = true; m_appId = value; }
 
     /**
@@ -88,6 +93,11 @@ namespace Model
      * <p> Domain name for the Domain Association. </p>
      */
     inline const Aws::String& GetDomainName() const{ return m_domainName; }
+
+    /**
+     * <p> Domain name for the Domain Association. </p>
+     */
+    inline bool DomainNameHasBeenSet() const { return m_domainNameHasBeenSet; }
 
     /**
      * <p> Domain name for the Domain Association. </p>
@@ -128,6 +138,11 @@ namespace Model
     /**
      * <p> Enables automated creation of Subdomains for branches. </p>
      */
+    inline bool EnableAutoSubDomainHasBeenSet() const { return m_enableAutoSubDomainHasBeenSet; }
+
+    /**
+     * <p> Enables automated creation of Subdomains for branches. </p>
+     */
     inline void SetEnableAutoSubDomain(bool value) { m_enableAutoSubDomainHasBeenSet = true; m_enableAutoSubDomain = value; }
 
     /**
@@ -140,6 +155,11 @@ namespace Model
      * <p> Setting structure for the Subdomain. </p>
      */
     inline const Aws::Vector<SubDomainSetting>& GetSubDomainSettings() const{ return m_subDomainSettings; }
+
+    /**
+     * <p> Setting structure for the Subdomain. </p>
+     */
+    inline bool SubDomainSettingsHasBeenSet() const { return m_subDomainSettingsHasBeenSet; }
 
     /**
      * <p> Setting structure for the Subdomain. </p>

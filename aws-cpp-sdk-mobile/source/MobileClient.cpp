@@ -148,6 +148,11 @@ void MobileClient::CreateProjectAsyncHelper(const CreateProjectRequest& request,
 
 DeleteProjectOutcome MobileClient::DeleteProject(const DeleteProjectRequest& request) const
 {
+  if (!request.ProjectIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteProject", "Required field: ProjectId, is not set");
+    return DeleteProjectOutcome(Aws::Client::AWSError<MobileErrors>(MobileErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ProjectId]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/projects/";
@@ -184,6 +189,11 @@ void MobileClient::DeleteProjectAsyncHelper(const DeleteProjectRequest& request,
 
 DescribeBundleOutcome MobileClient::DescribeBundle(const DescribeBundleRequest& request) const
 {
+  if (!request.BundleIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DescribeBundle", "Required field: BundleId, is not set");
+    return DescribeBundleOutcome(Aws::Client::AWSError<MobileErrors>(MobileErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [BundleId]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/bundles/";
@@ -220,6 +230,11 @@ void MobileClient::DescribeBundleAsyncHelper(const DescribeBundleRequest& reques
 
 DescribeProjectOutcome MobileClient::DescribeProject(const DescribeProjectRequest& request) const
 {
+  if (!request.ProjectIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DescribeProject", "Required field: ProjectId, is not set");
+    return DescribeProjectOutcome(Aws::Client::AWSError<MobileErrors>(MobileErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ProjectId]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/project";
@@ -255,6 +270,11 @@ void MobileClient::DescribeProjectAsyncHelper(const DescribeProjectRequest& requ
 
 ExportBundleOutcome MobileClient::ExportBundle(const ExportBundleRequest& request) const
 {
+  if (!request.BundleIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ExportBundle", "Required field: BundleId, is not set");
+    return ExportBundleOutcome(Aws::Client::AWSError<MobileErrors>(MobileErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [BundleId]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/bundles/";
@@ -291,6 +311,11 @@ void MobileClient::ExportBundleAsyncHelper(const ExportBundleRequest& request, c
 
 ExportProjectOutcome MobileClient::ExportProject(const ExportProjectRequest& request) const
 {
+  if (!request.ProjectIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ExportProject", "Required field: ProjectId, is not set");
+    return ExportProjectOutcome(Aws::Client::AWSError<MobileErrors>(MobileErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ProjectId]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/exports/";
@@ -397,6 +422,11 @@ void MobileClient::ListProjectsAsyncHelper(const ListProjectsRequest& request, c
 
 UpdateProjectOutcome MobileClient::UpdateProject(const UpdateProjectRequest& request) const
 {
+  if (!request.ProjectIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateProject", "Required field: ProjectId, is not set");
+    return UpdateProjectOutcome(Aws::Client::AWSError<MobileErrors>(MobileErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ProjectId]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/update";

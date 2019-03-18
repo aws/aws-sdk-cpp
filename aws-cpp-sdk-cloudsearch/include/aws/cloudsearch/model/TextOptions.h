@@ -59,6 +59,11 @@ namespace Model
     /**
      * A value to use for the field if the field isn't specified for a document.
      */
+    inline bool DefaultValueHasBeenSet() const { return m_defaultValueHasBeenSet; }
+
+    /**
+     * A value to use for the field if the field isn't specified for a document.
+     */
     inline void SetDefaultValue(const Aws::String& value) { m_defaultValueHasBeenSet = true; m_defaultValue = value; }
 
     /**
@@ -91,6 +96,9 @@ namespace Model
     inline const Aws::String& GetSourceField() const{ return m_sourceField; }
 
     
+    inline bool SourceFieldHasBeenSet() const { return m_sourceFieldHasBeenSet; }
+
+    
     inline void SetSourceField(const Aws::String& value) { m_sourceFieldHasBeenSet = true; m_sourceField = value; }
 
     
@@ -117,6 +125,11 @@ namespace Model
     /**
      * <p>Whether the contents of the field can be returned in the search results.</p>
      */
+    inline bool ReturnEnabledHasBeenSet() const { return m_returnEnabledHasBeenSet; }
+
+    /**
+     * <p>Whether the contents of the field can be returned in the search results.</p>
+     */
     inline void SetReturnEnabled(bool value) { m_returnEnabledHasBeenSet = true; m_returnEnabled = value; }
 
     /**
@@ -129,6 +142,11 @@ namespace Model
      * <p>Whether the field can be used to sort the search results.</p>
      */
     inline bool GetSortEnabled() const{ return m_sortEnabled; }
+
+    /**
+     * <p>Whether the field can be used to sort the search results.</p>
+     */
+    inline bool SortEnabledHasBeenSet() const { return m_sortEnabledHasBeenSet; }
 
     /**
      * <p>Whether the field can be used to sort the search results.</p>
@@ -149,6 +167,11 @@ namespace Model
     /**
      * <p>Whether highlights can be returned for the field.</p>
      */
+    inline bool HighlightEnabledHasBeenSet() const { return m_highlightEnabledHasBeenSet; }
+
+    /**
+     * <p>Whether highlights can be returned for the field.</p>
+     */
     inline void SetHighlightEnabled(bool value) { m_highlightEnabledHasBeenSet = true; m_highlightEnabled = value; }
 
     /**
@@ -161,6 +184,11 @@ namespace Model
      * <p>The name of an analysis scheme for a <code>text</code> field.</p>
      */
     inline const Aws::String& GetAnalysisScheme() const{ return m_analysisScheme; }
+
+    /**
+     * <p>The name of an analysis scheme for a <code>text</code> field.</p>
+     */
+    inline bool AnalysisSchemeHasBeenSet() const { return m_analysisSchemeHasBeenSet; }
 
     /**
      * <p>The name of an analysis scheme for a <code>text</code> field.</p>

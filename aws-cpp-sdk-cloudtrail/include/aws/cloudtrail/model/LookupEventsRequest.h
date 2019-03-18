@@ -60,6 +60,12 @@ namespace Model
      * <p>Contains a list of lookup attributes. Currently the list can contain only one
      * item.</p>
      */
+    inline bool LookupAttributesHasBeenSet() const { return m_lookupAttributesHasBeenSet; }
+
+    /**
+     * <p>Contains a list of lookup attributes. Currently the list can contain only one
+     * item.</p>
+     */
     inline void SetLookupAttributes(const Aws::Vector<LookupAttribute>& value) { m_lookupAttributesHasBeenSet = true; m_lookupAttributes = value; }
 
     /**
@@ -105,6 +111,13 @@ namespace Model
      * returned. If the specified start time is after the specified end time, an error
      * is returned.</p>
      */
+    inline bool StartTimeHasBeenSet() const { return m_startTimeHasBeenSet; }
+
+    /**
+     * <p>Specifies that only events that occur after or at the specified time are
+     * returned. If the specified start time is after the specified end time, an error
+     * is returned.</p>
+     */
     inline void SetStartTime(const Aws::Utils::DateTime& value) { m_startTimeHasBeenSet = true; m_startTime = value; }
 
     /**
@@ -135,6 +148,13 @@ namespace Model
      * is returned.</p>
      */
     inline const Aws::Utils::DateTime& GetEndTime() const{ return m_endTime; }
+
+    /**
+     * <p>Specifies that only events that occur before or at the specified time are
+     * returned. If the specified end time is before the specified start time, an error
+     * is returned.</p>
+     */
+    inline bool EndTimeHasBeenSet() const { return m_endTimeHasBeenSet; }
 
     /**
      * <p>Specifies that only events that occur before or at the specified time are
@@ -175,6 +195,12 @@ namespace Model
      * <p>The number of events to return. Possible values are 1 through 50. The default
      * is 50.</p>
      */
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
+
+    /**
+     * <p>The number of events to return. Possible values are 1 through 50. The default
+     * is 50.</p>
+     */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
@@ -192,6 +218,15 @@ namespace Model
      * those same parameters.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
+    /**
+     * <p>The token to use to get the next page of results after a previous API call.
+     * This token must be passed in with the same parameters that were specified in the
+     * the original call. For example, if the original call specified an AttributeKey
+     * of 'Username' with a value of 'root', the call with NextToken should include
+     * those same parameters.</p>
+     */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
      * <p>The token to use to get the next page of results after a previous API call.

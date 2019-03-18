@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p/>
      */
+    inline bool ETagHasBeenSet() const { return m_eTagHasBeenSet; }
+
+    /**
+     * <p/>
+     */
     inline void SetETag(const Aws::String& value) { m_eTagHasBeenSet = true; m_eTag = value; }
 
     /**
@@ -94,6 +99,11 @@ namespace Model
     /**
      * <p>Size in bytes of the object.</p>
      */
+    inline bool SizeHasBeenSet() const { return m_sizeHasBeenSet; }
+
+    /**
+     * <p>Size in bytes of the object.</p>
+     */
     inline void SetSize(long long value) { m_sizeHasBeenSet = true; m_size = value; }
 
     /**
@@ -106,6 +116,11 @@ namespace Model
      * <p>The class of storage used to store the object.</p>
      */
     inline const ObjectVersionStorageClass& GetStorageClass() const{ return m_storageClass; }
+
+    /**
+     * <p>The class of storage used to store the object.</p>
+     */
+    inline bool StorageClassHasBeenSet() const { return m_storageClassHasBeenSet; }
 
     /**
      * <p>The class of storage used to store the object.</p>
@@ -132,6 +147,11 @@ namespace Model
      * <p>The object key.</p>
      */
     inline const Aws::String& GetKey() const{ return m_key; }
+
+    /**
+     * <p>The object key.</p>
+     */
+    inline bool KeyHasBeenSet() const { return m_keyHasBeenSet; }
 
     /**
      * <p>The object key.</p>
@@ -168,6 +188,11 @@ namespace Model
      * <p>Version ID of an object.</p>
      */
     inline const Aws::String& GetVersionId() const{ return m_versionId; }
+
+    /**
+     * <p>Version ID of an object.</p>
+     */
+    inline bool VersionIdHasBeenSet() const { return m_versionIdHasBeenSet; }
 
     /**
      * <p>Version ID of an object.</p>
@@ -210,6 +235,12 @@ namespace Model
      * <p>Specifies whether the object is (true) or is not (false) the latest version
      * of an object.</p>
      */
+    inline bool IsLatestHasBeenSet() const { return m_isLatestHasBeenSet; }
+
+    /**
+     * <p>Specifies whether the object is (true) or is not (false) the latest version
+     * of an object.</p>
+     */
     inline void SetIsLatest(bool value) { m_isLatestHasBeenSet = true; m_isLatest = value; }
 
     /**
@@ -223,6 +254,11 @@ namespace Model
      * <p>Date and time the object was last modified.</p>
      */
     inline const Aws::Utils::DateTime& GetLastModified() const{ return m_lastModified; }
+
+    /**
+     * <p>Date and time the object was last modified.</p>
+     */
+    inline bool LastModifiedHasBeenSet() const { return m_lastModifiedHasBeenSet; }
 
     /**
      * <p>Date and time the object was last modified.</p>
@@ -249,6 +285,11 @@ namespace Model
      * <p/>
      */
     inline const Owner& GetOwner() const{ return m_owner; }
+
+    /**
+     * <p/>
+     */
+    inline bool OwnerHasBeenSet() const { return m_ownerHasBeenSet; }
 
     /**
      * <p/>

@@ -55,6 +55,12 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) that is associated with the <a>Directory</a>.
      * For more information, see <a>arns</a>.</p>
      */
+    inline bool DirectoryArnHasBeenSet() const { return m_directoryArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) that is associated with the <a>Directory</a>.
+     * For more information, see <a>arns</a>.</p>
+     */
     inline void SetDirectoryArn(const Aws::String& value) { m_directoryArnHasBeenSet = true; m_directoryArn = value; }
 
     /**
@@ -96,6 +102,11 @@ namespace Model
     /**
      * <p>Reference that identifies the object whose policies will be looked up.</p>
      */
+    inline bool ObjectReferenceHasBeenSet() const { return m_objectReferenceHasBeenSet; }
+
+    /**
+     * <p>Reference that identifies the object whose policies will be looked up.</p>
+     */
     inline void SetObjectReference(const ObjectReference& value) { m_objectReferenceHasBeenSet = true; m_objectReference = value; }
 
     /**
@@ -118,6 +129,11 @@ namespace Model
      * <p>The token to request the next page of results.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
+    /**
+     * <p>The token to request the next page of results.</p>
+     */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
      * <p>The token to request the next page of results.</p>
@@ -155,6 +171,12 @@ namespace Model
      * approximate number.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
+
+    /**
+     * <p>The maximum number of items to be retrieved in a single call. This is an
+     * approximate number.</p>
+     */
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
 
     /**
      * <p>The maximum number of items to be retrieved in a single call. This is an

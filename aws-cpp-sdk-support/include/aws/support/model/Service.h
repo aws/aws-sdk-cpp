@@ -60,6 +60,12 @@ namespace Model
      * <p>The code for an AWS service returned by the <a>DescribeServices</a> response.
      * The <code>name</code> element contains the corresponding friendly name.</p>
      */
+    inline bool CodeHasBeenSet() const { return m_codeHasBeenSet; }
+
+    /**
+     * <p>The code for an AWS service returned by the <a>DescribeServices</a> response.
+     * The <code>name</code> element contains the corresponding friendly name.</p>
+     */
     inline void SetCode(const Aws::String& value) { m_codeHasBeenSet = true; m_code = value; }
 
     /**
@@ -98,6 +104,12 @@ namespace Model
      * the corresponding code.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
+
+    /**
+     * <p>The friendly name for an AWS service. The <code>code</code> element contains
+     * the corresponding code.</p>
+     */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
      * <p>The friendly name for an AWS service. The <code>code</code> element contains
@@ -142,6 +154,13 @@ namespace Model
      * names and codes are passed to AWS Support when you call <a>CreateCase</a>.</p>
      */
     inline const Aws::Vector<Category>& GetCategories() const{ return m_categories; }
+
+    /**
+     * <p>A list of categories that describe the type of support issue a case
+     * describes. Categories consist of a category name and a category code. Category
+     * names and codes are passed to AWS Support when you call <a>CreateCase</a>.</p>
+     */
+    inline bool CategoriesHasBeenSet() const { return m_categoriesHasBeenSet; }
 
     /**
      * <p>A list of categories that describe the type of support issue a case

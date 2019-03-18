@@ -59,6 +59,11 @@ namespace Model
     /**
      * <p>Upload ID that identifies the multipart upload.</p>
      */
+    inline bool UploadIdHasBeenSet() const { return m_uploadIdHasBeenSet; }
+
+    /**
+     * <p>Upload ID that identifies the multipart upload.</p>
+     */
     inline void SetUploadId(const Aws::String& value) { m_uploadIdHasBeenSet = true; m_uploadId = value; }
 
     /**
@@ -91,6 +96,11 @@ namespace Model
      * <p>Key of the object for which the multipart upload was initiated.</p>
      */
     inline const Aws::String& GetKey() const{ return m_key; }
+
+    /**
+     * <p>Key of the object for which the multipart upload was initiated.</p>
+     */
+    inline bool KeyHasBeenSet() const { return m_keyHasBeenSet; }
 
     /**
      * <p>Key of the object for which the multipart upload was initiated.</p>
@@ -131,6 +141,11 @@ namespace Model
     /**
      * <p>Date and time at which the multipart upload was initiated.</p>
      */
+    inline bool InitiatedHasBeenSet() const { return m_initiatedHasBeenSet; }
+
+    /**
+     * <p>Date and time at which the multipart upload was initiated.</p>
+     */
     inline void SetInitiated(const Aws::Utils::DateTime& value) { m_initiatedHasBeenSet = true; m_initiated = value; }
 
     /**
@@ -153,6 +168,11 @@ namespace Model
      * <p>The class of storage used to store the object.</p>
      */
     inline const StorageClass& GetStorageClass() const{ return m_storageClass; }
+
+    /**
+     * <p>The class of storage used to store the object.</p>
+     */
+    inline bool StorageClassHasBeenSet() const { return m_storageClassHasBeenSet; }
 
     /**
      * <p>The class of storage used to store the object.</p>
@@ -183,6 +203,11 @@ namespace Model
     /**
      * <p/>
      */
+    inline bool OwnerHasBeenSet() const { return m_ownerHasBeenSet; }
+
+    /**
+     * <p/>
+     */
     inline void SetOwner(const Owner& value) { m_ownerHasBeenSet = true; m_owner = value; }
 
     /**
@@ -205,6 +230,11 @@ namespace Model
      * <p>Identifies who initiated the multipart upload.</p>
      */
     inline const Initiator& GetInitiator() const{ return m_initiator; }
+
+    /**
+     * <p>Identifies who initiated the multipart upload.</p>
+     */
+    inline bool InitiatorHasBeenSet() const { return m_initiatorHasBeenSet; }
 
     /**
      * <p>Identifies who initiated the multipart upload.</p>

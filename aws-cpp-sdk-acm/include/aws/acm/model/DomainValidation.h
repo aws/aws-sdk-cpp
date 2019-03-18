@@ -62,6 +62,12 @@ namespace Model
      * <p>A fully qualified domain name (FQDN) in the certificate. For example,
      * <code>www.example.com</code> or <code>example.com</code>. </p>
      */
+    inline bool DomainNameHasBeenSet() const { return m_domainNameHasBeenSet; }
+
+    /**
+     * <p>A fully qualified domain name (FQDN) in the certificate. For example,
+     * <code>www.example.com</code> or <code>example.com</code>. </p>
+     */
     inline void SetDomainName(const Aws::String& value) { m_domainNameHasBeenSet = true; m_domainName = value; }
 
     /**
@@ -99,6 +105,11 @@ namespace Model
      * <p>A list of email addresses that ACM used to send domain validation emails.</p>
      */
     inline const Aws::Vector<Aws::String>& GetValidationEmails() const{ return m_validationEmails; }
+
+    /**
+     * <p>A list of email addresses that ACM used to send domain validation emails.</p>
+     */
+    inline bool ValidationEmailsHasBeenSet() const { return m_validationEmailsHasBeenSet; }
 
     /**
      * <p>A list of email addresses that ACM used to send domain validation emails.</p>
@@ -144,6 +155,11 @@ namespace Model
     /**
      * <p>The domain name that ACM used to send domain validation emails.</p>
      */
+    inline bool ValidationDomainHasBeenSet() const { return m_validationDomainHasBeenSet; }
+
+    /**
+     * <p>The domain name that ACM used to send domain validation emails.</p>
+     */
     inline void SetValidationDomain(const Aws::String& value) { m_validationDomainHasBeenSet = true; m_validationDomain = value; }
 
     /**
@@ -178,6 +194,13 @@ namespace Model
      * <code/>SUCCESS</p> </li> <li> <p> <code/>FAILED</p> </li> </ul>
      */
     inline const DomainStatus& GetValidationStatus() const{ return m_validationStatus; }
+
+    /**
+     * <p>The validation status of the domain name. This can be one of the following
+     * values:</p> <ul> <li> <p> <code>PENDING_VALIDATION</code> </p> </li> <li> <p>
+     * <code/>SUCCESS</p> </li> <li> <p> <code/>FAILED</p> </li> </ul>
+     */
+    inline bool ValidationStatusHasBeenSet() const { return m_validationStatusHasBeenSet; }
 
     /**
      * <p>The validation status of the domain name. This can be one of the following
@@ -222,6 +245,14 @@ namespace Model
      * href="https://docs.aws.amazon.com/acm/latest/userguide/gs-acm-validate-dns.html">Use
      * DNS to Validate Domain Ownership</a>.</p>
      */
+    inline bool ResourceRecordHasBeenSet() const { return m_resourceRecordHasBeenSet; }
+
+    /**
+     * <p>Contains the CNAME record that you add to your DNS database for domain
+     * validation. For more information, see <a
+     * href="https://docs.aws.amazon.com/acm/latest/userguide/gs-acm-validate-dns.html">Use
+     * DNS to Validate Domain Ownership</a>.</p>
+     */
     inline void SetResourceRecord(const ResourceRecord& value) { m_resourceRecordHasBeenSet = true; m_resourceRecord = value; }
 
     /**
@@ -253,6 +284,11 @@ namespace Model
      * <p>Specifies the domain validation method.</p>
      */
     inline const ValidationMethod& GetValidationMethod() const{ return m_validationMethod; }
+
+    /**
+     * <p>Specifies the domain validation method.</p>
+     */
+    inline bool ValidationMethodHasBeenSet() const { return m_validationMethodHasBeenSet; }
 
     /**
      * <p>Specifies the domain validation method.</p>

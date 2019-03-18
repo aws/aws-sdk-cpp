@@ -74,6 +74,18 @@ namespace Model
      * <code>IsTruncated</code> in the previous response was <code>false</code>, there
      * are no more hosted zones to get.</p>
      */
+    inline bool MarkerHasBeenSet() const { return m_markerHasBeenSet; }
+
+    /**
+     * <p>If the value of <code>IsTruncated</code> in the previous response was
+     * <code>true</code>, you have more hosted zones. To get more hosted zones, submit
+     * another <code>ListHostedZones</code> request. </p> <p>For the value of
+     * <code>marker</code>, specify the value of <code>NextMarker</code> from the
+     * previous response, which is the ID of the first hosted zone that Amazon Route 53
+     * will return if you submit another request.</p> <p>If the value of
+     * <code>IsTruncated</code> in the previous response was <code>false</code>, there
+     * are no more hosted zones to get.</p>
+     */
     inline void SetMarker(const Aws::String& value) { m_markerHasBeenSet = true; m_marker = value; }
 
     /**
@@ -153,6 +165,15 @@ namespace Model
      * of <code>NextMarker</code> is the hosted zone ID of the first hosted zone that
      * Route 53 will return if you submit another request.</p>
      */
+    inline bool MaxItemsHasBeenSet() const { return m_maxItemsHasBeenSet; }
+
+    /**
+     * <p>(Optional) The maximum number of hosted zones that you want Amazon Route 53
+     * to return. If you have more than <code>maxitems</code> hosted zones, the value
+     * of <code>IsTruncated</code> in the response is <code>true</code>, and the value
+     * of <code>NextMarker</code> is the hosted zone ID of the first hosted zone that
+     * Route 53 will return if you submit another request.</p>
+     */
     inline void SetMaxItems(const Aws::String& value) { m_maxItemsHasBeenSet = true; m_maxItems = value; }
 
     /**
@@ -207,6 +228,13 @@ namespace Model
      * of that reusable delegation set. </p>
      */
     inline const Aws::String& GetDelegationSetId() const{ return m_delegationSetId; }
+
+    /**
+     * <p>If you're using reusable delegation sets and you want to list all of the
+     * hosted zones that are associated with a reusable delegation set, specify the ID
+     * of that reusable delegation set. </p>
+     */
+    inline bool DelegationSetIdHasBeenSet() const { return m_delegationSetIdHasBeenSet; }
 
     /**
      * <p>If you're using reusable delegation sets and you want to list all of the

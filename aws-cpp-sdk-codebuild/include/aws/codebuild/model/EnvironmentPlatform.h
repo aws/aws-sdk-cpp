@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p>The platform's name.</p>
      */
+    inline bool PlatformHasBeenSet() const { return m_platformHasBeenSet; }
+
+    /**
+     * <p>The platform's name.</p>
+     */
     inline void SetPlatform(const PlatformType& value) { m_platformHasBeenSet = true; m_platform = value; }
 
     /**
@@ -81,6 +86,12 @@ namespace Model
      * platform.</p>
      */
     inline const Aws::Vector<EnvironmentLanguage>& GetLanguages() const{ return m_languages; }
+
+    /**
+     * <p>The list of programming languages that are available for the specified
+     * platform.</p>
+     */
+    inline bool LanguagesHasBeenSet() const { return m_languagesHasBeenSet; }
 
     /**
      * <p>The list of programming languages that are available for the specified

@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>Amazon Chime account name prefix with which to filter results.</p>
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>Amazon Chime account name prefix with which to filter results.</p>
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
@@ -88,6 +93,11 @@ namespace Model
      * <p>User email address with which to filter results.</p>
      */
     inline const Aws::String& GetUserEmail() const{ return m_userEmail; }
+
+    /**
+     * <p>User email address with which to filter results.</p>
+     */
+    inline bool UserEmailHasBeenSet() const { return m_userEmailHasBeenSet; }
 
     /**
      * <p>User email address with which to filter results.</p>
@@ -128,6 +138,11 @@ namespace Model
     /**
      * <p>The token to use to retrieve the next page of results.</p>
      */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
+
+    /**
+     * <p>The token to use to retrieve the next page of results.</p>
+     */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
     /**
@@ -161,6 +176,12 @@ namespace Model
      * 100.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
+
+    /**
+     * <p>The maximum number of results to return in a single call. Defaults to
+     * 100.</p>
+     */
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
 
     /**
      * <p>The maximum number of results to return in a single call. Defaults to

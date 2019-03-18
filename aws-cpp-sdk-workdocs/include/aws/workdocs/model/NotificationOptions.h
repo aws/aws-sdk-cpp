@@ -58,6 +58,12 @@ namespace Model
      * <p>Boolean value to indicate an email notification should be sent to the
      * receipients.</p>
      */
+    inline bool SendEmailHasBeenSet() const { return m_sendEmailHasBeenSet; }
+
+    /**
+     * <p>Boolean value to indicate an email notification should be sent to the
+     * receipients.</p>
+     */
     inline void SetSendEmail(bool value) { m_sendEmailHasBeenSet = true; m_sendEmail = value; }
 
     /**
@@ -71,6 +77,11 @@ namespace Model
      * <p>Text value to be included in the email body.</p>
      */
     inline const Aws::String& GetEmailMessage() const{ return m_emailMessage; }
+
+    /**
+     * <p>Text value to be included in the email body.</p>
+     */
+    inline bool EmailMessageHasBeenSet() const { return m_emailMessageHasBeenSet; }
 
     /**
      * <p>Text value to be included in the email body.</p>

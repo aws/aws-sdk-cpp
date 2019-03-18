@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The API ID.</p>
      */
+    inline bool ApiIdHasBeenSet() const { return m_apiIdHasBeenSet; }
+
+    /**
+     * <p>The API ID.</p>
+     */
     inline void SetApiId(const Aws::String& value) { m_apiIdHasBeenSet = true; m_apiId = value; }
 
     /**
@@ -88,6 +93,11 @@ namespace Model
      * <p>The Function ID.</p>
      */
     inline const Aws::String& GetFunctionId() const{ return m_functionId; }
+
+    /**
+     * <p>The Function ID.</p>
+     */
+    inline bool FunctionIdHasBeenSet() const { return m_functionIdHasBeenSet; }
 
     /**
      * <p>The Function ID.</p>
@@ -130,6 +140,12 @@ namespace Model
      * <p>An identifier that was returned from the previous call to this operation,
      * which you can use to return the next set of items in the list.</p>
      */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
+
+    /**
+     * <p>An identifier that was returned from the previous call to this operation,
+     * which you can use to return the next set of items in the list.</p>
+     */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
     /**
@@ -167,6 +183,11 @@ namespace Model
      * <p>The maximum number of results you want the request to return.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
+
+    /**
+     * <p>The maximum number of results you want the request to return.</p>
+     */
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
 
     /**
      * <p>The maximum number of results you want the request to return.</p>

@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The name of the policy type.</p>
      */
+    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
+
+    /**
+     * <p>The name of the policy type.</p>
+     */
     inline void SetType(const PolicyType& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
@@ -81,6 +86,13 @@ namespace Model
      * must be available in the organization and enabled for that root.</p>
      */
     inline const PolicyTypeStatus& GetStatus() const{ return m_status; }
+
+    /**
+     * <p>The status of the policy type as it relates to the associated root. To attach
+     * a policy of the specified type to a root or to an OU or account in that root, it
+     * must be available in the organization and enabled for that root.</p>
+     */
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
     /**
      * <p>The status of the policy type as it relates to the associated root. To attach

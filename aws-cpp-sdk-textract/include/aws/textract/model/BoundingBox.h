@@ -67,6 +67,12 @@ namespace Model
      * <p>The width of the bounding box as a ratio of the overall document page
      * width.</p>
      */
+    inline bool WidthHasBeenSet() const { return m_widthHasBeenSet; }
+
+    /**
+     * <p>The width of the bounding box as a ratio of the overall document page
+     * width.</p>
+     */
     inline void SetWidth(double value) { m_widthHasBeenSet = true; m_width = value; }
 
     /**
@@ -81,6 +87,12 @@ namespace Model
      * height.</p>
      */
     inline double GetHeight() const{ return m_height; }
+
+    /**
+     * <p>The height of the bounding box as a ratio of the overall document page
+     * height.</p>
+     */
+    inline bool HeightHasBeenSet() const { return m_heightHasBeenSet; }
 
     /**
      * <p>The height of the bounding box as a ratio of the overall document page
@@ -105,6 +117,12 @@ namespace Model
      * <p>The left coordinate of the bounding box as a ratio of overall document page
      * width.</p>
      */
+    inline bool LeftHasBeenSet() const { return m_leftHasBeenSet; }
+
+    /**
+     * <p>The left coordinate of the bounding box as a ratio of overall document page
+     * width.</p>
+     */
     inline void SetLeft(double value) { m_leftHasBeenSet = true; m_left = value; }
 
     /**
@@ -119,6 +137,12 @@ namespace Model
      * height.</p>
      */
     inline double GetTop() const{ return m_top; }
+
+    /**
+     * <p>The top coordinate of the bounding box as a ratio of overall document page
+     * height.</p>
+     */
+    inline bool TopHasBeenSet() const { return m_topHasBeenSet; }
 
     /**
      * <p>The top coordinate of the bounding box as a ratio of overall document page

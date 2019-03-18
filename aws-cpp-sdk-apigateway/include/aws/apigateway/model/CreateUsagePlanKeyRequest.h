@@ -58,6 +58,13 @@ namespace Model
      * plan containing the to-be-created <a>UsagePlanKey</a> resource representing a
      * plan customer.</p>
      */
+    inline bool UsagePlanIdHasBeenSet() const { return m_usagePlanIdHasBeenSet; }
+
+    /**
+     * <p>[Required] The Id of the <a>UsagePlan</a> resource representing the usage
+     * plan containing the to-be-created <a>UsagePlanKey</a> resource representing a
+     * plan customer.</p>
+     */
     inline void SetUsagePlanId(const Aws::String& value) { m_usagePlanIdHasBeenSet = true; m_usagePlanId = value; }
 
     /**
@@ -106,6 +113,12 @@ namespace Model
      * <p>[Required] The identifier of a <a>UsagePlanKey</a> resource for a plan
      * customer.</p>
      */
+    inline bool KeyIdHasBeenSet() const { return m_keyIdHasBeenSet; }
+
+    /**
+     * <p>[Required] The identifier of a <a>UsagePlanKey</a> resource for a plan
+     * customer.</p>
+     */
     inline void SetKeyId(const Aws::String& value) { m_keyIdHasBeenSet = true; m_keyId = value; }
 
     /**
@@ -144,6 +157,12 @@ namespace Model
      * customer.</p>
      */
     inline const Aws::String& GetKeyType() const{ return m_keyType; }
+
+    /**
+     * <p>[Required] The type of a <a>UsagePlanKey</a> resource for a plan
+     * customer.</p>
+     */
+    inline bool KeyTypeHasBeenSet() const { return m_keyTypeHasBeenSet; }
 
     /**
      * <p>[Required] The type of a <a>UsagePlanKey</a> resource for a plan

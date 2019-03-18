@@ -55,6 +55,12 @@ namespace Model
      * <p>The S3 bucket that contains the object to sign or a BLOB that contains your
      * raw code.</p>
      */
+    inline bool SourceHasBeenSet() const { return m_sourceHasBeenSet; }
+
+    /**
+     * <p>The S3 bucket that contains the object to sign or a BLOB that contains your
+     * raw code.</p>
+     */
     inline void SetSource(const Source& value) { m_sourceHasBeenSet = true; m_source = value; }
 
     /**
@@ -86,6 +92,12 @@ namespace Model
      * <p>The S3 bucket in which to save your signed object. The destination contains
      * the name of your bucket and an optional prefix.</p>
      */
+    inline bool DestinationHasBeenSet() const { return m_destinationHasBeenSet; }
+
+    /**
+     * <p>The S3 bucket in which to save your signed object. The destination contains
+     * the name of your bucket and an optional prefix.</p>
+     */
     inline void SetDestination(const Destination& value) { m_destinationHasBeenSet = true; m_destination = value; }
 
     /**
@@ -111,6 +123,11 @@ namespace Model
      * <p>The name of the signing profile.</p>
      */
     inline const Aws::String& GetProfileName() const{ return m_profileName; }
+
+    /**
+     * <p>The name of the signing profile.</p>
+     */
+    inline bool ProfileNameHasBeenSet() const { return m_profileNameHasBeenSet; }
 
     /**
      * <p>The name of the signing profile.</p>
@@ -148,6 +165,12 @@ namespace Model
      * use this token return the same response as the first call.</p>
      */
     inline const Aws::String& GetClientRequestToken() const{ return m_clientRequestToken; }
+
+    /**
+     * <p>String that identifies the signing request. All calls after the first that
+     * use this token return the same response as the first call.</p>
+     */
+    inline bool ClientRequestTokenHasBeenSet() const { return m_clientRequestTokenHasBeenSet; }
 
     /**
      * <p>String that identifies the signing request. All calls after the first that

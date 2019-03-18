@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
      */
+    inline bool RestApiIdHasBeenSet() const { return m_restApiIdHasBeenSet; }
+
+    /**
+     * <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
+     */
     inline void SetRestApiId(const Aws::String& value) { m_restApiIdHasBeenSet = true; m_restApiId = value; }
 
     /**
@@ -90,6 +95,12 @@ namespace Model
      * create.</p>
      */
     inline const Aws::String& GetStageName() const{ return m_stageName; }
+
+    /**
+     * <p>The name of the <a>Stage</a> resource for the <a>Deployment</a> resource to
+     * create.</p>
+     */
+    inline bool StageNameHasBeenSet() const { return m_stageNameHasBeenSet; }
 
     /**
      * <p>The name of the <a>Stage</a> resource for the <a>Deployment</a> resource to
@@ -138,6 +149,12 @@ namespace Model
      * <p>The description of the <a>Stage</a> resource for the <a>Deployment</a>
      * resource to create.</p>
      */
+    inline bool StageDescriptionHasBeenSet() const { return m_stageDescriptionHasBeenSet; }
+
+    /**
+     * <p>The description of the <a>Stage</a> resource for the <a>Deployment</a>
+     * resource to create.</p>
+     */
     inline void SetStageDescription(const Aws::String& value) { m_stageDescriptionHasBeenSet = true; m_stageDescription = value; }
 
     /**
@@ -175,6 +192,11 @@ namespace Model
      * <p>The description for the <a>Deployment</a> resource to create.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
+
+    /**
+     * <p>The description for the <a>Deployment</a> resource to create.</p>
+     */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
 
     /**
      * <p>The description for the <a>Deployment</a> resource to create.</p>
@@ -217,6 +239,12 @@ namespace Model
      * <p>Enables a cache cluster for the <a>Stage</a> resource specified in the
      * input.</p>
      */
+    inline bool CacheClusterEnabledHasBeenSet() const { return m_cacheClusterEnabledHasBeenSet; }
+
+    /**
+     * <p>Enables a cache cluster for the <a>Stage</a> resource specified in the
+     * input.</p>
+     */
     inline void SetCacheClusterEnabled(bool value) { m_cacheClusterEnabledHasBeenSet = true; m_cacheClusterEnabled = value; }
 
     /**
@@ -231,6 +259,12 @@ namespace Model
      * the input, if a cache cluster is enabled.</p>
      */
     inline const CacheClusterSize& GetCacheClusterSize() const{ return m_cacheClusterSize; }
+
+    /**
+     * <p>Specifies the cache cluster size for the <a>Stage</a> resource specified in
+     * the input, if a cache cluster is enabled.</p>
+     */
+    inline bool CacheClusterSizeHasBeenSet() const { return m_cacheClusterSizeHasBeenSet; }
 
     /**
      * <p>Specifies the cache cluster size for the <a>Stage</a> resource specified in
@@ -264,6 +298,14 @@ namespace Model
      * <code>[A-Za-z0-9-._~:/?#&amp;=,]+</code>.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetVariables() const{ return m_variables; }
+
+    /**
+     * <p>A map that defines the stage variables for the <a>Stage</a> resource that is
+     * associated with the new deployment. Variable names can have alphanumeric and
+     * underscore characters, and the values must match
+     * <code>[A-Za-z0-9-._~:/?#&amp;=,]+</code>.</p>
+     */
+    inline bool VariablesHasBeenSet() const { return m_variablesHasBeenSet; }
 
     /**
      * <p>A map that defines the stage variables for the <a>Stage</a> resource that is
@@ -364,6 +406,12 @@ namespace Model
      * <p>The input configuration for the canary deployment when the deployment is a
      * canary release deployment. </p>
      */
+    inline bool CanarySettingsHasBeenSet() const { return m_canarySettingsHasBeenSet; }
+
+    /**
+     * <p>The input configuration for the canary deployment when the deployment is a
+     * canary release deployment. </p>
+     */
     inline void SetCanarySettings(const DeploymentCanarySettings& value) { m_canarySettingsHasBeenSet = true; m_canarySettings = value; }
 
     /**
@@ -390,6 +438,12 @@ namespace Model
      * <a>Stage</a>.</p>
      */
     inline bool GetTracingEnabled() const{ return m_tracingEnabled; }
+
+    /**
+     * <p>Specifies whether active tracing with X-ray is enabled for the
+     * <a>Stage</a>.</p>
+     */
+    inline bool TracingEnabledHasBeenSet() const { return m_tracingEnabledHasBeenSet; }
 
     /**
      * <p>Specifies whether active tracing with X-ray is enabled for the

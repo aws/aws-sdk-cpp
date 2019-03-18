@@ -61,6 +61,12 @@ namespace Model
      * <p>The primary key of the item to be checked. Each element consists of an
      * attribute name and a value for that attribute.</p>
      */
+    inline bool KeyHasBeenSet() const { return m_keyHasBeenSet; }
+
+    /**
+     * <p>The primary key of the item to be checked. Each element consists of an
+     * attribute name and a value for that attribute.</p>
+     */
     inline void SetKey(const Aws::Map<Aws::String, AttributeValue>& value) { m_keyHasBeenSet = true; m_key = value; }
 
     /**
@@ -126,6 +132,11 @@ namespace Model
     /**
      * <p>Name of the table for the check item request.</p>
      */
+    inline bool TableNameHasBeenSet() const { return m_tableNameHasBeenSet; }
+
+    /**
+     * <p>Name of the table for the check item request.</p>
+     */
     inline void SetTableName(const Aws::String& value) { m_tableNameHasBeenSet = true; m_tableName = value; }
 
     /**
@@ -159,6 +170,12 @@ namespace Model
      * succeed.</p>
      */
     inline const Aws::String& GetConditionExpression() const{ return m_conditionExpression; }
+
+    /**
+     * <p>A condition that must be satisfied in order for a conditional update to
+     * succeed.</p>
+     */
+    inline bool ConditionExpressionHasBeenSet() const { return m_conditionExpressionHasBeenSet; }
 
     /**
      * <p>A condition that must be satisfied in order for a conditional update to
@@ -201,6 +218,11 @@ namespace Model
      * <p>One or more substitution tokens for attribute names in an expression.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetExpressionAttributeNames() const{ return m_expressionAttributeNames; }
+
+    /**
+     * <p>One or more substitution tokens for attribute names in an expression.</p>
+     */
+    inline bool ExpressionAttributeNamesHasBeenSet() const { return m_expressionAttributeNamesHasBeenSet; }
 
     /**
      * <p>One or more substitution tokens for attribute names in an expression.</p>
@@ -266,6 +288,11 @@ namespace Model
     /**
      * <p>One or more values that can be substituted in an expression.</p>
      */
+    inline bool ExpressionAttributeValuesHasBeenSet() const { return m_expressionAttributeValuesHasBeenSet; }
+
+    /**
+     * <p>One or more values that can be substituted in an expression.</p>
+     */
     inline void SetExpressionAttributeValues(const Aws::Map<Aws::String, AttributeValue>& value) { m_expressionAttributeValuesHasBeenSet = true; m_expressionAttributeValues = value; }
 
     /**
@@ -321,6 +348,14 @@ namespace Model
      * ALL_OLD.</p>
      */
     inline const ReturnValuesOnConditionCheckFailure& GetReturnValuesOnConditionCheckFailure() const{ return m_returnValuesOnConditionCheckFailure; }
+
+    /**
+     * <p>Use <code>ReturnValuesOnConditionCheckFailure</code> to get the item
+     * attributes if the <code>ConditionCheck</code> condition fails. For
+     * <code>ReturnValuesOnConditionCheckFailure</code>, the valid values are: NONE and
+     * ALL_OLD.</p>
+     */
+    inline bool ReturnValuesOnConditionCheckFailureHasBeenSet() const { return m_returnValuesOnConditionCheckFailureHasBeenSet; }
 
     /**
      * <p>Use <code>ReturnValuesOnConditionCheckFailure</code> to get the item

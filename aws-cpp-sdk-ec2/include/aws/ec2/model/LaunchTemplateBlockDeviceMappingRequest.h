@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p>The device name (for example, /dev/sdh or xvdh).</p>
      */
+    inline bool DeviceNameHasBeenSet() const { return m_deviceNameHasBeenSet; }
+
+    /**
+     * <p>The device name (for example, /dev/sdh or xvdh).</p>
+     */
     inline void SetDeviceName(const Aws::String& value) { m_deviceNameHasBeenSet = true; m_deviceName = value; }
 
     /**
@@ -94,6 +99,15 @@ namespace Model
      * you must mount the volume.</p>
      */
     inline const Aws::String& GetVirtualName() const{ return m_virtualName; }
+
+    /**
+     * <p>The virtual device name (ephemeralN). Instance store volumes are numbered
+     * starting from 0. An instance type with 2 available instance store volumes can
+     * specify mappings for ephemeral0 and ephemeral1. The number of available instance
+     * store volumes depends on the instance type. After you connect to the instance,
+     * you must mount the volume.</p>
+     */
+    inline bool VirtualNameHasBeenSet() const { return m_virtualNameHasBeenSet; }
 
     /**
      * <p>The virtual device name (ephemeralN). Instance store volumes are numbered
@@ -160,6 +174,12 @@ namespace Model
      * <p>Parameters used to automatically set up EBS volumes when the instance is
      * launched.</p>
      */
+    inline bool EbsHasBeenSet() const { return m_ebsHasBeenSet; }
+
+    /**
+     * <p>Parameters used to automatically set up EBS volumes when the instance is
+     * launched.</p>
+     */
     inline void SetEbs(const LaunchTemplateEbsBlockDeviceRequest& value) { m_ebsHasBeenSet = true; m_ebs = value; }
 
     /**
@@ -186,6 +206,12 @@ namespace Model
      * AMI.</p>
      */
     inline const Aws::String& GetNoDevice() const{ return m_noDevice; }
+
+    /**
+     * <p>Suppresses the specified device included in the block device mapping of the
+     * AMI.</p>
+     */
+    inline bool NoDeviceHasBeenSet() const { return m_noDeviceHasBeenSet; }
 
     /**
      * <p>Suppresses the specified device included in the block device mapping of the

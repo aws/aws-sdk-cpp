@@ -52,6 +52,11 @@ namespace Model
     /**
      * <p>The automatically generated ID for a cluster.</p>
      */
+    inline bool ClusterIdHasBeenSet() const { return m_clusterIdHasBeenSet; }
+
+    /**
+     * <p>The automatically generated ID for a cluster.</p>
+     */
     inline void SetClusterId(const Aws::String& value) { m_clusterIdHasBeenSet = true; m_clusterId = value; }
 
     /**

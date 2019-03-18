@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>Entity tag of the object.</p>
      */
+    inline bool ETagHasBeenSet() const { return m_eTagHasBeenSet; }
+
+    /**
+     * <p>Entity tag of the object.</p>
+     */
     inline void SetETag(const Aws::String& value) { m_eTagHasBeenSet = true; m_eTag = value; }
 
     /**
@@ -88,6 +93,11 @@ namespace Model
      * <p>Date and time at which the object was uploaded.</p>
      */
     inline const Aws::Utils::DateTime& GetLastModified() const{ return m_lastModified; }
+
+    /**
+     * <p>Date and time at which the object was uploaded.</p>
+     */
+    inline bool LastModifiedHasBeenSet() const { return m_lastModifiedHasBeenSet; }
 
     /**
      * <p>Date and time at which the object was uploaded.</p>

@@ -60,6 +60,14 @@ request. Up to 36 letters, numbers, hyphens, and underscores are
 request. Up to 36 letters, numbers, hyphens, and underscores are
      * allowed.</p>
      */
+    inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
+
+    /**
+     * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
+     * of the
+request. Up to 36 letters, numbers, hyphens, and underscores are
+     * allowed.</p>
+     */
     inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
 
     /**
@@ -107,6 +115,11 @@ request. Up to 36 letters, numbers, hyphens, and underscores are
      * <p>The name to use for the service mesh.</p>
      */
     inline const Aws::String& GetMeshName() const{ return m_meshName; }
+
+    /**
+     * <p>The name to use for the service mesh.</p>
+     */
+    inline bool MeshNameHasBeenSet() const { return m_meshNameHasBeenSet; }
 
     /**
      * <p>The name to use for the service mesh.</p>

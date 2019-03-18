@@ -63,6 +63,14 @@ namespace Model
      * <code>ml.m5.large</code> should suffice. There is no default value for
      * <code>InstanceType</code>.</p>
      */
+    inline bool InstanceTypeHasBeenSet() const { return m_instanceTypeHasBeenSet; }
+
+    /**
+     * <p>The ML compute instance type for the transform job. For using built-in
+     * algorithms to transform moderately sized datasets, ml.m4.xlarge or
+     * <code>ml.m5.large</code> should suffice. There is no default value for
+     * <code>InstanceType</code>.</p>
+     */
     inline void SetInstanceType(const TransformInstanceType& value) { m_instanceTypeHasBeenSet = true; m_instanceType = value; }
 
     /**
@@ -102,6 +110,13 @@ namespace Model
      * distributed transform, provide a value greater than 1. The default value is
      * <code>1</code>.</p>
      */
+    inline bool InstanceCountHasBeenSet() const { return m_instanceCountHasBeenSet; }
+
+    /**
+     * <p>The number of ML compute instances to use in the transform job. For
+     * distributed transform, provide a value greater than 1. The default value is
+     * <code>1</code>.</p>
+     */
     inline void SetInstanceCount(int value) { m_instanceCountHasBeenSet = true; m_instanceCount = value; }
 
     /**
@@ -123,6 +138,18 @@ namespace Model
      * </p> </li> </ul>
      */
     inline const Aws::String& GetVolumeKmsKeyId() const{ return m_volumeKmsKeyId; }
+
+    /**
+     * <p>The AWS Key Management Service (AWS KMS) key that Amazon SageMaker uses to
+     * encrypt data on the storage volume attached to the ML compute instance(s) that
+     * run the batch transform job. The <code>VolumeKmsKeyId</code> can be any of the
+     * following formats:</p> <ul> <li> <p>// KMS Key ID</p> <p>
+     * <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li> <li> <p>// Amazon
+     * Resource Name (ARN) of a KMS Key</p> <p>
+     * <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>
+     * </p> </li> </ul>
+     */
+    inline bool VolumeKmsKeyIdHasBeenSet() const { return m_volumeKmsKeyIdHasBeenSet; }
 
     /**
      * <p>The AWS Key Management Service (AWS KMS) key that Amazon SageMaker uses to

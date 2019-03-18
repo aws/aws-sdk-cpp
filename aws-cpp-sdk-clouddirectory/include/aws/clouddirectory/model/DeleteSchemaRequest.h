@@ -54,6 +54,12 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the development schema. For more
      * information, see <a>arns</a>.</p>
      */
+    inline bool SchemaArnHasBeenSet() const { return m_schemaArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the development schema. For more
+     * information, see <a>arns</a>.</p>
+     */
     inline void SetSchemaArn(const Aws::String& value) { m_schemaArnHasBeenSet = true; m_schemaArn = value; }
 
     /**

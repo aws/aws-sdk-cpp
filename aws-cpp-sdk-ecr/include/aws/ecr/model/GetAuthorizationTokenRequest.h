@@ -57,6 +57,13 @@ namespace Model
      * to get authorization tokens. If you do not specify a registry, the default
      * registry is assumed.</p>
      */
+    inline bool RegistryIdsHasBeenSet() const { return m_registryIdsHasBeenSet; }
+
+    /**
+     * <p>A list of AWS account IDs that are associated with the registries for which
+     * to get authorization tokens. If you do not specify a registry, the default
+     * registry is assumed.</p>
+     */
     inline void SetRegistryIds(const Aws::Vector<Aws::String>& value) { m_registryIdsHasBeenSet = true; m_registryIds = value; }
 
     /**

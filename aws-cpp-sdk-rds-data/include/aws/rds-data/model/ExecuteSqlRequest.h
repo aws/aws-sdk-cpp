@@ -53,6 +53,11 @@ namespace Model
     /**
      * ARN of the db credentials in AWS Secret Store or the friendly secret name
      */
+    inline bool AwsSecretStoreArnHasBeenSet() const { return m_awsSecretStoreArnHasBeenSet; }
+
+    /**
+     * ARN of the db credentials in AWS Secret Store or the friendly secret name
+     */
     inline void SetAwsSecretStoreArn(const Aws::String& value) { m_awsSecretStoreArnHasBeenSet = true; m_awsSecretStoreArn = value; }
 
     /**
@@ -85,6 +90,11 @@ namespace Model
      * Target DB name
      */
     inline const Aws::String& GetDatabase() const{ return m_database; }
+
+    /**
+     * Target DB name
+     */
+    inline bool DatabaseHasBeenSet() const { return m_databaseHasBeenSet; }
 
     /**
      * Target DB name
@@ -125,6 +135,11 @@ namespace Model
     /**
      * ARN of the target db cluster or instance
      */
+    inline bool DbClusterOrInstanceArnHasBeenSet() const { return m_dbClusterOrInstanceArnHasBeenSet; }
+
+    /**
+     * ARN of the target db cluster or instance
+     */
     inline void SetDbClusterOrInstanceArn(const Aws::String& value) { m_dbClusterOrInstanceArnHasBeenSet = true; m_dbClusterOrInstanceArn = value; }
 
     /**
@@ -161,6 +176,11 @@ namespace Model
     /**
      * Target Schema name
      */
+    inline bool SchemaHasBeenSet() const { return m_schemaHasBeenSet; }
+
+    /**
+     * Target Schema name
+     */
     inline void SetSchema(const Aws::String& value) { m_schemaHasBeenSet = true; m_schema = value; }
 
     /**
@@ -193,6 +213,11 @@ namespace Model
      * SQL statement(s) to be executed. Statements can be chained by using semicolons
      */
     inline const Aws::String& GetSqlStatements() const{ return m_sqlStatements; }
+
+    /**
+     * SQL statement(s) to be executed. Statements can be chained by using semicolons
+     */
+    inline bool SqlStatementsHasBeenSet() const { return m_sqlStatementsHasBeenSet; }
 
     /**
      * SQL statement(s) to be executed. Statements can be chained by using semicolons

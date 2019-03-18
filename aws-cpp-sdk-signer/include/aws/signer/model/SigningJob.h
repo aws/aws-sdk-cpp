@@ -60,6 +60,11 @@ namespace Model
     /**
      * <p>The ID of the signing job.</p>
      */
+    inline bool JobIdHasBeenSet() const { return m_jobIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the signing job.</p>
+     */
     inline void SetJobId(const Aws::String& value) { m_jobIdHasBeenSet = true; m_jobId = value; }
 
     /**
@@ -98,6 +103,12 @@ namespace Model
      * <p>A <code>Source</code> that contains information about a signing job's code
      * image source.</p>
      */
+    inline bool SourceHasBeenSet() const { return m_sourceHasBeenSet; }
+
+    /**
+     * <p>A <code>Source</code> that contains information about a signing job's code
+     * image source.</p>
+     */
     inline void SetSource(const Source& value) { m_sourceHasBeenSet = true; m_source = value; }
 
     /**
@@ -124,6 +135,12 @@ namespace Model
      * signing job's signed code image.</p>
      */
     inline const SignedObject& GetSignedObject() const{ return m_signedObject; }
+
+    /**
+     * <p>A <code>SignedObject</code> structure that contains information about a
+     * signing job's signed code image.</p>
+     */
+    inline bool SignedObjectHasBeenSet() const { return m_signedObjectHasBeenSet; }
 
     /**
      * <p>A <code>SignedObject</code> structure that contains information about a
@@ -160,6 +177,12 @@ namespace Model
      * <p>A <code>SigningMaterial</code> object that contains the Amazon Resource Name
      * (ARN) of the certificate used for the signing job.</p>
      */
+    inline bool SigningMaterialHasBeenSet() const { return m_signingMaterialHasBeenSet; }
+
+    /**
+     * <p>A <code>SigningMaterial</code> object that contains the Amazon Resource Name
+     * (ARN) of the certificate used for the signing job.</p>
+     */
     inline void SetSigningMaterial(const SigningMaterial& value) { m_signingMaterialHasBeenSet = true; m_signingMaterial = value; }
 
     /**
@@ -189,6 +212,11 @@ namespace Model
     /**
      * <p>The date and time that the signing job was created.</p>
      */
+    inline bool CreatedAtHasBeenSet() const { return m_createdAtHasBeenSet; }
+
+    /**
+     * <p>The date and time that the signing job was created.</p>
+     */
     inline void SetCreatedAt(const Aws::Utils::DateTime& value) { m_createdAtHasBeenSet = true; m_createdAt = value; }
 
     /**
@@ -211,6 +239,11 @@ namespace Model
      * <p>The status of the signing job.</p>
      */
     inline const SigningStatus& GetStatus() const{ return m_status; }
+
+    /**
+     * <p>The status of the signing job.</p>
+     */
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
     /**
      * <p>The status of the signing job.</p>

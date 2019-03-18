@@ -62,6 +62,13 @@ namespace Model
      * Checkpointing is the process of persisting application state for fault
      * tolerance.</p>
      */
+    inline bool CheckpointConfigurationUpdateHasBeenSet() const { return m_checkpointConfigurationUpdateHasBeenSet; }
+
+    /**
+     * <p>Describes updates to an application's checkpointing configuration.
+     * Checkpointing is the process of persisting application state for fault
+     * tolerance.</p>
+     */
     inline void SetCheckpointConfigurationUpdate(const CheckpointConfigurationUpdate& value) { m_checkpointConfigurationUpdateHasBeenSet = true; m_checkpointConfigurationUpdate = value; }
 
     /**
@@ -96,6 +103,12 @@ namespace Model
      * <p>Describes updates to the configuration parameters for Amazon CloudWatch
      * logging for an application.</p>
      */
+    inline bool MonitoringConfigurationUpdateHasBeenSet() const { return m_monitoringConfigurationUpdateHasBeenSet; }
+
+    /**
+     * <p>Describes updates to the configuration parameters for Amazon CloudWatch
+     * logging for an application.</p>
+     */
     inline void SetMonitoringConfigurationUpdate(const MonitoringConfigurationUpdate& value) { m_monitoringConfigurationUpdateHasBeenSet = true; m_monitoringConfigurationUpdate = value; }
 
     /**
@@ -122,6 +135,12 @@ namespace Model
      * tasks simultaneously.</p>
      */
     inline const ParallelismConfigurationUpdate& GetParallelismConfigurationUpdate() const{ return m_parallelismConfigurationUpdate; }
+
+    /**
+     * <p>Describes updates to the parameters for how an application executes multiple
+     * tasks simultaneously.</p>
+     */
+    inline bool ParallelismConfigurationUpdateHasBeenSet() const { return m_parallelismConfigurationUpdateHasBeenSet; }
 
     /**
      * <p>Describes updates to the parameters for how an application executes multiple

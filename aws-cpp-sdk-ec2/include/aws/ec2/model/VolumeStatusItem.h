@@ -61,6 +61,11 @@ namespace Model
     /**
      * <p>The details of the operation.</p>
      */
+    inline bool ActionsHasBeenSet() const { return m_actionsHasBeenSet; }
+
+    /**
+     * <p>The details of the operation.</p>
+     */
     inline void SetActions(const Aws::Vector<VolumeStatusAction>& value) { m_actionsHasBeenSet = true; m_actions = value; }
 
     /**
@@ -93,6 +98,11 @@ namespace Model
      * <p>The Availability Zone of the volume.</p>
      */
     inline const Aws::String& GetAvailabilityZone() const{ return m_availabilityZone; }
+
+    /**
+     * <p>The Availability Zone of the volume.</p>
+     */
+    inline bool AvailabilityZoneHasBeenSet() const { return m_availabilityZoneHasBeenSet; }
 
     /**
      * <p>The Availability Zone of the volume.</p>
@@ -133,6 +143,11 @@ namespace Model
     /**
      * <p>A list of events associated with the volume.</p>
      */
+    inline bool EventsHasBeenSet() const { return m_eventsHasBeenSet; }
+
+    /**
+     * <p>A list of events associated with the volume.</p>
+     */
     inline void SetEvents(const Aws::Vector<VolumeStatusEvent>& value) { m_eventsHasBeenSet = true; m_events = value; }
 
     /**
@@ -169,6 +184,11 @@ namespace Model
     /**
      * <p>The volume ID.</p>
      */
+    inline bool VolumeIdHasBeenSet() const { return m_volumeIdHasBeenSet; }
+
+    /**
+     * <p>The volume ID.</p>
+     */
     inline void SetVolumeId(const Aws::String& value) { m_volumeIdHasBeenSet = true; m_volumeId = value; }
 
     /**
@@ -201,6 +221,11 @@ namespace Model
      * <p>The volume status.</p>
      */
     inline const VolumeStatusInfo& GetVolumeStatus() const{ return m_volumeStatus; }
+
+    /**
+     * <p>The volume status.</p>
+     */
+    inline bool VolumeStatusHasBeenSet() const { return m_volumeStatusHasBeenSet; }
 
     /**
      * <p>The volume status.</p>

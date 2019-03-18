@@ -51,6 +51,11 @@ namespace Model
     /**
      * <p>The ARN of the fleet.</p>
      */
+    inline bool FleetArnHasBeenSet() const { return m_fleetArnHasBeenSet; }
+
+    /**
+     * <p>The ARN of the fleet.</p>
+     */
     inline void SetFleetArn(const Aws::String& value) { m_fleetArnHasBeenSet = true; m_fleetArn = value; }
 
     /**
@@ -83,6 +88,11 @@ namespace Model
      * <p>The VPC with connectivity to associated websites.</p>
      */
     inline const Aws::String& GetVpcId() const{ return m_vpcId; }
+
+    /**
+     * <p>The VPC with connectivity to associated websites.</p>
+     */
+    inline bool VpcIdHasBeenSet() const { return m_vpcIdHasBeenSet; }
 
     /**
      * <p>The VPC with connectivity to associated websites.</p>
@@ -120,6 +130,12 @@ namespace Model
      * containers.</p>
      */
     inline const Aws::Vector<Aws::String>& GetSubnetIds() const{ return m_subnetIds; }
+
+    /**
+     * <p>The subnets used for X-ENI connections from Amazon WorkLink rendering
+     * containers.</p>
+     */
+    inline bool SubnetIdsHasBeenSet() const { return m_subnetIdsHasBeenSet; }
 
     /**
      * <p>The subnets used for X-ENI connections from Amazon WorkLink rendering
@@ -168,6 +184,11 @@ namespace Model
      * <p>The security groups associated with access to the provided subnets.</p>
      */
     inline const Aws::Vector<Aws::String>& GetSecurityGroupIds() const{ return m_securityGroupIds; }
+
+    /**
+     * <p>The security groups associated with access to the provided subnets.</p>
+     */
+    inline bool SecurityGroupIdsHasBeenSet() const { return m_securityGroupIdsHasBeenSet; }
 
     /**
      * <p>The security groups associated with access to the provided subnets.</p>

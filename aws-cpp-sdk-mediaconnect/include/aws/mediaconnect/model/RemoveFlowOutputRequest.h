@@ -50,6 +50,11 @@ namespace Model
     /**
      * The flow that you want to remove an output from.
      */
+    inline bool FlowArnHasBeenSet() const { return m_flowArnHasBeenSet; }
+
+    /**
+     * The flow that you want to remove an output from.
+     */
     inline void SetFlowArn(const Aws::String& value) { m_flowArnHasBeenSet = true; m_flowArn = value; }
 
     /**
@@ -82,6 +87,11 @@ namespace Model
      * The ARN of the output that you want to remove.
      */
     inline const Aws::String& GetOutputArn() const{ return m_outputArn; }
+
+    /**
+     * The ARN of the output that you want to remove.
+     */
+    inline bool OutputArnHasBeenSet() const { return m_outputArnHasBeenSet; }
 
     /**
      * The ARN of the output that you want to remove.

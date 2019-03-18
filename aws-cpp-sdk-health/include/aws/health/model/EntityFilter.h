@@ -66,6 +66,14 @@ namespace Model
      * "arn:aws:health:us-west-1::event/EBS/AWS_EBS_LOST_VOLUME/AWS_EBS_LOST_VOLUME_CHI789_JKL101"</code>
      * </p>
      */
+    inline bool EventArnsHasBeenSet() const { return m_eventArnsHasBeenSet; }
+
+    /**
+     * <p>A list of event ARNs (unique identifiers). For example:
+     * <code>"arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-CDE456",
+     * "arn:aws:health:us-west-1::event/EBS/AWS_EBS_LOST_VOLUME/AWS_EBS_LOST_VOLUME_CHI789_JKL101"</code>
+     * </p>
+     */
     inline void SetEventArns(const Aws::Vector<Aws::String>& value) { m_eventArnsHasBeenSet = true; m_eventArns = value; }
 
     /**
@@ -125,6 +133,11 @@ namespace Model
     /**
      * <p>A list of entity ARNs (unique identifiers).</p>
      */
+    inline bool EntityArnsHasBeenSet() const { return m_entityArnsHasBeenSet; }
+
+    /**
+     * <p>A list of entity ARNs (unique identifiers).</p>
+     */
     inline void SetEntityArns(const Aws::Vector<Aws::String>& value) { m_entityArnsHasBeenSet = true; m_entityArns = value; }
 
     /**
@@ -162,6 +175,11 @@ namespace Model
      * <p>A list of IDs for affected entities.</p>
      */
     inline const Aws::Vector<Aws::String>& GetEntityValues() const{ return m_entityValues; }
+
+    /**
+     * <p>A list of IDs for affected entities.</p>
+     */
+    inline bool EntityValuesHasBeenSet() const { return m_entityValuesHasBeenSet; }
 
     /**
      * <p>A list of IDs for affected entities.</p>
@@ -207,6 +225,11 @@ namespace Model
     /**
      * <p>A list of the most recent dates and times that the entity was updated.</p>
      */
+    inline bool LastUpdatedTimesHasBeenSet() const { return m_lastUpdatedTimesHasBeenSet; }
+
+    /**
+     * <p>A list of the most recent dates and times that the entity was updated.</p>
+     */
     inline void SetLastUpdatedTimes(const Aws::Vector<DateTimeRange>& value) { m_lastUpdatedTimesHasBeenSet = true; m_lastUpdatedTimes = value; }
 
     /**
@@ -239,6 +262,11 @@ namespace Model
      * <p>A map of entity tags attached to the affected entity.</p>
      */
     inline const Aws::Vector<Aws::Map<Aws::String, Aws::String>>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>A map of entity tags attached to the affected entity.</p>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
      * <p>A map of entity tags attached to the affected entity.</p>
@@ -276,6 +304,12 @@ namespace Model
      * <code>UNIMPAIRED</code>, or <code>UNKNOWN</code>).</p>
      */
     inline const Aws::Vector<EntityStatusCode>& GetStatusCodes() const{ return m_statusCodes; }
+
+    /**
+     * <p>A list of entity status codes (<code>IMPAIRED</code>,
+     * <code>UNIMPAIRED</code>, or <code>UNKNOWN</code>).</p>
+     */
+    inline bool StatusCodesHasBeenSet() const { return m_statusCodesHasBeenSet; }
 
     /**
      * <p>A list of entity status codes (<code>IMPAIRED</code>,

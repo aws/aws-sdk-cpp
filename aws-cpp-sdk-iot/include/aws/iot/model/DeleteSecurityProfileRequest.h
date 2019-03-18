@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The name of the security profile to be deleted.</p>
      */
+    inline bool SecurityProfileNameHasBeenSet() const { return m_securityProfileNameHasBeenSet; }
+
+    /**
+     * <p>The name of the security profile to be deleted.</p>
+     */
     inline void SetSecurityProfileName(const Aws::String& value) { m_securityProfileNameHasBeenSet = true; m_securityProfileName = value; }
 
     /**
@@ -91,6 +96,14 @@ namespace Model
      * thrown.</p>
      */
     inline long long GetExpectedVersion() const{ return m_expectedVersion; }
+
+    /**
+     * <p>The expected version of the security profile. A new version is generated
+     * whenever the security profile is updated. If you specify a value that is
+     * different than the actual version, a <code>VersionConflictException</code> is
+     * thrown.</p>
+     */
+    inline bool ExpectedVersionHasBeenSet() const { return m_expectedVersionHasBeenSet; }
 
     /**
      * <p>The expected version of the security profile. A new version is generated

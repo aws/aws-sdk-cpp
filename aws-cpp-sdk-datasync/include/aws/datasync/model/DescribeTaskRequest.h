@@ -55,6 +55,11 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the task to describe.</p>
      */
+    inline bool TaskArnHasBeenSet() const { return m_taskArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the task to describe.</p>
+     */
     inline void SetTaskArn(const Aws::String& value) { m_taskArnHasBeenSet = true; m_taskArn = value; }
 
     /**

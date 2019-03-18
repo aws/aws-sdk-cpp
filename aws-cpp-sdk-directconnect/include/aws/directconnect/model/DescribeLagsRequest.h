@@ -52,6 +52,11 @@ namespace Model
     /**
      * <p>The ID of the LAG.</p>
      */
+    inline bool LagIdHasBeenSet() const { return m_lagIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the LAG.</p>
+     */
     inline void SetLagId(const Aws::String& value) { m_lagIdHasBeenSet = true; m_lagId = value; }
 
     /**

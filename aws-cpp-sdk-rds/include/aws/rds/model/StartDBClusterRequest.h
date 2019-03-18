@@ -56,6 +56,12 @@ namespace Model
      * <p>The DB cluster identifier of the Amazon Aurora DB cluster to be started. This
      * parameter is stored as a lowercase string.</p>
      */
+    inline bool DBClusterIdentifierHasBeenSet() const { return m_dBClusterIdentifierHasBeenSet; }
+
+    /**
+     * <p>The DB cluster identifier of the Amazon Aurora DB cluster to be started. This
+     * parameter is stored as a lowercase string.</p>
+     */
     inline void SetDBClusterIdentifier(const Aws::String& value) { m_dBClusterIdentifierHasBeenSet = true; m_dBClusterIdentifier = value; }
 
     /**

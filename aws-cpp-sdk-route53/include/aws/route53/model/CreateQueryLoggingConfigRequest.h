@@ -52,6 +52,12 @@ namespace Model
      * <p>The ID of the hosted zone that you want to log queries for. You can log
      * queries only for public hosted zones.</p>
      */
+    inline bool HostedZoneIdHasBeenSet() const { return m_hostedZoneIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the hosted zone that you want to log queries for. You can log
+     * queries only for public hosted zones.</p>
+     */
     inline void SetHostedZoneId(const Aws::String& value) { m_hostedZoneIdHasBeenSet = true; m_hostedZoneId = value; }
 
     /**
@@ -97,6 +103,19 @@ namespace Model
      * command, or the applicable command in one of the AWS SDKs.</p>
      */
     inline const Aws::String& GetCloudWatchLogsLogGroupArn() const{ return m_cloudWatchLogsLogGroupArn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) for the log group that you want to Amazon
+     * Route 53 to send query logs to. This is the format of the ARN:</p>
+     * <p>arn:aws:logs:<i>region</i>:<i>account-id</i>:log-group:<i>log_group_name</i>
+     * </p> <p>To get the ARN for a log group, you can use the CloudWatch console, the
+     * <a
+     * href="http://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeLogGroups.html">DescribeLogGroups</a>
+     * API action, the <a
+     * href="http://docs.aws.amazon.com/cli/latest/reference/logs/describe-log-groups.html">describe-log-groups</a>
+     * command, or the applicable command in one of the AWS SDKs.</p>
+     */
+    inline bool CloudWatchLogsLogGroupArnHasBeenSet() const { return m_cloudWatchLogsLogGroupArnHasBeenSet; }
 
     /**
      * <p>The Amazon Resource Name (ARN) for the log group that you want to Amazon

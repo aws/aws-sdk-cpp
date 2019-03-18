@@ -56,6 +56,12 @@ namespace Model
      * <p>The cluster identifier (ID) for the cluster that you are tagging. To find the
      * cluster ID, use <a>DescribeClusters</a>.</p>
      */
+    inline bool ResourceIdHasBeenSet() const { return m_resourceIdHasBeenSet; }
+
+    /**
+     * <p>The cluster identifier (ID) for the cluster that you are tagging. To find the
+     * cluster ID, use <a>DescribeClusters</a>.</p>
+     */
     inline void SetResourceId(const Aws::String& value) { m_resourceIdHasBeenSet = true; m_resourceId = value; }
 
     /**
@@ -93,6 +99,11 @@ namespace Model
      * <p>A list of one or more tags.</p>
      */
     inline const Aws::Vector<Tag>& GetTagList() const{ return m_tagList; }
+
+    /**
+     * <p>A list of one or more tags.</p>
+     */
+    inline bool TagListHasBeenSet() const { return m_tagListHasBeenSet; }
 
     /**
      * <p>A list of one or more tags.</p>

@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The name of the thing.</p>
      */
+    inline bool ThingNameHasBeenSet() const { return m_thingNameHasBeenSet; }
+
+    /**
+     * <p>The name of the thing.</p>
+     */
     inline void SetThingName(const Aws::String& value) { m_thingNameHasBeenSet = true; m_thingName = value; }
 
     /**
@@ -89,6 +94,11 @@ namespace Model
      * <p>The name of the thing type, if the thing has been associated with a type.</p>
      */
     inline const Aws::String& GetThingTypeName() const{ return m_thingTypeName; }
+
+    /**
+     * <p>The name of the thing type, if the thing has been associated with a type.</p>
+     */
+    inline bool ThingTypeNameHasBeenSet() const { return m_thingTypeNameHasBeenSet; }
 
     /**
      * <p>The name of the thing type, if the thing has been associated with a type.</p>
@@ -129,6 +139,11 @@ namespace Model
     /**
      * <p>The thing ARN.</p>
      */
+    inline bool ThingArnHasBeenSet() const { return m_thingArnHasBeenSet; }
+
+    /**
+     * <p>The thing ARN.</p>
+     */
     inline void SetThingArn(const Aws::String& value) { m_thingArnHasBeenSet = true; m_thingArn = value; }
 
     /**
@@ -161,6 +176,11 @@ namespace Model
      * <p>A list of thing attributes which are name-value pairs.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetAttributes() const{ return m_attributes; }
+
+    /**
+     * <p>A list of thing attributes which are name-value pairs.</p>
+     */
+    inline bool AttributesHasBeenSet() const { return m_attributesHasBeenSet; }
 
     /**
      * <p>A list of thing attributes which are name-value pairs.</p>
@@ -222,6 +242,11 @@ namespace Model
      * <p>The version of the thing record in the registry.</p>
      */
     inline long long GetVersion() const{ return m_version; }
+
+    /**
+     * <p>The version of the thing record in the registry.</p>
+     */
+    inline bool VersionHasBeenSet() const { return m_versionHasBeenSet; }
 
     /**
      * <p>The version of the thing record in the registry.</p>

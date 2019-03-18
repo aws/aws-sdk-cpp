@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The name of the stream to modify.</p>
      */
+    inline bool StreamNameHasBeenSet() const { return m_streamNameHasBeenSet; }
+
+    /**
+     * <p>The name of the stream to modify.</p>
+     */
     inline void SetStreamName(const Aws::String& value) { m_streamNameHasBeenSet = true; m_streamName = value; }
 
     /**
@@ -89,6 +94,12 @@ namespace Model
      * current retention period.</p>
      */
     inline int GetRetentionPeriodHours() const{ return m_retentionPeriodHours; }
+
+    /**
+     * <p>The new retention period of the stream, in hours. Must be less than the
+     * current retention period.</p>
+     */
+    inline bool RetentionPeriodHoursHasBeenSet() const { return m_retentionPeriodHoursHasBeenSet; }
 
     /**
      * <p>The new retention period of the stream, in hours. Must be less than the

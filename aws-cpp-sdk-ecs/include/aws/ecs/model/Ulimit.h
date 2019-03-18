@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The <code>type</code> of the <code>ulimit</code>.</p>
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>The <code>type</code> of the <code>ulimit</code>.</p>
+     */
     inline void SetName(const UlimitName& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
@@ -82,6 +87,11 @@ namespace Model
     /**
      * <p>The soft limit for the ulimit type.</p>
      */
+    inline bool SoftLimitHasBeenSet() const { return m_softLimitHasBeenSet; }
+
+    /**
+     * <p>The soft limit for the ulimit type.</p>
+     */
     inline void SetSoftLimit(int value) { m_softLimitHasBeenSet = true; m_softLimit = value; }
 
     /**
@@ -94,6 +104,11 @@ namespace Model
      * <p>The hard limit for the ulimit type.</p>
      */
     inline int GetHardLimit() const{ return m_hardLimit; }
+
+    /**
+     * <p>The hard limit for the ulimit type.</p>
+     */
+    inline bool HardLimitHasBeenSet() const { return m_hardLimitHasBeenSet; }
 
     /**
      * <p>The hard limit for the ulimit type.</p>

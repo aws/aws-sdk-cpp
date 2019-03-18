@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The identifier of the group.</p>
      */
+    inline bool GroupIdHasBeenSet() const { return m_groupIdHasBeenSet; }
+
+    /**
+     * <p>The identifier of the group.</p>
+     */
     inline void SetGroupId(const Aws::String& value) { m_groupIdHasBeenSet = true; m_groupId = value; }
 
     /**
@@ -89,6 +94,11 @@ namespace Model
      * <p>The name of the group.</p>
      */
     inline const Aws::String& GetGroupName() const{ return m_groupName; }
+
+    /**
+     * <p>The name of the group.</p>
+     */
+    inline bool GroupNameHasBeenSet() const { return m_groupNameHasBeenSet; }
 
     /**
      * <p>The name of the group.</p>
@@ -129,6 +139,11 @@ namespace Model
     /**
      * <p>The description of the group.</p>
      */
+    inline bool GroupDescHasBeenSet() const { return m_groupDescHasBeenSet; }
+
+    /**
+     * <p>The description of the group.</p>
+     */
     inline void SetGroupDesc(const Aws::String& value) { m_groupDescHasBeenSet = true; m_groupDesc = value; }
 
     /**
@@ -161,6 +176,11 @@ namespace Model
      * <p>The rules.</p>
      */
     inline const Aws::Vector<IpRuleItem>& GetUserRules() const{ return m_userRules; }
+
+    /**
+     * <p>The rules.</p>
+     */
+    inline bool UserRulesHasBeenSet() const { return m_userRulesHasBeenSet; }
 
     /**
      * <p>The rules.</p>

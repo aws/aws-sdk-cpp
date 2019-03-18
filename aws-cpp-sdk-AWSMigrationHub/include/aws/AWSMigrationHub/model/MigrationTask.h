@@ -60,6 +60,11 @@ namespace Model
     /**
      * <p>A name that identifies the vendor of the migration tool being used.</p>
      */
+    inline bool ProgressUpdateStreamHasBeenSet() const { return m_progressUpdateStreamHasBeenSet; }
+
+    /**
+     * <p>A name that identifies the vendor of the migration tool being used.</p>
+     */
     inline void SetProgressUpdateStream(const Aws::String& value) { m_progressUpdateStreamHasBeenSet = true; m_progressUpdateStream = value; }
 
     /**
@@ -92,6 +97,11 @@ namespace Model
      * <p>Unique identifier that references the migration task.</p>
      */
     inline const Aws::String& GetMigrationTaskName() const{ return m_migrationTaskName; }
+
+    /**
+     * <p>Unique identifier that references the migration task.</p>
+     */
+    inline bool MigrationTaskNameHasBeenSet() const { return m_migrationTaskNameHasBeenSet; }
 
     /**
      * <p>Unique identifier that references the migration task.</p>
@@ -132,6 +142,11 @@ namespace Model
     /**
      * <p>Task object encapsulating task information.</p>
      */
+    inline bool TaskHasBeenSet() const { return m_taskHasBeenSet; }
+
+    /**
+     * <p>Task object encapsulating task information.</p>
+     */
     inline void SetTask(const Task& value) { m_taskHasBeenSet = true; m_task = value; }
 
     /**
@@ -158,6 +173,11 @@ namespace Model
     /**
      * <p>The timestamp when the task was gathered.</p>
      */
+    inline bool UpdateDateTimeHasBeenSet() const { return m_updateDateTimeHasBeenSet; }
+
+    /**
+     * <p>The timestamp when the task was gathered.</p>
+     */
     inline void SetUpdateDateTime(const Aws::Utils::DateTime& value) { m_updateDateTimeHasBeenSet = true; m_updateDateTime = value; }
 
     /**
@@ -180,6 +200,11 @@ namespace Model
      * <p/>
      */
     inline const Aws::Vector<ResourceAttribute>& GetResourceAttributeList() const{ return m_resourceAttributeList; }
+
+    /**
+     * <p/>
+     */
+    inline bool ResourceAttributeListHasBeenSet() const { return m_resourceAttributeListHasBeenSet; }
 
     /**
      * <p/>

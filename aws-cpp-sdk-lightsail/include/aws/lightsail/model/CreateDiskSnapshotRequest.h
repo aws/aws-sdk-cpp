@@ -60,6 +60,14 @@ namespace Model
      * name</code> parameter. The <code>disk name</code> and <code>instance name</code>
      * parameters are mutually exclusive.</p> </note>
      */
+    inline bool DiskNameHasBeenSet() const { return m_diskNameHasBeenSet; }
+
+    /**
+     * <p>The unique name of the source disk (e.g., <code>Disk-Virginia-1</code>).</p>
+     * <note> <p>This parameter cannot be defined together with the <code>instance
+     * name</code> parameter. The <code>disk name</code> and <code>instance name</code>
+     * parameters are mutually exclusive.</p> </note>
+     */
     inline void SetDiskName(const Aws::String& value) { m_diskNameHasBeenSet = true; m_diskName = value; }
 
     /**
@@ -113,6 +121,12 @@ namespace Model
      * <p>The name of the destination disk snapshot (e.g.,
      * <code>my-disk-snapshot</code>) based on the source disk.</p>
      */
+    inline bool DiskSnapshotNameHasBeenSet() const { return m_diskSnapshotNameHasBeenSet; }
+
+    /**
+     * <p>The name of the destination disk snapshot (e.g.,
+     * <code>my-disk-snapshot</code>) based on the source disk.</p>
+     */
     inline void SetDiskSnapshotName(const Aws::String& value) { m_diskSnapshotNameHasBeenSet = true; m_diskSnapshotName = value; }
 
     /**
@@ -155,6 +169,16 @@ namespace Model
      * </note>
      */
     inline const Aws::String& GetInstanceName() const{ return m_instanceName; }
+
+    /**
+     * <p>The unique name of the source instance (e.g.,
+     * <code>Amazon_Linux-512MB-Virginia-1</code>). When this is defined, a snapshot of
+     * the instance's system volume is created.</p> <note> <p>This parameter cannot be
+     * defined together with the <code>disk name</code> parameter. The <code>instance
+     * name</code> and <code>disk name</code> parameters are mutually exclusive.</p>
+     * </note>
+     */
+    inline bool InstanceNameHasBeenSet() const { return m_instanceNameHasBeenSet; }
 
     /**
      * <p>The unique name of the source instance (e.g.,
@@ -223,6 +247,13 @@ namespace Model
      * resource</code> operation.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>The tag keys and optional values to add to the resource during create.</p>
+     * <p>To tag a resource after it has been created, see the <code>tag
+     * resource</code> operation.</p>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
      * <p>The tag keys and optional values to add to the resource during create.</p>

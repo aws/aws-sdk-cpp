@@ -68,6 +68,14 @@ namespace Model
      * limits</a>, contact us through the <a
      * href="https://console.aws.amazon.com/support/home?">Support Center</a>.</p>
      */
+    inline bool ProvisionTimeHasBeenSet() const { return m_provisionTimeHasBeenSet; }
+
+    /**
+     * <p>Reserved. If you need to sustain traffic greater than the <a
+     * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/vpc-nat-gateway.html">documented
+     * limits</a>, contact us through the <a
+     * href="https://console.aws.amazon.com/support/home?">Support Center</a>.</p>
+     */
     inline void SetProvisionTime(const Aws::Utils::DateTime& value) { m_provisionTimeHasBeenSet = true; m_provisionTime = value; }
 
     /**
@@ -102,6 +110,14 @@ namespace Model
      * href="https://console.aws.amazon.com/support/home?">Support Center</a>.</p>
      */
     inline const Aws::String& GetProvisioned() const{ return m_provisioned; }
+
+    /**
+     * <p>Reserved. If you need to sustain traffic greater than the <a
+     * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/vpc-nat-gateway.html">documented
+     * limits</a>, contact us through the <a
+     * href="https://console.aws.amazon.com/support/home?">Support Center</a>.</p>
+     */
+    inline bool ProvisionedHasBeenSet() const { return m_provisionedHasBeenSet; }
 
     /**
      * <p>Reserved. If you need to sustain traffic greater than the <a
@@ -166,6 +182,14 @@ namespace Model
      * limits</a>, contact us through the <a
      * href="https://console.aws.amazon.com/support/home?">Support Center</a>.</p>
      */
+    inline bool RequestTimeHasBeenSet() const { return m_requestTimeHasBeenSet; }
+
+    /**
+     * <p>Reserved. If you need to sustain traffic greater than the <a
+     * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/vpc-nat-gateway.html">documented
+     * limits</a>, contact us through the <a
+     * href="https://console.aws.amazon.com/support/home?">Support Center</a>.</p>
+     */
     inline void SetRequestTime(const Aws::Utils::DateTime& value) { m_requestTimeHasBeenSet = true; m_requestTime = value; }
 
     /**
@@ -200,6 +224,14 @@ namespace Model
      * href="https://console.aws.amazon.com/support/home?">Support Center</a>.</p>
      */
     inline const Aws::String& GetRequested() const{ return m_requested; }
+
+    /**
+     * <p>Reserved. If you need to sustain traffic greater than the <a
+     * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/vpc-nat-gateway.html">documented
+     * limits</a>, contact us through the <a
+     * href="https://console.aws.amazon.com/support/home?">Support Center</a>.</p>
+     */
+    inline bool RequestedHasBeenSet() const { return m_requestedHasBeenSet; }
 
     /**
      * <p>Reserved. If you need to sustain traffic greater than the <a
@@ -257,6 +289,14 @@ namespace Model
      * href="https://console.aws.amazon.com/support/home?">Support Center</a>.</p>
      */
     inline const Aws::String& GetStatus() const{ return m_status; }
+
+    /**
+     * <p>Reserved. If you need to sustain traffic greater than the <a
+     * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/vpc-nat-gateway.html">documented
+     * limits</a>, contact us through the <a
+     * href="https://console.aws.amazon.com/support/home?">Support Center</a>.</p>
+     */
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
     /**
      * <p>Reserved. If you need to sustain traffic greater than the <a

@@ -51,6 +51,11 @@ namespace Model
     /**
      * <p>Thing indexing configuration.</p>
      */
+    inline bool ThingIndexingConfigurationHasBeenSet() const { return m_thingIndexingConfigurationHasBeenSet; }
+
+    /**
+     * <p>Thing indexing configuration.</p>
+     */
     inline void SetThingIndexingConfiguration(const ThingIndexingConfiguration& value) { m_thingIndexingConfigurationHasBeenSet = true; m_thingIndexingConfiguration = value; }
 
     /**
@@ -73,6 +78,11 @@ namespace Model
      * <p>Thing group indexing configuration.</p>
      */
     inline const ThingGroupIndexingConfiguration& GetThingGroupIndexingConfiguration() const{ return m_thingGroupIndexingConfiguration; }
+
+    /**
+     * <p>Thing group indexing configuration.</p>
+     */
+    inline bool ThingGroupIndexingConfigurationHasBeenSet() const { return m_thingGroupIndexingConfigurationHasBeenSet; }
 
     /**
      * <p>Thing group indexing configuration.</p>

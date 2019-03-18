@@ -55,6 +55,11 @@ namespace Model
     /**
      * <p>The password policy.</p>
      */
+    inline bool PasswordPolicyHasBeenSet() const { return m_passwordPolicyHasBeenSet; }
+
+    /**
+     * <p>The password policy.</p>
+     */
     inline void SetPasswordPolicy(const PasswordPolicyType& value) { m_passwordPolicyHasBeenSet = true; m_passwordPolicy = value; }
 
     /**

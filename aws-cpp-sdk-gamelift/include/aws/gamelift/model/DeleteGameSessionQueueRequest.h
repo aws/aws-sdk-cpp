@@ -57,6 +57,12 @@ namespace Model
      * <p>Descriptive label that is associated with game session queue. Queue names
      * must be unique within each region.</p>
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>Descriptive label that is associated with game session queue. Queue names
+     * must be unique within each region.</p>
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**

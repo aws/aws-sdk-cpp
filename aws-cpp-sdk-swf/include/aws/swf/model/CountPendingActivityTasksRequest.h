@@ -53,6 +53,11 @@ namespace Model
     /**
      * <p>The name of the domain that contains the task list.</p>
      */
+    inline bool DomainHasBeenSet() const { return m_domainHasBeenSet; }
+
+    /**
+     * <p>The name of the domain that contains the task list.</p>
+     */
     inline void SetDomain(const Aws::String& value) { m_domainHasBeenSet = true; m_domain = value; }
 
     /**
@@ -85,6 +90,11 @@ namespace Model
      * <p>The name of the task list.</p>
      */
     inline const TaskList& GetTaskList() const{ return m_taskList; }
+
+    /**
+     * <p>The name of the task list.</p>
+     */
+    inline bool TaskListHasBeenSet() const { return m_taskListHasBeenSet; }
 
     /**
      * <p>The name of the task list.</p>

@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The name of the step.</p>
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>The name of the step.</p>
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
@@ -97,6 +102,13 @@ namespace Model
      * TERMINATE_CLUSTER, CANCEL_AND_WAIT, and CONTINUE. TERMINATE_JOB_FLOW is provided
      * for backward compatibility. We recommend using TERMINATE_CLUSTER instead.</p>
      */
+    inline bool ActionOnFailureHasBeenSet() const { return m_actionOnFailureHasBeenSet; }
+
+    /**
+     * <p>The action to take when the cluster step fails. Possible values are
+     * TERMINATE_CLUSTER, CANCEL_AND_WAIT, and CONTINUE. TERMINATE_JOB_FLOW is provided
+     * for backward compatibility. We recommend using TERMINATE_CLUSTER instead.</p>
+     */
     inline void SetActionOnFailure(const ActionOnFailure& value) { m_actionOnFailureHasBeenSet = true; m_actionOnFailure = value; }
 
     /**
@@ -125,6 +137,11 @@ namespace Model
      * <p>The JAR file used for the step.</p>
      */
     inline const HadoopJarStepConfig& GetHadoopJarStep() const{ return m_hadoopJarStep; }
+
+    /**
+     * <p>The JAR file used for the step.</p>
+     */
+    inline bool HadoopJarStepHasBeenSet() const { return m_hadoopJarStepHasBeenSet; }
 
     /**
      * <p>The JAR file used for the step.</p>

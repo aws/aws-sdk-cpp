@@ -50,6 +50,11 @@ namespace Model
     /**
      * <p>Request the ID for the field-level encryption configuration information.</p>
      */
+    inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
+
+    /**
+     * <p>Request the ID for the field-level encryption configuration information.</p>
+     */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
     /**

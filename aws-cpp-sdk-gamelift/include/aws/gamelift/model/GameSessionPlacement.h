@@ -66,6 +66,11 @@ namespace Model
     /**
      * <p>Unique identifier for a game session placement.</p>
      */
+    inline bool PlacementIdHasBeenSet() const { return m_placementIdHasBeenSet; }
+
+    /**
+     * <p>Unique identifier for a game session placement.</p>
+     */
     inline void SetPlacementId(const Aws::String& value) { m_placementIdHasBeenSet = true; m_placementId = value; }
 
     /**
@@ -99,6 +104,12 @@ namespace Model
      * must be unique within each region.</p>
      */
     inline const Aws::String& GetGameSessionQueueName() const{ return m_gameSessionQueueName; }
+
+    /**
+     * <p>Descriptive label that is associated with game session queue. Queue names
+     * must be unique within each region.</p>
+     */
+    inline bool GameSessionQueueNameHasBeenSet() const { return m_gameSessionQueueNameHasBeenSet; }
 
     /**
      * <p>Descriptive label that is associated with game session queue. Queue names
@@ -149,6 +160,19 @@ namespace Model
      * resubmit the placement request as needed.</p> </li> </ul>
      */
     inline const GameSessionPlacementState& GetStatus() const{ return m_status; }
+
+    /**
+     * <p>Current status of the game session placement request.</p> <ul> <li> <p>
+     * <b>PENDING</b> -- The placement request is currently in the queue waiting to be
+     * processed.</p> </li> <li> <p> <b>FULFILLED</b> -- A new game session and player
+     * sessions (if requested) have been successfully created. Values for
+     * <i>GameSessionArn</i> and <i>GameSessionRegion</i> are available. </p> </li>
+     * <li> <p> <b>CANCELLED</b> -- The placement request was canceled with a call to
+     * <a>StopGameSessionPlacement</a>.</p> </li> <li> <p> <b>TIMED_OUT</b> -- A new
+     * game session was not successfully created before the time limit expired. You can
+     * resubmit the placement request as needed.</p> </li> </ul>
+     */
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
     /**
      * <p>Current status of the game session placement request.</p> <ul> <li> <p>
@@ -219,6 +243,15 @@ namespace Model
      * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start
      * a Game Session</a>).</p>
      */
+    inline bool GamePropertiesHasBeenSet() const { return m_gamePropertiesHasBeenSet; }
+
+    /**
+     * <p>Set of custom properties for a game session, formatted as key:value pairs.
+     * These properties are passed to a game server process in the <a>GameSession</a>
+     * object with a request to start a new game session (see <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start
+     * a Game Session</a>).</p>
+     */
     inline void SetGameProperties(const Aws::Vector<GameProperty>& value) { m_gamePropertiesHasBeenSet = true; m_gameProperties = value; }
 
     /**
@@ -277,6 +310,12 @@ namespace Model
      * <p>Maximum number of players that can be connected simultaneously to the game
      * session.</p>
      */
+    inline bool MaximumPlayerSessionCountHasBeenSet() const { return m_maximumPlayerSessionCountHasBeenSet; }
+
+    /**
+     * <p>Maximum number of players that can be connected simultaneously to the game
+     * session.</p>
+     */
     inline void SetMaximumPlayerSessionCount(int value) { m_maximumPlayerSessionCountHasBeenSet = true; m_maximumPlayerSessionCount = value; }
 
     /**
@@ -291,6 +330,12 @@ namespace Model
      * not need to be unique.</p>
      */
     inline const Aws::String& GetGameSessionName() const{ return m_gameSessionName; }
+
+    /**
+     * <p>Descriptive label that is associated with a game session. Session names do
+     * not need to be unique.</p>
+     */
+    inline bool GameSessionNameHasBeenSet() const { return m_gameSessionNameHasBeenSet; }
 
     /**
      * <p>Descriptive label that is associated with a game session. Session names do
@@ -339,6 +384,12 @@ namespace Model
      * <p>Unique identifier for the game session. This value is set once the new game
      * session is placed (placement status is <code>FULFILLED</code>).</p>
      */
+    inline bool GameSessionIdHasBeenSet() const { return m_gameSessionIdHasBeenSet; }
+
+    /**
+     * <p>Unique identifier for the game session. This value is set once the new game
+     * session is placed (placement status is <code>FULFILLED</code>).</p>
+     */
     inline void SetGameSessionId(const Aws::String& value) { m_gameSessionIdHasBeenSet = true; m_gameSessionId = value; }
 
     /**
@@ -379,6 +430,14 @@ namespace Model
      * use this value as a <code>GameSessionId</code> value as needed.</p>
      */
     inline const Aws::String& GetGameSessionArn() const{ return m_gameSessionArn; }
+
+    /**
+     * <p>Identifier for the game session created by this placement request. This value
+     * is set once the new game session is placed (placement status is
+     * <code>FULFILLED</code>). This identifier is unique across all regions. You can
+     * use this value as a <code>GameSessionId</code> value as needed.</p>
+     */
+    inline bool GameSessionArnHasBeenSet() const { return m_gameSessionArnHasBeenSet; }
 
     /**
      * <p>Identifier for the game session created by this placement request. This value
@@ -441,6 +500,13 @@ namespace Model
      * is running. This value is set once the new game session is placed (placement
      * status is <code>FULFILLED</code>).</p>
      */
+    inline bool GameSessionRegionHasBeenSet() const { return m_gameSessionRegionHasBeenSet; }
+
+    /**
+     * <p>Name of the region where the game session created by this placement request
+     * is running. This value is set once the new game session is placed (placement
+     * status is <code>FULFILLED</code>).</p>
+     */
     inline void SetGameSessionRegion(const Aws::String& value) { m_gameSessionRegionHasBeenSet = true; m_gameSessionRegion = value; }
 
     /**
@@ -484,6 +550,12 @@ namespace Model
      * that a player experiences when connected to AWS regions.</p>
      */
     inline const Aws::Vector<PlayerLatency>& GetPlayerLatencies() const{ return m_playerLatencies; }
+
+    /**
+     * <p>Set of values, expressed in milliseconds, indicating the amount of latency
+     * that a player experiences when connected to AWS regions.</p>
+     */
+    inline bool PlayerLatenciesHasBeenSet() const { return m_playerLatenciesHasBeenSet; }
 
     /**
      * <p>Set of values, expressed in milliseconds, indicating the amount of latency
@@ -534,6 +606,13 @@ namespace Model
      * number expressed in Unix time as milliseconds (for example
      * "1469498468.057").</p>
      */
+    inline bool StartTimeHasBeenSet() const { return m_startTimeHasBeenSet; }
+
+    /**
+     * <p>Time stamp indicating when this request was placed in the queue. Format is a
+     * number expressed in Unix time as milliseconds (for example
+     * "1469498468.057").</p>
+     */
     inline void SetStartTime(const Aws::Utils::DateTime& value) { m_startTimeHasBeenSet = true; m_startTime = value; }
 
     /**
@@ -568,6 +647,12 @@ namespace Model
      * <p>Time stamp indicating when this request was completed, canceled, or timed
      * out.</p>
      */
+    inline bool EndTimeHasBeenSet() const { return m_endTimeHasBeenSet; }
+
+    /**
+     * <p>Time stamp indicating when this request was completed, canceled, or timed
+     * out.</p>
+     */
     inline void SetEndTime(const Aws::Utils::DateTime& value) { m_endTimeHasBeenSet = true; m_endTime = value; }
 
     /**
@@ -595,6 +680,13 @@ namespace Model
      * game session is placed (placement status is <code>FULFILLED</code>). </p>
      */
     inline const Aws::String& GetIpAddress() const{ return m_ipAddress; }
+
+    /**
+     * <p>IP address of the game session. To connect to a Amazon GameLift game server,
+     * an app needs both the IP address and port number. This value is set once the new
+     * game session is placed (placement status is <code>FULFILLED</code>). </p>
+     */
+    inline bool IpAddressHasBeenSet() const { return m_ipAddressHasBeenSet; }
 
     /**
      * <p>IP address of the game session. To connect to a Amazon GameLift game server,
@@ -651,6 +743,13 @@ namespace Model
      * server, an app needs both the IP address and port number. This value is set once
      * the new game session is placed (placement status is <code>FULFILLED</code>).</p>
      */
+    inline bool PortHasBeenSet() const { return m_portHasBeenSet; }
+
+    /**
+     * <p>Port number for the game session. To connect to a Amazon GameLift game
+     * server, an app needs both the IP address and port number. This value is set once
+     * the new game session is placed (placement status is <code>FULFILLED</code>).</p>
+     */
     inline void SetPort(int value) { m_portHasBeenSet = true; m_port = value; }
 
     /**
@@ -671,6 +770,17 @@ namespace Model
      * ID.</p>
      */
     inline const Aws::Vector<PlacedPlayerSession>& GetPlacedPlayerSessions() const{ return m_placedPlayerSessions; }
+
+    /**
+     * <p>Collection of information on player sessions created in response to the game
+     * session placement request. These player sessions are created only once a new
+     * game session is successfully placed (placement status is
+     * <code>FULFILLED</code>). This information includes the player ID (as provided in
+     * the placement request) and the corresponding player session ID. Retrieve full
+     * player sessions by calling <a>DescribePlayerSessions</a> with the player session
+     * ID.</p>
+     */
+    inline bool PlacedPlayerSessionsHasBeenSet() const { return m_placedPlayerSessionsHasBeenSet; }
 
     /**
      * <p>Collection of information on player sessions created in response to the game
@@ -755,6 +865,15 @@ namespace Model
      * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start
      * a Game Session</a>).</p>
      */
+    inline bool GameSessionDataHasBeenSet() const { return m_gameSessionDataHasBeenSet; }
+
+    /**
+     * <p>Set of custom game session properties, formatted as a single string value.
+     * This data is passed to a game server process in the <a>GameSession</a> object
+     * with a request to start a new game session (see <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start
+     * a Game Session</a>).</p>
+     */
     inline void SetGameSessionData(const Aws::String& value) { m_gameSessionDataHasBeenSet = true; m_gameSessionData = value; }
 
     /**
@@ -813,6 +932,17 @@ namespace Model
      * Data</a>.</p>
      */
     inline const Aws::String& GetMatchmakerData() const{ return m_matchmakerData; }
+
+    /**
+     * <p>Information on the matchmaking process for this game. Data is in JSON syntax,
+     * formatted as a string. It identifies the matchmaking configuration used to
+     * create the match, and contains data on all players assigned to the match,
+     * including player attributes and team assignments. For more details on matchmaker
+     * data, see <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/match-server.html#match-server-data">Match
+     * Data</a>.</p>
+     */
+    inline bool MatchmakerDataHasBeenSet() const { return m_matchmakerDataHasBeenSet; }
 
     /**
      * <p>Information on the matchmaking process for this game. Data is in JSON syntax,

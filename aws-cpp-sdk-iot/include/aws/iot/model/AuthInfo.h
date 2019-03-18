@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The type of action for which the principal is being authorized.</p>
      */
+    inline bool ActionTypeHasBeenSet() const { return m_actionTypeHasBeenSet; }
+
+    /**
+     * <p>The type of action for which the principal is being authorized.</p>
+     */
     inline void SetActionType(const ActionType& value) { m_actionTypeHasBeenSet = true; m_actionType = value; }
 
     /**
@@ -80,6 +85,12 @@ namespace Model
      * specified action.</p>
      */
     inline const Aws::Vector<Aws::String>& GetResources() const{ return m_resources; }
+
+    /**
+     * <p>The resources for which the principal is being authorized to perform the
+     * specified action.</p>
+     */
+    inline bool ResourcesHasBeenSet() const { return m_resourcesHasBeenSet; }
 
     /**
      * <p>The resources for which the principal is being authorized to perform the

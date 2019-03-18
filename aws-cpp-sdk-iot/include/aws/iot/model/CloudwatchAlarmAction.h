@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The IAM role that allows access to the CloudWatch alarm.</p>
      */
+    inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
+
+    /**
+     * <p>The IAM role that allows access to the CloudWatch alarm.</p>
+     */
     inline void SetRoleArn(const Aws::String& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
 
     /**
@@ -88,6 +93,11 @@ namespace Model
      * <p>The CloudWatch alarm name.</p>
      */
     inline const Aws::String& GetAlarmName() const{ return m_alarmName; }
+
+    /**
+     * <p>The CloudWatch alarm name.</p>
+     */
+    inline bool AlarmNameHasBeenSet() const { return m_alarmNameHasBeenSet; }
 
     /**
      * <p>The CloudWatch alarm name.</p>
@@ -128,6 +138,11 @@ namespace Model
     /**
      * <p>The reason for the alarm change.</p>
      */
+    inline bool StateReasonHasBeenSet() const { return m_stateReasonHasBeenSet; }
+
+    /**
+     * <p>The reason for the alarm change.</p>
+     */
     inline void SetStateReason(const Aws::String& value) { m_stateReasonHasBeenSet = true; m_stateReason = value; }
 
     /**
@@ -161,6 +176,12 @@ namespace Model
      * INSUFFICIENT_DATA.</p>
      */
     inline const Aws::String& GetStateValue() const{ return m_stateValue; }
+
+    /**
+     * <p>The value of the alarm state. Acceptable values are: OK, ALARM,
+     * INSUFFICIENT_DATA.</p>
+     */
+    inline bool StateValueHasBeenSet() const { return m_stateValueHasBeenSet; }
 
     /**
      * <p>The value of the alarm state. Acceptable values are: OK, ALARM,

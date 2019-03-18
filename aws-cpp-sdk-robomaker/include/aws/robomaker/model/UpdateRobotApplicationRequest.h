@@ -53,6 +53,11 @@ namespace Model
     /**
      * <p>The application information for the robot application.</p>
      */
+    inline bool ApplicationHasBeenSet() const { return m_applicationHasBeenSet; }
+
+    /**
+     * <p>The application information for the robot application.</p>
+     */
     inline void SetApplication(const Aws::String& value) { m_applicationHasBeenSet = true; m_application = value; }
 
     /**
@@ -85,6 +90,11 @@ namespace Model
      * <p>The sources of the robot application.</p>
      */
     inline const Aws::Vector<SourceConfig>& GetSources() const{ return m_sources; }
+
+    /**
+     * <p>The sources of the robot application.</p>
+     */
+    inline bool SourcesHasBeenSet() const { return m_sourcesHasBeenSet; }
 
     /**
      * <p>The sources of the robot application.</p>
@@ -125,6 +135,11 @@ namespace Model
     /**
      * <p>The robot software suite used by the robot application.</p>
      */
+    inline bool RobotSoftwareSuiteHasBeenSet() const { return m_robotSoftwareSuiteHasBeenSet; }
+
+    /**
+     * <p>The robot software suite used by the robot application.</p>
+     */
     inline void SetRobotSoftwareSuite(const RobotSoftwareSuite& value) { m_robotSoftwareSuiteHasBeenSet = true; m_robotSoftwareSuite = value; }
 
     /**
@@ -147,6 +162,11 @@ namespace Model
      * <p>The revision id for the robot application.</p>
      */
     inline const Aws::String& GetCurrentRevisionId() const{ return m_currentRevisionId; }
+
+    /**
+     * <p>The revision id for the robot application.</p>
+     */
+    inline bool CurrentRevisionIdHasBeenSet() const { return m_currentRevisionIdHasBeenSet; }
 
     /**
      * <p>The revision id for the robot application.</p>

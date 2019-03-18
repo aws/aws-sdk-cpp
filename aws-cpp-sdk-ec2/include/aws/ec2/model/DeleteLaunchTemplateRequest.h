@@ -60,6 +60,14 @@ namespace Model
      * required permissions, the error response is <code>DryRunOperation</code>.
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
+    inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
+
+    /**
+     * <p>Checks whether you have the required permissions for the action, without
+     * actually making the request, and provides an error response. If you have the
+     * required permissions, the error response is <code>DryRunOperation</code>.
+     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+     */
     inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
 
     /**
@@ -76,6 +84,12 @@ namespace Model
      * or launch template name in the request.</p>
      */
     inline const Aws::String& GetLaunchTemplateId() const{ return m_launchTemplateId; }
+
+    /**
+     * <p>The ID of the launch template. You must specify either the launch template ID
+     * or launch template name in the request.</p>
+     */
+    inline bool LaunchTemplateIdHasBeenSet() const { return m_launchTemplateIdHasBeenSet; }
 
     /**
      * <p>The ID of the launch template. You must specify either the launch template ID
@@ -119,6 +133,12 @@ namespace Model
      * ID or launch template name in the request.</p>
      */
     inline const Aws::String& GetLaunchTemplateName() const{ return m_launchTemplateName; }
+
+    /**
+     * <p>The name of the launch template. You must specify either the launch template
+     * ID or launch template name in the request.</p>
+     */
+    inline bool LaunchTemplateNameHasBeenSet() const { return m_launchTemplateNameHasBeenSet; }
 
     /**
      * <p>The name of the launch template. You must specify either the launch template

@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The programmable code for the state change reason.</p>
      */
+    inline bool CodeHasBeenSet() const { return m_codeHasBeenSet; }
+
+    /**
+     * <p>The programmable code for the state change reason.</p>
+     */
     inline void SetCode(const InstanceStateChangeReasonCode& value) { m_codeHasBeenSet = true; m_code = value; }
 
     /**
@@ -79,6 +84,11 @@ namespace Model
      * <p>The status change reason description.</p>
      */
     inline const Aws::String& GetMessage() const{ return m_message; }
+
+    /**
+     * <p>The status change reason description.</p>
+     */
+    inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
 
     /**
      * <p>The status change reason description.</p>

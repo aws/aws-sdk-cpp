@@ -57,6 +57,12 @@ namespace Model
      * The availability zone of the Input destination.
 
      */
+    inline bool AvailabilityZoneHasBeenSet() const { return m_availabilityZoneHasBeenSet; }
+
+    /**
+     * The availability zone of the Input destination.
+
+     */
     inline void SetAvailabilityZone(const Aws::String& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = value; }
 
     /**
@@ -95,6 +101,12 @@ namespace Model
 
      */
     inline const Aws::String& GetNetworkInterfaceId() const{ return m_networkInterfaceId; }
+
+    /**
+     * The network interface ID of the Input destination in the VPC.
+
+     */
+    inline bool NetworkInterfaceIdHasBeenSet() const { return m_networkInterfaceIdHasBeenSet; }
 
     /**
      * The network interface ID of the Input destination in the VPC.

@@ -59,6 +59,12 @@ namespace Model
      * <p>Parent reference from which the object with the specified link name is
      * detached.</p>
      */
+    inline bool ParentReferenceHasBeenSet() const { return m_parentReferenceHasBeenSet; }
+
+    /**
+     * <p>Parent reference from which the object with the specified link name is
+     * detached.</p>
+     */
     inline void SetParentReference(const ObjectReference& value) { m_parentReferenceHasBeenSet = true; m_parentReference = value; }
 
     /**
@@ -84,6 +90,11 @@ namespace Model
      * <p>The name of the link.</p>
      */
     inline const Aws::String& GetLinkName() const{ return m_linkName; }
+
+    /**
+     * <p>The name of the link.</p>
+     */
+    inline bool LinkNameHasBeenSet() const { return m_linkNameHasBeenSet; }
 
     /**
      * <p>The name of the link.</p>
@@ -122,6 +133,13 @@ namespace Model
      * Support</a> for more information.</p>
      */
     inline const Aws::String& GetBatchReferenceName() const{ return m_batchReferenceName; }
+
+    /**
+     * <p>The batch reference name. See <a
+     * href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/transaction_support.html">Transaction
+     * Support</a> for more information.</p>
+     */
+    inline bool BatchReferenceNameHasBeenSet() const { return m_batchReferenceNameHasBeenSet; }
 
     /**
      * <p>The batch reference name. See <a

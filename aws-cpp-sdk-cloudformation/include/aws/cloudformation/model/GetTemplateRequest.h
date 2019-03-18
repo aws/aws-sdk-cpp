@@ -66,6 +66,15 @@ namespace Model
      * stacks: You must specify the unique stack ID.</p> </li> </ul> <p>Default: There
      * is no default value.</p>
      */
+    inline bool StackNameHasBeenSet() const { return m_stackNameHasBeenSet; }
+
+    /**
+     * <p>The name or the unique stack ID that is associated with the stack, which are
+     * not always interchangeable:</p> <ul> <li> <p>Running stacks: You can specify
+     * either the stack's name or its unique stack ID.</p> </li> <li> <p>Deleted
+     * stacks: You must specify the unique stack ID.</p> </li> </ul> <p>Default: There
+     * is no default value.</p>
+     */
     inline void SetStackName(const Aws::String& value) { m_stackNameHasBeenSet = true; m_stackName = value; }
 
     /**
@@ -126,6 +135,13 @@ namespace Model
      * CloudFormation returns the associated template. If you specify a name, you must
      * also specify the <code>StackName</code>.</p>
      */
+    inline bool ChangeSetNameHasBeenSet() const { return m_changeSetNameHasBeenSet; }
+
+    /**
+     * <p>The name or Amazon Resource Name (ARN) of a change set for which AWS
+     * CloudFormation returns the associated template. If you specify a name, you must
+     * also specify the <code>StackName</code>.</p>
+     */
     inline void SetChangeSetName(const Aws::String& value) { m_changeSetNameHasBeenSet = true; m_changeSetName = value; }
 
     /**
@@ -174,6 +190,17 @@ namespace Model
      * specifies <code>Original</code>. </p>
      */
     inline const TemplateStage& GetTemplateStage() const{ return m_templateStage; }
+
+    /**
+     * <p>For templates that include transforms, the stage of the template that AWS
+     * CloudFormation returns. To get the user-submitted template, specify
+     * <code>Original</code>. To get the template after AWS CloudFormation has
+     * processed all transforms, specify <code>Processed</code>. </p> <p>If the
+     * template doesn't include transforms, <code>Original</code> and
+     * <code>Processed</code> return the same template. By default, AWS CloudFormation
+     * specifies <code>Original</code>. </p>
+     */
+    inline bool TemplateStageHasBeenSet() const { return m_templateStageHasBeenSet; }
 
     /**
      * <p>For templates that include transforms, the stage of the template that AWS

@@ -57,6 +57,11 @@ namespace Model
     /**
      * The message body of the notification, the email body or the text message.
      */
+    inline bool BodyHasBeenSet() const { return m_bodyHasBeenSet; }
+
+    /**
+     * The message body of the notification, the email body or the text message.
+     */
     inline void SetBody(const Aws::String& value) { m_bodyHasBeenSet = true; m_body = value; }
 
     /**
@@ -89,6 +94,11 @@ namespace Model
      * Language of sent message
      */
     inline const Aws::String& GetLanguageCode() const{ return m_languageCode; }
+
+    /**
+     * Language of sent message
+     */
+    inline bool LanguageCodeHasBeenSet() const { return m_languageCodeHasBeenSet; }
 
     /**
      * Language of sent message
@@ -129,6 +139,11 @@ namespace Model
     /**
      * Is the number from the pool or messaging service to send from.
      */
+    inline bool OriginationNumberHasBeenSet() const { return m_originationNumberHasBeenSet; }
+
+    /**
+     * Is the number from the pool or messaging service to send from.
+     */
     inline void SetOriginationNumber(const Aws::String& value) { m_originationNumberHasBeenSet = true; m_originationNumber = value; }
 
     /**
@@ -162,6 +177,12 @@ namespace Model
      * substitutions.
      */
     inline const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& GetSubstitutions() const{ return m_substitutions; }
+
+    /**
+     * Default message substitutions. Can be overridden by individual address
+     * substitutions.
+     */
+    inline bool SubstitutionsHasBeenSet() const { return m_substitutionsHasBeenSet; }
 
     /**
      * Default message substitutions. Can be overridden by individual address
@@ -228,6 +249,11 @@ namespace Model
      * Voice ID of sent message.
      */
     inline const Aws::String& GetVoiceId() const{ return m_voiceId; }
+
+    /**
+     * Voice ID of sent message.
+     */
+    inline bool VoiceIdHasBeenSet() const { return m_voiceIdHasBeenSet; }
 
     /**
      * Voice ID of sent message.

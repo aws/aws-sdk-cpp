@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p>The IPv6 address.</p>
      */
+    inline bool Ipv6AddressHasBeenSet() const { return m_ipv6AddressHasBeenSet; }
+
+    /**
+     * <p>The IPv6 address.</p>
+     */
     inline void SetIpv6Address(const Aws::String& value) { m_ipv6AddressHasBeenSet = true; m_ipv6Address = value; }
 
     /**

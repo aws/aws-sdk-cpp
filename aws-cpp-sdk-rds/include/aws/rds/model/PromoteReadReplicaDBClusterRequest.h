@@ -63,6 +63,14 @@ namespace Model
      * identifier of an existing DBCluster Read Replica.</p> </li> </ul> <p>Example:
      * <code>my-cluster-replica1</code> </p>
      */
+    inline bool DBClusterIdentifierHasBeenSet() const { return m_dBClusterIdentifierHasBeenSet; }
+
+    /**
+     * <p>The identifier of the DB cluster Read Replica to promote. This parameter is
+     * not case-sensitive. </p> <p>Constraints:</p> <ul> <li> <p>Must match the
+     * identifier of an existing DBCluster Read Replica.</p> </li> </ul> <p>Example:
+     * <code>my-cluster-replica1</code> </p>
+     */
     inline void SetDBClusterIdentifier(const Aws::String& value) { m_dBClusterIdentifierHasBeenSet = true; m_dBClusterIdentifier = value; }
 
     /**

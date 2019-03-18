@@ -61,6 +61,9 @@ namespace Model
     inline const Aws::String& GetReportName() const{ return m_reportName; }
 
     
+    inline bool ReportNameHasBeenSet() const { return m_reportNameHasBeenSet; }
+
+    
     inline void SetReportName(const Aws::String& value) { m_reportNameHasBeenSet = true; m_reportName = value; }
 
     
@@ -83,6 +86,9 @@ namespace Model
     inline const TimeUnit& GetTimeUnit() const{ return m_timeUnit; }
 
     
+    inline bool TimeUnitHasBeenSet() const { return m_timeUnitHasBeenSet; }
+
+    
     inline void SetTimeUnit(const TimeUnit& value) { m_timeUnitHasBeenSet = true; m_timeUnit = value; }
 
     
@@ -99,6 +105,9 @@ namespace Model
     inline const ReportFormat& GetFormat() const{ return m_format; }
 
     
+    inline bool FormatHasBeenSet() const { return m_formatHasBeenSet; }
+
+    
     inline void SetFormat(const ReportFormat& value) { m_formatHasBeenSet = true; m_format = value; }
 
     
@@ -113,6 +122,9 @@ namespace Model
 
     
     inline const CompressionFormat& GetCompression() const{ return m_compression; }
+
+    
+    inline bool CompressionHasBeenSet() const { return m_compressionHasBeenSet; }
 
     
     inline void SetCompression(const CompressionFormat& value) { m_compressionHasBeenSet = true; m_compression = value; }
@@ -132,6 +144,12 @@ namespace Model
      * includes in the report, such as individual resource IDs. </p>
      */
     inline const Aws::Vector<SchemaElement>& GetAdditionalSchemaElements() const{ return m_additionalSchemaElements; }
+
+    /**
+     * <p>A list of strings that indicate additional content that Amazon Web Services
+     * includes in the report, such as individual resource IDs. </p>
+     */
+    inline bool AdditionalSchemaElementsHasBeenSet() const { return m_additionalSchemaElementsHasBeenSet; }
 
     /**
      * <p>A list of strings that indicate additional content that Amazon Web Services
@@ -174,6 +192,9 @@ namespace Model
     inline const Aws::String& GetS3Bucket() const{ return m_s3Bucket; }
 
     
+    inline bool S3BucketHasBeenSet() const { return m_s3BucketHasBeenSet; }
+
+    
     inline void SetS3Bucket(const Aws::String& value) { m_s3BucketHasBeenSet = true; m_s3Bucket = value; }
 
     
@@ -194,6 +215,9 @@ namespace Model
 
     
     inline const Aws::String& GetS3Prefix() const{ return m_s3Prefix; }
+
+    
+    inline bool S3PrefixHasBeenSet() const { return m_s3PrefixHasBeenSet; }
 
     
     inline void SetS3Prefix(const Aws::String& value) { m_s3PrefixHasBeenSet = true; m_s3Prefix = value; }
@@ -218,6 +242,9 @@ namespace Model
     inline const AWSRegion& GetS3Region() const{ return m_s3Region; }
 
     
+    inline bool S3RegionHasBeenSet() const { return m_s3RegionHasBeenSet; }
+
+    
     inline void SetS3Region(const AWSRegion& value) { m_s3RegionHasBeenSet = true; m_s3Region = value; }
 
     
@@ -235,6 +262,12 @@ namespace Model
      * report.</p>
      */
     inline const Aws::Vector<AdditionalArtifact>& GetAdditionalArtifacts() const{ return m_additionalArtifacts; }
+
+    /**
+     * <p>A list of manifests that you want Amazon Web Services to create for this
+     * report.</p>
+     */
+    inline bool AdditionalArtifactsHasBeenSet() const { return m_additionalArtifactsHasBeenSet; }
 
     /**
      * <p>A list of manifests that you want Amazon Web Services to create for this
@@ -285,6 +318,13 @@ namespace Model
      * been finalized if Amazon Web Services detects charges related to previous
      * months. These charges can include refunds, credits, or support fees.</p>
      */
+    inline bool RefreshClosedReportsHasBeenSet() const { return m_refreshClosedReportsHasBeenSet; }
+
+    /**
+     * <p>Whether you want Amazon Web Services to update your reports after they have
+     * been finalized if Amazon Web Services detects charges related to previous
+     * months. These charges can include refunds, credits, or support fees.</p>
+     */
     inline void SetRefreshClosedReports(bool value) { m_refreshClosedReportsHasBeenSet = true; m_refreshClosedReports = value; }
 
     /**
@@ -300,6 +340,12 @@ namespace Model
      * each report or to deliver the report in addition to the previous versions.</p>
      */
     inline const ReportVersioning& GetReportVersioning() const{ return m_reportVersioning; }
+
+    /**
+     * <p>Whether you want Amazon Web Services to overwrite the previous version of
+     * each report or to deliver the report in addition to the previous versions.</p>
+     */
+    inline bool ReportVersioningHasBeenSet() const { return m_reportVersioningHasBeenSet; }
 
     /**
      * <p>Whether you want Amazon Web Services to overwrite the previous version of

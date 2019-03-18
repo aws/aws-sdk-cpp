@@ -56,6 +56,12 @@ namespace Model
      * <p>[Required] The <a>RestApi</a> identifier under which the <a>Model</a> will be
      * created.</p>
      */
+    inline bool RestApiIdHasBeenSet() const { return m_restApiIdHasBeenSet; }
+
+    /**
+     * <p>[Required] The <a>RestApi</a> identifier under which the <a>Model</a> will be
+     * created.</p>
+     */
     inline void SetRestApiId(const Aws::String& value) { m_restApiIdHasBeenSet = true; m_restApiId = value; }
 
     /**
@@ -97,6 +103,11 @@ namespace Model
     /**
      * <p>[Required] The name of the model. Must be alphanumeric.</p>
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>[Required] The name of the model. Must be alphanumeric.</p>
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
@@ -129,6 +140,11 @@ namespace Model
      * <p>The description of the model.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
+
+    /**
+     * <p>The description of the model.</p>
+     */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
 
     /**
      * <p>The description of the model.</p>
@@ -167,6 +183,13 @@ namespace Model
      * target="_blank">JSON schema draft 4</a> model.</p>
      */
     inline const Aws::String& GetSchema() const{ return m_schema; }
+
+    /**
+     * <p>The schema for the model. For <code>application/json</code> models, this
+     * should be <a href="https://tools.ietf.org/html/draft-zyp-json-schema-04"
+     * target="_blank">JSON schema draft 4</a> model.</p>
+     */
+    inline bool SchemaHasBeenSet() const { return m_schemaHasBeenSet; }
 
     /**
      * <p>The schema for the model. For <code>application/json</code> models, this
@@ -215,6 +238,11 @@ namespace Model
      * <p>[Required] The content-type for the model.</p>
      */
     inline const Aws::String& GetContentType() const{ return m_contentType; }
+
+    /**
+     * <p>[Required] The content-type for the model.</p>
+     */
+    inline bool ContentTypeHasBeenSet() const { return m_contentTypeHasBeenSet; }
 
     /**
      * <p>[Required] The content-type for the model.</p>

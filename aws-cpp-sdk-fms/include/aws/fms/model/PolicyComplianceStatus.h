@@ -62,6 +62,11 @@ namespace Model
     /**
      * <p>The AWS account that created the AWS Firewall Manager policy.</p>
      */
+    inline bool PolicyOwnerHasBeenSet() const { return m_policyOwnerHasBeenSet; }
+
+    /**
+     * <p>The AWS account that created the AWS Firewall Manager policy.</p>
+     */
     inline void SetPolicyOwner(const Aws::String& value) { m_policyOwnerHasBeenSet = true; m_policyOwner = value; }
 
     /**
@@ -94,6 +99,11 @@ namespace Model
      * <p>The ID of the AWS Firewall Manager policy.</p>
      */
     inline const Aws::String& GetPolicyId() const{ return m_policyId; }
+
+    /**
+     * <p>The ID of the AWS Firewall Manager policy.</p>
+     */
+    inline bool PolicyIdHasBeenSet() const { return m_policyIdHasBeenSet; }
 
     /**
      * <p>The ID of the AWS Firewall Manager policy.</p>
@@ -134,6 +144,11 @@ namespace Model
     /**
      * <p>The friendly name of the AWS Firewall Manager policy.</p>
      */
+    inline bool PolicyNameHasBeenSet() const { return m_policyNameHasBeenSet; }
+
+    /**
+     * <p>The friendly name of the AWS Firewall Manager policy.</p>
+     */
     inline void SetPolicyName(const Aws::String& value) { m_policyNameHasBeenSet = true; m_policyName = value; }
 
     /**
@@ -170,6 +185,11 @@ namespace Model
     /**
      * <p>The member account ID.</p>
      */
+    inline bool MemberAccountHasBeenSet() const { return m_memberAccountHasBeenSet; }
+
+    /**
+     * <p>The member account ID.</p>
+     */
     inline void SetMemberAccount(const Aws::String& value) { m_memberAccountHasBeenSet = true; m_memberAccount = value; }
 
     /**
@@ -202,6 +222,11 @@ namespace Model
      * <p>An array of <code>EvaluationResult</code> objects.</p>
      */
     inline const Aws::Vector<EvaluationResult>& GetEvaluationResults() const{ return m_evaluationResults; }
+
+    /**
+     * <p>An array of <code>EvaluationResult</code> objects.</p>
+     */
+    inline bool EvaluationResultsHasBeenSet() const { return m_evaluationResultsHasBeenSet; }
 
     /**
      * <p>An array of <code>EvaluationResult</code> objects.</p>
@@ -244,6 +269,12 @@ namespace Model
      * <p>Time stamp of the last update to the <code>EvaluationResult</code>
      * objects.</p>
      */
+    inline bool LastUpdatedHasBeenSet() const { return m_lastUpdatedHasBeenSet; }
+
+    /**
+     * <p>Time stamp of the last update to the <code>EvaluationResult</code>
+     * objects.</p>
+     */
     inline void SetLastUpdated(const Aws::Utils::DateTime& value) { m_lastUpdatedHasBeenSet = true; m_lastUpdated = value; }
 
     /**
@@ -272,6 +303,14 @@ namespace Model
      * problem with the service.</p>
      */
     inline const Aws::Map<DependentServiceName, Aws::String>& GetIssueInfoMap() const{ return m_issueInfoMap; }
+
+    /**
+     * <p>Details about problems with dependent services, such as AWS WAF or AWS
+     * Config, that are causing a resource to be non-compliant. The details include the
+     * name of the dependent service and the error message received that indicates the
+     * problem with the service.</p>
+     */
+    inline bool IssueInfoMapHasBeenSet() const { return m_issueInfoMapHasBeenSet; }
 
     /**
      * <p>Details about problems with dependent services, such as AWS WAF or AWS

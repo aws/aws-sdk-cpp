@@ -62,6 +62,14 @@ namespace Model
      * <code>A-Z</code>, <code>0-9</code>, space, and the special characters <code>_ -
      * . : / = + @</code>.</p>
      */
+    inline bool KeyHasBeenSet() const { return m_keyHasBeenSet; }
+
+    /**
+     * <p> A string that contains <code>Tag</code> key.</p> <p>The string length should
+     * be between 1 and 128 characters. Valid characters include <code>a-z</code>,
+     * <code>A-Z</code>, <code>0-9</code>, space, and the special characters <code>_ -
+     * . : / = + @</code>.</p>
+     */
     inline void SetKey(const Aws::String& value) { m_keyHasBeenSet = true; m_key = value; }
 
     /**
@@ -112,6 +120,14 @@ namespace Model
      * characters <code>_ - . : / = + @</code>.</p>
      */
     inline const Aws::String& GetValue() const{ return m_value; }
+
+    /**
+     * <p> A string that contains an optional <code>Tag</code> value.</p> <p>The string
+     * length should be between 0 and 256 characters. Valid characters include
+     * <code>a-z</code>, <code>A-Z</code>, <code>0-9</code>, space, and the special
+     * characters <code>_ - . : / = + @</code>.</p>
+     */
+    inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
 
     /**
      * <p> A string that contains an optional <code>Tag</code> value.</p> <p>The string

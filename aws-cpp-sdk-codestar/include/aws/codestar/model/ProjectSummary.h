@@ -55,6 +55,11 @@ namespace Model
     /**
      * <p>The ID of the project.</p>
      */
+    inline bool ProjectIdHasBeenSet() const { return m_projectIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the project.</p>
+     */
     inline void SetProjectId(const Aws::String& value) { m_projectIdHasBeenSet = true; m_projectId = value; }
 
     /**
@@ -87,6 +92,11 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the project.</p>
      */
     inline const Aws::String& GetProjectArn() const{ return m_projectArn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the project.</p>
+     */
+    inline bool ProjectArnHasBeenSet() const { return m_projectArnHasBeenSet; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the project.</p>

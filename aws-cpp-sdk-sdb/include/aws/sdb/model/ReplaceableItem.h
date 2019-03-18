@@ -59,6 +59,11 @@ namespace Model
     /**
      * The name of the replaceable item.
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * The name of the replaceable item.
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
@@ -91,6 +96,11 @@ namespace Model
      * The list of attributes for a replaceable item.
      */
     inline const Aws::Vector<ReplaceableAttribute>& GetAttributes() const{ return m_attributes; }
+
+    /**
+     * The list of attributes for a replaceable item.
+     */
+    inline bool AttributesHasBeenSet() const { return m_attributesHasBeenSet; }
 
     /**
      * The list of attributes for a replaceable item.

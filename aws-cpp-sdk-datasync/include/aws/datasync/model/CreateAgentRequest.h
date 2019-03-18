@@ -75,6 +75,20 @@ namespace Model
      * href="https://docs.aws.amazon.com/sync-service/latest/userguide/working-with-sync-agents.html#activating-sync-agent">Activating
      * a Sync Agent</a> in the <i>AWS DataSync User Guide.</i> </p>
      */
+    inline bool ActivationKeyHasBeenSet() const { return m_activationKeyHasBeenSet; }
+
+    /**
+     * <p>Your agent activation key. You can get the activation key either by sending
+     * an HTTP GET request with redirects that enable you to get the agent IP address
+     * (port 80). Alternatively, you can get it from the AWS DataSync console. </p>
+     * <p>The redirect URL returned in the response provides you the activation key for
+     * your agent in the query string parameter <code>activationKey</code>. It might
+     * also include other activation-related parameters; however, these are merely
+     * defaults. The arguments you pass to this API call determine the actual
+     * configuration of your agent. For more information, see <a
+     * href="https://docs.aws.amazon.com/sync-service/latest/userguide/working-with-sync-agents.html#activating-sync-agent">Activating
+     * a Sync Agent</a> in the <i>AWS DataSync User Guide.</i> </p>
+     */
     inline void SetActivationKey(const Aws::String& value) { m_activationKeyHasBeenSet = true; m_activationKey = value; }
 
     /**
@@ -158,6 +172,12 @@ namespace Model
      * <p>The name you configured for your agent. This value is a text reference that
      * is used to identify the agent in the console.</p>
      */
+    inline bool AgentNameHasBeenSet() const { return m_agentNameHasBeenSet; }
+
+    /**
+     * <p>The name you configured for your agent. This value is a text reference that
+     * is used to identify the agent in the console.</p>
+     */
     inline void SetAgentName(const Aws::String& value) { m_agentNameHasBeenSet = true; m_agentName = value; }
 
     /**
@@ -199,6 +219,15 @@ namespace Model
      * special characters: + - = . _ : / @. </p> </note>
      */
     inline const Aws::Vector<TagListEntry>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>The key-value pair that represents the tag you want to associate with the
+     * agent. The value can be an empty string. This value helps you manage, filter,
+     * and search for your agents.</p> <note> <p>Valid characters for key and value are
+     * letters, spaces, and numbers representable in UTF-8 format, and the following
+     * special characters: + - = . _ : / @. </p> </note>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
      * <p>The key-value pair that represents the tag you want to associate with the

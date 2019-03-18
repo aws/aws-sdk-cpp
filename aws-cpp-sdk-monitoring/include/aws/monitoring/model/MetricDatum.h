@@ -63,6 +63,11 @@ namespace Model
     /**
      * <p>The name of the metric.</p>
      */
+    inline bool MetricNameHasBeenSet() const { return m_metricNameHasBeenSet; }
+
+    /**
+     * <p>The name of the metric.</p>
+     */
     inline void SetMetricName(const Aws::String& value) { m_metricNameHasBeenSet = true; m_metricName = value; }
 
     /**
@@ -95,6 +100,11 @@ namespace Model
      * <p>The dimensions associated with the metric.</p>
      */
     inline const Aws::Vector<Dimension>& GetDimensions() const{ return m_dimensions; }
+
+    /**
+     * <p>The dimensions associated with the metric.</p>
+     */
+    inline bool DimensionsHasBeenSet() const { return m_dimensionsHasBeenSet; }
 
     /**
      * <p>The dimensions associated with the metric.</p>
@@ -137,6 +147,12 @@ namespace Model
      * <p>The time the metric data was received, expressed as the number of
      * milliseconds since Jan 1, 1970 00:00:00 UTC.</p>
      */
+    inline bool TimestampHasBeenSet() const { return m_timestampHasBeenSet; }
+
+    /**
+     * <p>The time the metric data was received, expressed as the number of
+     * milliseconds since Jan 1, 1970 00:00:00 UTC.</p>
+     */
     inline void SetTimestamp(const Aws::Utils::DateTime& value) { m_timestampHasBeenSet = true; m_timestamp = value; }
 
     /**
@@ -174,6 +190,15 @@ namespace Model
      * 2e-360 to 2e360 (Base 2). In addition, special values (for example, NaN,
      * +Infinity, -Infinity) are not supported.</p>
      */
+    inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
+
+    /**
+     * <p>The value for the metric.</p> <p>Although the parameter accepts numbers of
+     * type Double, CloudWatch rejects values that are either too small or too large.
+     * Values must be in the range of 8.515920e-109 to 1.174271e+108 (Base 10) or
+     * 2e-360 to 2e360 (Base 2). In addition, special values (for example, NaN,
+     * +Infinity, -Infinity) are not supported.</p>
+     */
     inline void SetValue(double value) { m_valueHasBeenSet = true; m_value = value; }
 
     /**
@@ -190,6 +215,11 @@ namespace Model
      * <p>The statistical values for the metric.</p>
      */
     inline const StatisticSet& GetStatisticValues() const{ return m_statisticValues; }
+
+    /**
+     * <p>The statistical values for the metric.</p>
+     */
+    inline bool StatisticValuesHasBeenSet() const { return m_statisticValuesHasBeenSet; }
 
     /**
      * <p>The statistical values for the metric.</p>
@@ -225,6 +255,20 @@ namespace Model
      * +Infinity, -Infinity) are not supported.</p>
      */
     inline const Aws::Vector<double>& GetValues() const{ return m_values; }
+
+    /**
+     * <p>Array of numbers representing the values for the metric during the period.
+     * Each unique value is listed just once in this array, and the corresponding
+     * number in the <code>Counts</code> array specifies the number of times that value
+     * occurred during the period. You can include up to 150 unique values in each
+     * <code>PutMetricData</code> action that specifies a <code>Values</code>
+     * array.</p> <p>Although the <code>Values</code> array accepts numbers of type
+     * <code>Double</code>, CloudWatch rejects values that are either too small or too
+     * large. Values must be in the range of 8.515920e-109 to 1.174271e+108 (Base 10)
+     * or 2e-360 to 2e360 (Base 2). In addition, special values (for example, NaN,
+     * +Infinity, -Infinity) are not supported.</p>
+     */
+    inline bool ValuesHasBeenSet() const { return m_valuesHasBeenSet; }
 
     /**
      * <p>Array of numbers representing the values for the metric during the period.
@@ -315,6 +359,16 @@ namespace Model
      * for each count. If you include a <code>Counts</code> array, it must include the
      * same amount of values as the <code>Values</code> array.</p>
      */
+    inline bool CountsHasBeenSet() const { return m_countsHasBeenSet; }
+
+    /**
+     * <p>Array of numbers that is used along with the <code>Values</code> array. Each
+     * number in the <code>Count</code> array is the number of times the corresponding
+     * value in the <code>Values</code> array occurred during the period. </p> <p>If
+     * you omit the <code>Counts</code> array, the default of 1 is used as the value
+     * for each count. If you include a <code>Counts</code> array, it must include the
+     * same amount of values as the <code>Values</code> array.</p>
+     */
     inline void SetCounts(const Aws::Vector<double>& value) { m_countsHasBeenSet = true; m_counts = value; }
 
     /**
@@ -366,6 +420,11 @@ namespace Model
     /**
      * <p>The unit of the metric.</p>
      */
+    inline bool UnitHasBeenSet() const { return m_unitHasBeenSet; }
+
+    /**
+     * <p>The unit of the metric.</p>
+     */
     inline void SetUnit(const StandardUnit& value) { m_unitHasBeenSet = true; m_unit = value; }
 
     /**
@@ -396,6 +455,19 @@ namespace Model
      * optional, if you do not specify it the default of 60 is used.</p>
      */
     inline int GetStorageResolution() const{ return m_storageResolution; }
+
+    /**
+     * <p>Valid values are 1 and 60. Setting this to 1 specifies this metric as a
+     * high-resolution metric, so that CloudWatch stores the metric with sub-minute
+     * resolution down to one second. Setting this to 60 specifies this metric as a
+     * regular-resolution metric, which CloudWatch stores at 1-minute resolution.
+     * Currently, high resolution is available only for custom metrics. For more
+     * information about high-resolution metrics, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/publishingMetrics.html#high-resolution-metrics">High-Resolution
+     * Metrics</a> in the <i>Amazon CloudWatch User Guide</i>. </p> <p>This field is
+     * optional, if you do not specify it the default of 60 is used.</p>
+     */
+    inline bool StorageResolutionHasBeenSet() const { return m_storageResolutionHasBeenSet; }
 
     /**
      * <p>Valid values are 1 and 60. Setting this to 1 specifies this metric as a

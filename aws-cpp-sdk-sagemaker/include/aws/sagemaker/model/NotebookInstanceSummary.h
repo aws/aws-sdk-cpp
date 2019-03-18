@@ -60,6 +60,11 @@ namespace Model
     /**
      * <p>The name of the notebook instance that you want a summary for.</p>
      */
+    inline bool NotebookInstanceNameHasBeenSet() const { return m_notebookInstanceNameHasBeenSet; }
+
+    /**
+     * <p>The name of the notebook instance that you want a summary for.</p>
+     */
     inline void SetNotebookInstanceName(const Aws::String& value) { m_notebookInstanceNameHasBeenSet = true; m_notebookInstanceName = value; }
 
     /**
@@ -92,6 +97,11 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the notebook instance.</p>
      */
     inline const Aws::String& GetNotebookInstanceArn() const{ return m_notebookInstanceArn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the notebook instance.</p>
+     */
+    inline bool NotebookInstanceArnHasBeenSet() const { return m_notebookInstanceArnHasBeenSet; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the notebook instance.</p>
@@ -132,6 +142,11 @@ namespace Model
     /**
      * <p>The status of the notebook instance.</p>
      */
+    inline bool NotebookInstanceStatusHasBeenSet() const { return m_notebookInstanceStatusHasBeenSet; }
+
+    /**
+     * <p>The status of the notebook instance.</p>
+     */
     inline void SetNotebookInstanceStatus(const NotebookInstanceStatus& value) { m_notebookInstanceStatusHasBeenSet = true; m_notebookInstanceStatus = value; }
 
     /**
@@ -155,6 +170,12 @@ namespace Model
      * notebook instance. </p>
      */
     inline const Aws::String& GetUrl() const{ return m_url; }
+
+    /**
+     * <p>The URL that you use to connect to the Jupyter instance running in your
+     * notebook instance. </p>
+     */
+    inline bool UrlHasBeenSet() const { return m_urlHasBeenSet; }
 
     /**
      * <p>The URL that you use to connect to the Jupyter instance running in your
@@ -201,6 +222,11 @@ namespace Model
     /**
      * <p>The type of ML compute instance that the notebook instance is running on.</p>
      */
+    inline bool InstanceTypeHasBeenSet() const { return m_instanceTypeHasBeenSet; }
+
+    /**
+     * <p>The type of ML compute instance that the notebook instance is running on.</p>
+     */
     inline void SetInstanceType(const InstanceType& value) { m_instanceTypeHasBeenSet = true; m_instanceType = value; }
 
     /**
@@ -223,6 +249,11 @@ namespace Model
      * <p>A timestamp that shows when the notebook instance was created.</p>
      */
     inline const Aws::Utils::DateTime& GetCreationTime() const{ return m_creationTime; }
+
+    /**
+     * <p>A timestamp that shows when the notebook instance was created.</p>
+     */
+    inline bool CreationTimeHasBeenSet() const { return m_creationTimeHasBeenSet; }
 
     /**
      * <p>A timestamp that shows when the notebook instance was created.</p>
@@ -253,6 +284,11 @@ namespace Model
     /**
      * <p>A timestamp that shows when the notebook instance was last modified.</p>
      */
+    inline bool LastModifiedTimeHasBeenSet() const { return m_lastModifiedTimeHasBeenSet; }
+
+    /**
+     * <p>A timestamp that shows when the notebook instance was last modified.</p>
+     */
     inline void SetLastModifiedTime(const Aws::Utils::DateTime& value) { m_lastModifiedTimeHasBeenSet = true; m_lastModifiedTime = value; }
 
     /**
@@ -279,6 +315,15 @@ namespace Model
      * 2.1: (Optional) Customize a Notebook Instance</a>.</p>
      */
     inline const Aws::String& GetNotebookInstanceLifecycleConfigName() const{ return m_notebookInstanceLifecycleConfigName; }
+
+    /**
+     * <p>The name of a notebook instance lifecycle configuration associated with this
+     * notebook instance.</p> <p>For information about notebook instance lifestyle
+     * configurations, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/notebook-lifecycle-config.html">Step
+     * 2.1: (Optional) Customize a Notebook Instance</a>.</p>
+     */
+    inline bool NotebookInstanceLifecycleConfigNameHasBeenSet() const { return m_notebookInstanceLifecycleConfigNameHasBeenSet; }
 
     /**
      * <p>The name of a notebook instance lifecycle configuration associated with this
@@ -347,6 +392,19 @@ namespace Model
      * Git Repositories with Amazon SageMaker Notebook Instances</a>.</p>
      */
     inline const Aws::String& GetDefaultCodeRepository() const{ return m_defaultCodeRepository; }
+
+    /**
+     * <p>The Git repository associated with the notebook instance as its default code
+     * repository. This can be either the name of a Git repository stored as a resource
+     * in your account, or the URL of a Git repository in <a
+     * href="http://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">AWS
+     * CodeCommit</a> or in any other Git repository. When you open a notebook
+     * instance, it opens in the directory that contains this repository. For more
+     * information, see <a
+     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating
+     * Git Repositories with Amazon SageMaker Notebook Instances</a>.</p>
+     */
+    inline bool DefaultCodeRepositoryHasBeenSet() const { return m_defaultCodeRepositoryHasBeenSet; }
 
     /**
      * <p>The Git repository associated with the notebook instance as its default code
@@ -439,6 +497,19 @@ namespace Model
      * Git Repositories with Amazon SageMaker Notebook Instances</a>.</p>
      */
     inline const Aws::Vector<Aws::String>& GetAdditionalCodeRepositories() const{ return m_additionalCodeRepositories; }
+
+    /**
+     * <p>An array of up to three Git repositories associated with the notebook
+     * instance. These can be either the names of Git repositories stored as resources
+     * in your account, or the URL of Git repositories in <a
+     * href="http://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">AWS
+     * CodeCommit</a> or in any other Git repository. These repositories are cloned at
+     * the same level as the default repository of your notebook instance. For more
+     * information, see <a
+     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating
+     * Git Repositories with Amazon SageMaker Notebook Instances</a>.</p>
+     */
+    inline bool AdditionalCodeRepositoriesHasBeenSet() const { return m_additionalCodeRepositoriesHasBeenSet; }
 
     /**
      * <p>An array of up to three Git repositories associated with the notebook

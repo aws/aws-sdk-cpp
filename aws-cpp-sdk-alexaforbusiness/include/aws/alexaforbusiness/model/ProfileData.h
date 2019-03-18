@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p>The ARN of a room profile.</p>
      */
+    inline bool ProfileArnHasBeenSet() const { return m_profileArnHasBeenSet; }
+
+    /**
+     * <p>The ARN of a room profile.</p>
+     */
     inline void SetProfileArn(const Aws::String& value) { m_profileArnHasBeenSet = true; m_profileArn = value; }
 
     /**
@@ -90,6 +95,11 @@ namespace Model
      * <p>The name of a room profile.</p>
      */
     inline const Aws::String& GetProfileName() const{ return m_profileName; }
+
+    /**
+     * <p>The name of a room profile.</p>
+     */
+    inline bool ProfileNameHasBeenSet() const { return m_profileNameHasBeenSet; }
 
     /**
      * <p>The name of a room profile.</p>
@@ -130,6 +140,11 @@ namespace Model
     /**
      * <p>Retrieves if the profile data is default or not.</p>
      */
+    inline bool IsDefaultHasBeenSet() const { return m_isDefaultHasBeenSet; }
+
+    /**
+     * <p>Retrieves if the profile data is default or not.</p>
+     */
     inline void SetIsDefault(bool value) { m_isDefaultHasBeenSet = true; m_isDefault = value; }
 
     /**
@@ -142,6 +157,11 @@ namespace Model
      * <p>The address of a room profile.</p>
      */
     inline const Aws::String& GetAddress() const{ return m_address; }
+
+    /**
+     * <p>The address of a room profile.</p>
+     */
+    inline bool AddressHasBeenSet() const { return m_addressHasBeenSet; }
 
     /**
      * <p>The address of a room profile.</p>
@@ -182,6 +202,11 @@ namespace Model
     /**
      * <p>The timezone of a room profile.</p>
      */
+    inline bool TimezoneHasBeenSet() const { return m_timezoneHasBeenSet; }
+
+    /**
+     * <p>The timezone of a room profile.</p>
+     */
     inline void SetTimezone(const Aws::String& value) { m_timezoneHasBeenSet = true; m_timezone = value; }
 
     /**
@@ -218,6 +243,11 @@ namespace Model
     /**
      * <p>The distance unit of a room profile.</p>
      */
+    inline bool DistanceUnitHasBeenSet() const { return m_distanceUnitHasBeenSet; }
+
+    /**
+     * <p>The distance unit of a room profile.</p>
+     */
     inline void SetDistanceUnit(const DistanceUnit& value) { m_distanceUnitHasBeenSet = true; m_distanceUnit = value; }
 
     /**
@@ -244,6 +274,11 @@ namespace Model
     /**
      * <p>The temperature unit of a room profile.</p>
      */
+    inline bool TemperatureUnitHasBeenSet() const { return m_temperatureUnitHasBeenSet; }
+
+    /**
+     * <p>The temperature unit of a room profile.</p>
+     */
     inline void SetTemperatureUnit(const TemperatureUnit& value) { m_temperatureUnitHasBeenSet = true; m_temperatureUnit = value; }
 
     /**
@@ -266,6 +301,11 @@ namespace Model
      * <p>The wake word of a room profile.</p>
      */
     inline const WakeWord& GetWakeWord() const{ return m_wakeWord; }
+
+    /**
+     * <p>The wake word of a room profile.</p>
+     */
+    inline bool WakeWordHasBeenSet() const { return m_wakeWordHasBeenSet; }
 
     /**
      * <p>The wake word of a room profile.</p>

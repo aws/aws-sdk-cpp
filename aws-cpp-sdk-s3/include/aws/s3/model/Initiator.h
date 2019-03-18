@@ -57,6 +57,12 @@ namespace Model
      * <p>If the principal is an AWS account, it provides the Canonical User ID. If the
      * principal is an IAM User, it provides a user ARN value.</p>
      */
+    inline bool IDHasBeenSet() const { return m_iDHasBeenSet; }
+
+    /**
+     * <p>If the principal is an AWS account, it provides the Canonical User ID. If the
+     * principal is an IAM User, it provides a user ARN value.</p>
+     */
     inline void SetID(const Aws::String& value) { m_iDHasBeenSet = true; m_iD = value; }
 
     /**
@@ -94,6 +100,11 @@ namespace Model
      * <p>Name of the Principal.</p>
      */
     inline const Aws::String& GetDisplayName() const{ return m_displayName; }
+
+    /**
+     * <p>Name of the Principal.</p>
+     */
+    inline bool DisplayNameHasBeenSet() const { return m_displayNameHasBeenSet; }
 
     /**
      * <p>Name of the Principal.</p>

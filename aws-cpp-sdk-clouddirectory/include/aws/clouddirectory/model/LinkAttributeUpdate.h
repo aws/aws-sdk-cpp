@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The key of the attribute being updated.</p>
      */
+    inline bool AttributeKeyHasBeenSet() const { return m_attributeKeyHasBeenSet; }
+
+    /**
+     * <p>The key of the attribute being updated.</p>
+     */
     inline void SetAttributeKey(const AttributeKey& value) { m_attributeKeyHasBeenSet = true; m_attributeKey = value; }
 
     /**
@@ -79,6 +84,11 @@ namespace Model
      * <p>The action to perform as part of the attribute update.</p>
      */
     inline const LinkAttributeAction& GetAttributeAction() const{ return m_attributeAction; }
+
+    /**
+     * <p>The action to perform as part of the attribute update.</p>
+     */
+    inline bool AttributeActionHasBeenSet() const { return m_attributeActionHasBeenSet; }
 
     /**
      * <p>The action to perform as part of the attribute update.</p>

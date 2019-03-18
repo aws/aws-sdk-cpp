@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>Describes the execution property groups.</p>
      */
+    inline bool PropertyGroupDescriptionsHasBeenSet() const { return m_propertyGroupDescriptionsHasBeenSet; }
+
+    /**
+     * <p>Describes the execution property groups.</p>
+     */
     inline void SetPropertyGroupDescriptions(const Aws::Vector<PropertyGroup>& value) { m_propertyGroupDescriptionsHasBeenSet = true; m_propertyGroupDescriptions = value; }
 
     /**

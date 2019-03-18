@@ -57,6 +57,12 @@ namespace Model
      * Blanking image to be used. Leave empty for solid black. Only bmp and png images
      * are supported.
      */
+    inline bool AvailBlankingImageHasBeenSet() const { return m_availBlankingImageHasBeenSet; }
+
+    /**
+     * Blanking image to be used. Leave empty for solid black. Only bmp and png images
+     * are supported.
+     */
     inline void SetAvailBlankingImage(const Aws::String& value) { m_availBlankingImageHasBeenSet = true; m_availBlankingImage = value; }
 
     /**

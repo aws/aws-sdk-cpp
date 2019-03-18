@@ -59,6 +59,12 @@ namespace Model
      * <p>The URL of the Amazon SQS queue to delete.</p> <p>Queue URLs and names are
      * case-sensitive.</p>
      */
+    inline bool QueueUrlHasBeenSet() const { return m_queueUrlHasBeenSet; }
+
+    /**
+     * <p>The URL of the Amazon SQS queue to delete.</p> <p>Queue URLs and names are
+     * case-sensitive.</p>
+     */
     inline void SetQueueUrl(const Aws::String& value) { m_queueUrlHasBeenSet = true; m_queueUrl = value; }
 
     /**

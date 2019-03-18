@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The ID of the principal.</p>
      */
+    inline bool PrincipalIdHasBeenSet() const { return m_principalIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the principal.</p>
+     */
     inline void SetPrincipalId(const Aws::String& value) { m_principalIdHasBeenSet = true; m_principalId = value; }
 
     /**
@@ -89,6 +94,11 @@ namespace Model
      * <p>The ID of the invited user.</p>
      */
     inline const Aws::String& GetInviteePrincipalId() const{ return m_inviteePrincipalId; }
+
+    /**
+     * <p>The ID of the invited user.</p>
+     */
+    inline bool InviteePrincipalIdHasBeenSet() const { return m_inviteePrincipalIdHasBeenSet; }
 
     /**
      * <p>The ID of the invited user.</p>
@@ -129,6 +139,11 @@ namespace Model
     /**
      * <p>The role.</p>
      */
+    inline bool RoleHasBeenSet() const { return m_roleHasBeenSet; }
+
+    /**
+     * <p>The role.</p>
+     */
     inline void SetRole(const RoleType& value) { m_roleHasBeenSet = true; m_role = value; }
 
     /**
@@ -155,6 +170,11 @@ namespace Model
     /**
      * <p>The status.</p>
      */
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
+
+    /**
+     * <p>The status.</p>
+     */
     inline void SetStatus(const ShareStatusType& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
@@ -177,6 +197,11 @@ namespace Model
      * <p>The ID of the resource that was shared.</p>
      */
     inline const Aws::String& GetShareId() const{ return m_shareId; }
+
+    /**
+     * <p>The ID of the resource that was shared.</p>
+     */
+    inline bool ShareIdHasBeenSet() const { return m_shareIdHasBeenSet; }
 
     /**
      * <p>The ID of the resource that was shared.</p>
@@ -213,6 +238,11 @@ namespace Model
      * <p>The status message.</p>
      */
     inline const Aws::String& GetStatusMessage() const{ return m_statusMessage; }
+
+    /**
+     * <p>The status message.</p>
+     */
+    inline bool StatusMessageHasBeenSet() const { return m_statusMessageHasBeenSet; }
 
     /**
      * <p>The status message.</p>

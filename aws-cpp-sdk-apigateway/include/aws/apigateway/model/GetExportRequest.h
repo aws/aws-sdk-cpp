@@ -63,6 +63,11 @@ namespace Model
     /**
      * <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
      */
+    inline bool RestApiIdHasBeenSet() const { return m_restApiIdHasBeenSet; }
+
+    /**
+     * <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
+     */
     inline void SetRestApiId(const Aws::String& value) { m_restApiIdHasBeenSet = true; m_restApiId = value; }
 
     /**
@@ -95,6 +100,11 @@ namespace Model
      * <p>[Required] The name of the <a>Stage</a> that will be exported.</p>
      */
     inline const Aws::String& GetStageName() const{ return m_stageName; }
+
+    /**
+     * <p>[Required] The name of the <a>Stage</a> that will be exported.</p>
+     */
+    inline bool StageNameHasBeenSet() const { return m_stageNameHasBeenSet; }
 
     /**
      * <p>[Required] The name of the <a>Stage</a> that will be exported.</p>
@@ -132,6 +142,12 @@ namespace Model
      * 3.0.x and 'swagger' for Swagger/OpenAPI 2.0.</p>
      */
     inline const Aws::String& GetExportType() const{ return m_exportType; }
+
+    /**
+     * <p>[Required] The type of export. Acceptable values are 'oas30' for OpenAPI
+     * 3.0.x and 'swagger' for Swagger/OpenAPI 2.0.</p>
+     */
+    inline bool ExportTypeHasBeenSet() const { return m_exportTypeHasBeenSet; }
 
     /**
      * <p>[Required] The type of export. Acceptable values are 'oas30' for OpenAPI
@@ -182,6 +198,19 @@ namespace Model
      * API with Postman extensions, allowing for import to the Postman tool</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetParameters() const{ return m_parameters; }
+
+    /**
+     * <p>A key-value map of query string parameters that specify properties of the
+     * export, depending on the requested <code>exportType</code>. For
+     * <code>exportType</code> <code>oas30</code> and <code>swagger</code>, any
+     * combination of the following parameters are supported:
+     * <code>extensions='integrations'</code> or <code>extensions='apigateway'</code>
+     * will export the API with x-amazon-apigateway-integration extensions.
+     * <code>extensions='authorizers'</code> will export the API with
+     * x-amazon-apigateway-authorizer extensions. <code>postman</code> will export the
+     * API with Postman extensions, allowing for import to the Postman tool</p>
+     */
+    inline bool ParametersHasBeenSet() const { return m_parametersHasBeenSet; }
 
     /**
      * <p>A key-value map of query string parameters that specify properties of the
@@ -335,6 +364,15 @@ namespace Model
      * for direct API requests.</p>
      */
     inline const Aws::String& GetAccepts() const{ return m_accepts; }
+
+    /**
+     * <p>The content-type of the export, for example <code>application/json</code>.
+     * Currently <code>application/json</code> and <code>application/yaml</code> are
+     * supported for <code>exportType</code> of<code>oas30</code> and
+     * <code>swagger</code>. This should be specified in the <code>Accept</code> header
+     * for direct API requests.</p>
+     */
+    inline bool AcceptsHasBeenSet() const { return m_acceptsHasBeenSet; }
 
     /**
      * <p>The content-type of the export, for example <code>application/json</code>.

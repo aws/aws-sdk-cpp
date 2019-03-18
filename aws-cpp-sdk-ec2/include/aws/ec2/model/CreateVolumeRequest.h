@@ -64,6 +64,13 @@ namespace Model
      * <a>DescribeAvailabilityZones</a> to list the Availability Zones that are
      * currently available to you.</p>
      */
+    inline bool AvailabilityZoneHasBeenSet() const { return m_availabilityZoneHasBeenSet; }
+
+    /**
+     * <p>The Availability Zone in which to create the volume. Use
+     * <a>DescribeAvailabilityZones</a> to list the Availability Zones that are
+     * currently available to you.</p>
+     */
     inline void SetAvailabilityZone(const Aws::String& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = value; }
 
     /**
@@ -124,6 +131,18 @@ namespace Model
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon
      * EBS Encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
      */
+    inline bool EncryptedHasBeenSet() const { return m_encryptedHasBeenSet; }
+
+    /**
+     * <p>Specifies whether the volume should be encrypted. Encrypted Amazon EBS
+     * volumes may only be attached to instances that support Amazon EBS encryption.
+     * Volumes that are created from encrypted snapshots are automatically encrypted.
+     * There is no way to create an encrypted volume from an unencrypted snapshot or
+     * vice versa. If your AMI uses encrypted volumes, you can only launch it on
+     * supported instance types. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon
+     * EBS Encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     */
     inline void SetEncrypted(bool value) { m_encryptedHasBeenSet = true; m_encrypted = value; }
 
     /**
@@ -151,6 +170,19 @@ namespace Model
      * <p>This parameter is valid only for Provisioned IOPS SSD (io1) volumes.</p>
      */
     inline int GetIops() const{ return m_iops; }
+
+    /**
+     * <p>The number of I/O operations per second (IOPS) to provision for the volume,
+     * with a maximum ratio of 50 IOPS/GiB. Range is 100 to 64,000 IOPS for volumes in
+     * most Regions. Maximum IOPS of 64,000 is guaranteed only on <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances">Nitro-based
+     * instances</a>. Other instance families guarantee performance up to 32,000 IOPS.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon
+     * EBS Volume Types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     * <p>This parameter is valid only for Provisioned IOPS SSD (io1) volumes.</p>
+     */
+    inline bool IopsHasBeenSet() const { return m_iopsHasBeenSet; }
 
     /**
      * <p>The number of I/O operations per second (IOPS) to provision for the volume,
@@ -201,6 +233,29 @@ namespace Model
      * identifier. The action will eventually fail. </p>
      */
     inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
+
+    /**
+     * <p>An identifier for the AWS Key Management Service (AWS KMS) customer master
+     * key (CMK) to use when creating the encrypted volume. This parameter is only
+     * required if you want to use a non-default CMK; if this parameter is not
+     * specified, the default CMK for EBS is used. If a <code>KmsKeyId</code> is
+     * specified, the <code>Encrypted</code> flag must also be set. </p> <p>The CMK
+     * identifier may be provided in any of the following formats: </p> <ul> <li>
+     * <p>Key ID</p> </li> <li> <p>Key alias</p> </li> <li> <p>ARN using key ID. The ID
+     * ARN contains the <code>arn:aws:kms</code> namespace, followed by the region of
+     * the CMK, the AWS account ID of the CMK owner, the <code>key</code> namespace,
+     * and then the CMK ID. For example,
+     * arn:aws:kms:<i>us-east-1</i>:<i>012345678910</i>:key/<i>abcd1234-a123-456a-a12b-a123b4cd56ef</i>.
+     * </p> </li> <li> <p>ARN using key alias. The alias ARN contains the
+     * <code>arn:aws:kms</code> namespace, followed by the region of the CMK, the AWS
+     * account ID of the CMK owner, the <code>alias</code> namespace, and then the CMK
+     * alias. For example,
+     * arn:aws:kms:<i>us-east-1</i>:<i>012345678910</i>:alias/<i>ExampleAlias</i>. </p>
+     * </li> </ul> <p>AWS parses <code>KmsKeyId</code> asynchronously, meaning that the
+     * action you call may appear to complete even though you provided an invalid
+     * identifier. The action will eventually fail. </p>
+     */
+    inline bool KmsKeyIdHasBeenSet() const { return m_kmsKeyIdHasBeenSet; }
 
     /**
      * <p>An identifier for the AWS Key Management Service (AWS KMS) customer master
@@ -363,6 +418,18 @@ namespace Model
      * snapshot size.</p> <note> <p>At least one of Size or SnapshotId are
      * required.</p> </note>
      */
+    inline bool SizeHasBeenSet() const { return m_sizeHasBeenSet; }
+
+    /**
+     * <p>The size of the volume, in GiBs.</p> <p>Constraints: 1-16,384 for
+     * <code>gp2</code>, 4-16,384 for <code>io1</code>, 500-16,384 for
+     * <code>st1</code>, 500-16,384 for <code>sc1</code>, and 1-1,024 for
+     * <code>standard</code>. If you specify a snapshot, the volume size must be equal
+     * to or larger than the snapshot size.</p> <p>Default: If you're creating the
+     * volume from a snapshot and don't specify a volume size, the default is the
+     * snapshot size.</p> <note> <p>At least one of Size or SnapshotId are
+     * required.</p> </note>
+     */
     inline void SetSize(int value) { m_sizeHasBeenSet = true; m_size = value; }
 
     /**
@@ -383,6 +450,12 @@ namespace Model
      * Size or SnapshotId are required.</p> </note>
      */
     inline const Aws::String& GetSnapshotId() const{ return m_snapshotId; }
+
+    /**
+     * <p>The snapshot from which to create the volume.</p> <note> <p>At least one of
+     * Size or SnapshotId are required.</p> </note>
+     */
+    inline bool SnapshotIdHasBeenSet() const { return m_snapshotIdHasBeenSet; }
 
     /**
      * <p>The snapshot from which to create the volume.</p> <note> <p>At least one of
@@ -432,6 +505,18 @@ namespace Model
      * EBS defaults to <code>gp2</code>.</p>
      */
     inline const VolumeType& GetVolumeType() const{ return m_volumeType; }
+
+    /**
+     * <p>The volume type. This can be <code>gp2</code> for General Purpose SSD,
+     * <code>io1</code> for Provisioned IOPS SSD, <code>st1</code> for Throughput
+     * Optimized HDD, <code>sc1</code> for Cold HDD, or <code>standard</code> for
+     * Magnetic volumes.</p> <p>Defaults: If no volume type is specified, the default
+     * is <code>standard</code> in us-east-1, eu-west-1, eu-central-1, us-west-2,
+     * us-west-1, sa-east-1, ap-northeast-1, ap-northeast-2, ap-southeast-1,
+     * ap-southeast-2, ap-south-1, us-gov-west-1, and cn-north-1. In all other Regions,
+     * EBS defaults to <code>gp2</code>.</p>
+     */
+    inline bool VolumeTypeHasBeenSet() const { return m_volumeTypeHasBeenSet; }
 
     /**
      * <p>The volume type. This can be <code>gp2</code> for General Purpose SSD,
@@ -496,6 +581,14 @@ namespace Model
      * required permissions, the error response is <code>DryRunOperation</code>.
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
+    inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
+
+    /**
+     * <p>Checks whether you have the required permissions for the action, without
+     * actually making the request, and provides an error response. If you have the
+     * required permissions, the error response is <code>DryRunOperation</code>.
+     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+     */
     inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
 
     /**
@@ -511,6 +604,11 @@ namespace Model
      * <p>The tags to apply to the volume during creation.</p>
      */
     inline const Aws::Vector<TagSpecification>& GetTagSpecifications() const{ return m_tagSpecifications; }
+
+    /**
+     * <p>The tags to apply to the volume during creation.</p>
+     */
+    inline bool TagSpecificationsHasBeenSet() const { return m_tagSpecificationsHasBeenSet; }
 
     /**
      * <p>The tags to apply to the volume during creation.</p>

@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The unique system-generated ID of the job.</p>
      */
+    inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
+
+    /**
+     * <p>The unique system-generated ID of the job.</p>
+     */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
     /**
@@ -95,6 +100,12 @@ namespace Model
      * <p>Represents additional information about a job required for a job worker to
      * complete the job. </p>
      */
+    inline bool DataHasBeenSet() const { return m_dataHasBeenSet; }
+
+    /**
+     * <p>Represents additional information about a job required for a job worker to
+     * complete the job. </p>
+     */
     inline void SetData(const JobData& value) { m_dataHasBeenSet = true; m_data = value; }
 
     /**
@@ -120,6 +131,11 @@ namespace Model
      * <p>The AWS account ID associated with the job.</p>
      */
     inline const Aws::String& GetAccountId() const{ return m_accountId; }
+
+    /**
+     * <p>The AWS account ID associated with the job.</p>
+     */
+    inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
 
     /**
      * <p>The AWS account ID associated with the job.</p>

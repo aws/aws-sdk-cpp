@@ -52,6 +52,11 @@ namespace Model
     /**
      * <p>The ID of the member account that you want to remove from Amazon Macie.</p>
      */
+    inline bool MemberAccountIdHasBeenSet() const { return m_memberAccountIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the member account that you want to remove from Amazon Macie.</p>
+     */
     inline void SetMemberAccountId(const Aws::String& value) { m_memberAccountIdHasBeenSet = true; m_memberAccountId = value; }
 
     /**

@@ -57,6 +57,9 @@ namespace Model
     inline const AudioNormalizationSettings& GetAudioNormalizationSettings() const{ return m_audioNormalizationSettings; }
 
     
+    inline bool AudioNormalizationSettingsHasBeenSet() const { return m_audioNormalizationSettingsHasBeenSet; }
+
+    
     inline void SetAudioNormalizationSettings(const AudioNormalizationSettings& value) { m_audioNormalizationSettingsHasBeenSet = true; m_audioNormalizationSettings = value; }
 
     
@@ -82,6 +85,20 @@ namespace Model
      * Selector 1" will be chosen automatically.
      */
     inline const Aws::String& GetAudioSourceName() const{ return m_audioSourceName; }
+
+    /**
+     * Specifies which audio data to use from each input. In the simplest case, specify
+     * an "Audio Selector":#inputs-audio_selector by name based on its order within
+     * each input. For example if you specify "Audio Selector 3", then the third audio
+     * selector will be used from each input. If an input does not have an "Audio
+     * Selector 3", then the audio selector marked as "default" in that input will be
+     * used. If there is no audio selector marked as "default", silence will be
+     * inserted for the duration of that input. Alternatively, an "Audio Selector
+     * Group":#inputs-audio_selector_group name may be specified, with similar
+     * default/silence behavior. If no audio_source_name is specified, then "Audio
+     * Selector 1" will be chosen automatically.
+     */
+    inline bool AudioSourceNameHasBeenSet() const { return m_audioSourceNameHasBeenSet; }
 
     /**
      * Specifies which audio data to use from each input. In the simplest case, specify
@@ -182,6 +199,14 @@ namespace Model
      * Effects, 2 = Hearing Impaired, 3 = Visually Impaired Commentary, 4-255 =
      * Reserved.
      */
+    inline bool AudioTypeHasBeenSet() const { return m_audioTypeHasBeenSet; }
+
+    /**
+     * Applies only if Follow Input Audio Type is unchecked (false). A number between 0
+     * and 255. The following are defined in ISO-IEC 13818-1: 0 = Undefined, 1 = Clean
+     * Effects, 2 = Hearing Impaired, 3 = Visually Impaired Commentary, 4-255 =
+     * Reserved.
+     */
     inline void SetAudioType(int value) { m_audioTypeHasBeenSet = true; m_audioType = value; }
 
     /**
@@ -195,6 +220,9 @@ namespace Model
 
     
     inline const AudioTypeControl& GetAudioTypeControl() const{ return m_audioTypeControl; }
+
+    
+    inline bool AudioTypeControlHasBeenSet() const { return m_audioTypeControlHasBeenSet; }
 
     
     inline void SetAudioTypeControl(const AudioTypeControl& value) { m_audioTypeControlHasBeenSet = true; m_audioTypeControl = value; }
@@ -211,6 +239,9 @@ namespace Model
 
     
     inline const AudioCodecSettings& GetCodecSettings() const{ return m_codecSettings; }
+
+    
+    inline bool CodecSettingsHasBeenSet() const { return m_codecSettingsHasBeenSet; }
 
     
     inline void SetCodecSettings(const AudioCodecSettings& value) { m_codecSettingsHasBeenSet = true; m_codecSettings = value; }
@@ -232,6 +263,14 @@ namespace Model
      * Code' is selected but there is no ISO 639 language code specified by the input.
      */
     inline const Aws::String& GetCustomLanguageCode() const{ return m_customLanguageCode; }
+
+    /**
+     * Specify the language for this audio output track, using the ISO 639-2 or ISO
+     * 639-3 three-letter language code. The language specified will be used when
+     * 'Follow Input Language Code' is not selected or when 'Follow Input Language
+     * Code' is selected but there is no ISO 639 language code specified by the input.
+     */
+    inline bool CustomLanguageCodeHasBeenSet() const { return m_customLanguageCodeHasBeenSet; }
 
     /**
      * Specify the language for this audio output track, using the ISO 639-2 or ISO
@@ -296,6 +335,14 @@ namespace Model
      * is not selected or when 'Follow Input Language Code' is selected but there is no
      * ISO 639 language code specified by the input.
      */
+    inline bool LanguageCodeHasBeenSet() const { return m_languageCodeHasBeenSet; }
+
+    /**
+     * Indicates the language of the audio output track. The ISO 639 language specified
+     * in the 'Language Code' drop down will be used when 'Follow Input Language Code'
+     * is not selected or when 'Follow Input Language Code' is selected but there is no
+     * ISO 639 language code specified by the input.
+     */
     inline void SetLanguageCode(const LanguageCode& value) { m_languageCodeHasBeenSet = true; m_languageCode = value; }
 
     /**
@@ -327,6 +374,9 @@ namespace Model
     inline const AudioLanguageCodeControl& GetLanguageCodeControl() const{ return m_languageCodeControl; }
 
     
+    inline bool LanguageCodeControlHasBeenSet() const { return m_languageCodeControlHasBeenSet; }
+
+    
     inline void SetLanguageCodeControl(const AudioLanguageCodeControl& value) { m_languageCodeControlHasBeenSet = true; m_languageCodeControl = value; }
 
     
@@ -343,6 +393,11 @@ namespace Model
      * Advanced audio remixing settings.
      */
     inline const RemixSettings& GetRemixSettings() const{ return m_remixSettings; }
+
+    /**
+     * Advanced audio remixing settings.
+     */
+    inline bool RemixSettingsHasBeenSet() const { return m_remixSettingsHasBeenSet; }
 
     /**
      * Advanced audio remixing settings.
@@ -371,6 +426,13 @@ namespace Model
      * and underscore are legal.
      */
     inline const Aws::String& GetStreamName() const{ return m_streamName; }
+
+    /**
+     * Used for MS Smooth and Apple HLS outputs. Indicates the name displayed by the
+     * player (eg. English, or Director Commentary). Alphanumeric characters, spaces,
+     * and underscore are legal.
+     */
+    inline bool StreamNameHasBeenSet() const { return m_streamNameHasBeenSet; }
 
     /**
      * Used for MS Smooth and Apple HLS outputs. Indicates the name displayed by the

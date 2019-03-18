@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The name of the filter.</p>
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>The name of the filter.</p>
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
@@ -92,6 +97,11 @@ namespace Model
     /**
      * <p>The condition of the filter.</p>
      */
+    inline bool ConditionHasBeenSet() const { return m_conditionHasBeenSet; }
+
+    /**
+     * <p>The condition of the filter.</p>
+     */
     inline void SetCondition(const InventoryFilterCondition& value) { m_conditionHasBeenSet = true; m_condition = value; }
 
     /**
@@ -114,6 +124,11 @@ namespace Model
      * <p>Value of the filter.</p>
      */
     inline const Aws::String& GetValue() const{ return m_value; }
+
+    /**
+     * <p>Value of the filter.</p>
+     */
+    inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
 
     /**
      * <p>Value of the filter.</p>

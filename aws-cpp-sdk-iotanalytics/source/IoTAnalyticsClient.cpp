@@ -173,6 +173,16 @@ void IoTAnalyticsClient::BatchPutMessageAsyncHelper(const BatchPutMessageRequest
 
 CancelPipelineReprocessingOutcome IoTAnalyticsClient::CancelPipelineReprocessing(const CancelPipelineReprocessingRequest& request) const
 {
+  if (!request.PipelineNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("CancelPipelineReprocessing", "Required field: PipelineName, is not set");
+    return CancelPipelineReprocessingOutcome(Aws::Client::AWSError<IoTAnalyticsErrors>(IoTAnalyticsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [PipelineName]", false));
+  }
+  if (!request.ReprocessingIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("CancelPipelineReprocessing", "Required field: ReprocessingId, is not set");
+    return CancelPipelineReprocessingOutcome(Aws::Client::AWSError<IoTAnalyticsErrors>(IoTAnalyticsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ReprocessingId]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/pipelines/";
@@ -281,6 +291,11 @@ void IoTAnalyticsClient::CreateDatasetAsyncHelper(const CreateDatasetRequest& re
 
 CreateDatasetContentOutcome IoTAnalyticsClient::CreateDatasetContent(const CreateDatasetContentRequest& request) const
 {
+  if (!request.DatasetNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("CreateDatasetContent", "Required field: DatasetName, is not set");
+    return CreateDatasetContentOutcome(Aws::Client::AWSError<IoTAnalyticsErrors>(IoTAnalyticsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DatasetName]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/datasets/";
@@ -388,6 +403,11 @@ void IoTAnalyticsClient::CreatePipelineAsyncHelper(const CreatePipelineRequest& 
 
 DeleteChannelOutcome IoTAnalyticsClient::DeleteChannel(const DeleteChannelRequest& request) const
 {
+  if (!request.ChannelNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteChannel", "Required field: ChannelName, is not set");
+    return DeleteChannelOutcome(Aws::Client::AWSError<IoTAnalyticsErrors>(IoTAnalyticsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ChannelName]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/channels/";
@@ -424,6 +444,11 @@ void IoTAnalyticsClient::DeleteChannelAsyncHelper(const DeleteChannelRequest& re
 
 DeleteDatasetOutcome IoTAnalyticsClient::DeleteDataset(const DeleteDatasetRequest& request) const
 {
+  if (!request.DatasetNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteDataset", "Required field: DatasetName, is not set");
+    return DeleteDatasetOutcome(Aws::Client::AWSError<IoTAnalyticsErrors>(IoTAnalyticsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DatasetName]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/datasets/";
@@ -460,6 +485,11 @@ void IoTAnalyticsClient::DeleteDatasetAsyncHelper(const DeleteDatasetRequest& re
 
 DeleteDatasetContentOutcome IoTAnalyticsClient::DeleteDatasetContent(const DeleteDatasetContentRequest& request) const
 {
+  if (!request.DatasetNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteDatasetContent", "Required field: DatasetName, is not set");
+    return DeleteDatasetContentOutcome(Aws::Client::AWSError<IoTAnalyticsErrors>(IoTAnalyticsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DatasetName]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/datasets/";
@@ -497,6 +527,11 @@ void IoTAnalyticsClient::DeleteDatasetContentAsyncHelper(const DeleteDatasetCont
 
 DeleteDatastoreOutcome IoTAnalyticsClient::DeleteDatastore(const DeleteDatastoreRequest& request) const
 {
+  if (!request.DatastoreNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteDatastore", "Required field: DatastoreName, is not set");
+    return DeleteDatastoreOutcome(Aws::Client::AWSError<IoTAnalyticsErrors>(IoTAnalyticsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DatastoreName]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/datastores/";
@@ -533,6 +568,11 @@ void IoTAnalyticsClient::DeleteDatastoreAsyncHelper(const DeleteDatastoreRequest
 
 DeletePipelineOutcome IoTAnalyticsClient::DeletePipeline(const DeletePipelineRequest& request) const
 {
+  if (!request.PipelineNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeletePipeline", "Required field: PipelineName, is not set");
+    return DeletePipelineOutcome(Aws::Client::AWSError<IoTAnalyticsErrors>(IoTAnalyticsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [PipelineName]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/pipelines/";
@@ -569,6 +609,11 @@ void IoTAnalyticsClient::DeletePipelineAsyncHelper(const DeletePipelineRequest& 
 
 DescribeChannelOutcome IoTAnalyticsClient::DescribeChannel(const DescribeChannelRequest& request) const
 {
+  if (!request.ChannelNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DescribeChannel", "Required field: ChannelName, is not set");
+    return DescribeChannelOutcome(Aws::Client::AWSError<IoTAnalyticsErrors>(IoTAnalyticsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ChannelName]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/channels/";
@@ -605,6 +650,11 @@ void IoTAnalyticsClient::DescribeChannelAsyncHelper(const DescribeChannelRequest
 
 DescribeDatasetOutcome IoTAnalyticsClient::DescribeDataset(const DescribeDatasetRequest& request) const
 {
+  if (!request.DatasetNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DescribeDataset", "Required field: DatasetName, is not set");
+    return DescribeDatasetOutcome(Aws::Client::AWSError<IoTAnalyticsErrors>(IoTAnalyticsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DatasetName]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/datasets/";
@@ -641,6 +691,11 @@ void IoTAnalyticsClient::DescribeDatasetAsyncHelper(const DescribeDatasetRequest
 
 DescribeDatastoreOutcome IoTAnalyticsClient::DescribeDatastore(const DescribeDatastoreRequest& request) const
 {
+  if (!request.DatastoreNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DescribeDatastore", "Required field: DatastoreName, is not set");
+    return DescribeDatastoreOutcome(Aws::Client::AWSError<IoTAnalyticsErrors>(IoTAnalyticsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DatastoreName]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/datastores/";
@@ -712,6 +767,11 @@ void IoTAnalyticsClient::DescribeLoggingOptionsAsyncHelper(const DescribeLogging
 
 DescribePipelineOutcome IoTAnalyticsClient::DescribePipeline(const DescribePipelineRequest& request) const
 {
+  if (!request.PipelineNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DescribePipeline", "Required field: PipelineName, is not set");
+    return DescribePipelineOutcome(Aws::Client::AWSError<IoTAnalyticsErrors>(IoTAnalyticsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [PipelineName]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/pipelines/";
@@ -748,6 +808,11 @@ void IoTAnalyticsClient::DescribePipelineAsyncHelper(const DescribePipelineReque
 
 GetDatasetContentOutcome IoTAnalyticsClient::GetDatasetContent(const GetDatasetContentRequest& request) const
 {
+  if (!request.DatasetNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetDatasetContent", "Required field: DatasetName, is not set");
+    return GetDatasetContentOutcome(Aws::Client::AWSError<IoTAnalyticsErrors>(IoTAnalyticsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DatasetName]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/datasets/";
@@ -820,6 +885,11 @@ void IoTAnalyticsClient::ListChannelsAsyncHelper(const ListChannelsRequest& requ
 
 ListDatasetContentsOutcome IoTAnalyticsClient::ListDatasetContents(const ListDatasetContentsRequest& request) const
 {
+  if (!request.DatasetNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListDatasetContents", "Required field: DatasetName, is not set");
+    return ListDatasetContentsOutcome(Aws::Client::AWSError<IoTAnalyticsErrors>(IoTAnalyticsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DatasetName]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/datasets/";
@@ -962,6 +1032,11 @@ void IoTAnalyticsClient::ListPipelinesAsyncHelper(const ListPipelinesRequest& re
 
 ListTagsForResourceOutcome IoTAnalyticsClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
 {
+  if (!request.ResourceArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListTagsForResource", "Required field: ResourceArn, is not set");
+    return ListTagsForResourceOutcome(Aws::Client::AWSError<IoTAnalyticsErrors>(IoTAnalyticsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceArn]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/tags";
@@ -1067,6 +1142,11 @@ void IoTAnalyticsClient::RunPipelineActivityAsyncHelper(const RunPipelineActivit
 
 SampleChannelDataOutcome IoTAnalyticsClient::SampleChannelData(const SampleChannelDataRequest& request) const
 {
+  if (!request.ChannelNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("SampleChannelData", "Required field: ChannelName, is not set");
+    return SampleChannelDataOutcome(Aws::Client::AWSError<IoTAnalyticsErrors>(IoTAnalyticsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ChannelName]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/channels/";
@@ -1104,6 +1184,11 @@ void IoTAnalyticsClient::SampleChannelDataAsyncHelper(const SampleChannelDataReq
 
 StartPipelineReprocessingOutcome IoTAnalyticsClient::StartPipelineReprocessing(const StartPipelineReprocessingRequest& request) const
 {
+  if (!request.PipelineNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("StartPipelineReprocessing", "Required field: PipelineName, is not set");
+    return StartPipelineReprocessingOutcome(Aws::Client::AWSError<IoTAnalyticsErrors>(IoTAnalyticsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [PipelineName]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/pipelines/";
@@ -1141,6 +1226,11 @@ void IoTAnalyticsClient::StartPipelineReprocessingAsyncHelper(const StartPipelin
 
 TagResourceOutcome IoTAnalyticsClient::TagResource(const TagResourceRequest& request) const
 {
+  if (!request.ResourceArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("TagResource", "Required field: ResourceArn, is not set");
+    return TagResourceOutcome(Aws::Client::AWSError<IoTAnalyticsErrors>(IoTAnalyticsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceArn]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/tags";
@@ -1176,6 +1266,16 @@ void IoTAnalyticsClient::TagResourceAsyncHelper(const TagResourceRequest& reques
 
 UntagResourceOutcome IoTAnalyticsClient::UntagResource(const UntagResourceRequest& request) const
 {
+  if (!request.ResourceArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UntagResource", "Required field: ResourceArn, is not set");
+    return UntagResourceOutcome(Aws::Client::AWSError<IoTAnalyticsErrors>(IoTAnalyticsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceArn]", false));
+  }
+  if (!request.TagKeysHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UntagResource", "Required field: TagKeys, is not set");
+    return UntagResourceOutcome(Aws::Client::AWSError<IoTAnalyticsErrors>(IoTAnalyticsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [TagKeys]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/tags";
@@ -1211,6 +1311,11 @@ void IoTAnalyticsClient::UntagResourceAsyncHelper(const UntagResourceRequest& re
 
 UpdateChannelOutcome IoTAnalyticsClient::UpdateChannel(const UpdateChannelRequest& request) const
 {
+  if (!request.ChannelNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateChannel", "Required field: ChannelName, is not set");
+    return UpdateChannelOutcome(Aws::Client::AWSError<IoTAnalyticsErrors>(IoTAnalyticsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ChannelName]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/channels/";
@@ -1247,6 +1352,11 @@ void IoTAnalyticsClient::UpdateChannelAsyncHelper(const UpdateChannelRequest& re
 
 UpdateDatasetOutcome IoTAnalyticsClient::UpdateDataset(const UpdateDatasetRequest& request) const
 {
+  if (!request.DatasetNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateDataset", "Required field: DatasetName, is not set");
+    return UpdateDatasetOutcome(Aws::Client::AWSError<IoTAnalyticsErrors>(IoTAnalyticsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DatasetName]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/datasets/";
@@ -1283,6 +1393,11 @@ void IoTAnalyticsClient::UpdateDatasetAsyncHelper(const UpdateDatasetRequest& re
 
 UpdateDatastoreOutcome IoTAnalyticsClient::UpdateDatastore(const UpdateDatastoreRequest& request) const
 {
+  if (!request.DatastoreNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateDatastore", "Required field: DatastoreName, is not set");
+    return UpdateDatastoreOutcome(Aws::Client::AWSError<IoTAnalyticsErrors>(IoTAnalyticsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DatastoreName]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/datastores/";
@@ -1319,6 +1434,11 @@ void IoTAnalyticsClient::UpdateDatastoreAsyncHelper(const UpdateDatastoreRequest
 
 UpdatePipelineOutcome IoTAnalyticsClient::UpdatePipeline(const UpdatePipelineRequest& request) const
 {
+  if (!request.PipelineNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdatePipeline", "Required field: PipelineName, is not set");
+    return UpdatePipelineOutcome(Aws::Client::AWSError<IoTAnalyticsErrors>(IoTAnalyticsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [PipelineName]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/pipelines/";

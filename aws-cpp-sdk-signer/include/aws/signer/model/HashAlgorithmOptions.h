@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The set of accepted hash algorithms allowed in an AWS Signer job.</p>
      */
+    inline bool AllowedValuesHasBeenSet() const { return m_allowedValuesHasBeenSet; }
+
+    /**
+     * <p>The set of accepted hash algorithms allowed in an AWS Signer job.</p>
+     */
     inline void SetAllowedValues(const Aws::Vector<HashAlgorithm>& value) { m_allowedValuesHasBeenSet = true; m_allowedValues = value; }
 
     /**
@@ -89,6 +94,11 @@ namespace Model
      * <p>The default hash algorithm that is used in an AWS Signer job.</p>
      */
     inline const HashAlgorithm& GetDefaultValue() const{ return m_defaultValue; }
+
+    /**
+     * <p>The default hash algorithm that is used in an AWS Signer job.</p>
+     */
+    inline bool DefaultValueHasBeenSet() const { return m_defaultValueHasBeenSet; }
 
     /**
      * <p>The default hash algorithm that is used in an AWS Signer job.</p>

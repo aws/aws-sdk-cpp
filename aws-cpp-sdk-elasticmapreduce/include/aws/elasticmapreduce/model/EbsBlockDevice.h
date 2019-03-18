@@ -59,6 +59,12 @@ namespace Model
      * <p>EBS volume specifications such as volume type, IOPS, and size (GiB) that will
      * be requested for the EBS volume attached to an EC2 instance in the cluster.</p>
      */
+    inline bool VolumeSpecificationHasBeenSet() const { return m_volumeSpecificationHasBeenSet; }
+
+    /**
+     * <p>EBS volume specifications such as volume type, IOPS, and size (GiB) that will
+     * be requested for the EBS volume attached to an EC2 instance in the cluster.</p>
+     */
     inline void SetVolumeSpecification(const VolumeSpecification& value) { m_volumeSpecificationHasBeenSet = true; m_volumeSpecification = value; }
 
     /**
@@ -84,6 +90,11 @@ namespace Model
      * <p>The device name that is exposed to the instance, such as /dev/sdh.</p>
      */
     inline const Aws::String& GetDevice() const{ return m_device; }
+
+    /**
+     * <p>The device name that is exposed to the instance, such as /dev/sdh.</p>
+     */
+    inline bool DeviceHasBeenSet() const { return m_deviceHasBeenSet; }
 
     /**
      * <p>The device name that is exposed to the instance, such as /dev/sdh.</p>

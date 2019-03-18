@@ -57,6 +57,12 @@ namespace Model
      * <p>The name of the scaling plan. Names cannot contain vertical bars, colons, or
      * forward slashes.</p>
      */
+    inline bool ScalingPlanNameHasBeenSet() const { return m_scalingPlanNameHasBeenSet; }
+
+    /**
+     * <p>The name of the scaling plan. Names cannot contain vertical bars, colons, or
+     * forward slashes.</p>
+     */
     inline void SetScalingPlanName(const Aws::String& value) { m_scalingPlanNameHasBeenSet = true; m_scalingPlanName = value; }
 
     /**
@@ -100,6 +106,12 @@ namespace Model
      * <p>A CloudFormation stack or set of tags. You can create one scaling plan per
      * application source.</p>
      */
+    inline bool ApplicationSourceHasBeenSet() const { return m_applicationSourceHasBeenSet; }
+
+    /**
+     * <p>A CloudFormation stack or set of tags. You can create one scaling plan per
+     * application source.</p>
+     */
     inline void SetApplicationSource(const ApplicationSource& value) { m_applicationSourceHasBeenSet = true; m_applicationSource = value; }
 
     /**
@@ -125,6 +137,11 @@ namespace Model
      * <p>The scaling instructions.</p>
      */
     inline const Aws::Vector<ScalingInstruction>& GetScalingInstructions() const{ return m_scalingInstructions; }
+
+    /**
+     * <p>The scaling instructions.</p>
+     */
+    inline bool ScalingInstructionsHasBeenSet() const { return m_scalingInstructionsHasBeenSet; }
 
     /**
      * <p>The scaling instructions.</p>

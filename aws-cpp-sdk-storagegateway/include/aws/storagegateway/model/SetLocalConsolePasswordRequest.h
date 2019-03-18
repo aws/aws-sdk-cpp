@@ -51,6 +51,9 @@ namespace Model
     inline const Aws::String& GetGatewayARN() const{ return m_gatewayARN; }
 
     
+    inline bool GatewayARNHasBeenSet() const { return m_gatewayARNHasBeenSet; }
+
+    
     inline void SetGatewayARN(const Aws::String& value) { m_gatewayARNHasBeenSet = true; m_gatewayARN = value; }
 
     
@@ -73,6 +76,11 @@ namespace Model
      * <p>The password you want to set for your VM local console.</p>
      */
     inline const Aws::String& GetLocalConsolePassword() const{ return m_localConsolePassword; }
+
+    /**
+     * <p>The password you want to set for your VM local console.</p>
+     */
+    inline bool LocalConsolePasswordHasBeenSet() const { return m_localConsolePasswordHasBeenSet; }
 
     /**
      * <p>The password you want to set for your VM local console.</p>

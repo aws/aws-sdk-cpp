@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The issue type for the associated count.</p>
      */
+    inline bool AggregateValueHasBeenSet() const { return m_aggregateValueHasBeenSet; }
+
+    /**
+     * <p>The issue type for the associated count.</p>
+     */
     inline void SetAggregateValue(const Aws::String& value) { m_aggregateValueHasBeenSet = true; m_aggregateValue = value; }
 
     /**
@@ -88,6 +93,11 @@ namespace Model
      * <p>The number of events of the associated issue type.</p>
      */
     inline int GetCount() const{ return m_count; }
+
+    /**
+     * <p>The number of events of the associated issue type.</p>
+     */
+    inline bool CountHasBeenSet() const { return m_countHasBeenSet; }
 
     /**
      * <p>The number of events of the associated issue type.</p>

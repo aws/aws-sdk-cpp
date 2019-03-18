@@ -56,6 +56,12 @@ namespace Model
      * The maximum number of messages that each campaign can send to a single endpoint
      * in a 24-hour period.
      */
+    inline bool DailyHasBeenSet() const { return m_dailyHasBeenSet; }
+
+    /**
+     * The maximum number of messages that each campaign can send to a single endpoint
+     * in a 24-hour period.
+     */
     inline void SetDaily(int value) { m_dailyHasBeenSet = true; m_daily = value; }
 
     /**
@@ -71,6 +77,13 @@ namespace Model
      * the campaign. The minimum value is 60.
      */
     inline int GetMaximumDuration() const{ return m_maximumDuration; }
+
+    /**
+     * The length of time (in seconds) that the campaign can run before it ends and
+     * message deliveries stop. This duration begins at the scheduled start time for
+     * the campaign. The minimum value is 60.
+     */
+    inline bool MaximumDurationHasBeenSet() const { return m_maximumDurationHasBeenSet; }
 
     /**
      * The length of time (in seconds) that the campaign can run before it ends and
@@ -97,6 +110,12 @@ namespace Model
      * The number of messages that the campaign can send per second. The minimum value
      * is 50, and the maximum is 20000.
      */
+    inline bool MessagesPerSecondHasBeenSet() const { return m_messagesPerSecondHasBeenSet; }
+
+    /**
+     * The number of messages that the campaign can send per second. The minimum value
+     * is 50, and the maximum is 20000.
+     */
     inline void SetMessagesPerSecond(int value) { m_messagesPerSecondHasBeenSet = true; m_messagesPerSecond = value; }
 
     /**
@@ -111,6 +130,12 @@ namespace Model
      * endpoint over the course of the campaign.
      */
     inline int GetTotal() const{ return m_total; }
+
+    /**
+     * The maximum number of messages that an individual campaign can send to a single
+     * endpoint over the course of the campaign.
+     */
+    inline bool TotalHasBeenSet() const { return m_totalHasBeenSet; }
 
     /**
      * The maximum number of messages that an individual campaign can send to a single

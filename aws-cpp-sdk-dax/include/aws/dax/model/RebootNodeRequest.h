@@ -52,6 +52,11 @@ namespace Model
     /**
      * <p>The name of the DAX cluster containing the node to be rebooted.</p>
      */
+    inline bool ClusterNameHasBeenSet() const { return m_clusterNameHasBeenSet; }
+
+    /**
+     * <p>The name of the DAX cluster containing the node to be rebooted.</p>
+     */
     inline void SetClusterName(const Aws::String& value) { m_clusterNameHasBeenSet = true; m_clusterName = value; }
 
     /**
@@ -84,6 +89,11 @@ namespace Model
      * <p>The system-assigned ID of the node to be rebooted.</p>
      */
     inline const Aws::String& GetNodeId() const{ return m_nodeId; }
+
+    /**
+     * <p>The system-assigned ID of the node to be rebooted.</p>
+     */
+    inline bool NodeIdHasBeenSet() const { return m_nodeIdHasBeenSet; }
 
     /**
      * <p>The system-assigned ID of the node to be rebooted.</p>

@@ -56,6 +56,12 @@ namespace Model
      * Enables audit logging. Every user management action made using JMX or the
      * ActiveMQ Web Console is logged.
      */
+    inline bool AuditHasBeenSet() const { return m_auditHasBeenSet; }
+
+    /**
+     * Enables audit logging. Every user management action made using JMX or the
+     * ActiveMQ Web Console is logged.
+     */
     inline void SetAudit(bool value) { m_auditHasBeenSet = true; m_audit = value; }
 
     /**
@@ -69,6 +75,11 @@ namespace Model
      * Enables general logging.
      */
     inline bool GetGeneral() const{ return m_general; }
+
+    /**
+     * Enables general logging.
+     */
+    inline bool GeneralHasBeenSet() const { return m_generalHasBeenSet; }
 
     /**
      * Enables general logging.

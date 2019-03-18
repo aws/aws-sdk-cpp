@@ -66,6 +66,11 @@ namespace Model
     /**
      * <p>Determines the shuffling order in <code>ShuffleConfig</code> value.</p>
      */
+    inline bool SeedHasBeenSet() const { return m_seedHasBeenSet; }
+
+    /**
+     * <p>Determines the shuffling order in <code>ShuffleConfig</code> value.</p>
+     */
     inline void SetSeed(long long value) { m_seedHasBeenSet = true; m_seed = value; }
 
     /**

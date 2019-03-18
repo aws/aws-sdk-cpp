@@ -61,6 +61,12 @@ namespace Model
      * <p>Setting that stops or starts remote control of shared screens during
      * meetings.</p>
      */
+    inline bool DisableRemoteControlHasBeenSet() const { return m_disableRemoteControlHasBeenSet; }
+
+    /**
+     * <p>Setting that stops or starts remote control of shared screens during
+     * meetings.</p>
+     */
     inline void SetDisableRemoteControl(bool value) { m_disableRemoteControlHasBeenSet = true; m_disableRemoteControl = value; }
 
     /**
@@ -77,6 +83,14 @@ namespace Model
      * a Meeting without the Amazon Chime App</a>.</p>
      */
     inline bool GetEnableDialOut() const{ return m_enableDialOut; }
+
+    /**
+     * <p>Setting that allows meeting participants to choose the <b>Call me at a phone
+     * number</b> option. For more information, see <a
+     * href="https://docs.aws.amazon.com/chime/latest/ug/chime-join-meeting.html">Join
+     * a Meeting without the Amazon Chime App</a>.</p>
+     */
+    inline bool EnableDialOutHasBeenSet() const { return m_enableDialOutHasBeenSet; }
 
     /**
      * <p>Setting that allows meeting participants to choose the <b>Call me at a phone

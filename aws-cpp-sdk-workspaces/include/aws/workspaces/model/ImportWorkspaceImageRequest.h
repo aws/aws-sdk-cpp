@@ -53,6 +53,11 @@ namespace Model
     /**
      * <p>The identifier of the EC2 image.</p>
      */
+    inline bool Ec2ImageIdHasBeenSet() const { return m_ec2ImageIdHasBeenSet; }
+
+    /**
+     * <p>The identifier of the EC2 image.</p>
+     */
     inline void SetEc2ImageId(const Aws::String& value) { m_ec2ImageIdHasBeenSet = true; m_ec2ImageId = value; }
 
     /**
@@ -89,6 +94,11 @@ namespace Model
     /**
      * <p>The ingestion process to be used when importing the image.</p>
      */
+    inline bool IngestionProcessHasBeenSet() const { return m_ingestionProcessHasBeenSet; }
+
+    /**
+     * <p>The ingestion process to be used when importing the image.</p>
+     */
     inline void SetIngestionProcess(const WorkspaceImageIngestionProcess& value) { m_ingestionProcessHasBeenSet = true; m_ingestionProcess = value; }
 
     /**
@@ -111,6 +121,11 @@ namespace Model
      * <p>The name of the WorkSpace image.</p>
      */
     inline const Aws::String& GetImageName() const{ return m_imageName; }
+
+    /**
+     * <p>The name of the WorkSpace image.</p>
+     */
+    inline bool ImageNameHasBeenSet() const { return m_imageNameHasBeenSet; }
 
     /**
      * <p>The name of the WorkSpace image.</p>
@@ -147,6 +162,11 @@ namespace Model
      * <p>The description of the WorkSpace image.</p>
      */
     inline const Aws::String& GetImageDescription() const{ return m_imageDescription; }
+
+    /**
+     * <p>The description of the WorkSpace image.</p>
+     */
+    inline bool ImageDescriptionHasBeenSet() const { return m_imageDescriptionHasBeenSet; }
 
     /**
      * <p>The description of the WorkSpace image.</p>

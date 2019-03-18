@@ -61,6 +61,13 @@ namespace Model
      * instance to be included in the deployment group, it must be identified by all of
      * the tag groups in the list.</p>
      */
+    inline bool OnPremisesTagSetListHasBeenSet() const { return m_onPremisesTagSetListHasBeenSet; }
+
+    /**
+     * <p>A list that contains other lists of on-premises instance tag groups. For an
+     * instance to be included in the deployment group, it must be identified by all of
+     * the tag groups in the list.</p>
+     */
     inline void SetOnPremisesTagSetList(const Aws::Vector<Aws::Vector<TagFilter>>& value) { m_onPremisesTagSetListHasBeenSet = true; m_onPremisesTagSetList = value; }
 
     /**

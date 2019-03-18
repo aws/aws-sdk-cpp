@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The resource ID.</p>
      */
+    inline bool ResourceIdHasBeenSet() const { return m_resourceIdHasBeenSet; }
+
+    /**
+     * <p>The resource ID.</p>
+     */
     inline void SetResourceId(const Aws::String& value) { m_resourceIdHasBeenSet = true; m_resourceId = value; }
 
     /**
@@ -93,6 +98,11 @@ namespace Model
     /**
      * <p>The reason that the resource is not protected by the policy.</p>
      */
+    inline bool ViolationReasonHasBeenSet() const { return m_violationReasonHasBeenSet; }
+
+    /**
+     * <p>The reason that the resource is not protected by the policy.</p>
+     */
     inline void SetViolationReason(const ViolationReason& value) { m_violationReasonHasBeenSet = true; m_violationReason = value; }
 
     /**
@@ -119,6 +129,15 @@ namespace Model
      * <code>AWS::CloudFront::Distribution</code>.</p>
      */
     inline const Aws::String& GetResourceType() const{ return m_resourceType; }
+
+    /**
+     * <p>The resource type. This is in the format shown in <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
+     * Resource Types Reference</a>. Valid values are
+     * <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code> or
+     * <code>AWS::CloudFront::Distribution</code>.</p>
+     */
+    inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
 
     /**
      * <p>The resource type. This is in the format shown in <a

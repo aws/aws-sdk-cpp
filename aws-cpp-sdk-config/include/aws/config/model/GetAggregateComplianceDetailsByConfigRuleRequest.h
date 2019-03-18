@@ -53,6 +53,11 @@ namespace Model
     /**
      * <p>The name of the configuration aggregator.</p>
      */
+    inline bool ConfigurationAggregatorNameHasBeenSet() const { return m_configurationAggregatorNameHasBeenSet; }
+
+    /**
+     * <p>The name of the configuration aggregator.</p>
+     */
     inline void SetConfigurationAggregatorName(const Aws::String& value) { m_configurationAggregatorNameHasBeenSet = true; m_configurationAggregatorName = value; }
 
     /**
@@ -86,6 +91,12 @@ namespace Model
      * information.</p>
      */
     inline const Aws::String& GetConfigRuleName() const{ return m_configRuleName; }
+
+    /**
+     * <p>The name of the AWS Config rule for which you want compliance
+     * information.</p>
+     */
+    inline bool ConfigRuleNameHasBeenSet() const { return m_configRuleNameHasBeenSet; }
 
     /**
      * <p>The name of the AWS Config rule for which you want compliance
@@ -132,6 +143,11 @@ namespace Model
     /**
      * <p>The 12-digit account ID of the source account.</p>
      */
+    inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
+
+    /**
+     * <p>The 12-digit account ID of the source account.</p>
+     */
     inline void SetAccountId(const Aws::String& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
 
     /**
@@ -164,6 +180,11 @@ namespace Model
      * <p>The source region from where the data is aggregated.</p>
      */
     inline const Aws::String& GetAwsRegion() const{ return m_awsRegion; }
+
+    /**
+     * <p>The source region from where the data is aggregated.</p>
+     */
+    inline bool AwsRegionHasBeenSet() const { return m_awsRegionHasBeenSet; }
 
     /**
      * <p>The source region from where the data is aggregated.</p>
@@ -204,6 +225,15 @@ namespace Model
      * <code>INSUFFICIENT_DATA</code> values.</p> </note>
      */
     inline const ComplianceType& GetComplianceType() const{ return m_complianceType; }
+
+    /**
+     * <p>The resource compliance status.</p> <note> <p>For the
+     * <code>GetAggregateComplianceDetailsByConfigRuleRequest</code> data type, AWS
+     * Config supports only the <code>COMPLIANT</code> and <code>NON_COMPLIANT</code>.
+     * AWS Config does not support the <code>NOT_APPLICABLE</code> and
+     * <code>INSUFFICIENT_DATA</code> values.</p> </note>
+     */
+    inline bool ComplianceTypeHasBeenSet() const { return m_complianceTypeHasBeenSet; }
 
     /**
      * <p>The resource compliance status.</p> <note> <p>For the
@@ -254,6 +284,13 @@ namespace Model
      * is 50. You cannot specify a number greater than 100. If you specify 0, AWS
      * Config uses the default.</p>
      */
+    inline bool LimitHasBeenSet() const { return m_limitHasBeenSet; }
+
+    /**
+     * <p>The maximum number of evaluation results returned on each page. The default
+     * is 50. You cannot specify a number greater than 100. If you specify 0, AWS
+     * Config uses the default.</p>
+     */
     inline void SetLimit(int value) { m_limitHasBeenSet = true; m_limit = value; }
 
     /**
@@ -269,6 +306,12 @@ namespace Model
      * page of results in a paginated response.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
+    /**
+     * <p>The nextToken string returned on a previous page that you use to get the next
+     * page of results in a paginated response.</p>
+     */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
      * <p>The nextToken string returned on a previous page that you use to get the next

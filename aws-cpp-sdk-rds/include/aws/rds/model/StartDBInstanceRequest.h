@@ -54,6 +54,11 @@ namespace Model
     /**
      * <p> The user-supplied instance identifier. </p>
      */
+    inline bool DBInstanceIdentifierHasBeenSet() const { return m_dBInstanceIdentifierHasBeenSet; }
+
+    /**
+     * <p> The user-supplied instance identifier. </p>
+     */
     inline void SetDBInstanceIdentifier(const Aws::String& value) { m_dBInstanceIdentifierHasBeenSet = true; m_dBInstanceIdentifier = value; }
 
     /**

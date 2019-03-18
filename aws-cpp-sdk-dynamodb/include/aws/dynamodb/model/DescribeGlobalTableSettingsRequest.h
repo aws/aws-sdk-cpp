@@ -52,6 +52,11 @@ namespace Model
     /**
      * <p>The name of the global table to describe.</p>
      */
+    inline bool GlobalTableNameHasBeenSet() const { return m_globalTableNameHasBeenSet; }
+
+    /**
+     * <p>The name of the global table to describe.</p>
+     */
     inline void SetGlobalTableName(const Aws::String& value) { m_globalTableNameHasBeenSet = true; m_globalTableName = value; }
 
     /**

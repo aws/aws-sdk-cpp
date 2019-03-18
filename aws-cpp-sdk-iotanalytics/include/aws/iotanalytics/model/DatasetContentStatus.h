@@ -59,6 +59,12 @@ namespace Model
      * <p>The state of the data set contents. Can be one of "READY", "CREATING",
      * "SUCCEEDED" or "FAILED".</p>
      */
+    inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
+
+    /**
+     * <p>The state of the data set contents. Can be one of "READY", "CREATING",
+     * "SUCCEEDED" or "FAILED".</p>
+     */
     inline void SetState(const DatasetContentState& value) { m_stateHasBeenSet = true; m_state = value; }
 
     /**
@@ -84,6 +90,11 @@ namespace Model
      * <p>The reason the data set contents are in this state.</p>
      */
     inline const Aws::String& GetReason() const{ return m_reason; }
+
+    /**
+     * <p>The reason the data set contents are in this state.</p>
+     */
+    inline bool ReasonHasBeenSet() const { return m_reasonHasBeenSet; }
 
     /**
      * <p>The reason the data set contents are in this state.</p>

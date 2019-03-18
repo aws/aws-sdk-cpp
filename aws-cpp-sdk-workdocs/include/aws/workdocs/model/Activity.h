@@ -61,6 +61,11 @@ namespace Model
     /**
      * <p>The activity type.</p>
      */
+    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
+
+    /**
+     * <p>The activity type.</p>
+     */
     inline void SetType(const ActivityType& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
@@ -83,6 +88,11 @@ namespace Model
      * <p>The timestamp when the action was performed.</p>
      */
     inline const Aws::Utils::DateTime& GetTimeStamp() const{ return m_timeStamp; }
+
+    /**
+     * <p>The timestamp when the action was performed.</p>
+     */
+    inline bool TimeStampHasBeenSet() const { return m_timeStampHasBeenSet; }
 
     /**
      * <p>The timestamp when the action was performed.</p>
@@ -119,6 +129,14 @@ namespace Model
      * sharing a parent folder (the direct activity) shares all of the subfolders and
      * documents within the parent folder (the indirect activity).</p>
      */
+    inline bool IsIndirectActivityHasBeenSet() const { return m_isIndirectActivityHasBeenSet; }
+
+    /**
+     * <p>Indicates whether an activity is indirect or direct. An indirect activity
+     * results from a direct activity performed on a parent resource. For example,
+     * sharing a parent folder (the direct activity) shares all of the subfolders and
+     * documents within the parent folder (the indirect activity).</p>
+     */
     inline void SetIsIndirectActivity(bool value) { m_isIndirectActivityHasBeenSet = true; m_isIndirectActivity = value; }
 
     /**
@@ -134,6 +152,11 @@ namespace Model
      * <p>The ID of the organization.</p>
      */
     inline const Aws::String& GetOrganizationId() const{ return m_organizationId; }
+
+    /**
+     * <p>The ID of the organization.</p>
+     */
+    inline bool OrganizationIdHasBeenSet() const { return m_organizationIdHasBeenSet; }
 
     /**
      * <p>The ID of the organization.</p>
@@ -174,6 +197,11 @@ namespace Model
     /**
      * <p>The user who performed the action.</p>
      */
+    inline bool InitiatorHasBeenSet() const { return m_initiatorHasBeenSet; }
+
+    /**
+     * <p>The user who performed the action.</p>
+     */
     inline void SetInitiator(const UserMetadata& value) { m_initiatorHasBeenSet = true; m_initiator = value; }
 
     /**
@@ -198,6 +226,13 @@ namespace Model
      * DOCUMENT_SHARED, DOCUMENT_UNSHARED, FOLDER_SHARED, FOLDER_UNSHARED.</p>
      */
     inline const Participants& GetParticipants() const{ return m_participants; }
+
+    /**
+     * <p>The list of users or groups impacted by this action. This is an optional
+     * field and is filled for the following sharing activities: DOCUMENT_SHARED,
+     * DOCUMENT_SHARED, DOCUMENT_UNSHARED, FOLDER_SHARED, FOLDER_UNSHARED.</p>
+     */
+    inline bool ParticipantsHasBeenSet() const { return m_participantsHasBeenSet; }
 
     /**
      * <p>The list of users or groups impacted by this action. This is an optional
@@ -236,6 +271,11 @@ namespace Model
     /**
      * <p>The metadata of the resource involved in the user action.</p>
      */
+    inline bool ResourceMetadataHasBeenSet() const { return m_resourceMetadataHasBeenSet; }
+
+    /**
+     * <p>The metadata of the resource involved in the user action.</p>
+     */
     inline void SetResourceMetadata(const ResourceMetadata& value) { m_resourceMetadataHasBeenSet = true; m_resourceMetadata = value; }
 
     /**
@@ -259,6 +299,12 @@ namespace Model
      * for move activities.</p>
      */
     inline const ResourceMetadata& GetOriginalParent() const{ return m_originalParent; }
+
+    /**
+     * <p>The original parent of the resource. This is an optional field and is filled
+     * for move activities.</p>
+     */
+    inline bool OriginalParentHasBeenSet() const { return m_originalParentHasBeenSet; }
 
     /**
      * <p>The original parent of the resource. This is an optional field and is filled
@@ -290,6 +336,12 @@ namespace Model
      * for commenting activities.</p>
      */
     inline const CommentMetadata& GetCommentMetadata() const{ return m_commentMetadata; }
+
+    /**
+     * <p>Metadata of the commenting activity. This is an optional field and is filled
+     * for commenting activities.</p>
+     */
+    inline bool CommentMetadataHasBeenSet() const { return m_commentMetadataHasBeenSet; }
 
     /**
      * <p>Metadata of the commenting activity. This is an optional field and is filled

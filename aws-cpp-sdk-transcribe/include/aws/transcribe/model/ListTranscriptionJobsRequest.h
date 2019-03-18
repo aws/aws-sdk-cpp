@@ -59,6 +59,14 @@ namespace Model
      * don’t specify a status, Amazon Transcribe returns all transcription jobs ordered
      * by creation date. </p>
      */
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
+
+    /**
+     * <p>When specified, returns only transcription jobs with the specified status.
+     * Jobs are ordered by creation date, with the newest jobs returned first. If you
+     * don’t specify a status, Amazon Transcribe returns all transcription jobs ordered
+     * by creation date. </p>
+     */
     inline void SetStatus(const TranscriptionJobStatus& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
@@ -91,6 +99,12 @@ namespace Model
      * contains the specified string.</p>
      */
     inline const Aws::String& GetJobNameContains() const{ return m_jobNameContains; }
+
+    /**
+     * <p>When specified, the jobs returned in the list are limited to jobs whose name
+     * contains the specified string.</p>
+     */
+    inline bool JobNameContainsHasBeenSet() const { return m_jobNameContainsHasBeenSet; }
 
     /**
      * <p>When specified, the jobs returned in the list are limited to jobs whose name
@@ -141,6 +155,13 @@ namespace Model
      * was truncated, include the <code>NextToken</code> to fetch the next set of
      * jobs.</p>
      */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
+
+    /**
+     * <p>If the result of the previous request to <code>ListTranscriptionJobs</code>
+     * was truncated, include the <code>NextToken</code> to fetch the next set of
+     * jobs.</p>
+     */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
     /**
@@ -184,6 +205,12 @@ namespace Model
      * results in the list, this response contains only the actual results.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
+
+    /**
+     * <p>The maximum number of jobs to return in the response. If there are fewer
+     * results in the list, this response contains only the actual results.</p>
+     */
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
 
     /**
      * <p>The maximum number of jobs to return in the response. If there are fewer

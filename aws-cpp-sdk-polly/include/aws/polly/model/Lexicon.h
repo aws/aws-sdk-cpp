@@ -60,6 +60,12 @@ namespace Model
      * <p>Lexicon content in string format. The content of a lexicon must be in PLS
      * format.</p>
      */
+    inline bool ContentHasBeenSet() const { return m_contentHasBeenSet; }
+
+    /**
+     * <p>Lexicon content in string format. The content of a lexicon must be in PLS
+     * format.</p>
+     */
     inline void SetContent(const Aws::String& value) { m_contentHasBeenSet = true; m_content = value; }
 
     /**
@@ -97,6 +103,11 @@ namespace Model
      * <p>Name of the lexicon.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
+
+    /**
+     * <p>Name of the lexicon.</p>
+     */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
      * <p>Name of the lexicon.</p>

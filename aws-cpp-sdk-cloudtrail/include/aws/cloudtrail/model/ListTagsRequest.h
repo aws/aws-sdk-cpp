@@ -60,6 +60,13 @@ namespace Model
      * limit of 20 ARNs. The format of a trail ARN is:</p> <p>
      * <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
      */
+    inline bool ResourceIdListHasBeenSet() const { return m_resourceIdListHasBeenSet; }
+
+    /**
+     * <p>Specifies a list of trail ARNs whose tags will be listed. The list has a
+     * limit of 20 ARNs. The format of a trail ARN is:</p> <p>
+     * <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
+     */
     inline void SetResourceIdList(const Aws::Vector<Aws::String>& value) { m_resourceIdListHasBeenSet = true; m_resourceIdList = value; }
 
     /**
@@ -109,6 +116,11 @@ namespace Model
      * <p>Reserved for future use.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
+    /**
+     * <p>Reserved for future use.</p>
+     */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
      * <p>Reserved for future use.</p>

@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The project's ARN.</p>
      */
+    inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
+
+    /**
+     * <p>The project's ARN.</p>
+     */
     inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
 
     /**
@@ -89,6 +94,11 @@ namespace Model
      * <p>The project's name.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
+
+    /**
+     * <p>The project's name.</p>
+     */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
      * <p>The project's name.</p>
@@ -131,6 +141,12 @@ namespace Model
      * <p>The default number of minutes (at the project level) a test run will execute
      * before it times out. Default value is 60 minutes.</p>
      */
+    inline bool DefaultJobTimeoutMinutesHasBeenSet() const { return m_defaultJobTimeoutMinutesHasBeenSet; }
+
+    /**
+     * <p>The default number of minutes (at the project level) a test run will execute
+     * before it times out. Default value is 60 minutes.</p>
+     */
     inline void SetDefaultJobTimeoutMinutes(int value) { m_defaultJobTimeoutMinutesHasBeenSet = true; m_defaultJobTimeoutMinutes = value; }
 
     /**
@@ -144,6 +160,11 @@ namespace Model
      * <p>When the project was created.</p>
      */
     inline const Aws::Utils::DateTime& GetCreated() const{ return m_created; }
+
+    /**
+     * <p>When the project was created.</p>
+     */
+    inline bool CreatedHasBeenSet() const { return m_createdHasBeenSet; }
 
     /**
      * <p>When the project was created.</p>

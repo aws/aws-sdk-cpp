@@ -52,6 +52,11 @@ namespace Model
     /**
      * <p>The ID of the HIT to extend.</p>
      */
+    inline bool HITIdHasBeenSet() const { return m_hITIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the HIT to extend.</p>
+     */
     inline void SetHITId(const Aws::String& value) { m_hITIdHasBeenSet = true; m_hITId = value; }
 
     /**
@@ -88,6 +93,11 @@ namespace Model
     /**
      * <p>The number of additional assignments to request for this HIT.</p>
      */
+    inline bool NumberOfAdditionalAssignmentsHasBeenSet() const { return m_numberOfAdditionalAssignmentsHasBeenSet; }
+
+    /**
+     * <p>The number of additional assignments to request for this HIT.</p>
+     */
     inline void SetNumberOfAdditionalAssignments(int value) { m_numberOfAdditionalAssignmentsHasBeenSet = true; m_numberOfAdditionalAssignments = value; }
 
     /**
@@ -105,6 +115,16 @@ namespace Model
      * error with a message containing the request ID. </p>
      */
     inline const Aws::String& GetUniqueRequestToken() const{ return m_uniqueRequestToken; }
+
+    /**
+     * <p> A unique identifier for this request, which allows you to retry the call on
+     * error without extending the HIT multiple times. This is useful in cases such as
+     * network timeouts where it is unclear whether or not the call succeeded on the
+     * server. If the extend HIT already exists in the system from a previous call
+     * using the same <code>UniqueRequestToken</code>, subsequent calls will return an
+     * error with a message containing the request ID. </p>
+     */
+    inline bool UniqueRequestTokenHasBeenSet() const { return m_uniqueRequestTokenHasBeenSet; }
 
     /**
      * <p> A unique identifier for this request, which allows you to retry the call on

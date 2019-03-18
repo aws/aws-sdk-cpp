@@ -58,6 +58,13 @@ namespace Model
      * resource to add the client ID to. You can get a list of OIDC provider ARNs by
      * using the <a>ListOpenIDConnectProviders</a> operation.</p>
      */
+    inline bool OpenIDConnectProviderArnHasBeenSet() const { return m_openIDConnectProviderArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the IAM OpenID Connect (OIDC) provider
+     * resource to add the client ID to. You can get a list of OIDC provider ARNs by
+     * using the <a>ListOpenIDConnectProviders</a> operation.</p>
+     */
     inline void SetOpenIDConnectProviderArn(const Aws::String& value) { m_openIDConnectProviderArnHasBeenSet = true; m_openIDConnectProviderArn = value; }
 
     /**
@@ -101,6 +108,12 @@ namespace Model
      * provider resource.</p>
      */
     inline const Aws::String& GetClientID() const{ return m_clientID; }
+
+    /**
+     * <p>The client ID (also known as audience) to add to the IAM OpenID Connect
+     * provider resource.</p>
+     */
+    inline bool ClientIDHasBeenSet() const { return m_clientIDHasBeenSet; }
 
     /**
      * <p>The client ID (also known as audience) to add to the IAM OpenID Connect

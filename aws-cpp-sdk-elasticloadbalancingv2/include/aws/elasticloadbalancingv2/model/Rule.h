@@ -60,6 +60,11 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the rule.</p>
      */
+    inline bool RuleArnHasBeenSet() const { return m_ruleArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the rule.</p>
+     */
     inline void SetRuleArn(const Aws::String& value) { m_ruleArnHasBeenSet = true; m_ruleArn = value; }
 
     /**
@@ -92,6 +97,11 @@ namespace Model
      * <p>The priority.</p>
      */
     inline const Aws::String& GetPriority() const{ return m_priority; }
+
+    /**
+     * <p>The priority.</p>
+     */
+    inline bool PriorityHasBeenSet() const { return m_priorityHasBeenSet; }
 
     /**
      * <p>The priority.</p>
@@ -132,6 +142,11 @@ namespace Model
     /**
      * <p>The conditions.</p>
      */
+    inline bool ConditionsHasBeenSet() const { return m_conditionsHasBeenSet; }
+
+    /**
+     * <p>The conditions.</p>
+     */
     inline void SetConditions(const Aws::Vector<RuleCondition>& value) { m_conditionsHasBeenSet = true; m_conditions = value; }
 
     /**
@@ -168,6 +183,11 @@ namespace Model
     /**
      * <p>The actions.</p>
      */
+    inline bool ActionsHasBeenSet() const { return m_actionsHasBeenSet; }
+
+    /**
+     * <p>The actions.</p>
+     */
     inline void SetActions(const Aws::Vector<Action>& value) { m_actionsHasBeenSet = true; m_actions = value; }
 
     /**
@@ -200,6 +220,11 @@ namespace Model
      * <p>Indicates whether this is the default rule.</p>
      */
     inline bool GetIsDefault() const{ return m_isDefault; }
+
+    /**
+     * <p>Indicates whether this is the default rule.</p>
+     */
+    inline bool IsDefaultHasBeenSet() const { return m_isDefaultHasBeenSet; }
 
     /**
      * <p>Indicates whether this is the default rule.</p>

@@ -66,6 +66,14 @@ namespace Model
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
      * Idempotency</a>.</p>
      */
+    inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
+
+    /**
+     * <p>Unique, case-sensitive identifier you provide to ensure idempotency of your
+     * listings. This helps avoid duplicate listings. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
+     * Idempotency</a>.</p>
+     */
     inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
 
     /**
@@ -123,6 +131,14 @@ namespace Model
      * equal to the instance count associated with the Reserved Instance ID specified
      * in this call.</p>
      */
+    inline bool InstanceCountHasBeenSet() const { return m_instanceCountHasBeenSet; }
+
+    /**
+     * <p>The number of instances that are a part of a Reserved Instance account to be
+     * listed in the Reserved Instance Marketplace. This number should be less than or
+     * equal to the instance count associated with the Reserved Instance ID specified
+     * in this call.</p>
+     */
     inline void SetInstanceCount(int value) { m_instanceCountHasBeenSet = true; m_instanceCount = value; }
 
     /**
@@ -139,6 +155,12 @@ namespace Model
      * remaining in the Reserved Instance term.</p>
      */
     inline const Aws::Vector<PriceScheduleSpecification>& GetPriceSchedules() const{ return m_priceSchedules; }
+
+    /**
+     * <p>A list specifying the price of the Standard Reserved Instance for each month
+     * remaining in the Reserved Instance term.</p>
+     */
+    inline bool PriceSchedulesHasBeenSet() const { return m_priceSchedulesHasBeenSet; }
 
     /**
      * <p>A list specifying the price of the Standard Reserved Instance for each month
@@ -181,6 +203,11 @@ namespace Model
      * <p>The ID of the active Standard Reserved Instance.</p>
      */
     inline const Aws::String& GetReservedInstancesId() const{ return m_reservedInstancesId; }
+
+    /**
+     * <p>The ID of the active Standard Reserved Instance.</p>
+     */
+    inline bool ReservedInstancesIdHasBeenSet() const { return m_reservedInstancesIdHasBeenSet; }
 
     /**
      * <p>The ID of the active Standard Reserved Instance.</p>

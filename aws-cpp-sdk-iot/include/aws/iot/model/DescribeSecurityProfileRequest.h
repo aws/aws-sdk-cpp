@@ -50,6 +50,11 @@ namespace Model
     /**
      * <p>The name of the security profile whose information you want to get.</p>
      */
+    inline bool SecurityProfileNameHasBeenSet() const { return m_securityProfileNameHasBeenSet; }
+
+    /**
+     * <p>The name of the security profile whose information you want to get.</p>
+     */
     inline void SetSecurityProfileName(const Aws::String& value) { m_securityProfileNameHasBeenSet = true; m_securityProfileName = value; }
 
     /**

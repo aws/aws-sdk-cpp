@@ -58,6 +58,12 @@ namespace Model
      * <p>The URI of the location where data set contents are stored, usually the URI
      * of a file in an S3 bucket.</p>
      */
+    inline bool FileNameHasBeenSet() const { return m_fileNameHasBeenSet; }
+
+    /**
+     * <p>The URI of the location where data set contents are stored, usually the URI
+     * of a file in an S3 bucket.</p>
+     */
     inline void SetFileName(const Aws::String& value) { m_fileNameHasBeenSet = true; m_fileName = value; }
 
     /**

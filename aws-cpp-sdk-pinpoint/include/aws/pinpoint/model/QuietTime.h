@@ -61,6 +61,14 @@ namespace Model
      * applicable), and mm is the minutes. For example, use 02:30 to represent 2:30 AM,
      * or 14:30 to represent 2:30 PM.
      */
+    inline bool EndHasBeenSet() const { return m_endHasBeenSet; }
+
+    /**
+     * The time at which quiet time should end. The value that you specify has to be in
+     * HH:mm format, where HH is the hour in 24-hour format (with a leading zero, if
+     * applicable), and mm is the minutes. For example, use 02:30 to represent 2:30 AM,
+     * or 14:30 to represent 2:30 PM.
+     */
     inline void SetEnd(const Aws::String& value) { m_endHasBeenSet = true; m_end = value; }
 
     /**
@@ -111,6 +119,14 @@ namespace Model
      * or 14:30 to represent 2:30 PM.
      */
     inline const Aws::String& GetStart() const{ return m_start; }
+
+    /**
+     * The time at which quiet time should begin. The value that you specify has to be
+     * in HH:mm format, where HH is the hour in 24-hour format (with a leading zero, if
+     * applicable), and mm is the minutes. For example, use 02:30 to represent 2:30 AM,
+     * or 14:30 to represent 2:30 PM.
+     */
+    inline bool StartHasBeenSet() const { return m_startHasBeenSet; }
 
     /**
      * The time at which quiet time should begin. The value that you specify has to be

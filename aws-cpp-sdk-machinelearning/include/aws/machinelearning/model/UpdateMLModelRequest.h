@@ -52,6 +52,11 @@ namespace Model
     /**
      * <p>The ID assigned to the <code>MLModel</code> during creation.</p>
      */
+    inline bool MLModelIdHasBeenSet() const { return m_mLModelIdHasBeenSet; }
+
+    /**
+     * <p>The ID assigned to the <code>MLModel</code> during creation.</p>
+     */
     inline void SetMLModelId(const Aws::String& value) { m_mLModelIdHasBeenSet = true; m_mLModelId = value; }
 
     /**
@@ -84,6 +89,11 @@ namespace Model
      * <p>A user-supplied name or description of the <code>MLModel</code>.</p>
      */
     inline const Aws::String& GetMLModelName() const{ return m_mLModelName; }
+
+    /**
+     * <p>A user-supplied name or description of the <code>MLModel</code>.</p>
+     */
+    inline bool MLModelNameHasBeenSet() const { return m_mLModelNameHasBeenSet; }
 
     /**
      * <p>A user-supplied name or description of the <code>MLModel</code>.</p>
@@ -126,6 +136,17 @@ namespace Model
      * <code>MLModel</code>, such as <code>false</code>.</p>
      */
     inline double GetScoreThreshold() const{ return m_scoreThreshold; }
+
+    /**
+     * <p>The <code>ScoreThreshold</code> used in binary classification
+     * <code>MLModel</code> that marks the boundary between a positive prediction and a
+     * negative prediction.</p> <p>Output values greater than or equal to the
+     * <code>ScoreThreshold</code> receive a positive result from the
+     * <code>MLModel</code>, such as <code>true</code>. Output values less than the
+     * <code>ScoreThreshold</code> receive a negative response from the
+     * <code>MLModel</code>, such as <code>false</code>.</p>
+     */
+    inline bool ScoreThresholdHasBeenSet() const { return m_scoreThresholdHasBeenSet; }
 
     /**
      * <p>The <code>ScoreThreshold</code> used in binary classification

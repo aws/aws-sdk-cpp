@@ -64,6 +64,11 @@ namespace Model
     /**
      * <p>The number of Dedicated Hosts the reservation is associated with.</p>
      */
+    inline bool CountHasBeenSet() const { return m_countHasBeenSet; }
+
+    /**
+     * <p>The number of Dedicated Hosts the reservation is associated with.</p>
+     */
     inline void SetCount(int value) { m_countHasBeenSet = true; m_count = value; }
 
     /**
@@ -78,6 +83,13 @@ namespace Model
      * currency is <code>USD</code>.</p>
      */
     inline const CurrencyCodeValues& GetCurrencyCode() const{ return m_currencyCode; }
+
+    /**
+     * <p>The currency in which the <code>upfrontPrice</code> and
+     * <code>hourlyPrice</code> amounts are specified. At this time, the only supported
+     * currency is <code>USD</code>.</p>
+     */
+    inline bool CurrencyCodeHasBeenSet() const { return m_currencyCodeHasBeenSet; }
 
     /**
      * <p>The currency in which the <code>upfrontPrice</code> and
@@ -118,6 +130,12 @@ namespace Model
      * <p>The length of the reservation's term, specified in seconds. Can be
      * <code>31536000 (1 year)</code> | <code>94608000 (3 years)</code>.</p>
      */
+    inline bool DurationHasBeenSet() const { return m_durationHasBeenSet; }
+
+    /**
+     * <p>The length of the reservation's term, specified in seconds. Can be
+     * <code>31536000 (1 year)</code> | <code>94608000 (3 years)</code>.</p>
+     */
     inline void SetDuration(int value) { m_durationHasBeenSet = true; m_duration = value; }
 
     /**
@@ -131,6 +149,11 @@ namespace Model
      * <p>The date and time that the reservation ends.</p>
      */
     inline const Aws::Utils::DateTime& GetEnd() const{ return m_end; }
+
+    /**
+     * <p>The date and time that the reservation ends.</p>
+     */
+    inline bool EndHasBeenSet() const { return m_endHasBeenSet; }
 
     /**
      * <p>The date and time that the reservation ends.</p>
@@ -157,6 +180,11 @@ namespace Model
      * <p>The IDs of the Dedicated Hosts associated with the reservation.</p>
      */
     inline const Aws::Vector<Aws::String>& GetHostIdSet() const{ return m_hostIdSet; }
+
+    /**
+     * <p>The IDs of the Dedicated Hosts associated with the reservation.</p>
+     */
+    inline bool HostIdSetHasBeenSet() const { return m_hostIdSetHasBeenSet; }
 
     /**
      * <p>The IDs of the Dedicated Hosts associated with the reservation.</p>
@@ -202,6 +230,11 @@ namespace Model
     /**
      * <p>The ID of the reservation that specifies the associated Dedicated Hosts.</p>
      */
+    inline bool HostReservationIdHasBeenSet() const { return m_hostReservationIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the reservation that specifies the associated Dedicated Hosts.</p>
+     */
     inline void SetHostReservationId(const Aws::String& value) { m_hostReservationIdHasBeenSet = true; m_hostReservationId = value; }
 
     /**
@@ -234,6 +267,11 @@ namespace Model
      * <p>The hourly price of the reservation.</p>
      */
     inline const Aws::String& GetHourlyPrice() const{ return m_hourlyPrice; }
+
+    /**
+     * <p>The hourly price of the reservation.</p>
+     */
+    inline bool HourlyPriceHasBeenSet() const { return m_hourlyPriceHasBeenSet; }
 
     /**
      * <p>The hourly price of the reservation.</p>
@@ -272,6 +310,13 @@ namespace Model
      * reservation.</p>
      */
     inline const Aws::String& GetInstanceFamily() const{ return m_instanceFamily; }
+
+    /**
+     * <p>The instance family of the Dedicated Host Reservation. The instance family on
+     * the Dedicated Host must be the same in order for it to benefit from the
+     * reservation.</p>
+     */
+    inline bool InstanceFamilyHasBeenSet() const { return m_instanceFamilyHasBeenSet; }
 
     /**
      * <p>The instance family of the Dedicated Host Reservation. The instance family on
@@ -326,6 +371,12 @@ namespace Model
      * <p>The ID of the reservation. This remains the same regardless of which
      * Dedicated Hosts are associated with it.</p>
      */
+    inline bool OfferingIdHasBeenSet() const { return m_offeringIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the reservation. This remains the same regardless of which
+     * Dedicated Hosts are associated with it.</p>
+     */
     inline void SetOfferingId(const Aws::String& value) { m_offeringIdHasBeenSet = true; m_offeringId = value; }
 
     /**
@@ -367,6 +418,11 @@ namespace Model
     /**
      * <p>The payment option selected for this reservation.</p>
      */
+    inline bool PaymentOptionHasBeenSet() const { return m_paymentOptionHasBeenSet; }
+
+    /**
+     * <p>The payment option selected for this reservation.</p>
+     */
     inline void SetPaymentOption(const PaymentOption& value) { m_paymentOptionHasBeenSet = true; m_paymentOption = value; }
 
     /**
@@ -389,6 +445,11 @@ namespace Model
      * <p>The date and time that the reservation started.</p>
      */
     inline const Aws::Utils::DateTime& GetStart() const{ return m_start; }
+
+    /**
+     * <p>The date and time that the reservation started.</p>
+     */
+    inline bool StartHasBeenSet() const { return m_startHasBeenSet; }
 
     /**
      * <p>The date and time that the reservation started.</p>
@@ -419,6 +480,11 @@ namespace Model
     /**
      * <p>The state of the reservation.</p>
      */
+    inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
+
+    /**
+     * <p>The state of the reservation.</p>
+     */
     inline void SetState(const ReservationState& value) { m_stateHasBeenSet = true; m_state = value; }
 
     /**
@@ -441,6 +507,11 @@ namespace Model
      * <p>The upfront price of the reservation.</p>
      */
     inline const Aws::String& GetUpfrontPrice() const{ return m_upfrontPrice; }
+
+    /**
+     * <p>The upfront price of the reservation.</p>
+     */
+    inline bool UpfrontPriceHasBeenSet() const { return m_upfrontPriceHasBeenSet; }
 
     /**
      * <p>The upfront price of the reservation.</p>
@@ -477,6 +548,11 @@ namespace Model
      * <p>Any tags assigned to the Dedicated Host Reservation.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>Any tags assigned to the Dedicated Host Reservation.</p>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
      * <p>Any tags assigned to the Dedicated Host Reservation.</p>

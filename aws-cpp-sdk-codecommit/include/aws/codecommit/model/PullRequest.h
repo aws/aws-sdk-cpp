@@ -59,6 +59,11 @@ namespace Model
     /**
      * <p>The system-generated ID of the pull request. </p>
      */
+    inline bool PullRequestIdHasBeenSet() const { return m_pullRequestIdHasBeenSet; }
+
+    /**
+     * <p>The system-generated ID of the pull request. </p>
+     */
     inline void SetPullRequestId(const Aws::String& value) { m_pullRequestIdHasBeenSet = true; m_pullRequestId = value; }
 
     /**
@@ -92,6 +97,12 @@ namespace Model
      * list of pull requests to other users of the repository.</p>
      */
     inline const Aws::String& GetTitle() const{ return m_title; }
+
+    /**
+     * <p>The user-defined title of the pull request. This title is displayed in the
+     * list of pull requests to other users of the repository.</p>
+     */
+    inline bool TitleHasBeenSet() const { return m_titleHasBeenSet; }
 
     /**
      * <p>The user-defined title of the pull request. This title is displayed in the
@@ -140,6 +151,12 @@ namespace Model
      * <p>The user-defined description of the pull request. This description can be
      * used to clarify what should be reviewed and other details of the request.</p>
      */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
+
+    /**
+     * <p>The user-defined description of the pull request. This description can be
+     * used to clarify what should be reviewed and other details of the request.</p>
+     */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
@@ -183,6 +200,12 @@ namespace Model
      * <p>The day and time of the last user or system activity on the pull request, in
      * timestamp format.</p>
      */
+    inline bool LastActivityDateHasBeenSet() const { return m_lastActivityDateHasBeenSet; }
+
+    /**
+     * <p>The day and time of the last user or system activity on the pull request, in
+     * timestamp format.</p>
+     */
     inline void SetLastActivityDate(const Aws::Utils::DateTime& value) { m_lastActivityDateHasBeenSet = true; m_lastActivityDate = value; }
 
     /**
@@ -209,6 +232,12 @@ namespace Model
      * format.</p>
      */
     inline const Aws::Utils::DateTime& GetCreationDate() const{ return m_creationDate; }
+
+    /**
+     * <p>The date and time the pull request was originally created, in timestamp
+     * format.</p>
+     */
+    inline bool CreationDateHasBeenSet() const { return m_creationDateHasBeenSet; }
 
     /**
      * <p>The date and time the pull request was originally created, in timestamp
@@ -245,6 +274,12 @@ namespace Model
      * <p>The status of the pull request. Pull request status can only change from
      * <code>OPEN</code> to <code>CLOSED</code>.</p>
      */
+    inline bool PullRequestStatusHasBeenSet() const { return m_pullRequestStatusHasBeenSet; }
+
+    /**
+     * <p>The status of the pull request. Pull request status can only change from
+     * <code>OPEN</code> to <code>CLOSED</code>.</p>
+     */
     inline void SetPullRequestStatus(const PullRequestStatusEnum& value) { m_pullRequestStatusHasBeenSet = true; m_pullRequestStatus = value; }
 
     /**
@@ -270,6 +305,11 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the user who created the pull request.</p>
      */
     inline const Aws::String& GetAuthorArn() const{ return m_authorArn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the user who created the pull request.</p>
+     */
+    inline bool AuthorArnHasBeenSet() const { return m_authorArnHasBeenSet; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the user who created the pull request.</p>
@@ -307,6 +347,12 @@ namespace Model
      * branch for the pull request.</p>
      */
     inline const Aws::Vector<PullRequestTarget>& GetPullRequestTargets() const{ return m_pullRequestTargets; }
+
+    /**
+     * <p>The targets of the pull request, including the source branch and destination
+     * branch for the pull request.</p>
+     */
+    inline bool PullRequestTargetsHasBeenSet() const { return m_pullRequestTargetsHasBeenSet; }
 
     /**
      * <p>The targets of the pull request, including the source branch and destination
@@ -352,6 +398,14 @@ namespace Model
      * return information about the initial request that used that token.</p>
      */
     inline const Aws::String& GetClientRequestToken() const{ return m_clientRequestToken; }
+
+    /**
+     * <p>A unique, client-generated idempotency token that when provided in a request,
+     * ensures the request cannot be repeated with a changed parameter. If a request is
+     * received with the same parameters and a token is included, the request will
+     * return information about the initial request that used that token.</p>
+     */
+    inline bool ClientRequestTokenHasBeenSet() const { return m_clientRequestTokenHasBeenSet; }
 
     /**
      * <p>A unique, client-generated idempotency token that when provided in a request,

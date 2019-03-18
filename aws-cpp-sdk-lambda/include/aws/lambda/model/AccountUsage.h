@@ -56,6 +56,12 @@ namespace Model
      * <p>The amount of storage space, in bytes, that's being used by deployment
      * packages and layer archives.</p>
      */
+    inline bool TotalCodeSizeHasBeenSet() const { return m_totalCodeSizeHasBeenSet; }
+
+    /**
+     * <p>The amount of storage space, in bytes, that's being used by deployment
+     * packages and layer archives.</p>
+     */
     inline void SetTotalCodeSize(long long value) { m_totalCodeSizeHasBeenSet = true; m_totalCodeSize = value; }
 
     /**
@@ -69,6 +75,11 @@ namespace Model
      * <p>The number of Lambda functions.</p>
      */
     inline long long GetFunctionCount() const{ return m_functionCount; }
+
+    /**
+     * <p>The number of Lambda functions.</p>
+     */
+    inline bool FunctionCountHasBeenSet() const { return m_functionCountHasBeenSet; }
 
     /**
      * <p>The number of Lambda functions.</p>

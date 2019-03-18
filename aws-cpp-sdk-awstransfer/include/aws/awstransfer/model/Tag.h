@@ -60,6 +60,11 @@ namespace Model
     /**
      * <p>The name assigned to the tag that you create.</p>
      */
+    inline bool KeyHasBeenSet() const { return m_keyHasBeenSet; }
+
+    /**
+     * <p>The name assigned to the tag that you create.</p>
+     */
     inline void SetKey(const Aws::String& value) { m_keyHasBeenSet = true; m_key = value; }
 
     /**
@@ -93,6 +98,12 @@ namespace Model
      * you create.</p>
      */
     inline const Aws::String& GetValue() const{ return m_value; }
+
+    /**
+     * <p>This property contains one or more values that you assigned to the key name
+     * you create.</p>
+     */
+    inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
 
     /**
      * <p>This property contains one or more values that you assigned to the key name

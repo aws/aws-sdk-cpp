@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The user associated with the IAM access key related to a finding.</p>
      */
+    inline bool UserNameHasBeenSet() const { return m_userNameHasBeenSet; }
+
+    /**
+     * <p>The user associated with the IAM access key related to a finding.</p>
+     */
     inline void SetUserName(const Aws::String& value) { m_userNameHasBeenSet = true; m_userName = value; }
 
     /**
@@ -93,6 +98,11 @@ namespace Model
     /**
      * <p>The status of the IAM access key related to a finding.</p>
      */
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
+
+    /**
+     * <p>The status of the IAM access key related to a finding.</p>
+     */
     inline void SetStatus(const AwsIamAccessKeyStatus& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
@@ -115,6 +125,11 @@ namespace Model
      * <p>The creation date/time of the IAM access key related to a finding.</p>
      */
     inline const Aws::String& GetCreatedAt() const{ return m_createdAt; }
+
+    /**
+     * <p>The creation date/time of the IAM access key related to a finding.</p>
+     */
+    inline bool CreatedAtHasBeenSet() const { return m_createdAtHasBeenSet; }
 
     /**
      * <p>The creation date/time of the IAM access key related to a finding.</p>

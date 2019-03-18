@@ -53,6 +53,11 @@ namespace Model
     /**
      * <p>The total number of object bytes scanned.</p>
      */
+    inline bool BytesScannedHasBeenSet() const { return m_bytesScannedHasBeenSet; }
+
+    /**
+     * <p>The total number of object bytes scanned.</p>
+     */
     inline void SetBytesScanned(long long value) { m_bytesScannedHasBeenSet = true; m_bytesScanned = value; }
 
     /**
@@ -69,6 +74,11 @@ namespace Model
     /**
      * <p>The total number of uncompressed object bytes processed.</p>
      */
+    inline bool BytesProcessedHasBeenSet() const { return m_bytesProcessedHasBeenSet; }
+
+    /**
+     * <p>The total number of uncompressed object bytes processed.</p>
+     */
     inline void SetBytesProcessed(long long value) { m_bytesProcessedHasBeenSet = true; m_bytesProcessed = value; }
 
     /**
@@ -81,6 +91,11 @@ namespace Model
      * <p>The total number of bytes of records payload data returned.</p>
      */
     inline long long GetBytesReturned() const{ return m_bytesReturned; }
+
+    /**
+     * <p>The total number of bytes of records payload data returned.</p>
+     */
+    inline bool BytesReturnedHasBeenSet() const { return m_bytesReturnedHasBeenSet; }
 
     /**
      * <p>The total number of bytes of records payload data returned.</p>

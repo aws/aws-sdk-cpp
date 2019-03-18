@@ -54,6 +54,11 @@ namespace Model
     /**
      * <p>The name of the launch configuration.</p>
      */
+    inline bool LaunchConfigurationNameHasBeenSet() const { return m_launchConfigurationNameHasBeenSet; }
+
+    /**
+     * <p>The name of the launch configuration.</p>
+     */
     inline void SetLaunchConfigurationName(const Aws::String& value) { m_launchConfigurationNameHasBeenSet = true; m_launchConfigurationName = value; }
 
     /**

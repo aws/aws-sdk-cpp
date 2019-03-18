@@ -55,6 +55,11 @@ namespace Model
     /**
      * <p>The ARN of the solution that generated a related finding.</p>
      */
+    inline bool ProductArnHasBeenSet() const { return m_productArnHasBeenSet; }
+
+    /**
+     * <p>The ARN of the solution that generated a related finding.</p>
+     */
     inline void SetProductArn(const Aws::String& value) { m_productArnHasBeenSet = true; m_productArn = value; }
 
     /**
@@ -87,6 +92,11 @@ namespace Model
      * <p>The solution-generated identifier for a related finding.</p>
      */
     inline const Aws::String& GetId() const{ return m_id; }
+
+    /**
+     * <p>The solution-generated identifier for a related finding.</p>
+     */
+    inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
 
     /**
      * <p>The solution-generated identifier for a related finding.</p>

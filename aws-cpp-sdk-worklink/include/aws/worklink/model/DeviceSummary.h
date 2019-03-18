@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The ID of the device.</p>
      */
+    inline bool DeviceIdHasBeenSet() const { return m_deviceIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the device.</p>
+     */
     inline void SetDeviceId(const Aws::String& value) { m_deviceIdHasBeenSet = true; m_deviceId = value; }
 
     /**
@@ -88,6 +93,11 @@ namespace Model
      * <p>The status of the device.</p>
      */
     inline const DeviceStatus& GetDeviceStatus() const{ return m_deviceStatus; }
+
+    /**
+     * <p>The status of the device.</p>
+     */
+    inline bool DeviceStatusHasBeenSet() const { return m_deviceStatusHasBeenSet; }
 
     /**
      * <p>The status of the device.</p>

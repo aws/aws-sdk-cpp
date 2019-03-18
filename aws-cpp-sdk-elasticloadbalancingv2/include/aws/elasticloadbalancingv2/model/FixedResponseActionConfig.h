@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p>The message.</p>
      */
+    inline bool MessageBodyHasBeenSet() const { return m_messageBodyHasBeenSet; }
+
+    /**
+     * <p>The message.</p>
+     */
     inline void SetMessageBody(const Aws::String& value) { m_messageBodyHasBeenSet = true; m_messageBody = value; }
 
     /**
@@ -90,6 +95,11 @@ namespace Model
      * <p>The HTTP response code (2XX, 4XX, or 5XX).</p>
      */
     inline const Aws::String& GetStatusCode() const{ return m_statusCode; }
+
+    /**
+     * <p>The HTTP response code (2XX, 4XX, or 5XX).</p>
+     */
+    inline bool StatusCodeHasBeenSet() const { return m_statusCodeHasBeenSet; }
 
     /**
      * <p>The HTTP response code (2XX, 4XX, or 5XX).</p>
@@ -127,6 +137,12 @@ namespace Model
      * application/javascript | application/json</p>
      */
     inline const Aws::String& GetContentType() const{ return m_contentType; }
+
+    /**
+     * <p>The content type.</p> <p>Valid Values: text/plain | text/css | text/html |
+     * application/javascript | application/json</p>
+     */
+    inline bool ContentTypeHasBeenSet() const { return m_contentTypeHasBeenSet; }
 
     /**
      * <p>The content type.</p> <p>Valid Values: text/plain | text/css | text/html |

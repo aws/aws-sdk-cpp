@@ -55,6 +55,11 @@ namespace Model
     /**
      * The IPv4 CIDR to whitelist.
      */
+    inline bool CidrHasBeenSet() const { return m_cidrHasBeenSet; }
+
+    /**
+     * The IPv4 CIDR to whitelist.
+     */
     inline void SetCidr(const Aws::String& value) { m_cidrHasBeenSet = true; m_cidr = value; }
 
     /**

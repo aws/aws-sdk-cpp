@@ -71,6 +71,13 @@ namespace Model
      * this is the fixed hourly price in effect for the Spot Instance while it
      * runs.</p>
      */
+    inline bool ActualBlockHourlyPriceHasBeenSet() const { return m_actualBlockHourlyPriceHasBeenSet; }
+
+    /**
+     * <p>If you specified a duration and your Spot Instance request was fulfilled,
+     * this is the fixed hourly price in effect for the Spot Instance while it
+     * runs.</p>
+     */
     inline void SetActualBlockHourlyPrice(const Aws::String& value) { m_actualBlockHourlyPriceHasBeenSet = true; m_actualBlockHourlyPrice = value; }
 
     /**
@@ -115,6 +122,13 @@ namespace Model
      * Availability Zone.</p>
      */
     inline const Aws::String& GetAvailabilityZoneGroup() const{ return m_availabilityZoneGroup; }
+
+    /**
+     * <p>The Availability Zone group. If you specify the same Availability Zone group
+     * for all Spot Instance requests, all Spot Instances are launched in the same
+     * Availability Zone.</p>
+     */
+    inline bool AvailabilityZoneGroupHasBeenSet() const { return m_availabilityZoneGroupHasBeenSet; }
 
     /**
      * <p>The Availability Zone group. If you specify the same Availability Zone group
@@ -167,6 +181,11 @@ namespace Model
     /**
      * <p>The duration for the Spot Instance, in minutes.</p>
      */
+    inline bool BlockDurationMinutesHasBeenSet() const { return m_blockDurationMinutesHasBeenSet; }
+
+    /**
+     * <p>The duration for the Spot Instance, in minutes.</p>
+     */
     inline void SetBlockDurationMinutes(int value) { m_blockDurationMinutesHasBeenSet = true; m_blockDurationMinutes = value; }
 
     /**
@@ -181,6 +200,13 @@ namespace Model
      * <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).</p>
      */
     inline const Aws::Utils::DateTime& GetCreateTime() const{ return m_createTime; }
+
+    /**
+     * <p>The date and time when the Spot Instance request was created, in UTC format
+     * (for example,
+     * <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).</p>
+     */
+    inline bool CreateTimeHasBeenSet() const { return m_createTimeHasBeenSet; }
 
     /**
      * <p>The date and time when the Spot Instance request was created, in UTC format
@@ -219,6 +245,11 @@ namespace Model
     /**
      * <p>The fault codes for the Spot Instance request, if any.</p>
      */
+    inline bool FaultHasBeenSet() const { return m_faultHasBeenSet; }
+
+    /**
+     * <p>The fault codes for the Spot Instance request, if any.</p>
+     */
     inline void SetFault(const SpotInstanceStateFault& value) { m_faultHasBeenSet = true; m_fault = value; }
 
     /**
@@ -242,6 +273,12 @@ namespace Model
      * Instance request.</p>
      */
     inline const Aws::String& GetInstanceId() const{ return m_instanceId; }
+
+    /**
+     * <p>The instance ID, if an instance has been launched to fulfill the Spot
+     * Instance request.</p>
+     */
+    inline bool InstanceIdHasBeenSet() const { return m_instanceIdHasBeenSet; }
 
     /**
      * <p>The instance ID, if an instance has been launched to fulfill the Spot
@@ -290,6 +327,12 @@ namespace Model
      * <p>The instance launch group. Launch groups are Spot Instances that launch
      * together and terminate together.</p>
      */
+    inline bool LaunchGroupHasBeenSet() const { return m_launchGroupHasBeenSet; }
+
+    /**
+     * <p>The instance launch group. Launch groups are Spot Instances that launch
+     * together and terminate together.</p>
+     */
     inline void SetLaunchGroup(const Aws::String& value) { m_launchGroupHasBeenSet = true; m_launchGroup = value; }
 
     /**
@@ -331,6 +374,11 @@ namespace Model
     /**
      * <p>Additional information for launching instances.</p>
      */
+    inline bool LaunchSpecificationHasBeenSet() const { return m_launchSpecificationHasBeenSet; }
+
+    /**
+     * <p>Additional information for launching instances.</p>
+     */
     inline void SetLaunchSpecification(const LaunchSpecification& value) { m_launchSpecificationHasBeenSet = true; m_launchSpecification = value; }
 
     /**
@@ -353,6 +401,11 @@ namespace Model
      * <p>The Availability Zone in which the request is launched.</p>
      */
     inline const Aws::String& GetLaunchedAvailabilityZone() const{ return m_launchedAvailabilityZone; }
+
+    /**
+     * <p>The Availability Zone in which the request is launched.</p>
+     */
+    inline bool LaunchedAvailabilityZoneHasBeenSet() const { return m_launchedAvailabilityZoneHasBeenSet; }
 
     /**
      * <p>The Availability Zone in which the request is launched.</p>
@@ -393,6 +446,11 @@ namespace Model
     /**
      * <p>The product description associated with the Spot Instance.</p>
      */
+    inline bool ProductDescriptionHasBeenSet() const { return m_productDescriptionHasBeenSet; }
+
+    /**
+     * <p>The product description associated with the Spot Instance.</p>
+     */
     inline void SetProductDescription(const RIProductDescription& value) { m_productDescriptionHasBeenSet = true; m_productDescription = value; }
 
     /**
@@ -415,6 +473,11 @@ namespace Model
      * <p>The ID of the Spot Instance request.</p>
      */
     inline const Aws::String& GetSpotInstanceRequestId() const{ return m_spotInstanceRequestId; }
+
+    /**
+     * <p>The ID of the Spot Instance request.</p>
+     */
+    inline bool SpotInstanceRequestIdHasBeenSet() const { return m_spotInstanceRequestIdHasBeenSet; }
 
     /**
      * <p>The ID of the Spot Instance request.</p>
@@ -452,6 +515,12 @@ namespace Model
      * Instance.</p>
      */
     inline const Aws::String& GetSpotPrice() const{ return m_spotPrice; }
+
+    /**
+     * <p>The maximum price per hour that you are willing to pay for a Spot
+     * Instance.</p>
+     */
+    inline bool SpotPriceHasBeenSet() const { return m_spotPriceHasBeenSet; }
 
     /**
      * <p>The maximum price per hour that you are willing to pay for a Spot
@@ -504,6 +573,14 @@ namespace Model
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-bid-status.html">Spot
      * Status</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
      */
+    inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
+
+    /**
+     * <p>The state of the Spot Instance request. Spot status information helps track
+     * your Spot Instance requests. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-bid-status.html">Spot
+     * Status</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
+     */
     inline void SetState(const SpotInstanceState& value) { m_stateHasBeenSet = true; m_state = value; }
 
     /**
@@ -539,6 +616,11 @@ namespace Model
     /**
      * <p>The status code and status message describing the Spot Instance request.</p>
      */
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
+
+    /**
+     * <p>The status code and status message describing the Spot Instance request.</p>
+     */
     inline void SetStatus(const SpotInstanceStatus& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
@@ -561,6 +643,11 @@ namespace Model
      * <p>Any tags assigned to the resource.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>Any tags assigned to the resource.</p>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
      * <p>Any tags assigned to the resource.</p>
@@ -601,6 +688,11 @@ namespace Model
     /**
      * <p>The Spot Instance request type.</p>
      */
+    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
+
+    /**
+     * <p>The Spot Instance request type.</p>
+     */
     inline void SetType(const SpotInstanceType& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
@@ -625,6 +717,13 @@ namespace Model
      * becomes active at this date and time.</p>
      */
     inline const Aws::Utils::DateTime& GetValidFrom() const{ return m_validFrom; }
+
+    /**
+     * <p>The start date of the request, in UTC format (for example,
+     * <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z). The request
+     * becomes active at this date and time.</p>
+     */
+    inline bool ValidFromHasBeenSet() const { return m_validFromHasBeenSet; }
 
     /**
      * <p>The start date of the request, in UTC format (for example,
@@ -673,6 +772,16 @@ namespace Model
      * active until it is canceled or this date is reached. The default end date is 7
      * days from the current date.</p>
      */
+    inline bool ValidUntilHasBeenSet() const { return m_validUntilHasBeenSet; }
+
+    /**
+     * <p>The end date of the request, in UTC format (for example,
+     * <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z). If this is a
+     * one-time request, it remains active until all instances launch, the request is
+     * canceled, or this date is reached. If the request is persistent, it remains
+     * active until it is canceled or this date is reached. The default end date is 7
+     * days from the current date.</p>
+     */
     inline void SetValidUntil(const Aws::Utils::DateTime& value) { m_validUntilHasBeenSet = true; m_validUntil = value; }
 
     /**
@@ -710,6 +819,11 @@ namespace Model
      * <p>The behavior when a Spot Instance is interrupted.</p>
      */
     inline const InstanceInterruptionBehavior& GetInstanceInterruptionBehavior() const{ return m_instanceInterruptionBehavior; }
+
+    /**
+     * <p>The behavior when a Spot Instance is interrupted.</p>
+     */
+    inline bool InstanceInterruptionBehaviorHasBeenSet() const { return m_instanceInterruptionBehaviorHasBeenSet; }
 
     /**
      * <p>The behavior when a Spot Instance is interrupted.</p>

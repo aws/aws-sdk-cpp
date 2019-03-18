@@ -56,6 +56,12 @@ namespace Model
      * <p>The amount of storage space that you can use for all deployment packages and
      * layer archives.</p>
      */
+    inline bool TotalCodeSizeHasBeenSet() const { return m_totalCodeSizeHasBeenSet; }
+
+    /**
+     * <p>The amount of storage space that you can use for all deployment packages and
+     * layer archives.</p>
+     */
     inline void SetTotalCodeSize(long long value) { m_totalCodeSizeHasBeenSet = true; m_totalCodeSize = value; }
 
     /**
@@ -70,6 +76,12 @@ namespace Model
      * extracted.</p>
      */
     inline long long GetCodeSizeUnzipped() const{ return m_codeSizeUnzipped; }
+
+    /**
+     * <p>The maximum size of your function's code and layers when they're
+     * extracted.</p>
+     */
+    inline bool CodeSizeUnzippedHasBeenSet() const { return m_codeSizeUnzippedHasBeenSet; }
 
     /**
      * <p>The maximum size of your function's code and layers when they're
@@ -94,6 +106,12 @@ namespace Model
      * <p>The maximum size of a deployment package when it's uploaded directly to AWS
      * Lambda. Use Amazon S3 for larger files.</p>
      */
+    inline bool CodeSizeZippedHasBeenSet() const { return m_codeSizeZippedHasBeenSet; }
+
+    /**
+     * <p>The maximum size of a deployment package when it's uploaded directly to AWS
+     * Lambda. Use Amazon S3 for larger files.</p>
+     */
     inline void SetCodeSizeZipped(long long value) { m_codeSizeZippedHasBeenSet = true; m_codeSizeZipped = value; }
 
     /**
@@ -111,6 +129,11 @@ namespace Model
     /**
      * <p>The maximum number of simultaneous function executions.</p>
      */
+    inline bool ConcurrentExecutionsHasBeenSet() const { return m_concurrentExecutionsHasBeenSet; }
+
+    /**
+     * <p>The maximum number of simultaneous function executions.</p>
+     */
     inline void SetConcurrentExecutions(int value) { m_concurrentExecutionsHasBeenSet = true; m_concurrentExecutions = value; }
 
     /**
@@ -124,6 +147,12 @@ namespace Model
      * that's reserved for individual functions with <a>PutFunctionConcurrency</a>.</p>
      */
     inline int GetUnreservedConcurrentExecutions() const{ return m_unreservedConcurrentExecutions; }
+
+    /**
+     * <p>The maximum number of simultaneous function executions, minus the capacity
+     * that's reserved for individual functions with <a>PutFunctionConcurrency</a>.</p>
+     */
+    inline bool UnreservedConcurrentExecutionsHasBeenSet() const { return m_unreservedConcurrentExecutionsHasBeenSet; }
 
     /**
      * <p>The maximum number of simultaneous function executions, minus the capacity

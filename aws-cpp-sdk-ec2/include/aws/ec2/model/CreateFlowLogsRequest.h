@@ -64,6 +64,14 @@ namespace Model
      * required permissions, the error response is <code>DryRunOperation</code>.
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
+    inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
+
+    /**
+     * <p>Checks whether you have the required permissions for the action, without
+     * actually making the request, and provides an error response. If you have the
+     * required permissions, the error response is <code>DryRunOperation</code>.
+     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+     */
     inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
 
     /**
@@ -82,6 +90,14 @@ namespace Model
      * to Ensure Idempotency</a>.</p>
      */
     inline const Aws::String& GetClientToken() const{ return m_clientToken; }
+
+    /**
+     * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
+     * of the request. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How
+     * to Ensure Idempotency</a>.</p>
+     */
+    inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
 
     /**
      * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
@@ -140,6 +156,11 @@ namespace Model
     /**
      * <p>The ARN for the IAM role that's used to post flow logs to a log group.</p>
      */
+    inline bool DeliverLogsPermissionArnHasBeenSet() const { return m_deliverLogsPermissionArnHasBeenSet; }
+
+    /**
+     * <p>The ARN for the IAM role that's used to post flow logs to a log group.</p>
+     */
     inline void SetDeliverLogsPermissionArn(const Aws::String& value) { m_deliverLogsPermissionArnHasBeenSet = true; m_deliverLogsPermissionArn = value; }
 
     /**
@@ -172,6 +193,11 @@ namespace Model
      * <p>The name of the log group.</p>
      */
     inline const Aws::String& GetLogGroupName() const{ return m_logGroupName; }
+
+    /**
+     * <p>The name of the log group.</p>
+     */
+    inline bool LogGroupNameHasBeenSet() const { return m_logGroupNameHasBeenSet; }
 
     /**
      * <p>The name of the log group.</p>
@@ -209,6 +235,12 @@ namespace Model
      * Maximum of 1000 resources</p>
      */
     inline const Aws::Vector<Aws::String>& GetResourceIds() const{ return m_resourceIds; }
+
+    /**
+     * <p>One or more subnet, network interface, or VPC IDs.</p> <p>Constraints:
+     * Maximum of 1000 resources</p>
+     */
+    inline bool ResourceIdsHasBeenSet() const { return m_resourceIdsHasBeenSet; }
 
     /**
      * <p>One or more subnet, network interface, or VPC IDs.</p> <p>Constraints:
@@ -261,6 +293,11 @@ namespace Model
     /**
      * <p>The type of resource on which to create the flow log.</p>
      */
+    inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
+
+    /**
+     * <p>The type of resource on which to create the flow log.</p>
+     */
     inline void SetResourceType(const FlowLogsResourceType& value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
 
     /**
@@ -283,6 +320,11 @@ namespace Model
      * <p>The type of traffic to log.</p>
      */
     inline const TrafficType& GetTrafficType() const{ return m_trafficType; }
+
+    /**
+     * <p>The type of traffic to log.</p>
+     */
+    inline bool TrafficTypeHasBeenSet() const { return m_trafficTypeHasBeenSet; }
 
     /**
      * <p>The type of traffic to log.</p>
@@ -313,6 +355,15 @@ namespace Model
      * <code>cloud-watch-logs</code> </p>
      */
     inline const LogDestinationType& GetLogDestinationType() const{ return m_logDestinationType; }
+
+    /**
+     * <p>Specifies the type of destination to which the flow log data is to be
+     * published. Flow log data can be published to CloudWatch Logs or Amazon S3. To
+     * publish flow log data to CloudWatch Logs, specify <code>cloud-watch-logs</code>.
+     * To publish flow log data to Amazon S3, specify <code>s3</code>.</p> <p>Default:
+     * <code>cloud-watch-logs</code> </p>
+     */
+    inline bool LogDestinationTypeHasBeenSet() const { return m_logDestinationTypeHasBeenSet; }
 
     /**
      * <p>Specifies the type of destination to which the flow log data is to be
@@ -366,6 +417,22 @@ namespace Model
      * <code>AWSLogs</code> as a subfolder name. This is a reserved term.</p>
      */
     inline const Aws::String& GetLogDestination() const{ return m_logDestination; }
+
+    /**
+     * <p>Specifies the destination to which the flow log data is to be published. Flow
+     * log data can be published to an CloudWatch Logs log group or an Amazon S3
+     * bucket. The value specified for this parameter depends on the value specified
+     * for LogDestinationType.</p> <p>If LogDestinationType is not specified or
+     * <code>cloud-watch-logs</code>, specify the Amazon Resource Name (ARN) of the
+     * CloudWatch Logs log group.</p> <p>If LogDestinationType is <code>s3</code>,
+     * specify the ARN of the Amazon S3 bucket. You can also specify a subfolder in the
+     * bucket. To specify a subfolder in the bucket, use the following ARN format:
+     * <code>bucket_ARN/subfolder_name/</code>. For example, to specify a subfolder
+     * named <code>my-logs</code> in a bucket named <code>my-bucket</code>, use the
+     * following ARN: <code>arn:aws:s3:::my-bucket/my-logs/</code>. You cannot use
+     * <code>AWSLogs</code> as a subfolder name. This is a reserved term.</p>
+     */
+    inline bool LogDestinationHasBeenSet() const { return m_logDestinationHasBeenSet; }
 
     /**
      * <p>Specifies the destination to which the flow log data is to be published. Flow

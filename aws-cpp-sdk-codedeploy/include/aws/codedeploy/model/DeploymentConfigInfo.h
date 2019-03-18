@@ -59,6 +59,11 @@ namespace Model
     /**
      * <p>The deployment configuration ID.</p>
      */
+    inline bool DeploymentConfigIdHasBeenSet() const { return m_deploymentConfigIdHasBeenSet; }
+
+    /**
+     * <p>The deployment configuration ID.</p>
+     */
     inline void SetDeploymentConfigId(const Aws::String& value) { m_deploymentConfigIdHasBeenSet = true; m_deploymentConfigId = value; }
 
     /**
@@ -91,6 +96,11 @@ namespace Model
      * <p>The deployment configuration name.</p>
      */
     inline const Aws::String& GetDeploymentConfigName() const{ return m_deploymentConfigName; }
+
+    /**
+     * <p>The deployment configuration name.</p>
+     */
+    inline bool DeploymentConfigNameHasBeenSet() const { return m_deploymentConfigNameHasBeenSet; }
 
     /**
      * <p>The deployment configuration name.</p>
@@ -131,6 +141,11 @@ namespace Model
     /**
      * <p>Information about the number or percentage of minimum healthy instance.</p>
      */
+    inline bool MinimumHealthyHostsHasBeenSet() const { return m_minimumHealthyHostsHasBeenSet; }
+
+    /**
+     * <p>Information about the number or percentage of minimum healthy instance.</p>
+     */
     inline void SetMinimumHealthyHosts(const MinimumHealthyHosts& value) { m_minimumHealthyHostsHasBeenSet = true; m_minimumHealthyHosts = value; }
 
     /**
@@ -153,6 +168,11 @@ namespace Model
      * <p>The time at which the deployment configuration was created.</p>
      */
     inline const Aws::Utils::DateTime& GetCreateTime() const{ return m_createTime; }
+
+    /**
+     * <p>The time at which the deployment configuration was created.</p>
+     */
+    inline bool CreateTimeHasBeenSet() const { return m_createTimeHasBeenSet; }
 
     /**
      * <p>The time at which the deployment configuration was created.</p>
@@ -185,6 +205,12 @@ namespace Model
      * <p>The destination platform type for the deployment (<code>Lambda</code> or
      * <code>Server</code>).</p>
      */
+    inline bool ComputePlatformHasBeenSet() const { return m_computePlatformHasBeenSet; }
+
+    /**
+     * <p>The destination platform type for the deployment (<code>Lambda</code> or
+     * <code>Server</code>).</p>
+     */
     inline void SetComputePlatform(const ComputePlatform& value) { m_computePlatformHasBeenSet = true; m_computePlatform = value; }
 
     /**
@@ -211,6 +237,12 @@ namespace Model
      * deployments with a Lambda compute platform can specify this.</p>
      */
     inline const TrafficRoutingConfig& GetTrafficRoutingConfig() const{ return m_trafficRoutingConfig; }
+
+    /**
+     * <p>The configuration that specifies how the deployment traffic is routed. Only
+     * deployments with a Lambda compute platform can specify this.</p>
+     */
+    inline bool TrafficRoutingConfigHasBeenSet() const { return m_trafficRoutingConfigHasBeenSet; }
 
     /**
      * <p>The configuration that specifies how the deployment traffic is routed. Only

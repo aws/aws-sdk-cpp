@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The tag key.</p>
      */
+    inline bool TagKeyHasBeenSet() const { return m_tagKeyHasBeenSet; }
+
+    /**
+     * <p>The tag key.</p>
+     */
     inline void SetTagKey(const Aws::String& value) { m_tagKeyHasBeenSet = true; m_tagKey = value; }
 
     /**
@@ -88,6 +93,11 @@ namespace Model
      * <p>The tag values.</p>
      */
     inline const Aws::Vector<Aws::String>& GetTagValues() const{ return m_tagValues; }
+
+    /**
+     * <p>The tag values.</p>
+     */
+    inline bool TagValuesHasBeenSet() const { return m_tagValuesHasBeenSet; }
 
     /**
      * <p>The tag values.</p>

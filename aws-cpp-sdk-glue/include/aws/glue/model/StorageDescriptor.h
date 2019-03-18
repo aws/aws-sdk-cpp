@@ -61,6 +61,11 @@ namespace Model
     /**
      * <p>A list of the <code>Columns</code> in the table.</p>
      */
+    inline bool ColumnsHasBeenSet() const { return m_columnsHasBeenSet; }
+
+    /**
+     * <p>A list of the <code>Columns</code> in the table.</p>
+     */
     inline void SetColumns(const Aws::Vector<Column>& value) { m_columnsHasBeenSet = true; m_columns = value; }
 
     /**
@@ -95,6 +100,13 @@ namespace Model
      * by the table name.</p>
      */
     inline const Aws::String& GetLocation() const{ return m_location; }
+
+    /**
+     * <p>The physical location of the table. By default this takes the form of the
+     * warehouse location, followed by the database location in the warehouse, followed
+     * by the table name.</p>
+     */
+    inline bool LocationHasBeenSet() const { return m_locationHasBeenSet; }
 
     /**
      * <p>The physical location of the table. By default this takes the form of the
@@ -149,6 +161,12 @@ namespace Model
      * <p>The input format: <code>SequenceFileInputFormat</code> (binary), or
      * <code>TextInputFormat</code>, or a custom format.</p>
      */
+    inline bool InputFormatHasBeenSet() const { return m_inputFormatHasBeenSet; }
+
+    /**
+     * <p>The input format: <code>SequenceFileInputFormat</code> (binary), or
+     * <code>TextInputFormat</code>, or a custom format.</p>
+     */
     inline void SetInputFormat(const Aws::String& value) { m_inputFormatHasBeenSet = true; m_inputFormat = value; }
 
     /**
@@ -187,6 +205,12 @@ namespace Model
      * <code>IgnoreKeyTextOutputFormat</code>, or a custom format.</p>
      */
     inline const Aws::String& GetOutputFormat() const{ return m_outputFormat; }
+
+    /**
+     * <p>The output format: <code>SequenceFileOutputFormat</code> (binary), or
+     * <code>IgnoreKeyTextOutputFormat</code>, or a custom format.</p>
+     */
+    inline bool OutputFormatHasBeenSet() const { return m_outputFormatHasBeenSet; }
 
     /**
      * <p>The output format: <code>SequenceFileOutputFormat</code> (binary), or
@@ -233,6 +257,11 @@ namespace Model
     /**
      * <p>True if the data in the table is compressed, or False if not.</p>
      */
+    inline bool CompressedHasBeenSet() const { return m_compressedHasBeenSet; }
+
+    /**
+     * <p>True if the data in the table is compressed, or False if not.</p>
+     */
     inline void SetCompressed(bool value) { m_compressedHasBeenSet = true; m_compressed = value; }
 
     /**
@@ -249,6 +278,11 @@ namespace Model
     /**
      * <p>Must be specified if the table contains any dimension columns.</p>
      */
+    inline bool NumberOfBucketsHasBeenSet() const { return m_numberOfBucketsHasBeenSet; }
+
+    /**
+     * <p>Must be specified if the table contains any dimension columns.</p>
+     */
     inline void SetNumberOfBuckets(int value) { m_numberOfBucketsHasBeenSet = true; m_numberOfBuckets = value; }
 
     /**
@@ -261,6 +295,11 @@ namespace Model
      * <p>Serialization/deserialization (SerDe) information.</p>
      */
     inline const SerDeInfo& GetSerdeInfo() const{ return m_serdeInfo; }
+
+    /**
+     * <p>Serialization/deserialization (SerDe) information.</p>
+     */
+    inline bool SerdeInfoHasBeenSet() const { return m_serdeInfoHasBeenSet; }
 
     /**
      * <p>Serialization/deserialization (SerDe) information.</p>
@@ -288,6 +327,12 @@ namespace Model
      * in the table.</p>
      */
     inline const Aws::Vector<Aws::String>& GetBucketColumns() const{ return m_bucketColumns; }
+
+    /**
+     * <p>A list of reducer grouping columns, clustering columns, and bucketing columns
+     * in the table.</p>
+     */
+    inline bool BucketColumnsHasBeenSet() const { return m_bucketColumnsHasBeenSet; }
 
     /**
      * <p>A list of reducer grouping columns, clustering columns, and bucketing columns
@@ -340,6 +385,11 @@ namespace Model
     /**
      * <p>A list specifying the sort order of each bucket in the table.</p>
      */
+    inline bool SortColumnsHasBeenSet() const { return m_sortColumnsHasBeenSet; }
+
+    /**
+     * <p>A list specifying the sort order of each bucket in the table.</p>
+     */
     inline void SetSortColumns(const Aws::Vector<Order>& value) { m_sortColumnsHasBeenSet = true; m_sortColumns = value; }
 
     /**
@@ -372,6 +422,11 @@ namespace Model
      * <p>User-supplied properties in key-value form.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetParameters() const{ return m_parameters; }
+
+    /**
+     * <p>User-supplied properties in key-value form.</p>
+     */
+    inline bool ParametersHasBeenSet() const { return m_parametersHasBeenSet; }
 
     /**
      * <p>User-supplied properties in key-value form.</p>
@@ -439,6 +494,12 @@ namespace Model
      * <p>Information about values that appear very frequently in a column (skewed
      * values).</p>
      */
+    inline bool SkewedInfoHasBeenSet() const { return m_skewedInfoHasBeenSet; }
+
+    /**
+     * <p>Information about values that appear very frequently in a column (skewed
+     * values).</p>
+     */
     inline void SetSkewedInfo(const SkewedInfo& value) { m_skewedInfoHasBeenSet = true; m_skewedInfo = value; }
 
     /**
@@ -464,6 +525,11 @@ namespace Model
      * <p>True if the table data is stored in subdirectories, or False if not.</p>
      */
     inline bool GetStoredAsSubDirectories() const{ return m_storedAsSubDirectories; }
+
+    /**
+     * <p>True if the table data is stored in subdirectories, or False if not.</p>
+     */
+    inline bool StoredAsSubDirectoriesHasBeenSet() const { return m_storedAsSubDirectoriesHasBeenSet; }
 
     /**
      * <p>True if the table data is stored in subdirectories, or False if not.</p>

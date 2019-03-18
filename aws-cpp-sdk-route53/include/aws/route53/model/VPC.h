@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>(Private hosted zones only) The region that an Amazon VPC was created in.</p>
      */
+    inline bool VPCRegionHasBeenSet() const { return m_vPCRegionHasBeenSet; }
+
+    /**
+     * <p>(Private hosted zones only) The region that an Amazon VPC was created in.</p>
+     */
     inline void SetVPCRegion(const VPCRegion& value) { m_vPCRegionHasBeenSet = true; m_vPCRegion = value; }
 
     /**
@@ -77,6 +82,9 @@ namespace Model
 
     
     inline const Aws::String& GetVPCId() const{ return m_vPCId; }
+
+    
+    inline bool VPCIdHasBeenSet() const { return m_vPCIdHasBeenSet; }
 
     
     inline void SetVPCId(const Aws::String& value) { m_vPCIdHasBeenSet = true; m_vPCId = value; }

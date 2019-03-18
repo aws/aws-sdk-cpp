@@ -62,6 +62,14 @@ namespace Model
      * required permissions, the error response is <code>DryRunOperation</code>.
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
+    inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
+
+    /**
+     * <p>Checks whether you have the required permissions for the action, without
+     * actually making the request, and provides an error response. If you have the
+     * required permissions, the error response is <code>DryRunOperation</code>.
+     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+     */
     inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
 
     /**
@@ -77,6 +85,11 @@ namespace Model
      * <p>One or more AFI IDs.</p>
      */
     inline const Aws::Vector<Aws::String>& GetFpgaImageIds() const{ return m_fpgaImageIds; }
+
+    /**
+     * <p>One or more AFI IDs.</p>
+     */
+    inline bool FpgaImageIdsHasBeenSet() const { return m_fpgaImageIdsHasBeenSet; }
 
     /**
      * <p>One or more AFI IDs.</p>
@@ -120,6 +133,13 @@ namespace Model
      * <code>amazon</code> | <code>aws-marketplace</code>).</p>
      */
     inline const Aws::Vector<Aws::String>& GetOwners() const{ return m_owners; }
+
+    /**
+     * <p>Filters the AFI by owner. Specify an AWS account ID, <code>self</code> (owner
+     * is the sender of the request), or an AWS owner alias (valid values are
+     * <code>amazon</code> | <code>aws-marketplace</code>).</p>
+     */
+    inline bool OwnersHasBeenSet() const { return m_ownersHasBeenSet; }
 
     /**
      * <p>Filters the AFI by owner. Specify an AWS account ID, <code>self</code> (owner
@@ -194,6 +214,30 @@ namespace Model
      * update.</p> </li> </ul>
      */
     inline const Aws::Vector<Filter>& GetFilters() const{ return m_filters; }
+
+    /**
+     * <p>One or more filters.</p> <ul> <li> <p> <code>create-time</code> - The
+     * creation time of the AFI.</p> </li> <li> <p> <code>fpga-image-id</code> - The
+     * FPGA image identifier (AFI ID).</p> </li> <li> <p>
+     * <code>fpga-image-global-id</code> - The global FPGA image identifier (AGFI
+     * ID).</p> </li> <li> <p> <code>name</code> - The name of the AFI.</p> </li> <li>
+     * <p> <code>owner-id</code> - The AWS account ID of the AFI owner.</p> </li> <li>
+     * <p> <code>product-code</code> - The product code.</p> </li> <li> <p>
+     * <code>shell-version</code> - The version of the AWS Shell that was used to
+     * create the bitstream.</p> </li> <li> <p> <code>state</code> - The state of the
+     * AFI (<code>pending</code> | <code>failed</code> | <code>available</code> |
+     * <code>unavailable</code>).</p> </li> <li> <p> <code>tag</code>:&lt;key&gt; - The
+     * key/value combination of a tag assigned to the resource. Use the tag key in the
+     * filter name and the tag value as the filter value. For example, to find all
+     * resources that have a tag with the key <code>Owner</code> and the value
+     * <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name and
+     * <code>TeamA</code> for the filter value.</p> </li> <li> <p> <code>tag-key</code>
+     * - The key of a tag assigned to the resource. Use this filter to find all
+     * resources assigned a tag with a specific key, regardless of the tag value.</p>
+     * </li> <li> <p> <code>update-time</code> - The time of the most recent
+     * update.</p> </li> </ul>
+     */
+    inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
 
     /**
      * <p>One or more filters.</p> <ul> <li> <p> <code>create-time</code> - The
@@ -348,6 +392,11 @@ namespace Model
     /**
      * <p>The token to retrieve the next page of results.</p>
      */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
+
+    /**
+     * <p>The token to retrieve the next page of results.</p>
+     */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
     /**
@@ -380,6 +429,11 @@ namespace Model
      * <p>The maximum number of results to return in a single call.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
+
+    /**
+     * <p>The maximum number of results to return in a single call.</p>
+     */
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
 
     /**
      * <p>The maximum number of results to return in a single call.</p>

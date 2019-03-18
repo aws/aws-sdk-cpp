@@ -62,6 +62,16 @@ namespace Model
      * You can get a private CA's ARN by running the <a>ListCertificateAuthorities</a>
      * operation.</p>
      */
+    inline bool CertificateAuthorityArnHasBeenSet() const { return m_certificateAuthorityArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Number (ARN) of the private CA to inspect. You can find
+     * the ARN by calling the <a>ListCertificateAuthorities</a> operation. This must be
+     * of the form:
+     * <code>arn:aws:acm-pca:region:account:certificate-authority/12345678-1234-1234-1234-123456789012</code>
+     * You can get a private CA's ARN by running the <a>ListCertificateAuthorities</a>
+     * operation.</p>
+     */
     inline void SetCertificateAuthorityArn(const Aws::String& value) { m_certificateAuthorityArnHasBeenSet = true; m_certificateAuthorityArn = value; }
 
     /**
@@ -127,6 +137,13 @@ namespace Model
      * receive a response with truncated results. Set it to the value of
      * <b>NextToken</b> from the response you just received.</p>
      */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
+
+    /**
+     * <p>When paginating results, use this parameter in a subsequent request after you
+     * receive a response with truncated results. Set it to the value of
+     * <b>NextToken</b> from the response you just received.</p>
+     */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
     /**
@@ -172,6 +189,14 @@ namespace Model
      * <b>NextToken</b> value in a subsequent request to retrieve additional items.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
+
+    /**
+     * <p>When paginating results, use this parameter to specify the maximum number of
+     * items to return in the response. If additional items exist beyond the number you
+     * specify, the <b>NextToken</b> element is sent in the response. Use this
+     * <b>NextToken</b> value in a subsequent request to retrieve additional items.</p>
+     */
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
 
     /**
      * <p>When paginating results, use this parameter to specify the maximum number of

@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>A unique name for the fleet.</p>
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>A unique name for the fleet.</p>
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
@@ -93,6 +98,11 @@ namespace Model
     /**
      * <p>The name of the image used to create the fleet.</p>
      */
+    inline bool ImageNameHasBeenSet() const { return m_imageNameHasBeenSet; }
+
+    /**
+     * <p>The name of the image used to create the fleet.</p>
+     */
     inline void SetImageName(const Aws::String& value) { m_imageNameHasBeenSet = true; m_imageName = value; }
 
     /**
@@ -125,6 +135,11 @@ namespace Model
      * <p>The ARN of the public, private, or shared image to use.</p>
      */
     inline const Aws::String& GetImageArn() const{ return m_imageArn; }
+
+    /**
+     * <p>The ARN of the public, private, or shared image to use.</p>
+     */
+    inline bool ImageArnHasBeenSet() const { return m_imageArnHasBeenSet; }
 
     /**
      * <p>The ARN of the public, private, or shared image to use.</p>
@@ -175,6 +190,25 @@ namespace Model
      * </li> <li> <p>stream.graphics-pro.16xlarge</p> </li> </ul>
      */
     inline const Aws::String& GetInstanceType() const{ return m_instanceType; }
+
+    /**
+     * <p>The instance type to use when launching fleet instances. The following
+     * instance types are available:</p> <ul> <li> <p>stream.standard.medium</p> </li>
+     * <li> <p>stream.standard.large</p> </li> <li> <p>stream.compute.large</p> </li>
+     * <li> <p>stream.compute.xlarge</p> </li> <li> <p>stream.compute.2xlarge</p> </li>
+     * <li> <p>stream.compute.4xlarge</p> </li> <li> <p>stream.compute.8xlarge</p>
+     * </li> <li> <p>stream.memory.large</p> </li> <li> <p>stream.memory.xlarge</p>
+     * </li> <li> <p>stream.memory.2xlarge</p> </li> <li> <p>stream.memory.4xlarge</p>
+     * </li> <li> <p>stream.memory.8xlarge</p> </li> <li>
+     * <p>stream.graphics-design.large</p> </li> <li>
+     * <p>stream.graphics-design.xlarge</p> </li> <li>
+     * <p>stream.graphics-design.2xlarge</p> </li> <li>
+     * <p>stream.graphics-design.4xlarge</p> </li> <li>
+     * <p>stream.graphics-desktop.2xlarge</p> </li> <li>
+     * <p>stream.graphics-pro.4xlarge</p> </li> <li> <p>stream.graphics-pro.8xlarge</p>
+     * </li> <li> <p>stream.graphics-pro.16xlarge</p> </li> </ul>
+     */
+    inline bool InstanceTypeHasBeenSet() const { return m_instanceTypeHasBeenSet; }
 
     /**
      * <p>The instance type to use when launching fleet instances. The following
@@ -311,6 +345,17 @@ namespace Model
      * connected and a small hourly fee for instances that are not streaming apps.</p>
      * </dd> </dl>
      */
+    inline bool FleetTypeHasBeenSet() const { return m_fleetTypeHasBeenSet; }
+
+    /**
+     * <p>The fleet type.</p> <dl> <dt>ALWAYS_ON</dt> <dd> <p>Provides users with
+     * instant-on access to their apps. You are charged for all running instances in
+     * your fleet, even if no users are streaming apps.</p> </dd> <dt>ON_DEMAND</dt>
+     * <dd> <p>Provide users with access to applications after they connect, which
+     * takes one to two minutes. You are charged for instance streaming when users are
+     * connected and a small hourly fee for instances that are not streaming apps.</p>
+     * </dd> </dl>
+     */
     inline void SetFleetType(const FleetType& value) { m_fleetTypeHasBeenSet = true; m_fleetType = value; }
 
     /**
@@ -355,6 +400,11 @@ namespace Model
     /**
      * <p>The desired capacity for the fleet.</p>
      */
+    inline bool ComputeCapacityHasBeenSet() const { return m_computeCapacityHasBeenSet; }
+
+    /**
+     * <p>The desired capacity for the fleet.</p>
+     */
     inline void SetComputeCapacity(const ComputeCapacity& value) { m_computeCapacityHasBeenSet = true; m_computeCapacity = value; }
 
     /**
@@ -377,6 +427,11 @@ namespace Model
      * <p>The VPC configuration for the fleet.</p>
      */
     inline const VpcConfig& GetVpcConfig() const{ return m_vpcConfig; }
+
+    /**
+     * <p>The VPC configuration for the fleet.</p>
+     */
+    inline bool VpcConfigHasBeenSet() const { return m_vpcConfigHasBeenSet; }
 
     /**
      * <p>The VPC configuration for the fleet.</p>
@@ -409,6 +464,12 @@ namespace Model
      * <p>The maximum time that a streaming session can run, in seconds. Specify a
      * value between 600 and 360000.</p>
      */
+    inline bool MaxUserDurationInSecondsHasBeenSet() const { return m_maxUserDurationInSecondsHasBeenSet; }
+
+    /**
+     * <p>The maximum time that a streaming session can run, in seconds. Specify a
+     * value between 600 and 360000.</p>
+     */
     inline void SetMaxUserDurationInSeconds(int value) { m_maxUserDurationInSecondsHasBeenSet = true; m_maxUserDurationInSeconds = value; }
 
     /**
@@ -432,6 +493,14 @@ namespace Model
      * the user is connected to their previous session. Specify a value between 60 and
      * 360000.</p>
      */
+    inline bool DisconnectTimeoutInSecondsHasBeenSet() const { return m_disconnectTimeoutInSecondsHasBeenSet; }
+
+    /**
+     * <p>The time after disconnection when a session is considered to have ended, in
+     * seconds. If a user who was disconnected reconnects within this time interval,
+     * the user is connected to their previous session. Specify a value between 60 and
+     * 360000.</p>
+     */
     inline void SetDisconnectTimeoutInSeconds(int value) { m_disconnectTimeoutInSecondsHasBeenSet = true; m_disconnectTimeoutInSeconds = value; }
 
     /**
@@ -447,6 +516,11 @@ namespace Model
      * <p>The description to display.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
+
+    /**
+     * <p>The description to display.</p>
+     */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
 
     /**
      * <p>The description to display.</p>
@@ -487,6 +561,11 @@ namespace Model
     /**
      * <p>The fleet name to display.</p>
      */
+    inline bool DisplayNameHasBeenSet() const { return m_displayNameHasBeenSet; }
+
+    /**
+     * <p>The fleet name to display.</p>
+     */
     inline void SetDisplayName(const Aws::String& value) { m_displayNameHasBeenSet = true; m_displayName = value; }
 
     /**
@@ -523,6 +602,11 @@ namespace Model
     /**
      * <p>Enables or disables default internet access for the fleet.</p>
      */
+    inline bool EnableDefaultInternetAccessHasBeenSet() const { return m_enableDefaultInternetAccessHasBeenSet; }
+
+    /**
+     * <p>Enables or disables default internet access for the fleet.</p>
+     */
     inline void SetEnableDefaultInternetAccess(bool value) { m_enableDefaultInternetAccessHasBeenSet = true; m_enableDefaultInternetAccess = value; }
 
     /**
@@ -536,6 +620,12 @@ namespace Model
      * fleet to a Microsoft Active Directory domain. </p>
      */
     inline const DomainJoinInfo& GetDomainJoinInfo() const{ return m_domainJoinInfo; }
+
+    /**
+     * <p>The name of the directory and organizational unit (OU) to use to join the
+     * fleet to a Microsoft Active Directory domain. </p>
+     */
+    inline bool DomainJoinInfoHasBeenSet() const { return m_domainJoinInfoHasBeenSet; }
 
     /**
      * <p>The name of the directory and organizational unit (OU) to use to join the
@@ -571,6 +661,16 @@ namespace Model
      * Your Resources</a> in the <i>Amazon AppStream 2.0 Developer Guide</i>.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>The tags to associate with the fleet. A tag is a key-value pair, and the
+     * value is optional. For example, Environment=Test. If you do not specify a value,
+     * Environment=. </p> <p>If you do not specify a value, the value is set to an
+     * empty string.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html">Tagging
+     * Your Resources</a> in the <i>Amazon AppStream 2.0 Developer Guide</i>.</p>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
      * <p>The tags to associate with the fleet. A tag is a key-value pair, and the

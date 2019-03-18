@@ -58,6 +58,12 @@ namespace Model
      * <p> The country of the locale. Must be a valid ISO 3166 country code. For
      * example, the code US refers to the United States of America. </p>
      */
+    inline bool CountryHasBeenSet() const { return m_countryHasBeenSet; }
+
+    /**
+     * <p> The country of the locale. Must be a valid ISO 3166 country code. For
+     * example, the code US refers to the United States of America. </p>
+     */
     inline void SetCountry(const Aws::String& value) { m_countryHasBeenSet = true; m_country = value; }
 
     /**
@@ -96,6 +102,12 @@ namespace Model
      * For example, the code WA refers to the state of Washington.</p>
      */
     inline const Aws::String& GetSubdivision() const{ return m_subdivision; }
+
+    /**
+     * <p>The state or subdivision of the locale. A valid ISO 3166-2 subdivision code.
+     * For example, the code WA refers to the state of Washington.</p>
+     */
+    inline bool SubdivisionHasBeenSet() const { return m_subdivisionHasBeenSet; }
 
     /**
      * <p>The state or subdivision of the locale. A valid ISO 3166-2 subdivision code.

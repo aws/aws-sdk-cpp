@@ -80,6 +80,18 @@ namespace Model
      * <a>DeleteByteMatchSet</a>).</p> <p> <code>ByteMatchSetId</code> is returned by
      * <a>CreateByteMatchSet</a> and by <a>ListByteMatchSets</a>.</p>
      */
+    inline bool ByteMatchSetIdHasBeenSet() const { return m_byteMatchSetIdHasBeenSet; }
+
+    /**
+     * <p>The <code>ByteMatchSetId</code> for a <code>ByteMatchSet</code>. You use
+     * <code>ByteMatchSetId</code> to get information about a <code>ByteMatchSet</code>
+     * (see <a>GetByteMatchSet</a>), update a <code>ByteMatchSet</code> (see
+     * <a>UpdateByteMatchSet</a>), insert a <code>ByteMatchSet</code> into a
+     * <code>Rule</code> or delete one from a <code>Rule</code> (see
+     * <a>UpdateRule</a>), and delete a <code>ByteMatchSet</code> from AWS WAF (see
+     * <a>DeleteByteMatchSet</a>).</p> <p> <code>ByteMatchSetId</code> is returned by
+     * <a>CreateByteMatchSet</a> and by <a>ListByteMatchSets</a>.</p>
+     */
     inline void SetByteMatchSetId(const Aws::String& value) { m_byteMatchSetIdHasBeenSet = true; m_byteMatchSetId = value; }
 
     /**
@@ -153,6 +165,12 @@ namespace Model
      * <p>A friendly name or description of the <a>ByteMatchSet</a>. You can't change
      * <code>Name</code> after you create a <code>ByteMatchSet</code>.</p>
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>A friendly name or description of the <a>ByteMatchSet</a>. You can't change
+     * <code>Name</code> after you create a <code>ByteMatchSet</code>.</p>
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
@@ -192,6 +210,13 @@ namespace Model
      * requests that you want AWS WAF to search, and other settings.</p>
      */
     inline const Aws::Vector<ByteMatchTuple>& GetByteMatchTuples() const{ return m_byteMatchTuples; }
+
+    /**
+     * <p>Specifies the bytes (typically a string that corresponds with ASCII
+     * characters) that you want AWS WAF to search for in web requests, the location in
+     * requests that you want AWS WAF to search, and other settings.</p>
+     */
+    inline bool ByteMatchTuplesHasBeenSet() const { return m_byteMatchTuplesHasBeenSet; }
 
     /**
      * <p>Specifies the bytes (typically a string that corresponds with ASCII

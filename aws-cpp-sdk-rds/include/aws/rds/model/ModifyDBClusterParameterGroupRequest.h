@@ -59,6 +59,11 @@ namespace Model
     /**
      * <p>The name of the DB cluster parameter group to modify.</p>
      */
+    inline bool DBClusterParameterGroupNameHasBeenSet() const { return m_dBClusterParameterGroupNameHasBeenSet; }
+
+    /**
+     * <p>The name of the DB cluster parameter group to modify.</p>
+     */
     inline void SetDBClusterParameterGroupName(const Aws::String& value) { m_dBClusterParameterGroupNameHasBeenSet = true; m_dBClusterParameterGroupName = value; }
 
     /**
@@ -91,6 +96,11 @@ namespace Model
      * <p>A list of parameters in the DB cluster parameter group to modify.</p>
      */
     inline const Aws::Vector<Parameter>& GetParameters() const{ return m_parameters; }
+
+    /**
+     * <p>A list of parameters in the DB cluster parameter group to modify.</p>
+     */
+    inline bool ParametersHasBeenSet() const { return m_parametersHasBeenSet; }
 
     /**
      * <p>A list of parameters in the DB cluster parameter group to modify.</p>

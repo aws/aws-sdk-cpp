@@ -52,6 +52,11 @@ namespace Model
     /**
      * <p>The name of the log group.</p>
      */
+    inline bool LogGroupNameHasBeenSet() const { return m_logGroupNameHasBeenSet; }
+
+    /**
+     * <p>The name of the log group.</p>
+     */
     inline void SetLogGroupName(const Aws::String& value) { m_logGroupNameHasBeenSet = true; m_logGroupName = value; }
 
     /**
@@ -87,6 +92,14 @@ namespace Model
      * Resource Names - AWS Key Management Service (AWS KMS)</a>.</p>
      */
     inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the CMK to use when encrypting log data.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kms">Amazon
+     * Resource Names - AWS Key Management Service (AWS KMS)</a>.</p>
+     */
+    inline bool KmsKeyIdHasBeenSet() const { return m_kmsKeyIdHasBeenSet; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the CMK to use when encrypting log data.

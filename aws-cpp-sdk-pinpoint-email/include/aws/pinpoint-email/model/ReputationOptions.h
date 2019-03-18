@@ -61,6 +61,13 @@ namespace Model
      * configuration set. If <code>false</code>, tracking of reputation metrics is
      * disabled for the configuration set.</p>
      */
+    inline bool ReputationMetricsEnabledHasBeenSet() const { return m_reputationMetricsEnabledHasBeenSet; }
+
+    /**
+     * <p>If <code>true</code>, tracking of reputation metrics is enabled for the
+     * configuration set. If <code>false</code>, tracking of reputation metrics is
+     * disabled for the configuration set.</p>
+     */
     inline void SetReputationMetricsEnabled(bool value) { m_reputationMetricsEnabledHasBeenSet = true; m_reputationMetricsEnabled = value; }
 
     /**
@@ -77,6 +84,13 @@ namespace Model
      * are calculated starting from the date of the fresh start.</p>
      */
     inline const Aws::Utils::DateTime& GetLastFreshStart() const{ return m_lastFreshStart; }
+
+    /**
+     * <p>The date and time (in Unix time) when the reputation metrics were last given
+     * a fresh start. When your account is given a fresh start, your reputation metrics
+     * are calculated starting from the date of the fresh start.</p>
+     */
+    inline bool LastFreshStartHasBeenSet() const { return m_lastFreshStartHasBeenSet; }
 
     /**
      * <p>The date and time (in Unix time) when the reputation metrics were last given

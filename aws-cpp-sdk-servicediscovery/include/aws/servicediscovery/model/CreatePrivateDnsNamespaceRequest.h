@@ -57,6 +57,13 @@ namespace Model
      * DNS namespace, AWS Cloud Map automatically creates an Amazon Route 53 private
      * hosted zone that has the same name as the namespace.</p>
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>The name that you want to assign to this namespace. When you create a private
+     * DNS namespace, AWS Cloud Map automatically creates an Amazon Route 53 private
+     * hosted zone that has the same name as the namespace.</p>
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
@@ -102,6 +109,14 @@ namespace Model
      * unique string, for example, a date/time stamp.</p>
      */
     inline const Aws::String& GetCreatorRequestId() const{ return m_creatorRequestId; }
+
+    /**
+     * <p>A unique string that identifies the request and that allows failed
+     * <code>CreatePrivateDnsNamespace</code> requests to be retried without the risk
+     * of executing the operation twice. <code>CreatorRequestId</code> can be any
+     * unique string, for example, a date/time stamp.</p>
+     */
+    inline bool CreatorRequestIdHasBeenSet() const { return m_creatorRequestIdHasBeenSet; }
 
     /**
      * <p>A unique string that identifies the request and that allows failed
@@ -160,6 +175,11 @@ namespace Model
     /**
      * <p>A description for the namespace.</p>
      */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
+
+    /**
+     * <p>A description for the namespace.</p>
+     */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
@@ -192,6 +212,11 @@ namespace Model
      * <p>The ID of the Amazon VPC that you want to associate the namespace with.</p>
      */
     inline const Aws::String& GetVpc() const{ return m_vpc; }
+
+    /**
+     * <p>The ID of the Amazon VPC that you want to associate the namespace with.</p>
+     */
+    inline bool VpcHasBeenSet() const { return m_vpcHasBeenSet; }
 
     /**
      * <p>The ID of the Amazon VPC that you want to associate the namespace with.</p>

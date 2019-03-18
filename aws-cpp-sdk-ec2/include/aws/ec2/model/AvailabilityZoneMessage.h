@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The message about the Availability Zone.</p>
      */
+    inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
+
+    /**
+     * <p>The message about the Availability Zone.</p>
+     */
     inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
 
     /**

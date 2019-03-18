@@ -52,6 +52,11 @@ namespace Model
     /**
      * <p>The name of the repository where you want to get differences.</p>
      */
+    inline bool RepositoryNameHasBeenSet() const { return m_repositoryNameHasBeenSet; }
+
+    /**
+     * <p>The name of the repository where you want to get differences.</p>
+     */
     inline void SetRepositoryName(const Aws::String& value) { m_repositoryNameHasBeenSet = true; m_repositoryName = value; }
 
     /**
@@ -88,6 +93,15 @@ namespace Model
      * the results with <code>maxResults</code>.</p>
      */
     inline const Aws::String& GetBeforeCommitSpecifier() const{ return m_beforeCommitSpecifier; }
+
+    /**
+     * <p>The branch, tag, HEAD, or other fully qualified reference used to identify a
+     * commit. For example, the full commit ID. Optional. If not specified, all changes
+     * prior to the <code>afterCommitSpecifier</code> value will be shown. If you do
+     * not use <code>beforeCommitSpecifier</code> in your request, consider limiting
+     * the results with <code>maxResults</code>.</p>
+     */
+    inline bool BeforeCommitSpecifierHasBeenSet() const { return m_beforeCommitSpecifierHasBeenSet; }
 
     /**
      * <p>The branch, tag, HEAD, or other fully qualified reference used to identify a
@@ -154,6 +168,12 @@ namespace Model
      * <p>The branch, tag, HEAD, or other fully qualified reference used to identify a
      * commit.</p>
      */
+    inline bool AfterCommitSpecifierHasBeenSet() const { return m_afterCommitSpecifierHasBeenSet; }
+
+    /**
+     * <p>The branch, tag, HEAD, or other fully qualified reference used to identify a
+     * commit.</p>
+     */
     inline void SetAfterCommitSpecifier(const Aws::String& value) { m_afterCommitSpecifierHasBeenSet = true; m_afterCommitSpecifier = value; }
 
     /**
@@ -194,6 +214,14 @@ namespace Model
      * differences will be shown for all paths.</p>
      */
     inline const Aws::String& GetBeforePath() const{ return m_beforePath; }
+
+    /**
+     * <p>The file path in which to check for differences. Limits the results to this
+     * path. Can also be used to specify the previous name of a directory or folder. If
+     * <code>beforePath</code> and <code>afterPath</code> are not specified,
+     * differences will be shown for all paths.</p>
+     */
+    inline bool BeforePathHasBeenSet() const { return m_beforePathHasBeenSet; }
 
     /**
      * <p>The file path in which to check for differences. Limits the results to this
@@ -256,6 +284,13 @@ namespace Model
      * Can also be used to specify the changed name of a directory or folder, if it has
      * changed. If not specified, differences will be shown for all paths.</p>
      */
+    inline bool AfterPathHasBeenSet() const { return m_afterPathHasBeenSet; }
+
+    /**
+     * <p>The file path in which to check differences. Limits the results to this path.
+     * Can also be used to specify the changed name of a directory or folder, if it has
+     * changed. If not specified, differences will be shown for all paths.</p>
+     */
     inline void SetAfterPath(const Aws::String& value) { m_afterPathHasBeenSet = true; m_afterPath = value; }
 
     /**
@@ -302,6 +337,11 @@ namespace Model
     /**
      * <p>A non-negative integer used to limit the number of returned results.</p>
      */
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
+
+    /**
+     * <p>A non-negative integer used to limit the number of returned results.</p>
+     */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
@@ -315,6 +355,12 @@ namespace Model
      * of the results.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
+    /**
+     * <p>An enumeration token that when provided in a request, returns the next batch
+     * of the results.</p>
+     */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
      * <p>An enumeration token that when provided in a request, returns the next batch

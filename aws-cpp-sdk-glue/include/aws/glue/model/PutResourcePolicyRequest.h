@@ -53,6 +53,11 @@ namespace Model
     /**
      * <p>Contains the policy document to set, in JSON format.</p>
      */
+    inline bool PolicyInJsonHasBeenSet() const { return m_policyInJsonHasBeenSet; }
+
+    /**
+     * <p>Contains the policy document to set, in JSON format.</p>
+     */
     inline void SetPolicyInJson(const Aws::String& value) { m_policyInJsonHasBeenSet = true; m_policyInJson = value; }
 
     /**
@@ -88,6 +93,14 @@ namespace Model
      * been set.</p>
      */
     inline const Aws::String& GetPolicyHashCondition() const{ return m_policyHashCondition; }
+
+    /**
+     * <p>The hash value returned when the previous policy was set using
+     * <code>PutResourcePolicy</code>. Its purpose is to prevent concurrent
+     * modifications of a policy. Do not use this parameter if no previous policy has
+     * been set.</p>
+     */
+    inline bool PolicyHashConditionHasBeenSet() const { return m_policyHashConditionHasBeenSet; }
 
     /**
      * <p>The hash value returned when the previous policy was set using
@@ -145,6 +158,14 @@ namespace Model
      * existence of a policy.</p>
      */
     inline const ExistCondition& GetPolicyExistsCondition() const{ return m_policyExistsCondition; }
+
+    /**
+     * <p>A value of <code>MUST_EXIST</code> is used to update a policy. A value of
+     * <code>NOT_EXIST</code> is used to create a new policy. If a value of
+     * <code>NONE</code> or a null value is used, the call will not depend on the
+     * existence of a policy.</p>
+     */
+    inline bool PolicyExistsConditionHasBeenSet() const { return m_policyExistsConditionHasBeenSet; }
 
     /**
      * <p>A value of <code>MUST_EXIST</code> is used to update a policy. A value of

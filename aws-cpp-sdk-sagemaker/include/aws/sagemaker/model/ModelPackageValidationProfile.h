@@ -59,6 +59,11 @@ namespace Model
     /**
      * <p>The name of the profile for the model package.</p>
      */
+    inline bool ProfileNameHasBeenSet() const { return m_profileNameHasBeenSet; }
+
+    /**
+     * <p>The name of the profile for the model package.</p>
+     */
     inline void SetProfileName(const Aws::String& value) { m_profileNameHasBeenSet = true; m_profileName = value; }
 
     /**
@@ -92,6 +97,12 @@ namespace Model
      * job used for the validation of the model package.</p>
      */
     inline const TransformJobDefinition& GetTransformJobDefinition() const{ return m_transformJobDefinition; }
+
+    /**
+     * <p>The <code>TransformJobDefinition</code> object that describes the transform
+     * job used for the validation of the model package.</p>
+     */
+    inline bool TransformJobDefinitionHasBeenSet() const { return m_transformJobDefinitionHasBeenSet; }
 
     /**
      * <p>The <code>TransformJobDefinition</code> object that describes the transform

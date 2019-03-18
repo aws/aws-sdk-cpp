@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p>A unique string that identifies the predictive inbox placement test.</p>
      */
+    inline bool ReportIdHasBeenSet() const { return m_reportIdHasBeenSet; }
+
+    /**
+     * <p>A unique string that identifies the predictive inbox placement test.</p>
+     */
     inline void SetReportId(const Aws::String& value) { m_reportIdHasBeenSet = true; m_reportId = value; }
 
     /**
@@ -90,6 +95,11 @@ namespace Model
      * <p>A name that helps you identify a predictive inbox placement test report.</p>
      */
     inline const Aws::String& GetReportName() const{ return m_reportName; }
+
+    /**
+     * <p>A name that helps you identify a predictive inbox placement test report.</p>
+     */
+    inline bool ReportNameHasBeenSet() const { return m_reportNameHasBeenSet; }
 
     /**
      * <p>A name that helps you identify a predictive inbox placement test report.</p>
@@ -127,6 +137,12 @@ namespace Model
      * placement test.</p>
      */
     inline const Aws::String& GetSubject() const{ return m_subject; }
+
+    /**
+     * <p>The subject line for an email that you submitted in a predictive inbox
+     * placement test.</p>
+     */
+    inline bool SubjectHasBeenSet() const { return m_subjectHasBeenSet; }
 
     /**
      * <p>The subject line for an email that you submitted in a predictive inbox
@@ -175,6 +191,12 @@ namespace Model
      * <p>The sender address that you specified for the predictive inbox placement
      * test.</p>
      */
+    inline bool FromEmailAddressHasBeenSet() const { return m_fromEmailAddressHasBeenSet; }
+
+    /**
+     * <p>The sender address that you specified for the predictive inbox placement
+     * test.</p>
+     */
     inline void SetFromEmailAddress(const Aws::String& value) { m_fromEmailAddressHasBeenSet = true; m_fromEmailAddress = value; }
 
     /**
@@ -218,6 +240,12 @@ namespace Model
      * <p>The date and time when the predictive inbox placement test was created, in
      * Unix time format.</p>
      */
+    inline bool CreateDateHasBeenSet() const { return m_createDateHasBeenSet; }
+
+    /**
+     * <p>The date and time when the predictive inbox placement test was created, in
+     * Unix time format.</p>
+     */
     inline void SetCreateDate(const Aws::Utils::DateTime& value) { m_createDateHasBeenSet = true; m_createDate = value; }
 
     /**
@@ -248,6 +276,16 @@ namespace Model
      * the results of the test.</p>
      */
     inline const DeliverabilityTestStatus& GetDeliverabilityTestStatus() const{ return m_deliverabilityTestStatus; }
+
+    /**
+     * <p>The status of the predictive inbox placement test. If the status is
+     * <code>IN_PROGRESS</code>, then the predictive inbox placement test is currently
+     * running. Predictive inbox placement tests are usually complete within 24 hours
+     * of creating the test. If the status is <code>COMPLETE</code>, then the test is
+     * finished, and you can use the <code>GetDeliverabilityTestReport</code> to view
+     * the results of the test.</p>
+     */
+    inline bool DeliverabilityTestStatusHasBeenSet() const { return m_deliverabilityTestStatusHasBeenSet; }
 
     /**
      * <p>The status of the predictive inbox placement test. If the status is

@@ -57,6 +57,11 @@ namespace Model
     /**
      * A description of the output.
      */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
+
+    /**
+     * A description of the output.
+     */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
@@ -89,6 +94,11 @@ namespace Model
      * The address where you want to send the output.
      */
     inline const Aws::String& GetDestination() const{ return m_destination; }
+
+    /**
+     * The address where you want to send the output.
+     */
+    inline bool DestinationHasBeenSet() const { return m_destinationHasBeenSet; }
 
     /**
      * The address where you want to send the output.
@@ -131,6 +141,12 @@ namespace Model
      * The type of key used for the encryption. If no keyType is provided, the service
      * will use the default setting (static-key).
      */
+    inline bool EncryptionHasBeenSet() const { return m_encryptionHasBeenSet; }
+
+    /**
+     * The type of key used for the encryption. If no keyType is provided, the service
+     * will use the default setting (static-key).
+     */
     inline void SetEncryption(const Encryption& value) { m_encryptionHasBeenSet = true; m_encryption = value; }
 
     /**
@@ -157,6 +173,12 @@ namespace Model
      * only on entitled flows.
      */
     inline const Aws::String& GetEntitlementArn() const{ return m_entitlementArn; }
+
+    /**
+     * The ARN of the entitlement on the originator''s flow. This value is relevant
+     * only on entitled flows.
+     */
+    inline bool EntitlementArnHasBeenSet() const { return m_entitlementArnHasBeenSet; }
 
     /**
      * The ARN of the entitlement on the originator''s flow. This value is relevant
@@ -205,6 +227,12 @@ namespace Model
      * The input ARN of the AWS Elemental MediaLive channel. This parameter is relevant
      * only for outputs that were added by creating a MediaLive input.
      */
+    inline bool MediaLiveInputArnHasBeenSet() const { return m_mediaLiveInputArnHasBeenSet; }
+
+    /**
+     * The input ARN of the AWS Elemental MediaLive channel. This parameter is relevant
+     * only for outputs that were added by creating a MediaLive input.
+     */
     inline void SetMediaLiveInputArn(const Aws::String& value) { m_mediaLiveInputArnHasBeenSet = true; m_mediaLiveInputArn = value; }
 
     /**
@@ -246,6 +274,11 @@ namespace Model
     /**
      * The name of the output. This value must be unique within the current flow.
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * The name of the output. This value must be unique within the current flow.
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
@@ -278,6 +311,11 @@ namespace Model
      * The ARN of the output.
      */
     inline const Aws::String& GetOutputArn() const{ return m_outputArn; }
+
+    /**
+     * The ARN of the output.
+     */
+    inline bool OutputArnHasBeenSet() const { return m_outputArnHasBeenSet; }
 
     /**
      * The ARN of the output.
@@ -318,6 +356,11 @@ namespace Model
     /**
      * The port to use when content is distributed to this output.
      */
+    inline bool PortHasBeenSet() const { return m_portHasBeenSet; }
+
+    /**
+     * The port to use when content is distributed to this output.
+     */
     inline void SetPort(int value) { m_portHasBeenSet = true; m_port = value; }
 
     /**
@@ -330,6 +373,11 @@ namespace Model
      * Attributes related to the transport stream that are used in the output.
      */
     inline const Transport& GetTransport() const{ return m_transport; }
+
+    /**
+     * Attributes related to the transport stream that are used in the output.
+     */
+    inline bool TransportHasBeenSet() const { return m_transportHasBeenSet; }
 
     /**
      * Attributes related to the transport stream that are used in the output.

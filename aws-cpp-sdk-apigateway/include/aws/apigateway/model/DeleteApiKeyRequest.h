@@ -53,6 +53,11 @@ namespace Model
     /**
      * <p>[Required] The identifier of the <a>ApiKey</a> resource to be deleted.</p>
      */
+    inline bool ApiKeyHasBeenSet() const { return m_apiKeyHasBeenSet; }
+
+    /**
+     * <p>[Required] The identifier of the <a>ApiKey</a> resource to be deleted.</p>
+     */
     inline void SetApiKey(const Aws::String& value) { m_apiKeyHasBeenSet = true; m_apiKey = value; }
 
     /**

@@ -55,6 +55,12 @@ namespace Model
      * <p>The short name or full Amazon Resource Name (ARN) of the cluster to list
      * attributes. If you do not specify a cluster, the default cluster is assumed.</p>
      */
+    inline bool ClusterHasBeenSet() const { return m_clusterHasBeenSet; }
+
+    /**
+     * <p>The short name or full Amazon Resource Name (ARN) of the cluster to list
+     * attributes. If you do not specify a cluster, the default cluster is assumed.</p>
+     */
     inline void SetCluster(const Aws::String& value) { m_clusterHasBeenSet = true; m_cluster = value; }
 
     /**
@@ -96,6 +102,11 @@ namespace Model
     /**
      * <p>The type of the target with which to list attributes.</p>
      */
+    inline bool TargetTypeHasBeenSet() const { return m_targetTypeHasBeenSet; }
+
+    /**
+     * <p>The type of the target with which to list attributes.</p>
+     */
     inline void SetTargetType(const TargetType& value) { m_targetTypeHasBeenSet = true; m_targetType = value; }
 
     /**
@@ -118,6 +129,11 @@ namespace Model
      * <p>The name of the attribute with which to filter the results. </p>
      */
     inline const Aws::String& GetAttributeName() const{ return m_attributeName; }
+
+    /**
+     * <p>The name of the attribute with which to filter the results. </p>
+     */
+    inline bool AttributeNameHasBeenSet() const { return m_attributeNameHasBeenSet; }
 
     /**
      * <p>The name of the attribute with which to filter the results. </p>
@@ -155,6 +171,12 @@ namespace Model
      * specify an attribute name to use this parameter.</p>
      */
     inline const Aws::String& GetAttributeValue() const{ return m_attributeValue; }
+
+    /**
+     * <p>The value of the attribute with which to filter results. You must also
+     * specify an attribute name to use this parameter.</p>
+     */
+    inline bool AttributeValueHasBeenSet() const { return m_attributeValueHasBeenSet; }
 
     /**
      * <p>The value of the attribute with which to filter results. You must also
@@ -203,6 +225,17 @@ namespace Model
      * purposes.</p> </note>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
+    /**
+     * <p>The <code>nextToken</code> value returned from a previous paginated
+     * <code>ListAttributes</code> request where <code>maxResults</code> was used and
+     * the results exceeded the value of that parameter. Pagination continues from the
+     * end of the previous results that returned the <code>nextToken</code> value.</p>
+     * <note> <p>This token should be treated as an opaque identifier that is only used
+     * to retrieve the next items in a list and not for other programmatic
+     * purposes.</p> </note>
+     */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
      * <p>The <code>nextToken</code> value returned from a previous paginated
@@ -282,6 +315,18 @@ namespace Model
      * 100 results and a <code>nextToken</code> value if applicable.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
+
+    /**
+     * <p>The maximum number of cluster results returned by <code>ListAttributes</code>
+     * in paginated output. When this parameter is used, <code>ListAttributes</code>
+     * only returns <code>maxResults</code> results in a single page along with a
+     * <code>nextToken</code> response element. The remaining results of the initial
+     * request can be seen by sending another <code>ListAttributes</code> request with
+     * the returned <code>nextToken</code> value. This value can be between 1 and 100.
+     * If this parameter is not used, then <code>ListAttributes</code> returns up to
+     * 100 results and a <code>nextToken</code> value if applicable.</p>
+     */
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
 
     /**
      * <p>The maximum number of cluster results returned by <code>ListAttributes</code>

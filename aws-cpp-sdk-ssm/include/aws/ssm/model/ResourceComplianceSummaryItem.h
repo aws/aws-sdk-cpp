@@ -61,6 +61,11 @@ namespace Model
     /**
      * <p>The compliance type.</p>
      */
+    inline bool ComplianceTypeHasBeenSet() const { return m_complianceTypeHasBeenSet; }
+
+    /**
+     * <p>The compliance type.</p>
+     */
     inline void SetComplianceType(const Aws::String& value) { m_complianceTypeHasBeenSet = true; m_complianceType = value; }
 
     /**
@@ -93,6 +98,11 @@ namespace Model
      * <p>The resource type.</p>
      */
     inline const Aws::String& GetResourceType() const{ return m_resourceType; }
+
+    /**
+     * <p>The resource type.</p>
+     */
+    inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
 
     /**
      * <p>The resource type.</p>
@@ -133,6 +143,11 @@ namespace Model
     /**
      * <p>The resource ID.</p>
      */
+    inline bool ResourceIdHasBeenSet() const { return m_resourceIdHasBeenSet; }
+
+    /**
+     * <p>The resource ID.</p>
+     */
     inline void SetResourceId(const Aws::String& value) { m_resourceIdHasBeenSet = true; m_resourceId = value; }
 
     /**
@@ -169,6 +184,11 @@ namespace Model
     /**
      * <p>The compliance status for the resource.</p>
      */
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
+
+    /**
+     * <p>The compliance status for the resource.</p>
+     */
     inline void SetStatus(const ComplianceStatus& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
@@ -192,6 +212,12 @@ namespace Model
      * for this item.</p>
      */
     inline const ComplianceSeverity& GetOverallSeverity() const{ return m_overallSeverity; }
+
+    /**
+     * <p>The highest severity item found for the resource. The resource is compliant
+     * for this item.</p>
+     */
+    inline bool OverallSeverityHasBeenSet() const { return m_overallSeverityHasBeenSet; }
 
     /**
      * <p>The highest severity item found for the resource. The resource is compliant
@@ -226,6 +252,11 @@ namespace Model
     /**
      * <p>Information about the execution.</p>
      */
+    inline bool ExecutionSummaryHasBeenSet() const { return m_executionSummaryHasBeenSet; }
+
+    /**
+     * <p>Information about the execution.</p>
+     */
     inline void SetExecutionSummary(const ComplianceExecutionSummary& value) { m_executionSummaryHasBeenSet = true; m_executionSummary = value; }
 
     /**
@@ -252,6 +283,11 @@ namespace Model
     /**
      * <p>A list of items that are compliant for the resource.</p>
      */
+    inline bool CompliantSummaryHasBeenSet() const { return m_compliantSummaryHasBeenSet; }
+
+    /**
+     * <p>A list of items that are compliant for the resource.</p>
+     */
     inline void SetCompliantSummary(const CompliantSummary& value) { m_compliantSummaryHasBeenSet = true; m_compliantSummary = value; }
 
     /**
@@ -274,6 +310,11 @@ namespace Model
      * <p>A list of items that aren't compliant for the resource.</p>
      */
     inline const NonCompliantSummary& GetNonCompliantSummary() const{ return m_nonCompliantSummary; }
+
+    /**
+     * <p>A list of items that aren't compliant for the resource.</p>
+     */
+    inline bool NonCompliantSummaryHasBeenSet() const { return m_nonCompliantSummaryHasBeenSet; }
 
     /**
      * <p>A list of items that aren't compliant for the resource.</p>

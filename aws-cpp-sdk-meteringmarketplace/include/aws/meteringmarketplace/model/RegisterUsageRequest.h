@@ -56,6 +56,13 @@ namespace Model
      * product code should be the same as the one used during the publishing of a new
      * product.</p>
      */
+    inline bool ProductCodeHasBeenSet() const { return m_productCodeHasBeenSet; }
+
+    /**
+     * <p>Product code is used to uniquely identify a product in AWS Marketplace. The
+     * product code should be the same as the one used during the publishing of a new
+     * product.</p>
+     */
     inline void SetProductCode(const Aws::String& value) { m_productCodeHasBeenSet = true; m_productCode = value; }
 
     /**
@@ -102,6 +109,11 @@ namespace Model
     /**
      * <p>Public Key Version provided by AWS Marketplace</p>
      */
+    inline bool PublicKeyVersionHasBeenSet() const { return m_publicKeyVersionHasBeenSet; }
+
+    /**
+     * <p>Public Key Version provided by AWS Marketplace</p>
+     */
     inline void SetPublicKeyVersion(int value) { m_publicKeyVersionHasBeenSet = true; m_publicKeyVersion = value; }
 
     /**
@@ -115,6 +127,12 @@ namespace Model
      * instance and guard against replay attacks.</p>
      */
     inline const Aws::String& GetNonce() const{ return m_nonce; }
+
+    /**
+     * <p>(Optional) To scope down the registration to a specific running software
+     * instance and guard against replay attacks.</p>
+     */
+    inline bool NonceHasBeenSet() const { return m_nonceHasBeenSet; }
 
     /**
      * <p>(Optional) To scope down the registration to a specific running software

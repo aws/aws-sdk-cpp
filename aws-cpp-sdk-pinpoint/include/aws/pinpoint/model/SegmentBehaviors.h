@@ -55,6 +55,11 @@ namespace Model
     /**
      * The recency of use.
      */
+    inline bool RecencyHasBeenSet() const { return m_recencyHasBeenSet; }
+
+    /**
+     * The recency of use.
+     */
     inline void SetRecency(const RecencyDimension& value) { m_recencyHasBeenSet = true; m_recency = value; }
 
     /**

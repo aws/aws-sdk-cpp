@@ -60,6 +60,11 @@ namespace Model
     /**
      * <p>Unique identifier for a player associated with the latency data.</p>
      */
+    inline bool PlayerIdHasBeenSet() const { return m_playerIdHasBeenSet; }
+
+    /**
+     * <p>Unique identifier for a player associated with the latency data.</p>
+     */
     inline void SetPlayerId(const Aws::String& value) { m_playerIdHasBeenSet = true; m_playerId = value; }
 
     /**
@@ -92,6 +97,11 @@ namespace Model
      * <p>Name of the region that is associated with the latency value.</p>
      */
     inline const Aws::String& GetRegionIdentifier() const{ return m_regionIdentifier; }
+
+    /**
+     * <p>Name of the region that is associated with the latency value.</p>
+     */
+    inline bool RegionIdentifierHasBeenSet() const { return m_regionIdentifierHasBeenSet; }
 
     /**
      * <p>Name of the region that is associated with the latency value.</p>
@@ -129,6 +139,12 @@ namespace Model
      * connected to the specified region.</p>
      */
     inline double GetLatencyInMilliseconds() const{ return m_latencyInMilliseconds; }
+
+    /**
+     * <p>Amount of time that represents the time lag experienced by the player when
+     * connected to the specified region.</p>
+     */
+    inline bool LatencyInMillisecondsHasBeenSet() const { return m_latencyInMillisecondsHasBeenSet; }
 
     /**
      * <p>Amount of time that represents the time lag experienced by the player when

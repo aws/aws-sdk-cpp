@@ -62,6 +62,11 @@ namespace Model
     /**
      * <p>The name of the tuning job.</p>
      */
+    inline bool HyperParameterTuningJobNameHasBeenSet() const { return m_hyperParameterTuningJobNameHasBeenSet; }
+
+    /**
+     * <p>The name of the tuning job.</p>
+     */
     inline void SetHyperParameterTuningJobName(const Aws::String& value) { m_hyperParameterTuningJobNameHasBeenSet = true; m_hyperParameterTuningJobName = value; }
 
     /**
@@ -94,6 +99,11 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the tuning job.</p>
      */
     inline const Aws::String& GetHyperParameterTuningJobArn() const{ return m_hyperParameterTuningJobArn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the tuning job.</p>
+     */
+    inline bool HyperParameterTuningJobArnHasBeenSet() const { return m_hyperParameterTuningJobArnHasBeenSet; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the tuning job.</p>
@@ -134,6 +144,11 @@ namespace Model
     /**
      * <p>The status of the tuning job.</p>
      */
+    inline bool HyperParameterTuningJobStatusHasBeenSet() const { return m_hyperParameterTuningJobStatusHasBeenSet; }
+
+    /**
+     * <p>The status of the tuning job.</p>
+     */
     inline void SetHyperParameterTuningJobStatus(const HyperParameterTuningJobStatus& value) { m_hyperParameterTuningJobStatusHasBeenSet = true; m_hyperParameterTuningJobStatus = value; }
 
     /**
@@ -158,6 +173,13 @@ namespace Model
      * Bayesian.</p>
      */
     inline const HyperParameterTuningJobStrategyType& GetStrategy() const{ return m_strategy; }
+
+    /**
+     * <p>Specifies the search strategy hyperparameter tuning uses to choose which
+     * hyperparameters to use for each iteration. Currently, the only valid value is
+     * Bayesian.</p>
+     */
+    inline bool StrategyHasBeenSet() const { return m_strategyHasBeenSet; }
 
     /**
      * <p>Specifies the search strategy hyperparameter tuning uses to choose which
@@ -196,6 +218,11 @@ namespace Model
     /**
      * <p>The date and time that the tuning job was created.</p>
      */
+    inline bool CreationTimeHasBeenSet() const { return m_creationTimeHasBeenSet; }
+
+    /**
+     * <p>The date and time that the tuning job was created.</p>
+     */
     inline void SetCreationTime(const Aws::Utils::DateTime& value) { m_creationTimeHasBeenSet = true; m_creationTime = value; }
 
     /**
@@ -218,6 +245,11 @@ namespace Model
      * <p>The date and time that the tuning job ended.</p>
      */
     inline const Aws::Utils::DateTime& GetHyperParameterTuningEndTime() const{ return m_hyperParameterTuningEndTime; }
+
+    /**
+     * <p>The date and time that the tuning job ended.</p>
+     */
+    inline bool HyperParameterTuningEndTimeHasBeenSet() const { return m_hyperParameterTuningEndTimeHasBeenSet; }
 
     /**
      * <p>The date and time that the tuning job ended.</p>
@@ -248,6 +280,11 @@ namespace Model
     /**
      * <p>The date and time that the tuning job was modified.</p>
      */
+    inline bool LastModifiedTimeHasBeenSet() const { return m_lastModifiedTimeHasBeenSet; }
+
+    /**
+     * <p>The date and time that the tuning job was modified.</p>
+     */
     inline void SetLastModifiedTime(const Aws::Utils::DateTime& value) { m_lastModifiedTimeHasBeenSet = true; m_lastModifiedTime = value; }
 
     /**
@@ -271,6 +308,12 @@ namespace Model
      * training jobs, categorized by status, that this tuning job launched.</p>
      */
     inline const TrainingJobStatusCounters& GetTrainingJobStatusCounters() const{ return m_trainingJobStatusCounters; }
+
+    /**
+     * <p>The <a>TrainingJobStatusCounters</a> object that specifies the numbers of
+     * training jobs, categorized by status, that this tuning job launched.</p>
+     */
+    inline bool TrainingJobStatusCountersHasBeenSet() const { return m_trainingJobStatusCountersHasBeenSet; }
 
     /**
      * <p>The <a>TrainingJobStatusCounters</a> object that specifies the numbers of
@@ -309,6 +352,13 @@ namespace Model
      * training jobs, categorized by objective metric status, that this tuning job
      * launched.</p>
      */
+    inline bool ObjectiveStatusCountersHasBeenSet() const { return m_objectiveStatusCountersHasBeenSet; }
+
+    /**
+     * <p>The <a>ObjectiveStatusCounters</a> object that specifies the numbers of
+     * training jobs, categorized by objective metric status, that this tuning job
+     * launched.</p>
+     */
     inline void SetObjectiveStatusCounters(const ObjectiveStatusCounters& value) { m_objectiveStatusCountersHasBeenSet = true; m_objectiveStatusCounters = value; }
 
     /**
@@ -338,6 +388,12 @@ namespace Model
      * training jobs and parallel training jobs allowed for this tuning job.</p>
      */
     inline const ResourceLimits& GetResourceLimits() const{ return m_resourceLimits; }
+
+    /**
+     * <p>The <a>ResourceLimits</a> object that specifies the maximum number of
+     * training jobs and parallel training jobs allowed for this tuning job.</p>
+     */
+    inline bool ResourceLimitsHasBeenSet() const { return m_resourceLimitsHasBeenSet; }
 
     /**
      * <p>The <a>ResourceLimits</a> object that specifies the maximum number of

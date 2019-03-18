@@ -60,6 +60,12 @@ namespace Model
      * <p> The deployment type that is specific to the deployment's compute platform.
      * </p>
      */
+    inline bool DeploymentTargetTypeHasBeenSet() const { return m_deploymentTargetTypeHasBeenSet; }
+
+    /**
+     * <p> The deployment type that is specific to the deployment's compute platform.
+     * </p>
+     */
     inline void SetDeploymentTargetType(const DeploymentTargetType& value) { m_deploymentTargetTypeHasBeenSet = true; m_deploymentTargetType = value; }
 
     /**
@@ -86,6 +92,12 @@ namespace Model
      * compute platform. </p>
      */
     inline const InstanceTarget& GetInstanceTarget() const{ return m_instanceTarget; }
+
+    /**
+     * <p> Information about the target for a deployment that uses the EC2/On-premises
+     * compute platform. </p>
+     */
+    inline bool InstanceTargetHasBeenSet() const { return m_instanceTargetHasBeenSet; }
 
     /**
      * <p> Information about the target for a deployment that uses the EC2/On-premises
@@ -122,6 +134,12 @@ namespace Model
      * <p> Information about the target for a deployment that uses the AWS Lambda
      * compute platform. </p>
      */
+    inline bool LambdaTargetHasBeenSet() const { return m_lambdaTargetHasBeenSet; }
+
+    /**
+     * <p> Information about the target for a deployment that uses the AWS Lambda
+     * compute platform. </p>
+     */
     inline void SetLambdaTarget(const LambdaTarget& value) { m_lambdaTargetHasBeenSet = true; m_lambdaTarget = value; }
 
     /**
@@ -148,6 +166,12 @@ namespace Model
      * compute platform. </p>
      */
     inline const ECSTarget& GetEcsTarget() const{ return m_ecsTarget; }
+
+    /**
+     * <p> Information about the target for a deployment that uses the Amazon ECS
+     * compute platform. </p>
+     */
+    inline bool EcsTargetHasBeenSet() const { return m_ecsTargetHasBeenSet; }
 
     /**
      * <p> Information about the target for a deployment that uses the Amazon ECS

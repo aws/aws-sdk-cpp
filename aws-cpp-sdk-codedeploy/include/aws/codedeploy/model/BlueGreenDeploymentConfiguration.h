@@ -60,6 +60,12 @@ namespace Model
      * <p>Information about whether to terminate instances in the original fleet during
      * a blue/green deployment.</p>
      */
+    inline bool TerminateBlueInstancesOnDeploymentSuccessHasBeenSet() const { return m_terminateBlueInstancesOnDeploymentSuccessHasBeenSet; }
+
+    /**
+     * <p>Information about whether to terminate instances in the original fleet during
+     * a blue/green deployment.</p>
+     */
     inline void SetTerminateBlueInstancesOnDeploymentSuccess(const BlueInstanceTerminationOption& value) { m_terminateBlueInstancesOnDeploymentSuccessHasBeenSet = true; m_terminateBlueInstancesOnDeploymentSuccess = value; }
 
     /**
@@ -91,6 +97,12 @@ namespace Model
      * <p>Information about the action to take when newly provisioned instances are
      * ready to receive traffic in a blue/green deployment.</p>
      */
+    inline bool DeploymentReadyOptionHasBeenSet() const { return m_deploymentReadyOptionHasBeenSet; }
+
+    /**
+     * <p>Information about the action to take when newly provisioned instances are
+     * ready to receive traffic in a blue/green deployment.</p>
+     */
     inline void SetDeploymentReadyOption(const DeploymentReadyOption& value) { m_deploymentReadyOptionHasBeenSet = true; m_deploymentReadyOption = value; }
 
     /**
@@ -117,6 +129,12 @@ namespace Model
      * in a blue/green deployment.</p>
      */
     inline const GreenFleetProvisioningOption& GetGreenFleetProvisioningOption() const{ return m_greenFleetProvisioningOption; }
+
+    /**
+     * <p>Information about how instances are provisioned for a replacement environment
+     * in a blue/green deployment.</p>
+     */
+    inline bool GreenFleetProvisioningOptionHasBeenSet() const { return m_greenFleetProvisioningOptionHasBeenSet; }
 
     /**
      * <p>Information about how instances are provisioned for a replacement environment

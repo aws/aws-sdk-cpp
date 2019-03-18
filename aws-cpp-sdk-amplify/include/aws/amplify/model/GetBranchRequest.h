@@ -53,6 +53,11 @@ namespace Model
     /**
      * <p> Unique Id for an Amplify App. </p>
      */
+    inline bool AppIdHasBeenSet() const { return m_appIdHasBeenSet; }
+
+    /**
+     * <p> Unique Id for an Amplify App. </p>
+     */
     inline void SetAppId(const Aws::String& value) { m_appIdHasBeenSet = true; m_appId = value; }
 
     /**
@@ -85,6 +90,11 @@ namespace Model
      * <p> Name for the branch. </p>
      */
     inline const Aws::String& GetBranchName() const{ return m_branchName; }
+
+    /**
+     * <p> Name for the branch. </p>
+     */
+    inline bool BranchNameHasBeenSet() const { return m_branchNameHasBeenSet; }
 
     /**
      * <p> Name for the branch. </p>

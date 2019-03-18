@@ -63,6 +63,13 @@ namespace Model
      * audio codec. Include one instance of (AudioDescriptions) per output.
      * (AudioDescriptions) can contain multiple groups of encoding settings.
      */
+    inline bool AudioDescriptionsHasBeenSet() const { return m_audioDescriptionsHasBeenSet; }
+
+    /**
+     * (AudioDescriptions) contains groups of audio encoding settings organized by
+     * audio codec. Include one instance of (AudioDescriptions) per output.
+     * (AudioDescriptions) can contain multiple groups of encoding settings.
+     */
     inline void SetAudioDescriptions(const Aws::Vector<AudioDescription>& value) { m_audioDescriptionsHasBeenSet = true; m_audioDescriptions = value; }
 
     /**
@@ -111,6 +118,12 @@ namespace Model
      * Caption settings for this preset. There can be multiple caption settings in a
      * single output.
      */
+    inline bool CaptionDescriptionsHasBeenSet() const { return m_captionDescriptionsHasBeenSet; }
+
+    /**
+     * Caption settings for this preset. There can be multiple caption settings in a
+     * single output.
+     */
     inline void SetCaptionDescriptions(const Aws::Vector<CaptionDescriptionPreset>& value) { m_captionDescriptionsHasBeenSet = true; m_captionDescriptions = value; }
 
     /**
@@ -148,6 +161,9 @@ namespace Model
     inline const ContainerSettings& GetContainerSettings() const{ return m_containerSettings; }
 
     
+    inline bool ContainerSettingsHasBeenSet() const { return m_containerSettingsHasBeenSet; }
+
+    
     inline void SetContainerSettings(const ContainerSettings& value) { m_containerSettingsHasBeenSet = true; m_containerSettings = value; }
 
     
@@ -166,6 +182,13 @@ namespace Model
      * Video codec (codec). Include one instance of (VideoDescription) per output.
      */
     inline const VideoDescription& GetVideoDescription() const{ return m_videoDescription; }
+
+    /**
+     * (VideoDescription) contains a group of video encoding settings. The specific
+     * video settings depend on the video codec you choose when you specify a value for
+     * Video codec (codec). Include one instance of (VideoDescription) per output.
+     */
+    inline bool VideoDescriptionHasBeenSet() const { return m_videoDescriptionHasBeenSet; }
 
     /**
      * (VideoDescription) contains a group of video encoding settings. The specific

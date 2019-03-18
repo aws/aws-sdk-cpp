@@ -61,6 +61,11 @@ namespace Model
     /**
      * <p>The ID of the transit gateway route table.</p>
      */
+    inline bool TransitGatewayRouteTableIdHasBeenSet() const { return m_transitGatewayRouteTableIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the transit gateway route table.</p>
+     */
     inline void SetTransitGatewayRouteTableId(const Aws::String& value) { m_transitGatewayRouteTableIdHasBeenSet = true; m_transitGatewayRouteTableId = value; }
 
     /**
@@ -93,6 +98,11 @@ namespace Model
      * <p>The ID of the transit gateway.</p>
      */
     inline const Aws::String& GetTransitGatewayId() const{ return m_transitGatewayId; }
+
+    /**
+     * <p>The ID of the transit gateway.</p>
+     */
+    inline bool TransitGatewayIdHasBeenSet() const { return m_transitGatewayIdHasBeenSet; }
 
     /**
      * <p>The ID of the transit gateway.</p>
@@ -133,6 +143,11 @@ namespace Model
     /**
      * <p>The state of the transit gateway route table.</p>
      */
+    inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
+
+    /**
+     * <p>The state of the transit gateway route table.</p>
+     */
     inline void SetState(const TransitGatewayRouteTableState& value) { m_stateHasBeenSet = true; m_state = value; }
 
     /**
@@ -161,6 +176,12 @@ namespace Model
      * <p>Indicates whether this is the default association route table for the transit
      * gateway.</p>
      */
+    inline bool DefaultAssociationRouteTableHasBeenSet() const { return m_defaultAssociationRouteTableHasBeenSet; }
+
+    /**
+     * <p>Indicates whether this is the default association route table for the transit
+     * gateway.</p>
+     */
     inline void SetDefaultAssociationRouteTable(bool value) { m_defaultAssociationRouteTableHasBeenSet = true; m_defaultAssociationRouteTable = value; }
 
     /**
@@ -180,6 +201,12 @@ namespace Model
      * <p>Indicates whether this is the default propagation route table for the transit
      * gateway.</p>
      */
+    inline bool DefaultPropagationRouteTableHasBeenSet() const { return m_defaultPropagationRouteTableHasBeenSet; }
+
+    /**
+     * <p>Indicates whether this is the default propagation route table for the transit
+     * gateway.</p>
+     */
     inline void SetDefaultPropagationRouteTable(bool value) { m_defaultPropagationRouteTableHasBeenSet = true; m_defaultPropagationRouteTable = value; }
 
     /**
@@ -193,6 +220,11 @@ namespace Model
      * <p>The creation time.</p>
      */
     inline const Aws::Utils::DateTime& GetCreationTime() const{ return m_creationTime; }
+
+    /**
+     * <p>The creation time.</p>
+     */
+    inline bool CreationTimeHasBeenSet() const { return m_creationTimeHasBeenSet; }
 
     /**
      * <p>The creation time.</p>
@@ -219,6 +251,11 @@ namespace Model
      * <p>Any tags assigned to the route table.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>Any tags assigned to the route table.</p>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
      * <p>Any tags assigned to the route table.</p>

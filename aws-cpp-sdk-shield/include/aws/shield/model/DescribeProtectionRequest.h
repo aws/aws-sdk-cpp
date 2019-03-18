@@ -58,6 +58,14 @@ namespace Model
      * provide either the <code>ResourceArn</code> or the <code>ProtectionID</code>,
      * but not both.</p>
      */
+    inline bool ProtectionIdHasBeenSet() const { return m_protectionIdHasBeenSet; }
+
+    /**
+     * <p>The unique identifier (ID) for the <a>Protection</a> object that is
+     * described. When submitting the <code>DescribeProtection</code> request you must
+     * provide either the <code>ResourceArn</code> or the <code>ProtectionID</code>,
+     * but not both.</p>
+     */
     inline void SetProtectionId(const Aws::String& value) { m_protectionIdHasBeenSet = true; m_protectionId = value; }
 
     /**
@@ -108,6 +116,14 @@ namespace Model
      * <code>ProtectionID</code>, but not both.</p>
      */
     inline const Aws::String& GetResourceArn() const{ return m_resourceArn; }
+
+    /**
+     * <p>The ARN (Amazon Resource Name) of the AWS resource for the <a>Protection</a>
+     * object that is described. When submitting the <code>DescribeProtection</code>
+     * request you must provide either the <code>ResourceArn</code> or the
+     * <code>ProtectionID</code>, but not both.</p>
+     */
+    inline bool ResourceArnHasBeenSet() const { return m_resourceArnHasBeenSet; }
 
     /**
      * <p>The ARN (Amazon Resource Name) of the AWS resource for the <a>Protection</a>

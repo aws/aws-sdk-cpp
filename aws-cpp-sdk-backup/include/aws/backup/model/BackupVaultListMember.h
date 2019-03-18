@@ -62,6 +62,14 @@ namespace Model
      * AWS Region where they are created. They consist of lowercase letters, numbers,
      * and hyphens.</p>
      */
+    inline bool BackupVaultNameHasBeenSet() const { return m_backupVaultNameHasBeenSet; }
+
+    /**
+     * <p>The name of a logical container where backups are stored. Backup vaults are
+     * identified by names that are unique to the account used to create them and the
+     * AWS Region where they are created. They consist of lowercase letters, numbers,
+     * and hyphens.</p>
+     */
     inline void SetBackupVaultName(const Aws::String& value) { m_backupVaultNameHasBeenSet = true; m_backupVaultName = value; }
 
     /**
@@ -111,6 +119,13 @@ namespace Model
      * <code>arn:aws:backup:us-east-1:123456789012:vault:aBackupVault</code>.</p>
      */
     inline const Aws::String& GetBackupVaultArn() const{ return m_backupVaultArn; }
+
+    /**
+     * <p>An Amazon Resource Name (ARN) that uniquely identifies a backup vault; for
+     * example,
+     * <code>arn:aws:backup:us-east-1:123456789012:vault:aBackupVault</code>.</p>
+     */
+    inline bool BackupVaultArnHasBeenSet() const { return m_backupVaultArnHasBeenSet; }
 
     /**
      * <p>An Amazon Resource Name (ARN) that uniquely identifies a backup vault; for
@@ -169,6 +184,14 @@ namespace Model
      * accurate to milliseconds. For example, the value 1516925490.087 represents
      * Friday, January 26, 2018 12:11:30.087 AM.</p>
      */
+    inline bool CreationDateHasBeenSet() const { return m_creationDateHasBeenSet; }
+
+    /**
+     * <p>The date and time a resource backup is created, in Unix format and
+     * Coordinated Universal Time (UTC). The value of <code>CreationDate</code> is
+     * accurate to milliseconds. For example, the value 1516925490.087 represents
+     * Friday, January 26, 2018 12:11:30.087 AM.</p>
+     */
     inline void SetCreationDate(const Aws::Utils::DateTime& value) { m_creationDateHasBeenSet = true; m_creationDate = value; }
 
     /**
@@ -202,6 +225,13 @@ namespace Model
      * <code>arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p>
      */
     inline const Aws::String& GetEncryptionKeyArn() const{ return m_encryptionKeyArn; }
+
+    /**
+     * <p>The server-side encryption key that is used to protect your backups; for
+     * example,
+     * <code>arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p>
+     */
+    inline bool EncryptionKeyArnHasBeenSet() const { return m_encryptionKeyArnHasBeenSet; }
 
     /**
      * <p>The server-side encryption key that is used to protect your backups; for
@@ -256,6 +286,12 @@ namespace Model
      * <p>A unique string that identifies the request and allows failed requests to be
      * retried without the risk of executing the operation twice.</p>
      */
+    inline bool CreatorRequestIdHasBeenSet() const { return m_creatorRequestIdHasBeenSet; }
+
+    /**
+     * <p>A unique string that identifies the request and allows failed requests to be
+     * retried without the risk of executing the operation twice.</p>
+     */
     inline void SetCreatorRequestId(const Aws::String& value) { m_creatorRequestIdHasBeenSet = true; m_creatorRequestId = value; }
 
     /**
@@ -293,6 +329,11 @@ namespace Model
      * <p>The number of recovery points that are stored in a backup vault.</p>
      */
     inline long long GetNumberOfRecoveryPoints() const{ return m_numberOfRecoveryPoints; }
+
+    /**
+     * <p>The number of recovery points that are stored in a backup vault.</p>
+     */
+    inline bool NumberOfRecoveryPointsHasBeenSet() const { return m_numberOfRecoveryPointsHasBeenSet; }
 
     /**
      * <p>The number of recovery points that are stored in a backup vault.</p>

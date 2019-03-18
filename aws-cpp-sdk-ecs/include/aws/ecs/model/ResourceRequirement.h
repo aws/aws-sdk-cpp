@@ -66,6 +66,14 @@ namespace Model
      * task should not exceed the number of available GPUs on the container instance
      * the task is launched on.</p>
      */
+    inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
+
+    /**
+     * <p>The number of physical <code>GPUs</code> the Amazon ECS container agent will
+     * reserve for the container. The number of GPUs reserved for all containers in a
+     * task should not exceed the number of available GPUs on the container instance
+     * the task is launched on.</p>
+     */
     inline void SetValue(const Aws::String& value) { m_valueHasBeenSet = true; m_value = value; }
 
     /**
@@ -114,6 +122,12 @@ namespace Model
      * <code>GPU</code>.</p>
      */
     inline const ResourceType& GetType() const{ return m_type; }
+
+    /**
+     * <p>The type of resource to assign to a container. The only supported value is
+     * <code>GPU</code>.</p>
+     */
+    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
 
     /**
      * <p>The type of resource to assign to a container. The only supported value is

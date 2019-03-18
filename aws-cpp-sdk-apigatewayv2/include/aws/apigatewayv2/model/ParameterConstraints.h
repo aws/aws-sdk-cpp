@@ -55,6 +55,11 @@ namespace Model
     /**
      * <p>Whether or not the parameter is required.</p>
      */
+    inline bool RequiredHasBeenSet() const { return m_requiredHasBeenSet; }
+
+    /**
+     * <p>Whether or not the parameter is required.</p>
+     */
     inline void SetRequired(bool value) { m_requiredHasBeenSet = true; m_required = value; }
 
     /**

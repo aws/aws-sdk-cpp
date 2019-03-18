@@ -64,6 +64,12 @@ namespace Model
      * <p>The Availability Zone where the virtual private gateway was created, if
      * applicable. This field may be empty or not returned.</p>
      */
+    inline bool AvailabilityZoneHasBeenSet() const { return m_availabilityZoneHasBeenSet; }
+
+    /**
+     * <p>The Availability Zone where the virtual private gateway was created, if
+     * applicable. This field may be empty or not returned.</p>
+     */
     inline void SetAvailabilityZone(const Aws::String& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = value; }
 
     /**
@@ -105,6 +111,11 @@ namespace Model
     /**
      * <p>The current state of the virtual private gateway.</p>
      */
+    inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
+
+    /**
+     * <p>The current state of the virtual private gateway.</p>
+     */
     inline void SetState(const VpnState& value) { m_stateHasBeenSet = true; m_state = value; }
 
     /**
@@ -131,6 +142,11 @@ namespace Model
     /**
      * <p>The type of VPN connection the virtual private gateway supports.</p>
      */
+    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
+
+    /**
+     * <p>The type of VPN connection the virtual private gateway supports.</p>
+     */
     inline void SetType(const GatewayType& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
@@ -153,6 +169,11 @@ namespace Model
      * <p>Any VPCs attached to the virtual private gateway.</p>
      */
     inline const Aws::Vector<VpcAttachment>& GetVpcAttachments() const{ return m_vpcAttachments; }
+
+    /**
+     * <p>Any VPCs attached to the virtual private gateway.</p>
+     */
+    inline bool VpcAttachmentsHasBeenSet() const { return m_vpcAttachmentsHasBeenSet; }
 
     /**
      * <p>Any VPCs attached to the virtual private gateway.</p>
@@ -189,6 +210,11 @@ namespace Model
      * <p>The ID of the virtual private gateway.</p>
      */
     inline const Aws::String& GetVpnGatewayId() const{ return m_vpnGatewayId; }
+
+    /**
+     * <p>The ID of the virtual private gateway.</p>
+     */
+    inline bool VpnGatewayIdHasBeenSet() const { return m_vpnGatewayIdHasBeenSet; }
 
     /**
      * <p>The ID of the virtual private gateway.</p>
@@ -231,6 +257,12 @@ namespace Model
      * <p>The private Autonomous System Number (ASN) for the Amazon side of a BGP
      * session.</p>
      */
+    inline bool AmazonSideAsnHasBeenSet() const { return m_amazonSideAsnHasBeenSet; }
+
+    /**
+     * <p>The private Autonomous System Number (ASN) for the Amazon side of a BGP
+     * session.</p>
+     */
     inline void SetAmazonSideAsn(long long value) { m_amazonSideAsnHasBeenSet = true; m_amazonSideAsn = value; }
 
     /**
@@ -244,6 +276,11 @@ namespace Model
      * <p>Any tags assigned to the virtual private gateway.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>Any tags assigned to the virtual private gateway.</p>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
      * <p>Any tags assigned to the virtual private gateway.</p>

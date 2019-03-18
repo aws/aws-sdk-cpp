@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>Specifies whether the directory is enabled for Amazon WorkDocs.</p>
      */
+    inline bool EnableWorkDocsHasBeenSet() const { return m_enableWorkDocsHasBeenSet; }
+
+    /**
+     * <p>Specifies whether the directory is enabled for Amazon WorkDocs.</p>
+     */
     inline void SetEnableWorkDocs(bool value) { m_enableWorkDocsHasBeenSet = true; m_enableWorkDocs = value; }
 
     /**
@@ -69,6 +74,12 @@ namespace Model
      * rebuilt.</p>
      */
     inline bool GetEnableInternetAccess() const{ return m_enableInternetAccess; }
+
+    /**
+     * <p>The public IP address to attach to all WorkSpaces that are created or
+     * rebuilt.</p>
+     */
+    inline bool EnableInternetAccessHasBeenSet() const { return m_enableInternetAccessHasBeenSet; }
 
     /**
      * <p>The public IP address to attach to all WorkSpaces that are created or
@@ -88,6 +99,12 @@ namespace Model
      * accounts.</p>
      */
     inline const Aws::String& GetDefaultOu() const{ return m_defaultOu; }
+
+    /**
+     * <p>The organizational unit (OU) in the directory for the WorkSpace machine
+     * accounts.</p>
+     */
+    inline bool DefaultOuHasBeenSet() const { return m_defaultOuHasBeenSet; }
 
     /**
      * <p>The organizational unit (OU) in the directory for the WorkSpace machine
@@ -136,6 +153,12 @@ namespace Model
      * <p>The identifier of any security groups to apply to WorkSpaces when they are
      * created.</p>
      */
+    inline bool CustomSecurityGroupIdHasBeenSet() const { return m_customSecurityGroupIdHasBeenSet; }
+
+    /**
+     * <p>The identifier of any security groups to apply to WorkSpaces when they are
+     * created.</p>
+     */
     inline void SetCustomSecurityGroupId(const Aws::String& value) { m_customSecurityGroupIdHasBeenSet = true; m_customSecurityGroupId = value; }
 
     /**
@@ -174,6 +197,12 @@ namespace Model
      * WorkSpace.</p>
      */
     inline bool GetUserEnabledAsLocalAdministrator() const{ return m_userEnabledAsLocalAdministrator; }
+
+    /**
+     * <p>Specifies whether the WorkSpace user is an administrator on the
+     * WorkSpace.</p>
+     */
+    inline bool UserEnabledAsLocalAdministratorHasBeenSet() const { return m_userEnabledAsLocalAdministratorHasBeenSet; }
 
     /**
      * <p>Specifies whether the WorkSpace user is an administrator on the

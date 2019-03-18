@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The name of the developer.</p>
      */
+    inline bool DeveloperNameHasBeenSet() const { return m_developerNameHasBeenSet; }
+
+    /**
+     * <p>The name of the developer.</p>
+     */
     inline void SetDeveloperName(const Aws::String& value) { m_developerNameHasBeenSet = true; m_developerName = value; }
 
     /**
@@ -88,6 +93,11 @@ namespace Model
      * <p>The URL of the privacy policy.</p>
      */
     inline const Aws::String& GetPrivacyPolicy() const{ return m_privacyPolicy; }
+
+    /**
+     * <p>The URL of the privacy policy.</p>
+     */
+    inline bool PrivacyPolicyHasBeenSet() const { return m_privacyPolicyHasBeenSet; }
 
     /**
      * <p>The URL of the privacy policy.</p>
@@ -128,6 +138,11 @@ namespace Model
     /**
      * <p>The email of the developer.</p>
      */
+    inline bool EmailHasBeenSet() const { return m_emailHasBeenSet; }
+
+    /**
+     * <p>The email of the developer.</p>
+     */
     inline void SetEmail(const Aws::String& value) { m_emailHasBeenSet = true; m_email = value; }
 
     /**
@@ -160,6 +175,11 @@ namespace Model
      * <p>The website of the developer.</p>
      */
     inline const Aws::String& GetUrl() const{ return m_url; }
+
+    /**
+     * <p>The website of the developer.</p>
+     */
+    inline bool UrlHasBeenSet() const { return m_urlHasBeenSet; }
 
     /**
      * <p>The website of the developer.</p>

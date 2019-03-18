@@ -49,6 +49,9 @@ namespace Model
     inline const Aws::Vector<Aws::String>& GetAssessmentTemplateArns() const{ return m_assessmentTemplateArns; }
 
     
+    inline bool AssessmentTemplateArnsHasBeenSet() const { return m_assessmentTemplateArnsHasBeenSet; }
+
+    
     inline void SetAssessmentTemplateArns(const Aws::Vector<Aws::String>& value) { m_assessmentTemplateArnsHasBeenSet = true; m_assessmentTemplateArns = value; }
 
     

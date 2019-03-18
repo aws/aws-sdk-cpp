@@ -54,6 +54,12 @@ namespace Model
      * <p>The name of a custom document that you want to set as the default
      * version.</p>
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>The name of a custom document that you want to set as the default
+     * version.</p>
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
@@ -92,6 +98,12 @@ namespace Model
      * version.</p>
      */
     inline const Aws::String& GetDocumentVersion() const{ return m_documentVersion; }
+
+    /**
+     * <p>The version of a custom document that you want to set as the default
+     * version.</p>
+     */
+    inline bool DocumentVersionHasBeenSet() const { return m_documentVersionHasBeenSet; }
 
     /**
      * <p>The version of a custom document that you want to set as the default

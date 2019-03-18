@@ -62,6 +62,12 @@ namespace Model
      * <p>Identifier of the directory owner account, which contains the directory that
      * has been shared to the consumer account.</p>
      */
+    inline bool OwnerAccountIdHasBeenSet() const { return m_ownerAccountIdHasBeenSet; }
+
+    /**
+     * <p>Identifier of the directory owner account, which contains the directory that
+     * has been shared to the consumer account.</p>
+     */
     inline void SetOwnerAccountId(const Aws::String& value) { m_ownerAccountIdHasBeenSet = true; m_ownerAccountId = value; }
 
     /**
@@ -99,6 +105,11 @@ namespace Model
      * <p>Identifier of the directory in the directory owner account. </p>
      */
     inline const Aws::String& GetOwnerDirectoryId() const{ return m_ownerDirectoryId; }
+
+    /**
+     * <p>Identifier of the directory in the directory owner account. </p>
+     */
+    inline bool OwnerDirectoryIdHasBeenSet() const { return m_ownerDirectoryIdHasBeenSet; }
 
     /**
      * <p>Identifier of the directory in the directory owner account. </p>
@@ -145,6 +156,14 @@ namespace Model
      * with any AWS account by sending a shared directory request
      * (<code>HANDSHAKE</code>).</p>
      */
+    inline bool ShareMethodHasBeenSet() const { return m_shareMethodHasBeenSet; }
+
+    /**
+     * <p>The method used when sharing a directory to determine whether the directory
+     * should be shared within your AWS organization (<code>ORGANIZATIONS</code>) or
+     * with any AWS account by sending a shared directory request
+     * (<code>HANDSHAKE</code>).</p>
+     */
     inline void SetShareMethod(const ShareMethod& value) { m_shareMethodHasBeenSet = true; m_shareMethod = value; }
 
     /**
@@ -177,6 +196,12 @@ namespace Model
      * directory (<code>OwnerDirectoryId</code>) in the directory owner account.</p>
      */
     inline const Aws::String& GetSharedAccountId() const{ return m_sharedAccountId; }
+
+    /**
+     * <p>Identifier of the directory consumer account that has access to the shared
+     * directory (<code>OwnerDirectoryId</code>) in the directory owner account.</p>
+     */
+    inline bool SharedAccountIdHasBeenSet() const { return m_sharedAccountIdHasBeenSet; }
 
     /**
      * <p>Identifier of the directory consumer account that has access to the shared
@@ -225,6 +250,12 @@ namespace Model
      * <p>Identifier of the shared directory in the directory consumer account. This
      * identifier is different for each directory owner account.</p>
      */
+    inline bool SharedDirectoryIdHasBeenSet() const { return m_sharedDirectoryIdHasBeenSet; }
+
+    /**
+     * <p>Identifier of the shared directory in the directory consumer account. This
+     * identifier is different for each directory owner account.</p>
+     */
     inline void SetSharedDirectoryId(const Aws::String& value) { m_sharedDirectoryIdHasBeenSet = true; m_sharedDirectoryId = value; }
 
     /**
@@ -268,6 +299,12 @@ namespace Model
      * <p>Current directory status of the shared AWS Managed Microsoft AD
      * directory.</p>
      */
+    inline bool ShareStatusHasBeenSet() const { return m_shareStatusHasBeenSet; }
+
+    /**
+     * <p>Current directory status of the shared AWS Managed Microsoft AD
+     * directory.</p>
+     */
     inline void SetShareStatus(const ShareStatus& value) { m_shareStatusHasBeenSet = true; m_shareStatus = value; }
 
     /**
@@ -296,6 +333,14 @@ namespace Model
      * invitation.</p>
      */
     inline const Aws::String& GetShareNotes() const{ return m_shareNotes; }
+
+    /**
+     * <p>A directory share request that is sent by the directory owner to the
+     * directory consumer. The request includes a typed message to help the directory
+     * consumer administrator determine whether to approve or reject the share
+     * invitation.</p>
+     */
+    inline bool ShareNotesHasBeenSet() const { return m_shareNotesHasBeenSet; }
 
     /**
      * <p>A directory share request that is sent by the directory owner to the
@@ -354,6 +399,11 @@ namespace Model
     /**
      * <p>The date and time that the shared directory was created.</p>
      */
+    inline bool CreatedDateTimeHasBeenSet() const { return m_createdDateTimeHasBeenSet; }
+
+    /**
+     * <p>The date and time that the shared directory was created.</p>
+     */
     inline void SetCreatedDateTime(const Aws::Utils::DateTime& value) { m_createdDateTimeHasBeenSet = true; m_createdDateTime = value; }
 
     /**
@@ -376,6 +426,11 @@ namespace Model
      * <p>The date and time that the shared directory was last updated.</p>
      */
     inline const Aws::Utils::DateTime& GetLastUpdatedDateTime() const{ return m_lastUpdatedDateTime; }
+
+    /**
+     * <p>The date and time that the shared directory was last updated.</p>
+     */
+    inline bool LastUpdatedDateTimeHasBeenSet() const { return m_lastUpdatedDateTimeHasBeenSet; }
 
     /**
      * <p>The date and time that the shared directory was last updated.</p>

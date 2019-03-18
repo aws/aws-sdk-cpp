@@ -55,6 +55,11 @@ namespace Model
     /**
      * <p>The directory ID for which you are deleting the conditional forwarder.</p>
      */
+    inline bool DirectoryIdHasBeenSet() const { return m_directoryIdHasBeenSet; }
+
+    /**
+     * <p>The directory ID for which you are deleting the conditional forwarder.</p>
+     */
     inline void SetDirectoryId(const Aws::String& value) { m_directoryIdHasBeenSet = true; m_directoryId = value; }
 
     /**
@@ -88,6 +93,12 @@ namespace Model
      * are deleting the conditional forwarder.</p>
      */
     inline const Aws::String& GetRemoteDomainName() const{ return m_remoteDomainName; }
+
+    /**
+     * <p>The fully qualified domain name (FQDN) of the remote domain with which you
+     * are deleting the conditional forwarder.</p>
+     */
+    inline bool RemoteDomainNameHasBeenSet() const { return m_remoteDomainNameHasBeenSet; }
 
     /**
      * <p>The fully qualified domain name (FQDN) of the remote domain with which you

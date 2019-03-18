@@ -56,6 +56,11 @@ namespace Model
     /**
      * The bundle id used for APNs Tokens.
      */
+    inline bool BundleIdHasBeenSet() const { return m_bundleIdHasBeenSet; }
+
+    /**
+     * The bundle id used for APNs Tokens.
+     */
     inline void SetBundleId(const Aws::String& value) { m_bundleIdHasBeenSet = true; m_bundleId = value; }
 
     /**
@@ -88,6 +93,11 @@ namespace Model
      * The distribution certificate from Apple.
      */
     inline const Aws::String& GetCertificate() const{ return m_certificate; }
+
+    /**
+     * The distribution certificate from Apple.
+     */
+    inline bool CertificateHasBeenSet() const { return m_certificateHasBeenSet; }
 
     /**
      * The distribution certificate from Apple.
@@ -128,6 +138,11 @@ namespace Model
     /**
      * The default authentication method used for APNs.
      */
+    inline bool DefaultAuthenticationMethodHasBeenSet() const { return m_defaultAuthenticationMethodHasBeenSet; }
+
+    /**
+     * The default authentication method used for APNs.
+     */
     inline void SetDefaultAuthenticationMethod(const Aws::String& value) { m_defaultAuthenticationMethodHasBeenSet = true; m_defaultAuthenticationMethod = value; }
 
     /**
@@ -164,6 +179,11 @@ namespace Model
     /**
      * If the channel is enabled for sending messages.
      */
+    inline bool EnabledHasBeenSet() const { return m_enabledHasBeenSet; }
+
+    /**
+     * If the channel is enabled for sending messages.
+     */
     inline void SetEnabled(bool value) { m_enabledHasBeenSet = true; m_enabled = value; }
 
     /**
@@ -176,6 +196,11 @@ namespace Model
      * The certificate private key.
      */
     inline const Aws::String& GetPrivateKey() const{ return m_privateKey; }
+
+    /**
+     * The certificate private key.
+     */
+    inline bool PrivateKeyHasBeenSet() const { return m_privateKeyHasBeenSet; }
 
     /**
      * The certificate private key.
@@ -216,6 +241,11 @@ namespace Model
     /**
      * The team id used for APNs Tokens.
      */
+    inline bool TeamIdHasBeenSet() const { return m_teamIdHasBeenSet; }
+
+    /**
+     * The team id used for APNs Tokens.
+     */
     inline void SetTeamId(const Aws::String& value) { m_teamIdHasBeenSet = true; m_teamId = value; }
 
     /**
@@ -252,6 +282,11 @@ namespace Model
     /**
      * The token key used for APNs Tokens.
      */
+    inline bool TokenKeyHasBeenSet() const { return m_tokenKeyHasBeenSet; }
+
+    /**
+     * The token key used for APNs Tokens.
+     */
     inline void SetTokenKey(const Aws::String& value) { m_tokenKeyHasBeenSet = true; m_tokenKey = value; }
 
     /**
@@ -284,6 +319,11 @@ namespace Model
      * The token key used for APNs Tokens.
      */
     inline const Aws::String& GetTokenKeyId() const{ return m_tokenKeyId; }
+
+    /**
+     * The token key used for APNs Tokens.
+     */
+    inline bool TokenKeyIdHasBeenSet() const { return m_tokenKeyIdHasBeenSet; }
 
     /**
      * The token key used for APNs Tokens.

@@ -52,6 +52,11 @@ namespace Model
     /**
      * <p>The Amazon RDS instance's ARN.</p>
      */
+    inline bool RdsDbInstanceArnHasBeenSet() const { return m_rdsDbInstanceArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon RDS instance's ARN.</p>
+     */
     inline void SetRdsDbInstanceArn(const Aws::String& value) { m_rdsDbInstanceArnHasBeenSet = true; m_rdsDbInstanceArn = value; }
 
     /**
@@ -88,6 +93,11 @@ namespace Model
     /**
      * <p>The master user name.</p>
      */
+    inline bool DbUserHasBeenSet() const { return m_dbUserHasBeenSet; }
+
+    /**
+     * <p>The master user name.</p>
+     */
     inline void SetDbUser(const Aws::String& value) { m_dbUserHasBeenSet = true; m_dbUser = value; }
 
     /**
@@ -120,6 +130,11 @@ namespace Model
      * <p>The database password.</p>
      */
     inline const Aws::String& GetDbPassword() const{ return m_dbPassword; }
+
+    /**
+     * <p>The database password.</p>
+     */
+    inline bool DbPasswordHasBeenSet() const { return m_dbPasswordHasBeenSet; }
 
     /**
      * <p>The database password.</p>

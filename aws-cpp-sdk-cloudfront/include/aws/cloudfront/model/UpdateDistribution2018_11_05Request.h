@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The distribution's configuration information.</p>
      */
+    inline bool DistributionConfigHasBeenSet() const { return m_distributionConfigHasBeenSet; }
+
+    /**
+     * <p>The distribution's configuration information.</p>
+     */
     inline void SetDistributionConfig(const DistributionConfig& value) { m_distributionConfigHasBeenSet = true; m_distributionConfig = value; }
 
     /**
@@ -78,6 +83,11 @@ namespace Model
      * <p>The distribution's id.</p>
      */
     inline const Aws::String& GetId() const{ return m_id; }
+
+    /**
+     * <p>The distribution's id.</p>
+     */
+    inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
 
     /**
      * <p>The distribution's id.</p>
@@ -115,6 +125,12 @@ namespace Model
      * the distribution's configuration. For example: <code>E2QWRUHAPOMQZL</code>.</p>
      */
     inline const Aws::String& GetIfMatch() const{ return m_ifMatch; }
+
+    /**
+     * <p>The value of the <code>ETag</code> header that you received when retrieving
+     * the distribution's configuration. For example: <code>E2QWRUHAPOMQZL</code>.</p>
+     */
+    inline bool IfMatchHasBeenSet() const { return m_ifMatchHasBeenSet; }
 
     /**
      * <p>The value of the <code>ETag</code> header that you received when retrieving

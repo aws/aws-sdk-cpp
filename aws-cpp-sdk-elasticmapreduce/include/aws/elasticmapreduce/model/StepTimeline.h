@@ -55,6 +55,11 @@ namespace Model
     /**
      * <p>The date and time when the cluster step was created.</p>
      */
+    inline bool CreationDateTimeHasBeenSet() const { return m_creationDateTimeHasBeenSet; }
+
+    /**
+     * <p>The date and time when the cluster step was created.</p>
+     */
     inline void SetCreationDateTime(const Aws::Utils::DateTime& value) { m_creationDateTimeHasBeenSet = true; m_creationDateTime = value; }
 
     /**
@@ -81,6 +86,11 @@ namespace Model
     /**
      * <p>The date and time when the cluster step execution started.</p>
      */
+    inline bool StartDateTimeHasBeenSet() const { return m_startDateTimeHasBeenSet; }
+
+    /**
+     * <p>The date and time when the cluster step execution started.</p>
+     */
     inline void SetStartDateTime(const Aws::Utils::DateTime& value) { m_startDateTimeHasBeenSet = true; m_startDateTime = value; }
 
     /**
@@ -103,6 +113,11 @@ namespace Model
      * <p>The date and time when the cluster step execution completed or failed.</p>
      */
     inline const Aws::Utils::DateTime& GetEndDateTime() const{ return m_endDateTime; }
+
+    /**
+     * <p>The date and time when the cluster step execution completed or failed.</p>
+     */
+    inline bool EndDateTimeHasBeenSet() const { return m_endDateTimeHasBeenSet; }
 
     /**
      * <p>The date and time when the cluster step execution completed or failed.</p>

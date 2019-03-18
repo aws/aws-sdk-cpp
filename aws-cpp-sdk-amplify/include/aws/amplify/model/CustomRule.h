@@ -55,6 +55,11 @@ namespace Model
     /**
      * <p> The source pattern for a URL rewrite or redirect rule. </p>
      */
+    inline bool SourceHasBeenSet() const { return m_sourceHasBeenSet; }
+
+    /**
+     * <p> The source pattern for a URL rewrite or redirect rule. </p>
+     */
     inline void SetSource(const Aws::String& value) { m_sourceHasBeenSet = true; m_source = value; }
 
     /**
@@ -87,6 +92,11 @@ namespace Model
      * <p> The target pattern for a URL rewrite or redirect rule. </p>
      */
     inline const Aws::String& GetTarget() const{ return m_target; }
+
+    /**
+     * <p> The target pattern for a URL rewrite or redirect rule. </p>
+     */
+    inline bool TargetHasBeenSet() const { return m_targetHasBeenSet; }
 
     /**
      * <p> The target pattern for a URL rewrite or redirect rule. </p>
@@ -127,6 +137,11 @@ namespace Model
     /**
      * <p> The status code for a URL rewrite or redirect rule. </p>
      */
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
+
+    /**
+     * <p> The status code for a URL rewrite or redirect rule. </p>
+     */
     inline void SetStatus(const Aws::String& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
@@ -159,6 +174,11 @@ namespace Model
      * <p> The condition for a URL rewrite or redirect rule, e.g. country code. </p>
      */
     inline const Aws::String& GetCondition() const{ return m_condition; }
+
+    /**
+     * <p> The condition for a URL rewrite or redirect rule, e.g. country code. </p>
+     */
+    inline bool ConditionHasBeenSet() const { return m_conditionHasBeenSet; }
 
     /**
      * <p> The condition for a URL rewrite or redirect rule, e.g. country code. </p>

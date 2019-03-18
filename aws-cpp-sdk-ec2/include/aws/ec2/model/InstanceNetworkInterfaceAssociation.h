@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p>The ID of the owner of the Elastic IP address.</p>
      */
+    inline bool IpOwnerIdHasBeenSet() const { return m_ipOwnerIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the owner of the Elastic IP address.</p>
+     */
     inline void SetIpOwnerId(const Aws::String& value) { m_ipOwnerIdHasBeenSet = true; m_ipOwnerId = value; }
 
     /**
@@ -90,6 +95,11 @@ namespace Model
      * <p>The public DNS name.</p>
      */
     inline const Aws::String& GetPublicDnsName() const{ return m_publicDnsName; }
+
+    /**
+     * <p>The public DNS name.</p>
+     */
+    inline bool PublicDnsNameHasBeenSet() const { return m_publicDnsNameHasBeenSet; }
 
     /**
      * <p>The public DNS name.</p>
@@ -127,6 +137,12 @@ namespace Model
      * interface.</p>
      */
     inline const Aws::String& GetPublicIp() const{ return m_publicIp; }
+
+    /**
+     * <p>The public IP address or Elastic IP address bound to the network
+     * interface.</p>
+     */
+    inline bool PublicIpHasBeenSet() const { return m_publicIpHasBeenSet; }
 
     /**
      * <p>The public IP address or Elastic IP address bound to the network

@@ -57,6 +57,13 @@ namespace Model
      * layer parts. If you do not specify a registry, the default registry is
      * assumed.</p>
      */
+    inline bool RegistryIdHasBeenSet() const { return m_registryIdHasBeenSet; }
+
+    /**
+     * <p>The AWS account ID associated with the registry to which you are uploading
+     * layer parts. If you do not specify a registry, the default registry is
+     * assumed.</p>
+     */
     inline void SetRegistryId(const Aws::String& value) { m_registryIdHasBeenSet = true; m_registryId = value; }
 
     /**
@@ -103,6 +110,11 @@ namespace Model
     /**
      * <p>The name of the repository to which you are uploading layer parts.</p>
      */
+    inline bool RepositoryNameHasBeenSet() const { return m_repositoryNameHasBeenSet; }
+
+    /**
+     * <p>The name of the repository to which you are uploading layer parts.</p>
+     */
     inline void SetRepositoryName(const Aws::String& value) { m_repositoryNameHasBeenSet = true; m_repositoryName = value; }
 
     /**
@@ -136,6 +148,12 @@ namespace Model
      * associate with the layer part upload.</p>
      */
     inline const Aws::String& GetUploadId() const{ return m_uploadId; }
+
+    /**
+     * <p>The upload ID from a previous <a>InitiateLayerUpload</a> operation to
+     * associate with the layer part upload.</p>
+     */
+    inline bool UploadIdHasBeenSet() const { return m_uploadIdHasBeenSet; }
 
     /**
      * <p>The upload ID from a previous <a>InitiateLayerUpload</a> operation to
@@ -182,6 +200,11 @@ namespace Model
     /**
      * <p>The integer value of the first byte of the layer part.</p>
      */
+    inline bool PartFirstByteHasBeenSet() const { return m_partFirstByteHasBeenSet; }
+
+    /**
+     * <p>The integer value of the first byte of the layer part.</p>
+     */
     inline void SetPartFirstByte(long long value) { m_partFirstByteHasBeenSet = true; m_partFirstByte = value; }
 
     /**
@@ -198,6 +221,11 @@ namespace Model
     /**
      * <p>The integer value of the last byte of the layer part.</p>
      */
+    inline bool PartLastByteHasBeenSet() const { return m_partLastByteHasBeenSet; }
+
+    /**
+     * <p>The integer value of the last byte of the layer part.</p>
+     */
     inline void SetPartLastByte(long long value) { m_partLastByteHasBeenSet = true; m_partLastByte = value; }
 
     /**
@@ -210,6 +238,11 @@ namespace Model
      * <p>The base64-encoded layer part payload.</p>
      */
     inline const Aws::Utils::ByteBuffer& GetLayerPartBlob() const{ return m_layerPartBlob; }
+
+    /**
+     * <p>The base64-encoded layer part payload.</p>
+     */
+    inline bool LayerPartBlobHasBeenSet() const { return m_layerPartBlobHasBeenSet; }
 
     /**
      * <p>The base64-encoded layer part payload.</p>

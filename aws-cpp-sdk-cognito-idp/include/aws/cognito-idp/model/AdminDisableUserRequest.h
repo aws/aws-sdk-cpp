@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The user pool ID for the user pool where you want to disable the user.</p>
      */
+    inline bool UserPoolIdHasBeenSet() const { return m_userPoolIdHasBeenSet; }
+
+    /**
+     * <p>The user pool ID for the user pool where you want to disable the user.</p>
+     */
     inline void SetUserPoolId(const Aws::String& value) { m_userPoolIdHasBeenSet = true; m_userPoolId = value; }
 
     /**
@@ -88,6 +93,11 @@ namespace Model
      * <p>The user name of the user you wish to disable.</p>
      */
     inline const Aws::String& GetUsername() const{ return m_username; }
+
+    /**
+     * <p>The user name of the user you wish to disable.</p>
+     */
+    inline bool UsernameHasBeenSet() const { return m_usernameHasBeenSet; }
 
     /**
      * <p>The user name of the user you wish to disable.</p>

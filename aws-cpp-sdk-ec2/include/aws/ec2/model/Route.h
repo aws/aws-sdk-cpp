@@ -59,6 +59,11 @@ namespace Model
     /**
      * <p>The IPv4 CIDR block used for the destination match.</p>
      */
+    inline bool DestinationCidrBlockHasBeenSet() const { return m_destinationCidrBlockHasBeenSet; }
+
+    /**
+     * <p>The IPv4 CIDR block used for the destination match.</p>
+     */
     inline void SetDestinationCidrBlock(const Aws::String& value) { m_destinationCidrBlockHasBeenSet = true; m_destinationCidrBlock = value; }
 
     /**
@@ -91,6 +96,11 @@ namespace Model
      * <p>The IPv6 CIDR block used for the destination match.</p>
      */
     inline const Aws::String& GetDestinationIpv6CidrBlock() const{ return m_destinationIpv6CidrBlock; }
+
+    /**
+     * <p>The IPv6 CIDR block used for the destination match.</p>
+     */
+    inline bool DestinationIpv6CidrBlockHasBeenSet() const { return m_destinationIpv6CidrBlockHasBeenSet; }
 
     /**
      * <p>The IPv6 CIDR block used for the destination match.</p>
@@ -131,6 +141,11 @@ namespace Model
     /**
      * <p>The prefix of the AWS service.</p>
      */
+    inline bool DestinationPrefixListIdHasBeenSet() const { return m_destinationPrefixListIdHasBeenSet; }
+
+    /**
+     * <p>The prefix of the AWS service.</p>
+     */
     inline void SetDestinationPrefixListId(const Aws::String& value) { m_destinationPrefixListIdHasBeenSet = true; m_destinationPrefixListId = value; }
 
     /**
@@ -163,6 +178,11 @@ namespace Model
      * <p>The ID of the egress-only internet gateway.</p>
      */
     inline const Aws::String& GetEgressOnlyInternetGatewayId() const{ return m_egressOnlyInternetGatewayId; }
+
+    /**
+     * <p>The ID of the egress-only internet gateway.</p>
+     */
+    inline bool EgressOnlyInternetGatewayIdHasBeenSet() const { return m_egressOnlyInternetGatewayIdHasBeenSet; }
 
     /**
      * <p>The ID of the egress-only internet gateway.</p>
@@ -203,6 +223,11 @@ namespace Model
     /**
      * <p>The ID of a gateway attached to your VPC.</p>
      */
+    inline bool GatewayIdHasBeenSet() const { return m_gatewayIdHasBeenSet; }
+
+    /**
+     * <p>The ID of a gateway attached to your VPC.</p>
+     */
     inline void SetGatewayId(const Aws::String& value) { m_gatewayIdHasBeenSet = true; m_gatewayId = value; }
 
     /**
@@ -235,6 +260,11 @@ namespace Model
      * <p>The ID of a NAT instance in your VPC.</p>
      */
     inline const Aws::String& GetInstanceId() const{ return m_instanceId; }
+
+    /**
+     * <p>The ID of a NAT instance in your VPC.</p>
+     */
+    inline bool InstanceIdHasBeenSet() const { return m_instanceIdHasBeenSet; }
 
     /**
      * <p>The ID of a NAT instance in your VPC.</p>
@@ -275,6 +305,11 @@ namespace Model
     /**
      * <p>The AWS account ID of the owner of the instance.</p>
      */
+    inline bool InstanceOwnerIdHasBeenSet() const { return m_instanceOwnerIdHasBeenSet; }
+
+    /**
+     * <p>The AWS account ID of the owner of the instance.</p>
+     */
     inline void SetInstanceOwnerId(const Aws::String& value) { m_instanceOwnerIdHasBeenSet = true; m_instanceOwnerId = value; }
 
     /**
@@ -307,6 +342,11 @@ namespace Model
      * <p>The ID of a NAT gateway.</p>
      */
     inline const Aws::String& GetNatGatewayId() const{ return m_natGatewayId; }
+
+    /**
+     * <p>The ID of a NAT gateway.</p>
+     */
+    inline bool NatGatewayIdHasBeenSet() const { return m_natGatewayIdHasBeenSet; }
 
     /**
      * <p>The ID of a NAT gateway.</p>
@@ -347,6 +387,11 @@ namespace Model
     /**
      * <p>The ID of a transit gateway.</p>
      */
+    inline bool TransitGatewayIdHasBeenSet() const { return m_transitGatewayIdHasBeenSet; }
+
+    /**
+     * <p>The ID of a transit gateway.</p>
+     */
     inline void SetTransitGatewayId(const Aws::String& value) { m_transitGatewayIdHasBeenSet = true; m_transitGatewayId = value; }
 
     /**
@@ -379,6 +424,11 @@ namespace Model
      * <p>The ID of the network interface.</p>
      */
     inline const Aws::String& GetNetworkInterfaceId() const{ return m_networkInterfaceId; }
+
+    /**
+     * <p>The ID of the network interface.</p>
+     */
+    inline bool NetworkInterfaceIdHasBeenSet() const { return m_networkInterfaceIdHasBeenSet; }
 
     /**
      * <p>The ID of the network interface.</p>
@@ -420,6 +470,16 @@ namespace Model
      * propagation.</p> </li> </ul>
      */
     inline const RouteOrigin& GetOrigin() const{ return m_origin; }
+
+    /**
+     * <p>Describes how the route was created.</p> <ul> <li> <p>
+     * <code>CreateRouteTable</code> - The route was automatically created when the
+     * route table was created.</p> </li> <li> <p> <code>CreateRoute</code> - The route
+     * was manually added to the route table.</p> </li> <li> <p>
+     * <code>EnableVgwRoutePropagation</code> - The route was propagated by route
+     * propagation.</p> </li> </ul>
+     */
+    inline bool OriginHasBeenSet() const { return m_originHasBeenSet; }
 
     /**
      * <p>Describes how the route was created.</p> <ul> <li> <p>
@@ -474,6 +534,13 @@ namespace Model
      * route's target isn't available (for example, the specified gateway isn't
      * attached to the VPC, or the specified NAT instance has been terminated).</p>
      */
+    inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
+
+    /**
+     * <p>The state of the route. The <code>blackhole</code> state indicates that the
+     * route's target isn't available (for example, the specified gateway isn't
+     * attached to the VPC, or the specified NAT instance has been terminated).</p>
+     */
     inline void SetState(const RouteState& value) { m_stateHasBeenSet = true; m_state = value; }
 
     /**
@@ -502,6 +569,11 @@ namespace Model
      * <p>The ID of a VPC peering connection.</p>
      */
     inline const Aws::String& GetVpcPeeringConnectionId() const{ return m_vpcPeeringConnectionId; }
+
+    /**
+     * <p>The ID of a VPC peering connection.</p>
+     */
+    inline bool VpcPeeringConnectionIdHasBeenSet() const { return m_vpcPeeringConnectionIdHasBeenSet; }
 
     /**
      * <p>The ID of a VPC peering connection.</p>

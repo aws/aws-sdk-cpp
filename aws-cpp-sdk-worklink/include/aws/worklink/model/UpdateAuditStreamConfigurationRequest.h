@@ -50,6 +50,11 @@ namespace Model
     /**
      * <p>The ARN of the fleet.</p>
      */
+    inline bool FleetArnHasBeenSet() const { return m_fleetArnHasBeenSet; }
+
+    /**
+     * <p>The ARN of the fleet.</p>
+     */
     inline void SetFleetArn(const Aws::String& value) { m_fleetArnHasBeenSet = true; m_fleetArn = value; }
 
     /**
@@ -82,6 +87,11 @@ namespace Model
      * <p>The ARN of the Amazon Kinesis data stream that receives the audit events.</p>
      */
     inline const Aws::String& GetAuditStreamArn() const{ return m_auditStreamArn; }
+
+    /**
+     * <p>The ARN of the Amazon Kinesis data stream that receives the audit events.</p>
+     */
+    inline bool AuditStreamArnHasBeenSet() const { return m_auditStreamArnHasBeenSet; }
 
     /**
      * <p>The ARN of the Amazon Kinesis data stream that receives the audit events.</p>

@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The ID of the AWS account associated with the repository.</p>
      */
+    inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the AWS account associated with the repository.</p>
+     */
     inline void SetAccountId(const Aws::String& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
 
     /**
@@ -88,6 +93,11 @@ namespace Model
      * <p>The ID of the repository.</p>
      */
     inline const Aws::String& GetRepositoryId() const{ return m_repositoryId; }
+
+    /**
+     * <p>The ID of the repository.</p>
+     */
+    inline bool RepositoryIdHasBeenSet() const { return m_repositoryIdHasBeenSet; }
 
     /**
      * <p>The ID of the repository.</p>
@@ -128,6 +138,11 @@ namespace Model
     /**
      * <p>The repository's name.</p>
      */
+    inline bool RepositoryNameHasBeenSet() const { return m_repositoryNameHasBeenSet; }
+
+    /**
+     * <p>The repository's name.</p>
+     */
     inline void SetRepositoryName(const Aws::String& value) { m_repositoryNameHasBeenSet = true; m_repositoryName = value; }
 
     /**
@@ -160,6 +175,11 @@ namespace Model
      * <p>A comment or description about the repository.</p>
      */
     inline const Aws::String& GetRepositoryDescription() const{ return m_repositoryDescription; }
+
+    /**
+     * <p>A comment or description about the repository.</p>
+     */
+    inline bool RepositoryDescriptionHasBeenSet() const { return m_repositoryDescriptionHasBeenSet; }
 
     /**
      * <p>A comment or description about the repository.</p>
@@ -200,6 +220,11 @@ namespace Model
     /**
      * <p>The repository's default branch name.</p>
      */
+    inline bool DefaultBranchHasBeenSet() const { return m_defaultBranchHasBeenSet; }
+
+    /**
+     * <p>The repository's default branch name.</p>
+     */
     inline void SetDefaultBranch(const Aws::String& value) { m_defaultBranchHasBeenSet = true; m_defaultBranch = value; }
 
     /**
@@ -236,6 +261,11 @@ namespace Model
     /**
      * <p>The date and time the repository was last modified, in timestamp format.</p>
      */
+    inline bool LastModifiedDateHasBeenSet() const { return m_lastModifiedDateHasBeenSet; }
+
+    /**
+     * <p>The date and time the repository was last modified, in timestamp format.</p>
+     */
     inline void SetLastModifiedDate(const Aws::Utils::DateTime& value) { m_lastModifiedDateHasBeenSet = true; m_lastModifiedDate = value; }
 
     /**
@@ -262,6 +292,11 @@ namespace Model
     /**
      * <p>The date and time the repository was created, in timestamp format.</p>
      */
+    inline bool CreationDateHasBeenSet() const { return m_creationDateHasBeenSet; }
+
+    /**
+     * <p>The date and time the repository was created, in timestamp format.</p>
+     */
     inline void SetCreationDate(const Aws::Utils::DateTime& value) { m_creationDateHasBeenSet = true; m_creationDate = value; }
 
     /**
@@ -284,6 +319,11 @@ namespace Model
      * <p>The URL to use for cloning the repository over HTTPS.</p>
      */
     inline const Aws::String& GetCloneUrlHttp() const{ return m_cloneUrlHttp; }
+
+    /**
+     * <p>The URL to use for cloning the repository over HTTPS.</p>
+     */
+    inline bool CloneUrlHttpHasBeenSet() const { return m_cloneUrlHttpHasBeenSet; }
 
     /**
      * <p>The URL to use for cloning the repository over HTTPS.</p>
@@ -324,6 +364,11 @@ namespace Model
     /**
      * <p>The URL to use for cloning the repository over SSH.</p>
      */
+    inline bool CloneUrlSshHasBeenSet() const { return m_cloneUrlSshHasBeenSet; }
+
+    /**
+     * <p>The URL to use for cloning the repository over SSH.</p>
+     */
     inline void SetCloneUrlSsh(const Aws::String& value) { m_cloneUrlSshHasBeenSet = true; m_cloneUrlSsh = value; }
 
     /**
@@ -356,6 +401,11 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the repository.</p>
      */
     inline const Aws::String& GetArn() const{ return m_arn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the repository.</p>
+     */
+    inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the repository.</p>

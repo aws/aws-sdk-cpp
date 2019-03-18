@@ -62,6 +62,11 @@ namespace Model
     /**
      * <p>The ID of the resolver endpoint.</p>
      */
+    inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
+
+    /**
+     * <p>The ID of the resolver endpoint.</p>
+     */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
     /**
@@ -96,6 +101,13 @@ namespace Model
      * without the risk of executing the operation twice.</p>
      */
     inline const Aws::String& GetCreatorRequestId() const{ return m_creatorRequestId; }
+
+    /**
+     * <p>A unique string that identifies the request that created the resolver
+     * endpoint. The <code>CreatorRequestId</code> allows failed requests to be retried
+     * without the risk of executing the operation twice.</p>
+     */
+    inline bool CreatorRequestIdHasBeenSet() const { return m_creatorRequestIdHasBeenSet; }
 
     /**
      * <p>A unique string that identifies the request that created the resolver
@@ -148,6 +160,11 @@ namespace Model
     /**
      * <p>The ARN (Amazon Resource Name) for the resolver endpoint.</p>
      */
+    inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
+
+    /**
+     * <p>The ARN (Amazon Resource Name) for the resolver endpoint.</p>
+     */
     inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
 
     /**
@@ -181,6 +198,12 @@ namespace Model
      * <a>CreateResolverEndpoint</a> request.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
+
+    /**
+     * <p>The name that you assigned to the resolver endpoint when you submitted a
+     * <a>CreateResolverEndpoint</a> request.</p>
+     */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
      * <p>The name that you assigned to the resolver endpoint when you submitted a
@@ -224,6 +247,12 @@ namespace Model
      * security group must include one or more inbound resolver rules.</p>
      */
     inline const Aws::Vector<Aws::String>& GetSecurityGroupIds() const{ return m_securityGroupIds; }
+
+    /**
+     * <p>The ID of one or more security groups that control access to this VPC. The
+     * security group must include one or more inbound resolver rules.</p>
+     */
+    inline bool SecurityGroupIdsHasBeenSet() const { return m_securityGroupIdsHasBeenSet; }
 
     /**
      * <p>The ID of one or more security groups that control access to this VPC. The
@@ -282,6 +311,14 @@ namespace Model
      * from your network or another VPC</p> </li> <li> <p> <code>OUTBOUND</code>:
      * allows DNS queries from your VPC to your network or another VPC</p> </li> </ul>
      */
+    inline bool DirectionHasBeenSet() const { return m_directionHasBeenSet; }
+
+    /**
+     * <p>Indicates whether the resolver endpoint allows inbound or outbound DNS
+     * queries:</p> <ul> <li> <p> <code>INBOUND</code>: allows DNS queries to your VPC
+     * from your network or another VPC</p> </li> <li> <p> <code>OUTBOUND</code>:
+     * allows DNS queries from your VPC to your network or another VPC</p> </li> </ul>
+     */
     inline void SetDirection(const ResolverEndpointDirection& value) { m_directionHasBeenSet = true; m_direction = value; }
 
     /**
@@ -319,6 +356,12 @@ namespace Model
      * <p>The number of IP addresses that the resolver endpoint can use for DNS
      * queries.</p>
      */
+    inline bool IpAddressCountHasBeenSet() const { return m_ipAddressCountHasBeenSet; }
+
+    /**
+     * <p>The number of IP addresses that the resolver endpoint can use for DNS
+     * queries.</p>
+     */
     inline void SetIpAddressCount(int value) { m_ipAddressCountHasBeenSet = true; m_ipAddressCount = value; }
 
     /**
@@ -332,6 +375,11 @@ namespace Model
      * <p>The ID of the VPC that you want to create the resolver endpoint in.</p>
      */
     inline const Aws::String& GetHostVPCId() const{ return m_hostVPCId; }
+
+    /**
+     * <p>The ID of the VPC that you want to create the resolver endpoint in.</p>
+     */
+    inline bool HostVPCIdHasBeenSet() const { return m_hostVPCIdHasBeenSet; }
 
     /**
      * <p>The ID of the VPC that you want to create the resolver endpoint in.</p>
@@ -372,6 +420,11 @@ namespace Model
     /**
      * <p>A code that specifies the current status of the resolver endpoint.</p>
      */
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
+
+    /**
+     * <p>A code that specifies the current status of the resolver endpoint.</p>
+     */
     inline void SetStatus(const ResolverEndpointStatus& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
@@ -394,6 +447,11 @@ namespace Model
      * <p>A detailed description of the status of the resolver endpoint.</p>
      */
     inline const Aws::String& GetStatusMessage() const{ return m_statusMessage; }
+
+    /**
+     * <p>A detailed description of the status of the resolver endpoint.</p>
+     */
+    inline bool StatusMessageHasBeenSet() const { return m_statusMessageHasBeenSet; }
 
     /**
      * <p>A detailed description of the status of the resolver endpoint.</p>
@@ -431,6 +489,12 @@ namespace Model
      * Coordinated Universal Time (UTC).</p>
      */
     inline const Aws::String& GetCreationTime() const{ return m_creationTime; }
+
+    /**
+     * <p>The date and time that the endpoint was created, in Unix time format and
+     * Coordinated Universal Time (UTC).</p>
+     */
+    inline bool CreationTimeHasBeenSet() const { return m_creationTimeHasBeenSet; }
 
     /**
      * <p>The date and time that the endpoint was created, in Unix time format and
@@ -474,6 +538,12 @@ namespace Model
      * and Coordinated Universal Time (UTC).</p>
      */
     inline const Aws::String& GetModificationTime() const{ return m_modificationTime; }
+
+    /**
+     * <p>The date and time that the endpoint was last modified, in Unix time format
+     * and Coordinated Universal Time (UTC).</p>
+     */
+    inline bool ModificationTimeHasBeenSet() const { return m_modificationTimeHasBeenSet; }
 
     /**
      * <p>The date and time that the endpoint was last modified, in Unix time format

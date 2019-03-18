@@ -55,6 +55,12 @@ namespace Model
      * <p>The ID of the Data Catalog in which to create the <code>Table</code>. If none
      * is supplied, the AWS account ID is used by default.</p>
      */
+    inline bool CatalogIdHasBeenSet() const { return m_catalogIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the Data Catalog in which to create the <code>Table</code>. If none
+     * is supplied, the AWS account ID is used by default.</p>
+     */
     inline void SetCatalogId(const Aws::String& value) { m_catalogIdHasBeenSet = true; m_catalogId = value; }
 
     /**
@@ -98,6 +104,12 @@ namespace Model
      * <p>The catalog database in which to create the new table. For Hive
      * compatibility, this name is entirely lowercase.</p>
      */
+    inline bool DatabaseNameHasBeenSet() const { return m_databaseNameHasBeenSet; }
+
+    /**
+     * <p>The catalog database in which to create the new table. For Hive
+     * compatibility, this name is entirely lowercase.</p>
+     */
     inline void SetDatabaseName(const Aws::String& value) { m_databaseNameHasBeenSet = true; m_databaseName = value; }
 
     /**
@@ -136,6 +148,12 @@ namespace Model
      * in the catalog.</p>
      */
     inline const TableInput& GetTableInput() const{ return m_tableInput; }
+
+    /**
+     * <p>The <code>TableInput</code> object that defines the metadata table to create
+     * in the catalog.</p>
+     */
+    inline bool TableInputHasBeenSet() const { return m_tableInputHasBeenSet; }
 
     /**
      * <p>The <code>TableInput</code> object that defines the metadata table to create

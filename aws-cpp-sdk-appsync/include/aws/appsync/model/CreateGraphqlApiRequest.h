@@ -54,6 +54,11 @@ namespace Model
     /**
      * <p>A user-supplied name for the <code>GraphqlApi</code>.</p>
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>A user-supplied name for the <code>GraphqlApi</code>.</p>
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
@@ -90,6 +95,11 @@ namespace Model
     /**
      * <p>The Amazon CloudWatch Logs configuration.</p>
      */
+    inline bool LogConfigHasBeenSet() const { return m_logConfigHasBeenSet; }
+
+    /**
+     * <p>The Amazon CloudWatch Logs configuration.</p>
+     */
     inline void SetLogConfig(const LogConfig& value) { m_logConfigHasBeenSet = true; m_logConfig = value; }
 
     /**
@@ -112,6 +122,11 @@ namespace Model
      * <p>The authentication type: API key, AWS IAM, or Amazon Cognito user pools.</p>
      */
     inline const AuthenticationType& GetAuthenticationType() const{ return m_authenticationType; }
+
+    /**
+     * <p>The authentication type: API key, AWS IAM, or Amazon Cognito user pools.</p>
+     */
+    inline bool AuthenticationTypeHasBeenSet() const { return m_authenticationTypeHasBeenSet; }
 
     /**
      * <p>The authentication type: API key, AWS IAM, or Amazon Cognito user pools.</p>
@@ -142,6 +157,11 @@ namespace Model
     /**
      * <p>The Amazon Cognito user pool configuration.</p>
      */
+    inline bool UserPoolConfigHasBeenSet() const { return m_userPoolConfigHasBeenSet; }
+
+    /**
+     * <p>The Amazon Cognito user pool configuration.</p>
+     */
     inline void SetUserPoolConfig(const UserPoolConfig& value) { m_userPoolConfigHasBeenSet = true; m_userPoolConfig = value; }
 
     /**
@@ -164,6 +184,11 @@ namespace Model
      * <p>The OpenID Connect configuration.</p>
      */
     inline const OpenIDConnectConfig& GetOpenIDConnectConfig() const{ return m_openIDConnectConfig; }
+
+    /**
+     * <p>The OpenID Connect configuration.</p>
+     */
+    inline bool OpenIDConnectConfigHasBeenSet() const { return m_openIDConnectConfigHasBeenSet; }
 
     /**
      * <p>The OpenID Connect configuration.</p>

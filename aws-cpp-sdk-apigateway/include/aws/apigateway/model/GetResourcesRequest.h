@@ -61,6 +61,11 @@ namespace Model
     /**
      * <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
      */
+    inline bool RestApiIdHasBeenSet() const { return m_restApiIdHasBeenSet; }
+
+    /**
+     * <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
+     */
     inline void SetRestApiId(const Aws::String& value) { m_restApiIdHasBeenSet = true; m_restApiId = value; }
 
     /**
@@ -93,6 +98,11 @@ namespace Model
      * <p>The current pagination position in the paged result set.</p>
      */
     inline const Aws::String& GetPosition() const{ return m_position; }
+
+    /**
+     * <p>The current pagination position in the paged result set.</p>
+     */
+    inline bool PositionHasBeenSet() const { return m_positionHasBeenSet; }
 
     /**
      * <p>The current pagination position in the paged result set.</p>
@@ -135,6 +145,12 @@ namespace Model
      * <p>The maximum number of returned results per page. The default value is 25 and
      * the maximum value is 500.</p>
      */
+    inline bool LimitHasBeenSet() const { return m_limitHasBeenSet; }
+
+    /**
+     * <p>The maximum number of returned results per page. The default value is 25 and
+     * the maximum value is 500.</p>
+     */
     inline void SetLimit(int value) { m_limitHasBeenSet = true; m_limit = value; }
 
     /**
@@ -154,6 +170,17 @@ namespace Model
      * /restapis/{restapi_id}/resources?embed=methods</code>.</p>
      */
     inline const Aws::Vector<Aws::String>& GetEmbed() const{ return m_embed; }
+
+    /**
+     * <p>A query parameter used to retrieve the specified resources embedded in the
+     * returned <a>Resources</a> resource in the response. This <code>embed</code>
+     * parameter value is a list of comma-separated strings. Currently, the request
+     * supports only retrieval of the embedded <a>Method</a> resources this way. The
+     * query parameter value must be a single-valued list and contain the
+     * <code>"methods"</code> string. For example, <code>GET
+     * /restapis/{restapi_id}/resources?embed=methods</code>.</p>
+     */
+    inline bool EmbedHasBeenSet() const { return m_embedHasBeenSet; }
 
     /**
      * <p>A query parameter used to retrieve the specified resources embedded in the

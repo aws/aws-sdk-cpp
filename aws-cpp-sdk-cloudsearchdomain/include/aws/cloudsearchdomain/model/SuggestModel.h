@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p>The query string specified in the suggest request.</p>
      */
+    inline bool QueryHasBeenSet() const { return m_queryHasBeenSet; }
+
+    /**
+     * <p>The query string specified in the suggest request.</p>
+     */
     inline void SetQuery(const Aws::String& value) { m_queryHasBeenSet = true; m_query = value; }
 
     /**
@@ -94,6 +99,11 @@ namespace Model
     /**
      * <p>The number of documents that were found to match the query string.</p>
      */
+    inline bool FoundHasBeenSet() const { return m_foundHasBeenSet; }
+
+    /**
+     * <p>The number of documents that were found to match the query string.</p>
+     */
     inline void SetFound(long long value) { m_foundHasBeenSet = true; m_found = value; }
 
     /**
@@ -106,6 +116,11 @@ namespace Model
      * <p>The documents that match the query string.</p>
      */
     inline const Aws::Vector<SuggestionMatch>& GetSuggestions() const{ return m_suggestions; }
+
+    /**
+     * <p>The documents that match the query string.</p>
+     */
+    inline bool SuggestionsHasBeenSet() const { return m_suggestionsHasBeenSet; }
 
     /**
      * <p>The documents that match the query string.</p>

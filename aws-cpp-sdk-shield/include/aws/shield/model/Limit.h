@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The type of protection.</p>
      */
+    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
+
+    /**
+     * <p>The type of protection.</p>
+     */
     inline void SetType(const Aws::String& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
@@ -89,6 +94,12 @@ namespace Model
      * <code>Type</code>.</p>
      */
     inline long long GetMax() const{ return m_max; }
+
+    /**
+     * <p>The maximum number of protections that can be created for the specified
+     * <code>Type</code>.</p>
+     */
+    inline bool MaxHasBeenSet() const { return m_maxHasBeenSet; }
 
     /**
      * <p>The maximum number of protections that can be created for the specified

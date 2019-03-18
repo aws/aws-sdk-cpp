@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The <code>S3Source</code> object.</p>
      */
+    inline bool S3HasBeenSet() const { return m_s3HasBeenSet; }
+
+    /**
+     * <p>The <code>S3Source</code> object.</p>
+     */
     inline void SetS3(const S3Source& value) { m_s3HasBeenSet = true; m_s3 = value; }
 
     /**

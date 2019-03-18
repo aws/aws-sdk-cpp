@@ -60,6 +60,13 @@ namespace Model
      * call. It can be used to return the next set of deployment configurations in the
      * list. </p>
      */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
+
+    /**
+     * <p>An identifier returned from the previous <code>ListDeploymentConfigs</code>
+     * call. It can be used to return the next set of deployment configurations in the
+     * list. </p>
+     */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
     /**

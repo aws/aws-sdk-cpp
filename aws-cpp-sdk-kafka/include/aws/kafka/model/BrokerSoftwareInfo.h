@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the configuration used for the cluster.</p>
      */
+    inline bool ConfigurationArnHasBeenSet() const { return m_configurationArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the configuration used for the cluster.</p>
+     */
     inline void SetConfigurationArn(const Aws::String& value) { m_configurationArnHasBeenSet = true; m_configurationArn = value; }
 
     /**
@@ -92,6 +97,11 @@ namespace Model
     /**
      * <p>The revision of the configuration to use.</p>
      */
+    inline bool ConfigurationRevisionHasBeenSet() const { return m_configurationRevisionHasBeenSet; }
+
+    /**
+     * <p>The revision of the configuration to use.</p>
+     */
     inline void SetConfigurationRevision(const Aws::String& value) { m_configurationRevisionHasBeenSet = true; m_configurationRevision = value; }
 
     /**
@@ -124,6 +134,11 @@ namespace Model
      * <p>The version of Apache Kafka.</p>
      */
     inline const Aws::String& GetKafkaVersion() const{ return m_kafkaVersion; }
+
+    /**
+     * <p>The version of Apache Kafka.</p>
+     */
+    inline bool KafkaVersionHasBeenSet() const { return m_kafkaVersionHasBeenSet; }
 
     /**
      * <p>The version of Apache Kafka.</p>

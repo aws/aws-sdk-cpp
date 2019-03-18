@@ -67,6 +67,17 @@ namespace Model
      * with no spaces. You can also include any of the following characters:
      * _+=,.@-</p>
      */
+    inline bool UserNameHasBeenSet() const { return m_userNameHasBeenSet; }
+
+    /**
+     * <p>The name of the IAM user associated with the service-specific credential. If
+     * you do not specify this value, then the operation assumes the user whose
+     * credentials are used to call the operation.</p> <p>This parameter allows
+     * (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a
+     * string of characters consisting of upper and lowercase alphanumeric characters
+     * with no spaces. You can also include any of the following characters:
+     * _+=,.@-</p>
+     */
     inline void SetUserName(const Aws::String& value) { m_userNameHasBeenSet = true; m_userName = value; }
 
     /**
@@ -139,6 +150,14 @@ namespace Model
      * pattern</a>) a string of characters that can consist of any upper or lowercased
      * letter or digit.</p>
      */
+    inline bool ServiceSpecificCredentialIdHasBeenSet() const { return m_serviceSpecificCredentialIdHasBeenSet; }
+
+    /**
+     * <p>The unique identifier of the service-specific credential.</p> <p>This
+     * parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex
+     * pattern</a>) a string of characters that can consist of any upper or lowercased
+     * letter or digit.</p>
+     */
     inline void SetServiceSpecificCredentialId(const Aws::String& value) { m_serviceSpecificCredentialIdHasBeenSet = true; m_serviceSpecificCredentialId = value; }
 
     /**
@@ -186,6 +205,11 @@ namespace Model
      * <p>The status to be assigned to the service-specific credential.</p>
      */
     inline const StatusType& GetStatus() const{ return m_status; }
+
+    /**
+     * <p>The status to be assigned to the service-specific credential.</p>
+     */
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
     /**
      * <p>The status to be assigned to the service-specific credential.</p>

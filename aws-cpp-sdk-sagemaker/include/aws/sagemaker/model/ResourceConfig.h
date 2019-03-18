@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The ML compute instance type. </p>
      */
+    inline bool InstanceTypeHasBeenSet() const { return m_instanceTypeHasBeenSet; }
+
+    /**
+     * <p>The ML compute instance type. </p>
+     */
     inline void SetInstanceType(const TrainingInstanceType& value) { m_instanceTypeHasBeenSet = true; m_instanceType = value; }
 
     /**
@@ -85,6 +90,12 @@ namespace Model
      * <p>The number of ML compute instances to use. For distributed training, provide
      * a value greater than 1. </p>
      */
+    inline bool InstanceCountHasBeenSet() const { return m_instanceCountHasBeenSet; }
+
+    /**
+     * <p>The number of ML compute instances to use. For distributed training, provide
+     * a value greater than 1. </p>
+     */
     inline void SetInstanceCount(int value) { m_instanceCountHasBeenSet = true; m_instanceCount = value; }
 
     /**
@@ -105,6 +116,18 @@ namespace Model
      * </p> </note>
      */
     inline int GetVolumeSizeInGB() const{ return m_volumeSizeInGB; }
+
+    /**
+     * <p>The size of the ML storage volume that you want to provision. </p> <p>ML
+     * storage volumes store model artifacts and incremental states. Training
+     * algorithms might also use the ML storage volume for scratch space. If you want
+     * to store the training data in the ML storage volume, choose <code>File</code> as
+     * the <code>TrainingInputMode</code> in the algorithm specification. </p> <p>You
+     * must specify sufficient ML storage for your scenario. </p> <note> <p> Amazon
+     * SageMaker supports only the General Purpose SSD (gp2) ML storage volume type.
+     * </p> </note>
+     */
+    inline bool VolumeSizeInGBHasBeenSet() const { return m_volumeSizeInGBHasBeenSet; }
 
     /**
      * <p>The size of the ML storage volume that you want to provision. </p> <p>ML
@@ -142,6 +165,18 @@ namespace Model
      * </p> </li> </ul>
      */
     inline const Aws::String& GetVolumeKmsKeyId() const{ return m_volumeKmsKeyId; }
+
+    /**
+     * <p>The AWS Key Management Service (AWS KMS) key that Amazon SageMaker uses to
+     * encrypt data on the storage volume attached to the ML compute instance(s) that
+     * run the training job. The <code>VolumeKmsKeyId</code> can be any of the
+     * following formats:</p> <ul> <li> <p>// KMS Key ID</p> <p>
+     * <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li> <li> <p>// Amazon
+     * Resource Name (ARN) of a KMS Key</p> <p>
+     * <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>
+     * </p> </li> </ul>
+     */
+    inline bool VolumeKmsKeyIdHasBeenSet() const { return m_volumeKmsKeyIdHasBeenSet; }
 
     /**
      * <p>The AWS Key Management Service (AWS KMS) key that Amazon SageMaker uses to

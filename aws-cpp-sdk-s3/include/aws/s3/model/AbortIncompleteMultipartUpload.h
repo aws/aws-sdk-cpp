@@ -57,6 +57,12 @@ namespace Model
      * <p>Indicates the number of days that must pass since initiation for Lifecycle to
      * abort an Incomplete Multipart Upload.</p>
      */
+    inline bool DaysAfterInitiationHasBeenSet() const { return m_daysAfterInitiationHasBeenSet; }
+
+    /**
+     * <p>Indicates the number of days that must pass since initiation for Lifecycle to
+     * abort an Incomplete Multipart Upload.</p>
+     */
     inline void SetDaysAfterInitiation(int value) { m_daysAfterInitiationHasBeenSet = true; m_daysAfterInitiation = value; }
 
     /**

@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The ARN of the principal (IAM user, role, or group).</p>
      */
+    inline bool PrincipalARNHasBeenSet() const { return m_principalARNHasBeenSet; }
+
+    /**
+     * <p>The ARN of the principal (IAM user, role, or group).</p>
+     */
     inline void SetPrincipalARN(const Aws::String& value) { m_principalARNHasBeenSet = true; m_principalARN = value; }
 
     /**
@@ -88,6 +93,11 @@ namespace Model
      * <p>The principal type. The supported value is <code>IAM</code>.</p>
      */
     inline const PrincipalType& GetPrincipalType() const{ return m_principalType; }
+
+    /**
+     * <p>The principal type. The supported value is <code>IAM</code>.</p>
+     */
+    inline bool PrincipalTypeHasBeenSet() const { return m_principalTypeHasBeenSet; }
 
     /**
      * <p>The principal type. The supported value is <code>IAM</code>.</p>

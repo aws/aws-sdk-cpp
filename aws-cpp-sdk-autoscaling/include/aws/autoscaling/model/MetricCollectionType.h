@@ -71,6 +71,18 @@ namespace Model
      * <code>GroupTerminatingInstances</code> </p> </li> <li> <p>
      * <code>GroupTotalInstances</code> </p> </li> </ul>
      */
+    inline bool MetricHasBeenSet() const { return m_metricHasBeenSet; }
+
+    /**
+     * <p>One of the following metrics:</p> <ul> <li> <p> <code>GroupMinSize</code>
+     * </p> </li> <li> <p> <code>GroupMaxSize</code> </p> </li> <li> <p>
+     * <code>GroupDesiredCapacity</code> </p> </li> <li> <p>
+     * <code>GroupInServiceInstances</code> </p> </li> <li> <p>
+     * <code>GroupPendingInstances</code> </p> </li> <li> <p>
+     * <code>GroupStandbyInstances</code> </p> </li> <li> <p>
+     * <code>GroupTerminatingInstances</code> </p> </li> <li> <p>
+     * <code>GroupTotalInstances</code> </p> </li> </ul>
+     */
     inline void SetMetric(const Aws::String& value) { m_metricHasBeenSet = true; m_metric = value; }
 
     /**

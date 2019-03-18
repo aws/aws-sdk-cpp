@@ -60,6 +60,12 @@ namespace Model
      * <p>The ID of the instance to bundle.</p> <p>Type: String</p> <p>Default:
      * None</p> <p>Required: Yes</p>
      */
+    inline bool InstanceIdHasBeenSet() const { return m_instanceIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the instance to bundle.</p> <p>Type: String</p> <p>Default:
+     * None</p> <p>Required: Yes</p>
+     */
     inline void SetInstanceId(const Aws::String& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
 
     /**
@@ -105,6 +111,13 @@ namespace Model
      * already own or a new bucket that Amazon EC2 creates on your behalf. If you
      * specify a bucket that belongs to someone else, Amazon EC2 returns an error.</p>
      */
+    inline bool StorageHasBeenSet() const { return m_storageHasBeenSet; }
+
+    /**
+     * <p>The bucket in which to store the AMI. You can specify a bucket that you
+     * already own or a new bucket that Amazon EC2 creates on your behalf. If you
+     * specify a bucket that belongs to someone else, Amazon EC2 returns an error.</p>
+     */
     inline void SetStorage(const Storage& value) { m_storageHasBeenSet = true; m_storage = value; }
 
     /**
@@ -136,6 +149,14 @@ namespace Model
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
     inline bool GetDryRun() const{ return m_dryRun; }
+
+    /**
+     * <p>Checks whether you have the required permissions for the action, without
+     * actually making the request, and provides an error response. If you have the
+     * required permissions, the error response is <code>DryRunOperation</code>.
+     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+     */
+    inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
 
     /**
      * <p>Checks whether you have the required permissions for the action, without

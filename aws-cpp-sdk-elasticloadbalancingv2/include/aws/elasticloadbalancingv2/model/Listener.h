@@ -61,6 +61,11 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the listener.</p>
      */
+    inline bool ListenerArnHasBeenSet() const { return m_listenerArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the listener.</p>
+     */
     inline void SetListenerArn(const Aws::String& value) { m_listenerArnHasBeenSet = true; m_listenerArn = value; }
 
     /**
@@ -93,6 +98,11 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the load balancer.</p>
      */
     inline const Aws::String& GetLoadBalancerArn() const{ return m_loadBalancerArn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the load balancer.</p>
+     */
+    inline bool LoadBalancerArnHasBeenSet() const { return m_loadBalancerArnHasBeenSet; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the load balancer.</p>
@@ -133,6 +143,11 @@ namespace Model
     /**
      * <p>The port on which the load balancer is listening.</p>
      */
+    inline bool PortHasBeenSet() const { return m_portHasBeenSet; }
+
+    /**
+     * <p>The port on which the load balancer is listening.</p>
+     */
     inline void SetPort(int value) { m_portHasBeenSet = true; m_port = value; }
 
     /**
@@ -145,6 +160,11 @@ namespace Model
      * <p>The protocol for connections from clients to the load balancer.</p>
      */
     inline const ProtocolEnum& GetProtocol() const{ return m_protocol; }
+
+    /**
+     * <p>The protocol for connections from clients to the load balancer.</p>
+     */
+    inline bool ProtocolHasBeenSet() const { return m_protocolHasBeenSet; }
 
     /**
      * <p>The protocol for connections from clients to the load balancer.</p>
@@ -172,6 +192,12 @@ namespace Model
      * HTTPS or TLS.</p>
      */
     inline const Aws::Vector<Certificate>& GetCertificates() const{ return m_certificates; }
+
+    /**
+     * <p>The SSL server certificate. You must provide a certificate if the protocol is
+     * HTTPS or TLS.</p>
+     */
+    inline bool CertificatesHasBeenSet() const { return m_certificatesHasBeenSet; }
 
     /**
      * <p>The SSL server certificate. You must provide a certificate if the protocol is
@@ -220,6 +246,12 @@ namespace Model
      * <p>The security policy that defines which ciphers and protocols are supported.
      * The default is the current predefined security policy.</p>
      */
+    inline bool SslPolicyHasBeenSet() const { return m_sslPolicyHasBeenSet; }
+
+    /**
+     * <p>The security policy that defines which ciphers and protocols are supported.
+     * The default is the current predefined security policy.</p>
+     */
     inline void SetSslPolicy(const Aws::String& value) { m_sslPolicyHasBeenSet = true; m_sslPolicy = value; }
 
     /**
@@ -257,6 +289,11 @@ namespace Model
      * <p>The default actions for the listener.</p>
      */
     inline const Aws::Vector<Action>& GetDefaultActions() const{ return m_defaultActions; }
+
+    /**
+     * <p>The default actions for the listener.</p>
+     */
+    inline bool DefaultActionsHasBeenSet() const { return m_defaultActionsHasBeenSet; }
 
     /**
      * <p>The default actions for the listener.</p>

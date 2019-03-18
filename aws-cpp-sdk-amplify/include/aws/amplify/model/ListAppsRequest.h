@@ -62,6 +62,12 @@ namespace Model
      * <p> Pagination token. If non-null pagination token is returned in a result, then
      * pass its value in another request to fetch more entries. </p>
      */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
+
+    /**
+     * <p> Pagination token. If non-null pagination token is returned in a result, then
+     * pass its value in another request to fetch more entries. </p>
+     */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
     /**
@@ -99,6 +105,11 @@ namespace Model
      * <p> Maximum number of records to list in a single response. </p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
+
+    /**
+     * <p> Maximum number of records to list in a single response. </p>
+     */
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
 
     /**
      * <p> Maximum number of records to list in a single response. </p>

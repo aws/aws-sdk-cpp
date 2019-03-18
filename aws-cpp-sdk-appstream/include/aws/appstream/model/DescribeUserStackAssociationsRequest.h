@@ -53,6 +53,11 @@ namespace Model
     /**
      * <p>The name of the stack that is associated with the user.</p>
      */
+    inline bool StackNameHasBeenSet() const { return m_stackNameHasBeenSet; }
+
+    /**
+     * <p>The name of the stack that is associated with the user.</p>
+     */
     inline void SetStackName(const Aws::String& value) { m_stackNameHasBeenSet = true; m_stackName = value; }
 
     /**
@@ -85,6 +90,11 @@ namespace Model
      * <p>The email address of the user who is associated with the stack.</p>
      */
     inline const Aws::String& GetUserName() const{ return m_userName; }
+
+    /**
+     * <p>The email address of the user who is associated with the stack.</p>
+     */
+    inline bool UserNameHasBeenSet() const { return m_userNameHasBeenSet; }
 
     /**
      * <p>The email address of the user who is associated with the stack.</p>
@@ -127,6 +137,12 @@ namespace Model
      * <p>The authentication type for the user who is associated with the stack. You
      * must specify USERPOOL.</p>
      */
+    inline bool AuthenticationTypeHasBeenSet() const { return m_authenticationTypeHasBeenSet; }
+
+    /**
+     * <p>The authentication type for the user who is associated with the stack. You
+     * must specify USERPOOL.</p>
+     */
     inline void SetAuthenticationType(const AuthenticationType& value) { m_authenticationTypeHasBeenSet = true; m_authenticationType = value; }
 
     /**
@@ -156,6 +172,11 @@ namespace Model
     /**
      * <p>The maximum size of each page of results.</p>
      */
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
+
+    /**
+     * <p>The maximum size of each page of results.</p>
+     */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
@@ -169,6 +190,12 @@ namespace Model
      * operation. If this value is null, it retrieves the first page.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
+    /**
+     * <p>The pagination token to use to retrieve the next page of results for this
+     * operation. If this value is null, it retrieves the first page.</p>
+     */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
      * <p>The pagination token to use to retrieve the next page of results for this

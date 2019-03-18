@@ -55,6 +55,11 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the user in IAM.</p>
      */
+    inline bool UserArnHasBeenSet() const { return m_userArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the user in IAM.</p>
+     */
     inline void SetUserArn(const Aws::String& value) { m_userArnHasBeenSet = true; m_userArn = value; }
 
     /**
@@ -90,6 +95,14 @@ namespace Model
      * with Teams</a> in the <i>AWS CodeStar User Guide</i>. </p>
      */
     inline const Aws::String& GetProjectRole() const{ return m_projectRole; }
+
+    /**
+     * <p>The role assigned to the user in the project. Project roles have different
+     * levels of access. For more information, see <a
+     * href="http://docs.aws.amazon.com/codestar/latest/userguide/working-with-teams.html">Working
+     * with Teams</a> in the <i>AWS CodeStar User Guide</i>. </p>
+     */
+    inline bool ProjectRoleHasBeenSet() const { return m_projectRoleHasBeenSet; }
 
     /**
      * <p>The role assigned to the user in the project. Project roles have different
@@ -145,6 +158,12 @@ namespace Model
      * public/private key pair.</p>
      */
     inline bool GetRemoteAccessAllowed() const{ return m_remoteAccessAllowed; }
+
+    /**
+     * <p>Whether the user is allowed to remotely access project resources using an SSH
+     * public/private key pair.</p>
+     */
+    inline bool RemoteAccessAllowedHasBeenSet() const { return m_remoteAccessAllowedHasBeenSet; }
 
     /**
      * <p>Whether the user is allowed to remotely access project resources using an SSH

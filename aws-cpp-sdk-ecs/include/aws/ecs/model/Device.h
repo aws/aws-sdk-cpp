@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p>The path for the device on the host container instance.</p>
      */
+    inline bool HostPathHasBeenSet() const { return m_hostPathHasBeenSet; }
+
+    /**
+     * <p>The path for the device on the host container instance.</p>
+     */
     inline void SetHostPath(const Aws::String& value) { m_hostPathHasBeenSet = true; m_hostPath = value; }
 
     /**
@@ -90,6 +95,11 @@ namespace Model
      * <p>The path inside the container at which to expose the host device.</p>
      */
     inline const Aws::String& GetContainerPath() const{ return m_containerPath; }
+
+    /**
+     * <p>The path inside the container at which to expose the host device.</p>
+     */
+    inline bool ContainerPathHasBeenSet() const { return m_containerPathHasBeenSet; }
 
     /**
      * <p>The path inside the container at which to expose the host device.</p>
@@ -128,6 +138,13 @@ namespace Model
      * <code>write</code>, and <code>mknod</code> for the device.</p>
      */
     inline const Aws::Vector<DeviceCgroupPermission>& GetPermissions() const{ return m_permissions; }
+
+    /**
+     * <p>The explicit permissions to provide to the container for the device. By
+     * default, the container has permissions for <code>read</code>,
+     * <code>write</code>, and <code>mknod</code> for the device.</p>
+     */
+    inline bool PermissionsHasBeenSet() const { return m_permissionsHasBeenSet; }
 
     /**
      * <p>The explicit permissions to provide to the container for the device. By

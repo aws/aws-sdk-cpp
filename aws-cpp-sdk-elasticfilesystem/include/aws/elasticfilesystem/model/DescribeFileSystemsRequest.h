@@ -61,6 +61,12 @@ namespace Model
      * <p>(Optional) Specifies the maximum number of file systems to return in the
      * response (integer). Currently, this number is automatically set to 10. </p>
      */
+    inline bool MaxItemsHasBeenSet() const { return m_maxItemsHasBeenSet; }
+
+    /**
+     * <p>(Optional) Specifies the maximum number of file systems to return in the
+     * response (integer). Currently, this number is automatically set to 10. </p>
+     */
     inline void SetMaxItems(int value) { m_maxItemsHasBeenSet = true; m_maxItems = value; }
 
     /**
@@ -76,6 +82,13 @@ namespace Model
      * continue the list from where the returning call had left off. </p>
      */
     inline const Aws::String& GetMarker() const{ return m_marker; }
+
+    /**
+     * <p>(Optional) Opaque pagination token returned from a previous
+     * <code>DescribeFileSystems</code> operation (String). If present, specifies to
+     * continue the list from where the returning call had left off. </p>
+     */
+    inline bool MarkerHasBeenSet() const { return m_markerHasBeenSet; }
 
     /**
      * <p>(Optional) Opaque pagination token returned from a previous
@@ -132,6 +145,13 @@ namespace Model
      * (String). You specify a creation token when you create an Amazon EFS file
      * system.</p>
      */
+    inline bool CreationTokenHasBeenSet() const { return m_creationTokenHasBeenSet; }
+
+    /**
+     * <p>(Optional) Restricts the list to the file system with this creation token
+     * (String). You specify a creation token when you create an Amazon EFS file
+     * system.</p>
+     */
     inline void SetCreationToken(const Aws::String& value) { m_creationTokenHasBeenSet = true; m_creationToken = value; }
 
     /**
@@ -175,6 +195,12 @@ namespace Model
      * (String).</p>
      */
     inline const Aws::String& GetFileSystemId() const{ return m_fileSystemId; }
+
+    /**
+     * <p>(Optional) ID of the file system whose description you want to retrieve
+     * (String).</p>
+     */
+    inline bool FileSystemIdHasBeenSet() const { return m_fileSystemIdHasBeenSet; }
 
     /**
      * <p>(Optional) ID of the file system whose description you want to retrieve

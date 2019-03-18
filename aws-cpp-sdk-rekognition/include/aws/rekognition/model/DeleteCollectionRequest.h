@@ -52,6 +52,11 @@ namespace Model
     /**
      * <p>ID of the collection to delete.</p>
      */
+    inline bool CollectionIdHasBeenSet() const { return m_collectionIdHasBeenSet; }
+
+    /**
+     * <p>ID of the collection to delete.</p>
+     */
     inline void SetCollectionId(const Aws::String& value) { m_collectionIdHasBeenSet = true; m_collectionId = value; }
 
     /**

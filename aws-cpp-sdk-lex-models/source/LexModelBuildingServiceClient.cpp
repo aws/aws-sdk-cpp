@@ -140,6 +140,11 @@ void LexModelBuildingServiceClient::OverrideEndpoint(const Aws::String& endpoint
 }
 CreateBotVersionOutcome LexModelBuildingServiceClient::CreateBotVersion(const CreateBotVersionRequest& request) const
 {
+  if (!request.NameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("CreateBotVersion", "Required field: Name, is not set");
+    return CreateBotVersionOutcome(Aws::Client::AWSError<LexModelBuildingServiceErrors>(LexModelBuildingServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Name]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/bots/";
@@ -177,6 +182,11 @@ void LexModelBuildingServiceClient::CreateBotVersionAsyncHelper(const CreateBotV
 
 CreateIntentVersionOutcome LexModelBuildingServiceClient::CreateIntentVersion(const CreateIntentVersionRequest& request) const
 {
+  if (!request.NameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("CreateIntentVersion", "Required field: Name, is not set");
+    return CreateIntentVersionOutcome(Aws::Client::AWSError<LexModelBuildingServiceErrors>(LexModelBuildingServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Name]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/intents/";
@@ -214,6 +224,11 @@ void LexModelBuildingServiceClient::CreateIntentVersionAsyncHelper(const CreateI
 
 CreateSlotTypeVersionOutcome LexModelBuildingServiceClient::CreateSlotTypeVersion(const CreateSlotTypeVersionRequest& request) const
 {
+  if (!request.NameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("CreateSlotTypeVersion", "Required field: Name, is not set");
+    return CreateSlotTypeVersionOutcome(Aws::Client::AWSError<LexModelBuildingServiceErrors>(LexModelBuildingServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Name]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/slottypes/";
@@ -251,6 +266,11 @@ void LexModelBuildingServiceClient::CreateSlotTypeVersionAsyncHelper(const Creat
 
 DeleteBotOutcome LexModelBuildingServiceClient::DeleteBot(const DeleteBotRequest& request) const
 {
+  if (!request.NameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteBot", "Required field: Name, is not set");
+    return DeleteBotOutcome(Aws::Client::AWSError<LexModelBuildingServiceErrors>(LexModelBuildingServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Name]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/bots/";
@@ -287,6 +307,16 @@ void LexModelBuildingServiceClient::DeleteBotAsyncHelper(const DeleteBotRequest&
 
 DeleteBotAliasOutcome LexModelBuildingServiceClient::DeleteBotAlias(const DeleteBotAliasRequest& request) const
 {
+  if (!request.NameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteBotAlias", "Required field: Name, is not set");
+    return DeleteBotAliasOutcome(Aws::Client::AWSError<LexModelBuildingServiceErrors>(LexModelBuildingServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Name]", false));
+  }
+  if (!request.BotNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteBotAlias", "Required field: BotName, is not set");
+    return DeleteBotAliasOutcome(Aws::Client::AWSError<LexModelBuildingServiceErrors>(LexModelBuildingServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [BotName]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/bots/";
@@ -325,6 +355,21 @@ void LexModelBuildingServiceClient::DeleteBotAliasAsyncHelper(const DeleteBotAli
 
 DeleteBotChannelAssociationOutcome LexModelBuildingServiceClient::DeleteBotChannelAssociation(const DeleteBotChannelAssociationRequest& request) const
 {
+  if (!request.NameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteBotChannelAssociation", "Required field: Name, is not set");
+    return DeleteBotChannelAssociationOutcome(Aws::Client::AWSError<LexModelBuildingServiceErrors>(LexModelBuildingServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Name]", false));
+  }
+  if (!request.BotNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteBotChannelAssociation", "Required field: BotName, is not set");
+    return DeleteBotChannelAssociationOutcome(Aws::Client::AWSError<LexModelBuildingServiceErrors>(LexModelBuildingServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [BotName]", false));
+  }
+  if (!request.BotAliasHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteBotChannelAssociation", "Required field: BotAlias, is not set");
+    return DeleteBotChannelAssociationOutcome(Aws::Client::AWSError<LexModelBuildingServiceErrors>(LexModelBuildingServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [BotAlias]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/bots/";
@@ -365,6 +410,16 @@ void LexModelBuildingServiceClient::DeleteBotChannelAssociationAsyncHelper(const
 
 DeleteBotVersionOutcome LexModelBuildingServiceClient::DeleteBotVersion(const DeleteBotVersionRequest& request) const
 {
+  if (!request.NameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteBotVersion", "Required field: Name, is not set");
+    return DeleteBotVersionOutcome(Aws::Client::AWSError<LexModelBuildingServiceErrors>(LexModelBuildingServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Name]", false));
+  }
+  if (!request.VersionHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteBotVersion", "Required field: Version, is not set");
+    return DeleteBotVersionOutcome(Aws::Client::AWSError<LexModelBuildingServiceErrors>(LexModelBuildingServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Version]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/bots/";
@@ -403,6 +458,11 @@ void LexModelBuildingServiceClient::DeleteBotVersionAsyncHelper(const DeleteBotV
 
 DeleteIntentOutcome LexModelBuildingServiceClient::DeleteIntent(const DeleteIntentRequest& request) const
 {
+  if (!request.NameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteIntent", "Required field: Name, is not set");
+    return DeleteIntentOutcome(Aws::Client::AWSError<LexModelBuildingServiceErrors>(LexModelBuildingServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Name]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/intents/";
@@ -439,6 +499,16 @@ void LexModelBuildingServiceClient::DeleteIntentAsyncHelper(const DeleteIntentRe
 
 DeleteIntentVersionOutcome LexModelBuildingServiceClient::DeleteIntentVersion(const DeleteIntentVersionRequest& request) const
 {
+  if (!request.NameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteIntentVersion", "Required field: Name, is not set");
+    return DeleteIntentVersionOutcome(Aws::Client::AWSError<LexModelBuildingServiceErrors>(LexModelBuildingServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Name]", false));
+  }
+  if (!request.VersionHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteIntentVersion", "Required field: Version, is not set");
+    return DeleteIntentVersionOutcome(Aws::Client::AWSError<LexModelBuildingServiceErrors>(LexModelBuildingServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Version]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/intents/";
@@ -477,6 +547,11 @@ void LexModelBuildingServiceClient::DeleteIntentVersionAsyncHelper(const DeleteI
 
 DeleteSlotTypeOutcome LexModelBuildingServiceClient::DeleteSlotType(const DeleteSlotTypeRequest& request) const
 {
+  if (!request.NameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteSlotType", "Required field: Name, is not set");
+    return DeleteSlotTypeOutcome(Aws::Client::AWSError<LexModelBuildingServiceErrors>(LexModelBuildingServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Name]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/slottypes/";
@@ -513,6 +588,16 @@ void LexModelBuildingServiceClient::DeleteSlotTypeAsyncHelper(const DeleteSlotTy
 
 DeleteSlotTypeVersionOutcome LexModelBuildingServiceClient::DeleteSlotTypeVersion(const DeleteSlotTypeVersionRequest& request) const
 {
+  if (!request.NameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteSlotTypeVersion", "Required field: Name, is not set");
+    return DeleteSlotTypeVersionOutcome(Aws::Client::AWSError<LexModelBuildingServiceErrors>(LexModelBuildingServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Name]", false));
+  }
+  if (!request.VersionHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteSlotTypeVersion", "Required field: Version, is not set");
+    return DeleteSlotTypeVersionOutcome(Aws::Client::AWSError<LexModelBuildingServiceErrors>(LexModelBuildingServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Version]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/slottypes/";
@@ -551,6 +636,16 @@ void LexModelBuildingServiceClient::DeleteSlotTypeVersionAsyncHelper(const Delet
 
 DeleteUtterancesOutcome LexModelBuildingServiceClient::DeleteUtterances(const DeleteUtterancesRequest& request) const
 {
+  if (!request.BotNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteUtterances", "Required field: BotName, is not set");
+    return DeleteUtterancesOutcome(Aws::Client::AWSError<LexModelBuildingServiceErrors>(LexModelBuildingServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [BotName]", false));
+  }
+  if (!request.UserIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteUtterances", "Required field: UserId, is not set");
+    return DeleteUtterancesOutcome(Aws::Client::AWSError<LexModelBuildingServiceErrors>(LexModelBuildingServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [UserId]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/bots/";
@@ -589,6 +684,16 @@ void LexModelBuildingServiceClient::DeleteUtterancesAsyncHelper(const DeleteUtte
 
 GetBotOutcome LexModelBuildingServiceClient::GetBot(const GetBotRequest& request) const
 {
+  if (!request.NameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetBot", "Required field: Name, is not set");
+    return GetBotOutcome(Aws::Client::AWSError<LexModelBuildingServiceErrors>(LexModelBuildingServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Name]", false));
+  }
+  if (!request.VersionOrAliasHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetBot", "Required field: VersionOrAlias, is not set");
+    return GetBotOutcome(Aws::Client::AWSError<LexModelBuildingServiceErrors>(LexModelBuildingServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [VersionOrAlias]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/bots/";
@@ -627,6 +732,16 @@ void LexModelBuildingServiceClient::GetBotAsyncHelper(const GetBotRequest& reque
 
 GetBotAliasOutcome LexModelBuildingServiceClient::GetBotAlias(const GetBotAliasRequest& request) const
 {
+  if (!request.NameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetBotAlias", "Required field: Name, is not set");
+    return GetBotAliasOutcome(Aws::Client::AWSError<LexModelBuildingServiceErrors>(LexModelBuildingServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Name]", false));
+  }
+  if (!request.BotNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetBotAlias", "Required field: BotName, is not set");
+    return GetBotAliasOutcome(Aws::Client::AWSError<LexModelBuildingServiceErrors>(LexModelBuildingServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [BotName]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/bots/";
@@ -665,6 +780,11 @@ void LexModelBuildingServiceClient::GetBotAliasAsyncHelper(const GetBotAliasRequ
 
 GetBotAliasesOutcome LexModelBuildingServiceClient::GetBotAliases(const GetBotAliasesRequest& request) const
 {
+  if (!request.BotNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetBotAliases", "Required field: BotName, is not set");
+    return GetBotAliasesOutcome(Aws::Client::AWSError<LexModelBuildingServiceErrors>(LexModelBuildingServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [BotName]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/bots/";
@@ -702,6 +822,21 @@ void LexModelBuildingServiceClient::GetBotAliasesAsyncHelper(const GetBotAliases
 
 GetBotChannelAssociationOutcome LexModelBuildingServiceClient::GetBotChannelAssociation(const GetBotChannelAssociationRequest& request) const
 {
+  if (!request.NameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetBotChannelAssociation", "Required field: Name, is not set");
+    return GetBotChannelAssociationOutcome(Aws::Client::AWSError<LexModelBuildingServiceErrors>(LexModelBuildingServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Name]", false));
+  }
+  if (!request.BotNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetBotChannelAssociation", "Required field: BotName, is not set");
+    return GetBotChannelAssociationOutcome(Aws::Client::AWSError<LexModelBuildingServiceErrors>(LexModelBuildingServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [BotName]", false));
+  }
+  if (!request.BotAliasHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetBotChannelAssociation", "Required field: BotAlias, is not set");
+    return GetBotChannelAssociationOutcome(Aws::Client::AWSError<LexModelBuildingServiceErrors>(LexModelBuildingServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [BotAlias]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/bots/";
@@ -742,6 +877,16 @@ void LexModelBuildingServiceClient::GetBotChannelAssociationAsyncHelper(const Ge
 
 GetBotChannelAssociationsOutcome LexModelBuildingServiceClient::GetBotChannelAssociations(const GetBotChannelAssociationsRequest& request) const
 {
+  if (!request.BotNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetBotChannelAssociations", "Required field: BotName, is not set");
+    return GetBotChannelAssociationsOutcome(Aws::Client::AWSError<LexModelBuildingServiceErrors>(LexModelBuildingServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [BotName]", false));
+  }
+  if (!request.BotAliasHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetBotChannelAssociations", "Required field: BotAlias, is not set");
+    return GetBotChannelAssociationsOutcome(Aws::Client::AWSError<LexModelBuildingServiceErrors>(LexModelBuildingServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [BotAlias]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/bots/";
@@ -781,6 +926,11 @@ void LexModelBuildingServiceClient::GetBotChannelAssociationsAsyncHelper(const G
 
 GetBotVersionsOutcome LexModelBuildingServiceClient::GetBotVersions(const GetBotVersionsRequest& request) const
 {
+  if (!request.NameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetBotVersions", "Required field: Name, is not set");
+    return GetBotVersionsOutcome(Aws::Client::AWSError<LexModelBuildingServiceErrors>(LexModelBuildingServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Name]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/bots/";
@@ -853,6 +1003,11 @@ void LexModelBuildingServiceClient::GetBotsAsyncHelper(const GetBotsRequest& req
 
 GetBuiltinIntentOutcome LexModelBuildingServiceClient::GetBuiltinIntent(const GetBuiltinIntentRequest& request) const
 {
+  if (!request.SignatureHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetBuiltinIntent", "Required field: Signature, is not set");
+    return GetBuiltinIntentOutcome(Aws::Client::AWSError<LexModelBuildingServiceErrors>(LexModelBuildingServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Signature]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/builtins/intents/";
@@ -959,6 +1114,26 @@ void LexModelBuildingServiceClient::GetBuiltinSlotTypesAsyncHelper(const GetBuil
 
 GetExportOutcome LexModelBuildingServiceClient::GetExport(const GetExportRequest& request) const
 {
+  if (!request.NameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetExport", "Required field: Name, is not set");
+    return GetExportOutcome(Aws::Client::AWSError<LexModelBuildingServiceErrors>(LexModelBuildingServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Name]", false));
+  }
+  if (!request.VersionHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetExport", "Required field: Version, is not set");
+    return GetExportOutcome(Aws::Client::AWSError<LexModelBuildingServiceErrors>(LexModelBuildingServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Version]", false));
+  }
+  if (!request.ResourceTypeHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetExport", "Required field: ResourceType, is not set");
+    return GetExportOutcome(Aws::Client::AWSError<LexModelBuildingServiceErrors>(LexModelBuildingServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceType]", false));
+  }
+  if (!request.ExportTypeHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetExport", "Required field: ExportType, is not set");
+    return GetExportOutcome(Aws::Client::AWSError<LexModelBuildingServiceErrors>(LexModelBuildingServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ExportType]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/exports/";
@@ -994,6 +1169,11 @@ void LexModelBuildingServiceClient::GetExportAsyncHelper(const GetExportRequest&
 
 GetImportOutcome LexModelBuildingServiceClient::GetImport(const GetImportRequest& request) const
 {
+  if (!request.ImportIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetImport", "Required field: ImportId, is not set");
+    return GetImportOutcome(Aws::Client::AWSError<LexModelBuildingServiceErrors>(LexModelBuildingServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ImportId]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/imports/";
@@ -1030,6 +1210,16 @@ void LexModelBuildingServiceClient::GetImportAsyncHelper(const GetImportRequest&
 
 GetIntentOutcome LexModelBuildingServiceClient::GetIntent(const GetIntentRequest& request) const
 {
+  if (!request.NameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetIntent", "Required field: Name, is not set");
+    return GetIntentOutcome(Aws::Client::AWSError<LexModelBuildingServiceErrors>(LexModelBuildingServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Name]", false));
+  }
+  if (!request.VersionHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetIntent", "Required field: Version, is not set");
+    return GetIntentOutcome(Aws::Client::AWSError<LexModelBuildingServiceErrors>(LexModelBuildingServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Version]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/intents/";
@@ -1068,6 +1258,11 @@ void LexModelBuildingServiceClient::GetIntentAsyncHelper(const GetIntentRequest&
 
 GetIntentVersionsOutcome LexModelBuildingServiceClient::GetIntentVersions(const GetIntentVersionsRequest& request) const
 {
+  if (!request.NameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetIntentVersions", "Required field: Name, is not set");
+    return GetIntentVersionsOutcome(Aws::Client::AWSError<LexModelBuildingServiceErrors>(LexModelBuildingServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Name]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/intents/";
@@ -1140,6 +1335,16 @@ void LexModelBuildingServiceClient::GetIntentsAsyncHelper(const GetIntentsReques
 
 GetSlotTypeOutcome LexModelBuildingServiceClient::GetSlotType(const GetSlotTypeRequest& request) const
 {
+  if (!request.NameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetSlotType", "Required field: Name, is not set");
+    return GetSlotTypeOutcome(Aws::Client::AWSError<LexModelBuildingServiceErrors>(LexModelBuildingServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Name]", false));
+  }
+  if (!request.VersionHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetSlotType", "Required field: Version, is not set");
+    return GetSlotTypeOutcome(Aws::Client::AWSError<LexModelBuildingServiceErrors>(LexModelBuildingServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Version]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/slottypes/";
@@ -1178,6 +1383,11 @@ void LexModelBuildingServiceClient::GetSlotTypeAsyncHelper(const GetSlotTypeRequ
 
 GetSlotTypeVersionsOutcome LexModelBuildingServiceClient::GetSlotTypeVersions(const GetSlotTypeVersionsRequest& request) const
 {
+  if (!request.NameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetSlotTypeVersions", "Required field: Name, is not set");
+    return GetSlotTypeVersionsOutcome(Aws::Client::AWSError<LexModelBuildingServiceErrors>(LexModelBuildingServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Name]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/slottypes/";
@@ -1250,6 +1460,21 @@ void LexModelBuildingServiceClient::GetSlotTypesAsyncHelper(const GetSlotTypesRe
 
 GetUtterancesViewOutcome LexModelBuildingServiceClient::GetUtterancesView(const GetUtterancesViewRequest& request) const
 {
+  if (!request.BotNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetUtterancesView", "Required field: BotName, is not set");
+    return GetUtterancesViewOutcome(Aws::Client::AWSError<LexModelBuildingServiceErrors>(LexModelBuildingServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [BotName]", false));
+  }
+  if (!request.BotVersionsHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetUtterancesView", "Required field: BotVersions, is not set");
+    return GetUtterancesViewOutcome(Aws::Client::AWSError<LexModelBuildingServiceErrors>(LexModelBuildingServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [BotVersions]", false));
+  }
+  if (!request.StatusTypeHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetUtterancesView", "Required field: StatusType, is not set");
+    return GetUtterancesViewOutcome(Aws::Client::AWSError<LexModelBuildingServiceErrors>(LexModelBuildingServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [StatusType]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/bots/";
@@ -1289,6 +1514,11 @@ void LexModelBuildingServiceClient::GetUtterancesViewAsyncHelper(const GetUttera
 
 PutBotOutcome LexModelBuildingServiceClient::PutBot(const PutBotRequest& request) const
 {
+  if (!request.NameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("PutBot", "Required field: Name, is not set");
+    return PutBotOutcome(Aws::Client::AWSError<LexModelBuildingServiceErrors>(LexModelBuildingServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Name]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/bots/";
@@ -1326,6 +1556,16 @@ void LexModelBuildingServiceClient::PutBotAsyncHelper(const PutBotRequest& reque
 
 PutBotAliasOutcome LexModelBuildingServiceClient::PutBotAlias(const PutBotAliasRequest& request) const
 {
+  if (!request.NameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("PutBotAlias", "Required field: Name, is not set");
+    return PutBotAliasOutcome(Aws::Client::AWSError<LexModelBuildingServiceErrors>(LexModelBuildingServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Name]", false));
+  }
+  if (!request.BotNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("PutBotAlias", "Required field: BotName, is not set");
+    return PutBotAliasOutcome(Aws::Client::AWSError<LexModelBuildingServiceErrors>(LexModelBuildingServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [BotName]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/bots/";
@@ -1364,6 +1604,11 @@ void LexModelBuildingServiceClient::PutBotAliasAsyncHelper(const PutBotAliasRequ
 
 PutIntentOutcome LexModelBuildingServiceClient::PutIntent(const PutIntentRequest& request) const
 {
+  if (!request.NameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("PutIntent", "Required field: Name, is not set");
+    return PutIntentOutcome(Aws::Client::AWSError<LexModelBuildingServiceErrors>(LexModelBuildingServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Name]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/intents/";
@@ -1401,6 +1646,11 @@ void LexModelBuildingServiceClient::PutIntentAsyncHelper(const PutIntentRequest&
 
 PutSlotTypeOutcome LexModelBuildingServiceClient::PutSlotType(const PutSlotTypeRequest& request) const
 {
+  if (!request.NameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("PutSlotType", "Required field: Name, is not set");
+    return PutSlotTypeOutcome(Aws::Client::AWSError<LexModelBuildingServiceErrors>(LexModelBuildingServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Name]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/slottypes/";

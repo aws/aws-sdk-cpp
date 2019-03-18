@@ -60,6 +60,13 @@ namespace Model
      * example,
      * <code>arn:aws:backup:us-east-1:123456789012:plan:8F81F553-3A74-4A3F-B93D-B3360DC80C50</code>.</p>
      */
+    inline bool BackupPlanArnHasBeenSet() const { return m_backupPlanArnHasBeenSet; }
+
+    /**
+     * <p>An Amazon Resource Name (ARN) that uniquely identifies a backup plan; for
+     * example,
+     * <code>arn:aws:backup:us-east-1:123456789012:plan:8F81F553-3A74-4A3F-B93D-B3360DC80C50</code>.</p>
+     */
     inline void SetBackupPlanArn(const Aws::String& value) { m_backupPlanArnHasBeenSet = true; m_backupPlanArn = value; }
 
     /**
@@ -106,6 +113,11 @@ namespace Model
     /**
      * <p>Uniquely identifies a backup plan.</p>
      */
+    inline bool BackupPlanIdHasBeenSet() const { return m_backupPlanIdHasBeenSet; }
+
+    /**
+     * <p>Uniquely identifies a backup plan.</p>
+     */
     inline void SetBackupPlanId(const Aws::String& value) { m_backupPlanIdHasBeenSet = true; m_backupPlanId = value; }
 
     /**
@@ -141,6 +153,14 @@ namespace Model
      * Friday, January 26, 2018 12:11:30.087 AM.</p>
      */
     inline const Aws::Utils::DateTime& GetCreationDate() const{ return m_creationDate; }
+
+    /**
+     * <p>The date and time a resource backup plan is created, in Unix format and
+     * Coordinated Universal Time (UTC). The value of <code>CreationDate</code> is
+     * accurate to milliseconds. For example, the value 1516925490.087 represents
+     * Friday, January 26, 2018 12:11:30.087 AM.</p>
+     */
+    inline bool CreationDateHasBeenSet() const { return m_creationDateHasBeenSet; }
 
     /**
      * <p>The date and time a resource backup plan is created, in Unix format and
@@ -189,6 +209,14 @@ namespace Model
      * milliseconds. For example, the value 1516925490.087 represents Friday, January
      * 26, 2018 12:11:30.087 AM.</p>
      */
+    inline bool DeletionDateHasBeenSet() const { return m_deletionDateHasBeenSet; }
+
+    /**
+     * <p>The date and time a backup plan is deleted, in Unix format and Coordinated
+     * Universal Time (UTC). The value of <code>DeletionDate</code> is accurate to
+     * milliseconds. For example, the value 1516925490.087 represents Friday, January
+     * 26, 2018 12:11:30.087 AM.</p>
+     */
     inline void SetDeletionDate(const Aws::Utils::DateTime& value) { m_deletionDateHasBeenSet = true; m_deletionDate = value; }
 
     /**
@@ -221,6 +249,12 @@ namespace Model
      * 1,024 bytes long. Version IDs cannot be edited.</p>
      */
     inline const Aws::String& GetVersionId() const{ return m_versionId; }
+
+    /**
+     * <p>Unique, randomly generated, Unicode, UTF-8 encoded strings that are at most
+     * 1,024 bytes long. Version IDs cannot be edited.</p>
+     */
+    inline bool VersionIdHasBeenSet() const { return m_versionIdHasBeenSet; }
 
     /**
      * <p>Unique, randomly generated, Unicode, UTF-8 encoded strings that are at most
@@ -267,6 +301,11 @@ namespace Model
     /**
      * <p>The display name of a saved backup plan.</p>
      */
+    inline bool BackupPlanNameHasBeenSet() const { return m_backupPlanNameHasBeenSet; }
+
+    /**
+     * <p>The display name of a saved backup plan.</p>
+     */
     inline void SetBackupPlanName(const Aws::String& value) { m_backupPlanNameHasBeenSet = true; m_backupPlanName = value; }
 
     /**
@@ -300,6 +339,12 @@ namespace Model
      * retried without the risk of executing the operation twice.</p>
      */
     inline const Aws::String& GetCreatorRequestId() const{ return m_creatorRequestId; }
+
+    /**
+     * <p>A unique string that identifies the request and allows failed requests to be
+     * retried without the risk of executing the operation twice.</p>
+     */
+    inline bool CreatorRequestIdHasBeenSet() const { return m_creatorRequestIdHasBeenSet; }
 
     /**
      * <p>A unique string that identifies the request and allows failed requests to be
@@ -345,6 +390,14 @@ namespace Model
      * value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
      */
     inline const Aws::Utils::DateTime& GetLastExecutionDate() const{ return m_lastExecutionDate; }
+
+    /**
+     * <p>The last time a job to back up resources was executed with this rule. A date
+     * and time, in Unix format and Coordinated Universal Time (UTC). The value of
+     * <code>LastExecutionDate</code> is accurate to milliseconds. For example, the
+     * value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
+     */
+    inline bool LastExecutionDateHasBeenSet() const { return m_lastExecutionDateHasBeenSet; }
 
     /**
      * <p>The last time a job to back up resources was executed with this rule. A date

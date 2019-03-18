@@ -54,6 +54,11 @@ namespace Model
     /**
      * <p> The cluster identifier of the global database cluster being deleted. </p>
      */
+    inline bool GlobalClusterIdentifierHasBeenSet() const { return m_globalClusterIdentifierHasBeenSet; }
+
+    /**
+     * <p> The cluster identifier of the global database cluster being deleted. </p>
+     */
     inline void SetGlobalClusterIdentifier(const Aws::String& value) { m_globalClusterIdentifierHasBeenSet = true; m_globalClusterIdentifier = value; }
 
     /**

@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The AWS account ID of the Amazon Macie member account.</p>
      */
+    inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
+
+    /**
+     * <p>The AWS account ID of the Amazon Macie member account.</p>
+     */
     inline void SetAccountId(const Aws::String& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
 
     /**

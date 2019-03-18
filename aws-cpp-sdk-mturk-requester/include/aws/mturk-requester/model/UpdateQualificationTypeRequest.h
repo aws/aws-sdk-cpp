@@ -53,6 +53,11 @@ namespace Model
     /**
      * <p>The ID of the Qualification type to update.</p>
      */
+    inline bool QualificationTypeIdHasBeenSet() const { return m_qualificationTypeIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the Qualification type to update.</p>
+     */
     inline void SetQualificationTypeId(const Aws::String& value) { m_qualificationTypeIdHasBeenSet = true; m_qualificationTypeId = value; }
 
     /**
@@ -85,6 +90,11 @@ namespace Model
      * <p>The new description of the Qualification type.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
+
+    /**
+     * <p>The new description of the Qualification type.</p>
+     */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
 
     /**
      * <p>The new description of the Qualification type.</p>
@@ -125,6 +135,11 @@ namespace Model
     /**
      * <p>The new status of the Qualification type - Active | Inactive</p>
      */
+    inline bool QualificationTypeStatusHasBeenSet() const { return m_qualificationTypeStatusHasBeenSet; }
+
+    /**
+     * <p>The new status of the Qualification type - Active | Inactive</p>
+     */
     inline void SetQualificationTypeStatus(const QualificationTypeStatus& value) { m_qualificationTypeStatusHasBeenSet = true; m_qualificationTypeStatus = value; }
 
     /**
@@ -153,6 +168,17 @@ namespace Model
      * questions.</p>
      */
     inline const Aws::String& GetTest() const{ return m_test; }
+
+    /**
+     * <p>The questions for the Qualification test a Worker must answer correctly to
+     * obtain a Qualification of this type. If this parameter is specified,
+     * <code>TestDurationInSeconds</code> must also be specified.</p> <p>Constraints:
+     * Must not be longer than 65535 bytes. Must be a QuestionForm data structure. This
+     * parameter cannot be specified if AutoGranted is true.</p> <p>Constraints: None.
+     * If not specified, the Worker may request the Qualification without answering any
+     * questions.</p>
+     */
+    inline bool TestHasBeenSet() const { return m_testHasBeenSet; }
 
     /**
      * <p>The questions for the Qualification test a Worker must answer correctly to
@@ -231,6 +257,12 @@ namespace Model
      * <p>The answers to the Qualification test specified in the Test parameter, in the
      * form of an AnswerKey data structure.</p>
      */
+    inline bool AnswerKeyHasBeenSet() const { return m_answerKeyHasBeenSet; }
+
+    /**
+     * <p>The answers to the Qualification test specified in the Test parameter, in the
+     * form of an AnswerKey data structure.</p>
+     */
     inline void SetAnswerKey(const Aws::String& value) { m_answerKeyHasBeenSet = true; m_answerKey = value; }
 
     /**
@@ -274,6 +306,12 @@ namespace Model
      * <p>The number of seconds the Worker has to complete the Qualification test,
      * starting from the time the Worker requests the Qualification.</p>
      */
+    inline bool TestDurationInSecondsHasBeenSet() const { return m_testDurationInSecondsHasBeenSet; }
+
+    /**
+     * <p>The number of seconds the Worker has to complete the Qualification test,
+     * starting from the time the Worker requests the Qualification.</p>
+     */
     inline void SetTestDurationInSeconds(long long value) { m_testDurationInSecondsHasBeenSet = true; m_testDurationInSeconds = value; }
 
     /**
@@ -293,6 +331,17 @@ namespace Model
      * disabled using CreateQualificationType.</p>
      */
     inline long long GetRetryDelayInSeconds() const{ return m_retryDelayInSeconds; }
+
+    /**
+     * <p>The amount of time, in seconds, that Workers must wait after requesting a
+     * Qualification of the specified Qualification type before they can retry the
+     * Qualification request. It is not possible to disable retries for a Qualification
+     * type after it has been created with retries enabled. If you want to disable
+     * retries, you must dispose of the existing retry-enabled Qualification type using
+     * DisposeQualificationType and then create a new Qualification type with retries
+     * disabled using CreateQualificationType.</p>
+     */
+    inline bool RetryDelayInSecondsHasBeenSet() const { return m_retryDelayInSecondsHasBeenSet; }
 
     /**
      * <p>The amount of time, in seconds, that Workers must wait after requesting a
@@ -331,6 +380,14 @@ namespace Model
      * <p>Constraints: If the Test parameter is specified, this parameter cannot be
      * true.</p>
      */
+    inline bool AutoGrantedHasBeenSet() const { return m_autoGrantedHasBeenSet; }
+
+    /**
+     * <p>Specifies whether requests for the Qualification type are granted
+     * immediately, without prompting the Worker with a Qualification test.</p>
+     * <p>Constraints: If the Test parameter is specified, this parameter cannot be
+     * true.</p>
+     */
     inline void SetAutoGranted(bool value) { m_autoGrantedHasBeenSet = true; m_autoGranted = value; }
 
     /**
@@ -347,6 +404,12 @@ namespace Model
      * parameter is used only if the AutoGranted parameter is true.</p>
      */
     inline int GetAutoGrantedValue() const{ return m_autoGrantedValue; }
+
+    /**
+     * <p>The Qualification value to use for automatically granted Qualifications. This
+     * parameter is used only if the AutoGranted parameter is true.</p>
+     */
+    inline bool AutoGrantedValueHasBeenSet() const { return m_autoGrantedValueHasBeenSet; }
 
     /**
      * <p>The Qualification value to use for automatically granted Qualifications. This

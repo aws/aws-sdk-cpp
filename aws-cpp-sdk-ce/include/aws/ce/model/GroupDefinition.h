@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The string that represents the type of group.</p>
      */
+    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
+
+    /**
+     * <p>The string that represents the type of group.</p>
+     */
     inline void SetType(const GroupDefinitionType& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
@@ -79,6 +84,11 @@ namespace Model
      * <p>The string that represents a key for a specified group.</p>
      */
     inline const Aws::String& GetKey() const{ return m_key; }
+
+    /**
+     * <p>The string that represents a key for a specified group.</p>
+     */
+    inline bool KeyHasBeenSet() const { return m_keyHasBeenSet; }
 
     /**
      * <p>The string that represents a key for a specified group.</p>

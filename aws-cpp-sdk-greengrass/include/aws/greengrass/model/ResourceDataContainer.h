@@ -63,6 +63,11 @@ namespace Model
     /**
      * Attributes that define the local device resource.
      */
+    inline bool LocalDeviceResourceDataHasBeenSet() const { return m_localDeviceResourceDataHasBeenSet; }
+
+    /**
+     * Attributes that define the local device resource.
+     */
     inline void SetLocalDeviceResourceData(const LocalDeviceResourceData& value) { m_localDeviceResourceDataHasBeenSet = true; m_localDeviceResourceData = value; }
 
     /**
@@ -85,6 +90,11 @@ namespace Model
      * Attributes that define the local volume resource.
      */
     inline const LocalVolumeResourceData& GetLocalVolumeResourceData() const{ return m_localVolumeResourceData; }
+
+    /**
+     * Attributes that define the local volume resource.
+     */
+    inline bool LocalVolumeResourceDataHasBeenSet() const { return m_localVolumeResourceDataHasBeenSet; }
 
     /**
      * Attributes that define the local volume resource.
@@ -115,6 +125,11 @@ namespace Model
     /**
      * Attributes that define an Amazon S3 machine learning resource.
      */
+    inline bool S3MachineLearningModelResourceDataHasBeenSet() const { return m_s3MachineLearningModelResourceDataHasBeenSet; }
+
+    /**
+     * Attributes that define an Amazon S3 machine learning resource.
+     */
     inline void SetS3MachineLearningModelResourceData(const S3MachineLearningModelResourceData& value) { m_s3MachineLearningModelResourceDataHasBeenSet = true; m_s3MachineLearningModelResourceData = value; }
 
     /**
@@ -137,6 +152,11 @@ namespace Model
      * Attributes that define an Amazon SageMaker machine learning resource.
      */
     inline const SageMakerMachineLearningModelResourceData& GetSageMakerMachineLearningModelResourceData() const{ return m_sageMakerMachineLearningModelResourceData; }
+
+    /**
+     * Attributes that define an Amazon SageMaker machine learning resource.
+     */
+    inline bool SageMakerMachineLearningModelResourceDataHasBeenSet() const { return m_sageMakerMachineLearningModelResourceDataHasBeenSet; }
 
     /**
      * Attributes that define an Amazon SageMaker machine learning resource.
@@ -164,6 +184,12 @@ namespace Model
      * Secrets Manager.
      */
     inline const SecretsManagerSecretResourceData& GetSecretsManagerSecretResourceData() const{ return m_secretsManagerSecretResourceData; }
+
+    /**
+     * Attributes that define a secret resource, which references a secret from AWS
+     * Secrets Manager.
+     */
+    inline bool SecretsManagerSecretResourceDataHasBeenSet() const { return m_secretsManagerSecretResourceDataHasBeenSet; }
 
     /**
      * Attributes that define a secret resource, which references a secret from AWS

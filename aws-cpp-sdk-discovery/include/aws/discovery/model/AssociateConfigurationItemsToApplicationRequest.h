@@ -55,6 +55,12 @@ namespace Model
      * <p>The configuration ID of an application with which items are to be
      * associated.</p>
      */
+    inline bool ApplicationConfigurationIdHasBeenSet() const { return m_applicationConfigurationIdHasBeenSet; }
+
+    /**
+     * <p>The configuration ID of an application with which items are to be
+     * associated.</p>
+     */
     inline void SetApplicationConfigurationId(const Aws::String& value) { m_applicationConfigurationIdHasBeenSet = true; m_applicationConfigurationId = value; }
 
     /**
@@ -92,6 +98,11 @@ namespace Model
      * <p>The ID of each configuration item to be associated with an application.</p>
      */
     inline const Aws::Vector<Aws::String>& GetConfigurationIds() const{ return m_configurationIds; }
+
+    /**
+     * <p>The ID of each configuration item to be associated with an application.</p>
+     */
+    inline bool ConfigurationIdsHasBeenSet() const { return m_configurationIdsHasBeenSet; }
 
     /**
      * <p>The ID of each configuration item to be associated with an application.</p>

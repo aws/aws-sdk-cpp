@@ -53,6 +53,11 @@ namespace Model
     /**
      * <p> Unique Id for an Amplify App. </p>
      */
+    inline bool AppIdHasBeenSet() const { return m_appIdHasBeenSet; }
+
+    /**
+     * <p> Unique Id for an Amplify App. </p>
+     */
     inline void SetAppId(const Aws::String& value) { m_appIdHasBeenSet = true; m_appId = value; }
 
     /**
@@ -89,6 +94,11 @@ namespace Model
     /**
      * <p> Name for the branch, for the Job. </p>
      */
+    inline bool BranchNameHasBeenSet() const { return m_branchNameHasBeenSet; }
+
+    /**
+     * <p> Name for the branch, for the Job. </p>
+     */
     inline void SetBranchName(const Aws::String& value) { m_branchNameHasBeenSet = true; m_branchName = value; }
 
     /**
@@ -121,6 +131,11 @@ namespace Model
      * <p> Unique Id for the Job. </p>
      */
     inline const Aws::String& GetJobId() const{ return m_jobId; }
+
+    /**
+     * <p> Unique Id for the Job. </p>
+     */
+    inline bool JobIdHasBeenSet() const { return m_jobIdHasBeenSet; }
 
     /**
      * <p> Unique Id for the Job. </p>

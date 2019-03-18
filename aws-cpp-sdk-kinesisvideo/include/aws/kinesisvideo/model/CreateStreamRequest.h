@@ -55,6 +55,13 @@ namespace Model
      * current implementation, Kinesis Video Streams does not use this name.</p>
      * </note>
      */
+    inline bool DeviceNameHasBeenSet() const { return m_deviceNameHasBeenSet; }
+
+    /**
+     * <p>The name of the device that is writing to the stream. </p> <note> <p>In the
+     * current implementation, Kinesis Video Streams does not use this name.</p>
+     * </note>
+     */
     inline void SetDeviceName(const Aws::String& value) { m_deviceNameHasBeenSet = true; m_deviceName = value; }
 
     /**
@@ -98,6 +105,12 @@ namespace Model
      * identifier for the stream, and must be unique for each account and region.</p>
      */
     inline const Aws::String& GetStreamName() const{ return m_streamName; }
+
+    /**
+     * <p>A name for the stream that you are creating.</p> <p>The stream name is an
+     * identifier for the stream, and must be unique for each account and region.</p>
+     */
+    inline bool StreamNameHasBeenSet() const { return m_streamNameHasBeenSet; }
 
     /**
      * <p>A name for the stream that you are creating.</p> <p>The stream name is an
@@ -147,6 +160,18 @@ namespace Model
      * <code>null</code> (or empty in JSON).</p>
      */
     inline const Aws::String& GetMediaType() const{ return m_mediaType; }
+
+    /**
+     * <p>The media type of the stream. Consumers of the stream can use this
+     * information when processing the stream. For more information about media types,
+     * see <a
+     * href="http://www.iana.org/assignments/media-types/media-types.xhtml">Media
+     * Types</a>. If you choose to specify the <code>MediaType</code>, see <a
+     * href="https://tools.ietf.org/html/rfc6838#section-4.2">Naming Requirements</a>
+     * for guidelines.</p> <p>This parameter is optional; the default value is
+     * <code>null</code> (or empty in JSON).</p>
+     */
+    inline bool MediaTypeHasBeenSet() const { return m_mediaTypeHasBeenSet; }
 
     /**
      * <p>The media type of the stream. Consumers of the stream can use this
@@ -239,6 +264,16 @@ namespace Model
      * href="https://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestParameters">DescribeKey</a>.
      * </p>
      */
+    inline bool KmsKeyIdHasBeenSet() const { return m_kmsKeyIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the AWS Key Management Service (AWS KMS) key that you want Kinesis
+     * Video Streams to use to encrypt stream data.</p> <p>If no key ID is specified,
+     * the default, Kinesis Video-managed key (<code>aws/kinesisvideo</code>) is
+     * used.</p> <p> For more information, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestParameters">DescribeKey</a>.
+     * </p>
+     */
     inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = value; }
 
     /**
@@ -314,6 +349,18 @@ namespace Model
      * limit of 200 MB. Fragments are removed from the buffer when either limit is
      * reached.</p>
      */
+    inline bool DataRetentionInHoursHasBeenSet() const { return m_dataRetentionInHoursHasBeenSet; }
+
+    /**
+     * <p>The number of hours that you want to retain the data in the stream. Kinesis
+     * Video Streams retains the data in a data store that is associated with the
+     * stream.</p> <p>The default value is 0, indicating that the stream does not
+     * persist data.</p> <p>When the <code>DataRetentionInHours</code> value is 0,
+     * consumers can still consume the fragments that remain in the service host
+     * buffer, which has a retention time limit of 5 minutes and a retention memory
+     * limit of 200 MB. Fragments are removed from the buffer when either limit is
+     * reached.</p>
+     */
     inline void SetDataRetentionInHours(int value) { m_dataRetentionInHoursHasBeenSet = true; m_dataRetentionInHours = value; }
 
     /**
@@ -334,6 +381,12 @@ namespace Model
      * key-value pair (the value is optional).</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>A list of tags to associate with the specified stream. Each tag is a
+     * key-value pair (the value is optional).</p>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
      * <p>A list of tags to associate with the specified stream. Each tag is a

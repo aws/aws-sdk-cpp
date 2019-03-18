@@ -56,6 +56,11 @@ namespace Model
     /**
      * Brightness level.
      */
+    inline bool BrightnessHasBeenSet() const { return m_brightnessHasBeenSet; }
+
+    /**
+     * Brightness level.
+     */
     inline void SetBrightness(int value) { m_brightnessHasBeenSet = true; m_brightness = value; }
 
     /**
@@ -66,6 +71,9 @@ namespace Model
 
     
     inline const ColorSpaceConversion& GetColorSpaceConversion() const{ return m_colorSpaceConversion; }
+
+    
+    inline bool ColorSpaceConversionHasBeenSet() const { return m_colorSpaceConversionHasBeenSet; }
 
     
     inline void SetColorSpaceConversion(const ColorSpaceConversion& value) { m_colorSpaceConversionHasBeenSet = true; m_colorSpaceConversion = value; }
@@ -88,6 +96,11 @@ namespace Model
     /**
      * Contrast level.
      */
+    inline bool ContrastHasBeenSet() const { return m_contrastHasBeenSet; }
+
+    /**
+     * Contrast level.
+     */
     inline void SetContrast(int value) { m_contrastHasBeenSet = true; m_contrast = value; }
 
     /**
@@ -101,6 +114,12 @@ namespace Model
      * to provide missing metadata. Note that these settings are not color correction.
      */
     inline const Hdr10Metadata& GetHdr10Metadata() const{ return m_hdr10Metadata; }
+
+    /**
+     * Use the HDR master display (Hdr10Metadata) settings to correct HDR metadata or
+     * to provide missing metadata. Note that these settings are not color correction.
+     */
+    inline bool Hdr10MetadataHasBeenSet() const { return m_hdr10MetadataHasBeenSet; }
 
     /**
      * Use the HDR master display (Hdr10Metadata) settings to correct HDR metadata or
@@ -135,6 +154,11 @@ namespace Model
     /**
      * Hue in degrees.
      */
+    inline bool HueHasBeenSet() const { return m_hueHasBeenSet; }
+
+    /**
+     * Hue in degrees.
+     */
     inline void SetHue(int value) { m_hueHasBeenSet = true; m_hue = value; }
 
     /**
@@ -147,6 +171,11 @@ namespace Model
      * Saturation level.
      */
     inline int GetSaturation() const{ return m_saturation; }
+
+    /**
+     * Saturation level.
+     */
+    inline bool SaturationHasBeenSet() const { return m_saturationHasBeenSet; }
 
     /**
      * Saturation level.

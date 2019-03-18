@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the alias.</p>
      */
+    inline bool AliasArnHasBeenSet() const { return m_aliasArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the alias.</p>
+     */
     inline void SetAliasArn(const Aws::String& value) { m_aliasArnHasBeenSet = true; m_aliasArn = value; }
 
     /**
@@ -90,6 +95,11 @@ namespace Model
      * <p>The name of the alias.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
+
+    /**
+     * <p>The name of the alias.</p>
+     */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
      * <p>The name of the alias.</p>
@@ -130,6 +140,11 @@ namespace Model
     /**
      * <p>The function version that the alias invokes.</p>
      */
+    inline bool FunctionVersionHasBeenSet() const { return m_functionVersionHasBeenSet; }
+
+    /**
+     * <p>The function version that the alias invokes.</p>
+     */
     inline void SetFunctionVersion(const Aws::String& value) { m_functionVersionHasBeenSet = true; m_functionVersion = value; }
 
     /**
@@ -162,6 +177,11 @@ namespace Model
      * <p>A description of the alias.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
+
+    /**
+     * <p>A description of the alias.</p>
+     */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
 
     /**
      * <p>A description of the alias.</p>
@@ -206,6 +226,13 @@ namespace Model
      * href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-traffic-shifting-using-aliases.html">routing
      * configuration</a> of the alias.</p>
      */
+    inline bool RoutingConfigHasBeenSet() const { return m_routingConfigHasBeenSet; }
+
+    /**
+     * <p>The <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-traffic-shifting-using-aliases.html">routing
+     * configuration</a> of the alias.</p>
+     */
     inline void SetRoutingConfig(const AliasRoutingConfiguration& value) { m_routingConfigHasBeenSet = true; m_routingConfig = value; }
 
     /**
@@ -234,6 +261,11 @@ namespace Model
      * <p>A unique identifier that changes when you update the alias.</p>
      */
     inline const Aws::String& GetRevisionId() const{ return m_revisionId; }
+
+    /**
+     * <p>A unique identifier that changes when you update the alias.</p>
+     */
+    inline bool RevisionIdHasBeenSet() const { return m_revisionIdHasBeenSet; }
 
     /**
      * <p>A unique identifier that changes when you update the alias.</p>

@@ -64,6 +64,15 @@ namespace Model
      * diagnosing problems by tracing back the chain of events leading up to this
      * event.</p>
      */
+    inline bool DecisionTaskCompletedEventIdHasBeenSet() const { return m_decisionTaskCompletedEventIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the <code>DecisionTaskCompleted</code> event corresponding to the
+     * decision task that resulted in the <code>RequestCancelActivityTask</code>
+     * decision for this cancellation request. This information can be useful for
+     * diagnosing problems by tracing back the chain of events leading up to this
+     * event.</p>
+     */
     inline void SetDecisionTaskCompletedEventId(long long value) { m_decisionTaskCompletedEventIdHasBeenSet = true; m_decisionTaskCompletedEventId = value; }
 
     /**
@@ -80,6 +89,11 @@ namespace Model
      * <p>The unique ID of the task.</p>
      */
     inline const Aws::String& GetActivityId() const{ return m_activityId; }
+
+    /**
+     * <p>The unique ID of the task.</p>
+     */
+    inline bool ActivityIdHasBeenSet() const { return m_activityIdHasBeenSet; }
 
     /**
      * <p>The unique ID of the task.</p>

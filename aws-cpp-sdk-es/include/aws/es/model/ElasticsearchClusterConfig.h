@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The instance type for an Elasticsearch cluster.</p>
      */
+    inline bool InstanceTypeHasBeenSet() const { return m_instanceTypeHasBeenSet; }
+
+    /**
+     * <p>The instance type for an Elasticsearch cluster.</p>
+     */
     inline void SetInstanceType(const ESPartitionInstanceType& value) { m_instanceTypeHasBeenSet = true; m_instanceType = value; }
 
     /**
@@ -83,6 +88,11 @@ namespace Model
     /**
      * <p>The number of instances in the specified domain cluster.</p>
      */
+    inline bool InstanceCountHasBeenSet() const { return m_instanceCountHasBeenSet; }
+
+    /**
+     * <p>The number of instances in the specified domain cluster.</p>
+     */
     inline void SetInstanceCount(int value) { m_instanceCountHasBeenSet = true; m_instanceCount = value; }
 
     /**
@@ -98,6 +108,14 @@ namespace Model
      * target="_blank">About Dedicated Master Nodes</a> for more information.</p>
      */
     inline bool GetDedicatedMasterEnabled() const{ return m_dedicatedMasterEnabled; }
+
+    /**
+     * <p>A boolean value to indicate whether a dedicated master node is enabled. See
+     * <a
+     * href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-managedomains.html#es-managedomains-dedicatedmasternodes"
+     * target="_blank">About Dedicated Master Nodes</a> for more information.</p>
+     */
+    inline bool DedicatedMasterEnabledHasBeenSet() const { return m_dedicatedMasterEnabledHasBeenSet; }
 
     /**
      * <p>A boolean value to indicate whether a dedicated master node is enabled. See
@@ -128,6 +146,13 @@ namespace Model
      * href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-managedomains.html#es-managedomains-zoneawareness"
      * target="_blank">About Zone Awareness</a> for more information.</p>
      */
+    inline bool ZoneAwarenessEnabledHasBeenSet() const { return m_zoneAwarenessEnabledHasBeenSet; }
+
+    /**
+     * <p>A boolean value to indicate whether zone awareness is enabled. See <a
+     * href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-managedomains.html#es-managedomains-zoneawareness"
+     * target="_blank">About Zone Awareness</a> for more information.</p>
+     */
     inline void SetZoneAwarenessEnabled(bool value) { m_zoneAwarenessEnabledHasBeenSet = true; m_zoneAwarenessEnabled = value; }
 
     /**
@@ -143,6 +168,12 @@ namespace Model
      * is enabled.</p>
      */
     inline const ZoneAwarenessConfig& GetZoneAwarenessConfig() const{ return m_zoneAwarenessConfig; }
+
+    /**
+     * <p>Specifies the zone awareness configuration for a domain when zone awareness
+     * is enabled.</p>
+     */
+    inline bool ZoneAwarenessConfigHasBeenSet() const { return m_zoneAwarenessConfigHasBeenSet; }
 
     /**
      * <p>Specifies the zone awareness configuration for a domain when zone awareness
@@ -177,6 +208,11 @@ namespace Model
     /**
      * <p>The instance type for a dedicated master node.</p>
      */
+    inline bool DedicatedMasterTypeHasBeenSet() const { return m_dedicatedMasterTypeHasBeenSet; }
+
+    /**
+     * <p>The instance type for a dedicated master node.</p>
+     */
     inline void SetDedicatedMasterType(const ESPartitionInstanceType& value) { m_dedicatedMasterTypeHasBeenSet = true; m_dedicatedMasterType = value; }
 
     /**
@@ -200,6 +236,12 @@ namespace Model
      * cluster.</p>
      */
     inline int GetDedicatedMasterCount() const{ return m_dedicatedMasterCount; }
+
+    /**
+     * <p>Total number of dedicated master nodes, active and on standby, for the
+     * cluster.</p>
+     */
+    inline bool DedicatedMasterCountHasBeenSet() const { return m_dedicatedMasterCountHasBeenSet; }
 
     /**
      * <p>Total number of dedicated master nodes, active and on standby, for the

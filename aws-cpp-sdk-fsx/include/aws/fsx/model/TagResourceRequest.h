@@ -60,6 +60,12 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the Amazon FSx resource that you want to
      * tag.</p>
      */
+    inline bool ResourceARNHasBeenSet() const { return m_resourceARNHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the Amazon FSx resource that you want to
+     * tag.</p>
+     */
     inline void SetResourceARN(const Aws::String& value) { m_resourceARNHasBeenSet = true; m_resourceARN = value; }
 
     /**
@@ -98,6 +104,12 @@ namespace Model
      * the value is replaced by the one specified in this parameter.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>A list of tags for the resource. If a tag with a given key already exists,
+     * the value is replaced by the one specified in this parameter.</p>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
      * <p>A list of tags for the resource. If a tag with a given key already exists,

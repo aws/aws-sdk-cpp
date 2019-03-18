@@ -52,6 +52,11 @@ namespace Model
     /**
      * <p>A name for the destination.</p>
      */
+    inline bool DestinationNameHasBeenSet() const { return m_destinationNameHasBeenSet; }
+
+    /**
+     * <p>A name for the destination.</p>
+     */
     inline void SetDestinationName(const Aws::String& value) { m_destinationNameHasBeenSet = true; m_destinationName = value; }
 
     /**
@@ -85,6 +90,12 @@ namespace Model
      * events.</p>
      */
     inline const Aws::String& GetTargetArn() const{ return m_targetArn; }
+
+    /**
+     * <p>The ARN of an Amazon Kinesis stream to which to deliver matching log
+     * events.</p>
+     */
+    inline bool TargetArnHasBeenSet() const { return m_targetArnHasBeenSet; }
 
     /**
      * <p>The ARN of an Amazon Kinesis stream to which to deliver matching log
@@ -128,6 +139,12 @@ namespace Model
      * Amazon Kinesis PutRecord operation on the destination stream.</p>
      */
     inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
+
+    /**
+     * <p>The ARN of an IAM role that grants CloudWatch Logs permissions to call the
+     * Amazon Kinesis PutRecord operation on the destination stream.</p>
+     */
+    inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
 
     /**
      * <p>The ARN of an IAM role that grants CloudWatch Logs permissions to call the

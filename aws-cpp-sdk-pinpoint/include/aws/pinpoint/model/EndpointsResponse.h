@@ -56,6 +56,11 @@ namespace Model
     /**
      * The list of endpoints.
      */
+    inline bool ItemHasBeenSet() const { return m_itemHasBeenSet; }
+
+    /**
+     * The list of endpoints.
+     */
     inline void SetItem(const Aws::Vector<EndpointResponse>& value) { m_itemHasBeenSet = true; m_item = value; }
 
     /**

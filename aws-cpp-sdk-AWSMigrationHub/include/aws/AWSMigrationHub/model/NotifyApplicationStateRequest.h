@@ -55,6 +55,12 @@ namespace Model
      * <p>The configurationId in ADS that uniquely identifies the grouped
      * application.</p>
      */
+    inline bool ApplicationIdHasBeenSet() const { return m_applicationIdHasBeenSet; }
+
+    /**
+     * <p>The configurationId in ADS that uniquely identifies the grouped
+     * application.</p>
+     */
     inline void SetApplicationId(const Aws::String& value) { m_applicationIdHasBeenSet = true; m_applicationId = value; }
 
     /**
@@ -96,6 +102,11 @@ namespace Model
     /**
      * <p>Status of the application - Not Started, In-Progress, Complete.</p>
      */
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
+
+    /**
+     * <p>Status of the application - Not Started, In-Progress, Complete.</p>
+     */
     inline void SetStatus(const ApplicationStatus& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
@@ -119,6 +130,12 @@ namespace Model
      * to test if the caller has permission to make the call.</p>
      */
     inline bool GetDryRun() const{ return m_dryRun; }
+
+    /**
+     * <p>Optional boolean flag to indicate whether any effect should take place. Used
+     * to test if the caller has permission to make the call.</p>
+     */
+    inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
 
     /**
      * <p>Optional boolean flag to indicate whether any effect should take place. Used

@@ -54,6 +54,11 @@ namespace Model
     /**
      * <p>The name of the server on which to run maintenance. </p>
      */
+    inline bool ServerNameHasBeenSet() const { return m_serverNameHasBeenSet; }
+
+    /**
+     * <p>The name of the server on which to run maintenance. </p>
+     */
     inline void SetServerName(const Aws::String& value) { m_serverNameHasBeenSet = true; m_serverName = value; }
 
     /**
@@ -87,6 +92,12 @@ namespace Model
      * maintenance. </p>
      */
     inline const Aws::Vector<EngineAttribute>& GetEngineAttributes() const{ return m_engineAttributes; }
+
+    /**
+     * <p>Engine attributes that are specific to the server on which you want to run
+     * maintenance. </p>
+     */
+    inline bool EngineAttributesHasBeenSet() const { return m_engineAttributesHasBeenSet; }
 
     /**
      * <p>Engine attributes that are specific to the server on which you want to run

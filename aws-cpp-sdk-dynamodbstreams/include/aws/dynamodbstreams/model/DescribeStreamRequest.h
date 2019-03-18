@@ -53,6 +53,11 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) for the stream.</p>
      */
+    inline bool StreamArnHasBeenSet() const { return m_streamArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) for the stream.</p>
+     */
     inline void SetStreamArn(const Aws::String& value) { m_streamArnHasBeenSet = true; m_streamArn = value; }
 
     /**
@@ -89,6 +94,11 @@ namespace Model
     /**
      * <p>The maximum number of shard objects to return. The upper limit is 100.</p>
      */
+    inline bool LimitHasBeenSet() const { return m_limitHasBeenSet; }
+
+    /**
+     * <p>The maximum number of shard objects to return. The upper limit is 100.</p>
+     */
     inline void SetLimit(int value) { m_limitHasBeenSet = true; m_limit = value; }
 
     /**
@@ -103,6 +113,13 @@ namespace Model
      * operation. </p>
      */
     inline const Aws::String& GetExclusiveStartShardId() const{ return m_exclusiveStartShardId; }
+
+    /**
+     * <p>The shard ID of the first item that this operation will evaluate. Use the
+     * value that was returned for <code>LastEvaluatedShardId</code> in the previous
+     * operation. </p>
+     */
+    inline bool ExclusiveStartShardIdHasBeenSet() const { return m_exclusiveStartShardIdHasBeenSet; }
 
     /**
      * <p>The shard ID of the first item that this operation will evaluate. Use the

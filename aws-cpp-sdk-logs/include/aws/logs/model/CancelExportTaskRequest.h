@@ -52,6 +52,11 @@ namespace Model
     /**
      * <p>The ID of the export task.</p>
      */
+    inline bool TaskIdHasBeenSet() const { return m_taskIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the export task.</p>
+     */
     inline void SetTaskId(const Aws::String& value) { m_taskIdHasBeenSet = true; m_taskId = value; }
 
     /**

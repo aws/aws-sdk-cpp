@@ -62,6 +62,14 @@ namespace Model
      * <code>CreatorRequestId</code> can be any unique string, for example, a date/time
      * stamp. </p>
      */
+    inline bool CreatorRequestIdHasBeenSet() const { return m_creatorRequestIdHasBeenSet; }
+
+    /**
+     * <p>A unique string that identifies the request and that allows failed requests
+     * to be retried without the risk of executing the operation twice.
+     * <code>CreatorRequestId</code> can be any unique string, for example, a date/time
+     * stamp. </p>
+     */
     inline void SetCreatorRequestId(const Aws::String& value) { m_creatorRequestIdHasBeenSet = true; m_creatorRequestId = value; }
 
     /**
@@ -115,6 +123,12 @@ namespace Model
      * <p>A friendly name that lets you easily find a rule in the Resolver dashboard in
      * the Route 53 console.</p>
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>A friendly name that lets you easily find a rule in the Resolver dashboard in
+     * the Route 53 console.</p>
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
@@ -156,6 +170,11 @@ namespace Model
     /**
      * <p>Specify <code>FORWARD</code>. Other resolver rule types aren't supported.</p>
      */
+    inline bool RuleTypeHasBeenSet() const { return m_ruleTypeHasBeenSet; }
+
+    /**
+     * <p>Specify <code>FORWARD</code>. Other resolver rule types aren't supported.</p>
+     */
     inline void SetRuleType(const RuleTypeOption& value) { m_ruleTypeHasBeenSet = true; m_ruleType = value; }
 
     /**
@@ -181,6 +200,14 @@ namespace Model
      * resolver rule that contains the most specific domain name (www.example.com).</p>
      */
     inline const Aws::String& GetDomainName() const{ return m_domainName; }
+
+    /**
+     * <p>DNS queries for this domain name are forwarded to the IP addresses that you
+     * specify in <code>TargetIps</code>. If a query matches multiple resolver rules
+     * (example.com and www.example.com), outbound DNS queries are routed using the
+     * resolver rule that contains the most specific domain name (www.example.com).</p>
+     */
+    inline bool DomainNameHasBeenSet() const { return m_domainNameHasBeenSet; }
 
     /**
      * <p>DNS queries for this domain name are forwarded to the IP addresses that you
@@ -241,6 +268,12 @@ namespace Model
      * <p>The IPs that you want Resolver to forward DNS queries to. You can specify
      * only IPv4 addresses. Separate IP addresses with a comma.</p>
      */
+    inline bool TargetIpsHasBeenSet() const { return m_targetIpsHasBeenSet; }
+
+    /**
+     * <p>The IPs that you want Resolver to forward DNS queries to. You can specify
+     * only IPv4 addresses. Separate IP addresses with a comma.</p>
+     */
     inline void SetTargetIps(const Aws::Vector<TargetAddress>& value) { m_targetIpsHasBeenSet = true; m_targetIps = value; }
 
     /**
@@ -284,6 +317,12 @@ namespace Model
      * <p>The ID of the outbound resolver endpoint that you want to use to route DNS
      * queries to the IP addresses that you specify in <code>TargetIps</code>.</p>
      */
+    inline bool ResolverEndpointIdHasBeenSet() const { return m_resolverEndpointIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the outbound resolver endpoint that you want to use to route DNS
+     * queries to the IP addresses that you specify in <code>TargetIps</code>.</p>
+     */
     inline void SetResolverEndpointId(const Aws::String& value) { m_resolverEndpointIdHasBeenSet = true; m_resolverEndpointId = value; }
 
     /**
@@ -322,6 +361,12 @@ namespace Model
      * endpoint.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>A list of the tag keys and values that you want to associate with the
+     * endpoint.</p>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
      * <p>A list of the tag keys and values that you want to associate with the

@@ -52,6 +52,11 @@ namespace Model
     /**
      * <p>The volume ID.</p>
      */
+    inline bool VolumeIdHasBeenSet() const { return m_volumeIdHasBeenSet; }
+
+    /**
+     * <p>The volume ID.</p>
+     */
     inline void SetVolumeId(const Aws::String& value) { m_volumeIdHasBeenSet = true; m_volumeId = value; }
 
     /**
@@ -84,6 +89,11 @@ namespace Model
      * <p>The instance ID.</p>
      */
     inline const Aws::String& GetInstanceId() const{ return m_instanceId; }
+
+    /**
+     * <p>The instance ID.</p>
+     */
+    inline bool InstanceIdHasBeenSet() const { return m_instanceIdHasBeenSet; }
 
     /**
      * <p>The instance ID.</p>

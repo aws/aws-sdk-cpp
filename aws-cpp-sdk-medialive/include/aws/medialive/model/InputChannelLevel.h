@@ -55,6 +55,12 @@ namespace Model
      * Remixing value. Units are in dB and acceptable values are within the range from
      * -60 (mute) and 6 dB.
      */
+    inline bool GainHasBeenSet() const { return m_gainHasBeenSet; }
+
+    /**
+     * Remixing value. Units are in dB and acceptable values are within the range from
+     * -60 (mute) and 6 dB.
+     */
     inline void SetGain(int value) { m_gainHasBeenSet = true; m_gain = value; }
 
     /**
@@ -68,6 +74,11 @@ namespace Model
      * The index of the input channel used as a source.
      */
     inline int GetInputChannel() const{ return m_inputChannel; }
+
+    /**
+     * The index of the input channel used as a source.
+     */
+    inline bool InputChannelHasBeenSet() const { return m_inputChannelHasBeenSet; }
 
     /**
      * The index of the input channel used as a source.

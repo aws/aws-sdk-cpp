@@ -61,6 +61,12 @@ namespace Model
      * <p>A string that identifies the next page of stacks that you want to
      * retrieve.</p>
      */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
+
+    /**
+     * <p>A string that identifies the next page of stacks that you want to
+     * retrieve.</p>
+     */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
     /**
@@ -101,6 +107,14 @@ namespace Model
      * data type.</p>
      */
     inline const Aws::Vector<StackStatus>& GetStackStatusFilter() const{ return m_stackStatusFilter; }
+
+    /**
+     * <p>Stack status to use as a filter. Specify one or more stack status codes to
+     * list only stacks with the specified status codes. For a complete list of stack
+     * status codes, see the <code>StackStatus</code> parameter of the <a>Stack</a>
+     * data type.</p>
+     */
+    inline bool StackStatusFilterHasBeenSet() const { return m_stackStatusFilterHasBeenSet; }
 
     /**
      * <p>Stack status to use as a filter. Specify one or more stack status codes to

@@ -59,6 +59,12 @@ namespace Model
      * <p>The maximum number of instances of this Elastic Beanstalk resource type that
      * an AWS account can use.</p>
      */
+    inline bool MaximumHasBeenSet() const { return m_maximumHasBeenSet; }
+
+    /**
+     * <p>The maximum number of instances of this Elastic Beanstalk resource type that
+     * an AWS account can use.</p>
+     */
     inline void SetMaximum(int value) { m_maximumHasBeenSet = true; m_maximum = value; }
 
     /**

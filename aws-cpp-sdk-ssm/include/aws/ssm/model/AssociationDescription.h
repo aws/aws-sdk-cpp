@@ -63,6 +63,11 @@ namespace Model
     /**
      * <p>The name of the Systems Manager document.</p>
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>The name of the Systems Manager document.</p>
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
@@ -95,6 +100,11 @@ namespace Model
      * <p>The ID of the instance.</p>
      */
     inline const Aws::String& GetInstanceId() const{ return m_instanceId; }
+
+    /**
+     * <p>The ID of the instance.</p>
+     */
+    inline bool InstanceIdHasBeenSet() const { return m_instanceIdHasBeenSet; }
 
     /**
      * <p>The ID of the instance.</p>
@@ -135,6 +145,11 @@ namespace Model
     /**
      * <p>The association version.</p>
      */
+    inline bool AssociationVersionHasBeenSet() const { return m_associationVersionHasBeenSet; }
+
+    /**
+     * <p>The association version.</p>
+     */
     inline void SetAssociationVersion(const Aws::String& value) { m_associationVersionHasBeenSet = true; m_associationVersion = value; }
 
     /**
@@ -171,6 +186,11 @@ namespace Model
     /**
      * <p>The date when the association was made.</p>
      */
+    inline bool DateHasBeenSet() const { return m_dateHasBeenSet; }
+
+    /**
+     * <p>The date when the association was made.</p>
+     */
     inline void SetDate(const Aws::Utils::DateTime& value) { m_dateHasBeenSet = true; m_date = value; }
 
     /**
@@ -193,6 +213,11 @@ namespace Model
      * <p>The date when the association was last updated.</p>
      */
     inline const Aws::Utils::DateTime& GetLastUpdateAssociationDate() const{ return m_lastUpdateAssociationDate; }
+
+    /**
+     * <p>The date when the association was last updated.</p>
+     */
+    inline bool LastUpdateAssociationDateHasBeenSet() const { return m_lastUpdateAssociationDateHasBeenSet; }
 
     /**
      * <p>The date when the association was last updated.</p>
@@ -223,6 +248,11 @@ namespace Model
     /**
      * <p>The association status.</p>
      */
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
+
+    /**
+     * <p>The association status.</p>
+     */
     inline void SetStatus(const AssociationStatus& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
@@ -249,6 +279,11 @@ namespace Model
     /**
      * <p>Information about the association.</p>
      */
+    inline bool OverviewHasBeenSet() const { return m_overviewHasBeenSet; }
+
+    /**
+     * <p>Information about the association.</p>
+     */
     inline void SetOverview(const AssociationOverview& value) { m_overviewHasBeenSet = true; m_overview = value; }
 
     /**
@@ -271,6 +306,11 @@ namespace Model
      * <p>The document version.</p>
      */
     inline const Aws::String& GetDocumentVersion() const{ return m_documentVersion; }
+
+    /**
+     * <p>The document version.</p>
+     */
+    inline bool DocumentVersionHasBeenSet() const { return m_documentVersionHasBeenSet; }
 
     /**
      * <p>The document version.</p>
@@ -309,6 +349,13 @@ namespace Model
      * controls.</p>
      */
     inline const Aws::String& GetAutomationTargetParameterName() const{ return m_automationTargetParameterName; }
+
+    /**
+     * <p>Specify the target for the association. This target is required for
+     * associations that use an Automation document and target resources by using rate
+     * controls.</p>
+     */
+    inline bool AutomationTargetParameterNameHasBeenSet() const { return m_automationTargetParameterNameHasBeenSet; }
 
     /**
      * <p>Specify the target for the association. This target is required for
@@ -357,6 +404,11 @@ namespace Model
      * <p>A description of the parameters for a document. </p>
      */
     inline const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& GetParameters() const{ return m_parameters; }
+
+    /**
+     * <p>A description of the parameters for a document. </p>
+     */
+    inline bool ParametersHasBeenSet() const { return m_parametersHasBeenSet; }
 
     /**
      * <p>A description of the parameters for a document. </p>
@@ -417,6 +469,11 @@ namespace Model
     /**
      * <p>The association ID.</p>
      */
+    inline bool AssociationIdHasBeenSet() const { return m_associationIdHasBeenSet; }
+
+    /**
+     * <p>The association ID.</p>
+     */
     inline void SetAssociationId(const Aws::String& value) { m_associationIdHasBeenSet = true; m_associationId = value; }
 
     /**
@@ -453,6 +510,11 @@ namespace Model
     /**
      * <p>The instances targeted by the request. </p>
      */
+    inline bool TargetsHasBeenSet() const { return m_targetsHasBeenSet; }
+
+    /**
+     * <p>The instances targeted by the request. </p>
+     */
     inline void SetTargets(const Aws::Vector<Target>& value) { m_targetsHasBeenSet = true; m_targets = value; }
 
     /**
@@ -485,6 +547,11 @@ namespace Model
      * <p>A cron expression that specifies a schedule when the association runs.</p>
      */
     inline const Aws::String& GetScheduleExpression() const{ return m_scheduleExpression; }
+
+    /**
+     * <p>A cron expression that specifies a schedule when the association runs.</p>
+     */
+    inline bool ScheduleExpressionHasBeenSet() const { return m_scheduleExpressionHasBeenSet; }
 
     /**
      * <p>A cron expression that specifies a schedule when the association runs.</p>
@@ -527,6 +594,12 @@ namespace Model
      * <p>An Amazon S3 bucket where you want to store the output details of the
      * request.</p>
      */
+    inline bool OutputLocationHasBeenSet() const { return m_outputLocationHasBeenSet; }
+
+    /**
+     * <p>An Amazon S3 bucket where you want to store the output details of the
+     * request.</p>
+     */
     inline void SetOutputLocation(const InstanceAssociationOutputLocation& value) { m_outputLocationHasBeenSet = true; m_outputLocation = value; }
 
     /**
@@ -552,6 +625,11 @@ namespace Model
      * <p>The date on which the association was last run.</p>
      */
     inline const Aws::Utils::DateTime& GetLastExecutionDate() const{ return m_lastExecutionDate; }
+
+    /**
+     * <p>The date on which the association was last run.</p>
+     */
+    inline bool LastExecutionDateHasBeenSet() const { return m_lastExecutionDateHasBeenSet; }
 
     /**
      * <p>The date on which the association was last run.</p>
@@ -582,6 +660,11 @@ namespace Model
     /**
      * <p>The last date on which the association was successfully run.</p>
      */
+    inline bool LastSuccessfulExecutionDateHasBeenSet() const { return m_lastSuccessfulExecutionDateHasBeenSet; }
+
+    /**
+     * <p>The last date on which the association was successfully run.</p>
+     */
     inline void SetLastSuccessfulExecutionDate(const Aws::Utils::DateTime& value) { m_lastSuccessfulExecutionDateHasBeenSet = true; m_lastSuccessfulExecutionDate = value; }
 
     /**
@@ -604,6 +687,11 @@ namespace Model
      * <p>The association name.</p>
      */
     inline const Aws::String& GetAssociationName() const{ return m_associationName; }
+
+    /**
+     * <p>The association name.</p>
+     */
+    inline bool AssociationNameHasBeenSet() const { return m_associationNameHasBeenSet; }
 
     /**
      * <p>The association name.</p>
@@ -651,6 +739,22 @@ namespace Model
      * to 1 so that executions proceed one at a time.</p>
      */
     inline const Aws::String& GetMaxErrors() const{ return m_maxErrors; }
+
+    /**
+     * <p>The number of errors that are allowed before the system stops sending
+     * requests to run the association on additional targets. You can specify either an
+     * absolute number of errors, for example 10, or a percentage of the target set,
+     * for example 10%. If you specify 3, for example, the system stops sending
+     * requests when the fourth error is received. If you specify 0, then the system
+     * stops sending requests after the first error is returned. If you run an
+     * association on 50 instances and set MaxError to 10%, then the system stops
+     * sending the request when the sixth error is received.</p> <p>Executions that are
+     * already running an association when MaxErrors is reached are allowed to
+     * complete, but some of these executions may fail as well. If you need to ensure
+     * that there won't be more than max-errors failed executions, set MaxConcurrency
+     * to 1 so that executions proceed one at a time.</p>
+     */
+    inline bool MaxErrorsHasBeenSet() const { return m_maxErrorsHasBeenSet; }
 
     /**
      * <p>The number of errors that are allowed before the system stops sending
@@ -771,6 +875,18 @@ namespace Model
      * interval, the new instance will process its association within the limit
      * specified for MaxConcurrency.</p>
      */
+    inline bool MaxConcurrencyHasBeenSet() const { return m_maxConcurrencyHasBeenSet; }
+
+    /**
+     * <p>The maximum number of targets allowed to run the association at the same
+     * time. You can specify a number, for example 10, or a percentage of the target
+     * set, for example 10%. The default value is 100%, which means all targets run the
+     * association at the same time.</p> <p>If a new instance starts and attempts to
+     * execute an association while Systems Manager is executing MaxConcurrency
+     * associations, the association is allowed to run. During the next association
+     * interval, the new instance will process its association within the limit
+     * specified for MaxConcurrency.</p>
+     */
     inline void SetMaxConcurrency(const Aws::String& value) { m_maxConcurrencyHasBeenSet = true; m_maxConcurrency = value; }
 
     /**
@@ -838,6 +954,11 @@ namespace Model
      * <p>The severity level that is assigned to the association.</p>
      */
     inline const AssociationComplianceSeverity& GetComplianceSeverity() const{ return m_complianceSeverity; }
+
+    /**
+     * <p>The severity level that is assigned to the association.</p>
+     */
+    inline bool ComplianceSeverityHasBeenSet() const { return m_complianceSeverityHasBeenSet; }
 
     /**
      * <p>The severity level that is assigned to the association.</p>

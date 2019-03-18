@@ -61,6 +61,11 @@ namespace Model
     /**
      * <p>The unique identifier for the reservation.</p>
      */
+    inline bool ReservedCacheNodeIdHasBeenSet() const { return m_reservedCacheNodeIdHasBeenSet; }
+
+    /**
+     * <p>The unique identifier for the reservation.</p>
+     */
     inline void SetReservedCacheNodeId(const Aws::String& value) { m_reservedCacheNodeIdHasBeenSet = true; m_reservedCacheNodeId = value; }
 
     /**
@@ -93,6 +98,11 @@ namespace Model
      * <p>The offering identifier.</p>
      */
     inline const Aws::String& GetReservedCacheNodesOfferingId() const{ return m_reservedCacheNodesOfferingId; }
+
+    /**
+     * <p>The offering identifier.</p>
+     */
+    inline bool ReservedCacheNodesOfferingIdHasBeenSet() const { return m_reservedCacheNodesOfferingIdHasBeenSet; }
 
     /**
      * <p>The offering identifier.</p>
@@ -168,6 +178,50 @@ namespace Model
      * Node Type-Specific Parameters for Redis</a> </p> </li> </ul>
      */
     inline const Aws::String& GetCacheNodeType() const{ return m_cacheNodeType; }
+
+    /**
+     * <p>The cache node type for the reserved cache nodes.</p> <p>The following node
+     * types are supported by ElastiCache. Generally speaking, the current generation
+     * types provide more memory and computational power at lower cost when compared to
+     * their equivalent previous generation counterparts.</p> <ul> <li> <p>General
+     * purpose:</p> <ul> <li> <p>Current generation: </p> <p> <b>T2 node types:</b>
+     * <code>cache.t2.micro</code>, <code>cache.t2.small</code>,
+     * <code>cache.t2.medium</code> </p> <p> <b>M3 node types:</b>
+     * <code>cache.m3.medium</code>, <code>cache.m3.large</code>,
+     * <code>cache.m3.xlarge</code>, <code>cache.m3.2xlarge</code> </p> <p> <b>M4 node
+     * types:</b> <code>cache.m4.large</code>, <code>cache.m4.xlarge</code>,
+     * <code>cache.m4.2xlarge</code>, <code>cache.m4.4xlarge</code>,
+     * <code>cache.m4.10xlarge</code> </p> </li> <li> <p>Previous generation: (not
+     * recommended)</p> <p> <b>T1 node types:</b> <code>cache.t1.micro</code> </p> <p>
+     * <b>M1 node types:</b> <code>cache.m1.small</code>, <code>cache.m1.medium</code>,
+     * <code>cache.m1.large</code>, <code>cache.m1.xlarge</code> </p> </li> </ul> </li>
+     * <li> <p>Compute optimized:</p> <ul> <li> <p>Previous generation: (not
+     * recommended)</p> <p> <b>C1 node types:</b> <code>cache.c1.xlarge</code> </p>
+     * </li> </ul> </li> <li> <p>Memory optimized:</p> <ul> <li> <p>Current generation:
+     * </p> <p> <b>R3 node types:</b> <code>cache.r3.large</code>,
+     * <code>cache.r3.xlarge</code>, <code>cache.r3.2xlarge</code>,
+     * <code>cache.r3.4xlarge</code>, <code>cache.r3.8xlarge</code> </p> <p> <b>R4 node
+     * types;</b> <code>cache.r4.large</code>, <code>cache.r4.xlarge</code>,
+     * <code>cache.r4.2xlarge</code>, <code>cache.r4.4xlarge</code>,
+     * <code>cache.r4.8xlarge</code>, <code>cache.r4.16xlarge</code> </p> </li> <li>
+     * <p>Previous generation: (not recommended)</p> <p> <b>M2 node types:</b>
+     * <code>cache.m2.xlarge</code>, <code>cache.m2.2xlarge</code>,
+     * <code>cache.m2.4xlarge</code> </p> </li> </ul> </li> </ul> <p> <b>Notes:</b>
+     * </p> <ul> <li> <p>All T2 instances are created in an Amazon Virtual Private
+     * Cloud (Amazon VPC).</p> </li> <li> <p>Redis (cluster mode disabled): Redis
+     * backup/restore is not supported on T1 and T2 instances. </p> </li> <li> <p>Redis
+     * (cluster mode enabled): Backup/restore is not supported on T1 instances.</p>
+     * </li> <li> <p>Redis Append-only files (AOF) functionality is not supported for
+     * T1 or T2 instances.</p> </li> </ul> <p>For a complete listing of node types and
+     * specifications, see:</p> <ul> <li> <p> <a
+     * href="http://aws.amazon.com/elasticache/details">Amazon ElastiCache Product
+     * Features and Details</a> </p> </li> <li> <p> <a
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/mem-ug/ParameterGroups.Memcached.html#ParameterGroups.Memcached.NodeSpecific">Cache
+     * Node Type-Specific Parameters for Memcached</a> </p> </li> <li> <p> <a
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/ParameterGroups.Redis.html#ParameterGroups.Redis.NodeSpecific">Cache
+     * Node Type-Specific Parameters for Redis</a> </p> </li> </ul>
+     */
+    inline bool CacheNodeTypeHasBeenSet() const { return m_cacheNodeTypeHasBeenSet; }
 
     /**
      * <p>The cache node type for the reserved cache nodes.</p> <p>The following node
@@ -442,6 +496,11 @@ namespace Model
     /**
      * <p>The time the reservation started.</p>
      */
+    inline bool StartTimeHasBeenSet() const { return m_startTimeHasBeenSet; }
+
+    /**
+     * <p>The time the reservation started.</p>
+     */
     inline void SetStartTime(const Aws::Utils::DateTime& value) { m_startTimeHasBeenSet = true; m_startTime = value; }
 
     /**
@@ -468,6 +527,11 @@ namespace Model
     /**
      * <p>The duration of the reservation in seconds.</p>
      */
+    inline bool DurationHasBeenSet() const { return m_durationHasBeenSet; }
+
+    /**
+     * <p>The duration of the reservation in seconds.</p>
+     */
     inline void SetDuration(int value) { m_durationHasBeenSet = true; m_duration = value; }
 
     /**
@@ -480,6 +544,11 @@ namespace Model
      * <p>The fixed price charged for this reserved cache node.</p>
      */
     inline double GetFixedPrice() const{ return m_fixedPrice; }
+
+    /**
+     * <p>The fixed price charged for this reserved cache node.</p>
+     */
+    inline bool FixedPriceHasBeenSet() const { return m_fixedPriceHasBeenSet; }
 
     /**
      * <p>The fixed price charged for this reserved cache node.</p>
@@ -500,6 +569,11 @@ namespace Model
     /**
      * <p>The hourly price charged for this reserved cache node.</p>
      */
+    inline bool UsagePriceHasBeenSet() const { return m_usagePriceHasBeenSet; }
+
+    /**
+     * <p>The hourly price charged for this reserved cache node.</p>
+     */
     inline void SetUsagePrice(double value) { m_usagePriceHasBeenSet = true; m_usagePrice = value; }
 
     /**
@@ -516,6 +590,11 @@ namespace Model
     /**
      * <p>The number of cache nodes that have been reserved.</p>
      */
+    inline bool CacheNodeCountHasBeenSet() const { return m_cacheNodeCountHasBeenSet; }
+
+    /**
+     * <p>The number of cache nodes that have been reserved.</p>
+     */
     inline void SetCacheNodeCount(int value) { m_cacheNodeCountHasBeenSet = true; m_cacheNodeCount = value; }
 
     /**
@@ -528,6 +607,11 @@ namespace Model
      * <p>The description of the reserved cache node.</p>
      */
     inline const Aws::String& GetProductDescription() const{ return m_productDescription; }
+
+    /**
+     * <p>The description of the reserved cache node.</p>
+     */
+    inline bool ProductDescriptionHasBeenSet() const { return m_productDescriptionHasBeenSet; }
 
     /**
      * <p>The description of the reserved cache node.</p>
@@ -568,6 +652,11 @@ namespace Model
     /**
      * <p>The offering type of this reserved cache node.</p>
      */
+    inline bool OfferingTypeHasBeenSet() const { return m_offeringTypeHasBeenSet; }
+
+    /**
+     * <p>The offering type of this reserved cache node.</p>
+     */
     inline void SetOfferingType(const Aws::String& value) { m_offeringTypeHasBeenSet = true; m_offeringType = value; }
 
     /**
@@ -600,6 +689,11 @@ namespace Model
      * <p>The state of the reserved cache node.</p>
      */
     inline const Aws::String& GetState() const{ return m_state; }
+
+    /**
+     * <p>The state of the reserved cache node.</p>
+     */
+    inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
 
     /**
      * <p>The state of the reserved cache node.</p>
@@ -640,6 +734,11 @@ namespace Model
     /**
      * <p>The recurring price charged to run this reserved cache node.</p>
      */
+    inline bool RecurringChargesHasBeenSet() const { return m_recurringChargesHasBeenSet; }
+
+    /**
+     * <p>The recurring price charged to run this reserved cache node.</p>
+     */
     inline void SetRecurringCharges(const Aws::Vector<RecurringCharge>& value) { m_recurringChargesHasBeenSet = true; m_recurringCharges = value; }
 
     /**
@@ -674,6 +773,13 @@ namespace Model
      * </p>
      */
     inline const Aws::String& GetReservationARN() const{ return m_reservationARN; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the reserved cache node.</p> <p>Example:
+     * <code>arn:aws:elasticache:us-east-1:123456789012:reserved-instance:ri-2017-03-27-08-33-25-582</code>
+     * </p>
+     */
+    inline bool ReservationARNHasBeenSet() const { return m_reservationARNHasBeenSet; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the reserved cache node.</p> <p>Example:

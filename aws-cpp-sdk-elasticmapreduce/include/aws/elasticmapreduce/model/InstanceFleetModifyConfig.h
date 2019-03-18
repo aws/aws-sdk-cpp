@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p>A unique identifier for the instance fleet.</p>
      */
+    inline bool InstanceFleetIdHasBeenSet() const { return m_instanceFleetIdHasBeenSet; }
+
+    /**
+     * <p>A unique identifier for the instance fleet.</p>
+     */
     inline void SetInstanceFleetId(const Aws::String& value) { m_instanceFleetIdHasBeenSet = true; m_instanceFleetId = value; }
 
     /**
@@ -96,6 +101,12 @@ namespace Model
      * <p>The target capacity of On-Demand units for the instance fleet. For more
      * information see <a>InstanceFleetConfig$TargetOnDemandCapacity</a>.</p>
      */
+    inline bool TargetOnDemandCapacityHasBeenSet() const { return m_targetOnDemandCapacityHasBeenSet; }
+
+    /**
+     * <p>The target capacity of On-Demand units for the instance fleet. For more
+     * information see <a>InstanceFleetConfig$TargetOnDemandCapacity</a>.</p>
+     */
     inline void SetTargetOnDemandCapacity(int value) { m_targetOnDemandCapacityHasBeenSet = true; m_targetOnDemandCapacity = value; }
 
     /**
@@ -110,6 +121,12 @@ namespace Model
      * information, see <a>InstanceFleetConfig$TargetSpotCapacity</a>.</p>
      */
     inline int GetTargetSpotCapacity() const{ return m_targetSpotCapacity; }
+
+    /**
+     * <p>The target capacity of Spot units for the instance fleet. For more
+     * information, see <a>InstanceFleetConfig$TargetSpotCapacity</a>.</p>
+     */
+    inline bool TargetSpotCapacityHasBeenSet() const { return m_targetSpotCapacityHasBeenSet; }
 
     /**
      * <p>The target capacity of Spot units for the instance fleet. For more

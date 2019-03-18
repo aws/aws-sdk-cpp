@@ -67,6 +67,11 @@ namespace Model
     /**
      * <p>The workgroup name.</p>
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>The workgroup name.</p>
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
@@ -103,6 +108,11 @@ namespace Model
     /**
      * <p>The state of the workgroup: ENABLED or DISABLED.</p>
      */
+    inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
+
+    /**
+     * <p>The state of the workgroup: ENABLED or DISABLED.</p>
+     */
     inline void SetState(const WorkGroupState& value) { m_stateHasBeenSet = true; m_state = value; }
 
     /**
@@ -132,6 +142,18 @@ namespace Model
      * <a>WorkGroupConfiguration$EnforceWorkGroupConfiguration</a>.</p>
      */
     inline const WorkGroupConfiguration& GetConfiguration() const{ return m_configuration; }
+
+    /**
+     * <p>The configuration of the workgroup, which includes the location in Amazon S3
+     * where query results are stored, the encryption configuration, if any, used for
+     * query results; whether the Amazon CloudWatch Metrics are enabled for the
+     * workgroup; whether workgroup settings override client-side settings; and the
+     * data usage limit for the amount of data scanned per query, if it is specified.
+     * The workgroup settings override is specified in EnforceWorkGroupConfiguration
+     * (true/false) in the WorkGroupConfiguration. See
+     * <a>WorkGroupConfiguration$EnforceWorkGroupConfiguration</a>.</p>
+     */
+    inline bool ConfigurationHasBeenSet() const { return m_configurationHasBeenSet; }
 
     /**
      * <p>The configuration of the workgroup, which includes the location in Amazon S3
@@ -190,6 +212,11 @@ namespace Model
     /**
      * <p>The workgroup description.</p>
      */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
+
+    /**
+     * <p>The workgroup description.</p>
+     */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
@@ -222,6 +249,11 @@ namespace Model
      * <p>The date and time the workgroup was created.</p>
      */
     inline const Aws::Utils::DateTime& GetCreationTime() const{ return m_creationTime; }
+
+    /**
+     * <p>The date and time the workgroup was created.</p>
+     */
+    inline bool CreationTimeHasBeenSet() const { return m_creationTimeHasBeenSet; }
 
     /**
      * <p>The date and time the workgroup was created.</p>

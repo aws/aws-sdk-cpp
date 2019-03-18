@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p>Specifies whether to insert or delete a <a>RegexMatchTuple</a>.</p>
      */
+    inline bool ActionHasBeenSet() const { return m_actionHasBeenSet; }
+
+    /**
+     * <p>Specifies whether to insert or delete a <a>RegexMatchTuple</a>.</p>
+     */
     inline void SetAction(const ChangeAction& value) { m_actionHasBeenSet = true; m_action = value; }
 
     /**
@@ -85,6 +90,16 @@ namespace Model
      * <code>RegexMatchSet</code>.</p>
      */
     inline const RegexMatchTuple& GetRegexMatchTuple() const{ return m_regexMatchTuple; }
+
+    /**
+     * <p>Information about the part of a web request that you want AWS WAF to inspect
+     * and the identifier of the regular expression (regex) pattern that you want AWS
+     * WAF to search for. If you specify <code>DELETE</code> for the value of
+     * <code>Action</code>, the <code>RegexMatchTuple</code> values must exactly match
+     * the values in the <code>RegexMatchTuple</code> that you want to delete from the
+     * <code>RegexMatchSet</code>.</p>
+     */
+    inline bool RegexMatchTupleHasBeenSet() const { return m_regexMatchTupleHasBeenSet; }
 
     /**
      * <p>Information about the part of a web request that you want AWS WAF to inspect

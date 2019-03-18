@@ -58,6 +58,12 @@ namespace Model
      * <p>The ID for the origin access identity. For example:
      * <code>E74FTE3AJFJ256A</code>.</p>
      */
+    inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
+
+    /**
+     * <p>The ID for the origin access identity. For example:
+     * <code>E74FTE3AJFJ256A</code>.</p>
+     */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
     /**
@@ -97,6 +103,13 @@ namespace Model
      * S3.</p>
      */
     inline const Aws::String& GetS3CanonicalUserId() const{ return m_s3CanonicalUserId; }
+
+    /**
+     * <p>The Amazon S3 canonical user ID for the origin access identity, which you use
+     * when giving the origin access identity read permission to an object in Amazon
+     * S3.</p>
+     */
+    inline bool S3CanonicalUserIdHasBeenSet() const { return m_s3CanonicalUserIdHasBeenSet; }
 
     /**
      * <p>The Amazon S3 canonical user ID for the origin access identity, which you use
@@ -146,6 +159,12 @@ namespace Model
      * created.</p>
      */
     inline const Aws::String& GetComment() const{ return m_comment; }
+
+    /**
+     * <p>The comment for this origin access identity, as originally specified when
+     * created.</p>
+     */
+    inline bool CommentHasBeenSet() const { return m_commentHasBeenSet; }
 
     /**
      * <p>The comment for this origin access identity, as originally specified when

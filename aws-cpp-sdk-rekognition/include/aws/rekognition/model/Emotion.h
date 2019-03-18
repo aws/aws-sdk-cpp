@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>Type of emotion detected.</p>
      */
+    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
+
+    /**
+     * <p>Type of emotion detected.</p>
+     */
     inline void SetType(const EmotionName& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
@@ -78,6 +83,11 @@ namespace Model
      * <p>Level of confidence in the determination.</p>
      */
     inline double GetConfidence() const{ return m_confidence; }
+
+    /**
+     * <p>Level of confidence in the determination.</p>
+     */
+    inline bool ConfidenceHasBeenSet() const { return m_confidenceHasBeenSet; }
 
     /**
      * <p>Level of confidence in the determination.</p>

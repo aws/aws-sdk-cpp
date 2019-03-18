@@ -64,6 +64,11 @@ namespace Model
     /**
      * <p>The friendly name (not ARN) identifying the policy.</p>
      */
+    inline bool PolicyNameHasBeenSet() const { return m_policyNameHasBeenSet; }
+
+    /**
+     * <p>The friendly name (not ARN) identifying the policy.</p>
+     */
     inline void SetPolicyName(const Aws::String& value) { m_policyNameHasBeenSet = true; m_policyName = value; }
 
     /**
@@ -99,6 +104,14 @@ namespace Model
      * Identifiers</a> in the <i>Using IAM</i> guide.</p>
      */
     inline const Aws::String& GetPolicyId() const{ return m_policyId; }
+
+    /**
+     * <p>The stable and unique string identifying the policy.</p> <p>For more
+     * information about IDs, see <a
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
+     * Identifiers</a> in the <i>Using IAM</i> guide.</p>
+     */
+    inline bool PolicyIdHasBeenSet() const { return m_policyIdHasBeenSet; }
 
     /**
      * <p>The stable and unique string identifying the policy.</p> <p>For more
@@ -153,6 +166,9 @@ namespace Model
     inline const Aws::String& GetArn() const{ return m_arn; }
 
     
+    inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
+
+    
     inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
 
     
@@ -177,6 +193,13 @@ namespace Model
      * Identifiers</a> in the <i>Using IAM</i> guide.</p>
      */
     inline const Aws::String& GetPath() const{ return m_path; }
+
+    /**
+     * <p>The path to the policy.</p> <p>For more information about paths, see <a
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
+     * Identifiers</a> in the <i>Using IAM</i> guide.</p>
+     */
+    inline bool PathHasBeenSet() const { return m_pathHasBeenSet; }
 
     /**
      * <p>The path to the policy.</p> <p>For more information about paths, see <a
@@ -231,6 +254,12 @@ namespace Model
      * <p>The identifier for the version of the policy that is set as the default
      * version.</p>
      */
+    inline bool DefaultVersionIdHasBeenSet() const { return m_defaultVersionIdHasBeenSet; }
+
+    /**
+     * <p>The identifier for the version of the policy that is set as the default
+     * version.</p>
+     */
     inline void SetDefaultVersionId(const Aws::String& value) { m_defaultVersionIdHasBeenSet = true; m_defaultVersionId = value; }
 
     /**
@@ -274,6 +303,12 @@ namespace Model
      * <p>The number of entities (users, groups, and roles) that the policy is attached
      * to.</p>
      */
+    inline bool AttachmentCountHasBeenSet() const { return m_attachmentCountHasBeenSet; }
+
+    /**
+     * <p>The number of entities (users, groups, and roles) that the policy is attached
+     * to.</p>
+     */
     inline void SetAttachmentCount(int value) { m_attachmentCountHasBeenSet = true; m_attachmentCount = value; }
 
     /**
@@ -291,6 +326,15 @@ namespace Model
      * Boundaries for IAM Identities </a> in the <i>IAM User Guide</i>.</p>
      */
     inline int GetPermissionsBoundaryUsageCount() const{ return m_permissionsBoundaryUsageCount; }
+
+    /**
+     * <p>The number of entities (users and roles) for which the policy is used to set
+     * the permissions boundary. </p> <p>For more information about permissions
+     * boundaries, see <a
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions
+     * Boundaries for IAM Identities </a> in the <i>IAM User Guide</i>.</p>
+     */
+    inline bool PermissionsBoundaryUsageCountHasBeenSet() const { return m_permissionsBoundaryUsageCountHasBeenSet; }
 
     /**
      * <p>The number of entities (users and roles) for which the policy is used to set
@@ -321,6 +365,12 @@ namespace Model
      * <p>Specifies whether the policy can be attached to an IAM user, group, or
      * role.</p>
      */
+    inline bool IsAttachableHasBeenSet() const { return m_isAttachableHasBeenSet; }
+
+    /**
+     * <p>Specifies whether the policy can be attached to an IAM user, group, or
+     * role.</p>
+     */
     inline void SetIsAttachable(bool value) { m_isAttachableHasBeenSet = true; m_isAttachable = value; }
 
     /**
@@ -336,6 +386,13 @@ namespace Model
      * to the <a>ListPolicies</a> operation. </p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
+
+    /**
+     * <p>A friendly description of the policy.</p> <p>This element is included in the
+     * response to the <a>GetPolicy</a> operation. It is not included in the response
+     * to the <a>ListPolicies</a> operation. </p>
+     */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
 
     /**
      * <p>A friendly description of the policy.</p> <p>This element is included in the
@@ -390,6 +447,12 @@ namespace Model
      * <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601
      * date-time format</a>, when the policy was created.</p>
      */
+    inline bool CreateDateHasBeenSet() const { return m_createDateHasBeenSet; }
+
+    /**
+     * <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601
+     * date-time format</a>, when the policy was created.</p>
+     */
     inline void SetCreateDate(const Aws::Utils::DateTime& value) { m_createDateHasBeenSet = true; m_createDate = value; }
 
     /**
@@ -419,6 +482,15 @@ namespace Model
      * and time when the most recent policy version was created.</p>
      */
     inline const Aws::Utils::DateTime& GetUpdateDate() const{ return m_updateDate; }
+
+    /**
+     * <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601
+     * date-time format</a>, when the policy was last updated.</p> <p>When a policy has
+     * only one version, this field contains the date and time when the policy was
+     * created. When a policy has more than one version, this field contains the date
+     * and time when the most recent policy version was created.</p>
+     */
+    inline bool UpdateDateHasBeenSet() const { return m_updateDateHasBeenSet; }
 
     /**
      * <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601

@@ -57,6 +57,12 @@ namespace Model
      * <p>Specifies the number of days after creation that a recovery point is moved to
      * cold storage.</p>
      */
+    inline bool MoveToColdStorageAfterDaysHasBeenSet() const { return m_moveToColdStorageAfterDaysHasBeenSet; }
+
+    /**
+     * <p>Specifies the number of days after creation that a recovery point is moved to
+     * cold storage.</p>
+     */
     inline void SetMoveToColdStorageAfterDays(long long value) { m_moveToColdStorageAfterDaysHasBeenSet = true; m_moveToColdStorageAfterDays = value; }
 
     /**
@@ -71,6 +77,12 @@ namespace Model
      * Must be greater than <code>MoveToColdStorageAfterDays</code>.</p>
      */
     inline long long GetDeleteAfterDays() const{ return m_deleteAfterDays; }
+
+    /**
+     * <p>Specifies the number of days after creation that a recovery point is deleted.
+     * Must be greater than <code>MoveToColdStorageAfterDays</code>.</p>
+     */
+    inline bool DeleteAfterDaysHasBeenSet() const { return m_deleteAfterDaysHasBeenSet; }
 
     /**
      * <p>Specifies the number of days after creation that a recovery point is deleted.

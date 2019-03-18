@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p>The programming language for the Docker images.</p>
      */
+    inline bool LanguageHasBeenSet() const { return m_languageHasBeenSet; }
+
+    /**
+     * <p>The programming language for the Docker images.</p>
+     */
     inline void SetLanguage(const LanguageType& value) { m_languageHasBeenSet = true; m_language = value; }
 
     /**
@@ -81,6 +86,12 @@ namespace Model
      * language.</p>
      */
     inline const Aws::Vector<EnvironmentImage>& GetImages() const{ return m_images; }
+
+    /**
+     * <p>The list of Docker images that are related by the specified programming
+     * language.</p>
+     */
+    inline bool ImagesHasBeenSet() const { return m_imagesHasBeenSet; }
 
     /**
      * <p>The list of Docker images that are related by the specified programming

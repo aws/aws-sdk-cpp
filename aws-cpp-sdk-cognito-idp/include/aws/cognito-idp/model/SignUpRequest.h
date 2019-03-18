@@ -59,6 +59,11 @@ namespace Model
     /**
      * <p>The ID of the client associated with the user pool.</p>
      */
+    inline bool ClientIdHasBeenSet() const { return m_clientIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the client associated with the user pool.</p>
+     */
     inline void SetClientId(const Aws::String& value) { m_clientIdHasBeenSet = true; m_clientId = value; }
 
     /**
@@ -92,6 +97,12 @@ namespace Model
      * key of a user pool client and username plus the client ID in the message.</p>
      */
     inline const Aws::String& GetSecretHash() const{ return m_secretHash; }
+
+    /**
+     * <p>A keyed-hash message authentication code (HMAC) calculated using the secret
+     * key of a user pool client and username plus the client ID in the message.</p>
+     */
+    inline bool SecretHashHasBeenSet() const { return m_secretHashHasBeenSet; }
 
     /**
      * <p>A keyed-hash message authentication code (HMAC) calculated using the secret
@@ -138,6 +149,11 @@ namespace Model
     /**
      * <p>The user name of the user you wish to register.</p>
      */
+    inline bool UsernameHasBeenSet() const { return m_usernameHasBeenSet; }
+
+    /**
+     * <p>The user name of the user you wish to register.</p>
+     */
     inline void SetUsername(const Aws::String& value) { m_usernameHasBeenSet = true; m_username = value; }
 
     /**
@@ -170,6 +186,11 @@ namespace Model
      * <p>The password of the user you wish to register.</p>
      */
     inline const Aws::String& GetPassword() const{ return m_password; }
+
+    /**
+     * <p>The password of the user you wish to register.</p>
+     */
+    inline bool PasswordHasBeenSet() const { return m_passwordHasBeenSet; }
 
     /**
      * <p>The password of the user you wish to register.</p>
@@ -208,6 +229,13 @@ namespace Model
      * name.</p>
      */
     inline const Aws::Vector<AttributeType>& GetUserAttributes() const{ return m_userAttributes; }
+
+    /**
+     * <p>An array of name-value pairs representing user attributes.</p> <p>For custom
+     * attributes, you must prepend the <code>custom:</code> prefix to the attribute
+     * name.</p>
+     */
+    inline bool UserAttributesHasBeenSet() const { return m_userAttributesHasBeenSet; }
 
     /**
      * <p>An array of name-value pairs representing user attributes.</p> <p>For custom
@@ -260,6 +288,11 @@ namespace Model
     /**
      * <p>The validation data in the request to register a user.</p>
      */
+    inline bool ValidationDataHasBeenSet() const { return m_validationDataHasBeenSet; }
+
+    /**
+     * <p>The validation data in the request to register a user.</p>
+     */
     inline void SetValidationData(const Aws::Vector<AttributeType>& value) { m_validationDataHasBeenSet = true; m_validationData = value; }
 
     /**
@@ -298,6 +331,12 @@ namespace Model
      * <p>The Amazon Pinpoint analytics metadata for collecting metrics for
      * <code>SignUp</code> calls.</p>
      */
+    inline bool AnalyticsMetadataHasBeenSet() const { return m_analyticsMetadataHasBeenSet; }
+
+    /**
+     * <p>The Amazon Pinpoint analytics metadata for collecting metrics for
+     * <code>SignUp</code> calls.</p>
+     */
     inline void SetAnalyticsMetadata(const AnalyticsMetadataType& value) { m_analyticsMetadataHasBeenSet = true; m_analyticsMetadata = value; }
 
     /**
@@ -325,6 +364,13 @@ namespace Model
      * advanced security.</p>
      */
     inline const UserContextDataType& GetUserContextData() const{ return m_userContextData; }
+
+    /**
+     * <p>Contextual data such as the user's device fingerprint, IP address, or
+     * location used for evaluating the risk of an unexpected event by Amazon Cognito
+     * advanced security.</p>
+     */
+    inline bool UserContextDataHasBeenSet() const { return m_userContextDataHasBeenSet; }
 
     /**
      * <p>Contextual data such as the user's device fingerprint, IP address, or

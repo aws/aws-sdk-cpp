@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The current state of the instance.</p>
      */
+    inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
+
+    /**
+     * <p>The current state of the instance.</p>
+     */
     inline void SetState(const InstanceState& value) { m_stateHasBeenSet = true; m_state = value; }
 
     /**
@@ -83,6 +88,11 @@ namespace Model
     /**
      * <p>The details of the status change reason for the instance.</p>
      */
+    inline bool StateChangeReasonHasBeenSet() const { return m_stateChangeReasonHasBeenSet; }
+
+    /**
+     * <p>The details of the status change reason for the instance.</p>
+     */
     inline void SetStateChangeReason(const InstanceStateChangeReason& value) { m_stateChangeReasonHasBeenSet = true; m_stateChangeReason = value; }
 
     /**
@@ -105,6 +115,11 @@ namespace Model
      * <p>The timeline of the instance status over time.</p>
      */
     inline const InstanceTimeline& GetTimeline() const{ return m_timeline; }
+
+    /**
+     * <p>The timeline of the instance status over time.</p>
+     */
+    inline bool TimelineHasBeenSet() const { return m_timelineHasBeenSet; }
 
     /**
      * <p>The timeline of the instance status over time.</p>

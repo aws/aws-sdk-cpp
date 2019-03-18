@@ -53,6 +53,11 @@ namespace Model
     /**
      * <p>The email address of the user.</p>
      */
+    inline bool UserNameHasBeenSet() const { return m_userNameHasBeenSet; }
+
+    /**
+     * <p>The email address of the user.</p>
+     */
     inline void SetUserName(const Aws::String& value) { m_userNameHasBeenSet = true; m_userName = value; }
 
     /**
@@ -85,6 +90,11 @@ namespace Model
      * <p>The authentication type for the user. You must specify USERPOOL.</p>
      */
     inline const AuthenticationType& GetAuthenticationType() const{ return m_authenticationType; }
+
+    /**
+     * <p>The authentication type for the user. You must specify USERPOOL.</p>
+     */
+    inline bool AuthenticationTypeHasBeenSet() const { return m_authenticationTypeHasBeenSet; }
 
     /**
      * <p>The authentication type for the user. You must specify USERPOOL.</p>

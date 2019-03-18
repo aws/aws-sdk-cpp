@@ -56,6 +56,14 @@ namespace Model
      * AWS Region where they are created. They consist of lowercase letters, numbers,
      * and hyphens.</p>
      */
+    inline bool BackupVaultNameHasBeenSet() const { return m_backupVaultNameHasBeenSet; }
+
+    /**
+     * <p>The name of a logical container where backups are stored. Backup vaults are
+     * identified by names that are unique to the account used to create them and the
+     * AWS Region where they are created. They consist of lowercase letters, numbers,
+     * and hyphens.</p>
+     */
     inline void SetBackupVaultName(const Aws::String& value) { m_backupVaultNameHasBeenSet = true; m_backupVaultName = value; }
 
     /**
@@ -105,6 +113,13 @@ namespace Model
      * <code>arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45</code>.</p>
      */
     inline const Aws::String& GetRecoveryPointArn() const{ return m_recoveryPointArn; }
+
+    /**
+     * <p>An Amazon Resource Name (ARN) that uniquely identifies a recovery point; for
+     * example,
+     * <code>arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45</code>.</p>
+     */
+    inline bool RecoveryPointArnHasBeenSet() const { return m_recoveryPointArnHasBeenSet; }
 
     /**
      * <p>An Amazon Resource Name (ARN) that uniquely identifies a recovery point; for

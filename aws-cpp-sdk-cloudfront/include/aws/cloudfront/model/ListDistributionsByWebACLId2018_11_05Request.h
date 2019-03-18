@@ -70,6 +70,16 @@ namespace Model
      * <code>Marker</code>, specify the value of <code>NextMarker</code> from the last
      * response. (For the first request, omit <code>Marker</code>.) </p>
      */
+    inline bool MarkerHasBeenSet() const { return m_markerHasBeenSet; }
+
+    /**
+     * <p>Use <code>Marker</code> and <code>MaxItems</code> to control pagination of
+     * results. If you have more than <code>MaxItems</code> distributions that satisfy
+     * the request, the response includes a <code>NextMarker</code> element. To get the
+     * next page of results, submit another request. For the value of
+     * <code>Marker</code>, specify the value of <code>NextMarker</code> from the last
+     * response. (For the first request, omit <code>Marker</code>.) </p>
+     */
     inline void SetMarker(const Aws::String& value) { m_markerHasBeenSet = true; m_marker = value; }
 
     /**
@@ -133,6 +143,12 @@ namespace Model
      * <p>The maximum number of distributions that you want CloudFront to return in the
      * response body. The maximum and default values are both 100.</p>
      */
+    inline bool MaxItemsHasBeenSet() const { return m_maxItemsHasBeenSet; }
+
+    /**
+     * <p>The maximum number of distributions that you want CloudFront to return in the
+     * response body. The maximum and default values are both 100.</p>
+     */
     inline void SetMaxItems(const Aws::String& value) { m_maxItemsHasBeenSet = true; m_maxItems = value; }
 
     /**
@@ -172,6 +188,13 @@ namespace Model
      * the distributions that aren't associated with a web ACL. </p>
      */
     inline const Aws::String& GetWebACLId() const{ return m_webACLId; }
+
+    /**
+     * <p>The ID of the AWS WAF web ACL that you want to list the associated
+     * distributions. If you specify "null" for the ID, the request returns a list of
+     * the distributions that aren't associated with a web ACL. </p>
+     */
+    inline bool WebACLIdHasBeenSet() const { return m_webACLIdHasBeenSet; }
 
     /**
      * <p>The ID of the AWS WAF web ACL that you want to list the associated

@@ -63,6 +63,11 @@ namespace Model
     /**
      * <p>The AWS account that created the AWS Firewall Manager policy.</p>
      */
+    inline bool PolicyOwnerHasBeenSet() const { return m_policyOwnerHasBeenSet; }
+
+    /**
+     * <p>The AWS account that created the AWS Firewall Manager policy.</p>
+     */
     inline void SetPolicyOwner(const Aws::String& value) { m_policyOwnerHasBeenSet = true; m_policyOwner = value; }
 
     /**
@@ -95,6 +100,11 @@ namespace Model
      * <p>The ID of the AWS Firewall Manager policy.</p>
      */
     inline const Aws::String& GetPolicyId() const{ return m_policyId; }
+
+    /**
+     * <p>The ID of the AWS Firewall Manager policy.</p>
+     */
+    inline bool PolicyIdHasBeenSet() const { return m_policyIdHasBeenSet; }
 
     /**
      * <p>The ID of the AWS Firewall Manager policy.</p>
@@ -135,6 +145,11 @@ namespace Model
     /**
      * <p>The AWS account ID.</p>
      */
+    inline bool MemberAccountHasBeenSet() const { return m_memberAccountHasBeenSet; }
+
+    /**
+     * <p>The AWS account ID.</p>
+     */
     inline void SetMemberAccount(const Aws::String& value) { m_memberAccountHasBeenSet = true; m_memberAccount = value; }
 
     /**
@@ -167,6 +182,11 @@ namespace Model
      * <p>An array of resources that are not protected by the policy.</p>
      */
     inline const Aws::Vector<ComplianceViolator>& GetViolators() const{ return m_violators; }
+
+    /**
+     * <p>An array of resources that are not protected by the policy.</p>
+     */
+    inline bool ViolatorsHasBeenSet() const { return m_violatorsHasBeenSet; }
 
     /**
      * <p>An array of resources that are not protected by the policy.</p>
@@ -209,6 +229,12 @@ namespace Model
      * <p>Indicates if over 100 resources are non-compliant with the AWS Firewall
      * Manager policy.</p>
      */
+    inline bool EvaluationLimitExceededHasBeenSet() const { return m_evaluationLimitExceededHasBeenSet; }
+
+    /**
+     * <p>Indicates if over 100 resources are non-compliant with the AWS Firewall
+     * Manager policy.</p>
+     */
     inline void SetEvaluationLimitExceeded(bool value) { m_evaluationLimitExceededHasBeenSet = true; m_evaluationLimitExceeded = value; }
 
     /**
@@ -223,6 +249,12 @@ namespace Model
      * considered out-of-date.</p>
      */
     inline const Aws::Utils::DateTime& GetExpiredAt() const{ return m_expiredAt; }
+
+    /**
+     * <p>A time stamp that indicates when the returned information should be
+     * considered out-of-date.</p>
+     */
+    inline bool ExpiredAtHasBeenSet() const { return m_expiredAtHasBeenSet; }
 
     /**
      * <p>A time stamp that indicates when the returned information should be
@@ -256,6 +288,14 @@ namespace Model
      * problem with the service.</p>
      */
     inline const Aws::Map<DependentServiceName, Aws::String>& GetIssueInfoMap() const{ return m_issueInfoMap; }
+
+    /**
+     * <p>Details about problems with dependent services, such as AWS WAF or AWS
+     * Config, that are causing a resource to be non-compliant. The details include the
+     * name of the dependent service and the error message received that indicates the
+     * problem with the service.</p>
+     */
+    inline bool IssueInfoMapHasBeenSet() const { return m_issueInfoMapHasBeenSet; }
 
     /**
      * <p>Details about problems with dependent services, such as AWS WAF or AWS

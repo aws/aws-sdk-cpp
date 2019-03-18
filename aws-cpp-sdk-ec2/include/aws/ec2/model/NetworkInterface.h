@@ -68,6 +68,12 @@ namespace Model
      * <p>The association information for an Elastic IP address (IPv4) associated with
      * the network interface.</p>
      */
+    inline bool AssociationHasBeenSet() const { return m_associationHasBeenSet; }
+
+    /**
+     * <p>The association information for an Elastic IP address (IPv4) associated with
+     * the network interface.</p>
+     */
     inline void SetAssociation(const NetworkInterfaceAssociation& value) { m_associationHasBeenSet = true; m_association = value; }
 
     /**
@@ -97,6 +103,11 @@ namespace Model
     /**
      * <p>The network interface attachment.</p>
      */
+    inline bool AttachmentHasBeenSet() const { return m_attachmentHasBeenSet; }
+
+    /**
+     * <p>The network interface attachment.</p>
+     */
     inline void SetAttachment(const NetworkInterfaceAttachment& value) { m_attachmentHasBeenSet = true; m_attachment = value; }
 
     /**
@@ -119,6 +130,11 @@ namespace Model
      * <p>The Availability Zone.</p>
      */
     inline const Aws::String& GetAvailabilityZone() const{ return m_availabilityZone; }
+
+    /**
+     * <p>The Availability Zone.</p>
+     */
+    inline bool AvailabilityZoneHasBeenSet() const { return m_availabilityZoneHasBeenSet; }
 
     /**
      * <p>The Availability Zone.</p>
@@ -159,6 +175,11 @@ namespace Model
     /**
      * <p>A description.</p>
      */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
+
+    /**
+     * <p>A description.</p>
+     */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
@@ -191,6 +212,11 @@ namespace Model
      * <p>Any security groups for the network interface.</p>
      */
     inline const Aws::Vector<GroupIdentifier>& GetGroups() const{ return m_groups; }
+
+    /**
+     * <p>Any security groups for the network interface.</p>
+     */
+    inline bool GroupsHasBeenSet() const { return m_groupsHasBeenSet; }
 
     /**
      * <p>Any security groups for the network interface.</p>
@@ -231,6 +257,11 @@ namespace Model
     /**
      * <p>The type of interface.</p>
      */
+    inline bool InterfaceTypeHasBeenSet() const { return m_interfaceTypeHasBeenSet; }
+
+    /**
+     * <p>The type of interface.</p>
+     */
     inline void SetInterfaceType(const NetworkInterfaceType& value) { m_interfaceTypeHasBeenSet = true; m_interfaceType = value; }
 
     /**
@@ -253,6 +284,11 @@ namespace Model
      * <p>The IPv6 addresses associated with the network interface.</p>
      */
     inline const Aws::Vector<NetworkInterfaceIpv6Address>& GetIpv6Addresses() const{ return m_ipv6Addresses; }
+
+    /**
+     * <p>The IPv6 addresses associated with the network interface.</p>
+     */
+    inline bool Ipv6AddressesHasBeenSet() const { return m_ipv6AddressesHasBeenSet; }
 
     /**
      * <p>The IPv6 addresses associated with the network interface.</p>
@@ -293,6 +329,11 @@ namespace Model
     /**
      * <p>The MAC address.</p>
      */
+    inline bool MacAddressHasBeenSet() const { return m_macAddressHasBeenSet; }
+
+    /**
+     * <p>The MAC address.</p>
+     */
     inline void SetMacAddress(const Aws::String& value) { m_macAddressHasBeenSet = true; m_macAddress = value; }
 
     /**
@@ -325,6 +366,11 @@ namespace Model
      * <p>The ID of the network interface.</p>
      */
     inline const Aws::String& GetNetworkInterfaceId() const{ return m_networkInterfaceId; }
+
+    /**
+     * <p>The ID of the network interface.</p>
+     */
+    inline bool NetworkInterfaceIdHasBeenSet() const { return m_networkInterfaceIdHasBeenSet; }
 
     /**
      * <p>The ID of the network interface.</p>
@@ -365,6 +411,11 @@ namespace Model
     /**
      * <p>The AWS account ID of the owner of the network interface.</p>
      */
+    inline bool OwnerIdHasBeenSet() const { return m_ownerIdHasBeenSet; }
+
+    /**
+     * <p>The AWS account ID of the owner of the network interface.</p>
+     */
     inline void SetOwnerId(const Aws::String& value) { m_ownerIdHasBeenSet = true; m_ownerId = value; }
 
     /**
@@ -397,6 +448,11 @@ namespace Model
      * <p>The private DNS name.</p>
      */
     inline const Aws::String& GetPrivateDnsName() const{ return m_privateDnsName; }
+
+    /**
+     * <p>The private DNS name.</p>
+     */
+    inline bool PrivateDnsNameHasBeenSet() const { return m_privateDnsNameHasBeenSet; }
 
     /**
      * <p>The private DNS name.</p>
@@ -437,6 +493,11 @@ namespace Model
     /**
      * <p>The IPv4 address of the network interface within the subnet.</p>
      */
+    inline bool PrivateIpAddressHasBeenSet() const { return m_privateIpAddressHasBeenSet; }
+
+    /**
+     * <p>The IPv4 address of the network interface within the subnet.</p>
+     */
     inline void SetPrivateIpAddress(const Aws::String& value) { m_privateIpAddressHasBeenSet = true; m_privateIpAddress = value; }
 
     /**
@@ -469,6 +530,11 @@ namespace Model
      * <p>The private IPv4 addresses associated with the network interface.</p>
      */
     inline const Aws::Vector<NetworkInterfacePrivateIpAddress>& GetPrivateIpAddresses() const{ return m_privateIpAddresses; }
+
+    /**
+     * <p>The private IPv4 addresses associated with the network interface.</p>
+     */
+    inline bool PrivateIpAddressesHasBeenSet() const { return m_privateIpAddressesHasBeenSet; }
 
     /**
      * <p>The private IPv4 addresses associated with the network interface.</p>
@@ -506,6 +572,12 @@ namespace Model
      * AWS Management Console or Auto Scaling).</p>
      */
     inline const Aws::String& GetRequesterId() const{ return m_requesterId; }
+
+    /**
+     * <p>The ID of the entity that launched the instance on your behalf (for example,
+     * AWS Management Console or Auto Scaling).</p>
+     */
+    inline bool RequesterIdHasBeenSet() const { return m_requesterIdHasBeenSet; }
 
     /**
      * <p>The ID of the entity that launched the instance on your behalf (for example,
@@ -552,6 +624,11 @@ namespace Model
     /**
      * <p>Indicates whether the network interface is being managed by AWS.</p>
      */
+    inline bool RequesterManagedHasBeenSet() const { return m_requesterManagedHasBeenSet; }
+
+    /**
+     * <p>Indicates whether the network interface is being managed by AWS.</p>
+     */
     inline void SetRequesterManaged(bool value) { m_requesterManagedHasBeenSet = true; m_requesterManaged = value; }
 
     /**
@@ -568,6 +645,11 @@ namespace Model
     /**
      * <p>Indicates whether traffic to or from the instance is validated.</p>
      */
+    inline bool SourceDestCheckHasBeenSet() const { return m_sourceDestCheckHasBeenSet; }
+
+    /**
+     * <p>Indicates whether traffic to or from the instance is validated.</p>
+     */
     inline void SetSourceDestCheck(bool value) { m_sourceDestCheckHasBeenSet = true; m_sourceDestCheck = value; }
 
     /**
@@ -580,6 +662,11 @@ namespace Model
      * <p>The status of the network interface.</p>
      */
     inline const NetworkInterfaceStatus& GetStatus() const{ return m_status; }
+
+    /**
+     * <p>The status of the network interface.</p>
+     */
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
     /**
      * <p>The status of the network interface.</p>
@@ -606,6 +693,11 @@ namespace Model
      * <p>The ID of the subnet.</p>
      */
     inline const Aws::String& GetSubnetId() const{ return m_subnetId; }
+
+    /**
+     * <p>The ID of the subnet.</p>
+     */
+    inline bool SubnetIdHasBeenSet() const { return m_subnetIdHasBeenSet; }
 
     /**
      * <p>The ID of the subnet.</p>
@@ -646,6 +738,11 @@ namespace Model
     /**
      * <p>Any tags assigned to the network interface.</p>
      */
+    inline bool TagSetHasBeenSet() const { return m_tagSetHasBeenSet; }
+
+    /**
+     * <p>Any tags assigned to the network interface.</p>
+     */
     inline void SetTagSet(const Aws::Vector<Tag>& value) { m_tagSetHasBeenSet = true; m_tagSet = value; }
 
     /**
@@ -678,6 +775,11 @@ namespace Model
      * <p>The ID of the VPC.</p>
      */
     inline const Aws::String& GetVpcId() const{ return m_vpcId; }
+
+    /**
+     * <p>The ID of the VPC.</p>
+     */
+    inline bool VpcIdHasBeenSet() const { return m_vpcIdHasBeenSet; }
 
     /**
      * <p>The ID of the VPC.</p>

@@ -58,6 +58,13 @@ namespace Model
      * is also available on the node with the <code>AWS_BATCH_JOB_NODE_INDEX</code>
      * environment variable.</p>
      */
+    inline bool NodeIndexHasBeenSet() const { return m_nodeIndexHasBeenSet; }
+
+    /**
+     * <p>The node index for the node. Node index numbering begins at zero. This index
+     * is also available on the node with the <code>AWS_BATCH_JOB_NODE_INDEX</code>
+     * environment variable.</p>
+     */
     inline void SetNodeIndex(int value) { m_nodeIndexHasBeenSet = true; m_nodeIndex = value; }
 
     /**
@@ -73,6 +80,12 @@ namespace Model
      * job.</p>
      */
     inline bool GetIsMainNode() const{ return m_isMainNode; }
+
+    /**
+     * <p>Specifies whether the current node is the main node for a multi-node parallel
+     * job.</p>
+     */
+    inline bool IsMainNodeHasBeenSet() const { return m_isMainNodeHasBeenSet; }
 
     /**
      * <p>Specifies whether the current node is the main node for a multi-node parallel

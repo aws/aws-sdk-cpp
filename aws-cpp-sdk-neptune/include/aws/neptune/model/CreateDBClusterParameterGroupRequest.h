@@ -63,6 +63,13 @@ namespace Model
      * <p>Must match the name of an existing DBClusterParameterGroup.</p> </li> </ul>
      * <note> <p>This value is stored as a lowercase string.</p> </note>
      */
+    inline bool DBClusterParameterGroupNameHasBeenSet() const { return m_dBClusterParameterGroupNameHasBeenSet; }
+
+    /**
+     * <p>The name of the DB cluster parameter group.</p> <p>Constraints:</p> <ul> <li>
+     * <p>Must match the name of an existing DBClusterParameterGroup.</p> </li> </ul>
+     * <note> <p>This value is stored as a lowercase string.</p> </note>
+     */
     inline void SetDBClusterParameterGroupName(const Aws::String& value) { m_dBClusterParameterGroupNameHasBeenSet = true; m_dBClusterParameterGroupName = value; }
 
     /**
@@ -108,6 +115,14 @@ namespace Model
      * compatible with that DB cluster parameter group family.</p>
      */
     inline const Aws::String& GetDBParameterGroupFamily() const{ return m_dBParameterGroupFamily; }
+
+    /**
+     * <p>The DB cluster parameter group family name. A DB cluster parameter group can
+     * be associated with one and only one DB cluster parameter group family, and can
+     * be applied only to a DB cluster running a database engine and engine version
+     * compatible with that DB cluster parameter group family.</p>
+     */
+    inline bool DBParameterGroupFamilyHasBeenSet() const { return m_dBParameterGroupFamilyHasBeenSet; }
 
     /**
      * <p>The DB cluster parameter group family name. A DB cluster parameter group can
@@ -166,6 +181,11 @@ namespace Model
     /**
      * <p>The description for the DB cluster parameter group.</p>
      */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
+
+    /**
+     * <p>The description for the DB cluster parameter group.</p>
+     */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
@@ -196,6 +216,9 @@ namespace Model
 
     
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+
+    
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }

@@ -54,6 +54,12 @@ namespace Model
      * <p>A user-supplied ID that uniquely identifies the <code>Evaluation</code> to
      * delete.</p>
      */
+    inline bool EvaluationIdHasBeenSet() const { return m_evaluationIdHasBeenSet; }
+
+    /**
+     * <p>A user-supplied ID that uniquely identifies the <code>Evaluation</code> to
+     * delete.</p>
+     */
     inline void SetEvaluationId(const Aws::String& value) { m_evaluationIdHasBeenSet = true; m_evaluationId = value; }
 
     /**

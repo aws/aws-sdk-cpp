@@ -60,6 +60,11 @@ namespace Model
     /**
      * <p>The name of the channel.</p>
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>The name of the channel.</p>
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
@@ -92,6 +97,11 @@ namespace Model
      * <p>The ARN of the channel.</p>
      */
     inline const Aws::String& GetArn() const{ return m_arn; }
+
+    /**
+     * <p>The ARN of the channel.</p>
+     */
+    inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
 
     /**
      * <p>The ARN of the channel.</p>
@@ -132,6 +142,11 @@ namespace Model
     /**
      * <p>The status of the channel.</p>
      */
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
+
+    /**
+     * <p>The status of the channel.</p>
+     */
     inline void SetStatus(const ChannelStatus& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
@@ -154,6 +169,11 @@ namespace Model
      * <p>How long, in days, message data is kept for the channel.</p>
      */
     inline const RetentionPeriod& GetRetentionPeriod() const{ return m_retentionPeriod; }
+
+    /**
+     * <p>How long, in days, message data is kept for the channel.</p>
+     */
+    inline bool RetentionPeriodHasBeenSet() const { return m_retentionPeriodHasBeenSet; }
 
     /**
      * <p>How long, in days, message data is kept for the channel.</p>
@@ -184,6 +204,11 @@ namespace Model
     /**
      * <p>When the channel was created.</p>
      */
+    inline bool CreationTimeHasBeenSet() const { return m_creationTimeHasBeenSet; }
+
+    /**
+     * <p>When the channel was created.</p>
+     */
     inline void SetCreationTime(const Aws::Utils::DateTime& value) { m_creationTimeHasBeenSet = true; m_creationTime = value; }
 
     /**
@@ -206,6 +231,11 @@ namespace Model
      * <p>When the channel was last updated.</p>
      */
     inline const Aws::Utils::DateTime& GetLastUpdateTime() const{ return m_lastUpdateTime; }
+
+    /**
+     * <p>When the channel was last updated.</p>
+     */
+    inline bool LastUpdateTimeHasBeenSet() const { return m_lastUpdateTimeHasBeenSet; }
 
     /**
      * <p>When the channel was last updated.</p>

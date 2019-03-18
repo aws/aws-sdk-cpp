@@ -56,6 +56,11 @@ namespace Model
     /**
      * The ID of the connector definition.
      */
+    inline bool ConnectorDefinitionIdHasBeenSet() const { return m_connectorDefinitionIdHasBeenSet; }
+
+    /**
+     * The ID of the connector definition.
+     */
     inline void SetConnectorDefinitionId(const Aws::String& value) { m_connectorDefinitionIdHasBeenSet = true; m_connectorDefinitionId = value; }
 
     /**
@@ -88,6 +93,11 @@ namespace Model
      * The ID of the connector definition version.
      */
     inline const Aws::String& GetConnectorDefinitionVersionId() const{ return m_connectorDefinitionVersionId; }
+
+    /**
+     * The ID of the connector definition version.
+     */
+    inline bool ConnectorDefinitionVersionIdHasBeenSet() const { return m_connectorDefinitionVersionIdHasBeenSet; }
 
     /**
      * The ID of the connector definition version.
@@ -125,6 +135,12 @@ namespace Model
      * results.
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
+    /**
+     * The token for the next set of results, or ''null'' if there are no additional
+     * results.
+     */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
      * The token for the next set of results, or ''null'' if there are no additional

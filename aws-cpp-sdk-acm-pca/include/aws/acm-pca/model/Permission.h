@@ -67,6 +67,12 @@ namespace Model
      * <p>The Amazon Resource Number (ARN) of the private CA from which the permission
      * was issued.</p>
      */
+    inline bool CertificateAuthorityArnHasBeenSet() const { return m_certificateAuthorityArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Number (ARN) of the private CA from which the permission
+     * was issued.</p>
+     */
     inline void SetCertificateAuthorityArn(const Aws::String& value) { m_certificateAuthorityArnHasBeenSet = true; m_certificateAuthorityArn = value; }
 
     /**
@@ -108,6 +114,11 @@ namespace Model
     /**
      * <p>The time at which the permission was created.</p>
      */
+    inline bool CreatedAtHasBeenSet() const { return m_createdAtHasBeenSet; }
+
+    /**
+     * <p>The time at which the permission was created.</p>
+     */
     inline void SetCreatedAt(const Aws::Utils::DateTime& value) { m_createdAtHasBeenSet = true; m_createdAt = value; }
 
     /**
@@ -131,6 +142,12 @@ namespace Model
      * valid principal is <code>acm.amazonaws.com</code>.</p>
      */
     inline const Aws::String& GetPrincipal() const{ return m_principal; }
+
+    /**
+     * <p>The AWS service or entity that holds the permission. At this time, the only
+     * valid principal is <code>acm.amazonaws.com</code>.</p>
+     */
+    inline bool PrincipalHasBeenSet() const { return m_principalHasBeenSet; }
 
     /**
      * <p>The AWS service or entity that holds the permission. At this time, the only
@@ -177,6 +194,11 @@ namespace Model
     /**
      * <p>The ID of the account that assigned the permission.</p>
      */
+    inline bool SourceAccountHasBeenSet() const { return m_sourceAccountHasBeenSet; }
+
+    /**
+     * <p>The ID of the account that assigned the permission.</p>
+     */
     inline void SetSourceAccount(const Aws::String& value) { m_sourceAccountHasBeenSet = true; m_sourceAccount = value; }
 
     /**
@@ -210,6 +232,12 @@ namespace Model
      * service.</p>
      */
     inline const Aws::Vector<ActionType>& GetActions() const{ return m_actions; }
+
+    /**
+     * <p>The private CA operations that can be performed by the designated AWS
+     * service.</p>
+     */
+    inline bool ActionsHasBeenSet() const { return m_actionsHasBeenSet; }
 
     /**
      * <p>The private CA operations that can be performed by the designated AWS
@@ -252,6 +280,11 @@ namespace Model
      * <p>The name of the policy that is associated with the permission.</p>
      */
     inline const Aws::String& GetPolicy() const{ return m_policy; }
+
+    /**
+     * <p>The name of the policy that is associated with the permission.</p>
+     */
+    inline bool PolicyHasBeenSet() const { return m_policyHasBeenSet; }
 
     /**
      * <p>The name of the policy that is associated with the permission.</p>

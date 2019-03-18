@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p>The name of the solution stack.</p>
      */
+    inline bool SolutionStackNameHasBeenSet() const { return m_solutionStackNameHasBeenSet; }
+
+    /**
+     * <p>The name of the solution stack.</p>
+     */
     inline void SetSolutionStackName(const Aws::String& value) { m_solutionStackNameHasBeenSet = true; m_solutionStackName = value; }
 
     /**
@@ -90,6 +95,11 @@ namespace Model
      * <p>The permitted file types allowed for a solution stack.</p>
      */
     inline const Aws::Vector<Aws::String>& GetPermittedFileTypes() const{ return m_permittedFileTypes; }
+
+    /**
+     * <p>The permitted file types allowed for a solution stack.</p>
+     */
+    inline bool PermittedFileTypesHasBeenSet() const { return m_permittedFileTypesHasBeenSet; }
 
     /**
      * <p>The permitted file types allowed for a solution stack.</p>

@@ -58,6 +58,12 @@ namespace Model
      * <p>This property is the unique Amazon Resource Name (ARN) for the user that you
      * wish to learn about.</p>
      */
+    inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
+
+    /**
+     * <p>This property is the unique Amazon Resource Name (ARN) for the user that you
+     * wish to learn about.</p>
+     */
     inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
 
     /**
@@ -96,6 +102,12 @@ namespace Model
      * Amazon S3 bucket for the user you specify by their ARN.</p>
      */
     inline const Aws::String& GetHomeDirectory() const{ return m_homeDirectory; }
+
+    /**
+     * <p>This value specifies the location that files are written to or read from an
+     * Amazon S3 bucket for the user you specify by their ARN.</p>
+     */
+    inline bool HomeDirectoryHasBeenSet() const { return m_homeDirectoryHasBeenSet; }
 
     /**
      * <p>This value specifies the location that files are written to or read from an
@@ -141,6 +153,14 @@ namespace Model
      * enables that user to perform file operations to their Amazon S3 bucket.</p>
      */
     inline const Aws::String& GetRole() const{ return m_role; }
+
+    /**
+     * <p>The role in use by this user. A <i>role</i> is an AWS Identity and Access
+     * Management (IAM) entity that in this case allows the SFTP server to act on a
+     * user's behalf. It allows the server to inherit the trust relationship that
+     * enables that user to perform file operations to their Amazon S3 bucket.</p>
+     */
+    inline bool RoleHasBeenSet() const { return m_roleHasBeenSet; }
 
     /**
      * <p>The role in use by this user. A <i>role</i> is an AWS Identity and Access
@@ -201,6 +221,12 @@ namespace Model
      * <p>This value is the number of SSH public keys stored for the user you
      * specified.</p>
      */
+    inline bool SshPublicKeyCountHasBeenSet() const { return m_sshPublicKeyCountHasBeenSet; }
+
+    /**
+     * <p>This value is the number of SSH public keys stored for the user you
+     * specified.</p>
+     */
     inline void SetSshPublicKeyCount(int value) { m_sshPublicKeyCountHasBeenSet = true; m_sshPublicKeyCount = value; }
 
     /**
@@ -215,6 +241,12 @@ namespace Model
      * authentication purposes.</p>
      */
     inline const Aws::String& GetUserName() const{ return m_userName; }
+
+    /**
+     * <p>The name of the user whose ARN was specified. User names are used for
+     * authentication purposes.</p>
+     */
+    inline bool UserNameHasBeenSet() const { return m_userNameHasBeenSet; }
 
     /**
      * <p>The name of the user whose ARN was specified. User names are used for

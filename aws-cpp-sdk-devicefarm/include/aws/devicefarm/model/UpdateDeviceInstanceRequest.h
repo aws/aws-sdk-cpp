@@ -53,6 +53,11 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the device instance.</p>
      */
+    inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the device instance.</p>
+     */
     inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
 
     /**
@@ -86,6 +91,12 @@ namespace Model
      * the device instance.</p>
      */
     inline const Aws::String& GetProfileArn() const{ return m_profileArn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the profile that you want to associate with
+     * the device instance.</p>
+     */
+    inline bool ProfileArnHasBeenSet() const { return m_profileArnHasBeenSet; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the profile that you want to associate with
@@ -128,6 +139,11 @@ namespace Model
      * <p>An array of strings that you want to associate with the device instance.</p>
      */
     inline const Aws::Vector<Aws::String>& GetLabels() const{ return m_labels; }
+
+    /**
+     * <p>An array of strings that you want to associate with the device instance.</p>
+     */
+    inline bool LabelsHasBeenSet() const { return m_labelsHasBeenSet; }
 
     /**
      * <p>An array of strings that you want to associate with the device instance.</p>

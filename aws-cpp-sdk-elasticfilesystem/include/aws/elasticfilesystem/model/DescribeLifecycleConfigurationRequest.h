@@ -52,6 +52,12 @@ namespace Model
      * <p>The ID of the file system whose <code>LifecycleConfiguration</code> object
      * you want to retrieve (String).</p>
      */
+    inline bool FileSystemIdHasBeenSet() const { return m_fileSystemIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the file system whose <code>LifecycleConfiguration</code> object
+     * you want to retrieve (String).</p>
+     */
     inline void SetFileSystemId(const Aws::String& value) { m_fileSystemIdHasBeenSet = true; m_fileSystemId = value; }
 
     /**

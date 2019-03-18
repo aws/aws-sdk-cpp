@@ -57,6 +57,11 @@ namespace Model
     /**
      * The smoothing max bitrate for RTP and RTP-FEC streams.
      */
+    inline bool MaxBitrateHasBeenSet() const { return m_maxBitrateHasBeenSet; }
+
+    /**
+     * The smoothing max bitrate for RTP and RTP-FEC streams.
+     */
     inline void SetMaxBitrate(int value) { m_maxBitrateHasBeenSet = true; m_maxBitrate = value; }
 
     /**
@@ -73,6 +78,11 @@ namespace Model
     /**
      * The maximum latency in milliseconds for Zixi-based streams.
      */
+    inline bool MaxLatencyHasBeenSet() const { return m_maxLatencyHasBeenSet; }
+
+    /**
+     * The maximum latency in milliseconds for Zixi-based streams.
+     */
     inline void SetMaxLatency(int value) { m_maxLatencyHasBeenSet = true; m_maxLatency = value; }
 
     /**
@@ -85,6 +95,11 @@ namespace Model
      * The protocol that is used by the source or output.
      */
     inline const Protocol& GetProtocol() const{ return m_protocol; }
+
+    /**
+     * The protocol that is used by the source or output.
+     */
+    inline bool ProtocolHasBeenSet() const { return m_protocolHasBeenSet; }
 
     /**
      * The protocol that is used by the source or output.
@@ -115,6 +130,11 @@ namespace Model
     /**
      * The smoothing latency in milliseconds for RTP and RTP-FEC streams.
      */
+    inline bool SmoothingLatencyHasBeenSet() const { return m_smoothingLatencyHasBeenSet; }
+
+    /**
+     * The smoothing latency in milliseconds for RTP and RTP-FEC streams.
+     */
     inline void SetSmoothingLatency(int value) { m_smoothingLatencyHasBeenSet = true; m_smoothingLatency = value; }
 
     /**
@@ -128,6 +148,12 @@ namespace Model
      * only to Zixi-based streams.
      */
     inline const Aws::String& GetStreamId() const{ return m_streamId; }
+
+    /**
+     * The stream ID that you want to use for this transport. This parameter applies
+     * only to Zixi-based streams.
+     */
+    inline bool StreamIdHasBeenSet() const { return m_streamIdHasBeenSet; }
 
     /**
      * The stream ID that you want to use for this transport. This parameter applies

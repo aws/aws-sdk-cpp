@@ -60,6 +60,13 @@ namespace Model
      * cluster. Add this to the <code>certificate-authority-data</code> section of the
      * <code>kubeconfig</code> file for your cluster.</p>
      */
+    inline bool DataHasBeenSet() const { return m_dataHasBeenSet; }
+
+    /**
+     * <p>The base64 encoded certificate data required to communicate with your
+     * cluster. Add this to the <code>certificate-authority-data</code> section of the
+     * <code>kubeconfig</code> file for your cluster.</p>
+     */
     inline void SetData(const Aws::String& value) { m_dataHasBeenSet = true; m_data = value; }
 
     /**

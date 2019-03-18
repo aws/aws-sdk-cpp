@@ -59,6 +59,11 @@ namespace Model
     /**
      * The length of the term of your reserved queue pricing plan commitment.
      */
+    inline bool CommitmentHasBeenSet() const { return m_commitmentHasBeenSet; }
+
+    /**
+     * The length of the term of your reserved queue pricing plan commitment.
+     */
     inline void SetCommitment(const Commitment& value) { m_commitmentHasBeenSet = true; m_commitment = value; }
 
     /**
@@ -82,6 +87,12 @@ namespace Model
      * reserved queue expires.
      */
     inline const Aws::Utils::DateTime& GetExpiresAt() const{ return m_expiresAt; }
+
+    /**
+     * The timestamp in epoch seconds for when the current pricing plan term for this
+     * reserved queue expires.
+     */
+    inline bool ExpiresAtHasBeenSet() const { return m_expiresAtHasBeenSet; }
 
     /**
      * The timestamp in epoch seconds for when the current pricing plan term for this
@@ -118,6 +129,12 @@ namespace Model
      * The timestamp in epoch seconds for when you set up the current pricing plan for
      * this reserved queue.
      */
+    inline bool PurchasedAtHasBeenSet() const { return m_purchasedAtHasBeenSet; }
+
+    /**
+     * The timestamp in epoch seconds for when you set up the current pricing plan for
+     * this reserved queue.
+     */
     inline void SetPurchasedAt(const Aws::Utils::DateTime& value) { m_purchasedAtHasBeenSet = true; m_purchasedAt = value; }
 
     /**
@@ -144,6 +161,12 @@ namespace Model
      * extended (AUTO_RENEW) or expires (EXPIRE) at the end of the term.
      */
     inline const RenewalType& GetRenewalType() const{ return m_renewalType; }
+
+    /**
+     * Specifies whether the term of your reserved queue pricing plan is automatically
+     * extended (AUTO_RENEW) or expires (EXPIRE) at the end of the term.
+     */
+    inline bool RenewalTypeHasBeenSet() const { return m_renewalTypeHasBeenSet; }
 
     /**
      * Specifies whether the term of your reserved queue pricing plan is automatically
@@ -188,6 +211,16 @@ namespace Model
      * RTS. The new commitment begins when you purchase the additional capacity. You
      * can't decrease the number of RTS in your reserved queue.
      */
+    inline bool ReservedSlotsHasBeenSet() const { return m_reservedSlotsHasBeenSet; }
+
+    /**
+     * Specifies the number of reserved transcode slots (RTS) for this queue. The
+     * number of RTS determines how many jobs the queue can process in parallel; each
+     * RTS can process one job at a time. When you increase this number, you extend
+     * your existing commitment with a new 12-month commitment for a larger number of
+     * RTS. The new commitment begins when you purchase the additional capacity. You
+     * can't decrease the number of RTS in your reserved queue.
+     */
     inline void SetReservedSlots(int value) { m_reservedSlotsHasBeenSet = true; m_reservedSlots = value; }
 
     /**
@@ -205,6 +238,11 @@ namespace Model
      * Specifies whether the pricing plan for your reserved queue is ACTIVE or EXPIRED.
      */
     inline const ReservationPlanStatus& GetStatus() const{ return m_status; }
+
+    /**
+     * Specifies whether the pricing plan for your reserved queue is ACTIVE or EXPIRED.
+     */
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
     /**
      * Specifies whether the pricing plan for your reserved queue is ACTIVE or EXPIRED.

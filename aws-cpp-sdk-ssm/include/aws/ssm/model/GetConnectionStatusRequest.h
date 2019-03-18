@@ -52,6 +52,11 @@ namespace Model
     /**
      * <p>The ID of the instance.</p>
      */
+    inline bool TargetHasBeenSet() const { return m_targetHasBeenSet; }
+
+    /**
+     * <p>The ID of the instance.</p>
+     */
     inline void SetTarget(const Aws::String& value) { m_targetHasBeenSet = true; m_target = value; }
 
     /**

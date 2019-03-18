@@ -69,6 +69,15 @@ namespace Model
      * <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>.</p> <p>To
      * successfully call this API, you must own the identity.</p>
      */
+    inline bool IdentityHasBeenSet() const { return m_identityHasBeenSet; }
+
+    /**
+     * <p>The identity that the policy will apply to. You can specify an identity by
+     * using its name or by using its Amazon Resource Name (ARN). Examples:
+     * <code>user@example.com</code>, <code>example.com</code>,
+     * <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>.</p> <p>To
+     * successfully call this API, you must own the identity.</p>
+     */
     inline void SetIdentity(const Aws::String& value) { m_identityHasBeenSet = true; m_identity = value; }
 
     /**
@@ -127,6 +136,12 @@ namespace Model
      * <p>The name of the policy.</p> <p>The policy name cannot exceed 64 characters
      * and can only include alphanumeric characters, dashes, and underscores.</p>
      */
+    inline bool PolicyNameHasBeenSet() const { return m_policyNameHasBeenSet; }
+
+    /**
+     * <p>The name of the policy.</p> <p>The policy name cannot exceed 64 characters
+     * and can only include alphanumeric characters, dashes, and underscores.</p>
+     */
     inline void SetPolicyName(const Aws::String& value) { m_policyNameHasBeenSet = true; m_policyName = value; }
 
     /**
@@ -168,6 +183,15 @@ namespace Model
      * SES Developer Guide</a>. </p>
      */
     inline const Aws::String& GetPolicy() const{ return m_policy; }
+
+    /**
+     * <p>The text of the policy in JSON format. The policy cannot exceed 4 KB.</p>
+     * <p>For information about the syntax of sending authorization policies, see the
+     * <a
+     * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-policies.html">Amazon
+     * SES Developer Guide</a>. </p>
+     */
+    inline bool PolicyHasBeenSet() const { return m_policyHasBeenSet; }
 
     /**
      * <p>The text of the policy in JSON format. The policy cannot exceed 4 KB.</p>

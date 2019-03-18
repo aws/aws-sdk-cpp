@@ -63,6 +63,11 @@ namespace Model
     /**
      * <p>The unique identifier for the reservation.</p>
      */
+    inline bool ReservedDBInstanceIdHasBeenSet() const { return m_reservedDBInstanceIdHasBeenSet; }
+
+    /**
+     * <p>The unique identifier for the reservation.</p>
+     */
     inline void SetReservedDBInstanceId(const Aws::String& value) { m_reservedDBInstanceIdHasBeenSet = true; m_reservedDBInstanceId = value; }
 
     /**
@@ -95,6 +100,11 @@ namespace Model
      * <p>The offering identifier.</p>
      */
     inline const Aws::String& GetReservedDBInstancesOfferingId() const{ return m_reservedDBInstancesOfferingId; }
+
+    /**
+     * <p>The offering identifier.</p>
+     */
+    inline bool ReservedDBInstancesOfferingIdHasBeenSet() const { return m_reservedDBInstancesOfferingIdHasBeenSet; }
 
     /**
      * <p>The offering identifier.</p>
@@ -135,6 +145,11 @@ namespace Model
     /**
      * <p>The DB instance class for the reserved DB instance.</p>
      */
+    inline bool DBInstanceClassHasBeenSet() const { return m_dBInstanceClassHasBeenSet; }
+
+    /**
+     * <p>The DB instance class for the reserved DB instance.</p>
+     */
     inline void SetDBInstanceClass(const Aws::String& value) { m_dBInstanceClassHasBeenSet = true; m_dBInstanceClass = value; }
 
     /**
@@ -171,6 +186,11 @@ namespace Model
     /**
      * <p>The time the reservation started.</p>
      */
+    inline bool StartTimeHasBeenSet() const { return m_startTimeHasBeenSet; }
+
+    /**
+     * <p>The time the reservation started.</p>
+     */
     inline void SetStartTime(const Aws::Utils::DateTime& value) { m_startTimeHasBeenSet = true; m_startTime = value; }
 
     /**
@@ -197,6 +217,11 @@ namespace Model
     /**
      * <p>The duration of the reservation in seconds.</p>
      */
+    inline bool DurationHasBeenSet() const { return m_durationHasBeenSet; }
+
+    /**
+     * <p>The duration of the reservation in seconds.</p>
+     */
     inline void SetDuration(int value) { m_durationHasBeenSet = true; m_duration = value; }
 
     /**
@@ -209,6 +234,11 @@ namespace Model
      * <p>The fixed price charged for this reserved DB instance.</p>
      */
     inline double GetFixedPrice() const{ return m_fixedPrice; }
+
+    /**
+     * <p>The fixed price charged for this reserved DB instance.</p>
+     */
+    inline bool FixedPriceHasBeenSet() const { return m_fixedPriceHasBeenSet; }
 
     /**
      * <p>The fixed price charged for this reserved DB instance.</p>
@@ -229,6 +259,11 @@ namespace Model
     /**
      * <p>The hourly price charged for this reserved DB instance.</p>
      */
+    inline bool UsagePriceHasBeenSet() const { return m_usagePriceHasBeenSet; }
+
+    /**
+     * <p>The hourly price charged for this reserved DB instance.</p>
+     */
     inline void SetUsagePrice(double value) { m_usagePriceHasBeenSet = true; m_usagePrice = value; }
 
     /**
@@ -241,6 +276,11 @@ namespace Model
      * <p>The currency code for the reserved DB instance.</p>
      */
     inline const Aws::String& GetCurrencyCode() const{ return m_currencyCode; }
+
+    /**
+     * <p>The currency code for the reserved DB instance.</p>
+     */
+    inline bool CurrencyCodeHasBeenSet() const { return m_currencyCodeHasBeenSet; }
 
     /**
      * <p>The currency code for the reserved DB instance.</p>
@@ -281,6 +321,11 @@ namespace Model
     /**
      * <p>The number of reserved DB instances.</p>
      */
+    inline bool DBInstanceCountHasBeenSet() const { return m_dBInstanceCountHasBeenSet; }
+
+    /**
+     * <p>The number of reserved DB instances.</p>
+     */
     inline void SetDBInstanceCount(int value) { m_dBInstanceCountHasBeenSet = true; m_dBInstanceCount = value; }
 
     /**
@@ -293,6 +338,11 @@ namespace Model
      * <p>The description of the reserved DB instance.</p>
      */
     inline const Aws::String& GetProductDescription() const{ return m_productDescription; }
+
+    /**
+     * <p>The description of the reserved DB instance.</p>
+     */
+    inline bool ProductDescriptionHasBeenSet() const { return m_productDescriptionHasBeenSet; }
 
     /**
      * <p>The description of the reserved DB instance.</p>
@@ -333,6 +383,11 @@ namespace Model
     /**
      * <p>The offering type of this reserved DB instance.</p>
      */
+    inline bool OfferingTypeHasBeenSet() const { return m_offeringTypeHasBeenSet; }
+
+    /**
+     * <p>The offering type of this reserved DB instance.</p>
+     */
     inline void SetOfferingType(const Aws::String& value) { m_offeringTypeHasBeenSet = true; m_offeringType = value; }
 
     /**
@@ -369,6 +424,11 @@ namespace Model
     /**
      * <p>Indicates if the reservation applies to Multi-AZ deployments.</p>
      */
+    inline bool MultiAZHasBeenSet() const { return m_multiAZHasBeenSet; }
+
+    /**
+     * <p>Indicates if the reservation applies to Multi-AZ deployments.</p>
+     */
     inline void SetMultiAZ(bool value) { m_multiAZHasBeenSet = true; m_multiAZ = value; }
 
     /**
@@ -381,6 +441,11 @@ namespace Model
      * <p>The state of the reserved DB instance.</p>
      */
     inline const Aws::String& GetState() const{ return m_state; }
+
+    /**
+     * <p>The state of the reserved DB instance.</p>
+     */
+    inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
 
     /**
      * <p>The state of the reserved DB instance.</p>
@@ -421,6 +486,11 @@ namespace Model
     /**
      * <p>The recurring price charged to run this reserved DB instance.</p>
      */
+    inline bool RecurringChargesHasBeenSet() const { return m_recurringChargesHasBeenSet; }
+
+    /**
+     * <p>The recurring price charged to run this reserved DB instance.</p>
+     */
     inline void SetRecurringCharges(const Aws::Vector<RecurringCharge>& value) { m_recurringChargesHasBeenSet = true; m_recurringCharges = value; }
 
     /**
@@ -453,6 +523,11 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) for the reserved DB instance.</p>
      */
     inline const Aws::String& GetReservedDBInstanceArn() const{ return m_reservedDBInstanceArn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) for the reserved DB instance.</p>
+     */
+    inline bool ReservedDBInstanceArnHasBeenSet() const { return m_reservedDBInstanceArnHasBeenSet; }
 
     /**
      * <p>The Amazon Resource Name (ARN) for the reserved DB instance.</p>

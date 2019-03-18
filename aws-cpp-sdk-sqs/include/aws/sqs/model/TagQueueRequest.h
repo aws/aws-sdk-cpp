@@ -55,6 +55,11 @@ namespace Model
     /**
      * <p>The URL of the queue.</p>
      */
+    inline bool QueueUrlHasBeenSet() const { return m_queueUrlHasBeenSet; }
+
+    /**
+     * <p>The URL of the queue.</p>
+     */
     inline void SetQueueUrl(const Aws::String& value) { m_queueUrlHasBeenSet = true; m_queueUrl = value; }
 
     /**
@@ -87,6 +92,11 @@ namespace Model
      * <p>The list of tags to be added to the specified queue.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>The list of tags to be added to the specified queue.</p>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
      * <p>The list of tags to be added to the specified queue.</p>

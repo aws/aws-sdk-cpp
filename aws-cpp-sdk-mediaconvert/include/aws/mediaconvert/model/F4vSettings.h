@@ -51,6 +51,9 @@ namespace Model
     inline const F4vMoovPlacement& GetMoovPlacement() const{ return m_moovPlacement; }
 
     
+    inline bool MoovPlacementHasBeenSet() const { return m_moovPlacementHasBeenSet; }
+
+    
     inline void SetMoovPlacement(const F4vMoovPlacement& value) { m_moovPlacementHasBeenSet = true; m_moovPlacement = value; }
 
     

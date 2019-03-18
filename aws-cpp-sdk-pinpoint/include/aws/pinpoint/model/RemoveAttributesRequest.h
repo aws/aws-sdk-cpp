@@ -51,6 +51,11 @@ namespace Model
     /**
      * The unique ID of your Amazon Pinpoint application.
      */
+    inline bool ApplicationIdHasBeenSet() const { return m_applicationIdHasBeenSet; }
+
+    /**
+     * The unique ID of your Amazon Pinpoint application.
+     */
     inline void SetApplicationId(const Aws::String& value) { m_applicationIdHasBeenSet = true; m_applicationId = value; }
 
     /**
@@ -84,6 +89,12 @@ namespace Model
      * endpoint-user-attributes.
      */
     inline const Aws::String& GetAttributeType() const{ return m_attributeType; }
+
+    /**
+     * Type of attribute. Can be endpoint-custom-attributes, endpoint-custom-metrics,
+     * endpoint-user-attributes.
+     */
+    inline bool AttributeTypeHasBeenSet() const { return m_attributeTypeHasBeenSet; }
 
     /**
      * Type of attribute. Can be endpoint-custom-attributes, endpoint-custom-metrics,
@@ -124,6 +135,9 @@ namespace Model
 
     
     inline const UpdateAttributesRequest& GetUpdateAttributesRequest() const{ return m_updateAttributesRequest; }
+
+    
+    inline bool UpdateAttributesRequestHasBeenSet() const { return m_updateAttributesRequestHasBeenSet; }
 
     
     inline void SetUpdateAttributesRequest(const UpdateAttributesRequest& value) { m_updateAttributesRequestHasBeenSet = true; m_updateAttributesRequest = value; }

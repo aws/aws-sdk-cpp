@@ -59,6 +59,12 @@ namespace Model
      * <p>Unique identifier for a matchmaking ticket. The ticket must be in status
      * <code>REQUIRES_ACCEPTANCE</code>; otherwise this request will fail.</p>
      */
+    inline bool TicketIdHasBeenSet() const { return m_ticketIdHasBeenSet; }
+
+    /**
+     * <p>Unique identifier for a matchmaking ticket. The ticket must be in status
+     * <code>REQUIRES_ACCEPTANCE</code>; otherwise this request will fail.</p>
+     */
     inline void SetTicketId(const Aws::String& value) { m_ticketIdHasBeenSet = true; m_ticketId = value; }
 
     /**
@@ -97,6 +103,12 @@ namespace Model
      * include one or multiple player IDs.</p>
      */
     inline const Aws::Vector<Aws::String>& GetPlayerIds() const{ return m_playerIds; }
+
+    /**
+     * <p>Unique identifier for a player delivering the response. This parameter can
+     * include one or multiple player IDs.</p>
+     */
+    inline bool PlayerIdsHasBeenSet() const { return m_playerIdsHasBeenSet; }
 
     /**
      * <p>Unique identifier for a player delivering the response. This parameter can
@@ -145,6 +157,11 @@ namespace Model
      * <p>Player response to the proposed match.</p>
      */
     inline const AcceptanceType& GetAcceptanceType() const{ return m_acceptanceType; }
+
+    /**
+     * <p>Player response to the proposed match.</p>
+     */
+    inline bool AcceptanceTypeHasBeenSet() const { return m_acceptanceTypeHasBeenSet; }
 
     /**
      * <p>Player response to the proposed match.</p>

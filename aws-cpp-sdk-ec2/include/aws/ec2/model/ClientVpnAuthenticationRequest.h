@@ -69,6 +69,14 @@ namespace Model
      * or <code>directory-service-authentication</code> to use Active Directory
      * authentication.</p>
      */
+    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
+
+    /**
+     * <p>The type of client authentication to be used. Specify
+     * <code>certificate-authentication</code> to use certificate-based authentication,
+     * or <code>directory-service-authentication</code> to use Active Directory
+     * authentication.</p>
+     */
     inline void SetType(const ClientVpnAuthenticationType& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
@@ -108,6 +116,13 @@ namespace Model
      * provide this information if <b>Type</b> is
      * <code>directory-service-authentication</code>.</p>
      */
+    inline bool ActiveDirectoryHasBeenSet() const { return m_activeDirectoryHasBeenSet; }
+
+    /**
+     * <p>Information about the Active Directory to be used, if applicable. You must
+     * provide this information if <b>Type</b> is
+     * <code>directory-service-authentication</code>.</p>
+     */
     inline void SetActiveDirectory(const DirectoryServiceAuthenticationRequest& value) { m_activeDirectoryHasBeenSet = true; m_activeDirectory = value; }
 
     /**
@@ -138,6 +153,13 @@ namespace Model
      * <code>certificate-authentication</code>.</p>
      */
     inline const CertificateAuthenticationRequest& GetMutualAuthentication() const{ return m_mutualAuthentication; }
+
+    /**
+     * <p>Information about the authentication certificates to be used, if applicable.
+     * You must provide this information if <b>Type</b> is
+     * <code>certificate-authentication</code>.</p>
+     */
+    inline bool MutualAuthenticationHasBeenSet() const { return m_mutualAuthenticationHasBeenSet; }
 
     /**
      * <p>Information about the authentication certificates to be used, if applicable.

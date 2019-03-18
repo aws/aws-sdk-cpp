@@ -70,6 +70,17 @@ namespace Model
      * experienced an error and did not complete processing. <code>CANCELLED</code>
      * indicates that a user input interrupted query execution. </p>
      */
+    inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
+
+    /**
+     * <p>The state of query execution. <code>QUEUED</code> state is listed but is not
+     * used by Athena and is reserved for future use. <code>RUNNING</code> indicates
+     * that the query has been submitted to the service, and Athena will execute the
+     * query as soon as resources are available. <code>SUCCEEDED</code> indicates that
+     * the query completed without errors. <code>FAILED</code> indicates that the query
+     * experienced an error and did not complete processing. <code>CANCELLED</code>
+     * indicates that a user input interrupted query execution. </p>
+     */
     inline void SetState(const QueryExecutionState& value) { m_stateHasBeenSet = true; m_state = value; }
 
     /**
@@ -114,6 +125,11 @@ namespace Model
     /**
      * <p>Further detail about the status of the query.</p>
      */
+    inline bool StateChangeReasonHasBeenSet() const { return m_stateChangeReasonHasBeenSet; }
+
+    /**
+     * <p>Further detail about the status of the query.</p>
+     */
     inline void SetStateChangeReason(const Aws::String& value) { m_stateChangeReasonHasBeenSet = true; m_stateChangeReason = value; }
 
     /**
@@ -150,6 +166,11 @@ namespace Model
     /**
      * <p>The date and time that the query was submitted.</p>
      */
+    inline bool SubmissionDateTimeHasBeenSet() const { return m_submissionDateTimeHasBeenSet; }
+
+    /**
+     * <p>The date and time that the query was submitted.</p>
+     */
     inline void SetSubmissionDateTime(const Aws::Utils::DateTime& value) { m_submissionDateTimeHasBeenSet = true; m_submissionDateTime = value; }
 
     /**
@@ -172,6 +193,11 @@ namespace Model
      * <p>The date and time that the query completed.</p>
      */
     inline const Aws::Utils::DateTime& GetCompletionDateTime() const{ return m_completionDateTime; }
+
+    /**
+     * <p>The date and time that the query completed.</p>
+     */
+    inline bool CompletionDateTimeHasBeenSet() const { return m_completionDateTimeHasBeenSet; }
 
     /**
      * <p>The date and time that the query completed.</p>

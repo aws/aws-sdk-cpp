@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The security profile that is attached.</p>
      */
+    inline bool SecurityProfileNameHasBeenSet() const { return m_securityProfileNameHasBeenSet; }
+
+    /**
+     * <p>The security profile that is attached.</p>
+     */
     inline void SetSecurityProfileName(const Aws::String& value) { m_securityProfileNameHasBeenSet = true; m_securityProfileName = value; }
 
     /**
@@ -89,6 +94,12 @@ namespace Model
      * attached.</p>
      */
     inline const Aws::String& GetSecurityProfileTargetArn() const{ return m_securityProfileTargetArn; }
+
+    /**
+     * <p>The ARN of the target (thing group) to which the security profile is
+     * attached.</p>
+     */
+    inline bool SecurityProfileTargetArnHasBeenSet() const { return m_securityProfileTargetArnHasBeenSet; }
 
     /**
      * <p>The ARN of the target (thing group) to which the security profile is

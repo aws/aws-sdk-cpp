@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>Returns a typed link specifier as output.</p>
      */
+    inline bool TypedLinkSpecifierHasBeenSet() const { return m_typedLinkSpecifierHasBeenSet; }
+
+    /**
+     * <p>Returns a typed link specifier as output.</p>
+     */
     inline void SetTypedLinkSpecifier(const TypedLinkSpecifier& value) { m_typedLinkSpecifierHasBeenSet = true; m_typedLinkSpecifier = value; }
 
     /**

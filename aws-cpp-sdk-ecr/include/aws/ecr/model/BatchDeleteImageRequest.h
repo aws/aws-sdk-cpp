@@ -61,6 +61,12 @@ namespace Model
      * <p>The AWS account ID associated with the registry that contains the image to
      * delete. If you do not specify a registry, the default registry is assumed.</p>
      */
+    inline bool RegistryIdHasBeenSet() const { return m_registryIdHasBeenSet; }
+
+    /**
+     * <p>The AWS account ID associated with the registry that contains the image to
+     * delete. If you do not specify a registry, the default registry is assumed.</p>
+     */
     inline void SetRegistryId(const Aws::String& value) { m_registryIdHasBeenSet = true; m_registryId = value; }
 
     /**
@@ -102,6 +108,11 @@ namespace Model
     /**
      * <p>The repository that contains the image to delete.</p>
      */
+    inline bool RepositoryNameHasBeenSet() const { return m_repositoryNameHasBeenSet; }
+
+    /**
+     * <p>The repository that contains the image to delete.</p>
+     */
     inline void SetRepositoryName(const Aws::String& value) { m_repositoryNameHasBeenSet = true; m_repositoryName = value; }
 
     /**
@@ -136,6 +147,13 @@ namespace Model
      * <code>imageDigest=digest</code>.</p>
      */
     inline const Aws::Vector<ImageIdentifier>& GetImageIds() const{ return m_imageIds; }
+
+    /**
+     * <p>A list of image ID references that correspond to images to delete. The format
+     * of the <code>imageIds</code> reference is <code>imageTag=tag</code> or
+     * <code>imageDigest=digest</code>.</p>
+     */
+    inline bool ImageIdsHasBeenSet() const { return m_imageIdsHasBeenSet; }
 
     /**
      * <p>A list of image ID references that correspond to images to delete. The format

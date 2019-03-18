@@ -55,6 +55,11 @@ namespace Model
     /**
      * <p>The S3 location of the data source that is associated with a channel.</p>
      */
+    inline bool S3DataSourceHasBeenSet() const { return m_s3DataSourceHasBeenSet; }
+
+    /**
+     * <p>The S3 location of the data source that is associated with a channel.</p>
+     */
     inline void SetS3DataSource(const TransformS3DataSource& value) { m_s3DataSourceHasBeenSet = true; m_s3DataSource = value; }
 
     /**

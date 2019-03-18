@@ -60,6 +60,12 @@ namespace Model
      * <p>An axis-aligned coarse representation of the detected text's location on the
      * image.</p>
      */
+    inline bool BoundingBoxHasBeenSet() const { return m_boundingBoxHasBeenSet; }
+
+    /**
+     * <p>An axis-aligned coarse representation of the detected text's location on the
+     * image.</p>
+     */
     inline void SetBoundingBox(const BoundingBox& value) { m_boundingBoxHasBeenSet = true; m_boundingBox = value; }
 
     /**
@@ -85,6 +91,11 @@ namespace Model
      * <p>Within the bounding box, a fine-grained polygon around the detected text.</p>
      */
     inline const Aws::Vector<Point>& GetPolygon() const{ return m_polygon; }
+
+    /**
+     * <p>Within the bounding box, a fine-grained polygon around the detected text.</p>
+     */
+    inline bool PolygonHasBeenSet() const { return m_polygonHasBeenSet; }
 
     /**
      * <p>Within the bounding box, a fine-grained polygon around the detected text.</p>

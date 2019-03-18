@@ -57,6 +57,13 @@ namespace Model
      * </li> <li> <p> <code>jp</code> - Japanese</p> </li> <li> <p> <code>zh</code> -
      * Chinese</p> </li> </ul>
      */
+    inline bool AcceptLanguageHasBeenSet() const { return m_acceptLanguageHasBeenSet; }
+
+    /**
+     * <p>The language code.</p> <ul> <li> <p> <code>en</code> - English (default)</p>
+     * </li> <li> <p> <code>jp</code> - Japanese</p> </li> <li> <p> <code>zh</code> -
+     * Chinese</p> </li> </ul>
+     */
     inline void SetAcceptLanguage(const Aws::String& value) { m_acceptLanguageHasBeenSet = true; m_acceptLanguage = value; }
 
     /**
@@ -103,6 +110,11 @@ namespace Model
     /**
      * <p>The portfolio identifier.</p>
      */
+    inline bool PortfolioIdHasBeenSet() const { return m_portfolioIdHasBeenSet; }
+
+    /**
+     * <p>The portfolio identifier.</p>
+     */
     inline void SetPortfolioId(const Aws::String& value) { m_portfolioIdHasBeenSet = true; m_portfolioId = value; }
 
     /**
@@ -135,6 +147,11 @@ namespace Model
      * <p>The AWS account ID. For example, <code>123456789012</code>.</p>
      */
     inline const Aws::String& GetAccountId() const{ return m_accountId; }
+
+    /**
+     * <p>The AWS account ID. For example, <code>123456789012</code>.</p>
+     */
+    inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
 
     /**
      * <p>The AWS account ID. For example, <code>123456789012</code>.</p>
@@ -176,6 +193,16 @@ namespace Model
      * process.</p>
      */
     inline const OrganizationNode& GetOrganizationNode() const{ return m_organizationNode; }
+
+    /**
+     * <p>The organization node to whom you are going to share. If
+     * <code>OrganizationNode</code> is passed in, <code>PortfolioShare</code> will be
+     * created for the node and its children (when applies), and a
+     * <code>PortfolioShareToken</code> will be returned in the output in order for the
+     * administrator to monitor the status of the <code>PortfolioShare</code> creation
+     * process.</p>
+     */
+    inline bool OrganizationNodeHasBeenSet() const { return m_organizationNodeHasBeenSet; }
 
     /**
      * <p>The organization node to whom you are going to share. If

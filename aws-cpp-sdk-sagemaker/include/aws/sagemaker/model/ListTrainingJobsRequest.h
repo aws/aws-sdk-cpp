@@ -60,6 +60,13 @@ namespace Model
      * truncated, the response includes a <code>NextToken</code>. To retrieve the next
      * set of training jobs, use the token in the next request. </p>
      */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
+
+    /**
+     * <p>If the result of the previous <code>ListTrainingJobs</code> request was
+     * truncated, the response includes a <code>NextToken</code>. To retrieve the next
+     * set of training jobs, use the token in the next request. </p>
+     */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
     /**
@@ -106,6 +113,11 @@ namespace Model
     /**
      * <p>The maximum number of training jobs to return in the response.</p>
      */
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
+
+    /**
+     * <p>The maximum number of training jobs to return in the response.</p>
+     */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
@@ -119,6 +131,12 @@ namespace Model
      * (timestamp).</p>
      */
     inline const Aws::Utils::DateTime& GetCreationTimeAfter() const{ return m_creationTimeAfter; }
+
+    /**
+     * <p>A filter that returns only training jobs created after the specified time
+     * (timestamp).</p>
+     */
+    inline bool CreationTimeAfterHasBeenSet() const { return m_creationTimeAfterHasBeenSet; }
 
     /**
      * <p>A filter that returns only training jobs created after the specified time
@@ -155,6 +173,12 @@ namespace Model
      * <p>A filter that returns only training jobs created before the specified time
      * (timestamp).</p>
      */
+    inline bool CreationTimeBeforeHasBeenSet() const { return m_creationTimeBeforeHasBeenSet; }
+
+    /**
+     * <p>A filter that returns only training jobs created before the specified time
+     * (timestamp).</p>
+     */
     inline void SetCreationTimeBefore(const Aws::Utils::DateTime& value) { m_creationTimeBeforeHasBeenSet = true; m_creationTimeBefore = value; }
 
     /**
@@ -181,6 +205,12 @@ namespace Model
      * (timestamp).</p>
      */
     inline const Aws::Utils::DateTime& GetLastModifiedTimeAfter() const{ return m_lastModifiedTimeAfter; }
+
+    /**
+     * <p>A filter that returns only training jobs modified after the specified time
+     * (timestamp).</p>
+     */
+    inline bool LastModifiedTimeAfterHasBeenSet() const { return m_lastModifiedTimeAfterHasBeenSet; }
 
     /**
      * <p>A filter that returns only training jobs modified after the specified time
@@ -217,6 +247,12 @@ namespace Model
      * <p>A filter that returns only training jobs modified before the specified time
      * (timestamp).</p>
      */
+    inline bool LastModifiedTimeBeforeHasBeenSet() const { return m_lastModifiedTimeBeforeHasBeenSet; }
+
+    /**
+     * <p>A filter that returns only training jobs modified before the specified time
+     * (timestamp).</p>
+     */
     inline void SetLastModifiedTimeBefore(const Aws::Utils::DateTime& value) { m_lastModifiedTimeBeforeHasBeenSet = true; m_lastModifiedTimeBefore = value; }
 
     /**
@@ -243,6 +279,12 @@ namespace Model
      * whose name contains the specified string.</p>
      */
     inline const Aws::String& GetNameContains() const{ return m_nameContains; }
+
+    /**
+     * <p>A string in the training job name. This filter returns only training jobs
+     * whose name contains the specified string.</p>
+     */
+    inline bool NameContainsHasBeenSet() const { return m_nameContainsHasBeenSet; }
 
     /**
      * <p>A string in the training job name. This filter returns only training jobs
@@ -289,6 +331,11 @@ namespace Model
     /**
      * <p>A filter that retrieves only training jobs with a specific status.</p>
      */
+    inline bool StatusEqualsHasBeenSet() const { return m_statusEqualsHasBeenSet; }
+
+    /**
+     * <p>A filter that retrieves only training jobs with a specific status.</p>
+     */
     inline void SetStatusEquals(const TrainingJobStatus& value) { m_statusEqualsHasBeenSet = true; m_statusEquals = value; }
 
     /**
@@ -315,6 +362,11 @@ namespace Model
     /**
      * <p>The field to sort results by. The default is <code>CreationTime</code>.</p>
      */
+    inline bool SortByHasBeenSet() const { return m_sortByHasBeenSet; }
+
+    /**
+     * <p>The field to sort results by. The default is <code>CreationTime</code>.</p>
+     */
     inline void SetSortBy(const SortBy& value) { m_sortByHasBeenSet = true; m_sortBy = value; }
 
     /**
@@ -337,6 +389,11 @@ namespace Model
      * <p>The sort order for results. The default is <code>Ascending</code>.</p>
      */
     inline const SortOrder& GetSortOrder() const{ return m_sortOrder; }
+
+    /**
+     * <p>The sort order for results. The default is <code>Ascending</code>.</p>
+     */
+    inline bool SortOrderHasBeenSet() const { return m_sortOrderHasBeenSet; }
 
     /**
      * <p>The sort order for results. The default is <code>Ascending</code>.</p>

@@ -52,6 +52,11 @@ namespace Model
     /**
      * <p>The Amazon Chime account ID.</p>
      */
+    inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
+
+    /**
+     * <p>The Amazon Chime account ID.</p>
+     */
     inline void SetAccountId(const Aws::String& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
 
     /**
@@ -84,6 +89,11 @@ namespace Model
      * <p>The request containing the user IDs and details to update.</p>
      */
     inline const Aws::Vector<UpdateUserRequestItem>& GetUpdateUserRequestItems() const{ return m_updateUserRequestItems; }
+
+    /**
+     * <p>The request containing the user IDs and details to update.</p>
+     */
+    inline bool UpdateUserRequestItemsHasBeenSet() const { return m_updateUserRequestItemsHasBeenSet; }
 
     /**
      * <p>The request containing the user IDs and details to update.</p>

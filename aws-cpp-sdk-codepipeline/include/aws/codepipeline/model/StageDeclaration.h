@@ -59,6 +59,11 @@ namespace Model
     /**
      * <p>The name of the stage.</p>
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>The name of the stage.</p>
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
@@ -95,6 +100,11 @@ namespace Model
     /**
      * <p>Reserved for future use.</p>
      */
+    inline bool BlockersHasBeenSet() const { return m_blockersHasBeenSet; }
+
+    /**
+     * <p>Reserved for future use.</p>
+     */
     inline void SetBlockers(const Aws::Vector<BlockerDeclaration>& value) { m_blockersHasBeenSet = true; m_blockers = value; }
 
     /**
@@ -127,6 +137,11 @@ namespace Model
      * <p>The actions included in a stage.</p>
      */
     inline const Aws::Vector<ActionDeclaration>& GetActions() const{ return m_actions; }
+
+    /**
+     * <p>The actions included in a stage.</p>
+     */
+    inline bool ActionsHasBeenSet() const { return m_actionsHasBeenSet; }
 
     /**
      * <p>The actions included in a stage.</p>

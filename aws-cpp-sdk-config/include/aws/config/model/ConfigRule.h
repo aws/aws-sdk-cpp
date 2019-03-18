@@ -73,6 +73,12 @@ namespace Model
      * <p>The name that you assign to the AWS Config rule. The name is required if you
      * are adding a new rule.</p>
      */
+    inline bool ConfigRuleNameHasBeenSet() const { return m_configRuleNameHasBeenSet; }
+
+    /**
+     * <p>The name that you assign to the AWS Config rule. The name is required if you
+     * are adding a new rule.</p>
+     */
     inline void SetConfigRuleName(const Aws::String& value) { m_configRuleNameHasBeenSet = true; m_configRuleName = value; }
 
     /**
@@ -114,6 +120,11 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the AWS Config rule.</p>
      */
+    inline bool ConfigRuleArnHasBeenSet() const { return m_configRuleArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the AWS Config rule.</p>
+     */
     inline void SetConfigRuleArn(const Aws::String& value) { m_configRuleArnHasBeenSet = true; m_configRuleArn = value; }
 
     /**
@@ -150,6 +161,11 @@ namespace Model
     /**
      * <p>The ID of the AWS Config rule.</p>
      */
+    inline bool ConfigRuleIdHasBeenSet() const { return m_configRuleIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the AWS Config rule.</p>
+     */
     inline void SetConfigRuleId(const Aws::String& value) { m_configRuleIdHasBeenSet = true; m_configRuleId = value; }
 
     /**
@@ -182,6 +198,11 @@ namespace Model
      * <p>The description that you provide for the AWS Config rule.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
+
+    /**
+     * <p>The description that you provide for the AWS Config rule.</p>
+     */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
 
     /**
      * <p>The description that you provide for the AWS Config rule.</p>
@@ -223,6 +244,16 @@ namespace Model
      * recording group changes.</p>
      */
     inline const Scope& GetScope() const{ return m_scope; }
+
+    /**
+     * <p>Defines which resources can trigger an evaluation for the rule. The scope can
+     * include one or more resource types, a combination of one resource type and one
+     * resource ID, or a combination of a tag key and value. Specify a scope to
+     * constrain the resources that can trigger an evaluation for the rule. If you do
+     * not specify a scope, evaluations are triggered when any resource in the
+     * recording group changes.</p>
+     */
+    inline bool ScopeHasBeenSet() const { return m_scopeHasBeenSet; }
 
     /**
      * <p>Defines which resources can trigger an evaluation for the rule. The scope can
@@ -275,6 +306,12 @@ namespace Model
      * <p>Provides the rule owner (AWS or customer), the rule identifier, and the
      * notifications that cause the function to evaluate your AWS resources.</p>
      */
+    inline bool SourceHasBeenSet() const { return m_sourceHasBeenSet; }
+
+    /**
+     * <p>Provides the rule owner (AWS or customer), the rule identifier, and the
+     * notifications that cause the function to evaluate your AWS resources.</p>
+     */
     inline void SetSource(const Source& value) { m_sourceHasBeenSet = true; m_source = value; }
 
     /**
@@ -301,6 +338,12 @@ namespace Model
      * function.</p>
      */
     inline const Aws::String& GetInputParameters() const{ return m_inputParameters; }
+
+    /**
+     * <p>A string, in JSON format, that is passed to the AWS Config rule Lambda
+     * function.</p>
+     */
+    inline bool InputParametersHasBeenSet() const { return m_inputParametersHasBeenSet; }
 
     /**
      * <p>A string, in JSON format, that is passed to the AWS Config rule Lambda
@@ -351,6 +394,19 @@ namespace Model
      * parameter.</p> </note>
      */
     inline const MaximumExecutionFrequency& GetMaximumExecutionFrequency() const{ return m_maximumExecutionFrequency; }
+
+    /**
+     * <p>The maximum frequency with which AWS Config runs evaluations for a rule. You
+     * can specify a value for <code>MaximumExecutionFrequency</code> when:</p> <ul>
+     * <li> <p>You are using an AWS managed rule that is triggered at a periodic
+     * frequency.</p> </li> <li> <p>Your custom rule is triggered when AWS Config
+     * delivers the configuration snapshot. For more information, see
+     * <a>ConfigSnapshotDeliveryProperties</a>.</p> </li> </ul> <note> <p>By default,
+     * rules with a periodic trigger are evaluated every 24 hours. To change the
+     * frequency, specify a valid value for the <code>MaximumExecutionFrequency</code>
+     * parameter.</p> </note>
+     */
+    inline bool MaximumExecutionFrequencyHasBeenSet() const { return m_maximumExecutionFrequencyHasBeenSet; }
 
     /**
      * <p>The maximum frequency with which AWS Config runs evaluations for a rule. You
@@ -433,6 +489,21 @@ namespace Model
      * request to delete the rule. After AWS Config deletes the rule, the rule and all
      * of its evaluations are erased and are no longer available.</p>
      */
+    inline bool ConfigRuleStateHasBeenSet() const { return m_configRuleStateHasBeenSet; }
+
+    /**
+     * <p>Indicates whether the AWS Config rule is active or is currently being deleted
+     * by AWS Config. It can also indicate the evaluation status for the AWS Config
+     * rule.</p> <p>AWS Config sets the state of the rule to <code>EVALUATING</code>
+     * temporarily after you use the <code>StartConfigRulesEvaluation</code> request to
+     * evaluate your resources against the AWS Config rule.</p> <p>AWS Config sets the
+     * state of the rule to <code>DELETING_RESULTS</code> temporarily after you use the
+     * <code>DeleteEvaluationResults</code> request to delete the current evaluation
+     * results for the AWS Config rule.</p> <p>AWS Config temporarily sets the state of
+     * a rule to <code>DELETING</code> after you use the <code>DeleteConfigRule</code>
+     * request to delete the rule. After AWS Config deletes the rule, the rule and all
+     * of its evaluations are erased and are no longer available.</p>
+     */
     inline void SetConfigRuleState(const ConfigRuleState& value) { m_configRuleStateHasBeenSet = true; m_configRuleState = value; }
 
     /**
@@ -487,6 +558,13 @@ namespace Model
      * service. The field is empty if you create your own rule.</p> </note>
      */
     inline const Aws::String& GetCreatedBy() const{ return m_createdBy; }
+
+    /**
+     * <p>Service principal name of the service that created the rule.</p> <note>
+     * <p>The field is populated only if the service linked rule is created by a
+     * service. The field is empty if you create your own rule.</p> </note>
+     */
+    inline bool CreatedByHasBeenSet() const { return m_createdByHasBeenSet; }
 
     /**
      * <p>Service principal name of the service that created the rule.</p> <note>

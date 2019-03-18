@@ -55,6 +55,11 @@ namespace Model
     /**
      * <p>The Auto Scaling group name.</p>
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>The Auto Scaling group name.</p>
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
@@ -87,6 +92,11 @@ namespace Model
      * <p>An Auto Scaling lifecycle event hook name.</p>
      */
     inline const Aws::String& GetHook() const{ return m_hook; }
+
+    /**
+     * <p>An Auto Scaling lifecycle event hook name.</p>
+     */
+    inline bool HookHasBeenSet() const { return m_hookHasBeenSet; }
 
     /**
      * <p>An Auto Scaling lifecycle event hook name.</p>

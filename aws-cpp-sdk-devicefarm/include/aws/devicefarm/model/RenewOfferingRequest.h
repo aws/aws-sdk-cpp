@@ -55,6 +55,11 @@ namespace Model
     /**
      * <p>The ID of a request to renew an offering.</p>
      */
+    inline bool OfferingIdHasBeenSet() const { return m_offeringIdHasBeenSet; }
+
+    /**
+     * <p>The ID of a request to renew an offering.</p>
+     */
     inline void SetOfferingId(const Aws::String& value) { m_offeringIdHasBeenSet = true; m_offeringId = value; }
 
     /**
@@ -87,6 +92,11 @@ namespace Model
      * <p>The quantity requested in an offering renewal.</p>
      */
     inline int GetQuantity() const{ return m_quantity; }
+
+    /**
+     * <p>The quantity requested in an offering renewal.</p>
+     */
+    inline bool QuantityHasBeenSet() const { return m_quantityHasBeenSet; }
 
     /**
      * <p>The quantity requested in an offering renewal.</p>

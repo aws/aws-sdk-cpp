@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The ID of the principal.</p>
      */
+    inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
+
+    /**
+     * <p>The ID of the principal.</p>
+     */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
     /**
@@ -89,6 +94,11 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the resource share.</p>
      */
     inline const Aws::String& GetResourceShareArn() const{ return m_resourceShareArn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the resource share.</p>
+     */
+    inline bool ResourceShareArnHasBeenSet() const { return m_resourceShareArnHasBeenSet; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the resource share.</p>
@@ -129,6 +139,11 @@ namespace Model
     /**
      * <p>The time when the principal was associated with the resource share.</p>
      */
+    inline bool CreationTimeHasBeenSet() const { return m_creationTimeHasBeenSet; }
+
+    /**
+     * <p>The time when the principal was associated with the resource share.</p>
+     */
     inline void SetCreationTime(const Aws::Utils::DateTime& value) { m_creationTimeHasBeenSet = true; m_creationTime = value; }
 
     /**
@@ -151,6 +166,11 @@ namespace Model
      * <p>The time when the association was last updated.</p>
      */
     inline const Aws::Utils::DateTime& GetLastUpdatedTime() const{ return m_lastUpdatedTime; }
+
+    /**
+     * <p>The time when the association was last updated.</p>
+     */
+    inline bool LastUpdatedTimeHasBeenSet() const { return m_lastUpdatedTimeHasBeenSet; }
 
     /**
      * <p>The time when the association was last updated.</p>
@@ -178,6 +198,12 @@ namespace Model
      * account that owns the resource share.</p>
      */
     inline bool GetExternal() const{ return m_external; }
+
+    /**
+     * <p>Indicates whether the principal belongs to the same organization as the AWS
+     * account that owns the resource share.</p>
+     */
+    inline bool ExternalHasBeenSet() const { return m_externalHasBeenSet; }
 
     /**
      * <p>Indicates whether the principal belongs to the same organization as the AWS

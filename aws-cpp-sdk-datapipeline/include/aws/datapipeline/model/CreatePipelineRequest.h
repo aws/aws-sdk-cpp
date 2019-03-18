@@ -61,6 +61,13 @@ namespace Model
      * associated with your AWS account, because AWS Data Pipeline assigns each
      * pipeline a unique pipeline identifier.</p>
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>The name for the pipeline. You can use the same name for multiple pipelines
+     * associated with your AWS account, because AWS Data Pipeline assigns each
+     * pipeline a unique pipeline identifier.</p>
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
@@ -113,6 +120,21 @@ namespace Model
      * identifier combination is scoped to the AWS account or IAM user credentials.</p>
      */
     inline const Aws::String& GetUniqueId() const{ return m_uniqueId; }
+
+    /**
+     * <p>A unique identifier. This identifier is not the same as the pipeline
+     * identifier assigned by AWS Data Pipeline. You are responsible for defining the
+     * format and ensuring the uniqueness of this identifier. You use this parameter to
+     * ensure idempotency during repeated calls to <code>CreatePipeline</code>. For
+     * example, if the first call to <code>CreatePipeline</code> does not succeed, you
+     * can pass in the same unique identifier and pipeline name combination on a
+     * subsequent call to <code>CreatePipeline</code>. <code>CreatePipeline</code>
+     * ensures that if a pipeline already exists with the same name and unique
+     * identifier, a new pipeline is not created. Instead, you'll receive the pipeline
+     * identifier from the previous attempt. The uniqueness of the name and unique
+     * identifier combination is scoped to the AWS account or IAM user credentials.</p>
+     */
+    inline bool UniqueIdHasBeenSet() const { return m_uniqueIdHasBeenSet; }
 
     /**
      * <p>A unique identifier. This identifier is not the same as the pipeline
@@ -213,6 +235,11 @@ namespace Model
     /**
      * <p>The description for the pipeline.</p>
      */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
+
+    /**
+     * <p>The description for the pipeline.</p>
+     */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
@@ -249,6 +276,15 @@ namespace Model
      * Guide</i>.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>A list of tags to associate with the pipeline at creation. Tags let you
+     * control access to pipelines. For more information, see <a
+     * href="http://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-control-access.html">Controlling
+     * User Access to Pipelines</a> in the <i>AWS Data Pipeline Developer
+     * Guide</i>.</p>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
      * <p>A list of tags to associate with the pipeline at creation. Tags let you

@@ -58,6 +58,12 @@ namespace Model
      * <p>Designates whether to include profiles with the status of
      * <code>CANCELED</code>.</p>
      */
+    inline bool IncludeCanceledHasBeenSet() const { return m_includeCanceledHasBeenSet; }
+
+    /**
+     * <p>Designates whether to include profiles with the status of
+     * <code>CANCELED</code>.</p>
+     */
     inline void SetIncludeCanceled(bool value) { m_includeCanceledHasBeenSet = true; m_includeCanceled = value; }
 
     /**
@@ -71,6 +77,11 @@ namespace Model
      * <p>The maximum number of profiles to be returned.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
+
+    /**
+     * <p>The maximum number of profiles to be returned.</p>
+     */
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
 
     /**
      * <p>The maximum number of profiles to be returned.</p>
@@ -90,6 +101,14 @@ namespace Model
      * you just received.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
+    /**
+     * <p>Value for specifying the next set of paginated results to return. After you
+     * receive a response with truncated results, use this parameter in a subsequent
+     * request. Set it to the value of <code>nextToken</code> from the response that
+     * you just received.</p>
+     */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
      * <p>Value for specifying the next set of paginated results to return. After you

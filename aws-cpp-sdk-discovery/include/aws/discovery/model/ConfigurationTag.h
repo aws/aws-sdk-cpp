@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p>A type of IT asset to tag.</p>
      */
+    inline bool ConfigurationTypeHasBeenSet() const { return m_configurationTypeHasBeenSet; }
+
+    /**
+     * <p>A type of IT asset to tag.</p>
+     */
     inline void SetConfigurationType(const ConfigurationItemType& value) { m_configurationTypeHasBeenSet = true; m_configurationType = value; }
 
     /**
@@ -81,6 +86,12 @@ namespace Model
      * values.</p>
      */
     inline const Aws::String& GetConfigurationId() const{ return m_configurationId; }
+
+    /**
+     * <p>The configuration ID for the item to tag. You can specify a list of keys and
+     * values.</p>
+     */
+    inline bool ConfigurationIdHasBeenSet() const { return m_configurationIdHasBeenSet; }
 
     /**
      * <p>The configuration ID for the item to tag. You can specify a list of keys and
@@ -127,6 +138,11 @@ namespace Model
     /**
      * <p>A type of tag on which to filter. For example, <i>serverType</i>.</p>
      */
+    inline bool KeyHasBeenSet() const { return m_keyHasBeenSet; }
+
+    /**
+     * <p>A type of tag on which to filter. For example, <i>serverType</i>.</p>
+     */
     inline void SetKey(const Aws::String& value) { m_keyHasBeenSet = true; m_key = value; }
 
     /**
@@ -160,6 +176,12 @@ namespace Model
      * = web server</i>.</p>
      */
     inline const Aws::String& GetValue() const{ return m_value; }
+
+    /**
+     * <p>A value on which to filter. For example <i>key = serverType</i> and <i>value
+     * = web server</i>.</p>
+     */
+    inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
 
     /**
      * <p>A value on which to filter. For example <i>key = serverType</i> and <i>value
@@ -203,6 +225,12 @@ namespace Model
      * (UTC).</p>
      */
     inline const Aws::Utils::DateTime& GetTimeOfCreation() const{ return m_timeOfCreation; }
+
+    /**
+     * <p>The time the configuration tag was created in Coordinated Universal Time
+     * (UTC).</p>
+     */
+    inline bool TimeOfCreationHasBeenSet() const { return m_timeOfCreationHasBeenSet; }
 
     /**
      * <p>The time the configuration tag was created in Coordinated Universal Time

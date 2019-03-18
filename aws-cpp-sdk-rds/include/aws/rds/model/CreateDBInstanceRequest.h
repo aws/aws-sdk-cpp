@@ -114,6 +114,38 @@ namespace Model
      * </li> <li> <p>Can't be a word reserved by the specified database engine</p>
      * </li> </ul>
      */
+    inline bool DBNameHasBeenSet() const { return m_dBNameHasBeenSet; }
+
+    /**
+     * <p>The meaning of this parameter differs according to the database engine you
+     * use.</p> <p>Type: String</p> <p> <b>MySQL</b> </p> <p>The name of the database
+     * to create when the DB instance is created. If this parameter is not specified,
+     * no database is created in the DB instance.</p> <p>Constraints:</p> <ul> <li>
+     * <p>Must contain 1 to 64 letters or numbers.</p> </li> <li> <p>Can't be a word
+     * reserved by the specified database engine</p> </li> </ul> <p> <b>MariaDB</b>
+     * </p> <p>The name of the database to create when the DB instance is created. If
+     * this parameter is not specified, no database is created in the DB instance.</p>
+     * <p>Constraints:</p> <ul> <li> <p>Must contain 1 to 64 letters or numbers.</p>
+     * </li> <li> <p>Can't be a word reserved by the specified database engine</p>
+     * </li> </ul> <p> <b>PostgreSQL</b> </p> <p>The name of the database to create
+     * when the DB instance is created. If this parameter is not specified, the default
+     * "postgres" database is created in the DB instance.</p> <p>Constraints:</p> <ul>
+     * <li> <p>Must contain 1 to 63 letters, numbers, or underscores.</p> </li> <li>
+     * <p>Must begin with a letter or an underscore. Subsequent characters can be
+     * letters, underscores, or digits (0-9).</p> </li> <li> <p>Can't be a word
+     * reserved by the specified database engine</p> </li> </ul> <p> <b>Oracle</b> </p>
+     * <p>The Oracle System ID (SID) of the created DB instance. If you specify
+     * <code>null</code>, the default value <code>ORCL</code> is used. You can't
+     * specify the string NULL, or any other reserved word, for <code>DBName</code>.
+     * </p> <p>Default: <code>ORCL</code> </p> <p>Constraints:</p> <ul> <li> <p>Can't
+     * be longer than 8 characters</p> </li> </ul> <p> <b>SQL Server</b> </p> <p>Not
+     * applicable. Must be null.</p> <p> <b>Amazon Aurora</b> </p> <p>The name of the
+     * database to create when the primary instance of the DB cluster is created. If
+     * this parameter is not specified, no database is created in the DB instance.</p>
+     * <p>Constraints:</p> <ul> <li> <p>Must contain 1 to 64 letters or numbers.</p>
+     * </li> <li> <p>Can't be a word reserved by the specified database engine</p>
+     * </li> </ul>
+     */
     inline void SetDBName(const Aws::String& value) { m_dBNameHasBeenSet = true; m_dBName = value; }
 
     /**
@@ -293,6 +325,15 @@ namespace Model
      * </li> <li> <p>Can't end with a hyphen or contain two consecutive hyphens.</p>
      * </li> </ul> <p>Example: <code>mydbinstance</code> </p>
      */
+    inline bool DBInstanceIdentifierHasBeenSet() const { return m_dBInstanceIdentifierHasBeenSet; }
+
+    /**
+     * <p>The DB instance identifier. This parameter is stored as a lowercase
+     * string.</p> <p>Constraints:</p> <ul> <li> <p>Must contain from 1 to 63 letters,
+     * numbers, or hyphens.</p> </li> <li> <p>First character must be a letter.</p>
+     * </li> <li> <p>Can't end with a hyphen or contain two consecutive hyphens.</p>
+     * </li> </ul> <p>Example: <code>mydbinstance</code> </p>
+     */
     inline void SetDBInstanceIdentifier(const Aws::String& value) { m_dBInstanceIdentifierHasBeenSet = true; m_dBInstanceIdentifier = value; }
 
     /**
@@ -417,6 +458,45 @@ namespace Model
      * editions: Must be an integer from 200 to 1024.</p> </li> <li> <p>Web and Express
      * editions: Must be an integer from 20 to 1024.</p> </li> </ul> </li> </ul>
      */
+    inline bool AllocatedStorageHasBeenSet() const { return m_allocatedStorageHasBeenSet; }
+
+    /**
+     * <p>The amount of storage (in gibibytes) to allocate for the DB instance.</p>
+     * <p>Type: Integer</p> <p> <b>Amazon Aurora</b> </p> <p>Not applicable. Aurora
+     * cluster volumes automatically grow as the amount of data in your database
+     * increases, though you are only charged for the space that you use in an Aurora
+     * cluster volume.</p> <p> <b>MySQL</b> </p> <p>Constraints to the amount of
+     * storage for each storage type are the following: </p> <ul> <li> <p>General
+     * Purpose (SSD) storage (gp2): Must be an integer from 20 to 32768.</p> </li> <li>
+     * <p>Provisioned IOPS storage (io1): Must be an integer from 100 to 32768.</p>
+     * </li> <li> <p>Magnetic storage (standard): Must be an integer from 5 to
+     * 3072.</p> </li> </ul> <p> <b>MariaDB</b> </p> <p>Constraints to the amount of
+     * storage for each storage type are the following: </p> <ul> <li> <p>General
+     * Purpose (SSD) storage (gp2): Must be an integer from 20 to 32768.</p> </li> <li>
+     * <p>Provisioned IOPS storage (io1): Must be an integer from 100 to 32768.</p>
+     * </li> <li> <p>Magnetic storage (standard): Must be an integer from 5 to
+     * 3072.</p> </li> </ul> <p> <b>PostgreSQL</b> </p> <p>Constraints to the amount of
+     * storage for each storage type are the following: </p> <ul> <li> <p>General
+     * Purpose (SSD) storage (gp2): Must be an integer from 20 to 32768.</p> </li> <li>
+     * <p>Provisioned IOPS storage (io1): Must be an integer from 100 to 32768.</p>
+     * </li> <li> <p>Magnetic storage (standard): Must be an integer from 5 to
+     * 3072.</p> </li> </ul> <p> <b>Oracle</b> </p> <p>Constraints to the amount of
+     * storage for each storage type are the following: </p> <ul> <li> <p>General
+     * Purpose (SSD) storage (gp2): Must be an integer from 20 to 32768.</p> </li> <li>
+     * <p>Provisioned IOPS storage (io1): Must be an integer from 100 to 32768.</p>
+     * </li> <li> <p>Magnetic storage (standard): Must be an integer from 10 to
+     * 3072.</p> </li> </ul> <p> <b>SQL Server</b> </p> <p>Constraints to the amount of
+     * storage for each storage type are the following: </p> <ul> <li> <p>General
+     * Purpose (SSD) storage (gp2):</p> <ul> <li> <p>Enterprise and Standard editions:
+     * Must be an integer from 200 to 16384.</p> </li> <li> <p>Web and Express
+     * editions: Must be an integer from 20 to 16384.</p> </li> </ul> </li> <li>
+     * <p>Provisioned IOPS storage (io1):</p> <ul> <li> <p>Enterprise and Standard
+     * editions: Must be an integer from 200 to 16384.</p> </li> <li> <p>Web and
+     * Express editions: Must be an integer from 100 to 16384.</p> </li> </ul> </li>
+     * <li> <p>Magnetic storage (standard):</p> <ul> <li> <p>Enterprise and Standard
+     * editions: Must be an integer from 200 to 1024.</p> </li> <li> <p>Web and Express
+     * editions: Must be an integer from 20 to 1024.</p> </li> </ul> </li> </ul>
+     */
     inline void SetAllocatedStorage(int value) { m_allocatedStorageHasBeenSet = true; m_allocatedStorage = value; }
 
     /**
@@ -468,6 +548,16 @@ namespace Model
      * Instance Class</a> in the <i>Amazon RDS User Guide.</i> </p>
      */
     inline const Aws::String& GetDBInstanceClass() const{ return m_dBInstanceClass; }
+
+    /**
+     * <p>The compute and memory capacity of the DB instance, for example,
+     * <code>db.m4.large</code>. Not all DB instance classes are available in all AWS
+     * Regions, or for all database engines. For the full list of DB instance classes,
+     * and availability for your engine, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
+     * Instance Class</a> in the <i>Amazon RDS User Guide.</i> </p>
+     */
+    inline bool DBInstanceClassHasBeenSet() const { return m_dBInstanceClassHasBeenSet; }
 
     /**
      * <p>The compute and memory capacity of the DB instance, for example,
@@ -545,6 +635,22 @@ namespace Model
      * <code>sqlserver-web</code> </p> </li> </ul>
      */
     inline const Aws::String& GetEngine() const{ return m_engine; }
+
+    /**
+     * <p>The name of the database engine to be used for this instance. </p> <p>Not
+     * every database engine is available for every AWS Region. </p> <p>Valid Values:
+     * </p> <ul> <li> <p> <code>aurora</code> (for MySQL 5.6-compatible Aurora)</p>
+     * </li> <li> <p> <code>aurora-mysql</code> (for MySQL 5.7-compatible Aurora)</p>
+     * </li> <li> <p> <code>aurora-postgresql</code> </p> </li> <li> <p>
+     * <code>mariadb</code> </p> </li> <li> <p> <code>mysql</code> </p> </li> <li> <p>
+     * <code>oracle-ee</code> </p> </li> <li> <p> <code>oracle-se2</code> </p> </li>
+     * <li> <p> <code>oracle-se1</code> </p> </li> <li> <p> <code>oracle-se</code> </p>
+     * </li> <li> <p> <code>postgres</code> </p> </li> <li> <p>
+     * <code>sqlserver-ee</code> </p> </li> <li> <p> <code>sqlserver-se</code> </p>
+     * </li> <li> <p> <code>sqlserver-ex</code> </p> </li> <li> <p>
+     * <code>sqlserver-web</code> </p> </li> </ul>
+     */
+    inline bool EngineHasBeenSet() const { return m_engineHasBeenSet; }
 
     /**
      * <p>The name of the database engine to be used for this instance. </p> <p>Not
@@ -666,6 +772,30 @@ namespace Model
      * <p>Can't be a reserved word for the chosen database engine.</p> </li> </ul>
      */
     inline const Aws::String& GetMasterUsername() const{ return m_masterUsername; }
+
+    /**
+     * <p>The name for the master user.</p> <p> <b>Amazon Aurora</b> </p> <p>Not
+     * applicable. The name for the master user is managed by the DB cluster. For more
+     * information, see <a>CreateDBCluster</a>. </p> <p> <b>MariaDB</b> </p>
+     * <p>Constraints:</p> <ul> <li> <p>Required for MariaDB.</p> </li> <li> <p>Must be
+     * 1 to 16 letters or numbers.</p> </li> <li> <p>Can't be a reserved word for the
+     * chosen database engine.</p> </li> </ul> <p> <b>Microsoft SQL Server</b> </p>
+     * <p>Constraints:</p> <ul> <li> <p>Required for SQL Server.</p> </li> <li> <p>Must
+     * be 1 to 128 letters or numbers.</p> </li> <li> <p>The first character must be a
+     * letter.</p> </li> <li> <p>Can't be a reserved word for the chosen database
+     * engine.</p> </li> </ul> <p> <b>MySQL</b> </p> <p>Constraints:</p> <ul> <li>
+     * <p>Required for MySQL.</p> </li> <li> <p>Must be 1 to 16 letters or numbers.</p>
+     * </li> <li> <p>First character must be a letter.</p> </li> <li> <p>Can't be a
+     * reserved word for the chosen database engine.</p> </li> </ul> <p> <b>Oracle</b>
+     * </p> <p>Constraints:</p> <ul> <li> <p>Required for Oracle.</p> </li> <li>
+     * <p>Must be 1 to 30 letters or numbers.</p> </li> <li> <p>First character must be
+     * a letter.</p> </li> <li> <p>Can't be a reserved word for the chosen database
+     * engine.</p> </li> </ul> <p> <b>PostgreSQL</b> </p> <p>Constraints:</p> <ul> <li>
+     * <p>Required for PostgreSQL.</p> </li> <li> <p>Must be 1 to 63 letters or
+     * numbers.</p> </li> <li> <p>First character must be a letter.</p> </li> <li>
+     * <p>Can't be a reserved word for the chosen database engine.</p> </li> </ul>
+     */
+    inline bool MasterUsernameHasBeenSet() const { return m_masterUsernameHasBeenSet; }
 
     /**
      * <p>The name for the master user.</p> <p> <b>Amazon Aurora</b> </p> <p>Not
@@ -838,6 +968,20 @@ namespace Model
      * characters.</p> <p> <b>PostgreSQL</b> </p> <p>Constraints: Must contain from 8
      * to 128 characters.</p>
      */
+    inline bool MasterUserPasswordHasBeenSet() const { return m_masterUserPasswordHasBeenSet; }
+
+    /**
+     * <p>The password for the master user. The password can include any printable
+     * ASCII character except "/", """, or "@".</p> <p> <b>Amazon Aurora</b> </p>
+     * <p>Not applicable. The password for the master user is managed by the DB
+     * cluster. For more information, see <a>CreateDBCluster</a>.</p> <p>
+     * <b>MariaDB</b> </p> <p>Constraints: Must contain from 8 to 41 characters.</p>
+     * <p> <b>Microsoft SQL Server</b> </p> <p>Constraints: Must contain from 8 to 128
+     * characters.</p> <p> <b>MySQL</b> </p> <p>Constraints: Must contain from 8 to 41
+     * characters.</p> <p> <b>Oracle</b> </p> <p>Constraints: Must contain from 8 to 30
+     * characters.</p> <p> <b>PostgreSQL</b> </p> <p>Constraints: Must contain from 8
+     * to 128 characters.</p>
+     */
     inline void SetMasterUserPassword(const Aws::String& value) { m_masterUserPasswordHasBeenSet = true; m_masterUserPassword = value; }
 
     /**
@@ -921,6 +1065,12 @@ namespace Model
      * <p>A list of DB security groups to associate with this DB instance.</p>
      * <p>Default: The default DB security group for the database engine.</p>
      */
+    inline bool DBSecurityGroupsHasBeenSet() const { return m_dBSecurityGroupsHasBeenSet; }
+
+    /**
+     * <p>A list of DB security groups to associate with this DB instance.</p>
+     * <p>Default: The default DB security group for the database engine.</p>
+     */
     inline void SetDBSecurityGroups(const Aws::Vector<Aws::String>& value) { m_dBSecurityGroupsHasBeenSet = true; m_dBSecurityGroups = value; }
 
     /**
@@ -968,6 +1118,15 @@ namespace Model
      * security group for the DB subnet group's VPC.</p>
      */
     inline const Aws::Vector<Aws::String>& GetVpcSecurityGroupIds() const{ return m_vpcSecurityGroupIds; }
+
+    /**
+     * <p>A list of Amazon EC2 VPC security groups to associate with this DB
+     * instance.</p> <p> <b>Amazon Aurora</b> </p> <p>Not applicable. The associated
+     * list of EC2 VPC security groups is managed by the DB cluster. For more
+     * information, see <a>CreateDBCluster</a>.</p> <p>Default: The default EC2 VPC
+     * security group for the DB subnet group's VPC.</p>
+     */
+    inline bool VpcSecurityGroupIdsHasBeenSet() const { return m_vpcSecurityGroupIdsHasBeenSet; }
 
     /**
      * <p>A list of Amazon EC2 VPC security groups to associate with this DB
@@ -1045,6 +1204,19 @@ namespace Model
      * endpoint. </p>
      */
     inline const Aws::String& GetAvailabilityZone() const{ return m_availabilityZone; }
+
+    /**
+     * <p> The EC2 Availability Zone that the DB instance is created in. For
+     * information on AWS Regions and Availability Zones, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.RegionsAndAvailabilityZones.html">Regions
+     * and Availability Zones</a>. </p> <p>Default: A random, system-chosen
+     * Availability Zone in the endpoint's AWS Region.</p> <p> Example:
+     * <code>us-east-1d</code> </p> <p> Constraint: The AvailabilityZone parameter
+     * can't be specified if the MultiAZ parameter is set to <code>true</code>. The
+     * specified Availability Zone must be in the same AWS Region as the current
+     * endpoint. </p>
+     */
+    inline bool AvailabilityZoneHasBeenSet() const { return m_availabilityZoneHasBeenSet; }
 
     /**
      * <p> The EC2 Availability Zone that the DB instance is created in. For
@@ -1135,6 +1307,12 @@ namespace Model
      * <p>A DB subnet group to associate with this DB instance.</p> <p>If there is no
      * DB subnet group, then it is a non-VPC DB instance.</p>
      */
+    inline bool DBSubnetGroupNameHasBeenSet() const { return m_dBSubnetGroupNameHasBeenSet; }
+
+    /**
+     * <p>A DB subnet group to associate with this DB instance.</p> <p>If there is no
+     * DB subnet group, then it is a non-VPC DB instance.</p>
+     */
     inline void SetDBSubnetGroupName(const Aws::String& value) { m_dBSubnetGroupNameHasBeenSet = true; m_dBSubnetGroupName = value; }
 
     /**
@@ -1179,6 +1357,18 @@ namespace Model
      * Sun.</p> <p>Constraints: Minimum 30-minute window.</p>
      */
     inline const Aws::String& GetPreferredMaintenanceWindow() const{ return m_preferredMaintenanceWindow; }
+
+    /**
+     * <p>The time range each week during which system maintenance can occur, in
+     * Universal Coordinated Time (UTC). For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.Maintenance.html#Concepts.DBMaintenance">Amazon
+     * RDS Maintenance Window</a>. </p> <p> Format:
+     * <code>ddd:hh24:mi-ddd:hh24:mi</code> </p> <p>The default is a 30-minute window
+     * selected at random from an 8-hour block of time for each AWS Region, occurring
+     * on a random day of the week. </p> <p>Valid Days: Mon, Tue, Wed, Thu, Fri, Sat,
+     * Sun.</p> <p>Constraints: Minimum 30-minute window.</p>
+     */
+    inline bool PreferredMaintenanceWindowHasBeenSet() const { return m_preferredMaintenanceWindowHasBeenSet; }
 
     /**
      * <p>The time range each week during which system maintenance can occur, in
@@ -1269,6 +1459,15 @@ namespace Model
      * or hyphens.</p> </li> <li> <p>First character must be a letter</p> </li> <li>
      * <p>Can't end with a hyphen or contain two consecutive hyphens</p> </li> </ul>
      */
+    inline bool DBParameterGroupNameHasBeenSet() const { return m_dBParameterGroupNameHasBeenSet; }
+
+    /**
+     * <p>The name of the DB parameter group to associate with this DB instance. If
+     * this argument is omitted, the default DBParameterGroup for the specified engine
+     * is used.</p> <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255 letters, numbers,
+     * or hyphens.</p> </li> <li> <p>First character must be a letter</p> </li> <li>
+     * <p>Can't end with a hyphen or contain two consecutive hyphens</p> </li> </ul>
+     */
     inline void SetDBParameterGroupName(const Aws::String& value) { m_dBParameterGroupNameHasBeenSet = true; m_dBParameterGroupName = value; }
 
     /**
@@ -1339,6 +1538,18 @@ namespace Model
      * <p>Can't be set to 0 if the DB instance is a source to Read Replicas</p> </li>
      * </ul>
      */
+    inline bool BackupRetentionPeriodHasBeenSet() const { return m_backupRetentionPeriodHasBeenSet; }
+
+    /**
+     * <p>The number of days for which automated backups are retained. Setting this
+     * parameter to a positive number enables backups. Setting this parameter to 0
+     * disables automated backups.</p> <p> <b>Amazon Aurora</b> </p> <p>Not applicable.
+     * The retention period for automated backups is managed by the DB cluster. For
+     * more information, see <a>CreateDBCluster</a>.</p> <p>Default: 1</p>
+     * <p>Constraints:</p> <ul> <li> <p>Must be a value from 0 to 35</p> </li> <li>
+     * <p>Can't be set to 0 if the DB instance is a source to Read Replicas</p> </li>
+     * </ul>
+     */
     inline void SetBackupRetentionPeriod(int value) { m_backupRetentionPeriodHasBeenSet = true; m_backupRetentionPeriod = value; }
 
     /**
@@ -1373,6 +1584,26 @@ namespace Model
      * window.</p> </li> <li> <p>Must be at least 30 minutes.</p> </li> </ul>
      */
     inline const Aws::String& GetPreferredBackupWindow() const{ return m_preferredBackupWindow; }
+
+    /**
+     * <p> The daily time range during which automated backups are created if automated
+     * backups are enabled, using the <code>BackupRetentionPeriod</code> parameter. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_WorkingWithAutomatedBackups.html#USER_WorkingWithAutomatedBackups.BackupWindow">The
+     * Backup Window</a> in the <i>Amazon RDS User Guide</i>. </p> <p> <b>Amazon
+     * Aurora</b> </p> <p>Not applicable. The daily time range for creating automated
+     * backups is managed by the DB cluster. For more information, see
+     * <a>CreateDBCluster</a>.</p> <p> The default is a 30-minute window selected at
+     * random from an 8-hour block of time for each AWS Region. To see the time blocks
+     * available, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.Maintenance.html#AdjustingTheMaintenanceWindow">
+     * Adjusting the Preferred DB Instance Maintenance Window</a> in the <i>Amazon RDS
+     * User Guide</i>. </p> <p>Constraints:</p> <ul> <li> <p>Must be in the format
+     * <code>hh24:mi-hh24:mi</code>.</p> </li> <li> <p>Must be in Universal Coordinated
+     * Time (UTC).</p> </li> <li> <p>Must not conflict with the preferred maintenance
+     * window.</p> </li> <li> <p>Must be at least 30 minutes.</p> </li> </ul>
+     */
+    inline bool PreferredBackupWindowHasBeenSet() const { return m_preferredBackupWindowHasBeenSet; }
 
     /**
      * <p> The daily time range during which automated backups are created if automated
@@ -1527,6 +1758,23 @@ namespace Model
      * </p> <p> Default: <code>3306</code> </p> <p> Valid Values:
      * <code>1150-65535</code> </p> <p>Type: Integer</p>
      */
+    inline bool PortHasBeenSet() const { return m_portHasBeenSet; }
+
+    /**
+     * <p>The port number on which the database accepts connections.</p> <p>
+     * <b>MySQL</b> </p> <p> Default: <code>3306</code> </p> <p> Valid Values:
+     * <code>1150-65535</code> </p> <p>Type: Integer</p> <p> <b>MariaDB</b> </p> <p>
+     * Default: <code>3306</code> </p> <p> Valid Values: <code>1150-65535</code> </p>
+     * <p>Type: Integer</p> <p> <b>PostgreSQL</b> </p> <p> Default: <code>5432</code>
+     * </p> <p> Valid Values: <code>1150-65535</code> </p> <p>Type: Integer</p> <p>
+     * <b>Oracle</b> </p> <p> Default: <code>1521</code> </p> <p> Valid Values:
+     * <code>1150-65535</code> </p> <p> <b>SQL Server</b> </p> <p> Default:
+     * <code>1433</code> </p> <p> Valid Values: <code>1150-65535</code> except for
+     * <code>1434</code>, <code>3389</code>, <code>47001</code>, <code>49152</code>,
+     * and <code>49152</code> through <code>49156</code>. </p> <p> <b>Amazon Aurora</b>
+     * </p> <p> Default: <code>3306</code> </p> <p> Valid Values:
+     * <code>1150-65535</code> </p> <p>Type: Integer</p>
+     */
     inline void SetPort(int value) { m_portHasBeenSet = true; m_port = value; }
 
     /**
@@ -1553,6 +1801,13 @@ namespace Model
      * true.</p>
      */
     inline bool GetMultiAZ() const{ return m_multiAZ; }
+
+    /**
+     * <p>A value that specifies whether the DB instance is a Multi-AZ deployment. You
+     * can't set the AvailabilityZone parameter if the MultiAZ parameter is set to
+     * true.</p>
+     */
+    inline bool MultiAZHasBeenSet() const { return m_multiAZHasBeenSet; }
 
     /**
      * <p>A value that specifies whether the DB instance is a Multi-AZ deployment. You
@@ -1594,6 +1849,32 @@ namespace Model
      * PostgreSQL Database Versions</a> in the <i>Amazon RDS User Guide.</i> </p>
      */
     inline const Aws::String& GetEngineVersion() const{ return m_engineVersion; }
+
+    /**
+     * <p>The version number of the database engine to use.</p> <p>For a list of valid
+     * engine versions, call <a>DescribeDBEngineVersions</a>.</p> <p>The following are
+     * the database engines and links to information about the major and minor versions
+     * that are available with Amazon RDS. Not every database engine is available for
+     * every AWS Region.</p> <p> <b>Amazon Aurora</b> </p> <p>Not applicable. The
+     * version number of the database engine to be used by the DB instance is managed
+     * by the DB cluster. For more information, see <a>CreateDBCluster</a>.</p> <p>
+     * <b>MariaDB</b> </p> <p>See <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_MariaDB.html#MariaDB.Concepts.VersionMgmt">MariaDB
+     * on Amazon RDS Versions</a> in the <i>Amazon RDS User Guide.</i> </p> <p>
+     * <b>Microsoft SQL Server</b> </p> <p>See <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_SQLServer.html#SQLServer.Concepts.General.FeatureSupport">Version
+     * and Feature Support on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i> </p>
+     * <p> <b>MySQL</b> </p> <p>See <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_MySQL.html#MySQL.Concepts.VersionMgmt">MySQL
+     * on Amazon RDS Versions</a> in the <i>Amazon RDS User Guide.</i> </p> <p>
+     * <b>Oracle</b> </p> <p>See <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Appendix.Oracle.PatchComposition.html">Oracle
+     * Database Engine Release Notes</a> in the <i>Amazon RDS User Guide.</i> </p> <p>
+     * <b>PostgreSQL</b> </p> <p>See <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_PostgreSQL.html#PostgreSQL.Concepts.General.DBVersions">Supported
+     * PostgreSQL Database Versions</a> in the <i>Amazon RDS User Guide.</i> </p>
+     */
+    inline bool EngineVersionHasBeenSet() const { return m_engineVersionHasBeenSet; }
 
     /**
      * <p>The version number of the database engine to use.</p> <p>For a list of valid
@@ -1762,6 +2043,12 @@ namespace Model
      * <p>Indicates that minor engine upgrades are applied automatically to the DB
      * instance during the maintenance window.</p> <p>Default: <code>true</code> </p>
      */
+    inline bool AutoMinorVersionUpgradeHasBeenSet() const { return m_autoMinorVersionUpgradeHasBeenSet; }
+
+    /**
+     * <p>Indicates that minor engine upgrades are applied automatically to the DB
+     * instance during the maintenance window.</p> <p>Default: <code>true</code> </p>
+     */
     inline void SetAutoMinorVersionUpgrade(bool value) { m_autoMinorVersionUpgradeHasBeenSet = true; m_autoMinorVersionUpgrade = value; }
 
     /**
@@ -1777,6 +2064,13 @@ namespace Model
      * <code>general-public-license</code> </p>
      */
     inline const Aws::String& GetLicenseModel() const{ return m_licenseModel; }
+
+    /**
+     * <p>License model information for this DB instance.</p> <p> Valid values:
+     * <code>license-included</code> | <code>bring-your-own-license</code> |
+     * <code>general-public-license</code> </p>
+     */
+    inline bool LicenseModelHasBeenSet() const { return m_licenseModelHasBeenSet; }
 
     /**
      * <p>License model information for this DB instance.</p> <p> Valid values:
@@ -1841,6 +2135,17 @@ namespace Model
      * User Guide</i>. </p> <p>Constraints: Must be a multiple between 1 and 50 of the
      * storage amount for the DB instance. </p>
      */
+    inline bool IopsHasBeenSet() const { return m_iopsHasBeenSet; }
+
+    /**
+     * <p>The amount of Provisioned IOPS (input/output operations per second) to be
+     * initially allocated for the DB instance. For information about valid Iops
+     * values, see see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html#USER_PIOPS">Amazon
+     * RDS Provisioned IOPS Storage to Improve Performance</a> in the <i>Amazon RDS
+     * User Guide</i>. </p> <p>Constraints: Must be a multiple between 1 and 50 of the
+     * storage amount for the DB instance. </p>
+     */
     inline void SetIops(int value) { m_iopsHasBeenSet = true; m_iops = value; }
 
     /**
@@ -1862,6 +2167,14 @@ namespace Model
      * be removed from a DB instance once it is associated with a DB instance</p>
      */
     inline const Aws::String& GetOptionGroupName() const{ return m_optionGroupName; }
+
+    /**
+     * <p>Indicates that the DB instance should be associated with the specified option
+     * group.</p> <p>Permanent options, such as the TDE option for Oracle Advanced
+     * Security TDE, can't be removed from an option group, and that option group can't
+     * be removed from a DB instance once it is associated with a DB instance</p>
+     */
+    inline bool OptionGroupNameHasBeenSet() const { return m_optionGroupNameHasBeenSet; }
 
     /**
      * <p>Indicates that the DB instance should be associated with the specified option
@@ -1919,6 +2232,14 @@ namespace Model
      * information, see <a>CreateDBCluster</a>.</p>
      */
     inline const Aws::String& GetCharacterSetName() const{ return m_characterSetName; }
+
+    /**
+     * <p>For supported engines, indicates that the DB instance should be associated
+     * with the specified CharacterSet.</p> <p> <b>Amazon Aurora</b> </p> <p>Not
+     * applicable. The character set is managed by the DB cluster. For more
+     * information, see <a>CreateDBCluster</a>.</p>
+     */
+    inline bool CharacterSetNameHasBeenSet() const { return m_characterSetNameHasBeenSet; }
 
     /**
      * <p>For supported engines, indicates that the DB instance should be associated
@@ -2007,6 +2328,26 @@ namespace Model
      * <p>If the subnets are part of a VPC that has an Internet gateway attached to it,
      * the DB instance is public.</p> </li> </ul>
      */
+    inline bool PubliclyAccessibleHasBeenSet() const { return m_publiclyAccessibleHasBeenSet; }
+
+    /**
+     * <p>Specifies the accessibility options for the DB instance. A value of true
+     * specifies an Internet-facing instance with a publicly resolvable DNS name, which
+     * resolves to a public IP address. A value of false specifies an internal instance
+     * with a DNS name that resolves to a private IP address.</p> <p>Default: The
+     * default behavior varies depending on whether <code>DBSubnetGroupName</code> is
+     * specified.</p> <p>If <code>DBSubnetGroupName</code> is not specified, and
+     * <code>PubliclyAccessible</code> is not specified, the following applies:</p>
+     * <ul> <li> <p>If the default VPC in the target region doesn’t have an Internet
+     * gateway attached to it, the DB instance is private.</p> </li> <li> <p>If the
+     * default VPC in the target region has an Internet gateway attached to it, the DB
+     * instance is public.</p> </li> </ul> <p>If <code>DBSubnetGroupName</code> is
+     * specified, and <code>PubliclyAccessible</code> is not specified, the following
+     * applies:</p> <ul> <li> <p>If the subnets are part of a VPC that doesn’t have an
+     * Internet gateway attached to it, the DB instance is private.</p> </li> <li>
+     * <p>If the subnets are part of a VPC that has an Internet gateway attached to it,
+     * the DB instance is public.</p> </li> </ul>
+     */
     inline void SetPubliclyAccessible(bool value) { m_publiclyAccessibleHasBeenSet = true; m_publiclyAccessible = value; }
 
     /**
@@ -2034,6 +2375,9 @@ namespace Model
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
 
     
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
+
+    
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     
@@ -2058,6 +2402,13 @@ namespace Model
      * String</p>
      */
     inline const Aws::String& GetDBClusterIdentifier() const{ return m_dBClusterIdentifier; }
+
+    /**
+     * <p>The identifier of the DB cluster that the instance will belong to.</p> <p>For
+     * information on creating a DB cluster, see <a>CreateDBCluster</a>.</p> <p>Type:
+     * String</p>
+     */
+    inline bool DBClusterIdentifierHasBeenSet() const { return m_dBClusterIdentifierHasBeenSet; }
 
     /**
      * <p>The identifier of the DB cluster that the instance will belong to.</p> <p>For
@@ -2110,6 +2461,15 @@ namespace Model
      * is specified, otherwise <code>standard</code> </p>
      */
     inline const Aws::String& GetStorageType() const{ return m_storageType; }
+
+    /**
+     * <p>Specifies the storage type to be associated with the DB instance.</p> <p>
+     * Valid values: <code>standard | gp2 | io1</code> </p> <p> If you specify
+     * <code>io1</code>, you must also include a value for the <code>Iops</code>
+     * parameter. </p> <p> Default: <code>io1</code> if the <code>Iops</code> parameter
+     * is specified, otherwise <code>standard</code> </p>
+     */
+    inline bool StorageTypeHasBeenSet() const { return m_storageTypeHasBeenSet; }
 
     /**
      * <p>Specifies the storage type to be associated with the DB instance.</p> <p>
@@ -2176,6 +2536,12 @@ namespace Model
      * <p>The ARN from the key store with which to associate the instance for TDE
      * encryption.</p>
      */
+    inline bool TdeCredentialArnHasBeenSet() const { return m_tdeCredentialArnHasBeenSet; }
+
+    /**
+     * <p>The ARN from the key store with which to associate the instance for TDE
+     * encryption.</p>
+     */
     inline void SetTdeCredentialArn(const Aws::String& value) { m_tdeCredentialArnHasBeenSet = true; m_tdeCredentialArn = value; }
 
     /**
@@ -2214,6 +2580,12 @@ namespace Model
      * device.</p>
      */
     inline const Aws::String& GetTdeCredentialPassword() const{ return m_tdeCredentialPassword; }
+
+    /**
+     * <p>The password for the given ARN from the key store in order to access the
+     * device.</p>
+     */
+    inline bool TdeCredentialPasswordHasBeenSet() const { return m_tdeCredentialPasswordHasBeenSet; }
 
     /**
      * <p>The password for the given ARN from the key store in order to access the
@@ -2266,6 +2638,14 @@ namespace Model
      * cluster. For more information, see <a>CreateDBCluster</a>.</p> <p>Default:
      * false</p>
      */
+    inline bool StorageEncryptedHasBeenSet() const { return m_storageEncryptedHasBeenSet; }
+
+    /**
+     * <p>Specifies whether the DB instance is encrypted.</p> <p> <b>Amazon Aurora</b>
+     * </p> <p>Not applicable. The encryption for DB instances is managed by the DB
+     * cluster. For more information, see <a>CreateDBCluster</a>.</p> <p>Default:
+     * false</p>
+     */
     inline void SetStorageEncrypted(bool value) { m_storageEncryptedHasBeenSet = true; m_storageEncrypted = value; }
 
     /**
@@ -2291,6 +2671,21 @@ namespace Model
      * Your AWS account has a different default encryption key for each AWS Region.</p>
      */
     inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
+
+    /**
+     * <p>The AWS KMS key identifier for an encrypted DB instance.</p> <p>The KMS key
+     * identifier is the Amazon Resource Name (ARN) for the KMS encryption key. If you
+     * are creating a DB instance with the same AWS account that owns the KMS
+     * encryption key used to encrypt the new DB instance, then you can use the KMS key
+     * alias instead of the ARN for the KM encryption key.</p> <p> <b>Amazon Aurora</b>
+     * </p> <p>Not applicable. The KMS key identifier is managed by the DB cluster. For
+     * more information, see <a>CreateDBCluster</a>.</p> <p>If the
+     * <code>StorageEncrypted</code> parameter is true, and you do not specify a value
+     * for the <code>KmsKeyId</code> parameter, then Amazon RDS will use your default
+     * encryption key. AWS KMS creates the default encryption key for your AWS account.
+     * Your AWS account has a different default encryption key for each AWS Region.</p>
+     */
+    inline bool KmsKeyIdHasBeenSet() const { return m_kmsKeyIdHasBeenSet; }
 
     /**
      * <p>The AWS KMS key identifier for an encrypted DB instance.</p> <p>The KMS key
@@ -2391,6 +2786,11 @@ namespace Model
     /**
      * <p>Specify the Active Directory Domain to create the instance in.</p>
      */
+    inline bool DomainHasBeenSet() const { return m_domainHasBeenSet; }
+
+    /**
+     * <p>Specify the Active Directory Domain to create the instance in.</p>
+     */
     inline void SetDomain(const Aws::String& value) { m_domainHasBeenSet = true; m_domain = value; }
 
     /**
@@ -2435,6 +2835,15 @@ namespace Model
      * Setting this value for an Aurora DB instance has no effect on the DB cluster
      * setting. For more information, see <a>CreateDBCluster</a>.</p>
      */
+    inline bool CopyTagsToSnapshotHasBeenSet() const { return m_copyTagsToSnapshotHasBeenSet; }
+
+    /**
+     * <p>True to copy all tags from the DB instance to snapshots of the DB instance,
+     * and otherwise false. The default is false.</p> <p> <b>Amazon Aurora</b> </p>
+     * <p>Not applicable. Copying tags to snapshots is managed by the DB cluster.
+     * Setting this value for an Aurora DB instance has no effect on the DB cluster
+     * setting. For more information, see <a>CreateDBCluster</a>.</p>
+     */
     inline void SetCopyTagsToSnapshot(bool value) { m_copyTagsToSnapshotHasBeenSet = true; m_copyTagsToSnapshot = value; }
 
     /**
@@ -2455,6 +2864,15 @@ namespace Model
      * other than 0.</p> <p>Valid Values: <code>0, 1, 5, 10, 15, 30, 60</code> </p>
      */
     inline int GetMonitoringInterval() const{ return m_monitoringInterval; }
+
+    /**
+     * <p>The interval, in seconds, between points when Enhanced Monitoring metrics are
+     * collected for the DB instance. To disable collecting Enhanced Monitoring
+     * metrics, specify 0. The default is 0.</p> <p>If <code>MonitoringRoleArn</code>
+     * is specified, then you must also set <code>MonitoringInterval</code> to a value
+     * other than 0.</p> <p>Valid Values: <code>0, 1, 5, 10, 15, 30, 60</code> </p>
+     */
+    inline bool MonitoringIntervalHasBeenSet() const { return m_monitoringIntervalHasBeenSet; }
 
     /**
      * <p>The interval, in seconds, between points when Enhanced Monitoring metrics are
@@ -2486,6 +2904,18 @@ namespace Model
      * must supply a <code>MonitoringRoleArn</code> value.</p>
      */
     inline const Aws::String& GetMonitoringRoleArn() const{ return m_monitoringRoleArn; }
+
+    /**
+     * <p>The ARN for the IAM role that permits RDS to send enhanced monitoring metrics
+     * to Amazon CloudWatch Logs. For example,
+     * <code>arn:aws:iam:123456789012:role/emaccess</code>. For information on creating
+     * a monitoring role, go to <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Monitoring.OS.html#USER_Monitoring.OS.Enabling">Setting
+     * Up and Enabling Enhanced Monitoring</a> in the <i>Amazon RDS User Guide</i>.</p>
+     * <p>If <code>MonitoringInterval</code> is set to a value other than 0, then you
+     * must supply a <code>MonitoringRoleArn</code> value.</p>
+     */
+    inline bool MonitoringRoleArnHasBeenSet() const { return m_monitoringRoleArnHasBeenSet; }
 
     /**
      * <p>The ARN for the IAM role that permits RDS to send enhanced monitoring metrics
@@ -2570,6 +3000,12 @@ namespace Model
      * <p>Specify the name of the IAM role to be used when making API calls to the
      * Directory Service.</p>
      */
+    inline bool DomainIAMRoleNameHasBeenSet() const { return m_domainIAMRoleNameHasBeenSet; }
+
+    /**
+     * <p>Specify the name of the IAM role to be used when making API calls to the
+     * Directory Service.</p>
+     */
     inline void SetDomainIAMRoleName(const Aws::String& value) { m_domainIAMRoleNameHasBeenSet = true; m_domainIAMRoleName = value; }
 
     /**
@@ -2621,6 +3057,16 @@ namespace Model
      * Fault Tolerance for an Aurora DB Cluster</a> in the <i>Amazon Aurora User
      * Guide</i>. </p> <p>Default: 1</p> <p>Valid Values: 0 - 15</p>
      */
+    inline bool PromotionTierHasBeenSet() const { return m_promotionTierHasBeenSet; }
+
+    /**
+     * <p>A value that specifies the order in which an Aurora Replica is promoted to
+     * the primary instance after a failure of the existing primary instance. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.Managing.Backups.html#Aurora.Managing.FaultTolerance">
+     * Fault Tolerance for an Aurora DB Cluster</a> in the <i>Amazon Aurora User
+     * Guide</i>. </p> <p>Default: 1</p> <p>Valid Values: 0 - 15</p>
+     */
     inline void SetPromotionTier(int value) { m_promotionTierHasBeenSet = true; m_promotionTier = value; }
 
     /**
@@ -2641,6 +3087,14 @@ namespace Model
      * SQL Server</a>. </p>
      */
     inline const Aws::String& GetTimezone() const{ return m_timezone; }
+
+    /**
+     * <p>The time zone of the DB instance. The time zone parameter is currently
+     * supported only by <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_SQLServer.html#SQLServer.Concepts.General.TimeZone">Microsoft
+     * SQL Server</a>. </p>
+     */
+    inline bool TimezoneHasBeenSet() const { return m_timezoneHasBeenSet; }
 
     /**
      * <p>The time zone of the DB instance. The time zone parameter is currently
@@ -2713,6 +3167,18 @@ namespace Model
      * </li> <li> <p>For MySQL 5.7, minor version 5.7.16 or higher</p> </li> </ul>
      * <p>Default: <code>false</code> </p>
      */
+    inline bool EnableIAMDatabaseAuthenticationHasBeenSet() const { return m_enableIAMDatabaseAuthenticationHasBeenSet; }
+
+    /**
+     * <p>True to enable mapping of AWS Identity and Access Management (IAM) accounts
+     * to database accounts, and otherwise false. </p> <p>You can enable IAM database
+     * authentication for the following database engines:</p> <p> <b>Amazon Aurora</b>
+     * </p> <p>Not applicable. Mapping AWS IAM accounts to database accounts is managed
+     * by the DB cluster. For more information, see <a>CreateDBCluster</a>.</p> <p>
+     * <b>MySQL</b> </p> <ul> <li> <p>For MySQL 5.6, minor version 5.6.34 or higher</p>
+     * </li> <li> <p>For MySQL 5.7, minor version 5.7.16 or higher</p> </li> </ul>
+     * <p>Default: <code>false</code> </p>
+     */
     inline void SetEnableIAMDatabaseAuthentication(bool value) { m_enableIAMDatabaseAuthenticationHasBeenSet = true; m_enableIAMDatabaseAuthentication = value; }
 
     /**
@@ -2744,6 +3210,15 @@ namespace Model
      * Amazon Performance Insights</a> in the <i>Amazon Relational Database Service
      * User Guide</i>. </p>
      */
+    inline bool EnablePerformanceInsightsHasBeenSet() const { return m_enablePerformanceInsightsHasBeenSet; }
+
+    /**
+     * <p>True to enable Performance Insights for the DB instance, and otherwise false.
+     * </p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PerfInsights.html">Using
+     * Amazon Performance Insights</a> in the <i>Amazon Relational Database Service
+     * User Guide</i>. </p>
+     */
     inline void SetEnablePerformanceInsights(bool value) { m_enablePerformanceInsightsHasBeenSet = true; m_enablePerformanceInsights = value; }
 
     /**
@@ -2762,6 +3237,13 @@ namespace Model
      * alias for the KMS encryption key.</p>
      */
     inline const Aws::String& GetPerformanceInsightsKMSKeyId() const{ return m_performanceInsightsKMSKeyId; }
+
+    /**
+     * <p>The AWS KMS key identifier for encryption of Performance Insights data. The
+     * KMS key ID is the Amazon Resource Name (ARN), KMS key identifier, or the KMS key
+     * alias for the KMS encryption key.</p>
+     */
+    inline bool PerformanceInsightsKMSKeyIdHasBeenSet() const { return m_performanceInsightsKMSKeyIdHasBeenSet; }
 
     /**
      * <p>The AWS KMS key identifier for encryption of Performance Insights data. The
@@ -2816,6 +3298,12 @@ namespace Model
      * <p>The amount of time, in days, to retain Performance Insights data. Valid
      * values are 7 or 731 (2 years). </p>
      */
+    inline bool PerformanceInsightsRetentionPeriodHasBeenSet() const { return m_performanceInsightsRetentionPeriodHasBeenSet; }
+
+    /**
+     * <p>The amount of time, in days, to retain Performance Insights data. Valid
+     * values are 7 or 731 (2 years). </p>
+     */
     inline void SetPerformanceInsightsRetentionPeriod(int value) { m_performanceInsightsRetentionPeriodHasBeenSet = true; m_performanceInsightsRetentionPeriod = value; }
 
     /**
@@ -2834,6 +3322,16 @@ namespace Model
      * Database Service User Guide</i>.</p>
      */
     inline const Aws::Vector<Aws::String>& GetEnableCloudwatchLogsExports() const{ return m_enableCloudwatchLogsExports; }
+
+    /**
+     * <p>The list of log types that need to be enabled for exporting to CloudWatch
+     * Logs. The values in the list depend on the DB engine being used. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing
+     * Database Logs to Amazon CloudWatch Logs </a> in the <i>Amazon Relational
+     * Database Service User Guide</i>.</p>
+     */
+    inline bool EnableCloudwatchLogsExportsHasBeenSet() const { return m_enableCloudwatchLogsExportsHasBeenSet; }
 
     /**
      * <p>The list of log types that need to be enabled for exporting to CloudWatch
@@ -2916,6 +3414,12 @@ namespace Model
      * <p>The number of CPU cores and the number of threads per core for the DB
      * instance class of the DB instance.</p>
      */
+    inline bool ProcessorFeaturesHasBeenSet() const { return m_processorFeaturesHasBeenSet; }
+
+    /**
+     * <p>The number of CPU cores and the number of threads per core for the DB
+     * instance class of the DB instance.</p>
+     */
     inline void SetProcessorFeatures(const Aws::Vector<ProcessorFeature>& value) { m_processorFeaturesHasBeenSet = true; m_processorFeatures = value; }
 
     /**
@@ -2957,6 +3461,15 @@ namespace Model
      * Deleting a DB Instance</a>. </p>
      */
     inline bool GetDeletionProtection() const{ return m_deletionProtection; }
+
+    /**
+     * <p>Indicates if the DB instance should have deletion protection enabled. The
+     * database can't be deleted when this value is set to true. The default is false.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html">
+     * Deleting a DB Instance</a>. </p>
+     */
+    inline bool DeletionProtectionHasBeenSet() const { return m_deletionProtectionHasBeenSet; }
 
     /**
      * <p>Indicates if the DB instance should have deletion protection enabled. The

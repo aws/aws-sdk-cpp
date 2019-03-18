@@ -56,6 +56,11 @@ namespace Model
     /**
      * The ID of the logger definition.
      */
+    inline bool LoggerDefinitionIdHasBeenSet() const { return m_loggerDefinitionIdHasBeenSet; }
+
+    /**
+     * The ID of the logger definition.
+     */
     inline void SetLoggerDefinitionId(const Aws::String& value) { m_loggerDefinitionIdHasBeenSet = true; m_loggerDefinitionId = value; }
 
     /**
@@ -88,6 +93,11 @@ namespace Model
      * The ID of the logger definition version.
      */
     inline const Aws::String& GetLoggerDefinitionVersionId() const{ return m_loggerDefinitionVersionId; }
+
+    /**
+     * The ID of the logger definition version.
+     */
+    inline bool LoggerDefinitionVersionIdHasBeenSet() const { return m_loggerDefinitionVersionIdHasBeenSet; }
 
     /**
      * The ID of the logger definition version.
@@ -125,6 +135,12 @@ namespace Model
      * results.
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
+    /**
+     * The token for the next set of results, or ''null'' if there are no additional
+     * results.
+     */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
      * The token for the next set of results, or ''null'' if there are no additional

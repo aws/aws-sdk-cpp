@@ -54,6 +54,12 @@ namespace Model
      * <p>Specifies the number of servers to return as a response to the
      * <code>ListServers</code> query.</p>
      */
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
+
+    /**
+     * <p>Specifies the number of servers to return as a response to the
+     * <code>ListServers</code> query.</p>
+     */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
@@ -70,6 +76,14 @@ namespace Model
      * additional servers.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
+    /**
+     * <p>When additional results are obtained from the ListServers command, a
+     * <code>NextToken</code> parameter is returned in the output. You can then pass
+     * the <code>NextToken</code> parameter in a subsequent command to continue listing
+     * additional servers.</p>
+     */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
      * <p>When additional results are obtained from the ListServers command, a

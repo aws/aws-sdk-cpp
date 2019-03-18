@@ -52,6 +52,11 @@ namespace Model
     /**
      * <p>The identifier for the organization under which the groups exist.</p>
      */
+    inline bool OrganizationIdHasBeenSet() const { return m_organizationIdHasBeenSet; }
+
+    /**
+     * <p>The identifier for the organization under which the groups exist.</p>
+     */
     inline void SetOrganizationId(const Aws::String& value) { m_organizationIdHasBeenSet = true; m_organizationId = value; }
 
     /**
@@ -85,6 +90,12 @@ namespace Model
      * not contain any tokens.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
+    /**
+     * <p>The token to use to retrieve the next page of results. The first call does
+     * not contain any tokens.</p>
+     */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
      * <p>The token to use to retrieve the next page of results. The first call does
@@ -127,6 +138,11 @@ namespace Model
      * <p>The maximum number of results to return in a single call.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
+
+    /**
+     * <p>The maximum number of results to return in a single call.</p>
+     */
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
 
     /**
      * <p>The maximum number of results to return in a single call.</p>

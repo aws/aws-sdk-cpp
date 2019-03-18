@@ -55,6 +55,11 @@ namespace Model
     /**
      * <p>The number of log events that matched the query string.</p>
      */
+    inline bool RecordsMatchedHasBeenSet() const { return m_recordsMatchedHasBeenSet; }
+
+    /**
+     * <p>The number of log events that matched the query string.</p>
+     */
     inline void SetRecordsMatched(double value) { m_recordsMatchedHasBeenSet = true; m_recordsMatched = value; }
 
     /**
@@ -71,6 +76,11 @@ namespace Model
     /**
      * <p>The total number of log events scanned during the query.</p>
      */
+    inline bool RecordsScannedHasBeenSet() const { return m_recordsScannedHasBeenSet; }
+
+    /**
+     * <p>The total number of log events scanned during the query.</p>
+     */
     inline void SetRecordsScanned(double value) { m_recordsScannedHasBeenSet = true; m_recordsScanned = value; }
 
     /**
@@ -83,6 +93,11 @@ namespace Model
      * <p>The total number of bytes in the log events scanned during the query.</p>
      */
     inline double GetBytesScanned() const{ return m_bytesScanned; }
+
+    /**
+     * <p>The total number of bytes in the log events scanned during the query.</p>
+     */
+    inline bool BytesScannedHasBeenSet() const { return m_bytesScannedHasBeenSet; }
 
     /**
      * <p>The total number of bytes in the log events scanned during the query.</p>

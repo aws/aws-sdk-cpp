@@ -52,6 +52,11 @@ namespace Model
     /**
      * <p>The name of the model compilation job that you want information about.</p>
      */
+    inline bool CompilationJobNameHasBeenSet() const { return m_compilationJobNameHasBeenSet; }
+
+    /**
+     * <p>The name of the model compilation job that you want information about.</p>
+     */
     inline void SetCompilationJobName(const Aws::String& value) { m_compilationJobNameHasBeenSet = true; m_compilationJobName = value; }
 
     /**

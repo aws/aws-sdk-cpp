@@ -51,6 +51,9 @@ namespace Model
     inline const Aws::String& GetReportName() const{ return m_reportName; }
 
     
+    inline bool ReportNameHasBeenSet() const { return m_reportNameHasBeenSet; }
+
+    
     inline void SetReportName(const Aws::String& value) { m_reportNameHasBeenSet = true; m_reportName = value; }
 
     

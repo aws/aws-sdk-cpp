@@ -59,6 +59,12 @@ namespace Model
      * <p>The name of the pipeline in which you want to enable the flow of artifacts
      * from one stage to another.</p>
      */
+    inline bool PipelineNameHasBeenSet() const { return m_pipelineNameHasBeenSet; }
+
+    /**
+     * <p>The name of the pipeline in which you want to enable the flow of artifacts
+     * from one stage to another.</p>
+     */
     inline void SetPipelineName(const Aws::String& value) { m_pipelineNameHasBeenSet = true; m_pipelineName = value; }
 
     /**
@@ -98,6 +104,13 @@ namespace Model
      * (outbound).</p>
      */
     inline const Aws::String& GetStageName() const{ return m_stageName; }
+
+    /**
+     * <p>The name of the stage where you want to enable the transition of artifacts,
+     * either into the stage (inbound) or from that stage to the next stage
+     * (outbound).</p>
+     */
+    inline bool StageNameHasBeenSet() const { return m_stageNameHasBeenSet; }
 
     /**
      * <p>The name of the stage where you want to enable the transition of artifacts,
@@ -148,6 +161,13 @@ namespace Model
      * artifacts will be allowed to transition to the next stage (outbound).</p>
      */
     inline const StageTransitionType& GetTransitionType() const{ return m_transitionType; }
+
+    /**
+     * <p>Specifies whether artifacts will be allowed to enter the stage and be
+     * processed by the actions in that stage (inbound) or whether already-processed
+     * artifacts will be allowed to transition to the next stage (outbound).</p>
+     */
+    inline bool TransitionTypeHasBeenSet() const { return m_transitionTypeHasBeenSet; }
 
     /**
      * <p>Specifies whether artifacts will be allowed to enter the stage and be

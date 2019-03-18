@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p>The name of the algorithm that is described by the summary.</p>
      */
+    inline bool AlgorithmNameHasBeenSet() const { return m_algorithmNameHasBeenSet; }
+
+    /**
+     * <p>The name of the algorithm that is described by the summary.</p>
+     */
     inline void SetAlgorithmName(const Aws::String& value) { m_algorithmNameHasBeenSet = true; m_algorithmName = value; }
 
     /**
@@ -90,6 +95,11 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the algorithm.</p>
      */
     inline const Aws::String& GetAlgorithmArn() const{ return m_algorithmArn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the algorithm.</p>
+     */
+    inline bool AlgorithmArnHasBeenSet() const { return m_algorithmArnHasBeenSet; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the algorithm.</p>
@@ -130,6 +140,11 @@ namespace Model
     /**
      * <p>A brief description of the algorithm.</p>
      */
+    inline bool AlgorithmDescriptionHasBeenSet() const { return m_algorithmDescriptionHasBeenSet; }
+
+    /**
+     * <p>A brief description of the algorithm.</p>
+     */
     inline void SetAlgorithmDescription(const Aws::String& value) { m_algorithmDescriptionHasBeenSet = true; m_algorithmDescription = value; }
 
     /**
@@ -166,6 +181,11 @@ namespace Model
     /**
      * <p>A timestamp that shows when the algorithm was created.</p>
      */
+    inline bool CreationTimeHasBeenSet() const { return m_creationTimeHasBeenSet; }
+
+    /**
+     * <p>A timestamp that shows when the algorithm was created.</p>
+     */
     inline void SetCreationTime(const Aws::Utils::DateTime& value) { m_creationTimeHasBeenSet = true; m_creationTime = value; }
 
     /**
@@ -188,6 +208,11 @@ namespace Model
      * <p>The overall status of the algorithm.</p>
      */
     inline const AlgorithmStatus& GetAlgorithmStatus() const{ return m_algorithmStatus; }
+
+    /**
+     * <p>The overall status of the algorithm.</p>
+     */
+    inline bool AlgorithmStatusHasBeenSet() const { return m_algorithmStatusHasBeenSet; }
 
     /**
      * <p>The overall status of the algorithm.</p>

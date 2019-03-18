@@ -52,6 +52,11 @@ namespace Model
     /**
      * <p>The name of an existing application.</p>
      */
+    inline bool ApplicationNameHasBeenSet() const { return m_applicationNameHasBeenSet; }
+
+    /**
+     * <p>The name of an existing application.</p>
+     */
     inline void SetApplicationName(const Aws::String& value) { m_applicationNameHasBeenSet = true; m_applicationName = value; }
 
     /**
@@ -88,6 +93,11 @@ namespace Model
     /**
      * <p>The maximum number of application snapshots to list.</p>
      */
+    inline bool LimitHasBeenSet() const { return m_limitHasBeenSet; }
+
+    /**
+     * <p>The maximum number of application snapshots to list.</p>
+     */
     inline void SetLimit(int value) { m_limitHasBeenSet = true; m_limit = value; }
 
     /**
@@ -103,6 +113,14 @@ namespace Model
      * where the output should continue from. </p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
+    /**
+     * <p>Use this parameter if you receive a <code>NextToken</code> response in a
+     * previous request that indicates that there is more output available. Set it to
+     * the value of the previous call's <code>NextToken</code> response to indicate
+     * where the output should continue from. </p>
+     */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
      * <p>Use this parameter if you receive a <code>NextToken</code> response in a

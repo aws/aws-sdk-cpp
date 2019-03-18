@@ -52,6 +52,11 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the listener.</p>
      */
+    inline bool ListenerArnHasBeenSet() const { return m_listenerArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the listener.</p>
+     */
     inline void SetListenerArn(const Aws::String& value) { m_listenerArnHasBeenSet = true; m_listenerArn = value; }
 
     /**
@@ -90,6 +95,12 @@ namespace Model
      * <p>The number of endpoint group objects that you want to return with this call.
      * The default value is 10.</p>
      */
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
+
+    /**
+     * <p>The number of endpoint group objects that you want to return with this call.
+     * The default value is 10.</p>
+     */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
@@ -104,6 +115,12 @@ namespace Model
      * call.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
+    /**
+     * <p>The token for the next set of results. You receive this token from a previous
+     * call.</p>
+     */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
      * <p>The token for the next set of results. You receive this token from a previous

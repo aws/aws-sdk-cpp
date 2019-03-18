@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The AWS account ID of a Security Hub member account.</p>
      */
+    inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
+
+    /**
+     * <p>The AWS account ID of a Security Hub member account.</p>
+     */
     inline void SetAccountId(const Aws::String& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
 
     /**
@@ -88,6 +93,11 @@ namespace Model
      * <p>The email of a Security Hub member account.</p>
      */
     inline const Aws::String& GetEmail() const{ return m_email; }
+
+    /**
+     * <p>The email of a Security Hub member account.</p>
+     */
+    inline bool EmailHasBeenSet() const { return m_emailHasBeenSet; }
 
     /**
      * <p>The email of a Security Hub member account.</p>
@@ -125,6 +135,12 @@ namespace Model
      * account.</p>
      */
     inline const Aws::String& GetMasterId() const{ return m_masterId; }
+
+    /**
+     * <p>The AWS account ID of the master Security Hub account to this member
+     * account.</p>
+     */
+    inline bool MasterIdHasBeenSet() const { return m_masterIdHasBeenSet; }
 
     /**
      * <p>The AWS account ID of the master Security Hub account to this member
@@ -173,6 +189,12 @@ namespace Model
      * <p>The status of the relationship between the member account and its master
      * account. </p>
      */
+    inline bool MemberStatusHasBeenSet() const { return m_memberStatusHasBeenSet; }
+
+    /**
+     * <p>The status of the relationship between the member account and its master
+     * account. </p>
+     */
     inline void SetMemberStatus(const Aws::String& value) { m_memberStatusHasBeenSet = true; m_memberStatus = value; }
 
     /**
@@ -214,6 +236,11 @@ namespace Model
     /**
      * <p>Time stamp at which the member account was invited to Security Hub.</p>
      */
+    inline bool InvitedAtHasBeenSet() const { return m_invitedAtHasBeenSet; }
+
+    /**
+     * <p>Time stamp at which the member account was invited to Security Hub.</p>
+     */
     inline void SetInvitedAt(const Aws::Utils::DateTime& value) { m_invitedAtHasBeenSet = true; m_invitedAt = value; }
 
     /**
@@ -236,6 +263,11 @@ namespace Model
      * <p>Time stamp at which this member account was updated.</p>
      */
     inline const Aws::Utils::DateTime& GetUpdatedAt() const{ return m_updatedAt; }
+
+    /**
+     * <p>Time stamp at which this member account was updated.</p>
+     */
+    inline bool UpdatedAtHasBeenSet() const { return m_updatedAtHasBeenSet; }
 
     /**
      * <p>Time stamp at which this member account was updated.</p>

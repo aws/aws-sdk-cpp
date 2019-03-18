@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The UTC time that you want to begin your weekly maintenance window.</p>
      */
+    inline bool WeeklyMaintenanceStartTimeHasBeenSet() const { return m_weeklyMaintenanceStartTimeHasBeenSet; }
+
+    /**
+     * <p>The UTC time that you want to begin your weekly maintenance window.</p>
+     */
     inline void SetWeeklyMaintenanceStartTime(const Aws::String& value) { m_weeklyMaintenanceStartTimeHasBeenSet = true; m_weeklyMaintenanceStartTime = value; }
 
     /**
@@ -87,6 +92,9 @@ namespace Model
 
     
     inline const DataRepositoryConfiguration& GetDataRepositoryConfiguration() const{ return m_dataRepositoryConfiguration; }
+
+    
+    inline bool DataRepositoryConfigurationHasBeenSet() const { return m_dataRepositoryConfigurationHasBeenSet; }
 
     
     inline void SetDataRepositoryConfiguration(const DataRepositoryConfiguration& value) { m_dataRepositoryConfigurationHasBeenSet = true; m_dataRepositoryConfiguration = value; }

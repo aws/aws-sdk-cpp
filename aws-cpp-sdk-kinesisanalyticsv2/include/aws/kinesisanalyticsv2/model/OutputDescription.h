@@ -63,6 +63,11 @@ namespace Model
     /**
      * <p>A unique identifier for the output configuration.</p>
      */
+    inline bool OutputIdHasBeenSet() const { return m_outputIdHasBeenSet; }
+
+    /**
+     * <p>A unique identifier for the output configuration.</p>
+     */
     inline void SetOutputId(const Aws::String& value) { m_outputIdHasBeenSet = true; m_outputId = value; }
 
     /**
@@ -95,6 +100,11 @@ namespace Model
      * <p>The name of the in-application stream that is configured as output.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
+
+    /**
+     * <p>The name of the in-application stream that is configured as output.</p>
+     */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
      * <p>The name of the in-application stream that is configured as output.</p>
@@ -137,6 +147,12 @@ namespace Model
      * <p>Describes the Kinesis data stream that is configured as the destination where
      * output is written.</p>
      */
+    inline bool KinesisStreamsOutputDescriptionHasBeenSet() const { return m_kinesisStreamsOutputDescriptionHasBeenSet; }
+
+    /**
+     * <p>Describes the Kinesis data stream that is configured as the destination where
+     * output is written.</p>
+     */
     inline void SetKinesisStreamsOutputDescription(const KinesisStreamsOutputDescription& value) { m_kinesisStreamsOutputDescriptionHasBeenSet = true; m_kinesisStreamsOutputDescription = value; }
 
     /**
@@ -163,6 +179,12 @@ namespace Model
      * destination where output is written.</p>
      */
     inline const KinesisFirehoseOutputDescription& GetKinesisFirehoseOutputDescription() const{ return m_kinesisFirehoseOutputDescription; }
+
+    /**
+     * <p>Describes the Kinesis Data Firehose delivery stream that is configured as the
+     * destination where output is written.</p>
+     */
+    inline bool KinesisFirehoseOutputDescriptionHasBeenSet() const { return m_kinesisFirehoseOutputDescriptionHasBeenSet; }
 
     /**
      * <p>Describes the Kinesis Data Firehose delivery stream that is configured as the
@@ -199,6 +221,12 @@ namespace Model
      * <p>Describes the Lambda function that is configured as the destination where
      * output is written.</p>
      */
+    inline bool LambdaOutputDescriptionHasBeenSet() const { return m_lambdaOutputDescriptionHasBeenSet; }
+
+    /**
+     * <p>Describes the Lambda function that is configured as the destination where
+     * output is written.</p>
+     */
     inline void SetLambdaOutputDescription(const LambdaOutputDescription& value) { m_lambdaOutputDescriptionHasBeenSet = true; m_lambdaOutputDescription = value; }
 
     /**
@@ -224,6 +252,11 @@ namespace Model
      * <p>The data format used for writing data to the destination.</p>
      */
     inline const DestinationSchema& GetDestinationSchema() const{ return m_destinationSchema; }
+
+    /**
+     * <p>The data format used for writing data to the destination.</p>
+     */
+    inline bool DestinationSchemaHasBeenSet() const { return m_destinationSchemaHasBeenSet; }
 
     /**
      * <p>The data format used for writing data to the destination.</p>

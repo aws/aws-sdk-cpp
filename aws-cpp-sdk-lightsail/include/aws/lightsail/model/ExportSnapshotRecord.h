@@ -61,6 +61,11 @@ namespace Model
     /**
      * <p>The export snapshot record name.</p>
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>The export snapshot record name.</p>
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
@@ -93,6 +98,11 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the export snapshot record.</p>
      */
     inline const Aws::String& GetArn() const{ return m_arn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the export snapshot record.</p>
+     */
+    inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the export snapshot record.</p>
@@ -133,6 +143,11 @@ namespace Model
     /**
      * <p>The date when the export snapshot record was created.</p>
      */
+    inline bool CreatedAtHasBeenSet() const { return m_createdAtHasBeenSet; }
+
+    /**
+     * <p>The date when the export snapshot record was created.</p>
+     */
     inline void SetCreatedAt(const Aws::Utils::DateTime& value) { m_createdAtHasBeenSet = true; m_createdAt = value; }
 
     /**
@@ -156,6 +171,12 @@ namespace Model
      * located.</p>
      */
     inline const ResourceLocation& GetLocation() const{ return m_location; }
+
+    /**
+     * <p>The AWS Region and Availability Zone where the export snapshot record is
+     * located.</p>
+     */
+    inline bool LocationHasBeenSet() const { return m_locationHasBeenSet; }
 
     /**
      * <p>The AWS Region and Availability Zone where the export snapshot record is
@@ -190,6 +211,11 @@ namespace Model
     /**
      * <p>The Lightsail resource type (e.g., <code>ExportSnapshotRecord</code>).</p>
      */
+    inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
+
+    /**
+     * <p>The Lightsail resource type (e.g., <code>ExportSnapshotRecord</code>).</p>
+     */
     inline void SetResourceType(const ResourceType& value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
 
     /**
@@ -212,6 +238,11 @@ namespace Model
      * <p>The state of the export snapshot record.</p>
      */
     inline const RecordState& GetState() const{ return m_state; }
+
+    /**
+     * <p>The state of the export snapshot record.</p>
+     */
+    inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
 
     /**
      * <p>The state of the export snapshot record.</p>
@@ -242,6 +273,11 @@ namespace Model
     /**
      * <p>A list of objects describing the source of the export snapshot record.</p>
      */
+    inline bool SourceInfoHasBeenSet() const { return m_sourceInfoHasBeenSet; }
+
+    /**
+     * <p>A list of objects describing the source of the export snapshot record.</p>
+     */
     inline void SetSourceInfo(const ExportSnapshotRecordSourceInfo& value) { m_sourceInfoHasBeenSet = true; m_sourceInfo = value; }
 
     /**
@@ -265,6 +301,12 @@ namespace Model
      * record.</p>
      */
     inline const DestinationInfo& GetDestinationInfo() const{ return m_destinationInfo; }
+
+    /**
+     * <p>A list of objects describing the destination of the export snapshot
+     * record.</p>
+     */
+    inline bool DestinationInfoHasBeenSet() const { return m_destinationInfoHasBeenSet; }
 
     /**
      * <p>A list of objects describing the destination of the export snapshot

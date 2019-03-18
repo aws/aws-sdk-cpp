@@ -54,6 +54,11 @@ namespace Model
     /**
      * <p>The size in GiB of the EBS volume for the data drive on each broker node.</p>
      */
+    inline bool VolumeSizeHasBeenSet() const { return m_volumeSizeHasBeenSet; }
+
+    /**
+     * <p>The size in GiB of the EBS volume for the data drive on each broker node.</p>
+     */
     inline void SetVolumeSize(int value) { m_volumeSizeHasBeenSet = true; m_volumeSize = value; }
 
     /**

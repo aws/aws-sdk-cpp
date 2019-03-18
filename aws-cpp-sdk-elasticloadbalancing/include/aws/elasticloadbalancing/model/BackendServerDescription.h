@@ -59,6 +59,11 @@ namespace Model
     /**
      * <p>The port on which the EC2 instance is listening.</p>
      */
+    inline bool InstancePortHasBeenSet() const { return m_instancePortHasBeenSet; }
+
+    /**
+     * <p>The port on which the EC2 instance is listening.</p>
+     */
     inline void SetInstancePort(int value) { m_instancePortHasBeenSet = true; m_instancePort = value; }
 
     /**
@@ -71,6 +76,11 @@ namespace Model
      * <p>The names of the policies enabled for the EC2 instance.</p>
      */
     inline const Aws::Vector<Aws::String>& GetPolicyNames() const{ return m_policyNames; }
+
+    /**
+     * <p>The names of the policies enabled for the EC2 instance.</p>
+     */
+    inline bool PolicyNamesHasBeenSet() const { return m_policyNamesHasBeenSet; }
 
     /**
      * <p>The names of the policies enabled for the EC2 instance.</p>

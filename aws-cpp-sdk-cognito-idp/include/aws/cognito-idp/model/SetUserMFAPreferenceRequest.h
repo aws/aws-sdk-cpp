@@ -54,6 +54,11 @@ namespace Model
     /**
      * <p>The SMS text message multi-factor authentication (MFA) settings.</p>
      */
+    inline bool SMSMfaSettingsHasBeenSet() const { return m_sMSMfaSettingsHasBeenSet; }
+
+    /**
+     * <p>The SMS text message multi-factor authentication (MFA) settings.</p>
+     */
     inline void SetSMSMfaSettings(const SMSMfaSettingsType& value) { m_sMSMfaSettingsHasBeenSet = true; m_sMSMfaSettings = value; }
 
     /**
@@ -80,6 +85,11 @@ namespace Model
     /**
      * <p>The time-based one-time password software token MFA settings.</p>
      */
+    inline bool SoftwareTokenMfaSettingsHasBeenSet() const { return m_softwareTokenMfaSettingsHasBeenSet; }
+
+    /**
+     * <p>The time-based one-time password software token MFA settings.</p>
+     */
     inline void SetSoftwareTokenMfaSettings(const SoftwareTokenMfaSettingsType& value) { m_softwareTokenMfaSettingsHasBeenSet = true; m_softwareTokenMfaSettings = value; }
 
     /**
@@ -102,6 +112,11 @@ namespace Model
      * <p>The access token.</p>
      */
     inline const Aws::String& GetAccessToken() const{ return m_accessToken; }
+
+    /**
+     * <p>The access token.</p>
+     */
+    inline bool AccessTokenHasBeenSet() const { return m_accessTokenHasBeenSet; }
 
     /**
      * <p>The access token.</p>

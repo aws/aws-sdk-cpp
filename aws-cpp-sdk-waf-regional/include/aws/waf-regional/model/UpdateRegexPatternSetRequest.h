@@ -58,6 +58,13 @@ namespace Model
      * want to update. <code>RegexPatternSetId</code> is returned by
      * <a>CreateRegexPatternSet</a> and by <a>ListRegexPatternSets</a>.</p>
      */
+    inline bool RegexPatternSetIdHasBeenSet() const { return m_regexPatternSetIdHasBeenSet; }
+
+    /**
+     * <p>The <code>RegexPatternSetId</code> of the <a>RegexPatternSet</a> that you
+     * want to update. <code>RegexPatternSetId</code> is returned by
+     * <a>CreateRegexPatternSet</a> and by <a>ListRegexPatternSets</a>.</p>
+     */
     inline void SetRegexPatternSetId(const Aws::String& value) { m_regexPatternSetIdHasBeenSet = true; m_regexPatternSetId = value; }
 
     /**
@@ -106,6 +113,12 @@ namespace Model
      * <p>An array of <code>RegexPatternSetUpdate</code> objects that you want to
      * insert into or delete from a <a>RegexPatternSet</a>.</p>
      */
+    inline bool UpdatesHasBeenSet() const { return m_updatesHasBeenSet; }
+
+    /**
+     * <p>An array of <code>RegexPatternSetUpdate</code> objects that you want to
+     * insert into or delete from a <a>RegexPatternSet</a>.</p>
+     */
     inline void SetUpdates(const Aws::Vector<RegexPatternSetUpdate>& value) { m_updatesHasBeenSet = true; m_updates = value; }
 
     /**
@@ -143,6 +156,11 @@ namespace Model
      * <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
      */
     inline const Aws::String& GetChangeToken() const{ return m_changeToken; }
+
+    /**
+     * <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
+     */
+    inline bool ChangeTokenHasBeenSet() const { return m_changeTokenHasBeenSet; }
 
     /**
      * <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>

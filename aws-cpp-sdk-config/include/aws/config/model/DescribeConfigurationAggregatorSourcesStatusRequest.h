@@ -54,6 +54,11 @@ namespace Model
     /**
      * <p>The name of the configuration aggregator.</p>
      */
+    inline bool ConfigurationAggregatorNameHasBeenSet() const { return m_configurationAggregatorNameHasBeenSet; }
+
+    /**
+     * <p>The name of the configuration aggregator.</p>
+     */
     inline void SetConfigurationAggregatorName(const Aws::String& value) { m_configurationAggregatorNameHasBeenSet = true; m_configurationAggregatorName = value; }
 
     /**
@@ -89,6 +94,14 @@ namespace Model
      * data is not the most recent.</p> </li> </ul>
      */
     inline const Aws::Vector<AggregatedSourceStatusType>& GetUpdateStatus() const{ return m_updateStatus; }
+
+    /**
+     * <p>Filters the status type.</p> <ul> <li> <p>Valid value FAILED indicates errors
+     * while moving data.</p> </li> <li> <p>Valid value SUCCEEDED indicates the data
+     * was successfully moved.</p> </li> <li> <p>Valid value OUTDATED indicates the
+     * data is not the most recent.</p> </li> </ul>
+     */
+    inline bool UpdateStatusHasBeenSet() const { return m_updateStatusHasBeenSet; }
 
     /**
      * <p>Filters the status type.</p> <ul> <li> <p>Valid value FAILED indicates errors
@@ -149,6 +162,12 @@ namespace Model
      * <p>The nextToken string returned on a previous page that you use to get the next
      * page of results in a paginated response.</p>
      */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
+
+    /**
+     * <p>The nextToken string returned on a previous page that you use to get the next
+     * page of results in a paginated response.</p>
+     */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
     /**
@@ -187,6 +206,12 @@ namespace Model
      * default is maximum. If you specify 0, AWS Config uses the default.</p>
      */
     inline int GetLimit() const{ return m_limit; }
+
+    /**
+     * <p>The maximum number of AggregatorSourceStatus returned on each page. The
+     * default is maximum. If you specify 0, AWS Config uses the default.</p>
+     */
+    inline bool LimitHasBeenSet() const { return m_limitHasBeenSet; }
 
     /**
      * <p>The maximum number of AggregatorSourceStatus returned on each page. The

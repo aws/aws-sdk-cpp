@@ -59,6 +59,11 @@ namespace Model
     /**
      * <p>PrincipalIdFormatARN description</p>
      */
+    inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
+
+    /**
+     * <p>PrincipalIdFormatARN description</p>
+     */
     inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
 
     /**
@@ -91,6 +96,11 @@ namespace Model
      * <p>PrincipalIdFormatStatuses description</p>
      */
     inline const Aws::Vector<IdFormat>& GetStatuses() const{ return m_statuses; }
+
+    /**
+     * <p>PrincipalIdFormatStatuses description</p>
+     */
+    inline bool StatusesHasBeenSet() const { return m_statusesHasBeenSet; }
 
     /**
      * <p>PrincipalIdFormatStatuses description</p>

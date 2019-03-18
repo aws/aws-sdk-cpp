@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The ID of the Capacity Reservation.</p>
      */
+    inline bool CapacityReservationIdHasBeenSet() const { return m_capacityReservationIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the Capacity Reservation.</p>
+     */
     inline void SetCapacityReservationId(const Aws::String& value) { m_capacityReservationIdHasBeenSet = true; m_capacityReservationId = value; }
 
     /**
@@ -92,6 +97,11 @@ namespace Model
     /**
      * <p>The number of instances for which to reserve capacity.</p>
      */
+    inline bool InstanceCountHasBeenSet() const { return m_instanceCountHasBeenSet; }
+
+    /**
+     * <p>The number of instances for which to reserve capacity.</p>
+     */
     inline void SetInstanceCount(int value) { m_instanceCountHasBeenSet = true; m_instanceCount = value; }
 
     /**
@@ -113,6 +123,20 @@ namespace Model
      * <code>unlimited</code>.</p>
      */
     inline const Aws::Utils::DateTime& GetEndDate() const{ return m_endDate; }
+
+    /**
+     * <p>The date and time at which the Capacity Reservation expires. When a Capacity
+     * Reservation expires, the reserved capacity is released and you can no longer
+     * launch instances into it. The Capacity Reservation's state changes to
+     * <code>expired</code> when it reaches its end date and time.</p> <p>The Capacity
+     * Reservation is cancelled within an hour from the specified time. For example, if
+     * you specify 5/31/2019, 13:30:55, the Capacity Reservation is guaranteed to end
+     * between 13:30:55 and 14:30:55 on 5/31/2019.</p> <p>You must provide an
+     * <code>EndDate</code> value if <code>EndDateType</code> is <code>limited</code>.
+     * Omit <code>EndDate</code> if <code>EndDateType</code> is
+     * <code>unlimited</code>.</p>
+     */
+    inline bool EndDateHasBeenSet() const { return m_endDateHasBeenSet; }
 
     /**
      * <p>The date and time at which the Capacity Reservation expires. When a Capacity
@@ -193,6 +217,18 @@ namespace Model
      * specified date and time. You must provide an <code>EndDate</code> value if
      * <code>EndDateType</code> is <code>limited</code>.</p> </li> </ul>
      */
+    inline bool EndDateTypeHasBeenSet() const { return m_endDateTypeHasBeenSet; }
+
+    /**
+     * <p>Indicates the way in which the Capacity Reservation ends. A Capacity
+     * Reservation can have one of the following end types:</p> <ul> <li> <p>
+     * <code>unlimited</code> - The Capacity Reservation remains active until you
+     * explicitly cancel it. Do not provide an <code>EndDate</code> value if
+     * <code>EndDateType</code> is <code>unlimited</code>.</p> </li> <li> <p>
+     * <code>limited</code> - The Capacity Reservation expires automatically at a
+     * specified date and time. You must provide an <code>EndDate</code> value if
+     * <code>EndDateType</code> is <code>limited</code>.</p> </li> </ul>
+     */
     inline void SetEndDateType(const EndDateType& value) { m_endDateTypeHasBeenSet = true; m_endDateType = value; }
 
     /**
@@ -239,6 +275,14 @@ namespace Model
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
     inline bool GetDryRun() const{ return m_dryRun; }
+
+    /**
+     * <p>Checks whether you have the required permissions for the action, without
+     * actually making the request, and provides an error response. If you have the
+     * required permissions, the error response is <code>DryRunOperation</code>.
+     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+     */
+    inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
 
     /**
      * <p>Checks whether you have the required permissions for the action, without

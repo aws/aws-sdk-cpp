@@ -59,6 +59,11 @@ namespace Model
     /**
      * <p>A description for the snapshot.</p>
      */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
+
+    /**
+     * <p>A description for the snapshot.</p>
+     */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
@@ -91,6 +96,11 @@ namespace Model
      * <p>The block device mapping for the snapshot.</p>
      */
     inline const Aws::String& GetDeviceName() const{ return m_deviceName; }
+
+    /**
+     * <p>The block device mapping for the snapshot.</p>
+     */
+    inline bool DeviceNameHasBeenSet() const { return m_deviceNameHasBeenSet; }
 
     /**
      * <p>The block device mapping for the snapshot.</p>
@@ -131,6 +141,11 @@ namespace Model
     /**
      * <p>The size of the disk in the snapshot, in GiB.</p>
      */
+    inline bool DiskImageSizeHasBeenSet() const { return m_diskImageSizeHasBeenSet; }
+
+    /**
+     * <p>The size of the disk in the snapshot, in GiB.</p>
+     */
     inline void SetDiskImageSize(double value) { m_diskImageSizeHasBeenSet = true; m_diskImageSize = value; }
 
     /**
@@ -143,6 +158,11 @@ namespace Model
      * <p>The format of the disk image from which the snapshot is created.</p>
      */
     inline const Aws::String& GetFormat() const{ return m_format; }
+
+    /**
+     * <p>The format of the disk image from which the snapshot is created.</p>
+     */
+    inline bool FormatHasBeenSet() const { return m_formatHasBeenSet; }
 
     /**
      * <p>The format of the disk image from which the snapshot is created.</p>
@@ -183,6 +203,11 @@ namespace Model
     /**
      * <p>The percentage of progress for the task.</p>
      */
+    inline bool ProgressHasBeenSet() const { return m_progressHasBeenSet; }
+
+    /**
+     * <p>The percentage of progress for the task.</p>
+     */
     inline void SetProgress(const Aws::String& value) { m_progressHasBeenSet = true; m_progress = value; }
 
     /**
@@ -215,6 +240,11 @@ namespace Model
      * <p>The snapshot ID of the disk being imported.</p>
      */
     inline const Aws::String& GetSnapshotId() const{ return m_snapshotId; }
+
+    /**
+     * <p>The snapshot ID of the disk being imported.</p>
+     */
+    inline bool SnapshotIdHasBeenSet() const { return m_snapshotIdHasBeenSet; }
 
     /**
      * <p>The snapshot ID of the disk being imported.</p>
@@ -255,6 +285,11 @@ namespace Model
     /**
      * <p>A brief status of the snapshot creation.</p>
      */
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
+
+    /**
+     * <p>A brief status of the snapshot creation.</p>
+     */
     inline void SetStatus(const Aws::String& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
@@ -287,6 +322,11 @@ namespace Model
      * <p>A detailed status message for the snapshot creation.</p>
      */
     inline const Aws::String& GetStatusMessage() const{ return m_statusMessage; }
+
+    /**
+     * <p>A detailed status message for the snapshot creation.</p>
+     */
+    inline bool StatusMessageHasBeenSet() const { return m_statusMessageHasBeenSet; }
 
     /**
      * <p>A detailed status message for the snapshot creation.</p>
@@ -327,6 +367,11 @@ namespace Model
     /**
      * <p>The URL used to access the disk image.</p>
      */
+    inline bool UrlHasBeenSet() const { return m_urlHasBeenSet; }
+
+    /**
+     * <p>The URL used to access the disk image.</p>
+     */
     inline void SetUrl(const Aws::String& value) { m_urlHasBeenSet = true; m_url = value; }
 
     /**
@@ -359,6 +404,11 @@ namespace Model
      * <p>The S3 bucket for the disk image.</p>
      */
     inline const UserBucketDetails& GetUserBucket() const{ return m_userBucket; }
+
+    /**
+     * <p>The S3 bucket for the disk image.</p>
+     */
+    inline bool UserBucketHasBeenSet() const { return m_userBucketHasBeenSet; }
 
     /**
      * <p>The S3 bucket for the disk image.</p>

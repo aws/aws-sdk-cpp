@@ -59,6 +59,12 @@ namespace Model
      * <p>The <code>IdentityProviderDetail</code> parameter contains the location of
      * the service endpoint used to authenticate users.</p>
      */
+    inline bool UrlHasBeenSet() const { return m_urlHasBeenSet; }
+
+    /**
+     * <p>The <code>IdentityProviderDetail</code> parameter contains the location of
+     * the service endpoint used to authenticate users.</p>
+     */
     inline void SetUrl(const Aws::String& value) { m_urlHasBeenSet = true; m_url = value; }
 
     /**
@@ -97,6 +103,12 @@ namespace Model
      * <code>InvocationRole</code> used to authenticate the user account.</p>
      */
     inline const Aws::String& GetInvocationRole() const{ return m_invocationRole; }
+
+    /**
+     * <p>The <code>Role</code> parameter provides the type of
+     * <code>InvocationRole</code> used to authenticate the user account.</p>
+     */
+    inline bool InvocationRoleHasBeenSet() const { return m_invocationRoleHasBeenSet; }
 
     /**
      * <p>The <code>Role</code> parameter provides the type of

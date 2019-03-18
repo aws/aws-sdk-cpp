@@ -58,6 +58,12 @@ namespace Model
      * <p>The ID of an existing collection to which you want to add the faces that are
      * detected in the input images.</p>
      */
+    inline bool CollectionIdHasBeenSet() const { return m_collectionIdHasBeenSet; }
+
+    /**
+     * <p>The ID of an existing collection to which you want to add the faces that are
+     * detected in the input images.</p>
+     */
     inline void SetCollectionId(const Aws::String& value) { m_collectionIdHasBeenSet = true; m_collectionId = value; }
 
     /**
@@ -109,6 +115,16 @@ namespace Model
      * <code>Bytes</code> field. For more information, see Images in the Amazon
      * Rekognition developer guide.</p>
      */
+    inline bool ImageHasBeenSet() const { return m_imageHasBeenSet; }
+
+    /**
+     * <p>The input image as base64-encoded bytes or an S3 object. If you use the AWS
+     * CLI to call Amazon Rekognition operations, passing base64-encoded image bytes
+     * isn't supported. </p> <p>If you are using an AWS SDK to call Amazon Rekognition,
+     * you might not need to base64-encode image bytes passed using the
+     * <code>Bytes</code> field. For more information, see Images in the Amazon
+     * Rekognition developer guide.</p>
+     */
     inline void SetImage(const Image& value) { m_imageHasBeenSet = true; m_image = value; }
 
     /**
@@ -146,6 +162,11 @@ namespace Model
      * <p>The ID you want to assign to all the faces detected in the image.</p>
      */
     inline const Aws::String& GetExternalImageId() const{ return m_externalImageId; }
+
+    /**
+     * <p>The ID you want to assign to all the faces detected in the image.</p>
+     */
+    inline bool ExternalImageIdHasBeenSet() const { return m_externalImageIdHasBeenSet; }
 
     /**
      * <p>The ID you want to assign to all the faces detected in the image.</p>
@@ -191,6 +212,20 @@ namespace Model
      * attributes). </p>
      */
     inline const Aws::Vector<Attribute>& GetDetectionAttributes() const{ return m_detectionAttributes; }
+
+    /**
+     * <p>An array of facial attributes that you want to be returned. This can be the
+     * default list of attributes or all attributes. If you don't specify a value for
+     * <code>Attributes</code> or if you specify <code>["DEFAULT"]</code>, the API
+     * returns the following subset of facial attributes: <code>BoundingBox</code>,
+     * <code>Confidence</code>, <code>Pose</code>, <code>Quality</code>, and
+     * <code>Landmarks</code>. If you provide <code>["ALL"]</code>, all facial
+     * attributes are returned, but the operation takes longer to complete.</p> <p>If
+     * you provide both, <code>["ALL", "DEFAULT"]</code>, the service uses a logical
+     * AND operator to determine which attributes to return (in this case, all
+     * attributes). </p>
+     */
+    inline bool DetectionAttributesHasBeenSet() const { return m_detectionAttributesHasBeenSet; }
 
     /**
      * <p>An array of facial attributes that you want to be returned. This can be the
@@ -309,6 +344,23 @@ namespace Model
      * smallest size, in descending order.</p> <p> <code>MaxFaces</code> can be used
      * with a collection associated with any version of the face model.</p>
      */
+    inline bool MaxFacesHasBeenSet() const { return m_maxFacesHasBeenSet; }
+
+    /**
+     * <p>The maximum number of faces to index. The value of <code>MaxFaces</code> must
+     * be greater than or equal to 1. <code>IndexFaces</code> returns no more than 100
+     * detected faces in an image, even if you specify a larger value for
+     * <code>MaxFaces</code>.</p> <p>If <code>IndexFaces</code> detects more faces than
+     * the value of <code>MaxFaces</code>, the faces with the lowest quality are
+     * filtered out first. If there are still more faces than the value of
+     * <code>MaxFaces</code>, the faces with the smallest bounding boxes are filtered
+     * out (up to the number that's needed to satisfy the value of
+     * <code>MaxFaces</code>). Information about the unindexed faces is available in
+     * the <code>UnindexedFaces</code> array. </p> <p>The faces that are returned by
+     * <code>IndexFaces</code> are sorted by the largest face bounding box size to the
+     * smallest size, in descending order.</p> <p> <code>MaxFaces</code> can be used
+     * with a collection associated with any version of the face model.</p>
+     */
     inline void SetMaxFaces(int value) { m_maxFacesHasBeenSet = true; m_maxFaces = value; }
 
     /**
@@ -342,6 +394,20 @@ namespace Model
      * associated with version 3 of the face model.</p>
      */
     inline const QualityFilter& GetQualityFilter() const{ return m_qualityFilter; }
+
+    /**
+     * <p>A filter that specifies how much filtering is done to identify faces that are
+     * detected with low quality. Filtered faces aren't indexed. If you specify
+     * <code>AUTO</code>, filtering prioritizes the identification of faces that don’t
+     * meet the required quality bar chosen by Amazon Rekognition. The quality bar is
+     * based on a variety of common use cases. Low-quality detections can occur for a
+     * number of reasons. Some examples are an object that's misidentified as a face, a
+     * face that's too blurry, or a face with a pose that's too extreme to use. If you
+     * specify <code>NONE</code>, no filtering is performed. The default value is
+     * AUTO.</p> <p>To use quality filtering, the collection you are using must be
+     * associated with version 3 of the face model.</p>
+     */
+    inline bool QualityFilterHasBeenSet() const { return m_qualityFilterHasBeenSet; }
 
     /**
      * <p>A filter that specifies how much filtering is done to identify faces that are

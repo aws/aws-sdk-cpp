@@ -63,6 +63,11 @@ namespace Model
     /**
      * <p>The name of the transcription job.</p>
      */
+    inline bool TranscriptionJobNameHasBeenSet() const { return m_transcriptionJobNameHasBeenSet; }
+
+    /**
+     * <p>The name of the transcription job.</p>
+     */
     inline void SetTranscriptionJobName(const Aws::String& value) { m_transcriptionJobNameHasBeenSet = true; m_transcriptionJobName = value; }
 
     /**
@@ -99,6 +104,11 @@ namespace Model
     /**
      * <p>The status of the transcription job.</p>
      */
+    inline bool TranscriptionJobStatusHasBeenSet() const { return m_transcriptionJobStatusHasBeenSet; }
+
+    /**
+     * <p>The status of the transcription job.</p>
+     */
     inline void SetTranscriptionJobStatus(const TranscriptionJobStatus& value) { m_transcriptionJobStatusHasBeenSet = true; m_transcriptionJobStatus = value; }
 
     /**
@@ -121,6 +131,11 @@ namespace Model
      * <p>The language code for the input speech.</p>
      */
     inline const LanguageCode& GetLanguageCode() const{ return m_languageCode; }
+
+    /**
+     * <p>The language code for the input speech.</p>
+     */
+    inline bool LanguageCodeHasBeenSet() const { return m_languageCodeHasBeenSet; }
 
     /**
      * <p>The language code for the input speech.</p>
@@ -151,6 +166,11 @@ namespace Model
     /**
      * <p>The sample rate, in Hertz, of the audio track in the input media file. </p>
      */
+    inline bool MediaSampleRateHertzHasBeenSet() const { return m_mediaSampleRateHertzHasBeenSet; }
+
+    /**
+     * <p>The sample rate, in Hertz, of the audio track in the input media file. </p>
+     */
     inline void SetMediaSampleRateHertz(int value) { m_mediaSampleRateHertzHasBeenSet = true; m_mediaSampleRateHertz = value; }
 
     /**
@@ -163,6 +183,11 @@ namespace Model
      * <p>The format of the input media file.</p>
      */
     inline const MediaFormat& GetMediaFormat() const{ return m_mediaFormat; }
+
+    /**
+     * <p>The format of the input media file.</p>
+     */
+    inline bool MediaFormatHasBeenSet() const { return m_mediaFormatHasBeenSet; }
 
     /**
      * <p>The format of the input media file.</p>
@@ -193,6 +218,11 @@ namespace Model
     /**
      * <p>An object that describes the input media for the transcription job.</p>
      */
+    inline bool MediaHasBeenSet() const { return m_mediaHasBeenSet; }
+
+    /**
+     * <p>An object that describes the input media for the transcription job.</p>
+     */
     inline void SetMedia(const Media& value) { m_mediaHasBeenSet = true; m_media = value; }
 
     /**
@@ -215,6 +245,11 @@ namespace Model
      * <p>An object that describes the output of the transcription job.</p>
      */
     inline const Transcript& GetTranscript() const{ return m_transcript; }
+
+    /**
+     * <p>An object that describes the output of the transcription job.</p>
+     */
+    inline bool TranscriptHasBeenSet() const { return m_transcriptHasBeenSet; }
 
     /**
      * <p>An object that describes the output of the transcription job.</p>
@@ -245,6 +280,11 @@ namespace Model
     /**
      * <p>A timestamp that shows when the job was created.</p>
      */
+    inline bool CreationTimeHasBeenSet() const { return m_creationTimeHasBeenSet; }
+
+    /**
+     * <p>A timestamp that shows when the job was created.</p>
+     */
     inline void SetCreationTime(const Aws::Utils::DateTime& value) { m_creationTimeHasBeenSet = true; m_creationTime = value; }
 
     /**
@@ -267,6 +307,11 @@ namespace Model
      * <p>A timestamp that shows when the job was completed.</p>
      */
     inline const Aws::Utils::DateTime& GetCompletionTime() const{ return m_completionTime; }
+
+    /**
+     * <p>A timestamp that shows when the job was completed.</p>
+     */
+    inline bool CompletionTimeHasBeenSet() const { return m_completionTimeHasBeenSet; }
 
     /**
      * <p>A timestamp that shows when the job was completed.</p>
@@ -294,6 +339,12 @@ namespace Model
      * field contains information about why the job failed.</p>
      */
     inline const Aws::String& GetFailureReason() const{ return m_failureReason; }
+
+    /**
+     * <p>If the <code>TranscriptionJobStatus</code> field is <code>FAILED</code>, this
+     * field contains information about why the job failed.</p>
+     */
+    inline bool FailureReasonHasBeenSet() const { return m_failureReasonHasBeenSet; }
 
     /**
      * <p>If the <code>TranscriptionJobStatus</code> field is <code>FAILED</code>, this
@@ -339,6 +390,14 @@ namespace Model
      * transcription job.</p>
      */
     inline const Settings& GetSettings() const{ return m_settings; }
+
+    /**
+     * <p>Optional settings for the transcription job. Use these settings to turn on
+     * speaker recognition, to set the maximum number of speakers that should be
+     * identified and to specify a custom vocabulary to use when processing the
+     * transcription job.</p>
+     */
+    inline bool SettingsHasBeenSet() const { return m_settingsHasBeenSet; }
 
     /**
      * <p>Optional settings for the transcription job. Use these settings to turn on

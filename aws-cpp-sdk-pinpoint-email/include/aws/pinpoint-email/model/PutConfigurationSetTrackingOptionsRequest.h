@@ -58,6 +58,12 @@ namespace Model
      * <p>The name of the configuration set that you want to add a custom tracking
      * domain to.</p>
      */
+    inline bool ConfigurationSetNameHasBeenSet() const { return m_configurationSetNameHasBeenSet; }
+
+    /**
+     * <p>The name of the configuration set that you want to add a custom tracking
+     * domain to.</p>
+     */
     inline void SetConfigurationSetName(const Aws::String& value) { m_configurationSetNameHasBeenSet = true; m_configurationSetName = value; }
 
     /**
@@ -95,6 +101,11 @@ namespace Model
      * <p>The domain that you want to use to track open and click events.</p>
      */
     inline const Aws::String& GetCustomRedirectDomain() const{ return m_customRedirectDomain; }
+
+    /**
+     * <p>The domain that you want to use to track open and click events.</p>
+     */
+    inline bool CustomRedirectDomainHasBeenSet() const { return m_customRedirectDomainHasBeenSet; }
 
     /**
      * <p>The domain that you want to use to track open and click events.</p>

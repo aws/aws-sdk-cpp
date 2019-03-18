@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p>The zero-based index of the document in the input list.</p>
      */
+    inline bool IndexHasBeenSet() const { return m_indexHasBeenSet; }
+
+    /**
+     * <p>The zero-based index of the document in the input list.</p>
+     */
     inline void SetIndex(int value) { m_indexHasBeenSet = true; m_index = value; }
 
     /**
@@ -71,6 +76,12 @@ namespace Model
      * document.</p>
      */
     inline const Aws::Vector<Entity>& GetEntities() const{ return m_entities; }
+
+    /**
+     * <p>One or more <a>Entity</a> objects, one for each entity detected in the
+     * document.</p>
+     */
+    inline bool EntitiesHasBeenSet() const { return m_entitiesHasBeenSet; }
 
     /**
      * <p>One or more <a>Entity</a> objects, one for each entity detected in the

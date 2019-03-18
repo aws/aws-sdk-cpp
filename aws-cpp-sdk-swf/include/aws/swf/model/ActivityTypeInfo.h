@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p>The <a>ActivityType</a> type structure representing the activity type.</p>
      */
+    inline bool ActivityTypeHasBeenSet() const { return m_activityTypeHasBeenSet; }
+
+    /**
+     * <p>The <a>ActivityType</a> type structure representing the activity type.</p>
+     */
     inline void SetActivityType(const ActivityType& value) { m_activityTypeHasBeenSet = true; m_activityType = value; }
 
     /**
@@ -80,6 +85,11 @@ namespace Model
      * <p>The current status of the activity type.</p>
      */
     inline const RegistrationStatus& GetStatus() const{ return m_status; }
+
+    /**
+     * <p>The current status of the activity type.</p>
+     */
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
     /**
      * <p>The current status of the activity type.</p>
@@ -107,6 +117,12 @@ namespace Model
      * <a>RegisterActivityType</a>.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
+
+    /**
+     * <p>The description of the activity type provided in
+     * <a>RegisterActivityType</a>.</p>
+     */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
 
     /**
      * <p>The description of the activity type provided in
@@ -155,6 +171,12 @@ namespace Model
      * <p>The date and time this activity type was created through
      * <a>RegisterActivityType</a>.</p>
      */
+    inline bool CreationDateHasBeenSet() const { return m_creationDateHasBeenSet; }
+
+    /**
+     * <p>The date and time this activity type was created through
+     * <a>RegisterActivityType</a>.</p>
+     */
     inline void SetCreationDate(const Aws::Utils::DateTime& value) { m_creationDateHasBeenSet = true; m_creationDate = value; }
 
     /**
@@ -180,6 +202,11 @@ namespace Model
      * <p>If DEPRECATED, the date and time <a>DeprecateActivityType</a> was called.</p>
      */
     inline const Aws::Utils::DateTime& GetDeprecationDate() const{ return m_deprecationDate; }
+
+    /**
+     * <p>If DEPRECATED, the date and time <a>DeprecateActivityType</a> was called.</p>
+     */
+    inline bool DeprecationDateHasBeenSet() const { return m_deprecationDateHasBeenSet; }
 
     /**
      * <p>If DEPRECATED, the date and time <a>DeprecateActivityType</a> was called.</p>

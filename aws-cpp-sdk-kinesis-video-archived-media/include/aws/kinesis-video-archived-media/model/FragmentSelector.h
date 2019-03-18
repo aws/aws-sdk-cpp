@@ -64,6 +64,11 @@ namespace Model
     /**
      * <p>The origin of the timestamps to use (Server or Producer).</p>
      */
+    inline bool FragmentSelectorTypeHasBeenSet() const { return m_fragmentSelectorTypeHasBeenSet; }
+
+    /**
+     * <p>The origin of the timestamps to use (Server or Producer).</p>
+     */
     inline void SetFragmentSelectorType(const FragmentSelectorType& value) { m_fragmentSelectorTypeHasBeenSet = true; m_fragmentSelectorType = value; }
 
     /**
@@ -86,6 +91,11 @@ namespace Model
      * <p>The range of timestamps to return.</p>
      */
     inline const TimestampRange& GetTimestampRange() const{ return m_timestampRange; }
+
+    /**
+     * <p>The range of timestamps to return.</p>
+     */
+    inline bool TimestampRangeHasBeenSet() const { return m_timestampRangeHasBeenSet; }
 
     /**
      * <p>The range of timestamps to return.</p>

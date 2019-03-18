@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The ID of the backup you want to delete.</p>
      */
+    inline bool BackupIdHasBeenSet() const { return m_backupIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the backup you want to delete.</p>
+     */
     inline void SetBackupId(const Aws::String& value) { m_backupIdHasBeenSet = true; m_backupId = value; }
 
     /**
@@ -91,6 +96,13 @@ namespace Model
      * using the AWS CLI or SDK.</p>
      */
     inline const Aws::String& GetClientRequestToken() const{ return m_clientRequestToken; }
+
+    /**
+     * <p>(Optional) A string of up to 64 ASCII characters that Amazon FSx uses to
+     * ensure idempotent deletion. This is automatically filled on your behalf when
+     * using the AWS CLI or SDK.</p>
+     */
+    inline bool ClientRequestTokenHasBeenSet() const { return m_clientRequestTokenHasBeenSet; }
 
     /**
      * <p>(Optional) A string of up to 64 ASCII characters that Amazon FSx uses to

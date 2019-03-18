@@ -63,6 +63,13 @@ namespace Model
      * through: <ul> <li>PreUpgradeCheck</li> <li>Snapshot</li> <li>Upgrade</li> </ul>
      * </p>
      */
+    inline bool UpgradeStepHasBeenSet() const { return m_upgradeStepHasBeenSet; }
+
+    /**
+     * <p> Represents one of 3 steps that an Upgrade or Upgrade Eligibility Check does
+     * through: <ul> <li>PreUpgradeCheck</li> <li>Snapshot</li> <li>Upgrade</li> </ul>
+     * </p>
+     */
     inline void SetUpgradeStep(const UpgradeStep& value) { m_upgradeStepHasBeenSet = true; m_upgradeStep = value; }
 
     /**
@@ -99,6 +106,13 @@ namespace Model
      * of the following values: <ul> <li>In Progress</li> <li>Succeeded</li>
      * <li>Succeeded with Issues</li> <li>Failed</li> </ul> </p>
      */
+    inline bool UpgradeStepStatusHasBeenSet() const { return m_upgradeStepStatusHasBeenSet; }
+
+    /**
+     * <p> The status of a particular step during an upgrade. The status can take one
+     * of the following values: <ul> <li>In Progress</li> <li>Succeeded</li>
+     * <li>Succeeded with Issues</li> <li>Failed</li> </ul> </p>
+     */
     inline void SetUpgradeStepStatus(const UpgradeStatus& value) { m_upgradeStepStatusHasBeenSet = true; m_upgradeStepStatus = value; }
 
     /**
@@ -128,6 +142,12 @@ namespace Model
      * encountered in a particular step.</p>
      */
     inline const Aws::Vector<Aws::String>& GetIssues() const{ return m_issues; }
+
+    /**
+     * <p>A list of strings containing detailed information about the errors
+     * encountered in a particular step.</p>
+     */
+    inline bool IssuesHasBeenSet() const { return m_issuesHasBeenSet; }
 
     /**
      * <p>A list of strings containing detailed information about the errors
@@ -177,6 +197,12 @@ namespace Model
      * step.</p>
      */
     inline double GetProgressPercent() const{ return m_progressPercent; }
+
+    /**
+     * <p>The Floating point value representing progress percentage of a particular
+     * step.</p>
+     */
+    inline bool ProgressPercentHasBeenSet() const { return m_progressPercentHasBeenSet; }
 
     /**
      * <p>The Floating point value representing progress percentage of a particular

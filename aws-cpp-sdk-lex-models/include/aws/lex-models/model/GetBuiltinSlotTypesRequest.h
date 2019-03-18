@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>A list of locales that the slot type supports.</p>
      */
+    inline bool LocaleHasBeenSet() const { return m_localeHasBeenSet; }
+
+    /**
+     * <p>A list of locales that the slot type supports.</p>
+     */
     inline void SetLocale(const Locale& value) { m_localeHasBeenSet = true; m_locale = value; }
 
     /**
@@ -81,6 +86,13 @@ namespace Model
      * matches both "xyzabc" and "abcxyz."</p>
      */
     inline const Aws::String& GetSignatureContains() const{ return m_signatureContains; }
+
+    /**
+     * <p>Substring to match in built-in slot type signatures. A slot type will be
+     * returned if any part of its signature matches the substring. For example, "xyz"
+     * matches both "xyzabc" and "abcxyz."</p>
+     */
+    inline bool SignatureContainsHasBeenSet() const { return m_signatureContainsHasBeenSet; }
 
     /**
      * <p>Substring to match in built-in slot type signatures. A slot type will be
@@ -139,6 +151,14 @@ namespace Model
      * response. To fetch the next page of slot types, specify the pagination token in
      * the next request.</p>
      */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
+
+    /**
+     * <p>A pagination token that fetches the next page of slot types. If the response
+     * to this API call is truncated, Amazon Lex returns a pagination token in the
+     * response. To fetch the next page of slot types, specify the pagination token in
+     * the next request.</p>
+     */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
     /**
@@ -187,6 +207,12 @@ namespace Model
      * 10.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
+
+    /**
+     * <p>The maximum number of slot types to return in the response. The default is
+     * 10.</p>
+     */
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
 
     /**
      * <p>The maximum number of slot types to return in the response. The default is

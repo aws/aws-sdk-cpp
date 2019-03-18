@@ -46,6 +46,9 @@ namespace Model
     inline const NumberValidateRequest& GetNumberValidateRequest() const{ return m_numberValidateRequest; }
 
     
+    inline bool NumberValidateRequestHasBeenSet() const { return m_numberValidateRequestHasBeenSet; }
+
+    
     inline void SetNumberValidateRequest(const NumberValidateRequest& value) { m_numberValidateRequestHasBeenSet = true; m_numberValidateRequest = value; }
 
     

@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The name of the group.</p>
      */
+    inline bool ResourceIdHasBeenSet() const { return m_resourceIdHasBeenSet; }
+
+    /**
+     * <p>The name of the group.</p>
+     */
     inline void SetResourceId(const Aws::String& value) { m_resourceIdHasBeenSet = true; m_resourceId = value; }
 
     /**
@@ -90,6 +95,12 @@ namespace Model
      * <code>auto-scaling-group</code>.</p>
      */
     inline const Aws::String& GetResourceType() const{ return m_resourceType; }
+
+    /**
+     * <p>The type of resource. The only supported value is
+     * <code>auto-scaling-group</code>.</p>
+     */
+    inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
 
     /**
      * <p>The type of resource. The only supported value is
@@ -136,6 +147,11 @@ namespace Model
     /**
      * <p>The tag key.</p>
      */
+    inline bool KeyHasBeenSet() const { return m_keyHasBeenSet; }
+
+    /**
+     * <p>The tag key.</p>
+     */
     inline void SetKey(const Aws::String& value) { m_keyHasBeenSet = true; m_key = value; }
 
     /**
@@ -168,6 +184,11 @@ namespace Model
      * <p>The tag value.</p>
      */
     inline const Aws::String& GetValue() const{ return m_value; }
+
+    /**
+     * <p>The tag value.</p>
+     */
+    inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
 
     /**
      * <p>The tag value.</p>
@@ -205,6 +226,12 @@ namespace Model
      * the group.</p>
      */
     inline bool GetPropagateAtLaunch() const{ return m_propagateAtLaunch; }
+
+    /**
+     * <p>Determines whether the tag is added to new instances as they are launched in
+     * the group.</p>
+     */
+    inline bool PropagateAtLaunchHasBeenSet() const { return m_propagateAtLaunchHasBeenSet; }
 
     /**
      * <p>Determines whether the tag is added to new instances as they are launched in

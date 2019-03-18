@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The ID of the Maintenance Window the target should be registered with.</p>
      */
+    inline bool WindowIdHasBeenSet() const { return m_windowIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the Maintenance Window the target should be registered with.</p>
+     */
     inline void SetWindowId(const Aws::String& value) { m_windowIdHasBeenSet = true; m_windowId = value; }
 
     /**
@@ -92,6 +97,11 @@ namespace Model
     /**
      * <p>The type of target being registered with the Maintenance Window.</p>
      */
+    inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
+
+    /**
+     * <p>The type of target being registered with the Maintenance Window.</p>
+     */
     inline void SetResourceType(const MaintenanceWindowResourceType& value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
 
     /**
@@ -120,6 +130,17 @@ namespace Model
      * </p>
      */
     inline const Aws::Vector<Target>& GetTargets() const{ return m_targets; }
+
+    /**
+     * <p>The targets (either instances or tags). </p> <p>Specify instances using the
+     * following format:</p> <p>
+     * <code>Key=InstanceIds,Values=&lt;instance-id-1&gt;,&lt;instance-id-2&gt;</code>
+     * </p> <p>Specify tags using either of the following formats:</p> <p>
+     * <code>Key=tag:&lt;tag-key&gt;,Values=&lt;tag-value-1&gt;,&lt;tag-value-2&gt;</code>
+     * </p> <p> <code>Key=tag-key,Values=&lt;tag-key-1&gt;,&lt;tag-key-2&gt;</code>
+     * </p>
+     */
+    inline bool TargetsHasBeenSet() const { return m_targetsHasBeenSet; }
 
     /**
      * <p>The targets (either instances or tags). </p> <p>Specify instances using the
@@ -198,6 +219,12 @@ namespace Model
      * <p>User-provided value that will be included in any CloudWatch events raised
      * while running tasks for these targets in this Maintenance Window.</p>
      */
+    inline bool OwnerInformationHasBeenSet() const { return m_ownerInformationHasBeenSet; }
+
+    /**
+     * <p>User-provided value that will be included in any CloudWatch events raised
+     * while running tasks for these targets in this Maintenance Window.</p>
+     */
     inline void SetOwnerInformation(const Aws::String& value) { m_ownerInformationHasBeenSet = true; m_ownerInformation = value; }
 
     /**
@@ -239,6 +266,11 @@ namespace Model
     /**
      * <p>An optional name for the target.</p>
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>An optional name for the target.</p>
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
@@ -275,6 +307,11 @@ namespace Model
     /**
      * <p>An optional description for the target.</p>
      */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
+
+    /**
+     * <p>An optional description for the target.</p>
+     */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
@@ -307,6 +344,11 @@ namespace Model
      * <p>User-provided idempotency token.</p>
      */
     inline const Aws::String& GetClientToken() const{ return m_clientToken; }
+
+    /**
+     * <p>User-provided idempotency token.</p>
+     */
+    inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
 
     /**
      * <p>User-provided idempotency token.</p>

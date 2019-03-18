@@ -54,6 +54,12 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the accelerator that you want to update.
      * Attribute is required.</p>
      */
+    inline bool AcceleratorArnHasBeenSet() const { return m_acceleratorArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the accelerator that you want to update.
+     * Attribute is required.</p>
+     */
     inline void SetAcceleratorArn(const Aws::String& value) { m_acceleratorArnHasBeenSet = true; m_acceleratorArn = value; }
 
     /**
@@ -103,6 +109,15 @@ namespace Model
      * href="https://docs.aws.amazon.com/global-accelerator/latest/dg/monitoring-global-accelerator.flow-logs.html">Flow
      * Logs</a> in the <i>AWS Global Accelerator Developer Guide</i>.</p>
      */
+    inline bool FlowLogsEnabledHasBeenSet() const { return m_flowLogsEnabledHasBeenSet; }
+
+    /**
+     * <p>Update whether flow logs are enabled. The default value is false. If the
+     * value is true, <code>FlowLogsS3Bucket</code> and <code>FlowLogsS3Prefix</code>
+     * must be specified.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/global-accelerator/latest/dg/monitoring-global-accelerator.flow-logs.html">Flow
+     * Logs</a> in the <i>AWS Global Accelerator Developer Guide</i>.</p>
+     */
     inline void SetFlowLogsEnabled(bool value) { m_flowLogsEnabledHasBeenSet = true; m_flowLogsEnabled = value; }
 
     /**
@@ -122,6 +137,14 @@ namespace Model
      * the bucket.</p>
      */
     inline const Aws::String& GetFlowLogsS3Bucket() const{ return m_flowLogsS3Bucket; }
+
+    /**
+     * <p>The name of the Amazon S3 bucket for the flow logs. Attribute is required if
+     * <code>FlowLogsEnabled</code> is <code>true</code>. The bucket must exist and
+     * have a bucket policy that grants AWS Global Accelerator permission to write to
+     * the bucket.</p>
+     */
+    inline bool FlowLogsS3BucketHasBeenSet() const { return m_flowLogsS3BucketHasBeenSet; }
 
     /**
      * <p>The name of the Amazon S3 bucket for the flow logs. Attribute is required if
@@ -179,6 +202,14 @@ namespace Model
      * bucket.</p>
      */
     inline const Aws::String& GetFlowLogsS3Prefix() const{ return m_flowLogsS3Prefix; }
+
+    /**
+     * <p>Update the prefix for the location in the Amazon S3 bucket for the flow logs.
+     * Attribute is required if <code>FlowLogsEnabled</code> is <code>true</code>. If
+     * you don’t specify a prefix, the flow logs are stored in the root of the
+     * bucket.</p>
+     */
+    inline bool FlowLogsS3PrefixHasBeenSet() const { return m_flowLogsS3PrefixHasBeenSet; }
 
     /**
      * <p>Update the prefix for the location in the Amazon S3 bucket for the flow logs.

@@ -58,6 +58,12 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) that is associated with the <a>Directory</a>
      * in which the object will be created. For more information, see <a>arns</a>.</p>
      */
+    inline bool DirectoryArnHasBeenSet() const { return m_directoryArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) that is associated with the <a>Directory</a>
+     * in which the object will be created. For more information, see <a>arns</a>.</p>
+     */
     inline void SetDirectoryArn(const Aws::String& value) { m_directoryArnHasBeenSet = true; m_directoryArn = value; }
 
     /**
@@ -96,6 +102,12 @@ namespace Model
      * minor version components. See <a>SchemaFacet</a> for details.</p>
      */
     inline const Aws::Vector<SchemaFacet>& GetSchemaFacets() const{ return m_schemaFacets; }
+
+    /**
+     * <p>A list of schema facets to be associated with the object. Do not provide
+     * minor version components. See <a>SchemaFacet</a> for details.</p>
+     */
+    inline bool SchemaFacetsHasBeenSet() const { return m_schemaFacetsHasBeenSet; }
 
     /**
      * <p>A list of schema facets to be associated with the object. Do not provide
@@ -144,6 +156,12 @@ namespace Model
      * <p>The attribute map whose attribute ARN contains the key and attribute value as
      * the map value.</p>
      */
+    inline bool ObjectAttributeListHasBeenSet() const { return m_objectAttributeListHasBeenSet; }
+
+    /**
+     * <p>The attribute map whose attribute ARN contains the key and attribute value as
+     * the map value.</p>
+     */
     inline void SetObjectAttributeList(const Aws::Vector<AttributeKeyAndValue>& value) { m_objectAttributeListHasBeenSet = true; m_objectAttributeList = value; }
 
     /**
@@ -185,6 +203,11 @@ namespace Model
     /**
      * <p>If specified, the parent reference to which this object will be attached.</p>
      */
+    inline bool ParentReferenceHasBeenSet() const { return m_parentReferenceHasBeenSet; }
+
+    /**
+     * <p>If specified, the parent reference to which this object will be attached.</p>
+     */
     inline void SetParentReference(const ObjectReference& value) { m_parentReferenceHasBeenSet = true; m_parentReference = value; }
 
     /**
@@ -207,6 +230,11 @@ namespace Model
      * <p>The name of link that is used to attach this object to a parent.</p>
      */
     inline const Aws::String& GetLinkName() const{ return m_linkName; }
+
+    /**
+     * <p>The name of link that is used to attach this object to a parent.</p>
+     */
+    inline bool LinkNameHasBeenSet() const { return m_linkNameHasBeenSet; }
 
     /**
      * <p>The name of link that is used to attach this object to a parent.</p>

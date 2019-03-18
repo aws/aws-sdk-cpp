@@ -60,6 +60,12 @@ namespace Model
      * <p>The name of the policy. This name must be unique within the set of policies
      * for this load balancer.</p>
      */
+    inline bool PolicyNameHasBeenSet() const { return m_policyNameHasBeenSet; }
+
+    /**
+     * <p>The name of the policy. This name must be unique within the set of policies
+     * for this load balancer.</p>
+     */
     inline void SetPolicyName(const Aws::String& value) { m_policyNameHasBeenSet = true; m_policyName = value; }
 
     /**
@@ -99,6 +105,13 @@ namespace Model
      * duration of the browser session.</p>
      */
     inline long long GetCookieExpirationPeriod() const{ return m_cookieExpirationPeriod; }
+
+    /**
+     * <p>The time period, in seconds, after which the cookie should be considered
+     * stale. If this parameter is not specified, the stickiness session lasts for the
+     * duration of the browser session.</p>
+     */
+    inline bool CookieExpirationPeriodHasBeenSet() const { return m_cookieExpirationPeriodHasBeenSet; }
 
     /**
      * <p>The time period, in seconds, after which the cookie should be considered

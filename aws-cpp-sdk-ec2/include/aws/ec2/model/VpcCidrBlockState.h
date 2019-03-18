@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p>The state of the CIDR block.</p>
      */
+    inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
+
+    /**
+     * <p>The state of the CIDR block.</p>
+     */
     inline void SetState(const VpcCidrBlockStateCode& value) { m_stateHasBeenSet = true; m_state = value; }
 
     /**
@@ -80,6 +85,11 @@ namespace Model
      * <p>A message about the status of the CIDR block, if applicable.</p>
      */
     inline const Aws::String& GetStatusMessage() const{ return m_statusMessage; }
+
+    /**
+     * <p>A message about the status of the CIDR block, if applicable.</p>
+     */
+    inline bool StatusMessageHasBeenSet() const { return m_statusMessageHasBeenSet; }
 
     /**
      * <p>A message about the status of the CIDR block, if applicable.</p>

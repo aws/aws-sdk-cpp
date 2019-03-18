@@ -71,6 +71,11 @@ namespace Model
     /**
      * <p>The name of the metric.</p>
      */
+    inline bool MetricNameHasBeenSet() const { return m_metricNameHasBeenSet; }
+
+    /**
+     * <p>The name of the metric.</p>
+     */
     inline void SetMetricName(const Aws::String& value) { m_metricNameHasBeenSet = true; m_metricName = value; }
 
     /**
@@ -103,6 +108,11 @@ namespace Model
      * <p>The namespace of the metric.</p>
      */
     inline const Aws::String& GetNamespace() const{ return m_namespace; }
+
+    /**
+     * <p>The namespace of the metric.</p>
+     */
+    inline bool NamespaceHasBeenSet() const { return m_namespaceHasBeenSet; }
 
     /**
      * <p>The namespace of the metric.</p>
@@ -141,6 +151,13 @@ namespace Model
      * scaling metric specification.</p>
      */
     inline const Aws::Vector<MetricDimension>& GetDimensions() const{ return m_dimensions; }
+
+    /**
+     * <p>The dimensions of the metric.</p> <p>Conditional: If you published your
+     * metric with dimensions, you must specify the same dimensions in your customized
+     * scaling metric specification.</p>
+     */
+    inline bool DimensionsHasBeenSet() const { return m_dimensionsHasBeenSet; }
 
     /**
      * <p>The dimensions of the metric.</p> <p>Conditional: If you published your
@@ -193,6 +210,11 @@ namespace Model
     /**
      * <p>The statistic of the metric.</p>
      */
+    inline bool StatisticHasBeenSet() const { return m_statisticHasBeenSet; }
+
+    /**
+     * <p>The statistic of the metric.</p>
+     */
     inline void SetStatistic(const MetricStatistic& value) { m_statisticHasBeenSet = true; m_statistic = value; }
 
     /**
@@ -215,6 +237,11 @@ namespace Model
      * <p>The unit of the metric. </p>
      */
     inline const Aws::String& GetUnit() const{ return m_unit; }
+
+    /**
+     * <p>The unit of the metric. </p>
+     */
+    inline bool UnitHasBeenSet() const { return m_unitHasBeenSet; }
 
     /**
      * <p>The unit of the metric. </p>

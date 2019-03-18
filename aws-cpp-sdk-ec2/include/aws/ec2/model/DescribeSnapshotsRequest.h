@@ -103,6 +103,33 @@ namespace Model
      * <li> <p> <code>volume-size</code> - The size of the volume, in GiB.</p> </li>
      * </ul>
      */
+    inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
+
+    /**
+     * <p>One or more filters.</p> <ul> <li> <p> <code>description</code> - A
+     * description of the snapshot.</p> </li> <li> <p> <code>owner-alias</code> - Value
+     * from an Amazon-maintained list (<code>amazon</code> |
+     * <code>aws-marketplace</code> | <code>microsoft</code>) of snapshot owners. Not
+     * to be confused with the user-configured AWS account alias, which is set from the
+     * IAM console.</p> </li> <li> <p> <code>owner-id</code> - The ID of the AWS
+     * account that owns the snapshot.</p> </li> <li> <p> <code>progress</code> - The
+     * progress of the snapshot, as a percentage (for example, 80%).</p> </li> <li> <p>
+     * <code>snapshot-id</code> - The snapshot ID.</p> </li> <li> <p>
+     * <code>start-time</code> - The time stamp when the snapshot was initiated.</p>
+     * </li> <li> <p> <code>status</code> - The status of the snapshot
+     * (<code>pending</code> | <code>completed</code> | <code>error</code>).</p> </li>
+     * <li> <p> <code>tag</code>:&lt;key&gt; - The key/value combination of a tag
+     * assigned to the resource. Use the tag key in the filter name and the tag value
+     * as the filter value. For example, to find all resources that have a tag with the
+     * key <code>Owner</code> and the value <code>TeamA</code>, specify
+     * <code>tag:Owner</code> for the filter name and <code>TeamA</code> for the filter
+     * value.</p> </li> <li> <p> <code>tag-key</code> - The key of a tag assigned to
+     * the resource. Use this filter to find all resources assigned a tag with a
+     * specific key, regardless of the tag value.</p> </li> <li> <p>
+     * <code>volume-id</code> - The ID of the volume the snapshot is for.</p> </li>
+     * <li> <p> <code>volume-size</code> - The size of the volume, in GiB.</p> </li>
+     * </ul>
+     */
     inline void SetFilters(const Aws::Vector<Filter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
 
     /**
@@ -267,6 +294,20 @@ namespace Model
      * not used, then <code>DescribeSnapshots</code> returns all results. You cannot
      * specify this parameter and the snapshot IDs parameter in the same request.</p>
      */
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
+
+    /**
+     * <p>The maximum number of snapshot results returned by
+     * <code>DescribeSnapshots</code> in paginated output. When this parameter is used,
+     * <code>DescribeSnapshots</code> only returns <code>MaxResults</code> results in a
+     * single page along with a <code>NextToken</code> response element. The remaining
+     * results of the initial request can be seen by sending another
+     * <code>DescribeSnapshots</code> request with the returned <code>NextToken</code>
+     * value. This value can be between 5 and 1000; if <code>MaxResults</code> is given
+     * a value larger than 1000, only 1000 results are returned. If this parameter is
+     * not used, then <code>DescribeSnapshots</code> returns all results. You cannot
+     * specify this parameter and the snapshot IDs parameter in the same request.</p>
+     */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
@@ -292,6 +333,15 @@ namespace Model
      * This value is <code>null</code> when there are no more results to return.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
+    /**
+     * <p>The <code>NextToken</code> value returned from a previous paginated
+     * <code>DescribeSnapshots</code> request where <code>MaxResults</code> was used
+     * and the results exceeded the value of that parameter. Pagination continues from
+     * the end of the previous results that returned the <code>NextToken</code> value.
+     * This value is <code>null</code> when there are no more results to return.</p>
+     */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
      * <p>The <code>NextToken</code> value returned from a previous paginated
@@ -356,6 +406,11 @@ namespace Model
     /**
      * <p>Describes the snapshots owned by one or more owners.</p>
      */
+    inline bool OwnerIdsHasBeenSet() const { return m_ownerIdsHasBeenSet; }
+
+    /**
+     * <p>Describes the snapshots owned by one or more owners.</p>
+     */
     inline void SetOwnerIds(const Aws::Vector<Aws::String>& value) { m_ownerIdsHasBeenSet = true; m_ownerIds = value; }
 
     /**
@@ -393,6 +448,11 @@ namespace Model
      * <p>One or more AWS accounts IDs that can create volumes from the snapshot.</p>
      */
     inline const Aws::Vector<Aws::String>& GetRestorableByUserIds() const{ return m_restorableByUserIds; }
+
+    /**
+     * <p>One or more AWS accounts IDs that can create volumes from the snapshot.</p>
+     */
+    inline bool RestorableByUserIdsHasBeenSet() const { return m_restorableByUserIdsHasBeenSet; }
 
     /**
      * <p>One or more AWS accounts IDs that can create volumes from the snapshot.</p>
@@ -435,6 +495,12 @@ namespace Model
      * you have create volume permissions.</p>
      */
     inline const Aws::Vector<Aws::String>& GetSnapshotIds() const{ return m_snapshotIds; }
+
+    /**
+     * <p>One or more snapshot IDs.</p> <p>Default: Describes the snapshots for which
+     * you have create volume permissions.</p>
+     */
+    inline bool SnapshotIdsHasBeenSet() const { return m_snapshotIdsHasBeenSet; }
 
     /**
      * <p>One or more snapshot IDs.</p> <p>Default: Describes the snapshots for which
@@ -486,6 +552,14 @@ namespace Model
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
     inline bool GetDryRun() const{ return m_dryRun; }
+
+    /**
+     * <p>Checks whether you have the required permissions for the action, without
+     * actually making the request, and provides an error response. If you have the
+     * required permissions, the error response is <code>DryRunOperation</code>.
+     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+     */
+    inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
 
     /**
      * <p>Checks whether you have the required permissions for the action, without

@@ -52,6 +52,11 @@ namespace Model
     /**
      * <p>ID of the application to delete.</p>
      */
+    inline bool AppIdHasBeenSet() const { return m_appIdHasBeenSet; }
+
+    /**
+     * <p>ID of the application to delete.</p>
+     */
     inline void SetAppId(const Aws::String& value) { m_appIdHasBeenSet = true; m_appId = value; }
 
     /**
@@ -90,6 +95,12 @@ namespace Model
      * <p>While deleting the application, stop all replication jobs corresponding to
      * the servers in the application.</p>
      */
+    inline bool ForceStopAppReplicationHasBeenSet() const { return m_forceStopAppReplicationHasBeenSet; }
+
+    /**
+     * <p>While deleting the application, stop all replication jobs corresponding to
+     * the servers in the application.</p>
+     */
     inline void SetForceStopAppReplication(bool value) { m_forceStopAppReplicationHasBeenSet = true; m_forceStopAppReplication = value; }
 
     /**
@@ -104,6 +115,12 @@ namespace Model
      * application.</p>
      */
     inline bool GetForceTerminateApp() const{ return m_forceTerminateApp; }
+
+    /**
+     * <p>While deleting the application, terminate the stack corresponding to the
+     * application.</p>
+     */
+    inline bool ForceTerminateAppHasBeenSet() const { return m_forceTerminateAppHasBeenSet; }
 
     /**
      * <p>While deleting the application, terminate the stack corresponding to the

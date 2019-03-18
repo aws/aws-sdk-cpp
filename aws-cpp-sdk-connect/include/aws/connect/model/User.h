@@ -60,6 +60,11 @@ namespace Model
     /**
      * <p>The identifier of the user account.</p>
      */
+    inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
+
+    /**
+     * <p>The identifier of the user account.</p>
+     */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
     /**
@@ -92,6 +97,11 @@ namespace Model
      * <p>The ARN of the user account.</p>
      */
     inline const Aws::String& GetArn() const{ return m_arn; }
+
+    /**
+     * <p>The ARN of the user account.</p>
+     */
+    inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
 
     /**
      * <p>The ARN of the user account.</p>
@@ -132,6 +142,11 @@ namespace Model
     /**
      * <p>The user name assigned to the user account.</p>
      */
+    inline bool UsernameHasBeenSet() const { return m_usernameHasBeenSet; }
+
+    /**
+     * <p>The user name assigned to the user account.</p>
+     */
     inline void SetUsername(const Aws::String& value) { m_usernameHasBeenSet = true; m_username = value; }
 
     /**
@@ -168,6 +183,11 @@ namespace Model
     /**
      * <p>A <code>UserIdentityInfo</code> object.</p>
      */
+    inline bool IdentityInfoHasBeenSet() const { return m_identityInfoHasBeenSet; }
+
+    /**
+     * <p>A <code>UserIdentityInfo</code> object.</p>
+     */
     inline void SetIdentityInfo(const UserIdentityInfo& value) { m_identityInfoHasBeenSet = true; m_identityInfo = value; }
 
     /**
@@ -190,6 +210,11 @@ namespace Model
      * <p>A <code>UserPhoneConfig</code> object.</p>
      */
     inline const UserPhoneConfig& GetPhoneConfig() const{ return m_phoneConfig; }
+
+    /**
+     * <p>A <code>UserPhoneConfig</code> object.</p>
+     */
+    inline bool PhoneConfigHasBeenSet() const { return m_phoneConfigHasBeenSet; }
 
     /**
      * <p>A <code>UserPhoneConfig</code> object.</p>
@@ -217,6 +242,12 @@ namespace Model
      * identity management.</p>
      */
     inline const Aws::String& GetDirectoryUserId() const{ return m_directoryUserId; }
+
+    /**
+     * <p>The directory Id for the user account in the existing directory used for
+     * identity management.</p>
+     */
+    inline bool DirectoryUserIdHasBeenSet() const { return m_directoryUserIdHasBeenSet; }
 
     /**
      * <p>The directory Id for the user account in the existing directory used for
@@ -263,6 +294,11 @@ namespace Model
     /**
      * <p>The identifier(s) for the security profile assigned to the user.</p>
      */
+    inline bool SecurityProfileIdsHasBeenSet() const { return m_securityProfileIdsHasBeenSet; }
+
+    /**
+     * <p>The identifier(s) for the security profile assigned to the user.</p>
+     */
     inline void SetSecurityProfileIds(const Aws::Vector<Aws::String>& value) { m_securityProfileIdsHasBeenSet = true; m_securityProfileIds = value; }
 
     /**
@@ -304,6 +340,11 @@ namespace Model
     /**
      * <p>The identifier of the routing profile assigned to the user.</p>
      */
+    inline bool RoutingProfileIdHasBeenSet() const { return m_routingProfileIdHasBeenSet; }
+
+    /**
+     * <p>The identifier of the routing profile assigned to the user.</p>
+     */
     inline void SetRoutingProfileId(const Aws::String& value) { m_routingProfileIdHasBeenSet = true; m_routingProfileId = value; }
 
     /**
@@ -336,6 +377,11 @@ namespace Model
      * <p>The identifier for the hierarchy group assigned to the user.</p>
      */
     inline const Aws::String& GetHierarchyGroupId() const{ return m_hierarchyGroupId; }
+
+    /**
+     * <p>The identifier for the hierarchy group assigned to the user.</p>
+     */
+    inline bool HierarchyGroupIdHasBeenSet() const { return m_hierarchyGroupIdHasBeenSet; }
 
     /**
      * <p>The identifier for the hierarchy group assigned to the user.</p>

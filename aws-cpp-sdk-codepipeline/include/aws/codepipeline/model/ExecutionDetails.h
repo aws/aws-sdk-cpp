@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The summary of the current status of the actions.</p>
      */
+    inline bool SummaryHasBeenSet() const { return m_summaryHasBeenSet; }
+
+    /**
+     * <p>The summary of the current status of the actions.</p>
+     */
     inline void SetSummary(const Aws::String& value) { m_summaryHasBeenSet = true; m_summary = value; }
 
     /**
@@ -89,6 +94,12 @@ namespace Model
      * worker in any external systems, such as AWS CodeDeploy.</p>
      */
     inline const Aws::String& GetExternalExecutionId() const{ return m_externalExecutionId; }
+
+    /**
+     * <p>The system-generated unique ID of this action used to identify this job
+     * worker in any external systems, such as AWS CodeDeploy.</p>
+     */
+    inline bool ExternalExecutionIdHasBeenSet() const { return m_externalExecutionIdHasBeenSet; }
 
     /**
      * <p>The system-generated unique ID of this action used to identify this job
@@ -132,6 +143,12 @@ namespace Model
      * zero to one hundred percent.</p>
      */
     inline int GetPercentComplete() const{ return m_percentComplete; }
+
+    /**
+     * <p>The percentage of work completed on the action, represented on a scale of
+     * zero to one hundred percent.</p>
+     */
+    inline bool PercentCompleteHasBeenSet() const { return m_percentCompleteHasBeenSet; }
 
     /**
      * <p>The percentage of work completed on the action, represented on a scale of

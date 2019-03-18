@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>Describes updates to the code content type.</p>
      */
+    inline bool CodeContentTypeUpdateHasBeenSet() const { return m_codeContentTypeUpdateHasBeenSet; }
+
+    /**
+     * <p>Describes updates to the code content type.</p>
+     */
     inline void SetCodeContentTypeUpdate(const CodeContentType& value) { m_codeContentTypeUpdateHasBeenSet = true; m_codeContentTypeUpdate = value; }
 
     /**
@@ -79,6 +84,11 @@ namespace Model
      * <p>Describes updates to the code content of an application.</p>
      */
     inline const CodeContentUpdate& GetCodeContentUpdate() const{ return m_codeContentUpdate; }
+
+    /**
+     * <p>Describes updates to the code content of an application.</p>
+     */
+    inline bool CodeContentUpdateHasBeenSet() const { return m_codeContentUpdateHasBeenSet; }
 
     /**
      * <p>Describes updates to the code content of an application.</p>

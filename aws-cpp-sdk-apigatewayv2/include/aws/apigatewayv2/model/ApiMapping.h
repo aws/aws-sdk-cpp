@@ -55,6 +55,11 @@ namespace Model
     /**
      * <p>The API identifier.</p>
      */
+    inline bool ApiIdHasBeenSet() const { return m_apiIdHasBeenSet; }
+
+    /**
+     * <p>The API identifier.</p>
+     */
     inline void SetApiId(const Aws::String& value) { m_apiIdHasBeenSet = true; m_apiId = value; }
 
     /**
@@ -87,6 +92,11 @@ namespace Model
      * <p>The API mapping identifier.</p>
      */
     inline const Aws::String& GetApiMappingId() const{ return m_apiMappingId; }
+
+    /**
+     * <p>The API mapping identifier.</p>
+     */
+    inline bool ApiMappingIdHasBeenSet() const { return m_apiMappingIdHasBeenSet; }
 
     /**
      * <p>The API mapping identifier.</p>
@@ -127,6 +137,11 @@ namespace Model
     /**
      * <p>The API mapping key.</p>
      */
+    inline bool ApiMappingKeyHasBeenSet() const { return m_apiMappingKeyHasBeenSet; }
+
+    /**
+     * <p>The API mapping key.</p>
+     */
     inline void SetApiMappingKey(const Aws::String& value) { m_apiMappingKeyHasBeenSet = true; m_apiMappingKey = value; }
 
     /**
@@ -159,6 +174,11 @@ namespace Model
      * <p>The API stage.</p>
      */
     inline const Aws::String& GetStage() const{ return m_stage; }
+
+    /**
+     * <p>The API stage.</p>
+     */
+    inline bool StageHasBeenSet() const { return m_stageHasBeenSet; }
 
     /**
      * <p>The API stage.</p>

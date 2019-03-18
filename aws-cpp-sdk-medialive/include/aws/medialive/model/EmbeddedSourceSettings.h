@@ -60,6 +60,13 @@ namespace Model
      * fields of the 708 wrapper as well as translated into 708. 708 data present in
      * the source content will be discarded.
      */
+    inline bool Convert608To708HasBeenSet() const { return m_convert608To708HasBeenSet; }
+
+    /**
+     * If upconvert, 608 data is both passed through via the "608 compatibility bytes"
+     * fields of the 708 wrapper as well as translated into 708. 708 data present in
+     * the source content will be discarded.
+     */
     inline void SetConvert608To708(const EmbeddedConvert608To708& value) { m_convert608To708HasBeenSet = true; m_convert608To708 = value; }
 
     /**
@@ -89,6 +96,12 @@ namespace Model
      * Embedded captions.
      */
     inline const EmbeddedScte20Detection& GetScte20Detection() const{ return m_scte20Detection; }
+
+    /**
+     * Set to "auto" to handle streams with intermittent and/or non-aligned SCTE-20 and
+     * Embedded captions.
+     */
+    inline bool Scte20DetectionHasBeenSet() const { return m_scte20DetectionHasBeenSet; }
 
     /**
      * Set to "auto" to handle streams with intermittent and/or non-aligned SCTE-20 and
@@ -125,6 +138,12 @@ namespace Model
      * Specifies the 608/708 channel number within the video track from which to
      * extract captions. Unused for passthrough.
      */
+    inline bool Source608ChannelNumberHasBeenSet() const { return m_source608ChannelNumberHasBeenSet; }
+
+    /**
+     * Specifies the 608/708 channel number within the video track from which to
+     * extract captions. Unused for passthrough.
+     */
     inline void SetSource608ChannelNumber(int value) { m_source608ChannelNumberHasBeenSet = true; m_source608ChannelNumber = value; }
 
     /**
@@ -138,6 +157,11 @@ namespace Model
      * This field is unused and deprecated.
      */
     inline int GetSource608TrackNumber() const{ return m_source608TrackNumber; }
+
+    /**
+     * This field is unused and deprecated.
+     */
+    inline bool Source608TrackNumberHasBeenSet() const { return m_source608TrackNumberHasBeenSet; }
 
     /**
      * This field is unused and deprecated.

@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
      */
+    inline bool RestApiIdHasBeenSet() const { return m_restApiIdHasBeenSet; }
+
+    /**
+     * <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
+     */
     inline void SetRestApiId(const Aws::String& value) { m_restApiIdHasBeenSet = true; m_restApiId = value; }
 
     /**
@@ -88,6 +93,11 @@ namespace Model
      * <p>[Required] The name of the authorizer.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
+
+    /**
+     * <p>[Required] The name of the authorizer.</p>
+     */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
      * <p>[Required] The name of the authorizer.</p>
@@ -134,6 +144,14 @@ namespace Model
      * <code>REQUEST</code> for a Lambda function using incoming request parameters,
      * and <code>COGNITO_USER_POOLS</code> for using an Amazon Cognito user pool.</p>
      */
+    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
+
+    /**
+     * <p>[Required] The authorizer type. Valid values are <code>TOKEN</code> for a
+     * Lambda function using a single authorization token submitted in a custom header,
+     * <code>REQUEST</code> for a Lambda function using incoming request parameters,
+     * and <code>COGNITO_USER_POOLS</code> for using an Amazon Cognito user pool.</p>
+     */
     inline void SetType(const AuthorizerType& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
@@ -169,6 +187,15 @@ namespace Model
      * defined. </p>
      */
     inline const Aws::Vector<Aws::String>& GetProviderARNs() const{ return m_providerARNs; }
+
+    /**
+     * <p>A list of the Amazon Cognito user pool ARNs for the
+     * <code>COGNITO_USER_POOLS</code> authorizer. Each element is of this format:
+     * <code>arn:aws:cognito-idp:{region}:{account_id}:userpool/{user_pool_id}</code>.
+     * For a <code>TOKEN</code> or <code>REQUEST</code> authorizer, this is not
+     * defined. </p>
+     */
+    inline bool ProviderARNsHasBeenSet() const { return m_providerARNsHasBeenSet; }
 
     /**
      * <p>A list of the Amazon Cognito user pool ARNs for the
@@ -244,6 +271,12 @@ namespace Model
      * <p>Optional customer-defined field, used in OpenAPI imports and exports without
      * functional impact.</p>
      */
+    inline bool AuthTypeHasBeenSet() const { return m_authTypeHasBeenSet; }
+
+    /**
+     * <p>Optional customer-defined field, used in OpenAPI imports and exports without
+     * functional impact.</p>
+     */
     inline void SetAuthType(const Aws::String& value) { m_authTypeHasBeenSet = true; m_authType = value; }
 
     /**
@@ -291,6 +324,21 @@ namespace Model
      * <code>/2015-03-31/functions/[FunctionARN]/invocations</code>.</p>
      */
     inline const Aws::String& GetAuthorizerUri() const{ return m_authorizerUri; }
+
+    /**
+     * <p>Specifies the authorizer's Uniform Resource Identifier (URI). For
+     * <code>TOKEN</code> or <code>REQUEST</code> authorizers, this must be a
+     * well-formed Lambda function URI, for example,
+     * <code>arn:aws:apigateway:us-west-2:lambda:path/2015-03-31/functions/arn:aws:lambda:us-west-2:{account_id}:function:{lambda_function_name}/invocations</code>.
+     * In general, the URI has this form
+     * <code>arn:aws:apigateway:{region}:lambda:path/{service_api}</code>, where
+     * <code>{region}</code> is the same as the region hosting the Lambda function,
+     * <code>path</code> indicates that the remaining substring in the URI should be
+     * treated as the path to the resource, including the initial <code>/</code>. For
+     * Lambda functions, this is usually of the form
+     * <code>/2015-03-31/functions/[FunctionARN]/invocations</code>.</p>
+     */
+    inline bool AuthorizerUriHasBeenSet() const { return m_authorizerUriHasBeenSet; }
 
     /**
      * <p>Specifies the authorizer's Uniform Resource Identifier (URI). For
@@ -397,6 +445,14 @@ namespace Model
      * Amazon Resource Name (ARN). To use resource-based permissions on the Lambda
      * function, specify null.</p>
      */
+    inline bool AuthorizerCredentialsHasBeenSet() const { return m_authorizerCredentialsHasBeenSet; }
+
+    /**
+     * <p>Specifies the required credentials as an IAM role for API Gateway to invoke
+     * the authorizer. To specify an IAM role for API Gateway to assume, use the role's
+     * Amazon Resource Name (ARN). To use resource-based permissions on the Lambda
+     * function, specify null.</p>
+     */
     inline void SetAuthorizerCredentials(const Aws::String& value) { m_authorizerCredentialsHasBeenSet = true; m_authorizerCredentials = value; }
 
     /**
@@ -463,6 +519,30 @@ namespace Model
      * optional.</li></ul></p>
      */
     inline const Aws::String& GetIdentitySource() const{ return m_identitySource; }
+
+    /**
+     * <p>The identity source for which authorization is requested. <ul><li>For a
+     * <code>TOKEN</code> or <code>COGNITO_USER_POOLS</code> authorizer, this is
+     * required and specifies the request header mapping expression for the custom
+     * header holding the authorization token submitted by the client. For example, if
+     * the token header name is <code>Auth</code>, the header mapping expression is
+     * <code>method.request.header.Auth</code>.</li><li>For the <code>REQUEST</code>
+     * authorizer, this is required when authorization caching is enabled. The value is
+     * a comma-separated string of one or more mapping expressions of the specified
+     * request parameters. For example, if an <code>Auth</code> header, a
+     * <code>Name</code> query string parameter are defined as identity sources, this
+     * value is <code>method.request.header.Auth,
+     * method.request.querystring.Name</code>. These parameters will be used to derive
+     * the authorization caching key and to perform runtime validation of the
+     * <code>REQUEST</code> authorizer by verifying all of the identity-related request
+     * parameters are present, not null and non-empty. Only when this is true does the
+     * authorizer invoke the authorizer Lambda function, otherwise, it returns a 401
+     * Unauthorized response without calling the Lambda function. The valid value is a
+     * string of comma-separated mapping expressions of the specified request
+     * parameters. When the authorization caching is not enabled, this property is
+     * optional.</li></ul></p>
+     */
+    inline bool IdentitySourceHasBeenSet() const { return m_identitySourceHasBeenSet; }
 
     /**
      * <p>The identity source for which authorization is requested. <ul><li>For a
@@ -629,6 +709,17 @@ namespace Model
      * response without calling the Lambda function. The validation expression does not
      * apply to the <code>REQUEST</code> authorizer.</p>
      */
+    inline bool IdentityValidationExpressionHasBeenSet() const { return m_identityValidationExpressionHasBeenSet; }
+
+    /**
+     * <p>A validation expression for the incoming identity token. For
+     * <code>TOKEN</code> authorizers, this value is a regular expression. API Gateway
+     * will match the <code>aud</code> field of the incoming token from the client
+     * against the specified regular expression. It will invoke the authorizer's Lambda
+     * function when there is a match. Otherwise, it will return a 401 Unauthorized
+     * response without calling the Lambda function. The validation expression does not
+     * apply to the <code>REQUEST</code> authorizer.</p>
+     */
     inline void SetIdentityValidationExpression(const Aws::String& value) { m_identityValidationExpressionHasBeenSet = true; m_identityValidationExpression = value; }
 
     /**
@@ -694,6 +785,14 @@ namespace Model
      * The maximum value is 3600, or 1 hour.</p>
      */
     inline int GetAuthorizerResultTtlInSeconds() const{ return m_authorizerResultTtlInSeconds; }
+
+    /**
+     * <p>The TTL in seconds of cached authorizer results. If it equals 0,
+     * authorization caching is disabled. If it is greater than 0, API Gateway will
+     * cache authorizer responses. If this field is not set, the default value is 300.
+     * The maximum value is 3600, or 1 hour.</p>
+     */
+    inline bool AuthorizerResultTtlInSecondsHasBeenSet() const { return m_authorizerResultTtlInSecondsHasBeenSet; }
 
     /**
      * <p>The TTL in seconds of cached authorizer results. If it equals 0,

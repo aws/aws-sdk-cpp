@@ -60,6 +60,11 @@ namespace Model
     /**
      * <p>The unique identifier for the Trusted Advisor check.</p>
      */
+    inline bool CheckIdHasBeenSet() const { return m_checkIdHasBeenSet; }
+
+    /**
+     * <p>The unique identifier for the Trusted Advisor check.</p>
+     */
     inline void SetCheckId(const Aws::String& value) { m_checkIdHasBeenSet = true; m_checkId = value; }
 
     /**
@@ -92,6 +97,11 @@ namespace Model
      * <p>The time of the last refresh of the check.</p>
      */
     inline const Aws::String& GetTimestamp() const{ return m_timestamp; }
+
+    /**
+     * <p>The time of the last refresh of the check.</p>
+     */
+    inline bool TimestampHasBeenSet() const { return m_timestampHasBeenSet; }
 
     /**
      * <p>The time of the last refresh of the check.</p>
@@ -134,6 +144,12 @@ namespace Model
      * <p>The alert status of the check: "ok" (green), "warning" (yellow), "error"
      * (red), or "not_available".</p>
      */
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
+
+    /**
+     * <p>The alert status of the check: "ok" (green), "warning" (yellow), "error"
+     * (red), or "not_available".</p>
+     */
     inline void SetStatus(const Aws::String& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
@@ -171,6 +187,9 @@ namespace Model
     inline const TrustedAdvisorResourcesSummary& GetResourcesSummary() const{ return m_resourcesSummary; }
 
     
+    inline bool ResourcesSummaryHasBeenSet() const { return m_resourcesSummaryHasBeenSet; }
+
+    
     inline void SetResourcesSummary(const TrustedAdvisorResourcesSummary& value) { m_resourcesSummaryHasBeenSet = true; m_resourcesSummary = value; }
 
     
@@ -188,6 +207,12 @@ namespace Model
      * Optimizing is the only category that is currently supported.</p>
      */
     inline const TrustedAdvisorCategorySpecificSummary& GetCategorySpecificSummary() const{ return m_categorySpecificSummary; }
+
+    /**
+     * <p>Summary information that relates to the category of the check. Cost
+     * Optimizing is the only category that is currently supported.</p>
+     */
+    inline bool CategorySpecificSummaryHasBeenSet() const { return m_categorySpecificSummaryHasBeenSet; }
 
     /**
      * <p>Summary information that relates to the category of the check. Cost
@@ -218,6 +243,11 @@ namespace Model
      * <p>The details about each resource listed in the check result.</p>
      */
     inline const Aws::Vector<TrustedAdvisorResourceDetail>& GetFlaggedResources() const{ return m_flaggedResources; }
+
+    /**
+     * <p>The details about each resource listed in the check result.</p>
+     */
+    inline bool FlaggedResourcesHasBeenSet() const { return m_flaggedResourcesHasBeenSet; }
 
     /**
      * <p>The details about each resource listed in the check result.</p>

@@ -60,6 +60,12 @@ namespace Model
      * <p>Amazon WorkDocs authentication token. Do not set this field when using
      * administrative API actions, as in accessing the API using AWS credentials.</p>
      */
+    inline bool AuthenticationTokenHasBeenSet() const { return m_authenticationTokenHasBeenSet; }
+
+    /**
+     * <p>Amazon WorkDocs authentication token. Do not set this field when using
+     * administrative API actions, as in accessing the API using AWS credentials.</p>
+     */
     inline void SetAuthenticationToken(const Aws::String& value) { m_authenticationTokenHasBeenSet = true; m_authenticationToken = value; }
 
     /**
@@ -101,6 +107,11 @@ namespace Model
     /**
      * <p>The ID of the document.</p>
      */
+    inline bool DocumentIdHasBeenSet() const { return m_documentIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the document.</p>
+     */
     inline void SetDocumentId(const Aws::String& value) { m_documentIdHasBeenSet = true; m_documentId = value; }
 
     /**
@@ -134,6 +145,12 @@ namespace Model
      * previous call.)</p>
      */
     inline const Aws::String& GetMarker() const{ return m_marker; }
+
+    /**
+     * <p>The marker for the next set of results. (You received this marker from a
+     * previous call.)</p>
+     */
+    inline bool MarkerHasBeenSet() const { return m_markerHasBeenSet; }
 
     /**
      * <p>The marker for the next set of results. (You received this marker from a
@@ -180,6 +197,11 @@ namespace Model
     /**
      * <p>The maximum number of versions to return with this call.</p>
      */
+    inline bool LimitHasBeenSet() const { return m_limitHasBeenSet; }
+
+    /**
+     * <p>The maximum number of versions to return with this call.</p>
+     */
     inline void SetLimit(int value) { m_limitHasBeenSet = true; m_limit = value; }
 
     /**
@@ -193,6 +215,12 @@ namespace Model
      * versions.</p>
      */
     inline const Aws::String& GetInclude() const{ return m_include; }
+
+    /**
+     * <p>A comma-separated list of values. Specify "INITIALIZED" to include incomplete
+     * versions.</p>
+     */
+    inline bool IncludeHasBeenSet() const { return m_includeHasBeenSet; }
 
     /**
      * <p>A comma-separated list of values. Specify "INITIALIZED" to include incomplete
@@ -236,6 +264,12 @@ namespace Model
      * document.</p>
      */
     inline const Aws::String& GetFields() const{ return m_fields; }
+
+    /**
+     * <p>Specify "SOURCE" to include initialized versions and a URL for the source
+     * document.</p>
+     */
+    inline bool FieldsHasBeenSet() const { return m_fieldsHasBeenSet; }
 
     /**
      * <p>Specify "SOURCE" to include initialized versions and a URL for the source

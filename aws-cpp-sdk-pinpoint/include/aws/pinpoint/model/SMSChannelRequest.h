@@ -55,6 +55,11 @@ namespace Model
     /**
      * If the channel is enabled for sending messages.
      */
+    inline bool EnabledHasBeenSet() const { return m_enabledHasBeenSet; }
+
+    /**
+     * If the channel is enabled for sending messages.
+     */
     inline void SetEnabled(bool value) { m_enabledHasBeenSet = true; m_enabled = value; }
 
     /**
@@ -67,6 +72,11 @@ namespace Model
      * Sender identifier of your messages.
      */
     inline const Aws::String& GetSenderId() const{ return m_senderId; }
+
+    /**
+     * Sender identifier of your messages.
+     */
+    inline bool SenderIdHasBeenSet() const { return m_senderIdHasBeenSet; }
 
     /**
      * Sender identifier of your messages.
@@ -103,6 +113,11 @@ namespace Model
      * ShortCode registered with phone provider.
      */
     inline const Aws::String& GetShortCode() const{ return m_shortCode; }
+
+    /**
+     * ShortCode registered with phone provider.
+     */
+    inline bool ShortCodeHasBeenSet() const { return m_shortCodeHasBeenSet; }
 
     /**
      * ShortCode registered with phone provider.

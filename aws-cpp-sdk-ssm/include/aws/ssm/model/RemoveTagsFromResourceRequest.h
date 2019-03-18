@@ -60,6 +60,14 @@ namespace Model
      * instances. You must specify the the name of the managed instance in the
      * following format: mi-ID_number. For example, mi-1a2b3c4d5e6f.</p> </note>
      */
+    inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
+
+    /**
+     * <p>The type of resource of which you want to remove a tag.</p> <note> <p>The
+     * ManagedInstance type for this API action is only for on-premises managed
+     * instances. You must specify the the name of the managed instance in the
+     * following format: mi-ID_number. For example, mi-1a2b3c4d5e6f.</p> </note>
+     */
     inline void SetResourceType(const ResourceTypeForTagging& value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
 
     /**
@@ -97,6 +105,17 @@ namespace Model
      * following format: mi-ID_number. For example, mi-1a2b3c4d5e6f.</p> </note>
      */
     inline const Aws::String& GetResourceId() const{ return m_resourceId; }
+
+    /**
+     * <p>The resource ID for which you want to remove tags. Use the ID of the
+     * resource. Here are some examples:</p> <p>ManagedInstance: mi-012345abcde</p>
+     * <p>MaintenanceWindow: mw-012345abcde</p> <p>PatchBaseline: pb-012345abcde</p>
+     * <p>For the Document and Parameter values, use the name of the resource.</p>
+     * <note> <p>The ManagedInstance type for this API action is only for on-premises
+     * managed instances. You must specify the the name of the managed instance in the
+     * following format: mi-ID_number. For example, mi-1a2b3c4d5e6f.</p> </note>
+     */
+    inline bool ResourceIdHasBeenSet() const { return m_resourceIdHasBeenSet; }
 
     /**
      * <p>The resource ID for which you want to remove tags. Use the ID of the
@@ -169,6 +188,11 @@ namespace Model
      * <p>Tag keys that you want to remove from the specified resource.</p>
      */
     inline const Aws::Vector<Aws::String>& GetTagKeys() const{ return m_tagKeys; }
+
+    /**
+     * <p>Tag keys that you want to remove from the specified resource.</p>
+     */
+    inline bool TagKeysHasBeenSet() const { return m_tagKeysHasBeenSet; }
 
     /**
      * <p>Tag keys that you want to remove from the specified resource.</p>

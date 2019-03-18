@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p>The IAM roles to be used for the validation of the model package.</p>
      */
+    inline bool ValidationRoleHasBeenSet() const { return m_validationRoleHasBeenSet; }
+
+    /**
+     * <p>The IAM roles to be used for the validation of the model package.</p>
+     */
     inline void SetValidationRole(const Aws::String& value) { m_validationRoleHasBeenSet = true; m_validationRole = value; }
 
     /**
@@ -92,6 +97,13 @@ namespace Model
      * model package.</p>
      */
     inline const Aws::Vector<ModelPackageValidationProfile>& GetValidationProfiles() const{ return m_validationProfiles; }
+
+    /**
+     * <p>An array of <code>ModelPackageValidationProfile</code> objects, each of which
+     * specifies a batch transform job that Amazon SageMaker runs to validate your
+     * model package.</p>
+     */
+    inline bool ValidationProfilesHasBeenSet() const { return m_validationProfilesHasBeenSet; }
 
     /**
      * <p>An array of <code>ModelPackageValidationProfile</code> objects, each of which

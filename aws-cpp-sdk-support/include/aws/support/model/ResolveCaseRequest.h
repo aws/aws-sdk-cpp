@@ -59,6 +59,13 @@ namespace Model
      * alphanumeric string formatted as shown in this example:
      * case-<i>12345678910-2013-c4c1d2bf33c5cf47</i> </p>
      */
+    inline bool CaseIdHasBeenSet() const { return m_caseIdHasBeenSet; }
+
+    /**
+     * <p>The AWS Support case ID requested or returned in the call. The case ID is an
+     * alphanumeric string formatted as shown in this example:
+     * case-<i>12345678910-2013-c4c1d2bf33c5cf47</i> </p>
+     */
     inline void SetCaseId(const Aws::String& value) { m_caseIdHasBeenSet = true; m_caseId = value; }
 
     /**

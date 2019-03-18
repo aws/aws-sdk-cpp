@@ -54,7 +54,8 @@ Endpoint::Endpoint() :
     m_dmsTransferSettingsHasBeenSet(false),
     m_mongoDbSettingsHasBeenSet(false),
     m_kinesisSettingsHasBeenSet(false),
-    m_elasticsearchSettingsHasBeenSet(false)
+    m_elasticsearchSettingsHasBeenSet(false),
+    m_redshiftSettingsHasBeenSet(false)
 {
 }
 
@@ -84,7 +85,8 @@ Endpoint::Endpoint(JsonView jsonValue) :
     m_dmsTransferSettingsHasBeenSet(false),
     m_mongoDbSettingsHasBeenSet(false),
     m_kinesisSettingsHasBeenSet(false),
-    m_elasticsearchSettingsHasBeenSet(false)
+    m_elasticsearchSettingsHasBeenSet(false),
+    m_redshiftSettingsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -252,6 +254,13 @@ Endpoint& Endpoint::operator =(JsonView jsonValue)
     m_elasticsearchSettingsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("RedshiftSettings"))
+  {
+    m_redshiftSettings = jsonValue.GetObject("RedshiftSettings");
+
+    m_redshiftSettingsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -392,6 +401,12 @@ JsonValue Endpoint::Jsonize() const
   if(m_elasticsearchSettingsHasBeenSet)
   {
    payload.WithObject("ElasticsearchSettings", m_elasticsearchSettings.Jsonize());
+
+  }
+
+  if(m_redshiftSettingsHasBeenSet)
+  {
+   payload.WithObject("RedshiftSettings", m_redshiftSettings.Jsonize());
 
   }
 

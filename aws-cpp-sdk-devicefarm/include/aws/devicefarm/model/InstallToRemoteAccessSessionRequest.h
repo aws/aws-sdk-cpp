@@ -59,6 +59,12 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the remote access session about which you
      * are requesting information.</p>
      */
+    inline bool RemoteAccessSessionArnHasBeenSet() const { return m_remoteAccessSessionArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the remote access session about which you
+     * are requesting information.</p>
+     */
     inline void SetRemoteAccessSessionArn(const Aws::String& value) { m_remoteAccessSessionArnHasBeenSet = true; m_remoteAccessSessionArn = value; }
 
     /**
@@ -97,6 +103,12 @@ namespace Model
      * information.</p>
      */
     inline const Aws::String& GetAppArn() const{ return m_appArn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the app about which you are requesting
+     * information.</p>
+     */
+    inline bool AppArnHasBeenSet() const { return m_appArnHasBeenSet; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the app about which you are requesting

@@ -56,6 +56,11 @@ namespace Model
     /**
      * Number of columns
      */
+    inline bool ColumnCountHasBeenSet() const { return m_columnCountHasBeenSet; }
+
+    /**
+     * Number of columns
+     */
     inline void SetColumnCount(long long value) { m_columnCountHasBeenSet = true; m_columnCount = value; }
 
     /**
@@ -68,6 +73,11 @@ namespace Model
      * List of columns and their types
      */
     inline const Aws::Vector<ColumnMetadata>& GetColumnMetadata() const{ return m_columnMetadata; }
+
+    /**
+     * List of columns and their types
+     */
+    inline bool ColumnMetadataHasBeenSet() const { return m_columnMetadataHasBeenSet; }
 
     /**
      * List of columns and their types

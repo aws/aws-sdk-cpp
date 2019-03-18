@@ -58,6 +58,12 @@ namespace Model
      * <p>The short name or full Amazon Resource Name (ARN) of the cluster that hosts
      * the task.</p>
      */
+    inline bool ClusterHasBeenSet() const { return m_clusterHasBeenSet; }
+
+    /**
+     * <p>The short name or full Amazon Resource Name (ARN) of the cluster that hosts
+     * the task.</p>
+     */
     inline void SetCluster(const Aws::String& value) { m_clusterHasBeenSet = true; m_cluster = value; }
 
     /**
@@ -99,6 +105,11 @@ namespace Model
     /**
      * <p>The task ID or full ARN of the task in the state change request.</p>
      */
+    inline bool TaskHasBeenSet() const { return m_taskHasBeenSet; }
+
+    /**
+     * <p>The task ID or full ARN of the task in the state change request.</p>
+     */
     inline void SetTask(const Aws::String& value) { m_taskHasBeenSet = true; m_task = value; }
 
     /**
@@ -131,6 +142,11 @@ namespace Model
      * <p>The status of the state change request.</p>
      */
     inline const Aws::String& GetStatus() const{ return m_status; }
+
+    /**
+     * <p>The status of the state change request.</p>
+     */
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
     /**
      * <p>The status of the state change request.</p>
@@ -171,6 +187,11 @@ namespace Model
     /**
      * <p>The reason for the state change request.</p>
      */
+    inline bool ReasonHasBeenSet() const { return m_reasonHasBeenSet; }
+
+    /**
+     * <p>The reason for the state change request.</p>
+     */
     inline void SetReason(const Aws::String& value) { m_reasonHasBeenSet = true; m_reason = value; }
 
     /**
@@ -203,6 +224,11 @@ namespace Model
      * <p>Any containers associated with the state change request.</p>
      */
     inline const Aws::Vector<ContainerStateChange>& GetContainers() const{ return m_containers; }
+
+    /**
+     * <p>Any containers associated with the state change request.</p>
+     */
+    inline bool ContainersHasBeenSet() const { return m_containersHasBeenSet; }
 
     /**
      * <p>Any containers associated with the state change request.</p>
@@ -243,6 +269,11 @@ namespace Model
     /**
      * <p>Any attachments associated with the state change request.</p>
      */
+    inline bool AttachmentsHasBeenSet() const { return m_attachmentsHasBeenSet; }
+
+    /**
+     * <p>Any attachments associated with the state change request.</p>
+     */
     inline void SetAttachments(const Aws::Vector<AttachmentStateChange>& value) { m_attachmentsHasBeenSet = true; m_attachments = value; }
 
     /**
@@ -279,6 +310,11 @@ namespace Model
     /**
      * <p>The Unix timestamp for when the container image pull began.</p>
      */
+    inline bool PullStartedAtHasBeenSet() const { return m_pullStartedAtHasBeenSet; }
+
+    /**
+     * <p>The Unix timestamp for when the container image pull began.</p>
+     */
     inline void SetPullStartedAt(const Aws::Utils::DateTime& value) { m_pullStartedAtHasBeenSet = true; m_pullStartedAt = value; }
 
     /**
@@ -305,6 +341,11 @@ namespace Model
     /**
      * <p>The Unix timestamp for when the container image pull completed.</p>
      */
+    inline bool PullStoppedAtHasBeenSet() const { return m_pullStoppedAtHasBeenSet; }
+
+    /**
+     * <p>The Unix timestamp for when the container image pull completed.</p>
+     */
     inline void SetPullStoppedAt(const Aws::Utils::DateTime& value) { m_pullStoppedAtHasBeenSet = true; m_pullStoppedAt = value; }
 
     /**
@@ -327,6 +368,11 @@ namespace Model
      * <p>The Unix timestamp for when the task execution stopped.</p>
      */
     inline const Aws::Utils::DateTime& GetExecutionStoppedAt() const{ return m_executionStoppedAt; }
+
+    /**
+     * <p>The Unix timestamp for when the task execution stopped.</p>
+     */
+    inline bool ExecutionStoppedAtHasBeenSet() const { return m_executionStoppedAtHasBeenSet; }
 
     /**
      * <p>The Unix timestamp for when the task execution stopped.</p>

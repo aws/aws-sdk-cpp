@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The unique import ID associated with the error that occurred.</p>
      */
+    inline bool ImportTaskIdHasBeenSet() const { return m_importTaskIdHasBeenSet; }
+
+    /**
+     * <p>The unique import ID associated with the error that occurred.</p>
+     */
     inline void SetImportTaskId(const Aws::String& value) { m_importTaskIdHasBeenSet = true; m_importTaskId = value; }
 
     /**
@@ -93,6 +98,11 @@ namespace Model
     /**
      * <p>The type of error that occurred for a specific import task.</p>
      */
+    inline bool ErrorCodeHasBeenSet() const { return m_errorCodeHasBeenSet; }
+
+    /**
+     * <p>The type of error that occurred for a specific import task.</p>
+     */
     inline void SetErrorCode(const BatchDeleteImportDataErrorCode& value) { m_errorCodeHasBeenSet = true; m_errorCode = value; }
 
     /**
@@ -115,6 +125,11 @@ namespace Model
      * <p>The description of the error that occurred for a specific import task.</p>
      */
     inline const Aws::String& GetErrorDescription() const{ return m_errorDescription; }
+
+    /**
+     * <p>The description of the error that occurred for a specific import task.</p>
+     */
+    inline bool ErrorDescriptionHasBeenSet() const { return m_errorDescriptionHasBeenSet; }
 
     /**
      * <p>The description of the error that occurred for a specific import task.</p>

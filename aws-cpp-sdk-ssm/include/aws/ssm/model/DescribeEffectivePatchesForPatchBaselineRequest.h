@@ -52,6 +52,11 @@ namespace Model
     /**
      * <p>The ID of the patch baseline to retrieve the effective patches for.</p>
      */
+    inline bool BaselineIdHasBeenSet() const { return m_baselineIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the patch baseline to retrieve the effective patches for.</p>
+     */
     inline void SetBaselineId(const Aws::String& value) { m_baselineIdHasBeenSet = true; m_baselineId = value; }
 
     /**
@@ -88,6 +93,11 @@ namespace Model
     /**
      * <p>The maximum number of patches to return (per page).</p>
      */
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
+
+    /**
+     * <p>The maximum number of patches to return (per page).</p>
+     */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
@@ -101,6 +111,12 @@ namespace Model
      * a previous call.)</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
+    /**
+     * <p>The token for the next set of items to return. (You received this token from
+     * a previous call.)</p>
+     */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
      * <p>The token for the next set of items to return. (You received this token from

@@ -65,6 +65,9 @@ namespace Model
     inline const Eac3AttenuationControl& GetAttenuationControl() const{ return m_attenuationControl; }
 
     
+    inline bool AttenuationControlHasBeenSet() const { return m_attenuationControlHasBeenSet; }
+
+    
     inline void SetAttenuationControl(const Eac3AttenuationControl& value) { m_attenuationControlHasBeenSet = true; m_attenuationControl = value; }
 
     
@@ -85,6 +88,11 @@ namespace Model
     /**
      * Average bitrate in bits/second. Valid bitrates depend on the coding mode.
      */
+    inline bool BitrateHasBeenSet() const { return m_bitrateHasBeenSet; }
+
+    /**
+     * Average bitrate in bits/second. Valid bitrates depend on the coding mode.
+     */
     inline void SetBitrate(int value) { m_bitrateHasBeenSet = true; m_bitrate = value; }
 
     /**
@@ -95,6 +103,9 @@ namespace Model
 
     
     inline const Eac3BitstreamMode& GetBitstreamMode() const{ return m_bitstreamMode; }
+
+    
+    inline bool BitstreamModeHasBeenSet() const { return m_bitstreamModeHasBeenSet; }
 
     
     inline void SetBitstreamMode(const Eac3BitstreamMode& value) { m_bitstreamModeHasBeenSet = true; m_bitstreamMode = value; }
@@ -113,6 +124,9 @@ namespace Model
     inline const Eac3CodingMode& GetCodingMode() const{ return m_codingMode; }
 
     
+    inline bool CodingModeHasBeenSet() const { return m_codingModeHasBeenSet; }
+
+    
     inline void SetCodingMode(const Eac3CodingMode& value) { m_codingModeHasBeenSet = true; m_codingMode = value; }
 
     
@@ -127,6 +141,9 @@ namespace Model
 
     
     inline const Eac3DcFilter& GetDcFilter() const{ return m_dcFilter; }
+
+    
+    inline bool DcFilterHasBeenSet() const { return m_dcFilterHasBeenSet; }
 
     
     inline void SetDcFilter(const Eac3DcFilter& value) { m_dcFilterHasBeenSet = true; m_dcFilter = value; }
@@ -151,6 +168,12 @@ namespace Model
      * Sets the dialnorm for the output. If blank and input audio is Dolby Digital
      * Plus, dialnorm will be passed through.
      */
+    inline bool DialnormHasBeenSet() const { return m_dialnormHasBeenSet; }
+
+    /**
+     * Sets the dialnorm for the output. If blank and input audio is Dolby Digital
+     * Plus, dialnorm will be passed through.
+     */
     inline void SetDialnorm(int value) { m_dialnormHasBeenSet = true; m_dialnorm = value; }
 
     /**
@@ -162,6 +185,9 @@ namespace Model
 
     
     inline const Eac3DynamicRangeCompressionLine& GetDynamicRangeCompressionLine() const{ return m_dynamicRangeCompressionLine; }
+
+    
+    inline bool DynamicRangeCompressionLineHasBeenSet() const { return m_dynamicRangeCompressionLineHasBeenSet; }
 
     
     inline void SetDynamicRangeCompressionLine(const Eac3DynamicRangeCompressionLine& value) { m_dynamicRangeCompressionLineHasBeenSet = true; m_dynamicRangeCompressionLine = value; }
@@ -180,6 +206,9 @@ namespace Model
     inline const Eac3DynamicRangeCompressionRf& GetDynamicRangeCompressionRf() const{ return m_dynamicRangeCompressionRf; }
 
     
+    inline bool DynamicRangeCompressionRfHasBeenSet() const { return m_dynamicRangeCompressionRfHasBeenSet; }
+
+    
     inline void SetDynamicRangeCompressionRf(const Eac3DynamicRangeCompressionRf& value) { m_dynamicRangeCompressionRfHasBeenSet = true; m_dynamicRangeCompressionRf = value; }
 
     
@@ -196,6 +225,9 @@ namespace Model
     inline const Eac3LfeControl& GetLfeControl() const{ return m_lfeControl; }
 
     
+    inline bool LfeControlHasBeenSet() const { return m_lfeControlHasBeenSet; }
+
+    
     inline void SetLfeControl(const Eac3LfeControl& value) { m_lfeControlHasBeenSet = true; m_lfeControl = value; }
 
     
@@ -210,6 +242,9 @@ namespace Model
 
     
     inline const Eac3LfeFilter& GetLfeFilter() const{ return m_lfeFilter; }
+
+    
+    inline bool LfeFilterHasBeenSet() const { return m_lfeFilterHasBeenSet; }
 
     
     inline void SetLfeFilter(const Eac3LfeFilter& value) { m_lfeFilterHasBeenSet = true; m_lfeFilter = value; }
@@ -230,6 +265,13 @@ Valid
      * values: 3.0, 1.5, 0.0, -1.5 -3.0 -4.5 -6.0 -60
      */
     inline double GetLoRoCenterMixLevel() const{ return m_loRoCenterMixLevel; }
+
+    /**
+     * Left only/Right only center mix level. Only used for 3/2 coding mode.
+Valid
+     * values: 3.0, 1.5, 0.0, -1.5 -3.0 -4.5 -6.0 -60
+     */
+    inline bool LoRoCenterMixLevelHasBeenSet() const { return m_loRoCenterMixLevelHasBeenSet; }
 
     /**
      * Left only/Right only center mix level. Only used for 3/2 coding mode.
@@ -258,6 +300,13 @@ Valid
 Valid
      * values: -1.5 -3.0 -4.5 -6.0 -60
      */
+    inline bool LoRoSurroundMixLevelHasBeenSet() const { return m_loRoSurroundMixLevelHasBeenSet; }
+
+    /**
+     * Left only/Right only surround mix level. Only used for 3/2 coding mode.
+Valid
+     * values: -1.5 -3.0 -4.5 -6.0 -60
+     */
     inline void SetLoRoSurroundMixLevel(double value) { m_loRoSurroundMixLevelHasBeenSet = true; m_loRoSurroundMixLevel = value; }
 
     /**
@@ -274,6 +323,13 @@ Valid
      * values: 3.0, 1.5, 0.0, -1.5 -3.0 -4.5 -6.0 -60
      */
     inline double GetLtRtCenterMixLevel() const{ return m_ltRtCenterMixLevel; }
+
+    /**
+     * Left total/Right total center mix level. Only used for 3/2 coding mode.
+Valid
+     * values: 3.0, 1.5, 0.0, -1.5 -3.0 -4.5 -6.0 -60
+     */
+    inline bool LtRtCenterMixLevelHasBeenSet() const { return m_ltRtCenterMixLevelHasBeenSet; }
 
     /**
      * Left total/Right total center mix level. Only used for 3/2 coding mode.
@@ -302,6 +358,13 @@ Valid
 Valid
      * values: -1.5 -3.0 -4.5 -6.0 -60
      */
+    inline bool LtRtSurroundMixLevelHasBeenSet() const { return m_ltRtSurroundMixLevelHasBeenSet; }
+
+    /**
+     * Left total/Right total surround mix level. Only used for 3/2 coding mode.
+Valid
+     * values: -1.5 -3.0 -4.5 -6.0 -60
+     */
     inline void SetLtRtSurroundMixLevel(double value) { m_ltRtSurroundMixLevelHasBeenSet = true; m_ltRtSurroundMixLevel = value; }
 
     /**
@@ -314,6 +377,9 @@ Valid
 
     
     inline const Eac3MetadataControl& GetMetadataControl() const{ return m_metadataControl; }
+
+    
+    inline bool MetadataControlHasBeenSet() const { return m_metadataControlHasBeenSet; }
 
     
     inline void SetMetadataControl(const Eac3MetadataControl& value) { m_metadataControlHasBeenSet = true; m_metadataControl = value; }
@@ -332,6 +398,9 @@ Valid
     inline const Eac3PassthroughControl& GetPassthroughControl() const{ return m_passthroughControl; }
 
     
+    inline bool PassthroughControlHasBeenSet() const { return m_passthroughControlHasBeenSet; }
+
+    
     inline void SetPassthroughControl(const Eac3PassthroughControl& value) { m_passthroughControlHasBeenSet = true; m_passthroughControl = value; }
 
     
@@ -346,6 +415,9 @@ Valid
 
     
     inline const Eac3PhaseControl& GetPhaseControl() const{ return m_phaseControl; }
+
+    
+    inline bool PhaseControlHasBeenSet() const { return m_phaseControlHasBeenSet; }
 
     
     inline void SetPhaseControl(const Eac3PhaseControl& value) { m_phaseControlHasBeenSet = true; m_phaseControl = value; }
@@ -368,6 +440,11 @@ Valid
     /**
      * Sample rate in hz. Sample rate is always 48000.
      */
+    inline bool SampleRateHasBeenSet() const { return m_sampleRateHasBeenSet; }
+
+    /**
+     * Sample rate in hz. Sample rate is always 48000.
+     */
     inline void SetSampleRate(int value) { m_sampleRateHasBeenSet = true; m_sampleRate = value; }
 
     /**
@@ -378,6 +455,9 @@ Valid
 
     
     inline const Eac3StereoDownmix& GetStereoDownmix() const{ return m_stereoDownmix; }
+
+    
+    inline bool StereoDownmixHasBeenSet() const { return m_stereoDownmixHasBeenSet; }
 
     
     inline void SetStereoDownmix(const Eac3StereoDownmix& value) { m_stereoDownmixHasBeenSet = true; m_stereoDownmix = value; }
@@ -396,6 +476,9 @@ Valid
     inline const Eac3SurroundExMode& GetSurroundExMode() const{ return m_surroundExMode; }
 
     
+    inline bool SurroundExModeHasBeenSet() const { return m_surroundExModeHasBeenSet; }
+
+    
     inline void SetSurroundExMode(const Eac3SurroundExMode& value) { m_surroundExModeHasBeenSet = true; m_surroundExMode = value; }
 
     
@@ -410,6 +493,9 @@ Valid
 
     
     inline const Eac3SurroundMode& GetSurroundMode() const{ return m_surroundMode; }
+
+    
+    inline bool SurroundModeHasBeenSet() const { return m_surroundModeHasBeenSet; }
 
     
     inline void SetSurroundMode(const Eac3SurroundMode& value) { m_surroundModeHasBeenSet = true; m_surroundMode = value; }

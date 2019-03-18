@@ -106,6 +106,21 @@ void LexRuntimeServiceClient::OverrideEndpoint(const Aws::String& endpoint)
 }
 PostContentOutcome LexRuntimeServiceClient::PostContent(const PostContentRequest& request) const
 {
+  if (!request.BotNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("PostContent", "Required field: BotName, is not set");
+    return PostContentOutcome(Aws::Client::AWSError<LexRuntimeServiceErrors>(LexRuntimeServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [BotName]", false));
+  }
+  if (!request.BotAliasHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("PostContent", "Required field: BotAlias, is not set");
+    return PostContentOutcome(Aws::Client::AWSError<LexRuntimeServiceErrors>(LexRuntimeServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [BotAlias]", false));
+  }
+  if (!request.UserIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("PostContent", "Required field: UserId, is not set");
+    return PostContentOutcome(Aws::Client::AWSError<LexRuntimeServiceErrors>(LexRuntimeServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [UserId]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/bot/";
@@ -147,6 +162,21 @@ void LexRuntimeServiceClient::PostContentAsyncHelper(const PostContentRequest& r
 
 PostTextOutcome LexRuntimeServiceClient::PostText(const PostTextRequest& request) const
 {
+  if (!request.BotNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("PostText", "Required field: BotName, is not set");
+    return PostTextOutcome(Aws::Client::AWSError<LexRuntimeServiceErrors>(LexRuntimeServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [BotName]", false));
+  }
+  if (!request.BotAliasHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("PostText", "Required field: BotAlias, is not set");
+    return PostTextOutcome(Aws::Client::AWSError<LexRuntimeServiceErrors>(LexRuntimeServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [BotAlias]", false));
+  }
+  if (!request.UserIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("PostText", "Required field: UserId, is not set");
+    return PostTextOutcome(Aws::Client::AWSError<LexRuntimeServiceErrors>(LexRuntimeServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [UserId]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/bot/";

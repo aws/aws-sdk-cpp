@@ -55,6 +55,11 @@ namespace Model
     /**
      * <p>The number of in-application streams to create.</p>
      */
+    inline bool CountHasBeenSet() const { return m_countHasBeenSet; }
+
+    /**
+     * <p>The number of in-application streams to create.</p>
+     */
     inline void SetCount(int value) { m_countHasBeenSet = true; m_count = value; }
 
     /**

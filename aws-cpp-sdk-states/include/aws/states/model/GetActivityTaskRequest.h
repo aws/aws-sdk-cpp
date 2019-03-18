@@ -54,6 +54,12 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the activity to retrieve tasks from
      * (assigned when you create the task using <a>CreateActivity</a>.)</p>
      */
+    inline bool ActivityArnHasBeenSet() const { return m_activityArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the activity to retrieve tasks from
+     * (assigned when you create the task using <a>CreateActivity</a>.)</p>
+     */
     inline void SetActivityArn(const Aws::String& value) { m_activityArnHasBeenSet = true; m_activityArn = value; }
 
     /**
@@ -93,6 +99,13 @@ namespace Model
      * history.</p>
      */
     inline const Aws::String& GetWorkerName() const{ return m_workerName; }
+
+    /**
+     * <p>You can provide an arbitrary name in order to identify the worker that the
+     * task is assigned to. This name is used when it is logged in the execution
+     * history.</p>
+     */
+    inline bool WorkerNameHasBeenSet() const { return m_workerNameHasBeenSet; }
 
     /**
      * <p>You can provide an arbitrary name in order to identify the worker that the

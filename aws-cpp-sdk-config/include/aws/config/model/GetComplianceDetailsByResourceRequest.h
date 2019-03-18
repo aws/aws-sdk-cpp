@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The type of the AWS resource for which you want compliance information.</p>
      */
+    inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
+
+    /**
+     * <p>The type of the AWS resource for which you want compliance information.</p>
+     */
     inline void SetResourceType(const Aws::String& value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
 
     /**
@@ -89,6 +94,11 @@ namespace Model
      * <p>The ID of the AWS resource for which you want compliance information.</p>
      */
     inline const Aws::String& GetResourceId() const{ return m_resourceId; }
+
+    /**
+     * <p>The ID of the AWS resource for which you want compliance information.</p>
+     */
+    inline bool ResourceIdHasBeenSet() const { return m_resourceIdHasBeenSet; }
 
     /**
      * <p>The ID of the AWS resource for which you want compliance information.</p>
@@ -127,6 +137,13 @@ namespace Model
      * <code>NOT_APPLICABLE</code>.</p>
      */
     inline const Aws::Vector<ComplianceType>& GetComplianceTypes() const{ return m_complianceTypes; }
+
+    /**
+     * <p>Filters the results by compliance.</p> <p>The allowed values are
+     * <code>COMPLIANT</code>, <code>NON_COMPLIANT</code>, and
+     * <code>NOT_APPLICABLE</code>.</p>
+     */
+    inline bool ComplianceTypesHasBeenSet() const { return m_complianceTypesHasBeenSet; }
 
     /**
      * <p>Filters the results by compliance.</p> <p>The allowed values are
@@ -176,6 +193,12 @@ namespace Model
      * get the next page of results in a paginated response.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
+    /**
+     * <p>The <code>nextToken</code> string returned on a previous page that you use to
+     * get the next page of results in a paginated response.</p>
+     */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
      * <p>The <code>nextToken</code> string returned on a previous page that you use to

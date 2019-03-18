@@ -59,6 +59,11 @@ namespace Model
     /**
      * <p>The sequence number for an individual record result.</p>
      */
+    inline bool SequenceNumberHasBeenSet() const { return m_sequenceNumberHasBeenSet; }
+
+    /**
+     * <p>The sequence number for an individual record result.</p>
+     */
     inline void SetSequenceNumber(const Aws::String& value) { m_sequenceNumberHasBeenSet = true; m_sequenceNumber = value; }
 
     /**
@@ -91,6 +96,11 @@ namespace Model
      * <p>The shard ID for an individual record result.</p>
      */
     inline const Aws::String& GetShardId() const{ return m_shardId; }
+
+    /**
+     * <p>The shard ID for an individual record result.</p>
+     */
+    inline bool ShardIdHasBeenSet() const { return m_shardIdHasBeenSet; }
 
     /**
      * <p>The shard ID for an individual record result.</p>
@@ -129,6 +139,13 @@ namespace Model
      * <code>InternalFailure</code>.</p>
      */
     inline const Aws::String& GetErrorCode() const{ return m_errorCode; }
+
+    /**
+     * <p>The error code for an individual record result. <code>ErrorCodes</code> can
+     * be either <code>ProvisionedThroughputExceededException</code> or
+     * <code>InternalFailure</code>.</p>
+     */
+    inline bool ErrorCodeHasBeenSet() const { return m_errorCodeHasBeenSet; }
 
     /**
      * <p>The error code for an individual record result. <code>ErrorCodes</code> can
@@ -181,6 +198,15 @@ namespace Model
      * message <code>"Internal Service Failure"</code>.</p>
      */
     inline const Aws::String& GetErrorMessage() const{ return m_errorMessage; }
+
+    /**
+     * <p>The error message for an individual record result. An <code>ErrorCode</code>
+     * value of <code>ProvisionedThroughputExceededException</code> has an error
+     * message that includes the account ID, stream name, and shard ID. An
+     * <code>ErrorCode</code> value of <code>InternalFailure</code> has the error
+     * message <code>"Internal Service Failure"</code>.</p>
+     */
+    inline bool ErrorMessageHasBeenSet() const { return m_errorMessageHasBeenSet; }
 
     /**
      * <p>The error message for an individual record result. An <code>ErrorCode</code>

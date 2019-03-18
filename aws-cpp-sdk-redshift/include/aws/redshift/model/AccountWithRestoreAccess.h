@@ -60,6 +60,12 @@ namespace Model
      * <p>The identifier of an AWS customer account authorized to restore a
      * snapshot.</p>
      */
+    inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
+
+    /**
+     * <p>The identifier of an AWS customer account authorized to restore a
+     * snapshot.</p>
+     */
     inline void SetAccountId(const Aws::String& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
 
     /**
@@ -98,6 +104,12 @@ namespace Model
      * For AWS support, the identifier is <code>amazon-redshift-support</code>. </p>
      */
     inline const Aws::String& GetAccountAlias() const{ return m_accountAlias; }
+
+    /**
+     * <p>The identifier of an AWS support account authorized to restore a snapshot.
+     * For AWS support, the identifier is <code>amazon-redshift-support</code>. </p>
+     */
+    inline bool AccountAliasHasBeenSet() const { return m_accountAliasHasBeenSet; }
 
     /**
      * <p>The identifier of an AWS support account authorized to restore a snapshot.

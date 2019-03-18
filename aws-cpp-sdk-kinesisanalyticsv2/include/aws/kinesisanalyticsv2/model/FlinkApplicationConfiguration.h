@@ -70,6 +70,17 @@ namespace Model
      * href="https://ci.apache.org/projects/flink/flink-docs-release-1.6/">Apache Flink
      * Documentation</a>. </p>
      */
+    inline bool CheckpointConfigurationHasBeenSet() const { return m_checkpointConfigurationHasBeenSet; }
+
+    /**
+     * <p>Describes an application's checkpointing configuration. Checkpointing is the
+     * process of persisting application state for fault tolerance. For more
+     * information, see <a
+     * href="https://ci.apache.org/projects/flink/flink-docs-release-1.6/concepts/programming-model.html#checkpoints-for-fault-tolerance">
+     * Checkpoints for Fault Tolerance</a> in the <a
+     * href="https://ci.apache.org/projects/flink/flink-docs-release-1.6/">Apache Flink
+     * Documentation</a>. </p>
+     */
     inline void SetCheckpointConfiguration(const CheckpointConfiguration& value) { m_checkpointConfigurationHasBeenSet = true; m_checkpointConfiguration = value; }
 
     /**
@@ -116,6 +127,12 @@ namespace Model
      * <p>Describes configuration parameters for Amazon CloudWatch logging for an
      * application.</p>
      */
+    inline bool MonitoringConfigurationHasBeenSet() const { return m_monitoringConfigurationHasBeenSet; }
+
+    /**
+     * <p>Describes configuration parameters for Amazon CloudWatch logging for an
+     * application.</p>
+     */
     inline void SetMonitoringConfiguration(const MonitoringConfiguration& value) { m_monitoringConfigurationHasBeenSet = true; m_monitoringConfiguration = value; }
 
     /**
@@ -142,6 +159,12 @@ namespace Model
      * simultaneously.</p>
      */
     inline const ParallelismConfiguration& GetParallelismConfiguration() const{ return m_parallelismConfiguration; }
+
+    /**
+     * <p>Describes parameters for how an application executes multiple tasks
+     * simultaneously.</p>
+     */
+    inline bool ParallelismConfigurationHasBeenSet() const { return m_parallelismConfigurationHasBeenSet; }
 
     /**
      * <p>Describes parameters for how an application executes multiple tasks

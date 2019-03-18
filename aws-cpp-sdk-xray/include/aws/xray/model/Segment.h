@@ -62,6 +62,11 @@ namespace Model
     /**
      * <p>The segment's ID.</p>
      */
+    inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
+
+    /**
+     * <p>The segment's ID.</p>
+     */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
     /**
@@ -94,6 +99,11 @@ namespace Model
      * <p>The segment document.</p>
      */
     inline const Aws::String& GetDocument() const{ return m_document; }
+
+    /**
+     * <p>The segment document.</p>
+     */
+    inline bool DocumentHasBeenSet() const { return m_documentHasBeenSet; }
 
     /**
      * <p>The segment document.</p>

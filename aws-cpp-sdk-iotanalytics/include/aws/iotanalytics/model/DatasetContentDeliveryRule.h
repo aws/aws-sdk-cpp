@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The name of the data set content delivery rules entry.</p>
      */
+    inline bool EntryNameHasBeenSet() const { return m_entryNameHasBeenSet; }
+
+    /**
+     * <p>The name of the data set content delivery rules entry.</p>
+     */
     inline void SetEntryName(const Aws::String& value) { m_entryNameHasBeenSet = true; m_entryName = value; }
 
     /**
@@ -89,6 +94,11 @@ namespace Model
      * <p>The destination to which data set contents are delivered.</p>
      */
     inline const DatasetContentDeliveryDestination& GetDestination() const{ return m_destination; }
+
+    /**
+     * <p>The destination to which data set contents are delivered.</p>
+     */
+    inline bool DestinationHasBeenSet() const { return m_destinationHasBeenSet; }
 
     /**
      * <p>The destination to which data set contents are delivered.</p>

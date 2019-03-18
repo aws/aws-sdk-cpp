@@ -69,6 +69,17 @@ namespace Model
      * Lambda function,
  specify null.</p>
      */
+    inline bool AuthorizerCredentialsArnHasBeenSet() const { return m_authorizerCredentialsArnHasBeenSet; }
+
+    /**
+     * <p>Specifies the required credentials as an IAM role for API Gateway to invoke
+     * the
+ authorizer. To specify an IAM role for API Gateway to assume, use the
+     * role's Amazon
+ Resource Name (ARN). To use resource-based permissions on the
+     * Lambda function,
+ specify null.</p>
+     */
     inline void SetAuthorizerCredentialsArn(const Aws::String& value) { m_authorizerCredentialsArnHasBeenSet = true; m_authorizerCredentialsArn = value; }
 
     /**
@@ -135,6 +146,11 @@ namespace Model
     /**
      * <p>The authorizer identifier.</p>
      */
+    inline bool AuthorizerIdHasBeenSet() const { return m_authorizerIdHasBeenSet; }
+
+    /**
+     * <p>The authorizer identifier.</p>
+     */
     inline void SetAuthorizerId(const Aws::String& value) { m_authorizerIdHasBeenSet = true; m_authorizerId = value; }
 
     /**
@@ -183,6 +199,17 @@ namespace Model
      * value is 300. The maximum
  value is 3600, or 1 hour.</p>
      */
+    inline bool AuthorizerResultTtlInSecondsHasBeenSet() const { return m_authorizerResultTtlInSecondsHasBeenSet; }
+
+    /**
+     * <p>The time to live (TTL), in seconds, of cached authorizer results. If it
+     * equals 0,
+ authorization caching is disabled. If it is greater than 0, API
+     * Gateway will cache
+ authorizer responses. If this field is not set, the default
+     * value is 300. The maximum
+ value is 3600, or 1 hour.</p>
+     */
     inline void SetAuthorizerResultTtlInSeconds(int value) { m_authorizerResultTtlInSecondsHasBeenSet = true; m_authorizerResultTtlInSeconds = value; }
 
     /**
@@ -203,6 +230,13 @@ namespace Model
      * function using incoming request parameters.</p>
      */
     inline const AuthorizerType& GetAuthorizerType() const{ return m_authorizerType; }
+
+    /**
+     * <p>The authorizer type. Currently the only valid value is REQUEST, for a
+ Lambda
+     * function using incoming request parameters.</p>
+     */
+    inline bool AuthorizerTypeHasBeenSet() const { return m_authorizerTypeHasBeenSet; }
 
     /**
      * <p>The authorizer type. Currently the only valid value is REQUEST, for a
@@ -255,6 +289,29 @@ namespace Model
      * /2015-03-31/functions/[FunctionARN]/invocations.</p>
      */
     inline const Aws::String& GetAuthorizerUri() const{ return m_authorizerUri; }
+
+    /**
+     * <p>The authorizer's Uniform Resource Identifier (URI).
+ ForREQUEST authorizers,
+     * this must be a
+ well-formed Lambda function URI, for example,
+
+     * arn:aws:apigateway:us-west-2:lambda:path/2015-03-31/functions/arn:aws:lambda:us-west-2:{account_id}:function:{lambda_function_name}/invocations.
+
+     * In general, the URI has this form:
+
+     * arn:aws:apigateway:{region}:lambda:path/{service_api}
+ , where {region} is the
+     * same as the region hosting the Lambda
+ function, path indicates that the
+     * remaining substring in the URI should be treated as
+ the path to the resource,
+     * including the initial /. For Lambda functions,
+ this is usually of the form
+
+     * /2015-03-31/functions/[FunctionARN]/invocations.</p>
+     */
+    inline bool AuthorizerUriHasBeenSet() const { return m_authorizerUriHasBeenSet; }
 
     /**
      * <p>The authorizer's Uniform Resource Identifier (URI).
@@ -425,6 +482,37 @@ namespace Model
  optional.</p>
      */
     inline const Aws::Vector<Aws::String>& GetIdentitySource() const{ return m_identitySource; }
+
+    /**
+     * <p>The identity source for which authorization is requested.</p><p>For the
+     * REQUEST authorizer, this is required when authorization
+ caching is enabled. The
+     * value is a comma-separated string of one or more mapping
+ expressions of the
+     * specified request parameters. For example, if an Auth
+ header and a Name query
+     * string parameters are defined as identity
+ sources, this value is
+     * method.request.header.Auth,
+ method.request.querystring.Name. These parameters
+     * will be used to
+ derive the authorization caching key and to perform runtime
+     * validation of the
+ REQUEST authorizer by verifying all of the identity-related
+     * request
+ parameters are present, not null, and non-empty. Only when this is true
+     * does the
+ authorizer invoke the authorizer Lambda function, otherwise, it
+     * returns a 401
+ Unauthorized response without calling the Lambda function. The
+     * valid value
+ is a string of comma-separated mapping expressions of the specified
+     * request
+ parameters. When the authorization caching is not enabled, this
+     * property is
+ optional.</p>
+     */
+    inline bool IdentitySourceHasBeenSet() const { return m_identitySourceHasBeenSet; }
 
     /**
      * <p>The identity source for which authorization is requested.</p><p>For the
@@ -654,6 +742,12 @@ namespace Model
      * <p>The
  validation expression does not apply to the REQUEST authorizer.</p>
      */
+    inline bool IdentityValidationExpressionHasBeenSet() const { return m_identityValidationExpressionHasBeenSet; }
+
+    /**
+     * <p>The
+ validation expression does not apply to the REQUEST authorizer.</p>
+     */
     inline void SetIdentityValidationExpression(const Aws::String& value) { m_identityValidationExpressionHasBeenSet = true; m_identityValidationExpression = value; }
 
     /**
@@ -695,6 +789,11 @@ namespace Model
     /**
      * <p>The name of the authorizer.</p>
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>The name of the authorizer.</p>
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
@@ -729,6 +828,13 @@ namespace Model
  defined.</p>
      */
     inline const Aws::Vector<Aws::String>& GetProviderArns() const{ return m_providerArns; }
+
+    /**
+     * <p>For
+ REQUEST authorizer, this is not
+ defined.</p>
+     */
+    inline bool ProviderArnsHasBeenSet() const { return m_providerArnsHasBeenSet; }
 
     /**
      * <p>For

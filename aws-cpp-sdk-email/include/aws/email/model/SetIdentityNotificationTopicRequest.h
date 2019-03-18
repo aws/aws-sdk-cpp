@@ -73,6 +73,16 @@ namespace Model
      * identities: <code>sender@example.com</code>, <code>example.com</code>,
      * <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>.</p>
      */
+    inline bool IdentityHasBeenSet() const { return m_identityHasBeenSet; }
+
+    /**
+     * <p>The identity (email address or domain) that you want to set the Amazon SNS
+     * topic for.</p> <important> <p>You can only specify a verified identity for this
+     * parameter.</p> </important> <p>You can specify an identity by using its name or
+     * by using its Amazon Resource Name (ARN). The following examples are all valid
+     * identities: <code>sender@example.com</code>, <code>example.com</code>,
+     * <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>.</p>
+     */
     inline void SetIdentity(const Aws::String& value) { m_identityHasBeenSet = true; m_identity = value; }
 
     /**
@@ -136,6 +146,12 @@ namespace Model
      * <p>The type of notifications that will be published to the specified Amazon SNS
      * topic.</p>
      */
+    inline bool NotificationTypeHasBeenSet() const { return m_notificationTypeHasBeenSet; }
+
+    /**
+     * <p>The type of notifications that will be published to the specified Amazon SNS
+     * topic.</p>
+     */
     inline void SetNotificationType(const NotificationType& value) { m_notificationTypeHasBeenSet = true; m_notificationType = value; }
 
     /**
@@ -163,6 +179,13 @@ namespace Model
      * cleared and publishing is disabled.</p>
      */
     inline const Aws::String& GetSnsTopic() const{ return m_snsTopic; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the Amazon SNS topic. If the parameter is
+     * omitted from the request or a null value is passed, <code>SnsTopic</code> is
+     * cleared and publishing is disabled.</p>
+     */
+    inline bool SnsTopicHasBeenSet() const { return m_snsTopicHasBeenSet; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the Amazon SNS topic. If the parameter is

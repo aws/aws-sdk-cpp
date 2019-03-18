@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p>Indicates whether the EBS volume is encrypted.</p>
      */
+    inline bool EncryptedHasBeenSet() const { return m_encryptedHasBeenSet; }
+
+    /**
+     * <p>Indicates whether the EBS volume is encrypted.</p>
+     */
     inline void SetEncrypted(bool value) { m_encryptedHasBeenSet = true; m_encrypted = value; }
 
     /**
@@ -70,6 +75,11 @@ namespace Model
      * <p>Indicates whether the EBS volume is deleted on instance termination.</p>
      */
     inline bool GetDeleteOnTermination() const{ return m_deleteOnTermination; }
+
+    /**
+     * <p>Indicates whether the EBS volume is deleted on instance termination.</p>
+     */
+    inline bool DeleteOnTerminationHasBeenSet() const { return m_deleteOnTerminationHasBeenSet; }
 
     /**
      * <p>Indicates whether the EBS volume is deleted on instance termination.</p>
@@ -90,6 +100,11 @@ namespace Model
     /**
      * <p>The number of I/O operations per second (IOPS) that the volume supports. </p>
      */
+    inline bool IopsHasBeenSet() const { return m_iopsHasBeenSet; }
+
+    /**
+     * <p>The number of I/O operations per second (IOPS) that the volume supports. </p>
+     */
     inline void SetIops(int value) { m_iopsHasBeenSet = true; m_iops = value; }
 
     /**
@@ -103,6 +118,12 @@ namespace Model
      * encryption.</p>
      */
     inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
+
+    /**
+     * <p>The ARN of the AWS Key Management Service (AWS KMS) CMK used for
+     * encryption.</p>
+     */
+    inline bool KmsKeyIdHasBeenSet() const { return m_kmsKeyIdHasBeenSet; }
 
     /**
      * <p>The ARN of the AWS Key Management Service (AWS KMS) CMK used for
@@ -149,6 +170,11 @@ namespace Model
     /**
      * <p>The ID of the snapshot.</p>
      */
+    inline bool SnapshotIdHasBeenSet() const { return m_snapshotIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the snapshot.</p>
+     */
     inline void SetSnapshotId(const Aws::String& value) { m_snapshotIdHasBeenSet = true; m_snapshotId = value; }
 
     /**
@@ -185,6 +211,11 @@ namespace Model
     /**
      * <p>The size of the volume, in GiB.</p>
      */
+    inline bool VolumeSizeHasBeenSet() const { return m_volumeSizeHasBeenSet; }
+
+    /**
+     * <p>The size of the volume, in GiB.</p>
+     */
     inline void SetVolumeSize(int value) { m_volumeSizeHasBeenSet = true; m_volumeSize = value; }
 
     /**
@@ -197,6 +228,11 @@ namespace Model
      * <p>The volume type.</p>
      */
     inline const VolumeType& GetVolumeType() const{ return m_volumeType; }
+
+    /**
+     * <p>The volume type.</p>
+     */
+    inline bool VolumeTypeHasBeenSet() const { return m_volumeTypeHasBeenSet; }
 
     /**
      * <p>The volume type.</p>

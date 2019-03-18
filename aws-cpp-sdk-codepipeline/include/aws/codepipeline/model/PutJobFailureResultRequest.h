@@ -59,6 +59,12 @@ namespace Model
      * <p>The unique system-generated ID of the job that failed. This is the same ID
      * returned from PollForJobs.</p>
      */
+    inline bool JobIdHasBeenSet() const { return m_jobIdHasBeenSet; }
+
+    /**
+     * <p>The unique system-generated ID of the job that failed. This is the same ID
+     * returned from PollForJobs.</p>
+     */
     inline void SetJobId(const Aws::String& value) { m_jobIdHasBeenSet = true; m_jobId = value; }
 
     /**
@@ -96,6 +102,11 @@ namespace Model
      * <p>The details about the failure of a job.</p>
      */
     inline const FailureDetails& GetFailureDetails() const{ return m_failureDetails; }
+
+    /**
+     * <p>The details about the failure of a job.</p>
+     */
+    inline bool FailureDetailsHasBeenSet() const { return m_failureDetailsHasBeenSet; }
 
     /**
      * <p>The details about the failure of a job.</p>

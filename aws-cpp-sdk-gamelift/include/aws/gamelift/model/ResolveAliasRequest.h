@@ -55,6 +55,11 @@ namespace Model
     /**
      * <p>Unique identifier for the alias you want to resolve.</p>
      */
+    inline bool AliasIdHasBeenSet() const { return m_aliasIdHasBeenSet; }
+
+    /**
+     * <p>Unique identifier for the alias you want to resolve.</p>
+     */
     inline void SetAliasId(const Aws::String& value) { m_aliasIdHasBeenSet = true; m_aliasId = value; }
 
     /**

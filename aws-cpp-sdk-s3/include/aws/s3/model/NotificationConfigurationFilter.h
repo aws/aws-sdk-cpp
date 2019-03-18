@@ -55,6 +55,9 @@ namespace Model
     inline const S3KeyFilter& GetKey() const{ return m_key; }
 
     
+    inline bool KeyHasBeenSet() const { return m_keyHasBeenSet; }
+
+    
     inline void SetKey(const S3KeyFilter& value) { m_keyHasBeenSet = true; m_key = value; }
 
     

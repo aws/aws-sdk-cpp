@@ -58,6 +58,13 @@ namespace Model
      * information about. If no value is specified, information about all environment
      * members are returned.</p>
      */
+    inline bool UserArnHasBeenSet() const { return m_userArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of an individual environment member to get
+     * information about. If no value is specified, information about all environment
+     * members are returned.</p>
+     */
     inline void SetUserArn(const Aws::String& value) { m_userArnHasBeenSet = true; m_userArn = value; }
 
     /**
@@ -104,6 +111,11 @@ namespace Model
     /**
      * <p>The ID of the environment to get environment member information about.</p>
      */
+    inline bool EnvironmentIdHasBeenSet() const { return m_environmentIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the environment to get environment member information about.</p>
+     */
     inline void SetEnvironmentId(const Aws::String& value) { m_environmentIdHasBeenSet = true; m_environmentId = value; }
 
     /**
@@ -141,6 +153,16 @@ namespace Model
      * information about all environment members are returned.</p>
      */
     inline const Aws::Vector<Permissions>& GetPermissions() const{ return m_permissions; }
+
+    /**
+     * <p>The type of environment member permissions to get information about.
+     * Available values include:</p> <ul> <li> <p> <code>owner</code>: Owns the
+     * environment.</p> </li> <li> <p> <code>read-only</code>: Has read-only access to
+     * the environment.</p> </li> <li> <p> <code>read-write</code>: Has read-write
+     * access to the environment.</p> </li> </ul> <p>If no value is specified,
+     * information about all environment members are returned.</p>
+     */
+    inline bool PermissionsHasBeenSet() const { return m_permissionsHasBeenSet; }
 
     /**
      * <p>The type of environment member permissions to get information about.
@@ -221,6 +243,16 @@ namespace Model
      * keep calling this operation with each subsequent next token that is returned,
      * until no more next tokens are returned.</p>
      */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
+
+    /**
+     * <p>During a previous call, if there are more than 25 items in the list, only the
+     * first 25 items are returned, along with a unique string called a <i>next
+     * token</i>. To get the next batch of items in the list, call this operation
+     * again, adding the next token to the call. To get all of the items in the list,
+     * keep calling this operation with each subsequent next token that is returned,
+     * until no more next tokens are returned.</p>
+     */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
     /**
@@ -278,6 +310,11 @@ namespace Model
      * <p>The maximum number of environment members to get information about.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
+
+    /**
+     * <p>The maximum number of environment members to get information about.</p>
+     */
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
 
     /**
      * <p>The maximum number of environment members to get information about.</p>

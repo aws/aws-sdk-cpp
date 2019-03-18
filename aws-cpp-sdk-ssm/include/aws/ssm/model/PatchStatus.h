@@ -59,6 +59,12 @@ namespace Model
      * <p>The approval status of a patch (APPROVED, PENDING_APPROVAL,
      * EXPLICIT_APPROVED, EXPLICIT_REJECTED).</p>
      */
+    inline bool DeploymentStatusHasBeenSet() const { return m_deploymentStatusHasBeenSet; }
+
+    /**
+     * <p>The approval status of a patch (APPROVED, PENDING_APPROVAL,
+     * EXPLICIT_APPROVED, EXPLICIT_REJECTED).</p>
+     */
     inline void SetDeploymentStatus(const PatchDeploymentStatus& value) { m_deploymentStatusHasBeenSet = true; m_deploymentStatus = value; }
 
     /**
@@ -88,6 +94,11 @@ namespace Model
     /**
      * <p>The compliance severity level for a patch.</p>
      */
+    inline bool ComplianceLevelHasBeenSet() const { return m_complianceLevelHasBeenSet; }
+
+    /**
+     * <p>The compliance severity level for a patch.</p>
+     */
     inline void SetComplianceLevel(const PatchComplianceLevel& value) { m_complianceLevelHasBeenSet = true; m_complianceLevel = value; }
 
     /**
@@ -111,6 +122,12 @@ namespace Model
      * PENDING_APPROVAL).</p>
      */
     inline const Aws::Utils::DateTime& GetApprovalDate() const{ return m_approvalDate; }
+
+    /**
+     * <p>The date the patch was approved (or will be approved if the status is
+     * PENDING_APPROVAL).</p>
+     */
+    inline bool ApprovalDateHasBeenSet() const { return m_approvalDateHasBeenSet; }
 
     /**
      * <p>The date the patch was approved (or will be approved if the status is

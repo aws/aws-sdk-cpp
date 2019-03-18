@@ -59,6 +59,12 @@ namespace Model
      * <p>The time, in milliseconds from the start of the video, that the celebrity was
      * recognized.</p>
      */
+    inline bool TimestampHasBeenSet() const { return m_timestampHasBeenSet; }
+
+    /**
+     * <p>The time, in milliseconds from the start of the video, that the celebrity was
+     * recognized.</p>
+     */
     inline void SetTimestamp(long long value) { m_timestampHasBeenSet = true; m_timestamp = value; }
 
     /**
@@ -72,6 +78,11 @@ namespace Model
      * <p>Information about a recognized celebrity.</p>
      */
     inline const CelebrityDetail& GetCelebrity() const{ return m_celebrity; }
+
+    /**
+     * <p>Information about a recognized celebrity.</p>
+     */
+    inline bool CelebrityHasBeenSet() const { return m_celebrityHasBeenSet; }
 
     /**
      * <p>Information about a recognized celebrity.</p>

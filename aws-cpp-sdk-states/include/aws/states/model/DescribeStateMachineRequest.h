@@ -52,6 +52,11 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the state machine to describe.</p>
      */
+    inline bool StateMachineArnHasBeenSet() const { return m_stateMachineArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the state machine to describe.</p>
+     */
     inline void SetStateMachineArn(const Aws::String& value) { m_stateMachineArnHasBeenSet = true; m_stateMachineArn = value; }
 
     /**

@@ -57,6 +57,9 @@ namespace Model
     inline const Aws::String& GetGatewayARN() const{ return m_gatewayARN; }
 
     
+    inline bool GatewayARNHasBeenSet() const { return m_gatewayARNHasBeenSet; }
+
+    
     inline void SetGatewayARN(const Aws::String& value) { m_gatewayARNHasBeenSet = true; m_gatewayARN = value; }
 
     
@@ -82,6 +85,14 @@ namespace Model
      * to list disk IDs for a gateway.</p>
      */
     inline const Aws::String& GetDiskId() const{ return m_diskId; }
+
+    /**
+     * <p>The unique identifier for the gateway local disk that is configured as a
+     * stored volume. Use <a
+     * href="https://docs.aws.amazon.com/storagegateway/latest/userguide/API_ListLocalDisks.html">ListLocalDisks</a>
+     * to list disk IDs for a gateway.</p>
+     */
+    inline bool DiskIdHasBeenSet() const { return m_diskIdHasBeenSet; }
 
     /**
      * <p>The unique identifier for the gateway local disk that is configured as a
@@ -141,6 +152,16 @@ namespace Model
      * in the <i>Amazon Elastic Compute Cloud API Reference</i>.</p>
      */
     inline const Aws::String& GetSnapshotId() const{ return m_snapshotId; }
+
+    /**
+     * <p>The snapshot ID (e.g. "snap-1122aabb") of the snapshot to restore as the new
+     * stored volume. Specify this field if you want to create the iSCSI storage volume
+     * from a snapshot otherwise do not include this field. To list snapshots for your
+     * account use <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/ApiReference-query-DescribeSnapshots.html">DescribeSnapshots</a>
+     * in the <i>Amazon Elastic Compute Cloud API Reference</i>.</p>
+     */
+    inline bool SnapshotIdHasBeenSet() const { return m_snapshotIdHasBeenSet; }
 
     /**
      * <p>The snapshot ID (e.g. "snap-1122aabb") of the snapshot to restore as the new
@@ -215,6 +236,13 @@ namespace Model
      * disk. Otherwise, specifying this field as false creates an empty volume.</p> <p>
      * Valid Values: true, false</p>
      */
+    inline bool PreserveExistingDataHasBeenSet() const { return m_preserveExistingDataHasBeenSet; }
+
+    /**
+     * <p>Specify this field as true if you want to preserve the data on the local
+     * disk. Otherwise, specifying this field as false creates an empty volume.</p> <p>
+     * Valid Values: true, false</p>
+     */
     inline void SetPreserveExistingData(bool value) { m_preserveExistingDataHasBeenSet = true; m_preserveExistingData = value; }
 
     /**
@@ -235,6 +263,17 @@ namespace Model
      * for this volume as the new target name.</p>
      */
     inline const Aws::String& GetTargetName() const{ return m_targetName; }
+
+    /**
+     * <p>The name of the iSCSI target used by an initiator to connect to a volume and
+     * used as a suffix for the target ARN. For example, specifying
+     * <code>TargetName</code> as <i>myvolume</i> results in the target ARN of
+     * <code>arn:aws:storagegateway:us-east-2:111122223333:gateway/sgw-12A3456B/target/iqn.1997-05.com.amazon:myvolume</code>.
+     * The target name must be unique across all volumes on a gateway.</p> <p>If you
+     * don't specify a value, Storage Gateway uses the value that was previously used
+     * for this volume as the new target name.</p>
+     */
+    inline bool TargetNameHasBeenSet() const { return m_targetNameHasBeenSet; }
 
     /**
      * <p>The name of the iSCSI target used by an initiator to connect to a volume and
@@ -317,6 +356,14 @@ namespace Model
      * list of the network interfaces available on a gateway.</p> <p> Valid Values: A
      * valid IP address.</p>
      */
+    inline bool NetworkInterfaceIdHasBeenSet() const { return m_networkInterfaceIdHasBeenSet; }
+
+    /**
+     * <p>The network interface of the gateway on which to expose the iSCSI target.
+     * Only IPv4 addresses are accepted. Use <a>DescribeGatewayInformation</a> to get a
+     * list of the network interfaces available on a gateway.</p> <p> Valid Values: A
+     * valid IP address.</p>
+     */
     inline void SetNetworkInterfaceId(const Aws::String& value) { m_networkInterfaceIdHasBeenSet = true; m_networkInterfaceId = value; }
 
     /**
@@ -370,6 +417,12 @@ namespace Model
      * <p>True to use Amazon S3 server side encryption with your own AWS KMS key, or
      * false to use a key managed by Amazon S3. Optional.</p>
      */
+    inline bool KMSEncryptedHasBeenSet() const { return m_kMSEncryptedHasBeenSet; }
+
+    /**
+     * <p>True to use Amazon S3 server side encryption with your own AWS KMS key, or
+     * false to use a key managed by Amazon S3. Optional.</p>
+     */
     inline void SetKMSEncrypted(bool value) { m_kMSEncryptedHasBeenSet = true; m_kMSEncrypted = value; }
 
     /**
@@ -384,6 +437,12 @@ namespace Model
      * encryption. This value can only be set when KMSEncrypted is true. Optional.</p>
      */
     inline const Aws::String& GetKMSKey() const{ return m_kMSKey; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the KMS key used for Amazon S3 server side
+     * encryption. This value can only be set when KMSEncrypted is true. Optional.</p>
+     */
+    inline bool KMSKeyHasBeenSet() const { return m_kMSKeyHasBeenSet; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the KMS key used for Amazon S3 server side

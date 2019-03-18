@@ -68,6 +68,12 @@ namespace Model
      * <p>The name or unique ID of the stack set that the stack instance is associated
      * with.</p>
      */
+    inline bool StackSetIdHasBeenSet() const { return m_stackSetIdHasBeenSet; }
+
+    /**
+     * <p>The name or unique ID of the stack set that the stack instance is associated
+     * with.</p>
+     */
     inline void SetStackSetId(const Aws::String& value) { m_stackSetIdHasBeenSet = true; m_stackSetId = value; }
 
     /**
@@ -109,6 +115,11 @@ namespace Model
     /**
      * <p>The name of the AWS region that the stack instance is associated with.</p>
      */
+    inline bool RegionHasBeenSet() const { return m_regionHasBeenSet; }
+
+    /**
+     * <p>The name of the AWS region that the stack instance is associated with.</p>
+     */
     inline void SetRegion(const Aws::String& value) { m_regionHasBeenSet = true; m_region = value; }
 
     /**
@@ -141,6 +152,11 @@ namespace Model
      * <p>The name of the AWS account that the stack instance is associated with.</p>
      */
     inline const Aws::String& GetAccount() const{ return m_account; }
+
+    /**
+     * <p>The name of the AWS account that the stack instance is associated with.</p>
+     */
+    inline bool AccountHasBeenSet() const { return m_accountHasBeenSet; }
 
     /**
      * <p>The name of the AWS account that the stack instance is associated with.</p>
@@ -181,6 +197,11 @@ namespace Model
     /**
      * <p>The ID of the stack instance.</p>
      */
+    inline bool StackIdHasBeenSet() const { return m_stackIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the stack instance.</p>
+     */
     inline void SetStackId(const Aws::String& value) { m_stackIdHasBeenSet = true; m_stackId = value; }
 
     /**
@@ -214,6 +235,12 @@ namespace Model
      * overridden in this stack instance.</p>
      */
     inline const Aws::Vector<Parameter>& GetParameterOverrides() const{ return m_parameterOverrides; }
+
+    /**
+     * <p>A list of parameters from the stack set template whose values have been
+     * overridden in this stack instance.</p>
+     */
+    inline bool ParameterOverridesHasBeenSet() const { return m_parameterOverridesHasBeenSet; }
 
     /**
      * <p>A list of parameters from the stack set template whose values have been
@@ -270,6 +297,25 @@ namespace Model
      * </li> </ul>
      */
     inline const StackInstanceStatus& GetStatus() const{ return m_status; }
+
+    /**
+     * <p>The status of the stack instance, in terms of its synchronization with its
+     * associated stack set.</p> <ul> <li> <p> <code>INOPERABLE</code>: A
+     * <code>DeleteStackInstances</code> operation has failed and left the stack in an
+     * unstable state. Stacks in this state are excluded from further
+     * <code>UpdateStackSet</code> operations. You might need to perform a
+     * <code>DeleteStackInstances</code> operation, with <code>RetainStacks</code> set
+     * to <code>true</code>, to delete the stack instance, and then delete the stack
+     * manually.</p> </li> <li> <p> <code>OUTDATED</code>: The stack isn't currently up
+     * to date with the stack set because:</p> <ul> <li> <p>The associated stack failed
+     * during a <code>CreateStackSet</code> or <code>UpdateStackSet</code> operation.
+     * </p> </li> <li> <p>The stack was part of a <code>CreateStackSet</code> or
+     * <code>UpdateStackSet</code> operation that failed or was stopped before the
+     * stack was created or updated. </p> </li> </ul> </li> <li> <p>
+     * <code>CURRENT</code>: The stack is currently up to date with the stack set.</p>
+     * </li> </ul>
+     */
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
     /**
      * <p>The status of the stack instance, in terms of its synchronization with its
@@ -353,6 +399,12 @@ namespace Model
      * instance.</p>
      */
     inline const Aws::String& GetStatusReason() const{ return m_statusReason; }
+
+    /**
+     * <p>The explanation for the specific status code that is assigned to this stack
+     * instance.</p>
+     */
+    inline bool StatusReasonHasBeenSet() const { return m_statusReasonHasBeenSet; }
 
     /**
      * <p>The explanation for the specific status code that is assigned to this stack

@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The encryption-at-rest mode for encrypting Data Catalog data.</p>
      */
+    inline bool CatalogEncryptionModeHasBeenSet() const { return m_catalogEncryptionModeHasBeenSet; }
+
+    /**
+     * <p>The encryption-at-rest mode for encrypting Data Catalog data.</p>
+     */
     inline void SetCatalogEncryptionMode(const CatalogEncryptionMode& value) { m_catalogEncryptionModeHasBeenSet = true; m_catalogEncryptionMode = value; }
 
     /**
@@ -79,6 +84,11 @@ namespace Model
      * <p>The ID of the AWS KMS key to use for encryption at rest.</p>
      */
     inline const Aws::String& GetSseAwsKmsKeyId() const{ return m_sseAwsKmsKeyId; }
+
+    /**
+     * <p>The ID of the AWS KMS key to use for encryption at rest.</p>
+     */
+    inline bool SseAwsKmsKeyIdHasBeenSet() const { return m_sseAwsKmsKeyIdHasBeenSet; }
 
     /**
      * <p>The ID of the AWS KMS key to use for encryption at rest.</p>

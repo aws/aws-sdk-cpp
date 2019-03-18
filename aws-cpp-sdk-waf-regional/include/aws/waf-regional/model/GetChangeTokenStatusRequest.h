@@ -54,6 +54,12 @@ namespace Model
      * <p>The change token for which you want to get the status. This change token was
      * previously returned in the <code>GetChangeToken</code> response.</p>
      */
+    inline bool ChangeTokenHasBeenSet() const { return m_changeTokenHasBeenSet; }
+
+    /**
+     * <p>The change token for which you want to get the status. This change token was
+     * previously returned in the <code>GetChangeToken</code> response.</p>
+     */
     inline void SetChangeToken(const Aws::String& value) { m_changeTokenHasBeenSet = true; m_changeToken = value; }
 
     /**

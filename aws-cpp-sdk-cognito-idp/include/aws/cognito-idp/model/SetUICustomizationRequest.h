@@ -53,6 +53,11 @@ namespace Model
     /**
      * <p>The user pool ID for the user pool.</p>
      */
+    inline bool UserPoolIdHasBeenSet() const { return m_userPoolIdHasBeenSet; }
+
+    /**
+     * <p>The user pool ID for the user pool.</p>
+     */
     inline void SetUserPoolId(const Aws::String& value) { m_userPoolIdHasBeenSet = true; m_userPoolId = value; }
 
     /**
@@ -85,6 +90,11 @@ namespace Model
      * <p>The client ID for the client app.</p>
      */
     inline const Aws::String& GetClientId() const{ return m_clientId; }
+
+    /**
+     * <p>The client ID for the client app.</p>
+     */
+    inline bool ClientIdHasBeenSet() const { return m_clientIdHasBeenSet; }
 
     /**
      * <p>The client ID for the client app.</p>
@@ -125,6 +135,11 @@ namespace Model
     /**
      * <p>The CSS values in the UI customization.</p>
      */
+    inline bool CSSHasBeenSet() const { return m_cSSHasBeenSet; }
+
+    /**
+     * <p>The CSS values in the UI customization.</p>
+     */
     inline void SetCSS(const Aws::String& value) { m_cSSHasBeenSet = true; m_cSS = value; }
 
     /**
@@ -157,6 +172,11 @@ namespace Model
      * <p>The uploaded logo image for the UI customization.</p>
      */
     inline const Aws::Utils::ByteBuffer& GetImageFile() const{ return m_imageFile; }
+
+    /**
+     * <p>The uploaded logo image for the UI customization.</p>
+     */
+    inline bool ImageFileHasBeenSet() const { return m_imageFileHasBeenSet; }
 
     /**
      * <p>The uploaded logo image for the UI customization.</p>

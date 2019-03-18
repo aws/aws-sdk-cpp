@@ -62,6 +62,13 @@ namespace Model
      * string.</p> <p>Constraints:</p> <ul> <li> <p>Must match the identifier of an
      * existing <code>DBInstance</code>.</p> </li> </ul>
      */
+    inline bool DBInstanceIdentifierHasBeenSet() const { return m_dBInstanceIdentifierHasBeenSet; }
+
+    /**
+     * <p>The DB instance identifier. This parameter is stored as a lowercase
+     * string.</p> <p>Constraints:</p> <ul> <li> <p>Must match the identifier of an
+     * existing <code>DBInstance</code>.</p> </li> </ul>
+     */
     inline void SetDBInstanceIdentifier(const Aws::String& value) { m_dBInstanceIdentifierHasBeenSet = true; m_dBInstanceIdentifier = value; }
 
     /**
@@ -106,6 +113,13 @@ namespace Model
      * configured for Multi-AZ.</p>
      */
     inline bool GetForceFailover() const{ return m_forceFailover; }
+
+    /**
+     * <p> When <code>true</code>, the reboot is conducted through a Multi-AZ failover.
+     * </p> <p>Constraint: You can't specify <code>true</code> if the instance is not
+     * configured for Multi-AZ.</p>
+     */
+    inline bool ForceFailoverHasBeenSet() const { return m_forceFailoverHasBeenSet; }
 
     /**
      * <p> When <code>true</code>, the reboot is conducted through a Multi-AZ failover.

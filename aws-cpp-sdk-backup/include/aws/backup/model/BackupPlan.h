@@ -60,6 +60,11 @@ namespace Model
     /**
      * <p>The display name of a backup plan.</p>
      */
+    inline bool BackupPlanNameHasBeenSet() const { return m_backupPlanNameHasBeenSet; }
+
+    /**
+     * <p>The display name of a backup plan.</p>
+     */
     inline void SetBackupPlanName(const Aws::String& value) { m_backupPlanNameHasBeenSet = true; m_backupPlanName = value; }
 
     /**
@@ -93,6 +98,12 @@ namespace Model
      * scheduled task that is used to back up a selection of resources.</p>
      */
     inline const Aws::Vector<BackupRule>& GetRules() const{ return m_rules; }
+
+    /**
+     * <p>An array of <code>BackupRule</code> objects, each of which specifies a
+     * scheduled task that is used to back up a selection of resources.</p>
+     */
+    inline bool RulesHasBeenSet() const { return m_rulesHasBeenSet; }
 
     /**
      * <p>An array of <code>BackupRule</code> objects, each of which specifies a

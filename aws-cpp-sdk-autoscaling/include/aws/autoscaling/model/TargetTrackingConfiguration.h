@@ -61,6 +61,12 @@ namespace Model
      * <p>A predefined metric. You can specify either a predefined metric or a
      * customized metric.</p>
      */
+    inline bool PredefinedMetricSpecificationHasBeenSet() const { return m_predefinedMetricSpecificationHasBeenSet; }
+
+    /**
+     * <p>A predefined metric. You can specify either a predefined metric or a
+     * customized metric.</p>
+     */
     inline void SetPredefinedMetricSpecification(const PredefinedMetricSpecification& value) { m_predefinedMetricSpecificationHasBeenSet = true; m_predefinedMetricSpecification = value; }
 
     /**
@@ -87,6 +93,12 @@ namespace Model
      * customized metric.</p>
      */
     inline const CustomizedMetricSpecification& GetCustomizedMetricSpecification() const{ return m_customizedMetricSpecification; }
+
+    /**
+     * <p>A customized metric. You can specify either a predefined metric or a
+     * customized metric.</p>
+     */
+    inline bool CustomizedMetricSpecificationHasBeenSet() const { return m_customizedMetricSpecificationHasBeenSet; }
 
     /**
      * <p>A customized metric. You can specify either a predefined metric or a
@@ -121,6 +133,11 @@ namespace Model
     /**
      * <p>The target value for the metric.</p>
      */
+    inline bool TargetValueHasBeenSet() const { return m_targetValueHasBeenSet; }
+
+    /**
+     * <p>The target value for the metric.</p>
+     */
     inline void SetTargetValue(double value) { m_targetValueHasBeenSet = true; m_targetValue = value; }
 
     /**
@@ -137,6 +154,15 @@ namespace Model
      * disabled.</p>
      */
     inline bool GetDisableScaleIn() const{ return m_disableScaleIn; }
+
+    /**
+     * <p>Indicates whether scaling in by the target tracking scaling policy is
+     * disabled. If scaling in is disabled, the target tracking scaling policy doesn't
+     * remove instances from the Auto Scaling group. Otherwise, the target tracking
+     * scaling policy can remove instances from the Auto Scaling group. The default is
+     * disabled.</p>
+     */
+    inline bool DisableScaleInHasBeenSet() const { return m_disableScaleInHasBeenSet; }
 
     /**
      * <p>Indicates whether scaling in by the target tracking scaling policy is

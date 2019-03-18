@@ -54,6 +54,12 @@ namespace Model
      * <p>The category ID for which the skills are being retrieved from the skill
      * store.</p>
      */
+    inline bool CategoryIdHasBeenSet() const { return m_categoryIdHasBeenSet; }
+
+    /**
+     * <p>The category ID for which the skills are being retrieved from the skill
+     * store.</p>
+     */
     inline void SetCategoryId(long long value) { m_categoryIdHasBeenSet = true; m_categoryId = value; }
 
     /**
@@ -67,6 +73,11 @@ namespace Model
      * <p>The tokens used for pagination.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
+    /**
+     * <p>The tokens used for pagination.</p>
+     */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
      * <p>The tokens used for pagination.</p>
@@ -103,6 +114,11 @@ namespace Model
      * <p>The maximum number of skills returned per paginated calls.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
+
+    /**
+     * <p>The maximum number of skills returned per paginated calls.</p>
+     */
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
 
     /**
      * <p>The maximum number of skills returned per paginated calls.</p>

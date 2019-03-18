@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p>Enable or disable DNS support. The default is <code>enable</code>.</p>
      */
+    inline bool DnsSupportHasBeenSet() const { return m_dnsSupportHasBeenSet; }
+
+    /**
+     * <p>Enable or disable DNS support. The default is <code>enable</code>.</p>
+     */
     inline void SetDnsSupport(const DnsSupportValue& value) { m_dnsSupportHasBeenSet = true; m_dnsSupport = value; }
 
     /**
@@ -80,6 +85,11 @@ namespace Model
      * <p>Enable or disable IPv6 support. The default is <code>enable</code>.</p>
      */
     inline const Ipv6SupportValue& GetIpv6Support() const{ return m_ipv6Support; }
+
+    /**
+     * <p>Enable or disable IPv6 support. The default is <code>enable</code>.</p>
+     */
+    inline bool Ipv6SupportHasBeenSet() const { return m_ipv6SupportHasBeenSet; }
 
     /**
      * <p>Enable or disable IPv6 support. The default is <code>enable</code>.</p>

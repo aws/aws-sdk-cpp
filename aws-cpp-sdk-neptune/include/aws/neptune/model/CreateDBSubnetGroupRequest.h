@@ -65,6 +65,14 @@ namespace Model
      * periods, underscores, spaces, or hyphens. Must not be default.</p> <p>Example:
      * <code>mySubnetgroup</code> </p>
      */
+    inline bool DBSubnetGroupNameHasBeenSet() const { return m_dBSubnetGroupNameHasBeenSet; }
+
+    /**
+     * <p>The name for the DB subnet group. This value is stored as a lowercase
+     * string.</p> <p>Constraints: Must contain no more than 255 letters, numbers,
+     * periods, underscores, spaces, or hyphens. Must not be default.</p> <p>Example:
+     * <code>mySubnetgroup</code> </p>
+     */
     inline void SetDBSubnetGroupName(const Aws::String& value) { m_dBSubnetGroupNameHasBeenSet = true; m_dBSubnetGroupName = value; }
 
     /**
@@ -116,6 +124,11 @@ namespace Model
     /**
      * <p>The description for the DB subnet group.</p>
      */
+    inline bool DBSubnetGroupDescriptionHasBeenSet() const { return m_dBSubnetGroupDescriptionHasBeenSet; }
+
+    /**
+     * <p>The description for the DB subnet group.</p>
+     */
     inline void SetDBSubnetGroupDescription(const Aws::String& value) { m_dBSubnetGroupDescriptionHasBeenSet = true; m_dBSubnetGroupDescription = value; }
 
     /**
@@ -148,6 +161,11 @@ namespace Model
      * <p>The EC2 Subnet IDs for the DB subnet group.</p>
      */
     inline const Aws::Vector<Aws::String>& GetSubnetIds() const{ return m_subnetIds; }
+
+    /**
+     * <p>The EC2 Subnet IDs for the DB subnet group.</p>
+     */
+    inline bool SubnetIdsHasBeenSet() const { return m_subnetIdsHasBeenSet; }
 
     /**
      * <p>The EC2 Subnet IDs for the DB subnet group.</p>
@@ -187,6 +205,9 @@ namespace Model
 
     
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+
+    
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }

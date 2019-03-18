@@ -53,6 +53,11 @@ namespace Model
     /**
      * <p>A collection of attributes that is use for querying findings.</p>
      */
+    inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
+
+    /**
+     * <p>A collection of attributes that is use for querying findings.</p>
+     */
     inline void SetFilters(const AwsSecurityFindingFilters& value) { m_filtersHasBeenSet = true; m_filters = value; }
 
     /**
@@ -75,6 +80,11 @@ namespace Model
      * <p>A collection of attributes used for sorting findings.</p>
      */
     inline const Aws::Vector<SortCriterion>& GetSortCriteria() const{ return m_sortCriteria; }
+
+    /**
+     * <p>A collection of attributes used for sorting findings.</p>
+     */
+    inline bool SortCriteriaHasBeenSet() const { return m_sortCriteriaHasBeenSet; }
 
     /**
      * <p>A collection of attributes used for sorting findings.</p>
@@ -114,6 +124,14 @@ namespace Model
      * to continue listing data.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
+    /**
+     * <p>Paginates results. Set the value of this parameter to NULL on your first call
+     * to the GetFindings operation. For subsequent calls to the operation, fill
+     * nextToken in the request with the value of nextToken from the previous response
+     * to continue listing data.</p>
+     */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
      * <p>Paginates results. Set the value of this parameter to NULL on your first call
@@ -168,6 +186,11 @@ namespace Model
      * <p>Indicates the maximum number of items that you want in the response.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
+
+    /**
+     * <p>Indicates the maximum number of items that you want in the response.</p>
+     */
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
 
     /**
      * <p>Indicates the maximum number of items that you want in the response.</p>

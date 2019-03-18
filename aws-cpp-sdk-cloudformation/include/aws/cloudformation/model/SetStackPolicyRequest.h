@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The name or unique stack ID that you want to associate a policy with.</p>
      */
+    inline bool StackNameHasBeenSet() const { return m_stackNameHasBeenSet; }
+
+    /**
+     * <p>The name or unique stack ID that you want to associate a policy with.</p>
+     */
     inline void SetStackName(const Aws::String& value) { m_stackNameHasBeenSet = true; m_stackName = value; }
 
     /**
@@ -93,6 +98,15 @@ namespace Model
      * <code>StackPolicyURL</code> parameter, but not both.</p>
      */
     inline const Aws::String& GetStackPolicyBody() const{ return m_stackPolicyBody; }
+
+    /**
+     * <p>Structure containing the stack policy body. For more information, go to <a
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/protect-stack-resources.html">
+     * Prevent Updates to Stack Resources</a> in the AWS CloudFormation User Guide. You
+     * can specify either the <code>StackPolicyBody</code> or the
+     * <code>StackPolicyURL</code> parameter, but not both.</p>
+     */
+    inline bool StackPolicyBodyHasBeenSet() const { return m_stackPolicyBodyHasBeenSet; }
 
     /**
      * <p>Structure containing the stack policy body. For more information, go to <a
@@ -156,6 +170,14 @@ namespace Model
      * <code>StackPolicyURL</code> parameter, but not both.</p>
      */
     inline const Aws::String& GetStackPolicyURL() const{ return m_stackPolicyURL; }
+
+    /**
+     * <p>Location of a file containing the stack policy. The URL must point to a
+     * policy (maximum size: 16 KB) located in an S3 bucket in the same region as the
+     * stack. You can specify either the <code>StackPolicyBody</code> or the
+     * <code>StackPolicyURL</code> parameter, but not both.</p>
+     */
+    inline bool StackPolicyURLHasBeenSet() const { return m_stackPolicyURLHasBeenSet; }
 
     /**
      * <p>Location of a file containing the stack policy. The URL must point to a

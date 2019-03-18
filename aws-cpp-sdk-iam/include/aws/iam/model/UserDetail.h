@@ -70,6 +70,13 @@ namespace Model
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
      * Identifiers</a> in the <i>Using IAM</i> guide.</p>
      */
+    inline bool PathHasBeenSet() const { return m_pathHasBeenSet; }
+
+    /**
+     * <p>The path to the user. For more information about paths, see <a
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
+     * Identifiers</a> in the <i>Using IAM</i> guide.</p>
+     */
     inline void SetPath(const Aws::String& value) { m_pathHasBeenSet = true; m_path = value; }
 
     /**
@@ -116,6 +123,11 @@ namespace Model
     /**
      * <p>The friendly name identifying the user.</p>
      */
+    inline bool UserNameHasBeenSet() const { return m_userNameHasBeenSet; }
+
+    /**
+     * <p>The friendly name identifying the user.</p>
+     */
     inline void SetUserName(const Aws::String& value) { m_userNameHasBeenSet = true; m_userName = value; }
 
     /**
@@ -151,6 +163,14 @@ namespace Model
      * Identifiers</a> in the <i>Using IAM</i> guide.</p>
      */
     inline const Aws::String& GetUserId() const{ return m_userId; }
+
+    /**
+     * <p>The stable and unique string identifying the user. For more information about
+     * IDs, see <a
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
+     * Identifiers</a> in the <i>Using IAM</i> guide.</p>
+     */
+    inline bool UserIdHasBeenSet() const { return m_userIdHasBeenSet; }
 
     /**
      * <p>The stable and unique string identifying the user. For more information about
@@ -205,6 +225,9 @@ namespace Model
     inline const Aws::String& GetArn() const{ return m_arn; }
 
     
+    inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
+
+    
     inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
 
     
@@ -228,6 +251,12 @@ namespace Model
      * date-time format</a>, when the user was created.</p>
      */
     inline const Aws::Utils::DateTime& GetCreateDate() const{ return m_createDate; }
+
+    /**
+     * <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601
+     * date-time format</a>, when the user was created.</p>
+     */
+    inline bool CreateDateHasBeenSet() const { return m_createDateHasBeenSet; }
 
     /**
      * <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601
@@ -258,6 +287,11 @@ namespace Model
      * <p>A list of the inline policies embedded in the user.</p>
      */
     inline const Aws::Vector<PolicyDetail>& GetUserPolicyList() const{ return m_userPolicyList; }
+
+    /**
+     * <p>A list of the inline policies embedded in the user.</p>
+     */
+    inline bool UserPolicyListHasBeenSet() const { return m_userPolicyListHasBeenSet; }
 
     /**
      * <p>A list of the inline policies embedded in the user.</p>
@@ -294,6 +328,11 @@ namespace Model
      * <p>A list of IAM groups that the user is in.</p>
      */
     inline const Aws::Vector<Aws::String>& GetGroupList() const{ return m_groupList; }
+
+    /**
+     * <p>A list of IAM groups that the user is in.</p>
+     */
+    inline bool GroupListHasBeenSet() const { return m_groupListHasBeenSet; }
 
     /**
      * <p>A list of IAM groups that the user is in.</p>
@@ -335,6 +374,11 @@ namespace Model
      * <p>A list of the managed policies attached to the user.</p>
      */
     inline const Aws::Vector<AttachedPolicy>& GetAttachedManagedPolicies() const{ return m_attachedManagedPolicies; }
+
+    /**
+     * <p>A list of the managed policies attached to the user.</p>
+     */
+    inline bool AttachedManagedPoliciesHasBeenSet() const { return m_attachedManagedPoliciesHasBeenSet; }
 
     /**
      * <p>A list of the managed policies attached to the user.</p>
@@ -381,6 +425,14 @@ namespace Model
      * href="IAM/latest/UserGuide/access_policies_boundaries.html">Permissions
      * Boundaries for IAM Identities </a> in the <i>IAM User Guide</i>.</p>
      */
+    inline bool PermissionsBoundaryHasBeenSet() const { return m_permissionsBoundaryHasBeenSet; }
+
+    /**
+     * <p>The ARN of the policy used to set the permissions boundary for the user.</p>
+     * <p>For more information about permissions boundaries, see <a
+     * href="IAM/latest/UserGuide/access_policies_boundaries.html">Permissions
+     * Boundaries for IAM Identities </a> in the <i>IAM User Guide</i>.</p>
+     */
     inline void SetPermissionsBoundary(const AttachedPermissionsBoundary& value) { m_permissionsBoundaryHasBeenSet = true; m_permissionsBoundary = value; }
 
     /**
@@ -415,6 +467,14 @@ namespace Model
      * Identities</a> in the <i>IAM User Guide</i>.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>A list of tags that are associated with the specified user. For more
+     * information about tagging, see <a
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM
+     * Identities</a> in the <i>IAM User Guide</i>.</p>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
      * <p>A list of tags that are associated with the specified user. For more

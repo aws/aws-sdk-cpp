@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The preferred time to perform weekly maintenance, in the UTC time zone.</p>
      */
+    inline bool WeeklyMaintenanceStartTimeHasBeenSet() const { return m_weeklyMaintenanceStartTimeHasBeenSet; }
+
+    /**
+     * <p>The preferred time to perform weekly maintenance, in the UTC time zone.</p>
+     */
     inline void SetWeeklyMaintenanceStartTime(const Aws::String& value) { m_weeklyMaintenanceStartTimeHasBeenSet = true; m_weeklyMaintenanceStartTime = value; }
 
     /**

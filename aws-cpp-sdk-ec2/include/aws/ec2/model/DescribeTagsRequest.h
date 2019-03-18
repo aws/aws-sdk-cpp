@@ -62,6 +62,14 @@ namespace Model
      * required permissions, the error response is <code>DryRunOperation</code>.
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
+    inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
+
+    /**
+     * <p>Checks whether you have the required permissions for the action, without
+     * actually making the request, and provides an error response. If you have the
+     * required permissions, the error response is <code>DryRunOperation</code>.
+     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+     */
     inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
 
     /**
@@ -94,6 +102,28 @@ namespace Model
      * <code>value</code> - The tag value.</p> </li> </ul>
      */
     inline const Aws::Vector<Filter>& GetFilters() const{ return m_filters; }
+
+    /**
+     * <p>One or more filters.</p> <ul> <li> <p> <code>key</code> - The tag key.</p>
+     * </li> <li> <p> <code>resource-id</code> - The ID of the resource.</p> </li> <li>
+     * <p> <code>resource-type</code> - The resource type
+     * (<code>customer-gateway</code> | <code>dedicated-host</code> |
+     * <code>dhcp-options</code> | <code>elastic-ip</code> | <code>fleet</code> |
+     * <code>fpga-image</code> | <code>image</code> | <code>instance</code> |
+     * <code>host-reservation</code> | <code>internet-gateway</code> |
+     * <code>launch-template</code> | <code>natgateway</code> |
+     * <code>network-acl</code> | <code>network-interface</code> |
+     * <code>reserved-instances</code> | <code>route-table</code> |
+     * <code>security-group</code> | <code>snapshot</code> |
+     * <code>spot-instances-request</code> | <code>subnet</code> | <code>volume</code>
+     * | <code>vpc</code> | <code>vpc-peering-connection</code> |
+     * <code>vpn-connection</code> | <code>vpn-gateway</code>).</p> </li> <li> <p>
+     * <code>tag</code>:&lt;key&gt; - The key/value combination of the tag. For
+     * example, specify "tag:Owner" for the filter name and "TeamA" for the filter
+     * value to find resources with the tag "Owner=TeamA".</p> </li> <li> <p>
+     * <code>value</code> - The tag value.</p> </li> </ul>
+     */
+    inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
 
     /**
      * <p>One or more filters.</p> <ul> <li> <p> <code>key</code> - The tag key.</p>
@@ -240,6 +270,13 @@ namespace Model
      * between 5 and 1000. To retrieve the remaining results, make another call with
      * the returned <code>NextToken</code> value.</p>
      */
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
+
+    /**
+     * <p>The maximum number of results to return in a single call. This value can be
+     * between 5 and 1000. To retrieve the remaining results, make another call with
+     * the returned <code>NextToken</code> value.</p>
+     */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
@@ -254,6 +291,11 @@ namespace Model
      * <p>The token to retrieve the next page of results.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
+    /**
+     * <p>The token to retrieve the next page of results.</p>
+     */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
      * <p>The token to retrieve the next page of results.</p>

@@ -60,6 +60,13 @@ namespace Model
      * when this activity task was scheduled. To help diagnose issues, use this
      * information to trace back the chain of events leading up to this event.</p>
      */
+    inline bool ScheduledEventIdHasBeenSet() const { return m_scheduledEventIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the <code>LambdaFunctionScheduled</code> event that was recorded
+     * when this activity task was scheduled. To help diagnose issues, use this
+     * information to trace back the chain of events leading up to this event.</p>
+     */
     inline void SetScheduledEventId(long long value) { m_scheduledEventIdHasBeenSet = true; m_scheduledEventId = value; }
 
     /**
@@ -82,6 +89,13 @@ namespace Model
      * this activity task started. To help diagnose issues, use this information to
      * trace back the chain of events leading up to this event.</p>
      */
+    inline bool StartedEventIdHasBeenSet() const { return m_startedEventIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the <code>ActivityTaskStarted</code> event that was recorded when
+     * this activity task started. To help diagnose issues, use this information to
+     * trace back the chain of events leading up to this event.</p>
+     */
     inline void SetStartedEventId(long long value) { m_startedEventIdHasBeenSet = true; m_startedEventId = value; }
 
     /**
@@ -96,6 +110,11 @@ namespace Model
      * <p>The type of the timeout that caused this event.</p>
      */
     inline const LambdaFunctionTimeoutType& GetTimeoutType() const{ return m_timeoutType; }
+
+    /**
+     * <p>The type of the timeout that caused this event.</p>
+     */
+    inline bool TimeoutTypeHasBeenSet() const { return m_timeoutTypeHasBeenSet; }
 
     /**
      * <p>The type of the timeout that caused this event.</p>

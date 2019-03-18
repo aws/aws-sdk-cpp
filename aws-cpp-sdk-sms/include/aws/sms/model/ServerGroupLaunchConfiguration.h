@@ -59,6 +59,12 @@ namespace Model
      * <p>Identifier of the server group the launch configuration is associated
      * with.</p>
      */
+    inline bool ServerGroupIdHasBeenSet() const { return m_serverGroupIdHasBeenSet; }
+
+    /**
+     * <p>Identifier of the server group the launch configuration is associated
+     * with.</p>
+     */
     inline void SetServerGroupId(const Aws::String& value) { m_serverGroupIdHasBeenSet = true; m_serverGroupId = value; }
 
     /**
@@ -100,6 +106,11 @@ namespace Model
     /**
      * <p>Launch order of servers in the server group.</p>
      */
+    inline bool LaunchOrderHasBeenSet() const { return m_launchOrderHasBeenSet; }
+
+    /**
+     * <p>Launch order of servers in the server group.</p>
+     */
     inline void SetLaunchOrder(int value) { m_launchOrderHasBeenSet = true; m_launchOrder = value; }
 
     /**
@@ -112,6 +123,11 @@ namespace Model
      * <p>Launch configuration for servers in the server group.</p>
      */
     inline const Aws::Vector<ServerLaunchConfiguration>& GetServerLaunchConfigurations() const{ return m_serverLaunchConfigurations; }
+
+    /**
+     * <p>Launch configuration for servers in the server group.</p>
+     */
+    inline bool ServerLaunchConfigurationsHasBeenSet() const { return m_serverLaunchConfigurationsHasBeenSet; }
 
     /**
      * <p>Launch configuration for servers in the server group.</p>

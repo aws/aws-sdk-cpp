@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The ARN of the subscription whose properties you want to get.</p>
      */
+    inline bool SubscriptionArnHasBeenSet() const { return m_subscriptionArnHasBeenSet; }
+
+    /**
+     * <p>The ARN of the subscription whose properties you want to get.</p>
+     */
     inline void SetSubscriptionArn(const Aws::String& value) { m_subscriptionArnHasBeenSet = true; m_subscriptionArn = value; }
 
     /**

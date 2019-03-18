@@ -50,6 +50,11 @@ namespace Model
     /**
      * <p>The request to create a field-level encryption profile.</p>
      */
+    inline bool FieldLevelEncryptionProfileConfigHasBeenSet() const { return m_fieldLevelEncryptionProfileConfigHasBeenSet; }
+
+    /**
+     * <p>The request to create a field-level encryption profile.</p>
+     */
     inline void SetFieldLevelEncryptionProfileConfig(const FieldLevelEncryptionProfileConfig& value) { m_fieldLevelEncryptionProfileConfigHasBeenSet = true; m_fieldLevelEncryptionProfileConfig = value; }
 
     /**

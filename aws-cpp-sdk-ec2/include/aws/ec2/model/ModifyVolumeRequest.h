@@ -61,6 +61,14 @@ namespace Model
      * required permissions, the error response is <code>DryRunOperation</code>.
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
+    inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
+
+    /**
+     * <p>Checks whether you have the required permissions for the action, without
+     * actually making the request, and provides an error response. If you have the
+     * required permissions, the error response is <code>DryRunOperation</code>.
+     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+     */
     inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
 
     /**
@@ -76,6 +84,11 @@ namespace Model
      * <p>The ID of the volume.</p>
      */
     inline const Aws::String& GetVolumeId() const{ return m_volumeId; }
+
+    /**
+     * <p>The ID of the volume.</p>
+     */
+    inline bool VolumeIdHasBeenSet() const { return m_volumeIdHasBeenSet; }
 
     /**
      * <p>The ID of the volume.</p>
@@ -126,6 +139,16 @@ namespace Model
      * EBS Volume Types</a>.</p> <p>Default: If no size is specified, the existing size
      * is retained.</p>
      */
+    inline bool SizeHasBeenSet() const { return m_sizeHasBeenSet; }
+
+    /**
+     * <p>The target size of the volume, in GiB. The target volume size must be greater
+     * than or equal to than the existing size of the volume. For information about
+     * available EBS volume sizes, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon
+     * EBS Volume Types</a>.</p> <p>Default: If no size is specified, the existing size
+     * is retained.</p>
+     */
     inline void SetSize(int value) { m_sizeHasBeenSet = true; m_size = value; }
 
     /**
@@ -144,6 +167,12 @@ namespace Model
      * specified, the existing type is retained.</p>
      */
     inline const VolumeType& GetVolumeType() const{ return m_volumeType; }
+
+    /**
+     * <p>The target EBS volume type of the volume.</p> <p>Default: If no type is
+     * specified, the existing type is retained.</p>
+     */
+    inline bool VolumeTypeHasBeenSet() const { return m_volumeTypeHasBeenSet; }
 
     /**
      * <p>The target EBS volume type of the volume.</p> <p>Default: If no type is
@@ -178,6 +207,15 @@ namespace Model
      * existing value is retained.</p>
      */
     inline int GetIops() const{ return m_iops; }
+
+    /**
+     * <p>The target IOPS rate of the volume.</p> <p>This is only valid for Provisioned
+     * IOPS SSD (<code>io1</code>) volumes. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html#EBSVolumeTypes_piops">Provisioned
+     * IOPS SSD (io1) Volumes</a>.</p> <p>Default: If no IOPS value is specified, the
+     * existing value is retained.</p>
+     */
+    inline bool IopsHasBeenSet() const { return m_iopsHasBeenSet; }
 
     /**
      * <p>The target IOPS rate of the volume.</p> <p>This is only valid for Provisioned

@@ -60,6 +60,12 @@ namespace Model
      * Specify the images that you want to overlay on your video. The images must be
      * PNG or TGA files.
      */
+    inline bool InsertableImagesHasBeenSet() const { return m_insertableImagesHasBeenSet; }
+
+    /**
+     * Specify the images that you want to overlay on your video. The images must be
+     * PNG or TGA files.
+     */
     inline void SetInsertableImages(const Aws::Vector<InsertableImage>& value) { m_insertableImagesHasBeenSet = true; m_insertableImages = value; }
 
     /**

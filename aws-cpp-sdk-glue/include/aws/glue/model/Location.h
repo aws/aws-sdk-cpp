@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>A JDBC location.</p>
      */
+    inline bool JdbcHasBeenSet() const { return m_jdbcHasBeenSet; }
+
+    /**
+     * <p>A JDBC location.</p>
+     */
     inline void SetJdbc(const Aws::Vector<CodeGenNodeArg>& value) { m_jdbcHasBeenSet = true; m_jdbc = value; }
 
     /**
@@ -92,6 +97,11 @@ namespace Model
     /**
      * <p>An Amazon S3 location.</p>
      */
+    inline bool S3HasBeenSet() const { return m_s3HasBeenSet; }
+
+    /**
+     * <p>An Amazon S3 location.</p>
+     */
     inline void SetS3(const Aws::Vector<CodeGenNodeArg>& value) { m_s3HasBeenSet = true; m_s3 = value; }
 
     /**
@@ -124,6 +134,11 @@ namespace Model
      * <p>A DynamoDB Table location.</p>
      */
     inline const Aws::Vector<CodeGenNodeArg>& GetDynamoDB() const{ return m_dynamoDB; }
+
+    /**
+     * <p>A DynamoDB Table location.</p>
+     */
+    inline bool DynamoDBHasBeenSet() const { return m_dynamoDBHasBeenSet; }
 
     /**
      * <p>A DynamoDB Table location.</p>

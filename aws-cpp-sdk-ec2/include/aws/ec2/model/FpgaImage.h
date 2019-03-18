@@ -63,6 +63,11 @@ namespace Model
     /**
      * <p>The FPGA image identifier (AFI ID).</p>
      */
+    inline bool FpgaImageIdHasBeenSet() const { return m_fpgaImageIdHasBeenSet; }
+
+    /**
+     * <p>The FPGA image identifier (AFI ID).</p>
+     */
     inline void SetFpgaImageId(const Aws::String& value) { m_fpgaImageIdHasBeenSet = true; m_fpgaImageId = value; }
 
     /**
@@ -95,6 +100,11 @@ namespace Model
      * <p>The global FPGA image identifier (AGFI ID).</p>
      */
     inline const Aws::String& GetFpgaImageGlobalId() const{ return m_fpgaImageGlobalId; }
+
+    /**
+     * <p>The global FPGA image identifier (AGFI ID).</p>
+     */
+    inline bool FpgaImageGlobalIdHasBeenSet() const { return m_fpgaImageGlobalIdHasBeenSet; }
 
     /**
      * <p>The global FPGA image identifier (AGFI ID).</p>
@@ -135,6 +145,11 @@ namespace Model
     /**
      * <p>The name of the AFI.</p>
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>The name of the AFI.</p>
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
@@ -167,6 +182,11 @@ namespace Model
      * <p>The description of the AFI.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
+
+    /**
+     * <p>The description of the AFI.</p>
+     */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
 
     /**
      * <p>The description of the AFI.</p>
@@ -207,6 +227,11 @@ namespace Model
     /**
      * <p>The version of the AWS Shell that was used to create the bitstream.</p>
      */
+    inline bool ShellVersionHasBeenSet() const { return m_shellVersionHasBeenSet; }
+
+    /**
+     * <p>The version of the AWS Shell that was used to create the bitstream.</p>
+     */
     inline void SetShellVersion(const Aws::String& value) { m_shellVersionHasBeenSet = true; m_shellVersion = value; }
 
     /**
@@ -243,6 +268,11 @@ namespace Model
     /**
      * <p>Information about the PCI bus.</p>
      */
+    inline bool PciIdHasBeenSet() const { return m_pciIdHasBeenSet; }
+
+    /**
+     * <p>Information about the PCI bus.</p>
+     */
     inline void SetPciId(const PciId& value) { m_pciIdHasBeenSet = true; m_pciId = value; }
 
     /**
@@ -265,6 +295,11 @@ namespace Model
      * <p>Information about the state of the AFI.</p>
      */
     inline const FpgaImageState& GetState() const{ return m_state; }
+
+    /**
+     * <p>Information about the state of the AFI.</p>
+     */
+    inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
 
     /**
      * <p>Information about the state of the AFI.</p>
@@ -295,6 +330,11 @@ namespace Model
     /**
      * <p>The date and time the AFI was created.</p>
      */
+    inline bool CreateTimeHasBeenSet() const { return m_createTimeHasBeenSet; }
+
+    /**
+     * <p>The date and time the AFI was created.</p>
+     */
     inline void SetCreateTime(const Aws::Utils::DateTime& value) { m_createTimeHasBeenSet = true; m_createTime = value; }
 
     /**
@@ -321,6 +361,11 @@ namespace Model
     /**
      * <p>The time of the most recent update to the AFI.</p>
      */
+    inline bool UpdateTimeHasBeenSet() const { return m_updateTimeHasBeenSet; }
+
+    /**
+     * <p>The time of the most recent update to the AFI.</p>
+     */
     inline void SetUpdateTime(const Aws::Utils::DateTime& value) { m_updateTimeHasBeenSet = true; m_updateTime = value; }
 
     /**
@@ -343,6 +388,11 @@ namespace Model
      * <p>The AWS account ID of the AFI owner.</p>
      */
     inline const Aws::String& GetOwnerId() const{ return m_ownerId; }
+
+    /**
+     * <p>The AWS account ID of the AFI owner.</p>
+     */
+    inline bool OwnerIdHasBeenSet() const { return m_ownerIdHasBeenSet; }
 
     /**
      * <p>The AWS account ID of the AFI owner.</p>
@@ -380,6 +430,12 @@ namespace Model
      * <code>amazon</code>, and <code>aws-marketplace</code>.</p>
      */
     inline const Aws::String& GetOwnerAlias() const{ return m_ownerAlias; }
+
+    /**
+     * <p>The alias of the AFI owner. Possible values include <code>self</code>,
+     * <code>amazon</code>, and <code>aws-marketplace</code>.</p>
+     */
+    inline bool OwnerAliasHasBeenSet() const { return m_ownerAliasHasBeenSet; }
 
     /**
      * <p>The alias of the AFI owner. Possible values include <code>self</code>,
@@ -426,6 +482,11 @@ namespace Model
     /**
      * <p>The product codes for the AFI.</p>
      */
+    inline bool ProductCodesHasBeenSet() const { return m_productCodesHasBeenSet; }
+
+    /**
+     * <p>The product codes for the AFI.</p>
+     */
     inline void SetProductCodes(const Aws::Vector<ProductCode>& value) { m_productCodesHasBeenSet = true; m_productCodes = value; }
 
     /**
@@ -458,6 +519,11 @@ namespace Model
      * <p>Any tags assigned to the AFI.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>Any tags assigned to the AFI.</p>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
      * <p>Any tags assigned to the AFI.</p>
@@ -498,12 +564,38 @@ namespace Model
     /**
      * <p>Indicates whether the AFI is public.</p>
      */
+    inline bool PublicHasBeenSet() const { return m_publicHasBeenSet; }
+
+    /**
+     * <p>Indicates whether the AFI is public.</p>
+     */
     inline void SetPublic(bool value) { m_publicHasBeenSet = true; m_public = value; }
 
     /**
      * <p>Indicates whether the AFI is public.</p>
      */
     inline FpgaImage& WithPublic(bool value) { SetPublic(value); return *this;}
+
+
+    /**
+     * <p>Indicates whether data retention support is enabled for the AFI.</p>
+     */
+    inline bool GetDataRetentionSupport() const{ return m_dataRetentionSupport; }
+
+    /**
+     * <p>Indicates whether data retention support is enabled for the AFI.</p>
+     */
+    inline bool DataRetentionSupportHasBeenSet() const { return m_dataRetentionSupportHasBeenSet; }
+
+    /**
+     * <p>Indicates whether data retention support is enabled for the AFI.</p>
+     */
+    inline void SetDataRetentionSupport(bool value) { m_dataRetentionSupportHasBeenSet = true; m_dataRetentionSupport = value; }
+
+    /**
+     * <p>Indicates whether data retention support is enabled for the AFI.</p>
+     */
+    inline FpgaImage& WithDataRetentionSupport(bool value) { SetDataRetentionSupport(value); return *this;}
 
   private:
 
@@ -548,6 +640,9 @@ namespace Model
 
     bool m_public;
     bool m_publicHasBeenSet;
+
+    bool m_dataRetentionSupport;
+    bool m_dataRetentionSupportHasBeenSet;
   };
 
 } // namespace Model

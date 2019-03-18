@@ -55,6 +55,11 @@ namespace Model
     /**
      * <p>The type of action to be taken.</p>
      */
+    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
+
+    /**
+     * <p>The type of action to be taken.</p>
+     */
     inline void SetType(const ImageActionType& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**

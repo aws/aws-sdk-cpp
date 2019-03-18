@@ -48,6 +48,9 @@ namespace Model
     inline const Aws::String& GetGatewayARN() const{ return m_gatewayARN; }
 
     
+    inline bool GatewayARNHasBeenSet() const { return m_gatewayARNHasBeenSet; }
+
+    
     inline void SetGatewayARN(const Aws::String& value) { m_gatewayARNHasBeenSet = true; m_gatewayARN = value; }
 
     
@@ -68,6 +71,9 @@ namespace Model
 
     
     inline const Aws::String& GetGatewayName() const{ return m_gatewayName; }
+
+    
+    inline bool GatewayNameHasBeenSet() const { return m_gatewayNameHasBeenSet; }
 
     
     inline void SetGatewayName(const Aws::String& value) { m_gatewayNameHasBeenSet = true; m_gatewayName = value; }
@@ -92,6 +98,11 @@ namespace Model
      * <p>A value that indicates the time zone of the gateway.</p>
      */
     inline const Aws::String& GetGatewayTimezone() const{ return m_gatewayTimezone; }
+
+    /**
+     * <p>A value that indicates the time zone of the gateway.</p>
+     */
+    inline bool GatewayTimezoneHasBeenSet() const { return m_gatewayTimezoneHasBeenSet; }
 
     /**
      * <p>A value that indicates the time zone of the gateway.</p>

@@ -60,6 +60,11 @@ namespace Model
     /**
      * <p>The name of the service in which access was attempted.</p>
      */
+    inline bool ServiceNameHasBeenSet() const { return m_serviceNameHasBeenSet; }
+
+    /**
+     * <p>The name of the service in which access was attempted.</p>
+     */
     inline void SetServiceName(const Aws::String& value) { m_serviceNameHasBeenSet = true; m_serviceName = value; }
 
     /**
@@ -97,6 +102,16 @@ namespace Model
      * period</a>.</p>
      */
     inline const Aws::Utils::DateTime& GetLastAuthenticated() const{ return m_lastAuthenticated; }
+
+    /**
+     * <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601
+     * date-time format</a>, when an authenticated entity most recently attempted to
+     * access the service. AWS does not report unauthenticated requests.</p> <p>This
+     * field is null if no IAM entities attempted to access the service within the <a
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period">reporting
+     * period</a>.</p>
+     */
+    inline bool LastAuthenticatedHasBeenSet() const { return m_lastAuthenticatedHasBeenSet; }
 
     /**
      * <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601
@@ -151,6 +166,19 @@ namespace Model
      * Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
      */
     inline const Aws::String& GetServiceNamespace() const{ return m_serviceNamespace; }
+
+    /**
+     * <p>The namespace of the service in which access was attempted.</p> <p>To learn
+     * the service namespace of a service, go to <a
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_actions-resources-contextkeys.html">Actions,
+     * Resources, and Condition Keys for AWS Services</a> in the <i>IAM User Guide</i>.
+     * Choose the name of the service to view details for that service. In the first
+     * paragraph, find the service prefix. For example, <code>(service prefix:
+     * a4b)</code>. For more information about service namespaces, see <a
+     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces">AWS
+     * Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
+     */
+    inline bool ServiceNamespaceHasBeenSet() const { return m_serviceNamespaceHasBeenSet; }
 
     /**
      * <p>The namespace of the service in which access was attempted.</p> <p>To learn
@@ -247,6 +275,15 @@ namespace Model
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period">reporting
      * period</a>.</p>
      */
+    inline bool LastAuthenticatedEntityHasBeenSet() const { return m_lastAuthenticatedEntityHasBeenSet; }
+
+    /**
+     * <p>The ARN of the authenticated entity (user or role) that last attempted to
+     * access the service. AWS does not report unauthenticated requests.</p> <p>This
+     * field is null if no IAM entities attempted to access the service within the <a
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period">reporting
+     * period</a>.</p>
+     */
     inline void SetLastAuthenticatedEntity(const Aws::String& value) { m_lastAuthenticatedEntityHasBeenSet = true; m_lastAuthenticatedEntity = value; }
 
     /**
@@ -303,6 +340,15 @@ namespace Model
      * period</a>.</p>
      */
     inline int GetTotalAuthenticatedEntities() const{ return m_totalAuthenticatedEntities; }
+
+    /**
+     * <p>The total number of authenticated entities that have attempted to access the
+     * service.</p> <p>This field is null if no IAM entities attempted to access the
+     * service within the <a
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period">reporting
+     * period</a>.</p>
+     */
+    inline bool TotalAuthenticatedEntitiesHasBeenSet() const { return m_totalAuthenticatedEntitiesHasBeenSet; }
 
     /**
      * <p>The total number of authenticated entities that have attempted to access the

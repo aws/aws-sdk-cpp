@@ -60,6 +60,12 @@ namespace Model
      * <p>The name of the provisioning artifact (for example, v1 v2beta). No spaces are
      * allowed.</p>
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>The name of the provisioning artifact (for example, v1 v2beta). No spaces are
+     * allowed.</p>
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
@@ -98,6 +104,12 @@ namespace Model
      * the previous provisioning artifact.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
+
+    /**
+     * <p>The description of the provisioning artifact, including how it differs from
+     * the previous provisioning artifact.</p>
+     */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
 
     /**
      * <p>The description of the provisioning artifact, including how it differs from
@@ -142,6 +154,13 @@ namespace Model
      * "https://s3.amazonaws.com/cf-templates-ozkq9d3hgiq2-us-east-1/..."</code> </p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetInfo() const{ return m_info; }
+
+    /**
+     * <p>The URL of the CloudFormation template in Amazon S3. Specify the URL in JSON
+     * format as follows:</p> <p> <code>"LoadTemplateFromURL":
+     * "https://s3.amazonaws.com/cf-templates-ozkq9d3hgiq2-us-east-1/..."</code> </p>
+     */
+    inline bool InfoHasBeenSet() const { return m_infoHasBeenSet; }
 
     /**
      * <p>The URL of the CloudFormation template in Amazon S3. Specify the URL in JSON
@@ -229,6 +248,15 @@ namespace Model
      * </li> </ul>
      */
     inline const ProvisioningArtifactType& GetType() const{ return m_type; }
+
+    /**
+     * <p>The type of provisioning artifact.</p> <ul> <li> <p>
+     * <code>CLOUD_FORMATION_TEMPLATE</code> - AWS CloudFormation template</p> </li>
+     * <li> <p> <code>MARKETPLACE_AMI</code> - AWS Marketplace AMI</p> </li> <li> <p>
+     * <code>MARKETPLACE_CAR</code> - AWS Marketplace Clusters and AWS Resources</p>
+     * </li> </ul>
+     */
+    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
 
     /**
      * <p>The type of provisioning artifact.</p> <ul> <li> <p>

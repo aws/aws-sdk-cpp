@@ -52,6 +52,11 @@ namespace Model
     /**
      * <p>The ID of the virtual interface.</p>
      */
+    inline bool VirtualInterfaceIdHasBeenSet() const { return m_virtualInterfaceIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the virtual interface.</p>
+     */
     inline void SetVirtualInterfaceId(const Aws::String& value) { m_virtualInterfaceIdHasBeenSet = true; m_virtualInterfaceId = value; }
 
     /**
@@ -84,6 +89,11 @@ namespace Model
      * <p>The ID of the LAG or connection.</p>
      */
     inline const Aws::String& GetConnectionId() const{ return m_connectionId; }
+
+    /**
+     * <p>The ID of the LAG or connection.</p>
+     */
+    inline bool ConnectionIdHasBeenSet() const { return m_connectionIdHasBeenSet; }
 
     /**
      * <p>The ID of the LAG or connection.</p>

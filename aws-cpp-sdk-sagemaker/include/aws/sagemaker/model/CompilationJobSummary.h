@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p>The name of the model compilation job that you want a summary for.</p>
      */
+    inline bool CompilationJobNameHasBeenSet() const { return m_compilationJobNameHasBeenSet; }
+
+    /**
+     * <p>The name of the model compilation job that you want a summary for.</p>
+     */
     inline void SetCompilationJobName(const Aws::String& value) { m_compilationJobNameHasBeenSet = true; m_compilationJobName = value; }
 
     /**
@@ -90,6 +95,11 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the model compilation job.</p>
      */
     inline const Aws::String& GetCompilationJobArn() const{ return m_compilationJobArn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the model compilation job.</p>
+     */
+    inline bool CompilationJobArnHasBeenSet() const { return m_compilationJobArnHasBeenSet; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the model compilation job.</p>
@@ -130,6 +140,11 @@ namespace Model
     /**
      * <p>The time when the model compilation job was created.</p>
      */
+    inline bool CreationTimeHasBeenSet() const { return m_creationTimeHasBeenSet; }
+
+    /**
+     * <p>The time when the model compilation job was created.</p>
+     */
     inline void SetCreationTime(const Aws::Utils::DateTime& value) { m_creationTimeHasBeenSet = true; m_creationTime = value; }
 
     /**
@@ -152,6 +167,11 @@ namespace Model
      * <p>The time when the model compilation job started.</p>
      */
     inline const Aws::Utils::DateTime& GetCompilationStartTime() const{ return m_compilationStartTime; }
+
+    /**
+     * <p>The time when the model compilation job started.</p>
+     */
+    inline bool CompilationStartTimeHasBeenSet() const { return m_compilationStartTimeHasBeenSet; }
 
     /**
      * <p>The time when the model compilation job started.</p>
@@ -182,6 +202,11 @@ namespace Model
     /**
      * <p>The time when the model compilation job completed.</p>
      */
+    inline bool CompilationEndTimeHasBeenSet() const { return m_compilationEndTimeHasBeenSet; }
+
+    /**
+     * <p>The time when the model compilation job completed.</p>
+     */
     inline void SetCompilationEndTime(const Aws::Utils::DateTime& value) { m_compilationEndTimeHasBeenSet = true; m_compilationEndTime = value; }
 
     /**
@@ -205,6 +230,12 @@ namespace Model
      * completed.</p>
      */
     inline const TargetDevice& GetCompilationTargetDevice() const{ return m_compilationTargetDevice; }
+
+    /**
+     * <p>The type of device that the model will run on after compilation has
+     * completed.</p>
+     */
+    inline bool CompilationTargetDeviceHasBeenSet() const { return m_compilationTargetDeviceHasBeenSet; }
 
     /**
      * <p>The type of device that the model will run on after compilation has
@@ -239,6 +270,11 @@ namespace Model
     /**
      * <p>The time when the model compilation job was last modified.</p>
      */
+    inline bool LastModifiedTimeHasBeenSet() const { return m_lastModifiedTimeHasBeenSet; }
+
+    /**
+     * <p>The time when the model compilation job was last modified.</p>
+     */
     inline void SetLastModifiedTime(const Aws::Utils::DateTime& value) { m_lastModifiedTimeHasBeenSet = true; m_lastModifiedTime = value; }
 
     /**
@@ -261,6 +297,11 @@ namespace Model
      * <p>The status of the model compilation job.</p>
      */
     inline const CompilationJobStatus& GetCompilationJobStatus() const{ return m_compilationJobStatus; }
+
+    /**
+     * <p>The status of the model compilation job.</p>
+     */
+    inline bool CompilationJobStatusHasBeenSet() const { return m_compilationJobStatusHasBeenSet; }
 
     /**
      * <p>The status of the model compilation job.</p>

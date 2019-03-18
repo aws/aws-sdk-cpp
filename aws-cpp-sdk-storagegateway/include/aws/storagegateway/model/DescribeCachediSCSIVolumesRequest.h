@@ -57,6 +57,13 @@ namespace Model
      * (ARN) of a cached volume. All of the specified cached volumes must from the same
      * gateway. Use <a>ListVolumes</a> to get volume ARNs for a gateway.</p>
      */
+    inline bool VolumeARNsHasBeenSet() const { return m_volumeARNsHasBeenSet; }
+
+    /**
+     * <p>An array of strings where each string represents the Amazon Resource Name
+     * (ARN) of a cached volume. All of the specified cached volumes must from the same
+     * gateway. Use <a>ListVolumes</a> to get volume ARNs for a gateway.</p>
+     */
     inline void SetVolumeARNs(const Aws::Vector<Aws::String>& value) { m_volumeARNsHasBeenSet = true; m_volumeARNs = value; }
 
     /**

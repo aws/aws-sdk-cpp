@@ -69,6 +69,18 @@ namespace Model
      * </p> </li> </ul> <p>To get the key ID and key ARN for a CMK, use <a>ListKeys</a>
      * or <a>DescribeKey</a>.</p>
      */
+    inline bool KeyIdHasBeenSet() const { return m_keyIdHasBeenSet; }
+
+    /**
+     * <p>The unique identifier for the customer master key (CMK) that the grant
+     * applies to.</p> <p>Specify the key ID or the Amazon Resource Name (ARN) of the
+     * CMK. To specify a CMK in a different AWS account, you must use the key ARN.</p>
+     * <p>For example:</p> <ul> <li> <p>Key ID:
+     * <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li> <li> <p>Key ARN:
+     * <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
+     * </p> </li> </ul> <p>To get the key ID and key ARN for a CMK, use <a>ListKeys</a>
+     * or <a>DescribeKey</a>.</p>
+     */
     inline void SetKeyId(const Aws::String& value) { m_keyIdHasBeenSet = true; m_keyId = value; }
 
     /**
@@ -144,6 +156,19 @@ namespace Model
      * <i>AWS General Reference</i>.</p>
      */
     inline const Aws::String& GetGranteePrincipal() const{ return m_granteePrincipal; }
+
+    /**
+     * <p>The principal that is given permission to perform the operations that the
+     * grant permits.</p> <p>To specify the principal, use the <a
+     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * Resource Name (ARN)</a> of an AWS principal. Valid AWS principals include AWS
+     * accounts (root), IAM users, IAM roles, federated users, and assumed role users.
+     * For examples of the ARN syntax to use for specifying a principal, see <a
+     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-iam">AWS
+     * Identity and Access Management (IAM)</a> in the Example ARNs section of the
+     * <i>AWS General Reference</i>.</p>
+     */
+    inline bool GranteePrincipalHasBeenSet() const { return m_granteePrincipalHasBeenSet; }
 
     /**
      * <p>The principal that is given permission to perform the operations that the
@@ -248,6 +273,19 @@ namespace Model
      * Identity and Access Management (IAM)</a> in the Example ARNs section of the
      * <i>AWS General Reference</i>.</p>
      */
+    inline bool RetiringPrincipalHasBeenSet() const { return m_retiringPrincipalHasBeenSet; }
+
+    /**
+     * <p>The principal that is given permission to retire the grant by using
+     * <a>RetireGrant</a> operation.</p> <p>To specify the principal, use the <a
+     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * Resource Name (ARN)</a> of an AWS principal. Valid AWS principals include AWS
+     * accounts (root), IAM users, federated users, and assumed role users. For
+     * examples of the ARN syntax to use for specifying a principal, see <a
+     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-iam">AWS
+     * Identity and Access Management (IAM)</a> in the Example ARNs section of the
+     * <i>AWS General Reference</i>.</p>
+     */
     inline void SetRetiringPrincipal(const Aws::String& value) { m_retiringPrincipalHasBeenSet = true; m_retiringPrincipal = value; }
 
     /**
@@ -324,6 +362,11 @@ namespace Model
     /**
      * <p>A list of operations that the grant permits.</p>
      */
+    inline bool OperationsHasBeenSet() const { return m_operationsHasBeenSet; }
+
+    /**
+     * <p>A list of operations that the grant permits.</p>
+     */
     inline void SetOperations(const Aws::Vector<GrantOperation>& value) { m_operationsHasBeenSet = true; m_operations = value; }
 
     /**
@@ -368,6 +411,15 @@ namespace Model
      * href="http://docs.aws.amazon.com/kms/latest/developerguide/encryption-context.html">Encryption
      * Context</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
      */
+    inline bool ConstraintsHasBeenSet() const { return m_constraintsHasBeenSet; }
+
+    /**
+     * <p>A structure that you can use to allow certain operations in the grant only
+     * when the desired encryption context is present. For more information about
+     * encryption context, see <a
+     * href="http://docs.aws.amazon.com/kms/latest/developerguide/encryption-context.html">Encryption
+     * Context</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
+     */
     inline void SetConstraints(const GrantConstraints& value) { m_constraintsHasBeenSet = true; m_constraints = value; }
 
     /**
@@ -404,6 +456,13 @@ namespace Model
      * Tokens</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
      */
     inline const Aws::Vector<Aws::String>& GetGrantTokens() const{ return m_grantTokens; }
+
+    /**
+     * <p>A list of grant tokens.</p> <p>For more information, see <a
+     * href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token">Grant
+     * Tokens</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
+     */
+    inline bool GrantTokensHasBeenSet() const { return m_grantTokensHasBeenSet; }
 
     /**
      * <p>A list of grant tokens.</p> <p>For more information, see <a
@@ -469,6 +528,21 @@ namespace Model
      * returned. All grant tokens obtained in this way can be used interchangeably.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
+
+    /**
+     * <p>A friendly name for identifying the grant. Use this value to prevent
+     * unintended creation of duplicate grants when retrying this request.</p> <p>When
+     * this value is absent, all <code>CreateGrant</code> requests result in a new
+     * grant with a unique <code>GrantId</code> even if all the supplied parameters are
+     * identical. This can result in unintended duplicates when you retry the
+     * <code>CreateGrant</code> request.</p> <p>When this value is present, you can
+     * retry a <code>CreateGrant</code> request with identical parameters; if the grant
+     * already exists, the original <code>GrantId</code> is returned without creating a
+     * new grant. Note that the returned grant token is unique with every
+     * <code>CreateGrant</code> request, even when a duplicate <code>GrantId</code> is
+     * returned. All grant tokens obtained in this way can be used interchangeably.</p>
+     */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
      * <p>A friendly name for identifying the grant. Use this value to prevent

@@ -74,6 +74,20 @@ namespace Model
      * request/response functions that got resolved for each field.</p> </li> </ul>
      * </li> </ul>
      */
+    inline bool FieldLogLevelHasBeenSet() const { return m_fieldLogLevelHasBeenSet; }
+
+    /**
+     * <p>The field logging level. Values can be NONE, ERROR, or ALL. </p> <ul> <li>
+     * <p> <b>NONE</b>: No field-level logs are captured.</p> </li> <li> <p>
+     * <b>ERROR</b>: Logs the following information only for the fields that are in
+     * error:</p> <ul> <li> <p>The error section in the server response.</p> </li> <li>
+     * <p>Field-level errors.</p> </li> <li> <p>The generated request/response
+     * functions that got resolved for error fields.</p> </li> </ul> </li> <li> <p>
+     * <b>ALL</b>: The following information is logged for all fields in the query:</p>
+     * <ul> <li> <p>Field-level tracing information.</p> </li> <li> <p>The generated
+     * request/response functions that got resolved for each field.</p> </li> </ul>
+     * </li> </ul>
+     */
     inline void SetFieldLogLevel(const FieldLogLevel& value) { m_fieldLogLevelHasBeenSet = true; m_fieldLogLevel = value; }
 
     /**
@@ -124,6 +138,12 @@ namespace Model
      * logs in your account. </p>
      */
     inline const Aws::String& GetCloudWatchLogsRoleArn() const{ return m_cloudWatchLogsRoleArn; }
+
+    /**
+     * <p>The service role that AWS AppSync will assume to publish to Amazon CloudWatch
+     * logs in your account. </p>
+     */
+    inline bool CloudWatchLogsRoleArnHasBeenSet() const { return m_cloudWatchLogsRoleArnHasBeenSet; }
 
     /**
      * <p>The service role that AWS AppSync will assume to publish to Amazon CloudWatch

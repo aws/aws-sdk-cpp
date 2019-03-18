@@ -54,6 +54,11 @@ namespace Model
     /**
      * <p>The minimum value of the duration range. Must be greater than zero.</p>
      */
+    inline bool MinSecondsHasBeenSet() const { return m_minSecondsHasBeenSet; }
+
+    /**
+     * <p>The minimum value of the duration range. Must be greater than zero.</p>
+     */
     inline void SetMinSeconds(int value) { m_minSecondsHasBeenSet = true; m_minSeconds = value; }
 
     /**
@@ -67,6 +72,12 @@ namespace Model
      * seconds (1 week).</p>
      */
     inline int GetMaxSeconds() const{ return m_maxSeconds; }
+
+    /**
+     * <p>The maximum value of the duration range. Must be less than or equal to 604800
+     * seconds (1 week).</p>
+     */
+    inline bool MaxSecondsHasBeenSet() const { return m_maxSecondsHasBeenSet; }
 
     /**
      * <p>The maximum value of the duration range. Must be less than or equal to 604800

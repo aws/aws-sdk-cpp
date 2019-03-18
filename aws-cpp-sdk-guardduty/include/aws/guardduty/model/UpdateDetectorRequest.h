@@ -54,6 +54,11 @@ namespace Model
     /**
      * The unique ID of the detector that you want to update.
      */
+    inline bool DetectorIdHasBeenSet() const { return m_detectorIdHasBeenSet; }
+
+    /**
+     * The unique ID of the detector that you want to update.
+     */
     inline void SetDetectorId(const Aws::String& value) { m_detectorIdHasBeenSet = true; m_detectorId = value; }
 
     /**
@@ -92,6 +97,12 @@ namespace Model
      * Updated boolean value for the detector that specifies whether the detector is
      * enabled.
      */
+    inline bool EnableHasBeenSet() const { return m_enableHasBeenSet; }
+
+    /**
+     * Updated boolean value for the detector that specifies whether the detector is
+     * enabled.
+     */
     inline void SetEnable(bool value) { m_enableHasBeenSet = true; m_enable = value; }
 
     /**
@@ -106,6 +117,12 @@ namespace Model
      * published.
      */
     inline const FindingPublishingFrequency& GetFindingPublishingFrequency() const{ return m_findingPublishingFrequency; }
+
+    /**
+     * A enum value that specifies how frequently customer got Finding updates
+     * published.
+     */
+    inline bool FindingPublishingFrequencyHasBeenSet() const { return m_findingPublishingFrequencyHasBeenSet; }
 
     /**
      * A enum value that specifies how frequently customer got Finding updates

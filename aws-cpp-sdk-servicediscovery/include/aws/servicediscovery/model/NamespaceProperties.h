@@ -59,6 +59,12 @@ namespace Model
      * <p>A complex type that contains the ID for the Route 53 hosted zone that AWS
      * Cloud Map creates when you create a namespace.</p>
      */
+    inline bool DnsPropertiesHasBeenSet() const { return m_dnsPropertiesHasBeenSet; }
+
+    /**
+     * <p>A complex type that contains the ID for the Route 53 hosted zone that AWS
+     * Cloud Map creates when you create a namespace.</p>
+     */
     inline void SetDnsProperties(const DnsProperties& value) { m_dnsPropertiesHasBeenSet = true; m_dnsProperties = value; }
 
     /**
@@ -84,6 +90,11 @@ namespace Model
      * <p>A complex type that contains the name of an HTTP namespace.</p>
      */
     inline const HttpProperties& GetHttpProperties() const{ return m_httpProperties; }
+
+    /**
+     * <p>A complex type that contains the name of an HTTP namespace.</p>
+     */
+    inline bool HttpPropertiesHasBeenSet() const { return m_httpPropertiesHasBeenSet; }
 
     /**
      * <p>A complex type that contains the name of an HTTP namespace.</p>

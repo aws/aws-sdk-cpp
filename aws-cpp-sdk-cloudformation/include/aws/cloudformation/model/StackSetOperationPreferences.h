@@ -64,6 +64,12 @@ namespace Model
      * <p>The order of the regions in where you want to perform the stack
      * operation.</p>
      */
+    inline bool RegionOrderHasBeenSet() const { return m_regionOrderHasBeenSet; }
+
+    /**
+     * <p>The order of the regions in where you want to perform the stack
+     * operation.</p>
+     */
     inline void SetRegionOrder(const Aws::Vector<Aws::String>& value) { m_regionOrderHasBeenSet = true; m_regionOrder = value; }
 
     /**
@@ -121,6 +127,16 @@ namespace Model
      * <code>FailureToleranceCount</code> or <code>FailureTolerancePercentage</code>
      * (but not both).</p>
      */
+    inline bool FailureToleranceCountHasBeenSet() const { return m_failureToleranceCountHasBeenSet; }
+
+    /**
+     * <p>The number of accounts, per region, for which this operation can fail before
+     * AWS CloudFormation stops the operation in that region. If the operation is
+     * stopped in a region, AWS CloudFormation doesn't attempt the operation in any
+     * subsequent regions.</p> <p>Conditional: You must specify either
+     * <code>FailureToleranceCount</code> or <code>FailureTolerancePercentage</code>
+     * (but not both).</p>
+     */
     inline void SetFailureToleranceCount(int value) { m_failureToleranceCountHasBeenSet = true; m_failureToleranceCount = value; }
 
     /**
@@ -145,6 +161,18 @@ namespace Model
      * <code>FailureTolerancePercentage</code>, but not both.</p>
      */
     inline int GetFailureTolerancePercentage() const{ return m_failureTolerancePercentage; }
+
+    /**
+     * <p>The percentage of accounts, per region, for which this stack operation can
+     * fail before AWS CloudFormation stops the operation in that region. If the
+     * operation is stopped in a region, AWS CloudFormation doesn't attempt the
+     * operation in any subsequent regions.</p> <p>When calculating the number of
+     * accounts based on the specified percentage, AWS CloudFormation rounds
+     * <i>down</i> to the next whole number.</p> <p>Conditional: You must specify
+     * either <code>FailureToleranceCount</code> or
+     * <code>FailureTolerancePercentage</code>, but not both.</p>
+     */
+    inline bool FailureTolerancePercentageHasBeenSet() const { return m_failureTolerancePercentageHasBeenSet; }
 
     /**
      * <p>The percentage of accounts, per region, for which this stack operation can
@@ -195,6 +223,19 @@ namespace Model
      * You must specify either <code>MaxConcurrentCount</code> or
      * <code>MaxConcurrentPercentage</code>, but not both.</p>
      */
+    inline bool MaxConcurrentCountHasBeenSet() const { return m_maxConcurrentCountHasBeenSet; }
+
+    /**
+     * <p>The maximum number of accounts in which to perform this operation at one
+     * time. This is dependent on the value of
+     * <code>FailureToleranceCount</code>—<code>MaxConcurrentCount</code> is at most
+     * one more than the <code>FailureToleranceCount</code> .</p> <p>Note that this
+     * setting lets you specify the <i>maximum</i> for operations. For large
+     * deployments, under certain circumstances the actual number of accounts acted
+     * upon concurrently may be lower due to service throttling.</p> <p>Conditional:
+     * You must specify either <code>MaxConcurrentCount</code> or
+     * <code>MaxConcurrentPercentage</code>, but not both.</p>
+     */
     inline void SetMaxConcurrentCount(int value) { m_maxConcurrentCountHasBeenSet = true; m_maxConcurrentCount = value; }
 
     /**
@@ -224,6 +265,20 @@ namespace Model
      * both.</p>
      */
     inline int GetMaxConcurrentPercentage() const{ return m_maxConcurrentPercentage; }
+
+    /**
+     * <p>The maximum percentage of accounts in which to perform this operation at one
+     * time.</p> <p>When calculating the number of accounts based on the specified
+     * percentage, AWS CloudFormation rounds down to the next whole number. This is
+     * true except in cases where rounding down would result is zero. In this case,
+     * CloudFormation sets the number as one instead.</p> <p>Note that this setting
+     * lets you specify the <i>maximum</i> for operations. For large deployments, under
+     * certain circumstances the actual number of accounts acted upon concurrently may
+     * be lower due to service throttling.</p> <p>Conditional: You must specify either
+     * <code>MaxConcurrentCount</code> or <code>MaxConcurrentPercentage</code>, but not
+     * both.</p>
+     */
+    inline bool MaxConcurrentPercentageHasBeenSet() const { return m_maxConcurrentPercentageHasBeenSet; }
 
     /**
      * <p>The maximum percentage of accounts in which to perform this operation at one

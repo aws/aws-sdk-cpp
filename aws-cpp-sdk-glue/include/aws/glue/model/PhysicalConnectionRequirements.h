@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The subnet ID used by the connection.</p>
      */
+    inline bool SubnetIdHasBeenSet() const { return m_subnetIdHasBeenSet; }
+
+    /**
+     * <p>The subnet ID used by the connection.</p>
+     */
     inline void SetSubnetId(const Aws::String& value) { m_subnetIdHasBeenSet = true; m_subnetId = value; }
 
     /**
@@ -89,6 +94,11 @@ namespace Model
      * <p>The security group ID list used by the connection.</p>
      */
     inline const Aws::Vector<Aws::String>& GetSecurityGroupIdList() const{ return m_securityGroupIdList; }
+
+    /**
+     * <p>The security group ID list used by the connection.</p>
+     */
+    inline bool SecurityGroupIdListHasBeenSet() const { return m_securityGroupIdListHasBeenSet; }
 
     /**
      * <p>The security group ID list used by the connection.</p>
@@ -132,6 +142,13 @@ namespace Model
      * must be populated, but it will be deprecated in the future.</p>
      */
     inline const Aws::String& GetAvailabilityZone() const{ return m_availabilityZone; }
+
+    /**
+     * <p>The connection's Availability Zone. This field is redundant because the
+     * specified subnet implies the Availability Zone to be used. Currently the field
+     * must be populated, but it will be deprecated in the future.</p>
+     */
+    inline bool AvailabilityZoneHasBeenSet() const { return m_availabilityZoneHasBeenSet; }
 
     /**
      * <p>The connection's Availability Zone. This field is redundant because the

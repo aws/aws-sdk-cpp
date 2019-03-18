@@ -61,6 +61,13 @@ namespace Model
      * href="https://www.rfc-editor.org/rfc/rfc3339.txt">RFC3339</a>. If no time stamp
      * is provided, the time stamp of the <a>PutEvents</a> call is used.</p>
      */
+    inline bool TimeHasBeenSet() const { return m_timeHasBeenSet; }
+
+    /**
+     * <p>The time stamp of the event, per <a
+     * href="https://www.rfc-editor.org/rfc/rfc3339.txt">RFC3339</a>. If no time stamp
+     * is provided, the time stamp of the <a>PutEvents</a> call is used.</p>
+     */
     inline void SetTime(const Aws::Utils::DateTime& value) { m_timeHasBeenSet = true; m_time = value; }
 
     /**
@@ -89,6 +96,11 @@ namespace Model
      * <p>The source of the event. This field is required.</p>
      */
     inline const Aws::String& GetSource() const{ return m_source; }
+
+    /**
+     * <p>The source of the event. This field is required.</p>
+     */
+    inline bool SourceHasBeenSet() const { return m_sourceHasBeenSet; }
 
     /**
      * <p>The source of the event. This field is required.</p>
@@ -126,6 +138,12 @@ namespace Model
      * primarily concerns. Any number, including zero, may be present.</p>
      */
     inline const Aws::Vector<Aws::String>& GetResources() const{ return m_resources; }
+
+    /**
+     * <p>AWS resources, identified by Amazon Resource Name (ARN), which the event
+     * primarily concerns. Any number, including zero, may be present.</p>
+     */
+    inline bool ResourcesHasBeenSet() const { return m_resourcesHasBeenSet; }
 
     /**
      * <p>AWS resources, identified by Amazon Resource Name (ARN), which the event
@@ -180,6 +198,12 @@ namespace Model
      * <p>Free-form string used to decide what fields to expect in the event
      * detail.</p>
      */
+    inline bool DetailTypeHasBeenSet() const { return m_detailTypeHasBeenSet; }
+
+    /**
+     * <p>Free-form string used to decide what fields to expect in the event
+     * detail.</p>
+     */
     inline void SetDetailType(const Aws::String& value) { m_detailTypeHasBeenSet = true; m_detailType = value; }
 
     /**
@@ -218,6 +242,12 @@ namespace Model
      * contain fields and nested subobjects.</p>
      */
     inline const Aws::String& GetDetail() const{ return m_detail; }
+
+    /**
+     * <p>A valid JSON string. There is no other schema imposed. The JSON string may
+     * contain fields and nested subobjects.</p>
+     */
+    inline bool DetailHasBeenSet() const { return m_detailHasBeenSet; }
 
     /**
      * <p>A valid JSON string. There is no other schema imposed. The JSON string may

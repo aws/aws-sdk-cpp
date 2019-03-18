@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The current state of the cluster.</p>
      */
+    inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
+
+    /**
+     * <p>The current state of the cluster.</p>
+     */
     inline void SetState(const ClusterState& value) { m_stateHasBeenSet = true; m_state = value; }
 
     /**
@@ -79,6 +84,11 @@ namespace Model
      * <p>The reason for the cluster status change.</p>
      */
     inline const ClusterStateChangeReason& GetStateChangeReason() const{ return m_stateChangeReason; }
+
+    /**
+     * <p>The reason for the cluster status change.</p>
+     */
+    inline bool StateChangeReasonHasBeenSet() const { return m_stateChangeReasonHasBeenSet; }
 
     /**
      * <p>The reason for the cluster status change.</p>
@@ -106,6 +116,12 @@ namespace Model
      * cluster.</p>
      */
     inline const ClusterTimeline& GetTimeline() const{ return m_timeline; }
+
+    /**
+     * <p>A timeline that represents the status of a cluster over the lifetime of the
+     * cluster.</p>
+     */
+    inline bool TimelineHasBeenSet() const { return m_timelineHasBeenSet; }
 
     /**
      * <p>A timeline that represents the status of a cluster over the lifetime of the

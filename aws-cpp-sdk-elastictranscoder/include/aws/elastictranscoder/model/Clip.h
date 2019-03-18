@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>Settings that determine when a clip begins and how long it lasts.</p>
      */
+    inline bool TimeSpanHasBeenSet() const { return m_timeSpanHasBeenSet; }
+
+    /**
+     * <p>Settings that determine when a clip begins and how long it lasts.</p>
+     */
     inline void SetTimeSpan(const TimeSpan& value) { m_timeSpanHasBeenSet = true; m_timeSpan = value; }
 
     /**

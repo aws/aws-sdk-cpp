@@ -60,6 +60,11 @@ namespace Model
     /**
      * <p>The ARN of the project for the run to be scheduled.</p>
      */
+    inline bool ProjectArnHasBeenSet() const { return m_projectArnHasBeenSet; }
+
+    /**
+     * <p>The ARN of the project for the run to be scheduled.</p>
+     */
     inline void SetProjectArn(const Aws::String& value) { m_projectArnHasBeenSet = true; m_projectArn = value; }
 
     /**
@@ -96,6 +101,11 @@ namespace Model
     /**
      * <p>The ARN of the app to schedule a run.</p>
      */
+    inline bool AppArnHasBeenSet() const { return m_appArnHasBeenSet; }
+
+    /**
+     * <p>The ARN of the app to schedule a run.</p>
+     */
     inline void SetAppArn(const Aws::String& value) { m_appArnHasBeenSet = true; m_appArn = value; }
 
     /**
@@ -128,6 +138,11 @@ namespace Model
      * <p>The ARN of the device pool for the run to be scheduled.</p>
      */
     inline const Aws::String& GetDevicePoolArn() const{ return m_devicePoolArn; }
+
+    /**
+     * <p>The ARN of the device pool for the run to be scheduled.</p>
+     */
+    inline bool DevicePoolArnHasBeenSet() const { return m_devicePoolArnHasBeenSet; }
 
     /**
      * <p>The ARN of the device pool for the run to be scheduled.</p>
@@ -174,6 +189,14 @@ namespace Model
      * <p>Either <b> <code>devicePoolArn</code> </b> or <b>
      * <code>deviceSelectionConfiguration</code> </b> is required in a request.</p>
      */
+    inline bool DeviceSelectionConfigurationHasBeenSet() const { return m_deviceSelectionConfigurationHasBeenSet; }
+
+    /**
+     * <p>The filter criteria used to dynamically select a set of devices for a test
+     * run, as well as the maximum number of devices to be included in the run.</p>
+     * <p>Either <b> <code>devicePoolArn</code> </b> or <b>
+     * <code>deviceSelectionConfiguration</code> </b> is required in a request.</p>
+     */
     inline void SetDeviceSelectionConfiguration(const DeviceSelectionConfiguration& value) { m_deviceSelectionConfigurationHasBeenSet = true; m_deviceSelectionConfiguration = value; }
 
     /**
@@ -205,6 +228,11 @@ namespace Model
      * <p>The name for the run to be scheduled.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
+
+    /**
+     * <p>The name for the run to be scheduled.</p>
+     */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
      * <p>The name for the run to be scheduled.</p>
@@ -245,6 +273,11 @@ namespace Model
     /**
      * <p>Information about the test for the run to be scheduled.</p>
      */
+    inline bool TestHasBeenSet() const { return m_testHasBeenSet; }
+
+    /**
+     * <p>Information about the test for the run to be scheduled.</p>
+     */
     inline void SetTest(const ScheduleRunTest& value) { m_testHasBeenSet = true; m_test = value; }
 
     /**
@@ -267,6 +300,11 @@ namespace Model
      * <p>Information about the settings for the run to be scheduled.</p>
      */
     inline const ScheduleRunConfiguration& GetConfiguration() const{ return m_configuration; }
+
+    /**
+     * <p>Information about the settings for the run to be scheduled.</p>
+     */
+    inline bool ConfigurationHasBeenSet() const { return m_configurationHasBeenSet; }
 
     /**
      * <p>Information about the settings for the run to be scheduled.</p>
@@ -294,6 +332,12 @@ namespace Model
      * timeout (in minutes).</p>
      */
     inline const ExecutionConfiguration& GetExecutionConfiguration() const{ return m_executionConfiguration; }
+
+    /**
+     * <p>Specifies configuration information about a test run, such as the execution
+     * timeout (in minutes).</p>
+     */
+    inline bool ExecutionConfigurationHasBeenSet() const { return m_executionConfigurationHasBeenSet; }
 
     /**
      * <p>Specifies configuration information about a test run, such as the execution

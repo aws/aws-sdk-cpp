@@ -55,6 +55,11 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the location to delete.</p>
      */
+    inline bool LocationArnHasBeenSet() const { return m_locationArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the location to delete.</p>
+     */
     inline void SetLocationArn(const Aws::String& value) { m_locationArnHasBeenSet = true; m_locationArn = value; }
 
     /**

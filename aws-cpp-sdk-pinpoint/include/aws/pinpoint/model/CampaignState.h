@@ -63,6 +63,15 @@ Valid values: SCHEDULED, EXECUTING, PENDING_NEXT_RUN, COMPLETED,
 Valid values: SCHEDULED, EXECUTING, PENDING_NEXT_RUN, COMPLETED,
      * PAUSED
      */
+    inline bool CampaignStatusHasBeenSet() const { return m_campaignStatusHasBeenSet; }
+
+    /**
+     * The status of the campaign, or the status of a treatment that belongs to an A/B
+     * test campaign.
+
+Valid values: SCHEDULED, EXECUTING, PENDING_NEXT_RUN, COMPLETED,
+     * PAUSED
+     */
     inline void SetCampaignStatus(const CampaignStatus& value) { m_campaignStatusHasBeenSet = true; m_campaignStatus = value; }
 
     /**

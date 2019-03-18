@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p>The ARN of the resource whose tags you want to modify.</p>
      */
+    inline bool ResourceArnHasBeenSet() const { return m_resourceArnHasBeenSet; }
+
+    /**
+     * <p>The ARN of the resource whose tags you want to modify.</p>
+     */
     inline void SetResourceArn(const Aws::String& value) { m_resourceArnHasBeenSet = true; m_resourceArn = value; }
 
     /**
@@ -90,6 +95,11 @@ namespace Model
      * <p>The new or modified tags for the resource.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>The new or modified tags for the resource.</p>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
      * <p>The new or modified tags for the resource.</p>

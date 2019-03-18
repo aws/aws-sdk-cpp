@@ -55,6 +55,11 @@ namespace Model
     /**
      * The type of encryption used on the content ingested from this source.
      */
+    inline bool DecryptionHasBeenSet() const { return m_decryptionHasBeenSet; }
+
+    /**
+     * The type of encryption used on the content ingested from this source.
+     */
     inline void SetDecryption(const UpdateEncryption& value) { m_decryptionHasBeenSet = true; m_decryption = value; }
 
     /**
@@ -78,6 +83,12 @@ namespace Model
      * current AWS Elemental MediaConnect account.
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
+
+    /**
+     * A description for the source. This value is not used or seen outside of the
+     * current AWS Elemental MediaConnect account.
+     */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
 
     /**
      * A description for the source. This value is not used or seen outside of the
@@ -122,6 +133,13 @@ namespace Model
      * the originator's flow.
      */
     inline const Aws::String& GetEntitlementArn() const{ return m_entitlementArn; }
+
+    /**
+     * The ARN of the entitlement that allows you to subscribe to this flow. The
+     * entitlement is set by the flow originator, and the ARN is generated as part of
+     * the originator's flow.
+     */
+    inline bool EntitlementArnHasBeenSet() const { return m_entitlementArnHasBeenSet; }
 
     /**
      * The ARN of the entitlement that allows you to subscribe to this flow. The
@@ -174,6 +192,11 @@ namespace Model
     /**
      * The flow that is associated with the source that you want to update.
      */
+    inline bool FlowArnHasBeenSet() const { return m_flowArnHasBeenSet; }
+
+    /**
+     * The flow that is associated with the source that you want to update.
+     */
     inline void SetFlowArn(const Aws::String& value) { m_flowArnHasBeenSet = true; m_flowArn = value; }
 
     /**
@@ -210,6 +233,11 @@ namespace Model
     /**
      * The port that the flow will be listening on for incoming content.
      */
+    inline bool IngestPortHasBeenSet() const { return m_ingestPortHasBeenSet; }
+
+    /**
+     * The port that the flow will be listening on for incoming content.
+     */
     inline void SetIngestPort(int value) { m_ingestPortHasBeenSet = true; m_ingestPort = value; }
 
     /**
@@ -222,6 +250,11 @@ namespace Model
      * The smoothing max bitrate for RTP and RTP-FEC streams.
      */
     inline int GetMaxBitrate() const{ return m_maxBitrate; }
+
+    /**
+     * The smoothing max bitrate for RTP and RTP-FEC streams.
+     */
+    inline bool MaxBitrateHasBeenSet() const { return m_maxBitrateHasBeenSet; }
 
     /**
      * The smoothing max bitrate for RTP and RTP-FEC streams.
@@ -242,6 +275,11 @@ namespace Model
     /**
      * The maximum latency in milliseconds for Zixi-based streams.
      */
+    inline bool MaxLatencyHasBeenSet() const { return m_maxLatencyHasBeenSet; }
+
+    /**
+     * The maximum latency in milliseconds for Zixi-based streams.
+     */
     inline void SetMaxLatency(int value) { m_maxLatencyHasBeenSet = true; m_maxLatency = value; }
 
     /**
@@ -254,6 +292,11 @@ namespace Model
      * The protocol that is used by the source.
      */
     inline const Protocol& GetProtocol() const{ return m_protocol; }
+
+    /**
+     * The protocol that is used by the source.
+     */
+    inline bool ProtocolHasBeenSet() const { return m_protocolHasBeenSet; }
 
     /**
      * The protocol that is used by the source.
@@ -280,6 +323,11 @@ namespace Model
      * The ARN of the source that you want to update.
      */
     inline const Aws::String& GetSourceArn() const{ return m_sourceArn; }
+
+    /**
+     * The ARN of the source that you want to update.
+     */
+    inline bool SourceArnHasBeenSet() const { return m_sourceArnHasBeenSet; }
 
     /**
      * The ARN of the source that you want to update.
@@ -317,6 +365,12 @@ namespace Model
      * only to Zixi-based streams.
      */
     inline const Aws::String& GetStreamId() const{ return m_streamId; }
+
+    /**
+     * The stream ID that you want to use for this transport. This parameter applies
+     * only to Zixi-based streams.
+     */
+    inline bool StreamIdHasBeenSet() const { return m_streamIdHasBeenSet; }
 
     /**
      * The stream ID that you want to use for this transport. This parameter applies
@@ -361,6 +415,13 @@ namespace Model
      * Routing (CIDR) block; for example, 10.0.0.0/16.
      */
     inline const Aws::String& GetWhitelistCidr() const{ return m_whitelistCidr; }
+
+    /**
+     * The range of IP addresses that should be allowed to contribute content to your
+     * source. These IP addresses should in the form of a Classless Inter-Domain
+     * Routing (CIDR) block; for example, 10.0.0.0/16.
+     */
+    inline bool WhitelistCidrHasBeenSet() const { return m_whitelistCidrHasBeenSet; }
 
     /**
      * The range of IP addresses that should be allowed to contribute content to your

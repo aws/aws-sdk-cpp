@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The label of the new high-availability partition group.</p>
      */
+    inline bool LabelHasBeenSet() const { return m_labelHasBeenSet; }
+
+    /**
+     * <p>The label of the new high-availability partition group.</p>
+     */
     inline void SetLabel(const Aws::String& value) { m_labelHasBeenSet = true; m_label = value; }
 
     /**

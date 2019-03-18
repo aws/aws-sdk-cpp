@@ -54,6 +54,11 @@ namespace Model
     /**
      * <p>The total number of data objects labeled by a human worker.</p>
      */
+    inline bool HumanLabeledHasBeenSet() const { return m_humanLabeledHasBeenSet; }
+
+    /**
+     * <p>The total number of data objects labeled by a human worker.</p>
+     */
     inline void SetHumanLabeled(int value) { m_humanLabeledHasBeenSet = true; m_humanLabeled = value; }
 
     /**
@@ -72,6 +77,12 @@ namespace Model
      * <p>The total number of data objects that need to be labeled by a human
      * worker.</p>
      */
+    inline bool PendingHumanHasBeenSet() const { return m_pendingHumanHasBeenSet; }
+
+    /**
+     * <p>The total number of data objects that need to be labeled by a human
+     * worker.</p>
+     */
     inline void SetPendingHuman(int value) { m_pendingHumanHasBeenSet = true; m_pendingHuman = value; }
 
     /**
@@ -85,6 +96,11 @@ namespace Model
      * <p>The total number of tasks in the labeling job.</p>
      */
     inline int GetTotal() const{ return m_total; }
+
+    /**
+     * <p>The total number of tasks in the labeling job.</p>
+     */
+    inline bool TotalHasBeenSet() const { return m_totalHasBeenSet; }
 
     /**
      * <p>The total number of tasks in the labeling job.</p>

@@ -52,6 +52,11 @@ namespace Model
     /**
      * <p>The name of the AWS CodeBuild build project that the cache is reset for.</p>
      */
+    inline bool ProjectNameHasBeenSet() const { return m_projectNameHasBeenSet; }
+
+    /**
+     * <p>The name of the AWS CodeBuild build project that the cache is reset for.</p>
+     */
     inline void SetProjectName(const Aws::String& value) { m_projectNameHasBeenSet = true; m_projectName = value; }
 
     /**

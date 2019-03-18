@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The names of the repositories to get information about.</p>
      */
+    inline bool RepositoryNamesHasBeenSet() const { return m_repositoryNamesHasBeenSet; }
+
+    /**
+     * <p>The names of the repositories to get information about.</p>
+     */
     inline void SetRepositoryNames(const Aws::Vector<Aws::String>& value) { m_repositoryNamesHasBeenSet = true; m_repositoryNames = value; }
 
     /**

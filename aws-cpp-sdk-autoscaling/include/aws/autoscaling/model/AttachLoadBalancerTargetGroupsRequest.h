@@ -55,6 +55,11 @@ namespace Model
     /**
      * <p>The name of the Auto Scaling group.</p>
      */
+    inline bool AutoScalingGroupNameHasBeenSet() const { return m_autoScalingGroupNameHasBeenSet; }
+
+    /**
+     * <p>The name of the Auto Scaling group.</p>
+     */
     inline void SetAutoScalingGroupName(const Aws::String& value) { m_autoScalingGroupNameHasBeenSet = true; m_autoScalingGroupName = value; }
 
     /**
@@ -88,6 +93,12 @@ namespace Model
      * 10 target groups.</p>
      */
     inline const Aws::Vector<Aws::String>& GetTargetGroupARNs() const{ return m_targetGroupARNs; }
+
+    /**
+     * <p>The Amazon Resource Names (ARN) of the target groups. You can specify up to
+     * 10 target groups.</p>
+     */
+    inline bool TargetGroupARNsHasBeenSet() const { return m_targetGroupARNsHasBeenSet; }
 
     /**
      * <p>The Amazon Resource Names (ARN) of the target groups. You can specify up to

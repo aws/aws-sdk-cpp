@@ -64,6 +64,11 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the scaling policy.</p>
      */
+    inline bool PolicyARNHasBeenSet() const { return m_policyARNHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the scaling policy.</p>
+     */
     inline void SetPolicyARN(const Aws::String& value) { m_policyARNHasBeenSet = true; m_policyARN = value; }
 
     /**
@@ -96,6 +101,11 @@ namespace Model
      * <p>The name of the scaling policy.</p>
      */
     inline const Aws::String& GetPolicyName() const{ return m_policyName; }
+
+    /**
+     * <p>The name of the scaling policy.</p>
+     */
+    inline bool PolicyNameHasBeenSet() const { return m_policyNameHasBeenSet; }
 
     /**
      * <p>The name of the scaling policy.</p>
@@ -136,6 +146,15 @@ namespace Model
      * Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
      */
     inline const ServiceNamespace& GetServiceNamespace() const{ return m_serviceNamespace; }
+
+    /**
+     * <p>The namespace of the AWS service that provides the resource or
+     * <code>custom-resource</code> for a resource provided by your own application or
+     * service. For more information, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces">AWS
+     * Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
+     */
+    inline bool ServiceNamespaceHasBeenSet() const { return m_serviceNamespaceHasBeenSet; }
 
     /**
      * <p>The namespace of the AWS service that provides the resource or
@@ -206,6 +225,39 @@ namespace Model
      * repository</a>.</p> </li> </ul>
      */
     inline const Aws::String& GetResourceId() const{ return m_resourceId; }
+
+    /**
+     * <p>The identifier of the resource associated with the scaling policy. This
+     * string consists of the resource type and unique identifier.</p> <ul> <li> <p>ECS
+     * service - The resource type is <code>service</code> and the unique identifier is
+     * the cluster name and service name. Example:
+     * <code>service/default/sample-webapp</code>.</p> </li> <li> <p>Spot fleet request
+     * - The resource type is <code>spot-fleet-request</code> and the unique identifier
+     * is the Spot fleet request ID. Example:
+     * <code>spot-fleet-request/sfr-73fbd2ce-aa30-494c-8788-1cee4EXAMPLE</code>.</p>
+     * </li> <li> <p>EMR cluster - The resource type is <code>instancegroup</code> and
+     * the unique identifier is the cluster ID and instance group ID. Example:
+     * <code>instancegroup/j-2EEZNYKUA1NTV/ig-1791Y4E1L8YI0</code>.</p> </li> <li>
+     * <p>AppStream 2.0 fleet - The resource type is <code>fleet</code> and the unique
+     * identifier is the fleet name. Example: <code>fleet/sample-fleet</code>.</p>
+     * </li> <li> <p>DynamoDB table - The resource type is <code>table</code> and the
+     * unique identifier is the resource ID. Example: <code>table/my-table</code>.</p>
+     * </li> <li> <p>DynamoDB global secondary index - The resource type is
+     * <code>index</code> and the unique identifier is the resource ID. Example:
+     * <code>table/my-table/index/my-table-index</code>.</p> </li> <li> <p>Aurora DB
+     * cluster - The resource type is <code>cluster</code> and the unique identifier is
+     * the cluster name. Example: <code>cluster:my-db-cluster</code>.</p> </li> <li>
+     * <p>Amazon SageMaker endpoint variants - The resource type is
+     * <code>variant</code> and the unique identifier is the resource ID. Example:
+     * <code>endpoint/my-end-point/variant/KMeansClustering</code>.</p> </li> <li>
+     * <p>Custom resources are not supported with a resource type. This parameter must
+     * specify the <code>OutputValue</code> from the CloudFormation template stack used
+     * to access the resources. The unique identifier is defined by the service
+     * provider. More information is available in our <a
+     * href="https://github.com/aws/aws-auto-scaling-custom-resource">GitHub
+     * repository</a>.</p> </li> </ul>
+     */
+    inline bool ResourceIdHasBeenSet() const { return m_resourceIdHasBeenSet; }
 
     /**
      * <p>The identifier of the resource associated with the scaling policy. This
@@ -460,6 +512,34 @@ namespace Model
      * <code>custom-resource:ResourceType:Property</code> - The scalable dimension for
      * a custom resource provided by your own application or service.</p> </li> </ul>
      */
+    inline bool ScalableDimensionHasBeenSet() const { return m_scalableDimensionHasBeenSet; }
+
+    /**
+     * <p>The scalable dimension. This string consists of the service namespace,
+     * resource type, and scaling property.</p> <ul> <li> <p>
+     * <code>ecs:service:DesiredCount</code> - The desired task count of an ECS
+     * service.</p> </li> <li> <p> <code>ec2:spot-fleet-request:TargetCapacity</code> -
+     * The target capacity of a Spot fleet request.</p> </li> <li> <p>
+     * <code>elasticmapreduce:instancegroup:InstanceCount</code> - The instance count
+     * of an EMR Instance Group.</p> </li> <li> <p>
+     * <code>appstream:fleet:DesiredCapacity</code> - The desired capacity of an
+     * AppStream 2.0 fleet.</p> </li> <li> <p>
+     * <code>dynamodb:table:ReadCapacityUnits</code> - The provisioned read capacity
+     * for a DynamoDB table.</p> </li> <li> <p>
+     * <code>dynamodb:table:WriteCapacityUnits</code> - The provisioned write capacity
+     * for a DynamoDB table.</p> </li> <li> <p>
+     * <code>dynamodb:index:ReadCapacityUnits</code> - The provisioned read capacity
+     * for a DynamoDB global secondary index.</p> </li> <li> <p>
+     * <code>dynamodb:index:WriteCapacityUnits</code> - The provisioned write capacity
+     * for a DynamoDB global secondary index.</p> </li> <li> <p>
+     * <code>rds:cluster:ReadReplicaCount</code> - The count of Aurora Replicas in an
+     * Aurora DB cluster. Available for Aurora MySQL-compatible edition and Aurora
+     * PostgreSQL-compatible edition.</p> </li> <li> <p>
+     * <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2
+     * instances for an Amazon SageMaker model endpoint variant.</p> </li> <li> <p>
+     * <code>custom-resource:ResourceType:Property</code> - The scalable dimension for
+     * a custom resource provided by your own application or service.</p> </li> </ul>
+     */
     inline void SetScalableDimension(const ScalableDimension& value) { m_scalableDimensionHasBeenSet = true; m_scalableDimension = value; }
 
     /**
@@ -555,6 +635,11 @@ namespace Model
     /**
      * <p>The scaling policy type.</p>
      */
+    inline bool PolicyTypeHasBeenSet() const { return m_policyTypeHasBeenSet; }
+
+    /**
+     * <p>The scaling policy type.</p>
+     */
     inline void SetPolicyType(const PolicyType& value) { m_policyTypeHasBeenSet = true; m_policyType = value; }
 
     /**
@@ -577,6 +662,11 @@ namespace Model
      * <p>A step scaling policy.</p>
      */
     inline const StepScalingPolicyConfiguration& GetStepScalingPolicyConfiguration() const{ return m_stepScalingPolicyConfiguration; }
+
+    /**
+     * <p>A step scaling policy.</p>
+     */
+    inline bool StepScalingPolicyConfigurationHasBeenSet() const { return m_stepScalingPolicyConfigurationHasBeenSet; }
 
     /**
      * <p>A step scaling policy.</p>
@@ -607,6 +697,11 @@ namespace Model
     /**
      * <p>A target tracking scaling policy.</p>
      */
+    inline bool TargetTrackingScalingPolicyConfigurationHasBeenSet() const { return m_targetTrackingScalingPolicyConfigurationHasBeenSet; }
+
+    /**
+     * <p>A target tracking scaling policy.</p>
+     */
     inline void SetTargetTrackingScalingPolicyConfiguration(const TargetTrackingScalingPolicyConfiguration& value) { m_targetTrackingScalingPolicyConfigurationHasBeenSet = true; m_targetTrackingScalingPolicyConfiguration = value; }
 
     /**
@@ -629,6 +724,11 @@ namespace Model
      * <p>The CloudWatch alarms associated with the scaling policy.</p>
      */
     inline const Aws::Vector<Alarm>& GetAlarms() const{ return m_alarms; }
+
+    /**
+     * <p>The CloudWatch alarms associated with the scaling policy.</p>
+     */
+    inline bool AlarmsHasBeenSet() const { return m_alarmsHasBeenSet; }
 
     /**
      * <p>The CloudWatch alarms associated with the scaling policy.</p>
@@ -665,6 +765,11 @@ namespace Model
      * <p>The Unix timestamp for when the scaling policy was created.</p>
      */
     inline const Aws::Utils::DateTime& GetCreationTime() const{ return m_creationTime; }
+
+    /**
+     * <p>The Unix timestamp for when the scaling policy was created.</p>
+     */
+    inline bool CreationTimeHasBeenSet() const { return m_creationTimeHasBeenSet; }
 
     /**
      * <p>The Unix timestamp for when the scaling policy was created.</p>

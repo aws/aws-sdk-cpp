@@ -55,6 +55,11 @@ namespace Model
     /**
      * The ARN of the certificate authority for the group.
      */
+    inline bool GroupCertificateAuthorityArnHasBeenSet() const { return m_groupCertificateAuthorityArnHasBeenSet; }
+
+    /**
+     * The ARN of the certificate authority for the group.
+     */
     inline void SetGroupCertificateAuthorityArn(const Aws::String& value) { m_groupCertificateAuthorityArnHasBeenSet = true; m_groupCertificateAuthorityArn = value; }
 
     /**
@@ -87,6 +92,11 @@ namespace Model
      * The ID of the certificate authority for the group.
      */
     inline const Aws::String& GetGroupCertificateAuthorityId() const{ return m_groupCertificateAuthorityId; }
+
+    /**
+     * The ID of the certificate authority for the group.
+     */
+    inline bool GroupCertificateAuthorityIdHasBeenSet() const { return m_groupCertificateAuthorityIdHasBeenSet; }
 
     /**
      * The ID of the certificate authority for the group.

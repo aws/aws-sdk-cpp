@@ -53,6 +53,11 @@ namespace Model
     /**
      * <p>The identifier of the provisioned product.</p>
      */
+    inline bool ProvisionedProductIdHasBeenSet() const { return m_provisionedProductIdHasBeenSet; }
+
+    /**
+     * <p>The identifier of the provisioned product.</p>
+     */
     inline void SetProvisionedProductId(const Aws::String& value) { m_provisionedProductIdHasBeenSet = true; m_provisionedProductId = value; }
 
     /**
@@ -86,6 +91,12 @@ namespace Model
      * <code>act-fs7abcd89wxyz</code>.</p>
      */
     inline const Aws::String& GetServiceActionId() const{ return m_serviceActionId; }
+
+    /**
+     * <p>The self-service action identifier. For example,
+     * <code>act-fs7abcd89wxyz</code>.</p>
+     */
+    inline bool ServiceActionIdHasBeenSet() const { return m_serviceActionIdHasBeenSet; }
 
     /**
      * <p>The self-service action identifier. For example,
@@ -132,6 +143,11 @@ namespace Model
     /**
      * <p>An idempotency token that uniquely identifies the execute request.</p>
      */
+    inline bool ExecuteTokenHasBeenSet() const { return m_executeTokenHasBeenSet; }
+
+    /**
+     * <p>An idempotency token that uniquely identifies the execute request.</p>
+     */
     inline void SetExecuteToken(const Aws::String& value) { m_executeTokenHasBeenSet = true; m_executeToken = value; }
 
     /**
@@ -166,6 +182,13 @@ namespace Model
      * Chinese</p> </li> </ul>
      */
     inline const Aws::String& GetAcceptLanguage() const{ return m_acceptLanguage; }
+
+    /**
+     * <p>The language code.</p> <ul> <li> <p> <code>en</code> - English (default)</p>
+     * </li> <li> <p> <code>jp</code> - Japanese</p> </li> <li> <p> <code>zh</code> -
+     * Chinese</p> </li> </ul>
+     */
+    inline bool AcceptLanguageHasBeenSet() const { return m_acceptLanguageHasBeenSet; }
 
     /**
      * <p>The language code.</p> <ul> <li> <p> <code>en</code> - English (default)</p>

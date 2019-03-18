@@ -72,6 +72,13 @@ namespace Model
      * result.</p> <note> <p>The <code>Id</code>s of a batch request need to be unique
      * within a request</p> </note>
      */
+    inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
+
+    /**
+     * <p>An identifier for this particular receipt handle used to communicate the
+     * result.</p> <note> <p>The <code>Id</code>s of a batch request need to be unique
+     * within a request</p> </note>
+     */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
     /**
@@ -118,6 +125,11 @@ namespace Model
     /**
      * <p>A receipt handle.</p>
      */
+    inline bool ReceiptHandleHasBeenSet() const { return m_receiptHandleHasBeenSet; }
+
+    /**
+     * <p>A receipt handle.</p>
+     */
     inline void SetReceiptHandle(const Aws::String& value) { m_receiptHandleHasBeenSet = true; m_receiptHandle = value; }
 
     /**
@@ -150,6 +162,11 @@ namespace Model
      * <p>The new value (in seconds) for the message's visibility timeout.</p>
      */
     inline int GetVisibilityTimeout() const{ return m_visibilityTimeout; }
+
+    /**
+     * <p>The new value (in seconds) for the message's visibility timeout.</p>
+     */
+    inline bool VisibilityTimeoutHasBeenSet() const { return m_visibilityTimeoutHasBeenSet; }
 
     /**
      * <p>The new value (in seconds) for the message's visibility timeout.</p>

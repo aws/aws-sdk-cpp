@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p> The ID of the Worker who accepted the HIT.</p>
      */
+    inline bool WorkerIdHasBeenSet() const { return m_workerIdHasBeenSet; }
+
+    /**
+     * <p> The ID of the Worker who accepted the HIT.</p>
+     */
     inline void SetWorkerId(const Aws::String& value) { m_workerIdHasBeenSet = true; m_workerId = value; }
 
     /**
@@ -89,6 +94,11 @@ namespace Model
      * <p> A message explaining the reason the Worker was blocked. </p>
      */
     inline const Aws::String& GetReason() const{ return m_reason; }
+
+    /**
+     * <p> A message explaining the reason the Worker was blocked. </p>
+     */
+    inline bool ReasonHasBeenSet() const { return m_reasonHasBeenSet; }
 
     /**
      * <p> A message explaining the reason the Worker was blocked. </p>

@@ -61,6 +61,11 @@ namespace Model
     /**
      * <p>The ID of the association.</p>
      */
+    inline bool AssociationIdHasBeenSet() const { return m_associationIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the association.</p>
+     */
     inline void SetAssociationId(const Aws::String& value) { m_associationIdHasBeenSet = true; m_associationId = value; }
 
     /**
@@ -93,6 +98,11 @@ namespace Model
      * <p>The ID of the instance.</p>
      */
     inline const Aws::String& GetInstanceId() const{ return m_instanceId; }
+
+    /**
+     * <p>The ID of the instance.</p>
+     */
+    inline bool InstanceIdHasBeenSet() const { return m_instanceIdHasBeenSet; }
 
     /**
      * <p>The ID of the instance.</p>
@@ -133,6 +143,11 @@ namespace Model
     /**
      * <p>The IAM instance profile.</p>
      */
+    inline bool IamInstanceProfileHasBeenSet() const { return m_iamInstanceProfileHasBeenSet; }
+
+    /**
+     * <p>The IAM instance profile.</p>
+     */
     inline void SetIamInstanceProfile(const IamInstanceProfile& value) { m_iamInstanceProfileHasBeenSet = true; m_iamInstanceProfile = value; }
 
     /**
@@ -159,6 +174,11 @@ namespace Model
     /**
      * <p>The state of the association.</p>
      */
+    inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
+
+    /**
+     * <p>The state of the association.</p>
+     */
     inline void SetState(const IamInstanceProfileAssociationState& value) { m_stateHasBeenSet = true; m_state = value; }
 
     /**
@@ -181,6 +201,11 @@ namespace Model
      * <p>The time the IAM instance profile was associated with the instance.</p>
      */
     inline const Aws::Utils::DateTime& GetTimestamp() const{ return m_timestamp; }
+
+    /**
+     * <p>The time the IAM instance profile was associated with the instance.</p>
+     */
+    inline bool TimestampHasBeenSet() const { return m_timestampHasBeenSet; }
 
     /**
      * <p>The time the IAM instance profile was associated with the instance.</p>

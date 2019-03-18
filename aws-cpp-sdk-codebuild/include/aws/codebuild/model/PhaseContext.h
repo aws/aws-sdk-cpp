@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The status code for the context of the build phase.</p>
      */
+    inline bool StatusCodeHasBeenSet() const { return m_statusCodeHasBeenSet; }
+
+    /**
+     * <p>The status code for the context of the build phase.</p>
+     */
     inline void SetStatusCode(const Aws::String& value) { m_statusCodeHasBeenSet = true; m_statusCode = value; }
 
     /**
@@ -89,6 +94,12 @@ namespace Model
      * and an exit code.</p>
      */
     inline const Aws::String& GetMessage() const{ return m_message; }
+
+    /**
+     * <p>An explanation of the build phase's context. This might include a command ID
+     * and an exit code.</p>
+     */
+    inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
 
     /**
      * <p>An explanation of the build phase's context. This might include a command ID

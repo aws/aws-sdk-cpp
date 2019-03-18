@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The value is dynamic and changes at run-time.</p>
      */
+    inline bool ResourceValueHasBeenSet() const { return m_resourceValueHasBeenSet; }
+
+    /**
+     * <p>The value is dynamic and changes at run-time.</p>
+     */
     inline void SetResourceValue(const ResourceValue& value) { m_resourceValueHasBeenSet = true; m_resourceValue = value; }
 
     /**
@@ -79,6 +84,11 @@ namespace Model
      * <p>The value is static and does not change at run-time.</p>
      */
     inline const StaticValue& GetStaticValue() const{ return m_staticValue; }
+
+    /**
+     * <p>The value is static and does not change at run-time.</p>
+     */
+    inline bool StaticValueHasBeenSet() const { return m_staticValueHasBeenSet; }
 
     /**
      * <p>The value is static and does not change at run-time.</p>

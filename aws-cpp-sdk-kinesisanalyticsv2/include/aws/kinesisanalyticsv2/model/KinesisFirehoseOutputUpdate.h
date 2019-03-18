@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the delivery stream to write to. </p>
      */
+    inline bool ResourceARNUpdateHasBeenSet() const { return m_resourceARNUpdateHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the delivery stream to write to. </p>
+     */
     inline void SetResourceARNUpdate(const Aws::String& value) { m_resourceARNUpdateHasBeenSet = true; m_resourceARNUpdate = value; }
 
     /**

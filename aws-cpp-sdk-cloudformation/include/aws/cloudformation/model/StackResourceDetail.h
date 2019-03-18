@@ -61,6 +61,11 @@ namespace Model
     /**
      * <p>The name associated with the stack.</p>
      */
+    inline bool StackNameHasBeenSet() const { return m_stackNameHasBeenSet; }
+
+    /**
+     * <p>The name associated with the stack.</p>
+     */
     inline void SetStackName(const Aws::String& value) { m_stackNameHasBeenSet = true; m_stackName = value; }
 
     /**
@@ -93,6 +98,11 @@ namespace Model
      * <p>Unique identifier of the stack.</p>
      */
     inline const Aws::String& GetStackId() const{ return m_stackId; }
+
+    /**
+     * <p>Unique identifier of the stack.</p>
+     */
+    inline bool StackIdHasBeenSet() const { return m_stackIdHasBeenSet; }
 
     /**
      * <p>Unique identifier of the stack.</p>
@@ -133,6 +143,11 @@ namespace Model
     /**
      * <p>The logical name of the resource specified in the template.</p>
      */
+    inline bool LogicalResourceIdHasBeenSet() const { return m_logicalResourceIdHasBeenSet; }
+
+    /**
+     * <p>The logical name of the resource specified in the template.</p>
+     */
     inline void SetLogicalResourceId(const Aws::String& value) { m_logicalResourceIdHasBeenSet = true; m_logicalResourceId = value; }
 
     /**
@@ -166,6 +181,12 @@ namespace Model
      * resource supported by AWS CloudFormation.</p>
      */
     inline const Aws::String& GetPhysicalResourceId() const{ return m_physicalResourceId; }
+
+    /**
+     * <p>The name or unique identifier that corresponds to a physical instance ID of a
+     * resource supported by AWS CloudFormation.</p>
+     */
+    inline bool PhysicalResourceIdHasBeenSet() const { return m_physicalResourceIdHasBeenSet; }
 
     /**
      * <p>The name or unique identifier that corresponds to a physical instance ID of a
@@ -210,6 +231,13 @@ namespace Model
      * AWS Resource Types Reference</a> in the AWS CloudFormation User Guide.)</p>
      */
     inline const Aws::String& GetResourceType() const{ return m_resourceType; }
+
+    /**
+     * <p>Type of resource. ((For more information, go to <a
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">
+     * AWS Resource Types Reference</a> in the AWS CloudFormation User Guide.)</p>
+     */
+    inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
 
     /**
      * <p>Type of resource. ((For more information, go to <a
@@ -262,6 +290,11 @@ namespace Model
     /**
      * <p>Time the status was updated.</p>
      */
+    inline bool LastUpdatedTimestampHasBeenSet() const { return m_lastUpdatedTimestampHasBeenSet; }
+
+    /**
+     * <p>Time the status was updated.</p>
+     */
     inline void SetLastUpdatedTimestamp(const Aws::Utils::DateTime& value) { m_lastUpdatedTimestampHasBeenSet = true; m_lastUpdatedTimestamp = value; }
 
     /**
@@ -288,6 +321,11 @@ namespace Model
     /**
      * <p>Current status of the resource.</p>
      */
+    inline bool ResourceStatusHasBeenSet() const { return m_resourceStatusHasBeenSet; }
+
+    /**
+     * <p>Current status of the resource.</p>
+     */
     inline void SetResourceStatus(const ResourceStatus& value) { m_resourceStatusHasBeenSet = true; m_resourceStatus = value; }
 
     /**
@@ -310,6 +348,11 @@ namespace Model
      * <p>Success/failure message associated with the resource.</p>
      */
     inline const Aws::String& GetResourceStatusReason() const{ return m_resourceStatusReason; }
+
+    /**
+     * <p>Success/failure message associated with the resource.</p>
+     */
+    inline bool ResourceStatusReasonHasBeenSet() const { return m_resourceStatusReasonHasBeenSet; }
 
     /**
      * <p>Success/failure message associated with the resource.</p>
@@ -350,6 +393,11 @@ namespace Model
     /**
      * <p>User defined description associated with the resource.</p>
      */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
+
+    /**
+     * <p>User defined description associated with the resource.</p>
+     */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
@@ -385,6 +433,14 @@ namespace Model
      * Attribute</a> in the AWS CloudFormation User Guide.</p>
      */
     inline const Aws::String& GetMetadata() const{ return m_metadata; }
+
+    /**
+     * <p>The content of the <code>Metadata</code> attribute declared for the resource.
+     * For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-attribute-metadata.html">Metadata
+     * Attribute</a> in the AWS CloudFormation User Guide.</p>
+     */
+    inline bool MetadataHasBeenSet() const { return m_metadataHasBeenSet; }
 
     /**
      * <p>The content of the <code>Metadata</code> attribute declared for the resource.
@@ -444,6 +500,16 @@ namespace Model
      * Unregulated Configuration Changes to Stacks and Resources</a>.</p>
      */
     inline const StackResourceDriftInformation& GetDriftInformation() const{ return m_driftInformation; }
+
+    /**
+     * <p>Information about whether the resource's actual configuration differs, or has
+     * <i>drifted</i>, from its expected configuration, as defined in the stack
+     * template and any values specified as template parameters. For more information,
+     * see <a
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift.html">Detecting
+     * Unregulated Configuration Changes to Stacks and Resources</a>.</p>
+     */
+    inline bool DriftInformationHasBeenSet() const { return m_driftInformationHasBeenSet; }
 
     /**
      * <p>Information about whether the resource's actual configuration differs, or has

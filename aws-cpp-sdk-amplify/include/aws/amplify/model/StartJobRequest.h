@@ -55,6 +55,11 @@ namespace Model
     /**
      * <p> Unique Id for an Amplify App. </p>
      */
+    inline bool AppIdHasBeenSet() const { return m_appIdHasBeenSet; }
+
+    /**
+     * <p> Unique Id for an Amplify App. </p>
+     */
     inline void SetAppId(const Aws::String& value) { m_appIdHasBeenSet = true; m_appId = value; }
 
     /**
@@ -87,6 +92,11 @@ namespace Model
      * <p> Name for the branch, for the Job. </p>
      */
     inline const Aws::String& GetBranchName() const{ return m_branchName; }
+
+    /**
+     * <p> Name for the branch, for the Job. </p>
+     */
+    inline bool BranchNameHasBeenSet() const { return m_branchNameHasBeenSet; }
 
     /**
      * <p> Name for the branch, for the Job. </p>
@@ -127,6 +137,11 @@ namespace Model
     /**
      * <p> Unique Id for the Job. </p>
      */
+    inline bool JobIdHasBeenSet() const { return m_jobIdHasBeenSet; }
+
+    /**
+     * <p> Unique Id for the Job. </p>
+     */
     inline void SetJobId(const Aws::String& value) { m_jobIdHasBeenSet = true; m_jobId = value; }
 
     /**
@@ -163,6 +178,11 @@ namespace Model
     /**
      * <p> Type for the Job. </p>
      */
+    inline bool JobTypeHasBeenSet() const { return m_jobTypeHasBeenSet; }
+
+    /**
+     * <p> Type for the Job. </p>
+     */
     inline void SetJobType(const JobType& value) { m_jobTypeHasBeenSet = true; m_jobType = value; }
 
     /**
@@ -185,6 +205,11 @@ namespace Model
      * <p> Reason for the Job. </p>
      */
     inline const Aws::String& GetJobReason() const{ return m_jobReason; }
+
+    /**
+     * <p> Reason for the Job. </p>
+     */
+    inline bool JobReasonHasBeenSet() const { return m_jobReasonHasBeenSet; }
 
     /**
      * <p> Reason for the Job. </p>
@@ -225,6 +250,11 @@ namespace Model
     /**
      * <p> Commit Id from 3rd party repository provider for the Job. </p>
      */
+    inline bool CommitIdHasBeenSet() const { return m_commitIdHasBeenSet; }
+
+    /**
+     * <p> Commit Id from 3rd party repository provider for the Job. </p>
+     */
     inline void SetCommitId(const Aws::String& value) { m_commitIdHasBeenSet = true; m_commitId = value; }
 
     /**
@@ -261,6 +291,11 @@ namespace Model
     /**
      * <p> Commit message from 3rd party repository provider for the Job. </p>
      */
+    inline bool CommitMessageHasBeenSet() const { return m_commitMessageHasBeenSet; }
+
+    /**
+     * <p> Commit message from 3rd party repository provider for the Job. </p>
+     */
     inline void SetCommitMessage(const Aws::String& value) { m_commitMessageHasBeenSet = true; m_commitMessage = value; }
 
     /**
@@ -293,6 +328,11 @@ namespace Model
      * <p> Commit date / time for the Job. </p>
      */
     inline const Aws::Utils::DateTime& GetCommitTime() const{ return m_commitTime; }
+
+    /**
+     * <p> Commit date / time for the Job. </p>
+     */
+    inline bool CommitTimeHasBeenSet() const { return m_commitTimeHasBeenSet; }
 
     /**
      * <p> Commit date / time for the Job. </p>

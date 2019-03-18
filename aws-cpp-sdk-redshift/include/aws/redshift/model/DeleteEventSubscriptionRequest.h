@@ -59,6 +59,12 @@ namespace Model
      * <p>The name of the Amazon Redshift event notification subscription to be
      * deleted.</p>
      */
+    inline bool SubscriptionNameHasBeenSet() const { return m_subscriptionNameHasBeenSet; }
+
+    /**
+     * <p>The name of the Amazon Redshift event notification subscription to be
+     * deleted.</p>
+     */
     inline void SetSubscriptionName(const Aws::String& value) { m_subscriptionNameHasBeenSet = true; m_subscriptionName = value; }
 
     /**

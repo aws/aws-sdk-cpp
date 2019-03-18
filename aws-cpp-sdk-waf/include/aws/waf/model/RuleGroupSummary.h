@@ -70,6 +70,18 @@ namespace Model
      * <a>DeleteRuleGroup</a>).</p> <p> <code>RuleGroupId</code> is returned by
      * <a>CreateRuleGroup</a> and by <a>ListRuleGroups</a>.</p>
      */
+    inline bool RuleGroupIdHasBeenSet() const { return m_ruleGroupIdHasBeenSet; }
+
+    /**
+     * <p>A unique identifier for a <code>RuleGroup</code>. You use
+     * <code>RuleGroupId</code> to get more information about a <code>RuleGroup</code>
+     * (see <a>GetRuleGroup</a>), update a <code>RuleGroup</code> (see
+     * <a>UpdateRuleGroup</a>), insert a <code>RuleGroup</code> into a
+     * <code>WebACL</code> or delete one from a <code>WebACL</code> (see
+     * <a>UpdateWebACL</a>), or delete a <code>RuleGroup</code> from AWS WAF (see
+     * <a>DeleteRuleGroup</a>).</p> <p> <code>RuleGroupId</code> is returned by
+     * <a>CreateRuleGroup</a> and by <a>ListRuleGroups</a>.</p>
+     */
     inline void SetRuleGroupId(const Aws::String& value) { m_ruleGroupIdHasBeenSet = true; m_ruleGroupId = value; }
 
     /**
@@ -138,6 +150,12 @@ namespace Model
      * name of a <code>RuleGroup</code> after you create it.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
+
+    /**
+     * <p>A friendly name or description of the <a>RuleGroup</a>. You can't change the
+     * name of a <code>RuleGroup</code> after you create it.</p>
+     */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
      * <p>A friendly name or description of the <a>RuleGroup</a>. You can't change the

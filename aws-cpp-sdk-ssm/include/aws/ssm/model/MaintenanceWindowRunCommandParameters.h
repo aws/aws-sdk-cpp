@@ -76,6 +76,11 @@ namespace Model
     /**
      * <p>Information about the command(s) to execute.</p>
      */
+    inline bool CommentHasBeenSet() const { return m_commentHasBeenSet; }
+
+    /**
+     * <p>Information about the command(s) to execute.</p>
+     */
     inline void SetComment(const Aws::String& value) { m_commentHasBeenSet = true; m_comment = value; }
 
     /**
@@ -109,6 +114,12 @@ namespace Model
      * created. SHA-1 hashes have been deprecated.</p>
      */
     inline const Aws::String& GetDocumentHash() const{ return m_documentHash; }
+
+    /**
+     * <p>The SHA-256 or SHA-1 hash created by the system when the document was
+     * created. SHA-1 hashes have been deprecated.</p>
+     */
+    inline bool DocumentHashHasBeenSet() const { return m_documentHashHasBeenSet; }
 
     /**
      * <p>The SHA-256 or SHA-1 hash created by the system when the document was
@@ -155,6 +166,11 @@ namespace Model
     /**
      * <p>SHA-256 or SHA-1. SHA-1 hashes have been deprecated.</p>
      */
+    inline bool DocumentHashTypeHasBeenSet() const { return m_documentHashTypeHasBeenSet; }
+
+    /**
+     * <p>SHA-256 or SHA-1. SHA-1 hashes have been deprecated.</p>
+     */
     inline void SetDocumentHashType(const DocumentHashType& value) { m_documentHashTypeHasBeenSet = true; m_documentHashType = value; }
 
     /**
@@ -178,6 +194,12 @@ namespace Model
      * per-instance basis.</p>
      */
     inline const NotificationConfig& GetNotificationConfig() const{ return m_notificationConfig; }
+
+    /**
+     * <p>Configurations for sending notifications about command status changes on a
+     * per-instance basis.</p>
+     */
+    inline bool NotificationConfigHasBeenSet() const { return m_notificationConfigHasBeenSet; }
 
     /**
      * <p>Configurations for sending notifications about command status changes on a
@@ -208,6 +230,11 @@ namespace Model
      * <p>The name of the Amazon S3 bucket.</p>
      */
     inline const Aws::String& GetOutputS3BucketName() const{ return m_outputS3BucketName; }
+
+    /**
+     * <p>The name of the Amazon S3 bucket.</p>
+     */
+    inline bool OutputS3BucketNameHasBeenSet() const { return m_outputS3BucketNameHasBeenSet; }
 
     /**
      * <p>The name of the Amazon S3 bucket.</p>
@@ -248,6 +275,11 @@ namespace Model
     /**
      * <p>The Amazon S3 bucket subfolder.</p>
      */
+    inline bool OutputS3KeyPrefixHasBeenSet() const { return m_outputS3KeyPrefixHasBeenSet; }
+
+    /**
+     * <p>The Amazon S3 bucket subfolder.</p>
+     */
     inline void SetOutputS3KeyPrefix(const Aws::String& value) { m_outputS3KeyPrefixHasBeenSet = true; m_outputS3KeyPrefix = value; }
 
     /**
@@ -280,6 +312,11 @@ namespace Model
      * <p>The parameters for the RUN_COMMAND task execution.</p>
      */
     inline const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& GetParameters() const{ return m_parameters; }
+
+    /**
+     * <p>The parameters for the RUN_COMMAND task execution.</p>
+     */
+    inline bool ParametersHasBeenSet() const { return m_parametersHasBeenSet; }
 
     /**
      * <p>The parameters for the RUN_COMMAND task execution.</p>
@@ -340,6 +377,11 @@ namespace Model
     /**
      * <p>The IAM service role to assume during task execution.</p>
      */
+    inline bool ServiceRoleArnHasBeenSet() const { return m_serviceRoleArnHasBeenSet; }
+
+    /**
+     * <p>The IAM service role to assume during task execution.</p>
+     */
     inline void SetServiceRoleArn(const Aws::String& value) { m_serviceRoleArnHasBeenSet = true; m_serviceRoleArn = value; }
 
     /**
@@ -373,6 +415,12 @@ namespace Model
      * doesn't run.</p>
      */
     inline int GetTimeoutSeconds() const{ return m_timeoutSeconds; }
+
+    /**
+     * <p>If this time is reached and the command has not already started executing, it
+     * doesn't run.</p>
+     */
+    inline bool TimeoutSecondsHasBeenSet() const { return m_timeoutSecondsHasBeenSet; }
 
     /**
      * <p>If this time is reached and the command has not already started executing, it

@@ -56,6 +56,11 @@ namespace Model
     /**
      * The arn for the application.
      */
+    inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
+
+    /**
+     * The arn for the application.
+     */
     inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
 
     /**
@@ -88,6 +93,11 @@ namespace Model
      * The unique application ID.
      */
     inline const Aws::String& GetId() const{ return m_id; }
+
+    /**
+     * The unique application ID.
+     */
+    inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
 
     /**
      * The unique application ID.
@@ -128,6 +138,11 @@ namespace Model
     /**
      * The display name of the application.
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * The display name of the application.
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
@@ -160,6 +175,11 @@ namespace Model
      * The Tags for the application.
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
+
+    /**
+     * The Tags for the application.
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
      * The Tags for the application.

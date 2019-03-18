@@ -51,6 +51,11 @@ namespace Model
     /**
      * <p>Uniquely identifies a backup plan.</p>
      */
+    inline bool BackupPlanIdHasBeenSet() const { return m_backupPlanIdHasBeenSet; }
+
+    /**
+     * <p>Uniquely identifies a backup plan.</p>
+     */
     inline void SetBackupPlanId(const Aws::String& value) { m_backupPlanIdHasBeenSet = true; m_backupPlanId = value; }
 
     /**
@@ -84,6 +89,12 @@ namespace Model
      * and one or more sets of <code>Rules</code>.</p>
      */
     inline const BackupPlanInput& GetBackupPlan() const{ return m_backupPlan; }
+
+    /**
+     * <p>Specifies the body of a backup plan. Includes a <code>BackupPlanName</code>
+     * and one or more sets of <code>Rules</code>.</p>
+     */
+    inline bool BackupPlanHasBeenSet() const { return m_backupPlanHasBeenSet; }
 
     /**
      * <p>Specifies the body of a backup plan. Includes a <code>BackupPlanName</code>

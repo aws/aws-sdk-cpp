@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p>The amount of data in GB allocated for monthly data transfers.</p>
      */
+    inline bool MonthlyTransferHasBeenSet() const { return m_monthlyTransferHasBeenSet; }
+
+    /**
+     * <p>The amount of data in GB allocated for monthly data transfers.</p>
+     */
     inline void SetMonthlyTransfer(const MonthlyTransfer& value) { m_monthlyTransferHasBeenSet = true; m_monthlyTransfer = value; }
 
     /**
@@ -81,6 +86,12 @@ namespace Model
      * instance.</p>
      */
     inline const Aws::Vector<InstancePortInfo>& GetPorts() const{ return m_ports; }
+
+    /**
+     * <p>An array of key-value pairs containing information about the ports on the
+     * instance.</p>
+     */
+    inline bool PortsHasBeenSet() const { return m_portsHasBeenSet; }
 
     /**
      * <p>An array of key-value pairs containing information about the ports on the

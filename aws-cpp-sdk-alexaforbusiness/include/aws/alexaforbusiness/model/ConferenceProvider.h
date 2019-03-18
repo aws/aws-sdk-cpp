@@ -62,6 +62,11 @@ namespace Model
     /**
      * <p>The ARN of the newly created conference provider.</p>
      */
+    inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
+
+    /**
+     * <p>The ARN of the newly created conference provider.</p>
+     */
     inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
 
     /**
@@ -94,6 +99,11 @@ namespace Model
      * <p>The name of the conference provider.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
+
+    /**
+     * <p>The name of the conference provider.</p>
+     */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
      * <p>The name of the conference provider.</p>
@@ -134,6 +144,11 @@ namespace Model
     /**
      * <p>The type of conference providers.</p>
      */
+    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
+
+    /**
+     * <p>The type of conference providers.</p>
+     */
     inline void SetType(const ConferenceProviderType& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
@@ -156,6 +171,11 @@ namespace Model
      * <p>The IP endpoint and protocol for calling.</p>
      */
     inline const IPDialIn& GetIPDialIn() const{ return m_iPDialIn; }
+
+    /**
+     * <p>The IP endpoint and protocol for calling.</p>
+     */
+    inline bool IPDialInHasBeenSet() const { return m_iPDialInHasBeenSet; }
 
     /**
      * <p>The IP endpoint and protocol for calling.</p>
@@ -186,6 +206,11 @@ namespace Model
     /**
      * <p>The information for PSTN conferencing.</p>
      */
+    inline bool PSTNDialInHasBeenSet() const { return m_pSTNDialInHasBeenSet; }
+
+    /**
+     * <p>The information for PSTN conferencing.</p>
+     */
     inline void SetPSTNDialIn(const PSTNDialIn& value) { m_pSTNDialInHasBeenSet = true; m_pSTNDialIn = value; }
 
     /**
@@ -208,6 +233,11 @@ namespace Model
      * <p>The meeting settings for the conference provider.</p>
      */
     inline const MeetingSetting& GetMeetingSetting() const{ return m_meetingSetting; }
+
+    /**
+     * <p>The meeting settings for the conference provider.</p>
+     */
+    inline bool MeetingSettingHasBeenSet() const { return m_meetingSettingHasBeenSet; }
 
     /**
      * <p>The meeting settings for the conference provider.</p>

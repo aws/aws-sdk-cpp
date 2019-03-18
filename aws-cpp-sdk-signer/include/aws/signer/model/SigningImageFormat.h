@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The supported formats of an AWS Signer signing image.</p>
      */
+    inline bool SupportedFormatsHasBeenSet() const { return m_supportedFormatsHasBeenSet; }
+
+    /**
+     * <p>The supported formats of an AWS Signer signing image.</p>
+     */
     inline void SetSupportedFormats(const Aws::Vector<ImageFormat>& value) { m_supportedFormatsHasBeenSet = true; m_supportedFormats = value; }
 
     /**
@@ -89,6 +94,11 @@ namespace Model
      * <p>The default format of an AWS Signer signing image.</p>
      */
     inline const ImageFormat& GetDefaultFormat() const{ return m_defaultFormat; }
+
+    /**
+     * <p>The default format of an AWS Signer signing image.</p>
+     */
+    inline bool DefaultFormatHasBeenSet() const { return m_defaultFormatHasBeenSet; }
 
     /**
      * <p>The default format of an AWS Signer signing image.</p>

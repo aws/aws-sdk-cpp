@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The HTTP port the custom origin listens on.</p>
      */
+    inline bool HTTPPortHasBeenSet() const { return m_hTTPPortHasBeenSet; }
+
+    /**
+     * <p>The HTTP port the custom origin listens on.</p>
+     */
     inline void SetHTTPPort(int value) { m_hTTPPortHasBeenSet = true; m_hTTPPort = value; }
 
     /**
@@ -73,6 +78,11 @@ namespace Model
     /**
      * <p>The HTTPS port the custom origin listens on.</p>
      */
+    inline bool HTTPSPortHasBeenSet() const { return m_hTTPSPortHasBeenSet; }
+
+    /**
+     * <p>The HTTPS port the custom origin listens on.</p>
+     */
     inline void SetHTTPSPort(int value) { m_hTTPSPortHasBeenSet = true; m_hTTPSPort = value; }
 
     /**
@@ -85,6 +95,11 @@ namespace Model
      * <p>The origin protocol policy to apply to your origin.</p>
      */
     inline const OriginProtocolPolicy& GetOriginProtocolPolicy() const{ return m_originProtocolPolicy; }
+
+    /**
+     * <p>The origin protocol policy to apply to your origin.</p>
+     */
+    inline bool OriginProtocolPolicyHasBeenSet() const { return m_originProtocolPolicyHasBeenSet; }
 
     /**
      * <p>The origin protocol policy to apply to your origin.</p>
@@ -112,6 +127,12 @@ namespace Model
      * your origin over HTTPS.</p>
      */
     inline const OriginSslProtocols& GetOriginSslProtocols() const{ return m_originSslProtocols; }
+
+    /**
+     * <p>The SSL/TLS protocols that you want CloudFront to use when communicating with
+     * your origin over HTTPS.</p>
+     */
+    inline bool OriginSslProtocolsHasBeenSet() const { return m_originSslProtocolsHasBeenSet; }
 
     /**
      * <p>The SSL/TLS protocols that you want CloudFront to use when communicating with
@@ -156,6 +177,16 @@ namespace Model
      * time limit, contact the <a
      * href="https://console.aws.amazon.com/support/home#/">AWS Support Center</a>.</p>
      */
+    inline bool OriginReadTimeoutHasBeenSet() const { return m_originReadTimeoutHasBeenSet; }
+
+    /**
+     * <p>You can create a custom origin read timeout. All timeout units are in
+     * seconds. The default origin read timeout is 30 seconds, but you can configure
+     * custom timeout lengths using the CloudFront API. The minimum timeout length is 4
+     * seconds; the maximum is 60 seconds.</p> <p>If you need to increase the maximum
+     * time limit, contact the <a
+     * href="https://console.aws.amazon.com/support/home#/">AWS Support Center</a>.</p>
+     */
     inline void SetOriginReadTimeout(int value) { m_originReadTimeoutHasBeenSet = true; m_originReadTimeout = value; }
 
     /**
@@ -178,6 +209,16 @@ namespace Model
      * href="https://console.aws.amazon.com/support/home#/">AWS Support Center</a>.</p>
      */
     inline int GetOriginKeepaliveTimeout() const{ return m_originKeepaliveTimeout; }
+
+    /**
+     * <p>You can create a custom keep-alive timeout. All timeout units are in seconds.
+     * The default keep-alive timeout is 5 seconds, but you can configure custom
+     * timeout lengths using the CloudFront API. The minimum timeout length is 1
+     * second; the maximum is 60 seconds.</p> <p>If you need to increase the maximum
+     * time limit, contact the <a
+     * href="https://console.aws.amazon.com/support/home#/">AWS Support Center</a>.</p>
+     */
+    inline bool OriginKeepaliveTimeoutHasBeenSet() const { return m_originKeepaliveTimeoutHasBeenSet; }
 
     /**
      * <p>You can create a custom keep-alive timeout. All timeout units are in seconds.

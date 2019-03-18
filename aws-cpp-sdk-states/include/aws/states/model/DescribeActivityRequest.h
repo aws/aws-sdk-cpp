@@ -52,6 +52,11 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the activity to describe.</p>
      */
+    inline bool ActivityArnHasBeenSet() const { return m_activityArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the activity to describe.</p>
+     */
     inline void SetActivityArn(const Aws::String& value) { m_activityArnHasBeenSet = true; m_activityArn = value; }
 
     /**

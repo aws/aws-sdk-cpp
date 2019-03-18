@@ -55,6 +55,12 @@ namespace Model
      * <p>The identifier associated with the organization for which the resource is
      * created.</p>
      */
+    inline bool OrganizationIdHasBeenSet() const { return m_organizationIdHasBeenSet; }
+
+    /**
+     * <p>The identifier associated with the organization for which the resource is
+     * created.</p>
+     */
     inline void SetOrganizationId(const Aws::String& value) { m_organizationIdHasBeenSet = true; m_organizationId = value; }
 
     /**
@@ -96,6 +102,11 @@ namespace Model
     /**
      * <p>The name of the created resource.</p>
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>The name of the created resource.</p>
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
@@ -128,6 +139,11 @@ namespace Model
      * <p>The type of the created resource.</p>
      */
     inline const ResourceType& GetType() const{ return m_type; }
+
+    /**
+     * <p>The type of the created resource.</p>
+     */
+    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
 
     /**
      * <p>The type of the created resource.</p>

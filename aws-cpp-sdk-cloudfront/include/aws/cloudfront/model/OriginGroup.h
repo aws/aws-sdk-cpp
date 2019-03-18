@@ -62,6 +62,11 @@ namespace Model
     /**
      * <p>The origin group's ID.</p>
      */
+    inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
+
+    /**
+     * <p>The origin group's ID.</p>
+     */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
     /**
@@ -100,6 +105,12 @@ namespace Model
      * <p>A complex type that contains information about the failover criteria for an
      * origin group.</p>
      */
+    inline bool FailoverCriteriaHasBeenSet() const { return m_failoverCriteriaHasBeenSet; }
+
+    /**
+     * <p>A complex type that contains information about the failover criteria for an
+     * origin group.</p>
+     */
     inline void SetFailoverCriteria(const OriginGroupFailoverCriteria& value) { m_failoverCriteriaHasBeenSet = true; m_failoverCriteria = value; }
 
     /**
@@ -126,6 +137,12 @@ namespace Model
      * group.</p>
      */
     inline const OriginGroupMembers& GetMembers() const{ return m_members; }
+
+    /**
+     * <p>A complex type that contains information about the origins in an origin
+     * group.</p>
+     */
+    inline bool MembersHasBeenSet() const { return m_membersHasBeenSet; }
 
     /**
      * <p>A complex type that contains information about the origins in an origin

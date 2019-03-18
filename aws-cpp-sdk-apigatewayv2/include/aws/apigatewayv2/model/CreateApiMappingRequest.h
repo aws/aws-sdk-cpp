@@ -50,6 +50,11 @@ namespace Model
     /**
      * <p>The API identifier.</p>
      */
+    inline bool ApiIdHasBeenSet() const { return m_apiIdHasBeenSet; }
+
+    /**
+     * <p>The API identifier.</p>
+     */
     inline void SetApiId(const Aws::String& value) { m_apiIdHasBeenSet = true; m_apiId = value; }
 
     /**
@@ -82,6 +87,11 @@ namespace Model
      * 
      */
     inline const Aws::String& GetApiMappingKey() const{ return m_apiMappingKey; }
+
+    /**
+     * 
+     */
+    inline bool ApiMappingKeyHasBeenSet() const { return m_apiMappingKeyHasBeenSet; }
 
     /**
      * 
@@ -122,6 +132,11 @@ namespace Model
     /**
      * <p>The domain name.</p>
      */
+    inline bool DomainNameHasBeenSet() const { return m_domainNameHasBeenSet; }
+
+    /**
+     * <p>The domain name.</p>
+     */
     inline void SetDomainName(const Aws::String& value) { m_domainNameHasBeenSet = true; m_domainName = value; }
 
     /**
@@ -154,6 +169,11 @@ namespace Model
      * <p>The API stage.</p>
      */
     inline const Aws::String& GetStage() const{ return m_stage; }
+
+    /**
+     * <p>The API stage.</p>
+     */
+    inline bool StageHasBeenSet() const { return m_stageHasBeenSet; }
 
     /**
      * <p>The API stage.</p>

@@ -59,6 +59,11 @@ namespace Model
     /**
      * <p>The name of the placement group.</p>
      */
+    inline bool GroupNameHasBeenSet() const { return m_groupNameHasBeenSet; }
+
+    /**
+     * <p>The name of the placement group.</p>
+     */
     inline void SetGroupName(const Aws::String& value) { m_groupNameHasBeenSet = true; m_groupName = value; }
 
     /**
@@ -95,6 +100,11 @@ namespace Model
     /**
      * <p>The state of the placement group.</p>
      */
+    inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
+
+    /**
+     * <p>The state of the placement group.</p>
+     */
     inline void SetState(const PlacementGroupState& value) { m_stateHasBeenSet = true; m_state = value; }
 
     /**
@@ -117,6 +127,11 @@ namespace Model
      * <p>The placement strategy.</p>
      */
     inline const PlacementStrategy& GetStrategy() const{ return m_strategy; }
+
+    /**
+     * <p>The placement strategy.</p>
+     */
+    inline bool StrategyHasBeenSet() const { return m_strategyHasBeenSet; }
 
     /**
      * <p>The placement strategy.</p>
@@ -144,6 +159,12 @@ namespace Model
      * <code>partition</code>.</p>
      */
     inline int GetPartitionCount() const{ return m_partitionCount; }
+
+    /**
+     * <p>The number of partitions. Valid only if <b>strategy</b> is set to
+     * <code>partition</code>.</p>
+     */
+    inline bool PartitionCountHasBeenSet() const { return m_partitionCountHasBeenSet; }
 
     /**
      * <p>The number of partitions. Valid only if <b>strategy</b> is set to

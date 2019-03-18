@@ -55,6 +55,11 @@ namespace Model
     /**
      * Public IP of where a channel's output comes from
      */
+    inline bool SourceIpHasBeenSet() const { return m_sourceIpHasBeenSet; }
+
+    /**
+     * Public IP of where a channel's output comes from
+     */
     inline void SetSourceIp(const Aws::String& value) { m_sourceIpHasBeenSet = true; m_sourceIp = value; }
 
     /**

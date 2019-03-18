@@ -59,6 +59,11 @@ namespace Model
     /**
      * <p>The user pool ID.</p>
      */
+    inline bool UserPoolIdHasBeenSet() const { return m_userPoolIdHasBeenSet; }
+
+    /**
+     * <p>The user pool ID.</p>
+     */
     inline void SetUserPoolId(const Aws::String& value) { m_userPoolIdHasBeenSet = true; m_userPoolId = value; }
 
     /**
@@ -91,6 +96,11 @@ namespace Model
      * <p>The app client ID.</p>
      */
     inline const Aws::String& GetClientId() const{ return m_clientId; }
+
+    /**
+     * <p>The app client ID.</p>
+     */
+    inline bool ClientIdHasBeenSet() const { return m_clientIdHasBeenSet; }
 
     /**
      * <p>The app client ID.</p>
@@ -133,6 +143,12 @@ namespace Model
      * <p>The compromised credentials risk configuration object including the
      * <code>EventFilter</code> and the <code>EventAction</code> </p>
      */
+    inline bool CompromisedCredentialsRiskConfigurationHasBeenSet() const { return m_compromisedCredentialsRiskConfigurationHasBeenSet; }
+
+    /**
+     * <p>The compromised credentials risk configuration object including the
+     * <code>EventFilter</code> and the <code>EventAction</code> </p>
+     */
     inline void SetCompromisedCredentialsRiskConfiguration(const CompromisedCredentialsRiskConfigurationType& value) { m_compromisedCredentialsRiskConfigurationHasBeenSet = true; m_compromisedCredentialsRiskConfiguration = value; }
 
     /**
@@ -160,6 +176,13 @@ namespace Model
      * case of an account takeover.</p>
      */
     inline const AccountTakeoverRiskConfigurationType& GetAccountTakeoverRiskConfiguration() const{ return m_accountTakeoverRiskConfiguration; }
+
+    /**
+     * <p>The account takeover risk configuration object including the
+     * <code>NotifyConfiguration</code> object and <code>Actions</code> to take in the
+     * case of an account takeover.</p>
+     */
+    inline bool AccountTakeoverRiskConfigurationHasBeenSet() const { return m_accountTakeoverRiskConfigurationHasBeenSet; }
 
     /**
      * <p>The account takeover risk configuration object including the
@@ -198,6 +221,11 @@ namespace Model
     /**
      * <p>The configuration to override the risk decision.</p>
      */
+    inline bool RiskExceptionConfigurationHasBeenSet() const { return m_riskExceptionConfigurationHasBeenSet; }
+
+    /**
+     * <p>The configuration to override the risk decision.</p>
+     */
     inline void SetRiskExceptionConfiguration(const RiskExceptionConfigurationType& value) { m_riskExceptionConfigurationHasBeenSet = true; m_riskExceptionConfiguration = value; }
 
     /**
@@ -220,6 +248,11 @@ namespace Model
      * <p>The last modified date.</p>
      */
     inline const Aws::Utils::DateTime& GetLastModifiedDate() const{ return m_lastModifiedDate; }
+
+    /**
+     * <p>The last modified date.</p>
+     */
+    inline bool LastModifiedDateHasBeenSet() const { return m_lastModifiedDateHasBeenSet; }
 
     /**
      * <p>The last modified date.</p>

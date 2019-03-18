@@ -50,6 +50,11 @@ namespace Model
     /**
      * <p>The request to create a new field-level encryption configuration.</p>
      */
+    inline bool FieldLevelEncryptionConfigHasBeenSet() const { return m_fieldLevelEncryptionConfigHasBeenSet; }
+
+    /**
+     * <p>The request to create a new field-level encryption configuration.</p>
+     */
     inline void SetFieldLevelEncryptionConfig(const FieldLevelEncryptionConfig& value) { m_fieldLevelEncryptionConfigHasBeenSet = true; m_fieldLevelEncryptionConfig = value; }
 
     /**

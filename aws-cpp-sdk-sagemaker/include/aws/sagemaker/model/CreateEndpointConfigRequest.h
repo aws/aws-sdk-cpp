@@ -59,6 +59,13 @@ namespace Model
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateEndpoint.html">CreateEndpoint</a>
      * request. </p>
      */
+    inline bool EndpointConfigNameHasBeenSet() const { return m_endpointConfigNameHasBeenSet; }
+
+    /**
+     * <p>The name of the endpoint configuration. You specify this name in a <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateEndpoint.html">CreateEndpoint</a>
+     * request. </p>
+     */
     inline void SetEndpointConfigName(const Aws::String& value) { m_endpointConfigNameHasBeenSet = true; m_endpointConfigName = value; }
 
     /**
@@ -107,6 +114,12 @@ namespace Model
      * <p>An array of <code>ProductionVariant</code> objects, one for each model that
      * you want to host at this endpoint.</p>
      */
+    inline bool ProductionVariantsHasBeenSet() const { return m_productionVariantsHasBeenSet; }
+
+    /**
+     * <p>An array of <code>ProductionVariant</code> objects, one for each model that
+     * you want to host at this endpoint.</p>
+     */
     inline void SetProductionVariants(const Aws::Vector<ProductionVariant>& value) { m_productionVariantsHasBeenSet = true; m_productionVariants = value; }
 
     /**
@@ -147,6 +160,14 @@ namespace Model
      * Guide</i>. </p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>An array of key-value pairs. For more information, see <a
+     * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-what">Using
+     * Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management User
+     * Guide</i>. </p>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
      * <p>An array of key-value pairs. For more information, see <a
@@ -203,6 +224,13 @@ namespace Model
      * compute instance that hosts the endpoint.</p>
      */
     inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of a AWS Key Management Service key that
+     * Amazon SageMaker uses to encrypt data on the storage volume attached to the ML
+     * compute instance that hosts the endpoint.</p>
+     */
+    inline bool KmsKeyIdHasBeenSet() const { return m_kmsKeyIdHasBeenSet; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of a AWS Key Management Service key that

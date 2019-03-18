@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The text-format code</p>
      */
+    inline bool TextContentHasBeenSet() const { return m_textContentHasBeenSet; }
+
+    /**
+     * <p>The text-format code</p>
+     */
     inline void SetTextContent(const Aws::String& value) { m_textContentHasBeenSet = true; m_textContent = value; }
 
     /**
@@ -89,6 +94,11 @@ namespace Model
      * <p>The checksum that can be used to validate zip-format code.</p>
      */
     inline const Aws::String& GetCodeMD5() const{ return m_codeMD5; }
+
+    /**
+     * <p>The checksum that can be used to validate zip-format code.</p>
+     */
+    inline bool CodeMD5HasBeenSet() const { return m_codeMD5HasBeenSet; }
 
     /**
      * <p>The checksum that can be used to validate zip-format code.</p>
@@ -131,6 +141,12 @@ namespace Model
      * <p>The size in bytes of the application code. Can be used to validate zip-format
      * code.</p>
      */
+    inline bool CodeSizeHasBeenSet() const { return m_codeSizeHasBeenSet; }
+
+    /**
+     * <p>The size in bytes of the application code. Can be used to validate zip-format
+     * code.</p>
+     */
     inline void SetCodeSize(long long value) { m_codeSizeHasBeenSet = true; m_codeSize = value; }
 
     /**
@@ -145,6 +161,12 @@ namespace Model
      * application code stored in Amazon S3.</p>
      */
     inline const S3ApplicationCodeLocationDescription& GetS3ApplicationCodeLocationDescription() const{ return m_s3ApplicationCodeLocationDescription; }
+
+    /**
+     * <p>The S3 bucket Amazon Resource Name (ARN), file key, and object version of the
+     * application code stored in Amazon S3.</p>
+     */
+    inline bool S3ApplicationCodeLocationDescriptionHasBeenSet() const { return m_s3ApplicationCodeLocationDescriptionHasBeenSet; }
 
     /**
      * <p>The S3 bucket Amazon Resource Name (ARN), file key, and object version of the

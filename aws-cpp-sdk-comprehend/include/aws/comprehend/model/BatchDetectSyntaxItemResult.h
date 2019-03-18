@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The zero-based index of the document in the input list.</p>
      */
+    inline bool IndexHasBeenSet() const { return m_indexHasBeenSet; }
+
+    /**
+     * <p>The zero-based index of the document in the input list.</p>
+     */
     inline void SetIndex(int value) { m_indexHasBeenSet = true; m_index = value; }
 
     /**
@@ -69,6 +74,11 @@ namespace Model
      * <p>The syntax tokens for the words in the document, one token for each word.</p>
      */
     inline const Aws::Vector<SyntaxToken>& GetSyntaxTokens() const{ return m_syntaxTokens; }
+
+    /**
+     * <p>The syntax tokens for the words in the document, one token for each word.</p>
+     */
+    inline bool SyntaxTokensHasBeenSet() const { return m_syntaxTokensHasBeenSet; }
 
     /**
      * <p>The syntax tokens for the words in the document, one token for each word.</p>

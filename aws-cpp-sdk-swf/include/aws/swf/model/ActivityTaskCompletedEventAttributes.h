@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The results of the activity task.</p>
      */
+    inline bool ResultHasBeenSet() const { return m_resultHasBeenSet; }
+
+    /**
+     * <p>The results of the activity task.</p>
+     */
     inline void SetResult(const Aws::String& value) { m_resultHasBeenSet = true; m_result = value; }
 
     /**
@@ -96,6 +101,13 @@ namespace Model
      * this activity task was scheduled. This information can be useful for diagnosing
      * problems by tracing back the chain of events leading up to this event.</p>
      */
+    inline bool ScheduledEventIdHasBeenSet() const { return m_scheduledEventIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the <code>ActivityTaskScheduled</code> event that was recorded when
+     * this activity task was scheduled. This information can be useful for diagnosing
+     * problems by tracing back the chain of events leading up to this event.</p>
+     */
     inline void SetScheduledEventId(long long value) { m_scheduledEventIdHasBeenSet = true; m_scheduledEventId = value; }
 
     /**
@@ -112,6 +124,13 @@ namespace Model
      * problems by tracing back the chain of events leading up to this event.</p>
      */
     inline long long GetStartedEventId() const{ return m_startedEventId; }
+
+    /**
+     * <p>The ID of the <code>ActivityTaskStarted</code> event recorded when this
+     * activity task was started. This information can be useful for diagnosing
+     * problems by tracing back the chain of events leading up to this event.</p>
+     */
+    inline bool StartedEventIdHasBeenSet() const { return m_startedEventIdHasBeenSet; }
 
     /**
      * <p>The ID of the <code>ActivityTaskStarted</code> event recorded when this

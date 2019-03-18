@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The name of the stack for which you want drift information.</p>
      */
+    inline bool StackNameHasBeenSet() const { return m_stackNameHasBeenSet; }
+
+    /**
+     * <p>The name of the stack for which you want drift information.</p>
+     */
     inline void SetStackName(const Aws::String& value) { m_stackNameHasBeenSet = true; m_stackName = value; }
 
     /**
@@ -95,6 +100,18 @@ namespace Model
      * CloudFormation does not currently return this value.</p> </li> </ul>
      */
     inline const Aws::Vector<StackResourceDriftStatus>& GetStackResourceDriftStatusFilters() const{ return m_stackResourceDriftStatusFilters; }
+
+    /**
+     * <p>The resource drift status values to use as filters for the resource drift
+     * results returned.</p> <ul> <li> <p> <code>DELETED</code>: The resource differs
+     * from its expected template configuration in that the resource has been
+     * deleted.</p> </li> <li> <p> <code>MODIFIED</code>: One or more resource
+     * properties differ from their expected template values.</p> </li> <li> <p>
+     * <code>IN_SYNC</code>: The resources's actual configuration matches its expected
+     * template configuration.</p> </li> <li> <p> <code>NOT_CHECKED</code>: AWS
+     * CloudFormation does not currently return this value.</p> </li> </ul>
+     */
+    inline bool StackResourceDriftStatusFiltersHasBeenSet() const { return m_stackResourceDriftStatusFiltersHasBeenSet; }
 
     /**
      * <p>The resource drift status values to use as filters for the resource drift
@@ -177,6 +194,11 @@ namespace Model
     /**
      * <p>A string that identifies the next page of stack resource drift results.</p>
      */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
+
+    /**
+     * <p>A string that identifies the next page of stack resource drift results.</p>
+     */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
     /**
@@ -212,6 +234,14 @@ namespace Model
      * request parameter to get the next set of results.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
+
+    /**
+     * <p>The maximum number of results to be returned with a single call. If the
+     * number of available results exceeds this maximum, the response includes a
+     * <code>NextToken</code> value that you can assign to the <code>NextToken</code>
+     * request parameter to get the next set of results.</p>
+     */
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
 
     /**
      * <p>The maximum number of results to be returned with a single call. If the

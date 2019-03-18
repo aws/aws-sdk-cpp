@@ -52,6 +52,11 @@ namespace Model
     /**
      * <p>The ID of the organization.</p>
      */
+    inline bool OrganizationIdHasBeenSet() const { return m_organizationIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the organization.</p>
+     */
     inline void SetOrganizationId(const Aws::String& value) { m_organizationIdHasBeenSet = true; m_organizationId = value; }
 
     /**
@@ -85,6 +90,12 @@ namespace Model
      * endpoint is a URL that begins with <code>https</code>.</p>
      */
     inline const Aws::String& GetEndpoint() const{ return m_endpoint; }
+
+    /**
+     * <p>The endpoint to receive the notifications. If the protocol is HTTPS, the
+     * endpoint is a URL that begins with <code>https</code>.</p>
+     */
+    inline bool EndpointHasBeenSet() const { return m_endpointHasBeenSet; }
 
     /**
      * <p>The endpoint to receive the notifications. If the protocol is HTTPS, the
@@ -133,6 +144,12 @@ namespace Model
      * <p>The protocol to use. The supported value is https, which delivers
      * JSON-encoded messages using HTTPS POST.</p>
      */
+    inline bool ProtocolHasBeenSet() const { return m_protocolHasBeenSet; }
+
+    /**
+     * <p>The protocol to use. The supported value is https, which delivers
+     * JSON-encoded messages using HTTPS POST.</p>
+     */
     inline void SetProtocol(const SubscriptionProtocolType& value) { m_protocolHasBeenSet = true; m_protocol = value; }
 
     /**
@@ -158,6 +175,11 @@ namespace Model
      * <p>The notification type.</p>
      */
     inline const SubscriptionType& GetSubscriptionType() const{ return m_subscriptionType; }
+
+    /**
+     * <p>The notification type.</p>
+     */
+    inline bool SubscriptionTypeHasBeenSet() const { return m_subscriptionTypeHasBeenSet; }
 
     /**
      * <p>The notification type.</p>

@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p>The ID of the AMI in Amazon EC2.</p>
      */
+    inline bool AmiIdHasBeenSet() const { return m_amiIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the AMI in Amazon EC2.</p>
+     */
     inline void SetAmiId(const Aws::String& value) { m_amiIdHasBeenSet = true; m_amiId = value; }
 
     /**
@@ -90,6 +95,11 @@ namespace Model
      * <p>The ID of the AMI on the supported device.</p>
      */
     inline const Aws::String& GetSnowballAmiId() const{ return m_snowballAmiId; }
+
+    /**
+     * <p>The ID of the AMI on the supported device.</p>
+     */
+    inline bool SnowballAmiIdHasBeenSet() const { return m_snowballAmiIdHasBeenSet; }
 
     /**
      * <p>The ID of the AMI on the supported device.</p>

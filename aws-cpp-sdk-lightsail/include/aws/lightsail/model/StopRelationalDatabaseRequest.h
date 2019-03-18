@@ -52,6 +52,11 @@ namespace Model
     /**
      * <p>The name of your database to stop.</p>
      */
+    inline bool RelationalDatabaseNameHasBeenSet() const { return m_relationalDatabaseNameHasBeenSet; }
+
+    /**
+     * <p>The name of your database to stop.</p>
+     */
     inline void SetRelationalDatabaseName(const Aws::String& value) { m_relationalDatabaseNameHasBeenSet = true; m_relationalDatabaseName = value; }
 
     /**
@@ -85,6 +90,12 @@ namespace Model
      * database.</p>
      */
     inline const Aws::String& GetRelationalDatabaseSnapshotName() const{ return m_relationalDatabaseSnapshotName; }
+
+    /**
+     * <p>The name of your new database snapshot to be created before stopping your
+     * database.</p>
+     */
+    inline bool RelationalDatabaseSnapshotNameHasBeenSet() const { return m_relationalDatabaseSnapshotNameHasBeenSet; }
 
     /**
      * <p>The name of your new database snapshot to be created before stopping your

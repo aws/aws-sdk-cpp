@@ -54,6 +54,11 @@ namespace Model
     /**
      * <p>The ARN that specifies the finding that you want to describe.</p>
      */
+    inline bool FindingArnsHasBeenSet() const { return m_findingArnsHasBeenSet; }
+
+    /**
+     * <p>The ARN that specifies the finding that you want to describe.</p>
+     */
     inline void SetFindingArns(const Aws::Vector<Aws::String>& value) { m_findingArnsHasBeenSet = true; m_findingArns = value; }
 
     /**
@@ -92,6 +97,12 @@ namespace Model
      * recommendation, and the short description that identifies the finding.</p>
      */
     inline const Locale& GetLocale() const{ return m_locale; }
+
+    /**
+     * <p>The locale into which you want to translate a finding description,
+     * recommendation, and the short description that identifies the finding.</p>
+     */
+    inline bool LocaleHasBeenSet() const { return m_localeHasBeenSet; }
 
     /**
      * <p>The locale into which you want to translate a finding description,

@@ -63,6 +63,12 @@ namespace Model
      * <p>The automatically generated ID for a job, for example
      * <code>JID123e4567-e89b-12d3-a456-426655440000</code>.</p>
      */
+    inline bool JobIdHasBeenSet() const { return m_jobIdHasBeenSet; }
+
+    /**
+     * <p>The automatically generated ID for a job, for example
+     * <code>JID123e4567-e89b-12d3-a456-426655440000</code>.</p>
+     */
     inline void SetJobId(const Aws::String& value) { m_jobIdHasBeenSet = true; m_jobId = value; }
 
     /**
@@ -104,6 +110,11 @@ namespace Model
     /**
      * <p>The current state of this job.</p>
      */
+    inline bool JobStateHasBeenSet() const { return m_jobStateHasBeenSet; }
+
+    /**
+     * <p>The current state of this job.</p>
+     */
     inline void SetJobState(const JobState& value) { m_jobStateHasBeenSet = true; m_jobState = value; }
 
     /**
@@ -140,6 +151,16 @@ namespace Model
      * job parts associated with a particular master job are listed, because they are
      * created after the master job is created.</p>
      */
+    inline bool IsMasterHasBeenSet() const { return m_isMasterHasBeenSet; }
+
+    /**
+     * <p>A value that indicates that this job is a master job. A master job represents
+     * a successful request to create an export job. Master jobs aren't associated with
+     * any Snowballs. Instead, each master job will have at least one job part, and
+     * each job part is associated with a Snowball. It might take some time before the
+     * job parts associated with a particular master job are listed, because they are
+     * created after the master job is created.</p>
+     */
     inline void SetIsMaster(bool value) { m_isMasterHasBeenSet = true; m_isMaster = value; }
 
     /**
@@ -157,6 +178,11 @@ namespace Model
      * <p>The type of job.</p>
      */
     inline const JobType& GetJobType() const{ return m_jobType; }
+
+    /**
+     * <p>The type of job.</p>
+     */
+    inline bool JobTypeHasBeenSet() const { return m_jobTypeHasBeenSet; }
 
     /**
      * <p>The type of job.</p>
@@ -187,6 +213,11 @@ namespace Model
     /**
      * <p>The type of device used with this job.</p>
      */
+    inline bool SnowballTypeHasBeenSet() const { return m_snowballTypeHasBeenSet; }
+
+    /**
+     * <p>The type of device used with this job.</p>
+     */
     inline void SetSnowballType(const SnowballType& value) { m_snowballTypeHasBeenSet = true; m_snowballType = value; }
 
     /**
@@ -209,6 +240,11 @@ namespace Model
      * <p>The creation date for this job.</p>
      */
     inline const Aws::Utils::DateTime& GetCreationDate() const{ return m_creationDate; }
+
+    /**
+     * <p>The creation date for this job.</p>
+     */
+    inline bool CreationDateHasBeenSet() const { return m_creationDateHasBeenSet; }
 
     /**
      * <p>The creation date for this job.</p>
@@ -236,6 +272,12 @@ namespace Model
      * Photos 2016-08-11</code>.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
+
+    /**
+     * <p>The optional description of this specific job, for example <code>Important
+     * Photos 2016-08-11</code>.</p>
+     */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
 
     /**
      * <p>The optional description of this specific job, for example <code>Important

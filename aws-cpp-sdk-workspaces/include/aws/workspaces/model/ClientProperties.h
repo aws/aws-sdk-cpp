@@ -59,6 +59,13 @@ namespace Model
      * client. When enabled, users can choose to reconnect to their WorkSpaces without
      * re-entering their credentials. </p>
      */
+    inline bool ReconnectEnabledHasBeenSet() const { return m_reconnectEnabledHasBeenSet; }
+
+    /**
+     * <p>Specifies whether users can cache their credentials on the Amazon WorkSpaces
+     * client. When enabled, users can choose to reconnect to their WorkSpaces without
+     * re-entering their credentials. </p>
+     */
     inline void SetReconnectEnabled(const ReconnectEnum& value) { m_reconnectEnabledHasBeenSet = true; m_reconnectEnabled = value; }
 
     /**

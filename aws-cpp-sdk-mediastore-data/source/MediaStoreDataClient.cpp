@@ -109,6 +109,11 @@ void MediaStoreDataClient::OverrideEndpoint(const Aws::String& endpoint)
 }
 DeleteObjectOutcome MediaStoreDataClient::DeleteObject(const DeleteObjectRequest& request) const
 {
+  if (!request.PathHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteObject", "Required field: Path, is not set");
+    return DeleteObjectOutcome(Aws::Client::AWSError<MediaStoreDataErrors>(MediaStoreDataErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Path]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/";
@@ -145,6 +150,11 @@ void MediaStoreDataClient::DeleteObjectAsyncHelper(const DeleteObjectRequest& re
 
 DescribeObjectOutcome MediaStoreDataClient::DescribeObject(const DescribeObjectRequest& request) const
 {
+  if (!request.PathHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DescribeObject", "Required field: Path, is not set");
+    return DescribeObjectOutcome(Aws::Client::AWSError<MediaStoreDataErrors>(MediaStoreDataErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Path]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/";
@@ -181,6 +191,11 @@ void MediaStoreDataClient::DescribeObjectAsyncHelper(const DescribeObjectRequest
 
 GetObjectOutcome MediaStoreDataClient::GetObject(const GetObjectRequest& request) const
 {
+  if (!request.PathHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetObject", "Required field: Path, is not set");
+    return GetObjectOutcome(Aws::Client::AWSError<MediaStoreDataErrors>(MediaStoreDataErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Path]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/";
@@ -252,6 +267,11 @@ void MediaStoreDataClient::ListItemsAsyncHelper(const ListItemsRequest& request,
 
 PutObjectOutcome MediaStoreDataClient::PutObject(const PutObjectRequest& request) const
 {
+  if (!request.PathHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("PutObject", "Required field: Path, is not set");
+    return PutObjectOutcome(Aws::Client::AWSError<MediaStoreDataErrors>(MediaStoreDataErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Path]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/";

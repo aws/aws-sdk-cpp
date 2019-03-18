@@ -57,6 +57,11 @@ namespace Model
     /**
      * Specifies the group to which the audio Rendition belongs.
      */
+    inline bool AudioGroupIdHasBeenSet() const { return m_audioGroupIdHasBeenSet; }
+
+    /**
+     * Specifies the group to which the audio Rendition belongs.
+     */
     inline void SetAudioGroupId(const Aws::String& value) { m_audioGroupIdHasBeenSet = true; m_audioGroupId = value; }
 
     /**
@@ -90,6 +95,12 @@ namespace Model
      * the audio GROUP-IDs that are associated to the video, separate by ','.
      */
     inline const Aws::String& GetAudioRenditionSets() const{ return m_audioRenditionSets; }
+
+    /**
+     * List all the audio groups that are used with the video output stream. Input all
+     * the audio GROUP-IDs that are associated to the video, separate by ','.
+     */
+    inline bool AudioRenditionSetsHasBeenSet() const { return m_audioRenditionSetsHasBeenSet; }
 
     /**
      * List all the audio groups that are used with the video output stream. Input all
@@ -132,6 +143,9 @@ namespace Model
     inline const HlsAudioTrackType& GetAudioTrackType() const{ return m_audioTrackType; }
 
     
+    inline bool AudioTrackTypeHasBeenSet() const { return m_audioTrackTypeHasBeenSet; }
+
+    
     inline void SetAudioTrackType(const HlsAudioTrackType& value) { m_audioTrackTypeHasBeenSet = true; m_audioTrackType = value; }
 
     
@@ -146,6 +160,9 @@ namespace Model
 
     
     inline const HlsIFrameOnlyManifest& GetIFrameOnlyManifest() const{ return m_iFrameOnlyManifest; }
+
+    
+    inline bool IFrameOnlyManifestHasBeenSet() const { return m_iFrameOnlyManifestHasBeenSet; }
 
     
     inline void SetIFrameOnlyManifest(const HlsIFrameOnlyManifest& value) { m_iFrameOnlyManifestHasBeenSet = true; m_iFrameOnlyManifest = value; }
@@ -165,6 +182,12 @@ namespace Model
      * Identifiers":#format_identifier_parameters.
      */
     inline const Aws::String& GetSegmentModifier() const{ return m_segmentModifier; }
+
+    /**
+     * String concatenated to end of segment filenames. Accepts "Format
+     * Identifiers":#format_identifier_parameters.
+     */
+    inline bool SegmentModifierHasBeenSet() const { return m_segmentModifierHasBeenSet; }
 
     /**
      * String concatenated to end of segment filenames. Accepts "Format

@@ -53,6 +53,11 @@ namespace Model
     /**
      * <p>The identifier of the pipeline to read.</p>
      */
+    inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
+
+    /**
+     * <p>The identifier of the pipeline to read.</p>
+     */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
     /**

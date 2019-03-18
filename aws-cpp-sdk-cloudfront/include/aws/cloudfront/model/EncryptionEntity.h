@@ -59,6 +59,12 @@ namespace Model
      * <p>The public key associated with a set of field-level encryption patterns, to
      * be used when encrypting the fields that match the patterns. </p>
      */
+    inline bool PublicKeyIdHasBeenSet() const { return m_publicKeyIdHasBeenSet; }
+
+    /**
+     * <p>The public key associated with a set of field-level encryption patterns, to
+     * be used when encrypting the fields that match the patterns. </p>
+     */
     inline void SetPublicKeyId(const Aws::String& value) { m_publicKeyIdHasBeenSet = true; m_publicKeyId = value; }
 
     /**
@@ -98,6 +104,13 @@ namespace Model
      * decrypt data.</p>
      */
     inline const Aws::String& GetProviderId() const{ return m_providerId; }
+
+    /**
+     * <p>The provider associated with the public key being used for encryption. This
+     * value must also be provided with the private key for applications to be able to
+     * decrypt data.</p>
+     */
+    inline bool ProviderIdHasBeenSet() const { return m_providerIdHasBeenSet; }
 
     /**
      * <p>The provider associated with the public key being used for encryption. This
@@ -150,6 +163,15 @@ namespace Model
      * patterns are case-sensitive. </p>
      */
     inline const FieldPatterns& GetFieldPatterns() const{ return m_fieldPatterns; }
+
+    /**
+     * <p>Field patterns in a field-level encryption content type profile specify the
+     * fields that you want to be encrypted. You can provide the full field name, or
+     * any beginning characters followed by a wildcard (*). You can't overlap field
+     * patterns. For example, you can't have both ABC* and AB*. Note that field
+     * patterns are case-sensitive. </p>
+     */
+    inline bool FieldPatternsHasBeenSet() const { return m_fieldPatternsHasBeenSet; }
 
     /**
      * <p>Field patterns in a field-level encryption content type profile specify the

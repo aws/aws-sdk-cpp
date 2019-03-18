@@ -55,6 +55,11 @@ namespace Model
     /**
      * The city where the endpoint is located.
      */
+    inline bool CityHasBeenSet() const { return m_cityHasBeenSet; }
+
+    /**
+     * The city where the endpoint is located.
+     */
     inline void SetCity(const Aws::String& value) { m_cityHasBeenSet = true; m_city = value; }
 
     /**
@@ -88,6 +93,12 @@ namespace Model
      * ISO 3166-1 alpha-2 code, such as "US" for the United States.
      */
     inline const Aws::String& GetCountry() const{ return m_country; }
+
+    /**
+     * The two-letter code for the country or region of the endpoint. Specified as an
+     * ISO 3166-1 alpha-2 code, such as "US" for the United States.
+     */
+    inline bool CountryHasBeenSet() const { return m_countryHasBeenSet; }
 
     /**
      * The two-letter code for the country or region of the endpoint. Specified as an
@@ -134,6 +145,11 @@ namespace Model
     /**
      * The latitude of the endpoint location, rounded to one decimal place.
      */
+    inline bool LatitudeHasBeenSet() const { return m_latitudeHasBeenSet; }
+
+    /**
+     * The latitude of the endpoint location, rounded to one decimal place.
+     */
     inline void SetLatitude(double value) { m_latitudeHasBeenSet = true; m_latitude = value; }
 
     /**
@@ -150,6 +166,11 @@ namespace Model
     /**
      * The longitude of the endpoint location, rounded to one decimal place.
      */
+    inline bool LongitudeHasBeenSet() const { return m_longitudeHasBeenSet; }
+
+    /**
+     * The longitude of the endpoint location, rounded to one decimal place.
+     */
     inline void SetLongitude(double value) { m_longitudeHasBeenSet = true; m_longitude = value; }
 
     /**
@@ -162,6 +183,11 @@ namespace Model
      * The postal code or zip code of the endpoint.
      */
     inline const Aws::String& GetPostalCode() const{ return m_postalCode; }
+
+    /**
+     * The postal code or zip code of the endpoint.
+     */
+    inline bool PostalCodeHasBeenSet() const { return m_postalCodeHasBeenSet; }
 
     /**
      * The postal code or zip code of the endpoint.
@@ -199,6 +225,12 @@ namespace Model
      * corresponds to a state.
      */
     inline const Aws::String& GetRegion() const{ return m_region; }
+
+    /**
+     * The region of the endpoint location. For example, in the United States, this
+     * corresponds to a state.
+     */
+    inline bool RegionHasBeenSet() const { return m_regionHasBeenSet; }
 
     /**
      * The region of the endpoint location. For example, in the United States, this

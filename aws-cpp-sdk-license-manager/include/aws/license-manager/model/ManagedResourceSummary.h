@@ -55,6 +55,11 @@ namespace Model
     /**
      * <p>Type of resource associated with a license (instance, host, or AMI).</p>
      */
+    inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
+
+    /**
+     * <p>Type of resource associated with a license (instance, host, or AMI).</p>
+     */
     inline void SetResourceType(const ResourceType& value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
 
     /**
@@ -77,6 +82,11 @@ namespace Model
      * <p>Number of resources associated with licenses.</p>
      */
     inline long long GetAssociationCount() const{ return m_associationCount; }
+
+    /**
+     * <p>Number of resources associated with licenses.</p>
+     */
+    inline bool AssociationCountHasBeenSet() const { return m_associationCountHasBeenSet; }
 
     /**
      * <p>Number of resources associated with licenses.</p>

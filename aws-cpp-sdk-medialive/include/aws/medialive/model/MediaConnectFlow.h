@@ -55,6 +55,11 @@ namespace Model
     /**
      * The unique ARN of the MediaConnect Flow being used as a source.
      */
+    inline bool FlowArnHasBeenSet() const { return m_flowArnHasBeenSet; }
+
+    /**
+     * The unique ARN of the MediaConnect Flow being used as a source.
+     */
     inline void SetFlowArn(const Aws::String& value) { m_flowArnHasBeenSet = true; m_flowArn = value; }
 
     /**

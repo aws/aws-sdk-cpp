@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The binary contents of the LOA-CFA document.</p>
      */
+    inline bool LoaContentHasBeenSet() const { return m_loaContentHasBeenSet; }
+
+    /**
+     * <p>The binary contents of the LOA-CFA document.</p>
+     */
     inline void SetLoaContent(const Aws::Utils::ByteBuffer& value) { m_loaContentHasBeenSet = true; m_loaContent = value; }
 
     /**
@@ -80,6 +85,12 @@ namespace Model
      * application/pdf.</p>
      */
     inline const LoaContentType& GetLoaContentType() const{ return m_loaContentType; }
+
+    /**
+     * <p>The standard media type for the LOA-CFA document. The only supported value is
+     * application/pdf.</p>
+     */
+    inline bool LoaContentTypeHasBeenSet() const { return m_loaContentTypeHasBeenSet; }
 
     /**
      * <p>The standard media type for the LOA-CFA document. The only supported value is

@@ -53,6 +53,11 @@ namespace Model
     /**
      * <p>One or more configuration IDs.</p>
      */
+    inline bool ConfigurationIdsHasBeenSet() const { return m_configurationIdsHasBeenSet; }
+
+    /**
+     * <p>One or more configuration IDs.</p>
+     */
     inline void SetConfigurationIds(const Aws::Vector<Aws::String>& value) { m_configurationIdsHasBeenSet = true; m_configurationIds = value; }
 
     /**

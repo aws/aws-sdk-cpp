@@ -62,6 +62,11 @@ namespace Model
     /**
      * <p>The Maintenance Window ID where the task is registered.</p>
      */
+    inline bool WindowIdHasBeenSet() const { return m_windowIdHasBeenSet; }
+
+    /**
+     * <p>The Maintenance Window ID where the task is registered.</p>
+     */
     inline void SetWindowId(const Aws::String& value) { m_windowIdHasBeenSet = true; m_windowId = value; }
 
     /**
@@ -94,6 +99,11 @@ namespace Model
      * <p>The task ID.</p>
      */
     inline const Aws::String& GetWindowTaskId() const{ return m_windowTaskId; }
+
+    /**
+     * <p>The task ID.</p>
+     */
+    inline bool WindowTaskIdHasBeenSet() const { return m_windowTaskIdHasBeenSet; }
 
     /**
      * <p>The task ID.</p>
@@ -133,6 +143,14 @@ namespace Model
      * tasks, it's the state machine ARN.</p>
      */
     inline const Aws::String& GetTaskArn() const{ return m_taskArn; }
+
+    /**
+     * <p>The resource that the task uses during execution. For RUN_COMMAND and
+     * AUTOMATION task types, <code>TaskArn</code> is the Systems Manager document name
+     * or ARN. For LAMBDA tasks, it's the function name or ARN. For STEP_FUNCTION
+     * tasks, it's the state machine ARN.</p>
+     */
+    inline bool TaskArnHasBeenSet() const { return m_taskArnHasBeenSet; }
 
     /**
      * <p>The resource that the task uses during execution. For RUN_COMMAND and
@@ -193,6 +211,12 @@ namespace Model
      * <p>The type of task. The type can be one of the following: RUN_COMMAND,
      * AUTOMATION, LAMBDA, or STEP_FUNCTION.</p>
      */
+    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
+
+    /**
+     * <p>The type of task. The type can be one of the following: RUN_COMMAND,
+     * AUTOMATION, LAMBDA, or STEP_FUNCTION.</p>
+     */
     inline void SetType(const MaintenanceWindowTaskType& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
@@ -220,6 +244,13 @@ namespace Model
      * specified using Key=&lt;tag name&gt;,Values=&lt;tag value&gt;.</p>
      */
     inline const Aws::Vector<Target>& GetTargets() const{ return m_targets; }
+
+    /**
+     * <p>The targets (either instances or tags). Instances are specified using
+     * Key=instanceids,Values=&lt;instanceid1&gt;,&lt;instanceid2&gt;. Tags are
+     * specified using Key=&lt;tag name&gt;,Values=&lt;tag value&gt;.</p>
+     */
+    inline bool TargetsHasBeenSet() const { return m_targetsHasBeenSet; }
 
     /**
      * <p>The targets (either instances or tags). Instances are specified using
@@ -274,6 +305,17 @@ namespace Model
      * <a>MaintenanceWindowTaskInvocationParameters</a>.</p> </note>
      */
     inline const Aws::Map<Aws::String, MaintenanceWindowTaskParameterValueExpression>& GetTaskParameters() const{ return m_taskParameters; }
+
+    /**
+     * <p>The parameters that should be passed to the task when it is executed.</p>
+     * <note> <p> <code>TaskParameters</code> has been deprecated. To specify
+     * parameters to pass to a task when it runs, instead use the
+     * <code>Parameters</code> option in the <code>TaskInvocationParameters</code>
+     * structure. For information about how Systems Manager handles these options for
+     * the supported Maintenance Window task types, see
+     * <a>MaintenanceWindowTaskInvocationParameters</a>.</p> </note>
+     */
+    inline bool TaskParametersHasBeenSet() const { return m_taskParametersHasBeenSet; }
 
     /**
      * <p>The parameters that should be passed to the task when it is executed.</p>
@@ -398,6 +440,13 @@ namespace Model
      * higher the priority. Tasks that have the same priority are scheduled in
      * parallel.</p>
      */
+    inline bool PriorityHasBeenSet() const { return m_priorityHasBeenSet; }
+
+    /**
+     * <p>The priority of the task in the Maintenance Window. The lower the number, the
+     * higher the priority. Tasks that have the same priority are scheduled in
+     * parallel.</p>
+     */
     inline void SetPriority(int value) { m_priorityHasBeenSet = true; m_priority = value; }
 
     /**
@@ -418,6 +467,17 @@ namespace Model
      * types, see <a>MaintenanceWindowTaskInvocationParameters</a>.</p> </note>
      */
     inline const LoggingInfo& GetLoggingInfo() const{ return m_loggingInfo; }
+
+    /**
+     * <p>Information about an Amazon S3 bucket to write task-level logs to.</p> <note>
+     * <p> <code>LoggingInfo</code> has been deprecated. To specify an S3 bucket to
+     * contain logs, instead use the <code>OutputS3BucketName</code> and
+     * <code>OutputS3KeyPrefix</code> options in the
+     * <code>TaskInvocationParameters</code> structure. For information about how
+     * Systems Manager handles these options for the supported Maintenance Window task
+     * types, see <a>MaintenanceWindowTaskInvocationParameters</a>.</p> </note>
+     */
+    inline bool LoggingInfoHasBeenSet() const { return m_loggingInfoHasBeenSet; }
 
     /**
      * <p>Information about an Amazon S3 bucket to write task-level logs to.</p> <note>
@@ -472,6 +532,11 @@ namespace Model
     /**
      * <p>The role that should be assumed when executing the task</p>
      */
+    inline bool ServiceRoleArnHasBeenSet() const { return m_serviceRoleArnHasBeenSet; }
+
+    /**
+     * <p>The role that should be assumed when executing the task</p>
+     */
     inline void SetServiceRoleArn(const Aws::String& value) { m_serviceRoleArnHasBeenSet = true; m_serviceRoleArn = value; }
 
     /**
@@ -504,6 +569,11 @@ namespace Model
      * <p>The maximum number of targets this task can be run for in parallel.</p>
      */
     inline const Aws::String& GetMaxConcurrency() const{ return m_maxConcurrency; }
+
+    /**
+     * <p>The maximum number of targets this task can be run for in parallel.</p>
+     */
+    inline bool MaxConcurrencyHasBeenSet() const { return m_maxConcurrencyHasBeenSet; }
 
     /**
      * <p>The maximum number of targets this task can be run for in parallel.</p>
@@ -541,6 +611,12 @@ namespace Model
      * scheduled.</p>
      */
     inline const Aws::String& GetMaxErrors() const{ return m_maxErrors; }
+
+    /**
+     * <p>The maximum number of errors allowed before this task stops being
+     * scheduled.</p>
+     */
+    inline bool MaxErrorsHasBeenSet() const { return m_maxErrorsHasBeenSet; }
 
     /**
      * <p>The maximum number of errors allowed before this task stops being
@@ -587,6 +663,11 @@ namespace Model
     /**
      * <p>The task name.</p>
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>The task name.</p>
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
@@ -619,6 +700,11 @@ namespace Model
      * <p>A description of the task.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
+
+    /**
+     * <p>A description of the task.</p>
+     */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
 
     /**
      * <p>A description of the task.</p>

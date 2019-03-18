@@ -79,6 +79,17 @@ namespace Model
      * AWS WAF (see <a>DeleteIPSet</a>).</p> <p> <code>IPSetId</code> is returned by
      * <a>CreateIPSet</a> and by <a>ListIPSets</a>.</p>
      */
+    inline bool IPSetIdHasBeenSet() const { return m_iPSetIdHasBeenSet; }
+
+    /**
+     * <p>The <code>IPSetId</code> for an <code>IPSet</code>. You use
+     * <code>IPSetId</code> to get information about an <code>IPSet</code> (see
+     * <a>GetIPSet</a>), update an <code>IPSet</code> (see <a>UpdateIPSet</a>), insert
+     * an <code>IPSet</code> into a <code>Rule</code> or delete one from a
+     * <code>Rule</code> (see <a>UpdateRule</a>), and delete an <code>IPSet</code> from
+     * AWS WAF (see <a>DeleteIPSet</a>).</p> <p> <code>IPSetId</code> is returned by
+     * <a>CreateIPSet</a> and by <a>ListIPSets</a>.</p>
+     */
     inline void SetIPSetId(const Aws::String& value) { m_iPSetIdHasBeenSet = true; m_iPSetId = value; }
 
     /**
@@ -147,6 +158,12 @@ namespace Model
      * <p>A friendly name or description of the <a>IPSet</a>. You can't change the name
      * of an <code>IPSet</code> after you create it.</p>
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>A friendly name or description of the <a>IPSet</a>. You can't change the name
+     * of an <code>IPSet</code> after you create it.</p>
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
@@ -188,6 +205,15 @@ namespace Model
      * value of the c-ip field in the CloudFront access logs.</p>
      */
     inline const Aws::Vector<IPSetDescriptor>& GetIPSetDescriptors() const{ return m_iPSetDescriptors; }
+
+    /**
+     * <p>The IP address type (<code>IPV4</code> or <code>IPV6</code>) and the IP
+     * address range (in CIDR notation) that web requests originate from. If the
+     * <code>WebACL</code> is associated with a CloudFront distribution and the viewer
+     * did not use an HTTP proxy or a load balancer to send the request, this is the
+     * value of the c-ip field in the CloudFront access logs.</p>
+     */
+    inline bool IPSetDescriptorsHasBeenSet() const { return m_iPSetDescriptorsHasBeenSet; }
 
     /**
      * <p>The IP address type (<code>IPV4</code> or <code>IPV6</code>) and the IP

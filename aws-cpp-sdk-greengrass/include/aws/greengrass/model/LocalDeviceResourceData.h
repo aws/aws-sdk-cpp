@@ -56,6 +56,11 @@ namespace Model
     /**
      * Group/owner related settings for local resources.
      */
+    inline bool GroupOwnerSettingHasBeenSet() const { return m_groupOwnerSettingHasBeenSet; }
+
+    /**
+     * Group/owner related settings for local resources.
+     */
     inline void SetGroupOwnerSetting(const GroupOwnerSetting& value) { m_groupOwnerSettingHasBeenSet = true; m_groupOwnerSetting = value; }
 
     /**
@@ -79,6 +84,12 @@ namespace Model
      * resource can refer only to a character device or block device under ''/dev''.
      */
     inline const Aws::String& GetSourcePath() const{ return m_sourcePath; }
+
+    /**
+     * The local absolute path of the device resource. The source path for a device
+     * resource can refer only to a character device or block device under ''/dev''.
+     */
+    inline bool SourcePathHasBeenSet() const { return m_sourcePathHasBeenSet; }
 
     /**
      * The local absolute path of the device resource. The source path for a device

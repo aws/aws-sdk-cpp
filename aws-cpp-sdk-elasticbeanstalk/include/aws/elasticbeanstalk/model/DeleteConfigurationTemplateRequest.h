@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The name of the application to delete the configuration template from.</p>
      */
+    inline bool ApplicationNameHasBeenSet() const { return m_applicationNameHasBeenSet; }
+
+    /**
+     * <p>The name of the application to delete the configuration template from.</p>
+     */
     inline void SetApplicationName(const Aws::String& value) { m_applicationNameHasBeenSet = true; m_applicationName = value; }
 
     /**
@@ -89,6 +94,11 @@ namespace Model
      * <p>The name of the configuration template to delete.</p>
      */
     inline const Aws::String& GetTemplateName() const{ return m_templateName; }
+
+    /**
+     * <p>The name of the configuration template to delete.</p>
+     */
+    inline bool TemplateNameHasBeenSet() const { return m_templateNameHasBeenSet; }
 
     /**
      * <p>The name of the configuration template to delete.</p>

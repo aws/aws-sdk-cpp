@@ -52,6 +52,11 @@ namespace Model
     /**
      * <p>The location of the connection.</p>
      */
+    inline bool LocationHasBeenSet() const { return m_locationHasBeenSet; }
+
+    /**
+     * <p>The location of the connection.</p>
+     */
     inline void SetLocation(const Aws::String& value) { m_locationHasBeenSet = true; m_location = value; }
 
     /**
@@ -84,6 +89,11 @@ namespace Model
      * <p>The bandwidth of the connection.</p>
      */
     inline const Aws::String& GetBandwidth() const{ return m_bandwidth; }
+
+    /**
+     * <p>The bandwidth of the connection.</p>
+     */
+    inline bool BandwidthHasBeenSet() const { return m_bandwidthHasBeenSet; }
 
     /**
      * <p>The bandwidth of the connection.</p>
@@ -124,6 +134,11 @@ namespace Model
     /**
      * <p>The name of the connection.</p>
      */
+    inline bool ConnectionNameHasBeenSet() const { return m_connectionNameHasBeenSet; }
+
+    /**
+     * <p>The name of the connection.</p>
+     */
     inline void SetConnectionName(const Aws::String& value) { m_connectionNameHasBeenSet = true; m_connectionName = value; }
 
     /**
@@ -156,6 +171,11 @@ namespace Model
      * <p>The ID of the LAG.</p>
      */
     inline const Aws::String& GetLagId() const{ return m_lagId; }
+
+    /**
+     * <p>The ID of the LAG.</p>
+     */
+    inline bool LagIdHasBeenSet() const { return m_lagIdHasBeenSet; }
 
     /**
      * <p>The ID of the LAG.</p>

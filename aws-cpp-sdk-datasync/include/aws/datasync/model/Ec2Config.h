@@ -72,6 +72,11 @@ namespace Model
     /**
      * <p>The ARN of the subnet that the Amazon EC2 resource belongs in. </p>
      */
+    inline bool SubnetArnHasBeenSet() const { return m_subnetArnHasBeenSet; }
+
+    /**
+     * <p>The ARN of the subnet that the Amazon EC2 resource belongs in. </p>
+     */
     inline void SetSubnetArn(const Aws::String& value) { m_subnetArnHasBeenSet = true; m_subnetArn = value; }
 
     /**
@@ -105,6 +110,12 @@ namespace Model
      * for the Amazon EC2 resource.</p>
      */
     inline const Aws::Vector<Aws::String>& GetSecurityGroupArns() const{ return m_securityGroupArns; }
+
+    /**
+     * <p>The Amazon Resource Names (ARNs) of the security groups that are configured
+     * for the Amazon EC2 resource.</p>
+     */
+    inline bool SecurityGroupArnsHasBeenSet() const { return m_securityGroupArnsHasBeenSet; }
 
     /**
      * <p>The Amazon Resource Names (ARNs) of the security groups that are configured

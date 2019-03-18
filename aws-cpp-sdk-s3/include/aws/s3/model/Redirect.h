@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The host name to use in the redirect request.</p>
      */
+    inline bool HostNameHasBeenSet() const { return m_hostNameHasBeenSet; }
+
+    /**
+     * <p>The host name to use in the redirect request.</p>
+     */
     inline void SetHostName(const Aws::String& value) { m_hostNameHasBeenSet = true; m_hostName = value; }
 
     /**
@@ -89,6 +94,12 @@ namespace Model
      * siblings is present.</p>
      */
     inline const Aws::String& GetHttpRedirectCode() const{ return m_httpRedirectCode; }
+
+    /**
+     * <p>The HTTP redirect code to use on the response. Not required if one of the
+     * siblings is present.</p>
+     */
+    inline bool HttpRedirectCodeHasBeenSet() const { return m_httpRedirectCodeHasBeenSet; }
 
     /**
      * <p>The HTTP redirect code to use on the response. Not required if one of the
@@ -137,6 +148,12 @@ namespace Model
      * <p>Protocol to use (http, https) when redirecting requests. The default is the
      * protocol that is used in the original request.</p>
      */
+    inline bool ProtocolHasBeenSet() const { return m_protocolHasBeenSet; }
+
+    /**
+     * <p>Protocol to use (http, https) when redirecting requests. The default is the
+     * protocol that is used in the original request.</p>
+     */
     inline void SetProtocol(const Protocol& value) { m_protocolHasBeenSet = true; m_protocol = value; }
 
     /**
@@ -167,6 +184,16 @@ namespace Model
      * provided.</p>
      */
     inline const Aws::String& GetReplaceKeyPrefixWith() const{ return m_replaceKeyPrefixWith; }
+
+    /**
+     * <p>The object key prefix to use in the redirect request. For example, to
+     * redirect requests for all pages with prefix docs/ (objects in the docs/ folder)
+     * to documents/, you can set a condition block with KeyPrefixEquals set to docs/
+     * and in the Redirect set ReplaceKeyPrefixWith to /documents. Not required if one
+     * of the siblings is present. Can be present only if ReplaceKeyWith is not
+     * provided.</p>
+     */
+    inline bool ReplaceKeyPrefixWithHasBeenSet() const { return m_replaceKeyPrefixWithHasBeenSet; }
 
     /**
      * <p>The object key prefix to use in the redirect request. For example, to
@@ -235,6 +262,13 @@ namespace Model
      * present only if ReplaceKeyPrefixWith is not provided.</p>
      */
     inline const Aws::String& GetReplaceKeyWith() const{ return m_replaceKeyWith; }
+
+    /**
+     * <p>The specific object key to use in the redirect request. For example, redirect
+     * request to error.html. Not required if one of the sibling is present. Can be
+     * present only if ReplaceKeyPrefixWith is not provided.</p>
+     */
+    inline bool ReplaceKeyWithHasBeenSet() const { return m_replaceKeyWithHasBeenSet; }
 
     /**
      * <p>The specific object key to use in the redirect request. For example, redirect

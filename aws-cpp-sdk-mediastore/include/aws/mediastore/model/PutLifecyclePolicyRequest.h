@@ -54,6 +54,12 @@ namespace Model
      * <p>The name of the container that you want to assign the object lifecycle policy
      * to.</p>
      */
+    inline bool ContainerNameHasBeenSet() const { return m_containerNameHasBeenSet; }
+
+    /**
+     * <p>The name of the container that you want to assign the object lifecycle policy
+     * to.</p>
+     */
     inline void SetContainerName(const Aws::String& value) { m_containerNameHasBeenSet = true; m_containerName = value; }
 
     /**
@@ -91,6 +97,11 @@ namespace Model
      * <p>The object lifecycle policy to apply to the container.</p>
      */
     inline const Aws::String& GetLifecyclePolicy() const{ return m_lifecyclePolicy; }
+
+    /**
+     * <p>The object lifecycle policy to apply to the container.</p>
+     */
+    inline bool LifecyclePolicyHasBeenSet() const { return m_lifecyclePolicyHasBeenSet; }
 
     /**
      * <p>The object lifecycle policy to apply to the container.</p>

@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>A description of the bootstrap action.</p>
      */
+    inline bool BootstrapActionConfigHasBeenSet() const { return m_bootstrapActionConfigHasBeenSet; }
+
+    /**
+     * <p>A description of the bootstrap action.</p>
+     */
     inline void SetBootstrapActionConfig(const BootstrapActionConfig& value) { m_bootstrapActionConfigHasBeenSet = true; m_bootstrapActionConfig = value; }
 
     /**

@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>Screen name of the grantee.</p>
      */
+    inline bool DisplayNameHasBeenSet() const { return m_displayNameHasBeenSet; }
+
+    /**
+     * <p>Screen name of the grantee.</p>
+     */
     inline void SetDisplayName(const Aws::String& value) { m_displayNameHasBeenSet = true; m_displayName = value; }
 
     /**
@@ -88,6 +93,11 @@ namespace Model
      * <p>Email address of the grantee.</p>
      */
     inline const Aws::String& GetEmailAddress() const{ return m_emailAddress; }
+
+    /**
+     * <p>Email address of the grantee.</p>
+     */
+    inline bool EmailAddressHasBeenSet() const { return m_emailAddressHasBeenSet; }
 
     /**
      * <p>Email address of the grantee.</p>
@@ -128,6 +138,11 @@ namespace Model
     /**
      * <p>The canonical user ID of the grantee.</p>
      */
+    inline bool IDHasBeenSet() const { return m_iDHasBeenSet; }
+
+    /**
+     * <p>The canonical user ID of the grantee.</p>
+     */
     inline void SetID(const Aws::String& value) { m_iDHasBeenSet = true; m_iD = value; }
 
     /**
@@ -164,6 +179,11 @@ namespace Model
     /**
      * <p>Type of grantee</p>
      */
+    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
+
+    /**
+     * <p>Type of grantee</p>
+     */
     inline void SetType(const Type& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
@@ -186,6 +206,11 @@ namespace Model
      * <p>URI of the grantee group.</p>
      */
     inline const Aws::String& GetURI() const{ return m_uRI; }
+
+    /**
+     * <p>URI of the grantee group.</p>
+     */
+    inline bool URIHasBeenSet() const { return m_uRIHasBeenSet; }
 
     /**
      * <p>URI of the grantee group.</p>

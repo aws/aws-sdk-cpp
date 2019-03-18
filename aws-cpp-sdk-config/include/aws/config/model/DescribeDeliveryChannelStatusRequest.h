@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>A list of delivery channel names.</p>
      */
+    inline bool DeliveryChannelNamesHasBeenSet() const { return m_deliveryChannelNamesHasBeenSet; }
+
+    /**
+     * <p>A list of delivery channel names.</p>
+     */
     inline void SetDeliveryChannelNames(const Aws::Vector<Aws::String>& value) { m_deliveryChannelNamesHasBeenSet = true; m_deliveryChannelNames = value; }
 
     /**

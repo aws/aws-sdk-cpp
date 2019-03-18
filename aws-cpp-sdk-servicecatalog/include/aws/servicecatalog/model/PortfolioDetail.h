@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The portfolio identifier.</p>
      */
+    inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
+
+    /**
+     * <p>The portfolio identifier.</p>
+     */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
     /**
@@ -88,6 +93,11 @@ namespace Model
      * <p>The ARN assigned to the portfolio.</p>
      */
     inline const Aws::String& GetARN() const{ return m_aRN; }
+
+    /**
+     * <p>The ARN assigned to the portfolio.</p>
+     */
+    inline bool ARNHasBeenSet() const { return m_aRNHasBeenSet; }
 
     /**
      * <p>The ARN assigned to the portfolio.</p>
@@ -128,6 +138,11 @@ namespace Model
     /**
      * <p>The name to use for display purposes.</p>
      */
+    inline bool DisplayNameHasBeenSet() const { return m_displayNameHasBeenSet; }
+
+    /**
+     * <p>The name to use for display purposes.</p>
+     */
     inline void SetDisplayName(const Aws::String& value) { m_displayNameHasBeenSet = true; m_displayName = value; }
 
     /**
@@ -160,6 +175,11 @@ namespace Model
      * <p>The description of the portfolio.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
+
+    /**
+     * <p>The description of the portfolio.</p>
+     */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
 
     /**
      * <p>The description of the portfolio.</p>
@@ -200,6 +220,11 @@ namespace Model
     /**
      * <p>The UTC time stamp of the creation time.</p>
      */
+    inline bool CreatedTimeHasBeenSet() const { return m_createdTimeHasBeenSet; }
+
+    /**
+     * <p>The UTC time stamp of the creation time.</p>
+     */
     inline void SetCreatedTime(const Aws::Utils::DateTime& value) { m_createdTimeHasBeenSet = true; m_createdTime = value; }
 
     /**
@@ -222,6 +247,11 @@ namespace Model
      * <p>The name of the portfolio provider.</p>
      */
     inline const Aws::String& GetProviderName() const{ return m_providerName; }
+
+    /**
+     * <p>The name of the portfolio provider.</p>
+     */
+    inline bool ProviderNameHasBeenSet() const { return m_providerNameHasBeenSet; }
 
     /**
      * <p>The name of the portfolio provider.</p>

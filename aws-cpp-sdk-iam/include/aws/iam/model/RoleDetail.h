@@ -70,6 +70,13 @@ namespace Model
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
      * Identifiers</a> in the <i>Using IAM</i> guide.</p>
      */
+    inline bool PathHasBeenSet() const { return m_pathHasBeenSet; }
+
+    /**
+     * <p>The path to the role. For more information about paths, see <a
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
+     * Identifiers</a> in the <i>Using IAM</i> guide.</p>
+     */
     inline void SetPath(const Aws::String& value) { m_pathHasBeenSet = true; m_path = value; }
 
     /**
@@ -116,6 +123,11 @@ namespace Model
     /**
      * <p>The friendly name that identifies the role.</p>
      */
+    inline bool RoleNameHasBeenSet() const { return m_roleNameHasBeenSet; }
+
+    /**
+     * <p>The friendly name that identifies the role.</p>
+     */
     inline void SetRoleName(const Aws::String& value) { m_roleNameHasBeenSet = true; m_roleName = value; }
 
     /**
@@ -151,6 +163,14 @@ namespace Model
      * Identifiers</a> in the <i>Using IAM</i> guide.</p>
      */
     inline const Aws::String& GetRoleId() const{ return m_roleId; }
+
+    /**
+     * <p>The stable and unique string identifying the role. For more information about
+     * IDs, see <a
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
+     * Identifiers</a> in the <i>Using IAM</i> guide.</p>
+     */
+    inline bool RoleIdHasBeenSet() const { return m_roleIdHasBeenSet; }
 
     /**
      * <p>The stable and unique string identifying the role. For more information about
@@ -205,6 +225,9 @@ namespace Model
     inline const Aws::String& GetArn() const{ return m_arn; }
 
     
+    inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
+
+    
     inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
 
     
@@ -228,6 +251,12 @@ namespace Model
      * date-time format</a>, when the role was created.</p>
      */
     inline const Aws::Utils::DateTime& GetCreateDate() const{ return m_createDate; }
+
+    /**
+     * <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601
+     * date-time format</a>, when the role was created.</p>
+     */
+    inline bool CreateDateHasBeenSet() const { return m_createDateHasBeenSet; }
 
     /**
      * <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601
@@ -258,6 +287,11 @@ namespace Model
      * <p>The trust policy that grants permission to assume the role.</p>
      */
     inline const Aws::String& GetAssumeRolePolicyDocument() const{ return m_assumeRolePolicyDocument; }
+
+    /**
+     * <p>The trust policy that grants permission to assume the role.</p>
+     */
+    inline bool AssumeRolePolicyDocumentHasBeenSet() const { return m_assumeRolePolicyDocumentHasBeenSet; }
 
     /**
      * <p>The trust policy that grants permission to assume the role.</p>
@@ -298,6 +332,11 @@ namespace Model
     /**
      * <p>A list of instance profiles that contain this role.</p>
      */
+    inline bool InstanceProfileListHasBeenSet() const { return m_instanceProfileListHasBeenSet; }
+
+    /**
+     * <p>A list of instance profiles that contain this role.</p>
+     */
     inline void SetInstanceProfileList(const Aws::Vector<InstanceProfile>& value) { m_instanceProfileListHasBeenSet = true; m_instanceProfileList = value; }
 
     /**
@@ -331,6 +370,12 @@ namespace Model
      * access (permissions) policies.</p>
      */
     inline const Aws::Vector<PolicyDetail>& GetRolePolicyList() const{ return m_rolePolicyList; }
+
+    /**
+     * <p>A list of inline policies embedded in the role. These policies are the role's
+     * access (permissions) policies.</p>
+     */
+    inline bool RolePolicyListHasBeenSet() const { return m_rolePolicyListHasBeenSet; }
 
     /**
      * <p>A list of inline policies embedded in the role. These policies are the role's
@@ -374,6 +419,12 @@ namespace Model
      * role's access (permissions) policies.</p>
      */
     inline const Aws::Vector<AttachedPolicy>& GetAttachedManagedPolicies() const{ return m_attachedManagedPolicies; }
+
+    /**
+     * <p>A list of managed policies attached to the role. These policies are the
+     * role's access (permissions) policies.</p>
+     */
+    inline bool AttachedManagedPoliciesHasBeenSet() const { return m_attachedManagedPoliciesHasBeenSet; }
 
     /**
      * <p>A list of managed policies attached to the role. These policies are the
@@ -426,6 +477,14 @@ namespace Model
      * href="IAM/latest/UserGuide/access_policies_boundaries.html">Permissions
      * Boundaries for IAM Identities </a> in the <i>IAM User Guide</i>.</p>
      */
+    inline bool PermissionsBoundaryHasBeenSet() const { return m_permissionsBoundaryHasBeenSet; }
+
+    /**
+     * <p>The ARN of the policy used to set the permissions boundary for the role.</p>
+     * <p>For more information about permissions boundaries, see <a
+     * href="IAM/latest/UserGuide/access_policies_boundaries.html">Permissions
+     * Boundaries for IAM Identities </a> in the <i>IAM User Guide</i>.</p>
+     */
     inline void SetPermissionsBoundary(const AttachedPermissionsBoundary& value) { m_permissionsBoundaryHasBeenSet = true; m_permissionsBoundary = value; }
 
     /**
@@ -460,6 +519,14 @@ namespace Model
      * Identities</a> in the <i>IAM User Guide</i>.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>A list of tags that are attached to the specified role. For more information
+     * about tagging, see <a
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM
+     * Identities</a> in the <i>IAM User Guide</i>.</p>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
      * <p>A list of tags that are attached to the specified role. For more information

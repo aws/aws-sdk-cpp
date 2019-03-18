@@ -51,6 +51,9 @@ namespace Model
     inline const SccDestinationFramerate& GetFramerate() const{ return m_framerate; }
 
     
+    inline bool FramerateHasBeenSet() const { return m_framerateHasBeenSet; }
+
+    
     inline void SetFramerate(const SccDestinationFramerate& value) { m_framerateHasBeenSet = true; m_framerate = value; }
 
     

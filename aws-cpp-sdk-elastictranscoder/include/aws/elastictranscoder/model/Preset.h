@@ -65,6 +65,12 @@ namespace Model
      * <p>Identifier for the new preset. You use this value to get settings for the
      * preset or to delete it.</p>
      */
+    inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
+
+    /**
+     * <p>Identifier for the new preset. You use this value to get settings for the
+     * preset or to delete it.</p>
+     */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
     /**
@@ -106,6 +112,11 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) for the preset.</p>
      */
+    inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) for the preset.</p>
+     */
     inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
 
     /**
@@ -138,6 +149,11 @@ namespace Model
      * <p>The name of the preset.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
+
+    /**
+     * <p>The name of the preset.</p>
+     */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
      * <p>The name of the preset.</p>
@@ -178,6 +194,11 @@ namespace Model
     /**
      * <p>A description of the preset.</p>
      */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
+
+    /**
+     * <p>A description of the preset.</p>
+     */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
@@ -213,6 +234,14 @@ namespace Model
      * <code>oga</code>, <code>ogg</code>, <code>ts</code>, and <code>webm</code>.</p>
      */
     inline const Aws::String& GetContainer() const{ return m_container; }
+
+    /**
+     * <p>The container type for the output file. Valid values include
+     * <code>flac</code>, <code>flv</code>, <code>fmp4</code>, <code>gif</code>,
+     * <code>mp3</code>, <code>mp4</code>, <code>mpg</code>, <code>mxf</code>,
+     * <code>oga</code>, <code>ogg</code>, <code>ts</code>, and <code>webm</code>.</p>
+     */
+    inline bool ContainerHasBeenSet() const { return m_containerHasBeenSet; }
 
     /**
      * <p>The container type for the output file. Valid values include
@@ -273,6 +302,12 @@ namespace Model
      * <p>A section of the response body that provides information about the audio
      * preset values.</p>
      */
+    inline bool AudioHasBeenSet() const { return m_audioHasBeenSet; }
+
+    /**
+     * <p>A section of the response body that provides information about the audio
+     * preset values.</p>
+     */
     inline void SetAudio(const AudioParameters& value) { m_audioHasBeenSet = true; m_audio = value; }
 
     /**
@@ -299,6 +334,12 @@ namespace Model
      * preset values.</p>
      */
     inline const VideoParameters& GetVideo() const{ return m_video; }
+
+    /**
+     * <p>A section of the response body that provides information about the video
+     * preset values.</p>
+     */
+    inline bool VideoHasBeenSet() const { return m_videoHasBeenSet; }
 
     /**
      * <p>A section of the response body that provides information about the video
@@ -335,6 +376,12 @@ namespace Model
      * <p>A section of the response body that provides information about the thumbnail
      * preset values, if any.</p>
      */
+    inline bool ThumbnailsHasBeenSet() const { return m_thumbnailsHasBeenSet; }
+
+    /**
+     * <p>A section of the response body that provides information about the thumbnail
+     * preset values, if any.</p>
+     */
     inline void SetThumbnails(const Thumbnails& value) { m_thumbnailsHasBeenSet = true; m_thumbnails = value; }
 
     /**
@@ -362,6 +409,13 @@ namespace Model
      * (<code>Custom</code>).</p>
      */
     inline const Aws::String& GetType() const{ return m_type; }
+
+    /**
+     * <p>Whether the preset is a default preset provided by Elastic Transcoder
+     * (<code>System</code>) or a preset that you have defined
+     * (<code>Custom</code>).</p>
+     */
+    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
 
     /**
      * <p>Whether the preset is a default preset provided by Elastic Transcoder

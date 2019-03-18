@@ -57,6 +57,11 @@ namespace Model
     /**
      * A client token used to correlate requests and responses.
      */
+    inline bool AmznClientTokenHasBeenSet() const { return m_amznClientTokenHasBeenSet; }
+
+    /**
+     * A client token used to correlate requests and responses.
+     */
     inline void SetAmznClientToken(const Aws::String& value) { m_amznClientTokenHasBeenSet = true; m_amznClientToken = value; }
 
     /**
@@ -89,6 +94,9 @@ namespace Model
     inline const Aws::String& GetS3UrlSignerRole() const{ return m_s3UrlSignerRole; }
 
     
+    inline bool S3UrlSignerRoleHasBeenSet() const { return m_s3UrlSignerRoleHasBeenSet; }
+
+    
     inline void SetS3UrlSignerRole(const Aws::String& value) { m_s3UrlSignerRoleHasBeenSet = true; m_s3UrlSignerRole = value; }
 
     
@@ -111,6 +119,9 @@ namespace Model
     inline const SoftwareToUpdate& GetSoftwareToUpdate() const{ return m_softwareToUpdate; }
 
     
+    inline bool SoftwareToUpdateHasBeenSet() const { return m_softwareToUpdateHasBeenSet; }
+
+    
     inline void SetSoftwareToUpdate(const SoftwareToUpdate& value) { m_softwareToUpdateHasBeenSet = true; m_softwareToUpdate = value; }
 
     
@@ -127,6 +138,9 @@ namespace Model
     inline const UpdateAgentLogLevel& GetUpdateAgentLogLevel() const{ return m_updateAgentLogLevel; }
 
     
+    inline bool UpdateAgentLogLevelHasBeenSet() const { return m_updateAgentLogLevelHasBeenSet; }
+
+    
     inline void SetUpdateAgentLogLevel(const UpdateAgentLogLevel& value) { m_updateAgentLogLevelHasBeenSet = true; m_updateAgentLogLevel = value; }
 
     
@@ -141,6 +155,9 @@ namespace Model
 
     
     inline const Aws::Vector<Aws::String>& GetUpdateTargets() const{ return m_updateTargets; }
+
+    
+    inline bool UpdateTargetsHasBeenSet() const { return m_updateTargetsHasBeenSet; }
 
     
     inline void SetUpdateTargets(const Aws::Vector<Aws::String>& value) { m_updateTargetsHasBeenSet = true; m_updateTargets = value; }
@@ -168,6 +185,9 @@ namespace Model
     inline const UpdateTargetsArchitecture& GetUpdateTargetsArchitecture() const{ return m_updateTargetsArchitecture; }
 
     
+    inline bool UpdateTargetsArchitectureHasBeenSet() const { return m_updateTargetsArchitectureHasBeenSet; }
+
+    
     inline void SetUpdateTargetsArchitecture(const UpdateTargetsArchitecture& value) { m_updateTargetsArchitectureHasBeenSet = true; m_updateTargetsArchitecture = value; }
 
     
@@ -182,6 +202,9 @@ namespace Model
 
     
     inline const UpdateTargetsOperatingSystem& GetUpdateTargetsOperatingSystem() const{ return m_updateTargetsOperatingSystem; }
+
+    
+    inline bool UpdateTargetsOperatingSystemHasBeenSet() const { return m_updateTargetsOperatingSystemHasBeenSet; }
 
     
     inline void SetUpdateTargetsOperatingSystem(const UpdateTargetsOperatingSystem& value) { m_updateTargetsOperatingSystemHasBeenSet = true; m_updateTargetsOperatingSystem = value; }

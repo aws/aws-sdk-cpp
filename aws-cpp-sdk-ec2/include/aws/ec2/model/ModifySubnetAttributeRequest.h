@@ -67,6 +67,17 @@ namespace Model
      * receives an IPv6 address if it's created using version <code>2016-11-15</code>
      * or later of the Amazon EC2 API.</p>
      */
+    inline bool AssignIpv6AddressOnCreationHasBeenSet() const { return m_assignIpv6AddressOnCreationHasBeenSet; }
+
+    /**
+     * <p>Specify <code>true</code> to indicate that network interfaces created in the
+     * specified subnet should be assigned an IPv6 address. This includes a network
+     * interface that's created when launching an instance into the subnet (the
+     * instance therefore receives an IPv6 address). </p> <p>If you enable the IPv6
+     * addressing feature for your subnet, your network interface or instance only
+     * receives an IPv6 address if it's created using version <code>2016-11-15</code>
+     * or later of the Amazon EC2 API.</p>
+     */
     inline void SetAssignIpv6AddressOnCreation(const AttributeBooleanValue& value) { m_assignIpv6AddressOnCreationHasBeenSet = true; m_assignIpv6AddressOnCreation = value; }
 
     /**
@@ -117,6 +128,14 @@ namespace Model
      * network interface that's created when launching an instance into the subnet (the
      * instance therefore receives a public IPv4 address).</p>
      */
+    inline bool MapPublicIpOnLaunchHasBeenSet() const { return m_mapPublicIpOnLaunchHasBeenSet; }
+
+    /**
+     * <p>Specify <code>true</code> to indicate that network interfaces created in the
+     * specified subnet should be assigned a public IPv4 address. This includes a
+     * network interface that's created when launching an instance into the subnet (the
+     * instance therefore receives a public IPv4 address).</p>
+     */
     inline void SetMapPublicIpOnLaunch(const AttributeBooleanValue& value) { m_mapPublicIpOnLaunchHasBeenSet = true; m_mapPublicIpOnLaunch = value; }
 
     /**
@@ -148,6 +167,11 @@ namespace Model
      * <p>The ID of the subnet.</p>
      */
     inline const Aws::String& GetSubnetId() const{ return m_subnetId; }
+
+    /**
+     * <p>The ID of the subnet.</p>
+     */
+    inline bool SubnetIdHasBeenSet() const { return m_subnetIdHasBeenSet; }
 
     /**
      * <p>The ID of the subnet.</p>

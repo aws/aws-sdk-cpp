@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the listener.</p>
      */
+    inline bool ListenerArnHasBeenSet() const { return m_listenerArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the listener.</p>
+     */
     inline void SetListenerArn(const Aws::String& value) { m_listenerArnHasBeenSet = true; m_listenerArn = value; }
 
     /**
@@ -90,6 +95,13 @@ namespace Model
      * <code>IsDefault</code>.</p>
      */
     inline const Aws::Vector<Certificate>& GetCertificates() const{ return m_certificates; }
+
+    /**
+     * <p>The certificate to remove. You can specify one certificate per call. Set
+     * <code>CertificateArn</code> to the certificate ARN but do not set
+     * <code>IsDefault</code>.</p>
+     */
+    inline bool CertificatesHasBeenSet() const { return m_certificatesHasBeenSet; }
 
     /**
      * <p>The certificate to remove. You can specify one certificate per call. Set

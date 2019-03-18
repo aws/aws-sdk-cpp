@@ -68,6 +68,13 @@ namespace Model
      * is used as the permissions boundary for an entity. This data type can only have
      * a value of <code>Policy</code>.</p>
      */
+    inline bool PermissionsBoundaryTypeHasBeenSet() const { return m_permissionsBoundaryTypeHasBeenSet; }
+
+    /**
+     * <p> The permissions boundary usage type that indicates what type of IAM resource
+     * is used as the permissions boundary for an entity. This data type can only have
+     * a value of <code>Policy</code>.</p>
+     */
     inline void SetPermissionsBoundaryType(const PermissionsBoundaryAttachmentType& value) { m_permissionsBoundaryTypeHasBeenSet = true; m_permissionsBoundaryType = value; }
 
     /**
@@ -97,6 +104,12 @@ namespace Model
      * role.</p>
      */
     inline const Aws::String& GetPermissionsBoundaryArn() const{ return m_permissionsBoundaryArn; }
+
+    /**
+     * <p> The ARN of the policy used to set the permissions boundary for the user or
+     * role.</p>
+     */
+    inline bool PermissionsBoundaryArnHasBeenSet() const { return m_permissionsBoundaryArnHasBeenSet; }
 
     /**
      * <p> The ARN of the policy used to set the permissions boundary for the user or

@@ -67,6 +67,13 @@ namespace Model
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
      * Identifiers</a> in the <i>Using IAM</i> guide. </p>
      */
+    inline bool PathHasBeenSet() const { return m_pathHasBeenSet; }
+
+    /**
+     * <p> The path to the role. For more information about paths, see <a
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
+     * Identifiers</a> in the <i>Using IAM</i> guide. </p>
+     */
     inline void SetPath(const Aws::String& value) { m_pathHasBeenSet = true; m_path = value; }
 
     /**
@@ -113,6 +120,11 @@ namespace Model
     /**
      * <p>The friendly name that identifies the role.</p>
      */
+    inline bool RoleNameHasBeenSet() const { return m_roleNameHasBeenSet; }
+
+    /**
+     * <p>The friendly name that identifies the role.</p>
+     */
     inline void SetRoleName(const Aws::String& value) { m_roleNameHasBeenSet = true; m_roleName = value; }
 
     /**
@@ -148,6 +160,14 @@ namespace Model
      * Identifiers</a> in the <i>Using IAM</i> guide. </p>
      */
     inline const Aws::String& GetRoleId() const{ return m_roleId; }
+
+    /**
+     * <p> The stable and unique string identifying the role. For more information
+     * about IDs, see <a
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
+     * Identifiers</a> in the <i>Using IAM</i> guide. </p>
+     */
+    inline bool RoleIdHasBeenSet() const { return m_roleIdHasBeenSet; }
 
     /**
      * <p> The stable and unique string identifying the role. For more information
@@ -212,6 +232,14 @@ namespace Model
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
      * Identifiers</a> in the <i>IAM User Guide</i> guide. </p>
      */
+    inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
+
+    /**
+     * <p> The Amazon Resource Name (ARN) specifying the role. For more information
+     * about ARNs and how to use them in policies, see <a
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
+     * Identifiers</a> in the <i>IAM User Guide</i> guide. </p>
+     */
     inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
 
     /**
@@ -265,6 +293,12 @@ namespace Model
      * <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601
      * date-time format</a>, when the role was created.</p>
      */
+    inline bool CreateDateHasBeenSet() const { return m_createDateHasBeenSet; }
+
+    /**
+     * <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601
+     * date-time format</a>, when the role was created.</p>
+     */
     inline void SetCreateDate(const Aws::Utils::DateTime& value) { m_createDateHasBeenSet = true; m_createDate = value; }
 
     /**
@@ -290,6 +324,11 @@ namespace Model
      * <p>The policy that grants an entity permission to assume the role.</p>
      */
     inline const Aws::String& GetAssumeRolePolicyDocument() const{ return m_assumeRolePolicyDocument; }
+
+    /**
+     * <p>The policy that grants an entity permission to assume the role.</p>
+     */
+    inline bool AssumeRolePolicyDocumentHasBeenSet() const { return m_assumeRolePolicyDocumentHasBeenSet; }
 
     /**
      * <p>The policy that grants an entity permission to assume the role.</p>
@@ -326,6 +365,11 @@ namespace Model
      * <p>A description of the role that you provide.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
+
+    /**
+     * <p>A description of the role that you provide.</p>
+     */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
 
     /**
      * <p>A description of the role that you provide.</p>
@@ -372,6 +416,14 @@ namespace Model
      * optional <code>DurationSeconds</code> API parameter or
      * <code>duration-seconds</code> CLI parameter.</p>
      */
+    inline bool MaxSessionDurationHasBeenSet() const { return m_maxSessionDurationHasBeenSet; }
+
+    /**
+     * <p>The maximum session duration (in seconds) for the specified role. Anyone who
+     * uses the AWS CLI, or API to assume the role can specify the duration using the
+     * optional <code>DurationSeconds</code> API parameter or
+     * <code>duration-seconds</code> CLI parameter.</p>
+     */
     inline void SetMaxSessionDuration(int value) { m_maxSessionDurationHasBeenSet = true; m_maxSessionDuration = value; }
 
     /**
@@ -390,6 +442,14 @@ namespace Model
      * Boundaries for IAM Identities </a> in the <i>IAM User Guide</i>.</p>
      */
     inline const AttachedPermissionsBoundary& GetPermissionsBoundary() const{ return m_permissionsBoundary; }
+
+    /**
+     * <p>The ARN of the policy used to set the permissions boundary for the role.</p>
+     * <p>For more information about permissions boundaries, see <a
+     * href="IAM/latest/UserGuide/access_policies_boundaries.html">Permissions
+     * Boundaries for IAM Identities </a> in the <i>IAM User Guide</i>.</p>
+     */
+    inline bool PermissionsBoundaryHasBeenSet() const { return m_permissionsBoundaryHasBeenSet; }
 
     /**
      * <p>The ARN of the policy used to set the permissions boundary for the role.</p>
@@ -431,6 +491,14 @@ namespace Model
      * Identities</a> in the <i>IAM User Guide</i>.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>A list of tags that are attached to the specified role. For more information
+     * about tagging, see <a
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM
+     * Identities</a> in the <i>IAM User Guide</i>.</p>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
      * <p>A list of tags that are attached to the specified role. For more information

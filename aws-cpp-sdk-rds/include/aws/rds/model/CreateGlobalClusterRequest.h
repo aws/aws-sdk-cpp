@@ -54,6 +54,11 @@ namespace Model
     /**
      * <p>The cluster identifier of the new global database cluster.</p>
      */
+    inline bool GlobalClusterIdentifierHasBeenSet() const { return m_globalClusterIdentifierHasBeenSet; }
+
+    /**
+     * <p>The cluster identifier of the new global database cluster.</p>
+     */
     inline void SetGlobalClusterIdentifier(const Aws::String& value) { m_globalClusterIdentifierHasBeenSet = true; m_globalClusterIdentifier = value; }
 
     /**
@@ -87,6 +92,12 @@ namespace Model
      * database. This parameter is optional. </p>
      */
     inline const Aws::String& GetSourceDBClusterIdentifier() const{ return m_sourceDBClusterIdentifier; }
+
+    /**
+     * <p> The Amazon Resource Name (ARN) to use as the primary cluster of the global
+     * database. This parameter is optional. </p>
+     */
+    inline bool SourceDBClusterIdentifierHasBeenSet() const { return m_sourceDBClusterIdentifierHasBeenSet; }
 
     /**
      * <p> The Amazon Resource Name (ARN) to use as the primary cluster of the global
@@ -133,6 +144,11 @@ namespace Model
     /**
      * <p>Provides the name of the database engine to be used for this DB cluster.</p>
      */
+    inline bool EngineHasBeenSet() const { return m_engineHasBeenSet; }
+
+    /**
+     * <p>Provides the name of the database engine to be used for this DB cluster.</p>
+     */
     inline void SetEngine(const Aws::String& value) { m_engineHasBeenSet = true; m_engine = value; }
 
     /**
@@ -165,6 +181,11 @@ namespace Model
      * <p>The engine version of the Aurora global database.</p>
      */
     inline const Aws::String& GetEngineVersion() const{ return m_engineVersion; }
+
+    /**
+     * <p>The engine version of the Aurora global database.</p>
+     */
+    inline bool EngineVersionHasBeenSet() const { return m_engineVersionHasBeenSet; }
 
     /**
      * <p>The engine version of the Aurora global database.</p>
@@ -207,6 +228,12 @@ namespace Model
      * <p> The deletion protection setting for the new global database. The global
      * database can't be deleted when this value is set to true. </p>
      */
+    inline bool DeletionProtectionHasBeenSet() const { return m_deletionProtectionHasBeenSet; }
+
+    /**
+     * <p> The deletion protection setting for the new global database. The global
+     * database can't be deleted when this value is set to true. </p>
+     */
     inline void SetDeletionProtection(bool value) { m_deletionProtectionHasBeenSet = true; m_deletionProtection = value; }
 
     /**
@@ -222,6 +249,13 @@ namespace Model
      * database cluster you are creating. </p>
      */
     inline const Aws::String& GetDatabaseName() const{ return m_databaseName; }
+
+    /**
+     * <p> The name for your database of up to 64 alpha-numeric characters. If you do
+     * not provide a name, Amazon Aurora will not create a database in the global
+     * database cluster you are creating. </p>
+     */
+    inline bool DatabaseNameHasBeenSet() const { return m_databaseNameHasBeenSet; }
 
     /**
      * <p> The name for your database of up to 64 alpha-numeric characters. If you do
@@ -270,6 +304,11 @@ namespace Model
      * <p> The storage encryption setting for the new global database cluster. </p>
      */
     inline bool GetStorageEncrypted() const{ return m_storageEncrypted; }
+
+    /**
+     * <p> The storage encryption setting for the new global database cluster. </p>
+     */
+    inline bool StorageEncryptedHasBeenSet() const { return m_storageEncryptedHasBeenSet; }
 
     /**
      * <p> The storage encryption setting for the new global database cluster. </p>

@@ -59,6 +59,11 @@ namespace Model
     /**
      * <p>The ID of the attachment.</p>
      */
+    inline bool TransitGatewayAttachmentIdHasBeenSet() const { return m_transitGatewayAttachmentIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the attachment.</p>
+     */
     inline void SetTransitGatewayAttachmentId(const Aws::String& value) { m_transitGatewayAttachmentIdHasBeenSet = true; m_transitGatewayAttachmentId = value; }
 
     /**
@@ -91,6 +96,11 @@ namespace Model
      * <p>The ID of the resource.</p>
      */
     inline const Aws::String& GetResourceId() const{ return m_resourceId; }
+
+    /**
+     * <p>The ID of the resource.</p>
+     */
+    inline bool ResourceIdHasBeenSet() const { return m_resourceIdHasBeenSet; }
 
     /**
      * <p>The ID of the resource.</p>
@@ -131,6 +141,11 @@ namespace Model
     /**
      * <p>The type of resource.</p>
      */
+    inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
+
+    /**
+     * <p>The type of resource.</p>
+     */
     inline void SetResourceType(const TransitGatewayAttachmentResourceType& value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
 
     /**
@@ -153,6 +168,11 @@ namespace Model
      * <p>The state of the resource.</p>
      */
     inline const TransitGatewayPropagationState& GetState() const{ return m_state; }
+
+    /**
+     * <p>The state of the resource.</p>
+     */
+    inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
 
     /**
      * <p>The state of the resource.</p>

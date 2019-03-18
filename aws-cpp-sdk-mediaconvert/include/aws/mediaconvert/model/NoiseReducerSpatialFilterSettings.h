@@ -55,6 +55,12 @@ namespace Model
      * Specify strength of post noise reduction sharpening filter, with 0 disabling the
      * filter and 3 enabling it at maximum strength.
      */
+    inline bool PostFilterSharpenStrengthHasBeenSet() const { return m_postFilterSharpenStrengthHasBeenSet; }
+
+    /**
+     * Specify strength of post noise reduction sharpening filter, with 0 disabling the
+     * filter and 3 enabling it at maximum strength.
+     */
     inline void SetPostFilterSharpenStrength(int value) { m_postFilterSharpenStrengthHasBeenSet = true; m_postFilterSharpenStrength = value; }
 
     /**
@@ -74,6 +80,12 @@ namespace Model
      * The speed of the filter, from -2 (lower speed) to 3 (higher speed), with 0 being
      * the nominal value.
      */
+    inline bool SpeedHasBeenSet() const { return m_speedHasBeenSet; }
+
+    /**
+     * The speed of the filter, from -2 (lower speed) to 3 (higher speed), with 0 being
+     * the nominal value.
+     */
     inline void SetSpeed(int value) { m_speedHasBeenSet = true; m_speed = value; }
 
     /**
@@ -88,6 +100,12 @@ namespace Model
      * filtering.
      */
     inline int GetStrength() const{ return m_strength; }
+
+    /**
+     * Relative strength of noise reducing filter. Higher values produce stronger
+     * filtering.
+     */
+    inline bool StrengthHasBeenSet() const { return m_strengthHasBeenSet; }
 
     /**
      * Relative strength of noise reducing filter. Higher values produce stronger

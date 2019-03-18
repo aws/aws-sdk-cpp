@@ -55,6 +55,11 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the agent to update.</p>
      */
+    inline bool AgentArnHasBeenSet() const { return m_agentArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the agent to update.</p>
+     */
     inline void SetAgentArn(const Aws::String& value) { m_agentArnHasBeenSet = true; m_agentArn = value; }
 
     /**
@@ -87,6 +92,11 @@ namespace Model
      * <p>The name that you want to use to configure the agent.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
+
+    /**
+     * <p>The name that you want to use to configure the agent.</p>
+     */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
      * <p>The name that you want to use to configure the agent.</p>

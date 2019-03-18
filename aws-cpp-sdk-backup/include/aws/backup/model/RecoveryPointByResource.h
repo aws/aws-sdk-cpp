@@ -62,6 +62,13 @@ namespace Model
      * example,
      * <code>arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45</code>.</p>
      */
+    inline bool RecoveryPointArnHasBeenSet() const { return m_recoveryPointArnHasBeenSet; }
+
+    /**
+     * <p>An Amazon Resource Name (ARN) that uniquely identifies a recovery point; for
+     * example,
+     * <code>arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45</code>.</p>
+     */
     inline void SetRecoveryPointArn(const Aws::String& value) { m_recoveryPointArnHasBeenSet = true; m_recoveryPointArn = value; }
 
     /**
@@ -114,6 +121,14 @@ namespace Model
      * milliseconds. For example, the value 1516925490.087 represents Friday, January
      * 26, 2018 12:11:30.087 AM.</p>
      */
+    inline bool CreationDateHasBeenSet() const { return m_creationDateHasBeenSet; }
+
+    /**
+     * <p>The date and time a recovery point is created, in Unix format and Coordinated
+     * Universal Time (UTC). The value of <code>CreationDate</code> is accurate to
+     * milliseconds. For example, the value 1516925490.087 represents Friday, January
+     * 26, 2018 12:11:30.087 AM.</p>
+     */
     inline void SetCreationDate(const Aws::Utils::DateTime& value) { m_creationDateHasBeenSet = true; m_creationDate = value; }
 
     /**
@@ -149,6 +164,11 @@ namespace Model
     /**
      * <p>A status code specifying the state of the recovery point.</p>
      */
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
+
+    /**
+     * <p>A status code specifying the state of the recovery point.</p>
+     */
     inline void SetStatus(const RecoveryPointStatus& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
@@ -173,6 +193,13 @@ namespace Model
      * <code>arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p>
      */
     inline const Aws::String& GetEncryptionKeyArn() const{ return m_encryptionKeyArn; }
+
+    /**
+     * <p>The server-side encryption key that is used to protect your backups; for
+     * example,
+     * <code>arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p>
+     */
+    inline bool EncryptionKeyArnHasBeenSet() const { return m_encryptionKeyArnHasBeenSet; }
 
     /**
      * <p>The server-side encryption key that is used to protect your backups; for
@@ -225,6 +252,11 @@ namespace Model
     /**
      * <p>The size, in bytes, of a backup.</p>
      */
+    inline bool BackupSizeBytesHasBeenSet() const { return m_backupSizeBytesHasBeenSet; }
+
+    /**
+     * <p>The size, in bytes, of a backup.</p>
+     */
     inline void SetBackupSizeBytes(long long value) { m_backupSizeBytesHasBeenSet = true; m_backupSizeBytes = value; }
 
     /**
@@ -240,6 +272,14 @@ namespace Model
      * and hyphens.</p>
      */
     inline const Aws::String& GetBackupVaultName() const{ return m_backupVaultName; }
+
+    /**
+     * <p>The name of a logical container where backups are stored. Backup vaults are
+     * identified by names that are unique to the account used to create them and the
+     * AWS Region where they are created. They consist of lowercase letters, numbers,
+     * and hyphens.</p>
+     */
+    inline bool BackupVaultNameHasBeenSet() const { return m_backupVaultNameHasBeenSet; }
 
     /**
      * <p>The name of a logical container where backups are stored. Backup vaults are

@@ -62,6 +62,12 @@ namespace Model
      * <p>The bucket containing the object whose retention settings you want to
      * retrieve.</p>
      */
+    inline bool BucketHasBeenSet() const { return m_bucketHasBeenSet; }
+
+    /**
+     * <p>The bucket containing the object whose retention settings you want to
+     * retrieve.</p>
+     */
     inline void SetBucket(const Aws::String& value) { m_bucketHasBeenSet = true; m_bucket = value; }
 
     /**
@@ -100,6 +106,12 @@ namespace Model
      * retrieve.</p>
      */
     inline const Aws::String& GetKey() const{ return m_key; }
+
+    /**
+     * <p>The key name for the object whose retention settings you want to
+     * retrieve.</p>
+     */
+    inline bool KeyHasBeenSet() const { return m_keyHasBeenSet; }
 
     /**
      * <p>The key name for the object whose retention settings you want to
@@ -148,6 +160,12 @@ namespace Model
      * <p>The version ID for the object whose retention settings you want to
      * retrieve.</p>
      */
+    inline bool VersionIdHasBeenSet() const { return m_versionIdHasBeenSet; }
+
+    /**
+     * <p>The version ID for the object whose retention settings you want to
+     * retrieve.</p>
+     */
     inline void SetVersionId(const Aws::String& value) { m_versionIdHasBeenSet = true; m_versionId = value; }
 
     /**
@@ -185,6 +203,9 @@ namespace Model
     inline const RequestPayer& GetRequestPayer() const{ return m_requestPayer; }
 
     
+    inline bool RequestPayerHasBeenSet() const { return m_requestPayerHasBeenSet; }
+
+    
     inline void SetRequestPayer(const RequestPayer& value) { m_requestPayerHasBeenSet = true; m_requestPayer = value; }
 
     
@@ -199,6 +220,9 @@ namespace Model
 
     
     inline const Aws::Map<Aws::String, Aws::String>& GetCustomizedAccessLogTag() const{ return m_customizedAccessLogTag; }
+
+    
+    inline bool CustomizedAccessLogTagHasBeenSet() const { return m_customizedAccessLogTagHasBeenSet; }
 
     
     inline void SetCustomizedAccessLogTag(const Aws::Map<Aws::String, Aws::String>& value) { m_customizedAccessLogTagHasBeenSet = true; m_customizedAccessLogTag = value; }

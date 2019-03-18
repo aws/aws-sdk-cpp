@@ -68,6 +68,12 @@ namespace Model
      * <p>The name of the CloudFormation stack record. It starts with
      * <code>CloudFormationStackRecord</code> followed by a GUID.</p>
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>The name of the CloudFormation stack record. It starts with
+     * <code>CloudFormationStackRecord</code> followed by a GUID.</p>
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
@@ -109,6 +115,11 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the CloudFormation stack record.</p>
      */
+    inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the CloudFormation stack record.</p>
+     */
     inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
 
     /**
@@ -145,6 +156,11 @@ namespace Model
     /**
      * <p>The date when the CloudFormation stack record was created.</p>
      */
+    inline bool CreatedAtHasBeenSet() const { return m_createdAtHasBeenSet; }
+
+    /**
+     * <p>The date when the CloudFormation stack record was created.</p>
+     */
     inline void SetCreatedAt(const Aws::Utils::DateTime& value) { m_createdAtHasBeenSet = true; m_createdAt = value; }
 
     /**
@@ -168,6 +184,12 @@ namespace Model
      * CloudFormation stack record.</p>
      */
     inline const ResourceLocation& GetLocation() const{ return m_location; }
+
+    /**
+     * <p>A list of objects describing the Availability Zone and AWS Region of the
+     * CloudFormation stack record.</p>
+     */
+    inline bool LocationHasBeenSet() const { return m_locationHasBeenSet; }
 
     /**
      * <p>A list of objects describing the Availability Zone and AWS Region of the
@@ -204,6 +226,12 @@ namespace Model
      * <p>The Lightsail resource type (e.g.,
      * <code>CloudFormationStackRecord</code>).</p>
      */
+    inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
+
+    /**
+     * <p>The Lightsail resource type (e.g.,
+     * <code>CloudFormationStackRecord</code>).</p>
+     */
     inline void SetResourceType(const ResourceType& value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
 
     /**
@@ -233,6 +261,11 @@ namespace Model
     /**
      * <p>The current state of the CloudFormation stack record.</p>
      */
+    inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
+
+    /**
+     * <p>The current state of the CloudFormation stack record.</p>
+     */
     inline void SetState(const RecordState& value) { m_stateHasBeenSet = true; m_state = value; }
 
     /**
@@ -256,6 +289,12 @@ namespace Model
      * record.</p>
      */
     inline const Aws::Vector<CloudFormationStackRecordSourceInfo>& GetSourceInfo() const{ return m_sourceInfo; }
+
+    /**
+     * <p>A list of objects describing the source of the CloudFormation stack
+     * record.</p>
+     */
+    inline bool SourceInfoHasBeenSet() const { return m_sourceInfoHasBeenSet; }
 
     /**
      * <p>A list of objects describing the source of the CloudFormation stack
@@ -300,6 +339,13 @@ namespace Model
      * stack.</p>
      */
     inline const DestinationInfo& GetDestinationInfo() const{ return m_destinationInfo; }
+
+    /**
+     * <p>A list of objects describing the destination service, which is AWS
+     * CloudFormation, and the Amazon Resource Name (ARN) of the AWS CloudFormation
+     * stack.</p>
+     */
+    inline bool DestinationInfoHasBeenSet() const { return m_destinationInfoHasBeenSet; }
 
     /**
      * <p>A list of objects describing the destination service, which is AWS

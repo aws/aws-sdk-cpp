@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The name of the on-premises instance to register.</p>
      */
+    inline bool InstanceNameHasBeenSet() const { return m_instanceNameHasBeenSet; }
+
+    /**
+     * <p>The name of the on-premises instance to register.</p>
+     */
     inline void SetInstanceName(const Aws::String& value) { m_instanceNameHasBeenSet = true; m_instanceName = value; }
 
     /**
@@ -92,6 +97,11 @@ namespace Model
     /**
      * <p>The ARN of the IAM session to associate with the on-premises instance.</p>
      */
+    inline bool IamSessionArnHasBeenSet() const { return m_iamSessionArnHasBeenSet; }
+
+    /**
+     * <p>The ARN of the IAM session to associate with the on-premises instance.</p>
+     */
     inline void SetIamSessionArn(const Aws::String& value) { m_iamSessionArnHasBeenSet = true; m_iamSessionArn = value; }
 
     /**
@@ -124,6 +134,11 @@ namespace Model
      * <p>The ARN of the IAM user to associate with the on-premises instance.</p>
      */
     inline const Aws::String& GetIamUserArn() const{ return m_iamUserArn; }
+
+    /**
+     * <p>The ARN of the IAM user to associate with the on-premises instance.</p>
+     */
+    inline bool IamUserArnHasBeenSet() const { return m_iamUserArnHasBeenSet; }
 
     /**
      * <p>The ARN of the IAM user to associate with the on-premises instance.</p>

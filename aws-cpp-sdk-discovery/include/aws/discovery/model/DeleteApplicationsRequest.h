@@ -53,6 +53,11 @@ namespace Model
     /**
      * <p>Configuration ID of an application to be deleted.</p>
      */
+    inline bool ConfigurationIdsHasBeenSet() const { return m_configurationIdsHasBeenSet; }
+
+    /**
+     * <p>Configuration ID of an application to be deleted.</p>
+     */
     inline void SetConfigurationIds(const Aws::Vector<Aws::String>& value) { m_configurationIdsHasBeenSet = true; m_configurationIds = value; }
 
     /**

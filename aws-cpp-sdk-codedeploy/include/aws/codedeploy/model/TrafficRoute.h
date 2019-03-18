@@ -62,6 +62,13 @@ namespace Model
      * group and a load balancer. This is an array of strings with a maximum size of
      * one. </p>
      */
+    inline bool ListenerArnsHasBeenSet() const { return m_listenerArnsHasBeenSet; }
+
+    /**
+     * <p> The ARN of one listener. The listener identifies the route between a target
+     * group and a load balancer. This is an array of strings with a maximum size of
+     * one. </p>
+     */
     inline void SetListenerArns(const Aws::Vector<Aws::String>& value) { m_listenerArnsHasBeenSet = true; m_listenerArns = value; }
 
     /**

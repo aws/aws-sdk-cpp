@@ -63,6 +63,15 @@ namespace Model
      * '_', '.', '/', '=', '+', '-' (Java regex:
      * "^([\\p{L}\\p{Z}\\p{N}_.:/=+\\-]*)$").</p>
      */
+    inline bool KeyHasBeenSet() const { return m_keyHasBeenSet; }
+
+    /**
+     * <p>A key is the required name of the tag. The string value can be from 1 to 128
+     * Unicode characters in length and cannot be prefixed with "aws:" or "dms:". The
+     * string can only contain only the set of Unicode letters, digits, white-space,
+     * '_', '.', '/', '=', '+', '-' (Java regex:
+     * "^([\\p{L}\\p{Z}\\p{N}_.:/=+\\-]*)$").</p>
+     */
     inline void SetKey(const Aws::String& value) { m_keyHasBeenSet = true; m_key = value; }
 
     /**
@@ -119,6 +128,15 @@ namespace Model
      * "^([\\p{L}\\p{Z}\\p{N}_.:/=+\\-]*)$").</p>
      */
     inline const Aws::String& GetValue() const{ return m_value; }
+
+    /**
+     * <p>A value is the optional value of the tag. The string value can be from 1 to
+     * 256 Unicode characters in length and cannot be prefixed with "aws:" or "dms:".
+     * The string can only contain only the set of Unicode letters, digits,
+     * white-space, '_', '.', '/', '=', '+', '-' (Java regex:
+     * "^([\\p{L}\\p{Z}\\p{N}_.:/=+\\-]*)$").</p>
+     */
+    inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
 
     /**
      * <p>A value is the optional value of the tag. The string value can be from 1 to

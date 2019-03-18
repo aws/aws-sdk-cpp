@@ -51,6 +51,11 @@ namespace Model
     /**
      * <p>The name of the resource group for which you want to edit the query.</p>
      */
+    inline bool GroupNameHasBeenSet() const { return m_groupNameHasBeenSet; }
+
+    /**
+     * <p>The name of the resource group for which you want to edit the query.</p>
+     */
     inline void SetGroupName(const Aws::String& value) { m_groupNameHasBeenSet = true; m_groupName = value; }
 
     /**
@@ -84,6 +89,12 @@ namespace Model
      * resource group.</p>
      */
     inline const ResourceQuery& GetResourceQuery() const{ return m_resourceQuery; }
+
+    /**
+     * <p>The resource query that determines which AWS resources are members of the
+     * resource group.</p>
+     */
+    inline bool ResourceQueryHasBeenSet() const { return m_resourceQueryHasBeenSet; }
 
     /**
      * <p>The resource query that determines which AWS resources are members of the

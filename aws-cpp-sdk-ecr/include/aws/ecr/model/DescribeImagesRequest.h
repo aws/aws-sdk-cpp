@@ -59,6 +59,13 @@ namespace Model
      * in which to describe images. If you do not specify a registry, the default
      * registry is assumed.</p>
      */
+    inline bool RegistryIdHasBeenSet() const { return m_registryIdHasBeenSet; }
+
+    /**
+     * <p>The AWS account ID associated with the registry that contains the repository
+     * in which to describe images. If you do not specify a registry, the default
+     * registry is assumed.</p>
+     */
     inline void SetRegistryId(const Aws::String& value) { m_registryIdHasBeenSet = true; m_registryId = value; }
 
     /**
@@ -105,6 +112,11 @@ namespace Model
     /**
      * <p>A list of repositories to describe.</p>
      */
+    inline bool RepositoryNameHasBeenSet() const { return m_repositoryNameHasBeenSet; }
+
+    /**
+     * <p>A list of repositories to describe.</p>
+     */
     inline void SetRepositoryName(const Aws::String& value) { m_repositoryNameHasBeenSet = true; m_repositoryName = value; }
 
     /**
@@ -137,6 +149,11 @@ namespace Model
      * <p>The list of image IDs for the requested repository.</p>
      */
     inline const Aws::Vector<ImageIdentifier>& GetImageIds() const{ return m_imageIds; }
+
+    /**
+     * <p>The list of image IDs for the requested repository.</p>
+     */
+    inline bool ImageIdsHasBeenSet() const { return m_imageIdsHasBeenSet; }
 
     /**
      * <p>The list of image IDs for the requested repository.</p>
@@ -178,6 +195,16 @@ namespace Model
      * cannot be used when you specify images with <code>imageIds</code>.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
+    /**
+     * <p>The <code>nextToken</code> value returned from a previous paginated
+     * <code>DescribeImages</code> request where <code>maxResults</code> was used and
+     * the results exceeded the value of that parameter. Pagination continues from the
+     * end of the previous results that returned the <code>nextToken</code> value. This
+     * value is <code>null</code> when there are no more results to return. This option
+     * cannot be used when you specify images with <code>imageIds</code>.</p>
+     */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
      * <p>The <code>nextToken</code> value returned from a previous paginated
@@ -266,6 +293,20 @@ namespace Model
      * <code>nextToken</code> value, if applicable. This option cannot be used when you
      * specify images with <code>imageIds</code>.</p>
      */
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
+
+    /**
+     * <p>The maximum number of repository results returned by
+     * <code>DescribeImages</code> in paginated output. When this parameter is used,
+     * <code>DescribeImages</code> only returns <code>maxResults</code> results in a
+     * single page along with a <code>nextToken</code> response element. The remaining
+     * results of the initial request can be seen by sending another
+     * <code>DescribeImages</code> request with the returned <code>nextToken</code>
+     * value. This value can be between 1 and 1000. If this parameter is not used, then
+     * <code>DescribeImages</code> returns up to 100 results and a
+     * <code>nextToken</code> value, if applicable. This option cannot be used when you
+     * specify images with <code>imageIds</code>.</p>
+     */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
@@ -288,6 +329,12 @@ namespace Model
      * <code>DescribeImages</code> results.</p>
      */
     inline const DescribeImagesFilter& GetFilter() const{ return m_filter; }
+
+    /**
+     * <p>The filter key and value with which to filter your
+     * <code>DescribeImages</code> results.</p>
+     */
+    inline bool FilterHasBeenSet() const { return m_filterHasBeenSet; }
 
     /**
      * <p>The filter key and value with which to filter your

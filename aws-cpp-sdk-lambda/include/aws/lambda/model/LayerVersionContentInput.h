@@ -59,6 +59,11 @@ namespace Model
     /**
      * <p>The Amazon S3 bucket of the layer archive.</p>
      */
+    inline bool S3BucketHasBeenSet() const { return m_s3BucketHasBeenSet; }
+
+    /**
+     * <p>The Amazon S3 bucket of the layer archive.</p>
+     */
     inline void SetS3Bucket(const Aws::String& value) { m_s3BucketHasBeenSet = true; m_s3Bucket = value; }
 
     /**
@@ -91,6 +96,11 @@ namespace Model
      * <p>The Amazon S3 key of the layer archive.</p>
      */
     inline const Aws::String& GetS3Key() const{ return m_s3Key; }
+
+    /**
+     * <p>The Amazon S3 key of the layer archive.</p>
+     */
+    inline bool S3KeyHasBeenSet() const { return m_s3KeyHasBeenSet; }
 
     /**
      * <p>The Amazon S3 key of the layer archive.</p>
@@ -131,6 +141,11 @@ namespace Model
     /**
      * <p>For versioned objects, the version of the layer archive object to use.</p>
      */
+    inline bool S3ObjectVersionHasBeenSet() const { return m_s3ObjectVersionHasBeenSet; }
+
+    /**
+     * <p>For versioned objects, the version of the layer archive object to use.</p>
+     */
     inline void SetS3ObjectVersion(const Aws::String& value) { m_s3ObjectVersionHasBeenSet = true; m_s3ObjectVersion = value; }
 
     /**
@@ -164,6 +179,12 @@ namespace Model
      * handle the encoding for you.</p>
      */
     inline const Aws::Utils::CryptoBuffer& GetZipFile() const{ return m_zipFile; }
+
+    /**
+     * <p>The base64-encoded contents of the layer archive. AWS SDK and AWS CLI clients
+     * handle the encoding for you.</p>
+     */
+    inline bool ZipFileHasBeenSet() const { return m_zipFileHasBeenSet; }
 
     /**
      * <p>The base64-encoded contents of the layer archive. AWS SDK and AWS CLI clients

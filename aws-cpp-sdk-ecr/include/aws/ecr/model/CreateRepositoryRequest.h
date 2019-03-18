@@ -60,6 +60,14 @@ namespace Model
      * namespace to group the repository into a category (such as
      * <code>project-a/nginx-web-app</code>).</p>
      */
+    inline bool RepositoryNameHasBeenSet() const { return m_repositoryNameHasBeenSet; }
+
+    /**
+     * <p>The name to use for the repository. The repository name may be specified on
+     * its own (such as <code>nginx-web-app</code>) or it can be prepended with a
+     * namespace to group the repository into a category (such as
+     * <code>project-a/nginx-web-app</code>).</p>
+     */
     inline void SetRepositoryName(const Aws::String& value) { m_repositoryNameHasBeenSet = true; m_repositoryName = value; }
 
     /**
@@ -107,6 +115,11 @@ namespace Model
      * <p/>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p/>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
      * <p/>

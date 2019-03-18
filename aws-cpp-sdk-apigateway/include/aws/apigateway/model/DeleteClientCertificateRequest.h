@@ -56,6 +56,12 @@ namespace Model
      * <p>[Required] The identifier of the <a>ClientCertificate</a> resource to be
      * deleted.</p>
      */
+    inline bool ClientCertificateIdHasBeenSet() const { return m_clientCertificateIdHasBeenSet; }
+
+    /**
+     * <p>[Required] The identifier of the <a>ClientCertificate</a> resource to be
+     * deleted.</p>
+     */
     inline void SetClientCertificateId(const Aws::String& value) { m_clientCertificateIdHasBeenSet = true; m_clientCertificateId = value; }
 
     /**

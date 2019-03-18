@@ -54,6 +54,11 @@ namespace Model
     /**
      * <p>Specifies whether SMS text message MFA is enabled.</p>
      */
+    inline bool EnabledHasBeenSet() const { return m_enabledHasBeenSet; }
+
+    /**
+     * <p>Specifies whether SMS text message MFA is enabled.</p>
+     */
     inline void SetEnabled(bool value) { m_enabledHasBeenSet = true; m_enabled = value; }
 
     /**
@@ -66,6 +71,11 @@ namespace Model
      * <p>The preferred MFA method.</p>
      */
     inline bool GetPreferredMfa() const{ return m_preferredMfa; }
+
+    /**
+     * <p>The preferred MFA method.</p>
+     */
+    inline bool PreferredMfaHasBeenSet() const { return m_preferredMfaHasBeenSet; }
 
     /**
      * <p>The preferred MFA method.</p>

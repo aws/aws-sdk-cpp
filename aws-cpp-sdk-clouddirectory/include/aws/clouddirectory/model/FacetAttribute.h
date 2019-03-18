@@ -59,6 +59,11 @@ namespace Model
     /**
      * <p>The name of the facet attribute.</p>
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>The name of the facet attribute.</p>
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
@@ -94,6 +99,14 @@ namespace Model
      * References</a> for more information.</p>
      */
     inline const FacetAttributeDefinition& GetAttributeDefinition() const{ return m_attributeDefinition; }
+
+    /**
+     * <p>A facet attribute consists of either a definition or a reference. This
+     * structure contains the attribute definition. See <a
+     * href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/schemas_attributereferences.html">Attribute
+     * References</a> for more information.</p>
+     */
+    inline bool AttributeDefinitionHasBeenSet() const { return m_attributeDefinitionHasBeenSet; }
 
     /**
      * <p>A facet attribute consists of either a definition or a reference. This
@@ -140,6 +153,13 @@ namespace Model
      * href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/schemas_attributereferences.html">Attribute
      * References</a> for more information.</p>
      */
+    inline bool AttributeReferenceHasBeenSet() const { return m_attributeReferenceHasBeenSet; }
+
+    /**
+     * <p>An attribute reference that is associated with the attribute. See <a
+     * href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/schemas_attributereferences.html">Attribute
+     * References</a> for more information.</p>
+     */
     inline void SetAttributeReference(const FacetAttributeReference& value) { m_attributeReferenceHasBeenSet = true; m_attributeReference = value; }
 
     /**
@@ -168,6 +188,11 @@ namespace Model
      * <p>The required behavior of the <code>FacetAttribute</code>.</p>
      */
     inline const RequiredAttributeBehavior& GetRequiredBehavior() const{ return m_requiredBehavior; }
+
+    /**
+     * <p>The required behavior of the <code>FacetAttribute</code>.</p>
+     */
+    inline bool RequiredBehaviorHasBeenSet() const { return m_requiredBehaviorHasBeenSet; }
 
     /**
      * <p>The required behavior of the <code>FacetAttribute</code>.</p>

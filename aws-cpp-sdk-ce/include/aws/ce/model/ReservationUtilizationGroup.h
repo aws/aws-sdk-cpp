@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p>The key for a specific reservation attribute.</p>
      */
+    inline bool KeyHasBeenSet() const { return m_keyHasBeenSet; }
+
+    /**
+     * <p>The key for a specific reservation attribute.</p>
+     */
     inline void SetKey(const Aws::String& value) { m_keyHasBeenSet = true; m_key = value; }
 
     /**
@@ -94,6 +99,11 @@ namespace Model
     /**
      * <p>The value of a specific reservation attribute.</p>
      */
+    inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
+
+    /**
+     * <p>The value of a specific reservation attribute.</p>
+     */
     inline void SetValue(const Aws::String& value) { m_valueHasBeenSet = true; m_value = value; }
 
     /**
@@ -126,6 +136,11 @@ namespace Model
      * <p>The attributes for this group of reservations.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetAttributes() const{ return m_attributes; }
+
+    /**
+     * <p>The attributes for this group of reservations.</p>
+     */
+    inline bool AttributesHasBeenSet() const { return m_attributesHasBeenSet; }
 
     /**
      * <p>The attributes for this group of reservations.</p>
@@ -187,6 +202,11 @@ namespace Model
      * <p>How much you used this group of reservations.</p>
      */
     inline const ReservationAggregates& GetUtilization() const{ return m_utilization; }
+
+    /**
+     * <p>How much you used this group of reservations.</p>
+     */
+    inline bool UtilizationHasBeenSet() const { return m_utilizationHasBeenSet; }
 
     /**
      * <p>How much you used this group of reservations.</p>

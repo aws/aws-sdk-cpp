@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>A list of <code>ObjectIdentifiers</code> to which the policy is attached.</p>
      */
+    inline bool ObjectIdentifiersHasBeenSet() const { return m_objectIdentifiersHasBeenSet; }
+
+    /**
+     * <p>A list of <code>ObjectIdentifiers</code> to which the policy is attached.</p>
+     */
     inline void SetObjectIdentifiers(const Aws::Vector<Aws::String>& value) { m_objectIdentifiersHasBeenSet = true; m_objectIdentifiers = value; }
 
     /**
@@ -94,6 +99,11 @@ namespace Model
      * <p>The pagination token.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
+    /**
+     * <p>The pagination token.</p>
+     */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
      * <p>The pagination token.</p>

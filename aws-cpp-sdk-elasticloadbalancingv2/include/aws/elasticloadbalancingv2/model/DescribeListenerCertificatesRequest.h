@@ -54,6 +54,11 @@ namespace Model
     /**
      * <p>The Amazon Resource Names (ARN) of the listener.</p>
      */
+    inline bool ListenerArnHasBeenSet() const { return m_listenerArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Names (ARN) of the listener.</p>
+     */
     inline void SetListenerArn(const Aws::String& value) { m_listenerArnHasBeenSet = true; m_listenerArn = value; }
 
     /**
@@ -87,6 +92,12 @@ namespace Model
      * previous call.)</p>
      */
     inline const Aws::String& GetMarker() const{ return m_marker; }
+
+    /**
+     * <p>The marker for the next set of results. (You received this marker from a
+     * previous call.)</p>
+     */
+    inline bool MarkerHasBeenSet() const { return m_markerHasBeenSet; }
 
     /**
      * <p>The marker for the next set of results. (You received this marker from a
@@ -129,6 +140,11 @@ namespace Model
      * <p>The maximum number of results to return with this call.</p>
      */
     inline int GetPageSize() const{ return m_pageSize; }
+
+    /**
+     * <p>The maximum number of results to return with this call.</p>
+     */
+    inline bool PageSizeHasBeenSet() const { return m_pageSizeHasBeenSet; }
 
     /**
      * <p>The maximum number of results to return with this call.</p>

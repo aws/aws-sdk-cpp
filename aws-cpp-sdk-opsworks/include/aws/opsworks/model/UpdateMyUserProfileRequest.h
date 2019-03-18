@@ -52,6 +52,11 @@ namespace Model
     /**
      * <p>The user's SSH public key.</p>
      */
+    inline bool SshPublicKeyHasBeenSet() const { return m_sshPublicKeyHasBeenSet; }
+
+    /**
+     * <p>The user's SSH public key.</p>
+     */
     inline void SetSshPublicKey(const Aws::String& value) { m_sshPublicKeyHasBeenSet = true; m_sshPublicKey = value; }
 
     /**

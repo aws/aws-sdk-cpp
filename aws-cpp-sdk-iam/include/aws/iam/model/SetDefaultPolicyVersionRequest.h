@@ -62,6 +62,15 @@ namespace Model
      * Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General
      * Reference</i>.</p>
      */
+    inline bool PolicyArnHasBeenSet() const { return m_policyArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the IAM policy whose default version you
+     * want to set.</p> <p>For more information about ARNs, see <a
+     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General
+     * Reference</i>.</p>
+     */
     inline void SetPolicyArn(const Aws::String& value) { m_policyArnHasBeenSet = true; m_policyArn = value; }
 
     /**
@@ -117,6 +126,14 @@ namespace Model
      * for Managed Policies</a> in the <i>IAM User Guide</i>.</p>
      */
     inline const Aws::String& GetVersionId() const{ return m_versionId; }
+
+    /**
+     * <p>The version of the policy to set as the default (operative) version.</p>
+     * <p>For more information about managed policy versions, see <a
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html">Versioning
+     * for Managed Policies</a> in the <i>IAM User Guide</i>.</p>
+     */
+    inline bool VersionIdHasBeenSet() const { return m_versionIdHasBeenSet; }
 
     /**
      * <p>The version of the policy to set as the default (operative) version.</p>

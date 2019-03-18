@@ -52,6 +52,11 @@ namespace Model
     /**
      * <p>The ARN of the user. Required.</p>
      */
+    inline bool UserIdHasBeenSet() const { return m_userIdHasBeenSet; }
+
+    /**
+     * <p>The ARN of the user. Required.</p>
+     */
     inline void SetUserId(const Aws::String& value) { m_userIdHasBeenSet = true; m_userId = value; }
 
     /**
@@ -84,6 +89,11 @@ namespace Model
      * <p>The ARN of the skill that was requested. Required.</p>
      */
     inline const Aws::String& GetSkillId() const{ return m_skillId; }
+
+    /**
+     * <p>The ARN of the skill that was requested. Required.</p>
+     */
+    inline bool SkillIdHasBeenSet() const { return m_skillIdHasBeenSet; }
 
     /**
      * <p>The ARN of the skill that was requested. Required.</p>

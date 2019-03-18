@@ -59,6 +59,11 @@ namespace Model
     /**
      * <p>The text-format code for a Java-based Kinesis Data Analytics application.</p>
      */
+    inline bool TextContentHasBeenSet() const { return m_textContentHasBeenSet; }
+
+    /**
+     * <p>The text-format code for a Java-based Kinesis Data Analytics application.</p>
+     */
     inline void SetTextContent(const Aws::String& value) { m_textContentHasBeenSet = true; m_textContent = value; }
 
     /**
@@ -95,6 +100,11 @@ namespace Model
     /**
      * <p>The zip-format code for a Java-based Kinesis Data Analytics application.</p>
      */
+    inline bool ZipFileContentHasBeenSet() const { return m_zipFileContentHasBeenSet; }
+
+    /**
+     * <p>The zip-format code for a Java-based Kinesis Data Analytics application.</p>
+     */
     inline void SetZipFileContent(const Aws::Utils::ByteBuffer& value) { m_zipFileContentHasBeenSet = true; m_zipFileContent = value; }
 
     /**
@@ -117,6 +127,11 @@ namespace Model
      * <p>Information about the Amazon S3 bucket containing the application code.</p>
      */
     inline const S3ContentLocation& GetS3ContentLocation() const{ return m_s3ContentLocation; }
+
+    /**
+     * <p>Information about the Amazon S3 bucket containing the application code.</p>
+     */
+    inline bool S3ContentLocationHasBeenSet() const { return m_s3ContentLocationHasBeenSet; }
 
     /**
      * <p>Information about the Amazon S3 bucket containing the application code.</p>

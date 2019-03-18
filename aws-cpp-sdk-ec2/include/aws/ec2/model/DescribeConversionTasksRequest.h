@@ -59,6 +59,11 @@ namespace Model
     /**
      * <p>One or more conversion task IDs.</p>
      */
+    inline bool ConversionTaskIdsHasBeenSet() const { return m_conversionTaskIdsHasBeenSet; }
+
+    /**
+     * <p>One or more conversion task IDs.</p>
+     */
     inline void SetConversionTaskIds(const Aws::Vector<Aws::String>& value) { m_conversionTaskIdsHasBeenSet = true; m_conversionTaskIds = value; }
 
     /**
@@ -99,6 +104,14 @@ namespace Model
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
     inline bool GetDryRun() const{ return m_dryRun; }
+
+    /**
+     * <p>Checks whether you have the required permissions for the action, without
+     * actually making the request, and provides an error response. If you have the
+     * required permissions, the error response is <code>DryRunOperation</code>.
+     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+     */
+    inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
 
     /**
      * <p>Checks whether you have the required permissions for the action, without

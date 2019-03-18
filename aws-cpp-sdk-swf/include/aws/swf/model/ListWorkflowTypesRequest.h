@@ -53,6 +53,11 @@ namespace Model
     /**
      * <p>The name of the domain in which the workflow types have been registered.</p>
      */
+    inline bool DomainHasBeenSet() const { return m_domainHasBeenSet; }
+
+    /**
+     * <p>The name of the domain in which the workflow types have been registered.</p>
+     */
     inline void SetDomain(const Aws::String& value) { m_domainHasBeenSet = true; m_domain = value; }
 
     /**
@@ -85,6 +90,11 @@ namespace Model
      * <p>If specified, lists the workflow type with this name.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
+
+    /**
+     * <p>If specified, lists the workflow type with this name.</p>
+     */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
      * <p>If specified, lists the workflow type with this name.</p>
@@ -125,6 +135,11 @@ namespace Model
     /**
      * <p>Specifies the registration status of the workflow types to list.</p>
      */
+    inline bool RegistrationStatusHasBeenSet() const { return m_registrationStatusHasBeenSet; }
+
+    /**
+     * <p>Specifies the registration status of the workflow types to list.</p>
+     */
     inline void SetRegistrationStatus(const RegistrationStatus& value) { m_registrationStatusHasBeenSet = true; m_registrationStatus = value; }
 
     /**
@@ -151,6 +166,15 @@ namespace Model
      * determines how many results can be returned in a single call.</p>
      */
     inline const Aws::String& GetNextPageToken() const{ return m_nextPageToken; }
+
+    /**
+     * <p>If a <code>NextPageToken</code> was returned by a previous call, there are
+     * more results available. To retrieve the next page of results, make the call
+     * again using the returned token in <code>nextPageToken</code>. Keep all other
+     * arguments unchanged.</p> <p>The configured <code>maximumPageSize</code>
+     * determines how many results can be returned in a single call.</p>
+     */
+    inline bool NextPageTokenHasBeenSet() const { return m_nextPageTokenHasBeenSet; }
 
     /**
      * <p>If a <code>NextPageToken</code> was returned by a previous call, there are
@@ -225,6 +249,16 @@ namespace Model
      * limit only; the actual number of results returned per call may be fewer than the
      * specified maximum.</p>
      */
+    inline bool MaximumPageSizeHasBeenSet() const { return m_maximumPageSizeHasBeenSet; }
+
+    /**
+     * <p>The maximum number of results that are returned per call.
+     * <code>nextPageToken</code> can be used to obtain futher pages of results. The
+     * default is 1000, which is the maximum allowed page size. You can, however,
+     * specify a page size <i>smaller</i> than the maximum.</p> <p>This is an upper
+     * limit only; the actual number of results returned per call may be fewer than the
+     * specified maximum.</p>
+     */
     inline void SetMaximumPageSize(int value) { m_maximumPageSizeHasBeenSet = true; m_maximumPageSize = value; }
 
     /**
@@ -244,6 +278,13 @@ namespace Model
      * <code>name</code> of the workflow types.</p>
      */
     inline bool GetReverseOrder() const{ return m_reverseOrder; }
+
+    /**
+     * <p>When set to <code>true</code>, returns the results in reverse order. By
+     * default the results are returned in ascending alphabetical order of the
+     * <code>name</code> of the workflow types.</p>
+     */
+    inline bool ReverseOrderHasBeenSet() const { return m_reverseOrderHasBeenSet; }
 
     /**
      * <p>When set to <code>true</code>, returns the results in reverse order. By

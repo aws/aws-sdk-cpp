@@ -59,6 +59,12 @@ namespace Model
      * <p>The input source ID. You can get this ID by calling the
      * <a>DescribeApplication</a> operation. </p>
      */
+    inline bool InputIdHasBeenSet() const { return m_inputIdHasBeenSet; }
+
+    /**
+     * <p>The input source ID. You can get this ID by calling the
+     * <a>DescribeApplication</a> operation. </p>
+     */
     inline void SetInputId(const Aws::String& value) { m_inputIdHasBeenSet = true; m_inputId = value; }
 
     /**
@@ -97,6 +103,12 @@ namespace Model
      * the streaming source. </p>
      */
     inline const InputStartingPositionConfiguration& GetInputStartingPositionConfiguration() const{ return m_inputStartingPositionConfiguration; }
+
+    /**
+     * <p>The point at which you want the application to start processing records from
+     * the streaming source. </p>
+     */
+    inline bool InputStartingPositionConfigurationHasBeenSet() const { return m_inputStartingPositionConfigurationHasBeenSet; }
 
     /**
      * <p>The point at which you want the application to start processing records from

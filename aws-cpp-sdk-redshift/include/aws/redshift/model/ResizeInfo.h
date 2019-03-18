@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>Returns the value <code>ClassicResize</code>.</p>
      */
+    inline bool ResizeTypeHasBeenSet() const { return m_resizeTypeHasBeenSet; }
+
+    /**
+     * <p>Returns the value <code>ClassicResize</code>.</p>
+     */
     inline void SetResizeType(const Aws::String& value) { m_resizeTypeHasBeenSet = true; m_resizeType = value; }
 
     /**
@@ -89,6 +94,11 @@ namespace Model
      * <p>A boolean value indicating if the resize operation can be cancelled.</p>
      */
     inline bool GetAllowCancelResize() const{ return m_allowCancelResize; }
+
+    /**
+     * <p>A boolean value indicating if the resize operation can be cancelled.</p>
+     */
+    inline bool AllowCancelResizeHasBeenSet() const { return m_allowCancelResizeHasBeenSet; }
 
     /**
      * <p>A boolean value indicating if the resize operation can be cancelled.</p>

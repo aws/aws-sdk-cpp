@@ -53,6 +53,11 @@ namespace Model
     /**
      * <p>The IDs of individual environments to get information about.</p>
      */
+    inline bool EnvironmentIdsHasBeenSet() const { return m_environmentIdsHasBeenSet; }
+
+    /**
+     * <p>The IDs of individual environments to get information about.</p>
+     */
     inline void SetEnvironmentIds(const Aws::Vector<Aws::String>& value) { m_environmentIdsHasBeenSet = true; m_environmentIds = value; }
 
     /**

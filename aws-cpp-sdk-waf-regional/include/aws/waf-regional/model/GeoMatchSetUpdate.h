@@ -59,6 +59,12 @@ namespace Model
      * <p>Specifies whether to insert or delete a country with
      * <a>UpdateGeoMatchSet</a>.</p>
      */
+    inline bool ActionHasBeenSet() const { return m_actionHasBeenSet; }
+
+    /**
+     * <p>Specifies whether to insert or delete a country with
+     * <a>UpdateGeoMatchSet</a>.</p>
+     */
     inline void SetAction(const ChangeAction& value) { m_actionHasBeenSet = true; m_action = value; }
 
     /**
@@ -85,6 +91,12 @@ namespace Model
      * for.</p>
      */
     inline const GeoMatchConstraint& GetGeoMatchConstraint() const{ return m_geoMatchConstraint; }
+
+    /**
+     * <p>The country from which web requests originate that you want AWS WAF to search
+     * for.</p>
+     */
+    inline bool GeoMatchConstraintHasBeenSet() const { return m_geoMatchConstraintHasBeenSet; }
 
     /**
      * <p>The country from which web requests originate that you want AWS WAF to search

@@ -53,6 +53,12 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the AWS RoboMaker resource you are
      * tagging.</p>
      */
+    inline bool ResourceArnHasBeenSet() const { return m_resourceArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the AWS RoboMaker resource you are
+     * tagging.</p>
+     */
     inline void SetResourceArn(const Aws::String& value) { m_resourceArnHasBeenSet = true; m_resourceArn = value; }
 
     /**
@@ -91,6 +97,12 @@ namespace Model
      * resource.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>A map that contains tag keys and tag values that are attached to the
+     * resource.</p>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
      * <p>A map that contains tag keys and tag values that are attached to the

@@ -52,6 +52,11 @@ namespace Model
     /**
      * <p>The 12-digit account ID of the account authorized to aggregate data.</p>
      */
+    inline bool AuthorizedAccountIdHasBeenSet() const { return m_authorizedAccountIdHasBeenSet; }
+
+    /**
+     * <p>The 12-digit account ID of the account authorized to aggregate data.</p>
+     */
     inline void SetAuthorizedAccountId(const Aws::String& value) { m_authorizedAccountIdHasBeenSet = true; m_authorizedAccountId = value; }
 
     /**
@@ -84,6 +89,11 @@ namespace Model
      * <p>The region authorized to collect aggregated data.</p>
      */
     inline const Aws::String& GetAuthorizedAwsRegion() const{ return m_authorizedAwsRegion; }
+
+    /**
+     * <p>The region authorized to collect aggregated data.</p>
+     */
+    inline bool AuthorizedAwsRegionHasBeenSet() const { return m_authorizedAwsRegionHasBeenSet; }
 
     /**
      * <p>The region authorized to collect aggregated data.</p>

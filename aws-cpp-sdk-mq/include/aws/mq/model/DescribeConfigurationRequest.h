@@ -50,6 +50,11 @@ namespace Model
     /**
      * The unique ID that Amazon MQ generates for the configuration.
      */
+    inline bool ConfigurationIdHasBeenSet() const { return m_configurationIdHasBeenSet; }
+
+    /**
+     * The unique ID that Amazon MQ generates for the configuration.
+     */
     inline void SetConfigurationId(const Aws::String& value) { m_configurationIdHasBeenSet = true; m_configurationId = value; }
 
     /**

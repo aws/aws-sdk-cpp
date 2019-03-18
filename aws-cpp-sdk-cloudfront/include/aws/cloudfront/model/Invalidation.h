@@ -59,6 +59,12 @@ namespace Model
      * <p>The identifier for the invalidation request. For example:
      * <code>IDFDVBD632BHDS5</code>.</p>
      */
+    inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
+
+    /**
+     * <p>The identifier for the invalidation request. For example:
+     * <code>IDFDVBD632BHDS5</code>.</p>
+     */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
     /**
@@ -97,6 +103,12 @@ namespace Model
      * finished, the status is <code>Completed</code>.</p>
      */
     inline const Aws::String& GetStatus() const{ return m_status; }
+
+    /**
+     * <p>The status of the invalidation request. When the invalidation batch is
+     * finished, the status is <code>Completed</code>.</p>
+     */
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
     /**
      * <p>The status of the invalidation request. When the invalidation batch is
@@ -143,6 +155,11 @@ namespace Model
     /**
      * <p>The date and time the invalidation request was first made. </p>
      */
+    inline bool CreateTimeHasBeenSet() const { return m_createTimeHasBeenSet; }
+
+    /**
+     * <p>The date and time the invalidation request was first made. </p>
+     */
     inline void SetCreateTime(const Aws::Utils::DateTime& value) { m_createTimeHasBeenSet = true; m_createTime = value; }
 
     /**
@@ -165,6 +182,11 @@ namespace Model
      * <p>The current invalidation information for the batch request. </p>
      */
     inline const InvalidationBatch& GetInvalidationBatch() const{ return m_invalidationBatch; }
+
+    /**
+     * <p>The current invalidation information for the batch request. </p>
+     */
+    inline bool InvalidationBatchHasBeenSet() const { return m_invalidationBatchHasBeenSet; }
 
     /**
      * <p>The current invalidation information for the batch request. </p>

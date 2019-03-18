@@ -72,6 +72,19 @@ namespace Model
      * ciphertext value. When accessing the instance using RDP, you need to manually
      * enter the Administrator password after changing it from the default.</p> </note>
      */
+    inline bool CiphertextHasBeenSet() const { return m_ciphertextHasBeenSet; }
+
+    /**
+     * <p>The encrypted password. Ciphertext will be an empty string if access to your
+     * new instance is not ready yet. When you create an instance, it can take up to 15
+     * minutes for the instance to be ready.</p> <note> <p>If you use the default key
+     * pair (<code>LightsailDefaultKeyPair</code>), the decrypted password will be
+     * available in the password field.</p> <p>If you are using a custom key pair, you
+     * need to use your own means of decryption.</p> <p>If you change the Administrator
+     * password on the instance, Lightsail will continue to return the original
+     * ciphertext value. When accessing the instance using RDP, you need to manually
+     * enter the Administrator password after changing it from the default.</p> </note>
+     */
     inline void SetCiphertext(const Aws::String& value) { m_ciphertextHasBeenSet = true; m_ciphertext = value; }
 
     /**
@@ -149,6 +162,16 @@ namespace Model
      * encrypting your password with the public key part of this key pair.</p>
      */
     inline const Aws::String& GetKeyPairName() const{ return m_keyPairName; }
+
+    /**
+     * <p>The name of the key pair that you used when creating your instance. If no key
+     * pair name was specified when creating the instance, Lightsail uses the default
+     * key pair (<code>LightsailDefaultKeyPair</code>).</p> <p>If you are using a
+     * custom key pair, you need to use your own means of decrypting your password
+     * using the <code>ciphertext</code>. Lightsail creates the ciphertext by
+     * encrypting your password with the public key part of this key pair.</p>
+     */
+    inline bool KeyPairNameHasBeenSet() const { return m_keyPairNameHasBeenSet; }
 
     /**
      * <p>The name of the key pair that you used when creating your instance. If no key

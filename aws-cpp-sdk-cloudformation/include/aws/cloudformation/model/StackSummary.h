@@ -60,6 +60,11 @@ namespace Model
     /**
      * <p>Unique stack identifier.</p>
      */
+    inline bool StackIdHasBeenSet() const { return m_stackIdHasBeenSet; }
+
+    /**
+     * <p>Unique stack identifier.</p>
+     */
     inline void SetStackId(const Aws::String& value) { m_stackIdHasBeenSet = true; m_stackId = value; }
 
     /**
@@ -92,6 +97,11 @@ namespace Model
      * <p>The name associated with the stack.</p>
      */
     inline const Aws::String& GetStackName() const{ return m_stackName; }
+
+    /**
+     * <p>The name associated with the stack.</p>
+     */
+    inline bool StackNameHasBeenSet() const { return m_stackNameHasBeenSet; }
 
     /**
      * <p>The name associated with the stack.</p>
@@ -132,6 +142,11 @@ namespace Model
     /**
      * <p>The template description of the template used to create the stack.</p>
      */
+    inline bool TemplateDescriptionHasBeenSet() const { return m_templateDescriptionHasBeenSet; }
+
+    /**
+     * <p>The template description of the template used to create the stack.</p>
+     */
     inline void SetTemplateDescription(const Aws::String& value) { m_templateDescriptionHasBeenSet = true; m_templateDescription = value; }
 
     /**
@@ -168,6 +183,11 @@ namespace Model
     /**
      * <p>The time the stack was created.</p>
      */
+    inline bool CreationTimeHasBeenSet() const { return m_creationTimeHasBeenSet; }
+
+    /**
+     * <p>The time the stack was created.</p>
+     */
     inline void SetCreationTime(const Aws::Utils::DateTime& value) { m_creationTimeHasBeenSet = true; m_creationTime = value; }
 
     /**
@@ -191,6 +211,12 @@ namespace Model
      * stack has been updated at least once.</p>
      */
     inline const Aws::Utils::DateTime& GetLastUpdatedTime() const{ return m_lastUpdatedTime; }
+
+    /**
+     * <p>The time the stack was last updated. This field will only be returned if the
+     * stack has been updated at least once.</p>
+     */
+    inline bool LastUpdatedTimeHasBeenSet() const { return m_lastUpdatedTimeHasBeenSet; }
 
     /**
      * <p>The time the stack was last updated. This field will only be returned if the
@@ -225,6 +251,11 @@ namespace Model
     /**
      * <p>The time the stack was deleted.</p>
      */
+    inline bool DeletionTimeHasBeenSet() const { return m_deletionTimeHasBeenSet; }
+
+    /**
+     * <p>The time the stack was deleted.</p>
+     */
     inline void SetDeletionTime(const Aws::Utils::DateTime& value) { m_deletionTimeHasBeenSet = true; m_deletionTime = value; }
 
     /**
@@ -251,6 +282,11 @@ namespace Model
     /**
      * <p>The current status of the stack.</p>
      */
+    inline bool StackStatusHasBeenSet() const { return m_stackStatusHasBeenSet; }
+
+    /**
+     * <p>The current status of the stack.</p>
+     */
     inline void SetStackStatus(const StackStatus& value) { m_stackStatusHasBeenSet = true; m_stackStatus = value; }
 
     /**
@@ -273,6 +309,11 @@ namespace Model
      * <p>Success/Failure message associated with the stack status.</p>
      */
     inline const Aws::String& GetStackStatusReason() const{ return m_stackStatusReason; }
+
+    /**
+     * <p>Success/Failure message associated with the stack status.</p>
+     */
+    inline bool StackStatusReasonHasBeenSet() const { return m_stackStatusReasonHasBeenSet; }
 
     /**
      * <p>Success/Failure message associated with the stack status.</p>
@@ -313,6 +354,15 @@ namespace Model
      * with Nested Stacks</a> in the <i>AWS CloudFormation User Guide</i>.</p>
      */
     inline const Aws::String& GetParentId() const{ return m_parentId; }
+
+    /**
+     * <p>For nested stacks--stacks created as resources for another stack--the stack
+     * ID of the direct parent of this stack. For the first level of nested stacks, the
+     * root stack is also the parent stack.</p> <p>For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">Working
+     * with Nested Stacks</a> in the <i>AWS CloudFormation User Guide</i>.</p>
+     */
+    inline bool ParentIdHasBeenSet() const { return m_parentIdHasBeenSet; }
 
     /**
      * <p>For nested stacks--stacks created as resources for another stack--the stack
@@ -385,6 +435,15 @@ namespace Model
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">Working
      * with Nested Stacks</a> in the <i>AWS CloudFormation User Guide</i>.</p>
      */
+    inline bool RootIdHasBeenSet() const { return m_rootIdHasBeenSet; }
+
+    /**
+     * <p>For nested stacks--stacks created as resources for another stack--the stack
+     * ID of the the top-level stack to which the nested stack ultimately belongs.</p>
+     * <p>For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">Working
+     * with Nested Stacks</a> in the <i>AWS CloudFormation User Guide</i>.</p>
+     */
     inline void SetRootId(const Aws::String& value) { m_rootIdHasBeenSet = true; m_rootId = value; }
 
     /**
@@ -442,6 +501,16 @@ namespace Model
      * Unregulated Configuration Changes to Stacks and Resources</a>.</p>
      */
     inline const StackDriftInformationSummary& GetDriftInformation() const{ return m_driftInformation; }
+
+    /**
+     * <p>Summarizes information on whether a stack's actual configuration differs, or
+     * has <i>drifted</i>, from it's expected configuration, as defined in the stack
+     * template and any values specified as template parameters. For more information,
+     * see <a
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift.html">Detecting
+     * Unregulated Configuration Changes to Stacks and Resources</a>.</p>
+     */
+    inline bool DriftInformationHasBeenSet() const { return m_driftInformationHasBeenSet; }
 
     /**
      * <p>Summarizes information on whether a stack's actual configuration differs, or

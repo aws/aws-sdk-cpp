@@ -58,6 +58,12 @@ namespace Model
      * <p>A <code>TrainingJob</code> object that is returned as part of a
      * <code>Search</code> request.</p>
      */
+    inline bool TrainingJobHasBeenSet() const { return m_trainingJobHasBeenSet; }
+
+    /**
+     * <p>A <code>TrainingJob</code> object that is returned as part of a
+     * <code>Search</code> request.</p>
+     */
     inline void SetTrainingJob(const TrainingJob& value) { m_trainingJobHasBeenSet = true; m_trainingJob = value; }
 
     /**

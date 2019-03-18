@@ -54,6 +54,12 @@ namespace Model
      * <p>Specifies the number of users to return as a response to the
      * <code>ListUsers</code> request.</p>
      */
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
+
+    /**
+     * <p>Specifies the number of users to return as a response to the
+     * <code>ListUsers</code> request.</p>
+     */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
@@ -70,6 +76,14 @@ namespace Model
      * additional users.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
+    /**
+     * <p>When you can get additional results from the <code>ListUsers</code> call, a
+     * <code>NextToken</code> parameter is returned in the output. You can then pass in
+     * a subsequent command the <code>NextToken</code> parameter to continue listing
+     * additional users.</p>
+     */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
      * <p>When you can get additional results from the <code>ListUsers</code> call, a
@@ -125,6 +139,12 @@ namespace Model
      * (SFTP) server that has users are assigned to it.</p>
      */
     inline const Aws::String& GetServerId() const{ return m_serverId; }
+
+    /**
+     * <p>A system-assigned unique identifier for a Secure File Transfer Protocol
+     * (SFTP) server that has users are assigned to it.</p>
+     */
+    inline bool ServerIdHasBeenSet() const { return m_serverIdHasBeenSet; }
 
     /**
      * <p>A system-assigned unique identifier for a Secure File Transfer Protocol

@@ -62,6 +62,12 @@ namespace Model
      * <p>The ID of the certificate. (The last part of the certificate ARN contains the
      * certificate ID.)</p>
      */
+    inline bool CertificateIdHasBeenSet() const { return m_certificateIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the certificate. (The last part of the certificate ARN contains the
+     * certificate ID.)</p>
+     */
     inline void SetCertificateId(const Aws::String& value) { m_certificateIdHasBeenSet = true; m_certificateId = value; }
 
     /**
@@ -103,6 +109,11 @@ namespace Model
     /**
      * <p>The AWS account.</p>
      */
+    inline bool TargetAwsAccountHasBeenSet() const { return m_targetAwsAccountHasBeenSet; }
+
+    /**
+     * <p>The AWS account.</p>
+     */
     inline void SetTargetAwsAccount(const Aws::String& value) { m_targetAwsAccountHasBeenSet = true; m_targetAwsAccount = value; }
 
     /**
@@ -135,6 +146,11 @@ namespace Model
      * <p>The transfer message.</p>
      */
     inline const Aws::String& GetTransferMessage() const{ return m_transferMessage; }
+
+    /**
+     * <p>The transfer message.</p>
+     */
+    inline bool TransferMessageHasBeenSet() const { return m_transferMessageHasBeenSet; }
 
     /**
      * <p>The transfer message.</p>

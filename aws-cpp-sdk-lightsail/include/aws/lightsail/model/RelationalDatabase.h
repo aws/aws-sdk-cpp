@@ -64,6 +64,11 @@ namespace Model
     /**
      * <p>The unique name of the database resource in Lightsail.</p>
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>The unique name of the database resource in Lightsail.</p>
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
@@ -96,6 +101,11 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the database.</p>
      */
     inline const Aws::String& GetArn() const{ return m_arn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the database.</p>
+     */
+    inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the database.</p>
@@ -134,6 +144,13 @@ namespace Model
      * support team to look up your Lightsail information more easily.</p>
      */
     inline const Aws::String& GetSupportCode() const{ return m_supportCode; }
+
+    /**
+     * <p>The support code for the database. Include this code in your email to support
+     * when you have questions about a database in Lightsail. This code enables our
+     * support team to look up your Lightsail information more easily.</p>
+     */
+    inline bool SupportCodeHasBeenSet() const { return m_supportCodeHasBeenSet; }
 
     /**
      * <p>The support code for the database. Include this code in your email to support
@@ -186,6 +203,11 @@ namespace Model
     /**
      * <p>The timestamp when the database was created. Formatted in Unix time.</p>
      */
+    inline bool CreatedAtHasBeenSet() const { return m_createdAtHasBeenSet; }
+
+    /**
+     * <p>The timestamp when the database was created. Formatted in Unix time.</p>
+     */
     inline void SetCreatedAt(const Aws::Utils::DateTime& value) { m_createdAtHasBeenSet = true; m_createdAt = value; }
 
     /**
@@ -208,6 +230,11 @@ namespace Model
      * <p>The Region name and Availability Zone where the database is located.</p>
      */
     inline const ResourceLocation& GetLocation() const{ return m_location; }
+
+    /**
+     * <p>The Region name and Availability Zone where the database is located.</p>
+     */
+    inline bool LocationHasBeenSet() const { return m_locationHasBeenSet; }
 
     /**
      * <p>The Region name and Availability Zone where the database is located.</p>
@@ -235,6 +262,12 @@ namespace Model
      * <code>RelationalDatabase</code>).</p>
      */
     inline const ResourceType& GetResourceType() const{ return m_resourceType; }
+
+    /**
+     * <p>The Lightsail resource type for the database (for example,
+     * <code>RelationalDatabase</code>).</p>
+     */
+    inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
 
     /**
      * <p>The Lightsail resource type for the database (for example,
@@ -268,6 +301,14 @@ namespace Model
      * Dev Guide</a>.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>The tag keys and optional values for the resource. For more information about
+     * tags in Lightsail, see the <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-tags">Lightsail
+     * Dev Guide</a>.</p>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
      * <p>The tag keys and optional values for the resource. For more information about
@@ -328,6 +369,12 @@ namespace Model
      * <p>The blueprint ID for the database. A blueprint describes the major engine
      * version of a database.</p>
      */
+    inline bool RelationalDatabaseBlueprintIdHasBeenSet() const { return m_relationalDatabaseBlueprintIdHasBeenSet; }
+
+    /**
+     * <p>The blueprint ID for the database. A blueprint describes the major engine
+     * version of a database.</p>
+     */
     inline void SetRelationalDatabaseBlueprintId(const Aws::String& value) { m_relationalDatabaseBlueprintIdHasBeenSet = true; m_relationalDatabaseBlueprintId = value; }
 
     /**
@@ -366,6 +413,12 @@ namespace Model
      * specifications for your database.</p>
      */
     inline const Aws::String& GetRelationalDatabaseBundleId() const{ return m_relationalDatabaseBundleId; }
+
+    /**
+     * <p>The bundle ID for the database. A bundle describes the performance
+     * specifications for your database.</p>
+     */
+    inline bool RelationalDatabaseBundleIdHasBeenSet() const { return m_relationalDatabaseBundleIdHasBeenSet; }
 
     /**
      * <p>The bundle ID for the database. A bundle describes the performance
@@ -414,6 +467,12 @@ namespace Model
      * <p>The name of the master database created when the Lightsail database resource
      * is created.</p>
      */
+    inline bool MasterDatabaseNameHasBeenSet() const { return m_masterDatabaseNameHasBeenSet; }
+
+    /**
+     * <p>The name of the master database created when the Lightsail database resource
+     * is created.</p>
+     */
     inline void SetMasterDatabaseName(const Aws::String& value) { m_masterDatabaseNameHasBeenSet = true; m_masterDatabaseName = value; }
 
     /**
@@ -455,6 +514,11 @@ namespace Model
     /**
      * <p>Describes the hardware of the database.</p>
      */
+    inline bool HardwareHasBeenSet() const { return m_hardwareHasBeenSet; }
+
+    /**
+     * <p>Describes the hardware of the database.</p>
+     */
     inline void SetHardware(const RelationalDatabaseHardware& value) { m_hardwareHasBeenSet = true; m_hardware = value; }
 
     /**
@@ -477,6 +541,11 @@ namespace Model
      * <p>Describes the current state of the database.</p>
      */
     inline const Aws::String& GetState() const{ return m_state; }
+
+    /**
+     * <p>Describes the current state of the database.</p>
+     */
+    inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
 
     /**
      * <p>Describes the current state of the database.</p>
@@ -515,6 +584,13 @@ namespace Model
      * availability database.</p>
      */
     inline const Aws::String& GetSecondaryAvailabilityZone() const{ return m_secondaryAvailabilityZone; }
+
+    /**
+     * <p>Describes the secondary Availability Zone of a high availability
+     * database.</p> <p>The secondary database is used for failover support of a high
+     * availability database.</p>
+     */
+    inline bool SecondaryAvailabilityZoneHasBeenSet() const { return m_secondaryAvailabilityZoneHasBeenSet; }
 
     /**
      * <p>Describes the secondary Availability Zone of a high availability
@@ -569,6 +645,12 @@ namespace Model
      * <p>A Boolean value indicating whether automated backup retention is enabled for
      * the database.</p>
      */
+    inline bool BackupRetentionEnabledHasBeenSet() const { return m_backupRetentionEnabledHasBeenSet; }
+
+    /**
+     * <p>A Boolean value indicating whether automated backup retention is enabled for
+     * the database.</p>
+     */
     inline void SetBackupRetentionEnabled(bool value) { m_backupRetentionEnabledHasBeenSet = true; m_backupRetentionEnabled = value; }
 
     /**
@@ -582,6 +664,11 @@ namespace Model
      * <p>Describes pending database value modifications.</p>
      */
     inline const PendingModifiedRelationalDatabaseValues& GetPendingModifiedValues() const{ return m_pendingModifiedValues; }
+
+    /**
+     * <p>Describes pending database value modifications.</p>
+     */
+    inline bool PendingModifiedValuesHasBeenSet() const { return m_pendingModifiedValuesHasBeenSet; }
 
     /**
      * <p>Describes pending database value modifications.</p>
@@ -608,6 +695,11 @@ namespace Model
      * <p>The database software (for example, <code>MySQL</code>).</p>
      */
     inline const Aws::String& GetEngine() const{ return m_engine; }
+
+    /**
+     * <p>The database software (for example, <code>MySQL</code>).</p>
+     */
+    inline bool EngineHasBeenSet() const { return m_engineHasBeenSet; }
 
     /**
      * <p>The database software (for example, <code>MySQL</code>).</p>
@@ -644,6 +736,11 @@ namespace Model
      * <p>The database engine version (for example, <code>5.7.23</code>).</p>
      */
     inline const Aws::String& GetEngineVersion() const{ return m_engineVersion; }
+
+    /**
+     * <p>The database engine version (for example, <code>5.7.23</code>).</p>
+     */
+    inline bool EngineVersionHasBeenSet() const { return m_engineVersionHasBeenSet; }
 
     /**
      * <p>The database engine version (for example, <code>5.7.23</code>).</p>
@@ -686,6 +783,12 @@ namespace Model
      * <p>The latest point in time to which the database can be restored. Formatted in
      * Unix time.</p>
      */
+    inline bool LatestRestorableTimeHasBeenSet() const { return m_latestRestorableTimeHasBeenSet; }
+
+    /**
+     * <p>The latest point in time to which the database can be restored. Formatted in
+     * Unix time.</p>
+     */
     inline void SetLatestRestorableTime(const Aws::Utils::DateTime& value) { m_latestRestorableTimeHasBeenSet = true; m_latestRestorableTime = value; }
 
     /**
@@ -711,6 +814,11 @@ namespace Model
      * <p>The master user name of the database.</p>
      */
     inline const Aws::String& GetMasterUsername() const{ return m_masterUsername; }
+
+    /**
+     * <p>The master user name of the database.</p>
+     */
+    inline bool MasterUsernameHasBeenSet() const { return m_masterUsernameHasBeenSet; }
 
     /**
      * <p>The master user name of the database.</p>
@@ -751,6 +859,11 @@ namespace Model
     /**
      * <p>The status of parameter updates for the database.</p>
      */
+    inline bool ParameterApplyStatusHasBeenSet() const { return m_parameterApplyStatusHasBeenSet; }
+
+    /**
+     * <p>The status of parameter updates for the database.</p>
+     */
     inline void SetParameterApplyStatus(const Aws::String& value) { m_parameterApplyStatusHasBeenSet = true; m_parameterApplyStatus = value; }
 
     /**
@@ -784,6 +897,12 @@ namespace Model
      * database (for example, <code>16:00-16:30</code>).</p>
      */
     inline const Aws::String& GetPreferredBackupWindow() const{ return m_preferredBackupWindow; }
+
+    /**
+     * <p>The daily time range during which automated backups are created for the
+     * database (for example, <code>16:00-16:30</code>).</p>
+     */
+    inline bool PreferredBackupWindowHasBeenSet() const { return m_preferredBackupWindowHasBeenSet; }
 
     /**
      * <p>The daily time range during which automated backups are created for the
@@ -828,6 +947,13 @@ namespace Model
      * example, <code>Tue:17:00-Tue:17:30</code>.</p>
      */
     inline const Aws::String& GetPreferredMaintenanceWindow() const{ return m_preferredMaintenanceWindow; }
+
+    /**
+     * <p>The weekly time range during which system maintenance can occur on the
+     * database.</p> <p>In the format <code>ddd:hh24:mi-ddd:hh24:mi</code>. For
+     * example, <code>Tue:17:00-Tue:17:30</code>.</p>
+     */
+    inline bool PreferredMaintenanceWindowHasBeenSet() const { return m_preferredMaintenanceWindowHasBeenSet; }
 
     /**
      * <p>The weekly time range during which system maintenance can occur on the
@@ -880,6 +1006,11 @@ namespace Model
     /**
      * <p>A Boolean value indicating whether the database is publicly accessible.</p>
      */
+    inline bool PubliclyAccessibleHasBeenSet() const { return m_publiclyAccessibleHasBeenSet; }
+
+    /**
+     * <p>A Boolean value indicating whether the database is publicly accessible.</p>
+     */
     inline void SetPubliclyAccessible(bool value) { m_publiclyAccessibleHasBeenSet = true; m_publiclyAccessible = value; }
 
     /**
@@ -892,6 +1023,11 @@ namespace Model
      * <p>The master endpoint for the database.</p>
      */
     inline const RelationalDatabaseEndpoint& GetMasterEndpoint() const{ return m_masterEndpoint; }
+
+    /**
+     * <p>The master endpoint for the database.</p>
+     */
+    inline bool MasterEndpointHasBeenSet() const { return m_masterEndpointHasBeenSet; }
 
     /**
      * <p>The master endpoint for the database.</p>
@@ -918,6 +1054,11 @@ namespace Model
      * <p>Describes the pending maintenance actions for the database.</p>
      */
     inline const Aws::Vector<PendingMaintenanceAction>& GetPendingMaintenanceActions() const{ return m_pendingMaintenanceActions; }
+
+    /**
+     * <p>Describes the pending maintenance actions for the database.</p>
+     */
+    inline bool PendingMaintenanceActionsHasBeenSet() const { return m_pendingMaintenanceActionsHasBeenSet; }
 
     /**
      * <p>Describes the pending maintenance actions for the database.</p>

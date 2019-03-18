@@ -47,6 +47,9 @@ namespace Model
     inline const Aws::String& GetResourceArn() const{ return m_resourceArn; }
 
     
+    inline bool ResourceArnHasBeenSet() const { return m_resourceArnHasBeenSet; }
+
+    
     inline void SetResourceArn(const Aws::String& value) { m_resourceArnHasBeenSet = true; m_resourceArn = value; }
 
     
@@ -67,6 +70,9 @@ namespace Model
 
     
     inline const TagsModel& GetTagsModel() const{ return m_tagsModel; }
+
+    
+    inline bool TagsModelHasBeenSet() const { return m_tagsModelHasBeenSet; }
 
     
     inline void SetTagsModel(const TagsModel& value) { m_tagsModelHasBeenSet = true; m_tagsModel = value; }

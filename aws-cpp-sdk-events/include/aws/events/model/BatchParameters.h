@@ -60,6 +60,12 @@ namespace Model
      * <p>The ARN or name of the job definition to use if the event target is an AWS
      * Batch job. This job definition must already exist.</p>
      */
+    inline bool JobDefinitionHasBeenSet() const { return m_jobDefinitionHasBeenSet; }
+
+    /**
+     * <p>The ARN or name of the job definition to use if the event target is an AWS
+     * Batch job. This job definition must already exist.</p>
+     */
     inline void SetJobDefinition(const Aws::String& value) { m_jobDefinitionHasBeenSet = true; m_jobDefinition = value; }
 
     /**
@@ -98,6 +104,12 @@ namespace Model
      * job.</p>
      */
     inline const Aws::String& GetJobName() const{ return m_jobName; }
+
+    /**
+     * <p>The name to use for this execution of the job, if the target is an AWS Batch
+     * job.</p>
+     */
+    inline bool JobNameHasBeenSet() const { return m_jobNameHasBeenSet; }
 
     /**
      * <p>The name to use for this execution of the job, if the target is an AWS Batch
@@ -150,6 +162,14 @@ namespace Model
      * a job, it becomes an array job. This parameter is used only if the target is an
      * AWS Batch job.</p>
      */
+    inline bool ArrayPropertiesHasBeenSet() const { return m_arrayPropertiesHasBeenSet; }
+
+    /**
+     * <p>The array properties for the submitted job, such as the size of the array.
+     * The array size can be between 2 and 10,000. If you specify array properties for
+     * a job, it becomes an array job. This parameter is used only if the target is an
+     * AWS Batch job.</p>
+     */
     inline void SetArrayProperties(const BatchArrayProperties& value) { m_arrayPropertiesHasBeenSet = true; m_arrayProperties = value; }
 
     /**
@@ -184,6 +204,14 @@ namespace Model
      * retry strategy defined in the job definition.</p>
      */
     inline const BatchRetryStrategy& GetRetryStrategy() const{ return m_retryStrategy; }
+
+    /**
+     * <p>The retry strategy to use for failed jobs, if the target is an AWS Batch job.
+     * The retry strategy is the number of times to retry the failed job execution.
+     * Valid values are 1–10. When you specify a retry strategy here, it overrides the
+     * retry strategy defined in the job definition.</p>
+     */
+    inline bool RetryStrategyHasBeenSet() const { return m_retryStrategyHasBeenSet; }
 
     /**
      * <p>The retry strategy to use for failed jobs, if the target is an AWS Batch job.

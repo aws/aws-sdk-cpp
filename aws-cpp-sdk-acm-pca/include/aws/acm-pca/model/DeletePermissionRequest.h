@@ -62,6 +62,16 @@ namespace Model
      * <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i>
      * </code>. </p>
      */
+    inline bool CertificateAuthorityArnHasBeenSet() const { return m_certificateAuthorityArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Number (ARN) of the private CA that issued the
+     * permissions. You can find the CA's ARN by calling the
+     * <a>ListCertificateAuthorities</a> operation. This must have the following form:
+     * </p> <p>
+     * <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i>
+     * </code>. </p>
+     */
     inline void SetCertificateAuthorityArn(const Aws::String& value) { m_certificateAuthorityArnHasBeenSet = true; m_certificateAuthorityArn = value; }
 
     /**
@@ -127,6 +137,13 @@ namespace Model
      * this time, the only valid service principal is <code>acm.amazonaws.com</code>
      * </p>
      */
+    inline bool PrincipalHasBeenSet() const { return m_principalHasBeenSet; }
+
+    /**
+     * <p>The AWS service or identity that will have its CA permissions revoked. At
+     * this time, the only valid service principal is <code>acm.amazonaws.com</code>
+     * </p>
+     */
     inline void SetPrincipal(const Aws::String& value) { m_principalHasBeenSet = true; m_principal = value; }
 
     /**
@@ -169,6 +186,11 @@ namespace Model
      * <p>The AWS account that calls this operation.</p>
      */
     inline const Aws::String& GetSourceAccount() const{ return m_sourceAccount; }
+
+    /**
+     * <p>The AWS account that calls this operation.</p>
+     */
+    inline bool SourceAccountHasBeenSet() const { return m_sourceAccountHasBeenSet; }
 
     /**
      * <p>The AWS account that calls this operation.</p>

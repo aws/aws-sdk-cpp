@@ -59,6 +59,11 @@ namespace Model
     /**
      * <p>The name of the S3 bucket.</p>
      */
+    inline bool BucketHasBeenSet() const { return m_bucketHasBeenSet; }
+
+    /**
+     * <p>The name of the S3 bucket.</p>
+     */
     inline void SetBucket(const Aws::String& value) { m_bucketHasBeenSet = true; m_bucket = value; }
 
     /**
@@ -92,6 +97,12 @@ namespace Model
      * format). Asynchronous operations also support PDF files.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
+
+    /**
+     * <p>The file name of the input document. It must be an image file (.JPG or .PNG
+     * format). Asynchronous operations also support PDF files.</p>
+     */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
      * <p>The file name of the input document. It must be an image file (.JPG or .PNG
@@ -135,6 +146,12 @@ namespace Model
      * </p>
      */
     inline const Aws::String& GetVersion() const{ return m_version; }
+
+    /**
+     * <p>If the bucket has versioning enabled, you can specify the object version.
+     * </p>
+     */
+    inline bool VersionHasBeenSet() const { return m_versionHasBeenSet; }
 
     /**
      * <p>If the bucket has versioning enabled, you can specify the object version.

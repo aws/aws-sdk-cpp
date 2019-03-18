@@ -52,6 +52,11 @@ namespace Model
     /**
      * <p>The unique name of the workgroup to delete.</p>
      */
+    inline bool WorkGroupHasBeenSet() const { return m_workGroupHasBeenSet; }
+
+    /**
+     * <p>The unique name of the workgroup to delete.</p>
+     */
     inline void SetWorkGroup(const Aws::String& value) { m_workGroupHasBeenSet = true; m_workGroup = value; }
 
     /**
@@ -85,6 +90,12 @@ namespace Model
      * contains any named queries.</p>
      */
     inline bool GetRecursiveDeleteOption() const{ return m_recursiveDeleteOption; }
+
+    /**
+     * <p>The option to delete the workgroup and its contents even if the workgroup
+     * contains any named queries.</p>
+     */
+    inline bool RecursiveDeleteOptionHasBeenSet() const { return m_recursiveDeleteOptionHasBeenSet; }
 
     /**
      * <p>The option to delete the workgroup and its contents even if the workgroup

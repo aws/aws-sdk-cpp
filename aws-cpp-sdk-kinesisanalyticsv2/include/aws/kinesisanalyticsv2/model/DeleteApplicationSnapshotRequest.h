@@ -53,6 +53,11 @@ namespace Model
     /**
      * <p>The name of an existing application.</p>
      */
+    inline bool ApplicationNameHasBeenSet() const { return m_applicationNameHasBeenSet; }
+
+    /**
+     * <p>The name of an existing application.</p>
+     */
     inline void SetApplicationName(const Aws::String& value) { m_applicationNameHasBeenSet = true; m_applicationName = value; }
 
     /**
@@ -85,6 +90,11 @@ namespace Model
      * <p>The identifier for the snapshot delete.</p>
      */
     inline const Aws::String& GetSnapshotName() const{ return m_snapshotName; }
+
+    /**
+     * <p>The identifier for the snapshot delete.</p>
+     */
+    inline bool SnapshotNameHasBeenSet() const { return m_snapshotNameHasBeenSet; }
 
     /**
      * <p>The identifier for the snapshot delete.</p>
@@ -122,6 +132,12 @@ namespace Model
      * retrieve this value using or .</p>
      */
     inline const Aws::Utils::DateTime& GetSnapshotCreationTimestamp() const{ return m_snapshotCreationTimestamp; }
+
+    /**
+     * <p>The creation timestamp of the application snapshot to delete. You can
+     * retrieve this value using or .</p>
+     */
+    inline bool SnapshotCreationTimestampHasBeenSet() const { return m_snapshotCreationTimestampHasBeenSet; }
 
     /**
      * <p>The creation timestamp of the application snapshot to delete. You can

@@ -61,6 +61,11 @@ namespace Model
     /**
      * Corresponds to SCTE-35 archive_allowed_flag.
      */
+    inline bool ArchiveAllowedFlagHasBeenSet() const { return m_archiveAllowedFlagHasBeenSet; }
+
+    /**
+     * Corresponds to SCTE-35 archive_allowed_flag.
+     */
     inline void SetArchiveAllowedFlag(const Scte35ArchiveAllowedFlag& value) { m_archiveAllowedFlagHasBeenSet = true; m_archiveAllowedFlag = value; }
 
     /**
@@ -83,6 +88,11 @@ namespace Model
      * Corresponds to SCTE-35 device_restrictions parameter.
      */
     inline const Scte35DeviceRestrictions& GetDeviceRestrictions() const{ return m_deviceRestrictions; }
+
+    /**
+     * Corresponds to SCTE-35 device_restrictions parameter.
+     */
+    inline bool DeviceRestrictionsHasBeenSet() const { return m_deviceRestrictionsHasBeenSet; }
 
     /**
      * Corresponds to SCTE-35 device_restrictions parameter.
@@ -113,6 +123,11 @@ namespace Model
     /**
      * Corresponds to SCTE-35 no_regional_blackout_flag parameter.
      */
+    inline bool NoRegionalBlackoutFlagHasBeenSet() const { return m_noRegionalBlackoutFlagHasBeenSet; }
+
+    /**
+     * Corresponds to SCTE-35 no_regional_blackout_flag parameter.
+     */
     inline void SetNoRegionalBlackoutFlag(const Scte35NoRegionalBlackoutFlag& value) { m_noRegionalBlackoutFlagHasBeenSet = true; m_noRegionalBlackoutFlag = value; }
 
     /**
@@ -135,6 +150,11 @@ namespace Model
      * Corresponds to SCTE-35 web_delivery_allowed_flag parameter.
      */
     inline const Scte35WebDeliveryAllowedFlag& GetWebDeliveryAllowedFlag() const{ return m_webDeliveryAllowedFlag; }
+
+    /**
+     * Corresponds to SCTE-35 web_delivery_allowed_flag parameter.
+     */
+    inline bool WebDeliveryAllowedFlagHasBeenSet() const { return m_webDeliveryAllowedFlagHasBeenSet; }
 
     /**
      * Corresponds to SCTE-35 web_delivery_allowed_flag parameter.

@@ -54,6 +54,11 @@ namespace Model
     /**
      * <p>The code for the service whose products you want to retrieve. </p>
      */
+    inline bool ServiceCodeHasBeenSet() const { return m_serviceCodeHasBeenSet; }
+
+    /**
+     * <p>The code for the service whose products you want to retrieve. </p>
+     */
     inline void SetServiceCode(const Aws::String& value) { m_serviceCodeHasBeenSet = true; m_serviceCode = value; }
 
     /**
@@ -87,6 +92,12 @@ namespace Model
      * match all filters are returned.</p>
      */
     inline const Aws::Vector<Filter>& GetFilters() const{ return m_filters; }
+
+    /**
+     * <p>The list of filters that limit the returned products. only products that
+     * match all filters are returned.</p>
+     */
+    inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
 
     /**
      * <p>The list of filters that limit the returned products. only products that
@@ -135,6 +146,12 @@ namespace Model
      * <p>The format version that you want the response to be in.</p> <p>Valid values
      * are: <code>aws_v1</code> </p>
      */
+    inline bool FormatVersionHasBeenSet() const { return m_formatVersionHasBeenSet; }
+
+    /**
+     * <p>The format version that you want the response to be in.</p> <p>Valid values
+     * are: <code>aws_v1</code> </p>
+     */
     inline void SetFormatVersion(const Aws::String& value) { m_formatVersionHasBeenSet = true; m_formatVersion = value; }
 
     /**
@@ -178,6 +195,12 @@ namespace Model
      * <p>The pagination token that indicates the next set of results that you want to
      * retrieve.</p>
      */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
+
+    /**
+     * <p>The pagination token that indicates the next set of results that you want to
+     * retrieve.</p>
+     */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
     /**
@@ -215,6 +238,11 @@ namespace Model
      * <p>The maximum number of results to return in the response.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
+
+    /**
+     * <p>The maximum number of results to return in the response.</p>
+     */
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
 
     /**
      * <p>The maximum number of results to return in the response.</p>

@@ -116,6 +116,11 @@ void S3ControlClient::OverrideEndpoint(const Aws::String& endpoint)
 }
 DeletePublicAccessBlockOutcome S3ControlClient::DeletePublicAccessBlock(const DeletePublicAccessBlockRequest& request) const
 {
+  if (!request.AccountIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeletePublicAccessBlock", "Required field: AccountId, is not set");
+    return DeletePublicAccessBlockOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AccountId]", false));
+  }
   Aws::String endpointString(ComputeEndpointString(request.GetAccountId()));
   if (endpointString.empty())
   {
@@ -156,6 +161,11 @@ void S3ControlClient::DeletePublicAccessBlockAsyncHelper(const DeletePublicAcces
 
 GetPublicAccessBlockOutcome S3ControlClient::GetPublicAccessBlock(const GetPublicAccessBlockRequest& request) const
 {
+  if (!request.AccountIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetPublicAccessBlock", "Required field: AccountId, is not set");
+    return GetPublicAccessBlockOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AccountId]", false));
+  }
   Aws::String endpointString(ComputeEndpointString(request.GetAccountId()));
   if (endpointString.empty())
   {
@@ -196,6 +206,11 @@ void S3ControlClient::GetPublicAccessBlockAsyncHelper(const GetPublicAccessBlock
 
 PutPublicAccessBlockOutcome S3ControlClient::PutPublicAccessBlock(const PutPublicAccessBlockRequest& request) const
 {
+  if (!request.AccountIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("PutPublicAccessBlock", "Required field: AccountId, is not set");
+    return PutPublicAccessBlockOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AccountId]", false));
+  }
   Aws::String endpointString(ComputeEndpointString(request.GetAccountId()));
   if (endpointString.empty())
   {

@@ -62,6 +62,11 @@ namespace Model
     /**
      * <p>The ID of the attachment.</p>
      */
+    inline bool TransitGatewayAttachmentIdHasBeenSet() const { return m_transitGatewayAttachmentIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the attachment.</p>
+     */
     inline void SetTransitGatewayAttachmentId(const Aws::String& value) { m_transitGatewayAttachmentIdHasBeenSet = true; m_transitGatewayAttachmentId = value; }
 
     /**
@@ -94,6 +99,11 @@ namespace Model
      * <p>The ID of the transit gateway.</p>
      */
     inline const Aws::String& GetTransitGatewayId() const{ return m_transitGatewayId; }
+
+    /**
+     * <p>The ID of the transit gateway.</p>
+     */
+    inline bool TransitGatewayIdHasBeenSet() const { return m_transitGatewayIdHasBeenSet; }
 
     /**
      * <p>The ID of the transit gateway.</p>
@@ -134,6 +144,11 @@ namespace Model
     /**
      * <p>The ID of the VPC.</p>
      */
+    inline bool VpcIdHasBeenSet() const { return m_vpcIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the VPC.</p>
+     */
     inline void SetVpcId(const Aws::String& value) { m_vpcIdHasBeenSet = true; m_vpcId = value; }
 
     /**
@@ -166,6 +181,11 @@ namespace Model
      * <p>The ID of the AWS account that owns the VPC.</p>
      */
     inline const Aws::String& GetVpcOwnerId() const{ return m_vpcOwnerId; }
+
+    /**
+     * <p>The ID of the AWS account that owns the VPC.</p>
+     */
+    inline bool VpcOwnerIdHasBeenSet() const { return m_vpcOwnerIdHasBeenSet; }
 
     /**
      * <p>The ID of the AWS account that owns the VPC.</p>
@@ -206,6 +226,11 @@ namespace Model
     /**
      * <p>The state of the VPC attachment.</p>
      */
+    inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
+
+    /**
+     * <p>The state of the VPC attachment.</p>
+     */
     inline void SetState(const TransitGatewayAttachmentState& value) { m_stateHasBeenSet = true; m_state = value; }
 
     /**
@@ -228,6 +253,11 @@ namespace Model
      * <p>The IDs of the subnets.</p>
      */
     inline const Aws::Vector<Aws::String>& GetSubnetIds() const{ return m_subnetIds; }
+
+    /**
+     * <p>The IDs of the subnets.</p>
+     */
+    inline bool SubnetIdsHasBeenSet() const { return m_subnetIdsHasBeenSet; }
 
     /**
      * <p>The IDs of the subnets.</p>
@@ -273,6 +303,11 @@ namespace Model
     /**
      * <p>The creation time.</p>
      */
+    inline bool CreationTimeHasBeenSet() const { return m_creationTimeHasBeenSet; }
+
+    /**
+     * <p>The creation time.</p>
+     */
     inline void SetCreationTime(const Aws::Utils::DateTime& value) { m_creationTimeHasBeenSet = true; m_creationTime = value; }
 
     /**
@@ -299,6 +334,11 @@ namespace Model
     /**
      * <p>The VPC attachment options.</p>
      */
+    inline bool OptionsHasBeenSet() const { return m_optionsHasBeenSet; }
+
+    /**
+     * <p>The VPC attachment options.</p>
+     */
     inline void SetOptions(const TransitGatewayVpcAttachmentOptions& value) { m_optionsHasBeenSet = true; m_options = value; }
 
     /**
@@ -321,6 +361,11 @@ namespace Model
      * <p>The tags for the VPC attachment.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>The tags for the VPC attachment.</p>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
      * <p>The tags for the VPC attachment.</p>

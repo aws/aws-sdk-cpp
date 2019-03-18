@@ -54,6 +54,11 @@ namespace Model
     /**
      * <p>A list of configuration items with tags that you want to delete.</p>
      */
+    inline bool ConfigurationIdsHasBeenSet() const { return m_configurationIdsHasBeenSet; }
+
+    /**
+     * <p>A list of configuration items with tags that you want to delete.</p>
+     */
     inline void SetConfigurationIds(const Aws::Vector<Aws::String>& value) { m_configurationIdsHasBeenSet = true; m_configurationIds = value; }
 
     /**
@@ -93,6 +98,13 @@ namespace Model
      * example:</p> <p> <code>{"key": "serverType", "value": "webServer"}</code> </p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>Tags that you want to delete from one or more configuration items. Specify
+     * the tags that you want to delete in a <i>key</i>-<i>value</i> format. For
+     * example:</p> <p> <code>{"key": "serverType", "value": "webServer"}</code> </p>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
      * <p>Tags that you want to delete from one or more configuration items. Specify

@@ -59,6 +59,12 @@ namespace Model
      * <p>The 12-digit identifier of the AWS account with which the image is
      * shared.</p>
      */
+    inline bool SharedAccountIdHasBeenSet() const { return m_sharedAccountIdHasBeenSet; }
+
+    /**
+     * <p>The 12-digit identifier of the AWS account with which the image is
+     * shared.</p>
+     */
     inline void SetSharedAccountId(const Aws::String& value) { m_sharedAccountIdHasBeenSet = true; m_sharedAccountId = value; }
 
     /**
@@ -96,6 +102,11 @@ namespace Model
      * <p>Describes the permissions for a shared image.</p>
      */
     inline const ImagePermissions& GetImagePermissions() const{ return m_imagePermissions; }
+
+    /**
+     * <p>Describes the permissions for a shared image.</p>
+     */
+    inline bool ImagePermissionsHasBeenSet() const { return m_imagePermissionsHasBeenSet; }
 
     /**
      * <p>Describes the permissions for a shared image.</p>

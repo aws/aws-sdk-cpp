@@ -60,6 +60,11 @@ namespace Model
     /**
      * <p>The <code>SubResource</code> type.</p>
      */
+    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
+
+    /**
+     * <p>The <code>SubResource</code> type.</p>
+     */
     inline void SetType(const SubResourceType& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
@@ -82,6 +87,11 @@ namespace Model
      * <p>The unique identifier (ID) of the <code>SubResource</code>.</p>
      */
     inline const Aws::String& GetId() const{ return m_id; }
+
+    /**
+     * <p>The unique identifier (ID) of the <code>SubResource</code>.</p>
+     */
+    inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
 
     /**
      * <p>The unique identifier (ID) of the <code>SubResource</code>.</p>
@@ -122,6 +132,11 @@ namespace Model
     /**
      * <p>The list of attack types and associated counters.</p>
      */
+    inline bool AttackVectorsHasBeenSet() const { return m_attackVectorsHasBeenSet; }
+
+    /**
+     * <p>The list of attack types and associated counters.</p>
+     */
     inline void SetAttackVectors(const Aws::Vector<SummarizedAttackVector>& value) { m_attackVectorsHasBeenSet = true; m_attackVectors = value; }
 
     /**
@@ -154,6 +169,11 @@ namespace Model
      * <p>The counters that describe the details of the attack.</p>
      */
     inline const Aws::Vector<SummarizedCounter>& GetCounters() const{ return m_counters; }
+
+    /**
+     * <p>The counters that describe the details of the attack.</p>
+     */
+    inline bool CountersHasBeenSet() const { return m_countersHasBeenSet; }
 
     /**
      * <p>The counters that describe the details of the attack.</p>

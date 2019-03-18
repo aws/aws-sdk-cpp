@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The ID of the Direct Connect gateway.</p>
      */
+    inline bool DirectConnectGatewayIdHasBeenSet() const { return m_directConnectGatewayIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the Direct Connect gateway.</p>
+     */
     inline void SetDirectConnectGatewayId(const Aws::String& value) { m_directConnectGatewayIdHasBeenSet = true; m_directConnectGatewayId = value; }
 
     /**
@@ -89,6 +94,11 @@ namespace Model
      * <p>The name of the Direct Connect gateway.</p>
      */
     inline const Aws::String& GetDirectConnectGatewayName() const{ return m_directConnectGatewayName; }
+
+    /**
+     * <p>The name of the Direct Connect gateway.</p>
+     */
+    inline bool DirectConnectGatewayNameHasBeenSet() const { return m_directConnectGatewayNameHasBeenSet; }
 
     /**
      * <p>The name of the Direct Connect gateway.</p>
@@ -129,6 +139,11 @@ namespace Model
     /**
      * <p>The autonomous system number (ASN) for the Amazon side of the connection.</p>
      */
+    inline bool AmazonSideAsnHasBeenSet() const { return m_amazonSideAsnHasBeenSet; }
+
+    /**
+     * <p>The autonomous system number (ASN) for the Amazon side of the connection.</p>
+     */
     inline void SetAmazonSideAsn(long long value) { m_amazonSideAsnHasBeenSet = true; m_amazonSideAsn = value; }
 
     /**
@@ -141,6 +156,11 @@ namespace Model
      * <p>The ID of the AWS account that owns the Direct Connect gateway.</p>
      */
     inline const Aws::String& GetOwnerAccount() const{ return m_ownerAccount; }
+
+    /**
+     * <p>The ID of the AWS account that owns the Direct Connect gateway.</p>
+     */
+    inline bool OwnerAccountHasBeenSet() const { return m_ownerAccountHasBeenSet; }
 
     /**
      * <p>The ID of the AWS account that owns the Direct Connect gateway.</p>
@@ -193,6 +213,17 @@ namespace Model
      * <a>DeleteDirectConnectGateway</a>.</p> </li> <li> <p> <code>deleted</code>: The
      * Direct Connect gateway is deleted and cannot pass traffic.</p> </li> </ul>
      */
+    inline bool DirectConnectGatewayStateHasBeenSet() const { return m_directConnectGatewayStateHasBeenSet; }
+
+    /**
+     * <p>The state of the Direct Connect gateway. The following are the possible
+     * values:</p> <ul> <li> <p> <code>pending</code>: The initial state after calling
+     * <a>CreateDirectConnectGateway</a>.</p> </li> <li> <p> <code>available</code>:
+     * The Direct Connect gateway is ready for use.</p> </li> <li> <p>
+     * <code>deleting</code>: The initial state after calling
+     * <a>DeleteDirectConnectGateway</a>.</p> </li> <li> <p> <code>deleted</code>: The
+     * Direct Connect gateway is deleted and cannot pass traffic.</p> </li> </ul>
+     */
     inline void SetDirectConnectGatewayState(const DirectConnectGatewayState& value) { m_directConnectGatewayStateHasBeenSet = true; m_directConnectGatewayState = value; }
 
     /**
@@ -233,6 +264,11 @@ namespace Model
      * <p>The error message if the state of an object failed to advance.</p>
      */
     inline const Aws::String& GetStateChangeError() const{ return m_stateChangeError; }
+
+    /**
+     * <p>The error message if the state of an object failed to advance.</p>
+     */
+    inline bool StateChangeErrorHasBeenSet() const { return m_stateChangeErrorHasBeenSet; }
 
     /**
      * <p>The error message if the state of an object failed to advance.</p>

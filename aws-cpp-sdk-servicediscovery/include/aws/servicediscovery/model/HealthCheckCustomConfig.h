@@ -105,6 +105,21 @@ namespace Model
      * accelerate the change. Cloud Map still waits <code>FailureThreshold x 30</code>
      * seconds after the first request to make the change.</p>
      */
+    inline bool FailureThresholdHasBeenSet() const { return m_failureThresholdHasBeenSet; }
+
+    /**
+     * <p>The number of 30-second intervals that you want Cloud Map to wait after
+     * receiving an <code>UpdateInstanceCustomHealthStatus</code> request before it
+     * changes the health status of a service instance. For example, suppose you
+     * specify a value of <code>2</code> for <code>FailureTheshold</code>, and then
+     * your application sends an <code>UpdateInstanceCustomHealthStatus</code> request.
+     * Cloud Map waits for approximately 60 seconds (2 x 30) before changing the status
+     * of the service instance based on that request.</p> <p>Sending a second or
+     * subsequent <code>UpdateInstanceCustomHealthStatus</code> request with the same
+     * value before <code>FailureThreshold x 30</code> seconds has passed doesn't
+     * accelerate the change. Cloud Map still waits <code>FailureThreshold x 30</code>
+     * seconds after the first request to make the change.</p>
+     */
     inline void SetFailureThreshold(int value) { m_failureThresholdHasBeenSet = true; m_failureThreshold = value; }
 
     /**

@@ -52,6 +52,11 @@ namespace Model
     /**
      * <p>The name of the log group.</p>
      */
+    inline bool LogGroupNameHasBeenSet() const { return m_logGroupNameHasBeenSet; }
+
+    /**
+     * <p>The name of the log group.</p>
+     */
     inline void SetLogGroupName(const Aws::String& value) { m_logGroupNameHasBeenSet = true; m_logGroupName = value; }
 
     /**
@@ -84,6 +89,11 @@ namespace Model
      * <p>The name of the log stream.</p>
      */
     inline const Aws::String& GetLogStreamName() const{ return m_logStreamName; }
+
+    /**
+     * <p>The name of the log stream.</p>
+     */
+    inline bool LogStreamNameHasBeenSet() const { return m_logStreamNameHasBeenSet; }
 
     /**
      * <p>The name of the log stream.</p>

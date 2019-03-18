@@ -61,6 +61,11 @@ namespace Model
     /**
      * <p>A String data type.</p>
      */
+    inline bool SHasBeenSet() const { return m_sHasBeenSet; }
+
+    /**
+     * <p>A String data type.</p>
+     */
     inline void SetS(const Aws::String& value) { m_sHasBeenSet = true; m_s = value; }
 
     /**
@@ -93,6 +98,11 @@ namespace Model
      * <p>A Number data type.</p>
      */
     inline const Aws::String& GetN() const{ return m_n; }
+
+    /**
+     * <p>A Number data type.</p>
+     */
+    inline bool NHasBeenSet() const { return m_nHasBeenSet; }
 
     /**
      * <p>A Number data type.</p>
@@ -133,6 +143,11 @@ namespace Model
     /**
      * <p>A Binary data type.</p>
      */
+    inline bool BHasBeenSet() const { return m_bHasBeenSet; }
+
+    /**
+     * <p>A Binary data type.</p>
+     */
     inline void SetB(const Aws::Utils::ByteBuffer& value) { m_bHasBeenSet = true; m_b = value; }
 
     /**
@@ -155,6 +170,11 @@ namespace Model
      * <p>A String Set data type.</p>
      */
     inline const Aws::Vector<Aws::String>& GetSS() const{ return m_sS; }
+
+    /**
+     * <p>A String Set data type.</p>
+     */
+    inline bool SSHasBeenSet() const { return m_sSHasBeenSet; }
 
     /**
      * <p>A String Set data type.</p>
@@ -200,6 +220,11 @@ namespace Model
     /**
      * <p>A Number Set data type.</p>
      */
+    inline bool NSHasBeenSet() const { return m_nSHasBeenSet; }
+
+    /**
+     * <p>A Number Set data type.</p>
+     */
     inline void SetNS(const Aws::Vector<Aws::String>& value) { m_nSHasBeenSet = true; m_nS = value; }
 
     /**
@@ -241,6 +266,11 @@ namespace Model
     /**
      * <p>A Binary Set data type.</p>
      */
+    inline bool BSHasBeenSet() const { return m_bSHasBeenSet; }
+
+    /**
+     * <p>A Binary Set data type.</p>
+     */
     inline void SetBS(const Aws::Vector<Aws::Utils::ByteBuffer>& value) { m_bSHasBeenSet = true; m_bS = value; }
 
     /**
@@ -273,6 +303,11 @@ namespace Model
      * <p>A Map data type.</p>
      */
     inline const Aws::Map<Aws::String, AttributeValue>& GetM() const{ return m_m; }
+
+    /**
+     * <p>A Map data type.</p>
+     */
+    inline bool MHasBeenSet() const { return m_mHasBeenSet; }
 
     /**
      * <p>A Map data type.</p>
@@ -333,6 +368,11 @@ namespace Model
     /**
      * <p>A List data type.</p>
      */
+    inline bool LHasBeenSet() const { return m_lHasBeenSet; }
+
+    /**
+     * <p>A List data type.</p>
+     */
     inline void SetL(const Aws::Vector<AttributeValue>& value) { m_lHasBeenSet = true; m_l = value; }
 
     /**
@@ -369,6 +409,11 @@ namespace Model
     /**
      * <p>A Null data type.</p>
      */
+    inline bool NULLHasBeenSet() const { return m_nULLHasBeenSet; }
+
+    /**
+     * <p>A Null data type.</p>
+     */
     inline void SetNULL(bool value) { m_nULLHasBeenSet = true; m_nULL = value; }
 
     /**
@@ -381,6 +426,11 @@ namespace Model
      * <p> A Boolean data type.</p>
      */
     inline bool GetBOOL() const{ return m_bOOL; }
+
+    /**
+     * <p> A Boolean data type.</p>
+     */
+    inline bool BOOLHasBeenSet() const { return m_bOOLHasBeenSet; }
 
     /**
      * <p> A Boolean data type.</p>

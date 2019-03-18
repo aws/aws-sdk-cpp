@@ -52,6 +52,11 @@ namespace Model
     /**
      * <p>The name of the endpoint.</p>
      */
+    inline bool EndpointNameHasBeenSet() const { return m_endpointNameHasBeenSet; }
+
+    /**
+     * <p>The name of the endpoint.</p>
+     */
     inline void SetEndpointName(const Aws::String& value) { m_endpointNameHasBeenSet = true; m_endpointName = value; }
 
     /**

@@ -72,6 +72,18 @@ namespace Model
      * constraint applies only to the full ARN. If you specify only the function name,
      * it is limited to 64 characters in length.</p>
      */
+    inline bool FunctionNameHasBeenSet() const { return m_functionNameHasBeenSet; }
+
+    /**
+     * <p>The name of the Lambda function.</p> <p class="title"> <b>Name formats</b>
+     * </p> <ul> <li> <p> <b>Function name</b> - <code>my-function</code>.</p> </li>
+     * <li> <p> <b>Function ARN</b> -
+     * <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p>
+     * </li> <li> <p> <b>Partial ARN</b> -
+     * <code>123456789012:function:my-function</code>.</p> </li> </ul> <p>The length
+     * constraint applies only to the full ARN. If you specify only the function name,
+     * it is limited to 64 characters in length.</p>
+     */
     inline void SetFunctionName(const Aws::String& value) { m_functionNameHasBeenSet = true; m_functionName = value; }
 
     /**
@@ -145,6 +157,12 @@ namespace Model
      * <p>The identifier of the function's <a
      * href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html">runtime</a>.</p>
      */
+    inline bool RuntimeHasBeenSet() const { return m_runtimeHasBeenSet; }
+
+    /**
+     * <p>The identifier of the function's <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html">runtime</a>.</p>
+     */
     inline void SetRuntime(const Runtime& value) { m_runtimeHasBeenSet = true; m_runtime = value; }
 
     /**
@@ -170,6 +188,11 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the function's execution role.</p>
      */
     inline const Aws::String& GetRole() const{ return m_role; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the function's execution role.</p>
+     */
+    inline bool RoleHasBeenSet() const { return m_roleHasBeenSet; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the function's execution role.</p>
@@ -210,6 +233,15 @@ namespace Model
      * Model</a>.</p>
      */
     inline const Aws::String& GetHandler() const{ return m_handler; }
+
+    /**
+     * <p>The name of the method within your code that Lambda calls to execute your
+     * function. The format includes the file name. It can also include namespaces and
+     * other qualifiers, depending on the runtime. For more information, see <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/programming-model-v2.html">Programming
+     * Model</a>.</p>
+     */
+    inline bool HandlerHasBeenSet() const { return m_handlerHasBeenSet; }
 
     /**
      * <p>The name of the method within your code that Lambda calls to execute your
@@ -274,6 +306,11 @@ namespace Model
     /**
      * <p>The code for the function.</p>
      */
+    inline bool CodeHasBeenSet() const { return m_codeHasBeenSet; }
+
+    /**
+     * <p>The code for the function.</p>
+     */
     inline void SetCode(const FunctionCode& value) { m_codeHasBeenSet = true; m_code = value; }
 
     /**
@@ -296,6 +333,11 @@ namespace Model
      * <p>A description of the function.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
+
+    /**
+     * <p>A description of the function.</p>
+     */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
 
     /**
      * <p>A description of the function.</p>
@@ -338,6 +380,12 @@ namespace Model
      * <p>The amount of time that Lambda allows a function to run before stopping it.
      * The default is 3 seconds. The maximum allowed value is 900 seconds.</p>
      */
+    inline bool TimeoutHasBeenSet() const { return m_timeoutHasBeenSet; }
+
+    /**
+     * <p>The amount of time that Lambda allows a function to run before stopping it.
+     * The default is 3 seconds. The maximum allowed value is 900 seconds.</p>
+     */
     inline void SetTimeout(int value) { m_timeoutHasBeenSet = true; m_timeout = value; }
 
     /**
@@ -353,6 +401,13 @@ namespace Model
      * MB. The value must be a multiple of 64 MB.</p>
      */
     inline int GetMemorySize() const{ return m_memorySize; }
+
+    /**
+     * <p>The amount of memory that your function has access to. Increasing the
+     * function's memory also increases its CPU allocation. The default value is 128
+     * MB. The value must be a multiple of 64 MB.</p>
+     */
+    inline bool MemorySizeHasBeenSet() const { return m_memorySizeHasBeenSet; }
 
     /**
      * <p>The amount of memory that your function has access to. Increasing the
@@ -377,6 +432,11 @@ namespace Model
     /**
      * <p>Set to true to publish the first version of the function during creation.</p>
      */
+    inline bool PublishHasBeenSet() const { return m_publishHasBeenSet; }
+
+    /**
+     * <p>Set to true to publish the first version of the function during creation.</p>
+     */
     inline void SetPublish(bool value) { m_publishHasBeenSet = true; m_publish = value; }
 
     /**
@@ -394,6 +454,16 @@ namespace Model
      * Settings</a>.</p>
      */
     inline const VpcConfig& GetVpcConfig() const{ return m_vpcConfig; }
+
+    /**
+     * <p>For network connectivity to AWS resources in a VPC, specify a list of
+     * security groups and subnets in the VPC. When you connect a function to a VPC, it
+     * can only access resources and the internet through that VPC. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/vpc.html">VPC
+     * Settings</a>.</p>
+     */
+    inline bool VpcConfigHasBeenSet() const { return m_vpcConfigHasBeenSet; }
 
     /**
      * <p>For network connectivity to AWS resources in a VPC, specify a list of
@@ -452,6 +522,15 @@ namespace Model
      * href="https://docs.aws.amazon.com/lambda/latest/dg/dlq.html">Dead Letter
      * Queues</a>.</p>
      */
+    inline bool DeadLetterConfigHasBeenSet() const { return m_deadLetterConfigHasBeenSet; }
+
+    /**
+     * <p>A dead letter queue configuration that specifies the queue or topic where
+     * Lambda sends asynchronous events when they fail processing. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/dlq.html">Dead Letter
+     * Queues</a>.</p>
+     */
     inline void SetDeadLetterConfig(const DeadLetterConfig& value) { m_deadLetterConfigHasBeenSet = true; m_deadLetterConfig = value; }
 
     /**
@@ -492,6 +571,12 @@ namespace Model
      * <p>Environment variables that are accessible from function code during
      * execution.</p>
      */
+    inline bool EnvironmentHasBeenSet() const { return m_environmentHasBeenSet; }
+
+    /**
+     * <p>Environment variables that are accessible from function code during
+     * execution.</p>
+     */
     inline void SetEnvironment(const Environment& value) { m_environmentHasBeenSet = true; m_environment = value; }
 
     /**
@@ -519,6 +604,13 @@ namespace Model
      * uses a default service key.</p>
      */
     inline const Aws::String& GetKMSKeyArn() const{ return m_kMSKeyArn; }
+
+    /**
+     * <p>The ARN of the AWS Key Management Service (AWS KMS) key that's used to
+     * encrypt your function's environment variables. If it's not provided, AWS Lambda
+     * uses a default service key.</p>
+     */
+    inline bool KMSKeyArnHasBeenSet() const { return m_kMSKeyArnHasBeenSet; }
 
     /**
      * <p>The ARN of the AWS Key Management Service (AWS KMS) key that's used to
@@ -573,6 +665,12 @@ namespace Model
      * <p>Set <code>Mode</code> to <code>Active</code> to sample and trace a subset of
      * incoming requests with AWS X-Ray.</p>
      */
+    inline bool TracingConfigHasBeenSet() const { return m_tracingConfigHasBeenSet; }
+
+    /**
+     * <p>Set <code>Mode</code> to <code>Active</code> to sample and trace a subset of
+     * incoming requests with AWS X-Ray.</p>
+     */
     inline void SetTracingConfig(const TracingConfig& value) { m_tracingConfigHasBeenSet = true; m_tracingConfig = value; }
 
     /**
@@ -600,6 +698,13 @@ namespace Model
      * apply to the function.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>A list of <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/tagging.html">tags</a> to
+     * apply to the function.</p>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
      * <p>A list of <a
@@ -686,6 +791,14 @@ namespace Model
      * its ARN, including the version.</p>
      */
     inline const Aws::Vector<Aws::String>& GetLayers() const{ return m_layers; }
+
+    /**
+     * <p>A list of <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">function
+     * layers</a> to add to the function's execution environment. Specify each layer by
+     * its ARN, including the version.</p>
+     */
+    inline bool LayersHasBeenSet() const { return m_layersHasBeenSet; }
 
     /**
      * <p>A list of <a

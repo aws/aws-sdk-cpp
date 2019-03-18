@@ -55,6 +55,11 @@ namespace Model
     /**
      * <p>The Progress event details.</p>
      */
+    inline bool DetailsHasBeenSet() const { return m_detailsHasBeenSet; }
+
+    /**
+     * <p>The Progress event details.</p>
+     */
     inline void SetDetails(const Progress& value) { m_detailsHasBeenSet = true; m_details = value; }
 
     /**

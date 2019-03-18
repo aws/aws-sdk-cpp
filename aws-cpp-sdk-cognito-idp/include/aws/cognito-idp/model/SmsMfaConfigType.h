@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The SMS authentication message.</p>
      */
+    inline bool SmsAuthenticationMessageHasBeenSet() const { return m_smsAuthenticationMessageHasBeenSet; }
+
+    /**
+     * <p>The SMS authentication message.</p>
+     */
     inline void SetSmsAuthenticationMessage(const Aws::String& value) { m_smsAuthenticationMessageHasBeenSet = true; m_smsAuthenticationMessage = value; }
 
     /**
@@ -89,6 +94,11 @@ namespace Model
      * <p>The SMS configuration.</p>
      */
     inline const SmsConfigurationType& GetSmsConfiguration() const{ return m_smsConfiguration; }
+
+    /**
+     * <p>The SMS configuration.</p>
+     */
+    inline bool SmsConfigurationHasBeenSet() const { return m_smsConfigurationHasBeenSet; }
 
     /**
      * <p>The SMS configuration.</p>

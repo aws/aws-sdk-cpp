@@ -47,6 +47,9 @@ namespace Model
     inline const APNSSandboxChannelRequest& GetAPNSSandboxChannelRequest() const{ return m_aPNSSandboxChannelRequest; }
 
     
+    inline bool APNSSandboxChannelRequestHasBeenSet() const { return m_aPNSSandboxChannelRequestHasBeenSet; }
+
+    
     inline void SetAPNSSandboxChannelRequest(const APNSSandboxChannelRequest& value) { m_aPNSSandboxChannelRequestHasBeenSet = true; m_aPNSSandboxChannelRequest = value; }
 
     
@@ -63,6 +66,11 @@ namespace Model
      * The unique ID of your Amazon Pinpoint application.
      */
     inline const Aws::String& GetApplicationId() const{ return m_applicationId; }
+
+    /**
+     * The unique ID of your Amazon Pinpoint application.
+     */
+    inline bool ApplicationIdHasBeenSet() const { return m_applicationIdHasBeenSet; }
 
     /**
      * The unique ID of your Amazon Pinpoint application.

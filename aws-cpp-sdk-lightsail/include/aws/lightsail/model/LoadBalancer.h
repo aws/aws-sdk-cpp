@@ -66,6 +66,11 @@ namespace Model
     /**
      * <p>The name of the load balancer (e.g., <code>my-load-balancer</code>).</p>
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>The name of the load balancer (e.g., <code>my-load-balancer</code>).</p>
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
@@ -98,6 +103,11 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the load balancer.</p>
      */
     inline const Aws::String& GetArn() const{ return m_arn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the load balancer.</p>
+     */
+    inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the load balancer.</p>
@@ -136,6 +146,13 @@ namespace Model
      * to look up your Lightsail information more easily.</p>
      */
     inline const Aws::String& GetSupportCode() const{ return m_supportCode; }
+
+    /**
+     * <p>The support code. Include this code in your email to support when you have
+     * questions about your Lightsail load balancer. This code enables our support team
+     * to look up your Lightsail information more easily.</p>
+     */
+    inline bool SupportCodeHasBeenSet() const { return m_supportCodeHasBeenSet; }
 
     /**
      * <p>The support code. Include this code in your email to support when you have
@@ -188,6 +205,11 @@ namespace Model
     /**
      * <p>The date when your load balancer was created.</p>
      */
+    inline bool CreatedAtHasBeenSet() const { return m_createdAtHasBeenSet; }
+
+    /**
+     * <p>The date when your load balancer was created.</p>
+     */
     inline void SetCreatedAt(const Aws::Utils::DateTime& value) { m_createdAtHasBeenSet = true; m_createdAt = value; }
 
     /**
@@ -212,6 +234,13 @@ namespace Model
      * across Availability Zones.</p>
      */
     inline const ResourceLocation& GetLocation() const{ return m_location; }
+
+    /**
+     * <p>The AWS Region where your load balancer was created (e.g.,
+     * <code>us-east-2a</code>). Lightsail automatically creates your load balancer
+     * across Availability Zones.</p>
+     */
+    inline bool LocationHasBeenSet() const { return m_locationHasBeenSet; }
 
     /**
      * <p>The AWS Region where your load balancer was created (e.g.,
@@ -250,6 +279,11 @@ namespace Model
     /**
      * <p>The resource type (e.g., <code>LoadBalancer</code>.</p>
      */
+    inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
+
+    /**
+     * <p>The resource type (e.g., <code>LoadBalancer</code>.</p>
+     */
     inline void SetResourceType(const ResourceType& value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
 
     /**
@@ -275,6 +309,14 @@ namespace Model
      * Dev Guide</a>.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>The tag keys and optional values for the resource. For more information about
+     * tags in Lightsail, see the <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-tags">Lightsail
+     * Dev Guide</a>.</p>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
      * <p>The tag keys and optional values for the resource. For more information about
@@ -333,6 +375,11 @@ namespace Model
     /**
      * <p>The DNS name of your Lightsail load balancer.</p>
      */
+    inline bool DnsNameHasBeenSet() const { return m_dnsNameHasBeenSet; }
+
+    /**
+     * <p>The DNS name of your Lightsail load balancer.</p>
+     */
     inline void SetDnsName(const Aws::String& value) { m_dnsNameHasBeenSet = true; m_dnsName = value; }
 
     /**
@@ -369,6 +416,11 @@ namespace Model
     /**
      * <p>The status of your load balancer. Valid values are below.</p>
      */
+    inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
+
+    /**
+     * <p>The status of your load balancer. Valid values are below.</p>
+     */
     inline void SetState(const LoadBalancerState& value) { m_stateHasBeenSet = true; m_state = value; }
 
     /**
@@ -393,6 +445,13 @@ namespace Model
      * <code>HTTP</code>.</p>
      */
     inline const LoadBalancerProtocol& GetProtocol() const{ return m_protocol; }
+
+    /**
+     * <p>The protocol you have enabled for your load balancer. Valid values are
+     * below.</p> <p>You can't just have <code>HTTP_HTTPS</code>, but you can have just
+     * <code>HTTP</code>.</p>
+     */
+    inline bool ProtocolHasBeenSet() const { return m_protocolHasBeenSet; }
 
     /**
      * <p>The protocol you have enabled for your load balancer. Valid values are
@@ -433,6 +492,12 @@ namespace Model
      * <p>An array of public port settings for your load balancer. For HTTP, use port
      * 80. For HTTPS, use port 443.</p>
      */
+    inline bool PublicPortsHasBeenSet() const { return m_publicPortsHasBeenSet; }
+
+    /**
+     * <p>An array of public port settings for your load balancer. For HTTP, use port
+     * 80. For HTTPS, use port 443.</p>
+     */
     inline void SetPublicPorts(const Aws::Vector<int>& value) { m_publicPortsHasBeenSet = true; m_publicPorts = value; }
 
     /**
@@ -466,6 +531,13 @@ namespace Model
      * page.</p>
      */
     inline const Aws::String& GetHealthCheckPath() const{ return m_healthCheckPath; }
+
+    /**
+     * <p>The path you specified to perform your health checks. If no path is
+     * specified, the load balancer tries to make a request to the default (root)
+     * page.</p>
+     */
+    inline bool HealthCheckPathHasBeenSet() const { return m_healthCheckPathHasBeenSet; }
 
     /**
      * <p>The path you specified to perform your health checks. If no path is
@@ -520,6 +592,12 @@ namespace Model
      * <p>The port where the load balancer will direct traffic to your Lightsail
      * instances. For HTTP traffic, it's port 80. For HTTPS traffic, it's port 443.</p>
      */
+    inline bool InstancePortHasBeenSet() const { return m_instancePortHasBeenSet; }
+
+    /**
+     * <p>The port where the load balancer will direct traffic to your Lightsail
+     * instances. For HTTP traffic, it's port 80. For HTTPS traffic, it's port 443.</p>
+     */
     inline void SetInstancePort(int value) { m_instancePortHasBeenSet = true; m_instancePort = value; }
 
     /**
@@ -534,6 +612,12 @@ namespace Model
      * balancer.</p>
      */
     inline const Aws::Vector<InstanceHealthSummary>& GetInstanceHealthSummary() const{ return m_instanceHealthSummary; }
+
+    /**
+     * <p>An array of InstanceHealthSummary objects describing the health of the load
+     * balancer.</p>
+     */
+    inline bool InstanceHealthSummaryHasBeenSet() const { return m_instanceHealthSummaryHasBeenSet; }
 
     /**
      * <p>An array of InstanceHealthSummary objects describing the health of the load
@@ -584,6 +668,13 @@ namespace Model
      * information about the SSL/TLS certificates. For example, if <code>true</code>,
      * the certificate is attached to the load balancer.</p>
      */
+    inline bool TlsCertificateSummariesHasBeenSet() const { return m_tlsCertificateSummariesHasBeenSet; }
+
+    /**
+     * <p>An array of LoadBalancerTlsCertificateSummary objects that provide additional
+     * information about the SSL/TLS certificates. For example, if <code>true</code>,
+     * the certificate is attached to the load balancer.</p>
+     */
     inline void SetTlsCertificateSummaries(const Aws::Vector<LoadBalancerTlsCertificateSummary>& value) { m_tlsCertificateSummariesHasBeenSet = true; m_tlsCertificateSummaries = value; }
 
     /**
@@ -627,6 +718,12 @@ namespace Model
      * Valid values are listed below.</p>
      */
     inline const Aws::Map<LoadBalancerAttributeName, Aws::String>& GetConfigurationOptions() const{ return m_configurationOptions; }
+
+    /**
+     * <p>A string to string map of the configuration options for your load balancer.
+     * Valid values are listed below.</p>
+     */
+    inline bool ConfigurationOptionsHasBeenSet() const { return m_configurationOptionsHasBeenSet; }
 
     /**
      * <p>A string to string map of the configuration options for your load balancer.

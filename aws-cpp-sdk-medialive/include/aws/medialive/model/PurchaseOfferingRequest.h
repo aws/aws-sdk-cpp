@@ -54,6 +54,11 @@ namespace Model
     /**
      * Number of resources
      */
+    inline bool CountHasBeenSet() const { return m_countHasBeenSet; }
+
+    /**
+     * Number of resources
+     */
     inline void SetCount(int value) { m_countHasBeenSet = true; m_count = value; }
 
     /**
@@ -66,6 +71,11 @@ namespace Model
      * Name for the new reservation
      */
     inline const Aws::String& GetName() const{ return m_name; }
+
+    /**
+     * Name for the new reservation
+     */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
      * Name for the new reservation
@@ -106,6 +116,11 @@ namespace Model
     /**
      * Offering to purchase, e.g. '87654321'
      */
+    inline bool OfferingIdHasBeenSet() const { return m_offeringIdHasBeenSet; }
+
+    /**
+     * Offering to purchase, e.g. '87654321'
+     */
     inline void SetOfferingId(const Aws::String& value) { m_offeringIdHasBeenSet = true; m_offeringId = value; }
 
     /**
@@ -139,6 +154,12 @@ namespace Model
      * creating multiple resources.
      */
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    /**
+     * Unique request ID to be specified. This is needed to prevent retries from
+     * creating multiple resources.
+     */
+    inline bool RequestIdHasBeenSet() const { return m_requestIdHasBeenSet; }
 
     /**
      * Unique request ID to be specified. This is needed to prevent retries from
@@ -183,6 +204,13 @@ namespace Model
      * value is given, the default is now.
      */
     inline const Aws::String& GetStart() const{ return m_start; }
+
+    /**
+     * Requested reservation start time (UTC) in ISO-8601 format. The specified time
+     * must be between the first day of the current month and one year from now. If no
+     * value is given, the default is now.
+     */
+    inline bool StartHasBeenSet() const { return m_startHasBeenSet; }
 
     /**
      * Requested reservation start time (UTC) in ISO-8601 format. The specified time

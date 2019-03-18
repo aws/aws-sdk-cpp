@@ -66,6 +66,12 @@ namespace Model
      * <p>A unique name that helps you to identify the predictive inbox placement test
      * when you retrieve the results.</p>
      */
+    inline bool ReportNameHasBeenSet() const { return m_reportNameHasBeenSet; }
+
+    /**
+     * <p>A unique name that helps you to identify the predictive inbox placement test
+     * when you retrieve the results.</p>
+     */
     inline void SetReportName(const Aws::String& value) { m_reportNameHasBeenSet = true; m_reportName = value; }
 
     /**
@@ -109,6 +115,12 @@ namespace Model
      * <p>The email address that the predictive inbox placement test email was sent
      * from.</p>
      */
+    inline bool FromEmailAddressHasBeenSet() const { return m_fromEmailAddressHasBeenSet; }
+
+    /**
+     * <p>The email address that the predictive inbox placement test email was sent
+     * from.</p>
+     */
     inline void SetFromEmailAddress(const Aws::String& value) { m_fromEmailAddressHasBeenSet = true; m_fromEmailAddress = value; }
 
     /**
@@ -147,6 +159,12 @@ namespace Model
      * inbox placement test.</p>
      */
     inline const EmailContent& GetContent() const{ return m_content; }
+
+    /**
+     * <p>The HTML body of the message that you sent when you performed the predictive
+     * inbox placement test.</p>
+     */
+    inline bool ContentHasBeenSet() const { return m_contentHasBeenSet; }
 
     /**
      * <p>The HTML body of the message that you sent when you performed the predictive

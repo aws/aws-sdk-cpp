@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p>The name of the resource group.</p>
      */
+    inline bool GroupNameHasBeenSet() const { return m_groupNameHasBeenSet; }
+
+    /**
+     * <p>The name of the resource group.</p>
+     */
     inline void SetGroupName(const Aws::String& value) { m_groupNameHasBeenSet = true; m_groupName = value; }
 
     /**
@@ -94,6 +99,15 @@ namespace Model
      * AWS::S3::Bucket.</p> </li> </ul>
      */
     inline const Aws::Vector<ResourceFilter>& GetFilters() const{ return m_filters; }
+
+    /**
+     * <p>Filters, formatted as ResourceFilter objects, that you want to apply to a
+     * ListGroupResources operation.</p> <ul> <li> <p> <code>resource-type</code> -
+     * Filter resources by their type. Specify up to five resource types in the format
+     * AWS::ServiceCode::ResourceType. For example, AWS::EC2::Instance, or
+     * AWS::S3::Bucket.</p> </li> </ul>
+     */
+    inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
 
     /**
      * <p>Filters, formatted as ResourceFilter objects, that you want to apply to a
@@ -160,6 +174,12 @@ namespace Model
      * <p>The maximum number of group member ARNs that are returned in a single call by
      * ListGroupResources, in paginated output. By default, this number is 50.</p>
      */
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
+
+    /**
+     * <p>The maximum number of group member ARNs that are returned in a single call by
+     * ListGroupResources, in paginated output. By default, this number is 50.</p>
+     */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
@@ -175,6 +195,13 @@ namespace Model
      * parameter, and specify the NextToken value.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
+    /**
+     * <p>The NextToken value that is returned in a paginated ListGroupResources
+     * request. To get the next page of results, run the call again, add the NextToken
+     * parameter, and specify the NextToken value.</p>
+     */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
      * <p>The NextToken value that is returned in a paginated ListGroupResources

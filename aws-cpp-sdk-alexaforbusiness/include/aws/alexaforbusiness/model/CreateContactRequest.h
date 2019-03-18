@@ -53,6 +53,11 @@ namespace Model
     /**
      * <p>The name of the contact to display on the console.</p>
      */
+    inline bool DisplayNameHasBeenSet() const { return m_displayNameHasBeenSet; }
+
+    /**
+     * <p>The name of the contact to display on the console.</p>
+     */
     inline void SetDisplayName(const Aws::String& value) { m_displayNameHasBeenSet = true; m_displayName = value; }
 
     /**
@@ -86,6 +91,12 @@ namespace Model
      * device.</p>
      */
     inline const Aws::String& GetFirstName() const{ return m_firstName; }
+
+    /**
+     * <p>The first name of the contact that is used to call the contact on the
+     * device.</p>
+     */
+    inline bool FirstNameHasBeenSet() const { return m_firstNameHasBeenSet; }
 
     /**
      * <p>The first name of the contact that is used to call the contact on the
@@ -134,6 +145,12 @@ namespace Model
      * <p>The last name of the contact that is used to call the contact on the
      * device.</p>
      */
+    inline bool LastNameHasBeenSet() const { return m_lastNameHasBeenSet; }
+
+    /**
+     * <p>The last name of the contact that is used to call the contact on the
+     * device.</p>
+     */
     inline void SetLastName(const Aws::String& value) { m_lastNameHasBeenSet = true; m_lastName = value; }
 
     /**
@@ -175,6 +192,11 @@ namespace Model
     /**
      * <p>The phone number of the contact in E.164 format.</p>
      */
+    inline bool PhoneNumberHasBeenSet() const { return m_phoneNumberHasBeenSet; }
+
+    /**
+     * <p>The phone number of the contact in E.164 format.</p>
+     */
     inline void SetPhoneNumber(const Aws::String& value) { m_phoneNumberHasBeenSet = true; m_phoneNumber = value; }
 
     /**
@@ -208,6 +230,12 @@ namespace Model
      * idempotency.</p>
      */
     inline const Aws::String& GetClientRequestToken() const{ return m_clientRequestToken; }
+
+    /**
+     * <p>A unique, user-specified identifier for this request that ensures
+     * idempotency.</p>
+     */
+    inline bool ClientRequestTokenHasBeenSet() const { return m_clientRequestTokenHasBeenSet; }
 
     /**
      * <p>A unique, user-specified identifier for this request that ensures

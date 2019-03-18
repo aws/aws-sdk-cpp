@@ -59,6 +59,11 @@ namespace Model
     /**
      * <p>The marker for the next set of results.</p>
      */
+    inline bool MarkerHasBeenSet() const { return m_markerHasBeenSet; }
+
+    /**
+     * <p>The marker for the next set of results.</p>
+     */
     inline void SetMarker(const Aws::String& value) { m_markerHasBeenSet = true; m_marker = value; }
 
     /**
@@ -95,6 +100,11 @@ namespace Model
     /**
      * <p>The result page size.</p>
      */
+    inline bool PageSizeHasBeenSet() const { return m_pageSizeHasBeenSet; }
+
+    /**
+     * <p>The result page size.</p>
+     */
     inline void SetPageSize(int value) { m_pageSizeHasBeenSet = true; m_pageSize = value; }
 
     /**
@@ -108,6 +118,12 @@ namespace Model
      * ascending creation order.</p>
      */
     inline bool GetAscendingOrder() const{ return m_ascendingOrder; }
+
+    /**
+     * <p>Specifies the order for results. If true, the results are returned in
+     * ascending creation order.</p>
+     */
+    inline bool AscendingOrderHasBeenSet() const { return m_ascendingOrderHasBeenSet; }
 
     /**
      * <p>Specifies the order for results. If true, the results are returned in

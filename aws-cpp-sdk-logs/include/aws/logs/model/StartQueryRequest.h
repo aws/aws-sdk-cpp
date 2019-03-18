@@ -52,6 +52,11 @@ namespace Model
     /**
      * <p>The log group on which to perform the query.</p>
      */
+    inline bool LogGroupNameHasBeenSet() const { return m_logGroupNameHasBeenSet; }
+
+    /**
+     * <p>The log group on which to perform the query.</p>
+     */
     inline void SetLogGroupName(const Aws::String& value) { m_logGroupNameHasBeenSet = true; m_logGroupName = value; }
 
     /**
@@ -92,6 +97,13 @@ namespace Model
      * specified start time is included in the query. Specified as epoch time, the
      * number of seconds since January 1, 1970, 00:00:00 UTC.</p>
      */
+    inline bool StartTimeHasBeenSet() const { return m_startTimeHasBeenSet; }
+
+    /**
+     * <p>The beginning of the time range to query. The range is inclusive, so the
+     * specified start time is included in the query. Specified as epoch time, the
+     * number of seconds since January 1, 1970, 00:00:00 UTC.</p>
+     */
     inline void SetStartTime(long long value) { m_startTimeHasBeenSet = true; m_startTime = value; }
 
     /**
@@ -114,6 +126,13 @@ namespace Model
      * end time is included in the query. Specified as epoch time, the number of
      * seconds since January 1, 1970, 00:00:00 UTC.</p>
      */
+    inline bool EndTimeHasBeenSet() const { return m_endTimeHasBeenSet; }
+
+    /**
+     * <p>The end of the time range to query. The range is inclusive, so the specified
+     * end time is included in the query. Specified as epoch time, the number of
+     * seconds since January 1, 1970, 00:00:00 UTC.</p>
+     */
     inline void SetEndTime(long long value) { m_endTimeHasBeenSet = true; m_endTime = value; }
 
     /**
@@ -130,6 +149,13 @@ namespace Model
      * Logs Insights Query Syntax</a>.</p>
      */
     inline const Aws::String& GetQueryString() const{ return m_queryString; }
+
+    /**
+     * <p>The query string to use. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CWL_QuerySyntax.html">CloudWatch
+     * Logs Insights Query Syntax</a>.</p>
+     */
+    inline bool QueryStringHasBeenSet() const { return m_queryStringHasBeenSet; }
 
     /**
      * <p>The query string to use. For more information, see <a
@@ -180,6 +206,13 @@ namespace Model
      * are returned.</p>
      */
     inline int GetLimit() const{ return m_limit; }
+
+    /**
+     * <p>The maximum number of log events to return in the query. If the query string
+     * uses the <code>fields</code> command, only the specified fields and their values
+     * are returned.</p>
+     */
+    inline bool LimitHasBeenSet() const { return m_limitHasBeenSet; }
 
     /**
      * <p>The maximum number of log events to return in the query. If the query string

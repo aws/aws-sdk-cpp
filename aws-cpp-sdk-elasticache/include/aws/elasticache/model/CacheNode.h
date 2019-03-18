@@ -105,6 +105,13 @@ namespace Model
      * etc.). The combination of cluster ID and node ID uniquely identifies every cache
      * node used in a customer's AWS account.</p>
      */
+    inline bool CacheNodeIdHasBeenSet() const { return m_cacheNodeIdHasBeenSet; }
+
+    /**
+     * <p>The cache node identifier. A node ID is a numeric identifier (0001, 0002,
+     * etc.). The combination of cluster ID and node ID uniquely identifies every cache
+     * node used in a customer's AWS account.</p>
+     */
     inline void SetCacheNodeId(const Aws::String& value) { m_cacheNodeIdHasBeenSet = true; m_cacheNodeId = value; }
 
     /**
@@ -151,6 +158,11 @@ namespace Model
     /**
      * <p>The current state of this cache node.</p>
      */
+    inline bool CacheNodeStatusHasBeenSet() const { return m_cacheNodeStatusHasBeenSet; }
+
+    /**
+     * <p>The current state of this cache node.</p>
+     */
     inline void SetCacheNodeStatus(const Aws::String& value) { m_cacheNodeStatusHasBeenSet = true; m_cacheNodeStatus = value; }
 
     /**
@@ -187,6 +199,11 @@ namespace Model
     /**
      * <p>The date and time when the cache node was created.</p>
      */
+    inline bool CacheNodeCreateTimeHasBeenSet() const { return m_cacheNodeCreateTimeHasBeenSet; }
+
+    /**
+     * <p>The date and time when the cache node was created.</p>
+     */
     inline void SetCacheNodeCreateTime(const Aws::Utils::DateTime& value) { m_cacheNodeCreateTimeHasBeenSet = true; m_cacheNodeCreateTime = value; }
 
     /**
@@ -213,6 +230,11 @@ namespace Model
     /**
      * <p>The hostname for connecting to this cache node.</p>
      */
+    inline bool EndpointHasBeenSet() const { return m_endpointHasBeenSet; }
+
+    /**
+     * <p>The hostname for connecting to this cache node.</p>
+     */
     inline void SetEndpoint(const Endpoint& value) { m_endpointHasBeenSet = true; m_endpoint = value; }
 
     /**
@@ -235,6 +257,11 @@ namespace Model
      * <p>The status of the parameter group applied to this cache node.</p>
      */
     inline const Aws::String& GetParameterGroupStatus() const{ return m_parameterGroupStatus; }
+
+    /**
+     * <p>The status of the parameter group applied to this cache node.</p>
+     */
+    inline bool ParameterGroupStatusHasBeenSet() const { return m_parameterGroupStatusHasBeenSet; }
 
     /**
      * <p>The status of the parameter group applied to this cache node.</p>
@@ -277,6 +304,12 @@ namespace Model
      * <p>The ID of the primary node to which this read replica node is synchronized.
      * If this field is empty, this node is not associated with a primary cluster.</p>
      */
+    inline bool SourceCacheNodeIdHasBeenSet() const { return m_sourceCacheNodeIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the primary node to which this read replica node is synchronized.
+     * If this field is empty, this node is not associated with a primary cluster.</p>
+     */
     inline void SetSourceCacheNodeId(const Aws::String& value) { m_sourceCacheNodeIdHasBeenSet = true; m_sourceCacheNodeId = value; }
 
     /**
@@ -314,6 +347,11 @@ namespace Model
      * <p>The Availability Zone where this node was created and now resides.</p>
      */
     inline const Aws::String& GetCustomerAvailabilityZone() const{ return m_customerAvailabilityZone; }
+
+    /**
+     * <p>The Availability Zone where this node was created and now resides.</p>
+     */
+    inline bool CustomerAvailabilityZoneHasBeenSet() const { return m_customerAvailabilityZoneHasBeenSet; }
 
     /**
      * <p>The Availability Zone where this node was created and now resides.</p>

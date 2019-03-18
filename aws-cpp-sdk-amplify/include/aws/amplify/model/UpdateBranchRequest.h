@@ -55,6 +55,11 @@ namespace Model
     /**
      * <p> Unique Id for an Amplify App. </p>
      */
+    inline bool AppIdHasBeenSet() const { return m_appIdHasBeenSet; }
+
+    /**
+     * <p> Unique Id for an Amplify App. </p>
+     */
     inline void SetAppId(const Aws::String& value) { m_appIdHasBeenSet = true; m_appId = value; }
 
     /**
@@ -87,6 +92,11 @@ namespace Model
      * <p> Name for the branch. </p>
      */
     inline const Aws::String& GetBranchName() const{ return m_branchName; }
+
+    /**
+     * <p> Name for the branch. </p>
+     */
+    inline bool BranchNameHasBeenSet() const { return m_branchNameHasBeenSet; }
 
     /**
      * <p> Name for the branch. </p>
@@ -127,6 +137,11 @@ namespace Model
     /**
      * <p> Description for the branch. </p>
      */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
+
+    /**
+     * <p> Description for the branch. </p>
+     */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
@@ -159,6 +174,11 @@ namespace Model
      * <p> Framework for the branch. </p>
      */
     inline const Aws::String& GetFramework() const{ return m_framework; }
+
+    /**
+     * <p> Framework for the branch. </p>
+     */
+    inline bool FrameworkHasBeenSet() const { return m_frameworkHasBeenSet; }
 
     /**
      * <p> Framework for the branch. </p>
@@ -199,6 +219,11 @@ namespace Model
     /**
      * <p> Stage for the branch. </p>
      */
+    inline bool StageHasBeenSet() const { return m_stageHasBeenSet; }
+
+    /**
+     * <p> Stage for the branch. </p>
+     */
     inline void SetStage(const Stage& value) { m_stageHasBeenSet = true; m_stage = value; }
 
     /**
@@ -225,6 +250,11 @@ namespace Model
     /**
      * <p> Enables notifications for the branch. </p>
      */
+    inline bool EnableNotificationHasBeenSet() const { return m_enableNotificationHasBeenSet; }
+
+    /**
+     * <p> Enables notifications for the branch. </p>
+     */
     inline void SetEnableNotification(bool value) { m_enableNotificationHasBeenSet = true; m_enableNotification = value; }
 
     /**
@@ -241,6 +271,11 @@ namespace Model
     /**
      * <p> Enables auto building for the branch. </p>
      */
+    inline bool EnableAutoBuildHasBeenSet() const { return m_enableAutoBuildHasBeenSet; }
+
+    /**
+     * <p> Enables auto building for the branch. </p>
+     */
     inline void SetEnableAutoBuild(bool value) { m_enableAutoBuildHasBeenSet = true; m_enableAutoBuild = value; }
 
     /**
@@ -253,6 +288,11 @@ namespace Model
      * <p> Environment Variables for the branch. </p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetEnvironmentVariables() const{ return m_environmentVariables; }
+
+    /**
+     * <p> Environment Variables for the branch. </p>
+     */
+    inline bool EnvironmentVariablesHasBeenSet() const { return m_environmentVariablesHasBeenSet; }
 
     /**
      * <p> Environment Variables for the branch. </p>
@@ -318,6 +358,11 @@ namespace Model
     /**
      * <p> Basic Authorization credentials for the branch. </p>
      */
+    inline bool BasicAuthCredentialsHasBeenSet() const { return m_basicAuthCredentialsHasBeenSet; }
+
+    /**
+     * <p> Basic Authorization credentials for the branch. </p>
+     */
     inline void SetBasicAuthCredentials(const Aws::String& value) { m_basicAuthCredentialsHasBeenSet = true; m_basicAuthCredentials = value; }
 
     /**
@@ -354,6 +399,11 @@ namespace Model
     /**
      * <p> Enables Basic Auth for the branch. </p>
      */
+    inline bool EnableBasicAuthHasBeenSet() const { return m_enableBasicAuthHasBeenSet; }
+
+    /**
+     * <p> Enables Basic Auth for the branch. </p>
+     */
     inline void SetEnableBasicAuth(bool value) { m_enableBasicAuthHasBeenSet = true; m_enableBasicAuth = value; }
 
     /**
@@ -366,6 +416,11 @@ namespace Model
      * <p> BuildSpec for the branch. </p>
      */
     inline const Aws::String& GetBuildSpec() const{ return m_buildSpec; }
+
+    /**
+     * <p> BuildSpec for the branch. </p>
+     */
+    inline bool BuildSpecHasBeenSet() const { return m_buildSpecHasBeenSet; }
 
     /**
      * <p> BuildSpec for the branch. </p>
@@ -402,6 +457,11 @@ namespace Model
      * <p> The content TTL for the website in seconds. </p>
      */
     inline const Aws::String& GetTtl() const{ return m_ttl; }
+
+    /**
+     * <p> The content TTL for the website in seconds. </p>
+     */
+    inline bool TtlHasBeenSet() const { return m_ttlHasBeenSet; }
 
     /**
      * <p> The content TTL for the website in seconds. </p>

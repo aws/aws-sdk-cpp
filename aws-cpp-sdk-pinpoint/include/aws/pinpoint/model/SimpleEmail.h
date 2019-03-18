@@ -60,6 +60,13 @@ namespace Model
      * process HTML. You can include clickable links, formatted text, and much more in
      * an HTML message.
      */
+    inline bool HtmlPartHasBeenSet() const { return m_htmlPartHasBeenSet; }
+
+    /**
+     * The content of the message, in HTML format. Use this for email clients that can
+     * process HTML. You can include clickable links, formatted text, and much more in
+     * an HTML message.
+     */
     inline void SetHtmlPart(const SimpleEmailPart& value) { m_htmlPartHasBeenSet = true; m_htmlPart = value; }
 
     /**
@@ -94,6 +101,12 @@ namespace Model
      * The subject of the message: A short summary of the content, which will appear in
      * the recipient's inbox.
      */
+    inline bool SubjectHasBeenSet() const { return m_subjectHasBeenSet; }
+
+    /**
+     * The subject of the message: A short summary of the content, which will appear in
+     * the recipient's inbox.
+     */
     inline void SetSubject(const SimpleEmailPart& value) { m_subjectHasBeenSet = true; m_subject = value; }
 
     /**
@@ -120,6 +133,12 @@ namespace Model
      * clients, or clients on high-latency networks (such as mobile devices).
      */
     inline const SimpleEmailPart& GetTextPart() const{ return m_textPart; }
+
+    /**
+     * The content of the message, in text format. Use this for text-based email
+     * clients, or clients on high-latency networks (such as mobile devices).
+     */
+    inline bool TextPartHasBeenSet() const { return m_textPartHasBeenSet; }
 
     /**
      * The content of the message, in text format. Use this for text-based email

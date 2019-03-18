@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p>The unique key that identifies a certificate.</p>
      */
+    inline bool CertificateIdentifierHasBeenSet() const { return m_certificateIdentifierHasBeenSet; }
+
+    /**
+     * <p>The unique key that identifies a certificate.</p>
+     */
     inline void SetCertificateIdentifier(const Aws::String& value) { m_certificateIdentifierHasBeenSet = true; m_certificateIdentifier = value; }
 
     /**
@@ -90,6 +95,11 @@ namespace Model
      * <p>The type of the certificate.</p>
      */
     inline const Aws::String& GetCertificateType() const{ return m_certificateType; }
+
+    /**
+     * <p>The type of the certificate.</p>
+     */
+    inline bool CertificateTypeHasBeenSet() const { return m_certificateTypeHasBeenSet; }
 
     /**
      * <p>The type of the certificate.</p>
@@ -130,6 +140,11 @@ namespace Model
     /**
      * <p>The thumbprint of the certificate.</p>
      */
+    inline bool ThumbprintHasBeenSet() const { return m_thumbprintHasBeenSet; }
+
+    /**
+     * <p>The thumbprint of the certificate.</p>
+     */
     inline void SetThumbprint(const Aws::String& value) { m_thumbprintHasBeenSet = true; m_thumbprint = value; }
 
     /**
@@ -166,6 +181,11 @@ namespace Model
     /**
      * <p>The starting date from which the certificate is valid.</p>
      */
+    inline bool ValidFromHasBeenSet() const { return m_validFromHasBeenSet; }
+
+    /**
+     * <p>The starting date from which the certificate is valid.</p>
+     */
     inline void SetValidFrom(const Aws::Utils::DateTime& value) { m_validFromHasBeenSet = true; m_validFrom = value; }
 
     /**
@@ -192,6 +212,11 @@ namespace Model
     /**
      * <p>The final date that the certificate continues to be valid.</p>
      */
+    inline bool ValidTillHasBeenSet() const { return m_validTillHasBeenSet; }
+
+    /**
+     * <p>The final date that the certificate continues to be valid.</p>
+     */
     inline void SetValidTill(const Aws::Utils::DateTime& value) { m_validTillHasBeenSet = true; m_validTill = value; }
 
     /**
@@ -214,6 +239,11 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) for the certificate.</p>
      */
     inline const Aws::String& GetCertificateArn() const{ return m_certificateArn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) for the certificate.</p>
+     */
+    inline bool CertificateArnHasBeenSet() const { return m_certificateArnHasBeenSet; }
 
     /**
      * <p>The Amazon Resource Name (ARN) for the certificate.</p>

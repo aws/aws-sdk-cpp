@@ -61,6 +61,11 @@ namespace Model
     /**
      * <p>Name of the bucket to list.</p>
      */
+    inline bool BucketHasBeenSet() const { return m_bucketHasBeenSet; }
+
+    /**
+     * <p>Name of the bucket to list.</p>
+     */
     inline void SetBucket(const Aws::String& value) { m_bucketHasBeenSet = true; m_bucket = value; }
 
     /**
@@ -93,6 +98,11 @@ namespace Model
      * <p>A delimiter is a character you use to group keys.</p>
      */
     inline const Aws::String& GetDelimiter() const{ return m_delimiter; }
+
+    /**
+     * <p>A delimiter is a character you use to group keys.</p>
+     */
+    inline bool DelimiterHasBeenSet() const { return m_delimiterHasBeenSet; }
 
     /**
      * <p>A delimiter is a character you use to group keys.</p>
@@ -133,6 +143,11 @@ namespace Model
     /**
      * <p>Encoding type used by Amazon S3 to encode object keys in the response.</p>
      */
+    inline bool EncodingTypeHasBeenSet() const { return m_encodingTypeHasBeenSet; }
+
+    /**
+     * <p>Encoding type used by Amazon S3 to encode object keys in the response.</p>
+     */
     inline void SetEncodingType(const EncodingType& value) { m_encodingTypeHasBeenSet = true; m_encodingType = value; }
 
     /**
@@ -161,6 +176,12 @@ namespace Model
      * <p>Sets the maximum number of keys returned in the response. The response might
      * contain fewer keys but will never contain more.</p>
      */
+    inline bool MaxKeysHasBeenSet() const { return m_maxKeysHasBeenSet; }
+
+    /**
+     * <p>Sets the maximum number of keys returned in the response. The response might
+     * contain fewer keys but will never contain more.</p>
+     */
     inline void SetMaxKeys(int value) { m_maxKeysHasBeenSet = true; m_maxKeys = value; }
 
     /**
@@ -174,6 +195,11 @@ namespace Model
      * <p>Limits the response to keys that begin with the specified prefix.</p>
      */
     inline const Aws::String& GetPrefix() const{ return m_prefix; }
+
+    /**
+     * <p>Limits the response to keys that begin with the specified prefix.</p>
+     */
+    inline bool PrefixHasBeenSet() const { return m_prefixHasBeenSet; }
 
     /**
      * <p>Limits the response to keys that begin with the specified prefix.</p>
@@ -212,6 +238,13 @@ namespace Model
      * key</p>
      */
     inline const Aws::String& GetContinuationToken() const{ return m_continuationToken; }
+
+    /**
+     * <p>ContinuationToken indicates Amazon S3 that the list is being continued on
+     * this bucket with a token. ContinuationToken is obfuscated and is not a real
+     * key</p>
+     */
+    inline bool ContinuationTokenHasBeenSet() const { return m_continuationTokenHasBeenSet; }
 
     /**
      * <p>ContinuationToken indicates Amazon S3 that the list is being continued on
@@ -268,6 +301,13 @@ namespace Model
      * owner field with each key in the result then set the fetch owner field to
      * true</p>
      */
+    inline bool FetchOwnerHasBeenSet() const { return m_fetchOwnerHasBeenSet; }
+
+    /**
+     * <p>The owner field is not present in listV2 by default, if you want to return
+     * owner field with each key in the result then set the fetch owner field to
+     * true</p>
+     */
     inline void SetFetchOwner(bool value) { m_fetchOwnerHasBeenSet = true; m_fetchOwner = value; }
 
     /**
@@ -284,6 +324,13 @@ namespace Model
      * bucket</p>
      */
     inline const Aws::String& GetStartAfter() const{ return m_startAfter; }
+
+    /**
+     * <p>StartAfter is where you want Amazon S3 to start listing from. Amazon S3
+     * starts listing after this specified key. StartAfter can be any key in the
+     * bucket</p>
+     */
+    inline bool StartAfterHasBeenSet() const { return m_startAfterHasBeenSet; }
 
     /**
      * <p>StartAfter is where you want Amazon S3 to start listing from. Amazon S3
@@ -340,6 +387,13 @@ namespace Model
      * objects request in V2 style. Bucket owners need not specify this parameter in
      * their requests.</p>
      */
+    inline bool RequestPayerHasBeenSet() const { return m_requestPayerHasBeenSet; }
+
+    /**
+     * <p>Confirms that the requester knows that she or he will be charged for the list
+     * objects request in V2 style. Bucket owners need not specify this parameter in
+     * their requests.</p>
+     */
     inline void SetRequestPayer(const RequestPayer& value) { m_requestPayerHasBeenSet = true; m_requestPayer = value; }
 
     /**
@@ -366,6 +420,9 @@ namespace Model
 
     
     inline const Aws::Map<Aws::String, Aws::String>& GetCustomizedAccessLogTag() const{ return m_customizedAccessLogTag; }
+
+    
+    inline bool CustomizedAccessLogTagHasBeenSet() const { return m_customizedAccessLogTagHasBeenSet; }
 
     
     inline void SetCustomizedAccessLogTag(const Aws::Map<Aws::String, Aws::String>& value) { m_customizedAccessLogTagHasBeenSet = true; m_customizedAccessLogTag = value; }

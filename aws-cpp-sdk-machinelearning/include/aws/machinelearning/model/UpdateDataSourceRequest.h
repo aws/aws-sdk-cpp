@@ -52,6 +52,11 @@ namespace Model
     /**
      * <p>The ID assigned to the <code>DataSource</code> during creation.</p>
      */
+    inline bool DataSourceIdHasBeenSet() const { return m_dataSourceIdHasBeenSet; }
+
+    /**
+     * <p>The ID assigned to the <code>DataSource</code> during creation.</p>
+     */
     inline void SetDataSourceId(const Aws::String& value) { m_dataSourceIdHasBeenSet = true; m_dataSourceId = value; }
 
     /**
@@ -85,6 +90,12 @@ namespace Model
      * will replace the current description. </p>
      */
     inline const Aws::String& GetDataSourceName() const{ return m_dataSourceName; }
+
+    /**
+     * <p>A new user-supplied name or description of the <code>DataSource</code> that
+     * will replace the current description. </p>
+     */
+    inline bool DataSourceNameHasBeenSet() const { return m_dataSourceNameHasBeenSet; }
 
     /**
      * <p>A new user-supplied name or description of the <code>DataSource</code> that

@@ -59,6 +59,12 @@ namespace Model
      * <p>This specifies the ID of the environment with the in-progress update that you
      * want to cancel.</p>
      */
+    inline bool EnvironmentIdHasBeenSet() const { return m_environmentIdHasBeenSet; }
+
+    /**
+     * <p>This specifies the ID of the environment with the in-progress update that you
+     * want to cancel.</p>
+     */
     inline void SetEnvironmentId(const Aws::String& value) { m_environmentIdHasBeenSet = true; m_environmentId = value; }
 
     /**
@@ -97,6 +103,12 @@ namespace Model
      * you want to cancel.</p>
      */
     inline const Aws::String& GetEnvironmentName() const{ return m_environmentName; }
+
+    /**
+     * <p>This specifies the name of the environment with the in-progress update that
+     * you want to cancel.</p>
+     */
+    inline bool EnvironmentNameHasBeenSet() const { return m_environmentNameHasBeenSet; }
 
     /**
      * <p>This specifies the name of the environment with the in-progress update that

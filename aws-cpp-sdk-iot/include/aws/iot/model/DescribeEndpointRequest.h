@@ -71,6 +71,17 @@ namespace Model
      * <p> <code>iot:Jobs</code> - Returns an AWS IoT device management Jobs API
      * endpoint.</p> </li> </ul>
      */
+    inline bool EndpointTypeHasBeenSet() const { return m_endpointTypeHasBeenSet; }
+
+    /**
+     * <p>The endpoint type. Valid endpoint types include:</p> <ul> <li> <p>
+     * <code>iot:Data</code> - Returns a VeriSign signed data endpoint.</p> </li> </ul>
+     * <ul> <li> <p> <code>iot:Data-ATS</code> - Returns an ATS signed data
+     * endpoint.</p> </li> </ul> <ul> <li> <p> <code>iot:CredentialProvider</code> -
+     * Returns an AWS IoT credentials provider API endpoint.</p> </li> </ul> <ul> <li>
+     * <p> <code>iot:Jobs</code> - Returns an AWS IoT device management Jobs API
+     * endpoint.</p> </li> </ul>
+     */
     inline void SetEndpointType(const Aws::String& value) { m_endpointTypeHasBeenSet = true; m_endpointType = value; }
 
     /**

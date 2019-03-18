@@ -52,6 +52,11 @@ namespace Model
     /**
      * <p>The ID of the AWS Firewall Manager policy that you want the details for.</p>
      */
+    inline bool PolicyIdHasBeenSet() const { return m_policyIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the AWS Firewall Manager policy that you want the details for.</p>
+     */
     inline void SetPolicyId(const Aws::String& value) { m_policyIdHasBeenSet = true; m_policyId = value; }
 
     /**
@@ -91,6 +96,18 @@ namespace Model
      * another batch of <code>PolicyComplianceStatus</code> objects.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
+    /**
+     * <p>If you specify a value for <code>MaxResults</code> and you have more
+     * <code>PolicyComplianceStatus</code> objects than the number that you specify for
+     * <code>MaxResults</code>, AWS Firewall Manager returns a <code>NextToken</code>
+     * value in the response that allows you to list another group of
+     * <code>PolicyComplianceStatus</code> objects. For the second and subsequent
+     * <code>ListComplianceStatus</code> requests, specify the value of
+     * <code>NextToken</code> from the previous response to get information about
+     * another batch of <code>PolicyComplianceStatus</code> objects.</p>
+     */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
      * <p>If you specify a value for <code>MaxResults</code> and you have more
@@ -174,6 +191,16 @@ namespace Model
      * objects.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
+
+    /**
+     * <p>Specifies the number of <code>PolicyComplianceStatus</code> objects that you
+     * want AWS Firewall Manager to return for this request. If you have more
+     * <code>PolicyComplianceStatus</code> objects than the number that you specify for
+     * <code>MaxResults</code>, the response includes a <code>NextToken</code> value
+     * that you can use to get another batch of <code>PolicyComplianceStatus</code>
+     * objects.</p>
+     */
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
 
     /**
      * <p>Specifies the number of <code>PolicyComplianceStatus</code> objects that you

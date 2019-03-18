@@ -58,6 +58,12 @@ namespace Model
      * <p>The CIDR IP address range. You can't specify this parameter when specifying a
      * source security group.</p>
      */
+    inline bool CidrIpHasBeenSet() const { return m_cidrIpHasBeenSet; }
+
+    /**
+     * <p>The CIDR IP address range. You can't specify this parameter when specifying a
+     * source security group.</p>
+     */
     inline void SetCidrIp(const Aws::String& value) { m_cidrIpHasBeenSet = true; m_cidrIp = value; }
 
     /**
@@ -103,6 +109,13 @@ namespace Model
      * number. For the ICMP type number, use <code>-1</code> to specify all ICMP
      * types.</p>
      */
+    inline bool FromPortHasBeenSet() const { return m_fromPortHasBeenSet; }
+
+    /**
+     * <p>The start of port range for the TCP and UDP protocols, or an ICMP type
+     * number. For the ICMP type number, use <code>-1</code> to specify all ICMP
+     * types.</p>
+     */
     inline void SetFromPort(int value) { m_fromPortHasBeenSet = true; m_fromPort = value; }
 
     /**
@@ -119,6 +132,13 @@ namespace Model
      * VPC, you must specify the security group ID.</p>
      */
     inline const Aws::String& GetGroupId() const{ return m_groupId; }
+
+    /**
+     * <p>The ID of the security group. You must specify either the security group ID
+     * or the security group name in the request. For security groups in a nondefault
+     * VPC, you must specify the security group ID.</p>
+     */
+    inline bool GroupIdHasBeenSet() const { return m_groupIdHasBeenSet; }
 
     /**
      * <p>The ID of the security group. You must specify either the security group ID
@@ -173,6 +193,12 @@ namespace Model
      * <p>[EC2-Classic, default VPC] The name of the security group. You must specify
      * either the security group ID or the security group name in the request.</p>
      */
+    inline bool GroupNameHasBeenSet() const { return m_groupNameHasBeenSet; }
+
+    /**
+     * <p>[EC2-Classic, default VPC] The name of the security group. You must specify
+     * either the security group ID or the security group name in the request.</p>
+     */
     inline void SetGroupName(const Aws::String& value) { m_groupNameHasBeenSet = true; m_groupName = value; }
 
     /**
@@ -211,6 +237,12 @@ namespace Model
      * and a CIDR IP address range in the same set of permissions.</p>
      */
     inline const Aws::Vector<IpPermission>& GetIpPermissions() const{ return m_ipPermissions; }
+
+    /**
+     * <p>One or more sets of IP permissions. You can't specify a source security group
+     * and a CIDR IP address range in the same set of permissions.</p>
+     */
+    inline bool IpPermissionsHasBeenSet() const { return m_ipPermissionsHasBeenSet; }
 
     /**
      * <p>One or more sets of IP permissions. You can't specify a source security group
@@ -256,6 +288,14 @@ namespace Model
      * Numbers</a>). Use <code>-1</code> to specify all.</p>
      */
     inline const Aws::String& GetIpProtocol() const{ return m_ipProtocol; }
+
+    /**
+     * <p>The IP protocol name (<code>tcp</code>, <code>udp</code>, <code>icmp</code>)
+     * or number (see <a
+     * href="http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml">Protocol
+     * Numbers</a>). Use <code>-1</code> to specify all.</p>
+     */
+    inline bool IpProtocolHasBeenSet() const { return m_ipProtocolHasBeenSet; }
 
     /**
      * <p>The IP protocol name (<code>tcp</code>, <code>udp</code>, <code>icmp</code>)
@@ -315,6 +355,16 @@ namespace Model
      * permissions instead.</p>
      */
     inline const Aws::String& GetSourceSecurityGroupName() const{ return m_sourceSecurityGroupName; }
+
+    /**
+     * <p>[EC2-Classic, default VPC] The name of the source security group. You can't
+     * specify this parameter in combination with the following parameters: the CIDR IP
+     * address range, the start of the port range, the IP protocol, and the end of the
+     * port range. For EC2-VPC, the source security group must be in the same VPC. To
+     * revoke a specific rule for an IP protocol and port range, use a set of IP
+     * permissions instead.</p>
+     */
+    inline bool SourceSecurityGroupNameHasBeenSet() const { return m_sourceSecurityGroupNameHasBeenSet; }
 
     /**
      * <p>[EC2-Classic, default VPC] The name of the source security group. You can't
@@ -395,6 +445,16 @@ namespace Model
      * a specific rule for an IP protocol and port range, use a set of IP permissions
      * instead.</p>
      */
+    inline bool SourceSecurityGroupOwnerIdHasBeenSet() const { return m_sourceSecurityGroupOwnerIdHasBeenSet; }
+
+    /**
+     * <p>[EC2-Classic] The AWS account ID of the source security group, if the source
+     * security group is in a different account. You can't specify this parameter in
+     * combination with the following parameters: the CIDR IP address range, the IP
+     * protocol, the start of the port range, and the end of the port range. To revoke
+     * a specific rule for an IP protocol and port range, use a set of IP permissions
+     * instead.</p>
+     */
     inline void SetSourceSecurityGroupOwnerId(const Aws::String& value) { m_sourceSecurityGroupOwnerIdHasBeenSet = true; m_sourceSecurityGroupOwnerId = value; }
 
     /**
@@ -460,6 +520,13 @@ namespace Model
      * For the ICMP code number, use <code>-1</code> to specify all ICMP codes for the
      * ICMP type.</p>
      */
+    inline bool ToPortHasBeenSet() const { return m_toPortHasBeenSet; }
+
+    /**
+     * <p>The end of port range for the TCP and UDP protocols, or an ICMP code number.
+     * For the ICMP code number, use <code>-1</code> to specify all ICMP codes for the
+     * ICMP type.</p>
+     */
     inline void SetToPort(int value) { m_toPortHasBeenSet = true; m_toPort = value; }
 
     /**
@@ -477,6 +544,14 @@ namespace Model
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
     inline bool GetDryRun() const{ return m_dryRun; }
+
+    /**
+     * <p>Checks whether you have the required permissions for the action, without
+     * actually making the request, and provides an error response. If you have the
+     * required permissions, the error response is <code>DryRunOperation</code>.
+     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+     */
+    inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
 
     /**
      * <p>Checks whether you have the required permissions for the action, without

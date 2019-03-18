@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p/>
      */
+    inline bool TimestampHasBeenSet() const { return m_timestampHasBeenSet; }
+
+    /**
+     * <p/>
+     */
     inline void SetTimestamp(const Aws::Utils::DateTime& value) { m_timestampHasBeenSet = true; m_timestamp = value; }
 
     /**
@@ -82,6 +87,11 @@ namespace Model
     /**
      * <p/>
      */
+    inline bool SegmentsReceivedCountHasBeenSet() const { return m_segmentsReceivedCountHasBeenSet; }
+
+    /**
+     * <p/>
+     */
     inline void SetSegmentsReceivedCount(int value) { m_segmentsReceivedCountHasBeenSet = true; m_segmentsReceivedCount = value; }
 
     /**
@@ -94,6 +104,11 @@ namespace Model
      * <p/>
      */
     inline int GetSegmentsSentCount() const{ return m_segmentsSentCount; }
+
+    /**
+     * <p/>
+     */
+    inline bool SegmentsSentCountHasBeenSet() const { return m_segmentsSentCountHasBeenSet; }
 
     /**
      * <p/>
@@ -114,6 +129,11 @@ namespace Model
     /**
      * <p/>
      */
+    inline bool SegmentsSpilloverCountHasBeenSet() const { return m_segmentsSpilloverCountHasBeenSet; }
+
+    /**
+     * <p/>
+     */
     inline void SetSegmentsSpilloverCount(int value) { m_segmentsSpilloverCountHasBeenSet = true; m_segmentsSpilloverCount = value; }
 
     /**
@@ -130,6 +150,11 @@ namespace Model
     /**
      * <p/>
      */
+    inline bool SegmentsRejectedCountHasBeenSet() const { return m_segmentsRejectedCountHasBeenSet; }
+
+    /**
+     * <p/>
+     */
     inline void SetSegmentsRejectedCount(int value) { m_segmentsRejectedCountHasBeenSet = true; m_segmentsRejectedCount = value; }
 
     /**
@@ -142,6 +167,11 @@ namespace Model
      * <p/>
      */
     inline const BackendConnectionErrors& GetBackendConnectionErrors() const{ return m_backendConnectionErrors; }
+
+    /**
+     * <p/>
+     */
+    inline bool BackendConnectionErrorsHasBeenSet() const { return m_backendConnectionErrorsHasBeenSet; }
 
     /**
      * <p/>

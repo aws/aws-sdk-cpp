@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The type name.</p>
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>The type name.</p>
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
@@ -88,6 +93,11 @@ namespace Model
      * <p>The type description.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
+
+    /**
+     * <p>The type description.</p>
+     */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
 
     /**
      * <p>The type description.</p>
@@ -128,6 +138,11 @@ namespace Model
     /**
      * <p>The type ARN.</p>
      */
+    inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
+
+    /**
+     * <p>The type ARN.</p>
+     */
     inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
 
     /**
@@ -164,6 +179,11 @@ namespace Model
     /**
      * <p>The type definition.</p>
      */
+    inline bool DefinitionHasBeenSet() const { return m_definitionHasBeenSet; }
+
+    /**
+     * <p>The type definition.</p>
+     */
     inline void SetDefinition(const Aws::String& value) { m_definitionHasBeenSet = true; m_definition = value; }
 
     /**
@@ -196,6 +216,11 @@ namespace Model
      * <p>The type format: SDL or JSON.</p>
      */
     inline const TypeDefinitionFormat& GetFormat() const{ return m_format; }
+
+    /**
+     * <p>The type format: SDL or JSON.</p>
+     */
+    inline bool FormatHasBeenSet() const { return m_formatHasBeenSet; }
 
     /**
      * <p>The type format: SDL or JSON.</p>

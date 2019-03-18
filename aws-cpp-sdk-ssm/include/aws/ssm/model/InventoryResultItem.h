@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The name of the inventory result item type.</p>
      */
+    inline bool TypeNameHasBeenSet() const { return m_typeNameHasBeenSet; }
+
+    /**
+     * <p>The name of the inventory result item type.</p>
+     */
     inline void SetTypeName(const Aws::String& value) { m_typeNameHasBeenSet = true; m_typeName = value; }
 
     /**
@@ -89,6 +94,11 @@ namespace Model
      * <p>The schema version for the inventory result item/</p>
      */
     inline const Aws::String& GetSchemaVersion() const{ return m_schemaVersion; }
+
+    /**
+     * <p>The schema version for the inventory result item/</p>
+     */
+    inline bool SchemaVersionHasBeenSet() const { return m_schemaVersionHasBeenSet; }
 
     /**
      * <p>The schema version for the inventory result item/</p>
@@ -129,6 +139,11 @@ namespace Model
     /**
      * <p>The time inventory item data was captured.</p>
      */
+    inline bool CaptureTimeHasBeenSet() const { return m_captureTimeHasBeenSet; }
+
+    /**
+     * <p>The time inventory item data was captured.</p>
+     */
     inline void SetCaptureTime(const Aws::String& value) { m_captureTimeHasBeenSet = true; m_captureTime = value; }
 
     /**
@@ -164,6 +179,14 @@ namespace Model
      * last update. </p>
      */
     inline const Aws::String& GetContentHash() const{ return m_contentHash; }
+
+    /**
+     * <p>MD5 hash of the inventory item type contents. The content hash is used to
+     * determine whether to update inventory information. The PutInventory API does not
+     * update the inventory item type contents if the MD5 hash has not changed since
+     * last update. </p>
+     */
+    inline bool ContentHashHasBeenSet() const { return m_contentHashHasBeenSet; }
 
     /**
      * <p>MD5 hash of the inventory item type contents. The content hash is used to
@@ -219,6 +242,12 @@ namespace Model
      * names and values. </p>
      */
     inline const Aws::Vector<Aws::Map<Aws::String, Aws::String>>& GetContent() const{ return m_content; }
+
+    /**
+     * <p>Contains all the inventory data of the item type. Results include attribute
+     * names and values. </p>
+     */
+    inline bool ContentHasBeenSet() const { return m_contentHasBeenSet; }
 
     /**
      * <p>Contains all the inventory data of the item type. Results include attribute

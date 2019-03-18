@@ -54,6 +54,11 @@ namespace Model
     /**
      * <p>The name of the service-linked role to be deleted.</p>
      */
+    inline bool RoleNameHasBeenSet() const { return m_roleNameHasBeenSet; }
+
+    /**
+     * <p>The name of the service-linked role to be deleted.</p>
+     */
     inline void SetRoleName(const Aws::String& value) { m_roleNameHasBeenSet = true; m_roleName = value; }
 
     /**

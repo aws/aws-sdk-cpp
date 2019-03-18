@@ -57,6 +57,12 @@ namespace Model
      * <p>Percentage of time that the CPU has spent in the <code>User</code> state over
      * the last 10 seconds.</p>
      */
+    inline bool UserHasBeenSet() const { return m_userHasBeenSet; }
+
+    /**
+     * <p>Percentage of time that the CPU has spent in the <code>User</code> state over
+     * the last 10 seconds.</p>
+     */
     inline void SetUser(double value) { m_userHasBeenSet = true; m_user = value; }
 
     /**
@@ -71,6 +77,12 @@ namespace Model
      * has spent in the <code>Nice</code> state over the last 10 seconds.</p>
      */
     inline double GetNice() const{ return m_nice; }
+
+    /**
+     * <p>Available on Linux environments only.</p> <p>Percentage of time that the CPU
+     * has spent in the <code>Nice</code> state over the last 10 seconds.</p>
+     */
+    inline bool NiceHasBeenSet() const { return m_niceHasBeenSet; }
 
     /**
      * <p>Available on Linux environments only.</p> <p>Percentage of time that the CPU
@@ -95,6 +107,12 @@ namespace Model
      * <p>Available on Linux environments only.</p> <p>Percentage of time that the CPU
      * has spent in the <code>System</code> state over the last 10 seconds.</p>
      */
+    inline bool SystemHasBeenSet() const { return m_systemHasBeenSet; }
+
+    /**
+     * <p>Available on Linux environments only.</p> <p>Percentage of time that the CPU
+     * has spent in the <code>System</code> state over the last 10 seconds.</p>
+     */
     inline void SetSystem(double value) { m_systemHasBeenSet = true; m_system = value; }
 
     /**
@@ -109,6 +127,12 @@ namespace Model
      * the last 10 seconds.</p>
      */
     inline double GetIdle() const{ return m_idle; }
+
+    /**
+     * <p>Percentage of time that the CPU has spent in the <code>Idle</code> state over
+     * the last 10 seconds.</p>
+     */
+    inline bool IdleHasBeenSet() const { return m_idleHasBeenSet; }
 
     /**
      * <p>Percentage of time that the CPU has spent in the <code>Idle</code> state over
@@ -133,6 +157,12 @@ namespace Model
      * <p>Available on Linux environments only.</p> <p>Percentage of time that the CPU
      * has spent in the <code>I/O Wait</code> state over the last 10 seconds.</p>
      */
+    inline bool IOWaitHasBeenSet() const { return m_iOWaitHasBeenSet; }
+
+    /**
+     * <p>Available on Linux environments only.</p> <p>Percentage of time that the CPU
+     * has spent in the <code>I/O Wait</code> state over the last 10 seconds.</p>
+     */
     inline void SetIOWait(double value) { m_iOWaitHasBeenSet = true; m_iOWait = value; }
 
     /**
@@ -147,6 +177,12 @@ namespace Model
      * has spent in the <code>IRQ</code> state over the last 10 seconds.</p>
      */
     inline double GetIRQ() const{ return m_iRQ; }
+
+    /**
+     * <p>Available on Linux environments only.</p> <p>Percentage of time that the CPU
+     * has spent in the <code>IRQ</code> state over the last 10 seconds.</p>
+     */
+    inline bool IRQHasBeenSet() const { return m_iRQHasBeenSet; }
 
     /**
      * <p>Available on Linux environments only.</p> <p>Percentage of time that the CPU
@@ -171,6 +207,12 @@ namespace Model
      * <p>Available on Linux environments only.</p> <p>Percentage of time that the CPU
      * has spent in the <code>SoftIRQ</code> state over the last 10 seconds.</p>
      */
+    inline bool SoftIRQHasBeenSet() const { return m_softIRQHasBeenSet; }
+
+    /**
+     * <p>Available on Linux environments only.</p> <p>Percentage of time that the CPU
+     * has spent in the <code>SoftIRQ</code> state over the last 10 seconds.</p>
+     */
     inline void SetSoftIRQ(double value) { m_softIRQHasBeenSet = true; m_softIRQ = value; }
 
     /**
@@ -185,6 +227,12 @@ namespace Model
      * CPU has spent in the <code>Privileged</code> state over the last 10 seconds.</p>
      */
     inline double GetPrivileged() const{ return m_privileged; }
+
+    /**
+     * <p>Available on Windows environments only.</p> <p>Percentage of time that the
+     * CPU has spent in the <code>Privileged</code> state over the last 10 seconds.</p>
+     */
+    inline bool PrivilegedHasBeenSet() const { return m_privilegedHasBeenSet; }
 
     /**
      * <p>Available on Windows environments only.</p> <p>Percentage of time that the

@@ -52,6 +52,11 @@ namespace Model
     /**
      * <p>The hash value returned when this policy was set.</p>
      */
+    inline bool PolicyHashConditionHasBeenSet() const { return m_policyHashConditionHasBeenSet; }
+
+    /**
+     * <p>The hash value returned when this policy was set.</p>
+     */
     inline void SetPolicyHashCondition(const Aws::String& value) { m_policyHashConditionHasBeenSet = true; m_policyHashCondition = value; }
 
     /**

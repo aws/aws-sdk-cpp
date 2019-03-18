@@ -60,6 +60,12 @@ namespace Model
      * <p>Describes the face properties such as the bounding box, face ID, image ID of
      * the input image, and external image ID that you assigned. </p>
      */
+    inline bool FaceHasBeenSet() const { return m_faceHasBeenSet; }
+
+    /**
+     * <p>Describes the face properties such as the bounding box, face ID, image ID of
+     * the input image, and external image ID that you assigned. </p>
+     */
     inline void SetFace(const Face& value) { m_faceHasBeenSet = true; m_face = value; }
 
     /**
@@ -85,6 +91,11 @@ namespace Model
      * <p>Structure containing attributes of the face that the algorithm detected.</p>
      */
     inline const FaceDetail& GetFaceDetail() const{ return m_faceDetail; }
+
+    /**
+     * <p>Structure containing attributes of the face that the algorithm detected.</p>
+     */
+    inline bool FaceDetailHasBeenSet() const { return m_faceDetailHasBeenSet; }
 
     /**
      * <p>Structure containing attributes of the face that the algorithm detected.</p>

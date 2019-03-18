@@ -59,6 +59,12 @@ namespace Model
      * <p>The ARN of the AWS Lambda function that operates on records in the
      * stream.</p>
      */
+    inline bool ResourceARNHasBeenSet() const { return m_resourceARNHasBeenSet; }
+
+    /**
+     * <p>The ARN of the AWS Lambda function that operates on records in the
+     * stream.</p>
+     */
     inline void SetResourceARN(const Aws::String& value) { m_resourceARNHasBeenSet = true; m_resourceARN = value; }
 
     /**

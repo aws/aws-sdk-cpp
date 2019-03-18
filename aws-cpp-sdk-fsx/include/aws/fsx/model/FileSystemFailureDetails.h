@@ -58,6 +58,12 @@ namespace Model
      * <p>Message describing the failures that occurred during file system
      * creation.</p>
      */
+    inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
+
+    /**
+     * <p>Message describing the failures that occurred during file system
+     * creation.</p>
+     */
     inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
 
     /**

@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The <code>ObjectIdentifier</code> of the object that has been attached.</p>
      */
+    inline bool AttachedObjectIdentifierHasBeenSet() const { return m_attachedObjectIdentifierHasBeenSet; }
+
+    /**
+     * <p>The <code>ObjectIdentifier</code> of the object that has been attached.</p>
+     */
     inline void SetAttachedObjectIdentifier(const Aws::String& value) { m_attachedObjectIdentifierHasBeenSet = true; m_attachedObjectIdentifier = value; }
 
     /**

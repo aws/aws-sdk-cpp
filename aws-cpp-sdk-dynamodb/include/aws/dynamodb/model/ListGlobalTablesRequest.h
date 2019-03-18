@@ -52,6 +52,11 @@ namespace Model
     /**
      * <p>The first global table name that this operation will evaluate.</p>
      */
+    inline bool ExclusiveStartGlobalTableNameHasBeenSet() const { return m_exclusiveStartGlobalTableNameHasBeenSet; }
+
+    /**
+     * <p>The first global table name that this operation will evaluate.</p>
+     */
     inline void SetExclusiveStartGlobalTableName(const Aws::String& value) { m_exclusiveStartGlobalTableNameHasBeenSet = true; m_exclusiveStartGlobalTableName = value; }
 
     /**
@@ -88,6 +93,11 @@ namespace Model
     /**
      * <p>The maximum number of table names to return.</p>
      */
+    inline bool LimitHasBeenSet() const { return m_limitHasBeenSet; }
+
+    /**
+     * <p>The maximum number of table names to return.</p>
+     */
     inline void SetLimit(int value) { m_limitHasBeenSet = true; m_limit = value; }
 
     /**
@@ -100,6 +110,11 @@ namespace Model
      * <p>Lists the global tables in a specific region.</p>
      */
     inline const Aws::String& GetRegionName() const{ return m_regionName; }
+
+    /**
+     * <p>Lists the global tables in a specific region.</p>
+     */
+    inline bool RegionNameHasBeenSet() const { return m_regionNameHasBeenSet; }
 
     /**
      * <p>Lists the global tables in a specific region.</p>

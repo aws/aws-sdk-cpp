@@ -63,6 +63,14 @@ namespace Model
      * are enabled for this build project.</p> </li> <li> <p> <code>DISABLED</code>:
      * Amazon CloudWatch Logs are not enabled for this build project.</p> </li> </ul>
      */
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
+
+    /**
+     * <p>The current status of the logs in Amazon CloudWatch Logs for a build project.
+     * Valid values are:</p> <ul> <li> <p> <code>ENABLED</code>: Amazon CloudWatch Logs
+     * are enabled for this build project.</p> </li> <li> <p> <code>DISABLED</code>:
+     * Amazon CloudWatch Logs are not enabled for this build project.</p> </li> </ul>
+     */
     inline void SetStatus(const LogsConfigStatusType& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
@@ -97,6 +105,14 @@ namespace Model
      * with Log Groups and Log Streams</a>. </p>
      */
     inline const Aws::String& GetGroupName() const{ return m_groupName; }
+
+    /**
+     * <p> The group name of the logs in Amazon CloudWatch Logs. For more information,
+     * see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/Working-with-log-groups-and-streams.html">Working
+     * with Log Groups and Log Streams</a>. </p>
+     */
+    inline bool GroupNameHasBeenSet() const { return m_groupNameHasBeenSet; }
 
     /**
      * <p> The group name of the logs in Amazon CloudWatch Logs. For more information,
@@ -154,6 +170,14 @@ namespace Model
      * with Log Groups and Log Streams</a>. </p>
      */
     inline const Aws::String& GetStreamName() const{ return m_streamName; }
+
+    /**
+     * <p> The prefix of the stream name of the Amazon CloudWatch Logs. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/Working-with-log-groups-and-streams.html">Working
+     * with Log Groups and Log Streams</a>. </p>
+     */
+    inline bool StreamNameHasBeenSet() const { return m_streamNameHasBeenSet; }
 
     /**
      * <p> The prefix of the stream name of the Amazon CloudWatch Logs. For more

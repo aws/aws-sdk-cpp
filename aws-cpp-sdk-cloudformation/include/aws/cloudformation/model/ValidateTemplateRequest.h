@@ -67,6 +67,16 @@ namespace Model
      * pass <code>TemplateURL</code> or <code>TemplateBody</code>. If both are passed,
      * only <code>TemplateBody</code> is used.</p>
      */
+    inline bool TemplateBodyHasBeenSet() const { return m_templateBodyHasBeenSet; }
+
+    /**
+     * <p>Structure containing the template body with a minimum length of 1 byte and a
+     * maximum length of 51,200 bytes. For more information, go to <a
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
+     * Anatomy</a> in the AWS CloudFormation User Guide.</p> <p>Conditional: You must
+     * pass <code>TemplateURL</code> or <code>TemplateBody</code>. If both are passed,
+     * only <code>TemplateBody</code> is used.</p>
+     */
     inline void SetTemplateBody(const Aws::String& value) { m_templateBodyHasBeenSet = true; m_templateBody = value; }
 
     /**
@@ -130,6 +140,17 @@ namespace Model
      * only <code>TemplateBody</code> is used.</p>
      */
     inline const Aws::String& GetTemplateURL() const{ return m_templateURL; }
+
+    /**
+     * <p>Location of file containing the template body. The URL must point to a
+     * template (max size: 460,800 bytes) that is located in an Amazon S3 bucket. For
+     * more information, go to <a
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
+     * Anatomy</a> in the AWS CloudFormation User Guide.</p> <p>Conditional: You must
+     * pass <code>TemplateURL</code> or <code>TemplateBody</code>. If both are passed,
+     * only <code>TemplateBody</code> is used.</p>
+     */
+    inline bool TemplateURLHasBeenSet() const { return m_templateURLHasBeenSet; }
 
     /**
      * <p>Location of file containing the template body. The URL must point to a

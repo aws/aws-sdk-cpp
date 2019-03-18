@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p> Unique Id for an Amplify App. </p>
      */
+    inline bool AppIdHasBeenSet() const { return m_appIdHasBeenSet; }
+
+    /**
+     * <p> Unique Id for an Amplify App. </p>
+     */
     inline void SetAppId(const Aws::String& value) { m_appIdHasBeenSet = true; m_appId = value; }
 
     /**
@@ -89,6 +94,11 @@ namespace Model
      * <p> Name for an Amplify App. </p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
+
+    /**
+     * <p> Name for an Amplify App. </p>
+     */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
      * <p> Name for an Amplify App. </p>
@@ -129,6 +139,11 @@ namespace Model
     /**
      * <p> Description for an Amplify App. </p>
      */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
+
+    /**
+     * <p> Description for an Amplify App. </p>
+     */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
@@ -165,6 +180,11 @@ namespace Model
     /**
      * <p> Platform for an Amplify App. </p>
      */
+    inline bool PlatformHasBeenSet() const { return m_platformHasBeenSet; }
+
+    /**
+     * <p> Platform for an Amplify App. </p>
+     */
     inline void SetPlatform(const Platform& value) { m_platformHasBeenSet = true; m_platform = value; }
 
     /**
@@ -187,6 +207,11 @@ namespace Model
      * <p> IAM service role for an Amplify App. </p>
      */
     inline const Aws::String& GetIamServiceRoleArn() const{ return m_iamServiceRoleArn; }
+
+    /**
+     * <p> IAM service role for an Amplify App. </p>
+     */
+    inline bool IamServiceRoleArnHasBeenSet() const { return m_iamServiceRoleArnHasBeenSet; }
 
     /**
      * <p> IAM service role for an Amplify App. </p>
@@ -223,6 +248,11 @@ namespace Model
      * <p> Environment Variables for an Amplify App. </p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetEnvironmentVariables() const{ return m_environmentVariables; }
+
+    /**
+     * <p> Environment Variables for an Amplify App. </p>
+     */
+    inline bool EnvironmentVariablesHasBeenSet() const { return m_environmentVariablesHasBeenSet; }
 
     /**
      * <p> Environment Variables for an Amplify App. </p>
@@ -288,6 +318,11 @@ namespace Model
     /**
      * <p> Enables branch auto-building for an Amplify App. </p>
      */
+    inline bool EnableBranchAutoBuildHasBeenSet() const { return m_enableBranchAutoBuildHasBeenSet; }
+
+    /**
+     * <p> Enables branch auto-building for an Amplify App. </p>
+     */
     inline void SetEnableBranchAutoBuild(bool value) { m_enableBranchAutoBuildHasBeenSet = true; m_enableBranchAutoBuild = value; }
 
     /**
@@ -304,6 +339,11 @@ namespace Model
     /**
      * <p> Enables Basic Authorization for an Amplify App. </p>
      */
+    inline bool EnableBasicAuthHasBeenSet() const { return m_enableBasicAuthHasBeenSet; }
+
+    /**
+     * <p> Enables Basic Authorization for an Amplify App. </p>
+     */
     inline void SetEnableBasicAuth(bool value) { m_enableBasicAuthHasBeenSet = true; m_enableBasicAuth = value; }
 
     /**
@@ -316,6 +356,11 @@ namespace Model
      * <p> Basic Authorization credentials for an Amplify App. </p>
      */
     inline const Aws::String& GetBasicAuthCredentials() const{ return m_basicAuthCredentials; }
+
+    /**
+     * <p> Basic Authorization credentials for an Amplify App. </p>
+     */
+    inline bool BasicAuthCredentialsHasBeenSet() const { return m_basicAuthCredentialsHasBeenSet; }
 
     /**
      * <p> Basic Authorization credentials for an Amplify App. </p>
@@ -356,6 +401,11 @@ namespace Model
     /**
      * <p> Custom redirect / rewrite rules for an Amplify App. </p>
      */
+    inline bool CustomRulesHasBeenSet() const { return m_customRulesHasBeenSet; }
+
+    /**
+     * <p> Custom redirect / rewrite rules for an Amplify App. </p>
+     */
     inline void SetCustomRules(const Aws::Vector<CustomRule>& value) { m_customRulesHasBeenSet = true; m_customRules = value; }
 
     /**
@@ -388,6 +438,11 @@ namespace Model
      * <p> BuildSpec for an Amplify App. </p>
      */
     inline const Aws::String& GetBuildSpec() const{ return m_buildSpec; }
+
+    /**
+     * <p> BuildSpec for an Amplify App. </p>
+     */
+    inline bool BuildSpecHasBeenSet() const { return m_buildSpecHasBeenSet; }
 
     /**
      * <p> BuildSpec for an Amplify App. </p>

@@ -52,6 +52,11 @@ namespace Model
     /**
      * <p>Describes a single backup. </p>
      */
+    inline bool BackupIdHasBeenSet() const { return m_backupIdHasBeenSet; }
+
+    /**
+     * <p>Describes a single backup. </p>
+     */
     inline void SetBackupId(const Aws::String& value) { m_backupIdHasBeenSet = true; m_backupId = value; }
 
     /**
@@ -84,6 +89,11 @@ namespace Model
      * <p>Returns backups for the server with the specified ServerName. </p>
      */
     inline const Aws::String& GetServerName() const{ return m_serverName; }
+
+    /**
+     * <p>Returns backups for the server with the specified ServerName. </p>
+     */
+    inline bool ServerNameHasBeenSet() const { return m_serverNameHasBeenSet; }
 
     /**
      * <p>Returns backups for the server with the specified ServerName. </p>
@@ -121,6 +131,12 @@ namespace Model
      * requests.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
+    /**
+     * <p>This is not currently implemented for <code>DescribeBackups</code>
+     * requests.</p>
+     */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
      * <p>This is not currently implemented for <code>DescribeBackups</code>
@@ -164,6 +180,12 @@ namespace Model
      * requests.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
+
+    /**
+     * <p>This is not currently implemented for <code>DescribeBackups</code>
+     * requests.</p>
+     */
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
 
     /**
      * <p>This is not currently implemented for <code>DescribeBackups</code>

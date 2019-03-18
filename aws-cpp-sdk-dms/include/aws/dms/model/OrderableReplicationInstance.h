@@ -16,6 +16,7 @@
 #pragma once
 #include <aws/dms/DatabaseMigrationService_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <utility>
 
 namespace Aws
@@ -55,6 +56,11 @@ namespace Model
     /**
      * <p>The version of the replication engine.</p>
      */
+    inline bool EngineVersionHasBeenSet() const { return m_engineVersionHasBeenSet; }
+
+    /**
+     * <p>The version of the replication engine.</p>
+     */
     inline void SetEngineVersion(const Aws::String& value) { m_engineVersionHasBeenSet = true; m_engineVersion = value; }
 
     /**
@@ -89,6 +95,13 @@ namespace Model
      * dms.c4.large | dms.c4.xlarge | dms.c4.2xlarge | dms.c4.4xlarge </code> </p>
      */
     inline const Aws::String& GetReplicationInstanceClass() const{ return m_replicationInstanceClass; }
+
+    /**
+     * <p>The compute and memory capacity of the replication instance.</p> <p> Valid
+     * Values: <code>dms.t2.micro | dms.t2.small | dms.t2.medium | dms.t2.large |
+     * dms.c4.large | dms.c4.xlarge | dms.c4.2xlarge | dms.c4.4xlarge </code> </p>
+     */
+    inline bool ReplicationInstanceClassHasBeenSet() const { return m_replicationInstanceClassHasBeenSet; }
 
     /**
      * <p>The compute and memory capacity of the replication instance.</p> <p> Valid
@@ -141,6 +154,11 @@ namespace Model
     /**
      * <p>The type of storage used by the replication instance.</p>
      */
+    inline bool StorageTypeHasBeenSet() const { return m_storageTypeHasBeenSet; }
+
+    /**
+     * <p>The type of storage used by the replication instance.</p>
+     */
     inline void SetStorageType(const Aws::String& value) { m_storageTypeHasBeenSet = true; m_storageType = value; }
 
     /**
@@ -179,6 +197,12 @@ namespace Model
      * <p>The minimum amount of storage (in gigabytes) that can be allocated for the
      * replication instance.</p>
      */
+    inline bool MinAllocatedStorageHasBeenSet() const { return m_minAllocatedStorageHasBeenSet; }
+
+    /**
+     * <p>The minimum amount of storage (in gigabytes) that can be allocated for the
+     * replication instance.</p>
+     */
     inline void SetMinAllocatedStorage(int value) { m_minAllocatedStorageHasBeenSet = true; m_minAllocatedStorage = value; }
 
     /**
@@ -193,6 +217,12 @@ namespace Model
      * replication instance.</p>
      */
     inline int GetMaxAllocatedStorage() const{ return m_maxAllocatedStorage; }
+
+    /**
+     * <p>The minimum amount of storage (in gigabytes) that can be allocated for the
+     * replication instance.</p>
+     */
+    inline bool MaxAllocatedStorageHasBeenSet() const { return m_maxAllocatedStorageHasBeenSet; }
 
     /**
      * <p>The minimum amount of storage (in gigabytes) that can be allocated for the
@@ -217,6 +247,12 @@ namespace Model
      * <p>The default amount of storage (in gigabytes) that is allocated for the
      * replication instance.</p>
      */
+    inline bool DefaultAllocatedStorageHasBeenSet() const { return m_defaultAllocatedStorageHasBeenSet; }
+
+    /**
+     * <p>The default amount of storage (in gigabytes) that is allocated for the
+     * replication instance.</p>
+     */
     inline void SetDefaultAllocatedStorage(int value) { m_defaultAllocatedStorageHasBeenSet = true; m_defaultAllocatedStorage = value; }
 
     /**
@@ -236,6 +272,12 @@ namespace Model
      * <p>The amount of storage (in gigabytes) that is allocated for the replication
      * instance.</p>
      */
+    inline bool IncludedAllocatedStorageHasBeenSet() const { return m_includedAllocatedStorageHasBeenSet; }
+
+    /**
+     * <p>The amount of storage (in gigabytes) that is allocated for the replication
+     * instance.</p>
+     */
     inline void SetIncludedAllocatedStorage(int value) { m_includedAllocatedStorageHasBeenSet = true; m_includedAllocatedStorage = value; }
 
     /**
@@ -243,6 +285,52 @@ namespace Model
      * instance.</p>
      */
     inline OrderableReplicationInstance& WithIncludedAllocatedStorage(int value) { SetIncludedAllocatedStorage(value); return *this;}
+
+
+    /**
+     * <p>List of availability zones for this replication instance.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetAvailabilityZones() const{ return m_availabilityZones; }
+
+    /**
+     * <p>List of availability zones for this replication instance.</p>
+     */
+    inline bool AvailabilityZonesHasBeenSet() const { return m_availabilityZonesHasBeenSet; }
+
+    /**
+     * <p>List of availability zones for this replication instance.</p>
+     */
+    inline void SetAvailabilityZones(const Aws::Vector<Aws::String>& value) { m_availabilityZonesHasBeenSet = true; m_availabilityZones = value; }
+
+    /**
+     * <p>List of availability zones for this replication instance.</p>
+     */
+    inline void SetAvailabilityZones(Aws::Vector<Aws::String>&& value) { m_availabilityZonesHasBeenSet = true; m_availabilityZones = std::move(value); }
+
+    /**
+     * <p>List of availability zones for this replication instance.</p>
+     */
+    inline OrderableReplicationInstance& WithAvailabilityZones(const Aws::Vector<Aws::String>& value) { SetAvailabilityZones(value); return *this;}
+
+    /**
+     * <p>List of availability zones for this replication instance.</p>
+     */
+    inline OrderableReplicationInstance& WithAvailabilityZones(Aws::Vector<Aws::String>&& value) { SetAvailabilityZones(std::move(value)); return *this;}
+
+    /**
+     * <p>List of availability zones for this replication instance.</p>
+     */
+    inline OrderableReplicationInstance& AddAvailabilityZones(const Aws::String& value) { m_availabilityZonesHasBeenSet = true; m_availabilityZones.push_back(value); return *this; }
+
+    /**
+     * <p>List of availability zones for this replication instance.</p>
+     */
+    inline OrderableReplicationInstance& AddAvailabilityZones(Aws::String&& value) { m_availabilityZonesHasBeenSet = true; m_availabilityZones.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>List of availability zones for this replication instance.</p>
+     */
+    inline OrderableReplicationInstance& AddAvailabilityZones(const char* value) { m_availabilityZonesHasBeenSet = true; m_availabilityZones.push_back(value); return *this; }
 
   private:
 
@@ -266,6 +354,9 @@ namespace Model
 
     int m_includedAllocatedStorage;
     bool m_includedAllocatedStorageHasBeenSet;
+
+    Aws::Vector<Aws::String> m_availabilityZones;
+    bool m_availabilityZonesHasBeenSet;
   };
 
 } // namespace Model

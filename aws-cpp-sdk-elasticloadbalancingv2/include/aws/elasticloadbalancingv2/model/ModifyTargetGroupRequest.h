@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the target group.</p>
      */
+    inline bool TargetGroupArnHasBeenSet() const { return m_targetGroupArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the target group.</p>
+     */
     inline void SetTargetGroupArn(const Aws::String& value) { m_targetGroupArnHasBeenSet = true; m_targetGroupArn = value; }
 
     /**
@@ -92,6 +97,15 @@ namespace Model
      * setting.</p>
      */
     inline const ProtocolEnum& GetHealthCheckProtocol() const{ return m_healthCheckProtocol; }
+
+    /**
+     * <p>The protocol the load balancer uses when performing health checks on targets.
+     * The TCP protocol is supported for health checks only if the protocol of the
+     * target group is TCP or TLS. The TLS protocol is not supported for health
+     * checks.</p> <p>If the protocol of the target group is TCP, you can't modify this
+     * setting.</p>
+     */
+    inline bool HealthCheckProtocolHasBeenSet() const { return m_healthCheckProtocolHasBeenSet; }
 
     /**
      * <p>The protocol the load balancer uses when performing health checks on targets.
@@ -138,6 +152,11 @@ namespace Model
     /**
      * <p>The port the load balancer uses when performing health checks on targets.</p>
      */
+    inline bool HealthCheckPortHasBeenSet() const { return m_healthCheckPortHasBeenSet; }
+
+    /**
+     * <p>The port the load balancer uses when performing health checks on targets.</p>
+     */
     inline void SetHealthCheckPort(const Aws::String& value) { m_healthCheckPortHasBeenSet = true; m_healthCheckPort = value; }
 
     /**
@@ -171,6 +190,12 @@ namespace Model
      * health check request.</p>
      */
     inline const Aws::String& GetHealthCheckPath() const{ return m_healthCheckPath; }
+
+    /**
+     * <p>[HTTP/HTTPS health checks] The ping path that is the destination for the
+     * health check request.</p>
+     */
+    inline bool HealthCheckPathHasBeenSet() const { return m_healthCheckPathHasBeenSet; }
 
     /**
      * <p>[HTTP/HTTPS health checks] The ping path that is the destination for the
@@ -217,6 +242,11 @@ namespace Model
     /**
      * <p>Indicates whether health checks are enabled.</p>
      */
+    inline bool HealthCheckEnabledHasBeenSet() const { return m_healthCheckEnabledHasBeenSet; }
+
+    /**
+     * <p>Indicates whether health checks are enabled.</p>
+     */
     inline void SetHealthCheckEnabled(bool value) { m_healthCheckEnabledHasBeenSet = true; m_healthCheckEnabled = value; }
 
     /**
@@ -232,6 +262,14 @@ namespace Model
      * the protocol of the target group is TCP, you can't modify this setting.</p>
      */
     inline int GetHealthCheckIntervalSeconds() const{ return m_healthCheckIntervalSeconds; }
+
+    /**
+     * <p>The approximate amount of time, in seconds, between health checks of an
+     * individual target. For Application Load Balancers, the range is 5–300 seconds.
+     * For Network Load Balancers, the supported values are 10 or 30 seconds.</p> <p>If
+     * the protocol of the target group is TCP, you can't modify this setting.</p>
+     */
+    inline bool HealthCheckIntervalSecondsHasBeenSet() const { return m_healthCheckIntervalSecondsHasBeenSet; }
 
     /**
      * <p>The approximate amount of time, in seconds, between health checks of an
@@ -262,6 +300,13 @@ namespace Model
      * response means a failed health check.</p> <p>If the protocol of the target group
      * is TCP, you can't modify this setting.</p>
      */
+    inline bool HealthCheckTimeoutSecondsHasBeenSet() const { return m_healthCheckTimeoutSecondsHasBeenSet; }
+
+    /**
+     * <p>[HTTP/HTTPS health checks] The amount of time, in seconds, during which no
+     * response means a failed health check.</p> <p>If the protocol of the target group
+     * is TCP, you can't modify this setting.</p>
+     */
     inline void SetHealthCheckTimeoutSeconds(int value) { m_healthCheckTimeoutSecondsHasBeenSet = true; m_healthCheckTimeoutSeconds = value; }
 
     /**
@@ -277,6 +322,12 @@ namespace Model
      * an unhealthy target healthy.</p>
      */
     inline int GetHealthyThresholdCount() const{ return m_healthyThresholdCount; }
+
+    /**
+     * <p>The number of consecutive health checks successes required before considering
+     * an unhealthy target healthy.</p>
+     */
+    inline bool HealthyThresholdCountHasBeenSet() const { return m_healthyThresholdCountHasBeenSet; }
 
     /**
      * <p>The number of consecutive health checks successes required before considering
@@ -303,6 +354,13 @@ namespace Model
      * the target unhealthy. For Network Load Balancers, this value must be the same as
      * the healthy threshold count.</p>
      */
+    inline bool UnhealthyThresholdCountHasBeenSet() const { return m_unhealthyThresholdCountHasBeenSet; }
+
+    /**
+     * <p>The number of consecutive health check failures required before considering
+     * the target unhealthy. For Network Load Balancers, this value must be the same as
+     * the healthy threshold count.</p>
+     */
     inline void SetUnhealthyThresholdCount(int value) { m_unhealthyThresholdCountHasBeenSet = true; m_unhealthyThresholdCount = value; }
 
     /**
@@ -319,6 +377,13 @@ namespace Model
      * TCP, you can't modify this setting.</p>
      */
     inline const Matcher& GetMatcher() const{ return m_matcher; }
+
+    /**
+     * <p>[HTTP/HTTPS health checks] The HTTP codes to use when checking for a
+     * successful response from a target.</p> <p>If the protocol of the target group is
+     * TCP, you can't modify this setting.</p>
+     */
+    inline bool MatcherHasBeenSet() const { return m_matcherHasBeenSet; }
 
     /**
      * <p>[HTTP/HTTPS health checks] The HTTP codes to use when checking for a

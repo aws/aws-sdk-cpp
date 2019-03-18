@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The name of the labeling job that the work team is assigned to.</p>
      */
+    inline bool LabelingJobNameHasBeenSet() const { return m_labelingJobNameHasBeenSet; }
+
+    /**
+     * <p>The name of the labeling job that the work team is assigned to.</p>
+     */
     inline void SetLabelingJobName(const Aws::String& value) { m_labelingJobNameHasBeenSet = true; m_labelingJobName = value; }
 
     /**
@@ -90,6 +95,12 @@ namespace Model
      * specific labeling job.</p>
      */
     inline const Aws::String& GetJobReferenceCode() const{ return m_jobReferenceCode; }
+
+    /**
+     * <p>A unique identifier for a labeling job. You can use this to refer to a
+     * specific labeling job.</p>
+     */
+    inline bool JobReferenceCodeHasBeenSet() const { return m_jobReferenceCodeHasBeenSet; }
 
     /**
      * <p>A unique identifier for a labeling job. You can use this to refer to a
@@ -136,6 +147,11 @@ namespace Model
     /**
      * <p/>
      */
+    inline bool WorkRequesterAccountIdHasBeenSet() const { return m_workRequesterAccountIdHasBeenSet; }
+
+    /**
+     * <p/>
+     */
     inline void SetWorkRequesterAccountId(const Aws::String& value) { m_workRequesterAccountIdHasBeenSet = true; m_workRequesterAccountId = value; }
 
     /**
@@ -172,6 +188,11 @@ namespace Model
     /**
      * <p>The date and time that the labeling job was created.</p>
      */
+    inline bool CreationTimeHasBeenSet() const { return m_creationTimeHasBeenSet; }
+
+    /**
+     * <p>The date and time that the labeling job was created.</p>
+     */
     inline void SetCreationTime(const Aws::Utils::DateTime& value) { m_creationTimeHasBeenSet = true; m_creationTime = value; }
 
     /**
@@ -194,6 +215,11 @@ namespace Model
      * <p>Provides information about the progress of a labeling job.</p>
      */
     inline const LabelCountersForWorkteam& GetLabelCounters() const{ return m_labelCounters; }
+
+    /**
+     * <p>Provides information about the progress of a labeling job.</p>
+     */
+    inline bool LabelCountersHasBeenSet() const { return m_labelCountersHasBeenSet; }
 
     /**
      * <p>Provides information about the progress of a labeling job.</p>

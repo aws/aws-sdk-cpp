@@ -53,6 +53,9 @@ namespace Model
     inline const FunctionIsolationMode& GetIsolationMode() const{ return m_isolationMode; }
 
     
+    inline bool IsolationModeHasBeenSet() const { return m_isolationModeHasBeenSet; }
+
+    
     inline void SetIsolationMode(const FunctionIsolationMode& value) { m_isolationModeHasBeenSet = true; m_isolationMode = value; }
 
     
@@ -67,6 +70,9 @@ namespace Model
 
     
     inline const FunctionRunAsConfig& GetRunAs() const{ return m_runAs; }
+
+    
+    inline bool RunAsHasBeenSet() const { return m_runAsHasBeenSet; }
 
     
     inline void SetRunAs(const FunctionRunAsConfig& value) { m_runAsHasBeenSet = true; m_runAs = value; }

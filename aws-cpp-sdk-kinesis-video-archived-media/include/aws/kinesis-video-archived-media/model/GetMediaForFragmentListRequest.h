@@ -51,6 +51,11 @@ namespace Model
     /**
      * <p>The name of the stream from which to retrieve fragment media.</p>
      */
+    inline bool StreamNameHasBeenSet() const { return m_streamNameHasBeenSet; }
+
+    /**
+     * <p>The name of the stream from which to retrieve fragment media.</p>
+     */
     inline void SetStreamName(const Aws::String& value) { m_streamNameHasBeenSet = true; m_streamName = value; }
 
     /**
@@ -84,6 +89,12 @@ namespace Model
      * these values with <a>ListFragments</a>.</p>
      */
     inline const Aws::Vector<Aws::String>& GetFragments() const{ return m_fragments; }
+
+    /**
+     * <p>A list of the numbers of fragments for which to retrieve media. You retrieve
+     * these values with <a>ListFragments</a>.</p>
+     */
+    inline bool FragmentsHasBeenSet() const { return m_fragmentsHasBeenSet; }
 
     /**
      * <p>A list of the numbers of fragments for which to retrieve media. You retrieve

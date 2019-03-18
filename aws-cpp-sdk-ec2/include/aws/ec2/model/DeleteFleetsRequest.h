@@ -61,6 +61,14 @@ namespace Model
      * required permissions, the error response is <code>DryRunOperation</code>.
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
+    inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
+
+    /**
+     * <p>Checks whether you have the required permissions for the action, without
+     * actually making the request, and provides an error response. If you have the
+     * required permissions, the error response is <code>DryRunOperation</code>.
+     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+     */
     inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
 
     /**
@@ -76,6 +84,11 @@ namespace Model
      * <p>The IDs of the EC2 Fleets.</p>
      */
     inline const Aws::Vector<Aws::String>& GetFleetIds() const{ return m_fleetIds; }
+
+    /**
+     * <p>The IDs of the EC2 Fleets.</p>
+     */
+    inline bool FleetIdsHasBeenSet() const { return m_fleetIdsHasBeenSet; }
 
     /**
      * <p>The IDs of the EC2 Fleets.</p>
@@ -118,6 +131,12 @@ namespace Model
      * successfully.</p>
      */
     inline bool GetTerminateInstances() const{ return m_terminateInstances; }
+
+    /**
+     * <p>Indicates whether to terminate instances for an EC2 Fleet if it is deleted
+     * successfully.</p>
+     */
+    inline bool TerminateInstancesHasBeenSet() const { return m_terminateInstancesHasBeenSet; }
 
     /**
      * <p>Indicates whether to terminate instances for an EC2 Fleet if it is deleted

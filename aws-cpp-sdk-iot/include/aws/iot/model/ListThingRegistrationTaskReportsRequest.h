@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The id of the task.</p>
      */
+    inline bool TaskIdHasBeenSet() const { return m_taskIdHasBeenSet; }
+
+    /**
+     * <p>The id of the task.</p>
+     */
     inline void SetTaskId(const Aws::String& value) { m_taskIdHasBeenSet = true; m_taskId = value; }
 
     /**
@@ -93,6 +98,11 @@ namespace Model
     /**
      * <p>The type of task report.</p>
      */
+    inline bool ReportTypeHasBeenSet() const { return m_reportTypeHasBeenSet; }
+
+    /**
+     * <p>The type of task report.</p>
+     */
     inline void SetReportType(const ReportType& value) { m_reportTypeHasBeenSet = true; m_reportType = value; }
 
     /**
@@ -115,6 +125,11 @@ namespace Model
      * <p>The token to retrieve the next set of results.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
+    /**
+     * <p>The token to retrieve the next set of results.</p>
+     */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
      * <p>The token to retrieve the next set of results.</p>
@@ -151,6 +166,11 @@ namespace Model
      * <p>The maximum number of results to return per request.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
+
+    /**
+     * <p>The maximum number of results to return per request.</p>
+     */
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
 
     /**
      * <p>The maximum number of results to return per request.</p>

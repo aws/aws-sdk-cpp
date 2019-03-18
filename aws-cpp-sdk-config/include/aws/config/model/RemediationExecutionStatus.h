@@ -56,6 +56,9 @@ namespace Model
     inline const ResourceKey& GetResourceKey() const{ return m_resourceKey; }
 
     
+    inline bool ResourceKeyHasBeenSet() const { return m_resourceKeyHasBeenSet; }
+
+    
     inline void SetResourceKey(const ResourceKey& value) { m_resourceKeyHasBeenSet = true; m_resourceKey = value; }
 
     
@@ -72,6 +75,11 @@ namespace Model
      * <p>ENUM of the values.</p>
      */
     inline const RemediationExecutionState& GetState() const{ return m_state; }
+
+    /**
+     * <p>ENUM of the values.</p>
+     */
+    inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
 
     /**
      * <p>ENUM of the values.</p>
@@ -98,6 +106,11 @@ namespace Model
      * <p>Details of every step.</p>
      */
     inline const Aws::Vector<RemediationExecutionStep>& GetStepDetails() const{ return m_stepDetails; }
+
+    /**
+     * <p>Details of every step.</p>
+     */
+    inline bool StepDetailsHasBeenSet() const { return m_stepDetailsHasBeenSet; }
 
     /**
      * <p>Details of every step.</p>
@@ -138,6 +151,11 @@ namespace Model
     /**
      * <p>Start time when the remediation was executed.</p>
      */
+    inline bool InvocationTimeHasBeenSet() const { return m_invocationTimeHasBeenSet; }
+
+    /**
+     * <p>Start time when the remediation was executed.</p>
+     */
     inline void SetInvocationTime(const Aws::Utils::DateTime& value) { m_invocationTimeHasBeenSet = true; m_invocationTime = value; }
 
     /**
@@ -160,6 +178,11 @@ namespace Model
      * <p>The time when the remediation execution was last updated.</p>
      */
     inline const Aws::Utils::DateTime& GetLastUpdatedTime() const{ return m_lastUpdatedTime; }
+
+    /**
+     * <p>The time when the remediation execution was last updated.</p>
+     */
+    inline bool LastUpdatedTimeHasBeenSet() const { return m_lastUpdatedTimeHasBeenSet; }
 
     /**
      * <p>The time when the remediation execution was last updated.</p>

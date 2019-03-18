@@ -50,6 +50,11 @@ namespace Model
     /**
      * <p>The index name.</p>
      */
+    inline bool IndexNameHasBeenSet() const { return m_indexNameHasBeenSet; }
+
+    /**
+     * <p>The index name.</p>
+     */
     inline void SetIndexName(const Aws::String& value) { m_indexNameHasBeenSet = true; m_indexName = value; }
 
     /**

@@ -57,6 +57,12 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the schema that contains the facet and
      * attribute.</p>
      */
+    inline bool SchemaArnHasBeenSet() const { return m_schemaArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the schema that contains the facet and
+     * attribute.</p>
+     */
     inline void SetSchemaArn(const Aws::String& value) { m_schemaArnHasBeenSet = true; m_schemaArn = value; }
 
     /**
@@ -98,6 +104,11 @@ namespace Model
     /**
      * <p>The name of the facet that the attribute exists within.</p>
      */
+    inline bool FacetNameHasBeenSet() const { return m_facetNameHasBeenSet; }
+
+    /**
+     * <p>The name of the facet that the attribute exists within.</p>
+     */
     inline void SetFacetName(const Aws::String& value) { m_facetNameHasBeenSet = true; m_facetName = value; }
 
     /**
@@ -130,6 +141,11 @@ namespace Model
      * <p>The name of the attribute.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
+
+    /**
+     * <p>The name of the attribute.</p>
+     */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
      * <p>The name of the attribute.</p>

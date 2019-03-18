@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p>The thing name.</p>
      */
+    inline bool ThingNameHasBeenSet() const { return m_thingNameHasBeenSet; }
+
+    /**
+     * <p>The thing name.</p>
+     */
     inline void SetThingName(const Aws::String& value) { m_thingNameHasBeenSet = true; m_thingName = value; }
 
     /**
@@ -90,6 +95,11 @@ namespace Model
      * <p>The thing ID.</p>
      */
     inline const Aws::String& GetThingId() const{ return m_thingId; }
+
+    /**
+     * <p>The thing ID.</p>
+     */
+    inline bool ThingIdHasBeenSet() const { return m_thingIdHasBeenSet; }
 
     /**
      * <p>The thing ID.</p>
@@ -130,6 +140,11 @@ namespace Model
     /**
      * <p>The thing type name.</p>
      */
+    inline bool ThingTypeNameHasBeenSet() const { return m_thingTypeNameHasBeenSet; }
+
+    /**
+     * <p>The thing type name.</p>
+     */
     inline void SetThingTypeName(const Aws::String& value) { m_thingTypeNameHasBeenSet = true; m_thingTypeName = value; }
 
     /**
@@ -162,6 +177,11 @@ namespace Model
      * <p>Thing group names.</p>
      */
     inline const Aws::Vector<Aws::String>& GetThingGroupNames() const{ return m_thingGroupNames; }
+
+    /**
+     * <p>Thing group names.</p>
+     */
+    inline bool ThingGroupNamesHasBeenSet() const { return m_thingGroupNamesHasBeenSet; }
 
     /**
      * <p>Thing group names.</p>
@@ -203,6 +223,11 @@ namespace Model
      * <p>The attributes.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetAttributes() const{ return m_attributes; }
+
+    /**
+     * <p>The attributes.</p>
+     */
+    inline bool AttributesHasBeenSet() const { return m_attributesHasBeenSet; }
 
     /**
      * <p>The attributes.</p>
@@ -268,6 +293,11 @@ namespace Model
     /**
      * <p>The shadow.</p>
      */
+    inline bool ShadowHasBeenSet() const { return m_shadowHasBeenSet; }
+
+    /**
+     * <p>The shadow.</p>
+     */
     inline void SetShadow(const Aws::String& value) { m_shadowHasBeenSet = true; m_shadow = value; }
 
     /**
@@ -300,6 +330,11 @@ namespace Model
      * <p>Indicates whether or not the thing is connected to the AWS IoT service.</p>
      */
     inline const ThingConnectivity& GetConnectivity() const{ return m_connectivity; }
+
+    /**
+     * <p>Indicates whether or not the thing is connected to the AWS IoT service.</p>
+     */
+    inline bool ConnectivityHasBeenSet() const { return m_connectivityHasBeenSet; }
 
     /**
      * <p>Indicates whether or not the thing is connected to the AWS IoT service.</p>

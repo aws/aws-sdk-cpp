@@ -59,6 +59,12 @@ namespace Model
      * <p>The type of resource for which you are configuring logging. Must be
      * <code>THING_Group</code>.</p>
      */
+    inline bool TargetTypeHasBeenSet() const { return m_targetTypeHasBeenSet; }
+
+    /**
+     * <p>The type of resource for which you are configuring logging. Must be
+     * <code>THING_Group</code>.</p>
+     */
     inline void SetTargetType(const LogTargetType& value) { m_targetTypeHasBeenSet = true; m_targetType = value; }
 
     /**
@@ -84,6 +90,11 @@ namespace Model
      * <p>The name of the resource for which you are configuring logging.</p>
      */
     inline const Aws::String& GetTargetName() const{ return m_targetName; }
+
+    /**
+     * <p>The name of the resource for which you are configuring logging.</p>
+     */
+    inline bool TargetNameHasBeenSet() const { return m_targetNameHasBeenSet; }
 
     /**
      * <p>The name of the resource for which you are configuring logging.</p>

@@ -60,6 +60,12 @@ namespace Model
      * <p>An object that contains information about the numbers of messages that
      * arrived in recipients' inboxes and junk mail folders.</p>
      */
+    inline bool VolumeStatisticsHasBeenSet() const { return m_volumeStatisticsHasBeenSet; }
+
+    /**
+     * <p>An object that contains information about the numbers of messages that
+     * arrived in recipients' inboxes and junk mail folders.</p>
+     */
     inline void SetVolumeStatistics(const VolumeStatistics& value) { m_volumeStatisticsHasBeenSet = true; m_volumeStatistics = value; }
 
     /**
@@ -91,6 +97,12 @@ namespace Model
      * <p>The percentage of emails that were sent from the domain that were read by
      * their recipients.</p>
      */
+    inline bool ReadRatePercentHasBeenSet() const { return m_readRatePercentHasBeenSet; }
+
+    /**
+     * <p>The percentage of emails that were sent from the domain that were read by
+     * their recipients.</p>
+     */
     inline void SetReadRatePercent(double value) { m_readRatePercentHasBeenSet = true; m_readRatePercent = value; }
 
     /**
@@ -105,6 +117,12 @@ namespace Model
      * email providers.</p>
      */
     inline const Aws::Vector<DomainIspPlacement>& GetDomainIspPlacements() const{ return m_domainIspPlacements; }
+
+    /**
+     * <p>An object that contains inbox and junk mail placement metrics for individual
+     * email providers.</p>
+     */
+    inline bool DomainIspPlacementsHasBeenSet() const { return m_domainIspPlacementsHasBeenSet; }
 
     /**
      * <p>An object that contains inbox and junk mail placement metrics for individual

@@ -58,6 +58,12 @@ namespace Model
      * <p>User identifier for the source user. The value should be a
      * <code>DeveloperUserIdentifier</code>.</p>
      */
+    inline bool SourceUserIdentifierHasBeenSet() const { return m_sourceUserIdentifierHasBeenSet; }
+
+    /**
+     * <p>User identifier for the source user. The value should be a
+     * <code>DeveloperUserIdentifier</code>.</p>
+     */
     inline void SetSourceUserIdentifier(const Aws::String& value) { m_sourceUserIdentifierHasBeenSet = true; m_sourceUserIdentifier = value; }
 
     /**
@@ -96,6 +102,12 @@ namespace Model
      * <code>DeveloperUserIdentifier</code>.</p>
      */
     inline const Aws::String& GetDestinationUserIdentifier() const{ return m_destinationUserIdentifier; }
+
+    /**
+     * <p>User identifier for the destination user. The value should be a
+     * <code>DeveloperUserIdentifier</code>.</p>
+     */
+    inline bool DestinationUserIdentifierHasBeenSet() const { return m_destinationUserIdentifierHasBeenSet; }
 
     /**
      * <p>User identifier for the destination user. The value should be a
@@ -142,6 +154,15 @@ namespace Model
      * can use letters as well as period (.), underscore (_), and dash (-).</p>
      */
     inline const Aws::String& GetDeveloperProviderName() const{ return m_developerProviderName; }
+
+    /**
+     * <p>The "domain" by which Cognito will refer to your users. This is a (pseudo)
+     * domain name that you provide while creating an identity pool. This name acts as
+     * a placeholder that allows your backend and the Cognito service to communicate
+     * about the developer provider. For the <code>DeveloperProviderName</code>, you
+     * can use letters as well as period (.), underscore (_), and dash (-).</p>
+     */
+    inline bool DeveloperProviderNameHasBeenSet() const { return m_developerProviderNameHasBeenSet; }
 
     /**
      * <p>The "domain" by which Cognito will refer to your users. This is a (pseudo)
@@ -202,6 +223,11 @@ namespace Model
      * <p>An identity pool ID in the format REGION:GUID.</p>
      */
     inline const Aws::String& GetIdentityPoolId() const{ return m_identityPoolId; }
+
+    /**
+     * <p>An identity pool ID in the format REGION:GUID.</p>
+     */
+    inline bool IdentityPoolIdHasBeenSet() const { return m_identityPoolIdHasBeenSet; }
 
     /**
      * <p>An identity pool ID in the format REGION:GUID.</p>

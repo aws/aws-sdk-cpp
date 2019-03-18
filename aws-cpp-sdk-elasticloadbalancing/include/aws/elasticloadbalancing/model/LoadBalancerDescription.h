@@ -65,6 +65,11 @@ namespace Model
     /**
      * <p>The name of the load balancer.</p>
      */
+    inline bool LoadBalancerNameHasBeenSet() const { return m_loadBalancerNameHasBeenSet; }
+
+    /**
+     * <p>The name of the load balancer.</p>
+     */
     inline void SetLoadBalancerName(const Aws::String& value) { m_loadBalancerNameHasBeenSet = true; m_loadBalancerName = value; }
 
     /**
@@ -97,6 +102,11 @@ namespace Model
      * <p>The DNS name of the load balancer.</p>
      */
     inline const Aws::String& GetDNSName() const{ return m_dNSName; }
+
+    /**
+     * <p>The DNS name of the load balancer.</p>
+     */
+    inline bool DNSNameHasBeenSet() const { return m_dNSNameHasBeenSet; }
 
     /**
      * <p>The DNS name of the load balancer.</p>
@@ -135,6 +145,13 @@ namespace Model
      * a Custom Domain Name</a> in the <i>Classic Load Balancers Guide</i>.</p>
      */
     inline const Aws::String& GetCanonicalHostedZoneName() const{ return m_canonicalHostedZoneName; }
+
+    /**
+     * <p>The DNS name of the load balancer.</p> <p>For more information, see <a
+     * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/using-domain-names-with-elb.html">Configure
+     * a Custom Domain Name</a> in the <i>Classic Load Balancers Guide</i>.</p>
+     */
+    inline bool CanonicalHostedZoneNameHasBeenSet() const { return m_canonicalHostedZoneNameHasBeenSet; }
 
     /**
      * <p>The DNS name of the load balancer.</p> <p>For more information, see <a
@@ -187,6 +204,11 @@ namespace Model
     /**
      * <p>The ID of the Amazon Route 53 hosted zone for the load balancer.</p>
      */
+    inline bool CanonicalHostedZoneNameIDHasBeenSet() const { return m_canonicalHostedZoneNameIDHasBeenSet; }
+
+    /**
+     * <p>The ID of the Amazon Route 53 hosted zone for the load balancer.</p>
+     */
     inline void SetCanonicalHostedZoneNameID(const Aws::String& value) { m_canonicalHostedZoneNameIDHasBeenSet = true; m_canonicalHostedZoneNameID = value; }
 
     /**
@@ -219,6 +241,11 @@ namespace Model
      * <p>The listeners for the load balancer.</p>
      */
     inline const Aws::Vector<ListenerDescription>& GetListenerDescriptions() const{ return m_listenerDescriptions; }
+
+    /**
+     * <p>The listeners for the load balancer.</p>
+     */
+    inline bool ListenerDescriptionsHasBeenSet() const { return m_listenerDescriptionsHasBeenSet; }
 
     /**
      * <p>The listeners for the load balancer.</p>
@@ -259,6 +286,11 @@ namespace Model
     /**
      * <p>The policies defined for the load balancer.</p>
      */
+    inline bool PoliciesHasBeenSet() const { return m_policiesHasBeenSet; }
+
+    /**
+     * <p>The policies defined for the load balancer.</p>
+     */
     inline void SetPolicies(const Policies& value) { m_policiesHasBeenSet = true; m_policies = value; }
 
     /**
@@ -281,6 +313,11 @@ namespace Model
      * <p>Information about your EC2 instances.</p>
      */
     inline const Aws::Vector<BackendServerDescription>& GetBackendServerDescriptions() const{ return m_backendServerDescriptions; }
+
+    /**
+     * <p>Information about your EC2 instances.</p>
+     */
+    inline bool BackendServerDescriptionsHasBeenSet() const { return m_backendServerDescriptionsHasBeenSet; }
 
     /**
      * <p>Information about your EC2 instances.</p>
@@ -317,6 +354,11 @@ namespace Model
      * <p>The Availability Zones for the load balancer.</p>
      */
     inline const Aws::Vector<Aws::String>& GetAvailabilityZones() const{ return m_availabilityZones; }
+
+    /**
+     * <p>The Availability Zones for the load balancer.</p>
+     */
+    inline bool AvailabilityZonesHasBeenSet() const { return m_availabilityZonesHasBeenSet; }
 
     /**
      * <p>The Availability Zones for the load balancer.</p>
@@ -362,6 +404,11 @@ namespace Model
     /**
      * <p>The IDs of the subnets for the load balancer.</p>
      */
+    inline bool SubnetsHasBeenSet() const { return m_subnetsHasBeenSet; }
+
+    /**
+     * <p>The IDs of the subnets for the load balancer.</p>
+     */
     inline void SetSubnets(const Aws::Vector<Aws::String>& value) { m_subnetsHasBeenSet = true; m_subnets = value; }
 
     /**
@@ -403,6 +450,11 @@ namespace Model
     /**
      * <p>The ID of the VPC for the load balancer.</p>
      */
+    inline bool VPCIdHasBeenSet() const { return m_vPCIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the VPC for the load balancer.</p>
+     */
     inline void SetVPCId(const Aws::String& value) { m_vPCIdHasBeenSet = true; m_vPCId = value; }
 
     /**
@@ -435,6 +487,11 @@ namespace Model
      * <p>The IDs of the instances for the load balancer.</p>
      */
     inline const Aws::Vector<Instance>& GetInstances() const{ return m_instances; }
+
+    /**
+     * <p>The IDs of the instances for the load balancer.</p>
+     */
+    inline bool InstancesHasBeenSet() const { return m_instancesHasBeenSet; }
 
     /**
      * <p>The IDs of the instances for the load balancer.</p>
@@ -475,6 +532,11 @@ namespace Model
     /**
      * <p>Information about the health checks conducted on the load balancer.</p>
      */
+    inline bool HealthCheckHasBeenSet() const { return m_healthCheckHasBeenSet; }
+
+    /**
+     * <p>Information about the health checks conducted on the load balancer.</p>
+     */
     inline void SetHealthCheck(const HealthCheck& value) { m_healthCheckHasBeenSet = true; m_healthCheck = value; }
 
     /**
@@ -500,6 +562,14 @@ namespace Model
      * as the inbound source.</p>
      */
     inline const SourceSecurityGroup& GetSourceSecurityGroup() const{ return m_sourceSecurityGroup; }
+
+    /**
+     * <p>The security group for the load balancer, which you can use as part of your
+     * inbound rules for your registered instances. To only allow traffic from load
+     * balancers, add a security group rule that specifies this source security group
+     * as the inbound source.</p>
+     */
+    inline bool SourceSecurityGroupHasBeenSet() const { return m_sourceSecurityGroupHasBeenSet; }
 
     /**
      * <p>The security group for the load balancer, which you can use as part of your
@@ -539,6 +609,12 @@ namespace Model
      * VPC.</p>
      */
     inline const Aws::Vector<Aws::String>& GetSecurityGroups() const{ return m_securityGroups; }
+
+    /**
+     * <p>The security groups for the load balancer. Valid only for load balancers in a
+     * VPC.</p>
+     */
+    inline bool SecurityGroupsHasBeenSet() const { return m_securityGroupsHasBeenSet; }
 
     /**
      * <p>The security groups for the load balancer. Valid only for load balancers in a
@@ -591,6 +667,11 @@ namespace Model
     /**
      * <p>The date and time the load balancer was created.</p>
      */
+    inline bool CreatedTimeHasBeenSet() const { return m_createdTimeHasBeenSet; }
+
+    /**
+     * <p>The date and time the load balancer was created.</p>
+     */
     inline void SetCreatedTime(const Aws::Utils::DateTime& value) { m_createdTimeHasBeenSet = true; m_createdTime = value; }
 
     /**
@@ -617,6 +698,15 @@ namespace Model
      * name that resolves to a private IP address.</p>
      */
     inline const Aws::String& GetScheme() const{ return m_scheme; }
+
+    /**
+     * <p>The type of load balancer. Valid only for load balancers in a VPC.</p> <p>If
+     * <code>Scheme</code> is <code>internet-facing</code>, the load balancer has a
+     * public DNS name that resolves to a public IP address.</p> <p>If
+     * <code>Scheme</code> is <code>internal</code>, the load balancer has a public DNS
+     * name that resolves to a private IP address.</p>
+     */
+    inline bool SchemeHasBeenSet() const { return m_schemeHasBeenSet; }
 
     /**
      * <p>The type of load balancer. Valid only for load balancers in a VPC.</p> <p>If

@@ -52,6 +52,11 @@ namespace Model
     /**
      * <p>The identifier of the replication job.</p>
      */
+    inline bool ReplicationJobIdHasBeenSet() const { return m_replicationJobIdHasBeenSet; }
+
+    /**
+     * <p>The identifier of the replication job.</p>
+     */
     inline void SetReplicationJobId(const Aws::String& value) { m_replicationJobIdHasBeenSet = true; m_replicationJobId = value; }
 
     /**

@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the function layer.</p>
      */
+    inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the function layer.</p>
+     */
     inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
 
     /**
@@ -89,6 +94,11 @@ namespace Model
      * <p>The size of the layer archive in bytes.</p>
      */
     inline long long GetCodeSize() const{ return m_codeSize; }
+
+    /**
+     * <p>The size of the layer archive in bytes.</p>
+     */
+    inline bool CodeSizeHasBeenSet() const { return m_codeSizeHasBeenSet; }
 
     /**
      * <p>The size of the layer archive in bytes.</p>

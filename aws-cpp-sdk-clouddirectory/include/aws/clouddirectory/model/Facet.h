@@ -61,6 +61,11 @@ namespace Model
     /**
      * <p>The name of the <a>Facet</a>.</p>
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>The name of the <a>Facet</a>.</p>
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
@@ -99,6 +104,12 @@ namespace Model
      * <p>The object type that is associated with the facet. See
      * <a>CreateFacetRequest$ObjectType</a> for more details.</p>
      */
+    inline bool ObjectTypeHasBeenSet() const { return m_objectTypeHasBeenSet; }
+
+    /**
+     * <p>The object type that is associated with the facet. See
+     * <a>CreateFacetRequest$ObjectType</a> for more details.</p>
+     */
     inline void SetObjectType(const ObjectType& value) { m_objectTypeHasBeenSet = true; m_objectType = value; }
 
     /**
@@ -127,6 +138,14 @@ namespace Model
      * during data plane operations.</p>
      */
     inline const FacetStyle& GetFacetStyle() const{ return m_facetStyle; }
+
+    /**
+     * <p>There are two different styles that you can define on any given facet,
+     * <code>Static</code> and <code>Dynamic</code>. For static facets, all attributes
+     * must be defined in the schema. For dynamic facets, attributes can be defined
+     * during data plane operations.</p>
+     */
+    inline bool FacetStyleHasBeenSet() const { return m_facetStyleHasBeenSet; }
 
     /**
      * <p>There are two different styles that you can define on any given facet,

@@ -59,6 +59,11 @@ namespace Model
     /**
      * <p>The creation date and time beginning value filter for listing clusters.</p>
      */
+    inline bool CreatedAfterHasBeenSet() const { return m_createdAfterHasBeenSet; }
+
+    /**
+     * <p>The creation date and time beginning value filter for listing clusters.</p>
+     */
     inline void SetCreatedAfter(const Aws::Utils::DateTime& value) { m_createdAfterHasBeenSet = true; m_createdAfter = value; }
 
     /**
@@ -85,6 +90,11 @@ namespace Model
     /**
      * <p>The creation date and time end value filter for listing clusters.</p>
      */
+    inline bool CreatedBeforeHasBeenSet() const { return m_createdBeforeHasBeenSet; }
+
+    /**
+     * <p>The creation date and time end value filter for listing clusters.</p>
+     */
     inline void SetCreatedBefore(const Aws::Utils::DateTime& value) { m_createdBeforeHasBeenSet = true; m_createdBefore = value; }
 
     /**
@@ -107,6 +117,11 @@ namespace Model
      * <p>The cluster state filters to apply when listing clusters.</p>
      */
     inline const Aws::Vector<ClusterState>& GetClusterStates() const{ return m_clusterStates; }
+
+    /**
+     * <p>The cluster state filters to apply when listing clusters.</p>
+     */
+    inline bool ClusterStatesHasBeenSet() const { return m_clusterStatesHasBeenSet; }
 
     /**
      * <p>The cluster state filters to apply when listing clusters.</p>
@@ -143,6 +158,11 @@ namespace Model
      * <p>The pagination token that indicates the next set of results to retrieve.</p>
      */
     inline const Aws::String& GetMarker() const{ return m_marker; }
+
+    /**
+     * <p>The pagination token that indicates the next set of results to retrieve.</p>
+     */
+    inline bool MarkerHasBeenSet() const { return m_markerHasBeenSet; }
 
     /**
      * <p>The pagination token that indicates the next set of results to retrieve.</p>

@@ -52,6 +52,11 @@ namespace Model
     /**
      * <p>The ARN of the schema to update.</p>
      */
+    inline bool SchemaArnHasBeenSet() const { return m_schemaArnHasBeenSet; }
+
+    /**
+     * <p>The ARN of the schema to update.</p>
+     */
     inline void SetSchemaArn(const Aws::String& value) { m_schemaArnHasBeenSet = true; m_schemaArn = value; }
 
     /**
@@ -84,6 +89,11 @@ namespace Model
      * <p>The replacement JSON schema.</p>
      */
     inline const Aws::String& GetDocument() const{ return m_document; }
+
+    /**
+     * <p>The replacement JSON schema.</p>
+     */
+    inline bool DocumentHasBeenSet() const { return m_documentHasBeenSet; }
 
     /**
      * <p>The replacement JSON schema.</p>

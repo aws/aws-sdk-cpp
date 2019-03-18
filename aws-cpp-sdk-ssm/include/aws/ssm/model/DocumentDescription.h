@@ -65,6 +65,11 @@ namespace Model
     /**
      * <p>The SHA1 hash of the document, which you can use for verification.</p>
      */
+    inline bool Sha1HasBeenSet() const { return m_sha1HasBeenSet; }
+
+    /**
+     * <p>The SHA1 hash of the document, which you can use for verification.</p>
+     */
     inline void SetSha1(const Aws::String& value) { m_sha1HasBeenSet = true; m_sha1 = value; }
 
     /**
@@ -98,6 +103,12 @@ namespace Model
      * </p> <note> <p>Sha1 hashes have been deprecated.</p> </note>
      */
     inline const Aws::String& GetHash() const{ return m_hash; }
+
+    /**
+     * <p>The Sha256 or Sha1 hash created by the system when the document was created.
+     * </p> <note> <p>Sha1 hashes have been deprecated.</p> </note>
+     */
+    inline bool HashHasBeenSet() const { return m_hashHasBeenSet; }
 
     /**
      * <p>The Sha256 or Sha1 hash created by the system when the document was created.
@@ -146,6 +157,12 @@ namespace Model
      * <p>The hash type of the document. Valid values include <code>Sha256</code> or
      * <code>Sha1</code>.</p> <note> <p>Sha1 hashes have been deprecated.</p> </note>
      */
+    inline bool HashTypeHasBeenSet() const { return m_hashTypeHasBeenSet; }
+
+    /**
+     * <p>The hash type of the document. Valid values include <code>Sha256</code> or
+     * <code>Sha1</code>.</p> <note> <p>Sha1 hashes have been deprecated.</p> </note>
+     */
     inline void SetHashType(const DocumentHashType& value) { m_hashTypeHasBeenSet = true; m_hashType = value; }
 
     /**
@@ -171,6 +188,11 @@ namespace Model
      * <p>The name of the Systems Manager document.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
+
+    /**
+     * <p>The name of the Systems Manager document.</p>
+     */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
      * <p>The name of the Systems Manager document.</p>
@@ -211,6 +233,11 @@ namespace Model
     /**
      * <p>The version of the artifact associated with the document.</p>
      */
+    inline bool VersionNameHasBeenSet() const { return m_versionNameHasBeenSet; }
+
+    /**
+     * <p>The version of the artifact associated with the document.</p>
+     */
     inline void SetVersionName(const Aws::String& value) { m_versionNameHasBeenSet = true; m_versionName = value; }
 
     /**
@@ -243,6 +270,11 @@ namespace Model
      * <p>The AWS user account that created the document.</p>
      */
     inline const Aws::String& GetOwner() const{ return m_owner; }
+
+    /**
+     * <p>The AWS user account that created the document.</p>
+     */
+    inline bool OwnerHasBeenSet() const { return m_ownerHasBeenSet; }
 
     /**
      * <p>The AWS user account that created the document.</p>
@@ -283,6 +315,11 @@ namespace Model
     /**
      * <p>The date when the document was created.</p>
      */
+    inline bool CreatedDateHasBeenSet() const { return m_createdDateHasBeenSet; }
+
+    /**
+     * <p>The date when the document was created.</p>
+     */
     inline void SetCreatedDate(const Aws::Utils::DateTime& value) { m_createdDateHasBeenSet = true; m_createdDate = value; }
 
     /**
@@ -305,6 +342,11 @@ namespace Model
      * <p>The status of the Systems Manager document.</p>
      */
     inline const DocumentStatus& GetStatus() const{ return m_status; }
+
+    /**
+     * <p>The status of the Systems Manager document.</p>
+     */
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
     /**
      * <p>The status of the Systems Manager document.</p>
@@ -334,6 +376,14 @@ namespace Model
      * bucket does not exist. Verify that the URL of the S3 bucket is correct."</p>
      */
     inline const Aws::String& GetStatusInformation() const{ return m_statusInformation; }
+
+    /**
+     * <p>A message returned by AWS Systems Manager that explains the
+     * <code>Status</code> value. For example, a <code>Failed</code> status might be
+     * explained by the <code>StatusInformation</code> message, "The specified S3
+     * bucket does not exist. Verify that the URL of the S3 bucket is correct."</p>
+     */
+    inline bool StatusInformationHasBeenSet() const { return m_statusInformationHasBeenSet; }
 
     /**
      * <p>A message returned by AWS Systems Manager that explains the
@@ -392,6 +442,11 @@ namespace Model
     /**
      * <p>The document version.</p>
      */
+    inline bool DocumentVersionHasBeenSet() const { return m_documentVersionHasBeenSet; }
+
+    /**
+     * <p>The document version.</p>
+     */
     inline void SetDocumentVersion(const Aws::String& value) { m_documentVersionHasBeenSet = true; m_documentVersion = value; }
 
     /**
@@ -424,6 +479,11 @@ namespace Model
      * <p>A description of the document. </p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
+
+    /**
+     * <p>A description of the document. </p>
+     */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
 
     /**
      * <p>A description of the document. </p>
@@ -464,6 +524,11 @@ namespace Model
     /**
      * <p>A description of the parameters for a document.</p>
      */
+    inline bool ParametersHasBeenSet() const { return m_parametersHasBeenSet; }
+
+    /**
+     * <p>A description of the parameters for a document.</p>
+     */
     inline void SetParameters(const Aws::Vector<DocumentParameter>& value) { m_parametersHasBeenSet = true; m_parameters = value; }
 
     /**
@@ -496,6 +561,11 @@ namespace Model
      * <p>The list of OS platforms compatible with this Systems Manager document. </p>
      */
     inline const Aws::Vector<PlatformType>& GetPlatformTypes() const{ return m_platformTypes; }
+
+    /**
+     * <p>The list of OS platforms compatible with this Systems Manager document. </p>
+     */
+    inline bool PlatformTypesHasBeenSet() const { return m_platformTypesHasBeenSet; }
 
     /**
      * <p>The list of OS platforms compatible with this Systems Manager document. </p>
@@ -536,6 +606,11 @@ namespace Model
     /**
      * <p>The type of document.</p>
      */
+    inline bool DocumentTypeHasBeenSet() const { return m_documentTypeHasBeenSet; }
+
+    /**
+     * <p>The type of document.</p>
+     */
     inline void SetDocumentType(const DocumentType& value) { m_documentTypeHasBeenSet = true; m_documentType = value; }
 
     /**
@@ -558,6 +633,11 @@ namespace Model
      * <p>The schema version.</p>
      */
     inline const Aws::String& GetSchemaVersion() const{ return m_schemaVersion; }
+
+    /**
+     * <p>The schema version.</p>
+     */
+    inline bool SchemaVersionHasBeenSet() const { return m_schemaVersionHasBeenSet; }
 
     /**
      * <p>The schema version.</p>
@@ -598,6 +678,11 @@ namespace Model
     /**
      * <p>The latest version of the document.</p>
      */
+    inline bool LatestVersionHasBeenSet() const { return m_latestVersionHasBeenSet; }
+
+    /**
+     * <p>The latest version of the document.</p>
+     */
     inline void SetLatestVersion(const Aws::String& value) { m_latestVersionHasBeenSet = true; m_latestVersion = value; }
 
     /**
@@ -630,6 +715,11 @@ namespace Model
      * <p>The default version.</p>
      */
     inline const Aws::String& GetDefaultVersion() const{ return m_defaultVersion; }
+
+    /**
+     * <p>The default version.</p>
+     */
+    inline bool DefaultVersionHasBeenSet() const { return m_defaultVersionHasBeenSet; }
 
     /**
      * <p>The default version.</p>
@@ -670,6 +760,11 @@ namespace Model
     /**
      * <p>The document format, either JSON or YAML.</p>
      */
+    inline bool DocumentFormatHasBeenSet() const { return m_documentFormatHasBeenSet; }
+
+    /**
+     * <p>The document format, either JSON or YAML.</p>
+     */
     inline void SetDocumentFormat(const DocumentFormat& value) { m_documentFormatHasBeenSet = true; m_documentFormat = value; }
 
     /**
@@ -695,6 +790,14 @@ namespace Model
      * Resource Types Reference</a> in the <i>AWS CloudFormation User Guide</i>. </p>
      */
     inline const Aws::String& GetTargetType() const{ return m_targetType; }
+
+    /**
+     * <p>The target type which defines the kinds of resources the document can run on.
+     * For example, /AWS::EC2::Instance. For a list of valid resource types, see <a
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
+     * Resource Types Reference</a> in the <i>AWS CloudFormation User Guide</i>. </p>
+     */
+    inline bool TargetTypeHasBeenSet() const { return m_targetTypeHasBeenSet; }
 
     /**
      * <p>The target type which defines the kinds of resources the document can run on.
@@ -753,6 +856,11 @@ namespace Model
     /**
      * <p>The tags, or metadata, that have been applied to the document.</p>
      */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
+
+    /**
+     * <p>The tags, or metadata, that have been applied to the document.</p>
+     */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     /**
@@ -786,6 +894,12 @@ namespace Model
      * etc.</p>
      */
     inline const Aws::Vector<AttachmentInformation>& GetAttachmentsInformation() const{ return m_attachmentsInformation; }
+
+    /**
+     * <p>Details about the document attachments, including names, locations, sizes,
+     * etc.</p>
+     */
+    inline bool AttachmentsInformationHasBeenSet() const { return m_attachmentsInformationHasBeenSet; }
 
     /**
      * <p>Details about the document attachments, including names, locations, sizes,

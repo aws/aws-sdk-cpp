@@ -64,6 +64,14 @@ namespace Model
      * name of an existing DBSubnetGroup. Must not be default.</p> <p>Example:
      * <code>mySubnetgroup</code> </p>
      */
+    inline bool DBSubnetGroupNameHasBeenSet() const { return m_dBSubnetGroupNameHasBeenSet; }
+
+    /**
+     * <p>The name for the DB subnet group. This value is stored as a lowercase string.
+     * You can't modify the default subnet group. </p> <p>Constraints: Must match the
+     * name of an existing DBSubnetGroup. Must not be default.</p> <p>Example:
+     * <code>mySubnetgroup</code> </p>
+     */
     inline void SetDBSubnetGroupName(const Aws::String& value) { m_dBSubnetGroupNameHasBeenSet = true; m_dBSubnetGroupName = value; }
 
     /**
@@ -115,6 +123,11 @@ namespace Model
     /**
      * <p>The description for the DB subnet group.</p>
      */
+    inline bool DBSubnetGroupDescriptionHasBeenSet() const { return m_dBSubnetGroupDescriptionHasBeenSet; }
+
+    /**
+     * <p>The description for the DB subnet group.</p>
+     */
     inline void SetDBSubnetGroupDescription(const Aws::String& value) { m_dBSubnetGroupDescriptionHasBeenSet = true; m_dBSubnetGroupDescription = value; }
 
     /**
@@ -147,6 +160,11 @@ namespace Model
      * <p>The EC2 subnet IDs for the DB subnet group.</p>
      */
     inline const Aws::Vector<Aws::String>& GetSubnetIds() const{ return m_subnetIds; }
+
+    /**
+     * <p>The EC2 subnet IDs for the DB subnet group.</p>
+     */
+    inline bool SubnetIdsHasBeenSet() const { return m_subnetIdsHasBeenSet; }
 
     /**
      * <p>The EC2 subnet IDs for the DB subnet group.</p>

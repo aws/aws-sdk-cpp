@@ -54,6 +54,12 @@ namespace Model
      * <p>The <code>NextToken</code> value from a previous call to
      * <code>ListHapgs</code>. Pass null if this is the first call.</p>
      */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
+
+    /**
+     * <p>The <code>NextToken</code> value from a previous call to
+     * <code>ListHapgs</code>. Pass null if this is the first call.</p>
+     */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
     /**

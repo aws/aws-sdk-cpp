@@ -52,6 +52,11 @@ namespace Model
     /**
      * <p>The Amazon S3 bucket that contains your flow logs.</p>
      */
+    inline bool LogBucketHasBeenSet() const { return m_logBucketHasBeenSet; }
+
+    /**
+     * <p>The Amazon S3 bucket that contains your flow logs.</p>
+     */
     inline void SetLogBucket(const Aws::String& value) { m_logBucketHasBeenSet = true; m_logBucket = value; }
 
     /**

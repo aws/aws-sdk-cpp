@@ -59,6 +59,12 @@ namespace Model
      * <p>The type of job for this cluster. Currently, the only job type supported for
      * clusters is <code>LOCAL_USE</code>.</p>
      */
+    inline bool JobTypeHasBeenSet() const { return m_jobTypeHasBeenSet; }
+
+    /**
+     * <p>The type of job for this cluster. Currently, the only job type supported for
+     * clusters is <code>LOCAL_USE</code>.</p>
+     */
     inline void SetJobType(const JobType& value) { m_jobTypeHasBeenSet = true; m_jobType = value; }
 
     /**
@@ -86,6 +92,13 @@ namespace Model
      * </p>
      */
     inline const JobResource& GetResources() const{ return m_resources; }
+
+    /**
+     * <p>The resources associated with the cluster job. These resources include Amazon
+     * S3 buckets and optional AWS Lambda functions written in the Python language.
+     * </p>
+     */
+    inline bool ResourcesHasBeenSet() const { return m_resourcesHasBeenSet; }
 
     /**
      * <p>The resources associated with the cluster job. These resources include Amazon
@@ -121,6 +134,12 @@ namespace Model
      * <code>Environmental Data Cluster-01</code>.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
+
+    /**
+     * <p>An optional description of this specific cluster, for example
+     * <code>Environmental Data Cluster-01</code>.</p>
+     */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
 
     /**
      * <p>An optional description of this specific cluster, for example
@@ -167,6 +186,11 @@ namespace Model
     /**
      * <p>The ID for the address that you want the cluster shipped to.</p>
      */
+    inline bool AddressIdHasBeenSet() const { return m_addressIdHasBeenSet; }
+
+    /**
+     * <p>The ID for the address that you want the cluster shipped to.</p>
+     */
     inline void SetAddressId(const Aws::String& value) { m_addressIdHasBeenSet = true; m_addressId = value; }
 
     /**
@@ -202,6 +226,14 @@ namespace Model
      * API action in AWS Key Management Service (AWS KMS). </p>
      */
     inline const Aws::String& GetKmsKeyARN() const{ return m_kmsKeyARN; }
+
+    /**
+     * <p>The <code>KmsKeyARN</code> value that you want to associate with this
+     * cluster. <code>KmsKeyARN</code> values are created by using the <a
+     * href="http://docs.aws.amazon.com/kms/latest/APIReference/API_CreateKey.html">CreateKey</a>
+     * API action in AWS Key Management Service (AWS KMS). </p>
+     */
+    inline bool KmsKeyARNHasBeenSet() const { return m_kmsKeyARNHasBeenSet; }
 
     /**
      * <p>The <code>KmsKeyARN</code> value that you want to associate with this
@@ -266,6 +298,14 @@ namespace Model
      * href="http://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a>
      * API action in AWS Identity and Access Management (IAM).</p>
      */
+    inline bool RoleARNHasBeenSet() const { return m_roleARNHasBeenSet; }
+
+    /**
+     * <p>The <code>RoleARN</code> that you want to associate with this cluster.
+     * <code>RoleArn</code> values are created by using the <a
+     * href="http://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a>
+     * API action in AWS Identity and Access Management (IAM).</p>
+     */
     inline void SetRoleARN(const Aws::String& value) { m_roleARNHasBeenSet = true; m_roleARN = value; }
 
     /**
@@ -321,6 +361,13 @@ namespace Model
      * device types for cluster jobs are <code>EDGE</code>, <code>EDGE_C</code>, and
      * <code>EDGE_CG</code>.</p>
      */
+    inline bool SnowballTypeHasBeenSet() const { return m_snowballTypeHasBeenSet; }
+
+    /**
+     * <p>The type of AWS Snowball device to use for this cluster. The only supported
+     * device types for cluster jobs are <code>EDGE</code>, <code>EDGE_C</code>, and
+     * <code>EDGE_CG</code>.</p>
+     */
     inline void SetSnowballType(const SnowballType& value) { m_snowballTypeHasBeenSet = true; m_snowballType = value; }
 
     /**
@@ -359,6 +406,21 @@ namespace Model
      * to one-day shipping and two-day shipping.</p> </li> </ul>
      */
     inline const ShippingOption& GetShippingOption() const{ return m_shippingOption; }
+
+    /**
+     * <p>The shipping speed for each node in this cluster. This speed doesn't dictate
+     * how soon you'll get each Snowball Edge device, rather it represents how quickly
+     * each device moves to its destination while in transit. Regional shipping speeds
+     * are as follows:</p> <ul> <li> <p>In Australia, you have access to express
+     * shipping. Typically, devices shipped express are delivered in about a day.</p>
+     * </li> <li> <p>In the European Union (EU), you have access to express shipping.
+     * Typically, Snowball Edges shipped express are delivered in about a day. In
+     * addition, most countries in the EU have access to standard shipping, which
+     * typically takes less than a week, one way.</p> </li> <li> <p>In India, devices
+     * are delivered in one to seven days.</p> </li> <li> <p>In the US, you have access
+     * to one-day shipping and two-day shipping.</p> </li> </ul>
+     */
+    inline bool ShippingOptionHasBeenSet() const { return m_shippingOptionHasBeenSet; }
 
     /**
      * <p>The shipping speed for each node in this cluster. This speed doesn't dictate
@@ -431,6 +493,12 @@ namespace Model
      * <p>The Amazon Simple Notification Service (Amazon SNS) notification settings for
      * this cluster.</p>
      */
+    inline bool NotificationHasBeenSet() const { return m_notificationHasBeenSet; }
+
+    /**
+     * <p>The Amazon Simple Notification Service (Amazon SNS) notification settings for
+     * this cluster.</p>
+     */
     inline void SetNotification(const Notification& value) { m_notificationHasBeenSet = true; m_notification = value; }
 
     /**
@@ -457,6 +525,12 @@ namespace Model
      * regions.</p>
      */
     inline const Aws::String& GetForwardingAddressId() const{ return m_forwardingAddressId; }
+
+    /**
+     * <p>The forwarding address ID for a cluster. This field is not supported in most
+     * regions.</p>
+     */
+    inline bool ForwardingAddressIdHasBeenSet() const { return m_forwardingAddressIdHasBeenSet; }
 
     /**
      * <p>The forwarding address ID for a cluster. This field is not supported in most

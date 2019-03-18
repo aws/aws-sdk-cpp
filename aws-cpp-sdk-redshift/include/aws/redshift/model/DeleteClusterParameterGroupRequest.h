@@ -61,6 +61,13 @@ namespace Model
      * <li> <p>Must be the name of an existing cluster parameter group.</p> </li> <li>
      * <p>Cannot delete a default cluster parameter group.</p> </li> </ul>
      */
+    inline bool ParameterGroupNameHasBeenSet() const { return m_parameterGroupNameHasBeenSet; }
+
+    /**
+     * <p>The name of the parameter group to be deleted.</p> <p>Constraints:</p> <ul>
+     * <li> <p>Must be the name of an existing cluster parameter group.</p> </li> <li>
+     * <p>Cannot delete a default cluster parameter group.</p> </li> </ul>
+     */
     inline void SetParameterGroupName(const Aws::String& value) { m_parameterGroupNameHasBeenSet = true; m_parameterGroupName = value; }
 
     /**

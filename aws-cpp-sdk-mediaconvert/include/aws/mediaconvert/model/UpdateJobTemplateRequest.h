@@ -54,6 +54,12 @@ namespace Model
      * This is a beta feature. If you are interested in using this feature, please
      * contact AWS customer support.
      */
+    inline bool AccelerationSettingsHasBeenSet() const { return m_accelerationSettingsHasBeenSet; }
+
+    /**
+     * This is a beta feature. If you are interested in using this feature, please
+     * contact AWS customer support.
+     */
     inline void SetAccelerationSettings(const AccelerationSettings& value) { m_accelerationSettingsHasBeenSet = true; m_accelerationSettings = value; }
 
     /**
@@ -79,6 +85,11 @@ namespace Model
      * The new category for the job template, if you are changing it.
      */
     inline const Aws::String& GetCategory() const{ return m_category; }
+
+    /**
+     * The new category for the job template, if you are changing it.
+     */
+    inline bool CategoryHasBeenSet() const { return m_categoryHasBeenSet; }
 
     /**
      * The new category for the job template, if you are changing it.
@@ -119,6 +130,11 @@ namespace Model
     /**
      * The new description for the job template, if you are changing it.
      */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
+
+    /**
+     * The new description for the job template, if you are changing it.
+     */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
@@ -151,6 +167,11 @@ namespace Model
      * The name of the job template you are modifying
      */
     inline const Aws::String& GetName() const{ return m_name; }
+
+    /**
+     * The name of the job template you are modifying
+     */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
      * The name of the job template you are modifying
@@ -191,6 +212,11 @@ namespace Model
     /**
      * The new queue for the job template, if you are changing it.
      */
+    inline bool QueueHasBeenSet() const { return m_queueHasBeenSet; }
+
+    /**
+     * The new queue for the job template, if you are changing it.
+     */
     inline void SetQueue(const Aws::String& value) { m_queueHasBeenSet = true; m_queue = value; }
 
     /**
@@ -223,6 +249,9 @@ namespace Model
     inline const JobTemplateSettings& GetSettings() const{ return m_settings; }
 
     
+    inline bool SettingsHasBeenSet() const { return m_settingsHasBeenSet; }
+
+    
     inline void SetSettings(const JobTemplateSettings& value) { m_settingsHasBeenSet = true; m_settings = value; }
 
     
@@ -242,6 +271,14 @@ namespace Model
      * to the time it completes the transcode or encounters an error.
      */
     inline long long GetStatusUpdateIntervalInSecs() const{ return m_statusUpdateIntervalInSecs; }
+
+    /**
+     * Specify how often MediaConvert sends STATUS_UPDATE events to Amazon CloudWatch
+     * Events. Set the interval, in seconds, between status updates. MediaConvert sends
+     * an update at this interval from the time the service begins processing your job
+     * to the time it completes the transcode or encounters an error.
+     */
+    inline bool StatusUpdateIntervalInSecsHasBeenSet() const { return m_statusUpdateIntervalInSecsHasBeenSet; }
 
     /**
      * Specify how often MediaConvert sends STATUS_UPDATE events to Amazon CloudWatch

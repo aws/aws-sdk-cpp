@@ -57,6 +57,13 @@ namespace Model
      * repositories to be described. If you do not specify a registry, the default
      * registry is assumed.</p>
      */
+    inline bool RegistryIdHasBeenSet() const { return m_registryIdHasBeenSet; }
+
+    /**
+     * <p>The AWS account ID associated with the registry that contains the
+     * repositories to be described. If you do not specify a registry, the default
+     * registry is assumed.</p>
+     */
     inline void SetRegistryId(const Aws::String& value) { m_registryIdHasBeenSet = true; m_registryId = value; }
 
     /**
@@ -100,6 +107,12 @@ namespace Model
      * repositories in a registry are described.</p>
      */
     inline const Aws::Vector<Aws::String>& GetRepositoryNames() const{ return m_repositoryNames; }
+
+    /**
+     * <p>A list of repositories to describe. If this parameter is omitted, then all
+     * repositories in a registry are described.</p>
+     */
+    inline bool RepositoryNamesHasBeenSet() const { return m_repositoryNamesHasBeenSet; }
 
     /**
      * <p>A list of repositories to describe. If this parameter is omitted, then all
@@ -156,6 +169,19 @@ namespace Model
      * for other programmatic purposes.</p> </note>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
+    /**
+     * <p>The <code>nextToken</code> value returned from a previous paginated
+     * <code>DescribeRepositories</code> request where <code>maxResults</code> was used
+     * and the results exceeded the value of that parameter. Pagination continues from
+     * the end of the previous results that returned the <code>nextToken</code> value.
+     * This value is <code>null</code> when there are no more results to return. This
+     * option cannot be used when you specify repositories with
+     * <code>repositoryNames</code>.</p> <note> <p>This token should be treated as an
+     * opaque identifier that is only used to retrieve the next items in a list and not
+     * for other programmatic purposes.</p> </note>
+     */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
      * <p>The <code>nextToken</code> value returned from a previous paginated
@@ -249,6 +275,20 @@ namespace Model
      * used when you specify repositories with <code>repositoryNames</code>.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
+
+    /**
+     * <p>The maximum number of repository results returned by
+     * <code>DescribeRepositories</code> in paginated output. When this parameter is
+     * used, <code>DescribeRepositories</code> only returns <code>maxResults</code>
+     * results in a single page along with a <code>nextToken</code> response element.
+     * The remaining results of the initial request can be seen by sending another
+     * <code>DescribeRepositories</code> request with the returned
+     * <code>nextToken</code> value. This value can be between 1 and 1000. If this
+     * parameter is not used, then <code>DescribeRepositories</code> returns up to 100
+     * results and a <code>nextToken</code> value, if applicable. This option cannot be
+     * used when you specify repositories with <code>repositoryNames</code>.</p>
+     */
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
 
     /**
      * <p>The maximum number of repository results returned by

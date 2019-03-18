@@ -65,6 +65,14 @@ namespace Model
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-access-keys-best-practices.html">Best
      * Practices for Managing AWS Access Keys</a>.</p>
      */
+    inline bool AWSAccessKeyIdHasBeenSet() const { return m_aWSAccessKeyIdHasBeenSet; }
+
+    /**
+     * <p>The access key ID of the owner of the bucket. Before you specify a value for
+     * your access key ID, review and follow the guidance in <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-access-keys-best-practices.html">Best
+     * Practices for Managing AWS Access Keys</a>.</p>
+     */
     inline void SetAWSAccessKeyId(const Aws::String& value) { m_aWSAccessKeyIdHasBeenSet = true; m_aWSAccessKeyId = value; }
 
     /**
@@ -120,6 +128,13 @@ namespace Model
      * already own or a new bucket that Amazon EC2 creates on your behalf. If you
      * specify a bucket that belongs to someone else, Amazon EC2 returns an error.</p>
      */
+    inline bool BucketHasBeenSet() const { return m_bucketHasBeenSet; }
+
+    /**
+     * <p>The bucket in which to store the AMI. You can specify a bucket that you
+     * already own or a new bucket that Amazon EC2 creates on your behalf. If you
+     * specify a bucket that belongs to someone else, Amazon EC2 returns an error.</p>
+     */
     inline void SetBucket(const Aws::String& value) { m_bucketHasBeenSet = true; m_bucket = value; }
 
     /**
@@ -166,6 +181,11 @@ namespace Model
     /**
      * <p>The beginning of the file name of the AMI.</p>
      */
+    inline bool PrefixHasBeenSet() const { return m_prefixHasBeenSet; }
+
+    /**
+     * <p>The beginning of the file name of the AMI.</p>
+     */
     inline void SetPrefix(const Aws::String& value) { m_prefixHasBeenSet = true; m_prefix = value; }
 
     /**
@@ -204,6 +224,12 @@ namespace Model
      * <p>An Amazon S3 upload policy that gives Amazon EC2 permission to upload items
      * into Amazon S3 on your behalf.</p>
      */
+    inline bool UploadPolicyHasBeenSet() const { return m_uploadPolicyHasBeenSet; }
+
+    /**
+     * <p>An Amazon S3 upload policy that gives Amazon EC2 permission to upload items
+     * into Amazon S3 on your behalf.</p>
+     */
     inline void SetUploadPolicy(const Aws::Utils::ByteBuffer& value) { m_uploadPolicyHasBeenSet = true; m_uploadPolicy = value; }
 
     /**
@@ -229,6 +255,11 @@ namespace Model
      * <p>The signature of the JSON document.</p>
      */
     inline const Aws::String& GetUploadPolicySignature() const{ return m_uploadPolicySignature; }
+
+    /**
+     * <p>The signature of the JSON document.</p>
+     */
+    inline bool UploadPolicySignatureHasBeenSet() const { return m_uploadPolicySignatureHasBeenSet; }
 
     /**
      * <p>The signature of the JSON document.</p>

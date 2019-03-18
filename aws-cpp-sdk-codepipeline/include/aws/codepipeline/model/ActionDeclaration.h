@@ -61,6 +61,11 @@ namespace Model
     /**
      * <p>The action declaration's name.</p>
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>The action declaration's name.</p>
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
@@ -97,6 +102,11 @@ namespace Model
     /**
      * <p>The configuration information for the action type.</p>
      */
+    inline bool ActionTypeIdHasBeenSet() const { return m_actionTypeIdHasBeenSet; }
+
+    /**
+     * <p>The configuration information for the action type.</p>
+     */
     inline void SetActionTypeId(const ActionTypeId& value) { m_actionTypeIdHasBeenSet = true; m_actionTypeId = value; }
 
     /**
@@ -123,6 +133,11 @@ namespace Model
     /**
      * <p>The order in which actions are run.</p>
      */
+    inline bool RunOrderHasBeenSet() const { return m_runOrderHasBeenSet; }
+
+    /**
+     * <p>The order in which actions are run.</p>
+     */
     inline void SetRunOrder(int value) { m_runOrderHasBeenSet = true; m_runOrder = value; }
 
     /**
@@ -135,6 +150,11 @@ namespace Model
      * <p>The action declaration's configuration.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetConfiguration() const{ return m_configuration; }
+
+    /**
+     * <p>The action declaration's configuration.</p>
+     */
+    inline bool ConfigurationHasBeenSet() const { return m_configurationHasBeenSet; }
 
     /**
      * <p>The action declaration's configuration.</p>
@@ -202,6 +222,12 @@ namespace Model
      * <p>The name or ID of the result of the action declaration, such as a test or
      * build artifact.</p>
      */
+    inline bool OutputArtifactsHasBeenSet() const { return m_outputArtifactsHasBeenSet; }
+
+    /**
+     * <p>The name or ID of the result of the action declaration, such as a test or
+     * build artifact.</p>
+     */
     inline void SetOutputArtifacts(const Aws::Vector<OutputArtifact>& value) { m_outputArtifactsHasBeenSet = true; m_outputArtifacts = value; }
 
     /**
@@ -240,6 +266,12 @@ namespace Model
      * build artifact.</p>
      */
     inline const Aws::Vector<InputArtifact>& GetInputArtifacts() const{ return m_inputArtifacts; }
+
+    /**
+     * <p>The name or ID of the artifact consumed by the action, such as a test or
+     * build artifact.</p>
+     */
+    inline bool InputArtifactsHasBeenSet() const { return m_inputArtifactsHasBeenSet; }
 
     /**
      * <p>The name or ID of the artifact consumed by the action, such as a test or
@@ -288,6 +320,12 @@ namespace Model
      * <p>The ARN of the IAM service role that will perform the declared action. This
      * is assumed through the roleArn for the pipeline.</p>
      */
+    inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
+
+    /**
+     * <p>The ARN of the IAM service role that will perform the declared action. This
+     * is assumed through the roleArn for the pipeline.</p>
+     */
     inline void SetRoleArn(const Aws::String& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
 
     /**
@@ -325,6 +363,11 @@ namespace Model
      * <p>The action declaration's AWS Region, such as us-east-1.</p>
      */
     inline const Aws::String& GetRegion() const{ return m_region; }
+
+    /**
+     * <p>The action declaration's AWS Region, such as us-east-1.</p>
+     */
+    inline bool RegionHasBeenSet() const { return m_regionHasBeenSet; }
 
     /**
      * <p>The action declaration's AWS Region, such as us-east-1.</p>

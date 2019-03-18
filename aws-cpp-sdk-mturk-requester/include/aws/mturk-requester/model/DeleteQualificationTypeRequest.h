@@ -52,6 +52,11 @@ namespace Model
     /**
      * <p>The ID of the QualificationType to dispose.</p>
      */
+    inline bool QualificationTypeIdHasBeenSet() const { return m_qualificationTypeIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the QualificationType to dispose.</p>
+     */
     inline void SetQualificationTypeId(const Aws::String& value) { m_qualificationTypeIdHasBeenSet = true; m_qualificationTypeId = value; }
 
     /**

@@ -58,6 +58,11 @@ namespace Model
     /**
      * Video codec settings.
      */
+    inline bool CodecSettingsHasBeenSet() const { return m_codecSettingsHasBeenSet; }
+
+    /**
+     * Video codec settings.
+     */
     inline void SetCodecSettings(const VideoCodecSettings& value) { m_codecSettingsHasBeenSet = true; m_codecSettings = value; }
 
     /**
@@ -90,6 +95,14 @@ namespace Model
      * (resolution) from the source. Note, however, that leaving blank is not
      * recommended. For the Frame Capture codec, height and width are required.
      */
+    inline bool HeightHasBeenSet() const { return m_heightHasBeenSet; }
+
+    /**
+     * Output video height, in pixels. Must be an even number. For most codecs, you can
+     * leave this field and width blank in order to use the height and width
+     * (resolution) from the source. Note, however, that leaving blank is not
+     * recommended. For the Frame Capture codec, height and width are required.
+     */
     inline void SetHeight(int value) { m_heightHasBeenSet = true; m_height = value; }
 
     /**
@@ -107,6 +120,13 @@ namespace Model
      * Event.
      */
     inline const Aws::String& GetName() const{ return m_name; }
+
+    /**
+     * The name of this VideoDescription. Outputs will use this name to uniquely
+     * identify this Description.  Description names should be unique within this Live
+     * Event.
+     */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
      * The name of this VideoDescription. Outputs will use this name to uniquely
@@ -171,6 +191,17 @@ namespace Model
      * video is not clipped. NONE ignores the AFD values and does not include the
      * values through to the output, so input video is not clipped.
      */
+    inline bool RespondToAfdHasBeenSet() const { return m_respondToAfdHasBeenSet; }
+
+    /**
+     * Indicates how to respond to the AFD values in the input stream. RESPOND causes
+     * input video to be clipped, depending on the AFD value, input display aspect
+     * ratio, and output display aspect ratio, and (except for FRAMECAPTURE codec)
+     * includes the values in the output. PASSTHROUGH (does not apply to FRAMECAPTURE
+     * codec) ignores the AFD values and includes the values in the output, so input
+     * video is not clipped. NONE ignores the AFD values and does not include the
+     * values through to the output, so input video is not clipped.
+     */
     inline void SetRespondToAfd(const VideoDescriptionRespondToAfd& value) { m_respondToAfdHasBeenSet = true; m_respondToAfd = value; }
 
     /**
@@ -221,6 +252,14 @@ namespace Model
      * position value. DEFAULT may insert black boxes (pillar boxes or letter boxes)
      * around the video to provide the specified output resolution.
      */
+    inline bool ScalingBehaviorHasBeenSet() const { return m_scalingBehaviorHasBeenSet; }
+
+    /**
+     * STRETCHTOOUTPUT configures the output position to stretch the video to the
+     * specified output resolution (height and width). This option will override any
+     * position value. DEFAULT may insert black boxes (pillar boxes or letter boxes)
+     * around the video to provide the specified output resolution.
+     */
     inline void SetScalingBehavior(const VideoDescriptionScalingBehavior& value) { m_scalingBehaviorHasBeenSet = true; m_scalingBehavior = value; }
 
     /**
@@ -258,6 +297,12 @@ namespace Model
      * Changes the strength of the anti-alias filter used for scaling. 0 is the softest
      * setting, 100 is the sharpest. A setting of 50 is recommended for most content.
      */
+    inline bool SharpnessHasBeenSet() const { return m_sharpnessHasBeenSet; }
+
+    /**
+     * Changes the strength of the anti-alias filter used for scaling. 0 is the softest
+     * setting, 100 is the sharpest. A setting of 50 is recommended for most content.
+     */
     inline void SetSharpness(int value) { m_sharpnessHasBeenSet = true; m_sharpness = value; }
 
     /**
@@ -274,6 +319,14 @@ namespace Model
      * recommended. For the Frame Capture codec, height and width are required.
      */
     inline int GetWidth() const{ return m_width; }
+
+    /**
+     * Output video width, in pixels. Must be an even number. For most codecs, you can
+     * leave this field and height blank in order to use the height and width
+     * (resolution) from the source. Note, however, that leaving blank is not
+     * recommended. For the Frame Capture codec, height and width are required.
+     */
+    inline bool WidthHasBeenSet() const { return m_widthHasBeenSet; }
 
     /**
      * Output video width, in pixels. Must be an even number. For most codecs, you can

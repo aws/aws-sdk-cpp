@@ -53,6 +53,9 @@ namespace Model
     inline const DecryptionMode& GetDecryptionMode() const{ return m_decryptionMode; }
 
     
+    inline bool DecryptionModeHasBeenSet() const { return m_decryptionModeHasBeenSet; }
+
+    
     inline void SetDecryptionMode(const DecryptionMode& value) { m_decryptionModeHasBeenSet = true; m_decryptionMode = value; }
 
     
@@ -69,6 +72,11 @@ namespace Model
      * Decryption key either 128 or 192 or 256 bits encrypted with KMS
      */
     inline const Aws::String& GetEncryptedDecryptionKey() const{ return m_encryptedDecryptionKey; }
+
+    /**
+     * Decryption key either 128 or 192 or 256 bits encrypted with KMS
+     */
+    inline bool EncryptedDecryptionKeyHasBeenSet() const { return m_encryptedDecryptionKeyHasBeenSet; }
 
     /**
      * Decryption key either 128 or 192 or 256 bits encrypted with KMS
@@ -109,6 +117,11 @@ namespace Model
     /**
      * Initialization Vector 96 bits (CTR/GCM mode only) or 128 bits.
      */
+    inline bool InitializationVectorHasBeenSet() const { return m_initializationVectorHasBeenSet; }
+
+    /**
+     * Initialization Vector 96 bits (CTR/GCM mode only) or 128 bits.
+     */
     inline void SetInitializationVector(const Aws::String& value) { m_initializationVectorHasBeenSet = true; m_initializationVector = value; }
 
     /**
@@ -141,6 +154,11 @@ namespace Model
      * The AWS region in which decryption key was encrypted with KMS
      */
     inline const Aws::String& GetKmsKeyRegion() const{ return m_kmsKeyRegion; }
+
+    /**
+     * The AWS region in which decryption key was encrypted with KMS
+     */
+    inline bool KmsKeyRegionHasBeenSet() const { return m_kmsKeyRegionHasBeenSet; }
 
     /**
      * The AWS region in which decryption key was encrypted with KMS

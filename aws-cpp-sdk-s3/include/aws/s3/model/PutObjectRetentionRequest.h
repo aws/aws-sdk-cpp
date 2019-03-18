@@ -65,6 +65,12 @@ namespace Model
      * <p>The bucket that contains the object you want to apply this Object Retention
      * configuration to.</p>
      */
+    inline bool BucketHasBeenSet() const { return m_bucketHasBeenSet; }
+
+    /**
+     * <p>The bucket that contains the object you want to apply this Object Retention
+     * configuration to.</p>
+     */
     inline void SetBucket(const Aws::String& value) { m_bucketHasBeenSet = true; m_bucket = value; }
 
     /**
@@ -103,6 +109,12 @@ namespace Model
      * configuration to.</p>
      */
     inline const Aws::String& GetKey() const{ return m_key; }
+
+    /**
+     * <p>The key name for the object that you want to apply this Object Retention
+     * configuration to.</p>
+     */
+    inline bool KeyHasBeenSet() const { return m_keyHasBeenSet; }
 
     /**
      * <p>The key name for the object that you want to apply this Object Retention
@@ -149,6 +161,11 @@ namespace Model
     /**
      * <p>The container element for the Object Retention configuration.</p>
      */
+    inline bool RetentionHasBeenSet() const { return m_retentionHasBeenSet; }
+
+    /**
+     * <p>The container element for the Object Retention configuration.</p>
+     */
     inline void SetRetention(const ObjectLockRetention& value) { m_retentionHasBeenSet = true; m_retention = value; }
 
     /**
@@ -171,6 +188,9 @@ namespace Model
     inline const RequestPayer& GetRequestPayer() const{ return m_requestPayer; }
 
     
+    inline bool RequestPayerHasBeenSet() const { return m_requestPayerHasBeenSet; }
+
+    
     inline void SetRequestPayer(const RequestPayer& value) { m_requestPayerHasBeenSet = true; m_requestPayer = value; }
 
     
@@ -188,6 +208,12 @@ namespace Model
      * configuration to.</p>
      */
     inline const Aws::String& GetVersionId() const{ return m_versionId; }
+
+    /**
+     * <p>The version ID for the object that you want to apply this Object Retention
+     * configuration to.</p>
+     */
+    inline bool VersionIdHasBeenSet() const { return m_versionIdHasBeenSet; }
 
     /**
      * <p>The version ID for the object that you want to apply this Object Retention
@@ -236,6 +262,12 @@ namespace Model
      * <p>Indicates whether this operation should bypass Governance-mode
      * restrictions.j</p>
      */
+    inline bool BypassGovernanceRetentionHasBeenSet() const { return m_bypassGovernanceRetentionHasBeenSet; }
+
+    /**
+     * <p>Indicates whether this operation should bypass Governance-mode
+     * restrictions.j</p>
+     */
     inline void SetBypassGovernanceRetention(bool value) { m_bypassGovernanceRetentionHasBeenSet = true; m_bypassGovernanceRetention = value; }
 
     /**
@@ -249,6 +281,11 @@ namespace Model
      * <p>The MD5 hash for the request body.</p>
      */
     inline const Aws::String& GetContentMD5() const{ return m_contentMD5; }
+
+    /**
+     * <p>The MD5 hash for the request body.</p>
+     */
+    inline bool ContentMD5HasBeenSet() const { return m_contentMD5HasBeenSet; }
 
     /**
      * <p>The MD5 hash for the request body.</p>
@@ -283,6 +320,9 @@ namespace Model
 
     
     inline const Aws::Map<Aws::String, Aws::String>& GetCustomizedAccessLogTag() const{ return m_customizedAccessLogTag; }
+
+    
+    inline bool CustomizedAccessLogTagHasBeenSet() const { return m_customizedAccessLogTagHasBeenSet; }
 
     
     inline void SetCustomizedAccessLogTag(const Aws::Map<Aws::String, Aws::String>& value) { m_customizedAccessLogTagHasBeenSet = true; m_customizedAccessLogTag = value; }

@@ -59,6 +59,11 @@ namespace Model
     /**
      * Unique ARN of Input Security Group
      */
+    inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
+
+    /**
+     * Unique ARN of Input Security Group
+     */
     inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
 
     /**
@@ -95,6 +100,11 @@ namespace Model
     /**
      * The Id of the Input Security Group
      */
+    inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
+
+    /**
+     * The Id of the Input Security Group
+     */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
     /**
@@ -127,6 +137,11 @@ namespace Model
      * The list of inputs currently using this Input Security Group.
      */
     inline const Aws::Vector<Aws::String>& GetInputs() const{ return m_inputs; }
+
+    /**
+     * The list of inputs currently using this Input Security Group.
+     */
+    inline bool InputsHasBeenSet() const { return m_inputsHasBeenSet; }
 
     /**
      * The list of inputs currently using this Input Security Group.
@@ -172,6 +187,11 @@ namespace Model
     /**
      * The current state of the Input Security Group.
      */
+    inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
+
+    /**
+     * The current state of the Input Security Group.
+     */
     inline void SetState(const InputSecurityGroupState& value) { m_stateHasBeenSet = true; m_state = value; }
 
     /**
@@ -194,6 +214,11 @@ namespace Model
      * A collection of key-value pairs.
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
+
+    /**
+     * A collection of key-value pairs.
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
      * A collection of key-value pairs.
@@ -255,6 +280,11 @@ namespace Model
      * Whitelist rules and their sync status
      */
     inline const Aws::Vector<InputWhitelistRule>& GetWhitelistRules() const{ return m_whitelistRules; }
+
+    /**
+     * Whitelist rules and their sync status
+     */
+    inline bool WhitelistRulesHasBeenSet() const { return m_whitelistRulesHasBeenSet; }
 
     /**
      * Whitelist rules and their sync status

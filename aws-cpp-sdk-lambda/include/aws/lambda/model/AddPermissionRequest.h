@@ -74,6 +74,20 @@ namespace Model
      * applies only to the full ARN. If you specify only the function name, it is
      * limited to 64 characters in length.</p>
      */
+    inline bool FunctionNameHasBeenSet() const { return m_functionNameHasBeenSet; }
+
+    /**
+     * <p>The name of the Lambda function, version, or alias.</p> <p class="title">
+     * <b>Name formats</b> </p> <ul> <li> <p> <b>Function name</b> -
+     * <code>my-function</code> (name-only), <code>my-function:v1</code> (with
+     * alias).</p> </li> <li> <p> <b>Function ARN</b> -
+     * <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p>
+     * </li> <li> <p> <b>Partial ARN</b> -
+     * <code>123456789012:function:my-function</code>.</p> </li> </ul> <p>You can
+     * append a version number or alias to any of the formats. The length constraint
+     * applies only to the full ARN. If you specify only the function name, it is
+     * limited to 64 characters in length.</p>
+     */
     inline void SetFunctionName(const Aws::String& value) { m_functionNameHasBeenSet = true; m_functionName = value; }
 
     /**
@@ -157,6 +171,12 @@ namespace Model
      * <p>A statement identifier that differentiates the statement from others in the
      * same policy.</p>
      */
+    inline bool StatementIdHasBeenSet() const { return m_statementIdHasBeenSet; }
+
+    /**
+     * <p>A statement identifier that differentiates the statement from others in the
+     * same policy.</p>
+     */
     inline void SetStatementId(const Aws::String& value) { m_statementIdHasBeenSet = true; m_statementId = value; }
 
     /**
@@ -195,6 +215,12 @@ namespace Model
      * <code>lambda:InvokeFunction</code> or <code>lambda:GetFunction</code>.</p>
      */
     inline const Aws::String& GetAction() const{ return m_action; }
+
+    /**
+     * <p>The action that the principal can use on the function. For example,
+     * <code>lambda:InvokeFunction</code> or <code>lambda:GetFunction</code>.</p>
+     */
+    inline bool ActionHasBeenSet() const { return m_actionHasBeenSet; }
 
     /**
      * <p>The action that the principal can use on the function. For example,
@@ -239,6 +265,13 @@ namespace Model
      * can invoke the function through that service.</p>
      */
     inline const Aws::String& GetPrincipal() const{ return m_principal; }
+
+    /**
+     * <p>The AWS service or account that invokes the function. If you specify a
+     * service, use <code>SourceArn</code> or <code>SourceAccount</code> to limit who
+     * can invoke the function through that service.</p>
+     */
+    inline bool PrincipalHasBeenSet() const { return m_principalHasBeenSet; }
 
     /**
      * <p>The AWS service or account that invokes the function. If you specify a
@@ -293,6 +326,12 @@ namespace Model
      * <p>For AWS services, the ARN of the AWS resource that invokes the function. For
      * example, an Amazon S3 bucket or Amazon SNS topic.</p>
      */
+    inline bool SourceArnHasBeenSet() const { return m_sourceArnHasBeenSet; }
+
+    /**
+     * <p>For AWS services, the ARN of the AWS resource that invokes the function. For
+     * example, an Amazon S3 bucket or Amazon SNS topic.</p>
+     */
     inline void SetSourceArn(const Aws::String& value) { m_sourceArnHasBeenSet = true; m_sourceArn = value; }
 
     /**
@@ -335,6 +374,16 @@ namespace Model
      * deleted by its owner and recreated by another account.</p>
      */
     inline const Aws::String& GetSourceAccount() const{ return m_sourceAccount; }
+
+    /**
+     * <p>For AWS services, the ID of the account that owns the resource. Use this
+     * instead of <code>SourceArn</code> to grant permission to resources that are
+     * owned by another account (for example, all of an account's Amazon S3 buckets).
+     * Or use it together with <code>SourceArn</code> to ensure that the resource is
+     * owned by the specified account. For example, an Amazon S3 bucket could be
+     * deleted by its owner and recreated by another account.</p>
+     */
+    inline bool SourceAccountHasBeenSet() const { return m_sourceAccountHasBeenSet; }
 
     /**
      * <p>For AWS services, the ID of the account that owns the resource. Use this
@@ -407,6 +456,12 @@ namespace Model
      * <p>For Alexa Smart Home functions, a token that must be supplied by the
      * invoker.</p>
      */
+    inline bool EventSourceTokenHasBeenSet() const { return m_eventSourceTokenHasBeenSet; }
+
+    /**
+     * <p>For Alexa Smart Home functions, a token that must be supplied by the
+     * invoker.</p>
+     */
     inline void SetEventSourceToken(const Aws::String& value) { m_eventSourceTokenHasBeenSet = true; m_eventSourceToken = value; }
 
     /**
@@ -445,6 +500,12 @@ namespace Model
      * function.</p>
      */
     inline const Aws::String& GetQualifier() const{ return m_qualifier; }
+
+    /**
+     * <p>Specify a version or alias to add permissions to a published version of the
+     * function.</p>
+     */
+    inline bool QualifierHasBeenSet() const { return m_qualifierHasBeenSet; }
 
     /**
      * <p>Specify a version or alias to add permissions to a published version of the
@@ -489,6 +550,13 @@ namespace Model
      * it.</p>
      */
     inline const Aws::String& GetRevisionId() const{ return m_revisionId; }
+
+    /**
+     * <p>Only update the policy if the revision ID matches the ID that's specified.
+     * Use this option to avoid modifying a policy that has changed since you last read
+     * it.</p>
+     */
+    inline bool RevisionIdHasBeenSet() const { return m_revisionIdHasBeenSet; }
 
     /**
      * <p>Only update the policy if the revision ID matches the ID that's specified.

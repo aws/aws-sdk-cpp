@@ -56,6 +56,12 @@ namespace Model
      * <p>The name or unique ID of the stack set that you're deleting. You can obtain
      * this value by running <a>ListStackSets</a>.</p>
      */
+    inline bool StackSetNameHasBeenSet() const { return m_stackSetNameHasBeenSet; }
+
+    /**
+     * <p>The name or unique ID of the stack set that you're deleting. You can obtain
+     * this value by running <a>ListStackSets</a>.</p>
+     */
     inline void SetStackSetName(const Aws::String& value) { m_stackSetNameHasBeenSet = true; m_stackSetName = value; }
 
     /**

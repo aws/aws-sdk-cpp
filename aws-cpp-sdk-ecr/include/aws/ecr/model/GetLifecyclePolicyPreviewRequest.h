@@ -57,6 +57,12 @@ namespace Model
      * <p>The AWS account ID associated with the registry that contains the repository.
      * If you do not specify a registry, the default registry is assumed.</p>
      */
+    inline bool RegistryIdHasBeenSet() const { return m_registryIdHasBeenSet; }
+
+    /**
+     * <p>The AWS account ID associated with the registry that contains the repository.
+     * If you do not specify a registry, the default registry is assumed.</p>
+     */
     inline void SetRegistryId(const Aws::String& value) { m_registryIdHasBeenSet = true; m_registryId = value; }
 
     /**
@@ -98,6 +104,11 @@ namespace Model
     /**
      * <p>The name of the repository.</p>
      */
+    inline bool RepositoryNameHasBeenSet() const { return m_repositoryNameHasBeenSet; }
+
+    /**
+     * <p>The name of the repository.</p>
+     */
     inline void SetRepositoryName(const Aws::String& value) { m_repositoryNameHasBeenSet = true; m_repositoryName = value; }
 
     /**
@@ -130,6 +141,11 @@ namespace Model
      * <p>The list of imageIDs to be included.</p>
      */
     inline const Aws::Vector<ImageIdentifier>& GetImageIds() const{ return m_imageIds; }
+
+    /**
+     * <p>The list of imageIDs to be included.</p>
+     */
+    inline bool ImageIdsHasBeenSet() const { return m_imageIdsHasBeenSet; }
 
     /**
      * <p>The list of imageIDs to be included.</p>
@@ -172,6 +188,17 @@ namespace Model
      * be used when you specify images with <code>imageIds</code>.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
+    /**
+     * <p>The <code>nextToken</code> value returned from a previous paginated&#x2028;
+     * <code>GetLifecyclePolicyPreviewRequest</code> request where
+     * <code>maxResults</code> was used and the&#x2028; results exceeded the value of
+     * that parameter. Pagination continues from the end of the&#x2028; previous
+     * results that returned the <code>nextToken</code> value. This value is&#x2028;
+     * <code>null</code> when there are no more results to return. This option cannot
+     * be used when you specify images with <code>imageIds</code>.</p>
+     */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
      * <p>The <code>nextToken</code> value returned from a previous paginated&#x2028;
@@ -270,6 +297,22 @@ namespace Model
      * and a <code>nextToken</code> value, if&#x2028; applicable. This option cannot be
      * used when you specify images with <code>imageIds</code>.</p>
      */
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
+
+    /**
+     * <p>The maximum number of repository results returned by
+     * <code>GetLifecyclePolicyPreviewRequest</code> in&#x2028; paginated output. When
+     * this parameter is used, <code>GetLifecyclePolicyPreviewRequest</code> only
+     * returns&#x2028; <code>maxResults</code> results in a single page along with a
+     * <code>nextToken</code>&#x2028; response element. The remaining results of the
+     * initial request can be seen by sending&#x2028; another
+     * <code>GetLifecyclePolicyPreviewRequest</code> request with the returned
+     * <code>nextToken</code>&#x2028; value. This value can be between 1 and 1000. If
+     * this&#x2028; parameter is not used, then
+     * <code>GetLifecyclePolicyPreviewRequest</code> returns up to&#x2028; 100 results
+     * and a <code>nextToken</code> value, if&#x2028; applicable. This option cannot be
+     * used when you specify images with <code>imageIds</code>.</p>
+     */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
@@ -294,6 +337,12 @@ namespace Model
      * tags, if tagged.</p>
      */
     inline const LifecyclePolicyPreviewFilter& GetFilter() const{ return m_filter; }
+
+    /**
+     * <p>An optional parameter that filters results based on image tag status and all
+     * tags, if tagged.</p>
+     */
+    inline bool FilterHasBeenSet() const { return m_filterHasBeenSet; }
 
     /**
      * <p>An optional parameter that filters results based on image tag status and all

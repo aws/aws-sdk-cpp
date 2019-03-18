@@ -59,6 +59,12 @@ namespace Model
      * <p>The user pool ID for the user pool where you want to delete user
      * attributes.</p>
      */
+    inline bool UserPoolIdHasBeenSet() const { return m_userPoolIdHasBeenSet; }
+
+    /**
+     * <p>The user pool ID for the user pool where you want to delete user
+     * attributes.</p>
+     */
     inline void SetUserPoolId(const Aws::String& value) { m_userPoolIdHasBeenSet = true; m_userPoolId = value; }
 
     /**
@@ -100,6 +106,11 @@ namespace Model
     /**
      * <p>The user name of the user from which you would like to delete attributes.</p>
      */
+    inline bool UsernameHasBeenSet() const { return m_usernameHasBeenSet; }
+
+    /**
+     * <p>The user name of the user from which you would like to delete attributes.</p>
+     */
     inline void SetUsername(const Aws::String& value) { m_usernameHasBeenSet = true; m_username = value; }
 
     /**
@@ -134,6 +145,13 @@ namespace Model
      * prefix to the attribute name.</p>
      */
     inline const Aws::Vector<Aws::String>& GetUserAttributeNames() const{ return m_userAttributeNames; }
+
+    /**
+     * <p>An array of strings representing the user attribute names you wish to
+     * delete.</p> <p>For custom attributes, you must prepend the <code>custom:</code>
+     * prefix to the attribute name.</p>
+     */
+    inline bool UserAttributeNamesHasBeenSet() const { return m_userAttributeNamesHasBeenSet; }
 
     /**
      * <p>An array of strings representing the user attribute names you wish to

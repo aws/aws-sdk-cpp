@@ -61,6 +61,11 @@ namespace Model
     /**
      * <p>The serial number associated with <code>VirtualMFADevice</code>.</p>
      */
+    inline bool SerialNumberHasBeenSet() const { return m_serialNumberHasBeenSet; }
+
+    /**
+     * <p>The serial number associated with <code>VirtualMFADevice</code>.</p>
+     */
     inline void SetSerialNumber(const Aws::String& value) { m_serialNumberHasBeenSet = true; m_serialNumber = value; }
 
     /**
@@ -101,6 +106,13 @@ namespace Model
      * href="https://tools.ietf.org/html/rfc3548.txt">RFC3548</a>. The
      * <code>Base32StringSeed</code> is base64-encoded. </p>
      */
+    inline bool Base32StringSeedHasBeenSet() const { return m_base32StringSeedHasBeenSet; }
+
+    /**
+     * <p> The base32 seed defined as specified in <a
+     * href="https://tools.ietf.org/html/rfc3548.txt">RFC3548</a>. The
+     * <code>Base32StringSeed</code> is base64-encoded. </p>
+     */
     inline void SetBase32StringSeed(const Aws::Utils::CryptoBuffer& value) { m_base32StringSeedHasBeenSet = true; m_base32StringSeed = value; }
 
     /**
@@ -134,6 +146,16 @@ namespace Model
      * <code>Base32String</code> value is base64-encoded. </p>
      */
     inline const Aws::Utils::CryptoBuffer& GetQRCodePNG() const{ return m_qRCodePNG; }
+
+    /**
+     * <p> A QR code PNG image that encodes
+     * <code>otpauth://totp/$virtualMFADeviceName@$AccountName?secret=$Base32String</code>
+     * where <code>$virtualMFADeviceName</code> is one of the create call arguments.
+     * <code>AccountName</code> is the user name if set (otherwise, the account ID
+     * otherwise), and <code>Base32String</code> is the seed in base32 format. The
+     * <code>Base32String</code> value is base64-encoded. </p>
+     */
+    inline bool QRCodePNGHasBeenSet() const { return m_qRCodePNGHasBeenSet; }
 
     /**
      * <p> A QR code PNG image that encodes
@@ -184,6 +206,11 @@ namespace Model
     /**
      * <p>The IAM user associated with this virtual MFA device.</p>
      */
+    inline bool UserHasBeenSet() const { return m_userHasBeenSet; }
+
+    /**
+     * <p>The IAM user associated with this virtual MFA device.</p>
+     */
     inline void SetUser(const User& value) { m_userHasBeenSet = true; m_user = value; }
 
     /**
@@ -206,6 +233,11 @@ namespace Model
      * <p>The date and time on which the virtual MFA device was enabled.</p>
      */
     inline const Aws::Utils::DateTime& GetEnableDate() const{ return m_enableDate; }
+
+    /**
+     * <p>The date and time on which the virtual MFA device was enabled.</p>
+     */
+    inline bool EnableDateHasBeenSet() const { return m_enableDateHasBeenSet; }
 
     /**
      * <p>The date and time on which the virtual MFA device was enabled.</p>

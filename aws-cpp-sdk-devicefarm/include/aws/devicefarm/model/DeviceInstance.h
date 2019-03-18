@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the device instance.</p>
      */
+    inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the device instance.</p>
+     */
     inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
 
     /**
@@ -94,6 +99,11 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the device.</p>
      */
+    inline bool DeviceArnHasBeenSet() const { return m_deviceArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the device.</p>
+     */
     inline void SetDeviceArn(const Aws::String& value) { m_deviceArnHasBeenSet = true; m_deviceArn = value; }
 
     /**
@@ -126,6 +136,11 @@ namespace Model
      * <p>An array of strings describing the device instance.</p>
      */
     inline const Aws::Vector<Aws::String>& GetLabels() const{ return m_labels; }
+
+    /**
+     * <p>An array of strings describing the device instance.</p>
+     */
+    inline bool LabelsHasBeenSet() const { return m_labelsHasBeenSet; }
 
     /**
      * <p>An array of strings describing the device instance.</p>
@@ -171,6 +186,11 @@ namespace Model
     /**
      * <p>The status of the device instance. Valid values are listed below.</p>
      */
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
+
+    /**
+     * <p>The status of the device instance. Valid values are listed below.</p>
+     */
     inline void SetStatus(const InstanceStatus& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
@@ -193,6 +213,11 @@ namespace Model
      * <p>Unique device identifier for the device instance.</p>
      */
     inline const Aws::String& GetUdid() const{ return m_udid; }
+
+    /**
+     * <p>Unique device identifier for the device instance.</p>
+     */
+    inline bool UdidHasBeenSet() const { return m_udidHasBeenSet; }
 
     /**
      * <p>Unique device identifier for the device instance.</p>
@@ -229,6 +254,11 @@ namespace Model
      * <p>A object containing information about the instance profile.</p>
      */
     inline const InstanceProfile& GetInstanceProfile() const{ return m_instanceProfile; }
+
+    /**
+     * <p>A object containing information about the instance profile.</p>
+     */
+    inline bool InstanceProfileHasBeenSet() const { return m_instanceProfileHasBeenSet; }
 
     /**
      * <p>A object containing information about the instance profile.</p>

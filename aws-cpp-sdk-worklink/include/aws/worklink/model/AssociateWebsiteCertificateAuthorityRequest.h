@@ -50,6 +50,11 @@ namespace Model
     /**
      * <p>The ARN of the fleet.</p>
      */
+    inline bool FleetArnHasBeenSet() const { return m_fleetArnHasBeenSet; }
+
+    /**
+     * <p>The ARN of the fleet.</p>
+     */
     inline void SetFleetArn(const Aws::String& value) { m_fleetArnHasBeenSet = true; m_fleetArn = value; }
 
     /**
@@ -86,6 +91,11 @@ namespace Model
     /**
      * <p>The root certificate of the CA.</p>
      */
+    inline bool CertificateHasBeenSet() const { return m_certificateHasBeenSet; }
+
+    /**
+     * <p>The root certificate of the CA.</p>
+     */
     inline void SetCertificate(const Aws::String& value) { m_certificateHasBeenSet = true; m_certificate = value; }
 
     /**
@@ -118,6 +128,11 @@ namespace Model
      * <p>The certificate name to display.</p>
      */
     inline const Aws::String& GetDisplayName() const{ return m_displayName; }
+
+    /**
+     * <p>The certificate name to display.</p>
+     */
+    inline bool DisplayNameHasBeenSet() const { return m_displayNameHasBeenSet; }
 
     /**
      * <p>The certificate name to display.</p>

@@ -95,6 +95,11 @@ namespace Model
     /**
      * <p>The S3 bucket.</p>
      */
+    inline bool BucketHasBeenSet() const { return m_bucketHasBeenSet; }
+
+    /**
+     * <p>The S3 bucket.</p>
+     */
     inline void SetBucket(const Aws::String& value) { m_bucketHasBeenSet = true; m_bucket = value; }
 
     /**
@@ -127,6 +132,11 @@ namespace Model
      * <p>The object key.</p>
      */
     inline const Aws::String& GetKey() const{ return m_key; }
+
+    /**
+     * <p>The object key.</p>
+     */
+    inline bool KeyHasBeenSet() const { return m_keyHasBeenSet; }
 
     /**
      * <p>The object key.</p>
@@ -165,6 +175,13 @@ namespace Model
      * Server-Side Encryption (Using Customer-Provided Encryption Keys</a>. </p>
      */
     inline const Aws::String& GetSSECustomerAlgorithm() const{ return m_sSECustomerAlgorithm; }
+
+    /**
+     * <p>The SSE Algorithm used to encrypt the object. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ServerSideEncryptionCustomerKeys.html">
+     * Server-Side Encryption (Using Customer-Provided Encryption Keys</a>. </p>
+     */
+    inline bool SSECustomerAlgorithmHasBeenSet() const { return m_sSECustomerAlgorithmHasBeenSet; }
 
     /**
      * <p>The SSE Algorithm used to encrypt the object. For more information, see <a
@@ -221,6 +238,13 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ServerSideEncryptionCustomerKeys.html">
      * Server-Side Encryption (Using Customer-Provided Encryption Keys</a>. </p>
      */
+    inline bool SSECustomerKeyHasBeenSet() const { return m_sSECustomerKeyHasBeenSet; }
+
+    /**
+     * <p>The SSE Customer Key. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ServerSideEncryptionCustomerKeys.html">
+     * Server-Side Encryption (Using Customer-Provided Encryption Keys</a>. </p>
+     */
     inline void SetSSECustomerKey(const Aws::String& value) { m_sSECustomerKeyHasBeenSet = true; m_sSECustomerKey = value; }
 
     /**
@@ -265,6 +289,13 @@ namespace Model
      * Server-Side Encryption (Using Customer-Provided Encryption Keys</a>. </p>
      */
     inline const Aws::String& GetSSECustomerKeyMD5() const{ return m_sSECustomerKeyMD5; }
+
+    /**
+     * <p>The SSE Customer Key MD5. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ServerSideEncryptionCustomerKeys.html">
+     * Server-Side Encryption (Using Customer-Provided Encryption Keys</a>. </p>
+     */
+    inline bool SSECustomerKeyMD5HasBeenSet() const { return m_sSECustomerKeyMD5HasBeenSet; }
 
     /**
      * <p>The SSE Customer Key MD5. For more information, see <a
@@ -317,6 +348,11 @@ namespace Model
     /**
      * <p>The expression that is used to query the object.</p>
      */
+    inline bool ExpressionHasBeenSet() const { return m_expressionHasBeenSet; }
+
+    /**
+     * <p>The expression that is used to query the object.</p>
+     */
     inline void SetExpression(const Aws::String& value) { m_expressionHasBeenSet = true; m_expression = value; }
 
     /**
@@ -353,6 +389,11 @@ namespace Model
     /**
      * <p>The type of the provided expression (for example., SQL).</p>
      */
+    inline bool ExpressionTypeHasBeenSet() const { return m_expressionTypeHasBeenSet; }
+
+    /**
+     * <p>The type of the provided expression (for example., SQL).</p>
+     */
     inline void SetExpressionType(const ExpressionType& value) { m_expressionTypeHasBeenSet = true; m_expressionType = value; }
 
     /**
@@ -379,6 +420,11 @@ namespace Model
     /**
      * <p>Specifies if periodic request progress information should be enabled.</p>
      */
+    inline bool RequestProgressHasBeenSet() const { return m_requestProgressHasBeenSet; }
+
+    /**
+     * <p>Specifies if periodic request progress information should be enabled.</p>
+     */
     inline void SetRequestProgress(const RequestProgress& value) { m_requestProgressHasBeenSet = true; m_requestProgress = value; }
 
     /**
@@ -401,6 +447,11 @@ namespace Model
      * <p>Describes the format of the data in the object that is being queried.</p>
      */
     inline const InputSerialization& GetInputSerialization() const{ return m_inputSerialization; }
+
+    /**
+     * <p>Describes the format of the data in the object that is being queried.</p>
+     */
+    inline bool InputSerializationHasBeenSet() const { return m_inputSerializationHasBeenSet; }
 
     /**
      * <p>Describes the format of the data in the object that is being queried.</p>
@@ -433,6 +484,12 @@ namespace Model
      * <p>Describes the format of the data that you want Amazon S3 to return in
      * response.</p>
      */
+    inline bool OutputSerializationHasBeenSet() const { return m_outputSerializationHasBeenSet; }
+
+    /**
+     * <p>Describes the format of the data that you want Amazon S3 to return in
+     * response.</p>
+     */
     inline void SetOutputSerialization(const OutputSerialization& value) { m_outputSerializationHasBeenSet = true; m_outputSerialization = value; }
 
     /**
@@ -456,6 +513,9 @@ namespace Model
 
     
     inline const Aws::Map<Aws::String, Aws::String>& GetCustomizedAccessLogTag() const{ return m_customizedAccessLogTag; }
+
+    
+    inline bool CustomizedAccessLogTagHasBeenSet() const { return m_customizedAccessLogTagHasBeenSet; }
 
     
     inline void SetCustomizedAccessLogTag(const Aws::Map<Aws::String, Aws::String>& value) { m_customizedAccessLogTagHasBeenSet = true; m_customizedAccessLogTag = value; }

@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>Specifies the encryption-at-rest configuration for the Data Catalog.</p>
      */
+    inline bool EncryptionAtRestHasBeenSet() const { return m_encryptionAtRestHasBeenSet; }
+
+    /**
+     * <p>Specifies the encryption-at-rest configuration for the Data Catalog.</p>
+     */
     inline void SetEncryptionAtRest(const EncryptionAtRest& value) { m_encryptionAtRestHasBeenSet = true; m_encryptionAtRest = value; }
 
     /**
@@ -83,6 +88,15 @@ namespace Model
      * enable catalog encryption or only password encryption.</p>
      */
     inline const ConnectionPasswordEncryption& GetConnectionPasswordEncryption() const{ return m_connectionPasswordEncryption; }
+
+    /**
+     * <p>When connection password protection is enabled, the Data Catalog uses a
+     * customer-provided key to encrypt the password as part of
+     * <code>CreateConnection</code> or <code>UpdateConnection</code> and store it in
+     * the <code>ENCRYPTED_PASSWORD</code> field in the connection properties. You can
+     * enable catalog encryption or only password encryption.</p>
+     */
+    inline bool ConnectionPasswordEncryptionHasBeenSet() const { return m_connectionPasswordEncryptionHasBeenSet; }
 
     /**
      * <p>When connection password protection is enabled, the Data Catalog uses a

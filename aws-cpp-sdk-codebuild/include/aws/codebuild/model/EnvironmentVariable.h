@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The name or key of the environment variable.</p>
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>The name or key of the environment variable.</p>
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
@@ -93,6 +98,15 @@ namespace Model
      * Line Interface (AWS CLI).</p> </important>
      */
     inline const Aws::String& GetValue() const{ return m_value; }
+
+    /**
+     * <p>The value of the environment variable.</p> <important> <p>We strongly
+     * discourage the use of environment variables to store sensitive values,
+     * especially AWS secret key IDs and secret access keys. Environment variables can
+     * be displayed in plain text using the AWS CodeBuild console and the AWS Command
+     * Line Interface (AWS CLI).</p> </important>
+     */
+    inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
 
     /**
      * <p>The value of the environment variable.</p> <important> <p>We strongly
@@ -156,6 +170,14 @@ namespace Model
      * environment variable in plaintext format.</p> </li> </ul>
      */
     inline const EnvironmentVariableType& GetType() const{ return m_type; }
+
+    /**
+     * <p>The type of environment variable. Valid values include:</p> <ul> <li> <p>
+     * <code>PARAMETER_STORE</code>: An environment variable stored in Amazon EC2
+     * Systems Manager Parameter Store.</p> </li> <li> <p> <code>PLAINTEXT</code>: An
+     * environment variable in plaintext format.</p> </li> </ul>
+     */
+    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
 
     /**
      * <p>The type of environment variable. Valid values include:</p> <ul> <li> <p>

@@ -52,6 +52,11 @@ namespace Model
     /**
      * <p>The organization that contains the entity to update.</p>
      */
+    inline bool OrganizationIdHasBeenSet() const { return m_organizationIdHasBeenSet; }
+
+    /**
+     * <p>The organization that contains the entity to update.</p>
+     */
     inline void SetOrganizationId(const Aws::String& value) { m_organizationIdHasBeenSet = true; m_organizationId = value; }
 
     /**
@@ -88,6 +93,11 @@ namespace Model
     /**
      * <p>The entity to update (user, group, or resource).</p>
      */
+    inline bool EntityIdHasBeenSet() const { return m_entityIdHasBeenSet; }
+
+    /**
+     * <p>The entity to update (user, group, or resource).</p>
+     */
     inline void SetEntityId(const Aws::String& value) { m_entityIdHasBeenSet = true; m_entityId = value; }
 
     /**
@@ -120,6 +130,11 @@ namespace Model
      * <p>The value of the email to be updated as primary.</p>
      */
     inline const Aws::String& GetEmail() const{ return m_email; }
+
+    /**
+     * <p>The value of the email to be updated as primary.</p>
+     */
+    inline bool EmailHasBeenSet() const { return m_emailHasBeenSet; }
 
     /**
      * <p>The value of the email to be updated as primary.</p>

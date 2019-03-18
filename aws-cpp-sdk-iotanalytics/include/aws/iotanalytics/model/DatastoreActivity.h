@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The name of the 'datastore' activity.</p>
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>The name of the 'datastore' activity.</p>
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
@@ -88,6 +93,11 @@ namespace Model
      * <p>The name of the data store where processed messages are stored.</p>
      */
     inline const Aws::String& GetDatastoreName() const{ return m_datastoreName; }
+
+    /**
+     * <p>The name of the data store where processed messages are stored.</p>
+     */
+    inline bool DatastoreNameHasBeenSet() const { return m_datastoreNameHasBeenSet; }
 
     /**
      * <p>The name of the data store where processed messages are stored.</p>

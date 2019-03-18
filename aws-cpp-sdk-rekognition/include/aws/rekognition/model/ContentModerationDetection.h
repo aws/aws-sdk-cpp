@@ -58,6 +58,12 @@ namespace Model
      * <p>Time, in milliseconds from the beginning of the video, that the moderation
      * label was detected.</p>
      */
+    inline bool TimestampHasBeenSet() const { return m_timestampHasBeenSet; }
+
+    /**
+     * <p>Time, in milliseconds from the beginning of the video, that the moderation
+     * label was detected.</p>
+     */
     inline void SetTimestamp(long long value) { m_timestampHasBeenSet = true; m_timestamp = value; }
 
     /**
@@ -71,6 +77,11 @@ namespace Model
      * <p>The moderation label detected by in the stored video.</p>
      */
     inline const ModerationLabel& GetModerationLabel() const{ return m_moderationLabel; }
+
+    /**
+     * <p>The moderation label detected by in the stored video.</p>
+     */
+    inline bool ModerationLabelHasBeenSet() const { return m_moderationLabelHasBeenSet; }
 
     /**
      * <p>The moderation label detected by in the stored video.</p>

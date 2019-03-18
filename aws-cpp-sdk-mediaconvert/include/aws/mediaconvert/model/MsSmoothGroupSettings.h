@@ -55,6 +55,9 @@ namespace Model
     inline const MsSmoothAudioDeduplication& GetAudioDeduplication() const{ return m_audioDeduplication; }
 
     
+    inline bool AudioDeduplicationHasBeenSet() const { return m_audioDeduplicationHasBeenSet; }
+
+    
     inline void SetAudioDeduplication(const MsSmoothAudioDeduplication& value) { m_audioDeduplicationHasBeenSet = true; m_audioDeduplication = value; }
 
     
@@ -75,6 +78,15 @@ namespace Model
      * input file.
      */
     inline const Aws::String& GetDestination() const{ return m_destination; }
+
+    /**
+     * Use Destination (Destination) to specify the S3 output location and the output
+     * filename base. Destination accepts format identifiers. If you do not specify the
+     * base filename in the URI, the service will use the filename of the input file.
+     * If your job has multiple inputs, the service uses the filename of the first
+     * input file.
+     */
+    inline bool DestinationHasBeenSet() const { return m_destinationHasBeenSet; }
 
     /**
      * Use Destination (Destination) to specify the S3 output location and the output
@@ -135,6 +147,9 @@ namespace Model
     inline const MsSmoothEncryptionSettings& GetEncryption() const{ return m_encryption; }
 
     
+    inline bool EncryptionHasBeenSet() const { return m_encryptionHasBeenSet; }
+
+    
     inline void SetEncryption(const MsSmoothEncryptionSettings& value) { m_encryptionHasBeenSet = true; m_encryption = value; }
 
     
@@ -157,6 +172,12 @@ namespace Model
      * Use Fragment length (FragmentLength) to specify the mp4 fragment sizes in
      * seconds. Fragment length must be compatible with GOP size and frame rate.
      */
+    inline bool FragmentLengthHasBeenSet() const { return m_fragmentLengthHasBeenSet; }
+
+    /**
+     * Use Fragment length (FragmentLength) to specify the mp4 fragment sizes in
+     * seconds. Fragment length must be compatible with GOP size and frame rate.
+     */
     inline void SetFragmentLength(int value) { m_fragmentLengthHasBeenSet = true; m_fragmentLength = value; }
 
     /**
@@ -168,6 +189,9 @@ namespace Model
 
     
     inline const MsSmoothManifestEncoding& GetManifestEncoding() const{ return m_manifestEncoding; }
+
+    
+    inline bool ManifestEncodingHasBeenSet() const { return m_manifestEncodingHasBeenSet; }
 
     
     inline void SetManifestEncoding(const MsSmoothManifestEncoding& value) { m_manifestEncodingHasBeenSet = true; m_manifestEncoding = value; }

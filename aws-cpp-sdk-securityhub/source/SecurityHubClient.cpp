@@ -378,6 +378,11 @@ void SecurityHubClient::DeclineInvitationsAsyncHelper(const DeclineInvitationsRe
 
 DeleteInsightOutcome SecurityHubClient::DeleteInsight(const DeleteInsightRequest& request) const
 {
+  if (!request.InsightArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteInsight", "Required field: InsightArn, is not set");
+    return DeleteInsightOutcome(Aws::Client::AWSError<SecurityHubErrors>(SecurityHubErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [InsightArn]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/insights/";
@@ -484,6 +489,11 @@ void SecurityHubClient::DeleteMembersAsyncHelper(const DeleteMembersRequest& req
 
 DisableImportFindingsForProductOutcome SecurityHubClient::DisableImportFindingsForProduct(const DisableImportFindingsForProductRequest& request) const
 {
+  if (!request.ProductSubscriptionArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DisableImportFindingsForProduct", "Required field: ProductSubscriptionArn, is not set");
+    return DisableImportFindingsForProductOutcome(Aws::Client::AWSError<SecurityHubErrors>(SecurityHubErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ProductSubscriptionArn]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/productSubscriptions/";
@@ -765,6 +775,11 @@ void SecurityHubClient::GetFindingsAsyncHelper(const GetFindingsRequest& request
 
 GetInsightResultsOutcome SecurityHubClient::GetInsightResults(const GetInsightResultsRequest& request) const
 {
+  if (!request.InsightArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetInsightResults", "Required field: InsightArn, is not set");
+    return GetInsightResultsOutcome(Aws::Client::AWSError<SecurityHubErrors>(SecurityHubErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [InsightArn]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/insights/results/";
@@ -1116,6 +1131,11 @@ void SecurityHubClient::UpdateFindingsAsyncHelper(const UpdateFindingsRequest& r
 
 UpdateInsightOutcome SecurityHubClient::UpdateInsight(const UpdateInsightRequest& request) const
 {
+  if (!request.InsightArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateInsight", "Required field: InsightArn, is not set");
+    return UpdateInsightOutcome(Aws::Client::AWSError<SecurityHubErrors>(SecurityHubErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [InsightArn]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/insights/";

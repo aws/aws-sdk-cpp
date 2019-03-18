@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The DNS name.</p>
      */
+    inline bool DnsNameHasBeenSet() const { return m_dnsNameHasBeenSet; }
+
+    /**
+     * <p>The DNS name.</p>
+     */
     inline void SetDnsName(const Aws::String& value) { m_dnsNameHasBeenSet = true; m_dnsName = value; }
 
     /**
@@ -89,6 +94,11 @@ namespace Model
      * <p>The ID of the private hosted zone.</p>
      */
     inline const Aws::String& GetHostedZoneId() const{ return m_hostedZoneId; }
+
+    /**
+     * <p>The ID of the private hosted zone.</p>
+     */
+    inline bool HostedZoneIdHasBeenSet() const { return m_hostedZoneIdHasBeenSet; }
 
     /**
      * <p>The ID of the private hosted zone.</p>

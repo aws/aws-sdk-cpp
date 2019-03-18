@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The Elasticsearch domains for which you want information.</p>
      */
+    inline bool DomainNamesHasBeenSet() const { return m_domainNamesHasBeenSet; }
+
+    /**
+     * <p>The Elasticsearch domains for which you want information.</p>
+     */
     inline void SetDomainNames(const Aws::Vector<Aws::String>& value) { m_domainNamesHasBeenSet = true; m_domainNames = value; }
 
     /**

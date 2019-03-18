@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The project's name.</p>
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>The project's name.</p>
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
@@ -90,6 +95,13 @@ namespace Model
      * when scheduling a run.</p>
      */
     inline int GetDefaultJobTimeoutMinutes() const{ return m_defaultJobTimeoutMinutes; }
+
+    /**
+     * <p>Sets the execution timeout value (in minutes) for a project. All test runs in
+     * this project will use the specified execution timeout value unless overridden
+     * when scheduling a run.</p>
+     */
+    inline bool DefaultJobTimeoutMinutesHasBeenSet() const { return m_defaultJobTimeoutMinutesHasBeenSet; }
 
     /**
      * <p>Sets the execution timeout value (in minutes) for a project. All test runs in

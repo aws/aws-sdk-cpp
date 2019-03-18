@@ -50,6 +50,11 @@ namespace Model
     /**
      * <p>Uniquely identifies the job that restores a recovery point.</p>
      */
+    inline bool RestoreJobIdHasBeenSet() const { return m_restoreJobIdHasBeenSet; }
+
+    /**
+     * <p>Uniquely identifies the job that restores a recovery point.</p>
+     */
     inline void SetRestoreJobId(const Aws::String& value) { m_restoreJobIdHasBeenSet = true; m_restoreJobId = value; }
 
     /**

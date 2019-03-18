@@ -63,6 +63,14 @@ namespace Model
      * the resource type is an AWS account by specifying
      * <code>AWS::::Account</code>.</p>
      */
+    inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
+
+    /**
+     * <p>The types of AWS resources for which you want compliance information (for
+     * example, <code>AWS::EC2::Instance</code>). For this action, you can specify that
+     * the resource type is an AWS account by specifying
+     * <code>AWS::::Account</code>.</p>
+     */
     inline void SetResourceType(const Aws::String& value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
 
     /**
@@ -112,6 +120,13 @@ namespace Model
      * specify a type for <code>ResourceType</code>.</p>
      */
     inline const Aws::String& GetResourceId() const{ return m_resourceId; }
+
+    /**
+     * <p>The ID of the AWS resource for which you want compliance information. You can
+     * specify only one resource ID. If you specify a resource ID, you must also
+     * specify a type for <code>ResourceType</code>.</p>
+     */
+    inline bool ResourceIdHasBeenSet() const { return m_resourceIdHasBeenSet; }
 
     /**
      * <p>The ID of the AWS resource for which you want compliance information. You can
@@ -168,6 +183,13 @@ namespace Model
      * <code>COMPLIANT</code>, <code>NON_COMPLIANT</code>, and
      * <code>INSUFFICIENT_DATA</code>.</p>
      */
+    inline bool ComplianceTypesHasBeenSet() const { return m_complianceTypesHasBeenSet; }
+
+    /**
+     * <p>Filters the results by compliance.</p> <p>The allowed values are
+     * <code>COMPLIANT</code>, <code>NON_COMPLIANT</code>, and
+     * <code>INSUFFICIENT_DATA</code>.</p>
+     */
     inline void SetComplianceTypes(const Aws::Vector<ComplianceType>& value) { m_complianceTypesHasBeenSet = true; m_complianceTypes = value; }
 
     /**
@@ -218,6 +240,13 @@ namespace Model
      * is 10. You cannot specify a number greater than 100. If you specify 0, AWS
      * Config uses the default.</p>
      */
+    inline bool LimitHasBeenSet() const { return m_limitHasBeenSet; }
+
+    /**
+     * <p>The maximum number of evaluation results returned on each page. The default
+     * is 10. You cannot specify a number greater than 100. If you specify 0, AWS
+     * Config uses the default.</p>
+     */
     inline void SetLimit(int value) { m_limitHasBeenSet = true; m_limit = value; }
 
     /**
@@ -233,6 +262,12 @@ namespace Model
      * get the next page of results in a paginated response.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
+    /**
+     * <p>The <code>nextToken</code> string returned on a previous page that you use to
+     * get the next page of results in a paginated response.</p>
+     */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
      * <p>The <code>nextToken</code> string returned on a previous page that you use to

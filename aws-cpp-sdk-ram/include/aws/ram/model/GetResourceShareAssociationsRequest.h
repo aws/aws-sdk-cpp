@@ -53,6 +53,11 @@ namespace Model
     /**
      * <p>The association type.</p>
      */
+    inline bool AssociationTypeHasBeenSet() const { return m_associationTypeHasBeenSet; }
+
+    /**
+     * <p>The association type.</p>
+     */
     inline void SetAssociationType(const ResourceShareAssociationType& value) { m_associationTypeHasBeenSet = true; m_associationType = value; }
 
     /**
@@ -75,6 +80,11 @@ namespace Model
      * <p>The Amazon Resource Names (ARN) of the resource shares.</p>
      */
     inline const Aws::Vector<Aws::String>& GetResourceShareArns() const{ return m_resourceShareArns; }
+
+    /**
+     * <p>The Amazon Resource Names (ARN) of the resource shares.</p>
+     */
+    inline bool ResourceShareArnsHasBeenSet() const { return m_resourceShareArnsHasBeenSet; }
 
     /**
      * <p>The Amazon Resource Names (ARN) of the resource shares.</p>
@@ -120,6 +130,11 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the resource.</p>
      */
+    inline bool ResourceArnHasBeenSet() const { return m_resourceArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the resource.</p>
+     */
     inline void SetResourceArn(const Aws::String& value) { m_resourceArnHasBeenSet = true; m_resourceArn = value; }
 
     /**
@@ -152,6 +167,11 @@ namespace Model
      * <p>The principal.</p>
      */
     inline const Aws::String& GetPrincipal() const{ return m_principal; }
+
+    /**
+     * <p>The principal.</p>
+     */
+    inline bool PrincipalHasBeenSet() const { return m_principalHasBeenSet; }
 
     /**
      * <p>The principal.</p>
@@ -192,6 +212,11 @@ namespace Model
     /**
      * <p>The status of the association.</p>
      */
+    inline bool AssociationStatusHasBeenSet() const { return m_associationStatusHasBeenSet; }
+
+    /**
+     * <p>The status of the association.</p>
+     */
     inline void SetAssociationStatus(const ResourceShareAssociationStatus& value) { m_associationStatusHasBeenSet = true; m_associationStatus = value; }
 
     /**
@@ -214,6 +239,11 @@ namespace Model
      * <p>The token for the next page of results.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
+    /**
+     * <p>The token for the next page of results.</p>
+     */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
      * <p>The token for the next page of results.</p>
@@ -252,6 +282,13 @@ namespace Model
      * value.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
+
+    /**
+     * <p>The maximum number of results to return with a single call. To retrieve the
+     * remaining results, make another call with the returned <code>nextToken</code>
+     * value.</p>
+     */
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
 
     /**
      * <p>The maximum number of results to return with a single call. To retrieve the

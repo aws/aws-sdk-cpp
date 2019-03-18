@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The string filter value.</p>
      */
+    inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
+
+    /**
+     * <p>The string filter value.</p>
+     */
     inline void SetValue(const Aws::String& value) { m_valueHasBeenSet = true; m_value = value; }
 
     /**
@@ -89,6 +94,12 @@ namespace Model
      * findings. </p>
      */
     inline const StringFilterComparison& GetComparison() const{ return m_comparison; }
+
+    /**
+     * <p>Represents the condition to be applied to a string value when querying for
+     * findings. </p>
+     */
+    inline bool ComparisonHasBeenSet() const { return m_comparisonHasBeenSet; }
 
     /**
      * <p>Represents the condition to be applied to a string value when querying for

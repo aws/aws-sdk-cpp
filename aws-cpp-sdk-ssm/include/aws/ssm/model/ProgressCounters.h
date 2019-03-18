@@ -57,6 +57,12 @@ namespace Model
      * <p>The total number of steps executed in all specified AWS Regions and accounts
      * for the current Automation execution.</p>
      */
+    inline bool TotalStepsHasBeenSet() const { return m_totalStepsHasBeenSet; }
+
+    /**
+     * <p>The total number of steps executed in all specified AWS Regions and accounts
+     * for the current Automation execution.</p>
+     */
     inline void SetTotalSteps(int value) { m_totalStepsHasBeenSet = true; m_totalSteps = value; }
 
     /**
@@ -71,6 +77,12 @@ namespace Model
      * Regions and accounts for the current Automation execution.</p>
      */
     inline int GetSuccessSteps() const{ return m_successSteps; }
+
+    /**
+     * <p>The total number of steps that successfully completed in all specified AWS
+     * Regions and accounts for the current Automation execution.</p>
+     */
+    inline bool SuccessStepsHasBeenSet() const { return m_successStepsHasBeenSet; }
 
     /**
      * <p>The total number of steps that successfully completed in all specified AWS
@@ -95,6 +107,12 @@ namespace Model
      * <p>The total number of steps that failed to execute in all specified AWS Regions
      * and accounts for the current Automation execution.</p>
      */
+    inline bool FailedStepsHasBeenSet() const { return m_failedStepsHasBeenSet; }
+
+    /**
+     * <p>The total number of steps that failed to execute in all specified AWS Regions
+     * and accounts for the current Automation execution.</p>
+     */
     inline void SetFailedSteps(int value) { m_failedStepsHasBeenSet = true; m_failedSteps = value; }
 
     /**
@@ -114,6 +132,12 @@ namespace Model
      * <p>The total number of steps that the system cancelled in all specified AWS
      * Regions and accounts for the current Automation execution.</p>
      */
+    inline bool CancelledStepsHasBeenSet() const { return m_cancelledStepsHasBeenSet; }
+
+    /**
+     * <p>The total number of steps that the system cancelled in all specified AWS
+     * Regions and accounts for the current Automation execution.</p>
+     */
     inline void SetCancelledSteps(int value) { m_cancelledStepsHasBeenSet = true; m_cancelledSteps = value; }
 
     /**
@@ -128,6 +152,12 @@ namespace Model
      * accounts for the current Automation execution.</p>
      */
     inline int GetTimedOutSteps() const{ return m_timedOutSteps; }
+
+    /**
+     * <p>The total number of steps that timed out in all specified AWS Regions and
+     * accounts for the current Automation execution.</p>
+     */
+    inline bool TimedOutStepsHasBeenSet() const { return m_timedOutStepsHasBeenSet; }
 
     /**
      * <p>The total number of steps that timed out in all specified AWS Regions and

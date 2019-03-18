@@ -62,6 +62,15 @@ namespace Model
      * Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General
      * Reference</i>.</p>
      */
+    inline bool SAMLProviderArnHasBeenSet() const { return m_sAMLProviderArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the SAML provider resource object in IAM to
+     * get information about.</p> <p>For more information about ARNs, see <a
+     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General
+     * Reference</i>.</p>
+     */
     inline void SetSAMLProviderArn(const Aws::String& value) { m_sAMLProviderArnHasBeenSet = true; m_sAMLProviderArn = value; }
 
     /**

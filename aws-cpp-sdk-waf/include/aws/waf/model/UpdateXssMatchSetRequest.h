@@ -61,6 +61,13 @@ namespace Model
      * to update. <code>XssMatchSetId</code> is returned by <a>CreateXssMatchSet</a>
      * and by <a>ListXssMatchSets</a>.</p>
      */
+    inline bool XssMatchSetIdHasBeenSet() const { return m_xssMatchSetIdHasBeenSet; }
+
+    /**
+     * <p>The <code>XssMatchSetId</code> of the <code>XssMatchSet</code> that you want
+     * to update. <code>XssMatchSetId</code> is returned by <a>CreateXssMatchSet</a>
+     * and by <a>ListXssMatchSets</a>.</p>
+     */
     inline void SetXssMatchSetId(const Aws::String& value) { m_xssMatchSetIdHasBeenSet = true; m_xssMatchSetId = value; }
 
     /**
@@ -107,6 +114,11 @@ namespace Model
     /**
      * <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
      */
+    inline bool ChangeTokenHasBeenSet() const { return m_changeTokenHasBeenSet; }
+
+    /**
+     * <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
+     */
     inline void SetChangeToken(const Aws::String& value) { m_changeTokenHasBeenSet = true; m_changeToken = value; }
 
     /**
@@ -145,6 +157,17 @@ namespace Model
      * Contains <code>Data</code> and <code>Type</code> </p> </li> </ul>
      */
     inline const Aws::Vector<XssMatchSetUpdate>& GetUpdates() const{ return m_updates; }
+
+    /**
+     * <p>An array of <code>XssMatchSetUpdate</code> objects that you want to insert
+     * into or delete from an <a>XssMatchSet</a>. For more information, see the
+     * applicable data types:</p> <ul> <li> <p> <a>XssMatchSetUpdate</a>: Contains
+     * <code>Action</code> and <code>XssMatchTuple</code> </p> </li> <li> <p>
+     * <a>XssMatchTuple</a>: Contains <code>FieldToMatch</code> and
+     * <code>TextTransformation</code> </p> </li> <li> <p> <a>FieldToMatch</a>:
+     * Contains <code>Data</code> and <code>Type</code> </p> </li> </ul>
+     */
+    inline bool UpdatesHasBeenSet() const { return m_updatesHasBeenSet; }
 
     /**
      * <p>An array of <code>XssMatchSetUpdate</code> objects that you want to insert

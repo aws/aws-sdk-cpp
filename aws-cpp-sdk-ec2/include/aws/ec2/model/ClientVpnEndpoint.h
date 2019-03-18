@@ -64,6 +64,11 @@ namespace Model
     /**
      * <p>The ID of the Client VPN endpoint.</p>
      */
+    inline bool ClientVpnEndpointIdHasBeenSet() const { return m_clientVpnEndpointIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the Client VPN endpoint.</p>
+     */
     inline void SetClientVpnEndpointId(const Aws::String& value) { m_clientVpnEndpointIdHasBeenSet = true; m_clientVpnEndpointId = value; }
 
     /**
@@ -96,6 +101,11 @@ namespace Model
      * <p>A brief description of the endpoint.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
+
+    /**
+     * <p>A brief description of the endpoint.</p>
+     */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
 
     /**
      * <p>A brief description of the endpoint.</p>
@@ -136,6 +146,11 @@ namespace Model
     /**
      * <p>The current state of the Client VPN endpoint.</p>
      */
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
+
+    /**
+     * <p>The current state of the Client VPN endpoint.</p>
+     */
     inline void SetStatus(const ClientVpnEndpointStatus& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
@@ -158,6 +173,11 @@ namespace Model
      * <p>The date and time the Client VPN endpoint was created.</p>
      */
     inline const Aws::String& GetCreationTime() const{ return m_creationTime; }
+
+    /**
+     * <p>The date and time the Client VPN endpoint was created.</p>
+     */
+    inline bool CreationTimeHasBeenSet() const { return m_creationTimeHasBeenSet; }
 
     /**
      * <p>The date and time the Client VPN endpoint was created.</p>
@@ -198,6 +218,11 @@ namespace Model
     /**
      * <p>The date and time the Client VPN endpoint was deleted, if applicable.</p>
      */
+    inline bool DeletionTimeHasBeenSet() const { return m_deletionTimeHasBeenSet; }
+
+    /**
+     * <p>The date and time the Client VPN endpoint was deleted, if applicable.</p>
+     */
     inline void SetDeletionTime(const Aws::String& value) { m_deletionTimeHasBeenSet = true; m_deletionTime = value; }
 
     /**
@@ -231,6 +256,12 @@ namespace Model
      * endpoint.</p>
      */
     inline const Aws::String& GetDnsName() const{ return m_dnsName; }
+
+    /**
+     * <p>The DNS name to be used by clients when connecting to the Client VPN
+     * endpoint.</p>
+     */
+    inline bool DnsNameHasBeenSet() const { return m_dnsNameHasBeenSet; }
 
     /**
      * <p>The DNS name to be used by clients when connecting to the Client VPN
@@ -279,6 +310,12 @@ namespace Model
      * <p>The IPv4 address range, in CIDR notation, from which client IP addresses are
      * assigned.</p>
      */
+    inline bool ClientCidrBlockHasBeenSet() const { return m_clientCidrBlockHasBeenSet; }
+
+    /**
+     * <p>The IPv4 address range, in CIDR notation, from which client IP addresses are
+     * assigned.</p>
+     */
     inline void SetClientCidrBlock(const Aws::String& value) { m_clientCidrBlockHasBeenSet = true; m_clientCidrBlock = value; }
 
     /**
@@ -316,6 +353,11 @@ namespace Model
      * <p>Information about the DNS servers to be used for DNS resolution. </p>
      */
     inline const Aws::Vector<Aws::String>& GetDnsServers() const{ return m_dnsServers; }
+
+    /**
+     * <p>Information about the DNS servers to be used for DNS resolution. </p>
+     */
+    inline bool DnsServersHasBeenSet() const { return m_dnsServersHasBeenSet; }
 
     /**
      * <p>Information about the DNS servers to be used for DNS resolution. </p>
@@ -361,6 +403,11 @@ namespace Model
     /**
      * <p>Indicates whether VPN split tunneling is supported.</p>
      */
+    inline bool SplitTunnelHasBeenSet() const { return m_splitTunnelHasBeenSet; }
+
+    /**
+     * <p>Indicates whether VPN split tunneling is supported.</p>
+     */
     inline void SetSplitTunnel(bool value) { m_splitTunnelHasBeenSet = true; m_splitTunnel = value; }
 
     /**
@@ -373,6 +420,11 @@ namespace Model
      * <p>The protocol used by the VPN session.</p>
      */
     inline const VpnProtocol& GetVpnProtocol() const{ return m_vpnProtocol; }
+
+    /**
+     * <p>The protocol used by the VPN session.</p>
+     */
+    inline bool VpnProtocolHasBeenSet() const { return m_vpnProtocolHasBeenSet; }
 
     /**
      * <p>The protocol used by the VPN session.</p>
@@ -403,6 +455,11 @@ namespace Model
     /**
      * <p>The transport protocol used by the Client VPN endpoint.</p>
      */
+    inline bool TransportProtocolHasBeenSet() const { return m_transportProtocolHasBeenSet; }
+
+    /**
+     * <p>The transport protocol used by the Client VPN endpoint.</p>
+     */
     inline void SetTransportProtocol(const TransportProtocol& value) { m_transportProtocolHasBeenSet = true; m_transportProtocol = value; }
 
     /**
@@ -425,6 +482,11 @@ namespace Model
      * <p>The ARN of the server certificate.</p>
      */
     inline const Aws::String& GetServerCertificateArn() const{ return m_serverCertificateArn; }
+
+    /**
+     * <p>The ARN of the server certificate.</p>
+     */
+    inline bool ServerCertificateArnHasBeenSet() const { return m_serverCertificateArnHasBeenSet; }
 
     /**
      * <p>The ARN of the server certificate.</p>
@@ -462,6 +524,12 @@ namespace Model
      * endpoint.</p>
      */
     inline const Aws::Vector<ClientVpnAuthentication>& GetAuthenticationOptions() const{ return m_authenticationOptions; }
+
+    /**
+     * <p>Information about the authentication method used by the Client VPN
+     * endpoint.</p>
+     */
+    inline bool AuthenticationOptionsHasBeenSet() const { return m_authenticationOptionsHasBeenSet; }
 
     /**
      * <p>Information about the authentication method used by the Client VPN
@@ -510,6 +578,12 @@ namespace Model
      * <p>Information about the client connection logging options for the Client VPN
      * endpoint.</p>
      */
+    inline bool ConnectionLogOptionsHasBeenSet() const { return m_connectionLogOptionsHasBeenSet; }
+
+    /**
+     * <p>Information about the client connection logging options for the Client VPN
+     * endpoint.</p>
+     */
     inline void SetConnectionLogOptions(const ConnectionLogResponseOptions& value) { m_connectionLogOptionsHasBeenSet = true; m_connectionLogOptions = value; }
 
     /**
@@ -535,6 +609,11 @@ namespace Model
      * <p>Any tags assigned to the Client VPN endpoint.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>Any tags assigned to the Client VPN endpoint.</p>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
      * <p>Any tags assigned to the Client VPN endpoint.</p>

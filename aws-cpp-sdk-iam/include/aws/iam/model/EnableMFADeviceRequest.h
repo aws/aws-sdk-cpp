@@ -62,6 +62,15 @@ namespace Model
      * consisting of upper and lowercase alphanumeric characters with no spaces. You
      * can also include any of the following characters: _+=,.@-</p>
      */
+    inline bool UserNameHasBeenSet() const { return m_userNameHasBeenSet; }
+
+    /**
+     * <p>The name of the IAM user for whom you want to enable the MFA device.</p>
+     * <p>This parameter allows (through its <a
+     * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
+     * consisting of upper and lowercase alphanumeric characters with no spaces. You
+     * can also include any of the following characters: _+=,.@-</p>
+     */
     inline void SetUserName(const Aws::String& value) { m_userNameHasBeenSet = true; m_userName = value; }
 
     /**
@@ -119,6 +128,16 @@ namespace Model
      * =,.@:/-</p>
      */
     inline const Aws::String& GetSerialNumber() const{ return m_serialNumber; }
+
+    /**
+     * <p>The serial number that uniquely identifies the MFA device. For virtual MFA
+     * devices, the serial number is the device ARN.</p> <p>This parameter allows
+     * (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a
+     * string of characters consisting of upper and lowercase alphanumeric characters
+     * with no spaces. You can also include any of the following characters:
+     * =,.@:/-</p>
+     */
+    inline bool SerialNumberHasBeenSet() const { return m_serialNumberHasBeenSet; }
 
     /**
      * <p>The serial number that uniquely identifies the MFA device. For virtual MFA
@@ -193,6 +212,19 @@ namespace Model
      * the device</a>.</p> </important>
      */
     inline const Aws::String& GetAuthenticationCode1() const{ return m_authenticationCode1; }
+
+    /**
+     * <p>An authentication code emitted by the device. </p> <p>The format for this
+     * parameter is a string of six digits.</p> <important> <p>Submit your request
+     * immediately after generating the authentication codes. If you generate the codes
+     * and then wait too long to submit the request, the MFA device successfully
+     * associates with the user but the MFA device becomes out of sync. This happens
+     * because time-based one-time passwords (TOTP) expire after a short period of
+     * time. If this happens, you can <a
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_mfa_sync.html">resync
+     * the device</a>.</p> </important>
+     */
+    inline bool AuthenticationCode1HasBeenSet() const { return m_authenticationCode1HasBeenSet; }
 
     /**
      * <p>An authentication code emitted by the device. </p> <p>The format for this
@@ -285,6 +317,19 @@ namespace Model
      * the device</a>.</p> </important>
      */
     inline const Aws::String& GetAuthenticationCode2() const{ return m_authenticationCode2; }
+
+    /**
+     * <p>A subsequent authentication code emitted by the device.</p> <p>The format for
+     * this parameter is a string of six digits.</p> <important> <p>Submit your request
+     * immediately after generating the authentication codes. If you generate the codes
+     * and then wait too long to submit the request, the MFA device successfully
+     * associates with the user but the MFA device becomes out of sync. This happens
+     * because time-based one-time passwords (TOTP) expire after a short period of
+     * time. If this happens, you can <a
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_mfa_sync.html">resync
+     * the device</a>.</p> </important>
+     */
+    inline bool AuthenticationCode2HasBeenSet() const { return m_authenticationCode2HasBeenSet; }
 
     /**
      * <p>A subsequent authentication code emitted by the device.</p> <p>The format for

@@ -55,6 +55,11 @@ namespace Model
     /**
      * <p>Name of the license configuration.</p>
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>Name of the license configuration.</p>
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
@@ -87,6 +92,11 @@ namespace Model
      * <p>Human-friendly description of the license configuration.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
+
+    /**
+     * <p>Human-friendly description of the license configuration.</p>
+     */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
 
     /**
      * <p>Human-friendly description of the license configuration.</p>
@@ -127,6 +137,11 @@ namespace Model
     /**
      * <p>Dimension to use to track the license inventory.</p>
      */
+    inline bool LicenseCountingTypeHasBeenSet() const { return m_licenseCountingTypeHasBeenSet; }
+
+    /**
+     * <p>Dimension to use to track the license inventory.</p>
+     */
     inline void SetLicenseCountingType(const LicenseCountingType& value) { m_licenseCountingTypeHasBeenSet = true; m_licenseCountingType = value; }
 
     /**
@@ -153,6 +168,11 @@ namespace Model
     /**
      * <p>Number of licenses managed by the license configuration.</p>
      */
+    inline bool LicenseCountHasBeenSet() const { return m_licenseCountHasBeenSet; }
+
+    /**
+     * <p>Number of licenses managed by the license configuration.</p>
+     */
     inline void SetLicenseCount(long long value) { m_licenseCountHasBeenSet = true; m_licenseCount = value; }
 
     /**
@@ -171,6 +191,12 @@ namespace Model
      * <p>Flag indicating whether hard or soft license enforcement is used. Exceeding a
      * hard limit results in the blocked deployment of new instances.</p>
      */
+    inline bool LicenseCountHardLimitHasBeenSet() const { return m_licenseCountHardLimitHasBeenSet; }
+
+    /**
+     * <p>Flag indicating whether hard or soft license enforcement is used. Exceeding a
+     * hard limit results in the blocked deployment of new instances.</p>
+     */
     inline void SetLicenseCountHardLimit(bool value) { m_licenseCountHardLimitHasBeenSet = true; m_licenseCountHardLimit = value; }
 
     /**
@@ -184,6 +210,11 @@ namespace Model
      * <p>Array of configured License Manager rules.</p>
      */
     inline const Aws::Vector<Aws::String>& GetLicenseRules() const{ return m_licenseRules; }
+
+    /**
+     * <p>Array of configured License Manager rules.</p>
+     */
+    inline bool LicenseRulesHasBeenSet() const { return m_licenseRulesHasBeenSet; }
 
     /**
      * <p>Array of configured License Manager rules.</p>
@@ -228,6 +259,14 @@ namespace Model
      * created, see CreateTags .</p> <p/>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>The tags to apply to the resources during launch. You can only tag instances
+     * and volumes on launch. The specified tags are applied to all instances or
+     * volumes that are created during launch. To tag a resource after it has been
+     * created, see CreateTags .</p> <p/>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
      * <p>The tags to apply to the resources during launch. You can only tag instances

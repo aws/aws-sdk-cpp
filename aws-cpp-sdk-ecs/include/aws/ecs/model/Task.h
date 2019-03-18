@@ -65,6 +65,11 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the task.</p>
      */
+    inline bool TaskArnHasBeenSet() const { return m_taskArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the task.</p>
+     */
     inline void SetTaskArn(const Aws::String& value) { m_taskArnHasBeenSet = true; m_taskArn = value; }
 
     /**
@@ -97,6 +102,11 @@ namespace Model
      * <p>The ARN of the cluster that hosts the task.</p>
      */
     inline const Aws::String& GetClusterArn() const{ return m_clusterArn; }
+
+    /**
+     * <p>The ARN of the cluster that hosts the task.</p>
+     */
+    inline bool ClusterArnHasBeenSet() const { return m_clusterArnHasBeenSet; }
 
     /**
      * <p>The ARN of the cluster that hosts the task.</p>
@@ -137,6 +147,11 @@ namespace Model
     /**
      * <p>The ARN of the task definition that creates the task.</p>
      */
+    inline bool TaskDefinitionArnHasBeenSet() const { return m_taskDefinitionArnHasBeenSet; }
+
+    /**
+     * <p>The ARN of the task definition that creates the task.</p>
+     */
     inline void SetTaskDefinitionArn(const Aws::String& value) { m_taskDefinitionArnHasBeenSet = true; m_taskDefinitionArn = value; }
 
     /**
@@ -169,6 +184,11 @@ namespace Model
      * <p>The ARN of the container instances that host the task.</p>
      */
     inline const Aws::String& GetContainerInstanceArn() const{ return m_containerInstanceArn; }
+
+    /**
+     * <p>The ARN of the container instances that host the task.</p>
+     */
+    inline bool ContainerInstanceArnHasBeenSet() const { return m_containerInstanceArnHasBeenSet; }
 
     /**
      * <p>The ARN of the container instances that host the task.</p>
@@ -209,6 +229,11 @@ namespace Model
     /**
      * <p>One or more container overrides.</p>
      */
+    inline bool OverridesHasBeenSet() const { return m_overridesHasBeenSet; }
+
+    /**
+     * <p>One or more container overrides.</p>
+     */
     inline void SetOverrides(const TaskOverride& value) { m_overridesHasBeenSet = true; m_overrides = value; }
 
     /**
@@ -233,6 +258,13 @@ namespace Model
      * Lifecycle</a>.</p>
      */
     inline const Aws::String& GetLastStatus() const{ return m_lastStatus; }
+
+    /**
+     * <p>The last known status of the task. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_life_cycle.html">Task
+     * Lifecycle</a>.</p>
+     */
+    inline bool LastStatusHasBeenSet() const { return m_lastStatusHasBeenSet; }
 
     /**
      * <p>The last known status of the task. For more information, see <a
@@ -283,6 +315,13 @@ namespace Model
      * Lifecycle</a>.</p>
      */
     inline const Aws::String& GetDesiredStatus() const{ return m_desiredStatus; }
+
+    /**
+     * <p>The desired status of the task. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_life_cycle.html">Task
+     * Lifecycle</a>.</p>
+     */
+    inline bool DesiredStatusHasBeenSet() const { return m_desiredStatusHasBeenSet; }
 
     /**
      * <p>The desired status of the task. For more information, see <a
@@ -350,6 +389,30 @@ namespace Model
      * of 1024 (1 GB)</p> </li> </ul>
      */
     inline const Aws::String& GetCpu() const{ return m_cpu; }
+
+    /**
+     * <p>The number of CPU units used by the task as expressed in a task definition.
+     * It can be expressed as an integer using CPU units, for example
+     * <code>1024</code>. It can also be expressed as a string using vCPUs, for example
+     * <code>1 vCPU</code> or <code>1 vcpu</code>. String values are converted to an
+     * integer indicating the CPU units when the task definition is registered.</p>
+     * <p>If you are using the EC2 launch type, this field is optional. Supported
+     * values are between <code>128</code> CPU units (<code>0.125</code> vCPUs) and
+     * <code>10240</code> CPU units (<code>10</code> vCPUs).</p> <p>If you are using
+     * the Fargate launch type, this field is required and you must use one of the
+     * following values, which determines your range of supported values for the
+     * <code>memory</code> parameter:</p> <ul> <li> <p>256 (.25 vCPU) - Available
+     * <code>memory</code> values: 512 (0.5 GB), 1024 (1 GB), 2048 (2 GB)</p> </li>
+     * <li> <p>512 (.5 vCPU) - Available <code>memory</code> values: 1024 (1 GB), 2048
+     * (2 GB), 3072 (3 GB), 4096 (4 GB)</p> </li> <li> <p>1024 (1 vCPU) - Available
+     * <code>memory</code> values: 2048 (2 GB), 3072 (3 GB), 4096 (4 GB), 5120 (5 GB),
+     * 6144 (6 GB), 7168 (7 GB), 8192 (8 GB)</p> </li> <li> <p>2048 (2 vCPU) -
+     * Available <code>memory</code> values: Between 4096 (4 GB) and 16384 (16 GB) in
+     * increments of 1024 (1 GB)</p> </li> <li> <p>4096 (4 vCPU) - Available
+     * <code>memory</code> values: Between 8192 (8 GB) and 30720 (30 GB) in increments
+     * of 1024 (1 GB)</p> </li> </ul>
+     */
+    inline bool CpuHasBeenSet() const { return m_cpuHasBeenSet; }
 
     /**
      * <p>The number of CPU units used by the task as expressed in a task definition.
@@ -536,6 +599,27 @@ namespace Model
      * </li> <li> <p>Between 8192 (8 GB) and 30720 (30 GB) in increments of 1024 (1 GB)
      * - Available <code>cpu</code> values: 4096 (4 vCPU)</p> </li> </ul>
      */
+    inline bool MemoryHasBeenSet() const { return m_memoryHasBeenSet; }
+
+    /**
+     * <p>The amount of memory (in MiB) used by the task as expressed in a task
+     * definition. It can be expressed as an integer using MiB, for example
+     * <code>1024</code>. It can also be expressed as a string using GB, for example
+     * <code>1GB</code> or <code>1 GB</code>. String values are converted to an integer
+     * indicating the MiB when the task definition is registered.</p> <p>If you are
+     * using the EC2 launch type, this field is optional.</p> <p>If you are using the
+     * Fargate launch type, this field is required and you must use one of the
+     * following values, which determines your range of supported values for the
+     * <code>cpu</code> parameter:</p> <ul> <li> <p>512 (0.5 GB), 1024 (1 GB), 2048 (2
+     * GB) - Available <code>cpu</code> values: 256 (.25 vCPU)</p> </li> <li> <p>1024
+     * (1 GB), 2048 (2 GB), 3072 (3 GB), 4096 (4 GB) - Available <code>cpu</code>
+     * values: 512 (.5 vCPU)</p> </li> <li> <p>2048 (2 GB), 3072 (3 GB), 4096 (4 GB),
+     * 5120 (5 GB), 6144 (6 GB), 7168 (7 GB), 8192 (8 GB) - Available <code>cpu</code>
+     * values: 1024 (1 vCPU)</p> </li> <li> <p>Between 4096 (4 GB) and 16384 (16 GB) in
+     * increments of 1024 (1 GB) - Available <code>cpu</code> values: 2048 (2 vCPU)</p>
+     * </li> <li> <p>Between 8192 (8 GB) and 30720 (30 GB) in increments of 1024 (1 GB)
+     * - Available <code>cpu</code> values: 4096 (4 vCPU)</p> </li> </ul>
+     */
     inline void SetMemory(const Aws::String& value) { m_memoryHasBeenSet = true; m_memory = value; }
 
     /**
@@ -652,6 +736,11 @@ namespace Model
     /**
      * <p>The containers associated with the task.</p>
      */
+    inline bool ContainersHasBeenSet() const { return m_containersHasBeenSet; }
+
+    /**
+     * <p>The containers associated with the task.</p>
+     */
     inline void SetContainers(const Aws::Vector<Container>& value) { m_containersHasBeenSet = true; m_containers = value; }
 
     /**
@@ -686,6 +775,13 @@ namespace Model
      * ID of the service that starts it.</p>
      */
     inline const Aws::String& GetStartedBy() const{ return m_startedBy; }
+
+    /**
+     * <p>The tag specified when a task is started. If the task is started by an Amazon
+     * ECS service, then the <code>startedBy</code> parameter contains the deployment
+     * ID of the service that starts it.</p>
+     */
+    inline bool StartedByHasBeenSet() const { return m_startedByHasBeenSet; }
 
     /**
      * <p>The tag specified when a task is started. If the task is started by an Amazon
@@ -748,6 +844,16 @@ namespace Model
      * reported in CloudWatch Events for the task (inside the <code>detail</code>
      * object) to verify that the version in your event stream is current.</p>
      */
+    inline bool VersionHasBeenSet() const { return m_versionHasBeenSet; }
+
+    /**
+     * <p>The version counter for the task. Every time a task experiences a change that
+     * triggers a CloudWatch event, the version counter is incremented. If you are
+     * replicating your Amazon ECS task state with CloudWatch Events, you can compare
+     * the version of a task reported by the Amazon ECS API actionss with the version
+     * reported in CloudWatch Events for the task (inside the <code>detail</code>
+     * object) to verify that the version in your event stream is current.</p>
+     */
     inline void SetVersion(long long value) { m_versionHasBeenSet = true; m_version = value; }
 
     /**
@@ -765,6 +871,11 @@ namespace Model
      * <p>The reason that the task was stopped.</p>
      */
     inline const Aws::String& GetStoppedReason() const{ return m_stoppedReason; }
+
+    /**
+     * <p>The reason that the task was stopped.</p>
+     */
+    inline bool StoppedReasonHasBeenSet() const { return m_stoppedReasonHasBeenSet; }
 
     /**
      * <p>The reason that the task was stopped.</p>
@@ -807,6 +918,12 @@ namespace Model
      * <p>The stop code indicating why a task was stopped. The
      * <code>stoppedReason</code> may contain additional details.</p>
      */
+    inline bool StopCodeHasBeenSet() const { return m_stopCodeHasBeenSet; }
+
+    /**
+     * <p>The stop code indicating why a task was stopped. The
+     * <code>stoppedReason</code> may contain additional details.</p>
+     */
     inline void SetStopCode(const TaskStopCode& value) { m_stopCodeHasBeenSet = true; m_stopCode = value; }
 
     /**
@@ -836,6 +953,11 @@ namespace Model
     /**
      * <p>The connectivity status of a task.</p>
      */
+    inline bool ConnectivityHasBeenSet() const { return m_connectivityHasBeenSet; }
+
+    /**
+     * <p>The connectivity status of a task.</p>
+     */
     inline void SetConnectivity(const Connectivity& value) { m_connectivityHasBeenSet = true; m_connectivity = value; }
 
     /**
@@ -859,6 +981,12 @@ namespace Model
      * status.</p>
      */
     inline const Aws::Utils::DateTime& GetConnectivityAt() const{ return m_connectivityAt; }
+
+    /**
+     * <p>The Unix timestamp for when the task last went into <code>CONNECTED</code>
+     * status.</p>
+     */
+    inline bool ConnectivityAtHasBeenSet() const { return m_connectivityAtHasBeenSet; }
 
     /**
      * <p>The Unix timestamp for when the task last went into <code>CONNECTED</code>
@@ -893,6 +1021,11 @@ namespace Model
     /**
      * <p>The Unix timestamp for when the container image pull began.</p>
      */
+    inline bool PullStartedAtHasBeenSet() const { return m_pullStartedAtHasBeenSet; }
+
+    /**
+     * <p>The Unix timestamp for when the container image pull began.</p>
+     */
     inline void SetPullStartedAt(const Aws::Utils::DateTime& value) { m_pullStartedAtHasBeenSet = true; m_pullStartedAt = value; }
 
     /**
@@ -915,6 +1048,11 @@ namespace Model
      * <p>The Unix timestamp for when the container image pull completed.</p>
      */
     inline const Aws::Utils::DateTime& GetPullStoppedAt() const{ return m_pullStoppedAt; }
+
+    /**
+     * <p>The Unix timestamp for when the container image pull completed.</p>
+     */
+    inline bool PullStoppedAtHasBeenSet() const { return m_pullStoppedAtHasBeenSet; }
 
     /**
      * <p>The Unix timestamp for when the container image pull completed.</p>
@@ -945,6 +1083,11 @@ namespace Model
     /**
      * <p>The Unix timestamp for when the task execution stopped.</p>
      */
+    inline bool ExecutionStoppedAtHasBeenSet() const { return m_executionStoppedAtHasBeenSet; }
+
+    /**
+     * <p>The Unix timestamp for when the task execution stopped.</p>
+     */
     inline void SetExecutionStoppedAt(const Aws::Utils::DateTime& value) { m_executionStoppedAtHasBeenSet = true; m_executionStoppedAt = value; }
 
     /**
@@ -968,6 +1111,12 @@ namespace Model
      * <code>PENDING</code> state).</p>
      */
     inline const Aws::Utils::DateTime& GetCreatedAt() const{ return m_createdAt; }
+
+    /**
+     * <p>The Unix timestamp for when the task was created (the task entered the
+     * <code>PENDING</code> state).</p>
+     */
+    inline bool CreatedAtHasBeenSet() const { return m_createdAtHasBeenSet; }
 
     /**
      * <p>The Unix timestamp for when the task was created (the task entered the
@@ -1004,6 +1153,12 @@ namespace Model
      * <p>The Unix timestamp for when the task started (the task transitioned from the
      * <code>PENDING</code> state to the <code>RUNNING</code> state).</p>
      */
+    inline bool StartedAtHasBeenSet() const { return m_startedAtHasBeenSet; }
+
+    /**
+     * <p>The Unix timestamp for when the task started (the task transitioned from the
+     * <code>PENDING</code> state to the <code>RUNNING</code> state).</p>
+     */
     inline void SetStartedAt(const Aws::Utils::DateTime& value) { m_startedAtHasBeenSet = true; m_startedAt = value; }
 
     /**
@@ -1030,6 +1185,12 @@ namespace Model
      * <code>RUNNING</code> state to <code>STOPPED</code>).</p>
      */
     inline const Aws::Utils::DateTime& GetStoppingAt() const{ return m_stoppingAt; }
+
+    /**
+     * <p>The Unix timestamp for when the task stops (transitions from the
+     * <code>RUNNING</code> state to <code>STOPPED</code>).</p>
+     */
+    inline bool StoppingAtHasBeenSet() const { return m_stoppingAtHasBeenSet; }
 
     /**
      * <p>The Unix timestamp for when the task stops (transitions from the
@@ -1066,6 +1227,12 @@ namespace Model
      * <p>The Unix timestamp for when the task was stopped (the task transitioned from
      * the <code>RUNNING</code> state to the <code>STOPPED</code> state).</p>
      */
+    inline bool StoppedAtHasBeenSet() const { return m_stoppedAtHasBeenSet; }
+
+    /**
+     * <p>The Unix timestamp for when the task was stopped (the task transitioned from
+     * the <code>RUNNING</code> state to the <code>STOPPED</code> state).</p>
+     */
     inline void SetStoppedAt(const Aws::Utils::DateTime& value) { m_stoppedAtHasBeenSet = true; m_stoppedAt = value; }
 
     /**
@@ -1091,6 +1258,11 @@ namespace Model
      * <p>The name of the task group associated with the task.</p>
      */
     inline const Aws::String& GetGroup() const{ return m_group; }
+
+    /**
+     * <p>The name of the task group associated with the task.</p>
+     */
+    inline bool GroupHasBeenSet() const { return m_groupHasBeenSet; }
 
     /**
      * <p>The name of the task group associated with the task.</p>
@@ -1137,6 +1309,14 @@ namespace Model
      * ECS Launch Types</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p>
      */
+    inline bool LaunchTypeHasBeenSet() const { return m_launchTypeHasBeenSet; }
+
+    /**
+     * <p>The launch type on which your task is running. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon
+     * ECS Launch Types</a> in the <i>Amazon Elastic Container Service Developer
+     * Guide</i>.</p>
+     */
     inline void SetLaunchType(const LaunchType& value) { m_launchTypeHasBeenSet = true; m_launchType = value; }
 
     /**
@@ -1174,6 +1354,17 @@ namespace Model
      * Developer Guide</i>.</p>
      */
     inline const Aws::String& GetPlatformVersion() const{ return m_platformVersion; }
+
+    /**
+     * <p>The platform version on which your task is running. A platform version is
+     * only specified for tasks using the Fargate launch type. If one is not specified,
+     * the <code>LATEST</code> platform version is used by default. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS
+     * Fargate Platform Versions</a> in the <i>Amazon Elastic Container Service
+     * Developer Guide</i>.</p>
+     */
+    inline bool PlatformVersionHasBeenSet() const { return m_platformVersionHasBeenSet; }
 
     /**
      * <p>The platform version on which your task is running. A platform version is
@@ -1252,6 +1443,12 @@ namespace Model
      * <p>The Elastic Network Adapter associated with the task if the task uses the
      * <code>awsvpc</code> network mode.</p>
      */
+    inline bool AttachmentsHasBeenSet() const { return m_attachmentsHasBeenSet; }
+
+    /**
+     * <p>The Elastic Network Adapter associated with the task if the task uses the
+     * <code>awsvpc</code> network mode.</p>
+     */
     inline void SetAttachments(const Aws::Vector<Attachment>& value) { m_attachmentsHasBeenSet = true; m_attachments = value; }
 
     /**
@@ -1300,6 +1497,22 @@ namespace Model
      * image.</p> </note>
      */
     inline const HealthStatus& GetHealthStatus() const{ return m_healthStatus; }
+
+    /**
+     * <p>The health status for the task, which is determined by the health of the
+     * essential containers in the task. If all essential containers in the task are
+     * reporting as <code>HEALTHY</code>, then the task status also reports as
+     * <code>HEALTHY</code>. If any essential containers in the task are reporting as
+     * <code>UNHEALTHY</code> or <code>UNKNOWN</code>, then the task status also
+     * reports as <code>UNHEALTHY</code> or <code>UNKNOWN</code>, accordingly.</p>
+     * <note> <p>The Amazon ECS container agent does not monitor or report on Docker
+     * health checks that are embedded in a container image (such as those specified in
+     * a parent image or from the image's Dockerfile) and not specified in the
+     * container definition. Health check parameters that are specified in a container
+     * definition override any Docker health checks that exist in the container
+     * image.</p> </note>
+     */
+    inline bool HealthStatusHasBeenSet() const { return m_healthStatusHasBeenSet; }
 
     /**
      * <p>The health status for the task, which is determined by the health of the
@@ -1373,6 +1586,14 @@ namespace Model
      * values can have a maximum length of 256 characters.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>The metadata that you apply to the task to help you categorize and organize
+     * them. Each tag consists of a key and an optional value, both of which you
+     * define. Tag keys can have a maximum character length of 128 characters, and tag
+     * values can have a maximum length of 256 characters.</p>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
      * <p>The metadata that you apply to the task to help you categorize and organize

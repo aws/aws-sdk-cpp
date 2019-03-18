@@ -65,6 +65,13 @@ namespace Model
      * If this parameter is not set then the Initialization Vector will follow the
      * segment number by default.
      */
+    inline bool ConstantInitializationVectorHasBeenSet() const { return m_constantInitializationVectorHasBeenSet; }
+
+    /**
+     * This is a 128-bit, 16-byte hex value represented by a 32-character text string.
+     * If this parameter is not set then the Initialization Vector will follow the
+     * segment number by default.
+     */
     inline void SetConstantInitializationVector(const Aws::String& value) { m_constantInitializationVectorHasBeenSet = true; m_constantInitializationVector = value; }
 
     /**
@@ -107,6 +114,9 @@ namespace Model
     inline const HlsEncryptionType& GetEncryptionMethod() const{ return m_encryptionMethod; }
 
     
+    inline bool EncryptionMethodHasBeenSet() const { return m_encryptionMethodHasBeenSet; }
+
+    
     inline void SetEncryptionMethod(const HlsEncryptionType& value) { m_encryptionMethodHasBeenSet = true; m_encryptionMethod = value; }
 
     
@@ -121,6 +131,9 @@ namespace Model
 
     
     inline const HlsInitializationVectorInManifest& GetInitializationVectorInManifest() const{ return m_initializationVectorInManifest; }
+
+    
+    inline bool InitializationVectorInManifestHasBeenSet() const { return m_initializationVectorInManifestHasBeenSet; }
 
     
     inline void SetInitializationVectorInManifest(const HlsInitializationVectorInManifest& value) { m_initializationVectorInManifestHasBeenSet = true; m_initializationVectorInManifest = value; }
@@ -139,6 +152,9 @@ namespace Model
     inline const HlsOfflineEncrypted& GetOfflineEncrypted() const{ return m_offlineEncrypted; }
 
     
+    inline bool OfflineEncryptedHasBeenSet() const { return m_offlineEncryptedHasBeenSet; }
+
+    
     inline void SetOfflineEncrypted(const HlsOfflineEncrypted& value) { m_offlineEncryptedHasBeenSet = true; m_offlineEncrypted = value; }
 
     
@@ -153,6 +169,9 @@ namespace Model
 
     
     inline const SpekeKeyProvider& GetSpekeKeyProvider() const{ return m_spekeKeyProvider; }
+
+    
+    inline bool SpekeKeyProviderHasBeenSet() const { return m_spekeKeyProviderHasBeenSet; }
 
     
     inline void SetSpekeKeyProvider(const SpekeKeyProvider& value) { m_spekeKeyProviderHasBeenSet = true; m_spekeKeyProvider = value; }
@@ -171,6 +190,9 @@ namespace Model
     inline const StaticKeyProvider& GetStaticKeyProvider() const{ return m_staticKeyProvider; }
 
     
+    inline bool StaticKeyProviderHasBeenSet() const { return m_staticKeyProviderHasBeenSet; }
+
+    
     inline void SetStaticKeyProvider(const StaticKeyProvider& value) { m_staticKeyProviderHasBeenSet = true; m_staticKeyProvider = value; }
 
     
@@ -185,6 +207,9 @@ namespace Model
 
     
     inline const HlsKeyProviderType& GetType() const{ return m_type; }
+
+    
+    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
 
     
     inline void SetType(const HlsKeyProviderType& value) { m_typeHasBeenSet = true; m_type = value; }

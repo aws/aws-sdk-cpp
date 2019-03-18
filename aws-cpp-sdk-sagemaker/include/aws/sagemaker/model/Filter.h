@@ -89,6 +89,14 @@ namespace Model
      * see <a>TrainingJob</a> properties. You must specify a valid property name for
      * the resource.</p>
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>A property name. For example, <code>TrainingJobName</code>. For the list of
+     * valid property names returned in a search result for each supported resource,
+     * see <a>TrainingJob</a> properties. You must specify a valid property name for
+     * the resource.</p>
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
@@ -153,6 +161,28 @@ namespace Model
      * specified a filter <code>Value</code>, the default is <code>Equals</code>.</p>
      */
     inline const Operator& GetOperator() const{ return m_operator; }
+
+    /**
+     * <p>A Boolean binary operator that is used to evaluate the filter. The operator
+     * field contains one of the following values:</p> <dl> <dt>Equals</dt> <dd> <p>The
+     * specified resource in <code>Name</code> equals the specified
+     * <code>Value</code>.</p> </dd> <dt>NotEquals</dt> <dd> <p>The specified resource
+     * in <code>Name</code> does not equal the specified <code>Value</code>.</p> </dd>
+     * <dt>GreaterThan</dt> <dd> <p>The specified resource in <code>Name</code> is
+     * greater than the specified <code>Value</code>. Not supported for text-based
+     * properties.</p> </dd> <dt>GreaterThanOrEqualTo</dt> <dd> <p>The specified
+     * resource in <code>Name</code> is greater than or equal to the specified
+     * <code>Value</code>. Not supported for text-based properties.</p> </dd>
+     * <dt>LessThan</dt> <dd> <p>The specified resource in <code>Name</code> is less
+     * than the specified <code>Value</code>. Not supported for text-based
+     * properties.</p> </dd> <dt>LessThanOrEqualTo</dt> <dd> <p>The specified resource
+     * in <code>Name</code> is less than or equal to the specified <code>Value</code>.
+     * Not supported for text-based properties.</p> </dd> <dt>Contains</dt> <dd>
+     * <p>Only supported for text-based properties. The word-list of the property
+     * contains the specified <code>Value</code>.</p> </dd> </dl> <p>If you have
+     * specified a filter <code>Value</code>, the default is <code>Equals</code>.</p>
+     */
+    inline bool OperatorHasBeenSet() const { return m_operatorHasBeenSet; }
 
     /**
      * <p>A Boolean binary operator that is used to evaluate the filter. The operator
@@ -251,6 +281,15 @@ namespace Model
      * following format: <code>YYYY-mm-dd'T'HH:MM:SS</code>.</p>
      */
     inline const Aws::String& GetValue() const{ return m_value; }
+
+    /**
+     * <p>A value used with <code>Resource</code> and <code>Operator</code> to
+     * determine if objects satisfy the filter's condition. For numerical properties,
+     * <code>Value</code> must be an integer or floating-point decimal. For timestamp
+     * properties, <code>Value</code> must be an ISO 8601 date-time string of the
+     * following format: <code>YYYY-mm-dd'T'HH:MM:SS</code>.</p>
+     */
+    inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
 
     /**
      * <p>A value used with <code>Resource</code> and <code>Operator</code> to

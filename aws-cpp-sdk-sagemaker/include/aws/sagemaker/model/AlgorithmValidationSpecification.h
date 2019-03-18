@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p>The IAM roles that Amazon SageMaker uses to run the training jobs.</p>
      */
+    inline bool ValidationRoleHasBeenSet() const { return m_validationRoleHasBeenSet; }
+
+    /**
+     * <p>The IAM roles that Amazon SageMaker uses to run the training jobs.</p>
+     */
     inline void SetValidationRole(const Aws::String& value) { m_validationRoleHasBeenSet = true; m_validationRole = value; }
 
     /**
@@ -92,6 +97,13 @@ namespace Model
      * validate your algorithm.</p>
      */
     inline const Aws::Vector<AlgorithmValidationProfile>& GetValidationProfiles() const{ return m_validationProfiles; }
+
+    /**
+     * <p>An array of <code>AlgorithmValidationProfile</code> objects, each of which
+     * specifies a training job and batch transform job that Amazon SageMaker runs to
+     * validate your algorithm.</p>
+     */
+    inline bool ValidationProfilesHasBeenSet() const { return m_validationProfilesHasBeenSet; }
 
     /**
      * <p>An array of <code>AlgorithmValidationProfile</code> objects, each of which

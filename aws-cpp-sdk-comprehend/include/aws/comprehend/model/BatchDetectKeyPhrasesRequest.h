@@ -58,6 +58,13 @@ namespace Model
      * maximum of 25 documents. Each document must contain fewer that 5,000 bytes of
      * UTF-8 encoded characters.</p>
      */
+    inline bool TextListHasBeenSet() const { return m_textListHasBeenSet; }
+
+    /**
+     * <p>A list containing the text of the input documents. The list can contain a
+     * maximum of 25 documents. Each document must contain fewer that 5,000 bytes of
+     * UTF-8 encoded characters.</p>
+     */
     inline void SetTextList(const Aws::Vector<Aws::String>& value) { m_textListHasBeenSet = true; m_textList = value; }
 
     /**
@@ -108,6 +115,12 @@ namespace Model
      * Spanish ("es"). All documents must be in the same language.</p>
      */
     inline const LanguageCode& GetLanguageCode() const{ return m_languageCode; }
+
+    /**
+     * <p>The language of the input documents. You can specify English ("en") or
+     * Spanish ("es"). All documents must be in the same language.</p>
+     */
+    inline bool LanguageCodeHasBeenSet() const { return m_languageCodeHasBeenSet; }
 
     /**
      * <p>The language of the input documents. You can specify English ("en") or

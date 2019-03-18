@@ -59,6 +59,12 @@ namespace Model
      * <p>A suggested property name based on what you entered in the search textbox in
      * the Amazon SageMaker console.</p>
      */
+    inline bool PropertyNameHasBeenSet() const { return m_propertyNameHasBeenSet; }
+
+    /**
+     * <p>A suggested property name based on what you entered in the search textbox in
+     * the Amazon SageMaker console.</p>
+     */
     inline void SetPropertyName(const Aws::String& value) { m_propertyNameHasBeenSet = true; m_propertyName = value; }
 
     /**

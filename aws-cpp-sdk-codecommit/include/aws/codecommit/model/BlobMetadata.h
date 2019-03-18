@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The full ID of the blob.</p>
      */
+    inline bool BlobIdHasBeenSet() const { return m_blobIdHasBeenSet; }
+
+    /**
+     * <p>The full ID of the blob.</p>
+     */
     inline void SetBlobId(const Aws::String& value) { m_blobIdHasBeenSet = true; m_blobId = value; }
 
     /**
@@ -88,6 +93,11 @@ namespace Model
      * <p>The path to the blob and any associated file name, if any.</p>
      */
     inline const Aws::String& GetPath() const{ return m_path; }
+
+    /**
+     * <p>The path to the blob and any associated file name, if any.</p>
+     */
+    inline bool PathHasBeenSet() const { return m_pathHasBeenSet; }
 
     /**
      * <p>The path to the blob and any associated file name, if any.</p>
@@ -128,6 +138,15 @@ namespace Model
      * indicates a symlink</p> </li> </ul>
      */
     inline const Aws::String& GetMode() const{ return m_mode; }
+
+    /**
+     * <p>The file mode permissions of the blob. File mode permission codes
+     * include:</p> <ul> <li> <p> <code>100644</code> indicates read/write</p> </li>
+     * <li> <p> <code>100755</code> indicates read/write/execute</p> </li> <li> <p>
+     * <code>160000</code> indicates a submodule</p> </li> <li> <p> <code>120000</code>
+     * indicates a symlink</p> </li> </ul>
+     */
+    inline bool ModeHasBeenSet() const { return m_modeHasBeenSet; }
 
     /**
      * <p>The file mode permissions of the blob. File mode permission codes

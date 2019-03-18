@@ -60,6 +60,9 @@ namespace Model
     inline const AfdSignaling& GetAfdSignaling() const{ return m_afdSignaling; }
 
     
+    inline bool AfdSignalingHasBeenSet() const { return m_afdSignalingHasBeenSet; }
+
+    
     inline void SetAfdSignaling(const AfdSignaling& value) { m_afdSignalingHasBeenSet = true; m_afdSignaling = value; }
 
     
@@ -77,6 +80,12 @@ namespace Model
      * applied to all outputs. This property is deprecated.
      */
     inline const AntiAlias& GetAntiAlias() const{ return m_antiAlias; }
+
+    /**
+     * You no longer need to specify the anti-alias filter. It's now automatically
+     * applied to all outputs. This property is deprecated.
+     */
+    inline bool AntiAliasHasBeenSet() const { return m_antiAliasHasBeenSet; }
 
     /**
      * You no longer need to specify the anti-alias filter. It's now automatically
@@ -107,6 +116,9 @@ namespace Model
     inline const VideoCodecSettings& GetCodecSettings() const{ return m_codecSettings; }
 
     
+    inline bool CodecSettingsHasBeenSet() const { return m_codecSettingsHasBeenSet; }
+
+    
     inline void SetCodecSettings(const VideoCodecSettings& value) { m_codecSettingsHasBeenSet = true; m_codecSettings = value; }
 
     
@@ -121,6 +133,9 @@ namespace Model
 
     
     inline const ColorMetadata& GetColorMetadata() const{ return m_colorMetadata; }
+
+    
+    inline bool ColorMetadataHasBeenSet() const { return m_colorMetadataHasBeenSet; }
 
     
     inline void SetColorMetadata(const ColorMetadata& value) { m_colorMetadataHasBeenSet = true; m_colorMetadata = value; }
@@ -144,6 +159,16 @@ namespace Model
      * in your output setting "Scaling behavior".
      */
     inline const Rectangle& GetCrop() const{ return m_crop; }
+
+    /**
+     * Applies only if your input aspect ratio is different from your output aspect
+     * ratio. Use Input cropping rectangle (Crop) to specify the  video area the
+     * service will include in the output. This will crop the input source, causing
+     * video pixels to be removed on encode. If you crop your input frame size to
+     * smaller than your output frame size, make sure to specify the behavior you want
+     * in your output setting "Scaling behavior".
+     */
+    inline bool CropHasBeenSet() const { return m_cropHasBeenSet; }
 
     /**
      * Applies only if your input aspect ratio is different from your output aspect
@@ -190,6 +215,9 @@ namespace Model
     inline const DropFrameTimecode& GetDropFrameTimecode() const{ return m_dropFrameTimecode; }
 
     
+    inline bool DropFrameTimecodeHasBeenSet() const { return m_dropFrameTimecodeHasBeenSet; }
+
+    
     inline void SetDropFrameTimecode(const DropFrameTimecode& value) { m_dropFrameTimecodeHasBeenSet = true; m_dropFrameTimecode = value; }
 
     
@@ -208,6 +236,13 @@ namespace Model
      * frames of this video output.
      */
     inline int GetFixedAfd() const{ return m_fixedAfd; }
+
+    /**
+     * Applies only if you set AFD Signaling(AfdSignaling) to Fixed (FIXED). Use Fixed
+     * (FixedAfd) to specify a four-bit AFD value which the service will write on all 
+     * frames of this video output.
+     */
+    inline bool FixedAfdHasBeenSet() const { return m_fixedAfdHasBeenSet; }
 
     /**
      * Applies only if you set AFD Signaling(AfdSignaling) to Fixed (FIXED). Use Fixed
@@ -236,6 +271,13 @@ namespace Model
      * output. Specify in pixels. If you don't provide a value here, the service will
      * use the input height.
      */
+    inline bool HeightHasBeenSet() const { return m_heightHasBeenSet; }
+
+    /**
+     * Use the Height (Height) setting to define the video resolution height for this
+     * output. Specify in pixels. If you don't provide a value here, the service will
+     * use the input height.
+     */
     inline void SetHeight(int value) { m_heightHasBeenSet = true; m_height = value; }
 
     /**
@@ -251,6 +293,12 @@ namespace Model
      * This setting overrides any other aspect ratio.
      */
     inline const Rectangle& GetPosition() const{ return m_position; }
+
+    /**
+     * Use Position (Position) to point to a rectangle object to define your position.
+     * This setting overrides any other aspect ratio.
+     */
+    inline bool PositionHasBeenSet() const { return m_positionHasBeenSet; }
 
     /**
      * Use Position (Position) to point to a rectangle object to define your position.
@@ -281,6 +329,9 @@ namespace Model
     inline const RespondToAfd& GetRespondToAfd() const{ return m_respondToAfd; }
 
     
+    inline bool RespondToAfdHasBeenSet() const { return m_respondToAfdHasBeenSet; }
+
+    
     inline void SetRespondToAfd(const RespondToAfd& value) { m_respondToAfdHasBeenSet = true; m_respondToAfd = value; }
 
     
@@ -295,6 +346,9 @@ namespace Model
 
     
     inline const ScalingBehavior& GetScalingBehavior() const{ return m_scalingBehavior; }
+
+    
+    inline bool ScalingBehaviorHasBeenSet() const { return m_scalingBehaviorHasBeenSet; }
 
     
     inline void SetScalingBehavior(const ScalingBehavior& value) { m_scalingBehaviorHasBeenSet = true; m_scalingBehavior = value; }
@@ -325,6 +379,15 @@ namespace Model
      * resolution. 0 is the softest setting, 100 the sharpest, and 50 recommended for
      * most content.
      */
+    inline bool SharpnessHasBeenSet() const { return m_sharpnessHasBeenSet; }
+
+    /**
+     * Use Sharpness (Sharpness) setting to specify the strength of anti-aliasing. This
+     * setting changes the width of the anti-alias filter kernel used for scaling.
+     * Sharpness only applies if your output resolution is different from your input
+     * resolution. 0 is the softest setting, 100 the sharpest, and 50 recommended for
+     * most content.
+     */
     inline void SetSharpness(int value) { m_sharpnessHasBeenSet = true; m_sharpness = value; }
 
     /**
@@ -339,6 +402,9 @@ namespace Model
 
     
     inline const VideoTimecodeInsertion& GetTimecodeInsertion() const{ return m_timecodeInsertion; }
+
+    
+    inline bool TimecodeInsertionHasBeenSet() const { return m_timecodeInsertionHasBeenSet; }
 
     
     inline void SetTimecodeInsertion(const VideoTimecodeInsertion& value) { m_timecodeInsertionHasBeenSet = true; m_timecodeInsertion = value; }
@@ -359,6 +425,13 @@ namespace Model
      * default.
      */
     inline const VideoPreprocessor& GetVideoPreprocessors() const{ return m_videoPreprocessors; }
+
+    /**
+     * Find additional transcoding features under Preprocessors (VideoPreprocessors).
+     * Enable the features at each output individually. These features are disabled by
+     * default.
+     */
+    inline bool VideoPreprocessorsHasBeenSet() const { return m_videoPreprocessorsHasBeenSet; }
 
     /**
      * Find additional transcoding features under Preprocessors (VideoPreprocessors).
@@ -394,6 +467,12 @@ namespace Model
      * output. If you don't provide a value here, the service will use the input width.
      */
     inline int GetWidth() const{ return m_width; }
+
+    /**
+     * Use Width (Width) to define the video resolution width, in pixels, for this
+     * output. If you don't provide a value here, the service will use the input width.
+     */
+    inline bool WidthHasBeenSet() const { return m_widthHasBeenSet; }
 
     /**
      * Use Width (Width) to define the video resolution width, in pixels, for this

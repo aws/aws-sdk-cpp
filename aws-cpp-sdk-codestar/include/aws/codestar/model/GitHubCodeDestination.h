@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>Name of the GitHub repository to be created in AWS CodeStar.</p>
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>Name of the GitHub repository to be created in AWS CodeStar.</p>
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
@@ -90,6 +95,12 @@ namespace Model
      * description displays in GitHub after the repository is created.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
+
+    /**
+     * <p>Description for the GitHub repository to be created in AWS CodeStar. This
+     * description displays in GitHub after the repository is created.</p>
+     */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
 
     /**
      * <p>Description for the GitHub repository to be created in AWS CodeStar. This
@@ -138,6 +149,12 @@ namespace Model
      * <p>The type of GitHub repository to be created in AWS CodeStar. Valid values are
      * User or Organization.</p>
      */
+    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
+
+    /**
+     * <p>The type of GitHub repository to be created in AWS CodeStar. Valid values are
+     * User or Organization.</p>
+     */
     inline void SetType(const Aws::String& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
@@ -177,6 +194,13 @@ namespace Model
      * provide its name.</p>
      */
     inline const Aws::String& GetOwner() const{ return m_owner; }
+
+    /**
+     * <p>The GitHub username for the owner of the GitHub repository to be created in
+     * AWS CodeStar. If this repository should be owned by a GitHub organization,
+     * provide its name.</p>
+     */
+    inline bool OwnerHasBeenSet() const { return m_ownerHasBeenSet; }
 
     /**
      * <p>The GitHub username for the owner of the GitHub repository to be created in
@@ -229,6 +253,11 @@ namespace Model
     /**
      * <p>Whether the GitHub repository is to be a private repository.</p>
      */
+    inline bool PrivateRepositoryHasBeenSet() const { return m_privateRepositoryHasBeenSet; }
+
+    /**
+     * <p>Whether the GitHub repository is to be a private repository.</p>
+     */
     inline void SetPrivateRepository(bool value) { m_privateRepositoryHasBeenSet = true; m_privateRepository = value; }
 
     /**
@@ -245,6 +274,11 @@ namespace Model
     /**
      * <p>Whether to enable issues for the GitHub repository.</p>
      */
+    inline bool IssuesEnabledHasBeenSet() const { return m_issuesEnabledHasBeenSet; }
+
+    /**
+     * <p>Whether to enable issues for the GitHub repository.</p>
+     */
     inline void SetIssuesEnabled(bool value) { m_issuesEnabledHasBeenSet = true; m_issuesEnabled = value; }
 
     /**
@@ -257,6 +291,11 @@ namespace Model
      * <p>The GitHub user's personal access token for the GitHub repository.</p>
      */
     inline const Aws::String& GetToken() const{ return m_token; }
+
+    /**
+     * <p>The GitHub user's personal access token for the GitHub repository.</p>
+     */
+    inline bool TokenHasBeenSet() const { return m_tokenHasBeenSet; }
 
     /**
      * <p>The GitHub user's personal access token for the GitHub repository.</p>

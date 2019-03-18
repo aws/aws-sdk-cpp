@@ -57,6 +57,12 @@ namespace Model
      * String concatenated to the end of the destination filename.  Required for
      * multiple outputs of the same type.
      */
+    inline bool NameModifierHasBeenSet() const { return m_nameModifierHasBeenSet; }
+
+    /**
+     * String concatenated to the end of the destination filename.  Required for
+     * multiple outputs of the same type.
+     */
     inline void SetNameModifier(const Aws::String& value) { m_nameModifierHasBeenSet = true; m_nameModifier = value; }
 
     /**

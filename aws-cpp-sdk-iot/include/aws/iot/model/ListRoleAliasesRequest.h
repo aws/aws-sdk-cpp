@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The maximum number of results to return at one time.</p>
      */
+    inline bool PageSizeHasBeenSet() const { return m_pageSizeHasBeenSet; }
+
+    /**
+     * <p>The maximum number of results to return at one time.</p>
+     */
     inline void SetPageSize(int value) { m_pageSizeHasBeenSet = true; m_pageSize = value; }
 
     /**
@@ -68,6 +73,11 @@ namespace Model
      * <p>A marker used to get the next set of results.</p>
      */
     inline const Aws::String& GetMarker() const{ return m_marker; }
+
+    /**
+     * <p>A marker used to get the next set of results.</p>
+     */
+    inline bool MarkerHasBeenSet() const { return m_markerHasBeenSet; }
 
     /**
      * <p>A marker used to get the next set of results.</p>
@@ -104,6 +114,11 @@ namespace Model
      * <p>Return the list of role aliases in ascending alphabetical order.</p>
      */
     inline bool GetAscendingOrder() const{ return m_ascendingOrder; }
+
+    /**
+     * <p>Return the list of role aliases in ascending alphabetical order.</p>
+     */
+    inline bool AscendingOrderHasBeenSet() const { return m_ascendingOrderHasBeenSet; }
 
     /**
      * <p>Return the list of role aliases in ascending alphabetical order.</p>

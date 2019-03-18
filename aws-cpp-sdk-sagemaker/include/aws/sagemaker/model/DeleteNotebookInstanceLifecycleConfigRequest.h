@@ -52,6 +52,11 @@ namespace Model
     /**
      * <p>The name of the lifecycle configuration to delete.</p>
      */
+    inline bool NotebookInstanceLifecycleConfigNameHasBeenSet() const { return m_notebookInstanceLifecycleConfigNameHasBeenSet; }
+
+    /**
+     * <p>The name of the lifecycle configuration to delete.</p>
+     */
     inline void SetNotebookInstanceLifecycleConfigName(const Aws::String& value) { m_notebookInstanceLifecycleConfigNameHasBeenSet = true; m_notebookInstanceLifecycleConfigName = value; }
 
     /**

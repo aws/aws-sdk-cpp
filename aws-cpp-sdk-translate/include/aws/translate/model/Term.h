@@ -55,6 +55,11 @@ namespace Model
     /**
      * <p>The source text of the term being translated by the custom terminology.</p>
      */
+    inline bool SourceTextHasBeenSet() const { return m_sourceTextHasBeenSet; }
+
+    /**
+     * <p>The source text of the term being translated by the custom terminology.</p>
+     */
     inline void SetSourceText(const Aws::String& value) { m_sourceTextHasBeenSet = true; m_sourceText = value; }
 
     /**
@@ -87,6 +92,11 @@ namespace Model
      * <p>The target text of the term being translated by the custom terminology.</p>
      */
     inline const Aws::String& GetTargetText() const{ return m_targetText; }
+
+    /**
+     * <p>The target text of the term being translated by the custom terminology.</p>
+     */
+    inline bool TargetTextHasBeenSet() const { return m_targetTextHasBeenSet; }
 
     /**
      * <p>The target text of the term being translated by the custom terminology.</p>

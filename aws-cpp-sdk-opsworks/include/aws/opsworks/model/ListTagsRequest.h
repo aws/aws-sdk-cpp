@@ -52,6 +52,11 @@ namespace Model
     /**
      * <p>The stack or layer's Amazon Resource Number (ARN).</p>
      */
+    inline bool ResourceArnHasBeenSet() const { return m_resourceArnHasBeenSet; }
+
+    /**
+     * <p>The stack or layer's Amazon Resource Number (ARN).</p>
+     */
     inline void SetResourceArn(const Aws::String& value) { m_resourceArnHasBeenSet = true; m_resourceArn = value; }
 
     /**
@@ -90,6 +95,12 @@ namespace Model
      * <p>Do not use. A validation exception occurs if you add a
      * <code>MaxResults</code> parameter to a <code>ListTagsRequest</code> call. </p>
      */
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
+
+    /**
+     * <p>Do not use. A validation exception occurs if you add a
+     * <code>MaxResults</code> parameter to a <code>ListTagsRequest</code> call. </p>
+     */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
@@ -104,6 +115,12 @@ namespace Model
      * parameter to a <code>ListTagsRequest</code> call. </p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
+    /**
+     * <p>Do not use. A validation exception occurs if you add a <code>NextToken</code>
+     * parameter to a <code>ListTagsRequest</code> call. </p>
+     */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
      * <p>Do not use. A validation exception occurs if you add a <code>NextToken</code>

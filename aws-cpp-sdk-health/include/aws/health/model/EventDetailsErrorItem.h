@@ -64,6 +64,15 @@ namespace Model
      * arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-DEF456</code>
      * </p>
      */
+    inline bool EventArnHasBeenSet() const { return m_eventArnHasBeenSet; }
+
+    /**
+     * <p>The unique identifier for the event. Format:
+     * <code>arn:aws:health:<i>event-region</i>::event/<i>SERVICE</i>/<i>EVENT_TYPE_CODE</i>/<i>EVENT_TYPE_PLUS_ID</i>
+     * </code>. Example: <code>Example:
+     * arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-DEF456</code>
+     * </p>
+     */
     inline void SetEventArn(const Aws::String& value) { m_eventArnHasBeenSet = true; m_eventArn = value; }
 
     /**
@@ -120,6 +129,11 @@ namespace Model
     /**
      * <p>The name of the error.</p>
      */
+    inline bool ErrorNameHasBeenSet() const { return m_errorNameHasBeenSet; }
+
+    /**
+     * <p>The name of the error.</p>
+     */
     inline void SetErrorName(const Aws::String& value) { m_errorNameHasBeenSet = true; m_errorName = value; }
 
     /**
@@ -152,6 +166,11 @@ namespace Model
      * <p>A message that describes the error.</p>
      */
     inline const Aws::String& GetErrorMessage() const{ return m_errorMessage; }
+
+    /**
+     * <p>A message that describes the error.</p>
+     */
+    inline bool ErrorMessageHasBeenSet() const { return m_errorMessageHasBeenSet; }
 
     /**
      * <p>A message that describes the error.</p>

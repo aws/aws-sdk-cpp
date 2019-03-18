@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The ARN of the destination Kinesis data stream to write to.</p>
      */
+    inline bool ResourceARNHasBeenSet() const { return m_resourceARNHasBeenSet; }
+
+    /**
+     * <p>The ARN of the destination Kinesis data stream to write to.</p>
+     */
     inline void SetResourceARN(const Aws::String& value) { m_resourceARNHasBeenSet = true; m_resourceARN = value; }
 
     /**

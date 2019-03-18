@@ -54,6 +54,11 @@ namespace Model
     /**
      * <p>The ID of the Client VPN endpoint from which the route is to be deleted.</p>
      */
+    inline bool ClientVpnEndpointIdHasBeenSet() const { return m_clientVpnEndpointIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the Client VPN endpoint from which the route is to be deleted.</p>
+     */
     inline void SetClientVpnEndpointId(const Aws::String& value) { m_clientVpnEndpointIdHasBeenSet = true; m_clientVpnEndpointId = value; }
 
     /**
@@ -86,6 +91,11 @@ namespace Model
      * <p>The ID of the target subnet used by the route.</p>
      */
     inline const Aws::String& GetTargetVpcSubnetId() const{ return m_targetVpcSubnetId; }
+
+    /**
+     * <p>The ID of the target subnet used by the route.</p>
+     */
+    inline bool TargetVpcSubnetIdHasBeenSet() const { return m_targetVpcSubnetIdHasBeenSet; }
 
     /**
      * <p>The ID of the target subnet used by the route.</p>
@@ -126,6 +136,11 @@ namespace Model
     /**
      * <p>The IPv4 address range, in CIDR notation, of the route to be deleted.</p>
      */
+    inline bool DestinationCidrBlockHasBeenSet() const { return m_destinationCidrBlockHasBeenSet; }
+
+    /**
+     * <p>The IPv4 address range, in CIDR notation, of the route to be deleted.</p>
+     */
     inline void SetDestinationCidrBlock(const Aws::String& value) { m_destinationCidrBlockHasBeenSet = true; m_destinationCidrBlock = value; }
 
     /**
@@ -161,6 +176,14 @@ namespace Model
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
     inline bool GetDryRun() const{ return m_dryRun; }
+
+    /**
+     * <p>Checks whether you have the required permissions for the action, without
+     * actually making the request, and provides an error response. If you have the
+     * required permissions, the error response is <code>DryRunOperation</code>.
+     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+     */
+    inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
 
     /**
      * <p>Checks whether you have the required permissions for the action, without

@@ -68,6 +68,14 @@ namespace Model
      * required permissions, the error response is <code>DryRunOperation</code>.
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
+    inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
+
+    /**
+     * <p>Checks whether you have the required permissions for the action, without
+     * actually making the request, and provides an error response. If you have the
+     * required permissions, the error response is <code>DryRunOperation</code>.
+     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+     */
     inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
 
     /**
@@ -89,6 +97,17 @@ namespace Model
      * <code>Windows</code>).</p> </li> </ul>
      */
     inline const Aws::Vector<Filter>& GetFilters() const{ return m_filters; }
+
+    /**
+     * <p>One or more filters.</p> <ul> <li> <p> <code>availability-zone</code> - The
+     * Availability Zone (for example, <code>us-west-2a</code>).</p> </li> <li> <p>
+     * <code>instance-type</code> - The instance type (for example,
+     * <code>c4.large</code>).</p> </li> <li> <p> <code>network-platform</code> - The
+     * network platform (<code>EC2-Classic</code> or <code>EC2-VPC</code>).</p> </li>
+     * <li> <p> <code>platform</code> - The platform (<code>Linux/UNIX</code> or
+     * <code>Windows</code>).</p> </li> </ul>
+     */
+    inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
 
     /**
      * <p>One or more filters.</p> <ul> <li> <p> <code>availability-zone</code> - The
@@ -165,6 +184,11 @@ namespace Model
     /**
      * <p>The time period for the first schedule to start.</p>
      */
+    inline bool FirstSlotStartTimeRangeHasBeenSet() const { return m_firstSlotStartTimeRangeHasBeenSet; }
+
+    /**
+     * <p>The time period for the first schedule to start.</p>
+     */
     inline void SetFirstSlotStartTimeRange(const SlotDateTimeRangeRequest& value) { m_firstSlotStartTimeRangeHasBeenSet = true; m_firstSlotStartTimeRange = value; }
 
     /**
@@ -195,6 +219,13 @@ namespace Model
      * between 5 and 300. The default value is 300. To retrieve the remaining results,
      * make another call with the returned <code>NextToken</code> value.</p>
      */
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
+
+    /**
+     * <p>The maximum number of results to return in a single call. This value can be
+     * between 5 and 300. The default value is 300. To retrieve the remaining results,
+     * make another call with the returned <code>NextToken</code> value.</p>
+     */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
@@ -210,6 +241,12 @@ namespace Model
      * <code>MinSlotDurationInHours</code> and less than 1,720.</p>
      */
     inline int GetMaxSlotDurationInHours() const{ return m_maxSlotDurationInHours; }
+
+    /**
+     * <p>The maximum available duration, in hours. This value must be greater than
+     * <code>MinSlotDurationInHours</code> and less than 1,720.</p>
+     */
+    inline bool MaxSlotDurationInHoursHasBeenSet() const { return m_maxSlotDurationInHoursHasBeenSet; }
 
     /**
      * <p>The maximum available duration, in hours. This value must be greater than
@@ -238,6 +275,14 @@ namespace Model
      * minimum weekly schedule is 24 hours, and the minimum monthly schedule is 100
      * hours.</p>
      */
+    inline bool MinSlotDurationInHoursHasBeenSet() const { return m_minSlotDurationInHoursHasBeenSet; }
+
+    /**
+     * <p>The minimum available duration, in hours. The minimum required duration is
+     * 1,200 hours per year. For example, the minimum daily schedule is 4 hours, the
+     * minimum weekly schedule is 24 hours, and the minimum monthly schedule is 100
+     * hours.</p>
+     */
     inline void SetMinSlotDurationInHours(int value) { m_minSlotDurationInHoursHasBeenSet = true; m_minSlotDurationInHours = value; }
 
     /**
@@ -253,6 +298,11 @@ namespace Model
      * <p>The token for the next set of results.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
+    /**
+     * <p>The token for the next set of results.</p>
+     */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
      * <p>The token for the next set of results.</p>
@@ -289,6 +339,11 @@ namespace Model
      * <p>The schedule recurrence.</p>
      */
     inline const ScheduledInstanceRecurrenceRequest& GetRecurrence() const{ return m_recurrence; }
+
+    /**
+     * <p>The schedule recurrence.</p>
+     */
+    inline bool RecurrenceHasBeenSet() const { return m_recurrenceHasBeenSet; }
 
     /**
      * <p>The schedule recurrence.</p>

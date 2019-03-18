@@ -52,6 +52,11 @@ namespace Model
     /**
      * <p>A continuation token, if this is a continuation call.</p>
      */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
+
+    /**
+     * <p>A continuation token, if this is a continuation call.</p>
+     */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
     /**
@@ -86,6 +91,13 @@ namespace Model
      * will be returned.</p>
      */
     inline const Aws::String& GetDependentJobName() const{ return m_dependentJobName; }
+
+    /**
+     * <p>The name of the job for which to retrieve triggers. The trigger that can
+     * start this job will be returned, and if there is no such trigger, all triggers
+     * will be returned.</p>
+     */
+    inline bool DependentJobNameHasBeenSet() const { return m_dependentJobNameHasBeenSet; }
 
     /**
      * <p>The name of the job for which to retrieve triggers. The trigger that can
@@ -134,6 +146,11 @@ namespace Model
      * <p>The maximum size of the response.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
+
+    /**
+     * <p>The maximum size of the response.</p>
+     */
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
 
     /**
      * <p>The maximum size of the response.</p>

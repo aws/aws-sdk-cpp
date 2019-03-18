@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The identifier for the hierarchy group.</p>
      */
+    inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
+
+    /**
+     * <p>The identifier for the hierarchy group.</p>
+     */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
     /**
@@ -89,6 +94,11 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) for the hierarchy group.</p>
      */
     inline const Aws::String& GetArn() const{ return m_arn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) for the hierarchy group.</p>
+     */
+    inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
 
     /**
      * <p>The Amazon Resource Name (ARN) for the hierarchy group.</p>
@@ -129,6 +139,11 @@ namespace Model
     /**
      * <p>The name of the hierarchy group in your instance.</p>
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>The name of the hierarchy group in your instance.</p>
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
@@ -161,6 +176,11 @@ namespace Model
      * <p>The identifier for the level in the hierarchy group.</p>
      */
     inline const Aws::String& GetLevelId() const{ return m_levelId; }
+
+    /**
+     * <p>The identifier for the level in the hierarchy group.</p>
+     */
+    inline bool LevelIdHasBeenSet() const { return m_levelIdHasBeenSet; }
 
     /**
      * <p>The identifier for the level in the hierarchy group.</p>
@@ -198,6 +218,12 @@ namespace Model
      * levels in the hierarchy group.</p>
      */
     inline const HierarchyPath& GetHierarchyPath() const{ return m_hierarchyPath; }
+
+    /**
+     * <p>A <code>HierarchyPath</code> object that contains information about the
+     * levels in the hierarchy group.</p>
+     */
+    inline bool HierarchyPathHasBeenSet() const { return m_hierarchyPathHasBeenSet; }
 
     /**
      * <p>A <code>HierarchyPath</code> object that contains information about the

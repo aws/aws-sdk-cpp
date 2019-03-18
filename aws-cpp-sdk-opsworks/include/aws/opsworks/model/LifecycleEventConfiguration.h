@@ -57,6 +57,12 @@ namespace Model
      * <p>A <code>ShutdownEventConfiguration</code> object that specifies the Shutdown
      * event configuration.</p>
      */
+    inline bool ShutdownHasBeenSet() const { return m_shutdownHasBeenSet; }
+
+    /**
+     * <p>A <code>ShutdownEventConfiguration</code> object that specifies the Shutdown
+     * event configuration.</p>
+     */
     inline void SetShutdown(const ShutdownEventConfiguration& value) { m_shutdownHasBeenSet = true; m_shutdown = value; }
 
     /**

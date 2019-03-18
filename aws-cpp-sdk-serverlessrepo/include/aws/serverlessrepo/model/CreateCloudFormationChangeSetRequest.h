@@ -54,6 +54,11 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the application.</p>
      */
+    inline bool ApplicationIdHasBeenSet() const { return m_applicationIdHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the application.</p>
+     */
     inline void SetApplicationId(const Aws::String& value) { m_applicationIdHasBeenSet = true; m_applicationId = value; }
 
     /**
@@ -142,6 +147,67 @@ namespace Model
      * application that requires capabilities, the call will fail.</p>
      */
     inline const Aws::Vector<Aws::String>& GetCapabilities() const{ return m_capabilities; }
+
+    /**
+     * <p>A list of values that you must specify before you can deploy certain
+     * applications.
+ Some applications might include resources that can affect
+     * permissions in your AWS
+ account, for example, by creating new AWS Identity and
+     * Access Management (IAM) users.
+ For those applications, you must explicitly
+     * acknowledge their capabilities by
+ specifying this parameter.</p><p>The only
+     * valid values are CAPABILITY_IAM, CAPABILITY_NAMED_IAM,
+
+     * CAPABILITY_RESOURCE_POLICY, and CAPABILITY_AUTO_EXPAND.</p><p>The following
+     * resources require you to specify CAPABILITY_IAM or
+ CAPABILITY_NAMED_IAM:
+ <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html">AWS::IAM::Group</a>,
+
+     * <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html">AWS::IAM::InstanceProfile</a>,
+
+     * <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-policy.html">AWS::IAM::Policy</a>,
+     * and
+ <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html">AWS::IAM::Role</a>.
+
+     * If the application contains IAM resources, you can specify either
+     * CAPABILITY_IAM
+ or CAPABILITY_NAMED_IAM. If the application contains IAM
+     * resources
+ with custom names, you must specify CAPABILITY_NAMED_IAM.</p><p>The
+     * following resources require you to specify CAPABILITY_RESOURCE_POLICY:
+ <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-permission.html">AWS::Lambda::Permission</a>,
+
+     * <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-policy.html">AWS::IAM:Policy</a>,
+
+     * <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-applicationautoscaling-scalingpolicy.html">AWS::ApplicationAutoScaling::ScalingPolicy</a>,
+
+     * <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-policy.html">AWS::S3::BucketPolicy</a>,
+
+     * <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sqs-policy.html">AWS::SQS::QueuePolicy</a>,
+     * and
+ <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sns-policy.html">AWS::SNS:TopicPolicy</a>.</p><p>Applications
+     * that contain one or more nested applications require you to specify
+
+     * CAPABILITY_AUTO_EXPAND.</p><p>If your application template contains any of the
+     * above resources, we recommend that you review
+ all permissions associated with
+     * the application before deploying. If you don't specify
+ this parameter for an
+     * application that requires capabilities, the call will fail.</p>
+     */
+    inline bool CapabilitiesHasBeenSet() const { return m_capabilitiesHasBeenSet; }
 
     /**
      * <p>A list of values that you must specify before you can deploy certain
@@ -587,6 +653,15 @@ namespace Model
 
      * </i> API.</p>
      */
+    inline bool ChangeSetNameHasBeenSet() const { return m_changeSetNameHasBeenSet; }
+
+    /**
+     * <p>This property corresponds to the parameter of the same name for the <i>AWS
+     * CloudFormation <a
+     * href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">CreateChangeSet</a>
+
+     * </i> API.</p>
+     */
     inline void SetChangeSetName(const Aws::String& value) { m_changeSetNameHasBeenSet = true; m_changeSetName = value; }
 
     /**
@@ -643,6 +718,15 @@ namespace Model
      * </i> API.</p>
      */
     inline const Aws::String& GetClientToken() const{ return m_clientToken; }
+
+    /**
+     * <p>This property corresponds to the parameter of the same name for the <i>AWS
+     * CloudFormation <a
+     * href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">CreateChangeSet</a>
+
+     * </i> API.</p>
+     */
+    inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
 
     /**
      * <p>This property corresponds to the parameter of the same name for the <i>AWS
@@ -715,6 +799,15 @@ namespace Model
 
      * </i> API.</p>
      */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
+
+    /**
+     * <p>This property corresponds to the parameter of the same name for the <i>AWS
+     * CloudFormation <a
+     * href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">CreateChangeSet</a>
+
+     * </i> API.</p>
+     */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
@@ -771,6 +864,15 @@ namespace Model
      * </i> API.</p>
      */
     inline const Aws::Vector<Aws::String>& GetNotificationArns() const{ return m_notificationArns; }
+
+    /**
+     * <p>This property corresponds to the parameter of the same name for the <i>AWS
+     * CloudFormation <a
+     * href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">CreateChangeSet</a>
+
+     * </i> API.</p>
+     */
+    inline bool NotificationArnsHasBeenSet() const { return m_notificationArnsHasBeenSet; }
 
     /**
      * <p>This property corresponds to the parameter of the same name for the <i>AWS
@@ -844,6 +946,11 @@ namespace Model
     /**
      * <p>A list of parameter values for the parameters of the application.</p>
      */
+    inline bool ParameterOverridesHasBeenSet() const { return m_parameterOverridesHasBeenSet; }
+
+    /**
+     * <p>A list of parameter values for the parameters of the application.</p>
+     */
     inline void SetParameterOverrides(const Aws::Vector<ParameterValue>& value) { m_parameterOverridesHasBeenSet = true; m_parameterOverrides = value; }
 
     /**
@@ -880,6 +987,15 @@ namespace Model
      * </i> API.</p>
      */
     inline const Aws::Vector<Aws::String>& GetResourceTypes() const{ return m_resourceTypes; }
+
+    /**
+     * <p>This property corresponds to the parameter of the same name for the <i>AWS
+     * CloudFormation <a
+     * href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">CreateChangeSet</a>
+
+     * </i> API.</p>
+     */
+    inline bool ResourceTypesHasBeenSet() const { return m_resourceTypesHasBeenSet; }
 
     /**
      * <p>This property corresponds to the parameter of the same name for the <i>AWS
@@ -961,6 +1077,15 @@ namespace Model
 
      * </i> API.</p>
      */
+    inline bool RollbackConfigurationHasBeenSet() const { return m_rollbackConfigurationHasBeenSet; }
+
+    /**
+     * <p>This property corresponds to the parameter of the same name for the <i>AWS
+     * CloudFormation <a
+     * href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">CreateChangeSet</a>
+
+     * </i> API.</p>
+     */
     inline void SetRollbackConfiguration(const RollbackConfiguration& value) { m_rollbackConfigurationHasBeenSet = true; m_rollbackConfiguration = value; }
 
     /**
@@ -998,6 +1123,14 @@ namespace Model
  </p>
      */
     inline const Aws::String& GetSemanticVersion() const{ return m_semanticVersion; }
+
+    /**
+     * <p>The semantic version of the application:</p><p>
+ <a
+     * href="https://semver.org/">https://semver.org/</a>
+ </p>
+     */
+    inline bool SemanticVersionHasBeenSet() const { return m_semanticVersionHasBeenSet; }
 
     /**
      * <p>The semantic version of the application:</p><p>
@@ -1056,6 +1189,15 @@ namespace Model
      * </i> API.</p>
      */
     inline const Aws::String& GetStackName() const{ return m_stackName; }
+
+    /**
+     * <p>This property corresponds to the parameter of the same name for the <i>AWS
+     * CloudFormation <a
+     * href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">CreateChangeSet</a>
+
+     * </i> API.</p>
+     */
+    inline bool StackNameHasBeenSet() const { return m_stackNameHasBeenSet; }
 
     /**
      * <p>This property corresponds to the parameter of the same name for the <i>AWS
@@ -1128,6 +1270,15 @@ namespace Model
 
      * </i> API.</p>
      */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
+
+    /**
+     * <p>This property corresponds to the parameter of the same name for the <i>AWS
+     * CloudFormation <a
+     * href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">CreateChangeSet</a>
+
+     * </i> API.</p>
+     */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     /**
@@ -1181,6 +1332,12 @@ namespace Model
      * [0-9a-fA-F]{8}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{12}</p>
      */
     inline const Aws::String& GetTemplateId() const{ return m_templateId; }
+
+    /**
+     * <p>The UUID returned by CreateCloudFormationTemplate.</p><p>Pattern:
+     * [0-9a-fA-F]{8}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{12}</p>
+     */
+    inline bool TemplateIdHasBeenSet() const { return m_templateIdHasBeenSet; }
 
     /**
      * <p>The UUID returned by CreateCloudFormationTemplate.</p><p>Pattern:

@@ -62,6 +62,14 @@ namespace Model
      * <code>provisionedproduct</code> - Filter results based on the provisioned
      * product identifier.</p> </li> </ul>
      */
+    inline bool KeyHasBeenSet() const { return m_keyHasBeenSet; }
+
+    /**
+     * <p>The filter key.</p> <ul> <li> <p> <code>product</code> - Filter results based
+     * on the specified product identifier.</p> </li> <li> <p>
+     * <code>provisionedproduct</code> - Filter results based on the provisioned
+     * product identifier.</p> </li> </ul>
+     */
     inline void SetKey(const Aws::String& value) { m_keyHasBeenSet = true; m_key = value; }
 
     /**
@@ -109,6 +117,11 @@ namespace Model
      * <p>The filter value.</p>
      */
     inline const Aws::String& GetValue() const{ return m_value; }
+
+    /**
+     * <p>The filter value.</p>
+     */
+    inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
 
     /**
      * <p>The filter value.</p>

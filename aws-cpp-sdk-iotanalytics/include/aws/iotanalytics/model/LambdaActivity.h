@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The name of the 'lambda' activity.</p>
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>The name of the 'lambda' activity.</p>
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
@@ -88,6 +93,11 @@ namespace Model
      * <p>The name of the Lambda function that is run on the message.</p>
      */
     inline const Aws::String& GetLambdaName() const{ return m_lambdaName; }
+
+    /**
+     * <p>The name of the Lambda function that is run on the message.</p>
+     */
+    inline bool LambdaNameHasBeenSet() const { return m_lambdaNameHasBeenSet; }
 
     /**
      * <p>The name of the Lambda function that is run on the message.</p>
@@ -132,6 +142,13 @@ namespace Model
      * <p>The AWS Lambda function must be able to process all of these messages within
      * five minutes, which is the maximum timeout duration for Lambda functions.</p>
      */
+    inline bool BatchSizeHasBeenSet() const { return m_batchSizeHasBeenSet; }
+
+    /**
+     * <p>The number of messages passed to the Lambda function for processing.</p>
+     * <p>The AWS Lambda function must be able to process all of these messages within
+     * five minutes, which is the maximum timeout duration for Lambda functions.</p>
+     */
     inline void SetBatchSize(int value) { m_batchSizeHasBeenSet = true; m_batchSize = value; }
 
     /**
@@ -146,6 +163,11 @@ namespace Model
      * <p>The next activity in the pipeline.</p>
      */
     inline const Aws::String& GetNext() const{ return m_next; }
+
+    /**
+     * <p>The next activity in the pipeline.</p>
+     */
+    inline bool NextHasBeenSet() const { return m_nextHasBeenSet; }
 
     /**
      * <p>The next activity in the pipeline.</p>

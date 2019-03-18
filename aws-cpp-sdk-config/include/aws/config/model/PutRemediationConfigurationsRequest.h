@@ -53,6 +53,11 @@ namespace Model
     /**
      * <p>A list of remediation configuration objects.</p>
      */
+    inline bool RemediationConfigurationsHasBeenSet() const { return m_remediationConfigurationsHasBeenSet; }
+
+    /**
+     * <p>A list of remediation configuration objects.</p>
+     */
     inline void SetRemediationConfigurations(const Aws::Vector<RemediationConfiguration>& value) { m_remediationConfigurationsHasBeenSet = true; m_remediationConfigurations = value; }
 
     /**

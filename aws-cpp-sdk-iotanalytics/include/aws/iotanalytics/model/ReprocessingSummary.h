@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The 'reprocessingId' returned by "StartPipelineReprocessing".</p>
      */
+    inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
+
+    /**
+     * <p>The 'reprocessingId' returned by "StartPipelineReprocessing".</p>
+     */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
     /**
@@ -93,6 +98,11 @@ namespace Model
     /**
      * <p>The status of the pipeline reprocessing.</p>
      */
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
+
+    /**
+     * <p>The status of the pipeline reprocessing.</p>
+     */
     inline void SetStatus(const ReprocessingStatus& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
@@ -115,6 +125,11 @@ namespace Model
      * <p>The time the pipeline reprocessing was created.</p>
      */
     inline const Aws::Utils::DateTime& GetCreationTime() const{ return m_creationTime; }
+
+    /**
+     * <p>The time the pipeline reprocessing was created.</p>
+     */
+    inline bool CreationTimeHasBeenSet() const { return m_creationTimeHasBeenSet; }
 
     /**
      * <p>The time the pipeline reprocessing was created.</p>

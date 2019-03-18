@@ -54,6 +54,11 @@ namespace Model
     /**
      * <p>ARN for a license configuration.</p>
      */
+    inline bool LicenseConfigurationArnHasBeenSet() const { return m_licenseConfigurationArnHasBeenSet; }
+
+    /**
+     * <p>ARN for a license configuration.</p>
+     */
     inline void SetLicenseConfigurationArn(const Aws::String& value) { m_licenseConfigurationArnHasBeenSet = true; m_licenseConfigurationArn = value; }
 
     /**
@@ -92,6 +97,12 @@ namespace Model
      * <p>New status of the license configuration (<code>ACTIVE</code> or
      * <code>INACTIVE</code>).</p>
      */
+    inline bool LicenseConfigurationStatusHasBeenSet() const { return m_licenseConfigurationStatusHasBeenSet; }
+
+    /**
+     * <p>New status of the license configuration (<code>ACTIVE</code> or
+     * <code>INACTIVE</code>).</p>
+     */
     inline void SetLicenseConfigurationStatus(const LicenseConfigurationStatus& value) { m_licenseConfigurationStatusHasBeenSet = true; m_licenseConfigurationStatus = value; }
 
     /**
@@ -117,6 +128,11 @@ namespace Model
      * <p>List of flexible text strings designating license rules.</p>
      */
     inline const Aws::Vector<Aws::String>& GetLicenseRules() const{ return m_licenseRules; }
+
+    /**
+     * <p>List of flexible text strings designating license rules.</p>
+     */
+    inline bool LicenseRulesHasBeenSet() const { return m_licenseRulesHasBeenSet; }
 
     /**
      * <p>List of flexible text strings designating license rules.</p>
@@ -162,6 +178,11 @@ namespace Model
     /**
      * <p>New number of licenses managed by the license configuration.</p>
      */
+    inline bool LicenseCountHasBeenSet() const { return m_licenseCountHasBeenSet; }
+
+    /**
+     * <p>New number of licenses managed by the license configuration.</p>
+     */
     inline void SetLicenseCount(long long value) { m_licenseCountHasBeenSet = true; m_licenseCount = value; }
 
     /**
@@ -178,6 +199,11 @@ namespace Model
     /**
      * <p>Sets the number of available licenses as a hard limit.</p>
      */
+    inline bool LicenseCountHardLimitHasBeenSet() const { return m_licenseCountHardLimitHasBeenSet; }
+
+    /**
+     * <p>Sets the number of available licenses as a hard limit.</p>
+     */
     inline void SetLicenseCountHardLimit(bool value) { m_licenseCountHardLimitHasBeenSet = true; m_licenseCountHardLimit = value; }
 
     /**
@@ -190,6 +216,11 @@ namespace Model
      * <p>New name of the license configuration.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
+
+    /**
+     * <p>New name of the license configuration.</p>
+     */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
      * <p>New name of the license configuration.</p>
@@ -226,6 +257,11 @@ namespace Model
      * <p>New human-friendly description of the license configuration.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
+
+    /**
+     * <p>New human-friendly description of the license configuration.</p>
+     */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
 
     /**
      * <p>New human-friendly description of the license configuration.</p>

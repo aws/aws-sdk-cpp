@@ -61,6 +61,11 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) for the automated backup.</p>
      */
+    inline bool DBInstanceArnHasBeenSet() const { return m_dBInstanceArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) for the automated backup.</p>
+     */
     inline void SetDBInstanceArn(const Aws::String& value) { m_dBInstanceArnHasBeenSet = true; m_dBInstanceArn = value; }
 
     /**
@@ -94,6 +99,12 @@ namespace Model
      * is unique to an AWS Region.</p>
      */
     inline const Aws::String& GetDbiResourceId() const{ return m_dbiResourceId; }
+
+    /**
+     * <p>The identifier for the source DB instance, which can't be changed and which
+     * is unique to an AWS Region.</p>
+     */
+    inline bool DbiResourceIdHasBeenSet() const { return m_dbiResourceIdHasBeenSet; }
 
     /**
      * <p>The identifier for the source DB instance, which can't be changed and which
@@ -140,6 +151,11 @@ namespace Model
     /**
      * <p>The AWS Region associated with the automated backup.</p>
      */
+    inline bool RegionHasBeenSet() const { return m_regionHasBeenSet; }
+
+    /**
+     * <p>The AWS Region associated with the automated backup.</p>
+     */
     inline void SetRegion(const Aws::String& value) { m_regionHasBeenSet = true; m_region = value; }
 
     /**
@@ -173,6 +189,12 @@ namespace Model
      * backup. </p>
      */
     inline const Aws::String& GetDBInstanceIdentifier() const{ return m_dBInstanceIdentifier; }
+
+    /**
+     * <p>The customer id of the instance that is/was associated with the automated
+     * backup. </p>
+     */
+    inline bool DBInstanceIdentifierHasBeenSet() const { return m_dBInstanceIdentifierHasBeenSet; }
 
     /**
      * <p>The customer id of the instance that is/was associated with the automated
@@ -219,6 +241,11 @@ namespace Model
     /**
      * <p>Earliest and latest time an instance can be restored to.</p>
      */
+    inline bool RestoreWindowHasBeenSet() const { return m_restoreWindowHasBeenSet; }
+
+    /**
+     * <p>Earliest and latest time an instance can be restored to.</p>
+     */
     inline void SetRestoreWindow(const RestoreWindow& value) { m_restoreWindowHasBeenSet = true; m_restoreWindow = value; }
 
     /**
@@ -245,6 +272,11 @@ namespace Model
     /**
      * <p>Specifies the allocated storage size in gibibytes (GiB).</p>
      */
+    inline bool AllocatedStorageHasBeenSet() const { return m_allocatedStorageHasBeenSet; }
+
+    /**
+     * <p>Specifies the allocated storage size in gibibytes (GiB).</p>
+     */
     inline void SetAllocatedStorage(int value) { m_allocatedStorageHasBeenSet = true; m_allocatedStorage = value; }
 
     /**
@@ -261,6 +293,15 @@ namespace Model
      * first automated snapshot to be available.</p> </li> </ul>
      */
     inline const Aws::String& GetStatus() const{ return m_status; }
+
+    /**
+     * <p>Provides a list of status information for an automated backup:</p> <ul> <li>
+     * <p> <code>active</code> - automated backups for current instances</p> </li> <li>
+     * <p> <code>retained</code> - automated backups for deleted instances</p> </li>
+     * <li> <p> <code>creating</code> - automated backups that are waiting for the
+     * first automated snapshot to be available.</p> </li> </ul>
+     */
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
     /**
      * <p>Provides a list of status information for an automated backup:</p> <ul> <li>
@@ -329,6 +370,13 @@ namespace Model
      * <p>Default: Inherits from the source DB instance</p> <p>Valid Values:
      * <code>1150-65535</code> </p>
      */
+    inline bool PortHasBeenSet() const { return m_portHasBeenSet; }
+
+    /**
+     * <p>The port number that the automated backup used for connections.</p>
+     * <p>Default: Inherits from the source DB instance</p> <p>Valid Values:
+     * <code>1150-65535</code> </p>
+     */
     inline void SetPort(int value) { m_portHasBeenSet = true; m_port = value; }
 
     /**
@@ -346,6 +394,14 @@ namespace Model
      * and Availability Zones</a>.</p>
      */
     inline const Aws::String& GetAvailabilityZone() const{ return m_availabilityZone; }
+
+    /**
+     * <p>The Availability Zone that the automated backup was created in. For
+     * information on AWS Regions and Availability Zones, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.RegionsAndAvailabilityZones.html">Regions
+     * and Availability Zones</a>.</p>
+     */
+    inline bool AvailabilityZoneHasBeenSet() const { return m_availabilityZoneHasBeenSet; }
 
     /**
      * <p>The Availability Zone that the automated backup was created in. For
@@ -404,6 +460,11 @@ namespace Model
     /**
      * <p>Provides the VPC ID associated with the DB instance</p>
      */
+    inline bool VpcIdHasBeenSet() const { return m_vpcIdHasBeenSet; }
+
+    /**
+     * <p>Provides the VPC ID associated with the DB instance</p>
+     */
     inline void SetVpcId(const Aws::String& value) { m_vpcIdHasBeenSet = true; m_vpcId = value; }
 
     /**
@@ -440,6 +501,11 @@ namespace Model
     /**
      * <p>Provides the date and time that the DB instance was created. </p>
      */
+    inline bool InstanceCreateTimeHasBeenSet() const { return m_instanceCreateTimeHasBeenSet; }
+
+    /**
+     * <p>Provides the date and time that the DB instance was created. </p>
+     */
     inline void SetInstanceCreateTime(const Aws::Utils::DateTime& value) { m_instanceCreateTimeHasBeenSet = true; m_instanceCreateTime = value; }
 
     /**
@@ -462,6 +528,11 @@ namespace Model
      * <p>The license model of an automated backup.</p>
      */
     inline const Aws::String& GetMasterUsername() const{ return m_masterUsername; }
+
+    /**
+     * <p>The license model of an automated backup.</p>
+     */
+    inline bool MasterUsernameHasBeenSet() const { return m_masterUsernameHasBeenSet; }
 
     /**
      * <p>The license model of an automated backup.</p>
@@ -502,6 +573,11 @@ namespace Model
     /**
      * <p>The name of the database engine for this automated backup.</p>
      */
+    inline bool EngineHasBeenSet() const { return m_engineHasBeenSet; }
+
+    /**
+     * <p>The name of the database engine for this automated backup.</p>
+     */
     inline void SetEngine(const Aws::String& value) { m_engineHasBeenSet = true; m_engine = value; }
 
     /**
@@ -534,6 +610,11 @@ namespace Model
      * <p>The version of the database engine for the automated backup.</p>
      */
     inline const Aws::String& GetEngineVersion() const{ return m_engineVersion; }
+
+    /**
+     * <p>The version of the database engine for the automated backup.</p>
+     */
+    inline bool EngineVersionHasBeenSet() const { return m_engineVersionHasBeenSet; }
 
     /**
      * <p>The version of the database engine for the automated backup.</p>
@@ -574,6 +655,11 @@ namespace Model
     /**
      * <p>License model information for the automated backup.</p>
      */
+    inline bool LicenseModelHasBeenSet() const { return m_licenseModelHasBeenSet; }
+
+    /**
+     * <p>License model information for the automated backup.</p>
+     */
     inline void SetLicenseModel(const Aws::String& value) { m_licenseModelHasBeenSet = true; m_licenseModel = value; }
 
     /**
@@ -610,6 +696,11 @@ namespace Model
     /**
      * <p>The IOPS (I/O operations per second) value for the automated backup. </p>
      */
+    inline bool IopsHasBeenSet() const { return m_iopsHasBeenSet; }
+
+    /**
+     * <p>The IOPS (I/O operations per second) value for the automated backup. </p>
+     */
     inline void SetIops(int value) { m_iopsHasBeenSet = true; m_iops = value; }
 
     /**
@@ -623,6 +714,12 @@ namespace Model
      * default option group for the engine specified is used.</p>
      */
     inline const Aws::String& GetOptionGroupName() const{ return m_optionGroupName; }
+
+    /**
+     * <p>The option group the automated backup is associated with. If omitted, the
+     * default option group for the engine specified is used.</p>
+     */
+    inline bool OptionGroupNameHasBeenSet() const { return m_optionGroupNameHasBeenSet; }
 
     /**
      * <p>The option group the automated backup is associated with. If omitted, the
@@ -671,6 +768,12 @@ namespace Model
      * <p>The ARN from the key store with which the automated backup is associated for
      * TDE encryption.</p>
      */
+    inline bool TdeCredentialArnHasBeenSet() const { return m_tdeCredentialArnHasBeenSet; }
+
+    /**
+     * <p>The ARN from the key store with which the automated backup is associated for
+     * TDE encryption.</p>
+     */
     inline void SetTdeCredentialArn(const Aws::String& value) { m_tdeCredentialArnHasBeenSet = true; m_tdeCredentialArn = value; }
 
     /**
@@ -712,6 +815,11 @@ namespace Model
     /**
      * <p>Specifies whether the automated backup is encrypted.</p>
      */
+    inline bool EncryptedHasBeenSet() const { return m_encryptedHasBeenSet; }
+
+    /**
+     * <p>Specifies whether the automated backup is encrypted.</p>
+     */
     inline void SetEncrypted(bool value) { m_encryptedHasBeenSet = true; m_encrypted = value; }
 
     /**
@@ -724,6 +832,11 @@ namespace Model
      * <p>Specifies the storage type associated with the automated backup.</p>
      */
     inline const Aws::String& GetStorageType() const{ return m_storageType; }
+
+    /**
+     * <p>Specifies the storage type associated with the automated backup.</p>
+     */
+    inline bool StorageTypeHasBeenSet() const { return m_storageTypeHasBeenSet; }
 
     /**
      * <p>Specifies the storage type associated with the automated backup.</p>
@@ -762,6 +875,13 @@ namespace Model
      * encryption key. </p>
      */
     inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
+
+    /**
+     * <p>The AWS KMS key ID for an automated backup. The KMS key ID is the Amazon
+     * Resource Name (ARN), KMS key identifier, or the KMS key alias for the KMS
+     * encryption key. </p>
+     */
+    inline bool KmsKeyIdHasBeenSet() const { return m_kmsKeyIdHasBeenSet; }
 
     /**
      * <p>The AWS KMS key ID for an automated backup. The KMS key ID is the Amazon
@@ -820,6 +940,14 @@ namespace Model
      * only for Microsoft SQL Server DB instances that were created with a time zone
      * specified.</p>
      */
+    inline bool TimezoneHasBeenSet() const { return m_timezoneHasBeenSet; }
+
+    /**
+     * <p>The time zone of the automated backup. In most cases, the
+     * <code>Timezone</code> element is empty. <code>Timezone</code> content appears
+     * only for Microsoft SQL Server DB instances that were created with a time zone
+     * specified.</p>
+     */
     inline void SetTimezone(const Aws::String& value) { m_timezoneHasBeenSet = true; m_timezone = value; }
 
     /**
@@ -868,6 +996,12 @@ namespace Model
      * database accounts is enabled, and otherwise false.</p>
      */
     inline bool GetIAMDatabaseAuthenticationEnabled() const{ return m_iAMDatabaseAuthenticationEnabled; }
+
+    /**
+     * <p>True if mapping of AWS Identity and Access Management (IAM) accounts to
+     * database accounts is enabled, and otherwise false.</p>
+     */
+    inline bool IAMDatabaseAuthenticationEnabledHasBeenSet() const { return m_iAMDatabaseAuthenticationEnabledHasBeenSet; }
 
     /**
      * <p>True if mapping of AWS Identity and Access Management (IAM) accounts to

@@ -52,6 +52,12 @@ namespace Model
      * The detectorID that specifies the GuardDuty service whose IPSet you want to
      * retrieve.
      */
+    inline bool DetectorIdHasBeenSet() const { return m_detectorIdHasBeenSet; }
+
+    /**
+     * The detectorID that specifies the GuardDuty service whose IPSet you want to
+     * retrieve.
+     */
     inline void SetDetectorId(const Aws::String& value) { m_detectorIdHasBeenSet = true; m_detectorId = value; }
 
     /**
@@ -89,6 +95,11 @@ namespace Model
      * The unique ID that specifies the IPSet that you want to describe.
      */
     inline const Aws::String& GetIpSetId() const{ return m_ipSetId; }
+
+    /**
+     * The unique ID that specifies the IPSet that you want to describe.
+     */
+    inline bool IpSetIdHasBeenSet() const { return m_ipSetIdHasBeenSet; }
 
     /**
      * The unique ID that specifies the IPSet that you want to describe.

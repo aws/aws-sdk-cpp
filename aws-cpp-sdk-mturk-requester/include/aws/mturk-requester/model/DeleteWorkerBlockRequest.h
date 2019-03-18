@@ -52,6 +52,11 @@ namespace Model
     /**
      * <p>The ID of the Worker to unblock.</p>
      */
+    inline bool WorkerIdHasBeenSet() const { return m_workerIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the Worker to unblock.</p>
+     */
     inline void SetWorkerId(const Aws::String& value) { m_workerIdHasBeenSet = true; m_workerId = value; }
 
     /**
@@ -85,6 +90,12 @@ namespace Model
      * not see this message.</p>
      */
     inline const Aws::String& GetReason() const{ return m_reason; }
+
+    /**
+     * <p>A message that explains the reason for unblocking the Worker. The Worker does
+     * not see this message.</p>
+     */
+    inline bool ReasonHasBeenSet() const { return m_reasonHasBeenSet; }
 
     /**
      * <p>A message that explains the reason for unblocking the Worker. The Worker does

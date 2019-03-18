@@ -52,6 +52,11 @@ namespace Model
     /**
      * <p>The name of the Systems Manager document.</p>
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>The name of the Systems Manager document.</p>
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
@@ -84,6 +89,11 @@ namespace Model
      * <p>The instance ID.</p>
      */
     inline const Aws::String& GetInstanceId() const{ return m_instanceId; }
+
+    /**
+     * <p>The instance ID.</p>
+     */
+    inline bool InstanceIdHasBeenSet() const { return m_instanceIdHasBeenSet; }
 
     /**
      * <p>The instance ID.</p>
@@ -124,6 +134,11 @@ namespace Model
     /**
      * <p>The association ID for which you want information.</p>
      */
+    inline bool AssociationIdHasBeenSet() const { return m_associationIdHasBeenSet; }
+
+    /**
+     * <p>The association ID for which you want information.</p>
+     */
     inline void SetAssociationId(const Aws::String& value) { m_associationIdHasBeenSet = true; m_associationId = value; }
 
     /**
@@ -160,6 +175,15 @@ namespace Model
      * <a>ListAssociationVersions</a>. </p>
      */
     inline const Aws::String& GetAssociationVersion() const{ return m_associationVersion; }
+
+    /**
+     * <p>Specify the association version to retrieve. To view the latest version,
+     * either specify <code>$LATEST</code> for this parameter, or omit this parameter.
+     * To view a list of all associations for an instance, use <a>ListAssociations</a>.
+     * To get a list of versions for a specific association, use
+     * <a>ListAssociationVersions</a>. </p>
+     */
+    inline bool AssociationVersionHasBeenSet() const { return m_associationVersionHasBeenSet; }
 
     /**
      * <p>Specify the association version to retrieve. To view the latest version,

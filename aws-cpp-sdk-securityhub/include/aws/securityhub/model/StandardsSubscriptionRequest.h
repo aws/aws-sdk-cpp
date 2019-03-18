@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The ARN of the standard that you want to enable.</p>
      */
+    inline bool StandardsArnHasBeenSet() const { return m_standardsArnHasBeenSet; }
+
+    /**
+     * <p>The ARN of the standard that you want to enable.</p>
+     */
     inline void SetStandardsArn(const Aws::String& value) { m_standardsArnHasBeenSet = true; m_standardsArn = value; }
 
     /**
@@ -88,6 +93,11 @@ namespace Model
      * <p/>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetStandardsInput() const{ return m_standardsInput; }
+
+    /**
+     * <p/>
+     */
+    inline bool StandardsInputHasBeenSet() const { return m_standardsInputHasBeenSet; }
 
     /**
      * <p/>

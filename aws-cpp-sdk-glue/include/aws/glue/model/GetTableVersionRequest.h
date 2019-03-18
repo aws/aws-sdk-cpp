@@ -54,6 +54,12 @@ namespace Model
      * <p>The ID of the Data Catalog where the tables reside. If none is supplied, the
      * AWS account ID is used by default.</p>
      */
+    inline bool CatalogIdHasBeenSet() const { return m_catalogIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the Data Catalog where the tables reside. If none is supplied, the
+     * AWS account ID is used by default.</p>
+     */
     inline void SetCatalogId(const Aws::String& value) { m_catalogIdHasBeenSet = true; m_catalogId = value; }
 
     /**
@@ -92,6 +98,12 @@ namespace Model
      * compatibility, this name is entirely lowercase.</p>
      */
     inline const Aws::String& GetDatabaseName() const{ return m_databaseName; }
+
+    /**
+     * <p>The database in the catalog in which the table resides. For Hive
+     * compatibility, this name is entirely lowercase.</p>
+     */
+    inline bool DatabaseNameHasBeenSet() const { return m_databaseNameHasBeenSet; }
 
     /**
      * <p>The database in the catalog in which the table resides. For Hive
@@ -140,6 +152,12 @@ namespace Model
      * <p>The name of the table. For Hive compatibility, this name is entirely
      * lowercase.</p>
      */
+    inline bool TableNameHasBeenSet() const { return m_tableNameHasBeenSet; }
+
+    /**
+     * <p>The name of the table. For Hive compatibility, this name is entirely
+     * lowercase.</p>
+     */
     inline void SetTableName(const Aws::String& value) { m_tableNameHasBeenSet = true; m_tableName = value; }
 
     /**
@@ -178,6 +196,12 @@ namespace Model
      * is a string representation of an integer. Each version is incremented by 1. </p>
      */
     inline const Aws::String& GetVersionId() const{ return m_versionId; }
+
+    /**
+     * <p>The ID value of the table version to be retrieved. A <code>VersionID</code>
+     * is a string representation of an integer. Each version is incremented by 1. </p>
+     */
+    inline bool VersionIdHasBeenSet() const { return m_versionIdHasBeenSet; }
 
     /**
      * <p>The ID value of the table version to be retrieved. A <code>VersionID</code>

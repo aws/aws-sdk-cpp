@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The name of the dynamic thing group to delete.</p>
      */
+    inline bool ThingGroupNameHasBeenSet() const { return m_thingGroupNameHasBeenSet; }
+
+    /**
+     * <p>The name of the dynamic thing group to delete.</p>
+     */
     inline void SetThingGroupName(const Aws::String& value) { m_thingGroupNameHasBeenSet = true; m_thingGroupName = value; }
 
     /**
@@ -88,6 +93,11 @@ namespace Model
      * <p>The expected version of the dynamic thing group to delete.</p>
      */
     inline long long GetExpectedVersion() const{ return m_expectedVersion; }
+
+    /**
+     * <p>The expected version of the dynamic thing group to delete.</p>
+     */
+    inline bool ExpectedVersionHasBeenSet() const { return m_expectedVersionHasBeenSet; }
 
     /**
      * <p>The expected version of the dynamic thing group to delete.</p>

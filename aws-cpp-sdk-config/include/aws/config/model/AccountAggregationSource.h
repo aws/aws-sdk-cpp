@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The 12-digit account ID of the account being aggregated. </p>
      */
+    inline bool AccountIdsHasBeenSet() const { return m_accountIdsHasBeenSet; }
+
+    /**
+     * <p>The 12-digit account ID of the account being aggregated. </p>
+     */
     inline void SetAccountIds(const Aws::Vector<Aws::String>& value) { m_accountIdsHasBeenSet = true; m_accountIds = value; }
 
     /**
@@ -97,6 +102,11 @@ namespace Model
     /**
      * <p>If true, aggregate existing AWS Config regions and future regions.</p>
      */
+    inline bool AllAwsRegionsHasBeenSet() const { return m_allAwsRegionsHasBeenSet; }
+
+    /**
+     * <p>If true, aggregate existing AWS Config regions and future regions.</p>
+     */
     inline void SetAllAwsRegions(bool value) { m_allAwsRegionsHasBeenSet = true; m_allAwsRegions = value; }
 
     /**
@@ -109,6 +119,11 @@ namespace Model
      * <p>The source regions being aggregated.</p>
      */
     inline const Aws::Vector<Aws::String>& GetAwsRegions() const{ return m_awsRegions; }
+
+    /**
+     * <p>The source regions being aggregated.</p>
+     */
+    inline bool AwsRegionsHasBeenSet() const { return m_awsRegionsHasBeenSet; }
 
     /**
      * <p>The source regions being aggregated.</p>

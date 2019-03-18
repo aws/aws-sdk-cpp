@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The name of the classifier.</p>
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>The name of the classifier.</p>
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
@@ -90,6 +95,12 @@ namespace Model
      * Twitter, JSON, Omniture logs, and so on.</p>
      */
     inline const Aws::String& GetClassification() const{ return m_classification; }
+
+    /**
+     * <p>An identifier of the data format that the classifier matches, such as
+     * Twitter, JSON, Omniture logs, and so on.</p>
+     */
+    inline bool ClassificationHasBeenSet() const { return m_classificationHasBeenSet; }
 
     /**
      * <p>An identifier of the data format that the classifier matches, such as
@@ -136,6 +147,11 @@ namespace Model
     /**
      * <p>The time this classifier was registered.</p>
      */
+    inline bool CreationTimeHasBeenSet() const { return m_creationTimeHasBeenSet; }
+
+    /**
+     * <p>The time this classifier was registered.</p>
+     */
     inline void SetCreationTime(const Aws::Utils::DateTime& value) { m_creationTimeHasBeenSet = true; m_creationTime = value; }
 
     /**
@@ -158,6 +174,11 @@ namespace Model
      * <p>The time this classifier was last updated.</p>
      */
     inline const Aws::Utils::DateTime& GetLastUpdated() const{ return m_lastUpdated; }
+
+    /**
+     * <p>The time this classifier was last updated.</p>
+     */
+    inline bool LastUpdatedHasBeenSet() const { return m_lastUpdatedHasBeenSet; }
 
     /**
      * <p>The time this classifier was last updated.</p>
@@ -188,6 +209,11 @@ namespace Model
     /**
      * <p>The version of this classifier.</p>
      */
+    inline bool VersionHasBeenSet() const { return m_versionHasBeenSet; }
+
+    /**
+     * <p>The version of this classifier.</p>
+     */
     inline void SetVersion(long long value) { m_versionHasBeenSet = true; m_version = value; }
 
     /**
@@ -203,6 +229,14 @@ namespace Model
      * Custom Classifers</a>.</p>
      */
     inline const Aws::String& GetGrokPattern() const{ return m_grokPattern; }
+
+    /**
+     * <p>The grok pattern applied to a data store by this classifier. For more
+     * information, see built-in patterns in <a
+     * href="http://docs.aws.amazon.com/glue/latest/dg/custom-classifier.html">Writing
+     * Custom Classifers</a>.</p>
+     */
+    inline bool GrokPatternHasBeenSet() const { return m_grokPatternHasBeenSet; }
 
     /**
      * <p>The grok pattern applied to a data store by this classifier. For more
@@ -260,6 +294,14 @@ namespace Model
      * Custom Classifers</a>.</p>
      */
     inline const Aws::String& GetCustomPatterns() const{ return m_customPatterns; }
+
+    /**
+     * <p>Optional custom grok patterns defined by this classifier. For more
+     * information, see custom patterns in <a
+     * href="http://docs.aws.amazon.com/glue/latest/dg/custom-classifier.html">Writing
+     * Custom Classifers</a>.</p>
+     */
+    inline bool CustomPatternsHasBeenSet() const { return m_customPatternsHasBeenSet; }
 
     /**
      * <p>Optional custom grok patterns defined by this classifier. For more

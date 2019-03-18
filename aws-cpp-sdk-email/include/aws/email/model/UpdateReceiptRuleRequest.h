@@ -61,6 +61,11 @@ namespace Model
     /**
      * <p>The name of the receipt rule set that the receipt rule belongs to.</p>
      */
+    inline bool RuleSetNameHasBeenSet() const { return m_ruleSetNameHasBeenSet; }
+
+    /**
+     * <p>The name of the receipt rule set that the receipt rule belongs to.</p>
+     */
     inline void SetRuleSetName(const Aws::String& value) { m_ruleSetNameHasBeenSet = true; m_ruleSetName = value; }
 
     /**
@@ -93,6 +98,11 @@ namespace Model
      * <p>A data structure that contains the updated receipt rule information.</p>
      */
     inline const ReceiptRule& GetRule() const{ return m_rule; }
+
+    /**
+     * <p>A data structure that contains the updated receipt rule information.</p>
+     */
+    inline bool RuleHasBeenSet() const { return m_ruleHasBeenSet; }
 
     /**
      * <p>A data structure that contains the updated receipt rule information.</p>

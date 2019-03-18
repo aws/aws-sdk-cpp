@@ -61,6 +61,13 @@ namespace Model
      * </li> <li> <p> <code>jp</code> - Japanese</p> </li> <li> <p> <code>zh</code> -
      * Chinese</p> </li> </ul>
      */
+    inline bool AcceptLanguageHasBeenSet() const { return m_acceptLanguageHasBeenSet; }
+
+    /**
+     * <p>The language code.</p> <ul> <li> <p> <code>en</code> - English (default)</p>
+     * </li> <li> <p> <code>jp</code> - Japanese</p> </li> <li> <p> <code>zh</code> -
+     * Chinese</p> </li> </ul>
+     */
     inline void SetAcceptLanguage(const Aws::String& value) { m_acceptLanguageHasBeenSet = true; m_acceptLanguage = value; }
 
     /**
@@ -107,6 +114,11 @@ namespace Model
     /**
      * <p>The name of the product.</p>
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>The name of the product.</p>
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
@@ -139,6 +151,11 @@ namespace Model
      * <p>The owner of the product.</p>
      */
     inline const Aws::String& GetOwner() const{ return m_owner; }
+
+    /**
+     * <p>The owner of the product.</p>
+     */
+    inline bool OwnerHasBeenSet() const { return m_ownerHasBeenSet; }
 
     /**
      * <p>The owner of the product.</p>
@@ -179,6 +196,11 @@ namespace Model
     /**
      * <p>The description of the product.</p>
      */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
+
+    /**
+     * <p>The description of the product.</p>
+     */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
@@ -211,6 +233,11 @@ namespace Model
      * <p>The distributor of the product.</p>
      */
     inline const Aws::String& GetDistributor() const{ return m_distributor; }
+
+    /**
+     * <p>The distributor of the product.</p>
+     */
+    inline bool DistributorHasBeenSet() const { return m_distributorHasBeenSet; }
 
     /**
      * <p>The distributor of the product.</p>
@@ -251,6 +278,11 @@ namespace Model
     /**
      * <p>The support information about the product.</p>
      */
+    inline bool SupportDescriptionHasBeenSet() const { return m_supportDescriptionHasBeenSet; }
+
+    /**
+     * <p>The support information about the product.</p>
+     */
     inline void SetSupportDescription(const Aws::String& value) { m_supportDescriptionHasBeenSet = true; m_supportDescription = value; }
 
     /**
@@ -283,6 +315,11 @@ namespace Model
      * <p>The contact email for product support.</p>
      */
     inline const Aws::String& GetSupportEmail() const{ return m_supportEmail; }
+
+    /**
+     * <p>The contact email for product support.</p>
+     */
+    inline bool SupportEmailHasBeenSet() const { return m_supportEmailHasBeenSet; }
 
     /**
      * <p>The contact email for product support.</p>
@@ -323,6 +360,11 @@ namespace Model
     /**
      * <p>The contact URL for product support.</p>
      */
+    inline bool SupportUrlHasBeenSet() const { return m_supportUrlHasBeenSet; }
+
+    /**
+     * <p>The contact URL for product support.</p>
+     */
     inline void SetSupportUrl(const Aws::String& value) { m_supportUrlHasBeenSet = true; m_supportUrl = value; }
 
     /**
@@ -359,6 +401,11 @@ namespace Model
     /**
      * <p>The type of product.</p>
      */
+    inline bool ProductTypeHasBeenSet() const { return m_productTypeHasBeenSet; }
+
+    /**
+     * <p>The type of product.</p>
+     */
     inline void SetProductType(const ProductType& value) { m_productTypeHasBeenSet = true; m_productType = value; }
 
     /**
@@ -381,6 +428,11 @@ namespace Model
      * <p>One or more tags.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>One or more tags.</p>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
      * <p>One or more tags.</p>
@@ -421,6 +473,11 @@ namespace Model
     /**
      * <p>The configuration of the provisioning artifact.</p>
      */
+    inline bool ProvisioningArtifactParametersHasBeenSet() const { return m_provisioningArtifactParametersHasBeenSet; }
+
+    /**
+     * <p>The configuration of the provisioning artifact.</p>
+     */
     inline void SetProvisioningArtifactParameters(const ProvisioningArtifactProperties& value) { m_provisioningArtifactParametersHasBeenSet = true; m_provisioningArtifactParameters = value; }
 
     /**
@@ -445,6 +502,13 @@ namespace Model
      * each repeated request.</p>
      */
     inline const Aws::String& GetIdempotencyToken() const{ return m_idempotencyToken; }
+
+    /**
+     * <p>A unique identifier that you provide to ensure idempotency. If multiple
+     * requests differ only by the idempotency token, the same response is returned for
+     * each repeated request.</p>
+     */
+    inline bool IdempotencyTokenHasBeenSet() const { return m_idempotencyTokenHasBeenSet; }
 
     /**
      * <p>A unique identifier that you provide to ensure idempotency. If multiple

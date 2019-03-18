@@ -54,6 +54,11 @@ namespace Model
     /**
      * Average bitrate in bits/second.
      */
+    inline bool BitrateHasBeenSet() const { return m_bitrateHasBeenSet; }
+
+    /**
+     * Average bitrate in bits/second.
+     */
     inline void SetBitrate(int value) { m_bitrateHasBeenSet = true; m_bitrate = value; }
 
     /**
@@ -74,6 +79,13 @@ namespace Model
      * Choosing Mono in the console will give you 1 output channel; choosing Stereo
      * will give you 2. In the API, valid values are 1 and 2.
      */
+    inline bool ChannelsHasBeenSet() const { return m_channelsHasBeenSet; }
+
+    /**
+     * Set Channels to specify the number of channels in this output audio track.
+     * Choosing Mono in the console will give you 1 output channel; choosing Stereo
+     * will give you 2. In the API, valid values are 1 and 2.
+     */
     inline void SetChannels(int value) { m_channelsHasBeenSet = true; m_channels = value; }
 
     /**
@@ -88,6 +100,11 @@ namespace Model
      * Sample rate in hz.
      */
     inline int GetSampleRate() const{ return m_sampleRate; }
+
+    /**
+     * Sample rate in hz.
+     */
+    inline bool SampleRateHasBeenSet() const { return m_sampleRateHasBeenSet; }
 
     /**
      * Sample rate in hz.

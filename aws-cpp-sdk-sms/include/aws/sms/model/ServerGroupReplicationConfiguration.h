@@ -59,6 +59,12 @@ namespace Model
      * <p>Identifier of the server group this replication configuration is associated
      * with.</p>
      */
+    inline bool ServerGroupIdHasBeenSet() const { return m_serverGroupIdHasBeenSet; }
+
+    /**
+     * <p>Identifier of the server group this replication configuration is associated
+     * with.</p>
+     */
     inline void SetServerGroupId(const Aws::String& value) { m_serverGroupIdHasBeenSet = true; m_serverGroupId = value; }
 
     /**
@@ -96,6 +102,11 @@ namespace Model
      * <p>Replication configuration for servers in the server group.</p>
      */
     inline const Aws::Vector<ServerReplicationConfiguration>& GetServerReplicationConfigurations() const{ return m_serverReplicationConfigurations; }
+
+    /**
+     * <p>Replication configuration for servers in the server group.</p>
+     */
+    inline bool ServerReplicationConfigurationsHasBeenSet() const { return m_serverReplicationConfigurationsHasBeenSet; }
 
     /**
      * <p>Replication configuration for servers in the server group.</p>

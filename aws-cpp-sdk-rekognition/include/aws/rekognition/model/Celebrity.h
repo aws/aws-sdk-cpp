@@ -60,6 +60,12 @@ namespace Model
      * <p>An array of URLs pointing to additional information about the celebrity. If
      * there is no additional information about the celebrity, this list is empty.</p>
      */
+    inline bool UrlsHasBeenSet() const { return m_urlsHasBeenSet; }
+
+    /**
+     * <p>An array of URLs pointing to additional information about the celebrity. If
+     * there is no additional information about the celebrity, this list is empty.</p>
+     */
     inline void SetUrls(const Aws::Vector<Aws::String>& value) { m_urlsHasBeenSet = true; m_urls = value; }
 
     /**
@@ -107,6 +113,11 @@ namespace Model
     /**
      * <p>The name of the celebrity.</p>
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>The name of the celebrity.</p>
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
@@ -139,6 +150,11 @@ namespace Model
      * <p>A unique identifier for the celebrity. </p>
      */
     inline const Aws::String& GetId() const{ return m_id; }
+
+    /**
+     * <p>A unique identifier for the celebrity. </p>
+     */
+    inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
 
     /**
      * <p>A unique identifier for the celebrity. </p>
@@ -181,6 +197,12 @@ namespace Model
      * <p>Provides information about the celebrity's face, such as its location on the
      * image.</p>
      */
+    inline bool FaceHasBeenSet() const { return m_faceHasBeenSet; }
+
+    /**
+     * <p>Provides information about the celebrity's face, such as its location on the
+     * image.</p>
+     */
     inline void SetFace(const ComparedFace& value) { m_faceHasBeenSet = true; m_face = value; }
 
     /**
@@ -207,6 +229,12 @@ namespace Model
      * recognized face is the celebrity.</p>
      */
     inline double GetMatchConfidence() const{ return m_matchConfidence; }
+
+    /**
+     * <p>The confidence, in percentage, that Amazon Rekognition has that the
+     * recognized face is the celebrity.</p>
+     */
+    inline bool MatchConfidenceHasBeenSet() const { return m_matchConfidenceHasBeenSet; }
 
     /**
      * <p>The confidence, in percentage, that Amazon Rekognition has that the

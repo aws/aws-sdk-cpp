@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The metric type.</p>
      */
+    inline bool PredefinedLoadMetricTypeHasBeenSet() const { return m_predefinedLoadMetricTypeHasBeenSet; }
+
+    /**
+     * <p>The metric type.</p>
+     */
     inline void SetPredefinedLoadMetricType(const LoadMetricType& value) { m_predefinedLoadMetricTypeHasBeenSet = true; m_predefinedLoadMetricType = value; }
 
     /**
@@ -87,6 +92,19 @@ namespace Model
      * portion of the target group ARN.</p> </li> </ul>
      */
     inline const Aws::String& GetResourceLabel() const{ return m_resourceLabel; }
+
+    /**
+     * <p>Identifies the resource associated with the metric type. You can't specify a
+     * resource label unless the metric type is <code>ALBRequestCountPerTarget</code>
+     * and there is a target group for an Application Load Balancer attached to the
+     * Auto Scaling group.</p> <p>The format is
+     * app/&lt;load-balancer-name&gt;/&lt;load-balancer-id&gt;/targetgroup/&lt;target-group-name&gt;/&lt;target-group-id&gt;,
+     * where:</p> <ul> <li> <p>app/&lt;load-balancer-name&gt;/&lt;load-balancer-id&gt;
+     * is the final portion of the load balancer ARN.</p> </li> <li>
+     * <p>targetgroup/&lt;target-group-name&gt;/&lt;target-group-id&gt; is the final
+     * portion of the target group ARN.</p> </li> </ul>
+     */
+    inline bool ResourceLabelHasBeenSet() const { return m_resourceLabelHasBeenSet; }
 
     /**
      * <p>Identifies the resource associated with the metric type. You can't specify a

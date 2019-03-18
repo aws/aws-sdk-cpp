@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p>The name of the Amazon RDS quota for this AWS account.</p>
      */
+    inline bool AccountQuotaNameHasBeenSet() const { return m_accountQuotaNameHasBeenSet; }
+
+    /**
+     * <p>The name of the Amazon RDS quota for this AWS account.</p>
+     */
     inline void SetAccountQuotaName(const Aws::String& value) { m_accountQuotaNameHasBeenSet = true; m_accountQuotaName = value; }
 
     /**
@@ -94,6 +99,11 @@ namespace Model
     /**
      * <p>The amount currently used toward the quota maximum.</p>
      */
+    inline bool UsedHasBeenSet() const { return m_usedHasBeenSet; }
+
+    /**
+     * <p>The amount currently used toward the quota maximum.</p>
+     */
     inline void SetUsed(long long value) { m_usedHasBeenSet = true; m_used = value; }
 
     /**
@@ -106,6 +116,11 @@ namespace Model
      * <p>The maximum allowed value for the quota.</p>
      */
     inline long long GetMax() const{ return m_max; }
+
+    /**
+     * <p>The maximum allowed value for the quota.</p>
+     */
+    inline bool MaxHasBeenSet() const { return m_maxHasBeenSet; }
 
     /**
      * <p>The maximum allowed value for the quota.</p>

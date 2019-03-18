@@ -55,6 +55,11 @@ namespace Model
     /**
      * <p>The identity's ID. </p>
      */
+    inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
+
+    /**
+     * <p>The identity's ID. </p>
+     */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
     /**

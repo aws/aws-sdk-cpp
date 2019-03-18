@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p> Arn for the Job. </p>
      */
+    inline bool JobArnHasBeenSet() const { return m_jobArnHasBeenSet; }
+
+    /**
+     * <p> Arn for the Job. </p>
+     */
     inline void SetJobArn(const Aws::String& value) { m_jobArnHasBeenSet = true; m_jobArn = value; }
 
     /**
@@ -90,6 +95,11 @@ namespace Model
      * <p> Unique Id for the Job. </p>
      */
     inline const Aws::String& GetJobId() const{ return m_jobId; }
+
+    /**
+     * <p> Unique Id for the Job. </p>
+     */
+    inline bool JobIdHasBeenSet() const { return m_jobIdHasBeenSet; }
 
     /**
      * <p> Unique Id for the Job. </p>
@@ -130,6 +140,11 @@ namespace Model
     /**
      * <p> Commit Id from 3rd party repository provider for the Job. </p>
      */
+    inline bool CommitIdHasBeenSet() const { return m_commitIdHasBeenSet; }
+
+    /**
+     * <p> Commit Id from 3rd party repository provider for the Job. </p>
+     */
     inline void SetCommitId(const Aws::String& value) { m_commitIdHasBeenSet = true; m_commitId = value; }
 
     /**
@@ -162,6 +177,11 @@ namespace Model
      * <p> Commit message from 3rd party repository provider for the Job. </p>
      */
     inline const Aws::String& GetCommitMessage() const{ return m_commitMessage; }
+
+    /**
+     * <p> Commit message from 3rd party repository provider for the Job. </p>
+     */
+    inline bool CommitMessageHasBeenSet() const { return m_commitMessageHasBeenSet; }
 
     /**
      * <p> Commit message from 3rd party repository provider for the Job. </p>
@@ -202,6 +222,11 @@ namespace Model
     /**
      * <p> Commit date / time for the Job. </p>
      */
+    inline bool CommitTimeHasBeenSet() const { return m_commitTimeHasBeenSet; }
+
+    /**
+     * <p> Commit date / time for the Job. </p>
+     */
     inline void SetCommitTime(const Aws::Utils::DateTime& value) { m_commitTimeHasBeenSet = true; m_commitTime = value; }
 
     /**
@@ -224,6 +249,11 @@ namespace Model
      * <p> Start date / time for the Job. </p>
      */
     inline const Aws::Utils::DateTime& GetStartTime() const{ return m_startTime; }
+
+    /**
+     * <p> Start date / time for the Job. </p>
+     */
+    inline bool StartTimeHasBeenSet() const { return m_startTimeHasBeenSet; }
 
     /**
      * <p> Start date / time for the Job. </p>
@@ -254,6 +284,11 @@ namespace Model
     /**
      * <p> Status for the Job. </p>
      */
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
+
+    /**
+     * <p> Status for the Job. </p>
+     */
     inline void SetStatus(const JobStatus& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
@@ -280,6 +315,11 @@ namespace Model
     /**
      * <p> End date / time for the Job. </p>
      */
+    inline bool EndTimeHasBeenSet() const { return m_endTimeHasBeenSet; }
+
+    /**
+     * <p> End date / time for the Job. </p>
+     */
     inline void SetEndTime(const Aws::Utils::DateTime& value) { m_endTimeHasBeenSet = true; m_endTime = value; }
 
     /**
@@ -302,6 +342,11 @@ namespace Model
      * <p> Type for the Job. </p>
      */
     inline const JobType& GetJobType() const{ return m_jobType; }
+
+    /**
+     * <p> Type for the Job. </p>
+     */
+    inline bool JobTypeHasBeenSet() const { return m_jobTypeHasBeenSet; }
 
     /**
      * <p> Type for the Job. </p>

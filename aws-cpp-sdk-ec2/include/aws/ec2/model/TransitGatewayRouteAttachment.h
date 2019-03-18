@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p>The ID of the resource.</p>
      */
+    inline bool ResourceIdHasBeenSet() const { return m_resourceIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the resource.</p>
+     */
     inline void SetResourceId(const Aws::String& value) { m_resourceIdHasBeenSet = true; m_resourceId = value; }
 
     /**
@@ -94,6 +99,11 @@ namespace Model
     /**
      * <p>The ID of the attachment.</p>
      */
+    inline bool TransitGatewayAttachmentIdHasBeenSet() const { return m_transitGatewayAttachmentIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the attachment.</p>
+     */
     inline void SetTransitGatewayAttachmentId(const Aws::String& value) { m_transitGatewayAttachmentIdHasBeenSet = true; m_transitGatewayAttachmentId = value; }
 
     /**
@@ -126,6 +136,11 @@ namespace Model
      * <p>The resource type.</p>
      */
     inline const TransitGatewayAttachmentResourceType& GetResourceType() const{ return m_resourceType; }
+
+    /**
+     * <p>The resource type.</p>
+     */
+    inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
 
     /**
      * <p>The resource type.</p>

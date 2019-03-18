@@ -54,6 +54,12 @@ namespace Model
      * <p>The <code>ListProtectionsRequest.NextToken</code> value from a previous call
      * to <code>ListProtections</code>. Pass null if this is the first call.</p>
      */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
+
+    /**
+     * <p>The <code>ListProtectionsRequest.NextToken</code> value from a previous call
+     * to <code>ListProtections</code>. Pass null if this is the first call.</p>
+     */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
     /**
@@ -97,6 +103,17 @@ namespace Model
      * will always also return a <code>NextToken</code>.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
+
+    /**
+     * <p>The maximum number of <a>Protection</a> objects to be returned. If this is
+     * left blank the first 20 results will be returned.</p> <p>This is a maximum
+     * value; it is possible that AWS WAF will return the results in smaller batches.
+     * That is, the number of <a>Protection</a> objects returned could be less than
+     * <code>MaxResults</code>, even if there are still more <a>Protection</a> objects
+     * yet to return. If there are more <a>Protection</a> objects to return, AWS WAF
+     * will always also return a <code>NextToken</code>.</p>
+     */
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
 
     /**
      * <p>The maximum number of <a>Protection</a> objects to be returned. If this is

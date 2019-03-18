@@ -53,6 +53,12 @@ namespace Model
      * <p>The name or full Amazon Resource Name (ARN) of the job queue with which to
      * list jobs.</p>
      */
+    inline bool JobQueueHasBeenSet() const { return m_jobQueueHasBeenSet; }
+
+    /**
+     * <p>The name or full Amazon Resource Name (ARN) of the job queue with which to
+     * list jobs.</p>
+     */
     inline void SetJobQueue(const Aws::String& value) { m_jobQueueHasBeenSet = true; m_jobQueue = value; }
 
     /**
@@ -91,6 +97,12 @@ namespace Model
      * lists all child jobs from within the specified array.</p>
      */
     inline const Aws::String& GetArrayJobId() const{ return m_arrayJobId; }
+
+    /**
+     * <p>The job ID for an array job. Specifying an array job ID with this parameter
+     * lists all child jobs from within the specified array.</p>
+     */
+    inline bool ArrayJobIdHasBeenSet() const { return m_arrayJobIdHasBeenSet; }
 
     /**
      * <p>The job ID for an array job. Specifying an array job ID with this parameter
@@ -135,6 +147,13 @@ namespace Model
      * specified job.</p>
      */
     inline const Aws::String& GetMultiNodeJobId() const{ return m_multiNodeJobId; }
+
+    /**
+     * <p>The job ID for a multi-node parallel job. Specifying a multi-node parallel
+     * job ID with this parameter lists all nodes that are associated with the
+     * specified job.</p>
+     */
+    inline bool MultiNodeJobIdHasBeenSet() const { return m_multiNodeJobIdHasBeenSet; }
 
     /**
      * <p>The job ID for a multi-node parallel job. Specifying a multi-node parallel
@@ -189,6 +208,12 @@ namespace Model
      * <p>The job status with which to filter jobs in the specified queue. If you do
      * not specify a status, only <code>RUNNING</code> jobs are returned.</p>
      */
+    inline bool JobStatusHasBeenSet() const { return m_jobStatusHasBeenSet; }
+
+    /**
+     * <p>The job status with which to filter jobs in the specified queue. If you do
+     * not specify a status, only <code>RUNNING</code> jobs are returned.</p>
+     */
     inline void SetJobStatus(const JobStatus& value) { m_jobStatusHasBeenSet = true; m_jobStatus = value; }
 
     /**
@@ -232,6 +257,18 @@ namespace Model
      * this parameter is not used, then <code>ListJobs</code> returns up to 100 results
      * and a <code>nextToken</code> value if applicable.</p>
      */
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
+
+    /**
+     * <p>The maximum number of results returned by <code>ListJobs</code> in paginated
+     * output. When this parameter is used, <code>ListJobs</code> only returns
+     * <code>maxResults</code> results in a single page along with a
+     * <code>nextToken</code> response element. The remaining results of the initial
+     * request can be seen by sending another <code>ListJobs</code> request with the
+     * returned <code>nextToken</code> value. This value can be between 1 and 100. If
+     * this parameter is not used, then <code>ListJobs</code> returns up to 100 results
+     * and a <code>nextToken</code> value if applicable.</p>
+     */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
@@ -258,6 +295,18 @@ namespace Model
      * </note>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
+    /**
+     * <p>The <code>nextToken</code> value returned from a previous paginated
+     * <code>ListJobs</code> request where <code>maxResults</code> was used and the
+     * results exceeded the value of that parameter. Pagination continues from the end
+     * of the previous results that returned the <code>nextToken</code> value. This
+     * value is <code>null</code> when there are no more results to return.</p> <note>
+     * <p>This token should be treated as an opaque identifier that is only used to
+     * retrieve the next items in a list and not for other programmatic purposes.</p>
+     * </note>
+     */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
      * <p>The <code>nextToken</code> value returned from a previous paginated

@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The application information for the robot application.</p>
      */
+    inline bool ApplicationHasBeenSet() const { return m_applicationHasBeenSet; }
+
+    /**
+     * <p>The application information for the robot application.</p>
+     */
     inline void SetApplication(const Aws::String& value) { m_applicationHasBeenSet = true; m_application = value; }
 
     /**
@@ -93,6 +98,11 @@ namespace Model
     /**
      * <p>The version of the robot application.</p>
      */
+    inline bool ApplicationVersionHasBeenSet() const { return m_applicationVersionHasBeenSet; }
+
+    /**
+     * <p>The version of the robot application.</p>
+     */
     inline void SetApplicationVersion(const Aws::String& value) { m_applicationVersionHasBeenSet = true; m_applicationVersion = value; }
 
     /**
@@ -125,6 +135,11 @@ namespace Model
      * <p>The launch configuration for the robot application.</p>
      */
     inline const LaunchConfig& GetLaunchConfig() const{ return m_launchConfig; }
+
+    /**
+     * <p>The launch configuration for the robot application.</p>
+     */
+    inline bool LaunchConfigHasBeenSet() const { return m_launchConfigHasBeenSet; }
 
     /**
      * <p>The launch configuration for the robot application.</p>

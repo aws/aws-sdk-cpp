@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The type of processor.</p>
      */
+    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
+
+    /**
+     * <p>The type of processor.</p>
+     */
     inline void SetType(const ProcessorType& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
@@ -79,6 +84,11 @@ namespace Model
      * <p>The processor parameters.</p>
      */
     inline const Aws::Vector<ProcessorParameter>& GetParameters() const{ return m_parameters; }
+
+    /**
+     * <p>The processor parameters.</p>
+     */
+    inline bool ParametersHasBeenSet() const { return m_parametersHasBeenSet; }
 
     /**
      * <p>The processor parameters.</p>

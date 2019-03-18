@@ -52,6 +52,11 @@ namespace Model
     /**
      * <p>A unique identifier (ID) for the web ACL. </p>
      */
+    inline bool WebACLIdHasBeenSet() const { return m_webACLIdHasBeenSet; }
+
+    /**
+     * <p>A unique identifier (ID) for the web ACL. </p>
+     */
     inline void SetWebACLId(const Aws::String& value) { m_webACLIdHasBeenSet = true; m_webACLId = value; }
 
     /**
@@ -91,6 +96,18 @@ namespace Model
      * </code> </p> </li> </ul>
      */
     inline const Aws::String& GetResourceArn() const{ return m_resourceArn; }
+
+    /**
+     * <p>The ARN (Amazon Resource Name) of the resource to be protected, either an
+     * application load balancer or Amazon API Gateway stage. </p> <p>The ARN should be
+     * in one of the following formats:</p> <ul> <li> <p>For an Application Load
+     * Balancer:
+     * <code>arn:aws:elasticloadbalancing:<i>region</i>:<i>account-id</i>:loadbalancer/app/<i>load-balancer-name</i>/<i>load-balancer-id</i>
+     * </code> </p> </li> <li> <p>For an Amazon API Gateway stage:
+     * <code>arn:aws:apigateway:<i>region</i>::/restapis/<i>api-id</i>/stages/<i>stage-name</i>
+     * </code> </p> </li> </ul>
+     */
+    inline bool ResourceArnHasBeenSet() const { return m_resourceArnHasBeenSet; }
 
     /**
      * <p>The ARN (Amazon Resource Name) of the resource to be protected, either an

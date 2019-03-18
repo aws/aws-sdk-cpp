@@ -55,6 +55,12 @@ namespace Model
      * <p>Name of the application to which you want to add the input processing
      * configuration.</p>
      */
+    inline bool ApplicationNameHasBeenSet() const { return m_applicationNameHasBeenSet; }
+
+    /**
+     * <p>Name of the application to which you want to add the input processing
+     * configuration.</p>
+     */
     inline void SetApplicationName(const Aws::String& value) { m_applicationNameHasBeenSet = true; m_applicationName = value; }
 
     /**
@@ -102,6 +108,14 @@ namespace Model
      * current application version. If the version specified is not the current
      * version, the <code>ConcurrentModificationException</code> is returned.</p>
      */
+    inline bool CurrentApplicationVersionIdHasBeenSet() const { return m_currentApplicationVersionIdHasBeenSet; }
+
+    /**
+     * <p>Version of the application to which you want to add the input processing
+     * configuration. You can use the <a>DescribeApplication</a> operation to get the
+     * current application version. If the version specified is not the current
+     * version, the <code>ConcurrentModificationException</code> is returned.</p>
+     */
     inline void SetCurrentApplicationVersionId(long long value) { m_currentApplicationVersionIdHasBeenSet = true; m_currentApplicationVersionId = value; }
 
     /**
@@ -119,6 +133,13 @@ namespace Model
      * <a>DescribeApplication</a> operation.</p>
      */
     inline const Aws::String& GetInputId() const{ return m_inputId; }
+
+    /**
+     * <p>The ID of the input configuration to add the input processing configuration
+     * to. You can get a list of the input IDs for an application using the
+     * <a>DescribeApplication</a> operation.</p>
+     */
+    inline bool InputIdHasBeenSet() const { return m_inputIdHasBeenSet; }
 
     /**
      * <p>The ID of the input configuration to add the input processing configuration
@@ -167,6 +188,11 @@ namespace Model
      * <p>The <a>InputProcessingConfiguration</a> to add to the application.</p>
      */
     inline const InputProcessingConfiguration& GetInputProcessingConfiguration() const{ return m_inputProcessingConfiguration; }
+
+    /**
+     * <p>The <a>InputProcessingConfiguration</a> to add to the application.</p>
+     */
+    inline bool InputProcessingConfigurationHasBeenSet() const { return m_inputProcessingConfigurationHasBeenSet; }
 
     /**
      * <p>The <a>InputProcessingConfiguration</a> to add to the application.</p>

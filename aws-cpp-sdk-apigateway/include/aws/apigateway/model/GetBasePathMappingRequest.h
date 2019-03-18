@@ -56,6 +56,12 @@ namespace Model
      * <p>[Required] The domain name of the <a>BasePathMapping</a> resource to be
      * described.</p>
      */
+    inline bool DomainNameHasBeenSet() const { return m_domainNameHasBeenSet; }
+
+    /**
+     * <p>[Required] The domain name of the <a>BasePathMapping</a> resource to be
+     * described.</p>
+     */
     inline void SetDomainName(const Aws::String& value) { m_domainNameHasBeenSet = true; m_domainName = value; }
 
     /**
@@ -96,6 +102,14 @@ namespace Model
      * base path name after the domain name.</p>
      */
     inline const Aws::String& GetBasePath() const{ return m_basePath; }
+
+    /**
+     * <p>[Required] The base path name that callers of the API must provide as part of
+     * the URL after the domain name. This value must be unique for all of the mappings
+     * across a single API. Leave this blank if you do not want callers to specify any
+     * base path name after the domain name.</p>
+     */
+    inline bool BasePathHasBeenSet() const { return m_basePathHasBeenSet; }
 
     /**
      * <p>[Required] The base path name that callers of the API must provide as part of

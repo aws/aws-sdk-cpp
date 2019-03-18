@@ -52,6 +52,11 @@ namespace Model
     /**
      * <p>The name of the container that you want to stop access logging on.</p>
      */
+    inline bool ContainerNameHasBeenSet() const { return m_containerNameHasBeenSet; }
+
+    /**
+     * <p>The name of the container that you want to stop access logging on.</p>
+     */
     inline void SetContainerName(const Aws::String& value) { m_containerNameHasBeenSet = true; m_containerName = value; }
 
     /**

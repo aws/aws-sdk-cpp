@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p>The ID of the Client VPN endpoint with which the route is associated.</p>
      */
+    inline bool ClientVpnEndpointIdHasBeenSet() const { return m_clientVpnEndpointIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the Client VPN endpoint with which the route is associated.</p>
+     */
     inline void SetClientVpnEndpointId(const Aws::String& value) { m_clientVpnEndpointIdHasBeenSet = true; m_clientVpnEndpointId = value; }
 
     /**
@@ -90,6 +95,11 @@ namespace Model
      * <p>The IPv4 address range, in CIDR notation, of the route destination.</p>
      */
     inline const Aws::String& GetDestinationCidr() const{ return m_destinationCidr; }
+
+    /**
+     * <p>The IPv4 address range, in CIDR notation, of the route destination.</p>
+     */
+    inline bool DestinationCidrHasBeenSet() const { return m_destinationCidrHasBeenSet; }
 
     /**
      * <p>The IPv4 address range, in CIDR notation, of the route destination.</p>
@@ -130,6 +140,11 @@ namespace Model
     /**
      * <p>The ID of the subnet through which traffic is routed.</p>
      */
+    inline bool TargetSubnetHasBeenSet() const { return m_targetSubnetHasBeenSet; }
+
+    /**
+     * <p>The ID of the subnet through which traffic is routed.</p>
+     */
     inline void SetTargetSubnet(const Aws::String& value) { m_targetSubnetHasBeenSet = true; m_targetSubnet = value; }
 
     /**
@@ -162,6 +177,11 @@ namespace Model
      * <p>The route type.</p>
      */
     inline const Aws::String& GetType() const{ return m_type; }
+
+    /**
+     * <p>The route type.</p>
+     */
+    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
 
     /**
      * <p>The route type.</p>
@@ -202,6 +222,15 @@ namespace Model
      * <b>CreateClientVpnRoute</b> action.</p>
      */
     inline const Aws::String& GetOrigin() const{ return m_origin; }
+
+    /**
+     * <p>Indicates how the route was associated with the Client VPN endpoint.
+     * <code>associate</code> indicates that the route was automatically added when the
+     * target network was associated with the Client VPN endpoint.
+     * <code>add-route</code> indicates that the route was manually added using the
+     * <b>CreateClientVpnRoute</b> action.</p>
+     */
+    inline bool OriginHasBeenSet() const { return m_originHasBeenSet; }
 
     /**
      * <p>Indicates how the route was associated with the Client VPN endpoint.
@@ -266,6 +295,11 @@ namespace Model
     /**
      * <p>The current state of the route.</p>
      */
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
+
+    /**
+     * <p>The current state of the route.</p>
+     */
     inline void SetStatus(const ClientVpnRouteStatus& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
@@ -288,6 +322,11 @@ namespace Model
      * <p>A brief description of the route.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
+
+    /**
+     * <p>A brief description of the route.</p>
+     */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
 
     /**
      * <p>A brief description of the route.</p>

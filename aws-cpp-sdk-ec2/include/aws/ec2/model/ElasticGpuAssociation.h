@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p>The ID of the Elastic Graphics accelerator.</p>
      */
+    inline bool ElasticGpuIdHasBeenSet() const { return m_elasticGpuIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the Elastic Graphics accelerator.</p>
+     */
     inline void SetElasticGpuId(const Aws::String& value) { m_elasticGpuIdHasBeenSet = true; m_elasticGpuId = value; }
 
     /**
@@ -90,6 +95,11 @@ namespace Model
      * <p>The ID of the association.</p>
      */
     inline const Aws::String& GetElasticGpuAssociationId() const{ return m_elasticGpuAssociationId; }
+
+    /**
+     * <p>The ID of the association.</p>
+     */
+    inline bool ElasticGpuAssociationIdHasBeenSet() const { return m_elasticGpuAssociationIdHasBeenSet; }
 
     /**
      * <p>The ID of the association.</p>
@@ -127,6 +137,12 @@ namespace Model
      * accelerator.</p>
      */
     inline const Aws::String& GetElasticGpuAssociationState() const{ return m_elasticGpuAssociationState; }
+
+    /**
+     * <p>The state of the association between the instance and the Elastic Graphics
+     * accelerator.</p>
+     */
+    inline bool ElasticGpuAssociationStateHasBeenSet() const { return m_elasticGpuAssociationStateHasBeenSet; }
 
     /**
      * <p>The state of the association between the instance and the Elastic Graphics
@@ -170,6 +186,12 @@ namespace Model
      * instance.</p>
      */
     inline const Aws::String& GetElasticGpuAssociationTime() const{ return m_elasticGpuAssociationTime; }
+
+    /**
+     * <p>The time the Elastic Graphics accelerator was associated with the
+     * instance.</p>
+     */
+    inline bool ElasticGpuAssociationTimeHasBeenSet() const { return m_elasticGpuAssociationTimeHasBeenSet; }
 
     /**
      * <p>The time the Elastic Graphics accelerator was associated with the

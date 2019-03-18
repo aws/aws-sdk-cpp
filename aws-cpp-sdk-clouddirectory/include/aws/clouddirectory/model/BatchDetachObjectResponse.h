@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The <code>ObjectIdentifier</code> of the detached object.</p>
      */
+    inline bool DetachedObjectIdentifierHasBeenSet() const { return m_detachedObjectIdentifierHasBeenSet; }
+
+    /**
+     * <p>The <code>ObjectIdentifier</code> of the detached object.</p>
+     */
     inline void SetDetachedObjectIdentifier(const Aws::String& value) { m_detachedObjectIdentifierHasBeenSet = true; m_detachedObjectIdentifier = value; }
 
     /**

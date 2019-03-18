@@ -55,6 +55,11 @@ namespace Model
     /**
      * <p>The error ID.</p>
      */
+    inline bool ServiceErrorIdHasBeenSet() const { return m_serviceErrorIdHasBeenSet; }
+
+    /**
+     * <p>The error ID.</p>
+     */
     inline void SetServiceErrorId(const Aws::String& value) { m_serviceErrorIdHasBeenSet = true; m_serviceErrorId = value; }
 
     /**
@@ -87,6 +92,11 @@ namespace Model
      * <p>The stack ID.</p>
      */
     inline const Aws::String& GetStackId() const{ return m_stackId; }
+
+    /**
+     * <p>The stack ID.</p>
+     */
+    inline bool StackIdHasBeenSet() const { return m_stackIdHasBeenSet; }
 
     /**
      * <p>The stack ID.</p>
@@ -127,6 +137,11 @@ namespace Model
     /**
      * <p>The instance ID.</p>
      */
+    inline bool InstanceIdHasBeenSet() const { return m_instanceIdHasBeenSet; }
+
+    /**
+     * <p>The instance ID.</p>
+     */
     inline void SetInstanceId(const Aws::String& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
 
     /**
@@ -159,6 +174,11 @@ namespace Model
      * <p>The error type.</p>
      */
     inline const Aws::String& GetType() const{ return m_type; }
+
+    /**
+     * <p>The error type.</p>
+     */
+    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
 
     /**
      * <p>The error type.</p>
@@ -199,6 +219,11 @@ namespace Model
     /**
      * <p>A message that describes the error.</p>
      */
+    inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
+
+    /**
+     * <p>A message that describes the error.</p>
+     */
     inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
 
     /**
@@ -231,6 +256,11 @@ namespace Model
      * <p>When the error occurred.</p>
      */
     inline const Aws::String& GetCreatedAt() const{ return m_createdAt; }
+
+    /**
+     * <p>When the error occurred.</p>
+     */
+    inline bool CreatedAtHasBeenSet() const { return m_createdAtHasBeenSet; }
 
     /**
      * <p>When the error occurred.</p>

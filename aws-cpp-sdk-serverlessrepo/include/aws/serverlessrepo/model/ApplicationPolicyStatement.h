@@ -62,6 +62,14 @@ namespace Model
      * 
  Permissions</a>.</p>
      */
+    inline bool ActionsHasBeenSet() const { return m_actionsHasBeenSet; }
+
+    /**
+     * <p>For the list of actions supported for this operation, see <a
+     * href="https://docs.aws.amazon.com/serverlessrepo/latest/devguide/access-control-resource-based.html#application-permissions">Application
+     * 
+ Permissions</a>.</p>
+     */
     inline void SetActions(const Aws::Vector<Aws::String>& value) { m_actionsHasBeenSet = true; m_actions = value; }
 
     /**
@@ -121,6 +129,11 @@ namespace Model
     /**
      * <p>An array of AWS account IDs, or * to make the application public.</p>
      */
+    inline bool PrincipalsHasBeenSet() const { return m_principalsHasBeenSet; }
+
+    /**
+     * <p>An array of AWS account IDs, or * to make the application public.</p>
+     */
     inline void SetPrincipals(const Aws::Vector<Aws::String>& value) { m_principalsHasBeenSet = true; m_principals = value; }
 
     /**
@@ -158,6 +171,11 @@ namespace Model
      * <p>A unique ID for the statement.</p>
      */
     inline const Aws::String& GetStatementId() const{ return m_statementId; }
+
+    /**
+     * <p>A unique ID for the statement.</p>
+     */
+    inline bool StatementIdHasBeenSet() const { return m_statementIdHasBeenSet; }
 
     /**
      * <p>A unique ID for the statement.</p>

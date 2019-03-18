@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The DNS name of the private IP address.</p>
      */
+    inline bool PrivateDnsNameHasBeenSet() const { return m_privateDnsNameHasBeenSet; }
+
+    /**
+     * <p>The DNS name of the private IP address.</p>
+     */
     inline void SetPrivateDnsName(const Aws::String& value) { m_privateDnsNameHasBeenSet = true; m_privateDnsName = value; }
 
     /**
@@ -89,6 +94,11 @@ namespace Model
      * <p>The full IP address of the network inteface.</p>
      */
     inline const Aws::String& GetPrivateIpAddress() const{ return m_privateIpAddress; }
+
+    /**
+     * <p>The full IP address of the network inteface.</p>
+     */
+    inline bool PrivateIpAddressHasBeenSet() const { return m_privateIpAddressHasBeenSet; }
 
     /**
      * <p>The full IP address of the network inteface.</p>

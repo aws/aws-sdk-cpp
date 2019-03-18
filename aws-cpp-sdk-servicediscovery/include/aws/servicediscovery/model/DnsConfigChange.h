@@ -60,6 +60,12 @@ namespace Model
      * <p>An array that contains one <code>DnsRecord</code> object for each Route 53
      * record that you want AWS Cloud Map to create when you register an instance.</p>
      */
+    inline bool DnsRecordsHasBeenSet() const { return m_dnsRecordsHasBeenSet; }
+
+    /**
+     * <p>An array that contains one <code>DnsRecord</code> object for each Route 53
+     * record that you want AWS Cloud Map to create when you register an instance.</p>
+     */
     inline void SetDnsRecords(const Aws::Vector<DnsRecord>& value) { m_dnsRecordsHasBeenSet = true; m_dnsRecords = value; }
 
     /**

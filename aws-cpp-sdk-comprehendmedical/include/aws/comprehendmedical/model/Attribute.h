@@ -62,6 +62,11 @@ namespace Model
     /**
      * <p> The type of attribute. </p>
      */
+    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
+
+    /**
+     * <p> The type of attribute. </p>
+     */
     inline void SetType(const EntitySubType& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
@@ -90,6 +95,12 @@ namespace Model
      * <p> The level of confidence that Comprehend Medical has that the segment of text
      * is correctly recognized as an attribute. </p>
      */
+    inline bool ScoreHasBeenSet() const { return m_scoreHasBeenSet; }
+
+    /**
+     * <p> The level of confidence that Comprehend Medical has that the segment of text
+     * is correctly recognized as an attribute. </p>
+     */
     inline void SetScore(double value) { m_scoreHasBeenSet = true; m_score = value; }
 
     /**
@@ -104,6 +115,12 @@ namespace Model
      * correctly related to this entity. </p>
      */
     inline double GetRelationshipScore() const{ return m_relationshipScore; }
+
+    /**
+     * <p> The level of confidence that Comprehend Medical has that this attribute is
+     * correctly related to this entity. </p>
+     */
+    inline bool RelationshipScoreHasBeenSet() const { return m_relationshipScoreHasBeenSet; }
 
     /**
      * <p> The level of confidence that Comprehend Medical has that this attribute is
@@ -130,6 +147,13 @@ namespace Model
      * increasing id unique within this response rather than a global unique
      * identifier. </p>
      */
+    inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
+
+    /**
+     * <p> The numeric identifier for this attribute. This is a monotonically
+     * increasing id unique within this response rather than a global unique
+     * identifier. </p>
+     */
     inline void SetId(int value) { m_idHasBeenSet = true; m_id = value; }
 
     /**
@@ -145,6 +169,12 @@ namespace Model
      * attribute begins. The offset returns the UTF-8 code point in the string. </p>
      */
     inline int GetBeginOffset() const{ return m_beginOffset; }
+
+    /**
+     * <p> The 0-based character offset in the input text that shows where the
+     * attribute begins. The offset returns the UTF-8 code point in the string. </p>
+     */
+    inline bool BeginOffsetHasBeenSet() const { return m_beginOffsetHasBeenSet; }
 
     /**
      * <p> The 0-based character offset in the input text that shows where the
@@ -169,6 +199,12 @@ namespace Model
      * <p> The 0-based character offset in the input text that shows where the
      * attribute ends. The offset returns the UTF-8 code point in the string. </p>
      */
+    inline bool EndOffsetHasBeenSet() const { return m_endOffsetHasBeenSet; }
+
+    /**
+     * <p> The 0-based character offset in the input text that shows where the
+     * attribute ends. The offset returns the UTF-8 code point in the string. </p>
+     */
     inline void SetEndOffset(int value) { m_endOffsetHasBeenSet = true; m_endOffset = value; }
 
     /**
@@ -182,6 +218,11 @@ namespace Model
      * <p> The segment of input text extracted as this attribute.</p>
      */
     inline const Aws::String& GetText() const{ return m_text; }
+
+    /**
+     * <p> The segment of input text extracted as this attribute.</p>
+     */
+    inline bool TextHasBeenSet() const { return m_textHasBeenSet; }
 
     /**
      * <p> The segment of input text extracted as this attribute.</p>
@@ -218,6 +259,11 @@ namespace Model
      * <p> Contextual information for this attribute. </p>
      */
     inline const Aws::Vector<Trait>& GetTraits() const{ return m_traits; }
+
+    /**
+     * <p> Contextual information for this attribute. </p>
+     */
+    inline bool TraitsHasBeenSet() const { return m_traitsHasBeenSet; }
 
     /**
      * <p> Contextual information for this attribute. </p>

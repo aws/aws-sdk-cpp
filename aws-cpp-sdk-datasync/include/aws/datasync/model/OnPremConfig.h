@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>ARNs)of the agents to use for an NFS location.</p>
      */
+    inline bool AgentArnsHasBeenSet() const { return m_agentArnsHasBeenSet; }
+
+    /**
+     * <p>ARNs)of the agents to use for an NFS location.</p>
+     */
     inline void SetAgentArns(const Aws::Vector<Aws::String>& value) { m_agentArnsHasBeenSet = true; m_agentArns = value; }
 
     /**

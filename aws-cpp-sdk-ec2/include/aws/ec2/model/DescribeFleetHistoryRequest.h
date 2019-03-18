@@ -62,6 +62,14 @@ namespace Model
      * required permissions, the error response is <code>DryRunOperation</code>.
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
+    inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
+
+    /**
+     * <p>Checks whether you have the required permissions for the action, without
+     * actually making the request, and provides an error response. If you have the
+     * required permissions, the error response is <code>DryRunOperation</code>.
+     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+     */
     inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
 
     /**
@@ -77,6 +85,11 @@ namespace Model
      * <p>The type of events to describe. By default, all events are described.</p>
      */
     inline const FleetEventType& GetEventType() const{ return m_eventType; }
+
+    /**
+     * <p>The type of events to describe. By default, all events are described.</p>
+     */
+    inline bool EventTypeHasBeenSet() const { return m_eventTypeHasBeenSet; }
 
     /**
      * <p>The type of events to describe. By default, all events are described.</p>
@@ -111,6 +124,13 @@ namespace Model
      * between 1 and 1000. The default value is 1000. To retrieve the remaining
      * results, make another call with the returned <code>NextToken</code> value.</p>
      */
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
+
+    /**
+     * <p>The maximum number of results to return in a single call. Specify a value
+     * between 1 and 1000. The default value is 1000. To retrieve the remaining
+     * results, make another call with the returned <code>NextToken</code> value.</p>
+     */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
@@ -125,6 +145,11 @@ namespace Model
      * <p>The token for the next set of results.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
+    /**
+     * <p>The token for the next set of results.</p>
+     */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
      * <p>The token for the next set of results.</p>
@@ -165,6 +190,11 @@ namespace Model
     /**
      * <p>The ID of the EC2 Fleet.</p>
      */
+    inline bool FleetIdHasBeenSet() const { return m_fleetIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the EC2 Fleet.</p>
+     */
     inline void SetFleetId(const Aws::String& value) { m_fleetIdHasBeenSet = true; m_fleetId = value; }
 
     /**
@@ -198,6 +228,12 @@ namespace Model
      * <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).</p>
      */
     inline const Aws::Utils::DateTime& GetStartTime() const{ return m_startTime; }
+
+    /**
+     * <p>The start date and time for the events, in UTC format (for example,
+     * <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).</p>
+     */
+    inline bool StartTimeHasBeenSet() const { return m_startTimeHasBeenSet; }
 
     /**
      * <p>The start date and time for the events, in UTC format (for example,

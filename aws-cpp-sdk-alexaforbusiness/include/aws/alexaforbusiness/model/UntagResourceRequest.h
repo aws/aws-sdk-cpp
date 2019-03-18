@@ -53,6 +53,11 @@ namespace Model
     /**
      * <p>The ARN of the resource from which to remove metadata tags. Required. </p>
      */
+    inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
+
+    /**
+     * <p>The ARN of the resource from which to remove metadata tags. Required. </p>
+     */
     inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
 
     /**
@@ -86,6 +91,12 @@ namespace Model
      * tags. Required. </p>
      */
     inline const Aws::Vector<Aws::String>& GetTagKeys() const{ return m_tagKeys; }
+
+    /**
+     * <p>The tags to be removed from the specified resource. Do not provide system
+     * tags. Required. </p>
+     */
+    inline bool TagKeysHasBeenSet() const { return m_tagKeysHasBeenSet; }
 
     /**
      * <p>The tags to be removed from the specified resource. Do not provide system

@@ -64,6 +64,12 @@ namespace Model
      * <p>An array the contains the name and creation time stamp for each template in
      * your Amazon SES account.</p>
      */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
+
+    /**
+     * <p>An array the contains the name and creation time stamp for each template in
+     * your Amazon SES account.</p>
+     */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
     /**
@@ -104,6 +110,14 @@ namespace Model
      * will return up to 50 results.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
+
+    /**
+     * <p>The maximum number of custom verification email templates to return. This
+     * value must be at least 1 and less than or equal to 50. If you do not specify a
+     * value, or if you specify a value less than 1 or greater than 50, the operation
+     * will return up to 50 results.</p>
+     */
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
 
     /**
      * <p>The maximum number of custom verification email templates to return. This

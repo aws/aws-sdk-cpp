@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p>The parent thing group name.</p>
      */
+    inline bool ParentGroupNameHasBeenSet() const { return m_parentGroupNameHasBeenSet; }
+
+    /**
+     * <p>The parent thing group name.</p>
+     */
     inline void SetParentGroupName(const Aws::String& value) { m_parentGroupNameHasBeenSet = true; m_parentGroupName = value; }
 
     /**
@@ -94,6 +99,11 @@ namespace Model
     /**
      * <p>The root parent thing group.</p>
      */
+    inline bool RootToParentThingGroupsHasBeenSet() const { return m_rootToParentThingGroupsHasBeenSet; }
+
+    /**
+     * <p>The root parent thing group.</p>
+     */
     inline void SetRootToParentThingGroups(const Aws::Vector<GroupNameAndArn>& value) { m_rootToParentThingGroupsHasBeenSet = true; m_rootToParentThingGroups = value; }
 
     /**
@@ -126,6 +136,11 @@ namespace Model
      * <p>The UNIX timestamp of when the thing group was created.</p>
      */
     inline const Aws::Utils::DateTime& GetCreationDate() const{ return m_creationDate; }
+
+    /**
+     * <p>The UNIX timestamp of when the thing group was created.</p>
+     */
+    inline bool CreationDateHasBeenSet() const { return m_creationDateHasBeenSet; }
 
     /**
      * <p>The UNIX timestamp of when the thing group was created.</p>

@@ -60,6 +60,11 @@ namespace Model
     /**
      * <p> Unique Id for an Amplify App. </p>
      */
+    inline bool AppIdHasBeenSet() const { return m_appIdHasBeenSet; }
+
+    /**
+     * <p> Unique Id for an Amplify App. </p>
+     */
     inline void SetAppId(const Aws::String& value) { m_appIdHasBeenSet = true; m_appId = value; }
 
     /**
@@ -94,6 +99,13 @@ namespace Model
      * more projects. </p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
+    /**
+     * <p> Pagination token. Set to null to start listing Apps from start. If non-null
+     * pagination token is returned in a result, then pass its value in here to list
+     * more projects. </p>
+     */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
      * <p> Pagination token. Set to null to start listing Apps from start. If non-null
@@ -142,6 +154,11 @@ namespace Model
      * <p> Maximum number of records to list in a single response. </p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
+
+    /**
+     * <p> Maximum number of records to list in a single response. </p>
+     */
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
 
     /**
      * <p> Maximum number of records to list in a single response. </p>

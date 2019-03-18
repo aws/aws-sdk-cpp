@@ -53,6 +53,11 @@ namespace Model
     /**
      * <p>The ID of the health check that you want to delete.</p>
      */
+    inline bool HealthCheckIdHasBeenSet() const { return m_healthCheckIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the health check that you want to delete.</p>
+     */
     inline void SetHealthCheckId(const Aws::String& value) { m_healthCheckIdHasBeenSet = true; m_healthCheckId = value; }
 
     /**

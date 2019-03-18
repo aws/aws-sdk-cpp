@@ -60,6 +60,13 @@ namespace Model
      * can specify
          a single virtual node or virtual router.</p>
      */
+    inline bool ProviderHasBeenSet() const { return m_providerHasBeenSet; }
+
+    /**
+     * <p>The App Mesh object that is acting as the provider for a virtual service. You
+     * can specify
+         a single virtual node or virtual router.</p>
+     */
     inline void SetProvider(const VirtualServiceProvider& value) { m_providerHasBeenSet = true; m_provider = value; }
 
     /**

@@ -60,6 +60,12 @@ namespace Model
      * <p>The status of Lightsail's managed renewal of the certificate. Valid values
      * are listed below.</p>
      */
+    inline bool RenewalStatusHasBeenSet() const { return m_renewalStatusHasBeenSet; }
+
+    /**
+     * <p>The status of Lightsail's managed renewal of the certificate. Valid values
+     * are listed below.</p>
+     */
     inline void SetRenewalStatus(const LoadBalancerTlsCertificateRenewalStatus& value) { m_renewalStatusHasBeenSet = true; m_renewalStatus = value; }
 
     /**
@@ -88,6 +94,14 @@ namespace Model
      * request.</p>
      */
     inline const Aws::Vector<LoadBalancerTlsCertificateDomainValidationOption>& GetDomainValidationOptions() const{ return m_domainValidationOptions; }
+
+    /**
+     * <p>Contains information about the validation of each domain name in the
+     * certificate, as it pertains to Lightsail's managed renewal. This is different
+     * from the initial validation that occurs as a result of the RequestCertificate
+     * request.</p>
+     */
+    inline bool DomainValidationOptionsHasBeenSet() const { return m_domainValidationOptionsHasBeenSet; }
 
     /**
      * <p>Contains information about the validation of each domain name in the

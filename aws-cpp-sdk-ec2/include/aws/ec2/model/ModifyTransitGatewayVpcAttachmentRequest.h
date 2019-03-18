@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The ID of the attachment.</p>
      */
+    inline bool TransitGatewayAttachmentIdHasBeenSet() const { return m_transitGatewayAttachmentIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the attachment.</p>
+     */
     inline void SetTransitGatewayAttachmentId(const Aws::String& value) { m_transitGatewayAttachmentIdHasBeenSet = true; m_transitGatewayAttachmentId = value; }
 
     /**
@@ -89,6 +94,12 @@ namespace Model
      * Availability Zone.</p>
      */
     inline const Aws::Vector<Aws::String>& GetAddSubnetIds() const{ return m_addSubnetIds; }
+
+    /**
+     * <p>The IDs of one or more subnets to add. You can specify at most one subnet per
+     * Availability Zone.</p>
+     */
+    inline bool AddSubnetIdsHasBeenSet() const { return m_addSubnetIdsHasBeenSet; }
 
     /**
      * <p>The IDs of one or more subnets to add. You can specify at most one subnet per
@@ -141,6 +152,11 @@ namespace Model
     /**
      * <p>The IDs of one or more subnets to remove.</p>
      */
+    inline bool RemoveSubnetIdsHasBeenSet() const { return m_removeSubnetIdsHasBeenSet; }
+
+    /**
+     * <p>The IDs of one or more subnets to remove.</p>
+     */
     inline void SetRemoveSubnetIds(const Aws::Vector<Aws::String>& value) { m_removeSubnetIdsHasBeenSet = true; m_removeSubnetIds = value; }
 
     /**
@@ -182,6 +198,11 @@ namespace Model
     /**
      * <p>The new VPC attachment options.</p>
      */
+    inline bool OptionsHasBeenSet() const { return m_optionsHasBeenSet; }
+
+    /**
+     * <p>The new VPC attachment options.</p>
+     */
     inline void SetOptions(const ModifyTransitGatewayVpcAttachmentRequestOptions& value) { m_optionsHasBeenSet = true; m_options = value; }
 
     /**
@@ -207,6 +228,14 @@ namespace Model
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
     inline bool GetDryRun() const{ return m_dryRun; }
+
+    /**
+     * <p>Checks whether you have the required permissions for the action, without
+     * actually making the request, and provides an error response. If you have the
+     * required permissions, the error response is <code>DryRunOperation</code>.
+     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+     */
+    inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
 
     /**
      * <p>Checks whether you have the required permissions for the action, without

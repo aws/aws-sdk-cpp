@@ -58,6 +58,13 @@ namespace Model
      * are requesting. This parameter is case sensitive. All clusters defined for an
      * account are returned by default.</p>
      */
+    inline bool ClusterIdentifierHasBeenSet() const { return m_clusterIdentifierHasBeenSet; }
+
+    /**
+     * <p>A unique identifier for a cluster whose <code>ClusterDbRevisions</code> you
+     * are requesting. This parameter is case sensitive. All clusters defined for an
+     * account are returned by default.</p>
+     */
     inline void SetClusterIdentifier(const Aws::String& value) { m_clusterIdentifierHasBeenSet = true; m_clusterIdentifier = value; }
 
     /**
@@ -114,6 +121,16 @@ namespace Model
      * in the <code>marker</code> parameter and retrying the request. </p> <p>Default:
      * 100</p> <p>Constraints: minimum 20, maximum 100.</p>
      */
+    inline bool MaxRecordsHasBeenSet() const { return m_maxRecordsHasBeenSet; }
+
+    /**
+     * <p>The maximum number of response records to return in each call. If the number
+     * of remaining response records exceeds the specified MaxRecords value, a value is
+     * returned in the <code>marker</code> field of the response. You can retrieve the
+     * next set of response records by providing the returned <code>marker</code> value
+     * in the <code>marker</code> parameter and retrying the request. </p> <p>Default:
+     * 100</p> <p>Constraints: minimum 20, maximum 100.</p>
+     */
     inline void SetMaxRecords(int value) { m_maxRecordsHasBeenSet = true; m_maxRecords = value; }
 
     /**
@@ -139,6 +156,19 @@ namespace Model
      * <code>marker</code> parameter, but not both.</p>
      */
     inline const Aws::String& GetMarker() const{ return m_marker; }
+
+    /**
+     * <p>An optional parameter that specifies the starting point for returning a set
+     * of response records. When the results of a
+     * <code>DescribeClusterDbRevisions</code> request exceed the value specified in
+     * <code>MaxRecords</code>, Amazon Redshift returns a value in the
+     * <code>marker</code> field of the response. You can retrieve the next set of
+     * response records by providing the returned <code>marker</code> value in the
+     * <code>marker</code> parameter and retrying the request. </p> <p>Constraints: You
+     * can specify either the <code>ClusterIdentifier</code> parameter, or the
+     * <code>marker</code> parameter, but not both.</p>
+     */
+    inline bool MarkerHasBeenSet() const { return m_markerHasBeenSet; }
 
     /**
      * <p>An optional parameter that specifies the starting point for returning a set

@@ -52,6 +52,9 @@ namespace Model
     inline const TtmlStylePassthrough& GetStylePassthrough() const{ return m_stylePassthrough; }
 
     
+    inline bool StylePassthroughHasBeenSet() const { return m_stylePassthroughHasBeenSet; }
+
+    
     inline void SetStylePassthrough(const TtmlStylePassthrough& value) { m_stylePassthroughHasBeenSet = true; m_stylePassthrough = value; }
 
     

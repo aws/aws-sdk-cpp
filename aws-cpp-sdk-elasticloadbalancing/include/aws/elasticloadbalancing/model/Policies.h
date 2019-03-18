@@ -62,6 +62,12 @@ namespace Model
      * <p>The stickiness policies created using
      * <a>CreateAppCookieStickinessPolicy</a>.</p>
      */
+    inline bool AppCookieStickinessPoliciesHasBeenSet() const { return m_appCookieStickinessPoliciesHasBeenSet; }
+
+    /**
+     * <p>The stickiness policies created using
+     * <a>CreateAppCookieStickinessPolicy</a>.</p>
+     */
     inline void SetAppCookieStickinessPolicies(const Aws::Vector<AppCookieStickinessPolicy>& value) { m_appCookieStickinessPoliciesHasBeenSet = true; m_appCookieStickinessPolicies = value; }
 
     /**
@@ -105,6 +111,12 @@ namespace Model
      * <p>The stickiness policies created using
      * <a>CreateLBCookieStickinessPolicy</a>.</p>
      */
+    inline bool LBCookieStickinessPoliciesHasBeenSet() const { return m_lBCookieStickinessPoliciesHasBeenSet; }
+
+    /**
+     * <p>The stickiness policies created using
+     * <a>CreateLBCookieStickinessPolicy</a>.</p>
+     */
     inline void SetLBCookieStickinessPolicies(const Aws::Vector<LBCookieStickinessPolicy>& value) { m_lBCookieStickinessPoliciesHasBeenSet = true; m_lBCookieStickinessPolicies = value; }
 
     /**
@@ -142,6 +154,11 @@ namespace Model
      * <p>The policies other than the stickiness policies.</p>
      */
     inline const Aws::Vector<Aws::String>& GetOtherPolicies() const{ return m_otherPolicies; }
+
+    /**
+     * <p>The policies other than the stickiness policies.</p>
+     */
+    inline bool OtherPoliciesHasBeenSet() const { return m_otherPoliciesHasBeenSet; }
 
     /**
      * <p>The policies other than the stickiness policies.</p>

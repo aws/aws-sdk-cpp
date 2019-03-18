@@ -55,6 +55,11 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the load balancer.</p>
      */
+    inline bool LoadBalancerArnHasBeenSet() const { return m_loadBalancerArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the load balancer.</p>
+     */
     inline void SetLoadBalancerArn(const Aws::String& value) { m_loadBalancerArnHasBeenSet = true; m_loadBalancerArn = value; }
 
     /**
@@ -87,6 +92,11 @@ namespace Model
      * <p>The Amazon Resource Names (ARN) of the listeners.</p>
      */
     inline const Aws::Vector<Aws::String>& GetListenerArns() const{ return m_listenerArns; }
+
+    /**
+     * <p>The Amazon Resource Names (ARN) of the listeners.</p>
+     */
+    inline bool ListenerArnsHasBeenSet() const { return m_listenerArnsHasBeenSet; }
 
     /**
      * <p>The Amazon Resource Names (ARN) of the listeners.</p>
@@ -134,6 +144,12 @@ namespace Model
      * <p>The marker for the next set of results. (You received this marker from a
      * previous call.)</p>
      */
+    inline bool MarkerHasBeenSet() const { return m_markerHasBeenSet; }
+
+    /**
+     * <p>The marker for the next set of results. (You received this marker from a
+     * previous call.)</p>
+     */
     inline void SetMarker(const Aws::String& value) { m_markerHasBeenSet = true; m_marker = value; }
 
     /**
@@ -171,6 +187,11 @@ namespace Model
      * <p>The maximum number of results to return with this call.</p>
      */
     inline int GetPageSize() const{ return m_pageSize; }
+
+    /**
+     * <p>The maximum number of results to return with this call.</p>
+     */
+    inline bool PageSizeHasBeenSet() const { return m_pageSizeHasBeenSet; }
 
     /**
      * <p>The maximum number of results to return with this call.</p>

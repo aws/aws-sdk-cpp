@@ -59,6 +59,12 @@ namespace Model
      * <p>ARN of the IAM role used to retreive AWS Organization details associated with
      * the aggregator account.</p>
      */
+    inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
+
+    /**
+     * <p>ARN of the IAM role used to retreive AWS Organization details associated with
+     * the aggregator account.</p>
+     */
     inline void SetRoleArn(const Aws::String& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
 
     /**
@@ -100,6 +106,11 @@ namespace Model
     /**
      * <p>The source regions being aggregated.</p>
      */
+    inline bool AwsRegionsHasBeenSet() const { return m_awsRegionsHasBeenSet; }
+
+    /**
+     * <p>The source regions being aggregated.</p>
+     */
     inline void SetAwsRegions(const Aws::Vector<Aws::String>& value) { m_awsRegionsHasBeenSet = true; m_awsRegions = value; }
 
     /**
@@ -137,6 +148,11 @@ namespace Model
      * <p>If true, aggregate existing AWS Config regions and future regions.</p>
      */
     inline bool GetAllAwsRegions() const{ return m_allAwsRegions; }
+
+    /**
+     * <p>If true, aggregate existing AWS Config regions and future regions.</p>
+     */
+    inline bool AllAwsRegionsHasBeenSet() const { return m_allAwsRegionsHasBeenSet; }
 
     /**
      * <p>If true, aggregate existing AWS Config regions and future regions.</p>

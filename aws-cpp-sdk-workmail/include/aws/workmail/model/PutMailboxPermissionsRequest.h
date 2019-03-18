@@ -56,6 +56,12 @@ namespace Model
      * <p>The identifier of the organization under which the entity (user or group)
      * exists.</p>
      */
+    inline bool OrganizationIdHasBeenSet() const { return m_organizationIdHasBeenSet; }
+
+    /**
+     * <p>The identifier of the organization under which the entity (user or group)
+     * exists.</p>
+     */
     inline void SetOrganizationId(const Aws::String& value) { m_organizationIdHasBeenSet = true; m_organizationId = value; }
 
     /**
@@ -94,6 +100,12 @@ namespace Model
      * permissions.</p>
      */
     inline const Aws::String& GetEntityId() const{ return m_entityId; }
+
+    /**
+     * <p>The identifier of the entity (user or group) for which to update mailbox
+     * permissions.</p>
+     */
+    inline bool EntityIdHasBeenSet() const { return m_entityIdHasBeenSet; }
 
     /**
      * <p>The identifier of the entity (user or group) for which to update mailbox
@@ -142,6 +154,12 @@ namespace Model
      * <p>The identifier of the entity (user or group) to which to grant the
      * permissions.</p>
      */
+    inline bool GranteeIdHasBeenSet() const { return m_granteeIdHasBeenSet; }
+
+    /**
+     * <p>The identifier of the entity (user or group) to which to grant the
+     * permissions.</p>
+     */
     inline void SetGranteeId(const Aws::String& value) { m_granteeIdHasBeenSet = true; m_granteeId = value; }
 
     /**
@@ -184,6 +202,16 @@ namespace Model
      * of other folder-level permissions set on the mailbox.</p>
      */
     inline const Aws::Vector<PermissionType>& GetPermissionValues() const{ return m_permissionValues; }
+
+    /**
+     * <p>The permissions granted to the grantee. SEND_AS allows the grantee to send
+     * email as the owner of the mailbox (the grantee is not mentioned on these
+     * emails). SEND_ON_BEHALF allows the grantee to send email on behalf of the owner
+     * of the mailbox (the grantee is not mentioned as the physical sender of these
+     * emails). FULL_ACCESS allows the grantee full access to the mailbox, irrespective
+     * of other folder-level permissions set on the mailbox.</p>
+     */
+    inline bool PermissionValuesHasBeenSet() const { return m_permissionValuesHasBeenSet; }
 
     /**
      * <p>The permissions granted to the grantee. SEND_AS allows the grantee to send

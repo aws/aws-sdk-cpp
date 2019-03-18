@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The ARN of the Amazon FSx resource to untag.</p>
      */
+    inline bool ResourceARNHasBeenSet() const { return m_resourceARNHasBeenSet; }
+
+    /**
+     * <p>The ARN of the Amazon FSx resource to untag.</p>
+     */
     inline void SetResourceARN(const Aws::String& value) { m_resourceARNHasBeenSet = true; m_resourceARN = value; }
 
     /**
@@ -90,6 +95,12 @@ namespace Model
      * exist, the call will still succeed to be idempotent.</p>
      */
     inline const Aws::Vector<Aws::String>& GetTagKeys() const{ return m_tagKeys; }
+
+    /**
+     * <p>A list of keys of tags on the resource to untag. In case the tag key doesn't
+     * exist, the call will still succeed to be idempotent.</p>
+     */
+    inline bool TagKeysHasBeenSet() const { return m_tagKeysHasBeenSet; }
 
     /**
      * <p>A list of keys of tags on the resource to untag. In case the tag key doesn't

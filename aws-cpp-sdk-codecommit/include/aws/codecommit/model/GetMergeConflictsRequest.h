@@ -53,6 +53,11 @@ namespace Model
     /**
      * <p>The name of the repository where the pull request was created.</p>
      */
+    inline bool RepositoryNameHasBeenSet() const { return m_repositoryNameHasBeenSet; }
+
+    /**
+     * <p>The name of the repository where the pull request was created.</p>
+     */
     inline void SetRepositoryName(const Aws::String& value) { m_repositoryNameHasBeenSet = true; m_repositoryName = value; }
 
     /**
@@ -86,6 +91,12 @@ namespace Model
      * commit. For example, a branch name or a full commit ID.</p>
      */
     inline const Aws::String& GetDestinationCommitSpecifier() const{ return m_destinationCommitSpecifier; }
+
+    /**
+     * <p>The branch, tag, HEAD, or other fully qualified reference used to identify a
+     * commit. For example, a branch name or a full commit ID.</p>
+     */
+    inline bool DestinationCommitSpecifierHasBeenSet() const { return m_destinationCommitSpecifierHasBeenSet; }
 
     /**
      * <p>The branch, tag, HEAD, or other fully qualified reference used to identify a
@@ -134,6 +145,12 @@ namespace Model
      * <p>The branch, tag, HEAD, or other fully qualified reference used to identify a
      * commit. For example, a branch name or a full commit ID.</p>
      */
+    inline bool SourceCommitSpecifierHasBeenSet() const { return m_sourceCommitSpecifierHasBeenSet; }
+
+    /**
+     * <p>The branch, tag, HEAD, or other fully qualified reference used to identify a
+     * commit. For example, a branch name or a full commit ID.</p>
+     */
     inline void SetSourceCommitSpecifier(const Aws::String& value) { m_sourceCommitSpecifierHasBeenSet = true; m_sourceCommitSpecifier = value; }
 
     /**
@@ -172,6 +189,12 @@ namespace Model
      * valid value is FAST_FORWARD_MERGE.</p>
      */
     inline const MergeOptionTypeEnum& GetMergeOption() const{ return m_mergeOption; }
+
+    /**
+     * <p>The merge option or strategy you want to use to merge the code. The only
+     * valid value is FAST_FORWARD_MERGE.</p>
+     */
+    inline bool MergeOptionHasBeenSet() const { return m_mergeOptionHasBeenSet; }
 
     /**
      * <p>The merge option or strategy you want to use to merge the code. The only

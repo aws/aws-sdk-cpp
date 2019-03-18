@@ -55,6 +55,12 @@ namespace Model
      * This is a beta feature. If you are interested in using this feature please
      * contact AWS customer support.
      */
+    inline bool AccelerationSettingsHasBeenSet() const { return m_accelerationSettingsHasBeenSet; }
+
+    /**
+     * This is a beta feature. If you are interested in using this feature please
+     * contact AWS customer support.
+     */
     inline void SetAccelerationSettings(const AccelerationSettings& value) { m_accelerationSettingsHasBeenSet = true; m_accelerationSettings = value; }
 
     /**
@@ -80,6 +86,11 @@ namespace Model
      * Optional. A category for the job template you are creating
      */
     inline const Aws::String& GetCategory() const{ return m_category; }
+
+    /**
+     * Optional. A category for the job template you are creating
+     */
+    inline bool CategoryHasBeenSet() const { return m_categoryHasBeenSet; }
 
     /**
      * Optional. A category for the job template you are creating
@@ -120,6 +131,11 @@ namespace Model
     /**
      * Optional. A description of the job template you are creating.
      */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
+
+    /**
+     * Optional. A description of the job template you are creating.
+     */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
@@ -152,6 +168,11 @@ namespace Model
      * The name of the job template you are creating.
      */
     inline const Aws::String& GetName() const{ return m_name; }
+
+    /**
+     * The name of the job template you are creating.
+     */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
      * The name of the job template you are creating.
@@ -194,6 +215,12 @@ namespace Model
      * Optional. The queue that jobs created from this template are assigned to. If you
      * don't specify this, jobs will go to the default queue.
      */
+    inline bool QueueHasBeenSet() const { return m_queueHasBeenSet; }
+
+    /**
+     * Optional. The queue that jobs created from this template are assigned to. If you
+     * don't specify this, jobs will go to the default queue.
+     */
     inline void SetQueue(const Aws::String& value) { m_queueHasBeenSet = true; m_queue = value; }
 
     /**
@@ -231,6 +258,9 @@ namespace Model
     inline const JobTemplateSettings& GetSettings() const{ return m_settings; }
 
     
+    inline bool SettingsHasBeenSet() const { return m_settingsHasBeenSet; }
+
+    
     inline void SetSettings(const JobTemplateSettings& value) { m_settingsHasBeenSet = true; m_settings = value; }
 
     
@@ -257,6 +287,14 @@ namespace Model
      * an update at this interval from the time the service begins processing your job
      * to the time it completes the transcode or encounters an error.
      */
+    inline bool StatusUpdateIntervalInSecsHasBeenSet() const { return m_statusUpdateIntervalInSecsHasBeenSet; }
+
+    /**
+     * Specify how often MediaConvert sends STATUS_UPDATE events to Amazon CloudWatch
+     * Events. Set the interval, in seconds, between status updates. MediaConvert sends
+     * an update at this interval from the time the service begins processing your job
+     * to the time it completes the transcode or encounters an error.
+     */
     inline void SetStatusUpdateIntervalInSecs(long long value) { m_statusUpdateIntervalInSecsHasBeenSet = true; m_statusUpdateIntervalInSecs = value; }
 
     /**
@@ -273,6 +311,12 @@ namespace Model
      * key-value pair or with only a key.
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
+
+    /**
+     * The tags that you want to add to the resource. You can tag resources with a
+     * key-value pair or with only a key.
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
      * The tags that you want to add to the resource. You can tag resources with a

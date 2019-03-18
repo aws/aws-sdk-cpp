@@ -54,6 +54,11 @@ namespace Model
     /**
      * <p>The name of the lifecycle hook.</p>
      */
+    inline bool LifecycleHookNameHasBeenSet() const { return m_lifecycleHookNameHasBeenSet; }
+
+    /**
+     * <p>The name of the lifecycle hook.</p>
+     */
     inline void SetLifecycleHookName(const Aws::String& value) { m_lifecycleHookNameHasBeenSet = true; m_lifecycleHookName = value; }
 
     /**
@@ -86,6 +91,11 @@ namespace Model
      * <p>The name of the Auto Scaling group.</p>
      */
     inline const Aws::String& GetAutoScalingGroupName() const{ return m_autoScalingGroupName; }
+
+    /**
+     * <p>The name of the Auto Scaling group.</p>
+     */
+    inline bool AutoScalingGroupNameHasBeenSet() const { return m_autoScalingGroupNameHasBeenSet; }
 
     /**
      * <p>The name of the Auto Scaling group.</p>
@@ -124,6 +134,13 @@ namespace Model
      * that you specified when you created the lifecycle hook.</p>
      */
     inline const Aws::String& GetLifecycleActionToken() const{ return m_lifecycleActionToken; }
+
+    /**
+     * <p>A token that uniquely identifies a specific lifecycle action associated with
+     * an instance. Amazon EC2 Auto Scaling sends this token to the notification target
+     * that you specified when you created the lifecycle hook.</p>
+     */
+    inline bool LifecycleActionTokenHasBeenSet() const { return m_lifecycleActionTokenHasBeenSet; }
 
     /**
      * <p>A token that uniquely identifies a specific lifecycle action associated with
@@ -172,6 +189,11 @@ namespace Model
      * <p>The ID of the instance.</p>
      */
     inline const Aws::String& GetInstanceId() const{ return m_instanceId; }
+
+    /**
+     * <p>The ID of the instance.</p>
+     */
+    inline bool InstanceIdHasBeenSet() const { return m_instanceIdHasBeenSet; }
 
     /**
      * <p>The ID of the instance.</p>

@@ -59,6 +59,11 @@ namespace Model
     /**
      * <p>The current state of the attachment.</p>
      */
+    inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
+
+    /**
+     * <p>The current state of the attachment.</p>
+     */
     inline void SetState(const AttachmentStatus& value) { m_stateHasBeenSet = true; m_state = value; }
 
     /**
@@ -81,6 +86,11 @@ namespace Model
      * <p>The ID of the VPC.</p>
      */
     inline const Aws::String& GetVpcId() const{ return m_vpcId; }
+
+    /**
+     * <p>The ID of the VPC.</p>
+     */
+    inline bool VpcIdHasBeenSet() const { return m_vpcIdHasBeenSet; }
 
     /**
      * <p>The ID of the VPC.</p>

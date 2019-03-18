@@ -68,6 +68,15 @@ namespace Model
      * letter.</p> </li> <li> <p>Cannot end with a hyphen or contain two consecutive
      * hyphens.</p> </li> </ul> <p>Example: <code>my-cluster-snapshot1</code> </p>
      */
+    inline bool DBClusterSnapshotIdentifierHasBeenSet() const { return m_dBClusterSnapshotIdentifierHasBeenSet; }
+
+    /**
+     * <p>The identifier of the DB cluster snapshot. This parameter is stored as a
+     * lowercase string.</p> <p>Constraints:</p> <ul> <li> <p>Must contain from 1 to 63
+     * letters, numbers, or hyphens.</p> </li> <li> <p>The first character must be a
+     * letter.</p> </li> <li> <p>Cannot end with a hyphen or contain two consecutive
+     * hyphens.</p> </li> </ul> <p>Example: <code>my-cluster-snapshot1</code> </p>
+     */
     inline void SetDBClusterSnapshotIdentifier(const Aws::String& value) { m_dBClusterSnapshotIdentifierHasBeenSet = true; m_dBClusterSnapshotIdentifier = value; }
 
     /**
@@ -130,6 +139,14 @@ namespace Model
      * identifier of an existing <code>DBCluster</code>.</p> </li> </ul> <p>Example:
      * <code>my-cluster</code> </p>
      */
+    inline bool DBClusterIdentifierHasBeenSet() const { return m_dBClusterIdentifierHasBeenSet; }
+
+    /**
+     * <p>The identifier of the DB cluster to create a snapshot for. This parameter is
+     * not case sensitive.</p> <p>Constraints:</p> <ul> <li> <p>Must match the
+     * identifier of an existing <code>DBCluster</code>.</p> </li> </ul> <p>Example:
+     * <code>my-cluster</code> </p>
+     */
     inline void SetDBClusterIdentifier(const Aws::String& value) { m_dBClusterIdentifierHasBeenSet = true; m_dBClusterIdentifier = value; }
 
     /**
@@ -177,6 +194,11 @@ namespace Model
      * <p>The tags to be assigned to the DB cluster snapshot.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>The tags to be assigned to the DB cluster snapshot.</p>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
      * <p>The tags to be assigned to the DB cluster snapshot.</p>

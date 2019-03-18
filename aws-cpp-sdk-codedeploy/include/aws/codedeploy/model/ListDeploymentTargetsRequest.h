@@ -55,6 +55,11 @@ namespace Model
     /**
      * <p> The unique ID of a deployment. </p>
      */
+    inline bool DeploymentIdHasBeenSet() const { return m_deploymentIdHasBeenSet; }
+
+    /**
+     * <p> The unique ID of a deployment. </p>
+     */
     inline void SetDeploymentId(const Aws::String& value) { m_deploymentIdHasBeenSet = true; m_deploymentId = value; }
 
     /**
@@ -89,6 +94,13 @@ namespace Model
      * of deployment targets in the list. </p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
+    /**
+     * <p> A token identifier returned from the previous
+     * <code>ListDeploymentTargets</code> call. It can be used to return the next set
+     * of deployment targets in the list. </p>
+     */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
      * <p> A token identifier returned from the previous
@@ -137,6 +149,11 @@ namespace Model
      * <p> A key used to filter the returned targets. </p>
      */
     inline const Aws::Map<TargetFilterName, Aws::Vector<Aws::String>>& GetTargetFilters() const{ return m_targetFilters; }
+
+    /**
+     * <p> A key used to filter the returned targets. </p>
+     */
+    inline bool TargetFiltersHasBeenSet() const { return m_targetFiltersHasBeenSet; }
 
     /**
      * <p> A key used to filter the returned targets. </p>

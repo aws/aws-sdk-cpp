@@ -54,6 +54,11 @@ namespace Model
     /**
      * <p>The number of minutes a test run will execute before it times out.</p>
      */
+    inline bool JobTimeoutMinutesHasBeenSet() const { return m_jobTimeoutMinutesHasBeenSet; }
+
+    /**
+     * <p>The number of minutes a test run will execute before it times out.</p>
+     */
     inline void SetJobTimeoutMinutes(int value) { m_jobTimeoutMinutesHasBeenSet = true; m_jobTimeoutMinutes = value; }
 
     /**
@@ -67,6 +72,12 @@ namespace Model
      * false.</p>
      */
     inline bool GetAccountsCleanup() const{ return m_accountsCleanup; }
+
+    /**
+     * <p>True if account cleanup is enabled at the beginning of the test; otherwise,
+     * false.</p>
+     */
+    inline bool AccountsCleanupHasBeenSet() const { return m_accountsCleanupHasBeenSet; }
 
     /**
      * <p>True if account cleanup is enabled at the beginning of the test; otherwise,
@@ -91,6 +102,12 @@ namespace Model
      * <p>True if app package cleanup is enabled at the beginning of the test;
      * otherwise, false.</p>
      */
+    inline bool AppPackagesCleanupHasBeenSet() const { return m_appPackagesCleanupHasBeenSet; }
+
+    /**
+     * <p>True if app package cleanup is enabled at the beginning of the test;
+     * otherwise, false.</p>
+     */
     inline void SetAppPackagesCleanup(bool value) { m_appPackagesCleanupHasBeenSet = true; m_appPackagesCleanup = value; }
 
     /**
@@ -105,6 +122,12 @@ namespace Model
      * true.</p>
      */
     inline bool GetVideoCapture() const{ return m_videoCapture; }
+
+    /**
+     * <p>Set to true to enable video capture; otherwise, set to false. The default is
+     * true.</p>
+     */
+    inline bool VideoCaptureHasBeenSet() const { return m_videoCaptureHasBeenSet; }
 
     /**
      * <p>Set to true to enable video capture; otherwise, set to false. The default is
@@ -127,6 +150,15 @@ namespace Model
      * you modify my app?</a> in the <i>AWS Device Farm FAQs</i>.</p>
      */
     inline bool GetSkipAppResign() const{ return m_skipAppResign; }
+
+    /**
+     * <p>When set to <code>true</code>, for private devices, Device Farm will not sign
+     * your app again. For public devices, Device Farm always signs your apps again and
+     * this parameter has no effect.</p> <p>For more information about how Device Farm
+     * re-signs your app(s), see <a href="https://aws.amazon.com/device-farm/faq/">Do
+     * you modify my app?</a> in the <i>AWS Device Farm FAQs</i>.</p>
+     */
+    inline bool SkipAppResignHasBeenSet() const { return m_skipAppResignHasBeenSet; }
 
     /**
      * <p>When set to <code>true</code>, for private devices, Device Farm will not sign

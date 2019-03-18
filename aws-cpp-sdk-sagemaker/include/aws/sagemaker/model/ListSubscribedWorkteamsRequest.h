@@ -54,6 +54,12 @@ namespace Model
      * <p>A string in the work team name. This filter returns only work teams whose
      * name contains the specified string.</p>
      */
+    inline bool NameContainsHasBeenSet() const { return m_nameContainsHasBeenSet; }
+
+    /**
+     * <p>A string in the work team name. This filter returns only work teams whose
+     * name contains the specified string.</p>
+     */
     inline void SetNameContains(const Aws::String& value) { m_nameContainsHasBeenSet = true; m_nameContains = value; }
 
     /**
@@ -93,6 +99,13 @@ namespace Model
      * next set of labeling jobs, use the token in the next request.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
+    /**
+     * <p>If the result of the previous <code>ListSubscribedWorkteams</code> request
+     * was truncated, the response includes a <code>NextToken</code>. To retrieve the
+     * next set of labeling jobs, use the token in the next request.</p>
+     */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
      * <p>If the result of the previous <code>ListSubscribedWorkteams</code> request
@@ -141,6 +154,11 @@ namespace Model
      * <p>The maximum number of work teams to return in each page of the response.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
+
+    /**
+     * <p>The maximum number of work teams to return in each page of the response.</p>
+     */
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
 
     /**
      * <p>The maximum number of work teams to return in each page of the response.</p>

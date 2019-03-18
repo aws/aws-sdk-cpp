@@ -66,6 +66,11 @@ namespace Model
     /**
      * <p>The name of the job.</p>
      */
+    inline bool JobNameHasBeenSet() const { return m_jobNameHasBeenSet; }
+
+    /**
+     * <p>The name of the job.</p>
+     */
     inline void SetJobName(const Aws::String& value) { m_jobNameHasBeenSet = true; m_jobName = value; }
 
     /**
@@ -98,6 +103,11 @@ namespace Model
      * <p>The ID for the job.</p>
      */
     inline const Aws::String& GetJobId() const{ return m_jobId; }
+
+    /**
+     * <p>The ID for the job.</p>
+     */
+    inline bool JobIdHasBeenSet() const { return m_jobIdHasBeenSet; }
 
     /**
      * <p>The ID for the job.</p>
@@ -135,6 +145,12 @@ namespace Model
      * associated.</p>
      */
     inline const Aws::String& GetJobQueue() const{ return m_jobQueue; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the job queue with which the job is
+     * associated.</p>
+     */
+    inline bool JobQueueHasBeenSet() const { return m_jobQueueHasBeenSet; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the job queue with which the job is
@@ -189,6 +205,15 @@ namespace Model
      * Stuck in <code>RUNNABLE</code> Status</a> in the troubleshooting section of the
      * <i>AWS Batch User Guide</i>.</p> </note>
      */
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
+
+    /**
+     * <p>The current status for the job. </p> <note> <p>If your jobs do not progress
+     * to <code>STARTING</code>, see <a
+     * href="http://docs.aws.amazon.com/batch/latest/userguide/troubleshooting.html#job_stuck_in_runnable">Jobs
+     * Stuck in <code>RUNNABLE</code> Status</a> in the troubleshooting section of the
+     * <i>AWS Batch User Guide</i>.</p> </note>
+     */
     inline void SetStatus(const JobStatus& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
@@ -227,6 +252,11 @@ namespace Model
     /**
      * <p>A list of job attempts associated with this job.</p>
      */
+    inline bool AttemptsHasBeenSet() const { return m_attemptsHasBeenSet; }
+
+    /**
+     * <p>A list of job attempts associated with this job.</p>
+     */
     inline void SetAttempts(const Aws::Vector<AttemptDetail>& value) { m_attemptsHasBeenSet = true; m_attempts = value; }
 
     /**
@@ -260,6 +290,12 @@ namespace Model
      * current status of the job. </p>
      */
     inline const Aws::String& GetStatusReason() const{ return m_statusReason; }
+
+    /**
+     * <p>A short, human-readable string to provide additional details about the
+     * current status of the job. </p>
+     */
+    inline bool StatusReasonHasBeenSet() const { return m_statusReasonHasBeenSet; }
 
     /**
      * <p>A short, human-readable string to provide additional details about the
@@ -314,6 +350,15 @@ namespace Model
      * array child jobs, this is when the child job was spawned by its parent and
      * entered the <code>PENDING</code> state.</p>
      */
+    inline bool CreatedAtHasBeenSet() const { return m_createdAtHasBeenSet; }
+
+    /**
+     * <p>The Unix timestamp (in seconds and milliseconds) for when the job was
+     * created. For non-array jobs and parent array jobs, this is when the job entered
+     * the <code>SUBMITTED</code> state (at the time <a>SubmitJob</a> was called). For
+     * array child jobs, this is when the child job was spawned by its parent and
+     * entered the <code>PENDING</code> state.</p>
+     */
     inline void SetCreatedAt(long long value) { m_createdAtHasBeenSet = true; m_createdAt = value; }
 
     /**
@@ -330,6 +375,11 @@ namespace Model
      * <p>The retry strategy to use for this job if an attempt fails.</p>
      */
     inline const RetryStrategy& GetRetryStrategy() const{ return m_retryStrategy; }
+
+    /**
+     * <p>The retry strategy to use for this job if an attempt fails.</p>
+     */
+    inline bool RetryStrategyHasBeenSet() const { return m_retryStrategyHasBeenSet; }
 
     /**
      * <p>The retry strategy to use for this job if an attempt fails.</p>
@@ -364,6 +414,13 @@ namespace Model
      * (when the job transitioned from the <code>STARTING</code> state to the
      * <code>RUNNING</code> state).</p>
      */
+    inline bool StartedAtHasBeenSet() const { return m_startedAtHasBeenSet; }
+
+    /**
+     * <p>The Unix timestamp (in seconds and milliseconds) for when the job was started
+     * (when the job transitioned from the <code>STARTING</code> state to the
+     * <code>RUNNING</code> state).</p>
+     */
     inline void SetStartedAt(long long value) { m_startedAtHasBeenSet = true; m_startedAt = value; }
 
     /**
@@ -386,6 +443,13 @@ namespace Model
      * (when the job transitioned from the <code>RUNNING</code> state to a terminal
      * state, such as <code>SUCCEEDED</code> or <code>FAILED</code>).</p>
      */
+    inline bool StoppedAtHasBeenSet() const { return m_stoppedAtHasBeenSet; }
+
+    /**
+     * <p>The Unix timestamp (in seconds and milliseconds) for when the job was stopped
+     * (when the job transitioned from the <code>RUNNING</code> state to a terminal
+     * state, such as <code>SUCCEEDED</code> or <code>FAILED</code>).</p>
+     */
     inline void SetStoppedAt(long long value) { m_stoppedAtHasBeenSet = true; m_stoppedAt = value; }
 
     /**
@@ -400,6 +464,11 @@ namespace Model
      * <p>A list of job names or IDs on which this job depends.</p>
      */
     inline const Aws::Vector<JobDependency>& GetDependsOn() const{ return m_dependsOn; }
+
+    /**
+     * <p>A list of job names or IDs on which this job depends.</p>
+     */
+    inline bool DependsOnHasBeenSet() const { return m_dependsOnHasBeenSet; }
 
     /**
      * <p>A list of job names or IDs on which this job depends.</p>
@@ -440,6 +509,11 @@ namespace Model
     /**
      * <p>The job definition that is used by this job.</p>
      */
+    inline bool JobDefinitionHasBeenSet() const { return m_jobDefinitionHasBeenSet; }
+
+    /**
+     * <p>The job definition that is used by this job.</p>
+     */
     inline void SetJobDefinition(const Aws::String& value) { m_jobDefinitionHasBeenSet = true; m_jobDefinition = value; }
 
     /**
@@ -474,6 +548,13 @@ namespace Model
      * definition. </p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetParameters() const{ return m_parameters; }
+
+    /**
+     * <p>Additional parameters passed to the job that replace parameter substitution
+     * placeholders or override any corresponding parameter defaults from the job
+     * definition. </p>
+     */
+    inline bool ParametersHasBeenSet() const { return m_parametersHasBeenSet; }
 
     /**
      * <p>Additional parameters passed to the job that replace parameter substitution
@@ -563,6 +644,12 @@ namespace Model
      * <p>An object representing the details of the container that is associated with
      * the job.</p>
      */
+    inline bool ContainerHasBeenSet() const { return m_containerHasBeenSet; }
+
+    /**
+     * <p>An object representing the details of the container that is associated with
+     * the job.</p>
+     */
     inline void SetContainer(const ContainerDetail& value) { m_containerHasBeenSet = true; m_container = value; }
 
     /**
@@ -589,6 +676,12 @@ namespace Model
      * multi-node parallel job.</p>
      */
     inline const NodeDetails& GetNodeDetails() const{ return m_nodeDetails; }
+
+    /**
+     * <p>An object representing the details of a node that is associated with a
+     * multi-node parallel job.</p>
+     */
+    inline bool NodeDetailsHasBeenSet() const { return m_nodeDetailsHasBeenSet; }
 
     /**
      * <p>An object representing the details of a node that is associated with a
@@ -623,6 +716,11 @@ namespace Model
     /**
      * <p>An object representing the node properties of a multi-node parallel job.</p>
      */
+    inline bool NodePropertiesHasBeenSet() const { return m_nodePropertiesHasBeenSet; }
+
+    /**
+     * <p>An object representing the node properties of a multi-node parallel job.</p>
+     */
     inline void SetNodeProperties(const NodeProperties& value) { m_nodePropertiesHasBeenSet = true; m_nodeProperties = value; }
 
     /**
@@ -649,6 +747,11 @@ namespace Model
     /**
      * <p>The array properties of the job, if it is an array job.</p>
      */
+    inline bool ArrayPropertiesHasBeenSet() const { return m_arrayPropertiesHasBeenSet; }
+
+    /**
+     * <p>The array properties of the job, if it is an array job.</p>
+     */
     inline void SetArrayProperties(const ArrayPropertiesDetail& value) { m_arrayPropertiesHasBeenSet = true; m_arrayProperties = value; }
 
     /**
@@ -671,6 +774,11 @@ namespace Model
      * <p>The timeout configuration for the job. </p>
      */
     inline const JobTimeout& GetTimeout() const{ return m_timeout; }
+
+    /**
+     * <p>The timeout configuration for the job. </p>
+     */
+    inline bool TimeoutHasBeenSet() const { return m_timeoutHasBeenSet; }
 
     /**
      * <p>The timeout configuration for the job. </p>

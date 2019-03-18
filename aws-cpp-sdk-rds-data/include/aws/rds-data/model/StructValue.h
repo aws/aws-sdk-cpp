@@ -56,6 +56,11 @@ namespace Model
     /**
      * Struct or UDT
      */
+    inline bool AttributesHasBeenSet() const { return m_attributesHasBeenSet; }
+
+    /**
+     * Struct or UDT
+     */
     inline void SetAttributes(const Aws::Vector<Value>& value) { m_attributesHasBeenSet = true; m_attributes = value; }
 
     /**

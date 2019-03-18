@@ -59,6 +59,11 @@ namespace Model
     /**
      * <p>The type of the AWS resource that was evaluated.</p>
      */
+    inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
+
+    /**
+     * <p>The type of the AWS resource that was evaluated.</p>
+     */
     inline void SetResourceType(const Aws::String& value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
 
     /**
@@ -91,6 +96,11 @@ namespace Model
      * <p>The ID of the AWS resource that was evaluated.</p>
      */
     inline const Aws::String& GetResourceId() const{ return m_resourceId; }
+
+    /**
+     * <p>The ID of the AWS resource that was evaluated.</p>
+     */
+    inline bool ResourceIdHasBeenSet() const { return m_resourceIdHasBeenSet; }
 
     /**
      * <p>The ID of the AWS resource that was evaluated.</p>
@@ -128,6 +138,12 @@ namespace Model
      * that evaluated it.</p>
      */
     inline const Compliance& GetCompliance() const{ return m_compliance; }
+
+    /**
+     * <p>Indicates whether the AWS resource complies with all of the AWS Config rules
+     * that evaluated it.</p>
+     */
+    inline bool ComplianceHasBeenSet() const { return m_complianceHasBeenSet; }
 
     /**
      * <p>Indicates whether the AWS resource complies with all of the AWS Config rules

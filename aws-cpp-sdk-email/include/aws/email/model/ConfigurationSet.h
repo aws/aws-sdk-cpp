@@ -69,6 +69,14 @@ namespace Model
      * underscores (_), or dashes (-).</p> </li> <li> <p>Contain 64 characters or
      * fewer.</p> </li> </ul>
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>The name of the configuration set. The name must meet the following
+     * requirements:</p> <ul> <li> <p>Contain only letters (a-z, A-Z), numbers (0-9),
+     * underscores (_), or dashes (-).</p> </li> <li> <p>Contain 64 characters or
+     * fewer.</p> </li> </ul>
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**

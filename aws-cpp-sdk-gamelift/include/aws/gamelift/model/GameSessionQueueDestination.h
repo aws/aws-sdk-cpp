@@ -64,6 +64,13 @@ namespace Model
      * include a fleet ID or alias ID and a region name, provide a unique identifier
      * across all regions. </p>
      */
+    inline bool DestinationArnHasBeenSet() const { return m_destinationArnHasBeenSet; }
+
+    /**
+     * <p>Amazon Resource Name (ARN) assigned to fleet or fleet alias. ARNs, which
+     * include a fleet ID or alias ID and a region name, provide a unique identifier
+     * across all regions. </p>
+     */
     inline void SetDestinationArn(const Aws::String& value) { m_destinationArnHasBeenSet = true; m_destinationArn = value; }
 
     /**

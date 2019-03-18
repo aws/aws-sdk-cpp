@@ -60,6 +60,12 @@ namespace Model
      * <p>The AWS account ID associated with the registry to which this image
      * belongs.</p>
      */
+    inline bool RegistryIdHasBeenSet() const { return m_registryIdHasBeenSet; }
+
+    /**
+     * <p>The AWS account ID associated with the registry to which this image
+     * belongs.</p>
+     */
     inline void SetRegistryId(const Aws::String& value) { m_registryIdHasBeenSet = true; m_registryId = value; }
 
     /**
@@ -101,6 +107,11 @@ namespace Model
     /**
      * <p>The name of the repository to which this image belongs.</p>
      */
+    inline bool RepositoryNameHasBeenSet() const { return m_repositoryNameHasBeenSet; }
+
+    /**
+     * <p>The name of the repository to which this image belongs.</p>
+     */
     inline void SetRepositoryName(const Aws::String& value) { m_repositoryNameHasBeenSet = true; m_repositoryName = value; }
 
     /**
@@ -137,6 +148,11 @@ namespace Model
     /**
      * <p>The <code>sha256</code> digest of the image manifest.</p>
      */
+    inline bool ImageDigestHasBeenSet() const { return m_imageDigestHasBeenSet; }
+
+    /**
+     * <p>The <code>sha256</code> digest of the image manifest.</p>
+     */
     inline void SetImageDigest(const Aws::String& value) { m_imageDigestHasBeenSet = true; m_imageDigest = value; }
 
     /**
@@ -169,6 +185,11 @@ namespace Model
      * <p>The list of tags associated with this image.</p>
      */
     inline const Aws::Vector<Aws::String>& GetImageTags() const{ return m_imageTags; }
+
+    /**
+     * <p>The list of tags associated with this image.</p>
+     */
+    inline bool ImageTagsHasBeenSet() const { return m_imageTagsHasBeenSet; }
 
     /**
      * <p>The list of tags associated with this image.</p>
@@ -224,6 +245,16 @@ namespace Model
      * larger image size than the image sizes returned by <a>DescribeImages</a>.</p>
      * </note>
      */
+    inline bool ImageSizeInBytesHasBeenSet() const { return m_imageSizeInBytesHasBeenSet; }
+
+    /**
+     * <p>The size, in bytes, of the image in the repository.</p> <note> <p>Beginning
+     * with Docker version 1.9, the Docker client compresses image layers before
+     * pushing them to a V2 Docker registry. The output of the <code>docker
+     * images</code> command shows the uncompressed image size, so it may return a
+     * larger image size than the image sizes returned by <a>DescribeImages</a>.</p>
+     * </note>
+     */
     inline void SetImageSizeInBytes(long long value) { m_imageSizeInBytesHasBeenSet = true; m_imageSizeInBytes = value; }
 
     /**
@@ -242,6 +273,12 @@ namespace Model
      * current image was pushed to the repository. </p>
      */
     inline const Aws::Utils::DateTime& GetImagePushedAt() const{ return m_imagePushedAt; }
+
+    /**
+     * <p>The date and time, expressed in standard JavaScript date format, at which the
+     * current image was pushed to the repository. </p>
+     */
+    inline bool ImagePushedAtHasBeenSet() const { return m_imagePushedAtHasBeenSet; }
 
     /**
      * <p>The date and time, expressed in standard JavaScript date format, at which the

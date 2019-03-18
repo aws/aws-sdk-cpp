@@ -63,6 +63,14 @@ namespace Model
      * a default DB parameter group</p> </li> <li> <p>Cannot be associated with any DB
      * instances</p> </li> </ul>
      */
+    inline bool DBParameterGroupNameHasBeenSet() const { return m_dBParameterGroupNameHasBeenSet; }
+
+    /**
+     * <p>The name of the DB parameter group.</p> <p>Constraints:</p> <ul> <li> <p>Must
+     * be the name of an existing DB parameter group</p> </li> <li> <p>You can't delete
+     * a default DB parameter group</p> </li> <li> <p>Cannot be associated with any DB
+     * instances</p> </li> </ul>
+     */
     inline void SetDBParameterGroupName(const Aws::String& value) { m_dBParameterGroupNameHasBeenSet = true; m_dBParameterGroupName = value; }
 
     /**

@@ -59,6 +59,11 @@ namespace Model
     /**
      * <p>The name of the function.</p>
      */
+    inline bool FunctionNameHasBeenSet() const { return m_functionNameHasBeenSet; }
+
+    /**
+     * <p>The name of the function.</p>
+     */
     inline void SetFunctionName(const Aws::String& value) { m_functionNameHasBeenSet = true; m_functionName = value; }
 
     /**
@@ -91,6 +96,11 @@ namespace Model
      * <p>The Java class that contains the function code.</p>
      */
     inline const Aws::String& GetClassName() const{ return m_className; }
+
+    /**
+     * <p>The Java class that contains the function code.</p>
+     */
+    inline bool ClassNameHasBeenSet() const { return m_classNameHasBeenSet; }
 
     /**
      * <p>The Java class that contains the function code.</p>
@@ -131,6 +141,11 @@ namespace Model
     /**
      * <p>The owner of the function.</p>
      */
+    inline bool OwnerNameHasBeenSet() const { return m_ownerNameHasBeenSet; }
+
+    /**
+     * <p>The owner of the function.</p>
+     */
     inline void SetOwnerName(const Aws::String& value) { m_ownerNameHasBeenSet = true; m_ownerName = value; }
 
     /**
@@ -167,6 +182,11 @@ namespace Model
     /**
      * <p>The owner type.</p>
      */
+    inline bool OwnerTypeHasBeenSet() const { return m_ownerTypeHasBeenSet; }
+
+    /**
+     * <p>The owner type.</p>
+     */
     inline void SetOwnerType(const PrincipalType& value) { m_ownerTypeHasBeenSet = true; m_ownerType = value; }
 
     /**
@@ -189,6 +209,11 @@ namespace Model
      * <p>The resource URIs for the function.</p>
      */
     inline const Aws::Vector<ResourceUri>& GetResourceUris() const{ return m_resourceUris; }
+
+    /**
+     * <p>The resource URIs for the function.</p>
+     */
+    inline bool ResourceUrisHasBeenSet() const { return m_resourceUrisHasBeenSet; }
 
     /**
      * <p>The resource URIs for the function.</p>

@@ -59,6 +59,12 @@ namespace Model
      * <p>The event for which Amazon Simple Notification Service (SNS) notifications
      * are sent.</p>
      */
+    inline bool EventHasBeenSet() const { return m_eventHasBeenSet; }
+
+    /**
+     * <p>The event for which Amazon Simple Notification Service (SNS) notifications
+     * are sent.</p>
+     */
     inline void SetEvent(const InspectorEvent& value) { m_eventHasBeenSet = true; m_event = value; }
 
     /**
@@ -84,6 +90,11 @@ namespace Model
      * <p>The time at which <a>SubscribeToEvent</a> is called.</p>
      */
     inline const Aws::Utils::DateTime& GetSubscribedAt() const{ return m_subscribedAt; }
+
+    /**
+     * <p>The time at which <a>SubscribeToEvent</a> is called.</p>
+     */
+    inline bool SubscribedAtHasBeenSet() const { return m_subscribedAtHasBeenSet; }
 
     /**
      * <p>The time at which <a>SubscribeToEvent</a> is called.</p>

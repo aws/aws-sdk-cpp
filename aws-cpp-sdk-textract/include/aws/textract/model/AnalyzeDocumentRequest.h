@@ -58,6 +58,13 @@ namespace Model
      * the AWS CLI to call Amazon Textract operations, you can't pass image bytes. The
      * document must be an image in JPG or PNG format.</p>
      */
+    inline bool DocumentHasBeenSet() const { return m_documentHasBeenSet; }
+
+    /**
+     * <p>The input document as base64-encoded bytes or an Amazon S3 object. If you use
+     * the AWS CLI to call Amazon Textract operations, you can't pass image bytes. The
+     * document must be an image in JPG or PNG format.</p>
+     */
     inline void SetDocument(const Document& value) { m_documentHasBeenSet = true; m_document = value; }
 
     /**
@@ -89,6 +96,14 @@ namespace Model
      * TABLES and FORMS to <code>FeatureTypes</code>.</p>
      */
     inline const Aws::Vector<FeatureType>& GetFeatureTypes() const{ return m_featureTypes; }
+
+    /**
+     * <p>A list of the types of analysis to perform. Add TABLES to the list to return
+     * information about the tables detected in the input document. Add FORMS to return
+     * detected fields and the associated text. To perform both types of analysis, add
+     * TABLES and FORMS to <code>FeatureTypes</code>.</p>
+     */
+    inline bool FeatureTypesHasBeenSet() const { return m_featureTypesHasBeenSet; }
 
     /**
      * <p>A list of the types of analysis to perform. Add TABLES to the list to return

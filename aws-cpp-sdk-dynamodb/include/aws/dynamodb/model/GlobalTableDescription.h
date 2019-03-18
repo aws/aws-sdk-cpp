@@ -59,6 +59,11 @@ namespace Model
     /**
      * <p>The regions where the global table has replicas.</p>
      */
+    inline bool ReplicationGroupHasBeenSet() const { return m_replicationGroupHasBeenSet; }
+
+    /**
+     * <p>The regions where the global table has replicas.</p>
+     */
     inline void SetReplicationGroup(const Aws::Vector<ReplicaDescription>& value) { m_replicationGroupHasBeenSet = true; m_replicationGroup = value; }
 
     /**
@@ -91,6 +96,11 @@ namespace Model
      * <p>The unique identifier of the global table.</p>
      */
     inline const Aws::String& GetGlobalTableArn() const{ return m_globalTableArn; }
+
+    /**
+     * <p>The unique identifier of the global table.</p>
+     */
+    inline bool GlobalTableArnHasBeenSet() const { return m_globalTableArnHasBeenSet; }
 
     /**
      * <p>The unique identifier of the global table.</p>
@@ -131,6 +141,11 @@ namespace Model
     /**
      * <p>The creation time of the global table.</p>
      */
+    inline bool CreationDateTimeHasBeenSet() const { return m_creationDateTimeHasBeenSet; }
+
+    /**
+     * <p>The creation time of the global table.</p>
+     */
     inline void SetCreationDateTime(const Aws::Utils::DateTime& value) { m_creationDateTimeHasBeenSet = true; m_creationDateTime = value; }
 
     /**
@@ -157,6 +172,15 @@ namespace Model
      * <code>ACTIVE</code> - The global table is ready for use.</p> </li> </ul>
      */
     inline const GlobalTableStatus& GetGlobalTableStatus() const{ return m_globalTableStatus; }
+
+    /**
+     * <p>The current state of the global table:</p> <ul> <li> <p>
+     * <code>CREATING</code> - The global table is being created.</p> </li> <li> <p>
+     * <code>UPDATING</code> - The global table is being updated.</p> </li> <li> <p>
+     * <code>DELETING</code> - The global table is being deleted.</p> </li> <li> <p>
+     * <code>ACTIVE</code> - The global table is ready for use.</p> </li> </ul>
+     */
+    inline bool GlobalTableStatusHasBeenSet() const { return m_globalTableStatusHasBeenSet; }
 
     /**
      * <p>The current state of the global table:</p> <ul> <li> <p>
@@ -199,6 +223,11 @@ namespace Model
      * <p>The global table name.</p>
      */
     inline const Aws::String& GetGlobalTableName() const{ return m_globalTableName; }
+
+    /**
+     * <p>The global table name.</p>
+     */
+    inline bool GlobalTableNameHasBeenSet() const { return m_globalTableNameHasBeenSet; }
 
     /**
      * <p>The global table name.</p>

@@ -60,6 +60,12 @@ namespace Model
      * <p>The ARN of a resource that represents your subscription to a supported
      * standard.</p>
      */
+    inline bool StandardsSubscriptionArnHasBeenSet() const { return m_standardsSubscriptionArnHasBeenSet; }
+
+    /**
+     * <p>The ARN of a resource that represents your subscription to a supported
+     * standard.</p>
+     */
     inline void SetStandardsSubscriptionArn(const Aws::String& value) { m_standardsSubscriptionArnHasBeenSet = true; m_standardsSubscriptionArn = value; }
 
     /**
@@ -101,6 +107,11 @@ namespace Model
     /**
      * <p>The ARN of a standard.</p>
      */
+    inline bool StandardsArnHasBeenSet() const { return m_standardsArnHasBeenSet; }
+
+    /**
+     * <p>The ARN of a standard.</p>
+     */
     inline void SetStandardsArn(const Aws::String& value) { m_standardsArnHasBeenSet = true; m_standardsArn = value; }
 
     /**
@@ -133,6 +144,11 @@ namespace Model
      * <p/>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetStandardsInput() const{ return m_standardsInput; }
+
+    /**
+     * <p/>
+     */
+    inline bool StandardsInputHasBeenSet() const { return m_standardsInputHasBeenSet; }
 
     /**
      * <p/>
@@ -194,6 +210,11 @@ namespace Model
      * <p>The standard's status.</p>
      */
     inline const StandardsStatus& GetStandardsStatus() const{ return m_standardsStatus; }
+
+    /**
+     * <p>The standard's status.</p>
+     */
+    inline bool StandardsStatusHasBeenSet() const { return m_standardsStatusHasBeenSet; }
 
     /**
      * <p>The standard's status.</p>

@@ -55,6 +55,11 @@ namespace Model
     /**
      * <p>The ID that identifies the provisioned capacity unit.</p>
      */
+    inline bool CapacityIdHasBeenSet() const { return m_capacityIdHasBeenSet; }
+
+    /**
+     * <p>The ID that identifies the provisioned capacity unit.</p>
+     */
     inline void SetCapacityId(const Aws::String& value) { m_capacityIdHasBeenSet = true; m_capacityId = value; }
 
     /**
@@ -88,6 +93,12 @@ namespace Model
      * Coordinated Time (UTC).</p>
      */
     inline const Aws::String& GetStartDate() const{ return m_startDate; }
+
+    /**
+     * <p>The date that the provisioned capacity unit was purchased, in Universal
+     * Coordinated Time (UTC).</p>
+     */
+    inline bool StartDateHasBeenSet() const { return m_startDateHasBeenSet; }
 
     /**
      * <p>The date that the provisioned capacity unit was purchased, in Universal
@@ -131,6 +142,12 @@ namespace Model
      * Time (UTC).</p>
      */
     inline const Aws::String& GetExpirationDate() const{ return m_expirationDate; }
+
+    /**
+     * <p>The date that the provisioned capacity unit expires, in Universal Coordinated
+     * Time (UTC).</p>
+     */
+    inline bool ExpirationDateHasBeenSet() const { return m_expirationDateHasBeenSet; }
 
     /**
      * <p>The date that the provisioned capacity unit expires, in Universal Coordinated

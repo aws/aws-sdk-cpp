@@ -54,6 +54,11 @@ namespace Model
     /**
      * <p>The ID of the file system for which to create the mount target.</p>
      */
+    inline bool FileSystemIdHasBeenSet() const { return m_fileSystemIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the file system for which to create the mount target.</p>
+     */
     inline void SetFileSystemId(const Aws::String& value) { m_fileSystemIdHasBeenSet = true; m_fileSystemId = value; }
 
     /**
@@ -86,6 +91,11 @@ namespace Model
      * <p>The ID of the subnet to add the mount target in.</p>
      */
     inline const Aws::String& GetSubnetId() const{ return m_subnetId; }
+
+    /**
+     * <p>The ID of the subnet to add the mount target in.</p>
+     */
+    inline bool SubnetIdHasBeenSet() const { return m_subnetIdHasBeenSet; }
 
     /**
      * <p>The ID of the subnet to add the mount target in.</p>
@@ -126,6 +136,11 @@ namespace Model
     /**
      * <p>Valid IPv4 address within the address range of the specified subnet.</p>
      */
+    inline bool IpAddressHasBeenSet() const { return m_ipAddressHasBeenSet; }
+
+    /**
+     * <p>Valid IPv4 address within the address range of the specified subnet.</p>
+     */
     inline void SetIpAddress(const Aws::String& value) { m_ipAddressHasBeenSet = true; m_ipAddress = value; }
 
     /**
@@ -159,6 +174,12 @@ namespace Model
      * These must be for the same VPC as subnet specified.</p>
      */
     inline const Aws::Vector<Aws::String>& GetSecurityGroups() const{ return m_securityGroups; }
+
+    /**
+     * <p>Up to five VPC security group IDs, of the form <code>sg-xxxxxxxx</code>.
+     * These must be for the same VPC as subnet specified.</p>
+     */
+    inline bool SecurityGroupsHasBeenSet() const { return m_securityGroupsHasBeenSet; }
 
     /**
      * <p>Up to five VPC security group IDs, of the form <code>sg-xxxxxxxx</code>.

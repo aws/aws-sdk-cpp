@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The identifier of the event source mapping.</p>
      */
+    inline bool UUIDHasBeenSet() const { return m_uUIDHasBeenSet; }
+
+    /**
+     * <p>The identifier of the event source mapping.</p>
+     */
     inline void SetUUID(const Aws::String& value) { m_uUIDHasBeenSet = true; m_uUID = value; }
 
     /**
@@ -93,6 +98,11 @@ namespace Model
     /**
      * <p>The maximum number of items to retrieve in a single batch.</p>
      */
+    inline bool BatchSizeHasBeenSet() const { return m_batchSizeHasBeenSet; }
+
+    /**
+     * <p>The maximum number of items to retrieve in a single batch.</p>
+     */
     inline void SetBatchSize(int value) { m_batchSizeHasBeenSet = true; m_batchSize = value; }
 
     /**
@@ -105,6 +115,11 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the event source.</p>
      */
     inline const Aws::String& GetEventSourceArn() const{ return m_eventSourceArn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the event source.</p>
+     */
+    inline bool EventSourceArnHasBeenSet() const { return m_eventSourceArnHasBeenSet; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the event source.</p>
@@ -145,6 +160,11 @@ namespace Model
     /**
      * <p>The ARN of the Lambda function.</p>
      */
+    inline bool FunctionArnHasBeenSet() const { return m_functionArnHasBeenSet; }
+
+    /**
+     * <p>The ARN of the Lambda function.</p>
+     */
     inline void SetFunctionArn(const Aws::String& value) { m_functionArnHasBeenSet = true; m_functionArn = value; }
 
     /**
@@ -181,6 +201,11 @@ namespace Model
     /**
      * <p>The date that the event source mapping was last updated.</p>
      */
+    inline bool LastModifiedHasBeenSet() const { return m_lastModifiedHasBeenSet; }
+
+    /**
+     * <p>The date that the event source mapping was last updated.</p>
+     */
     inline void SetLastModified(const Aws::Utils::DateTime& value) { m_lastModifiedHasBeenSet = true; m_lastModified = value; }
 
     /**
@@ -203,6 +228,11 @@ namespace Model
      * <p>The result of the last AWS Lambda invocation of your Lambda function.</p>
      */
     inline const Aws::String& GetLastProcessingResult() const{ return m_lastProcessingResult; }
+
+    /**
+     * <p>The result of the last AWS Lambda invocation of your Lambda function.</p>
+     */
+    inline bool LastProcessingResultHasBeenSet() const { return m_lastProcessingResultHasBeenSet; }
 
     /**
      * <p>The result of the last AWS Lambda invocation of your Lambda function.</p>
@@ -242,6 +272,14 @@ namespace Model
      * <code>Deleting</code>.</p>
      */
     inline const Aws::String& GetState() const{ return m_state; }
+
+    /**
+     * <p>The state of the event source mapping. It can be one of the following:
+     * <code>Creating</code>, <code>Enabling</code>, <code>Enabled</code>,
+     * <code>Disabling</code>, <code>Disabled</code>, <code>Updating</code>, or
+     * <code>Deleting</code>.</p>
+     */
+    inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
 
     /**
      * <p>The state of the event source mapping. It can be one of the following:
@@ -297,6 +335,12 @@ namespace Model
      * <code>Lambda initiated</code>.</p>
      */
     inline const Aws::String& GetStateTransitionReason() const{ return m_stateTransitionReason; }
+
+    /**
+     * <p>The cause of the last state change, either <code>User initiated</code> or
+     * <code>Lambda initiated</code>.</p>
+     */
+    inline bool StateTransitionReasonHasBeenSet() const { return m_stateTransitionReasonHasBeenSet; }
 
     /**
      * <p>The cause of the last state change, either <code>User initiated</code> or

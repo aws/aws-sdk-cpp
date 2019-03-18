@@ -53,6 +53,11 @@ namespace Model
     /**
      * <p>The name of the resource from which you are removing a tag.</p>
      */
+    inline bool ResourceNameHasBeenSet() const { return m_resourceNameHasBeenSet; }
+
+    /**
+     * <p>The name of the resource from which you are removing a tag.</p>
+     */
     inline void SetResourceName(const Aws::String& value) { m_resourceNameHasBeenSet = true; m_resourceName = value; }
 
     /**
@@ -85,6 +90,11 @@ namespace Model
      * <p>The tag keys to delete from the specified resource.</p>
      */
     inline const Aws::Vector<Aws::String>& GetTagKeys() const{ return m_tagKeys; }
+
+    /**
+     * <p>The tag keys to delete from the specified resource.</p>
+     */
+    inline bool TagKeysHasBeenSet() const { return m_tagKeysHasBeenSet; }
 
     /**
      * <p>The tag keys to delete from the specified resource.</p>

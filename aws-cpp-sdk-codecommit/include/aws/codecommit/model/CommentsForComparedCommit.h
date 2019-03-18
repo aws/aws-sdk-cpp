@@ -59,6 +59,11 @@ namespace Model
     /**
      * <p>The name of the repository that contains the compared commits.</p>
      */
+    inline bool RepositoryNameHasBeenSet() const { return m_repositoryNameHasBeenSet; }
+
+    /**
+     * <p>The name of the repository that contains the compared commits.</p>
+     */
     inline void SetRepositoryName(const Aws::String& value) { m_repositoryNameHasBeenSet = true; m_repositoryName = value; }
 
     /**
@@ -92,6 +97,12 @@ namespace Model
      * comparison.</p>
      */
     inline const Aws::String& GetBeforeCommitId() const{ return m_beforeCommitId; }
+
+    /**
+     * <p>The full commit ID of the commit used to establish the 'before' of the
+     * comparison.</p>
+     */
+    inline bool BeforeCommitIdHasBeenSet() const { return m_beforeCommitIdHasBeenSet; }
 
     /**
      * <p>The full commit ID of the commit used to establish the 'before' of the
@@ -140,6 +151,12 @@ namespace Model
      * <p>The full commit ID of the commit used to establish the 'after' of the
      * comparison.</p>
      */
+    inline bool AfterCommitIdHasBeenSet() const { return m_afterCommitIdHasBeenSet; }
+
+    /**
+     * <p>The full commit ID of the commit used to establish the 'after' of the
+     * comparison.</p>
+     */
     inline void SetAfterCommitId(const Aws::String& value) { m_afterCommitIdHasBeenSet = true; m_afterCommitId = value; }
 
     /**
@@ -183,6 +200,12 @@ namespace Model
      * <p>The full blob ID of the commit used to establish the 'before' of the
      * comparison.</p>
      */
+    inline bool BeforeBlobIdHasBeenSet() const { return m_beforeBlobIdHasBeenSet; }
+
+    /**
+     * <p>The full blob ID of the commit used to establish the 'before' of the
+     * comparison.</p>
+     */
     inline void SetBeforeBlobId(const Aws::String& value) { m_beforeBlobIdHasBeenSet = true; m_beforeBlobId = value; }
 
     /**
@@ -221,6 +244,12 @@ namespace Model
      * comparison.</p>
      */
     inline const Aws::String& GetAfterBlobId() const{ return m_afterBlobId; }
+
+    /**
+     * <p>The full blob ID of the commit used to establish the 'after' of the
+     * comparison.</p>
+     */
+    inline bool AfterBlobIdHasBeenSet() const { return m_afterBlobIdHasBeenSet; }
 
     /**
      * <p>The full blob ID of the commit used to establish the 'after' of the
@@ -271,6 +300,13 @@ namespace Model
      * name, line number, and whether the version of the file where the comment was
      * made is 'BEFORE' or 'AFTER'.</p>
      */
+    inline bool LocationHasBeenSet() const { return m_locationHasBeenSet; }
+
+    /**
+     * <p>Location information about the comment on the comparison, including the file
+     * name, line number, and whether the version of the file where the comment was
+     * made is 'BEFORE' or 'AFTER'.</p>
+     */
     inline void SetLocation(const Location& value) { m_locationHasBeenSet = true; m_location = value; }
 
     /**
@@ -300,6 +336,12 @@ namespace Model
      * comment on the comparison between commits.</p>
      */
     inline const Aws::Vector<Comment>& GetComments() const{ return m_comments; }
+
+    /**
+     * <p>An array of comment objects. Each comment object contains information about a
+     * comment on the comparison between commits.</p>
+     */
+    inline bool CommentsHasBeenSet() const { return m_commentsHasBeenSet; }
 
     /**
      * <p>An array of comment objects. Each comment object contains information about a

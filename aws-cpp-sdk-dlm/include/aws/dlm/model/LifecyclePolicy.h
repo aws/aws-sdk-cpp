@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p>The identifier of the lifecycle policy.</p>
      */
+    inline bool PolicyIdHasBeenSet() const { return m_policyIdHasBeenSet; }
+
+    /**
+     * <p>The identifier of the lifecycle policy.</p>
+     */
     inline void SetPolicyId(const Aws::String& value) { m_policyIdHasBeenSet = true; m_policyId = value; }
 
     /**
@@ -90,6 +95,11 @@ namespace Model
      * <p>The description of the lifecycle policy.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
+
+    /**
+     * <p>The description of the lifecycle policy.</p>
+     */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
 
     /**
      * <p>The description of the lifecycle policy.</p>
@@ -130,6 +140,11 @@ namespace Model
     /**
      * <p>The activation state of the lifecycle policy.</p>
      */
+    inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
+
+    /**
+     * <p>The activation state of the lifecycle policy.</p>
+     */
     inline void SetState(const GettablePolicyStateValues& value) { m_stateHasBeenSet = true; m_state = value; }
 
     /**
@@ -153,6 +168,12 @@ namespace Model
      * specified by the lifecycle policy.</p>
      */
     inline const Aws::String& GetExecutionRoleArn() const{ return m_executionRoleArn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the IAM role used to run the operations
+     * specified by the lifecycle policy.</p>
+     */
+    inline bool ExecutionRoleArnHasBeenSet() const { return m_executionRoleArnHasBeenSet; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the IAM role used to run the operations
@@ -199,6 +220,11 @@ namespace Model
     /**
      * <p>The local date and time when the lifecycle policy was created.</p>
      */
+    inline bool DateCreatedHasBeenSet() const { return m_dateCreatedHasBeenSet; }
+
+    /**
+     * <p>The local date and time when the lifecycle policy was created.</p>
+     */
     inline void SetDateCreated(const Aws::Utils::DateTime& value) { m_dateCreatedHasBeenSet = true; m_dateCreated = value; }
 
     /**
@@ -225,6 +251,11 @@ namespace Model
     /**
      * <p>The local date and time when the lifecycle policy was last modified.</p>
      */
+    inline bool DateModifiedHasBeenSet() const { return m_dateModifiedHasBeenSet; }
+
+    /**
+     * <p>The local date and time when the lifecycle policy was last modified.</p>
+     */
     inline void SetDateModified(const Aws::Utils::DateTime& value) { m_dateModifiedHasBeenSet = true; m_dateModified = value; }
 
     /**
@@ -247,6 +278,11 @@ namespace Model
      * <p>The configuration of the lifecycle policy</p>
      */
     inline const PolicyDetails& GetPolicyDetails() const{ return m_policyDetails; }
+
+    /**
+     * <p>The configuration of the lifecycle policy</p>
+     */
+    inline bool PolicyDetailsHasBeenSet() const { return m_policyDetailsHasBeenSet; }
 
     /**
      * <p>The configuration of the lifecycle policy</p>

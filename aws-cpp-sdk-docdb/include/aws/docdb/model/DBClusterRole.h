@@ -60,6 +60,12 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the IAM role that is associated with the DB
      * cluster.</p>
      */
+    inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the IAM role that is associated with the DB
+     * cluster.</p>
+     */
     inline void SetRoleArn(const Aws::String& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
 
     /**
@@ -104,6 +110,18 @@ namespace Model
      * access other AWS services on your behalf.</p> </li> </ul>
      */
     inline const Aws::String& GetStatus() const{ return m_status; }
+
+    /**
+     * <p>Describes the state of association between the IAM role and the DB cluster.
+     * The <code>Status</code> property returns one of the following values:</p> <ul>
+     * <li> <p> <code>ACTIVE</code> - The IAM role ARN is associated with the DB
+     * cluster and can be used to access other AWS services on your behalf.</p> </li>
+     * <li> <p> <code>PENDING</code> - The IAM role ARN is being associated with the DB
+     * cluster.</p> </li> <li> <p> <code>INVALID</code> - The IAM role ARN is
+     * associated with the DB cluster, but the DB cluster cannot assume the IAM role to
+     * access other AWS services on your behalf.</p> </li> </ul>
+     */
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
     /**
      * <p>Describes the state of association between the IAM role and the DB cluster.

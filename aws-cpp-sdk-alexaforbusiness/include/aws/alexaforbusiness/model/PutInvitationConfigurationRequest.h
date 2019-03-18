@@ -53,6 +53,11 @@ namespace Model
     /**
      * <p>The name of the organization sending the enrollment invite to a user.</p>
      */
+    inline bool OrganizationNameHasBeenSet() const { return m_organizationNameHasBeenSet; }
+
+    /**
+     * <p>The name of the organization sending the enrollment invite to a user.</p>
+     */
     inline void SetOrganizationName(const Aws::String& value) { m_organizationNameHasBeenSet = true; m_organizationName = value; }
 
     /**
@@ -86,6 +91,12 @@ namespace Model
      * can use. </p>
      */
     inline const Aws::String& GetContactEmail() const{ return m_contactEmail; }
+
+    /**
+     * <p>The email ID of the organization or individual contact that the enrolled user
+     * can use. </p>
+     */
+    inline bool ContactEmailHasBeenSet() const { return m_contactEmailHasBeenSet; }
 
     /**
      * <p>The email ID of the organization or individual contact that the enrolled user
@@ -129,6 +140,12 @@ namespace Model
      * enable in the invitation.</p>
      */
     inline const Aws::Vector<Aws::String>& GetPrivateSkillIds() const{ return m_privateSkillIds; }
+
+    /**
+     * <p>The list of private skill IDs that you want to recommend to the user to
+     * enable in the invitation.</p>
+     */
+    inline bool PrivateSkillIdsHasBeenSet() const { return m_privateSkillIdsHasBeenSet; }
 
     /**
      * <p>The list of private skill IDs that you want to recommend to the user to

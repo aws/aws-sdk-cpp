@@ -60,6 +60,15 @@ namespace Model
      * pattern</a> for a policy ID string requires "p-" followed by from 8 to 128
      * lower-case letters or digits.</p>
      */
+    inline bool PolicyIdHasBeenSet() const { return m_policyIdHasBeenSet; }
+
+    /**
+     * <p>The unique identifier (ID) of the policy that you want to delete. You can get
+     * the ID from the <a>ListPolicies</a> or <a>ListPoliciesForTarget</a>
+     * operations.</p> <p>The <a href="http://wikipedia.org/wiki/regex">regex
+     * pattern</a> for a policy ID string requires "p-" followed by from 8 to 128
+     * lower-case letters or digits.</p>
+     */
     inline void SetPolicyId(const Aws::String& value) { m_policyIdHasBeenSet = true; m_policyId = value; }
 
     /**

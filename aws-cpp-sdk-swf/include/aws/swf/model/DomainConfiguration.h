@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The retention period for workflow executions in this domain.</p>
      */
+    inline bool WorkflowExecutionRetentionPeriodInDaysHasBeenSet() const { return m_workflowExecutionRetentionPeriodInDaysHasBeenSet; }
+
+    /**
+     * <p>The retention period for workflow executions in this domain.</p>
+     */
     inline void SetWorkflowExecutionRetentionPeriodInDays(const Aws::String& value) { m_workflowExecutionRetentionPeriodInDaysHasBeenSet = true; m_workflowExecutionRetentionPeriodInDays = value; }
 
     /**

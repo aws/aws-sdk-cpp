@@ -52,6 +52,11 @@ namespace Model
     /**
      * <p>The name for the robot.</p>
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>The name for the robot.</p>
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
@@ -88,6 +93,11 @@ namespace Model
     /**
      * <p>The target architecture of the robot.</p>
      */
+    inline bool ArchitectureHasBeenSet() const { return m_architectureHasBeenSet; }
+
+    /**
+     * <p>The target architecture of the robot.</p>
+     */
     inline void SetArchitecture(const Architecture& value) { m_architectureHasBeenSet = true; m_architecture = value; }
 
     /**
@@ -110,6 +120,11 @@ namespace Model
      * <p>The Greengrass group id.</p>
      */
     inline const Aws::String& GetGreengrassGroupId() const{ return m_greengrassGroupId; }
+
+    /**
+     * <p>The Greengrass group id.</p>
+     */
+    inline bool GreengrassGroupIdHasBeenSet() const { return m_greengrassGroupIdHasBeenSet; }
 
     /**
      * <p>The Greengrass group id.</p>
@@ -147,6 +162,12 @@ namespace Model
      * robot.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>A map that contains tag keys and tag values that are attached to the
+     * robot.</p>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
      * <p>A map that contains tag keys and tag values that are attached to the

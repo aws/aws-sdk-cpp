@@ -68,6 +68,17 @@ namespace Model
      * (<code>cluster</code> | <code>spread</code> | <code>partition</code>).</p> </li>
      * </ul>
      */
+    inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
+
+    /**
+     * <p>One or more filters.</p> <ul> <li> <p> <code>group-name</code> - The name of
+     * the placement group.</p> </li> <li> <p> <code>state</code> - The state of the
+     * placement group (<code>pending</code> | <code>available</code> |
+     * <code>deleting</code> | <code>deleted</code>).</p> </li> <li> <p>
+     * <code>strategy</code> - The strategy of the placement group
+     * (<code>cluster</code> | <code>spread</code> | <code>partition</code>).</p> </li>
+     * </ul>
+     */
     inline void SetFilters(const Aws::Vector<Filter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
 
     /**
@@ -140,6 +151,14 @@ namespace Model
      * required permissions, the error response is <code>DryRunOperation</code>.
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
+    inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
+
+    /**
+     * <p>Checks whether you have the required permissions for the action, without
+     * actually making the request, and provides an error response. If you have the
+     * required permissions, the error response is <code>DryRunOperation</code>.
+     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+     */
     inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
 
     /**
@@ -156,6 +175,12 @@ namespace Model
      * placement groups, or only those otherwise specified.</p>
      */
     inline const Aws::Vector<Aws::String>& GetGroupNames() const{ return m_groupNames; }
+
+    /**
+     * <p>One or more placement group names.</p> <p>Default: Describes all your
+     * placement groups, or only those otherwise specified.</p>
+     */
+    inline bool GroupNamesHasBeenSet() const { return m_groupNamesHasBeenSet; }
 
     /**
      * <p>One or more placement group names.</p> <p>Default: Describes all your

@@ -55,6 +55,11 @@ namespace Model
     /**
      * <p>The event action.</p>
      */
+    inline bool EventActionHasBeenSet() const { return m_eventActionHasBeenSet; }
+
+    /**
+     * <p>The event action.</p>
+     */
     inline void SetEventAction(const CompromisedCredentialsEventActionType& value) { m_eventActionHasBeenSet = true; m_eventAction = value; }
 
     /**

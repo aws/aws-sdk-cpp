@@ -54,6 +54,12 @@ namespace Model
      * <p>The Amazon DynamoDB resource with tags to be listed. This value is an Amazon
      * Resource Name (ARN).</p>
      */
+    inline bool ResourceArnHasBeenSet() const { return m_resourceArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon DynamoDB resource with tags to be listed. This value is an Amazon
+     * Resource Name (ARN).</p>
+     */
     inline void SetResourceArn(const Aws::String& value) { m_resourceArnHasBeenSet = true; m_resourceArn = value; }
 
     /**
@@ -93,6 +99,13 @@ namespace Model
      * fetches the next page of results.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
+    /**
+     * <p>An optional string that, if supplied, must be copied from the output of a
+     * previous call to ListTagOfResource. When provided in this manner, this API
+     * fetches the next page of results.</p>
+     */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
      * <p>An optional string that, if supplied, must be copied from the output of a

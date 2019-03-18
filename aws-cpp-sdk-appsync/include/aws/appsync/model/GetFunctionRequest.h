@@ -50,6 +50,11 @@ namespace Model
     /**
      * <p>The GraphQL API ID.</p>
      */
+    inline bool ApiIdHasBeenSet() const { return m_apiIdHasBeenSet; }
+
+    /**
+     * <p>The GraphQL API ID.</p>
+     */
     inline void SetApiId(const Aws::String& value) { m_apiIdHasBeenSet = true; m_apiId = value; }
 
     /**
@@ -82,6 +87,11 @@ namespace Model
      * <p>The <code>Function</code> ID.</p>
      */
     inline const Aws::String& GetFunctionId() const{ return m_functionId; }
+
+    /**
+     * <p>The <code>Function</code> ID.</p>
+     */
+    inline bool FunctionIdHasBeenSet() const { return m_functionIdHasBeenSet; }
 
     /**
      * <p>The <code>Function</code> ID.</p>

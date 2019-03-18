@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The name of the scaling policy.</p>
      */
+    inline bool PolicyNameHasBeenSet() const { return m_policyNameHasBeenSet; }
+
+    /**
+     * <p>The name of the scaling policy.</p>
+     */
     inline void SetPolicyName(const Aws::String& value) { m_policyNameHasBeenSet = true; m_policyName = value; }
 
     /**
@@ -89,6 +94,11 @@ namespace Model
      * <p>Represents a target tracking scaling policy configuration.</p>
      */
     inline const AutoScalingTargetTrackingScalingPolicyConfigurationUpdate& GetTargetTrackingScalingPolicyConfiguration() const{ return m_targetTrackingScalingPolicyConfiguration; }
+
+    /**
+     * <p>Represents a target tracking scaling policy configuration.</p>
+     */
+    inline bool TargetTrackingScalingPolicyConfigurationHasBeenSet() const { return m_targetTrackingScalingPolicyConfigurationHasBeenSet; }
 
     /**
      * <p>Represents a target tracking scaling policy configuration.</p>

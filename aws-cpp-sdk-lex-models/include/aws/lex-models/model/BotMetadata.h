@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The name of the bot. </p>
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>The name of the bot. </p>
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
@@ -89,6 +94,11 @@ namespace Model
      * <p>A description of the bot.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
+
+    /**
+     * <p>A description of the bot.</p>
+     */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
 
     /**
      * <p>A description of the bot.</p>
@@ -129,6 +139,11 @@ namespace Model
     /**
      * <p>The status of the bot.</p>
      */
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
+
+    /**
+     * <p>The status of the bot.</p>
+     */
     inline void SetStatus(const Status& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
@@ -152,6 +167,12 @@ namespace Model
      * and last updated date are the same. </p>
      */
     inline const Aws::Utils::DateTime& GetLastUpdatedDate() const{ return m_lastUpdatedDate; }
+
+    /**
+     * <p>The date that the bot was updated. When you create a bot, the creation date
+     * and last updated date are the same. </p>
+     */
+    inline bool LastUpdatedDateHasBeenSet() const { return m_lastUpdatedDateHasBeenSet; }
 
     /**
      * <p>The date that the bot was updated. When you create a bot, the creation date
@@ -186,6 +207,11 @@ namespace Model
     /**
      * <p>The date that the bot was created.</p>
      */
+    inline bool CreatedDateHasBeenSet() const { return m_createdDateHasBeenSet; }
+
+    /**
+     * <p>The date that the bot was created.</p>
+     */
     inline void SetCreatedDate(const Aws::Utils::DateTime& value) { m_createdDateHasBeenSet = true; m_createdDate = value; }
 
     /**
@@ -209,6 +235,12 @@ namespace Model
      * <code>$LATEST</code>.</p>
      */
     inline const Aws::String& GetVersion() const{ return m_version; }
+
+    /**
+     * <p>The version of the bot. For a new bot, the version is always
+     * <code>$LATEST</code>.</p>
+     */
+    inline bool VersionHasBeenSet() const { return m_versionHasBeenSet; }
 
     /**
      * <p>The version of the bot. For a new bot, the version is always

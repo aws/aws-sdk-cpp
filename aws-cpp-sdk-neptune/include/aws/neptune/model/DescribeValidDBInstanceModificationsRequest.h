@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The customer identifier or the ARN of your DB instance. </p>
      */
+    inline bool DBInstanceIdentifierHasBeenSet() const { return m_dBInstanceIdentifierHasBeenSet; }
+
+    /**
+     * <p>The customer identifier or the ARN of your DB instance. </p>
+     */
     inline void SetDBInstanceIdentifier(const Aws::String& value) { m_dBInstanceIdentifierHasBeenSet = true; m_dBInstanceIdentifier = value; }
 
     /**

@@ -61,6 +61,12 @@ namespace Model
      * <p>Amazon WorkDocs authentication token. Do not set this field when using
      * administrative API actions, as in accessing the API using AWS credentials.</p>
      */
+    inline bool AuthenticationTokenHasBeenSet() const { return m_authenticationTokenHasBeenSet; }
+
+    /**
+     * <p>Amazon WorkDocs authentication token. Do not set this field when using
+     * administrative API actions, as in accessing the API using AWS credentials.</p>
+     */
     inline void SetAuthenticationToken(const Aws::String& value) { m_authenticationTokenHasBeenSet = true; m_authenticationToken = value; }
 
     /**
@@ -102,6 +108,11 @@ namespace Model
     /**
      * <p>The ID of the resource, either a document or folder.</p>
      */
+    inline bool ResourceIdHasBeenSet() const { return m_resourceIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the resource, either a document or folder.</p>
+     */
     inline void SetResourceId(const Aws::String& value) { m_resourceIdHasBeenSet = true; m_resourceId = value; }
 
     /**
@@ -135,6 +146,12 @@ namespace Model
      * document version.</p>
      */
     inline const Aws::String& GetVersionId() const{ return m_versionId; }
+
+    /**
+     * <p>The ID of the version, if the custom metadata is being deleted from a
+     * document version.</p>
+     */
+    inline bool VersionIdHasBeenSet() const { return m_versionIdHasBeenSet; }
 
     /**
      * <p>The ID of the version, if the custom metadata is being deleted from a
@@ -181,6 +198,11 @@ namespace Model
     /**
      * <p>List of properties to remove.</p>
      */
+    inline bool KeysHasBeenSet() const { return m_keysHasBeenSet; }
+
+    /**
+     * <p>List of properties to remove.</p>
+     */
     inline void SetKeys(const Aws::Vector<Aws::String>& value) { m_keysHasBeenSet = true; m_keys = value; }
 
     /**
@@ -219,6 +241,12 @@ namespace Model
      * resource.</p>
      */
     inline bool GetDeleteAll() const{ return m_deleteAll; }
+
+    /**
+     * <p>Flag to indicate removal of all custom metadata properties from the specified
+     * resource.</p>
+     */
+    inline bool DeleteAllHasBeenSet() const { return m_deleteAllHasBeenSet; }
 
     /**
      * <p>Flag to indicate removal of all custom metadata properties from the specified

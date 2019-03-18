@@ -58,6 +58,14 @@ namespace Model
      * the response. You can use this pagination token to retrieve the next set of
      * stream processors. </p>
      */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
+
+    /**
+     * <p>If the previous response was incomplete (because there are more stream
+     * processors to retrieve), Amazon Rekognition Video returns a pagination token in
+     * the response. You can use this pagination token to retrieve the next set of
+     * stream processors. </p>
+     */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
     /**
@@ -106,6 +114,12 @@ namespace Model
      * return in the response. The default is 1000. </p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
+
+    /**
+     * <p>Maximum number of stream processors you want Amazon Rekognition Video to
+     * return in the response. The default is 1000. </p>
+     */
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
 
     /**
      * <p>Maximum number of stream processors you want Amazon Rekognition Video to

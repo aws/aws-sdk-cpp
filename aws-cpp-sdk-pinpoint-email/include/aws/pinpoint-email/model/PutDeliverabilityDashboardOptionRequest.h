@@ -63,6 +63,12 @@ namespace Model
      * <p>Indicates whether the Deliverability dashboard is enabled. If the value is
      * <code>true</code>, then the dashboard is enabled.</p>
      */
+    inline bool DashboardEnabledHasBeenSet() const { return m_dashboardEnabledHasBeenSet; }
+
+    /**
+     * <p>Indicates whether the Deliverability dashboard is enabled. If the value is
+     * <code>true</code>, then the dashboard is enabled.</p>
+     */
     inline void SetDashboardEnabled(bool value) { m_dashboardEnabledHasBeenSet = true; m_dashboardEnabled = value; }
 
     /**

@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p>The ID of the comment.</p>
      */
+    inline bool CommentIdHasBeenSet() const { return m_commentIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the comment.</p>
+     */
     inline void SetCommentId(const Aws::String& value) { m_commentIdHasBeenSet = true; m_commentId = value; }
 
     /**
@@ -94,6 +99,11 @@ namespace Model
     /**
      * <p>The user who made the comment.</p>
      */
+    inline bool ContributorHasBeenSet() const { return m_contributorHasBeenSet; }
+
+    /**
+     * <p>The user who made the comment.</p>
+     */
     inline void SetContributor(const User& value) { m_contributorHasBeenSet = true; m_contributor = value; }
 
     /**
@@ -116,6 +126,11 @@ namespace Model
      * <p>The timestamp that the comment was created.</p>
      */
     inline const Aws::Utils::DateTime& GetCreatedTimestamp() const{ return m_createdTimestamp; }
+
+    /**
+     * <p>The timestamp that the comment was created.</p>
+     */
+    inline bool CreatedTimestampHasBeenSet() const { return m_createdTimestampHasBeenSet; }
 
     /**
      * <p>The timestamp that the comment was created.</p>
@@ -146,6 +161,11 @@ namespace Model
     /**
      * <p>The status of the comment.</p>
      */
+    inline bool CommentStatusHasBeenSet() const { return m_commentStatusHasBeenSet; }
+
+    /**
+     * <p>The status of the comment.</p>
+     */
     inline void SetCommentStatus(const CommentStatusType& value) { m_commentStatusHasBeenSet = true; m_commentStatus = value; }
 
     /**
@@ -168,6 +188,11 @@ namespace Model
      * <p>The ID of the user being replied to.</p>
      */
     inline const Aws::String& GetRecipientId() const{ return m_recipientId; }
+
+    /**
+     * <p>The ID of the user being replied to.</p>
+     */
+    inline bool RecipientIdHasBeenSet() const { return m_recipientIdHasBeenSet; }
 
     /**
      * <p>The ID of the user being replied to.</p>

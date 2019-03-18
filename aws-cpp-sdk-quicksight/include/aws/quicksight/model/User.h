@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) for the user.</p>
      */
+    inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) for the user.</p>
+     */
     inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
 
     /**
@@ -90,6 +95,11 @@ namespace Model
      * <p>The user's user name.</p>
      */
     inline const Aws::String& GetUserName() const{ return m_userName; }
+
+    /**
+     * <p>The user's user name.</p>
+     */
+    inline bool UserNameHasBeenSet() const { return m_userNameHasBeenSet; }
 
     /**
      * <p>The user's user name.</p>
@@ -130,6 +140,11 @@ namespace Model
     /**
      * <p>The user's email address.</p>
      */
+    inline bool EmailHasBeenSet() const { return m_emailHasBeenSet; }
+
+    /**
+     * <p>The user's email address.</p>
+     */
     inline void SetEmail(const Aws::String& value) { m_emailHasBeenSet = true; m_email = value; }
 
     /**
@@ -166,6 +181,11 @@ namespace Model
     /**
      * <p>The Amazon QuickSight role for the user.</p>
      */
+    inline bool RoleHasBeenSet() const { return m_roleHasBeenSet; }
+
+    /**
+     * <p>The Amazon QuickSight role for the user.</p>
+     */
     inline void SetRole(const UserRole& value) { m_roleHasBeenSet = true; m_role = value; }
 
     /**
@@ -188,6 +208,11 @@ namespace Model
      * <p>The type of identity authentication used by the user.</p>
      */
     inline const IdentityType& GetIdentityType() const{ return m_identityType; }
+
+    /**
+     * <p>The type of identity authentication used by the user.</p>
+     */
+    inline bool IdentityTypeHasBeenSet() const { return m_identityTypeHasBeenSet; }
 
     /**
      * <p>The type of identity authentication used by the user.</p>
@@ -222,6 +247,13 @@ namespace Model
      * an IAM user or an AD user, that user is inactive until they sign in and provide
      * a password</p>
      */
+    inline bool ActiveHasBeenSet() const { return m_activeHasBeenSet; }
+
+    /**
+     * <p>Active status of user. When you create an Amazon QuickSight user that’s not
+     * an IAM user or an AD user, that user is inactive until they sign in and provide
+     * a password</p>
+     */
     inline void SetActive(bool value) { m_activeHasBeenSet = true; m_active = value; }
 
     /**
@@ -236,6 +268,11 @@ namespace Model
      * <p>The principal ID of the user.</p>
      */
     inline const Aws::String& GetPrincipalId() const{ return m_principalId; }
+
+    /**
+     * <p>The principal ID of the user.</p>
+     */
+    inline bool PrincipalIdHasBeenSet() const { return m_principalIdHasBeenSet; }
 
     /**
      * <p>The principal ID of the user.</p>

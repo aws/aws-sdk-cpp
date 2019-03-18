@@ -60,6 +60,12 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management
      * (IAM) role that Amazon S3 can assume when replicating the objects.</p>
      */
+    inline bool RoleHasBeenSet() const { return m_roleHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management
+     * (IAM) role that Amazon S3 can assume when replicating the objects.</p>
+     */
     inline void SetRole(const Aws::String& value) { m_roleHasBeenSet = true; m_role = value; }
 
     /**
@@ -98,6 +104,12 @@ namespace Model
      * must have at least one rule and can contain a maximum of 1,000 rules. </p>
      */
     inline const Aws::Vector<ReplicationRule>& GetRules() const{ return m_rules; }
+
+    /**
+     * <p>A container for one or more replication rules. A replication configuration
+     * must have at least one rule and can contain a maximum of 1,000 rules. </p>
+     */
+    inline bool RulesHasBeenSet() const { return m_rulesHasBeenSet; }
 
     /**
      * <p>A container for one or more replication rules. A replication configuration

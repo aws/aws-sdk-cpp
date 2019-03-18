@@ -55,6 +55,11 @@ namespace Model
     /**
      * Acceleration configuration for the job.
      */
+    inline bool ModeHasBeenSet() const { return m_modeHasBeenSet; }
+
+    /**
+     * Acceleration configuration for the job.
+     */
     inline void SetMode(const AccelerationMode& value) { m_modeHasBeenSet = true; m_mode = value; }
 
     /**

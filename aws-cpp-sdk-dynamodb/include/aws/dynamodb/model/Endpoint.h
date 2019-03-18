@@ -55,6 +55,11 @@ namespace Model
     /**
      * <p>IP address of the endpoint.</p>
      */
+    inline bool AddressHasBeenSet() const { return m_addressHasBeenSet; }
+
+    /**
+     * <p>IP address of the endpoint.</p>
+     */
     inline void SetAddress(const Aws::String& value) { m_addressHasBeenSet = true; m_address = value; }
 
     /**
@@ -87,6 +92,11 @@ namespace Model
      * <p>Endpoint cache time to live (TTL) value.</p>
      */
     inline long long GetCachePeriodInMinutes() const{ return m_cachePeriodInMinutes; }
+
+    /**
+     * <p>Endpoint cache time to live (TTL) value.</p>
+     */
+    inline bool CachePeriodInMinutesHasBeenSet() const { return m_cachePeriodInMinutesHasBeenSet; }
 
     /**
      * <p>Endpoint cache time to live (TTL) value.</p>

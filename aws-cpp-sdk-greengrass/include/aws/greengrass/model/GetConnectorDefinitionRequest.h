@@ -50,6 +50,11 @@ namespace Model
     /**
      * The ID of the connector definition.
      */
+    inline bool ConnectorDefinitionIdHasBeenSet() const { return m_connectorDefinitionIdHasBeenSet; }
+
+    /**
+     * The ID of the connector definition.
+     */
     inline void SetConnectorDefinitionId(const Aws::String& value) { m_connectorDefinitionIdHasBeenSet = true; m_connectorDefinitionId = value; }
 
     /**

@@ -58,6 +58,12 @@ namespace Model
      * <p>The access token returned by the server response to get information about the
      * user.</p>
      */
+    inline bool AccessTokenHasBeenSet() const { return m_accessTokenHasBeenSet; }
+
+    /**
+     * <p>The access token returned by the server response to get information about the
+     * user.</p>
+     */
     inline void SetAccessToken(const Aws::String& value) { m_accessTokenHasBeenSet = true; m_accessToken = value; }
 
     /**

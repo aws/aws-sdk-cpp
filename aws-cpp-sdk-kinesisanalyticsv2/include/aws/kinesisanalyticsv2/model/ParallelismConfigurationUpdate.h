@@ -59,6 +59,12 @@ namespace Model
      * <p>Describes updates to whether the application uses the default parallelism for
      * the Kinesis Data Analytics service, or if a custom parallelism is used.</p>
      */
+    inline bool ConfigurationTypeUpdateHasBeenSet() const { return m_configurationTypeUpdateHasBeenSet; }
+
+    /**
+     * <p>Describes updates to whether the application uses the default parallelism for
+     * the Kinesis Data Analytics service, or if a custom parallelism is used.</p>
+     */
     inline void SetConfigurationTypeUpdate(const ConfigurationType& value) { m_configurationTypeUpdateHasBeenSet = true; m_configurationTypeUpdate = value; }
 
     /**
@@ -90,6 +96,12 @@ namespace Model
      * <p>Describes updates to the initial number of parallel tasks an application can
      * perform.</p>
      */
+    inline bool ParallelismUpdateHasBeenSet() const { return m_parallelismUpdateHasBeenSet; }
+
+    /**
+     * <p>Describes updates to the initial number of parallel tasks an application can
+     * perform.</p>
+     */
     inline void SetParallelismUpdate(int value) { m_parallelismUpdateHasBeenSet = true; m_parallelismUpdate = value; }
 
     /**
@@ -109,6 +121,12 @@ namespace Model
      * <p>Describes updates to the number of parallel tasks an application can perform
      * per Kinesis Processing Unit (KPU) used by the application.</p>
      */
+    inline bool ParallelismPerKPUUpdateHasBeenSet() const { return m_parallelismPerKPUUpdateHasBeenSet; }
+
+    /**
+     * <p>Describes updates to the number of parallel tasks an application can perform
+     * per Kinesis Processing Unit (KPU) used by the application.</p>
+     */
     inline void SetParallelismPerKPUUpdate(int value) { m_parallelismPerKPUUpdateHasBeenSet = true; m_parallelismPerKPUUpdate = value; }
 
     /**
@@ -123,6 +141,12 @@ namespace Model
      * the parallelism of the application in response to increased throughput.</p>
      */
     inline bool GetAutoScalingEnabledUpdate() const{ return m_autoScalingEnabledUpdate; }
+
+    /**
+     * <p>Describes updates to whether the Kinesis Data Analytics service can increase
+     * the parallelism of the application in response to increased throughput.</p>
+     */
+    inline bool AutoScalingEnabledUpdateHasBeenSet() const { return m_autoScalingEnabledUpdateHasBeenSet; }
 
     /**
      * <p>Describes updates to whether the Kinesis Data Analytics service can increase

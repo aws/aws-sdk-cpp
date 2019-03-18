@@ -56,6 +56,11 @@ namespace Model
     /**
      * The absolute local path of the resource inside the Lambda environment.
      */
+    inline bool DestinationPathHasBeenSet() const { return m_destinationPathHasBeenSet; }
+
+    /**
+     * The absolute local path of the resource inside the Lambda environment.
+     */
     inline void SetDestinationPath(const Aws::String& value) { m_destinationPathHasBeenSet = true; m_destinationPath = value; }
 
     /**
@@ -88,6 +93,11 @@ namespace Model
      * The ARN of the Amazon SageMaker training job that represents the source model.
      */
     inline const Aws::String& GetSageMakerJobArn() const{ return m_sageMakerJobArn; }
+
+    /**
+     * The ARN of the Amazon SageMaker training job that represents the source model.
+     */
+    inline bool SageMakerJobArnHasBeenSet() const { return m_sageMakerJobArnHasBeenSet; }
 
     /**
      * The ARN of the Amazon SageMaker training job that represents the source model.

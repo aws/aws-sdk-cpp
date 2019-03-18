@@ -62,6 +62,12 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the rollback trigger.</p> <p>If a specified
      * trigger is missing, the entire stack operation fails and is rolled back. </p>
      */
+    inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the rollback trigger.</p> <p>If a specified
+     * trigger is missing, the entire stack operation fails and is rolled back. </p>
+     */
     inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
 
     /**
@@ -101,6 +107,13 @@ namespace Model
      * is the only supported resource type.</p>
      */
     inline const Aws::String& GetType() const{ return m_type; }
+
+    /**
+     * <p>The resource type of the rollback trigger. Currently, <a
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cw-alarm.html">AWS::CloudWatch::Alarm</a>
+     * is the only supported resource type.</p>
+     */
+    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
 
     /**
      * <p>The resource type of the rollback trigger. Currently, <a

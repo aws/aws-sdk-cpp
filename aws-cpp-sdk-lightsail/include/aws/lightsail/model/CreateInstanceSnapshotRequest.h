@@ -54,6 +54,11 @@ namespace Model
     /**
      * <p>The name for your new snapshot.</p>
      */
+    inline bool InstanceSnapshotNameHasBeenSet() const { return m_instanceSnapshotNameHasBeenSet; }
+
+    /**
+     * <p>The name for your new snapshot.</p>
+     */
     inline void SetInstanceSnapshotName(const Aws::String& value) { m_instanceSnapshotNameHasBeenSet = true; m_instanceSnapshotName = value; }
 
     /**
@@ -86,6 +91,11 @@ namespace Model
      * <p>The Lightsail instance on which to base your snapshot.</p>
      */
     inline const Aws::String& GetInstanceName() const{ return m_instanceName; }
+
+    /**
+     * <p>The Lightsail instance on which to base your snapshot.</p>
+     */
+    inline bool InstanceNameHasBeenSet() const { return m_instanceNameHasBeenSet; }
 
     /**
      * <p>The Lightsail instance on which to base your snapshot.</p>
@@ -124,6 +134,13 @@ namespace Model
      * resource</code> operation.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>The tag keys and optional values to add to the resource during create.</p>
+     * <p>To tag a resource after it has been created, see the <code>tag
+     * resource</code> operation.</p>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
      * <p>The tag keys and optional values to add to the resource during create.</p>

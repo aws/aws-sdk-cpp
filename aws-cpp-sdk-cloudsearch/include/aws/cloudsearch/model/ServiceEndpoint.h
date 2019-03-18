@@ -54,6 +54,9 @@ namespace Model
     inline const Aws::String& GetEndpoint() const{ return m_endpoint; }
 
     
+    inline bool EndpointHasBeenSet() const { return m_endpointHasBeenSet; }
+
+    
     inline void SetEndpoint(const Aws::String& value) { m_endpointHasBeenSet = true; m_endpoint = value; }
 
     

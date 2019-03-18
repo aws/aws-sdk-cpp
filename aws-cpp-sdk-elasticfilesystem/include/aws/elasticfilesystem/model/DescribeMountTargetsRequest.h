@@ -61,6 +61,12 @@ namespace Model
      * <p>(Optional) Maximum number of mount targets to return in the response.
      * Currently, this number is automatically set to 10.</p>
      */
+    inline bool MaxItemsHasBeenSet() const { return m_maxItemsHasBeenSet; }
+
+    /**
+     * <p>(Optional) Maximum number of mount targets to return in the response.
+     * Currently, this number is automatically set to 10.</p>
+     */
     inline void SetMaxItems(int value) { m_maxItemsHasBeenSet = true; m_maxItems = value; }
 
     /**
@@ -76,6 +82,13 @@ namespace Model
      * to continue the list from where the previous returning call left off.</p>
      */
     inline const Aws::String& GetMarker() const{ return m_marker; }
+
+    /**
+     * <p>(Optional) Opaque pagination token returned from a previous
+     * <code>DescribeMountTargets</code> operation (String). If present, it specifies
+     * to continue the list from where the previous returning call left off.</p>
+     */
+    inline bool MarkerHasBeenSet() const { return m_markerHasBeenSet; }
 
     /**
      * <p>(Optional) Opaque pagination token returned from a previous
@@ -132,6 +145,13 @@ namespace Model
      * (String). It must be included in your request if <code>MountTargetId</code> is
      * not included.</p>
      */
+    inline bool FileSystemIdHasBeenSet() const { return m_fileSystemIdHasBeenSet; }
+
+    /**
+     * <p>(Optional) ID of the file system whose mount targets you want to list
+     * (String). It must be included in your request if <code>MountTargetId</code> is
+     * not included.</p>
+     */
     inline void SetFileSystemId(const Aws::String& value) { m_fileSystemIdHasBeenSet = true; m_fileSystemId = value; }
 
     /**
@@ -176,6 +196,13 @@ namespace Model
      * included.</p>
      */
     inline const Aws::String& GetMountTargetId() const{ return m_mountTargetId; }
+
+    /**
+     * <p>(Optional) ID of the mount target that you want to have described (String).
+     * It must be included in your request if <code>FileSystemId</code> is not
+     * included.</p>
+     */
+    inline bool MountTargetIdHasBeenSet() const { return m_mountTargetIdHasBeenSet; }
 
     /**
      * <p>(Optional) ID of the mount target that you want to have described (String).

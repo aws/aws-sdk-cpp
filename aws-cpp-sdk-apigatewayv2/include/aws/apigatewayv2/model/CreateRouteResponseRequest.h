@@ -52,6 +52,11 @@ namespace Model
     /**
      * <p>The API identifier.</p>
      */
+    inline bool ApiIdHasBeenSet() const { return m_apiIdHasBeenSet; }
+
+    /**
+     * <p>The API identifier.</p>
+     */
     inline void SetApiId(const Aws::String& value) { m_apiIdHasBeenSet = true; m_apiId = value; }
 
     /**
@@ -88,6 +93,11 @@ namespace Model
     /**
      * <p>The model selection expression for the route response.</p>
      */
+    inline bool ModelSelectionExpressionHasBeenSet() const { return m_modelSelectionExpressionHasBeenSet; }
+
+    /**
+     * <p>The model selection expression for the route response.</p>
+     */
     inline void SetModelSelectionExpression(const Aws::String& value) { m_modelSelectionExpressionHasBeenSet = true; m_modelSelectionExpression = value; }
 
     /**
@@ -120,6 +130,11 @@ namespace Model
      * <p>The response models for the route response.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetResponseModels() const{ return m_responseModels; }
+
+    /**
+     * <p>The response models for the route response.</p>
+     */
+    inline bool ResponseModelsHasBeenSet() const { return m_responseModelsHasBeenSet; }
 
     /**
      * <p>The response models for the route response.</p>
@@ -185,6 +200,11 @@ namespace Model
     /**
      * <p>The route response parameters.</p>
      */
+    inline bool ResponseParametersHasBeenSet() const { return m_responseParametersHasBeenSet; }
+
+    /**
+     * <p>The route response parameters.</p>
+     */
     inline void SetResponseParameters(const Aws::Map<Aws::String, ParameterConstraints>& value) { m_responseParametersHasBeenSet = true; m_responseParameters = value; }
 
     /**
@@ -241,6 +261,11 @@ namespace Model
     /**
      * <p>The route ID.</p>
      */
+    inline bool RouteIdHasBeenSet() const { return m_routeIdHasBeenSet; }
+
+    /**
+     * <p>The route ID.</p>
+     */
     inline void SetRouteId(const Aws::String& value) { m_routeIdHasBeenSet = true; m_routeId = value; }
 
     /**
@@ -273,6 +298,11 @@ namespace Model
      * <p>The route response key.</p>
      */
     inline const Aws::String& GetRouteResponseKey() const{ return m_routeResponseKey; }
+
+    /**
+     * <p>The route response key.</p>
+     */
+    inline bool RouteResponseKeyHasBeenSet() const { return m_routeResponseKeyHasBeenSet; }
 
     /**
      * <p>The route response key.</p>

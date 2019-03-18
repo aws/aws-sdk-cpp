@@ -55,6 +55,11 @@ namespace Model
     /**
      * <p>The ARN of the topic whose access control policy you wish to modify.</p>
      */
+    inline bool TopicArnHasBeenSet() const { return m_topicArnHasBeenSet; }
+
+    /**
+     * <p>The ARN of the topic whose access control policy you wish to modify.</p>
+     */
     inline void SetTopicArn(const Aws::String& value) { m_topicArnHasBeenSet = true; m_topicArn = value; }
 
     /**
@@ -87,6 +92,11 @@ namespace Model
      * <p>A unique identifier for the new policy statement.</p>
      */
     inline const Aws::String& GetLabel() const{ return m_label; }
+
+    /**
+     * <p>A unique identifier for the new policy statement.</p>
+     */
+    inline bool LabelHasBeenSet() const { return m_labelHasBeenSet; }
 
     /**
      * <p>A unique identifier for the new policy statement.</p>
@@ -125,6 +135,13 @@ namespace Model
      * signed up for this service.</p>
      */
     inline const Aws::Vector<Aws::String>& GetAWSAccountId() const{ return m_aWSAccountId; }
+
+    /**
+     * <p>The AWS account IDs of the users (principals) who will be given access to the
+     * specified actions. The users must have AWS accounts, but do not need to be
+     * signed up for this service.</p>
+     */
+    inline bool AWSAccountIdHasBeenSet() const { return m_aWSAccountIdHasBeenSet; }
 
     /**
      * <p>The AWS account IDs of the users (principals) who will be given access to the
@@ -181,6 +198,12 @@ namespace Model
      * values: any Amazon SNS action name.</p>
      */
     inline const Aws::Vector<Aws::String>& GetActionName() const{ return m_actionName; }
+
+    /**
+     * <p>The action you want to allow for the specified principal(s).</p> <p>Valid
+     * values: any Amazon SNS action name.</p>
+     */
+    inline bool ActionNameHasBeenSet() const { return m_actionNameHasBeenSet; }
 
     /**
      * <p>The action you want to allow for the specified principal(s).</p> <p>Valid

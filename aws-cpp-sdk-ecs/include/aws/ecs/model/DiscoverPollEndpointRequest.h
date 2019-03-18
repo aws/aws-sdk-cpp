@@ -64,6 +64,17 @@ namespace Model
      * <code>arn:aws:ecs:<i>region</i>:<i>aws_account_id</i>:container-instance/<i>container_instance_ID</i>
      * </code>.</p>
      */
+    inline bool ContainerInstanceHasBeenSet() const { return m_containerInstanceHasBeenSet; }
+
+    /**
+     * <p>The container instance ID or full ARN of the container instance. The ARN
+     * contains the <code>arn:aws:ecs</code> namespace, followed by the Region of the
+     * container instance, the AWS account ID of the container instance owner, the
+     * <code>container-instance</code> namespace, and then the container instance ID.
+     * For example,
+     * <code>arn:aws:ecs:<i>region</i>:<i>aws_account_id</i>:container-instance/<i>container_instance_ID</i>
+     * </code>.</p>
+     */
     inline void SetContainerInstance(const Aws::String& value) { m_containerInstanceHasBeenSet = true; m_containerInstance = value; }
 
     /**
@@ -127,6 +138,12 @@ namespace Model
      * container instance belongs.</p>
      */
     inline const Aws::String& GetCluster() const{ return m_cluster; }
+
+    /**
+     * <p>The short name or full Amazon Resource Name (ARN) of the cluster to which the
+     * container instance belongs.</p>
+     */
+    inline bool ClusterHasBeenSet() const { return m_clusterHasBeenSet; }
 
     /**
      * <p>The short name or full Amazon Resource Name (ARN) of the cluster to which the

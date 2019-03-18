@@ -61,6 +61,13 @@ namespace Model
      * of the person throughout the video. The identifier is not stored by Amazon
      * Rekognition.</p>
      */
+    inline bool IndexHasBeenSet() const { return m_indexHasBeenSet; }
+
+    /**
+     * <p>Identifier for the person detected person within a video. Use to keep track
+     * of the person throughout the video. The identifier is not stored by Amazon
+     * Rekognition.</p>
+     */
     inline void SetIndex(long long value) { m_indexHasBeenSet = true; m_index = value; }
 
     /**
@@ -75,6 +82,11 @@ namespace Model
      * <p>Bounding box around the detected person.</p>
      */
     inline const BoundingBox& GetBoundingBox() const{ return m_boundingBox; }
+
+    /**
+     * <p>Bounding box around the detected person.</p>
+     */
+    inline bool BoundingBoxHasBeenSet() const { return m_boundingBoxHasBeenSet; }
 
     /**
      * <p>Bounding box around the detected person.</p>
@@ -101,6 +113,11 @@ namespace Model
      * <p>Face details for the detected person.</p>
      */
     inline const FaceDetail& GetFace() const{ return m_face; }
+
+    /**
+     * <p>Face details for the detected person.</p>
+     */
+    inline bool FaceHasBeenSet() const { return m_faceHasBeenSet; }
 
     /**
      * <p>Face details for the detected person.</p>

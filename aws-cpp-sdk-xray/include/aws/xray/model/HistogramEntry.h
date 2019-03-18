@@ -55,6 +55,11 @@ namespace Model
     /**
      * <p>The value of the entry.</p>
      */
+    inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
+
+    /**
+     * <p>The value of the entry.</p>
+     */
     inline void SetValue(double value) { m_valueHasBeenSet = true; m_value = value; }
 
     /**
@@ -67,6 +72,11 @@ namespace Model
      * <p>The prevalence of the entry.</p>
      */
     inline int GetCount() const{ return m_count; }
+
+    /**
+     * <p>The prevalence of the entry.</p>
+     */
+    inline bool CountHasBeenSet() const { return m_countHasBeenSet; }
 
     /**
      * <p>The prevalence of the entry.</p>

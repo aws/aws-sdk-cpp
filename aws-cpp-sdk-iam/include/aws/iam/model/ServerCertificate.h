@@ -62,6 +62,12 @@ namespace Model
      * <p>The meta information of the server certificate, such as its name, path, ID,
      * and ARN.</p>
      */
+    inline bool ServerCertificateMetadataHasBeenSet() const { return m_serverCertificateMetadataHasBeenSet; }
+
+    /**
+     * <p>The meta information of the server certificate, such as its name, path, ID,
+     * and ARN.</p>
+     */
     inline void SetServerCertificateMetadata(const ServerCertificateMetadata& value) { m_serverCertificateMetadataHasBeenSet = true; m_serverCertificateMetadata = value; }
 
     /**
@@ -87,6 +93,11 @@ namespace Model
      * <p>The contents of the public key certificate.</p>
      */
     inline const Aws::String& GetCertificateBody() const{ return m_certificateBody; }
+
+    /**
+     * <p>The contents of the public key certificate.</p>
+     */
+    inline bool CertificateBodyHasBeenSet() const { return m_certificateBodyHasBeenSet; }
 
     /**
      * <p>The contents of the public key certificate.</p>
@@ -123,6 +134,11 @@ namespace Model
      * <p>The contents of the public key certificate chain.</p>
      */
     inline const Aws::String& GetCertificateChain() const{ return m_certificateChain; }
+
+    /**
+     * <p>The contents of the public key certificate chain.</p>
+     */
+    inline bool CertificateChainHasBeenSet() const { return m_certificateChainHasBeenSet; }
 
     /**
      * <p>The contents of the public key certificate chain.</p>

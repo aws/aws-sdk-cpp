@@ -53,6 +53,11 @@ namespace Model
     /**
      * <p>The ARN that specifies the assessment run that you want to describe.</p>
      */
+    inline bool AssessmentRunArnsHasBeenSet() const { return m_assessmentRunArnsHasBeenSet; }
+
+    /**
+     * <p>The ARN that specifies the assessment run that you want to describe.</p>
+     */
     inline void SetAssessmentRunArns(const Aws::Vector<Aws::String>& value) { m_assessmentRunArnsHasBeenSet = true; m_assessmentRunArns = value; }
 
     /**

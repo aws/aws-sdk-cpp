@@ -64,6 +64,15 @@ namespace Model
      * information on JsonPath expressions can be found here:
      * https://github.com/json-path/JsonPath.</p>
      */
+    inline bool JsonPathHasBeenSet() const { return m_jsonPathHasBeenSet; }
+
+    /**
+     * <p>A JsonPath expression that will be applied to the body/payload of the
+     * webhook. The value selected by JsonPath expression must match the value
+     * specified in the matchEquals field, otherwise the request will be ignored. More
+     * information on JsonPath expressions can be found here:
+     * https://github.com/json-path/JsonPath.</p>
+     */
     inline void SetJsonPath(const Aws::String& value) { m_jsonPathHasBeenSet = true; m_jsonPath = value; }
 
     /**
@@ -125,6 +134,20 @@ namespace Model
      * Structure Reference Action Requirements</a>.</p>
      */
     inline const Aws::String& GetMatchEquals() const{ return m_matchEquals; }
+
+    /**
+     * <p>The value selected by the JsonPath expression must match what is supplied in
+     * the MatchEquals field, otherwise the request will be ignored. Properties from
+     * the target action configuration can be included as placeholders in this value by
+     * surrounding the action configuration key with curly braces. For example, if the
+     * value supplied here is "refs/heads/{Branch}" and the target action has an action
+     * configuration property called "Branch" with a value of "master", the MatchEquals
+     * value will be evaluated as "refs/heads/master". A list of action configuration
+     * properties for built-in action types can be found here: <a
+     * href="http://docs.aws.amazon.com/codepipeline/latest/userguide/reference-pipeline-structure.html#action-requirements">Pipeline
+     * Structure Reference Action Requirements</a>.</p>
+     */
+    inline bool MatchEqualsHasBeenSet() const { return m_matchEqualsHasBeenSet; }
 
     /**
      * <p>The value selected by the JsonPath expression must match what is supplied in

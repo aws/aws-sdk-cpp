@@ -74,6 +74,19 @@ namespace Model
      * specify Lambda functions that run at specified hooks, such as
      * <code>BeforeInstall</code>, during a deployment. </p>
      */
+    inline bool ContentHasBeenSet() const { return m_contentHasBeenSet; }
+
+    /**
+     * <p> The YAML-formatted or JSON-formatted revision string. </p> <p> For an AWS
+     * Lambda deployment, the content includes a Lambda function name, the alias for
+     * its original version, and the alias for its replacement version. The deployment
+     * shifts traffic from the original version of the Lambda function to the
+     * replacement version. </p> <p> For an Amazon ECS deployment, the content includes
+     * the task name, information about the load balancer that serves traffic to the
+     * container, and more. </p> <p> For both types of deployments, the content can
+     * specify Lambda functions that run at specified hooks, such as
+     * <code>BeforeInstall</code>, during a deployment. </p>
+     */
     inline void SetContent(const Aws::String& value) { m_contentHasBeenSet = true; m_content = value; }
 
     /**
@@ -146,6 +159,11 @@ namespace Model
      * <p> The SHA256 hash value of the revision content. </p>
      */
     inline const Aws::String& GetSha256() const{ return m_sha256; }
+
+    /**
+     * <p> The SHA256 hash value of the revision content. </p>
+     */
+    inline bool Sha256HasBeenSet() const { return m_sha256HasBeenSet; }
 
     /**
      * <p> The SHA256 hash value of the revision content. </p>

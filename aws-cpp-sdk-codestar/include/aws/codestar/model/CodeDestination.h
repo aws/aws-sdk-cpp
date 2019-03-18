@@ -63,6 +63,13 @@ namespace Model
      * CodeStar. This is where the source code files provided with the project request
      * will be uploaded after project creation.</p>
      */
+    inline bool CodeCommitHasBeenSet() const { return m_codeCommitHasBeenSet; }
+
+    /**
+     * <p>Information about the AWS CodeCommit repository to be created in AWS
+     * CodeStar. This is where the source code files provided with the project request
+     * will be uploaded after project creation.</p>
+     */
     inline void SetCodeCommit(const CodeCommitCodeDestination& value) { m_codeCommitHasBeenSet = true; m_codeCommit = value; }
 
     /**
@@ -93,6 +100,13 @@ namespace Model
      * uploaded after project creation.</p>
      */
     inline const GitHubCodeDestination& GetGitHub() const{ return m_gitHub; }
+
+    /**
+     * <p>Information about the GitHub repository to be created in AWS CodeStar. This
+     * is where the source code files provided with the project request will be
+     * uploaded after project creation.</p>
+     */
+    inline bool GitHubHasBeenSet() const { return m_gitHubHasBeenSet; }
 
     /**
      * <p>Information about the GitHub repository to be created in AWS CodeStar. This

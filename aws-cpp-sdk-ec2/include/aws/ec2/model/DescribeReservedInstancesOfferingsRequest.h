@@ -65,6 +65,11 @@ namespace Model
     /**
      * <p>The Availability Zone in which the Reserved Instance can be used.</p>
      */
+    inline bool AvailabilityZoneHasBeenSet() const { return m_availabilityZoneHasBeenSet; }
+
+    /**
+     * <p>The Availability Zone in which the Reserved Instance can be used.</p>
+     */
     inline void SetAvailabilityZone(const Aws::String& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = value; }
 
     /**
@@ -123,6 +128,37 @@ namespace Model
      * price of the Reserved Instance, per hour (for example, 0.84).</p> </li> </ul>
      */
     inline const Aws::Vector<Filter>& GetFilters() const{ return m_filters; }
+
+    /**
+     * <p>One or more filters.</p> <ul> <li> <p> <code>availability-zone</code> - The
+     * Availability Zone where the Reserved Instance can be used.</p> </li> <li> <p>
+     * <code>duration</code> - The duration of the Reserved Instance (for example, one
+     * year or three years), in seconds (<code>31536000</code> |
+     * <code>94608000</code>).</p> </li> <li> <p> <code>fixed-price</code> - The
+     * purchase price of the Reserved Instance (for example, 9800.0).</p> </li> <li>
+     * <p> <code>instance-type</code> - The instance type that is covered by the
+     * reservation.</p> </li> <li> <p> <code>marketplace</code> - Set to
+     * <code>true</code> to show only Reserved Instance Marketplace offerings. When
+     * this filter is not used, which is the default behavior, all offerings from both
+     * AWS and the Reserved Instance Marketplace are listed.</p> </li> <li> <p>
+     * <code>product-description</code> - The Reserved Instance product platform
+     * description. Instances that include <code>(Amazon VPC)</code> in the product
+     * platform description will only be displayed to EC2-Classic account holders and
+     * are for use with Amazon VPC. (<code>Linux/UNIX</code> | <code>Linux/UNIX (Amazon
+     * VPC)</code> | <code>SUSE Linux</code> | <code>SUSE Linux (Amazon VPC)</code> |
+     * <code>Red Hat Enterprise Linux</code> | <code>Red Hat Enterprise Linux (Amazon
+     * VPC)</code> | <code>Windows</code> | <code>Windows (Amazon VPC)</code> |
+     * <code>Windows with SQL Server Standard</code> | <code>Windows with SQL Server
+     * Standard (Amazon VPC)</code> | <code>Windows with SQL Server Web</code> | <code>
+     * Windows with SQL Server Web (Amazon VPC)</code> | <code>Windows with SQL Server
+     * Enterprise</code> | <code>Windows with SQL Server Enterprise (Amazon
+     * VPC)</code>) </p> </li> <li> <p> <code>reserved-instances-offering-id</code> -
+     * The Reserved Instances offering ID.</p> </li> <li> <p> <code>scope</code> - The
+     * scope of the Reserved Instance (<code>Availability Zone</code> or
+     * <code>Region</code>).</p> </li> <li> <p> <code>usage-price</code> - The usage
+     * price of the Reserved Instance, per hour (for example, 0.84).</p> </li> </ul>
+     */
+    inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
 
     /**
      * <p>One or more filters.</p> <ul> <li> <p> <code>availability-zone</code> - The
@@ -319,6 +355,11 @@ namespace Model
     /**
      * <p>Include Reserved Instance Marketplace offerings in the response.</p>
      */
+    inline bool IncludeMarketplaceHasBeenSet() const { return m_includeMarketplaceHasBeenSet; }
+
+    /**
+     * <p>Include Reserved Instance Marketplace offerings in the response.</p>
+     */
     inline void SetIncludeMarketplace(bool value) { m_includeMarketplaceHasBeenSet = true; m_includeMarketplace = value; }
 
     /**
@@ -334,6 +375,14 @@ namespace Model
      * Types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
      */
     inline const InstanceType& GetInstanceType() const{ return m_instanceType; }
+
+    /**
+     * <p>The instance type that the reservation will cover (for example,
+     * <code>m1.small</code>). For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
+     * Types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     */
+    inline bool InstanceTypeHasBeenSet() const { return m_instanceTypeHasBeenSet; }
 
     /**
      * <p>The instance type that the reservation will cover (for example,
@@ -378,6 +427,12 @@ namespace Model
      * <p>The maximum duration (in seconds) to filter when searching for offerings.</p>
      * <p>Default: 94608000 (3 years)</p>
      */
+    inline bool MaxDurationHasBeenSet() const { return m_maxDurationHasBeenSet; }
+
+    /**
+     * <p>The maximum duration (in seconds) to filter when searching for offerings.</p>
+     * <p>Default: 94608000 (3 years)</p>
+     */
     inline void SetMaxDuration(long long value) { m_maxDurationHasBeenSet = true; m_maxDuration = value; }
 
     /**
@@ -392,6 +447,12 @@ namespace Model
      * <p>Default: 20</p>
      */
     inline int GetMaxInstanceCount() const{ return m_maxInstanceCount; }
+
+    /**
+     * <p>The maximum number of instances to filter when searching for offerings.</p>
+     * <p>Default: 20</p>
+     */
+    inline bool MaxInstanceCountHasBeenSet() const { return m_maxInstanceCountHasBeenSet; }
 
     /**
      * <p>The maximum number of instances to filter when searching for offerings.</p>
@@ -416,6 +477,12 @@ namespace Model
      * <p>The minimum duration (in seconds) to filter when searching for offerings.</p>
      * <p>Default: 2592000 (1 month)</p>
      */
+    inline bool MinDurationHasBeenSet() const { return m_minDurationHasBeenSet; }
+
+    /**
+     * <p>The minimum duration (in seconds) to filter when searching for offerings.</p>
+     * <p>Default: 2592000 (1 month)</p>
+     */
     inline void SetMinDuration(long long value) { m_minDurationHasBeenSet = true; m_minDuration = value; }
 
     /**
@@ -430,6 +497,12 @@ namespace Model
      * <code>convertible</code>.</p>
      */
     inline const OfferingClassType& GetOfferingClass() const{ return m_offeringClass; }
+
+    /**
+     * <p>The offering class of the Reserved Instance. Can be <code>standard</code> or
+     * <code>convertible</code>.</p>
+     */
+    inline bool OfferingClassHasBeenSet() const { return m_offeringClassHasBeenSet; }
 
     /**
      * <p>The offering class of the Reserved Instance. Can be <code>standard</code> or
@@ -466,6 +539,12 @@ namespace Model
      * <p>The Reserved Instance product platform description. Instances that include
      * <code>(Amazon VPC)</code> in the description are for use with Amazon VPC.</p>
      */
+    inline bool ProductDescriptionHasBeenSet() const { return m_productDescriptionHasBeenSet; }
+
+    /**
+     * <p>The Reserved Instance product platform description. Instances that include
+     * <code>(Amazon VPC)</code> in the description are for use with Amazon VPC.</p>
+     */
     inline void SetProductDescription(const RIProductDescription& value) { m_productDescriptionHasBeenSet = true; m_productDescription = value; }
 
     /**
@@ -491,6 +570,11 @@ namespace Model
      * <p>One or more Reserved Instances offering IDs.</p>
      */
     inline const Aws::Vector<Aws::String>& GetReservedInstancesOfferingIds() const{ return m_reservedInstancesOfferingIds; }
+
+    /**
+     * <p>One or more Reserved Instances offering IDs.</p>
+     */
+    inline bool ReservedInstancesOfferingIdsHasBeenSet() const { return m_reservedInstancesOfferingIdsHasBeenSet; }
 
     /**
      * <p>One or more Reserved Instances offering IDs.</p>
@@ -542,6 +626,14 @@ namespace Model
      * required permissions, the error response is <code>DryRunOperation</code>.
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
+    inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
+
+    /**
+     * <p>Checks whether you have the required permissions for the action, without
+     * actually making the request, and provides an error response. If you have the
+     * required permissions, the error response is <code>DryRunOperation</code>.
+     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+     */
     inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
 
     /**
@@ -562,6 +654,16 @@ namespace Model
      * only.</p> <p>Default: <code>default</code> </p>
      */
     inline const Tenancy& GetInstanceTenancy() const{ return m_instanceTenancy; }
+
+    /**
+     * <p>The tenancy of the instances covered by the reservation. A Reserved Instance
+     * with a tenancy of <code>dedicated</code> is applied to instances that run in a
+     * VPC on single-tenant hardware (i.e., Dedicated Instances).</p> <p>
+     * <b>Important:</b> The <code>host</code> value cannot be used with this
+     * parameter. Use the <code>default</code> or <code>dedicated</code> values
+     * only.</p> <p>Default: <code>default</code> </p>
+     */
+    inline bool InstanceTenancyHasBeenSet() const { return m_instanceTenancyHasBeenSet; }
 
     /**
      * <p>The tenancy of the instances covered by the reservation. A Reserved Instance
@@ -618,6 +720,14 @@ namespace Model
      * with the returned <code>NextToken</code> value. The maximum is 100.</p>
      * <p>Default: 100</p>
      */
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
+
+    /**
+     * <p>The maximum number of results to return for the request in a single page. The
+     * remaining results of the initial request can be seen by sending another request
+     * with the returned <code>NextToken</code> value. The maximum is 100.</p>
+     * <p>Default: 100</p>
+     */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
@@ -633,6 +743,11 @@ namespace Model
      * <p>The token to retrieve the next page of results.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
+    /**
+     * <p>The token to retrieve the next page of results.</p>
+     */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
      * <p>The token to retrieve the next page of results.</p>
@@ -671,6 +786,13 @@ namespace Model
      * Utilization</code> Reserved Instance offering type. </p>
      */
     inline const OfferingTypeValues& GetOfferingType() const{ return m_offeringType; }
+
+    /**
+     * <p>The Reserved Instance offering type. If you are using tools that predate the
+     * 2011-11-01 API version, you only have access to the <code>Medium
+     * Utilization</code> Reserved Instance offering type. </p>
+     */
+    inline bool OfferingTypeHasBeenSet() const { return m_offeringTypeHasBeenSet; }
 
     /**
      * <p>The Reserved Instance offering type. If you are using tools that predate the

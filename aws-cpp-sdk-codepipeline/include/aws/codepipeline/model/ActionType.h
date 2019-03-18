@@ -60,6 +60,11 @@ namespace Model
     /**
      * <p>Represents information about an action type.</p>
      */
+    inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
+
+    /**
+     * <p>Represents information about an action type.</p>
+     */
     inline void SetId(const ActionTypeId& value) { m_idHasBeenSet = true; m_id = value; }
 
     /**
@@ -86,6 +91,11 @@ namespace Model
     /**
      * <p>The settings for the action type.</p>
      */
+    inline bool SettingsHasBeenSet() const { return m_settingsHasBeenSet; }
+
+    /**
+     * <p>The settings for the action type.</p>
+     */
     inline void SetSettings(const ActionTypeSettings& value) { m_settingsHasBeenSet = true; m_settings = value; }
 
     /**
@@ -108,6 +118,11 @@ namespace Model
      * <p>The configuration properties for the action type.</p>
      */
     inline const Aws::Vector<ActionConfigurationProperty>& GetActionConfigurationProperties() const{ return m_actionConfigurationProperties; }
+
+    /**
+     * <p>The configuration properties for the action type.</p>
+     */
+    inline bool ActionConfigurationPropertiesHasBeenSet() const { return m_actionConfigurationPropertiesHasBeenSet; }
 
     /**
      * <p>The configuration properties for the action type.</p>
@@ -148,6 +163,11 @@ namespace Model
     /**
      * <p>The details of the input artifact for the action, such as its commit ID.</p>
      */
+    inline bool InputArtifactDetailsHasBeenSet() const { return m_inputArtifactDetailsHasBeenSet; }
+
+    /**
+     * <p>The details of the input artifact for the action, such as its commit ID.</p>
+     */
     inline void SetInputArtifactDetails(const ArtifactDetails& value) { m_inputArtifactDetailsHasBeenSet = true; m_inputArtifactDetails = value; }
 
     /**
@@ -170,6 +190,11 @@ namespace Model
      * <p>The details of the output artifact of the action, such as its commit ID.</p>
      */
     inline const ArtifactDetails& GetOutputArtifactDetails() const{ return m_outputArtifactDetails; }
+
+    /**
+     * <p>The details of the output artifact of the action, such as its commit ID.</p>
+     */
+    inline bool OutputArtifactDetailsHasBeenSet() const { return m_outputArtifactDetailsHasBeenSet; }
 
     /**
      * <p>The details of the output artifact of the action, such as its commit ID.</p>

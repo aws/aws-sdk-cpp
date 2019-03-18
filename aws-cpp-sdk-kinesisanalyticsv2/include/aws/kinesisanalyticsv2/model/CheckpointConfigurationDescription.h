@@ -58,6 +58,12 @@ namespace Model
      * <p>Describes whether the application uses the default checkpointing behavior in
      * Kinesis Data Analytics.</p>
      */
+    inline bool ConfigurationTypeHasBeenSet() const { return m_configurationTypeHasBeenSet; }
+
+    /**
+     * <p>Describes whether the application uses the default checkpointing behavior in
+     * Kinesis Data Analytics.</p>
+     */
     inline void SetConfigurationType(const ConfigurationType& value) { m_configurationTypeHasBeenSet = true; m_configurationType = value; }
 
     /**
@@ -89,6 +95,12 @@ namespace Model
      * <p>Describes whether checkpointing is enabled for a Java-based Kinesis Data
      * Analytics application.</p>
      */
+    inline bool CheckpointingEnabledHasBeenSet() const { return m_checkpointingEnabledHasBeenSet; }
+
+    /**
+     * <p>Describes whether checkpointing is enabled for a Java-based Kinesis Data
+     * Analytics application.</p>
+     */
     inline void SetCheckpointingEnabled(bool value) { m_checkpointingEnabledHasBeenSet = true; m_checkpointingEnabled = value; }
 
     /**
@@ -106,6 +118,11 @@ namespace Model
     /**
      * <p>Describes the interval in milliseconds between checkpoint operations.</p>
      */
+    inline bool CheckpointIntervalHasBeenSet() const { return m_checkpointIntervalHasBeenSet; }
+
+    /**
+     * <p>Describes the interval in milliseconds between checkpoint operations.</p>
+     */
     inline void SetCheckpointInterval(long long value) { m_checkpointIntervalHasBeenSet = true; m_checkpointInterval = value; }
 
     /**
@@ -119,6 +136,12 @@ namespace Model
      * completes that a new checkpoint operation can start.</p>
      */
     inline long long GetMinPauseBetweenCheckpoints() const{ return m_minPauseBetweenCheckpoints; }
+
+    /**
+     * <p>Describes the minimum time in milliseconds after a checkpoint operation
+     * completes that a new checkpoint operation can start.</p>
+     */
+    inline bool MinPauseBetweenCheckpointsHasBeenSet() const { return m_minPauseBetweenCheckpointsHasBeenSet; }
 
     /**
      * <p>Describes the minimum time in milliseconds after a checkpoint operation

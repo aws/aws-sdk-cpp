@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The name of the email provider that the inbox placement data applies to.</p>
      */
+    inline bool IspNameHasBeenSet() const { return m_ispNameHasBeenSet; }
+
+    /**
+     * <p>The name of the email provider that the inbox placement data applies to.</p>
+     */
     inline void SetIspName(const Aws::String& value) { m_ispNameHasBeenSet = true; m_ispName = value; }
 
     /**
@@ -90,6 +95,12 @@ namespace Model
      * provider.</p>
      */
     inline const PlacementStatistics& GetPlacementStatistics() const{ return m_placementStatistics; }
+
+    /**
+     * <p>An object that contains inbox placement metrics for a specific email
+     * provider.</p>
+     */
+    inline bool PlacementStatisticsHasBeenSet() const { return m_placementStatisticsHasBeenSet; }
 
     /**
      * <p>An object that contains inbox placement metrics for a specific email

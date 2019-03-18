@@ -52,6 +52,11 @@ namespace Model
     /**
      * <p>The ARN of the device for which to request details.</p>
      */
+    inline bool DeviceArnHasBeenSet() const { return m_deviceArnHasBeenSet; }
+
+    /**
+     * <p>The ARN of the device for which to request details.</p>
+     */
     inline void SetDeviceArn(const Aws::String& value) { m_deviceArnHasBeenSet = true; m_deviceArn = value; }
 
     /**

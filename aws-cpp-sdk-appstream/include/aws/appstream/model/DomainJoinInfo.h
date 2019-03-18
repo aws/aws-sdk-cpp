@@ -58,6 +58,12 @@ namespace Model
      * <p>The fully qualified name of the directory (for example,
      * corp.example.com).</p>
      */
+    inline bool DirectoryNameHasBeenSet() const { return m_directoryNameHasBeenSet; }
+
+    /**
+     * <p>The fully qualified name of the directory (for example,
+     * corp.example.com).</p>
+     */
     inline void SetDirectoryName(const Aws::String& value) { m_directoryNameHasBeenSet = true; m_directoryName = value; }
 
     /**
@@ -95,6 +101,11 @@ namespace Model
      * <p>The distinguished name of the organizational unit for computer accounts.</p>
      */
     inline const Aws::String& GetOrganizationalUnitDistinguishedName() const{ return m_organizationalUnitDistinguishedName; }
+
+    /**
+     * <p>The distinguished name of the organizational unit for computer accounts.</p>
+     */
+    inline bool OrganizationalUnitDistinguishedNameHasBeenSet() const { return m_organizationalUnitDistinguishedNameHasBeenSet; }
 
     /**
      * <p>The distinguished name of the organizational unit for computer accounts.</p>

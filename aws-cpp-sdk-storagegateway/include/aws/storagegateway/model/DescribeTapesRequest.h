@@ -52,6 +52,9 @@ namespace Model
     inline const Aws::String& GetGatewayARN() const{ return m_gatewayARN; }
 
     
+    inline bool GatewayARNHasBeenSet() const { return m_gatewayARNHasBeenSet; }
+
+    
     inline void SetGatewayARN(const Aws::String& value) { m_gatewayARNHasBeenSet = true; m_gatewayARN = value; }
 
     
@@ -77,6 +80,14 @@ namespace Model
      * gateway.</p>
      */
     inline const Aws::Vector<Aws::String>& GetTapeARNs() const{ return m_tapeARNs; }
+
+    /**
+     * <p>Specifies one or more unique Amazon Resource Names (ARNs) that represent the
+     * virtual tapes you want to describe. If this parameter is not specified, Tape
+     * gateway returns a description of all virtual tapes associated with the specified
+     * gateway.</p>
+     */
+    inline bool TapeARNsHasBeenSet() const { return m_tapeARNsHasBeenSet; }
 
     /**
      * <p>Specifies one or more unique Amazon Resource Names (ARNs) that represent the
@@ -147,6 +158,13 @@ namespace Model
      * This marker indicates which page of results to retrieve. </p> <p>If not
      * specified, the first page of results is retrieved.</p>
      */
+    inline bool MarkerHasBeenSet() const { return m_markerHasBeenSet; }
+
+    /**
+     * <p>A marker value, obtained in a previous call to <code>DescribeTapes</code>.
+     * This marker indicates which page of results to retrieve. </p> <p>If not
+     * specified, the first page of results is retrieved.</p>
+     */
     inline void SetMarker(const Aws::String& value) { m_markerHasBeenSet = true; m_marker = value; }
 
     /**
@@ -191,6 +209,13 @@ namespace Model
      * this field is not set.</p> </note>
      */
     inline int GetLimit() const{ return m_limit; }
+
+    /**
+     * <p>Specifies that the number of virtual tapes described be limited to the
+     * specified number.</p> <note> <p>Amazon Web Services may impose its own limit, if
+     * this field is not set.</p> </note>
+     */
+    inline bool LimitHasBeenSet() const { return m_limitHasBeenSet; }
 
     /**
      * <p>Specifies that the number of virtual tapes described be limited to the

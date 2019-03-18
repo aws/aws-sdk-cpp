@@ -55,6 +55,11 @@ namespace Model
     /**
      * <p>Information about the location of the build artifacts.</p>
      */
+    inline bool LocationHasBeenSet() const { return m_locationHasBeenSet; }
+
+    /**
+     * <p>Information about the location of the build artifacts.</p>
+     */
     inline void SetLocation(const Aws::String& value) { m_locationHasBeenSet = true; m_location = value; }
 
     /**
@@ -90,6 +95,14 @@ namespace Model
      * value is set to <code>ZIP</code>.</p> </note>
      */
     inline const Aws::String& GetSha256sum() const{ return m_sha256sum; }
+
+    /**
+     * <p>The SHA-256 hash of the build artifact.</p> <p>You can use this hash along
+     * with a checksum tool to confirm file integrity and authenticity.</p> <note>
+     * <p>This value is available only if the build project's <code>packaging</code>
+     * value is set to <code>ZIP</code>.</p> </note>
+     */
+    inline bool Sha256sumHasBeenSet() const { return m_sha256sumHasBeenSet; }
 
     /**
      * <p>The SHA-256 hash of the build artifact.</p> <p>You can use this hash along
@@ -154,6 +167,14 @@ namespace Model
      * value is available only if the build project's <code>packaging</code> value is
      * set to <code>ZIP</code>.</p> </note>
      */
+    inline bool Md5sumHasBeenSet() const { return m_md5sumHasBeenSet; }
+
+    /**
+     * <p>The MD5 hash of the build artifact.</p> <p>You can use this hash along with a
+     * checksum tool to confirm file integrity and authenticity.</p> <note> <p>This
+     * value is available only if the build project's <code>packaging</code> value is
+     * set to <code>ZIP</code>.</p> </note>
+     */
     inline void SetMd5sum(const Aws::String& value) { m_md5sumHasBeenSet = true; m_md5sum = value; }
 
     /**
@@ -211,6 +232,14 @@ namespace Model
      * time and uses the Shell Command Language. For example, you can append a date and
      * time to your artifact name so that it is always unique. </p>
      */
+    inline bool OverrideArtifactNameHasBeenSet() const { return m_overrideArtifactNameHasBeenSet; }
+
+    /**
+     * <p> If this flag is set, a name specified in the build spec file overrides the
+     * artifact name. The name specified in a build spec file is calculated at build
+     * time and uses the Shell Command Language. For example, you can append a date and
+     * time to your artifact name so that it is always unique. </p>
+     */
     inline void SetOverrideArtifactName(bool value) { m_overrideArtifactNameHasBeenSet = true; m_overrideArtifactName = value; }
 
     /**
@@ -232,6 +261,12 @@ namespace Model
      * <p> Information that tells you if encryption for build artifacts is disabled.
      * </p>
      */
+    inline bool EncryptionDisabledHasBeenSet() const { return m_encryptionDisabledHasBeenSet; }
+
+    /**
+     * <p> Information that tells you if encryption for build artifacts is disabled.
+     * </p>
+     */
     inline void SetEncryptionDisabled(bool value) { m_encryptionDisabledHasBeenSet = true; m_encryptionDisabled = value; }
 
     /**
@@ -245,6 +280,11 @@ namespace Model
      * <p> An identifier for this artifact definition. </p>
      */
     inline const Aws::String& GetArtifactIdentifier() const{ return m_artifactIdentifier; }
+
+    /**
+     * <p> An identifier for this artifact definition. </p>
+     */
+    inline bool ArtifactIdentifierHasBeenSet() const { return m_artifactIdentifierHasBeenSet; }
 
     /**
      * <p> An identifier for this artifact definition. </p>

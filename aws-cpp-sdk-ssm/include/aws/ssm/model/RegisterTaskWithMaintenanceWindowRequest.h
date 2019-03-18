@@ -60,6 +60,11 @@ namespace Model
     /**
      * <p>The ID of the Maintenance Window the task should be added to.</p>
      */
+    inline bool WindowIdHasBeenSet() const { return m_windowIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the Maintenance Window the task should be added to.</p>
+     */
     inline void SetWindowId(const Aws::String& value) { m_windowIdHasBeenSet = true; m_windowId = value; }
 
     /**
@@ -97,6 +102,16 @@ namespace Model
      * </p>
      */
     inline const Aws::Vector<Target>& GetTargets() const{ return m_targets; }
+
+    /**
+     * <p>The targets (either instances or Maintenance Window targets).</p> <p>Specify
+     * instances using the following format: </p> <p>
+     * <code>Key=InstanceIds,Values=&lt;instance-id-1&gt;,&lt;instance-id-2&gt;</code>
+     * </p> <p>Specify Maintenance Window targets using the following format:</p> <p>
+     * <code>Key=&lt;WindowTargetIds&gt;,Values=&lt;window-target-id-1&gt;,&lt;window-target-id-2&gt;</code>
+     * </p>
+     */
+    inline bool TargetsHasBeenSet() const { return m_targetsHasBeenSet; }
 
     /**
      * <p>The targets (either instances or Maintenance Window targets).</p> <p>Specify
@@ -167,6 +182,11 @@ namespace Model
     /**
      * <p>The ARN of the task to execute </p>
      */
+    inline bool TaskArnHasBeenSet() const { return m_taskArnHasBeenSet; }
+
+    /**
+     * <p>The ARN of the task to execute </p>
+     */
     inline void SetTaskArn(const Aws::String& value) { m_taskArnHasBeenSet = true; m_taskArn = value; }
 
     /**
@@ -209,6 +229,21 @@ namespace Model
      * Tasks? </a> in the <i>AWS Systems Manager User Guide</i>.</p>
      */
     inline const Aws::String& GetServiceRoleArn() const{ return m_serviceRoleArn; }
+
+    /**
+     * <p>The role to assume when running the Maintenance Window task.</p> <p>If you do
+     * not specify a service role ARN, Systems Manager will use your account's
+     * service-linked role for Systems Manager by default. If no service-linked role
+     * for Systems Manager exists in your account, it will be created when you run
+     * <code>RegisterTaskWithMaintenanceWindow</code> without specifying a service role
+     * ARN.</p> <p>For more information, see <a
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/using-service-linked-roles.html#slr-permissions">Service-Linked
+     * Role Permissions for Systems Manager</a> and <a
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-maintenance-permissions.html#maintenance-window-tasks-service-role">Should
+     * I Use a Service-Linked Role or a Custom Service Role to Run Maintenance Window
+     * Tasks? </a> in the <i>AWS Systems Manager User Guide</i>.</p>
+     */
+    inline bool ServiceRoleArnHasBeenSet() const { return m_serviceRoleArnHasBeenSet; }
 
     /**
      * <p>The role to assume when running the Maintenance Window task.</p> <p>If you do
@@ -309,6 +344,11 @@ namespace Model
     /**
      * <p>The type of task being registered.</p>
      */
+    inline bool TaskTypeHasBeenSet() const { return m_taskTypeHasBeenSet; }
+
+    /**
+     * <p>The type of task being registered.</p>
+     */
     inline void SetTaskType(const MaintenanceWindowTaskType& value) { m_taskTypeHasBeenSet = true; m_taskType = value; }
 
     /**
@@ -337,6 +377,17 @@ namespace Model
      * <a>MaintenanceWindowTaskInvocationParameters</a>.</p> </note>
      */
     inline const Aws::Map<Aws::String, MaintenanceWindowTaskParameterValueExpression>& GetTaskParameters() const{ return m_taskParameters; }
+
+    /**
+     * <p>The parameters that should be passed to the task when it is executed.</p>
+     * <note> <p> <code>TaskParameters</code> has been deprecated. To specify
+     * parameters to pass to a task when it runs, instead use the
+     * <code>Parameters</code> option in the <code>TaskInvocationParameters</code>
+     * structure. For information about how Systems Manager handles these options for
+     * the supported Maintenance Window task types, see
+     * <a>MaintenanceWindowTaskInvocationParameters</a>.</p> </note>
+     */
+    inline bool TaskParametersHasBeenSet() const { return m_taskParametersHasBeenSet; }
 
     /**
      * <p>The parameters that should be passed to the task when it is executed.</p>
@@ -459,6 +510,12 @@ namespace Model
      * <p>The parameters that the task should use during execution. Populate only the
      * fields that match the task type. All other fields should be empty. </p>
      */
+    inline bool TaskInvocationParametersHasBeenSet() const { return m_taskInvocationParametersHasBeenSet; }
+
+    /**
+     * <p>The parameters that the task should use during execution. Populate only the
+     * fields that match the task type. All other fields should be empty. </p>
+     */
     inline void SetTaskInvocationParameters(const MaintenanceWindowTaskInvocationParameters& value) { m_taskInvocationParametersHasBeenSet = true; m_taskInvocationParameters = value; }
 
     /**
@@ -492,6 +549,13 @@ namespace Model
      * higher the priority. Tasks in a Maintenance Window are scheduled in priority
      * order with tasks that have the same priority scheduled in parallel.</p>
      */
+    inline bool PriorityHasBeenSet() const { return m_priorityHasBeenSet; }
+
+    /**
+     * <p>The priority of the task in the Maintenance Window, the lower the number the
+     * higher the priority. Tasks in a Maintenance Window are scheduled in priority
+     * order with tasks that have the same priority scheduled in parallel.</p>
+     */
     inline void SetPriority(int value) { m_priorityHasBeenSet = true; m_priority = value; }
 
     /**
@@ -506,6 +570,11 @@ namespace Model
      * <p>The maximum number of targets this task can be run for in parallel.</p>
      */
     inline const Aws::String& GetMaxConcurrency() const{ return m_maxConcurrency; }
+
+    /**
+     * <p>The maximum number of targets this task can be run for in parallel.</p>
+     */
+    inline bool MaxConcurrencyHasBeenSet() const { return m_maxConcurrencyHasBeenSet; }
 
     /**
      * <p>The maximum number of targets this task can be run for in parallel.</p>
@@ -543,6 +612,12 @@ namespace Model
      * scheduled.</p>
      */
     inline const Aws::String& GetMaxErrors() const{ return m_maxErrors; }
+
+    /**
+     * <p>The maximum number of errors allowed before this task stops being
+     * scheduled.</p>
+     */
+    inline bool MaxErrorsHasBeenSet() const { return m_maxErrorsHasBeenSet; }
 
     /**
      * <p>The maximum number of errors allowed before this task stops being
@@ -601,6 +676,17 @@ namespace Model
      * Systems Manager handles these options for the supported Maintenance Window task
      * types, see <a>MaintenanceWindowTaskInvocationParameters</a>.</p> </note>
      */
+    inline bool LoggingInfoHasBeenSet() const { return m_loggingInfoHasBeenSet; }
+
+    /**
+     * <p>A structure containing information about an Amazon S3 bucket to write
+     * instance-level logs to. </p> <note> <p> <code>LoggingInfo</code> has been
+     * deprecated. To specify an S3 bucket to contain logs, instead use the
+     * <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in
+     * the <code>TaskInvocationParameters</code> structure. For information about how
+     * Systems Manager handles these options for the supported Maintenance Window task
+     * types, see <a>MaintenanceWindowTaskInvocationParameters</a>.</p> </note>
+     */
     inline void SetLoggingInfo(const LoggingInfo& value) { m_loggingInfoHasBeenSet = true; m_loggingInfo = value; }
 
     /**
@@ -645,6 +731,11 @@ namespace Model
     /**
      * <p>An optional name for the task.</p>
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>An optional name for the task.</p>
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
@@ -681,6 +772,11 @@ namespace Model
     /**
      * <p>An optional description for the task.</p>
      */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
+
+    /**
+     * <p>An optional description for the task.</p>
+     */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
@@ -713,6 +809,11 @@ namespace Model
      * <p>User-provided idempotency token.</p>
      */
     inline const Aws::String& GetClientToken() const{ return m_clientToken; }
+
+    /**
+     * <p>User-provided idempotency token.</p>
+     */
+    inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
 
     /**
      * <p>User-provided idempotency token.</p>

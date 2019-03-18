@@ -63,6 +63,11 @@ namespace Model
     /**
      * <p>The identifier of the manual DB snapshot that the attributes apply to.</p>
      */
+    inline bool DBSnapshotIdentifierHasBeenSet() const { return m_dBSnapshotIdentifierHasBeenSet; }
+
+    /**
+     * <p>The identifier of the manual DB snapshot that the attributes apply to.</p>
+     */
     inline void SetDBSnapshotIdentifier(const Aws::String& value) { m_dBSnapshotIdentifierHasBeenSet = true; m_dBSnapshotIdentifier = value; }
 
     /**
@@ -95,6 +100,11 @@ namespace Model
      * <p>The list of attributes and values for the manual DB snapshot.</p>
      */
     inline const Aws::Vector<DBSnapshotAttribute>& GetDBSnapshotAttributes() const{ return m_dBSnapshotAttributes; }
+
+    /**
+     * <p>The list of attributes and values for the manual DB snapshot.</p>
+     */
+    inline bool DBSnapshotAttributesHasBeenSet() const { return m_dBSnapshotAttributesHasBeenSet; }
 
     /**
      * <p>The list of attributes and values for the manual DB snapshot.</p>

@@ -56,6 +56,13 @@ namespace Model
      * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/events/CloudWatchEventsandEventPatterns.html">Events
      * and Event Patterns</a> in the <i>Amazon CloudWatch Events User Guide</i>.</p>
      */
+    inline bool EventPatternHasBeenSet() const { return m_eventPatternHasBeenSet; }
+
+    /**
+     * <p>The event pattern. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/events/CloudWatchEventsandEventPatterns.html">Events
+     * and Event Patterns</a> in the <i>Amazon CloudWatch Events User Guide</i>.</p>
+     */
     inline void SetEventPattern(const Aws::String& value) { m_eventPatternHasBeenSet = true; m_eventPattern = value; }
 
     /**
@@ -98,6 +105,11 @@ namespace Model
      * <p>The event, in JSON format, to test against the event pattern.</p>
      */
     inline const Aws::String& GetEvent() const{ return m_event; }
+
+    /**
+     * <p>The event, in JSON format, to test against the event pattern.</p>
+     */
+    inline bool EventHasBeenSet() const { return m_eventHasBeenSet; }
 
     /**
      * <p>The event, in JSON format, to test against the event pattern.</p>

@@ -54,6 +54,12 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the RuleGroup to which you want to attach
      * the policy.</p>
      */
+    inline bool ResourceArnHasBeenSet() const { return m_resourceArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the RuleGroup to which you want to attach
+     * the policy.</p>
+     */
     inline void SetResourceArn(const Aws::String& value) { m_resourceArnHasBeenSet = true; m_resourceArn = value; }
 
     /**
@@ -91,6 +97,11 @@ namespace Model
      * <p>The policy to attach to the specified RuleGroup.</p>
      */
     inline const Aws::String& GetPolicy() const{ return m_policy; }
+
+    /**
+     * <p>The policy to attach to the specified RuleGroup.</p>
+     */
+    inline bool PolicyHasBeenSet() const { return m_policyHasBeenSet; }
 
     /**
      * <p>The policy to attach to the specified RuleGroup.</p>

@@ -59,6 +59,12 @@ namespace Model
      * <p>Specifies the unique Amazon Resource Name (ARN) of the device (tape drive or
      * media changer).</p>
      */
+    inline bool VTLDeviceARNHasBeenSet() const { return m_vTLDeviceARNHasBeenSet; }
+
+    /**
+     * <p>Specifies the unique Amazon Resource Name (ARN) of the device (tape drive or
+     * media changer).</p>
+     */
     inline void SetVTLDeviceARN(const Aws::String& value) { m_vTLDeviceARNHasBeenSet = true; m_vTLDeviceARN = value; }
 
     /**
@@ -100,6 +106,11 @@ namespace Model
     /**
      * <p>Specifies the type of device that the VTL device emulates.</p>
      */
+    inline bool VTLDeviceTypeHasBeenSet() const { return m_vTLDeviceTypeHasBeenSet; }
+
+    /**
+     * <p>Specifies the type of device that the VTL device emulates.</p>
+     */
     inline void SetVTLDeviceType(const Aws::String& value) { m_vTLDeviceTypeHasBeenSet = true; m_vTLDeviceType = value; }
 
     /**
@@ -132,6 +143,11 @@ namespace Model
      * <p>Specifies the vendor of the device that the VTL device object emulates.</p>
      */
     inline const Aws::String& GetVTLDeviceVendor() const{ return m_vTLDeviceVendor; }
+
+    /**
+     * <p>Specifies the vendor of the device that the VTL device object emulates.</p>
+     */
+    inline bool VTLDeviceVendorHasBeenSet() const { return m_vTLDeviceVendorHasBeenSet; }
 
     /**
      * <p>Specifies the vendor of the device that the VTL device object emulates.</p>
@@ -172,6 +188,11 @@ namespace Model
     /**
      * <p>Specifies the model number of device that the VTL device emulates.</p>
      */
+    inline bool VTLDeviceProductIdentifierHasBeenSet() const { return m_vTLDeviceProductIdentifierHasBeenSet; }
+
+    /**
+     * <p>Specifies the model number of device that the VTL device emulates.</p>
+     */
     inline void SetVTLDeviceProductIdentifier(const Aws::String& value) { m_vTLDeviceProductIdentifierHasBeenSet = true; m_vTLDeviceProductIdentifier = value; }
 
     /**
@@ -204,6 +225,11 @@ namespace Model
      * <p>A list of iSCSI information about a VTL device.</p>
      */
     inline const DeviceiSCSIAttributes& GetDeviceiSCSIAttributes() const{ return m_deviceiSCSIAttributes; }
+
+    /**
+     * <p>A list of iSCSI information about a VTL device.</p>
+     */
+    inline bool DeviceiSCSIAttributesHasBeenSet() const { return m_deviceiSCSIAttributesHasBeenSet; }
 
     /**
      * <p>A list of iSCSI information about a VTL device.</p>

@@ -60,6 +60,12 @@ namespace Model
      * <p>The identifier for the cluster to be deleted. This parameter is not case
      * sensitive.</p>
      */
+    inline bool ReplicationGroupIdHasBeenSet() const { return m_replicationGroupIdHasBeenSet; }
+
+    /**
+     * <p>The identifier for the cluster to be deleted. This parameter is not case
+     * sensitive.</p>
+     */
     inline void SetReplicationGroupId(const Aws::String& value) { m_replicationGroupIdHasBeenSet = true; m_replicationGroupId = value; }
 
     /**
@@ -103,6 +109,12 @@ namespace Model
      * <p>If set to <code>true</code>, all of the read replicas are deleted, but the
      * primary node is retained.</p>
      */
+    inline bool RetainPrimaryClusterHasBeenSet() const { return m_retainPrimaryClusterHasBeenSet; }
+
+    /**
+     * <p>If set to <code>true</code>, all of the read replicas are deleted, but the
+     * primary node is retained.</p>
+     */
     inline void SetRetainPrimaryCluster(bool value) { m_retainPrimaryClusterHasBeenSet = true; m_retainPrimaryCluster = value; }
 
     /**
@@ -119,6 +131,14 @@ namespace Model
      * is taken, the replication group is immediately deleted.</p>
      */
     inline const Aws::String& GetFinalSnapshotIdentifier() const{ return m_finalSnapshotIdentifier; }
+
+    /**
+     * <p>The name of a final node group (shard) snapshot. ElastiCache creates the
+     * snapshot from the primary node in the cluster, rather than one of the replicas;
+     * this is to ensure that it captures the freshest data. After the final snapshot
+     * is taken, the replication group is immediately deleted.</p>
+     */
+    inline bool FinalSnapshotIdentifierHasBeenSet() const { return m_finalSnapshotIdentifierHasBeenSet; }
 
     /**
      * <p>The name of a final node group (shard) snapshot. ElastiCache creates the

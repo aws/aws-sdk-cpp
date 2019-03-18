@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The 12-digit account ID or region based on the GroupByKey value.</p>
      */
+    inline bool GroupNameHasBeenSet() const { return m_groupNameHasBeenSet; }
+
+    /**
+     * <p>The 12-digit account ID or region based on the GroupByKey value.</p>
+     */
     inline void SetGroupName(const Aws::String& value) { m_groupNameHasBeenSet = true; m_groupName = value; }
 
     /**
@@ -89,6 +94,11 @@ namespace Model
      * <p>The number of compliant and noncompliant AWS Config rules.</p>
      */
     inline const ComplianceSummary& GetComplianceSummary() const{ return m_complianceSummary; }
+
+    /**
+     * <p>The number of compliant and noncompliant AWS Config rules.</p>
+     */
+    inline bool ComplianceSummaryHasBeenSet() const { return m_complianceSummaryHasBeenSet; }
 
     /**
      * <p>The number of compliant and noncompliant AWS Config rules.</p>

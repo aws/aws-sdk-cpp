@@ -70,6 +70,13 @@ namespace Model
      * BaseURL element. Can be used if streams are delivered from a different URL than
      * the manifest file.
      */
+    inline bool BaseUrlHasBeenSet() const { return m_baseUrlHasBeenSet; }
+
+    /**
+     * A partial URI prefix that will be put in the manifest file at the top level
+     * BaseURL element. Can be used if streams are delivered from a different URL than
+     * the manifest file.
+     */
     inline void SetBaseUrl(const Aws::String& value) { m_baseUrlHasBeenSet = true; m_baseUrl = value; }
 
     /**
@@ -112,6 +119,9 @@ namespace Model
     inline const CmafClientCache& GetClientCache() const{ return m_clientCache; }
 
     
+    inline bool ClientCacheHasBeenSet() const { return m_clientCacheHasBeenSet; }
+
+    
     inline void SetClientCache(const CmafClientCache& value) { m_clientCacheHasBeenSet = true; m_clientCache = value; }
 
     
@@ -126,6 +136,9 @@ namespace Model
 
     
     inline const CmafCodecSpecification& GetCodecSpecification() const{ return m_codecSpecification; }
+
+    
+    inline bool CodecSpecificationHasBeenSet() const { return m_codecSpecificationHasBeenSet; }
 
     
     inline void SetCodecSpecification(const CmafCodecSpecification& value) { m_codecSpecificationHasBeenSet = true; m_codecSpecification = value; }
@@ -148,6 +161,15 @@ namespace Model
      * input file.
      */
     inline const Aws::String& GetDestination() const{ return m_destination; }
+
+    /**
+     * Use Destination (Destination) to specify the S3 output location and the output
+     * filename base. Destination accepts format identifiers. If you do not specify the
+     * base filename in the URI, the service will use the filename of the input file.
+     * If your job has multiple inputs, the service uses the filename of the first
+     * input file.
+     */
+    inline bool DestinationHasBeenSet() const { return m_destinationHasBeenSet; }
 
     /**
      * Use Destination (Destination) to specify the S3 output location and the output
@@ -212,6 +234,11 @@ namespace Model
     /**
      * DRM settings.
      */
+    inline bool EncryptionHasBeenSet() const { return m_encryptionHasBeenSet; }
+
+    /**
+     * DRM settings.
+     */
     inline void SetEncryption(const CmafEncryptionSettings& value) { m_encryptionHasBeenSet = true; m_encryption = value; }
 
     /**
@@ -248,6 +275,16 @@ namespace Model
      * and it does not cause the creation of many output files as in other output
      * types.
      */
+    inline bool FragmentLengthHasBeenSet() const { return m_fragmentLengthHasBeenSet; }
+
+    /**
+     * Length of fragments to generate (in seconds). Fragment length must be compatible
+     * with GOP size and Framerate. Note that fragments will end on the next keyframe
+     * after this number of seconds, so actual fragment length may be longer. When Emit
+     * Single File is checked, the fragmentation is internal to a single output file
+     * and it does not cause the creation of many output files as in other output
+     * types.
+     */
     inline void SetFragmentLength(int value) { m_fragmentLengthHasBeenSet = true; m_fragmentLength = value; }
 
     /**
@@ -265,6 +302,9 @@ namespace Model
     inline const CmafManifestCompression& GetManifestCompression() const{ return m_manifestCompression; }
 
     
+    inline bool ManifestCompressionHasBeenSet() const { return m_manifestCompressionHasBeenSet; }
+
+    
     inline void SetManifestCompression(const CmafManifestCompression& value) { m_manifestCompressionHasBeenSet = true; m_manifestCompression = value; }
 
     
@@ -279,6 +319,9 @@ namespace Model
 
     
     inline const CmafManifestDurationFormat& GetManifestDurationFormat() const{ return m_manifestDurationFormat; }
+
+    
+    inline bool ManifestDurationFormatHasBeenSet() const { return m_manifestDurationFormatHasBeenSet; }
 
     
     inline void SetManifestDurationFormat(const CmafManifestDurationFormat& value) { m_manifestDurationFormatHasBeenSet = true; m_manifestDurationFormat = value; }
@@ -298,6 +341,12 @@ namespace Model
      * playout.
      */
     inline int GetMinBufferTime() const{ return m_minBufferTime; }
+
+    /**
+     * Minimum time of initially buffered media that is needed to ensure smooth
+     * playout.
+     */
+    inline bool MinBufferTimeHasBeenSet() const { return m_minBufferTimeHasBeenSet; }
 
     /**
      * Minimum time of initially buffered media that is needed to ensure smooth
@@ -340,6 +389,21 @@ namespace Model
      * length; when you set the minimum final segment length to 1, your final segment
      * is 3.5 seconds.
      */
+    inline bool MinFinalSegmentLengthHasBeenSet() const { return m_minFinalSegmentLengthHasBeenSet; }
+
+    /**
+     * Keep this setting at the default value of 0, unless you are troubleshooting a
+     * problem with how devices play back the end of your video asset. If you know that
+     * player devices are hanging on the final segment of your video because the length
+     * of your final segment is too short, use this setting to specify a minimum final
+     * segment length, in seconds. Choose a value that is greater than or equal to 1
+     * and less than your segment length. When you specify a value for this setting,
+     * the encoder will combine any final segment that is shorter than the length that
+     * you specify with the previous segment. For example, your segment length is 3
+     * seconds and your final segment is .5 seconds without a minimum final segment
+     * length; when you set the minimum final segment length to 1, your final segment
+     * is 3.5 seconds.
+     */
     inline void SetMinFinalSegmentLength(double value) { m_minFinalSegmentLengthHasBeenSet = true; m_minFinalSegmentLength = value; }
 
     /**
@@ -360,6 +424,9 @@ namespace Model
 
     
     inline const CmafSegmentControl& GetSegmentControl() const{ return m_segmentControl; }
+
+    
+    inline bool SegmentControlHasBeenSet() const { return m_segmentControlHasBeenSet; }
 
     
     inline void SetSegmentControl(const CmafSegmentControl& value) { m_segmentControlHasBeenSet = true; m_segmentControl = value; }
@@ -396,6 +463,18 @@ namespace Model
      * segments. If you set it to segmented files, the service creates multiple files
      * for each output, each with the content of one segment.
      */
+    inline bool SegmentLengthHasBeenSet() const { return m_segmentLengthHasBeenSet; }
+
+    /**
+     * Use this setting to specify the length, in seconds, of each individual CMAF
+     * segment. This value applies to the whole package; that is, to every output in
+     * the output group. Note that segments end on the first keyframe after this number
+     * of seconds, so the actual segment length might be slightly longer. If you set
+     * Segment control (CmafSegmentControl) to single file, the service puts the
+     * content of each output in a single file that has metadata that marks these
+     * segments. If you set it to segmented files, the service creates multiple files
+     * for each output, each with the content of one segment.
+     */
     inline void SetSegmentLength(int value) { m_segmentLengthHasBeenSet = true; m_segmentLength = value; }
 
     /**
@@ -415,6 +494,9 @@ namespace Model
     inline const CmafStreamInfResolution& GetStreamInfResolution() const{ return m_streamInfResolution; }
 
     
+    inline bool StreamInfResolutionHasBeenSet() const { return m_streamInfResolutionHasBeenSet; }
+
+    
     inline void SetStreamInfResolution(const CmafStreamInfResolution& value) { m_streamInfResolutionHasBeenSet = true; m_streamInfResolution = value; }
 
     
@@ -431,6 +513,9 @@ namespace Model
     inline const CmafWriteDASHManifest& GetWriteDashManifest() const{ return m_writeDashManifest; }
 
     
+    inline bool WriteDashManifestHasBeenSet() const { return m_writeDashManifestHasBeenSet; }
+
+    
     inline void SetWriteDashManifest(const CmafWriteDASHManifest& value) { m_writeDashManifestHasBeenSet = true; m_writeDashManifest = value; }
 
     
@@ -445,6 +530,9 @@ namespace Model
 
     
     inline const CmafWriteHLSManifest& GetWriteHlsManifest() const{ return m_writeHlsManifest; }
+
+    
+    inline bool WriteHlsManifestHasBeenSet() const { return m_writeHlsManifestHasBeenSet; }
 
     
     inline void SetWriteHlsManifest(const CmafWriteHLSManifest& value) { m_writeHlsManifestHasBeenSet = true; m_writeHlsManifest = value; }

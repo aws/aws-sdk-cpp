@@ -60,6 +60,11 @@ namespace Model
     /**
      * <p>The ID that AWS Cloud Map assigned to the service when you created it.</p>
      */
+    inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
+
+    /**
+     * <p>The ID that AWS Cloud Map assigned to the service when you created it.</p>
+     */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
     /**
@@ -93,6 +98,12 @@ namespace Model
      * you create it.</p>
      */
     inline const Aws::String& GetArn() const{ return m_arn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) that AWS Cloud Map assigns to the service when
+     * you create it.</p>
+     */
+    inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
 
     /**
      * <p>The Amazon Resource Name (ARN) that AWS Cloud Map assigns to the service when
@@ -139,6 +150,11 @@ namespace Model
     /**
      * <p>The name of the service.</p>
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>The name of the service.</p>
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
@@ -171,6 +187,11 @@ namespace Model
      * <p>The description that you specify when you create the service.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
+
+    /**
+     * <p>The description that you specify when you create the service.</p>
+     */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
 
     /**
      * <p>The description that you specify when you create the service.</p>
@@ -215,6 +236,13 @@ namespace Model
      * Instances that were previously associated with the service but that have been
      * deleted are not included in the count.</p>
      */
+    inline bool InstanceCountHasBeenSet() const { return m_instanceCountHasBeenSet; }
+
+    /**
+     * <p>The number of instances that are currently associated with the service.
+     * Instances that were previously associated with the service but that have been
+     * deleted are not included in the count.</p>
+     */
     inline void SetInstanceCount(int value) { m_instanceCountHasBeenSet = true; m_instanceCount = value; }
 
     /**
@@ -227,6 +255,9 @@ namespace Model
 
     
     inline const DnsConfig& GetDnsConfig() const{ return m_dnsConfig; }
+
+    
+    inline bool DnsConfigHasBeenSet() const { return m_dnsConfigHasBeenSet; }
 
     
     inline void SetDnsConfig(const DnsConfig& value) { m_dnsConfigHasBeenSet = true; m_dnsConfig = value; }
@@ -245,6 +276,9 @@ namespace Model
     inline const HealthCheckConfig& GetHealthCheckConfig() const{ return m_healthCheckConfig; }
 
     
+    inline bool HealthCheckConfigHasBeenSet() const { return m_healthCheckConfigHasBeenSet; }
+
+    
     inline void SetHealthCheckConfig(const HealthCheckConfig& value) { m_healthCheckConfigHasBeenSet = true; m_healthCheckConfig = value; }
 
     
@@ -259,6 +293,9 @@ namespace Model
 
     
     inline const HealthCheckCustomConfig& GetHealthCheckCustomConfig() const{ return m_healthCheckCustomConfig; }
+
+    
+    inline bool HealthCheckCustomConfigHasBeenSet() const { return m_healthCheckCustomConfigHasBeenSet; }
 
     
     inline void SetHealthCheckCustomConfig(const HealthCheckCustomConfig& value) { m_healthCheckCustomConfigHasBeenSet = true; m_healthCheckCustomConfig = value; }
@@ -277,6 +314,11 @@ namespace Model
      * <p>The date and time that the service was created.</p>
      */
     inline const Aws::Utils::DateTime& GetCreateDate() const{ return m_createDate; }
+
+    /**
+     * <p>The date and time that the service was created.</p>
+     */
+    inline bool CreateDateHasBeenSet() const { return m_createDateHasBeenSet; }
 
     /**
      * <p>The date and time that the service was created.</p>

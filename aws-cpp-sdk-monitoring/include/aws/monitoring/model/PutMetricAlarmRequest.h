@@ -60,6 +60,11 @@ namespace Model
     /**
      * <p>The name for the alarm. This name must be unique within your AWS account.</p>
      */
+    inline bool AlarmNameHasBeenSet() const { return m_alarmNameHasBeenSet; }
+
+    /**
+     * <p>The name for the alarm. This name must be unique within your AWS account.</p>
+     */
     inline void SetAlarmName(const Aws::String& value) { m_alarmNameHasBeenSet = true; m_alarmName = value; }
 
     /**
@@ -92,6 +97,11 @@ namespace Model
      * <p>The description for the alarm.</p>
      */
     inline const Aws::String& GetAlarmDescription() const{ return m_alarmDescription; }
+
+    /**
+     * <p>The description for the alarm.</p>
+     */
+    inline bool AlarmDescriptionHasBeenSet() const { return m_alarmDescriptionHasBeenSet; }
 
     /**
      * <p>The description for the alarm.</p>
@@ -134,6 +144,12 @@ namespace Model
      * <p>Indicates whether actions should be executed during any changes to the alarm
      * state. The default is TRUE.</p>
      */
+    inline bool ActionsEnabledHasBeenSet() const { return m_actionsEnabledHasBeenSet; }
+
+    /**
+     * <p>Indicates whether actions should be executed during any changes to the alarm
+     * state. The default is TRUE.</p>
+     */
     inline void SetActionsEnabled(bool value) { m_actionsEnabledHasBeenSet = true; m_actionsEnabled = value; }
 
     /**
@@ -162,6 +178,26 @@ namespace Model
      * </p>
      */
     inline const Aws::Vector<Aws::String>& GetOKActions() const{ return m_oKActions; }
+
+    /**
+     * <p>The actions to execute when this alarm transitions to an <code>OK</code>
+     * state from any other state. Each action is specified as an Amazon Resource Name
+     * (ARN).</p> <p>Valid Values: <code>arn:aws:automate:<i>region</i>:ec2:stop</code>
+     * | <code>arn:aws:automate:<i>region</i>:ec2:terminate</code> |
+     * <code>arn:aws:automate:<i>region</i>:ec2:recover</code> |
+     * <code>arn:aws:automate:<i>region</i>:ec2:reboot</code> |
+     * <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code>
+     * |
+     * <code>arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i>
+     * </code> </p> <p>Valid Values (for use with IAM roles):
+     * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Stop/1.0</code>
+     * |
+     * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Terminate/1.0</code>
+     * |
+     * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Reboot/1.0</code>
+     * </p>
+     */
+    inline bool OKActionsHasBeenSet() const { return m_oKActionsHasBeenSet; }
 
     /**
      * <p>The actions to execute when this alarm transitions to an <code>OK</code>
@@ -340,6 +376,25 @@ namespace Model
      * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Reboot/1.0</code>
      * </p>
      */
+    inline bool AlarmActionsHasBeenSet() const { return m_alarmActionsHasBeenSet; }
+
+    /**
+     * <p>The actions to execute when this alarm transitions to the <code>ALARM</code>
+     * state from any other state. Each action is specified as an Amazon Resource Name
+     * (ARN).</p> <p>Valid Values: <code>arn:aws:automate:<i>region</i>:ec2:stop</code>
+     * | <code>arn:aws:automate:<i>region</i>:ec2:terminate</code> |
+     * <code>arn:aws:automate:<i>region</i>:ec2:recover</code> |
+     * <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code>
+     * |
+     * <code>arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i>
+     * </code> </p> <p>Valid Values (for use with IAM roles):
+     * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Stop/1.0</code>
+     * |
+     * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Terminate/1.0</code>
+     * |
+     * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Reboot/1.0</code>
+     * </p>
+     */
     inline void SetAlarmActions(const Aws::Vector<Aws::String>& value) { m_alarmActionsHasBeenSet = true; m_alarmActions = value; }
 
     /**
@@ -476,6 +531,26 @@ namespace Model
      * </p>
      */
     inline const Aws::Vector<Aws::String>& GetInsufficientDataActions() const{ return m_insufficientDataActions; }
+
+    /**
+     * <p>The actions to execute when this alarm transitions to the
+     * <code>INSUFFICIENT_DATA</code> state from any other state. Each action is
+     * specified as an Amazon Resource Name (ARN).</p> <p>Valid Values:
+     * <code>arn:aws:automate:<i>region</i>:ec2:stop</code> |
+     * <code>arn:aws:automate:<i>region</i>:ec2:terminate</code> |
+     * <code>arn:aws:automate:<i>region</i>:ec2:recover</code> |
+     * <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code>
+     * |
+     * <code>arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i>
+     * </code> </p> <p>Valid Values (for use with IAM roles):
+     * <code>&gt;arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Stop/1.0</code>
+     * |
+     * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Terminate/1.0</code>
+     * |
+     * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Reboot/1.0</code>
+     * </p>
+     */
+    inline bool InsufficientDataActionsHasBeenSet() const { return m_insufficientDataActionsHasBeenSet; }
 
     /**
      * <p>The actions to execute when this alarm transitions to the
@@ -634,6 +709,15 @@ namespace Model
      * <code>Statistic</code>, or <code>ExtendedStatistic</code> parameters. Instead,
      * you specify all this information in the <code>Metrics</code> array.</p>
      */
+    inline bool MetricNameHasBeenSet() const { return m_metricNameHasBeenSet; }
+
+    /**
+     * <p>The name for the metric associated with the alarm.</p> <p>If you are creating
+     * an alarm based on a math expression, you cannot specify this parameter, or any
+     * of the <code>Dimensions</code>, <code>Period</code>, <code>Namespace</code>,
+     * <code>Statistic</code>, or <code>ExtendedStatistic</code> parameters. Instead,
+     * you specify all this information in the <code>Metrics</code> array.</p>
+     */
     inline void SetMetricName(const Aws::String& value) { m_metricNameHasBeenSet = true; m_metricName = value; }
 
     /**
@@ -692,6 +776,12 @@ namespace Model
      * <p>The namespace for the metric associated specified in
      * <code>MetricName</code>.</p>
      */
+    inline bool NamespaceHasBeenSet() const { return m_namespaceHasBeenSet; }
+
+    /**
+     * <p>The namespace for the metric associated specified in
+     * <code>MetricName</code>.</p>
+     */
     inline void SetNamespace(const Aws::String& value) { m_namespaceHasBeenSet = true; m_namespace = value; }
 
     /**
@@ -741,6 +831,15 @@ namespace Model
      * must specify either <code>Statistic</code> or <code>ExtendedStatistic,</code>
      * but not both.</p>
      */
+    inline bool StatisticHasBeenSet() const { return m_statisticHasBeenSet; }
+
+    /**
+     * <p>The statistic for the metric specified in <code>MetricName</code>, other than
+     * percentile. For percentile statistics, use <code>ExtendedStatistic</code>. When
+     * you call <code>PutMetricAlarm</code> and specify a <code>MetricName</code>, you
+     * must specify either <code>Statistic</code> or <code>ExtendedStatistic,</code>
+     * but not both.</p>
+     */
     inline void SetStatistic(const Statistic& value) { m_statisticHasBeenSet = true; m_statistic = value; }
 
     /**
@@ -778,6 +877,14 @@ namespace Model
      * <code>Statistic</code> or <code>ExtendedStatistic,</code> but not both.</p>
      */
     inline const Aws::String& GetExtendedStatistic() const{ return m_extendedStatistic; }
+
+    /**
+     * <p>The percentile statistic for the metric specified in <code>MetricName</code>.
+     * Specify a value between p0.0 and p100. When you call <code>PutMetricAlarm</code>
+     * and specify a <code>MetricName</code>, you must specify either
+     * <code>Statistic</code> or <code>ExtendedStatistic,</code> but not both.</p>
+     */
+    inline bool ExtendedStatisticHasBeenSet() const { return m_extendedStatisticHasBeenSet; }
 
     /**
      * <p>The percentile statistic for the metric specified in <code>MetricName</code>.
@@ -832,6 +939,11 @@ namespace Model
      * <p>The dimensions for the metric specified in <code>MetricName</code>.</p>
      */
     inline const Aws::Vector<Dimension>& GetDimensions() const{ return m_dimensions; }
+
+    /**
+     * <p>The dimensions for the metric specified in <code>MetricName</code>.</p>
+     */
+    inline bool DimensionsHasBeenSet() const { return m_dimensionsHasBeenSet; }
 
     /**
      * <p>The dimensions for the metric specified in <code>MetricName</code>.</p>
@@ -900,6 +1012,25 @@ namespace Model
      * than one day, so <code>Period</code> multiplied by
      * <code>EvaluationPeriods</code> cannot be more than 86,400 seconds.</p>
      */
+    inline bool PeriodHasBeenSet() const { return m_periodHasBeenSet; }
+
+    /**
+     * <p>The length, in seconds, used each time the metric specified in
+     * <code>MetricName</code> is evaluated. Valid values are 10, 30, and any multiple
+     * of 60.</p> <p>Be sure to specify 10 or 30 only for metrics that are stored by a
+     * <code>PutMetricData</code> call with a <code>StorageResolution</code> of 1. If
+     * you specify a period of 10 or 30 for a metric that does not have sub-minute
+     * resolution, the alarm still attempts to gather data at the period rate that you
+     * specify. In this case, it does not receive data for the attempts that do not
+     * correspond to a one-minute data resolution, and the alarm may often lapse into
+     * INSUFFICENT_DATA status. Specifying 10 or 30 also sets this alarm as a
+     * high-resolution alarm, which has a higher charge than other alarms. For more
+     * information about pricing, see <a
+     * href="https://aws.amazon.com/cloudwatch/pricing/">Amazon CloudWatch
+     * Pricing</a>.</p> <p>An alarm's total current evaluation period can be no longer
+     * than one day, so <code>Period</code> multiplied by
+     * <code>EvaluationPeriods</code> cannot be more than 86,400 seconds.</p>
+     */
     inline void SetPeriod(int value) { m_periodHasBeenSet = true; m_period = value; }
 
     /**
@@ -933,6 +1064,18 @@ namespace Model
      * <code>INSUFFICIENT DATA</code> state. </p>
      */
     inline const StandardUnit& GetUnit() const{ return m_unit; }
+
+    /**
+     * <p>The unit of measure for the statistic. For example, the units for the Amazon
+     * EC2 NetworkIn metric are Bytes because NetworkIn tracks the number of bytes that
+     * an instance receives on all network interfaces. You can also specify a unit when
+     * you create a custom metric. Units help provide conceptual meaning to your data.
+     * Metric data points that specify a unit of measure, such as Percent, are
+     * aggregated separately.</p> <p>If you specify a unit, you must use a unit that is
+     * appropriate for the metric. Otherwise, the CloudWatch alarm can get stuck in the
+     * <code>INSUFFICIENT DATA</code> state. </p>
+     */
+    inline bool UnitHasBeenSet() const { return m_unitHasBeenSet; }
 
     /**
      * <p>The unit of measure for the statistic. For example, the units for the Amazon
@@ -1001,6 +1144,16 @@ namespace Model
      * total current evaluation period can be no longer than one day, so this number
      * multiplied by <code>Period</code> cannot be more than 86,400 seconds.</p>
      */
+    inline bool EvaluationPeriodsHasBeenSet() const { return m_evaluationPeriodsHasBeenSet; }
+
+    /**
+     * <p>The number of periods over which data is compared to the specified threshold.
+     * If you are setting an alarm that requires that a number of consecutive data
+     * points be breaching to trigger the alarm, this value specifies that number. If
+     * you are setting an "M out of N" alarm, this value is the N.</p> <p>An alarm's
+     * total current evaluation period can be no longer than one day, so this number
+     * multiplied by <code>Period</code> cannot be more than 86,400 seconds.</p>
+     */
     inline void SetEvaluationPeriods(int value) { m_evaluationPeriodsHasBeenSet = true; m_evaluationPeriods = value; }
 
     /**
@@ -1030,6 +1183,15 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/AlarmThatSendsEmail.html#alarm-evaluation">Evaluating
      * an Alarm</a> in the <i>Amazon CloudWatch User Guide</i>.</p>
      */
+    inline bool DatapointsToAlarmHasBeenSet() const { return m_datapointsToAlarmHasBeenSet; }
+
+    /**
+     * <p>The number of datapoints that must be breaching to trigger the alarm. This is
+     * used only if you are setting an "M out of N" alarm. In that case, this value is
+     * the M. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/AlarmThatSendsEmail.html#alarm-evaluation">Evaluating
+     * an Alarm</a> in the <i>Amazon CloudWatch User Guide</i>.</p>
+     */
     inline void SetDatapointsToAlarm(int value) { m_datapointsToAlarmHasBeenSet = true; m_datapointsToAlarm = value; }
 
     /**
@@ -1050,6 +1212,11 @@ namespace Model
     /**
      * <p>The value against which the specified statistic is compared.</p>
      */
+    inline bool ThresholdHasBeenSet() const { return m_thresholdHasBeenSet; }
+
+    /**
+     * <p>The value against which the specified statistic is compared.</p>
+     */
     inline void SetThreshold(double value) { m_thresholdHasBeenSet = true; m_threshold = value; }
 
     /**
@@ -1063,6 +1230,12 @@ namespace Model
      * threshold. The specified statistic value is used as the first operand.</p>
      */
     inline const ComparisonOperator& GetComparisonOperator() const{ return m_comparisonOperator; }
+
+    /**
+     * <p> The arithmetic operation to use when comparing the specified statistic and
+     * threshold. The specified statistic value is used as the first operand.</p>
+     */
+    inline bool ComparisonOperatorHasBeenSet() const { return m_comparisonOperatorHasBeenSet; }
 
     /**
      * <p> The arithmetic operation to use when comparing the specified statistic and
@@ -1098,6 +1271,16 @@ namespace Model
      * <code>breaching | notBreaching | ignore | missing</code> </p>
      */
     inline const Aws::String& GetTreatMissingData() const{ return m_treatMissingData; }
+
+    /**
+     * <p> Sets how this alarm is to handle missing data points. If
+     * <code>TreatMissingData</code> is omitted, the default behavior of
+     * <code>missing</code> is used. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/AlarmThatSendsEmail.html#alarms-and-missing-data">Configuring
+     * How CloudWatch Alarms Treats Missing Data</a>.</p> <p>Valid Values:
+     * <code>breaching | notBreaching | ignore | missing</code> </p>
+     */
+    inline bool TreatMissingDataHasBeenSet() const { return m_treatMissingDataHasBeenSet; }
 
     /**
      * <p> Sets how this alarm is to handle missing data points. If
@@ -1172,6 +1355,19 @@ namespace Model
      * | ignore</code> </p>
      */
     inline const Aws::String& GetEvaluateLowSampleCountPercentile() const{ return m_evaluateLowSampleCountPercentile; }
+
+    /**
+     * <p> Used only for alarms based on percentiles. If you specify
+     * <code>ignore</code>, the alarm state does not change during periods with too few
+     * data points to be statistically significant. If you specify
+     * <code>evaluate</code> or omit this parameter, the alarm is always evaluated and
+     * possibly changes state no matter how many data points are available. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/AlarmThatSendsEmail.html#percentiles-with-low-samples">Percentile-Based
+     * CloudWatch Alarms and Low Data Samples</a>.</p> <p>Valid Values: <code>evaluate
+     * | ignore</code> </p>
+     */
+    inline bool EvaluateLowSampleCountPercentileHasBeenSet() const { return m_evaluateLowSampleCountPercentileHasBeenSet; }
 
     /**
      * <p> Used only for alarms based on percentiles. If you specify
@@ -1264,6 +1460,19 @@ namespace Model
      * expression as part of the <code>Metrics</code> array.</p>
      */
     inline const Aws::Vector<MetricDataQuery>& GetMetrics() const{ return m_metrics; }
+
+    /**
+     * <p>An array of <code>MetricDataQuery</code> structures that enable you to create
+     * an alarm based on the result of a metric math expression. Each item in the
+     * <code>Metrics</code> array either retrieves a metric or performs a math
+     * expression.</p> <p>If you use the <code>Metrics</code> parameter, you cannot
+     * include the <code>MetricName</code>, <code>Dimensions</code>,
+     * <code>Period</code>, <code>Namespace</code>, <code>Statistic</code>, or
+     * <code>ExtendedStatistic</code> parameters of <code>PutMetricAlarm</code> in the
+     * same operation. Instead, you retrieve the metrics you are using in your math
+     * expression as part of the <code>Metrics</code> array.</p>
+     */
+    inline bool MetricsHasBeenSet() const { return m_metricsHasBeenSet; }
 
     /**
      * <p>An array of <code>MetricDataQuery</code> structures that enable you to create

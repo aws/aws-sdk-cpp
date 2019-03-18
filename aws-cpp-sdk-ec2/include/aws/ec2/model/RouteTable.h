@@ -62,6 +62,11 @@ namespace Model
     /**
      * <p>The associations between the route table and one or more subnets.</p>
      */
+    inline bool AssociationsHasBeenSet() const { return m_associationsHasBeenSet; }
+
+    /**
+     * <p>The associations between the route table and one or more subnets.</p>
+     */
     inline void SetAssociations(const Aws::Vector<RouteTableAssociation>& value) { m_associationsHasBeenSet = true; m_associations = value; }
 
     /**
@@ -94,6 +99,11 @@ namespace Model
      * <p>Any virtual private gateway (VGW) propagating routes.</p>
      */
     inline const Aws::Vector<PropagatingVgw>& GetPropagatingVgws() const{ return m_propagatingVgws; }
+
+    /**
+     * <p>Any virtual private gateway (VGW) propagating routes.</p>
+     */
+    inline bool PropagatingVgwsHasBeenSet() const { return m_propagatingVgwsHasBeenSet; }
 
     /**
      * <p>Any virtual private gateway (VGW) propagating routes.</p>
@@ -134,6 +144,11 @@ namespace Model
     /**
      * <p>The ID of the route table.</p>
      */
+    inline bool RouteTableIdHasBeenSet() const { return m_routeTableIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the route table.</p>
+     */
     inline void SetRouteTableId(const Aws::String& value) { m_routeTableIdHasBeenSet = true; m_routeTableId = value; }
 
     /**
@@ -166,6 +181,11 @@ namespace Model
      * <p>The routes in the route table.</p>
      */
     inline const Aws::Vector<Route>& GetRoutes() const{ return m_routes; }
+
+    /**
+     * <p>The routes in the route table.</p>
+     */
+    inline bool RoutesHasBeenSet() const { return m_routesHasBeenSet; }
 
     /**
      * <p>The routes in the route table.</p>
@@ -206,6 +226,11 @@ namespace Model
     /**
      * <p>Any tags assigned to the route table.</p>
      */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
+
+    /**
+     * <p>Any tags assigned to the route table.</p>
+     */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     /**
@@ -242,6 +267,11 @@ namespace Model
     /**
      * <p>The ID of the VPC.</p>
      */
+    inline bool VpcIdHasBeenSet() const { return m_vpcIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the VPC.</p>
+     */
     inline void SetVpcId(const Aws::String& value) { m_vpcIdHasBeenSet = true; m_vpcId = value; }
 
     /**
@@ -274,6 +304,11 @@ namespace Model
      * <p>The ID of the AWS account that owns the route table.</p>
      */
     inline const Aws::String& GetOwnerId() const{ return m_ownerId; }
+
+    /**
+     * <p>The ID of the AWS account that owns the route table.</p>
+     */
+    inline bool OwnerIdHasBeenSet() const { return m_ownerIdHasBeenSet; }
 
     /**
      * <p>The ID of the AWS account that owns the route table.</p>

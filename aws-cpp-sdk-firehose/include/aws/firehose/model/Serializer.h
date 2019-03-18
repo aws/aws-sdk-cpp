@@ -66,6 +66,13 @@ namespace Model
      * it in Amazon S3. For more information, see <a
      * href="https://parquet.apache.org/documentation/latest/">Apache Parquet</a>.</p>
      */
+    inline bool ParquetSerDeHasBeenSet() const { return m_parquetSerDeHasBeenSet; }
+
+    /**
+     * <p>A serializer to use for converting data to the Parquet format before storing
+     * it in Amazon S3. For more information, see <a
+     * href="https://parquet.apache.org/documentation/latest/">Apache Parquet</a>.</p>
+     */
     inline void SetParquetSerDe(const ParquetSerDe& value) { m_parquetSerDeHasBeenSet = true; m_parquetSerDe = value; }
 
     /**
@@ -96,6 +103,13 @@ namespace Model
      * href="https://orc.apache.org/docs/">Apache ORC</a>.</p>
      */
     inline const OrcSerDe& GetOrcSerDe() const{ return m_orcSerDe; }
+
+    /**
+     * <p>A serializer to use for converting data to the ORC format before storing it
+     * in Amazon S3. For more information, see <a
+     * href="https://orc.apache.org/docs/">Apache ORC</a>.</p>
+     */
+    inline bool OrcSerDeHasBeenSet() const { return m_orcSerDeHasBeenSet; }
 
     /**
      * <p>A serializer to use for converting data to the ORC format before storing it

@@ -76,6 +76,13 @@ namespace Model
      * can only contain ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), or
      * dashes (-).</p> </li> <li> <p>Contain less than 64 characters.</p> </li> </ul>
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>The name of the event destination. The name must:</p> <ul> <li> <p>This value
+     * can only contain ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), or
+     * dashes (-).</p> </li> <li> <p>Contain less than 64 characters.</p> </li> </ul>
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
@@ -128,6 +135,14 @@ namespace Model
      * publishing to this destination; set to <code>false</code> to prevent publishing
      * to this destination. The default value is <code>false</code>.</p>
      */
+    inline bool EnabledHasBeenSet() const { return m_enabledHasBeenSet; }
+
+    /**
+     * <p>Sets whether Amazon SES publishes events to this destination when you send an
+     * email with the associated configuration set. Set to <code>true</code> to enable
+     * publishing to this destination; set to <code>false</code> to prevent publishing
+     * to this destination. The default value is <code>false</code>.</p>
+     */
     inline void SetEnabled(bool value) { m_enabledHasBeenSet = true; m_enabled = value; }
 
     /**
@@ -143,6 +158,11 @@ namespace Model
      * <p>The type of email sending events to publish to the event destination.</p>
      */
     inline const Aws::Vector<EventType>& GetMatchingEventTypes() const{ return m_matchingEventTypes; }
+
+    /**
+     * <p>The type of email sending events to publish to the event destination.</p>
+     */
+    inline bool MatchingEventTypesHasBeenSet() const { return m_matchingEventTypesHasBeenSet; }
 
     /**
      * <p>The type of email sending events to publish to the event destination.</p>
@@ -185,6 +205,12 @@ namespace Model
      * <p>An object that contains the delivery stream ARN and the IAM role ARN
      * associated with an Amazon Kinesis Firehose event destination.</p>
      */
+    inline bool KinesisFirehoseDestinationHasBeenSet() const { return m_kinesisFirehoseDestinationHasBeenSet; }
+
+    /**
+     * <p>An object that contains the delivery stream ARN and the IAM role ARN
+     * associated with an Amazon Kinesis Firehose event destination.</p>
+     */
     inline void SetKinesisFirehoseDestination(const KinesisFirehoseDestination& value) { m_kinesisFirehoseDestinationHasBeenSet = true; m_kinesisFirehoseDestination = value; }
 
     /**
@@ -216,6 +242,12 @@ namespace Model
      * <p>An object that contains the names, default values, and sources of the
      * dimensions associated with an Amazon CloudWatch event destination.</p>
      */
+    inline bool CloudWatchDestinationHasBeenSet() const { return m_cloudWatchDestinationHasBeenSet; }
+
+    /**
+     * <p>An object that contains the names, default values, and sources of the
+     * dimensions associated with an Amazon CloudWatch event destination.</p>
+     */
     inline void SetCloudWatchDestination(const CloudWatchDestination& value) { m_cloudWatchDestinationHasBeenSet = true; m_cloudWatchDestination = value; }
 
     /**
@@ -242,6 +274,12 @@ namespace Model
      * Notification Service (Amazon SNS) event destination.</p>
      */
     inline const SNSDestination& GetSNSDestination() const{ return m_sNSDestination; }
+
+    /**
+     * <p>An object that contains the topic ARN associated with an Amazon Simple
+     * Notification Service (Amazon SNS) event destination.</p>
+     */
+    inline bool SNSDestinationHasBeenSet() const { return m_sNSDestinationHasBeenSet; }
 
     /**
      * <p>An object that contains the topic ARN associated with an Amazon Simple

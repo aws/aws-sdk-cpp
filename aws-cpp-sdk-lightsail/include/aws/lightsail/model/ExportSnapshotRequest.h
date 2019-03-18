@@ -52,6 +52,11 @@ namespace Model
     /**
      * <p>The name of the instance or disk snapshot to be exported to Amazon EC2.</p>
      */
+    inline bool SourceSnapshotNameHasBeenSet() const { return m_sourceSnapshotNameHasBeenSet; }
+
+    /**
+     * <p>The name of the instance or disk snapshot to be exported to Amazon EC2.</p>
+     */
     inline void SetSourceSnapshotName(const Aws::String& value) { m_sourceSnapshotNameHasBeenSet = true; m_sourceSnapshotName = value; }
 
     /**

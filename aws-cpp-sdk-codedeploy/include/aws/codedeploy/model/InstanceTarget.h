@@ -61,6 +61,11 @@ namespace Model
     /**
      * <p> The unique ID of a deployment. </p>
      */
+    inline bool DeploymentIdHasBeenSet() const { return m_deploymentIdHasBeenSet; }
+
+    /**
+     * <p> The unique ID of a deployment. </p>
+     */
     inline void SetDeploymentId(const Aws::String& value) { m_deploymentIdHasBeenSet = true; m_deploymentId = value; }
 
     /**
@@ -94,6 +99,12 @@ namespace Model
      * <code>instanceTarget</code>. </p>
      */
     inline const Aws::String& GetTargetId() const{ return m_targetId; }
+
+    /**
+     * <p> The unique ID of a deployment target that has a type of
+     * <code>instanceTarget</code>. </p>
+     */
+    inline bool TargetIdHasBeenSet() const { return m_targetIdHasBeenSet; }
 
     /**
      * <p> The unique ID of a deployment target that has a type of
@@ -140,6 +151,11 @@ namespace Model
     /**
      * <p> The ARN of the target. </p>
      */
+    inline bool TargetArnHasBeenSet() const { return m_targetArnHasBeenSet; }
+
+    /**
+     * <p> The ARN of the target. </p>
+     */
     inline void SetTargetArn(const Aws::String& value) { m_targetArnHasBeenSet = true; m_targetArn = value; }
 
     /**
@@ -176,6 +192,11 @@ namespace Model
     /**
      * <p> The status an EC2/On-premises deployment's target instance. </p>
      */
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
+
+    /**
+     * <p> The status an EC2/On-premises deployment's target instance. </p>
+     */
     inline void SetStatus(const TargetStatus& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
@@ -202,6 +223,11 @@ namespace Model
     /**
      * <p> The date and time when the target instance was updated by a deployment. </p>
      */
+    inline bool LastUpdatedAtHasBeenSet() const { return m_lastUpdatedAtHasBeenSet; }
+
+    /**
+     * <p> The date and time when the target instance was updated by a deployment. </p>
+     */
     inline void SetLastUpdatedAt(const Aws::Utils::DateTime& value) { m_lastUpdatedAtHasBeenSet = true; m_lastUpdatedAt = value; }
 
     /**
@@ -224,6 +250,11 @@ namespace Model
      * <p> The lifecycle events of the deployment to this target instance. </p>
      */
     inline const Aws::Vector<LifecycleEvent>& GetLifecycleEvents() const{ return m_lifecycleEvents; }
+
+    /**
+     * <p> The lifecycle events of the deployment to this target instance. </p>
+     */
+    inline bool LifecycleEventsHasBeenSet() const { return m_lifecycleEventsHasBeenSet; }
 
     /**
      * <p> The lifecycle events of the deployment to this target instance. </p>
@@ -261,6 +292,12 @@ namespace Model
      * (<code>BLUE</code>) or a replacement target (<code>GREEN</code>). </p>
      */
     inline const TargetLabel& GetInstanceLabel() const{ return m_instanceLabel; }
+
+    /**
+     * <p> A label that identifies whether the instance is an original target
+     * (<code>BLUE</code>) or a replacement target (<code>GREEN</code>). </p>
+     */
+    inline bool InstanceLabelHasBeenSet() const { return m_instanceLabelHasBeenSet; }
 
     /**
      * <p> A label that identifies whether the instance is an original target

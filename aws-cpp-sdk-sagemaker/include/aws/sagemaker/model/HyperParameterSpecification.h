@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p>The name of this hyperparameter. The name must be unique.</p>
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>The name of this hyperparameter. The name must be unique.</p>
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
@@ -90,6 +95,11 @@ namespace Model
      * <p>A brief description of the hyperparameter.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
+
+    /**
+     * <p>A brief description of the hyperparameter.</p>
+     */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
 
     /**
      * <p>A brief description of the hyperparameter.</p>
@@ -134,6 +144,13 @@ namespace Model
      * <code>Continuous</code>, <code>Categorical</code>, and
      * <code>FreeText</code>.</p>
      */
+    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
+
+    /**
+     * <p>The type of this hyperparameter. The valid types are <code>Integer</code>,
+     * <code>Continuous</code>, <code>Categorical</code>, and
+     * <code>FreeText</code>.</p>
+     */
     inline void SetType(const ParameterType& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
@@ -166,6 +183,11 @@ namespace Model
     /**
      * <p>The allowed range for this hyperparameter.</p>
      */
+    inline bool RangeHasBeenSet() const { return m_rangeHasBeenSet; }
+
+    /**
+     * <p>The allowed range for this hyperparameter.</p>
+     */
     inline void SetRange(const ParameterRange& value) { m_rangeHasBeenSet = true; m_range = value; }
 
     /**
@@ -194,6 +216,12 @@ namespace Model
      * <p>Indicates whether this hyperparameter is tunable in a hyperparameter tuning
      * job.</p>
      */
+    inline bool IsTunableHasBeenSet() const { return m_isTunableHasBeenSet; }
+
+    /**
+     * <p>Indicates whether this hyperparameter is tunable in a hyperparameter tuning
+     * job.</p>
+     */
     inline void SetIsTunable(bool value) { m_isTunableHasBeenSet = true; m_isTunable = value; }
 
     /**
@@ -211,6 +239,11 @@ namespace Model
     /**
      * <p>Indicates whether this hyperparameter is required.</p>
      */
+    inline bool IsRequiredHasBeenSet() const { return m_isRequiredHasBeenSet; }
+
+    /**
+     * <p>Indicates whether this hyperparameter is required.</p>
+     */
     inline void SetIsRequired(bool value) { m_isRequiredHasBeenSet = true; m_isRequired = value; }
 
     /**
@@ -224,6 +257,12 @@ namespace Model
      * hyperparameter cannot be required.</p>
      */
     inline const Aws::String& GetDefaultValue() const{ return m_defaultValue; }
+
+    /**
+     * <p>The default value for this hyperparameter. If a default value is specified, a
+     * hyperparameter cannot be required.</p>
+     */
+    inline bool DefaultValueHasBeenSet() const { return m_defaultValueHasBeenSet; }
 
     /**
      * <p>The default value for this hyperparameter. If a default value is specified, a

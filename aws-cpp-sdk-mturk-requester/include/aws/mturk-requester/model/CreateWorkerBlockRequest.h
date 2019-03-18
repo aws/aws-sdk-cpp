@@ -52,6 +52,11 @@ namespace Model
     /**
      * <p>The ID of the Worker to block.</p>
      */
+    inline bool WorkerIdHasBeenSet() const { return m_workerIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the Worker to block.</p>
+     */
     inline void SetWorkerId(const Aws::String& value) { m_workerIdHasBeenSet = true; m_workerId = value; }
 
     /**
@@ -86,6 +91,13 @@ namespace Model
      * message.</p>
      */
     inline const Aws::String& GetReason() const{ return m_reason; }
+
+    /**
+     * <p>A message explaining the reason for blocking the Worker. This parameter
+     * enables you to keep track of your Workers. The Worker does not see this
+     * message.</p>
+     */
+    inline bool ReasonHasBeenSet() const { return m_reasonHasBeenSet; }
 
     /**
      * <p>A message explaining the reason for blocking the Worker. This parameter

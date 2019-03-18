@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The type of the scope.</p>
      */
+    inline bool KeyHasBeenSet() const { return m_keyHasBeenSet; }
+
+    /**
+     * <p>The type of the scope.</p>
+     */
     inline void SetKey(const ScopeType& value) { m_keyHasBeenSet = true; m_key = value; }
 
     /**
@@ -79,6 +84,11 @@ namespace Model
      * <p>The resource identifier for the specified scope type.</p>
      */
     inline const Aws::String& GetValue() const{ return m_value; }
+
+    /**
+     * <p>The resource identifier for the specified scope type.</p>
+     */
+    inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
 
     /**
      * <p>The resource identifier for the specified scope type.</p>

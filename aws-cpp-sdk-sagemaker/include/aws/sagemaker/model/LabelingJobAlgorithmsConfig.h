@@ -74,6 +74,19 @@ namespace Model
      * <code>arn:aws:sagemaker:<i>region</i>:027400017018:labeling-job-algorithm-specification/object-detection</code>
      * </p> </li> </ul>
      */
+    inline bool LabelingJobAlgorithmSpecificationArnHasBeenSet() const { return m_labelingJobAlgorithmSpecificationArnHasBeenSet; }
+
+    /**
+     * <p>Specifies the Amazon Resource Name (ARN) of the algorithm used for
+     * auto-labeling. You must select one of the following ARNs:</p> <ul> <li> <p>
+     * <i>Image classification</i> </p> <p>
+     * <code>arn:aws:sagemaker:<i>region</i>:027400017018:labeling-job-algorithm-specification/image-classification</code>
+     * </p> </li> <li> <p> <i>Text classification</i> </p> <p>
+     * <code>arn:aws:sagemaker:<i>region</i>:027400017018:labeling-job-algorithm-specification/text-classification</code>
+     * </p> </li> <li> <p> <i>Object detection</i> </p> <p>
+     * <code>arn:aws:sagemaker:<i>region</i>:027400017018:labeling-job-algorithm-specification/object-detection</code>
+     * </p> </li> </ul>
+     */
     inline void SetLabelingJobAlgorithmSpecificationArn(const Aws::String& value) { m_labelingJobAlgorithmSpecificationArnHasBeenSet = true; m_labelingJobAlgorithmSpecificationArn = value; }
 
     /**
@@ -156,6 +169,14 @@ namespace Model
      * this model as the starting point for subsequent similar jobs by providing the
      * ARN of the model here. </p>
      */
+    inline bool InitialActiveLearningModelArnHasBeenSet() const { return m_initialActiveLearningModelArnHasBeenSet; }
+
+    /**
+     * <p>At the end of an auto-label job Amazon SageMaker Ground Truth sends the
+     * Amazon Resource Nam (ARN) of the final model used for auto-labeling. You can use
+     * this model as the starting point for subsequent similar jobs by providing the
+     * ARN of the model here. </p>
+     */
     inline void SetInitialActiveLearningModelArn(const Aws::String& value) { m_initialActiveLearningModelArnHasBeenSet = true; m_initialActiveLearningModelArn = value; }
 
     /**
@@ -203,6 +224,11 @@ namespace Model
      * <p>Provides configuration information for a labeling job.</p>
      */
     inline const LabelingJobResourceConfig& GetLabelingJobResourceConfig() const{ return m_labelingJobResourceConfig; }
+
+    /**
+     * <p>Provides configuration information for a labeling job.</p>
+     */
+    inline bool LabelingJobResourceConfigHasBeenSet() const { return m_labelingJobResourceConfigHasBeenSet; }
 
     /**
      * <p>Provides configuration information for a labeling job.</p>

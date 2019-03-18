@@ -53,6 +53,11 @@ namespace Model
     /**
      * <p>The identifier of the directory.</p>
      */
+    inline bool DirectoryIdHasBeenSet() const { return m_directoryIdHasBeenSet; }
+
+    /**
+     * <p>The identifier of the directory.</p>
+     */
     inline void SetDirectoryId(const Aws::String& value) { m_directoryIdHasBeenSet = true; m_directoryId = value; }
 
     /**
@@ -85,6 +90,11 @@ namespace Model
      * <p>The identifiers of one or more IP access control groups.</p>
      */
     inline const Aws::Vector<Aws::String>& GetGroupIds() const{ return m_groupIds; }
+
+    /**
+     * <p>The identifiers of one or more IP access control groups.</p>
+     */
+    inline bool GroupIdsHasBeenSet() const { return m_groupIdsHasBeenSet; }
 
     /**
      * <p>The identifiers of one or more IP access control groups.</p>

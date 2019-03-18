@@ -54,6 +54,12 @@ namespace Model
      * <p>A system-assigned unique identifier for an SFTP server instance that has the
      * user assigned to it.</p>
      */
+    inline bool ServerIdHasBeenSet() const { return m_serverIdHasBeenSet; }
+
+    /**
+     * <p>A system-assigned unique identifier for an SFTP server instance that has the
+     * user assigned to it.</p>
+     */
     inline void SetServerId(const Aws::String& value) { m_serverIdHasBeenSet = true; m_serverId = value; }
 
     /**
@@ -92,6 +98,12 @@ namespace Model
      * server.</p>
      */
     inline const Aws::String& GetUserName() const{ return m_userName; }
+
+    /**
+     * <p>A unique string that identifies a user that is being deleted from the
+     * server.</p>
+     */
+    inline bool UserNameHasBeenSet() const { return m_userNameHasBeenSet; }
 
     /**
      * <p>A unique string that identifies a user that is being deleted from the

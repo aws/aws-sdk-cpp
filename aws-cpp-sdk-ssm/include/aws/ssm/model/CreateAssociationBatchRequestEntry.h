@@ -83,6 +83,22 @@ namespace Model
      * you only need to specify the document name. For example,
      * <code>AWS-ApplyPatchBaseline</code> or <code>My-Document</code>.</p>
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>The name of the SSM document that contains the configuration information for
+     * the instance. You can specify Command, Policy, or Automation documents.</p>
+     * <p>You can specify AWS-predefined documents, documents you created, or a
+     * document that is shared with you from another account.</p> <p>For SSM documents
+     * that are shared with you from other AWS accounts, you must specify the complete
+     * SSM document ARN, in the following format:</p> <p>
+     * <code>arn:aws:ssm:<i>region</i>:<i>account-id</i>:document/<i>document-name</i>
+     * </code> </p> <p>For example:</p> <p>
+     * <code>arn:aws:ssm:us-east-2:12345678912:document/My-Shared-Document</code> </p>
+     * <p>For AWS-predefined documents and SSM documents you created in your account,
+     * you only need to specify the document name. For example,
+     * <code>AWS-ApplyPatchBaseline</code> or <code>My-Document</code>.</p>
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
@@ -174,6 +190,11 @@ namespace Model
     /**
      * <p>The ID of the instance. </p>
      */
+    inline bool InstanceIdHasBeenSet() const { return m_instanceIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the instance. </p>
+     */
     inline void SetInstanceId(const Aws::String& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
 
     /**
@@ -206,6 +227,11 @@ namespace Model
      * <p>A description of the parameters for a document. </p>
      */
     inline const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& GetParameters() const{ return m_parameters; }
+
+    /**
+     * <p>A description of the parameters for a document. </p>
+     */
+    inline bool ParametersHasBeenSet() const { return m_parametersHasBeenSet; }
 
     /**
      * <p>A description of the parameters for a document. </p>
@@ -270,6 +296,13 @@ namespace Model
      * associations that use an Automation document and target resources by using rate
      * controls.</p>
      */
+    inline bool AutomationTargetParameterNameHasBeenSet() const { return m_automationTargetParameterNameHasBeenSet; }
+
+    /**
+     * <p>Specify the target for the association. This target is required for
+     * associations that use an Automation document and target resources by using rate
+     * controls.</p>
+     */
     inline void SetAutomationTargetParameterName(const Aws::String& value) { m_automationTargetParameterNameHasBeenSet = true; m_automationTargetParameterName = value; }
 
     /**
@@ -316,6 +349,11 @@ namespace Model
     /**
      * <p>The document version.</p>
      */
+    inline bool DocumentVersionHasBeenSet() const { return m_documentVersionHasBeenSet; }
+
+    /**
+     * <p>The document version.</p>
+     */
     inline void SetDocumentVersion(const Aws::String& value) { m_documentVersionHasBeenSet = true; m_documentVersion = value; }
 
     /**
@@ -348,6 +386,11 @@ namespace Model
      * <p>The instances targeted by the request.</p>
      */
     inline const Aws::Vector<Target>& GetTargets() const{ return m_targets; }
+
+    /**
+     * <p>The instances targeted by the request.</p>
+     */
+    inline bool TargetsHasBeenSet() const { return m_targetsHasBeenSet; }
 
     /**
      * <p>The instances targeted by the request.</p>
@@ -388,6 +431,11 @@ namespace Model
     /**
      * <p>A cron expression that specifies a schedule when the association runs.</p>
      */
+    inline bool ScheduleExpressionHasBeenSet() const { return m_scheduleExpressionHasBeenSet; }
+
+    /**
+     * <p>A cron expression that specifies a schedule when the association runs.</p>
+     */
     inline void SetScheduleExpression(const Aws::String& value) { m_scheduleExpressionHasBeenSet = true; m_scheduleExpression = value; }
 
     /**
@@ -424,6 +472,11 @@ namespace Model
     /**
      * <p>An Amazon S3 bucket where you want to store the results of this request.</p>
      */
+    inline bool OutputLocationHasBeenSet() const { return m_outputLocationHasBeenSet; }
+
+    /**
+     * <p>An Amazon S3 bucket where you want to store the results of this request.</p>
+     */
     inline void SetOutputLocation(const InstanceAssociationOutputLocation& value) { m_outputLocationHasBeenSet = true; m_outputLocation = value; }
 
     /**
@@ -446,6 +499,11 @@ namespace Model
      * <p>Specify a descriptive name for the association.</p>
      */
     inline const Aws::String& GetAssociationName() const{ return m_associationName; }
+
+    /**
+     * <p>Specify a descriptive name for the association.</p>
+     */
+    inline bool AssociationNameHasBeenSet() const { return m_associationNameHasBeenSet; }
 
     /**
      * <p>Specify a descriptive name for the association.</p>
@@ -493,6 +551,22 @@ namespace Model
      * to 1 so that executions proceed one at a time.</p>
      */
     inline const Aws::String& GetMaxErrors() const{ return m_maxErrors; }
+
+    /**
+     * <p>The number of errors that are allowed before the system stops sending
+     * requests to run the association on additional targets. You can specify either an
+     * absolute number of errors, for example 10, or a percentage of the target set,
+     * for example 10%. If you specify 3, for example, the system stops sending
+     * requests when the fourth error is received. If you specify 0, then the system
+     * stops sending requests after the first error is returned. If you run an
+     * association on 50 instances and set MaxError to 10%, then the system stops
+     * sending the request when the sixth error is received.</p> <p>Executions that are
+     * already running an association when MaxErrors is reached are allowed to
+     * complete, but some of these executions may fail as well. If you need to ensure
+     * that there won't be more than max-errors failed executions, set MaxConcurrency
+     * to 1 so that executions proceed one at a time.</p>
+     */
+    inline bool MaxErrorsHasBeenSet() const { return m_maxErrorsHasBeenSet; }
 
     /**
      * <p>The number of errors that are allowed before the system stops sending
@@ -613,6 +687,18 @@ namespace Model
      * interval, the new instance will process its association within the limit
      * specified for MaxConcurrency.</p>
      */
+    inline bool MaxConcurrencyHasBeenSet() const { return m_maxConcurrencyHasBeenSet; }
+
+    /**
+     * <p>The maximum number of targets allowed to run the association at the same
+     * time. You can specify a number, for example 10, or a percentage of the target
+     * set, for example 10%. The default value is 100%, which means all targets run the
+     * association at the same time.</p> <p>If a new instance starts and attempts to
+     * execute an association while Systems Manager is executing MaxConcurrency
+     * associations, the association is allowed to run. During the next association
+     * interval, the new instance will process its association within the limit
+     * specified for MaxConcurrency.</p>
+     */
     inline void SetMaxConcurrency(const Aws::String& value) { m_maxConcurrencyHasBeenSet = true; m_maxConcurrency = value; }
 
     /**
@@ -680,6 +766,11 @@ namespace Model
      * <p>The severity level to assign to the association.</p>
      */
     inline const AssociationComplianceSeverity& GetComplianceSeverity() const{ return m_complianceSeverity; }
+
+    /**
+     * <p>The severity level to assign to the association.</p>
+     */
+    inline bool ComplianceSeverityHasBeenSet() const { return m_complianceSeverityHasBeenSet; }
 
     /**
      * <p>The severity level to assign to the association.</p>

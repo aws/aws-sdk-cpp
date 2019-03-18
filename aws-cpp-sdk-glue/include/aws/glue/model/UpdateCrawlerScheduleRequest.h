@@ -52,6 +52,11 @@ namespace Model
     /**
      * <p>Name of the crawler whose schedule to update.</p>
      */
+    inline bool CrawlerNameHasBeenSet() const { return m_crawlerNameHasBeenSet; }
+
+    /**
+     * <p>Name of the crawler whose schedule to update.</p>
+     */
     inline void SetCrawlerName(const Aws::String& value) { m_crawlerNameHasBeenSet = true; m_crawlerName = value; }
 
     /**
@@ -87,6 +92,14 @@ namespace Model
      * 12:15 UTC, you would specify: <code>cron(15 12 * * ? *)</code>.</p>
      */
     inline const Aws::String& GetSchedule() const{ return m_schedule; }
+
+    /**
+     * <p>The updated <code>cron</code> expression used to specify the schedule (see <a
+     * href="http://docs.aws.amazon.com/glue/latest/dg/monitor-data-warehouse-schedule.html">Time-Based
+     * Schedules for Jobs and Crawlers</a>. For example, to run something every day at
+     * 12:15 UTC, you would specify: <code>cron(15 12 * * ? *)</code>.</p>
+     */
+    inline bool ScheduleHasBeenSet() const { return m_scheduleHasBeenSet; }
 
     /**
      * <p>The updated <code>cron</code> expression used to specify the schedule (see <a

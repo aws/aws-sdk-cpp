@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The Amazon S3 location of the input data objects.</p>
      */
+    inline bool S3DataSourceHasBeenSet() const { return m_s3DataSourceHasBeenSet; }
+
+    /**
+     * <p>The Amazon S3 location of the input data objects.</p>
+     */
     inline void SetS3DataSource(const LabelingJobS3DataSource& value) { m_s3DataSourceHasBeenSet = true; m_s3DataSource = value; }
 
     /**

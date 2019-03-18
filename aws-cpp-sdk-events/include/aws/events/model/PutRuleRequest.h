@@ -53,6 +53,11 @@ namespace Model
     /**
      * <p>The name of the rule that you are creating or updating.</p>
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>The name of the rule that you are creating or updating.</p>
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
@@ -86,6 +91,12 @@ namespace Model
      * minutes)".</p>
      */
     inline const Aws::String& GetScheduleExpression() const{ return m_scheduleExpression; }
+
+    /**
+     * <p>The scheduling expression. For example, "cron(0 20 * * ? *)" or "rate(5
+     * minutes)".</p>
+     */
+    inline bool ScheduleExpressionHasBeenSet() const { return m_scheduleExpressionHasBeenSet; }
 
     /**
      * <p>The scheduling expression. For example, "cron(0 20 * * ? *)" or "rate(5
@@ -130,6 +141,13 @@ namespace Model
      * and Event Patterns</a> in the <i>Amazon CloudWatch Events User Guide</i>.</p>
      */
     inline const Aws::String& GetEventPattern() const{ return m_eventPattern; }
+
+    /**
+     * <p>The event pattern. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/events/CloudWatchEventsandEventPatterns.html">Events
+     * and Event Patterns</a> in the <i>Amazon CloudWatch Events User Guide</i>.</p>
+     */
+    inline bool EventPatternHasBeenSet() const { return m_eventPatternHasBeenSet; }
 
     /**
      * <p>The event pattern. For more information, see <a
@@ -182,6 +200,11 @@ namespace Model
     /**
      * <p>Indicates whether the rule is enabled or disabled.</p>
      */
+    inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
+
+    /**
+     * <p>Indicates whether the rule is enabled or disabled.</p>
+     */
     inline void SetState(const RuleState& value) { m_stateHasBeenSet = true; m_state = value; }
 
     /**
@@ -204,6 +227,11 @@ namespace Model
      * <p>A description of the rule.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
+
+    /**
+     * <p>A description of the rule.</p>
+     */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
 
     /**
      * <p>A description of the rule.</p>
@@ -240,6 +268,11 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the IAM role associated with the rule.</p>
      */
     inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the IAM role associated with the rule.</p>
+     */
+    inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the IAM role associated with the rule.</p>

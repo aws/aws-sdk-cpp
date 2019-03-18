@@ -52,6 +52,9 @@ namespace Model
     inline const InstanceCountLimits& GetInstanceCountLimits() const{ return m_instanceCountLimits; }
 
     
+    inline bool InstanceCountLimitsHasBeenSet() const { return m_instanceCountLimitsHasBeenSet; }
+
+    
     inline void SetInstanceCountLimits(const InstanceCountLimits& value) { m_instanceCountLimitsHasBeenSet = true; m_instanceCountLimits = value; }
 
     

@@ -55,6 +55,12 @@ namespace Model
      * <p>The Amazon DyanamoDB resource the tags will be removed from. This value is an
      * Amazon Resource Name (ARN).</p>
      */
+    inline bool ResourceArnHasBeenSet() const { return m_resourceArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon DyanamoDB resource the tags will be removed from. This value is an
+     * Amazon Resource Name (ARN).</p>
+     */
     inline void SetResourceArn(const Aws::String& value) { m_resourceArnHasBeenSet = true; m_resourceArn = value; }
 
     /**
@@ -93,6 +99,12 @@ namespace Model
      * this list will be removed from the Amazon DynamoDB resource.</p>
      */
     inline const Aws::Vector<Aws::String>& GetTagKeys() const{ return m_tagKeys; }
+
+    /**
+     * <p>A list of tag keys. Existing tags of the resource whose keys are members of
+     * this list will be removed from the Amazon DynamoDB resource.</p>
+     */
+    inline bool TagKeysHasBeenSet() const { return m_tagKeysHasBeenSet; }
 
     /**
      * <p>A list of tag keys. Existing tags of the resource whose keys are members of

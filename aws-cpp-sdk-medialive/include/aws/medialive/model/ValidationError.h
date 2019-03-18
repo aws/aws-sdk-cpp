@@ -51,6 +51,9 @@ namespace Model
     inline const Aws::String& GetElementPath() const{ return m_elementPath; }
 
     
+    inline bool ElementPathHasBeenSet() const { return m_elementPathHasBeenSet; }
+
+    
     inline void SetElementPath(const Aws::String& value) { m_elementPathHasBeenSet = true; m_elementPath = value; }
 
     
@@ -71,6 +74,9 @@ namespace Model
 
     
     inline const Aws::String& GetErrorMessage() const{ return m_errorMessage; }
+
+    
+    inline bool ErrorMessageHasBeenSet() const { return m_errorMessageHasBeenSet; }
 
     
     inline void SetErrorMessage(const Aws::String& value) { m_errorMessageHasBeenSet = true; m_errorMessage = value; }

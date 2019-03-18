@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p>Specifies whether the certificate is active.</p>
      */
+    inline bool SetAsActiveHasBeenSet() const { return m_setAsActiveHasBeenSet; }
+
+    /**
+     * <p>Specifies whether the certificate is active.</p>
+     */
     inline void SetSetAsActive(bool value) { m_setAsActiveHasBeenSet = true; m_setAsActive = value; }
 
     /**

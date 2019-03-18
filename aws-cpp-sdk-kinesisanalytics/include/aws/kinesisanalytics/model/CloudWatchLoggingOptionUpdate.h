@@ -55,6 +55,11 @@ namespace Model
     /**
      * <p>ID of the CloudWatch logging option to update</p>
      */
+    inline bool CloudWatchLoggingOptionIdHasBeenSet() const { return m_cloudWatchLoggingOptionIdHasBeenSet; }
+
+    /**
+     * <p>ID of the CloudWatch logging option to update</p>
+     */
     inline void SetCloudWatchLoggingOptionId(const Aws::String& value) { m_cloudWatchLoggingOptionIdHasBeenSet = true; m_cloudWatchLoggingOptionId = value; }
 
     /**
@@ -87,6 +92,11 @@ namespace Model
      * <p>ARN of the CloudWatch log to receive application messages.</p>
      */
     inline const Aws::String& GetLogStreamARNUpdate() const{ return m_logStreamARNUpdate; }
+
+    /**
+     * <p>ARN of the CloudWatch log to receive application messages.</p>
+     */
+    inline bool LogStreamARNUpdateHasBeenSet() const { return m_logStreamARNUpdateHasBeenSet; }
 
     /**
      * <p>ARN of the CloudWatch log to receive application messages.</p>
@@ -125,6 +135,13 @@ namespace Model
      * <code>PutLogEvents</code> policy action enabled.</p>
      */
     inline const Aws::String& GetRoleARNUpdate() const{ return m_roleARNUpdate; }
+
+    /**
+     * <p>IAM ARN of the role to use to send application messages. Note: To write
+     * application messages to CloudWatch, the IAM role used must have the
+     * <code>PutLogEvents</code> policy action enabled.</p>
+     */
+    inline bool RoleARNUpdateHasBeenSet() const { return m_roleARNUpdateHasBeenSet; }
 
     /**
      * <p>IAM ARN of the role to use to send application messages. Note: To write

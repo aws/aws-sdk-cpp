@@ -59,6 +59,11 @@ namespace Model
     /**
      * <p> Name of the project. </p>
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p> Name of the project. </p>
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
@@ -91,6 +96,11 @@ namespace Model
      * <p> Default region where project resources should be created. </p>
      */
     inline const Aws::String& GetRegion() const{ return m_region; }
+
+    /**
+     * <p> Default region where project resources should be created. </p>
+     */
+    inline bool RegionHasBeenSet() const { return m_regionHasBeenSet; }
 
     /**
      * <p> Default region where project resources should be created. </p>
@@ -129,6 +139,13 @@ namespace Model
      * </p>
      */
     inline const Aws::String& GetSnapshotId() const{ return m_snapshotId; }
+
+    /**
+     * <p> Unique identifier for an exported snapshot of project configuration. This
+     * snapshot identifier is included in the share URL when a project is exported.
+     * </p>
+     */
+    inline bool SnapshotIdHasBeenSet() const { return m_snapshotIdHasBeenSet; }
 
     /**
      * <p> Unique identifier for an exported snapshot of project configuration. This

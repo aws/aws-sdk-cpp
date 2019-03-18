@@ -65,6 +65,13 @@ namespace Model
      * to indicate the position of the configuration set in the configuration set
      * list.</p>
      */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
+
+    /**
+     * <p>A token returned from a previous call to <code>ListConfigurationSets</code>
+     * to indicate the position of the configuration set in the configuration set
+     * list.</p>
+     */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
     /**
@@ -107,6 +114,11 @@ namespace Model
      * <p>The number of configuration sets to return.</p>
      */
     inline int GetMaxItems() const{ return m_maxItems; }
+
+    /**
+     * <p>The number of configuration sets to return.</p>
+     */
+    inline bool MaxItemsHasBeenSet() const { return m_maxItemsHasBeenSet; }
 
     /**
      * <p>The number of configuration sets to return.</p>

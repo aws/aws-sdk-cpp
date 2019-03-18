@@ -60,6 +60,13 @@ namespace Model
      * recognizer are located. The URI must be in the same region as the API endpoint
      * that you are calling.</p>
      */
+    inline bool S3UriHasBeenSet() const { return m_s3UriHasBeenSet; }
+
+    /**
+     * <p> Specifies the Amazon S3 location where the training documents for an entity
+     * recognizer are located. The URI must be in the same region as the API endpoint
+     * that you are calling.</p>
+     */
     inline void SetS3Uri(const Aws::String& value) { m_s3UriHasBeenSet = true; m_s3Uri = value; }
 
     /**

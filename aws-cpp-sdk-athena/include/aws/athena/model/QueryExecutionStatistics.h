@@ -55,6 +55,11 @@ namespace Model
     /**
      * <p>The number of milliseconds that the query took to execute.</p>
      */
+    inline bool EngineExecutionTimeInMillisHasBeenSet() const { return m_engineExecutionTimeInMillisHasBeenSet; }
+
+    /**
+     * <p>The number of milliseconds that the query took to execute.</p>
+     */
     inline void SetEngineExecutionTimeInMillis(long long value) { m_engineExecutionTimeInMillisHasBeenSet = true; m_engineExecutionTimeInMillis = value; }
 
     /**
@@ -67,6 +72,11 @@ namespace Model
      * <p>The number of bytes in the data that was queried.</p>
      */
     inline long long GetDataScannedInBytes() const{ return m_dataScannedInBytes; }
+
+    /**
+     * <p>The number of bytes in the data that was queried.</p>
+     */
+    inline bool DataScannedInBytesHasBeenSet() const { return m_dataScannedInBytesHasBeenSet; }
 
     /**
      * <p>The number of bytes in the data that was queried.</p>

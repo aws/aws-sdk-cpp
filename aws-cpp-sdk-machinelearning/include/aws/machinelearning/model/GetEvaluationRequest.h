@@ -56,6 +56,13 @@ namespace Model
      * <code>MLModel</code> is recorded and cataloged. The ID provides the means to
      * access the information. </p>
      */
+    inline bool EvaluationIdHasBeenSet() const { return m_evaluationIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the <code>Evaluation</code> to retrieve. The evaluation of each
+     * <code>MLModel</code> is recorded and cataloged. The ID provides the means to
+     * access the information. </p>
+     */
     inline void SetEvaluationId(const Aws::String& value) { m_evaluationIdHasBeenSet = true; m_evaluationId = value; }
 
     /**

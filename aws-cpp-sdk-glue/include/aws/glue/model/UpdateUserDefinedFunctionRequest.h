@@ -55,6 +55,12 @@ namespace Model
      * <p>The ID of the Data Catalog where the function to be updated is located. If
      * none is supplied, the AWS account ID is used by default.</p>
      */
+    inline bool CatalogIdHasBeenSet() const { return m_catalogIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the Data Catalog where the function to be updated is located. If
+     * none is supplied, the AWS account ID is used by default.</p>
+     */
     inline void SetCatalogId(const Aws::String& value) { m_catalogIdHasBeenSet = true; m_catalogId = value; }
 
     /**
@@ -93,6 +99,12 @@ namespace Model
      * located.</p>
      */
     inline const Aws::String& GetDatabaseName() const{ return m_databaseName; }
+
+    /**
+     * <p>The name of the catalog database where the function to be updated is
+     * located.</p>
+     */
+    inline bool DatabaseNameHasBeenSet() const { return m_databaseNameHasBeenSet; }
 
     /**
      * <p>The name of the catalog database where the function to be updated is
@@ -139,6 +151,11 @@ namespace Model
     /**
      * <p>The name of the function.</p>
      */
+    inline bool FunctionNameHasBeenSet() const { return m_functionNameHasBeenSet; }
+
+    /**
+     * <p>The name of the function.</p>
+     */
     inline void SetFunctionName(const Aws::String& value) { m_functionNameHasBeenSet = true; m_functionName = value; }
 
     /**
@@ -172,6 +189,12 @@ namespace Model
      * Catalog.</p>
      */
     inline const UserDefinedFunctionInput& GetFunctionInput() const{ return m_functionInput; }
+
+    /**
+     * <p>A <code>FunctionInput</code> object that re-defines the function in the Data
+     * Catalog.</p>
+     */
+    inline bool FunctionInputHasBeenSet() const { return m_functionInputHasBeenSet; }
 
     /**
      * <p>A <code>FunctionInput</code> object that re-defines the function in the Data

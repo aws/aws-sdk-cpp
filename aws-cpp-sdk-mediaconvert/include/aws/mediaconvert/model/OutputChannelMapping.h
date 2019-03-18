@@ -55,6 +55,11 @@ namespace Model
     /**
      * List of input channels
      */
+    inline bool InputChannelsHasBeenSet() const { return m_inputChannelsHasBeenSet; }
+
+    /**
+     * List of input channels
+     */
     inline void SetInputChannels(const Aws::Vector<int>& value) { m_inputChannelsHasBeenSet = true; m_inputChannels = value; }
 
     /**

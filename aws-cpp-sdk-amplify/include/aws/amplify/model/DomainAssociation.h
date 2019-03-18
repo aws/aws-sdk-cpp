@@ -59,6 +59,11 @@ namespace Model
     /**
      * <p> ARN for the Domain Association. </p>
      */
+    inline bool DomainAssociationArnHasBeenSet() const { return m_domainAssociationArnHasBeenSet; }
+
+    /**
+     * <p> ARN for the Domain Association. </p>
+     */
     inline void SetDomainAssociationArn(const Aws::String& value) { m_domainAssociationArnHasBeenSet = true; m_domainAssociationArn = value; }
 
     /**
@@ -91,6 +96,11 @@ namespace Model
      * <p> Name of the domain. </p>
      */
     inline const Aws::String& GetDomainName() const{ return m_domainName; }
+
+    /**
+     * <p> Name of the domain. </p>
+     */
+    inline bool DomainNameHasBeenSet() const { return m_domainNameHasBeenSet; }
 
     /**
      * <p> Name of the domain. </p>
@@ -131,6 +141,11 @@ namespace Model
     /**
      * <p> Enables automated creation of Subdomains for branches. </p>
      */
+    inline bool EnableAutoSubDomainHasBeenSet() const { return m_enableAutoSubDomainHasBeenSet; }
+
+    /**
+     * <p> Enables automated creation of Subdomains for branches. </p>
+     */
     inline void SetEnableAutoSubDomain(bool value) { m_enableAutoSubDomainHasBeenSet = true; m_enableAutoSubDomain = value; }
 
     /**
@@ -143,6 +158,11 @@ namespace Model
      * <p> Status fo the Domain Association. </p>
      */
     inline const DomainStatus& GetDomainStatus() const{ return m_domainStatus; }
+
+    /**
+     * <p> Status fo the Domain Association. </p>
+     */
+    inline bool DomainStatusHasBeenSet() const { return m_domainStatusHasBeenSet; }
 
     /**
      * <p> Status fo the Domain Association. </p>
@@ -169,6 +189,11 @@ namespace Model
      * <p> Reason for the current status of the Domain Association. </p>
      */
     inline const Aws::String& GetStatusReason() const{ return m_statusReason; }
+
+    /**
+     * <p> Reason for the current status of the Domain Association. </p>
+     */
+    inline bool StatusReasonHasBeenSet() const { return m_statusReasonHasBeenSet; }
 
     /**
      * <p> Reason for the current status of the Domain Association. </p>
@@ -209,6 +234,11 @@ namespace Model
     /**
      * <p> DNS Record for certificate verification. </p>
      */
+    inline bool CertificateVerificationDNSRecordHasBeenSet() const { return m_certificateVerificationDNSRecordHasBeenSet; }
+
+    /**
+     * <p> DNS Record for certificate verification. </p>
+     */
     inline void SetCertificateVerificationDNSRecord(const Aws::String& value) { m_certificateVerificationDNSRecordHasBeenSet = true; m_certificateVerificationDNSRecord = value; }
 
     /**
@@ -241,6 +271,11 @@ namespace Model
      * <p> Subdomains for the Domain Association. </p>
      */
     inline const Aws::Vector<SubDomain>& GetSubDomains() const{ return m_subDomains; }
+
+    /**
+     * <p> Subdomains for the Domain Association. </p>
+     */
+    inline bool SubDomainsHasBeenSet() const { return m_subDomainsHasBeenSet; }
 
     /**
      * <p> Subdomains for the Domain Association. </p>

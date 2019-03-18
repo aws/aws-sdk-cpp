@@ -52,6 +52,11 @@ namespace Model
     /**
      * <p>The name of the interconnect.</p>
      */
+    inline bool InterconnectNameHasBeenSet() const { return m_interconnectNameHasBeenSet; }
+
+    /**
+     * <p>The name of the interconnect.</p>
+     */
     inline void SetInterconnectName(const Aws::String& value) { m_interconnectNameHasBeenSet = true; m_interconnectName = value; }
 
     /**
@@ -84,6 +89,11 @@ namespace Model
      * <p>The port bandwidth, in Gbps. The possible values are 1 and 10.</p>
      */
     inline const Aws::String& GetBandwidth() const{ return m_bandwidth; }
+
+    /**
+     * <p>The port bandwidth, in Gbps. The possible values are 1 and 10.</p>
+     */
+    inline bool BandwidthHasBeenSet() const { return m_bandwidthHasBeenSet; }
 
     /**
      * <p>The port bandwidth, in Gbps. The possible values are 1 and 10.</p>
@@ -124,6 +134,11 @@ namespace Model
     /**
      * <p>The location of the interconnect.</p>
      */
+    inline bool LocationHasBeenSet() const { return m_locationHasBeenSet; }
+
+    /**
+     * <p>The location of the interconnect.</p>
+     */
     inline void SetLocation(const Aws::String& value) { m_locationHasBeenSet = true; m_location = value; }
 
     /**
@@ -156,6 +171,11 @@ namespace Model
      * <p>The ID of the LAG.</p>
      */
     inline const Aws::String& GetLagId() const{ return m_lagId; }
+
+    /**
+     * <p>The ID of the LAG.</p>
+     */
+    inline bool LagIdHasBeenSet() const { return m_lagIdHasBeenSet; }
 
     /**
      * <p>The ID of the LAG.</p>

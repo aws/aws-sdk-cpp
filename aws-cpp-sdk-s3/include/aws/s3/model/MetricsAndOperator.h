@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The prefix used when evaluating an AND predicate.</p>
      */
+    inline bool PrefixHasBeenSet() const { return m_prefixHasBeenSet; }
+
+    /**
+     * <p>The prefix used when evaluating an AND predicate.</p>
+     */
     inline void SetPrefix(const Aws::String& value) { m_prefixHasBeenSet = true; m_prefix = value; }
 
     /**
@@ -89,6 +94,11 @@ namespace Model
      * <p>The list of tags used when evaluating an AND predicate.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>The list of tags used when evaluating an AND predicate.</p>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
      * <p>The list of tags used when evaluating an AND predicate.</p>

@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The descriptive reason provided for the failure.</p>
      */
+    inline bool ReasonHasBeenSet() const { return m_reasonHasBeenSet; }
+
+    /**
+     * <p>The descriptive reason provided for the failure.</p>
+     */
     inline void SetReason(const Aws::String& value) { m_reasonHasBeenSet = true; m_reason = value; }
 
     /**
@@ -88,6 +93,11 @@ namespace Model
      * <p>The details of the failure.</p>
      */
     inline const Aws::String& GetDetails() const{ return m_details; }
+
+    /**
+     * <p>The details of the failure.</p>
+     */
+    inline bool DetailsHasBeenSet() const { return m_detailsHasBeenSet; }
 
     /**
      * <p>The details of the failure.</p>
@@ -127,6 +137,14 @@ namespace Model
      * by tracing back the chain of events leading up to this event.</p>
      */
     inline long long GetDecisionTaskCompletedEventId() const{ return m_decisionTaskCompletedEventId; }
+
+    /**
+     * <p>The ID of the <code>DecisionTaskCompleted</code> event corresponding to the
+     * decision task that resulted in the <code>FailWorkflowExecution</code> decision
+     * to fail this execution. This information can be useful for diagnosing problems
+     * by tracing back the chain of events leading up to this event.</p>
+     */
+    inline bool DecisionTaskCompletedEventIdHasBeenSet() const { return m_decisionTaskCompletedEventIdHasBeenSet; }
 
     /**
      * <p>The ID of the <code>DecisionTaskCompleted</code> event corresponding to the

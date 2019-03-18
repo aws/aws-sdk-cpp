@@ -64,6 +64,14 @@ namespace Model
      * types include the following: AWS:AWSComponent, AWS:Application,
      * AWS:InstanceInformation, AWS:Network, and AWS:WindowsUpdate.</p>
      */
+    inline bool TypeNameHasBeenSet() const { return m_typeNameHasBeenSet; }
+
+    /**
+     * <p>The name of the inventory type. Default inventory item type names start with
+     * AWS. Custom inventory type names will start with Custom. Default inventory item
+     * types include the following: AWS:AWSComponent, AWS:Application,
+     * AWS:InstanceInformation, AWS:Network, and AWS:WindowsUpdate.</p>
+     */
     inline void SetTypeName(const Aws::String& value) { m_typeNameHasBeenSet = true; m_typeName = value; }
 
     /**
@@ -115,6 +123,11 @@ namespace Model
     /**
      * <p>The schema version for the inventory item.</p>
      */
+    inline bool VersionHasBeenSet() const { return m_versionHasBeenSet; }
+
+    /**
+     * <p>The schema version for the inventory item.</p>
+     */
     inline void SetVersion(const Aws::String& value) { m_versionHasBeenSet = true; m_version = value; }
 
     /**
@@ -148,6 +161,12 @@ namespace Model
      * name.</p>
      */
     inline const Aws::Vector<InventoryItemAttribute>& GetAttributes() const{ return m_attributes; }
+
+    /**
+     * <p>The schema attributes for inventory. This contains data type and attribute
+     * name.</p>
+     */
+    inline bool AttributesHasBeenSet() const { return m_attributesHasBeenSet; }
 
     /**
      * <p>The schema attributes for inventory. This contains data type and attribute
@@ -191,6 +210,12 @@ namespace Model
      * purposes.</p>
      */
     inline const Aws::String& GetDisplayName() const{ return m_displayName; }
+
+    /**
+     * <p>The alias name of the inventory type. The alias name is used for display
+     * purposes.</p>
+     */
+    inline bool DisplayNameHasBeenSet() const { return m_displayNameHasBeenSet; }
 
     /**
      * <p>The alias name of the inventory type. The alias name is used for display

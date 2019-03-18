@@ -70,6 +70,19 @@ namespace Model
      * criteria but that subsequent groups of <code>MaxResults</code> services do
      * contain services that match the criteria.</p> </note>
      */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
+
+    /**
+     * <p>For the first <code>ListServices</code> request, omit this value.</p> <p>If
+     * the response contains <code>NextToken</code>, submit another
+     * <code>ListServices</code> request to get the next group of results. Specify the
+     * value of <code>NextToken</code> from the previous response in the next
+     * request.</p> <note> <p>AWS Cloud Map gets <code>MaxResults</code> services and
+     * then filters them based on the specified criteria. It's possible that no
+     * services in the first <code>MaxResults</code> services matched the specified
+     * criteria but that subsequent groups of <code>MaxResults</code> services do
+     * contain services that match the criteria.</p> </note>
+     */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
     /**
@@ -150,6 +163,13 @@ namespace Model
      * response to a <code>ListServices</code> request. If you don't specify a value
      * for <code>MaxResults</code>, AWS Cloud Map returns up to 100 services.</p>
      */
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
+
+    /**
+     * <p>The maximum number of services that you want AWS Cloud Map to return in the
+     * response to a <code>ListServices</code> request. If you don't specify a value
+     * for <code>MaxResults</code>, AWS Cloud Map returns up to 100 services.</p>
+     */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
@@ -166,6 +186,13 @@ namespace Model
      * must match all filters to be returned by <code>ListServices</code>.</p>
      */
     inline const Aws::Vector<ServiceFilter>& GetFilters() const{ return m_filters; }
+
+    /**
+     * <p>A complex type that contains specifications for the namespaces that you want
+     * to list services for. </p> <p>If you specify more than one filter, an operation
+     * must match all filters to be returned by <code>ListServices</code>.</p>
+     */
+    inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
 
     /**
      * <p>A complex type that contains specifications for the namespaces that you want

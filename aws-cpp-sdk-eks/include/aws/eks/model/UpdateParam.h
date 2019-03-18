@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The keys associated with an update request.</p>
      */
+    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
+
+    /**
+     * <p>The keys associated with an update request.</p>
+     */
     inline void SetType(const UpdateParamType& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
@@ -79,6 +84,11 @@ namespace Model
      * <p>The value of the keys submitted as part of an update request.</p>
      */
     inline const Aws::String& GetValue() const{ return m_value; }
+
+    /**
+     * <p>The value of the keys submitted as part of an update request.</p>
+     */
+    inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
 
     /**
      * <p>The value of the keys submitted as part of an update request.</p>

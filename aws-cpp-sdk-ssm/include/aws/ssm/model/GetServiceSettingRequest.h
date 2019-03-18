@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The ID of the service setting to get.</p>
      */
+    inline bool SettingIdHasBeenSet() const { return m_settingIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the service setting to get.</p>
+     */
     inline void SetSettingId(const Aws::String& value) { m_settingIdHasBeenSet = true; m_settingId = value; }
 
     /**

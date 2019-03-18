@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p>The type of the activity task.</p>
      */
+    inline bool ActivityTypeHasBeenSet() const { return m_activityTypeHasBeenSet; }
+
+    /**
+     * <p>The type of the activity task.</p>
+     */
     inline void SetActivityType(const ActivityType& value) { m_activityTypeHasBeenSet = true; m_activityType = value; }
 
     /**
@@ -80,6 +85,11 @@ namespace Model
      * <p>The unique ID of the activity task.</p>
      */
     inline const Aws::String& GetActivityId() const{ return m_activityId; }
+
+    /**
+     * <p>The unique ID of the activity task.</p>
+     */
+    inline bool ActivityIdHasBeenSet() const { return m_activityIdHasBeenSet; }
 
     /**
      * <p>The unique ID of the activity task.</p>
@@ -120,6 +130,11 @@ namespace Model
     /**
      * <p>The input provided to the activity task.</p>
      */
+    inline bool InputHasBeenSet() const { return m_inputHasBeenSet; }
+
+    /**
+     * <p>The input provided to the activity task.</p>
+     */
     inline void SetInput(const Aws::String& value) { m_inputHasBeenSet = true; m_input = value; }
 
     /**
@@ -153,6 +168,12 @@ namespace Model
      * workflow tasks. This data isn't sent to the activity.</p>
      */
     inline const Aws::String& GetControl() const{ return m_control; }
+
+    /**
+     * <p>Data attached to the event that can be used by the decider in subsequent
+     * workflow tasks. This data isn't sent to the activity.</p>
+     */
+    inline bool ControlHasBeenSet() const { return m_controlHasBeenSet; }
 
     /**
      * <p>Data attached to the event that can be used by the decider in subsequent
@@ -201,6 +222,12 @@ namespace Model
      * <p>The maximum amount of time the activity task can wait to be assigned to a
      * worker.</p>
      */
+    inline bool ScheduleToStartTimeoutHasBeenSet() const { return m_scheduleToStartTimeoutHasBeenSet; }
+
+    /**
+     * <p>The maximum amount of time the activity task can wait to be assigned to a
+     * worker.</p>
+     */
     inline void SetScheduleToStartTimeout(const Aws::String& value) { m_scheduleToStartTimeoutHasBeenSet = true; m_scheduleToStartTimeout = value; }
 
     /**
@@ -242,6 +269,11 @@ namespace Model
     /**
      * <p>The maximum amount of time for this activity task.</p>
      */
+    inline bool ScheduleToCloseTimeoutHasBeenSet() const { return m_scheduleToCloseTimeoutHasBeenSet; }
+
+    /**
+     * <p>The maximum amount of time for this activity task.</p>
+     */
     inline void SetScheduleToCloseTimeout(const Aws::String& value) { m_scheduleToCloseTimeoutHasBeenSet = true; m_scheduleToCloseTimeout = value; }
 
     /**
@@ -275,6 +307,12 @@ namespace Model
      * task.</p>
      */
     inline const Aws::String& GetStartToCloseTimeout() const{ return m_startToCloseTimeout; }
+
+    /**
+     * <p>The maximum amount of time a worker may take to process the activity
+     * task.</p>
+     */
+    inline bool StartToCloseTimeoutHasBeenSet() const { return m_startToCloseTimeoutHasBeenSet; }
 
     /**
      * <p>The maximum amount of time a worker may take to process the activity
@@ -321,6 +359,11 @@ namespace Model
     /**
      * <p>The task list in which the activity task has been scheduled.</p>
      */
+    inline bool TaskListHasBeenSet() const { return m_taskListHasBeenSet; }
+
+    /**
+     * <p>The task list in which the activity task has been scheduled.</p>
+     */
     inline void SetTaskList(const TaskList& value) { m_taskListHasBeenSet = true; m_taskList = value; }
 
     /**
@@ -350,6 +393,18 @@ namespace Model
      * Task Priority</a> in the <i>Amazon SWF Developer Guide</i>.</p>
      */
     inline const Aws::String& GetTaskPriority() const{ return m_taskPriority; }
+
+    /**
+     * <p> The priority to assign to the scheduled activity task. If set, this
+     * overrides any default priority value that was assigned when the activity type
+     * was registered.</p> <p>Valid values are integers that range from Java's
+     * <code>Integer.MIN_VALUE</code> (-2147483648) to <code>Integer.MAX_VALUE</code>
+     * (2147483647). Higher numbers indicate higher priority.</p> <p>For more
+     * information about setting task priority, see <a
+     * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting
+     * Task Priority</a> in the <i>Amazon SWF Developer Guide</i>.</p>
+     */
+    inline bool TaskPriorityHasBeenSet() const { return m_taskPriorityHasBeenSet; }
 
     /**
      * <p> The priority to assign to the scheduled activity task. If set, this
@@ -438,6 +493,14 @@ namespace Model
      * can be useful for diagnosing problems by tracing back the chain of events
      * leading up to this event.</p>
      */
+    inline bool DecisionTaskCompletedEventIdHasBeenSet() const { return m_decisionTaskCompletedEventIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the <code>DecisionTaskCompleted</code> event corresponding to the
+     * decision that resulted in the scheduling of this activity task. This information
+     * can be useful for diagnosing problems by tracing back the chain of events
+     * leading up to this event.</p>
+     */
     inline void SetDecisionTaskCompletedEventId(long long value) { m_decisionTaskCompletedEventIdHasBeenSet = true; m_decisionTaskCompletedEventId = value; }
 
     /**
@@ -457,6 +520,15 @@ namespace Model
      * ignored.</p>
      */
     inline const Aws::String& GetHeartbeatTimeout() const{ return m_heartbeatTimeout; }
+
+    /**
+     * <p>The maximum time before which the worker processing this task must report
+     * progress by calling <a>RecordActivityTaskHeartbeat</a>. If the timeout is
+     * exceeded, the activity task is automatically timed out. If the worker
+     * subsequently attempts to record a heartbeat or return a result, it is
+     * ignored.</p>
+     */
+    inline bool HeartbeatTimeoutHasBeenSet() const { return m_heartbeatTimeoutHasBeenSet; }
 
     /**
      * <p>The maximum time before which the worker processing this task must report

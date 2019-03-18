@@ -60,6 +60,11 @@ namespace Model
     /**
      * <p>The Amazon EC2 instances that AWS recommends that you purchase.</p>
      */
+    inline bool EC2InstanceDetailsHasBeenSet() const { return m_eC2InstanceDetailsHasBeenSet; }
+
+    /**
+     * <p>The Amazon EC2 instances that AWS recommends that you purchase.</p>
+     */
     inline void SetEC2InstanceDetails(const EC2InstanceDetails& value) { m_eC2InstanceDetailsHasBeenSet = true; m_eC2InstanceDetails = value; }
 
     /**
@@ -82,6 +87,11 @@ namespace Model
      * <p>The Amazon RDS instances that AWS recommends that you purchase.</p>
      */
     inline const RDSInstanceDetails& GetRDSInstanceDetails() const{ return m_rDSInstanceDetails; }
+
+    /**
+     * <p>The Amazon RDS instances that AWS recommends that you purchase.</p>
+     */
+    inline bool RDSInstanceDetailsHasBeenSet() const { return m_rDSInstanceDetailsHasBeenSet; }
 
     /**
      * <p>The Amazon RDS instances that AWS recommends that you purchase.</p>
@@ -112,6 +122,11 @@ namespace Model
     /**
      * <p>The Amazon Redshift instances that AWS recommends that you purchase.</p>
      */
+    inline bool RedshiftInstanceDetailsHasBeenSet() const { return m_redshiftInstanceDetailsHasBeenSet; }
+
+    /**
+     * <p>The Amazon Redshift instances that AWS recommends that you purchase.</p>
+     */
     inline void SetRedshiftInstanceDetails(const RedshiftInstanceDetails& value) { m_redshiftInstanceDetailsHasBeenSet = true; m_redshiftInstanceDetails = value; }
 
     /**
@@ -138,6 +153,11 @@ namespace Model
     /**
      * <p>The ElastiCache instances that AWS recommends that you purchase.</p>
      */
+    inline bool ElastiCacheInstanceDetailsHasBeenSet() const { return m_elastiCacheInstanceDetailsHasBeenSet; }
+
+    /**
+     * <p>The ElastiCache instances that AWS recommends that you purchase.</p>
+     */
     inline void SetElastiCacheInstanceDetails(const ElastiCacheInstanceDetails& value) { m_elastiCacheInstanceDetailsHasBeenSet = true; m_elastiCacheInstanceDetails = value; }
 
     /**
@@ -160,6 +180,11 @@ namespace Model
      * <p>The Amazon ES instances that AWS recommends that you purchase.</p>
      */
     inline const ESInstanceDetails& GetESInstanceDetails() const{ return m_eSInstanceDetails; }
+
+    /**
+     * <p>The Amazon ES instances that AWS recommends that you purchase.</p>
+     */
+    inline bool ESInstanceDetailsHasBeenSet() const { return m_eSInstanceDetailsHasBeenSet; }
 
     /**
      * <p>The Amazon ES instances that AWS recommends that you purchase.</p>

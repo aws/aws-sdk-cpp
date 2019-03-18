@@ -59,6 +59,12 @@ namespace Model
      * <p>The set of accepted encryption algorithms that are allowed in an AWS Signer
      * job.</p>
      */
+    inline bool AllowedValuesHasBeenSet() const { return m_allowedValuesHasBeenSet; }
+
+    /**
+     * <p>The set of accepted encryption algorithms that are allowed in an AWS Signer
+     * job.</p>
+     */
     inline void SetAllowedValues(const Aws::Vector<EncryptionAlgorithm>& value) { m_allowedValuesHasBeenSet = true; m_allowedValues = value; }
 
     /**
@@ -96,6 +102,11 @@ namespace Model
      * <p>The default encryption algorithm that is used by an AWS Signer job.</p>
      */
     inline const EncryptionAlgorithm& GetDefaultValue() const{ return m_defaultValue; }
+
+    /**
+     * <p>The default encryption algorithm that is used by an AWS Signer job.</p>
+     */
+    inline bool DefaultValueHasBeenSet() const { return m_defaultValueHasBeenSet; }
 
     /**
      * <p>The default encryption algorithm that is used by an AWS Signer job.</p>

@@ -55,6 +55,11 @@ namespace Model
     /**
      * <p>The code associated with this error.</p>
      */
+    inline bool ErrorCodeHasBeenSet() const { return m_errorCodeHasBeenSet; }
+
+    /**
+     * <p>The code associated with this error.</p>
+     */
     inline void SetErrorCode(const Aws::String& value) { m_errorCodeHasBeenSet = true; m_errorCode = value; }
 
     /**
@@ -87,6 +92,11 @@ namespace Model
      * <p>A message describing the error.</p>
      */
     inline const Aws::String& GetErrorMessage() const{ return m_errorMessage; }
+
+    /**
+     * <p>A message describing the error.</p>
+     */
+    inline bool ErrorMessageHasBeenSet() const { return m_errorMessageHasBeenSet; }
 
     /**
      * <p>A message describing the error.</p>

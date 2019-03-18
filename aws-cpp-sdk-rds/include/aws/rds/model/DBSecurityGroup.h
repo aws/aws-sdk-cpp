@@ -62,6 +62,11 @@ namespace Model
     /**
      * <p>Provides the AWS ID of the owner of a specific DB security group.</p>
      */
+    inline bool OwnerIdHasBeenSet() const { return m_ownerIdHasBeenSet; }
+
+    /**
+     * <p>Provides the AWS ID of the owner of a specific DB security group.</p>
+     */
     inline void SetOwnerId(const Aws::String& value) { m_ownerIdHasBeenSet = true; m_ownerId = value; }
 
     /**
@@ -94,6 +99,11 @@ namespace Model
      * <p>Specifies the name of the DB security group.</p>
      */
     inline const Aws::String& GetDBSecurityGroupName() const{ return m_dBSecurityGroupName; }
+
+    /**
+     * <p>Specifies the name of the DB security group.</p>
+     */
+    inline bool DBSecurityGroupNameHasBeenSet() const { return m_dBSecurityGroupNameHasBeenSet; }
 
     /**
      * <p>Specifies the name of the DB security group.</p>
@@ -134,6 +144,11 @@ namespace Model
     /**
      * <p>Provides the description of the DB security group.</p>
      */
+    inline bool DBSecurityGroupDescriptionHasBeenSet() const { return m_dBSecurityGroupDescriptionHasBeenSet; }
+
+    /**
+     * <p>Provides the description of the DB security group.</p>
+     */
     inline void SetDBSecurityGroupDescription(const Aws::String& value) { m_dBSecurityGroupDescriptionHasBeenSet = true; m_dBSecurityGroupDescription = value; }
 
     /**
@@ -166,6 +181,11 @@ namespace Model
      * <p>Provides the VpcId of the DB security group.</p>
      */
     inline const Aws::String& GetVpcId() const{ return m_vpcId; }
+
+    /**
+     * <p>Provides the VpcId of the DB security group.</p>
+     */
+    inline bool VpcIdHasBeenSet() const { return m_vpcIdHasBeenSet; }
 
     /**
      * <p>Provides the VpcId of the DB security group.</p>
@@ -206,6 +226,11 @@ namespace Model
     /**
      * <p> Contains a list of <a>EC2SecurityGroup</a> elements. </p>
      */
+    inline bool EC2SecurityGroupsHasBeenSet() const { return m_eC2SecurityGroupsHasBeenSet; }
+
+    /**
+     * <p> Contains a list of <a>EC2SecurityGroup</a> elements. </p>
+     */
     inline void SetEC2SecurityGroups(const Aws::Vector<EC2SecurityGroup>& value) { m_eC2SecurityGroupsHasBeenSet = true; m_eC2SecurityGroups = value; }
 
     /**
@@ -242,6 +267,11 @@ namespace Model
     /**
      * <p> Contains a list of <a>IPRange</a> elements. </p>
      */
+    inline bool IPRangesHasBeenSet() const { return m_iPRangesHasBeenSet; }
+
+    /**
+     * <p> Contains a list of <a>IPRange</a> elements. </p>
+     */
     inline void SetIPRanges(const Aws::Vector<IPRange>& value) { m_iPRangesHasBeenSet = true; m_iPRanges = value; }
 
     /**
@@ -274,6 +304,11 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) for the DB security group.</p>
      */
     inline const Aws::String& GetDBSecurityGroupArn() const{ return m_dBSecurityGroupArn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) for the DB security group.</p>
+     */
+    inline bool DBSecurityGroupArnHasBeenSet() const { return m_dBSecurityGroupArnHasBeenSet; }
 
     /**
      * <p>The Amazon Resource Name (ARN) for the DB security group.</p>

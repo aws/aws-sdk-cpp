@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p> Setting structure for the Subdomain. </p>
      */
+    inline bool SubDomainSettingHasBeenSet() const { return m_subDomainSettingHasBeenSet; }
+
+    /**
+     * <p> Setting structure for the Subdomain. </p>
+     */
     inline void SetSubDomainSetting(const SubDomainSetting& value) { m_subDomainSettingHasBeenSet = true; m_subDomainSetting = value; }
 
     /**
@@ -82,6 +87,11 @@ namespace Model
     /**
      * <p> Verified status of the Subdomain </p>
      */
+    inline bool VerifiedHasBeenSet() const { return m_verifiedHasBeenSet; }
+
+    /**
+     * <p> Verified status of the Subdomain </p>
+     */
     inline void SetVerified(bool value) { m_verifiedHasBeenSet = true; m_verified = value; }
 
     /**
@@ -94,6 +104,11 @@ namespace Model
      * <p> DNS record for the Subdomain. </p>
      */
     inline const Aws::String& GetDnsRecord() const{ return m_dnsRecord; }
+
+    /**
+     * <p> DNS record for the Subdomain. </p>
+     */
+    inline bool DnsRecordHasBeenSet() const { return m_dnsRecordHasBeenSet; }
 
     /**
      * <p> DNS record for the Subdomain. </p>

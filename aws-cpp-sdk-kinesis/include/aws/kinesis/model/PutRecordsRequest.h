@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The records associated with the request.</p>
      */
+    inline bool RecordsHasBeenSet() const { return m_recordsHasBeenSet; }
+
+    /**
+     * <p>The records associated with the request.</p>
+     */
     inline void SetRecords(const Aws::Vector<PutRecordsRequestEntry>& value) { m_recordsHasBeenSet = true; m_records = value; }
 
     /**
@@ -89,6 +94,11 @@ namespace Model
      * <p>The stream name associated with the request.</p>
      */
     inline const Aws::String& GetStreamName() const{ return m_streamName; }
+
+    /**
+     * <p>The stream name associated with the request.</p>
+     */
+    inline bool StreamNameHasBeenSet() const { return m_streamNameHasBeenSet; }
 
     /**
      * <p>The stream name associated with the request.</p>

@@ -60,6 +60,11 @@ namespace Model
     /**
      * <p>The name of the scaling plan.</p>
      */
+    inline bool ScalingPlanNameHasBeenSet() const { return m_scalingPlanNameHasBeenSet; }
+
+    /**
+     * <p>The name of the scaling plan.</p>
+     */
     inline void SetScalingPlanName(const Aws::String& value) { m_scalingPlanNameHasBeenSet = true; m_scalingPlanName = value; }
 
     /**
@@ -96,6 +101,11 @@ namespace Model
     /**
      * <p>The version number of the scaling plan.</p>
      */
+    inline bool ScalingPlanVersionHasBeenSet() const { return m_scalingPlanVersionHasBeenSet; }
+
+    /**
+     * <p>The version number of the scaling plan.</p>
+     */
     inline void SetScalingPlanVersion(long long value) { m_scalingPlanVersionHasBeenSet = true; m_scalingPlanVersion = value; }
 
     /**
@@ -108,6 +118,11 @@ namespace Model
      * <p>The application source.</p>
      */
     inline const ApplicationSource& GetApplicationSource() const{ return m_applicationSource; }
+
+    /**
+     * <p>The application source.</p>
+     */
+    inline bool ApplicationSourceHasBeenSet() const { return m_applicationSourceHasBeenSet; }
 
     /**
      * <p>The application source.</p>
@@ -134,6 +149,11 @@ namespace Model
      * <p>The scaling instructions.</p>
      */
     inline const Aws::Vector<ScalingInstruction>& GetScalingInstructions() const{ return m_scalingInstructions; }
+
+    /**
+     * <p>The scaling instructions.</p>
+     */
+    inline bool ScalingInstructionsHasBeenSet() const { return m_scalingInstructionsHasBeenSet; }
 
     /**
      * <p>The scaling instructions.</p>
@@ -180,6 +200,21 @@ namespace Model
      * could not be updated.</p> </li> </ul>
      */
     inline const ScalingPlanStatusCode& GetStatusCode() const{ return m_statusCode; }
+
+    /**
+     * <p>The status of the scaling plan.</p> <ul> <li> <p> <code>Active</code> - The
+     * scaling plan is active.</p> </li> <li> <p> <code>ActiveWithProblems</code> - The
+     * scaling plan is active, but the scaling configuration for one or more resources
+     * could not be applied.</p> </li> <li> <p> <code>CreationInProgress</code> - The
+     * scaling plan is being created.</p> </li> <li> <p> <code>CreationFailed</code> -
+     * The scaling plan could not be created.</p> </li> <li> <p>
+     * <code>DeletionInProgress</code> - The scaling plan is being deleted.</p> </li>
+     * <li> <p> <code>DeletionFailed</code> - The scaling plan could not be
+     * deleted.</p> </li> <li> <p> <code>UpdateInProgress</code> - The scaling plan is
+     * being updated.</p> </li> <li> <p> <code>UpdateFailed</code> - The scaling plan
+     * could not be updated.</p> </li> </ul>
+     */
+    inline bool StatusCodeHasBeenSet() const { return m_statusCodeHasBeenSet; }
 
     /**
      * <p>The status of the scaling plan.</p> <ul> <li> <p> <code>Active</code> - The
@@ -250,6 +285,11 @@ namespace Model
     /**
      * <p>A simple message about the current status of the scaling plan.</p>
      */
+    inline bool StatusMessageHasBeenSet() const { return m_statusMessageHasBeenSet; }
+
+    /**
+     * <p>A simple message about the current status of the scaling plan.</p>
+     */
     inline void SetStatusMessage(const Aws::String& value) { m_statusMessageHasBeenSet = true; m_statusMessage = value; }
 
     /**
@@ -286,6 +326,11 @@ namespace Model
     /**
      * <p>The Unix time stamp when the scaling plan entered the current status.</p>
      */
+    inline bool StatusStartTimeHasBeenSet() const { return m_statusStartTimeHasBeenSet; }
+
+    /**
+     * <p>The Unix time stamp when the scaling plan entered the current status.</p>
+     */
     inline void SetStatusStartTime(const Aws::Utils::DateTime& value) { m_statusStartTimeHasBeenSet = true; m_statusStartTime = value; }
 
     /**
@@ -308,6 +353,11 @@ namespace Model
      * <p>The Unix time stamp when the scaling plan was created.</p>
      */
     inline const Aws::Utils::DateTime& GetCreationTime() const{ return m_creationTime; }
+
+    /**
+     * <p>The Unix time stamp when the scaling plan was created.</p>
+     */
+    inline bool CreationTimeHasBeenSet() const { return m_creationTimeHasBeenSet; }
 
     /**
      * <p>The Unix time stamp when the scaling plan was created.</p>

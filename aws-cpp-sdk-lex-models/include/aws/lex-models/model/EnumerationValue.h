@@ -60,6 +60,11 @@ namespace Model
     /**
      * <p>The value of the slot type.</p>
      */
+    inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
+
+    /**
+     * <p>The value of the slot type.</p>
+     */
     inline void SetValue(const Aws::String& value) { m_valueHasBeenSet = true; m_value = value; }
 
     /**
@@ -92,6 +97,11 @@ namespace Model
      * <p>Additional values related to the slot type value.</p>
      */
     inline const Aws::Vector<Aws::String>& GetSynonyms() const{ return m_synonyms; }
+
+    /**
+     * <p>Additional values related to the slot type value.</p>
+     */
+    inline bool SynonymsHasBeenSet() const { return m_synonymsHasBeenSet; }
 
     /**
      * <p>Additional values related to the slot type value.</p>

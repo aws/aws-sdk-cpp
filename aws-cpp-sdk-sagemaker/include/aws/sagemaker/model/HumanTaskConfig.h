@@ -62,6 +62,12 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the work team assigned to complete the
      * tasks.</p>
      */
+    inline bool WorkteamArnHasBeenSet() const { return m_workteamArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the work team assigned to complete the
+     * tasks.</p>
+     */
     inline void SetWorkteamArn(const Aws::String& value) { m_workteamArnHasBeenSet = true; m_workteamArn = value; }
 
     /**
@@ -100,6 +106,12 @@ namespace Model
      * labeling task.</p>
      */
     inline const UiConfig& GetUiConfig() const{ return m_uiConfig; }
+
+    /**
+     * <p>Information about the user interface that workers use to complete the
+     * labeling task.</p>
+     */
+    inline bool UiConfigHasBeenSet() const { return m_uiConfigHasBeenSet; }
 
     /**
      * <p>Information about the user interface that workers use to complete the
@@ -176,6 +188,57 @@ namespace Model
      * </p> </li> </ul>
      */
     inline const Aws::String& GetPreHumanTaskLambdaArn() const{ return m_preHumanTaskLambdaArn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of a Lambda function that is run before a data
+     * object is sent to a human worker. Use this function to provide input to a custom
+     * labeling job.</p> <p>For the built-in bounding box, image classification,
+     * semantic segmentation, and text classification task types, Amazon SageMaker
+     * Ground Truth provides the following Lambda functions:</p> <p> <b>US East
+     * (Northern Virginia) (us-east-1):</b> </p> <ul> <li> <p>
+     * <code>arn:aws:lambda:us-east-1:432418664414:function:PRE-BoundingBox</code> </p>
+     * </li> <li> <p>
+     * <code>arn:aws:lambda:us-east-1:432418664414:function:PRE-ImageMultiClass</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:us-east-1:432418664414:function:PRE-SemanticSegmentation</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:us-east-1:432418664414:function:PRE-TextMultiClass</code>
+     * </p> </li> </ul> <p> <b>US East (Ohio) (us-east-2):</b> </p> <ul> <li> <p>
+     * <code>arn:aws:lambda:us-east-2:266458841044:function:PRE-BoundingBox</code> </p>
+     * </li> <li> <p>
+     * <code>arn:aws:lambda:us-east-2:266458841044:function:PRE-ImageMultiClass</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:us-east-2:266458841044:function:PRE-SemanticSegmentation</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:us-east-2:266458841044:function:PRE-TextMultiClass</code>
+     * </p> </li> </ul> <p> <b>US West (Oregon) (us-west-2):</b> </p> <ul> <li> <p>
+     * <code>arn:aws:lambda:us-west-2:081040173940:function:PRE-BoundingBox</code> </p>
+     * </li> <li> <p>
+     * <code>arn:aws:lambda:us-west-2:081040173940:function:PRE-ImageMultiClass</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:us-west-2:081040173940:function:PRE-SemanticSegmentation</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:us-west-2:081040173940:function:PRE-TextMultiClass</code>
+     * </p> </li> </ul> <p> <b>EU (Ireland) (eu-west-1):</b> </p> <ul> <li> <p>
+     * <code>arn:aws:lambda:eu-west-1:568282634449:function:PRE-BoundingBox</code> </p>
+     * </li> <li> <p>
+     * <code>arn:aws:lambda:eu-west-1:568282634449:function:PRE-ImageMultiClass</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:eu-west-1:568282634449:function:PRE-SemanticSegmentation</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:eu-west-1:568282634449:function:PRE-TextMultiClass</code>
+     * </p> </li> </ul> <p> <b>Asia Pacific (Tokyo (ap-northeast-1):</b> </p> <ul> <li>
+     * <p>
+     * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:PRE-BoundingBox</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:PRE-ImageMultiClass</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:PRE-SemanticSegmentation</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:PRE-TextMultiClass</code>
+     * </p> </li> </ul>
+     */
+    inline bool PreHumanTaskLambdaArnHasBeenSet() const { return m_preHumanTaskLambdaArnHasBeenSet; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of a Lambda function that is run before a data
@@ -494,6 +557,12 @@ namespace Model
      * <p>Keywords used to describe the task so that workers on Amazon Mechanical Turk
      * can discover the task.</p>
      */
+    inline bool TaskKeywordsHasBeenSet() const { return m_taskKeywordsHasBeenSet; }
+
+    /**
+     * <p>Keywords used to describe the task so that workers on Amazon Mechanical Turk
+     * can discover the task.</p>
+     */
     inline void SetTaskKeywords(const Aws::Vector<Aws::String>& value) { m_taskKeywordsHasBeenSet = true; m_taskKeywords = value; }
 
     /**
@@ -541,6 +610,11 @@ namespace Model
     /**
      * <p>A title for the task for your human workers.</p>
      */
+    inline bool TaskTitleHasBeenSet() const { return m_taskTitleHasBeenSet; }
+
+    /**
+     * <p>A title for the task for your human workers.</p>
+     */
     inline void SetTaskTitle(const Aws::String& value) { m_taskTitleHasBeenSet = true; m_taskTitle = value; }
 
     /**
@@ -573,6 +647,11 @@ namespace Model
      * <p>A description of the task for your human workers.</p>
      */
     inline const Aws::String& GetTaskDescription() const{ return m_taskDescription; }
+
+    /**
+     * <p>A description of the task for your human workers.</p>
+     */
+    inline bool TaskDescriptionHasBeenSet() const { return m_taskDescriptionHasBeenSet; }
 
     /**
      * <p>A description of the task for your human workers.</p>
@@ -613,6 +692,11 @@ namespace Model
     /**
      * <p>The number of human workers that will label an object. </p>
      */
+    inline bool NumberOfHumanWorkersPerDataObjectHasBeenSet() const { return m_numberOfHumanWorkersPerDataObjectHasBeenSet; }
+
+    /**
+     * <p>The number of human workers that will label an object. </p>
+     */
     inline void SetNumberOfHumanWorkersPerDataObject(int value) { m_numberOfHumanWorkersPerDataObjectHasBeenSet = true; m_numberOfHumanWorkersPerDataObject = value; }
 
     /**
@@ -625,6 +709,11 @@ namespace Model
      * <p>The amount of time that a worker has to complete a task.</p>
      */
     inline int GetTaskTimeLimitInSeconds() const{ return m_taskTimeLimitInSeconds; }
+
+    /**
+     * <p>The amount of time that a worker has to complete a task.</p>
+     */
+    inline bool TaskTimeLimitInSecondsHasBeenSet() const { return m_taskTimeLimitInSecondsHasBeenSet; }
 
     /**
      * <p>The amount of time that a worker has to complete a task.</p>
@@ -642,6 +731,12 @@ namespace Model
      * workers.</p>
      */
     inline int GetTaskAvailabilityLifetimeInSeconds() const{ return m_taskAvailabilityLifetimeInSeconds; }
+
+    /**
+     * <p>The length of time that a task remains available for labelling by human
+     * workers.</p>
+     */
+    inline bool TaskAvailabilityLifetimeInSecondsHasBeenSet() const { return m_taskAvailabilityLifetimeInSecondsHasBeenSet; }
 
     /**
      * <p>The length of time that a task remains available for labelling by human
@@ -668,6 +763,13 @@ namespace Model
      * workers at the same time. Each object may have more than one worker at one
      * time.</p>
      */
+    inline bool MaxConcurrentTaskCountHasBeenSet() const { return m_maxConcurrentTaskCountHasBeenSet; }
+
+    /**
+     * <p>Defines the maximum number of data objects that can be labeled by human
+     * workers at the same time. Each object may have more than one worker at one
+     * time.</p>
+     */
     inline void SetMaxConcurrentTaskCount(int value) { m_maxConcurrentTaskCountHasBeenSet = true; m_maxConcurrentTaskCount = value; }
 
     /**
@@ -682,6 +784,11 @@ namespace Model
      * <p>Configures how labels are consolidated across human workers.</p>
      */
     inline const AnnotationConsolidationConfig& GetAnnotationConsolidationConfig() const{ return m_annotationConsolidationConfig; }
+
+    /**
+     * <p>Configures how labels are consolidated across human workers.</p>
+     */
+    inline bool AnnotationConsolidationConfigHasBeenSet() const { return m_annotationConsolidationConfigHasBeenSet; }
 
     /**
      * <p>Configures how labels are consolidated across human workers.</p>
@@ -708,6 +815,11 @@ namespace Model
      * <p>The price that you pay for each task performed by a public worker.</p>
      */
     inline const PublicWorkforceTaskPrice& GetPublicWorkforceTaskPrice() const{ return m_publicWorkforceTaskPrice; }
+
+    /**
+     * <p>The price that you pay for each task performed by a public worker.</p>
+     */
+    inline bool PublicWorkforceTaskPriceHasBeenSet() const { return m_publicWorkforceTaskPriceHasBeenSet; }
 
     /**
      * <p>The price that you pay for each task performed by a public worker.</p>

@@ -54,6 +54,11 @@ namespace Model
     /**
      * <p>The ID of the file system whose tags you want to delete (String).</p>
      */
+    inline bool FileSystemIdHasBeenSet() const { return m_fileSystemIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the file system whose tags you want to delete (String).</p>
+     */
     inline void SetFileSystemId(const Aws::String& value) { m_fileSystemIdHasBeenSet = true; m_fileSystemId = value; }
 
     /**
@@ -86,6 +91,11 @@ namespace Model
      * <p>A list of tag keys to delete.</p>
      */
     inline const Aws::Vector<Aws::String>& GetTagKeys() const{ return m_tagKeys; }
+
+    /**
+     * <p>A list of tag keys to delete.</p>
+     */
+    inline bool TagKeysHasBeenSet() const { return m_tagKeysHasBeenSet; }
 
     /**
      * <p>A list of tag keys to delete.</p>

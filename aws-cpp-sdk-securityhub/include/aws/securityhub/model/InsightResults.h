@@ -60,6 +60,12 @@ namespace Model
      * <p>The ARN of the insight whose results are returned by the GetInsightResults
      * operation.</p>
      */
+    inline bool InsightArnHasBeenSet() const { return m_insightArnHasBeenSet; }
+
+    /**
+     * <p>The ARN of the insight whose results are returned by the GetInsightResults
+     * operation.</p>
+     */
     inline void SetInsightArn(const Aws::String& value) { m_insightArnHasBeenSet = true; m_insightArn = value; }
 
     /**
@@ -103,6 +109,12 @@ namespace Model
      * <p>The attribute by which the findings are grouped for the insight's whose
      * results are returned by the GetInsightResults operation.</p>
      */
+    inline bool GroupByAttributeHasBeenSet() const { return m_groupByAttributeHasBeenSet; }
+
+    /**
+     * <p>The attribute by which the findings are grouped for the insight's whose
+     * results are returned by the GetInsightResults operation.</p>
+     */
     inline void SetGroupByAttribute(const Aws::String& value) { m_groupByAttributeHasBeenSet = true; m_groupByAttribute = value; }
 
     /**
@@ -141,6 +153,12 @@ namespace Model
      * operation.</p>
      */
     inline const Aws::Vector<InsightResultValue>& GetResultValues() const{ return m_resultValues; }
+
+    /**
+     * <p>The list of insight result values returned by the GetInsightResults
+     * operation.</p>
+     */
+    inline bool ResultValuesHasBeenSet() const { return m_resultValuesHasBeenSet; }
 
     /**
      * <p>The list of insight result values returned by the GetInsightResults

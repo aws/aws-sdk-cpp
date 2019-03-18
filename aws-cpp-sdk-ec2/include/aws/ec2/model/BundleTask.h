@@ -61,6 +61,11 @@ namespace Model
     /**
      * <p>The ID of the bundle task.</p>
      */
+    inline bool BundleIdHasBeenSet() const { return m_bundleIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the bundle task.</p>
+     */
     inline void SetBundleId(const Aws::String& value) { m_bundleIdHasBeenSet = true; m_bundleId = value; }
 
     /**
@@ -97,6 +102,11 @@ namespace Model
     /**
      * <p>If the task fails, a description of the error.</p>
      */
+    inline bool BundleTaskErrorHasBeenSet() const { return m_bundleTaskErrorHasBeenSet; }
+
+    /**
+     * <p>If the task fails, a description of the error.</p>
+     */
     inline void SetBundleTaskError(const BundleTaskError& value) { m_bundleTaskErrorHasBeenSet = true; m_bundleTaskError = value; }
 
     /**
@@ -119,6 +129,11 @@ namespace Model
      * <p>The ID of the instance associated with this bundle task.</p>
      */
     inline const Aws::String& GetInstanceId() const{ return m_instanceId; }
+
+    /**
+     * <p>The ID of the instance associated with this bundle task.</p>
+     */
+    inline bool InstanceIdHasBeenSet() const { return m_instanceIdHasBeenSet; }
 
     /**
      * <p>The ID of the instance associated with this bundle task.</p>
@@ -159,6 +174,11 @@ namespace Model
     /**
      * <p>The level of task completion, as a percent (for example, 20%).</p>
      */
+    inline bool ProgressHasBeenSet() const { return m_progressHasBeenSet; }
+
+    /**
+     * <p>The level of task completion, as a percent (for example, 20%).</p>
+     */
     inline void SetProgress(const Aws::String& value) { m_progressHasBeenSet = true; m_progress = value; }
 
     /**
@@ -195,6 +215,11 @@ namespace Model
     /**
      * <p>The time this task started.</p>
      */
+    inline bool StartTimeHasBeenSet() const { return m_startTimeHasBeenSet; }
+
+    /**
+     * <p>The time this task started.</p>
+     */
     inline void SetStartTime(const Aws::Utils::DateTime& value) { m_startTimeHasBeenSet = true; m_startTime = value; }
 
     /**
@@ -217,6 +242,11 @@ namespace Model
      * <p>The state of the task.</p>
      */
     inline const BundleTaskState& GetState() const{ return m_state; }
+
+    /**
+     * <p>The state of the task.</p>
+     */
+    inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
 
     /**
      * <p>The state of the task.</p>
@@ -247,6 +277,11 @@ namespace Model
     /**
      * <p>The Amazon S3 storage locations.</p>
      */
+    inline bool StorageHasBeenSet() const { return m_storageHasBeenSet; }
+
+    /**
+     * <p>The Amazon S3 storage locations.</p>
+     */
     inline void SetStorage(const Storage& value) { m_storageHasBeenSet = true; m_storage = value; }
 
     /**
@@ -269,6 +304,11 @@ namespace Model
      * <p>The time of the most recent update for the task.</p>
      */
     inline const Aws::Utils::DateTime& GetUpdateTime() const{ return m_updateTime; }
+
+    /**
+     * <p>The time of the most recent update for the task.</p>
+     */
+    inline bool UpdateTimeHasBeenSet() const { return m_updateTimeHasBeenSet; }
 
     /**
      * <p>The time of the most recent update for the task.</p>

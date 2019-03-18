@@ -49,6 +49,9 @@ namespace Model
     inline const Aws::String& GetFilterPattern() const{ return m_filterPattern; }
 
     
+    inline bool FilterPatternHasBeenSet() const { return m_filterPatternHasBeenSet; }
+
+    
     inline void SetFilterPattern(const Aws::String& value) { m_filterPatternHasBeenSet = true; m_filterPattern = value; }
 
     
@@ -71,6 +74,11 @@ namespace Model
      * <p>The log event messages to test.</p>
      */
     inline const Aws::Vector<Aws::String>& GetLogEventMessages() const{ return m_logEventMessages; }
+
+    /**
+     * <p>The log event messages to test.</p>
+     */
+    inline bool LogEventMessagesHasBeenSet() const { return m_logEventMessagesHasBeenSet; }
 
     /**
      * <p>The log event messages to test.</p>

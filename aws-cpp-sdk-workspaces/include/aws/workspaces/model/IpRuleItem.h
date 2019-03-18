@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The IP address range, in CIDR notation.</p>
      */
+    inline bool IpRuleHasBeenSet() const { return m_ipRuleHasBeenSet; }
+
+    /**
+     * <p>The IP address range, in CIDR notation.</p>
+     */
     inline void SetIpRule(const Aws::String& value) { m_ipRuleHasBeenSet = true; m_ipRule = value; }
 
     /**
@@ -88,6 +93,11 @@ namespace Model
      * <p>The description.</p>
      */
     inline const Aws::String& GetRuleDesc() const{ return m_ruleDesc; }
+
+    /**
+     * <p>The description.</p>
+     */
+    inline bool RuleDescHasBeenSet() const { return m_ruleDescHasBeenSet; }
 
     /**
      * <p>The description.</p>

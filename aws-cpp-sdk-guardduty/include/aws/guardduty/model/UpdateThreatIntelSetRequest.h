@@ -55,6 +55,12 @@ namespace Model
      * The updated boolean value that specifies whether the ThreateIntelSet is active
      * or not.
      */
+    inline bool ActivateHasBeenSet() const { return m_activateHasBeenSet; }
+
+    /**
+     * The updated boolean value that specifies whether the ThreateIntelSet is active
+     * or not.
+     */
     inline void SetActivate(bool value) { m_activateHasBeenSet = true; m_activate = value; }
 
     /**
@@ -69,6 +75,12 @@ namespace Model
      * want to update.
      */
     inline const Aws::String& GetDetectorId() const{ return m_detectorId; }
+
+    /**
+     * The detectorID that specifies the GuardDuty service whose ThreatIntelSet you
+     * want to update.
+     */
+    inline bool DetectorIdHasBeenSet() const { return m_detectorIdHasBeenSet; }
 
     /**
      * The detectorID that specifies the GuardDuty service whose ThreatIntelSet you
@@ -117,6 +129,12 @@ namespace Model
      * The updated URI of the file that contains the ThreateIntelSet. For example
      * (https://s3.us-west-2.amazonaws.com/my-bucket/my-object-key)
      */
+    inline bool LocationHasBeenSet() const { return m_locationHasBeenSet; }
+
+    /**
+     * The updated URI of the file that contains the ThreateIntelSet. For example
+     * (https://s3.us-west-2.amazonaws.com/my-bucket/my-object-key)
+     */
     inline void SetLocation(const Aws::String& value) { m_locationHasBeenSet = true; m_location = value; }
 
     /**
@@ -158,6 +176,11 @@ namespace Model
     /**
      * The unique ID that specifies the ThreatIntelSet that you want to update.
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * The unique ID that specifies the ThreatIntelSet that you want to update.
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
@@ -190,6 +213,11 @@ namespace Model
      * The unique ID that specifies the ThreatIntelSet that you want to update.
      */
     inline const Aws::String& GetThreatIntelSetId() const{ return m_threatIntelSetId; }
+
+    /**
+     * The unique ID that specifies the ThreatIntelSet that you want to update.
+     */
+    inline bool ThreatIntelSetIdHasBeenSet() const { return m_threatIntelSetIdHasBeenSet; }
 
     /**
      * The unique ID that specifies the ThreatIntelSet that you want to update.

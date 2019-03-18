@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The friendly name of the smart home appliance.</p>
      */
+    inline bool FriendlyNameHasBeenSet() const { return m_friendlyNameHasBeenSet; }
+
+    /**
+     * <p>The friendly name of the smart home appliance.</p>
+     */
     inline void SetFriendlyName(const Aws::String& value) { m_friendlyNameHasBeenSet = true; m_friendlyName = value; }
 
     /**
@@ -92,6 +97,11 @@ namespace Model
     /**
      * <p>The description of the smart home appliance.</p>
      */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
+
+    /**
+     * <p>The description of the smart home appliance.</p>
+     */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
@@ -124,6 +134,11 @@ namespace Model
      * <p>The name of the manufacturer of the smart home appliance.</p>
      */
     inline const Aws::String& GetManufacturerName() const{ return m_manufacturerName; }
+
+    /**
+     * <p>The name of the manufacturer of the smart home appliance.</p>
+     */
+    inline bool ManufacturerNameHasBeenSet() const { return m_manufacturerNameHasBeenSet; }
 
     /**
      * <p>The name of the manufacturer of the smart home appliance.</p>

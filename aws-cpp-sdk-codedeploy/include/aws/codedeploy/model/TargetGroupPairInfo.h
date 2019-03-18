@@ -63,6 +63,13 @@ namespace Model
      * second is associated with the task set that serves traffic after the deployment
      * is complete. </p>
      */
+    inline bool TargetGroupsHasBeenSet() const { return m_targetGroupsHasBeenSet; }
+
+    /**
+     * <p> One pair of target groups. One is associated with the original task set. The
+     * second is associated with the task set that serves traffic after the deployment
+     * is complete. </p>
+     */
     inline void SetTargetGroups(const Aws::Vector<TargetGroupInfo>& value) { m_targetGroupsHasBeenSet = true; m_targetGroups = value; }
 
     /**
@@ -111,6 +118,12 @@ namespace Model
      * <p> The path used by a load balancer to route production traffic when an Amazon
      * ECS deployment is complete. </p>
      */
+    inline bool ProdTrafficRouteHasBeenSet() const { return m_prodTrafficRouteHasBeenSet; }
+
+    /**
+     * <p> The path used by a load balancer to route production traffic when an Amazon
+     * ECS deployment is complete. </p>
+     */
     inline void SetProdTrafficRoute(const TrafficRoute& value) { m_prodTrafficRouteHasBeenSet = true; m_prodTrafficRoute = value; }
 
     /**
@@ -138,6 +151,13 @@ namespace Model
      * a deployment. </p>
      */
     inline const TrafficRoute& GetTestTrafficRoute() const{ return m_testTrafficRoute; }
+
+    /**
+     * <p> An optional path used by a load balancer to route test traffic after an
+     * Amazon ECS deployment. Validation can occur while test traffic is served during
+     * a deployment. </p>
+     */
+    inline bool TestTrafficRouteHasBeenSet() const { return m_testTrafficRouteHasBeenSet; }
 
     /**
      * <p> An optional path used by a load balancer to route test traffic after an

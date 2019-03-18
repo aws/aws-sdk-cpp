@@ -61,6 +61,14 @@ namespace Model
      * <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i>
      * </code> </p>
      */
+    inline bool CertificateAuthorityArnHasBeenSet() const { return m_certificateAuthorityArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) that was returned when you called
+     * <a>CreateCertificateAuthority</a>. This must be of the form:</p> <p>
+     * <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i>
+     * </code> </p>
+     */
     inline void SetCertificateAuthorityArn(const Aws::String& value) { m_certificateAuthorityArnHasBeenSet = true; m_certificateAuthorityArn = value; }
 
     /**
@@ -128,6 +136,19 @@ namespace Model
      * -extensions usr_cert -newkey rsa:2048 -days -365 -keyout
      * private/test_cert_priv_key.pem -out csr/test_cert_.csr</code> </p>
      */
+    inline bool CsrHasBeenSet() const { return m_csrHasBeenSet; }
+
+    /**
+     * <p>The certificate signing request (CSR) for the certificate you want to issue.
+     * You can use the following OpenSSL command to create the CSR and a 2048 bit RSA
+     * private key. </p> <p> <code>openssl req -new -newkey rsa:2048 -days 365 -keyout
+     * private/test_cert_priv_key.pem -out csr/test_cert_.csr</code> </p> <p>If you
+     * have a configuration file, you can use the following OpenSSL command. The
+     * <code>usr_cert</code> block in the configuration file contains your X509 version
+     * 3 extensions. </p> <p> <code>openssl req -new -config openssl_rsa.cnf
+     * -extensions usr_cert -newkey rsa:2048 -days -365 -keyout
+     * private/test_cert_priv_key.pem -out csr/test_cert_.csr</code> </p>
+     */
     inline void SetCsr(const Aws::Utils::ByteBuffer& value) { m_csrHasBeenSet = true; m_csr = value; }
 
     /**
@@ -180,6 +201,12 @@ namespace Model
      * <p>The name of the algorithm that will be used to sign the certificate to be
      * issued.</p>
      */
+    inline bool SigningAlgorithmHasBeenSet() const { return m_signingAlgorithmHasBeenSet; }
+
+    /**
+     * <p>The name of the algorithm that will be used to sign the certificate to be
+     * issued.</p>
+     */
     inline void SetSigningAlgorithm(const SigningAlgorithm& value) { m_signingAlgorithmHasBeenSet = true; m_signingAlgorithm = value; }
 
     /**
@@ -205,6 +232,11 @@ namespace Model
      * <p>The type of the validity period.</p>
      */
     inline const Validity& GetValidity() const{ return m_validity; }
+
+    /**
+     * <p>The type of the validity period.</p>
+     */
+    inline bool ValidityHasBeenSet() const { return m_validityHasBeenSet; }
 
     /**
      * <p>The type of the validity period.</p>
@@ -237,6 +269,17 @@ namespace Model
      * certificates.</p>
      */
     inline const Aws::String& GetIdempotencyToken() const{ return m_idempotencyToken; }
+
+    /**
+     * <p>Custom string that can be used to distinguish between calls to the
+     * <b>IssueCertificate</b> operation. Idempotency tokens time out after one hour.
+     * Therefore, if you call <b>IssueCertificate</b> multiple times with the same
+     * idempotency token within 5 minutes, ACM PCA recognizes that you are requesting
+     * only one certificate and will issue only one. If you change the idempotency
+     * token for each call, PCA recognizes that you are requesting multiple
+     * certificates.</p>
+     */
+    inline bool IdempotencyTokenHasBeenSet() const { return m_idempotencyTokenHasBeenSet; }
 
     /**
      * <p>Custom string that can be used to distinguish between calls to the

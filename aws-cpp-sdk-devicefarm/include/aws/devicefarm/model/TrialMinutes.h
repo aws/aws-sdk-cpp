@@ -54,6 +54,11 @@ namespace Model
     /**
      * <p>The total number of free trial minutes that the account started with.</p>
      */
+    inline bool TotalHasBeenSet() const { return m_totalHasBeenSet; }
+
+    /**
+     * <p>The total number of free trial minutes that the account started with.</p>
+     */
     inline void SetTotal(double value) { m_totalHasBeenSet = true; m_total = value; }
 
     /**
@@ -66,6 +71,11 @@ namespace Model
      * <p>The number of free trial minutes remaining in the account.</p>
      */
     inline double GetRemaining() const{ return m_remaining; }
+
+    /**
+     * <p>The number of free trial minutes remaining in the account.</p>
+     */
+    inline bool RemainingHasBeenSet() const { return m_remainingHasBeenSet; }
 
     /**
      * <p>The number of free trial minutes remaining in the account.</p>

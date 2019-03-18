@@ -53,6 +53,11 @@ namespace Model
     /**
      * <p>Settings for logging access in this stage.</p>
      */
+    inline bool AccessLogSettingsHasBeenSet() const { return m_accessLogSettingsHasBeenSet; }
+
+    /**
+     * <p>Settings for logging access in this stage.</p>
+     */
     inline void SetAccessLogSettings(const AccessLogSettings& value) { m_accessLogSettingsHasBeenSet = true; m_accessLogSettings = value; }
 
     /**
@@ -75,6 +80,11 @@ namespace Model
      * <p>The API identifier.</p>
      */
     inline const Aws::String& GetApiId() const{ return m_apiId; }
+
+    /**
+     * <p>The API identifier.</p>
+     */
+    inline bool ApiIdHasBeenSet() const { return m_apiIdHasBeenSet; }
 
     /**
      * <p>The API identifier.</p>
@@ -115,6 +125,11 @@ namespace Model
     /**
      * <p>The identifier of a client certificate for a Stage.</p>
      */
+    inline bool ClientCertificateIdHasBeenSet() const { return m_clientCertificateIdHasBeenSet; }
+
+    /**
+     * <p>The identifier of a client certificate for a Stage.</p>
+     */
     inline void SetClientCertificateId(const Aws::String& value) { m_clientCertificateIdHasBeenSet = true; m_clientCertificateId = value; }
 
     /**
@@ -151,6 +166,11 @@ namespace Model
     /**
      * <p>The default route settings for the stage.</p>
      */
+    inline bool DefaultRouteSettingsHasBeenSet() const { return m_defaultRouteSettingsHasBeenSet; }
+
+    /**
+     * <p>The default route settings for the stage.</p>
+     */
     inline void SetDefaultRouteSettings(const RouteSettings& value) { m_defaultRouteSettingsHasBeenSet = true; m_defaultRouteSettings = value; }
 
     /**
@@ -173,6 +193,11 @@ namespace Model
      * <p>The deployment identifier of the API stage.</p>
      */
     inline const Aws::String& GetDeploymentId() const{ return m_deploymentId; }
+
+    /**
+     * <p>The deployment identifier of the API stage.</p>
+     */
+    inline bool DeploymentIdHasBeenSet() const { return m_deploymentIdHasBeenSet; }
 
     /**
      * <p>The deployment identifier of the API stage.</p>
@@ -213,6 +238,11 @@ namespace Model
     /**
      * <p>The description for the API stage.</p>
      */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
+
+    /**
+     * <p>The description for the API stage.</p>
+     */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
@@ -245,6 +275,11 @@ namespace Model
      * <p>Route settings for the stage.</p>
      */
     inline const Aws::Map<Aws::String, RouteSettings>& GetRouteSettings() const{ return m_routeSettings; }
+
+    /**
+     * <p>Route settings for the stage.</p>
+     */
+    inline bool RouteSettingsHasBeenSet() const { return m_routeSettingsHasBeenSet; }
 
     /**
      * <p>Route settings for the stage.</p>
@@ -305,6 +340,11 @@ namespace Model
     /**
      * <p>The name of the stage.</p>
      */
+    inline bool StageNameHasBeenSet() const { return m_stageNameHasBeenSet; }
+
+    /**
+     * <p>The name of the stage.</p>
+     */
     inline void SetStageName(const Aws::String& value) { m_stageNameHasBeenSet = true; m_stageName = value; }
 
     /**
@@ -341,6 +381,15 @@ namespace Model
      * [A-Za-z0-9-._~:/?#&=,]+.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetStageVariables() const{ return m_stageVariables; }
+
+    /**
+     * <p>A map that defines the stage variables for a Stage. Variable names
+ can have
+     * alphanumeric and underscore characters, and the values must match
+
+     * [A-Za-z0-9-._~:/?#&=,]+.</p>
+     */
+    inline bool StageVariablesHasBeenSet() const { return m_stageVariablesHasBeenSet; }
 
     /**
      * <p>A map that defines the stage variables for a Stage. Variable names

@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The name of the Auto Scaling group.</p>
      */
+    inline bool AutoScalingGroupNameHasBeenSet() const { return m_autoScalingGroupNameHasBeenSet; }
+
+    /**
+     * <p>The name of the Auto Scaling group.</p>
+     */
     inline void SetAutoScalingGroupName(const Aws::String& value) { m_autoScalingGroupNameHasBeenSet = true; m_autoScalingGroupName = value; }
 
     /**
@@ -89,6 +94,11 @@ namespace Model
      * <p>The name of the policy.</p>
      */
     inline const Aws::String& GetPolicyName() const{ return m_policyName; }
+
+    /**
+     * <p>The name of the policy.</p>
+     */
+    inline bool PolicyNameHasBeenSet() const { return m_policyNameHasBeenSet; }
 
     /**
      * <p>The name of the policy.</p>
@@ -127,6 +137,13 @@ namespace Model
      * type is null, the value is treated as <code>SimpleScaling</code>.</p>
      */
     inline const Aws::String& GetPolicyType() const{ return m_policyType; }
+
+    /**
+     * <p>The policy type. The valid values are <code>SimpleScaling</code>,
+     * <code>StepScaling</code>, and <code>TargetTrackingScaling</code>. If the policy
+     * type is null, the value is treated as <code>SimpleScaling</code>.</p>
+     */
+    inline bool PolicyTypeHasBeenSet() const { return m_policyTypeHasBeenSet; }
 
     /**
      * <p>The policy type. The valid values are <code>SimpleScaling</code>,
@@ -180,6 +197,16 @@ namespace Model
      * Scaling</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
      */
     inline const Aws::String& GetAdjustmentType() const{ return m_adjustmentType; }
+
+    /**
+     * <p>The adjustment type. The valid values are <code>ChangeInCapacity</code>,
+     * <code>ExactCapacity</code>, and <code>PercentChangeInCapacity</code>.</p>
+     * <p>This parameter is supported if the policy type is <code>SimpleScaling</code>
+     * or <code>StepScaling</code>.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-scale-based-on-demand.html">Dynamic
+     * Scaling</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+     */
+    inline bool AdjustmentTypeHasBeenSet() const { return m_adjustmentTypeHasBeenSet; }
 
     /**
      * <p>The adjustment type. The valid values are <code>ChangeInCapacity</code>,
@@ -252,6 +279,12 @@ namespace Model
      * <p>Available for backward compatibility. Use <code>MinAdjustmentMagnitude</code>
      * instead.</p>
      */
+    inline bool MinAdjustmentStepHasBeenSet() const { return m_minAdjustmentStepHasBeenSet; }
+
+    /**
+     * <p>Available for backward compatibility. Use <code>MinAdjustmentMagnitude</code>
+     * instead.</p>
+     */
     inline void SetMinAdjustmentStep(int value) { m_minAdjustmentStepHasBeenSet = true; m_minAdjustmentStep = value; }
 
     /**
@@ -270,6 +303,16 @@ namespace Model
      * type is <code>SimpleScaling</code> or <code>StepScaling</code>.</p>
      */
     inline int GetMinAdjustmentMagnitude() const{ return m_minAdjustmentMagnitude; }
+
+    /**
+     * <p>The minimum number of instances to scale. If the value of
+     * <code>AdjustmentType</code> is <code>PercentChangeInCapacity</code>, the scaling
+     * policy changes the <code>DesiredCapacity</code> of the Auto Scaling group by at
+     * least this many instances. Otherwise, the error is
+     * <code>ValidationError</code>.</p> <p>This parameter is supported if the policy
+     * type is <code>SimpleScaling</code> or <code>StepScaling</code>.</p>
+     */
+    inline bool MinAdjustmentMagnitudeHasBeenSet() const { return m_minAdjustmentMagnitudeHasBeenSet; }
 
     /**
      * <p>The minimum number of instances to scale. If the value of
@@ -299,6 +342,14 @@ namespace Model
      * policy type is <code>SimpleScaling</code> and not supported otherwise.</p>
      */
     inline int GetScalingAdjustment() const{ return m_scalingAdjustment; }
+
+    /**
+     * <p>The amount by which to scale, based on the specified adjustment type. A
+     * positive value adds to the current capacity while a negative number removes from
+     * the current capacity.</p> <p>Conditional: This parameter is required if the
+     * policy type is <code>SimpleScaling</code> and not supported otherwise.</p>
+     */
+    inline bool ScalingAdjustmentHasBeenSet() const { return m_scalingAdjustmentHasBeenSet; }
 
     /**
      * <p>The amount by which to scale, based on the specified adjustment type. A
@@ -337,6 +388,17 @@ namespace Model
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/Cooldown.html">Scaling
      * Cooldowns</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
      */
+    inline bool CooldownHasBeenSet() const { return m_cooldownHasBeenSet; }
+
+    /**
+     * <p>The amount of time, in seconds, after a scaling activity completes and before
+     * the next scaling activity can start. If this parameter is not specified, the
+     * default cooldown period for the group applies.</p> <p>This parameter is
+     * supported if the policy type is <code>SimpleScaling</code>.</p> <p>For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/Cooldown.html">Scaling
+     * Cooldowns</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+     */
     inline void SetCooldown(int value) { m_cooldownHasBeenSet = true; m_cooldown = value; }
 
     /**
@@ -359,6 +421,15 @@ namespace Model
      * <code>StepScaling</code>.</p>
      */
     inline const Aws::String& GetMetricAggregationType() const{ return m_metricAggregationType; }
+
+    /**
+     * <p>The aggregation type for the CloudWatch metrics. The valid values are
+     * <code>Minimum</code>, <code>Maximum</code>, and <code>Average</code>. If the
+     * aggregation type is null, the value is treated as <code>Average</code>.</p>
+     * <p>This parameter is supported if the policy type is
+     * <code>StepScaling</code>.</p>
+     */
+    inline bool MetricAggregationTypeHasBeenSet() const { return m_metricAggregationTypeHasBeenSet; }
 
     /**
      * <p>The aggregation type for the CloudWatch metrics. The valid values are
@@ -427,6 +498,13 @@ namespace Model
      * breach.</p> <p>Conditional: This parameter is required if the policy type is
      * <code>StepScaling</code> and not supported otherwise.</p>
      */
+    inline bool StepAdjustmentsHasBeenSet() const { return m_stepAdjustmentsHasBeenSet; }
+
+    /**
+     * <p>A set of adjustments that enable you to scale based on the size of the alarm
+     * breach.</p> <p>Conditional: This parameter is required if the policy type is
+     * <code>StepScaling</code> and not supported otherwise.</p>
+     */
     inline void SetStepAdjustments(const Aws::Vector<StepAdjustment>& value) { m_stepAdjustmentsHasBeenSet = true; m_stepAdjustments = value; }
 
     /**
@@ -481,6 +559,15 @@ namespace Model
      * supported if the policy type is <code>StepScaling</code> or
      * <code>TargetTrackingScaling</code>.</p>
      */
+    inline bool EstimatedInstanceWarmupHasBeenSet() const { return m_estimatedInstanceWarmupHasBeenSet; }
+
+    /**
+     * <p>The estimated time, in seconds, until a newly launched instance can
+     * contribute to the CloudWatch metrics. The default is to use the value specified
+     * for the default cooldown period for the group.</p> <p>This parameter is
+     * supported if the policy type is <code>StepScaling</code> or
+     * <code>TargetTrackingScaling</code>.</p>
+     */
     inline void SetEstimatedInstanceWarmup(int value) { m_estimatedInstanceWarmupHasBeenSet = true; m_estimatedInstanceWarmup = value; }
 
     /**
@@ -499,6 +586,13 @@ namespace Model
      * type is <code>TargetTrackingScaling</code> and not supported otherwise.</p>
      */
     inline const TargetTrackingConfiguration& GetTargetTrackingConfiguration() const{ return m_targetTrackingConfiguration; }
+
+    /**
+     * <p>A target tracking scaling policy. Includes support for predefined or
+     * customized metrics.</p> <p>Conditional: This parameter is required if the policy
+     * type is <code>TargetTrackingScaling</code> and not supported otherwise.</p>
+     */
+    inline bool TargetTrackingConfigurationHasBeenSet() const { return m_targetTrackingConfigurationHasBeenSet; }
 
     /**
      * <p>A target tracking scaling policy. Includes support for predefined or

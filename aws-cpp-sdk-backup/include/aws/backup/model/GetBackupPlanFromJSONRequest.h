@@ -50,6 +50,11 @@ namespace Model
     /**
      * <p>A customer-supplied backup plan document in JSON format.</p>
      */
+    inline bool BackupPlanTemplateJsonHasBeenSet() const { return m_backupPlanTemplateJsonHasBeenSet; }
+
+    /**
+     * <p>A customer-supplied backup plan document in JSON format.</p>
+     */
     inline void SetBackupPlanTemplateJson(const Aws::String& value) { m_backupPlanTemplateJsonHasBeenSet = true; m_backupPlanTemplateJson = value; }
 
     /**

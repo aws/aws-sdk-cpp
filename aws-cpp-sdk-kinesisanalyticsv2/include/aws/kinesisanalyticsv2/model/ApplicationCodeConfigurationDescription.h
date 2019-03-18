@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>Specifies whether the code content is in text or zip format.</p>
      */
+    inline bool CodeContentTypeHasBeenSet() const { return m_codeContentTypeHasBeenSet; }
+
+    /**
+     * <p>Specifies whether the code content is in text or zip format.</p>
+     */
     inline void SetCodeContentType(const CodeContentType& value) { m_codeContentTypeHasBeenSet = true; m_codeContentType = value; }
 
     /**
@@ -79,6 +84,11 @@ namespace Model
      * <p>Describes details about the location and format of the application code.</p>
      */
     inline const CodeContentDescription& GetCodeContentDescription() const{ return m_codeContentDescription; }
+
+    /**
+     * <p>Describes details about the location and format of the application code.</p>
+     */
+    inline bool CodeContentDescriptionHasBeenSet() const { return m_codeContentDescriptionHasBeenSet; }
 
     /**
      * <p>Describes details about the location and format of the application code.</p>

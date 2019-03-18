@@ -55,6 +55,11 @@ namespace Model
     /**
      * The ARN of the certificate associated with the device.
      */
+    inline bool CertificateArnHasBeenSet() const { return m_certificateArnHasBeenSet; }
+
+    /**
+     * The ARN of the certificate associated with the device.
+     */
     inline void SetCertificateArn(const Aws::String& value) { m_certificateArnHasBeenSet = true; m_certificateArn = value; }
 
     /**
@@ -89,6 +94,13 @@ namespace Model
      * ''[a-zA-Z0-9:_-]+''.
      */
     inline const Aws::String& GetId() const{ return m_id; }
+
+    /**
+     * A descriptive or arbitrary ID for the device. This value must be unique within
+     * the device definition version. Max length is 128 characters with pattern
+     * ''[a-zA-Z0-9:_-]+''.
+     */
+    inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
 
     /**
      * A descriptive or arbitrary ID for the device. This value must be unique within
@@ -141,6 +153,11 @@ namespace Model
     /**
      * If true, the device's local shadow will be automatically synced with the cloud.
      */
+    inline bool SyncShadowHasBeenSet() const { return m_syncShadowHasBeenSet; }
+
+    /**
+     * If true, the device's local shadow will be automatically synced with the cloud.
+     */
     inline void SetSyncShadow(bool value) { m_syncShadowHasBeenSet = true; m_syncShadow = value; }
 
     /**
@@ -153,6 +170,11 @@ namespace Model
      * The thing ARN of the device.
      */
     inline const Aws::String& GetThingArn() const{ return m_thingArn; }
+
+    /**
+     * The thing ARN of the device.
+     */
+    inline bool ThingArnHasBeenSet() const { return m_thingArnHasBeenSet; }
 
     /**
      * The thing ARN of the device.

@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The field on which to order.</p>
      */
+    inline bool FieldNameHasBeenSet() const { return m_fieldNameHasBeenSet; }
+
+    /**
+     * <p>The field on which to order.</p>
+     */
     inline void SetFieldName(const Aws::String& value) { m_fieldNameHasBeenSet = true; m_fieldName = value; }
 
     /**
@@ -88,6 +93,11 @@ namespace Model
      * <p>Ordering direction.</p>
      */
     inline const OrderString& GetSortOrder() const{ return m_sortOrder; }
+
+    /**
+     * <p>Ordering direction.</p>
+     */
+    inline bool SortOrderHasBeenSet() const { return m_sortOrderHasBeenSet; }
 
     /**
      * <p>Ordering direction.</p>

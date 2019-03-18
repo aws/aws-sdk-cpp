@@ -52,6 +52,11 @@ namespace Model
     /**
      * <p>The user pool ID.</p>
      */
+    inline bool UserPoolIdHasBeenSet() const { return m_userPoolIdHasBeenSet; }
+
+    /**
+     * <p>The user pool ID.</p>
+     */
     inline void SetUserPoolId(const Aws::String& value) { m_userPoolIdHasBeenSet = true; m_userPoolId = value; }
 
     /**
@@ -84,6 +89,11 @@ namespace Model
      * <p>The identity provider ID.</p>
      */
     inline const Aws::String& GetIdpIdentifier() const{ return m_idpIdentifier; }
+
+    /**
+     * <p>The identity provider ID.</p>
+     */
+    inline bool IdpIdentifierHasBeenSet() const { return m_idpIdentifierHasBeenSet; }
 
     /**
      * <p>The identity provider ID.</p>

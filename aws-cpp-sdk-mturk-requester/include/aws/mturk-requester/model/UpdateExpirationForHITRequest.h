@@ -53,6 +53,11 @@ namespace Model
     /**
      * <p> The HIT to update. </p>
      */
+    inline bool HITIdHasBeenSet() const { return m_hITIdHasBeenSet; }
+
+    /**
+     * <p> The HIT to update. </p>
+     */
     inline void SetHITId(const Aws::String& value) { m_hITIdHasBeenSet = true; m_hITId = value; }
 
     /**
@@ -85,6 +90,11 @@ namespace Model
      * <p> The date and time at which you want the HIT to expire </p>
      */
     inline const Aws::Utils::DateTime& GetExpireAt() const{ return m_expireAt; }
+
+    /**
+     * <p> The date and time at which you want the HIT to expire </p>
+     */
+    inline bool ExpireAtHasBeenSet() const { return m_expireAtHasBeenSet; }
 
     /**
      * <p> The date and time at which you want the HIT to expire </p>

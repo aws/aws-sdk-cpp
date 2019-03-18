@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p>The job ARN.</p>
      */
+    inline bool JobArnHasBeenSet() const { return m_jobArnHasBeenSet; }
+
+    /**
+     * <p>The job ARN.</p>
+     */
     inline void SetJobArn(const Aws::String& value) { m_jobArnHasBeenSet = true; m_jobArn = value; }
 
     /**
@@ -94,6 +99,11 @@ namespace Model
     /**
      * <p>The unique identifier you assigned to this job when it was created.</p>
      */
+    inline bool JobIdHasBeenSet() const { return m_jobIdHasBeenSet; }
+
+    /**
+     * <p>The unique identifier you assigned to this job when it was created.</p>
+     */
     inline void SetJobId(const Aws::String& value) { m_jobIdHasBeenSet = true; m_jobId = value; }
 
     /**
@@ -126,6 +136,11 @@ namespace Model
      * <p>The ID of the thing group.</p>
      */
     inline const Aws::String& GetThingGroupId() const{ return m_thingGroupId; }
+
+    /**
+     * <p>The ID of the thing group.</p>
+     */
+    inline bool ThingGroupIdHasBeenSet() const { return m_thingGroupIdHasBeenSet; }
 
     /**
      * <p>The ID of the thing group.</p>
@@ -176,6 +191,16 @@ namespace Model
      * added to a target group, even after the job was completed by all things
      * originally in the group.</p>
      */
+    inline bool TargetSelectionHasBeenSet() const { return m_targetSelectionHasBeenSet; }
+
+    /**
+     * <p>Specifies whether the job will continue to run (CONTINUOUS), or will be
+     * complete after all those things specified as targets have completed the job
+     * (SNAPSHOT). If continuous, the job may also be run on a thing when a change is
+     * detected in a target. For example, a job will run on a thing when the thing is
+     * added to a target group, even after the job was completed by all things
+     * originally in the group.</p>
+     */
     inline void SetTargetSelection(const TargetSelection& value) { m_targetSelectionHasBeenSet = true; m_targetSelection = value; }
 
     /**
@@ -217,6 +242,11 @@ namespace Model
     /**
      * <p>The job summary status.</p>
      */
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
+
+    /**
+     * <p>The job summary status.</p>
+     */
     inline void SetStatus(const JobStatus& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
@@ -239,6 +269,11 @@ namespace Model
      * <p>The time, in seconds since the epoch, when the job was created.</p>
      */
     inline const Aws::Utils::DateTime& GetCreatedAt() const{ return m_createdAt; }
+
+    /**
+     * <p>The time, in seconds since the epoch, when the job was created.</p>
+     */
+    inline bool CreatedAtHasBeenSet() const { return m_createdAtHasBeenSet; }
 
     /**
      * <p>The time, in seconds since the epoch, when the job was created.</p>
@@ -269,6 +304,11 @@ namespace Model
     /**
      * <p>The time, in seconds since the epoch, when the job was last updated.</p>
      */
+    inline bool LastUpdatedAtHasBeenSet() const { return m_lastUpdatedAtHasBeenSet; }
+
+    /**
+     * <p>The time, in seconds since the epoch, when the job was last updated.</p>
+     */
     inline void SetLastUpdatedAt(const Aws::Utils::DateTime& value) { m_lastUpdatedAtHasBeenSet = true; m_lastUpdatedAt = value; }
 
     /**
@@ -291,6 +331,11 @@ namespace Model
      * <p>The time, in seconds since the epoch, when the job completed.</p>
      */
     inline const Aws::Utils::DateTime& GetCompletedAt() const{ return m_completedAt; }
+
+    /**
+     * <p>The time, in seconds since the epoch, when the job completed.</p>
+     */
+    inline bool CompletedAtHasBeenSet() const { return m_completedAtHasBeenSet; }
 
     /**
      * <p>The time, in seconds since the epoch, when the job completed.</p>

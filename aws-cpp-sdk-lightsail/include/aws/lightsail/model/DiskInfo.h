@@ -55,6 +55,11 @@ namespace Model
     /**
      * <p>The disk name.</p>
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>The disk name.</p>
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
@@ -87,6 +92,11 @@ namespace Model
      * <p>The disk path.</p>
      */
     inline const Aws::String& GetPath() const{ return m_path; }
+
+    /**
+     * <p>The disk path.</p>
+     */
+    inline bool PathHasBeenSet() const { return m_pathHasBeenSet; }
 
     /**
      * <p>The disk path.</p>
@@ -127,6 +137,11 @@ namespace Model
     /**
      * <p>The size of the disk in GB (e.g., <code>32</code>).</p>
      */
+    inline bool SizeInGbHasBeenSet() const { return m_sizeInGbHasBeenSet; }
+
+    /**
+     * <p>The size of the disk in GB (e.g., <code>32</code>).</p>
+     */
     inline void SetSizeInGb(int value) { m_sizeInGbHasBeenSet = true; m_sizeInGb = value; }
 
     /**
@@ -140,6 +155,12 @@ namespace Model
      * operating system loaded on it).</p>
      */
     inline bool GetIsSystemDisk() const{ return m_isSystemDisk; }
+
+    /**
+     * <p>A Boolean value indicating whether this disk is a system disk (has an
+     * operating system loaded on it).</p>
+     */
+    inline bool IsSystemDiskHasBeenSet() const { return m_isSystemDiskHasBeenSet; }
 
     /**
      * <p>A Boolean value indicating whether this disk is a system disk (has an

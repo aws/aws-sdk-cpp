@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The identifier used to represent an analytics configuration.</p>
      */
+    inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
+
+    /**
+     * <p>The identifier used to represent an analytics configuration.</p>
+     */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
     /**
@@ -97,6 +102,13 @@ namespace Model
      * exactly one prefix, one tag, or one conjunction (AnalyticsAndOperator). If no
      * filter is provided, all objects will be considered in any analysis.</p>
      */
+    inline bool FilterHasBeenSet() const { return m_filterHasBeenSet; }
+
+    /**
+     * <p>The filter used to describe a set of objects for analyses. A filter must have
+     * exactly one prefix, one tag, or one conjunction (AnalyticsAndOperator). If no
+     * filter is provided, all objects will be considered in any analysis.</p>
+     */
     inline void SetFilter(const AnalyticsFilter& value) { m_filterHasBeenSet = true; m_filter = value; }
 
     /**
@@ -127,6 +139,13 @@ namespace Model
      * classes.</p>
      */
     inline const StorageClassAnalysis& GetStorageClassAnalysis() const{ return m_storageClassAnalysis; }
+
+    /**
+     * <p>If present, it indicates that data related to access patterns will be
+     * collected and made available to analyze the tradeoffs between different storage
+     * classes.</p>
+     */
+    inline bool StorageClassAnalysisHasBeenSet() const { return m_storageClassAnalysisHasBeenSet; }
 
     /**
      * <p>If present, it indicates that data related to access patterns will be

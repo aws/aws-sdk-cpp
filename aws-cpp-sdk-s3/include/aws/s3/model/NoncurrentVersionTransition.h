@@ -71,6 +71,16 @@ namespace Model
      * Amazon S3 Calculates When an Object Became Noncurrent</a> in the Amazon Simple
      * Storage Service Developer Guide.</p>
      */
+    inline bool NoncurrentDaysHasBeenSet() const { return m_noncurrentDaysHasBeenSet; }
+
+    /**
+     * <p>Specifies the number of days an object is noncurrent before Amazon S3 can
+     * perform the associated action. For information about the noncurrent days
+     * calculations, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-access-control.html">How
+     * Amazon S3 Calculates When an Object Became Noncurrent</a> in the Amazon Simple
+     * Storage Service Developer Guide.</p>
+     */
     inline void SetNoncurrentDays(int value) { m_noncurrentDaysHasBeenSet = true; m_noncurrentDays = value; }
 
     /**
@@ -88,6 +98,11 @@ namespace Model
      * <p>The class of storage used to store the object.</p>
      */
     inline const TransitionStorageClass& GetStorageClass() const{ return m_storageClass; }
+
+    /**
+     * <p>The class of storage used to store the object.</p>
+     */
+    inline bool StorageClassHasBeenSet() const { return m_storageClassHasBeenSet; }
 
     /**
      * <p>The class of storage used to store the object.</p>

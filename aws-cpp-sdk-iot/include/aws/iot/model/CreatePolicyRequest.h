@@ -53,6 +53,11 @@ namespace Model
     /**
      * <p>The policy name.</p>
      */
+    inline bool PolicyNameHasBeenSet() const { return m_policyNameHasBeenSet; }
+
+    /**
+     * <p>The policy name.</p>
+     */
     inline void SetPolicyName(const Aws::String& value) { m_policyNameHasBeenSet = true; m_policyName = value; }
 
     /**
@@ -86,6 +91,12 @@ namespace Model
      * a minimum length of 1, with a maximum length of 2048, excluding whitespace.</p>
      */
     inline const Aws::String& GetPolicyDocument() const{ return m_policyDocument; }
+
+    /**
+     * <p>The JSON document that describes the policy. <b>policyDocument</b> must have
+     * a minimum length of 1, with a maximum length of 2048, excluding whitespace.</p>
+     */
+    inline bool PolicyDocumentHasBeenSet() const { return m_policyDocumentHasBeenSet; }
 
     /**
      * <p>The JSON document that describes the policy. <b>policyDocument</b> must have

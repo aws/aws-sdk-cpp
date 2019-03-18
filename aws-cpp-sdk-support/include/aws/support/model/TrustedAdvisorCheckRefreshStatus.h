@@ -55,6 +55,11 @@ namespace Model
     /**
      * <p>The unique identifier for the Trusted Advisor check.</p>
      */
+    inline bool CheckIdHasBeenSet() const { return m_checkIdHasBeenSet; }
+
+    /**
+     * <p>The unique identifier for the Trusted Advisor check.</p>
+     */
     inline void SetCheckId(const Aws::String& value) { m_checkIdHasBeenSet = true; m_checkId = value; }
 
     /**
@@ -88,6 +93,12 @@ namespace Model
      * requested: "none", "enqueued", "processing", "success", or "abandoned".</p>
      */
     inline const Aws::String& GetStatus() const{ return m_status; }
+
+    /**
+     * <p>The status of the Trusted Advisor check for which a refresh has been
+     * requested: "none", "enqueued", "processing", "success", or "abandoned".</p>
+     */
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
     /**
      * <p>The status of the Trusted Advisor check for which a refresh has been
@@ -131,6 +142,12 @@ namespace Model
      * eligible for refresh.</p>
      */
     inline long long GetMillisUntilNextRefreshable() const{ return m_millisUntilNextRefreshable; }
+
+    /**
+     * <p>The amount of time, in milliseconds, until the Trusted Advisor check is
+     * eligible for refresh.</p>
+     */
+    inline bool MillisUntilNextRefreshableHasBeenSet() const { return m_millisUntilNextRefreshableHasBeenSet; }
 
     /**
      * <p>The amount of time, in milliseconds, until the Trusted Advisor check is

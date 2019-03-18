@@ -72,6 +72,13 @@ namespace Model
      * multiple audio selector groups. See "Audio Selector
      * Group":#inputs-audio_selector_group for more information.
      */
+    inline bool AudioSelectorGroupsHasBeenSet() const { return m_audioSelectorGroupsHasBeenSet; }
+
+    /**
+     * Specifies set of audio selectors within an input to combine. An input may have
+     * multiple audio selector groups. See "Audio Selector
+     * Group":#inputs-audio_selector_group for more information.
+     */
     inline void SetAudioSelectorGroups(const Aws::Map<Aws::String, AudioSelectorGroup>& value) { m_audioSelectorGroupsHasBeenSet = true; m_audioSelectorGroups = value; }
 
     /**
@@ -144,6 +151,13 @@ namespace Model
      * per input.
      */
     inline const Aws::Map<Aws::String, AudioSelector>& GetAudioSelectors() const{ return m_audioSelectors; }
+
+    /**
+     * Use Audio selectors (AudioSelectors) to specify a track or set of tracks from
+     * the input that you will use in your outputs. You can use mutiple Audio selectors
+     * per input.
+     */
+    inline bool AudioSelectorsHasBeenSet() const { return m_audioSelectorsHasBeenSet; }
 
     /**
      * Use Audio selectors (AudioSelectors) to specify a track or set of tracks from
@@ -228,6 +242,13 @@ namespace Model
      * input that you will use in your outputs. You can use mutiple captions selectors
      * per input.
      */
+    inline bool CaptionSelectorsHasBeenSet() const { return m_captionSelectorsHasBeenSet; }
+
+    /**
+     * Use Captions selectors (CaptionSelectors) to specify the captions data from the
+     * input that you will use in your outputs. You can use mutiple captions selectors
+     * per input.
+     */
     inline void SetCaptionSelectors(const Aws::Map<Aws::String, CaptionSelector>& value) { m_captionSelectorsHasBeenSet = true; m_captionSelectors = value; }
 
     /**
@@ -298,6 +319,9 @@ namespace Model
     inline const InputDeblockFilter& GetDeblockFilter() const{ return m_deblockFilter; }
 
     
+    inline bool DeblockFilterHasBeenSet() const { return m_deblockFilterHasBeenSet; }
+
+    
     inline void SetDeblockFilter(const InputDeblockFilter& value) { m_deblockFilterHasBeenSet = true; m_deblockFilter = value; }
 
     
@@ -314,6 +338,9 @@ namespace Model
     inline const InputDenoiseFilter& GetDenoiseFilter() const{ return m_denoiseFilter; }
 
     
+    inline bool DenoiseFilterHasBeenSet() const { return m_denoiseFilterHasBeenSet; }
+
+    
     inline void SetDenoiseFilter(const InputDenoiseFilter& value) { m_denoiseFilterHasBeenSet = true; m_denoiseFilter = value; }
 
     
@@ -328,6 +355,9 @@ namespace Model
 
     
     inline const InputFilterEnable& GetFilterEnable() const{ return m_filterEnable; }
+
+    
+    inline bool FilterEnableHasBeenSet() const { return m_filterEnableHasBeenSet; }
 
     
     inline void SetFilterEnable(const InputFilterEnable& value) { m_filterEnableHasBeenSet = true; m_filterEnable = value; }
@@ -352,6 +382,12 @@ namespace Model
      * Use Filter strength (FilterStrength) to adjust the magnitude the input filter
      * settings (Deblock and Denoise). The range is -5 to 5. Default is 0.
      */
+    inline bool FilterStrengthHasBeenSet() const { return m_filterStrengthHasBeenSet; }
+
+    /**
+     * Use Filter strength (FilterStrength) to adjust the magnitude the input filter
+     * settings (Deblock and Denoise). The range is -5 to 5. Default is 0.
+     */
     inline void SetFilterStrength(int value) { m_filterStrengthHasBeenSet = true; m_filterStrength = value; }
 
     /**
@@ -367,6 +403,13 @@ namespace Model
      * disabled by default.
      */
     inline const ImageInserter& GetImageInserter() const{ return m_imageInserter; }
+
+    /**
+     * Enable the image inserter feature to include a graphic overlay on your video.
+     * Enable or disable this feature for each input individually. This setting is
+     * disabled by default.
+     */
+    inline bool ImageInserterHasBeenSet() const { return m_imageInserterHasBeenSet; }
 
     /**
      * Enable the image inserter feature to include a graphic overlay on your video.
@@ -406,6 +449,16 @@ namespace Model
      * outputs by stringing the clips together in the order you specify them.
      */
     inline const Aws::Vector<InputClipping>& GetInputClippings() const{ return m_inputClippings; }
+
+    /**
+     * (InputClippings) contains sets of start and end times that together specify a
+     * portion of the input to be used in the outputs. If you provide only a start
+     * time, the clip will be the entire input from that point to the end. If you
+     * provide only an end time, it will be the entire input up to that point. When you
+     * specify more than one input clip, the transcoding service creates the job
+     * outputs by stringing the clips together in the order you specify them.
+     */
+    inline bool InputClippingsHasBeenSet() const { return m_inputClippingsHasBeenSet; }
 
     /**
      * (InputClippings) contains sets of start and end times that together specify a
@@ -482,6 +535,14 @@ namespace Model
      * Default is the first program within the transport stream. If the program you
      * specify doesn't exist, the transcoding service will use this default.
      */
+    inline bool ProgramNumberHasBeenSet() const { return m_programNumberHasBeenSet; }
+
+    /**
+     * Use Program (programNumber) to select a specific program from within a
+     * multi-program transport stream. Note that Quad 4K is not currently supported.
+     * Default is the first program within the transport stream. If the program you
+     * specify doesn't exist, the transcoding service will use this default.
+     */
     inline void SetProgramNumber(int value) { m_programNumberHasBeenSet = true; m_programNumber = value; }
 
     /**
@@ -495,6 +556,9 @@ namespace Model
 
     
     inline const InputPsiControl& GetPsiControl() const{ return m_psiControl; }
+
+    
+    inline bool PsiControlHasBeenSet() const { return m_psiControlHasBeenSet; }
 
     
     inline void SetPsiControl(const InputPsiControl& value) { m_psiControlHasBeenSet = true; m_psiControl = value; }
@@ -513,6 +577,9 @@ namespace Model
     inline const InputTimecodeSource& GetTimecodeSource() const{ return m_timecodeSource; }
 
     
+    inline bool TimecodeSourceHasBeenSet() const { return m_timecodeSourceHasBeenSet; }
+
+    
     inline void SetTimecodeSource(const InputTimecodeSource& value) { m_timecodeSourceHasBeenSet = true; m_timecodeSource = value; }
 
     
@@ -527,6 +594,9 @@ namespace Model
 
     
     inline const VideoSelector& GetVideoSelector() const{ return m_videoSelector; }
+
+    
+    inline bool VideoSelectorHasBeenSet() const { return m_videoSelectorHasBeenSet; }
 
     
     inline void SetVideoSelector(const VideoSelector& value) { m_videoSelectorHasBeenSet = true; m_videoSelector = value; }

@@ -57,6 +57,12 @@ namespace Model
      * <p>Specify an ID for this resource. For a managed instance, this is the instance
      * ID.</p>
      */
+    inline bool ResourceIdHasBeenSet() const { return m_resourceIdHasBeenSet; }
+
+    /**
+     * <p>Specify an ID for this resource. For a managed instance, this is the instance
+     * ID.</p>
+     */
     inline void SetResourceId(const Aws::String& value) { m_resourceIdHasBeenSet = true; m_resourceId = value; }
 
     /**
@@ -100,6 +106,12 @@ namespace Model
      * <p>Specify the type of resource. <code>ManagedInstance</code> is currently the
      * only supported resource type.</p>
      */
+    inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
+
+    /**
+     * <p>Specify the type of resource. <code>ManagedInstance</code> is currently the
+     * only supported resource type.</p>
+     */
     inline void SetResourceType(const Aws::String& value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
 
     /**
@@ -138,6 +150,12 @@ namespace Model
      * Manager association), Patch, or Custom:<code>string</code>.</p>
      */
     inline const Aws::String& GetComplianceType() const{ return m_complianceType; }
+
+    /**
+     * <p>Specify the compliance type. For example, specify Association (for a State
+     * Manager association), Patch, or Custom:<code>string</code>.</p>
+     */
+    inline bool ComplianceTypeHasBeenSet() const { return m_complianceTypeHasBeenSet; }
 
     /**
      * <p>Specify the compliance type. For example, specify Association (for a State
@@ -190,6 +208,14 @@ namespace Model
      * execution using a datetime object that is saved in the following format:
      * yyyy-MM-dd'T'HH:mm:ss'Z'.</p>
      */
+    inline bool ExecutionSummaryHasBeenSet() const { return m_executionSummaryHasBeenSet; }
+
+    /**
+     * <p>A summary of the call execution that includes an execution ID, the type of
+     * execution (for example, <code>Command</code>), and the date/time of the
+     * execution using a datetime object that is saved in the following format:
+     * yyyy-MM-dd'T'HH:mm:ss'Z'.</p>
+     */
     inline void SetExecutionSummary(const ComplianceExecutionSummary& value) { m_executionSummaryHasBeenSet = true; m_executionSummary = value; }
 
     /**
@@ -223,6 +249,13 @@ namespace Model
      * about the PatchSeverity, Classification, etc.</p>
      */
     inline const Aws::Vector<ComplianceItemEntry>& GetItems() const{ return m_items; }
+
+    /**
+     * <p>Information about the compliance as defined by the resource type. For
+     * example, for a patch compliance type, <code>Items</code> includes information
+     * about the PatchSeverity, Classification, etc.</p>
+     */
+    inline bool ItemsHasBeenSet() const { return m_itemsHasBeenSet; }
 
     /**
      * <p>Information about the compliance as defined by the resource type. For
@@ -273,6 +306,13 @@ namespace Model
      * match, the request to put compliance information is ignored.</p>
      */
     inline const Aws::String& GetItemContentHash() const{ return m_itemContentHash; }
+
+    /**
+     * <p>MD5 or SHA-256 content hash. The content hash is used to determine if
+     * existing information should be overwritten or ignored. If the content hashes
+     * match, the request to put compliance information is ignored.</p>
+     */
+    inline bool ItemContentHashHasBeenSet() const { return m_itemContentHashHasBeenSet; }
 
     /**
      * <p>MD5 or SHA-256 content hash. The content hash is used to determine if

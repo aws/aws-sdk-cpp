@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p>The current service software version that is present on the domain.</p>
      */
+    inline bool CurrentVersionHasBeenSet() const { return m_currentVersionHasBeenSet; }
+
+    /**
+     * <p>The current service software version that is present on the domain.</p>
+     */
     inline void SetCurrentVersion(const Aws::String& value) { m_currentVersionHasBeenSet = true; m_currentVersion = value; }
 
     /**
@@ -90,6 +95,11 @@ namespace Model
      * <p>The new service software version if one is available.</p>
      */
     inline const Aws::String& GetNewVersion() const{ return m_newVersion; }
+
+    /**
+     * <p>The new service software version if one is available.</p>
+     */
+    inline bool NewVersionHasBeenSet() const { return m_newVersionHasBeenSet; }
 
     /**
      * <p>The new service software version if one is available.</p>
@@ -134,6 +144,13 @@ namespace Model
      * <code>False</code> if you are not able to update your service software version.
      * </p>
      */
+    inline bool UpdateAvailableHasBeenSet() const { return m_updateAvailableHasBeenSet; }
+
+    /**
+     * <p><code>True</code> if you are able to update you service software version.
+     * <code>False</code> if you are not able to update your service software version.
+     * </p>
+     */
     inline void SetUpdateAvailable(bool value) { m_updateAvailableHasBeenSet = true; m_updateAvailable = value; }
 
     /**
@@ -150,6 +167,13 @@ namespace Model
      * version. </p>
      */
     inline bool GetCancellable() const{ return m_cancellable; }
+
+    /**
+     * <p><code>True</code> if you are able to cancel your service software version
+     * update. <code>False</code> if you are not able to cancel your service software
+     * version. </p>
+     */
+    inline bool CancellableHasBeenSet() const { return m_cancellableHasBeenSet; }
 
     /**
      * <p><code>True</code> if you are able to cancel your service software version
@@ -173,6 +197,14 @@ namespace Model
      * <code>NOT_ELIGIBLE</code>.</p>
      */
     inline const DeploymentStatus& GetUpdateStatus() const{ return m_updateStatus; }
+
+    /**
+     * <p>The status of your service software update. This field can take the following
+     * values: <code>ELIGIBLE</code>, <code>PENDING_UPDATE</code>,
+     * <code>IN_PROGRESS</code>, <code>COMPLETED</code>, and
+     * <code>NOT_ELIGIBLE</code>.</p>
+     */
+    inline bool UpdateStatusHasBeenSet() const { return m_updateStatusHasBeenSet; }
 
     /**
      * <p>The status of your service software update. This field can take the following
@@ -215,6 +247,11 @@ namespace Model
     /**
      * <p>The description of the <code>UpdateStatus</code>.</p>
      */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
+
+    /**
+     * <p>The description of the <code>UpdateStatus</code>.</p>
+     */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
@@ -249,6 +286,13 @@ namespace Model
      * software.</p>
      */
     inline const Aws::Utils::DateTime& GetAutomatedUpdateDate() const{ return m_automatedUpdateDate; }
+
+    /**
+     * <p>Timestamp, in Epoch time, until which you can manually request a service
+     * software update. After this date, we automatically update your service
+     * software.</p>
+     */
+    inline bool AutomatedUpdateDateHasBeenSet() const { return m_automatedUpdateDateHasBeenSet; }
 
     /**
      * <p>Timestamp, in Epoch time, until which you can manually request a service

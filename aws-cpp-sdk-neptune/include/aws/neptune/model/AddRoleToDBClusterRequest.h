@@ -54,6 +54,11 @@ namespace Model
     /**
      * <p>The name of the DB cluster to associate the IAM role with.</p>
      */
+    inline bool DBClusterIdentifierHasBeenSet() const { return m_dBClusterIdentifierHasBeenSet; }
+
+    /**
+     * <p>The name of the DB cluster to associate the IAM role with.</p>
+     */
     inline void SetDBClusterIdentifier(const Aws::String& value) { m_dBClusterIdentifierHasBeenSet = true; m_dBClusterIdentifier = value; }
 
     /**
@@ -88,6 +93,13 @@ namespace Model
      * <code>arn:aws:iam::123456789012:role/NeptuneAccessRole</code>.</p>
      */
     inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the IAM role to associate with the Neptune
+     * DB cluster, for example
+     * <code>arn:aws:iam::123456789012:role/NeptuneAccessRole</code>.</p>
+     */
+    inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the IAM role to associate with the Neptune

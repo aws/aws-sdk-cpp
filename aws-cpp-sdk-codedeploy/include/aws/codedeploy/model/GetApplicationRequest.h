@@ -58,6 +58,12 @@ namespace Model
      * <p>The name of an AWS CodeDeploy application associated with the IAM user or AWS
      * account.</p>
      */
+    inline bool ApplicationNameHasBeenSet() const { return m_applicationNameHasBeenSet; }
+
+    /**
+     * <p>The name of an AWS CodeDeploy application associated with the IAM user or AWS
+     * account.</p>
+     */
     inline void SetApplicationName(const Aws::String& value) { m_applicationNameHasBeenSet = true; m_applicationName = value; }
 
     /**

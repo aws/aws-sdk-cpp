@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p>The description of the product.</p>
      */
+    inline bool ProductDescriptionHasBeenSet() const { return m_productDescriptionHasBeenSet; }
+
+    /**
+     * <p>The description of the product.</p>
+     */
     inline void SetProductDescription(const Aws::String& value) { m_productDescriptionHasBeenSet = true; m_productDescription = value; }
 
     /**
@@ -90,6 +95,11 @@ namespace Model
      * <p>The phrase used to trigger the skill.</p>
      */
     inline const Aws::String& GetInvocationPhrase() const{ return m_invocationPhrase; }
+
+    /**
+     * <p>The phrase used to trigger the skill.</p>
+     */
+    inline bool InvocationPhraseHasBeenSet() const { return m_invocationPhraseHasBeenSet; }
 
     /**
      * <p>The phrase used to trigger the skill.</p>
@@ -130,6 +140,11 @@ namespace Model
     /**
      * <p>The date when the skill was released.</p>
      */
+    inline bool ReleaseDateHasBeenSet() const { return m_releaseDateHasBeenSet; }
+
+    /**
+     * <p>The date when the skill was released.</p>
+     */
     inline void SetReleaseDate(const Aws::String& value) { m_releaseDateHasBeenSet = true; m_releaseDate = value; }
 
     /**
@@ -162,6 +177,11 @@ namespace Model
      * <p>The URL of the end user license agreement.</p>
      */
     inline const Aws::String& GetEndUserLicenseAgreement() const{ return m_endUserLicenseAgreement; }
+
+    /**
+     * <p>The URL of the end user license agreement.</p>
+     */
+    inline bool EndUserLicenseAgreementHasBeenSet() const { return m_endUserLicenseAgreementHasBeenSet; }
 
     /**
      * <p>The URL of the end user license agreement.</p>
@@ -199,6 +219,12 @@ namespace Model
      * skill.</p>
      */
     inline const Aws::Vector<Aws::String>& GetGenericKeywords() const{ return m_genericKeywords; }
+
+    /**
+     * <p>The generic keywords associated with the skill that can be used to find a
+     * skill.</p>
+     */
+    inline bool GenericKeywordsHasBeenSet() const { return m_genericKeywordsHasBeenSet; }
 
     /**
      * <p>The generic keywords associated with the skill that can be used to find a
@@ -251,6 +277,11 @@ namespace Model
     /**
      * <p>The details about what the skill supports organized as bullet points.</p>
      */
+    inline bool BulletPointsHasBeenSet() const { return m_bulletPointsHasBeenSet; }
+
+    /**
+     * <p>The details about what the skill supports organized as bullet points.</p>
+     */
     inline void SetBulletPoints(const Aws::Vector<Aws::String>& value) { m_bulletPointsHasBeenSet = true; m_bulletPoints = value; }
 
     /**
@@ -288,6 +319,11 @@ namespace Model
      * <p>The updates added in bullet points.</p>
      */
     inline const Aws::Vector<Aws::String>& GetNewInThisVersionBulletPoints() const{ return m_newInThisVersionBulletPoints; }
+
+    /**
+     * <p>The updates added in bullet points.</p>
+     */
+    inline bool NewInThisVersionBulletPointsHasBeenSet() const { return m_newInThisVersionBulletPointsHasBeenSet; }
 
     /**
      * <p>The updates added in bullet points.</p>
@@ -333,6 +369,11 @@ namespace Model
     /**
      * <p>The types of skills.</p>
      */
+    inline bool SkillTypesHasBeenSet() const { return m_skillTypesHasBeenSet; }
+
+    /**
+     * <p>The types of skills.</p>
+     */
     inline void SetSkillTypes(const Aws::Vector<Aws::String>& value) { m_skillTypesHasBeenSet = true; m_skillTypes = value; }
 
     /**
@@ -370,6 +411,11 @@ namespace Model
      * <p>The list of reviews for the skill, including Key and Value pair.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetReviews() const{ return m_reviews; }
+
+    /**
+     * <p>The list of reviews for the skill, including Key and Value pair.</p>
+     */
+    inline bool ReviewsHasBeenSet() const { return m_reviewsHasBeenSet; }
 
     /**
      * <p>The list of reviews for the skill, including Key and Value pair.</p>
@@ -431,6 +477,11 @@ namespace Model
      * <p>The details about the developer that published the skill.</p>
      */
     inline const DeveloperInfo& GetDeveloperInfo() const{ return m_developerInfo; }
+
+    /**
+     * <p>The details about the developer that published the skill.</p>
+     */
+    inline bool DeveloperInfoHasBeenSet() const { return m_developerInfoHasBeenSet; }
 
     /**
      * <p>The details about the developer that published the skill.</p>

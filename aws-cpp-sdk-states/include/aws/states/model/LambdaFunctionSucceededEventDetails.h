@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The JSON data output by the lambda function.</p>
      */
+    inline bool OutputHasBeenSet() const { return m_outputHasBeenSet; }
+
+    /**
+     * <p>The JSON data output by the lambda function.</p>
+     */
     inline void SetOutput(const Aws::String& value) { m_outputHasBeenSet = true; m_output = value; }
 
     /**

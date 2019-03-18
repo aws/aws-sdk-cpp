@@ -55,6 +55,12 @@ namespace Model
      * <p>Number of in-application streams to create for the specified streaming
      * source.</p>
      */
+    inline bool CountUpdateHasBeenSet() const { return m_countUpdateHasBeenSet; }
+
+    /**
+     * <p>Number of in-application streams to create for the specified streaming
+     * source.</p>
+     */
     inline void SetCountUpdate(int value) { m_countUpdateHasBeenSet = true; m_countUpdate = value; }
 
     /**

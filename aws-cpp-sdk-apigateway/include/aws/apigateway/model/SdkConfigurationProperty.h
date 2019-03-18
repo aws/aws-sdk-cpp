@@ -55,6 +55,11 @@ namespace Model
     /**
      * <p>The name of a an <a>SdkType</a> configuration property.</p>
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>The name of a an <a>SdkType</a> configuration property.</p>
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
@@ -91,6 +96,11 @@ namespace Model
     /**
      * <p>The user-friendly name of an <a>SdkType</a> configuration property.</p>
      */
+    inline bool FriendlyNameHasBeenSet() const { return m_friendlyNameHasBeenSet; }
+
+    /**
+     * <p>The user-friendly name of an <a>SdkType</a> configuration property.</p>
+     */
     inline void SetFriendlyName(const Aws::String& value) { m_friendlyNameHasBeenSet = true; m_friendlyName = value; }
 
     /**
@@ -123,6 +133,11 @@ namespace Model
      * <p>The description of an <a>SdkType</a> configuration property.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
+
+    /**
+     * <p>The description of an <a>SdkType</a> configuration property.</p>
+     */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
 
     /**
      * <p>The description of an <a>SdkType</a> configuration property.</p>
@@ -167,6 +182,13 @@ namespace Model
      * associated SDK configuration property is required (<code>true</code>) or not
      * (<code>false</code>).</p>
      */
+    inline bool RequiredHasBeenSet() const { return m_requiredHasBeenSet; }
+
+    /**
+     * <p>A boolean flag of an <a>SdkType</a> configuration property to indicate if the
+     * associated SDK configuration property is required (<code>true</code>) or not
+     * (<code>false</code>).</p>
+     */
     inline void SetRequired(bool value) { m_requiredHasBeenSet = true; m_required = value; }
 
     /**
@@ -181,6 +203,11 @@ namespace Model
      * <p>The default value of an <a>SdkType</a> configuration property.</p>
      */
     inline const Aws::String& GetDefaultValue() const{ return m_defaultValue; }
+
+    /**
+     * <p>The default value of an <a>SdkType</a> configuration property.</p>
+     */
+    inline bool DefaultValueHasBeenSet() const { return m_defaultValueHasBeenSet; }
 
     /**
      * <p>The default value of an <a>SdkType</a> configuration property.</p>

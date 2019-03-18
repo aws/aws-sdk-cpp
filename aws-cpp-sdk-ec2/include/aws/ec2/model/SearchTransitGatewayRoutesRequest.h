@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The ID of the transit gateway route table.</p>
      */
+    inline bool TransitGatewayRouteTableIdHasBeenSet() const { return m_transitGatewayRouteTableIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the transit gateway route table.</p>
+     */
     inline void SetTransitGatewayRouteTableId(const Aws::String& value) { m_transitGatewayRouteTableIdHasBeenSet = true; m_transitGatewayRouteTableId = value; }
 
     /**
@@ -108,6 +113,31 @@ namespace Model
      * <code>blackhole</code>).</p> </li> </ul>
      */
     inline const Aws::Vector<Filter>& GetFilters() const{ return m_filters; }
+
+    /**
+     * <p>One or more filters. The possible values are:</p> <ul> <li> <p>
+     * <code>attachment.transit-gateway-attachment-id</code>- The id of the transit
+     * gateway attachment.</p> </li> <li> <p> <code>attachment.resource-id</code> - The
+     * resource id of the transit gateway attachment.</p> </li> <li> <p>
+     * <code>attachment.resource-type</code> - The attachment resource type
+     * (<code>vpc</code> | <code>vpn</code>).</p> </li> <li> <p>
+     * <code>route-search.exact-match</code> - The exact match of the specified
+     * filter.</p> </li> <li> <p> <code>route-search.longest-prefix-match</code> - The
+     * longest prefix that matches the route.</p> </li> <li> <p>
+     * <code>route-search.subnet-of-match</code> - The routes with a subnet that match
+     * the specified CIDR filter.</p> </li> <li> <p>
+     * <code>route-search.supernet-of-match</code> - The routes with a CIDR that
+     * encompass the CIDR filter. For example, if you have 10.0.1.0/29 and 10.0.1.0/31
+     * routes in your route table and you specify supernet-of-match as 10.0.1.0/30,
+     * then the result returns 10.0.1.0/29.</p> </li> <li> <p> <code>state</code> - The
+     * state of the attachment (<code>available</code> | <code>deleted</code> |
+     * <code>deleting</code> | <code>failed</code> | <code>modifying</code> |
+     * <code>pendingAcceptance</code> | <code>pending</code> | <code>rollingBack</code>
+     * | <code>rejected</code> | <code>rejecting</code>).</p> </li> <li> <p>
+     * <code>type</code> - The type of roue (<code>active</code> |
+     * <code>blackhole</code>).</p> </li> </ul>
+     */
+    inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
 
     /**
      * <p>One or more filters. The possible values are:</p> <ul> <li> <p>
@@ -268,6 +298,11 @@ namespace Model
     /**
      * <p>The maximum number of routes to return.</p>
      */
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
+
+    /**
+     * <p>The maximum number of routes to return.</p>
+     */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
@@ -283,6 +318,14 @@ namespace Model
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
     inline bool GetDryRun() const{ return m_dryRun; }
+
+    /**
+     * <p>Checks whether you have the required permissions for the action, without
+     * actually making the request, and provides an error response. If you have the
+     * required permissions, the error response is <code>DryRunOperation</code>.
+     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+     */
+    inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
 
     /**
      * <p>Checks whether you have the required permissions for the action, without

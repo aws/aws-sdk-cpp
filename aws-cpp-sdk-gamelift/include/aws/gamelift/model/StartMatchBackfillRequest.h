@@ -63,6 +63,14 @@ namespace Model
      * identifier to track the match backfill ticket status and retrieve match
      * results.</p>
      */
+    inline bool TicketIdHasBeenSet() const { return m_ticketIdHasBeenSet; }
+
+    /**
+     * <p>Unique identifier for a matchmaking ticket. If no ticket ID is specified
+     * here, Amazon GameLift will generate one in the form of a UUID. Use this
+     * identifier to track the match backfill ticket status and retrieve match
+     * results.</p>
+     */
     inline void SetTicketId(const Aws::String& value) { m_ticketIdHasBeenSet = true; m_ticketId = value; }
 
     /**
@@ -117,6 +125,18 @@ namespace Model
      * parameter.</p>
      */
     inline const Aws::String& GetConfigurationName() const{ return m_configurationName; }
+
+    /**
+     * <p>Name of the matchmaker to use for this request. The name of the matchmaker
+     * that was used with the original game session is listed in the <a>GameSession</a>
+     * object, <code>MatchmakerData</code> property. This property contains a
+     * matchmaking configuration ARN value, which includes the matchmaker name. (In the
+     * ARN value
+     * "arn:aws:gamelift:us-west-2:111122223333:matchmakingconfiguration/MM-4v4", the
+     * matchmaking configuration name is "MM-4v4".) Use only the name for this
+     * parameter.</p>
+     */
+    inline bool ConfigurationNameHasBeenSet() const { return m_configurationNameHasBeenSet; }
 
     /**
      * <p>Name of the matchmaker to use for this request. The name of the matchmaker
@@ -203,6 +223,13 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
      * that is assigned to a game session and uniquely identifies it. </p>
      */
+    inline bool GameSessionArnHasBeenSet() const { return m_gameSessionArnHasBeenSet; }
+
+    /**
+     * <p>Amazon Resource Name (<a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
+     * that is assigned to a game session and uniquely identifies it. </p>
+     */
     inline void SetGameSessionArn(const Aws::String& value) { m_gameSessionArnHasBeenSet = true; m_gameSessionArn = value; }
 
     /**
@@ -256,6 +283,22 @@ namespace Model
      * region.</p> </li> </ul>
      */
     inline const Aws::Vector<Player>& GetPlayers() const{ return m_players; }
+
+    /**
+     * <p>Match information on all players that are currently assigned to the game
+     * session. This information is used by the matchmaker to find new players and add
+     * them to the existing game.</p> <ul> <li> <p>PlayerID, PlayerAttributes, Team
+     * -\\- This information is maintained in the <a>GameSession</a> object,
+     * <code>MatchmakerData</code> property, for all players who are currently assigned
+     * to the game session. The matchmaker data is in JSON syntax, formatted as a
+     * string. For more details, see <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/match-server.html#match-server-data">
+     * Match Data</a>. </p> </li> <li> <p>LatencyInMs -\\- If the matchmaker uses
+     * player latency, include a latency value, in milliseconds, for the region that
+     * the game session is currently in. Do not include latency values for any other
+     * region.</p> </li> </ul>
+     */
+    inline bool PlayersHasBeenSet() const { return m_playersHasBeenSet; }
 
     /**
      * <p>Match information on all players that are currently assigned to the game

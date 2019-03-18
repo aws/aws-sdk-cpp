@@ -61,6 +61,11 @@ namespace Model
     /**
      * <p>A list of values that are permitted for a parameter.</p>
      */
+    inline bool AllowedValuesHasBeenSet() const { return m_allowedValuesHasBeenSet; }
+
+    /**
+     * <p>A list of values that are permitted for a parameter.</p>
+     */
     inline void SetAllowedValues(const Aws::Vector<Aws::String>& value) { m_allowedValuesHasBeenSet = true; m_allowedValues = value; }
 
     /**

@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p/>
      */
+    inline bool RulesHasBeenSet() const { return m_rulesHasBeenSet; }
+
+    /**
+     * <p/>
+     */
     inline void SetRules(const Aws::Vector<Rule>& value) { m_rulesHasBeenSet = true; m_rules = value; }
 
     /**

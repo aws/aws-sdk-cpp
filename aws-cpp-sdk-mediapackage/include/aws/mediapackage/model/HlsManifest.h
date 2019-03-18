@@ -79,6 +79,22 @@ markers (comments) taken directly from the input HTTP Live Streaming (HLS)
 messages in the input source.
 
      */
+    inline bool AdMarkersHasBeenSet() const { return m_adMarkersHasBeenSet; }
+
+    /**
+     * This setting controls how ad markers are included in the packaged
+     * OriginEndpoint.
+"NONE" will omit all SCTE-35 ad markers from the
+     * output.
+"PASSTHROUGH" causes the manifest to contain a copy of the SCTE-35
+     * ad
+markers (comments) taken directly from the input HTTP Live Streaming (HLS)
+     * manifest.
+"SCTE35_ENHANCED" generates ad markers and blackout tags based on
+     * SCTE-35
+messages in the input source.
+
+     */
     inline void SetAdMarkers(const AdMarkers& value) { m_adMarkersHasBeenSet = true; m_adMarkers = value; }
 
     /**
@@ -140,6 +156,12 @@ messages in the input source.
      * The ID of the manifest. The ID must be unique within the OriginEndpoint and it
      * cannot be changed after it is created.
      */
+    inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
+
+    /**
+     * The ID of the manifest. The ID must be unique within the OriginEndpoint and it
+     * cannot be changed after it is created.
+     */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
     /**
@@ -181,6 +203,11 @@ messages in the input source.
     /**
      * When enabled, an I-Frame only stream will be included in the output.
      */
+    inline bool IncludeIframeOnlyStreamHasBeenSet() const { return m_includeIframeOnlyStreamHasBeenSet; }
+
+    /**
+     * When enabled, an I-Frame only stream will be included in the output.
+     */
     inline void SetIncludeIframeOnlyStream(bool value) { m_includeIframeOnlyStreamHasBeenSet = true; m_includeIframeOnlyStream = value; }
 
     /**
@@ -194,6 +221,12 @@ messages in the input source.
      * specified, defaults to the manifestName for the OriginEndpoint.
      */
     inline const Aws::String& GetManifestName() const{ return m_manifestName; }
+
+    /**
+     * An optional short string appended to the end of the OriginEndpoint URL. If not
+     * specified, defaults to the manifestName for the OriginEndpoint.
+     */
+    inline bool ManifestNameHasBeenSet() const { return m_manifestNameHasBeenSet; }
 
     /**
      * An optional short string appended to the end of the OriginEndpoint URL. If not
@@ -250,6 +283,16 @@ entry will be included in the
      * media playlist.
 
      */
+    inline bool PlaylistTypeHasBeenSet() const { return m_playlistTypeHasBeenSet; }
+
+    /**
+     * The HTTP Live Streaming (HLS) playlist type.
+When either "EVENT" or "VOD" is
+     * specified, a corresponding EXT-X-PLAYLIST-TYPE
+entry will be included in the
+     * media playlist.
+
+     */
     inline void SetPlaylistType(const PlaylistType& value) { m_playlistTypeHasBeenSet = true; m_playlistType = value; }
 
     /**
@@ -287,6 +330,11 @@ entry will be included in the
      * Time window (in seconds) contained in each parent manifest.
      */
     inline int GetPlaylistWindowSeconds() const{ return m_playlistWindowSeconds; }
+
+    /**
+     * Time window (in seconds) contained in each parent manifest.
+     */
+    inline bool PlaylistWindowSecondsHasBeenSet() const { return m_playlistWindowSecondsHasBeenSet; }
 
     /**
      * Time window (in seconds) contained in each parent manifest.
@@ -339,6 +387,27 @@ it will
      * be passed through to HLS output.
 
      */
+    inline bool ProgramDateTimeIntervalSecondsHasBeenSet() const { return m_programDateTimeIntervalSecondsHasBeenSet; }
+
+    /**
+     * The interval (in seconds) between each EXT-X-PROGRAM-DATE-TIME tag
+inserted into
+     * manifests. Additionally, when an interval is specified
+ID3Timed Metadata
+     * messages will be generated every 5 seconds using the
+ingest time of the
+     * content.
+If the interval is not specified, or set to 0, then
+no
+     * EXT-X-PROGRAM-DATE-TIME tags will be inserted into manifests and no
+ID3Timed
+     * Metadata messages will be generated. Note that irrespective
+of this parameter,
+     * if any ID3 Timed Metadata is found in HTTP Live Streaming (HLS) input,
+it will
+     * be passed through to HLS output.
+
+     */
     inline void SetProgramDateTimeIntervalSeconds(int value) { m_programDateTimeIntervalSecondsHasBeenSet = true; m_programDateTimeIntervalSeconds = value; }
 
     /**
@@ -367,6 +436,11 @@ it will
      * The URL of the packaged OriginEndpoint for consumption.
      */
     inline const Aws::String& GetUrl() const{ return m_url; }
+
+    /**
+     * The URL of the packaged OriginEndpoint for consumption.
+     */
+    inline bool UrlHasBeenSet() const { return m_urlHasBeenSet; }
 
     /**
      * The URL of the packaged OriginEndpoint for consumption.

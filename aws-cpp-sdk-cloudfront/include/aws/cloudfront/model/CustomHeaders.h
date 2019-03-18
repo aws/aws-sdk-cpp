@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The number of custom headers, if any, for this distribution.</p>
      */
+    inline bool QuantityHasBeenSet() const { return m_quantityHasBeenSet; }
+
+    /**
+     * <p>The number of custom headers, if any, for this distribution.</p>
+     */
     inline void SetQuantity(int value) { m_quantityHasBeenSet = true; m_quantity = value; }
 
     /**
@@ -71,6 +76,13 @@ namespace Model
      * origin. If Quantity is <code>0</code>, omit <code>Items</code>.</p>
      */
     inline const Aws::Vector<OriginCustomHeader>& GetItems() const{ return m_items; }
+
+    /**
+     * <p> <b>Optional</b>: A list that contains one <code>OriginCustomHeader</code>
+     * element for each custom header that you want CloudFront to forward to the
+     * origin. If Quantity is <code>0</code>, omit <code>Items</code>.</p>
+     */
+    inline bool ItemsHasBeenSet() const { return m_itemsHasBeenSet; }
 
     /**
      * <p> <b>Optional</b>: A list that contains one <code>OriginCustomHeader</code>

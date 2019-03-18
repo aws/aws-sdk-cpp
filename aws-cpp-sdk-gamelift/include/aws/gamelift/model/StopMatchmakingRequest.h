@@ -55,6 +55,11 @@ namespace Model
     /**
      * <p>Unique identifier for a matchmaking ticket.</p>
      */
+    inline bool TicketIdHasBeenSet() const { return m_ticketIdHasBeenSet; }
+
+    /**
+     * <p>Unique identifier for a matchmaking ticket.</p>
+     */
     inline void SetTicketId(const Aws::String& value) { m_ticketIdHasBeenSet = true; m_ticketId = value; }
 
     /**

@@ -63,6 +63,12 @@ namespace Model
      * <p>Version of Elasticsearch for which list of supported elasticsearch instance
      * types are needed. </p>
      */
+    inline bool ElasticsearchVersionHasBeenSet() const { return m_elasticsearchVersionHasBeenSet; }
+
+    /**
+     * <p>Version of Elasticsearch for which list of supported elasticsearch instance
+     * types are needed. </p>
+     */
     inline void SetElasticsearchVersion(const Aws::String& value) { m_elasticsearchVersionHasBeenSet = true; m_elasticsearchVersion = value; }
 
     /**
@@ -102,6 +108,13 @@ namespace Model
      * Elasticsearch instance types when modifying existing domain. </p>
      */
     inline const Aws::String& GetDomainName() const{ return m_domainName; }
+
+    /**
+     * <p>DomainName represents the name of the Domain that we are trying to modify.
+     * This should be present only if we are querying for list of available
+     * Elasticsearch instance types when modifying existing domain. </p>
+     */
+    inline bool DomainNameHasBeenSet() const { return m_domainNameHasBeenSet; }
 
     /**
      * <p>DomainName represents the name of the Domain that we are trying to modify.
@@ -156,6 +169,12 @@ namespace Model
      * <p> Set this value to limit the number of results returned. Value provided must
      * be greater than 30 else it wont be honored. </p>
      */
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
+
+    /**
+     * <p> Set this value to limit the number of results returned. Value provided must
+     * be greater than 30 else it wont be honored. </p>
+     */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
@@ -170,6 +189,12 @@ namespace Model
      * containing NextToken. It is used for pagination. </p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
+    /**
+     * <p>NextToken should be sent in case if earlier API call produced result
+     * containing NextToken. It is used for pagination. </p>
+     */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
      * <p>NextToken should be sent in case if earlier API call produced result

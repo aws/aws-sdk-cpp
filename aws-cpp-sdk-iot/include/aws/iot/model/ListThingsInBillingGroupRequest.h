@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The name of the billing group.</p>
      */
+    inline bool BillingGroupNameHasBeenSet() const { return m_billingGroupNameHasBeenSet; }
+
+    /**
+     * <p>The name of the billing group.</p>
+     */
     inline void SetBillingGroupName(const Aws::String& value) { m_billingGroupNameHasBeenSet = true; m_billingGroupName = value; }
 
     /**
@@ -92,6 +97,11 @@ namespace Model
     /**
      * <p>The token to retrieve the next set of results.</p>
      */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
+
+    /**
+     * <p>The token to retrieve the next set of results.</p>
+     */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
     /**
@@ -124,6 +134,11 @@ namespace Model
      * <p>The maximum number of results to return per request.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
+
+    /**
+     * <p>The maximum number of results to return per request.</p>
+     */
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
 
     /**
      * <p>The maximum number of results to return per request.</p>

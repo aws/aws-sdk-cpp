@@ -64,6 +64,12 @@ namespace Model
      * <p>If this parameter is set to <code>true</code>, your instance is enabled for
      * hibernation; otherwise, it is not enabled for hibernation.</p>
      */
+    inline bool ConfiguredHasBeenSet() const { return m_configuredHasBeenSet; }
+
+    /**
+     * <p>If this parameter is set to <code>true</code>, your instance is enabled for
+     * hibernation; otherwise, it is not enabled for hibernation.</p>
+     */
     inline void SetConfigured(bool value) { m_configuredHasBeenSet = true; m_configured = value; }
 
     /**

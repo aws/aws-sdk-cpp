@@ -77,6 +77,21 @@ namespace Model
      * 00:00:00:00. * If Source (TimecodeSource) is set to Embedded (EMBEDDED), the 
      * first frame is the timecode value on the first input frame of the input.
      */
+    inline bool AnchorHasBeenSet() const { return m_anchorHasBeenSet; }
+
+    /**
+     * If you use an editing platform that relies on an anchor timecode, use Anchor
+     * Timecode (Anchor) to specify a timecode that will match the input video frame to
+     * the output video frame. Use 24-hour format with frame number, (HH:MM:SS:FF) or
+     * (HH:MM:SS;FF). This setting ignores frame rate conversion. System behavior for
+     * Anchor Timecode varies depending on your setting for Source (TimecodeSource). *
+     * If Source (TimecodeSource) is set to Specified Start (SPECIFIEDSTART), the first
+     * input frame is the specified value in Start Timecode (Start). Anchor Timecode
+     * (Anchor) and Start Timecode (Start) are used calculate output timecode. * If
+     * Source (TimecodeSource) is set to Start at 0 (ZEROBASED)  the  first frame is
+     * 00:00:00:00. * If Source (TimecodeSource) is set to Embedded (EMBEDDED), the 
+     * first frame is the timecode value on the first input frame of the input.
+     */
     inline void SetAnchor(const Aws::String& value) { m_anchorHasBeenSet = true; m_anchor = value; }
 
     /**
@@ -159,6 +174,9 @@ namespace Model
     inline const TimecodeSource& GetSource() const{ return m_source; }
 
     
+    inline bool SourceHasBeenSet() const { return m_sourceHasBeenSet; }
+
+    
     inline void SetSource(const TimecodeSource& value) { m_sourceHasBeenSet = true; m_source = value; }
 
     
@@ -178,6 +196,14 @@ namespace Model
      * (HH:MM:SS;FF).
      */
     inline const Aws::String& GetStart() const{ return m_start; }
+
+    /**
+     * Only use when you set Source (TimecodeSource) to Specified start
+     * (SPECIFIEDSTART). Use Start timecode (Start) to specify the timecode for the
+     * initial frame. Use 24-hour format with frame number, (HH:MM:SS:FF) or
+     * (HH:MM:SS;FF).
+     */
+    inline bool StartHasBeenSet() const { return m_startHasBeenSet; }
 
     /**
      * Only use when you set Source (TimecodeSource) to Specified start
@@ -238,6 +264,17 @@ namespace Model
      * year later, set Timestamp offset (TimestampOffset) to 2003-1-25.
      */
     inline const Aws::String& GetTimestampOffset() const{ return m_timestampOffset; }
+
+    /**
+     * Only applies to outputs that support program-date-time stamp. Use Timestamp
+     * offset (TimestampOffset) to overwrite the timecode date without affecting the
+     * time and frame number. Provide the new date as a string in the format
+     * "yyyy-mm-dd".  To use Time stamp offset, you must also enable Insert
+     * program-date-time (InsertProgramDateTime) in the output settings. For example,
+     * if the date part of your timecodes is 2002-1-25 and you want to change it to one
+     * year later, set Timestamp offset (TimestampOffset) to 2003-1-25.
+     */
+    inline bool TimestampOffsetHasBeenSet() const { return m_timestampOffsetHasBeenSet; }
 
     /**
      * Only applies to outputs that support program-date-time stamp. Use Timestamp

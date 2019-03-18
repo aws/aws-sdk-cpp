@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The DNS name of the Amazon S3 origin. </p>
      */
+    inline bool DomainNameHasBeenSet() const { return m_domainNameHasBeenSet; }
+
+    /**
+     * <p>The DNS name of the Amazon S3 origin. </p>
+     */
     inline void SetDomainName(const Aws::String& value) { m_domainNameHasBeenSet = true; m_domainName = value; }
 
     /**
@@ -101,6 +106,23 @@ namespace Model
      * the <i>Amazon Amazon CloudFront Developer Guide</i>.</p>
      */
     inline const Aws::String& GetOriginAccessIdentity() const{ return m_originAccessIdentity; }
+
+    /**
+     * <p>The CloudFront origin access identity to associate with the RTMP
+     * distribution. Use an origin access identity to configure the distribution so
+     * that end users can only access objects in an Amazon S3 bucket through
+     * CloudFront.</p> <p>If you want end users to be able to access objects using
+     * either the CloudFront URL or the Amazon S3 URL, specify an empty
+     * <code>OriginAccessIdentity</code> element.</p> <p>To delete the origin access
+     * identity from an existing distribution, update the distribution configuration
+     * and include an empty <code>OriginAccessIdentity</code> element.</p> <p>To
+     * replace the origin access identity, update the distribution configuration and
+     * specify the new origin access identity.</p> <p>For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-restricting-access-to-s3.html">Using
+     * an Origin Access Identity to Restrict Access to Your Amazon S3 Content</a> in
+     * the <i>Amazon Amazon CloudFront Developer Guide</i>.</p>
+     */
+    inline bool OriginAccessIdentityHasBeenSet() const { return m_originAccessIdentityHasBeenSet; }
 
     /**
      * <p>The CloudFront origin access identity to associate with the RTMP

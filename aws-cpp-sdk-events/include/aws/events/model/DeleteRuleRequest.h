@@ -52,6 +52,11 @@ namespace Model
     /**
      * <p>The name of the rule.</p>
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>The name of the rule.</p>
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
@@ -89,6 +94,16 @@ namespace Model
      * response.</p>
      */
     inline bool GetForce() const{ return m_force; }
+
+    /**
+     * <p>If this is a managed rule, created by an AWS service on your behalf, you must
+     * specify <code>Force</code> as <code>True</code> to delete the rule. This
+     * parameter is ignored for rules that are not managed rules. You can check whether
+     * a rule is a managed rule by using <code>DescribeRule</code> or
+     * <code>ListRules</code> and checking the <code>ManagedBy</code> field of the
+     * response.</p>
+     */
+    inline bool ForceHasBeenSet() const { return m_forceHasBeenSet; }
 
     /**
      * <p>If this is a managed rule, created by an AWS service on your behalf, you must

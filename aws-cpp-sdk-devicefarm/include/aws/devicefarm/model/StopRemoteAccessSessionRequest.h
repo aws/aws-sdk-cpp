@@ -58,6 +58,12 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the remote access session you wish to
      * stop.</p>
      */
+    inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the remote access session you wish to
+     * stop.</p>
+     */
     inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
 
     /**

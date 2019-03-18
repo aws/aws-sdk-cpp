@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the replication task.</p>
      */
+    inline bool ReplicationTaskArnHasBeenSet() const { return m_replicationTaskArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the replication task.</p>
+     */
     inline void SetReplicationTaskArn(const Aws::String& value) { m_replicationTaskArnHasBeenSet = true; m_replicationTaskArn = value; }
 
     /**
@@ -92,6 +97,14 @@ namespace Model
      * or contain two consecutive hyphens.</p> </li> </ul>
      */
     inline const Aws::String& GetReplicationTaskIdentifier() const{ return m_replicationTaskIdentifier; }
+
+    /**
+     * <p>The replication task identifier.</p> <p>Constraints:</p> <ul> <li> <p>Must
+     * contain from 1 to 255 alphanumeric characters or hyphens.</p> </li> <li>
+     * <p>First character must be a letter.</p> </li> <li> <p>Cannot end with a hyphen
+     * or contain two consecutive hyphens.</p> </li> </ul>
+     */
+    inline bool ReplicationTaskIdentifierHasBeenSet() const { return m_replicationTaskIdentifierHasBeenSet; }
 
     /**
      * <p>The replication task identifier.</p> <p>Constraints:</p> <ul> <li> <p>Must
@@ -152,6 +165,12 @@ namespace Model
      * <p>The migration type.</p> <p>Valid values: full-load | cdc |
      * full-load-and-cdc</p>
      */
+    inline bool MigrationTypeHasBeenSet() const { return m_migrationTypeHasBeenSet; }
+
+    /**
+     * <p>The migration type.</p> <p>Valid values: full-load | cdc |
+     * full-load-and-cdc</p>
+     */
     inline void SetMigrationType(const MigrationTypeValue& value) { m_migrationTypeHasBeenSet = true; m_migrationType = value; }
 
     /**
@@ -180,6 +199,14 @@ namespace Model
      * --table-mappings file://mappingfile.json</p>
      */
     inline const Aws::String& GetTableMappings() const{ return m_tableMappings; }
+
+    /**
+     * <p>When using the AWS CLI or boto3, provide the path of the JSON file that
+     * contains the table mappings. Precede the path with "file://". When working with
+     * the DMS API, provide the JSON as the parameter value.</p> <p>For example,
+     * --table-mappings file://mappingfile.json</p>
+     */
+    inline bool TableMappingsHasBeenSet() const { return m_tableMappingsHasBeenSet; }
 
     /**
      * <p>When using the AWS CLI or boto3, provide the path of the JSON file that
@@ -240,6 +267,12 @@ namespace Model
      * <p>JSON file that contains settings for the task, such as target metadata
      * settings.</p>
      */
+    inline bool ReplicationTaskSettingsHasBeenSet() const { return m_replicationTaskSettingsHasBeenSet; }
+
+    /**
+     * <p>JSON file that contains settings for the task, such as target metadata
+     * settings.</p>
+     */
     inline void SetReplicationTaskSettings(const Aws::String& value) { m_replicationTaskSettingsHasBeenSet = true; m_replicationTaskSettings = value; }
 
     /**
@@ -287,6 +320,14 @@ namespace Model
      * to start. Specifying both values results in an error.</p> <p>Timestamp Example:
      * --cdc-start-time “2018-03-08T12:12:12”</p>
      */
+    inline bool CdcStartTimeHasBeenSet() const { return m_cdcStartTimeHasBeenSet; }
+
+    /**
+     * <p>Indicates the start time for a change data capture (CDC) operation. Use
+     * either CdcStartTime or CdcStartPosition to specify when you want a CDC operation
+     * to start. Specifying both values results in an error.</p> <p>Timestamp Example:
+     * --cdc-start-time “2018-03-08T12:12:12”</p>
+     */
     inline void SetCdcStartTime(const Aws::Utils::DateTime& value) { m_cdcStartTimeHasBeenSet = true; m_cdcStartTime = value; }
 
     /**
@@ -325,6 +366,18 @@ namespace Model
      * <p>LSN Example: --cdc-start-position “mysql-bin-changelog.000024:373”</p>
      */
     inline const Aws::String& GetCdcStartPosition() const{ return m_cdcStartPosition; }
+
+    /**
+     * <p>Indicates when you want a change data capture (CDC) operation to start. Use
+     * either CdcStartPosition or CdcStartTime to specify when you want a CDC operation
+     * to start. Specifying both values results in an error.</p> <p> The value can be
+     * in date, checkpoint, or LSN/SCN format.</p> <p>Date Example:
+     * --cdc-start-position “2018-03-08T12:12:12”</p> <p>Checkpoint Example:
+     * --cdc-start-position
+     * "checkpoint:V1#27#mysql-bin-changelog.157832:1975:-1:2002:677883278264080:mysql-bin-changelog.157832:1876#0#0#*#0#93"</p>
+     * <p>LSN Example: --cdc-start-position “mysql-bin-changelog.000024:373”</p>
+     */
+    inline bool CdcStartPositionHasBeenSet() const { return m_cdcStartPositionHasBeenSet; }
 
     /**
      * <p>Indicates when you want a change data capture (CDC) operation to start. Use
@@ -406,6 +459,14 @@ namespace Model
      * example: --cdc-stop-position “commit_time: 3018-02-09T12:12:12 “</p>
      */
     inline const Aws::String& GetCdcStopPosition() const{ return m_cdcStopPosition; }
+
+    /**
+     * <p>Indicates when you want a change data capture (CDC) operation to stop. The
+     * value can be either server time or commit time.</p> <p>Server time example:
+     * --cdc-stop-position “server_time:3018-02-09T12:12:12”</p> <p>Commit time
+     * example: --cdc-stop-position “commit_time: 3018-02-09T12:12:12 “</p>
+     */
+    inline bool CdcStopPositionHasBeenSet() const { return m_cdcStopPositionHasBeenSet; }
 
     /**
      * <p>Indicates when you want a change data capture (CDC) operation to stop. The

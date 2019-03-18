@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The name of the resource policy.</p>
      */
+    inline bool PolicyNameHasBeenSet() const { return m_policyNameHasBeenSet; }
+
+    /**
+     * <p>The name of the resource policy.</p>
+     */
     inline void SetPolicyName(const Aws::String& value) { m_policyNameHasBeenSet = true; m_policyName = value; }
 
     /**
@@ -88,6 +93,11 @@ namespace Model
      * <p>The details of the policy.</p>
      */
     inline const Aws::String& GetPolicyDocument() const{ return m_policyDocument; }
+
+    /**
+     * <p>The details of the policy.</p>
+     */
+    inline bool PolicyDocumentHasBeenSet() const { return m_policyDocumentHasBeenSet; }
 
     /**
      * <p>The details of the policy.</p>
@@ -125,6 +135,12 @@ namespace Model
      * of milliseconds after Jan 1, 1970 00:00:00 UTC.</p>
      */
     inline long long GetLastUpdatedTime() const{ return m_lastUpdatedTime; }
+
+    /**
+     * <p>Timestamp showing when this policy was last updated, expressed as the number
+     * of milliseconds after Jan 1, 1970 00:00:00 UTC.</p>
+     */
+    inline bool LastUpdatedTimeHasBeenSet() const { return m_lastUpdatedTimeHasBeenSet; }
 
     /**
      * <p>Timestamp showing when this policy was last updated, expressed as the number

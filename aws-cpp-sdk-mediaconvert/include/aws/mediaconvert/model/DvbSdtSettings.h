@@ -53,6 +53,9 @@ namespace Model
     inline const OutputSdt& GetOutputSdt() const{ return m_outputSdt; }
 
     
+    inline bool OutputSdtHasBeenSet() const { return m_outputSdtHasBeenSet; }
+
+    
     inline void SetOutputSdt(const OutputSdt& value) { m_outputSdtHasBeenSet = true; m_outputSdt = value; }
 
     
@@ -75,6 +78,12 @@ namespace Model
      * The number of milliseconds between instances of this table in the output
      * transport stream.
      */
+    inline bool SdtIntervalHasBeenSet() const { return m_sdtIntervalHasBeenSet; }
+
+    /**
+     * The number of milliseconds between instances of this table in the output
+     * transport stream.
+     */
     inline void SetSdtInterval(int value) { m_sdtIntervalHasBeenSet = true; m_sdtInterval = value; }
 
     /**
@@ -89,6 +98,12 @@ namespace Model
      * Table. Maximum length is 256 characters.
      */
     inline const Aws::String& GetServiceName() const{ return m_serviceName; }
+
+    /**
+     * The service name placed in the service_descriptor in the Service Description
+     * Table. Maximum length is 256 characters.
+     */
+    inline bool ServiceNameHasBeenSet() const { return m_serviceNameHasBeenSet; }
 
     /**
      * The service name placed in the service_descriptor in the Service Description
@@ -132,6 +147,12 @@ namespace Model
      * Description Table. Maximum length is 256 characters.
      */
     inline const Aws::String& GetServiceProviderName() const{ return m_serviceProviderName; }
+
+    /**
+     * The service provider name placed in the service_descriptor in the Service
+     * Description Table. Maximum length is 256 characters.
+     */
+    inline bool ServiceProviderNameHasBeenSet() const { return m_serviceProviderNameHasBeenSet; }
 
     /**
      * The service provider name placed in the service_descriptor in the Service

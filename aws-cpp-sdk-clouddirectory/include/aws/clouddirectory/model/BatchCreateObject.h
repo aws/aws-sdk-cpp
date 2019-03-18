@@ -62,6 +62,12 @@ namespace Model
      * <p>A list of <code>FacetArns</code> that will be associated with the object. For
      * more information, see <a>arns</a>.</p>
      */
+    inline bool SchemaFacetHasBeenSet() const { return m_schemaFacetHasBeenSet; }
+
+    /**
+     * <p>A list of <code>FacetArns</code> that will be associated with the object. For
+     * more information, see <a>arns</a>.</p>
+     */
     inline void SetSchemaFacet(const Aws::Vector<SchemaFacet>& value) { m_schemaFacetHasBeenSet = true; m_schemaFacet = value; }
 
     /**
@@ -100,6 +106,12 @@ namespace Model
      * value as the map value.</p>
      */
     inline const Aws::Vector<AttributeKeyAndValue>& GetObjectAttributeList() const{ return m_objectAttributeList; }
+
+    /**
+     * <p>An attribute map, which contains an attribute ARN as the key and attribute
+     * value as the map value.</p>
+     */
+    inline bool ObjectAttributeListHasBeenSet() const { return m_objectAttributeListHasBeenSet; }
 
     /**
      * <p>An attribute map, which contains an attribute ARN as the key and attribute
@@ -146,6 +158,11 @@ namespace Model
     /**
      * <p>If specified, the parent reference to which this object will be attached.</p>
      */
+    inline bool ParentReferenceHasBeenSet() const { return m_parentReferenceHasBeenSet; }
+
+    /**
+     * <p>If specified, the parent reference to which this object will be attached.</p>
+     */
     inline void SetParentReference(const ObjectReference& value) { m_parentReferenceHasBeenSet = true; m_parentReference = value; }
 
     /**
@@ -168,6 +185,11 @@ namespace Model
      * <p>The name of the link.</p>
      */
     inline const Aws::String& GetLinkName() const{ return m_linkName; }
+
+    /**
+     * <p>The name of the link.</p>
+     */
+    inline bool LinkNameHasBeenSet() const { return m_linkNameHasBeenSet; }
 
     /**
      * <p>The name of the link.</p>
@@ -206,6 +228,13 @@ namespace Model
      * Support</a> for more information.</p>
      */
     inline const Aws::String& GetBatchReferenceName() const{ return m_batchReferenceName; }
+
+    /**
+     * <p>The batch reference name. See <a
+     * href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/transaction_support.html">Transaction
+     * Support</a> for more information.</p>
+     */
+    inline bool BatchReferenceNameHasBeenSet() const { return m_batchReferenceNameHasBeenSet; }
 
     /**
      * <p>The batch reference name. See <a

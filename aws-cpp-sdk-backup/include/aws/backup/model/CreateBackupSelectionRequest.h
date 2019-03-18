@@ -53,6 +53,12 @@ namespace Model
      * <p>Uniquely identifies the backup plan to be associated with the selection of
      * resources.</p>
      */
+    inline bool BackupPlanIdHasBeenSet() const { return m_backupPlanIdHasBeenSet; }
+
+    /**
+     * <p>Uniquely identifies the backup plan to be associated with the selection of
+     * resources.</p>
+     */
     inline void SetBackupPlanId(const Aws::String& value) { m_backupPlanIdHasBeenSet = true; m_backupPlanId = value; }
 
     /**
@@ -102,6 +108,15 @@ namespace Model
      * resource belongs to, and an optional array of tags used to identify a set of
      * resources.</p>
      */
+    inline bool BackupSelectionHasBeenSet() const { return m_backupSelectionHasBeenSet; }
+
+    /**
+     * <p>Specifies the body of a request to assign a set of resources to a backup
+     * plan.</p> <p>It includes an array of resources, an optional array of patterns to
+     * exclude resources, an optional role to provide access to the AWS service the
+     * resource belongs to, and an optional array of tags used to identify a set of
+     * resources.</p>
+     */
     inline void SetBackupSelection(const BackupSelection& value) { m_backupSelectionHasBeenSet = true; m_backupSelection = value; }
 
     /**
@@ -137,6 +152,12 @@ namespace Model
      * retried without the risk of executing the operation twice.</p>
      */
     inline const Aws::String& GetCreatorRequestId() const{ return m_creatorRequestId; }
+
+    /**
+     * <p>A unique string that identifies the request and allows failed requests to be
+     * retried without the risk of executing the operation twice.</p>
+     */
+    inline bool CreatorRequestIdHasBeenSet() const { return m_creatorRequestIdHasBeenSet; }
 
     /**
      * <p>A unique string that identifies the request and allows failed requests to be

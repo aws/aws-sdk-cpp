@@ -53,6 +53,11 @@ namespace Model
     /**
      * <p>The name of the domain in which this activity is to be registered.</p>
      */
+    inline bool DomainHasBeenSet() const { return m_domainHasBeenSet; }
+
+    /**
+     * <p>The name of the domain in which this activity is to be registered.</p>
+     */
     inline void SetDomain(const Aws::String& value) { m_domainHasBeenSet = true; m_domain = value; }
 
     /**
@@ -89,6 +94,15 @@ namespace Model
      * must not contain the literal string <code>arn</code>.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
+
+    /**
+     * <p>The name of the activity type within the domain.</p> <p>The specified string
+     * must not start or end with whitespace. It must not contain a <code>:</code>
+     * (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any control
+     * characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it
+     * must not contain the literal string <code>arn</code>.</p>
+     */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
      * <p>The name of the activity type within the domain.</p> <p>The specified string
@@ -165,6 +179,17 @@ namespace Model
      * (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not
      * contain the literal string <code>arn</code>.</p>
      */
+    inline bool VersionHasBeenSet() const { return m_versionHasBeenSet; }
+
+    /**
+     * <p>The version of the activity type.</p> <note> <p>The activity type consists of
+     * the name and version, the combination of which must be unique within the
+     * domain.</p> </note> <p>The specified string must not start or end with
+     * whitespace. It must not contain a <code>:</code> (colon), <code>/</code>
+     * (slash), <code>|</code> (vertical bar), or any control characters
+     * (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not
+     * contain the literal string <code>arn</code>.</p>
+     */
     inline void SetVersion(const Aws::String& value) { m_versionHasBeenSet = true; m_version = value; }
 
     /**
@@ -231,6 +256,11 @@ namespace Model
     /**
      * <p>A textual description of the activity type.</p>
      */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
+
+    /**
+     * <p>A textual description of the activity type.</p>
+     */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
@@ -268,6 +298,16 @@ namespace Model
      * unlimited duration.</p>
      */
     inline const Aws::String& GetDefaultTaskStartToCloseTimeout() const{ return m_defaultTaskStartToCloseTimeout; }
+
+    /**
+     * <p>If set, specifies the default maximum duration that a worker can take to
+     * process tasks of this activity type. This default can be overridden when
+     * scheduling an activity task using the <code>ScheduleActivityTask</code>
+     * <a>Decision</a>.</p> <p>The duration is specified in seconds, an integer greater
+     * than or equal to <code>0</code>. You can use <code>NONE</code> to specify
+     * unlimited duration.</p>
+     */
+    inline bool DefaultTaskStartToCloseTimeoutHasBeenSet() const { return m_defaultTaskStartToCloseTimeoutHasBeenSet; }
 
     /**
      * <p>If set, specifies the default maximum duration that a worker can take to
@@ -344,6 +384,21 @@ namespace Model
      * can use <code>NONE</code> to specify unlimited duration.</p>
      */
     inline const Aws::String& GetDefaultTaskHeartbeatTimeout() const{ return m_defaultTaskHeartbeatTimeout; }
+
+    /**
+     * <p>If set, specifies the default maximum time before which a worker processing a
+     * task of this type must report progress by calling
+     * <a>RecordActivityTaskHeartbeat</a>. If the timeout is exceeded, the activity
+     * task is automatically timed out. This default can be overridden when scheduling
+     * an activity task using the <code>ScheduleActivityTask</code> <a>Decision</a>. If
+     * the activity worker subsequently attempts to record a heartbeat or returns a
+     * result, the activity worker receives an <code>UnknownResource</code> fault. In
+     * this case, Amazon SWF no longer considers the activity task to be valid; the
+     * activity worker should clean up the activity task.</p> <p>The duration is
+     * specified in seconds, an integer greater than or equal to <code>0</code>. You
+     * can use <code>NONE</code> to specify unlimited duration.</p>
+     */
+    inline bool DefaultTaskHeartbeatTimeoutHasBeenSet() const { return m_defaultTaskHeartbeatTimeoutHasBeenSet; }
 
     /**
      * <p>If set, specifies the default maximum time before which a worker processing a
@@ -450,6 +505,14 @@ namespace Model
      * a task is scheduled through the <code>ScheduleActivityTask</code>
      * <a>Decision</a>.</p>
      */
+    inline bool DefaultTaskListHasBeenSet() const { return m_defaultTaskListHasBeenSet; }
+
+    /**
+     * <p>If set, specifies the default task list to use for scheduling tasks of this
+     * activity type. This default task list is used if a task list isn't provided when
+     * a task is scheduled through the <code>ScheduleActivityTask</code>
+     * <a>Decision</a>.</p>
+     */
     inline void SetDefaultTaskList(const TaskList& value) { m_defaultTaskListHasBeenSet = true; m_defaultTaskList = value; }
 
     /**
@@ -487,6 +550,17 @@ namespace Model
      * Task Priority</a> in the <i>in the <i>Amazon SWF Developer Guide</i>.</i>.</p>
      */
     inline const Aws::String& GetDefaultTaskPriority() const{ return m_defaultTaskPriority; }
+
+    /**
+     * <p>The default task priority to assign to the activity type. If not assigned,
+     * then <code>0</code> is used. Valid values are integers that range from Java's
+     * <code>Integer.MIN_VALUE</code> (-2147483648) to <code>Integer.MAX_VALUE</code>
+     * (2147483647). Higher numbers indicate higher priority.</p> <p>For more
+     * information about setting task priority, see <a
+     * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting
+     * Task Priority</a> in the <i>in the <i>Amazon SWF Developer Guide</i>.</i>.</p>
+     */
+    inline bool DefaultTaskPriorityHasBeenSet() const { return m_defaultTaskPriorityHasBeenSet; }
 
     /**
      * <p>The default task priority to assign to the activity type. If not assigned,
@@ -573,6 +647,16 @@ namespace Model
      * than or equal to <code>0</code>. You can use <code>NONE</code> to specify
      * unlimited duration.</p>
      */
+    inline bool DefaultTaskScheduleToStartTimeoutHasBeenSet() const { return m_defaultTaskScheduleToStartTimeoutHasBeenSet; }
+
+    /**
+     * <p>If set, specifies the default maximum duration that a task of this activity
+     * type can wait before being assigned to a worker. This default can be overridden
+     * when scheduling an activity task using the <code>ScheduleActivityTask</code>
+     * <a>Decision</a>.</p> <p>The duration is specified in seconds, an integer greater
+     * than or equal to <code>0</code>. You can use <code>NONE</code> to specify
+     * unlimited duration.</p>
+     */
     inline void SetDefaultTaskScheduleToStartTimeout(const Aws::String& value) { m_defaultTaskScheduleToStartTimeoutHasBeenSet = true; m_defaultTaskScheduleToStartTimeout = value; }
 
     /**
@@ -634,6 +718,15 @@ namespace Model
      * can use <code>NONE</code> to specify unlimited duration.</p>
      */
     inline const Aws::String& GetDefaultTaskScheduleToCloseTimeout() const{ return m_defaultTaskScheduleToCloseTimeout; }
+
+    /**
+     * <p>If set, specifies the default maximum duration for a task of this activity
+     * type. This default can be overridden when scheduling an activity task using the
+     * <code>ScheduleActivityTask</code> <a>Decision</a>.</p> <p>The duration is
+     * specified in seconds, an integer greater than or equal to <code>0</code>. You
+     * can use <code>NONE</code> to specify unlimited duration.</p>
+     */
+    inline bool DefaultTaskScheduleToCloseTimeoutHasBeenSet() const { return m_defaultTaskScheduleToCloseTimeoutHasBeenSet; }
 
     /**
      * <p>If set, specifies the default maximum duration for a task of this activity

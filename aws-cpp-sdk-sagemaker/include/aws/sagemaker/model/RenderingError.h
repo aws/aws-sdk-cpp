@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>A unique identifier for a specific class of errors.</p>
      */
+    inline bool CodeHasBeenSet() const { return m_codeHasBeenSet; }
+
+    /**
+     * <p>A unique identifier for a specific class of errors.</p>
+     */
     inline void SetCode(const Aws::String& value) { m_codeHasBeenSet = true; m_code = value; }
 
     /**
@@ -88,6 +93,11 @@ namespace Model
      * <p>A human-readable message describing the error.</p>
      */
     inline const Aws::String& GetMessage() const{ return m_message; }
+
+    /**
+     * <p>A human-readable message describing the error.</p>
+     */
+    inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
 
     /**
      * <p>A human-readable message describing the error.</p>

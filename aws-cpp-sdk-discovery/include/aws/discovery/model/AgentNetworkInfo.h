@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The IP address for the host where the agent/connector resides.</p>
      */
+    inline bool IpAddressHasBeenSet() const { return m_ipAddressHasBeenSet; }
+
+    /**
+     * <p>The IP address for the host where the agent/connector resides.</p>
+     */
     inline void SetIpAddress(const Aws::String& value) { m_ipAddressHasBeenSet = true; m_ipAddress = value; }
 
     /**
@@ -88,6 +93,11 @@ namespace Model
      * <p>The MAC address for the host where the agent/connector resides.</p>
      */
     inline const Aws::String& GetMacAddress() const{ return m_macAddress; }
+
+    /**
+     * <p>The MAC address for the host where the agent/connector resides.</p>
+     */
+    inline bool MacAddressHasBeenSet() const { return m_macAddressHasBeenSet; }
 
     /**
      * <p>The MAC address for the host where the agent/connector resides.</p>

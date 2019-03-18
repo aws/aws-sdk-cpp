@@ -59,6 +59,11 @@ namespace Model
     /**
      * <p>Describes the serialization of a CSV-encoded object.</p>
      */
+    inline bool CSVHasBeenSet() const { return m_cSVHasBeenSet; }
+
+    /**
+     * <p>Describes the serialization of a CSV-encoded object.</p>
+     */
     inline void SetCSV(const CSVInput& value) { m_cSVHasBeenSet = true; m_cSV = value; }
 
     /**
@@ -82,6 +87,12 @@ namespace Model
      * Default Value: NONE.</p>
      */
     inline const CompressionType& GetCompressionType() const{ return m_compressionType; }
+
+    /**
+     * <p>Specifies object's compression format. Valid values: NONE, GZIP, BZIP2.
+     * Default Value: NONE.</p>
+     */
+    inline bool CompressionTypeHasBeenSet() const { return m_compressionTypeHasBeenSet; }
 
     /**
      * <p>Specifies object's compression format. Valid values: NONE, GZIP, BZIP2.
@@ -116,6 +127,11 @@ namespace Model
     /**
      * <p>Specifies JSON as object's input serialization format.</p>
      */
+    inline bool JSONHasBeenSet() const { return m_jSONHasBeenSet; }
+
+    /**
+     * <p>Specifies JSON as object's input serialization format.</p>
+     */
     inline void SetJSON(const JSONInput& value) { m_jSONHasBeenSet = true; m_jSON = value; }
 
     /**
@@ -138,6 +154,11 @@ namespace Model
      * <p>Specifies Parquet as object's input serialization format.</p>
      */
     inline const ParquetInput& GetParquet() const{ return m_parquet; }
+
+    /**
+     * <p>Specifies Parquet as object's input serialization format.</p>
+     */
+    inline bool ParquetHasBeenSet() const { return m_parquetHasBeenSet; }
 
     /**
      * <p>Specifies Parquet as object's input serialization format.</p>

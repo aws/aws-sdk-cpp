@@ -59,6 +59,11 @@ namespace Model
     /**
      * <p>The ID of the file system to back up.</p>
      */
+    inline bool FileSystemIdHasBeenSet() const { return m_fileSystemIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the file system to back up.</p>
+     */
     inline void SetFileSystemId(const Aws::String& value) { m_fileSystemIdHasBeenSet = true; m_fileSystemId = value; }
 
     /**
@@ -93,6 +98,13 @@ namespace Model
      * when you use the AWS Command Line Interface (AWS CLI) or an AWS SDK.</p>
      */
     inline const Aws::String& GetClientRequestToken() const{ return m_clientRequestToken; }
+
+    /**
+     * <p>(Optional) A string of up to 64 ASCII characters that Amazon FSx uses to
+     * ensure idempotent creation. This string is automatically filled on your behalf
+     * when you use the AWS Command Line Interface (AWS CLI) or an AWS SDK.</p>
+     */
+    inline bool ClientRequestTokenHasBeenSet() const { return m_clientRequestTokenHasBeenSet; }
 
     /**
      * <p>(Optional) A string of up to 64 ASCII characters that Amazon FSx uses to
@@ -142,6 +154,12 @@ namespace Model
      * <code>Name</code> tag appears in the console as the backup name.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>The tags to apply to the backup at backup creation. The key value of the
+     * <code>Name</code> tag appears in the console as the backup name.</p>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
      * <p>The tags to apply to the backup at backup creation. The key value of the

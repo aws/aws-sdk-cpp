@@ -61,6 +61,11 @@ namespace Model
     /**
      * Custom segment attributes.
      */
+    inline bool AttributesHasBeenSet() const { return m_attributesHasBeenSet; }
+
+    /**
+     * Custom segment attributes.
+     */
     inline void SetAttributes(const Aws::Map<Aws::String, AttributeDimension>& value) { m_attributesHasBeenSet = true; m_attributes = value; }
 
     /**
@@ -117,6 +122,11 @@ namespace Model
     /**
      * The segment behaviors attributes.
      */
+    inline bool BehaviorHasBeenSet() const { return m_behaviorHasBeenSet; }
+
+    /**
+     * The segment behaviors attributes.
+     */
     inline void SetBehavior(const SegmentBehaviors& value) { m_behaviorHasBeenSet = true; m_behavior = value; }
 
     /**
@@ -139,6 +149,11 @@ namespace Model
      * The segment demographics attributes.
      */
     inline const SegmentDemographics& GetDemographic() const{ return m_demographic; }
+
+    /**
+     * The segment demographics attributes.
+     */
+    inline bool DemographicHasBeenSet() const { return m_demographicHasBeenSet; }
 
     /**
      * The segment demographics attributes.
@@ -169,6 +184,11 @@ namespace Model
     /**
      * The segment location attributes.
      */
+    inline bool LocationHasBeenSet() const { return m_locationHasBeenSet; }
+
+    /**
+     * The segment location attributes.
+     */
     inline void SetLocation(const SegmentLocation& value) { m_locationHasBeenSet = true; m_location = value; }
 
     /**
@@ -191,6 +211,11 @@ namespace Model
      * Custom segment metrics.
      */
     inline const Aws::Map<Aws::String, MetricDimension>& GetMetrics() const{ return m_metrics; }
+
+    /**
+     * Custom segment metrics.
+     */
+    inline bool MetricsHasBeenSet() const { return m_metricsHasBeenSet; }
 
     /**
      * Custom segment metrics.
@@ -247,6 +272,11 @@ namespace Model
      * Custom segment user attributes.
      */
     inline const Aws::Map<Aws::String, AttributeDimension>& GetUserAttributes() const{ return m_userAttributes; }
+
+    /**
+     * Custom segment user attributes.
+     */
+    inline bool UserAttributesHasBeenSet() const { return m_userAttributesHasBeenSet; }
 
     /**
      * Custom segment user attributes.

@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>Specify one or more AWS Config rule names to filter the results by rule.</p>
      */
+    inline bool ConfigRuleNamesHasBeenSet() const { return m_configRuleNamesHasBeenSet; }
+
+    /**
+     * <p>Specify one or more AWS Config rule names to filter the results by rule.</p>
+     */
     inline void SetConfigRuleNames(const Aws::Vector<Aws::String>& value) { m_configRuleNamesHasBeenSet = true; m_configRuleNames = value; }
 
     /**
@@ -100,6 +105,12 @@ namespace Model
      * <p>Filters the results by compliance.</p> <p>The allowed values are
      * <code>COMPLIANT</code> and <code>NON_COMPLIANT</code>.</p>
      */
+    inline bool ComplianceTypesHasBeenSet() const { return m_complianceTypesHasBeenSet; }
+
+    /**
+     * <p>Filters the results by compliance.</p> <p>The allowed values are
+     * <code>COMPLIANT</code> and <code>NON_COMPLIANT</code>.</p>
+     */
     inline void SetComplianceTypes(const Aws::Vector<ComplianceType>& value) { m_complianceTypesHasBeenSet = true; m_complianceTypes = value; }
 
     /**
@@ -138,6 +149,12 @@ namespace Model
      * get the next page of results in a paginated response.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
+    /**
+     * <p>The <code>nextToken</code> string returned on a previous page that you use to
+     * get the next page of results in a paginated response.</p>
+     */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
      * <p>The <code>nextToken</code> string returned on a previous page that you use to

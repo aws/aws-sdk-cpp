@@ -64,6 +64,17 @@ namespace Model
      * <code>NextToken</code> from the previous response to get information about
      * another batch of member account IDs.</p>
      */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
+
+    /**
+     * <p>If you specify a value for <code>MaxResults</code> and you have more account
+     * IDs than the number that you specify for <code>MaxResults</code>, AWS Firewall
+     * Manager returns a <code>NextToken</code> value in the response that allows you
+     * to list another group of IDs. For the second and subsequent
+     * <code>ListMemberAccountsRequest</code> requests, specify the value of
+     * <code>NextToken</code> from the previous response to get information about
+     * another batch of member account IDs.</p>
+     */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
     /**
@@ -130,6 +141,15 @@ namespace Model
      * account IDs.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
+
+    /**
+     * <p>Specifies the number of member account IDs that you want AWS Firewall Manager
+     * to return for this request. If you have more IDs than the number that you
+     * specify for <code>MaxResults</code>, the response includes a
+     * <code>NextToken</code> value that you can use to get another batch of member
+     * account IDs.</p>
+     */
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
 
     /**
      * <p>Specifies the number of member account IDs that you want AWS Firewall Manager

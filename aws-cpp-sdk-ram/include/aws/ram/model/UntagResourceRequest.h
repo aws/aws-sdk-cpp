@@ -51,6 +51,11 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the resource share.</p>
      */
+    inline bool ResourceShareArnHasBeenSet() const { return m_resourceShareArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the resource share.</p>
+     */
     inline void SetResourceShareArn(const Aws::String& value) { m_resourceShareArnHasBeenSet = true; m_resourceShareArn = value; }
 
     /**
@@ -83,6 +88,11 @@ namespace Model
      * <p>The tag keys of the tags to remove.</p>
      */
     inline const Aws::Vector<Aws::String>& GetTagKeys() const{ return m_tagKeys; }
+
+    /**
+     * <p>The tag keys of the tags to remove.</p>
+     */
+    inline bool TagKeysHasBeenSet() const { return m_tagKeysHasBeenSet; }
 
     /**
      * <p>The tag keys of the tags to remove.</p>

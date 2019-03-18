@@ -66,6 +66,11 @@ namespace Model
     /**
      * <p>The unique identifier for the specified Elasticsearch domain.</p>
      */
+    inline bool DomainIdHasBeenSet() const { return m_domainIdHasBeenSet; }
+
+    /**
+     * <p>The unique identifier for the specified Elasticsearch domain.</p>
+     */
     inline void SetDomainId(const Aws::String& value) { m_domainIdHasBeenSet = true; m_domainId = value; }
 
     /**
@@ -101,6 +106,14 @@ namespace Model
      * and - (hyphen).</p>
      */
     inline const Aws::String& GetDomainName() const{ return m_domainName; }
+
+    /**
+     * <p>The name of an Elasticsearch domain. Domain names are unique across the
+     * domains owned by an account within an AWS region. Domain names start with a
+     * letter or number and can contain the following characters: a-z (lowercase), 0-9,
+     * and - (hyphen).</p>
+     */
+    inline bool DomainNameHasBeenSet() const { return m_domainNameHasBeenSet; }
 
     /**
      * <p>The name of an Elasticsearch domain. Domain names are unique across the
@@ -165,6 +178,14 @@ namespace Model
      * target="_blank">Identifiers for IAM Entities</a> in <i>Using AWS Identity and
      * Access Management</i> for more information.</p>
      */
+    inline bool ARNHasBeenSet() const { return m_aRNHasBeenSet; }
+
+    /**
+     * <p>The Amazon resource name (ARN) of an Elasticsearch domain. See <a
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html"
+     * target="_blank">Identifiers for IAM Entities</a> in <i>Using AWS Identity and
+     * Access Management</i> for more information.</p>
+     */
     inline void SetARN(const Aws::String& value) { m_aRNHasBeenSet = true; m_aRN = value; }
 
     /**
@@ -220,6 +241,13 @@ namespace Model
      * Elasticsearch domain is complete. <code>False</code> if domain creation is still
      * in progress.</p>
      */
+    inline bool CreatedHasBeenSet() const { return m_createdHasBeenSet; }
+
+    /**
+     * <p>The domain creation status. <code>True</code> if the creation of an
+     * Elasticsearch domain is complete. <code>False</code> if domain creation is still
+     * in progress.</p>
+     */
     inline void SetCreated(bool value) { m_createdHasBeenSet = true; m_created = value; }
 
     /**
@@ -244,6 +272,14 @@ namespace Model
      * <code>False</code> if the domain has not been deleted. Once domain deletion is
      * complete, the status of the domain is no longer returned.</p>
      */
+    inline bool DeletedHasBeenSet() const { return m_deletedHasBeenSet; }
+
+    /**
+     * <p>The domain deletion status. <code>True</code> if a delete request has been
+     * received for the domain but resource cleanup is still in progress.
+     * <code>False</code> if the domain has not been deleted. Once domain deletion is
+     * complete, the status of the domain is no longer returned.</p>
+     */
     inline void SetDeleted(bool value) { m_deletedHasBeenSet = true; m_deleted = value; }
 
     /**
@@ -260,6 +296,12 @@ namespace Model
      * requests.</p>
      */
     inline const Aws::String& GetEndpoint() const{ return m_endpoint; }
+
+    /**
+     * <p>The Elasticsearch domain endpoint that you use to submit index and search
+     * requests.</p>
+     */
+    inline bool EndpointHasBeenSet() const { return m_endpointHasBeenSet; }
 
     /**
      * <p>The Elasticsearch domain endpoint that you use to submit index and search
@@ -304,6 +346,13 @@ namespace Model
      * <code>'vpc','vpc-endpoint-h2dsd34efgyghrtguk5gt6j2foh4.us-east-1.es.amazonaws.com'</code>.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetEndpoints() const{ return m_endpoints; }
+
+    /**
+     * <p>Map containing the Elasticsearch domain endpoints used to submit index and
+     * search requests. Example <code>key, value</code>:
+     * <code>'vpc','vpc-endpoint-h2dsd34efgyghrtguk5gt6j2foh4.us-east-1.es.amazonaws.com'</code>.</p>
+     */
+    inline bool EndpointsHasBeenSet() const { return m_endpointsHasBeenSet; }
 
     /**
      * <p>Map containing the Elasticsearch domain endpoints used to submit index and
@@ -395,6 +444,13 @@ namespace Model
      * Amazon Elasticsearch Service is processing configuration changes.
      * <code>False</code> if the configuration is active.</p>
      */
+    inline bool ProcessingHasBeenSet() const { return m_processingHasBeenSet; }
+
+    /**
+     * <p>The status of the Elasticsearch domain configuration. <code>True</code> if
+     * Amazon Elasticsearch Service is processing configuration changes.
+     * <code>False</code> if the configuration is active.</p>
+     */
     inline void SetProcessing(bool value) { m_processingHasBeenSet = true; m_processing = value; }
 
     /**
@@ -417,6 +473,13 @@ namespace Model
      * Amazon Elasticsearch Service is undergoing a version upgrade. <code>False</code>
      * if the configuration is active.</p>
      */
+    inline bool UpgradeProcessingHasBeenSet() const { return m_upgradeProcessingHasBeenSet; }
+
+    /**
+     * <p>The status of an Elasticsearch domain version upgrade. <code>True</code> if
+     * Amazon Elasticsearch Service is undergoing a version upgrade. <code>False</code>
+     * if the configuration is active.</p>
+     */
     inline void SetUpgradeProcessing(bool value) { m_upgradeProcessingHasBeenSet = true; m_upgradeProcessing = value; }
 
     /**
@@ -429,6 +492,9 @@ namespace Model
 
     
     inline const Aws::String& GetElasticsearchVersion() const{ return m_elasticsearchVersion; }
+
+    
+    inline bool ElasticsearchVersionHasBeenSet() const { return m_elasticsearchVersionHasBeenSet; }
 
     
     inline void SetElasticsearchVersion(const Aws::String& value) { m_elasticsearchVersionHasBeenSet = true; m_elasticsearchVersion = value; }
@@ -453,6 +519,11 @@ namespace Model
      * <p>The type and number of instances in the domain cluster.</p>
      */
     inline const ElasticsearchClusterConfig& GetElasticsearchClusterConfig() const{ return m_elasticsearchClusterConfig; }
+
+    /**
+     * <p>The type and number of instances in the domain cluster.</p>
+     */
+    inline bool ElasticsearchClusterConfigHasBeenSet() const { return m_elasticsearchClusterConfigHasBeenSet; }
 
     /**
      * <p>The type and number of instances in the domain cluster.</p>
@@ -487,6 +558,13 @@ namespace Model
      * href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomain-configure-ebs"
      * target="_blank">Configuring EBS-based Storage</a> for more information.</p>
      */
+    inline bool EBSOptionsHasBeenSet() const { return m_eBSOptionsHasBeenSet; }
+
+    /**
+     * <p>The <code>EBSOptions</code> for the specified domain. See <a
+     * href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomain-configure-ebs"
+     * target="_blank">Configuring EBS-based Storage</a> for more information.</p>
+     */
     inline void SetEBSOptions(const EBSOptions& value) { m_eBSOptionsHasBeenSet = true; m_eBSOptions = value; }
 
     /**
@@ -515,6 +593,11 @@ namespace Model
      * <p> IAM access policy as a JSON-formatted string.</p>
      */
     inline const Aws::String& GetAccessPolicies() const{ return m_accessPolicies; }
+
+    /**
+     * <p> IAM access policy as a JSON-formatted string.</p>
+     */
+    inline bool AccessPoliciesHasBeenSet() const { return m_accessPoliciesHasBeenSet; }
 
     /**
      * <p> IAM access policy as a JSON-formatted string.</p>
@@ -555,6 +638,11 @@ namespace Model
     /**
      * <p>Specifies the status of the <code>SnapshotOptions</code></p>
      */
+    inline bool SnapshotOptionsHasBeenSet() const { return m_snapshotOptionsHasBeenSet; }
+
+    /**
+     * <p>Specifies the status of the <code>SnapshotOptions</code></p>
+     */
     inline void SetSnapshotOptions(const SnapshotOptions& value) { m_snapshotOptionsHasBeenSet = true; m_snapshotOptions = value; }
 
     /**
@@ -580,6 +668,14 @@ namespace Model
      * target="_blank">VPC Endpoints for Amazon Elasticsearch Service Domains</a>.</p>
      */
     inline const VPCDerivedInfo& GetVPCOptions() const{ return m_vPCOptions; }
+
+    /**
+     * <p>The <code>VPCOptions</code> for the specified domain. For more information,
+     * see <a
+     * href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-vpc.html"
+     * target="_blank">VPC Endpoints for Amazon Elasticsearch Service Domains</a>.</p>
+     */
+    inline bool VPCOptionsHasBeenSet() const { return m_vPCOptionsHasBeenSet; }
 
     /**
      * <p>The <code>VPCOptions</code> for the specified domain. For more information,
@@ -628,6 +724,14 @@ namespace Model
      * href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-cognito-auth.html"
      * target="_blank">Amazon Cognito Authentication for Kibana</a>.</p>
      */
+    inline bool CognitoOptionsHasBeenSet() const { return m_cognitoOptionsHasBeenSet; }
+
+    /**
+     * <p>The <code>CognitoOptions</code> for the specified domain. For more
+     * information, see <a
+     * href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-cognito-auth.html"
+     * target="_blank">Amazon Cognito Authentication for Kibana</a>.</p>
+     */
     inline void SetCognitoOptions(const CognitoOptions& value) { m_cognitoOptionsHasBeenSet = true; m_cognitoOptions = value; }
 
     /**
@@ -663,6 +767,11 @@ namespace Model
     /**
      * <p> Specifies the status of the <code>EncryptionAtRestOptions</code>.</p>
      */
+    inline bool EncryptionAtRestOptionsHasBeenSet() const { return m_encryptionAtRestOptionsHasBeenSet; }
+
+    /**
+     * <p> Specifies the status of the <code>EncryptionAtRestOptions</code>.</p>
+     */
     inline void SetEncryptionAtRestOptions(const EncryptionAtRestOptions& value) { m_encryptionAtRestOptionsHasBeenSet = true; m_encryptionAtRestOptions = value; }
 
     /**
@@ -689,6 +798,11 @@ namespace Model
     /**
      * <p>Specifies the status of the <code>NodeToNodeEncryptionOptions</code>.</p>
      */
+    inline bool NodeToNodeEncryptionOptionsHasBeenSet() const { return m_nodeToNodeEncryptionOptionsHasBeenSet; }
+
+    /**
+     * <p>Specifies the status of the <code>NodeToNodeEncryptionOptions</code>.</p>
+     */
     inline void SetNodeToNodeEncryptionOptions(const NodeToNodeEncryptionOptions& value) { m_nodeToNodeEncryptionOptionsHasBeenSet = true; m_nodeToNodeEncryptionOptions = value; }
 
     /**
@@ -711,6 +825,11 @@ namespace Model
      * <p>Specifies the status of the <code>AdvancedOptions</code></p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetAdvancedOptions() const{ return m_advancedOptions; }
+
+    /**
+     * <p>Specifies the status of the <code>AdvancedOptions</code></p>
+     */
+    inline bool AdvancedOptionsHasBeenSet() const { return m_advancedOptionsHasBeenSet; }
 
     /**
      * <p>Specifies the status of the <code>AdvancedOptions</code></p>
@@ -776,6 +895,11 @@ namespace Model
     /**
      * <p>Log publishing options for the given domain.</p>
      */
+    inline bool LogPublishingOptionsHasBeenSet() const { return m_logPublishingOptionsHasBeenSet; }
+
+    /**
+     * <p>Log publishing options for the given domain.</p>
+     */
     inline void SetLogPublishingOptions(const Aws::Map<LogType, LogPublishingOption>& value) { m_logPublishingOptionsHasBeenSet = true; m_logPublishingOptions = value; }
 
     /**
@@ -818,6 +942,11 @@ namespace Model
      * <p>The current status of the Elasticsearch domain's service software.</p>
      */
     inline const ServiceSoftwareOptions& GetServiceSoftwareOptions() const{ return m_serviceSoftwareOptions; }
+
+    /**
+     * <p>The current status of the Elasticsearch domain's service software.</p>
+     */
+    inline bool ServiceSoftwareOptionsHasBeenSet() const { return m_serviceSoftwareOptionsHasBeenSet; }
 
     /**
      * <p>The current status of the Elasticsearch domain's service software.</p>

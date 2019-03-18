@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The commit ID that contains the reference to the submodule.</p>
      */
+    inline bool CommitIdHasBeenSet() const { return m_commitIdHasBeenSet; }
+
+    /**
+     * <p>The commit ID that contains the reference to the submodule.</p>
+     */
     inline void SetCommitId(const Aws::String& value) { m_commitIdHasBeenSet = true; m_commitId = value; }
 
     /**
@@ -89,6 +94,12 @@ namespace Model
      * submodule.</p>
      */
     inline const Aws::String& GetAbsolutePath() const{ return m_absolutePath; }
+
+    /**
+     * <p>The fully qualified path to the folder that contains the reference to the
+     * submodule.</p>
+     */
+    inline bool AbsolutePathHasBeenSet() const { return m_absolutePathHasBeenSet; }
 
     /**
      * <p>The fully qualified path to the folder that contains the reference to the
@@ -132,6 +143,12 @@ namespace Model
      * originated.</p>
      */
     inline const Aws::String& GetRelativePath() const{ return m_relativePath; }
+
+    /**
+     * <p>The relative path of the submodule from the folder where the query
+     * originated.</p>
+     */
+    inline bool RelativePathHasBeenSet() const { return m_relativePathHasBeenSet; }
 
     /**
      * <p>The relative path of the submodule from the folder where the query

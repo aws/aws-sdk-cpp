@@ -52,6 +52,11 @@ namespace Model
     /**
      * Optional. A category for the preset you are creating.
      */
+    inline bool CategoryHasBeenSet() const { return m_categoryHasBeenSet; }
+
+    /**
+     * Optional. A category for the preset you are creating.
+     */
     inline void SetCategory(const Aws::String& value) { m_categoryHasBeenSet = true; m_category = value; }
 
     /**
@@ -84,6 +89,11 @@ namespace Model
      * Optional. A description of the preset you are creating.
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
+
+    /**
+     * Optional. A description of the preset you are creating.
+     */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
 
     /**
      * Optional. A description of the preset you are creating.
@@ -124,6 +134,11 @@ namespace Model
     /**
      * The name of the preset you are creating.
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * The name of the preset you are creating.
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
@@ -156,6 +171,9 @@ namespace Model
     inline const PresetSettings& GetSettings() const{ return m_settings; }
 
     
+    inline bool SettingsHasBeenSet() const { return m_settingsHasBeenSet; }
+
+    
     inline void SetSettings(const PresetSettings& value) { m_settingsHasBeenSet = true; m_settings = value; }
 
     
@@ -173,6 +191,12 @@ namespace Model
      * key-value pair or with only a key.
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
+
+    /**
+     * The tags that you want to add to the resource. You can tag resources with a
+     * key-value pair or with only a key.
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
      * The tags that you want to add to the resource. You can tag resources with a

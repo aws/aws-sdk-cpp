@@ -54,6 +54,12 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the resource whose tags you want to
      * retrieve.</p>
      */
+    inline bool ResourceArnHasBeenSet() const { return m_resourceArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the resource whose tags you want to
+     * retrieve.</p>
+     */
     inline void SetResourceArn(const Aws::String& value) { m_resourceArnHasBeenSet = true; m_resourceArn = value; }
 
     /**
@@ -93,6 +99,13 @@ namespace Model
      * the subsequent request. </p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
+    /**
+     * <p> If the response to the previous <code>ListTags</code> request is truncated,
+     * Amazon SageMaker returns this token. To retrieve the next set of tags, use it in
+     * the subsequent request. </p>
+     */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
      * <p> If the response to the previous <code>ListTags</code> request is truncated,
@@ -141,6 +154,11 @@ namespace Model
      * <p>Maximum number of tags to return.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
+
+    /**
+     * <p>Maximum number of tags to return.</p>
+     */
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
 
     /**
      * <p>Maximum number of tags to return.</p>

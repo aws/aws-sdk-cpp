@@ -54,6 +54,11 @@ namespace Model
     /**
      * <p>True if Wi-Fi is enabled at the beginning of the test; otherwise, false.</p>
      */
+    inline bool WifiHasBeenSet() const { return m_wifiHasBeenSet; }
+
+    /**
+     * <p>True if Wi-Fi is enabled at the beginning of the test; otherwise, false.</p>
+     */
     inline void SetWifi(bool value) { m_wifiHasBeenSet = true; m_wifi = value; }
 
     /**
@@ -67,6 +72,12 @@ namespace Model
      * false.</p>
      */
     inline bool GetBluetooth() const{ return m_bluetooth; }
+
+    /**
+     * <p>True if Bluetooth is enabled at the beginning of the test; otherwise,
+     * false.</p>
+     */
+    inline bool BluetoothHasBeenSet() const { return m_bluetoothHasBeenSet; }
 
     /**
      * <p>True if Bluetooth is enabled at the beginning of the test; otherwise,
@@ -89,6 +100,11 @@ namespace Model
     /**
      * <p>True if NFC is enabled at the beginning of the test; otherwise, false.</p>
      */
+    inline bool NfcHasBeenSet() const { return m_nfcHasBeenSet; }
+
+    /**
+     * <p>True if NFC is enabled at the beginning of the test; otherwise, false.</p>
+     */
     inline void SetNfc(bool value) { m_nfcHasBeenSet = true; m_nfc = value; }
 
     /**
@@ -101,6 +117,11 @@ namespace Model
      * <p>True if GPS is enabled at the beginning of the test; otherwise, false.</p>
      */
     inline bool GetGps() const{ return m_gps; }
+
+    /**
+     * <p>True if GPS is enabled at the beginning of the test; otherwise, false.</p>
+     */
+    inline bool GpsHasBeenSet() const { return m_gpsHasBeenSet; }
 
     /**
      * <p>True if GPS is enabled at the beginning of the test; otherwise, false.</p>

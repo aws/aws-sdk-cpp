@@ -52,6 +52,11 @@ namespace Model
     /**
      * <p>The name of the model package to describe.</p>
      */
+    inline bool ModelPackageNameHasBeenSet() const { return m_modelPackageNameHasBeenSet; }
+
+    /**
+     * <p>The name of the model package to describe.</p>
+     */
     inline void SetModelPackageName(const Aws::String& value) { m_modelPackageNameHasBeenSet = true; m_modelPackageName = value; }
 
     /**

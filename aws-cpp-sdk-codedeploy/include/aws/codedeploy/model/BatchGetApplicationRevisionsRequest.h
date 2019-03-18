@@ -60,6 +60,12 @@ namespace Model
      * <p>The name of an AWS CodeDeploy application about which to get revision
      * information.</p>
      */
+    inline bool ApplicationNameHasBeenSet() const { return m_applicationNameHasBeenSet; }
+
+    /**
+     * <p>The name of an AWS CodeDeploy application about which to get revision
+     * information.</p>
+     */
     inline void SetApplicationName(const Aws::String& value) { m_applicationNameHasBeenSet = true; m_applicationName = value; }
 
     /**
@@ -98,6 +104,12 @@ namespace Model
      * location.</p>
      */
     inline const Aws::Vector<RevisionLocation>& GetRevisions() const{ return m_revisions; }
+
+    /**
+     * <p>Information to get about the application revisions, including type and
+     * location.</p>
+     */
+    inline bool RevisionsHasBeenSet() const { return m_revisionsHasBeenSet; }
 
     /**
      * <p>Information to get about the application revisions, including type and

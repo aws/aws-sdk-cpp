@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The identifier of the VPC in which the AD Connector is created.</p>
      */
+    inline bool VpcIdHasBeenSet() const { return m_vpcIdHasBeenSet; }
+
+    /**
+     * <p>The identifier of the VPC in which the AD Connector is created.</p>
+     */
     inline void SetVpcId(const Aws::String& value) { m_vpcIdHasBeenSet = true; m_vpcId = value; }
 
     /**
@@ -90,6 +95,12 @@ namespace Model
      * created.</p>
      */
     inline const Aws::Vector<Aws::String>& GetSubnetIds() const{ return m_subnetIds; }
+
+    /**
+     * <p>A list of subnet identifiers in the VPC in which the AD Connector is
+     * created.</p>
+     */
+    inline bool SubnetIdsHasBeenSet() const { return m_subnetIdsHasBeenSet; }
 
     /**
      * <p>A list of subnet identifiers in the VPC in which the AD Connector is
@@ -144,6 +155,12 @@ namespace Model
      * <p>A list of one or more IP addresses of DNS servers or domain controllers in
      * the on-premises directory.</p>
      */
+    inline bool CustomerDnsIpsHasBeenSet() const { return m_customerDnsIpsHasBeenSet; }
+
+    /**
+     * <p>A list of one or more IP addresses of DNS servers or domain controllers in
+     * the on-premises directory.</p>
+     */
     inline void SetCustomerDnsIps(const Aws::Vector<Aws::String>& value) { m_customerDnsIpsHasBeenSet = true; m_customerDnsIps = value; }
 
     /**
@@ -190,6 +207,14 @@ namespace Model
      * </li> <li> <p>Join computers to the domain</p> </li> </ul>
      */
     inline const Aws::String& GetCustomerUserName() const{ return m_customerUserName; }
+
+    /**
+     * <p>The user name of an account in the on-premises directory that is used to
+     * connect to the directory. This account must have the following permissions:</p>
+     * <ul> <li> <p>Read users and groups</p> </li> <li> <p>Create computer objects</p>
+     * </li> <li> <p>Join computers to the domain</p> </li> </ul>
+     */
+    inline bool CustomerUserNameHasBeenSet() const { return m_customerUserNameHasBeenSet; }
 
     /**
      * <p>The user name of an account in the on-premises directory that is used to

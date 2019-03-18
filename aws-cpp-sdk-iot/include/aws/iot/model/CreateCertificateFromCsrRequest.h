@@ -60,6 +60,11 @@ namespace Model
     /**
      * <p>The certificate signing request (CSR).</p>
      */
+    inline bool CertificateSigningRequestHasBeenSet() const { return m_certificateSigningRequestHasBeenSet; }
+
+    /**
+     * <p>The certificate signing request (CSR).</p>
+     */
     inline void SetCertificateSigningRequest(const Aws::String& value) { m_certificateSigningRequestHasBeenSet = true; m_certificateSigningRequest = value; }
 
     /**
@@ -92,6 +97,11 @@ namespace Model
      * <p>Specifies whether the certificate is active.</p>
      */
     inline bool GetSetAsActive() const{ return m_setAsActive; }
+
+    /**
+     * <p>Specifies whether the certificate is active.</p>
+     */
+    inline bool SetAsActiveHasBeenSet() const { return m_setAsActiveHasBeenSet; }
 
     /**
      * <p>Specifies whether the certificate is active.</p>

@@ -54,6 +54,11 @@ namespace Model
     /**
      * <p>The short name or full ARN of the cluster that hosts the container.</p>
      */
+    inline bool ClusterHasBeenSet() const { return m_clusterHasBeenSet; }
+
+    /**
+     * <p>The short name or full ARN of the cluster that hosts the container.</p>
+     */
     inline void SetCluster(const Aws::String& value) { m_clusterHasBeenSet = true; m_cluster = value; }
 
     /**
@@ -87,6 +92,12 @@ namespace Model
      * container.</p>
      */
     inline const Aws::String& GetTask() const{ return m_task; }
+
+    /**
+     * <p>The task ID or full Amazon Resource Name (ARN) of the task that hosts the
+     * container.</p>
+     */
+    inline bool TaskHasBeenSet() const { return m_taskHasBeenSet; }
 
     /**
      * <p>The task ID or full Amazon Resource Name (ARN) of the task that hosts the
@@ -133,6 +144,11 @@ namespace Model
     /**
      * <p>The name of the container.</p>
      */
+    inline bool ContainerNameHasBeenSet() const { return m_containerNameHasBeenSet; }
+
+    /**
+     * <p>The name of the container.</p>
+     */
     inline void SetContainerName(const Aws::String& value) { m_containerNameHasBeenSet = true; m_containerName = value; }
 
     /**
@@ -165,6 +181,11 @@ namespace Model
      * <p>The status of the state change request.</p>
      */
     inline const Aws::String& GetStatus() const{ return m_status; }
+
+    /**
+     * <p>The status of the state change request.</p>
+     */
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
     /**
      * <p>The status of the state change request.</p>
@@ -205,6 +226,11 @@ namespace Model
     /**
      * <p>The exit code returned for the state change request.</p>
      */
+    inline bool ExitCodeHasBeenSet() const { return m_exitCodeHasBeenSet; }
+
+    /**
+     * <p>The exit code returned for the state change request.</p>
+     */
     inline void SetExitCode(int value) { m_exitCodeHasBeenSet = true; m_exitCode = value; }
 
     /**
@@ -217,6 +243,11 @@ namespace Model
      * <p>The reason for the state change request.</p>
      */
     inline const Aws::String& GetReason() const{ return m_reason; }
+
+    /**
+     * <p>The reason for the state change request.</p>
+     */
+    inline bool ReasonHasBeenSet() const { return m_reasonHasBeenSet; }
 
     /**
      * <p>The reason for the state change request.</p>
@@ -253,6 +284,11 @@ namespace Model
      * <p>The network bindings of the container.</p>
      */
     inline const Aws::Vector<NetworkBinding>& GetNetworkBindings() const{ return m_networkBindings; }
+
+    /**
+     * <p>The network bindings of the container.</p>
+     */
+    inline bool NetworkBindingsHasBeenSet() const { return m_networkBindingsHasBeenSet; }
 
     /**
      * <p>The network bindings of the container.</p>

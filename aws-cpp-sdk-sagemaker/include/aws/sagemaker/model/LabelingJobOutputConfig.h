@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The Amazon S3 location to write output data.</p>
      */
+    inline bool S3OutputPathHasBeenSet() const { return m_s3OutputPathHasBeenSet; }
+
+    /**
+     * <p>The Amazon S3 location to write output data.</p>
+     */
     inline void SetS3OutputPath(const Aws::String& value) { m_s3OutputPathHasBeenSet = true; m_s3OutputPath = value; }
 
     /**
@@ -89,6 +94,12 @@ namespace Model
      * if any.</p>
      */
     inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
+
+    /**
+     * <p>The AWS Key Management Service ID of the key used to encrypt the output data,
+     * if any.</p>
+     */
+    inline bool KmsKeyIdHasBeenSet() const { return m_kmsKeyIdHasBeenSet; }
 
     /**
      * <p>The AWS Key Management Service ID of the key used to encrypt the output data,

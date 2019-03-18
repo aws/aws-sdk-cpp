@@ -64,6 +64,14 @@ namespace Model
      * <code>NextToken</code> allows you to return more items in your list starting at
      * the location pointed to by the next token.</p>
      */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
+
+    /**
+     * <p>The next item following a partial list of returned items. For example, if a
+     * request is made to return <code>maxResults</code> number of items,
+     * <code>NextToken</code> allows you to return more items in your list starting at
+     * the location pointed to by the next token.</p>
+     */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
     /**
@@ -115,6 +123,11 @@ namespace Model
     /**
      * <p>The maximum number of items to be returned.</p>
      */
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
+
+    /**
+     * <p>The maximum number of items to be returned.</p>
+     */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
@@ -128,6 +141,12 @@ namespace Model
      * Name (ARN).</p>
      */
     inline const Aws::String& GetByResourceArn() const{ return m_byResourceArn; }
+
+    /**
+     * <p>Returns only backup jobs that match the specified resource Amazon Resource
+     * Name (ARN).</p>
+     */
+    inline bool ByResourceArnHasBeenSet() const { return m_byResourceArnHasBeenSet; }
 
     /**
      * <p>Returns only backup jobs that match the specified resource Amazon Resource
@@ -174,6 +193,11 @@ namespace Model
     /**
      * <p>Returns only backup jobs that are in the specified state.</p>
      */
+    inline bool ByStateHasBeenSet() const { return m_byStateHasBeenSet; }
+
+    /**
+     * <p>Returns only backup jobs that are in the specified state.</p>
+     */
     inline void SetByState(const BackupJobState& value) { m_byStateHasBeenSet = true; m_byState = value; }
 
     /**
@@ -199,6 +223,14 @@ namespace Model
      * letters, numbers, and hyphens.</p>
      */
     inline const Aws::String& GetByBackupVaultName() const{ return m_byBackupVaultName; }
+
+    /**
+     * <p>Returns only backup jobs that will be stored in the specified backup vault.
+     * Backup vaults are identified by names that are unique to the account used to
+     * create them and the AWS Region where they are created. They consist of lowercase
+     * letters, numbers, and hyphens.</p>
+     */
+    inline bool ByBackupVaultNameHasBeenSet() const { return m_byBackupVaultNameHasBeenSet; }
 
     /**
      * <p>Returns only backup jobs that will be stored in the specified backup vault.
@@ -257,6 +289,11 @@ namespace Model
     /**
      * <p>Returns only backup jobs that were created before the specified date.</p>
      */
+    inline bool ByCreatedBeforeHasBeenSet() const { return m_byCreatedBeforeHasBeenSet; }
+
+    /**
+     * <p>Returns only backup jobs that were created before the specified date.</p>
+     */
     inline void SetByCreatedBefore(const Aws::Utils::DateTime& value) { m_byCreatedBeforeHasBeenSet = true; m_byCreatedBefore = value; }
 
     /**
@@ -279,6 +316,11 @@ namespace Model
      * <p>Returns only backup jobs that were created after the specified date.</p>
      */
     inline const Aws::Utils::DateTime& GetByCreatedAfter() const{ return m_byCreatedAfter; }
+
+    /**
+     * <p>Returns only backup jobs that were created after the specified date.</p>
+     */
+    inline bool ByCreatedAfterHasBeenSet() const { return m_byCreatedAfterHasBeenSet; }
 
     /**
      * <p>Returns only backup jobs that were created after the specified date.</p>
@@ -310,6 +352,16 @@ namespace Model
      * System</p> </li> </ul>
      */
     inline const Aws::String& GetByResourceType() const{ return m_byResourceType; }
+
+    /**
+     * <p>Returns only backup jobs for the specified resources:</p> <ul> <li> <p>
+     * <code>EBS</code> for Amazon Elastic Block Store</p> </li> <li> <p>
+     * <code>SGW</code> for AWS Storage Gateway</p> </li> <li> <p> <code>RDS</code> for
+     * Amazon Relational Database Service</p> </li> <li> <p> <code>DDB</code> for
+     * Amazon DynamoDB</p> </li> <li> <p> <code>EFS</code> for Amazon Elastic File
+     * System</p> </li> </ul>
+     */
+    inline bool ByResourceTypeHasBeenSet() const { return m_byResourceTypeHasBeenSet; }
 
     /**
      * <p>Returns only backup jobs for the specified resources:</p> <ul> <li> <p>

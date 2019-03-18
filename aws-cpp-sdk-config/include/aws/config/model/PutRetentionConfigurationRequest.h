@@ -52,6 +52,12 @@ namespace Model
      * <p>Number of days AWS Config stores your historical information.</p> <note>
      * <p>Currently, only applicable to the configuration item history.</p> </note>
      */
+    inline bool RetentionPeriodInDaysHasBeenSet() const { return m_retentionPeriodInDaysHasBeenSet; }
+
+    /**
+     * <p>Number of days AWS Config stores your historical information.</p> <note>
+     * <p>Currently, only applicable to the configuration item history.</p> </note>
+     */
     inline void SetRetentionPeriodInDays(int value) { m_retentionPeriodInDaysHasBeenSet = true; m_retentionPeriodInDays = value; }
 
     /**

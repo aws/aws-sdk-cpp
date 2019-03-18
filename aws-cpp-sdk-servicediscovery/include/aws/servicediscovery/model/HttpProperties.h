@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The name of an HTTP namespace.</p>
      */
+    inline bool HttpNameHasBeenSet() const { return m_httpNameHasBeenSet; }
+
+    /**
+     * <p>The name of an HTTP namespace.</p>
+     */
     inline void SetHttpName(const Aws::String& value) { m_httpNameHasBeenSet = true; m_httpName = value; }
 
     /**

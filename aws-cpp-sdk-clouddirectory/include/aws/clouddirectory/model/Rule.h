@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p>The type of attribute validation rule.</p>
      */
+    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
+
+    /**
+     * <p>The type of attribute validation rule.</p>
+     */
     inline void SetType(const RuleType& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
@@ -80,6 +85,11 @@ namespace Model
      * <p>The minimum and maximum parameters that are associated with the rule.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetParameters() const{ return m_parameters; }
+
+    /**
+     * <p>The minimum and maximum parameters that are associated with the rule.</p>
+     */
+    inline bool ParametersHasBeenSet() const { return m_parametersHasBeenSet; }
 
     /**
      * <p>The minimum and maximum parameters that are associated with the rule.</p>

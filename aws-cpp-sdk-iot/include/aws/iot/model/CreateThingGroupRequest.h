@@ -53,6 +53,11 @@ namespace Model
     /**
      * <p>The thing group name to create.</p>
      */
+    inline bool ThingGroupNameHasBeenSet() const { return m_thingGroupNameHasBeenSet; }
+
+    /**
+     * <p>The thing group name to create.</p>
+     */
     inline void SetThingGroupName(const Aws::String& value) { m_thingGroupNameHasBeenSet = true; m_thingGroupName = value; }
 
     /**
@@ -85,6 +90,11 @@ namespace Model
      * <p>The name of the parent thing group.</p>
      */
     inline const Aws::String& GetParentGroupName() const{ return m_parentGroupName; }
+
+    /**
+     * <p>The name of the parent thing group.</p>
+     */
+    inline bool ParentGroupNameHasBeenSet() const { return m_parentGroupNameHasBeenSet; }
 
     /**
      * <p>The name of the parent thing group.</p>
@@ -125,6 +135,11 @@ namespace Model
     /**
      * <p>The thing group properties.</p>
      */
+    inline bool ThingGroupPropertiesHasBeenSet() const { return m_thingGroupPropertiesHasBeenSet; }
+
+    /**
+     * <p>The thing group properties.</p>
+     */
     inline void SetThingGroupProperties(const ThingGroupProperties& value) { m_thingGroupPropertiesHasBeenSet = true; m_thingGroupProperties = value; }
 
     /**
@@ -147,6 +162,11 @@ namespace Model
      * <p>Metadata which can be used to manage the thing group.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>Metadata which can be used to manage the thing group.</p>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
      * <p>Metadata which can be used to manage the thing group.</p>

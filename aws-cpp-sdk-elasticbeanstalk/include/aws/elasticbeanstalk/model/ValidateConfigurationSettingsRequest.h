@@ -62,6 +62,12 @@ namespace Model
      * <p>The name of the application that the configuration template or environment
      * belongs to.</p>
      */
+    inline bool ApplicationNameHasBeenSet() const { return m_applicationNameHasBeenSet; }
+
+    /**
+     * <p>The name of the application that the configuration template or environment
+     * belongs to.</p>
+     */
     inline void SetApplicationName(const Aws::String& value) { m_applicationNameHasBeenSet = true; m_applicationName = value; }
 
     /**
@@ -100,6 +106,12 @@ namespace Model
      * <p>Condition: You cannot specify both this and an environment name.</p>
      */
     inline const Aws::String& GetTemplateName() const{ return m_templateName; }
+
+    /**
+     * <p>The name of the configuration template to validate the settings against.</p>
+     * <p>Condition: You cannot specify both this and an environment name.</p>
+     */
+    inline bool TemplateNameHasBeenSet() const { return m_templateNameHasBeenSet; }
 
     /**
      * <p>The name of the configuration template to validate the settings against.</p>
@@ -150,6 +162,13 @@ namespace Model
      * <p>Condition: You cannot specify both this and a configuration template
      * name.</p>
      */
+    inline bool EnvironmentNameHasBeenSet() const { return m_environmentNameHasBeenSet; }
+
+    /**
+     * <p>The name of the environment to validate the settings against.</p>
+     * <p>Condition: You cannot specify both this and a configuration template
+     * name.</p>
+     */
     inline void SetEnvironmentName(const Aws::String& value) { m_environmentNameHasBeenSet = true; m_environmentName = value; }
 
     /**
@@ -192,6 +211,11 @@ namespace Model
      * <p>A list of the options and desired values to evaluate.</p>
      */
     inline const Aws::Vector<ConfigurationOptionSetting>& GetOptionSettings() const{ return m_optionSettings; }
+
+    /**
+     * <p>A list of the options and desired values to evaluate.</p>
+     */
+    inline bool OptionSettingsHasBeenSet() const { return m_optionSettingsHasBeenSet; }
 
     /**
      * <p>A list of the options and desired values to evaluate.</p>

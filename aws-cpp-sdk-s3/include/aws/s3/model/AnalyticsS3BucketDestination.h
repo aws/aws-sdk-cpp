@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The file format used when exporting data to Amazon S3.</p>
      */
+    inline bool FormatHasBeenSet() const { return m_formatHasBeenSet; }
+
+    /**
+     * <p>The file format used when exporting data to Amazon S3.</p>
+     */
     inline void SetFormat(const AnalyticsS3ExportFileFormat& value) { m_formatHasBeenSet = true; m_format = value; }
 
     /**
@@ -79,6 +84,12 @@ namespace Model
      * provided, the owner will not be validated prior to exporting data.</p>
      */
     inline const Aws::String& GetBucketAccountId() const{ return m_bucketAccountId; }
+
+    /**
+     * <p>The account ID that owns the destination bucket. If no account ID is
+     * provided, the owner will not be validated prior to exporting data.</p>
+     */
+    inline bool BucketAccountIdHasBeenSet() const { return m_bucketAccountIdHasBeenSet; }
 
     /**
      * <p>The account ID that owns the destination bucket. If no account ID is
@@ -125,6 +136,11 @@ namespace Model
     /**
      * <p>The Amazon resource name (ARN) of the bucket to which data is exported.</p>
      */
+    inline bool BucketHasBeenSet() const { return m_bucketHasBeenSet; }
+
+    /**
+     * <p>The Amazon resource name (ARN) of the bucket to which data is exported.</p>
+     */
     inline void SetBucket(const Aws::String& value) { m_bucketHasBeenSet = true; m_bucket = value; }
 
     /**
@@ -158,6 +174,12 @@ namespace Model
      * prefix.</p>
      */
     inline const Aws::String& GetPrefix() const{ return m_prefix; }
+
+    /**
+     * <p>The prefix to use when exporting data. The exported data begins with this
+     * prefix.</p>
+     */
+    inline bool PrefixHasBeenSet() const { return m_prefixHasBeenSet; }
 
     /**
      * <p>The prefix to use when exporting data. The exported data begins with this

@@ -59,6 +59,11 @@ namespace Model
     /**
      * <p>The distribution's ID.</p>
      */
+    inline bool DistributionIdHasBeenSet() const { return m_distributionIdHasBeenSet; }
+
+    /**
+     * <p>The distribution's ID.</p>
+     */
     inline void SetDistributionId(const Aws::String& value) { m_distributionIdHasBeenSet = true; m_distributionId = value; }
 
     /**
@@ -97,6 +102,17 @@ namespace Model
      * invalidation batch on that page. </p>
      */
     inline const Aws::String& GetMarker() const{ return m_marker; }
+
+    /**
+     * <p>Use this parameter when paginating results to indicate where to begin in your
+     * list of invalidation batches. Because the results are returned in decreasing
+     * order from most recent to oldest, the most recent results are on the first page,
+     * the second page will contain earlier results, and so on. To get the next page of
+     * results, set <code>Marker</code> to the value of the <code>NextMarker</code>
+     * from the current page's response. This value is the same as the ID of the last
+     * invalidation batch on that page. </p>
+     */
+    inline bool MarkerHasBeenSet() const { return m_markerHasBeenSet; }
 
     /**
      * <p>Use this parameter when paginating results to indicate where to begin in your
@@ -170,6 +186,12 @@ namespace Model
      * body.</p>
      */
     inline const Aws::String& GetMaxItems() const{ return m_maxItems; }
+
+    /**
+     * <p>The maximum number of invalidation batches that you want in the response
+     * body.</p>
+     */
+    inline bool MaxItemsHasBeenSet() const { return m_maxItemsHasBeenSet; }
 
     /**
      * <p>The maximum number of invalidation batches that you want in the response

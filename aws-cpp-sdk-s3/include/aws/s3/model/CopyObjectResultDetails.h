@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p/>
      */
+    inline bool ETagHasBeenSet() const { return m_eTagHasBeenSet; }
+
+    /**
+     * <p/>
+     */
     inline void SetETag(const Aws::String& value) { m_eTagHasBeenSet = true; m_eTag = value; }
 
     /**
@@ -88,6 +93,11 @@ namespace Model
      * <p/>
      */
     inline const Aws::Utils::DateTime& GetLastModified() const{ return m_lastModified; }
+
+    /**
+     * <p/>
+     */
+    inline bool LastModifiedHasBeenSet() const { return m_lastModifiedHasBeenSet; }
 
     /**
      * <p/>

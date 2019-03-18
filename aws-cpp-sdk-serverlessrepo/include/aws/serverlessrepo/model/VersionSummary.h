@@ -55,6 +55,11 @@ namespace Model
     /**
      * <p>The application Amazon Resource Name (ARN).</p>
      */
+    inline bool ApplicationIdHasBeenSet() const { return m_applicationIdHasBeenSet; }
+
+    /**
+     * <p>The application Amazon Resource Name (ARN).</p>
+     */
     inline void SetApplicationId(const Aws::String& value) { m_applicationIdHasBeenSet = true; m_applicationId = value; }
 
     /**
@@ -87,6 +92,11 @@ namespace Model
      * <p>The date and time this resource was created.</p>
      */
     inline const Aws::String& GetCreationTime() const{ return m_creationTime; }
+
+    /**
+     * <p>The date and time this resource was created.</p>
+     */
+    inline bool CreationTimeHasBeenSet() const { return m_creationTimeHasBeenSet; }
 
     /**
      * <p>The date and time this resource was created.</p>
@@ -126,6 +136,14 @@ namespace Model
  </p>
      */
     inline const Aws::String& GetSemanticVersion() const{ return m_semanticVersion; }
+
+    /**
+     * <p>The semantic version of the application:</p><p>
+ <a
+     * href="https://semver.org/">https://semver.org/</a>
+ </p>
+     */
+    inline bool SemanticVersionHasBeenSet() const { return m_semanticVersionHasBeenSet; }
 
     /**
      * <p>The semantic version of the application:</p><p>
@@ -181,6 +199,12 @@ namespace Model
      * example the URL of a specific GitHub commit.</p>
      */
     inline const Aws::String& GetSourceCodeUrl() const{ return m_sourceCodeUrl; }
+
+    /**
+     * <p>A link to a public repository for the source code of your application, for
+     * example the URL of a specific GitHub commit.</p>
+     */
+    inline bool SourceCodeUrlHasBeenSet() const { return m_sourceCodeUrlHasBeenSet; }
 
     /**
      * <p>A link to a public repository for the source code of your application, for

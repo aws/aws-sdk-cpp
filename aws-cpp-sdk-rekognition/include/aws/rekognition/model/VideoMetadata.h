@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>Type of compression used in the analyzed video. </p>
      */
+    inline bool CodecHasBeenSet() const { return m_codecHasBeenSet; }
+
+    /**
+     * <p>Type of compression used in the analyzed video. </p>
+     */
     inline void SetCodec(const Aws::String& value) { m_codecHasBeenSet = true; m_codec = value; }
 
     /**
@@ -93,6 +98,11 @@ namespace Model
     /**
      * <p>Length of the video in milliseconds.</p>
      */
+    inline bool DurationMillisHasBeenSet() const { return m_durationMillisHasBeenSet; }
+
+    /**
+     * <p>Length of the video in milliseconds.</p>
+     */
     inline void SetDurationMillis(long long value) { m_durationMillisHasBeenSet = true; m_durationMillis = value; }
 
     /**
@@ -105,6 +115,11 @@ namespace Model
      * <p>Format of the analyzed video. Possible values are MP4, MOV and AVI. </p>
      */
     inline const Aws::String& GetFormat() const{ return m_format; }
+
+    /**
+     * <p>Format of the analyzed video. Possible values are MP4, MOV and AVI. </p>
+     */
+    inline bool FormatHasBeenSet() const { return m_formatHasBeenSet; }
 
     /**
      * <p>Format of the analyzed video. Possible values are MP4, MOV and AVI. </p>
@@ -145,6 +160,11 @@ namespace Model
     /**
      * <p>Number of frames per second in the video.</p>
      */
+    inline bool FrameRateHasBeenSet() const { return m_frameRateHasBeenSet; }
+
+    /**
+     * <p>Number of frames per second in the video.</p>
+     */
     inline void SetFrameRate(double value) { m_frameRateHasBeenSet = true; m_frameRate = value; }
 
     /**
@@ -161,6 +181,11 @@ namespace Model
     /**
      * <p>Vertical pixel dimension of the video.</p>
      */
+    inline bool FrameHeightHasBeenSet() const { return m_frameHeightHasBeenSet; }
+
+    /**
+     * <p>Vertical pixel dimension of the video.</p>
+     */
     inline void SetFrameHeight(long long value) { m_frameHeightHasBeenSet = true; m_frameHeight = value; }
 
     /**
@@ -173,6 +198,11 @@ namespace Model
      * <p>Horizontal pixel dimension of the video.</p>
      */
     inline long long GetFrameWidth() const{ return m_frameWidth; }
+
+    /**
+     * <p>Horizontal pixel dimension of the video.</p>
+     */
+    inline bool FrameWidthHasBeenSet() const { return m_frameWidthHasBeenSet; }
 
     /**
      * <p>Horizontal pixel dimension of the video.</p>

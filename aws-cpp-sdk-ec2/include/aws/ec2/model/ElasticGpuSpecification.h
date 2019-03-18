@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p>The type of Elastic Graphics accelerator.</p>
      */
+    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
+
+    /**
+     * <p>The type of Elastic Graphics accelerator.</p>
+     */
     inline void SetType(const Aws::String& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**

@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The current status for the route.</p>
      */
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
+
+    /**
+     * <p>The current status for the route.</p>
+     */
     inline void SetStatus(const RouteStatusCode& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**

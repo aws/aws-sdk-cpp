@@ -59,6 +59,11 @@ namespace Model
     /**
      * <p>The code of the cross-regional warning.</p>
      */
+    inline bool CodeHasBeenSet() const { return m_codeHasBeenSet; }
+
+    /**
+     * <p>The code of the cross-regional warning.</p>
+     */
     inline void SetCode(const Aws::String& value) { m_codeHasBeenSet = true; m_code = value; }
 
     /**
@@ -93,6 +98,13 @@ namespace Model
      * pipeline.</p> </note>
      */
     inline const Aws::String& GetMessage() const{ return m_message; }
+
+    /**
+     * <p>The message explaining what resources are in a different region from the
+     * pipeline.</p> <note> <p>AWS KMS keys must be in the same region as the
+     * pipeline.</p> </note>
+     */
+    inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
 
     /**
      * <p>The message explaining what resources are in a different region from the

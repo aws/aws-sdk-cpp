@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the Lambda function.</p>
      */
+    inline bool UriHasBeenSet() const { return m_uriHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the Lambda function.</p>
+     */
     inline void SetUri(const Aws::String& value) { m_uriHasBeenSet = true; m_uri = value; }
 
     /**
@@ -89,6 +94,12 @@ namespace Model
      * your Lambda function. For more information, see <a>using-lambda</a>.</p>
      */
     inline const Aws::String& GetMessageVersion() const{ return m_messageVersion; }
+
+    /**
+     * <p>The version of the request-response that you want Amazon Lex to use to invoke
+     * your Lambda function. For more information, see <a>using-lambda</a>.</p>
+     */
+    inline bool MessageVersionHasBeenSet() const { return m_messageVersionHasBeenSet; }
 
     /**
      * <p>The version of the request-response that you want Amazon Lex to use to invoke

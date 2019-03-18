@@ -57,6 +57,12 @@ namespace Model
      * <p>Unique identifier for a fleet to retrieve all game sessions active on the
      * fleet.</p>
      */
+    inline bool FleetIdHasBeenSet() const { return m_fleetIdHasBeenSet; }
+
+    /**
+     * <p>Unique identifier for a fleet to retrieve all game sessions active on the
+     * fleet.</p>
+     */
     inline void SetFleetId(const Aws::String& value) { m_fleetIdHasBeenSet = true; m_fleetId = value; }
 
     /**
@@ -98,6 +104,11 @@ namespace Model
     /**
      * <p>Unique identifier for the game session to retrieve.</p>
      */
+    inline bool GameSessionIdHasBeenSet() const { return m_gameSessionIdHasBeenSet; }
+
+    /**
+     * <p>Unique identifier for the game session to retrieve.</p>
+     */
     inline void SetGameSessionId(const Aws::String& value) { m_gameSessionIdHasBeenSet = true; m_gameSessionId = value; }
 
     /**
@@ -131,6 +142,12 @@ namespace Model
      * sessions for.</p>
      */
     inline const Aws::String& GetAliasId() const{ return m_aliasId; }
+
+    /**
+     * <p>Unique identifier for an alias associated with the fleet to retrieve all game
+     * sessions for.</p>
+     */
+    inline bool AliasIdHasBeenSet() const { return m_aliasIdHasBeenSet; }
 
     /**
      * <p>Unique identifier for an alias associated with the fleet to retrieve all game
@@ -175,6 +192,13 @@ namespace Model
      * and <code>TERMINATING</code> (the last two are transitory). </p>
      */
     inline const Aws::String& GetStatusFilter() const{ return m_statusFilter; }
+
+    /**
+     * <p>Game session status to filter results on. Possible game session statuses
+     * include <code>ACTIVE</code>, <code>TERMINATED</code>, <code>ACTIVATING</code>
+     * and <code>TERMINATING</code> (the last two are transitory). </p>
+     */
+    inline bool StatusFilterHasBeenSet() const { return m_statusFilterHasBeenSet; }
 
     /**
      * <p>Game session status to filter results on. Possible game session statuses
@@ -229,6 +253,12 @@ namespace Model
      * <p>Maximum number of results to return. Use this parameter with
      * <code>NextToken</code> to get results as a set of sequential pages.</p>
      */
+    inline bool LimitHasBeenSet() const { return m_limitHasBeenSet; }
+
+    /**
+     * <p>Maximum number of results to return. Use this parameter with
+     * <code>NextToken</code> to get results as a set of sequential pages.</p>
+     */
     inline void SetLimit(int value) { m_limitHasBeenSet = true; m_limit = value; }
 
     /**
@@ -244,6 +274,13 @@ namespace Model
      * beginning of the result set, do not specify a value.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
+    /**
+     * <p>Token that indicates the start of the next sequential page of results. Use
+     * the token that is returned with a previous call to this action. To start at the
+     * beginning of the result set, do not specify a value.</p>
+     */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
      * <p>Token that indicates the start of the next sequential page of results. Use

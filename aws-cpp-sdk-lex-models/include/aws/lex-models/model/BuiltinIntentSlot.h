@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>A list of the slots defined for the intent.</p>
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>A list of the slots defined for the intent.</p>
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**

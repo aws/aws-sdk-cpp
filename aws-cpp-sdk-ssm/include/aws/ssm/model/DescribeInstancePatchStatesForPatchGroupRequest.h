@@ -56,6 +56,12 @@ namespace Model
      * <p>The name of the patch group for which the patch state information should be
      * retrieved.</p>
      */
+    inline bool PatchGroupHasBeenSet() const { return m_patchGroupHasBeenSet; }
+
+    /**
+     * <p>The name of the patch group for which the patch state information should be
+     * retrieved.</p>
+     */
     inline void SetPatchGroup(const Aws::String& value) { m_patchGroupHasBeenSet = true; m_patchGroup = value; }
 
     /**
@@ -95,6 +101,13 @@ namespace Model
      * Type (string "Equal", "NotEqual", "LessThan", "GreaterThan")</p>
      */
     inline const Aws::Vector<InstancePatchStateFilter>& GetFilters() const{ return m_filters; }
+
+    /**
+     * <p>Each entry in the array is a structure containing:</p> <p>Key (string between
+     * 1 and 200 characters)</p> <p> Values (array containing a single string)</p> <p>
+     * Type (string "Equal", "NotEqual", "LessThan", "GreaterThan")</p>
+     */
+    inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
 
     /**
      * <p>Each entry in the array is a structure containing:</p> <p>Key (string between
@@ -149,6 +162,12 @@ namespace Model
      * <p>The token for the next set of items to return. (You received this token from
      * a previous call.)</p>
      */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
+
+    /**
+     * <p>The token for the next set of items to return. (You received this token from
+     * a previous call.)</p>
+     */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
     /**
@@ -186,6 +205,11 @@ namespace Model
      * <p>The maximum number of patches to return (per page).</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
+
+    /**
+     * <p>The maximum number of patches to return (per page).</p>
+     */
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
 
     /**
      * <p>The maximum number of patches to return (per page).</p>

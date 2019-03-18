@@ -56,6 +56,13 @@ namespace Model
      * want to get. <code>RegexPatternSetId</code> is returned by
      * <a>CreateRegexPatternSet</a> and by <a>ListRegexPatternSets</a>.</p>
      */
+    inline bool RegexPatternSetIdHasBeenSet() const { return m_regexPatternSetIdHasBeenSet; }
+
+    /**
+     * <p>The <code>RegexPatternSetId</code> of the <a>RegexPatternSet</a> that you
+     * want to get. <code>RegexPatternSetId</code> is returned by
+     * <a>CreateRegexPatternSet</a> and by <a>ListRegexPatternSets</a>.</p>
+     */
     inline void SetRegexPatternSetId(const Aws::String& value) { m_regexPatternSetIdHasBeenSet = true; m_regexPatternSetId = value; }
 
     /**

@@ -55,6 +55,11 @@ namespace Model
     /**
      * <p>The amount of storage allocated, in bytes.</p>
      */
+    inline bool StorageAllocatedInBytesHasBeenSet() const { return m_storageAllocatedInBytesHasBeenSet; }
+
+    /**
+     * <p>The amount of storage allocated, in bytes.</p>
+     */
     inline void SetStorageAllocatedInBytes(long long value) { m_storageAllocatedInBytesHasBeenSet = true; m_storageAllocatedInBytes = value; }
 
     /**
@@ -67,6 +72,11 @@ namespace Model
      * <p>The type of storage.</p>
      */
     inline const StorageType& GetStorageType() const{ return m_storageType; }
+
+    /**
+     * <p>The type of storage.</p>
+     */
+    inline bool StorageTypeHasBeenSet() const { return m_storageTypeHasBeenSet; }
 
     /**
      * <p>The type of storage.</p>

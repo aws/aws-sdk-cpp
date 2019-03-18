@@ -61,6 +61,11 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the target group.</p>
      */
+    inline bool TargetGroupArnHasBeenSet() const { return m_targetGroupArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the target group.</p>
+     */
     inline void SetTargetGroupArn(const Aws::String& value) { m_targetGroupArnHasBeenSet = true; m_targetGroupArn = value; }
 
     /**
@@ -93,6 +98,11 @@ namespace Model
      * <p>The name of the target group.</p>
      */
     inline const Aws::String& GetTargetGroupName() const{ return m_targetGroupName; }
+
+    /**
+     * <p>The name of the target group.</p>
+     */
+    inline bool TargetGroupNameHasBeenSet() const { return m_targetGroupNameHasBeenSet; }
 
     /**
      * <p>The name of the target group.</p>
@@ -133,6 +143,11 @@ namespace Model
     /**
      * <p>The protocol to use for routing traffic to the targets.</p>
      */
+    inline bool ProtocolHasBeenSet() const { return m_protocolHasBeenSet; }
+
+    /**
+     * <p>The protocol to use for routing traffic to the targets.</p>
+     */
     inline void SetProtocol(const ProtocolEnum& value) { m_protocolHasBeenSet = true; m_protocol = value; }
 
     /**
@@ -159,6 +174,11 @@ namespace Model
     /**
      * <p>The port on which the targets are listening.</p>
      */
+    inline bool PortHasBeenSet() const { return m_portHasBeenSet; }
+
+    /**
+     * <p>The port on which the targets are listening.</p>
+     */
     inline void SetPort(int value) { m_portHasBeenSet = true; m_port = value; }
 
     /**
@@ -171,6 +191,11 @@ namespace Model
      * <p>The ID of the VPC for the targets.</p>
      */
     inline const Aws::String& GetVpcId() const{ return m_vpcId; }
+
+    /**
+     * <p>The ID of the VPC for the targets.</p>
+     */
+    inline bool VpcIdHasBeenSet() const { return m_vpcIdHasBeenSet; }
 
     /**
      * <p>The ID of the VPC for the targets.</p>
@@ -211,6 +236,11 @@ namespace Model
     /**
      * <p>The protocol to use to connect with the target.</p>
      */
+    inline bool HealthCheckProtocolHasBeenSet() const { return m_healthCheckProtocolHasBeenSet; }
+
+    /**
+     * <p>The protocol to use to connect with the target.</p>
+     */
     inline void SetHealthCheckProtocol(const ProtocolEnum& value) { m_healthCheckProtocolHasBeenSet = true; m_healthCheckProtocol = value; }
 
     /**
@@ -233,6 +263,11 @@ namespace Model
      * <p>The port to use to connect with the target.</p>
      */
     inline const Aws::String& GetHealthCheckPort() const{ return m_healthCheckPort; }
+
+    /**
+     * <p>The port to use to connect with the target.</p>
+     */
+    inline bool HealthCheckPortHasBeenSet() const { return m_healthCheckPortHasBeenSet; }
 
     /**
      * <p>The port to use to connect with the target.</p>
@@ -273,6 +308,11 @@ namespace Model
     /**
      * <p>Indicates whether health checks are enabled.</p>
      */
+    inline bool HealthCheckEnabledHasBeenSet() const { return m_healthCheckEnabledHasBeenSet; }
+
+    /**
+     * <p>Indicates whether health checks are enabled.</p>
+     */
     inline void SetHealthCheckEnabled(bool value) { m_healthCheckEnabledHasBeenSet = true; m_healthCheckEnabled = value; }
 
     /**
@@ -286,6 +326,12 @@ namespace Model
      * individual target.</p>
      */
     inline int GetHealthCheckIntervalSeconds() const{ return m_healthCheckIntervalSeconds; }
+
+    /**
+     * <p>The approximate amount of time, in seconds, between health checks of an
+     * individual target.</p>
+     */
+    inline bool HealthCheckIntervalSecondsHasBeenSet() const { return m_healthCheckIntervalSecondsHasBeenSet; }
 
     /**
      * <p>The approximate amount of time, in seconds, between health checks of an
@@ -310,6 +356,12 @@ namespace Model
      * <p>The amount of time, in seconds, during which no response means a failed
      * health check.</p>
      */
+    inline bool HealthCheckTimeoutSecondsHasBeenSet() const { return m_healthCheckTimeoutSecondsHasBeenSet; }
+
+    /**
+     * <p>The amount of time, in seconds, during which no response means a failed
+     * health check.</p>
+     */
     inline void SetHealthCheckTimeoutSeconds(int value) { m_healthCheckTimeoutSecondsHasBeenSet = true; m_healthCheckTimeoutSeconds = value; }
 
     /**
@@ -324,6 +376,12 @@ namespace Model
      * an unhealthy target healthy.</p>
      */
     inline int GetHealthyThresholdCount() const{ return m_healthyThresholdCount; }
+
+    /**
+     * <p>The number of consecutive health checks successes required before considering
+     * an unhealthy target healthy.</p>
+     */
+    inline bool HealthyThresholdCountHasBeenSet() const { return m_healthyThresholdCountHasBeenSet; }
 
     /**
      * <p>The number of consecutive health checks successes required before considering
@@ -348,6 +406,12 @@ namespace Model
      * <p>The number of consecutive health check failures required before considering
      * the target unhealthy.</p>
      */
+    inline bool UnhealthyThresholdCountHasBeenSet() const { return m_unhealthyThresholdCountHasBeenSet; }
+
+    /**
+     * <p>The number of consecutive health check failures required before considering
+     * the target unhealthy.</p>
+     */
     inline void SetUnhealthyThresholdCount(int value) { m_unhealthyThresholdCountHasBeenSet = true; m_unhealthyThresholdCount = value; }
 
     /**
@@ -361,6 +425,11 @@ namespace Model
      * <p>The destination for the health check request.</p>
      */
     inline const Aws::String& GetHealthCheckPath() const{ return m_healthCheckPath; }
+
+    /**
+     * <p>The destination for the health check request.</p>
+     */
+    inline bool HealthCheckPathHasBeenSet() const { return m_healthCheckPathHasBeenSet; }
 
     /**
      * <p>The destination for the health check request.</p>
@@ -403,6 +472,12 @@ namespace Model
      * <p>The HTTP codes to use when checking for a successful response from a
      * target.</p>
      */
+    inline bool MatcherHasBeenSet() const { return m_matcherHasBeenSet; }
+
+    /**
+     * <p>The HTTP codes to use when checking for a successful response from a
+     * target.</p>
+     */
     inline void SetMatcher(const Matcher& value) { m_matcherHasBeenSet = true; m_matcher = value; }
 
     /**
@@ -429,6 +504,12 @@ namespace Model
      * this target group.</p>
      */
     inline const Aws::Vector<Aws::String>& GetLoadBalancerArns() const{ return m_loadBalancerArns; }
+
+    /**
+     * <p>The Amazon Resource Names (ARN) of the load balancers that route traffic to
+     * this target group.</p>
+     */
+    inline bool LoadBalancerArnsHasBeenSet() const { return m_loadBalancerArnsHasBeenSet; }
 
     /**
      * <p>The Amazon Resource Names (ARN) of the load balancers that route traffic to
@@ -480,6 +561,14 @@ namespace Model
      * address).</p>
      */
     inline const TargetTypeEnum& GetTargetType() const{ return m_targetType; }
+
+    /**
+     * <p>The type of target that you must specify when registering targets with this
+     * target group. The possible values are <code>instance</code> (targets are
+     * specified by instance ID) or <code>ip</code> (targets are specified by IP
+     * address).</p>
+     */
+    inline bool TargetTypeHasBeenSet() const { return m_targetTypeHasBeenSet; }
 
     /**
      * <p>The type of target that you must specify when registering targets with this

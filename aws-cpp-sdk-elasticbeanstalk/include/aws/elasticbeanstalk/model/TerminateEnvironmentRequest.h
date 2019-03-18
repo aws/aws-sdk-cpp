@@ -61,6 +61,13 @@ namespace Model
      * either this or an EnvironmentName, or both. If you do not specify either, AWS
      * Elastic Beanstalk returns <code>MissingRequiredParameter</code> error. </p>
      */
+    inline bool EnvironmentIdHasBeenSet() const { return m_environmentIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the environment to terminate.</p> <p> Condition: You must specify
+     * either this or an EnvironmentName, or both. If you do not specify either, AWS
+     * Elastic Beanstalk returns <code>MissingRequiredParameter</code> error. </p>
+     */
     inline void SetEnvironmentId(const Aws::String& value) { m_environmentIdHasBeenSet = true; m_environmentId = value; }
 
     /**
@@ -105,6 +112,13 @@ namespace Model
      * Elastic Beanstalk returns <code>MissingRequiredParameter</code> error. </p>
      */
     inline const Aws::String& GetEnvironmentName() const{ return m_environmentName; }
+
+    /**
+     * <p>The name of the environment to terminate.</p> <p> Condition: You must specify
+     * either this or an EnvironmentId, or both. If you do not specify either, AWS
+     * Elastic Beanstalk returns <code>MissingRequiredParameter</code> error. </p>
+     */
+    inline bool EnvironmentNameHasBeenSet() const { return m_environmentNameHasBeenSet; }
 
     /**
      * <p>The name of the environment to terminate.</p> <p> Condition: You must specify
@@ -173,6 +187,19 @@ namespace Model
      * Elastic Beanstalk User Guide. </a> </p> <p> Default: <code>true</code> </p> <p>
      * Valid Values: <code>true</code> | <code>false</code> </p>
      */
+    inline bool TerminateResourcesHasBeenSet() const { return m_terminateResourcesHasBeenSet; }
+
+    /**
+     * <p>Indicates whether the associated AWS resources should shut down when the
+     * environment is terminated:</p> <ul> <li> <p> <code>true</code>: The specified
+     * environment as well as the associated AWS resources, such as Auto Scaling group
+     * and LoadBalancer, are terminated.</p> </li> <li> <p> <code>false</code>: AWS
+     * Elastic Beanstalk resource management is removed from the environment, but the
+     * AWS resources continue to operate.</p> </li> </ul> <p> For more information, see
+     * the <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/ug/"> AWS
+     * Elastic Beanstalk User Guide. </a> </p> <p> Default: <code>true</code> </p> <p>
+     * Valid Values: <code>true</code> | <code>false</code> </p>
+     */
     inline void SetTerminateResources(bool value) { m_terminateResourcesHasBeenSet = true; m_terminateResources = value; }
 
     /**
@@ -194,6 +221,12 @@ namespace Model
      * group is dependent on it.</p>
      */
     inline bool GetForceTerminate() const{ return m_forceTerminate; }
+
+    /**
+     * <p>Terminates the target environment even if another environment in the same
+     * group is dependent on it.</p>
+     */
+    inline bool ForceTerminateHasBeenSet() const { return m_forceTerminateHasBeenSet; }
 
     /**
      * <p>Terminates the target environment even if another environment in the same

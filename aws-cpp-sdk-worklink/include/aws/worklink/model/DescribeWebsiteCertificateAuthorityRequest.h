@@ -50,6 +50,11 @@ namespace Model
     /**
      * <p>The ARN of the fleet.</p>
      */
+    inline bool FleetArnHasBeenSet() const { return m_fleetArnHasBeenSet; }
+
+    /**
+     * <p>The ARN of the fleet.</p>
+     */
     inline void SetFleetArn(const Aws::String& value) { m_fleetArnHasBeenSet = true; m_fleetArn = value; }
 
     /**
@@ -82,6 +87,11 @@ namespace Model
      * <p>A unique identifier for the certificate authority.</p>
      */
     inline const Aws::String& GetWebsiteCaId() const{ return m_websiteCaId; }
+
+    /**
+     * <p>A unique identifier for the certificate authority.</p>
+     */
+    inline bool WebsiteCaIdHasBeenSet() const { return m_websiteCaIdHasBeenSet; }
 
     /**
      * <p>A unique identifier for the certificate authority.</p>

@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p>A unique ID assigned to a public key you've added to CloudFront.</p>
      */
+    inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
+
+    /**
+     * <p>A unique ID assigned to a public key you've added to CloudFront.</p>
+     */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
     /**
@@ -94,6 +99,11 @@ namespace Model
     /**
      * <p>A time you added a public key to CloudFront.</p>
      */
+    inline bool CreatedTimeHasBeenSet() const { return m_createdTimeHasBeenSet; }
+
+    /**
+     * <p>A time you added a public key to CloudFront.</p>
+     */
     inline void SetCreatedTime(const Aws::Utils::DateTime& value) { m_createdTimeHasBeenSet = true; m_createdTime = value; }
 
     /**
@@ -117,6 +127,12 @@ namespace Model
      * features like field-level encryption.</p>
      */
     inline const PublicKeyConfig& GetPublicKeyConfig() const{ return m_publicKeyConfig; }
+
+    /**
+     * <p>A complex data type for a public key you add to CloudFront to use with
+     * features like field-level encryption.</p>
+     */
+    inline bool PublicKeyConfigHasBeenSet() const { return m_publicKeyConfigHasBeenSet; }
 
     /**
      * <p>A complex data type for a public key you add to CloudFront to use with

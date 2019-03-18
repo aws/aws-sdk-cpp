@@ -59,6 +59,12 @@ namespace Model
      * <p>Uniquely identifies a request to assign a set of resources to a backup
      * plan.</p>
      */
+    inline bool SelectionIdHasBeenSet() const { return m_selectionIdHasBeenSet; }
+
+    /**
+     * <p>Uniquely identifies a request to assign a set of resources to a backup
+     * plan.</p>
+     */
     inline void SetSelectionId(const Aws::String& value) { m_selectionIdHasBeenSet = true; m_selectionId = value; }
 
     /**
@@ -100,6 +106,11 @@ namespace Model
     /**
      * <p>The display name of a resource selection document.</p>
      */
+    inline bool SelectionNameHasBeenSet() const { return m_selectionNameHasBeenSet; }
+
+    /**
+     * <p>The display name of a resource selection document.</p>
+     */
     inline void SetSelectionName(const Aws::String& value) { m_selectionNameHasBeenSet = true; m_selectionName = value; }
 
     /**
@@ -132,6 +143,11 @@ namespace Model
      * <p>Uniquely identifies a backup plan.</p>
      */
     inline const Aws::String& GetBackupPlanId() const{ return m_backupPlanId; }
+
+    /**
+     * <p>Uniquely identifies a backup plan.</p>
+     */
+    inline bool BackupPlanIdHasBeenSet() const { return m_backupPlanIdHasBeenSet; }
 
     /**
      * <p>Uniquely identifies a backup plan.</p>
@@ -178,6 +194,14 @@ namespace Model
      * milliseconds. For example, the value 1516925490.087 represents Friday, January
      * 26, 2018 12:11:30.087 AM.</p>
      */
+    inline bool CreationDateHasBeenSet() const { return m_creationDateHasBeenSet; }
+
+    /**
+     * <p>The date and time a backup plan is created, in Unix format and Coordinated
+     * Universal Time (UTC). The value of <code>CreationDate</code> is accurate to
+     * milliseconds. For example, the value 1516925490.087 represents Friday, January
+     * 26, 2018 12:11:30.087 AM.</p>
+     */
     inline void SetCreationDate(const Aws::Utils::DateTime& value) { m_creationDateHasBeenSet = true; m_creationDate = value; }
 
     /**
@@ -210,6 +234,12 @@ namespace Model
      * retried without the risk of executing the operation twice.</p>
      */
     inline const Aws::String& GetCreatorRequestId() const{ return m_creatorRequestId; }
+
+    /**
+     * <p>A unique string that identifies the request and allows failed requests to be
+     * retried without the risk of executing the operation twice.</p>
+     */
+    inline bool CreatorRequestIdHasBeenSet() const { return m_creatorRequestIdHasBeenSet; }
 
     /**
      * <p>A unique string that identifies the request and allows failed requests to be
@@ -254,6 +284,13 @@ namespace Model
      * <code>arn:aws:iam::123456789012:role/S3Access</code>.</p>
      */
     inline const Aws::String& GetIamRoleArn() const{ return m_iamRoleArn; }
+
+    /**
+     * <p>Specifies the IAM role Amazon Resource Name (ARN) to create the target
+     * recovery point; for example,
+     * <code>arn:aws:iam::123456789012:role/S3Access</code>.</p>
+     */
+    inline bool IamRoleArnHasBeenSet() const { return m_iamRoleArnHasBeenSet; }
 
     /**
      * <p>Specifies the IAM role Amazon Resource Name (ARN) to create the target

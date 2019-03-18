@@ -67,6 +67,16 @@ namespace Model
      * <code>ByteMatchSet</code> from AWS WAF.</p> <p> <code>ByteMatchSetId</code> is
      * returned by <a>CreateByteMatchSet</a> and by <a>ListByteMatchSets</a>.</p>
      */
+    inline bool ByteMatchSetIdHasBeenSet() const { return m_byteMatchSetIdHasBeenSet; }
+
+    /**
+     * <p>The <code>ByteMatchSetId</code> for a <code>ByteMatchSet</code>. You use
+     * <code>ByteMatchSetId</code> to get information about a
+     * <code>ByteMatchSet</code>, update a <code>ByteMatchSet</code>, remove a
+     * <code>ByteMatchSet</code> from a <code>Rule</code>, and delete a
+     * <code>ByteMatchSet</code> from AWS WAF.</p> <p> <code>ByteMatchSetId</code> is
+     * returned by <a>CreateByteMatchSet</a> and by <a>ListByteMatchSets</a>.</p>
+     */
     inline void SetByteMatchSetId(const Aws::String& value) { m_byteMatchSetIdHasBeenSet = true; m_byteMatchSetId = value; }
 
     /**
@@ -125,6 +135,12 @@ namespace Model
      * <code>Name</code> after you create a <code>ByteMatchSet</code>.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
+
+    /**
+     * <p>A friendly name or description of the <a>ByteMatchSet</a>. You can't change
+     * <code>Name</code> after you create a <code>ByteMatchSet</code>.</p>
+     */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
      * <p>A friendly name or description of the <a>ByteMatchSet</a>. You can't change

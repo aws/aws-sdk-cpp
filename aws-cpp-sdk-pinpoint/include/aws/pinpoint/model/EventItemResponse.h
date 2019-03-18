@@ -56,6 +56,11 @@ namespace Model
     /**
      * A custom message that is associated with the processing of an event.
      */
+    inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
+
+    /**
+     * A custom message that is associated with the processing of an event.
+     */
     inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
 
     /**
@@ -92,6 +97,15 @@ Possible values: 400 (for invalid events) and 202 (for events that were
      * accepted).
      */
     inline int GetStatusCode() const{ return m_statusCode; }
+
+    /**
+     * The status returned in the response as a result of processing the
+     * event.
+
+Possible values: 400 (for invalid events) and 202 (for events that were
+     * accepted).
+     */
+    inline bool StatusCodeHasBeenSet() const { return m_statusCodeHasBeenSet; }
 
     /**
      * The status returned in the response as a result of processing the

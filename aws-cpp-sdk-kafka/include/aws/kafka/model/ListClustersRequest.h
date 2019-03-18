@@ -58,6 +58,12 @@ namespace Model
      * <p>Specify a prefix of the name of the clusters that you want to list. The
      * service lists all the clusters whose names start with this prefix.</p>
      */
+    inline bool ClusterNameFilterHasBeenSet() const { return m_clusterNameFilterHasBeenSet; }
+
+    /**
+     * <p>Specify a prefix of the name of the clusters that you want to list. The
+     * service lists all the clusters whose names start with this prefix.</p>
+     */
     inline void SetClusterNameFilter(const Aws::String& value) { m_clusterNameFilterHasBeenSet = true; m_clusterNameFilter = value; }
 
     /**
@@ -101,6 +107,12 @@ namespace Model
      * <p>The maximum number of clusters to return in the response. If there are more
      * clusters, the response includes a NextToken parameter.</p>
      */
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
+
+    /**
+     * <p>The maximum number of clusters to return in the response. If there are more
+     * clusters, the response includes a NextToken parameter.</p>
+     */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
@@ -117,6 +129,14 @@ namespace Model
      * clusters, provide this token in your next request.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
+    /**
+     * <p>The paginated results marker. When the result of a ListClusters operation is
+     * truncated, the call returns NextToken in the response. 
+ To get another batch of
+     * clusters, provide this token in your next request.</p>
+     */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
      * <p>The paginated results marker. When the result of a ListClusters operation is

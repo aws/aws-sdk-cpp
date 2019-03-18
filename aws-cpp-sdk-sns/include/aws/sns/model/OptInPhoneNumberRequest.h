@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The phone number to opt in.</p>
      */
+    inline bool PhoneNumberHasBeenSet() const { return m_phoneNumberHasBeenSet; }
+
+    /**
+     * <p>The phone number to opt in.</p>
+     */
     inline void SetPhoneNumber(const Aws::String& value) { m_phoneNumberHasBeenSet = true; m_phoneNumber = value; }
 
     /**

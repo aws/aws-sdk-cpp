@@ -64,6 +64,12 @@ namespace Model
      * <p>The AWS account that created the file system. If the file system was created
      * by an IAM user, the parent account to which the user belongs is the owner.</p>
      */
+    inline bool OwnerIdHasBeenSet() const { return m_ownerIdHasBeenSet; }
+
+    /**
+     * <p>The AWS account that created the file system. If the file system was created
+     * by an IAM user, the parent account to which the user belongs is the owner.</p>
+     */
     inline void SetOwnerId(const Aws::String& value) { m_ownerIdHasBeenSet = true; m_ownerId = value; }
 
     /**
@@ -105,6 +111,11 @@ namespace Model
     /**
      * <p>The opaque string specified in the request.</p>
      */
+    inline bool CreationTokenHasBeenSet() const { return m_creationTokenHasBeenSet; }
+
+    /**
+     * <p>The opaque string specified in the request.</p>
+     */
     inline void SetCreationToken(const Aws::String& value) { m_creationTokenHasBeenSet = true; m_creationToken = value; }
 
     /**
@@ -137,6 +148,11 @@ namespace Model
      * <p>The ID of the file system, assigned by Amazon EFS.</p>
      */
     inline const Aws::String& GetFileSystemId() const{ return m_fileSystemId; }
+
+    /**
+     * <p>The ID of the file system, assigned by Amazon EFS.</p>
+     */
+    inline bool FileSystemIdHasBeenSet() const { return m_fileSystemIdHasBeenSet; }
 
     /**
      * <p>The ID of the file system, assigned by Amazon EFS.</p>
@@ -179,6 +195,12 @@ namespace Model
      * <p>The time that the file system was created, in seconds (since
      * 1970-01-01T00:00:00Z).</p>
      */
+    inline bool CreationTimeHasBeenSet() const { return m_creationTimeHasBeenSet; }
+
+    /**
+     * <p>The time that the file system was created, in seconds (since
+     * 1970-01-01T00:00:00Z).</p>
+     */
     inline void SetCreationTime(const Aws::Utils::DateTime& value) { m_creationTimeHasBeenSet = true; m_creationTime = value; }
 
     /**
@@ -208,6 +230,11 @@ namespace Model
     /**
      * <p>The lifecycle phase of the file system.</p>
      */
+    inline bool LifeCycleStateHasBeenSet() const { return m_lifeCycleStateHasBeenSet; }
+
+    /**
+     * <p>The lifecycle phase of the file system.</p>
+     */
     inline void SetLifeCycleState(const LifeCycleState& value) { m_lifeCycleStateHasBeenSet = true; m_lifeCycleState = value; }
 
     /**
@@ -232,6 +259,13 @@ namespace Model
      * <code>Name</code> tag, Amazon EFS returns the value in this field. </p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
+
+    /**
+     * <p>You can add tags to a file system, including a <code>Name</code> tag. For
+     * more information, see <a>CreateFileSystem</a>. If the file system has a
+     * <code>Name</code> tag, Amazon EFS returns the value in this field. </p>
+     */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
      * <p>You can add tags to a file system, including a <code>Name</code> tag. For
@@ -286,6 +320,12 @@ namespace Model
      * <p>The current number of mount targets that the file system has. For more
      * information, see <a>CreateMountTarget</a>.</p>
      */
+    inline bool NumberOfMountTargetsHasBeenSet() const { return m_numberOfMountTargetsHasBeenSet; }
+
+    /**
+     * <p>The current number of mount targets that the file system has. For more
+     * information, see <a>CreateMountTarget</a>.</p>
+     */
     inline void SetNumberOfMountTargets(int value) { m_numberOfMountTargetsHasBeenSet = true; m_numberOfMountTargets = value; }
 
     /**
@@ -308,6 +348,20 @@ namespace Model
      * any point in time. </p>
      */
     inline const FileSystemSize& GetSizeInBytes() const{ return m_sizeInBytes; }
+
+    /**
+     * <p>The latest known metered size (in bytes) of data stored in the file system,
+     * in its <code>Value</code> field, and the time at which that size was determined
+     * in its <code>Timestamp</code> field. The <code>Timestamp</code> value is the
+     * integer number of seconds since 1970-01-01T00:00:00Z. The
+     * <code>SizeInBytes</code> value doesn't represent the size of a consistent
+     * snapshot of the file system, but it is eventually consistent when there are no
+     * writes to the file system. That is, <code>SizeInBytes</code> represents actual
+     * size only if the file system is not modified for a period longer than a couple
+     * of hours. Otherwise, the value is not the exact size that the file system was at
+     * any point in time. </p>
+     */
+    inline bool SizeInBytesHasBeenSet() const { return m_sizeInBytesHasBeenSet; }
 
     /**
      * <p>The latest known metered size (in bytes) of data stored in the file system,
@@ -374,6 +428,11 @@ namespace Model
     /**
      * <p>The performance mode of the file system.</p>
      */
+    inline bool PerformanceModeHasBeenSet() const { return m_performanceModeHasBeenSet; }
+
+    /**
+     * <p>The performance mode of the file system.</p>
+     */
     inline void SetPerformanceMode(const PerformanceMode& value) { m_performanceModeHasBeenSet = true; m_performanceMode = value; }
 
     /**
@@ -402,6 +461,12 @@ namespace Model
      * <p>A Boolean value that, if true, indicates that the file system is
      * encrypted.</p>
      */
+    inline bool EncryptedHasBeenSet() const { return m_encryptedHasBeenSet; }
+
+    /**
+     * <p>A Boolean value that, if true, indicates that the file system is
+     * encrypted.</p>
+     */
     inline void SetEncrypted(bool value) { m_encryptedHasBeenSet = true; m_encrypted = value; }
 
     /**
@@ -416,6 +481,12 @@ namespace Model
      * that was used to protect the encrypted file system.</p>
      */
     inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
+
+    /**
+     * <p>The ID of an AWS Key Management Service (AWS KMS) customer master key (CMK)
+     * that was used to protect the encrypted file system.</p>
+     */
+    inline bool KmsKeyIdHasBeenSet() const { return m_kmsKeyIdHasBeenSet; }
 
     /**
      * <p>The ID of an AWS Key Management Service (AWS KMS) customer master key (CMK)
@@ -470,6 +541,15 @@ namespace Model
      * the throughput modes as long as it’s been more than 24 hours since the last
      * decrease or throughput mode change.</p>
      */
+    inline bool ThroughputModeHasBeenSet() const { return m_throughputModeHasBeenSet; }
+
+    /**
+     * <p>The throughput mode for a file system. There are two throughput modes to
+     * choose from for your file system: bursting and provisioned. You can decrease
+     * your file system's throughput in Provisioned Throughput mode or change between
+     * the throughput modes as long as it’s been more than 24 hours since the last
+     * decrease or throughput mode change.</p>
+     */
     inline void SetThroughputMode(const ThroughputMode& value) { m_throughputModeHasBeenSet = true; m_throughputMode = value; }
 
     /**
@@ -516,6 +596,15 @@ namespace Model
      * href="https://docs.aws.amazon.com/efs/latest/ug/limits.html#soft-limits">Amazon
      * EFS Limits That You Can Increase</a> in the <i>Amazon EFS User Guide.</i> </p>
      */
+    inline bool ProvisionedThroughputInMibpsHasBeenSet() const { return m_provisionedThroughputInMibpsHasBeenSet; }
+
+    /**
+     * <p>The throughput, measured in MiB/s, that you want to provision for a file
+     * system. The limit on throughput is 1024 MiB/s. You can get these limits
+     * increased by contacting AWS Support. For more information, see <a
+     * href="https://docs.aws.amazon.com/efs/latest/ug/limits.html#soft-limits">Amazon
+     * EFS Limits That You Can Increase</a> in the <i>Amazon EFS User Guide.</i> </p>
+     */
     inline void SetProvisionedThroughputInMibps(double value) { m_provisionedThroughputInMibpsHasBeenSet = true; m_provisionedThroughputInMibps = value; }
 
     /**
@@ -533,6 +622,12 @@ namespace Model
      * <code>Tag</code> objects.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>The tags associated with the file system, presented as an array of
+     * <code>Tag</code> objects.</p>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
      * <p>The tags associated with the file system, presented as an array of

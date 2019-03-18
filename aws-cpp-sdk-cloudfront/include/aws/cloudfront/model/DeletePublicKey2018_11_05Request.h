@@ -52,6 +52,11 @@ namespace Model
     /**
      * <p>The ID of the public key you want to remove from CloudFront.</p>
      */
+    inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
+
+    /**
+     * <p>The ID of the public key you want to remove from CloudFront.</p>
+     */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
     /**
@@ -85,6 +90,12 @@ namespace Model
      * the public key identity to delete. For example: <code>E2QWRUHAPOMQZL</code>.</p>
      */
     inline const Aws::String& GetIfMatch() const{ return m_ifMatch; }
+
+    /**
+     * <p>The value of the <code>ETag</code> header that you received when retrieving
+     * the public key identity to delete. For example: <code>E2QWRUHAPOMQZL</code>.</p>
+     */
+    inline bool IfMatchHasBeenSet() const { return m_ifMatchHasBeenSet; }
 
     /**
      * <p>The value of the <code>ETag</code> header that you received when retrieving

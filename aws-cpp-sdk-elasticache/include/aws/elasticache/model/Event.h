@@ -65,6 +65,13 @@ namespace Model
      * occurred at the cluster level, the identifier would be the name of the
      * cluster.</p>
      */
+    inline bool SourceIdentifierHasBeenSet() const { return m_sourceIdentifierHasBeenSet; }
+
+    /**
+     * <p>The identifier for the source of the event. For example, if the event
+     * occurred at the cluster level, the identifier would be the name of the
+     * cluster.</p>
+     */
     inline void SetSourceIdentifier(const Aws::String& value) { m_sourceIdentifierHasBeenSet = true; m_sourceIdentifier = value; }
 
     /**
@@ -113,6 +120,12 @@ namespace Model
      * <p>Specifies the origin of this event - a cluster, a parameter group, a security
      * group, etc.</p>
      */
+    inline bool SourceTypeHasBeenSet() const { return m_sourceTypeHasBeenSet; }
+
+    /**
+     * <p>Specifies the origin of this event - a cluster, a parameter group, a security
+     * group, etc.</p>
+     */
     inline void SetSourceType(const SourceType& value) { m_sourceTypeHasBeenSet = true; m_sourceType = value; }
 
     /**
@@ -138,6 +151,11 @@ namespace Model
      * <p>The text of the event.</p>
      */
     inline const Aws::String& GetMessage() const{ return m_message; }
+
+    /**
+     * <p>The text of the event.</p>
+     */
+    inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
 
     /**
      * <p>The text of the event.</p>
@@ -174,6 +192,11 @@ namespace Model
      * <p>The date and time when the event occurred.</p>
      */
     inline const Aws::Utils::DateTime& GetDate() const{ return m_date; }
+
+    /**
+     * <p>The date and time when the event occurred.</p>
+     */
+    inline bool DateHasBeenSet() const { return m_dateHasBeenSet; }
 
     /**
      * <p>The date and time when the event occurred.</p>

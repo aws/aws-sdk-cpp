@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p>The ID of the propagation route table.</p>
      */
+    inline bool TransitGatewayRouteTableIdHasBeenSet() const { return m_transitGatewayRouteTableIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the propagation route table.</p>
+     */
     inline void SetTransitGatewayRouteTableId(const Aws::String& value) { m_transitGatewayRouteTableIdHasBeenSet = true; m_transitGatewayRouteTableId = value; }
 
     /**
@@ -90,6 +95,11 @@ namespace Model
      * <p>The state of the propagation route table.</p>
      */
     inline const TransitGatewayPropagationState& GetState() const{ return m_state; }
+
+    /**
+     * <p>The state of the propagation route table.</p>
+     */
+    inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
 
     /**
      * <p>The state of the propagation route table.</p>

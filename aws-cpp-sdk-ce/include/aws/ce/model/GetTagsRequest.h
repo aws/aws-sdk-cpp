@@ -53,6 +53,11 @@ namespace Model
     /**
      * <p>The value that you want to search for.</p>
      */
+    inline bool SearchStringHasBeenSet() const { return m_searchStringHasBeenSet; }
+
+    /**
+     * <p>The value that you want to search for.</p>
+     */
     inline void SetSearchString(const Aws::String& value) { m_searchStringHasBeenSet = true; m_searchString = value; }
 
     /**
@@ -89,6 +94,15 @@ namespace Model
      * including <code>2017-04-30</code> but not including <code>2017-05-01</code>.</p>
      */
     inline const DateInterval& GetTimePeriod() const{ return m_timePeriod; }
+
+    /**
+     * <p>The start and end dates for retrieving the dimension values. The start date
+     * is inclusive, but the end date is exclusive. For example, if <code>start</code>
+     * is <code>2017-01-01</code> and <code>end</code> is <code>2017-05-01</code>, then
+     * the cost and usage data is retrieved from <code>2017-01-01</code> up to and
+     * including <code>2017-04-30</code> but not including <code>2017-05-01</code>.</p>
+     */
+    inline bool TimePeriodHasBeenSet() const { return m_timePeriodHasBeenSet; }
 
     /**
      * <p>The start and end dates for retrieving the dimension values. The start date
@@ -135,6 +149,11 @@ namespace Model
     /**
      * <p>The key of the tag that you want to return values for.</p>
      */
+    inline bool TagKeyHasBeenSet() const { return m_tagKeyHasBeenSet; }
+
+    /**
+     * <p>The key of the tag that you want to return values for.</p>
+     */
     inline void SetTagKey(const Aws::String& value) { m_tagKeyHasBeenSet = true; m_tagKey = value; }
 
     /**
@@ -169,6 +188,13 @@ namespace Model
      * size.</p>
      */
     inline const Aws::String& GetNextPageToken() const{ return m_nextPageToken; }
+
+    /**
+     * <p>The token to retrieve the next set of results. AWS provides the token when
+     * the response from a previous call has more results than the maximum page
+     * size.</p>
+     */
+    inline bool NextPageTokenHasBeenSet() const { return m_nextPageTokenHasBeenSet; }
 
     /**
      * <p>The token to retrieve the next set of results. AWS provides the token when

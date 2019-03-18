@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The full path to the file, including the name of the file.</p>
      */
+    inline bool FilePathHasBeenSet() const { return m_filePathHasBeenSet; }
+
+    /**
+     * <p>The full path to the file, including the name of the file.</p>
+     */
     inline void SetFilePath(const Aws::String& value) { m_filePathHasBeenSet = true; m_filePath = value; }
 
     /**
@@ -88,6 +93,11 @@ namespace Model
      * <p>Whether to remove the source file from the parent commit.</p>
      */
     inline bool GetIsMove() const{ return m_isMove; }
+
+    /**
+     * <p>Whether to remove the source file from the parent commit.</p>
+     */
+    inline bool IsMoveHasBeenSet() const { return m_isMoveHasBeenSet; }
 
     /**
      * <p>Whether to remove the source file from the parent commit.</p>

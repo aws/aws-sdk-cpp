@@ -64,6 +64,11 @@ namespace Model
     /**
      * <p>The name of the image builder.</p>
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>The name of the image builder.</p>
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
@@ -96,6 +101,11 @@ namespace Model
      * <p>The ARN for the image builder.</p>
      */
     inline const Aws::String& GetArn() const{ return m_arn; }
+
+    /**
+     * <p>The ARN for the image builder.</p>
+     */
+    inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
 
     /**
      * <p>The ARN for the image builder.</p>
@@ -136,6 +146,11 @@ namespace Model
     /**
      * <p>The ARN of the image from which this builder was created.</p>
      */
+    inline bool ImageArnHasBeenSet() const { return m_imageArnHasBeenSet; }
+
+    /**
+     * <p>The ARN of the image from which this builder was created.</p>
+     */
     inline void SetImageArn(const Aws::String& value) { m_imageArnHasBeenSet = true; m_imageArn = value; }
 
     /**
@@ -168,6 +183,11 @@ namespace Model
      * <p>The description to display.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
+
+    /**
+     * <p>The description to display.</p>
+     */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
 
     /**
      * <p>The description to display.</p>
@@ -208,6 +228,11 @@ namespace Model
     /**
      * <p>The image builder name to display.</p>
      */
+    inline bool DisplayNameHasBeenSet() const { return m_displayNameHasBeenSet; }
+
+    /**
+     * <p>The image builder name to display.</p>
+     */
     inline void SetDisplayName(const Aws::String& value) { m_displayNameHasBeenSet = true; m_displayName = value; }
 
     /**
@@ -244,6 +269,11 @@ namespace Model
     /**
      * <p>The VPC configuration of the image builder.</p>
      */
+    inline bool VpcConfigHasBeenSet() const { return m_vpcConfigHasBeenSet; }
+
+    /**
+     * <p>The VPC configuration of the image builder.</p>
+     */
     inline void SetVpcConfig(const VpcConfig& value) { m_vpcConfigHasBeenSet = true; m_vpcConfig = value; }
 
     /**
@@ -266,6 +296,11 @@ namespace Model
      * <p>The instance type for the image builder.</p>
      */
     inline const Aws::String& GetInstanceType() const{ return m_instanceType; }
+
+    /**
+     * <p>The instance type for the image builder.</p>
+     */
+    inline bool InstanceTypeHasBeenSet() const { return m_instanceTypeHasBeenSet; }
 
     /**
      * <p>The instance type for the image builder.</p>
@@ -306,6 +341,11 @@ namespace Model
     /**
      * <p>The operating system platform of the image builder.</p>
      */
+    inline bool PlatformHasBeenSet() const { return m_platformHasBeenSet; }
+
+    /**
+     * <p>The operating system platform of the image builder.</p>
+     */
     inline void SetPlatform(const PlatformType& value) { m_platformHasBeenSet = true; m_platform = value; }
 
     /**
@@ -328,6 +368,11 @@ namespace Model
      * <p>The state of the image builder.</p>
      */
     inline const ImageBuilderState& GetState() const{ return m_state; }
+
+    /**
+     * <p>The state of the image builder.</p>
+     */
+    inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
 
     /**
      * <p>The state of the image builder.</p>
@@ -358,6 +403,11 @@ namespace Model
     /**
      * <p>The reason why the last state change occurred.</p>
      */
+    inline bool StateChangeReasonHasBeenSet() const { return m_stateChangeReasonHasBeenSet; }
+
+    /**
+     * <p>The reason why the last state change occurred.</p>
+     */
     inline void SetStateChangeReason(const ImageBuilderStateChangeReason& value) { m_stateChangeReasonHasBeenSet = true; m_stateChangeReason = value; }
 
     /**
@@ -380,6 +430,11 @@ namespace Model
      * <p>The time stamp when the image builder was created.</p>
      */
     inline const Aws::Utils::DateTime& GetCreatedTime() const{ return m_createdTime; }
+
+    /**
+     * <p>The time stamp when the image builder was created.</p>
+     */
+    inline bool CreatedTimeHasBeenSet() const { return m_createdTimeHasBeenSet; }
 
     /**
      * <p>The time stamp when the image builder was created.</p>
@@ -410,6 +465,11 @@ namespace Model
     /**
      * <p>Enables or disables default internet access for the image builder.</p>
      */
+    inline bool EnableDefaultInternetAccessHasBeenSet() const { return m_enableDefaultInternetAccessHasBeenSet; }
+
+    /**
+     * <p>Enables or disables default internet access for the image builder.</p>
+     */
     inline void SetEnableDefaultInternetAccess(bool value) { m_enableDefaultInternetAccessHasBeenSet = true; m_enableDefaultInternetAccess = value; }
 
     /**
@@ -423,6 +483,12 @@ namespace Model
      * image builder to a Microsoft Active Directory domain. </p>
      */
     inline const DomainJoinInfo& GetDomainJoinInfo() const{ return m_domainJoinInfo; }
+
+    /**
+     * <p>The name of the directory and organizational unit (OU) to use to join the
+     * image builder to a Microsoft Active Directory domain. </p>
+     */
+    inline bool DomainJoinInfoHasBeenSet() const { return m_domainJoinInfoHasBeenSet; }
 
     /**
      * <p>The name of the directory and organizational unit (OU) to use to join the
@@ -453,6 +519,11 @@ namespace Model
      * <p>The image builder errors.</p>
      */
     inline const Aws::Vector<ResourceError>& GetImageBuilderErrors() const{ return m_imageBuilderErrors; }
+
+    /**
+     * <p>The image builder errors.</p>
+     */
+    inline bool ImageBuilderErrorsHasBeenSet() const { return m_imageBuilderErrorsHasBeenSet; }
 
     /**
      * <p>The image builder errors.</p>
@@ -490,6 +561,12 @@ namespace Model
      * image builder. </p>
      */
     inline const Aws::String& GetAppstreamAgentVersion() const{ return m_appstreamAgentVersion; }
+
+    /**
+     * <p>The version of the AppStream 2.0 agent that is currently being used by the
+     * image builder. </p>
+     */
+    inline bool AppstreamAgentVersionHasBeenSet() const { return m_appstreamAgentVersionHasBeenSet; }
 
     /**
      * <p>The version of the AppStream 2.0 agent that is currently being used by the

@@ -55,6 +55,11 @@ namespace Model
     /**
      * <p>A valid JSON or YAML string.</p>
      */
+    inline bool ContentHasBeenSet() const { return m_contentHasBeenSet; }
+
+    /**
+     * <p>A valid JSON or YAML string.</p>
+     */
     inline void SetContent(const Aws::String& value) { m_contentHasBeenSet = true; m_content = value; }
 
     /**
@@ -88,6 +93,12 @@ namespace Model
      * document.</p>
      */
     inline const Aws::Vector<AttachmentsSource>& GetAttachments() const{ return m_attachments; }
+
+    /**
+     * <p>A list of key and value pairs that describe attachments to a version of a
+     * document.</p>
+     */
+    inline bool AttachmentsHasBeenSet() const { return m_attachmentsHasBeenSet; }
 
     /**
      * <p>A list of key and value pairs that describe attachments to a version of a
@@ -134,6 +145,11 @@ namespace Model
     /**
      * <p>The name of the document that you want to update.</p>
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>The name of the document that you want to update.</p>
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
@@ -168,6 +184,13 @@ namespace Model
      * across all versions of a document, and cannot be changed.</p>
      */
     inline const Aws::String& GetVersionName() const{ return m_versionName; }
+
+    /**
+     * <p>An optional field specifying the version of the artifact you are updating
+     * with the document. For example, "Release 12, Update 6". This value is unique
+     * across all versions of a document, and cannot be changed.</p>
+     */
+    inline bool VersionNameHasBeenSet() const { return m_versionNameHasBeenSet; }
 
     /**
      * <p>An optional field specifying the version of the artifact you are updating
@@ -220,6 +243,11 @@ namespace Model
     /**
      * <p>The version of the document that you want to update.</p>
      */
+    inline bool DocumentVersionHasBeenSet() const { return m_documentVersionHasBeenSet; }
+
+    /**
+     * <p>The version of the document that you want to update.</p>
+     */
     inline void SetDocumentVersion(const Aws::String& value) { m_documentVersionHasBeenSet = true; m_documentVersion = value; }
 
     /**
@@ -258,6 +286,12 @@ namespace Model
      * <p>Specify the document format for the new document version. Systems Manager
      * supports JSON and YAML documents. JSON is the default format.</p>
      */
+    inline bool DocumentFormatHasBeenSet() const { return m_documentFormatHasBeenSet; }
+
+    /**
+     * <p>Specify the document format for the new document version. Systems Manager
+     * supports JSON and YAML documents. JSON is the default format.</p>
+     */
     inline void SetDocumentFormat(const DocumentFormat& value) { m_documentFormatHasBeenSet = true; m_documentFormat = value; }
 
     /**
@@ -283,6 +317,11 @@ namespace Model
      * <p>Specify a new target type for the document.</p>
      */
     inline const Aws::String& GetTargetType() const{ return m_targetType; }
+
+    /**
+     * <p>Specify a new target type for the document.</p>
+     */
+    inline bool TargetTypeHasBeenSet() const { return m_targetTypeHasBeenSet; }
 
     /**
      * <p>Specify a new target type for the document.</p>

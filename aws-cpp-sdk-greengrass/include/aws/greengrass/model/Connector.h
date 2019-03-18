@@ -58,6 +58,11 @@ namespace Model
     /**
      * The ARN of the connector.
      */
+    inline bool ConnectorArnHasBeenSet() const { return m_connectorArnHasBeenSet; }
+
+    /**
+     * The ARN of the connector.
+     */
     inline void SetConnectorArn(const Aws::String& value) { m_connectorArnHasBeenSet = true; m_connectorArn = value; }
 
     /**
@@ -92,6 +97,13 @@ namespace Model
      * pattern [a-zA-Z0-9:_-]+.
      */
     inline const Aws::String& GetId() const{ return m_id; }
+
+    /**
+     * A descriptive or arbitrary ID for the connector. This value must be unique
+     * within the connector definition version. Max length is 128 characters with
+     * pattern [a-zA-Z0-9:_-]+.
+     */
+    inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
 
     /**
      * A descriptive or arbitrary ID for the connector. This value must be unique
@@ -140,6 +152,11 @@ namespace Model
      * The parameters or configuration that the connector uses.
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetParameters() const{ return m_parameters; }
+
+    /**
+     * The parameters or configuration that the connector uses.
+     */
+    inline bool ParametersHasBeenSet() const { return m_parametersHasBeenSet; }
 
     /**
      * The parameters or configuration that the connector uses.

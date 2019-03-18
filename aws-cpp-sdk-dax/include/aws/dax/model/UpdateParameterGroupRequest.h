@@ -54,6 +54,11 @@ namespace Model
     /**
      * <p>The name of the parameter group.</p>
      */
+    inline bool ParameterGroupNameHasBeenSet() const { return m_parameterGroupNameHasBeenSet; }
+
+    /**
+     * <p>The name of the parameter group.</p>
+     */
     inline void SetParameterGroupName(const Aws::String& value) { m_parameterGroupNameHasBeenSet = true; m_parameterGroupName = value; }
 
     /**
@@ -87,6 +92,12 @@ namespace Model
      * the array represents a single parameter.</p>
      */
     inline const Aws::Vector<ParameterNameValue>& GetParameterNameValues() const{ return m_parameterNameValues; }
+
+    /**
+     * <p>An array of name-value pairs for the parameters in the group. Each element in
+     * the array represents a single parameter.</p>
+     */
+    inline bool ParameterNameValuesHasBeenSet() const { return m_parameterNameValuesHasBeenSet; }
 
     /**
      * <p>An array of name-value pairs for the parameters in the group. Each element in

@@ -55,6 +55,11 @@ namespace Model
     /**
      * <p>The name of the scope.</p>
      */
+    inline bool ScopeNameHasBeenSet() const { return m_scopeNameHasBeenSet; }
+
+    /**
+     * <p>The name of the scope.</p>
+     */
     inline void SetScopeName(const Aws::String& value) { m_scopeNameHasBeenSet = true; m_scopeName = value; }
 
     /**
@@ -87,6 +92,11 @@ namespace Model
      * <p>A description of the scope.</p>
      */
     inline const Aws::String& GetScopeDescription() const{ return m_scopeDescription; }
+
+    /**
+     * <p>A description of the scope.</p>
+     */
+    inline bool ScopeDescriptionHasBeenSet() const { return m_scopeDescriptionHasBeenSet; }
 
     /**
      * <p>A description of the scope.</p>

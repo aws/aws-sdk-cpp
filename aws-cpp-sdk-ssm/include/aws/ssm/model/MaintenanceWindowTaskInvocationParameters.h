@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p>The parameters for a RUN_COMMAND task type.</p>
      */
+    inline bool RunCommandHasBeenSet() const { return m_runCommandHasBeenSet; }
+
+    /**
+     * <p>The parameters for a RUN_COMMAND task type.</p>
+     */
     inline void SetRunCommand(const MaintenanceWindowRunCommandParameters& value) { m_runCommandHasBeenSet = true; m_runCommand = value; }
 
     /**
@@ -80,6 +85,11 @@ namespace Model
      * <p>The parameters for an AUTOMATION task type.</p>
      */
     inline const MaintenanceWindowAutomationParameters& GetAutomation() const{ return m_automation; }
+
+    /**
+     * <p>The parameters for an AUTOMATION task type.</p>
+     */
+    inline bool AutomationHasBeenSet() const { return m_automationHasBeenSet; }
 
     /**
      * <p>The parameters for an AUTOMATION task type.</p>
@@ -110,6 +120,11 @@ namespace Model
     /**
      * <p>The parameters for a STEP_FUNCTION task type.</p>
      */
+    inline bool StepFunctionsHasBeenSet() const { return m_stepFunctionsHasBeenSet; }
+
+    /**
+     * <p>The parameters for a STEP_FUNCTION task type.</p>
+     */
     inline void SetStepFunctions(const MaintenanceWindowStepFunctionsParameters& value) { m_stepFunctionsHasBeenSet = true; m_stepFunctions = value; }
 
     /**
@@ -132,6 +147,11 @@ namespace Model
      * <p>The parameters for a LAMBDA task type.</p>
      */
     inline const MaintenanceWindowLambdaParameters& GetLambda() const{ return m_lambda; }
+
+    /**
+     * <p>The parameters for a LAMBDA task type.</p>
+     */
+    inline bool LambdaHasBeenSet() const { return m_lambdaHasBeenSet; }
 
     /**
      * <p>The parameters for a LAMBDA task type.</p>

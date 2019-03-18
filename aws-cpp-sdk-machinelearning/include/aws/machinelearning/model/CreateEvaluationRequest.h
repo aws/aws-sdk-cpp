@@ -52,6 +52,11 @@ namespace Model
     /**
      * <p>A user-supplied ID that uniquely identifies the <code>Evaluation</code>.</p>
      */
+    inline bool EvaluationIdHasBeenSet() const { return m_evaluationIdHasBeenSet; }
+
+    /**
+     * <p>A user-supplied ID that uniquely identifies the <code>Evaluation</code>.</p>
+     */
     inline void SetEvaluationId(const Aws::String& value) { m_evaluationIdHasBeenSet = true; m_evaluationId = value; }
 
     /**
@@ -84,6 +89,11 @@ namespace Model
      * <p>A user-supplied name or description of the <code>Evaluation</code>.</p>
      */
     inline const Aws::String& GetEvaluationName() const{ return m_evaluationName; }
+
+    /**
+     * <p>A user-supplied name or description of the <code>Evaluation</code>.</p>
+     */
+    inline bool EvaluationNameHasBeenSet() const { return m_evaluationNameHasBeenSet; }
 
     /**
      * <p>A user-supplied name or description of the <code>Evaluation</code>.</p>
@@ -122,6 +132,13 @@ namespace Model
      * <code>DataSource</code> used in the <code>Evaluation</code>.</p>
      */
     inline const Aws::String& GetMLModelId() const{ return m_mLModelId; }
+
+    /**
+     * <p>The ID of the <code>MLModel</code> to evaluate.</p> <p>The schema used in
+     * creating the <code>MLModel</code> must match the schema of the
+     * <code>DataSource</code> used in the <code>Evaluation</code>.</p>
+     */
+    inline bool MLModelIdHasBeenSet() const { return m_mLModelIdHasBeenSet; }
 
     /**
      * <p>The ID of the <code>MLModel</code> to evaluate.</p> <p>The schema used in
@@ -172,6 +189,13 @@ namespace Model
      * <code>MLModel</code>.</p>
      */
     inline const Aws::String& GetEvaluationDataSourceId() const{ return m_evaluationDataSourceId; }
+
+    /**
+     * <p>The ID of the <code>DataSource</code> for the evaluation. The schema of the
+     * <code>DataSource</code> must match the schema used to create the
+     * <code>MLModel</code>.</p>
+     */
+    inline bool EvaluationDataSourceIdHasBeenSet() const { return m_evaluationDataSourceIdHasBeenSet; }
 
     /**
      * <p>The ID of the <code>DataSource</code> for the evaluation. The schema of the

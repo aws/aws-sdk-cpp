@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The instance family of the recommended reservation.</p>
      */
+    inline bool FamilyHasBeenSet() const { return m_familyHasBeenSet; }
+
+    /**
+     * <p>The instance family of the recommended reservation.</p>
+     */
     inline void SetFamily(const Aws::String& value) { m_familyHasBeenSet = true; m_family = value; }
 
     /**
@@ -88,6 +93,11 @@ namespace Model
      * <p>The type of instance that AWS recommends.</p>
      */
     inline const Aws::String& GetInstanceType() const{ return m_instanceType; }
+
+    /**
+     * <p>The type of instance that AWS recommends.</p>
+     */
+    inline bool InstanceTypeHasBeenSet() const { return m_instanceTypeHasBeenSet; }
 
     /**
      * <p>The type of instance that AWS recommends.</p>
@@ -128,6 +138,11 @@ namespace Model
     /**
      * <p>The AWS Region of the recommended reservation.</p>
      */
+    inline bool RegionHasBeenSet() const { return m_regionHasBeenSet; }
+
+    /**
+     * <p>The AWS Region of the recommended reservation.</p>
+     */
     inline void SetRegion(const Aws::String& value) { m_regionHasBeenSet = true; m_region = value; }
 
     /**
@@ -160,6 +175,11 @@ namespace Model
      * <p>The database engine that the recommended reservation supports.</p>
      */
     inline const Aws::String& GetDatabaseEngine() const{ return m_databaseEngine; }
+
+    /**
+     * <p>The database engine that the recommended reservation supports.</p>
+     */
+    inline bool DatabaseEngineHasBeenSet() const { return m_databaseEngineHasBeenSet; }
 
     /**
      * <p>The database engine that the recommended reservation supports.</p>
@@ -200,6 +220,11 @@ namespace Model
     /**
      * <p>The database edition that the recommended reservation supports.</p>
      */
+    inline bool DatabaseEditionHasBeenSet() const { return m_databaseEditionHasBeenSet; }
+
+    /**
+     * <p>The database edition that the recommended reservation supports.</p>
+     */
     inline void SetDatabaseEdition(const Aws::String& value) { m_databaseEditionHasBeenSet = true; m_databaseEdition = value; }
 
     /**
@@ -233,6 +258,12 @@ namespace Model
      * or a reservation with a backup in a second Availability Zone.</p>
      */
     inline const Aws::String& GetDeploymentOption() const{ return m_deploymentOption; }
+
+    /**
+     * <p>Whether the recommendation is for a reservation in a single Availability Zone
+     * or a reservation with a backup in a second Availability Zone.</p>
+     */
+    inline bool DeploymentOptionHasBeenSet() const { return m_deploymentOptionHasBeenSet; }
 
     /**
      * <p>Whether the recommendation is for a reservation in a single Availability Zone
@@ -279,6 +310,11 @@ namespace Model
     /**
      * <p>The license model that the recommended reservation supports.</p>
      */
+    inline bool LicenseModelHasBeenSet() const { return m_licenseModelHasBeenSet; }
+
+    /**
+     * <p>The license model that the recommended reservation supports.</p>
+     */
     inline void SetLicenseModel(const Aws::String& value) { m_licenseModelHasBeenSet = true; m_licenseModel = value; }
 
     /**
@@ -315,6 +351,11 @@ namespace Model
     /**
      * <p>Whether the recommendation is for a current-generation instance. </p>
      */
+    inline bool CurrentGenerationHasBeenSet() const { return m_currentGenerationHasBeenSet; }
+
+    /**
+     * <p>Whether the recommendation is for a current-generation instance. </p>
+     */
     inline void SetCurrentGeneration(bool value) { m_currentGenerationHasBeenSet = true; m_currentGeneration = value; }
 
     /**
@@ -327,6 +368,11 @@ namespace Model
      * <p>Whether the recommended reservation is size flexible.</p>
      */
     inline bool GetSizeFlexEligible() const{ return m_sizeFlexEligible; }
+
+    /**
+     * <p>Whether the recommended reservation is size flexible.</p>
+     */
+    inline bool SizeFlexEligibleHasBeenSet() const { return m_sizeFlexEligibleHasBeenSet; }
 
     /**
      * <p>Whether the recommended reservation is size flexible.</p>

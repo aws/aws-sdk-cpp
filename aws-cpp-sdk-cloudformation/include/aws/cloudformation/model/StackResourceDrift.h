@@ -75,6 +75,11 @@ namespace Model
     /**
      * <p>The ID of the stack.</p>
      */
+    inline bool StackIdHasBeenSet() const { return m_stackIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the stack.</p>
+     */
     inline void SetStackId(const Aws::String& value) { m_stackIdHasBeenSet = true; m_stackId = value; }
 
     /**
@@ -107,6 +112,11 @@ namespace Model
      * <p>The logical name of the resource specified in the template.</p>
      */
     inline const Aws::String& GetLogicalResourceId() const{ return m_logicalResourceId; }
+
+    /**
+     * <p>The logical name of the resource specified in the template.</p>
+     */
+    inline bool LogicalResourceIdHasBeenSet() const { return m_logicalResourceIdHasBeenSet; }
 
     /**
      * <p>The logical name of the resource specified in the template.</p>
@@ -144,6 +154,12 @@ namespace Model
      * resource supported by AWS CloudFormation. </p>
      */
     inline const Aws::String& GetPhysicalResourceId() const{ return m_physicalResourceId; }
+
+    /**
+     * <p>The name or unique identifier that corresponds to a physical instance ID of a
+     * resource supported by AWS CloudFormation. </p>
+     */
+    inline bool PhysicalResourceIdHasBeenSet() const { return m_physicalResourceIdHasBeenSet; }
 
     /**
      * <p>The name or unique identifier that corresponds to a physical instance ID of a
@@ -190,6 +206,15 @@ namespace Model
      * the targeted resource.</p>
      */
     inline const Aws::Vector<PhysicalResourceIdContextKeyValuePair>& GetPhysicalResourceIdContext() const{ return m_physicalResourceIdContext; }
+
+    /**
+     * <p>Context information that enables AWS CloudFormation to uniquely identify a
+     * resource. AWS CloudFormation uses context key-value pairs in cases where a
+     * resource's logical and physical IDs are not enough to uniquely identify that
+     * resource. Each context key-value pair specifies a unique resource that contains
+     * the targeted resource.</p>
+     */
+    inline bool PhysicalResourceIdContextHasBeenSet() const { return m_physicalResourceIdContextHasBeenSet; }
 
     /**
      * <p>Context information that enables AWS CloudFormation to uniquely identify a
@@ -254,6 +279,11 @@ namespace Model
     /**
      * <p>The type of the resource.</p>
      */
+    inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
+
+    /**
+     * <p>The type of the resource.</p>
+     */
     inline void SetResourceType(const Aws::String& value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
 
     /**
@@ -289,6 +319,14 @@ namespace Model
      * <code>DELETED</code>, this structure will not be present. </p>
      */
     inline const Aws::String& GetExpectedProperties() const{ return m_expectedProperties; }
+
+    /**
+     * <p>A JSON structure containing the expected property values of the stack
+     * resource, as defined in the stack template and any values specified as template
+     * parameters. </p> <p>For resources whose <code>StackResourceDriftStatus</code> is
+     * <code>DELETED</code>, this structure will not be present. </p>
+     */
+    inline bool ExpectedPropertiesHasBeenSet() const { return m_expectedPropertiesHasBeenSet; }
 
     /**
      * <p>A JSON structure containing the expected property values of the stack
@@ -351,6 +389,13 @@ namespace Model
      * resource.</p> <p>For resources whose <code>StackResourceDriftStatus</code> is
      * <code>DELETED</code>, this structure will not be present. </p>
      */
+    inline bool ActualPropertiesHasBeenSet() const { return m_actualPropertiesHasBeenSet; }
+
+    /**
+     * <p>A JSON structure containing the actual property values of the stack
+     * resource.</p> <p>For resources whose <code>StackResourceDriftStatus</code> is
+     * <code>DELETED</code>, this structure will not be present. </p>
+     */
     inline void SetActualProperties(const Aws::String& value) { m_actualPropertiesHasBeenSet = true; m_actualProperties = value; }
 
     /**
@@ -395,6 +440,13 @@ namespace Model
      * <code>StackResourceDriftStatus</code> is <code>MODIFIED</code>. </p>
      */
     inline const Aws::Vector<PropertyDifference>& GetPropertyDifferences() const{ return m_propertyDifferences; }
+
+    /**
+     * <p>A collection of the resource properties whose actual values differ from their
+     * expected values. These will be present only for resources whose
+     * <code>StackResourceDriftStatus</code> is <code>MODIFIED</code>. </p>
+     */
+    inline bool PropertyDifferencesHasBeenSet() const { return m_propertyDifferencesHasBeenSet; }
 
     /**
      * <p>A collection of the resource properties whose actual values differ from their
@@ -463,6 +515,19 @@ namespace Model
      * configuration.</p> </li> <li> <p> <code>NOT_CHECKED</code>: AWS CloudFormation
      * does not currently return this value.</p> </li> </ul>
      */
+    inline bool StackResourceDriftStatusHasBeenSet() const { return m_stackResourceDriftStatusHasBeenSet; }
+
+    /**
+     * <p>Status of the resource's actual configuration compared to its expected
+     * configuration</p> <ul> <li> <p> <code>DELETED</code>: The resource differs from
+     * its expected template configuration because the resource has been deleted.</p>
+     * </li> <li> <p> <code>MODIFIED</code>: One or more resource properties differ
+     * from their expected values (as defined in the stack template and any values
+     * specified as template parameters).</p> </li> <li> <p> <code>IN_SYNC</code>: The
+     * resources's actual configuration matches its expected template
+     * configuration.</p> </li> <li> <p> <code>NOT_CHECKED</code>: AWS CloudFormation
+     * does not currently return this value.</p> </li> </ul>
+     */
     inline void SetStackResourceDriftStatus(const StackResourceDriftStatus& value) { m_stackResourceDriftStatusHasBeenSet = true; m_stackResourceDriftStatus = value; }
 
     /**
@@ -510,6 +575,12 @@ namespace Model
      * resource.</p>
      */
     inline const Aws::Utils::DateTime& GetTimestamp() const{ return m_timestamp; }
+
+    /**
+     * <p>Time at which AWS CloudFormation performed drift detection on the stack
+     * resource.</p>
+     */
+    inline bool TimestampHasBeenSet() const { return m_timestampHasBeenSet; }
 
     /**
      * <p>Time at which AWS CloudFormation performed drift detection on the stack

@@ -55,6 +55,11 @@ namespace Model
     /**
      * <p>One or more instance IDs.</p>
      */
+    inline bool InstanceIdsHasBeenSet() const { return m_instanceIdsHasBeenSet; }
+
+    /**
+     * <p>One or more instance IDs.</p>
+     */
     inline void SetInstanceIds(const Aws::Vector<Aws::String>& value) { m_instanceIdsHasBeenSet = true; m_instanceIds = value; }
 
     /**
@@ -96,6 +101,11 @@ namespace Model
     /**
      * <p>The name of the Auto Scaling group.</p>
      */
+    inline bool AutoScalingGroupNameHasBeenSet() const { return m_autoScalingGroupNameHasBeenSet; }
+
+    /**
+     * <p>The name of the Auto Scaling group.</p>
+     */
     inline void SetAutoScalingGroupName(const Aws::String& value) { m_autoScalingGroupNameHasBeenSet = true; m_autoScalingGroupName = value; }
 
     /**
@@ -129,6 +139,12 @@ namespace Model
      * Auto Scaling when scaling in.</p>
      */
     inline bool GetProtectedFromScaleIn() const{ return m_protectedFromScaleIn; }
+
+    /**
+     * <p>Indicates whether the instance is protected from termination by Amazon EC2
+     * Auto Scaling when scaling in.</p>
+     */
+    inline bool ProtectedFromScaleInHasBeenSet() const { return m_protectedFromScaleInHasBeenSet; }
 
     /**
      * <p>Indicates whether the instance is protected from termination by Amazon EC2

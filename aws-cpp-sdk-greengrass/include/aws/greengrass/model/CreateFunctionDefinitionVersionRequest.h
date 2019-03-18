@@ -59,6 +59,11 @@ namespace Model
     /**
      * A client token used to correlate requests and responses.
      */
+    inline bool AmznClientTokenHasBeenSet() const { return m_amznClientTokenHasBeenSet; }
+
+    /**
+     * A client token used to correlate requests and responses.
+     */
     inline void SetAmznClientToken(const Aws::String& value) { m_amznClientTokenHasBeenSet = true; m_amznClientToken = value; }
 
     /**
@@ -97,6 +102,12 @@ namespace Model
      * The default configuration that applies to all Lambda functions in this function
      * definition version. Individual Lambda functions can override these settings.
      */
+    inline bool DefaultConfigHasBeenSet() const { return m_defaultConfigHasBeenSet; }
+
+    /**
+     * The default configuration that applies to all Lambda functions in this function
+     * definition version. Individual Lambda functions can override these settings.
+     */
     inline void SetDefaultConfig(const FunctionDefaultConfig& value) { m_defaultConfigHasBeenSet = true; m_defaultConfig = value; }
 
     /**
@@ -122,6 +133,11 @@ namespace Model
      * The ID of the Lambda function definition.
      */
     inline const Aws::String& GetFunctionDefinitionId() const{ return m_functionDefinitionId; }
+
+    /**
+     * The ID of the Lambda function definition.
+     */
+    inline bool FunctionDefinitionIdHasBeenSet() const { return m_functionDefinitionIdHasBeenSet; }
 
     /**
      * The ID of the Lambda function definition.
@@ -158,6 +174,11 @@ namespace Model
      * A list of Lambda functions in this function definition version.
      */
     inline const Aws::Vector<Function>& GetFunctions() const{ return m_functions; }
+
+    /**
+     * A list of Lambda functions in this function definition version.
+     */
+    inline bool FunctionsHasBeenSet() const { return m_functionsHasBeenSet; }
 
     /**
      * A list of Lambda functions in this function definition version.

@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>PlatformApplicationArn of platform application object to delete.</p>
      */
+    inline bool PlatformApplicationArnHasBeenSet() const { return m_platformApplicationArnHasBeenSet; }
+
+    /**
+     * <p>PlatformApplicationArn of platform application object to delete.</p>
+     */
     inline void SetPlatformApplicationArn(const Aws::String& value) { m_platformApplicationArnHasBeenSet = true; m_platformApplicationArn = value; }
 
     /**

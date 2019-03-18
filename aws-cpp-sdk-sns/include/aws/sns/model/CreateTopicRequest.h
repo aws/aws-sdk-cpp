@@ -62,6 +62,13 @@ namespace Model
      * must be made up of only uppercase and lowercase ASCII letters, numbers,
      * underscores, and hyphens, and must be between 1 and 256 characters long.</p>
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>The name of the topic you want to create.</p> <p>Constraints: Topic names
+     * must be made up of only uppercase and lowercase ASCII letters, numbers,
+     * underscores, and hyphens, and must be between 1 and 256 characters long.</p>
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
@@ -112,6 +119,19 @@ namespace Model
      * subscribe to the topic.</p> </li> </ul>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetAttributes() const{ return m_attributes; }
+
+    /**
+     * <p>A map of attributes with their corresponding values.</p> <p>The following
+     * lists the names, descriptions, and values of the special request parameters that
+     * the <code>CreateTopic</code> action uses:</p> <ul> <li> <p>
+     * <code>DeliveryPolicy</code> – The policy that defines how Amazon SNS retries
+     * failed deliveries to HTTP/S endpoints.</p> </li> <li> <p>
+     * <code>DisplayName</code> – The display name to use for a topic with SMS
+     * subscriptions.</p> </li> <li> <p> <code>Policy</code> – The policy that defines
+     * who can access your topic. By default, only the topic owner can publish or
+     * subscribe to the topic.</p> </li> </ul>
+     */
+    inline bool AttributesHasBeenSet() const { return m_attributesHasBeenSet; }
 
     /**
      * <p>A map of attributes with their corresponding values.</p> <p>The following

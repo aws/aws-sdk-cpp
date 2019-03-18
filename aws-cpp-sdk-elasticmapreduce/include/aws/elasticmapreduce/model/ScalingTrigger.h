@@ -60,6 +60,13 @@ namespace Model
      * conditions are met along with other trigger parameters, scaling activity
      * begins.</p>
      */
+    inline bool CloudWatchAlarmDefinitionHasBeenSet() const { return m_cloudWatchAlarmDefinitionHasBeenSet; }
+
+    /**
+     * <p>The definition of a CloudWatch metric alarm. When the defined alarm
+     * conditions are met along with other trigger parameters, scaling activity
+     * begins.</p>
+     */
     inline void SetCloudWatchAlarmDefinition(const CloudWatchAlarmDefinition& value) { m_cloudWatchAlarmDefinitionHasBeenSet = true; m_cloudWatchAlarmDefinition = value; }
 
     /**

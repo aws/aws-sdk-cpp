@@ -54,6 +54,11 @@ namespace Model
     /**
      * <p>The ID of the Client VPN endpoint to which to add the route.</p>
      */
+    inline bool ClientVpnEndpointIdHasBeenSet() const { return m_clientVpnEndpointIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the Client VPN endpoint to which to add the route.</p>
+     */
     inline void SetClientVpnEndpointId(const Aws::String& value) { m_clientVpnEndpointIdHasBeenSet = true; m_clientVpnEndpointId = value; }
 
     /**
@@ -92,6 +97,17 @@ namespace Model
      * specified for client allocation.</p>
      */
     inline const Aws::String& GetDestinationCidrBlock() const{ return m_destinationCidrBlock; }
+
+    /**
+     * <p>The IPv4 address range, in CIDR notation, of the route destination. For
+     * example:</p> <ul> <li> <p>To add a route for Internet access, enter
+     * <code>0.0.0.0/0</code> </p> </li> <li> <p>To add a route for a peered VPC, enter
+     * the peered VPC's IPv4 CIDR range</p> </li> <li> <p>To add a route for an
+     * on-premises network, enter the AWS Site-to-Site VPN connection's IPv4 CIDR
+     * range</p> </li> </ul> <p>Route address ranges cannot overlap with the CIDR range
+     * specified for client allocation.</p>
+     */
+    inline bool DestinationCidrBlockHasBeenSet() const { return m_destinationCidrBlockHasBeenSet; }
 
     /**
      * <p>The IPv4 address range, in CIDR notation, of the route destination. For
@@ -170,6 +186,12 @@ namespace Model
      * <p>The ID of the subnet through which you want to route traffic. The specified
      * subnet must be an existing target network of the Client VPN endpoint.</p>
      */
+    inline bool TargetVpcSubnetIdHasBeenSet() const { return m_targetVpcSubnetIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the subnet through which you want to route traffic. The specified
+     * subnet must be an existing target network of the Client VPN endpoint.</p>
+     */
     inline void SetTargetVpcSubnetId(const Aws::String& value) { m_targetVpcSubnetIdHasBeenSet = true; m_targetVpcSubnetId = value; }
 
     /**
@@ -211,6 +233,11 @@ namespace Model
     /**
      * <p>A brief description of the route.</p>
      */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
+
+    /**
+     * <p>A brief description of the route.</p>
+     */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
@@ -246,6 +273,14 @@ namespace Model
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
     inline bool GetDryRun() const{ return m_dryRun; }
+
+    /**
+     * <p>Checks whether you have the required permissions for the action, without
+     * actually making the request, and provides an error response. If you have the
+     * required permissions, the error response is <code>DryRunOperation</code>.
+     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+     */
+    inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
 
     /**
      * <p>Checks whether you have the required permissions for the action, without

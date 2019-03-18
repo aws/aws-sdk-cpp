@@ -58,6 +58,12 @@ namespace Model
      * <p>A list of ID numbers of the support cases you want returned. The maximum
      * number of cases is 100.</p>
      */
+    inline bool CaseIdListHasBeenSet() const { return m_caseIdListHasBeenSet; }
+
+    /**
+     * <p>A list of ID numbers of the support cases you want returned. The maximum
+     * number of cases is 100.</p>
+     */
     inline void SetCaseIdList(const Aws::Vector<Aws::String>& value) { m_caseIdListHasBeenSet = true; m_caseIdList = value; }
 
     /**
@@ -105,6 +111,11 @@ namespace Model
     /**
      * <p>The ID displayed for a case in the AWS Support Center user interface.</p>
      */
+    inline bool DisplayIdHasBeenSet() const { return m_displayIdHasBeenSet; }
+
+    /**
+     * <p>The ID displayed for a case in the AWS Support Center user interface.</p>
+     */
     inline void SetDisplayId(const Aws::String& value) { m_displayIdHasBeenSet = true; m_displayId = value; }
 
     /**
@@ -138,6 +149,12 @@ namespace Model
      * Case communications are available for 12 months after creation.</p>
      */
     inline const Aws::String& GetAfterTime() const{ return m_afterTime; }
+
+    /**
+     * <p>The start date for a filtered date search on support case communications.
+     * Case communications are available for 12 months after creation.</p>
+     */
+    inline bool AfterTimeHasBeenSet() const { return m_afterTimeHasBeenSet; }
 
     /**
      * <p>The start date for a filtered date search on support case communications.
@@ -186,6 +203,12 @@ namespace Model
      * <p>The end date for a filtered date search on support case communications. Case
      * communications are available for 12 months after creation.</p>
      */
+    inline bool BeforeTimeHasBeenSet() const { return m_beforeTimeHasBeenSet; }
+
+    /**
+     * <p>The end date for a filtered date search on support case communications. Case
+     * communications are available for 12 months after creation.</p>
+     */
     inline void SetBeforeTime(const Aws::String& value) { m_beforeTimeHasBeenSet = true; m_beforeTime = value; }
 
     /**
@@ -229,6 +252,12 @@ namespace Model
      * <p>Specifies whether resolved support cases should be included in the
      * <a>DescribeCases</a> results. The default is <i>false</i>.</p>
      */
+    inline bool IncludeResolvedCasesHasBeenSet() const { return m_includeResolvedCasesHasBeenSet; }
+
+    /**
+     * <p>Specifies whether resolved support cases should be included in the
+     * <a>DescribeCases</a> results. The default is <i>false</i>.</p>
+     */
     inline void SetIncludeResolvedCases(bool value) { m_includeResolvedCasesHasBeenSet = true; m_includeResolvedCases = value; }
 
     /**
@@ -242,6 +271,11 @@ namespace Model
      * <p>A resumption point for pagination.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
+    /**
+     * <p>A resumption point for pagination.</p>
+     */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
      * <p>A resumption point for pagination.</p>
@@ -282,6 +316,11 @@ namespace Model
     /**
      * <p>The maximum number of results to return before paginating.</p>
      */
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
+
+    /**
+     * <p>The maximum number of results to return before paginating.</p>
+     */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
@@ -296,6 +335,13 @@ namespace Model
      * parameters must be passed explicitly for operations that take them.</p>
      */
     inline const Aws::String& GetLanguage() const{ return m_language; }
+
+    /**
+     * <p>The ISO 639-1 code for the language in which AWS provides support. AWS
+     * Support currently supports English ("en") and Japanese ("ja"). Language
+     * parameters must be passed explicitly for operations that take them.</p>
+     */
+    inline bool LanguageHasBeenSet() const { return m_languageHasBeenSet; }
 
     /**
      * <p>The ISO 639-1 code for the language in which AWS provides support. AWS
@@ -345,6 +391,12 @@ namespace Model
      * <a>DescribeCases</a> results. The default is <i>true</i>.</p>
      */
     inline bool GetIncludeCommunications() const{ return m_includeCommunications; }
+
+    /**
+     * <p>Specifies whether communications should be included in the
+     * <a>DescribeCases</a> results. The default is <i>true</i>.</p>
+     */
+    inline bool IncludeCommunicationsHasBeenSet() const { return m_includeCommunicationsHasBeenSet; }
 
     /**
      * <p>Specifies whether communications should be included in the

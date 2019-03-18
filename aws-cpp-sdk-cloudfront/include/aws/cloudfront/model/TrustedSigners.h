@@ -76,6 +76,13 @@ namespace Model
      * the files specified by <code>PathPattern</code> and
      * <code>TargetOriginId</code>.</p>
      */
+    inline bool EnabledHasBeenSet() const { return m_enabledHasBeenSet; }
+
+    /**
+     * <p>Specifies whether you want to require viewers to use signed URLs to access
+     * the files specified by <code>PathPattern</code> and
+     * <code>TargetOriginId</code>.</p>
+     */
     inline void SetEnabled(bool value) { m_enabledHasBeenSet = true; m_enabled = value; }
 
     /**
@@ -94,6 +101,11 @@ namespace Model
     /**
      * <p>The number of trusted signers for this cache behavior.</p>
      */
+    inline bool QuantityHasBeenSet() const { return m_quantityHasBeenSet; }
+
+    /**
+     * <p>The number of trusted signers for this cache behavior.</p>
+     */
     inline void SetQuantity(int value) { m_quantityHasBeenSet = true; m_quantity = value; }
 
     /**
@@ -108,6 +120,13 @@ namespace Model
      * <code>Items</code>.</p>
      */
     inline const Aws::Vector<Aws::String>& GetItems() const{ return m_items; }
+
+    /**
+     * <p> <b>Optional</b>: A complex type that contains trusted signers for this cache
+     * behavior. If <code>Quantity</code> is <code>0</code>, you can omit
+     * <code>Items</code>.</p>
+     */
+    inline bool ItemsHasBeenSet() const { return m_itemsHasBeenSet; }
 
     /**
      * <p> <b>Optional</b>: A complex type that contains trusted signers for this cache

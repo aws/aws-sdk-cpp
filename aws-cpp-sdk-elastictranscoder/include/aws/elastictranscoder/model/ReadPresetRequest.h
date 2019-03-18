@@ -55,6 +55,12 @@ namespace Model
      * <p>The identifier of the preset for which you want to get detailed
      * information.</p>
      */
+    inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
+
+    /**
+     * <p>The identifier of the preset for which you want to get detailed
+     * information.</p>
+     */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
     /**

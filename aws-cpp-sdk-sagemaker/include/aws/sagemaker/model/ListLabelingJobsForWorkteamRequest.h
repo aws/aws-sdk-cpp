@@ -57,6 +57,12 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the work team for which you want to see
      * labeling jobs for.</p>
      */
+    inline bool WorkteamArnHasBeenSet() const { return m_workteamArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the work team for which you want to see
+     * labeling jobs for.</p>
+     */
     inline void SetWorkteamArn(const Aws::String& value) { m_workteamArnHasBeenSet = true; m_workteamArn = value; }
 
     /**
@@ -100,6 +106,12 @@ namespace Model
      * <p>The maximum number of labeling jobs to return in each page of the
      * response.</p>
      */
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
+
+    /**
+     * <p>The maximum number of labeling jobs to return in each page of the
+     * response.</p>
+     */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
@@ -115,6 +127,13 @@ namespace Model
      * retrieve the next set of labeling jobs, use the token in the next request.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
+    /**
+     * <p>If the result of the previous <code>ListLabelingJobsForWorkteam</code>
+     * request was truncated, the response includes a <code>NextToken</code>. To
+     * retrieve the next set of labeling jobs, use the token in the next request.</p>
+     */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
      * <p>If the result of the previous <code>ListLabelingJobsForWorkteam</code>
@@ -169,6 +188,12 @@ namespace Model
      * <p>A filter that returns only labeling jobs created after the specified time
      * (timestamp).</p>
      */
+    inline bool CreationTimeAfterHasBeenSet() const { return m_creationTimeAfterHasBeenSet; }
+
+    /**
+     * <p>A filter that returns only labeling jobs created after the specified time
+     * (timestamp).</p>
+     */
     inline void SetCreationTimeAfter(const Aws::Utils::DateTime& value) { m_creationTimeAfterHasBeenSet = true; m_creationTimeAfter = value; }
 
     /**
@@ -200,6 +225,12 @@ namespace Model
      * <p>A filter that returns only labeling jobs created before the specified time
      * (timestamp).</p>
      */
+    inline bool CreationTimeBeforeHasBeenSet() const { return m_creationTimeBeforeHasBeenSet; }
+
+    /**
+     * <p>A filter that returns only labeling jobs created before the specified time
+     * (timestamp).</p>
+     */
     inline void SetCreationTimeBefore(const Aws::Utils::DateTime& value) { m_creationTimeBeforeHasBeenSet = true; m_creationTimeBefore = value; }
 
     /**
@@ -226,6 +257,12 @@ namespace Model
      * the specified string.</p>
      */
     inline const Aws::String& GetJobReferenceCodeContains() const{ return m_jobReferenceCodeContains; }
+
+    /**
+     * <p>A filter the limits jobs to only the ones whose job reference code contains
+     * the specified string.</p>
+     */
+    inline bool JobReferenceCodeContainsHasBeenSet() const { return m_jobReferenceCodeContainsHasBeenSet; }
 
     /**
      * <p>A filter the limits jobs to only the ones whose job reference code contains
@@ -272,6 +309,11 @@ namespace Model
     /**
      * <p>The field to sort results by. The default is <code>CreationTime</code>.</p>
      */
+    inline bool SortByHasBeenSet() const { return m_sortByHasBeenSet; }
+
+    /**
+     * <p>The field to sort results by. The default is <code>CreationTime</code>.</p>
+     */
     inline void SetSortBy(const ListLabelingJobsForWorkteamSortByOptions& value) { m_sortByHasBeenSet = true; m_sortBy = value; }
 
     /**
@@ -294,6 +336,11 @@ namespace Model
      * <p>The sort order for results. The default is <code>Ascending</code>.</p>
      */
     inline const SortOrder& GetSortOrder() const{ return m_sortOrder; }
+
+    /**
+     * <p>The sort order for results. The default is <code>Ascending</code>.</p>
+     */
+    inline bool SortOrderHasBeenSet() const { return m_sortOrderHasBeenSet; }
 
     /**
      * <p>The sort order for results. The default is <code>Ascending</code>.</p>

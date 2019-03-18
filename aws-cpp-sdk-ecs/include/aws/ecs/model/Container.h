@@ -59,6 +59,11 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the container.</p>
      */
+    inline bool ContainerArnHasBeenSet() const { return m_containerArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the container.</p>
+     */
     inline void SetContainerArn(const Aws::String& value) { m_containerArnHasBeenSet = true; m_containerArn = value; }
 
     /**
@@ -91,6 +96,11 @@ namespace Model
      * <p>The ARN of the task.</p>
      */
     inline const Aws::String& GetTaskArn() const{ return m_taskArn; }
+
+    /**
+     * <p>The ARN of the task.</p>
+     */
+    inline bool TaskArnHasBeenSet() const { return m_taskArnHasBeenSet; }
 
     /**
      * <p>The ARN of the task.</p>
@@ -131,6 +141,11 @@ namespace Model
     /**
      * <p>The name of the container.</p>
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>The name of the container.</p>
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
@@ -163,6 +178,11 @@ namespace Model
      * <p>The last known status of the container.</p>
      */
     inline const Aws::String& GetLastStatus() const{ return m_lastStatus; }
+
+    /**
+     * <p>The last known status of the container.</p>
+     */
+    inline bool LastStatusHasBeenSet() const { return m_lastStatusHasBeenSet; }
 
     /**
      * <p>The last known status of the container.</p>
@@ -203,6 +223,11 @@ namespace Model
     /**
      * <p>The exit code returned from the container.</p>
      */
+    inline bool ExitCodeHasBeenSet() const { return m_exitCodeHasBeenSet; }
+
+    /**
+     * <p>The exit code returned from the container.</p>
+     */
     inline void SetExitCode(int value) { m_exitCodeHasBeenSet = true; m_exitCode = value; }
 
     /**
@@ -216,6 +241,12 @@ namespace Model
      * details about a running or stopped container.</p>
      */
     inline const Aws::String& GetReason() const{ return m_reason; }
+
+    /**
+     * <p>A short (255 max characters) human-readable string to provide additional
+     * details about a running or stopped container.</p>
+     */
+    inline bool ReasonHasBeenSet() const { return m_reasonHasBeenSet; }
 
     /**
      * <p>A short (255 max characters) human-readable string to provide additional
@@ -262,6 +293,11 @@ namespace Model
     /**
      * <p>The network bindings associated with the container.</p>
      */
+    inline bool NetworkBindingsHasBeenSet() const { return m_networkBindingsHasBeenSet; }
+
+    /**
+     * <p>The network bindings associated with the container.</p>
+     */
     inline void SetNetworkBindings(const Aws::Vector<NetworkBinding>& value) { m_networkBindingsHasBeenSet = true; m_networkBindings = value; }
 
     /**
@@ -294,6 +330,11 @@ namespace Model
      * <p>The network interfaces associated with the container.</p>
      */
     inline const Aws::Vector<NetworkInterface>& GetNetworkInterfaces() const{ return m_networkInterfaces; }
+
+    /**
+     * <p>The network interfaces associated with the container.</p>
+     */
+    inline bool NetworkInterfacesHasBeenSet() const { return m_networkInterfacesHasBeenSet; }
 
     /**
      * <p>The network interfaces associated with the container.</p>
@@ -338,6 +379,13 @@ namespace Model
      * this container in its task definition, then it reports the health status as
      * <code>UNKNOWN</code>.</p>
      */
+    inline bool HealthStatusHasBeenSet() const { return m_healthStatusHasBeenSet; }
+
+    /**
+     * <p>The health status of the container. If health checks are not configured for
+     * this container in its task definition, then it reports the health status as
+     * <code>UNKNOWN</code>.</p>
+     */
     inline void SetHealthStatus(const HealthStatus& value) { m_healthStatusHasBeenSet = true; m_healthStatus = value; }
 
     /**
@@ -368,6 +416,13 @@ namespace Model
      * task definition was registered.</p>
      */
     inline const Aws::String& GetCpu() const{ return m_cpu; }
+
+    /**
+     * <p>The number of CPU units set for the container. The value will be
+     * <code>0</code> if no value was specified in the container definition when the
+     * task definition was registered.</p>
+     */
+    inline bool CpuHasBeenSet() const { return m_cpuHasBeenSet; }
 
     /**
      * <p>The number of CPU units set for the container. The value will be
@@ -420,6 +475,11 @@ namespace Model
     /**
      * <p>The hard limit (in MiB) of memory set for the container.</p>
      */
+    inline bool MemoryHasBeenSet() const { return m_memoryHasBeenSet; }
+
+    /**
+     * <p>The hard limit (in MiB) of memory set for the container.</p>
+     */
     inline void SetMemory(const Aws::String& value) { m_memoryHasBeenSet = true; m_memory = value; }
 
     /**
@@ -456,6 +516,11 @@ namespace Model
     /**
      * <p>The soft limit (in MiB) of memory set for the container.</p>
      */
+    inline bool MemoryReservationHasBeenSet() const { return m_memoryReservationHasBeenSet; }
+
+    /**
+     * <p>The soft limit (in MiB) of memory set for the container.</p>
+     */
     inline void SetMemoryReservation(const Aws::String& value) { m_memoryReservationHasBeenSet = true; m_memoryReservation = value; }
 
     /**
@@ -488,6 +553,11 @@ namespace Model
      * <p>The IDs of each GPU assigned to the container.</p>
      */
     inline const Aws::Vector<Aws::String>& GetGpuIds() const{ return m_gpuIds; }
+
+    /**
+     * <p>The IDs of each GPU assigned to the container.</p>
+     */
+    inline bool GpuIdsHasBeenSet() const { return m_gpuIdsHasBeenSet; }
 
     /**
      * <p>The IDs of each GPU assigned to the container.</p>

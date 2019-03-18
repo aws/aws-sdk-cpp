@@ -60,6 +60,13 @@ namespace Model
      * truncated, the response includes a <code>NextToken</code>. To retrieve the next
      * set of model compilation jobs, use the token in the next request.</p>
      */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
+
+    /**
+     * <p>If the result of the previous <code>ListCompilationJobs</code> request was
+     * truncated, the response includes a <code>NextToken</code>. To retrieve the next
+     * set of model compilation jobs, use the token in the next request.</p>
+     */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
     /**
@@ -106,6 +113,11 @@ namespace Model
     /**
      * <p>The maximum number of model compilation jobs to return in the response.</p>
      */
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
+
+    /**
+     * <p>The maximum number of model compilation jobs to return in the response.</p>
+     */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
@@ -119,6 +131,12 @@ namespace Model
      * specified time. </p>
      */
     inline const Aws::Utils::DateTime& GetCreationTimeAfter() const{ return m_creationTimeAfter; }
+
+    /**
+     * <p>A filter that returns the model compilation jobs that were created after a
+     * specified time. </p>
+     */
+    inline bool CreationTimeAfterHasBeenSet() const { return m_creationTimeAfterHasBeenSet; }
 
     /**
      * <p>A filter that returns the model compilation jobs that were created after a
@@ -155,6 +173,12 @@ namespace Model
      * <p>A filter that returns the model compilation jobs that were created before a
      * specified time.</p>
      */
+    inline bool CreationTimeBeforeHasBeenSet() const { return m_creationTimeBeforeHasBeenSet; }
+
+    /**
+     * <p>A filter that returns the model compilation jobs that were created before a
+     * specified time.</p>
+     */
     inline void SetCreationTimeBefore(const Aws::Utils::DateTime& value) { m_creationTimeBeforeHasBeenSet = true; m_creationTimeBefore = value; }
 
     /**
@@ -181,6 +205,12 @@ namespace Model
      * specified time.</p>
      */
     inline const Aws::Utils::DateTime& GetLastModifiedTimeAfter() const{ return m_lastModifiedTimeAfter; }
+
+    /**
+     * <p>A filter that returns the model compilation jobs that were modified after a
+     * specified time.</p>
+     */
+    inline bool LastModifiedTimeAfterHasBeenSet() const { return m_lastModifiedTimeAfterHasBeenSet; }
 
     /**
      * <p>A filter that returns the model compilation jobs that were modified after a
@@ -217,6 +247,12 @@ namespace Model
      * <p>A filter that returns the model compilation jobs that were modified before a
      * specified time.</p>
      */
+    inline bool LastModifiedTimeBeforeHasBeenSet() const { return m_lastModifiedTimeBeforeHasBeenSet; }
+
+    /**
+     * <p>A filter that returns the model compilation jobs that were modified before a
+     * specified time.</p>
+     */
     inline void SetLastModifiedTimeBefore(const Aws::Utils::DateTime& value) { m_lastModifiedTimeBeforeHasBeenSet = true; m_lastModifiedTimeBefore = value; }
 
     /**
@@ -243,6 +279,12 @@ namespace Model
      * specified string.</p>
      */
     inline const Aws::String& GetNameContains() const{ return m_nameContains; }
+
+    /**
+     * <p>A filter that returns the model compilation jobs whose name contains a
+     * specified string.</p>
+     */
+    inline bool NameContainsHasBeenSet() const { return m_nameContainsHasBeenSet; }
 
     /**
      * <p>A filter that returns the model compilation jobs whose name contains a
@@ -291,6 +333,12 @@ namespace Model
      * <p>A filter that retrieves model compilation jobs with a specific
      * <a>DescribeCompilationJobResponse$CompilationJobStatus</a> status.</p>
      */
+    inline bool StatusEqualsHasBeenSet() const { return m_statusEqualsHasBeenSet; }
+
+    /**
+     * <p>A filter that retrieves model compilation jobs with a specific
+     * <a>DescribeCompilationJobResponse$CompilationJobStatus</a> status.</p>
+     */
     inline void SetStatusEquals(const CompilationJobStatus& value) { m_statusEqualsHasBeenSet = true; m_statusEquals = value; }
 
     /**
@@ -322,6 +370,12 @@ namespace Model
      * <p>The field by which to sort results. The default is
      * <code>CreationTime</code>.</p>
      */
+    inline bool SortByHasBeenSet() const { return m_sortByHasBeenSet; }
+
+    /**
+     * <p>The field by which to sort results. The default is
+     * <code>CreationTime</code>.</p>
+     */
     inline void SetSortBy(const ListCompilationJobsSortBy& value) { m_sortByHasBeenSet = true; m_sortBy = value; }
 
     /**
@@ -347,6 +401,11 @@ namespace Model
      * <p>The sort order for results. The default is <code>Ascending</code>.</p>
      */
     inline const SortOrder& GetSortOrder() const{ return m_sortOrder; }
+
+    /**
+     * <p>The sort order for results. The default is <code>Ascending</code>.</p>
+     */
+    inline bool SortOrderHasBeenSet() const { return m_sortOrderHasBeenSet; }
 
     /**
      * <p>The sort order for results. The default is <code>Ascending</code>.</p>

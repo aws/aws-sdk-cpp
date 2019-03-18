@@ -63,6 +63,14 @@ namespace Model
      * you from data loss, and we highly recommend taking the final backup. If you want
      * to skip this backup, use this flag to do so.</p>
      */
+    inline bool SkipFinalBackupHasBeenSet() const { return m_skipFinalBackupHasBeenSet; }
+
+    /**
+     * <p>By default, Amazon FSx for Windows takes a final backup on your behalf when
+     * the <code>DeleteFileSystem</code> operation is invoked. Doing this helps protect
+     * you from data loss, and we highly recommend taking the final backup. If you want
+     * to skip this backup, use this flag to do so.</p>
+     */
     inline void SetSkipFinalBackup(bool value) { m_skipFinalBackupHasBeenSet = true; m_skipFinalBackup = value; }
 
     /**
@@ -78,6 +86,11 @@ namespace Model
      * <p>A set of tags for your final backup.</p>
      */
     inline const Aws::Vector<Tag>& GetFinalBackupTags() const{ return m_finalBackupTags; }
+
+    /**
+     * <p>A set of tags for your final backup.</p>
+     */
+    inline bool FinalBackupTagsHasBeenSet() const { return m_finalBackupTagsHasBeenSet; }
 
     /**
      * <p>A set of tags for your final backup.</p>

@@ -58,6 +58,12 @@ namespace Model
      * <p>A token returned from a previous call to <code>ListConfigurationSets</code>
      * to indicate the position in the list of configuration sets.</p>
      */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
+
+    /**
+     * <p>A token returned from a previous call to <code>ListConfigurationSets</code>
+     * to indicate the position in the list of configuration sets.</p>
+     */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
     /**
@@ -99,6 +105,15 @@ namespace Model
      * results.</p>
      */
     inline int GetPageSize() const{ return m_pageSize; }
+
+    /**
+     * <p>The number of results to show in a single call to
+     * <code>ListConfigurationSets</code>. If the number of results is larger than the
+     * number you specified in this parameter, then the response includes a
+     * <code>NextToken</code> element, which you can use to obtain additional
+     * results.</p>
+     */
+    inline bool PageSizeHasBeenSet() const { return m_pageSizeHasBeenSet; }
 
     /**
      * <p>The number of results to show in a single call to

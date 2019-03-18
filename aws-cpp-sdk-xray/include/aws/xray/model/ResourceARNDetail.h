@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The ARN of a corresponding resource.</p>
      */
+    inline bool ARNHasBeenSet() const { return m_aRNHasBeenSet; }
+
+    /**
+     * <p>The ARN of a corresponding resource.</p>
+     */
     inline void SetARN(const Aws::String& value) { m_aRNHasBeenSet = true; m_aRN = value; }
 
     /**

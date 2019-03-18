@@ -60,6 +60,11 @@ namespace Model
     /**
      * Acceleration settings for job execution.
      */
+    inline bool AccelerationSettingsHasBeenSet() const { return m_accelerationSettingsHasBeenSet; }
+
+    /**
+     * Acceleration settings for job execution.
+     */
     inline void SetAccelerationSettings(const AccelerationSettings& value) { m_accelerationSettingsHasBeenSet = true; m_accelerationSettings = value; }
 
     /**
@@ -82,6 +87,11 @@ namespace Model
      * An identifier for this resource that is unique within all of AWS.
      */
     inline const Aws::String& GetArn() const{ return m_arn; }
+
+    /**
+     * An identifier for this resource that is unique within all of AWS.
+     */
+    inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
 
     /**
      * An identifier for this resource that is unique within all of AWS.
@@ -122,6 +132,11 @@ namespace Model
     /**
      * An optional category you create to organize your job templates.
      */
+    inline bool CategoryHasBeenSet() const { return m_categoryHasBeenSet; }
+
+    /**
+     * An optional category you create to organize your job templates.
+     */
     inline void SetCategory(const Aws::String& value) { m_categoryHasBeenSet = true; m_category = value; }
 
     /**
@@ -158,6 +173,11 @@ namespace Model
     /**
      * The timestamp in epoch seconds for Job template creation.
      */
+    inline bool CreatedAtHasBeenSet() const { return m_createdAtHasBeenSet; }
+
+    /**
+     * The timestamp in epoch seconds for Job template creation.
+     */
     inline void SetCreatedAt(const Aws::Utils::DateTime& value) { m_createdAtHasBeenSet = true; m_createdAt = value; }
 
     /**
@@ -180,6 +200,11 @@ namespace Model
      * An optional description you create for each job template.
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
+
+    /**
+     * An optional description you create for each job template.
+     */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
 
     /**
      * An optional description you create for each job template.
@@ -220,6 +245,11 @@ namespace Model
     /**
      * The timestamp in epoch seconds when the Job template was last updated.
      */
+    inline bool LastUpdatedHasBeenSet() const { return m_lastUpdatedHasBeenSet; }
+
+    /**
+     * The timestamp in epoch seconds when the Job template was last updated.
+     */
     inline void SetLastUpdated(const Aws::Utils::DateTime& value) { m_lastUpdatedHasBeenSet = true; m_lastUpdated = value; }
 
     /**
@@ -243,6 +273,12 @@ namespace Model
      * account.
      */
     inline const Aws::String& GetName() const{ return m_name; }
+
+    /**
+     * A name you create for each job template. Each name must be unique within your
+     * account.
+     */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
      * A name you create for each job template. Each name must be unique within your
@@ -291,6 +327,12 @@ namespace Model
      * Optional. The queue that jobs created from this template are assigned to. If you
      * don't specify this, jobs will go to the default queue.
      */
+    inline bool QueueHasBeenSet() const { return m_queueHasBeenSet; }
+
+    /**
+     * Optional. The queue that jobs created from this template are assigned to. If you
+     * don't specify this, jobs will go to the default queue.
+     */
     inline void SetQueue(const Aws::String& value) { m_queueHasBeenSet = true; m_queue = value; }
 
     /**
@@ -328,6 +370,9 @@ namespace Model
     inline const JobTemplateSettings& GetSettings() const{ return m_settings; }
 
     
+    inline bool SettingsHasBeenSet() const { return m_settingsHasBeenSet; }
+
+    
     inline void SetSettings(const JobTemplateSettings& value) { m_settingsHasBeenSet = true; m_settings = value; }
 
     
@@ -354,6 +399,14 @@ namespace Model
      * an update at this interval from the time the service begins processing your job
      * to the time it completes the transcode or encounters an error.
      */
+    inline bool StatusUpdateIntervalInSecsHasBeenSet() const { return m_statusUpdateIntervalInSecsHasBeenSet; }
+
+    /**
+     * Specify how often MediaConvert sends STATUS_UPDATE events to Amazon CloudWatch
+     * Events. Set the interval, in seconds, between status updates. MediaConvert sends
+     * an update at this interval from the time the service begins processing your job
+     * to the time it completes the transcode or encounters an error.
+     */
     inline void SetStatusUpdateIntervalInSecs(long long value) { m_statusUpdateIntervalInSecsHasBeenSet = true; m_statusUpdateIntervalInSecs = value; }
 
     /**
@@ -370,6 +423,12 @@ namespace Model
      * templates can't be modified or deleted by the user.
      */
     inline const Type& GetType() const{ return m_type; }
+
+    /**
+     * A job template can be of two types: system or custom. System or built-in job
+     * templates can't be modified or deleted by the user.
+     */
+    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
 
     /**
      * A job template can be of two types: system or custom. System or built-in job

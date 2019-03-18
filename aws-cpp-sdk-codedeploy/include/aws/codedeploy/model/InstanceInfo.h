@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p>The name of the on-premises instance.</p>
      */
+    inline bool InstanceNameHasBeenSet() const { return m_instanceNameHasBeenSet; }
+
+    /**
+     * <p>The name of the on-premises instance.</p>
+     */
     inline void SetInstanceName(const Aws::String& value) { m_instanceNameHasBeenSet = true; m_instanceName = value; }
 
     /**
@@ -90,6 +95,11 @@ namespace Model
      * <p>The ARN of the IAM session associated with the on-premises instance.</p>
      */
     inline const Aws::String& GetIamSessionArn() const{ return m_iamSessionArn; }
+
+    /**
+     * <p>The ARN of the IAM session associated with the on-premises instance.</p>
+     */
+    inline bool IamSessionArnHasBeenSet() const { return m_iamSessionArnHasBeenSet; }
 
     /**
      * <p>The ARN of the IAM session associated with the on-premises instance.</p>
@@ -130,6 +140,11 @@ namespace Model
     /**
      * <p>The IAM user ARN associated with the on-premises instance.</p>
      */
+    inline bool IamUserArnHasBeenSet() const { return m_iamUserArnHasBeenSet; }
+
+    /**
+     * <p>The IAM user ARN associated with the on-premises instance.</p>
+     */
     inline void SetIamUserArn(const Aws::String& value) { m_iamUserArnHasBeenSet = true; m_iamUserArn = value; }
 
     /**
@@ -162,6 +177,11 @@ namespace Model
      * <p>The ARN of the on-premises instance.</p>
      */
     inline const Aws::String& GetInstanceArn() const{ return m_instanceArn; }
+
+    /**
+     * <p>The ARN of the on-premises instance.</p>
+     */
+    inline bool InstanceArnHasBeenSet() const { return m_instanceArnHasBeenSet; }
 
     /**
      * <p>The ARN of the on-premises instance.</p>
@@ -202,6 +222,11 @@ namespace Model
     /**
      * <p>The time at which the on-premises instance was registered.</p>
      */
+    inline bool RegisterTimeHasBeenSet() const { return m_registerTimeHasBeenSet; }
+
+    /**
+     * <p>The time at which the on-premises instance was registered.</p>
+     */
     inline void SetRegisterTime(const Aws::Utils::DateTime& value) { m_registerTimeHasBeenSet = true; m_registerTime = value; }
 
     /**
@@ -225,6 +250,12 @@ namespace Model
      * on-premises instance was deregistered.</p>
      */
     inline const Aws::Utils::DateTime& GetDeregisterTime() const{ return m_deregisterTime; }
+
+    /**
+     * <p>If the on-premises instance was deregistered, the time at which the
+     * on-premises instance was deregistered.</p>
+     */
+    inline bool DeregisterTimeHasBeenSet() const { return m_deregisterTimeHasBeenSet; }
 
     /**
      * <p>If the on-premises instance was deregistered, the time at which the
@@ -255,6 +286,11 @@ namespace Model
      * <p>The tags currently associated with the on-premises instance.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>The tags currently associated with the on-premises instance.</p>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
      * <p>The tags currently associated with the on-premises instance.</p>

@@ -68,6 +68,11 @@ namespace Model
     /**
      * <p>The application name that corresponds to the deployment group to update.</p>
      */
+    inline bool ApplicationNameHasBeenSet() const { return m_applicationNameHasBeenSet; }
+
+    /**
+     * <p>The application name that corresponds to the deployment group to update.</p>
+     */
     inline void SetApplicationName(const Aws::String& value) { m_applicationNameHasBeenSet = true; m_applicationName = value; }
 
     /**
@@ -100,6 +105,11 @@ namespace Model
      * <p>The current name of the deployment group.</p>
      */
     inline const Aws::String& GetCurrentDeploymentGroupName() const{ return m_currentDeploymentGroupName; }
+
+    /**
+     * <p>The current name of the deployment group.</p>
+     */
+    inline bool CurrentDeploymentGroupNameHasBeenSet() const { return m_currentDeploymentGroupNameHasBeenSet; }
 
     /**
      * <p>The current name of the deployment group.</p>
@@ -140,6 +150,11 @@ namespace Model
     /**
      * <p>The new name of the deployment group, if you want to change it.</p>
      */
+    inline bool NewDeploymentGroupNameHasBeenSet() const { return m_newDeploymentGroupNameHasBeenSet; }
+
+    /**
+     * <p>The new name of the deployment group, if you want to change it.</p>
+     */
     inline void SetNewDeploymentGroupName(const Aws::String& value) { m_newDeploymentGroupNameHasBeenSet = true; m_newDeploymentGroupName = value; }
 
     /**
@@ -173,6 +188,12 @@ namespace Model
      * it.</p>
      */
     inline const Aws::String& GetDeploymentConfigName() const{ return m_deploymentConfigName; }
+
+    /**
+     * <p>The replacement deployment configuration name to use, if you want to change
+     * it.</p>
+     */
+    inline bool DeploymentConfigNameHasBeenSet() const { return m_deploymentConfigNameHasBeenSet; }
 
     /**
      * <p>The replacement deployment configuration name to use, if you want to change
@@ -217,6 +238,13 @@ namespace Model
      * not enter any tag names.</p>
      */
     inline const Aws::Vector<EC2TagFilter>& GetEc2TagFilters() const{ return m_ec2TagFilters; }
+
+    /**
+     * <p>The replacement set of Amazon EC2 tags on which to filter, if you want to
+     * change them. To keep the existing tags, enter their names. To remove tags, do
+     * not enter any tag names.</p>
+     */
+    inline bool Ec2TagFiltersHasBeenSet() const { return m_ec2TagFiltersHasBeenSet; }
 
     /**
      * <p>The replacement set of Amazon EC2 tags on which to filter, if you want to
@@ -273,6 +301,13 @@ namespace Model
      * want to change them. To keep the existing tags, enter their names. To remove
      * tags, do not enter any tag names.</p>
      */
+    inline bool OnPremisesInstanceTagFiltersHasBeenSet() const { return m_onPremisesInstanceTagFiltersHasBeenSet; }
+
+    /**
+     * <p>The replacement set of on-premises instance tags on which to filter, if you
+     * want to change them. To keep the existing tags, enter their names. To remove
+     * tags, do not enter any tag names.</p>
+     */
     inline void SetOnPremisesInstanceTagFilters(const Aws::Vector<TagFilter>& value) { m_onPremisesInstanceTagFiltersHasBeenSet = true; m_onPremisesInstanceTagFilters = value; }
 
     /**
@@ -318,6 +353,14 @@ namespace Model
      * names.</p>
      */
     inline const Aws::Vector<Aws::String>& GetAutoScalingGroups() const{ return m_autoScalingGroups; }
+
+    /**
+     * <p>The replacement list of Auto Scaling groups to be included in the deployment
+     * group, if you want to change them. To keep the Auto Scaling groups, enter their
+     * names. To remove Auto Scaling groups, do not enter any Auto Scaling group
+     * names.</p>
+     */
+    inline bool AutoScalingGroupsHasBeenSet() const { return m_autoScalingGroupsHasBeenSet; }
 
     /**
      * <p>The replacement list of Auto Scaling groups to be included in the deployment
@@ -384,6 +427,11 @@ namespace Model
     /**
      * <p>A replacement ARN for the service role, if you want to change it.</p>
      */
+    inline bool ServiceRoleArnHasBeenSet() const { return m_serviceRoleArnHasBeenSet; }
+
+    /**
+     * <p>A replacement ARN for the service role, if you want to change it.</p>
+     */
     inline void SetServiceRoleArn(const Aws::String& value) { m_serviceRoleArnHasBeenSet = true; m_serviceRoleArn = value; }
 
     /**
@@ -420,6 +468,15 @@ namespace Model
      * Guide.</p>
      */
     inline const Aws::Vector<TriggerConfig>& GetTriggerConfigurations() const{ return m_triggerConfigurations; }
+
+    /**
+     * <p>Information about triggers to change when the deployment group is updated.
+     * For examples, see <a
+     * href="https://docs.aws.amazon.com/codedeploy/latest/userguide/how-to-notify-edit.html">Modify
+     * Triggers in an AWS CodeDeploy Deployment Group</a> in the AWS CodeDeploy User
+     * Guide.</p>
+     */
+    inline bool TriggerConfigurationsHasBeenSet() const { return m_triggerConfigurationsHasBeenSet; }
 
     /**
      * <p>Information about triggers to change when the deployment group is updated.
@@ -486,6 +543,12 @@ namespace Model
      * <p>Information to add or change about Amazon CloudWatch alarms when the
      * deployment group is updated.</p>
      */
+    inline bool AlarmConfigurationHasBeenSet() const { return m_alarmConfigurationHasBeenSet; }
+
+    /**
+     * <p>Information to add or change about Amazon CloudWatch alarms when the
+     * deployment group is updated.</p>
+     */
     inline void SetAlarmConfiguration(const AlarmConfiguration& value) { m_alarmConfigurationHasBeenSet = true; m_alarmConfiguration = value; }
 
     /**
@@ -512,6 +575,12 @@ namespace Model
      * when a deployment group is updated.</p>
      */
     inline const AutoRollbackConfiguration& GetAutoRollbackConfiguration() const{ return m_autoRollbackConfiguration; }
+
+    /**
+     * <p>Information for an automatic rollback configuration that is added or changed
+     * when a deployment group is updated.</p>
+     */
+    inline bool AutoRollbackConfigurationHasBeenSet() const { return m_autoRollbackConfigurationHasBeenSet; }
 
     /**
      * <p>Information for an automatic rollback configuration that is added or changed
@@ -548,6 +617,12 @@ namespace Model
      * <p>Information about the type of deployment, either in-place or blue/green, you
      * want to run and whether to route deployment traffic behind a load balancer.</p>
      */
+    inline bool DeploymentStyleHasBeenSet() const { return m_deploymentStyleHasBeenSet; }
+
+    /**
+     * <p>Information about the type of deployment, either in-place or blue/green, you
+     * want to run and whether to route deployment traffic behind a load balancer.</p>
+     */
     inline void SetDeploymentStyle(const DeploymentStyle& value) { m_deploymentStyleHasBeenSet = true; m_deploymentStyle = value; }
 
     /**
@@ -573,6 +648,11 @@ namespace Model
      * <p>Information about blue/green deployment options for a deployment group.</p>
      */
     inline const BlueGreenDeploymentConfiguration& GetBlueGreenDeploymentConfiguration() const{ return m_blueGreenDeploymentConfiguration; }
+
+    /**
+     * <p>Information about blue/green deployment options for a deployment group.</p>
+     */
+    inline bool BlueGreenDeploymentConfigurationHasBeenSet() const { return m_blueGreenDeploymentConfigurationHasBeenSet; }
 
     /**
      * <p>Information about blue/green deployment options for a deployment group.</p>
@@ -603,6 +683,11 @@ namespace Model
     /**
      * <p>Information about the load balancer used in a deployment.</p>
      */
+    inline bool LoadBalancerInfoHasBeenSet() const { return m_loadBalancerInfoHasBeenSet; }
+
+    /**
+     * <p>Information about the load balancer used in a deployment.</p>
+     */
     inline void SetLoadBalancerInfo(const LoadBalancerInfo& value) { m_loadBalancerInfoHasBeenSet = true; m_loadBalancerInfo = value; }
 
     /**
@@ -627,6 +712,13 @@ namespace Model
      * groups.</p>
      */
     inline const EC2TagSet& GetEc2TagSet() const{ return m_ec2TagSet; }
+
+    /**
+     * <p>Information about groups of tags applied to on-premises instances. The
+     * deployment group includes only EC2 instances identified by all the tag
+     * groups.</p>
+     */
+    inline bool Ec2TagSetHasBeenSet() const { return m_ec2TagSetHasBeenSet; }
 
     /**
      * <p>Information about groups of tags applied to on-premises instances. The
@@ -664,6 +756,14 @@ namespace Model
      * format <code>&lt;clustername&gt;:&lt;servicename&gt;</code>. </p>
      */
     inline const Aws::Vector<ECSService>& GetEcsServices() const{ return m_ecsServices; }
+
+    /**
+     * <p> The target Amazon ECS services in the deployment group. This applies only to
+     * deployment groups that use the Amazon ECS compute platform. A target Amazon ECS
+     * service is specified as an Amazon ECS cluster and service name pair using the
+     * format <code>&lt;clustername&gt;:&lt;servicename&gt;</code>. </p>
+     */
+    inline bool EcsServicesHasBeenSet() const { return m_ecsServicesHasBeenSet; }
 
     /**
      * <p> The target Amazon ECS services in the deployment group. This applies only to
@@ -719,6 +819,12 @@ namespace Model
      * includes only on-premises instances identified by all the tag groups.</p>
      */
     inline const OnPremisesTagSet& GetOnPremisesTagSet() const{ return m_onPremisesTagSet; }
+
+    /**
+     * <p>Information about an on-premises instance tag set. The deployment group
+     * includes only on-premises instances identified by all the tag groups.</p>
+     */
+    inline bool OnPremisesTagSetHasBeenSet() const { return m_onPremisesTagSetHasBeenSet; }
 
     /**
      * <p>Information about an on-premises instance tag set. The deployment group

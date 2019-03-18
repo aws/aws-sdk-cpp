@@ -60,6 +60,12 @@ namespace Model
      * <p>An axis-aligned coarse representation of the location of the recognized text
      * on the document page.</p>
      */
+    inline bool BoundingBoxHasBeenSet() const { return m_boundingBoxHasBeenSet; }
+
+    /**
+     * <p>An axis-aligned coarse representation of the location of the recognized text
+     * on the document page.</p>
+     */
     inline void SetBoundingBox(const BoundingBox& value) { m_boundingBoxHasBeenSet = true; m_boundingBox = value; }
 
     /**
@@ -86,6 +92,12 @@ namespace Model
      * text.</p>
      */
     inline const Aws::Vector<Point>& GetPolygon() const{ return m_polygon; }
+
+    /**
+     * <p>Within the bounding box, a fine-grained polygon around the recognized
+     * text.</p>
+     */
+    inline bool PolygonHasBeenSet() const { return m_polygonHasBeenSet; }
 
     /**
      * <p>Within the bounding box, a fine-grained polygon around the recognized

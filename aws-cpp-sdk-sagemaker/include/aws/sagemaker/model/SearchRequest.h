@@ -57,6 +57,12 @@ namespace Model
      * <p>The name of the Amazon SageMaker resource to search for. Currently, the only
      * valid <code>Resource</code> value is <code>TrainingJob</code>.</p>
      */
+    inline bool ResourceHasBeenSet() const { return m_resourceHasBeenSet; }
+
+    /**
+     * <p>The name of the Amazon SageMaker resource to search for. Currently, the only
+     * valid <code>Resource</code> value is <code>TrainingJob</code>.</p>
+     */
     inline void SetResource(const ResourceType& value) { m_resourceHasBeenSet = true; m_resource = value; }
 
     /**
@@ -87,6 +93,16 @@ namespace Model
      * object is 50.</p>
      */
     inline const SearchExpression& GetSearchExpression() const{ return m_searchExpression; }
+
+    /**
+     * <p>A Boolean conditional statement. Resource objects must satisfy this condition
+     * to be included in search results. You must provide at least one subexpression,
+     * filter, or nested filter. The maximum number of recursive
+     * <code>SubExpressions</code>, <code>NestedFilters</code>, and
+     * <code>Filters</code> that can be included in a <code>SearchExpression</code>
+     * object is 50.</p>
+     */
+    inline bool SearchExpressionHasBeenSet() const { return m_searchExpressionHasBeenSet; }
 
     /**
      * <p>A Boolean conditional statement. Resource objects must satisfy this condition
@@ -139,6 +155,12 @@ namespace Model
      * <p>The name of the resource property used to sort the
      * <code>SearchResults</code>. The default is <code>LastModifiedTime</code>.</p>
      */
+    inline bool SortByHasBeenSet() const { return m_sortByHasBeenSet; }
+
+    /**
+     * <p>The name of the resource property used to sort the
+     * <code>SearchResults</code>. The default is <code>LastModifiedTime</code>.</p>
+     */
     inline void SetSortBy(const Aws::String& value) { m_sortByHasBeenSet = true; m_sortBy = value; }
 
     /**
@@ -184,6 +206,13 @@ namespace Model
      * <code>Ascending</code> or <code>Descending</code>. The default is
      * <code>Descending</code>.</p>
      */
+    inline bool SortOrderHasBeenSet() const { return m_sortOrderHasBeenSet; }
+
+    /**
+     * <p>How <code>SearchResults</code> are ordered. Valid values are
+     * <code>Ascending</code> or <code>Descending</code>. The default is
+     * <code>Descending</code>.</p>
+     */
     inline void SetSortOrder(const SearchSortOrder& value) { m_sortOrderHasBeenSet = true; m_sortOrder = value; }
 
     /**
@@ -216,6 +245,15 @@ namespace Model
      * <code>SearchExpression</code> and <code>Sort</code> parameters.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
+    /**
+     * <p>If more than <code>MaxResults</code> resource objects match the specified
+     * <code>SearchExpression</code>, the <code>SearchResponse</code> includes a
+     * <code>NextToken</code>. The <code>NextToken</code> can be passed to the next
+     * <code>SearchRequest</code> to continue retrieving results for the specified
+     * <code>SearchExpression</code> and <code>Sort</code> parameters.</p>
+     */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
      * <p>If more than <code>MaxResults</code> resource objects match the specified
@@ -276,6 +314,11 @@ namespace Model
      * <p>The maximum number of results to return in a <code>SearchResponse</code>.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
+
+    /**
+     * <p>The maximum number of results to return in a <code>SearchResponse</code>.</p>
+     */
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
 
     /**
      * <p>The maximum number of results to return in a <code>SearchResponse</code>.</p>

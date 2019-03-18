@@ -55,6 +55,11 @@ namespace Model
     /**
      * The duration of the session, in milliseconds.
      */
+    inline bool DurationHasBeenSet() const { return m_durationHasBeenSet; }
+
+    /**
+     * The duration of the session, in milliseconds.
+     */
     inline void SetDuration(int value) { m_durationHasBeenSet = true; m_duration = value; }
 
     /**
@@ -67,6 +72,11 @@ namespace Model
      * A unique identifier for the session.
      */
     inline const Aws::String& GetId() const{ return m_id; }
+
+    /**
+     * A unique identifier for the session.
+     */
+    inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
 
     /**
      * A unique identifier for the session.
@@ -107,6 +117,11 @@ namespace Model
     /**
      * The date and time when the session began.
      */
+    inline bool StartTimestampHasBeenSet() const { return m_startTimestampHasBeenSet; }
+
+    /**
+     * The date and time when the session began.
+     */
     inline void SetStartTimestamp(const Aws::String& value) { m_startTimestampHasBeenSet = true; m_startTimestamp = value; }
 
     /**
@@ -139,6 +154,11 @@ namespace Model
      * The date and time when the session ended.
      */
     inline const Aws::String& GetStopTimestamp() const{ return m_stopTimestamp; }
+
+    /**
+     * The date and time when the session ended.
+     */
+    inline bool StopTimestampHasBeenSet() const { return m_stopTimestampHasBeenSet; }
 
     /**
      * The date and time when the session ended.

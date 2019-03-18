@@ -62,6 +62,11 @@ namespace Model
     /**
      * <p>A unique identifier for this command.</p>
      */
+    inline bool CommandIdHasBeenSet() const { return m_commandIdHasBeenSet; }
+
+    /**
+     * <p>A unique identifier for this command.</p>
+     */
     inline void SetCommandId(const Aws::String& value) { m_commandIdHasBeenSet = true; m_commandId = value; }
 
     /**
@@ -94,6 +99,11 @@ namespace Model
      * <p>The name of the document requested for execution.</p>
      */
     inline const Aws::String& GetDocumentName() const{ return m_documentName; }
+
+    /**
+     * <p>The name of the document requested for execution.</p>
+     */
+    inline bool DocumentNameHasBeenSet() const { return m_documentNameHasBeenSet; }
 
     /**
      * <p>The name of the document requested for execution.</p>
@@ -134,6 +144,11 @@ namespace Model
     /**
      * <p>The SSM document version.</p>
      */
+    inline bool DocumentVersionHasBeenSet() const { return m_documentVersionHasBeenSet; }
+
+    /**
+     * <p>The SSM document version.</p>
+     */
     inline void SetDocumentVersion(const Aws::String& value) { m_documentVersionHasBeenSet = true; m_documentVersion = value; }
 
     /**
@@ -167,6 +182,12 @@ namespace Model
      * what the command should do.</p>
      */
     inline const Aws::String& GetComment() const{ return m_comment; }
+
+    /**
+     * <p>User-specified information about the command, such as a brief description of
+     * what the command should do.</p>
+     */
+    inline bool CommentHasBeenSet() const { return m_commentHasBeenSet; }
 
     /**
      * <p>User-specified information about the command, such as a brief description of
@@ -217,6 +238,13 @@ namespace Model
      * will not run. Calculated based on the ExpiresAfter user input provided as part
      * of the SendCommand API.</p>
      */
+    inline bool ExpiresAfterHasBeenSet() const { return m_expiresAfterHasBeenSet; }
+
+    /**
+     * <p>If this time is reached and the command has not already started executing, it
+     * will not run. Calculated based on the ExpiresAfter user input provided as part
+     * of the SendCommand API.</p>
+     */
     inline void SetExpiresAfter(const Aws::Utils::DateTime& value) { m_expiresAfterHasBeenSet = true; m_expiresAfter = value; }
 
     /**
@@ -246,6 +274,12 @@ namespace Model
      * command.</p>
      */
     inline const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& GetParameters() const{ return m_parameters; }
+
+    /**
+     * <p>The parameter values to be inserted in the document when executing the
+     * command.</p>
+     */
+    inline bool ParametersHasBeenSet() const { return m_parametersHasBeenSet; }
 
     /**
      * <p>The parameter values to be inserted in the document when executing the
@@ -316,6 +350,11 @@ namespace Model
     /**
      * <p>The instance IDs against which this command was requested.</p>
      */
+    inline bool InstanceIdsHasBeenSet() const { return m_instanceIdsHasBeenSet; }
+
+    /**
+     * <p>The instance IDs against which this command was requested.</p>
+     */
     inline void SetInstanceIds(const Aws::Vector<Aws::String>& value) { m_instanceIdsHasBeenSet = true; m_instanceIds = value; }
 
     /**
@@ -355,6 +394,13 @@ namespace Model
      * more instance IDs in the call.</p>
      */
     inline const Aws::Vector<Target>& GetTargets() const{ return m_targets; }
+
+    /**
+     * <p>An array of search criteria that targets instances using a Key,Value
+     * combination that you specify. Targets is required if you don't provide one or
+     * more instance IDs in the call.</p>
+     */
+    inline bool TargetsHasBeenSet() const { return m_targetsHasBeenSet; }
 
     /**
      * <p>An array of search criteria that targets instances using a Key,Value
@@ -407,6 +453,11 @@ namespace Model
     /**
      * <p>The date and time the command was requested.</p>
      */
+    inline bool RequestedDateTimeHasBeenSet() const { return m_requestedDateTimeHasBeenSet; }
+
+    /**
+     * <p>The date and time the command was requested.</p>
+     */
     inline void SetRequestedDateTime(const Aws::Utils::DateTime& value) { m_requestedDateTimeHasBeenSet = true; m_requestedDateTime = value; }
 
     /**
@@ -429,6 +480,11 @@ namespace Model
      * <p>The status of the command.</p>
      */
     inline const CommandStatus& GetStatus() const{ return m_status; }
+
+    /**
+     * <p>The status of the command.</p>
+     */
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
     /**
      * <p>The status of the command.</p>
@@ -478,6 +534,34 @@ namespace Model
      * terminal state.</p> </li> </ul>
      */
     inline const Aws::String& GetStatusDetails() const{ return m_statusDetails; }
+
+    /**
+     * <p>A detailed status of the command execution. StatusDetails includes more
+     * information than Status because it includes states resulting from error and
+     * concurrency control parameters. StatusDetails can show different results than
+     * Status. For more information about these statuses, see <a
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-commands.html">Understanding
+     * Command Statuses</a> in the <i>AWS Systems Manager User Guide</i>. StatusDetails
+     * can be one of the following values:</p> <ul> <li> <p>Pending: The command has
+     * not been sent to any instances.</p> </li> <li> <p>In Progress: The command has
+     * been sent to at least one instance but has not reached a final state on all
+     * instances.</p> </li> <li> <p>Success: The command successfully executed on all
+     * invocations. This is a terminal state.</p> </li> <li> <p>Delivery Timed Out: The
+     * value of MaxErrors or more command invocations shows a status of Delivery Timed
+     * Out. This is a terminal state.</p> </li> <li> <p>Execution Timed Out: The value
+     * of MaxErrors or more command invocations shows a status of Execution Timed Out.
+     * This is a terminal state.</p> </li> <li> <p>Failed: The value of MaxErrors or
+     * more command invocations shows a status of Failed. This is a terminal state.</p>
+     * </li> <li> <p>Incomplete: The command was attempted on all instances and one or
+     * more invocations does not have a value of Success but not enough invocations
+     * failed for the status to be Failed. This is a terminal state.</p> </li> <li>
+     * <p>Canceled: The command was terminated before it was completed. This is a
+     * terminal state.</p> </li> <li> <p>Rate Exceeded: The number of instances
+     * targeted by the command exceeded the account limit for pending invocations. The
+     * system has canceled the command before executing it on any instance. This is a
+     * terminal state.</p> </li> </ul>
+     */
+    inline bool StatusDetailsHasBeenSet() const { return m_statusDetailsHasBeenSet; }
 
     /**
      * <p>A detailed status of the command execution. StatusDetails includes more
@@ -660,6 +744,13 @@ namespace Model
      * Instead, Systems Manager automatically determines the Amazon S3 bucket
      * region.</p>
      */
+    inline bool OutputS3RegionHasBeenSet() const { return m_outputS3RegionHasBeenSet; }
+
+    /**
+     * <p>(Deprecated) You can no longer specify this parameter. The system ignores it.
+     * Instead, Systems Manager automatically determines the Amazon S3 bucket
+     * region.</p>
+     */
     inline void SetOutputS3Region(const Aws::String& value) { m_outputS3RegionHasBeenSet = true; m_outputS3Region = value; }
 
     /**
@@ -708,6 +799,12 @@ namespace Model
      * <p>The S3 bucket where the responses to the command executions should be stored.
      * This was requested when issuing the command.</p>
      */
+    inline bool OutputS3BucketNameHasBeenSet() const { return m_outputS3BucketNameHasBeenSet; }
+
+    /**
+     * <p>The S3 bucket where the responses to the command executions should be stored.
+     * This was requested when issuing the command.</p>
+     */
     inline void SetOutputS3BucketName(const Aws::String& value) { m_outputS3BucketNameHasBeenSet = true; m_outputS3BucketName = value; }
 
     /**
@@ -746,6 +843,12 @@ namespace Model
      * executions should be stored. This was requested when issuing the command.</p>
      */
     inline const Aws::String& GetOutputS3KeyPrefix() const{ return m_outputS3KeyPrefix; }
+
+    /**
+     * <p>The S3 directory path inside the bucket where the responses to the command
+     * executions should be stored. This was requested when issuing the command.</p>
+     */
+    inline bool OutputS3KeyPrefixHasBeenSet() const { return m_outputS3KeyPrefixHasBeenSet; }
 
     /**
      * <p>The S3 directory path inside the bucket where the responses to the command
@@ -794,6 +897,17 @@ namespace Model
      * User Guide</i>.</p>
      */
     inline const Aws::String& GetMaxConcurrency() const{ return m_maxConcurrency; }
+
+    /**
+     * <p>The maximum number of instances that are allowed to execute the command at
+     * the same time. You can specify a number of instances, such as 10, or a
+     * percentage of instances, such as 10%. The default value is 50. For more
+     * information about how to use MaxConcurrency, see <a
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Executing
+     * Commands Using Systems Manager Run Command</a> in the <i>AWS Systems Manager
+     * User Guide</i>.</p>
+     */
+    inline bool MaxConcurrencyHasBeenSet() const { return m_maxConcurrencyHasBeenSet; }
 
     /**
      * <p>The maximum number of instances that are allowed to execute the command at
@@ -882,6 +996,17 @@ namespace Model
      * Commands Using Systems Manager Run Command</a> in the <i>AWS Systems Manager
      * User Guide</i>.</p>
      */
+    inline bool MaxErrorsHasBeenSet() const { return m_maxErrorsHasBeenSet; }
+
+    /**
+     * <p>The maximum number of errors allowed before the system stops sending the
+     * command to additional targets. You can specify a number of errors, such as 10,
+     * or a percentage or errors, such as 10%. The default value is 0. For more
+     * information about how to use MaxErrors, see <a
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Executing
+     * Commands Using Systems Manager Run Command</a> in the <i>AWS Systems Manager
+     * User Guide</i>.</p>
+     */
     inline void SetMaxErrors(const Aws::String& value) { m_maxErrorsHasBeenSet = true; m_maxErrors = value; }
 
     /**
@@ -948,6 +1073,11 @@ namespace Model
     /**
      * <p>The number of targets for the command.</p>
      */
+    inline bool TargetCountHasBeenSet() const { return m_targetCountHasBeenSet; }
+
+    /**
+     * <p>The number of targets for the command.</p>
+     */
     inline void SetTargetCount(int value) { m_targetCountHasBeenSet = true; m_targetCount = value; }
 
     /**
@@ -962,6 +1092,13 @@ namespace Model
      * Out, Delivery Timed Out, Canceled, Terminated, or Undeliverable.</p>
      */
     inline int GetCompletedCount() const{ return m_completedCount; }
+
+    /**
+     * <p>The number of targets for which the command invocation reached a terminal
+     * state. Terminal states include the following: Success, Failed, Execution Timed
+     * Out, Delivery Timed Out, Canceled, Terminated, or Undeliverable.</p>
+     */
+    inline bool CompletedCountHasBeenSet() const { return m_completedCountHasBeenSet; }
 
     /**
      * <p>The number of targets for which the command invocation reached a terminal
@@ -988,6 +1125,12 @@ namespace Model
      * <p>The number of targets for which the status is Failed or Execution Timed
      * Out.</p>
      */
+    inline bool ErrorCountHasBeenSet() const { return m_errorCountHasBeenSet; }
+
+    /**
+     * <p>The number of targets for which the status is Failed or Execution Timed
+     * Out.</p>
+     */
     inline void SetErrorCount(int value) { m_errorCountHasBeenSet = true; m_errorCount = value; }
 
     /**
@@ -1005,6 +1148,11 @@ namespace Model
     /**
      * <p>The number of targets for which the status is Delivery Timed Out.</p>
      */
+    inline bool DeliveryTimedOutCountHasBeenSet() const { return m_deliveryTimedOutCountHasBeenSet; }
+
+    /**
+     * <p>The number of targets for which the status is Delivery Timed Out.</p>
+     */
     inline void SetDeliveryTimedOutCount(int value) { m_deliveryTimedOutCountHasBeenSet = true; m_deliveryTimedOutCount = value; }
 
     /**
@@ -1018,6 +1166,12 @@ namespace Model
      * notifications about command status changes. </p>
      */
     inline const Aws::String& GetServiceRole() const{ return m_serviceRole; }
+
+    /**
+     * <p>The IAM service role that Run Command uses to act on your behalf when sending
+     * notifications about command status changes. </p>
+     */
+    inline bool ServiceRoleHasBeenSet() const { return m_serviceRoleHasBeenSet; }
 
     /**
      * <p>The IAM service role that Run Command uses to act on your behalf when sending
@@ -1064,6 +1218,11 @@ namespace Model
     /**
      * <p>Configurations for sending notifications about command status changes. </p>
      */
+    inline bool NotificationConfigHasBeenSet() const { return m_notificationConfigHasBeenSet; }
+
+    /**
+     * <p>Configurations for sending notifications about command status changes. </p>
+     */
     inline void SetNotificationConfig(const NotificationConfig& value) { m_notificationConfigHasBeenSet = true; m_notificationConfig = value; }
 
     /**
@@ -1087,6 +1246,12 @@ namespace Model
      * command output.</p>
      */
     inline const CloudWatchOutputConfig& GetCloudWatchOutputConfig() const{ return m_cloudWatchOutputConfig; }
+
+    /**
+     * <p>CloudWatch Logs information where you want Systems Manager to send the
+     * command output.</p>
+     */
+    inline bool CloudWatchOutputConfigHasBeenSet() const { return m_cloudWatchOutputConfigHasBeenSet; }
 
     /**
      * <p>CloudWatch Logs information where you want Systems Manager to send the

@@ -56,6 +56,11 @@ namespace Model
     /**
      * The absolute local path of the resource inside the Lambda environment.
      */
+    inline bool DestinationPathHasBeenSet() const { return m_destinationPathHasBeenSet; }
+
+    /**
+     * The absolute local path of the resource inside the Lambda environment.
+     */
     inline void SetDestinationPath(const Aws::String& value) { m_destinationPathHasBeenSet = true; m_destinationPath = value; }
 
     /**
@@ -94,6 +99,12 @@ namespace Model
      * Allows you to configure additional group privileges for the Lambda process. This
      * field is optional.
      */
+    inline bool GroupOwnerSettingHasBeenSet() const { return m_groupOwnerSettingHasBeenSet; }
+
+    /**
+     * Allows you to configure additional group privileges for the Lambda process. This
+     * field is optional.
+     */
     inline void SetGroupOwnerSetting(const GroupOwnerSetting& value) { m_groupOwnerSettingHasBeenSet = true; m_groupOwnerSetting = value; }
 
     /**
@@ -120,6 +131,12 @@ namespace Model
      * a volume resource type cannot start with ''/sys''.
      */
     inline const Aws::String& GetSourcePath() const{ return m_sourcePath; }
+
+    /**
+     * The local absolute path of the volume resource on the host. The source path for
+     * a volume resource type cannot start with ''/sys''.
+     */
+    inline bool SourcePathHasBeenSet() const { return m_sourcePathHasBeenSet; }
 
     /**
      * The local absolute path of the volume resource on the host. The source path for

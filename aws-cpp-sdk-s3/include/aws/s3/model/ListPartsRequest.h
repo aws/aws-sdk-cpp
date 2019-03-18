@@ -60,6 +60,11 @@ namespace Model
     /**
      * <p/>
      */
+    inline bool BucketHasBeenSet() const { return m_bucketHasBeenSet; }
+
+    /**
+     * <p/>
+     */
     inline void SetBucket(const Aws::String& value) { m_bucketHasBeenSet = true; m_bucket = value; }
 
     /**
@@ -92,6 +97,11 @@ namespace Model
      * <p/>
      */
     inline const Aws::String& GetKey() const{ return m_key; }
+
+    /**
+     * <p/>
+     */
+    inline bool KeyHasBeenSet() const { return m_keyHasBeenSet; }
 
     /**
      * <p/>
@@ -132,6 +142,11 @@ namespace Model
     /**
      * <p>Sets the maximum number of parts to return.</p>
      */
+    inline bool MaxPartsHasBeenSet() const { return m_maxPartsHasBeenSet; }
+
+    /**
+     * <p>Sets the maximum number of parts to return.</p>
+     */
     inline void SetMaxParts(int value) { m_maxPartsHasBeenSet = true; m_maxParts = value; }
 
     /**
@@ -150,6 +165,12 @@ namespace Model
      * <p>Specifies the part after which listing should begin. Only parts with higher
      * part numbers will be listed.</p>
      */
+    inline bool PartNumberMarkerHasBeenSet() const { return m_partNumberMarkerHasBeenSet; }
+
+    /**
+     * <p>Specifies the part after which listing should begin. Only parts with higher
+     * part numbers will be listed.</p>
+     */
     inline void SetPartNumberMarker(int value) { m_partNumberMarkerHasBeenSet = true; m_partNumberMarker = value; }
 
     /**
@@ -163,6 +184,11 @@ namespace Model
      * <p>Upload ID identifying the multipart upload whose parts are being listed.</p>
      */
     inline const Aws::String& GetUploadId() const{ return m_uploadId; }
+
+    /**
+     * <p>Upload ID identifying the multipart upload whose parts are being listed.</p>
+     */
+    inline bool UploadIdHasBeenSet() const { return m_uploadIdHasBeenSet; }
 
     /**
      * <p>Upload ID identifying the multipart upload whose parts are being listed.</p>
@@ -199,6 +225,9 @@ namespace Model
     inline const RequestPayer& GetRequestPayer() const{ return m_requestPayer; }
 
     
+    inline bool RequestPayerHasBeenSet() const { return m_requestPayerHasBeenSet; }
+
+    
     inline void SetRequestPayer(const RequestPayer& value) { m_requestPayerHasBeenSet = true; m_requestPayer = value; }
 
     
@@ -213,6 +242,9 @@ namespace Model
 
     
     inline const Aws::Map<Aws::String, Aws::String>& GetCustomizedAccessLogTag() const{ return m_customizedAccessLogTag; }
+
+    
+    inline bool CustomizedAccessLogTagHasBeenSet() const { return m_customizedAccessLogTagHasBeenSet; }
 
     
     inline void SetCustomizedAccessLogTag(const Aws::Map<Aws::String, Aws::String>& value) { m_customizedAccessLogTagHasBeenSet = true; m_customizedAccessLogTag = value; }

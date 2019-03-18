@@ -55,6 +55,11 @@ namespace Model
     /**
      * <p/>
      */
+    inline bool DisplayNameHasBeenSet() const { return m_displayNameHasBeenSet; }
+
+    /**
+     * <p/>
+     */
     inline void SetDisplayName(const Aws::String& value) { m_displayNameHasBeenSet = true; m_displayName = value; }
 
     /**
@@ -87,6 +92,11 @@ namespace Model
      * <p/>
      */
     inline const Aws::String& GetID() const{ return m_iD; }
+
+    /**
+     * <p/>
+     */
+    inline bool IDHasBeenSet() const { return m_iDHasBeenSet; }
 
     /**
      * <p/>

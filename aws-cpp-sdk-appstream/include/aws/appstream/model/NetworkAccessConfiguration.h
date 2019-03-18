@@ -58,6 +58,12 @@ namespace Model
      * <p>The private IP address of the elastic network interface that is attached to
      * instances in your VPC.</p>
      */
+    inline bool EniPrivateIpAddressHasBeenSet() const { return m_eniPrivateIpAddressHasBeenSet; }
+
+    /**
+     * <p>The private IP address of the elastic network interface that is attached to
+     * instances in your VPC.</p>
+     */
     inline void SetEniPrivateIpAddress(const Aws::String& value) { m_eniPrivateIpAddressHasBeenSet = true; m_eniPrivateIpAddress = value; }
 
     /**
@@ -97,6 +103,13 @@ namespace Model
      * identifier.</p>
      */
     inline const Aws::String& GetEniId() const{ return m_eniId; }
+
+    /**
+     * <p>The resource identifier of the elastic network interface that is attached to
+     * instances in your VPC. All network interfaces have the eni-xxxxxxxx resource
+     * identifier.</p>
+     */
+    inline bool EniIdHasBeenSet() const { return m_eniIdHasBeenSet; }
 
     /**
      * <p>The resource identifier of the elastic network interface that is attached to

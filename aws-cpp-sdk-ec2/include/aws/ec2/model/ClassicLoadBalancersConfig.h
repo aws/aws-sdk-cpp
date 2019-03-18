@@ -60,6 +60,11 @@ namespace Model
     /**
      * <p>One or more Classic Load Balancers.</p>
      */
+    inline bool ClassicLoadBalancersHasBeenSet() const { return m_classicLoadBalancersHasBeenSet; }
+
+    /**
+     * <p>One or more Classic Load Balancers.</p>
+     */
     inline void SetClassicLoadBalancers(const Aws::Vector<ClassicLoadBalancer>& value) { m_classicLoadBalancersHasBeenSet = true; m_classicLoadBalancers = value; }
 
     /**

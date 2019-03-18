@@ -60,6 +60,12 @@ namespace Model
      * <p>If specified, AWS Elastic Beanstalk restricts the returned descriptions to
      * only include those with the specified names.</p>
      */
+    inline bool ApplicationNamesHasBeenSet() const { return m_applicationNamesHasBeenSet; }
+
+    /**
+     * <p>If specified, AWS Elastic Beanstalk restricts the returned descriptions to
+     * only include those with the specified names.</p>
+     */
     inline void SetApplicationNames(const Aws::Vector<Aws::String>& value) { m_applicationNamesHasBeenSet = true; m_applicationNames = value; }
 
     /**

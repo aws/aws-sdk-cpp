@@ -62,6 +62,11 @@ namespace Model
     /**
      * <p>The version number of the resource configuration.</p>
      */
+    inline bool VersionHasBeenSet() const { return m_versionHasBeenSet; }
+
+    /**
+     * <p>The version number of the resource configuration.</p>
+     */
     inline void SetVersion(const Aws::String& value) { m_versionHasBeenSet = true; m_version = value; }
 
     /**
@@ -94,6 +99,11 @@ namespace Model
      * <p>The 12-digit AWS account ID associated with the resource.</p>
      */
     inline const Aws::String& GetAccountId() const{ return m_accountId; }
+
+    /**
+     * <p>The 12-digit AWS account ID associated with the resource.</p>
+     */
+    inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
 
     /**
      * <p>The 12-digit AWS account ID associated with the resource.</p>
@@ -134,6 +144,11 @@ namespace Model
     /**
      * <p>The time when the configuration recording was initiated.</p>
      */
+    inline bool ConfigurationItemCaptureTimeHasBeenSet() const { return m_configurationItemCaptureTimeHasBeenSet; }
+
+    /**
+     * <p>The time when the configuration recording was initiated.</p>
+     */
     inline void SetConfigurationItemCaptureTime(const Aws::Utils::DateTime& value) { m_configurationItemCaptureTimeHasBeenSet = true; m_configurationItemCaptureTime = value; }
 
     /**
@@ -156,6 +171,11 @@ namespace Model
      * <p>The configuration item status.</p>
      */
     inline const ConfigurationItemStatus& GetConfigurationItemStatus() const{ return m_configurationItemStatus; }
+
+    /**
+     * <p>The configuration item status.</p>
+     */
+    inline bool ConfigurationItemStatusHasBeenSet() const { return m_configurationItemStatusHasBeenSet; }
 
     /**
      * <p>The configuration item status.</p>
@@ -183,6 +203,12 @@ namespace Model
      * resource.</p>
      */
     inline const Aws::String& GetConfigurationStateId() const{ return m_configurationStateId; }
+
+    /**
+     * <p>An identifier that indicates the ordering of the configuration items of a
+     * resource.</p>
+     */
+    inline bool ConfigurationStateIdHasBeenSet() const { return m_configurationStateIdHasBeenSet; }
 
     /**
      * <p>An identifier that indicates the ordering of the configuration items of a
@@ -227,6 +253,13 @@ namespace Model
      * are associated with the same resource.</p>
      */
     inline const Aws::String& GetConfigurationItemMD5Hash() const{ return m_configurationItemMD5Hash; }
+
+    /**
+     * <p>Unique MD5 hash that represents the configuration item's state.</p> <p>You
+     * can use MD5 hash to compare the states of two or more configuration items that
+     * are associated with the same resource.</p>
+     */
+    inline bool ConfigurationItemMD5HashHasBeenSet() const { return m_configurationItemMD5HashHasBeenSet; }
 
     /**
      * <p>Unique MD5 hash that represents the configuration item's state.</p> <p>You
@@ -279,6 +312,11 @@ namespace Model
     /**
      * <p>accoun</p>
      */
+    inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
+
+    /**
+     * <p>accoun</p>
+     */
     inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
 
     /**
@@ -315,6 +353,11 @@ namespace Model
     /**
      * <p>The type of AWS resource.</p>
      */
+    inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
+
+    /**
+     * <p>The type of AWS resource.</p>
+     */
     inline void SetResourceType(const ResourceType& value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
 
     /**
@@ -337,6 +380,11 @@ namespace Model
      * <p>The ID of the resource (for example, <code>sg-xxxxxx</code>).</p>
      */
     inline const Aws::String& GetResourceId() const{ return m_resourceId; }
+
+    /**
+     * <p>The ID of the resource (for example, <code>sg-xxxxxx</code>).</p>
+     */
+    inline bool ResourceIdHasBeenSet() const { return m_resourceIdHasBeenSet; }
 
     /**
      * <p>The ID of the resource (for example, <code>sg-xxxxxx</code>).</p>
@@ -377,6 +425,11 @@ namespace Model
     /**
      * <p>The custom name of the resource, if available.</p>
      */
+    inline bool ResourceNameHasBeenSet() const { return m_resourceNameHasBeenSet; }
+
+    /**
+     * <p>The custom name of the resource, if available.</p>
+     */
     inline void SetResourceName(const Aws::String& value) { m_resourceNameHasBeenSet = true; m_resourceName = value; }
 
     /**
@@ -409,6 +462,11 @@ namespace Model
      * <p>The region where the resource resides.</p>
      */
     inline const Aws::String& GetAwsRegion() const{ return m_awsRegion; }
+
+    /**
+     * <p>The region where the resource resides.</p>
+     */
+    inline bool AwsRegionHasBeenSet() const { return m_awsRegionHasBeenSet; }
 
     /**
      * <p>The region where the resource resides.</p>
@@ -449,6 +507,11 @@ namespace Model
     /**
      * <p>The Availability Zone associated with the resource.</p>
      */
+    inline bool AvailabilityZoneHasBeenSet() const { return m_availabilityZoneHasBeenSet; }
+
+    /**
+     * <p>The Availability Zone associated with the resource.</p>
+     */
     inline void SetAvailabilityZone(const Aws::String& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = value; }
 
     /**
@@ -485,6 +548,11 @@ namespace Model
     /**
      * <p>The time stamp when the resource was created.</p>
      */
+    inline bool ResourceCreationTimeHasBeenSet() const { return m_resourceCreationTimeHasBeenSet; }
+
+    /**
+     * <p>The time stamp when the resource was created.</p>
+     */
     inline void SetResourceCreationTime(const Aws::Utils::DateTime& value) { m_resourceCreationTimeHasBeenSet = true; m_resourceCreationTime = value; }
 
     /**
@@ -507,6 +575,11 @@ namespace Model
      * <p>A mapping of key value tags associated with the resource.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>A mapping of key value tags associated with the resource.</p>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
      * <p>A mapping of key value tags associated with the resource.</p>
@@ -573,6 +646,16 @@ namespace Model
      * configuration was not initiated by any event.</p>
      */
     inline const Aws::Vector<Aws::String>& GetRelatedEvents() const{ return m_relatedEvents; }
+
+    /**
+     * <p>A list of CloudTrail event IDs.</p> <p>A populated field indicates that the
+     * current configuration was initiated by the events recorded in the CloudTrail
+     * log. For more information about CloudTrail, see <a
+     * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/what_is_cloud_trail_top_level.html">What
+     * Is AWS CloudTrail</a>.</p> <p>An empty field indicates that the current
+     * configuration was not initiated by any event.</p>
+     */
+    inline bool RelatedEventsHasBeenSet() const { return m_relatedEventsHasBeenSet; }
 
     /**
      * <p>A list of CloudTrail event IDs.</p> <p>A populated field indicates that the
@@ -653,6 +736,11 @@ namespace Model
     /**
      * <p>A list of related AWS resources.</p>
      */
+    inline bool RelationshipsHasBeenSet() const { return m_relationshipsHasBeenSet; }
+
+    /**
+     * <p>A list of related AWS resources.</p>
+     */
     inline void SetRelationships(const Aws::Vector<Relationship>& value) { m_relationshipsHasBeenSet = true; m_relationships = value; }
 
     /**
@@ -685,6 +773,11 @@ namespace Model
      * <p>The description of the resource configuration.</p>
      */
     inline const Aws::String& GetConfiguration() const{ return m_configuration; }
+
+    /**
+     * <p>The description of the resource configuration.</p>
+     */
+    inline bool ConfigurationHasBeenSet() const { return m_configurationHasBeenSet; }
 
     /**
      * <p>The description of the resource configuration.</p>
@@ -723,6 +816,13 @@ namespace Model
      * parameter.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetSupplementaryConfiguration() const{ return m_supplementaryConfiguration; }
+
+    /**
+     * <p>Configuration attributes that AWS Config returns for certain resource types
+     * to supplement the information returned for the <code>configuration</code>
+     * parameter.</p>
+     */
+    inline bool SupplementaryConfigurationHasBeenSet() const { return m_supplementaryConfigurationHasBeenSet; }
 
     /**
      * <p>Configuration attributes that AWS Config returns for certain resource types

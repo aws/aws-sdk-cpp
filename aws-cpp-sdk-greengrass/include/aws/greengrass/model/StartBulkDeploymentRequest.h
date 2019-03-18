@@ -52,6 +52,11 @@ namespace Model
     /**
      * A client token used to correlate requests and responses.
      */
+    inline bool AmznClientTokenHasBeenSet() const { return m_amznClientTokenHasBeenSet; }
+
+    /**
+     * A client token used to correlate requests and responses.
+     */
     inline void SetAmznClientToken(const Aws::String& value) { m_amznClientTokenHasBeenSet = true; m_amznClientToken = value; }
 
     /**
@@ -87,6 +92,14 @@ namespace Model
      * to the S3 bucket containing the input file.
      */
     inline const Aws::String& GetExecutionRoleArn() const{ return m_executionRoleArn; }
+
+    /**
+     * The ARN of the execution role to associate with the bulk deployment operation.
+     * This IAM role must allow the ''greengrass:CreateDeployment'' action for all
+     * group versions that are listed in the input file. This IAM role must have access
+     * to the S3 bucket containing the input file.
+     */
+    inline bool ExecutionRoleArnHasBeenSet() const { return m_executionRoleArnHasBeenSet; }
 
     /**
      * The ARN of the execution role to associate with the bulk deployment operation.
@@ -146,6 +159,16 @@ namespace Model
      * ''NewDeployment'' deployment types.
      */
     inline const Aws::String& GetInputFileUri() const{ return m_inputFileUri; }
+
+    /**
+     * The URI of the input file contained in the S3 bucket. The execution role must
+     * have ''getObject'' permissions on this bucket to access the input file. The
+     * input file is a JSON-serialized, line delimited file with UTF-8 encoding that
+     * provides a list of group and version IDs and the deployment type. This file must
+     * be less than 100 MB. Currently, AWS IoT Greengrass supports only
+     * ''NewDeployment'' deployment types.
+     */
+    inline bool InputFileUriHasBeenSet() const { return m_inputFileUriHasBeenSet; }
 
     /**
      * The URI of the input file contained in the S3 bucket. The execution role must

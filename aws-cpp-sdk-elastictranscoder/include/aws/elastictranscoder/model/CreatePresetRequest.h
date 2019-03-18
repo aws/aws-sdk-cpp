@@ -58,6 +58,12 @@ namespace Model
      * <p>The name of the preset. We recommend that the name be unique within the AWS
      * account, but uniqueness is not enforced.</p>
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>The name of the preset. We recommend that the name be unique within the AWS
+     * account, but uniqueness is not enforced.</p>
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
@@ -99,6 +105,11 @@ namespace Model
     /**
      * <p>A description of the preset.</p>
      */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
+
+    /**
+     * <p>A description of the preset.</p>
+     */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
@@ -134,6 +145,14 @@ namespace Model
      * <code>oga</code>, <code>ogg</code>, <code>ts</code>, and <code>webm</code>.</p>
      */
     inline const Aws::String& GetContainer() const{ return m_container; }
+
+    /**
+     * <p>The container type for the output file. Valid values include
+     * <code>flac</code>, <code>flv</code>, <code>fmp4</code>, <code>gif</code>,
+     * <code>mp3</code>, <code>mp4</code>, <code>mpg</code>, <code>mxf</code>,
+     * <code>oga</code>, <code>ogg</code>, <code>ts</code>, and <code>webm</code>.</p>
+     */
+    inline bool ContainerHasBeenSet() const { return m_containerHasBeenSet; }
 
     /**
      * <p>The container type for the output file. Valid values include
@@ -192,6 +211,11 @@ namespace Model
     /**
      * <p>A section of the request body that specifies the video parameters.</p>
      */
+    inline bool VideoHasBeenSet() const { return m_videoHasBeenSet; }
+
+    /**
+     * <p>A section of the request body that specifies the video parameters.</p>
+     */
     inline void SetVideo(const VideoParameters& value) { m_videoHasBeenSet = true; m_video = value; }
 
     /**
@@ -214,6 +238,11 @@ namespace Model
      * <p>A section of the request body that specifies the audio parameters.</p>
      */
     inline const AudioParameters& GetAudio() const{ return m_audio; }
+
+    /**
+     * <p>A section of the request body that specifies the audio parameters.</p>
+     */
+    inline bool AudioHasBeenSet() const { return m_audioHasBeenSet; }
 
     /**
      * <p>A section of the request body that specifies the audio parameters.</p>
@@ -241,6 +270,12 @@ namespace Model
      * any.</p>
      */
     inline const Thumbnails& GetThumbnails() const{ return m_thumbnails; }
+
+    /**
+     * <p>A section of the request body that specifies the thumbnail parameters, if
+     * any.</p>
+     */
+    inline bool ThumbnailsHasBeenSet() const { return m_thumbnailsHasBeenSet; }
 
     /**
      * <p>A section of the request body that specifies the thumbnail parameters, if

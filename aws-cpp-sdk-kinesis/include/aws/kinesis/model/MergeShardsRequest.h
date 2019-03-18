@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The name of the stream for the merge.</p>
      */
+    inline bool StreamNameHasBeenSet() const { return m_streamNameHasBeenSet; }
+
+    /**
+     * <p>The name of the stream for the merge.</p>
+     */
     inline void SetStreamName(const Aws::String& value) { m_streamNameHasBeenSet = true; m_streamName = value; }
 
     /**
@@ -89,6 +94,12 @@ namespace Model
      * merge.</p>
      */
     inline const Aws::String& GetShardToMerge() const{ return m_shardToMerge; }
+
+    /**
+     * <p>The shard ID of the shard to combine with the adjacent shard for the
+     * merge.</p>
+     */
+    inline bool ShardToMergeHasBeenSet() const { return m_shardToMergeHasBeenSet; }
 
     /**
      * <p>The shard ID of the shard to combine with the adjacent shard for the
@@ -131,6 +142,11 @@ namespace Model
      * <p>The shard ID of the adjacent shard for the merge.</p>
      */
     inline const Aws::String& GetAdjacentShardToMerge() const{ return m_adjacentShardToMerge; }
+
+    /**
+     * <p>The shard ID of the adjacent shard for the merge.</p>
+     */
+    inline bool AdjacentShardToMergeHasBeenSet() const { return m_adjacentShardToMergeHasBeenSet; }
 
     /**
      * <p>The shard ID of the adjacent shard for the merge.</p>

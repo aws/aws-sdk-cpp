@@ -52,6 +52,11 @@ namespace Model
     /**
      * <p>The name of the vocabulary to delete. </p>
      */
+    inline bool VocabularyNameHasBeenSet() const { return m_vocabularyNameHasBeenSet; }
+
+    /**
+     * <p>The name of the vocabulary to delete. </p>
+     */
     inline void SetVocabularyName(const Aws::String& value) { m_vocabularyNameHasBeenSet = true; m_vocabularyName = value; }
 
     /**

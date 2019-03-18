@@ -58,6 +58,12 @@ namespace Model
      * The Amazon Resource Name (ARN) of the Amazon SNS topic that you want to publish
      * events to.
      */
+    inline bool TopicArnHasBeenSet() const { return m_topicArnHasBeenSet; }
+
+    /**
+     * The Amazon Resource Name (ARN) of the Amazon SNS topic that you want to publish
+     * events to.
+     */
     inline void SetTopicArn(const Aws::String& value) { m_topicArnHasBeenSet = true; m_topicArn = value; }
 
     /**

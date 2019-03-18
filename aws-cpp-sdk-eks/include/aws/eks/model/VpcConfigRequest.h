@@ -61,6 +61,13 @@ namespace Model
      * cross-account elastic network interfaces in these subnets to allow communication
      * between your worker nodes and the Kubernetes control plane.</p>
      */
+    inline bool SubnetIdsHasBeenSet() const { return m_subnetIdsHasBeenSet; }
+
+    /**
+     * <p>Specify subnets for your Amazon EKS worker nodes. Amazon EKS creates
+     * cross-account elastic network interfaces in these subnets to allow communication
+     * between your worker nodes and the Kubernetes control plane.</p>
+     */
     inline void SetSubnetIds(const Aws::Vector<Aws::String>& value) { m_subnetIdsHasBeenSet = true; m_subnetIds = value; }
 
     /**
@@ -113,6 +120,14 @@ namespace Model
      * group, the default security group for your VPC is used.</p>
      */
     inline const Aws::Vector<Aws::String>& GetSecurityGroupIds() const{ return m_securityGroupIds; }
+
+    /**
+     * <p>Specify one or more security groups for the cross-account elastic network
+     * interfaces that Amazon EKS creates to use to allow communication between your
+     * worker nodes and the Kubernetes control plane. If you do not specify a security
+     * group, the default security group for your VPC is used.</p>
+     */
+    inline bool SecurityGroupIdsHasBeenSet() const { return m_securityGroupIdsHasBeenSet; }
 
     /**
      * <p>Specify one or more security groups for the cross-account elastic network

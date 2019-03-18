@@ -72,6 +72,11 @@ namespace Model
     /**
      * <p>Unique identifier for a player session.</p>
      */
+    inline bool PlayerSessionIdHasBeenSet() const { return m_playerSessionIdHasBeenSet; }
+
+    /**
+     * <p>Unique identifier for a player session.</p>
+     */
     inline void SetPlayerSessionId(const Aws::String& value) { m_playerSessionIdHasBeenSet = true; m_playerSessionId = value; }
 
     /**
@@ -105,6 +110,12 @@ namespace Model
      * session.</p>
      */
     inline const Aws::String& GetPlayerId() const{ return m_playerId; }
+
+    /**
+     * <p>Unique identifier for a player that is associated with this player
+     * session.</p>
+     */
+    inline bool PlayerIdHasBeenSet() const { return m_playerIdHasBeenSet; }
 
     /**
      * <p>Unique identifier for a player that is associated with this player
@@ -153,6 +164,12 @@ namespace Model
      * <p>Unique identifier for the game session that the player session is connected
      * to.</p>
      */
+    inline bool GameSessionIdHasBeenSet() const { return m_gameSessionIdHasBeenSet; }
+
+    /**
+     * <p>Unique identifier for the game session that the player session is connected
+     * to.</p>
+     */
     inline void SetGameSessionId(const Aws::String& value) { m_gameSessionIdHasBeenSet = true; m_gameSessionId = value; }
 
     /**
@@ -191,6 +208,12 @@ namespace Model
      * on.</p>
      */
     inline const Aws::String& GetFleetId() const{ return m_fleetId; }
+
+    /**
+     * <p>Unique identifier for a fleet that the player's game session is running
+     * on.</p>
+     */
+    inline bool FleetIdHasBeenSet() const { return m_fleetIdHasBeenSet; }
 
     /**
      * <p>Unique identifier for a fleet that the player's game session is running
@@ -239,6 +262,12 @@ namespace Model
      * <p>Time stamp indicating when this data object was created. Format is a number
      * expressed in Unix time as milliseconds (for example "1469498468.057").</p>
      */
+    inline bool CreationTimeHasBeenSet() const { return m_creationTimeHasBeenSet; }
+
+    /**
+     * <p>Time stamp indicating when this data object was created. Format is a number
+     * expressed in Unix time as milliseconds (for example "1469498468.057").</p>
+     */
     inline void SetCreationTime(const Aws::Utils::DateTime& value) { m_creationTimeHasBeenSet = true; m_creationTime = value; }
 
     /**
@@ -266,6 +295,13 @@ namespace Model
      * "1469498468.057").</p>
      */
     inline const Aws::Utils::DateTime& GetTerminationTime() const{ return m_terminationTime; }
+
+    /**
+     * <p>Time stamp indicating when this data object was terminated. Format is a
+     * number expressed in Unix time as milliseconds (for example
+     * "1469498468.057").</p>
+     */
+    inline bool TerminationTimeHasBeenSet() const { return m_terminationTimeHasBeenSet; }
 
     /**
      * <p>Time stamp indicating when this data object was terminated. Format is a
@@ -308,6 +344,19 @@ namespace Model
      * seconds).</p> </li> </ul>
      */
     inline const PlayerSessionStatus& GetStatus() const{ return m_status; }
+
+    /**
+     * <p>Current status of the player session.</p> <p>Possible player session statuses
+     * include the following:</p> <ul> <li> <p> <b>RESERVED</b> -- The player session
+     * request has been received, but the player has not yet connected to the server
+     * process and/or been validated. </p> </li> <li> <p> <b>ACTIVE</b> -- The player
+     * has been validated by the server process and is currently connected.</p> </li>
+     * <li> <p> <b>COMPLETED</b> -- The player connection has been dropped.</p> </li>
+     * <li> <p> <b>TIMEDOUT</b> -- A player session request was received, but the
+     * player did not connect and/or was not validated within the timeout limit (60
+     * seconds).</p> </li> </ul>
+     */
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
     /**
      * <p>Current status of the player session.</p> <p>Possible player session statuses
@@ -372,6 +421,12 @@ namespace Model
      * <p>IP address of the game session. To connect to a Amazon GameLift game server,
      * an app needs both the IP address and port number.</p>
      */
+    inline bool IpAddressHasBeenSet() const { return m_ipAddressHasBeenSet; }
+
+    /**
+     * <p>IP address of the game session. To connect to a Amazon GameLift game server,
+     * an app needs both the IP address and port number.</p>
+     */
     inline void SetIpAddress(const Aws::String& value) { m_ipAddressHasBeenSet = true; m_ipAddress = value; }
 
     /**
@@ -415,6 +470,12 @@ namespace Model
      * <p>Port number for the game session. To connect to a Amazon GameLift server
      * process, an app needs both the IP address and port number.</p>
      */
+    inline bool PortHasBeenSet() const { return m_portHasBeenSet; }
+
+    /**
+     * <p>Port number for the game session. To connect to a Amazon GameLift server
+     * process, an app needs both the IP address and port number.</p>
+     */
     inline void SetPort(int value) { m_portHasBeenSet = true; m_port = value; }
 
     /**
@@ -429,6 +490,12 @@ namespace Model
      * use this data, so it can be formatted as needed for use in the game. </p>
      */
     inline const Aws::String& GetPlayerData() const{ return m_playerData; }
+
+    /**
+     * <p>Developer-defined information related to a player. Amazon GameLift does not
+     * use this data, so it can be formatted as needed for use in the game. </p>
+     */
+    inline bool PlayerDataHasBeenSet() const { return m_playerDataHasBeenSet; }
 
     /**
      * <p>Developer-defined information related to a player. Amazon GameLift does not

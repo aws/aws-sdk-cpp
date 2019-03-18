@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The package name.</p>
      */
+    inline bool PackageNameHasBeenSet() const { return m_packageNameHasBeenSet; }
+
+    /**
+     * <p>The package name.</p>
+     */
     inline void SetPackageName(const Aws::String& value) { m_packageNameHasBeenSet = true; m_packageName = value; }
 
     /**
@@ -92,6 +97,11 @@ namespace Model
     /**
      * <p>The launch file name.</p>
      */
+    inline bool LaunchFileHasBeenSet() const { return m_launchFileHasBeenSet; }
+
+    /**
+     * <p>The launch file name.</p>
+     */
     inline void SetLaunchFile(const Aws::String& value) { m_launchFileHasBeenSet = true; m_launchFile = value; }
 
     /**
@@ -124,6 +134,11 @@ namespace Model
      * <p>The environment variables for the application launch.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetEnvironmentVariables() const{ return m_environmentVariables; }
+
+    /**
+     * <p>The environment variables for the application launch.</p>
+     */
+    inline bool EnvironmentVariablesHasBeenSet() const { return m_environmentVariablesHasBeenSet; }
 
     /**
      * <p>The environment variables for the application launch.</p>

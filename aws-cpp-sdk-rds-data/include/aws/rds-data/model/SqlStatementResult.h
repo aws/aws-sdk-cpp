@@ -55,6 +55,11 @@ namespace Model
     /**
      * Number of rows updated.
      */
+    inline bool NumberOfRecordsUpdatedHasBeenSet() const { return m_numberOfRecordsUpdatedHasBeenSet; }
+
+    /**
+     * Number of rows updated.
+     */
     inline void SetNumberOfRecordsUpdated(long long value) { m_numberOfRecordsUpdatedHasBeenSet = true; m_numberOfRecordsUpdated = value; }
 
     /**
@@ -67,6 +72,11 @@ namespace Model
      * ResultFrame returned by executing the sql statement
      */
     inline const ResultFrame& GetResultFrame() const{ return m_resultFrame; }
+
+    /**
+     * ResultFrame returned by executing the sql statement
+     */
+    inline bool ResultFrameHasBeenSet() const { return m_resultFrameHasBeenSet; }
 
     /**
      * ResultFrame returned by executing the sql statement

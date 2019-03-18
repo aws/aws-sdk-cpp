@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The principal.</p>
      */
+    inline bool PrincipalHasBeenSet() const { return m_principalHasBeenSet; }
+
+    /**
+     * <p>The principal.</p>
+     */
     inline void SetPrincipal(const Aws::String& value) { m_principalHasBeenSet = true; m_principal = value; }
 
     /**
@@ -92,6 +97,11 @@ namespace Model
     /**
      * <p>The Cognito identity pool ID.</p>
      */
+    inline bool CognitoIdentityPoolIdHasBeenSet() const { return m_cognitoIdentityPoolIdHasBeenSet; }
+
+    /**
+     * <p>The Cognito identity pool ID.</p>
+     */
     inline void SetCognitoIdentityPoolId(const Aws::String& value) { m_cognitoIdentityPoolIdHasBeenSet = true; m_cognitoIdentityPoolId = value; }
 
     /**
@@ -124,6 +134,11 @@ namespace Model
      * <p>The thing name.</p>
      */
     inline const Aws::String& GetThingName() const{ return m_thingName; }
+
+    /**
+     * <p>The thing name.</p>
+     */
+    inline bool ThingNameHasBeenSet() const { return m_thingNameHasBeenSet; }
 
     /**
      * <p>The thing name.</p>

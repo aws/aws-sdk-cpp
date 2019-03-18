@@ -61,6 +61,12 @@ namespace Model
      * <p>Indicates how to allocate the target capacity across the Spot pools specified
      * by the Spot Fleet request. The default is <code>lowest-price</code>.</p>
      */
+    inline bool AllocationStrategyHasBeenSet() const { return m_allocationStrategyHasBeenSet; }
+
+    /**
+     * <p>Indicates how to allocate the target capacity across the Spot pools specified
+     * by the Spot Fleet request. The default is <code>lowest-price</code>.</p>
+     */
     inline void SetAllocationStrategy(const SpotAllocationStrategy& value) { m_allocationStrategyHasBeenSet = true; m_allocationStrategy = value; }
 
     /**
@@ -87,6 +93,12 @@ namespace Model
      * <code>terminate</code>.</p>
      */
     inline const SpotInstanceInterruptionBehavior& GetInstanceInterruptionBehavior() const{ return m_instanceInterruptionBehavior; }
+
+    /**
+     * <p>The behavior when a Spot Instance is interrupted. The default is
+     * <code>terminate</code>.</p>
+     */
+    inline bool InstanceInterruptionBehaviorHasBeenSet() const { return m_instanceInterruptionBehaviorHasBeenSet; }
 
     /**
      * <p>The behavior when a Spot Instance is interrupted. The default is
@@ -127,6 +139,14 @@ namespace Model
      * EC2 Fleet selects the cheapest Spot pools and evenly allocates your target Spot
      * capacity across the number of Spot pools that you specify.</p>
      */
+    inline bool InstancePoolsToUseCountHasBeenSet() const { return m_instancePoolsToUseCountHasBeenSet; }
+
+    /**
+     * <p>The number of Spot pools across which to allocate your target Spot capacity.
+     * Valid only when <b>AllocationStrategy</b> is set to <code>lowestPrice</code>.
+     * EC2 Fleet selects the cheapest Spot pools and evenly allocates your target Spot
+     * capacity across the number of Spot pools that you specify.</p>
+     */
     inline void SetInstancePoolsToUseCount(int value) { m_instancePoolsToUseCountHasBeenSet = true; m_instancePoolsToUseCount = value; }
 
     /**
@@ -143,6 +163,12 @@ namespace Model
      * Instances in the fleet.</p>
      */
     inline bool GetSingleInstanceType() const{ return m_singleInstanceType; }
+
+    /**
+     * <p>Indicates that the fleet uses a single instance type to launch all Spot
+     * Instances in the fleet.</p>
+     */
+    inline bool SingleInstanceTypeHasBeenSet() const { return m_singleInstanceTypeHasBeenSet; }
 
     /**
      * <p>Indicates that the fleet uses a single instance type to launch all Spot
@@ -167,6 +193,12 @@ namespace Model
      * <p>Indicates that the fleet launches all Spot Instances into a single
      * Availability Zone.</p>
      */
+    inline bool SingleAvailabilityZoneHasBeenSet() const { return m_singleAvailabilityZoneHasBeenSet; }
+
+    /**
+     * <p>Indicates that the fleet launches all Spot Instances into a single
+     * Availability Zone.</p>
+     */
     inline void SetSingleAvailabilityZone(bool value) { m_singleAvailabilityZoneHasBeenSet = true; m_singleAvailabilityZone = value; }
 
     /**
@@ -181,6 +213,12 @@ namespace Model
      * target capacity is not reached, the fleet launches no instances.</p>
      */
     inline int GetMinTargetCapacity() const{ return m_minTargetCapacity; }
+
+    /**
+     * <p>The minimum target capacity for Spot Instances in the fleet. If the minimum
+     * target capacity is not reached, the fleet launches no instances.</p>
+     */
+    inline bool MinTargetCapacityHasBeenSet() const { return m_minTargetCapacityHasBeenSet; }
 
     /**
      * <p>The minimum target capacity for Spot Instances in the fleet. If the minimum

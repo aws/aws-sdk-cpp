@@ -52,6 +52,11 @@ namespace Model
     /**
      * <p>The ID assigned to the <code>MLModel</code> during creation.</p>
      */
+    inline bool MLModelIdHasBeenSet() const { return m_mLModelIdHasBeenSet; }
+
+    /**
+     * <p>The ID assigned to the <code>MLModel</code> during creation.</p>
+     */
     inline void SetMLModelId(const Aws::String& value) { m_mLModelIdHasBeenSet = true; m_mLModelId = value; }
 
     /**

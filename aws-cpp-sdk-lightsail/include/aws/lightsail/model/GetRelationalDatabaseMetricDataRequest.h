@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The name of your database from which to get metric data.</p>
      */
+    inline bool RelationalDatabaseNameHasBeenSet() const { return m_relationalDatabaseNameHasBeenSet; }
+
+    /**
+     * <p>The name of your database from which to get metric data.</p>
+     */
     inline void SetRelationalDatabaseName(const Aws::String& value) { m_relationalDatabaseNameHasBeenSet = true; m_relationalDatabaseName = value; }
 
     /**
@@ -93,6 +98,11 @@ namespace Model
     /**
      * <p>The name of the metric data to return.</p>
      */
+    inline bool MetricNameHasBeenSet() const { return m_metricNameHasBeenSet; }
+
+    /**
+     * <p>The name of the metric data to return.</p>
+     */
     inline void SetMetricName(const RelationalDatabaseMetricName& value) { m_metricNameHasBeenSet = true; m_metricName = value; }
 
     /**
@@ -119,6 +129,11 @@ namespace Model
     /**
      * <p>The granularity, in seconds, of the returned data points.</p>
      */
+    inline bool PeriodHasBeenSet() const { return m_periodHasBeenSet; }
+
+    /**
+     * <p>The granularity, in seconds, of the returned data points.</p>
+     */
     inline void SetPeriod(int value) { m_periodHasBeenSet = true; m_period = value; }
 
     /**
@@ -135,6 +150,15 @@ namespace Model
      * <code>1538424000</code> as the start time.</p> </li> </ul>
      */
     inline const Aws::Utils::DateTime& GetStartTime() const{ return m_startTime; }
+
+    /**
+     * <p>The start of the time interval from which to get metric data.</p>
+     * <p>Constraints:</p> <ul> <li> <p>Specified in Universal Coordinated Time
+     * (UTC).</p> </li> <li> <p>Specified in the Unix time format.</p> <p>For example,
+     * if you wish to use a start time of October 1, 2018, at 8 PM UTC, then you input
+     * <code>1538424000</code> as the start time.</p> </li> </ul>
+     */
+    inline bool StartTimeHasBeenSet() const { return m_startTimeHasBeenSet; }
 
     /**
      * <p>The start of the time interval from which to get metric data.</p>
@@ -189,6 +213,15 @@ namespace Model
      * if you wish to use an end time of October 1, 2018, at 8 PM UTC, then you input
      * <code>1538424000</code> as the end time.</p> </li> </ul>
      */
+    inline bool EndTimeHasBeenSet() const { return m_endTimeHasBeenSet; }
+
+    /**
+     * <p>The end of the time interval from which to get metric data.</p>
+     * <p>Constraints:</p> <ul> <li> <p>Specified in Universal Coordinated Time
+     * (UTC).</p> </li> <li> <p>Specified in the Unix time format.</p> <p>For example,
+     * if you wish to use an end time of October 1, 2018, at 8 PM UTC, then you input
+     * <code>1538424000</code> as the end time.</p> </li> </ul>
+     */
     inline void SetEndTime(const Aws::Utils::DateTime& value) { m_endTimeHasBeenSet = true; m_endTime = value; }
 
     /**
@@ -227,6 +260,11 @@ namespace Model
     /**
      * <p>The unit for the metric data request.</p>
      */
+    inline bool UnitHasBeenSet() const { return m_unitHasBeenSet; }
+
+    /**
+     * <p>The unit for the metric data request.</p>
+     */
     inline void SetUnit(const MetricUnit& value) { m_unitHasBeenSet = true; m_unit = value; }
 
     /**
@@ -249,6 +287,11 @@ namespace Model
      * <p>The array of statistics for your metric data request.</p>
      */
     inline const Aws::Vector<MetricStatistic>& GetStatistics() const{ return m_statistics; }
+
+    /**
+     * <p>The array of statistics for your metric data request.</p>
+     */
+    inline bool StatisticsHasBeenSet() const { return m_statisticsHasBeenSet; }
 
     /**
      * <p>The array of statistics for your metric data request.</p>

@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The name of the application to delete.</p>
      */
+    inline bool ApplicationNameHasBeenSet() const { return m_applicationNameHasBeenSet; }
+
+    /**
+     * <p>The name of the application to delete.</p>
+     */
     inline void SetApplicationName(const Aws::String& value) { m_applicationNameHasBeenSet = true; m_applicationName = value; }
 
     /**
@@ -90,6 +95,12 @@ namespace Model
      * application.</p>
      */
     inline bool GetTerminateEnvByForce() const{ return m_terminateEnvByForce; }
+
+    /**
+     * <p>When set to true, running environments will be terminated before deleting the
+     * application.</p>
+     */
+    inline bool TerminateEnvByForceHasBeenSet() const { return m_terminateEnvByForceHasBeenSet; }
 
     /**
      * <p>When set to true, running environments will be terminated before deleting the

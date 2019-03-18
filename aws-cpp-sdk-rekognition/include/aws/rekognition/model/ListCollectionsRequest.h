@@ -52,6 +52,11 @@ namespace Model
     /**
      * <p>Pagination token from the previous response.</p>
      */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
+
+    /**
+     * <p>Pagination token from the previous response.</p>
+     */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
     /**
@@ -84,6 +89,11 @@ namespace Model
      * <p>Maximum number of collection IDs to return. </p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
+
+    /**
+     * <p>Maximum number of collection IDs to return. </p>
+     */
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
 
     /**
      * <p>Maximum number of collection IDs to return. </p>

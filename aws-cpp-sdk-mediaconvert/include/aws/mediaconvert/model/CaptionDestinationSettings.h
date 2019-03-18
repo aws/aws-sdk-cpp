@@ -59,6 +59,9 @@ namespace Model
     inline const BurninDestinationSettings& GetBurninDestinationSettings() const{ return m_burninDestinationSettings; }
 
     
+    inline bool BurninDestinationSettingsHasBeenSet() const { return m_burninDestinationSettingsHasBeenSet; }
+
+    
     inline void SetBurninDestinationSettings(const BurninDestinationSettings& value) { m_burninDestinationSettingsHasBeenSet = true; m_burninDestinationSettings = value; }
 
     
@@ -73,6 +76,9 @@ namespace Model
 
     
     inline const CaptionDestinationType& GetDestinationType() const{ return m_destinationType; }
+
+    
+    inline bool DestinationTypeHasBeenSet() const { return m_destinationTypeHasBeenSet; }
 
     
     inline void SetDestinationType(const CaptionDestinationType& value) { m_destinationTypeHasBeenSet = true; m_destinationType = value; }
@@ -91,6 +97,9 @@ namespace Model
     inline const DvbSubDestinationSettings& GetDvbSubDestinationSettings() const{ return m_dvbSubDestinationSettings; }
 
     
+    inline bool DvbSubDestinationSettingsHasBeenSet() const { return m_dvbSubDestinationSettingsHasBeenSet; }
+
+    
     inline void SetDvbSubDestinationSettings(const DvbSubDestinationSettings& value) { m_dvbSubDestinationSettingsHasBeenSet = true; m_dvbSubDestinationSettings = value; }
 
     
@@ -105,6 +114,9 @@ namespace Model
 
     
     inline const EmbeddedDestinationSettings& GetEmbeddedDestinationSettings() const{ return m_embeddedDestinationSettings; }
+
+    
+    inline bool EmbeddedDestinationSettingsHasBeenSet() const { return m_embeddedDestinationSettingsHasBeenSet; }
 
     
     inline void SetEmbeddedDestinationSettings(const EmbeddedDestinationSettings& value) { m_embeddedDestinationSettingsHasBeenSet = true; m_embeddedDestinationSettings = value; }
@@ -123,6 +135,9 @@ namespace Model
     inline const SccDestinationSettings& GetSccDestinationSettings() const{ return m_sccDestinationSettings; }
 
     
+    inline bool SccDestinationSettingsHasBeenSet() const { return m_sccDestinationSettingsHasBeenSet; }
+
+    
     inline void SetSccDestinationSettings(const SccDestinationSettings& value) { m_sccDestinationSettingsHasBeenSet = true; m_sccDestinationSettings = value; }
 
     
@@ -139,6 +154,9 @@ namespace Model
     inline const TeletextDestinationSettings& GetTeletextDestinationSettings() const{ return m_teletextDestinationSettings; }
 
     
+    inline bool TeletextDestinationSettingsHasBeenSet() const { return m_teletextDestinationSettingsHasBeenSet; }
+
+    
     inline void SetTeletextDestinationSettings(const TeletextDestinationSettings& value) { m_teletextDestinationSettingsHasBeenSet = true; m_teletextDestinationSettings = value; }
 
     
@@ -153,6 +171,9 @@ namespace Model
 
     
     inline const TtmlDestinationSettings& GetTtmlDestinationSettings() const{ return m_ttmlDestinationSettings; }
+
+    
+    inline bool TtmlDestinationSettingsHasBeenSet() const { return m_ttmlDestinationSettingsHasBeenSet; }
 
     
     inline void SetTtmlDestinationSettings(const TtmlDestinationSettings& value) { m_ttmlDestinationSettingsHasBeenSet = true; m_ttmlDestinationSettings = value; }

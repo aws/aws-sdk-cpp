@@ -60,6 +60,13 @@ namespace Model
      * minute at the start of job rollout. This parameter allows you to define the
      * initial rate of rollout.</p>
      */
+    inline bool BaseRatePerMinuteHasBeenSet() const { return m_baseRatePerMinuteHasBeenSet; }
+
+    /**
+     * <p>The minimum number of things that will be notified of a pending job, per
+     * minute at the start of job rollout. This parameter allows you to define the
+     * initial rate of rollout.</p>
+     */
     inline void SetBaseRatePerMinute(int value) { m_baseRatePerMinuteHasBeenSet = true; m_baseRatePerMinute = value; }
 
     /**
@@ -78,6 +85,11 @@ namespace Model
     /**
      * <p>The exponential factor to increase the rate of rollout for a job.</p>
      */
+    inline bool IncrementFactorHasBeenSet() const { return m_incrementFactorHasBeenSet; }
+
+    /**
+     * <p>The exponential factor to increase the rate of rollout for a job.</p>
+     */
     inline void SetIncrementFactor(double value) { m_incrementFactorHasBeenSet = true; m_incrementFactor = value; }
 
     /**
@@ -92,6 +104,13 @@ namespace Model
      * 1.55).</p>
      */
     inline const RateIncreaseCriteria& GetRateIncreaseCriteria() const{ return m_rateIncreaseCriteria; }
+
+    /**
+     * <p>The criteria to initiate the increase in rate of rollout for a job.</p>
+     * <p>AWS IoT supports up to one digit after the decimal (for example, 1.5, but not
+     * 1.55).</p>
+     */
+    inline bool RateIncreaseCriteriaHasBeenSet() const { return m_rateIncreaseCriteriaHasBeenSet; }
 
     /**
      * <p>The criteria to initiate the increase in rate of rollout for a job.</p>

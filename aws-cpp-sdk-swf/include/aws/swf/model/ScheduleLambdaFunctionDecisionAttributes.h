@@ -60,6 +60,12 @@ namespace Model
      * <p>A string that identifies the Lambda function execution in the event
      * history.</p>
      */
+    inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
+
+    /**
+     * <p>A string that identifies the Lambda function execution in the event
+     * history.</p>
+     */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
     /**
@@ -101,6 +107,11 @@ namespace Model
     /**
      * <p>The name, or ARN, of the Lambda function to schedule.</p>
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>The name, or ARN, of the Lambda function to schedule.</p>
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
@@ -134,6 +145,12 @@ namespace Model
      * workflow tasks. This data isn't sent to the Lambda task.</p>
      */
     inline const Aws::String& GetControl() const{ return m_control; }
+
+    /**
+     * <p>The data attached to the event that the decider can use in subsequent
+     * workflow tasks. This data isn't sent to the Lambda task.</p>
+     */
+    inline bool ControlHasBeenSet() const { return m_controlHasBeenSet; }
 
     /**
      * <p>The data attached to the event that the decider can use in subsequent
@@ -180,6 +197,11 @@ namespace Model
     /**
      * <p>The optional input data to be supplied to the Lambda function.</p>
      */
+    inline bool InputHasBeenSet() const { return m_inputHasBeenSet; }
+
+    /**
+     * <p>The optional input data to be supplied to the Lambda function.</p>
+     */
     inline void SetInput(const Aws::String& value) { m_inputHasBeenSet = true; m_input = value; }
 
     /**
@@ -214,6 +236,13 @@ namespace Model
      * no value is supplied, than a default value of 300s is assumed.</p>
      */
     inline const Aws::String& GetStartToCloseTimeout() const{ return m_startToCloseTimeout; }
+
+    /**
+     * <p>The timeout value, in seconds, after which the Lambda function is considered
+     * to be failed once it has started. This can be any integer from 1-300 (1s-5m). If
+     * no value is supplied, than a default value of 300s is assumed.</p>
+     */
+    inline bool StartToCloseTimeoutHasBeenSet() const { return m_startToCloseTimeoutHasBeenSet; }
 
     /**
      * <p>The timeout value, in seconds, after which the Lambda function is considered

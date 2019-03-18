@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The maximum number of elements to be returned for this resource.</p>
      */
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
+
+    /**
+     * <p>The maximum number of elements to be returned for this resource.</p>
+     */
     inline void SetMaxResults(const Aws::String& value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
@@ -90,6 +95,13 @@ namespace Model
  the collection.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
+    /**
+     * <p>The next page of elements from this collection. Not valid for the last
+     * element of
+ the collection.</p>
+     */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
      * <p>The next page of elements from this collection. Not valid for the last

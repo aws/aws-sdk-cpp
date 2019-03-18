@@ -69,6 +69,11 @@ namespace Model
     /**
      * <p> The name of the marker.</p>
      */
+    inline bool MarkerNameHasBeenSet() const { return m_markerNameHasBeenSet; }
+
+    /**
+     * <p> The name of the marker.</p>
+     */
     inline void SetMarkerName(const Aws::String& value) { m_markerNameHasBeenSet = true; m_markerName = value; }
 
     /**
@@ -101,6 +106,11 @@ namespace Model
      * <p> The details of the marker.</p>
      */
     inline const Aws::String& GetDetails() const{ return m_details; }
+
+    /**
+     * <p> The details of the marker.</p>
+     */
+    inline bool DetailsHasBeenSet() const { return m_detailsHasBeenSet; }
 
     /**
      * <p> The details of the marker.</p>

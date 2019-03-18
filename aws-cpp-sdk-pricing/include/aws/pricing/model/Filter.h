@@ -61,6 +61,13 @@ namespace Model
      * <code>TERM_MATCH</code>. <code>TERM_MATCH</code> returns only products that
      * match both the given filter field and the given value.</p>
      */
+    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
+
+    /**
+     * <p>The type of filter that you want to use.</p> <p>Valid values are:
+     * <code>TERM_MATCH</code>. <code>TERM_MATCH</code> returns only products that
+     * match both the given filter field and the given value.</p>
+     */
     inline void SetType(const FilterType& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
@@ -96,6 +103,18 @@ namespace Model
      * Amazon EC2 volumes.</p>
      */
     inline const Aws::String& GetField() const{ return m_field; }
+
+    /**
+     * <p>The product metadata field that you want to filter on. You can filter by just
+     * the service code to see all products for a specific service, filter by just the
+     * attribute name to see a specific attribute for multiple services, or use both a
+     * service code and an attribute name to retrieve only products that match both
+     * fields.</p> <p>Valid values include: <code>ServiceCode</code>, and all attribute
+     * names</p> <p>For example, you can filter by the <code>AmazonEC2</code> service
+     * code and the <code>volumeType</code> attribute name to get the prices for only
+     * Amazon EC2 volumes.</p>
+     */
+    inline bool FieldHasBeenSet() const { return m_fieldHasBeenSet; }
 
     /**
      * <p>The product metadata field that you want to filter on. You can filter by just
@@ -178,6 +197,15 @@ namespace Model
      * <code>Provisioned IOPS</code> volume.</p>
      */
     inline const Aws::String& GetValue() const{ return m_value; }
+
+    /**
+     * <p>The service code or attribute value that you want to filter by. If you are
+     * filtering by service code this is the actual service code, such as
+     * <code>AmazonEC2</code>. If you are filtering by attribute name, this is the
+     * attribute value that you want the returned products to match, such as a
+     * <code>Provisioned IOPS</code> volume.</p>
+     */
+    inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
 
     /**
      * <p>The service code or attribute value that you want to filter by. If you are

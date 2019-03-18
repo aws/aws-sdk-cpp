@@ -62,6 +62,11 @@ namespace Model
     /**
      * <p>The canned ACL to apply to the object.</p>
      */
+    inline bool ACLHasBeenSet() const { return m_aCLHasBeenSet; }
+
+    /**
+     * <p>The canned ACL to apply to the object.</p>
+     */
     inline void SetACL(const ObjectCannedACL& value) { m_aCLHasBeenSet = true; m_aCL = value; }
 
     /**
@@ -88,6 +93,11 @@ namespace Model
     /**
      * <p/>
      */
+    inline bool AccessControlPolicyHasBeenSet() const { return m_accessControlPolicyHasBeenSet; }
+
+    /**
+     * <p/>
+     */
     inline void SetAccessControlPolicy(const AccessControlPolicy& value) { m_accessControlPolicyHasBeenSet = true; m_accessControlPolicy = value; }
 
     /**
@@ -110,6 +120,11 @@ namespace Model
      * <p/>
      */
     inline const Aws::String& GetBucket() const{ return m_bucket; }
+
+    /**
+     * <p/>
+     */
+    inline bool BucketHasBeenSet() const { return m_bucketHasBeenSet; }
 
     /**
      * <p/>
@@ -150,6 +165,11 @@ namespace Model
     /**
      * <p/>
      */
+    inline bool ContentMD5HasBeenSet() const { return m_contentMD5HasBeenSet; }
+
+    /**
+     * <p/>
+     */
     inline void SetContentMD5(const Aws::String& value) { m_contentMD5HasBeenSet = true; m_contentMD5 = value; }
 
     /**
@@ -183,6 +203,12 @@ namespace Model
      * bucket.</p>
      */
     inline const Aws::String& GetGrantFullControl() const{ return m_grantFullControl; }
+
+    /**
+     * <p>Allows grantee the read, write, read ACP, and write ACP permissions on the
+     * bucket.</p>
+     */
+    inline bool GrantFullControlHasBeenSet() const { return m_grantFullControlHasBeenSet; }
 
     /**
      * <p>Allows grantee the read, write, read ACP, and write ACP permissions on the
@@ -229,6 +255,11 @@ namespace Model
     /**
      * <p>Allows grantee to list the objects in the bucket.</p>
      */
+    inline bool GrantReadHasBeenSet() const { return m_grantReadHasBeenSet; }
+
+    /**
+     * <p>Allows grantee to list the objects in the bucket.</p>
+     */
     inline void SetGrantRead(const Aws::String& value) { m_grantReadHasBeenSet = true; m_grantRead = value; }
 
     /**
@@ -261,6 +292,11 @@ namespace Model
      * <p>Allows grantee to read the bucket ACL.</p>
      */
     inline const Aws::String& GetGrantReadACP() const{ return m_grantReadACP; }
+
+    /**
+     * <p>Allows grantee to read the bucket ACL.</p>
+     */
+    inline bool GrantReadACPHasBeenSet() const { return m_grantReadACPHasBeenSet; }
 
     /**
      * <p>Allows grantee to read the bucket ACL.</p>
@@ -301,6 +337,11 @@ namespace Model
     /**
      * <p>Allows grantee to create, overwrite, and delete any object in the bucket.</p>
      */
+    inline bool GrantWriteHasBeenSet() const { return m_grantWriteHasBeenSet; }
+
+    /**
+     * <p>Allows grantee to create, overwrite, and delete any object in the bucket.</p>
+     */
     inline void SetGrantWrite(const Aws::String& value) { m_grantWriteHasBeenSet = true; m_grantWrite = value; }
 
     /**
@@ -333,6 +374,11 @@ namespace Model
      * <p>Allows grantee to write the ACL for the applicable bucket.</p>
      */
     inline const Aws::String& GetGrantWriteACP() const{ return m_grantWriteACP; }
+
+    /**
+     * <p>Allows grantee to write the ACL for the applicable bucket.</p>
+     */
+    inline bool GrantWriteACPHasBeenSet() const { return m_grantWriteACPHasBeenSet; }
 
     /**
      * <p>Allows grantee to write the ACL for the applicable bucket.</p>
@@ -373,6 +419,11 @@ namespace Model
     /**
      * <p/>
      */
+    inline bool KeyHasBeenSet() const { return m_keyHasBeenSet; }
+
+    /**
+     * <p/>
+     */
     inline void SetKey(const Aws::String& value) { m_keyHasBeenSet = true; m_key = value; }
 
     /**
@@ -405,6 +456,9 @@ namespace Model
     inline const RequestPayer& GetRequestPayer() const{ return m_requestPayer; }
 
     
+    inline bool RequestPayerHasBeenSet() const { return m_requestPayerHasBeenSet; }
+
+    
     inline void SetRequestPayer(const RequestPayer& value) { m_requestPayerHasBeenSet = true; m_requestPayer = value; }
 
     
@@ -421,6 +475,11 @@ namespace Model
      * <p>VersionId used to reference a specific version of the object.</p>
      */
     inline const Aws::String& GetVersionId() const{ return m_versionId; }
+
+    /**
+     * <p>VersionId used to reference a specific version of the object.</p>
+     */
+    inline bool VersionIdHasBeenSet() const { return m_versionIdHasBeenSet; }
 
     /**
      * <p>VersionId used to reference a specific version of the object.</p>
@@ -455,6 +514,9 @@ namespace Model
 
     
     inline const Aws::Map<Aws::String, Aws::String>& GetCustomizedAccessLogTag() const{ return m_customizedAccessLogTag; }
+
+    
+    inline bool CustomizedAccessLogTagHasBeenSet() const { return m_customizedAccessLogTagHasBeenSet; }
 
     
     inline void SetCustomizedAccessLogTag(const Aws::Map<Aws::String, Aws::String>& value) { m_customizedAccessLogTagHasBeenSet = true; m_customizedAccessLogTag = value; }

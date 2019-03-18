@@ -52,6 +52,11 @@ namespace Model
     /**
      * <p>The ID of the project to which you will add the IAM user.</p>
      */
+    inline bool ProjectIdHasBeenSet() const { return m_projectIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the project to which you will add the IAM user.</p>
+     */
     inline void SetProjectId(const Aws::String& value) { m_projectIdHasBeenSet = true; m_projectId = value; }
 
     /**
@@ -86,6 +91,13 @@ namespace Model
      * request.</p>
      */
     inline const Aws::String& GetClientRequestToken() const{ return m_clientRequestToken; }
+
+    /**
+     * <p>A user- or system-generated token that identifies the entity that requested
+     * the team member association to the project. This token can be used to repeat the
+     * request.</p>
+     */
+    inline bool ClientRequestTokenHasBeenSet() const { return m_clientRequestTokenHasBeenSet; }
 
     /**
      * <p>A user- or system-generated token that identifies the entity that requested
@@ -140,6 +152,12 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) for the IAM user you want to add to the AWS
      * CodeStar project.</p>
      */
+    inline bool UserArnHasBeenSet() const { return m_userArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) for the IAM user you want to add to the AWS
+     * CodeStar project.</p>
+     */
     inline void SetUserArn(const Aws::String& value) { m_userArnHasBeenSet = true; m_userArn = value; }
 
     /**
@@ -183,6 +201,12 @@ namespace Model
      * <p>The AWS CodeStar project role that will apply to this user. This role
      * determines what actions a user can take in an AWS CodeStar project.</p>
      */
+    inline bool ProjectRoleHasBeenSet() const { return m_projectRoleHasBeenSet; }
+
+    /**
+     * <p>The AWS CodeStar project role that will apply to this user. This role
+     * determines what actions a user can take in an AWS CodeStar project.</p>
+     */
     inline void SetProjectRole(const Aws::String& value) { m_projectRoleHasBeenSet = true; m_projectRole = value; }
 
     /**
@@ -221,6 +245,12 @@ namespace Model
      * remotely access project resources, for example Amazon EC2 instances.</p>
      */
     inline bool GetRemoteAccessAllowed() const{ return m_remoteAccessAllowed; }
+
+    /**
+     * <p>Whether the team member is allowed to use an SSH public/private key pair to
+     * remotely access project resources, for example Amazon EC2 instances.</p>
+     */
+    inline bool RemoteAccessAllowedHasBeenSet() const { return m_remoteAccessAllowedHasBeenSet; }
 
     /**
      * <p>Whether the team member is allowed to use an SSH public/private key pair to

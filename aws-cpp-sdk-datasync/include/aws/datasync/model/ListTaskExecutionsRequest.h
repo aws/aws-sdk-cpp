@@ -55,6 +55,11 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the task whose tasks you want to list.</p>
      */
+    inline bool TaskArnHasBeenSet() const { return m_taskArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the task whose tasks you want to list.</p>
+     */
     inline void SetTaskArn(const Aws::String& value) { m_taskArnHasBeenSet = true; m_taskArn = value; }
 
     /**
@@ -91,6 +96,11 @@ namespace Model
     /**
      * <p>The maximum number of executed tasks to list.</p>
      */
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
+
+    /**
+     * <p>The maximum number of executed tasks to list.</p>
+     */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
@@ -104,6 +114,12 @@ namespace Model
      * of the executed tasks.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
+    /**
+     * <p>An opaque string that indicates the position at which to begin the next list
+     * of the executed tasks.</p>
+     */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
      * <p>An opaque string that indicates the position at which to begin the next list

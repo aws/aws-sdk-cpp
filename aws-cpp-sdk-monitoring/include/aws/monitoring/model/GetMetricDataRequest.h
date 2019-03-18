@@ -64,6 +64,14 @@ namespace Model
      * these structures can specify either a metric to retrieve, or a math expression
      * to perform on retrieved data. </p>
      */
+    inline bool MetricDataQueriesHasBeenSet() const { return m_metricDataQueriesHasBeenSet; }
+
+    /**
+     * <p>The metric queries to be returned. A single <code>GetMetricData</code> call
+     * can include as many as 100 <code>MetricDataQuery</code> structures. Each of
+     * these structures can specify either a metric to retrieve, or a math expression
+     * to perform on retrieved data. </p>
+     */
     inline void SetMetricDataQueries(const Aws::Vector<MetricDataQuery>& value) { m_metricDataQueriesHasBeenSet = true; m_metricDataQueries = value; }
 
     /**
@@ -117,6 +125,17 @@ namespace Model
      * <code>StartTime</code>.</p>
      */
     inline const Aws::Utils::DateTime& GetStartTime() const{ return m_startTime; }
+
+    /**
+     * <p>The time stamp indicating the earliest data to be returned.</p> <p>For better
+     * performance, specify <code>StartTime</code> and <code>EndTime</code> values that
+     * align with the value of the metric's <code>Period</code> and sync up with the
+     * beginning and end of an hour. For example, if the <code>Period</code> of a
+     * metric is 5 minutes, specifying 12:05 or 12:30 as <code>StartTime</code> can get
+     * a faster response from CloudWatch then setting 12:07 or 12:29 as the
+     * <code>StartTime</code>.</p>
+     */
+    inline bool StartTimeHasBeenSet() const { return m_startTimeHasBeenSet; }
 
     /**
      * <p>The time stamp indicating the earliest data to be returned.</p> <p>For better
@@ -183,6 +202,17 @@ namespace Model
      * faster response from CloudWatch then setting 12:07 or 12:29 as the
      * <code>EndTime</code>.</p>
      */
+    inline bool EndTimeHasBeenSet() const { return m_endTimeHasBeenSet; }
+
+    /**
+     * <p>The time stamp indicating the latest data to be returned.</p> <p>For better
+     * performance, specify <code>StartTime</code> and <code>EndTime</code> values that
+     * align with the value of the metric's <code>Period</code> and sync up with the
+     * beginning and end of an hour. For example, if the <code>Period</code> of a
+     * metric is 5 minutes, specifying 12:05 or 12:30 as <code>EndTime</code> can get a
+     * faster response from CloudWatch then setting 12:07 or 12:29 as the
+     * <code>EndTime</code>.</p>
+     */
     inline void SetEndTime(const Aws::Utils::DateTime& value) { m_endTimeHasBeenSet = true; m_endTime = value; }
 
     /**
@@ -224,6 +254,12 @@ namespace Model
      * set of data points.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
+    /**
+     * <p>Include this value, if it was returned by the previous call, to get the next
+     * set of data points.</p>
+     */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
      * <p>Include this value, if it was returned by the previous call, to get the next
@@ -278,6 +314,15 @@ namespace Model
      * <code>TimestampAscending</code> returns the oldest data first and paginates when
      * the <code>MaxDatapoints</code> limit is reached.</p>
      */
+    inline bool ScanByHasBeenSet() const { return m_scanByHasBeenSet; }
+
+    /**
+     * <p>The order in which data points should be returned.
+     * <code>TimestampDescending</code> returns the newest data first and paginates
+     * when the <code>MaxDatapoints</code> limit is reached.
+     * <code>TimestampAscending</code> returns the oldest data first and paginates when
+     * the <code>MaxDatapoints</code> limit is reached.</p>
+     */
     inline void SetScanBy(const ScanBy& value) { m_scanByHasBeenSet = true; m_scanBy = value; }
 
     /**
@@ -313,6 +358,12 @@ namespace Model
      * paginating. If you omit this, the default of 100,800 is used.</p>
      */
     inline int GetMaxDatapoints() const{ return m_maxDatapoints; }
+
+    /**
+     * <p>The maximum number of data points the request should return before
+     * paginating. If you omit this, the default of 100,800 is used.</p>
+     */
+    inline bool MaxDatapointsHasBeenSet() const { return m_maxDatapointsHasBeenSet; }
 
     /**
      * <p>The maximum number of data points the request should return before

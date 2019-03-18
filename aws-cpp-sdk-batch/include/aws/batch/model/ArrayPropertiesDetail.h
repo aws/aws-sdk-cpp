@@ -59,6 +59,12 @@ namespace Model
      * <p>A summary of the number of array job children in each available job status.
      * This parameter is returned for parent array jobs.</p>
      */
+    inline bool StatusSummaryHasBeenSet() const { return m_statusSummaryHasBeenSet; }
+
+    /**
+     * <p>A summary of the number of array job children in each available job status.
+     * This parameter is returned for parent array jobs.</p>
+     */
     inline void SetStatusSummary(const Aws::Map<Aws::String, int>& value) { m_statusSummaryHasBeenSet = true; m_statusSummary = value; }
 
     /**
@@ -108,6 +114,12 @@ namespace Model
      * <p>The size of the array job. This parameter is returned for parent array
      * jobs.</p>
      */
+    inline bool SizeHasBeenSet() const { return m_sizeHasBeenSet; }
+
+    /**
+     * <p>The size of the array job. This parameter is returned for parent array
+     * jobs.</p>
+     */
     inline void SetSize(int value) { m_sizeHasBeenSet = true; m_size = value; }
 
     /**
@@ -122,6 +134,12 @@ namespace Model
      * parameter is returned for array job children.</p>
      */
     inline int GetIndex() const{ return m_index; }
+
+    /**
+     * <p>The job index within the array that is associated with this job. This
+     * parameter is returned for array job children.</p>
+     */
+    inline bool IndexHasBeenSet() const { return m_indexHasBeenSet; }
 
     /**
      * <p>The job index within the array that is associated with this job. This

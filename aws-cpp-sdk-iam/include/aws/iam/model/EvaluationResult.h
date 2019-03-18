@@ -65,6 +65,11 @@ namespace Model
     /**
      * <p>The name of the API operation tested on the indicated resource.</p>
      */
+    inline bool EvalActionNameHasBeenSet() const { return m_evalActionNameHasBeenSet; }
+
+    /**
+     * <p>The name of the API operation tested on the indicated resource.</p>
+     */
     inline void SetEvalActionName(const Aws::String& value) { m_evalActionNameHasBeenSet = true; m_evalActionName = value; }
 
     /**
@@ -97,6 +102,11 @@ namespace Model
      * <p>The ARN of the resource that the indicated API operation was tested on.</p>
      */
     inline const Aws::String& GetEvalResourceName() const{ return m_evalResourceName; }
+
+    /**
+     * <p>The ARN of the resource that the indicated API operation was tested on.</p>
+     */
+    inline bool EvalResourceNameHasBeenSet() const { return m_evalResourceNameHasBeenSet; }
 
     /**
      * <p>The ARN of the resource that the indicated API operation was tested on.</p>
@@ -137,6 +147,11 @@ namespace Model
     /**
      * <p>The result of the simulation.</p>
      */
+    inline bool EvalDecisionHasBeenSet() const { return m_evalDecisionHasBeenSet; }
+
+    /**
+     * <p>The result of the simulation.</p>
+     */
     inline void SetEvalDecision(const PolicyEvaluationDecisionType& value) { m_evalDecisionHasBeenSet = true; m_evalDecision = value; }
 
     /**
@@ -163,6 +178,15 @@ namespace Model
      * included in the result.</p>
      */
     inline const Aws::Vector<Statement>& GetMatchedStatements() const{ return m_matchedStatements; }
+
+    /**
+     * <p>A list of the statements in the input policies that determine the result for
+     * this scenario. Remember that even if multiple statements allow the operation on
+     * the resource, if only one statement denies that operation, then the explicit
+     * deny overrides any allow. Inaddition, the deny statement is the only entry
+     * included in the result.</p>
+     */
+    inline bool MatchedStatementsHasBeenSet() const { return m_matchedStatementsHasBeenSet; }
 
     /**
      * <p>A list of the statements in the input policies that determine the result for
@@ -230,6 +254,18 @@ namespace Model
      * <a>GetContextKeysForPrincipalPolicy</a>.</p>
      */
     inline const Aws::Vector<Aws::String>& GetMissingContextValues() const{ return m_missingContextValues; }
+
+    /**
+     * <p>A list of context keys that are required by the included input policies but
+     * that were not provided by one of the input parameters. This list is used when
+     * the resource in a simulation is "*", either explicitly, or when the
+     * <code>ResourceArns</code> parameter blank. If you include a list of resources,
+     * then any missing context values are instead included under the
+     * <code>ResourceSpecificResults</code> section. To discover the context keys used
+     * by a set of policies, you can call <a>GetContextKeysForCustomPolicy</a> or
+     * <a>GetContextKeysForPrincipalPolicy</a>.</p>
+     */
+    inline bool MissingContextValuesHasBeenSet() const { return m_missingContextValuesHasBeenSet; }
 
     /**
      * <p>A list of context keys that are required by the included input policies but
@@ -328,6 +364,13 @@ namespace Model
      * policies affect the results of the simulation. Only applies if the simulated
      * user's account is part of an organization.</p>
      */
+    inline bool OrganizationsDecisionDetailHasBeenSet() const { return m_organizationsDecisionDetailHasBeenSet; }
+
+    /**
+     * <p>A structure that details how AWS Organizations and its service control
+     * policies affect the results of the simulation. Only applies if the simulated
+     * user's account is part of an organization.</p>
+     */
     inline void SetOrganizationsDecisionDetail(const OrganizationsDecisionDetail& value) { m_organizationsDecisionDetailHasBeenSet = true; m_organizationsDecisionDetail = value; }
 
     /**
@@ -362,6 +405,17 @@ namespace Model
      * IAM Roles Differ from Resource-based Policies</a> </p>
      */
     inline const Aws::Map<Aws::String, PolicyEvaluationDecisionType>& GetEvalDecisionDetails() const{ return m_evalDecisionDetails; }
+
+    /**
+     * <p>Additional details about the results of the evaluation decision. When there
+     * are both IAM policies and resource policies, this parameter explains how each
+     * set of policies contributes to the final evaluation decision. When simulating
+     * cross-account access to a resource, both the resource-based policy and the
+     * caller's IAM policy must grant access. See <a
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_compare-resource-policies.html">How
+     * IAM Roles Differ from Resource-based Policies</a> </p>
+     */
+    inline bool EvalDecisionDetailsHasBeenSet() const { return m_evalDecisionDetailsHasBeenSet; }
 
     /**
      * <p>Additional details about the results of the evaluation decision. When there
@@ -479,6 +533,12 @@ namespace Model
      * EvalActionName on each resource.</p>
      */
     inline const Aws::Vector<ResourceSpecificResult>& GetResourceSpecificResults() const{ return m_resourceSpecificResults; }
+
+    /**
+     * <p>The individual results of the simulation of the API operation specified in
+     * EvalActionName on each resource.</p>
+     */
+    inline bool ResourceSpecificResultsHasBeenSet() const { return m_resourceSpecificResultsHasBeenSet; }
 
     /**
      * <p>The individual results of the simulation of the API operation specified in

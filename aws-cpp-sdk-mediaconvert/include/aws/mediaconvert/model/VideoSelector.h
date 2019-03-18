@@ -54,6 +54,9 @@ namespace Model
     inline const ColorSpace& GetColorSpace() const{ return m_colorSpace; }
 
     
+    inline bool ColorSpaceHasBeenSet() const { return m_colorSpaceHasBeenSet; }
+
+    
     inline void SetColorSpace(const ColorSpace& value) { m_colorSpaceHasBeenSet = true; m_colorSpace = value; }
 
     
@@ -70,6 +73,9 @@ namespace Model
     inline const ColorSpaceUsage& GetColorSpaceUsage() const{ return m_colorSpaceUsage; }
 
     
+    inline bool ColorSpaceUsageHasBeenSet() const { return m_colorSpaceUsageHasBeenSet; }
+
+    
     inline void SetColorSpaceUsage(const ColorSpaceUsage& value) { m_colorSpaceUsageHasBeenSet = true; m_colorSpaceUsage = value; }
 
     
@@ -84,6 +90,9 @@ namespace Model
 
     
     inline const Hdr10Metadata& GetHdr10Metadata() const{ return m_hdr10Metadata; }
+
+    
+    inline bool Hdr10MetadataHasBeenSet() const { return m_hdr10MetadataHasBeenSet; }
 
     
     inline void SetHdr10Metadata(const Hdr10Metadata& value) { m_hdr10MetadataHasBeenSet = true; m_hdr10Metadata = value; }
@@ -112,6 +121,14 @@ namespace Model
      * value. For example, 257 selects PID 0x101. A PID, or packet identifier, is an
      * identifier for a set of data in an MPEG-2 transport stream container.
      */
+    inline bool PidHasBeenSet() const { return m_pidHasBeenSet; }
+
+    /**
+     * Use PID (Pid) to select specific video data from an input file. Specify this
+     * value as an integer; the system automatically converts it to the hexidecimal
+     * value. For example, 257 selects PID 0x101. A PID, or packet identifier, is an
+     * identifier for a set of data in an MPEG-2 transport stream container.
+     */
     inline void SetPid(int value) { m_pidHasBeenSet = true; m_pid = value; }
 
     /**
@@ -133,6 +150,12 @@ namespace Model
      * Selects a specific program from within a multi-program transport stream. Note
      * that Quad 4K is not currently supported.
      */
+    inline bool ProgramNumberHasBeenSet() const { return m_programNumberHasBeenSet; }
+
+    /**
+     * Selects a specific program from within a multi-program transport stream. Note
+     * that Quad 4K is not currently supported.
+     */
     inline void SetProgramNumber(int value) { m_programNumberHasBeenSet = true; m_programNumber = value; }
 
     /**
@@ -144,6 +167,9 @@ namespace Model
 
     
     inline const InputRotate& GetRotate() const{ return m_rotate; }
+
+    
+    inline bool RotateHasBeenSet() const { return m_rotateHasBeenSet; }
 
     
     inline void SetRotate(const InputRotate& value) { m_rotateHasBeenSet = true; m_rotate = value; }

@@ -84,6 +84,25 @@ namespace Model
      * </li> <li> <p> <code>vpc-id</code> - The ID of the VPC in which the NAT gateway
      * resides.</p> </li> </ul>
      */
+    inline bool FilterHasBeenSet() const { return m_filterHasBeenSet; }
+
+    /**
+     * <p>One or more filters.</p> <ul> <li> <p> <code>nat-gateway-id</code> - The ID
+     * of the NAT gateway.</p> </li> <li> <p> <code>state</code> - The state of the NAT
+     * gateway (<code>pending</code> | <code>failed</code> | <code>available</code> |
+     * <code>deleting</code> | <code>deleted</code>).</p> </li> <li> <p>
+     * <code>subnet-id</code> - The ID of the subnet in which the NAT gateway
+     * resides.</p> </li> <li> <p> <code>tag</code>:&lt;key&gt; - The key/value
+     * combination of a tag assigned to the resource. Use the tag key in the filter
+     * name and the tag value as the filter value. For example, to find all resources
+     * that have a tag with the key <code>Owner</code> and the value
+     * <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name and
+     * <code>TeamA</code> for the filter value.</p> </li> <li> <p> <code>tag-key</code>
+     * - The key of a tag assigned to the resource. Use this filter to find all
+     * resources assigned a tag with a specific key, regardless of the tag value.</p>
+     * </li> <li> <p> <code>vpc-id</code> - The ID of the VPC in which the NAT gateway
+     * resides.</p> </li> </ul>
+     */
     inline void SetFilter(const Aws::Vector<Filter>& value) { m_filterHasBeenSet = true; m_filter = value; }
 
     /**
@@ -194,6 +213,13 @@ namespace Model
      * remaining results, make another call with the returned <code>nextToken</code>
      * value.</p>
      */
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
+
+    /**
+     * <p>The maximum number of results to return with a single call. To retrieve the
+     * remaining results, make another call with the returned <code>nextToken</code>
+     * value.</p>
+     */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
@@ -208,6 +234,11 @@ namespace Model
      * <p>One or more NAT gateway IDs.</p>
      */
     inline const Aws::Vector<Aws::String>& GetNatGatewayIds() const{ return m_natGatewayIds; }
+
+    /**
+     * <p>One or more NAT gateway IDs.</p>
+     */
+    inline bool NatGatewayIdsHasBeenSet() const { return m_natGatewayIdsHasBeenSet; }
 
     /**
      * <p>One or more NAT gateway IDs.</p>
@@ -249,6 +280,11 @@ namespace Model
      * <p>The token for the next page of results.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
+    /**
+     * <p>The token for the next page of results.</p>
+     */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
      * <p>The token for the next page of results.</p>

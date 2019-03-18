@@ -55,6 +55,12 @@ namespace Model
      * <p>The ID of the Data Catalog in which the connections reside. If none is
      * provided, the AWS account ID is used by default.</p>
      */
+    inline bool CatalogIdHasBeenSet() const { return m_catalogIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the Data Catalog in which the connections reside. If none is
+     * provided, the AWS account ID is used by default.</p>
+     */
     inline void SetCatalogId(const Aws::String& value) { m_catalogIdHasBeenSet = true; m_catalogId = value; }
 
     /**
@@ -92,6 +98,11 @@ namespace Model
      * <p>A list of names of the connections to delete.</p>
      */
     inline const Aws::Vector<Aws::String>& GetConnectionNameList() const{ return m_connectionNameList; }
+
+    /**
+     * <p>A list of names of the connections to delete.</p>
+     */
+    inline bool ConnectionNameListHasBeenSet() const { return m_connectionNameListHasBeenSet; }
 
     /**
      * <p>A list of names of the connections to delete.</p>

@@ -53,6 +53,11 @@ namespace Model
     /**
      * <p>The name of the table.</p>
      */
+    inline bool TableNameHasBeenSet() const { return m_tableNameHasBeenSet; }
+
+    /**
+     * <p>The name of the table.</p>
+     */
     inline void SetTableName(const Aws::String& value) { m_tableNameHasBeenSet = true; m_tableName = value; }
 
     /**
@@ -85,6 +90,11 @@ namespace Model
      * <p>Represents the settings used to enable point in time recovery.</p>
      */
     inline const PointInTimeRecoverySpecification& GetPointInTimeRecoverySpecification() const{ return m_pointInTimeRecoverySpecification; }
+
+    /**
+     * <p>Represents the settings used to enable point in time recovery.</p>
+     */
+    inline bool PointInTimeRecoverySpecificationHasBeenSet() const { return m_pointInTimeRecoverySpecificationHasBeenSet; }
 
     /**
      * <p>Represents the settings used to enable point in time recovery.</p>

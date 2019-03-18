@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The name of the endpoint configuration.</p>
      */
+    inline bool EndpointConfigNameHasBeenSet() const { return m_endpointConfigNameHasBeenSet; }
+
+    /**
+     * <p>The name of the endpoint configuration.</p>
+     */
     inline void SetEndpointConfigName(const Aws::String& value) { m_endpointConfigNameHasBeenSet = true; m_endpointConfigName = value; }
 
     /**
@@ -93,6 +98,11 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the endpoint configuration.</p>
      */
+    inline bool EndpointConfigArnHasBeenSet() const { return m_endpointConfigArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the endpoint configuration.</p>
+     */
     inline void SetEndpointConfigArn(const Aws::String& value) { m_endpointConfigArnHasBeenSet = true; m_endpointConfigArn = value; }
 
     /**
@@ -125,6 +135,11 @@ namespace Model
      * <p>A timestamp that shows when the endpoint configuration was created.</p>
      */
     inline const Aws::Utils::DateTime& GetCreationTime() const{ return m_creationTime; }
+
+    /**
+     * <p>A timestamp that shows when the endpoint configuration was created.</p>
+     */
+    inline bool CreationTimeHasBeenSet() const { return m_creationTimeHasBeenSet; }
 
     /**
      * <p>A timestamp that shows when the endpoint configuration was created.</p>

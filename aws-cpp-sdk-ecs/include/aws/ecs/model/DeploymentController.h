@@ -87,6 +87,25 @@ namespace Model
      * ECS Deployment Types</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p> </dd> </dl>
      */
+    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
+
+    /**
+     * <p>The deployment controller type to use.</p> <p>There are two deployment
+     * controller types available:</p> <dl> <dt>ECS</dt> <dd> <p>The rolling update
+     * (<code>ECS</code>) deployment type involves replacing the current running
+     * version of the container with the latest version. The number of containers
+     * Amazon ECS adds or removes from the service during a rolling update is
+     * controlled by adjusting the minimum and maximum number of healthy tasks allowed
+     * during a service deployment, as specified in the
+     * <a>DeploymentConfiguration</a>.</p> </dd> <dt>CODE_DEPLOY</dt> <dd> <p>The
+     * blue/green (<code>CODE_DEPLOY</code>) deployment type uses the blue/green
+     * deployment model powered by AWS CodeDeploy, which allows you to verify a new
+     * deployment of a service before sending production traffic to it. For more
+     * information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-types.html">Amazon
+     * ECS Deployment Types</a> in the <i>Amazon Elastic Container Service Developer
+     * Guide</i>.</p> </dd> </dl>
+     */
     inline void SetType(const DeploymentControllerType& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**

@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The ID of the Client VPN endpoint to modify.</p>
      */
+    inline bool ClientVpnEndpointIdHasBeenSet() const { return m_clientVpnEndpointIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the Client VPN endpoint to modify.</p>
+     */
     inline void SetClientVpnEndpointId(const Aws::String& value) { m_clientVpnEndpointIdHasBeenSet = true; m_clientVpnEndpointId = value; }
 
     /**
@@ -89,6 +94,12 @@ namespace Model
      * provisioned in AWS Certificate Manager (ACM).</p>
      */
     inline const Aws::String& GetServerCertificateArn() const{ return m_serverCertificateArn; }
+
+    /**
+     * <p>The ARN of the server certificate to be used. The server certificate must be
+     * provisioned in AWS Certificate Manager (ACM).</p>
+     */
+    inline bool ServerCertificateArnHasBeenSet() const { return m_serverCertificateArnHasBeenSet; }
 
     /**
      * <p>The ARN of the server certificate to be used. The server certificate must be
@@ -145,6 +156,16 @@ namespace Model
      * unsuccessful)</p> </li> <li> <p>Reasons for unsuccessful client connection
      * requests</p> </li> <li> <p>Client connection termination time</p> </li> </ul>
      */
+    inline bool ConnectionLogOptionsHasBeenSet() const { return m_connectionLogOptionsHasBeenSet; }
+
+    /**
+     * <p>Information about the client connection logging options.</p> <p>If you enable
+     * client connection logging, data about client connections is sent to a Cloudwatch
+     * Logs log stream. The following information is logged:</p> <ul> <li> <p>Client
+     * connection requests</p> </li> <li> <p>Client connection results (successful and
+     * unsuccessful)</p> </li> <li> <p>Reasons for unsuccessful client connection
+     * requests</p> </li> <li> <p>Client connection termination time</p> </li> </ul>
+     */
     inline void SetConnectionLogOptions(const ConnectionLogOptions& value) { m_connectionLogOptionsHasBeenSet = true; m_connectionLogOptions = value; }
 
     /**
@@ -188,6 +209,12 @@ namespace Model
      * <p>Information about the DNS servers to be used by Client VPN connections. A
      * Client VPN endpoint can have up to two DNS servers.</p>
      */
+    inline bool DnsServersHasBeenSet() const { return m_dnsServersHasBeenSet; }
+
+    /**
+     * <p>Information about the DNS servers to be used by Client VPN connections. A
+     * Client VPN endpoint can have up to two DNS servers.</p>
+     */
     inline void SetDnsServers(const DnsServersOptionsModifyStructure& value) { m_dnsServersHasBeenSet = true; m_dnsServers = value; }
 
     /**
@@ -213,6 +240,11 @@ namespace Model
      * <p>A brief description of the Client VPN endpoint.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
+
+    /**
+     * <p>A brief description of the Client VPN endpoint.</p>
+     */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
 
     /**
      * <p>A brief description of the Client VPN endpoint.</p>
@@ -252,6 +284,14 @@ namespace Model
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
     inline bool GetDryRun() const{ return m_dryRun; }
+
+    /**
+     * <p>Checks whether you have the required permissions for the action, without
+     * actually making the request, and provides an error response. If you have the
+     * required permissions, the error response is <code>DryRunOperation</code>.
+     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+     */
+    inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
 
     /**
      * <p>Checks whether you have the required permissions for the action, without

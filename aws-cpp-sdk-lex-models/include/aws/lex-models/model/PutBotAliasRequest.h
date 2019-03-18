@@ -50,6 +50,11 @@ namespace Model
     /**
      * <p>The name of the alias. The name is <i>not</i> case sensitive.</p>
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>The name of the alias. The name is <i>not</i> case sensitive.</p>
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
@@ -82,6 +87,11 @@ namespace Model
      * <p>A description of the alias.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
+
+    /**
+     * <p>A description of the alias.</p>
+     */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
 
     /**
      * <p>A description of the alias.</p>
@@ -122,6 +132,11 @@ namespace Model
     /**
      * <p>The version of the bot.</p>
      */
+    inline bool BotVersionHasBeenSet() const { return m_botVersionHasBeenSet; }
+
+    /**
+     * <p>The version of the bot.</p>
+     */
     inline void SetBotVersion(const Aws::String& value) { m_botVersionHasBeenSet = true; m_botVersion = value; }
 
     /**
@@ -154,6 +169,11 @@ namespace Model
      * <p>The name of the bot.</p>
      */
     inline const Aws::String& GetBotName() const{ return m_botName; }
+
+    /**
+     * <p>The name of the bot.</p>
+     */
+    inline bool BotNameHasBeenSet() const { return m_botNameHasBeenSet; }
 
     /**
      * <p>The name of the bot.</p>
@@ -197,6 +217,18 @@ namespace Model
      * get a <code>PreconditionFailedException</code> exception.</p>
      */
     inline const Aws::String& GetChecksum() const{ return m_checksum; }
+
+    /**
+     * <p>Identifies a specific revision of the <code>$LATEST</code> version.</p>
+     * <p>When you create a new bot alias, leave the <code>checksum</code> field blank.
+     * If you specify a checksum you get a <code>BadRequestException</code>
+     * exception.</p> <p>When you want to update a bot alias, set the
+     * <code>checksum</code> field to the checksum of the most recent revision of the
+     * <code>$LATEST</code> version. If you don't specify the <code> checksum</code>
+     * field, or if the checksum does not match the <code>$LATEST</code> version, you
+     * get a <code>PreconditionFailedException</code> exception.</p>
+     */
+    inline bool ChecksumHasBeenSet() const { return m_checksumHasBeenSet; }
 
     /**
      * <p>Identifies a specific revision of the <code>$LATEST</code> version.</p>

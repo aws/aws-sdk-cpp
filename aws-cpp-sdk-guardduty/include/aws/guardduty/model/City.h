@@ -55,6 +55,11 @@ namespace Model
     /**
      * City name of the remote IP address.
      */
+    inline bool CityNameHasBeenSet() const { return m_cityNameHasBeenSet; }
+
+    /**
+     * City name of the remote IP address.
+     */
     inline void SetCityName(const Aws::String& value) { m_cityNameHasBeenSet = true; m_cityName = value; }
 
     /**

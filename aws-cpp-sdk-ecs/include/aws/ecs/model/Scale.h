@@ -59,6 +59,12 @@ namespace Model
      * <p>The value, specified as a percent total of a service's
      * <code>desiredCount</code>, to scale the task set.</p>
      */
+    inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
+
+    /**
+     * <p>The value, specified as a percent total of a service's
+     * <code>desiredCount</code>, to scale the task set.</p>
+     */
     inline void SetValue(double value) { m_valueHasBeenSet = true; m_value = value; }
 
     /**
@@ -72,6 +78,11 @@ namespace Model
      * <p>The unit of measure for the scale value.</p>
      */
     inline const ScaleUnit& GetUnit() const{ return m_unit; }
+
+    /**
+     * <p>The unit of measure for the scale value.</p>
+     */
+    inline bool UnitHasBeenSet() const { return m_unitHasBeenSet; }
 
     /**
      * <p>The unit of measure for the scale value.</p>

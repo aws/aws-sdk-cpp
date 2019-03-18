@@ -46,6 +46,9 @@ namespace Model
     inline int GetMaximumReplicationCount() const{ return m_maximumReplicationCount; }
 
     
+    inline bool MaximumReplicationCountHasBeenSet() const { return m_maximumReplicationCountHasBeenSet; }
+
+    
     inline void SetMaximumReplicationCount(int value) { m_maximumReplicationCountHasBeenSet = true; m_maximumReplicationCount = value; }
 
     
@@ -54,6 +57,9 @@ namespace Model
 
     
     inline int GetMaximumPartitionCount() const{ return m_maximumPartitionCount; }
+
+    
+    inline bool MaximumPartitionCountHasBeenSet() const { return m_maximumPartitionCountHasBeenSet; }
 
     
     inline void SetMaximumPartitionCount(int value) { m_maximumPartitionCountHasBeenSet = true; m_maximumPartitionCount = value; }

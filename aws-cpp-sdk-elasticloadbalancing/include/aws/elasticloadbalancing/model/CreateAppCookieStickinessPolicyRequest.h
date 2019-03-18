@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p>The name of the load balancer.</p>
      */
+    inline bool LoadBalancerNameHasBeenSet() const { return m_loadBalancerNameHasBeenSet; }
+
+    /**
+     * <p>The name of the load balancer.</p>
+     */
     inline void SetLoadBalancerName(const Aws::String& value) { m_loadBalancerNameHasBeenSet = true; m_loadBalancerName = value; }
 
     /**
@@ -92,6 +97,13 @@ namespace Model
      * of policies for this load balancer.</p>
      */
     inline const Aws::String& GetPolicyName() const{ return m_policyName; }
+
+    /**
+     * <p>The name of the policy being created. Policy names must consist of
+     * alphanumeric characters and dashes (-). This name must be unique within the set
+     * of policies for this load balancer.</p>
+     */
+    inline bool PolicyNameHasBeenSet() const { return m_policyNameHasBeenSet; }
 
     /**
      * <p>The name of the policy being created. Policy names must consist of
@@ -140,6 +152,11 @@ namespace Model
      * <p>The name of the application cookie used for stickiness.</p>
      */
     inline const Aws::String& GetCookieName() const{ return m_cookieName; }
+
+    /**
+     * <p>The name of the application cookie used for stickiness.</p>
+     */
+    inline bool CookieNameHasBeenSet() const { return m_cookieNameHasBeenSet; }
 
     /**
      * <p>The name of the application cookie used for stickiness.</p>

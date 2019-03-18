@@ -52,6 +52,11 @@ namespace Model
     /**
      * <p>Unique ID of the configuration object to delete.</p>
      */
+    inline bool LicenseConfigurationArnHasBeenSet() const { return m_licenseConfigurationArnHasBeenSet; }
+
+    /**
+     * <p>Unique ID of the configuration object to delete.</p>
+     */
     inline void SetLicenseConfigurationArn(const Aws::String& value) { m_licenseConfigurationArnHasBeenSet = true; m_licenseConfigurationArn = value; }
 
     /**

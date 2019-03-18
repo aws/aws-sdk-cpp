@@ -68,6 +68,15 @@ namespace Model
      * </li> <li> <p> <code>db.wait_event</code> </p> </li> <li> <p>
      * <code>db.wait_event_type</code> </p> </li> </ul>
      */
+    inline bool GroupHasBeenSet() const { return m_groupHasBeenSet; }
+
+    /**
+     * <p>The name of the dimension group. Valid values are:</p> <ul> <li> <p>
+     * <code>db.user</code> </p> </li> <li> <p> <code>db.host</code> </p> </li> <li>
+     * <p> <code>db.sql</code> </p> </li> <li> <p> <code>db.sql_tokenized</code> </p>
+     * </li> <li> <p> <code>db.wait_event</code> </p> </li> <li> <p>
+     * <code>db.wait_event_type</code> </p> </li> </ul>
+     */
     inline void SetGroup(const Aws::String& value) { m_groupHasBeenSet = true; m_group = value; }
 
     /**
@@ -130,6 +139,21 @@ namespace Model
      * </li> </ul>
      */
     inline const Aws::Vector<Aws::String>& GetDimensions() const{ return m_dimensions; }
+
+    /**
+     * <p>A list of specific dimensions from a dimension group. If this parameter is
+     * not present, then it signifies that all of the dimensions in the group were
+     * requested, or are present in the response.</p> <p>Valid values for elements in
+     * the <code>Dimensions</code> array are:</p> <ul> <li> <p>db.user.id</p> </li>
+     * <li> <p>db.user.name</p> </li> <li> <p>db.host.id</p> </li> <li>
+     * <p>db.host.name</p> </li> <li> <p>db.sql.id</p> </li> <li> <p>db.sql.db_id</p>
+     * </li> <li> <p>db.sql.statement</p> </li> <li> <p>db.sql.tokenized_id</p> </li>
+     * <li> <p>db.sql_tokenized.id</p> </li> <li> <p>db.sql_tokenized.db_id</p> </li>
+     * <li> <p>db.sql_tokenized.statement</p> </li> <li> <p>db.wait_event.name</p>
+     * </li> <li> <p>db.wait_event.type</p> </li> <li> <p>db.wait_event_type.name</p>
+     * </li> </ul>
+     */
+    inline bool DimensionsHasBeenSet() const { return m_dimensionsHasBeenSet; }
 
     /**
      * <p>A list of specific dimensions from a dimension group. If this parameter is
@@ -241,6 +265,11 @@ namespace Model
      * <p>The maximum number of items to fetch for this dimension group.</p>
      */
     inline int GetLimit() const{ return m_limit; }
+
+    /**
+     * <p>The maximum number of items to fetch for this dimension group.</p>
+     */
+    inline bool LimitHasBeenSet() const { return m_limitHasBeenSet; }
 
     /**
      * <p>The maximum number of items to fetch for this dimension group.</p>

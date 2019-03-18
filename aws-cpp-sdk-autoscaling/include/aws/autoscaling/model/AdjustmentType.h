@@ -61,6 +61,13 @@ namespace Model
      * <code>ChangeInCapacity</code>, <code>ExactCapacity</code>, and
      * <code>PercentChangeInCapacity</code>.</p>
      */
+    inline bool AdjustmentTypeHasBeenSet() const { return m_adjustmentTypeHasBeenSet; }
+
+    /**
+     * <p>The policy adjustment type. The valid values are
+     * <code>ChangeInCapacity</code>, <code>ExactCapacity</code>, and
+     * <code>PercentChangeInCapacity</code>.</p>
+     */
     inline void SetAdjustmentType(const Aws::String& value) { m_adjustmentTypeHasBeenSet = true; m_adjustmentType = value; }
 
     /**

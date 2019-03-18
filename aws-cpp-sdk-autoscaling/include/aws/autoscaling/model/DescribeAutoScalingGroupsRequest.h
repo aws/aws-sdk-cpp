@@ -61,6 +61,14 @@ namespace Model
      * increase this limit using the <code>MaxRecords</code> parameter. </p> <p>If you
      * omit this parameter, all Auto Scaling groups are described.</p>
      */
+    inline bool AutoScalingGroupNamesHasBeenSet() const { return m_autoScalingGroupNamesHasBeenSet; }
+
+    /**
+     * <p>The names of the Auto Scaling groups. Each name can be a maximum of 1600
+     * characters. By default, you can only specify up to 50 names. You can optionally
+     * increase this limit using the <code>MaxRecords</code> parameter. </p> <p>If you
+     * omit this parameter, all Auto Scaling groups are described.</p>
+     */
     inline void SetAutoScalingGroupNames(const Aws::Vector<Aws::String>& value) { m_autoScalingGroupNamesHasBeenSet = true; m_autoScalingGroupNames = value; }
 
     /**
@@ -122,6 +130,12 @@ namespace Model
      * <p>The token for the next set of items to return. (You received this token from
      * a previous call.)</p>
      */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
+
+    /**
+     * <p>The token for the next set of items to return. (You received this token from
+     * a previous call.)</p>
+     */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
     /**
@@ -160,6 +174,12 @@ namespace Model
      * <code>50</code> and the maximum value is <code>100</code>. </p>
      */
     inline int GetMaxRecords() const{ return m_maxRecords; }
+
+    /**
+     * <p>The maximum number of items to return with this call. The default value is
+     * <code>50</code> and the maximum value is <code>100</code>. </p>
+     */
+    inline bool MaxRecordsHasBeenSet() const { return m_maxRecordsHasBeenSet; }
 
     /**
      * <p>The maximum number of items to return with this call. The default value is

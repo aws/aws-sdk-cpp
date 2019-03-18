@@ -50,6 +50,11 @@ namespace Model
     /**
      * <p>The API identifier.</p>
      */
+    inline bool ApiIdHasBeenSet() const { return m_apiIdHasBeenSet; }
+
+    /**
+     * <p>The API identifier.</p>
+     */
     inline void SetApiId(const Aws::String& value) { m_apiIdHasBeenSet = true; m_apiId = value; }
 
     /**
@@ -82,6 +87,11 @@ namespace Model
      * <p>The authorizer identifier.</p>
      */
     inline const Aws::String& GetAuthorizerId() const{ return m_authorizerId; }
+
+    /**
+     * <p>The authorizer identifier.</p>
+     */
+    inline bool AuthorizerIdHasBeenSet() const { return m_authorizerIdHasBeenSet; }
 
     /**
      * <p>The authorizer identifier.</p>

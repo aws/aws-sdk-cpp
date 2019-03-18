@@ -53,6 +53,9 @@ namespace Model
     inline const DeinterlaceAlgorithm& GetAlgorithm() const{ return m_algorithm; }
 
     
+    inline bool AlgorithmHasBeenSet() const { return m_algorithmHasBeenSet; }
+
+    
     inline void SetAlgorithm(const DeinterlaceAlgorithm& value) { m_algorithmHasBeenSet = true; m_algorithm = value; }
 
     
@@ -69,6 +72,9 @@ namespace Model
     inline const DeinterlacerControl& GetControl() const{ return m_control; }
 
     
+    inline bool ControlHasBeenSet() const { return m_controlHasBeenSet; }
+
+    
     inline void SetControl(const DeinterlacerControl& value) { m_controlHasBeenSet = true; m_control = value; }
 
     
@@ -83,6 +89,9 @@ namespace Model
 
     
     inline const DeinterlacerMode& GetMode() const{ return m_mode; }
+
+    
+    inline bool ModeHasBeenSet() const { return m_modeHasBeenSet; }
 
     
     inline void SetMode(const DeinterlacerMode& value) { m_modeHasBeenSet = true; m_mode = value; }

@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The last time the assessment run state changed.</p>
      */
+    inline bool StateChangedAtHasBeenSet() const { return m_stateChangedAtHasBeenSet; }
+
+    /**
+     * <p>The last time the assessment run state changed.</p>
+     */
     inline void SetStateChangedAt(const Aws::Utils::DateTime& value) { m_stateChangedAtHasBeenSet = true; m_stateChangedAt = value; }
 
     /**
@@ -79,6 +84,11 @@ namespace Model
      * <p>The assessment run state.</p>
      */
     inline const AssessmentRunState& GetState() const{ return m_state; }
+
+    /**
+     * <p>The assessment run state.</p>
+     */
+    inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
 
     /**
      * <p>The assessment run state.</p>

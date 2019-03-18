@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The FIFO message group ID to use as the target.</p>
      */
+    inline bool MessageGroupIdHasBeenSet() const { return m_messageGroupIdHasBeenSet; }
+
+    /**
+     * <p>The FIFO message group ID to use as the target.</p>
+     */
     inline void SetMessageGroupId(const Aws::String& value) { m_messageGroupIdHasBeenSet = true; m_messageGroupId = value; }
 
     /**

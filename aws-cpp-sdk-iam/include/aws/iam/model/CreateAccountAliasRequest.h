@@ -60,6 +60,14 @@ namespace Model
      * consisting of lowercase letters, digits, and dashes. You cannot start or finish
      * with a dash, nor can you have two dashes in a row.</p>
      */
+    inline bool AccountAliasHasBeenSet() const { return m_accountAliasHasBeenSet; }
+
+    /**
+     * <p>The account alias to create.</p> <p>This parameter allows (through its <a
+     * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
+     * consisting of lowercase letters, digits, and dashes. You cannot start or finish
+     * with a dash, nor can you have two dashes in a row.</p>
+     */
     inline void SetAccountAlias(const Aws::String& value) { m_accountAliasHasBeenSet = true; m_accountAlias = value; }
 
     /**

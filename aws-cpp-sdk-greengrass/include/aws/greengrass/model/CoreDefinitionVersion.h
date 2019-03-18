@@ -56,6 +56,11 @@ namespace Model
     /**
      * A list of cores in the core definition version.
      */
+    inline bool CoresHasBeenSet() const { return m_coresHasBeenSet; }
+
+    /**
+     * A list of cores in the core definition version.
+     */
     inline void SetCores(const Aws::Vector<Core>& value) { m_coresHasBeenSet = true; m_cores = value; }
 
     /**

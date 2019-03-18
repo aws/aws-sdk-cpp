@@ -57,6 +57,12 @@ namespace Model
      * <p>Contains the bucket name, file format, bucket owner (optional), and prefix
      * (optional) where inventory results are published.</p>
      */
+    inline bool S3BucketDestinationHasBeenSet() const { return m_s3BucketDestinationHasBeenSet; }
+
+    /**
+     * <p>Contains the bucket name, file format, bucket owner (optional), and prefix
+     * (optional) where inventory results are published.</p>
+     */
     inline void SetS3BucketDestination(const InventoryS3BucketDestination& value) { m_s3BucketDestinationHasBeenSet = true; m_s3BucketDestination = value; }
 
     /**

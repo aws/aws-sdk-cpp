@@ -56,6 +56,11 @@ namespace Model
     /**
      * The system generated unique identifier for the IngestEndpoint
      */
+    inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
+
+    /**
+     * The system generated unique identifier for the IngestEndpoint
+     */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
     /**
@@ -88,6 +93,11 @@ namespace Model
      * The system generated password for ingest authentication.
      */
     inline const Aws::String& GetPassword() const{ return m_password; }
+
+    /**
+     * The system generated password for ingest authentication.
+     */
+    inline bool PasswordHasBeenSet() const { return m_passwordHasBeenSet; }
 
     /**
      * The system generated password for ingest authentication.
@@ -128,6 +138,11 @@ namespace Model
     /**
      * The ingest URL to which the source stream should be sent.
      */
+    inline bool UrlHasBeenSet() const { return m_urlHasBeenSet; }
+
+    /**
+     * The ingest URL to which the source stream should be sent.
+     */
     inline void SetUrl(const Aws::String& value) { m_urlHasBeenSet = true; m_url = value; }
 
     /**
@@ -160,6 +175,11 @@ namespace Model
      * The system generated username for ingest authentication.
      */
     inline const Aws::String& GetUsername() const{ return m_username; }
+
+    /**
+     * The system generated username for ingest authentication.
+     */
+    inline bool UsernameHasBeenSet() const { return m_usernameHasBeenSet; }
 
     /**
      * The system generated username for ingest authentication.

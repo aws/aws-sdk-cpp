@@ -57,6 +57,12 @@ namespace Model
      * Required if the output group contains more than one output. This modifier forms
      * part of the output file name.
      */
+    inline bool NameModifierHasBeenSet() const { return m_nameModifierHasBeenSet; }
+
+    /**
+     * Required if the output group contains more than one output. This modifier forms
+     * part of the output file name.
+     */
     inline void SetNameModifier(const Aws::String& value) { m_nameModifierHasBeenSet = true; m_nameModifier = value; }
 
     /**

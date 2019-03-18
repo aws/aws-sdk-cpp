@@ -56,6 +56,12 @@ namespace Model
      * <p>A string (provided by the <a>ListExports</a> response output) that identifies
      * the next page of exported output values that you asked to retrieve.</p>
      */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
+
+    /**
+     * <p>A string (provided by the <a>ListExports</a> response output) that identifies
+     * the next page of exported output values that you asked to retrieve.</p>
+     */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
     /**

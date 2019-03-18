@@ -66,6 +66,15 @@ namespace Model
      * name, the endpoint type is <code>REGIONAL</code>. For a private API, the
      * endpoint type is <code>PRIVATE</code>.</p>
      */
+    inline bool TypesHasBeenSet() const { return m_typesHasBeenSet; }
+
+    /**
+     * <p>A list of endpoint types of an API (<a>RestApi</a>) or its custom domain name
+     * (<a>DomainName</a>). For an edge-optimized API and its custom domain name, the
+     * endpoint type is <code>"EDGE"</code>. For a regional API and its custom domain
+     * name, the endpoint type is <code>REGIONAL</code>. For a private API, the
+     * endpoint type is <code>PRIVATE</code>.</p>
+     */
     inline void SetTypes(const Aws::Vector<EndpointType>& value) { m_typesHasBeenSet = true; m_types = value; }
 
     /**

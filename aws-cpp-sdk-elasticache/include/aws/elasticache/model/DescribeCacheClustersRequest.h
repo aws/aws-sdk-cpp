@@ -62,6 +62,13 @@ namespace Model
      * information about that specific cluster is returned. This parameter isn't case
      * sensitive.</p>
      */
+    inline bool CacheClusterIdHasBeenSet() const { return m_cacheClusterIdHasBeenSet; }
+
+    /**
+     * <p>The user-supplied cluster identifier. If this parameter is specified, only
+     * information about that specific cluster is returned. This parameter isn't case
+     * sensitive.</p>
+     */
     inline void SetCacheClusterId(const Aws::String& value) { m_cacheClusterIdHasBeenSet = true; m_cacheClusterId = value; }
 
     /**
@@ -114,6 +121,14 @@ namespace Model
      * the response so that the remaining results can be retrieved.</p> <p>Default:
      * 100</p> <p>Constraints: minimum 20; maximum 100.</p>
      */
+    inline bool MaxRecordsHasBeenSet() const { return m_maxRecordsHasBeenSet; }
+
+    /**
+     * <p>The maximum number of records to include in the response. If more records
+     * exist than the specified <code>MaxRecords</code> value, a marker is included in
+     * the response so that the remaining results can be retrieved.</p> <p>Default:
+     * 100</p> <p>Constraints: minimum 20; maximum 100.</p>
+     */
     inline void SetMaxRecords(int value) { m_maxRecordsHasBeenSet = true; m_maxRecords = value; }
 
     /**
@@ -132,6 +147,14 @@ namespace Model
      * <code>MaxRecords</code>.</p>
      */
     inline const Aws::String& GetMarker() const{ return m_marker; }
+
+    /**
+     * <p>An optional marker returned from a prior request. Use this marker for
+     * pagination of results from this operation. If this parameter is specified, the
+     * response includes only records beyond the marker, up to the value specified by
+     * <code>MaxRecords</code>.</p>
+     */
+    inline bool MarkerHasBeenSet() const { return m_markerHasBeenSet; }
 
     /**
      * <p>An optional marker returned from a prior request. Use this marker for
@@ -194,6 +217,13 @@ namespace Model
      * <code>DescribeCacheCluster</code> request to retrieve information about the
      * individual cache nodes.</p>
      */
+    inline bool ShowCacheNodeInfoHasBeenSet() const { return m_showCacheNodeInfoHasBeenSet; }
+
+    /**
+     * <p>An optional flag that can be included in the
+     * <code>DescribeCacheCluster</code> request to retrieve information about the
+     * individual cache nodes.</p>
+     */
     inline void SetShowCacheNodeInfo(bool value) { m_showCacheNodeInfoHasBeenSet = true; m_showCacheNodeInfo = value; }
 
     /**
@@ -211,6 +241,14 @@ namespace Model
      * and single node Redis clusters.</p>
      */
     inline bool GetShowCacheClustersNotInReplicationGroups() const{ return m_showCacheClustersNotInReplicationGroups; }
+
+    /**
+     * <p>An optional flag that can be included in the
+     * <code>DescribeCacheCluster</code> request to show only nodes (API/CLI: clusters)
+     * that are not members of a replication group. In practice, this mean Memcached
+     * and single node Redis clusters.</p>
+     */
+    inline bool ShowCacheClustersNotInReplicationGroupsHasBeenSet() const { return m_showCacheClustersNotInReplicationGroupsHasBeenSet; }
 
     /**
      * <p>An optional flag that can be included in the

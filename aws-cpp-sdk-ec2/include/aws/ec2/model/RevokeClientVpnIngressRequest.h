@@ -56,6 +56,12 @@ namespace Model
      * <p>The ID of the Client VPN endpoint with which the authorization rule is
      * associated.</p>
      */
+    inline bool ClientVpnEndpointIdHasBeenSet() const { return m_clientVpnEndpointIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the Client VPN endpoint with which the authorization rule is
+     * associated.</p>
+     */
     inline void SetClientVpnEndpointId(const Aws::String& value) { m_clientVpnEndpointIdHasBeenSet = true; m_clientVpnEndpointId = value; }
 
     /**
@@ -94,6 +100,12 @@ namespace Model
      * being removed.</p>
      */
     inline const Aws::String& GetTargetNetworkCidr() const{ return m_targetNetworkCidr; }
+
+    /**
+     * <p>The IPv4 address range, in CIDR notation, of the network for which access is
+     * being removed.</p>
+     */
+    inline bool TargetNetworkCidrHasBeenSet() const { return m_targetNetworkCidrHasBeenSet; }
 
     /**
      * <p>The IPv4 address range, in CIDR notation, of the network for which access is
@@ -140,6 +152,11 @@ namespace Model
     /**
      * <p>The ID of the Active Directory group for which to revoke access. </p>
      */
+    inline bool AccessGroupIdHasBeenSet() const { return m_accessGroupIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the Active Directory group for which to revoke access. </p>
+     */
     inline void SetAccessGroupId(const Aws::String& value) { m_accessGroupIdHasBeenSet = true; m_accessGroupId = value; }
 
     /**
@@ -176,6 +193,11 @@ namespace Model
     /**
      * <p>Indicates whether access should be revoked for all clients.</p>
      */
+    inline bool RevokeAllGroupsHasBeenSet() const { return m_revokeAllGroupsHasBeenSet; }
+
+    /**
+     * <p>Indicates whether access should be revoked for all clients.</p>
+     */
     inline void SetRevokeAllGroups(bool value) { m_revokeAllGroupsHasBeenSet = true; m_revokeAllGroups = value; }
 
     /**
@@ -191,6 +213,14 @@ namespace Model
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
     inline bool GetDryRun() const{ return m_dryRun; }
+
+    /**
+     * <p>Checks whether you have the required permissions for the action, without
+     * actually making the request, and provides an error response. If you have the
+     * required permissions, the error response is <code>DryRunOperation</code>.
+     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+     */
+    inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
 
     /**
      * <p>Checks whether you have the required permissions for the action, without

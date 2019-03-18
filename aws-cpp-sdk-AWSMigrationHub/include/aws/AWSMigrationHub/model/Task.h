@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>Status of the task - Not Started, In-Progress, Complete.</p>
      */
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
+
+    /**
+     * <p>Status of the task - Not Started, In-Progress, Complete.</p>
+     */
     inline void SetStatus(const Status& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
@@ -80,6 +85,13 @@ namespace Model
      * tool or that explains an error state.</p>
      */
     inline const Aws::String& GetStatusDetail() const{ return m_statusDetail; }
+
+    /**
+     * <p>Details of task status as notified by a migration tool. A tool might use this
+     * field to provide clarifying information about the status that is unique to that
+     * tool or that explains an error state.</p>
+     */
+    inline bool StatusDetailHasBeenSet() const { return m_statusDetailHasBeenSet; }
 
     /**
      * <p>Details of task status as notified by a migration tool. A tool might use this
@@ -128,6 +140,11 @@ namespace Model
      * <p>Indication of the percentage completion of the task.</p>
      */
     inline int GetProgressPercent() const{ return m_progressPercent; }
+
+    /**
+     * <p>Indication of the percentage completion of the task.</p>
+     */
+    inline bool ProgressPercentHasBeenSet() const { return m_progressPercentHasBeenSet; }
 
     /**
      * <p>Indication of the percentage completion of the task.</p>

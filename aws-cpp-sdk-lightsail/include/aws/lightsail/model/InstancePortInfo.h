@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p>The first port in the range.</p>
      */
+    inline bool FromPortHasBeenSet() const { return m_fromPortHasBeenSet; }
+
+    /**
+     * <p>The first port in the range.</p>
+     */
     inline void SetFromPort(int value) { m_fromPortHasBeenSet = true; m_fromPort = value; }
 
     /**
@@ -70,6 +75,11 @@ namespace Model
      * <p>The last port in the range.</p>
      */
     inline int GetToPort() const{ return m_toPort; }
+
+    /**
+     * <p>The last port in the range.</p>
+     */
+    inline bool ToPortHasBeenSet() const { return m_toPortHasBeenSet; }
 
     /**
      * <p>The last port in the range.</p>
@@ -100,6 +110,25 @@ namespace Model
      * reliable data stream service, use TCP instead.</p> </li> </ul>
      */
     inline const NetworkProtocol& GetProtocol() const{ return m_protocol; }
+
+    /**
+     * <p>The protocol being used. Can be one of the following.</p> <ul> <li> <p>
+     * <code>tcp</code> - Transmission Control Protocol (TCP) provides reliable,
+     * ordered, and error-checked delivery of streamed data between applications
+     * running on hosts communicating by an IP network. If you have an application that
+     * doesn't require reliable data stream service, use UDP instead.</p> </li> <li>
+     * <p> <code>all</code> - All transport layer protocol types. For more general
+     * information, see <a
+     * href="https://en.wikipedia.org/wiki/Transport_layer">Transport layer</a> on
+     * Wikipedia.</p> </li> <li> <p> <code>udp</code> - With User Datagram Protocol
+     * (UDP), computer applications can send messages (or datagrams) to other hosts on
+     * an Internet Protocol (IP) network. Prior communications are not required to set
+     * up transmission channels or data paths. Applications that don't require reliable
+     * data stream service can use UDP, which provides a connectionless datagram
+     * service that emphasizes reduced latency over reliability. If you do require
+     * reliable data stream service, use TCP instead.</p> </li> </ul>
+     */
+    inline bool ProtocolHasBeenSet() const { return m_protocolHasBeenSet; }
 
     /**
      * <p>The protocol being used. Can be one of the following.</p> <ul> <li> <p>
@@ -188,6 +217,12 @@ namespace Model
      * <p>The location from which access is allowed (e.g., <code>Anywhere
      * (0.0.0.0/0)</code>).</p>
      */
+    inline bool AccessFromHasBeenSet() const { return m_accessFromHasBeenSet; }
+
+    /**
+     * <p>The location from which access is allowed (e.g., <code>Anywhere
+     * (0.0.0.0/0)</code>).</p>
+     */
     inline void SetAccessFrom(const Aws::String& value) { m_accessFromHasBeenSet = true; m_accessFrom = value; }
 
     /**
@@ -229,6 +264,11 @@ namespace Model
     /**
      * <p>The type of access (<code>Public</code> or <code>Private</code>).</p>
      */
+    inline bool AccessTypeHasBeenSet() const { return m_accessTypeHasBeenSet; }
+
+    /**
+     * <p>The type of access (<code>Public</code> or <code>Private</code>).</p>
+     */
     inline void SetAccessType(const PortAccessType& value) { m_accessTypeHasBeenSet = true; m_accessType = value; }
 
     /**
@@ -251,6 +291,11 @@ namespace Model
      * <p>The common name.</p>
      */
     inline const Aws::String& GetCommonName() const{ return m_commonName; }
+
+    /**
+     * <p>The common name.</p>
+     */
+    inline bool CommonNameHasBeenSet() const { return m_commonNameHasBeenSet; }
 
     /**
      * <p>The common name.</p>
@@ -287,6 +332,11 @@ namespace Model
      * <p>The access direction (<code>inbound</code> or <code>outbound</code>).</p>
      */
     inline const AccessDirection& GetAccessDirection() const{ return m_accessDirection; }
+
+    /**
+     * <p>The access direction (<code>inbound</code> or <code>outbound</code>).</p>
+     */
+    inline bool AccessDirectionHasBeenSet() const { return m_accessDirectionHasBeenSet; }
 
     /**
      * <p>The access direction (<code>inbound</code> or <code>outbound</code>).</p>

@@ -58,6 +58,12 @@ namespace Model
      * <p>A <code>HierarchyGroupSummary</code> object that contains information about
      * the level of the hierarchy group, including ARN, Id, and Name.</p>
      */
+    inline bool LevelOneHasBeenSet() const { return m_levelOneHasBeenSet; }
+
+    /**
+     * <p>A <code>HierarchyGroupSummary</code> object that contains information about
+     * the level of the hierarchy group, including ARN, Id, and Name.</p>
+     */
     inline void SetLevelOne(const HierarchyGroupSummary& value) { m_levelOneHasBeenSet = true; m_levelOne = value; }
 
     /**
@@ -84,6 +90,12 @@ namespace Model
      * the level of the hierarchy group, including ARN, Id, and Name.</p>
      */
     inline const HierarchyGroupSummary& GetLevelTwo() const{ return m_levelTwo; }
+
+    /**
+     * <p>A <code>HierarchyGroupSummary</code> object that contains information about
+     * the level of the hierarchy group, including ARN, Id, and Name.</p>
+     */
+    inline bool LevelTwoHasBeenSet() const { return m_levelTwoHasBeenSet; }
 
     /**
      * <p>A <code>HierarchyGroupSummary</code> object that contains information about
@@ -120,6 +132,12 @@ namespace Model
      * <p>A <code>HierarchyGroupSummary</code> object that contains information about
      * the level of the hierarchy group, including ARN, Id, and Name.</p>
      */
+    inline bool LevelThreeHasBeenSet() const { return m_levelThreeHasBeenSet; }
+
+    /**
+     * <p>A <code>HierarchyGroupSummary</code> object that contains information about
+     * the level of the hierarchy group, including ARN, Id, and Name.</p>
+     */
     inline void SetLevelThree(const HierarchyGroupSummary& value) { m_levelThreeHasBeenSet = true; m_levelThree = value; }
 
     /**
@@ -151,6 +169,12 @@ namespace Model
      * <p>A <code>HierarchyGroupSummary</code> object that contains information about
      * the level of the hierarchy group, including ARN, Id, and Name.</p>
      */
+    inline bool LevelFourHasBeenSet() const { return m_levelFourHasBeenSet; }
+
+    /**
+     * <p>A <code>HierarchyGroupSummary</code> object that contains information about
+     * the level of the hierarchy group, including ARN, Id, and Name.</p>
+     */
     inline void SetLevelFour(const HierarchyGroupSummary& value) { m_levelFourHasBeenSet = true; m_levelFour = value; }
 
     /**
@@ -177,6 +201,12 @@ namespace Model
      * the level of the hierarchy group, including ARN, Id, and Name.</p>
      */
     inline const HierarchyGroupSummary& GetLevelFive() const{ return m_levelFive; }
+
+    /**
+     * <p>A <code>HierarchyGroupSummary</code> object that contains information about
+     * the level of the hierarchy group, including ARN, Id, and Name.</p>
+     */
+    inline bool LevelFiveHasBeenSet() const { return m_levelFiveHasBeenSet; }
 
     /**
      * <p>A <code>HierarchyGroupSummary</code> object that contains information about

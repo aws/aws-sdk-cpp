@@ -61,6 +61,11 @@ namespace Model
     /**
      * <p>The name of the job definition. </p>
      */
+    inline bool JobDefinitionNameHasBeenSet() const { return m_jobDefinitionNameHasBeenSet; }
+
+    /**
+     * <p>The name of the job definition. </p>
+     */
     inline void SetJobDefinitionName(const Aws::String& value) { m_jobDefinitionNameHasBeenSet = true; m_jobDefinitionName = value; }
 
     /**
@@ -93,6 +98,11 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) for the job definition. </p>
      */
     inline const Aws::String& GetJobDefinitionArn() const{ return m_jobDefinitionArn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) for the job definition. </p>
+     */
+    inline bool JobDefinitionArnHasBeenSet() const { return m_jobDefinitionArnHasBeenSet; }
 
     /**
      * <p>The Amazon Resource Name (ARN) for the job definition. </p>
@@ -133,6 +143,11 @@ namespace Model
     /**
      * <p>The revision of the job definition.</p>
      */
+    inline bool RevisionHasBeenSet() const { return m_revisionHasBeenSet; }
+
+    /**
+     * <p>The revision of the job definition.</p>
+     */
     inline void SetRevision(int value) { m_revisionHasBeenSet = true; m_revision = value; }
 
     /**
@@ -145,6 +160,11 @@ namespace Model
      * <p>The status of the job definition.</p>
      */
     inline const Aws::String& GetStatus() const{ return m_status; }
+
+    /**
+     * <p>The status of the job definition.</p>
+     */
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
     /**
      * <p>The status of the job definition.</p>
@@ -185,6 +205,11 @@ namespace Model
     /**
      * <p>The type of job definition.</p>
      */
+    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
+
+    /**
+     * <p>The type of job definition.</p>
+     */
     inline void SetType(const Aws::String& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
@@ -220,6 +245,14 @@ namespace Model
      * defaults from the job definition.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetParameters() const{ return m_parameters; }
+
+    /**
+     * <p>Default parameters or parameter substitution placeholders that are set in the
+     * job definition. Parameters are specified as a key-value pair mapping. Parameters
+     * in a <code>SubmitJob</code> request override any corresponding parameter
+     * defaults from the job definition.</p>
+     */
+    inline bool ParametersHasBeenSet() const { return m_parametersHasBeenSet; }
 
     /**
      * <p>Default parameters or parameter substitution placeholders that are set in the
@@ -320,6 +353,12 @@ namespace Model
      * <p>The retry strategy to use for failed jobs that are submitted with this job
      * definition.</p>
      */
+    inline bool RetryStrategyHasBeenSet() const { return m_retryStrategyHasBeenSet; }
+
+    /**
+     * <p>The retry strategy to use for failed jobs that are submitted with this job
+     * definition.</p>
+     */
     inline void SetRetryStrategy(const RetryStrategy& value) { m_retryStrategyHasBeenSet = true; m_retryStrategy = value; }
 
     /**
@@ -345,6 +384,11 @@ namespace Model
      * <p>An object with various properties specific to container-based jobs. </p>
      */
     inline const ContainerProperties& GetContainerProperties() const{ return m_containerProperties; }
+
+    /**
+     * <p>An object with various properties specific to container-based jobs. </p>
+     */
+    inline bool ContainerPropertiesHasBeenSet() const { return m_containerPropertiesHasBeenSet; }
 
     /**
      * <p>An object with various properties specific to container-based jobs. </p>
@@ -379,6 +423,13 @@ namespace Model
      * definition. You can specify a timeout duration after which AWS Batch terminates
      * your jobs if they have not finished.</p>
      */
+    inline bool TimeoutHasBeenSet() const { return m_timeoutHasBeenSet; }
+
+    /**
+     * <p>The timeout configuration for jobs that are submitted with this job
+     * definition. You can specify a timeout duration after which AWS Batch terminates
+     * your jobs if they have not finished.</p>
+     */
     inline void SetTimeout(const JobTimeout& value) { m_timeoutHasBeenSet = true; m_timeout = value; }
 
     /**
@@ -407,6 +458,11 @@ namespace Model
      * <p>An object with various properties specific to multi-node parallel jobs.</p>
      */
     inline const NodeProperties& GetNodeProperties() const{ return m_nodeProperties; }
+
+    /**
+     * <p>An object with various properties specific to multi-node parallel jobs.</p>
+     */
+    inline bool NodePropertiesHasBeenSet() const { return m_nodePropertiesHasBeenSet; }
 
     /**
      * <p>An object with various properties specific to multi-node parallel jobs.</p>

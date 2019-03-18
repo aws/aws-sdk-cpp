@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The date when the status changed.</p>
      */
+    inline bool DateHasBeenSet() const { return m_dateHasBeenSet; }
+
+    /**
+     * <p>The date when the status changed.</p>
+     */
     inline void SetDate(const Aws::Utils::DateTime& value) { m_dateHasBeenSet = true; m_date = value; }
 
     /**
@@ -83,6 +88,11 @@ namespace Model
     /**
      * <p>The status.</p>
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>The status.</p>
+     */
     inline void SetName(const AssociationStatusName& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
@@ -105,6 +115,11 @@ namespace Model
      * <p>The reason for the status.</p>
      */
     inline const Aws::String& GetMessage() const{ return m_message; }
+
+    /**
+     * <p>The reason for the status.</p>
+     */
+    inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
 
     /**
      * <p>The reason for the status.</p>
@@ -141,6 +156,11 @@ namespace Model
      * <p>A user-defined string.</p>
      */
     inline const Aws::String& GetAdditionalInfo() const{ return m_additionalInfo; }
+
+    /**
+     * <p>A user-defined string.</p>
+     */
+    inline bool AdditionalInfoHasBeenSet() const { return m_additionalInfoHasBeenSet; }
 
     /**
      * <p>A user-defined string.</p>

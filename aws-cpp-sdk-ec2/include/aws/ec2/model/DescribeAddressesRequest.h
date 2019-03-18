@@ -96,6 +96,31 @@ namespace Model
      * the resource. Use this filter to find all resources assigned a tag with a
      * specific key, regardless of the tag value.</p> </li> </ul>
      */
+    inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
+
+    /**
+     * <p>One or more filters. Filter names and values are case-sensitive.</p> <ul>
+     * <li> <p> <code>allocation-id</code> - [EC2-VPC] The allocation ID for the
+     * address.</p> </li> <li> <p> <code>association-id</code> - [EC2-VPC] The
+     * association ID for the address.</p> </li> <li> <p> <code>domain</code> -
+     * Indicates whether the address is for use in EC2-Classic (<code>standard</code>)
+     * or in a VPC (<code>vpc</code>).</p> </li> <li> <p> <code>instance-id</code> -
+     * The ID of the instance the address is associated with, if any.</p> </li> <li>
+     * <p> <code>network-interface-id</code> - [EC2-VPC] The ID of the network
+     * interface that the address is associated with, if any.</p> </li> <li> <p>
+     * <code>network-interface-owner-id</code> - The AWS account ID of the owner.</p>
+     * </li> <li> <p> <code>private-ip-address</code> - [EC2-VPC] The private IP
+     * address associated with the Elastic IP address.</p> </li> <li> <p>
+     * <code>public-ip</code> - The Elastic IP address.</p> </li> <li> <p>
+     * <code>tag</code>:&lt;key&gt; - The key/value combination of a tag assigned to
+     * the resource. Use the tag key in the filter name and the tag value as the filter
+     * value. For example, to find all resources that have a tag with the key
+     * <code>Owner</code> and the value <code>TeamA</code>, specify
+     * <code>tag:Owner</code> for the filter name and <code>TeamA</code> for the filter
+     * value.</p> </li> <li> <p> <code>tag-key</code> - The key of a tag assigned to
+     * the resource. Use this filter to find all resources assigned a tag with a
+     * specific key, regardless of the tag value.</p> </li> </ul>
+     */
     inline void SetFilters(const Aws::Vector<Filter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
 
     /**
@@ -234,6 +259,12 @@ namespace Model
      * <p>One or more Elastic IP addresses.</p> <p>Default: Describes all your Elastic
      * IP addresses.</p>
      */
+    inline bool PublicIpsHasBeenSet() const { return m_publicIpsHasBeenSet; }
+
+    /**
+     * <p>One or more Elastic IP addresses.</p> <p>Default: Describes all your Elastic
+     * IP addresses.</p>
+     */
     inline void SetPublicIps(const Aws::Vector<Aws::String>& value) { m_publicIpsHasBeenSet = true; m_publicIps = value; }
 
     /**
@@ -278,6 +309,12 @@ namespace Model
      * Elastic IP addresses.</p>
      */
     inline const Aws::Vector<Aws::String>& GetAllocationIds() const{ return m_allocationIds; }
+
+    /**
+     * <p>[EC2-VPC] One or more allocation IDs.</p> <p>Default: Describes all your
+     * Elastic IP addresses.</p>
+     */
+    inline bool AllocationIdsHasBeenSet() const { return m_allocationIdsHasBeenSet; }
 
     /**
      * <p>[EC2-VPC] One or more allocation IDs.</p> <p>Default: Describes all your
@@ -329,6 +366,14 @@ namespace Model
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
     inline bool GetDryRun() const{ return m_dryRun; }
+
+    /**
+     * <p>Checks whether you have the required permissions for the action, without
+     * actually making the request, and provides an error response. If you have the
+     * required permissions, the error response is <code>DryRunOperation</code>.
+     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+     */
+    inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
 
     /**
      * <p>Checks whether you have the required permissions for the action, without

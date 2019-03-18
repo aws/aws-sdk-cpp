@@ -58,6 +58,12 @@ namespace Model
      * <p>The percentage of traffic that is shifted at the start of each increment of a
      * <code>TimeBasedLinear</code> deployment.</p>
      */
+    inline bool LinearPercentageHasBeenSet() const { return m_linearPercentageHasBeenSet; }
+
+    /**
+     * <p>The percentage of traffic that is shifted at the start of each increment of a
+     * <code>TimeBasedLinear</code> deployment.</p>
+     */
     inline void SetLinearPercentage(int value) { m_linearPercentageHasBeenSet = true; m_linearPercentage = value; }
 
     /**
@@ -72,6 +78,12 @@ namespace Model
      * <code>TimeBasedLinear</code> deployment.</p>
      */
     inline int GetLinearInterval() const{ return m_linearInterval; }
+
+    /**
+     * <p>The number of minutes between each incremental traffic shift of a
+     * <code>TimeBasedLinear</code> deployment.</p>
+     */
+    inline bool LinearIntervalHasBeenSet() const { return m_linearIntervalHasBeenSet; }
 
     /**
      * <p>The number of minutes between each incremental traffic shift of a

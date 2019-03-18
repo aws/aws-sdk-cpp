@@ -56,6 +56,12 @@ namespace Model
      * <p>Indicates whether server-side encryption is enabled (true) or disabled
      * (false) on the cluster.</p>
      */
+    inline bool EnabledHasBeenSet() const { return m_enabledHasBeenSet; }
+
+    /**
+     * <p>Indicates whether server-side encryption is enabled (true) or disabled
+     * (false) on the cluster.</p>
+     */
     inline void SetEnabled(bool value) { m_enabledHasBeenSet = true; m_enabled = value; }
 
     /**

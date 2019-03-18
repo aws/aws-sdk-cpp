@@ -54,6 +54,11 @@ namespace Model
     /**
      * <p>The number of snapshots to keep for each volume, up to a maximum of 1000.</p>
      */
+    inline bool CountHasBeenSet() const { return m_countHasBeenSet; }
+
+    /**
+     * <p>The number of snapshots to keep for each volume, up to a maximum of 1000.</p>
+     */
     inline void SetCount(int value) { m_countHasBeenSet = true; m_count = value; }
 
     /**

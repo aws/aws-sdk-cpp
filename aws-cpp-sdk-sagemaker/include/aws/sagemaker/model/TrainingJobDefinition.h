@@ -77,6 +77,18 @@ namespace Model
      * supports the <code>Pipe</code> input mode, Amazon SageMaker streams data
      * directly from S3 to the container.</p>
      */
+    inline bool TrainingInputModeHasBeenSet() const { return m_trainingInputModeHasBeenSet; }
+
+    /**
+     * <p>The input mode used by the algorithm for the training job. For the input
+     * modes that Amazon SageMaker algorithms support, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>.</p>
+     * <p>If an algorithm supports the <code>File</code> input mode, Amazon SageMaker
+     * downloads the training data from S3 to the provisioned ML storage Volume, and
+     * mounts the directory to docker volume for training container. If an algorithm
+     * supports the <code>Pipe</code> input mode, Amazon SageMaker streams data
+     * directly from S3 to the container.</p>
+     */
     inline void SetTrainingInputMode(const TrainingInputMode& value) { m_trainingInputModeHasBeenSet = true; m_trainingInputMode = value; }
 
     /**
@@ -120,6 +132,11 @@ namespace Model
      * <p>The hyperparameters used for the training job.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetHyperParameters() const{ return m_hyperParameters; }
+
+    /**
+     * <p>The hyperparameters used for the training job.</p>
+     */
+    inline bool HyperParametersHasBeenSet() const { return m_hyperParametersHasBeenSet; }
 
     /**
      * <p>The hyperparameters used for the training job.</p>
@@ -187,6 +204,12 @@ namespace Model
      * <p>An array of <code>Channel</code> objects, each of which specifies an input
      * source.</p>
      */
+    inline bool InputDataConfigHasBeenSet() const { return m_inputDataConfigHasBeenSet; }
+
+    /**
+     * <p>An array of <code>Channel</code> objects, each of which specifies an input
+     * source.</p>
+     */
     inline void SetInputDataConfig(const Aws::Vector<Channel>& value) { m_inputDataConfigHasBeenSet = true; m_inputDataConfig = value; }
 
     /**
@@ -230,6 +253,12 @@ namespace Model
      * <p>the path to the S3 bucket where you want to store model artifacts. Amazon
      * SageMaker creates subfolders for the artifacts.</p>
      */
+    inline bool OutputDataConfigHasBeenSet() const { return m_outputDataConfigHasBeenSet; }
+
+    /**
+     * <p>the path to the S3 bucket where you want to store model artifacts. Amazon
+     * SageMaker creates subfolders for the artifacts.</p>
+     */
     inline void SetOutputDataConfig(const OutputDataConfig& value) { m_outputDataConfigHasBeenSet = true; m_outputDataConfig = value; }
 
     /**
@@ -256,6 +285,12 @@ namespace Model
      * use for model training.</p>
      */
     inline const ResourceConfig& GetResourceConfig() const{ return m_resourceConfig; }
+
+    /**
+     * <p>The resources, including the ML compute instances and ML storage volumes, to
+     * use for model training.</p>
+     */
+    inline bool ResourceConfigHasBeenSet() const { return m_resourceConfigHasBeenSet; }
 
     /**
      * <p>The resources, including the ML compute instances and ML storage volumes, to
@@ -289,6 +324,14 @@ namespace Model
      * 120-second window to save the model artifacts.</p>
      */
     inline const StoppingCondition& GetStoppingCondition() const{ return m_stoppingCondition; }
+
+    /**
+     * <p>Sets a duration for training. Use this parameter to cap model training
+     * costs.</p> <p>To stop a job, Amazon SageMaker sends the algorithm the SIGTERM
+     * signal, which delays job termination for 120 seconds. Algorithms might use this
+     * 120-second window to save the model artifacts.</p>
+     */
+    inline bool StoppingConditionHasBeenSet() const { return m_stoppingConditionHasBeenSet; }
 
     /**
      * <p>Sets a duration for training. Use this parameter to cap model training

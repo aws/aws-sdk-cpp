@@ -58,6 +58,12 @@ namespace Model
      * <p>[Required] The domain name of the <a>BasePathMapping</a> resource to
      * change.</p>
      */
+    inline bool DomainNameHasBeenSet() const { return m_domainNameHasBeenSet; }
+
+    /**
+     * <p>[Required] The domain name of the <a>BasePathMapping</a> resource to
+     * change.</p>
+     */
     inline void SetDomainName(const Aws::String& value) { m_domainNameHasBeenSet = true; m_domainName = value; }
 
     /**
@@ -101,6 +107,12 @@ namespace Model
      * <p>[Required] The base path of the <a>BasePathMapping</a> resource to
      * change.</p>
      */
+    inline bool BasePathHasBeenSet() const { return m_basePathHasBeenSet; }
+
+    /**
+     * <p>[Required] The base path of the <a>BasePathMapping</a> resource to
+     * change.</p>
+     */
     inline void SetBasePath(const Aws::String& value) { m_basePathHasBeenSet = true; m_basePath = value; }
 
     /**
@@ -139,6 +151,12 @@ namespace Model
      * the order specified in this list.</p>
      */
     inline const Aws::Vector<PatchOperation>& GetPatchOperations() const{ return m_patchOperations; }
+
+    /**
+     * <p>A list of update operations to be applied to the specified resource and in
+     * the order specified in this list.</p>
+     */
+    inline bool PatchOperationsHasBeenSet() const { return m_patchOperationsHasBeenSet; }
 
     /**
      * <p>A list of update operations to be applied to the specified resource and in

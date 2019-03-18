@@ -129,6 +129,27 @@ namespace Model
      * Route 53 Determines Whether an Endpoint Is Healthy</a> in the <i>Route 53
      * Developer Guide</i>.</p>
      */
+    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
+
+    /**
+     * <p>The type of health check that you want to create, which indicates how Route
+     * 53 determines whether an endpoint is healthy.</p> <important> <p>You can't
+     * change the value of <code>Type</code> after you create a health check.</p>
+     * </important> <p>You can create the following types of health checks:</p> <ul>
+     * <li> <p> <b>HTTP</b>: Route 53 tries to establish a TCP connection. If
+     * successful, Route 53 submits an HTTP request and waits for an HTTP status code
+     * of 200 or greater and less than 400.</p> </li> <li> <p> <b>HTTPS</b>: Route 53
+     * tries to establish a TCP connection. If successful, Route 53 submits an HTTPS
+     * request and waits for an HTTP status code of 200 or greater and less than
+     * 400.</p> <important> <p>If you specify HTTPS for the value of <code>Type</code>,
+     * the endpoint must support TLS v1.0 or later.</p> </important> </li> <li> <p>
+     * <b>TCP</b>: Route 53 tries to establish a TCP connection.</p> <p>If you specify
+     * <code>TCP</code> for <code>Type</code>, don't specify a value for
+     * <code>ResourcePath</code>.</p> </li> </ul> <p>For more information, see <a
+     * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-determining-health-of-endpoints.html">How
+     * Route 53 Determines Whether an Endpoint Is Healthy</a> in the <i>Route 53
+     * Developer Guide</i>.</p>
+     */
     inline void SetType(const HealthCheckType& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
@@ -217,6 +238,18 @@ namespace Model
      * specify <code>TCP</code> for <code>Type</code>, you must <i>not</i> specify a
      * value for <code>ResourcePath</code>.</p>
      */
+    inline bool ResourcePathHasBeenSet() const { return m_resourcePathHasBeenSet; }
+
+    /**
+     * <p>The path that you want Route 53 to request when performing health checks. The
+     * path can be any value for which your endpoint will return an HTTP status code of
+     * 2xx or 3xx when the endpoint is healthy, such as the file
+     * <code>/docs/route53-health-check.html</code>. Route 53 automatically adds the
+     * DNS name for the service. If you don't specify a value for
+     * <code>ResourcePath</code>, the default value is <code>/</code>.</p> <p>If you
+     * specify <code>TCP</code> for <code>Type</code>, you must <i>not</i> specify a
+     * value for <code>ResourcePath</code>.</p>
+     */
     inline void SetResourcePath(const Aws::String& value) { m_resourcePathHasBeenSet = true; m_resourcePath = value; }
 
     /**
@@ -289,6 +322,16 @@ namespace Model
      * Developer Guide</i>.</p>
      */
     inline int GetFailureThreshold() const{ return m_failureThreshold; }
+
+    /**
+     * <p>The number of consecutive health checks that an endpoint must pass or fail
+     * for Route 53 to change the current status of the endpoint from unhealthy to
+     * healthy or vice versa. For more information, see <a
+     * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-determining-health-of-endpoints.html">How
+     * Route 53 Determines Whether an Endpoint Is Healthy</a> in the <i>Route 53
+     * Developer Guide</i>.</p>
+     */
+    inline bool FailureThresholdHasBeenSet() const { return m_failureThresholdHasBeenSet; }
 
     /**
      * <p>The number of consecutive health checks that an endpoint must pass or fail

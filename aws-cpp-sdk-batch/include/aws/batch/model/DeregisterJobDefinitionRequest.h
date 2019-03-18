@@ -52,6 +52,12 @@ namespace Model
      * <p>The name and revision (<code>name:revision</code>) or full Amazon Resource
      * Name (ARN) of the job definition to deregister. </p>
      */
+    inline bool JobDefinitionHasBeenSet() const { return m_jobDefinitionHasBeenSet; }
+
+    /**
+     * <p>The name and revision (<code>name:revision</code>) or full Amazon Resource
+     * Name (ARN) of the job definition to deregister. </p>
+     */
     inline void SetJobDefinition(const Aws::String& value) { m_jobDefinitionHasBeenSet = true; m_jobDefinition = value; }
 
     /**

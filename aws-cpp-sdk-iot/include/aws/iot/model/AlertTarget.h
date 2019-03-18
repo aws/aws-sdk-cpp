@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The ARN of the notification target to which alerts are sent.</p>
      */
+    inline bool AlertTargetArnHasBeenSet() const { return m_alertTargetArnHasBeenSet; }
+
+    /**
+     * <p>The ARN of the notification target to which alerts are sent.</p>
+     */
     inline void SetAlertTargetArn(const Aws::String& value) { m_alertTargetArnHasBeenSet = true; m_alertTargetArn = value; }
 
     /**
@@ -89,6 +94,12 @@ namespace Model
      * target.</p>
      */
     inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
+
+    /**
+     * <p>The ARN of the role that grants permission to send alerts to the notification
+     * target.</p>
+     */
+    inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
 
     /**
      * <p>The ARN of the role that grants permission to send alerts to the notification

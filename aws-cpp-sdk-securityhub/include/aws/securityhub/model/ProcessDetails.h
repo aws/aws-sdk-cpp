@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The name of the process.</p>
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>The name of the process.</p>
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
@@ -88,6 +93,11 @@ namespace Model
      * <p>The path to the process executable.</p>
      */
     inline const Aws::String& GetPath() const{ return m_path; }
+
+    /**
+     * <p>The path to the process executable.</p>
+     */
+    inline bool PathHasBeenSet() const { return m_pathHasBeenSet; }
 
     /**
      * <p>The path to the process executable.</p>
@@ -128,6 +138,11 @@ namespace Model
     /**
      * <p>The process ID.</p>
      */
+    inline bool PidHasBeenSet() const { return m_pidHasBeenSet; }
+
+    /**
+     * <p>The process ID.</p>
+     */
     inline void SetPid(int value) { m_pidHasBeenSet = true; m_pid = value; }
 
     /**
@@ -144,6 +159,11 @@ namespace Model
     /**
      * <p>The parent process ID.</p>
      */
+    inline bool ParentPidHasBeenSet() const { return m_parentPidHasBeenSet; }
+
+    /**
+     * <p>The parent process ID.</p>
+     */
     inline void SetParentPid(int value) { m_parentPidHasBeenSet = true; m_parentPid = value; }
 
     /**
@@ -156,6 +176,11 @@ namespace Model
      * <p>The date/time that the process was launched.</p>
      */
     inline const Aws::String& GetLaunchedAt() const{ return m_launchedAt; }
+
+    /**
+     * <p>The date/time that the process was launched.</p>
+     */
+    inline bool LaunchedAtHasBeenSet() const { return m_launchedAtHasBeenSet; }
 
     /**
      * <p>The date/time that the process was launched.</p>
@@ -192,6 +217,11 @@ namespace Model
      * <p>The date/time that the process was terminated.</p>
      */
     inline const Aws::String& GetTerminatedAt() const{ return m_terminatedAt; }
+
+    /**
+     * <p>The date/time that the process was terminated.</p>
+     */
+    inline bool TerminatedAtHasBeenSet() const { return m_terminatedAtHasBeenSet; }
 
     /**
      * <p>The date/time that the process was terminated.</p>

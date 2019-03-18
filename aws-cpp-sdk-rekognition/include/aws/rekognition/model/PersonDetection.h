@@ -62,6 +62,12 @@ namespace Model
      * <p>The time, in milliseconds from the start of the video, that the person's path
      * was tracked.</p>
      */
+    inline bool TimestampHasBeenSet() const { return m_timestampHasBeenSet; }
+
+    /**
+     * <p>The time, in milliseconds from the start of the video, that the person's path
+     * was tracked.</p>
+     */
     inline void SetTimestamp(long long value) { m_timestampHasBeenSet = true; m_timestamp = value; }
 
     /**
@@ -75,6 +81,11 @@ namespace Model
      * <p>Details about a person whose path was tracked in a video.</p>
      */
     inline const PersonDetail& GetPerson() const{ return m_person; }
+
+    /**
+     * <p>Details about a person whose path was tracked in a video.</p>
+     */
+    inline bool PersonHasBeenSet() const { return m_personHasBeenSet; }
 
     /**
      * <p>Details about a person whose path was tracked in a video.</p>

@@ -55,6 +55,11 @@ namespace Model
     /**
      * <p>Indicates whether the specified object has a Legal Hold in place.</p>
      */
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
+
+    /**
+     * <p>Indicates whether the specified object has a Legal Hold in place.</p>
+     */
     inline void SetStatus(const ObjectLockLegalHoldStatus& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**

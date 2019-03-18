@@ -53,6 +53,11 @@ namespace Model
     /**
      * <p>The logging options payload.</p>
      */
+    inline bool LoggingOptionsPayloadHasBeenSet() const { return m_loggingOptionsPayloadHasBeenSet; }
+
+    /**
+     * <p>The logging options payload.</p>
+     */
     inline void SetLoggingOptionsPayload(const LoggingOptionsPayload& value) { m_loggingOptionsPayloadHasBeenSet = true; m_loggingOptionsPayload = value; }
 
     /**

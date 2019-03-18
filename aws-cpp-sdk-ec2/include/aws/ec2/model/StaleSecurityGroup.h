@@ -60,6 +60,11 @@ namespace Model
     /**
      * <p>The description of the security group.</p>
      */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
+
+    /**
+     * <p>The description of the security group.</p>
+     */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
@@ -92,6 +97,11 @@ namespace Model
      * <p>The ID of the security group.</p>
      */
     inline const Aws::String& GetGroupId() const{ return m_groupId; }
+
+    /**
+     * <p>The ID of the security group.</p>
+     */
+    inline bool GroupIdHasBeenSet() const { return m_groupIdHasBeenSet; }
 
     /**
      * <p>The ID of the security group.</p>
@@ -132,6 +142,11 @@ namespace Model
     /**
      * <p>The name of the security group.</p>
      */
+    inline bool GroupNameHasBeenSet() const { return m_groupNameHasBeenSet; }
+
+    /**
+     * <p>The name of the security group.</p>
+     */
     inline void SetGroupName(const Aws::String& value) { m_groupNameHasBeenSet = true; m_groupName = value; }
 
     /**
@@ -164,6 +179,11 @@ namespace Model
      * <p>Information about the stale inbound rules in the security group.</p>
      */
     inline const Aws::Vector<StaleIpPermission>& GetStaleIpPermissions() const{ return m_staleIpPermissions; }
+
+    /**
+     * <p>Information about the stale inbound rules in the security group.</p>
+     */
+    inline bool StaleIpPermissionsHasBeenSet() const { return m_staleIpPermissionsHasBeenSet; }
 
     /**
      * <p>Information about the stale inbound rules in the security group.</p>
@@ -204,6 +224,11 @@ namespace Model
     /**
      * <p>Information about the stale outbound rules in the security group.</p>
      */
+    inline bool StaleIpPermissionsEgressHasBeenSet() const { return m_staleIpPermissionsEgressHasBeenSet; }
+
+    /**
+     * <p>Information about the stale outbound rules in the security group.</p>
+     */
     inline void SetStaleIpPermissionsEgress(const Aws::Vector<StaleIpPermission>& value) { m_staleIpPermissionsEgressHasBeenSet = true; m_staleIpPermissionsEgress = value; }
 
     /**
@@ -236,6 +261,11 @@ namespace Model
      * <p>The ID of the VPC for the security group.</p>
      */
     inline const Aws::String& GetVpcId() const{ return m_vpcId; }
+
+    /**
+     * <p>The ID of the VPC for the security group.</p>
+     */
+    inline bool VpcIdHasBeenSet() const { return m_vpcIdHasBeenSet; }
 
     /**
      * <p>The ID of the VPC for the security group.</p>

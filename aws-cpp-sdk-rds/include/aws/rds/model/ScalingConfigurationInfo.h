@@ -61,6 +61,12 @@ namespace Model
      * <p>The maximum capacity for the Aurora DB cluster in <code>serverless</code> DB
      * engine mode.</p>
      */
+    inline bool MinCapacityHasBeenSet() const { return m_minCapacityHasBeenSet; }
+
+    /**
+     * <p>The maximum capacity for the Aurora DB cluster in <code>serverless</code> DB
+     * engine mode.</p>
+     */
     inline void SetMinCapacity(int value) { m_minCapacityHasBeenSet = true; m_minCapacity = value; }
 
     /**
@@ -75,6 +81,12 @@ namespace Model
      * engine mode.</p>
      */
     inline int GetMaxCapacity() const{ return m_maxCapacity; }
+
+    /**
+     * <p>The maximum capacity for an Aurora DB cluster in <code>serverless</code> DB
+     * engine mode.</p>
+     */
+    inline bool MaxCapacityHasBeenSet() const { return m_maxCapacityHasBeenSet; }
 
     /**
      * <p>The maximum capacity for an Aurora DB cluster in <code>serverless</code> DB
@@ -99,6 +111,12 @@ namespace Model
      * <p>A value that indicates whether automatic pause is allowed for the Aurora DB
      * cluster in <code>serverless</code> DB engine mode. </p>
      */
+    inline bool AutoPauseHasBeenSet() const { return m_autoPauseHasBeenSet; }
+
+    /**
+     * <p>A value that indicates whether automatic pause is allowed for the Aurora DB
+     * cluster in <code>serverless</code> DB engine mode. </p>
+     */
     inline void SetAutoPause(bool value) { m_autoPauseHasBeenSet = true; m_autoPause = value; }
 
     /**
@@ -114,6 +132,13 @@ namespace Model
      * it's idle (it has no connections).</p>
      */
     inline int GetSecondsUntilAutoPause() const{ return m_secondsUntilAutoPause; }
+
+    /**
+     * <p>The remaining amount of time, in seconds, before the Aurora DB cluster in
+     * <code>serverless</code> mode is paused. A DB cluster can be paused only when
+     * it's idle (it has no connections).</p>
+     */
+    inline bool SecondsUntilAutoPauseHasBeenSet() const { return m_secondsUntilAutoPauseHasBeenSet; }
 
     /**
      * <p>The remaining amount of time, in seconds, before the Aurora DB cluster in

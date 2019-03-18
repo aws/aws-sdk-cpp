@@ -60,6 +60,12 @@ namespace Model
      * <p>The cluster identifier for the cluster to be deleted. This parameter is not
      * case sensitive.</p>
      */
+    inline bool CacheClusterIdHasBeenSet() const { return m_cacheClusterIdHasBeenSet; }
+
+    /**
+     * <p>The cluster identifier for the cluster to be deleted. This parameter is not
+     * case sensitive.</p>
+     */
     inline void SetCacheClusterId(const Aws::String& value) { m_cacheClusterIdHasBeenSet = true; m_cacheClusterId = value; }
 
     /**
@@ -99,6 +105,13 @@ namespace Model
      * the cluster immediately afterward.</p>
      */
     inline const Aws::String& GetFinalSnapshotIdentifier() const{ return m_finalSnapshotIdentifier; }
+
+    /**
+     * <p>The user-supplied name of a final cluster snapshot. This is the unique name
+     * that identifies the snapshot. ElastiCache creates the snapshot, and then deletes
+     * the cluster immediately afterward.</p>
+     */
+    inline bool FinalSnapshotIdentifierHasBeenSet() const { return m_finalSnapshotIdentifierHasBeenSet; }
 
     /**
      * <p>The user-supplied name of a final cluster snapshot. This is the unique name

@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The ID of the subnet.</p>
      */
+    inline bool SubnetIdHasBeenSet() const { return m_subnetIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the subnet.</p>
+     */
     inline void SetSubnetId(const Aws::String& value) { m_subnetIdHasBeenSet = true; m_subnetId = value; }
 
     /**
@@ -89,6 +94,11 @@ namespace Model
      * <p>[Network Load Balancers] The allocation ID of the Elastic IP address.</p>
      */
     inline const Aws::String& GetAllocationId() const{ return m_allocationId; }
+
+    /**
+     * <p>[Network Load Balancers] The allocation ID of the Elastic IP address.</p>
+     */
+    inline bool AllocationIdHasBeenSet() const { return m_allocationIdHasBeenSet; }
 
     /**
      * <p>[Network Load Balancers] The allocation ID of the Elastic IP address.</p>

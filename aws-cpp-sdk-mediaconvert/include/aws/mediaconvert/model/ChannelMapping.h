@@ -60,6 +60,11 @@ namespace Model
     /**
      * List of output channels
      */
+    inline bool OutputChannelsHasBeenSet() const { return m_outputChannelsHasBeenSet; }
+
+    /**
+     * List of output channels
+     */
     inline void SetOutputChannels(const Aws::Vector<OutputChannelMapping>& value) { m_outputChannelsHasBeenSet = true; m_outputChannels = value; }
 
     /**

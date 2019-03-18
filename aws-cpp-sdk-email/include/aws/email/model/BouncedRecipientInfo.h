@@ -63,6 +63,11 @@ namespace Model
     /**
      * <p>The email address of the recipient of the bounced email.</p>
      */
+    inline bool RecipientHasBeenSet() const { return m_recipientHasBeenSet; }
+
+    /**
+     * <p>The email address of the recipient of the bounced email.</p>
+     */
     inline void SetRecipient(const Aws::String& value) { m_recipientHasBeenSet = true; m_recipient = value; }
 
     /**
@@ -100,6 +105,16 @@ namespace Model
      * SES Developer Guide</a>.</p>
      */
     inline const Aws::String& GetRecipientArn() const{ return m_recipientArn; }
+
+    /**
+     * <p>This parameter is used only for sending authorization. It is the ARN of the
+     * identity that is associated with the sending authorization policy that permits
+     * you to receive email for the recipient of the bounced email. For more
+     * information about sending authorization, see the <a
+     * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon
+     * SES Developer Guide</a>.</p>
+     */
+    inline bool RecipientArnHasBeenSet() const { return m_recipientArnHasBeenSet; }
 
     /**
      * <p>This parameter is used only for sending authorization. It is the ARN of the
@@ -172,6 +187,12 @@ namespace Model
      * <p>The reason for the bounce. You must provide either this parameter or
      * <code>RecipientDsnFields</code>.</p>
      */
+    inline bool BounceTypeHasBeenSet() const { return m_bounceTypeHasBeenSet; }
+
+    /**
+     * <p>The reason for the bounce. You must provide either this parameter or
+     * <code>RecipientDsnFields</code>.</p>
+     */
     inline void SetBounceType(const BounceType& value) { m_bounceTypeHasBeenSet = true; m_bounceType = value; }
 
     /**
@@ -199,6 +220,13 @@ namespace Model
      * either this parameter or <code>BounceType</code>.</p>
      */
     inline const RecipientDsnFields& GetRecipientDsnFields() const{ return m_recipientDsnFields; }
+
+    /**
+     * <p>Recipient-related DSN fields, most of which would normally be filled in
+     * automatically when provided with a <code>BounceType</code>. You must provide
+     * either this parameter or <code>BounceType</code>.</p>
+     */
+    inline bool RecipientDsnFieldsHasBeenSet() const { return m_recipientDsnFieldsHasBeenSet; }
 
     /**
      * <p>Recipient-related DSN fields, most of which would normally be filled in

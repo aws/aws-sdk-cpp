@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p>Unique identifier for a fleet to update attribute metadata for.</p>
      */
+    inline bool FleetIdHasBeenSet() const { return m_fleetIdHasBeenSet; }
+
+    /**
+     * <p>Unique identifier for a fleet to update attribute metadata for.</p>
+     */
     inline void SetFleetId(const Aws::String& value) { m_fleetIdHasBeenSet = true; m_fleetId = value; }
 
     /**
@@ -91,6 +96,12 @@ namespace Model
      * be unique.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
+
+    /**
+     * <p>Descriptive label that is associated with a fleet. Fleet names do not need to
+     * be unique.</p>
+     */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
      * <p>Descriptive label that is associated with a fleet. Fleet names do not need to
@@ -137,6 +148,11 @@ namespace Model
     /**
      * <p>Human-readable description of a fleet.</p>
      */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
+
+    /**
+     * <p>Human-readable description of a fleet.</p>
+     */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
@@ -175,6 +191,17 @@ namespace Model
      * event.</p> </li> </ul>
      */
     inline const ProtectionPolicy& GetNewGameSessionProtectionPolicy() const{ return m_newGameSessionProtectionPolicy; }
+
+    /**
+     * <p>Game session protection policy to apply to all new instances created in this
+     * fleet. Instances that already exist are not affected. You can set protection for
+     * individual instances using <a>UpdateGameSession</a>.</p> <ul> <li> <p>
+     * <b>NoProtection</b> -- The game session can be terminated during a scale-down
+     * event.</p> </li> <li> <p> <b>FullProtection</b> -- If the game session is in an
+     * <code>ACTIVE</code> status, it cannot be terminated during a scale-down
+     * event.</p> </li> </ul>
+     */
+    inline bool NewGameSessionProtectionPolicyHasBeenSet() const { return m_newGameSessionProtectionPolicyHasBeenSet; }
 
     /**
      * <p>Game session protection policy to apply to all new instances created in this
@@ -231,6 +258,12 @@ namespace Model
      * <p>Policy that limits the number of game sessions an individual player can
      * create over a span of time. </p>
      */
+    inline bool ResourceCreationLimitPolicyHasBeenSet() const { return m_resourceCreationLimitPolicyHasBeenSet; }
+
+    /**
+     * <p>Policy that limits the number of game sessions an individual player can
+     * create over a span of time. </p>
+     */
     inline void SetResourceCreationLimitPolicy(const ResourceCreationLimitPolicy& value) { m_resourceCreationLimitPolicyHasBeenSet = true; m_resourceCreationLimitPolicy = value; }
 
     /**
@@ -260,6 +293,15 @@ namespace Model
      * time.</p>
      */
     inline const Aws::Vector<Aws::String>& GetMetricGroups() const{ return m_metricGroups; }
+
+    /**
+     * <p>Names of metric groups to include this fleet in. Amazon CloudWatch uses a
+     * fleet metric group is to aggregate metrics from multiple fleets. Use an existing
+     * metric group name to add this fleet to the group. Or use a new name to create a
+     * new metric group. A fleet can only be included in one metric group at a
+     * time.</p>
+     */
+    inline bool MetricGroupsHasBeenSet() const { return m_metricGroupsHasBeenSet; }
 
     /**
      * <p>Names of metric groups to include this fleet in. Amazon CloudWatch uses a

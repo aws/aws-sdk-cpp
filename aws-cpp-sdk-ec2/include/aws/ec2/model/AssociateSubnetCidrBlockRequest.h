@@ -56,6 +56,12 @@ namespace Model
      * <p>The IPv6 CIDR block for your subnet. The subnet must have a /64 prefix
      * length.</p>
      */
+    inline bool Ipv6CidrBlockHasBeenSet() const { return m_ipv6CidrBlockHasBeenSet; }
+
+    /**
+     * <p>The IPv6 CIDR block for your subnet. The subnet must have a /64 prefix
+     * length.</p>
+     */
     inline void SetIpv6CidrBlock(const Aws::String& value) { m_ipv6CidrBlockHasBeenSet = true; m_ipv6CidrBlock = value; }
 
     /**
@@ -93,6 +99,11 @@ namespace Model
      * <p>The ID of your subnet.</p>
      */
     inline const Aws::String& GetSubnetId() const{ return m_subnetId; }
+
+    /**
+     * <p>The ID of your subnet.</p>
+     */
+    inline bool SubnetIdHasBeenSet() const { return m_subnetIdHasBeenSet; }
 
     /**
      * <p>The ID of your subnet.</p>

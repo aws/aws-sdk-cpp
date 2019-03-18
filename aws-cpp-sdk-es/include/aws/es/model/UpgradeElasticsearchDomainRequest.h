@@ -50,6 +50,9 @@ namespace Model
     inline const Aws::String& GetDomainName() const{ return m_domainName; }
 
     
+    inline bool DomainNameHasBeenSet() const { return m_domainNameHasBeenSet; }
+
+    
     inline void SetDomainName(const Aws::String& value) { m_domainNameHasBeenSet = true; m_domainName = value; }
 
     
@@ -72,6 +75,11 @@ namespace Model
      * <p>The version of Elasticsearch that you intend to upgrade the domain to.</p>
      */
     inline const Aws::String& GetTargetVersion() const{ return m_targetVersion; }
+
+    /**
+     * <p>The version of Elasticsearch that you intend to upgrade the domain to.</p>
+     */
+    inline bool TargetVersionHasBeenSet() const { return m_targetVersionHasBeenSet; }
 
     /**
      * <p>The version of Elasticsearch that you intend to upgrade the domain to.</p>
@@ -109,6 +117,12 @@ namespace Model
      * needs to be performed. This will not actually perform the Upgrade. </p>
      */
     inline bool GetPerformCheckOnly() const{ return m_performCheckOnly; }
+
+    /**
+     * <p> This flag, when set to True, indicates that an Upgrade Eligibility Check
+     * needs to be performed. This will not actually perform the Upgrade. </p>
+     */
+    inline bool PerformCheckOnlyHasBeenSet() const { return m_performCheckOnlyHasBeenSet; }
 
     /**
      * <p> This flag, when set to True, indicates that an Upgrade Eligibility Check

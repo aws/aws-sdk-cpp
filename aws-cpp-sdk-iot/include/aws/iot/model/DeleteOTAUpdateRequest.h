@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The OTA update ID to delete.</p>
      */
+    inline bool OtaUpdateIdHasBeenSet() const { return m_otaUpdateIdHasBeenSet; }
+
+    /**
+     * <p>The OTA update ID to delete.</p>
+     */
     inline void SetOtaUpdateId(const Aws::String& value) { m_otaUpdateIdHasBeenSet = true; m_otaUpdateId = value; }
 
     /**
@@ -94,6 +99,12 @@ namespace Model
      * <p>Specifies if the stream associated with an OTA update should be deleted when
      * the OTA update is deleted.</p>
      */
+    inline bool DeleteStreamHasBeenSet() const { return m_deleteStreamHasBeenSet; }
+
+    /**
+     * <p>Specifies if the stream associated with an OTA update should be deleted when
+     * the OTA update is deleted.</p>
+     */
     inline void SetDeleteStream(bool value) { m_deleteStreamHasBeenSet = true; m_deleteStream = value; }
 
     /**
@@ -108,6 +119,12 @@ namespace Model
      * with the OTA update is deleted.</p>
      */
     inline bool GetForceDeleteAWSJob() const{ return m_forceDeleteAWSJob; }
+
+    /**
+     * <p>Specifies if the AWS Job associated with the OTA update should be deleted
+     * with the OTA update is deleted.</p>
+     */
+    inline bool ForceDeleteAWSJobHasBeenSet() const { return m_forceDeleteAWSJobHasBeenSet; }
 
     /**
      * <p>Specifies if the AWS Job associated with the OTA update should be deleted

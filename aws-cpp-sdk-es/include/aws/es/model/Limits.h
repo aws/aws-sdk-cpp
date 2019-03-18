@@ -63,6 +63,12 @@ namespace Model
      * <p>StorageType represents the list of storage related types and attributes that
      * are available for given InstanceType. </p>
      */
+    inline bool StorageTypesHasBeenSet() const { return m_storageTypesHasBeenSet; }
+
+    /**
+     * <p>StorageType represents the list of storage related types and attributes that
+     * are available for given InstanceType. </p>
+     */
     inline void SetStorageTypes(const Aws::Vector<StorageType>& value) { m_storageTypesHasBeenSet = true; m_storageTypes = value; }
 
     /**
@@ -100,6 +106,9 @@ namespace Model
     inline const InstanceLimits& GetInstanceLimits() const{ return m_instanceLimits; }
 
     
+    inline bool InstanceLimitsHasBeenSet() const { return m_instanceLimitsHasBeenSet; }
+
+    
     inline void SetInstanceLimits(const InstanceLimits& value) { m_instanceLimitsHasBeenSet = true; m_instanceLimits = value; }
 
     
@@ -117,6 +126,12 @@ namespace Model
      * each of it's <code> <a>InstanceRole</a> </code> . </p>
      */
     inline const Aws::Vector<AdditionalLimit>& GetAdditionalLimits() const{ return m_additionalLimits; }
+
+    /**
+     * <p> List of additional limits that are specific to a given InstanceType and for
+     * each of it's <code> <a>InstanceRole</a> </code> . </p>
+     */
+    inline bool AdditionalLimitsHasBeenSet() const { return m_additionalLimitsHasBeenSet; }
 
     /**
      * <p> List of additional limits that are specific to a given InstanceType and for

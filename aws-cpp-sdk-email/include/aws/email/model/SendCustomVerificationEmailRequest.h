@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p>The email address to verify.</p>
      */
+    inline bool EmailAddressHasBeenSet() const { return m_emailAddressHasBeenSet; }
+
+    /**
+     * <p>The email address to verify.</p>
+     */
     inline void SetEmailAddress(const Aws::String& value) { m_emailAddressHasBeenSet = true; m_emailAddress = value; }
 
     /**
@@ -91,6 +96,12 @@ namespace Model
      * verification email.</p>
      */
     inline const Aws::String& GetTemplateName() const{ return m_templateName; }
+
+    /**
+     * <p>The name of the custom verification email template to use when sending the
+     * verification email.</p>
+     */
+    inline bool TemplateNameHasBeenSet() const { return m_templateNameHasBeenSet; }
 
     /**
      * <p>The name of the custom verification email template to use when sending the
@@ -133,6 +144,11 @@ namespace Model
      * <p>Name of a configuration set to use when sending the verification email.</p>
      */
     inline const Aws::String& GetConfigurationSetName() const{ return m_configurationSetName; }
+
+    /**
+     * <p>Name of a configuration set to use when sending the verification email.</p>
+     */
+    inline bool ConfigurationSetNameHasBeenSet() const { return m_configurationSetNameHasBeenSet; }
 
     /**
      * <p>Name of a configuration set to use when sending the verification email.</p>

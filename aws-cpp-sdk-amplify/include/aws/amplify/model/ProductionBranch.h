@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p> Last Deploy Time of Production Branch. </p>
      */
+    inline bool LastDeployTimeHasBeenSet() const { return m_lastDeployTimeHasBeenSet; }
+
+    /**
+     * <p> Last Deploy Time of Production Branch. </p>
+     */
     inline void SetLastDeployTime(const Aws::Utils::DateTime& value) { m_lastDeployTimeHasBeenSet = true; m_lastDeployTime = value; }
 
     /**
@@ -78,6 +83,11 @@ namespace Model
      * <p> Status of Production Branch. </p>
      */
     inline const Aws::String& GetStatus() const{ return m_status; }
+
+    /**
+     * <p> Status of Production Branch. </p>
+     */
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
     /**
      * <p> Status of Production Branch. </p>
@@ -118,6 +128,11 @@ namespace Model
     /**
      * <p> Thumbnail Url for Production Branch. </p>
      */
+    inline bool ThumbnailUrlHasBeenSet() const { return m_thumbnailUrlHasBeenSet; }
+
+    /**
+     * <p> Thumbnail Url for Production Branch. </p>
+     */
     inline void SetThumbnailUrl(const Aws::String& value) { m_thumbnailUrlHasBeenSet = true; m_thumbnailUrl = value; }
 
     /**
@@ -150,6 +165,11 @@ namespace Model
      * <p> Branch Name for Production Branch. </p>
      */
     inline const Aws::String& GetBranchName() const{ return m_branchName; }
+
+    /**
+     * <p> Branch Name for Production Branch. </p>
+     */
+    inline bool BranchNameHasBeenSet() const { return m_branchNameHasBeenSet; }
 
     /**
      * <p> Branch Name for Production Branch. </p>

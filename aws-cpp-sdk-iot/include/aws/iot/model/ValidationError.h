@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The description of an error found in the behaviors.</p>
      */
+    inline bool ErrorMessageHasBeenSet() const { return m_errorMessageHasBeenSet; }
+
+    /**
+     * <p>The description of an error found in the behaviors.</p>
+     */
     inline void SetErrorMessage(const Aws::String& value) { m_errorMessageHasBeenSet = true; m_errorMessage = value; }
 
     /**

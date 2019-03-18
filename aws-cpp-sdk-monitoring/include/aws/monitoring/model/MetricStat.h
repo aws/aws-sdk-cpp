@@ -62,6 +62,12 @@ namespace Model
      * <p>The metric to return, including the metric name, namespace, and
      * dimensions.</p>
      */
+    inline bool MetricHasBeenSet() const { return m_metricHasBeenSet; }
+
+    /**
+     * <p>The metric to return, including the metric name, namespace, and
+     * dimensions.</p>
+     */
     inline void SetMetric(const Metric& value) { m_metricHasBeenSet = true; m_metric = value; }
 
     /**
@@ -91,6 +97,11 @@ namespace Model
     /**
      * <p>The period, in seconds, to use when retrieving the metric.</p>
      */
+    inline bool PeriodHasBeenSet() const { return m_periodHasBeenSet; }
+
+    /**
+     * <p>The period, in seconds, to use when retrieving the metric.</p>
+     */
     inline void SetPeriod(int value) { m_periodHasBeenSet = true; m_period = value; }
 
     /**
@@ -104,6 +115,12 @@ namespace Model
      * statistic.</p>
      */
     inline const Aws::String& GetStat() const{ return m_stat; }
+
+    /**
+     * <p>The statistic to return. It can include any CloudWatch statistic or extended
+     * statistic.</p>
+     */
+    inline bool StatHasBeenSet() const { return m_statHasBeenSet; }
 
     /**
      * <p>The statistic to return. It can include any CloudWatch statistic or extended
@@ -146,6 +163,11 @@ namespace Model
      * <p>The unit to use for the returned data points.</p>
      */
     inline const StandardUnit& GetUnit() const{ return m_unit; }
+
+    /**
+     * <p>The unit to use for the returned data points.</p>
+     */
+    inline bool UnitHasBeenSet() const { return m_unitHasBeenSet; }
 
     /**
      * <p>The unit to use for the returned data points.</p>

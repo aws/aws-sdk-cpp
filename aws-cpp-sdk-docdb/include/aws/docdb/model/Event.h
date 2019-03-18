@@ -60,6 +60,11 @@ namespace Model
     /**
      * <p>Provides the identifier for the source of the event.</p>
      */
+    inline bool SourceIdentifierHasBeenSet() const { return m_sourceIdentifierHasBeenSet; }
+
+    /**
+     * <p>Provides the identifier for the source of the event.</p>
+     */
     inline void SetSourceIdentifier(const Aws::String& value) { m_sourceIdentifierHasBeenSet = true; m_sourceIdentifier = value; }
 
     /**
@@ -96,6 +101,11 @@ namespace Model
     /**
      * <p>Specifies the source type for this event.</p>
      */
+    inline bool SourceTypeHasBeenSet() const { return m_sourceTypeHasBeenSet; }
+
+    /**
+     * <p>Specifies the source type for this event.</p>
+     */
     inline void SetSourceType(const SourceType& value) { m_sourceTypeHasBeenSet = true; m_sourceType = value; }
 
     /**
@@ -118,6 +128,11 @@ namespace Model
      * <p>Provides the text of this event.</p>
      */
     inline const Aws::String& GetMessage() const{ return m_message; }
+
+    /**
+     * <p>Provides the text of this event.</p>
+     */
+    inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
 
     /**
      * <p>Provides the text of this event.</p>
@@ -154,6 +169,11 @@ namespace Model
      * <p>Specifies the category for the event.</p>
      */
     inline const Aws::Vector<Aws::String>& GetEventCategories() const{ return m_eventCategories; }
+
+    /**
+     * <p>Specifies the category for the event.</p>
+     */
+    inline bool EventCategoriesHasBeenSet() const { return m_eventCategoriesHasBeenSet; }
 
     /**
      * <p>Specifies the category for the event.</p>
@@ -199,6 +219,11 @@ namespace Model
     /**
      * <p>Specifies the date and time of the event.</p>
      */
+    inline bool DateHasBeenSet() const { return m_dateHasBeenSet; }
+
+    /**
+     * <p>Specifies the date and time of the event.</p>
+     */
     inline void SetDate(const Aws::Utils::DateTime& value) { m_dateHasBeenSet = true; m_date = value; }
 
     /**
@@ -221,6 +246,11 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) for the event.</p>
      */
     inline const Aws::String& GetSourceArn() const{ return m_sourceArn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) for the event.</p>
+     */
+    inline bool SourceArnHasBeenSet() const { return m_sourceArnHasBeenSet; }
 
     /**
      * <p>The Amazon Resource Name (ARN) for the event.</p>

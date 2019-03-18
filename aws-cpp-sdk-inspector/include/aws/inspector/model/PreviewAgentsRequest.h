@@ -52,6 +52,11 @@ namespace Model
     /**
      * <p>The ARN of the assessment target whose agents you want to preview.</p>
      */
+    inline bool PreviewAgentsArnHasBeenSet() const { return m_previewAgentsArnHasBeenSet; }
+
+    /**
+     * <p>The ARN of the assessment target whose agents you want to preview.</p>
+     */
     inline void SetPreviewAgentsArn(const Aws::String& value) { m_previewAgentsArnHasBeenSet = true; m_previewAgentsArn = value; }
 
     /**
@@ -88,6 +93,15 @@ namespace Model
      * data.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
+    /**
+     * <p>You can use this parameter when paginating results. Set the value of this
+     * parameter to null on your first call to the <b>PreviewAgents</b> action.
+     * Subsequent calls to the action fill <b>nextToken</b> in the request with the
+     * value of <b>NextToken</b> from the previous response to continue listing
+     * data.</p>
+     */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
      * <p>You can use this parameter when paginating results. Set the value of this
@@ -149,6 +163,12 @@ namespace Model
      * in the response. The default value is 10. The maximum value is 500.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
+
+    /**
+     * <p>You can use this parameter to indicate the maximum number of items you want
+     * in the response. The default value is 10. The maximum value is 500.</p>
+     */
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
 
     /**
      * <p>You can use this parameter to indicate the maximum number of items you want

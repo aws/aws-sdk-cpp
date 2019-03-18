@@ -73,6 +73,18 @@ namespace Model
      * <a>DeleteRuleGroup</a>).</p> <p> <code>RuleGroupId</code> is returned by
      * <a>CreateRuleGroup</a> and by <a>ListRuleGroups</a>.</p>
      */
+    inline bool RuleGroupIdHasBeenSet() const { return m_ruleGroupIdHasBeenSet; }
+
+    /**
+     * <p>A unique identifier for a <code>RuleGroup</code>. You use
+     * <code>RuleGroupId</code> to get more information about a <code>RuleGroup</code>
+     * (see <a>GetRuleGroup</a>), update a <code>RuleGroup</code> (see
+     * <a>UpdateRuleGroup</a>), insert a <code>RuleGroup</code> into a
+     * <code>WebACL</code> or delete a one from a <code>WebACL</code> (see
+     * <a>UpdateWebACL</a>), or delete a <code>RuleGroup</code> from AWS WAF (see
+     * <a>DeleteRuleGroup</a>).</p> <p> <code>RuleGroupId</code> is returned by
+     * <a>CreateRuleGroup</a> and by <a>ListRuleGroups</a>.</p>
+     */
     inline void SetRuleGroupId(const Aws::String& value) { m_ruleGroupIdHasBeenSet = true; m_ruleGroupId = value; }
 
     /**
@@ -146,6 +158,12 @@ namespace Model
      * <p>The friendly name or description for the <code>RuleGroup</code>. You can't
      * change the name of a <code>RuleGroup</code> after you create it.</p>
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>The friendly name or description for the <code>RuleGroup</code>. You can't
+     * change the name of a <code>RuleGroup</code> after you create it.</p>
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
@@ -186,6 +204,14 @@ namespace Model
      * metric after you create the <code>RuleGroup</code>.</p>
      */
     inline const Aws::String& GetMetricName() const{ return m_metricName; }
+
+    /**
+     * <p>A friendly name or description for the metrics for this
+     * <code>RuleGroup</code>. The name can contain only alphanumeric characters (A-Z,
+     * a-z, 0-9); the name can't contain whitespace. You can't change the name of the
+     * metric after you create the <code>RuleGroup</code>.</p>
+     */
+    inline bool MetricNameHasBeenSet() const { return m_metricNameHasBeenSet; }
 
     /**
      * <p>A friendly name or description for the metrics for this

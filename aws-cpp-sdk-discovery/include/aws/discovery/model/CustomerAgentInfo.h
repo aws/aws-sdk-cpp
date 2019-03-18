@@ -53,6 +53,11 @@ namespace Model
     /**
      * <p>Number of active discovery agents.</p>
      */
+    inline bool ActiveAgentsHasBeenSet() const { return m_activeAgentsHasBeenSet; }
+
+    /**
+     * <p>Number of active discovery agents.</p>
+     */
     inline void SetActiveAgents(int value) { m_activeAgentsHasBeenSet = true; m_activeAgents = value; }
 
     /**
@@ -65,6 +70,11 @@ namespace Model
      * <p>Number of healthy discovery agents</p>
      */
     inline int GetHealthyAgents() const{ return m_healthyAgents; }
+
+    /**
+     * <p>Number of healthy discovery agents</p>
+     */
+    inline bool HealthyAgentsHasBeenSet() const { return m_healthyAgentsHasBeenSet; }
 
     /**
      * <p>Number of healthy discovery agents</p>
@@ -85,6 +95,11 @@ namespace Model
     /**
      * <p>Number of blacklisted discovery agents.</p>
      */
+    inline bool BlackListedAgentsHasBeenSet() const { return m_blackListedAgentsHasBeenSet; }
+
+    /**
+     * <p>Number of blacklisted discovery agents.</p>
+     */
     inline void SetBlackListedAgents(int value) { m_blackListedAgentsHasBeenSet = true; m_blackListedAgents = value; }
 
     /**
@@ -97,6 +112,11 @@ namespace Model
      * <p>Number of discovery agents with status SHUTDOWN.</p>
      */
     inline int GetShutdownAgents() const{ return m_shutdownAgents; }
+
+    /**
+     * <p>Number of discovery agents with status SHUTDOWN.</p>
+     */
+    inline bool ShutdownAgentsHasBeenSet() const { return m_shutdownAgentsHasBeenSet; }
 
     /**
      * <p>Number of discovery agents with status SHUTDOWN.</p>
@@ -117,6 +137,11 @@ namespace Model
     /**
      * <p>Number of unhealthy discovery agents.</p>
      */
+    inline bool UnhealthyAgentsHasBeenSet() const { return m_unhealthyAgentsHasBeenSet; }
+
+    /**
+     * <p>Number of unhealthy discovery agents.</p>
+     */
     inline void SetUnhealthyAgents(int value) { m_unhealthyAgentsHasBeenSet = true; m_unhealthyAgents = value; }
 
     /**
@@ -133,6 +158,11 @@ namespace Model
     /**
      * <p>Total number of discovery agents.</p>
      */
+    inline bool TotalAgentsHasBeenSet() const { return m_totalAgentsHasBeenSet; }
+
+    /**
+     * <p>Total number of discovery agents.</p>
+     */
     inline void SetTotalAgents(int value) { m_totalAgentsHasBeenSet = true; m_totalAgents = value; }
 
     /**
@@ -145,6 +175,11 @@ namespace Model
      * <p>Number of unknown discovery agents.</p>
      */
     inline int GetUnknownAgents() const{ return m_unknownAgents; }
+
+    /**
+     * <p>Number of unknown discovery agents.</p>
+     */
+    inline bool UnknownAgentsHasBeenSet() const { return m_unknownAgentsHasBeenSet; }
 
     /**
      * <p>Number of unknown discovery agents.</p>

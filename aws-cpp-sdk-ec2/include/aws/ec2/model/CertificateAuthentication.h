@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p>The ARN of the client certificate. </p>
      */
+    inline bool ClientRootCertificateChainHasBeenSet() const { return m_clientRootCertificateChainHasBeenSet; }
+
+    /**
+     * <p>The ARN of the client certificate. </p>
+     */
     inline void SetClientRootCertificateChain(const Aws::String& value) { m_clientRootCertificateChainHasBeenSet = true; m_clientRootCertificateChain = value; }
 
     /**

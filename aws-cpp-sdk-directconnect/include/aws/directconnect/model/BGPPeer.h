@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p>The ID of the BGP peer.</p>
      */
+    inline bool BgpPeerIdHasBeenSet() const { return m_bgpPeerIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the BGP peer.</p>
+     */
     inline void SetBgpPeerId(const Aws::String& value) { m_bgpPeerIdHasBeenSet = true; m_bgpPeerId = value; }
 
     /**
@@ -96,6 +101,12 @@ namespace Model
      * <p>The autonomous system (AS) number for Border Gateway Protocol (BGP)
      * configuration.</p>
      */
+    inline bool AsnHasBeenSet() const { return m_asnHasBeenSet; }
+
+    /**
+     * <p>The autonomous system (AS) number for Border Gateway Protocol (BGP)
+     * configuration.</p>
+     */
     inline void SetAsn(int value) { m_asnHasBeenSet = true; m_asn = value; }
 
     /**
@@ -109,6 +120,11 @@ namespace Model
      * <p>The authentication key for BGP configuration.</p>
      */
     inline const Aws::String& GetAuthKey() const{ return m_authKey; }
+
+    /**
+     * <p>The authentication key for BGP configuration.</p>
+     */
+    inline bool AuthKeyHasBeenSet() const { return m_authKeyHasBeenSet; }
 
     /**
      * <p>The authentication key for BGP configuration.</p>
@@ -149,6 +165,11 @@ namespace Model
     /**
      * <p>The address family for the BGP peer.</p>
      */
+    inline bool AddressFamilyHasBeenSet() const { return m_addressFamilyHasBeenSet; }
+
+    /**
+     * <p>The address family for the BGP peer.</p>
+     */
     inline void SetAddressFamily(const AddressFamily& value) { m_addressFamilyHasBeenSet = true; m_addressFamily = value; }
 
     /**
@@ -171,6 +192,11 @@ namespace Model
      * <p>The IP address assigned to the Amazon interface.</p>
      */
     inline const Aws::String& GetAmazonAddress() const{ return m_amazonAddress; }
+
+    /**
+     * <p>The IP address assigned to the Amazon interface.</p>
+     */
+    inline bool AmazonAddressHasBeenSet() const { return m_amazonAddressHasBeenSet; }
 
     /**
      * <p>The IP address assigned to the Amazon interface.</p>
@@ -207,6 +233,11 @@ namespace Model
      * <p>The IP address assigned to the customer interface.</p>
      */
     inline const Aws::String& GetCustomerAddress() const{ return m_customerAddress; }
+
+    /**
+     * <p>The IP address assigned to the customer interface.</p>
+     */
+    inline bool CustomerAddressHasBeenSet() const { return m_customerAddressHasBeenSet; }
 
     /**
      * <p>The IP address assigned to the customer interface.</p>
@@ -251,6 +282,19 @@ namespace Model
      * cannot be established.</p> </li> </ul>
      */
     inline const BGPPeerState& GetBgpPeerState() const{ return m_bgpPeerState; }
+
+    /**
+     * <p>The state of the BGP peer. The following are the possible values:</p> <ul>
+     * <li> <p> <code>verifying</code>: The BGP peering addresses or ASN require
+     * validation before the BGP peer can be created. This state applies only to public
+     * virtual interfaces.</p> </li> <li> <p> <code>pending</code>: The BGP peer is
+     * created, and remains in this state until it is ready to be established.</p>
+     * </li> <li> <p> <code>available</code>: The BGP peer is ready to be
+     * established.</p> </li> <li> <p> <code>deleting</code>: The BGP peer is being
+     * deleted.</p> </li> <li> <p> <code>deleted</code>: The BGP peer is deleted and
+     * cannot be established.</p> </li> </ul>
+     */
+    inline bool BgpPeerStateHasBeenSet() const { return m_bgpPeerStateHasBeenSet; }
 
     /**
      * <p>The state of the BGP peer. The following are the possible values:</p> <ul>
@@ -323,6 +367,16 @@ namespace Model
      * down.</p> </li> <li> <p> <code>unknown</code>: The BGP peer status is not
      * available.</p> </li> </ul>
      */
+    inline bool BgpStatusHasBeenSet() const { return m_bgpStatusHasBeenSet; }
+
+    /**
+     * <p>The status of the BGP peer. The following are the possible values:</p> <ul>
+     * <li> <p> <code>up</code>: The BGP peer is established. This state does not
+     * indicate the state of the routing function. Ensure that you are receiving routes
+     * over the BGP session.</p> </li> <li> <p> <code>down</code>: The BGP peer is
+     * down.</p> </li> <li> <p> <code>unknown</code>: The BGP peer status is not
+     * available.</p> </li> </ul>
+     */
     inline void SetBgpStatus(const BGPStatus& value) { m_bgpStatusHasBeenSet = true; m_bgpStatus = value; }
 
     /**
@@ -360,6 +414,11 @@ namespace Model
      * <p>The Direct Connect endpoint on which the BGP peer terminates.</p>
      */
     inline const Aws::String& GetAwsDeviceV2() const{ return m_awsDeviceV2; }
+
+    /**
+     * <p>The Direct Connect endpoint on which the BGP peer terminates.</p>
+     */
+    inline bool AwsDeviceV2HasBeenSet() const { return m_awsDeviceV2HasBeenSet; }
 
     /**
      * <p>The Direct Connect endpoint on which the BGP peer terminates.</p>

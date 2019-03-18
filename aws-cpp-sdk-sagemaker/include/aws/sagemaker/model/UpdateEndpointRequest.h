@@ -52,6 +52,11 @@ namespace Model
     /**
      * <p>The name of the endpoint whose configuration you want to update.</p>
      */
+    inline bool EndpointNameHasBeenSet() const { return m_endpointNameHasBeenSet; }
+
+    /**
+     * <p>The name of the endpoint whose configuration you want to update.</p>
+     */
     inline void SetEndpointName(const Aws::String& value) { m_endpointNameHasBeenSet = true; m_endpointName = value; }
 
     /**
@@ -84,6 +89,11 @@ namespace Model
      * <p>The name of the new endpoint configuration.</p>
      */
     inline const Aws::String& GetEndpointConfigName() const{ return m_endpointConfigName; }
+
+    /**
+     * <p>The name of the new endpoint configuration.</p>
+     */
+    inline bool EndpointConfigNameHasBeenSet() const { return m_endpointConfigNameHasBeenSet; }
 
     /**
      * <p>The name of the new endpoint configuration.</p>

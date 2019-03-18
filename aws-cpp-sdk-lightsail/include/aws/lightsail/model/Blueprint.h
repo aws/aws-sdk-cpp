@@ -60,6 +60,12 @@ namespace Model
      * <p>The ID for the virtual private server image (e.g.,
      * <code>app_wordpress_4_4</code> or <code>app_lamp_7_0</code>).</p>
      */
+    inline bool BlueprintIdHasBeenSet() const { return m_blueprintIdHasBeenSet; }
+
+    /**
+     * <p>The ID for the virtual private server image (e.g.,
+     * <code>app_wordpress_4_4</code> or <code>app_lamp_7_0</code>).</p>
+     */
     inline void SetBlueprintId(const Aws::String& value) { m_blueprintIdHasBeenSet = true; m_blueprintId = value; }
 
     /**
@@ -101,6 +107,11 @@ namespace Model
     /**
      * <p>The friendly name of the blueprint (e.g., <code>Amazon Linux</code>).</p>
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>The friendly name of the blueprint (e.g., <code>Amazon Linux</code>).</p>
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
@@ -133,6 +144,11 @@ namespace Model
      * <p>The group name of the blueprint (e.g., <code>amazon-linux</code>).</p>
      */
     inline const Aws::String& GetGroup() const{ return m_group; }
+
+    /**
+     * <p>The group name of the blueprint (e.g., <code>amazon-linux</code>).</p>
+     */
+    inline bool GroupHasBeenSet() const { return m_groupHasBeenSet; }
 
     /**
      * <p>The group name of the blueprint (e.g., <code>amazon-linux</code>).</p>
@@ -173,6 +189,11 @@ namespace Model
     /**
      * <p>The type of the blueprint (e.g., <code>os</code> or <code>app</code>).</p>
      */
+    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
+
+    /**
+     * <p>The type of the blueprint (e.g., <code>os</code> or <code>app</code>).</p>
+     */
     inline void SetType(const BlueprintType& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
@@ -195,6 +216,11 @@ namespace Model
      * <p>The description of the blueprint.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
+
+    /**
+     * <p>The description of the blueprint.</p>
+     */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
 
     /**
      * <p>The description of the blueprint.</p>
@@ -243,6 +269,15 @@ namespace Model
      * inactive when they become outdated due to operating system updates or new
      * application releases.</p>
      */
+    inline bool IsActiveHasBeenSet() const { return m_isActiveHasBeenSet; }
+
+    /**
+     * <p>A Boolean value indicating whether the blueprint is active. Inactive
+     * blueprints are listed to support customers with existing instances but are not
+     * necessarily available for launch of new instances. Blueprints are marked
+     * inactive when they become outdated due to operating system updates or new
+     * application releases.</p>
+     */
     inline void SetIsActive(bool value) { m_isActiveHasBeenSet = true; m_isActive = value; }
 
     /**
@@ -269,6 +304,14 @@ namespace Model
      * a blueprint with a minimum power value of 500. <code>0</code> indicates that the
      * blueprint runs on all instance sizes. </p>
      */
+    inline bool MinPowerHasBeenSet() const { return m_minPowerHasBeenSet; }
+
+    /**
+     * <p>The minimum bundle power required to run this blueprint. For example, you
+     * need a bundle with a power value of 500 or more to create an instance that uses
+     * a blueprint with a minimum power value of 500. <code>0</code> indicates that the
+     * blueprint runs on all instance sizes. </p>
+     */
     inline void SetMinPower(int value) { m_minPowerHasBeenSet = true; m_minPower = value; }
 
     /**
@@ -285,6 +328,12 @@ namespace Model
      * <code>2016.03.0</code>).</p>
      */
     inline const Aws::String& GetVersion() const{ return m_version; }
+
+    /**
+     * <p>The version number of the operating system, application, or stack (e.g.,
+     * <code>2016.03.0</code>).</p>
+     */
+    inline bool VersionHasBeenSet() const { return m_versionHasBeenSet; }
 
     /**
      * <p>The version number of the operating system, application, or stack (e.g.,
@@ -331,6 +380,11 @@ namespace Model
     /**
      * <p>The version code.</p>
      */
+    inline bool VersionCodeHasBeenSet() const { return m_versionCodeHasBeenSet; }
+
+    /**
+     * <p>The version code.</p>
+     */
     inline void SetVersionCode(const Aws::String& value) { m_versionCodeHasBeenSet = true; m_versionCode = value; }
 
     /**
@@ -363,6 +417,11 @@ namespace Model
      * <p>The product URL to learn more about the image or blueprint.</p>
      */
     inline const Aws::String& GetProductUrl() const{ return m_productUrl; }
+
+    /**
+     * <p>The product URL to learn more about the image or blueprint.</p>
+     */
+    inline bool ProductUrlHasBeenSet() const { return m_productUrlHasBeenSet; }
 
     /**
      * <p>The product URL to learn more about the image or blueprint.</p>
@@ -403,6 +462,11 @@ namespace Model
     /**
      * <p>The end-user license agreement URL for the image or blueprint.</p>
      */
+    inline bool LicenseUrlHasBeenSet() const { return m_licenseUrlHasBeenSet; }
+
+    /**
+     * <p>The end-user license agreement URL for the image or blueprint.</p>
+     */
     inline void SetLicenseUrl(const Aws::String& value) { m_licenseUrlHasBeenSet = true; m_licenseUrl = value; }
 
     /**
@@ -436,6 +500,12 @@ namespace Model
      * Server-based) of the blueprint.</p>
      */
     inline const InstancePlatform& GetPlatform() const{ return m_platform; }
+
+    /**
+     * <p>The operating system platform (either Linux/Unix-based or Windows
+     * Server-based) of the blueprint.</p>
+     */
+    inline bool PlatformHasBeenSet() const { return m_platformHasBeenSet; }
 
     /**
      * <p>The operating system platform (either Linux/Unix-based or Windows

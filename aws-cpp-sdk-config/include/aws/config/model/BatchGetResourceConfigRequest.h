@@ -55,6 +55,12 @@ namespace Model
      * <p>A list of resource keys to be processed with the current request. Each
      * element in the list consists of the resource type and resource ID.</p>
      */
+    inline bool ResourceKeysHasBeenSet() const { return m_resourceKeysHasBeenSet; }
+
+    /**
+     * <p>A list of resource keys to be processed with the current request. Each
+     * element in the list consists of the resource type and resource ID.</p>
+     */
     inline void SetResourceKeys(const Aws::Vector<ResourceKey>& value) { m_resourceKeysHasBeenSet = true; m_resourceKeys = value; }
 
     /**

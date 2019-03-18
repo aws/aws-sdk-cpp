@@ -52,6 +52,11 @@ namespace Model
     /**
      * <p>The ID assigned to the <code>Evaluation</code> during creation.</p>
      */
+    inline bool EvaluationIdHasBeenSet() const { return m_evaluationIdHasBeenSet; }
+
+    /**
+     * <p>The ID assigned to the <code>Evaluation</code> during creation.</p>
+     */
     inline void SetEvaluationId(const Aws::String& value) { m_evaluationIdHasBeenSet = true; m_evaluationId = value; }
 
     /**
@@ -85,6 +90,12 @@ namespace Model
      * will replace the current content. </p>
      */
     inline const Aws::String& GetEvaluationName() const{ return m_evaluationName; }
+
+    /**
+     * <p>A new user-supplied name or description of the <code>Evaluation</code> that
+     * will replace the current content. </p>
+     */
+    inline bool EvaluationNameHasBeenSet() const { return m_evaluationNameHasBeenSet; }
 
     /**
      * <p>A new user-supplied name or description of the <code>Evaluation</code> that

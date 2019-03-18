@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The policies that denied the authorization.</p>
      */
+    inline bool PoliciesHasBeenSet() const { return m_policiesHasBeenSet; }
+
+    /**
+     * <p>The policies that denied the authorization.</p>
+     */
     inline void SetPolicies(const Aws::Vector<Policy>& value) { m_policiesHasBeenSet = true; m_policies = value; }
 
     /**

@@ -52,6 +52,9 @@ namespace Model
     inline const FileSourceConvert608To708& GetConvert608To708() const{ return m_convert608To708; }
 
     
+    inline bool Convert608To708HasBeenSet() const { return m_convert608To708HasBeenSet; }
+
+    
     inline void SetConvert608To708(const FileSourceConvert608To708& value) { m_convert608To708HasBeenSet = true; m_convert608To708 = value; }
 
     
@@ -69,6 +72,12 @@ namespace Model
      * 'scc', 'ttml', 'dfxp', 'stl', 'srt', and 'smi'.
      */
     inline const Aws::String& GetSourceFile() const{ return m_sourceFile; }
+
+    /**
+     * External caption file used for loading captions. Accepted file extensions are
+     * 'scc', 'ttml', 'dfxp', 'stl', 'srt', and 'smi'.
+     */
+    inline bool SourceFileHasBeenSet() const { return m_sourceFileHasBeenSet; }
 
     /**
      * External caption file used for loading captions. Accepted file extensions are
@@ -111,6 +120,11 @@ namespace Model
      * Specifies a time delta in seconds to offset the captions from the source file.
      */
     inline int GetTimeDelta() const{ return m_timeDelta; }
+
+    /**
+     * Specifies a time delta in seconds to offset the captions from the source file.
+     */
+    inline bool TimeDeltaHasBeenSet() const { return m_timeDeltaHasBeenSet; }
 
     /**
      * Specifies a time delta in seconds to offset the captions from the source file.

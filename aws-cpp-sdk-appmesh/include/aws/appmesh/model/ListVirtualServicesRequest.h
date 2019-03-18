@@ -89,6 +89,26 @@ namespace Model
      * up to 100 results and
          a <code>nextToken</code> value if applicable.</p>
      */
+    inline bool LimitHasBeenSet() const { return m_limitHasBeenSet; }
+
+    /**
+     * <p>The maximum number of results returned by <code>ListVirtualServices</code> in
+     * paginated
+         output. When you use this parameter,
+     * <code>ListVirtualServices</code> returns only
+            <code>limit</code>
+     * results in a single page along with a <code>nextToken</code> response
+        
+     * element. You can see the remaining results of the initial request by sending
+     * another
+            <code>ListVirtualServices</code> request with the returned
+     * <code>nextToken</code> value.
+         This value can be between 1 and 100. If
+     * you don't use this parameter,
+         <code>ListVirtualServices</code> returns
+     * up to 100 results and
+         a <code>nextToken</code> value if applicable.</p>
+     */
     inline void SetLimit(int value) { m_limitHasBeenSet = true; m_limit = value; }
 
     /**
@@ -116,6 +136,11 @@ namespace Model
      * <p>The name of the service mesh to list virtual services in.</p>
      */
     inline const Aws::String& GetMeshName() const{ return m_meshName; }
+
+    /**
+     * <p>The name of the service mesh to list virtual services in.</p>
+     */
+    inline bool MeshNameHasBeenSet() const { return m_meshNameHasBeenSet; }
 
     /**
      * <p>The name of the service mesh to list virtual services in.</p>
@@ -159,6 +184,18 @@ namespace Model
      * <code>nextToken</code> value.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
+    /**
+     * <p>The <code>nextToken</code> value returned from a previous paginated
+         
+     * <code>ListVirtualServices</code> request where <code>limit</code> was used and
+     * the
+         results exceeded the value of that parameter. Pagination continues
+     * from the end of the
+         previous results that returned the
+     * <code>nextToken</code> value.</p>
+     */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
      * <p>The <code>nextToken</code> value returned from a previous paginated

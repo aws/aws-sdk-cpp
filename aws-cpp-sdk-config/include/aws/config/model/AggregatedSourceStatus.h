@@ -59,6 +59,11 @@ namespace Model
     /**
      * <p>The source account ID or an organization.</p>
      */
+    inline bool SourceIdHasBeenSet() const { return m_sourceIdHasBeenSet; }
+
+    /**
+     * <p>The source account ID or an organization.</p>
+     */
     inline void SetSourceId(const Aws::String& value) { m_sourceIdHasBeenSet = true; m_sourceId = value; }
 
     /**
@@ -95,6 +100,11 @@ namespace Model
     /**
      * <p>The source account or an organization.</p>
      */
+    inline bool SourceTypeHasBeenSet() const { return m_sourceTypeHasBeenSet; }
+
+    /**
+     * <p>The source account or an organization.</p>
+     */
     inline void SetSourceType(const AggregatedSourceType& value) { m_sourceTypeHasBeenSet = true; m_sourceType = value; }
 
     /**
@@ -117,6 +127,11 @@ namespace Model
      * <p>The region authorized to collect aggregated data.</p>
      */
     inline const Aws::String& GetAwsRegion() const{ return m_awsRegion; }
+
+    /**
+     * <p>The region authorized to collect aggregated data.</p>
+     */
+    inline bool AwsRegionHasBeenSet() const { return m_awsRegionHasBeenSet; }
 
     /**
      * <p>The region authorized to collect aggregated data.</p>
@@ -163,6 +178,14 @@ namespace Model
      * indicates the data was successfully moved.</p> </li> <li> <p>Valid value
      * OUTDATED indicates the data is not the most recent.</p> </li> </ul>
      */
+    inline bool LastUpdateStatusHasBeenSet() const { return m_lastUpdateStatusHasBeenSet; }
+
+    /**
+     * <p>Filters the last updated status type.</p> <ul> <li> <p>Valid value FAILED
+     * indicates errors while moving data.</p> </li> <li> <p>Valid value SUCCEEDED
+     * indicates the data was successfully moved.</p> </li> <li> <p>Valid value
+     * OUTDATED indicates the data is not the most recent.</p> </li> </ul>
+     */
     inline void SetLastUpdateStatus(const AggregatedSourceStatusType& value) { m_lastUpdateStatusHasBeenSet = true; m_lastUpdateStatus = value; }
 
     /**
@@ -198,6 +221,11 @@ namespace Model
     /**
      * <p>The time of the last update.</p>
      */
+    inline bool LastUpdateTimeHasBeenSet() const { return m_lastUpdateTimeHasBeenSet; }
+
+    /**
+     * <p>The time of the last update.</p>
+     */
     inline void SetLastUpdateTime(const Aws::Utils::DateTime& value) { m_lastUpdateTimeHasBeenSet = true; m_lastUpdateTime = value; }
 
     /**
@@ -221,6 +249,12 @@ namespace Model
      * last failed.</p>
      */
     inline const Aws::String& GetLastErrorCode() const{ return m_lastErrorCode; }
+
+    /**
+     * <p>The error code that AWS Config returned when the source account aggregation
+     * last failed.</p>
+     */
+    inline bool LastErrorCodeHasBeenSet() const { return m_lastErrorCodeHasBeenSet; }
 
     /**
      * <p>The error code that AWS Config returned when the source account aggregation
@@ -264,6 +298,12 @@ namespace Model
      * error.</p>
      */
     inline const Aws::String& GetLastErrorMessage() const{ return m_lastErrorMessage; }
+
+    /**
+     * <p>The message indicating that the source account aggregation failed due to an
+     * error.</p>
+     */
+    inline bool LastErrorMessageHasBeenSet() const { return m_lastErrorMessageHasBeenSet; }
 
     /**
      * <p>The message indicating that the source account aggregation failed due to an

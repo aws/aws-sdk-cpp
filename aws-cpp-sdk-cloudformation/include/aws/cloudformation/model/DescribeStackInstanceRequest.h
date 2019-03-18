@@ -56,6 +56,12 @@ namespace Model
      * <p>The name or the unique stack ID of the stack set that you want to get stack
      * instance information for.</p>
      */
+    inline bool StackSetNameHasBeenSet() const { return m_stackSetNameHasBeenSet; }
+
+    /**
+     * <p>The name or the unique stack ID of the stack set that you want to get stack
+     * instance information for.</p>
+     */
     inline void SetStackSetName(const Aws::String& value) { m_stackSetNameHasBeenSet = true; m_stackSetName = value; }
 
     /**
@@ -97,6 +103,11 @@ namespace Model
     /**
      * <p>The ID of an AWS account that's associated with this stack instance.</p>
      */
+    inline bool StackInstanceAccountHasBeenSet() const { return m_stackInstanceAccountHasBeenSet; }
+
+    /**
+     * <p>The ID of an AWS account that's associated with this stack instance.</p>
+     */
     inline void SetStackInstanceAccount(const Aws::String& value) { m_stackInstanceAccountHasBeenSet = true; m_stackInstanceAccount = value; }
 
     /**
@@ -129,6 +140,11 @@ namespace Model
      * <p>The name of a region that's associated with this stack instance.</p>
      */
     inline const Aws::String& GetStackInstanceRegion() const{ return m_stackInstanceRegion; }
+
+    /**
+     * <p>The name of a region that's associated with this stack instance.</p>
+     */
+    inline bool StackInstanceRegionHasBeenSet() const { return m_stackInstanceRegionHasBeenSet; }
 
     /**
      * <p>The name of a region that's associated with this stack instance.</p>

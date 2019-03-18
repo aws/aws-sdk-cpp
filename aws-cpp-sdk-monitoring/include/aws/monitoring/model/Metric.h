@@ -59,6 +59,11 @@ namespace Model
     /**
      * <p>The namespace of the metric.</p>
      */
+    inline bool NamespaceHasBeenSet() const { return m_namespaceHasBeenSet; }
+
+    /**
+     * <p>The namespace of the metric.</p>
+     */
     inline void SetNamespace(const Aws::String& value) { m_namespaceHasBeenSet = true; m_namespace = value; }
 
     /**
@@ -95,6 +100,11 @@ namespace Model
     /**
      * <p>The name of the metric. This is a required field.</p>
      */
+    inline bool MetricNameHasBeenSet() const { return m_metricNameHasBeenSet; }
+
+    /**
+     * <p>The name of the metric. This is a required field.</p>
+     */
     inline void SetMetricName(const Aws::String& value) { m_metricNameHasBeenSet = true; m_metricName = value; }
 
     /**
@@ -127,6 +137,11 @@ namespace Model
      * <p>The dimensions for the metric.</p>
      */
     inline const Aws::Vector<Dimension>& GetDimensions() const{ return m_dimensions; }
+
+    /**
+     * <p>The dimensions for the metric.</p>
+     */
+    inline bool DimensionsHasBeenSet() const { return m_dimensionsHasBeenSet; }
 
     /**
      * <p>The dimensions for the metric.</p>

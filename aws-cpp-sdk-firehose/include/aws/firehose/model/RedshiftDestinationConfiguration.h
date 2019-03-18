@@ -68,6 +68,14 @@ namespace Model
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
      * Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
      */
+    inline bool RoleARNHasBeenSet() const { return m_roleARNHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the AWS credentials. For more information,
+     * see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
+     */
     inline void SetRoleARN(const Aws::String& value) { m_roleARNHasBeenSet = true; m_roleARN = value; }
 
     /**
@@ -119,6 +127,11 @@ namespace Model
     /**
      * <p>The database connection string.</p>
      */
+    inline bool ClusterJDBCURLHasBeenSet() const { return m_clusterJDBCURLHasBeenSet; }
+
+    /**
+     * <p>The database connection string.</p>
+     */
     inline void SetClusterJDBCURL(const Aws::String& value) { m_clusterJDBCURLHasBeenSet = true; m_clusterJDBCURL = value; }
 
     /**
@@ -155,6 +168,11 @@ namespace Model
     /**
      * <p>The <code>COPY</code> command.</p>
      */
+    inline bool CopyCommandHasBeenSet() const { return m_copyCommandHasBeenSet; }
+
+    /**
+     * <p>The <code>COPY</code> command.</p>
+     */
     inline void SetCopyCommand(const CopyCommand& value) { m_copyCommandHasBeenSet = true; m_copyCommand = value; }
 
     /**
@@ -177,6 +195,11 @@ namespace Model
      * <p>The name of the user.</p>
      */
     inline const Aws::String& GetUsername() const{ return m_username; }
+
+    /**
+     * <p>The name of the user.</p>
+     */
+    inline bool UsernameHasBeenSet() const { return m_usernameHasBeenSet; }
 
     /**
      * <p>The name of the user.</p>
@@ -213,6 +236,11 @@ namespace Model
      * <p>The user password.</p>
      */
     inline const Aws::String& GetPassword() const{ return m_password; }
+
+    /**
+     * <p>The user password.</p>
+     */
+    inline bool PasswordHasBeenSet() const { return m_passwordHasBeenSet; }
 
     /**
      * <p>The user password.</p>
@@ -255,6 +283,12 @@ namespace Model
      * <p>The retry behavior in case Kinesis Data Firehose is unable to deliver
      * documents to Amazon Redshift. Default value is 3600 (60 minutes).</p>
      */
+    inline bool RetryOptionsHasBeenSet() const { return m_retryOptionsHasBeenSet; }
+
+    /**
+     * <p>The retry behavior in case Kinesis Data Firehose is unable to deliver
+     * documents to Amazon Redshift. Default value is 3600 (60 minutes).</p>
+     */
     inline void SetRetryOptions(const RedshiftRetryOptions& value) { m_retryOptionsHasBeenSet = true; m_retryOptions = value; }
 
     /**
@@ -286,6 +320,17 @@ namespace Model
      * support these compression formats.</p>
      */
     inline const S3DestinationConfiguration& GetS3Configuration() const{ return m_s3Configuration; }
+
+    /**
+     * <p>The configuration for the intermediate Amazon S3 location from which Amazon
+     * Redshift obtains data. Restrictions are described in the topic for
+     * <a>CreateDeliveryStream</a>.</p> <p>The compression formats <code>SNAPPY</code>
+     * or <code>ZIP</code> cannot be specified in
+     * <code>RedshiftDestinationConfiguration.S3Configuration</code> because the Amazon
+     * Redshift <code>COPY</code> operation that reads from the S3 bucket doesn't
+     * support these compression formats.</p>
+     */
+    inline bool S3ConfigurationHasBeenSet() const { return m_s3ConfigurationHasBeenSet; }
 
     /**
      * <p>The configuration for the intermediate Amazon S3 location from which Amazon
@@ -340,6 +385,11 @@ namespace Model
     /**
      * <p>The data processing configuration.</p>
      */
+    inline bool ProcessingConfigurationHasBeenSet() const { return m_processingConfigurationHasBeenSet; }
+
+    /**
+     * <p>The data processing configuration.</p>
+     */
     inline void SetProcessingConfiguration(const ProcessingConfiguration& value) { m_processingConfigurationHasBeenSet = true; m_processingConfiguration = value; }
 
     /**
@@ -362,6 +412,11 @@ namespace Model
      * <p>The Amazon S3 backup mode.</p>
      */
     inline const RedshiftS3BackupMode& GetS3BackupMode() const{ return m_s3BackupMode; }
+
+    /**
+     * <p>The Amazon S3 backup mode.</p>
+     */
+    inline bool S3BackupModeHasBeenSet() const { return m_s3BackupModeHasBeenSet; }
 
     /**
      * <p>The Amazon S3 backup mode.</p>
@@ -392,6 +447,11 @@ namespace Model
     /**
      * <p>The configuration for backup in Amazon S3.</p>
      */
+    inline bool S3BackupConfigurationHasBeenSet() const { return m_s3BackupConfigurationHasBeenSet; }
+
+    /**
+     * <p>The configuration for backup in Amazon S3.</p>
+     */
     inline void SetS3BackupConfiguration(const S3DestinationConfiguration& value) { m_s3BackupConfigurationHasBeenSet = true; m_s3BackupConfiguration = value; }
 
     /**
@@ -414,6 +474,11 @@ namespace Model
      * <p>The CloudWatch logging options for your delivery stream.</p>
      */
     inline const CloudWatchLoggingOptions& GetCloudWatchLoggingOptions() const{ return m_cloudWatchLoggingOptions; }
+
+    /**
+     * <p>The CloudWatch logging options for your delivery stream.</p>
+     */
+    inline bool CloudWatchLoggingOptionsHasBeenSet() const { return m_cloudWatchLoggingOptionsHasBeenSet; }
 
     /**
      * <p>The CloudWatch logging options for your delivery stream.</p>

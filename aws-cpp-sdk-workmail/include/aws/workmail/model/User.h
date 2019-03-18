@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p>The identifier of the user.</p>
      */
+    inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
+
+    /**
+     * <p>The identifier of the user.</p>
+     */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
     /**
@@ -90,6 +95,11 @@ namespace Model
      * <p>The email of the user.</p>
      */
     inline const Aws::String& GetEmail() const{ return m_email; }
+
+    /**
+     * <p>The email of the user.</p>
+     */
+    inline bool EmailHasBeenSet() const { return m_emailHasBeenSet; }
 
     /**
      * <p>The email of the user.</p>
@@ -130,6 +140,11 @@ namespace Model
     /**
      * <p>The name of the user.</p>
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>The name of the user.</p>
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
@@ -162,6 +177,11 @@ namespace Model
      * <p>The display name of the user.</p>
      */
     inline const Aws::String& GetDisplayName() const{ return m_displayName; }
+
+    /**
+     * <p>The display name of the user.</p>
+     */
+    inline bool DisplayNameHasBeenSet() const { return m_displayNameHasBeenSet; }
 
     /**
      * <p>The display name of the user.</p>
@@ -202,6 +222,11 @@ namespace Model
     /**
      * <p>The state of the user, which can be ENABLED, DISABLED, or DELETED.</p>
      */
+    inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
+
+    /**
+     * <p>The state of the user, which can be ENABLED, DISABLED, or DELETED.</p>
+     */
     inline void SetState(const EntityState& value) { m_stateHasBeenSet = true; m_state = value; }
 
     /**
@@ -224,6 +249,11 @@ namespace Model
      * <p>The role of the user.</p>
      */
     inline const UserRole& GetUserRole() const{ return m_userRole; }
+
+    /**
+     * <p>The role of the user.</p>
+     */
+    inline bool UserRoleHasBeenSet() const { return m_userRoleHasBeenSet; }
 
     /**
      * <p>The role of the user.</p>
@@ -254,6 +284,11 @@ namespace Model
     /**
      * <p>The date indicating when the user was enabled for Amazon WorkMail use.</p>
      */
+    inline bool EnabledDateHasBeenSet() const { return m_enabledDateHasBeenSet; }
+
+    /**
+     * <p>The date indicating when the user was enabled for Amazon WorkMail use.</p>
+     */
     inline void SetEnabledDate(const Aws::Utils::DateTime& value) { m_enabledDateHasBeenSet = true; m_enabledDate = value; }
 
     /**
@@ -276,6 +311,11 @@ namespace Model
      * <p>The date indicating when the user was disabled from Amazon WorkMail use.</p>
      */
     inline const Aws::Utils::DateTime& GetDisabledDate() const{ return m_disabledDate; }
+
+    /**
+     * <p>The date indicating when the user was disabled from Amazon WorkMail use.</p>
+     */
+    inline bool DisabledDateHasBeenSet() const { return m_disabledDateHasBeenSet; }
 
     /**
      * <p>The date indicating when the user was disabled from Amazon WorkMail use.</p>

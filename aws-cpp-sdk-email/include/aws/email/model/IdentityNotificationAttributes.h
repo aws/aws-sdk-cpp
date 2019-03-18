@@ -63,6 +63,12 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the Amazon SNS topic where Amazon SES will
      * publish bounce notifications.</p>
      */
+    inline bool BounceTopicHasBeenSet() const { return m_bounceTopicHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the Amazon SNS topic where Amazon SES will
+     * publish bounce notifications.</p>
+     */
     inline void SetBounceTopic(const Aws::String& value) { m_bounceTopicHasBeenSet = true; m_bounceTopic = value; }
 
     /**
@@ -106,6 +112,12 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the Amazon SNS topic where Amazon SES will
      * publish complaint notifications.</p>
      */
+    inline bool ComplaintTopicHasBeenSet() const { return m_complaintTopicHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the Amazon SNS topic where Amazon SES will
+     * publish complaint notifications.</p>
+     */
     inline void SetComplaintTopic(const Aws::String& value) { m_complaintTopicHasBeenSet = true; m_complaintTopic = value; }
 
     /**
@@ -144,6 +156,12 @@ namespace Model
      * publish delivery notifications.</p>
      */
     inline const Aws::String& GetDeliveryTopic() const{ return m_deliveryTopic; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the Amazon SNS topic where Amazon SES will
+     * publish delivery notifications.</p>
+     */
+    inline bool DeliveryTopicHasBeenSet() const { return m_deliveryTopicHasBeenSet; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the Amazon SNS topic where Amazon SES will
@@ -198,6 +216,15 @@ namespace Model
      * and complaint notifications will be published only to the specified bounce and
      * complaint Amazon SNS topics.</p>
      */
+    inline bool ForwardingEnabledHasBeenSet() const { return m_forwardingEnabledHasBeenSet; }
+
+    /**
+     * <p>Describes whether Amazon SES will forward bounce and complaint notifications
+     * as email. <code>true</code> indicates that Amazon SES will forward bounce and
+     * complaint notifications as email, while <code>false</code> indicates that bounce
+     * and complaint notifications will be published only to the specified bounce and
+     * complaint Amazon SNS topics.</p>
+     */
     inline void SetForwardingEnabled(bool value) { m_forwardingEnabledHasBeenSet = true; m_forwardingEnabled = value; }
 
     /**
@@ -218,6 +245,15 @@ namespace Model
      * in bounce notifications.</p>
      */
     inline bool GetHeadersInBounceNotificationsEnabled() const{ return m_headersInBounceNotificationsEnabled; }
+
+    /**
+     * <p>Describes whether Amazon SES includes the original email headers in Amazon
+     * SNS notifications of type <code>Bounce</code>. A value of <code>true</code>
+     * specifies that Amazon SES will include headers in bounce notifications, and a
+     * value of <code>false</code> specifies that Amazon SES will not include headers
+     * in bounce notifications.</p>
+     */
+    inline bool HeadersInBounceNotificationsEnabledHasBeenSet() const { return m_headersInBounceNotificationsEnabledHasBeenSet; }
 
     /**
      * <p>Describes whether Amazon SES includes the original email headers in Amazon
@@ -254,6 +290,15 @@ namespace Model
      * value of <code>false</code> specifies that Amazon SES will not include headers
      * in complaint notifications.</p>
      */
+    inline bool HeadersInComplaintNotificationsEnabledHasBeenSet() const { return m_headersInComplaintNotificationsEnabledHasBeenSet; }
+
+    /**
+     * <p>Describes whether Amazon SES includes the original email headers in Amazon
+     * SNS notifications of type <code>Complaint</code>. A value of <code>true</code>
+     * specifies that Amazon SES will include headers in complaint notifications, and a
+     * value of <code>false</code> specifies that Amazon SES will not include headers
+     * in complaint notifications.</p>
+     */
     inline void SetHeadersInComplaintNotificationsEnabled(bool value) { m_headersInComplaintNotificationsEnabledHasBeenSet = true; m_headersInComplaintNotificationsEnabled = value; }
 
     /**
@@ -274,6 +319,15 @@ namespace Model
      * in delivery notifications.</p>
      */
     inline bool GetHeadersInDeliveryNotificationsEnabled() const{ return m_headersInDeliveryNotificationsEnabled; }
+
+    /**
+     * <p>Describes whether Amazon SES includes the original email headers in Amazon
+     * SNS notifications of type <code>Delivery</code>. A value of <code>true</code>
+     * specifies that Amazon SES will include headers in delivery notifications, and a
+     * value of <code>false</code> specifies that Amazon SES will not include headers
+     * in delivery notifications.</p>
+     */
+    inline bool HeadersInDeliveryNotificationsEnabledHasBeenSet() const { return m_headersInDeliveryNotificationsEnabledHasBeenSet; }
 
     /**
      * <p>Describes whether Amazon SES includes the original email headers in Amazon

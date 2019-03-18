@@ -53,6 +53,12 @@ namespace Model
      * <p>A list of IDs of the AWS accounts that you want to invite to Security Hub as
      * members. </p>
      */
+    inline bool AccountIdsHasBeenSet() const { return m_accountIdsHasBeenSet; }
+
+    /**
+     * <p>A list of IDs of the AWS accounts that you want to invite to Security Hub as
+     * members. </p>
+     */
     inline void SetAccountIds(const Aws::Vector<Aws::String>& value) { m_accountIdsHasBeenSet = true; m_accountIds = value; }
 
     /**

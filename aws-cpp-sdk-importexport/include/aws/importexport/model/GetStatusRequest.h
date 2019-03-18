@@ -53,6 +53,9 @@ namespace Model
     inline const Aws::String& GetJobId() const{ return m_jobId; }
 
     
+    inline bool JobIdHasBeenSet() const { return m_jobIdHasBeenSet; }
+
+    
     inline void SetJobId(const Aws::String& value) { m_jobIdHasBeenSet = true; m_jobId = value; }
 
     
@@ -73,6 +76,9 @@ namespace Model
 
     
     inline const Aws::String& GetAPIVersion() const{ return m_aPIVersion; }
+
+    
+    inline bool APIVersionHasBeenSet() const { return m_aPIVersionHasBeenSet; }
 
     
     inline void SetAPIVersion(const Aws::String& value) { m_aPIVersionHasBeenSet = true; m_aPIVersion = value; }

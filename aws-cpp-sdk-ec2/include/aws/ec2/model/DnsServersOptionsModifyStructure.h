@@ -62,6 +62,13 @@ namespace Model
      * can specify up to two DNS servers. Ensure that the DNS servers can be reached by
      * the clients. The specified values overwrite the existing values.</p>
      */
+    inline bool CustomDnsServersHasBeenSet() const { return m_customDnsServersHasBeenSet; }
+
+    /**
+     * <p>The IPv4 address range, in CIDR notation, of the DNS servers to be used. You
+     * can specify up to two DNS servers. Ensure that the DNS servers can be reached by
+     * the clients. The specified values overwrite the existing values.</p>
+     */
     inline void SetCustomDnsServers(const Aws::Vector<Aws::String>& value) { m_customDnsServersHasBeenSet = true; m_customDnsServers = value; }
 
     /**
@@ -112,6 +119,12 @@ namespace Model
      * delete the existing DNS servers.</p>
      */
     inline bool GetEnabled() const{ return m_enabled; }
+
+    /**
+     * <p>Indicates whether DNS servers should be used. Specify <code>False</code> to
+     * delete the existing DNS servers.</p>
+     */
+    inline bool EnabledHasBeenSet() const { return m_enabledHasBeenSet; }
 
     /**
      * <p>Indicates whether DNS servers should be used. Specify <code>False</code> to

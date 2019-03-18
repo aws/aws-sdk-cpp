@@ -60,6 +60,13 @@ namespace Model
      * us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. This
      * is the ID of the pool to modify.</p>
      */
+    inline bool IdentityPoolIdHasBeenSet() const { return m_identityPoolIdHasBeenSet; }
+
+    /**
+     * <p>A name-spaced GUID (for example,
+     * us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. This
+     * is the ID of the pool to modify.</p>
+     */
     inline void SetIdentityPoolId(const Aws::String& value) { m_identityPoolIdHasBeenSet = true; m_identityPoolId = value; }
 
     /**
@@ -106,6 +113,11 @@ namespace Model
     /**
      * <p>Options to apply to this identity pool for push synchronization.</p>
      */
+    inline bool PushSyncHasBeenSet() const { return m_pushSyncHasBeenSet; }
+
+    /**
+     * <p>Options to apply to this identity pool for push synchronization.</p>
+     */
     inline void SetPushSync(const PushSync& value) { m_pushSyncHasBeenSet = true; m_pushSync = value; }
 
     /**
@@ -128,6 +140,11 @@ namespace Model
      * Options to apply to this identity pool for Amazon Cognito streams.
      */
     inline const CognitoStreams& GetCognitoStreams() const{ return m_cognitoStreams; }
+
+    /**
+     * Options to apply to this identity pool for Amazon Cognito streams.
+     */
+    inline bool CognitoStreamsHasBeenSet() const { return m_cognitoStreamsHasBeenSet; }
 
     /**
      * Options to apply to this identity pool for Amazon Cognito streams.

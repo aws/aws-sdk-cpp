@@ -61,6 +61,12 @@ namespace Model
      * A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE)
      * created by Amazon Cognito. GUID generation is unique within a region.
      */
+    inline bool IdentityPoolIdHasBeenSet() const { return m_identityPoolIdHasBeenSet; }
+
+    /**
+     * A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE)
+     * created by Amazon Cognito. GUID generation is unique within a region.
+     */
     inline void SetIdentityPoolId(const Aws::String& value) { m_identityPoolIdHasBeenSet = true; m_identityPoolId = value; }
 
     /**
@@ -99,6 +105,12 @@ namespace Model
      * created by Amazon Cognito. GUID generation is unique within a region.
      */
     inline const Aws::String& GetIdentityId() const{ return m_identityId; }
+
+    /**
+     * A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE)
+     * created by Amazon Cognito. GUID generation is unique within a region.
+     */
+    inline bool IdentityIdHasBeenSet() const { return m_identityIdHasBeenSet; }
 
     /**
      * A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE)
@@ -147,6 +159,12 @@ namespace Model
      * A string of up to 128 characters. Allowed characters are a-z, A-Z, 0-9, '_'
      * (underscore), '-' (dash), and '.' (dot).
      */
+    inline bool DatasetNameHasBeenSet() const { return m_datasetNameHasBeenSet; }
+
+    /**
+     * A string of up to 128 characters. Allowed characters are a-z, A-Z, 0-9, '_'
+     * (underscore), '-' (dash), and '.' (dot).
+     */
     inline void SetDatasetName(const Aws::String& value) { m_datasetNameHasBeenSet = true; m_datasetName = value; }
 
     /**
@@ -188,6 +206,11 @@ namespace Model
     /**
      * The last server sync count for this record.
      */
+    inline bool LastSyncCountHasBeenSet() const { return m_lastSyncCountHasBeenSet; }
+
+    /**
+     * The last server sync count for this record.
+     */
     inline void SetLastSyncCount(long long value) { m_lastSyncCountHasBeenSet = true; m_lastSyncCount = value; }
 
     /**
@@ -200,6 +223,11 @@ namespace Model
      * A pagination token for obtaining the next page of results.
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
+    /**
+     * A pagination token for obtaining the next page of results.
+     */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
      * A pagination token for obtaining the next page of results.
@@ -240,6 +268,11 @@ namespace Model
     /**
      * The maximum number of results to be returned.
      */
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
+
+    /**
+     * The maximum number of results to be returned.
+     */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
@@ -252,6 +285,11 @@ namespace Model
      * A token containing a session ID, identity ID, and expiration.
      */
     inline const Aws::String& GetSyncSessionToken() const{ return m_syncSessionToken; }
+
+    /**
+     * A token containing a session ID, identity ID, and expiration.
+     */
+    inline bool SyncSessionTokenHasBeenSet() const { return m_syncSessionTokenHasBeenSet; }
 
     /**
      * A token containing a session ID, identity ID, and expiration.

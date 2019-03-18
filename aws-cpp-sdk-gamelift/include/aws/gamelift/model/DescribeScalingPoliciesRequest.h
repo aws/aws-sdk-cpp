@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>Unique identifier for a fleet to retrieve scaling policies for.</p>
      */
+    inline bool FleetIdHasBeenSet() const { return m_fleetIdHasBeenSet; }
+
+    /**
+     * <p>Unique identifier for a fleet to retrieve scaling policies for.</p>
+     */
     inline void SetFleetId(const Aws::String& value) { m_fleetIdHasBeenSet = true; m_fleetId = value; }
 
     /**
@@ -97,6 +102,20 @@ namespace Model
      * policy. It should be removed and recreated.</p> </li> </ul>
      */
     inline const ScalingStatusType& GetStatusFilter() const{ return m_statusFilter; }
+
+    /**
+     * <p>Scaling policy status to filter results on. A scaling policy is only in force
+     * when in an <code>ACTIVE</code> status.</p> <ul> <li> <p> <b>ACTIVE</b> -- The
+     * scaling policy is currently in force.</p> </li> <li> <p> <b>UPDATEREQUESTED</b>
+     * -- A request to update the scaling policy has been received.</p> </li> <li> <p>
+     * <b>UPDATING</b> -- A change is being made to the scaling policy.</p> </li> <li>
+     * <p> <b>DELETEREQUESTED</b> -- A request to delete the scaling policy has been
+     * received.</p> </li> <li> <p> <b>DELETING</b> -- The scaling policy is being
+     * deleted.</p> </li> <li> <p> <b>DELETED</b> -- The scaling policy has been
+     * deleted.</p> </li> <li> <p> <b>ERROR</b> -- An error occurred in creating the
+     * policy. It should be removed and recreated.</p> </li> </ul>
+     */
+    inline bool StatusFilterHasBeenSet() const { return m_statusFilterHasBeenSet; }
 
     /**
      * <p>Scaling policy status to filter results on. A scaling policy is only in force
@@ -165,6 +184,12 @@ namespace Model
      * <p>Maximum number of results to return. Use this parameter with
      * <code>NextToken</code> to get results as a set of sequential pages.</p>
      */
+    inline bool LimitHasBeenSet() const { return m_limitHasBeenSet; }
+
+    /**
+     * <p>Maximum number of results to return. Use this parameter with
+     * <code>NextToken</code> to get results as a set of sequential pages.</p>
+     */
     inline void SetLimit(int value) { m_limitHasBeenSet = true; m_limit = value; }
 
     /**
@@ -180,6 +205,13 @@ namespace Model
      * beginning of the result set, do not specify a value.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
+    /**
+     * <p>Token that indicates the start of the next sequential page of results. Use
+     * the token that is returned with a previous call to this action. To start at the
+     * beginning of the result set, do not specify a value.</p>
+     */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
      * <p>Token that indicates the start of the next sequential page of results. Use

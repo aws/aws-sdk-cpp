@@ -63,6 +63,12 @@ namespace Model
      * <p>The name of the DB cluster parameter group family to return the engine
      * parameter information for.</p>
      */
+    inline bool DBParameterGroupFamilyHasBeenSet() const { return m_dBParameterGroupFamilyHasBeenSet; }
+
+    /**
+     * <p>The name of the DB cluster parameter group family to return the engine
+     * parameter information for.</p>
+     */
     inline void SetDBParameterGroupFamily(const Aws::String& value) { m_dBParameterGroupFamilyHasBeenSet = true; m_dBParameterGroupFamily = value; }
 
     /**
@@ -102,6 +108,13 @@ namespace Model
      * to the value specified by <code>MaxRecords</code>.</p>
      */
     inline const Aws::String& GetMarker() const{ return m_marker; }
+
+    /**
+     * <p>An optional pagination token provided by a previous request. If this
+     * parameter is specified, the response includes only records beyond the marker, up
+     * to the value specified by <code>MaxRecords</code>.</p>
+     */
+    inline bool MarkerHasBeenSet() const { return m_markerHasBeenSet; }
 
     /**
      * <p>An optional pagination token provided by a previous request. If this
@@ -150,6 +163,11 @@ namespace Model
      * <p>The parameters of a particular DB cluster parameter group family.</p>
      */
     inline const Aws::Vector<Parameter>& GetParameters() const{ return m_parameters; }
+
+    /**
+     * <p>The parameters of a particular DB cluster parameter group family.</p>
+     */
+    inline bool ParametersHasBeenSet() const { return m_parametersHasBeenSet; }
 
     /**
      * <p>The parameters of a particular DB cluster parameter group family.</p>

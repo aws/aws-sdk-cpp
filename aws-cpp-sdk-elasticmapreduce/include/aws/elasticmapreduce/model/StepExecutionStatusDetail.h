@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The state of the step.</p>
      */
+    inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
+
+    /**
+     * <p>The state of the step.</p>
+     */
     inline void SetState(const StepExecutionState& value) { m_stateHasBeenSet = true; m_state = value; }
 
     /**
@@ -79,6 +84,11 @@ namespace Model
      * <p>The creation date and time of the step.</p>
      */
     inline const Aws::Utils::DateTime& GetCreationDateTime() const{ return m_creationDateTime; }
+
+    /**
+     * <p>The creation date and time of the step.</p>
+     */
+    inline bool CreationDateTimeHasBeenSet() const { return m_creationDateTimeHasBeenSet; }
 
     /**
      * <p>The creation date and time of the step.</p>
@@ -109,6 +119,11 @@ namespace Model
     /**
      * <p>The start date and time of the step.</p>
      */
+    inline bool StartDateTimeHasBeenSet() const { return m_startDateTimeHasBeenSet; }
+
+    /**
+     * <p>The start date and time of the step.</p>
+     */
     inline void SetStartDateTime(const Aws::Utils::DateTime& value) { m_startDateTimeHasBeenSet = true; m_startDateTime = value; }
 
     /**
@@ -135,6 +150,11 @@ namespace Model
     /**
      * <p>The completion date and time of the step.</p>
      */
+    inline bool EndDateTimeHasBeenSet() const { return m_endDateTimeHasBeenSet; }
+
+    /**
+     * <p>The completion date and time of the step.</p>
+     */
     inline void SetEndDateTime(const Aws::Utils::DateTime& value) { m_endDateTimeHasBeenSet = true; m_endDateTime = value; }
 
     /**
@@ -157,6 +177,11 @@ namespace Model
      * <p>A description of the step's current state.</p>
      */
     inline const Aws::String& GetLastStateChangeReason() const{ return m_lastStateChangeReason; }
+
+    /**
+     * <p>A description of the step's current state.</p>
+     */
+    inline bool LastStateChangeReasonHasBeenSet() const { return m_lastStateChangeReasonHasBeenSet; }
 
     /**
      * <p>A description of the step's current state.</p>

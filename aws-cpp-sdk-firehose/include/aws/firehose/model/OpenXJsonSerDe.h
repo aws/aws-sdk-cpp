@@ -70,6 +70,16 @@ namespace Model
      * column name to be "a_b" when using this option.</p> <p>The default is
      * <code>false</code>.</p>
      */
+    inline bool ConvertDotsInJsonKeysToUnderscoresHasBeenSet() const { return m_convertDotsInJsonKeysToUnderscoresHasBeenSet; }
+
+    /**
+     * <p>When set to <code>true</code>, specifies that the names of the keys include
+     * dots and that you want Kinesis Data Firehose to replace them with underscores.
+     * This is useful because Apache Hive does not allow dots in column names. For
+     * example, if the JSON contains a key whose name is "a.b", you can define the
+     * column name to be "a_b" when using this option.</p> <p>The default is
+     * <code>false</code>.</p>
+     */
     inline void SetConvertDotsInJsonKeysToUnderscores(bool value) { m_convertDotsInJsonKeysToUnderscoresHasBeenSet = true; m_convertDotsInJsonKeysToUnderscores = value; }
 
     /**
@@ -93,6 +103,12 @@ namespace Model
      * <p>When set to <code>true</code>, which is the default, Kinesis Data Firehose
      * converts JSON keys to lowercase before deserializing them.</p>
      */
+    inline bool CaseInsensitiveHasBeenSet() const { return m_caseInsensitiveHasBeenSet; }
+
+    /**
+     * <p>When set to <code>true</code>, which is the default, Kinesis Data Firehose
+     * converts JSON keys to lowercase before deserializing them.</p>
+     */
     inline void SetCaseInsensitive(bool value) { m_caseInsensitiveHasBeenSet = true; m_caseInsensitive = value; }
 
     /**
@@ -110,6 +126,15 @@ namespace Model
      * to map this key to a column named <code>ts</code>.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetColumnToJsonKeyMappings() const{ return m_columnToJsonKeyMappings; }
+
+    /**
+     * <p>Maps column names to JSON keys that aren't identical to the column names.
+     * This is useful when the JSON contains keys that are Hive keywords. For example,
+     * <code>timestamp</code> is a Hive keyword. If you have a JSON key named
+     * <code>timestamp</code>, set this parameter to <code>{"ts": "timestamp"}</code>
+     * to map this key to a column named <code>ts</code>.</p>
+     */
+    inline bool ColumnToJsonKeyMappingsHasBeenSet() const { return m_columnToJsonKeyMappingsHasBeenSet; }
 
     /**
      * <p>Maps column names to JSON keys that aren't identical to the column names.

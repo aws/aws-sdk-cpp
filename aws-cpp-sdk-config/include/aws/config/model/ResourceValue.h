@@ -55,6 +55,11 @@ namespace Model
     /**
      * <p>The value is a resource ID.</p>
      */
+    inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
+
+    /**
+     * <p>The value is a resource ID.</p>
+     */
     inline void SetValue(const ResourceValueType& value) { m_valueHasBeenSet = true; m_value = value; }
 
     /**

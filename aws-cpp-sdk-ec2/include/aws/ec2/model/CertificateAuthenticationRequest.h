@@ -62,6 +62,13 @@ namespace Model
      * certificate authority (CA) and it must be provisioned in AWS Certificate Manager
      * (ACM).</p>
      */
+    inline bool ClientRootCertificateChainArnHasBeenSet() const { return m_clientRootCertificateChainArnHasBeenSet; }
+
+    /**
+     * <p>The ARN of the client certificate. The certificate must be signed by a
+     * certificate authority (CA) and it must be provisioned in AWS Certificate Manager
+     * (ACM).</p>
+     */
     inline void SetClientRootCertificateChainArn(const Aws::String& value) { m_clientRootCertificateChainArnHasBeenSet = true; m_clientRootCertificateChainArn = value; }
 
     /**

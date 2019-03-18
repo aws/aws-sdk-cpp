@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The type of artifact in the location.</p>
      */
+    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
+
+    /**
+     * <p>The type of artifact in the location.</p>
+     */
     inline void SetType(const ArtifactLocationType& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
@@ -79,6 +84,11 @@ namespace Model
      * <p>The Amazon S3 bucket that contains the artifact.</p>
      */
     inline const S3ArtifactLocation& GetS3Location() const{ return m_s3Location; }
+
+    /**
+     * <p>The Amazon S3 bucket that contains the artifact.</p>
+     */
+    inline bool S3LocationHasBeenSet() const { return m_s3LocationHasBeenSet; }
 
     /**
      * <p>The Amazon S3 bucket that contains the artifact.</p>

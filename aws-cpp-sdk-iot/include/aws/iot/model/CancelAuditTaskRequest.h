@@ -52,6 +52,12 @@ namespace Model
      * <p>The ID of the audit you want to cancel. You can only cancel an audit that is
      * "IN_PROGRESS".</p>
      */
+    inline bool TaskIdHasBeenSet() const { return m_taskIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the audit you want to cancel. You can only cancel an audit that is
+     * "IN_PROGRESS".</p>
+     */
     inline void SetTaskId(const Aws::String& value) { m_taskIdHasBeenSet = true; m_taskId = value; }
 
     /**

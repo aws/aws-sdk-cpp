@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The name of the email provider that the inbox placement data applies to.</p>
      */
+    inline bool IspNameHasBeenSet() const { return m_ispNameHasBeenSet; }
+
+    /**
+     * <p>The name of the email provider that the inbox placement data applies to.</p>
+     */
     inline void SetIspName(const Aws::String& value) { m_ispNameHasBeenSet = true; m_ispName = value; }
 
     /**
@@ -94,6 +99,12 @@ namespace Model
      * <p>The total number of messages that were sent from the selected domain to the
      * specified email provider that arrived in recipients' inboxes.</p>
      */
+    inline bool InboxRawCountHasBeenSet() const { return m_inboxRawCountHasBeenSet; }
+
+    /**
+     * <p>The total number of messages that were sent from the selected domain to the
+     * specified email provider that arrived in recipients' inboxes.</p>
+     */
     inline void SetInboxRawCount(long long value) { m_inboxRawCountHasBeenSet = true; m_inboxRawCount = value; }
 
     /**
@@ -109,6 +120,13 @@ namespace Model
      * folders.</p>
      */
     inline long long GetSpamRawCount() const{ return m_spamRawCount; }
+
+    /**
+     * <p>The total number of messages that were sent from the selected domain to the
+     * specified email provider that arrived in recipients' spam or junk mail
+     * folders.</p>
+     */
+    inline bool SpamRawCountHasBeenSet() const { return m_spamRawCountHasBeenSet; }
 
     /**
      * <p>The total number of messages that were sent from the selected domain to the
@@ -135,6 +153,12 @@ namespace Model
      * <p>The percentage of messages that were sent from the selected domain to the
      * specified email provider that arrived in recipients' inboxes.</p>
      */
+    inline bool InboxPercentageHasBeenSet() const { return m_inboxPercentageHasBeenSet; }
+
+    /**
+     * <p>The percentage of messages that were sent from the selected domain to the
+     * specified email provider that arrived in recipients' inboxes.</p>
+     */
     inline void SetInboxPercentage(double value) { m_inboxPercentageHasBeenSet = true; m_inboxPercentage = value; }
 
     /**
@@ -150,6 +174,13 @@ namespace Model
      * folders.</p>
      */
     inline double GetSpamPercentage() const{ return m_spamPercentage; }
+
+    /**
+     * <p>The percentage of messages that were sent from the selected domain to the
+     * specified email provider that arrived in recipients' spam or junk mail
+     * folders.</p>
+     */
+    inline bool SpamPercentageHasBeenSet() const { return m_spamPercentageHasBeenSet; }
 
     /**
      * <p>The percentage of messages that were sent from the selected domain to the

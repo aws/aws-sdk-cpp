@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The name of the attribute.</p>
      */
+    inline bool AttributeNameHasBeenSet() const { return m_attributeNameHasBeenSet; }
+
+    /**
+     * <p>The name of the attribute.</p>
+     */
     inline void SetAttributeName(const Aws::String& value) { m_attributeNameHasBeenSet = true; m_attributeName = value; }
 
     /**
@@ -90,6 +95,12 @@ namespace Model
      * <code>Integer</code>.</p>
      */
     inline const Aws::String& GetAttributeType() const{ return m_attributeType; }
+
+    /**
+     * <p>The type of the attribute. For example, <code>Boolean</code> or
+     * <code>Integer</code>.</p>
+     */
+    inline bool AttributeTypeHasBeenSet() const { return m_attributeTypeHasBeenSet; }
 
     /**
      * <p>The type of the attribute. For example, <code>Boolean</code> or
@@ -136,6 +147,11 @@ namespace Model
     /**
      * <p>A description of the attribute.</p>
      */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
+
+    /**
+     * <p>A description of the attribute.</p>
+     */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
@@ -168,6 +184,11 @@ namespace Model
      * <p>The default value of the attribute, if applicable.</p>
      */
     inline const Aws::String& GetDefaultValue() const{ return m_defaultValue; }
+
+    /**
+     * <p>The default value of the attribute, if applicable.</p>
+     */
+    inline bool DefaultValueHasBeenSet() const { return m_defaultValueHasBeenSet; }
 
     /**
      * <p>The default value of the attribute, if applicable.</p>
@@ -208,6 +229,15 @@ namespace Model
      * values are allowed</p> </li> </ul>
      */
     inline const Aws::String& GetCardinality() const{ return m_cardinality; }
+
+    /**
+     * <p>The cardinality of the attribute.</p> <p>Valid values:</p> <ul> <li>
+     * <p>ONE(1) : Single value required</p> </li> <li> <p>ZERO_OR_ONE(0..1) : Up to
+     * one value is allowed</p> </li> <li> <p>ZERO_OR_MORE(0..*) : Optional. Multiple
+     * values are allowed</p> </li> <li> <p>ONE_OR_MORE(1..*0) : Required. Multiple
+     * values are allowed</p> </li> </ul>
+     */
+    inline bool CardinalityHasBeenSet() const { return m_cardinalityHasBeenSet; }
 
     /**
      * <p>The cardinality of the attribute.</p> <p>Valid values:</p> <ul> <li>

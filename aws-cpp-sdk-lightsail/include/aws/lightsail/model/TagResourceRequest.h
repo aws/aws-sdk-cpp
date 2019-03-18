@@ -54,6 +54,11 @@ namespace Model
     /**
      * <p>The name of the resource to which you are adding tags.</p>
      */
+    inline bool ResourceNameHasBeenSet() const { return m_resourceNameHasBeenSet; }
+
+    /**
+     * <p>The name of the resource to which you are adding tags.</p>
+     */
     inline void SetResourceName(const Aws::String& value) { m_resourceNameHasBeenSet = true; m_resourceName = value; }
 
     /**
@@ -86,6 +91,11 @@ namespace Model
      * <p>The tag key and optional value.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>The tag key and optional value.</p>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
      * <p>The tag key and optional value.</p>

@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p>The document name.</p>
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>The document name.</p>
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
@@ -90,6 +95,11 @@ namespace Model
      * <p>The document version.</p>
      */
     inline const Aws::String& GetDocumentVersion() const{ return m_documentVersion; }
+
+    /**
+     * <p>The document version.</p>
+     */
+    inline bool DocumentVersionHasBeenSet() const { return m_documentVersionHasBeenSet; }
 
     /**
      * <p>The document version.</p>
@@ -128,6 +138,13 @@ namespace Model
      * and cannot be changed.</p>
      */
     inline const Aws::String& GetVersionName() const{ return m_versionName; }
+
+    /**
+     * <p>The version of the artifact associated with the document. For example,
+     * "Release 12, Update 6". This value is unique across all versions of a document,
+     * and cannot be changed.</p>
+     */
+    inline bool VersionNameHasBeenSet() const { return m_versionNameHasBeenSet; }
 
     /**
      * <p>The version of the artifact associated with the document. For example,
@@ -180,6 +197,11 @@ namespace Model
     /**
      * <p>The date the document was created.</p>
      */
+    inline bool CreatedDateHasBeenSet() const { return m_createdDateHasBeenSet; }
+
+    /**
+     * <p>The date the document was created.</p>
+     */
     inline void SetCreatedDate(const Aws::Utils::DateTime& value) { m_createdDateHasBeenSet = true; m_createdDate = value; }
 
     /**
@@ -206,6 +228,11 @@ namespace Model
     /**
      * <p>An identifier for the default version of the document.</p>
      */
+    inline bool IsDefaultVersionHasBeenSet() const { return m_isDefaultVersionHasBeenSet; }
+
+    /**
+     * <p>An identifier for the default version of the document.</p>
+     */
     inline void SetIsDefaultVersion(bool value) { m_isDefaultVersionHasBeenSet = true; m_isDefaultVersion = value; }
 
     /**
@@ -218,6 +245,11 @@ namespace Model
      * <p>The document format, either JSON or YAML.</p>
      */
     inline const DocumentFormat& GetDocumentFormat() const{ return m_documentFormat; }
+
+    /**
+     * <p>The document format, either JSON or YAML.</p>
+     */
+    inline bool DocumentFormatHasBeenSet() const { return m_documentFormatHasBeenSet; }
 
     /**
      * <p>The document format, either JSON or YAML.</p>
@@ -245,6 +277,12 @@ namespace Model
      * <code>Active</code>, <code>Failed</code>, and <code>Deleting</code>.</p>
      */
     inline const DocumentStatus& GetStatus() const{ return m_status; }
+
+    /**
+     * <p>The status of the Systems Manager document, such as <code>Creating</code>,
+     * <code>Active</code>, <code>Failed</code>, and <code>Deleting</code>.</p>
+     */
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
     /**
      * <p>The status of the Systems Manager document, such as <code>Creating</code>,
@@ -278,6 +316,14 @@ namespace Model
      * bucket does not exist. Verify that the URL of the S3 bucket is correct."</p>
      */
     inline const Aws::String& GetStatusInformation() const{ return m_statusInformation; }
+
+    /**
+     * <p>A message returned by AWS Systems Manager that explains the
+     * <code>Status</code> value. For example, a <code>Failed</code> status might be
+     * explained by the <code>StatusInformation</code> message, "The specified S3
+     * bucket does not exist. Verify that the URL of the S3 bucket is correct."</p>
+     */
+    inline bool StatusInformationHasBeenSet() const { return m_statusInformationHasBeenSet; }
 
     /**
      * <p>A message returned by AWS Systems Manager that explains the

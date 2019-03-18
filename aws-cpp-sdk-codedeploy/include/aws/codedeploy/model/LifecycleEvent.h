@@ -60,6 +60,12 @@ namespace Model
      * <p>The deployment lifecycle event name, such as ApplicationStop, BeforeInstall,
      * AfterInstall, ApplicationStart, or ValidateService.</p>
      */
+    inline bool LifecycleEventNameHasBeenSet() const { return m_lifecycleEventNameHasBeenSet; }
+
+    /**
+     * <p>The deployment lifecycle event name, such as ApplicationStop, BeforeInstall,
+     * AfterInstall, ApplicationStart, or ValidateService.</p>
+     */
     inline void SetLifecycleEventName(const Aws::String& value) { m_lifecycleEventNameHasBeenSet = true; m_lifecycleEventName = value; }
 
     /**
@@ -101,6 +107,11 @@ namespace Model
     /**
      * <p>Diagnostic information about the deployment lifecycle event.</p>
      */
+    inline bool DiagnosticsHasBeenSet() const { return m_diagnosticsHasBeenSet; }
+
+    /**
+     * <p>Diagnostic information about the deployment lifecycle event.</p>
+     */
     inline void SetDiagnostics(const Diagnostics& value) { m_diagnosticsHasBeenSet = true; m_diagnostics = value; }
 
     /**
@@ -127,6 +138,11 @@ namespace Model
     /**
      * <p>A timestamp that indicates when the deployment lifecycle event started.</p>
      */
+    inline bool StartTimeHasBeenSet() const { return m_startTimeHasBeenSet; }
+
+    /**
+     * <p>A timestamp that indicates when the deployment lifecycle event started.</p>
+     */
     inline void SetStartTime(const Aws::Utils::DateTime& value) { m_startTimeHasBeenSet = true; m_startTime = value; }
 
     /**
@@ -149,6 +165,11 @@ namespace Model
      * <p>A timestamp that indicates when the deployment lifecycle event ended.</p>
      */
     inline const Aws::Utils::DateTime& GetEndTime() const{ return m_endTime; }
+
+    /**
+     * <p>A timestamp that indicates when the deployment lifecycle event ended.</p>
+     */
+    inline bool EndTimeHasBeenSet() const { return m_endTimeHasBeenSet; }
 
     /**
      * <p>A timestamp that indicates when the deployment lifecycle event ended.</p>
@@ -181,6 +202,17 @@ namespace Model
      * lifecycle event is unknown.</p> </li> </ul>
      */
     inline const LifecycleEventStatus& GetStatus() const{ return m_status; }
+
+    /**
+     * <p>The deployment lifecycle event status:</p> <ul> <li> <p>Pending: The
+     * deployment lifecycle event is pending.</p> </li> <li> <p>InProgress: The
+     * deployment lifecycle event is in progress.</p> </li> <li> <p>Succeeded: The
+     * deployment lifecycle event ran successfully.</p> </li> <li> <p>Failed: The
+     * deployment lifecycle event has failed.</p> </li> <li> <p>Skipped: The deployment
+     * lifecycle event has been skipped.</p> </li> <li> <p>Unknown: The deployment
+     * lifecycle event is unknown.</p> </li> </ul>
+     */
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
     /**
      * <p>The deployment lifecycle event status:</p> <ul> <li> <p>Pending: The

@@ -56,6 +56,12 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) that is associated with the schema. For more
      * information, see <a>arns</a>.</p>
      */
+    inline bool SchemaArnHasBeenSet() const { return m_schemaArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) that is associated with the schema. For more
+     * information, see <a>arns</a>.</p>
+     */
     inline void SetSchemaArn(const Aws::String& value) { m_schemaArnHasBeenSet = true; m_schemaArn = value; }
 
     /**
@@ -97,6 +103,11 @@ namespace Model
     /**
      * <p>The unique name of the typed link facet.</p>
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>The unique name of the typed link facet.</p>
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
@@ -129,6 +140,11 @@ namespace Model
      * <p>Attributes update structure.</p>
      */
     inline const Aws::Vector<TypedLinkFacetAttributeUpdate>& GetAttributeUpdates() const{ return m_attributeUpdates; }
+
+    /**
+     * <p>Attributes update structure.</p>
+     */
+    inline bool AttributeUpdatesHasBeenSet() const { return m_attributeUpdatesHasBeenSet; }
 
     /**
      * <p>Attributes update structure.</p>
@@ -174,6 +190,20 @@ namespace Model
      * Links</a>.</p>
      */
     inline const Aws::Vector<Aws::String>& GetIdentityAttributeOrder() const{ return m_identityAttributeOrder; }
+
+    /**
+     * <p>The order of identity attributes for the facet, from most significant to
+     * least significant. The ability to filter typed links considers the order that
+     * the attributes are defined on the typed link facet. When providing ranges to a
+     * typed link selection, any inexact ranges must be specified at the end. Any
+     * attributes that do not have a range specified are presumed to match the entire
+     * range. Filters are interpreted in the order of the attributes on the typed link
+     * facet, not the order in which they are supplied to any API calls. For more
+     * information about identity attributes, see <a
+     * href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink">Typed
+     * Links</a>.</p>
+     */
+    inline bool IdentityAttributeOrderHasBeenSet() const { return m_identityAttributeOrderHasBeenSet; }
 
     /**
      * <p>The order of identity attributes for the facet, from most significant to

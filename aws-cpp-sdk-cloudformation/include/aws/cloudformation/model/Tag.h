@@ -63,6 +63,13 @@ namespace Model
      * maximum of 128 characters for a tag key. Tags owned by Amazon Web Services (AWS)
      * have the reserved prefix: <code>aws:</code>.</p>
      */
+    inline bool KeyHasBeenSet() const { return m_keyHasBeenSet; }
+
+    /**
+     * <p> <i>Required</i>. A string used to identify this tag. You can specify a
+     * maximum of 128 characters for a tag key. Tags owned by Amazon Web Services (AWS)
+     * have the reserved prefix: <code>aws:</code>.</p>
+     */
     inline void SetKey(const Aws::String& value) { m_keyHasBeenSet = true; m_key = value; }
 
     /**
@@ -106,6 +113,12 @@ namespace Model
      * a maximum of 256 characters for a tag value.</p>
      */
     inline const Aws::String& GetValue() const{ return m_value; }
+
+    /**
+     * <p> <i>Required</i>. A string containing the value for this tag. You can specify
+     * a maximum of 256 characters for a tag value.</p>
+     */
+    inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
 
     /**
      * <p> <i>Required</i>. A string containing the value for this tag. You can specify

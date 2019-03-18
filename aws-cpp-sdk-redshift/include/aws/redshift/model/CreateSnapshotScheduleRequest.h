@@ -58,6 +58,12 @@ namespace Model
      * <p>The definition of the snapshot schedule. The definition is made up of
      * schedule expressions, for example "cron(30 12 *)" or "rate(12 hours)". </p>
      */
+    inline bool ScheduleDefinitionsHasBeenSet() const { return m_scheduleDefinitionsHasBeenSet; }
+
+    /**
+     * <p>The definition of the snapshot schedule. The definition is made up of
+     * schedule expressions, for example "cron(30 12 *)" or "rate(12 hours)". </p>
+     */
     inline void SetScheduleDefinitions(const Aws::Vector<Aws::String>& value) { m_scheduleDefinitionsHasBeenSet = true; m_scheduleDefinitions = value; }
 
     /**
@@ -107,6 +113,12 @@ namespace Model
      * <p>A unique identifier for a snapshot schedule. Only alphanumeric characters are
      * allowed for the identifier.</p>
      */
+    inline bool ScheduleIdentifierHasBeenSet() const { return m_scheduleIdentifierHasBeenSet; }
+
+    /**
+     * <p>A unique identifier for a snapshot schedule. Only alphanumeric characters are
+     * allowed for the identifier.</p>
+     */
     inline void SetScheduleIdentifier(const Aws::String& value) { m_scheduleIdentifierHasBeenSet = true; m_scheduleIdentifier = value; }
 
     /**
@@ -148,6 +160,11 @@ namespace Model
     /**
      * <p>The description of the snapshot schedule.</p>
      */
+    inline bool ScheduleDescriptionHasBeenSet() const { return m_scheduleDescriptionHasBeenSet; }
+
+    /**
+     * <p>The description of the snapshot schedule.</p>
+     */
     inline void SetScheduleDescription(const Aws::String& value) { m_scheduleDescriptionHasBeenSet = true; m_scheduleDescription = value; }
 
     /**
@@ -180,6 +197,9 @@ namespace Model
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
 
     
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
+
+    
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     
@@ -202,6 +222,9 @@ namespace Model
     inline bool GetDryRun() const{ return m_dryRun; }
 
     
+    inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
+
+    
     inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
 
     
@@ -210,6 +233,9 @@ namespace Model
 
     
     inline int GetNextInvocations() const{ return m_nextInvocations; }
+
+    
+    inline bool NextInvocationsHasBeenSet() const { return m_nextInvocationsHasBeenSet; }
 
     
     inline void SetNextInvocations(int value) { m_nextInvocationsHasBeenSet = true; m_nextInvocations = value; }

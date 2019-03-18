@@ -61,6 +61,12 @@ namespace Model
      * <p>(Optional) The maximum number of file system tags to return in the response.
      * Currently, this number is automatically set to 10.</p>
      */
+    inline bool MaxItemsHasBeenSet() const { return m_maxItemsHasBeenSet; }
+
+    /**
+     * <p>(Optional) The maximum number of file system tags to return in the response.
+     * Currently, this number is automatically set to 10.</p>
+     */
     inline void SetMaxItems(int value) { m_maxItemsHasBeenSet = true; m_maxItems = value; }
 
     /**
@@ -76,6 +82,13 @@ namespace Model
      * continue the list from where the previous call left off.</p>
      */
     inline const Aws::String& GetMarker() const{ return m_marker; }
+
+    /**
+     * <p>(Optional) An opaque pagination token returned from a previous
+     * <code>DescribeTags</code> operation (String). If present, it specifies to
+     * continue the list from where the previous call left off.</p>
+     */
+    inline bool MarkerHasBeenSet() const { return m_markerHasBeenSet; }
 
     /**
      * <p>(Optional) An opaque pagination token returned from a previous
@@ -124,6 +137,11 @@ namespace Model
      * <p>The ID of the file system whose tag set you want to retrieve.</p>
      */
     inline const Aws::String& GetFileSystemId() const{ return m_fileSystemId; }
+
+    /**
+     * <p>The ID of the file system whose tag set you want to retrieve.</p>
+     */
+    inline bool FileSystemIdHasBeenSet() const { return m_fileSystemIdHasBeenSet; }
 
     /**
      * <p>The ID of the file system whose tag set you want to retrieve.</p>

@@ -59,6 +59,11 @@ namespace Model
     /**
      * <p> The Amazon Resource Name (ARN) of the elastic inference accelerator. </p>
      */
+    inline bool ElasticInferenceAcceleratorArnHasBeenSet() const { return m_elasticInferenceAcceleratorArnHasBeenSet; }
+
+    /**
+     * <p> The Amazon Resource Name (ARN) of the elastic inference accelerator. </p>
+     */
     inline void SetElasticInferenceAcceleratorArn(const Aws::String& value) { m_elasticInferenceAcceleratorArnHasBeenSet = true; m_elasticInferenceAcceleratorArn = value; }
 
     /**
@@ -91,6 +96,11 @@ namespace Model
      * <p> The ID of the association. </p>
      */
     inline const Aws::String& GetElasticInferenceAcceleratorAssociationId() const{ return m_elasticInferenceAcceleratorAssociationId; }
+
+    /**
+     * <p> The ID of the association. </p>
+     */
+    inline bool ElasticInferenceAcceleratorAssociationIdHasBeenSet() const { return m_elasticInferenceAcceleratorAssociationIdHasBeenSet; }
 
     /**
      * <p> The ID of the association. </p>
@@ -131,6 +141,11 @@ namespace Model
     /**
      * <p> The state of the elastic inference accelerator. </p>
      */
+    inline bool ElasticInferenceAcceleratorAssociationStateHasBeenSet() const { return m_elasticInferenceAcceleratorAssociationStateHasBeenSet; }
+
+    /**
+     * <p> The state of the elastic inference accelerator. </p>
+     */
     inline void SetElasticInferenceAcceleratorAssociationState(const Aws::String& value) { m_elasticInferenceAcceleratorAssociationStateHasBeenSet = true; m_elasticInferenceAcceleratorAssociationState = value; }
 
     /**
@@ -164,6 +179,12 @@ namespace Model
      * instance. </p>
      */
     inline const Aws::Utils::DateTime& GetElasticInferenceAcceleratorAssociationTime() const{ return m_elasticInferenceAcceleratorAssociationTime; }
+
+    /**
+     * <p> The time at which the elastic inference accelerator is associated with an
+     * instance. </p>
+     */
+    inline bool ElasticInferenceAcceleratorAssociationTimeHasBeenSet() const { return m_elasticInferenceAcceleratorAssociationTimeHasBeenSet; }
 
     /**
      * <p> The time at which the elastic inference accelerator is associated with an

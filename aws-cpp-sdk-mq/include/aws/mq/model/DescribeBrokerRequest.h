@@ -56,6 +56,14 @@ namespace Model
      * and must not contain whitespaces, brackets, wildcard characters, or special
      * characters.
      */
+    inline bool BrokerIdHasBeenSet() const { return m_brokerIdHasBeenSet; }
+
+    /**
+     * The name of the broker. This value must be unique in your AWS account, 1-50
+     * characters long, must contain only letters, numbers, dashes, and underscores,
+     * and must not contain whitespaces, brackets, wildcard characters, or special
+     * characters.
+     */
     inline void SetBrokerId(const Aws::String& value) { m_brokerIdHasBeenSet = true; m_brokerId = value; }
 
     /**

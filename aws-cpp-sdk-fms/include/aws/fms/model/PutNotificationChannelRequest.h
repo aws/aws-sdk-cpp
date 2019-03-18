@@ -54,6 +54,12 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the SNS topic that collects notifications
      * from AWS Firewall Manager.</p>
      */
+    inline bool SnsTopicArnHasBeenSet() const { return m_snsTopicArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the SNS topic that collects notifications
+     * from AWS Firewall Manager.</p>
+     */
     inline void SetSnsTopicArn(const Aws::String& value) { m_snsTopicArnHasBeenSet = true; m_snsTopicArn = value; }
 
     /**
@@ -92,6 +98,12 @@ namespace Model
      * record AWS Firewall Manager activity. </p>
      */
     inline const Aws::String& GetSnsRoleName() const{ return m_snsRoleName; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the IAM role that allows Amazon SNS to
+     * record AWS Firewall Manager activity. </p>
+     */
+    inline bool SnsRoleNameHasBeenSet() const { return m_snsRoleNameHasBeenSet; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the IAM role that allows Amazon SNS to

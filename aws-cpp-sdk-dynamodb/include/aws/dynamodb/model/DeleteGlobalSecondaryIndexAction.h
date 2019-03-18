@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The name of the global secondary index to be deleted.</p>
      */
+    inline bool IndexNameHasBeenSet() const { return m_indexNameHasBeenSet; }
+
+    /**
+     * <p>The name of the global secondary index to be deleted.</p>
+     */
     inline void SetIndexName(const Aws::String& value) { m_indexNameHasBeenSet = true; m_indexName = value; }
 
     /**

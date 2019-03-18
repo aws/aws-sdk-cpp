@@ -57,6 +57,12 @@ namespace Model
      * <p>Name of the trail set by calling <a>CreateTrail</a>. The maximum length is
      * 128 characters.</p>
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>Name of the trail set by calling <a>CreateTrail</a>. The maximum length is
+     * 128 characters.</p>
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
@@ -97,6 +103,14 @@ namespace Model
      * S3 Bucket Naming Requirements</a>.</p>
      */
     inline const Aws::String& GetS3BucketName() const{ return m_s3BucketName; }
+
+    /**
+     * <p>Name of the Amazon S3 bucket into which CloudTrail delivers your trail files.
+     * See <a
+     * href="http://docs.aws.amazon.com/awscloudtrail/latest/userguide/create_trail_naming_policy.html">Amazon
+     * S3 Bucket Naming Requirements</a>.</p>
+     */
+    inline bool S3BucketNameHasBeenSet() const { return m_s3BucketNameHasBeenSet; }
 
     /**
      * <p>Name of the Amazon S3 bucket into which CloudTrail delivers your trail files.
@@ -161,6 +175,14 @@ namespace Model
      * href="http://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-find-log-files.html">Finding
      * Your CloudTrail Log Files</a>.The maximum length is 200 characters.</p>
      */
+    inline bool S3KeyPrefixHasBeenSet() const { return m_s3KeyPrefixHasBeenSet; }
+
+    /**
+     * <p>Specifies the Amazon S3 key prefix that comes after the name of the bucket
+     * you have designated for log file delivery. For more information, see <a
+     * href="http://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-find-log-files.html">Finding
+     * Your CloudTrail Log Files</a>.The maximum length is 200 characters.</p>
+     */
     inline void SetS3KeyPrefix(const Aws::String& value) { m_s3KeyPrefixHasBeenSet = true; m_s3KeyPrefix = value; }
 
     /**
@@ -216,6 +238,13 @@ namespace Model
      * notifications when log files are delivered. The format of a topic ARN is:</p>
      * <p> <code>arn:aws:sns:us-east-2:123456789012:MyTopic</code> </p>
      */
+    inline bool SnsTopicARNHasBeenSet() const { return m_snsTopicARNHasBeenSet; }
+
+    /**
+     * <p>Specifies the ARN of the Amazon SNS topic that CloudTrail uses to send
+     * notifications when log files are delivered. The format of a topic ARN is:</p>
+     * <p> <code>arn:aws:sns:us-east-2:123456789012:MyTopic</code> </p>
+     */
     inline void SetSnsTopicARN(const Aws::String& value) { m_snsTopicARNHasBeenSet = true; m_snsTopicARN = value; }
 
     /**
@@ -264,6 +293,12 @@ namespace Model
      * <p>Set to <b>True</b> to include AWS API calls from AWS global services such as
      * IAM. Otherwise, <b>False</b>.</p>
      */
+    inline bool IncludeGlobalServiceEventsHasBeenSet() const { return m_includeGlobalServiceEventsHasBeenSet; }
+
+    /**
+     * <p>Set to <b>True</b> to include AWS API calls from AWS global services such as
+     * IAM. Otherwise, <b>False</b>.</p>
+     */
     inline void SetIncludeGlobalServiceEvents(bool value) { m_includeGlobalServiceEventsHasBeenSet = true; m_includeGlobalServiceEvents = value; }
 
     /**
@@ -283,6 +318,12 @@ namespace Model
      * <p>Specifies whether the trail belongs only to one region or exists in all
      * regions.</p>
      */
+    inline bool IsMultiRegionTrailHasBeenSet() const { return m_isMultiRegionTrailHasBeenSet; }
+
+    /**
+     * <p>Specifies whether the trail belongs only to one region or exists in all
+     * regions.</p>
+     */
     inline void SetIsMultiRegionTrail(bool value) { m_isMultiRegionTrailHasBeenSet = true; m_isMultiRegionTrail = value; }
 
     /**
@@ -296,6 +337,11 @@ namespace Model
      * <p>The region in which the trail was created.</p>
      */
     inline const Aws::String& GetHomeRegion() const{ return m_homeRegion; }
+
+    /**
+     * <p>The region in which the trail was created.</p>
+     */
+    inline bool HomeRegionHasBeenSet() const { return m_homeRegionHasBeenSet; }
 
     /**
      * <p>The region in which the trail was created.</p>
@@ -333,6 +379,12 @@ namespace Model
      * <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
      */
     inline const Aws::String& GetTrailARN() const{ return m_trailARN; }
+
+    /**
+     * <p>Specifies the ARN of the trail. The format of a trail ARN is:</p> <p>
+     * <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
+     */
+    inline bool TrailARNHasBeenSet() const { return m_trailARNHasBeenSet; }
 
     /**
      * <p>Specifies the ARN of the trail. The format of a trail ARN is:</p> <p>
@@ -379,6 +431,11 @@ namespace Model
     /**
      * <p>Specifies whether log file validation is enabled.</p>
      */
+    inline bool LogFileValidationEnabledHasBeenSet() const { return m_logFileValidationEnabledHasBeenSet; }
+
+    /**
+     * <p>Specifies whether log file validation is enabled.</p>
+     */
     inline void SetLogFileValidationEnabled(bool value) { m_logFileValidationEnabledHasBeenSet = true; m_logFileValidationEnabled = value; }
 
     /**
@@ -392,6 +449,12 @@ namespace Model
      * the log group to which CloudTrail logs will be delivered.</p>
      */
     inline const Aws::String& GetCloudWatchLogsLogGroupArn() const{ return m_cloudWatchLogsLogGroupArn; }
+
+    /**
+     * <p>Specifies an Amazon Resource Name (ARN), a unique identifier that represents
+     * the log group to which CloudTrail logs will be delivered.</p>
+     */
+    inline bool CloudWatchLogsLogGroupArnHasBeenSet() const { return m_cloudWatchLogsLogGroupArnHasBeenSet; }
 
     /**
      * <p>Specifies an Amazon Resource Name (ARN), a unique identifier that represents
@@ -440,6 +503,12 @@ namespace Model
      * <p>Specifies the role for the CloudWatch Logs endpoint to assume to write to a
      * user's log group.</p>
      */
+    inline bool CloudWatchLogsRoleArnHasBeenSet() const { return m_cloudWatchLogsRoleArnHasBeenSet; }
+
+    /**
+     * <p>Specifies the role for the CloudWatch Logs endpoint to assume to write to a
+     * user's log group.</p>
+     */
     inline void SetCloudWatchLogsRoleArn(const Aws::String& value) { m_cloudWatchLogsRoleArnHasBeenSet = true; m_cloudWatchLogsRoleArn = value; }
 
     /**
@@ -480,6 +549,14 @@ namespace Model
      * </p>
      */
     inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
+
+    /**
+     * <p>Specifies the KMS key ID that encrypts the logs delivered by CloudTrail. The
+     * value is a fully specified ARN to a KMS key in the format:</p> <p>
+     * <code>arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012</code>
+     * </p>
+     */
+    inline bool KmsKeyIdHasBeenSet() const { return m_kmsKeyIdHasBeenSet; }
 
     /**
      * <p>Specifies the KMS key ID that encrypts the logs delivered by CloudTrail. The
@@ -538,6 +615,11 @@ namespace Model
     /**
      * <p>Specifies if the trail has custom event selectors.</p>
      */
+    inline bool HasCustomEventSelectorsHasBeenSet() const { return m_hasCustomEventSelectorsHasBeenSet; }
+
+    /**
+     * <p>Specifies if the trail has custom event selectors.</p>
+     */
     inline void SetHasCustomEventSelectors(bool value) { m_hasCustomEventSelectorsHasBeenSet = true; m_hasCustomEventSelectors = value; }
 
     /**
@@ -550,6 +632,11 @@ namespace Model
      * <p>Specifies whether the trail is an organization trail.</p>
      */
     inline bool GetIsOrganizationTrail() const{ return m_isOrganizationTrail; }
+
+    /**
+     * <p>Specifies whether the trail is an organization trail.</p>
+     */
+    inline bool IsOrganizationTrailHasBeenSet() const { return m_isOrganizationTrailHasBeenSet; }
 
     /**
      * <p>Specifies whether the trail is an organization trail.</p>

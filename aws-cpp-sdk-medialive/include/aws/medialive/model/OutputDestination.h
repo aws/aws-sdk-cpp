@@ -58,6 +58,11 @@ namespace Model
     /**
      * User-specified id. This is used in an output group or an output.
      */
+    inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
+
+    /**
+     * User-specified id. This is used in an output group or an output.
+     */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
     /**
@@ -91,6 +96,12 @@ namespace Model
      * encoders.
      */
     inline const Aws::Vector<MediaPackageOutputDestinationSettings>& GetMediaPackageSettings() const{ return m_mediaPackageSettings; }
+
+    /**
+     * Destination settings for a MediaPackage output; one destination for both
+     * encoders.
+     */
+    inline bool MediaPackageSettingsHasBeenSet() const { return m_mediaPackageSettingsHasBeenSet; }
 
     /**
      * Destination settings for a MediaPackage output; one destination for both
@@ -134,6 +145,12 @@ namespace Model
      * encoder.
      */
     inline const Aws::Vector<OutputDestinationSettings>& GetSettings() const{ return m_settings; }
+
+    /**
+     * Destination settings for a standard output; one destination for each redundant
+     * encoder.
+     */
+    inline bool SettingsHasBeenSet() const { return m_settingsHasBeenSet; }
 
     /**
      * Destination settings for a standard output; one destination for each redundant

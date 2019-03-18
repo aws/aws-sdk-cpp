@@ -56,6 +56,12 @@ namespace Model
      * <p>The ID of the Amazon Macie member account whose resources you want to remove
      * from being monitored by Amazon Macie. </p>
      */
+    inline bool MemberAccountIdHasBeenSet() const { return m_memberAccountIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the Amazon Macie member account whose resources you want to remove
+     * from being monitored by Amazon Macie. </p>
+     */
     inline void SetMemberAccountId(const Aws::String& value) { m_memberAccountIdHasBeenSet = true; m_memberAccountId = value; }
 
     /**
@@ -94,6 +100,12 @@ namespace Model
      * monitored and classified by Amazon Macie. </p>
      */
     inline const Aws::Vector<S3Resource>& GetAssociatedS3Resources() const{ return m_associatedS3Resources; }
+
+    /**
+     * <p>The S3 resources (buckets or prefixes) that you want to remove from being
+     * monitored and classified by Amazon Macie. </p>
+     */
+    inline bool AssociatedS3ResourcesHasBeenSet() const { return m_associatedS3ResourcesHasBeenSet; }
 
     /**
      * <p>The S3 resources (buckets or prefixes) that you want to remove from being

@@ -63,6 +63,11 @@ namespace Model
     /**
      * <p>The execution ID.</p>
      */
+    inline bool AutomationExecutionIdHasBeenSet() const { return m_automationExecutionIdHasBeenSet; }
+
+    /**
+     * <p>The execution ID.</p>
+     */
     inline void SetAutomationExecutionId(const Aws::String& value) { m_automationExecutionIdHasBeenSet = true; m_automationExecutionId = value; }
 
     /**
@@ -99,6 +104,11 @@ namespace Model
     /**
      * <p>The name of the Automation document used during execution.</p>
      */
+    inline bool DocumentNameHasBeenSet() const { return m_documentNameHasBeenSet; }
+
+    /**
+     * <p>The name of the Automation document used during execution.</p>
+     */
     inline void SetDocumentName(const Aws::String& value) { m_documentNameHasBeenSet = true; m_documentName = value; }
 
     /**
@@ -131,6 +141,11 @@ namespace Model
      * <p>The document version used during the execution.</p>
      */
     inline const Aws::String& GetDocumentVersion() const{ return m_documentVersion; }
+
+    /**
+     * <p>The document version used during the execution.</p>
+     */
+    inline bool DocumentVersionHasBeenSet() const { return m_documentVersionHasBeenSet; }
 
     /**
      * <p>The document version used during the execution.</p>
@@ -173,6 +188,12 @@ namespace Model
      * <p>The status of the execution. Valid values include: Running, Succeeded,
      * Failed, Timed out, or Cancelled.</p>
      */
+    inline bool AutomationExecutionStatusHasBeenSet() const { return m_automationExecutionStatusHasBeenSet; }
+
+    /**
+     * <p>The status of the execution. Valid values include: Running, Succeeded,
+     * Failed, Timed out, or Cancelled.</p>
+     */
     inline void SetAutomationExecutionStatus(const AutomationExecutionStatus& value) { m_automationExecutionStatusHasBeenSet = true; m_automationExecutionStatus = value; }
 
     /**
@@ -198,6 +219,11 @@ namespace Model
      * <p>The time the execution started.&gt;</p>
      */
     inline const Aws::Utils::DateTime& GetExecutionStartTime() const{ return m_executionStartTime; }
+
+    /**
+     * <p>The time the execution started.&gt;</p>
+     */
+    inline bool ExecutionStartTimeHasBeenSet() const { return m_executionStartTimeHasBeenSet; }
 
     /**
      * <p>The time the execution started.&gt;</p>
@@ -230,6 +256,12 @@ namespace Model
      * <p>The time the execution finished. This is not populated if the execution is
      * still in progress.</p>
      */
+    inline bool ExecutionEndTimeHasBeenSet() const { return m_executionEndTimeHasBeenSet; }
+
+    /**
+     * <p>The time the execution finished. This is not populated if the execution is
+     * still in progress.</p>
+     */
     inline void SetExecutionEndTime(const Aws::Utils::DateTime& value) { m_executionEndTimeHasBeenSet = true; m_executionEndTime = value; }
 
     /**
@@ -255,6 +287,11 @@ namespace Model
      * <p>The IAM role ARN of the user who executed the Automation.</p>
      */
     inline const Aws::String& GetExecutedBy() const{ return m_executedBy; }
+
+    /**
+     * <p>The IAM role ARN of the user who executed the Automation.</p>
+     */
+    inline bool ExecutedByHasBeenSet() const { return m_executedByHasBeenSet; }
 
     /**
      * <p>The IAM role ARN of the user who executed the Automation.</p>
@@ -295,6 +332,11 @@ namespace Model
     /**
      * <p>An Amazon S3 bucket where execution information is stored.</p>
      */
+    inline bool LogFileHasBeenSet() const { return m_logFileHasBeenSet; }
+
+    /**
+     * <p>An Amazon S3 bucket where execution information is stored.</p>
+     */
     inline void SetLogFile(const Aws::String& value) { m_logFileHasBeenSet = true; m_logFile = value; }
 
     /**
@@ -327,6 +369,11 @@ namespace Model
      * <p>The list of execution outputs as defined in the Automation document.</p>
      */
     inline const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& GetOutputs() const{ return m_outputs; }
+
+    /**
+     * <p>The list of execution outputs as defined in the Automation document.</p>
+     */
+    inline bool OutputsHasBeenSet() const { return m_outputsHasBeenSet; }
 
     /**
      * <p>The list of execution outputs as defined in the Automation document.</p>
@@ -387,6 +434,11 @@ namespace Model
     /**
      * <p>The Automation execution mode.</p>
      */
+    inline bool ModeHasBeenSet() const { return m_modeHasBeenSet; }
+
+    /**
+     * <p>The Automation execution mode.</p>
+     */
     inline void SetMode(const ExecutionMode& value) { m_modeHasBeenSet = true; m_mode = value; }
 
     /**
@@ -409,6 +461,11 @@ namespace Model
      * <p>The ExecutionId of the parent Automation.</p>
      */
     inline const Aws::String& GetParentAutomationExecutionId() const{ return m_parentAutomationExecutionId; }
+
+    /**
+     * <p>The ExecutionId of the parent Automation.</p>
+     */
+    inline bool ParentAutomationExecutionIdHasBeenSet() const { return m_parentAutomationExecutionIdHasBeenSet; }
 
     /**
      * <p>The ExecutionId of the parent Automation.</p>
@@ -449,6 +506,11 @@ namespace Model
     /**
      * <p>The name of the currently executing step.</p>
      */
+    inline bool CurrentStepNameHasBeenSet() const { return m_currentStepNameHasBeenSet; }
+
+    /**
+     * <p>The name of the currently executing step.</p>
+     */
     inline void SetCurrentStepName(const Aws::String& value) { m_currentStepNameHasBeenSet = true; m_currentStepName = value; }
 
     /**
@@ -481,6 +543,11 @@ namespace Model
      * <p>The action of the currently executing step.</p>
      */
     inline const Aws::String& GetCurrentAction() const{ return m_currentAction; }
+
+    /**
+     * <p>The action of the currently executing step.</p>
+     */
+    inline bool CurrentActionHasBeenSet() const { return m_currentActionHasBeenSet; }
 
     /**
      * <p>The action of the currently executing step.</p>
@@ -521,6 +588,11 @@ namespace Model
     /**
      * <p>The list of execution outputs as defined in the Automation document.</p>
      */
+    inline bool FailureMessageHasBeenSet() const { return m_failureMessageHasBeenSet; }
+
+    /**
+     * <p>The list of execution outputs as defined in the Automation document.</p>
+     */
     inline void SetFailureMessage(const Aws::String& value) { m_failureMessageHasBeenSet = true; m_failureMessage = value; }
 
     /**
@@ -553,6 +625,11 @@ namespace Model
      * <p>The list of execution outputs as defined in the Automation document.</p>
      */
     inline const Aws::String& GetTargetParameterName() const{ return m_targetParameterName; }
+
+    /**
+     * <p>The list of execution outputs as defined in the Automation document.</p>
+     */
+    inline bool TargetParameterNameHasBeenSet() const { return m_targetParameterNameHasBeenSet; }
 
     /**
      * <p>The list of execution outputs as defined in the Automation document.</p>
@@ -593,6 +670,11 @@ namespace Model
     /**
      * <p>The targets defined by the user when starting the Automation.</p>
      */
+    inline bool TargetsHasBeenSet() const { return m_targetsHasBeenSet; }
+
+    /**
+     * <p>The targets defined by the user when starting the Automation.</p>
+     */
     inline void SetTargets(const Aws::Vector<Target>& value) { m_targetsHasBeenSet = true; m_targets = value; }
 
     /**
@@ -626,6 +708,12 @@ namespace Model
      * resources.</p>
      */
     inline const Aws::Vector<Aws::Map<Aws::String, Aws::Vector<Aws::String>>>& GetTargetMaps() const{ return m_targetMaps; }
+
+    /**
+     * <p>The specified key-value mapping of document parameters to target
+     * resources.</p>
+     */
+    inline bool TargetMapsHasBeenSet() const { return m_targetMapsHasBeenSet; }
 
     /**
      * <p>The specified key-value mapping of document parameters to target
@@ -672,6 +760,11 @@ namespace Model
     /**
      * <p>A list of targets that resolved during the execution.</p>
      */
+    inline bool ResolvedTargetsHasBeenSet() const { return m_resolvedTargetsHasBeenSet; }
+
+    /**
+     * <p>A list of targets that resolved during the execution.</p>
+     */
     inline void SetResolvedTargets(const ResolvedTargets& value) { m_resolvedTargetsHasBeenSet = true; m_resolvedTargets = value; }
 
     /**
@@ -695,6 +788,12 @@ namespace Model
      * Automation.</p>
      */
     inline const Aws::String& GetMaxConcurrency() const{ return m_maxConcurrency; }
+
+    /**
+     * <p>The MaxConcurrency value specified by the user when starting the
+     * Automation.</p>
+     */
+    inline bool MaxConcurrencyHasBeenSet() const { return m_maxConcurrencyHasBeenSet; }
 
     /**
      * <p>The MaxConcurrency value specified by the user when starting the
@@ -741,6 +840,11 @@ namespace Model
     /**
      * <p>The MaxErrors value specified by the user when starting the Automation.</p>
      */
+    inline bool MaxErrorsHasBeenSet() const { return m_maxErrorsHasBeenSet; }
+
+    /**
+     * <p>The MaxErrors value specified by the user when starting the Automation.</p>
+     */
     inline void SetMaxErrors(const Aws::String& value) { m_maxErrorsHasBeenSet = true; m_maxErrors = value; }
 
     /**
@@ -773,6 +877,11 @@ namespace Model
      * <p>The list of execution outputs as defined in the Automation document.</p>
      */
     inline const Aws::String& GetTarget() const{ return m_target; }
+
+    /**
+     * <p>The list of execution outputs as defined in the Automation document.</p>
+     */
+    inline bool TargetHasBeenSet() const { return m_targetHasBeenSet; }
 
     /**
      * <p>The list of execution outputs as defined in the Automation document.</p>
@@ -814,6 +923,16 @@ namespace Model
      * Systems Manager User Guide</i>. </p>
      */
     inline const AutomationType& GetAutomationType() const{ return m_automationType; }
+
+    /**
+     * <p>Use this filter with <a>DescribeAutomationExecutions</a>. Specify either
+     * Local or CrossAccount. CrossAccount is an Automation that executes in multiple
+     * AWS Regions and accounts. For more information, see <a
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-automation-multiple-accounts-and-regions.html">Concurrently
+     * Executing Automations in Multiple AWS Regions and Accounts</a> in the <i>AWS
+     * Systems Manager User Guide</i>. </p>
+     */
+    inline bool AutomationTypeHasBeenSet() const { return m_automationTypeHasBeenSet; }
 
     /**
      * <p>Use this filter with <a>DescribeAutomationExecutions</a>. Specify either

@@ -58,6 +58,12 @@ namespace Model
      * <p>Set this to true to generate a publicly accessible URL for your project's
      * build badge.</p>
      */
+    inline bool BadgeEnabledHasBeenSet() const { return m_badgeEnabledHasBeenSet; }
+
+    /**
+     * <p>Set this to true to generate a publicly accessible URL for your project's
+     * build badge.</p>
+     */
     inline void SetBadgeEnabled(bool value) { m_badgeEnabledHasBeenSet = true; m_badgeEnabled = value; }
 
     /**
@@ -73,6 +79,13 @@ namespace Model
      * the build badge for your project. </p>
      */
     inline const Aws::String& GetBadgeRequestUrl() const{ return m_badgeRequestUrl; }
+
+    /**
+     * <p>The publicly-accessible URL through which you can access the build badge for
+     * your project. </p> <p>The publicly accessible URL through which you can access
+     * the build badge for your project. </p>
+     */
+    inline bool BadgeRequestUrlHasBeenSet() const { return m_badgeRequestUrlHasBeenSet; }
 
     /**
      * <p>The publicly-accessible URL through which you can access the build badge for

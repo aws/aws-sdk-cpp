@@ -55,6 +55,11 @@ namespace Model
     /**
      * <p>The device status detail code.</p>
      */
+    inline bool CodeHasBeenSet() const { return m_codeHasBeenSet; }
+
+    /**
+     * <p>The device status detail code.</p>
+     */
     inline void SetCode(const DeviceStatusDetailCode& value) { m_codeHasBeenSet = true; m_code = value; }
 
     /**

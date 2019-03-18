@@ -58,6 +58,12 @@ namespace Model
      * <p>The time, in epoch format, associated with a particular
      * <code>Value</code>.</p>
      */
+    inline bool TimestampHasBeenSet() const { return m_timestampHasBeenSet; }
+
+    /**
+     * <p>The time, in epoch format, associated with a particular
+     * <code>Value</code>.</p>
+     */
     inline void SetTimestamp(const Aws::Utils::DateTime& value) { m_timestampHasBeenSet = true; m_timestamp = value; }
 
     /**
@@ -83,6 +89,11 @@ namespace Model
      * <p>The actual value associated with a particular <code>Timestamp</code>.</p>
      */
     inline double GetValue() const{ return m_value; }
+
+    /**
+     * <p>The actual value associated with a particular <code>Timestamp</code>.</p>
+     */
+    inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
 
     /**
      * <p>The actual value associated with a particular <code>Timestamp</code>.</p>

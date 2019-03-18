@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p>The name of the bot for which utterance information should be returned.</p>
      */
+    inline bool BotNameHasBeenSet() const { return m_botNameHasBeenSet; }
+
+    /**
+     * <p>The name of the bot for which utterance information should be returned.</p>
+     */
     inline void SetBotName(const Aws::String& value) { m_botNameHasBeenSet = true; m_botName = value; }
 
     /**
@@ -91,6 +96,12 @@ namespace Model
      * The limit is 5 versions per request.</p>
      */
     inline const Aws::Vector<Aws::String>& GetBotVersions() const{ return m_botVersions; }
+
+    /**
+     * <p>An array of bot versions for which utterance information should be returned.
+     * The limit is 5 versions per request.</p>
+     */
+    inline bool BotVersionsHasBeenSet() const { return m_botVersionsHasBeenSet; }
 
     /**
      * <p>An array of bot versions for which utterance information should be returned.
@@ -141,6 +152,13 @@ namespace Model
      * <code>Missed</code>.</p>
      */
     inline const StatusType& GetStatusType() const{ return m_statusType; }
+
+    /**
+     * <p>To return utterances that were recognized and handled,
+     * use<code>Detected</code>. To return utterances that were not recognized, use
+     * <code>Missed</code>.</p>
+     */
+    inline bool StatusTypeHasBeenSet() const { return m_statusTypeHasBeenSet; }
 
     /**
      * <p>To return utterances that were recognized and handled,

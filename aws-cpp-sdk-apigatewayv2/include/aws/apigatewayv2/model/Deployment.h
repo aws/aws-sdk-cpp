@@ -61,6 +61,11 @@ namespace Model
     /**
      * <p>The date and time when the Deployment resource was created.</p>
      */
+    inline bool CreatedDateHasBeenSet() const { return m_createdDateHasBeenSet; }
+
+    /**
+     * <p>The date and time when the Deployment resource was created.</p>
+     */
     inline void SetCreatedDate(const Aws::Utils::DateTime& value) { m_createdDateHasBeenSet = true; m_createdDate = value; }
 
     /**
@@ -83,6 +88,11 @@ namespace Model
      * <p>The identifier for the deployment.</p>
      */
     inline const Aws::String& GetDeploymentId() const{ return m_deploymentId; }
+
+    /**
+     * <p>The identifier for the deployment.</p>
+     */
+    inline bool DeploymentIdHasBeenSet() const { return m_deploymentIdHasBeenSet; }
 
     /**
      * <p>The identifier for the deployment.</p>
@@ -125,6 +135,12 @@ namespace Model
      * <p>The status of the deployment: PENDING, FAILED, or
  SUCCEEDED.</p>
      */
+    inline bool DeploymentStatusHasBeenSet() const { return m_deploymentStatusHasBeenSet; }
+
+    /**
+     * <p>The status of the deployment: PENDING, FAILED, or
+ SUCCEEDED.</p>
+     */
     inline void SetDeploymentStatus(const DeploymentStatus& value) { m_deploymentStatusHasBeenSet = true; m_deploymentStatus = value; }
 
     /**
@@ -150,6 +166,11 @@ namespace Model
      * <p>May contain additional feedback on the status of an API deployment.</p>
      */
     inline const Aws::String& GetDeploymentStatusMessage() const{ return m_deploymentStatusMessage; }
+
+    /**
+     * <p>May contain additional feedback on the status of an API deployment.</p>
+     */
+    inline bool DeploymentStatusMessageHasBeenSet() const { return m_deploymentStatusMessageHasBeenSet; }
 
     /**
      * <p>May contain additional feedback on the status of an API deployment.</p>
@@ -186,6 +207,11 @@ namespace Model
      * <p>The description for the deployment.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
+
+    /**
+     * <p>The description for the deployment.</p>
+     */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
 
     /**
      * <p>The description for the deployment.</p>

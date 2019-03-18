@@ -51,6 +51,11 @@ namespace Model
     /**
      * <p>The ARN of the insight that you want to update.</p>
      */
+    inline bool InsightArnHasBeenSet() const { return m_insightArnHasBeenSet; }
+
+    /**
+     * <p>The ARN of the insight that you want to update.</p>
+     */
     inline void SetInsightArn(const Aws::String& value) { m_insightArnHasBeenSet = true; m_insightArn = value; }
 
     /**
@@ -83,6 +88,11 @@ namespace Model
      * <p>The updated name for the insight.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
+
+    /**
+     * <p>The updated name for the insight.</p>
+     */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
      * <p>The updated name for the insight.</p>
@@ -123,6 +133,11 @@ namespace Model
     /**
      * <p>The updated filters that define this insight.</p>
      */
+    inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
+
+    /**
+     * <p>The updated filters that define this insight.</p>
+     */
     inline void SetFilters(const AwsSecurityFindingFilters& value) { m_filtersHasBeenSet = true; m_filters = value; }
 
     /**
@@ -145,6 +160,11 @@ namespace Model
      * <p>The updated GroupBy attribute that defines this insight.</p>
      */
     inline const Aws::String& GetGroupByAttribute() const{ return m_groupByAttribute; }
+
+    /**
+     * <p>The updated GroupBy attribute that defines this insight.</p>
+     */
+    inline bool GroupByAttributeHasBeenSet() const { return m_groupByAttributeHasBeenSet; }
 
     /**
      * <p>The updated GroupBy attribute that defines this insight.</p>

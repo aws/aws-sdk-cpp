@@ -62,6 +62,14 @@ namespace Model
      * with MFA delete. If the bucket has never been so configured, this element is not
      * returned.</p>
      */
+    inline bool MFADeleteHasBeenSet() const { return m_mFADeleteHasBeenSet; }
+
+    /**
+     * <p>Specifies whether MFA delete is enabled in the bucket versioning
+     * configuration. This element is only returned if the bucket has been configured
+     * with MFA delete. If the bucket has never been so configured, this element is not
+     * returned.</p>
+     */
     inline void SetMFADelete(const MFADelete& value) { m_mFADeleteHasBeenSet = true; m_mFADelete = value; }
 
     /**
@@ -93,6 +101,11 @@ namespace Model
      * <p>The versioning state of the bucket.</p>
      */
     inline const BucketVersioningStatus& GetStatus() const{ return m_status; }
+
+    /**
+     * <p>The versioning state of the bucket.</p>
+     */
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
     /**
      * <p>The versioning state of the bucket.</p>

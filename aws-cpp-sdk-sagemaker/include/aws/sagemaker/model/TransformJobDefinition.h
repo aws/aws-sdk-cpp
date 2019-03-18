@@ -63,6 +63,12 @@ namespace Model
      * <p>The maximum number of parallel requests that can be sent to each instance in
      * a transform job. The default value is 1.</p>
      */
+    inline bool MaxConcurrentTransformsHasBeenSet() const { return m_maxConcurrentTransformsHasBeenSet; }
+
+    /**
+     * <p>The maximum number of parallel requests that can be sent to each instance in
+     * a transform job. The default value is 1.</p>
+     */
     inline void SetMaxConcurrentTransforms(int value) { m_maxConcurrentTransformsHasBeenSet = true; m_maxConcurrentTransforms = value; }
 
     /**
@@ -77,6 +83,12 @@ namespace Model
      * record (without metadata).</p>
      */
     inline int GetMaxPayloadInMB() const{ return m_maxPayloadInMB; }
+
+    /**
+     * <p>The maximum payload size allowed, in MB. A payload is the data portion of a
+     * record (without metadata).</p>
+     */
+    inline bool MaxPayloadInMBHasBeenSet() const { return m_maxPayloadInMBHasBeenSet; }
 
     /**
      * <p>The maximum payload size allowed, in MB. A payload is the data portion of a
@@ -98,6 +110,14 @@ namespace Model
      * many records that can fit within the <code>MaxPayloadInMB</code> limit.</p>
      */
     inline const BatchStrategy& GetBatchStrategy() const{ return m_batchStrategy; }
+
+    /**
+     * <p>A string that determines the number of records included in a single
+     * mini-batch.</p> <p> <code>SingleRecord</code> means only one record is used per
+     * mini-batch. <code>MultiRecord</code> means a mini-batch is set to contain as
+     * many records that can fit within the <code>MaxPayloadInMB</code> limit.</p>
+     */
+    inline bool BatchStrategyHasBeenSet() const { return m_batchStrategyHasBeenSet; }
 
     /**
      * <p>A string that determines the number of records included in a single
@@ -137,6 +157,12 @@ namespace Model
      * key and values entries in the map.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetEnvironment() const{ return m_environment; }
+
+    /**
+     * <p>The environment variables to set in the Docker container. We support up to 16
+     * key and values entries in the map.</p>
+     */
+    inline bool EnvironmentHasBeenSet() const { return m_environmentHasBeenSet; }
 
     /**
      * <p>The environment variables to set in the Docker container. We support up to 16
@@ -215,6 +241,12 @@ namespace Model
      * <p>A description of the input source and the way the transform job consumes
      * it.</p>
      */
+    inline bool TransformInputHasBeenSet() const { return m_transformInputHasBeenSet; }
+
+    /**
+     * <p>A description of the input source and the way the transform job consumes
+     * it.</p>
+     */
     inline void SetTransformInput(const TransformInput& value) { m_transformInputHasBeenSet = true; m_transformInput = value; }
 
     /**
@@ -246,6 +278,12 @@ namespace Model
      * <p>Identifies the Amazon S3 location where you want Amazon SageMaker to save the
      * results from the transform job.</p>
      */
+    inline bool TransformOutputHasBeenSet() const { return m_transformOutputHasBeenSet; }
+
+    /**
+     * <p>Identifies the Amazon S3 location where you want Amazon SageMaker to save the
+     * results from the transform job.</p>
+     */
     inline void SetTransformOutput(const TransformOutput& value) { m_transformOutputHasBeenSet = true; m_transformOutput = value; }
 
     /**
@@ -271,6 +309,11 @@ namespace Model
      * <p>Identifies the ML compute instances for the transform job.</p>
      */
     inline const TransformResources& GetTransformResources() const{ return m_transformResources; }
+
+    /**
+     * <p>Identifies the ML compute instances for the transform job.</p>
+     */
+    inline bool TransformResourcesHasBeenSet() const { return m_transformResourcesHasBeenSet; }
 
     /**
      * <p>Identifies the ML compute instances for the transform job.</p>

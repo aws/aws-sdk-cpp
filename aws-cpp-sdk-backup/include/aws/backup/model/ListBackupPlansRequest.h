@@ -62,6 +62,14 @@ namespace Model
      * <code>NextToken</code> allows you to return more items in your list starting at
      * the location pointed to by the next token.</p>
      */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
+
+    /**
+     * <p>The next item following a partial list of returned items. For example, if a
+     * request is made to return <code>maxResults</code> number of items,
+     * <code>NextToken</code> allows you to return more items in your list starting at
+     * the location pointed to by the next token.</p>
+     */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
     /**
@@ -113,6 +121,11 @@ namespace Model
     /**
      * <p>The maximum number of items to be returned.</p>
      */
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
+
+    /**
+     * <p>The maximum number of items to be returned.</p>
+     */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
@@ -126,6 +139,12 @@ namespace Model
      * deleted backup plans when set to <code>TRUE</code>.</p>
      */
     inline bool GetIncludeDeleted() const{ return m_includeDeleted; }
+
+    /**
+     * <p>A Boolean value with a default value of <code>FALSE</code> that returns
+     * deleted backup plans when set to <code>TRUE</code>.</p>
+     */
+    inline bool IncludeDeletedHasBeenSet() const { return m_includeDeletedHasBeenSet; }
 
     /**
      * <p>A Boolean value with a default value of <code>FALSE</code> that returns

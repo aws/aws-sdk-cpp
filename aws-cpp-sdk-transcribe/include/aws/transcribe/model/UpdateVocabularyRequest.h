@@ -54,6 +54,11 @@ namespace Model
     /**
      * <p>The name of the vocabulary to update. The name is case-sensitive.</p>
      */
+    inline bool VocabularyNameHasBeenSet() const { return m_vocabularyNameHasBeenSet; }
+
+    /**
+     * <p>The name of the vocabulary to update. The name is case-sensitive.</p>
+     */
     inline void SetVocabularyName(const Aws::String& value) { m_vocabularyNameHasBeenSet = true; m_vocabularyName = value; }
 
     /**
@@ -90,6 +95,11 @@ namespace Model
     /**
      * <p>The language code of the vocabulary entries.</p>
      */
+    inline bool LanguageCodeHasBeenSet() const { return m_languageCodeHasBeenSet; }
+
+    /**
+     * <p>The language code of the vocabulary entries.</p>
+     */
     inline void SetLanguageCode(const LanguageCode& value) { m_languageCodeHasBeenSet = true; m_languageCode = value; }
 
     /**
@@ -112,6 +122,11 @@ namespace Model
      * <p>An array of strings containing the vocabulary entries.</p>
      */
     inline const Aws::Vector<Aws::String>& GetPhrases() const{ return m_phrases; }
+
+    /**
+     * <p>An array of strings containing the vocabulary entries.</p>
+     */
+    inline bool PhrasesHasBeenSet() const { return m_phrasesHasBeenSet; }
 
     /**
      * <p>An array of strings containing the vocabulary entries.</p>

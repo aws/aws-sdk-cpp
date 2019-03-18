@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the specified policy.</p>
      */
+    inline bool PolicyArnHasBeenSet() const { return m_policyArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the specified policy.</p>
+     */
     inline void SetPolicyArn(const Aws::String& value) { m_policyArnHasBeenSet = true; m_policyArn = value; }
 
     /**
@@ -92,6 +97,11 @@ namespace Model
     /**
      * <p>The ID of the specified policy.</p>
      */
+    inline bool PolicyIdHasBeenSet() const { return m_policyIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the specified policy.</p>
+     */
     inline void SetPolicyId(const Aws::String& value) { m_policyIdHasBeenSet = true; m_policyId = value; }
 
     /**
@@ -124,6 +134,11 @@ namespace Model
      * <p>The friendly name of the specified policy.</p>
      */
     inline const Aws::String& GetPolicyName() const{ return m_policyName; }
+
+    /**
+     * <p>The friendly name of the specified policy.</p>
+     */
+    inline bool PolicyNameHasBeenSet() const { return m_policyNameHasBeenSet; }
 
     /**
      * <p>The friendly name of the specified policy.</p>
@@ -165,6 +180,16 @@ namespace Model
      * <code>AWS::CloudFront::Distribution</code>.</p>
      */
     inline const Aws::String& GetResourceType() const{ return m_resourceType; }
+
+    /**
+     * <p>The type of resource to protect with the policy, either an Application Load
+     * Balancer or a CloudFront distribution. This is in the format shown in <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
+     * Resource Types Reference</a>. Valid values are
+     * <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code> or
+     * <code>AWS::CloudFront::Distribution</code>.</p>
+     */
+    inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
 
     /**
      * <p>The type of resource to protect with the policy, either an Application Load
@@ -237,6 +262,12 @@ namespace Model
      * <p>The service that the policy is using to protect the resources. This value is
      * <code>WAF</code>.</p>
      */
+    inline bool SecurityServiceTypeHasBeenSet() const { return m_securityServiceTypeHasBeenSet; }
+
+    /**
+     * <p>The service that the policy is using to protect the resources. This value is
+     * <code>WAF</code>.</p>
+     */
     inline void SetSecurityServiceType(const SecurityServiceType& value) { m_securityServiceTypeHasBeenSet = true; m_securityServiceType = value; }
 
     /**
@@ -262,6 +293,11 @@ namespace Model
      * <p>Indicates if the policy should be automatically applied to new resources.</p>
      */
     inline bool GetRemediationEnabled() const{ return m_remediationEnabled; }
+
+    /**
+     * <p>Indicates if the policy should be automatically applied to new resources.</p>
+     */
+    inline bool RemediationEnabledHasBeenSet() const { return m_remediationEnabledHasBeenSet; }
 
     /**
      * <p>Indicates if the policy should be automatically applied to new resources.</p>

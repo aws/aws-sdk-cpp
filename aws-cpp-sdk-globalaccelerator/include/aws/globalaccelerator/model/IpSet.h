@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The types of IP addresses included in this IP set.</p>
      */
+    inline bool IpFamilyHasBeenSet() const { return m_ipFamilyHasBeenSet; }
+
+    /**
+     * <p>The types of IP addresses included in this IP set.</p>
+     */
     inline void SetIpFamily(const Aws::String& value) { m_ipFamilyHasBeenSet = true; m_ipFamily = value; }
 
     /**
@@ -90,6 +95,12 @@ namespace Model
      * maximum of two IP addresses.</p>
      */
     inline const Aws::Vector<Aws::String>& GetIpAddresses() const{ return m_ipAddresses; }
+
+    /**
+     * <p>The array of IP addresses in the IP address set. An IP address set can have a
+     * maximum of two IP addresses.</p>
+     */
+    inline bool IpAddressesHasBeenSet() const { return m_ipAddressesHasBeenSet; }
 
     /**
      * <p>The array of IP addresses in the IP address set. An IP address set can have a

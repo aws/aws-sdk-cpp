@@ -65,6 +65,13 @@ namespace Model
      * example,
      * <code>arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45</code>.</p>
      */
+    inline bool RecoveryPointArnHasBeenSet() const { return m_recoveryPointArnHasBeenSet; }
+
+    /**
+     * <p>An Amazon Resource Name (ARN) that uniquely identifies a recovery point; for
+     * example,
+     * <code>arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45</code>.</p>
+     */
     inline void SetRecoveryPointArn(const Aws::String& value) { m_recoveryPointArnHasBeenSet = true; m_recoveryPointArn = value; }
 
     /**
@@ -110,6 +117,14 @@ namespace Model
      * and hyphens.</p>
      */
     inline const Aws::String& GetBackupVaultName() const{ return m_backupVaultName; }
+
+    /**
+     * <p>The name of a logical container where backups are stored. Backup vaults are
+     * identified by names that are unique to the account used to create them and the
+     * AWS Region where they are created. They consist of lowercase letters, numbers,
+     * and hyphens.</p>
+     */
+    inline bool BackupVaultNameHasBeenSet() const { return m_backupVaultNameHasBeenSet; }
 
     /**
      * <p>The name of a logical container where backups are stored. Backup vaults are
@@ -170,6 +185,12 @@ namespace Model
      * <p>An ARN that uniquely identifies a backup vault; for example,
      * <code>arn:aws:backup:us-east-1:123456789012:vault:aBackupVault</code>.</p>
      */
+    inline bool BackupVaultArnHasBeenSet() const { return m_backupVaultArnHasBeenSet; }
+
+    /**
+     * <p>An ARN that uniquely identifies a backup vault; for example,
+     * <code>arn:aws:backup:us-east-1:123456789012:vault:aBackupVault</code>.</p>
+     */
     inline void SetBackupVaultArn(const Aws::String& value) { m_backupVaultArnHasBeenSet = true; m_backupVaultArn = value; }
 
     /**
@@ -208,6 +229,12 @@ namespace Model
      * the resource type.</p>
      */
     inline const Aws::String& GetResourceArn() const{ return m_resourceArn; }
+
+    /**
+     * <p>An ARN that uniquely identifies a resource. The format of the ARN depends on
+     * the resource type.</p>
+     */
+    inline bool ResourceArnHasBeenSet() const { return m_resourceArnHasBeenSet; }
 
     /**
      * <p>An ARN that uniquely identifies a resource. The format of the ARN depends on
@@ -252,6 +279,13 @@ namespace Model
      * (Amazon RDS) database.</p>
      */
     inline const Aws::String& GetResourceType() const{ return m_resourceType; }
+
+    /**
+     * <p>The type of AWS resource saved as a recovery point; for example, an Amazon
+     * Elastic Block Store (Amazon EBS) volume or an Amazon Relational Database Service
+     * (Amazon RDS) database.</p>
+     */
+    inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
 
     /**
      * <p>The type of AWS resource saved as a recovery point; for example, an Amazon
@@ -310,6 +344,14 @@ namespace Model
      * <code>BackupPlanVersion</code>, and <code>BackupRuleId</code> of the backup plan
      * that is used to create it.</p>
      */
+    inline bool CreatedByHasBeenSet() const { return m_createdByHasBeenSet; }
+
+    /**
+     * <p>Contains identifying information about the creation of a recovery point,
+     * including the <code>BackupPlanArn</code>, <code>BackupPlanId</code>,
+     * <code>BackupPlanVersion</code>, and <code>BackupRuleId</code> of the backup plan
+     * that is used to create it.</p>
+     */
     inline void SetCreatedBy(const RecoveryPointCreator& value) { m_createdByHasBeenSet = true; m_createdBy = value; }
 
     /**
@@ -342,6 +384,12 @@ namespace Model
      * example, <code>arn:aws:iam::123456789012:role/S3Access</code>.</p>
      */
     inline const Aws::String& GetIamRoleArn() const{ return m_iamRoleArn; }
+
+    /**
+     * <p>Specifies the IAM role ARN used to create the target recovery point; for
+     * example, <code>arn:aws:iam::123456789012:role/S3Access</code>.</p>
+     */
+    inline bool IamRoleArnHasBeenSet() const { return m_iamRoleArnHasBeenSet; }
 
     /**
      * <p>Specifies the IAM role ARN used to create the target recovery point; for
@@ -388,6 +436,11 @@ namespace Model
     /**
      * <p>A status code specifying the state of the recovery point.</p>
      */
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
+
+    /**
+     * <p>A status code specifying the state of the recovery point.</p>
+     */
     inline void SetStatus(const RecoveryPointStatus& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
@@ -413,6 +466,14 @@ namespace Model
      * 26, 2018 12:11:30.087 AM.</p>
      */
     inline const Aws::Utils::DateTime& GetCreationDate() const{ return m_creationDate; }
+
+    /**
+     * <p>The date and time a recovery point is created, in Unix format and Coordinated
+     * Universal Time (UTC). The value of <code>CreationDate</code> is accurate to
+     * milliseconds. For example, the value 1516925490.087 represents Friday, January
+     * 26, 2018 12:11:30.087 AM.</p>
+     */
+    inline bool CreationDateHasBeenSet() const { return m_creationDateHasBeenSet; }
 
     /**
      * <p>The date and time a recovery point is created, in Unix format and Coordinated
@@ -461,6 +522,14 @@ namespace Model
      * <code>CompletionDate</code> is accurate to milliseconds. For example, the value
      * 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
      */
+    inline bool CompletionDateHasBeenSet() const { return m_completionDateHasBeenSet; }
+
+    /**
+     * <p>The date and time a job to restore a recovery point is completed, in Unix
+     * format and Coordinated Universal Time (UTC). The value of
+     * <code>CompletionDate</code> is accurate to milliseconds. For example, the value
+     * 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
+     */
     inline void SetCompletionDate(const Aws::Utils::DateTime& value) { m_completionDateHasBeenSet = true; m_completionDate = value; }
 
     /**
@@ -496,6 +565,11 @@ namespace Model
     /**
      * <p>The size, in bytes, of a backup.</p>
      */
+    inline bool BackupSizeInBytesHasBeenSet() const { return m_backupSizeInBytesHasBeenSet; }
+
+    /**
+     * <p>The size, in bytes, of a backup.</p>
+     */
     inline void SetBackupSizeInBytes(long long value) { m_backupSizeInBytesHasBeenSet = true; m_backupSizeInBytes = value; }
 
     /**
@@ -509,6 +583,12 @@ namespace Model
      * and <code>MoveToColdStorageAt</code> timestamps.</p>
      */
     inline const CalculatedLifecycle& GetCalculatedLifecycle() const{ return m_calculatedLifecycle; }
+
+    /**
+     * <p>A <code>CalculatedLifecycle</code> object containing <code>DeleteAt</code>
+     * and <code>MoveToColdStorageAt</code> timestamps.</p>
+     */
+    inline bool CalculatedLifecycleHasBeenSet() const { return m_calculatedLifecycleHasBeenSet; }
 
     /**
      * <p>A <code>CalculatedLifecycle</code> object containing <code>DeleteAt</code>
@@ -545,6 +625,17 @@ namespace Model
      * setting cannot be changed after a backup has been transitioned to cold. </p>
      */
     inline const Lifecycle& GetLifecycle() const{ return m_lifecycle; }
+
+    /**
+     * <p>The lifecycle defines when a protected resource is transitioned to cold
+     * storage and when it expires. AWS Backup transitions and expires backups
+     * automatically according to the lifecycle that you define. </p> <p>Backups
+     * transitioned to cold storage must be stored in cold storage for a minimum of 90
+     * days. Therefore, the “expire after days” setting must be 90 days greater than
+     * the “transition to cold after days” setting. The “transition to cold after days”
+     * setting cannot be changed after a backup has been transitioned to cold. </p>
+     */
+    inline bool LifecycleHasBeenSet() const { return m_lifecycleHasBeenSet; }
 
     /**
      * <p>The lifecycle defines when a protected resource is transitioned to cold
@@ -603,6 +694,13 @@ namespace Model
      * example,
      * <code>arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p>
      */
+    inline bool EncryptionKeyArnHasBeenSet() const { return m_encryptionKeyArnHasBeenSet; }
+
+    /**
+     * <p>The server-side encryption key that is used to protect your backups; for
+     * example,
+     * <code>arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p>
+     */
     inline void SetEncryptionKeyArn(const Aws::String& value) { m_encryptionKeyArnHasBeenSet = true; m_encryptionKeyArn = value; }
 
     /**
@@ -653,6 +751,13 @@ namespace Model
      * recovery point is encrypted, or <code>FALSE</code> if the recovery point is not
      * encrypted.</p>
      */
+    inline bool IsEncryptedHasBeenSet() const { return m_isEncryptedHasBeenSet; }
+
+    /**
+     * <p>A Boolean value that is returned as <code>TRUE</code> if the specified
+     * recovery point is encrypted, or <code>FALSE</code> if the recovery point is not
+     * encrypted.</p>
+     */
     inline void SetIsEncrypted(bool value) { m_isEncryptedHasBeenSet = true; m_isEncrypted = value; }
 
     /**
@@ -670,6 +775,14 @@ namespace Model
      * Friday, January 26, 2018 12:11:30.087 AM.</p>
      */
     inline const Aws::Utils::DateTime& GetLastRestoreTime() const{ return m_lastRestoreTime; }
+
+    /**
+     * <p>The date and time a recovery point was last restored, in Unix format and
+     * Coordinated Universal Time (UTC). The value of <code>LastRestoreTime</code> is
+     * accurate to milliseconds. For example, the value 1516925490.087 represents
+     * Friday, January 26, 2018 12:11:30.087 AM.</p>
+     */
+    inline bool LastRestoreTimeHasBeenSet() const { return m_lastRestoreTimeHasBeenSet; }
 
     /**
      * <p>The date and time a recovery point was last restored, in Unix format and

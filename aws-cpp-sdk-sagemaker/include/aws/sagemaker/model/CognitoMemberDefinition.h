@@ -58,6 +58,12 @@ namespace Model
      * <p>An identifier for a user pool. The user pool must be in the same region as
      * the service that you are calling.</p>
      */
+    inline bool UserPoolHasBeenSet() const { return m_userPoolHasBeenSet; }
+
+    /**
+     * <p>An identifier for a user pool. The user pool must be in the same region as
+     * the service that you are calling.</p>
+     */
     inline void SetUserPool(const Aws::String& value) { m_userPoolHasBeenSet = true; m_userPool = value; }
 
     /**
@@ -99,6 +105,11 @@ namespace Model
     /**
      * <p>An identifier for a user group.</p>
      */
+    inline bool UserGroupHasBeenSet() const { return m_userGroupHasBeenSet; }
+
+    /**
+     * <p>An identifier for a user group.</p>
+     */
     inline void SetUserGroup(const Aws::String& value) { m_userGroupHasBeenSet = true; m_userGroup = value; }
 
     /**
@@ -132,6 +143,12 @@ namespace Model
      * using Amazon Cognito.</p>
      */
     inline const Aws::String& GetClientId() const{ return m_clientId; }
+
+    /**
+     * <p>An identifier for an application client. You must create the app client ID
+     * using Amazon Cognito.</p>
+     */
+    inline bool ClientIdHasBeenSet() const { return m_clientIdHasBeenSet; }
 
     /**
      * <p>An identifier for an application client. You must create the app client ID

@@ -62,6 +62,12 @@ namespace Model
      * <p>The fully qualified name of the on-premises directory, such as
      * <code>corp.example.com</code>.</p>
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>The fully qualified name of the on-premises directory, such as
+     * <code>corp.example.com</code>.</p>
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
@@ -103,6 +109,11 @@ namespace Model
     /**
      * <p>The NetBIOS name of the on-premises directory, such as <code>CORP</code>.</p>
      */
+    inline bool ShortNameHasBeenSet() const { return m_shortNameHasBeenSet; }
+
+    /**
+     * <p>The NetBIOS name of the on-premises directory, such as <code>CORP</code>.</p>
+     */
     inline void SetShortName(const Aws::String& value) { m_shortNameHasBeenSet = true; m_shortName = value; }
 
     /**
@@ -135,6 +146,11 @@ namespace Model
      * <p>The password for the on-premises user account.</p>
      */
     inline const Aws::String& GetPassword() const{ return m_password; }
+
+    /**
+     * <p>The password for the on-premises user account.</p>
+     */
+    inline bool PasswordHasBeenSet() const { return m_passwordHasBeenSet; }
 
     /**
      * <p>The password for the on-premises user account.</p>
@@ -175,6 +191,11 @@ namespace Model
     /**
      * <p>A textual description for the directory.</p>
      */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
+
+    /**
+     * <p>A textual description for the directory.</p>
+     */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
@@ -211,6 +232,11 @@ namespace Model
     /**
      * <p>The size of the directory.</p>
      */
+    inline bool SizeHasBeenSet() const { return m_sizeHasBeenSet; }
+
+    /**
+     * <p>The size of the directory.</p>
+     */
     inline void SetSize(const DirectorySize& value) { m_sizeHasBeenSet = true; m_size = value; }
 
     /**
@@ -234,6 +260,12 @@ namespace Model
      * for the operation.</p>
      */
     inline const DirectoryConnectSettings& GetConnectSettings() const{ return m_connectSettings; }
+
+    /**
+     * <p>A <a>DirectoryConnectSettings</a> object that contains additional information
+     * for the operation.</p>
+     */
+    inline bool ConnectSettingsHasBeenSet() const { return m_connectSettingsHasBeenSet; }
 
     /**
      * <p>A <a>DirectoryConnectSettings</a> object that contains additional information
@@ -264,6 +296,11 @@ namespace Model
      * <p>The tags to be assigned to AD Connector.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>The tags to be assigned to AD Connector.</p>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
      * <p>The tags to be assigned to AD Connector.</p>

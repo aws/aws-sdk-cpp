@@ -52,6 +52,12 @@ namespace Model
      * <p>An Amazon Resource Name (ARN) that uniquely identifies a resource. The format
      * of the ARN depends on the resource type.</p>
      */
+    inline bool ResourceArnHasBeenSet() const { return m_resourceArnHasBeenSet; }
+
+    /**
+     * <p>An Amazon Resource Name (ARN) that uniquely identifies a resource. The format
+     * of the ARN depends on the resource type.</p>
+     */
     inline void SetResourceArn(const Aws::String& value) { m_resourceArnHasBeenSet = true; m_resourceArn = value; }
 
     /**

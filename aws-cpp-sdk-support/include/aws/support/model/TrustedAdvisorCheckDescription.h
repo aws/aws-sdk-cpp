@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The unique identifier for the Trusted Advisor check.</p>
      */
+    inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
+
+    /**
+     * <p>The unique identifier for the Trusted Advisor check.</p>
+     */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
     /**
@@ -89,6 +94,11 @@ namespace Model
      * <p>The display name for the Trusted Advisor check.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
+
+    /**
+     * <p>The display name for the Trusted Advisor check.</p>
+     */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
      * <p>The display name for the Trusted Advisor check.</p>
@@ -126,6 +136,12 @@ namespace Model
      * criteria and recommended actions (contains HTML markup).</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
+
+    /**
+     * <p>The description of the Trusted Advisor check, which includes the alert
+     * criteria and recommended actions (contains HTML markup).</p>
+     */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
 
     /**
      * <p>The description of the Trusted Advisor check, which includes the alert
@@ -172,6 +188,11 @@ namespace Model
     /**
      * <p>The category of the Trusted Advisor check.</p>
      */
+    inline bool CategoryHasBeenSet() const { return m_categoryHasBeenSet; }
+
+    /**
+     * <p>The category of the Trusted Advisor check.</p>
+     */
     inline void SetCategory(const Aws::String& value) { m_categoryHasBeenSet = true; m_category = value; }
 
     /**
@@ -208,6 +229,15 @@ namespace Model
      * download, even in those cases where the UI shows just summary data. </p>
      */
     inline const Aws::Vector<Aws::String>& GetMetadata() const{ return m_metadata; }
+
+    /**
+     * <p>The column headings for the data returned by the Trusted Advisor check. The
+     * order of the headings corresponds to the order of the data in the
+     * <b>Metadata</b> element of the <a>TrustedAdvisorResourceDetail</a> for the
+     * check. <b>Metadata</b> contains all the data that is shown in the Excel
+     * download, even in those cases where the UI shows just summary data. </p>
+     */
+    inline bool MetadataHasBeenSet() const { return m_metadataHasBeenSet; }
 
     /**
      * <p>The column headings for the data returned by the Trusted Advisor check. The

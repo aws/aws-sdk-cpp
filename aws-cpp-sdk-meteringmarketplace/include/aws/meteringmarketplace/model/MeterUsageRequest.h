@@ -57,6 +57,13 @@ namespace Model
      * product code should be the same as the one used during the publishing of a new
      * product.</p>
      */
+    inline bool ProductCodeHasBeenSet() const { return m_productCodeHasBeenSet; }
+
+    /**
+     * <p>Product code is used to uniquely identify a product in AWS Marketplace. The
+     * product code should be the same as the one used during the publishing of a new
+     * product.</p>
+     */
     inline void SetProductCode(const Aws::String& value) { m_productCodeHasBeenSet = true; m_productCode = value; }
 
     /**
@@ -105,6 +112,12 @@ namespace Model
      * <p>Timestamp of the hour, recorded in UTC. The seconds and milliseconds portions
      * of the timestamp will be ignored.</p>
      */
+    inline bool TimestampHasBeenSet() const { return m_timestampHasBeenSet; }
+
+    /**
+     * <p>Timestamp of the hour, recorded in UTC. The seconds and milliseconds portions
+     * of the timestamp will be ignored.</p>
+     */
     inline void SetTimestamp(const Aws::Utils::DateTime& value) { m_timestampHasBeenSet = true; m_timestamp = value; }
 
     /**
@@ -131,6 +144,12 @@ namespace Model
      * the product.</p>
      */
     inline const Aws::String& GetUsageDimension() const{ return m_usageDimension; }
+
+    /**
+     * <p>It will be one of the fcp dimension name provided during the publishing of
+     * the product.</p>
+     */
+    inline bool UsageDimensionHasBeenSet() const { return m_usageDimensionHasBeenSet; }
 
     /**
      * <p>It will be one of the fcp dimension name provided during the publishing of
@@ -177,6 +196,11 @@ namespace Model
     /**
      * <p>Consumption value for the hour.</p>
      */
+    inline bool UsageQuantityHasBeenSet() const { return m_usageQuantityHasBeenSet; }
+
+    /**
+     * <p>Consumption value for the hour.</p>
+     */
     inline void SetUsageQuantity(int value) { m_usageQuantityHasBeenSet = true; m_usageQuantity = value; }
 
     /**
@@ -191,6 +215,13 @@ namespace Model
      * DryRunOperation; otherwise, it returns UnauthorizedException.</p>
      */
     inline bool GetDryRun() const{ return m_dryRun; }
+
+    /**
+     * <p>Checks whether you have the permissions required for the action, but does not
+     * make the request. If you have the permissions, the request returns
+     * DryRunOperation; otherwise, it returns UnauthorizedException.</p>
+     */
+    inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
 
     /**
      * <p>Checks whether you have the permissions required for the action, but does not

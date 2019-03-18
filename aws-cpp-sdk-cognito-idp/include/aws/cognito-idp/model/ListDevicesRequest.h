@@ -55,6 +55,11 @@ namespace Model
     /**
      * <p>The access tokens for the request to list devices.</p>
      */
+    inline bool AccessTokenHasBeenSet() const { return m_accessTokenHasBeenSet; }
+
+    /**
+     * <p>The access tokens for the request to list devices.</p>
+     */
     inline void SetAccessToken(const Aws::String& value) { m_accessTokenHasBeenSet = true; m_accessToken = value; }
 
     /**
@@ -91,6 +96,11 @@ namespace Model
     /**
      * <p>The limit of the device request.</p>
      */
+    inline bool LimitHasBeenSet() const { return m_limitHasBeenSet; }
+
+    /**
+     * <p>The limit of the device request.</p>
+     */
     inline void SetLimit(int value) { m_limitHasBeenSet = true; m_limit = value; }
 
     /**
@@ -103,6 +113,11 @@ namespace Model
      * <p>The pagination token for the list request.</p>
      */
     inline const Aws::String& GetPaginationToken() const{ return m_paginationToken; }
+
+    /**
+     * <p>The pagination token for the list request.</p>
+     */
+    inline bool PaginationTokenHasBeenSet() const { return m_paginationTokenHasBeenSet; }
 
     /**
      * <p>The pagination token for the list request.</p>

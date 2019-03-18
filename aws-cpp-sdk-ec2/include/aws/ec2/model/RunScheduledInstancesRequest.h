@@ -66,6 +66,14 @@ namespace Model
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
      * Idempotency</a>.</p>
      */
+    inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
+
+    /**
+     * <p>Unique, case-sensitive identifier that ensures the idempotency of the
+     * request. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
+     * Idempotency</a>.</p>
+     */
     inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
 
     /**
@@ -123,6 +131,14 @@ namespace Model
      * required permissions, the error response is <code>DryRunOperation</code>.
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
+    inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
+
+    /**
+     * <p>Checks whether you have the required permissions for the action, without
+     * actually making the request, and provides an error response. If you have the
+     * required permissions, the error response is <code>DryRunOperation</code>.
+     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+     */
     inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
 
     /**
@@ -142,6 +158,11 @@ namespace Model
     /**
      * <p>The number of instances.</p> <p>Default: 1</p>
      */
+    inline bool InstanceCountHasBeenSet() const { return m_instanceCountHasBeenSet; }
+
+    /**
+     * <p>The number of instances.</p> <p>Default: 1</p>
+     */
     inline void SetInstanceCount(int value) { m_instanceCountHasBeenSet = true; m_instanceCount = value; }
 
     /**
@@ -155,6 +176,12 @@ namespace Model
      * Zone, network, and platform of the schedule that you purchased.</p>
      */
     inline const ScheduledInstancesLaunchSpecification& GetLaunchSpecification() const{ return m_launchSpecification; }
+
+    /**
+     * <p>The launch specification. You must match the instance type, Availability
+     * Zone, network, and platform of the schedule that you purchased.</p>
+     */
+    inline bool LaunchSpecificationHasBeenSet() const { return m_launchSpecificationHasBeenSet; }
 
     /**
      * <p>The launch specification. You must match the instance type, Availability
@@ -185,6 +212,11 @@ namespace Model
      * <p>The Scheduled Instance ID.</p>
      */
     inline const Aws::String& GetScheduledInstanceId() const{ return m_scheduledInstanceId; }
+
+    /**
+     * <p>The Scheduled Instance ID.</p>
+     */
+    inline bool ScheduledInstanceIdHasBeenSet() const { return m_scheduledInstanceIdHasBeenSet; }
 
     /**
      * <p>The Scheduled Instance ID.</p>

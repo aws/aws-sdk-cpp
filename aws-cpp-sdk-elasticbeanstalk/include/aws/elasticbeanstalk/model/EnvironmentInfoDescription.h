@@ -60,6 +60,11 @@ namespace Model
     /**
      * <p>The type of information retrieved.</p>
      */
+    inline bool InfoTypeHasBeenSet() const { return m_infoTypeHasBeenSet; }
+
+    /**
+     * <p>The type of information retrieved.</p>
+     */
     inline void SetInfoType(const EnvironmentInfoType& value) { m_infoTypeHasBeenSet = true; m_infoType = value; }
 
     /**
@@ -82,6 +87,11 @@ namespace Model
      * <p>The Amazon EC2 Instance ID for this information.</p>
      */
     inline const Aws::String& GetEc2InstanceId() const{ return m_ec2InstanceId; }
+
+    /**
+     * <p>The Amazon EC2 Instance ID for this information.</p>
+     */
+    inline bool Ec2InstanceIdHasBeenSet() const { return m_ec2InstanceIdHasBeenSet; }
 
     /**
      * <p>The Amazon EC2 Instance ID for this information.</p>
@@ -122,6 +132,11 @@ namespace Model
     /**
      * <p>The time stamp when this information was retrieved.</p>
      */
+    inline bool SampleTimestampHasBeenSet() const { return m_sampleTimestampHasBeenSet; }
+
+    /**
+     * <p>The time stamp when this information was retrieved.</p>
+     */
     inline void SetSampleTimestamp(const Aws::Utils::DateTime& value) { m_sampleTimestampHasBeenSet = true; m_sampleTimestamp = value; }
 
     /**
@@ -147,6 +162,14 @@ namespace Model
      * parties.</p>
      */
     inline const Aws::String& GetMessage() const{ return m_message; }
+
+    /**
+     * <p>The retrieved information. Currently contains a presigned Amazon S3 URL. The
+     * files are deleted after 15 minutes.</p> <p>Anyone in possession of this URL can
+     * access the files before they are deleted. Make the URL available only to trusted
+     * parties.</p>
+     */
+    inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
 
     /**
      * <p>The retrieved information. Currently contains a presigned Amazon S3 URL. The

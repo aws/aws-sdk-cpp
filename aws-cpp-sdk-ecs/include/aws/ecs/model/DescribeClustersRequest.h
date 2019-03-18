@@ -56,6 +56,12 @@ namespace Model
      * <p>A list of up to 100 cluster names or full cluster Amazon Resource Name (ARN)
      * entries. If you do not specify a cluster, the default cluster is assumed.</p>
      */
+    inline bool ClustersHasBeenSet() const { return m_clustersHasBeenSet; }
+
+    /**
+     * <p>A list of up to 100 cluster names or full cluster Amazon Resource Name (ARN)
+     * entries. If you do not specify a cluster, the default cluster is assumed.</p>
+     */
     inline void SetClusters(const Aws::Vector<Aws::String>& value) { m_clustersHasBeenSet = true; m_clusters = value; }
 
     /**
@@ -105,6 +111,17 @@ namespace Model
      * </li> </ul>
      */
     inline const Aws::Vector<ClusterField>& GetInclude() const{ return m_include; }
+
+    /**
+     * <p>Additional information about your clusters to be separated by launch type,
+     * including:</p> <ul> <li> <p>runningEC2TasksCount</p> </li> <li>
+     * <p>runningFargateTasksCount</p> </li> <li> <p>pendingEC2TasksCount</p> </li>
+     * <li> <p>pendingFargateTasksCount</p> </li> <li> <p>activeEC2ServiceCount</p>
+     * </li> <li> <p>activeFargateServiceCount</p> </li> <li>
+     * <p>drainingEC2ServiceCount</p> </li> <li> <p>drainingFargateServiceCount</p>
+     * </li> </ul>
+     */
+    inline bool IncludeHasBeenSet() const { return m_includeHasBeenSet; }
 
     /**
      * <p>Additional information about your clusters to be separated by launch type,

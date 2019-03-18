@@ -50,6 +50,11 @@ namespace Model
     /**
      * <p>The role alias to describe.</p>
      */
+    inline bool RoleAliasHasBeenSet() const { return m_roleAliasHasBeenSet; }
+
+    /**
+     * <p>The role alias to describe.</p>
+     */
     inline void SetRoleAlias(const Aws::String& value) { m_roleAliasHasBeenSet = true; m_roleAlias = value; }
 
     /**

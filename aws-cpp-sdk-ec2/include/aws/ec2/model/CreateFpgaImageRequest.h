@@ -61,6 +61,14 @@ namespace Model
      * required permissions, the error response is <code>DryRunOperation</code>.
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
+    inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
+
+    /**
+     * <p>Checks whether you have the required permissions for the action, without
+     * actually making the request, and provides an error response. If you have the
+     * required permissions, the error response is <code>DryRunOperation</code>.
+     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+     */
     inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
 
     /**
@@ -77,6 +85,12 @@ namespace Model
      * be a tarball.</p>
      */
     inline const StorageLocation& GetInputStorageLocation() const{ return m_inputStorageLocation; }
+
+    /**
+     * <p>The location of the encrypted design checkpoint in Amazon S3. The input must
+     * be a tarball.</p>
+     */
+    inline bool InputStorageLocationHasBeenSet() const { return m_inputStorageLocationHasBeenSet; }
 
     /**
      * <p>The location of the encrypted design checkpoint in Amazon S3. The input must
@@ -111,6 +125,11 @@ namespace Model
     /**
      * <p>The location in Amazon S3 for the output logs.</p>
      */
+    inline bool LogsStorageLocationHasBeenSet() const { return m_logsStorageLocationHasBeenSet; }
+
+    /**
+     * <p>The location in Amazon S3 for the output logs.</p>
+     */
     inline void SetLogsStorageLocation(const StorageLocation& value) { m_logsStorageLocationHasBeenSet = true; m_logsStorageLocation = value; }
 
     /**
@@ -133,6 +152,11 @@ namespace Model
      * <p>A description for the AFI.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
+
+    /**
+     * <p>A description for the AFI.</p>
+     */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
 
     /**
      * <p>A description for the AFI.</p>
@@ -173,6 +197,11 @@ namespace Model
     /**
      * <p>A name for the AFI.</p>
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>A name for the AFI.</p>
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
@@ -208,6 +237,14 @@ namespace Model
      * Idempotency</a>.</p>
      */
     inline const Aws::String& GetClientToken() const{ return m_clientToken; }
+
+    /**
+     * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
+     * of the request. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">Ensuring
+     * Idempotency</a>.</p>
+     */
+    inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
 
     /**
      * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency

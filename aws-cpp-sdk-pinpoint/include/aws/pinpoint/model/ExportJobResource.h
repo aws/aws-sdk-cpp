@@ -57,6 +57,12 @@ namespace Model
      * The Amazon Resource Name (ARN) of an IAM role that grants Amazon Pinpoint access
      * to the Amazon S3 location that endpoints will be exported to.
      */
+    inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
+
+    /**
+     * The Amazon Resource Name (ARN) of an IAM role that grants Amazon Pinpoint access
+     * to the Amazon S3 location that endpoints will be exported to.
+     */
     inline void SetRoleArn(const Aws::String& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
 
     /**
@@ -101,6 +107,18 @@ Amazon Pinpoint will
      * export endpoints to this location.
      */
     inline const Aws::String& GetS3UrlPrefix() const{ return m_s3UrlPrefix; }
+
+    /**
+     * A URL that points to the location within an Amazon S3 bucket that will receive
+     * the export. The location is typically a folder with multiple files.
+
+The URL
+     * should follow this format: s3://bucket-name/folder-name/
+
+Amazon Pinpoint will
+     * export endpoints to this location.
+     */
+    inline bool S3UrlPrefixHasBeenSet() const { return m_s3UrlPrefixHasBeenSet; }
 
     /**
      * A URL that points to the location within an Amazon S3 bucket that will receive
@@ -185,6 +203,12 @@ Amazon Pinpoint will
      * The ID of the segment to export endpoints from. If not present, Amazon Pinpoint
      * exports all of the endpoints that belong to the application.
      */
+    inline bool SegmentIdHasBeenSet() const { return m_segmentIdHasBeenSet; }
+
+    /**
+     * The ID of the segment to export endpoints from. If not present, Amazon Pinpoint
+     * exports all of the endpoints that belong to the application.
+     */
     inline void SetSegmentId(const Aws::String& value) { m_segmentIdHasBeenSet = true; m_segmentId = value; }
 
     /**
@@ -222,6 +246,11 @@ Amazon Pinpoint will
      * The version of the segment to export if specified.
      */
     inline int GetSegmentVersion() const{ return m_segmentVersion; }
+
+    /**
+     * The version of the segment to export if specified.
+     */
+    inline bool SegmentVersionHasBeenSet() const { return m_segmentVersionHasBeenSet; }
 
     /**
      * The version of the segment to export if specified.

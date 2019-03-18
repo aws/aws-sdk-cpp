@@ -59,6 +59,11 @@ namespace Model
     /**
      * <p>An email address to be removed from the list of verified addresses.</p>
      */
+    inline bool EmailAddressHasBeenSet() const { return m_emailAddressHasBeenSet; }
+
+    /**
+     * <p>An email address to be removed from the list of verified addresses.</p>
+     */
     inline void SetEmailAddress(const Aws::String& value) { m_emailAddressHasBeenSet = true; m_emailAddress = value; }
 
     /**

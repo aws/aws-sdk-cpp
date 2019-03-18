@@ -94,6 +94,29 @@ namespace Model
      * CloudFront to Cache Based on Query String Parameters</a> in the <i>Amazon
      * CloudFront Developer Guide</i>.</p>
      */
+    inline bool QueryStringHasBeenSet() const { return m_queryStringHasBeenSet; }
+
+    /**
+     * <p>Indicates whether you want CloudFront to forward query strings to the origin
+     * that is associated with this cache behavior and cache based on the query string
+     * parameters. CloudFront behavior depends on the value of <code>QueryString</code>
+     * and on the values that you specify for <code>QueryStringCacheKeys</code>, if
+     * any:</p> <p>If you specify true for <code>QueryString</code> and you don't
+     * specify any values for <code>QueryStringCacheKeys</code>, CloudFront forwards
+     * all query string parameters to the origin and caches based on all query string
+     * parameters. Depending on how many query string parameters and values you have,
+     * this can adversely affect performance because CloudFront must forward more
+     * requests to the origin.</p> <p>If you specify true for <code>QueryString</code>
+     * and you specify one or more values for <code>QueryStringCacheKeys</code>,
+     * CloudFront forwards all query string parameters to the origin, but it only
+     * caches based on the query string parameters that you specify.</p> <p>If you
+     * specify false for <code>QueryString</code>, CloudFront doesn't forward any query
+     * string parameters to the origin, and doesn't cache based on query string
+     * parameters.</p> <p>For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/QueryStringParameters.html">Configuring
+     * CloudFront to Cache Based on Query String Parameters</a> in the <i>Amazon
+     * CloudFront Developer Guide</i>.</p>
+     */
     inline void SetQueryString(bool value) { m_queryStringHasBeenSet = true; m_queryString = value; }
 
     /**
@@ -129,6 +152,16 @@ namespace Model
      * Developer Guide</i>.</p>
      */
     inline const CookiePreference& GetCookies() const{ return m_cookies; }
+
+    /**
+     * <p>A complex type that specifies whether you want CloudFront to forward cookies
+     * to the origin and, if so, which ones. For more information about forwarding
+     * cookies to the origin, see <a
+     * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Cookies.html">How
+     * CloudFront Forwards, Caches, and Logs Cookies</a> in the <i>Amazon CloudFront
+     * Developer Guide</i>.</p>
+     */
+    inline bool CookiesHasBeenSet() const { return m_cookiesHasBeenSet; }
 
     /**
      * <p>A complex type that specifies whether you want CloudFront to forward cookies
@@ -181,6 +214,12 @@ namespace Model
      * <p>A complex type that specifies the <code>Headers</code>, if any, that you want
      * CloudFront to base caching on for this cache behavior. </p>
      */
+    inline bool HeadersHasBeenSet() const { return m_headersHasBeenSet; }
+
+    /**
+     * <p>A complex type that specifies the <code>Headers</code>, if any, that you want
+     * CloudFront to base caching on for this cache behavior. </p>
+     */
     inline void SetHeaders(const Headers& value) { m_headersHasBeenSet = true; m_headers = value; }
 
     /**
@@ -207,6 +246,12 @@ namespace Model
      * that you want CloudFront to use for caching for this cache behavior.</p>
      */
     inline const QueryStringCacheKeys& GetQueryStringCacheKeys() const{ return m_queryStringCacheKeys; }
+
+    /**
+     * <p>A complex type that contains information about the query string parameters
+     * that you want CloudFront to use for caching for this cache behavior.</p>
+     */
+    inline bool QueryStringCacheKeysHasBeenSet() const { return m_queryStringCacheKeysHasBeenSet; }
 
     /**
      * <p>A complex type that contains information about the query string parameters

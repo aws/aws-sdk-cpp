@@ -58,6 +58,13 @@ namespace Model
      * number of segments is 4, SegmentNumber values will range from zero through
      * three.</p>
      */
+    inline bool SegmentNumberHasBeenSet() const { return m_segmentNumberHasBeenSet; }
+
+    /**
+     * <p>The zero-based index number of the this segment. For example, if the total
+     * number of segments is 4, SegmentNumber values will range from zero through
+     * three.</p>
+     */
     inline void SetSegmentNumber(int value) { m_segmentNumberHasBeenSet = true; m_segmentNumber = value; }
 
     /**
@@ -72,6 +79,11 @@ namespace Model
      * <p>The total numer of segments.</p>
      */
     inline int GetTotalSegments() const{ return m_totalSegments; }
+
+    /**
+     * <p>The total numer of segments.</p>
+     */
+    inline bool TotalSegmentsHasBeenSet() const { return m_totalSegmentsHasBeenSet; }
 
     /**
      * <p>The total numer of segments.</p>

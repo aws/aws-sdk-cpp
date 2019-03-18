@@ -59,6 +59,11 @@ namespace Model
     /**
      * <p>The name of the channel.</p>
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>The name of the channel.</p>
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
@@ -91,6 +96,11 @@ namespace Model
      * <p>A brief description of the channel.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
+
+    /**
+     * <p>A brief description of the channel.</p>
+     */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
 
     /**
      * <p>A brief description of the channel.</p>
@@ -131,6 +141,11 @@ namespace Model
     /**
      * <p>Indicates whether the channel is required by the algorithm.</p>
      */
+    inline bool IsRequiredHasBeenSet() const { return m_isRequiredHasBeenSet; }
+
+    /**
+     * <p>Indicates whether the channel is required by the algorithm.</p>
+     */
     inline void SetIsRequired(bool value) { m_isRequiredHasBeenSet = true; m_isRequired = value; }
 
     /**
@@ -143,6 +158,11 @@ namespace Model
      * <p>The supported MIME types for the data.</p>
      */
     inline const Aws::Vector<Aws::String>& GetSupportedContentTypes() const{ return m_supportedContentTypes; }
+
+    /**
+     * <p>The supported MIME types for the data.</p>
+     */
+    inline bool SupportedContentTypesHasBeenSet() const { return m_supportedContentTypesHasBeenSet; }
 
     /**
      * <p>The supported MIME types for the data.</p>
@@ -188,6 +208,11 @@ namespace Model
     /**
      * <p>The allowed compression types, if data compression is used.</p>
      */
+    inline bool SupportedCompressionTypesHasBeenSet() const { return m_supportedCompressionTypesHasBeenSet; }
+
+    /**
+     * <p>The allowed compression types, if data compression is used.</p>
+     */
     inline void SetSupportedCompressionTypes(const Aws::Vector<CompressionType>& value) { m_supportedCompressionTypesHasBeenSet = true; m_supportedCompressionTypes = value; }
 
     /**
@@ -225,6 +250,16 @@ namespace Model
      * EBS volume.</p>
      */
     inline const Aws::Vector<TrainingInputMode>& GetSupportedInputModes() const{ return m_supportedInputModes; }
+
+    /**
+     * <p>The allowed input mode, either FILE or PIPE.</p> <p>In FILE mode, Amazon
+     * SageMaker copies the data from the input source onto the local Amazon Elastic
+     * Block Store (Amazon EBS) volumes before starting your training algorithm. This
+     * is the most commonly used input mode.</p> <p>In PIPE mode, Amazon SageMaker
+     * streams input data from the source directly to your algorithm without using the
+     * EBS volume.</p>
+     */
+    inline bool SupportedInputModesHasBeenSet() const { return m_supportedInputModesHasBeenSet; }
 
     /**
      * <p>The allowed input mode, either FILE or PIPE.</p> <p>In FILE mode, Amazon

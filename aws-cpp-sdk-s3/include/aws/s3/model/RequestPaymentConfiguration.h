@@ -55,6 +55,11 @@ namespace Model
     /**
      * <p>Specifies who pays for the download and request fees.</p>
      */
+    inline bool PayerHasBeenSet() const { return m_payerHasBeenSet; }
+
+    /**
+     * <p>Specifies who pays for the download and request fees.</p>
+     */
     inline void SetPayer(const Payer& value) { m_payerHasBeenSet = true; m_payer = value; }
 
     /**

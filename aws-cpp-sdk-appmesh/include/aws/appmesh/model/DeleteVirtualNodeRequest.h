@@ -53,6 +53,11 @@ namespace Model
     /**
      * <p>The name of the service mesh to delete the virtual node in.</p>
      */
+    inline bool MeshNameHasBeenSet() const { return m_meshNameHasBeenSet; }
+
+    /**
+     * <p>The name of the service mesh to delete the virtual node in.</p>
+     */
     inline void SetMeshName(const Aws::String& value) { m_meshNameHasBeenSet = true; m_meshName = value; }
 
     /**
@@ -85,6 +90,11 @@ namespace Model
      * <p>The name of the virtual node to delete.</p>
      */
     inline const Aws::String& GetVirtualNodeName() const{ return m_virtualNodeName; }
+
+    /**
+     * <p>The name of the virtual node to delete.</p>
+     */
+    inline bool VirtualNodeNameHasBeenSet() const { return m_virtualNodeNameHasBeenSet; }
 
     /**
      * <p>The name of the virtual node to delete.</p>

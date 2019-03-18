@@ -59,6 +59,11 @@ namespace Model
     /**
      * <p>The version label of the application version in the deployment.</p>
      */
+    inline bool VersionLabelHasBeenSet() const { return m_versionLabelHasBeenSet; }
+
+    /**
+     * <p>The version label of the application version in the deployment.</p>
+     */
     inline void SetVersionLabel(const Aws::String& value) { m_versionLabelHasBeenSet = true; m_versionLabel = value; }
 
     /**
@@ -97,6 +102,12 @@ namespace Model
      * <p>The ID of the deployment. This number increases by one each time that you
      * deploy source code or change instance configuration settings.</p>
      */
+    inline bool DeploymentIdHasBeenSet() const { return m_deploymentIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the deployment. This number increases by one each time that you
+     * deploy source code or change instance configuration settings.</p>
+     */
     inline void SetDeploymentId(long long value) { m_deploymentIdHasBeenSet = true; m_deploymentId = value; }
 
     /**
@@ -113,6 +124,14 @@ namespace Model
      * failed.</p> </li> </ul>
      */
     inline const Aws::String& GetStatus() const{ return m_status; }
+
+    /**
+     * <p>The status of the deployment:</p> <ul> <li> <p> <code>In Progress</code> :
+     * The deployment is in progress.</p> </li> <li> <p> <code>Deployed</code> : The
+     * deployment succeeded.</p> </li> <li> <p> <code>Failed</code> : The deployment
+     * failed.</p> </li> </ul>
+     */
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
     /**
      * <p>The status of the deployment:</p> <ul> <li> <p> <code>In Progress</code> :
@@ -168,6 +187,12 @@ namespace Model
      * completed deployments, the time that the deployment ended.</p>
      */
     inline const Aws::Utils::DateTime& GetDeploymentTime() const{ return m_deploymentTime; }
+
+    /**
+     * <p>For in-progress deployments, the time that the deployment started.</p> <p>For
+     * completed deployments, the time that the deployment ended.</p>
+     */
+    inline bool DeploymentTimeHasBeenSet() const { return m_deploymentTimeHasBeenSet; }
 
     /**
      * <p>For in-progress deployments, the time that the deployment started.</p> <p>For

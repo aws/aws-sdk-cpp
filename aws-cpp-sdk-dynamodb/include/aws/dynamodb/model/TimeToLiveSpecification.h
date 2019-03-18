@@ -58,6 +58,12 @@ namespace Model
      * <p>Indicates whether Time To Live is to be enabled (true) or disabled (false) on
      * the table.</p>
      */
+    inline bool EnabledHasBeenSet() const { return m_enabledHasBeenSet; }
+
+    /**
+     * <p>Indicates whether Time To Live is to be enabled (true) or disabled (false) on
+     * the table.</p>
+     */
     inline void SetEnabled(bool value) { m_enabledHasBeenSet = true; m_enabled = value; }
 
     /**
@@ -72,6 +78,12 @@ namespace Model
      * items in the table.</p>
      */
     inline const Aws::String& GetAttributeName() const{ return m_attributeName; }
+
+    /**
+     * <p>The name of the Time to Live attribute used to store the expiration time for
+     * items in the table.</p>
+     */
+    inline bool AttributeNameHasBeenSet() const { return m_attributeNameHasBeenSet; }
 
     /**
      * <p>The name of the Time to Live attribute used to store the expiration time for

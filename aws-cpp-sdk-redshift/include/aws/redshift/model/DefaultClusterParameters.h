@@ -62,6 +62,12 @@ namespace Model
      * <p>The name of the cluster parameter group family to which the engine default
      * parameters apply.</p>
      */
+    inline bool ParameterGroupFamilyHasBeenSet() const { return m_parameterGroupFamilyHasBeenSet; }
+
+    /**
+     * <p>The name of the cluster parameter group family to which the engine default
+     * parameters apply.</p>
+     */
     inline void SetParameterGroupFamily(const Aws::String& value) { m_parameterGroupFamilyHasBeenSet = true; m_parameterGroupFamily = value; }
 
     /**
@@ -104,6 +110,16 @@ namespace Model
      * the request. </p>
      */
     inline const Aws::String& GetMarker() const{ return m_marker; }
+
+    /**
+     * <p>A value that indicates the starting point for the next set of response
+     * records in a subsequent request. If a value is returned in a response, you can
+     * retrieve the next set of records by providing this returned marker value in the
+     * <code>Marker</code> parameter and retrying the command. If the
+     * <code>Marker</code> field is empty, all response records have been retrieved for
+     * the request. </p>
+     */
+    inline bool MarkerHasBeenSet() const { return m_markerHasBeenSet; }
 
     /**
      * <p>A value that indicates the starting point for the next set of response
@@ -170,6 +186,11 @@ namespace Model
      * <p>The list of cluster default parameters.</p>
      */
     inline const Aws::Vector<Parameter>& GetParameters() const{ return m_parameters; }
+
+    /**
+     * <p>The list of cluster default parameters.</p>
+     */
+    inline bool ParametersHasBeenSet() const { return m_parametersHasBeenSet; }
 
     /**
      * <p>The list of cluster default parameters.</p>

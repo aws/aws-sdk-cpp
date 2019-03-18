@@ -55,6 +55,11 @@ namespace Model
     /**
      * The maximum video bitrate (bps) to include in output.
      */
+    inline bool MaxVideoBitsPerSecondHasBeenSet() const { return m_maxVideoBitsPerSecondHasBeenSet; }
+
+    /**
+     * The maximum video bitrate (bps) to include in output.
+     */
     inline void SetMaxVideoBitsPerSecond(int value) { m_maxVideoBitsPerSecondHasBeenSet = true; m_maxVideoBitsPerSecond = value; }
 
     /**
@@ -71,6 +76,11 @@ namespace Model
     /**
      * The minimum video bitrate (bps) to include in output.
      */
+    inline bool MinVideoBitsPerSecondHasBeenSet() const { return m_minVideoBitsPerSecondHasBeenSet; }
+
+    /**
+     * The minimum video bitrate (bps) to include in output.
+     */
     inline void SetMinVideoBitsPerSecond(int value) { m_minVideoBitsPerSecondHasBeenSet = true; m_minVideoBitsPerSecond = value; }
 
     /**
@@ -83,6 +93,11 @@ namespace Model
      * A directive that determines the order of streams in the output.
      */
     inline const StreamOrder& GetStreamOrder() const{ return m_streamOrder; }
+
+    /**
+     * A directive that determines the order of streams in the output.
+     */
+    inline bool StreamOrderHasBeenSet() const { return m_streamOrderHasBeenSet; }
 
     /**
      * A directive that determines the order of streams in the output.

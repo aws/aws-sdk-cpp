@@ -53,6 +53,11 @@ namespace Model
     /**
      * <p>Specify true to enable node-to-node encryption.</p>
      */
+    inline bool EnabledHasBeenSet() const { return m_enabledHasBeenSet; }
+
+    /**
+     * <p>Specify true to enable node-to-node encryption.</p>
+     */
     inline void SetEnabled(bool value) { m_enabledHasBeenSet = true; m_enabled = value; }
 
     /**

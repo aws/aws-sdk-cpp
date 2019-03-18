@@ -61,6 +61,13 @@ namespace Model
      * Elemental MediaConnect console and will not be seen by the subscriber or end
      * user.
      */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
+
+    /**
+     * A description of the entitlement. This description appears only on the AWS
+     * Elemental MediaConnect console and will not be seen by the subscriber or end
+     * user.
+     */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
@@ -109,6 +116,12 @@ namespace Model
      * The type of encryption that will be used on the output that is associated with
      * this entitlement.
      */
+    inline bool EncryptionHasBeenSet() const { return m_encryptionHasBeenSet; }
+
+    /**
+     * The type of encryption that will be used on the output that is associated with
+     * this entitlement.
+     */
     inline void SetEncryption(const Encryption& value) { m_encryptionHasBeenSet = true; m_encryption = value; }
 
     /**
@@ -134,6 +147,11 @@ namespace Model
      * The name of the entitlement. This value must be unique within the current flow.
      */
     inline const Aws::String& GetName() const{ return m_name; }
+
+    /**
+     * The name of the entitlement. This value must be unique within the current flow.
+     */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
      * The name of the entitlement. This value must be unique within the current flow.
@@ -172,6 +190,13 @@ namespace Model
      * content as the source.
      */
     inline const Aws::Vector<Aws::String>& GetSubscribers() const{ return m_subscribers; }
+
+    /**
+     * The AWS account IDs that you want to share your content with. The receiving
+     * accounts (subscribers) will be allowed to create their own flows using your
+     * content as the source.
+     */
+    inline bool SubscribersHasBeenSet() const { return m_subscribersHasBeenSet; }
 
     /**
      * The AWS account IDs that you want to share your content with. The receiving

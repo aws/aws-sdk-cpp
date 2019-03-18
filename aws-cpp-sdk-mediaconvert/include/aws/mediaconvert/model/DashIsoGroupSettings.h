@@ -64,6 +64,13 @@ namespace Model
      * level BaseURL element. Can be used if streams are delivered from a different URL
      * than the manifest file.
      */
+    inline bool BaseUrlHasBeenSet() const { return m_baseUrlHasBeenSet; }
+
+    /**
+     * A partial URI prefix that will be put in the manifest (.mpd) file at the top
+     * level BaseURL element. Can be used if streams are delivered from a different URL
+     * than the manifest file.
+     */
     inline void SetBaseUrl(const Aws::String& value) { m_baseUrlHasBeenSet = true; m_baseUrl = value; }
 
     /**
@@ -110,6 +117,15 @@ namespace Model
      * input file.
      */
     inline const Aws::String& GetDestination() const{ return m_destination; }
+
+    /**
+     * Use Destination (Destination) to specify the S3 output location and the output
+     * filename base. Destination accepts format identifiers. If you do not specify the
+     * base filename in the URI, the service will use the filename of the input file.
+     * If your job has multiple inputs, the service uses the filename of the first
+     * input file.
+     */
+    inline bool DestinationHasBeenSet() const { return m_destinationHasBeenSet; }
 
     /**
      * Use Destination (Destination) to specify the S3 output location and the output
@@ -174,6 +190,11 @@ namespace Model
     /**
      * DRM settings.
      */
+    inline bool EncryptionHasBeenSet() const { return m_encryptionHasBeenSet; }
+
+    /**
+     * DRM settings.
+     */
     inline void SetEncryption(const DashIsoEncryptionSettings& value) { m_encryptionHasBeenSet = true; m_encryption = value; }
 
     /**
@@ -210,6 +231,16 @@ namespace Model
      * and it does not cause the creation of many output files as in other output
      * types.
      */
+    inline bool FragmentLengthHasBeenSet() const { return m_fragmentLengthHasBeenSet; }
+
+    /**
+     * Length of fragments to generate (in seconds). Fragment length must be compatible
+     * with GOP size and Framerate. Note that fragments will end on the next keyframe
+     * after this number of seconds, so actual fragment length may be longer. When Emit
+     * Single File is checked, the fragmentation is internal to a single output file
+     * and it does not cause the creation of many output files as in other output
+     * types.
+     */
     inline void SetFragmentLength(int value) { m_fragmentLengthHasBeenSet = true; m_fragmentLength = value; }
 
     /**
@@ -225,6 +256,9 @@ namespace Model
 
     
     inline const DashIsoHbbtvCompliance& GetHbbtvCompliance() const{ return m_hbbtvCompliance; }
+
+    
+    inline bool HbbtvComplianceHasBeenSet() const { return m_hbbtvComplianceHasBeenSet; }
 
     
     inline void SetHbbtvCompliance(const DashIsoHbbtvCompliance& value) { m_hbbtvComplianceHasBeenSet = true; m_hbbtvCompliance = value; }
@@ -249,6 +283,12 @@ namespace Model
      * Minimum time of initially buffered media that is needed to ensure smooth
      * playout.
      */
+    inline bool MinBufferTimeHasBeenSet() const { return m_minBufferTimeHasBeenSet; }
+
+    /**
+     * Minimum time of initially buffered media that is needed to ensure smooth
+     * playout.
+     */
     inline void SetMinBufferTime(int value) { m_minBufferTimeHasBeenSet = true; m_minBufferTime = value; }
 
     /**
@@ -260,6 +300,9 @@ namespace Model
 
     
     inline const DashIsoSegmentControl& GetSegmentControl() const{ return m_segmentControl; }
+
+    
+    inline bool SegmentControlHasBeenSet() const { return m_segmentControlHasBeenSet; }
 
     
     inline void SetSegmentControl(const DashIsoSegmentControl& value) { m_segmentControlHasBeenSet = true; m_segmentControl = value; }
@@ -290,6 +333,15 @@ namespace Model
      * single output file and it does not cause the creation of many output files as in
      * other output types.
      */
+    inline bool SegmentLengthHasBeenSet() const { return m_segmentLengthHasBeenSet; }
+
+    /**
+     * Length of mpd segments to create (in seconds). Note that segments will end on
+     * the next keyframe after this number of seconds, so actual segment length may be
+     * longer. When Emit Single File is checked, the segmentation is internal to a
+     * single output file and it does not cause the creation of many output files as in
+     * other output types.
+     */
     inline void SetSegmentLength(int value) { m_segmentLengthHasBeenSet = true; m_segmentLength = value; }
 
     /**
@@ -312,6 +364,17 @@ namespace Model
      * SegmentTemplate element.
      */
     inline const DashIsoWriteSegmentTimelineInRepresentation& GetWriteSegmentTimelineInRepresentation() const{ return m_writeSegmentTimelineInRepresentation; }
+
+    /**
+     * When you enable Precise segment duration in manifests
+     * (writeSegmentTimelineInRepresentation), your DASH manifest shows precise segment
+     * durations. The segment duration information appears inside the SegmentTimeline
+     * element, inside SegmentTemplate at the Representation level. When this feature
+     * isn't enabled, the segment durations in your DASH manifest are approximate. The
+     * segment duration information appears in the duration attribute of the
+     * SegmentTemplate element.
+     */
+    inline bool WriteSegmentTimelineInRepresentationHasBeenSet() const { return m_writeSegmentTimelineInRepresentationHasBeenSet; }
 
     /**
      * When you enable Precise segment duration in manifests

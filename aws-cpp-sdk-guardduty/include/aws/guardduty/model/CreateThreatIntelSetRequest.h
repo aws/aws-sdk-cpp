@@ -57,6 +57,12 @@ namespace Model
      * A boolean value that indicates whether GuardDuty is to start using the uploaded
      * ThreatIntelSet.
      */
+    inline bool ActivateHasBeenSet() const { return m_activateHasBeenSet; }
+
+    /**
+     * A boolean value that indicates whether GuardDuty is to start using the uploaded
+     * ThreatIntelSet.
+     */
     inline void SetActivate(bool value) { m_activateHasBeenSet = true; m_activate = value; }
 
     /**
@@ -70,6 +76,11 @@ namespace Model
      * The idempotency token for the create request.
      */
     inline const Aws::String& GetClientToken() const{ return m_clientToken; }
+
+    /**
+     * The idempotency token for the create request.
+     */
+    inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
 
     /**
      * The idempotency token for the create request.
@@ -110,6 +121,11 @@ namespace Model
     /**
      * The unique ID of the detector that you want to update.
      */
+    inline bool DetectorIdHasBeenSet() const { return m_detectorIdHasBeenSet; }
+
+    /**
+     * The unique ID of the detector that you want to update.
+     */
     inline void SetDetectorId(const Aws::String& value) { m_detectorIdHasBeenSet = true; m_detectorId = value; }
 
     /**
@@ -146,6 +162,11 @@ namespace Model
     /**
      * The format of the file that contains the ThreatIntelSet.
      */
+    inline bool FormatHasBeenSet() const { return m_formatHasBeenSet; }
+
+    /**
+     * The format of the file that contains the ThreatIntelSet.
+     */
     inline void SetFormat(const ThreatIntelSetFormat& value) { m_formatHasBeenSet = true; m_format = value; }
 
     /**
@@ -169,6 +190,12 @@ namespace Model
      * (https://s3.us-west-2.amazonaws.com/my-bucket/my-object-key).
      */
     inline const Aws::String& GetLocation() const{ return m_location; }
+
+    /**
+     * The URI of the file that contains the ThreatIntelSet. For example
+     * (https://s3.us-west-2.amazonaws.com/my-bucket/my-object-key).
+     */
+    inline bool LocationHasBeenSet() const { return m_locationHasBeenSet; }
 
     /**
      * The URI of the file that contains the ThreatIntelSet. For example
@@ -212,6 +239,12 @@ namespace Model
      * by activity that involves IP addresses included in this ThreatIntelSet.
      */
     inline const Aws::String& GetName() const{ return m_name; }
+
+    /**
+     * A user-friendly ThreatIntelSet name that is displayed in all finding generated
+     * by activity that involves IP addresses included in this ThreatIntelSet.
+     */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
      * A user-friendly ThreatIntelSet name that is displayed in all finding generated

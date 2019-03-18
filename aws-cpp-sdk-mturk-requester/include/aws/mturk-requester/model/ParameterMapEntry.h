@@ -61,6 +61,13 @@ namespace Model
      * Mechanical Turk to score as part of the ScoreMyKnownAnswers/2011-09-01 Review
      * Policy. </p>
      */
+    inline bool KeyHasBeenSet() const { return m_keyHasBeenSet; }
+
+    /**
+     * <p> The QuestionID from the HIT that is used to identify which question requires
+     * Mechanical Turk to score as part of the ScoreMyKnownAnswers/2011-09-01 Review
+     * Policy. </p>
+     */
     inline void SetKey(const Aws::String& value) { m_keyHasBeenSet = true; m_key = value; }
 
     /**
@@ -105,6 +112,13 @@ namespace Model
      * </p>
      */
     inline const Aws::Vector<Aws::String>& GetValues() const{ return m_values; }
+
+    /**
+     * <p> The list of answers to the question specified in the MapEntry Key element.
+     * The Worker must match all values in order for the answer to be scored correctly.
+     * </p>
+     */
+    inline bool ValuesHasBeenSet() const { return m_valuesHasBeenSet; }
 
     /**
      * <p> The list of answers to the question specified in the MapEntry Key element.

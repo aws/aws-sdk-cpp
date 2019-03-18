@@ -58,6 +58,12 @@ namespace Model
      * <p>The configurationId in ADS that uniquely identifies the on-premise
      * resource.</p>
      */
+    inline bool ConfigurationIdHasBeenSet() const { return m_configurationIdHasBeenSet; }
+
+    /**
+     * <p>The configurationId in ADS that uniquely identifies the on-premise
+     * resource.</p>
+     */
     inline void SetConfigurationId(const Aws::String& value) { m_configurationIdHasBeenSet = true; m_configurationId = value; }
 
     /**
@@ -96,6 +102,12 @@ namespace Model
      * the discovered resource for clarity or later reference.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
+
+    /**
+     * <p>A description that can be free-form text to record additional detail about
+     * the discovered resource for clarity or later reference.</p>
+     */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
 
     /**
      * <p>A description that can be free-form text to record additional detail about

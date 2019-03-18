@@ -58,6 +58,12 @@ namespace Model
      * <p>This field contains an array of 0 or more strings, each 1 to 255 characters
      * in length.</p>
      */
+    inline bool ValuesHasBeenSet() const { return m_valuesHasBeenSet; }
+
+    /**
+     * <p>This field contains an array of 0 or more strings, each 1 to 255 characters
+     * in length.</p>
+     */
     inline void SetValues(const Aws::Vector<Aws::String>& value) { m_valuesHasBeenSet = true; m_values = value; }
 
     /**

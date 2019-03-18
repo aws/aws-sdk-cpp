@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p>The reason provided for the termination.</p>
      */
+    inline bool ReasonHasBeenSet() const { return m_reasonHasBeenSet; }
+
+    /**
+     * <p>The reason provided for the termination.</p>
+     */
     inline void SetReason(const Aws::String& value) { m_reasonHasBeenSet = true; m_reason = value; }
 
     /**
@@ -90,6 +95,11 @@ namespace Model
      * <p>The details provided for the termination.</p>
      */
     inline const Aws::String& GetDetails() const{ return m_details; }
+
+    /**
+     * <p>The details provided for the termination.</p>
+     */
+    inline bool DetailsHasBeenSet() const { return m_detailsHasBeenSet; }
 
     /**
      * <p>The details provided for the termination.</p>
@@ -134,6 +144,19 @@ namespace Model
      * run.</p> </li> </ul>
      */
     inline const ChildPolicy& GetChildPolicy() const{ return m_childPolicy; }
+
+    /**
+     * <p>The policy used for the child workflow executions of this workflow
+     * execution.</p> <p>The supported child policies are:</p> <ul> <li> <p>
+     * <code>TERMINATE</code> – The child executions are terminated.</p> </li> <li> <p>
+     * <code>REQUEST_CANCEL</code> – A request to cancel is attempted for each child
+     * execution by recording a <code>WorkflowExecutionCancelRequested</code> event in
+     * its history. It is up to the decider to take appropriate actions when it
+     * receives an execution history with this event.</p> </li> <li> <p>
+     * <code>ABANDON</code> – No action is taken. The child executions continue to
+     * run.</p> </li> </ul>
+     */
+    inline bool ChildPolicyHasBeenSet() const { return m_childPolicyHasBeenSet; }
 
     /**
      * <p>The policy used for the child workflow executions of this workflow
@@ -194,6 +217,13 @@ namespace Model
      * or is terminated and the child policy is set to terminate child executions.</p>
      */
     inline const WorkflowExecutionTerminatedCause& GetCause() const{ return m_cause; }
+
+    /**
+     * <p>If set, indicates that the workflow execution was automatically terminated,
+     * and specifies the cause. This happens if the parent workflow execution times out
+     * or is terminated and the child policy is set to terminate child executions.</p>
+     */
+    inline bool CauseHasBeenSet() const { return m_causeHasBeenSet; }
 
     /**
      * <p>If set, indicates that the workflow execution was automatically terminated,

@@ -60,6 +60,11 @@ namespace Model
     /**
      * <p>The name (label) of the object or scene.</p>
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>The name (label) of the object or scene.</p>
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
@@ -96,6 +101,11 @@ namespace Model
     /**
      * <p>Level of confidence.</p>
      */
+    inline bool ConfidenceHasBeenSet() const { return m_confidenceHasBeenSet; }
+
+    /**
+     * <p>Level of confidence.</p>
+     */
     inline void SetConfidence(double value) { m_confidenceHasBeenSet = true; m_confidence = value; }
 
     /**
@@ -111,6 +121,14 @@ namespace Model
      * pets.</p>
      */
     inline const Aws::Vector<Instance>& GetInstances() const{ return m_instances; }
+
+    /**
+     * <p>If <code>Label</code> represents an object, <code>Instances</code> contains
+     * the bounding boxes for each instance of the detected object. Bounding boxes are
+     * returned for common object labels such as people, cars, furniture, apparel or
+     * pets.</p>
+     */
+    inline bool InstancesHasBeenSet() const { return m_instancesHasBeenSet; }
 
     /**
      * <p>If <code>Label</code> represents an object, <code>Instances</code> contains
@@ -165,6 +183,11 @@ namespace Model
      * <p>The parent labels for a label. The response includes all ancestor labels.</p>
      */
     inline const Aws::Vector<Parent>& GetParents() const{ return m_parents; }
+
+    /**
+     * <p>The parent labels for a label. The response includes all ancestor labels.</p>
+     */
+    inline bool ParentsHasBeenSet() const { return m_parentsHasBeenSet; }
 
     /**
      * <p>The parent labels for a label. The response includes all ancestor labels.</p>

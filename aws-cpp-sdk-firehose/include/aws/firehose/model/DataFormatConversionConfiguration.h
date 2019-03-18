@@ -66,6 +66,12 @@ namespace Model
      * <p>Specifies the AWS Glue Data Catalog table that contains the column
      * information.</p>
      */
+    inline bool SchemaConfigurationHasBeenSet() const { return m_schemaConfigurationHasBeenSet; }
+
+    /**
+     * <p>Specifies the AWS Glue Data Catalog table that contains the column
+     * information.</p>
+     */
     inline void SetSchemaConfiguration(const SchemaConfiguration& value) { m_schemaConfigurationHasBeenSet = true; m_schemaConfiguration = value; }
 
     /**
@@ -92,6 +98,12 @@ namespace Model
      * convert the format of your data from JSON.</p>
      */
     inline const InputFormatConfiguration& GetInputFormatConfiguration() const{ return m_inputFormatConfiguration; }
+
+    /**
+     * <p>Specifies the deserializer that you want Kinesis Data Firehose to use to
+     * convert the format of your data from JSON.</p>
+     */
+    inline bool InputFormatConfigurationHasBeenSet() const { return m_inputFormatConfigurationHasBeenSet; }
 
     /**
      * <p>Specifies the deserializer that you want Kinesis Data Firehose to use to
@@ -128,6 +140,12 @@ namespace Model
      * <p>Specifies the serializer that you want Kinesis Data Firehose to use to
      * convert the format of your data to the Parquet or ORC format.</p>
      */
+    inline bool OutputFormatConfigurationHasBeenSet() const { return m_outputFormatConfigurationHasBeenSet; }
+
+    /**
+     * <p>Specifies the serializer that you want Kinesis Data Firehose to use to
+     * convert the format of your data to the Parquet or ORC format.</p>
+     */
     inline void SetOutputFormatConfiguration(const OutputFormatConfiguration& value) { m_outputFormatConfigurationHasBeenSet = true; m_outputFormatConfiguration = value; }
 
     /**
@@ -154,6 +172,12 @@ namespace Model
      * disable format conversion while preserving the configuration details.</p>
      */
     inline bool GetEnabled() const{ return m_enabled; }
+
+    /**
+     * <p>Defaults to <code>true</code>. Set it to <code>false</code> if you want to
+     * disable format conversion while preserving the configuration details.</p>
+     */
+    inline bool EnabledHasBeenSet() const { return m_enabledHasBeenSet; }
 
     /**
      * <p>Defaults to <code>true</code>. Set it to <code>false</code> if you want to

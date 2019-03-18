@@ -55,6 +55,11 @@ namespace Model
     /**
      * <p>The name of the Auto Scaling group.</p>
      */
+    inline bool AutoScalingGroupNameHasBeenSet() const { return m_autoScalingGroupNameHasBeenSet; }
+
+    /**
+     * <p>The name of the Auto Scaling group.</p>
+     */
     inline void SetAutoScalingGroupName(const Aws::String& value) { m_autoScalingGroupNameHasBeenSet = true; m_autoScalingGroupName = value; }
 
     /**
@@ -88,6 +93,12 @@ namespace Model
      * 50. </p>
      */
     inline const Aws::Vector<Aws::String>& GetScheduledActionNames() const{ return m_scheduledActionNames; }
+
+    /**
+     * <p>The names of the scheduled actions to delete. The maximum number allowed is
+     * 50. </p>
+     */
+    inline bool ScheduledActionNamesHasBeenSet() const { return m_scheduledActionNamesHasBeenSet; }
 
     /**
      * <p>The names of the scheduled actions to delete. The maximum number allowed is

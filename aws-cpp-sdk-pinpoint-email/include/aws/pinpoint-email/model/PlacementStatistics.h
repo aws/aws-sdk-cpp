@@ -56,6 +56,12 @@ namespace Model
      * <p>The percentage of emails that arrived in recipients' inboxes during the
      * predictive inbox placement test.</p>
      */
+    inline bool InboxPercentageHasBeenSet() const { return m_inboxPercentageHasBeenSet; }
+
+    /**
+     * <p>The percentage of emails that arrived in recipients' inboxes during the
+     * predictive inbox placement test.</p>
+     */
     inline void SetInboxPercentage(double value) { m_inboxPercentageHasBeenSet = true; m_inboxPercentage = value; }
 
     /**
@@ -70,6 +76,12 @@ namespace Model
      * folders during the predictive inbox placement test.</p>
      */
     inline double GetSpamPercentage() const{ return m_spamPercentage; }
+
+    /**
+     * <p>The percentage of emails that arrived in recipients' spam or junk mail
+     * folders during the predictive inbox placement test.</p>
+     */
+    inline bool SpamPercentageHasBeenSet() const { return m_spamPercentageHasBeenSet; }
 
     /**
      * <p>The percentage of emails that arrived in recipients' spam or junk mail
@@ -94,6 +106,12 @@ namespace Model
      * <p>The percentage of emails that didn't arrive in recipients' inboxes at all
      * during the predictive inbox placement test.</p>
      */
+    inline bool MissingPercentageHasBeenSet() const { return m_missingPercentageHasBeenSet; }
+
+    /**
+     * <p>The percentage of emails that didn't arrive in recipients' inboxes at all
+     * during the predictive inbox placement test.</p>
+     */
     inline void SetMissingPercentage(double value) { m_missingPercentageHasBeenSet = true; m_missingPercentage = value; }
 
     /**
@@ -113,6 +131,12 @@ namespace Model
      * <p>The percentage of emails that were authenticated by using Sender Policy
      * Framework (SPF) during the predictive inbox placement test.</p>
      */
+    inline bool SpfPercentageHasBeenSet() const { return m_spfPercentageHasBeenSet; }
+
+    /**
+     * <p>The percentage of emails that were authenticated by using Sender Policy
+     * Framework (SPF) during the predictive inbox placement test.</p>
+     */
     inline void SetSpfPercentage(double value) { m_spfPercentageHasBeenSet = true; m_spfPercentage = value; }
 
     /**
@@ -127,6 +151,12 @@ namespace Model
      * Identified Mail (DKIM) during the predictive inbox placement test.</p>
      */
     inline double GetDkimPercentage() const{ return m_dkimPercentage; }
+
+    /**
+     * <p>The percentage of emails that were authenticated by using DomainKeys
+     * Identified Mail (DKIM) during the predictive inbox placement test.</p>
+     */
+    inline bool DkimPercentageHasBeenSet() const { return m_dkimPercentageHasBeenSet; }
 
     /**
      * <p>The percentage of emails that were authenticated by using DomainKeys

@@ -56,6 +56,12 @@ namespace Model
      * <p>The ARN (Amazon Resource Name) of the resource that was attacked. If this is
      * left blank, all applicable resources for this account will be included.</p>
      */
+    inline bool ResourceArnsHasBeenSet() const { return m_resourceArnsHasBeenSet; }
+
+    /**
+     * <p>The ARN (Amazon Resource Name) of the resource that was attacked. If this is
+     * left blank, all applicable resources for this account will be included.</p>
+     */
     inline void SetResourceArns(const Aws::Vector<Aws::String>& value) { m_resourceArnsHasBeenSet = true; m_resourceArns = value; }
 
     /**
@@ -104,6 +110,16 @@ namespace Model
      * format</a> is allowed. </p>
      */
     inline const TimeRange& GetStartTime() const{ return m_startTime; }
+
+    /**
+     * <p>The start of the time period for the attacks. This is a
+     * <code>timestamp</code> type. The sample request above indicates a
+     * <code>number</code> type because the default used by WAF is Unix time in
+     * seconds. However any valid <a
+     * href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#parameter-types">timestamp
+     * format</a> is allowed. </p>
+     */
+    inline bool StartTimeHasBeenSet() const { return m_startTimeHasBeenSet; }
 
     /**
      * <p>The start of the time period for the attacks. This is a
@@ -162,6 +178,15 @@ namespace Model
      * href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#parameter-types">timestamp
      * format</a> is allowed. </p>
      */
+    inline bool EndTimeHasBeenSet() const { return m_endTimeHasBeenSet; }
+
+    /**
+     * <p>The end of the time period for the attacks. This is a <code>timestamp</code>
+     * type. The sample request above indicates a <code>number</code> type because the
+     * default used by WAF is Unix time in seconds. However any valid <a
+     * href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#parameter-types">timestamp
+     * format</a> is allowed. </p>
+     */
     inline void SetEndTime(const TimeRange& value) { m_endTimeHasBeenSet = true; m_endTime = value; }
 
     /**
@@ -197,6 +222,12 @@ namespace Model
      * <code>ListAttacksRequest</code>. Pass null if this is the first call.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
+    /**
+     * <p>The <code>ListAttacksRequest.NextMarker</code> value from a previous call to
+     * <code>ListAttacksRequest</code>. Pass null if this is the first call.</p>
+     */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
      * <p>The <code>ListAttacksRequest.NextMarker</code> value from a previous call to
@@ -245,6 +276,17 @@ namespace Model
      * AWS WAF will always also return a <code>NextToken</code>.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
+
+    /**
+     * <p>The maximum number of <a>AttackSummary</a> objects to be returned. If this is
+     * left blank, the first 20 results will be returned.</p> <p>This is a maximum
+     * value; it is possible that AWS WAF will return the results in smaller batches.
+     * That is, the number of <a>AttackSummary</a> objects returned could be less than
+     * <code>MaxResults</code>, even if there are still more <a>AttackSummary</a>
+     * objects yet to return. If there are more <a>AttackSummary</a> objects to return,
+     * AWS WAF will always also return a <code>NextToken</code>.</p>
+     */
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
 
     /**
      * <p>The maximum number of <a>AttackSummary</a> objects to be returned. If this is

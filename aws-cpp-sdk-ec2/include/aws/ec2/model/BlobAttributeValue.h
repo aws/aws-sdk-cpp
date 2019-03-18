@@ -48,6 +48,9 @@ namespace Model
     inline const Aws::Utils::ByteBuffer& GetValue() const{ return m_value; }
 
     
+    inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
+
+    
     inline void SetValue(const Aws::Utils::ByteBuffer& value) { m_valueHasBeenSet = true; m_value = value; }
 
     

@@ -59,6 +59,12 @@ namespace Model
      * <p>The name of a resource group that is associated with a specific resource
      * query.</p>
      */
+    inline bool GroupNameHasBeenSet() const { return m_groupNameHasBeenSet; }
+
+    /**
+     * <p>The name of a resource group that is associated with a specific resource
+     * query.</p>
+     */
     inline void SetGroupName(const Aws::String& value) { m_groupNameHasBeenSet = true; m_groupName = value; }
 
     /**
@@ -97,6 +103,12 @@ namespace Model
      * associated resource group.</p>
      */
     inline const ResourceQuery& GetResourceQuery() const{ return m_resourceQuery; }
+
+    /**
+     * <p>The resource query which determines which AWS resources are members of the
+     * associated resource group.</p>
+     */
+    inline bool ResourceQueryHasBeenSet() const { return m_resourceQueryHasBeenSet; }
 
     /**
      * <p>The resource query which determines which AWS resources are members of the

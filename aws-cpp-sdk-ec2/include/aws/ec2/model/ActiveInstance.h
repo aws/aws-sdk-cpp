@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p>The ID of the instance.</p>
      */
+    inline bool InstanceIdHasBeenSet() const { return m_instanceIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the instance.</p>
+     */
     inline void SetInstanceId(const Aws::String& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
 
     /**
@@ -90,6 +95,11 @@ namespace Model
      * <p>The instance type.</p>
      */
     inline const Aws::String& GetInstanceType() const{ return m_instanceType; }
+
+    /**
+     * <p>The instance type.</p>
+     */
+    inline bool InstanceTypeHasBeenSet() const { return m_instanceTypeHasBeenSet; }
 
     /**
      * <p>The instance type.</p>
@@ -130,6 +140,11 @@ namespace Model
     /**
      * <p>The ID of the Spot Instance request.</p>
      */
+    inline bool SpotInstanceRequestIdHasBeenSet() const { return m_spotInstanceRequestIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the Spot Instance request.</p>
+     */
     inline void SetSpotInstanceRequestId(const Aws::String& value) { m_spotInstanceRequestIdHasBeenSet = true; m_spotInstanceRequestId = value; }
 
     /**
@@ -165,6 +180,14 @@ namespace Model
      * is <code>healthy</code>.</p>
      */
     inline const InstanceHealthStatus& GetInstanceHealth() const{ return m_instanceHealth; }
+
+    /**
+     * <p>The health status of the instance. If the status of either the instance
+     * status check or the system status check is <code>impaired</code>, the health
+     * status of the instance is <code>unhealthy</code>. Otherwise, the health status
+     * is <code>healthy</code>.</p>
+     */
+    inline bool InstanceHealthHasBeenSet() const { return m_instanceHealthHasBeenSet; }
 
     /**
      * <p>The health status of the instance. If the status of either the instance

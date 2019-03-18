@@ -61,6 +61,14 @@ namespace Model
      * required permissions, the error response is <code>DryRunOperation</code>.
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
+    inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
+
+    /**
+     * <p>Checks whether you have the required permissions for the action, without
+     * actually making the request, and provides an error response. If you have the
+     * required permissions, the error response is <code>DryRunOperation</code>.
+     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+     */
     inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
 
     /**
@@ -77,6 +85,12 @@ namespace Model
      * account for the Region.</p> <p>Constraints: Up to 255 ASCII characters</p>
      */
     inline const Aws::String& GetGroupName() const{ return m_groupName; }
+
+    /**
+     * <p>A name for the placement group. Must be unique within the scope of your
+     * account for the Region.</p> <p>Constraints: Up to 255 ASCII characters</p>
+     */
+    inline bool GroupNameHasBeenSet() const { return m_groupNameHasBeenSet; }
 
     /**
      * <p>A name for the placement group. Must be unique within the scope of your
@@ -123,6 +137,11 @@ namespace Model
     /**
      * <p>The placement strategy.</p>
      */
+    inline bool StrategyHasBeenSet() const { return m_strategyHasBeenSet; }
+
+    /**
+     * <p>The placement strategy.</p>
+     */
     inline void SetStrategy(const PlacementStrategy& value) { m_strategyHasBeenSet = true; m_strategy = value; }
 
     /**
@@ -146,6 +165,12 @@ namespace Model
      * <code>partition</code>.</p>
      */
     inline int GetPartitionCount() const{ return m_partitionCount; }
+
+    /**
+     * <p>The number of partitions. Valid only when <b>Strategy</b> is set to
+     * <code>partition</code>.</p>
+     */
+    inline bool PartitionCountHasBeenSet() const { return m_partitionCountHasBeenSet; }
 
     /**
      * <p>The number of partitions. Valid only when <b>Strategy</b> is set to

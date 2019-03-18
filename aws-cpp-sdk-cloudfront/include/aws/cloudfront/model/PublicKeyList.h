@@ -62,6 +62,13 @@ namespace Model
      * the value that you can use for the <code>Marker</code> request parameter to
      * continue listing your public keys where you left off.</p>
      */
+    inline bool NextMarkerHasBeenSet() const { return m_nextMarkerHasBeenSet; }
+
+    /**
+     * <p>If there are more elements to be listed, this element is present and contains
+     * the value that you can use for the <code>Marker</code> request parameter to
+     * continue listing your public keys where you left off.</p>
+     */
     inline void SetNextMarker(const Aws::String& value) { m_nextMarkerHasBeenSet = true; m_nextMarker = value; }
 
     /**
@@ -108,6 +115,11 @@ namespace Model
     /**
      * <p>The maximum number of public keys you want in the response body. </p>
      */
+    inline bool MaxItemsHasBeenSet() const { return m_maxItemsHasBeenSet; }
+
+    /**
+     * <p>The maximum number of public keys you want in the response body. </p>
+     */
     inline void SetMaxItems(int value) { m_maxItemsHasBeenSet = true; m_maxItems = value; }
 
     /**
@@ -121,6 +133,12 @@ namespace Model
      * field-level encryption.</p>
      */
     inline int GetQuantity() const{ return m_quantity; }
+
+    /**
+     * <p>The number of public keys you added to CloudFront to use with features like
+     * field-level encryption.</p>
+     */
+    inline bool QuantityHasBeenSet() const { return m_quantityHasBeenSet; }
 
     /**
      * <p>The number of public keys you added to CloudFront to use with features like
@@ -140,6 +158,12 @@ namespace Model
      * features like field-level encryption.</p>
      */
     inline const Aws::Vector<PublicKeySummary>& GetItems() const{ return m_items; }
+
+    /**
+     * <p>An array of information about a public key you add to CloudFront to use with
+     * features like field-level encryption.</p>
+     */
+    inline bool ItemsHasBeenSet() const { return m_itemsHasBeenSet; }
 
     /**
      * <p>An array of information about a public key you add to CloudFront to use with

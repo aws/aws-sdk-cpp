@@ -31,6 +31,7 @@
 #include <aws/dms/DatabaseMigrationServiceEndpoint.h>
 #include <aws/dms/DatabaseMigrationServiceErrorMarshaller.h>
 #include <aws/dms/model/AddTagsToResourceRequest.h>
+#include <aws/dms/model/ApplyPendingMaintenanceActionRequest.h>
 #include <aws/dms/model/CreateEndpointRequest.h>
 #include <aws/dms/model/CreateEventSubscriptionRequest.h>
 #include <aws/dms/model/CreateReplicationInstanceRequest.h>
@@ -51,6 +52,7 @@
 #include <aws/dms/model/DescribeEventSubscriptionsRequest.h>
 #include <aws/dms/model/DescribeEventsRequest.h>
 #include <aws/dms/model/DescribeOrderableReplicationInstancesRequest.h>
+#include <aws/dms/model/DescribePendingMaintenanceActionsRequest.h>
 #include <aws/dms/model/DescribeRefreshSchemasStatusRequest.h>
 #include <aws/dms/model/DescribeReplicationInstanceTaskLogsRequest.h>
 #include <aws/dms/model/DescribeReplicationInstancesRequest.h>
@@ -179,6 +181,41 @@ void DatabaseMigrationServiceClient::AddTagsToResourceAsync(const AddTagsToResou
 void DatabaseMigrationServiceClient::AddTagsToResourceAsyncHelper(const AddTagsToResourceRequest& request, const AddTagsToResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, AddTagsToResource(request), context);
+}
+
+ApplyPendingMaintenanceActionOutcome DatabaseMigrationServiceClient::ApplyPendingMaintenanceAction(const ApplyPendingMaintenanceActionRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return ApplyPendingMaintenanceActionOutcome(ApplyPendingMaintenanceActionResult(outcome.GetResult()));
+  }
+  else
+  {
+    return ApplyPendingMaintenanceActionOutcome(outcome.GetError());
+  }
+}
+
+ApplyPendingMaintenanceActionOutcomeCallable DatabaseMigrationServiceClient::ApplyPendingMaintenanceActionCallable(const ApplyPendingMaintenanceActionRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ApplyPendingMaintenanceActionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ApplyPendingMaintenanceAction(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void DatabaseMigrationServiceClient::ApplyPendingMaintenanceActionAsync(const ApplyPendingMaintenanceActionRequest& request, const ApplyPendingMaintenanceActionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ApplyPendingMaintenanceActionAsyncHelper( request, handler, context ); } );
+}
+
+void DatabaseMigrationServiceClient::ApplyPendingMaintenanceActionAsyncHelper(const ApplyPendingMaintenanceActionRequest& request, const ApplyPendingMaintenanceActionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ApplyPendingMaintenanceAction(request), context);
 }
 
 CreateEndpointOutcome DatabaseMigrationServiceClient::CreateEndpoint(const CreateEndpointRequest& request) const
@@ -879,6 +916,41 @@ void DatabaseMigrationServiceClient::DescribeOrderableReplicationInstancesAsync(
 void DatabaseMigrationServiceClient::DescribeOrderableReplicationInstancesAsyncHelper(const DescribeOrderableReplicationInstancesRequest& request, const DescribeOrderableReplicationInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DescribeOrderableReplicationInstances(request), context);
+}
+
+DescribePendingMaintenanceActionsOutcome DatabaseMigrationServiceClient::DescribePendingMaintenanceActions(const DescribePendingMaintenanceActionsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return DescribePendingMaintenanceActionsOutcome(DescribePendingMaintenanceActionsResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DescribePendingMaintenanceActionsOutcome(outcome.GetError());
+  }
+}
+
+DescribePendingMaintenanceActionsOutcomeCallable DatabaseMigrationServiceClient::DescribePendingMaintenanceActionsCallable(const DescribePendingMaintenanceActionsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribePendingMaintenanceActionsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribePendingMaintenanceActions(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void DatabaseMigrationServiceClient::DescribePendingMaintenanceActionsAsync(const DescribePendingMaintenanceActionsRequest& request, const DescribePendingMaintenanceActionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribePendingMaintenanceActionsAsyncHelper( request, handler, context ); } );
+}
+
+void DatabaseMigrationServiceClient::DescribePendingMaintenanceActionsAsyncHelper(const DescribePendingMaintenanceActionsRequest& request, const DescribePendingMaintenanceActionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribePendingMaintenanceActions(request), context);
 }
 
 DescribeRefreshSchemasStatusOutcome DatabaseMigrationServiceClient::DescribeRefreshSchemasStatus(const DescribeRefreshSchemasStatusRequest& request) const

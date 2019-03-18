@@ -61,6 +61,11 @@ namespace Model
     /**
      * <p>Input ID of the application input to be updated.</p>
      */
+    inline bool InputIdHasBeenSet() const { return m_inputIdHasBeenSet; }
+
+    /**
+     * <p>Input ID of the application input to be updated.</p>
+     */
     inline void SetInputId(const Aws::String& value) { m_inputIdHasBeenSet = true; m_inputId = value; }
 
     /**
@@ -94,6 +99,12 @@ namespace Model
      * for the specific streaming source.</p>
      */
     inline const Aws::String& GetNamePrefixUpdate() const{ return m_namePrefixUpdate; }
+
+    /**
+     * <p>Name prefix for in-application streams that Amazon Kinesis Analytics creates
+     * for the specific streaming source.</p>
+     */
+    inline bool NamePrefixUpdateHasBeenSet() const { return m_namePrefixUpdateHasBeenSet; }
 
     /**
      * <p>Name prefix for in-application streams that Amazon Kinesis Analytics creates
@@ -140,6 +151,11 @@ namespace Model
     /**
      * <p>Describes updates for an input processing configuration.</p>
      */
+    inline bool InputProcessingConfigurationUpdateHasBeenSet() const { return m_inputProcessingConfigurationUpdateHasBeenSet; }
+
+    /**
+     * <p>Describes updates for an input processing configuration.</p>
+     */
     inline void SetInputProcessingConfigurationUpdate(const InputProcessingConfigurationUpdate& value) { m_inputProcessingConfigurationUpdateHasBeenSet = true; m_inputProcessingConfigurationUpdate = value; }
 
     /**
@@ -163,6 +179,12 @@ namespace Model
      * an updated stream Amazon Resource Name (ARN) and IAM role ARN.</p>
      */
     inline const KinesisStreamsInputUpdate& GetKinesisStreamsInputUpdate() const{ return m_kinesisStreamsInputUpdate; }
+
+    /**
+     * <p>If an Amazon Kinesis stream is the streaming source to be updated, provides
+     * an updated stream Amazon Resource Name (ARN) and IAM role ARN.</p>
+     */
+    inline bool KinesisStreamsInputUpdateHasBeenSet() const { return m_kinesisStreamsInputUpdateHasBeenSet; }
 
     /**
      * <p>If an Amazon Kinesis stream is the streaming source to be updated, provides
@@ -194,6 +216,12 @@ namespace Model
      * updated, provides an updated stream ARN and IAM role ARN.</p>
      */
     inline const KinesisFirehoseInputUpdate& GetKinesisFirehoseInputUpdate() const{ return m_kinesisFirehoseInputUpdate; }
+
+    /**
+     * <p>If an Amazon Kinesis Firehose delivery stream is the streaming source to be
+     * updated, provides an updated stream ARN and IAM role ARN.</p>
+     */
+    inline bool KinesisFirehoseInputUpdateHasBeenSet() const { return m_kinesisFirehoseInputUpdateHasBeenSet; }
 
     /**
      * <p>If an Amazon Kinesis Firehose delivery stream is the streaming source to be
@@ -232,6 +260,13 @@ namespace Model
      * the streaming source map to columns of the in-application stream that is
      * created.</p>
      */
+    inline bool InputSchemaUpdateHasBeenSet() const { return m_inputSchemaUpdateHasBeenSet; }
+
+    /**
+     * <p>Describes the data format on the streaming source, and how record elements on
+     * the streaming source map to columns of the in-application stream that is
+     * created.</p>
+     */
     inline void SetInputSchemaUpdate(const InputSchemaUpdate& value) { m_inputSchemaUpdateHasBeenSet = true; m_inputSchemaUpdate = value; }
 
     /**
@@ -261,6 +296,12 @@ namespace Model
      * Kinesis Analytics creates for the specific streaming source).</p>
      */
     inline const InputParallelismUpdate& GetInputParallelismUpdate() const{ return m_inputParallelismUpdate; }
+
+    /**
+     * <p>Describes the parallelism updates (the number in-application streams Amazon
+     * Kinesis Analytics creates for the specific streaming source).</p>
+     */
+    inline bool InputParallelismUpdateHasBeenSet() const { return m_inputParallelismUpdateHasBeenSet; }
 
     /**
      * <p>Describes the parallelism updates (the number in-application streams Amazon

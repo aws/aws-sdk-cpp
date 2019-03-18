@@ -52,6 +52,11 @@ namespace Model
     /**
      * <p>The length of the byte string.</p>
      */
+    inline bool NumberOfBytesHasBeenSet() const { return m_numberOfBytesHasBeenSet; }
+
+    /**
+     * <p>The length of the byte string.</p>
+     */
     inline void SetNumberOfBytes(int value) { m_numberOfBytesHasBeenSet = true; m_numberOfBytes = value; }
 
     /**
@@ -68,6 +73,15 @@ namespace Model
      * <a>DescribeCustomKeyStores</a> operation.</p>
      */
     inline const Aws::String& GetCustomKeyStoreId() const{ return m_customKeyStoreId; }
+
+    /**
+     * <p>Generates the random byte string in the AWS CloudHSM cluster that is
+     * associated with the specified <a
+     * href="http://docs.aws.amazon.com/kms/latest/developerguide/key-store-overview.html">custom
+     * key store</a>. To find the ID of a custom key store, use the
+     * <a>DescribeCustomKeyStores</a> operation.</p>
+     */
+    inline bool CustomKeyStoreIdHasBeenSet() const { return m_customKeyStoreIdHasBeenSet; }
 
     /**
      * <p>Generates the random byte string in the AWS CloudHSM cluster that is

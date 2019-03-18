@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The virtual node associated with a virtual service.</p>
      */
+    inline bool VirtualNodeHasBeenSet() const { return m_virtualNodeHasBeenSet; }
+
+    /**
+     * <p>The virtual node associated with a virtual service.</p>
+     */
     inline void SetVirtualNode(const VirtualNodeServiceProvider& value) { m_virtualNodeHasBeenSet = true; m_virtualNode = value; }
 
     /**
@@ -79,6 +84,11 @@ namespace Model
      * <p>The virtual router associated with a virtual service.</p>
      */
     inline const VirtualRouterServiceProvider& GetVirtualRouter() const{ return m_virtualRouter; }
+
+    /**
+     * <p>The virtual router associated with a virtual service.</p>
+     */
+    inline bool VirtualRouterHasBeenSet() const { return m_virtualRouterHasBeenSet; }
 
     /**
      * <p>The virtual router associated with a virtual service.</p>

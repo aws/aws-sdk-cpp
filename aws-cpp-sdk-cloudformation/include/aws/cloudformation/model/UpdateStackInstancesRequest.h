@@ -60,6 +60,12 @@ namespace Model
      * <p>The name or unique ID of the stack set associated with the stack
      * instances.</p>
      */
+    inline bool StackSetNameHasBeenSet() const { return m_stackSetNameHasBeenSet; }
+
+    /**
+     * <p>The name or unique ID of the stack set associated with the stack
+     * instances.</p>
+     */
     inline void SetStackSetName(const Aws::String& value) { m_stackSetNameHasBeenSet = true; m_stackSetName = value; }
 
     /**
@@ -99,6 +105,13 @@ namespace Model
      * all stack instances in the specified accounts and regions.</p>
      */
     inline const Aws::Vector<Aws::String>& GetAccounts() const{ return m_accounts; }
+
+    /**
+     * <p>The names of one or more AWS accounts for which you want to update parameter
+     * values for stack instances. The overridden parameter values will be applied to
+     * all stack instances in the specified accounts and regions.</p>
+     */
+    inline bool AccountsHasBeenSet() const { return m_accountsHasBeenSet; }
 
     /**
      * <p>The names of one or more AWS accounts for which you want to update parameter
@@ -156,6 +169,13 @@ namespace Model
      * stack instances in the specified accounts and regions.</p>
      */
     inline const Aws::Vector<Aws::String>& GetRegions() const{ return m_regions; }
+
+    /**
+     * <p>The names of one or more regions in which you want to update parameter values
+     * for stack instances. The overridden parameter values will be applied to all
+     * stack instances in the specified accounts and regions.</p>
+     */
+    inline bool RegionsHasBeenSet() const { return m_regionsHasBeenSet; }
 
     /**
      * <p>The names of one or more regions in which you want to update parameter values
@@ -236,6 +256,36 @@ namespace Model
      * <code>UpdateStackInstances</code>.</p>
      */
     inline const Aws::Vector<Parameter>& GetParameterOverrides() const{ return m_parameterOverrides; }
+
+    /**
+     * <p> A list of input parameters whose values you want to update for the specified
+     * stack instances. </p> <p>Any overridden parameter values will be applied to all
+     * stack instances in the specified accounts and regions. When specifying
+     * parameters and their values, be aware of how AWS CloudFormation sets parameter
+     * values during stack instance update operations:</p> <ul> <li> <p>To override the
+     * current value for a parameter, include the parameter and specify its value.</p>
+     * </li> <li> <p>To leave a parameter set to its present value, you can do one of
+     * the following:</p> <ul> <li> <p>Do not include the parameter in the list.</p>
+     * </li> <li> <p>Include the parameter and specify <code>UsePreviousValue</code> as
+     * <code>true</code>. (You cannot specify both a value and set
+     * <code>UsePreviousValue</code> to <code>true</code>.)</p> </li> </ul> </li> <li>
+     * <p>To set all overridden parameter back to the values specified in the stack
+     * set, specify a parameter list but do not include any parameters.</p> </li> <li>
+     * <p>To leave all parameters set to their present values, do not specify this
+     * property at all.</p> </li> </ul> <p>During stack set updates, any parameter
+     * values overridden for a stack instance are not updated, but retain their
+     * overridden value.</p> <p>You can only override the parameter <i>values</i> that
+     * are specified in the stack set; to add or delete a parameter itself, use
+     * <code>UpdateStackSet</code> to update the stack set template. If you add a
+     * parameter to a template, before you can override the parameter value specified
+     * in the stack set you must first use <a
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_UpdateStackSet.html">UpdateStackSet</a>
+     * to update all stack instances with the updated template and parameter value
+     * specified in the stack set. Once a stack instance has been updated with the new
+     * parameter, you can then override the parameter value using
+     * <code>UpdateStackInstances</code>.</p>
+     */
+    inline bool ParameterOverridesHasBeenSet() const { return m_parameterOverridesHasBeenSet; }
 
     /**
      * <p> A list of input parameters whose values you want to update for the specified
@@ -426,6 +476,11 @@ namespace Model
     /**
      * <p>Preferences for how AWS CloudFormation performs this stack set operation.</p>
      */
+    inline bool OperationPreferencesHasBeenSet() const { return m_operationPreferencesHasBeenSet; }
+
+    /**
+     * <p>Preferences for how AWS CloudFormation performs this stack set operation.</p>
+     */
     inline void SetOperationPreferences(const StackSetOperationPreferences& value) { m_operationPreferencesHasBeenSet = true; m_operationPreferences = value; }
 
     /**
@@ -453,6 +508,16 @@ namespace Model
      * operation ID, the SDK generates one automatically. </p>
      */
     inline const Aws::String& GetOperationId() const{ return m_operationId; }
+
+    /**
+     * <p>The unique identifier for this stack set operation. </p> <p>The operation ID
+     * also functions as an idempotency token, to ensure that AWS CloudFormation
+     * performs the stack set operation only once, even if you retry the request
+     * multiple times. You might retry stack set operation requests to ensure that AWS
+     * CloudFormation successfully received them.</p> <p>If you don't specify an
+     * operation ID, the SDK generates one automatically. </p>
+     */
+    inline bool OperationIdHasBeenSet() const { return m_operationIdHasBeenSet; }
 
     /**
      * <p>The unique identifier for this stack set operation. </p> <p>The operation ID

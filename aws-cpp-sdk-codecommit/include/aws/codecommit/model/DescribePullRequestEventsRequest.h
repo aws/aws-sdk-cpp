@@ -55,6 +55,12 @@ namespace Model
      * <p>The system-generated ID of the pull request. To get this ID, use
      * <a>ListPullRequests</a>.</p>
      */
+    inline bool PullRequestIdHasBeenSet() const { return m_pullRequestIdHasBeenSet; }
+
+    /**
+     * <p>The system-generated ID of the pull request. To get this ID, use
+     * <a>ListPullRequests</a>.</p>
+     */
     inline void SetPullRequestId(const Aws::String& value) { m_pullRequestIdHasBeenSet = true; m_pullRequestId = value; }
 
     /**
@@ -98,6 +104,12 @@ namespace Model
      * <p>Optional. The pull request event type about which you want to return
      * information.</p>
      */
+    inline bool PullRequestEventTypeHasBeenSet() const { return m_pullRequestEventTypeHasBeenSet; }
+
+    /**
+     * <p>Optional. The pull request event type about which you want to return
+     * information.</p>
+     */
     inline void SetPullRequestEventType(const PullRequestEventType& value) { m_pullRequestEventTypeHasBeenSet = true; m_pullRequestEventType = value; }
 
     /**
@@ -125,6 +137,13 @@ namespace Model
      * changing the status of a pull request.</p>
      */
     inline const Aws::String& GetActorArn() const{ return m_actorArn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the user whose actions resulted in the
+     * event. Examples include updating the pull request with additional commits or
+     * changing the status of a pull request.</p>
+     */
+    inline bool ActorArnHasBeenSet() const { return m_actorArnHasBeenSet; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the user whose actions resulted in the
@@ -179,6 +198,12 @@ namespace Model
      * <p>An enumeration token that when provided in a request, returns the next batch
      * of the results.</p>
      */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
+
+    /**
+     * <p>An enumeration token that when provided in a request, returns the next batch
+     * of the results.</p>
+     */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
     /**
@@ -218,6 +243,13 @@ namespace Model
      * returned in a result.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
+
+    /**
+     * <p>A non-negative integer used to limit the number of returned results. The
+     * default is 100 events, which is also the maximum number of events that can be
+     * returned in a result.</p>
+     */
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
 
     /**
      * <p>A non-negative integer used to limit the number of returned results. The

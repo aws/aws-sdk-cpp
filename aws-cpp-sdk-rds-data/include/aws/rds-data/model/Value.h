@@ -59,6 +59,11 @@ namespace Model
     /**
      * Arbitrarily nested arrays
      */
+    inline bool ArrayValuesHasBeenSet() const { return m_arrayValuesHasBeenSet; }
+
+    /**
+     * Arbitrarily nested arrays
+     */
     inline void SetArrayValues(const Aws::Vector<Value>& value) { m_arrayValuesHasBeenSet = true; m_arrayValues = value; }
 
     /**
@@ -95,6 +100,11 @@ namespace Model
     /**
      * Long value
      */
+    inline bool BigIntValueHasBeenSet() const { return m_bigIntValueHasBeenSet; }
+
+    /**
+     * Long value
+     */
     inline void SetBigIntValue(long long value) { m_bigIntValueHasBeenSet = true; m_bigIntValue = value; }
 
     /**
@@ -111,6 +121,11 @@ namespace Model
     /**
      * Bit value
      */
+    inline bool BitValueHasBeenSet() const { return m_bitValueHasBeenSet; }
+
+    /**
+     * Bit value
+     */
     inline void SetBitValue(bool value) { m_bitValueHasBeenSet = true; m_bitValue = value; }
 
     /**
@@ -123,6 +138,11 @@ namespace Model
      * Blob value
      */
     inline const Aws::Utils::ByteBuffer& GetBlobValue() const{ return m_blobValue; }
+
+    /**
+     * Blob value
+     */
+    inline bool BlobValueHasBeenSet() const { return m_blobValueHasBeenSet; }
 
     /**
      * Blob value
@@ -153,6 +173,11 @@ namespace Model
     /**
      * Double value
      */
+    inline bool DoubleValueHasBeenSet() const { return m_doubleValueHasBeenSet; }
+
+    /**
+     * Double value
+     */
     inline void SetDoubleValue(double value) { m_doubleValueHasBeenSet = true; m_doubleValue = value; }
 
     /**
@@ -165,6 +190,11 @@ namespace Model
      * Integer value
      */
     inline int GetIntValue() const{ return m_intValue; }
+
+    /**
+     * Integer value
+     */
+    inline bool IntValueHasBeenSet() const { return m_intValueHasBeenSet; }
 
     /**
      * Integer value
@@ -185,6 +215,11 @@ namespace Model
     /**
      * Is column null
      */
+    inline bool IsNullHasBeenSet() const { return m_isNullHasBeenSet; }
+
+    /**
+     * Is column null
+     */
     inline void SetIsNull(bool value) { m_isNullHasBeenSet = true; m_isNull = value; }
 
     /**
@@ -201,6 +236,11 @@ namespace Model
     /**
      * Float value
      */
+    inline bool RealValueHasBeenSet() const { return m_realValueHasBeenSet; }
+
+    /**
+     * Float value
+     */
     inline void SetRealValue(double value) { m_realValueHasBeenSet = true; m_realValue = value; }
 
     /**
@@ -213,6 +253,11 @@ namespace Model
      * String value
      */
     inline const Aws::String& GetStringValue() const{ return m_stringValue; }
+
+    /**
+     * String value
+     */
+    inline bool StringValueHasBeenSet() const { return m_stringValueHasBeenSet; }
 
     /**
      * String value
@@ -249,6 +294,11 @@ namespace Model
      * Struct or UDT
      */
     inline const StructValue& GetStructValue() const{ return m_structValue; }
+
+    /**
+     * Struct or UDT
+     */
+    inline bool StructValueHasBeenSet() const { return m_structValueHasBeenSet; }
 
     /**
      * Struct or UDT

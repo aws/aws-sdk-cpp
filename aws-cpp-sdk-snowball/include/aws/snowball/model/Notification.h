@@ -76,6 +76,17 @@ namespace Model
      * href="http://docs.aws.amazon.com/sns/latest/api/API_Subscribe.html">Subscribe</a>
      * AWS Simple Notification Service (SNS) API action.</p>
      */
+    inline bool SnsTopicARNHasBeenSet() const { return m_snsTopicARNHasBeenSet; }
+
+    /**
+     * <p>The new SNS <code>TopicArn</code> that you want to associate with this job.
+     * You can create Amazon Resource Names (ARNs) for topics by using the <a
+     * href="http://docs.aws.amazon.com/sns/latest/api/API_CreateTopic.html">CreateTopic</a>
+     * Amazon SNS API action.</p> <p>You can subscribe email addresses to an Amazon SNS
+     * topic through the AWS Management Console, or by using the <a
+     * href="http://docs.aws.amazon.com/sns/latest/api/API_Subscribe.html">Subscribe</a>
+     * AWS Simple Notification Service (SNS) API action.</p>
+     */
     inline void SetSnsTopicARN(const Aws::String& value) { m_snsTopicARNHasBeenSet = true; m_snsTopicARN = value; }
 
     /**
@@ -142,6 +153,11 @@ namespace Model
     /**
      * <p>The list of job states that will trigger a notification for this job.</p>
      */
+    inline bool JobStatesToNotifyHasBeenSet() const { return m_jobStatesToNotifyHasBeenSet; }
+
+    /**
+     * <p>The list of job states that will trigger a notification for this job.</p>
+     */
     inline void SetJobStatesToNotify(const Aws::Vector<JobState>& value) { m_jobStatesToNotifyHasBeenSet = true; m_jobStatesToNotify = value; }
 
     /**
@@ -174,6 +190,11 @@ namespace Model
      * <p>Any change in job state will trigger a notification for this job.</p>
      */
     inline bool GetNotifyAll() const{ return m_notifyAll; }
+
+    /**
+     * <p>Any change in job state will trigger a notification for this job.</p>
+     */
+    inline bool NotifyAllHasBeenSet() const { return m_notifyAllHasBeenSet; }
 
     /**
      * <p>Any change in job state will trigger a notification for this job.</p>

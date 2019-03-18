@@ -56,6 +56,13 @@ namespace Model
      * a list of <code>ManagedKeys</code>. <code>RuleId</code> is returned by
      * <a>CreateRateBasedRule</a> and by <a>ListRateBasedRules</a>.</p>
      */
+    inline bool RuleIdHasBeenSet() const { return m_ruleIdHasBeenSet; }
+
+    /**
+     * <p>The <code>RuleId</code> of the <a>RateBasedRule</a> for which you want to get
+     * a list of <code>ManagedKeys</code>. <code>RuleId</code> is returned by
+     * <a>CreateRateBasedRule</a> and by <a>ListRateBasedRules</a>.</p>
+     */
     inline void SetRuleId(const Aws::String& value) { m_ruleIdHasBeenSet = true; m_ruleId = value; }
 
     /**
@@ -98,6 +105,11 @@ namespace Model
      * <p>A null value and not currently used. Do not include this in your request.</p>
      */
     inline const Aws::String& GetNextMarker() const{ return m_nextMarker; }
+
+    /**
+     * <p>A null value and not currently used. Do not include this in your request.</p>
+     */
+    inline bool NextMarkerHasBeenSet() const { return m_nextMarkerHasBeenSet; }
 
     /**
      * <p>A null value and not currently used. Do not include this in your request.</p>

@@ -56,6 +56,13 @@ namespace Model
      * <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a policy ID
      * string requires "p-" followed by from 8 to 128 lower-case letters or digits.</p>
      */
+    inline bool PolicyIdHasBeenSet() const { return m_policyIdHasBeenSet; }
+
+    /**
+     * <p>The unique identifier (ID) of the policy that you want to update.</p> <p>The
+     * <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a policy ID
+     * string requires "p-" followed by from 8 to 128 lower-case letters or digits.</p>
+     */
     inline void SetPolicyId(const Aws::String& value) { m_policyIdHasBeenSet = true; m_policyId = value; }
 
     /**
@@ -101,6 +108,14 @@ namespace Model
      * character range.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
+
+    /**
+     * <p>If provided, the new name for the policy.</p> <p>The <a
+     * href="http://wikipedia.org/wiki/regex">regex pattern</a> that is used to
+     * validate this parameter is a string of any of the characters in the ASCII
+     * character range.</p>
+     */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
      * <p>If provided, the new name for the policy.</p> <p>The <a
@@ -159,6 +174,11 @@ namespace Model
     /**
      * <p>If provided, the new description for the policy.</p>
      */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
+
+    /**
+     * <p>If provided, the new description for the policy.</p>
+     */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
@@ -195,6 +215,15 @@ namespace Model
      * Control Policy Syntax</a> in the <i>AWS Organizations User Guide</i>.</p>
      */
     inline const Aws::String& GetContent() const{ return m_content; }
+
+    /**
+     * <p>If provided, the new content for the policy. The text must be correctly
+     * formatted JSON that complies with the syntax for the policy's type. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_scp-syntax.html">Service
+     * Control Policy Syntax</a> in the <i>AWS Organizations User Guide</i>.</p>
+     */
+    inline bool ContentHasBeenSet() const { return m_contentHasBeenSet; }
 
     /**
      * <p>If provided, the new content for the policy. The text must be correctly

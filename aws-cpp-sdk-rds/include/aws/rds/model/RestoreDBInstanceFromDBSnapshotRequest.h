@@ -68,6 +68,15 @@ namespace Model
      * letter</p> </li> <li> <p>Can't end with a hyphen or contain two consecutive
      * hyphens</p> </li> </ul> <p>Example: <code>my-snapshot-id</code> </p>
      */
+    inline bool DBInstanceIdentifierHasBeenSet() const { return m_dBInstanceIdentifierHasBeenSet; }
+
+    /**
+     * <p>Name of the DB instance to create from the DB snapshot. This parameter isn't
+     * case-sensitive.</p> <p>Constraints:</p> <ul> <li> <p>Must contain from 1 to 63
+     * numbers, letters, or hyphens</p> </li> <li> <p>First character must be a
+     * letter</p> </li> <li> <p>Can't end with a hyphen or contain two consecutive
+     * hyphens</p> </li> </ul> <p>Example: <code>my-snapshot-id</code> </p>
+     */
     inline void SetDBInstanceIdentifier(const Aws::String& value) { m_dBInstanceIdentifierHasBeenSet = true; m_dBInstanceIdentifier = value; }
 
     /**
@@ -124,6 +133,15 @@ namespace Model
      * </li> </ul>
      */
     inline const Aws::String& GetDBSnapshotIdentifier() const{ return m_dBSnapshotIdentifier; }
+
+    /**
+     * <p>The identifier for the DB snapshot to restore from.</p> <p>Constraints:</p>
+     * <ul> <li> <p>Must match the identifier of an existing DBSnapshot.</p> </li> <li>
+     * <p>If you are restoring from a shared manual DB snapshot, the
+     * <code>DBSnapshotIdentifier</code> must be the ARN of the shared DB snapshot.</p>
+     * </li> </ul>
+     */
+    inline bool DBSnapshotIdentifierHasBeenSet() const { return m_dBSnapshotIdentifierHasBeenSet; }
 
     /**
      * <p>The identifier for the DB snapshot to restore from.</p> <p>Constraints:</p>
@@ -190,6 +208,17 @@ namespace Model
      * same DBInstanceClass as the original DB instance.</p>
      */
     inline const Aws::String& GetDBInstanceClass() const{ return m_dBInstanceClass; }
+
+    /**
+     * <p>The compute and memory capacity of the Amazon RDS DB instance, for example,
+     * <code>db.m4.large</code>. Not all DB instance classes are available in all AWS
+     * Regions, or for all database engines. For the full list of DB instance classes,
+     * and availability for your engine, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
+     * Instance Class</a> in the <i>Amazon RDS User Guide.</i> </p> <p>Default: The
+     * same DBInstanceClass as the original DB instance.</p>
+     */
+    inline bool DBInstanceClassHasBeenSet() const { return m_dBInstanceClassHasBeenSet; }
 
     /**
      * <p>The compute and memory capacity of the Amazon RDS DB instance, for example,
@@ -270,6 +299,13 @@ namespace Model
      * The same port as the original DB instance</p> <p>Constraints: Value must be
      * <code>1150-65535</code> </p>
      */
+    inline bool PortHasBeenSet() const { return m_portHasBeenSet; }
+
+    /**
+     * <p>The port number on which the database accepts connections.</p> <p>Default:
+     * The same port as the original DB instance</p> <p>Constraints: Value must be
+     * <code>1150-65535</code> </p>
+     */
     inline void SetPort(int value) { m_portHasBeenSet = true; m_port = value; }
 
     /**
@@ -287,6 +323,14 @@ namespace Model
      * <code>true</code>.</p> <p>Example: <code>us-east-1a</code> </p>
      */
     inline const Aws::String& GetAvailabilityZone() const{ return m_availabilityZone; }
+
+    /**
+     * <p>The EC2 Availability Zone that the DB instance is created in.</p> <p>Default:
+     * A random, system-chosen Availability Zone.</p> <p>Constraint: You can't specify
+     * the AvailabilityZone parameter if the MultiAZ parameter is set to
+     * <code>true</code>.</p> <p>Example: <code>us-east-1a</code> </p>
+     */
+    inline bool AvailabilityZoneHasBeenSet() const { return m_availabilityZoneHasBeenSet; }
 
     /**
      * <p>The EC2 Availability Zone that the DB instance is created in.</p> <p>Default:
@@ -349,6 +393,13 @@ namespace Model
      * supplied, must match the name of an existing DBSubnetGroup.</p> <p>Example:
      * <code>mySubnetgroup</code> </p>
      */
+    inline bool DBSubnetGroupNameHasBeenSet() const { return m_dBSubnetGroupNameHasBeenSet; }
+
+    /**
+     * <p>The DB subnet group name to use for the new instance.</p> <p>Constraints: If
+     * supplied, must match the name of an existing DBSubnetGroup.</p> <p>Example:
+     * <code>mySubnetgroup</code> </p>
+     */
     inline void SetDBSubnetGroupName(const Aws::String& value) { m_dBSubnetGroupNameHasBeenSet = true; m_dBSubnetGroupName = value; }
 
     /**
@@ -399,6 +450,13 @@ namespace Model
      * can't specify the AvailabilityZone parameter if the MultiAZ parameter is set to
      * <code>true</code>.</p>
      */
+    inline bool MultiAZHasBeenSet() const { return m_multiAZHasBeenSet; }
+
+    /**
+     * <p>Specifies if the DB instance is a Multi-AZ deployment.</p> <p>Constraint: You
+     * can't specify the AvailabilityZone parameter if the MultiAZ parameter is set to
+     * <code>true</code>.</p>
+     */
     inline void SetMultiAZ(bool value) { m_multiAZHasBeenSet = true; m_multiAZ = value; }
 
     /**
@@ -417,6 +475,15 @@ namespace Model
      * <a>CreateDBInstance</a>.</p>
      */
     inline bool GetPubliclyAccessible() const{ return m_publiclyAccessible; }
+
+    /**
+     * <p>Specifies the accessibility options for the DB instance. A value of true
+     * specifies an Internet-facing instance with a publicly resolvable DNS name, which
+     * resolves to a public IP address. A value of false specifies an internal instance
+     * with a DNS name that resolves to a private IP address. For more information, see
+     * <a>CreateDBInstance</a>.</p>
+     */
+    inline bool PubliclyAccessibleHasBeenSet() const { return m_publiclyAccessibleHasBeenSet; }
 
     /**
      * <p>Specifies the accessibility options for the DB instance. A value of true
@@ -447,6 +514,12 @@ namespace Model
      * <p>Indicates that minor version upgrades are applied automatically to the DB
      * instance during the maintenance window.</p>
      */
+    inline bool AutoMinorVersionUpgradeHasBeenSet() const { return m_autoMinorVersionUpgradeHasBeenSet; }
+
+    /**
+     * <p>Indicates that minor version upgrades are applied automatically to the DB
+     * instance during the maintenance window.</p>
+     */
     inline void SetAutoMinorVersionUpgrade(bool value) { m_autoMinorVersionUpgradeHasBeenSet = true; m_autoMinorVersionUpgrade = value; }
 
     /**
@@ -462,6 +535,13 @@ namespace Model
      * <code>bring-your-own-license</code> | <code>general-public-license</code> </p>
      */
     inline const Aws::String& GetLicenseModel() const{ return m_licenseModel; }
+
+    /**
+     * <p>License model information for the restored DB instance.</p> <p>Default: Same
+     * as source.</p> <p> Valid values: <code>license-included</code> |
+     * <code>bring-your-own-license</code> | <code>general-public-license</code> </p>
+     */
+    inline bool LicenseModelHasBeenSet() const { return m_licenseModelHasBeenSet; }
 
     /**
      * <p>License model information for the restored DB instance.</p> <p>Default: Same
@@ -516,6 +596,12 @@ namespace Model
      * <p>The database name for the restored DB instance.</p> <note> <p>This parameter
      * doesn't apply to the MySQL, PostgreSQL, or MariaDB engines.</p> </note>
      */
+    inline bool DBNameHasBeenSet() const { return m_dBNameHasBeenSet; }
+
+    /**
+     * <p>The database name for the restored DB instance.</p> <note> <p>This parameter
+     * doesn't apply to the MySQL, PostgreSQL, or MariaDB engines.</p> </note>
+     */
     inline void SetDBName(const Aws::String& value) { m_dBNameHasBeenSet = true; m_dBName = value; }
 
     /**
@@ -563,6 +649,21 @@ namespace Model
      * </li> </ul>
      */
     inline const Aws::String& GetEngine() const{ return m_engine; }
+
+    /**
+     * <p>The database engine to use for the new instance.</p> <p>Default: The same as
+     * source</p> <p>Constraint: Must be compatible with the engine of the source. For
+     * example, you can restore a MariaDB 10.1 DB instance from a MySQL 5.6
+     * snapshot.</p> <p>Valid Values:</p> <ul> <li> <p> <code>mariadb</code> </p> </li>
+     * <li> <p> <code>mysql</code> </p> </li> <li> <p> <code>oracle-ee</code> </p>
+     * </li> <li> <p> <code>oracle-se2</code> </p> </li> <li> <p>
+     * <code>oracle-se1</code> </p> </li> <li> <p> <code>oracle-se</code> </p> </li>
+     * <li> <p> <code>postgres</code> </p> </li> <li> <p> <code>sqlserver-ee</code>
+     * </p> </li> <li> <p> <code>sqlserver-se</code> </p> </li> <li> <p>
+     * <code>sqlserver-ex</code> </p> </li> <li> <p> <code>sqlserver-web</code> </p>
+     * </li> </ul>
+     */
+    inline bool EngineHasBeenSet() const { return m_engineHasBeenSet; }
 
     /**
      * <p>The database engine to use for the new instance.</p> <p>Default: The same as
@@ -681,6 +782,20 @@ namespace Model
      * RDS Provisioned IOPS Storage to Improve Performance</a> in the <i>Amazon RDS
      * User Guide.</i> </p> <p>Constraints: Must be an integer greater than 1000.</p>
      */
+    inline bool IopsHasBeenSet() const { return m_iopsHasBeenSet; }
+
+    /**
+     * <p>Specifies the amount of provisioned IOPS for the DB instance, expressed in
+     * I/O operations per second. If this parameter is not specified, the IOPS value is
+     * taken from the backup. If this parameter is set to 0, the new instance is
+     * converted to a non-PIOPS instance. The conversion takes additional time, though
+     * your DB instance is available for connections before the conversion starts. </p>
+     * <p>The provisioned IOPS value must follow the requirements for your database
+     * engine. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html#USER_PIOPS">Amazon
+     * RDS Provisioned IOPS Storage to Improve Performance</a> in the <i>Amazon RDS
+     * User Guide.</i> </p> <p>Constraints: Must be an integer greater than 1000.</p>
+     */
     inline void SetIops(int value) { m_iopsHasBeenSet = true; m_iops = value; }
 
     /**
@@ -705,6 +820,14 @@ namespace Model
      * from a DB instance once it is associated with a DB instance</p>
      */
     inline const Aws::String& GetOptionGroupName() const{ return m_optionGroupName; }
+
+    /**
+     * <p>The name of the option group to be used for the restored DB instance.</p>
+     * <p>Permanent options, such as the TDE option for Oracle Advanced Security TDE,
+     * can't be removed from an option group, and that option group can't be removed
+     * from a DB instance once it is associated with a DB instance</p>
+     */
+    inline bool OptionGroupNameHasBeenSet() const { return m_optionGroupNameHasBeenSet; }
 
     /**
      * <p>The name of the option group to be used for the restored DB instance.</p>
@@ -759,6 +882,9 @@ namespace Model
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
 
     
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
+
+    
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     
@@ -785,6 +911,15 @@ namespace Model
      * is specified, otherwise <code>standard</code> </p>
      */
     inline const Aws::String& GetStorageType() const{ return m_storageType; }
+
+    /**
+     * <p>Specifies the storage type to be associated with the DB instance.</p> <p>
+     * Valid values: <code>standard | gp2 | io1</code> </p> <p> If you specify
+     * <code>io1</code>, you must also include a value for the <code>Iops</code>
+     * parameter. </p> <p> Default: <code>io1</code> if the <code>Iops</code> parameter
+     * is specified, otherwise <code>standard</code> </p>
+     */
+    inline bool StorageTypeHasBeenSet() const { return m_storageTypeHasBeenSet; }
 
     /**
      * <p>Specifies the storage type to be associated with the DB instance.</p> <p>
@@ -851,6 +986,12 @@ namespace Model
      * <p>The ARN from the key store with which to associate the instance for TDE
      * encryption.</p>
      */
+    inline bool TdeCredentialArnHasBeenSet() const { return m_tdeCredentialArnHasBeenSet; }
+
+    /**
+     * <p>The ARN from the key store with which to associate the instance for TDE
+     * encryption.</p>
+     */
     inline void SetTdeCredentialArn(const Aws::String& value) { m_tdeCredentialArnHasBeenSet = true; m_tdeCredentialArn = value; }
 
     /**
@@ -889,6 +1030,12 @@ namespace Model
      * device.</p>
      */
     inline const Aws::String& GetTdeCredentialPassword() const{ return m_tdeCredentialPassword; }
+
+    /**
+     * <p>The password for the given ARN from the key store in order to access the
+     * device.</p>
+     */
+    inline bool TdeCredentialPasswordHasBeenSet() const { return m_tdeCredentialPasswordHasBeenSet; }
 
     /**
      * <p>The password for the given ARN from the key store in order to access the
@@ -933,6 +1080,13 @@ namespace Model
      * </p>
      */
     inline const Aws::Vector<Aws::String>& GetVpcSecurityGroupIds() const{ return m_vpcSecurityGroupIds; }
+
+    /**
+     * <p> A list of EC2 VPC security groups to associate with this DB instance. </p>
+     * <p> Default: The default EC2 VPC security group for the DB subnet group's VPC.
+     * </p>
+     */
+    inline bool VpcSecurityGroupIdsHasBeenSet() const { return m_vpcSecurityGroupIdsHasBeenSet; }
 
     /**
      * <p> A list of EC2 VPC security groups to associate with this DB instance. </p>
@@ -992,6 +1146,11 @@ namespace Model
     /**
      * <p>Specify the Active Directory Domain to restore the instance in.</p>
      */
+    inline bool DomainHasBeenSet() const { return m_domainHasBeenSet; }
+
+    /**
+     * <p>Specify the Active Directory Domain to restore the instance in.</p>
+     */
     inline void SetDomain(const Aws::String& value) { m_domainHasBeenSet = true; m_domain = value; }
 
     /**
@@ -1030,6 +1189,12 @@ namespace Model
      * <p>True to copy all tags from the restored DB instance to snapshots of the
      * restored DB instance, and otherwise false. The default is false.</p>
      */
+    inline bool CopyTagsToSnapshotHasBeenSet() const { return m_copyTagsToSnapshotHasBeenSet; }
+
+    /**
+     * <p>True to copy all tags from the restored DB instance to snapshots of the
+     * restored DB instance, and otherwise false. The default is false.</p>
+     */
     inline void SetCopyTagsToSnapshot(bool value) { m_copyTagsToSnapshotHasBeenSet = true; m_copyTagsToSnapshot = value; }
 
     /**
@@ -1044,6 +1209,12 @@ namespace Model
      * Directory Service.</p>
      */
     inline const Aws::String& GetDomainIAMRoleName() const{ return m_domainIAMRoleName; }
+
+    /**
+     * <p>Specify the name of the IAM role to be used when making API calls to the
+     * Directory Service.</p>
+     */
+    inline bool DomainIAMRoleNameHasBeenSet() const { return m_domainIAMRoleNameHasBeenSet; }
 
     /**
      * <p>Specify the name of the IAM role to be used when making API calls to the
@@ -1098,6 +1269,15 @@ namespace Model
      * 5.6, minor version 5.6.34 or higher</p> </li> <li> <p>For MySQL 5.7, minor
      * version 5.7.16 or higher</p> </li> </ul> <p>Default: <code>false</code> </p>
      */
+    inline bool EnableIAMDatabaseAuthenticationHasBeenSet() const { return m_enableIAMDatabaseAuthenticationHasBeenSet; }
+
+    /**
+     * <p>True to enable mapping of AWS Identity and Access Management (IAM) accounts
+     * to database accounts, and otherwise false.</p> <p>You can enable IAM database
+     * authentication for the following database engines</p> <ul> <li> <p>For MySQL
+     * 5.6, minor version 5.6.34 or higher</p> </li> <li> <p>For MySQL 5.7, minor
+     * version 5.7.16 or higher</p> </li> </ul> <p>Default: <code>false</code> </p>
+     */
     inline void SetEnableIAMDatabaseAuthentication(bool value) { m_enableIAMDatabaseAuthenticationHasBeenSet = true; m_enableIAMDatabaseAuthentication = value; }
 
     /**
@@ -1119,6 +1299,16 @@ namespace Model
      * Guide</i>.</p>
      */
     inline const Aws::Vector<Aws::String>& GetEnableCloudwatchLogsExports() const{ return m_enableCloudwatchLogsExports; }
+
+    /**
+     * <p>The list of logs that the restored DB instance is to export to CloudWatch
+     * Logs. The values in the list depend on the DB engine being used. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing
+     * Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon Aurora User
+     * Guide</i>.</p>
+     */
+    inline bool EnableCloudwatchLogsExportsHasBeenSet() const { return m_enableCloudwatchLogsExportsHasBeenSet; }
 
     /**
      * <p>The list of logs that the restored DB instance is to export to CloudWatch
@@ -1201,6 +1391,12 @@ namespace Model
      * <p>The number of CPU cores and the number of threads per core for the DB
      * instance class of the DB instance.</p>
      */
+    inline bool ProcessorFeaturesHasBeenSet() const { return m_processorFeaturesHasBeenSet; }
+
+    /**
+     * <p>The number of CPU cores and the number of threads per core for the DB
+     * instance class of the DB instance.</p>
+     */
     inline void SetProcessorFeatures(const Aws::Vector<ProcessorFeature>& value) { m_processorFeaturesHasBeenSet = true; m_processorFeatures = value; }
 
     /**
@@ -1244,6 +1440,12 @@ namespace Model
      * <p>A value that specifies that the DB instance class of the DB instance uses its
      * default processor features.</p>
      */
+    inline bool UseDefaultProcessorFeaturesHasBeenSet() const { return m_useDefaultProcessorFeaturesHasBeenSet; }
+
+    /**
+     * <p>A value that specifies that the DB instance class of the DB instance uses its
+     * default processor features.</p>
+     */
     inline void SetUseDefaultProcessorFeatures(bool value) { m_useDefaultProcessorFeaturesHasBeenSet = true; m_useDefaultProcessorFeatures = value; }
 
     /**
@@ -1263,6 +1465,17 @@ namespace Model
      * </li> </ul>
      */
     inline const Aws::String& GetDBParameterGroupName() const{ return m_dBParameterGroupName; }
+
+    /**
+     * <p>The name of the DB parameter group to associate with this DB instance. If
+     * this argument is omitted, the default DBParameterGroup for the specified engine
+     * is used.</p> <p>Constraints:</p> <ul> <li> <p>If supplied, must match the name
+     * of an existing DBParameterGroup.</p> </li> <li> <p>Must be 1 to 255 letters,
+     * numbers, or hyphens.</p> </li> <li> <p>First character must be a letter.</p>
+     * </li> <li> <p>Can't end with a hyphen or contain two consecutive hyphens.</p>
+     * </li> </ul>
+     */
+    inline bool DBParameterGroupNameHasBeenSet() const { return m_dBParameterGroupNameHasBeenSet; }
 
     /**
      * <p>The name of the DB parameter group to associate with this DB instance. If
@@ -1339,6 +1552,15 @@ namespace Model
      * Deleting a DB Instance</a>. </p>
      */
     inline bool GetDeletionProtection() const{ return m_deletionProtection; }
+
+    /**
+     * <p>Indicates if the DB instance should have deletion protection enabled. The
+     * database can't be deleted when this value is set to true. The default is false.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html">
+     * Deleting a DB Instance</a>. </p>
+     */
+    inline bool DeletionProtectionHasBeenSet() const { return m_deletionProtectionHasBeenSet; }
 
     /**
      * <p>Indicates if the DB instance should have deletion protection enabled. The

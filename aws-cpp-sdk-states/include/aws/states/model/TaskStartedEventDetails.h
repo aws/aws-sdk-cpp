@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The action of the resource called by a task state.</p>
      */
+    inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
+
+    /**
+     * <p>The action of the resource called by a task state.</p>
+     */
     inline void SetResourceType(const Aws::String& value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
 
     /**
@@ -88,6 +93,11 @@ namespace Model
      * <p>The service name of the resource in a task state.</p>
      */
     inline const Aws::String& GetResource() const{ return m_resource; }
+
+    /**
+     * <p>The service name of the resource in a task state.</p>
+     */
+    inline bool ResourceHasBeenSet() const { return m_resourceHasBeenSet; }
 
     /**
      * <p>The service name of the resource in a task state.</p>

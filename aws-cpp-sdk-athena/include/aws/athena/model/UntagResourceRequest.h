@@ -55,6 +55,12 @@ namespace Model
      * <p>Removes one or more tags from the workgroup resource for the specified
      * ARN.</p>
      */
+    inline bool ResourceARNHasBeenSet() const { return m_resourceARNHasBeenSet; }
+
+    /**
+     * <p>Removes one or more tags from the workgroup resource for the specified
+     * ARN.</p>
+     */
     inline void SetResourceARN(const Aws::String& value) { m_resourceARNHasBeenSet = true; m_resourceARN = value; }
 
     /**
@@ -93,6 +99,12 @@ namespace Model
      * resource.</p>
      */
     inline const Aws::Vector<Aws::String>& GetTagKeys() const{ return m_tagKeys; }
+
+    /**
+     * <p>Removes the tags associated with one or more tag keys from the workgroup
+     * resource.</p>
+     */
+    inline bool TagKeysHasBeenSet() const { return m_tagKeysHasBeenSet; }
 
     /**
      * <p>Removes the tags associated with one or more tag keys from the workgroup

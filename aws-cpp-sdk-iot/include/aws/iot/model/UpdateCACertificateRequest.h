@@ -62,6 +62,11 @@ namespace Model
     /**
      * <p>The CA certificate identifier.</p>
      */
+    inline bool CertificateIdHasBeenSet() const { return m_certificateIdHasBeenSet; }
+
+    /**
+     * <p>The CA certificate identifier.</p>
+     */
     inline void SetCertificateId(const Aws::String& value) { m_certificateIdHasBeenSet = true; m_certificateId = value; }
 
     /**
@@ -100,6 +105,12 @@ namespace Model
      * <p>The updated status of the CA certificate.</p> <p> <b>Note:</b> The status
      * value REGISTER_INACTIVE is deprecated and should not be used.</p>
      */
+    inline bool NewStatusHasBeenSet() const { return m_newStatusHasBeenSet; }
+
+    /**
+     * <p>The updated status of the CA certificate.</p> <p> <b>Note:</b> The status
+     * value REGISTER_INACTIVE is deprecated and should not be used.</p>
+     */
     inline void SetNewStatus(const CACertificateStatus& value) { m_newStatusHasBeenSet = true; m_newStatus = value; }
 
     /**
@@ -126,6 +137,12 @@ namespace Model
      * "DISABLE".</p>
      */
     inline const AutoRegistrationStatus& GetNewAutoRegistrationStatus() const{ return m_newAutoRegistrationStatus; }
+
+    /**
+     * <p>The new value for the auto registration status. Valid values are: "ENABLE" or
+     * "DISABLE".</p>
+     */
+    inline bool NewAutoRegistrationStatusHasBeenSet() const { return m_newAutoRegistrationStatusHasBeenSet; }
 
     /**
      * <p>The new value for the auto registration status. Valid values are: "ENABLE" or
@@ -160,6 +177,11 @@ namespace Model
     /**
      * <p>Information about the registration configuration.</p>
      */
+    inline bool RegistrationConfigHasBeenSet() const { return m_registrationConfigHasBeenSet; }
+
+    /**
+     * <p>Information about the registration configuration.</p>
+     */
     inline void SetRegistrationConfig(const RegistrationConfig& value) { m_registrationConfigHasBeenSet = true; m_registrationConfig = value; }
 
     /**
@@ -182,6 +204,11 @@ namespace Model
      * <p>If true, remove auto registration.</p>
      */
     inline bool GetRemoveAutoRegistration() const{ return m_removeAutoRegistration; }
+
+    /**
+     * <p>If true, remove auto registration.</p>
+     */
+    inline bool RemoveAutoRegistrationHasBeenSet() const { return m_removeAutoRegistrationHasBeenSet; }
 
     /**
      * <p>If true, remove auto registration.</p>

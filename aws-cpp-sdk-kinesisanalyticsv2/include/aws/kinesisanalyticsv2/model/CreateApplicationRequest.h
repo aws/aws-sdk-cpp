@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The name of your application (for example, <code>sample-app</code>).</p>
      */
+    inline bool ApplicationNameHasBeenSet() const { return m_applicationNameHasBeenSet; }
+
+    /**
+     * <p>The name of your application (for example, <code>sample-app</code>).</p>
+     */
     inline void SetApplicationName(const Aws::String& value) { m_applicationNameHasBeenSet = true; m_applicationName = value; }
 
     /**
@@ -88,6 +93,11 @@ namespace Model
      * <p>A summary description of the application.</p>
      */
     inline const Aws::String& GetApplicationDescription() const{ return m_applicationDescription; }
+
+    /**
+     * <p>A summary description of the application.</p>
+     */
+    inline bool ApplicationDescriptionHasBeenSet() const { return m_applicationDescriptionHasBeenSet; }
 
     /**
      * <p>A summary description of the application.</p>
@@ -130,6 +140,12 @@ namespace Model
      * <p>The runtime environment for the application (<code>SQL-1.0</code> or
      * <code>JAVA-8-FLINK-1.5</code>).</p>
      */
+    inline bool RuntimeEnvironmentHasBeenSet() const { return m_runtimeEnvironmentHasBeenSet; }
+
+    /**
+     * <p>The runtime environment for the application (<code>SQL-1.0</code> or
+     * <code>JAVA-8-FLINK-1.5</code>).</p>
+     */
     inline void SetRuntimeEnvironment(const RuntimeEnvironment& value) { m_runtimeEnvironmentHasBeenSet = true; m_runtimeEnvironment = value; }
 
     /**
@@ -157,6 +173,13 @@ namespace Model
      * resources.</p>
      */
     inline const Aws::String& GetServiceExecutionRole() const{ return m_serviceExecutionRole; }
+
+    /**
+     * <p>The IAM role used by the application to access Kinesis data streams, Kinesis
+     * Data Firehose delivery streams, Amazon S3 objects, and other external
+     * resources.</p>
+     */
+    inline bool ServiceExecutionRoleHasBeenSet() const { return m_serviceExecutionRoleHasBeenSet; }
 
     /**
      * <p>The IAM role used by the application to access Kinesis data streams, Kinesis
@@ -209,6 +232,11 @@ namespace Model
     /**
      * <p>Use this parameter to configure the application.</p>
      */
+    inline bool ApplicationConfigurationHasBeenSet() const { return m_applicationConfigurationHasBeenSet; }
+
+    /**
+     * <p>Use this parameter to configure the application.</p>
+     */
     inline void SetApplicationConfiguration(const ApplicationConfiguration& value) { m_applicationConfigurationHasBeenSet = true; m_applicationConfiguration = value; }
 
     /**
@@ -232,6 +260,12 @@ namespace Model
      * application configuration errors. </p>
      */
     inline const Aws::Vector<CloudWatchLoggingOption>& GetCloudWatchLoggingOptions() const{ return m_cloudWatchLoggingOptions; }
+
+    /**
+     * <p>Use this parameter to configure an Amazon CloudWatch log stream to monitor
+     * application configuration errors. </p>
+     */
+    inline bool CloudWatchLoggingOptionsHasBeenSet() const { return m_cloudWatchLoggingOptionsHasBeenSet; }
 
     /**
      * <p>Use this parameter to configure an Amazon CloudWatch log stream to monitor

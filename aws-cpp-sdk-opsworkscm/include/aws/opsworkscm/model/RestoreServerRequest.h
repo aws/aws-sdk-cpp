@@ -52,6 +52,11 @@ namespace Model
     /**
      * <p> The ID of the backup that you want to use to restore a server. </p>
      */
+    inline bool BackupIdHasBeenSet() const { return m_backupIdHasBeenSet; }
+
+    /**
+     * <p> The ID of the backup that you want to use to restore a server. </p>
+     */
     inline void SetBackupId(const Aws::String& value) { m_backupIdHasBeenSet = true; m_backupId = value; }
 
     /**
@@ -84,6 +89,11 @@ namespace Model
      * <p> The name of the server that you want to restore. </p>
      */
     inline const Aws::String& GetServerName() const{ return m_serverName; }
+
+    /**
+     * <p> The name of the server that you want to restore. </p>
+     */
+    inline bool ServerNameHasBeenSet() const { return m_serverNameHasBeenSet; }
 
     /**
      * <p> The name of the server that you want to restore. </p>
@@ -124,6 +134,15 @@ namespace Model
      * parameter, RestoreServer uses the instance type from the specified backup. </p>
      */
     inline const Aws::String& GetInstanceType() const{ return m_instanceType; }
+
+    /**
+     * <p> The type of the instance to create. Valid values must be specified in the
+     * following format: <code>^([cm][34]|t2).*</code> For example,
+     * <code>m4.large</code>. Valid values are <code>t2.medium</code>,
+     * <code>m4.large</code>, and <code>m4.2xlarge</code>. If you do not specify this
+     * parameter, RestoreServer uses the instance type from the specified backup. </p>
+     */
+    inline bool InstanceTypeHasBeenSet() const { return m_instanceTypeHasBeenSet; }
 
     /**
      * <p> The type of the instance to create. Valid values must be specified in the
@@ -185,6 +204,12 @@ namespace Model
      * if the administrator no longer has the SSH key. </p>
      */
     inline const Aws::String& GetKeyPair() const{ return m_keyPair; }
+
+    /**
+     * <p> The name of the key pair to set on the new EC2 instance. This can be helpful
+     * if the administrator no longer has the SSH key. </p>
+     */
+    inline bool KeyPairHasBeenSet() const { return m_keyPairHasBeenSet; }
 
     /**
      * <p> The name of the key pair to set on the new EC2 instance. This can be helpful

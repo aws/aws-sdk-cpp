@@ -59,6 +59,11 @@ namespace Model
     /**
      * Use ID3 tag (Id3) to provide a tag value in base64-encode format.
      */
+    inline bool Id3HasBeenSet() const { return m_id3HasBeenSet; }
+
+    /**
+     * Use ID3 tag (Id3) to provide a tag value in base64-encode format.
+     */
     inline void SetId3(const Aws::String& value) { m_id3HasBeenSet = true; m_id3 = value; }
 
     /**
@@ -91,6 +96,11 @@ namespace Model
      * Provide a Timecode (TimeCode) in HH:MM:SS:FF or HH:MM:SS;FF format.
      */
     inline const Aws::String& GetTimecode() const{ return m_timecode; }
+
+    /**
+     * Provide a Timecode (TimeCode) in HH:MM:SS:FF or HH:MM:SS;FF format.
+     */
+    inline bool TimecodeHasBeenSet() const { return m_timecodeHasBeenSet; }
 
     /**
      * Provide a Timecode (TimeCode) in HH:MM:SS:FF or HH:MM:SS;FF format.

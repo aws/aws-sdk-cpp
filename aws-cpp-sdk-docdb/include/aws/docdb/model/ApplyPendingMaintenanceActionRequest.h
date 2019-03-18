@@ -60,6 +60,12 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the resource that the pending maintenance
      * action applies to.</p>
      */
+    inline bool ResourceIdentifierHasBeenSet() const { return m_resourceIdentifierHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the resource that the pending maintenance
+     * action applies to.</p>
+     */
     inline void SetResourceIdentifier(const Aws::String& value) { m_resourceIdentifierHasBeenSet = true; m_resourceIdentifier = value; }
 
     /**
@@ -98,6 +104,12 @@ namespace Model
      * values: <code>system-update</code>, <code>db-upgrade</code> </p>
      */
     inline const Aws::String& GetApplyAction() const{ return m_applyAction; }
+
+    /**
+     * <p>The pending maintenance action to apply to this resource.</p> <p>Valid
+     * values: <code>system-update</code>, <code>db-upgrade</code> </p>
+     */
+    inline bool ApplyActionHasBeenSet() const { return m_applyActionHasBeenSet; }
 
     /**
      * <p>The pending maintenance action to apply to this resource.</p> <p>Valid
@@ -146,6 +158,17 @@ namespace Model
      * <code>next-maintenance</code> opt-in requests.</p> </li> </ul>
      */
     inline const Aws::String& GetOptInType() const{ return m_optInType; }
+
+    /**
+     * <p>A value that specifies the type of opt-in request or undoes an opt-in
+     * request. An opt-in request of type <code>immediate</code> can't be undone.</p>
+     * <p>Valid values:</p> <ul> <li> <p> <code>immediate</code> - Apply the
+     * maintenance action immediately.</p> </li> <li> <p> <code>next-maintenance</code>
+     * - Apply the maintenance action during the next maintenance window for the
+     * resource.</p> </li> <li> <p> <code>undo-opt-in</code> - Cancel any existing
+     * <code>next-maintenance</code> opt-in requests.</p> </li> </ul>
+     */
+    inline bool OptInTypeHasBeenSet() const { return m_optInTypeHasBeenSet; }
 
     /**
      * <p>A value that specifies the type of opt-in request or undoes an opt-in

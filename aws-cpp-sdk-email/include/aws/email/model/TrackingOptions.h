@@ -64,6 +64,12 @@ namespace Model
      * <p>The custom subdomain that will be used to redirect email recipients to the
      * Amazon SES event tracking domain.</p>
      */
+    inline bool CustomRedirectDomainHasBeenSet() const { return m_customRedirectDomainHasBeenSet; }
+
+    /**
+     * <p>The custom subdomain that will be used to redirect email recipients to the
+     * Amazon SES event tracking domain.</p>
+     */
     inline void SetCustomRedirectDomain(const Aws::String& value) { m_customRedirectDomainHasBeenSet = true; m_customRedirectDomain = value; }
 
     /**

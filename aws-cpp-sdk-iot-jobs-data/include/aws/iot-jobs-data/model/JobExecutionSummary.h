@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The unique identifier you assigned to this job when it was created.</p>
      */
+    inline bool JobIdHasBeenSet() const { return m_jobIdHasBeenSet; }
+
+    /**
+     * <p>The unique identifier you assigned to this job when it was created.</p>
+     */
     inline void SetJobId(const Aws::String& value) { m_jobIdHasBeenSet = true; m_jobId = value; }
 
     /**
@@ -94,6 +99,12 @@ namespace Model
      * <p>The time, in milliseconds since the epoch, when the job execution was
      * enqueued.</p>
      */
+    inline bool QueuedAtHasBeenSet() const { return m_queuedAtHasBeenSet; }
+
+    /**
+     * <p>The time, in milliseconds since the epoch, when the job execution was
+     * enqueued.</p>
+     */
     inline void SetQueuedAt(long long value) { m_queuedAtHasBeenSet = true; m_queuedAt = value; }
 
     /**
@@ -108,6 +119,12 @@ namespace Model
      * started.</p>
      */
     inline long long GetStartedAt() const{ return m_startedAt; }
+
+    /**
+     * <p>The time, in milliseconds since the epoch, when the job execution
+     * started.</p>
+     */
+    inline bool StartedAtHasBeenSet() const { return m_startedAtHasBeenSet; }
 
     /**
      * <p>The time, in milliseconds since the epoch, when the job execution
@@ -132,6 +149,12 @@ namespace Model
      * <p>The time, in milliseconds since the epoch, when the job execution was last
      * updated.</p>
      */
+    inline bool LastUpdatedAtHasBeenSet() const { return m_lastUpdatedAtHasBeenSet; }
+
+    /**
+     * <p>The time, in milliseconds since the epoch, when the job execution was last
+     * updated.</p>
+     */
     inline void SetLastUpdatedAt(long long value) { m_lastUpdatedAtHasBeenSet = true; m_lastUpdatedAt = value; }
 
     /**
@@ -151,6 +174,12 @@ namespace Model
      * <p>The version of the job execution. Job execution versions are incremented each
      * time AWS IoT Jobs receives an update from a device.</p>
      */
+    inline bool VersionNumberHasBeenSet() const { return m_versionNumberHasBeenSet; }
+
+    /**
+     * <p>The version of the job execution. Job execution versions are incremented each
+     * time AWS IoT Jobs receives an update from a device.</p>
+     */
     inline void SetVersionNumber(long long value) { m_versionNumberHasBeenSet = true; m_versionNumber = value; }
 
     /**
@@ -165,6 +194,12 @@ namespace Model
      * device.</p>
      */
     inline long long GetExecutionNumber() const{ return m_executionNumber; }
+
+    /**
+     * <p>A number that identifies a particular job execution on a particular
+     * device.</p>
+     */
+    inline bool ExecutionNumberHasBeenSet() const { return m_executionNumberHasBeenSet; }
 
     /**
      * <p>A number that identifies a particular job execution on a particular

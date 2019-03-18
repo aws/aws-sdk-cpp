@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>List of accounts impacted by the error.</p>
      */
+    inline bool AccountsHasBeenSet() const { return m_accountsHasBeenSet; }
+
+    /**
+     * <p>List of accounts impacted by the error.</p>
+     */
     inline void SetAccounts(const Aws::Vector<Aws::String>& value) { m_accountsHasBeenSet = true; m_accounts = value; }
 
     /**
@@ -98,6 +103,11 @@ namespace Model
     /**
      * <p>Information about the error.</p>
      */
+    inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
+
+    /**
+     * <p>Information about the error.</p>
+     */
     inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
 
     /**
@@ -130,6 +140,11 @@ namespace Model
      * <p>Error type that happened when processing the operation.</p>
      */
     inline const Aws::String& GetError() const{ return m_error; }
+
+    /**
+     * <p>Error type that happened when processing the operation.</p>
+     */
+    inline bool ErrorHasBeenSet() const { return m_errorHasBeenSet; }
 
     /**
      * <p>Error type that happened when processing the operation.</p>

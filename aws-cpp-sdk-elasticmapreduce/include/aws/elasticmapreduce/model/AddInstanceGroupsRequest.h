@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>Instance groups to add.</p>
      */
+    inline bool InstanceGroupsHasBeenSet() const { return m_instanceGroupsHasBeenSet; }
+
+    /**
+     * <p>Instance groups to add.</p>
+     */
     inline void SetInstanceGroups(const Aws::Vector<InstanceGroupConfig>& value) { m_instanceGroupsHasBeenSet = true; m_instanceGroups = value; }
 
     /**
@@ -89,6 +94,11 @@ namespace Model
      * <p>Job flow in which to add the instance groups.</p>
      */
     inline const Aws::String& GetJobFlowId() const{ return m_jobFlowId; }
+
+    /**
+     * <p>Job flow in which to add the instance groups.</p>
+     */
+    inline bool JobFlowIdHasBeenSet() const { return m_jobFlowIdHasBeenSet; }
 
     /**
      * <p>Job flow in which to add the instance groups.</p>

@@ -70,6 +70,11 @@ namespace Model
     /**
      * <p>Creates an object.</p>
      */
+    inline bool CreateObjectHasBeenSet() const { return m_createObjectHasBeenSet; }
+
+    /**
+     * <p>Creates an object.</p>
+     */
     inline void SetCreateObject(const BatchCreateObject& value) { m_createObjectHasBeenSet = true; m_createObject = value; }
 
     /**
@@ -92,6 +97,11 @@ namespace Model
      * <p>Attaches an object to a <a>Directory</a>.</p>
      */
     inline const BatchAttachObject& GetAttachObject() const{ return m_attachObject; }
+
+    /**
+     * <p>Attaches an object to a <a>Directory</a>.</p>
+     */
+    inline bool AttachObjectHasBeenSet() const { return m_attachObjectHasBeenSet; }
 
     /**
      * <p>Attaches an object to a <a>Directory</a>.</p>
@@ -122,6 +132,11 @@ namespace Model
     /**
      * <p>Detaches an object from a <a>Directory</a>.</p>
      */
+    inline bool DetachObjectHasBeenSet() const { return m_detachObjectHasBeenSet; }
+
+    /**
+     * <p>Detaches an object from a <a>Directory</a>.</p>
+     */
     inline void SetDetachObject(const BatchDetachObject& value) { m_detachObjectHasBeenSet = true; m_detachObject = value; }
 
     /**
@@ -144,6 +159,11 @@ namespace Model
      * <p>Updates a given object's attributes.</p>
      */
     inline const BatchUpdateObjectAttributes& GetUpdateObjectAttributes() const{ return m_updateObjectAttributes; }
+
+    /**
+     * <p>Updates a given object's attributes.</p>
+     */
+    inline bool UpdateObjectAttributesHasBeenSet() const { return m_updateObjectAttributesHasBeenSet; }
 
     /**
      * <p>Updates a given object's attributes.</p>
@@ -174,6 +194,11 @@ namespace Model
     /**
      * <p>Deletes an object in a <a>Directory</a>.</p>
      */
+    inline bool DeleteObjectHasBeenSet() const { return m_deleteObjectHasBeenSet; }
+
+    /**
+     * <p>Deletes an object in a <a>Directory</a>.</p>
+     */
     inline void SetDeleteObject(const BatchDeleteObject& value) { m_deleteObjectHasBeenSet = true; m_deleteObject = value; }
 
     /**
@@ -196,6 +221,11 @@ namespace Model
      * <p>A batch operation that adds a facet to an object.</p>
      */
     inline const BatchAddFacetToObject& GetAddFacetToObject() const{ return m_addFacetToObject; }
+
+    /**
+     * <p>A batch operation that adds a facet to an object.</p>
+     */
+    inline bool AddFacetToObjectHasBeenSet() const { return m_addFacetToObjectHasBeenSet; }
 
     /**
      * <p>A batch operation that adds a facet to an object.</p>
@@ -226,6 +256,11 @@ namespace Model
     /**
      * <p>A batch operation that removes a facet from an object.</p>
      */
+    inline bool RemoveFacetFromObjectHasBeenSet() const { return m_removeFacetFromObjectHasBeenSet; }
+
+    /**
+     * <p>A batch operation that removes a facet from an object.</p>
+     */
     inline void SetRemoveFacetFromObject(const BatchRemoveFacetFromObject& value) { m_removeFacetFromObjectHasBeenSet = true; m_removeFacetFromObject = value; }
 
     /**
@@ -249,6 +284,12 @@ namespace Model
      * number of attached policies.</p>
      */
     inline const BatchAttachPolicy& GetAttachPolicy() const{ return m_attachPolicy; }
+
+    /**
+     * <p>Attaches a policy object to a regular object. An object can have a limited
+     * number of attached policies.</p>
+     */
+    inline bool AttachPolicyHasBeenSet() const { return m_attachPolicyHasBeenSet; }
 
     /**
      * <p>Attaches a policy object to a regular object. An object can have a limited
@@ -283,6 +324,11 @@ namespace Model
     /**
      * <p>Detaches a policy from a <a>Directory</a>.</p>
      */
+    inline bool DetachPolicyHasBeenSet() const { return m_detachPolicyHasBeenSet; }
+
+    /**
+     * <p>Detaches a policy from a <a>Directory</a>.</p>
+     */
     inline void SetDetachPolicy(const BatchDetachPolicy& value) { m_detachPolicyHasBeenSet = true; m_detachPolicy = value; }
 
     /**
@@ -307,6 +353,13 @@ namespace Model
      * and search</a> for more information.</p>
      */
     inline const BatchCreateIndex& GetCreateIndex() const{ return m_createIndex; }
+
+    /**
+     * <p>Creates an index object. See <a
+     * href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/indexing_search.htm">Indexing
+     * and search</a> for more information.</p>
+     */
+    inline bool CreateIndexHasBeenSet() const { return m_createIndexHasBeenSet; }
 
     /**
      * <p>Creates an index object. See <a
@@ -345,6 +398,11 @@ namespace Model
     /**
      * <p>Attaches the specified object to the specified index.</p>
      */
+    inline bool AttachToIndexHasBeenSet() const { return m_attachToIndexHasBeenSet; }
+
+    /**
+     * <p>Attaches the specified object to the specified index.</p>
+     */
     inline void SetAttachToIndex(const BatchAttachToIndex& value) { m_attachToIndexHasBeenSet = true; m_attachToIndex = value; }
 
     /**
@@ -367,6 +425,11 @@ namespace Model
      * <p>Detaches the specified object from the specified index.</p>
      */
     inline const BatchDetachFromIndex& GetDetachFromIndex() const{ return m_detachFromIndex; }
+
+    /**
+     * <p>Detaches the specified object from the specified index.</p>
+     */
+    inline bool DetachFromIndexHasBeenSet() const { return m_detachFromIndexHasBeenSet; }
 
     /**
      * <p>Detaches the specified object from the specified index.</p>
@@ -396,6 +459,14 @@ namespace Model
      * Links</a>.</p>
      */
     inline const BatchAttachTypedLink& GetAttachTypedLink() const{ return m_attachTypedLink; }
+
+    /**
+     * <p>Attaches a typed link to a specified source and target object. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink">Typed
+     * Links</a>.</p>
+     */
+    inline bool AttachTypedLinkHasBeenSet() const { return m_attachTypedLinkHasBeenSet; }
 
     /**
      * <p>Attaches a typed link to a specified source and target object. For more
@@ -444,6 +515,14 @@ namespace Model
      * href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink">Typed
      * Links</a>.</p>
      */
+    inline bool DetachTypedLinkHasBeenSet() const { return m_detachTypedLinkHasBeenSet; }
+
+    /**
+     * <p>Detaches a typed link from a specified source and target object. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink">Typed
+     * Links</a>.</p>
+     */
     inline void SetDetachTypedLink(const BatchDetachTypedLink& value) { m_detachTypedLinkHasBeenSet = true; m_detachTypedLink = value; }
 
     /**
@@ -475,6 +554,11 @@ namespace Model
      * <p>Updates a given object's attributes.</p>
      */
     inline const BatchUpdateLinkAttributes& GetUpdateLinkAttributes() const{ return m_updateLinkAttributes; }
+
+    /**
+     * <p>Updates a given object's attributes.</p>
+     */
+    inline bool UpdateLinkAttributesHasBeenSet() const { return m_updateLinkAttributesHasBeenSet; }
 
     /**
      * <p>Updates a given object's attributes.</p>

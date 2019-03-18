@@ -56,6 +56,12 @@ namespace Model
      * <p>The name (friendly name, not ARN) of the IAM role from which you want to
      * remove the permissions boundary.</p>
      */
+    inline bool RoleNameHasBeenSet() const { return m_roleNameHasBeenSet; }
+
+    /**
+     * <p>The name (friendly name, not ARN) of the IAM role from which you want to
+     * remove the permissions boundary.</p>
+     */
     inline void SetRoleName(const Aws::String& value) { m_roleNameHasBeenSet = true; m_roleName = value; }
 
     /**

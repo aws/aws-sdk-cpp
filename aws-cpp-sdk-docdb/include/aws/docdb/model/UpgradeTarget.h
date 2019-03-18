@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p>The name of the upgrade target database engine.</p>
      */
+    inline bool EngineHasBeenSet() const { return m_engineHasBeenSet; }
+
+    /**
+     * <p>The name of the upgrade target database engine.</p>
+     */
     inline void SetEngine(const Aws::String& value) { m_engineHasBeenSet = true; m_engine = value; }
 
     /**
@@ -94,6 +99,11 @@ namespace Model
     /**
      * <p>The version number of the upgrade target database engine.</p>
      */
+    inline bool EngineVersionHasBeenSet() const { return m_engineVersionHasBeenSet; }
+
+    /**
+     * <p>The version number of the upgrade target database engine.</p>
+     */
     inline void SetEngineVersion(const Aws::String& value) { m_engineVersionHasBeenSet = true; m_engineVersion = value; }
 
     /**
@@ -126,6 +136,11 @@ namespace Model
      * <p>The version of the database engine that a DB instance can be upgraded to.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
+
+    /**
+     * <p>The version of the database engine that a DB instance can be upgraded to.</p>
+     */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
 
     /**
      * <p>The version of the database engine that a DB instance can be upgraded to.</p>
@@ -170,6 +185,13 @@ namespace Model
      * instances that have <code>AutoMinorVersionUpgrade</code> set to
      * <code>true</code>.</p>
      */
+    inline bool AutoUpgradeHasBeenSet() const { return m_autoUpgradeHasBeenSet; }
+
+    /**
+     * <p>A value that indicates whether the target version is applied to any source DB
+     * instances that have <code>AutoMinorVersionUpgrade</code> set to
+     * <code>true</code>.</p>
+     */
     inline void SetAutoUpgrade(bool value) { m_autoUpgradeHasBeenSet = true; m_autoUpgrade = value; }
 
     /**
@@ -185,6 +207,12 @@ namespace Model
      * version.</p>
      */
     inline bool GetIsMajorVersionUpgrade() const{ return m_isMajorVersionUpgrade; }
+
+    /**
+     * <p>A value that indicates whether a database engine is upgraded to a major
+     * version.</p>
+     */
+    inline bool IsMajorVersionUpgradeHasBeenSet() const { return m_isMajorVersionUpgradeHasBeenSet; }
 
     /**
      * <p>A value that indicates whether a database engine is upgraded to a major

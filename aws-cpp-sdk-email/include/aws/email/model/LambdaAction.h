@@ -78,6 +78,16 @@ namespace Model
      * href="http://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html">Amazon SNS
      * Developer Guide</a>.</p>
      */
+    inline bool TopicArnHasBeenSet() const { return m_topicArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the Amazon SNS topic to notify when the
+     * Lambda action is taken. An example of an Amazon SNS topic ARN is
+     * <code>arn:aws:sns:us-west-2:123456789012:MyTopic</code>. For more information
+     * about Amazon SNS topics, see the <a
+     * href="http://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html">Amazon SNS
+     * Developer Guide</a>.</p>
+     */
     inline void SetTopicArn(const Aws::String& value) { m_topicArnHasBeenSet = true; m_topicArn = value; }
 
     /**
@@ -140,6 +150,16 @@ namespace Model
      * Developer Guide</a>.</p>
      */
     inline const Aws::String& GetFunctionArn() const{ return m_functionArn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the AWS Lambda function. An example of an
+     * AWS Lambda function ARN is
+     * <code>arn:aws:lambda:us-west-2:account-id:function:MyFunction</code>. For more
+     * information about AWS Lambda, see the <a
+     * href="http://docs.aws.amazon.com/lambda/latest/dg/welcome.html">AWS Lambda
+     * Developer Guide</a>.</p>
+     */
+    inline bool FunctionArnHasBeenSet() const { return m_functionArnHasBeenSet; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the AWS Lambda function. An example of an
@@ -216,6 +236,21 @@ namespace Model
      * receipt rule set.</p> </important>
      */
     inline const InvocationType& GetInvocationType() const{ return m_invocationType; }
+
+    /**
+     * <p>The invocation type of the AWS Lambda function. An invocation type of
+     * <code>RequestResponse</code> means that the execution of the function will
+     * immediately result in a response, and a value of <code>Event</code> means that
+     * the function will be invoked asynchronously. The default value is
+     * <code>Event</code>. For information about AWS Lambda invocation types, see the
+     * <a href="http://docs.aws.amazon.com/lambda/latest/dg/API_Invoke.html">AWS Lambda
+     * Developer Guide</a>.</p> <important> <p>There is a 30-second timeout on
+     * <code>RequestResponse</code> invocations. You should use <code>Event</code>
+     * invocation in most cases. Use <code>RequestResponse</code> only when you want to
+     * make a mail flow decision, such as whether to stop the receipt rule or the
+     * receipt rule set.</p> </important>
+     */
+    inline bool InvocationTypeHasBeenSet() const { return m_invocationTypeHasBeenSet; }
 
     /**
      * <p>The invocation type of the AWS Lambda function. An invocation type of

@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p> A list of deployment IDs, separated by spaces. </p>
      */
+    inline bool DeploymentIdsHasBeenSet() const { return m_deploymentIdsHasBeenSet; }
+
+    /**
+     * <p> A list of deployment IDs, separated by spaces. </p>
+     */
     inline void SetDeploymentIds(const Aws::Vector<Aws::String>& value) { m_deploymentIdsHasBeenSet = true; m_deploymentIds = value; }
 
     /**

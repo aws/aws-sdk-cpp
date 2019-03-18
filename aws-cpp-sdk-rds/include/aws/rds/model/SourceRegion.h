@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p>The name of the source AWS Region.</p>
      */
+    inline bool RegionNameHasBeenSet() const { return m_regionNameHasBeenSet; }
+
+    /**
+     * <p>The name of the source AWS Region.</p>
+     */
     inline void SetRegionName(const Aws::String& value) { m_regionNameHasBeenSet = true; m_regionName = value; }
 
     /**
@@ -94,6 +99,11 @@ namespace Model
     /**
      * <p>The endpoint for the source AWS Region endpoint.</p>
      */
+    inline bool EndpointHasBeenSet() const { return m_endpointHasBeenSet; }
+
+    /**
+     * <p>The endpoint for the source AWS Region endpoint.</p>
+     */
     inline void SetEndpoint(const Aws::String& value) { m_endpointHasBeenSet = true; m_endpoint = value; }
 
     /**
@@ -126,6 +136,11 @@ namespace Model
      * <p>The status of the source AWS Region.</p>
      */
     inline const Aws::String& GetStatus() const{ return m_status; }
+
+    /**
+     * <p>The status of the source AWS Region.</p>
+     */
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
     /**
      * <p>The status of the source AWS Region.</p>

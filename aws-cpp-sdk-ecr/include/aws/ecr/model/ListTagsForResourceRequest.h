@@ -56,6 +56,13 @@ namespace Model
      * the tags. Currently, the only supported resource is an Amazon ECR
      * repository.</p>
      */
+    inline bool ResourceArnHasBeenSet() const { return m_resourceArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) that identifies the resource for which to list
+     * the tags. Currently, the only supported resource is an Amazon ECR
+     * repository.</p>
+     */
     inline void SetResourceArn(const Aws::String& value) { m_resourceArnHasBeenSet = true; m_resourceArn = value; }
 
     /**

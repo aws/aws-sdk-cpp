@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p>The name of the model package.</p>
      */
+    inline bool ModelPackageNameHasBeenSet() const { return m_modelPackageNameHasBeenSet; }
+
+    /**
+     * <p>The name of the model package.</p>
+     */
     inline void SetModelPackageName(const Aws::String& value) { m_modelPackageNameHasBeenSet = true; m_modelPackageName = value; }
 
     /**
@@ -90,6 +95,11 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the model package.</p>
      */
     inline const Aws::String& GetModelPackageArn() const{ return m_modelPackageArn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the model package.</p>
+     */
+    inline bool ModelPackageArnHasBeenSet() const { return m_modelPackageArnHasBeenSet; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the model package.</p>
@@ -130,6 +140,11 @@ namespace Model
     /**
      * <p>A brief description of the model package.</p>
      */
+    inline bool ModelPackageDescriptionHasBeenSet() const { return m_modelPackageDescriptionHasBeenSet; }
+
+    /**
+     * <p>A brief description of the model package.</p>
+     */
     inline void SetModelPackageDescription(const Aws::String& value) { m_modelPackageDescriptionHasBeenSet = true; m_modelPackageDescription = value; }
 
     /**
@@ -166,6 +181,11 @@ namespace Model
     /**
      * <p>A timestamp that shows when the model package was created.</p>
      */
+    inline bool CreationTimeHasBeenSet() const { return m_creationTimeHasBeenSet; }
+
+    /**
+     * <p>A timestamp that shows when the model package was created.</p>
+     */
     inline void SetCreationTime(const Aws::Utils::DateTime& value) { m_creationTimeHasBeenSet = true; m_creationTime = value; }
 
     /**
@@ -188,6 +208,11 @@ namespace Model
      * <p>The overall status of the model package.</p>
      */
     inline const ModelPackageStatus& GetModelPackageStatus() const{ return m_modelPackageStatus; }
+
+    /**
+     * <p>The overall status of the model package.</p>
+     */
+    inline bool ModelPackageStatusHasBeenSet() const { return m_modelPackageStatusHasBeenSet; }
 
     /**
      * <p>The overall status of the model package.</p>

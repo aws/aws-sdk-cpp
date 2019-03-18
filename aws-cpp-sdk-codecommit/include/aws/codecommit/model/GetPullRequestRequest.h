@@ -54,6 +54,12 @@ namespace Model
      * <p>The system-generated ID of the pull request. To get this ID, use
      * <a>ListPullRequests</a>.</p>
      */
+    inline bool PullRequestIdHasBeenSet() const { return m_pullRequestIdHasBeenSet; }
+
+    /**
+     * <p>The system-generated ID of the pull request. To get this ID, use
+     * <a>ListPullRequests</a>.</p>
+     */
     inline void SetPullRequestId(const Aws::String& value) { m_pullRequestIdHasBeenSet = true; m_pullRequestId = value; }
 
     /**

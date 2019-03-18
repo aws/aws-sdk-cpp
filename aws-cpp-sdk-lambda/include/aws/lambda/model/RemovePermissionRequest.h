@@ -74,6 +74,20 @@ namespace Model
      * applies only to the full ARN. If you specify only the function name, it is
      * limited to 64 characters in length.</p>
      */
+    inline bool FunctionNameHasBeenSet() const { return m_functionNameHasBeenSet; }
+
+    /**
+     * <p>The name of the Lambda function, version, or alias.</p> <p class="title">
+     * <b>Name formats</b> </p> <ul> <li> <p> <b>Function name</b> -
+     * <code>my-function</code> (name-only), <code>my-function:v1</code> (with
+     * alias).</p> </li> <li> <p> <b>Function ARN</b> -
+     * <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p>
+     * </li> <li> <p> <b>Partial ARN</b> -
+     * <code>123456789012:function:my-function</code>.</p> </li> </ul> <p>You can
+     * append a version number or alias to any of the formats. The length constraint
+     * applies only to the full ARN. If you specify only the function name, it is
+     * limited to 64 characters in length.</p>
+     */
     inline void SetFunctionName(const Aws::String& value) { m_functionNameHasBeenSet = true; m_functionName = value; }
 
     /**
@@ -155,6 +169,11 @@ namespace Model
     /**
      * <p>Statement ID of the permission to remove.</p>
      */
+    inline bool StatementIdHasBeenSet() const { return m_statementIdHasBeenSet; }
+
+    /**
+     * <p>Statement ID of the permission to remove.</p>
+     */
     inline void SetStatementId(const Aws::String& value) { m_statementIdHasBeenSet = true; m_statementId = value; }
 
     /**
@@ -188,6 +207,12 @@ namespace Model
      * the function.</p>
      */
     inline const Aws::String& GetQualifier() const{ return m_qualifier; }
+
+    /**
+     * <p>Specify a version or alias to remove permissions from a published version of
+     * the function.</p>
+     */
+    inline bool QualifierHasBeenSet() const { return m_qualifierHasBeenSet; }
 
     /**
      * <p>Specify a version or alias to remove permissions from a published version of
@@ -232,6 +257,13 @@ namespace Model
      * it.</p>
      */
     inline const Aws::String& GetRevisionId() const{ return m_revisionId; }
+
+    /**
+     * <p>Only update the policy if the revision ID matches the ID that's specified.
+     * Use this option to avoid modifying a policy that has changed since you last read
+     * it.</p>
+     */
+    inline bool RevisionIdHasBeenSet() const { return m_revisionIdHasBeenSet; }
 
     /**
      * <p>Only update the policy if the revision ID matches the ID that's specified.

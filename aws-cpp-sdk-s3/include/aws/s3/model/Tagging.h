@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p/>
      */
+    inline bool TagSetHasBeenSet() const { return m_tagSetHasBeenSet; }
+
+    /**
+     * <p/>
+     */
     inline void SetTagSet(const Aws::Vector<Tag>& value) { m_tagSetHasBeenSet = true; m_tagSet = value; }
 
     /**

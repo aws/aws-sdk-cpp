@@ -61,6 +61,13 @@ namespace Model
      * </li> <li> <p> <code>jp</code> - Japanese</p> </li> <li> <p> <code>zh</code> -
      * Chinese</p> </li> </ul>
      */
+    inline bool AcceptLanguageHasBeenSet() const { return m_acceptLanguageHasBeenSet; }
+
+    /**
+     * <p>The language code.</p> <ul> <li> <p> <code>en</code> - English (default)</p>
+     * </li> <li> <p> <code>jp</code> - Japanese</p> </li> <li> <p> <code>zh</code> -
+     * Chinese</p> </li> </ul>
+     */
     inline void SetAcceptLanguage(const Aws::String& value) { m_acceptLanguageHasBeenSet = true; m_acceptLanguage = value; }
 
     /**
@@ -107,6 +114,11 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the source product.</p>
      */
+    inline bool SourceProductArnHasBeenSet() const { return m_sourceProductArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the source product.</p>
+     */
     inline void SetSourceProductArn(const Aws::String& value) { m_sourceProductArnHasBeenSet = true; m_sourceProductArn = value; }
 
     /**
@@ -140,6 +152,12 @@ namespace Model
      * created.</p>
      */
     inline const Aws::String& GetTargetProductId() const{ return m_targetProductId; }
+
+    /**
+     * <p>The identifier of the target product. By default, a new product is
+     * created.</p>
+     */
+    inline bool TargetProductIdHasBeenSet() const { return m_targetProductIdHasBeenSet; }
 
     /**
      * <p>The identifier of the target product. By default, a new product is
@@ -188,6 +206,12 @@ namespace Model
      * <p>A name for the target product. The default is the name of the source
      * product.</p>
      */
+    inline bool TargetProductNameHasBeenSet() const { return m_targetProductNameHasBeenSet; }
+
+    /**
+     * <p>A name for the target product. The default is the name of the source
+     * product.</p>
+     */
     inline void SetTargetProductName(const Aws::String& value) { m_targetProductNameHasBeenSet = true; m_targetProductName = value; }
 
     /**
@@ -226,6 +250,12 @@ namespace Model
      * product to copy. By default, all provisioning artifacts are copied.</p>
      */
     inline const Aws::Vector<Aws::Map<ProvisioningArtifactPropertyName, Aws::String>>& GetSourceProvisioningArtifactIdentifiers() const{ return m_sourceProvisioningArtifactIdentifiers; }
+
+    /**
+     * <p>The identifiers of the provisioning artifacts (also known as versions) of the
+     * product to copy. By default, all provisioning artifacts are copied.</p>
+     */
+    inline bool SourceProvisioningArtifactIdentifiersHasBeenSet() const { return m_sourceProvisioningArtifactIdentifiersHasBeenSet; }
 
     /**
      * <p>The identifiers of the provisioning artifacts (also known as versions) of the
@@ -274,6 +304,12 @@ namespace Model
      * <p>The copy options. If the value is <code>CopyTags</code>, the tags from the
      * source product are copied to the target product.</p>
      */
+    inline bool CopyOptionsHasBeenSet() const { return m_copyOptionsHasBeenSet; }
+
+    /**
+     * <p>The copy options. If the value is <code>CopyTags</code>, the tags from the
+     * source product are copied to the target product.</p>
+     */
     inline void SetCopyOptions(const Aws::Vector<CopyOption>& value) { m_copyOptionsHasBeenSet = true; m_copyOptions = value; }
 
     /**
@@ -313,6 +349,13 @@ namespace Model
      * each repeated request. </p>
      */
     inline const Aws::String& GetIdempotencyToken() const{ return m_idempotencyToken; }
+
+    /**
+     * <p> A unique identifier that you provide to ensure idempotency. If multiple
+     * requests differ only by the idempotency token, the same response is returned for
+     * each repeated request. </p>
+     */
+    inline bool IdempotencyTokenHasBeenSet() const { return m_idempotencyTokenHasBeenSet; }
 
     /**
      * <p> A unique identifier that you provide to ensure idempotency. If multiple

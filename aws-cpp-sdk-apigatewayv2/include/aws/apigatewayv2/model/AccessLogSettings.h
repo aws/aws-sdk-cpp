@@ -55,6 +55,11 @@ namespace Model
     /**
      * <p>The ARN of the CloudWatch Logs log group to receive access logs.</p>
      */
+    inline bool DestinationArnHasBeenSet() const { return m_destinationArnHasBeenSet; }
+
+    /**
+     * <p>The ARN of the CloudWatch Logs log group to receive access logs.</p>
+     */
     inline void SetDestinationArn(const Aws::String& value) { m_destinationArnHasBeenSet = true; m_destinationArn = value; }
 
     /**
@@ -89,6 +94,13 @@ namespace Model
  variables. The format must include at least $context.requestId.</p>
      */
     inline const Aws::String& GetFormat() const{ return m_format; }
+
+    /**
+     * <p>A single line format of the access logs of data, as specified by selected
+     * $context
+ variables. The format must include at least $context.requestId.</p>
+     */
+    inline bool FormatHasBeenSet() const { return m_formatHasBeenSet; }
 
     /**
      * <p>A single line format of the access logs of data, as specified by selected

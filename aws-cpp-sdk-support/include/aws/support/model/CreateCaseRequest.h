@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The title of the AWS Support case.</p>
      */
+    inline bool SubjectHasBeenSet() const { return m_subjectHasBeenSet; }
+
+    /**
+     * <p>The title of the AWS Support case.</p>
+     */
     inline void SetSubject(const Aws::String& value) { m_subjectHasBeenSet = true; m_subject = value; }
 
     /**
@@ -89,6 +94,12 @@ namespace Model
      * <a>DescribeServices</a>.</p>
      */
     inline const Aws::String& GetServiceCode() const{ return m_serviceCode; }
+
+    /**
+     * <p>The code for the AWS service returned by the call to
+     * <a>DescribeServices</a>.</p>
+     */
+    inline bool ServiceCodeHasBeenSet() const { return m_serviceCodeHasBeenSet; }
 
     /**
      * <p>The code for the AWS service returned by the call to
@@ -135,6 +146,15 @@ namespace Model
      * </note>
      */
     inline const Aws::String& GetSeverityCode() const{ return m_severityCode; }
+
+    /**
+     * <p>The code for the severity level returned by the call to
+     * <a>DescribeSeverityLevels</a>.</p> <note> <p>The availability of severity levels
+     * depends on each customer's support subscription. In other words, your
+     * subscription may not necessarily require the urgent level of response time.</p>
+     * </note>
+     */
+    inline bool SeverityCodeHasBeenSet() const { return m_severityCodeHasBeenSet; }
 
     /**
      * <p>The code for the severity level returned by the call to
@@ -199,6 +219,11 @@ namespace Model
     /**
      * <p>The category of problem for the AWS Support case.</p>
      */
+    inline bool CategoryCodeHasBeenSet() const { return m_categoryCodeHasBeenSet; }
+
+    /**
+     * <p>The category of problem for the AWS Support case.</p>
+     */
     inline void SetCategoryCode(const Aws::String& value) { m_categoryCodeHasBeenSet = true; m_categoryCode = value; }
 
     /**
@@ -232,6 +257,12 @@ namespace Model
      * <a>CreateCase</a>.</p>
      */
     inline const Aws::String& GetCommunicationBody() const{ return m_communicationBody; }
+
+    /**
+     * <p>The communication body text when you create an AWS Support case by calling
+     * <a>CreateCase</a>.</p>
+     */
+    inline bool CommunicationBodyHasBeenSet() const { return m_communicationBodyHasBeenSet; }
 
     /**
      * <p>The communication body text when you create an AWS Support case by calling
@@ -278,6 +309,11 @@ namespace Model
     /**
      * <p>A list of email addresses that AWS Support copies on case correspondence.</p>
      */
+    inline bool CcEmailAddressesHasBeenSet() const { return m_ccEmailAddressesHasBeenSet; }
+
+    /**
+     * <p>A list of email addresses that AWS Support copies on case correspondence.</p>
+     */
     inline void SetCcEmailAddresses(const Aws::Vector<Aws::String>& value) { m_ccEmailAddressesHasBeenSet = true; m_ccEmailAddresses = value; }
 
     /**
@@ -317,6 +353,13 @@ namespace Model
      * parameters must be passed explicitly for operations that take them.</p>
      */
     inline const Aws::String& GetLanguage() const{ return m_language; }
+
+    /**
+     * <p>The ISO 639-1 code for the language in which AWS provides support. AWS
+     * Support currently supports English ("en") and Japanese ("ja"). Language
+     * parameters must be passed explicitly for operations that take them.</p>
+     */
+    inline bool LanguageHasBeenSet() const { return m_languageHasBeenSet; }
 
     /**
      * <p>The ISO 639-1 code for the language in which AWS provides support. AWS
@@ -371,6 +414,12 @@ namespace Model
      * <p>The type of issue for the case. You can specify either "customer-service" or
      * "technical." If you do not indicate a value, the default is "technical."</p>
      */
+    inline bool IssueTypeHasBeenSet() const { return m_issueTypeHasBeenSet; }
+
+    /**
+     * <p>The type of issue for the case. You can specify either "customer-service" or
+     * "technical." If you do not indicate a value, the default is "technical."</p>
+     */
     inline void SetIssueType(const Aws::String& value) { m_issueTypeHasBeenSet = true; m_issueType = value; }
 
     /**
@@ -409,6 +458,12 @@ namespace Model
      * using <a>AddAttachmentsToSet</a>.</p>
      */
     inline const Aws::String& GetAttachmentSetId() const{ return m_attachmentSetId; }
+
+    /**
+     * <p>The ID of a set of one or more attachments for the case. Create the set by
+     * using <a>AddAttachmentsToSet</a>.</p>
+     */
+    inline bool AttachmentSetIdHasBeenSet() const { return m_attachmentSetIdHasBeenSet; }
 
     /**
      * <p>The ID of a set of one or more attachments for the case. Create the set by

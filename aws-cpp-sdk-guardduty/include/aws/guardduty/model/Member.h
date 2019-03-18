@@ -51,6 +51,9 @@ namespace Model
     inline const Aws::String& GetAccountId() const{ return m_accountId; }
 
     
+    inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
+
+    
     inline void SetAccountId(const Aws::String& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
 
     
@@ -71,6 +74,9 @@ namespace Model
 
     
     inline const Aws::String& GetDetectorId() const{ return m_detectorId; }
+
+    
+    inline bool DetectorIdHasBeenSet() const { return m_detectorIdHasBeenSet; }
 
     
     inline void SetDetectorId(const Aws::String& value) { m_detectorIdHasBeenSet = true; m_detectorId = value; }
@@ -95,6 +101,11 @@ namespace Model
      * Member account's email address.
      */
     inline const Aws::String& GetEmail() const{ return m_email; }
+
+    /**
+     * Member account's email address.
+     */
+    inline bool EmailHasBeenSet() const { return m_emailHasBeenSet; }
 
     /**
      * Member account's email address.
@@ -135,6 +146,11 @@ namespace Model
     /**
      * Timestamp at which the invitation was sent
      */
+    inline bool InvitedAtHasBeenSet() const { return m_invitedAtHasBeenSet; }
+
+    /**
+     * Timestamp at which the invitation was sent
+     */
     inline void SetInvitedAt(const Aws::String& value) { m_invitedAtHasBeenSet = true; m_invitedAt = value; }
 
     /**
@@ -167,6 +183,9 @@ namespace Model
     inline const Aws::String& GetMasterId() const{ return m_masterId; }
 
     
+    inline bool MasterIdHasBeenSet() const { return m_masterIdHasBeenSet; }
+
+    
     inline void SetMasterId(const Aws::String& value) { m_masterIdHasBeenSet = true; m_masterId = value; }
 
     
@@ -189,6 +208,11 @@ namespace Model
      * The status of the relationship between the member and the master.
      */
     inline const Aws::String& GetRelationshipStatus() const{ return m_relationshipStatus; }
+
+    /**
+     * The status of the relationship between the member and the master.
+     */
+    inline bool RelationshipStatusHasBeenSet() const { return m_relationshipStatusHasBeenSet; }
 
     /**
      * The status of the relationship between the member and the master.
@@ -223,6 +247,9 @@ namespace Model
 
     
     inline const Aws::String& GetUpdatedAt() const{ return m_updatedAt; }
+
+    
+    inline bool UpdatedAtHasBeenSet() const { return m_updatedAtHasBeenSet; }
 
     
     inline void SetUpdatedAt(const Aws::String& value) { m_updatedAtHasBeenSet = true; m_updatedAt = value; }

@@ -56,6 +56,12 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) that is associated with the <a>Directory</a>.
      * For more information, see <a>arns</a>.</p>
      */
+    inline bool DirectoryArnHasBeenSet() const { return m_directoryArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) that is associated with the <a>Directory</a>.
+     * For more information, see <a>arns</a>.</p>
+     */
     inline void SetDirectoryArn(const Aws::String& value) { m_directoryArnHasBeenSet = true; m_directoryArn = value; }
 
     /**
@@ -93,6 +99,11 @@ namespace Model
      * <p>A list of operations that are part of the batch.</p>
      */
     inline const Aws::Vector<BatchWriteOperation>& GetOperations() const{ return m_operations; }
+
+    /**
+     * <p>A list of operations that are part of the batch.</p>
+     */
+    inline bool OperationsHasBeenSet() const { return m_operationsHasBeenSet; }
 
     /**
      * <p>A list of operations that are part of the batch.</p>

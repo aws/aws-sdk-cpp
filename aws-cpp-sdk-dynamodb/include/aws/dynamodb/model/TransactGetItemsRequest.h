@@ -56,6 +56,12 @@ namespace Model
      * <p>An ordered array of up to 10 <code>TransactGetItem</code> objects, each of
      * which contains a <code>Get</code> structure.</p>
      */
+    inline bool TransactItemsHasBeenSet() const { return m_transactItemsHasBeenSet; }
+
+    /**
+     * <p>An ordered array of up to 10 <code>TransactGetItem</code> objects, each of
+     * which contains a <code>Get</code> structure.</p>
+     */
     inline void SetTransactItems(const Aws::Vector<TransactGetItem>& value) { m_transactItemsHasBeenSet = true; m_transactItems = value; }
 
     /**
@@ -95,6 +101,13 @@ namespace Model
      * returned. No other value is valid.</p>
      */
     inline const ReturnConsumedCapacity& GetReturnConsumedCapacity() const{ return m_returnConsumedCapacity; }
+
+    /**
+     * <p>A value of <code>TOTAL</code> causes consumed capacity information to be
+     * returned, and a value of <code>NONE</code> prevents that information from being
+     * returned. No other value is valid.</p>
+     */
+    inline bool ReturnConsumedCapacityHasBeenSet() const { return m_returnConsumedCapacityHasBeenSet; }
 
     /**
      * <p>A value of <code>TOTAL</code> causes consumed capacity information to be

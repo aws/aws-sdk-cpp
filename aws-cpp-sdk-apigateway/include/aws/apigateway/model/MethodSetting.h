@@ -62,6 +62,14 @@ namespace Model
      * <code>/{method_setting_key}/metrics/enabled</code>, and the value is a
      * Boolean.</p>
      */
+    inline bool MetricsEnabledHasBeenSet() const { return m_metricsEnabledHasBeenSet; }
+
+    /**
+     * <p>Specifies whether Amazon CloudWatch metrics are enabled for this method. The
+     * PATCH path for this setting is
+     * <code>/{method_setting_key}/metrics/enabled</code>, and the value is a
+     * Boolean.</p>
+     */
     inline void SetMetricsEnabled(bool value) { m_metricsEnabledHasBeenSet = true; m_metricsEnabled = value; }
 
     /**
@@ -80,6 +88,14 @@ namespace Model
      * are <code>OFF</code>, <code>ERROR</code>, and <code>INFO</code>.</p>
      */
     inline const Aws::String& GetLoggingLevel() const{ return m_loggingLevel; }
+
+    /**
+     * <p>Specifies the logging level for this method, which affects the log entries
+     * pushed to Amazon CloudWatch Logs. The PATCH path for this setting is
+     * <code>/{method_setting_key}/logging/loglevel</code>, and the available levels
+     * are <code>OFF</code>, <code>ERROR</code>, and <code>INFO</code>.</p>
+     */
+    inline bool LoggingLevelHasBeenSet() const { return m_loggingLevelHasBeenSet; }
 
     /**
      * <p>Specifies the logging level for this method, which affects the log entries
@@ -144,6 +160,14 @@ namespace Model
      * this setting is <code>/{method_setting_key}/logging/dataTrace</code>, and the
      * value is a Boolean.</p>
      */
+    inline bool DataTraceEnabledHasBeenSet() const { return m_dataTraceEnabledHasBeenSet; }
+
+    /**
+     * <p>Specifies whether data trace logging is enabled for this method, which
+     * affects the log entries pushed to Amazon CloudWatch Logs. The PATCH path for
+     * this setting is <code>/{method_setting_key}/logging/dataTrace</code>, and the
+     * value is a Boolean.</p>
+     */
     inline void SetDataTraceEnabled(bool value) { m_dataTraceEnabledHasBeenSet = true; m_dataTraceEnabled = value; }
 
     /**
@@ -161,6 +185,13 @@ namespace Model
      * integer.</p>
      */
     inline int GetThrottlingBurstLimit() const{ return m_throttlingBurstLimit; }
+
+    /**
+     * <p>Specifies the throttling burst limit. The PATCH path for this setting is
+     * <code>/{method_setting_key}/throttling/burstLimit</code>, and the value is an
+     * integer.</p>
+     */
+    inline bool ThrottlingBurstLimitHasBeenSet() const { return m_throttlingBurstLimitHasBeenSet; }
 
     /**
      * <p>Specifies the throttling burst limit. The PATCH path for this setting is
@@ -189,6 +220,13 @@ namespace Model
      * <code>/{method_setting_key}/throttling/rateLimit</code>, and the value is a
      * double.</p>
      */
+    inline bool ThrottlingRateLimitHasBeenSet() const { return m_throttlingRateLimitHasBeenSet; }
+
+    /**
+     * <p>Specifies the throttling rate limit. The PATCH path for this setting is
+     * <code>/{method_setting_key}/throttling/rateLimit</code>, and the value is a
+     * double.</p>
+     */
     inline void SetThrottlingRateLimit(double value) { m_throttlingRateLimitHasBeenSet = true; m_throttlingRateLimit = value; }
 
     /**
@@ -206,6 +244,14 @@ namespace Model
      * the value is a Boolean.</p>
      */
     inline bool GetCachingEnabled() const{ return m_cachingEnabled; }
+
+    /**
+     * <p>Specifies whether responses should be cached and returned for requests. A
+     * cache cluster must be enabled on the stage for responses to be cached. The PATCH
+     * path for this setting is <code>/{method_setting_key}/caching/enabled</code>, and
+     * the value is a Boolean.</p>
+     */
+    inline bool CachingEnabledHasBeenSet() const { return m_cachingEnabledHasBeenSet; }
 
     /**
      * <p>Specifies whether responses should be cached and returned for requests. A
@@ -238,6 +284,14 @@ namespace Model
      * setting is <code>/{method_setting_key}/caching/ttlInSeconds</code>, and the
      * value is an integer.</p>
      */
+    inline bool CacheTtlInSecondsHasBeenSet() const { return m_cacheTtlInSecondsHasBeenSet; }
+
+    /**
+     * <p>Specifies the time to live (TTL), in seconds, for cached responses. The
+     * higher the TTL, the longer the response will be cached. The PATCH path for this
+     * setting is <code>/{method_setting_key}/caching/ttlInSeconds</code>, and the
+     * value is an integer.</p>
+     */
     inline void SetCacheTtlInSeconds(int value) { m_cacheTtlInSecondsHasBeenSet = true; m_cacheTtlInSeconds = value; }
 
     /**
@@ -255,6 +309,13 @@ namespace Model
      * value is a Boolean.</p>
      */
     inline bool GetCacheDataEncrypted() const{ return m_cacheDataEncrypted; }
+
+    /**
+     * <p>Specifies whether the cached responses are encrypted. The PATCH path for this
+     * setting is <code>/{method_setting_key}/caching/dataEncrypted</code>, and the
+     * value is a Boolean.</p>
+     */
+    inline bool CacheDataEncryptedHasBeenSet() const { return m_cacheDataEncryptedHasBeenSet; }
 
     /**
      * <p>Specifies whether the cached responses are encrypted. The PATCH path for this
@@ -285,6 +346,14 @@ namespace Model
      * <code>/{method_setting_key}/caching/requireAuthorizationForCacheControl</code>,
      * and the value is a Boolean.</p>
      */
+    inline bool RequireAuthorizationForCacheControlHasBeenSet() const { return m_requireAuthorizationForCacheControlHasBeenSet; }
+
+    /**
+     * <p>Specifies whether authorization is required for a cache invalidation request.
+     * The PATCH path for this setting is
+     * <code>/{method_setting_key}/caching/requireAuthorizationForCacheControl</code>,
+     * and the value is a Boolean.</p>
+     */
     inline void SetRequireAuthorizationForCacheControl(bool value) { m_requireAuthorizationForCacheControlHasBeenSet = true; m_requireAuthorizationForCacheControl = value; }
 
     /**
@@ -305,6 +374,16 @@ namespace Model
      * <code>SUCCEED_WITHOUT_RESPONSE_HEADER</code>.</p>
      */
     inline const UnauthorizedCacheControlHeaderStrategy& GetUnauthorizedCacheControlHeaderStrategy() const{ return m_unauthorizedCacheControlHeaderStrategy; }
+
+    /**
+     * <p>Specifies how to handle unauthorized requests for cache invalidation. The
+     * PATCH path for this setting is
+     * <code>/{method_setting_key}/caching/unauthorizedCacheControlHeaderStrategy</code>,
+     * and the available values are <code>FAIL_WITH_403</code>,
+     * <code>SUCCEED_WITH_RESPONSE_HEADER</code>,
+     * <code>SUCCEED_WITHOUT_RESPONSE_HEADER</code>.</p>
+     */
+    inline bool UnauthorizedCacheControlHeaderStrategyHasBeenSet() const { return m_unauthorizedCacheControlHeaderStrategyHasBeenSet; }
 
     /**
      * <p>Specifies how to handle unauthorized requests for cache invalidation. The

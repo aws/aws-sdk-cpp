@@ -65,6 +65,17 @@ namespace Model
      * </p> </li> </ul> <p>To get the key ID and key ARN for a CMK, use <a>ListKeys</a>
      * or <a>DescribeKey</a>.</p>
      */
+    inline bool KeyIdHasBeenSet() const { return m_keyIdHasBeenSet; }
+
+    /**
+     * <p>A unique identifier for the CMK from which you are removing tags.</p>
+     * <p>Specify the key ID or the Amazon Resource Name (ARN) of the CMK.</p> <p>For
+     * example:</p> <ul> <li> <p>Key ID:
+     * <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li> <li> <p>Key ARN:
+     * <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
+     * </p> </li> </ul> <p>To get the key ID and key ARN for a CMK, use <a>ListKeys</a>
+     * or <a>DescribeKey</a>.</p>
+     */
     inline void SetKeyId(const Aws::String& value) { m_keyIdHasBeenSet = true; m_keyId = value; }
 
     /**
@@ -127,6 +138,11 @@ namespace Model
      * <p>One or more tag keys. Specify only the tag keys, not the tag values.</p>
      */
     inline const Aws::Vector<Aws::String>& GetTagKeys() const{ return m_tagKeys; }
+
+    /**
+     * <p>One or more tag keys. Specify only the tag keys, not the tag values.</p>
+     */
+    inline bool TagKeysHasBeenSet() const { return m_tagKeysHasBeenSet; }
 
     /**
      * <p>One or more tag keys. Specify only the tag keys, not the tag values.</p>

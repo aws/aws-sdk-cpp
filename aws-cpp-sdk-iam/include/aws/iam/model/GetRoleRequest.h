@@ -62,6 +62,15 @@ namespace Model
      * with no spaces. You can also include any of the following characters:
      * _+=,.@-</p>
      */
+    inline bool RoleNameHasBeenSet() const { return m_roleNameHasBeenSet; }
+
+    /**
+     * <p>The name of the IAM role to get information about.</p> <p>This parameter
+     * allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>)
+     * a string of characters consisting of upper and lowercase alphanumeric characters
+     * with no spaces. You can also include any of the following characters:
+     * _+=,.@-</p>
+     */
     inline void SetRoleName(const Aws::String& value) { m_roleNameHasBeenSet = true; m_roleName = value; }
 
     /**

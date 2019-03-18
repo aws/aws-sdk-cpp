@@ -66,6 +66,11 @@ namespace Model
     /**
      * <p>The name that's associated with the stack set.</p>
      */
+    inline bool StackSetNameHasBeenSet() const { return m_stackSetNameHasBeenSet; }
+
+    /**
+     * <p>The name that's associated with the stack set.</p>
+     */
     inline void SetStackSetName(const Aws::String& value) { m_stackSetNameHasBeenSet = true; m_stackSetName = value; }
 
     /**
@@ -98,6 +103,11 @@ namespace Model
      * <p>The ID of the stack set.</p>
      */
     inline const Aws::String& GetStackSetId() const{ return m_stackSetId; }
+
+    /**
+     * <p>The ID of the stack set.</p>
+     */
+    inline bool StackSetIdHasBeenSet() const { return m_stackSetIdHasBeenSet; }
 
     /**
      * <p>The ID of the stack set.</p>
@@ -135,6 +145,12 @@ namespace Model
      * or updated.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
+
+    /**
+     * <p>A description of the stack set that you specify when the stack set is created
+     * or updated.</p>
+     */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
 
     /**
      * <p>A description of the stack set that you specify when the stack set is created
@@ -181,6 +197,11 @@ namespace Model
     /**
      * <p>The status of the stack set.</p>
      */
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
+
+    /**
+     * <p>The status of the stack set.</p>
+     */
     inline void SetStatus(const StackSetStatus& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
@@ -204,6 +225,12 @@ namespace Model
      * or update the stack set.</p>
      */
     inline const Aws::String& GetTemplateBody() const{ return m_templateBody; }
+
+    /**
+     * <p>The structure that contains the body of the template that was used to create
+     * or update the stack set.</p>
+     */
+    inline bool TemplateBodyHasBeenSet() const { return m_templateBodyHasBeenSet; }
 
     /**
      * <p>The structure that contains the body of the template that was used to create
@@ -250,6 +277,11 @@ namespace Model
     /**
      * <p>A list of input parameters for a stack set.</p>
      */
+    inline bool ParametersHasBeenSet() const { return m_parametersHasBeenSet; }
+
+    /**
+     * <p>A list of input parameters for a stack set.</p>
+     */
     inline void SetParameters(const Aws::Vector<Parameter>& value) { m_parametersHasBeenSet = true; m_parameters = value; }
 
     /**
@@ -287,6 +319,16 @@ namespace Model
      * IAM Resources in AWS CloudFormation Templates.</a> </p>
      */
     inline const Aws::Vector<Capability>& GetCapabilities() const{ return m_capabilities; }
+
+    /**
+     * <p>The capabilities that are allowed in the stack set. Some stack set templates
+     * might include resources that can affect permissions in your AWS account—for
+     * example, by creating new AWS Identity and Access Management (IAM) users. For
+     * more information, see <a
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities">Acknowledging
+     * IAM Resources in AWS CloudFormation Templates.</a> </p>
+     */
+    inline bool CapabilitiesHasBeenSet() const { return m_capabilitiesHasBeenSet; }
 
     /**
      * <p>The capabilities that are allowed in the stack set. Some stack set templates
@@ -359,6 +401,12 @@ namespace Model
      * <p>A list of tags that specify information about the stack set. A maximum number
      * of 50 tags can be specified.</p>
      */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
+
+    /**
+     * <p>A list of tags that specify information about the stack set. A maximum number
+     * of 50 tags can be specified.</p>
+     */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     /**
@@ -396,6 +444,11 @@ namespace Model
      * <p>The Amazon Resource Number (ARN) of the stack set.</p>
      */
     inline const Aws::String& GetStackSetARN() const{ return m_stackSetARN; }
+
+    /**
+     * <p>The Amazon Resource Number (ARN) of the stack set.</p>
+     */
+    inline bool StackSetARNHasBeenSet() const { return m_stackSetARNHasBeenSet; }
 
     /**
      * <p>The Amazon Resource Number (ARN) of the stack set.</p>
@@ -438,6 +491,17 @@ namespace Model
      * User Guide</i>.</p>
      */
     inline const Aws::String& GetAdministrationRoleARN() const{ return m_administrationRoleARN; }
+
+    /**
+     * <p>The Amazon Resource Number (ARN) of the IAM role used to create or update the
+     * stack set.</p> <p>Use customized administrator roles to control which users or
+     * groups can manage specific stack sets within the same administrator account. For
+     * more information, see <a
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs.html">Prerequisites:
+     * Granting Permissions for Stack Set Operations</a> in the <i>AWS CloudFormation
+     * User Guide</i>.</p>
+     */
+    inline bool AdministrationRoleARNHasBeenSet() const { return m_administrationRoleARNHasBeenSet; }
 
     /**
      * <p>The Amazon Resource Number (ARN) of the IAM role used to create or update the
@@ -512,6 +576,13 @@ namespace Model
      * and groups can include in their stack sets. </p>
      */
     inline const Aws::String& GetExecutionRoleName() const{ return m_executionRoleName; }
+
+    /**
+     * <p>The name of the IAM execution role used to create or update the stack set.
+     * </p> <p>Use customized execution roles to control which stack resources users
+     * and groups can include in their stack sets. </p>
+     */
+    inline bool ExecutionRoleNameHasBeenSet() const { return m_executionRoleNameHasBeenSet; }
 
     /**
      * <p>The name of the IAM execution role used to create or update the stack set.

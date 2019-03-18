@@ -55,6 +55,11 @@ namespace Model
     /**
      * Autonomous system number of the internet provider of the remote IP address.
      */
+    inline bool AsnHasBeenSet() const { return m_asnHasBeenSet; }
+
+    /**
+     * Autonomous system number of the internet provider of the remote IP address.
+     */
     inline void SetAsn(const Aws::String& value) { m_asnHasBeenSet = true; m_asn = value; }
 
     /**
@@ -87,6 +92,11 @@ namespace Model
      * Organization that registered this ASN.
      */
     inline const Aws::String& GetAsnOrg() const{ return m_asnOrg; }
+
+    /**
+     * Organization that registered this ASN.
+     */
+    inline bool AsnOrgHasBeenSet() const { return m_asnOrgHasBeenSet; }
 
     /**
      * Organization that registered this ASN.
@@ -127,6 +137,11 @@ namespace Model
     /**
      * ISP information for the internet provider.
      */
+    inline bool IspHasBeenSet() const { return m_ispHasBeenSet; }
+
+    /**
+     * ISP information for the internet provider.
+     */
     inline void SetIsp(const Aws::String& value) { m_ispHasBeenSet = true; m_isp = value; }
 
     /**
@@ -159,6 +174,11 @@ namespace Model
      * Name of the internet provider.
      */
     inline const Aws::String& GetOrg() const{ return m_org; }
+
+    /**
+     * Name of the internet provider.
+     */
+    inline bool OrgHasBeenSet() const { return m_orgHasBeenSet; }
 
     /**
      * Name of the internet provider.

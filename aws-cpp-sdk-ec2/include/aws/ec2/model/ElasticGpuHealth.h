@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p>The health status.</p>
      */
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
+
+    /**
+     * <p>The health status.</p>
+     */
     inline void SetStatus(const ElasticGpuStatus& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**

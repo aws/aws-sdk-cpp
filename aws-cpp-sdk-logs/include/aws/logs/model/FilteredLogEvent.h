@@ -55,6 +55,11 @@ namespace Model
     /**
      * <p>The name of the log stream to which this event belongs.</p>
      */
+    inline bool LogStreamNameHasBeenSet() const { return m_logStreamNameHasBeenSet; }
+
+    /**
+     * <p>The name of the log stream to which this event belongs.</p>
+     */
     inline void SetLogStreamName(const Aws::String& value) { m_logStreamNameHasBeenSet = true; m_logStreamName = value; }
 
     /**
@@ -93,6 +98,12 @@ namespace Model
      * <p>The time the event occurred, expressed as the number of milliseconds after
      * Jan 1, 1970 00:00:00 UTC.</p>
      */
+    inline bool TimestampHasBeenSet() const { return m_timestampHasBeenSet; }
+
+    /**
+     * <p>The time the event occurred, expressed as the number of milliseconds after
+     * Jan 1, 1970 00:00:00 UTC.</p>
+     */
     inline void SetTimestamp(long long value) { m_timestampHasBeenSet = true; m_timestamp = value; }
 
     /**
@@ -106,6 +117,11 @@ namespace Model
      * <p>The data contained in the log event.</p>
      */
     inline const Aws::String& GetMessage() const{ return m_message; }
+
+    /**
+     * <p>The data contained in the log event.</p>
+     */
+    inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
 
     /**
      * <p>The data contained in the log event.</p>
@@ -148,6 +164,12 @@ namespace Model
      * <p>The time the event was ingested, expressed as the number of milliseconds
      * after Jan 1, 1970 00:00:00 UTC.</p>
      */
+    inline bool IngestionTimeHasBeenSet() const { return m_ingestionTimeHasBeenSet; }
+
+    /**
+     * <p>The time the event was ingested, expressed as the number of milliseconds
+     * after Jan 1, 1970 00:00:00 UTC.</p>
+     */
     inline void SetIngestionTime(long long value) { m_ingestionTimeHasBeenSet = true; m_ingestionTime = value; }
 
     /**
@@ -161,6 +183,11 @@ namespace Model
      * <p>The ID of the event.</p>
      */
     inline const Aws::String& GetEventId() const{ return m_eventId; }
+
+    /**
+     * <p>The ID of the event.</p>
+     */
+    inline bool EventIdHasBeenSet() const { return m_eventIdHasBeenSet; }
 
     /**
      * <p>The ID of the event.</p>

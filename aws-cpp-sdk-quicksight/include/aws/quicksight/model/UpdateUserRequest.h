@@ -51,6 +51,11 @@ namespace Model
     /**
      * <p>The Amazon QuickSight user name that you want to update.</p>
      */
+    inline bool UserNameHasBeenSet() const { return m_userNameHasBeenSet; }
+
+    /**
+     * <p>The Amazon QuickSight user name that you want to update.</p>
+     */
     inline void SetUserName(const Aws::String& value) { m_userNameHasBeenSet = true; m_userName = value; }
 
     /**
@@ -84,6 +89,12 @@ namespace Model
      * the AWS account that contains your Amazon QuickSight account.</p>
      */
     inline const Aws::String& GetAwsAccountId() const{ return m_awsAccountId; }
+
+    /**
+     * <p>The ID for the AWS account that the user is in. Currently, you use the ID for
+     * the AWS account that contains your Amazon QuickSight account.</p>
+     */
+    inline bool AwsAccountIdHasBeenSet() const { return m_awsAccountIdHasBeenSet; }
 
     /**
      * <p>The ID for the AWS account that the user is in. Currently, you use the ID for
@@ -130,6 +141,11 @@ namespace Model
     /**
      * <p>The namespace. Currently, you should set this to <code>default</code>.</p>
      */
+    inline bool NamespaceHasBeenSet() const { return m_namespaceHasBeenSet; }
+
+    /**
+     * <p>The namespace. Currently, you should set this to <code>default</code>.</p>
+     */
     inline void SetNamespace(const Aws::String& value) { m_namespaceHasBeenSet = true; m_namespace = value; }
 
     /**
@@ -162,6 +178,11 @@ namespace Model
      * <p>The email address of the user that you want to update.</p>
      */
     inline const Aws::String& GetEmail() const{ return m_email; }
+
+    /**
+     * <p>The email address of the user that you want to update.</p>
+     */
+    inline bool EmailHasBeenSet() const { return m_emailHasBeenSet; }
 
     /**
      * <p>The email address of the user that you want to update.</p>
@@ -203,6 +224,16 @@ namespace Model
      * QuickSight settings.</p> </li> </ul>
      */
     inline const UserRole& GetRole() const{ return m_role; }
+
+    /**
+     * <p>The Amazon QuickSight role of the user. The user role can be one of the
+     * following:</p> <ul> <li> <p> <code>READER</code>: A user who has read-only
+     * access to dashboards.</p> </li> <li> <p> <code>AUTHOR</code>: A user who can
+     * create data sources, data sets, analyses, and dashboards.</p> </li> <li> <p>
+     * <code>ADMIN</code>: A user who is an author, who can also manage Amazon
+     * QuickSight settings.</p> </li> </ul>
+     */
+    inline bool RoleHasBeenSet() const { return m_roleHasBeenSet; }
 
     /**
      * <p>The Amazon QuickSight role of the user. The user role can be one of the

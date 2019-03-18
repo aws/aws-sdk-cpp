@@ -58,6 +58,12 @@ namespace Model
      * <p>The name of the data set whose latest contents are used as input to the
      * notebook or application.</p>
      */
+    inline bool DatasetNameHasBeenSet() const { return m_datasetNameHasBeenSet; }
+
+    /**
+     * <p>The name of the data set whose latest contents are used as input to the
+     * notebook or application.</p>
+     */
     inline void SetDatasetName(const Aws::String& value) { m_datasetNameHasBeenSet = true; m_datasetName = value; }
 
     /**

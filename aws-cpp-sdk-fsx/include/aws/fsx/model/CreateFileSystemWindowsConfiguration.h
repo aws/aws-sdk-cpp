@@ -59,6 +59,12 @@ namespace Model
      * <p>The ID for an existing Microsoft Active Directory instance that the file
      * system should join when it's created.</p>
      */
+    inline bool ActiveDirectoryIdHasBeenSet() const { return m_activeDirectoryIdHasBeenSet; }
+
+    /**
+     * <p>The ID for an existing Microsoft Active Directory instance that the file
+     * system should join when it's created.</p>
+     */
     inline void SetActiveDirectoryId(const Aws::String& value) { m_activeDirectoryIdHasBeenSet = true; m_activeDirectoryId = value; }
 
     /**
@@ -102,6 +108,12 @@ namespace Model
      * <p>The throughput of an Amazon FSx file system, measured in megabytes per
      * second.</p>
      */
+    inline bool ThroughputCapacityHasBeenSet() const { return m_throughputCapacityHasBeenSet; }
+
+    /**
+     * <p>The throughput of an Amazon FSx file system, measured in megabytes per
+     * second.</p>
+     */
     inline void SetThroughputCapacity(int value) { m_throughputCapacityHasBeenSet = true; m_throughputCapacity = value; }
 
     /**
@@ -116,6 +128,12 @@ namespace Model
      * zone.</p>
      */
     inline const Aws::String& GetWeeklyMaintenanceStartTime() const{ return m_weeklyMaintenanceStartTime; }
+
+    /**
+     * <p>The preferred start time to perform weekly maintenance, in the UTC time
+     * zone.</p>
+     */
+    inline bool WeeklyMaintenanceStartTimeHasBeenSet() const { return m_weeklyMaintenanceStartTimeHasBeenSet; }
 
     /**
      * <p>The preferred start time to perform weekly maintenance, in the UTC time
@@ -162,6 +180,11 @@ namespace Model
     /**
      * <p>The preferred time to take daily automatic backups, in the UTC time zone.</p>
      */
+    inline bool DailyAutomaticBackupStartTimeHasBeenSet() const { return m_dailyAutomaticBackupStartTimeHasBeenSet; }
+
+    /**
+     * <p>The preferred time to take daily automatic backups, in the UTC time zone.</p>
+     */
     inline void SetDailyAutomaticBackupStartTime(const Aws::String& value) { m_dailyAutomaticBackupStartTimeHasBeenSet = true; m_dailyAutomaticBackupStartTime = value; }
 
     /**
@@ -202,6 +225,13 @@ namespace Model
      * backups for 7 days. Setting this value to 0 disables the creation of automatic
      * backups. The maximum retention period for backups is 35 days.</p>
      */
+    inline bool AutomaticBackupRetentionDaysHasBeenSet() const { return m_automaticBackupRetentionDaysHasBeenSet; }
+
+    /**
+     * <p>The number of days to retain automatic backups. The default is to retain
+     * backups for 7 days. Setting this value to 0 disables the creation of automatic
+     * backups. The maximum retention period for backups is 35 days.</p>
+     */
     inline void SetAutomaticBackupRetentionDays(int value) { m_automaticBackupRetentionDaysHasBeenSet = true; m_automaticBackupRetentionDays = value; }
 
     /**
@@ -220,6 +250,15 @@ namespace Model
      * more tags, only the specified tags are copied to backups.</p>
      */
     inline bool GetCopyTagsToBackups() const{ return m_copyTagsToBackups; }
+
+    /**
+     * <p>A boolean flag indicating whether tags on the file system should be copied to
+     * backups. This value defaults to false. If it's set to true, all tags on the file
+     * system are copied to all automatic backups and any user-initiated backups where
+     * the user doesn't specify any tags. If this value is true, and you specify one or
+     * more tags, only the specified tags are copied to backups.</p>
+     */
+    inline bool CopyTagsToBackupsHasBeenSet() const { return m_copyTagsToBackupsHasBeenSet; }
 
     /**
      * <p>A boolean flag indicating whether tags on the file system should be copied to

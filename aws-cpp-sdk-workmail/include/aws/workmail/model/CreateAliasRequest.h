@@ -52,6 +52,11 @@ namespace Model
     /**
      * <p>The organization under which the member exists.</p>
      */
+    inline bool OrganizationIdHasBeenSet() const { return m_organizationIdHasBeenSet; }
+
+    /**
+     * <p>The organization under which the member exists.</p>
+     */
     inline void SetOrganizationId(const Aws::String& value) { m_organizationIdHasBeenSet = true; m_organizationId = value; }
 
     /**
@@ -88,6 +93,11 @@ namespace Model
     /**
      * <p>The alias is added to this Amazon WorkMail entity.</p>
      */
+    inline bool EntityIdHasBeenSet() const { return m_entityIdHasBeenSet; }
+
+    /**
+     * <p>The alias is added to this Amazon WorkMail entity.</p>
+     */
     inline void SetEntityId(const Aws::String& value) { m_entityIdHasBeenSet = true; m_entityId = value; }
 
     /**
@@ -120,6 +130,11 @@ namespace Model
      * <p>The alias to add to the user.</p>
      */
     inline const Aws::String& GetAlias() const{ return m_alias; }
+
+    /**
+     * <p>The alias to add to the user.</p>
+     */
+    inline bool AliasHasBeenSet() const { return m_aliasHasBeenSet; }
 
     /**
      * <p>The alias to add to the user.</p>

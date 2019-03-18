@@ -58,6 +58,12 @@ namespace Model
      * <p>The new Amazon Resource Name (ARN) for the S3 bucket containing the
      * application code.</p>
      */
+    inline bool BucketARNUpdateHasBeenSet() const { return m_bucketARNUpdateHasBeenSet; }
+
+    /**
+     * <p>The new Amazon Resource Name (ARN) for the S3 bucket containing the
+     * application code.</p>
+     */
     inline void SetBucketARNUpdate(const Aws::String& value) { m_bucketARNUpdateHasBeenSet = true; m_bucketARNUpdate = value; }
 
     /**
@@ -99,6 +105,11 @@ namespace Model
     /**
      * <p>The new file key for the object containing the application code.</p>
      */
+    inline bool FileKeyUpdateHasBeenSet() const { return m_fileKeyUpdateHasBeenSet; }
+
+    /**
+     * <p>The new file key for the object containing the application code.</p>
+     */
     inline void SetFileKeyUpdate(const Aws::String& value) { m_fileKeyUpdateHasBeenSet = true; m_fileKeyUpdate = value; }
 
     /**
@@ -131,6 +142,11 @@ namespace Model
      * <p>The new version of the object containing the application code.</p>
      */
     inline const Aws::String& GetObjectVersionUpdate() const{ return m_objectVersionUpdate; }
+
+    /**
+     * <p>The new version of the object containing the application code.</p>
+     */
+    inline bool ObjectVersionUpdateHasBeenSet() const { return m_objectVersionUpdateHasBeenSet; }
 
     /**
      * <p>The new version of the object containing the application code.</p>

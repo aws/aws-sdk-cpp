@@ -54,6 +54,11 @@ namespace Model
     /**
      * <p>ID of the application tassociated with the replication configuration.</p>
      */
+    inline bool AppIdHasBeenSet() const { return m_appIdHasBeenSet; }
+
+    /**
+     * <p>ID of the application tassociated with the replication configuration.</p>
+     */
     inline void SetAppId(const Aws::String& value) { m_appIdHasBeenSet = true; m_appId = value; }
 
     /**
@@ -86,6 +91,11 @@ namespace Model
      * <p>Replication configurations for server groups in the application.</p>
      */
     inline const Aws::Vector<ServerGroupReplicationConfiguration>& GetServerGroupReplicationConfigurations() const{ return m_serverGroupReplicationConfigurations; }
+
+    /**
+     * <p>Replication configurations for server groups in the application.</p>
+     */
+    inline bool ServerGroupReplicationConfigurationsHasBeenSet() const { return m_serverGroupReplicationConfigurationsHasBeenSet; }
 
     /**
      * <p>Replication configurations for server groups in the application.</p>

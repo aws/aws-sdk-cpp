@@ -59,6 +59,12 @@ namespace Model
      * <p>The name of the pipeline in which you want to disable the flow of artifacts
      * from one stage to another.</p>
      */
+    inline bool PipelineNameHasBeenSet() const { return m_pipelineNameHasBeenSet; }
+
+    /**
+     * <p>The name of the pipeline in which you want to disable the flow of artifacts
+     * from one stage to another.</p>
+     */
     inline void SetPipelineName(const Aws::String& value) { m_pipelineNameHasBeenSet = true; m_pipelineName = value; }
 
     /**
@@ -97,6 +103,12 @@ namespace Model
      * transition of artifacts.</p>
      */
     inline const Aws::String& GetStageName() const{ return m_stageName; }
+
+    /**
+     * <p>The name of the stage where you want to disable the inbound or outbound
+     * transition of artifacts.</p>
+     */
+    inline bool StageNameHasBeenSet() const { return m_stageNameHasBeenSet; }
 
     /**
      * <p>The name of the stage where you want to disable the inbound or outbound
@@ -149,6 +161,14 @@ namespace Model
      * from transitioning from the stage after they have been processed by the actions
      * in that stage (outbound).</p>
      */
+    inline bool TransitionTypeHasBeenSet() const { return m_transitionTypeHasBeenSet; }
+
+    /**
+     * <p>Specifies whether artifacts will be prevented from transitioning into the
+     * stage and being processed by the actions in that stage (inbound), or prevented
+     * from transitioning from the stage after they have been processed by the actions
+     * in that stage (outbound).</p>
+     */
     inline void SetTransitionType(const StageTransitionType& value) { m_transitionTypeHasBeenSet = true; m_transitionType = value; }
 
     /**
@@ -182,6 +202,13 @@ namespace Model
      * console UI.</p>
      */
     inline const Aws::String& GetReason() const{ return m_reason; }
+
+    /**
+     * <p>The reason given to the user why a stage is disabled, such as waiting for
+     * manual approval or manual tests. This message is displayed in the pipeline
+     * console UI.</p>
+     */
+    inline bool ReasonHasBeenSet() const { return m_reasonHasBeenSet; }
 
     /**
      * <p>The reason given to the user why a stage is disabled, such as waiting for

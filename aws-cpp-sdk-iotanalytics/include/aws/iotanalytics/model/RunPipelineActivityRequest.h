@@ -60,6 +60,15 @@ namespace Model
      * 'lambda' activity is specified, only short-running Lambda functions (those with
      * a timeout of less than 30 seconds or less) can be used.</p>
      */
+    inline bool PipelineActivityHasBeenSet() const { return m_pipelineActivityHasBeenSet; }
+
+    /**
+     * <p>The pipeline activity that is run. This must not be a 'channel' activity or a
+     * 'datastore' activity because these activities are used in a pipeline only to
+     * load the original message and to store the (possibly) transformed message. If a
+     * 'lambda' activity is specified, only short-running Lambda functions (those with
+     * a timeout of less than 30 seconds or less) can be used.</p>
+     */
     inline void SetPipelineActivity(const PipelineActivity& value) { m_pipelineActivityHasBeenSet = true; m_pipelineActivity = value; }
 
     /**
@@ -94,6 +103,11 @@ namespace Model
      * <p>The sample message payloads on which the pipeline activity is run.</p>
      */
     inline const Aws::Vector<Aws::Utils::ByteBuffer>& GetPayloads() const{ return m_payloads; }
+
+    /**
+     * <p>The sample message payloads on which the pipeline activity is run.</p>
+     */
+    inline bool PayloadsHasBeenSet() const { return m_payloadsHasBeenSet; }
 
     /**
      * <p>The sample message payloads on which the pipeline activity is run.</p>

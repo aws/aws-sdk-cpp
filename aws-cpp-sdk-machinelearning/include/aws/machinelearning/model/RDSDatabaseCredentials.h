@@ -52,6 +52,9 @@ namespace Model
     inline const Aws::String& GetUsername() const{ return m_username; }
 
     
+    inline bool UsernameHasBeenSet() const { return m_usernameHasBeenSet; }
+
+    
     inline void SetUsername(const Aws::String& value) { m_usernameHasBeenSet = true; m_username = value; }
 
     
@@ -72,6 +75,9 @@ namespace Model
 
     
     inline const Aws::String& GetPassword() const{ return m_password; }
+
+    
+    inline bool PasswordHasBeenSet() const { return m_passwordHasBeenSet; }
 
     
     inline void SetPassword(const Aws::String& value) { m_passwordHasBeenSet = true; m_password = value; }

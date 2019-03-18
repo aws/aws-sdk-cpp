@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The time stamp for the data point in UTC format.</p>
      */
+    inline bool TimestampHasBeenSet() const { return m_timestampHasBeenSet; }
+
+    /**
+     * <p>The time stamp for the data point in UTC format.</p>
+     */
     inline void SetTimestamp(const Aws::Utils::DateTime& value) { m_timestampHasBeenSet = true; m_timestamp = value; }
 
     /**
@@ -78,6 +83,11 @@ namespace Model
      * <p>The value of the data point.</p>
      */
     inline double GetValue() const{ return m_value; }
+
+    /**
+     * <p>The value of the data point.</p>
+     */
+    inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
 
     /**
      * <p>The value of the data point.</p>

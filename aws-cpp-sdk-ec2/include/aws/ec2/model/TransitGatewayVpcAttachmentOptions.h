@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p>Indicates whether DNS support is enabled.</p>
      */
+    inline bool DnsSupportHasBeenSet() const { return m_dnsSupportHasBeenSet; }
+
+    /**
+     * <p>Indicates whether DNS support is enabled.</p>
+     */
     inline void SetDnsSupport(const DnsSupportValue& value) { m_dnsSupportHasBeenSet = true; m_dnsSupport = value; }
 
     /**
@@ -80,6 +85,11 @@ namespace Model
      * <p>Indicates whether IPv6 support is enabled.</p>
      */
     inline const Ipv6SupportValue& GetIpv6Support() const{ return m_ipv6Support; }
+
+    /**
+     * <p>Indicates whether IPv6 support is enabled.</p>
+     */
+    inline bool Ipv6SupportHasBeenSet() const { return m_ipv6SupportHasBeenSet; }
 
     /**
      * <p>Indicates whether IPv6 support is enabled.</p>

@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>Describes updates to the restore behavior of a restarting application.</p>
      */
+    inline bool ApplicationRestoreConfigurationHasBeenSet() const { return m_applicationRestoreConfigurationHasBeenSet; }
+
+    /**
+     * <p>Describes updates to the restore behavior of a restarting application.</p>
+     */
     inline void SetApplicationRestoreConfiguration(const ApplicationRestoreConfiguration& value) { m_applicationRestoreConfigurationHasBeenSet = true; m_applicationRestoreConfiguration = value; }
 
     /**

@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The names of the alarms.</p>
      */
+    inline bool AlarmNamesHasBeenSet() const { return m_alarmNamesHasBeenSet; }
+
+    /**
+     * <p>The names of the alarms.</p>
+     */
     inline void SetAlarmNames(const Aws::Vector<Aws::String>& value) { m_alarmNamesHasBeenSet = true; m_alarmNames = value; }
 
     /**
@@ -94,6 +99,12 @@ namespace Model
      * <code>AlarmNames</code>.</p>
      */
     inline const Aws::String& GetAlarmNamePrefix() const{ return m_alarmNamePrefix; }
+
+    /**
+     * <p>The alarm name prefix. If this parameter is specified, you cannot specify
+     * <code>AlarmNames</code>.</p>
+     */
+    inline bool AlarmNamePrefixHasBeenSet() const { return m_alarmNamePrefixHasBeenSet; }
 
     /**
      * <p>The alarm name prefix. If this parameter is specified, you cannot specify
@@ -140,6 +151,11 @@ namespace Model
     /**
      * <p>The state value to be used in matching alarms.</p>
      */
+    inline bool StateValueHasBeenSet() const { return m_stateValueHasBeenSet; }
+
+    /**
+     * <p>The state value to be used in matching alarms.</p>
+     */
     inline void SetStateValue(const StateValue& value) { m_stateValueHasBeenSet = true; m_stateValue = value; }
 
     /**
@@ -162,6 +178,11 @@ namespace Model
      * <p>The action name prefix.</p>
      */
     inline const Aws::String& GetActionPrefix() const{ return m_actionPrefix; }
+
+    /**
+     * <p>The action name prefix.</p>
+     */
+    inline bool ActionPrefixHasBeenSet() const { return m_actionPrefixHasBeenSet; }
 
     /**
      * <p>The action name prefix.</p>
@@ -202,6 +223,11 @@ namespace Model
     /**
      * <p>The maximum number of alarm descriptions to retrieve.</p>
      */
+    inline bool MaxRecordsHasBeenSet() const { return m_maxRecordsHasBeenSet; }
+
+    /**
+     * <p>The maximum number of alarm descriptions to retrieve.</p>
+     */
     inline void SetMaxRecords(int value) { m_maxRecordsHasBeenSet = true; m_maxRecords = value; }
 
     /**
@@ -215,6 +241,12 @@ namespace Model
      * available.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
+    /**
+     * <p>The token returned by a previous call to indicate that there is more data
+     * available.</p>
+     */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
      * <p>The token returned by a previous call to indicate that there is more data

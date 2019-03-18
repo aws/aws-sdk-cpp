@@ -61,6 +61,12 @@ namespace Model
      * <p>Describes an application's checkpointing configuration. Checkpointing is the
      * process of persisting application state for fault tolerance.</p>
      */
+    inline bool CheckpointConfigurationDescriptionHasBeenSet() const { return m_checkpointConfigurationDescriptionHasBeenSet; }
+
+    /**
+     * <p>Describes an application's checkpointing configuration. Checkpointing is the
+     * process of persisting application state for fault tolerance.</p>
+     */
     inline void SetCheckpointConfigurationDescription(const CheckpointConfigurationDescription& value) { m_checkpointConfigurationDescriptionHasBeenSet = true; m_checkpointConfigurationDescription = value; }
 
     /**
@@ -92,6 +98,12 @@ namespace Model
      * <p>Describes configuration parameters for Amazon CloudWatch logging for an
      * application.</p>
      */
+    inline bool MonitoringConfigurationDescriptionHasBeenSet() const { return m_monitoringConfigurationDescriptionHasBeenSet; }
+
+    /**
+     * <p>Describes configuration parameters for Amazon CloudWatch logging for an
+     * application.</p>
+     */
     inline void SetMonitoringConfigurationDescription(const MonitoringConfigurationDescription& value) { m_monitoringConfigurationDescriptionHasBeenSet = true; m_monitoringConfigurationDescription = value; }
 
     /**
@@ -118,6 +130,12 @@ namespace Model
      * simultaneously.</p>
      */
     inline const ParallelismConfigurationDescription& GetParallelismConfigurationDescription() const{ return m_parallelismConfigurationDescription; }
+
+    /**
+     * <p>Describes parameters for how an application executes multiple tasks
+     * simultaneously.</p>
+     */
+    inline bool ParallelismConfigurationDescriptionHasBeenSet() const { return m_parallelismConfigurationDescriptionHasBeenSet; }
 
     /**
      * <p>Describes parameters for how an application executes multiple tasks
@@ -155,6 +173,18 @@ namespace Model
      * <a>DescribeApplication</a> operation.</p>
      */
     inline const Aws::String& GetJobPlanDescription() const{ return m_jobPlanDescription; }
+
+    /**
+     * <p>The job plan for an application. For more information about the job plan, see
+     * <a
+     * href="https://ci.apache.org/projects/flink/flink-docs-stable/internals/job_scheduling.html">Jobs
+     * and Scheduling</a> in the <a
+     * href="https://ci.apache.org/projects/flink/flink-docs-release-1.6/">Apache Flink
+     * Documentation</a>. To retrieve the job plan for the application, use the
+     * <a>DescribeApplicationRequest$IncludeAdditionalDetails</a> parameter of the
+     * <a>DescribeApplication</a> operation.</p>
+     */
+    inline bool JobPlanDescriptionHasBeenSet() const { return m_jobPlanDescriptionHasBeenSet; }
 
     /**
      * <p>The job plan for an application. For more information about the job plan, see

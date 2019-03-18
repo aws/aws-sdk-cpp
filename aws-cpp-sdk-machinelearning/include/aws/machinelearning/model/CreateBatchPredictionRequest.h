@@ -54,6 +54,12 @@ namespace Model
      * <p>A user-supplied ID that uniquely identifies the
      * <code>BatchPrediction</code>.</p>
      */
+    inline bool BatchPredictionIdHasBeenSet() const { return m_batchPredictionIdHasBeenSet; }
+
+    /**
+     * <p>A user-supplied ID that uniquely identifies the
+     * <code>BatchPrediction</code>.</p>
+     */
     inline void SetBatchPredictionId(const Aws::String& value) { m_batchPredictionIdHasBeenSet = true; m_batchPredictionId = value; }
 
     /**
@@ -92,6 +98,12 @@ namespace Model
      * <code>BatchPredictionName</code> can only use the UTF-8 character set.</p>
      */
     inline const Aws::String& GetBatchPredictionName() const{ return m_batchPredictionName; }
+
+    /**
+     * <p>A user-supplied name or description of the <code>BatchPrediction</code>.
+     * <code>BatchPredictionName</code> can only use the UTF-8 character set.</p>
+     */
+    inline bool BatchPredictionNameHasBeenSet() const { return m_batchPredictionNameHasBeenSet; }
 
     /**
      * <p>A user-supplied name or description of the <code>BatchPrediction</code>.
@@ -140,6 +152,12 @@ namespace Model
      * <p>The ID of the <code>MLModel</code> that will generate predictions for the
      * group of observations. </p>
      */
+    inline bool MLModelIdHasBeenSet() const { return m_mLModelIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the <code>MLModel</code> that will generate predictions for the
+     * group of observations. </p>
+     */
     inline void SetMLModelId(const Aws::String& value) { m_mLModelIdHasBeenSet = true; m_mLModelId = value; }
 
     /**
@@ -178,6 +196,12 @@ namespace Model
      * observations to predict.</p>
      */
     inline const Aws::String& GetBatchPredictionDataSourceId() const{ return m_batchPredictionDataSourceId; }
+
+    /**
+     * <p>The ID of the <code>DataSource</code> that points to the group of
+     * observations to predict.</p>
+     */
+    inline bool BatchPredictionDataSourceIdHasBeenSet() const { return m_batchPredictionDataSourceIdHasBeenSet; }
 
     /**
      * <p>The ID of the <code>DataSource</code> that points to the group of
@@ -226,6 +250,17 @@ namespace Model
      * Machine Learning Developer Guide</a>.</p>
      */
     inline const Aws::String& GetOutputUri() const{ return m_outputUri; }
+
+    /**
+     * <p>The location of an Amazon Simple Storage Service (Amazon S3) bucket or
+     * directory to store the batch prediction results. The following substrings are
+     * not allowed in the <code>s3 key</code> portion of the <code>outputURI</code>
+     * field: ':', '//', '/./', '/../'.</p> <p>Amazon ML needs permissions to store and
+     * retrieve the logs on your behalf. For information about how to set permissions,
+     * see the <a href="http://docs.aws.amazon.com/machine-learning/latest/dg">Amazon
+     * Machine Learning Developer Guide</a>.</p>
+     */
+    inline bool OutputUriHasBeenSet() const { return m_outputUriHasBeenSet; }
 
     /**
      * <p>The location of an Amazon Simple Storage Service (Amazon S3) bucket or

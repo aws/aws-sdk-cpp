@@ -71,6 +71,11 @@ namespace Model
     /**
      * <p>The application name.</p>
      */
+    inline bool ApplicationNameHasBeenSet() const { return m_applicationNameHasBeenSet; }
+
+    /**
+     * <p>The application name.</p>
+     */
     inline void SetApplicationName(const Aws::String& value) { m_applicationNameHasBeenSet = true; m_applicationName = value; }
 
     /**
@@ -103,6 +108,11 @@ namespace Model
      * <p>The deployment group ID.</p>
      */
     inline const Aws::String& GetDeploymentGroupId() const{ return m_deploymentGroupId; }
+
+    /**
+     * <p>The deployment group ID.</p>
+     */
+    inline bool DeploymentGroupIdHasBeenSet() const { return m_deploymentGroupIdHasBeenSet; }
 
     /**
      * <p>The deployment group ID.</p>
@@ -143,6 +153,11 @@ namespace Model
     /**
      * <p>The deployment group name.</p>
      */
+    inline bool DeploymentGroupNameHasBeenSet() const { return m_deploymentGroupNameHasBeenSet; }
+
+    /**
+     * <p>The deployment group name.</p>
+     */
     inline void SetDeploymentGroupName(const Aws::String& value) { m_deploymentGroupNameHasBeenSet = true; m_deploymentGroupName = value; }
 
     /**
@@ -175,6 +190,11 @@ namespace Model
      * <p>The deployment configuration name.</p>
      */
     inline const Aws::String& GetDeploymentConfigName() const{ return m_deploymentConfigName; }
+
+    /**
+     * <p>The deployment configuration name.</p>
+     */
+    inline bool DeploymentConfigNameHasBeenSet() const { return m_deploymentConfigNameHasBeenSet; }
 
     /**
      * <p>The deployment configuration name.</p>
@@ -212,6 +232,12 @@ namespace Model
      * instances with any of the specified tags.</p>
      */
     inline const Aws::Vector<EC2TagFilter>& GetEc2TagFilters() const{ return m_ec2TagFilters; }
+
+    /**
+     * <p>The Amazon EC2 tags on which to filter. The deployment group includes EC2
+     * instances with any of the specified tags.</p>
+     */
+    inline bool Ec2TagFiltersHasBeenSet() const { return m_ec2TagFiltersHasBeenSet; }
 
     /**
      * <p>The Amazon EC2 tags on which to filter. The deployment group includes EC2
@@ -260,6 +286,12 @@ namespace Model
      * <p>The on-premises instance tags on which to filter. The deployment group
      * includes on-premises instances with any of the specified tags.</p>
      */
+    inline bool OnPremisesInstanceTagFiltersHasBeenSet() const { return m_onPremisesInstanceTagFiltersHasBeenSet; }
+
+    /**
+     * <p>The on-premises instance tags on which to filter. The deployment group
+     * includes on-premises instances with any of the specified tags.</p>
+     */
     inline void SetOnPremisesInstanceTagFilters(const Aws::Vector<TagFilter>& value) { m_onPremisesInstanceTagFiltersHasBeenSet = true; m_onPremisesInstanceTagFilters = value; }
 
     /**
@@ -301,6 +333,11 @@ namespace Model
     /**
      * <p>A list of associated Auto Scaling groups.</p>
      */
+    inline bool AutoScalingGroupsHasBeenSet() const { return m_autoScalingGroupsHasBeenSet; }
+
+    /**
+     * <p>A list of associated Auto Scaling groups.</p>
+     */
     inline void SetAutoScalingGroups(const Aws::Vector<AutoScalingGroup>& value) { m_autoScalingGroupsHasBeenSet = true; m_autoScalingGroups = value; }
 
     /**
@@ -333,6 +370,11 @@ namespace Model
      * <p>A service role ARN.</p>
      */
     inline const Aws::String& GetServiceRoleArn() const{ return m_serviceRoleArn; }
+
+    /**
+     * <p>A service role ARN.</p>
+     */
+    inline bool ServiceRoleArnHasBeenSet() const { return m_serviceRoleArnHasBeenSet; }
 
     /**
      * <p>A service role ARN.</p>
@@ -375,6 +417,12 @@ namespace Model
      * <p>Information about the deployment group's target revision, including type and
      * location.</p>
      */
+    inline bool TargetRevisionHasBeenSet() const { return m_targetRevisionHasBeenSet; }
+
+    /**
+     * <p>Information about the deployment group's target revision, including type and
+     * location.</p>
+     */
     inline void SetTargetRevision(const RevisionLocation& value) { m_targetRevisionHasBeenSet = true; m_targetRevision = value; }
 
     /**
@@ -400,6 +448,11 @@ namespace Model
      * <p>Information about triggers associated with the deployment group.</p>
      */
     inline const Aws::Vector<TriggerConfig>& GetTriggerConfigurations() const{ return m_triggerConfigurations; }
+
+    /**
+     * <p>Information about triggers associated with the deployment group.</p>
+     */
+    inline bool TriggerConfigurationsHasBeenSet() const { return m_triggerConfigurationsHasBeenSet; }
 
     /**
      * <p>Information about triggers associated with the deployment group.</p>
@@ -440,6 +493,11 @@ namespace Model
     /**
      * <p>A list of alarms associated with the deployment group.</p>
      */
+    inline bool AlarmConfigurationHasBeenSet() const { return m_alarmConfigurationHasBeenSet; }
+
+    /**
+     * <p>A list of alarms associated with the deployment group.</p>
+     */
     inline void SetAlarmConfiguration(const AlarmConfiguration& value) { m_alarmConfigurationHasBeenSet = true; m_alarmConfiguration = value; }
 
     /**
@@ -463,6 +521,12 @@ namespace Model
      * deployment group.</p>
      */
     inline const AutoRollbackConfiguration& GetAutoRollbackConfiguration() const{ return m_autoRollbackConfiguration; }
+
+    /**
+     * <p>Information about the automatic rollback configuration associated with the
+     * deployment group.</p>
+     */
+    inline bool AutoRollbackConfigurationHasBeenSet() const { return m_autoRollbackConfigurationHasBeenSet; }
 
     /**
      * <p>Information about the automatic rollback configuration associated with the
@@ -499,6 +563,12 @@ namespace Model
      * <p>Information about the type of deployment, either in-place or blue/green, you
      * want to run and whether to route deployment traffic behind a load balancer.</p>
      */
+    inline bool DeploymentStyleHasBeenSet() const { return m_deploymentStyleHasBeenSet; }
+
+    /**
+     * <p>Information about the type of deployment, either in-place or blue/green, you
+     * want to run and whether to route deployment traffic behind a load balancer.</p>
+     */
     inline void SetDeploymentStyle(const DeploymentStyle& value) { m_deploymentStyleHasBeenSet = true; m_deploymentStyle = value; }
 
     /**
@@ -524,6 +594,11 @@ namespace Model
      * <p>Information about blue/green deployment options for a deployment group.</p>
      */
     inline const BlueGreenDeploymentConfiguration& GetBlueGreenDeploymentConfiguration() const{ return m_blueGreenDeploymentConfiguration; }
+
+    /**
+     * <p>Information about blue/green deployment options for a deployment group.</p>
+     */
+    inline bool BlueGreenDeploymentConfigurationHasBeenSet() const { return m_blueGreenDeploymentConfigurationHasBeenSet; }
 
     /**
      * <p>Information about blue/green deployment options for a deployment group.</p>
@@ -554,6 +629,11 @@ namespace Model
     /**
      * <p>Information about the load balancer to use in a deployment.</p>
      */
+    inline bool LoadBalancerInfoHasBeenSet() const { return m_loadBalancerInfoHasBeenSet; }
+
+    /**
+     * <p>Information about the load balancer to use in a deployment.</p>
+     */
     inline void SetLoadBalancerInfo(const LoadBalancerInfo& value) { m_loadBalancerInfoHasBeenSet = true; m_loadBalancerInfo = value; }
 
     /**
@@ -577,6 +657,12 @@ namespace Model
      * group.</p>
      */
     inline const LastDeploymentInfo& GetLastSuccessfulDeployment() const{ return m_lastSuccessfulDeployment; }
+
+    /**
+     * <p>Information about the most recent successful deployment to the deployment
+     * group.</p>
+     */
+    inline bool LastSuccessfulDeploymentHasBeenSet() const { return m_lastSuccessfulDeploymentHasBeenSet; }
 
     /**
      * <p>Information about the most recent successful deployment to the deployment
@@ -613,6 +699,12 @@ namespace Model
      * <p>Information about the most recent attempted deployment to the deployment
      * group.</p>
      */
+    inline bool LastAttemptedDeploymentHasBeenSet() const { return m_lastAttemptedDeploymentHasBeenSet; }
+
+    /**
+     * <p>Information about the most recent attempted deployment to the deployment
+     * group.</p>
+     */
     inline void SetLastAttemptedDeployment(const LastDeploymentInfo& value) { m_lastAttemptedDeploymentHasBeenSet = true; m_lastAttemptedDeployment = value; }
 
     /**
@@ -640,6 +732,13 @@ namespace Model
      * used in the same call as ec2TagFilters.</p>
      */
     inline const EC2TagSet& GetEc2TagSet() const{ return m_ec2TagSet; }
+
+    /**
+     * <p>Information about groups of tags applied to an EC2 instance. The deployment
+     * group includes only EC2 instances identified by all of the tag groups. Cannot be
+     * used in the same call as ec2TagFilters.</p>
+     */
+    inline bool Ec2TagSetHasBeenSet() const { return m_ec2TagSetHasBeenSet; }
 
     /**
      * <p>Information about groups of tags applied to an EC2 instance. The deployment
@@ -682,6 +781,13 @@ namespace Model
      * deployment group includes only on-premises instances identified by all the tag
      * groups. Cannot be used in the same call as onPremisesInstanceTagFilters.</p>
      */
+    inline bool OnPremisesTagSetHasBeenSet() const { return m_onPremisesTagSetHasBeenSet; }
+
+    /**
+     * <p>Information about groups of tags applied to an on-premises instance. The
+     * deployment group includes only on-premises instances identified by all the tag
+     * groups. Cannot be used in the same call as onPremisesInstanceTagFilters.</p>
+     */
     inline void SetOnPremisesTagSet(const OnPremisesTagSet& value) { m_onPremisesTagSetHasBeenSet = true; m_onPremisesTagSet = value; }
 
     /**
@@ -716,6 +822,12 @@ namespace Model
      * <p>The destination platform type for the deployment group (<code>Lambda</code>
      * or <code>Server</code>).</p>
      */
+    inline bool ComputePlatformHasBeenSet() const { return m_computePlatformHasBeenSet; }
+
+    /**
+     * <p>The destination platform type for the deployment group (<code>Lambda</code>
+     * or <code>Server</code>).</p>
+     */
     inline void SetComputePlatform(const ComputePlatform& value) { m_computePlatformHasBeenSet = true; m_computePlatform = value; }
 
     /**
@@ -744,6 +856,14 @@ namespace Model
      * format <code>&lt;clustername&gt;:&lt;servicename&gt;</code>. </p>
      */
     inline const Aws::Vector<ECSService>& GetEcsServices() const{ return m_ecsServices; }
+
+    /**
+     * <p> The target Amazon ECS services in the deployment group. This applies only to
+     * deployment groups that use the Amazon ECS compute platform. A target Amazon ECS
+     * service is specified as an Amazon ECS cluster and service name pair using the
+     * format <code>&lt;clustername&gt;:&lt;servicename&gt;</code>. </p>
+     */
+    inline bool EcsServicesHasBeenSet() const { return m_ecsServicesHasBeenSet; }
 
     /**
      * <p> The target Amazon ECS services in the deployment group. This applies only to

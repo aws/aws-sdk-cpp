@@ -61,6 +61,13 @@ namespace Model
      * ID.</p> <p>Constraints: Up to 255 characters in length. Allowed characters are
      * a-z, A-Z, 0-9, spaces, and ._-:/()#,@[]+=;{}!$*</p>
      */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
+
+    /**
+     * <p>A description for the security group rule that references this prefix list
+     * ID.</p> <p>Constraints: Up to 255 characters in length. Allowed characters are
+     * a-z, A-Z, 0-9, spaces, and ._-:/()#,@[]+=;{}!$*</p>
+     */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
@@ -103,6 +110,11 @@ namespace Model
      * <p>The ID of the prefix.</p>
      */
     inline const Aws::String& GetPrefixListId() const{ return m_prefixListId; }
+
+    /**
+     * <p>The ID of the prefix.</p>
+     */
+    inline bool PrefixListIdHasBeenSet() const { return m_prefixListIdHasBeenSet; }
 
     /**
      * <p>The ID of the prefix.</p>

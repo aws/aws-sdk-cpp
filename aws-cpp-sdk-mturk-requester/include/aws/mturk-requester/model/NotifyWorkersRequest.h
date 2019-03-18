@@ -55,6 +55,12 @@ namespace Model
      * <p>The subject line of the email message to send. Can include up to 200
      * characters.</p>
      */
+    inline bool SubjectHasBeenSet() const { return m_subjectHasBeenSet; }
+
+    /**
+     * <p>The subject line of the email message to send. Can include up to 200
+     * characters.</p>
+     */
     inline void SetSubject(const Aws::String& value) { m_subjectHasBeenSet = true; m_subject = value; }
 
     /**
@@ -96,6 +102,11 @@ namespace Model
     /**
      * <p>The text of the email message to send. Can include up to 4,096 characters</p>
      */
+    inline bool MessageTextHasBeenSet() const { return m_messageTextHasBeenSet; }
+
+    /**
+     * <p>The text of the email message to send. Can include up to 4,096 characters</p>
+     */
     inline void SetMessageText(const Aws::String& value) { m_messageTextHasBeenSet = true; m_messageText = value; }
 
     /**
@@ -129,6 +140,12 @@ namespace Model
      * time.</p>
      */
     inline const Aws::Vector<Aws::String>& GetWorkerIds() const{ return m_workerIds; }
+
+    /**
+     * <p>A list of Worker IDs you wish to notify. You can notify upto 100 Workers at a
+     * time.</p>
+     */
+    inline bool WorkerIdsHasBeenSet() const { return m_workerIdsHasBeenSet; }
 
     /**
      * <p>A list of Worker IDs you wish to notify. You can notify upto 100 Workers at a

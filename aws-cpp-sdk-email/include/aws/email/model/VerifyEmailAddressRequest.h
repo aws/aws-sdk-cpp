@@ -60,6 +60,11 @@ namespace Model
     /**
      * <p>The email address to be verified.</p>
      */
+    inline bool EmailAddressHasBeenSet() const { return m_emailAddressHasBeenSet; }
+
+    /**
+     * <p>The email address to be verified.</p>
+     */
     inline void SetEmailAddress(const Aws::String& value) { m_emailAddressHasBeenSet = true; m_emailAddress = value; }
 
     /**

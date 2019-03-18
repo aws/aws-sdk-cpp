@@ -55,6 +55,11 @@ namespace Model
     /**
      * <p>A unique identifier for the cluster.</p>
      */
+    inline bool ClusterIdentifierHasBeenSet() const { return m_clusterIdentifierHasBeenSet; }
+
+    /**
+     * <p>A unique identifier for the cluster.</p>
+     */
     inline void SetClusterIdentifier(const Aws::String& value) { m_clusterIdentifierHasBeenSet = true; m_clusterIdentifier = value; }
 
     /**
@@ -91,6 +96,11 @@ namespace Model
     /**
      * <p>A boolean indicating whether to enable the deferred maintenance window. </p>
      */
+    inline bool DeferMaintenanceHasBeenSet() const { return m_deferMaintenanceHasBeenSet; }
+
+    /**
+     * <p>A boolean indicating whether to enable the deferred maintenance window. </p>
+     */
     inline void SetDeferMaintenance(bool value) { m_deferMaintenanceHasBeenSet = true; m_deferMaintenance = value; }
 
     /**
@@ -103,6 +113,11 @@ namespace Model
      * <p>A unique identifier for the deferred maintenance window.</p>
      */
     inline const Aws::String& GetDeferMaintenanceIdentifier() const{ return m_deferMaintenanceIdentifier; }
+
+    /**
+     * <p>A unique identifier for the deferred maintenance window.</p>
+     */
+    inline bool DeferMaintenanceIdentifierHasBeenSet() const { return m_deferMaintenanceIdentifierHasBeenSet; }
 
     /**
      * <p>A unique identifier for the deferred maintenance window.</p>
@@ -145,6 +160,12 @@ namespace Model
      * <p>A timestamp indicating the start time for the deferred maintenance
      * window.</p>
      */
+    inline bool DeferMaintenanceStartTimeHasBeenSet() const { return m_deferMaintenanceStartTimeHasBeenSet; }
+
+    /**
+     * <p>A timestamp indicating the start time for the deferred maintenance
+     * window.</p>
+     */
     inline void SetDeferMaintenanceStartTime(const Aws::Utils::DateTime& value) { m_deferMaintenanceStartTimeHasBeenSet = true; m_deferMaintenanceStartTime = value; }
 
     /**
@@ -171,6 +192,12 @@ namespace Model
      * specify an end time, you can't specify a duration.</p>
      */
     inline const Aws::Utils::DateTime& GetDeferMaintenanceEndTime() const{ return m_deferMaintenanceEndTime; }
+
+    /**
+     * <p>A timestamp indicating end time for the deferred maintenance window. If you
+     * specify an end time, you can't specify a duration.</p>
+     */
+    inline bool DeferMaintenanceEndTimeHasBeenSet() const { return m_deferMaintenanceEndTimeHasBeenSet; }
 
     /**
      * <p>A timestamp indicating end time for the deferred maintenance window. If you
@@ -203,6 +230,13 @@ namespace Model
      * or less.</p>
      */
     inline int GetDeferMaintenanceDuration() const{ return m_deferMaintenanceDuration; }
+
+    /**
+     * <p>An integer indicating the duration of the maintenance window in days. If you
+     * specify a duration, you can't specify an end time. The duration must be 14 days
+     * or less.</p>
+     */
+    inline bool DeferMaintenanceDurationHasBeenSet() const { return m_deferMaintenanceDurationHasBeenSet; }
 
     /**
      * <p>An integer indicating the duration of the maintenance window in days. If you

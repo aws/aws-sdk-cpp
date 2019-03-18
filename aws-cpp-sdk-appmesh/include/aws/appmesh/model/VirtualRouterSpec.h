@@ -59,6 +59,12 @@ namespace Model
      * <p>The listeners that the virtual router is expected to receive inbound traffic
      * from. Currently only one listener is supported per virtual router.</p>
      */
+    inline bool ListenersHasBeenSet() const { return m_listenersHasBeenSet; }
+
+    /**
+     * <p>The listeners that the virtual router is expected to receive inbound traffic
+     * from. Currently only one listener is supported per virtual router.</p>
+     */
     inline void SetListeners(const Aws::Vector<VirtualRouterListener>& value) { m_listenersHasBeenSet = true; m_listeners = value; }
 
     /**

@@ -52,6 +52,11 @@ namespace Model
     /**
      * <p>The identifier for the organization under which the user exists.</p>
      */
+    inline bool OrganizationIdHasBeenSet() const { return m_organizationIdHasBeenSet; }
+
+    /**
+     * <p>The identifier for the organization under which the user exists.</p>
+     */
     inline void SetOrganizationId(const Aws::String& value) { m_organizationIdHasBeenSet = true; m_organizationId = value; }
 
     /**
@@ -84,6 +89,11 @@ namespace Model
      * <p>The identifier for the user to be described.</p>
      */
     inline const Aws::String& GetUserId() const{ return m_userId; }
+
+    /**
+     * <p>The identifier for the user to be described.</p>
+     */
+    inline bool UserIdHasBeenSet() const { return m_userIdHasBeenSet; }
 
     /**
      * <p>The identifier for the user to be described.</p>

@@ -65,6 +65,16 @@ namespace Model
      * number of backups allowed. By default, you can have a maximum of 50 manual
      * backups saved. </p> </li> </ul>
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p> The attribute name. The following are supported attribute names. </p> <ul>
+     * <li> <p> <i>ServerLimit:</i> The number of current servers/maximum number of
+     * servers allowed. By default, you can have a maximum of 10 servers. </p> </li>
+     * <li> <p> <i>ManualBackupLimit:</i> The number of current manual backups/maximum
+     * number of backups allowed. By default, you can have a maximum of 50 manual
+     * backups saved. </p> </li> </ul>
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
@@ -126,6 +136,11 @@ namespace Model
     /**
      * <p> The maximum allowed value. </p>
      */
+    inline bool MaximumHasBeenSet() const { return m_maximumHasBeenSet; }
+
+    /**
+     * <p> The maximum allowed value. </p>
+     */
     inline void SetMaximum(int value) { m_maximumHasBeenSet = true; m_maximum = value; }
 
     /**
@@ -139,6 +154,12 @@ namespace Model
      * with the account. </p>
      */
     inline int GetUsed() const{ return m_used; }
+
+    /**
+     * <p> The current usage, such as the current number of servers that are associated
+     * with the account. </p>
+     */
+    inline bool UsedHasBeenSet() const { return m_usedHasBeenSet; }
 
     /**
      * <p> The current usage, such as the current number of servers that are associated

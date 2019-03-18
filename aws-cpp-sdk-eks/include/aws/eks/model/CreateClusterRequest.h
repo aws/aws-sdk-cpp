@@ -52,6 +52,11 @@ namespace Model
     /**
      * <p>The unique name to give to your cluster.</p>
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>The unique name to give to your cluster.</p>
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
@@ -85,6 +90,12 @@ namespace Model
      * value here, the latest version available in Amazon EKS is used.</p>
      */
     inline const Aws::String& GetVersion() const{ return m_version; }
+
+    /**
+     * <p>The desired Kubernetes version for your cluster. If you do not specify a
+     * value here, the latest version available in Amazon EKS is used.</p>
+     */
+    inline bool VersionHasBeenSet() const { return m_versionHasBeenSet; }
 
     /**
      * <p>The desired Kubernetes version for your cluster. If you do not specify a
@@ -131,6 +142,15 @@ namespace Model
      * EKS Service IAM Role</a> in the <i> <i>Amazon EKS User Guide</i> </i>.</p>
      */
     inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the IAM role that provides permissions for
+     * Amazon EKS to make calls to other AWS API operations on your behalf. For more
+     * information, see <a
+     * href="http://docs.aws.amazon.com/eks/latest/userguide/service_IAM_role.html">Amazon
+     * EKS Service IAM Role</a> in the <i> <i>Amazon EKS User Guide</i> </i>.</p>
+     */
+    inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the IAM role that provides permissions for
@@ -213,6 +233,20 @@ namespace Model
      * recommend that you use a dedicated security group for your cluster control
      * plane.</p>
      */
+    inline bool ResourcesVpcConfigHasBeenSet() const { return m_resourcesVpcConfigHasBeenSet; }
+
+    /**
+     * <p>The VPC subnets and security groups used by the cluster control plane. Amazon
+     * EKS VPC resources have specific requirements to work properly with Kubernetes.
+     * For more information, see <a
+     * href="http://docs.aws.amazon.com/eks/latest/userguide/network_reqs.html">Cluster
+     * VPC Considerations</a> and <a
+     * href="http://docs.aws.amazon.com/eks/latest/userguide/sec-group-reqs.html">Cluster
+     * Security Group Considerations</a> in the <i>Amazon EKS User Guide</i>. You must
+     * specify at least two subnets. You may specify up to five security groups, but we
+     * recommend that you use a dedicated security group for your cluster control
+     * plane.</p>
+     */
     inline void SetResourcesVpcConfig(const VpcConfigRequest& value) { m_resourcesVpcConfigHasBeenSet = true; m_resourcesVpcConfig = value; }
 
     /**
@@ -263,6 +297,12 @@ namespace Model
      * of the request.</p>
      */
     inline const Aws::String& GetClientRequestToken() const{ return m_clientRequestToken; }
+
+    /**
+     * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
+     * of the request.</p>
+     */
+    inline bool ClientRequestTokenHasBeenSet() const { return m_clientRequestTokenHasBeenSet; }
 
     /**
      * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency

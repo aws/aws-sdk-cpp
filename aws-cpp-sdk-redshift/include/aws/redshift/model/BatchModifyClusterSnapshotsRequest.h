@@ -55,6 +55,11 @@ namespace Model
     /**
      * <p>A list of snapshot identifiers you want to modify.</p>
      */
+    inline bool SnapshotIdentifierListHasBeenSet() const { return m_snapshotIdentifierListHasBeenSet; }
+
+    /**
+     * <p>A list of snapshot identifiers you want to modify.</p>
+     */
     inline void SetSnapshotIdentifierList(const Aws::Vector<Aws::String>& value) { m_snapshotIdentifierListHasBeenSet = true; m_snapshotIdentifierList = value; }
 
     /**
@@ -108,6 +113,17 @@ namespace Model
      * you want to suppress the errors and delete the snapshots, use the force option.
      * </p>
      */
+    inline bool ManualSnapshotRetentionPeriodHasBeenSet() const { return m_manualSnapshotRetentionPeriodHasBeenSet; }
+
+    /**
+     * <p>The number of days that a manual snapshot is retained. If you specify the
+     * value -1, the manual snapshot is retained indefinitely.</p> <p>The number must
+     * be either -1 or an integer between 1 and 3,653.</p> <p>If you decrease the
+     * manual snapshot retention period from its current value, existing manual
+     * snapshots that fall outside of the new retention period will return an error. If
+     * you want to suppress the errors and delete the snapshots, use the force option.
+     * </p>
+     */
     inline void SetManualSnapshotRetentionPeriod(int value) { m_manualSnapshotRetentionPeriodHasBeenSet = true; m_manualSnapshotRetentionPeriod = value; }
 
     /**
@@ -127,6 +143,12 @@ namespace Model
      * period has passed. </p>
      */
     inline bool GetForce() const{ return m_force; }
+
+    /**
+     * <p>A boolean value indicating whether to override an exception if the retention
+     * period has passed. </p>
+     */
+    inline bool ForceHasBeenSet() const { return m_forceHasBeenSet; }
 
     /**
      * <p>A boolean value indicating whether to override an exception if the retention

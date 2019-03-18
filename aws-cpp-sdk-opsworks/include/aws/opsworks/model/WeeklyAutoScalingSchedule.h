@@ -67,6 +67,11 @@ namespace Model
     /**
      * <p>The schedule for Monday.</p>
      */
+    inline bool MondayHasBeenSet() const { return m_mondayHasBeenSet; }
+
+    /**
+     * <p>The schedule for Monday.</p>
+     */
     inline void SetMonday(const Aws::Map<Aws::String, Aws::String>& value) { m_mondayHasBeenSet = true; m_monday = value; }
 
     /**
@@ -124,6 +129,11 @@ namespace Model
      * <p>The schedule for Tuesday.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetTuesday() const{ return m_tuesday; }
+
+    /**
+     * <p>The schedule for Tuesday.</p>
+     */
+    inline bool TuesdayHasBeenSet() const { return m_tuesdayHasBeenSet; }
 
     /**
      * <p>The schedule for Tuesday.</p>
@@ -189,6 +199,11 @@ namespace Model
     /**
      * <p>The schedule for Wednesday.</p>
      */
+    inline bool WednesdayHasBeenSet() const { return m_wednesdayHasBeenSet; }
+
+    /**
+     * <p>The schedule for Wednesday.</p>
+     */
     inline void SetWednesday(const Aws::Map<Aws::String, Aws::String>& value) { m_wednesdayHasBeenSet = true; m_wednesday = value; }
 
     /**
@@ -246,6 +261,11 @@ namespace Model
      * <p>The schedule for Thursday.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetThursday() const{ return m_thursday; }
+
+    /**
+     * <p>The schedule for Thursday.</p>
+     */
+    inline bool ThursdayHasBeenSet() const { return m_thursdayHasBeenSet; }
 
     /**
      * <p>The schedule for Thursday.</p>
@@ -311,6 +331,11 @@ namespace Model
     /**
      * <p>The schedule for Friday.</p>
      */
+    inline bool FridayHasBeenSet() const { return m_fridayHasBeenSet; }
+
+    /**
+     * <p>The schedule for Friday.</p>
+     */
     inline void SetFriday(const Aws::Map<Aws::String, Aws::String>& value) { m_fridayHasBeenSet = true; m_friday = value; }
 
     /**
@@ -372,6 +397,11 @@ namespace Model
     /**
      * <p>The schedule for Saturday.</p>
      */
+    inline bool SaturdayHasBeenSet() const { return m_saturdayHasBeenSet; }
+
+    /**
+     * <p>The schedule for Saturday.</p>
+     */
     inline void SetSaturday(const Aws::Map<Aws::String, Aws::String>& value) { m_saturdayHasBeenSet = true; m_saturday = value; }
 
     /**
@@ -429,6 +459,11 @@ namespace Model
      * <p>The schedule for Sunday.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetSunday() const{ return m_sunday; }
+
+    /**
+     * <p>The schedule for Sunday.</p>
+     */
+    inline bool SundayHasBeenSet() const { return m_sundayHasBeenSet; }
 
     /**
      * <p>The schedule for Sunday.</p>

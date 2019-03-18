@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The key of the map filter.</p>
      */
+    inline bool KeyHasBeenSet() const { return m_keyHasBeenSet; }
+
+    /**
+     * <p>The key of the map filter.</p>
+     */
     inline void SetKey(const Aws::String& value) { m_keyHasBeenSet = true; m_key = value; }
 
     /**
@@ -88,6 +93,11 @@ namespace Model
      * <p>The value for the key in the map filter.</p>
      */
     inline const Aws::String& GetValue() const{ return m_value; }
+
+    /**
+     * <p>The value for the key in the map filter.</p>
+     */
+    inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
 
     /**
      * <p>The value for the key in the map filter.</p>
@@ -125,6 +135,12 @@ namespace Model
      * findings with a map filter.</p>
      */
     inline const MapFilterComparison& GetComparison() const{ return m_comparison; }
+
+    /**
+     * <p>Represents the condition to be applied to a key value when querying for
+     * findings with a map filter.</p>
+     */
+    inline bool ComparisonHasBeenSet() const { return m_comparisonHasBeenSet; }
 
     /**
      * <p>Represents the condition to be applied to a key value when querying for

@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>Unique ID of the resource.</p>
      */
+    inline bool ResourceIdHasBeenSet() const { return m_resourceIdHasBeenSet; }
+
+    /**
+     * <p>Unique ID of the resource.</p>
+     */
     inline void SetResourceId(const Aws::String& value) { m_resourceIdHasBeenSet = true; m_resourceId = value; }
 
     /**
@@ -92,6 +97,11 @@ namespace Model
     /**
      * <p>The type of resource.</p>
      */
+    inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
+
+    /**
+     * <p>The type of resource.</p>
+     */
     inline void SetResourceType(const ResourceType& value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
 
     /**
@@ -114,6 +124,11 @@ namespace Model
      * <p>The ARN of the resource.</p>
      */
     inline const Aws::String& GetResourceArn() const{ return m_resourceArn; }
+
+    /**
+     * <p>The ARN of the resource.</p>
+     */
+    inline bool ResourceArnHasBeenSet() const { return m_resourceArnHasBeenSet; }
 
     /**
      * <p>The ARN of the resource.</p>
@@ -154,6 +169,11 @@ namespace Model
     /**
      * <p>The platform of the resource.</p>
      */
+    inline bool PlatformHasBeenSet() const { return m_platformHasBeenSet; }
+
+    /**
+     * <p>The platform of the resource.</p>
+     */
     inline void SetPlatform(const Aws::String& value) { m_platformHasBeenSet = true; m_platform = value; }
 
     /**
@@ -190,6 +210,11 @@ namespace Model
     /**
      * <p>Platform version of the resource in the inventory.</p>
      */
+    inline bool PlatformVersionHasBeenSet() const { return m_platformVersionHasBeenSet; }
+
+    /**
+     * <p>Platform version of the resource in the inventory.</p>
+     */
     inline void SetPlatformVersion(const Aws::String& value) { m_platformVersionHasBeenSet = true; m_platformVersion = value; }
 
     /**
@@ -222,6 +247,11 @@ namespace Model
      * <p>Unique ID of the account that owns the resource.</p>
      */
     inline const Aws::String& GetResourceOwningAccountId() const{ return m_resourceOwningAccountId; }
+
+    /**
+     * <p>Unique ID of the account that owns the resource.</p>
+     */
+    inline bool ResourceOwningAccountIdHasBeenSet() const { return m_resourceOwningAccountIdHasBeenSet; }
 
     /**
      * <p>Unique ID of the account that owns the resource.</p>

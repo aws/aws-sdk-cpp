@@ -62,6 +62,11 @@ namespace Model
     /**
      * <p>The name of the data set.</p>
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>The name of the data set.</p>
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
@@ -94,6 +99,11 @@ namespace Model
      * <p>The ARN of the data set.</p>
      */
     inline const Aws::String& GetArn() const{ return m_arn; }
+
+    /**
+     * <p>The ARN of the data set.</p>
+     */
+    inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
 
     /**
      * <p>The ARN of the data set.</p>
@@ -131,6 +141,12 @@ namespace Model
      * contents.</p>
      */
     inline const Aws::Vector<DatasetAction>& GetActions() const{ return m_actions; }
+
+    /**
+     * <p>The "DatasetAction" objects that automatically create the data set
+     * contents.</p>
+     */
+    inline bool ActionsHasBeenSet() const { return m_actionsHasBeenSet; }
 
     /**
      * <p>The "DatasetAction" objects that automatically create the data set
@@ -179,6 +195,12 @@ namespace Model
      * <p>The "DatasetTrigger" objects that specify when the data set is automatically
      * updated.</p>
      */
+    inline bool TriggersHasBeenSet() const { return m_triggersHasBeenSet; }
+
+    /**
+     * <p>The "DatasetTrigger" objects that specify when the data set is automatically
+     * updated.</p>
+     */
     inline void SetTriggers(const Aws::Vector<DatasetTrigger>& value) { m_triggersHasBeenSet = true; m_triggers = value; }
 
     /**
@@ -217,6 +239,12 @@ namespace Model
      * specified here.</p>
      */
     inline const Aws::Vector<DatasetContentDeliveryRule>& GetContentDeliveryRules() const{ return m_contentDeliveryRules; }
+
+    /**
+     * <p>When data set contents are created they are delivered to destinations
+     * specified here.</p>
+     */
+    inline bool ContentDeliveryRulesHasBeenSet() const { return m_contentDeliveryRulesHasBeenSet; }
 
     /**
      * <p>When data set contents are created they are delivered to destinations
@@ -263,6 +291,11 @@ namespace Model
     /**
      * <p>The status of the data set.</p>
      */
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
+
+    /**
+     * <p>The status of the data set.</p>
+     */
     inline void SetStatus(const DatasetStatus& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
@@ -285,6 +318,11 @@ namespace Model
      * <p>When the data set was created.</p>
      */
     inline const Aws::Utils::DateTime& GetCreationTime() const{ return m_creationTime; }
+
+    /**
+     * <p>When the data set was created.</p>
+     */
+    inline bool CreationTimeHasBeenSet() const { return m_creationTimeHasBeenSet; }
 
     /**
      * <p>When the data set was created.</p>
@@ -315,6 +353,11 @@ namespace Model
     /**
      * <p>The last time the data set was updated.</p>
      */
+    inline bool LastUpdateTimeHasBeenSet() const { return m_lastUpdateTimeHasBeenSet; }
+
+    /**
+     * <p>The last time the data set was updated.</p>
+     */
     inline void SetLastUpdateTime(const Aws::Utils::DateTime& value) { m_lastUpdateTimeHasBeenSet = true; m_lastUpdateTime = value; }
 
     /**
@@ -337,6 +380,11 @@ namespace Model
      * <p>[Optional] How long, in days, message data is kept for the data set.</p>
      */
     inline const RetentionPeriod& GetRetentionPeriod() const{ return m_retentionPeriod; }
+
+    /**
+     * <p>[Optional] How long, in days, message data is kept for the data set.</p>
+     */
+    inline bool RetentionPeriodHasBeenSet() const { return m_retentionPeriodHasBeenSet; }
 
     /**
      * <p>[Optional] How long, in days, message data is kept for the data set.</p>

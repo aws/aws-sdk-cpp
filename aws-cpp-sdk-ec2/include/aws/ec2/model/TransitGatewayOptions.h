@@ -66,6 +66,13 @@ namespace Model
      * session. The range is 64512 to 65534 for 16-bit ASNs and 4200000000 to
      * 4294967294 for 32-bit ASNs.</p>
      */
+    inline bool AmazonSideAsnHasBeenSet() const { return m_amazonSideAsnHasBeenSet; }
+
+    /**
+     * <p>A private Autonomous System Number (ASN) for the Amazon side of a BGP
+     * session. The range is 64512 to 65534 for 16-bit ASNs and 4200000000 to
+     * 4294967294 for 32-bit ASNs.</p>
+     */
     inline void SetAmazonSideAsn(long long value) { m_amazonSideAsnHasBeenSet = true; m_amazonSideAsn = value; }
 
     /**
@@ -80,6 +87,11 @@ namespace Model
      * <p>Indicates whether attachment requests are automatically accepted.</p>
      */
     inline const AutoAcceptSharedAttachmentsValue& GetAutoAcceptSharedAttachments() const{ return m_autoAcceptSharedAttachments; }
+
+    /**
+     * <p>Indicates whether attachment requests are automatically accepted.</p>
+     */
+    inline bool AutoAcceptSharedAttachmentsHasBeenSet() const { return m_autoAcceptSharedAttachmentsHasBeenSet; }
 
     /**
      * <p>Indicates whether attachment requests are automatically accepted.</p>
@@ -112,6 +124,12 @@ namespace Model
      * <p>Indicates whether resource attachments are automatically associated with the
      * default association route table.</p>
      */
+    inline bool DefaultRouteTableAssociationHasBeenSet() const { return m_defaultRouteTableAssociationHasBeenSet; }
+
+    /**
+     * <p>Indicates whether resource attachments are automatically associated with the
+     * default association route table.</p>
+     */
     inline void SetDefaultRouteTableAssociation(const DefaultRouteTableAssociationValue& value) { m_defaultRouteTableAssociationHasBeenSet = true; m_defaultRouteTableAssociation = value; }
 
     /**
@@ -137,6 +155,11 @@ namespace Model
      * <p>The ID of the default association route table.</p>
      */
     inline const Aws::String& GetAssociationDefaultRouteTableId() const{ return m_associationDefaultRouteTableId; }
+
+    /**
+     * <p>The ID of the default association route table.</p>
+     */
+    inline bool AssociationDefaultRouteTableIdHasBeenSet() const { return m_associationDefaultRouteTableIdHasBeenSet; }
 
     /**
      * <p>The ID of the default association route table.</p>
@@ -179,6 +202,12 @@ namespace Model
      * <p>Indicates whether resource attachments automatically propagate routes to the
      * default propagation route table.</p>
      */
+    inline bool DefaultRouteTablePropagationHasBeenSet() const { return m_defaultRouteTablePropagationHasBeenSet; }
+
+    /**
+     * <p>Indicates whether resource attachments automatically propagate routes to the
+     * default propagation route table.</p>
+     */
     inline void SetDefaultRouteTablePropagation(const DefaultRouteTablePropagationValue& value) { m_defaultRouteTablePropagationHasBeenSet = true; m_defaultRouteTablePropagation = value; }
 
     /**
@@ -204,6 +233,11 @@ namespace Model
      * <p>The ID of the default propagation route table.</p>
      */
     inline const Aws::String& GetPropagationDefaultRouteTableId() const{ return m_propagationDefaultRouteTableId; }
+
+    /**
+     * <p>The ID of the default propagation route table.</p>
+     */
+    inline bool PropagationDefaultRouteTableIdHasBeenSet() const { return m_propagationDefaultRouteTableIdHasBeenSet; }
 
     /**
      * <p>The ID of the default propagation route table.</p>
@@ -244,6 +278,11 @@ namespace Model
     /**
      * <p>Indicates whether Equal Cost Multipath Protocol support is enabled.</p>
      */
+    inline bool VpnEcmpSupportHasBeenSet() const { return m_vpnEcmpSupportHasBeenSet; }
+
+    /**
+     * <p>Indicates whether Equal Cost Multipath Protocol support is enabled.</p>
+     */
     inline void SetVpnEcmpSupport(const VpnEcmpSupportValue& value) { m_vpnEcmpSupportHasBeenSet = true; m_vpnEcmpSupport = value; }
 
     /**
@@ -266,6 +305,11 @@ namespace Model
      * <p>Indicates whether DNS support is enabled.</p>
      */
     inline const DnsSupportValue& GetDnsSupport() const{ return m_dnsSupport; }
+
+    /**
+     * <p>Indicates whether DNS support is enabled.</p>
+     */
+    inline bool DnsSupportHasBeenSet() const { return m_dnsSupportHasBeenSet; }
 
     /**
      * <p>Indicates whether DNS support is enabled.</p>

@@ -59,6 +59,11 @@ namespace Model
     /**
      * <p>The identifier of the WorkSpace.</p>
      */
+    inline bool WorkspaceIdHasBeenSet() const { return m_workspaceIdHasBeenSet; }
+
+    /**
+     * <p>The identifier of the WorkSpace.</p>
+     */
     inline void SetWorkspaceId(const Aws::String& value) { m_workspaceIdHasBeenSet = true; m_workspaceId = value; }
 
     /**
@@ -91,6 +96,11 @@ namespace Model
      * <p>The identifier of the AWS Directory Service directory for the WorkSpace.</p>
      */
     inline const Aws::String& GetDirectoryId() const{ return m_directoryId; }
+
+    /**
+     * <p>The identifier of the AWS Directory Service directory for the WorkSpace.</p>
+     */
+    inline bool DirectoryIdHasBeenSet() const { return m_directoryIdHasBeenSet; }
 
     /**
      * <p>The identifier of the AWS Directory Service directory for the WorkSpace.</p>
@@ -131,6 +141,11 @@ namespace Model
     /**
      * <p>The user for the WorkSpace.</p>
      */
+    inline bool UserNameHasBeenSet() const { return m_userNameHasBeenSet; }
+
+    /**
+     * <p>The user for the WorkSpace.</p>
+     */
     inline void SetUserName(const Aws::String& value) { m_userNameHasBeenSet = true; m_userName = value; }
 
     /**
@@ -163,6 +178,11 @@ namespace Model
      * <p>The IP address of the WorkSpace.</p>
      */
     inline const Aws::String& GetIpAddress() const{ return m_ipAddress; }
+
+    /**
+     * <p>The IP address of the WorkSpace.</p>
+     */
+    inline bool IpAddressHasBeenSet() const { return m_ipAddressHasBeenSet; }
 
     /**
      * <p>The IP address of the WorkSpace.</p>
@@ -203,6 +223,11 @@ namespace Model
     /**
      * <p>The operational state of the WorkSpace.</p>
      */
+    inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
+
+    /**
+     * <p>The operational state of the WorkSpace.</p>
+     */
     inline void SetState(const WorkspaceState& value) { m_stateHasBeenSet = true; m_state = value; }
 
     /**
@@ -225,6 +250,11 @@ namespace Model
      * <p>The identifier of the bundle used to create the WorkSpace.</p>
      */
     inline const Aws::String& GetBundleId() const{ return m_bundleId; }
+
+    /**
+     * <p>The identifier of the bundle used to create the WorkSpace.</p>
+     */
+    inline bool BundleIdHasBeenSet() const { return m_bundleIdHasBeenSet; }
 
     /**
      * <p>The identifier of the bundle used to create the WorkSpace.</p>
@@ -265,6 +295,11 @@ namespace Model
     /**
      * <p>The identifier of the subnet for the WorkSpace.</p>
      */
+    inline bool SubnetIdHasBeenSet() const { return m_subnetIdHasBeenSet; }
+
+    /**
+     * <p>The identifier of the subnet for the WorkSpace.</p>
+     */
     inline void SetSubnetId(const Aws::String& value) { m_subnetIdHasBeenSet = true; m_subnetId = value; }
 
     /**
@@ -298,6 +333,12 @@ namespace Model
      * created.</p>
      */
     inline const Aws::String& GetErrorMessage() const{ return m_errorMessage; }
+
+    /**
+     * <p>The text of the error message that is returned if the WorkSpace cannot be
+     * created.</p>
+     */
+    inline bool ErrorMessageHasBeenSet() const { return m_errorMessageHasBeenSet; }
 
     /**
      * <p>The text of the error message that is returned if the WorkSpace cannot be
@@ -344,6 +385,11 @@ namespace Model
     /**
      * <p>The error code that is returned if the WorkSpace cannot be created.</p>
      */
+    inline bool ErrorCodeHasBeenSet() const { return m_errorCodeHasBeenSet; }
+
+    /**
+     * <p>The error code that is returned if the WorkSpace cannot be created.</p>
+     */
     inline void SetErrorCode(const Aws::String& value) { m_errorCodeHasBeenSet = true; m_errorCode = value; }
 
     /**
@@ -376,6 +422,11 @@ namespace Model
      * <p>The name of the WorkSpace, as seen by the operating system.</p>
      */
     inline const Aws::String& GetComputerName() const{ return m_computerName; }
+
+    /**
+     * <p>The name of the WorkSpace, as seen by the operating system.</p>
+     */
+    inline bool ComputerNameHasBeenSet() const { return m_computerNameHasBeenSet; }
 
     /**
      * <p>The name of the WorkSpace, as seen by the operating system.</p>
@@ -416,6 +467,11 @@ namespace Model
     /**
      * <p>The KMS key used to encrypt data stored on your WorkSpace.</p>
      */
+    inline bool VolumeEncryptionKeyHasBeenSet() const { return m_volumeEncryptionKeyHasBeenSet; }
+
+    /**
+     * <p>The KMS key used to encrypt data stored on your WorkSpace.</p>
+     */
     inline void SetVolumeEncryptionKey(const Aws::String& value) { m_volumeEncryptionKeyHasBeenSet = true; m_volumeEncryptionKey = value; }
 
     /**
@@ -452,6 +508,11 @@ namespace Model
     /**
      * <p>Indicates whether the data stored on the user volume is encrypted.</p>
      */
+    inline bool UserVolumeEncryptionEnabledHasBeenSet() const { return m_userVolumeEncryptionEnabledHasBeenSet; }
+
+    /**
+     * <p>Indicates whether the data stored on the user volume is encrypted.</p>
+     */
     inline void SetUserVolumeEncryptionEnabled(bool value) { m_userVolumeEncryptionEnabledHasBeenSet = true; m_userVolumeEncryptionEnabled = value; }
 
     /**
@@ -468,6 +529,11 @@ namespace Model
     /**
      * <p>Indicates whether the data stored on the root volume is encrypted.</p>
      */
+    inline bool RootVolumeEncryptionEnabledHasBeenSet() const { return m_rootVolumeEncryptionEnabledHasBeenSet; }
+
+    /**
+     * <p>Indicates whether the data stored on the root volume is encrypted.</p>
+     */
     inline void SetRootVolumeEncryptionEnabled(bool value) { m_rootVolumeEncryptionEnabledHasBeenSet = true; m_rootVolumeEncryptionEnabled = value; }
 
     /**
@@ -480,6 +546,11 @@ namespace Model
      * <p>The properties of the WorkSpace.</p>
      */
     inline const WorkspaceProperties& GetWorkspaceProperties() const{ return m_workspaceProperties; }
+
+    /**
+     * <p>The properties of the WorkSpace.</p>
+     */
+    inline bool WorkspacePropertiesHasBeenSet() const { return m_workspacePropertiesHasBeenSet; }
 
     /**
      * <p>The properties of the WorkSpace.</p>
@@ -506,6 +577,11 @@ namespace Model
      * <p>The modification states of the WorkSpace.</p>
      */
     inline const Aws::Vector<ModificationState>& GetModificationStates() const{ return m_modificationStates; }
+
+    /**
+     * <p>The modification states of the WorkSpace.</p>
+     */
+    inline bool ModificationStatesHasBeenSet() const { return m_modificationStatesHasBeenSet; }
 
     /**
      * <p>The modification states of the WorkSpace.</p>

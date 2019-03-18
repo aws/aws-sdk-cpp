@@ -56,6 +56,11 @@ namespace Model
     /**
      * The SMS text body.
      */
+    inline bool BodyHasBeenSet() const { return m_bodyHasBeenSet; }
+
+    /**
+     * The SMS text body.
+     */
     inline void SetBody(const Aws::String& value) { m_bodyHasBeenSet = true; m_body = value; }
 
     /**
@@ -92,6 +97,11 @@ namespace Model
     /**
      * Is this is a transactional SMS message, otherwise a promotional message.
      */
+    inline bool MessageTypeHasBeenSet() const { return m_messageTypeHasBeenSet; }
+
+    /**
+     * Is this is a transactional SMS message, otherwise a promotional message.
+     */
     inline void SetMessageType(const MessageType& value) { m_messageTypeHasBeenSet = true; m_messageType = value; }
 
     /**
@@ -114,6 +124,11 @@ namespace Model
      * Sender ID of sent message.
      */
     inline const Aws::String& GetSenderId() const{ return m_senderId; }
+
+    /**
+     * Sender ID of sent message.
+     */
+    inline bool SenderIdHasBeenSet() const { return m_senderIdHasBeenSet; }
 
     /**
      * Sender ID of sent message.

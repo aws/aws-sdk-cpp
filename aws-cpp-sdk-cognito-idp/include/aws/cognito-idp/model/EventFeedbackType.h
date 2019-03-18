@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The event feedback value.</p>
      */
+    inline bool FeedbackValueHasBeenSet() const { return m_feedbackValueHasBeenSet; }
+
+    /**
+     * <p>The event feedback value.</p>
+     */
     inline void SetFeedbackValue(const FeedbackValueType& value) { m_feedbackValueHasBeenSet = true; m_feedbackValue = value; }
 
     /**
@@ -79,6 +84,11 @@ namespace Model
      * <p>The provider.</p>
      */
     inline const Aws::String& GetProvider() const{ return m_provider; }
+
+    /**
+     * <p>The provider.</p>
+     */
+    inline bool ProviderHasBeenSet() const { return m_providerHasBeenSet; }
 
     /**
      * <p>The provider.</p>
@@ -115,6 +125,11 @@ namespace Model
      * <p>The event feedback date.</p>
      */
     inline const Aws::Utils::DateTime& GetFeedbackDate() const{ return m_feedbackDate; }
+
+    /**
+     * <p>The event feedback date.</p>
+     */
+    inline bool FeedbackDateHasBeenSet() const { return m_feedbackDateHasBeenSet; }
 
     /**
      * <p>The event feedback date.</p>

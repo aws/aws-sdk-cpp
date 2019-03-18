@@ -57,6 +57,12 @@ namespace Model
      * <p>The maximum number of things that will be notified of a pending job, per
      * minute. This parameter allows you to create a staged rollout.</p>
      */
+    inline bool MaximumPerMinuteHasBeenSet() const { return m_maximumPerMinuteHasBeenSet; }
+
+    /**
+     * <p>The maximum number of things that will be notified of a pending job, per
+     * minute. This parameter allows you to create a staged rollout.</p>
+     */
     inline void SetMaximumPerMinute(int value) { m_maximumPerMinuteHasBeenSet = true; m_maximumPerMinute = value; }
 
     /**
@@ -71,6 +77,12 @@ namespace Model
      * an exponential rate for a job rollout.</p>
      */
     inline const ExponentialRolloutRate& GetExponentialRate() const{ return m_exponentialRate; }
+
+    /**
+     * <p>The rate of increase for a job rollout. This parameter allows you to define
+     * an exponential rate for a job rollout.</p>
+     */
+    inline bool ExponentialRateHasBeenSet() const { return m_exponentialRateHasBeenSet; }
 
     /**
      * <p>The rate of increase for a job rollout. This parameter allows you to define

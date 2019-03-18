@@ -55,6 +55,11 @@ namespace Model
     /**
      * <p>The minimum value in the range.</p>
      */
+    inline bool FromHasBeenSet() const { return m_fromHasBeenSet; }
+
+    /**
+     * <p>The minimum value in the range.</p>
+     */
     inline void SetFrom(double value) { m_fromHasBeenSet = true; m_from = value; }
 
     /**
@@ -67,6 +72,11 @@ namespace Model
      * <p>The maximum value in the range.</p>
      */
     inline double GetTo() const{ return m_to; }
+
+    /**
+     * <p>The maximum value in the range.</p>
+     */
+    inline bool ToHasBeenSet() const { return m_toHasBeenSet; }
 
     /**
      * <p>The maximum value in the range.</p>

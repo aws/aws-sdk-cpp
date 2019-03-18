@@ -55,6 +55,11 @@ namespace Model
     /**
      * <p>The tracing mode.</p>
      */
+    inline bool ModeHasBeenSet() const { return m_modeHasBeenSet; }
+
+    /**
+     * <p>The tracing mode.</p>
+     */
     inline void SetMode(const TracingMode& value) { m_modeHasBeenSet = true; m_mode = value; }
 
     /**

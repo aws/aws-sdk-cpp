@@ -54,6 +54,12 @@ namespace Model
      * <p>The ID of the Data Catalog in which the connection resides. If none is
      * provided, the AWS account ID is used by default.</p>
      */
+    inline bool CatalogIdHasBeenSet() const { return m_catalogIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the Data Catalog in which the connection resides. If none is
+     * provided, the AWS account ID is used by default.</p>
+     */
     inline void SetCatalogId(const Aws::String& value) { m_catalogIdHasBeenSet = true; m_catalogId = value; }
 
     /**
@@ -95,6 +101,11 @@ namespace Model
     /**
      * <p>The name of the connection definition to retrieve.</p>
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>The name of the connection definition to retrieve.</p>
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
@@ -131,6 +142,15 @@ namespace Model
      * but does have permission to access the rest of the connection properties.</p>
      */
     inline bool GetHidePassword() const{ return m_hidePassword; }
+
+    /**
+     * <p>Allows you to retrieve the connection metadata without returning the
+     * password. For instance, the AWS Glue console uses this flag to retrieve the
+     * connection, and does not display the password. Set this parameter when the
+     * caller might not have permission to use the AWS KMS key to decrypt the password,
+     * but does have permission to access the rest of the connection properties.</p>
+     */
+    inline bool HidePasswordHasBeenSet() const { return m_hidePasswordHasBeenSet; }
 
     /**
      * <p>Allows you to retrieve the connection metadata without returning the

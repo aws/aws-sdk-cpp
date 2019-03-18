@@ -67,6 +67,14 @@ namespace Model
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
      * Idempotency</a>.</p>
      */
+    inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
+
+    /**
+     * <p>A unique, case-sensitive key supplied by the client to ensure that the
+     * request is idempotent. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
+     * Idempotency</a>.</p>
+     */
     inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
 
     /**
@@ -118,6 +126,11 @@ namespace Model
     /**
      * <p>The time when the modification request was created.</p>
      */
+    inline bool CreateDateHasBeenSet() const { return m_createDateHasBeenSet; }
+
+    /**
+     * <p>The time when the modification request was created.</p>
+     */
     inline void SetCreateDate(const Aws::Utils::DateTime& value) { m_createDateHasBeenSet = true; m_createDate = value; }
 
     /**
@@ -140,6 +153,11 @@ namespace Model
      * <p>The time for the modification to become effective.</p>
      */
     inline const Aws::Utils::DateTime& GetEffectiveDate() const{ return m_effectiveDate; }
+
+    /**
+     * <p>The time for the modification to become effective.</p>
+     */
+    inline bool EffectiveDateHasBeenSet() const { return m_effectiveDateHasBeenSet; }
 
     /**
      * <p>The time for the modification to become effective.</p>
@@ -167,6 +185,12 @@ namespace Model
      * Instance IDs.</p>
      */
     inline const Aws::Vector<ReservedInstancesModificationResponse>& GetModificationResults() const{ return m_modificationResults; }
+
+    /**
+     * <p>Contains target configurations along with their corresponding new Reserved
+     * Instance IDs.</p>
+     */
+    inline bool ModificationResultsHasBeenSet() const { return m_modificationResultsHasBeenSet; }
 
     /**
      * <p>Contains target configurations along with their corresponding new Reserved
@@ -213,6 +237,11 @@ namespace Model
     /**
      * <p>The IDs of one or more Reserved Instances.</p>
      */
+    inline bool ReservedInstancesIdsHasBeenSet() const { return m_reservedInstancesIdsHasBeenSet; }
+
+    /**
+     * <p>The IDs of one or more Reserved Instances.</p>
+     */
     inline void SetReservedInstancesIds(const Aws::Vector<ReservedInstancesId>& value) { m_reservedInstancesIdsHasBeenSet = true; m_reservedInstancesIds = value; }
 
     /**
@@ -245,6 +274,11 @@ namespace Model
      * <p>A unique ID for the Reserved Instance modification.</p>
      */
     inline const Aws::String& GetReservedInstancesModificationId() const{ return m_reservedInstancesModificationId; }
+
+    /**
+     * <p>A unique ID for the Reserved Instance modification.</p>
+     */
+    inline bool ReservedInstancesModificationIdHasBeenSet() const { return m_reservedInstancesModificationIdHasBeenSet; }
 
     /**
      * <p>A unique ID for the Reserved Instance modification.</p>
@@ -285,6 +319,11 @@ namespace Model
     /**
      * <p>The status of the Reserved Instances modification request.</p>
      */
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
+
+    /**
+     * <p>The status of the Reserved Instances modification request.</p>
+     */
     inline void SetStatus(const Aws::String& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
@@ -321,6 +360,11 @@ namespace Model
     /**
      * <p>The reason for the status.</p>
      */
+    inline bool StatusMessageHasBeenSet() const { return m_statusMessageHasBeenSet; }
+
+    /**
+     * <p>The reason for the status.</p>
+     */
     inline void SetStatusMessage(const Aws::String& value) { m_statusMessageHasBeenSet = true; m_statusMessage = value; }
 
     /**
@@ -353,6 +397,11 @@ namespace Model
      * <p>The time when the modification request was last updated.</p>
      */
     inline const Aws::Utils::DateTime& GetUpdateDate() const{ return m_updateDate; }
+
+    /**
+     * <p>The time when the modification request was last updated.</p>
+     */
+    inline bool UpdateDateHasBeenSet() const { return m_updateDateHasBeenSet; }
 
     /**
      * <p>The time when the modification request was last updated.</p>

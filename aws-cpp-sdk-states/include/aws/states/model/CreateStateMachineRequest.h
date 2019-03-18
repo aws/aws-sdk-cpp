@@ -64,6 +64,16 @@ namespace Model
      * <li> <p>control characters (<code>U+0000-001F</code>,
      * <code>U+007F-009F</code>)</p> </li> </ul>
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>The name of the state machine. </p> <p>A name must <i>not</i> contain:</p>
+     * <ul> <li> <p>whitespace</p> </li> <li> <p>brackets <code>&lt; &gt; { } [
+     * ]</code> </p> </li> <li> <p>wildcard characters <code>? *</code> </p> </li> <li>
+     * <p>special characters <code>" # % \ ^ | ~ ` $ &amp; , ; : /</code> </p> </li>
+     * <li> <p>control characters (<code>U+0000-001F</code>,
+     * <code>U+007F-009F</code>)</p> </li> </ul>
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
@@ -129,6 +139,13 @@ namespace Model
      * href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-amazon-states-language.html">Amazon
      * States Language</a>.</p>
      */
+    inline bool DefinitionHasBeenSet() const { return m_definitionHasBeenSet; }
+
+    /**
+     * <p>The Amazon States Language definition of the state machine. See <a
+     * href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-amazon-states-language.html">Amazon
+     * States Language</a>.</p>
+     */
     inline void SetDefinition(const Aws::String& value) { m_definitionHasBeenSet = true; m_definition = value; }
 
     /**
@@ -177,6 +194,12 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the IAM role to use for this state
      * machine.</p>
      */
+    inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the IAM role to use for this state
+     * machine.</p>
+     */
     inline void SetRoleArn(const Aws::String& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
 
     /**
@@ -214,6 +237,11 @@ namespace Model
      * <p>Tags to be added when creating a state machine.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>Tags to be added when creating a state machine.</p>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
      * <p>Tags to be added when creating a state machine.</p>

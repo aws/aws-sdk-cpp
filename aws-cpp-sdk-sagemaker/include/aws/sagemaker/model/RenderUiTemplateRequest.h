@@ -56,6 +56,12 @@ namespace Model
      * <p>A <code>Template</code> object containing the worker UI template to
      * render.</p>
      */
+    inline bool UiTemplateHasBeenSet() const { return m_uiTemplateHasBeenSet; }
+
+    /**
+     * <p>A <code>Template</code> object containing the worker UI template to
+     * render.</p>
+     */
     inline void SetUiTemplate(const UiTemplate& value) { m_uiTemplateHasBeenSet = true; m_uiTemplate = value; }
 
     /**
@@ -87,6 +93,12 @@ namespace Model
      * <p>A <code>RenderableTask</code> object containing a representative task to
      * render.</p>
      */
+    inline bool TaskHasBeenSet() const { return m_taskHasBeenSet; }
+
+    /**
+     * <p>A <code>RenderableTask</code> object containing a representative task to
+     * render.</p>
+     */
     inline void SetTask(const RenderableTask& value) { m_taskHasBeenSet = true; m_task = value; }
 
     /**
@@ -113,6 +125,12 @@ namespace Model
      * used by the template.</p>
      */
     inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) that has access to the S3 objects that are
+     * used by the template.</p>
+     */
+    inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
 
     /**
      * <p>The Amazon Resource Name (ARN) that has access to the S3 objects that are

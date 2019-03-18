@@ -55,6 +55,11 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the replication instance to be deleted.</p>
      */
+    inline bool ReplicationInstanceArnHasBeenSet() const { return m_replicationInstanceArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the replication instance to be deleted.</p>
+     */
     inline void SetReplicationInstanceArn(const Aws::String& value) { m_replicationInstanceArnHasBeenSet = true; m_replicationInstanceArn = value; }
 
     /**

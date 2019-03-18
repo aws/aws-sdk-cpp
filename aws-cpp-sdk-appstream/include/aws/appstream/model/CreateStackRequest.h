@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The name of the stack.</p>
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>The name of the stack.</p>
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
@@ -89,6 +94,11 @@ namespace Model
      * <p>The description to display.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
+
+    /**
+     * <p>The description to display.</p>
+     */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
 
     /**
      * <p>The description to display.</p>
@@ -129,6 +139,11 @@ namespace Model
     /**
      * <p>The stack name to display.</p>
      */
+    inline bool DisplayNameHasBeenSet() const { return m_displayNameHasBeenSet; }
+
+    /**
+     * <p>The stack name to display.</p>
+     */
     inline void SetDisplayName(const Aws::String& value) { m_displayNameHasBeenSet = true; m_displayName = value; }
 
     /**
@@ -161,6 +176,11 @@ namespace Model
      * <p>The storage connectors to enable.</p>
      */
     inline const Aws::Vector<StorageConnector>& GetStorageConnectors() const{ return m_storageConnectors; }
+
+    /**
+     * <p>The storage connectors to enable.</p>
+     */
+    inline bool StorageConnectorsHasBeenSet() const { return m_storageConnectorsHasBeenSet; }
 
     /**
      * <p>The storage connectors to enable.</p>
@@ -201,6 +221,11 @@ namespace Model
     /**
      * <p>The URL that users are redirected to after their streaming session ends.</p>
      */
+    inline bool RedirectURLHasBeenSet() const { return m_redirectURLHasBeenSet; }
+
+    /**
+     * <p>The URL that users are redirected to after their streaming session ends.</p>
+     */
     inline void SetRedirectURL(const Aws::String& value) { m_redirectURLHasBeenSet = true; m_redirectURL = value; }
 
     /**
@@ -234,6 +259,12 @@ namespace Model
      * If no URL is specified, no Send Feedback link is displayed.</p>
      */
     inline const Aws::String& GetFeedbackURL() const{ return m_feedbackURL; }
+
+    /**
+     * <p>The URL that users are redirected to after they click the Send Feedback link.
+     * If no URL is specified, no Send Feedback link is displayed.</p>
+     */
+    inline bool FeedbackURLHasBeenSet() const { return m_feedbackURLHasBeenSet; }
 
     /**
      * <p>The URL that users are redirected to after they click the Send Feedback link.
@@ -277,6 +308,12 @@ namespace Model
      * sessions. By default, these actions are enabled. </p>
      */
     inline const Aws::Vector<UserSetting>& GetUserSettings() const{ return m_userSettings; }
+
+    /**
+     * <p>The actions that are enabled or disabled for users during their streaming
+     * sessions. By default, these actions are enabled. </p>
+     */
+    inline bool UserSettingsHasBeenSet() const { return m_userSettingsHasBeenSet; }
 
     /**
      * <p>The actions that are enabled or disabled for users during their streaming
@@ -327,6 +364,13 @@ namespace Model
      * are enabled, changes that users make to applications and Windows settings are
      * automatically saved after each session and applied to the next session.</p>
      */
+    inline bool ApplicationSettingsHasBeenSet() const { return m_applicationSettingsHasBeenSet; }
+
+    /**
+     * <p>The persistent application settings for users of a stack. When these settings
+     * are enabled, changes that users make to applications and Windows settings are
+     * automatically saved after each session and applied to the next session.</p>
+     */
     inline void SetApplicationSettings(const ApplicationSettings& value) { m_applicationSettingsHasBeenSet = true; m_applicationSettings = value; }
 
     /**
@@ -360,6 +404,16 @@ namespace Model
      * Your Resources</a> in the <i>Amazon AppStream 2.0 Developer Guide</i>.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>The tags to associate with the stack. A tag is a key-value pair, and the
+     * value is optional. For example, Environment=Test. If you do not specify a value,
+     * Environment=. </p> <p>If you do not specify a value, the value is set to an
+     * empty string.</p> <p>For more information about tags, see <a
+     * href="https://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html">Tagging
+     * Your Resources</a> in the <i>Amazon AppStream 2.0 Developer Guide</i>.</p>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
      * <p>The tags to associate with the stack. A tag is a key-value pair, and the

@@ -73,6 +73,12 @@ namespace Model
      * <p>A blob of documents bytes. The maximum size of a document that's provided in
      * a blob of bytes is 5 MB.</p>
      */
+    inline bool BytesHasBeenSet() const { return m_bytesHasBeenSet; }
+
+    /**
+     * <p>A blob of documents bytes. The maximum size of a document that's provided in
+     * a blob of bytes is 5 MB.</p>
+     */
     inline void SetBytes(const Aws::Utils::ByteBuffer& value) { m_bytesHasBeenSet = true; m_bytes = value; }
 
     /**
@@ -99,6 +105,12 @@ namespace Model
      * document stored in an S3 bucket is 5 MB.</p>
      */
     inline const S3Object& GetS3Object() const{ return m_s3Object; }
+
+    /**
+     * <p>Identifies an S3 object as the document source. The maximum size of a
+     * document stored in an S3 bucket is 5 MB.</p>
+     */
+    inline bool S3ObjectHasBeenSet() const { return m_s3ObjectHasBeenSet; }
 
     /**
      * <p>Identifies an S3 object as the document source. The maximum size of a

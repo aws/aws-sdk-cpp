@@ -60,6 +60,12 @@ namespace Model
      * <p>The mnemonic name for the policy being created. The name must be unique
      * within a set of policies for this load balancer.</p>
      */
+    inline bool PolicyNameHasBeenSet() const { return m_policyNameHasBeenSet; }
+
+    /**
+     * <p>The mnemonic name for the policy being created. The name must be unique
+     * within a set of policies for this load balancer.</p>
+     */
     inline void SetPolicyName(const Aws::String& value) { m_policyNameHasBeenSet = true; m_policyName = value; }
 
     /**
@@ -97,6 +103,11 @@ namespace Model
      * <p>The name of the application cookie used for stickiness.</p>
      */
     inline const Aws::String& GetCookieName() const{ return m_cookieName; }
+
+    /**
+     * <p>The name of the application cookie used for stickiness.</p>
+     */
+    inline bool CookieNameHasBeenSet() const { return m_cookieNameHasBeenSet; }
 
     /**
      * <p>The name of the application cookie used for stickiness.</p>

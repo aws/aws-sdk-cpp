@@ -58,6 +58,12 @@ namespace Model
      * The Amazon Resource Name (ARN) of an IAM role that can write data to an Amazon
      * Kinesis Data Firehose stream.
      */
+    inline bool DeliveryStreamArnHasBeenSet() const { return m_deliveryStreamArnHasBeenSet; }
+
+    /**
+     * The Amazon Resource Name (ARN) of an IAM role that can write data to an Amazon
+     * Kinesis Data Firehose stream.
+     */
     inline void SetDeliveryStreamArn(const Aws::String& value) { m_deliveryStreamArnHasBeenSet = true; m_deliveryStreamArn = value; }
 
     /**
@@ -96,6 +102,12 @@ namespace Model
      * that you want to use in the event destination.
      */
     inline const Aws::String& GetIamRoleArn() const{ return m_iamRoleArn; }
+
+    /**
+     * The Amazon Resource Name (ARN) of the Amazon Kinesis Data Firehose destination
+     * that you want to use in the event destination.
+     */
+    inline bool IamRoleArnHasBeenSet() const { return m_iamRoleArnHasBeenSet; }
 
     /**
      * The Amazon Resource Name (ARN) of the Amazon Kinesis Data Firehose destination

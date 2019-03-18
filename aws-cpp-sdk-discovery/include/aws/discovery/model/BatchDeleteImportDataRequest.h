@@ -53,6 +53,11 @@ namespace Model
     /**
      * <p>The IDs for the import tasks that you want to delete.</p>
      */
+    inline bool ImportTaskIdsHasBeenSet() const { return m_importTaskIdsHasBeenSet; }
+
+    /**
+     * <p>The IDs for the import tasks that you want to delete.</p>
+     */
     inline void SetImportTaskIds(const Aws::Vector<Aws::String>& value) { m_importTaskIdsHasBeenSet = true; m_importTaskIds = value; }
 
     /**

@@ -62,6 +62,12 @@ namespace Model
      * <p>The Amazon ECR registry path of the Docker image that contains the inference
      * code.</p>
      */
+    inline bool ContainersHasBeenSet() const { return m_containersHasBeenSet; }
+
+    /**
+     * <p>The Amazon ECR registry path of the Docker image that contains the inference
+     * code.</p>
+     */
     inline void SetContainers(const Aws::Vector<ModelPackageContainerDefinition>& value) { m_containersHasBeenSet = true; m_containers = value; }
 
     /**
@@ -100,6 +106,12 @@ namespace Model
      * which an endpoint can be deployed.</p>
      */
     inline const Aws::Vector<TransformInstanceType>& GetSupportedTransformInstanceTypes() const{ return m_supportedTransformInstanceTypes; }
+
+    /**
+     * <p>A list of the instance types on which a transformation job can be run or on
+     * which an endpoint can be deployed.</p>
+     */
+    inline bool SupportedTransformInstanceTypesHasBeenSet() const { return m_supportedTransformInstanceTypesHasBeenSet; }
 
     /**
      * <p>A list of the instance types on which a transformation job can be run or on
@@ -148,6 +160,12 @@ namespace Model
      * <p>A list of the instance types that are used to generate inferences in
      * real-time.</p>
      */
+    inline bool SupportedRealtimeInferenceInstanceTypesHasBeenSet() const { return m_supportedRealtimeInferenceInstanceTypesHasBeenSet; }
+
+    /**
+     * <p>A list of the instance types that are used to generate inferences in
+     * real-time.</p>
+     */
     inline void SetSupportedRealtimeInferenceInstanceTypes(const Aws::Vector<ProductionVariantInstanceType>& value) { m_supportedRealtimeInferenceInstanceTypesHasBeenSet = true; m_supportedRealtimeInferenceInstanceTypes = value; }
 
     /**
@@ -189,6 +207,11 @@ namespace Model
     /**
      * <p>The supported MIME types for the input data.</p>
      */
+    inline bool SupportedContentTypesHasBeenSet() const { return m_supportedContentTypesHasBeenSet; }
+
+    /**
+     * <p>The supported MIME types for the input data.</p>
+     */
     inline void SetSupportedContentTypes(const Aws::Vector<Aws::String>& value) { m_supportedContentTypesHasBeenSet = true; m_supportedContentTypes = value; }
 
     /**
@@ -226,6 +249,11 @@ namespace Model
      * <p>The supported MIME types for the output data.</p>
      */
     inline const Aws::Vector<Aws::String>& GetSupportedResponseMIMETypes() const{ return m_supportedResponseMIMETypes; }
+
+    /**
+     * <p>The supported MIME types for the output data.</p>
+     */
+    inline bool SupportedResponseMIMETypesHasBeenSet() const { return m_supportedResponseMIMETypesHasBeenSet; }
 
     /**
      * <p>The supported MIME types for the output data.</p>

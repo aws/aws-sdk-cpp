@@ -60,6 +60,11 @@ namespace Model
     /**
      * <p>The identifier of the DB cluster snapshot that the attributes apply to.</p>
      */
+    inline bool DBClusterSnapshotIdentifierHasBeenSet() const { return m_dBClusterSnapshotIdentifierHasBeenSet; }
+
+    /**
+     * <p>The identifier of the DB cluster snapshot that the attributes apply to.</p>
+     */
     inline void SetDBClusterSnapshotIdentifier(const Aws::String& value) { m_dBClusterSnapshotIdentifierHasBeenSet = true; m_dBClusterSnapshotIdentifier = value; }
 
     /**
@@ -92,6 +97,11 @@ namespace Model
      * <p>The list of attributes and values for the DB cluster snapshot.</p>
      */
     inline const Aws::Vector<DBClusterSnapshotAttribute>& GetDBClusterSnapshotAttributes() const{ return m_dBClusterSnapshotAttributes; }
+
+    /**
+     * <p>The list of attributes and values for the DB cluster snapshot.</p>
+     */
+    inline bool DBClusterSnapshotAttributesHasBeenSet() const { return m_dBClusterSnapshotAttributesHasBeenSet; }
 
     /**
      * <p>The list of attributes and values for the DB cluster snapshot.</p>

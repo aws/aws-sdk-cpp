@@ -60,6 +60,12 @@ namespace Model
      * <p>The new name for the resolver rule. The name that you specify appears in the
      * Resolver dashboard in the Route 53 console. </p>
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>The new name for the resolver rule. The name that you specify appears in the
+     * Resolver dashboard in the Route 53 console. </p>
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
@@ -103,6 +109,12 @@ namespace Model
      * <p>For DNS queries that originate in your VPC, the new IP addresses that you
      * want to route outbound DNS queries to.</p>
      */
+    inline bool TargetIpsHasBeenSet() const { return m_targetIpsHasBeenSet; }
+
+    /**
+     * <p>For DNS queries that originate in your VPC, the new IP addresses that you
+     * want to route outbound DNS queries to.</p>
+     */
     inline void SetTargetIps(const Aws::Vector<TargetAddress>& value) { m_targetIpsHasBeenSet = true; m_targetIps = value; }
 
     /**
@@ -141,6 +153,12 @@ namespace Model
      * DNS queries to the IP addresses that you specify in <code>TargetIps</code>.</p>
      */
     inline const Aws::String& GetResolverEndpointId() const{ return m_resolverEndpointId; }
+
+    /**
+     * <p>The ID of the new outbound resolver endpoint that you want to use to route
+     * DNS queries to the IP addresses that you specify in <code>TargetIps</code>.</p>
+     */
+    inline bool ResolverEndpointIdHasBeenSet() const { return m_resolverEndpointIdHasBeenSet; }
 
     /**
      * <p>The ID of the new outbound resolver endpoint that you want to use to route

@@ -60,6 +60,12 @@ namespace Model
      * <p>The credit option for CPU usage of a T2 or T3 instance. Valid values are
      * <code>standard</code> and <code>unlimited</code>.</p>
      */
+    inline bool CpuCreditsHasBeenSet() const { return m_cpuCreditsHasBeenSet; }
+
+    /**
+     * <p>The credit option for CPU usage of a T2 or T3 instance. Valid values are
+     * <code>standard</code> and <code>unlimited</code>.</p>
+     */
     inline void SetCpuCredits(const Aws::String& value) { m_cpuCreditsHasBeenSet = true; m_cpuCredits = value; }
 
     /**

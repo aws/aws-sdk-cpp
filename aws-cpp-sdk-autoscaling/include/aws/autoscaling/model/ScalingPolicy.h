@@ -61,6 +61,11 @@ namespace Model
     /**
      * <p>The name of the Auto Scaling group.</p>
      */
+    inline bool AutoScalingGroupNameHasBeenSet() const { return m_autoScalingGroupNameHasBeenSet; }
+
+    /**
+     * <p>The name of the Auto Scaling group.</p>
+     */
     inline void SetAutoScalingGroupName(const Aws::String& value) { m_autoScalingGroupNameHasBeenSet = true; m_autoScalingGroupName = value; }
 
     /**
@@ -93,6 +98,11 @@ namespace Model
      * <p>The name of the scaling policy.</p>
      */
     inline const Aws::String& GetPolicyName() const{ return m_policyName; }
+
+    /**
+     * <p>The name of the scaling policy.</p>
+     */
+    inline bool PolicyNameHasBeenSet() const { return m_policyNameHasBeenSet; }
 
     /**
      * <p>The name of the scaling policy.</p>
@@ -133,6 +143,11 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the policy.</p>
      */
+    inline bool PolicyARNHasBeenSet() const { return m_policyARNHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the policy.</p>
+     */
     inline void SetPolicyARN(const Aws::String& value) { m_policyARNHasBeenSet = true; m_policyARN = value; }
 
     /**
@@ -166,6 +181,12 @@ namespace Model
      * <code>StepScaling</code>.</p>
      */
     inline const Aws::String& GetPolicyType() const{ return m_policyType; }
+
+    /**
+     * <p>The policy type. The valid values are <code>SimpleScaling</code> and
+     * <code>StepScaling</code>.</p>
+     */
+    inline bool PolicyTypeHasBeenSet() const { return m_policyTypeHasBeenSet; }
 
     /**
      * <p>The policy type. The valid values are <code>SimpleScaling</code> and
@@ -210,6 +231,13 @@ namespace Model
      * <code>ExactCapacity</code>, and <code>PercentChangeInCapacity</code>.</p>
      */
     inline const Aws::String& GetAdjustmentType() const{ return m_adjustmentType; }
+
+    /**
+     * <p>The adjustment type, which specifies how <code>ScalingAdjustment</code> is
+     * interpreted. The valid values are <code>ChangeInCapacity</code>,
+     * <code>ExactCapacity</code>, and <code>PercentChangeInCapacity</code>.</p>
+     */
+    inline bool AdjustmentTypeHasBeenSet() const { return m_adjustmentTypeHasBeenSet; }
 
     /**
      * <p>The adjustment type, which specifies how <code>ScalingAdjustment</code> is
@@ -264,6 +292,12 @@ namespace Model
      * <p>Available for backward compatibility. Use <code>MinAdjustmentMagnitude</code>
      * instead.</p>
      */
+    inline bool MinAdjustmentStepHasBeenSet() const { return m_minAdjustmentStepHasBeenSet; }
+
+    /**
+     * <p>Available for backward compatibility. Use <code>MinAdjustmentMagnitude</code>
+     * instead.</p>
+     */
     inline void SetMinAdjustmentStep(int value) { m_minAdjustmentStepHasBeenSet = true; m_minAdjustmentStep = value; }
 
     /**
@@ -281,6 +315,15 @@ namespace Model
      * <code>ValidationError</code>.</p>
      */
     inline int GetMinAdjustmentMagnitude() const{ return m_minAdjustmentMagnitude; }
+
+    /**
+     * <p>The minimum number of instances to scale. If the value of
+     * <code>AdjustmentType</code> is <code>PercentChangeInCapacity</code>, the scaling
+     * policy changes the <code>DesiredCapacity</code> of the Auto Scaling group by at
+     * least this many instances. Otherwise, the error is
+     * <code>ValidationError</code>.</p>
+     */
+    inline bool MinAdjustmentMagnitudeHasBeenSet() const { return m_minAdjustmentMagnitudeHasBeenSet; }
 
     /**
      * <p>The minimum number of instances to scale. If the value of
@@ -313,6 +356,13 @@ namespace Model
      * positive value adds to the current capacity while a negative number removes from
      * the current capacity.</p>
      */
+    inline bool ScalingAdjustmentHasBeenSet() const { return m_scalingAdjustmentHasBeenSet; }
+
+    /**
+     * <p>The amount by which to scale, based on the specified adjustment type. A
+     * positive value adds to the current capacity while a negative number removes from
+     * the current capacity.</p>
+     */
     inline void SetScalingAdjustment(int value) { m_scalingAdjustmentHasBeenSet = true; m_scalingAdjustment = value; }
 
     /**
@@ -333,6 +383,12 @@ namespace Model
      * <p>The amount of time, in seconds, after a scaling activity completes before any
      * further dynamic scaling activities can start.</p>
      */
+    inline bool CooldownHasBeenSet() const { return m_cooldownHasBeenSet; }
+
+    /**
+     * <p>The amount of time, in seconds, after a scaling activity completes before any
+     * further dynamic scaling activities can start.</p>
+     */
     inline void SetCooldown(int value) { m_cooldownHasBeenSet = true; m_cooldown = value; }
 
     /**
@@ -347,6 +403,12 @@ namespace Model
      * breach.</p>
      */
     inline const Aws::Vector<StepAdjustment>& GetStepAdjustments() const{ return m_stepAdjustments; }
+
+    /**
+     * <p>A set of adjustments that enable you to scale based on the size of the alarm
+     * breach.</p>
+     */
+    inline bool StepAdjustmentsHasBeenSet() const { return m_stepAdjustmentsHasBeenSet; }
 
     /**
      * <p>A set of adjustments that enable you to scale based on the size of the alarm
@@ -395,6 +457,12 @@ namespace Model
      * <p>The aggregation type for the CloudWatch metrics. The valid values are
      * <code>Minimum</code>, <code>Maximum</code>, and <code>Average</code>.</p>
      */
+    inline bool MetricAggregationTypeHasBeenSet() const { return m_metricAggregationTypeHasBeenSet; }
+
+    /**
+     * <p>The aggregation type for the CloudWatch metrics. The valid values are
+     * <code>Minimum</code>, <code>Maximum</code>, and <code>Average</code>.</p>
+     */
     inline void SetMetricAggregationType(const Aws::String& value) { m_metricAggregationTypeHasBeenSet = true; m_metricAggregationType = value; }
 
     /**
@@ -438,6 +506,12 @@ namespace Model
      * <p>The estimated time, in seconds, until a newly launched instance can
      * contribute to the CloudWatch metrics.</p>
      */
+    inline bool EstimatedInstanceWarmupHasBeenSet() const { return m_estimatedInstanceWarmupHasBeenSet; }
+
+    /**
+     * <p>The estimated time, in seconds, until a newly launched instance can
+     * contribute to the CloudWatch metrics.</p>
+     */
     inline void SetEstimatedInstanceWarmup(int value) { m_estimatedInstanceWarmupHasBeenSet = true; m_estimatedInstanceWarmup = value; }
 
     /**
@@ -451,6 +525,11 @@ namespace Model
      * <p>The CloudWatch alarms related to the policy.</p>
      */
     inline const Aws::Vector<Alarm>& GetAlarms() const{ return m_alarms; }
+
+    /**
+     * <p>The CloudWatch alarms related to the policy.</p>
+     */
+    inline bool AlarmsHasBeenSet() const { return m_alarmsHasBeenSet; }
 
     /**
      * <p>The CloudWatch alarms related to the policy.</p>
@@ -487,6 +566,11 @@ namespace Model
      * <p>A target tracking scaling policy.</p>
      */
     inline const TargetTrackingConfiguration& GetTargetTrackingConfiguration() const{ return m_targetTrackingConfiguration; }
+
+    /**
+     * <p>A target tracking scaling policy.</p>
+     */
+    inline bool TargetTrackingConfigurationHasBeenSet() const { return m_targetTrackingConfigurationHasBeenSet; }
 
     /**
      * <p>A target tracking scaling policy.</p>

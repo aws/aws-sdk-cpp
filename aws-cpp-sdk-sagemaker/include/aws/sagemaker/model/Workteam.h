@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p>The name of the work team.</p>
      */
+    inline bool WorkteamNameHasBeenSet() const { return m_workteamNameHasBeenSet; }
+
+    /**
+     * <p>The name of the work team.</p>
+     */
     inline void SetWorkteamName(const Aws::String& value) { m_workteamNameHasBeenSet = true; m_workteamName = value; }
 
     /**
@@ -90,6 +95,11 @@ namespace Model
      * <p>The Amazon Cognito user groups that make up the work team.</p>
      */
     inline const Aws::Vector<MemberDefinition>& GetMemberDefinitions() const{ return m_memberDefinitions; }
+
+    /**
+     * <p>The Amazon Cognito user groups that make up the work team.</p>
+     */
+    inline bool MemberDefinitionsHasBeenSet() const { return m_memberDefinitionsHasBeenSet; }
 
     /**
      * <p>The Amazon Cognito user groups that make up the work team.</p>
@@ -130,6 +140,11 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) that identifies the work team.</p>
      */
+    inline bool WorkteamArnHasBeenSet() const { return m_workteamArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) that identifies the work team.</p>
+     */
     inline void SetWorkteamArn(const Aws::String& value) { m_workteamArnHasBeenSet = true; m_workteamArn = value; }
 
     /**
@@ -162,6 +177,11 @@ namespace Model
      * <p>The Amazon Marketplace identifier for a vendor's work team.</p>
      */
     inline const Aws::Vector<Aws::String>& GetProductListingIds() const{ return m_productListingIds; }
+
+    /**
+     * <p>The Amazon Marketplace identifier for a vendor's work team.</p>
+     */
+    inline bool ProductListingIdsHasBeenSet() const { return m_productListingIdsHasBeenSet; }
 
     /**
      * <p>The Amazon Marketplace identifier for a vendor's work team.</p>
@@ -207,6 +227,11 @@ namespace Model
     /**
      * <p>A description of the work team.</p>
      */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
+
+    /**
+     * <p>A description of the work team.</p>
+     */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
@@ -240,6 +265,12 @@ namespace Model
      * labeling your data objects.</p>
      */
     inline const Aws::String& GetSubDomain() const{ return m_subDomain; }
+
+    /**
+     * <p>The URI of the labeling job's user interface. Workers open this URI to start
+     * labeling your data objects.</p>
+     */
+    inline bool SubDomainHasBeenSet() const { return m_subDomainHasBeenSet; }
 
     /**
      * <p>The URI of the labeling job's user interface. Workers open this URI to start
@@ -286,6 +317,11 @@ namespace Model
     /**
      * <p>The date and time that the work team was created (timestamp).</p>
      */
+    inline bool CreateDateHasBeenSet() const { return m_createDateHasBeenSet; }
+
+    /**
+     * <p>The date and time that the work team was created (timestamp).</p>
+     */
     inline void SetCreateDate(const Aws::Utils::DateTime& value) { m_createDateHasBeenSet = true; m_createDate = value; }
 
     /**
@@ -308,6 +344,11 @@ namespace Model
      * <p>The date and time that the work team was last updated (timestamp).</p>
      */
     inline const Aws::Utils::DateTime& GetLastUpdatedDate() const{ return m_lastUpdatedDate; }
+
+    /**
+     * <p>The date and time that the work team was last updated (timestamp).</p>
+     */
+    inline bool LastUpdatedDateHasBeenSet() const { return m_lastUpdatedDateHasBeenSet; }
 
     /**
      * <p>The date and time that the work team was last updated (timestamp).</p>

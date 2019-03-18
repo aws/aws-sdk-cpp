@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p>The name of the MQTT topic.</p>
      */
+    inline bool TopicHasBeenSet() const { return m_topicHasBeenSet; }
+
+    /**
+     * <p>The name of the MQTT topic.</p>
+     */
     inline void SetTopic(const Aws::String& value) { m_topicHasBeenSet = true; m_topic = value; }
 
     /**
@@ -90,6 +95,11 @@ namespace Model
      * <p>The Quality of Service (QoS) level.</p>
      */
     inline int GetQos() const{ return m_qos; }
+
+    /**
+     * <p>The Quality of Service (QoS) level.</p>
+     */
+    inline bool QosHasBeenSet() const { return m_qosHasBeenSet; }
 
     /**
      * <p>The Quality of Service (QoS) level.</p>

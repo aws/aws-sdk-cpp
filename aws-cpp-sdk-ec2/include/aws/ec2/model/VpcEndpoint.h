@@ -63,6 +63,11 @@ namespace Model
     /**
      * <p>The ID of the VPC endpoint.</p>
      */
+    inline bool VpcEndpointIdHasBeenSet() const { return m_vpcEndpointIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the VPC endpoint.</p>
+     */
     inline void SetVpcEndpointId(const Aws::String& value) { m_vpcEndpointIdHasBeenSet = true; m_vpcEndpointId = value; }
 
     /**
@@ -99,6 +104,11 @@ namespace Model
     /**
      * <p>The type of endpoint.</p>
      */
+    inline bool VpcEndpointTypeHasBeenSet() const { return m_vpcEndpointTypeHasBeenSet; }
+
+    /**
+     * <p>The type of endpoint.</p>
+     */
     inline void SetVpcEndpointType(const VpcEndpointType& value) { m_vpcEndpointTypeHasBeenSet = true; m_vpcEndpointType = value; }
 
     /**
@@ -121,6 +131,11 @@ namespace Model
      * <p>The ID of the VPC to which the endpoint is associated.</p>
      */
     inline const Aws::String& GetVpcId() const{ return m_vpcId; }
+
+    /**
+     * <p>The ID of the VPC to which the endpoint is associated.</p>
+     */
+    inline bool VpcIdHasBeenSet() const { return m_vpcIdHasBeenSet; }
 
     /**
      * <p>The ID of the VPC to which the endpoint is associated.</p>
@@ -161,6 +176,11 @@ namespace Model
     /**
      * <p>The name of the service to which the endpoint is associated.</p>
      */
+    inline bool ServiceNameHasBeenSet() const { return m_serviceNameHasBeenSet; }
+
+    /**
+     * <p>The name of the service to which the endpoint is associated.</p>
+     */
     inline void SetServiceName(const Aws::String& value) { m_serviceNameHasBeenSet = true; m_serviceName = value; }
 
     /**
@@ -197,6 +217,11 @@ namespace Model
     /**
      * <p>The state of the VPC endpoint.</p>
      */
+    inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
+
+    /**
+     * <p>The state of the VPC endpoint.</p>
+     */
     inline void SetState(const State& value) { m_stateHasBeenSet = true; m_state = value; }
 
     /**
@@ -219,6 +244,11 @@ namespace Model
      * <p>The policy document associated with the endpoint, if applicable.</p>
      */
     inline const Aws::String& GetPolicyDocument() const{ return m_policyDocument; }
+
+    /**
+     * <p>The policy document associated with the endpoint, if applicable.</p>
+     */
+    inline bool PolicyDocumentHasBeenSet() const { return m_policyDocumentHasBeenSet; }
 
     /**
      * <p>The policy document associated with the endpoint, if applicable.</p>
@@ -255,6 +285,11 @@ namespace Model
      * <p>(Gateway endpoint) One or more route tables associated with the endpoint.</p>
      */
     inline const Aws::Vector<Aws::String>& GetRouteTableIds() const{ return m_routeTableIds; }
+
+    /**
+     * <p>(Gateway endpoint) One or more route tables associated with the endpoint.</p>
+     */
+    inline bool RouteTableIdsHasBeenSet() const { return m_routeTableIdsHasBeenSet; }
 
     /**
      * <p>(Gateway endpoint) One or more route tables associated with the endpoint.</p>
@@ -297,6 +332,12 @@ namespace Model
      * located.</p>
      */
     inline const Aws::Vector<Aws::String>& GetSubnetIds() const{ return m_subnetIds; }
+
+    /**
+     * <p>(Interface endpoint) One or more subnets in which the endpoint is
+     * located.</p>
+     */
+    inline bool SubnetIdsHasBeenSet() const { return m_subnetIdsHasBeenSet; }
 
     /**
      * <p>(Interface endpoint) One or more subnets in which the endpoint is
@@ -351,6 +392,12 @@ namespace Model
      * <p>(Interface endpoint) Information about the security groups associated with
      * the network interface.</p>
      */
+    inline bool GroupsHasBeenSet() const { return m_groupsHasBeenSet; }
+
+    /**
+     * <p>(Interface endpoint) Information about the security groups associated with
+     * the network interface.</p>
+     */
     inline void SetGroups(const Aws::Vector<SecurityGroupIdentifier>& value) { m_groupsHasBeenSet = true; m_groups = value; }
 
     /**
@@ -394,6 +441,12 @@ namespace Model
      * <p>(Interface endpoint) Indicates whether the VPC is associated with a private
      * hosted zone.</p>
      */
+    inline bool PrivateDnsEnabledHasBeenSet() const { return m_privateDnsEnabledHasBeenSet; }
+
+    /**
+     * <p>(Interface endpoint) Indicates whether the VPC is associated with a private
+     * hosted zone.</p>
+     */
     inline void SetPrivateDnsEnabled(bool value) { m_privateDnsEnabledHasBeenSet = true; m_privateDnsEnabled = value; }
 
     /**
@@ -407,6 +460,11 @@ namespace Model
      * <p>(Interface endpoint) One or more network interfaces for the endpoint.</p>
      */
     inline const Aws::Vector<Aws::String>& GetNetworkInterfaceIds() const{ return m_networkInterfaceIds; }
+
+    /**
+     * <p>(Interface endpoint) One or more network interfaces for the endpoint.</p>
+     */
+    inline bool NetworkInterfaceIdsHasBeenSet() const { return m_networkInterfaceIdsHasBeenSet; }
 
     /**
      * <p>(Interface endpoint) One or more network interfaces for the endpoint.</p>
@@ -452,6 +510,11 @@ namespace Model
     /**
      * <p>(Interface endpoint) The DNS entries for the endpoint.</p>
      */
+    inline bool DnsEntriesHasBeenSet() const { return m_dnsEntriesHasBeenSet; }
+
+    /**
+     * <p>(Interface endpoint) The DNS entries for the endpoint.</p>
+     */
     inline void SetDnsEntries(const Aws::Vector<DnsEntry>& value) { m_dnsEntriesHasBeenSet = true; m_dnsEntries = value; }
 
     /**
@@ -484,6 +547,11 @@ namespace Model
      * <p>The date and time the VPC endpoint was created.</p>
      */
     inline const Aws::Utils::DateTime& GetCreationTimestamp() const{ return m_creationTimestamp; }
+
+    /**
+     * <p>The date and time the VPC endpoint was created.</p>
+     */
+    inline bool CreationTimestampHasBeenSet() const { return m_creationTimestampHasBeenSet; }
 
     /**
      * <p>The date and time the VPC endpoint was created.</p>

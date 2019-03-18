@@ -59,6 +59,11 @@ namespace Model
     /**
      * <p>The identifier of the member.</p>
      */
+    inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
+
+    /**
+     * <p>The identifier of the member.</p>
+     */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
     /**
@@ -91,6 +96,11 @@ namespace Model
      * <p>The name of the member.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
+
+    /**
+     * <p>The name of the member.</p>
+     */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
      * <p>The name of the member.</p>
@@ -131,6 +141,11 @@ namespace Model
     /**
      * <p>A member can be a user or group.</p>
      */
+    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
+
+    /**
+     * <p>A member can be a user or group.</p>
+     */
     inline void SetType(const MemberType& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
@@ -153,6 +168,11 @@ namespace Model
      * <p>The state of the member, which can be ENABLED, DISABLED, or DELETED.</p>
      */
     inline const EntityState& GetState() const{ return m_state; }
+
+    /**
+     * <p>The state of the member, which can be ENABLED, DISABLED, or DELETED.</p>
+     */
+    inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
 
     /**
      * <p>The state of the member, which can be ENABLED, DISABLED, or DELETED.</p>
@@ -183,6 +203,11 @@ namespace Model
     /**
      * <p>The date indicating when the member was enabled for Amazon WorkMail use.</p>
      */
+    inline bool EnabledDateHasBeenSet() const { return m_enabledDateHasBeenSet; }
+
+    /**
+     * <p>The date indicating when the member was enabled for Amazon WorkMail use.</p>
+     */
     inline void SetEnabledDate(const Aws::Utils::DateTime& value) { m_enabledDateHasBeenSet = true; m_enabledDate = value; }
 
     /**
@@ -206,6 +231,12 @@ namespace Model
      * use.</p>
      */
     inline const Aws::Utils::DateTime& GetDisabledDate() const{ return m_disabledDate; }
+
+    /**
+     * <p>The date indicating when the member was disabled from Amazon WorkMail
+     * use.</p>
+     */
+    inline bool DisabledDateHasBeenSet() const { return m_disabledDateHasBeenSet; }
 
     /**
      * <p>The date indicating when the member was disabled from Amazon WorkMail

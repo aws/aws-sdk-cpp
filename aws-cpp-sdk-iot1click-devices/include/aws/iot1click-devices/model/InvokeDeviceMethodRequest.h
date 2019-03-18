@@ -51,6 +51,11 @@ namespace Model
     /**
      * <p>The unique identifier of the device.</p>
      */
+    inline bool DeviceIdHasBeenSet() const { return m_deviceIdHasBeenSet; }
+
+    /**
+     * <p>The unique identifier of the device.</p>
+     */
     inline void SetDeviceId(const Aws::String& value) { m_deviceIdHasBeenSet = true; m_deviceId = value; }
 
     /**
@@ -87,6 +92,11 @@ namespace Model
     /**
      * <p>The device method to invoke.</p>
      */
+    inline bool DeviceMethodHasBeenSet() const { return m_deviceMethodHasBeenSet; }
+
+    /**
+     * <p>The device method to invoke.</p>
+     */
     inline void SetDeviceMethod(const DeviceMethod& value) { m_deviceMethodHasBeenSet = true; m_deviceMethod = value; }
 
     /**
@@ -109,6 +119,11 @@ namespace Model
      * <p>A JSON encoded string containing the device method request parameters.</p>
      */
     inline const Aws::String& GetDeviceMethodParameters() const{ return m_deviceMethodParameters; }
+
+    /**
+     * <p>A JSON encoded string containing the device method request parameters.</p>
+     */
+    inline bool DeviceMethodParametersHasBeenSet() const { return m_deviceMethodParametersHasBeenSet; }
 
     /**
      * <p>A JSON encoded string containing the device method request parameters.</p>

@@ -52,6 +52,11 @@ namespace Model
     /**
      * <p>The ID of the project.</p>
      */
+    inline bool ProjectIdHasBeenSet() const { return m_projectIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the project.</p>
+     */
     inline void SetProjectId(const Aws::String& value) { m_projectIdHasBeenSet = true; m_projectId = value; }
 
     /**
@@ -85,6 +90,12 @@ namespace Model
      * returned in one response.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
+    /**
+     * <p>The continuation token for the next set of results, if the results cannot be
+     * returned in one response.</p>
+     */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
      * <p>The continuation token for the next set of results, if the results cannot be
@@ -128,6 +139,12 @@ namespace Model
      * results.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
+
+    /**
+     * <p>The maximum amount of data that can be contained in a single set of
+     * results.</p>
+     */
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
 
     /**
      * <p>The maximum amount of data that can be contained in a single set of

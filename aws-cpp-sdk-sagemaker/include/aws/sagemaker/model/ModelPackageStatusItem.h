@@ -59,6 +59,12 @@ namespace Model
      * <p>The name of the model package for which the overall status is being
      * reported.</p>
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>The name of the model package for which the overall status is being
+     * reported.</p>
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
@@ -100,6 +106,11 @@ namespace Model
     /**
      * <p>The current status.</p>
      */
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
+
+    /**
+     * <p>The current status.</p>
+     */
     inline void SetStatus(const DetailedModelPackageStatus& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
@@ -122,6 +133,11 @@ namespace Model
      * <p>if the overall status is <code>Failed</code>, the reason for the failure.</p>
      */
     inline const Aws::String& GetFailureReason() const{ return m_failureReason; }
+
+    /**
+     * <p>if the overall status is <code>Failed</code>, the reason for the failure.</p>
+     */
+    inline bool FailureReasonHasBeenSet() const { return m_failureReasonHasBeenSet; }
 
     /**
      * <p>if the overall status is <code>Failed</code>, the reason for the failure.</p>

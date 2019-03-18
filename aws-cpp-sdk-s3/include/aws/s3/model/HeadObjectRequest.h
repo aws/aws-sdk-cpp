@@ -61,6 +61,11 @@ namespace Model
     /**
      * <p/>
      */
+    inline bool BucketHasBeenSet() const { return m_bucketHasBeenSet; }
+
+    /**
+     * <p/>
+     */
     inline void SetBucket(const Aws::String& value) { m_bucketHasBeenSet = true; m_bucket = value; }
 
     /**
@@ -94,6 +99,12 @@ namespace Model
      * specified, otherwise return a 412 (precondition failed).</p>
      */
     inline const Aws::String& GetIfMatch() const{ return m_ifMatch; }
+
+    /**
+     * <p>Return the object only if its entity tag (ETag) is the same as the one
+     * specified, otherwise return a 412 (precondition failed).</p>
+     */
+    inline bool IfMatchHasBeenSet() const { return m_ifMatchHasBeenSet; }
 
     /**
      * <p>Return the object only if its entity tag (ETag) is the same as the one
@@ -142,6 +153,12 @@ namespace Model
      * <p>Return the object only if it has been modified since the specified time,
      * otherwise return a 304 (not modified).</p>
      */
+    inline bool IfModifiedSinceHasBeenSet() const { return m_ifModifiedSinceHasBeenSet; }
+
+    /**
+     * <p>Return the object only if it has been modified since the specified time,
+     * otherwise return a 304 (not modified).</p>
+     */
     inline void SetIfModifiedSince(const Aws::Utils::DateTime& value) { m_ifModifiedSinceHasBeenSet = true; m_ifModifiedSince = value; }
 
     /**
@@ -168,6 +185,12 @@ namespace Model
      * specified, otherwise return a 304 (not modified).</p>
      */
     inline const Aws::String& GetIfNoneMatch() const{ return m_ifNoneMatch; }
+
+    /**
+     * <p>Return the object only if its entity tag (ETag) is different from the one
+     * specified, otherwise return a 304 (not modified).</p>
+     */
+    inline bool IfNoneMatchHasBeenSet() const { return m_ifNoneMatchHasBeenSet; }
 
     /**
      * <p>Return the object only if its entity tag (ETag) is different from the one
@@ -216,6 +239,12 @@ namespace Model
      * <p>Return the object only if it has not been modified since the specified time,
      * otherwise return a 412 (precondition failed).</p>
      */
+    inline bool IfUnmodifiedSinceHasBeenSet() const { return m_ifUnmodifiedSinceHasBeenSet; }
+
+    /**
+     * <p>Return the object only if it has not been modified since the specified time,
+     * otherwise return a 412 (precondition failed).</p>
+     */
     inline void SetIfUnmodifiedSince(const Aws::Utils::DateTime& value) { m_ifUnmodifiedSinceHasBeenSet = true; m_ifUnmodifiedSince = value; }
 
     /**
@@ -241,6 +270,11 @@ namespace Model
      * <p/>
      */
     inline const Aws::String& GetKey() const{ return m_key; }
+
+    /**
+     * <p/>
+     */
+    inline bool KeyHasBeenSet() const { return m_keyHasBeenSet; }
 
     /**
      * <p/>
@@ -279,6 +313,13 @@ namespace Model
      * http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.35.</p>
      */
     inline const Aws::String& GetRange() const{ return m_range; }
+
+    /**
+     * <p>Downloads the specified range bytes of an object. For more information about
+     * the HTTP Range header, go to
+     * http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.35.</p>
+     */
+    inline bool RangeHasBeenSet() const { return m_rangeHasBeenSet; }
 
     /**
      * <p>Downloads the specified range bytes of an object. For more information about
@@ -331,6 +372,11 @@ namespace Model
     /**
      * <p>VersionId used to reference a specific version of the object.</p>
      */
+    inline bool VersionIdHasBeenSet() const { return m_versionIdHasBeenSet; }
+
+    /**
+     * <p>VersionId used to reference a specific version of the object.</p>
+     */
     inline void SetVersionId(const Aws::String& value) { m_versionIdHasBeenSet = true; m_versionId = value; }
 
     /**
@@ -364,6 +410,12 @@ namespace Model
      * AES256).</p>
      */
     inline const Aws::String& GetSSECustomerAlgorithm() const{ return m_sSECustomerAlgorithm; }
+
+    /**
+     * <p>Specifies the algorithm to use to when encrypting the object (e.g.,
+     * AES256).</p>
+     */
+    inline bool SSECustomerAlgorithmHasBeenSet() const { return m_sSECustomerAlgorithmHasBeenSet; }
 
     /**
      * <p>Specifies the algorithm to use to when encrypting the object (e.g.,
@@ -410,6 +462,15 @@ namespace Model
      * x-amz-server-side​-encryption​-customer-algorithm header.</p>
      */
     inline const Aws::String& GetSSECustomerKey() const{ return m_sSECustomerKey; }
+
+    /**
+     * <p>Specifies the customer-provided encryption key for Amazon S3 to use in
+     * encrypting data. This value is used to store the object and then it is
+     * discarded; Amazon does not store the encryption key. The key must be appropriate
+     * for use with the algorithm specified in the
+     * x-amz-server-side​-encryption​-customer-algorithm header.</p>
+     */
+    inline bool SSECustomerKeyHasBeenSet() const { return m_sSECustomerKeyHasBeenSet; }
 
     /**
      * <p>Specifies the customer-provided encryption key for Amazon S3 to use in
@@ -478,6 +539,13 @@ namespace Model
      * Amazon S3 uses this header for a message integrity check to ensure the
      * encryption key was transmitted without error.</p>
      */
+    inline bool SSECustomerKeyMD5HasBeenSet() const { return m_sSECustomerKeyMD5HasBeenSet; }
+
+    /**
+     * <p>Specifies the 128-bit MD5 digest of the encryption key according to RFC 1321.
+     * Amazon S3 uses this header for a message integrity check to ensure the
+     * encryption key was transmitted without error.</p>
+     */
     inline void SetSSECustomerKeyMD5(const Aws::String& value) { m_sSECustomerKeyMD5HasBeenSet = true; m_sSECustomerKeyMD5 = value; }
 
     /**
@@ -520,6 +588,9 @@ namespace Model
     inline const RequestPayer& GetRequestPayer() const{ return m_requestPayer; }
 
     
+    inline bool RequestPayerHasBeenSet() const { return m_requestPayerHasBeenSet; }
+
+    
     inline void SetRequestPayer(const RequestPayer& value) { m_requestPayerHasBeenSet = true; m_requestPayer = value; }
 
     
@@ -546,6 +617,14 @@ namespace Model
      * Useful querying about the size of the part and the number of parts in this
      * object.</p>
      */
+    inline bool PartNumberHasBeenSet() const { return m_partNumberHasBeenSet; }
+
+    /**
+     * <p>Part number of the object being read. This is a positive integer between 1
+     * and 10,000. Effectively performs a 'ranged' HEAD request for the part specified.
+     * Useful querying about the size of the part and the number of parts in this
+     * object.</p>
+     */
     inline void SetPartNumber(int value) { m_partNumberHasBeenSet = true; m_partNumber = value; }
 
     /**
@@ -559,6 +638,9 @@ namespace Model
 
     
     inline const Aws::Map<Aws::String, Aws::String>& GetCustomizedAccessLogTag() const{ return m_customizedAccessLogTag; }
+
+    
+    inline bool CustomizedAccessLogTagHasBeenSet() const { return m_customizedAccessLogTagHasBeenSet; }
 
     
     inline void SetCustomizedAccessLogTag(const Aws::Map<Aws::String, Aws::String>& value) { m_customizedAccessLogTagHasBeenSet = true; m_customizedAccessLogTag = value; }

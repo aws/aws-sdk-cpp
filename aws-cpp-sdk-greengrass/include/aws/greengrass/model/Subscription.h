@@ -59,6 +59,13 @@ namespace Model
      * within the subscription definition version. Max length is 128 characters with
      * pattern ''[a-zA-Z0-9:_-]+''.
      */
+    inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
+
+    /**
+     * A descriptive or arbitrary ID for the subscription. This value must be unique
+     * within the subscription definition version. Max length is 128 characters with
+     * pattern ''[a-zA-Z0-9:_-]+''.
+     */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
     /**
@@ -103,6 +110,13 @@ namespace Model
      * 'GGShadowService'.
      */
     inline const Aws::String& GetSource() const{ return m_source; }
+
+    /**
+     * The source of the subscription. Can be a thing ARN, a Lambda function ARN, a
+     * connector ARN, 'cloud' (which represents the AWS IoT cloud), or
+     * 'GGShadowService'.
+     */
+    inline bool SourceHasBeenSet() const { return m_sourceHasBeenSet; }
 
     /**
      * The source of the subscription. Can be a thing ARN, a Lambda function ARN, a
@@ -155,6 +169,11 @@ namespace Model
     /**
      * The MQTT topic used to route the message.
      */
+    inline bool SubjectHasBeenSet() const { return m_subjectHasBeenSet; }
+
+    /**
+     * The MQTT topic used to route the message.
+     */
     inline void SetSubject(const Aws::String& value) { m_subjectHasBeenSet = true; m_subject = value; }
 
     /**
@@ -189,6 +208,13 @@ namespace Model
      * 'GGShadowService'.
      */
     inline const Aws::String& GetTarget() const{ return m_target; }
+
+    /**
+     * Where the message is sent to. Can be a thing ARN, a Lambda function ARN, a
+     * connector ARN, 'cloud' (which represents the AWS IoT cloud), or
+     * 'GGShadowService'.
+     */
+    inline bool TargetHasBeenSet() const { return m_targetHasBeenSet; }
 
     /**
      * Where the message is sent to. Can be a thing ARN, a Lambda function ARN, a

@@ -67,6 +67,11 @@ namespace Model
     /**
      * <p>The Availability Zone in which the Reserved Instance can be used.</p>
      */
+    inline bool AvailabilityZoneHasBeenSet() const { return m_availabilityZoneHasBeenSet; }
+
+    /**
+     * <p>The Availability Zone in which the Reserved Instance can be used.</p>
+     */
     inline void SetAvailabilityZone(const Aws::String& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = value; }
 
     /**
@@ -103,6 +108,11 @@ namespace Model
     /**
      * <p>The duration of the Reserved Instance, in seconds.</p>
      */
+    inline bool DurationHasBeenSet() const { return m_durationHasBeenSet; }
+
+    /**
+     * <p>The duration of the Reserved Instance, in seconds.</p>
+     */
     inline void SetDuration(long long value) { m_durationHasBeenSet = true; m_duration = value; }
 
     /**
@@ -119,6 +129,11 @@ namespace Model
     /**
      * <p>The purchase price of the Reserved Instance.</p>
      */
+    inline bool FixedPriceHasBeenSet() const { return m_fixedPriceHasBeenSet; }
+
+    /**
+     * <p>The purchase price of the Reserved Instance.</p>
+     */
     inline void SetFixedPrice(double value) { m_fixedPriceHasBeenSet = true; m_fixedPrice = value; }
 
     /**
@@ -131,6 +146,11 @@ namespace Model
      * <p>The instance type on which the Reserved Instance can be used.</p>
      */
     inline const InstanceType& GetInstanceType() const{ return m_instanceType; }
+
+    /**
+     * <p>The instance type on which the Reserved Instance can be used.</p>
+     */
+    inline bool InstanceTypeHasBeenSet() const { return m_instanceTypeHasBeenSet; }
 
     /**
      * <p>The instance type on which the Reserved Instance can be used.</p>
@@ -161,6 +181,11 @@ namespace Model
     /**
      * <p>The Reserved Instance product platform description.</p>
      */
+    inline bool ProductDescriptionHasBeenSet() const { return m_productDescriptionHasBeenSet; }
+
+    /**
+     * <p>The Reserved Instance product platform description.</p>
+     */
     inline void SetProductDescription(const RIProductDescription& value) { m_productDescriptionHasBeenSet = true; m_productDescription = value; }
 
     /**
@@ -185,6 +210,13 @@ namespace Model
      * made.</p>
      */
     inline const Aws::String& GetReservedInstancesOfferingId() const{ return m_reservedInstancesOfferingId; }
+
+    /**
+     * <p>The ID of the Reserved Instance offering. This is the offering ID used in
+     * <a>GetReservedInstancesExchangeQuote</a> to confirm that an exchange can be
+     * made.</p>
+     */
+    inline bool ReservedInstancesOfferingIdHasBeenSet() const { return m_reservedInstancesOfferingIdHasBeenSet; }
 
     /**
      * <p>The ID of the Reserved Instance offering. This is the offering ID used in
@@ -237,6 +269,11 @@ namespace Model
     /**
      * <p>The usage price of the Reserved Instance, per hour.</p>
      */
+    inline bool UsagePriceHasBeenSet() const { return m_usagePriceHasBeenSet; }
+
+    /**
+     * <p>The usage price of the Reserved Instance, per hour.</p>
+     */
     inline void SetUsagePrice(double value) { m_usagePriceHasBeenSet = true; m_usagePrice = value; }
 
     /**
@@ -251,6 +288,13 @@ namespace Model
      * supported currency is <code>USD</code>.</p>
      */
     inline const CurrencyCodeValues& GetCurrencyCode() const{ return m_currencyCode; }
+
+    /**
+     * <p>The currency of the Reserved Instance offering you are purchasing. It's
+     * specified using ISO 4217 standard currency codes. At this time, the only
+     * supported currency is <code>USD</code>.</p>
+     */
+    inline bool CurrencyCodeHasBeenSet() const { return m_currencyCodeHasBeenSet; }
 
     /**
      * <p>The currency of the Reserved Instance offering you are purchasing. It's
@@ -289,6 +333,11 @@ namespace Model
     /**
      * <p>The tenancy of the instance.</p>
      */
+    inline bool InstanceTenancyHasBeenSet() const { return m_instanceTenancyHasBeenSet; }
+
+    /**
+     * <p>The tenancy of the instance.</p>
+     */
     inline void SetInstanceTenancy(const Tenancy& value) { m_instanceTenancyHasBeenSet = true; m_instanceTenancy = value; }
 
     /**
@@ -319,6 +368,13 @@ namespace Model
      * Marketplace (resale) or AWS. If it's a Reserved Instance Marketplace offering,
      * this is <code>true</code>.</p>
      */
+    inline bool MarketplaceHasBeenSet() const { return m_marketplaceHasBeenSet; }
+
+    /**
+     * <p>Indicates whether the offering is available through the Reserved Instance
+     * Marketplace (resale) or AWS. If it's a Reserved Instance Marketplace offering,
+     * this is <code>true</code>.</p>
+     */
     inline void SetMarketplace(bool value) { m_marketplaceHasBeenSet = true; m_marketplace = value; }
 
     /**
@@ -335,6 +391,13 @@ namespace Model
      * <code>standard</code>, it is not possible to perform an exchange.</p>
      */
     inline const OfferingClassType& GetOfferingClass() const{ return m_offeringClass; }
+
+    /**
+     * <p>If <code>convertible</code> it can be exchanged for Reserved Instances of the
+     * same or higher monetary value, with different configurations. If
+     * <code>standard</code>, it is not possible to perform an exchange.</p>
+     */
+    inline bool OfferingClassHasBeenSet() const { return m_offeringClassHasBeenSet; }
 
     /**
      * <p>If <code>convertible</code> it can be exchanged for Reserved Instances of the
@@ -373,6 +436,11 @@ namespace Model
     /**
      * <p>The Reserved Instance offering type.</p>
      */
+    inline bool OfferingTypeHasBeenSet() const { return m_offeringTypeHasBeenSet; }
+
+    /**
+     * <p>The Reserved Instance offering type.</p>
+     */
     inline void SetOfferingType(const OfferingTypeValues& value) { m_offeringTypeHasBeenSet = true; m_offeringType = value; }
 
     /**
@@ -395,6 +463,11 @@ namespace Model
      * <p>The pricing details of the Reserved Instance offering.</p>
      */
     inline const Aws::Vector<PricingDetail>& GetPricingDetails() const{ return m_pricingDetails; }
+
+    /**
+     * <p>The pricing details of the Reserved Instance offering.</p>
+     */
+    inline bool PricingDetailsHasBeenSet() const { return m_pricingDetailsHasBeenSet; }
 
     /**
      * <p>The pricing details of the Reserved Instance offering.</p>
@@ -435,6 +508,11 @@ namespace Model
     /**
      * <p>The recurring charge tag assigned to the resource.</p>
      */
+    inline bool RecurringChargesHasBeenSet() const { return m_recurringChargesHasBeenSet; }
+
+    /**
+     * <p>The recurring charge tag assigned to the resource.</p>
+     */
     inline void SetRecurringCharges(const Aws::Vector<RecurringCharge>& value) { m_recurringChargesHasBeenSet = true; m_recurringCharges = value; }
 
     /**
@@ -468,6 +546,12 @@ namespace Model
      * Availability Zone.</p>
      */
     inline const Scope& GetScope() const{ return m_scope; }
+
+    /**
+     * <p>Whether the Reserved Instance is applied to instances in a region or an
+     * Availability Zone.</p>
+     */
+    inline bool ScopeHasBeenSet() const { return m_scopeHasBeenSet; }
 
     /**
      * <p>Whether the Reserved Instance is applied to instances in a region or an

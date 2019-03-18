@@ -52,6 +52,11 @@ namespace Model
     /**
      * <p>ID of the collection from which to list the faces.</p>
      */
+    inline bool CollectionIdHasBeenSet() const { return m_collectionIdHasBeenSet; }
+
+    /**
+     * <p>ID of the collection from which to list the faces.</p>
+     */
     inline void SetCollectionId(const Aws::String& value) { m_collectionIdHasBeenSet = true; m_collectionId = value; }
 
     /**
@@ -86,6 +91,13 @@ namespace Model
      * can use this pagination token to retrieve the next set of faces.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
+    /**
+     * <p>If the previous response was incomplete (because there is more data to
+     * retrieve), Amazon Rekognition returns a pagination token in the response. You
+     * can use this pagination token to retrieve the next set of faces.</p>
+     */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
      * <p>If the previous response was incomplete (because there is more data to
@@ -134,6 +146,11 @@ namespace Model
      * <p>Maximum number of faces to return.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
+
+    /**
+     * <p>Maximum number of faces to return.</p>
+     */
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
 
     /**
      * <p>Maximum number of faces to return.</p>

@@ -50,6 +50,11 @@ namespace Model
     /**
      * <p>The ARN of the insight that you want to delete.</p>
      */
+    inline bool InsightArnHasBeenSet() const { return m_insightArnHasBeenSet; }
+
+    /**
+     * <p>The ARN of the insight that you want to delete.</p>
+     */
     inline void SetInsightArn(const Aws::String& value) { m_insightArnHasBeenSet = true; m_insightArn = value; }
 
     /**

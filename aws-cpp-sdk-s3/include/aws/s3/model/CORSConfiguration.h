@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p/>
      */
+    inline bool CORSRulesHasBeenSet() const { return m_cORSRulesHasBeenSet; }
+
+    /**
+     * <p/>
+     */
     inline void SetCORSRules(const Aws::Vector<CORSRule>& value) { m_cORSRulesHasBeenSet = true; m_cORSRules = value; }
 
     /**

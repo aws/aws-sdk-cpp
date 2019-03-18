@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>Represents the progress of an online resharding operation.</p>
      */
+    inline bool SlotMigrationHasBeenSet() const { return m_slotMigrationHasBeenSet; }
+
+    /**
+     * <p>Represents the progress of an online resharding operation.</p>
+     */
     inline void SetSlotMigration(const SlotMigration& value) { m_slotMigrationHasBeenSet = true; m_slotMigration = value; }
 
     /**

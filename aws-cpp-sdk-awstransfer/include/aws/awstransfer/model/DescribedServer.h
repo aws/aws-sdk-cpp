@@ -65,6 +65,12 @@ namespace Model
      * <p>Specifies the unique Amazon Resource Name (ARN) for the server to be
      * described.</p>
      */
+    inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
+
+    /**
+     * <p>Specifies the unique Amazon Resource Name (ARN) for the server to be
+     * described.</p>
+     */
     inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
 
     /**
@@ -110,6 +116,13 @@ namespace Model
      * field is not populated when the <code>IdentityProviderType</code> of the server
      * is <code>SERVICE_MANAGED</code>&gt;.</p>
      */
+    inline bool IdentityProviderDetailsHasBeenSet() const { return m_identityProviderDetailsHasBeenSet; }
+
+    /**
+     * <p>Specifies information to call a customer-supplied authentication API. This
+     * field is not populated when the <code>IdentityProviderType</code> of the server
+     * is <code>SERVICE_MANAGED</code>&gt;.</p>
+     */
     inline void SetIdentityProviderDetails(const IdentityProviderDetails& value) { m_identityProviderDetailsHasBeenSet = true; m_identityProviderDetails = value; }
 
     /**
@@ -142,6 +155,15 @@ namespace Model
      * endpoint that will be invoked for authenticating your user into the service.</p>
      */
     inline const IdentityProviderType& GetIdentityProviderType() const{ return m_identityProviderType; }
+
+    /**
+     * <p>This property defines the mode of authentication method enabled for this
+     * service. A value of <code>SERVICE_MANAGED</code>, means that you are using this
+     * Server to store and access SFTP user credentials within the service. A value of
+     * <code>API_GATEWAY</code> indicates that you have integrated an API Gateway
+     * endpoint that will be invoked for authenticating your user into the service.</p>
+     */
+    inline bool IdentityProviderTypeHasBeenSet() const { return m_identityProviderTypeHasBeenSet; }
 
     /**
      * <p>This property defines the mode of authentication method enabled for this
@@ -192,6 +214,13 @@ namespace Model
      * allows the server to turn on Amazon CloudWatch logging for Amazon S3 events.
      * When set, user activity can be view in your CloudWatch logs.</p>
      */
+    inline bool LoggingRoleHasBeenSet() const { return m_loggingRoleHasBeenSet; }
+
+    /**
+     * <p>This property is an AWS Identity and Access Management (IAM) entity that
+     * allows the server to turn on Amazon CloudWatch logging for Amazon S3 events.
+     * When set, user activity can be view in your CloudWatch logs.</p>
+     */
     inline void SetLoggingRole(const Aws::String& value) { m_loggingRoleHasBeenSet = true; m_loggingRole = value; }
 
     /**
@@ -235,6 +264,12 @@ namespace Model
      * you instantiate.</p>
      */
     inline const Aws::String& GetServerId() const{ return m_serverId; }
+
+    /**
+     * <p>This property is a unique system assigned identifier for the SFTP server that
+     * you instantiate.</p>
+     */
+    inline bool ServerIdHasBeenSet() const { return m_serverIdHasBeenSet; }
 
     /**
      * <p>This property is a unique system assigned identifier for the SFTP server that
@@ -295,6 +330,18 @@ namespace Model
      * The values of <code>START_FAILED</code> or <code>STOP_FAILED</code> can indicate
      * an error condition.</p>
      */
+    inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
+
+    /**
+     * <p>The condition of the SFTP server for the server that was described. A value
+     * of <code>ONLINE</code> indicates that the server can accept jobs and transfer
+     * files. A <code>State</code> value of <code>OFFLINE</code> means that the server
+     * cannot perform file transfer operations.</p> <p>The states of
+     * <code>STARTING</code> and <code>STOPPING</code> indicated that the server is in
+     * an intermediate state, either not fully able to respond, or not fully offline.
+     * The values of <code>START_FAILED</code> or <code>STOP_FAILED</code> can indicate
+     * an error condition.</p>
+     */
     inline void SetState(const State& value) { m_stateHasBeenSet = true; m_state = value; }
 
     /**
@@ -344,6 +391,12 @@ namespace Model
      * <p>This property contains the key-value pairs that you can use to search for and
      * group servers that were assigned to the server that was described.</p>
      */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
+
+    /**
+     * <p>This property contains the key-value pairs that you can use to search for and
+     * group servers that were assigned to the server that was described.</p>
+     */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     /**
@@ -382,6 +435,12 @@ namespace Model
      * the <code>ServerId</code>.</p>
      */
     inline int GetUserCount() const{ return m_userCount; }
+
+    /**
+     * <p>The number of users that are assigned to the SFTP server you specified with
+     * the <code>ServerId</code>.</p>
+     */
+    inline bool UserCountHasBeenSet() const { return m_userCountHasBeenSet; }
 
     /**
      * <p>The number of users that are assigned to the SFTP server you specified with

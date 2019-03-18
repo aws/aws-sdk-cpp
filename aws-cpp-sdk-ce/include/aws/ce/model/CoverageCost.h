@@ -55,6 +55,11 @@ namespace Model
     /**
      * <p>How much an On-Demand instance cost.</p>
      */
+    inline bool OnDemandCostHasBeenSet() const { return m_onDemandCostHasBeenSet; }
+
+    /**
+     * <p>How much an On-Demand instance cost.</p>
+     */
     inline void SetOnDemandCost(const Aws::String& value) { m_onDemandCostHasBeenSet = true; m_onDemandCost = value; }
 
     /**

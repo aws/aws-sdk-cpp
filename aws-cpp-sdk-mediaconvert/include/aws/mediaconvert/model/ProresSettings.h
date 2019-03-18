@@ -58,6 +58,9 @@ namespace Model
     inline const ProresCodecProfile& GetCodecProfile() const{ return m_codecProfile; }
 
     
+    inline bool CodecProfileHasBeenSet() const { return m_codecProfileHasBeenSet; }
+
+    
     inline void SetCodecProfile(const ProresCodecProfile& value) { m_codecProfileHasBeenSet = true; m_codecProfile = value; }
 
     
@@ -72,6 +75,9 @@ namespace Model
 
     
     inline const ProresFramerateControl& GetFramerateControl() const{ return m_framerateControl; }
+
+    
+    inline bool FramerateControlHasBeenSet() const { return m_framerateControlHasBeenSet; }
 
     
     inline void SetFramerateControl(const ProresFramerateControl& value) { m_framerateControlHasBeenSet = true; m_framerateControl = value; }
@@ -90,6 +96,9 @@ namespace Model
     inline const ProresFramerateConversionAlgorithm& GetFramerateConversionAlgorithm() const{ return m_framerateConversionAlgorithm; }
 
     
+    inline bool FramerateConversionAlgorithmHasBeenSet() const { return m_framerateConversionAlgorithmHasBeenSet; }
+
+    
     inline void SetFramerateConversionAlgorithm(const ProresFramerateConversionAlgorithm& value) { m_framerateConversionAlgorithmHasBeenSet = true; m_framerateConversionAlgorithm = value; }
 
     
@@ -106,6 +115,11 @@ namespace Model
      * Frame rate denominator.
      */
     inline int GetFramerateDenominator() const{ return m_framerateDenominator; }
+
+    /**
+     * Frame rate denominator.
+     */
+    inline bool FramerateDenominatorHasBeenSet() const { return m_framerateDenominatorHasBeenSet; }
 
     /**
      * Frame rate denominator.
@@ -132,6 +146,14 @@ namespace Model
      * FramerateNumerator to specify the numerator of this fraction. In this example,
      * use 24000 for the value of FramerateNumerator.
      */
+    inline bool FramerateNumeratorHasBeenSet() const { return m_framerateNumeratorHasBeenSet; }
+
+    /**
+     * When you use the API for transcode jobs that use frame rate conversion, specify
+     * the frame rate as a fraction. For example,  24000 / 1001 = 23.976 fps. Use
+     * FramerateNumerator to specify the numerator of this fraction. In this example,
+     * use 24000 for the value of FramerateNumerator.
+     */
     inline void SetFramerateNumerator(int value) { m_framerateNumeratorHasBeenSet = true; m_framerateNumerator = value; }
 
     /**
@@ -145,6 +167,9 @@ namespace Model
 
     
     inline const ProresInterlaceMode& GetInterlaceMode() const{ return m_interlaceMode; }
+
+    
+    inline bool InterlaceModeHasBeenSet() const { return m_interlaceModeHasBeenSet; }
 
     
     inline void SetInterlaceMode(const ProresInterlaceMode& value) { m_interlaceModeHasBeenSet = true; m_interlaceMode = value; }
@@ -161,6 +186,9 @@ namespace Model
 
     
     inline const ProresParControl& GetParControl() const{ return m_parControl; }
+
+    
+    inline bool ParControlHasBeenSet() const { return m_parControlHasBeenSet; }
 
     
     inline void SetParControl(const ProresParControl& value) { m_parControlHasBeenSet = true; m_parControl = value; }
@@ -183,6 +211,11 @@ namespace Model
     /**
      * Pixel Aspect Ratio denominator.
      */
+    inline bool ParDenominatorHasBeenSet() const { return m_parDenominatorHasBeenSet; }
+
+    /**
+     * Pixel Aspect Ratio denominator.
+     */
     inline void SetParDenominator(int value) { m_parDenominatorHasBeenSet = true; m_parDenominator = value; }
 
     /**
@@ -199,6 +232,11 @@ namespace Model
     /**
      * Pixel Aspect Ratio numerator.
      */
+    inline bool ParNumeratorHasBeenSet() const { return m_parNumeratorHasBeenSet; }
+
+    /**
+     * Pixel Aspect Ratio numerator.
+     */
     inline void SetParNumerator(int value) { m_parNumeratorHasBeenSet = true; m_parNumerator = value; }
 
     /**
@@ -209,6 +247,9 @@ namespace Model
 
     
     inline const ProresSlowPal& GetSlowPal() const{ return m_slowPal; }
+
+    
+    inline bool SlowPalHasBeenSet() const { return m_slowPalHasBeenSet; }
 
     
     inline void SetSlowPal(const ProresSlowPal& value) { m_slowPalHasBeenSet = true; m_slowPal = value; }
@@ -225,6 +266,9 @@ namespace Model
 
     
     inline const ProresTelecine& GetTelecine() const{ return m_telecine; }
+
+    
+    inline bool TelecineHasBeenSet() const { return m_telecineHasBeenSet; }
 
     
     inline void SetTelecine(const ProresTelecine& value) { m_telecineHasBeenSet = true; m_telecine = value; }

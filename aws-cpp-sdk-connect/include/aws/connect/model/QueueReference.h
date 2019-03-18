@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The ID of the queue associated with the metrics returned.</p>
      */
+    inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
+
+    /**
+     * <p>The ID of the queue associated with the metrics returned.</p>
+     */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
     /**
@@ -88,6 +93,11 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of queue.</p>
      */
     inline const Aws::String& GetArn() const{ return m_arn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of queue.</p>
+     */
+    inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of queue.</p>

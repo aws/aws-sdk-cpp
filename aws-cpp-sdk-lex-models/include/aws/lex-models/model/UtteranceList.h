@@ -59,6 +59,11 @@ namespace Model
     /**
      * <p>The version of the bot that processed the list.</p>
      */
+    inline bool BotVersionHasBeenSet() const { return m_botVersionHasBeenSet; }
+
+    /**
+     * <p>The version of the bot that processed the list.</p>
+     */
     inline void SetBotVersion(const Aws::String& value) { m_botVersionHasBeenSet = true; m_botVersion = value; }
 
     /**
@@ -93,6 +98,13 @@ namespace Model
      * 100.</p>
      */
     inline const Aws::Vector<UtteranceData>& GetUtterances() const{ return m_utterances; }
+
+    /**
+     * <p>One or more <a>UtteranceData</a> objects that contain information about the
+     * utterances that have been made to a bot. The maximum number of object is
+     * 100.</p>
+     */
+    inline bool UtterancesHasBeenSet() const { return m_utterancesHasBeenSet; }
 
     /**
      * <p>One or more <a>UtteranceData</a> objects that contain information about the

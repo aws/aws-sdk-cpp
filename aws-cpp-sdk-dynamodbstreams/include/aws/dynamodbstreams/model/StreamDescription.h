@@ -59,6 +59,11 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) for the stream.</p>
      */
+    inline bool StreamArnHasBeenSet() const { return m_streamArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) for the stream.</p>
+     */
     inline void SetStreamArn(const Aws::String& value) { m_streamArnHasBeenSet = true; m_streamArn = value; }
 
     /**
@@ -96,6 +101,16 @@ namespace Model
      * name</p></li> <li><p>the <i>StreamLabel</i></p></li> </ul>
      */
     inline const Aws::String& GetStreamLabel() const{ return m_streamLabel; }
+
+    /**
+     * <p>A timestamp, in ISO 8601 format, for this stream.</p> <p>Note that
+     * <i>LatestStreamLabel</i> is not a unique identifier for the stream, because it
+     * is possible that a stream from another table might have the same timestamp.
+     * However, the combination of the following three elements is guaranteed to be
+     * unique:</p> <ul> <li><p>the AWS customer ID.</p></li> <li><p>the table
+     * name</p></li> <li><p>the <i>StreamLabel</i></p></li> </ul>
+     */
+    inline bool StreamLabelHasBeenSet() const { return m_streamLabelHasBeenSet; }
 
     /**
      * <p>A timestamp, in ISO 8601 format, for this stream.</p> <p>Note that
@@ -176,6 +191,16 @@ namespace Model
      * disabled on the DynamoDB table.</p></li> <li><p><code>DISABLED</code> - the
      * stream is disabled.</p></li> </ul>
      */
+    inline bool StreamStatusHasBeenSet() const { return m_streamStatusHasBeenSet; }
+
+    /**
+     * <p>Indicates the current status of the stream:</p> <ul>
+     * <li><p><code>ENABLING</code> - Streams is currently being enabled on the
+     * DynamoDB table.</p></li> <li><p><code>ENABLING</code> - the stream is
+     * enabled.</p></li> <li><p><code>DISABLING</code> - Streams is currently being
+     * disabled on the DynamoDB table.</p></li> <li><p><code>DISABLED</code> - the
+     * stream is disabled.</p></li> </ul>
+     */
     inline void SetStreamStatus(const StreamStatus& value) { m_streamStatusHasBeenSet = true; m_streamStatus = value; }
 
     /**
@@ -219,6 +244,17 @@ namespace Model
      * both the new and the old images of the items from the table.</p></li> </ul>
      */
     inline const StreamViewType& GetStreamViewType() const{ return m_streamViewType; }
+
+    /**
+     * <p>Indicates the format of the records within this stream:</p> <ul>
+     * <li><p><code>KEYS_ONLY</code> - only the key attributes of items that were
+     * modified in the DynamoDB table.</p></li> <li><p><code>NEW_IMAGE</code> - entire
+     * item from the table, as it appeared after they were modified.</p></li>
+     * <li><p><code>OLD_IMAGE</code> - entire item from the table, as it appeared
+     * before they were modified.</p></li> <li><p><code>NEW_AND_OLD_IMAGES</code> -
+     * both the new and the old images of the items from the table.</p></li> </ul>
+     */
+    inline bool StreamViewTypeHasBeenSet() const { return m_streamViewTypeHasBeenSet; }
 
     /**
      * <p>Indicates the format of the records within this stream:</p> <ul>
@@ -273,6 +309,11 @@ namespace Model
     /**
      * <p>The date and time when the request to create this stream was issued.</p>
      */
+    inline bool CreationRequestDateTimeHasBeenSet() const { return m_creationRequestDateTimeHasBeenSet; }
+
+    /**
+     * <p>The date and time when the request to create this stream was issued.</p>
+     */
     inline void SetCreationRequestDateTime(const Aws::Utils::DateTime& value) { m_creationRequestDateTimeHasBeenSet = true; m_creationRequestDateTime = value; }
 
     /**
@@ -295,6 +336,11 @@ namespace Model
      * <p>The DynamoDB table with which the stream is associated.</p>
      */
     inline const Aws::String& GetTableName() const{ return m_tableName; }
+
+    /**
+     * <p>The DynamoDB table with which the stream is associated.</p>
+     */
+    inline bool TableNameHasBeenSet() const { return m_tableNameHasBeenSet; }
 
     /**
      * <p>The DynamoDB table with which the stream is associated.</p>
@@ -335,6 +381,11 @@ namespace Model
     /**
      * <p>The key attribute(s) of the stream's DynamoDB table.</p>
      */
+    inline bool KeySchemaHasBeenSet() const { return m_keySchemaHasBeenSet; }
+
+    /**
+     * <p>The key attribute(s) of the stream's DynamoDB table.</p>
+     */
     inline void SetKeySchema(const Aws::Vector<KeySchemaElement>& value) { m_keySchemaHasBeenSet = true; m_keySchema = value; }
 
     /**
@@ -367,6 +418,11 @@ namespace Model
      * <p>The shards that comprise the stream.</p>
      */
     inline const Aws::Vector<Shard>& GetShards() const{ return m_shards; }
+
+    /**
+     * <p>The shards that comprise the stream.</p>
+     */
+    inline bool ShardsHasBeenSet() const { return m_shardsHasBeenSet; }
 
     /**
      * <p>The shards that comprise the stream.</p>
@@ -410,6 +466,18 @@ namespace Model
      * <code>LastEvaluatedShardId</code> is empty.</p>
      */
     inline const Aws::String& GetLastEvaluatedShardId() const{ return m_lastEvaluatedShardId; }
+
+    /**
+     * <p>The shard ID of the item where the operation stopped, inclusive of the
+     * previous result set. Use this value to start a new operation, excluding this
+     * value in the new request.</p> <p>If <code>LastEvaluatedShardId</code> is empty,
+     * then the "last page" of results has been processed and there is currently no
+     * more data to be retrieved.</p> <p>If <code>LastEvaluatedShardId</code> is not
+     * empty, it does not necessarily mean that there is more data in the result set.
+     * The only way to know when you have reached the end of the result set is when
+     * <code>LastEvaluatedShardId</code> is empty.</p>
+     */
+    inline bool LastEvaluatedShardIdHasBeenSet() const { return m_lastEvaluatedShardIdHasBeenSet; }
 
     /**
      * <p>The shard ID of the item where the operation stopped, inclusive of the

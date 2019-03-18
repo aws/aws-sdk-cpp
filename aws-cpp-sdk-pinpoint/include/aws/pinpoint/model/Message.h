@@ -76,6 +76,21 @@ DEEP_LINK - Uses
 URL - The default mobile browser on
      * the user's device launches and opens a web page at the URL you specify.
      */
+    inline bool ActionHasBeenSet() const { return m_actionHasBeenSet; }
+
+    /**
+     * The action that occurs if the user taps a push notification delivered by the
+     * campaign:
+OPEN_APP - Your app launches, or it becomes the foreground app if it
+     * has been sent to the background. This is the default action.
+
+DEEP_LINK - Uses
+     * deep linking features in iOS and Android to open your app and display a
+     * designated user interface within the app.
+
+URL - The default mobile browser on
+     * the user's device launches and opens a web page at the URL you specify.
+     */
     inline void SetAction(const Action& value) { m_actionHasBeenSet = true; m_action = value; }
 
     /**
@@ -132,6 +147,11 @@ URL - The default mobile browser on
     /**
      * The message body. Can include up to 140 characters.
      */
+    inline bool BodyHasBeenSet() const { return m_bodyHasBeenSet; }
+
+    /**
+     * The message body. Can include up to 140 characters.
+     */
     inline void SetBody(const Aws::String& value) { m_bodyHasBeenSet = true; m_body = value; }
 
     /**
@@ -165,6 +185,12 @@ URL - The default mobile browser on
      * example, the app icon.
      */
     inline const Aws::String& GetImageIconUrl() const{ return m_imageIconUrl; }
+
+    /**
+     * The URL that points to the icon image for the push notification icon, for
+     * example, the app icon.
+     */
+    inline bool ImageIconUrlHasBeenSet() const { return m_imageIconUrlHasBeenSet; }
 
     /**
      * The URL that points to the icon image for the push notification icon, for
@@ -213,6 +239,12 @@ URL - The default mobile browser on
      * The URL that points to the small icon image for the push notification icon, for
      * example, the app icon.
      */
+    inline bool ImageSmallIconUrlHasBeenSet() const { return m_imageSmallIconUrlHasBeenSet; }
+
+    /**
+     * The URL that points to the small icon image for the push notification icon, for
+     * example, the app icon.
+     */
     inline void SetImageSmallIconUrl(const Aws::String& value) { m_imageSmallIconUrlHasBeenSet = true; m_imageSmallIconUrl = value; }
 
     /**
@@ -254,6 +286,11 @@ URL - The default mobile browser on
     /**
      * The URL that points to an image used in the push notification.
      */
+    inline bool ImageUrlHasBeenSet() const { return m_imageUrlHasBeenSet; }
+
+    /**
+     * The URL that points to an image used in the push notification.
+     */
     inline void SetImageUrl(const Aws::String& value) { m_imageUrlHasBeenSet = true; m_imageUrl = value; }
 
     /**
@@ -286,6 +323,11 @@ URL - The default mobile browser on
      * The JSON payload used for a silent push.
      */
     inline const Aws::String& GetJsonBody() const{ return m_jsonBody; }
+
+    /**
+     * The JSON payload used for a silent push.
+     */
+    inline bool JsonBodyHasBeenSet() const { return m_jsonBodyHasBeenSet; }
 
     /**
      * The JSON payload used for a silent push.
@@ -323,6 +365,12 @@ URL - The default mobile browser on
      * in the push notification.
      */
     inline const Aws::String& GetMediaUrl() const{ return m_mediaUrl; }
+
+    /**
+     * A URL that refers to the location of an image or video that you want to display
+     * in the push notification.
+     */
+    inline bool MediaUrlHasBeenSet() const { return m_mediaUrlHasBeenSet; }
 
     /**
      * A URL that refers to the location of an image or video that you want to display
@@ -366,6 +414,12 @@ URL - The default mobile browser on
      * the message.
      */
     inline const Aws::String& GetRawContent() const{ return m_rawContent; }
+
+    /**
+     * The Raw JSON formatted string to be used as the payload. This value overrides
+     * the message.
+     */
+    inline bool RawContentHasBeenSet() const { return m_rawContentHasBeenSet; }
 
     /**
      * The Raw JSON formatted string to be used as the payload. This value overrides
@@ -418,6 +472,14 @@ Silent pushes can
 Silent pushes can
      * be used for Remote Configuration and Phone Home use cases. 
      */
+    inline bool SilentPushHasBeenSet() const { return m_silentPushHasBeenSet; }
+
+    /**
+     * Indicates if the message should display on the users device.
+
+Silent pushes can
+     * be used for Remote Configuration and Phone Home use cases. 
+     */
     inline void SetSilentPush(bool value) { m_silentPushHasBeenSet = true; m_silentPush = value; }
 
     /**
@@ -445,6 +507,15 @@ Silent pushes can
      * notification or attempt to redeliver it. This value is converted to the
      * expiration field when sent to the service. It only applies to APNs and GCM
      */
+    inline bool TimeToLiveHasBeenSet() const { return m_timeToLiveHasBeenSet; }
+
+    /**
+     * This parameter specifies how long (in seconds) the message should be kept if the
+     * service is unable to deliver the notification the first time. If the value is 0,
+     * it treats the notification as if it expires immediately and does not store the
+     * notification or attempt to redeliver it. This value is converted to the
+     * expiration field when sent to the service. It only applies to APNs and GCM
+     */
     inline void SetTimeToLive(int value) { m_timeToLiveHasBeenSet = true; m_timeToLive = value; }
 
     /**
@@ -461,6 +532,11 @@ Silent pushes can
      * The message title that displays above the message on the user's device.
      */
     inline const Aws::String& GetTitle() const{ return m_title; }
+
+    /**
+     * The message title that displays above the message on the user's device.
+     */
+    inline bool TitleHasBeenSet() const { return m_titleHasBeenSet; }
 
     /**
      * The message title that displays above the message on the user's device.
@@ -498,6 +574,12 @@ Silent pushes can
      * URL.
      */
     inline const Aws::String& GetUrl() const{ return m_url; }
+
+    /**
+     * The URL to open in the user's mobile browser. Used if the value for Action is
+     * URL.
+     */
+    inline bool UrlHasBeenSet() const { return m_urlHasBeenSet; }
 
     /**
      * The URL to open in the user's mobile browser. Used if the value for Action is

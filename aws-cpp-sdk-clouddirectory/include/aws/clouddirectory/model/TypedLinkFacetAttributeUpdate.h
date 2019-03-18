@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The attribute to update.</p>
      */
+    inline bool AttributeHasBeenSet() const { return m_attributeHasBeenSet; }
+
+    /**
+     * <p>The attribute to update.</p>
+     */
     inline void SetAttribute(const TypedLinkAttributeDefinition& value) { m_attributeHasBeenSet = true; m_attribute = value; }
 
     /**
@@ -78,6 +83,11 @@ namespace Model
      * <p>The action to perform when updating the attribute.</p>
      */
     inline const UpdateActionType& GetAction() const{ return m_action; }
+
+    /**
+     * <p>The action to perform when updating the attribute.</p>
+     */
+    inline bool ActionHasBeenSet() const { return m_actionHasBeenSet; }
 
     /**
      * <p>The action to perform when updating the attribute.</p>

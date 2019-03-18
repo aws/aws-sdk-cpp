@@ -52,6 +52,11 @@ namespace Model
     /**
      * <p>The ID of the Maintenance Window execution to stop.</p>
      */
+    inline bool WindowExecutionIdHasBeenSet() const { return m_windowExecutionIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the Maintenance Window execution to stop.</p>
+     */
     inline void SetWindowExecutionId(const Aws::String& value) { m_windowExecutionIdHasBeenSet = true; m_windowExecutionId = value; }
 
     /**

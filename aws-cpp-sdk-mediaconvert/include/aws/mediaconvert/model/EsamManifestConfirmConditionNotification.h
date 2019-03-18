@@ -62,6 +62,14 @@ namespace Model
      * transcoder will use the Manifest Conditioning instructions in the message that
      * you supply.
      */
+    inline bool MccXmlHasBeenSet() const { return m_mccXmlHasBeenSet; }
+
+    /**
+     * Provide your ESAM ManifestConfirmConditionNotification XML document inside your
+     * JSON job settings. Form the XML document as per OC-SP-ESAM-API-I03-131025. The
+     * transcoder will use the Manifest Conditioning instructions in the message that
+     * you supply.
+     */
     inline void SetMccXml(const Aws::String& value) { m_mccXmlHasBeenSet = true; m_mccXml = value; }
 
     /**

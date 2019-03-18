@@ -59,6 +59,12 @@ namespace Model
      * <p>NextToken string is used when calling ListPlatformApplications action to
      * retrieve additional records that are available after the first page results.</p>
      */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
+
+    /**
+     * <p>NextToken string is used when calling ListPlatformApplications action to
+     * retrieve additional records that are available after the first page results.</p>
+     */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
     /**

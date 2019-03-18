@@ -63,6 +63,13 @@ namespace Model
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-bid-status.html#spot-instance-bid-status-understand">Spot
      * Status Codes</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
      */
+    inline bool CodeHasBeenSet() const { return m_codeHasBeenSet; }
+
+    /**
+     * <p>The status code. For a list of status codes, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-bid-status.html#spot-instance-bid-status-understand">Spot
+     * Status Codes</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
+     */
     inline void SetCode(const Aws::String& value) { m_codeHasBeenSet = true; m_code = value; }
 
     /**
@@ -109,6 +116,11 @@ namespace Model
     /**
      * <p>The description for the status code.</p>
      */
+    inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
+
+    /**
+     * <p>The description for the status code.</p>
+     */
     inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
 
     /**
@@ -142,6 +154,12 @@ namespace Model
      * example, <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).</p>
      */
     inline const Aws::Utils::DateTime& GetUpdateTime() const{ return m_updateTime; }
+
+    /**
+     * <p>The date and time of the most recent status update, in UTC format (for
+     * example, <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).</p>
+     */
+    inline bool UpdateTimeHasBeenSet() const { return m_updateTimeHasBeenSet; }
 
     /**
      * <p>The date and time of the most recent status update, in UTC format (for

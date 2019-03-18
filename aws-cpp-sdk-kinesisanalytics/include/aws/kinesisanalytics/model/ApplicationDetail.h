@@ -64,6 +64,11 @@ namespace Model
     /**
      * <p>Name of the application.</p>
      */
+    inline bool ApplicationNameHasBeenSet() const { return m_applicationNameHasBeenSet; }
+
+    /**
+     * <p>Name of the application.</p>
+     */
     inline void SetApplicationName(const Aws::String& value) { m_applicationNameHasBeenSet = true; m_applicationName = value; }
 
     /**
@@ -96,6 +101,11 @@ namespace Model
      * <p>Description of the application.</p>
      */
     inline const Aws::String& GetApplicationDescription() const{ return m_applicationDescription; }
+
+    /**
+     * <p>Description of the application.</p>
+     */
+    inline bool ApplicationDescriptionHasBeenSet() const { return m_applicationDescriptionHasBeenSet; }
 
     /**
      * <p>Description of the application.</p>
@@ -136,6 +146,11 @@ namespace Model
     /**
      * <p>ARN of the application.</p>
      */
+    inline bool ApplicationARNHasBeenSet() const { return m_applicationARNHasBeenSet; }
+
+    /**
+     * <p>ARN of the application.</p>
+     */
     inline void SetApplicationARN(const Aws::String& value) { m_applicationARNHasBeenSet = true; m_applicationARN = value; }
 
     /**
@@ -172,6 +187,11 @@ namespace Model
     /**
      * <p>Status of the application.</p>
      */
+    inline bool ApplicationStatusHasBeenSet() const { return m_applicationStatusHasBeenSet; }
+
+    /**
+     * <p>Status of the application.</p>
+     */
     inline void SetApplicationStatus(const ApplicationStatus& value) { m_applicationStatusHasBeenSet = true; m_applicationStatus = value; }
 
     /**
@@ -194,6 +214,11 @@ namespace Model
      * <p>Time stamp when the application version was created.</p>
      */
     inline const Aws::Utils::DateTime& GetCreateTimestamp() const{ return m_createTimestamp; }
+
+    /**
+     * <p>Time stamp when the application version was created.</p>
+     */
+    inline bool CreateTimestampHasBeenSet() const { return m_createTimestampHasBeenSet; }
 
     /**
      * <p>Time stamp when the application version was created.</p>
@@ -224,6 +249,11 @@ namespace Model
     /**
      * <p>Time stamp when the application was last updated.</p>
      */
+    inline bool LastUpdateTimestampHasBeenSet() const { return m_lastUpdateTimestampHasBeenSet; }
+
+    /**
+     * <p>Time stamp when the application was last updated.</p>
+     */
     inline void SetLastUpdateTimestamp(const Aws::Utils::DateTime& value) { m_lastUpdateTimestampHasBeenSet = true; m_lastUpdateTimestamp = value; }
 
     /**
@@ -248,6 +278,13 @@ namespace Model
      * Application Input</a>. </p>
      */
     inline const Aws::Vector<InputDescription>& GetInputDescriptions() const{ return m_inputDescriptions; }
+
+    /**
+     * <p>Describes the application input configuration. For more information, see <a
+     * href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-input.html">Configuring
+     * Application Input</a>. </p>
+     */
+    inline bool InputDescriptionsHasBeenSet() const { return m_inputDescriptionsHasBeenSet; }
 
     /**
      * <p>Describes the application input configuration. For more information, see <a
@@ -304,6 +341,13 @@ namespace Model
      * href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-output.html">Configuring
      * Application Output</a>. </p>
      */
+    inline bool OutputDescriptionsHasBeenSet() const { return m_outputDescriptionsHasBeenSet; }
+
+    /**
+     * <p>Describes the application output configuration. For more information, see <a
+     * href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-output.html">Configuring
+     * Application Output</a>. </p>
+     */
     inline void SetOutputDescriptions(const Aws::Vector<OutputDescription>& value) { m_outputDescriptionsHasBeenSet = true; m_outputDescriptions = value; }
 
     /**
@@ -349,6 +393,14 @@ namespace Model
      * Application Input</a>. </p>
      */
     inline const Aws::Vector<ReferenceDataSourceDescription>& GetReferenceDataSourceDescriptions() const{ return m_referenceDataSourceDescriptions; }
+
+    /**
+     * <p>Describes reference data sources configured for the application. For more
+     * information, see <a
+     * href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-input.html">Configuring
+     * Application Input</a>. </p>
+     */
+    inline bool ReferenceDataSourceDescriptionsHasBeenSet() const { return m_referenceDataSourceDescriptionsHasBeenSet; }
 
     /**
      * <p>Describes reference data sources configured for the application. For more
@@ -415,6 +467,15 @@ namespace Model
      * href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/cloudwatch-logs.html">Working
      * with Amazon CloudWatch Logs</a>. </p>
      */
+    inline bool CloudWatchLoggingOptionDescriptionsHasBeenSet() const { return m_cloudWatchLoggingOptionDescriptionsHasBeenSet; }
+
+    /**
+     * <p>Describes the CloudWatch log streams that are configured to receive
+     * application messages. For more information about using CloudWatch log streams
+     * with Amazon Kinesis Analytics applications, see <a
+     * href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/cloudwatch-logs.html">Working
+     * with Amazon CloudWatch Logs</a>. </p>
+     */
     inline void SetCloudWatchLoggingOptionDescriptions(const Aws::Vector<CloudWatchLoggingOptionDescription>& value) { m_cloudWatchLoggingOptionDescriptionsHasBeenSet = true; m_cloudWatchLoggingOptionDescriptions = value; }
 
     /**
@@ -473,6 +534,12 @@ namespace Model
      * <p>Returns the application code that you provided to perform data analysis on
      * any of the in-application streams in your application.</p>
      */
+    inline bool ApplicationCodeHasBeenSet() const { return m_applicationCodeHasBeenSet; }
+
+    /**
+     * <p>Returns the application code that you provided to perform data analysis on
+     * any of the in-application streams in your application.</p>
+     */
     inline void SetApplicationCode(const Aws::String& value) { m_applicationCodeHasBeenSet = true; m_applicationCode = value; }
 
     /**
@@ -510,6 +577,11 @@ namespace Model
      * <p>Provides the current application version.</p>
      */
     inline long long GetApplicationVersionId() const{ return m_applicationVersionId; }
+
+    /**
+     * <p>Provides the current application version.</p>
+     */
+    inline bool ApplicationVersionIdHasBeenSet() const { return m_applicationVersionIdHasBeenSet; }
 
     /**
      * <p>Provides the current application version.</p>

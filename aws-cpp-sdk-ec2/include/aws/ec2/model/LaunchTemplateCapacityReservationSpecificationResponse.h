@@ -69,6 +69,16 @@ namespace Model
      * <code>none</code> - The instance avoids running in a Capacity Reservation even
      * if one is available. The instance runs in On-Demand capacity.</p> </li> </ul>
      */
+    inline bool CapacityReservationPreferenceHasBeenSet() const { return m_capacityReservationPreferenceHasBeenSet; }
+
+    /**
+     * <p>Indicates the instance's Capacity Reservation preferences. Possible
+     * preferences include:</p> <ul> <li> <p> <code>open</code> - The instance can run
+     * in any <code>open</code> Capacity Reservation that has matching attributes
+     * (instance type, platform, Availability Zone).</p> </li> <li> <p>
+     * <code>none</code> - The instance avoids running in a Capacity Reservation even
+     * if one is available. The instance runs in On-Demand capacity.</p> </li> </ul>
+     */
     inline void SetCapacityReservationPreference(const CapacityReservationPreference& value) { m_capacityReservationPreferenceHasBeenSet = true; m_capacityReservationPreference = value; }
 
     /**
@@ -106,6 +116,11 @@ namespace Model
      * <p>Information about the target Capacity Reservation.</p>
      */
     inline const CapacityReservationTargetResponse& GetCapacityReservationTarget() const{ return m_capacityReservationTarget; }
+
+    /**
+     * <p>Information about the target Capacity Reservation.</p>
+     */
+    inline bool CapacityReservationTargetHasBeenSet() const { return m_capacityReservationTargetHasBeenSet; }
 
     /**
      * <p>Information about the target Capacity Reservation.</p>

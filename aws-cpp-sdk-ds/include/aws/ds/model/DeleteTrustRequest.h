@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The Trust ID of the trust relationship to be deleted.</p>
      */
+    inline bool TrustIdHasBeenSet() const { return m_trustIdHasBeenSet; }
+
+    /**
+     * <p>The Trust ID of the trust relationship to be deleted.</p>
+     */
     inline void SetTrustId(const Aws::String& value) { m_trustIdHasBeenSet = true; m_trustId = value; }
 
     /**
@@ -89,6 +94,11 @@ namespace Model
      * <p>Delete a conditional forwarder as part of a DeleteTrustRequest.</p>
      */
     inline bool GetDeleteAssociatedConditionalForwarder() const{ return m_deleteAssociatedConditionalForwarder; }
+
+    /**
+     * <p>Delete a conditional forwarder as part of a DeleteTrustRequest.</p>
+     */
+    inline bool DeleteAssociatedConditionalForwarderHasBeenSet() const { return m_deleteAssociatedConditionalForwarderHasBeenSet; }
 
     /**
      * <p>Delete a conditional forwarder as part of a DeleteTrustRequest.</p>

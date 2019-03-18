@@ -57,6 +57,12 @@ namespace Model
      * <p>The name of the job command: this must be <code>glueetl</code>, for an Apache
      * Spark ETL job, or <code>pythonshell</code>, for a Python shell job.</p>
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>The name of the job command: this must be <code>glueetl</code>, for an Apache
+     * Spark ETL job, or <code>pythonshell</code>, for a Python shell job.</p>
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
@@ -94,6 +100,11 @@ namespace Model
      * <p>Specifies the S3 path to a script that executes a job (required).</p>
      */
     inline const Aws::String& GetScriptLocation() const{ return m_scriptLocation; }
+
+    /**
+     * <p>Specifies the S3 path to a script that executes a job (required).</p>
+     */
+    inline bool ScriptLocationHasBeenSet() const { return m_scriptLocationHasBeenSet; }
 
     /**
      * <p>Specifies the S3 path to a script that executes a job (required).</p>

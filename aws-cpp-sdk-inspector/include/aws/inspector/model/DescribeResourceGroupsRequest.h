@@ -53,6 +53,11 @@ namespace Model
     /**
      * <p>The ARN that specifies the resource group that you want to describe.</p>
      */
+    inline bool ResourceGroupArnsHasBeenSet() const { return m_resourceGroupArnsHasBeenSet; }
+
+    /**
+     * <p>The ARN that specifies the resource group that you want to describe.</p>
+     */
     inline void SetResourceGroupArns(const Aws::Vector<Aws::String>& value) { m_resourceGroupArnsHasBeenSet = true; m_resourceGroupArns = value; }
 
     /**

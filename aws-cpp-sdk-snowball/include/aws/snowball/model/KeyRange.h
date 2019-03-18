@@ -61,6 +61,12 @@ namespace Model
      * <p>The key that starts an optional key range for an export job. Ranges are
      * inclusive and UTF-8 binary sorted.</p>
      */
+    inline bool BeginMarkerHasBeenSet() const { return m_beginMarkerHasBeenSet; }
+
+    /**
+     * <p>The key that starts an optional key range for an export job. Ranges are
+     * inclusive and UTF-8 binary sorted.</p>
+     */
     inline void SetBeginMarker(const Aws::String& value) { m_beginMarkerHasBeenSet = true; m_beginMarker = value; }
 
     /**
@@ -99,6 +105,12 @@ namespace Model
      * inclusive and UTF-8 binary sorted.</p>
      */
     inline const Aws::String& GetEndMarker() const{ return m_endMarker; }
+
+    /**
+     * <p>The key that ends an optional key range for an export job. Ranges are
+     * inclusive and UTF-8 binary sorted.</p>
+     */
+    inline bool EndMarkerHasBeenSet() const { return m_endMarkerHasBeenSet; }
 
     /**
      * <p>The key that ends an optional key range for an export job. Ranges are

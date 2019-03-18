@@ -54,6 +54,12 @@ namespace Model
      * <p>The ID of the policy that you want to delete. <code>PolicyId</code> is
      * returned by <code>PutPolicy</code> and by <code>ListPolicies</code>.</p>
      */
+    inline bool PolicyIdHasBeenSet() const { return m_policyIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the policy that you want to delete. <code>PolicyId</code> is
+     * returned by <code>PutPolicy</code> and by <code>ListPolicies</code>.</p>
+     */
     inline void SetPolicyId(const Aws::String& value) { m_policyIdHasBeenSet = true; m_policyId = value; }
 
     /**
@@ -93,6 +99,13 @@ namespace Model
      * policy.</p>
      */
     inline bool GetDeleteAllPolicyResources() const{ return m_deleteAllPolicyResources; }
+
+    /**
+     * <p>If <code>True</code>, the request will also delete all web ACLs in this
+     * policy. Associated resources will no longer be protected by web ACLs in this
+     * policy.</p>
+     */
+    inline bool DeleteAllPolicyResourcesHasBeenSet() const { return m_deleteAllPolicyResourcesHasBeenSet; }
 
     /**
      * <p>If <code>True</code>, the request will also delete all web ACLs in this

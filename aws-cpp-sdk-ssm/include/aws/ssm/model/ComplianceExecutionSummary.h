@@ -61,6 +61,12 @@ namespace Model
      * <p>The time the execution ran as a datetime object that is saved in the
      * following format: yyyy-MM-dd'T'HH:mm:ss'Z'.</p>
      */
+    inline bool ExecutionTimeHasBeenSet() const { return m_executionTimeHasBeenSet; }
+
+    /**
+     * <p>The time the execution ran as a datetime object that is saved in the
+     * following format: yyyy-MM-dd'T'HH:mm:ss'Z'.</p>
+     */
     inline void SetExecutionTime(const Aws::Utils::DateTime& value) { m_executionTimeHasBeenSet = true; m_executionTime = value; }
 
     /**
@@ -88,6 +94,13 @@ namespace Model
      * in subsequent calls.</p>
      */
     inline const Aws::String& GetExecutionId() const{ return m_executionId; }
+
+    /**
+     * <p>An ID created by the system when <code>PutComplianceItems</code> was called.
+     * For example, <code>CommandID</code> is a valid execution ID. You can use this ID
+     * in subsequent calls.</p>
+     */
+    inline bool ExecutionIdHasBeenSet() const { return m_executionIdHasBeenSet; }
 
     /**
      * <p>An ID created by the system when <code>PutComplianceItems</code> was called.
@@ -137,6 +150,12 @@ namespace Model
      * type.</p>
      */
     inline const Aws::String& GetExecutionType() const{ return m_executionType; }
+
+    /**
+     * <p>The type of execution. For example, <code>Command</code> is a valid execution
+     * type.</p>
+     */
+    inline bool ExecutionTypeHasBeenSet() const { return m_executionTypeHasBeenSet; }
 
     /**
      * <p>The type of execution. For example, <code>Command</code> is a valid execution

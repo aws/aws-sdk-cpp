@@ -59,6 +59,11 @@ namespace Model
     /**
      * <p>The ID of the document.</p>
      */
+    inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
+
+    /**
+     * <p>The ID of the document.</p>
+     */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
     /**
@@ -91,6 +96,11 @@ namespace Model
      * <p>The ID of the creator.</p>
      */
     inline const Aws::String& GetCreatorId() const{ return m_creatorId; }
+
+    /**
+     * <p>The ID of the creator.</p>
+     */
+    inline bool CreatorIdHasBeenSet() const { return m_creatorIdHasBeenSet; }
 
     /**
      * <p>The ID of the creator.</p>
@@ -131,6 +141,11 @@ namespace Model
     /**
      * <p>The ID of the parent folder.</p>
      */
+    inline bool ParentFolderIdHasBeenSet() const { return m_parentFolderIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the parent folder.</p>
+     */
     inline void SetParentFolderId(const Aws::String& value) { m_parentFolderIdHasBeenSet = true; m_parentFolderId = value; }
 
     /**
@@ -167,6 +182,11 @@ namespace Model
     /**
      * <p>The time when the document was created.</p>
      */
+    inline bool CreatedTimestampHasBeenSet() const { return m_createdTimestampHasBeenSet; }
+
+    /**
+     * <p>The time when the document was created.</p>
+     */
     inline void SetCreatedTimestamp(const Aws::Utils::DateTime& value) { m_createdTimestampHasBeenSet = true; m_createdTimestamp = value; }
 
     /**
@@ -189,6 +209,11 @@ namespace Model
      * <p>The time when the document was updated.</p>
      */
     inline const Aws::Utils::DateTime& GetModifiedTimestamp() const{ return m_modifiedTimestamp; }
+
+    /**
+     * <p>The time when the document was updated.</p>
+     */
+    inline bool ModifiedTimestampHasBeenSet() const { return m_modifiedTimestampHasBeenSet; }
 
     /**
      * <p>The time when the document was updated.</p>
@@ -219,6 +244,11 @@ namespace Model
     /**
      * <p>The latest version of the document.</p>
      */
+    inline bool LatestVersionMetadataHasBeenSet() const { return m_latestVersionMetadataHasBeenSet; }
+
+    /**
+     * <p>The latest version of the document.</p>
+     */
     inline void SetLatestVersionMetadata(const DocumentVersionMetadata& value) { m_latestVersionMetadataHasBeenSet = true; m_latestVersionMetadata = value; }
 
     /**
@@ -245,6 +275,11 @@ namespace Model
     /**
      * <p>The resource state.</p>
      */
+    inline bool ResourceStateHasBeenSet() const { return m_resourceStateHasBeenSet; }
+
+    /**
+     * <p>The resource state.</p>
+     */
     inline void SetResourceState(const ResourceStateType& value) { m_resourceStateHasBeenSet = true; m_resourceState = value; }
 
     /**
@@ -267,6 +302,11 @@ namespace Model
      * <p>List of labels on the document.</p>
      */
     inline const Aws::Vector<Aws::String>& GetLabels() const{ return m_labels; }
+
+    /**
+     * <p>List of labels on the document.</p>
+     */
+    inline bool LabelsHasBeenSet() const { return m_labelsHasBeenSet; }
 
     /**
      * <p>List of labels on the document.</p>

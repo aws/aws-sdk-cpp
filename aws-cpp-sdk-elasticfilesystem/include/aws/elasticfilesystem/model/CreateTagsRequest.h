@@ -57,6 +57,12 @@ namespace Model
      * <p>The ID of the file system whose tags you want to modify (String). This
      * operation modifies the tags only, not the file system.</p>
      */
+    inline bool FileSystemIdHasBeenSet() const { return m_fileSystemIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the file system whose tags you want to modify (String). This
+     * operation modifies the tags only, not the file system.</p>
+     */
     inline void SetFileSystemId(const Aws::String& value) { m_fileSystemIdHasBeenSet = true; m_fileSystemId = value; }
 
     /**
@@ -95,6 +101,12 @@ namespace Model
      * a key-value pair. </p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>An array of <code>Tag</code> objects to add. Each <code>Tag</code> object is
+     * a key-value pair. </p>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
      * <p>An array of <code>Tag</code> objects to add. Each <code>Tag</code> object is

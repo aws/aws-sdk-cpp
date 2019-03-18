@@ -56,6 +56,13 @@ namespace Model
      * </li> <li> <p> <code>jp</code> - Japanese</p> </li> <li> <p> <code>zh</code> -
      * Chinese</p> </li> </ul>
      */
+    inline bool AcceptLanguageHasBeenSet() const { return m_acceptLanguageHasBeenSet; }
+
+    /**
+     * <p>The language code.</p> <ul> <li> <p> <code>en</code> - English (default)</p>
+     * </li> <li> <p> <code>jp</code> - Japanese</p> </li> <li> <p> <code>zh</code> -
+     * Chinese</p> </li> </ul>
+     */
     inline void SetAcceptLanguage(const Aws::String& value) { m_acceptLanguageHasBeenSet = true; m_acceptLanguage = value; }
 
     /**
@@ -102,6 +109,11 @@ namespace Model
     /**
      * <p>The product identifier.</p>
      */
+    inline bool ProductIdHasBeenSet() const { return m_productIdHasBeenSet; }
+
+    /**
+     * <p>The product identifier.</p>
+     */
     inline void SetProductId(const Aws::String& value) { m_productIdHasBeenSet = true; m_productId = value; }
 
     /**
@@ -135,6 +147,12 @@ namespace Model
      * results, use null.</p>
      */
     inline const Aws::String& GetPageToken() const{ return m_pageToken; }
+
+    /**
+     * <p>The page token for the next set of results. To retrieve the first set of
+     * results, use null.</p>
+     */
+    inline bool PageTokenHasBeenSet() const { return m_pageTokenHasBeenSet; }
 
     /**
      * <p>The page token for the next set of results. To retrieve the first set of
@@ -177,6 +195,11 @@ namespace Model
      * <p>The maximum number of items to return with this call.</p>
      */
     inline int GetPageSize() const{ return m_pageSize; }
+
+    /**
+     * <p>The maximum number of items to return with this call.</p>
+     */
+    inline bool PageSizeHasBeenSet() const { return m_pageSizeHasBeenSet; }
 
     /**
      * <p>The maximum number of items to return with this call.</p>

@@ -60,6 +60,11 @@ namespace Model
     /**
      * <p>The ID of the deployment.</p>
      */
+    inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
+
+    /**
+     * <p>The ID of the deployment.</p>
+     */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
     /**
@@ -97,6 +102,16 @@ namespace Model
      * completely replaced.</p> </dd> </dl>
      */
     inline const Aws::String& GetStatus() const{ return m_status; }
+
+    /**
+     * <p>The status of the deployment. The following describes each state:</p> <dl>
+     * <dt>PRIMARY</dt> <dd> <p>The most recent deployment of a service.</p> </dd>
+     * <dt>ACTIVE</dt> <dd> <p>A service deployment that still has running tasks, but
+     * are in the process of being replaced with a new <code>PRIMARY</code>
+     * deployment.</p> </dd> <dt>INACTIVE</dt> <dd> <p>A deployment that has been
+     * completely replaced.</p> </dd> </dl>
+     */
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
     /**
      * <p>The status of the deployment. The following describes each state:</p> <dl>
@@ -169,6 +184,12 @@ namespace Model
      * <p>The most recent task definition that was specified for the tasks in the
      * service to use.</p>
      */
+    inline bool TaskDefinitionHasBeenSet() const { return m_taskDefinitionHasBeenSet; }
+
+    /**
+     * <p>The most recent task definition that was specified for the tasks in the
+     * service to use.</p>
+     */
     inline void SetTaskDefinition(const Aws::String& value) { m_taskDefinitionHasBeenSet = true; m_taskDefinition = value; }
 
     /**
@@ -212,6 +233,12 @@ namespace Model
      * <p>The most recent desired count of tasks that was specified for the service to
      * deploy or maintain.</p>
      */
+    inline bool DesiredCountHasBeenSet() const { return m_desiredCountHasBeenSet; }
+
+    /**
+     * <p>The most recent desired count of tasks that was specified for the service to
+     * deploy or maintain.</p>
+     */
     inline void SetDesiredCount(int value) { m_desiredCountHasBeenSet = true; m_desiredCount = value; }
 
     /**
@@ -226,6 +253,12 @@ namespace Model
      * status.</p>
      */
     inline int GetPendingCount() const{ return m_pendingCount; }
+
+    /**
+     * <p>The number of tasks in the deployment that are in the <code>PENDING</code>
+     * status.</p>
+     */
+    inline bool PendingCountHasBeenSet() const { return m_pendingCountHasBeenSet; }
 
     /**
      * <p>The number of tasks in the deployment that are in the <code>PENDING</code>
@@ -250,6 +283,12 @@ namespace Model
      * <p>The number of tasks in the deployment that are in the <code>RUNNING</code>
      * status.</p>
      */
+    inline bool RunningCountHasBeenSet() const { return m_runningCountHasBeenSet; }
+
+    /**
+     * <p>The number of tasks in the deployment that are in the <code>RUNNING</code>
+     * status.</p>
+     */
     inline void SetRunningCount(int value) { m_runningCountHasBeenSet = true; m_runningCount = value; }
 
     /**
@@ -263,6 +302,11 @@ namespace Model
      * <p>The Unix timestamp for when the service deployment was created.</p>
      */
     inline const Aws::Utils::DateTime& GetCreatedAt() const{ return m_createdAt; }
+
+    /**
+     * <p>The Unix timestamp for when the service deployment was created.</p>
+     */
+    inline bool CreatedAtHasBeenSet() const { return m_createdAtHasBeenSet; }
 
     /**
      * <p>The Unix timestamp for when the service deployment was created.</p>
@@ -293,6 +337,11 @@ namespace Model
     /**
      * <p>The Unix timestamp for when the service deployment was last updated.</p>
      */
+    inline bool UpdatedAtHasBeenSet() const { return m_updatedAtHasBeenSet; }
+
+    /**
+     * <p>The Unix timestamp for when the service deployment was last updated.</p>
+     */
     inline void SetUpdatedAt(const Aws::Utils::DateTime& value) { m_updatedAtHasBeenSet = true; m_updatedAt = value; }
 
     /**
@@ -319,6 +368,15 @@ namespace Model
      * Guide</i>.</p>
      */
     inline const LaunchType& GetLaunchType() const{ return m_launchType; }
+
+    /**
+     * <p>The launch type the tasks in the service are using. For more information, see
+     * <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon
+     * ECS Launch Types</a> in the <i>Amazon Elastic Container Service Developer
+     * Guide</i>.</p>
+     */
+    inline bool LaunchTypeHasBeenSet() const { return m_launchTypeHasBeenSet; }
 
     /**
      * <p>The launch type the tasks in the service are using. For more information, see
@@ -367,6 +425,17 @@ namespace Model
      * Developer Guide</i>.</p>
      */
     inline const Aws::String& GetPlatformVersion() const{ return m_platformVersion; }
+
+    /**
+     * <p>The platform version on which your tasks in the service are running. A
+     * platform version is only specified for tasks using the Fargate launch type. If
+     * one is not specified, the <code>LATEST</code> platform version is used by
+     * default. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS
+     * Fargate Platform Versions</a> in the <i>Amazon Elastic Container Service
+     * Developer Guide</i>.</p>
+     */
+    inline bool PlatformVersionHasBeenSet() const { return m_platformVersionHasBeenSet; }
 
     /**
      * <p>The platform version on which your tasks in the service are running. A
@@ -441,6 +510,13 @@ namespace Model
      * mode.</p>
      */
     inline const NetworkConfiguration& GetNetworkConfiguration() const{ return m_networkConfiguration; }
+
+    /**
+     * <p>The VPC subnet and security group configuration for tasks that receive their
+     * own elastic network interface by using the <code>awsvpc</code> networking
+     * mode.</p>
+     */
+    inline bool NetworkConfigurationHasBeenSet() const { return m_networkConfigurationHasBeenSet; }
 
     /**
      * <p>The VPC subnet and security group configuration for tasks that receive their

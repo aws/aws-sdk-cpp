@@ -58,6 +58,12 @@ namespace Model
      * <p>The user pool ID for the user pool that the users are being imported
      * into.</p>
      */
+    inline bool UserPoolIdHasBeenSet() const { return m_userPoolIdHasBeenSet; }
+
+    /**
+     * <p>The user pool ID for the user pool that the users are being imported
+     * into.</p>
+     */
     inline void SetUserPoolId(const Aws::String& value) { m_userPoolIdHasBeenSet = true; m_userPoolId = value; }
 
     /**
@@ -95,6 +101,11 @@ namespace Model
      * <p>The job ID for the user import job.</p>
      */
     inline const Aws::String& GetJobId() const{ return m_jobId; }
+
+    /**
+     * <p>The job ID for the user import job.</p>
+     */
+    inline bool JobIdHasBeenSet() const { return m_jobIdHasBeenSet; }
 
     /**
      * <p>The job ID for the user import job.</p>

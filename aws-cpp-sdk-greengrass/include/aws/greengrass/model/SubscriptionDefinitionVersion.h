@@ -56,6 +56,11 @@ namespace Model
     /**
      * A list of subscriptions.
      */
+    inline bool SubscriptionsHasBeenSet() const { return m_subscriptionsHasBeenSet; }
+
+    /**
+     * A list of subscriptions.
+     */
     inline void SetSubscriptions(const Aws::Vector<Subscription>& value) { m_subscriptionsHasBeenSet = true; m_subscriptions = value; }
 
     /**

@@ -69,6 +69,16 @@ namespace Model
      * AWS account.</p> </li> </ul> <note> <p>This value is stored as a lower-case
      * string.</p> </note>
      */
+    inline bool ParameterGroupNameHasBeenSet() const { return m_parameterGroupNameHasBeenSet; }
+
+    /**
+     * <p>The name of the cluster parameter group.</p> <p>Constraints:</p> <ul> <li>
+     * <p>Must be 1 to 255 alphanumeric characters or hyphens</p> </li> <li> <p>First
+     * character must be a letter.</p> </li> <li> <p>Cannot end with a hyphen or
+     * contain two consecutive hyphens.</p> </li> <li> <p>Must be unique withing your
+     * AWS account.</p> </li> </ul> <note> <p>This value is stored as a lower-case
+     * string.</p> </note>
+     */
     inline void SetParameterGroupName(const Aws::String& value) { m_parameterGroupNameHasBeenSet = true; m_parameterGroupName = value; }
 
     /**
@@ -134,6 +144,19 @@ namespace Model
      * "redshift-1.0". </p>
      */
     inline const Aws::String& GetParameterGroupFamily() const{ return m_parameterGroupFamily; }
+
+    /**
+     * <p>The Amazon Redshift engine version to which the cluster parameter group
+     * applies. The cluster engine version determines the set of parameters.</p> <p>To
+     * get a list of valid parameter group family names, you can call
+     * <a>DescribeClusterParameterGroups</a>. By default, Amazon Redshift returns a
+     * list of all the parameter groups that are owned by your AWS account, including
+     * the default parameter groups for each Amazon Redshift engine version. The
+     * parameter group family names associated with the default parameter groups
+     * provide you the valid values. For example, a valid family name is
+     * "redshift-1.0". </p>
+     */
+    inline bool ParameterGroupFamilyHasBeenSet() const { return m_parameterGroupFamilyHasBeenSet; }
 
     /**
      * <p>The Amazon Redshift engine version to which the cluster parameter group
@@ -222,6 +245,11 @@ namespace Model
     /**
      * <p>A description of the parameter group.</p>
      */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
+
+    /**
+     * <p>A description of the parameter group.</p>
+     */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
@@ -254,6 +282,11 @@ namespace Model
      * <p>A list of tag instances.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>A list of tag instances.</p>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
      * <p>A list of tag instances.</p>

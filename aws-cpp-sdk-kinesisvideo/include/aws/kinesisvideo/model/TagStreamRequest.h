@@ -53,6 +53,12 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the resource that you want to add the tag
      * or tags to.</p>
      */
+    inline bool StreamARNHasBeenSet() const { return m_streamARNHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the resource that you want to add the tag
+     * or tags to.</p>
+     */
     inline void SetStreamARN(const Aws::String& value) { m_streamARNHasBeenSet = true; m_streamARN = value; }
 
     /**
@@ -94,6 +100,11 @@ namespace Model
     /**
      * <p>The name of the stream that you want to add the tag or tags to.</p>
      */
+    inline bool StreamNameHasBeenSet() const { return m_streamNameHasBeenSet; }
+
+    /**
+     * <p>The name of the stream that you want to add the tag or tags to.</p>
+     */
     inline void SetStreamName(const Aws::String& value) { m_streamNameHasBeenSet = true; m_streamName = value; }
 
     /**
@@ -127,6 +138,12 @@ namespace Model
      * key-value pair (the value is optional).</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>A list of tags to associate with the specified stream. Each tag is a
+     * key-value pair (the value is optional).</p>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
      * <p>A list of tags to associate with the specified stream. Each tag is a

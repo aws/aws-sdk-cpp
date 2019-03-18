@@ -54,6 +54,11 @@ namespace Model
     /**
      * <p>Flag to activate AWS Organization integration.</p>
      */
+    inline bool EnableIntegrationHasBeenSet() const { return m_enableIntegrationHasBeenSet; }
+
+    /**
+     * <p>Flag to activate AWS Organization integration.</p>
+     */
     inline void SetEnableIntegration(bool value) { m_enableIntegrationHasBeenSet = true; m_enableIntegration = value; }
 
     /**

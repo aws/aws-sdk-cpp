@@ -58,6 +58,12 @@ namespace Model
      * <p>The name of a deployment configuration associated with the IAM user or AWS
      * account.</p>
      */
+    inline bool DeploymentConfigNameHasBeenSet() const { return m_deploymentConfigNameHasBeenSet; }
+
+    /**
+     * <p>The name of a deployment configuration associated with the IAM user or AWS
+     * account.</p>
+     */
     inline void SetDeploymentConfigName(const Aws::String& value) { m_deploymentConfigNameHasBeenSet = true; m_deploymentConfigName = value; }
 
     /**

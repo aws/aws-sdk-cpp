@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p>The ID of the recipient.</p>
      */
+    inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
+
+    /**
+     * <p>The ID of the recipient.</p>
+     */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
     /**
@@ -94,6 +99,11 @@ namespace Model
     /**
      * <p>The type of the recipient.</p>
      */
+    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
+
+    /**
+     * <p>The type of the recipient.</p>
+     */
     inline void SetType(const PrincipalType& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
@@ -116,6 +126,11 @@ namespace Model
      * <p>The role of the recipient.</p>
      */
     inline const RoleType& GetRole() const{ return m_role; }
+
+    /**
+     * <p>The role of the recipient.</p>
+     */
+    inline bool RoleHasBeenSet() const { return m_roleHasBeenSet; }
 
     /**
      * <p>The role of the recipient.</p>

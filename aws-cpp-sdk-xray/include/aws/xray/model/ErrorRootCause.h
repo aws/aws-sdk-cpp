@@ -58,6 +58,12 @@ namespace Model
      * <p>A list of services corresponding to an error. A service identifies a segment
      * and it contains a name, account ID, type, and inferred flag.</p>
      */
+    inline bool ServicesHasBeenSet() const { return m_servicesHasBeenSet; }
+
+    /**
+     * <p>A list of services corresponding to an error. A service identifies a segment
+     * and it contains a name, account ID, type, and inferred flag.</p>
+     */
     inline void SetServices(const Aws::Vector<ErrorRootCauseService>& value) { m_servicesHasBeenSet = true; m_services = value; }
 
     /**

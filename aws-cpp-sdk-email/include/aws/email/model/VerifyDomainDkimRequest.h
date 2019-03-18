@@ -60,6 +60,11 @@ namespace Model
     /**
      * <p>The name of the domain to be verified for Easy DKIM signing.</p>
      */
+    inline bool DomainHasBeenSet() const { return m_domainHasBeenSet; }
+
+    /**
+     * <p>The name of the domain to be verified for Easy DKIM signing.</p>
+     */
     inline void SetDomain(const Aws::String& value) { m_domainHasBeenSet = true; m_domain = value; }
 
     /**

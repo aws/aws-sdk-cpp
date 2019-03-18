@@ -105,6 +105,11 @@ void ApiGatewayManagementApiClient::OverrideEndpoint(const Aws::String& endpoint
 }
 PostToConnectionOutcome ApiGatewayManagementApiClient::PostToConnection(const PostToConnectionRequest& request) const
 {
+  if (!request.ConnectionIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("PostToConnection", "Required field: ConnectionId, is not set");
+    return PostToConnectionOutcome(Aws::Client::AWSError<ApiGatewayManagementApiErrors>(ApiGatewayManagementApiErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ConnectionId]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/@connections/";

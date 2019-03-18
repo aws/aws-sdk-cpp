@@ -55,6 +55,9 @@ namespace Model
     inline const Aws::String& GetArn() const{ return m_arn; }
 
     
+    inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
+
+    
     inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
 
     
@@ -77,6 +80,11 @@ namespace Model
      * <p>The name of the entity (user or role).</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
+
+    /**
+     * <p>The name of the entity (user or role).</p>
+     */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
      * <p>The name of the entity (user or role).</p>
@@ -117,6 +125,11 @@ namespace Model
     /**
      * <p>The type of entity (user or role).</p>
      */
+    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
+
+    /**
+     * <p>The type of entity (user or role).</p>
+     */
     inline void SetType(const PolicyOwnerEntityType& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
@@ -139,6 +152,11 @@ namespace Model
      * <p>The identifier of the entity (user or role).</p>
      */
     inline const Aws::String& GetId() const{ return m_id; }
+
+    /**
+     * <p>The identifier of the entity (user or role).</p>
+     */
+    inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
 
     /**
      * <p>The identifier of the entity (user or role).</p>
@@ -178,6 +196,14 @@ namespace Model
      * Identifiers</a> in the <i>Using IAM</i> guide. </p>
      */
     inline const Aws::String& GetPath() const{ return m_path; }
+
+    /**
+     * <p>The path to the entity (user or role). For more information about paths, see
+     * <a
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
+     * Identifiers</a> in the <i>Using IAM</i> guide. </p>
+     */
+    inline bool PathHasBeenSet() const { return m_pathHasBeenSet; }
 
     /**
      * <p>The path to the entity (user or role). For more information about paths, see

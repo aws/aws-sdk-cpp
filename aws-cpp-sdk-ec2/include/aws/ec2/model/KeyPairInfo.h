@@ -63,6 +63,14 @@ namespace Model
      * provide AWS the public key, this is the MD5 public key fingerprint as specified
      * in section 4 of RFC4716.</p>
      */
+    inline bool KeyFingerprintHasBeenSet() const { return m_keyFingerprintHasBeenSet; }
+
+    /**
+     * <p>If you used <a>CreateKeyPair</a> to create the key pair, this is the SHA-1
+     * digest of the DER encoded private key. If you used <a>ImportKeyPair</a> to
+     * provide AWS the public key, this is the MD5 public key fingerprint as specified
+     * in section 4 of RFC4716.</p>
+     */
     inline void SetKeyFingerprint(const Aws::String& value) { m_keyFingerprintHasBeenSet = true; m_keyFingerprint = value; }
 
     /**
@@ -110,6 +118,11 @@ namespace Model
      * <p>The name of the key pair.</p>
      */
     inline const Aws::String& GetKeyName() const{ return m_keyName; }
+
+    /**
+     * <p>The name of the key pair.</p>
+     */
+    inline bool KeyNameHasBeenSet() const { return m_keyNameHasBeenSet; }
 
     /**
      * <p>The name of the key pair.</p>

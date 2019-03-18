@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the volume target.</p>
      */
+    inline bool VolumeARNHasBeenSet() const { return m_volumeARNHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the volume target.</p>
+     */
     inline void SetVolumeARN(const Aws::String& value) { m_volumeARNHasBeenSet = true; m_volumeARN = value; }
 
     /**
@@ -92,6 +97,11 @@ namespace Model
     /**
      * <p>The size of the volume in bytes.</p>
      */
+    inline bool VolumeSizeInBytesHasBeenSet() const { return m_volumeSizeInBytesHasBeenSet; }
+
+    /**
+     * <p>The size of the volume in bytes.</p>
+     */
     inline void SetVolumeSizeInBytes(long long value) { m_volumeSizeInBytesHasBeenSet = true; m_volumeSizeInBytes = value; }
 
     /**
@@ -112,6 +122,13 @@ namespace Model
      * is not available for volumes created prior to May 13, 2015, until you store data
      * on the volume.</p> </note>
      */
+    inline bool VolumeUsageInBytesHasBeenSet() const { return m_volumeUsageInBytesHasBeenSet; }
+
+    /**
+     * <p>The size of the data stored on the volume in bytes.</p> <note> <p>This value
+     * is not available for volumes created prior to May 13, 2015, until you store data
+     * on the volume.</p> </note>
+     */
     inline void SetVolumeUsageInBytes(long long value) { m_volumeUsageInBytesHasBeenSet = true; m_volumeUsageInBytes = value; }
 
     /**
@@ -126,6 +143,11 @@ namespace Model
      * <p>The time the recovery point was taken.</p>
      */
     inline const Aws::String& GetVolumeRecoveryPointTime() const{ return m_volumeRecoveryPointTime; }
+
+    /**
+     * <p>The time the recovery point was taken.</p>
+     */
+    inline bool VolumeRecoveryPointTimeHasBeenSet() const { return m_volumeRecoveryPointTimeHasBeenSet; }
 
     /**
      * <p>The time the recovery point was taken.</p>

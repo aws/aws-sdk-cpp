@@ -62,6 +62,13 @@ namespace Model
      * subnets that can be specified per <code>AwsVpcConfiguration</code>.</p> <note>
      * <p>All specified subnets must be from the same VPC.</p> </note>
      */
+    inline bool SubnetsHasBeenSet() const { return m_subnetsHasBeenSet; }
+
+    /**
+     * <p>The subnets associated with the task or service. There is a limit of 16
+     * subnets that can be specified per <code>AwsVpcConfiguration</code>.</p> <note>
+     * <p>All specified subnets must be from the same VPC.</p> </note>
+     */
     inline void SetSubnets(const Aws::Vector<Aws::String>& value) { m_subnetsHasBeenSet = true; m_subnets = value; }
 
     /**
@@ -115,6 +122,15 @@ namespace Model
      * must be from the same VPC.</p> </note>
      */
     inline const Aws::Vector<Aws::String>& GetSecurityGroups() const{ return m_securityGroups; }
+
+    /**
+     * <p>The security groups associated with the task or service. If you do not
+     * specify a security group, the default security group for the VPC is used. There
+     * is a limit of 5 security groups that can be specified per
+     * <code>AwsVpcConfiguration</code>.</p> <note> <p>All specified security groups
+     * must be from the same VPC.</p> </note>
+     */
+    inline bool SecurityGroupsHasBeenSet() const { return m_securityGroupsHasBeenSet; }
 
     /**
      * <p>The security groups associated with the task or service. If you do not
@@ -185,6 +201,12 @@ namespace Model
      * The default value is <code>DISABLED</code>.</p>
      */
     inline const AssignPublicIp& GetAssignPublicIp() const{ return m_assignPublicIp; }
+
+    /**
+     * <p>Whether the task's elastic network interface receives a public IP address.
+     * The default value is <code>DISABLED</code>.</p>
+     */
+    inline bool AssignPublicIpHasBeenSet() const { return m_assignPublicIpHasBeenSet; }
 
     /**
      * <p>Whether the task's elastic network interface receives a public IP address.

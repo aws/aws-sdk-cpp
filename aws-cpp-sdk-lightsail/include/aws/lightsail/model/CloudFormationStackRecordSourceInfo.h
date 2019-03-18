@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The Lightsail resource type (e.g., <code>ExportSnapshotRecord</code>).</p>
      */
+    inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
+
+    /**
+     * <p>The Lightsail resource type (e.g., <code>ExportSnapshotRecord</code>).</p>
+     */
     inline void SetResourceType(const CloudFormationStackRecordSourceType& value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
 
     /**
@@ -79,6 +84,11 @@ namespace Model
      * <p>The name of the record.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
+
+    /**
+     * <p>The name of the record.</p>
+     */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
      * <p>The name of the record.</p>
@@ -115,6 +125,11 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the export snapshot record.</p>
      */
     inline const Aws::String& GetArn() const{ return m_arn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the export snapshot record.</p>
+     */
+    inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the export snapshot record.</p>

@@ -55,6 +55,9 @@ namespace Model
     inline const CloudWatchLogsDestination& GetCloudWatchLogsDestination() const{ return m_cloudWatchLogsDestination; }
 
     
+    inline bool CloudWatchLogsDestinationHasBeenSet() const { return m_cloudWatchLogsDestinationHasBeenSet; }
+
+    
     inline void SetCloudWatchLogsDestination(const CloudWatchLogsDestination& value) { m_cloudWatchLogsDestinationHasBeenSet = true; m_cloudWatchLogsDestination = value; }
 
     
@@ -79,6 +82,13 @@ namespace Model
      * destination is enabled, then Amazon Pinpoint sends response data to the
      * specified event destination.
      */
+    inline bool EnabledHasBeenSet() const { return m_enabledHasBeenSet; }
+
+    /**
+     * Indicates whether or not the event destination is enabled. If the event
+     * destination is enabled, then Amazon Pinpoint sends response data to the
+     * specified event destination.
+     */
     inline void SetEnabled(bool value) { m_enabledHasBeenSet = true; m_enabled = value; }
 
     /**
@@ -91,6 +101,9 @@ namespace Model
 
     
     inline const KinesisFirehoseDestination& GetKinesisFirehoseDestination() const{ return m_kinesisFirehoseDestination; }
+
+    
+    inline bool KinesisFirehoseDestinationHasBeenSet() const { return m_kinesisFirehoseDestinationHasBeenSet; }
 
     
     inline void SetKinesisFirehoseDestination(const KinesisFirehoseDestination& value) { m_kinesisFirehoseDestinationHasBeenSet = true; m_kinesisFirehoseDestination = value; }
@@ -107,6 +120,9 @@ namespace Model
 
     
     inline const Aws::Vector<EventType>& GetMatchingEventTypes() const{ return m_matchingEventTypes; }
+
+    
+    inline bool MatchingEventTypesHasBeenSet() const { return m_matchingEventTypesHasBeenSet; }
 
     
     inline void SetMatchingEventTypes(const Aws::Vector<EventType>& value) { m_matchingEventTypesHasBeenSet = true; m_matchingEventTypes = value; }
@@ -129,6 +145,9 @@ namespace Model
 
     
     inline const SnsDestination& GetSnsDestination() const{ return m_snsDestination; }
+
+    
+    inline bool SnsDestinationHasBeenSet() const { return m_snsDestinationHasBeenSet; }
 
     
     inline void SetSnsDestination(const SnsDestination& value) { m_snsDestinationHasBeenSet = true; m_snsDestination = value; }

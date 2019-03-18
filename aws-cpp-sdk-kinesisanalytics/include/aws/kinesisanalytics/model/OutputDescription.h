@@ -62,6 +62,11 @@ namespace Model
     /**
      * <p>A unique identifier for the output configuration.</p>
      */
+    inline bool OutputIdHasBeenSet() const { return m_outputIdHasBeenSet; }
+
+    /**
+     * <p>A unique identifier for the output configuration.</p>
+     */
     inline void SetOutputId(const Aws::String& value) { m_outputIdHasBeenSet = true; m_outputId = value; }
 
     /**
@@ -94,6 +99,11 @@ namespace Model
      * <p>Name of the in-application stream configured as output.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
+
+    /**
+     * <p>Name of the in-application stream configured as output.</p>
+     */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
      * <p>Name of the in-application stream configured as output.</p>
@@ -136,6 +146,12 @@ namespace Model
      * <p>Describes Amazon Kinesis stream configured as the destination where output is
      * written.</p>
      */
+    inline bool KinesisStreamsOutputDescriptionHasBeenSet() const { return m_kinesisStreamsOutputDescriptionHasBeenSet; }
+
+    /**
+     * <p>Describes Amazon Kinesis stream configured as the destination where output is
+     * written.</p>
+     */
     inline void SetKinesisStreamsOutputDescription(const KinesisStreamsOutputDescription& value) { m_kinesisStreamsOutputDescriptionHasBeenSet = true; m_kinesisStreamsOutputDescription = value; }
 
     /**
@@ -162,6 +178,12 @@ namespace Model
      * destination where output is written.</p>
      */
     inline const KinesisFirehoseOutputDescription& GetKinesisFirehoseOutputDescription() const{ return m_kinesisFirehoseOutputDescription; }
+
+    /**
+     * <p>Describes the Amazon Kinesis Firehose delivery stream configured as the
+     * destination where output is written.</p>
+     */
+    inline bool KinesisFirehoseOutputDescriptionHasBeenSet() const { return m_kinesisFirehoseOutputDescriptionHasBeenSet; }
 
     /**
      * <p>Describes the Amazon Kinesis Firehose delivery stream configured as the
@@ -198,6 +220,12 @@ namespace Model
      * <p>Describes the AWS Lambda function configured as the destination where output
      * is written.</p>
      */
+    inline bool LambdaOutputDescriptionHasBeenSet() const { return m_lambdaOutputDescriptionHasBeenSet; }
+
+    /**
+     * <p>Describes the AWS Lambda function configured as the destination where output
+     * is written.</p>
+     */
     inline void SetLambdaOutputDescription(const LambdaOutputDescription& value) { m_lambdaOutputDescriptionHasBeenSet = true; m_lambdaOutputDescription = value; }
 
     /**
@@ -223,6 +251,11 @@ namespace Model
      * <p>Data format used for writing data to the destination.</p>
      */
     inline const DestinationSchema& GetDestinationSchema() const{ return m_destinationSchema; }
+
+    /**
+     * <p>Data format used for writing data to the destination.</p>
+     */
+    inline bool DestinationSchemaHasBeenSet() const { return m_destinationSchemaHasBeenSet; }
 
     /**
      * <p>Data format used for writing data to the destination.</p>

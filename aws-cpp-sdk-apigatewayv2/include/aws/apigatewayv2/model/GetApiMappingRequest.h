@@ -50,6 +50,11 @@ namespace Model
     /**
      * <p>The API mapping identifier.</p>
      */
+    inline bool ApiMappingIdHasBeenSet() const { return m_apiMappingIdHasBeenSet; }
+
+    /**
+     * <p>The API mapping identifier.</p>
+     */
     inline void SetApiMappingId(const Aws::String& value) { m_apiMappingIdHasBeenSet = true; m_apiMappingId = value; }
 
     /**
@@ -82,6 +87,11 @@ namespace Model
      * <p>The domain name.</p>
      */
     inline const Aws::String& GetDomainName() const{ return m_domainName; }
+
+    /**
+     * <p>The domain name.</p>
+     */
+    inline bool DomainNameHasBeenSet() const { return m_domainNameHasBeenSet; }
 
     /**
      * <p>The domain name.</p>

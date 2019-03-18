@@ -59,6 +59,11 @@ namespace Model
     /**
      * <p>The total number of instances supported by the Dedicated Host.</p>
      */
+    inline bool AvailableInstanceCapacityHasBeenSet() const { return m_availableInstanceCapacityHasBeenSet; }
+
+    /**
+     * <p>The total number of instances supported by the Dedicated Host.</p>
+     */
     inline void SetAvailableInstanceCapacity(const Aws::Vector<InstanceCapacity>& value) { m_availableInstanceCapacityHasBeenSet = true; m_availableInstanceCapacity = value; }
 
     /**
@@ -91,6 +96,11 @@ namespace Model
      * <p>The number of vCPUs available on the Dedicated Host.</p>
      */
     inline int GetAvailableVCpus() const{ return m_availableVCpus; }
+
+    /**
+     * <p>The number of vCPUs available on the Dedicated Host.</p>
+     */
+    inline bool AvailableVCpusHasBeenSet() const { return m_availableVCpusHasBeenSet; }
 
     /**
      * <p>The number of vCPUs available on the Dedicated Host.</p>

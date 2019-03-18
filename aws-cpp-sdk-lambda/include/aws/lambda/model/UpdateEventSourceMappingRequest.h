@@ -50,6 +50,11 @@ namespace Model
     /**
      * <p>The identifier of the event source mapping.</p>
      */
+    inline bool UUIDHasBeenSet() const { return m_uUIDHasBeenSet; }
+
+    /**
+     * <p>The identifier of the event source mapping.</p>
+     */
     inline void SetUUID(const Aws::String& value) { m_uUIDHasBeenSet = true; m_uUID = value; }
 
     /**
@@ -91,6 +96,20 @@ namespace Model
      * it's limited to 64 characters in length.</p>
      */
     inline const Aws::String& GetFunctionName() const{ return m_functionName; }
+
+    /**
+     * <p>The name of the Lambda function.</p> <p class="title"> <b>Name formats</b>
+     * </p> <ul> <li> <p> <b>Function name</b> - <code>MyFunction</code>.</p> </li>
+     * <li> <p> <b>Function ARN</b> -
+     * <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p>
+     * </li> <li> <p> <b>Version or Alias ARN</b> -
+     * <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction:PROD</code>.</p>
+     * </li> <li> <p> <b>Partial ARN</b> -
+     * <code>123456789012:function:MyFunction</code>.</p> </li> </ul> <p>The length
+     * constraint applies only to the full ARN. If you specify only the function name,
+     * it's limited to 64 characters in length.</p>
+     */
+    inline bool FunctionNameHasBeenSet() const { return m_functionNameHasBeenSet; }
 
     /**
      * <p>The name of the Lambda function.</p> <p class="title"> <b>Name formats</b>
@@ -185,6 +204,11 @@ namespace Model
     /**
      * <p>Disables the event source mapping to pause polling and invocation.</p>
      */
+    inline bool EnabledHasBeenSet() const { return m_enabledHasBeenSet; }
+
+    /**
+     * <p>Disables the event source mapping to pause polling and invocation.</p>
+     */
     inline void SetEnabled(bool value) { m_enabledHasBeenSet = true; m_enabled = value; }
 
     /**
@@ -200,6 +224,14 @@ namespace Model
      * Simple Queue Service</b> - Default 10. Max 10.</p> </li> </ul>
      */
     inline int GetBatchSize() const{ return m_batchSize; }
+
+    /**
+     * <p>The maximum number of items to retrieve in a single batch.</p> <ul> <li> <p>
+     * <b>Amazon Kinesis</b> - Default 100. Max 10,000.</p> </li> <li> <p> <b>Amazon
+     * DynamoDB Streams</b> - Default 100. Max 1,000.</p> </li> <li> <p> <b>Amazon
+     * Simple Queue Service</b> - Default 10. Max 10.</p> </li> </ul>
+     */
+    inline bool BatchSizeHasBeenSet() const { return m_batchSizeHasBeenSet; }
 
     /**
      * <p>The maximum number of items to retrieve in a single batch.</p> <ul> <li> <p>

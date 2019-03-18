@@ -54,6 +54,12 @@ namespace Model
      * <p>A friendly name or description of the <a>RuleGroup</a>. You can't change
      * <code>Name</code> after you create a <code>RuleGroup</code>.</p>
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>A friendly name or description of the <a>RuleGroup</a>. You can't change
+     * <code>Name</code> after you create a <code>RuleGroup</code>.</p>
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
@@ -94,6 +100,14 @@ namespace Model
      * metric after you create the <code>RuleGroup</code>.</p>
      */
     inline const Aws::String& GetMetricName() const{ return m_metricName; }
+
+    /**
+     * <p>A friendly name or description for the metrics for this
+     * <code>RuleGroup</code>. The name can contain only alphanumeric characters (A-Z,
+     * a-z, 0-9); the name can't contain whitespace. You can't change the name of the
+     * metric after you create the <code>RuleGroup</code>.</p>
+     */
+    inline bool MetricNameHasBeenSet() const { return m_metricNameHasBeenSet; }
 
     /**
      * <p>A friendly name or description for the metrics for this
@@ -148,6 +162,11 @@ namespace Model
      * <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
      */
     inline const Aws::String& GetChangeToken() const{ return m_changeToken; }
+
+    /**
+     * <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
+     */
+    inline bool ChangeTokenHasBeenSet() const { return m_changeTokenHasBeenSet; }
 
     /**
      * <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>

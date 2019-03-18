@@ -66,6 +66,16 @@ namespace Model
      * Standard storage class to the IA storage class. Metadata operations such as
      * listing the contents of a directory don't count as a file access event.</p>
      */
+    inline bool TransitionToIAHasBeenSet() const { return m_transitionToIAHasBeenSet; }
+
+    /**
+     * <p>A value that indicates how long it takes to transition files to the IA
+     * storage class. Currently, the only valid value is
+     * <code>AFTER_30_DAYS</code>.</p> <p> <code>AFTER_30_DAYS</code> indicates files
+     * that have not been read from or written to for 30 days are transitioned from the
+     * Standard storage class to the IA storage class. Metadata operations such as
+     * listing the contents of a directory don't count as a file access event.</p>
+     */
     inline void SetTransitionToIA(const TransitionToIARules& value) { m_transitionToIAHasBeenSet = true; m_transitionToIA = value; }
 
     /**

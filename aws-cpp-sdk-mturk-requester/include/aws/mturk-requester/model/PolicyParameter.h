@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p> Name of the parameter from the list of Review Polices. </p>
      */
+    inline bool KeyHasBeenSet() const { return m_keyHasBeenSet; }
+
+    /**
+     * <p> Name of the parameter from the list of Review Polices. </p>
+     */
     inline void SetKey(const Aws::String& value) { m_keyHasBeenSet = true; m_key = value; }
 
     /**
@@ -89,6 +94,11 @@ namespace Model
      * <p> The list of values of the Parameter</p>
      */
     inline const Aws::Vector<Aws::String>& GetValues() const{ return m_values; }
+
+    /**
+     * <p> The list of values of the Parameter</p>
+     */
+    inline bool ValuesHasBeenSet() const { return m_valuesHasBeenSet; }
 
     /**
      * <p> The list of values of the Parameter</p>
@@ -130,6 +140,11 @@ namespace Model
      * <p> List of ParameterMapEntry objects. </p>
      */
     inline const Aws::Vector<ParameterMapEntry>& GetMapEntries() const{ return m_mapEntries; }
+
+    /**
+     * <p> List of ParameterMapEntry objects. </p>
+     */
+    inline bool MapEntriesHasBeenSet() const { return m_mapEntriesHasBeenSet; }
 
     /**
      * <p> List of ParameterMapEntry objects. </p>

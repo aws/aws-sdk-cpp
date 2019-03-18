@@ -71,6 +71,17 @@ namespace Model
      * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
      * Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
      */
+    inline bool ResourceNameHasBeenSet() const { return m_resourceNameHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the resource from which you want the tags
+     * removed, for example
+     * <code>arn:aws:elasticache:us-west-2:0123456789:cluster:myCluster</code> or
+     * <code>arn:aws:elasticache:us-west-2:0123456789:snapshot:mySnapshot</code>.</p>
+     * <p>For more information about ARNs, see <a
+     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
+     */
     inline void SetResourceName(const Aws::String& value) { m_resourceNameHasBeenSet = true; m_resourceName = value; }
 
     /**
@@ -134,6 +145,12 @@ namespace Model
      * named resource.</p>
      */
     inline const Aws::Vector<Aws::String>& GetTagKeys() const{ return m_tagKeys; }
+
+    /**
+     * <p>A list of <code>TagKeys</code> identifying the tags you want removed from the
+     * named resource.</p>
+     */
+    inline bool TagKeysHasBeenSet() const { return m_tagKeysHasBeenSet; }
 
     /**
      * <p>A list of <code>TagKeys</code> identifying the tags you want removed from the

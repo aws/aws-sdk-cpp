@@ -46,6 +46,9 @@ namespace Model
     inline const CreateApplicationRequest& GetCreateApplicationRequest() const{ return m_createApplicationRequest; }
 
     
+    inline bool CreateApplicationRequestHasBeenSet() const { return m_createApplicationRequestHasBeenSet; }
+
+    
     inline void SetCreateApplicationRequest(const CreateApplicationRequest& value) { m_createApplicationRequestHasBeenSet = true; m_createApplicationRequest = value; }
 
     

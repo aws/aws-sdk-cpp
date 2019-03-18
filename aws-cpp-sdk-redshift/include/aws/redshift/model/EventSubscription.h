@@ -62,6 +62,12 @@ namespace Model
      * <p>The AWS customer account associated with the Amazon Redshift event
      * notification subscription.</p>
      */
+    inline bool CustomerAwsIdHasBeenSet() const { return m_customerAwsIdHasBeenSet; }
+
+    /**
+     * <p>The AWS customer account associated with the Amazon Redshift event
+     * notification subscription.</p>
+     */
     inline void SetCustomerAwsId(const Aws::String& value) { m_customerAwsIdHasBeenSet = true; m_customerAwsId = value; }
 
     /**
@@ -103,6 +109,11 @@ namespace Model
     /**
      * <p>The name of the Amazon Redshift event notification subscription.</p>
      */
+    inline bool CustSubscriptionIdHasBeenSet() const { return m_custSubscriptionIdHasBeenSet; }
+
+    /**
+     * <p>The name of the Amazon Redshift event notification subscription.</p>
+     */
     inline void SetCustSubscriptionId(const Aws::String& value) { m_custSubscriptionIdHasBeenSet = true; m_custSubscriptionId = value; }
 
     /**
@@ -136,6 +147,12 @@ namespace Model
      * notification subscription.</p>
      */
     inline const Aws::String& GetSnsTopicArn() const{ return m_snsTopicArn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the Amazon SNS topic used by the event
+     * notification subscription.</p>
+     */
+    inline bool SnsTopicArnHasBeenSet() const { return m_snsTopicArnHasBeenSet; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the Amazon SNS topic used by the event
@@ -183,6 +200,16 @@ namespace Model
      * after the subscription was created.</p> </li> </ul>
      */
     inline const Aws::String& GetStatus() const{ return m_status; }
+
+    /**
+     * <p>The status of the Amazon Redshift event notification subscription.</p>
+     * <p>Constraints:</p> <ul> <li> <p>Can be one of the following: active |
+     * no-permission | topic-not-exist</p> </li> <li> <p>The status "no-permission"
+     * indicates that Amazon Redshift no longer has permission to post to the Amazon
+     * SNS topic. The status "topic-not-exist" indicates that the topic was deleted
+     * after the subscription was created.</p> </li> </ul>
+     */
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
     /**
      * <p>The status of the Amazon Redshift event notification subscription.</p>
@@ -255,6 +282,12 @@ namespace Model
      * <p>The date and time the Amazon Redshift event notification subscription was
      * created.</p>
      */
+    inline bool SubscriptionCreationTimeHasBeenSet() const { return m_subscriptionCreationTimeHasBeenSet; }
+
+    /**
+     * <p>The date and time the Amazon Redshift event notification subscription was
+     * created.</p>
+     */
     inline void SetSubscriptionCreationTime(const Aws::Utils::DateTime& value) { m_subscriptionCreationTimeHasBeenSet = true; m_subscriptionCreationTime = value; }
 
     /**
@@ -281,6 +314,12 @@ namespace Model
      * notification, such as cluster, or cluster-snapshot.</p>
      */
     inline const Aws::String& GetSourceType() const{ return m_sourceType; }
+
+    /**
+     * <p>The source type of the events returned the Amazon Redshift event
+     * notification, such as cluster, or cluster-snapshot.</p>
+     */
+    inline bool SourceTypeHasBeenSet() const { return m_sourceTypeHasBeenSet; }
 
     /**
      * <p>The source type of the events returned the Amazon Redshift event
@@ -324,6 +363,12 @@ namespace Model
      * notification subscription.</p>
      */
     inline const Aws::Vector<Aws::String>& GetSourceIdsList() const{ return m_sourceIdsList; }
+
+    /**
+     * <p>A list of the sources that publish events to the Amazon Redshift event
+     * notification subscription.</p>
+     */
+    inline bool SourceIdsListHasBeenSet() const { return m_sourceIdsListHasBeenSet; }
 
     /**
      * <p>A list of the sources that publish events to the Amazon Redshift event
@@ -374,6 +419,13 @@ namespace Model
      * Security</p>
      */
     inline const Aws::Vector<Aws::String>& GetEventCategoriesList() const{ return m_eventCategoriesList; }
+
+    /**
+     * <p>The list of Amazon Redshift event categories specified in the event
+     * notification subscription.</p> <p>Values: Configuration, Management, Monitoring,
+     * Security</p>
+     */
+    inline bool EventCategoriesListHasBeenSet() const { return m_eventCategoriesListHasBeenSet; }
 
     /**
      * <p>The list of Amazon Redshift event categories specified in the event
@@ -435,6 +487,12 @@ namespace Model
      * <p>The event severity specified in the Amazon Redshift event notification
      * subscription.</p> <p>Values: ERROR, INFO</p>
      */
+    inline bool SeverityHasBeenSet() const { return m_severityHasBeenSet; }
+
+    /**
+     * <p>The event severity specified in the Amazon Redshift event notification
+     * subscription.</p> <p>Values: ERROR, INFO</p>
+     */
     inline void SetSeverity(const Aws::String& value) { m_severityHasBeenSet = true; m_severity = value; }
 
     /**
@@ -478,6 +536,12 @@ namespace Model
      * <p>A boolean value indicating whether the subscription is enabled;
      * <code>true</code> indicates that the subscription is enabled.</p>
      */
+    inline bool EnabledHasBeenSet() const { return m_enabledHasBeenSet; }
+
+    /**
+     * <p>A boolean value indicating whether the subscription is enabled;
+     * <code>true</code> indicates that the subscription is enabled.</p>
+     */
     inline void SetEnabled(bool value) { m_enabledHasBeenSet = true; m_enabled = value; }
 
     /**
@@ -491,6 +555,11 @@ namespace Model
      * <p>The list of tags for the event subscription.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>The list of tags for the event subscription.</p>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
      * <p>The list of tags for the event subscription.</p>

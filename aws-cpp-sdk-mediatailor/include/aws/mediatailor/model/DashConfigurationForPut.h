@@ -69,6 +69,18 @@ namespace Model
      * EMT_DEFAULT setting enables the inclusion of the tag and is the default value.
      * </p>
      */
+    inline bool MpdLocationHasBeenSet() const { return m_mpdLocationHasBeenSet; }
+
+    /**
+     * <p>The setting that controls whether MediaTailor includes the Location tag in
+     * DASH manifests. MediaTailor populates the Location tag with the URL for manifest
+     * update requests, to be used by players that don't support sticky redirects.
+     * Disable this if you have CDN routing rules set up for accessing MediaTailor
+     * manifests and you are either using client-side reporting or your players support
+     * sticky HTTP redirects. Valid values are DISABLED and EMT_DEFAULT. The
+     * EMT_DEFAULT setting enables the inclusion of the tag and is the default value.
+     * </p>
+     */
     inline void SetMpdLocation(const Aws::String& value) { m_mpdLocationHasBeenSet = true; m_mpdLocation = value; }
 
     /**

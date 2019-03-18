@@ -56,6 +56,12 @@ namespace Model
      * <p>The public IPv4 address range, in CIDR notation. The prefix must be the same
      * prefix that you specified when you provisioned the address range.</p>
      */
+    inline bool CidrHasBeenSet() const { return m_cidrHasBeenSet; }
+
+    /**
+     * <p>The public IPv4 address range, in CIDR notation. The prefix must be the same
+     * prefix that you specified when you provisioned the address range.</p>
+     */
     inline void SetCidr(const Aws::String& value) { m_cidrHasBeenSet = true; m_cidr = value; }
 
     /**
@@ -96,6 +102,14 @@ namespace Model
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
     inline bool GetDryRun() const{ return m_dryRun; }
+
+    /**
+     * <p>Checks whether you have the required permissions for the action, without
+     * actually making the request, and provides an error response. If you have the
+     * required permissions, the error response is <code>DryRunOperation</code>.
+     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+     */
+    inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
 
     /**
      * <p>Checks whether you have the required permissions for the action, without

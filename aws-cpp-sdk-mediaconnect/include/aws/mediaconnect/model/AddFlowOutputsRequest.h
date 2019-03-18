@@ -55,6 +55,11 @@ namespace Model
     /**
      * The flow that you want to add outputs to.
      */
+    inline bool FlowArnHasBeenSet() const { return m_flowArnHasBeenSet; }
+
+    /**
+     * The flow that you want to add outputs to.
+     */
     inline void SetFlowArn(const Aws::String& value) { m_flowArnHasBeenSet = true; m_flowArn = value; }
 
     /**
@@ -87,6 +92,11 @@ namespace Model
      * A list of outputs that you want to add.
      */
     inline const Aws::Vector<AddOutputRequest>& GetOutputs() const{ return m_outputs; }
+
+    /**
+     * A list of outputs that you want to add.
+     */
+    inline bool OutputsHasBeenSet() const { return m_outputsHasBeenSet; }
 
     /**
      * A list of outputs that you want to add.

@@ -60,6 +60,14 @@ namespace Model
      * <code>ConfigurationAggregator</code> and
      * <code>AggregatorAuthorization</code>.</p>
      */
+    inline bool ResourceArnHasBeenSet() const { return m_resourceArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) that identifies the resource for which to list
+     * the tags. Currently, the supported resources are <code>ConfigRule</code>,
+     * <code>ConfigurationAggregator</code> and
+     * <code>AggregatorAuthorization</code>.</p>
+     */
     inline void SetResourceArn(const Aws::String& value) { m_resourceArnHasBeenSet = true; m_resourceArn = value; }
 
     /**
@@ -107,6 +115,11 @@ namespace Model
      * <p>An array of tag object.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>An array of tag object.</p>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
      * <p>An array of tag object.</p>

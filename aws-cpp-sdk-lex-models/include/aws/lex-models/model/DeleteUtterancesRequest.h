@@ -50,6 +50,11 @@ namespace Model
     /**
      * <p>The name of the bot that stored the utterances.</p>
      */
+    inline bool BotNameHasBeenSet() const { return m_botNameHasBeenSet; }
+
+    /**
+     * <p>The name of the bot that stored the utterances.</p>
+     */
     inline void SetBotName(const Aws::String& value) { m_botNameHasBeenSet = true; m_botName = value; }
 
     /**
@@ -87,6 +92,16 @@ namespace Model
      * operation request that contained the utterance.</p>
      */
     inline const Aws::String& GetUserId() const{ return m_userId; }
+
+    /**
+     * <p> The unique identifier for the user that made the utterances. This is the
+     * user ID that was sent in the <a
+     * href="http://docs.aws.amazon.com/lex/latest/dg/API_runtime_PostContent.html">PostContent</a>
+     * or <a
+     * href="http://docs.aws.amazon.com/lex/latest/dg/API_runtime_PostText.html">PostText</a>
+     * operation request that contained the utterance.</p>
+     */
+    inline bool UserIdHasBeenSet() const { return m_userIdHasBeenSet; }
 
     /**
      * <p> The unique identifier for the user that made the utterances. This is the

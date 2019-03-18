@@ -63,6 +63,11 @@ namespace Model
     /**
      * <p>The primary IPv4 CIDR block for the VPC.</p>
      */
+    inline bool CidrBlockHasBeenSet() const { return m_cidrBlockHasBeenSet; }
+
+    /**
+     * <p>The primary IPv4 CIDR block for the VPC.</p>
+     */
     inline void SetCidrBlock(const Aws::String& value) { m_cidrBlockHasBeenSet = true; m_cidrBlock = value; }
 
     /**
@@ -96,6 +101,12 @@ namespace Model
      * <code>default</code> if the default options are associated with the VPC).</p>
      */
     inline const Aws::String& GetDhcpOptionsId() const{ return m_dhcpOptionsId; }
+
+    /**
+     * <p>The ID of the set of DHCP options you've associated with the VPC (or
+     * <code>default</code> if the default options are associated with the VPC).</p>
+     */
+    inline bool DhcpOptionsIdHasBeenSet() const { return m_dhcpOptionsIdHasBeenSet; }
 
     /**
      * <p>The ID of the set of DHCP options you've associated with the VPC (or
@@ -142,6 +153,11 @@ namespace Model
     /**
      * <p>The current state of the VPC.</p>
      */
+    inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
+
+    /**
+     * <p>The current state of the VPC.</p>
+     */
     inline void SetState(const VpcState& value) { m_stateHasBeenSet = true; m_state = value; }
 
     /**
@@ -164,6 +180,11 @@ namespace Model
      * <p>The ID of the VPC.</p>
      */
     inline const Aws::String& GetVpcId() const{ return m_vpcId; }
+
+    /**
+     * <p>The ID of the VPC.</p>
+     */
+    inline bool VpcIdHasBeenSet() const { return m_vpcIdHasBeenSet; }
 
     /**
      * <p>The ID of the VPC.</p>
@@ -204,6 +225,11 @@ namespace Model
     /**
      * <p>The ID of the AWS account that owns the VPC.</p>
      */
+    inline bool OwnerIdHasBeenSet() const { return m_ownerIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the AWS account that owns the VPC.</p>
+     */
     inline void SetOwnerId(const Aws::String& value) { m_ownerIdHasBeenSet = true; m_ownerId = value; }
 
     /**
@@ -240,6 +266,11 @@ namespace Model
     /**
      * <p>The allowed tenancy of instances launched into the VPC.</p>
      */
+    inline bool InstanceTenancyHasBeenSet() const { return m_instanceTenancyHasBeenSet; }
+
+    /**
+     * <p>The allowed tenancy of instances launched into the VPC.</p>
+     */
     inline void SetInstanceTenancy(const Tenancy& value) { m_instanceTenancyHasBeenSet = true; m_instanceTenancy = value; }
 
     /**
@@ -262,6 +293,11 @@ namespace Model
      * <p>Information about the IPv6 CIDR blocks associated with the VPC.</p>
      */
     inline const Aws::Vector<VpcIpv6CidrBlockAssociation>& GetIpv6CidrBlockAssociationSet() const{ return m_ipv6CidrBlockAssociationSet; }
+
+    /**
+     * <p>Information about the IPv6 CIDR blocks associated with the VPC.</p>
+     */
+    inline bool Ipv6CidrBlockAssociationSetHasBeenSet() const { return m_ipv6CidrBlockAssociationSetHasBeenSet; }
 
     /**
      * <p>Information about the IPv6 CIDR blocks associated with the VPC.</p>
@@ -302,6 +338,11 @@ namespace Model
     /**
      * <p>Information about the IPv4 CIDR blocks associated with the VPC.</p>
      */
+    inline bool CidrBlockAssociationSetHasBeenSet() const { return m_cidrBlockAssociationSetHasBeenSet; }
+
+    /**
+     * <p>Information about the IPv4 CIDR blocks associated with the VPC.</p>
+     */
     inline void SetCidrBlockAssociationSet(const Aws::Vector<VpcCidrBlockAssociation>& value) { m_cidrBlockAssociationSetHasBeenSet = true; m_cidrBlockAssociationSet = value; }
 
     /**
@@ -338,6 +379,11 @@ namespace Model
     /**
      * <p>Indicates whether the VPC is the default VPC.</p>
      */
+    inline bool IsDefaultHasBeenSet() const { return m_isDefaultHasBeenSet; }
+
+    /**
+     * <p>Indicates whether the VPC is the default VPC.</p>
+     */
     inline void SetIsDefault(bool value) { m_isDefaultHasBeenSet = true; m_isDefault = value; }
 
     /**
@@ -350,6 +396,11 @@ namespace Model
      * <p>Any tags assigned to the VPC.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>Any tags assigned to the VPC.</p>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
      * <p>Any tags assigned to the VPC.</p>

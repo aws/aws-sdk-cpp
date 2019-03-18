@@ -50,6 +50,11 @@ namespace Model
     /**
      * <p>The unique identifier of the device.</p>
      */
+    inline bool DeviceIdHasBeenSet() const { return m_deviceIdHasBeenSet; }
+
+    /**
+     * <p>The unique identifier of the device.</p>
+     */
     inline void SetDeviceId(const Aws::String& value) { m_deviceIdHasBeenSet = true; m_deviceId = value; }
 
     /**
@@ -83,6 +88,12 @@ namespace Model
  disabled.</p>
      */
     inline bool GetEnabled() const{ return m_enabled; }
+
+    /**
+     * <p>If true, the device is enabled. If false, the device is
+ disabled.</p>
+     */
+    inline bool EnabledHasBeenSet() const { return m_enabledHasBeenSet; }
 
     /**
      * <p>If true, the device is enabled. If false, the device is

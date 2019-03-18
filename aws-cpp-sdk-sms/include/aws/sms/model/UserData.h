@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>Amazon S3 location of the user-data script.</p>
      */
+    inline bool S3LocationHasBeenSet() const { return m_s3LocationHasBeenSet; }
+
+    /**
+     * <p>Amazon S3 location of the user-data script.</p>
+     */
     inline void SetS3Location(const S3Location& value) { m_s3LocationHasBeenSet = true; m_s3Location = value; }
 
     /**

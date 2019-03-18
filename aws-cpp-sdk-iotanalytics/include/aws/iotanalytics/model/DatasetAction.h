@@ -60,6 +60,12 @@ namespace Model
      * <p>The name of the data set action by which data set contents are automatically
      * created.</p>
      */
+    inline bool ActionNameHasBeenSet() const { return m_actionNameHasBeenSet; }
+
+    /**
+     * <p>The name of the data set action by which data set contents are automatically
+     * created.</p>
+     */
     inline void SetActionName(const Aws::String& value) { m_actionNameHasBeenSet = true; m_actionName = value; }
 
     /**
@@ -103,6 +109,12 @@ namespace Model
      * <p>An "SqlQueryDatasetAction" object that uses an SQL query to automatically
      * create data set contents.</p>
      */
+    inline bool QueryActionHasBeenSet() const { return m_queryActionHasBeenSet; }
+
+    /**
+     * <p>An "SqlQueryDatasetAction" object that uses an SQL query to automatically
+     * create data set contents.</p>
+     */
     inline void SetQueryAction(const SqlQueryDatasetAction& value) { m_queryActionHasBeenSet = true; m_queryAction = value; }
 
     /**
@@ -130,6 +142,13 @@ namespace Model
      * container along with any needed support libraries.</p>
      */
     inline const ContainerDatasetAction& GetContainerAction() const{ return m_containerAction; }
+
+    /**
+     * <p>Information which allows the system to run a containerized application in
+     * order to create the data set contents. The application must be in a Docker
+     * container along with any needed support libraries.</p>
+     */
+    inline bool ContainerActionHasBeenSet() const { return m_containerActionHasBeenSet; }
 
     /**
      * <p>Information which allows the system to run a containerized application in

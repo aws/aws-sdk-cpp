@@ -53,6 +53,11 @@ namespace Model
     /**
      * <p>The name of your database for which to get log events.</p>
      */
+    inline bool RelationalDatabaseNameHasBeenSet() const { return m_relationalDatabaseNameHasBeenSet; }
+
+    /**
+     * <p>The name of your database for which to get log events.</p>
+     */
     inline void SetRelationalDatabaseName(const Aws::String& value) { m_relationalDatabaseNameHasBeenSet = true; m_relationalDatabaseName = value; }
 
     /**
@@ -86,6 +91,12 @@ namespace Model
      * streams</code> operation to get a list of available log streams.</p>
      */
     inline const Aws::String& GetLogStreamName() const{ return m_logStreamName; }
+
+    /**
+     * <p>The name of the log stream.</p> <p>Use the <code>get relational database log
+     * streams</code> operation to get a list of available log streams.</p>
+     */
+    inline bool LogStreamNameHasBeenSet() const { return m_logStreamNameHasBeenSet; }
 
     /**
      * <p>The name of the log stream.</p> <p>Use the <code>get relational database log
@@ -140,6 +151,15 @@ namespace Model
      * if you wish to use a start time of October 1, 2018, at 8 PM UTC, then you input
      * <code>1538424000</code> as the start time.</p> </li> </ul>
      */
+    inline bool StartTimeHasBeenSet() const { return m_startTimeHasBeenSet; }
+
+    /**
+     * <p>The start of the time interval from which to get log events.</p>
+     * <p>Constraints:</p> <ul> <li> <p>Specified in Universal Coordinated Time
+     * (UTC).</p> </li> <li> <p>Specified in the Unix time format.</p> <p>For example,
+     * if you wish to use a start time of October 1, 2018, at 8 PM UTC, then you input
+     * <code>1538424000</code> as the start time.</p> </li> </ul>
+     */
     inline void SetStartTime(const Aws::Utils::DateTime& value) { m_startTimeHasBeenSet = true; m_startTime = value; }
 
     /**
@@ -178,6 +198,15 @@ namespace Model
      * <code>1538424000</code> as the end time.</p> </li> </ul>
      */
     inline const Aws::Utils::DateTime& GetEndTime() const{ return m_endTime; }
+
+    /**
+     * <p>The end of the time interval from which to get log events.</p>
+     * <p>Constraints:</p> <ul> <li> <p>Specified in Universal Coordinated Time
+     * (UTC).</p> </li> <li> <p>Specified in the Unix time format.</p> <p>For example,
+     * if you wish to use an end time of October 1, 2018, at 8 PM UTC, then you input
+     * <code>1538424000</code> as the end time.</p> </li> </ul>
+     */
+    inline bool EndTimeHasBeenSet() const { return m_endTimeHasBeenSet; }
 
     /**
      * <p>The end of the time interval from which to get log events.</p>
@@ -230,6 +259,14 @@ namespace Model
      * If <code>false</code> is specified, the log event starts from the tail of the
      * log.</p> <p>Default: <code>false</code> </p>
      */
+    inline bool StartFromHeadHasBeenSet() const { return m_startFromHeadHasBeenSet; }
+
+    /**
+     * <p>Parameter to specify if the log should start from head or tail. If
+     * <code>true</code> is specified, the log event starts from the head of the log.
+     * If <code>false</code> is specified, the log event starts from the tail of the
+     * log.</p> <p>Default: <code>false</code> </p>
+     */
     inline void SetStartFromHead(bool value) { m_startFromHeadHasBeenSet = true; m_startFromHead = value; }
 
     /**
@@ -246,6 +283,12 @@ namespace Model
      * relational database log events</code> request.</p>
      */
     inline const Aws::String& GetPageToken() const{ return m_pageToken; }
+
+    /**
+     * <p>A token used for advancing to a specific page of results for your <code>get
+     * relational database log events</code> request.</p>
+     */
+    inline bool PageTokenHasBeenSet() const { return m_pageTokenHasBeenSet; }
 
     /**
      * <p>A token used for advancing to a specific page of results for your <code>get

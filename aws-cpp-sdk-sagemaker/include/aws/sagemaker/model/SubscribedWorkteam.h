@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the vendor that you have subscribed.</p>
      */
+    inline bool WorkteamArnHasBeenSet() const { return m_workteamArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the vendor that you have subscribed.</p>
+     */
     inline void SetWorkteamArn(const Aws::String& value) { m_workteamArnHasBeenSet = true; m_workteamArn = value; }
 
     /**
@@ -89,6 +94,12 @@ namespace Model
      * Marketplace.</p>
      */
     inline const Aws::String& GetMarketplaceTitle() const{ return m_marketplaceTitle; }
+
+    /**
+     * <p>The title of the service provided by the vendor in the Amazon
+     * Marketplace.</p>
+     */
+    inline bool MarketplaceTitleHasBeenSet() const { return m_marketplaceTitleHasBeenSet; }
 
     /**
      * <p>The title of the service provided by the vendor in the Amazon
@@ -135,6 +146,11 @@ namespace Model
     /**
      * <p>The name of the vendor in the Amazon Marketplace.</p>
      */
+    inline bool SellerNameHasBeenSet() const { return m_sellerNameHasBeenSet; }
+
+    /**
+     * <p>The name of the vendor in the Amazon Marketplace.</p>
+     */
     inline void SetSellerName(const Aws::String& value) { m_sellerNameHasBeenSet = true; m_sellerName = value; }
 
     /**
@@ -171,6 +187,11 @@ namespace Model
     /**
      * <p>The description of the vendor from the Amazon Marketplace.</p>
      */
+    inline bool MarketplaceDescriptionHasBeenSet() const { return m_marketplaceDescriptionHasBeenSet; }
+
+    /**
+     * <p>The description of the vendor from the Amazon Marketplace.</p>
+     */
     inline void SetMarketplaceDescription(const Aws::String& value) { m_marketplaceDescriptionHasBeenSet = true; m_marketplaceDescription = value; }
 
     /**
@@ -203,6 +224,11 @@ namespace Model
      * <p/>
      */
     inline const Aws::String& GetListingId() const{ return m_listingId; }
+
+    /**
+     * <p/>
+     */
+    inline bool ListingIdHasBeenSet() const { return m_listingIdHasBeenSet; }
 
     /**
      * <p/>

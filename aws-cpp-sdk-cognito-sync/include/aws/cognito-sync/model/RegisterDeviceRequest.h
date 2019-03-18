@@ -58,6 +58,13 @@ namespace Model
      * us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. Here,
      * the ID of the pool that the identity belongs to.</p>
      */
+    inline bool IdentityPoolIdHasBeenSet() const { return m_identityPoolIdHasBeenSet; }
+
+    /**
+     * <p>A name-spaced GUID (for example,
+     * us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. Here,
+     * the ID of the pool that the identity belongs to.</p>
+     */
     inline void SetIdentityPoolId(const Aws::String& value) { m_identityPoolIdHasBeenSet = true; m_identityPoolId = value; }
 
     /**
@@ -104,6 +111,11 @@ namespace Model
     /**
      * <p>The unique ID for this identity.</p>
      */
+    inline bool IdentityIdHasBeenSet() const { return m_identityIdHasBeenSet; }
+
+    /**
+     * <p>The unique ID for this identity.</p>
+     */
     inline void SetIdentityId(const Aws::String& value) { m_identityIdHasBeenSet = true; m_identityId = value; }
 
     /**
@@ -140,6 +152,11 @@ namespace Model
     /**
      * <p>The SNS platform type (e.g. GCM, SDM, APNS, APNS_SANDBOX).</p>
      */
+    inline bool PlatformHasBeenSet() const { return m_platformHasBeenSet; }
+
+    /**
+     * <p>The SNS platform type (e.g. GCM, SDM, APNS, APNS_SANDBOX).</p>
+     */
     inline void SetPlatform(const Platform& value) { m_platformHasBeenSet = true; m_platform = value; }
 
     /**
@@ -162,6 +179,11 @@ namespace Model
      * <p>The push token.</p>
      */
     inline const Aws::String& GetToken() const{ return m_token; }
+
+    /**
+     * <p>The push token.</p>
+     */
+    inline bool TokenHasBeenSet() const { return m_tokenHasBeenSet; }
 
     /**
      * <p>The push token.</p>

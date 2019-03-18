@@ -50,6 +50,11 @@ namespace Model
     /**
      * The ID of the deployment.
      */
+    inline bool DeploymentIdHasBeenSet() const { return m_deploymentIdHasBeenSet; }
+
+    /**
+     * The ID of the deployment.
+     */
     inline void SetDeploymentId(const Aws::String& value) { m_deploymentIdHasBeenSet = true; m_deploymentId = value; }
 
     /**
@@ -82,6 +87,11 @@ namespace Model
      * The ID of the Greengrass group.
      */
     inline const Aws::String& GetGroupId() const{ return m_groupId; }
+
+    /**
+     * The ID of the Greengrass group.
+     */
+    inline bool GroupIdHasBeenSet() const { return m_groupIdHasBeenSet; }
 
     /**
      * The ID of the Greengrass group.

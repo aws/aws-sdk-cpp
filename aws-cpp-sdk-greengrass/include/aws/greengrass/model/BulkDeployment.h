@@ -57,6 +57,11 @@ namespace Model
     /**
      * The ARN of the bulk deployment.
      */
+    inline bool BulkDeploymentArnHasBeenSet() const { return m_bulkDeploymentArnHasBeenSet; }
+
+    /**
+     * The ARN of the bulk deployment.
+     */
     inline void SetBulkDeploymentArn(const Aws::String& value) { m_bulkDeploymentArnHasBeenSet = true; m_bulkDeploymentArn = value; }
 
     /**
@@ -93,6 +98,11 @@ namespace Model
     /**
      * The ID of the bulk deployment.
      */
+    inline bool BulkDeploymentIdHasBeenSet() const { return m_bulkDeploymentIdHasBeenSet; }
+
+    /**
+     * The ID of the bulk deployment.
+     */
     inline void SetBulkDeploymentId(const Aws::String& value) { m_bulkDeploymentIdHasBeenSet = true; m_bulkDeploymentId = value; }
 
     /**
@@ -125,6 +135,11 @@ namespace Model
      * The time, in ISO format, when the deployment was created.
      */
     inline const Aws::String& GetCreatedAt() const{ return m_createdAt; }
+
+    /**
+     * The time, in ISO format, when the deployment was created.
+     */
+    inline bool CreatedAtHasBeenSet() const { return m_createdAtHasBeenSet; }
 
     /**
      * The time, in ISO format, when the deployment was created.

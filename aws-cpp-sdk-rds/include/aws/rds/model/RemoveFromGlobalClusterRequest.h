@@ -56,6 +56,12 @@ namespace Model
      * <p> The cluster identifier to detach from the Aurora global database cluster.
      * </p>
      */
+    inline bool GlobalClusterIdentifierHasBeenSet() const { return m_globalClusterIdentifierHasBeenSet; }
+
+    /**
+     * <p> The cluster identifier to detach from the Aurora global database cluster.
+     * </p>
+     */
     inline void SetGlobalClusterIdentifier(const Aws::String& value) { m_globalClusterIdentifierHasBeenSet = true; m_globalClusterIdentifier = value; }
 
     /**
@@ -94,6 +100,12 @@ namespace Model
      * from the Aurora global database cluster. </p>
      */
     inline const Aws::String& GetDbClusterIdentifier() const{ return m_dbClusterIdentifier; }
+
+    /**
+     * <p> The Amazon Resource Name (ARN) identifying the cluster that was detached
+     * from the Aurora global database cluster. </p>
+     */
+    inline bool DbClusterIdentifierHasBeenSet() const { return m_dbClusterIdentifierHasBeenSet; }
 
     /**
      * <p> The Amazon Resource Name (ARN) identifying the cluster that was detached

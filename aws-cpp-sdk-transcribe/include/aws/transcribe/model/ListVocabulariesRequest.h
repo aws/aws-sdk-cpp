@@ -55,6 +55,12 @@ namespace Model
      * <p>If the result of the previous request to <code>ListVocabularies</code> was
      * truncated, include the <code>NextToken</code> to fetch the next set of jobs.</p>
      */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
+
+    /**
+     * <p>If the result of the previous request to <code>ListVocabularies</code> was
+     * truncated, include the <code>NextToken</code> to fetch the next set of jobs.</p>
+     */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
     /**
@@ -98,6 +104,12 @@ namespace Model
      * <p>The maximum number of vocabularies to return in the response. If there are
      * fewer results in the list, this response contains only the actual results.</p>
      */
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
+
+    /**
+     * <p>The maximum number of vocabularies to return in the response. If there are
+     * fewer results in the list, this response contains only the actual results.</p>
+     */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
@@ -112,6 +124,12 @@ namespace Model
      * <code>VocabularyState</code> field equal to the specified state.</p>
      */
     inline const VocabularyState& GetStateEquals() const{ return m_stateEquals; }
+
+    /**
+     * <p>When specified, only returns vocabularies with the
+     * <code>VocabularyState</code> field equal to the specified state.</p>
+     */
+    inline bool StateEqualsHasBeenSet() const { return m_stateEqualsHasBeenSet; }
 
     /**
      * <p>When specified, only returns vocabularies with the
@@ -145,6 +163,14 @@ namespace Model
      * "vocabularyname" and "VocabularyName" in the response list.</p>
      */
     inline const Aws::String& GetNameContains() const{ return m_nameContains; }
+
+    /**
+     * <p>When specified, the vocabularies returned in the list are limited to
+     * vocabularies whose name contains the specified string. The search is
+     * case-insensitive, <code>ListVocabularies</code> will return both
+     * "vocabularyname" and "VocabularyName" in the response list.</p>
+     */
+    inline bool NameContainsHasBeenSet() const { return m_nameContainsHasBeenSet; }
 
     /**
      * <p>When specified, the vocabularies returned in the list are limited to

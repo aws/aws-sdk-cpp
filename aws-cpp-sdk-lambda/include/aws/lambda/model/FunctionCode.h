@@ -59,6 +59,12 @@ namespace Model
      * <p>The base64-encoded contents of the deployment package. AWS SDK and AWS CLI
      * clients handle the encoding for you.</p>
      */
+    inline bool ZipFileHasBeenSet() const { return m_zipFileHasBeenSet; }
+
+    /**
+     * <p>The base64-encoded contents of the deployment package. AWS SDK and AWS CLI
+     * clients handle the encoding for you.</p>
+     */
     inline void SetZipFile(const Aws::Utils::CryptoBuffer& value) { m_zipFileHasBeenSet = true; m_zipFile = value; }
 
     /**
@@ -85,6 +91,12 @@ namespace Model
      * be in a different AWS account.</p>
      */
     inline const Aws::String& GetS3Bucket() const{ return m_s3Bucket; }
+
+    /**
+     * <p>An Amazon S3 bucket in the same AWS Region as your function. The bucket can
+     * be in a different AWS account.</p>
+     */
+    inline bool S3BucketHasBeenSet() const { return m_s3BucketHasBeenSet; }
 
     /**
      * <p>An Amazon S3 bucket in the same AWS Region as your function. The bucket can
@@ -131,6 +143,11 @@ namespace Model
     /**
      * <p>The Amazon S3 key of the deployment package.</p>
      */
+    inline bool S3KeyHasBeenSet() const { return m_s3KeyHasBeenSet; }
+
+    /**
+     * <p>The Amazon S3 key of the deployment package.</p>
+     */
     inline void SetS3Key(const Aws::String& value) { m_s3KeyHasBeenSet = true; m_s3Key = value; }
 
     /**
@@ -164,6 +181,12 @@ namespace Model
      * use.</p>
      */
     inline const Aws::String& GetS3ObjectVersion() const{ return m_s3ObjectVersion; }
+
+    /**
+     * <p>For versioned objects, the version of the deployment package object to
+     * use.</p>
+     */
+    inline bool S3ObjectVersionHasBeenSet() const { return m_s3ObjectVersionHasBeenSet; }
 
     /**
      * <p>For versioned objects, the version of the deployment package object to

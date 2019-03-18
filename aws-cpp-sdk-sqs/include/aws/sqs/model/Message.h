@@ -62,6 +62,12 @@ namespace Model
      * <p>A unique identifier for the message. A <code>MessageId</code>is considered
      * unique across all AWS accounts for an extended period of time.</p>
      */
+    inline bool MessageIdHasBeenSet() const { return m_messageIdHasBeenSet; }
+
+    /**
+     * <p>A unique identifier for the message. A <code>MessageId</code>is considered
+     * unique across all AWS accounts for an extended period of time.</p>
+     */
     inline void SetMessageId(const Aws::String& value) { m_messageIdHasBeenSet = true; m_messageId = value; }
 
     /**
@@ -101,6 +107,13 @@ namespace Model
      * you provide the last received receipt handle to delete the message.</p>
      */
     inline const Aws::String& GetReceiptHandle() const{ return m_receiptHandle; }
+
+    /**
+     * <p>An identifier associated with the act of receiving the message. A new receipt
+     * handle is returned every time you receive a message. When deleting a message,
+     * you provide the last received receipt handle to delete the message.</p>
+     */
+    inline bool ReceiptHandleHasBeenSet() const { return m_receiptHandleHasBeenSet; }
 
     /**
      * <p>An identifier associated with the act of receiving the message. A new receipt
@@ -153,6 +166,11 @@ namespace Model
     /**
      * <p>An MD5 digest of the non-URL-encoded message body string.</p>
      */
+    inline bool MD5OfBodyHasBeenSet() const { return m_mD5OfBodyHasBeenSet; }
+
+    /**
+     * <p>An MD5 digest of the non-URL-encoded message body string.</p>
+     */
     inline void SetMD5OfBody(const Aws::String& value) { m_mD5OfBodyHasBeenSet = true; m_mD5OfBody = value; }
 
     /**
@@ -185,6 +203,11 @@ namespace Model
      * <p>The message's contents (not URL-encoded).</p>
      */
     inline const Aws::String& GetBody() const{ return m_body; }
+
+    /**
+     * <p>The message's contents (not URL-encoded).</p>
+     */
+    inline bool BodyHasBeenSet() const { return m_bodyHasBeenSet; }
 
     /**
      * <p>The message's contents (not URL-encoded).</p>
@@ -232,6 +255,22 @@ namespace Model
      * milliseconds.</p>
      */
     inline const Aws::Map<MessageSystemAttributeName, Aws::String>& GetAttributes() const{ return m_attributes; }
+
+    /**
+     * <p>A map of the attributes requested in <code> <a>ReceiveMessage</a> </code> to
+     * their respective values. Supported attributes:</p> <ul> <li> <p>
+     * <code>ApproximateReceiveCount</code> </p> </li> <li> <p>
+     * <code>ApproximateFirstReceiveTimestamp</code> </p> </li> <li> <p>
+     * <code>MessageDeduplicationId</code> </p> </li> <li> <p>
+     * <code>MessageGroupId</code> </p> </li> <li> <p> <code>SenderId</code> </p> </li>
+     * <li> <p> <code>SentTimestamp</code> </p> </li> <li> <p>
+     * <code>SequenceNumber</code> </p> </li> </ul> <p>
+     * <code>ApproximateFirstReceiveTimestamp</code> and <code>SentTimestamp</code> are
+     * each returned as an integer representing the <a
+     * href="http://en.wikipedia.org/wiki/Unix_time">epoch time</a> in
+     * milliseconds.</p>
+     */
+    inline bool AttributesHasBeenSet() const { return m_attributesHasBeenSet; }
 
     /**
      * <p>A map of the attributes requested in <code> <a>ReceiveMessage</a> </code> to
@@ -408,6 +447,14 @@ namespace Model
      * SQS URL-decodes the message before creating the MD5 digest. For information
      * about MD5, see <a href="https://www.ietf.org/rfc/rfc1321.txt">RFC1321</a>.</p>
      */
+    inline bool MD5OfMessageAttributesHasBeenSet() const { return m_mD5OfMessageAttributesHasBeenSet; }
+
+    /**
+     * <p>An MD5 digest of the non-URL-encoded message attribute string. You can use
+     * this attribute to verify that Amazon SQS received the message correctly. Amazon
+     * SQS URL-decodes the message before creating the MD5 digest. For information
+     * about MD5, see <a href="https://www.ietf.org/rfc/rfc1321.txt">RFC1321</a>.</p>
+     */
     inline void SetMD5OfMessageAttributes(const Aws::String& value) { m_mD5OfMessageAttributesHasBeenSet = true; m_mD5OfMessageAttributes = value; }
 
     /**
@@ -459,6 +506,15 @@ namespace Model
      * Guide</i>.</p>
      */
     inline const Aws::Map<Aws::String, MessageAttributeValue>& GetMessageAttributes() const{ return m_messageAttributes; }
+
+    /**
+     * <p>Each message attribute consists of a <code>Name</code>, <code>Type</code>,
+     * and <code>Value</code>. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-attributes.html">Amazon
+     * SQS Message Attributes</a> in the <i>Amazon Simple Queue Service Developer
+     * Guide</i>.</p>
+     */
+    inline bool MessageAttributesHasBeenSet() const { return m_messageAttributesHasBeenSet; }
 
     /**
      * <p>Each message attribute consists of a <code>Name</code>, <code>Type</code>,

@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The name of the bootstrap action.</p>
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>The name of the bootstrap action.</p>
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
@@ -88,6 +93,11 @@ namespace Model
      * <p>The script run by the bootstrap action.</p>
      */
     inline const ScriptBootstrapActionConfig& GetScriptBootstrapAction() const{ return m_scriptBootstrapAction; }
+
+    /**
+     * <p>The script run by the bootstrap action.</p>
+     */
+    inline bool ScriptBootstrapActionHasBeenSet() const { return m_scriptBootstrapActionHasBeenSet; }
 
     /**
      * <p>The script run by the bootstrap action.</p>

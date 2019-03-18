@@ -72,6 +72,15 @@ Requires subnetIds. If none are specified then the VPC default
      * security group will be used.
 
      */
+    inline bool SecurityGroupIdsHasBeenSet() const { return m_securityGroupIdsHasBeenSet; }
+
+    /**
+     * A list of up to 5 EC2 VPC security group IDs to attach to the Input VPC network
+     * interfaces.
+Requires subnetIds. If none are specified then the VPC default
+     * security group will be used.
+
+     */
     inline void SetSecurityGroupIds(const Aws::Vector<Aws::String>& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds = value; }
 
     /**
@@ -136,6 +145,14 @@ Subnet IDs must be mapped to two
 
      */
     inline const Aws::Vector<Aws::String>& GetSubnetIds() const{ return m_subnetIds; }
+
+    /**
+     * A list of 2 VPC subnet IDs from the same VPC.
+Subnet IDs must be mapped to two
+     * unique availability zones (AZ).
+
+     */
+    inline bool SubnetIdsHasBeenSet() const { return m_subnetIdsHasBeenSet; }
 
     /**
      * A list of 2 VPC subnet IDs from the same VPC.

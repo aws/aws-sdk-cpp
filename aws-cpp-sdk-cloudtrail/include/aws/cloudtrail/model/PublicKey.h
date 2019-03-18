@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p>The DER encoded public key value in PKCS#1 format.</p>
      */
+    inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
+
+    /**
+     * <p>The DER encoded public key value in PKCS#1 format.</p>
+     */
     inline void SetValue(const Aws::Utils::ByteBuffer& value) { m_valueHasBeenSet = true; m_value = value; }
 
     /**
@@ -80,6 +85,11 @@ namespace Model
      * <p>The starting time of validity of the public key.</p>
      */
     inline const Aws::Utils::DateTime& GetValidityStartTime() const{ return m_validityStartTime; }
+
+    /**
+     * <p>The starting time of validity of the public key.</p>
+     */
+    inline bool ValidityStartTimeHasBeenSet() const { return m_validityStartTimeHasBeenSet; }
 
     /**
      * <p>The starting time of validity of the public key.</p>
@@ -110,6 +120,11 @@ namespace Model
     /**
      * <p>The ending time of validity of the public key.</p>
      */
+    inline bool ValidityEndTimeHasBeenSet() const { return m_validityEndTimeHasBeenSet; }
+
+    /**
+     * <p>The ending time of validity of the public key.</p>
+     */
     inline void SetValidityEndTime(const Aws::Utils::DateTime& value) { m_validityEndTimeHasBeenSet = true; m_validityEndTime = value; }
 
     /**
@@ -132,6 +147,11 @@ namespace Model
      * <p>The fingerprint of the public key.</p>
      */
     inline const Aws::String& GetFingerprint() const{ return m_fingerprint; }
+
+    /**
+     * <p>The fingerprint of the public key.</p>
+     */
+    inline bool FingerprintHasBeenSet() const { return m_fingerprintHasBeenSet; }
 
     /**
      * <p>The fingerprint of the public key.</p>

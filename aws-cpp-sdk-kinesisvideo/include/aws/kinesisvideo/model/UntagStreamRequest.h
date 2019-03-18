@@ -53,6 +53,12 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the stream that you want to remove tags
      * from.</p>
      */
+    inline bool StreamARNHasBeenSet() const { return m_streamARNHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the stream that you want to remove tags
+     * from.</p>
+     */
     inline void SetStreamARN(const Aws::String& value) { m_streamARNHasBeenSet = true; m_streamARN = value; }
 
     /**
@@ -94,6 +100,11 @@ namespace Model
     /**
      * <p>The name of the stream that you want to remove tags from.</p>
      */
+    inline bool StreamNameHasBeenSet() const { return m_streamNameHasBeenSet; }
+
+    /**
+     * <p>The name of the stream that you want to remove tags from.</p>
+     */
     inline void SetStreamName(const Aws::String& value) { m_streamNameHasBeenSet = true; m_streamName = value; }
 
     /**
@@ -126,6 +137,11 @@ namespace Model
      * <p>A list of the keys of the tags that you want to remove.</p>
      */
     inline const Aws::Vector<Aws::String>& GetTagKeyList() const{ return m_tagKeyList; }
+
+    /**
+     * <p>A list of the keys of the tags that you want to remove.</p>
+     */
+    inline bool TagKeyListHasBeenSet() const { return m_tagKeyListHasBeenSet; }
 
     /**
      * <p>A list of the keys of the tags that you want to remove.</p>

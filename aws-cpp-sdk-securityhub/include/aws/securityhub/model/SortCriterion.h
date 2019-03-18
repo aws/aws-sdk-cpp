@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The finding attribute used for sorting findings.</p>
      */
+    inline bool FieldHasBeenSet() const { return m_fieldHasBeenSet; }
+
+    /**
+     * <p>The finding attribute used for sorting findings.</p>
+     */
     inline void SetField(const Aws::String& value) { m_fieldHasBeenSet = true; m_field = value; }
 
     /**
@@ -89,6 +94,11 @@ namespace Model
      * <p>The order used for sorting findings.</p>
      */
     inline const SortOrder& GetSortOrder() const{ return m_sortOrder; }
+
+    /**
+     * <p>The order used for sorting findings.</p>
+     */
+    inline bool SortOrderHasBeenSet() const { return m_sortOrderHasBeenSet; }
 
     /**
      * <p>The order used for sorting findings.</p>

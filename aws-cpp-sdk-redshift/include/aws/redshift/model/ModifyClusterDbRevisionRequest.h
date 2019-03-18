@@ -56,6 +56,12 @@ namespace Model
      * <p>The unique identifier of a cluster whose database revision you want to
      * modify. </p> <p>Example: <code>examplecluster</code> </p>
      */
+    inline bool ClusterIdentifierHasBeenSet() const { return m_clusterIdentifierHasBeenSet; }
+
+    /**
+     * <p>The unique identifier of a cluster whose database revision you want to
+     * modify. </p> <p>Example: <code>examplecluster</code> </p>
+     */
     inline void SetClusterIdentifier(const Aws::String& value) { m_clusterIdentifierHasBeenSet = true; m_clusterIdentifier = value; }
 
     /**
@@ -94,6 +100,12 @@ namespace Model
      * response to the <a>DescribeClusterDbRevisions</a> request.</p>
      */
     inline const Aws::String& GetRevisionTarget() const{ return m_revisionTarget; }
+
+    /**
+     * <p>The identifier of the database revision. You can retrieve this value from the
+     * response to the <a>DescribeClusterDbRevisions</a> request.</p>
+     */
+    inline bool RevisionTargetHasBeenSet() const { return m_revisionTargetHasBeenSet; }
 
     /**
      * <p>The identifier of the database revision. You can retrieve this value from the

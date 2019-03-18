@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p>A code corresponding to the reason the state change occurred.</p>
      */
+    inline bool CodeHasBeenSet() const { return m_codeHasBeenSet; }
+
+    /**
+     * <p>A code corresponding to the reason the state change occurred.</p>
+     */
     inline void SetCode(const InstanceFleetStateChangeReasonCode& value) { m_codeHasBeenSet = true; m_code = value; }
 
     /**
@@ -80,6 +85,11 @@ namespace Model
      * <p>An explanatory message.</p>
      */
     inline const Aws::String& GetMessage() const{ return m_message; }
+
+    /**
+     * <p>An explanatory message.</p>
+     */
+    inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
 
     /**
      * <p>An explanatory message.</p>

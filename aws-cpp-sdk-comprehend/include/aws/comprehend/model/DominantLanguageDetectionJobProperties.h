@@ -60,6 +60,11 @@ namespace Model
     /**
      * <p>The identifier assigned to the dominant language detection job.</p>
      */
+    inline bool JobIdHasBeenSet() const { return m_jobIdHasBeenSet; }
+
+    /**
+     * <p>The identifier assigned to the dominant language detection job.</p>
+     */
     inline void SetJobId(const Aws::String& value) { m_jobIdHasBeenSet = true; m_jobId = value; }
 
     /**
@@ -92,6 +97,11 @@ namespace Model
      * <p>The name that you assigned to the dominant language detection job.</p>
      */
     inline const Aws::String& GetJobName() const{ return m_jobName; }
+
+    /**
+     * <p>The name that you assigned to the dominant language detection job.</p>
+     */
+    inline bool JobNameHasBeenSet() const { return m_jobNameHasBeenSet; }
 
     /**
      * <p>The name that you assigned to the dominant language detection job.</p>
@@ -136,6 +146,13 @@ namespace Model
      * <code>FAILED</code>, the <code>Message</code> field shows the reason for the
      * failure.</p>
      */
+    inline bool JobStatusHasBeenSet() const { return m_jobStatusHasBeenSet; }
+
+    /**
+     * <p>The current status of the dominant language detection job. If the status is
+     * <code>FAILED</code>, the <code>Message</code> field shows the reason for the
+     * failure.</p>
+     */
     inline void SetJobStatus(const JobStatus& value) { m_jobStatusHasBeenSet = true; m_jobStatus = value; }
 
     /**
@@ -164,6 +181,11 @@ namespace Model
      * <p>A description for the status of a job.</p>
      */
     inline const Aws::String& GetMessage() const{ return m_message; }
+
+    /**
+     * <p>A description for the status of a job.</p>
+     */
+    inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
 
     /**
      * <p>A description for the status of a job.</p>
@@ -206,6 +228,12 @@ namespace Model
      * <p>The time that the dominant language detection job was submitted for
      * processing.</p>
      */
+    inline bool SubmitTimeHasBeenSet() const { return m_submitTimeHasBeenSet; }
+
+    /**
+     * <p>The time that the dominant language detection job was submitted for
+     * processing.</p>
+     */
     inline void SetSubmitTime(const Aws::Utils::DateTime& value) { m_submitTimeHasBeenSet = true; m_submitTime = value; }
 
     /**
@@ -235,6 +263,11 @@ namespace Model
     /**
      * <p>The time that the dominant language detection job completed.</p>
      */
+    inline bool EndTimeHasBeenSet() const { return m_endTimeHasBeenSet; }
+
+    /**
+     * <p>The time that the dominant language detection job completed.</p>
+     */
     inline void SetEndTime(const Aws::Utils::DateTime& value) { m_endTimeHasBeenSet = true; m_endTime = value; }
 
     /**
@@ -258,6 +291,12 @@ namespace Model
      * language detection job.</p>
      */
     inline const InputDataConfig& GetInputDataConfig() const{ return m_inputDataConfig; }
+
+    /**
+     * <p>The input data configuration that you supplied when you created the dominant
+     * language detection job.</p>
+     */
+    inline bool InputDataConfigHasBeenSet() const { return m_inputDataConfigHasBeenSet; }
 
     /**
      * <p>The input data configuration that you supplied when you created the dominant
@@ -294,6 +333,12 @@ namespace Model
      * <p>The output data configuration that you supplied when you created the dominant
      * language detection job.</p>
      */
+    inline bool OutputDataConfigHasBeenSet() const { return m_outputDataConfigHasBeenSet; }
+
+    /**
+     * <p>The output data configuration that you supplied when you created the dominant
+     * language detection job.</p>
+     */
     inline void SetOutputDataConfig(const OutputDataConfig& value) { m_outputDataConfigHasBeenSet = true; m_outputDataConfig = value; }
 
     /**
@@ -320,6 +365,12 @@ namespace Model
      * your input data.</p>
      */
     inline const Aws::String& GetDataAccessRoleArn() const{ return m_dataAccessRoleArn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) that gives Amazon Comprehend read access to
+     * your input data.</p>
+     */
+    inline bool DataAccessRoleArnHasBeenSet() const { return m_dataAccessRoleArnHasBeenSet; }
 
     /**
      * <p>The Amazon Resource Name (ARN) that gives Amazon Comprehend read access to

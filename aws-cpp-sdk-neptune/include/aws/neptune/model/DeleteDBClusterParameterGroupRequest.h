@@ -63,6 +63,14 @@ namespace Model
      * <p>You can't delete a default DB cluster parameter group.</p> </li> <li>
      * <p>Cannot be associated with any DB clusters.</p> </li> </ul>
      */
+    inline bool DBClusterParameterGroupNameHasBeenSet() const { return m_dBClusterParameterGroupNameHasBeenSet; }
+
+    /**
+     * <p>The name of the DB cluster parameter group.</p> <p>Constraints:</p> <ul> <li>
+     * <p>Must be the name of an existing DB cluster parameter group.</p> </li> <li>
+     * <p>You can't delete a default DB cluster parameter group.</p> </li> <li>
+     * <p>Cannot be associated with any DB clusters.</p> </li> </ul>
+     */
     inline void SetDBClusterParameterGroupName(const Aws::String& value) { m_dBClusterParameterGroupNameHasBeenSet = true; m_dBClusterParameterGroupName = value; }
 
     /**

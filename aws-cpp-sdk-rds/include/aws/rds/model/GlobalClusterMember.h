@@ -59,6 +59,11 @@ namespace Model
     /**
      * <p> The Amazon Resource Name (ARN) for each Aurora cluster. </p>
      */
+    inline bool DBClusterArnHasBeenSet() const { return m_dBClusterArnHasBeenSet; }
+
+    /**
+     * <p> The Amazon Resource Name (ARN) for each Aurora cluster. </p>
+     */
     inline void SetDBClusterArn(const Aws::String& value) { m_dBClusterArnHasBeenSet = true; m_dBClusterArn = value; }
 
     /**
@@ -92,6 +97,12 @@ namespace Model
      * associated with the Aurora global database. </p>
      */
     inline const Aws::Vector<Aws::String>& GetReaders() const{ return m_readers; }
+
+    /**
+     * <p> The Amazon Resource Name (ARN) for each read-only secondary cluster
+     * associated with the Aurora global database. </p>
+     */
+    inline bool ReadersHasBeenSet() const { return m_readersHasBeenSet; }
 
     /**
      * <p> The Amazon Resource Name (ARN) for each read-only secondary cluster
@@ -142,6 +153,13 @@ namespace Model
      * associated. </p>
      */
     inline bool GetIsWriter() const{ return m_isWriter; }
+
+    /**
+     * <p> Specifies whether the Aurora cluster is the primary cluster (that is, has
+     * read-write capability) for the Aurora global database with which it is
+     * associated. </p>
+     */
+    inline bool IsWriterHasBeenSet() const { return m_isWriterHasBeenSet; }
 
     /**
      * <p> Specifies whether the Aurora cluster is the primary cluster (that is, has

@@ -59,6 +59,11 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the task.</p>
      */
+    inline bool TaskArnHasBeenSet() const { return m_taskArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the task.</p>
+     */
     inline void SetTaskArn(const Aws::String& value) { m_taskArnHasBeenSet = true; m_taskArn = value; }
 
     /**
@@ -95,6 +100,11 @@ namespace Model
     /**
      * <p>The status of the task.</p>
      */
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
+
+    /**
+     * <p>The status of the task.</p>
+     */
     inline void SetStatus(const TaskStatus& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
@@ -117,6 +127,11 @@ namespace Model
      * <p>The name of the task.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
+
+    /**
+     * <p>The name of the task.</p>
+     */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
      * <p>The name of the task.</p>

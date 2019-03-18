@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>A streaming distribution Configuration.</p>
      */
+    inline bool StreamingDistributionConfigHasBeenSet() const { return m_streamingDistributionConfigHasBeenSet; }
+
+    /**
+     * <p>A streaming distribution Configuration.</p>
+     */
     inline void SetStreamingDistributionConfig(const StreamingDistributionConfig& value) { m_streamingDistributionConfigHasBeenSet = true; m_streamingDistributionConfig = value; }
 
     /**
@@ -79,6 +84,11 @@ namespace Model
      * <p>A complex type that contains zero or more <code>Tag</code> elements.</p>
      */
     inline const Tags& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>A complex type that contains zero or more <code>Tag</code> elements.</p>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
      * <p>A complex type that contains zero or more <code>Tag</code> elements.</p>

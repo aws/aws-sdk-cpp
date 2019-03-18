@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The name of the repository where the pull request was created.</p>
      */
+    inline bool RepositoryNameHasBeenSet() const { return m_repositoryNameHasBeenSet; }
+
+    /**
+     * <p>The name of the repository where the pull request was created.</p>
+     */
     inline void SetRepositoryName(const Aws::String& value) { m_repositoryNameHasBeenSet = true; m_repositoryName = value; }
 
     /**
@@ -89,6 +94,12 @@ namespace Model
      * created.</p>
      */
     inline const Aws::String& GetSourceCommitId() const{ return m_sourceCommitId; }
+
+    /**
+     * <p>The commit ID on the source branch used when the pull request was
+     * created.</p>
+     */
+    inline bool SourceCommitIdHasBeenSet() const { return m_sourceCommitIdHasBeenSet; }
 
     /**
      * <p>The commit ID on the source branch used when the pull request was
@@ -137,6 +148,12 @@ namespace Model
      * <p>The commit ID of the tip of the branch specified as the destination branch
      * when the pull request was created.</p>
      */
+    inline bool DestinationCommitIdHasBeenSet() const { return m_destinationCommitIdHasBeenSet; }
+
+    /**
+     * <p>The commit ID of the tip of the branch specified as the destination branch
+     * when the pull request was created.</p>
+     */
     inline void SetDestinationCommitId(const Aws::String& value) { m_destinationCommitIdHasBeenSet = true; m_destinationCommitId = value; }
 
     /**
@@ -175,6 +192,12 @@ namespace Model
      * destination branch have in common.</p>
      */
     inline const Aws::String& GetMergeBase() const{ return m_mergeBase; }
+
+    /**
+     * <p>The commit ID of the most recent commit that the source branch and the
+     * destination branch have in common.</p>
+     */
+    inline bool MergeBaseHasBeenSet() const { return m_mergeBaseHasBeenSet; }
 
     /**
      * <p>The commit ID of the most recent commit that the source branch and the

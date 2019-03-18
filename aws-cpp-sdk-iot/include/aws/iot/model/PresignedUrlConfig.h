@@ -59,6 +59,13 @@ namespace Model
      * the S3 bucket where the job data/updates are stored. The role must also grant
      * permission for IoT to download the files.</p>
      */
+    inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
+
+    /**
+     * <p>The ARN of an IAM role that grants grants permission to download files from
+     * the S3 bucket where the job data/updates are stored. The role must also grant
+     * permission for IoT to download the files.</p>
+     */
     inline void SetRoleArn(const Aws::String& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
 
     /**
@@ -103,6 +110,13 @@ namespace Model
      * receives an MQTT request for the job document.</p>
      */
     inline long long GetExpiresInSec() const{ return m_expiresInSec; }
+
+    /**
+     * <p>How long (in seconds) pre-signed URLs are valid. Valid values are 60 - 3600,
+     * the default value is 3600 seconds. Pre-signed URLs are generated when Jobs
+     * receives an MQTT request for the job document.</p>
+     */
+    inline bool ExpiresInSecHasBeenSet() const { return m_expiresInSecHasBeenSet; }
 
     /**
      * <p>How long (in seconds) pre-signed URLs are valid. Valid values are 60 - 3600,

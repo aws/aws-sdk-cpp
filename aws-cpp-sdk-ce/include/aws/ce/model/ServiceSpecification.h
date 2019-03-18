@@ -58,6 +58,12 @@ namespace Model
      * <p>The Amazon EC2 hardware specifications that you want AWS to provide
      * recommendations for.</p>
      */
+    inline bool EC2SpecificationHasBeenSet() const { return m_eC2SpecificationHasBeenSet; }
+
+    /**
+     * <p>The Amazon EC2 hardware specifications that you want AWS to provide
+     * recommendations for.</p>
+     */
     inline void SetEC2Specification(const EC2Specification& value) { m_eC2SpecificationHasBeenSet = true; m_eC2Specification = value; }
 
     /**

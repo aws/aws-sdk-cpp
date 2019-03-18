@@ -55,6 +55,11 @@ namespace Model
     /**
      * <p>The name of the AWS Config rule that you want to delete.</p>
      */
+    inline bool ConfigRuleNameHasBeenSet() const { return m_configRuleNameHasBeenSet; }
+
+    /**
+     * <p>The name of the AWS Config rule that you want to delete.</p>
+     */
     inline void SetConfigRuleName(const Aws::String& value) { m_configRuleNameHasBeenSet = true; m_configRuleName = value; }
 
     /**

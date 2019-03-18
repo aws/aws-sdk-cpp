@@ -60,6 +60,13 @@ namespace Model
      * href="https://aws.amazon.com/documentation/lambda/">AWS Lambda</a> function that
      * is used to preprocess the records in the stream.</p>
      */
+    inline bool ResourceARNUpdateHasBeenSet() const { return m_resourceARNUpdateHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the new <a
+     * href="https://aws.amazon.com/documentation/lambda/">AWS Lambda</a> function that
+     * is used to preprocess the records in the stream.</p>
+     */
     inline void SetResourceARNUpdate(const Aws::String& value) { m_resourceARNUpdateHasBeenSet = true; m_resourceARNUpdate = value; }
 
     /**
@@ -103,6 +110,12 @@ namespace Model
      * function.</p>
      */
     inline const Aws::String& GetRoleARNUpdate() const{ return m_roleARNUpdate; }
+
+    /**
+     * <p>The ARN of the new IAM role that is used to access the AWS Lambda
+     * function.</p>
+     */
+    inline bool RoleARNUpdateHasBeenSet() const { return m_roleARNUpdateHasBeenSet; }
 
     /**
      * <p>The ARN of the new IAM role that is used to access the AWS Lambda

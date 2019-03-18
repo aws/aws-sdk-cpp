@@ -60,6 +60,12 @@ namespace Model
      * Optionally, specify a preset category to limit responses to only presets from
      * that category.
      */
+    inline bool CategoryHasBeenSet() const { return m_categoryHasBeenSet; }
+
+    /**
+     * Optionally, specify a preset category to limit responses to only presets from
+     * that category.
+     */
     inline void SetCategory(const Aws::String& value) { m_categoryHasBeenSet = true; m_category = value; }
 
     /**
@@ -97,6 +103,9 @@ namespace Model
     inline const PresetListBy& GetListBy() const{ return m_listBy; }
 
     
+    inline bool ListByHasBeenSet() const { return m_listByHasBeenSet; }
+
+    
     inline void SetListBy(const PresetListBy& value) { m_listByHasBeenSet = true; m_listBy = value; }
 
     
@@ -117,6 +126,11 @@ namespace Model
     /**
      * Optional. Number of presets, up to twenty, that will be returned at one time
      */
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
+
+    /**
+     * Optional. Number of presets, up to twenty, that will be returned at one time
+     */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
@@ -130,6 +144,12 @@ namespace Model
      * the next batch of presets.
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
+    /**
+     * Use this string, provided with the response to a previous request, to request
+     * the next batch of presets.
+     */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
      * Use this string, provided with the response to a previous request, to request
@@ -170,6 +190,9 @@ namespace Model
 
     
     inline const Order& GetOrder() const{ return m_order; }
+
+    
+    inline bool OrderHasBeenSet() const { return m_orderHasBeenSet; }
 
     
     inline void SetOrder(const Order& value) { m_orderHasBeenSet = true; m_order = value; }

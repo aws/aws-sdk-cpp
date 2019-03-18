@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The starting hash key of the hash key range.</p>
      */
+    inline bool StartingHashKeyHasBeenSet() const { return m_startingHashKeyHasBeenSet; }
+
+    /**
+     * <p>The starting hash key of the hash key range.</p>
+     */
     inline void SetStartingHashKey(const Aws::String& value) { m_startingHashKeyHasBeenSet = true; m_startingHashKey = value; }
 
     /**
@@ -88,6 +93,11 @@ namespace Model
      * <p>The ending hash key of the hash key range.</p>
      */
     inline const Aws::String& GetEndingHashKey() const{ return m_endingHashKey; }
+
+    /**
+     * <p>The ending hash key of the hash key range.</p>
+     */
+    inline bool EndingHashKeyHasBeenSet() const { return m_endingHashKeyHasBeenSet; }
 
     /**
      * <p>The ending hash key of the hash key range.</p>

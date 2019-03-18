@@ -50,6 +50,11 @@ namespace Model
     /**
      * <p>The search index name.</p>
      */
+    inline bool IndexNameHasBeenSet() const { return m_indexNameHasBeenSet; }
+
+    /**
+     * <p>The search index name.</p>
+     */
     inline void SetIndexName(const Aws::String& value) { m_indexNameHasBeenSet = true; m_indexName = value; }
 
     /**
@@ -82,6 +87,11 @@ namespace Model
      * <p>The search query string.</p>
      */
     inline const Aws::String& GetQueryString() const{ return m_queryString; }
+
+    /**
+     * <p>The search query string.</p>
+     */
+    inline bool QueryStringHasBeenSet() const { return m_queryStringHasBeenSet; }
 
     /**
      * <p>The search query string.</p>
@@ -119,6 +129,12 @@ namespace Model
      * additional results.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
+    /**
+     * <p>The token used to get the next set of results, or <b>null</b> if there are no
+     * additional results.</p>
+     */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
      * <p>The token used to get the next set of results, or <b>null</b> if there are no
@@ -165,6 +181,11 @@ namespace Model
     /**
      * <p>The maximum number of results to return at one time.</p>
      */
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
+
+    /**
+     * <p>The maximum number of results to return at one time.</p>
+     */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
@@ -177,6 +198,11 @@ namespace Model
      * <p>The query version.</p>
      */
     inline const Aws::String& GetQueryVersion() const{ return m_queryVersion; }
+
+    /**
+     * <p>The query version.</p>
+     */
+    inline bool QueryVersionHasBeenSet() const { return m_queryVersionHasBeenSet; }
 
     /**
      * <p>The query version.</p>

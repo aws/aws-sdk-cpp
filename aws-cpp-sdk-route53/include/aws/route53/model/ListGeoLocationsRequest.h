@@ -74,6 +74,18 @@ namespace Model
      * continents. Don't include <code>startcontinentcode</code> when you're listing
      * countries or countries with their subdivisions.</p>
      */
+    inline bool StartContinentCodeHasBeenSet() const { return m_startContinentCodeHasBeenSet; }
+
+    /**
+     * <p>The code for the continent with which you want to start listing locations
+     * that Amazon Route 53 supports for geolocation. If Route 53 has already returned
+     * a page or more of results, if <code>IsTruncated</code> is true, and if
+     * <code>NextContinentCode</code> from the previous response has a value, enter
+     * that value in <code>startcontinentcode</code> to return the next page of
+     * results.</p> <p>Include <code>startcontinentcode</code> only if you want to list
+     * continents. Don't include <code>startcontinentcode</code> when you're listing
+     * countries or countries with their subdivisions.</p>
+     */
     inline void SetStartContinentCode(const Aws::String& value) { m_startContinentCodeHasBeenSet = true; m_startContinentCode = value; }
 
     /**
@@ -148,6 +160,18 @@ namespace Model
      * alpha-2</a>.</p>
      */
     inline const Aws::String& GetStartCountryCode() const{ return m_startCountryCode; }
+
+    /**
+     * <p>The code for the country with which you want to start listing locations that
+     * Amazon Route 53 supports for geolocation. If Route 53 has already returned a
+     * page or more of results, if <code>IsTruncated</code> is <code>true</code>, and
+     * if <code>NextCountryCode</code> from the previous response has a value, enter
+     * that value in <code>startcountrycode</code> to return the next page of
+     * results.</p> <p>Route 53 uses the two-letter country codes that are specified in
+     * <a href="https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2">ISO standard 3166-1
+     * alpha-2</a>.</p>
+     */
+    inline bool StartCountryCodeHasBeenSet() const { return m_startCountryCodeHasBeenSet; }
 
     /**
      * <p>The code for the country with which you want to start listing locations that
@@ -244,6 +268,18 @@ namespace Model
      * results.</p> <p>To list subdivisions of a country, you must include both
      * <code>startcountrycode</code> and <code>startsubdivisioncode</code>.</p>
      */
+    inline bool StartSubdivisionCodeHasBeenSet() const { return m_startSubdivisionCodeHasBeenSet; }
+
+    /**
+     * <p>The code for the subdivision (for example, state or province) with which you
+     * want to start listing locations that Amazon Route 53 supports for geolocation.
+     * If Route 53 has already returned a page or more of results, if
+     * <code>IsTruncated</code> is <code>true</code>, and if
+     * <code>NextSubdivisionCode</code> from the previous response has a value, enter
+     * that value in <code>startsubdivisioncode</code> to return the next page of
+     * results.</p> <p>To list subdivisions of a country, you must include both
+     * <code>startcountrycode</code> and <code>startsubdivisioncode</code>.</p>
+     */
     inline void SetStartSubdivisionCode(const Aws::String& value) { m_startSubdivisionCodeHasBeenSet = true; m_startSubdivisionCode = value; }
 
     /**
@@ -314,6 +350,14 @@ namespace Model
      * response is <code>true</code>.</p>
      */
     inline const Aws::String& GetMaxItems() const{ return m_maxItems; }
+
+    /**
+     * <p>(Optional) The maximum number of geolocations to be included in the response
+     * body for this request. If more than <code>maxitems</code> geolocations remain to
+     * be listed, then the value of the <code>IsTruncated</code> element in the
+     * response is <code>true</code>.</p>
+     */
+    inline bool MaxItemsHasBeenSet() const { return m_maxItemsHasBeenSet; }
 
     /**
      * <p>(Optional) The maximum number of geolocations to be included in the response

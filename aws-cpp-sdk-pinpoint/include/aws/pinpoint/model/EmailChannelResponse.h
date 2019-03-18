@@ -55,6 +55,11 @@ namespace Model
     /**
      * The unique ID of the application to which the email channel belongs.
      */
+    inline bool ApplicationIdHasBeenSet() const { return m_applicationIdHasBeenSet; }
+
+    /**
+     * The unique ID of the application to which the email channel belongs.
+     */
     inline void SetApplicationId(const Aws::String& value) { m_applicationIdHasBeenSet = true; m_applicationId = value; }
 
     /**
@@ -88,6 +93,12 @@ namespace Model
      * Pinpoint Email API.
      */
     inline const Aws::String& GetConfigurationSet() const{ return m_configurationSet; }
+
+    /**
+     * The configuration set that you want to use when you send email using the
+     * Pinpoint Email API.
+     */
+    inline bool ConfigurationSetHasBeenSet() const { return m_configurationSetHasBeenSet; }
 
     /**
      * The configuration set that you want to use when you send email using the
@@ -134,6 +145,11 @@ namespace Model
     /**
      * The date that the settings were last updated in ISO 8601 format.
      */
+    inline bool CreationDateHasBeenSet() const { return m_creationDateHasBeenSet; }
+
+    /**
+     * The date that the settings were last updated in ISO 8601 format.
+     */
     inline void SetCreationDate(const Aws::String& value) { m_creationDateHasBeenSet = true; m_creationDate = value; }
 
     /**
@@ -170,6 +186,11 @@ namespace Model
     /**
      * If the channel is enabled for sending messages.
      */
+    inline bool EnabledHasBeenSet() const { return m_enabledHasBeenSet; }
+
+    /**
+     * If the channel is enabled for sending messages.
+     */
     inline void SetEnabled(bool value) { m_enabledHasBeenSet = true; m_enabled = value; }
 
     /**
@@ -182,6 +203,11 @@ namespace Model
      * The email address used to send emails from.
      */
     inline const Aws::String& GetFromAddress() const{ return m_fromAddress; }
+
+    /**
+     * The email address used to send emails from.
+     */
+    inline bool FromAddressHasBeenSet() const { return m_fromAddressHasBeenSet; }
 
     /**
      * The email address used to send emails from.
@@ -222,6 +248,11 @@ namespace Model
     /**
      * Not used. Retained for backwards compatibility.
      */
+    inline bool HasCredentialHasBeenSet() const { return m_hasCredentialHasBeenSet; }
+
+    /**
+     * Not used. Retained for backwards compatibility.
+     */
     inline void SetHasCredential(bool value) { m_hasCredentialHasBeenSet = true; m_hasCredential = value; }
 
     /**
@@ -234,6 +265,11 @@ namespace Model
      * Channel ID. Not used, only for backwards compatibility.
      */
     inline const Aws::String& GetId() const{ return m_id; }
+
+    /**
+     * Channel ID. Not used, only for backwards compatibility.
+     */
+    inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
 
     /**
      * Channel ID. Not used, only for backwards compatibility.
@@ -274,6 +310,11 @@ namespace Model
     /**
      * The ARN of an identity verified with SES.
      */
+    inline bool IdentityHasBeenSet() const { return m_identityHasBeenSet; }
+
+    /**
+     * The ARN of an identity verified with SES.
+     */
     inline void SetIdentity(const Aws::String& value) { m_identityHasBeenSet = true; m_identity = value; }
 
     /**
@@ -310,6 +351,11 @@ namespace Model
     /**
      * Is this channel archived
      */
+    inline bool IsArchivedHasBeenSet() const { return m_isArchivedHasBeenSet; }
+
+    /**
+     * Is this channel archived
+     */
     inline void SetIsArchived(bool value) { m_isArchivedHasBeenSet = true; m_isArchived = value; }
 
     /**
@@ -322,6 +368,11 @@ namespace Model
      * Who last updated this entry
      */
     inline const Aws::String& GetLastModifiedBy() const{ return m_lastModifiedBy; }
+
+    /**
+     * Who last updated this entry
+     */
+    inline bool LastModifiedByHasBeenSet() const { return m_lastModifiedByHasBeenSet; }
 
     /**
      * Who last updated this entry
@@ -362,6 +413,11 @@ namespace Model
     /**
      * Last date this was updated
      */
+    inline bool LastModifiedDateHasBeenSet() const { return m_lastModifiedDateHasBeenSet; }
+
+    /**
+     * Last date this was updated
+     */
     inline void SetLastModifiedDate(const Aws::String& value) { m_lastModifiedDateHasBeenSet = true; m_lastModifiedDate = value; }
 
     /**
@@ -398,6 +454,11 @@ namespace Model
     /**
      * Messages per second that can be sent
      */
+    inline bool MessagesPerSecondHasBeenSet() const { return m_messagesPerSecondHasBeenSet; }
+
+    /**
+     * Messages per second that can be sent
+     */
     inline void SetMessagesPerSecond(int value) { m_messagesPerSecondHasBeenSet = true; m_messagesPerSecond = value; }
 
     /**
@@ -410,6 +471,11 @@ namespace Model
      * Platform type. Will be "EMAIL"
      */
     inline const Aws::String& GetPlatform() const{ return m_platform; }
+
+    /**
+     * Platform type. Will be "EMAIL"
+     */
+    inline bool PlatformHasBeenSet() const { return m_platformHasBeenSet; }
 
     /**
      * Platform type. Will be "EMAIL"
@@ -452,6 +518,12 @@ namespace Model
      * The ARN of an IAM Role used to submit events to Mobile Analytics' event
      * ingestion service
      */
+    inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
+
+    /**
+     * The ARN of an IAM Role used to submit events to Mobile Analytics' event
+     * ingestion service
+     */
     inline void SetRoleArn(const Aws::String& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
 
     /**
@@ -489,6 +561,11 @@ namespace Model
      * Version of channel
      */
     inline int GetVersion() const{ return m_version; }
+
+    /**
+     * Version of channel
+     */
+    inline bool VersionHasBeenSet() const { return m_versionHasBeenSet; }
 
     /**
      * Version of channel

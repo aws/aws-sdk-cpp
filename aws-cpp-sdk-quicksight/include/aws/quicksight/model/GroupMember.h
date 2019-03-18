@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) for the group member (user).</p>
      */
+    inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) for the group member (user).</p>
+     */
     inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
 
     /**
@@ -88,6 +93,11 @@ namespace Model
      * <p>The name of the group member (user).</p>
      */
     inline const Aws::String& GetMemberName() const{ return m_memberName; }
+
+    /**
+     * <p>The name of the group member (user).</p>
+     */
+    inline bool MemberNameHasBeenSet() const { return m_memberNameHasBeenSet; }
 
     /**
      * <p>The name of the group member (user).</p>

@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The API mapping selection expression.</p>
      */
+    inline bool ApiMappingSelectionExpressionHasBeenSet() const { return m_apiMappingSelectionExpressionHasBeenSet; }
+
+    /**
+     * <p>The API mapping selection expression.</p>
+     */
     inline void SetApiMappingSelectionExpression(const Aws::String& value) { m_apiMappingSelectionExpressionHasBeenSet = true; m_apiMappingSelectionExpression = value; }
 
     /**
@@ -93,6 +98,11 @@ namespace Model
     /**
      * <p>The name of the DomainName resource.</p>
      */
+    inline bool DomainNameHasBeenSet() const { return m_domainNameHasBeenSet; }
+
+    /**
+     * <p>The name of the DomainName resource.</p>
+     */
     inline void SetDomainName(const Aws::String& value) { m_domainNameHasBeenSet = true; m_domainName = value; }
 
     /**
@@ -125,6 +135,11 @@ namespace Model
      * <p>The domain name configurations.</p>
      */
     inline const Aws::Vector<DomainNameConfiguration>& GetDomainNameConfigurations() const{ return m_domainNameConfigurations; }
+
+    /**
+     * <p>The domain name configurations.</p>
+     */
+    inline bool DomainNameConfigurationsHasBeenSet() const { return m_domainNameConfigurationsHasBeenSet; }
 
     /**
      * <p>The domain name configurations.</p>

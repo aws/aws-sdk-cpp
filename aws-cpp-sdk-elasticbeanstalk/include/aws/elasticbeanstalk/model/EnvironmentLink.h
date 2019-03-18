@@ -61,6 +61,11 @@ namespace Model
     /**
      * <p>The name of the link.</p>
      */
+    inline bool LinkNameHasBeenSet() const { return m_linkNameHasBeenSet; }
+
+    /**
+     * <p>The name of the link.</p>
+     */
     inline void SetLinkName(const Aws::String& value) { m_linkNameHasBeenSet = true; m_linkName = value; }
 
     /**
@@ -93,6 +98,11 @@ namespace Model
      * <p>The name of the linked environment (the dependency).</p>
      */
     inline const Aws::String& GetEnvironmentName() const{ return m_environmentName; }
+
+    /**
+     * <p>The name of the linked environment (the dependency).</p>
+     */
+    inline bool EnvironmentNameHasBeenSet() const { return m_environmentNameHasBeenSet; }
 
     /**
      * <p>The name of the linked environment (the dependency).</p>

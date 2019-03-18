@@ -60,6 +60,13 @@ namespace Model
      * <code>ListGateways</code> operation to return a list of gateways for your
      * account and region.</p>
      */
+    inline bool GatewayARNHasBeenSet() const { return m_gatewayARNHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the gateway. Use the
+     * <code>ListGateways</code> operation to return a list of gateways for your
+     * account and region.</p>
+     */
     inline void SetGatewayARN(const Aws::String& value) { m_gatewayARNHasBeenSet = true; m_gatewayARN = value; }
 
     /**
@@ -106,6 +113,11 @@ namespace Model
     /**
      * <p>The name of the domain that you want the gateway to join.</p>
      */
+    inline bool DomainNameHasBeenSet() const { return m_domainNameHasBeenSet; }
+
+    /**
+     * <p>The name of the domain that you want the gateway to join.</p>
+     */
     inline void SetDomainName(const Aws::String& value) { m_domainNameHasBeenSet = true; m_domainName = value; }
 
     /**
@@ -140,6 +152,13 @@ namespace Model
      * that the gateway will join within the AD domain.</p>
      */
     inline const Aws::String& GetOrganizationalUnit() const{ return m_organizationalUnit; }
+
+    /**
+     * <p>The organizational unit (OU) is a container with an Active Directory that can
+     * hold users, groups, computers, and other OUs and this parameter specifies the OU
+     * that the gateway will join within the AD domain.</p>
+     */
+    inline bool OrganizationalUnitHasBeenSet() const { return m_organizationalUnitHasBeenSet; }
 
     /**
      * <p>The organizational unit (OU) is a container with an Active Directory that can
@@ -190,6 +209,13 @@ namespace Model
      * example, <code>mydc.mydomain.com:389</code>.</p>
      */
     inline const Aws::Vector<Aws::String>& GetDomainControllers() const{ return m_domainControllers; }
+
+    /**
+     * <p>List of IPv4 addresses, NetBIOS names, or host names of your domain server.
+     * If you need to specify the port number include it after the colon (“:”). For
+     * example, <code>mydc.mydomain.com:389</code>.</p>
+     */
+    inline bool DomainControllersHasBeenSet() const { return m_domainControllersHasBeenSet; }
 
     /**
      * <p>List of IPv4 addresses, NetBIOS names, or host names of your domain server.
@@ -251,6 +277,12 @@ namespace Model
      * <p>Sets the user name of user who has permission to add the gateway to the
      * Active Directory domain.</p>
      */
+    inline bool UserNameHasBeenSet() const { return m_userNameHasBeenSet; }
+
+    /**
+     * <p>Sets the user name of user who has permission to add the gateway to the
+     * Active Directory domain.</p>
+     */
     inline void SetUserName(const Aws::String& value) { m_userNameHasBeenSet = true; m_userName = value; }
 
     /**
@@ -289,6 +321,12 @@ namespace Model
      * Active Directory domain.</p>
      */
     inline const Aws::String& GetPassword() const{ return m_password; }
+
+    /**
+     * <p>Sets the password of the user who has permission to add the gateway to the
+     * Active Directory domain.</p>
+     */
+    inline bool PasswordHasBeenSet() const { return m_passwordHasBeenSet; }
 
     /**
      * <p>Sets the password of the user who has permission to add the gateway to the

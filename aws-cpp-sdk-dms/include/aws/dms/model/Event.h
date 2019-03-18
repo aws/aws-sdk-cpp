@@ -64,6 +64,14 @@ namespace Model
      * hyphen or contain two consecutive hyphens. </p> <p>Constraints:replication
      * instance, endpoint, migration task</p>
      */
+    inline bool SourceIdentifierHasBeenSet() const { return m_sourceIdentifierHasBeenSet; }
+
+    /**
+     * <p> The identifier of the event source. An identifier must begin with a letter
+     * and must contain only ASCII letters, digits, and hyphens; it cannot end with a
+     * hyphen or contain two consecutive hyphens. </p> <p>Constraints:replication
+     * instance, endpoint, migration task</p>
+     */
     inline void SetSourceIdentifier(const Aws::String& value) { m_sourceIdentifierHasBeenSet = true; m_sourceIdentifier = value; }
 
     /**
@@ -117,6 +125,12 @@ namespace Model
      * <p> The type of AWS DMS resource that generates events. </p> <p>Valid values:
      * replication-instance | endpoint | migration-task</p>
      */
+    inline bool SourceTypeHasBeenSet() const { return m_sourceTypeHasBeenSet; }
+
+    /**
+     * <p> The type of AWS DMS resource that generates events. </p> <p>Valid values:
+     * replication-instance | endpoint | migration-task</p>
+     */
     inline void SetSourceType(const SourceType& value) { m_sourceTypeHasBeenSet = true; m_sourceType = value; }
 
     /**
@@ -142,6 +156,11 @@ namespace Model
      * <p>The event message.</p>
      */
     inline const Aws::String& GetMessage() const{ return m_message; }
+
+    /**
+     * <p>The event message.</p>
+     */
+    inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
 
     /**
      * <p>The event message.</p>
@@ -178,6 +197,11 @@ namespace Model
      * <p>The event categories available for the specified source type.</p>
      */
     inline const Aws::Vector<Aws::String>& GetEventCategories() const{ return m_eventCategories; }
+
+    /**
+     * <p>The event categories available for the specified source type.</p>
+     */
+    inline bool EventCategoriesHasBeenSet() const { return m_eventCategoriesHasBeenSet; }
 
     /**
      * <p>The event categories available for the specified source type.</p>
@@ -219,6 +243,11 @@ namespace Model
      * <p>The date of the event.</p>
      */
     inline const Aws::Utils::DateTime& GetDate() const{ return m_date; }
+
+    /**
+     * <p>The date of the event.</p>
+     */
+    inline bool DateHasBeenSet() const { return m_dateHasBeenSet; }
 
     /**
      * <p>The date of the event.</p>

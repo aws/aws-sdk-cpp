@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p> Encoded value for the failure type. </p>
      */
+    inline bool NotifyWorkersFailureCodeHasBeenSet() const { return m_notifyWorkersFailureCodeHasBeenSet; }
+
+    /**
+     * <p> Encoded value for the failure type. </p>
+     */
     inline void SetNotifyWorkersFailureCode(const NotifyWorkersFailureCode& value) { m_notifyWorkersFailureCodeHasBeenSet = true; m_notifyWorkersFailureCode = value; }
 
     /**
@@ -79,6 +84,11 @@ namespace Model
      * <p> A message detailing the reason the Worker could not be notified. </p>
      */
     inline const Aws::String& GetNotifyWorkersFailureMessage() const{ return m_notifyWorkersFailureMessage; }
+
+    /**
+     * <p> A message detailing the reason the Worker could not be notified. </p>
+     */
+    inline bool NotifyWorkersFailureMessageHasBeenSet() const { return m_notifyWorkersFailureMessageHasBeenSet; }
 
     /**
      * <p> A message detailing the reason the Worker could not be notified. </p>
@@ -115,6 +125,11 @@ namespace Model
      * <p> The ID of the Worker.</p>
      */
     inline const Aws::String& GetWorkerId() const{ return m_workerId; }
+
+    /**
+     * <p> The ID of the Worker.</p>
+     */
+    inline bool WorkerIdHasBeenSet() const { return m_workerIdHasBeenSet; }
 
     /**
      * <p> The ID of the Worker.</p>

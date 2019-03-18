@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The rules that make up the rule group.</p>
      */
+    inline bool PatchRulesHasBeenSet() const { return m_patchRulesHasBeenSet; }
+
+    /**
+     * <p>The rules that make up the rule group.</p>
+     */
     inline void SetPatchRules(const Aws::Vector<PatchRule>& value) { m_patchRulesHasBeenSet = true; m_patchRules = value; }
 
     /**

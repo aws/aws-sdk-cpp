@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>Describes the first line of input. Valid values: None, Ignore, Use.</p>
      */
+    inline bool FileHeaderInfoHasBeenSet() const { return m_fileHeaderInfoHasBeenSet; }
+
+    /**
+     * <p>Describes the first line of input. Valid values: None, Ignore, Use.</p>
+     */
     inline void SetFileHeaderInfo(const FileHeaderInfo& value) { m_fileHeaderInfoHasBeenSet = true; m_fileHeaderInfo = value; }
 
     /**
@@ -80,6 +85,12 @@ namespace Model
      * the start of a row.</p>
      */
     inline const Aws::String& GetComments() const{ return m_comments; }
+
+    /**
+     * <p>The single character used to indicate a row should be ignored when present at
+     * the start of a row.</p>
+     */
+    inline bool CommentsHasBeenSet() const { return m_commentsHasBeenSet; }
 
     /**
      * <p>The single character used to indicate a row should be ignored when present at
@@ -128,6 +139,12 @@ namespace Model
      * <p>The single character used for escaping the quote character inside an already
      * escaped value.</p>
      */
+    inline bool QuoteEscapeCharacterHasBeenSet() const { return m_quoteEscapeCharacterHasBeenSet; }
+
+    /**
+     * <p>The single character used for escaping the quote character inside an already
+     * escaped value.</p>
+     */
     inline void SetQuoteEscapeCharacter(const Aws::String& value) { m_quoteEscapeCharacterHasBeenSet = true; m_quoteEscapeCharacter = value; }
 
     /**
@@ -169,6 +186,11 @@ namespace Model
     /**
      * <p>The value used to separate individual records.</p>
      */
+    inline bool RecordDelimiterHasBeenSet() const { return m_recordDelimiterHasBeenSet; }
+
+    /**
+     * <p>The value used to separate individual records.</p>
+     */
     inline void SetRecordDelimiter(const Aws::String& value) { m_recordDelimiterHasBeenSet = true; m_recordDelimiter = value; }
 
     /**
@@ -201,6 +223,11 @@ namespace Model
      * <p>The value used to separate individual fields in a record.</p>
      */
     inline const Aws::String& GetFieldDelimiter() const{ return m_fieldDelimiter; }
+
+    /**
+     * <p>The value used to separate individual fields in a record.</p>
+     */
+    inline bool FieldDelimiterHasBeenSet() const { return m_fieldDelimiterHasBeenSet; }
 
     /**
      * <p>The value used to separate individual fields in a record.</p>
@@ -241,6 +268,11 @@ namespace Model
     /**
      * <p>Value used for escaping where the field delimiter is part of the value.</p>
      */
+    inline bool QuoteCharacterHasBeenSet() const { return m_quoteCharacterHasBeenSet; }
+
+    /**
+     * <p>Value used for escaping where the field delimiter is part of the value.</p>
+     */
     inline void SetQuoteCharacter(const Aws::String& value) { m_quoteCharacterHasBeenSet = true; m_quoteCharacter = value; }
 
     /**
@@ -275,6 +307,13 @@ namespace Model
      * may lower performance.</p>
      */
     inline bool GetAllowQuotedRecordDelimiter() const{ return m_allowQuotedRecordDelimiter; }
+
+    /**
+     * <p>Specifies that CSV field values may contain quoted record delimiters and such
+     * records should be allowed. Default value is FALSE. Setting this value to TRUE
+     * may lower performance.</p>
+     */
+    inline bool AllowQuotedRecordDelimiterHasBeenSet() const { return m_allowQuotedRecordDelimiterHasBeenSet; }
 
     /**
      * <p>Specifies that CSV field values may contain quoted record delimiters and such

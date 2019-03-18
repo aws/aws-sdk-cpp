@@ -53,6 +53,12 @@ namespace Model
      * <p>An ARN that uniquely identifies a resource. The format of the ARN depends on
      * the type of the tagged resource.</p>
      */
+    inline bool ResourceArnHasBeenSet() const { return m_resourceArnHasBeenSet; }
+
+    /**
+     * <p>An ARN that uniquely identifies a resource. The format of the ARN depends on
+     * the type of the tagged resource.</p>
+     */
     inline void SetResourceArn(const Aws::String& value) { m_resourceArnHasBeenSet = true; m_resourceArn = value; }
 
     /**
@@ -91,6 +97,12 @@ namespace Model
      * resource.</p>
      */
     inline const Aws::Vector<Aws::String>& GetTagKeyList() const{ return m_tagKeyList; }
+
+    /**
+     * <p>A list of keys to identify which key-value tags to remove from a
+     * resource.</p>
+     */
+    inline bool TagKeyListHasBeenSet() const { return m_tagKeyListHasBeenSet; }
 
     /**
      * <p>A list of keys to identify which key-value tags to remove from a

@@ -54,6 +54,11 @@ namespace Model
     /**
      * <p>The total number of read capacity units consumed on a table or an index.</p>
      */
+    inline bool ReadCapacityUnitsHasBeenSet() const { return m_readCapacityUnitsHasBeenSet; }
+
+    /**
+     * <p>The total number of read capacity units consumed on a table or an index.</p>
+     */
     inline void SetReadCapacityUnits(double value) { m_readCapacityUnitsHasBeenSet = true; m_readCapacityUnits = value; }
 
     /**
@@ -70,6 +75,11 @@ namespace Model
     /**
      * <p>The total number of write capacity units consumed on a table or an index.</p>
      */
+    inline bool WriteCapacityUnitsHasBeenSet() const { return m_writeCapacityUnitsHasBeenSet; }
+
+    /**
+     * <p>The total number of write capacity units consumed on a table or an index.</p>
+     */
     inline void SetWriteCapacityUnits(double value) { m_writeCapacityUnitsHasBeenSet = true; m_writeCapacityUnits = value; }
 
     /**
@@ -82,6 +92,11 @@ namespace Model
      * <p>The total number of capacity units consumed on a table or an index.</p>
      */
     inline double GetCapacityUnits() const{ return m_capacityUnits; }
+
+    /**
+     * <p>The total number of capacity units consumed on a table or an index.</p>
+     */
+    inline bool CapacityUnitsHasBeenSet() const { return m_capacityUnitsHasBeenSet; }
 
     /**
      * <p>The total number of capacity units consumed on a table or an index.</p>

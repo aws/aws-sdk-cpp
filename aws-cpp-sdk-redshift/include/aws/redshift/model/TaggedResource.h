@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p>The tag for the resource.</p>
      */
+    inline bool TagHasBeenSet() const { return m_tagHasBeenSet; }
+
+    /**
+     * <p>The tag for the resource.</p>
+     */
     inline void SetTag(const Tag& value) { m_tagHasBeenSet = true; m_tag = value; }
 
     /**
@@ -81,6 +86,12 @@ namespace Model
      * <code>arn:aws:redshift:us-east-1:123456789:cluster:t1</code>.</p>
      */
     inline const Aws::String& GetResourceName() const{ return m_resourceName; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) with which the tag is associated, for example:
+     * <code>arn:aws:redshift:us-east-1:123456789:cluster:t1</code>.</p>
+     */
+    inline bool ResourceNameHasBeenSet() const { return m_resourceNameHasBeenSet; }
 
     /**
      * <p>The Amazon Resource Name (ARN) with which the tag is associated, for example:
@@ -132,6 +143,20 @@ namespace Model
      * Management Guide. </p>
      */
     inline const Aws::String& GetResourceType() const{ return m_resourceType; }
+
+    /**
+     * <p>The type of resource with which the tag is associated. Valid resource types
+     * are: </p> <ul> <li> <p>Cluster</p> </li> <li> <p>CIDR/IP</p> </li> <li> <p>EC2
+     * security group</p> </li> <li> <p>Snapshot</p> </li> <li> <p>Cluster security
+     * group</p> </li> <li> <p>Subnet group</p> </li> <li> <p>HSM connection</p> </li>
+     * <li> <p>HSM certificate</p> </li> <li> <p>Parameter group</p> </li> </ul> <p>For
+     * more information about Amazon Redshift resource types and constructing ARNs, go
+     * to <a
+     * href="http://docs.aws.amazon.com/redshift/latest/mgmt/redshift-iam-access-control-overview.html#redshift-iam-access-control-specify-actions">Constructing
+     * an Amazon Redshift Amazon Resource Name (ARN)</a> in the Amazon Redshift Cluster
+     * Management Guide. </p>
+     */
+    inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
 
     /**
      * <p>The type of resource with which the tag is associated. Valid resource types

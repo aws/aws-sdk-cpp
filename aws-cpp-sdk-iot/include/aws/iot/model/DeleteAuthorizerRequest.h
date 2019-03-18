@@ -50,6 +50,11 @@ namespace Model
     /**
      * <p>The name of the authorizer to delete.</p>
      */
+    inline bool AuthorizerNameHasBeenSet() const { return m_authorizerNameHasBeenSet; }
+
+    /**
+     * <p>The name of the authorizer to delete.</p>
+     */
     inline void SetAuthorizerName(const Aws::String& value) { m_authorizerNameHasBeenSet = true; m_authorizerName = value; }
 
     /**

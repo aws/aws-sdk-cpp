@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The ID of the Capacity Reservation.</p>
      */
+    inline bool CapacityReservationIdHasBeenSet() const { return m_capacityReservationIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the Capacity Reservation.</p>
+     */
     inline void SetCapacityReservationId(const Aws::String& value) { m_capacityReservationIdHasBeenSet = true; m_capacityReservationId = value; }
 
     /**

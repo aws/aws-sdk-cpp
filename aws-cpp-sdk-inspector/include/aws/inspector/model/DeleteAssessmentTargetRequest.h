@@ -52,6 +52,11 @@ namespace Model
     /**
      * <p>The ARN that specifies the assessment target that you want to delete.</p>
      */
+    inline bool AssessmentTargetArnHasBeenSet() const { return m_assessmentTargetArnHasBeenSet; }
+
+    /**
+     * <p>The ARN that specifies the assessment target that you want to delete.</p>
+     */
     inline void SetAssessmentTargetArn(const Aws::String& value) { m_assessmentTargetArnHasBeenSet = true; m_assessmentTargetArn = value; }
 
     /**

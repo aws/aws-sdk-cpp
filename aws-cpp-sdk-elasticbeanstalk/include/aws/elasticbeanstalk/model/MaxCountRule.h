@@ -58,6 +58,12 @@ namespace Model
      * <p>Specify <code>true</code> to apply the rule, or <code>false</code> to disable
      * it.</p>
      */
+    inline bool EnabledHasBeenSet() const { return m_enabledHasBeenSet; }
+
+    /**
+     * <p>Specify <code>true</code> to apply the rule, or <code>false</code> to disable
+     * it.</p>
+     */
     inline void SetEnabled(bool value) { m_enabledHasBeenSet = true; m_enabled = value; }
 
     /**
@@ -75,6 +81,11 @@ namespace Model
     /**
      * <p>Specify the maximum number of application versions to retain.</p>
      */
+    inline bool MaxCountHasBeenSet() const { return m_maxCountHasBeenSet; }
+
+    /**
+     * <p>Specify the maximum number of application versions to retain.</p>
+     */
     inline void SetMaxCount(int value) { m_maxCountHasBeenSet = true; m_maxCount = value; }
 
     /**
@@ -88,6 +99,12 @@ namespace Model
      * when Elastic Beanstalk deletes the application version.</p>
      */
     inline bool GetDeleteSourceFromS3() const{ return m_deleteSourceFromS3; }
+
+    /**
+     * <p>Set to <code>true</code> to delete a version's source bundle from Amazon S3
+     * when Elastic Beanstalk deletes the application version.</p>
+     */
+    inline bool DeleteSourceFromS3HasBeenSet() const { return m_deleteSourceFromS3HasBeenSet; }
 
     /**
      * <p>Set to <code>true</code> to delete a version's source bundle from Amazon S3

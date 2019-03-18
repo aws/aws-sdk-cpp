@@ -50,6 +50,11 @@ namespace Model
     /**
      * <p>The API identifier.</p>
      */
+    inline bool ApiIdHasBeenSet() const { return m_apiIdHasBeenSet; }
+
+    /**
+     * <p>The API identifier.</p>
+     */
     inline void SetApiId(const Aws::String& value) { m_apiIdHasBeenSet = true; m_apiId = value; }
 
     /**
@@ -82,6 +87,11 @@ namespace Model
      * <p>The content-type for the model, for example, "application/json".</p>
      */
     inline const Aws::String& GetContentType() const{ return m_contentType; }
+
+    /**
+     * <p>The content-type for the model, for example, "application/json".</p>
+     */
+    inline bool ContentTypeHasBeenSet() const { return m_contentTypeHasBeenSet; }
 
     /**
      * <p>The content-type for the model, for example, "application/json".</p>
@@ -122,6 +132,11 @@ namespace Model
     /**
      * <p>The description of the model.</p>
      */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
+
+    /**
+     * <p>The description of the model.</p>
+     */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
@@ -154,6 +169,11 @@ namespace Model
      * <p>The name of the model. Must be alphanumeric.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
+
+    /**
+     * <p>The name of the model. Must be alphanumeric.</p>
+     */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
      * <p>The name of the model. Must be alphanumeric.</p>
@@ -192,6 +212,13 @@ namespace Model
  draft 4 model.</p>
      */
     inline const Aws::String& GetSchema() const{ return m_schema; }
+
+    /**
+     * <p>The schema for the model. For application/json models, this should be JSON
+     * schema
+ draft 4 model.</p>
+     */
+    inline bool SchemaHasBeenSet() const { return m_schemaHasBeenSet; }
 
     /**
      * <p>The schema for the model. For application/json models, this should be JSON

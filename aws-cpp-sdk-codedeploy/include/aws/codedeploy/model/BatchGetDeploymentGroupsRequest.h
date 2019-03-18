@@ -59,6 +59,12 @@ namespace Model
      * <p>The name of an AWS CodeDeploy application associated with the applicable IAM
      * user or AWS account.</p>
      */
+    inline bool ApplicationNameHasBeenSet() const { return m_applicationNameHasBeenSet; }
+
+    /**
+     * <p>The name of an AWS CodeDeploy application associated with the applicable IAM
+     * user or AWS account.</p>
+     */
     inline void SetApplicationName(const Aws::String& value) { m_applicationNameHasBeenSet = true; m_applicationName = value; }
 
     /**
@@ -96,6 +102,11 @@ namespace Model
      * <p>The names of the deployment groups.</p>
      */
     inline const Aws::Vector<Aws::String>& GetDeploymentGroupNames() const{ return m_deploymentGroupNames; }
+
+    /**
+     * <p>The names of the deployment groups.</p>
+     */
+    inline bool DeploymentGroupNamesHasBeenSet() const { return m_deploymentGroupNamesHasBeenSet; }
 
     /**
      * <p>The names of the deployment groups.</p>

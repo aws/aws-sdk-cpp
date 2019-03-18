@@ -55,6 +55,11 @@ namespace Model
     /**
      * <p>The message template for SMS messages.</p>
      */
+    inline bool SMSMessageHasBeenSet() const { return m_sMSMessageHasBeenSet; }
+
+    /**
+     * <p>The message template for SMS messages.</p>
+     */
     inline void SetSMSMessage(const Aws::String& value) { m_sMSMessageHasBeenSet = true; m_sMSMessage = value; }
 
     /**
@@ -91,6 +96,11 @@ namespace Model
     /**
      * <p>The message template for email messages.</p>
      */
+    inline bool EmailMessageHasBeenSet() const { return m_emailMessageHasBeenSet; }
+
+    /**
+     * <p>The message template for email messages.</p>
+     */
     inline void SetEmailMessage(const Aws::String& value) { m_emailMessageHasBeenSet = true; m_emailMessage = value; }
 
     /**
@@ -123,6 +133,11 @@ namespace Model
      * <p>The subject line for email messages.</p>
      */
     inline const Aws::String& GetEmailSubject() const{ return m_emailSubject; }
+
+    /**
+     * <p>The subject line for email messages.</p>
+     */
+    inline bool EmailSubjectHasBeenSet() const { return m_emailSubjectHasBeenSet; }
 
     /**
      * <p>The subject line for email messages.</p>

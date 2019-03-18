@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The minimum value of an attribute that is of the number data type.</p>
      */
+    inline bool MinValueHasBeenSet() const { return m_minValueHasBeenSet; }
+
+    /**
+     * <p>The minimum value of an attribute that is of the number data type.</p>
+     */
     inline void SetMinValue(const Aws::String& value) { m_minValueHasBeenSet = true; m_minValue = value; }
 
     /**
@@ -88,6 +93,11 @@ namespace Model
      * <p>The maximum value of an attribute that is of the number data type.</p>
      */
     inline const Aws::String& GetMaxValue() const{ return m_maxValue; }
+
+    /**
+     * <p>The maximum value of an attribute that is of the number data type.</p>
+     */
+    inline bool MaxValueHasBeenSet() const { return m_maxValueHasBeenSet; }
 
     /**
      * <p>The maximum value of an attribute that is of the number data type.</p>

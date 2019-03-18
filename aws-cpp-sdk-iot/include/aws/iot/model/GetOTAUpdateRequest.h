@@ -50,6 +50,11 @@ namespace Model
     /**
      * <p>The OTA update ID.</p>
      */
+    inline bool OtaUpdateIdHasBeenSet() const { return m_otaUpdateIdHasBeenSet; }
+
+    /**
+     * <p>The OTA update ID.</p>
+     */
     inline void SetOtaUpdateId(const Aws::String& value) { m_otaUpdateIdHasBeenSet = true; m_otaUpdateId = value; }
 
     /**

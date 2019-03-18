@@ -52,6 +52,11 @@ namespace Model
     /**
      * <p>The ARN of the skill group to associate with a room. Required.</p>
      */
+    inline bool SkillGroupArnHasBeenSet() const { return m_skillGroupArnHasBeenSet; }
+
+    /**
+     * <p>The ARN of the skill group to associate with a room. Required.</p>
+     */
     inline void SetSkillGroupArn(const Aws::String& value) { m_skillGroupArnHasBeenSet = true; m_skillGroupArn = value; }
 
     /**
@@ -84,6 +89,11 @@ namespace Model
      * <p>The ARN of the room with which to associate the skill group. Required.</p>
      */
     inline const Aws::String& GetRoomArn() const{ return m_roomArn; }
+
+    /**
+     * <p>The ARN of the room with which to associate the skill group. Required.</p>
+     */
+    inline bool RoomArnHasBeenSet() const { return m_roomArnHasBeenSet; }
 
     /**
      * <p>The ARN of the room with which to associate the skill group. Required.</p>

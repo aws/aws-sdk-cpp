@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p>The identifier of the cache security group.</p>
      */
+    inline bool SecurityGroupIdHasBeenSet() const { return m_securityGroupIdHasBeenSet; }
+
+    /**
+     * <p>The identifier of the cache security group.</p>
+     */
     inline void SetSecurityGroupId(const Aws::String& value) { m_securityGroupIdHasBeenSet = true; m_securityGroupId = value; }
 
     /**
@@ -92,6 +97,13 @@ namespace Model
      * assigned to a cluster are modified.</p>
      */
     inline const Aws::String& GetStatus() const{ return m_status; }
+
+    /**
+     * <p>The status of the cache security group membership. The status changes
+     * whenever a cache security group is modified, or when the cache security groups
+     * assigned to a cluster are modified.</p>
+     */
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
     /**
      * <p>The status of the cache security group membership. The status changes

@@ -50,6 +50,11 @@ namespace Model
     /**
      * The ID of the core definition.
      */
+    inline bool CoreDefinitionIdHasBeenSet() const { return m_coreDefinitionIdHasBeenSet; }
+
+    /**
+     * The ID of the core definition.
+     */
     inline void SetCoreDefinitionId(const Aws::String& value) { m_coreDefinitionIdHasBeenSet = true; m_coreDefinitionId = value; }
 
     /**

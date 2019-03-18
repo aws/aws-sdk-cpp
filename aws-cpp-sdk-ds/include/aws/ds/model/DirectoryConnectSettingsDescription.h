@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The identifier of the VPC that the AD Connector is in.</p>
      */
+    inline bool VpcIdHasBeenSet() const { return m_vpcIdHasBeenSet; }
+
+    /**
+     * <p>The identifier of the VPC that the AD Connector is in.</p>
+     */
     inline void SetVpcId(const Aws::String& value) { m_vpcIdHasBeenSet = true; m_vpcId = value; }
 
     /**
@@ -89,6 +94,11 @@ namespace Model
      * <p>A list of subnet identifiers in the VPC that the AD connector is in.</p>
      */
     inline const Aws::Vector<Aws::String>& GetSubnetIds() const{ return m_subnetIds; }
+
+    /**
+     * <p>A list of subnet identifiers in the VPC that the AD connector is in.</p>
+     */
+    inline bool SubnetIdsHasBeenSet() const { return m_subnetIdsHasBeenSet; }
 
     /**
      * <p>A list of subnet identifiers in the VPC that the AD connector is in.</p>
@@ -134,6 +144,11 @@ namespace Model
     /**
      * <p>The user name of the service account in the on-premises directory.</p>
      */
+    inline bool CustomerUserNameHasBeenSet() const { return m_customerUserNameHasBeenSet; }
+
+    /**
+     * <p>The user name of the service account in the on-premises directory.</p>
+     */
     inline void SetCustomerUserName(const Aws::String& value) { m_customerUserNameHasBeenSet = true; m_customerUserName = value; }
 
     /**
@@ -170,6 +185,11 @@ namespace Model
     /**
      * <p>The security group identifier for the AD Connector directory.</p>
      */
+    inline bool SecurityGroupIdHasBeenSet() const { return m_securityGroupIdHasBeenSet; }
+
+    /**
+     * <p>The security group identifier for the AD Connector directory.</p>
+     */
     inline void SetSecurityGroupId(const Aws::String& value) { m_securityGroupIdHasBeenSet = true; m_securityGroupId = value; }
 
     /**
@@ -202,6 +222,11 @@ namespace Model
      * <p>A list of the Availability Zones that the directory is in.</p>
      */
     inline const Aws::Vector<Aws::String>& GetAvailabilityZones() const{ return m_availabilityZones; }
+
+    /**
+     * <p>A list of the Availability Zones that the directory is in.</p>
+     */
+    inline bool AvailabilityZonesHasBeenSet() const { return m_availabilityZonesHasBeenSet; }
 
     /**
      * <p>A list of the Availability Zones that the directory is in.</p>
@@ -243,6 +268,11 @@ namespace Model
      * <p>The IP addresses of the AD Connector servers.</p>
      */
     inline const Aws::Vector<Aws::String>& GetConnectIps() const{ return m_connectIps; }
+
+    /**
+     * <p>The IP addresses of the AD Connector servers.</p>
+     */
+    inline bool ConnectIpsHasBeenSet() const { return m_connectIpsHasBeenSet; }
 
     /**
      * <p>The IP addresses of the AD Connector servers.</p>

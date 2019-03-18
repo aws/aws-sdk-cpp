@@ -63,6 +63,13 @@ namespace Model
      * OpenSSH clients (e.g., command line SSH), you should save this value to
      * <code>tempkey-cert.pub</code>.</p>
      */
+    inline bool CertKeyHasBeenSet() const { return m_certKeyHasBeenSet; }
+
+    /**
+     * <p>For SSH access, the public key to use when accessing your instance For
+     * OpenSSH clients (e.g., command line SSH), you should save this value to
+     * <code>tempkey-cert.pub</code>.</p>
+     */
     inline void SetCertKey(const Aws::String& value) { m_certKeyHasBeenSet = true; m_certKey = value; }
 
     /**
@@ -109,6 +116,11 @@ namespace Model
     /**
      * <p>For SSH access, the date on which the temporary keys expire.</p>
      */
+    inline bool ExpiresAtHasBeenSet() const { return m_expiresAtHasBeenSet; }
+
+    /**
+     * <p>For SSH access, the date on which the temporary keys expire.</p>
+     */
     inline void SetExpiresAt(const Aws::Utils::DateTime& value) { m_expiresAtHasBeenSet = true; m_expiresAt = value; }
 
     /**
@@ -131,6 +143,11 @@ namespace Model
      * <p>The public IP address of the Amazon Lightsail instance.</p>
      */
     inline const Aws::String& GetIpAddress() const{ return m_ipAddress; }
+
+    /**
+     * <p>The public IP address of the Amazon Lightsail instance.</p>
+     */
+    inline bool IpAddressHasBeenSet() const { return m_ipAddressHasBeenSet; }
 
     /**
      * <p>The public IP address of the Amazon Lightsail instance.</p>
@@ -175,6 +192,19 @@ namespace Model
      * Administrator password after changing it from the default.</p> </note>
      */
     inline const Aws::String& GetPassword() const{ return m_password; }
+
+    /**
+     * <p>For RDP access, the password for your Amazon Lightsail instance. Password
+     * will be an empty string if the password for your new instance is not ready yet.
+     * When you create an instance, it can take up to 15 minutes for the instance to be
+     * ready.</p> <note> <p>If you create an instance using any key pair other than the
+     * default (<code>LightsailDefaultKeyPair</code>), <code>password</code> will
+     * always be an empty string.</p> <p>If you change the Administrator password on
+     * the instance, Lightsail will continue to return the original password value.
+     * When accessing the instance using RDP, you need to manually enter the
+     * Administrator password after changing it from the default.</p> </note>
+     */
+    inline bool PasswordHasBeenSet() const { return m_passwordHasBeenSet; }
 
     /**
      * <p>For RDP access, the password for your Amazon Lightsail instance. Password
@@ -271,6 +301,15 @@ namespace Model
      * you create an instance, it can take up to 15 minutes for the instance to be
      * ready.</p>
      */
+    inline bool PasswordDataHasBeenSet() const { return m_passwordDataHasBeenSet; }
+
+    /**
+     * <p>For a Windows Server-based instance, an object with the data you can use to
+     * retrieve your password. This is only needed if <code>password</code> is empty
+     * and the instance is not new (and therefore the password is not ready yet). When
+     * you create an instance, it can take up to 15 minutes for the instance to be
+     * ready.</p>
+     */
     inline void SetPasswordData(const PasswordData& value) { m_passwordDataHasBeenSet = true; m_passwordData = value; }
 
     /**
@@ -306,6 +345,12 @@ namespace Model
      * line SSH), you should save this value to <code>tempkey</code>).</p>
      */
     inline const Aws::String& GetPrivateKey() const{ return m_privateKey; }
+
+    /**
+     * <p>For SSH access, the temporary private key. For OpenSSH clients (e.g., command
+     * line SSH), you should save this value to <code>tempkey</code>).</p>
+     */
+    inline bool PrivateKeyHasBeenSet() const { return m_privateKeyHasBeenSet; }
 
     /**
      * <p>For SSH access, the temporary private key. For OpenSSH clients (e.g., command
@@ -352,6 +397,11 @@ namespace Model
     /**
      * <p>The protocol for these Amazon Lightsail instance access details.</p>
      */
+    inline bool ProtocolHasBeenSet() const { return m_protocolHasBeenSet; }
+
+    /**
+     * <p>The protocol for these Amazon Lightsail instance access details.</p>
+     */
     inline void SetProtocol(const InstanceAccessProtocol& value) { m_protocolHasBeenSet = true; m_protocol = value; }
 
     /**
@@ -374,6 +424,11 @@ namespace Model
      * <p>The name of this Amazon Lightsail instance.</p>
      */
     inline const Aws::String& GetInstanceName() const{ return m_instanceName; }
+
+    /**
+     * <p>The name of this Amazon Lightsail instance.</p>
+     */
+    inline bool InstanceNameHasBeenSet() const { return m_instanceNameHasBeenSet; }
 
     /**
      * <p>The name of this Amazon Lightsail instance.</p>
@@ -410,6 +465,11 @@ namespace Model
      * <p>The user name to use when logging in to the Amazon Lightsail instance.</p>
      */
     inline const Aws::String& GetUsername() const{ return m_username; }
+
+    /**
+     * <p>The user name to use when logging in to the Amazon Lightsail instance.</p>
+     */
+    inline bool UsernameHasBeenSet() const { return m_usernameHasBeenSet; }
 
     /**
      * <p>The user name to use when logging in to the Amazon Lightsail instance.</p>

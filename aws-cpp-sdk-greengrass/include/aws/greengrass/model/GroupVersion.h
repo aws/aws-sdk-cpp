@@ -55,6 +55,11 @@ namespace Model
     /**
      * The ARN of the connector definition version for this group.
      */
+    inline bool ConnectorDefinitionVersionArnHasBeenSet() const { return m_connectorDefinitionVersionArnHasBeenSet; }
+
+    /**
+     * The ARN of the connector definition version for this group.
+     */
     inline void SetConnectorDefinitionVersionArn(const Aws::String& value) { m_connectorDefinitionVersionArnHasBeenSet = true; m_connectorDefinitionVersionArn = value; }
 
     /**
@@ -87,6 +92,11 @@ namespace Model
      * The ARN of the core definition version for this group.
      */
     inline const Aws::String& GetCoreDefinitionVersionArn() const{ return m_coreDefinitionVersionArn; }
+
+    /**
+     * The ARN of the core definition version for this group.
+     */
+    inline bool CoreDefinitionVersionArnHasBeenSet() const { return m_coreDefinitionVersionArnHasBeenSet; }
 
     /**
      * The ARN of the core definition version for this group.
@@ -127,6 +137,11 @@ namespace Model
     /**
      * The ARN of the device definition version for this group.
      */
+    inline bool DeviceDefinitionVersionArnHasBeenSet() const { return m_deviceDefinitionVersionArnHasBeenSet; }
+
+    /**
+     * The ARN of the device definition version for this group.
+     */
     inline void SetDeviceDefinitionVersionArn(const Aws::String& value) { m_deviceDefinitionVersionArnHasBeenSet = true; m_deviceDefinitionVersionArn = value; }
 
     /**
@@ -159,6 +174,11 @@ namespace Model
      * The ARN of the function definition version for this group.
      */
     inline const Aws::String& GetFunctionDefinitionVersionArn() const{ return m_functionDefinitionVersionArn; }
+
+    /**
+     * The ARN of the function definition version for this group.
+     */
+    inline bool FunctionDefinitionVersionArnHasBeenSet() const { return m_functionDefinitionVersionArnHasBeenSet; }
 
     /**
      * The ARN of the function definition version for this group.
@@ -199,6 +219,11 @@ namespace Model
     /**
      * The ARN of the logger definition version for this group.
      */
+    inline bool LoggerDefinitionVersionArnHasBeenSet() const { return m_loggerDefinitionVersionArnHasBeenSet; }
+
+    /**
+     * The ARN of the logger definition version for this group.
+     */
     inline void SetLoggerDefinitionVersionArn(const Aws::String& value) { m_loggerDefinitionVersionArnHasBeenSet = true; m_loggerDefinitionVersionArn = value; }
 
     /**
@@ -235,6 +260,11 @@ namespace Model
     /**
      * The ARN of the resource definition version for this group.
      */
+    inline bool ResourceDefinitionVersionArnHasBeenSet() const { return m_resourceDefinitionVersionArnHasBeenSet; }
+
+    /**
+     * The ARN of the resource definition version for this group.
+     */
     inline void SetResourceDefinitionVersionArn(const Aws::String& value) { m_resourceDefinitionVersionArnHasBeenSet = true; m_resourceDefinitionVersionArn = value; }
 
     /**
@@ -267,6 +297,11 @@ namespace Model
      * The ARN of the subscription definition version for this group.
      */
     inline const Aws::String& GetSubscriptionDefinitionVersionArn() const{ return m_subscriptionDefinitionVersionArn; }
+
+    /**
+     * The ARN of the subscription definition version for this group.
+     */
+    inline bool SubscriptionDefinitionVersionArnHasBeenSet() const { return m_subscriptionDefinitionVersionArnHasBeenSet; }
 
     /**
      * The ARN of the subscription definition version for this group.

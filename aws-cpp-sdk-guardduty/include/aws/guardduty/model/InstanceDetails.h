@@ -61,6 +61,11 @@ namespace Model
     /**
      * The availability zone of the EC2 instance.
      */
+    inline bool AvailabilityZoneHasBeenSet() const { return m_availabilityZoneHasBeenSet; }
+
+    /**
+     * The availability zone of the EC2 instance.
+     */
     inline void SetAvailabilityZone(const Aws::String& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = value; }
 
     /**
@@ -93,6 +98,9 @@ namespace Model
     inline const IamInstanceProfile& GetIamInstanceProfile() const{ return m_iamInstanceProfile; }
 
     
+    inline bool IamInstanceProfileHasBeenSet() const { return m_iamInstanceProfileHasBeenSet; }
+
+    
     inline void SetIamInstanceProfile(const IamInstanceProfile& value) { m_iamInstanceProfileHasBeenSet = true; m_iamInstanceProfile = value; }
 
     
@@ -109,6 +117,11 @@ namespace Model
      * The image description of the EC2 instance.
      */
     inline const Aws::String& GetImageDescription() const{ return m_imageDescription; }
+
+    /**
+     * The image description of the EC2 instance.
+     */
+    inline bool ImageDescriptionHasBeenSet() const { return m_imageDescriptionHasBeenSet; }
 
     /**
      * The image description of the EC2 instance.
@@ -149,6 +162,11 @@ namespace Model
     /**
      * The image ID of the EC2 instance.
      */
+    inline bool ImageIdHasBeenSet() const { return m_imageIdHasBeenSet; }
+
+    /**
+     * The image ID of the EC2 instance.
+     */
     inline void SetImageId(const Aws::String& value) { m_imageIdHasBeenSet = true; m_imageId = value; }
 
     /**
@@ -181,6 +199,11 @@ namespace Model
      * The ID of the EC2 instance.
      */
     inline const Aws::String& GetInstanceId() const{ return m_instanceId; }
+
+    /**
+     * The ID of the EC2 instance.
+     */
+    inline bool InstanceIdHasBeenSet() const { return m_instanceIdHasBeenSet; }
 
     /**
      * The ID of the EC2 instance.
@@ -221,6 +244,11 @@ namespace Model
     /**
      * The state of the EC2 instance.
      */
+    inline bool InstanceStateHasBeenSet() const { return m_instanceStateHasBeenSet; }
+
+    /**
+     * The state of the EC2 instance.
+     */
     inline void SetInstanceState(const Aws::String& value) { m_instanceStateHasBeenSet = true; m_instanceState = value; }
 
     /**
@@ -253,6 +281,11 @@ namespace Model
      * The type of the EC2 instance.
      */
     inline const Aws::String& GetInstanceType() const{ return m_instanceType; }
+
+    /**
+     * The type of the EC2 instance.
+     */
+    inline bool InstanceTypeHasBeenSet() const { return m_instanceTypeHasBeenSet; }
 
     /**
      * The type of the EC2 instance.
@@ -293,6 +326,11 @@ namespace Model
     /**
      * The launch time of the EC2 instance.
      */
+    inline bool LaunchTimeHasBeenSet() const { return m_launchTimeHasBeenSet; }
+
+    /**
+     * The launch time of the EC2 instance.
+     */
     inline void SetLaunchTime(const Aws::String& value) { m_launchTimeHasBeenSet = true; m_launchTime = value; }
 
     /**
@@ -325,6 +363,11 @@ namespace Model
      * The network interface information of the EC2 instance.
      */
     inline const Aws::Vector<NetworkInterface>& GetNetworkInterfaces() const{ return m_networkInterfaces; }
+
+    /**
+     * The network interface information of the EC2 instance.
+     */
+    inline bool NetworkInterfacesHasBeenSet() const { return m_networkInterfacesHasBeenSet; }
 
     /**
      * The network interface information of the EC2 instance.
@@ -365,6 +408,11 @@ namespace Model
     /**
      * The platform of the EC2 instance.
      */
+    inline bool PlatformHasBeenSet() const { return m_platformHasBeenSet; }
+
+    /**
+     * The platform of the EC2 instance.
+     */
     inline void SetPlatform(const Aws::String& value) { m_platformHasBeenSet = true; m_platform = value; }
 
     /**
@@ -401,6 +449,11 @@ namespace Model
     /**
      * The product code of the EC2 instance.
      */
+    inline bool ProductCodesHasBeenSet() const { return m_productCodesHasBeenSet; }
+
+    /**
+     * The product code of the EC2 instance.
+     */
     inline void SetProductCodes(const Aws::Vector<ProductCode>& value) { m_productCodesHasBeenSet = true; m_productCodes = value; }
 
     /**
@@ -433,6 +486,11 @@ namespace Model
      * The tags of the EC2 instance.
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+
+    /**
+     * The tags of the EC2 instance.
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
      * The tags of the EC2 instance.

@@ -50,6 +50,11 @@ namespace Model
     /**
      * <p>The unique identifier of the device.</p>
      */
+    inline bool DeviceIdHasBeenSet() const { return m_deviceIdHasBeenSet; }
+
+    /**
+     * <p>The unique identifier of the device.</p>
+     */
     inline void SetDeviceId(const Aws::String& value) { m_deviceIdHasBeenSet = true; m_deviceId = value; }
 
     /**

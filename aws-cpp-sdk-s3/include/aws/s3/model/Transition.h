@@ -58,6 +58,12 @@ namespace Model
      * <p>Indicates at what date the object is to be moved or deleted. Should be in GMT
      * ISO 8601 Format.</p>
      */
+    inline bool DateHasBeenSet() const { return m_dateHasBeenSet; }
+
+    /**
+     * <p>Indicates at what date the object is to be moved or deleted. Should be in GMT
+     * ISO 8601 Format.</p>
+     */
     inline void SetDate(const Aws::Utils::DateTime& value) { m_dateHasBeenSet = true; m_date = value; }
 
     /**
@@ -89,6 +95,12 @@ namespace Model
      * <p>Indicates the lifetime, in days, of the objects that are subject to the rule.
      * The value must be a non-zero positive integer.</p>
      */
+    inline bool DaysHasBeenSet() const { return m_daysHasBeenSet; }
+
+    /**
+     * <p>Indicates the lifetime, in days, of the objects that are subject to the rule.
+     * The value must be a non-zero positive integer.</p>
+     */
     inline void SetDays(int value) { m_daysHasBeenSet = true; m_days = value; }
 
     /**
@@ -102,6 +114,11 @@ namespace Model
      * <p>The class of storage used to store the object.</p>
      */
     inline const TransitionStorageClass& GetStorageClass() const{ return m_storageClass; }
+
+    /**
+     * <p>The class of storage used to store the object.</p>
+     */
+    inline bool StorageClassHasBeenSet() const { return m_storageClassHasBeenSet; }
 
     /**
      * <p>The class of storage used to store the object.</p>

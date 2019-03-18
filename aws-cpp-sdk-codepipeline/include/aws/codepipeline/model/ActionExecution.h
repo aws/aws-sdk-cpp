@@ -61,6 +61,12 @@ namespace Model
      * <p>The status of the action, or for a completed action, the last status of the
      * action.</p>
      */
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
+
+    /**
+     * <p>The status of the action, or for a completed action, the last status of the
+     * action.</p>
+     */
     inline void SetStatus(const ActionExecutionStatus& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
@@ -86,6 +92,11 @@ namespace Model
      * <p>A summary of the run of the action.</p>
      */
     inline const Aws::String& GetSummary() const{ return m_summary; }
+
+    /**
+     * <p>A summary of the run of the action.</p>
+     */
+    inline bool SummaryHasBeenSet() const { return m_summaryHasBeenSet; }
 
     /**
      * <p>A summary of the run of the action.</p>
@@ -126,6 +137,11 @@ namespace Model
     /**
      * <p>The last status change of the action.</p>
      */
+    inline bool LastStatusChangeHasBeenSet() const { return m_lastStatusChangeHasBeenSet; }
+
+    /**
+     * <p>The last status change of the action.</p>
+     */
     inline void SetLastStatusChange(const Aws::Utils::DateTime& value) { m_lastStatusChangeHasBeenSet = true; m_lastStatusChange = value; }
 
     /**
@@ -151,6 +167,14 @@ namespace Model
      * token is still valid.</p>
      */
     inline const Aws::String& GetToken() const{ return m_token; }
+
+    /**
+     * <p>The system-generated token used to identify a unique approval request. The
+     * token for each open approval request can be obtained using the GetPipelineState
+     * command and is used to validate that the approval request corresponding to this
+     * token is still valid.</p>
+     */
+    inline bool TokenHasBeenSet() const { return m_tokenHasBeenSet; }
 
     /**
      * <p>The system-generated token used to identify a unique approval request. The
@@ -209,6 +233,11 @@ namespace Model
     /**
      * <p>The ARN of the user who last changed the pipeline.</p>
      */
+    inline bool LastUpdatedByHasBeenSet() const { return m_lastUpdatedByHasBeenSet; }
+
+    /**
+     * <p>The ARN of the user who last changed the pipeline.</p>
+     */
     inline void SetLastUpdatedBy(const Aws::String& value) { m_lastUpdatedByHasBeenSet = true; m_lastUpdatedBy = value; }
 
     /**
@@ -241,6 +270,11 @@ namespace Model
      * <p>The external ID of the run of the action.</p>
      */
     inline const Aws::String& GetExternalExecutionId() const{ return m_externalExecutionId; }
+
+    /**
+     * <p>The external ID of the run of the action.</p>
+     */
+    inline bool ExternalExecutionIdHasBeenSet() const { return m_externalExecutionIdHasBeenSet; }
 
     /**
      * <p>The external ID of the run of the action.</p>
@@ -278,6 +312,12 @@ namespace Model
      * action, for example an external repository URL.</p>
      */
     inline const Aws::String& GetExternalExecutionUrl() const{ return m_externalExecutionUrl; }
+
+    /**
+     * <p>The URL of a resource external to AWS that will be used when running the
+     * action, for example an external repository URL.</p>
+     */
+    inline bool ExternalExecutionUrlHasBeenSet() const { return m_externalExecutionUrlHasBeenSet; }
 
     /**
      * <p>The URL of a resource external to AWS that will be used when running the
@@ -324,6 +364,11 @@ namespace Model
     /**
      * <p>A percentage of completeness of the action as it runs.</p>
      */
+    inline bool PercentCompleteHasBeenSet() const { return m_percentCompleteHasBeenSet; }
+
+    /**
+     * <p>A percentage of completeness of the action as it runs.</p>
+     */
     inline void SetPercentComplete(int value) { m_percentCompleteHasBeenSet = true; m_percentComplete = value; }
 
     /**
@@ -336,6 +381,11 @@ namespace Model
      * <p>The details of an error returned by a URL external to AWS.</p>
      */
     inline const ErrorDetails& GetErrorDetails() const{ return m_errorDetails; }
+
+    /**
+     * <p>The details of an error returned by a URL external to AWS.</p>
+     */
+    inline bool ErrorDetailsHasBeenSet() const { return m_errorDetailsHasBeenSet; }
 
     /**
      * <p>The details of an error returned by a URL external to AWS.</p>

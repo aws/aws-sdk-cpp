@@ -55,6 +55,11 @@ namespace Model
     /**
      * <p>The path of the business report.</p>
      */
+    inline bool PathHasBeenSet() const { return m_pathHasBeenSet; }
+
+    /**
+     * <p>The path of the business report.</p>
+     */
     inline void SetPath(const Aws::String& value) { m_pathHasBeenSet = true; m_path = value; }
 
     /**
@@ -87,6 +92,11 @@ namespace Model
      * <p>The S3 bucket name of the output reports.</p>
      */
     inline const Aws::String& GetBucketName() const{ return m_bucketName; }
+
+    /**
+     * <p>The S3 bucket name of the output reports.</p>
+     */
+    inline bool BucketNameHasBeenSet() const { return m_bucketNameHasBeenSet; }
 
     /**
      * <p>The S3 bucket name of the output reports.</p>

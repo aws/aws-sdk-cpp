@@ -54,6 +54,11 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the rule.</p>
      */
+    inline bool RuleArnHasBeenSet() const { return m_ruleArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the rule.</p>
+     */
     inline void SetRuleArn(const Aws::String& value) { m_ruleArnHasBeenSet = true; m_ruleArn = value; }
 
     /**

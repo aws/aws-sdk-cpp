@@ -60,6 +60,13 @@ namespace Model
      * profile specified by the field-level encryption query argument, fle-profile, is
      * unknown.</p>
      */
+    inline bool ForwardWhenQueryArgProfileIsUnknownHasBeenSet() const { return m_forwardWhenQueryArgProfileIsUnknownHasBeenSet; }
+
+    /**
+     * <p>Flag to set if you want a request to be forwarded to the origin even if the
+     * profile specified by the field-level encryption query argument, fle-profile, is
+     * unknown.</p>
+     */
     inline void SetForwardWhenQueryArgProfileIsUnknown(bool value) { m_forwardWhenQueryArgProfileIsUnknownHasBeenSet = true; m_forwardWhenQueryArgProfileIsUnknown = value; }
 
     /**
@@ -75,6 +82,12 @@ namespace Model
      * encryption.</p>
      */
     inline const QueryArgProfiles& GetQueryArgProfiles() const{ return m_queryArgProfiles; }
+
+    /**
+     * <p>Profiles specified for query argument-profile mapping for field-level
+     * encryption.</p>
+     */
+    inline bool QueryArgProfilesHasBeenSet() const { return m_queryArgProfilesHasBeenSet; }
 
     /**
      * <p>Profiles specified for query argument-profile mapping for field-level

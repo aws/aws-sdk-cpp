@@ -55,6 +55,11 @@ namespace Model
     /**
      * <p>The description of the billing group.</p>
      */
+    inline bool BillingGroupDescriptionHasBeenSet() const { return m_billingGroupDescriptionHasBeenSet; }
+
+    /**
+     * <p>The description of the billing group.</p>
+     */
     inline void SetBillingGroupDescription(const Aws::String& value) { m_billingGroupDescriptionHasBeenSet = true; m_billingGroupDescription = value; }
 
     /**

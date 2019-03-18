@@ -52,6 +52,12 @@ namespace Model
      * <p>The name of the lexicon to delete. Must be an existing lexicon in the
      * region.</p>
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>The name of the lexicon to delete. Must be an existing lexicon in the
+     * region.</p>
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**

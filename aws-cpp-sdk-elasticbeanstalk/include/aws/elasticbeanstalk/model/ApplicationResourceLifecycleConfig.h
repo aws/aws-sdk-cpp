@@ -78,6 +78,19 @@ namespace Model
      * <code>UpdateApplicationResourceLifecycle</code> calls. You can, however, specify
      * it in subsequent calls to change the Service Role to another value.</p>
      */
+    inline bool ServiceRoleHasBeenSet() const { return m_serviceRoleHasBeenSet; }
+
+    /**
+     * <p>The ARN of an IAM service role that Elastic Beanstalk has permission to
+     * assume.</p> <p>The <code>ServiceRole</code> property is required the first time
+     * that you provide a <code>VersionLifecycleConfig</code> for the application in
+     * one of the supporting calls (<code>CreateApplication</code> or
+     * <code>UpdateApplicationResourceLifecycle</code>). After you provide it once, in
+     * either one of the calls, Elastic Beanstalk persists the Service Role with the
+     * application, and you don't need to specify it again in subsequent
+     * <code>UpdateApplicationResourceLifecycle</code> calls. You can, however, specify
+     * it in subsequent calls to change the Service Role to another value.</p>
+     */
     inline void SetServiceRole(const Aws::String& value) { m_serviceRoleHasBeenSet = true; m_serviceRole = value; }
 
     /**
@@ -150,6 +163,11 @@ namespace Model
      * <p>The application version lifecycle configuration.</p>
      */
     inline const ApplicationVersionLifecycleConfig& GetVersionLifecycleConfig() const{ return m_versionLifecycleConfig; }
+
+    /**
+     * <p>The application version lifecycle configuration.</p>
+     */
+    inline bool VersionLifecycleConfigHasBeenSet() const { return m_versionLifecycleConfigHasBeenSet; }
 
     /**
      * <p>The application version lifecycle configuration.</p>

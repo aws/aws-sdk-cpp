@@ -51,6 +51,11 @@ namespace Model
     /**
      * <p>The Amazon Resource Names (ARN) of the invitations.</p>
      */
+    inline bool ResourceShareInvitationArnsHasBeenSet() const { return m_resourceShareInvitationArnsHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Names (ARN) of the invitations.</p>
+     */
     inline void SetResourceShareInvitationArns(const Aws::Vector<Aws::String>& value) { m_resourceShareInvitationArnsHasBeenSet = true; m_resourceShareInvitationArns = value; }
 
     /**
@@ -88,6 +93,11 @@ namespace Model
      * <p>The Amazon Resource Names (ARN) of the resource shares.</p>
      */
     inline const Aws::Vector<Aws::String>& GetResourceShareArns() const{ return m_resourceShareArns; }
+
+    /**
+     * <p>The Amazon Resource Names (ARN) of the resource shares.</p>
+     */
+    inline bool ResourceShareArnsHasBeenSet() const { return m_resourceShareArnsHasBeenSet; }
 
     /**
      * <p>The Amazon Resource Names (ARN) of the resource shares.</p>
@@ -133,6 +143,11 @@ namespace Model
     /**
      * <p>The token for the next page of results.</p>
      */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
+
+    /**
+     * <p>The token for the next page of results.</p>
+     */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
     /**
@@ -167,6 +182,13 @@ namespace Model
      * value.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
+
+    /**
+     * <p>The maximum number of results to return with a single call. To retrieve the
+     * remaining results, make another call with the returned <code>nextToken</code>
+     * value.</p>
+     */
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
 
     /**
      * <p>The maximum number of results to return with a single call. To retrieve the

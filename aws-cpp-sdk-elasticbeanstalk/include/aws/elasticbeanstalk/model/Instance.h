@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The ID of the Amazon EC2 instance.</p>
      */
+    inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
+
+    /**
+     * <p>The ID of the Amazon EC2 instance.</p>
+     */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
     /**

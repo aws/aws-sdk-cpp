@@ -53,6 +53,9 @@ namespace Model
     inline const Aws::Vector<FilterRule>& GetFilterRules() const{ return m_filterRules; }
 
     
+    inline bool FilterRulesHasBeenSet() const { return m_filterRulesHasBeenSet; }
+
+    
     inline void SetFilterRules(const Aws::Vector<FilterRule>& value) { m_filterRulesHasBeenSet = true; m_filterRules = value; }
 
     

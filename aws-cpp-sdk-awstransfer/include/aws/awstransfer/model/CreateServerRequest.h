@@ -62,6 +62,14 @@ namespace Model
      * <code>IdentityProviderType</code> value of server that is created uses the
      * <code>SERVICE_MANAGED</code> authentication method.</p>
      */
+    inline bool IdentityProviderDetailsHasBeenSet() const { return m_identityProviderDetailsHasBeenSet; }
+
+    /**
+     * <p>An array containing all of the information required to call a
+     * customer-supplied authentication API. This parameter is not required when the
+     * <code>IdentityProviderType</code> value of server that is created uses the
+     * <code>SERVICE_MANAGED</code> authentication method.</p>
+     */
     inline void SetIdentityProviderDetails(const IdentityProviderDetails& value) { m_identityProviderDetailsHasBeenSet = true; m_identityProviderDetails = value; }
 
     /**
@@ -98,6 +106,16 @@ namespace Model
      * your choice.</p>
      */
     inline const IdentityProviderType& GetIdentityProviderType() const{ return m_identityProviderType; }
+
+    /**
+     * <p>The mode of authentication enabled for this service. The default value is
+     * <code>SERVICE_MANAGED</code>, which allows you to store and access SFTP user
+     * credentials within the service. An <code>IdentityProviderType</code> value of
+     * <code>API_GATEWAY</code> indicates that user authentication requires a call to
+     * an API Gateway endpoint URL provided by you to integrate an identity provider of
+     * your choice.</p>
+     */
+    inline bool IdentityProviderTypeHasBeenSet() const { return m_identityProviderTypeHasBeenSet; }
 
     /**
      * <p>The mode of authentication enabled for this service. The default value is
@@ -150,6 +168,12 @@ namespace Model
      * <p>A value that allows the service to write your SFTP users’ activity to your
      * Amazon CloudWatch logs for monitoring and auditing purposes.</p>
      */
+    inline bool LoggingRoleHasBeenSet() const { return m_loggingRoleHasBeenSet; }
+
+    /**
+     * <p>A value that allows the service to write your SFTP users’ activity to your
+     * Amazon CloudWatch logs for monitoring and auditing purposes.</p>
+     */
     inline void SetLoggingRole(const Aws::String& value) { m_loggingRoleHasBeenSet = true; m_loggingRole = value; }
 
     /**
@@ -187,6 +211,11 @@ namespace Model
      * <p>Key-value pairs that can be used to group and search for servers.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>Key-value pairs that can be used to group and search for servers.</p>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
      * <p>Key-value pairs that can be used to group and search for servers.</p>

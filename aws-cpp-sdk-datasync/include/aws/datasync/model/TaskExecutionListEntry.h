@@ -59,6 +59,11 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the task that was executed.</p>
      */
+    inline bool TaskExecutionArnHasBeenSet() const { return m_taskExecutionArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the task that was executed.</p>
+     */
     inline void SetTaskExecutionArn(const Aws::String& value) { m_taskExecutionArnHasBeenSet = true; m_taskExecutionArn = value; }
 
     /**
@@ -91,6 +96,11 @@ namespace Model
      * <p>The status of a task execution.</p>
      */
     inline const TaskExecutionStatus& GetStatus() const{ return m_status; }
+
+    /**
+     * <p>The status of a task execution.</p>
+     */
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
     /**
      * <p>The status of a task execution.</p>

@@ -60,6 +60,12 @@ namespace Model
      * <p>The number of SSL/TLS protocols that you want to allow CloudFront to use when
      * establishing an HTTPS connection with this origin. </p>
      */
+    inline bool QuantityHasBeenSet() const { return m_quantityHasBeenSet; }
+
+    /**
+     * <p>The number of SSL/TLS protocols that you want to allow CloudFront to use when
+     * establishing an HTTPS connection with this origin. </p>
+     */
     inline void SetQuantity(int value) { m_quantityHasBeenSet = true; m_quantity = value; }
 
     /**
@@ -73,6 +79,11 @@ namespace Model
      * <p>A list that contains allowed SSL/TLS protocols for this distribution.</p>
      */
     inline const Aws::Vector<SslProtocol>& GetItems() const{ return m_items; }
+
+    /**
+     * <p>A list that contains allowed SSL/TLS protocols for this distribution.</p>
+     */
+    inline bool ItemsHasBeenSet() const { return m_itemsHasBeenSet; }
 
     /**
      * <p>A list that contains allowed SSL/TLS protocols for this distribution.</p>

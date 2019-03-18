@@ -63,6 +63,11 @@ namespace Model
     /**
      * <p>The authentication type used.</p>
      */
+    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
+
+    /**
+     * <p>The authentication type used.</p>
+     */
     inline void SetType(const ClientVpnAuthenticationType& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
@@ -89,6 +94,11 @@ namespace Model
     /**
      * <p>Information about the Active Directory, if applicable.</p>
      */
+    inline bool ActiveDirectoryHasBeenSet() const { return m_activeDirectoryHasBeenSet; }
+
+    /**
+     * <p>Information about the Active Directory, if applicable.</p>
+     */
     inline void SetActiveDirectory(const DirectoryServiceAuthentication& value) { m_activeDirectoryHasBeenSet = true; m_activeDirectory = value; }
 
     /**
@@ -111,6 +121,11 @@ namespace Model
      * <p>Information about the authentication certificates, if applicable.</p>
      */
     inline const CertificateAuthentication& GetMutualAuthentication() const{ return m_mutualAuthentication; }
+
+    /**
+     * <p>Information about the authentication certificates, if applicable.</p>
+     */
+    inline bool MutualAuthenticationHasBeenSet() const { return m_mutualAuthenticationHasBeenSet; }
 
     /**
      * <p>Information about the authentication certificates, if applicable.</p>

@@ -55,6 +55,11 @@ namespace Model
     /**
      * <p>The unique system-generated ID for the job.</p>
      */
+    inline bool JobIdHasBeenSet() const { return m_jobIdHasBeenSet; }
+
+    /**
+     * <p>The unique system-generated ID for the job.</p>
+     */
     inline void SetJobId(const Aws::String& value) { m_jobIdHasBeenSet = true; m_jobId = value; }
 
     /**

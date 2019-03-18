@@ -59,6 +59,11 @@ namespace Model
     /**
      * <p>The Availability Zone.</p>
      */
+    inline bool AvailabilityZoneHasBeenSet() const { return m_availabilityZoneHasBeenSet; }
+
+    /**
+     * <p>The Availability Zone.</p>
+     */
     inline void SetAvailabilityZone(const Aws::String& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = value; }
 
     /**
@@ -95,6 +100,11 @@ namespace Model
     /**
      * <p>The date when the Scheduled Instance was purchased.</p>
      */
+    inline bool CreateDateHasBeenSet() const { return m_createDateHasBeenSet; }
+
+    /**
+     * <p>The date when the Scheduled Instance was purchased.</p>
+     */
     inline void SetCreateDate(const Aws::Utils::DateTime& value) { m_createDateHasBeenSet = true; m_createDate = value; }
 
     /**
@@ -117,6 +127,11 @@ namespace Model
      * <p>The hourly price for a single instance.</p>
      */
     inline const Aws::String& GetHourlyPrice() const{ return m_hourlyPrice; }
+
+    /**
+     * <p>The hourly price for a single instance.</p>
+     */
+    inline bool HourlyPriceHasBeenSet() const { return m_hourlyPriceHasBeenSet; }
 
     /**
      * <p>The hourly price for a single instance.</p>
@@ -157,6 +172,11 @@ namespace Model
     /**
      * <p>The number of instances.</p>
      */
+    inline bool InstanceCountHasBeenSet() const { return m_instanceCountHasBeenSet; }
+
+    /**
+     * <p>The number of instances.</p>
+     */
     inline void SetInstanceCount(int value) { m_instanceCountHasBeenSet = true; m_instanceCount = value; }
 
     /**
@@ -169,6 +189,11 @@ namespace Model
      * <p>The instance type.</p>
      */
     inline const Aws::String& GetInstanceType() const{ return m_instanceType; }
+
+    /**
+     * <p>The instance type.</p>
+     */
+    inline bool InstanceTypeHasBeenSet() const { return m_instanceTypeHasBeenSet; }
 
     /**
      * <p>The instance type.</p>
@@ -209,6 +234,11 @@ namespace Model
     /**
      * <p>The network platform (<code>EC2-Classic</code> or <code>EC2-VPC</code>).</p>
      */
+    inline bool NetworkPlatformHasBeenSet() const { return m_networkPlatformHasBeenSet; }
+
+    /**
+     * <p>The network platform (<code>EC2-Classic</code> or <code>EC2-VPC</code>).</p>
+     */
     inline void SetNetworkPlatform(const Aws::String& value) { m_networkPlatformHasBeenSet = true; m_networkPlatform = value; }
 
     /**
@@ -245,6 +275,11 @@ namespace Model
     /**
      * <p>The time for the next schedule to start.</p>
      */
+    inline bool NextSlotStartTimeHasBeenSet() const { return m_nextSlotStartTimeHasBeenSet; }
+
+    /**
+     * <p>The time for the next schedule to start.</p>
+     */
     inline void SetNextSlotStartTime(const Aws::Utils::DateTime& value) { m_nextSlotStartTimeHasBeenSet = true; m_nextSlotStartTime = value; }
 
     /**
@@ -267,6 +302,11 @@ namespace Model
      * <p>The platform (<code>Linux/UNIX</code> or <code>Windows</code>).</p>
      */
     inline const Aws::String& GetPlatform() const{ return m_platform; }
+
+    /**
+     * <p>The platform (<code>Linux/UNIX</code> or <code>Windows</code>).</p>
+     */
+    inline bool PlatformHasBeenSet() const { return m_platformHasBeenSet; }
 
     /**
      * <p>The platform (<code>Linux/UNIX</code> or <code>Windows</code>).</p>
@@ -307,6 +347,11 @@ namespace Model
     /**
      * <p>The time that the previous schedule ended or will end.</p>
      */
+    inline bool PreviousSlotEndTimeHasBeenSet() const { return m_previousSlotEndTimeHasBeenSet; }
+
+    /**
+     * <p>The time that the previous schedule ended or will end.</p>
+     */
     inline void SetPreviousSlotEndTime(const Aws::Utils::DateTime& value) { m_previousSlotEndTimeHasBeenSet = true; m_previousSlotEndTime = value; }
 
     /**
@@ -333,6 +378,11 @@ namespace Model
     /**
      * <p>The schedule recurrence.</p>
      */
+    inline bool RecurrenceHasBeenSet() const { return m_recurrenceHasBeenSet; }
+
+    /**
+     * <p>The schedule recurrence.</p>
+     */
     inline void SetRecurrence(const ScheduledInstanceRecurrence& value) { m_recurrenceHasBeenSet = true; m_recurrence = value; }
 
     /**
@@ -355,6 +405,11 @@ namespace Model
      * <p>The Scheduled Instance ID.</p>
      */
     inline const Aws::String& GetScheduledInstanceId() const{ return m_scheduledInstanceId; }
+
+    /**
+     * <p>The Scheduled Instance ID.</p>
+     */
+    inline bool ScheduledInstanceIdHasBeenSet() const { return m_scheduledInstanceIdHasBeenSet; }
 
     /**
      * <p>The Scheduled Instance ID.</p>
@@ -395,6 +450,11 @@ namespace Model
     /**
      * <p>The number of hours in the schedule.</p>
      */
+    inline bool SlotDurationInHoursHasBeenSet() const { return m_slotDurationInHoursHasBeenSet; }
+
+    /**
+     * <p>The number of hours in the schedule.</p>
+     */
     inline void SetSlotDurationInHours(int value) { m_slotDurationInHoursHasBeenSet = true; m_slotDurationInHours = value; }
 
     /**
@@ -407,6 +467,11 @@ namespace Model
      * <p>The end date for the Scheduled Instance.</p>
      */
     inline const Aws::Utils::DateTime& GetTermEndDate() const{ return m_termEndDate; }
+
+    /**
+     * <p>The end date for the Scheduled Instance.</p>
+     */
+    inline bool TermEndDateHasBeenSet() const { return m_termEndDateHasBeenSet; }
 
     /**
      * <p>The end date for the Scheduled Instance.</p>
@@ -437,6 +502,11 @@ namespace Model
     /**
      * <p>The start date for the Scheduled Instance.</p>
      */
+    inline bool TermStartDateHasBeenSet() const { return m_termStartDateHasBeenSet; }
+
+    /**
+     * <p>The start date for the Scheduled Instance.</p>
+     */
     inline void SetTermStartDate(const Aws::Utils::DateTime& value) { m_termStartDateHasBeenSet = true; m_termStartDate = value; }
 
     /**
@@ -459,6 +529,11 @@ namespace Model
      * <p>The total number of hours for a single instance for the entire term.</p>
      */
     inline int GetTotalScheduledInstanceHours() const{ return m_totalScheduledInstanceHours; }
+
+    /**
+     * <p>The total number of hours for a single instance for the entire term.</p>
+     */
+    inline bool TotalScheduledInstanceHoursHasBeenSet() const { return m_totalScheduledInstanceHoursHasBeenSet; }
 
     /**
      * <p>The total number of hours for a single instance for the entire term.</p>

@@ -59,6 +59,12 @@ namespace Model
      * Required. The type of broker engine. Note: Currently, Amazon MQ supports only
      * ACTIVEMQ.
      */
+    inline bool EngineTypeHasBeenSet() const { return m_engineTypeHasBeenSet; }
+
+    /**
+     * Required. The type of broker engine. Note: Currently, Amazon MQ supports only
+     * ACTIVEMQ.
+     */
     inline void SetEngineType(const EngineType& value) { m_engineTypeHasBeenSet = true; m_engineType = value; }
 
     /**
@@ -86,6 +92,13 @@ namespace Model
      * https://docs.aws.amazon.com/amazon-mq/latest/developer-guide/broker-engine.html
      */
     inline const Aws::String& GetEngineVersion() const{ return m_engineVersion; }
+
+    /**
+     * Required. The version of the broker engine. For a list of supported engine
+     * versions, see
+     * https://docs.aws.amazon.com/amazon-mq/latest/developer-guide/broker-engine.html
+     */
+    inline bool EngineVersionHasBeenSet() const { return m_engineVersionHasBeenSet; }
 
     /**
      * Required. The version of the broker engine. For a list of supported engine
@@ -142,6 +155,13 @@ namespace Model
      * alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~).
      * This value must be 1-150 characters long.
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * Required. The name of the configuration. This value can contain only
+     * alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~).
+     * This value must be 1-150 characters long.
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
@@ -184,6 +204,11 @@ namespace Model
      * Create tags when creating the configuration.
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
+
+    /**
+     * Create tags when creating the configuration.
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
      * Create tags when creating the configuration.

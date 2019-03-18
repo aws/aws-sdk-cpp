@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>Unique ID of the instance group to expand or shrink.</p>
      */
+    inline bool InstanceGroupIdHasBeenSet() const { return m_instanceGroupIdHasBeenSet; }
+
+    /**
+     * <p>Unique ID of the instance group to expand or shrink.</p>
+     */
     inline void SetInstanceGroupId(const Aws::String& value) { m_instanceGroupIdHasBeenSet = true; m_instanceGroupId = value; }
 
     /**
@@ -93,6 +98,11 @@ namespace Model
     /**
      * <p>Target size for the instance group.</p>
      */
+    inline bool InstanceCountHasBeenSet() const { return m_instanceCountHasBeenSet; }
+
+    /**
+     * <p>Target size for the instance group.</p>
+     */
     inline void SetInstanceCount(int value) { m_instanceCountHasBeenSet = true; m_instanceCount = value; }
 
     /**
@@ -106,6 +116,12 @@ namespace Model
      * instance group will not return to its original requested size.</p>
      */
     inline const Aws::Vector<Aws::String>& GetEC2InstanceIdsToTerminate() const{ return m_eC2InstanceIdsToTerminate; }
+
+    /**
+     * <p>The EC2 InstanceIds to terminate. After you terminate the instances, the
+     * instance group will not return to its original requested size.</p>
+     */
+    inline bool EC2InstanceIdsToTerminateHasBeenSet() const { return m_eC2InstanceIdsToTerminateHasBeenSet; }
 
     /**
      * <p>The EC2 InstanceIds to terminate. After you terminate the instances, the
@@ -154,6 +170,11 @@ namespace Model
      * <p>Policy for customizing shrink operations.</p>
      */
     inline const ShrinkPolicy& GetShrinkPolicy() const{ return m_shrinkPolicy; }
+
+    /**
+     * <p>Policy for customizing shrink operations.</p>
+     */
+    inline bool ShrinkPolicyHasBeenSet() const { return m_shrinkPolicyHasBeenSet; }
 
     /**
      * <p>Policy for customizing shrink operations.</p>

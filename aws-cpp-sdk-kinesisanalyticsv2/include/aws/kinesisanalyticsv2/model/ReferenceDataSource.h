@@ -61,6 +61,11 @@ namespace Model
     /**
      * <p>The name of the in-application table to create.</p>
      */
+    inline bool TableNameHasBeenSet() const { return m_tableNameHasBeenSet; }
+
+    /**
+     * <p>The name of the in-application table to create.</p>
+     */
     inline void SetTableName(const Aws::String& value) { m_tableNameHasBeenSet = true; m_tableName = value; }
 
     /**
@@ -103,6 +108,14 @@ namespace Model
      * changes, you call the <a>UpdateApplication</a> operation to trigger reloading of
      * data into your application. </p>
      */
+    inline bool S3ReferenceDataSourceHasBeenSet() const { return m_s3ReferenceDataSourceHasBeenSet; }
+
+    /**
+     * <p>Identifies the S3 bucket and object that contains the reference data. A
+     * Kinesis Data Analytics application loads reference data only once. If the data
+     * changes, you call the <a>UpdateApplication</a> operation to trigger reloading of
+     * data into your application. </p>
+     */
     inline void SetS3ReferenceDataSource(const S3ReferenceDataSource& value) { m_s3ReferenceDataSourceHasBeenSet = true; m_s3ReferenceDataSource = value; }
 
     /**
@@ -135,6 +148,12 @@ namespace Model
      * element maps to corresponding columns created in the in-application stream.</p>
      */
     inline const SourceSchema& GetReferenceSchema() const{ return m_referenceSchema; }
+
+    /**
+     * <p>Describes the format of the data in the streaming source, and how each data
+     * element maps to corresponding columns created in the in-application stream.</p>
+     */
+    inline bool ReferenceSchemaHasBeenSet() const { return m_referenceSchemaHasBeenSet; }
 
     /**
      * <p>Describes the format of the data in the streaming source, and how each data

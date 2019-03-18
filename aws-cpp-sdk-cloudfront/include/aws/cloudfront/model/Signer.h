@@ -64,6 +64,14 @@ namespace Model
      * <code>self</code>, which is the AWS account used to create the distribution.</p>
      * </li> <li> <p>An AWS account number.</p> </li> </ul>
      */
+    inline bool AwsAccountNumberHasBeenSet() const { return m_awsAccountNumberHasBeenSet; }
+
+    /**
+     * <p>An AWS account that is included in the <code>TrustedSigners</code> complex
+     * type for this RTMP distribution. Valid values include:</p> <ul> <li> <p>
+     * <code>self</code>, which is the AWS account used to create the distribution.</p>
+     * </li> <li> <p>An AWS account number.</p> </li> </ul>
+     */
     inline void SetAwsAccountNumber(const Aws::String& value) { m_awsAccountNumberHasBeenSet = true; m_awsAccountNumber = value; }
 
     /**
@@ -112,6 +120,12 @@ namespace Model
      * associated with <code>AwsAccountNumber</code>.</p>
      */
     inline const KeyPairIds& GetKeyPairIds() const{ return m_keyPairIds; }
+
+    /**
+     * <p>A complex type that lists the active CloudFront key pairs, if any, that are
+     * associated with <code>AwsAccountNumber</code>.</p>
+     */
+    inline bool KeyPairIdsHasBeenSet() const { return m_keyPairIdsHasBeenSet; }
 
     /**
      * <p>A complex type that lists the active CloudFront key pairs, if any, that are

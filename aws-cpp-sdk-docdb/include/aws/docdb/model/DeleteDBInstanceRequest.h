@@ -62,6 +62,13 @@ namespace Model
      * isn't case sensitive.</p> <p>Constraints:</p> <ul> <li> <p>Must match the name
      * of an existing DB instance.</p> </li> </ul>
      */
+    inline bool DBInstanceIdentifierHasBeenSet() const { return m_dBInstanceIdentifierHasBeenSet; }
+
+    /**
+     * <p>The DB instance identifier for the DB instance to be deleted. This parameter
+     * isn't case sensitive.</p> <p>Constraints:</p> <ul> <li> <p>Must match the name
+     * of an existing DB instance.</p> </li> </ul>
+     */
     inline void SetDBInstanceIdentifier(const Aws::String& value) { m_dBInstanceIdentifierHasBeenSet = true; m_dBInstanceIdentifier = value; }
 
     /**

@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The name of the data store.</p>
      */
+    inline bool DatastoreNameHasBeenSet() const { return m_datastoreNameHasBeenSet; }
+
+    /**
+     * <p>The name of the data store.</p>
+     */
     inline void SetDatastoreName(const Aws::String& value) { m_datastoreNameHasBeenSet = true; m_datastoreName = value; }
 
     /**
@@ -93,6 +98,11 @@ namespace Model
     /**
      * <p>The status of the data store.</p>
      */
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
+
+    /**
+     * <p>The status of the data store.</p>
+     */
     inline void SetStatus(const DatastoreStatus& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
@@ -119,6 +129,11 @@ namespace Model
     /**
      * <p>When the data store was created.</p>
      */
+    inline bool CreationTimeHasBeenSet() const { return m_creationTimeHasBeenSet; }
+
+    /**
+     * <p>When the data store was created.</p>
+     */
     inline void SetCreationTime(const Aws::Utils::DateTime& value) { m_creationTimeHasBeenSet = true; m_creationTime = value; }
 
     /**
@@ -141,6 +156,11 @@ namespace Model
      * <p>The last time the data store was updated.</p>
      */
     inline const Aws::Utils::DateTime& GetLastUpdateTime() const{ return m_lastUpdateTime; }
+
+    /**
+     * <p>The last time the data store was updated.</p>
+     */
+    inline bool LastUpdateTimeHasBeenSet() const { return m_lastUpdateTimeHasBeenSet; }
 
     /**
      * <p>The last time the data store was updated.</p>

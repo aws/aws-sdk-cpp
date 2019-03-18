@@ -54,6 +54,11 @@ namespace Model
     /**
      * <p>The name of the stack to which the resource belongs.</p>
      */
+    inline bool StackNameHasBeenSet() const { return m_stackNameHasBeenSet; }
+
+    /**
+     * <p>The name of the stack to which the resource belongs.</p>
+     */
     inline void SetStackName(const Aws::String& value) { m_stackNameHasBeenSet = true; m_stackName = value; }
 
     /**
@@ -86,6 +91,11 @@ namespace Model
      * <p>The logical name of the resource for which to return drift information.</p>
      */
     inline const Aws::String& GetLogicalResourceId() const{ return m_logicalResourceId; }
+
+    /**
+     * <p>The logical name of the resource for which to return drift information.</p>
+     */
+    inline bool LogicalResourceIdHasBeenSet() const { return m_logicalResourceIdHasBeenSet; }
 
     /**
      * <p>The logical name of the resource for which to return drift information.</p>

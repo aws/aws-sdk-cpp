@@ -55,6 +55,11 @@ namespace Model
     /**
      * <p>Key name of the object to delete.</p>
      */
+    inline bool KeyHasBeenSet() const { return m_keyHasBeenSet; }
+
+    /**
+     * <p>Key name of the object to delete.</p>
+     */
     inline void SetKey(const Aws::String& value) { m_keyHasBeenSet = true; m_key = value; }
 
     /**
@@ -87,6 +92,11 @@ namespace Model
      * <p>VersionId for the specific version of the object to delete.</p>
      */
     inline const Aws::String& GetVersionId() const{ return m_versionId; }
+
+    /**
+     * <p>VersionId for the specific version of the object to delete.</p>
+     */
+    inline bool VersionIdHasBeenSet() const { return m_versionIdHasBeenSet; }
 
     /**
      * <p>VersionId for the specific version of the object to delete.</p>

@@ -62,6 +62,12 @@ namespace Model
      * <p>True if DKIM signing is enabled for email sent from the identity; false
      * otherwise. The default value is true.</p>
      */
+    inline bool DkimEnabledHasBeenSet() const { return m_dkimEnabledHasBeenSet; }
+
+    /**
+     * <p>True if DKIM signing is enabled for email sent from the identity; false
+     * otherwise. The default value is true.</p>
+     */
     inline void SetDkimEnabled(bool value) { m_dkimEnabledHasBeenSet = true; m_dkimEnabled = value; }
 
     /**
@@ -77,6 +83,13 @@ namespace Model
      * identities, not email address identities.)</p>
      */
     inline const VerificationStatus& GetDkimVerificationStatus() const{ return m_dkimVerificationStatus; }
+
+    /**
+     * <p>Describes whether Amazon SES has successfully verified the DKIM DNS records
+     * (tokens) published in the domain name's DNS. (This only applies to domain
+     * identities, not email address identities.)</p>
+     */
+    inline bool DkimVerificationStatusHasBeenSet() const { return m_dkimVerificationStatusHasBeenSet; }
 
     /**
      * <p>Describes whether Amazon SES has successfully verified the DKIM DNS records
@@ -120,6 +133,20 @@ namespace Model
      * SES Developer Guide</a>.</p>
      */
     inline const Aws::Vector<Aws::String>& GetDkimTokens() const{ return m_dkimTokens; }
+
+    /**
+     * <p>A set of character strings that represent the domain's identity. Using these
+     * tokens, you will need to create DNS CNAME records that point to DKIM public keys
+     * hosted by Amazon SES. Amazon Web Services will eventually detect that you have
+     * updated your DNS records; this detection process may take up to 72 hours. Upon
+     * successful detection, Amazon SES will be able to DKIM-sign email originating
+     * from that domain. (This only applies to domain identities, not email address
+     * identities.)</p> <p>For more information about creating DNS records using DKIM
+     * tokens, go to the <a
+     * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim-dns-records.html">Amazon
+     * SES Developer Guide</a>.</p>
+     */
+    inline bool DkimTokensHasBeenSet() const { return m_dkimTokensHasBeenSet; }
 
     /**
      * <p>A set of character strings that represent the domain's identity. Using these

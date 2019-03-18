@@ -52,6 +52,11 @@ namespace Model
     /**
      * <p>Configuration ID of the application to be updated.</p>
      */
+    inline bool ConfigurationIdHasBeenSet() const { return m_configurationIdHasBeenSet; }
+
+    /**
+     * <p>Configuration ID of the application to be updated.</p>
+     */
     inline void SetConfigurationId(const Aws::String& value) { m_configurationIdHasBeenSet = true; m_configurationId = value; }
 
     /**
@@ -88,6 +93,11 @@ namespace Model
     /**
      * <p>New name of the application to be updated.</p>
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>New name of the application to be updated.</p>
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
@@ -120,6 +130,11 @@ namespace Model
      * <p>New description of the application to be updated.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
+
+    /**
+     * <p>New description of the application to be updated.</p>
+     */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
 
     /**
      * <p>New description of the application to be updated.</p>

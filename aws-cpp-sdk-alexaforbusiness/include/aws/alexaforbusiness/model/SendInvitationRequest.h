@@ -52,6 +52,11 @@ namespace Model
     /**
      * <p>The ARN of the user to whom to send an invitation. Required.</p>
      */
+    inline bool UserArnHasBeenSet() const { return m_userArnHasBeenSet; }
+
+    /**
+     * <p>The ARN of the user to whom to send an invitation. Required.</p>
+     */
     inline void SetUserArn(const Aws::String& value) { m_userArnHasBeenSet = true; m_userArn = value; }
 
     /**

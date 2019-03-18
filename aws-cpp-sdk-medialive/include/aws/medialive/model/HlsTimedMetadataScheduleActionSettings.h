@@ -57,6 +57,12 @@ namespace Model
      * Base64 string formatted according to the ID3 specification:
      * http://id3.org/id3v2.4.0-structure
      */
+    inline bool Id3HasBeenSet() const { return m_id3HasBeenSet; }
+
+    /**
+     * Base64 string formatted according to the ID3 specification:
+     * http://id3.org/id3v2.4.0-structure
+     */
     inline void SetId3(const Aws::String& value) { m_id3HasBeenSet = true; m_id3 = value; }
 
     /**

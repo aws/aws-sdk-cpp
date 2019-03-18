@@ -61,6 +61,12 @@ namespace Model
      * <p>The time when a status check failed. For an instance that was launched and
      * impaired, this is the time when the instance was launched.</p>
      */
+    inline bool ImpairedSinceHasBeenSet() const { return m_impairedSinceHasBeenSet; }
+
+    /**
+     * <p>The time when a status check failed. For an instance that was launched and
+     * impaired, this is the time when the instance was launched.</p>
+     */
     inline void SetImpairedSince(const Aws::Utils::DateTime& value) { m_impairedSinceHasBeenSet = true; m_impairedSince = value; }
 
     /**
@@ -90,6 +96,11 @@ namespace Model
     /**
      * <p>The type of instance status.</p>
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>The type of instance status.</p>
+     */
     inline void SetName(const StatusName& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
@@ -112,6 +123,11 @@ namespace Model
      * <p>The status.</p>
      */
     inline const StatusType& GetStatus() const{ return m_status; }
+
+    /**
+     * <p>The status.</p>
+     */
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
     /**
      * <p>The status.</p>

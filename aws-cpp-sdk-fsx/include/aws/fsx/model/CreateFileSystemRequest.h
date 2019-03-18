@@ -66,6 +66,13 @@ namespace Model
      * ensure idempotent creation. This string is automatically filled on your behalf
      * when you use the AWS Command Line Interface (AWS CLI) or an AWS SDK.</p>
      */
+    inline bool ClientRequestTokenHasBeenSet() const { return m_clientRequestTokenHasBeenSet; }
+
+    /**
+     * <p>(Optional) A string of up to 64 ASCII characters that Amazon FSx uses to
+     * ensure idempotent creation. This string is automatically filled on your behalf
+     * when you use the AWS Command Line Interface (AWS CLI) or an AWS SDK.</p>
+     */
     inline void SetClientRequestToken(const Aws::String& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = value; }
 
     /**
@@ -112,6 +119,11 @@ namespace Model
     /**
      * <p>The type of file system.</p>
      */
+    inline bool FileSystemTypeHasBeenSet() const { return m_fileSystemTypeHasBeenSet; }
+
+    /**
+     * <p>The type of file system.</p>
+     */
     inline void SetFileSystemType(const FileSystemType& value) { m_fileSystemTypeHasBeenSet = true; m_fileSystemType = value; }
 
     /**
@@ -144,6 +156,14 @@ namespace Model
      * <p>For Lustre file systems, the storage capacity has a minimum of 3,600 GiB.
      * Storage capacity is provisioned in increments of 3,600 GiB.</p>
      */
+    inline bool StorageCapacityHasBeenSet() const { return m_storageCapacityHasBeenSet; }
+
+    /**
+     * <p>The storage capacity of the file system.</p> <p>For Windows file systems, the
+     * storage capacity has a minimum of 300 GiB, and a maximum of 65,536 GiB.</p>
+     * <p>For Lustre file systems, the storage capacity has a minimum of 3,600 GiB.
+     * Storage capacity is provisioned in increments of 3,600 GiB.</p>
+     */
     inline void SetStorageCapacity(int value) { m_storageCapacityHasBeenSet = true; m_storageCapacity = value; }
 
     /**
@@ -161,6 +181,13 @@ namespace Model
      * subnet's Availability Zone.</p>
      */
     inline const Aws::Vector<Aws::String>& GetSubnetIds() const{ return m_subnetIds; }
+
+    /**
+     * <p>A list of IDs for the subnets that the file system will be accessible from.
+     * File systems support only one subnet. The file server is also launched in that
+     * subnet's Availability Zone.</p>
+     */
+    inline bool SubnetIdsHasBeenSet() const { return m_subnetIdsHasBeenSet; }
 
     /**
      * <p>A list of IDs for the subnets that the file system will be accessible from.
@@ -224,6 +251,13 @@ namespace Model
      * interfaces created for file system access. These security groups will apply to
      * all network interfaces. This list isn't returned in later describe requests.</p>
      */
+    inline bool SecurityGroupIdsHasBeenSet() const { return m_securityGroupIdsHasBeenSet; }
+
+    /**
+     * <p>A list of IDs for the security groups that apply to the specified network
+     * interfaces created for file system access. These security groups will apply to
+     * all network interfaces. This list isn't returned in later describe requests.</p>
+     */
     inline void SetSecurityGroupIds(const Aws::Vector<Aws::String>& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds = value; }
 
     /**
@@ -281,6 +315,13 @@ namespace Model
      * value of the <code>Name</code> tag appears in the console as the file system
      * name.</p>
      */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
+
+    /**
+     * <p>The tags to be applied to the file system at file system creation. The key
+     * value of the <code>Name</code> tag appears in the console as the file system
+     * name.</p>
+     */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     /**
@@ -323,6 +364,9 @@ namespace Model
     inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
 
     
+    inline bool KmsKeyIdHasBeenSet() const { return m_kmsKeyIdHasBeenSet; }
+
+    
     inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = value; }
 
     
@@ -349,6 +393,11 @@ namespace Model
     /**
      * <p>The configuration for this Microsoft Windows file system.</p>
      */
+    inline bool WindowsConfigurationHasBeenSet() const { return m_windowsConfigurationHasBeenSet; }
+
+    /**
+     * <p>The configuration for this Microsoft Windows file system.</p>
+     */
     inline void SetWindowsConfiguration(const CreateFileSystemWindowsConfiguration& value) { m_windowsConfigurationHasBeenSet = true; m_windowsConfiguration = value; }
 
     /**
@@ -369,6 +418,9 @@ namespace Model
 
     
     inline const CreateFileSystemLustreConfiguration& GetLustreConfiguration() const{ return m_lustreConfiguration; }
+
+    
+    inline bool LustreConfigurationHasBeenSet() const { return m_lustreConfigurationHasBeenSet; }
 
     
     inline void SetLustreConfiguration(const CreateFileSystemLustreConfiguration& value) { m_lustreConfigurationHasBeenSet = true; m_lustreConfiguration = value; }

@@ -52,6 +52,11 @@ namespace Model
     /**
      * <p>The identifier for the organization under which the group exists.</p>
      */
+    inline bool OrganizationIdHasBeenSet() const { return m_organizationIdHasBeenSet; }
+
+    /**
+     * <p>The identifier for the organization under which the group exists.</p>
+     */
     inline void SetOrganizationId(const Aws::String& value) { m_organizationIdHasBeenSet = true; m_organizationId = value; }
 
     /**
@@ -88,6 +93,11 @@ namespace Model
     /**
      * <p>The identifier for the group from which members are removed.</p>
      */
+    inline bool GroupIdHasBeenSet() const { return m_groupIdHasBeenSet; }
+
+    /**
+     * <p>The identifier for the group from which members are removed.</p>
+     */
     inline void SetGroupId(const Aws::String& value) { m_groupIdHasBeenSet = true; m_groupId = value; }
 
     /**
@@ -120,6 +130,11 @@ namespace Model
      * <p>The identifier for the member to be removed to the group.</p>
      */
     inline const Aws::String& GetMemberId() const{ return m_memberId; }
+
+    /**
+     * <p>The identifier for the member to be removed to the group.</p>
+     */
+    inline bool MemberIdHasBeenSet() const { return m_memberIdHasBeenSet; }
 
     /**
      * <p>The identifier for the member to be removed to the group.</p>

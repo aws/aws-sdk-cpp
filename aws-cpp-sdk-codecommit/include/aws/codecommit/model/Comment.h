@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The system-generated comment ID.</p>
      */
+    inline bool CommentIdHasBeenSet() const { return m_commentIdHasBeenSet; }
+
+    /**
+     * <p>The system-generated comment ID.</p>
+     */
     inline void SetCommentId(const Aws::String& value) { m_commentIdHasBeenSet = true; m_commentId = value; }
 
     /**
@@ -88,6 +93,11 @@ namespace Model
      * <p>The content of the comment.</p>
      */
     inline const Aws::String& GetContent() const{ return m_content; }
+
+    /**
+     * <p>The content of the comment.</p>
+     */
+    inline bool ContentHasBeenSet() const { return m_contentHasBeenSet; }
 
     /**
      * <p>The content of the comment.</p>
@@ -128,6 +138,11 @@ namespace Model
     /**
      * <p>The ID of the comment for which this comment is a reply, if any.</p>
      */
+    inline bool InReplyToHasBeenSet() const { return m_inReplyToHasBeenSet; }
+
+    /**
+     * <p>The ID of the comment for which this comment is a reply, if any.</p>
+     */
     inline void SetInReplyTo(const Aws::String& value) { m_inReplyToHasBeenSet = true; m_inReplyTo = value; }
 
     /**
@@ -164,6 +179,11 @@ namespace Model
     /**
      * <p>The date and time the comment was created, in timestamp format.</p>
      */
+    inline bool CreationDateHasBeenSet() const { return m_creationDateHasBeenSet; }
+
+    /**
+     * <p>The date and time the comment was created, in timestamp format.</p>
+     */
     inline void SetCreationDate(const Aws::Utils::DateTime& value) { m_creationDateHasBeenSet = true; m_creationDate = value; }
 
     /**
@@ -187,6 +207,12 @@ namespace Model
      * format.</p>
      */
     inline const Aws::Utils::DateTime& GetLastModifiedDate() const{ return m_lastModifiedDate; }
+
+    /**
+     * <p>The date and time the comment was most recently modified, in timestamp
+     * format.</p>
+     */
+    inline bool LastModifiedDateHasBeenSet() const { return m_lastModifiedDateHasBeenSet; }
 
     /**
      * <p>The date and time the comment was most recently modified, in timestamp
@@ -217,6 +243,11 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the person who posted the comment.</p>
      */
     inline const Aws::String& GetAuthorArn() const{ return m_authorArn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the person who posted the comment.</p>
+     */
+    inline bool AuthorArnHasBeenSet() const { return m_authorArnHasBeenSet; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the person who posted the comment.</p>
@@ -257,6 +288,11 @@ namespace Model
     /**
      * <p>A Boolean value indicating whether the comment has been deleted.</p>
      */
+    inline bool DeletedHasBeenSet() const { return m_deletedHasBeenSet; }
+
+    /**
+     * <p>A Boolean value indicating whether the comment has been deleted.</p>
+     */
     inline void SetDeleted(bool value) { m_deletedHasBeenSet = true; m_deleted = value; }
 
     /**
@@ -272,6 +308,14 @@ namespace Model
      * return information about the initial request that used that token.</p>
      */
     inline const Aws::String& GetClientRequestToken() const{ return m_clientRequestToken; }
+
+    /**
+     * <p>A unique, client-generated idempotency token that when provided in a request,
+     * ensures the request cannot be repeated with a changed parameter. If a request is
+     * received with the same parameters and a token is included, the request will
+     * return information about the initial request that used that token.</p>
+     */
+    inline bool ClientRequestTokenHasBeenSet() const { return m_clientRequestTokenHasBeenSet; }
 
     /**
      * <p>A unique, client-generated idempotency token that when provided in a request,

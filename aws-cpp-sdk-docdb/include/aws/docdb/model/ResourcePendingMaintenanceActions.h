@@ -62,6 +62,12 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the resource that has pending maintenance
      * actions.</p>
      */
+    inline bool ResourceIdentifierHasBeenSet() const { return m_resourceIdentifierHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the resource that has pending maintenance
+     * actions.</p>
+     */
     inline void SetResourceIdentifier(const Aws::String& value) { m_resourceIdentifierHasBeenSet = true; m_resourceIdentifier = value; }
 
     /**
@@ -100,6 +106,12 @@ namespace Model
      * resource.</p>
      */
     inline const Aws::Vector<PendingMaintenanceAction>& GetPendingMaintenanceActionDetails() const{ return m_pendingMaintenanceActionDetails; }
+
+    /**
+     * <p>A list that provides details about the pending maintenance actions for the
+     * resource.</p>
+     */
+    inline bool PendingMaintenanceActionDetailsHasBeenSet() const { return m_pendingMaintenanceActionDetailsHasBeenSet; }
 
     /**
      * <p>A list that provides details about the pending maintenance actions for the

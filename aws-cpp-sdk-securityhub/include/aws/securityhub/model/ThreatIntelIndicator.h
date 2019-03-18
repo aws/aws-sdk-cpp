@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The type of a threat intel indicator.</p>
      */
+    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
+
+    /**
+     * <p>The type of a threat intel indicator.</p>
+     */
     inline void SetType(const ThreatIntelIndicatorType& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
@@ -79,6 +84,11 @@ namespace Model
      * <p>The value of a threat intel indicator.</p>
      */
     inline const Aws::String& GetValue() const{ return m_value; }
+
+    /**
+     * <p>The value of a threat intel indicator.</p>
+     */
+    inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
 
     /**
      * <p>The value of a threat intel indicator.</p>
@@ -119,6 +129,11 @@ namespace Model
     /**
      * <p>The category of a threat intel indicator.</p>
      */
+    inline bool CategoryHasBeenSet() const { return m_categoryHasBeenSet; }
+
+    /**
+     * <p>The category of a threat intel indicator.</p>
+     */
     inline void SetCategory(const ThreatIntelIndicatorCategory& value) { m_categoryHasBeenSet = true; m_category = value; }
 
     /**
@@ -141,6 +156,11 @@ namespace Model
      * <p>The date/time of the last observation of a threat intel indicator.</p>
      */
     inline const Aws::String& GetLastObservedAt() const{ return m_lastObservedAt; }
+
+    /**
+     * <p>The date/time of the last observation of a threat intel indicator.</p>
+     */
+    inline bool LastObservedAtHasBeenSet() const { return m_lastObservedAtHasBeenSet; }
 
     /**
      * <p>The date/time of the last observation of a threat intel indicator.</p>
@@ -181,6 +201,11 @@ namespace Model
     /**
      * <p>The source of the threat intel.</p>
      */
+    inline bool SourceHasBeenSet() const { return m_sourceHasBeenSet; }
+
+    /**
+     * <p>The source of the threat intel.</p>
+     */
     inline void SetSource(const Aws::String& value) { m_sourceHasBeenSet = true; m_source = value; }
 
     /**
@@ -213,6 +238,11 @@ namespace Model
      * <p>The URL for more details from the source of the threat intel.</p>
      */
     inline const Aws::String& GetSourceUrl() const{ return m_sourceUrl; }
+
+    /**
+     * <p>The URL for more details from the source of the threat intel.</p>
+     */
+    inline bool SourceUrlHasBeenSet() const { return m_sourceUrlHasBeenSet; }
 
     /**
      * <p>The URL for more details from the source of the threat intel.</p>

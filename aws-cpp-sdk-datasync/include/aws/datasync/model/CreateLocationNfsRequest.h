@@ -90,6 +90,27 @@ namespace Model
      * href="https://www.centos.org/docs/5/html/Deployment_Guide-en-US/s1-nfs-server-config-exports.html">18.7.
      * The /etc/exports Configuration File</a> in the Centos documentation. </p>
      */
+    inline bool SubdirectoryHasBeenSet() const { return m_subdirectoryHasBeenSet; }
+
+    /**
+     * <p>The subdirectory in the NFS file system that is used to read data from the
+     * NFS source location or write data to the NFS destination. The NFS path should be
+     * a path that's exported by the NFS server, or a subdirectory of that path. The
+     * path should be such that it can be mounted by other NFS clients in your network.
+     * </p> <p>To see all the paths exported by your NFS server. run "<code>showmount
+     * -e nfs-server-name</code>" from an NFS client that has access to your server.
+     * You can specify any directory that appears in the results, and any subdirectory
+     * of that directory. Ensure that the NFS export is accessible without Kerberos
+     * authentication. </p> <p>To transfer all the data in the folder you specified,
+     * DataSync needs to have permissions to read all the data. To ensure this, either
+     * configure the NFS export with <code>no_root_squash,</code> or ensure that the
+     * permissions for all of the files that you want sync allow read access for all
+     * users. Doing either enables the agent to read the files. For the agent to access
+     * directories, you must additionally enable all execute access. For information
+     * about NFS export configuration, see <a
+     * href="https://www.centos.org/docs/5/html/Deployment_Guide-en-US/s1-nfs-server-config-exports.html">18.7.
+     * The /etc/exports Configuration File</a> in the Centos documentation. </p>
+     */
     inline void SetSubdirectory(const Aws::String& value) { m_subdirectoryHasBeenSet = true; m_subdirectory = value; }
 
     /**
@@ -214,6 +235,15 @@ namespace Model
      * name must either be DNS-compliant or must be an IP version 4 (IPv4) address.</p>
      * </note>
      */
+    inline bool ServerHostnameHasBeenSet() const { return m_serverHostnameHasBeenSet; }
+
+    /**
+     * <p>The name of the NFS server. This value is the IP address or Domain Name
+     * Service (DNS) name of the NFS server. An agent that is installed on-premises
+     * uses this host name to mount the NFS server in a network. </p> <note> <p>This
+     * name must either be DNS-compliant or must be an IP version 4 (IPv4) address.</p>
+     * </note>
+     */
     inline void SetServerHostname(const Aws::String& value) { m_serverHostnameHasBeenSet = true; m_serverHostname = value; }
 
     /**
@@ -272,6 +302,12 @@ namespace Model
      * <p>Contains a list of Amazon Resource Names (ARNs) of agents that are used to
      * connect to an NFS server.</p>
      */
+    inline bool OnPremConfigHasBeenSet() const { return m_onPremConfigHasBeenSet; }
+
+    /**
+     * <p>Contains a list of Amazon Resource Names (ARNs) of agents that are used to
+     * connect to an NFS server.</p>
+     */
     inline void SetOnPremConfig(const OnPremConfig& value) { m_onPremConfigHasBeenSet = true; m_onPremConfig = value; }
 
     /**
@@ -299,6 +335,13 @@ namespace Model
      * resources.</p>
      */
     inline const Aws::Vector<TagListEntry>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>The key-value pair that represents the tag that you want to add to the
+     * location. The value can be an empty string. We recommend using tags to name your
+     * resources.</p>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
      * <p>The key-value pair that represents the tag that you want to add to the

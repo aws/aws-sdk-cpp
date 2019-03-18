@@ -53,6 +53,11 @@ namespace Model
     /**
      * <p>The name of the domain in which the activity type is registered.</p>
      */
+    inline bool DomainHasBeenSet() const { return m_domainHasBeenSet; }
+
+    /**
+     * <p>The name of the domain in which the activity type is registered.</p>
+     */
     inline void SetDomain(const Aws::String& value) { m_domainHasBeenSet = true; m_domain = value; }
 
     /**
@@ -85,6 +90,11 @@ namespace Model
      * <p>The activity type to deprecate.</p>
      */
     inline const ActivityType& GetActivityType() const{ return m_activityType; }
+
+    /**
+     * <p>The activity type to deprecate.</p>
+     */
+    inline bool ActivityTypeHasBeenSet() const { return m_activityTypeHasBeenSet; }
 
     /**
      * <p>The activity type to deprecate.</p>

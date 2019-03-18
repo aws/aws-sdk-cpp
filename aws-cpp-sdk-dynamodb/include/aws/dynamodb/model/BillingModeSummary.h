@@ -69,6 +69,17 @@ namespace Model
      * the read/write capacity mode to <code>PAY_PER_REQUEST</code>. We recommend using
      * <code>PAY_PER_REQUEST</code> for unpredictable workloads. </p> </li> </ul>
      */
+    inline bool BillingModeHasBeenSet() const { return m_billingModeHasBeenSet; }
+
+    /**
+     * <p>Controls how you are charged for read and write throughput and how you manage
+     * capacity. This setting can be changed later.</p> <ul> <li> <p>
+     * <code>PROVISIONED</code> - Sets the read/write capacity mode to
+     * <code>PROVISIONED</code>. We recommend using <code>PROVISIONED</code> for
+     * predictable workloads.</p> </li> <li> <p> <code>PAY_PER_REQUEST</code> - Sets
+     * the read/write capacity mode to <code>PAY_PER_REQUEST</code>. We recommend using
+     * <code>PAY_PER_REQUEST</code> for unpredictable workloads. </p> </li> </ul>
+     */
     inline void SetBillingMode(const BillingMode& value) { m_billingModeHasBeenSet = true; m_billingMode = value; }
 
     /**
@@ -110,6 +121,12 @@ namespace Model
      * read/write capacity mode.</p>
      */
     inline const Aws::Utils::DateTime& GetLastUpdateToPayPerRequestDateTime() const{ return m_lastUpdateToPayPerRequestDateTime; }
+
+    /**
+     * <p>Represents the time when <code>PAY_PER_REQUEST</code> was last set as the
+     * read/write capacity mode.</p>
+     */
+    inline bool LastUpdateToPayPerRequestDateTimeHasBeenSet() const { return m_lastUpdateToPayPerRequestDateTimeHasBeenSet; }
 
     /**
      * <p>Represents the time when <code>PAY_PER_REQUEST</code> was last set as the

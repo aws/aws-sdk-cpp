@@ -58,6 +58,12 @@ namespace Model
      * <p>Represents the structure of actions and stages to be performed in the
      * pipeline. </p>
      */
+    inline bool PipelineHasBeenSet() const { return m_pipelineHasBeenSet; }
+
+    /**
+     * <p>Represents the structure of actions and stages to be performed in the
+     * pipeline. </p>
+     */
     inline void SetPipeline(const PipelineDeclaration& value) { m_pipelineHasBeenSet = true; m_pipeline = value; }
 
     /**

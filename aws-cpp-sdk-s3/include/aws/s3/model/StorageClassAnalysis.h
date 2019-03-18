@@ -57,6 +57,12 @@ namespace Model
      * <p>A container used to describe how data related to the storage class analysis
      * should be exported.</p>
      */
+    inline bool DataExportHasBeenSet() const { return m_dataExportHasBeenSet; }
+
+    /**
+     * <p>A container used to describe how data related to the storage class analysis
+     * should be exported.</p>
+     */
     inline void SetDataExport(const StorageClassAnalysisDataExport& value) { m_dataExportHasBeenSet = true; m_dataExport = value; }
 
     /**

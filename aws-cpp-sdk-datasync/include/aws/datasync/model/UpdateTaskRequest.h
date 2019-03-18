@@ -58,6 +58,12 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the resource name of the task to
      * update.</p>
      */
+    inline bool TaskArnHasBeenSet() const { return m_taskArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the resource name of the task to
+     * update.</p>
+     */
     inline void SetTaskArn(const Aws::String& value) { m_taskArnHasBeenSet = true; m_taskArn = value; }
 
     /**
@@ -95,6 +101,9 @@ namespace Model
     inline const Options& GetOptions() const{ return m_options; }
 
     
+    inline bool OptionsHasBeenSet() const { return m_optionsHasBeenSet; }
+
+    
     inline void SetOptions(const Options& value) { m_optionsHasBeenSet = true; m_options = value; }
 
     
@@ -111,6 +120,11 @@ namespace Model
      * <p>The name of the task to update.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
+
+    /**
+     * <p>The name of the task to update.</p>
+     */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
      * <p>The name of the task to update.</p>

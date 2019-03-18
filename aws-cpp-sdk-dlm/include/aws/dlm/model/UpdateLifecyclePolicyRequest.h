@@ -52,6 +52,11 @@ namespace Model
     /**
      * <p>The identifier of the lifecycle policy.</p>
      */
+    inline bool PolicyIdHasBeenSet() const { return m_policyIdHasBeenSet; }
+
+    /**
+     * <p>The identifier of the lifecycle policy.</p>
+     */
     inline void SetPolicyId(const Aws::String& value) { m_policyIdHasBeenSet = true; m_policyId = value; }
 
     /**
@@ -85,6 +90,12 @@ namespace Model
      * specified by the lifecycle policy.</p>
      */
     inline const Aws::String& GetExecutionRoleArn() const{ return m_executionRoleArn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the IAM role used to run the operations
+     * specified by the lifecycle policy.</p>
+     */
+    inline bool ExecutionRoleArnHasBeenSet() const { return m_executionRoleArnHasBeenSet; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the IAM role used to run the operations
@@ -131,6 +142,11 @@ namespace Model
     /**
      * <p>The desired activation state of the lifecycle policy after creation.</p>
      */
+    inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
+
+    /**
+     * <p>The desired activation state of the lifecycle policy after creation.</p>
+     */
     inline void SetState(const SettablePolicyStateValues& value) { m_stateHasBeenSet = true; m_state = value; }
 
     /**
@@ -153,6 +169,11 @@ namespace Model
      * <p>A description of the lifecycle policy.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
+
+    /**
+     * <p>A description of the lifecycle policy.</p>
+     */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
 
     /**
      * <p>A description of the lifecycle policy.</p>
@@ -190,6 +211,12 @@ namespace Model
      * re-used across policies.</p>
      */
     inline const PolicyDetails& GetPolicyDetails() const{ return m_policyDetails; }
+
+    /**
+     * <p>The configuration of the lifecycle policy.</p> <p>Target tags cannot be
+     * re-used across policies.</p>
+     */
+    inline bool PolicyDetailsHasBeenSet() const { return m_policyDetailsHasBeenSet; }
 
     /**
      * <p>The configuration of the lifecycle policy.</p> <p>Target tags cannot be

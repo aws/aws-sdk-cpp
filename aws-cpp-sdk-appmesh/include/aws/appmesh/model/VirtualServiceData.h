@@ -59,6 +59,11 @@ namespace Model
     /**
      * <p>The name of the service mesh that the virtual service resides in.</p>
      */
+    inline bool MeshNameHasBeenSet() const { return m_meshNameHasBeenSet; }
+
+    /**
+     * <p>The name of the service mesh that the virtual service resides in.</p>
+     */
     inline void SetMeshName(const Aws::String& value) { m_meshNameHasBeenSet = true; m_meshName = value; }
 
     /**
@@ -91,6 +96,9 @@ namespace Model
     inline const ResourceMetadata& GetMetadata() const{ return m_metadata; }
 
     
+    inline bool MetadataHasBeenSet() const { return m_metadataHasBeenSet; }
+
+    
     inline void SetMetadata(const ResourceMetadata& value) { m_metadataHasBeenSet = true; m_metadata = value; }
 
     
@@ -107,6 +115,11 @@ namespace Model
      * <p>The specifications of the virtual service.</p>
      */
     inline const VirtualServiceSpec& GetSpec() const{ return m_spec; }
+
+    /**
+     * <p>The specifications of the virtual service.</p>
+     */
+    inline bool SpecHasBeenSet() const { return m_specHasBeenSet; }
 
     /**
      * <p>The specifications of the virtual service.</p>
@@ -137,6 +150,11 @@ namespace Model
     /**
      * <p>The current status of the virtual service.</p>
      */
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
+
+    /**
+     * <p>The current status of the virtual service.</p>
+     */
     inline void SetStatus(const VirtualServiceStatus& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
@@ -159,6 +177,11 @@ namespace Model
      * <p>The name of the virtual service.</p>
      */
     inline const Aws::String& GetVirtualServiceName() const{ return m_virtualServiceName; }
+
+    /**
+     * <p>The name of the virtual service.</p>
+     */
+    inline bool VirtualServiceNameHasBeenSet() const { return m_virtualServiceNameHasBeenSet; }
 
     /**
      * <p>The name of the virtual service.</p>

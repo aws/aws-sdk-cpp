@@ -59,6 +59,11 @@ namespace Model
     /**
      * <p>The ID of the namespace.</p>
      */
+    inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
+
+    /**
+     * <p>The ID of the namespace.</p>
+     */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
     /**
@@ -92,6 +97,12 @@ namespace Model
      * when you create it.</p>
      */
     inline const Aws::String& GetArn() const{ return m_arn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) that AWS Cloud Map assigns to the namespace
+     * when you create it.</p>
+     */
+    inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
 
     /**
      * <p>The Amazon Resource Name (ARN) that AWS Cloud Map assigns to the namespace
@@ -136,6 +147,13 @@ namespace Model
      * namespace.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
+
+    /**
+     * <p>The name of the namespace. When you create a namespace, AWS Cloud Map
+     * automatically creates a Route 53 hosted zone that has the same name as the
+     * namespace.</p>
+     */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
      * <p>The name of the namespace. When you create a namespace, AWS Cloud Map
@@ -188,6 +206,11 @@ namespace Model
     /**
      * <p>The type of the namespace, either public or private.</p>
      */
+    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
+
+    /**
+     * <p>The type of the namespace, either public or private.</p>
+     */
     inline void SetType(const NamespaceType& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
@@ -210,6 +233,11 @@ namespace Model
      * <p>A description for the namespace.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
+
+    /**
+     * <p>A description for the namespace.</p>
+     */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
 
     /**
      * <p>A description for the namespace.</p>
@@ -250,6 +278,11 @@ namespace Model
     /**
      * <p>The number of services that were created using the namespace.</p>
      */
+    inline bool ServiceCountHasBeenSet() const { return m_serviceCountHasBeenSet; }
+
+    /**
+     * <p>The number of services that were created using the namespace.</p>
+     */
     inline void SetServiceCount(int value) { m_serviceCountHasBeenSet = true; m_serviceCount = value; }
 
     /**
@@ -260,6 +293,9 @@ namespace Model
 
     
     inline const NamespaceProperties& GetProperties() const{ return m_properties; }
+
+    
+    inline bool PropertiesHasBeenSet() const { return m_propertiesHasBeenSet; }
 
     
     inline void SetProperties(const NamespaceProperties& value) { m_propertiesHasBeenSet = true; m_properties = value; }
@@ -278,6 +314,11 @@ namespace Model
      * <p>The date and time that the namespace was created.</p>
      */
     inline const Aws::Utils::DateTime& GetCreateDate() const{ return m_createDate; }
+
+    /**
+     * <p>The date and time that the namespace was created.</p>
+     */
+    inline bool CreateDateHasBeenSet() const { return m_createDateHasBeenSet; }
 
     /**
      * <p>The date and time that the namespace was created.</p>

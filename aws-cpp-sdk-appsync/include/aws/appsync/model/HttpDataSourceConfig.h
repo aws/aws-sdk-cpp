@@ -62,6 +62,14 @@ namespace Model
      * specified, AWS AppSync uses the default port 80 for the HTTP endpoint and port
      * 443 for HTTPS endpoints.</p>
      */
+    inline bool EndpointHasBeenSet() const { return m_endpointHasBeenSet; }
+
+    /**
+     * <p>The HTTP URL endpoint. You can either specify the domain name or IP, and port
+     * combination, and the URL scheme must be HTTP or HTTPS. If the port is not
+     * specified, AWS AppSync uses the default port 80 for the HTTP endpoint and port
+     * 443 for HTTPS endpoints.</p>
+     */
     inline void SetEndpoint(const Aws::String& value) { m_endpointHasBeenSet = true; m_endpoint = value; }
 
     /**
@@ -110,6 +118,12 @@ namespace Model
      * authorization.</p>
      */
     inline const AuthorizationConfig& GetAuthorizationConfig() const{ return m_authorizationConfig; }
+
+    /**
+     * <p>The authorization config in case the HTTP endpoint requires
+     * authorization.</p>
+     */
+    inline bool AuthorizationConfigHasBeenSet() const { return m_authorizationConfigHasBeenSet; }
 
     /**
      * <p>The authorization config in case the HTTP endpoint requires

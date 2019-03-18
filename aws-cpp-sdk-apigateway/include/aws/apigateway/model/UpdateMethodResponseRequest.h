@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
      */
+    inline bool RestApiIdHasBeenSet() const { return m_restApiIdHasBeenSet; }
+
+    /**
+     * <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
+     */
     inline void SetRestApiId(const Aws::String& value) { m_restApiIdHasBeenSet = true; m_restApiId = value; }
 
     /**
@@ -89,6 +94,12 @@ namespace Model
      * resource.</p>
      */
     inline const Aws::String& GetResourceId() const{ return m_resourceId; }
+
+    /**
+     * <p>[Required] The <a>Resource</a> identifier for the <a>MethodResponse</a>
+     * resource.</p>
+     */
+    inline bool ResourceIdHasBeenSet() const { return m_resourceIdHasBeenSet; }
 
     /**
      * <p>[Required] The <a>Resource</a> identifier for the <a>MethodResponse</a>
@@ -135,6 +146,11 @@ namespace Model
     /**
      * <p>[Required] The HTTP verb of the <a>Method</a> resource.</p>
      */
+    inline bool HttpMethodHasBeenSet() const { return m_httpMethodHasBeenSet; }
+
+    /**
+     * <p>[Required] The HTTP verb of the <a>Method</a> resource.</p>
+     */
     inline void SetHttpMethod(const Aws::String& value) { m_httpMethodHasBeenSet = true; m_httpMethod = value; }
 
     /**
@@ -167,6 +183,11 @@ namespace Model
      * <p>[Required] The status code for the <a>MethodResponse</a> resource.</p>
      */
     inline const Aws::String& GetStatusCode() const{ return m_statusCode; }
+
+    /**
+     * <p>[Required] The status code for the <a>MethodResponse</a> resource.</p>
+     */
+    inline bool StatusCodeHasBeenSet() const { return m_statusCodeHasBeenSet; }
 
     /**
      * <p>[Required] The status code for the <a>MethodResponse</a> resource.</p>
@@ -204,6 +225,12 @@ namespace Model
      * the order specified in this list.</p>
      */
     inline const Aws::Vector<PatchOperation>& GetPatchOperations() const{ return m_patchOperations; }
+
+    /**
+     * <p>A list of update operations to be applied to the specified resource and in
+     * the order specified in this list.</p>
+     */
+    inline bool PatchOperationsHasBeenSet() const { return m_patchOperationsHasBeenSet; }
 
     /**
      * <p>A list of update operations to be applied to the specified resource and in

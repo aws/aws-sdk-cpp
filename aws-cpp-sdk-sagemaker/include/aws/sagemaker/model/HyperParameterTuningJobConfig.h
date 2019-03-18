@@ -69,6 +69,16 @@ namespace Model
      * href="http://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-how-it-works.html">How
      * Hyperparameter Tuning Works</a>.</p>
      */
+    inline bool StrategyHasBeenSet() const { return m_strategyHasBeenSet; }
+
+    /**
+     * <p>Specifies how hyperparameter tuning chooses the combinations of
+     * hyperparameter values to use for the training job it launches. To use the
+     * Bayesian search stategy, set this to <code>Bayesian</code>. To randomly search,
+     * set it to <code>Random</code>. For information about search strategies, see <a
+     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-how-it-works.html">How
+     * Hyperparameter Tuning Works</a>.</p>
+     */
     inline void SetStrategy(const HyperParameterTuningJobStrategyType& value) { m_strategyHasBeenSet = true; m_strategy = value; }
 
     /**
@@ -112,6 +122,12 @@ namespace Model
      * <p>The <a>HyperParameterTuningJobObjective</a> object that specifies the
      * objective metric for this tuning job.</p>
      */
+    inline bool HyperParameterTuningJobObjectiveHasBeenSet() const { return m_hyperParameterTuningJobObjectiveHasBeenSet; }
+
+    /**
+     * <p>The <a>HyperParameterTuningJobObjective</a> object that specifies the
+     * objective metric for this tuning job.</p>
+     */
     inline void SetHyperParameterTuningJobObjective(const HyperParameterTuningJobObjective& value) { m_hyperParameterTuningJobObjectiveHasBeenSet = true; m_hyperParameterTuningJobObjective = value; }
 
     /**
@@ -143,6 +159,12 @@ namespace Model
      * <p>The <a>ResourceLimits</a> object that specifies the maximum number of
      * training jobs and parallel training jobs for this tuning job.</p>
      */
+    inline bool ResourceLimitsHasBeenSet() const { return m_resourceLimitsHasBeenSet; }
+
+    /**
+     * <p>The <a>ResourceLimits</a> object that specifies the maximum number of
+     * training jobs and parallel training jobs for this tuning job.</p>
+     */
     inline void SetResourceLimits(const ResourceLimits& value) { m_resourceLimitsHasBeenSet = true; m_resourceLimits = value; }
 
     /**
@@ -169,6 +191,12 @@ namespace Model
      * hyperparameters that this tuning job searches.</p>
      */
     inline const ParameterRanges& GetParameterRanges() const{ return m_parameterRanges; }
+
+    /**
+     * <p>The <a>ParameterRanges</a> object that specifies the ranges of
+     * hyperparameters that this tuning job searches.</p>
+     */
+    inline bool ParameterRangesHasBeenSet() const { return m_parameterRangesHasBeenSet; }
 
     /**
      * <p>The <a>ParameterRanges</a> object that specifies the ranges of
@@ -207,6 +235,19 @@ namespace Model
      * Training Jobs Early</a>.</p> </dd> </dl>
      */
     inline const TrainingJobEarlyStoppingType& GetTrainingJobEarlyStoppingType() const{ return m_trainingJobEarlyStoppingType; }
+
+    /**
+     * <p>Specifies whether to use early stopping for training jobs launched by the
+     * hyperparameter tuning job. This can be one of the following values (the default
+     * value is <code>OFF</code>):</p> <dl> <dt>OFF</dt> <dd> <p>Training jobs launched
+     * by the hyperparameter tuning job do not use early stopping.</p> </dd>
+     * <dt>AUTO</dt> <dd> <p>Amazon SageMaker stops training jobs launched by the
+     * hyperparameter tuning job when they are unlikely to perform better than
+     * previously completed training jobs. For more information, see <a
+     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-early-stopping.html">Stop
+     * Training Jobs Early</a>.</p> </dd> </dl>
+     */
+    inline bool TrainingJobEarlyStoppingTypeHasBeenSet() const { return m_trainingJobEarlyStoppingTypeHasBeenSet; }
 
     /**
      * <p>Specifies whether to use early stopping for training jobs launched by the

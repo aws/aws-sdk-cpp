@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The ARN of the high-availability partition group to delete.</p>
      */
+    inline bool HapgArnHasBeenSet() const { return m_hapgArnHasBeenSet; }
+
+    /**
+     * <p>The ARN of the high-availability partition group to delete.</p>
+     */
     inline void SetHapgArn(const Aws::String& value) { m_hapgArnHasBeenSet = true; m_hapgArn = value; }
 
     /**

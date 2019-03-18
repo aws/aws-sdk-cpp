@@ -68,6 +68,15 @@ namespace Model
      * address range cannot be changed after the Client VPN endpoint has been created.
      * The CIDR block should be /22 or greater.</p>
      */
+    inline bool ClientCidrBlockHasBeenSet() const { return m_clientCidrBlockHasBeenSet; }
+
+    /**
+     * <p>The IPv4 address range, in CIDR notation, from which to assign client IP
+     * addresses. The address range cannot overlap with the local CIDR of the VPC in
+     * which the associated subnet is located, or the routes that you add manually. The
+     * address range cannot be changed after the Client VPN endpoint has been created.
+     * The CIDR block should be /22 or greater.</p>
+     */
     inline void SetClientCidrBlock(const Aws::String& value) { m_clientCidrBlockHasBeenSet = true; m_clientCidrBlock = value; }
 
     /**
@@ -128,6 +137,13 @@ namespace Model
      * href="https://docs.aws.amazon.com/acm/latest/userguide/">AWS Certificate Manager
      * User Guide</a>.</p>
      */
+    inline bool ServerCertificateArnHasBeenSet() const { return m_serverCertificateArnHasBeenSet; }
+
+    /**
+     * <p>The ARN of the server certificate. For more information, see the <a
+     * href="https://docs.aws.amazon.com/acm/latest/userguide/">AWS Certificate Manager
+     * User Guide</a>.</p>
+     */
     inline void SetServerCertificateArn(const Aws::String& value) { m_serverCertificateArnHasBeenSet = true; m_serverCertificateArn = value; }
 
     /**
@@ -171,6 +187,12 @@ namespace Model
      * clients.</p>
      */
     inline const Aws::Vector<ClientVpnAuthenticationRequest>& GetAuthenticationOptions() const{ return m_authenticationOptions; }
+
+    /**
+     * <p>Information about the authentication method to be used to authenticate
+     * clients.</p>
+     */
+    inline bool AuthenticationOptionsHasBeenSet() const { return m_authenticationOptionsHasBeenSet; }
 
     /**
      * <p>Information about the authentication method to be used to authenticate
@@ -227,6 +249,16 @@ namespace Model
      * unsuccessful)</p> </li> <li> <p>Reasons for unsuccessful client connection
      * requests</p> </li> <li> <p>Client connection termination time</p> </li> </ul>
      */
+    inline bool ConnectionLogOptionsHasBeenSet() const { return m_connectionLogOptionsHasBeenSet; }
+
+    /**
+     * <p>Information about the client connection logging options.</p> <p>If you enable
+     * client connection logging, data about client connections is sent to a Cloudwatch
+     * Logs log stream. The following information is logged:</p> <ul> <li> <p>Client
+     * connection requests</p> </li> <li> <p>Client connection results (successful and
+     * unsuccessful)</p> </li> <li> <p>Reasons for unsuccessful client connection
+     * requests</p> </li> <li> <p>Client connection termination time</p> </li> </ul>
+     */
     inline void SetConnectionLogOptions(const ConnectionLogOptions& value) { m_connectionLogOptionsHasBeenSet = true; m_connectionLogOptions = value; }
 
     /**
@@ -267,6 +299,14 @@ namespace Model
      * the DNS server.</p>
      */
     inline const Aws::Vector<Aws::String>& GetDnsServers() const{ return m_dnsServers; }
+
+    /**
+     * <p>Information about the DNS servers to be used for DNS resolution. A Client VPN
+     * endpoint can have up to two DNS servers. If no DNS server is specified, the DNS
+     * address of the VPC that is to be associated with Client VPN endpoint is used as
+     * the DNS server.</p>
+     */
+    inline bool DnsServersHasBeenSet() const { return m_dnsServersHasBeenSet; }
 
     /**
      * <p>Information about the DNS servers to be used for DNS resolution. A Client VPN
@@ -335,6 +375,12 @@ namespace Model
      * <p>The transport protocol to be used by the VPN session.</p> <p>Default value:
      * <code>udp</code> </p>
      */
+    inline bool TransportProtocolHasBeenSet() const { return m_transportProtocolHasBeenSet; }
+
+    /**
+     * <p>The transport protocol to be used by the VPN session.</p> <p>Default value:
+     * <code>udp</code> </p>
+     */
     inline void SetTransportProtocol(const TransportProtocol& value) { m_transportProtocolHasBeenSet = true; m_transportProtocol = value; }
 
     /**
@@ -360,6 +406,11 @@ namespace Model
      * <p>A brief description of the Client VPN endpoint.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
+
+    /**
+     * <p>A brief description of the Client VPN endpoint.</p>
+     */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
 
     /**
      * <p>A brief description of the Client VPN endpoint.</p>
@@ -406,6 +457,14 @@ namespace Model
      * required permissions, the error response is <code>DryRunOperation</code>.
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
+    inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
+
+    /**
+     * <p>Checks whether you have the required permissions for the action, without
+     * actually making the request, and provides an error response. If you have the
+     * required permissions, the error response is <code>DryRunOperation</code>.
+     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+     */
     inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
 
     /**
@@ -424,6 +483,14 @@ namespace Model
      * How to Ensure Idempotency</a>.</p>
      */
     inline const Aws::String& GetClientToken() const{ return m_clientToken; }
+
+    /**
+     * <p>Unique, case-sensitive identifier you provide to ensure the idempotency of
+     * the request. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">
+     * How to Ensure Idempotency</a>.</p>
+     */
+    inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
 
     /**
      * <p>Unique, case-sensitive identifier you provide to ensure the idempotency of
@@ -478,6 +545,11 @@ namespace Model
      * <p>The tags to apply to the Client VPN endpoint during creation.</p>
      */
     inline const Aws::Vector<TagSpecification>& GetTagSpecifications() const{ return m_tagSpecifications; }
+
+    /**
+     * <p>The tags to apply to the Client VPN endpoint during creation.</p>
+     */
+    inline bool TagSpecificationsHasBeenSet() const { return m_tagSpecificationsHasBeenSet; }
 
     /**
      * <p>The tags to apply to the Client VPN endpoint during creation.</p>

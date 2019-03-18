@@ -56,6 +56,12 @@ namespace Model
      * <p>The level of confidence that Amazon Comprehend has in the accuracy of its
      * detection of the <code>POSITIVE</code> sentiment.</p>
      */
+    inline bool PositiveHasBeenSet() const { return m_positiveHasBeenSet; }
+
+    /**
+     * <p>The level of confidence that Amazon Comprehend has in the accuracy of its
+     * detection of the <code>POSITIVE</code> sentiment.</p>
+     */
     inline void SetPositive(double value) { m_positiveHasBeenSet = true; m_positive = value; }
 
     /**
@@ -70,6 +76,12 @@ namespace Model
      * detection of the <code>NEGATIVE</code> sentiment.</p>
      */
     inline double GetNegative() const{ return m_negative; }
+
+    /**
+     * <p>The level of confidence that Amazon Comprehend has in the accuracy of its
+     * detection of the <code>NEGATIVE</code> sentiment.</p>
+     */
+    inline bool NegativeHasBeenSet() const { return m_negativeHasBeenSet; }
 
     /**
      * <p>The level of confidence that Amazon Comprehend has in the accuracy of its
@@ -94,6 +106,12 @@ namespace Model
      * <p>The level of confidence that Amazon Comprehend has in the accuracy of its
      * detection of the <code>NEUTRAL</code> sentiment.</p>
      */
+    inline bool NeutralHasBeenSet() const { return m_neutralHasBeenSet; }
+
+    /**
+     * <p>The level of confidence that Amazon Comprehend has in the accuracy of its
+     * detection of the <code>NEUTRAL</code> sentiment.</p>
+     */
     inline void SetNeutral(double value) { m_neutralHasBeenSet = true; m_neutral = value; }
 
     /**
@@ -108,6 +126,12 @@ namespace Model
      * detection of the <code>MIXED</code> sentiment.</p>
      */
     inline double GetMixed() const{ return m_mixed; }
+
+    /**
+     * <p>The level of confidence that Amazon Comprehend has in the accuracy of its
+     * detection of the <code>MIXED</code> sentiment.</p>
+     */
+    inline bool MixedHasBeenSet() const { return m_mixedHasBeenSet; }
 
     /**
      * <p>The level of confidence that Amazon Comprehend has in the accuracy of its

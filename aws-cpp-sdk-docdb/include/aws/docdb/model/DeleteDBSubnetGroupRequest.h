@@ -64,6 +64,14 @@ namespace Model
      * the name of an existing <code>DBSubnetGroup</code>. Must not be default.</p>
      * <p>Example: <code>mySubnetgroup</code> </p>
      */
+    inline bool DBSubnetGroupNameHasBeenSet() const { return m_dBSubnetGroupNameHasBeenSet; }
+
+    /**
+     * <p>The name of the database subnet group to delete.</p> <note> <p>You can't
+     * delete the default subnet group.</p> </note> <p>Constraints:</p> <p>Must match
+     * the name of an existing <code>DBSubnetGroup</code>. Must not be default.</p>
+     * <p>Example: <code>mySubnetgroup</code> </p>
+     */
     inline void SetDBSubnetGroupName(const Aws::String& value) { m_dBSubnetGroupNameHasBeenSet = true; m_dBSubnetGroupName = value; }
 
     /**

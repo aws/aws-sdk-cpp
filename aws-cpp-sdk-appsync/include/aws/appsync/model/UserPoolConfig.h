@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The user pool ID.</p>
      */
+    inline bool UserPoolIdHasBeenSet() const { return m_userPoolIdHasBeenSet; }
+
+    /**
+     * <p>The user pool ID.</p>
+     */
     inline void SetUserPoolId(const Aws::String& value) { m_userPoolIdHasBeenSet = true; m_userPoolId = value; }
 
     /**
@@ -89,6 +94,11 @@ namespace Model
      * <p>The AWS Region in which the user pool was created.</p>
      */
     inline const Aws::String& GetAwsRegion() const{ return m_awsRegion; }
+
+    /**
+     * <p>The AWS Region in which the user pool was created.</p>
+     */
+    inline bool AwsRegionHasBeenSet() const { return m_awsRegionHasBeenSet; }
 
     /**
      * <p>The AWS Region in which the user pool was created.</p>
@@ -133,6 +143,13 @@ namespace Model
      * Amazon Cognito user pool authentication doesn't match the Amazon Cognito user
      * pool configuration.</p>
      */
+    inline bool DefaultActionHasBeenSet() const { return m_defaultActionHasBeenSet; }
+
+    /**
+     * <p>The action that you want your GraphQL API to take when a request that uses
+     * Amazon Cognito user pool authentication doesn't match the Amazon Cognito user
+     * pool configuration.</p>
+     */
     inline void SetDefaultAction(const DefaultAction& value) { m_defaultActionHasBeenSet = true; m_defaultAction = value; }
 
     /**
@@ -162,6 +179,12 @@ namespace Model
      * client ID.</p>
      */
     inline const Aws::String& GetAppIdClientRegex() const{ return m_appIdClientRegex; }
+
+    /**
+     * <p>A regular expression for validating the incoming Amazon Cognito user pool app
+     * client ID.</p>
+     */
+    inline bool AppIdClientRegexHasBeenSet() const { return m_appIdClientRegexHasBeenSet; }
 
     /**
      * <p>A regular expression for validating the incoming Amazon Cognito user pool app

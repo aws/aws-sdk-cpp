@@ -61,6 +61,12 @@ namespace Model
      * <p>The <a>InputLambdaProcessor</a> that is used to preprocess the records in the
      * stream before being processed by your application code.</p>
      */
+    inline bool InputLambdaProcessorHasBeenSet() const { return m_inputLambdaProcessorHasBeenSet; }
+
+    /**
+     * <p>The <a>InputLambdaProcessor</a> that is used to preprocess the records in the
+     * stream before being processed by your application code.</p>
+     */
     inline void SetInputLambdaProcessor(const InputLambdaProcessor& value) { m_inputLambdaProcessorHasBeenSet = true; m_inputLambdaProcessor = value; }
 
     /**

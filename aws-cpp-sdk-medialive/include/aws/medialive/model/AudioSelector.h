@@ -58,6 +58,12 @@ namespace Model
      * The name of this AudioSelector. AudioDescriptions will use this name to uniquely
      * identify this Selector.  Selector names should be unique per input.
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * The name of this AudioSelector. AudioDescriptions will use this name to uniquely
+     * identify this Selector.  Selector names should be unique per input.
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
@@ -95,6 +101,11 @@ namespace Model
      * The audio selector settings.
      */
     inline const AudioSelectorSettings& GetSelectorSettings() const{ return m_selectorSettings; }
+
+    /**
+     * The audio selector settings.
+     */
+    inline bool SelectorSettingsHasBeenSet() const { return m_selectorSettingsHasBeenSet; }
 
     /**
      * The audio selector settings.

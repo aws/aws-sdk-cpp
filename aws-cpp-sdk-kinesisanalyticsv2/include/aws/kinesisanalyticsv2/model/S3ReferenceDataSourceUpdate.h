@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the S3 bucket.</p>
      */
+    inline bool BucketARNUpdateHasBeenSet() const { return m_bucketARNUpdateHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the S3 bucket.</p>
+     */
     inline void SetBucketARNUpdate(const Aws::String& value) { m_bucketARNUpdateHasBeenSet = true; m_bucketARNUpdate = value; }
 
     /**
@@ -89,6 +94,11 @@ namespace Model
      * <p>The object key name.</p>
      */
     inline const Aws::String& GetFileKeyUpdate() const{ return m_fileKeyUpdate; }
+
+    /**
+     * <p>The object key name.</p>
+     */
+    inline bool FileKeyUpdateHasBeenSet() const { return m_fileKeyUpdateHasBeenSet; }
 
     /**
      * <p>The object key name.</p>

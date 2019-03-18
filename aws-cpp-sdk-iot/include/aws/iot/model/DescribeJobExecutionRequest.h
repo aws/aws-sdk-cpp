@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The unique identifier you assigned to this job when it was created.</p>
      */
+    inline bool JobIdHasBeenSet() const { return m_jobIdHasBeenSet; }
+
+    /**
+     * <p>The unique identifier you assigned to this job when it was created.</p>
+     */
     inline void SetJobId(const Aws::String& value) { m_jobIdHasBeenSet = true; m_jobId = value; }
 
     /**
@@ -88,6 +93,11 @@ namespace Model
      * <p>The name of the thing on which the job execution is running.</p>
      */
     inline const Aws::String& GetThingName() const{ return m_thingName; }
+
+    /**
+     * <p>The name of the thing on which the job execution is running.</p>
+     */
+    inline bool ThingNameHasBeenSet() const { return m_thingNameHasBeenSet; }
 
     /**
      * <p>The name of the thing on which the job execution is running.</p>
@@ -125,6 +135,12 @@ namespace Model
      * particular job execution on a particular device.</p>
      */
     inline long long GetExecutionNumber() const{ return m_executionNumber; }
+
+    /**
+     * <p>A string (consisting of the digits "0" through "9" which is used to specify a
+     * particular job execution on a particular device.</p>
+     */
+    inline bool ExecutionNumberHasBeenSet() const { return m_executionNumberHasBeenSet; }
 
     /**
      * <p>A string (consisting of the digits "0" through "9" which is used to specify a

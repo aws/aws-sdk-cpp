@@ -57,6 +57,11 @@ namespace Model
     /**
      * List of campaign activities
      */
+    inline bool ItemHasBeenSet() const { return m_itemHasBeenSet; }
+
+    /**
+     * List of campaign activities
+     */
     inline void SetItem(const Aws::Vector<ActivityResponse>& value) { m_itemHasBeenSet = true; m_item = value; }
 
     /**
@@ -90,6 +95,12 @@ namespace Model
      * in a paginated response.
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
+    /**
+     * The string that you use in a subsequent request to get the next page of results
+     * in a paginated response.
+     */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
      * The string that you use in a subsequent request to get the next page of results

@@ -61,6 +61,12 @@ namespace Model
      * <p>The name of the labeling job. This name is used to identify the job in a list
      * of labeling jobs.</p>
      */
+    inline bool LabelingJobNameHasBeenSet() const { return m_labelingJobNameHasBeenSet; }
+
+    /**
+     * <p>The name of the labeling job. This name is used to identify the job in a list
+     * of labeling jobs.</p>
+     */
     inline void SetLabelingJobName(const Aws::String& value) { m_labelingJobNameHasBeenSet = true; m_labelingJobName = value; }
 
     /**
@@ -103,6 +109,16 @@ namespace Model
      * "-ref".</p>
      */
     inline const Aws::String& GetLabelAttributeName() const{ return m_labelAttributeName; }
+
+    /**
+     * <p>The attribute name to use for the label in the output manifest file. This is
+     * the key for the key/value pair formed with the label that a worker assigns to
+     * the object. The name can't end with "-metadata". If you are running a semantic
+     * segmentation labeling job, the attribute name must end with "-ref". If you are
+     * running any other kind of labeling job, the attribute name must not end with
+     * "-ref".</p>
+     */
+    inline bool LabelAttributeNameHasBeenSet() const { return m_labelAttributeNameHasBeenSet; }
 
     /**
      * <p>The attribute name to use for the label in the output manifest file. This is
@@ -177,6 +193,13 @@ namespace Model
      * objects and the location of the manifest file that describes the data
      * objects.</p>
      */
+    inline bool InputConfigHasBeenSet() const { return m_inputConfigHasBeenSet; }
+
+    /**
+     * <p>Input data for the labeling job, such as the Amazon S3 location of the data
+     * objects and the location of the manifest file that describes the data
+     * objects.</p>
+     */
     inline void SetInputConfig(const LabelingJobInputConfig& value) { m_inputConfigHasBeenSet = true; m_inputConfig = value; }
 
     /**
@@ -211,6 +234,12 @@ namespace Model
      * <p>The location of the output data and the AWS Key Management Service key ID for
      * the key used to encrypt the output data, if any.</p>
      */
+    inline bool OutputConfigHasBeenSet() const { return m_outputConfigHasBeenSet; }
+
+    /**
+     * <p>The location of the output data and the AWS Key Management Service key ID for
+     * the key used to encrypt the output data, if any.</p>
+     */
     inline void SetOutputConfig(const LabelingJobOutputConfig& value) { m_outputConfigHasBeenSet = true; m_outputConfig = value; }
 
     /**
@@ -239,6 +268,14 @@ namespace Model
      * labeling.</p>
      */
     inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
+
+    /**
+     * <p>The Amazon Resource Number (ARN) that Amazon SageMaker assumes to perform
+     * tasks on your behalf during data labeling. You must grant this role the
+     * necessary permissions so that Amazon SageMaker can successfully complete data
+     * labeling.</p>
+     */
+    inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
 
     /**
      * <p>The Amazon Resource Number (ARN) that Amazon SageMaker assumes to perform
@@ -301,6 +338,19 @@ namespace Model
      * <code>}</code> </p>
      */
     inline const Aws::String& GetLabelCategoryConfigS3Uri() const{ return m_labelCategoryConfigS3Uri; }
+
+    /**
+     * <p>The S3 URL of the file that defines the categories used to label the data
+     * objects.</p> <p>The file is a JSON structure in the following format:</p> <p>
+     * <code>{</code> </p> <p> <code> "document-version": "2018-11-28"</code> </p> <p>
+     * <code> "labels": [</code> </p> <p> <code> {</code> </p> <p> <code> "label":
+     * "<i>label 1</i>"</code> </p> <p> <code> },</code> </p> <p> <code> {</code> </p>
+     * <p> <code> "label": "<i>label 2</i>"</code> </p> <p> <code> },</code> </p> <p>
+     * <code> ...</code> </p> <p> <code> {</code> </p> <p> <code> "label": "<i>label
+     * n</i>"</code> </p> <p> <code> }</code> </p> <p> <code> ]</code> </p> <p>
+     * <code>}</code> </p>
+     */
+    inline bool LabelCategoryConfigS3UriHasBeenSet() const { return m_labelCategoryConfigS3UriHasBeenSet; }
 
     /**
      * <p>The S3 URL of the file that defines the categories used to label the data
@@ -393,6 +443,13 @@ namespace Model
      * are met, the job is automatically stopped. You can use these conditions to
      * control the cost of data labeling.</p>
      */
+    inline bool StoppingConditionsHasBeenSet() const { return m_stoppingConditionsHasBeenSet; }
+
+    /**
+     * <p>A set of conditions for stopping the labeling job. If any of the conditions
+     * are met, the job is automatically stopped. You can use these conditions to
+     * control the cost of data labeling.</p>
+     */
     inline void SetStoppingConditions(const LabelingJobStoppingConditions& value) { m_stoppingConditionsHasBeenSet = true; m_stoppingConditions = value; }
 
     /**
@@ -425,6 +482,11 @@ namespace Model
     /**
      * <p>Configures the information required to perform automated data labeling.</p>
      */
+    inline bool LabelingJobAlgorithmsConfigHasBeenSet() const { return m_labelingJobAlgorithmsConfigHasBeenSet; }
+
+    /**
+     * <p>Configures the information required to perform automated data labeling.</p>
+     */
     inline void SetLabelingJobAlgorithmsConfig(const LabelingJobAlgorithmsConfig& value) { m_labelingJobAlgorithmsConfigHasBeenSet = true; m_labelingJobAlgorithmsConfig = value; }
 
     /**
@@ -448,6 +510,12 @@ namespace Model
      * task.</p>
      */
     inline const HumanTaskConfig& GetHumanTaskConfig() const{ return m_humanTaskConfig; }
+
+    /**
+     * <p>Configures the information required for human workers to complete a labeling
+     * task.</p>
+     */
+    inline bool HumanTaskConfigHasBeenSet() const { return m_humanTaskConfigHasBeenSet; }
 
     /**
      * <p>Configures the information required for human workers to complete a labeling
@@ -481,6 +549,14 @@ namespace Model
      * Guide</i>.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>An array of key/value pairs. For more information, see <a
+     * href="http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-what">Using
+     * Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management User
+     * Guide</i>.</p>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
      * <p>An array of key/value pairs. For more information, see <a

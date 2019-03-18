@@ -120,6 +120,11 @@ void ElasticTranscoderClient::OverrideEndpoint(const Aws::String& endpoint)
 }
 CancelJobOutcome ElasticTranscoderClient::CancelJob(const CancelJobRequest& request) const
 {
+  if (!request.IdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("CancelJob", "Required field: Id, is not set");
+    return CancelJobOutcome(Aws::Client::AWSError<ElasticTranscoderErrors>(ElasticTranscoderErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Id]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/2012-09-25/jobs/";
@@ -261,6 +266,11 @@ void ElasticTranscoderClient::CreatePresetAsyncHelper(const CreatePresetRequest&
 
 DeletePipelineOutcome ElasticTranscoderClient::DeletePipeline(const DeletePipelineRequest& request) const
 {
+  if (!request.IdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeletePipeline", "Required field: Id, is not set");
+    return DeletePipelineOutcome(Aws::Client::AWSError<ElasticTranscoderErrors>(ElasticTranscoderErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Id]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/2012-09-25/pipelines/";
@@ -297,6 +307,11 @@ void ElasticTranscoderClient::DeletePipelineAsyncHelper(const DeletePipelineRequ
 
 DeletePresetOutcome ElasticTranscoderClient::DeletePreset(const DeletePresetRequest& request) const
 {
+  if (!request.IdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeletePreset", "Required field: Id, is not set");
+    return DeletePresetOutcome(Aws::Client::AWSError<ElasticTranscoderErrors>(ElasticTranscoderErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Id]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/2012-09-25/presets/";
@@ -333,6 +348,11 @@ void ElasticTranscoderClient::DeletePresetAsyncHelper(const DeletePresetRequest&
 
 ListJobsByPipelineOutcome ElasticTranscoderClient::ListJobsByPipeline(const ListJobsByPipelineRequest& request) const
 {
+  if (!request.PipelineIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListJobsByPipeline", "Required field: PipelineId, is not set");
+    return ListJobsByPipelineOutcome(Aws::Client::AWSError<ElasticTranscoderErrors>(ElasticTranscoderErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [PipelineId]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/2012-09-25/jobsByPipeline/";
@@ -369,6 +389,11 @@ void ElasticTranscoderClient::ListJobsByPipelineAsyncHelper(const ListJobsByPipe
 
 ListJobsByStatusOutcome ElasticTranscoderClient::ListJobsByStatus(const ListJobsByStatusRequest& request) const
 {
+  if (!request.StatusHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListJobsByStatus", "Required field: Status, is not set");
+    return ListJobsByStatusOutcome(Aws::Client::AWSError<ElasticTranscoderErrors>(ElasticTranscoderErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Status]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/2012-09-25/jobsByStatus/";
@@ -475,6 +500,11 @@ void ElasticTranscoderClient::ListPresetsAsyncHelper(const ListPresetsRequest& r
 
 ReadJobOutcome ElasticTranscoderClient::ReadJob(const ReadJobRequest& request) const
 {
+  if (!request.IdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ReadJob", "Required field: Id, is not set");
+    return ReadJobOutcome(Aws::Client::AWSError<ElasticTranscoderErrors>(ElasticTranscoderErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Id]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/2012-09-25/jobs/";
@@ -511,6 +541,11 @@ void ElasticTranscoderClient::ReadJobAsyncHelper(const ReadJobRequest& request, 
 
 ReadPipelineOutcome ElasticTranscoderClient::ReadPipeline(const ReadPipelineRequest& request) const
 {
+  if (!request.IdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ReadPipeline", "Required field: Id, is not set");
+    return ReadPipelineOutcome(Aws::Client::AWSError<ElasticTranscoderErrors>(ElasticTranscoderErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Id]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/2012-09-25/pipelines/";
@@ -547,6 +582,11 @@ void ElasticTranscoderClient::ReadPipelineAsyncHelper(const ReadPipelineRequest&
 
 ReadPresetOutcome ElasticTranscoderClient::ReadPreset(const ReadPresetRequest& request) const
 {
+  if (!request.IdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ReadPreset", "Required field: Id, is not set");
+    return ReadPresetOutcome(Aws::Client::AWSError<ElasticTranscoderErrors>(ElasticTranscoderErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Id]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/2012-09-25/presets/";
@@ -583,6 +623,11 @@ void ElasticTranscoderClient::ReadPresetAsyncHelper(const ReadPresetRequest& req
 
 UpdatePipelineOutcome ElasticTranscoderClient::UpdatePipeline(const UpdatePipelineRequest& request) const
 {
+  if (!request.IdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdatePipeline", "Required field: Id, is not set");
+    return UpdatePipelineOutcome(Aws::Client::AWSError<ElasticTranscoderErrors>(ElasticTranscoderErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Id]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/2012-09-25/pipelines/";
@@ -619,6 +664,11 @@ void ElasticTranscoderClient::UpdatePipelineAsyncHelper(const UpdatePipelineRequ
 
 UpdatePipelineNotificationsOutcome ElasticTranscoderClient::UpdatePipelineNotifications(const UpdatePipelineNotificationsRequest& request) const
 {
+  if (!request.IdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdatePipelineNotifications", "Required field: Id, is not set");
+    return UpdatePipelineNotificationsOutcome(Aws::Client::AWSError<ElasticTranscoderErrors>(ElasticTranscoderErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Id]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/2012-09-25/pipelines/";
@@ -656,6 +706,11 @@ void ElasticTranscoderClient::UpdatePipelineNotificationsAsyncHelper(const Updat
 
 UpdatePipelineStatusOutcome ElasticTranscoderClient::UpdatePipelineStatus(const UpdatePipelineStatusRequest& request) const
 {
+  if (!request.IdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdatePipelineStatus", "Required field: Id, is not set");
+    return UpdatePipelineStatusOutcome(Aws::Client::AWSError<ElasticTranscoderErrors>(ElasticTranscoderErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Id]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/2012-09-25/pipelines/";

@@ -52,6 +52,11 @@ namespace Model
     /**
      * <p>The name of an existing application</p>
      */
+    inline bool ApplicationNameHasBeenSet() const { return m_applicationNameHasBeenSet; }
+
+    /**
+     * <p>The name of an existing application</p>
+     */
     inline void SetApplicationName(const Aws::String& value) { m_applicationNameHasBeenSet = true; m_applicationName = value; }
 
     /**
@@ -84,6 +89,11 @@ namespace Model
      * <p>An identifier for the application snapshot.</p>
      */
     inline const Aws::String& GetSnapshotName() const{ return m_snapshotName; }
+
+    /**
+     * <p>An identifier for the application snapshot.</p>
+     */
+    inline bool SnapshotNameHasBeenSet() const { return m_snapshotNameHasBeenSet; }
 
     /**
      * <p>An identifier for the application snapshot.</p>

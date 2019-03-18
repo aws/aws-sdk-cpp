@@ -59,6 +59,11 @@ namespace Model
     /**
      * <p>The ID of the customer gateway.</p>
      */
+    inline bool CustomerGatewayIdHasBeenSet() const { return m_customerGatewayIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the customer gateway.</p>
+     */
     inline void SetCustomerGatewayId(const Aws::String& value) { m_customerGatewayIdHasBeenSet = true; m_customerGatewayId = value; }
 
     /**
@@ -91,6 +96,11 @@ namespace Model
      * <p>The type of VPN connection (<code>ipsec.1</code>).</p>
      */
     inline const Aws::String& GetType() const{ return m_type; }
+
+    /**
+     * <p>The type of VPN connection (<code>ipsec.1</code>).</p>
+     */
+    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
 
     /**
      * <p>The type of VPN connection (<code>ipsec.1</code>).</p>
@@ -128,6 +138,12 @@ namespace Model
      * gateway, you cannot specify a transit gateway.</p>
      */
     inline const Aws::String& GetVpnGatewayId() const{ return m_vpnGatewayId; }
+
+    /**
+     * <p>The ID of the virtual private gateway. If you specify a virtual private
+     * gateway, you cannot specify a transit gateway.</p>
+     */
+    inline bool VpnGatewayIdHasBeenSet() const { return m_vpnGatewayIdHasBeenSet; }
 
     /**
      * <p>The ID of the virtual private gateway. If you specify a virtual private
@@ -171,6 +187,12 @@ namespace Model
      * specify a virtual private gateway.</p>
      */
     inline const Aws::String& GetTransitGatewayId() const{ return m_transitGatewayId; }
+
+    /**
+     * <p>The ID of the transit gateway. If you specify a transit gateway, you cannot
+     * specify a virtual private gateway.</p>
+     */
+    inline bool TransitGatewayIdHasBeenSet() const { return m_transitGatewayIdHasBeenSet; }
 
     /**
      * <p>The ID of the transit gateway. If you specify a transit gateway, you cannot
@@ -223,6 +245,14 @@ namespace Model
      * required permissions, the error response is <code>DryRunOperation</code>.
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
+    inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
+
+    /**
+     * <p>Checks whether you have the required permissions for the action, without
+     * actually making the request, and provides an error response. If you have the
+     * required permissions, the error response is <code>DryRunOperation</code>.
+     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+     */
     inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
 
     /**
@@ -238,6 +268,11 @@ namespace Model
      * <p>The options for the VPN connection.</p>
      */
     inline const VpnConnectionOptionsSpecification& GetOptions() const{ return m_options; }
+
+    /**
+     * <p>The options for the VPN connection.</p>
+     */
+    inline bool OptionsHasBeenSet() const { return m_optionsHasBeenSet; }
 
     /**
      * <p>The options for the VPN connection.</p>

@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>A link to the layer archive in Amazon S3 that is valid for 10 minutes.</p>
      */
+    inline bool LocationHasBeenSet() const { return m_locationHasBeenSet; }
+
+    /**
+     * <p>A link to the layer archive in Amazon S3 that is valid for 10 minutes.</p>
+     */
     inline void SetLocation(const Aws::String& value) { m_locationHasBeenSet = true; m_location = value; }
 
     /**
@@ -93,6 +98,11 @@ namespace Model
     /**
      * <p>The SHA-256 hash of the layer archive.</p>
      */
+    inline bool CodeSha256HasBeenSet() const { return m_codeSha256HasBeenSet; }
+
+    /**
+     * <p>The SHA-256 hash of the layer archive.</p>
+     */
     inline void SetCodeSha256(const Aws::String& value) { m_codeSha256HasBeenSet = true; m_codeSha256 = value; }
 
     /**
@@ -125,6 +135,11 @@ namespace Model
      * <p>The size of the layer archive in bytes.</p>
      */
     inline long long GetCodeSize() const{ return m_codeSize; }
+
+    /**
+     * <p>The size of the layer archive in bytes.</p>
+     */
+    inline bool CodeSizeHasBeenSet() const { return m_codeSizeHasBeenSet; }
 
     /**
      * <p>The size of the layer archive in bytes.</p>

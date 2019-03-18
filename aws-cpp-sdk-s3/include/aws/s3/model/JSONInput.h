@@ -55,6 +55,11 @@ namespace Model
     /**
      * <p>The type of JSON. Valid values: Document, Lines.</p>
      */
+    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
+
+    /**
+     * <p>The type of JSON. Valid values: Document, Lines.</p>
+     */
     inline void SetType(const JSONType& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**

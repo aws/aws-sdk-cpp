@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The ID of the parameter object. </p>
      */
+    inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
+
+    /**
+     * <p>The ID of the parameter object. </p>
+     */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
     /**
@@ -89,6 +94,11 @@ namespace Model
      * <p>The attributes of the parameter object.</p>
      */
     inline const Aws::Vector<ParameterAttribute>& GetAttributes() const{ return m_attributes; }
+
+    /**
+     * <p>The attributes of the parameter object.</p>
+     */
+    inline bool AttributesHasBeenSet() const { return m_attributesHasBeenSet; }
 
     /**
      * <p>The attributes of the parameter object.</p>

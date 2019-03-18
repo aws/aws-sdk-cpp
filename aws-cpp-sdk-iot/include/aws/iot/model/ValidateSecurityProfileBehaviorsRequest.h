@@ -53,6 +53,12 @@ namespace Model
      * <p>Specifies the behaviors that, when violated by a device (thing), cause an
      * alert.</p>
      */
+    inline bool BehaviorsHasBeenSet() const { return m_behaviorsHasBeenSet; }
+
+    /**
+     * <p>Specifies the behaviors that, when violated by a device (thing), cause an
+     * alert.</p>
+     */
     inline void SetBehaviors(const Aws::Vector<Behavior>& value) { m_behaviorsHasBeenSet = true; m_behaviors = value; }
 
     /**

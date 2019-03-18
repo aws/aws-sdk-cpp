@@ -55,6 +55,11 @@ namespace Model
     /**
      * <p>The stream ID.</p>
      */
+    inline bool StreamIdHasBeenSet() const { return m_streamIdHasBeenSet; }
+
+    /**
+     * <p>The stream ID.</p>
+     */
     inline void SetStreamId(const Aws::String& value) { m_streamIdHasBeenSet = true; m_streamId = value; }
 
     /**
@@ -87,6 +92,11 @@ namespace Model
      * <p>The ID of a file associated with a stream.</p>
      */
     inline int GetFileId() const{ return m_fileId; }
+
+    /**
+     * <p>The ID of a file associated with a stream.</p>
+     */
+    inline bool FileIdHasBeenSet() const { return m_fileIdHasBeenSet; }
 
     /**
      * <p>The ID of a file associated with a stream.</p>

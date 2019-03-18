@@ -61,6 +61,12 @@ namespace Model
      * <p>For devices that support BGP, the customer gateway's BGP ASN.</p> <p>Default:
      * 65000</p>
      */
+    inline bool BgpAsnHasBeenSet() const { return m_bgpAsnHasBeenSet; }
+
+    /**
+     * <p>For devices that support BGP, the customer gateway's BGP ASN.</p> <p>Default:
+     * 65000</p>
+     */
     inline void SetBgpAsn(int value) { m_bgpAsnHasBeenSet = true; m_bgpAsn = value; }
 
     /**
@@ -75,6 +81,12 @@ namespace Model
      * interface. The address must be static.</p>
      */
     inline const Aws::String& GetPublicIp() const{ return m_publicIp; }
+
+    /**
+     * <p>The Internet-routable IP address for the customer gateway's outside
+     * interface. The address must be static.</p>
+     */
+    inline bool PublicIpHasBeenSet() const { return m_publicIpHasBeenSet; }
 
     /**
      * <p>The Internet-routable IP address for the customer gateway's outside
@@ -123,6 +135,12 @@ namespace Model
      * <p>The type of VPN connection that this customer gateway supports
      * (<code>ipsec.1</code>).</p>
      */
+    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
+
+    /**
+     * <p>The type of VPN connection that this customer gateway supports
+     * (<code>ipsec.1</code>).</p>
+     */
     inline void SetType(const GatewayType& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
@@ -151,6 +169,14 @@ namespace Model
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
     inline bool GetDryRun() const{ return m_dryRun; }
+
+    /**
+     * <p>Checks whether you have the required permissions for the action, without
+     * actually making the request, and provides an error response. If you have the
+     * required permissions, the error response is <code>DryRunOperation</code>.
+     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+     */
+    inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
 
     /**
      * <p>Checks whether you have the required permissions for the action, without

@@ -59,6 +59,12 @@ namespace Model
      * <p>An opaque string that indicates the position at which to begin the returned
      * list of gateways.</p>
      */
+    inline bool MarkerHasBeenSet() const { return m_markerHasBeenSet; }
+
+    /**
+     * <p>An opaque string that indicates the position at which to begin the returned
+     * list of gateways.</p>
+     */
     inline void SetMarker(const Aws::String& value) { m_markerHasBeenSet = true; m_marker = value; }
 
     /**
@@ -97,6 +103,12 @@ namespace Model
      * number of items.</p>
      */
     inline int GetLimit() const{ return m_limit; }
+
+    /**
+     * <p>Specifies that the list of gateways returned be limited to the specified
+     * number of items.</p>
+     */
+    inline bool LimitHasBeenSet() const { return m_limitHasBeenSet; }
 
     /**
      * <p>Specifies that the list of gateways returned be limited to the specified

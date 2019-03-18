@@ -57,6 +57,11 @@ namespace Model
     /**
      * Information about the activity described in a finding.
      */
+    inline bool ActionHasBeenSet() const { return m_actionHasBeenSet; }
+
+    /**
+     * Information about the activity described in a finding.
+     */
     inline void SetAction(const Action& value) { m_actionHasBeenSet = true; m_action = value; }
 
     /**
@@ -83,6 +88,11 @@ namespace Model
     /**
      * Indicates whether this finding is archived.
      */
+    inline bool ArchivedHasBeenSet() const { return m_archivedHasBeenSet; }
+
+    /**
+     * Indicates whether this finding is archived.
+     */
     inline void SetArchived(bool value) { m_archivedHasBeenSet = true; m_archived = value; }
 
     /**
@@ -99,6 +109,11 @@ namespace Model
     /**
      * Total count of the occurrences of this finding type.
      */
+    inline bool CountHasBeenSet() const { return m_countHasBeenSet; }
+
+    /**
+     * Total count of the occurrences of this finding type.
+     */
     inline void SetCount(int value) { m_countHasBeenSet = true; m_count = value; }
 
     /**
@@ -111,6 +126,11 @@ namespace Model
      * Detector ID for the GuardDuty service.
      */
     inline const Aws::String& GetDetectorId() const{ return m_detectorId; }
+
+    /**
+     * Detector ID for the GuardDuty service.
+     */
+    inline bool DetectorIdHasBeenSet() const { return m_detectorIdHasBeenSet; }
 
     /**
      * Detector ID for the GuardDuty service.
@@ -148,6 +168,12 @@ namespace Model
      * finding.
      */
     inline const Aws::String& GetEventFirstSeen() const{ return m_eventFirstSeen; }
+
+    /**
+     * First seen timestamp of the activity that prompted GuardDuty to generate this
+     * finding.
+     */
+    inline bool EventFirstSeenHasBeenSet() const { return m_eventFirstSeenHasBeenSet; }
 
     /**
      * First seen timestamp of the activity that prompted GuardDuty to generate this
@@ -196,6 +222,12 @@ namespace Model
      * Last seen timestamp of the activity that prompted GuardDuty to generate this
      * finding.
      */
+    inline bool EventLastSeenHasBeenSet() const { return m_eventLastSeenHasBeenSet; }
+
+    /**
+     * Last seen timestamp of the activity that prompted GuardDuty to generate this
+     * finding.
+     */
     inline void SetEventLastSeen(const Aws::String& value) { m_eventLastSeenHasBeenSet = true; m_eventLastSeen = value; }
 
     /**
@@ -237,6 +269,11 @@ namespace Model
     /**
      * Resource role information for this finding.
      */
+    inline bool ResourceRoleHasBeenSet() const { return m_resourceRoleHasBeenSet; }
+
+    /**
+     * Resource role information for this finding.
+     */
     inline void SetResourceRole(const Aws::String& value) { m_resourceRoleHasBeenSet = true; m_resourceRole = value; }
 
     /**
@@ -273,6 +310,11 @@ namespace Model
     /**
      * The name of the AWS service (GuardDuty) that generated a finding.
      */
+    inline bool ServiceNameHasBeenSet() const { return m_serviceNameHasBeenSet; }
+
+    /**
+     * The name of the AWS service (GuardDuty) that generated a finding.
+     */
     inline void SetServiceName(const Aws::String& value) { m_serviceNameHasBeenSet = true; m_serviceName = value; }
 
     /**
@@ -305,6 +347,11 @@ namespace Model
      * Feedback left about the finding.
      */
     inline const Aws::String& GetUserFeedback() const{ return m_userFeedback; }
+
+    /**
+     * Feedback left about the finding.
+     */
+    inline bool UserFeedbackHasBeenSet() const { return m_userFeedbackHasBeenSet; }
 
     /**
      * Feedback left about the finding.

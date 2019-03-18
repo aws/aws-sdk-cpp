@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>EndpointArn of endpoint to delete.</p>
      */
+    inline bool EndpointArnHasBeenSet() const { return m_endpointArnHasBeenSet; }
+
+    /**
+     * <p>EndpointArn of endpoint to delete.</p>
+     */
     inline void SetEndpointArn(const Aws::String& value) { m_endpointArnHasBeenSet = true; m_endpointArn = value; }
 
     /**

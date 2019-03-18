@@ -61,6 +61,11 @@ namespace Model
     /**
      * <p>Detailed information about the reason that the operation failed.</p>
      */
+    inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
+
+    /**
+     * <p>Detailed information about the reason that the operation failed.</p>
+     */
     inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
 
     /**
@@ -93,6 +98,11 @@ namespace Model
      * <p>The error code associated with the operation failure.</p>
      */
     inline const Aws::String& GetCode() const{ return m_code; }
+
+    /**
+     * <p>The error code associated with the operation failure.</p>
+     */
+    inline bool CodeHasBeenSet() const { return m_codeHasBeenSet; }
 
     /**
      * <p>The error code associated with the operation failure.</p>

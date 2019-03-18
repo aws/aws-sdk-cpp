@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The name of the replication instance subnet group.</p>
      */
+    inline bool ReplicationSubnetGroupIdentifierHasBeenSet() const { return m_replicationSubnetGroupIdentifierHasBeenSet; }
+
+    /**
+     * <p>The name of the replication instance subnet group.</p>
+     */
     inline void SetReplicationSubnetGroupIdentifier(const Aws::String& value) { m_replicationSubnetGroupIdentifierHasBeenSet = true; m_replicationSubnetGroupIdentifier = value; }
 
     /**
@@ -92,6 +97,11 @@ namespace Model
     /**
      * <p>The description of the replication instance subnet group.</p>
      */
+    inline bool ReplicationSubnetGroupDescriptionHasBeenSet() const { return m_replicationSubnetGroupDescriptionHasBeenSet; }
+
+    /**
+     * <p>The description of the replication instance subnet group.</p>
+     */
     inline void SetReplicationSubnetGroupDescription(const Aws::String& value) { m_replicationSubnetGroupDescriptionHasBeenSet = true; m_replicationSubnetGroupDescription = value; }
 
     /**
@@ -124,6 +134,11 @@ namespace Model
      * <p>A list of subnet IDs.</p>
      */
     inline const Aws::Vector<Aws::String>& GetSubnetIds() const{ return m_subnetIds; }
+
+    /**
+     * <p>A list of subnet IDs.</p>
+     */
+    inline bool SubnetIdsHasBeenSet() const { return m_subnetIdsHasBeenSet; }
 
     /**
      * <p>A list of subnet IDs.</p>

@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>Specifies the ARN of the resource.</p>
      */
+    inline bool ResourceIdHasBeenSet() const { return m_resourceIdHasBeenSet; }
+
+    /**
+     * <p>Specifies the ARN of the resource.</p>
+     */
     inline void SetResourceId(const Aws::String& value) { m_resourceIdHasBeenSet = true; m_resourceId = value; }
 
     /**
@@ -89,6 +94,11 @@ namespace Model
      * <p>A list of tags.</p>
      */
     inline const Aws::Vector<Tag>& GetTagsList() const{ return m_tagsList; }
+
+    /**
+     * <p>A list of tags.</p>
+     */
+    inline bool TagsListHasBeenSet() const { return m_tagsListHasBeenSet; }
 
     /**
      * <p>A list of tags.</p>

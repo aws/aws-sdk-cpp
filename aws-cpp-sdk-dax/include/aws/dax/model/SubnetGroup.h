@@ -59,6 +59,11 @@ namespace Model
     /**
      * <p>The name of the subnet group.</p>
      */
+    inline bool SubnetGroupNameHasBeenSet() const { return m_subnetGroupNameHasBeenSet; }
+
+    /**
+     * <p>The name of the subnet group.</p>
+     */
     inline void SetSubnetGroupName(const Aws::String& value) { m_subnetGroupNameHasBeenSet = true; m_subnetGroupName = value; }
 
     /**
@@ -91,6 +96,11 @@ namespace Model
      * <p>The description of the subnet group.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
+
+    /**
+     * <p>The description of the subnet group.</p>
+     */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
 
     /**
      * <p>The description of the subnet group.</p>
@@ -131,6 +141,11 @@ namespace Model
     /**
      * <p>The Amazon Virtual Private Cloud identifier (VPC ID) of the subnet group.</p>
      */
+    inline bool VpcIdHasBeenSet() const { return m_vpcIdHasBeenSet; }
+
+    /**
+     * <p>The Amazon Virtual Private Cloud identifier (VPC ID) of the subnet group.</p>
+     */
     inline void SetVpcId(const Aws::String& value) { m_vpcIdHasBeenSet = true; m_vpcId = value; }
 
     /**
@@ -163,6 +178,11 @@ namespace Model
      * <p>A list of subnets associated with the subnet group. </p>
      */
     inline const Aws::Vector<Subnet>& GetSubnets() const{ return m_subnets; }
+
+    /**
+     * <p>A list of subnets associated with the subnet group. </p>
+     */
+    inline bool SubnetsHasBeenSet() const { return m_subnetsHasBeenSet; }
 
     /**
      * <p>A list of subnets associated with the subnet group. </p>

@@ -54,6 +54,9 @@ namespace Model
     inline const ChannelMapping& GetChannelMapping() const{ return m_channelMapping; }
 
     
+    inline bool ChannelMappingHasBeenSet() const { return m_channelMappingHasBeenSet; }
+
+    
     inline void SetChannelMapping(const ChannelMapping& value) { m_channelMappingHasBeenSet = true; m_channelMapping = value; }
 
     
@@ -78,6 +81,13 @@ namespace Model
      * your output. With remixing, you might combine or split the data in these
      * channels, so the number of channels in your final output might be different.
      */
+    inline bool ChannelsInHasBeenSet() const { return m_channelsInHasBeenSet; }
+
+    /**
+     * Specify the number of audio channels from your input that you want to use in
+     * your output. With remixing, you might combine or split the data in these
+     * channels, so the number of channels in your final output might be different.
+     */
     inline void SetChannelsIn(int value) { m_channelsInHasBeenSet = true; m_channelsIn = value; }
 
     /**
@@ -93,6 +103,12 @@ namespace Model
      * 2, 4, 6, 8
      */
     inline int GetChannelsOut() const{ return m_channelsOut; }
+
+    /**
+     * Specify the number of channels in this output after remixing. Valid values: 1,
+     * 2, 4, 6, 8
+     */
+    inline bool ChannelsOutHasBeenSet() const { return m_channelsOutHasBeenSet; }
 
     /**
      * Specify the number of channels in this output after remixing. Valid values: 1,

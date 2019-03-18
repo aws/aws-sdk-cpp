@@ -62,6 +62,11 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the application version.</p>
      */
+    inline bool ApplicationVersionArnHasBeenSet() const { return m_applicationVersionArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the application version.</p>
+     */
     inline void SetApplicationVersionArn(const Aws::String& value) { m_applicationVersionArnHasBeenSet = true; m_applicationVersionArn = value; }
 
     /**
@@ -94,6 +99,11 @@ namespace Model
      * <p>The name of the application to which the application version belongs.</p>
      */
     inline const Aws::String& GetApplicationName() const{ return m_applicationName; }
+
+    /**
+     * <p>The name of the application to which the application version belongs.</p>
+     */
+    inline bool ApplicationNameHasBeenSet() const { return m_applicationNameHasBeenSet; }
 
     /**
      * <p>The name of the application to which the application version belongs.</p>
@@ -134,6 +144,11 @@ namespace Model
     /**
      * <p>The description of the application version.</p>
      */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
+
+    /**
+     * <p>The description of the application version.</p>
+     */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
@@ -166,6 +181,11 @@ namespace Model
      * <p>A unique identifier for the application version.</p>
      */
     inline const Aws::String& GetVersionLabel() const{ return m_versionLabel; }
+
+    /**
+     * <p>A unique identifier for the application version.</p>
+     */
+    inline bool VersionLabelHasBeenSet() const { return m_versionLabelHasBeenSet; }
 
     /**
      * <p>A unique identifier for the application version.</p>
@@ -208,6 +228,12 @@ namespace Model
      * <p>If the version's source code was retrieved from AWS CodeCommit, the location
      * of the source code for the application version.</p>
      */
+    inline bool SourceBuildInformationHasBeenSet() const { return m_sourceBuildInformationHasBeenSet; }
+
+    /**
+     * <p>If the version's source code was retrieved from AWS CodeCommit, the location
+     * of the source code for the application version.</p>
+     */
     inline void SetSourceBuildInformation(const SourceBuildInformation& value) { m_sourceBuildInformationHasBeenSet = true; m_sourceBuildInformation = value; }
 
     /**
@@ -233,6 +259,11 @@ namespace Model
      * <p>Reference to the artifact from the AWS CodeBuild build.</p>
      */
     inline const Aws::String& GetBuildArn() const{ return m_buildArn; }
+
+    /**
+     * <p>Reference to the artifact from the AWS CodeBuild build.</p>
+     */
+    inline bool BuildArnHasBeenSet() const { return m_buildArnHasBeenSet; }
 
     /**
      * <p>Reference to the artifact from the AWS CodeBuild build.</p>
@@ -275,6 +306,12 @@ namespace Model
      * <p>The storage location of the application version's source bundle in Amazon
      * S3.</p>
      */
+    inline bool SourceBundleHasBeenSet() const { return m_sourceBundleHasBeenSet; }
+
+    /**
+     * <p>The storage location of the application version's source bundle in Amazon
+     * S3.</p>
+     */
     inline void SetSourceBundle(const S3Location& value) { m_sourceBundleHasBeenSet = true; m_sourceBundle = value; }
 
     /**
@@ -304,6 +341,11 @@ namespace Model
     /**
      * <p>The creation date of the application version.</p>
      */
+    inline bool DateCreatedHasBeenSet() const { return m_dateCreatedHasBeenSet; }
+
+    /**
+     * <p>The creation date of the application version.</p>
+     */
     inline void SetDateCreated(const Aws::Utils::DateTime& value) { m_dateCreatedHasBeenSet = true; m_dateCreated = value; }
 
     /**
@@ -326,6 +368,11 @@ namespace Model
      * <p>The last modified date of the application version.</p>
      */
     inline const Aws::Utils::DateTime& GetDateUpdated() const{ return m_dateUpdated; }
+
+    /**
+     * <p>The last modified date of the application version.</p>
+     */
+    inline bool DateUpdatedHasBeenSet() const { return m_dateUpdatedHasBeenSet; }
 
     /**
      * <p>The last modified date of the application version.</p>
@@ -366,6 +413,25 @@ namespace Model
      * </ul>
      */
     inline const ApplicationVersionStatus& GetStatus() const{ return m_status; }
+
+    /**
+     * <p>The processing status of the application version. Reflects the state of the
+     * application version during its creation. Many of the values are only applicable
+     * if you specified <code>True</code> for the <code>Process</code> parameter of the
+     * <code>CreateApplicationVersion</code> action. The following list describes the
+     * possible values.</p> <ul> <li> <p> <code>Unprocessed</code> – Application
+     * version wasn't pre-processed or validated. Elastic Beanstalk will validate
+     * configuration files during deployment of the application version to an
+     * environment.</p> </li> <li> <p> <code>Processing</code> – Elastic Beanstalk is
+     * currently processing the application version.</p> </li> <li> <p>
+     * <code>Building</code> – Application version is currently undergoing an AWS
+     * CodeBuild build.</p> </li> <li> <p> <code>Processed</code> – Elastic Beanstalk
+     * was successfully pre-processed and validated.</p> </li> <li> <p>
+     * <code>Failed</code> – Either the AWS CodeBuild build failed or configuration
+     * files didn't pass validation. This application version isn't usable.</p> </li>
+     * </ul>
+     */
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
     /**
      * <p>The processing status of the application version. Reflects the state of the

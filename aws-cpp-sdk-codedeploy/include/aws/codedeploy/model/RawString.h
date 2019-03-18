@@ -61,6 +61,13 @@ namespace Model
      * about which Lambda function to update and optional Lambda functions that
      * validate deployment lifecycle events.</p>
      */
+    inline bool ContentHasBeenSet() const { return m_contentHasBeenSet; }
+
+    /**
+     * <p>The YAML-formatted or JSON-formatted revision string. It includes information
+     * about which Lambda function to update and optional Lambda functions that
+     * validate deployment lifecycle events.</p>
+     */
     inline void SetContent(const Aws::String& value) { m_contentHasBeenSet = true; m_content = value; }
 
     /**
@@ -103,6 +110,11 @@ namespace Model
      * <p>The SHA256 hash value of the revision content.</p>
      */
     inline const Aws::String& GetSha256() const{ return m_sha256; }
+
+    /**
+     * <p>The SHA256 hash value of the revision content.</p>
+     */
+    inline bool Sha256HasBeenSet() const { return m_sha256HasBeenSet; }
 
     /**
      * <p>The SHA256 hash value of the revision content.</p>

@@ -84,6 +84,25 @@ namespace Model
      * resources assigned a tag with a specific key, regardless of the tag value.</p>
      * </li> </ul>
      */
+    inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
+
+    /**
+     * <p>One or more filters.</p> <ul> <li> <p> <code>attachment.state</code> - The
+     * current state of the attachment between the gateway and the VPC
+     * (<code>available</code>). Present only if a VPC is attached.</p> </li> <li> <p>
+     * <code>attachment.vpc-id</code> - The ID of an attached VPC.</p> </li> <li> <p>
+     * <code>internet-gateway-id</code> - The ID of the Internet gateway.</p> </li>
+     * <li> <p> <code>owner-id</code> - The ID of the AWS account that owns the
+     * internet gateway.</p> </li> <li> <p> <code>tag</code>:&lt;key&gt; - The
+     * key/value combination of a tag assigned to the resource. Use the tag key in the
+     * filter name and the tag value as the filter value. For example, to find all
+     * resources that have a tag with the key <code>Owner</code> and the value
+     * <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name and
+     * <code>TeamA</code> for the filter value.</p> </li> <li> <p> <code>tag-key</code>
+     * - The key of a tag assigned to the resource. Use this filter to find all
+     * resources assigned a tag with a specific key, regardless of the tag value.</p>
+     * </li> </ul>
+     */
     inline void SetFilters(const Aws::Vector<Filter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
 
     /**
@@ -196,6 +215,14 @@ namespace Model
      * required permissions, the error response is <code>DryRunOperation</code>.
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
+    inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
+
+    /**
+     * <p>Checks whether you have the required permissions for the action, without
+     * actually making the request, and provides an error response. If you have the
+     * required permissions, the error response is <code>DryRunOperation</code>.
+     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+     */
     inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
 
     /**
@@ -212,6 +239,12 @@ namespace Model
      * gateways.</p>
      */
     inline const Aws::Vector<Aws::String>& GetInternetGatewayIds() const{ return m_internetGatewayIds; }
+
+    /**
+     * <p>One or more internet gateway IDs.</p> <p>Default: Describes all your internet
+     * gateways.</p>
+     */
+    inline bool InternetGatewayIdsHasBeenSet() const { return m_internetGatewayIdsHasBeenSet; }
 
     /**
      * <p>One or more internet gateway IDs.</p> <p>Default: Describes all your internet
@@ -264,6 +297,11 @@ namespace Model
     /**
      * <p>The token for the next page of results.</p>
      */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
+
+    /**
+     * <p>The token for the next page of results.</p>
+     */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
     /**
@@ -298,6 +336,13 @@ namespace Model
      * value.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
+
+    /**
+     * <p>The maximum number of results to return with a single call. To retrieve the
+     * remaining results, make another call with the returned <code>nextToken</code>
+     * value.</p>
+     */
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
 
     /**
      * <p>The maximum number of results to return with a single call. To retrieve the

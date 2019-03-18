@@ -59,6 +59,11 @@ namespace Model
     /**
      * <p>The name of the historical metric.</p>
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>The name of the historical metric.</p>
+     */
     inline void SetName(const HistoricalMetricName& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
@@ -81,6 +86,11 @@ namespace Model
      * <p>The threshold for the metric, used with service level metrics.</p>
      */
     inline const Threshold& GetThreshold() const{ return m_threshold; }
+
+    /**
+     * <p>The threshold for the metric, used with service level metrics.</p>
+     */
+    inline bool ThresholdHasBeenSet() const { return m_thresholdHasBeenSet; }
 
     /**
      * <p>The threshold for the metric, used with service level metrics.</p>
@@ -111,6 +121,11 @@ namespace Model
     /**
      * <p>The statistic for the metric.</p>
      */
+    inline bool StatisticHasBeenSet() const { return m_statisticHasBeenSet; }
+
+    /**
+     * <p>The statistic for the metric.</p>
+     */
     inline void SetStatistic(const Statistic& value) { m_statisticHasBeenSet = true; m_statistic = value; }
 
     /**
@@ -133,6 +148,11 @@ namespace Model
      * <p>The unit for the metric.</p>
      */
     inline const Unit& GetUnit() const{ return m_unit; }
+
+    /**
+     * <p>The unit for the metric.</p>
+     */
+    inline bool UnitHasBeenSet() const { return m_unitHasBeenSet; }
 
     /**
      * <p>The unit for the metric.</p>

@@ -55,6 +55,11 @@ namespace Model
     /**
      * <p>The AWS KMS key used for data encryption.</p>
      */
+    inline bool DataVolumeKMSKeyIdHasBeenSet() const { return m_dataVolumeKMSKeyIdHasBeenSet; }
+
+    /**
+     * <p>The AWS KMS key used for data encryption.</p>
+     */
     inline void SetDataVolumeKMSKeyId(const Aws::String& value) { m_dataVolumeKMSKeyIdHasBeenSet = true; m_dataVolumeKMSKeyId = value; }
 
     /**

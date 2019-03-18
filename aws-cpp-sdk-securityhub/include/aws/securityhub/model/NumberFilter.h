@@ -55,6 +55,12 @@ namespace Model
      * <p>Represents the "greater than equal" condition to be applied to a single field
      * when querying for findings. </p>
      */
+    inline bool GteHasBeenSet() const { return m_gteHasBeenSet; }
+
+    /**
+     * <p>Represents the "greater than equal" condition to be applied to a single field
+     * when querying for findings. </p>
+     */
     inline void SetGte(double value) { m_gteHasBeenSet = true; m_gte = value; }
 
     /**
@@ -74,6 +80,12 @@ namespace Model
      * <p>Represents the "less than equal" condition to be applied to a single field
      * when querying for findings. </p>
      */
+    inline bool LteHasBeenSet() const { return m_lteHasBeenSet; }
+
+    /**
+     * <p>Represents the "less than equal" condition to be applied to a single field
+     * when querying for findings. </p>
+     */
     inline void SetLte(double value) { m_lteHasBeenSet = true; m_lte = value; }
 
     /**
@@ -88,6 +100,12 @@ namespace Model
      * querying for findings.</p>
      */
     inline double GetEq() const{ return m_eq; }
+
+    /**
+     * <p>Represents the "equal to" condition to be applied to a single field when
+     * querying for findings.</p>
+     */
+    inline bool EqHasBeenSet() const { return m_eqHasBeenSet; }
 
     /**
      * <p>Represents the "equal to" condition to be applied to a single field when

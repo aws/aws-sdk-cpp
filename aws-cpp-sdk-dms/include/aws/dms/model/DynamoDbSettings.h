@@ -55,6 +55,11 @@ namespace Model
     /**
      * <p> The Amazon Resource Name (ARN) used by the service access IAM role. </p>
      */
+    inline bool ServiceAccessRoleArnHasBeenSet() const { return m_serviceAccessRoleArnHasBeenSet; }
+
+    /**
+     * <p> The Amazon Resource Name (ARN) used by the service access IAM role. </p>
+     */
     inline void SetServiceAccessRoleArn(const Aws::String& value) { m_serviceAccessRoleArnHasBeenSet = true; m_serviceAccessRoleArn = value; }
 
     /**

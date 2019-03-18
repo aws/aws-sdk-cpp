@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The hard limit for the <code>ulimit</code> type.</p>
      */
+    inline bool HardLimitHasBeenSet() const { return m_hardLimitHasBeenSet; }
+
+    /**
+     * <p>The hard limit for the <code>ulimit</code> type.</p>
+     */
     inline void SetHardLimit(int value) { m_hardLimitHasBeenSet = true; m_hardLimit = value; }
 
     /**
@@ -68,6 +73,11 @@ namespace Model
      * <p>The <code>type</code> of the <code>ulimit</code>.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
+
+    /**
+     * <p>The <code>type</code> of the <code>ulimit</code>.</p>
+     */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
      * <p>The <code>type</code> of the <code>ulimit</code>.</p>
@@ -104,6 +114,11 @@ namespace Model
      * <p>The soft limit for the <code>ulimit</code> type.</p>
      */
     inline int GetSoftLimit() const{ return m_softLimit; }
+
+    /**
+     * <p>The soft limit for the <code>ulimit</code> type.</p>
+     */
+    inline bool SoftLimitHasBeenSet() const { return m_softLimitHasBeenSet; }
 
     /**
      * <p>The soft limit for the <code>ulimit</code> type.</p>

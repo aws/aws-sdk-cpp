@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The ARN of a Security Hub insight.</p>
      */
+    inline bool InsightArnHasBeenSet() const { return m_insightArnHasBeenSet; }
+
+    /**
+     * <p>The ARN of a Security Hub insight.</p>
+     */
     inline void SetInsightArn(const Aws::String& value) { m_insightArnHasBeenSet = true; m_insightArn = value; }
 
     /**
@@ -89,6 +94,11 @@ namespace Model
      * <p>The name of a Security Hub insight.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
+
+    /**
+     * <p>The name of a Security Hub insight.</p>
+     */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
      * <p>The name of a Security Hub insight.</p>
@@ -133,6 +143,13 @@ namespace Model
      * Hub-aggregated findings and that result in a subset of findings that are
      * included in this insight. </p>
      */
+    inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
+
+    /**
+     * <p>A collection of attributes that are applied to all active Security
+     * Hub-aggregated findings and that result in a subset of findings that are
+     * included in this insight. </p>
+     */
     inline void SetFilters(const AwsSecurityFindingFilters& value) { m_filtersHasBeenSet = true; m_filters = value; }
 
     /**
@@ -163,6 +180,13 @@ namespace Model
      * related findings under a single operand.</p>
      */
     inline const Aws::String& GetGroupByAttribute() const{ return m_groupByAttribute; }
+
+    /**
+     * <p>The attribute by which the insight's findings are grouped. This attribute is
+     * used as a findings aggregator for the purposes of viewing and managing multiple
+     * related findings under a single operand.</p>
+     */
+    inline bool GroupByAttributeHasBeenSet() const { return m_groupByAttributeHasBeenSet; }
 
     /**
      * <p>The attribute by which the insight's findings are grouped. This attribute is

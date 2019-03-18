@@ -61,6 +61,11 @@ namespace Model
     /**
      * <p>A UUID that is used to track the update.</p>
      */
+    inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
+
+    /**
+     * <p>A UUID that is used to track the update.</p>
+     */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
     /**
@@ -97,6 +102,11 @@ namespace Model
     /**
      * <p>The current status of the update.</p>
      */
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
+
+    /**
+     * <p>The current status of the update.</p>
+     */
     inline void SetStatus(const UpdateStatus& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
@@ -123,6 +133,11 @@ namespace Model
     /**
      * <p>The type of the update.</p>
      */
+    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
+
+    /**
+     * <p>The type of the update.</p>
+     */
     inline void SetType(const UpdateType& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
@@ -145,6 +160,11 @@ namespace Model
      * <p>A key-value map that contains the parameters associated with the update.</p>
      */
     inline const Aws::Vector<UpdateParam>& GetParams() const{ return m_params; }
+
+    /**
+     * <p>A key-value map that contains the parameters associated with the update.</p>
+     */
+    inline bool ParamsHasBeenSet() const { return m_paramsHasBeenSet; }
 
     /**
      * <p>A key-value map that contains the parameters associated with the update.</p>
@@ -185,6 +205,11 @@ namespace Model
     /**
      * <p>The Unix epoch timestamp in seconds for when the update was created.</p>
      */
+    inline bool CreatedAtHasBeenSet() const { return m_createdAtHasBeenSet; }
+
+    /**
+     * <p>The Unix epoch timestamp in seconds for when the update was created.</p>
+     */
     inline void SetCreatedAt(const Aws::Utils::DateTime& value) { m_createdAtHasBeenSet = true; m_createdAt = value; }
 
     /**
@@ -207,6 +232,11 @@ namespace Model
      * <p>Any errors associated with a <code>Failed</code> update.</p>
      */
     inline const Aws::Vector<ErrorDetail>& GetErrors() const{ return m_errors; }
+
+    /**
+     * <p>Any errors associated with a <code>Failed</code> update.</p>
+     */
+    inline bool ErrorsHasBeenSet() const { return m_errorsHasBeenSet; }
 
     /**
      * <p>Any errors associated with a <code>Failed</code> update.</p>

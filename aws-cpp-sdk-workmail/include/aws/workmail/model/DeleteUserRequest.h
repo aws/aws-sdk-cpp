@@ -52,6 +52,11 @@ namespace Model
     /**
      * <p>The organization that contains the user.</p>
      */
+    inline bool OrganizationIdHasBeenSet() const { return m_organizationIdHasBeenSet; }
+
+    /**
+     * <p>The organization that contains the user.</p>
+     */
     inline void SetOrganizationId(const Aws::String& value) { m_organizationIdHasBeenSet = true; m_organizationId = value; }
 
     /**
@@ -84,6 +89,11 @@ namespace Model
      * <p>The identifier of the user to be deleted.</p>
      */
     inline const Aws::String& GetUserId() const{ return m_userId; }
+
+    /**
+     * <p>The identifier of the user to be deleted.</p>
+     */
+    inline bool UserIdHasBeenSet() const { return m_userIdHasBeenSet; }
 
     /**
      * <p>The identifier of the user to be deleted.</p>

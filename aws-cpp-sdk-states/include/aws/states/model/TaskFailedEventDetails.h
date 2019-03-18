@@ -55,6 +55,11 @@ namespace Model
     /**
      * <p>The action of the resource called by a task state.</p>
      */
+    inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
+
+    /**
+     * <p>The action of the resource called by a task state.</p>
+     */
     inline void SetResourceType(const Aws::String& value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
 
     /**
@@ -87,6 +92,11 @@ namespace Model
      * <p>The service name of the resource in a task state.</p>
      */
     inline const Aws::String& GetResource() const{ return m_resource; }
+
+    /**
+     * <p>The service name of the resource in a task state.</p>
+     */
+    inline bool ResourceHasBeenSet() const { return m_resourceHasBeenSet; }
 
     /**
      * <p>The service name of the resource in a task state.</p>
@@ -127,6 +137,11 @@ namespace Model
     /**
      * <p>The error code of the failure.</p>
      */
+    inline bool ErrorHasBeenSet() const { return m_errorHasBeenSet; }
+
+    /**
+     * <p>The error code of the failure.</p>
+     */
     inline void SetError(const Aws::String& value) { m_errorHasBeenSet = true; m_error = value; }
 
     /**
@@ -159,6 +174,11 @@ namespace Model
      * <p>A more detailed explanation of the cause of the failure.</p>
      */
     inline const Aws::String& GetCause() const{ return m_cause; }
+
+    /**
+     * <p>A more detailed explanation of the cause of the failure.</p>
+     */
+    inline bool CauseHasBeenSet() const { return m_causeHasBeenSet; }
 
     /**
      * <p>A more detailed explanation of the cause of the failure.</p>

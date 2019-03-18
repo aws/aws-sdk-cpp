@@ -59,6 +59,12 @@ namespace Model
      * <p>The name of the sampling rule. Specify a rule by either name or ARN, but not
      * both.</p>
      */
+    inline bool RuleNameHasBeenSet() const { return m_ruleNameHasBeenSet; }
+
+    /**
+     * <p>The name of the sampling rule. Specify a rule by either name or ARN, but not
+     * both.</p>
+     */
     inline void SetRuleName(const Aws::String& value) { m_ruleNameHasBeenSet = true; m_ruleName = value; }
 
     /**
@@ -97,6 +103,12 @@ namespace Model
      * both.</p>
      */
     inline const Aws::String& GetRuleARN() const{ return m_ruleARN; }
+
+    /**
+     * <p>The ARN of the sampling rule. Specify a rule by either name or ARN, but not
+     * both.</p>
+     */
+    inline bool RuleARNHasBeenSet() const { return m_ruleARNHasBeenSet; }
 
     /**
      * <p>The ARN of the sampling rule. Specify a rule by either name or ARN, but not
@@ -143,6 +155,11 @@ namespace Model
     /**
      * <p>Matches the ARN of the AWS resource on which the service runs.</p>
      */
+    inline bool ResourceARNHasBeenSet() const { return m_resourceARNHasBeenSet; }
+
+    /**
+     * <p>Matches the ARN of the AWS resource on which the service runs.</p>
+     */
     inline void SetResourceARN(const Aws::String& value) { m_resourceARNHasBeenSet = true; m_resourceARN = value; }
 
     /**
@@ -179,6 +196,11 @@ namespace Model
     /**
      * <p>The priority of the sampling rule.</p>
      */
+    inline bool PriorityHasBeenSet() const { return m_priorityHasBeenSet; }
+
+    /**
+     * <p>The priority of the sampling rule.</p>
+     */
     inline void SetPriority(int value) { m_priorityHasBeenSet = true; m_priority = value; }
 
     /**
@@ -192,6 +214,12 @@ namespace Model
      * exhausted.</p>
      */
     inline double GetFixedRate() const{ return m_fixedRate; }
+
+    /**
+     * <p>The percentage of matching requests to instrument, after the reservoir is
+     * exhausted.</p>
+     */
+    inline bool FixedRateHasBeenSet() const { return m_fixedRateHasBeenSet; }
 
     /**
      * <p>The percentage of matching requests to instrument, after the reservoir is
@@ -218,6 +246,13 @@ namespace Model
      * applying the fixed rate. The reservoir is not used directly by services, but
      * applies to all services using the rule collectively.</p>
      */
+    inline bool ReservoirSizeHasBeenSet() const { return m_reservoirSizeHasBeenSet; }
+
+    /**
+     * <p>A fixed number of matching requests to instrument per second, prior to
+     * applying the fixed rate. The reservoir is not used directly by services, but
+     * applies to all services using the rule collectively.</p>
+     */
     inline void SetReservoirSize(int value) { m_reservoirSizeHasBeenSet = true; m_reservoirSize = value; }
 
     /**
@@ -232,6 +267,11 @@ namespace Model
      * <p>Matches the hostname from a request URL.</p>
      */
     inline const Aws::String& GetHost() const{ return m_host; }
+
+    /**
+     * <p>Matches the hostname from a request URL.</p>
+     */
+    inline bool HostHasBeenSet() const { return m_hostHasBeenSet; }
 
     /**
      * <p>Matches the hostname from a request URL.</p>
@@ -269,6 +309,12 @@ namespace Model
      * segments.</p>
      */
     inline const Aws::String& GetServiceName() const{ return m_serviceName; }
+
+    /**
+     * <p>Matches the <code>name</code> that the service uses to identify itself in
+     * segments.</p>
+     */
+    inline bool ServiceNameHasBeenSet() const { return m_serviceNameHasBeenSet; }
 
     /**
      * <p>Matches the <code>name</code> that the service uses to identify itself in
@@ -317,6 +363,12 @@ namespace Model
      * <p>Matches the <code>origin</code> that the service uses to identify its type in
      * segments.</p>
      */
+    inline bool ServiceTypeHasBeenSet() const { return m_serviceTypeHasBeenSet; }
+
+    /**
+     * <p>Matches the <code>origin</code> that the service uses to identify its type in
+     * segments.</p>
+     */
     inline void SetServiceType(const Aws::String& value) { m_serviceTypeHasBeenSet = true; m_serviceType = value; }
 
     /**
@@ -358,6 +410,11 @@ namespace Model
     /**
      * <p>Matches the HTTP method of a request.</p>
      */
+    inline bool HTTPMethodHasBeenSet() const { return m_hTTPMethodHasBeenSet; }
+
+    /**
+     * <p>Matches the HTTP method of a request.</p>
+     */
     inline void SetHTTPMethod(const Aws::String& value) { m_hTTPMethodHasBeenSet = true; m_hTTPMethod = value; }
 
     /**
@@ -394,6 +451,11 @@ namespace Model
     /**
      * <p>Matches the path from a request URL.</p>
      */
+    inline bool URLPathHasBeenSet() const { return m_uRLPathHasBeenSet; }
+
+    /**
+     * <p>Matches the path from a request URL.</p>
+     */
     inline void SetURLPath(const Aws::String& value) { m_uRLPathHasBeenSet = true; m_uRLPath = value; }
 
     /**
@@ -426,6 +488,11 @@ namespace Model
      * <p>Matches attributes derived from the request.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetAttributes() const{ return m_attributes; }
+
+    /**
+     * <p>Matches attributes derived from the request.</p>
+     */
+    inline bool AttributesHasBeenSet() const { return m_attributesHasBeenSet; }
 
     /**
      * <p>Matches attributes derived from the request.</p>

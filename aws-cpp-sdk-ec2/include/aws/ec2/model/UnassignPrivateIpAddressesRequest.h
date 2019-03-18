@@ -59,6 +59,11 @@ namespace Model
     /**
      * <p>The ID of the network interface.</p>
      */
+    inline bool NetworkInterfaceIdHasBeenSet() const { return m_networkInterfaceIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the network interface.</p>
+     */
     inline void SetNetworkInterfaceId(const Aws::String& value) { m_networkInterfaceIdHasBeenSet = true; m_networkInterfaceId = value; }
 
     /**
@@ -93,6 +98,13 @@ namespace Model
      * address.</p>
      */
     inline const Aws::Vector<Aws::String>& GetPrivateIpAddresses() const{ return m_privateIpAddresses; }
+
+    /**
+     * <p>The secondary private IP addresses to unassign from the network interface.
+     * You can specify this option multiple times to unassign more than one IP
+     * address.</p>
+     */
+    inline bool PrivateIpAddressesHasBeenSet() const { return m_privateIpAddressesHasBeenSet; }
 
     /**
      * <p>The secondary private IP addresses to unassign from the network interface.

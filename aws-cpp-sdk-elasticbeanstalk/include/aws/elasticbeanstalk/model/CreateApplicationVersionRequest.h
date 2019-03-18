@@ -66,6 +66,13 @@ namespace Model
      * <code>AutoCreateApplication</code> is <code>false</code>, returns an
      * <code>InvalidParameterValue</code> error. </p>
      */
+    inline bool ApplicationNameHasBeenSet() const { return m_applicationNameHasBeenSet; }
+
+    /**
+     * <p> The name of the application. If no application is found with this name, and
+     * <code>AutoCreateApplication</code> is <code>false</code>, returns an
+     * <code>InvalidParameterValue</code> error. </p>
+     */
     inline void SetApplicationName(const Aws::String& value) { m_applicationNameHasBeenSet = true; m_applicationName = value; }
 
     /**
@@ -111,6 +118,14 @@ namespace Model
      * <code>InvalidParameterValue</code> error. </p>
      */
     inline const Aws::String& GetVersionLabel() const{ return m_versionLabel; }
+
+    /**
+     * <p>A label identifying this version.</p> <p>Constraint: Must be unique per
+     * application. If an application version already exists with this label for the
+     * specified application, AWS Elastic Beanstalk returns an
+     * <code>InvalidParameterValue</code> error. </p>
+     */
+    inline bool VersionLabelHasBeenSet() const { return m_versionLabelHasBeenSet; }
 
     /**
      * <p>A label identifying this version.</p> <p>Constraint: Must be unique per
@@ -169,6 +184,11 @@ namespace Model
     /**
      * <p>Describes this version.</p>
      */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
+
+    /**
+     * <p>Describes this version.</p>
+     */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
@@ -207,6 +227,12 @@ namespace Model
      * <p>Specify a commit in an AWS CodeCommit Git repository to use as the source
      * code for the application version.</p>
      */
+    inline bool SourceBuildInformationHasBeenSet() const { return m_sourceBuildInformationHasBeenSet; }
+
+    /**
+     * <p>Specify a commit in an AWS CodeCommit Git repository to use as the source
+     * code for the application version.</p>
+     */
     inline void SetSourceBuildInformation(const SourceBuildInformation& value) { m_sourceBuildInformationHasBeenSet = true; m_sourceBuildInformation = value; }
 
     /**
@@ -238,6 +264,17 @@ namespace Model
      * sample application.</p>
      */
     inline const S3Location& GetSourceBundle() const{ return m_sourceBundle; }
+
+    /**
+     * <p>The Amazon S3 bucket and key that identify the location of the source bundle
+     * for this version.</p> <note> <p>The Amazon S3 bucket must be in the same region
+     * as the environment.</p> </note> <p>Specify a source bundle in S3 or a commit in
+     * an AWS CodeCommit repository (with <code>SourceBuildInformation</code>), but not
+     * both. If neither <code>SourceBundle</code> nor
+     * <code>SourceBuildInformation</code> are provided, Elastic Beanstalk uses a
+     * sample application.</p>
+     */
+    inline bool SourceBundleHasBeenSet() const { return m_sourceBundleHasBeenSet; }
 
     /**
      * <p>The Amazon S3 bucket and key that identify the location of the source bundle
@@ -292,6 +329,11 @@ namespace Model
     /**
      * <p>Settings for an AWS CodeBuild build.</p>
      */
+    inline bool BuildConfigurationHasBeenSet() const { return m_buildConfigurationHasBeenSet; }
+
+    /**
+     * <p>Settings for an AWS CodeBuild build.</p>
+     */
     inline void SetBuildConfiguration(const BuildConfiguration& value) { m_buildConfigurationHasBeenSet = true; m_buildConfiguration = value; }
 
     /**
@@ -315,6 +357,12 @@ namespace Model
      * it doesn't already exist.</p>
      */
     inline bool GetAutoCreateApplication() const{ return m_autoCreateApplication; }
+
+    /**
+     * <p>Set to <code>true</code> to create an application with the specified name if
+     * it doesn't already exist.</p>
+     */
+    inline bool AutoCreateApplicationHasBeenSet() const { return m_autoCreateApplicationHasBeenSet; }
 
     /**
      * <p>Set to <code>true</code> to create an application with the specified name if
@@ -355,6 +403,20 @@ namespace Model
      * configuration files. It doesn't validate your application's configuration files,
      * like proxy server or Docker configuration.</p> </note>
      */
+    inline bool ProcessHasBeenSet() const { return m_processHasBeenSet; }
+
+    /**
+     * <p>Pre-processes and validates the environment manifest (<code>env.yaml</code>)
+     * and configuration files (<code>*.config</code> files in the
+     * <code>.ebextensions</code> folder) in the source bundle. Validating
+     * configuration files can identify issues prior to deploying the application
+     * version to an environment.</p> <p>You must turn processing on for application
+     * versions that you create using AWS CodeBuild or AWS CodeCommit. For application
+     * versions built from a source bundle in Amazon S3, processing is optional.</p>
+     * <note> <p>The <code>Process</code> option validates Elastic Beanstalk
+     * configuration files. It doesn't validate your application's configuration files,
+     * like proxy server or Docker configuration.</p> </note>
+     */
     inline void SetProcess(bool value) { m_processHasBeenSet = true; m_process = value; }
 
     /**
@@ -378,6 +440,13 @@ namespace Model
      * use the application version don't inherit the tags.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>Specifies the tags applied to the application version.</p> <p>Elastic
+     * Beanstalk applies these tags only to the application version. Environments that
+     * use the application version don't inherit the tags.</p>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
      * <p>Specifies the tags applied to the application version.</p> <p>Elastic

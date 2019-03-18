@@ -57,6 +57,12 @@ namespace Model
      * <p>Represents the output of the PutReportDefinition operation. The content
      * consists of the detailed metadata and data file information. </p>
      */
+    inline bool ReportDefinitionHasBeenSet() const { return m_reportDefinitionHasBeenSet; }
+
+    /**
+     * <p>Represents the output of the PutReportDefinition operation. The content
+     * consists of the detailed metadata and data file information. </p>
+     */
     inline void SetReportDefinition(const ReportDefinition& value) { m_reportDefinitionHasBeenSet = true; m_reportDefinition = value; }
 
     /**

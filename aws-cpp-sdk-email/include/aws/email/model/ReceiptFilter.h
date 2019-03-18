@@ -68,6 +68,14 @@ namespace Model
      * dashes (-).</p> </li> <li> <p>Start and end with a letter or number.</p> </li>
      * <li> <p>Contain less than 64 characters.</p> </li> </ul>
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>The name of the IP address filter. The name must:</p> <ul> <li> <p>This value
+     * can only contain ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), or
+     * dashes (-).</p> </li> <li> <p>Start and end with a letter or number.</p> </li>
+     * <li> <p>Contain less than 64 characters.</p> </li> </ul>
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
@@ -116,6 +124,12 @@ namespace Model
      * block or allow incoming mail from them.</p>
      */
     inline const ReceiptIpFilter& GetIpFilter() const{ return m_ipFilter; }
+
+    /**
+     * <p>A structure that provides the IP addresses to block or allow, and whether to
+     * block or allow incoming mail from them.</p>
+     */
+    inline bool IpFilterHasBeenSet() const { return m_ipFilterHasBeenSet; }
 
     /**
      * <p>A structure that provides the IP addresses to block or allow, and whether to

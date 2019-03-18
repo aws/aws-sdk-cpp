@@ -55,6 +55,12 @@ namespace Model
      * <p>The stack ID. If you use this parameter, <code>DescribeServiceErrors</code>
      * returns descriptions of the errors associated with the specified stack.</p>
      */
+    inline bool StackIdHasBeenSet() const { return m_stackIdHasBeenSet; }
+
+    /**
+     * <p>The stack ID. If you use this parameter, <code>DescribeServiceErrors</code>
+     * returns descriptions of the errors associated with the specified stack.</p>
+     */
     inline void SetStackId(const Aws::String& value) { m_stackIdHasBeenSet = true; m_stackId = value; }
 
     /**
@@ -94,6 +100,13 @@ namespace Model
      * with the specified instance.</p>
      */
     inline const Aws::String& GetInstanceId() const{ return m_instanceId; }
+
+    /**
+     * <p>The instance ID. If you use this parameter,
+     * <code>DescribeServiceErrors</code> returns descriptions of the errors associated
+     * with the specified instance.</p>
+     */
+    inline bool InstanceIdHasBeenSet() const { return m_instanceIdHasBeenSet; }
 
     /**
      * <p>The instance ID. If you use this parameter,
@@ -144,6 +157,13 @@ namespace Model
      * Otherwise, it returns a description of every error.</p>
      */
     inline const Aws::Vector<Aws::String>& GetServiceErrorIds() const{ return m_serviceErrorIds; }
+
+    /**
+     * <p>An array of service error IDs. If you use this parameter,
+     * <code>DescribeServiceErrors</code> returns descriptions of the specified errors.
+     * Otherwise, it returns a description of every error.</p>
+     */
+    inline bool ServiceErrorIdsHasBeenSet() const { return m_serviceErrorIdsHasBeenSet; }
 
     /**
      * <p>An array of service error IDs. If you use this parameter,

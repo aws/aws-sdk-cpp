@@ -69,6 +69,12 @@ namespace Model
      * <p>The identifier for the distribution. For example:
      * <code>EDFDVBD632BHDS5</code>.</p>
      */
+    inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
+
+    /**
+     * <p>The identifier for the distribution. For example:
+     * <code>EDFDVBD632BHDS5</code>.</p>
+     */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
     /**
@@ -108,6 +114,13 @@ namespace Model
      * where <code>123456789012</code> is your AWS account ID.</p>
      */
     inline const Aws::String& GetARN() const{ return m_aRN; }
+
+    /**
+     * <p>The ARN (Amazon Resource Name) for the distribution. For example:
+     * <code>arn:aws:cloudfront::123456789012:distribution/EDFDVBD632BHDS5</code>,
+     * where <code>123456789012</code> is your AWS account ID.</p>
+     */
+    inline bool ARNHasBeenSet() const { return m_aRNHasBeenSet; }
 
     /**
      * <p>The ARN (Amazon Resource Name) for the distribution. For example:
@@ -164,6 +177,13 @@ namespace Model
      * <code>Deployed</code>, the distribution's information is propagated to all
      * CloudFront edge locations.</p>
      */
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
+
+    /**
+     * <p>The current status of the distribution. When the status is
+     * <code>Deployed</code>, the distribution's information is propagated to all
+     * CloudFront edge locations.</p>
+     */
     inline void SetStatus(const Aws::String& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
@@ -210,6 +230,11 @@ namespace Model
     /**
      * <p>The date and time the distribution was last modified.</p>
      */
+    inline bool LastModifiedTimeHasBeenSet() const { return m_lastModifiedTimeHasBeenSet; }
+
+    /**
+     * <p>The date and time the distribution was last modified.</p>
+     */
     inline void SetLastModifiedTime(const Aws::Utils::DateTime& value) { m_lastModifiedTimeHasBeenSet = true; m_lastModifiedTime = value; }
 
     /**
@@ -233,6 +258,12 @@ namespace Model
      * <code>d111111abcdef8.cloudfront.net</code>.</p>
      */
     inline const Aws::String& GetDomainName() const{ return m_domainName; }
+
+    /**
+     * <p>The domain name that corresponds to the distribution, for example,
+     * <code>d111111abcdef8.cloudfront.net</code>.</p>
+     */
+    inline bool DomainNameHasBeenSet() const { return m_domainNameHasBeenSet; }
 
     /**
      * <p>The domain name that corresponds to the distribution, for example,
@@ -281,6 +312,12 @@ namespace Model
      * <p>A complex type that contains information about CNAMEs (alternate domain
      * names), if any, for this distribution.</p>
      */
+    inline bool AliasesHasBeenSet() const { return m_aliasesHasBeenSet; }
+
+    /**
+     * <p>A complex type that contains information about CNAMEs (alternate domain
+     * names), if any, for this distribution.</p>
+     */
     inline void SetAliases(const Aliases& value) { m_aliasesHasBeenSet = true; m_aliases = value; }
 
     /**
@@ -307,6 +344,12 @@ namespace Model
      * distribution.</p>
      */
     inline const Origins& GetOrigins() const{ return m_origins; }
+
+    /**
+     * <p>A complex type that contains information about origins for this
+     * distribution.</p>
+     */
+    inline bool OriginsHasBeenSet() const { return m_originsHasBeenSet; }
 
     /**
      * <p>A complex type that contains information about origins for this
@@ -343,6 +386,12 @@ namespace Model
      * <p> A complex type that contains information about origin groups for this
      * distribution.</p>
      */
+    inline bool OriginGroupsHasBeenSet() const { return m_originGroupsHasBeenSet; }
+
+    /**
+     * <p> A complex type that contains information about origin groups for this
+     * distribution.</p>
+     */
     inline void SetOriginGroups(const OriginGroups& value) { m_originGroupsHasBeenSet = true; m_originGroups = value; }
 
     /**
@@ -371,6 +420,14 @@ namespace Model
      * create exactly one default cache behavior.</p>
      */
     inline const DefaultCacheBehavior& GetDefaultCacheBehavior() const{ return m_defaultCacheBehavior; }
+
+    /**
+     * <p>A complex type that describes the default cache behavior if you don't specify
+     * a <code>CacheBehavior</code> element or if files don't match any of the values
+     * of <code>PathPattern</code> in <code>CacheBehavior</code> elements. You must
+     * create exactly one default cache behavior.</p>
+     */
+    inline bool DefaultCacheBehaviorHasBeenSet() const { return m_defaultCacheBehaviorHasBeenSet; }
 
     /**
      * <p>A complex type that describes the default cache behavior if you don't specify
@@ -415,6 +472,12 @@ namespace Model
      * <p>A complex type that contains zero or more <code>CacheBehavior</code>
      * elements.</p>
      */
+    inline bool CacheBehaviorsHasBeenSet() const { return m_cacheBehaviorsHasBeenSet; }
+
+    /**
+     * <p>A complex type that contains zero or more <code>CacheBehavior</code>
+     * elements.</p>
+     */
     inline void SetCacheBehaviors(const CacheBehaviors& value) { m_cacheBehaviorsHasBeenSet = true; m_cacheBehaviors = value; }
 
     /**
@@ -446,6 +509,12 @@ namespace Model
      * <p>A complex type that contains zero or more <code>CustomErrorResponses</code>
      * elements.</p>
      */
+    inline bool CustomErrorResponsesHasBeenSet() const { return m_customErrorResponsesHasBeenSet; }
+
+    /**
+     * <p>A complex type that contains zero or more <code>CustomErrorResponses</code>
+     * elements.</p>
+     */
     inline void SetCustomErrorResponses(const CustomErrorResponses& value) { m_customErrorResponsesHasBeenSet = true; m_customErrorResponses = value; }
 
     /**
@@ -471,6 +540,11 @@ namespace Model
      * <p>The comment originally specified when this distribution was created.</p>
      */
     inline const Aws::String& GetComment() const{ return m_comment; }
+
+    /**
+     * <p>The comment originally specified when this distribution was created.</p>
+     */
+    inline bool CommentHasBeenSet() const { return m_commentHasBeenSet; }
 
     /**
      * <p>The comment originally specified when this distribution was created.</p>
@@ -513,6 +587,12 @@ namespace Model
      * <p>A complex type that contains information about price class for this streaming
      * distribution. </p>
      */
+    inline bool PriceClassHasBeenSet() const { return m_priceClassHasBeenSet; }
+
+    /**
+     * <p>A complex type that contains information about price class for this streaming
+     * distribution. </p>
+     */
     inline void SetPriceClass(const PriceClass& value) { m_priceClassHasBeenSet = true; m_priceClass = value; }
 
     /**
@@ -542,6 +622,11 @@ namespace Model
     /**
      * <p>Whether the distribution is enabled to accept user requests for content.</p>
      */
+    inline bool EnabledHasBeenSet() const { return m_enabledHasBeenSet; }
+
+    /**
+     * <p>Whether the distribution is enabled to accept user requests for content.</p>
+     */
     inline void SetEnabled(bool value) { m_enabledHasBeenSet = true; m_enabled = value; }
 
     /**
@@ -554,6 +639,11 @@ namespace Model
      * <p/>
      */
     inline const ViewerCertificate& GetViewerCertificate() const{ return m_viewerCertificate; }
+
+    /**
+     * <p/>
+     */
+    inline bool ViewerCertificateHasBeenSet() const { return m_viewerCertificateHasBeenSet; }
 
     /**
      * <p/>
@@ -584,6 +674,11 @@ namespace Model
     /**
      * <p/>
      */
+    inline bool RestrictionsHasBeenSet() const { return m_restrictionsHasBeenSet; }
+
+    /**
+     * <p/>
+     */
     inline void SetRestrictions(const Restrictions& value) { m_restrictionsHasBeenSet = true; m_restrictions = value; }
 
     /**
@@ -606,6 +701,11 @@ namespace Model
      * <p>The Web ACL Id (if any) associated with the distribution.</p>
      */
     inline const Aws::String& GetWebACLId() const{ return m_webACLId; }
+
+    /**
+     * <p>The Web ACL Id (if any) associated with the distribution.</p>
+     */
+    inline bool WebACLIdHasBeenSet() const { return m_webACLIdHasBeenSet; }
 
     /**
      * <p>The Web ACL Id (if any) associated with the distribution.</p>
@@ -652,6 +752,14 @@ namespace Model
      * <code>http2</code>. Viewers that don't support <code>HTTP/2</code> will
      * automatically use an earlier version.</p>
      */
+    inline bool HttpVersionHasBeenSet() const { return m_httpVersionHasBeenSet; }
+
+    /**
+     * <p> Specify the maximum HTTP version that you want viewers to use to communicate
+     * with CloudFront. The default value for new web distributions is
+     * <code>http2</code>. Viewers that don't support <code>HTTP/2</code> will
+     * automatically use an earlier version.</p>
+     */
     inline void SetHttpVersion(const HttpVersion& value) { m_httpVersionHasBeenSet = true; m_httpVersion = value; }
 
     /**
@@ -684,6 +792,12 @@ namespace Model
      * your distribution.</p>
      */
     inline bool GetIsIPV6Enabled() const{ return m_isIPV6Enabled; }
+
+    /**
+     * <p>Whether CloudFront responds to IPv6 DNS requests with an IPv6 address for
+     * your distribution.</p>
+     */
+    inline bool IsIPV6EnabledHasBeenSet() const { return m_isIPV6EnabledHasBeenSet; }
 
     /**
      * <p>Whether CloudFront responds to IPv6 DNS requests with an IPv6 address for

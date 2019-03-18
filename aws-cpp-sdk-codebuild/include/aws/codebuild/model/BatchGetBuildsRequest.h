@@ -53,6 +53,11 @@ namespace Model
     /**
      * <p>The IDs of the builds.</p>
      */
+    inline bool IdsHasBeenSet() const { return m_idsHasBeenSet; }
+
+    /**
+     * <p>The IDs of the builds.</p>
+     */
     inline void SetIds(const Aws::Vector<Aws::String>& value) { m_idsHasBeenSet = true; m_ids = value; }
 
     /**

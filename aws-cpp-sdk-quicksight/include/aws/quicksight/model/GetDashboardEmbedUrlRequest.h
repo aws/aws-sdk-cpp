@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>AWS account ID that contains the dashboard you are embedding.</p>
      */
+    inline bool AwsAccountIdHasBeenSet() const { return m_awsAccountIdHasBeenSet; }
+
+    /**
+     * <p>AWS account ID that contains the dashboard you are embedding.</p>
+     */
     inline void SetAwsAccountId(const Aws::String& value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId = value; }
 
     /**
@@ -89,6 +94,11 @@ namespace Model
      * <p>The ID for the dashboard, also added to IAM policy</p>
      */
     inline const Aws::String& GetDashboardId() const{ return m_dashboardId; }
+
+    /**
+     * <p>The ID for the dashboard, also added to IAM policy</p>
+     */
+    inline bool DashboardIdHasBeenSet() const { return m_dashboardIdHasBeenSet; }
 
     /**
      * <p>The ID for the dashboard, also added to IAM policy</p>
@@ -129,6 +139,11 @@ namespace Model
     /**
      * <p>The authentication method the user uses to sign in (IAM only).</p>
      */
+    inline bool IdentityTypeHasBeenSet() const { return m_identityTypeHasBeenSet; }
+
+    /**
+     * <p>The authentication method the user uses to sign in (IAM only).</p>
+     */
     inline void SetIdentityType(const IdentityType& value) { m_identityTypeHasBeenSet = true; m_identityType = value; }
 
     /**
@@ -157,6 +172,12 @@ namespace Model
      * <p>How many minutes the session is valid. The session lifetime must be between
      * 15 and 600 minutes.</p>
      */
+    inline bool SessionLifetimeInMinutesHasBeenSet() const { return m_sessionLifetimeInMinutesHasBeenSet; }
+
+    /**
+     * <p>How many minutes the session is valid. The session lifetime must be between
+     * 15 and 600 minutes.</p>
+     */
     inline void SetSessionLifetimeInMinutes(long long value) { m_sessionLifetimeInMinutesHasBeenSet = true; m_sessionLifetimeInMinutes = value; }
 
     /**
@@ -176,6 +197,12 @@ namespace Model
      * <p>Remove the undo/redo button on embedded dashboard. The default is FALSE,
      * which enables the undo/redo button.</p>
      */
+    inline bool UndoRedoDisabledHasBeenSet() const { return m_undoRedoDisabledHasBeenSet; }
+
+    /**
+     * <p>Remove the undo/redo button on embedded dashboard. The default is FALSE,
+     * which enables the undo/redo button.</p>
+     */
     inline void SetUndoRedoDisabled(bool value) { m_undoRedoDisabledHasBeenSet = true; m_undoRedoDisabled = value; }
 
     /**
@@ -190,6 +217,12 @@ namespace Model
      * allows the reset button.</p>
      */
     inline bool GetResetDisabled() const{ return m_resetDisabled; }
+
+    /**
+     * <p>Remove the reset button on embedded dashboard. The default is FALSE, which
+     * allows the reset button.</p>
+     */
+    inline bool ResetDisabledHasBeenSet() const { return m_resetDisabledHasBeenSet; }
 
     /**
      * <p>Remove the reset button on embedded dashboard. The default is FALSE, which

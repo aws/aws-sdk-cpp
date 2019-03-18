@@ -59,6 +59,11 @@ namespace Model
     /**
      * <p>The name of the policy type.</p>
      */
+    inline bool PolicyTypeNameHasBeenSet() const { return m_policyTypeNameHasBeenSet; }
+
+    /**
+     * <p>The name of the policy type.</p>
+     */
     inline void SetPolicyTypeName(const Aws::String& value) { m_policyTypeNameHasBeenSet = true; m_policyTypeName = value; }
 
     /**
@@ -91,6 +96,11 @@ namespace Model
      * <p>A description of the policy type.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
+
+    /**
+     * <p>A description of the policy type.</p>
+     */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
 
     /**
      * <p>A description of the policy type.</p>
@@ -128,6 +138,12 @@ namespace Model
      * by Elastic Load Balancing.</p>
      */
     inline const Aws::Vector<PolicyAttributeTypeDescription>& GetPolicyAttributeTypeDescriptions() const{ return m_policyAttributeTypeDescriptions; }
+
+    /**
+     * <p>The description of the policy attributes associated with the policies defined
+     * by Elastic Load Balancing.</p>
+     */
+    inline bool PolicyAttributeTypeDescriptionsHasBeenSet() const { return m_policyAttributeTypeDescriptionsHasBeenSet; }
 
     /**
      * <p>The description of the policy attributes associated with the policies defined

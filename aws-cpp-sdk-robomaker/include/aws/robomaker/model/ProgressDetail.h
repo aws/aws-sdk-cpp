@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The current progress status.</p>
      */
+    inline bool CurrentProgressHasBeenSet() const { return m_currentProgressHasBeenSet; }
+
+    /**
+     * <p>The current progress status.</p>
+     */
     inline void SetCurrentProgress(const Aws::String& value) { m_currentProgressHasBeenSet = true; m_currentProgress = value; }
 
     /**
@@ -88,6 +93,11 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the deployment job.</p>
      */
     inline const Aws::String& GetTargetResource() const{ return m_targetResource; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the deployment job.</p>
+     */
+    inline bool TargetResourceHasBeenSet() const { return m_targetResourceHasBeenSet; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the deployment job.</p>

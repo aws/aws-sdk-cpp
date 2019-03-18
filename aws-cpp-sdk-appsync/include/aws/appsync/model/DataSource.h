@@ -61,6 +61,11 @@ namespace Model
     /**
      * <p>The data source ARN.</p>
      */
+    inline bool DataSourceArnHasBeenSet() const { return m_dataSourceArnHasBeenSet; }
+
+    /**
+     * <p>The data source ARN.</p>
+     */
     inline void SetDataSourceArn(const Aws::String& value) { m_dataSourceArnHasBeenSet = true; m_dataSourceArn = value; }
 
     /**
@@ -97,6 +102,11 @@ namespace Model
     /**
      * <p>The name of the data source.</p>
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>The name of the data source.</p>
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
@@ -129,6 +139,11 @@ namespace Model
      * <p>The description of the data source.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
+
+    /**
+     * <p>The description of the data source.</p>
+     */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
 
     /**
      * <p>The description of the data source.</p>
@@ -174,6 +189,20 @@ namespace Model
      * The data source is a relational database.</p> </li> </ul>
      */
     inline const DataSourceType& GetType() const{ return m_type; }
+
+    /**
+     * <p>The type of the data source.</p> <ul> <li> <p> <b>AMAZON_DYNAMODB</b>: The
+     * data source is an Amazon DynamoDB table.</p> </li> <li> <p>
+     * <b>AMAZON_ELASTICSEARCH</b>: The data source is an Amazon Elasticsearch Service
+     * domain.</p> </li> <li> <p> <b>AWS_LAMBDA</b>: The data source is an AWS Lambda
+     * function.</p> </li> <li> <p> <b>NONE</b>: There is no data source. This type is
+     * used when you wish to invoke a GraphQL operation without connecting to a data
+     * source, such as performing data transformation with resolvers or triggering a
+     * subscription to be invoked from a mutation.</p> </li> <li> <p> <b>HTTP</b>: The
+     * data source is an HTTP endpoint.</p> </li> <li> <p> <b>RELATIONAL_DATABASE</b>:
+     * The data source is a relational database.</p> </li> </ul>
+     */
+    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
 
     /**
      * <p>The type of the data source.</p> <ul> <li> <p> <b>AMAZON_DYNAMODB</b>: The
@@ -242,6 +271,12 @@ namespace Model
      * <p>The AWS IAM service role ARN for the data source. The system assumes this
      * role when accessing the data source.</p>
      */
+    inline bool ServiceRoleArnHasBeenSet() const { return m_serviceRoleArnHasBeenSet; }
+
+    /**
+     * <p>The AWS IAM service role ARN for the data source. The system assumes this
+     * role when accessing the data source.</p>
+     */
     inline void SetServiceRoleArn(const Aws::String& value) { m_serviceRoleArnHasBeenSet = true; m_serviceRoleArn = value; }
 
     /**
@@ -283,6 +318,11 @@ namespace Model
     /**
      * <p>Amazon DynamoDB settings.</p>
      */
+    inline bool DynamodbConfigHasBeenSet() const { return m_dynamodbConfigHasBeenSet; }
+
+    /**
+     * <p>Amazon DynamoDB settings.</p>
+     */
     inline void SetDynamodbConfig(const DynamodbDataSourceConfig& value) { m_dynamodbConfigHasBeenSet = true; m_dynamodbConfig = value; }
 
     /**
@@ -305,6 +345,11 @@ namespace Model
      * <p>AWS Lambda settings.</p>
      */
     inline const LambdaDataSourceConfig& GetLambdaConfig() const{ return m_lambdaConfig; }
+
+    /**
+     * <p>AWS Lambda settings.</p>
+     */
+    inline bool LambdaConfigHasBeenSet() const { return m_lambdaConfigHasBeenSet; }
 
     /**
      * <p>AWS Lambda settings.</p>
@@ -335,6 +380,11 @@ namespace Model
     /**
      * <p>Amazon Elasticsearch Service settings.</p>
      */
+    inline bool ElasticsearchConfigHasBeenSet() const { return m_elasticsearchConfigHasBeenSet; }
+
+    /**
+     * <p>Amazon Elasticsearch Service settings.</p>
+     */
     inline void SetElasticsearchConfig(const ElasticsearchDataSourceConfig& value) { m_elasticsearchConfigHasBeenSet = true; m_elasticsearchConfig = value; }
 
     /**
@@ -361,6 +411,11 @@ namespace Model
     /**
      * <p>HTTP endpoint settings.</p>
      */
+    inline bool HttpConfigHasBeenSet() const { return m_httpConfigHasBeenSet; }
+
+    /**
+     * <p>HTTP endpoint settings.</p>
+     */
     inline void SetHttpConfig(const HttpDataSourceConfig& value) { m_httpConfigHasBeenSet = true; m_httpConfig = value; }
 
     /**
@@ -383,6 +438,11 @@ namespace Model
      * <p>Relational database settings.</p>
      */
     inline const RelationalDatabaseDataSourceConfig& GetRelationalDatabaseConfig() const{ return m_relationalDatabaseConfig; }
+
+    /**
+     * <p>Relational database settings.</p>
+     */
+    inline bool RelationalDatabaseConfigHasBeenSet() const { return m_relationalDatabaseConfigHasBeenSet; }
 
     /**
      * <p>Relational database settings.</p>

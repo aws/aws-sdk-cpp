@@ -55,6 +55,11 @@ namespace Model
     /**
      * <p>A date range value for the date filter.</p>
      */
+    inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
+
+    /**
+     * <p>A date range value for the date filter.</p>
+     */
     inline void SetValue(int value) { m_valueHasBeenSet = true; m_value = value; }
 
     /**
@@ -67,6 +72,11 @@ namespace Model
      * <p>A date range unit for the date filter.</p>
      */
     inline const DateRangeUnit& GetUnit() const{ return m_unit; }
+
+    /**
+     * <p>A date range unit for the date filter.</p>
+     */
+    inline bool UnitHasBeenSet() const { return m_unitHasBeenSet; }
 
     /**
      * <p>A date range unit for the date filter.</p>

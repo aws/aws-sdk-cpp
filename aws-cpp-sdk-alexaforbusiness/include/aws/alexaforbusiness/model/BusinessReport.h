@@ -61,6 +61,12 @@ namespace Model
      * <p>The status of the report generation execution (RUNNING, SUCCEEDED, or
      * FAILED).</p>
      */
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
+
+    /**
+     * <p>The status of the report generation execution (RUNNING, SUCCEEDED, or
+     * FAILED).</p>
+     */
     inline void SetStatus(const BusinessReportStatus& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
@@ -86,6 +92,11 @@ namespace Model
      * <p>The failure code.</p>
      */
     inline const BusinessReportFailureCode& GetFailureCode() const{ return m_failureCode; }
+
+    /**
+     * <p>The failure code.</p>
+     */
+    inline bool FailureCodeHasBeenSet() const { return m_failureCodeHasBeenSet; }
 
     /**
      * <p>The failure code.</p>
@@ -116,6 +127,11 @@ namespace Model
     /**
      * <p>The S3 location of the output reports.</p>
      */
+    inline bool S3LocationHasBeenSet() const { return m_s3LocationHasBeenSet; }
+
+    /**
+     * <p>The S3 location of the output reports.</p>
+     */
     inline void SetS3Location(const BusinessReportS3Location& value) { m_s3LocationHasBeenSet = true; m_s3Location = value; }
 
     /**
@@ -142,6 +158,11 @@ namespace Model
     /**
      * <p>The time of report delivery.</p>
      */
+    inline bool DeliveryTimeHasBeenSet() const { return m_deliveryTimeHasBeenSet; }
+
+    /**
+     * <p>The time of report delivery.</p>
+     */
     inline void SetDeliveryTime(const Aws::Utils::DateTime& value) { m_deliveryTimeHasBeenSet = true; m_deliveryTime = value; }
 
     /**
@@ -164,6 +185,11 @@ namespace Model
      * <p>The download link where a user can download the report.</p>
      */
     inline const Aws::String& GetDownloadUrl() const{ return m_downloadUrl; }
+
+    /**
+     * <p>The download link where a user can download the report.</p>
+     */
+    inline bool DownloadUrlHasBeenSet() const { return m_downloadUrlHasBeenSet; }
 
     /**
      * <p>The download link where a user can download the report.</p>

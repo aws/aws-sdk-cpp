@@ -59,6 +59,11 @@ namespace Model
     /**
      * <p>The cluster identifier. This parameter is stored as a lowercase string.</p>
      */
+    inline bool CacheClusterIdHasBeenSet() const { return m_cacheClusterIdHasBeenSet; }
+
+    /**
+     * <p>The cluster identifier. This parameter is stored as a lowercase string.</p>
+     */
     inline void SetCacheClusterId(const Aws::String& value) { m_cacheClusterIdHasBeenSet = true; m_cacheClusterId = value; }
 
     /**
@@ -92,6 +97,12 @@ namespace Model
      * 0002, etc.). To reboot an entire cluster, specify all of the cache node IDs.</p>
      */
     inline const Aws::Vector<Aws::String>& GetCacheNodeIdsToReboot() const{ return m_cacheNodeIdsToReboot; }
+
+    /**
+     * <p>A list of cache node IDs to reboot. A node ID is a numeric identifier (0001,
+     * 0002, etc.). To reboot an entire cluster, specify all of the cache node IDs.</p>
+     */
+    inline bool CacheNodeIdsToRebootHasBeenSet() const { return m_cacheNodeIdsToRebootHasBeenSet; }
 
     /**
      * <p>A list of cache node IDs to reboot. A node ID is a numeric identifier (0001,

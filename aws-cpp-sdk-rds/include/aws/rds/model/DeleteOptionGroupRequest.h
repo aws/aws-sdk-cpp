@@ -59,6 +59,12 @@ namespace Model
      * <p>The name of the option group to be deleted.</p> <note> <p>You can't delete
      * default option groups.</p> </note>
      */
+    inline bool OptionGroupNameHasBeenSet() const { return m_optionGroupNameHasBeenSet; }
+
+    /**
+     * <p>The name of the option group to be deleted.</p> <note> <p>You can't delete
+     * default option groups.</p> </note>
+     */
     inline void SetOptionGroupName(const Aws::String& value) { m_optionGroupNameHasBeenSet = true; m_optionGroupName = value; }
 
     /**

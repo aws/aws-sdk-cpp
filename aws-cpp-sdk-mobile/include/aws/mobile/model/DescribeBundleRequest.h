@@ -54,6 +54,11 @@ namespace Model
     /**
      * <p> Unique bundle identifier. </p>
      */
+    inline bool BundleIdHasBeenSet() const { return m_bundleIdHasBeenSet; }
+
+    /**
+     * <p> Unique bundle identifier. </p>
+     */
     inline void SetBundleId(const Aws::String& value) { m_bundleIdHasBeenSet = true; m_bundleId = value; }
 
     /**

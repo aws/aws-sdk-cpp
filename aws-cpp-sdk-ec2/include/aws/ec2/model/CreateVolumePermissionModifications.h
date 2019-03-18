@@ -59,6 +59,11 @@ namespace Model
     /**
      * <p>Adds the specified AWS account ID or group to the list.</p>
      */
+    inline bool AddHasBeenSet() const { return m_addHasBeenSet; }
+
+    /**
+     * <p>Adds the specified AWS account ID or group to the list.</p>
+     */
     inline void SetAdd(const Aws::Vector<CreateVolumePermission>& value) { m_addHasBeenSet = true; m_add = value; }
 
     /**
@@ -91,6 +96,11 @@ namespace Model
      * <p>Removes the specified AWS account ID or group from the list.</p>
      */
     inline const Aws::Vector<CreateVolumePermission>& GetRemove() const{ return m_remove; }
+
+    /**
+     * <p>Removes the specified AWS account ID or group from the list.</p>
+     */
+    inline bool RemoveHasBeenSet() const { return m_removeHasBeenSet; }
 
     /**
      * <p>Removes the specified AWS account ID or group from the list.</p>

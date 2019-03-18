@@ -56,6 +56,11 @@ namespace Model
     /**
      * Time (in seconds) between each encryption key rotation.
      */
+    inline bool KeyRotationIntervalSecondsHasBeenSet() const { return m_keyRotationIntervalSecondsHasBeenSet; }
+
+    /**
+     * Time (in seconds) between each encryption key rotation.
+     */
     inline void SetKeyRotationIntervalSeconds(int value) { m_keyRotationIntervalSecondsHasBeenSet = true; m_keyRotationIntervalSeconds = value; }
 
     /**
@@ -66,6 +71,9 @@ namespace Model
 
     
     inline const SpekeKeyProvider& GetSpekeKeyProvider() const{ return m_spekeKeyProvider; }
+
+    
+    inline bool SpekeKeyProviderHasBeenSet() const { return m_spekeKeyProviderHasBeenSet; }
 
     
     inline void SetSpekeKeyProvider(const SpekeKeyProvider& value) { m_spekeKeyProviderHasBeenSet = true; m_spekeKeyProvider = value; }

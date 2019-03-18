@@ -54,6 +54,11 @@ namespace Model
     /**
      * <p>The unique Lightsail disk name (e.g., <code>my-disk</code>).</p>
      */
+    inline bool DiskNameHasBeenSet() const { return m_diskNameHasBeenSet; }
+
+    /**
+     * <p>The unique Lightsail disk name (e.g., <code>my-disk</code>).</p>
+     */
     inline void SetDiskName(const Aws::String& value) { m_diskNameHasBeenSet = true; m_diskName = value; }
 
     /**
@@ -89,6 +94,14 @@ namespace Model
      * to list the Availability Zones where Lightsail is currently available.</p>
      */
     inline const Aws::String& GetAvailabilityZone() const{ return m_availabilityZone; }
+
+    /**
+     * <p>The Availability Zone where you want to create the disk (e.g.,
+     * <code>us-east-2a</code>). Choose the same Availability Zone as the Lightsail
+     * instance where you want to create the disk.</p> <p>Use the GetRegions operation
+     * to list the Availability Zones where Lightsail is currently available.</p>
+     */
+    inline bool AvailabilityZoneHasBeenSet() const { return m_availabilityZoneHasBeenSet; }
 
     /**
      * <p>The Availability Zone where you want to create the disk (e.g.,
@@ -147,6 +160,11 @@ namespace Model
     /**
      * <p>The size of the disk in GB (e.g., <code>32</code>).</p>
      */
+    inline bool SizeInGbHasBeenSet() const { return m_sizeInGbHasBeenSet; }
+
+    /**
+     * <p>The size of the disk in GB (e.g., <code>32</code>).</p>
+     */
     inline void SetSizeInGb(int value) { m_sizeInGbHasBeenSet = true; m_sizeInGb = value; }
 
     /**
@@ -161,6 +179,13 @@ namespace Model
      * resource</code> operation.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>The tag keys and optional values to add to the resource during create.</p>
+     * <p>To tag a resource after it has been created, see the <code>tag
+     * resource</code> operation.</p>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
      * <p>The tag keys and optional values to add to the resource during create.</p>

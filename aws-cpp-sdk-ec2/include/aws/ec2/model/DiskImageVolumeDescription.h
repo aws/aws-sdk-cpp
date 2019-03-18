@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The volume identifier.</p>
      */
+    inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
+
+    /**
+     * <p>The volume identifier.</p>
+     */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
     /**
@@ -89,6 +94,11 @@ namespace Model
      * <p>The size of the volume, in GiB.</p>
      */
     inline long long GetSize() const{ return m_size; }
+
+    /**
+     * <p>The size of the volume, in GiB.</p>
+     */
+    inline bool SizeHasBeenSet() const { return m_sizeHasBeenSet; }
 
     /**
      * <p>The size of the volume, in GiB.</p>

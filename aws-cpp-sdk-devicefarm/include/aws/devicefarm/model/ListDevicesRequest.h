@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the project.</p>
      */
+    inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the project.</p>
+     */
     inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
 
     /**
@@ -91,6 +96,12 @@ namespace Model
      * which can be used to return the next set of items in the list.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
+    /**
+     * <p>An identifier that was returned from the previous call to this operation,
+     * which can be used to return the next set of items in the list.</p>
+     */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
      * <p>An identifier that was returned from the previous call to this operation,
@@ -164,6 +175,42 @@ namespace Model
      * "BUSY", or "TEMPORARY_NOT_AVAILABLE" as values.</p> </li> </ul> </li> </ul>
      */
     inline const Aws::Vector<DeviceFilter>& GetFilters() const{ return m_filters; }
+
+    /**
+     * <p>Used to select a set of devices. A filter is made up of an attribute, an
+     * operator, and one or more values.</p> <ul> <li> <p>Attribute: The aspect of a
+     * device such as platform or model used as the selction criteria in a device
+     * filter.</p> <p>Allowed values include:</p> <ul> <li> <p>ARN: The Amazon Resource
+     * Name (ARN) of the device. For example,
+     * "arn:aws:devicefarm:us-west-2::device:12345Example".</p> </li> <li> <p>PLATFORM:
+     * The device platform. Valid values are "ANDROID" or "IOS".</p> </li> <li>
+     * <p>OS_VERSION: The operating system version. For example, "10.3.2".</p> </li>
+     * <li> <p>MODEL: The device model. For example, "iPad 5th Gen".</p> </li> <li>
+     * <p>AVAILABILITY: The current availability of the device. Valid values are
+     * "AVAILABLE", "HIGHLY_AVAILABLE", "BUSY", or "TEMPORARY_NOT_AVAILABLE".</p> </li>
+     * <li> <p>FORM_FACTOR: The device form factor. Valid values are "PHONE" or
+     * "TABLET".</p> </li> <li> <p>MANUFACTURER: The device manufacturer. For example,
+     * "Apple".</p> </li> <li> <p>REMOTE_ACCESS_ENABLED: Whether the device is enabled
+     * for remote access. Valid values are "TRUE" or "FALSE".</p> </li> <li>
+     * <p>REMOTE_DEBUG_ENABLED: Whether the device is enabled for remote debugging.
+     * Valid values are "TRUE" or "FALSE".</p> </li> <li> <p>INSTANCE_ARN: The Amazon
+     * Resource Name (ARN) of the device instance.</p> </li> <li> <p>INSTANCE_LABELS:
+     * The label of the device instance.</p> </li> <li> <p>FLEET_TYPE: The fleet type.
+     * Valid values are "PUBLIC" or "PRIVATE".</p> </li> </ul> </li> <li> <p>Operator:
+     * The filter operator.</p> <ul> <li> <p>The EQUALS operator is available for every
+     * attribute except INSTANCE_LABELS.</p> </li> <li> <p>The CONTAINS operator is
+     * available for the INSTANCE_LABELS and MODEL attributes.</p> </li> <li> <p>The IN
+     * and NOT_IN operators are available for the ARN, OS_VERSION, MODEL, MANUFACTURER,
+     * and INSTANCE_ARN attributes.</p> </li> <li> <p>The LESS_THAN, GREATER_THAN,
+     * LESS_THAN_OR_EQUALS, and GREATER_THAN_OR_EQUALS operators are also available for
+     * the OS_VERSION attribute.</p> </li> </ul> </li> <li> <p>Values: An array of one
+     * or more filter values.</p> <ul> <li> <p>The IN and NOT_IN operators take a
+     * values array that has one or more elements.</p> </li> <li> <p>The other
+     * operators require an array with a single element.</p> </li> <li> <p>In a
+     * request, the AVAILABILITY attribute takes "AVAILABLE", "HIGHLY_AVAILABLE",
+     * "BUSY", or "TEMPORARY_NOT_AVAILABLE" as values.</p> </li> </ul> </li> </ul>
+     */
+    inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
 
     /**
      * <p>Used to select a set of devices. A filter is made up of an attribute, an

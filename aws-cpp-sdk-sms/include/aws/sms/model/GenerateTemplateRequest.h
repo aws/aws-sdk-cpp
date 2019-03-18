@@ -53,6 +53,11 @@ namespace Model
     /**
      * <p>ID of the application associated with the Amazon CloudFormation template.</p>
      */
+    inline bool AppIdHasBeenSet() const { return m_appIdHasBeenSet; }
+
+    /**
+     * <p>ID of the application associated with the Amazon CloudFormation template.</p>
+     */
     inline void SetAppId(const Aws::String& value) { m_appIdHasBeenSet = true; m_appId = value; }
 
     /**
@@ -85,6 +90,11 @@ namespace Model
      * <p>Format for generating the Amazon CloudFormation template.</p>
      */
     inline const OutputFormat& GetTemplateFormat() const{ return m_templateFormat; }
+
+    /**
+     * <p>Format for generating the Amazon CloudFormation template.</p>
+     */
+    inline bool TemplateFormatHasBeenSet() const { return m_templateFormatHasBeenSet; }
 
     /**
      * <p>Format for generating the Amazon CloudFormation template.</p>

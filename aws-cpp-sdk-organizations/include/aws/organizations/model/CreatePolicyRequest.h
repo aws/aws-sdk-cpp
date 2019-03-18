@@ -65,6 +65,17 @@ namespace Model
      * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_scp-syntax.html">Service
      * Control Policy Syntax</a> in the <i>AWS Organizations User Guide</i>.</p>
      */
+    inline bool ContentHasBeenSet() const { return m_contentHasBeenSet; }
+
+    /**
+     * <p>The policy content to add to the new policy. For example, if you create a <a
+     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scp.html">service
+     * control policy</a> (SCP), this string must be JSON text that specifies the
+     * permissions that admins in attached accounts can delegate to their users,
+     * groups, and roles. For more information about the SCP syntax, see <a
+     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_scp-syntax.html">Service
+     * Control Policy Syntax</a> in the <i>AWS Organizations User Guide</i>.</p>
+     */
     inline void SetContent(const Aws::String& value) { m_contentHasBeenSet = true; m_content = value; }
 
     /**
@@ -131,6 +142,11 @@ namespace Model
     /**
      * <p>An optional description to assign to the policy.</p>
      */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
+
+    /**
+     * <p>An optional description to assign to the policy.</p>
+     */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
@@ -166,6 +182,14 @@ namespace Model
      * character range.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
+
+    /**
+     * <p>The friendly name to assign to the policy.</p> <p>The <a
+     * href="http://wikipedia.org/wiki/regex">regex pattern</a> that is used to
+     * validate this parameter is a string of any of the characters in the ASCII
+     * character range.</p>
+     */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
      * <p>The friendly name to assign to the policy.</p> <p>The <a
@@ -222,6 +246,13 @@ namespace Model
      * </note>
      */
     inline const PolicyType& GetType() const{ return m_type; }
+
+    /**
+     * <p>The type of policy to create.</p> <note> <p>In the current release, the only
+     * type of policy that you can create is a service control policy (SCP).</p>
+     * </note>
+     */
+    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
 
     /**
      * <p>The type of policy to create.</p> <note> <p>In the current release, the only

@@ -54,6 +54,11 @@ namespace Model
     /**
      * <p>The name of the configuration aggregator. </p>
      */
+    inline bool ConfigurationAggregatorNameHasBeenSet() const { return m_configurationAggregatorNameHasBeenSet; }
+
+    /**
+     * <p>The name of the configuration aggregator. </p>
+     */
     inline void SetConfigurationAggregatorName(const Aws::String& value) { m_configurationAggregatorNameHasBeenSet = true; m_configurationAggregatorName = value; }
 
     /**
@@ -90,6 +95,11 @@ namespace Model
     /**
      * <p>The type of resources that you want AWS Config to list in the response.</p>
      */
+    inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
+
+    /**
+     * <p>The type of resources that you want AWS Config to list in the response.</p>
+     */
     inline void SetResourceType(const ResourceType& value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
 
     /**
@@ -112,6 +122,11 @@ namespace Model
      * <p>Filters the results based on the <code>ResourceFilters</code> object.</p>
      */
     inline const ResourceFilters& GetFilters() const{ return m_filters; }
+
+    /**
+     * <p>Filters the results based on the <code>ResourceFilters</code> object.</p>
+     */
+    inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
 
     /**
      * <p>Filters the results based on the <code>ResourceFilters</code> object.</p>
@@ -146,6 +161,13 @@ namespace Model
      * is 100. You cannot specify a number greater than 100. If you specify 0, AWS
      * Config uses the default.</p>
      */
+    inline bool LimitHasBeenSet() const { return m_limitHasBeenSet; }
+
+    /**
+     * <p>The maximum number of resource identifiers returned on each page. The default
+     * is 100. You cannot specify a number greater than 100. If you specify 0, AWS
+     * Config uses the default.</p>
+     */
     inline void SetLimit(int value) { m_limitHasBeenSet = true; m_limit = value; }
 
     /**
@@ -161,6 +183,12 @@ namespace Model
      * get the next page of results in a paginated response.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
+    /**
+     * <p>The <code>nextToken</code> string returned on a previous page that you use to
+     * get the next page of results in a paginated response.</p>
+     */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
      * <p>The <code>nextToken</code> string returned on a previous page that you use to

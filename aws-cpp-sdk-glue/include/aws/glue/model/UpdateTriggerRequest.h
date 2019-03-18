@@ -53,6 +53,11 @@ namespace Model
     /**
      * <p>The name of the trigger to update.</p>
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>The name of the trigger to update.</p>
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
@@ -85,6 +90,11 @@ namespace Model
      * <p>The new values with which to update the trigger.</p>
      */
     inline const TriggerUpdate& GetTriggerUpdate() const{ return m_triggerUpdate; }
+
+    /**
+     * <p>The new values with which to update the trigger.</p>
+     */
+    inline bool TriggerUpdateHasBeenSet() const { return m_triggerUpdateHasBeenSet; }
 
     /**
      * <p>The new values with which to update the trigger.</p>

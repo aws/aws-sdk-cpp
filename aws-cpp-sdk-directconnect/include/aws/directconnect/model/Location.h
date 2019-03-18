@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The code for the location.</p>
      */
+    inline bool LocationCodeHasBeenSet() const { return m_locationCodeHasBeenSet; }
+
+    /**
+     * <p>The code for the location.</p>
+     */
     inline void SetLocationCode(const Aws::String& value) { m_locationCodeHasBeenSet = true; m_locationCode = value; }
 
     /**
@@ -90,6 +95,12 @@ namespace Model
      * and the physical site of the building.</p>
      */
     inline const Aws::String& GetLocationName() const{ return m_locationName; }
+
+    /**
+     * <p>The name of the location. This includes the name of the colocation partner
+     * and the physical site of the building.</p>
+     */
+    inline bool LocationNameHasBeenSet() const { return m_locationNameHasBeenSet; }
 
     /**
      * <p>The name of the location. This includes the name of the colocation partner
@@ -136,6 +147,11 @@ namespace Model
     /**
      * <p>The AWS Region for the location.</p>
      */
+    inline bool RegionHasBeenSet() const { return m_regionHasBeenSet; }
+
+    /**
+     * <p>The AWS Region for the location.</p>
+     */
     inline void SetRegion(const Aws::String& value) { m_regionHasBeenSet = true; m_region = value; }
 
     /**
@@ -168,6 +184,11 @@ namespace Model
      * <p>The available port speeds for the location.</p>
      */
     inline const Aws::Vector<Aws::String>& GetAvailablePortSpeeds() const{ return m_availablePortSpeeds; }
+
+    /**
+     * <p>The available port speeds for the location.</p>
+     */
+    inline bool AvailablePortSpeedsHasBeenSet() const { return m_availablePortSpeedsHasBeenSet; }
 
     /**
      * <p>The available port speeds for the location.</p>

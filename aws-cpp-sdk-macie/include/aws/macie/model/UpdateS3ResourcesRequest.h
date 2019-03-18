@@ -56,6 +56,12 @@ namespace Model
      * <p>The AWS ID of the Amazon Macie member account whose S3 resources'
      * classification types you want to update. </p>
      */
+    inline bool MemberAccountIdHasBeenSet() const { return m_memberAccountIdHasBeenSet; }
+
+    /**
+     * <p>The AWS ID of the Amazon Macie member account whose S3 resources'
+     * classification types you want to update. </p>
+     */
     inline void SetMemberAccountId(const Aws::String& value) { m_memberAccountIdHasBeenSet = true; m_memberAccountId = value; }
 
     /**
@@ -93,6 +99,11 @@ namespace Model
      * <p>The S3 resources whose classification types you want to update.</p>
      */
     inline const Aws::Vector<S3ResourceClassificationUpdate>& GetS3ResourcesUpdate() const{ return m_s3ResourcesUpdate; }
+
+    /**
+     * <p>The S3 resources whose classification types you want to update.</p>
+     */
+    inline bool S3ResourcesUpdateHasBeenSet() const { return m_s3ResourcesUpdateHasBeenSet; }
 
     /**
      * <p>The S3 resources whose classification types you want to update.</p>

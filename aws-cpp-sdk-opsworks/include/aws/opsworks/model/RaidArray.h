@@ -55,6 +55,11 @@ namespace Model
     /**
      * <p>The array ID.</p>
      */
+    inline bool RaidArrayIdHasBeenSet() const { return m_raidArrayIdHasBeenSet; }
+
+    /**
+     * <p>The array ID.</p>
+     */
     inline void SetRaidArrayId(const Aws::String& value) { m_raidArrayIdHasBeenSet = true; m_raidArrayId = value; }
 
     /**
@@ -91,6 +96,11 @@ namespace Model
     /**
      * <p>The instance ID.</p>
      */
+    inline bool InstanceIdHasBeenSet() const { return m_instanceIdHasBeenSet; }
+
+    /**
+     * <p>The instance ID.</p>
+     */
     inline void SetInstanceId(const Aws::String& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
 
     /**
@@ -123,6 +133,11 @@ namespace Model
      * <p>The array name.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
+
+    /**
+     * <p>The array name.</p>
+     */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
      * <p>The array name.</p>
@@ -165,6 +180,12 @@ namespace Model
      * <p>The <a href="http://en.wikipedia.org/wiki/Standard_RAID_levels">RAID
      * level</a>.</p>
      */
+    inline bool RaidLevelHasBeenSet() const { return m_raidLevelHasBeenSet; }
+
+    /**
+     * <p>The <a href="http://en.wikipedia.org/wiki/Standard_RAID_levels">RAID
+     * level</a>.</p>
+     */
     inline void SetRaidLevel(int value) { m_raidLevelHasBeenSet = true; m_raidLevel = value; }
 
     /**
@@ -178,6 +199,11 @@ namespace Model
      * <p>The number of disks in the array.</p>
      */
     inline int GetNumberOfDisks() const{ return m_numberOfDisks; }
+
+    /**
+     * <p>The number of disks in the array.</p>
+     */
+    inline bool NumberOfDisksHasBeenSet() const { return m_numberOfDisksHasBeenSet; }
 
     /**
      * <p>The number of disks in the array.</p>
@@ -198,6 +224,11 @@ namespace Model
     /**
      * <p>The array's size.</p>
      */
+    inline bool SizeHasBeenSet() const { return m_sizeHasBeenSet; }
+
+    /**
+     * <p>The array's size.</p>
+     */
     inline void SetSize(int value) { m_sizeHasBeenSet = true; m_size = value; }
 
     /**
@@ -210,6 +241,11 @@ namespace Model
      * <p>The array's Linux device. For example /dev/mdadm0.</p>
      */
     inline const Aws::String& GetDevice() const{ return m_device; }
+
+    /**
+     * <p>The array's Linux device. For example /dev/mdadm0.</p>
+     */
+    inline bool DeviceHasBeenSet() const { return m_deviceHasBeenSet; }
 
     /**
      * <p>The array's Linux device. For example /dev/mdadm0.</p>
@@ -250,6 +286,11 @@ namespace Model
     /**
      * <p>The array's mount point.</p>
      */
+    inline bool MountPointHasBeenSet() const { return m_mountPointHasBeenSet; }
+
+    /**
+     * <p>The array's mount point.</p>
+     */
     inline void SetMountPoint(const Aws::String& value) { m_mountPointHasBeenSet = true; m_mountPoint = value; }
 
     /**
@@ -284,6 +325,13 @@ namespace Model
      * Endpoints</a>.</p>
      */
     inline const Aws::String& GetAvailabilityZone() const{ return m_availabilityZone; }
+
+    /**
+     * <p>The array's Availability Zone. For more information, see <a
+     * href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and
+     * Endpoints</a>.</p>
+     */
+    inline bool AvailabilityZoneHasBeenSet() const { return m_availabilityZoneHasBeenSet; }
 
     /**
      * <p>The array's Availability Zone. For more information, see <a
@@ -336,6 +384,11 @@ namespace Model
     /**
      * <p>When the RAID array was created.</p>
      */
+    inline bool CreatedAtHasBeenSet() const { return m_createdAtHasBeenSet; }
+
+    /**
+     * <p>When the RAID array was created.</p>
+     */
     inline void SetCreatedAt(const Aws::String& value) { m_createdAtHasBeenSet = true; m_createdAt = value; }
 
     /**
@@ -368,6 +421,11 @@ namespace Model
      * <p>The stack ID.</p>
      */
     inline const Aws::String& GetStackId() const{ return m_stackId; }
+
+    /**
+     * <p>The stack ID.</p>
+     */
+    inline bool StackIdHasBeenSet() const { return m_stackIdHasBeenSet; }
 
     /**
      * <p>The stack ID.</p>
@@ -408,6 +466,11 @@ namespace Model
     /**
      * <p>The volume type, standard or PIOPS.</p>
      */
+    inline bool VolumeTypeHasBeenSet() const { return m_volumeTypeHasBeenSet; }
+
+    /**
+     * <p>The volume type, standard or PIOPS.</p>
+     */
     inline void SetVolumeType(const Aws::String& value) { m_volumeTypeHasBeenSet = true; m_volumeType = value; }
 
     /**
@@ -440,6 +503,11 @@ namespace Model
      * <p>For PIOPS volumes, the IOPS per disk.</p>
      */
     inline int GetIops() const{ return m_iops; }
+
+    /**
+     * <p>For PIOPS volumes, the IOPS per disk.</p>
+     */
+    inline bool IopsHasBeenSet() const { return m_iopsHasBeenSet; }
 
     /**
      * <p>For PIOPS volumes, the IOPS per disk.</p>

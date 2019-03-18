@@ -67,6 +67,15 @@ namespace Model
      * hyphens</p> </li> </ul> <note> <p>This value is stored as a lowercase
      * string.</p> </note>
      */
+    inline bool DBParameterGroupNameHasBeenSet() const { return m_dBParameterGroupNameHasBeenSet; }
+
+    /**
+     * <p>The name of the DB parameter group.</p> <p>Constraints:</p> <ul> <li> <p>Must
+     * be 1 to 255 letters, numbers, or hyphens.</p> </li> <li> <p>First character must
+     * be a letter</p> </li> <li> <p>Can't end with a hyphen or contain two consecutive
+     * hyphens</p> </li> </ul> <note> <p>This value is stored as a lowercase
+     * string.</p> </note>
+     */
     inline void SetDBParameterGroupName(const Aws::String& value) { m_dBParameterGroupNameHasBeenSet = true; m_dBParameterGroupName = value; }
 
     /**
@@ -126,6 +135,18 @@ namespace Model
      * contains duplicates.</p> </note>
      */
     inline const Aws::String& GetDBParameterGroupFamily() const{ return m_dBParameterGroupFamily; }
+
+    /**
+     * <p>The DB parameter group family name. A DB parameter group can be associated
+     * with one and only one DB parameter group family, and can be applied only to a DB
+     * instance running a database engine and engine version compatible with that DB
+     * parameter group family.</p> <p>To list all of the available parameter group
+     * families, use the following command:</p> <p> <code>aws rds
+     * describe-db-engine-versions --query
+     * "DBEngineVersions[].DBParameterGroupFamily"</code> </p> <note> <p>The output
+     * contains duplicates.</p> </note>
+     */
+    inline bool DBParameterGroupFamilyHasBeenSet() const { return m_dBParameterGroupFamilyHasBeenSet; }
 
     /**
      * <p>The DB parameter group family name. A DB parameter group can be associated
@@ -208,6 +229,11 @@ namespace Model
     /**
      * <p>The description for the DB parameter group.</p>
      */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
+
+    /**
+     * <p>The description for the DB parameter group.</p>
+     */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
@@ -238,6 +264,9 @@ namespace Model
 
     
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+
+    
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }

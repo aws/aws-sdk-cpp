@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The API ID.</p>
      */
+    inline bool ApiIdHasBeenSet() const { return m_apiIdHasBeenSet; }
+
+    /**
+     * <p>The API ID.</p>
+     */
     inline void SetApiId(const Aws::String& value) { m_apiIdHasBeenSet = true; m_apiId = value; }
 
     /**
@@ -88,6 +93,11 @@ namespace Model
      * <p>The new name for the data source.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
+
+    /**
+     * <p>The new name for the data source.</p>
+     */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
      * <p>The new name for the data source.</p>
@@ -128,6 +138,11 @@ namespace Model
     /**
      * <p>The new description for the data source.</p>
      */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
+
+    /**
+     * <p>The new description for the data source.</p>
+     */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
@@ -164,6 +179,11 @@ namespace Model
     /**
      * <p>The new data source type.</p>
      */
+    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
+
+    /**
+     * <p>The new data source type.</p>
+     */
     inline void SetType(const DataSourceType& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
@@ -186,6 +206,11 @@ namespace Model
      * <p>The new service role ARN for the data source.</p>
      */
     inline const Aws::String& GetServiceRoleArn() const{ return m_serviceRoleArn; }
+
+    /**
+     * <p>The new service role ARN for the data source.</p>
+     */
+    inline bool ServiceRoleArnHasBeenSet() const { return m_serviceRoleArnHasBeenSet; }
 
     /**
      * <p>The new service role ARN for the data source.</p>
@@ -226,6 +251,11 @@ namespace Model
     /**
      * <p>The new Amazon DynamoDB configuration.</p>
      */
+    inline bool DynamodbConfigHasBeenSet() const { return m_dynamodbConfigHasBeenSet; }
+
+    /**
+     * <p>The new Amazon DynamoDB configuration.</p>
+     */
     inline void SetDynamodbConfig(const DynamodbDataSourceConfig& value) { m_dynamodbConfigHasBeenSet = true; m_dynamodbConfig = value; }
 
     /**
@@ -248,6 +278,11 @@ namespace Model
      * <p>The new AWS Lambda configuration.</p>
      */
     inline const LambdaDataSourceConfig& GetLambdaConfig() const{ return m_lambdaConfig; }
+
+    /**
+     * <p>The new AWS Lambda configuration.</p>
+     */
+    inline bool LambdaConfigHasBeenSet() const { return m_lambdaConfigHasBeenSet; }
 
     /**
      * <p>The new AWS Lambda configuration.</p>
@@ -278,6 +313,11 @@ namespace Model
     /**
      * <p>The new Elasticsearch Service configuration.</p>
      */
+    inline bool ElasticsearchConfigHasBeenSet() const { return m_elasticsearchConfigHasBeenSet; }
+
+    /**
+     * <p>The new Elasticsearch Service configuration.</p>
+     */
     inline void SetElasticsearchConfig(const ElasticsearchDataSourceConfig& value) { m_elasticsearchConfigHasBeenSet = true; m_elasticsearchConfig = value; }
 
     /**
@@ -304,6 +344,11 @@ namespace Model
     /**
      * <p>The new HTTP endpoint configuration.</p>
      */
+    inline bool HttpConfigHasBeenSet() const { return m_httpConfigHasBeenSet; }
+
+    /**
+     * <p>The new HTTP endpoint configuration.</p>
+     */
     inline void SetHttpConfig(const HttpDataSourceConfig& value) { m_httpConfigHasBeenSet = true; m_httpConfig = value; }
 
     /**
@@ -326,6 +371,11 @@ namespace Model
      * <p>The new relational database configuration.</p>
      */
     inline const RelationalDatabaseDataSourceConfig& GetRelationalDatabaseConfig() const{ return m_relationalDatabaseConfig; }
+
+    /**
+     * <p>The new relational database configuration.</p>
+     */
+    inline bool RelationalDatabaseConfigHasBeenSet() const { return m_relationalDatabaseConfigHasBeenSet; }
 
     /**
      * <p>The new relational database configuration.</p>

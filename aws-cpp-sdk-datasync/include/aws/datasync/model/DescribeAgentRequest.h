@@ -55,6 +55,11 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the agent to describe.</p>
      */
+    inline bool AgentArnHasBeenSet() const { return m_agentArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the agent to describe.</p>
+     */
     inline void SetAgentArn(const Aws::String& value) { m_agentArnHasBeenSet = true; m_agentArn = value; }
 
     /**

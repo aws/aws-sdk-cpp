@@ -58,6 +58,12 @@ namespace Model
      * <p>The total number of items to delete. This count does not change during the
      * delete operation.</p>
      */
+    inline bool TotalCountHasBeenSet() const { return m_totalCountHasBeenSet; }
+
+    /**
+     * <p>The total number of items to delete. This count does not change during the
+     * delete operation.</p>
+     */
     inline void SetTotalCount(int value) { m_totalCountHasBeenSet = true; m_totalCount = value; }
 
     /**
@@ -75,6 +81,11 @@ namespace Model
     /**
      * <p>Remaining number of items to delete.</p>
      */
+    inline bool RemainingCountHasBeenSet() const { return m_remainingCountHasBeenSet; }
+
+    /**
+     * <p>Remaining number of items to delete.</p>
+     */
     inline void SetRemainingCount(int value) { m_remainingCountHasBeenSet = true; m_remainingCount = value; }
 
     /**
@@ -87,6 +98,11 @@ namespace Model
      * <p>A list of counts and versions for deleted items.</p>
      */
     inline const Aws::Vector<InventoryDeletionSummaryItem>& GetSummaryItems() const{ return m_summaryItems; }
+
+    /**
+     * <p>A list of counts and versions for deleted items.</p>
+     */
+    inline bool SummaryItemsHasBeenSet() const { return m_summaryItemsHasBeenSet; }
 
     /**
      * <p>A list of counts and versions for deleted items.</p>

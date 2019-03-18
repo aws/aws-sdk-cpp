@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The ARN of the conference provider.</p>
      */
+    inline bool ConferenceProviderArnHasBeenSet() const { return m_conferenceProviderArnHasBeenSet; }
+
+    /**
+     * <p>The ARN of the conference provider.</p>
+     */
     inline void SetConferenceProviderArn(const Aws::String& value) { m_conferenceProviderArnHasBeenSet = true; m_conferenceProviderArn = value; }
 
     /**
@@ -92,6 +97,11 @@ namespace Model
     /**
      * <p>The type of the conference provider.</p>
      */
+    inline bool ConferenceProviderTypeHasBeenSet() const { return m_conferenceProviderTypeHasBeenSet; }
+
+    /**
+     * <p>The type of the conference provider.</p>
+     */
     inline void SetConferenceProviderType(const ConferenceProviderType& value) { m_conferenceProviderTypeHasBeenSet = true; m_conferenceProviderType = value; }
 
     /**
@@ -114,6 +124,11 @@ namespace Model
      * <p>The IP endpoint and protocol for calling.</p>
      */
     inline const IPDialIn& GetIPDialIn() const{ return m_iPDialIn; }
+
+    /**
+     * <p>The IP endpoint and protocol for calling.</p>
+     */
+    inline bool IPDialInHasBeenSet() const { return m_iPDialInHasBeenSet; }
 
     /**
      * <p>The IP endpoint and protocol for calling.</p>
@@ -144,6 +159,11 @@ namespace Model
     /**
      * <p>The information for PSTN conferencing.</p>
      */
+    inline bool PSTNDialInHasBeenSet() const { return m_pSTNDialInHasBeenSet; }
+
+    /**
+     * <p>The information for PSTN conferencing.</p>
+     */
     inline void SetPSTNDialIn(const PSTNDialIn& value) { m_pSTNDialInHasBeenSet = true; m_pSTNDialIn = value; }
 
     /**
@@ -166,6 +186,11 @@ namespace Model
      * <p>The meeting settings for the conference provider.</p>
      */
     inline const MeetingSetting& GetMeetingSetting() const{ return m_meetingSetting; }
+
+    /**
+     * <p>The meeting settings for the conference provider.</p>
+     */
+    inline bool MeetingSettingHasBeenSet() const { return m_meetingSettingHasBeenSet; }
 
     /**
      * <p>The meeting settings for the conference provider.</p>

@@ -61,6 +61,11 @@ namespace Model
     /**
      * <p>The name of the rule set that the receipt rule will be added to.</p>
      */
+    inline bool RuleSetNameHasBeenSet() const { return m_ruleSetNameHasBeenSet; }
+
+    /**
+     * <p>The name of the rule set that the receipt rule will be added to.</p>
+     */
     inline void SetRuleSetName(const Aws::String& value) { m_ruleSetNameHasBeenSet = true; m_ruleSetName = value; }
 
     /**
@@ -95,6 +100,13 @@ namespace Model
      * list.</p>
      */
     inline const Aws::String& GetAfter() const{ return m_after; }
+
+    /**
+     * <p>The name of an existing rule after which the new rule will be placed. If this
+     * parameter is null, the new rule will be inserted at the beginning of the rule
+     * list.</p>
+     */
+    inline bool AfterHasBeenSet() const { return m_afterHasBeenSet; }
 
     /**
      * <p>The name of an existing rule after which the new rule will be placed. If this
@@ -144,6 +156,12 @@ namespace Model
      * recipients, domains, enabled status, scan status, and TLS policy.</p>
      */
     inline const ReceiptRule& GetRule() const{ return m_rule; }
+
+    /**
+     * <p>A data structure that contains the specified rule's name, actions,
+     * recipients, domains, enabled status, scan status, and TLS policy.</p>
+     */
+    inline bool RuleHasBeenSet() const { return m_ruleHasBeenSet; }
 
     /**
      * <p>A data structure that contains the specified rule's name, actions,

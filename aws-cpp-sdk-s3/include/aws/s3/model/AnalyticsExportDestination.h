@@ -55,6 +55,11 @@ namespace Model
     /**
      * <p>A destination signifying output to an S3 bucket.</p>
      */
+    inline bool S3BucketDestinationHasBeenSet() const { return m_s3BucketDestinationHasBeenSet; }
+
+    /**
+     * <p>A destination signifying output to an S3 bucket.</p>
+     */
     inline void SetS3BucketDestination(const AnalyticsS3BucketDestination& value) { m_s3BucketDestinationHasBeenSet = true; m_s3BucketDestination = value; }
 
     /**

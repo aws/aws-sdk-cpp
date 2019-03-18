@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The name of the conference provider.</p>
      */
+    inline bool ConferenceProviderNameHasBeenSet() const { return m_conferenceProviderNameHasBeenSet; }
+
+    /**
+     * <p>The name of the conference provider.</p>
+     */
     inline void SetConferenceProviderName(const Aws::String& value) { m_conferenceProviderNameHasBeenSet = true; m_conferenceProviderName = value; }
 
     /**
@@ -93,6 +98,11 @@ namespace Model
     /**
      * <p>Represents a type within a list of predefined types.</p>
      */
+    inline bool ConferenceProviderTypeHasBeenSet() const { return m_conferenceProviderTypeHasBeenSet; }
+
+    /**
+     * <p>Represents a type within a list of predefined types.</p>
+     */
     inline void SetConferenceProviderType(const ConferenceProviderType& value) { m_conferenceProviderTypeHasBeenSet = true; m_conferenceProviderType = value; }
 
     /**
@@ -115,6 +125,11 @@ namespace Model
      * <p>The IP endpoint and protocol for calling.</p>
      */
     inline const IPDialIn& GetIPDialIn() const{ return m_iPDialIn; }
+
+    /**
+     * <p>The IP endpoint and protocol for calling.</p>
+     */
+    inline bool IPDialInHasBeenSet() const { return m_iPDialInHasBeenSet; }
 
     /**
      * <p>The IP endpoint and protocol for calling.</p>
@@ -145,6 +160,11 @@ namespace Model
     /**
      * <p>The information for PSTN conferencing.</p>
      */
+    inline bool PSTNDialInHasBeenSet() const { return m_pSTNDialInHasBeenSet; }
+
+    /**
+     * <p>The information for PSTN conferencing.</p>
+     */
     inline void SetPSTNDialIn(const PSTNDialIn& value) { m_pSTNDialInHasBeenSet = true; m_pSTNDialIn = value; }
 
     /**
@@ -171,6 +191,11 @@ namespace Model
     /**
      * <p>The meeting settings for the conference provider.</p>
      */
+    inline bool MeetingSettingHasBeenSet() const { return m_meetingSettingHasBeenSet; }
+
+    /**
+     * <p>The meeting settings for the conference provider.</p>
+     */
     inline void SetMeetingSetting(const MeetingSetting& value) { m_meetingSettingHasBeenSet = true; m_meetingSetting = value; }
 
     /**
@@ -193,6 +218,11 @@ namespace Model
      * <p>The request token of the client.</p>
      */
     inline const Aws::String& GetClientRequestToken() const{ return m_clientRequestToken; }
+
+    /**
+     * <p>The request token of the client.</p>
+     */
+    inline bool ClientRequestTokenHasBeenSet() const { return m_clientRequestTokenHasBeenSet; }
 
     /**
      * <p>The request token of the client.</p>

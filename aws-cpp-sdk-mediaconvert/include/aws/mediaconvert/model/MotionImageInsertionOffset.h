@@ -56,6 +56,12 @@ namespace Model
      * Set the distance, in pixels, between the overlay and the left edge of the video
      * frame.
      */
+    inline bool ImageXHasBeenSet() const { return m_imageXHasBeenSet; }
+
+    /**
+     * Set the distance, in pixels, between the overlay and the left edge of the video
+     * frame.
+     */
     inline void SetImageX(int value) { m_imageXHasBeenSet = true; m_imageX = value; }
 
     /**
@@ -70,6 +76,12 @@ namespace Model
      * frame.
      */
     inline int GetImageY() const{ return m_imageY; }
+
+    /**
+     * Set the distance, in pixels, between the overlay and the top edge of the video
+     * frame.
+     */
+    inline bool ImageYHasBeenSet() const { return m_imageYHasBeenSet; }
 
     /**
      * Set the distance, in pixels, between the overlay and the top edge of the video

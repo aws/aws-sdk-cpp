@@ -53,6 +53,11 @@ namespace Model
     /**
      * <p/>
      */
+    inline bool AppIdsHasBeenSet() const { return m_appIdsHasBeenSet; }
+
+    /**
+     * <p/>
+     */
     inline void SetAppIds(const Aws::Vector<Aws::String>& value) { m_appIdsHasBeenSet = true; m_appIds = value; }
 
     /**
@@ -94,6 +99,11 @@ namespace Model
     /**
      * <p>The token for the next set of results.</p>
      */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
+
+    /**
+     * <p>The token for the next set of results.</p>
+     */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
     /**
@@ -128,6 +138,13 @@ namespace Model
      * <code>NextToken</code> value. </p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
+
+    /**
+     * <p>The maximum number of results to return in a single call. The default value
+     * is 50. To retrieve the remaining results, make another call with the returned
+     * <code>NextToken</code> value. </p>
+     */
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
 
     /**
      * <p>The maximum number of results to return in a single call. The default value

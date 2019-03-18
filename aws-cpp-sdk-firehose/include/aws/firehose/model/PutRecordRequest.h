@@ -53,6 +53,11 @@ namespace Model
     /**
      * <p>The name of the delivery stream.</p>
      */
+    inline bool DeliveryStreamNameHasBeenSet() const { return m_deliveryStreamNameHasBeenSet; }
+
+    /**
+     * <p>The name of the delivery stream.</p>
+     */
     inline void SetDeliveryStreamName(const Aws::String& value) { m_deliveryStreamNameHasBeenSet = true; m_deliveryStreamName = value; }
 
     /**
@@ -85,6 +90,11 @@ namespace Model
      * <p>The record.</p>
      */
     inline const Record& GetRecord() const{ return m_record; }
+
+    /**
+     * <p>The record.</p>
+     */
+    inline bool RecordHasBeenSet() const { return m_recordHasBeenSet; }
 
     /**
      * <p>The record.</p>

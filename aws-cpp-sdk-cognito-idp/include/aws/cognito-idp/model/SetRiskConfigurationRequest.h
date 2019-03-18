@@ -55,6 +55,11 @@ namespace Model
     /**
      * <p>The user pool ID. </p>
      */
+    inline bool UserPoolIdHasBeenSet() const { return m_userPoolIdHasBeenSet; }
+
+    /**
+     * <p>The user pool ID. </p>
+     */
     inline void SetUserPoolId(const Aws::String& value) { m_userPoolIdHasBeenSet = true; m_userPoolId = value; }
 
     /**
@@ -92,6 +97,16 @@ namespace Model
      * configuration for the client is used instead.</p>
      */
     inline const Aws::String& GetClientId() const{ return m_clientId; }
+
+    /**
+     * <p>The app client ID. If <code>ClientId</code> is null, then the risk
+     * configuration is mapped to <code>userPoolId</code>. When the client ID is null,
+     * the same risk configuration is applied to all the clients in the userPool.</p>
+     * <p>Otherwise, <code>ClientId</code> is mapped to the client. When the client ID
+     * is not null, the user pool configuration is overridden and the risk
+     * configuration for the client is used instead.</p>
+     */
+    inline bool ClientIdHasBeenSet() const { return m_clientIdHasBeenSet; }
 
     /**
      * <p>The app client ID. If <code>ClientId</code> is null, then the risk
@@ -162,6 +177,11 @@ namespace Model
     /**
      * <p>The compromised credentials risk configuration.</p>
      */
+    inline bool CompromisedCredentialsRiskConfigurationHasBeenSet() const { return m_compromisedCredentialsRiskConfigurationHasBeenSet; }
+
+    /**
+     * <p>The compromised credentials risk configuration.</p>
+     */
     inline void SetCompromisedCredentialsRiskConfiguration(const CompromisedCredentialsRiskConfigurationType& value) { m_compromisedCredentialsRiskConfigurationHasBeenSet = true; m_compromisedCredentialsRiskConfiguration = value; }
 
     /**
@@ -188,6 +208,11 @@ namespace Model
     /**
      * <p>The account takeover risk configuration.</p>
      */
+    inline bool AccountTakeoverRiskConfigurationHasBeenSet() const { return m_accountTakeoverRiskConfigurationHasBeenSet; }
+
+    /**
+     * <p>The account takeover risk configuration.</p>
+     */
     inline void SetAccountTakeoverRiskConfiguration(const AccountTakeoverRiskConfigurationType& value) { m_accountTakeoverRiskConfigurationHasBeenSet = true; m_accountTakeoverRiskConfiguration = value; }
 
     /**
@@ -210,6 +235,11 @@ namespace Model
      * <p>The configuration to override the risk decision.</p>
      */
     inline const RiskExceptionConfigurationType& GetRiskExceptionConfiguration() const{ return m_riskExceptionConfiguration; }
+
+    /**
+     * <p>The configuration to override the risk decision.</p>
+     */
+    inline bool RiskExceptionConfigurationHasBeenSet() const { return m_riskExceptionConfigurationHasBeenSet; }
 
     /**
      * <p>The configuration to override the risk decision.</p>

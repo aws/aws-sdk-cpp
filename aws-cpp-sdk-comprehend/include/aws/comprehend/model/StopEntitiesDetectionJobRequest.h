@@ -52,6 +52,11 @@ namespace Model
     /**
      * <p>The identifier of the entities detection job to stop.</p>
      */
+    inline bool JobIdHasBeenSet() const { return m_jobIdHasBeenSet; }
+
+    /**
+     * <p>The identifier of the entities detection job to stop.</p>
+     */
     inline void SetJobId(const Aws::String& value) { m_jobIdHasBeenSet = true; m_jobId = value; }
 
     /**

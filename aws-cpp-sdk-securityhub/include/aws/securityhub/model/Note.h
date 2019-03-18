@@ -55,6 +55,11 @@ namespace Model
     /**
      * <p>The text of a note.</p>
      */
+    inline bool TextHasBeenSet() const { return m_textHasBeenSet; }
+
+    /**
+     * <p>The text of a note.</p>
+     */
     inline void SetText(const Aws::String& value) { m_textHasBeenSet = true; m_text = value; }
 
     /**
@@ -91,6 +96,11 @@ namespace Model
     /**
      * <p>The principal that created a note.</p>
      */
+    inline bool UpdatedByHasBeenSet() const { return m_updatedByHasBeenSet; }
+
+    /**
+     * <p>The principal that created a note.</p>
+     */
     inline void SetUpdatedBy(const Aws::String& value) { m_updatedByHasBeenSet = true; m_updatedBy = value; }
 
     /**
@@ -123,6 +133,11 @@ namespace Model
      * <p>The timestamp of when the note was updated.</p>
      */
     inline const Aws::String& GetUpdatedAt() const{ return m_updatedAt; }
+
+    /**
+     * <p>The timestamp of when the note was updated.</p>
+     */
+    inline bool UpdatedAtHasBeenSet() const { return m_updatedAtHasBeenSet; }
 
     /**
      * <p>The timestamp of when the note was updated.</p>

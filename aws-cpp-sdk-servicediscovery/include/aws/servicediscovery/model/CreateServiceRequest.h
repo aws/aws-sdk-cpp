@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The name that you want to assign to the service.</p>
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>The name that you want to assign to the service.</p>
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
@@ -88,6 +93,11 @@ namespace Model
      * <p>The ID of the namespace that you want to use to create the service.</p>
      */
     inline const Aws::String& GetNamespaceId() const{ return m_namespaceId; }
+
+    /**
+     * <p>The ID of the namespace that you want to use to create the service.</p>
+     */
+    inline bool NamespaceIdHasBeenSet() const { return m_namespaceIdHasBeenSet; }
 
     /**
      * <p>The ID of the namespace that you want to use to create the service.</p>
@@ -127,6 +137,14 @@ namespace Model
      * example, a date/time stamp.</p>
      */
     inline const Aws::String& GetCreatorRequestId() const{ return m_creatorRequestId; }
+
+    /**
+     * <p>A unique string that identifies the request and that allows failed
+     * <code>CreateService</code> requests to be retried without the risk of executing
+     * the operation twice. <code>CreatorRequestId</code> can be any unique string, for
+     * example, a date/time stamp.</p>
+     */
+    inline bool CreatorRequestIdHasBeenSet() const { return m_creatorRequestIdHasBeenSet; }
 
     /**
      * <p>A unique string that identifies the request and that allows failed
@@ -185,6 +203,11 @@ namespace Model
     /**
      * <p>A description for the service.</p>
      */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
+
+    /**
+     * <p>A description for the service.</p>
+     */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
@@ -223,6 +246,12 @@ namespace Model
      * <p>A complex type that contains information about the Amazon Route 53 records
      * that you want AWS Cloud Map to create when you register an instance. </p>
      */
+    inline bool DnsConfigHasBeenSet() const { return m_dnsConfigHasBeenSet; }
+
+    /**
+     * <p>A complex type that contains information about the Amazon Route 53 records
+     * that you want AWS Cloud Map to create when you register an instance. </p>
+     */
     inline void SetDnsConfig(const DnsConfig& value) { m_dnsConfigHasBeenSet = true; m_dnsConfig = value; }
 
     /**
@@ -256,6 +285,19 @@ namespace Model
      * Pricing</a>.</p>
      */
     inline const HealthCheckConfig& GetHealthCheckConfig() const{ return m_healthCheckConfig; }
+
+    /**
+     * <p> <i>Public DNS namespaces only.</i> A complex type that contains settings for
+     * an optional Route 53 health check. If you specify settings for a health check,
+     * AWS Cloud Map associates the health check with all the Route 53 DNS records that
+     * you specify in <code>DnsConfig</code>.</p> <important> <p>If you specify a
+     * health check configuration, you can specify either
+     * <code>HealthCheckCustomConfig</code> or <code>HealthCheckConfig</code> but not
+     * both.</p> </important> <p>For information about the charges for health checks,
+     * see <a href="http://aws.amazon.com/cloud-map/pricing/">AWS Cloud Map
+     * Pricing</a>.</p>
+     */
+    inline bool HealthCheckConfigHasBeenSet() const { return m_healthCheckConfigHasBeenSet; }
 
     /**
      * <p> <i>Public DNS namespaces only.</i> A complex type that contains settings for
@@ -317,6 +359,14 @@ namespace Model
      * <code>HealthCheckConfig</code> but not both.</p> </important>
      */
     inline const HealthCheckCustomConfig& GetHealthCheckCustomConfig() const{ return m_healthCheckCustomConfig; }
+
+    /**
+     * <p>A complex type that contains information about an optional custom health
+     * check.</p> <important> <p>If you specify a health check configuration, you can
+     * specify either <code>HealthCheckCustomConfig</code> or
+     * <code>HealthCheckConfig</code> but not both.</p> </important>
+     */
+    inline bool HealthCheckCustomConfigHasBeenSet() const { return m_healthCheckCustomConfigHasBeenSet; }
 
     /**
      * <p>A complex type that contains information about an optional custom health

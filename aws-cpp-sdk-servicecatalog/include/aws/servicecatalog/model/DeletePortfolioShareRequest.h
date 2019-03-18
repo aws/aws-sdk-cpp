@@ -57,6 +57,13 @@ namespace Model
      * </li> <li> <p> <code>jp</code> - Japanese</p> </li> <li> <p> <code>zh</code> -
      * Chinese</p> </li> </ul>
      */
+    inline bool AcceptLanguageHasBeenSet() const { return m_acceptLanguageHasBeenSet; }
+
+    /**
+     * <p>The language code.</p> <ul> <li> <p> <code>en</code> - English (default)</p>
+     * </li> <li> <p> <code>jp</code> - Japanese</p> </li> <li> <p> <code>zh</code> -
+     * Chinese</p> </li> </ul>
+     */
     inline void SetAcceptLanguage(const Aws::String& value) { m_acceptLanguageHasBeenSet = true; m_acceptLanguage = value; }
 
     /**
@@ -103,6 +110,11 @@ namespace Model
     /**
      * <p>The portfolio identifier.</p>
      */
+    inline bool PortfolioIdHasBeenSet() const { return m_portfolioIdHasBeenSet; }
+
+    /**
+     * <p>The portfolio identifier.</p>
+     */
     inline void SetPortfolioId(const Aws::String& value) { m_portfolioIdHasBeenSet = true; m_portfolioId = value; }
 
     /**
@@ -139,6 +151,11 @@ namespace Model
     /**
      * <p>The AWS account ID.</p>
      */
+    inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
+
+    /**
+     * <p>The AWS account ID.</p>
+     */
     inline void SetAccountId(const Aws::String& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
 
     /**
@@ -171,6 +188,11 @@ namespace Model
      * <p>The organization node to whom you are going to stop sharing.</p>
      */
     inline const OrganizationNode& GetOrganizationNode() const{ return m_organizationNode; }
+
+    /**
+     * <p>The organization node to whom you are going to stop sharing.</p>
+     */
+    inline bool OrganizationNodeHasBeenSet() const { return m_organizationNodeHasBeenSet; }
 
     /**
      * <p>The organization node to whom you are going to stop sharing.</p>

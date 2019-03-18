@@ -59,6 +59,11 @@ namespace Model
     /**
      * <p>The name of the AWS Config rule.</p>
      */
+    inline bool ConfigRuleNameHasBeenSet() const { return m_configRuleNameHasBeenSet; }
+
+    /**
+     * <p>The name of the AWS Config rule.</p>
+     */
     inline void SetConfigRuleName(const Aws::String& value) { m_configRuleNameHasBeenSet = true; m_configRuleName = value; }
 
     /**
@@ -97,6 +102,12 @@ namespace Model
      * <p>Indicates whether an AWS resource or AWS Config rule is compliant and
      * provides the number of contributors that affect the compliance.</p>
      */
+    inline bool ComplianceHasBeenSet() const { return m_complianceHasBeenSet; }
+
+    /**
+     * <p>Indicates whether an AWS resource or AWS Config rule is compliant and
+     * provides the number of contributors that affect the compliance.</p>
+     */
     inline void SetCompliance(const Compliance& value) { m_complianceHasBeenSet = true; m_compliance = value; }
 
     /**
@@ -122,6 +133,11 @@ namespace Model
      * <p>The 12-digit account ID of the source account.</p>
      */
     inline const Aws::String& GetAccountId() const{ return m_accountId; }
+
+    /**
+     * <p>The 12-digit account ID of the source account.</p>
+     */
+    inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
 
     /**
      * <p>The 12-digit account ID of the source account.</p>
@@ -158,6 +174,11 @@ namespace Model
      * <p>The source region from where the data is aggregated.</p>
      */
     inline const Aws::String& GetAwsRegion() const{ return m_awsRegion; }
+
+    /**
+     * <p>The source region from where the data is aggregated.</p>
+     */
+    inline bool AwsRegionHasBeenSet() const { return m_awsRegionHasBeenSet; }
 
     /**
      * <p>The source region from where the data is aggregated.</p>

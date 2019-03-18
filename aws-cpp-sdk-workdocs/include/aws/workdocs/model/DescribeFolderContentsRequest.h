@@ -63,6 +63,12 @@ namespace Model
      * <p>Amazon WorkDocs authentication token. Do not set this field when using
      * administrative API actions, as in accessing the API using AWS credentials.</p>
      */
+    inline bool AuthenticationTokenHasBeenSet() const { return m_authenticationTokenHasBeenSet; }
+
+    /**
+     * <p>Amazon WorkDocs authentication token. Do not set this field when using
+     * administrative API actions, as in accessing the API using AWS credentials.</p>
+     */
     inline void SetAuthenticationToken(const Aws::String& value) { m_authenticationTokenHasBeenSet = true; m_authenticationToken = value; }
 
     /**
@@ -104,6 +110,11 @@ namespace Model
     /**
      * <p>The ID of the folder.</p>
      */
+    inline bool FolderIdHasBeenSet() const { return m_folderIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the folder.</p>
+     */
     inline void SetFolderId(const Aws::String& value) { m_folderIdHasBeenSet = true; m_folderId = value; }
 
     /**
@@ -140,6 +151,11 @@ namespace Model
     /**
      * <p>The sorting criteria.</p>
      */
+    inline bool SortHasBeenSet() const { return m_sortHasBeenSet; }
+
+    /**
+     * <p>The sorting criteria.</p>
+     */
     inline void SetSort(const ResourceSortType& value) { m_sortHasBeenSet = true; m_sort = value; }
 
     /**
@@ -162,6 +178,11 @@ namespace Model
      * <p>The order for the contents of the folder.</p>
      */
     inline const OrderType& GetOrder() const{ return m_order; }
+
+    /**
+     * <p>The order for the contents of the folder.</p>
+     */
+    inline bool OrderHasBeenSet() const { return m_orderHasBeenSet; }
 
     /**
      * <p>The order for the contents of the folder.</p>
@@ -192,6 +213,11 @@ namespace Model
     /**
      * <p>The maximum number of items to return with this call.</p>
      */
+    inline bool LimitHasBeenSet() const { return m_limitHasBeenSet; }
+
+    /**
+     * <p>The maximum number of items to return with this call.</p>
+     */
     inline void SetLimit(int value) { m_limitHasBeenSet = true; m_limit = value; }
 
     /**
@@ -205,6 +231,12 @@ namespace Model
      * previous call.</p>
      */
     inline const Aws::String& GetMarker() const{ return m_marker; }
+
+    /**
+     * <p>The marker for the next set of results. This marker was received from a
+     * previous call.</p>
+     */
+    inline bool MarkerHasBeenSet() const { return m_markerHasBeenSet; }
 
     /**
      * <p>The marker for the next set of results. This marker was received from a
@@ -251,6 +283,11 @@ namespace Model
     /**
      * <p>The type of items.</p>
      */
+    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
+
+    /**
+     * <p>The type of items.</p>
+     */
     inline void SetType(const FolderContentType& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
@@ -274,6 +311,12 @@ namespace Model
      * documents.</p>
      */
     inline const Aws::String& GetInclude() const{ return m_include; }
+
+    /**
+     * <p>The contents to include. Specify "INITIALIZED" to include initialized
+     * documents.</p>
+     */
+    inline bool IncludeHasBeenSet() const { return m_includeHasBeenSet; }
 
     /**
      * <p>The contents to include. Specify "INITIALIZED" to include initialized

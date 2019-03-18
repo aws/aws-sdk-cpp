@@ -50,6 +50,11 @@ namespace Model
     /**
      * <p>The ARN of the fleet.</p>
      */
+    inline bool FleetArnHasBeenSet() const { return m_fleetArnHasBeenSet; }
+
+    /**
+     * <p>The ARN of the fleet.</p>
+     */
     inline void SetFleetArn(const Aws::String& value) { m_fleetArnHasBeenSet = true; m_fleetArn = value; }
 
     /**
@@ -83,6 +88,12 @@ namespace Model
      * certificate authority certificate used to issue device certificates.</p>
      */
     inline const Aws::String& GetDeviceCaCertificate() const{ return m_deviceCaCertificate; }
+
+    /**
+     * <p>The certificate chain, including intermediate certificates and the root
+     * certificate authority certificate used to issue device certificates.</p>
+     */
+    inline bool DeviceCaCertificateHasBeenSet() const { return m_deviceCaCertificateHasBeenSet; }
 
     /**
      * <p>The certificate chain, including intermediate certificates and the root

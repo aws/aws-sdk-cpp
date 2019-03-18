@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p>The signature for the file.</p>
      */
+    inline bool SignatureHasBeenSet() const { return m_signatureHasBeenSet; }
+
+    /**
+     * <p>The signature for the file.</p>
+     */
     inline void SetSignature(const CodeSigningSignature& value) { m_signatureHasBeenSet = true; m_signature = value; }
 
     /**
@@ -84,6 +89,11 @@ namespace Model
     /**
      * <p>The certificate chain.</p>
      */
+    inline bool CertificateChainHasBeenSet() const { return m_certificateChainHasBeenSet; }
+
+    /**
+     * <p>The certificate chain.</p>
+     */
     inline void SetCertificateChain(const CodeSigningCertificateChain& value) { m_certificateChainHasBeenSet = true; m_certificateChain = value; }
 
     /**
@@ -106,6 +116,11 @@ namespace Model
      * <p>The hash algorithm used to code sign the file.</p>
      */
     inline const Aws::String& GetHashAlgorithm() const{ return m_hashAlgorithm; }
+
+    /**
+     * <p>The hash algorithm used to code sign the file.</p>
+     */
+    inline bool HashAlgorithmHasBeenSet() const { return m_hashAlgorithmHasBeenSet; }
 
     /**
      * <p>The hash algorithm used to code sign the file.</p>
@@ -142,6 +157,11 @@ namespace Model
      * <p>The signature algorithm used to code sign the file.</p>
      */
     inline const Aws::String& GetSignatureAlgorithm() const{ return m_signatureAlgorithm; }
+
+    /**
+     * <p>The signature algorithm used to code sign the file.</p>
+     */
+    inline bool SignatureAlgorithmHasBeenSet() const { return m_signatureAlgorithmHasBeenSet; }
 
     /**
      * <p>The signature algorithm used to code sign the file.</p>

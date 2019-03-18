@@ -57,6 +57,13 @@ namespace Model
      * "BIWEEKLY" or "MONTHLY". The actual start time of each audit is determined by
      * the system.</p>
      */
+    inline bool FrequencyHasBeenSet() const { return m_frequencyHasBeenSet; }
+
+    /**
+     * <p>How often the scheduled audit takes place. Can be one of "DAILY", "WEEKLY",
+     * "BIWEEKLY" or "MONTHLY". The actual start time of each audit is determined by
+     * the system.</p>
+     */
     inline void SetFrequency(const AuditFrequency& value) { m_frequencyHasBeenSet = true; m_frequency = value; }
 
     /**
@@ -88,6 +95,14 @@ namespace Model
      * many days, the audit takes place on the "LAST" day of the month.</p>
      */
     inline const Aws::String& GetDayOfMonth() const{ return m_dayOfMonth; }
+
+    /**
+     * <p>The day of the month on which the scheduled audit takes place. Can be "1"
+     * through "31" or "LAST". This field is required if the "frequency" parameter is
+     * set to "MONTHLY". If days 29-31 are specified, and the month does not have that
+     * many days, the audit takes place on the "LAST" day of the month.</p>
+     */
+    inline bool DayOfMonthHasBeenSet() const { return m_dayOfMonthHasBeenSet; }
 
     /**
      * <p>The day of the month on which the scheduled audit takes place. Can be "1"
@@ -150,6 +165,13 @@ namespace Model
      * "SUN", "MON", "TUE", "WED", "THU", "FRI" or "SAT". This field is required if the
      * "frequency" parameter is set to "WEEKLY" or "BIWEEKLY".</p>
      */
+    inline bool DayOfWeekHasBeenSet() const { return m_dayOfWeekHasBeenSet; }
+
+    /**
+     * <p>The day of the week on which the scheduled audit takes place. Can be one of
+     * "SUN", "MON", "TUE", "WED", "THU", "FRI" or "SAT". This field is required if the
+     * "frequency" parameter is set to "WEEKLY" or "BIWEEKLY".</p>
+     */
     inline void SetDayOfWeek(const DayOfWeek& value) { m_dayOfWeekHasBeenSet = true; m_dayOfWeek = value; }
 
     /**
@@ -182,6 +204,15 @@ namespace Model
      * enabled.)</p>
      */
     inline const Aws::Vector<Aws::String>& GetTargetCheckNames() const{ return m_targetCheckNames; }
+
+    /**
+     * <p>Which checks are performed during the scheduled audit. Checks must be enabled
+     * for your account. (Use <code>DescribeAccountAuditConfiguration</code> to see the
+     * list of all checks including those that are enabled or
+     * <code>UpdateAccountAuditConfiguration</code> to select which checks are
+     * enabled.)</p>
+     */
+    inline bool TargetCheckNamesHasBeenSet() const { return m_targetCheckNamesHasBeenSet; }
 
     /**
      * <p>Which checks are performed during the scheduled audit. Checks must be enabled
@@ -251,6 +282,11 @@ namespace Model
      * <p>The name of the scheduled audit. (Max. 128 chars)</p>
      */
     inline const Aws::String& GetScheduledAuditName() const{ return m_scheduledAuditName; }
+
+    /**
+     * <p>The name of the scheduled audit. (Max. 128 chars)</p>
+     */
+    inline bool ScheduledAuditNameHasBeenSet() const { return m_scheduledAuditNameHasBeenSet; }
 
     /**
      * <p>The name of the scheduled audit. (Max. 128 chars)</p>

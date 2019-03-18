@@ -54,6 +54,11 @@ namespace Model
     /**
      * The Input Security Group to delete
      */
+    inline bool InputSecurityGroupIdHasBeenSet() const { return m_inputSecurityGroupIdHasBeenSet; }
+
+    /**
+     * The Input Security Group to delete
+     */
     inline void SetInputSecurityGroupId(const Aws::String& value) { m_inputSecurityGroupIdHasBeenSet = true; m_inputSecurityGroupId = value; }
 
     /**

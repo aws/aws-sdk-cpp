@@ -71,6 +71,17 @@ namespace Model
      * a valid DB parameter group identifier, for example
      * <code>my-db-param-group</code>, or a valid ARN.</p> </li> </ul>
      */
+    inline bool SourceDBParameterGroupIdentifierHasBeenSet() const { return m_sourceDBParameterGroupIdentifierHasBeenSet; }
+
+    /**
+     * <p> The identifier or ARN for the source DB parameter group. For information
+     * about creating an ARN, see <a
+     * href="http://docs.aws.amazon.com/neptune/latest/UserGuide/tagging.ARN.html#tagging.ARN.Constructing">
+     * Constructing an Amazon Resource Name (ARN)</a>. </p> <p>Constraints:</p> <ul>
+     * <li> <p>Must specify a valid DB parameter group.</p> </li> <li> <p>Must specify
+     * a valid DB parameter group identifier, for example
+     * <code>my-db-param-group</code>, or a valid ARN.</p> </li> </ul>
+     */
     inline void SetSourceDBParameterGroupIdentifier(const Aws::String& value) { m_sourceDBParameterGroupIdentifierHasBeenSet = true; m_sourceDBParameterGroupIdentifier = value; }
 
     /**
@@ -145,6 +156,15 @@ namespace Model
      * a letter</p> </li> <li> <p>Cannot end with a hyphen or contain two consecutive
      * hyphens</p> </li> </ul> <p>Example: <code>my-db-parameter-group</code> </p>
      */
+    inline bool TargetDBParameterGroupIdentifierHasBeenSet() const { return m_targetDBParameterGroupIdentifierHasBeenSet; }
+
+    /**
+     * <p>The identifier for the copied DB parameter group.</p> <p>Constraints:</p>
+     * <ul> <li> <p>Cannot be null, empty, or blank</p> </li> <li> <p>Must contain from
+     * 1 to 255 letters, numbers, or hyphens</p> </li> <li> <p>First character must be
+     * a letter</p> </li> <li> <p>Cannot end with a hyphen or contain two consecutive
+     * hyphens</p> </li> </ul> <p>Example: <code>my-db-parameter-group</code> </p>
+     */
     inline void SetTargetDBParameterGroupIdentifier(const Aws::String& value) { m_targetDBParameterGroupIdentifierHasBeenSet = true; m_targetDBParameterGroupIdentifier = value; }
 
     /**
@@ -201,6 +221,11 @@ namespace Model
     /**
      * <p>A description for the copied DB parameter group.</p>
      */
+    inline bool TargetDBParameterGroupDescriptionHasBeenSet() const { return m_targetDBParameterGroupDescriptionHasBeenSet; }
+
+    /**
+     * <p>A description for the copied DB parameter group.</p>
+     */
     inline void SetTargetDBParameterGroupDescription(const Aws::String& value) { m_targetDBParameterGroupDescriptionHasBeenSet = true; m_targetDBParameterGroupDescription = value; }
 
     /**
@@ -231,6 +256,9 @@ namespace Model
 
     
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+
+    
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }

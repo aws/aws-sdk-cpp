@@ -50,6 +50,11 @@ namespace Model
     /**
      * <p>The application information for the simulation application.</p>
      */
+    inline bool ApplicationHasBeenSet() const { return m_applicationHasBeenSet; }
+
+    /**
+     * <p>The application information for the simulation application.</p>
+     */
     inline void SetApplication(const Aws::String& value) { m_applicationHasBeenSet = true; m_application = value; }
 
     /**
@@ -82,6 +87,11 @@ namespace Model
      * <p>The version of the simulation application to describe.</p>
      */
     inline const Aws::String& GetApplicationVersion() const{ return m_applicationVersion; }
+
+    /**
+     * <p>The version of the simulation application to describe.</p>
+     */
+    inline bool ApplicationVersionHasBeenSet() const { return m_applicationVersionHasBeenSet; }
 
     /**
      * <p>The version of the simulation application to describe.</p>

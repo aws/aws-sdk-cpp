@@ -50,6 +50,11 @@ namespace Model
     /**
      * The ID of the device definition.
      */
+    inline bool DeviceDefinitionIdHasBeenSet() const { return m_deviceDefinitionIdHasBeenSet; }
+
+    /**
+     * The ID of the device definition.
+     */
     inline void SetDeviceDefinitionId(const Aws::String& value) { m_deviceDefinitionIdHasBeenSet = true; m_deviceDefinitionId = value; }
 
     /**

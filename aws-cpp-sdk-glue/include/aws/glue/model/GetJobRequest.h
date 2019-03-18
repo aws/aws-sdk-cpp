@@ -52,6 +52,11 @@ namespace Model
     /**
      * <p>The name of the job definition to retrieve.</p>
      */
+    inline bool JobNameHasBeenSet() const { return m_jobNameHasBeenSet; }
+
+    /**
+     * <p>The name of the job definition to retrieve.</p>
+     */
     inline void SetJobName(const Aws::String& value) { m_jobNameHasBeenSet = true; m_jobName = value; }
 
     /**

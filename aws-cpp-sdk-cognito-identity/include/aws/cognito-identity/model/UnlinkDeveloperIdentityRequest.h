@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>A unique identifier in the format REGION:GUID.</p>
      */
+    inline bool IdentityIdHasBeenSet() const { return m_identityIdHasBeenSet; }
+
+    /**
+     * <p>A unique identifier in the format REGION:GUID.</p>
+     */
     inline void SetIdentityId(const Aws::String& value) { m_identityIdHasBeenSet = true; m_identityId = value; }
 
     /**
@@ -88,6 +93,11 @@ namespace Model
      * <p>An identity pool ID in the format REGION:GUID.</p>
      */
     inline const Aws::String& GetIdentityPoolId() const{ return m_identityPoolId; }
+
+    /**
+     * <p>An identity pool ID in the format REGION:GUID.</p>
+     */
+    inline bool IdentityPoolIdHasBeenSet() const { return m_identityPoolIdHasBeenSet; }
 
     /**
      * <p>An identity pool ID in the format REGION:GUID.</p>
@@ -128,6 +138,11 @@ namespace Model
     /**
      * <p>The "domain" by which Cognito will refer to your users.</p>
      */
+    inline bool DeveloperProviderNameHasBeenSet() const { return m_developerProviderNameHasBeenSet; }
+
+    /**
+     * <p>The "domain" by which Cognito will refer to your users.</p>
+     */
     inline void SetDeveloperProviderName(const Aws::String& value) { m_developerProviderNameHasBeenSet = true; m_developerProviderName = value; }
 
     /**
@@ -161,6 +176,12 @@ namespace Model
      * user.</p>
      */
     inline const Aws::String& GetDeveloperUserIdentifier() const{ return m_developerUserIdentifier; }
+
+    /**
+     * <p>A unique ID used by your backend authentication process to identify a
+     * user.</p>
+     */
+    inline bool DeveloperUserIdentifierHasBeenSet() const { return m_developerUserIdentifierHasBeenSet; }
 
     /**
      * <p>A unique ID used by your backend authentication process to identify a

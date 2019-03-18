@@ -76,6 +76,17 @@ namespace Model
      * <code>arn:aws:ecs:<i>region</i>:<i>aws_account_id</i>:container-instance/<i>container_instance_ID</i>
      * </code>.</p>
      */
+    inline bool ContainerInstanceArnHasBeenSet() const { return m_containerInstanceArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the container instance. The ARN contains
+     * the <code>arn:aws:ecs</code> namespace, followed by the Region of the container
+     * instance, the AWS account ID of the container instance owner, the
+     * <code>container-instance</code> namespace, and then the container instance ID.
+     * For example,
+     * <code>arn:aws:ecs:<i>region</i>:<i>aws_account_id</i>:container-instance/<i>container_instance_ID</i>
+     * </code>.</p>
+     */
     inline void SetContainerInstanceArn(const Aws::String& value) { m_containerInstanceArnHasBeenSet = true; m_containerInstanceArn = value; }
 
     /**
@@ -142,6 +153,11 @@ namespace Model
     /**
      * <p>The EC2 instance ID of the container instance.</p>
      */
+    inline bool Ec2InstanceIdHasBeenSet() const { return m_ec2InstanceIdHasBeenSet; }
+
+    /**
+     * <p>The EC2 instance ID of the container instance.</p>
+     */
     inline void SetEc2InstanceId(const Aws::String& value) { m_ec2InstanceIdHasBeenSet = true; m_ec2InstanceId = value; }
 
     /**
@@ -190,6 +206,17 @@ namespace Model
      * CloudWatch Events for the container instance (inside the <code>detail</code>
      * object) to verify that the version in your event stream is current.</p>
      */
+    inline bool VersionHasBeenSet() const { return m_versionHasBeenSet; }
+
+    /**
+     * <p>The version counter for the container instance. Every time a container
+     * instance experiences a change that triggers a CloudWatch event, the version
+     * counter is incremented. If you are replicating your Amazon ECS container
+     * instance state with CloudWatch Events, you can compare the version of a
+     * container instance reported by the Amazon ECS APIs with the version reported in
+     * CloudWatch Events for the container instance (inside the <code>detail</code>
+     * object) to verify that the version in your event stream is current.</p>
+     */
     inline void SetVersion(long long value) { m_versionHasBeenSet = true; m_version = value; }
 
     /**
@@ -209,6 +236,12 @@ namespace Model
      * running on the container instance.</p>
      */
     inline const VersionInfo& GetVersionInfo() const{ return m_versionInfo; }
+
+    /**
+     * <p>The version information for the Amazon ECS container agent and Docker daemon
+     * running on the container instance.</p>
+     */
+    inline bool VersionInfoHasBeenSet() const { return m_versionInfoHasBeenSet; }
 
     /**
      * <p>The version information for the Amazon ECS container agent and Docker daemon
@@ -245,6 +278,17 @@ namespace Model
      * port that is not specified here is available for new tasks.</p>
      */
     inline const Aws::Vector<Resource>& GetRemainingResources() const{ return m_remainingResources; }
+
+    /**
+     * <p>For CPU and memory resource types, this parameter describes the remaining CPU
+     * and memory that has not already been allocated to tasks and is therefore
+     * available for new tasks. For port resource types, this parameter describes the
+     * ports that were reserved by the Amazon ECS container agent (at instance
+     * registration time) and any task containers that have reserved port mappings on
+     * the host (with the <code>host</code> or <code>bridge</code> network mode). Any
+     * port that is not specified here is available for new tasks.</p>
+     */
+    inline bool RemainingResourcesHasBeenSet() const { return m_remainingResourcesHasBeenSet; }
 
     /**
      * <p>For CPU and memory resource types, this parameter describes the remaining CPU
@@ -333,6 +377,17 @@ namespace Model
      * the Amazon ECS container agent when it registered the container instance with
      * Amazon ECS.</p>
      */
+    inline bool RegisteredResourcesHasBeenSet() const { return m_registeredResourcesHasBeenSet; }
+
+    /**
+     * <p>For CPU and memory resource types, this parameter describes the amount of
+     * each resource that was available on the container instance when the container
+     * agent registered it with Amazon ECS. This value represents the total amount of
+     * CPU and memory that can be allocated on this container instance to tasks. For
+     * port resource types, this parameter describes the ports that were reserved by
+     * the Amazon ECS container agent when it registered the container instance with
+     * Amazon ECS.</p>
+     */
     inline void SetRegisteredResources(const Aws::Vector<Resource>& value) { m_registeredResourcesHasBeenSet = true; m_registeredResources = value; }
 
     /**
@@ -403,6 +458,19 @@ namespace Model
      * Guide</i>.</p>
      */
     inline const Aws::String& GetStatus() const{ return m_status; }
+
+    /**
+     * <p>The status of the container instance. The valid values are
+     * <code>ACTIVE</code>, <code>INACTIVE</code>, or <code>DRAINING</code>.
+     * <code>ACTIVE</code> indicates that the container instance can accept tasks.
+     * <code>DRAINING</code> indicates that new tasks are not placed on the container
+     * instance and any service tasks running on the container instance are removed if
+     * possible. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/container-instance-draining.html">Container
+     * Instance Draining</a> in the <i>Amazon Elastic Container Service Developer
+     * Guide</i>.</p>
+     */
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
     /**
      * <p>The status of the container instance. The valid values are
@@ -497,6 +565,14 @@ namespace Model
      * <code>false</code>. Only instances connected to an agent can accept placement
      * requests.</p>
      */
+    inline bool AgentConnectedHasBeenSet() const { return m_agentConnectedHasBeenSet; }
+
+    /**
+     * <p>This parameter returns <code>true</code> if the agent is connected to Amazon
+     * ECS. Registered instances with an agent that may be unhealthy or stopped return
+     * <code>false</code>. Only instances connected to an agent can accept placement
+     * requests.</p>
+     */
     inline void SetAgentConnected(bool value) { m_agentConnectedHasBeenSet = true; m_agentConnected = value; }
 
     /**
@@ -513,6 +589,12 @@ namespace Model
      * <code>RUNNING</code> status.</p>
      */
     inline int GetRunningTasksCount() const{ return m_runningTasksCount; }
+
+    /**
+     * <p>The number of tasks on the container instance that are in the
+     * <code>RUNNING</code> status.</p>
+     */
+    inline bool RunningTasksCountHasBeenSet() const { return m_runningTasksCountHasBeenSet; }
 
     /**
      * <p>The number of tasks on the container instance that are in the
@@ -537,6 +619,12 @@ namespace Model
      * <p>The number of tasks on the container instance that are in the
      * <code>PENDING</code> status.</p>
      */
+    inline bool PendingTasksCountHasBeenSet() const { return m_pendingTasksCountHasBeenSet; }
+
+    /**
+     * <p>The number of tasks on the container instance that are in the
+     * <code>PENDING</code> status.</p>
+     */
     inline void SetPendingTasksCount(int value) { m_pendingTasksCountHasBeenSet = true; m_pendingTasksCount = value; }
 
     /**
@@ -551,6 +639,12 @@ namespace Model
      * requested, this value is <code>NULL</code>.</p>
      */
     inline const AgentUpdateStatus& GetAgentUpdateStatus() const{ return m_agentUpdateStatus; }
+
+    /**
+     * <p>The status of the most recent agent update. If an update has never been
+     * requested, this value is <code>NULL</code>.</p>
+     */
+    inline bool AgentUpdateStatusHasBeenSet() const { return m_agentUpdateStatusHasBeenSet; }
 
     /**
      * <p>The status of the most recent agent update. If an update has never been
@@ -583,6 +677,13 @@ namespace Model
      * <a>PutAttributes</a> operation.</p>
      */
     inline const Aws::Vector<Attribute>& GetAttributes() const{ return m_attributes; }
+
+    /**
+     * <p>The attributes set for the container instance, either by the Amazon ECS
+     * container agent at instance registration or manually with the
+     * <a>PutAttributes</a> operation.</p>
+     */
+    inline bool AttributesHasBeenSet() const { return m_attributesHasBeenSet; }
 
     /**
      * <p>The attributes set for the container instance, either by the Amazon ECS
@@ -635,6 +736,11 @@ namespace Model
     /**
      * <p>The Unix timestamp for when the container instance was registered.</p>
      */
+    inline bool RegisteredAtHasBeenSet() const { return m_registeredAtHasBeenSet; }
+
+    /**
+     * <p>The Unix timestamp for when the container instance was registered.</p>
+     */
     inline void SetRegisteredAt(const Aws::Utils::DateTime& value) { m_registeredAtHasBeenSet = true; m_registeredAt = value; }
 
     /**
@@ -657,6 +763,11 @@ namespace Model
      * <p>The elastic network interfaces associated with the container instance.</p>
      */
     inline const Aws::Vector<Attachment>& GetAttachments() const{ return m_attachments; }
+
+    /**
+     * <p>The elastic network interfaces associated with the container instance.</p>
+     */
+    inline bool AttachmentsHasBeenSet() const { return m_attachmentsHasBeenSet; }
 
     /**
      * <p>The elastic network interfaces associated with the container instance.</p>
@@ -696,6 +807,14 @@ namespace Model
      * characters, and tag values can have a maximum length of 256 characters.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>The metadata that you apply to the container instance to help you categorize
+     * and organize them. Each tag consists of a key and an optional value, both of
+     * which you define. Tag keys can have a maximum character length of 128
+     * characters, and tag values can have a maximum length of 256 characters.</p>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
      * <p>The metadata that you apply to the container instance to help you categorize

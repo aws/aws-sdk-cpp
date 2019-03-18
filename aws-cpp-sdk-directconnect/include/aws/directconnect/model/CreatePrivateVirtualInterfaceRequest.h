@@ -53,6 +53,11 @@ namespace Model
     /**
      * <p>The ID of the connection.</p>
      */
+    inline bool ConnectionIdHasBeenSet() const { return m_connectionIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the connection.</p>
+     */
     inline void SetConnectionId(const Aws::String& value) { m_connectionIdHasBeenSet = true; m_connectionId = value; }
 
     /**
@@ -85,6 +90,11 @@ namespace Model
      * <p>Information about the private virtual interface.</p>
      */
     inline const NewPrivateVirtualInterface& GetNewPrivateVirtualInterface() const{ return m_newPrivateVirtualInterface; }
+
+    /**
+     * <p>Information about the private virtual interface.</p>
+     */
+    inline bool NewPrivateVirtualInterfaceHasBeenSet() const { return m_newPrivateVirtualInterfaceHasBeenSet; }
 
     /**
      * <p>Information about the private virtual interface.</p>

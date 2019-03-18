@@ -61,6 +61,11 @@ namespace Model
     /**
      * <p>Allows a typed link specifier to be accepted as input.</p>
      */
+    inline bool TypedLinkSpecifierHasBeenSet() const { return m_typedLinkSpecifierHasBeenSet; }
+
+    /**
+     * <p>Allows a typed link specifier to be accepted as input.</p>
+     */
     inline void SetTypedLinkSpecifier(const TypedLinkSpecifier& value) { m_typedLinkSpecifierHasBeenSet = true; m_typedLinkSpecifier = value; }
 
     /**
@@ -83,6 +88,11 @@ namespace Model
      * <p>The attributes update structure.</p>
      */
     inline const Aws::Vector<LinkAttributeUpdate>& GetAttributeUpdates() const{ return m_attributeUpdates; }
+
+    /**
+     * <p>The attributes update structure.</p>
+     */
+    inline bool AttributeUpdatesHasBeenSet() const { return m_attributeUpdatesHasBeenSet; }
 
     /**
      * <p>The attributes update structure.</p>

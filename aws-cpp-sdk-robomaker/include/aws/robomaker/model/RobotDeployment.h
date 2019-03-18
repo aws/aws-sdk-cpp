@@ -59,6 +59,11 @@ namespace Model
     /**
      * <p>The robot deployment Amazon Resource Name (ARN).</p>
      */
+    inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
+
+    /**
+     * <p>The robot deployment Amazon Resource Name (ARN).</p>
+     */
     inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
 
     /**
@@ -97,6 +102,12 @@ namespace Model
      * <p>The time, in milliseconds since the epoch, when the deployment was
      * started.</p>
      */
+    inline bool DeploymentStartTimeHasBeenSet() const { return m_deploymentStartTimeHasBeenSet; }
+
+    /**
+     * <p>The time, in milliseconds since the epoch, when the deployment was
+     * started.</p>
+     */
     inline void SetDeploymentStartTime(const Aws::Utils::DateTime& value) { m_deploymentStartTimeHasBeenSet = true; m_deploymentStartTime = value; }
 
     /**
@@ -122,6 +133,11 @@ namespace Model
      * <p>The time, in milliseconds since the epoch, when the deployment finished.</p>
      */
     inline const Aws::Utils::DateTime& GetDeploymentFinishTime() const{ return m_deploymentFinishTime; }
+
+    /**
+     * <p>The time, in milliseconds since the epoch, when the deployment finished.</p>
+     */
+    inline bool DeploymentFinishTimeHasBeenSet() const { return m_deploymentFinishTimeHasBeenSet; }
 
     /**
      * <p>The time, in milliseconds since the epoch, when the deployment finished.</p>
@@ -152,6 +168,11 @@ namespace Model
     /**
      * <p>The status of the robot deployment.</p>
      */
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
+
+    /**
+     * <p>The status of the robot deployment.</p>
+     */
     inline void SetStatus(const RobotStatus& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
@@ -178,6 +199,11 @@ namespace Model
     /**
      * <p>Information about how the deployment is progressing.</p>
      */
+    inline bool ProgressDetailHasBeenSet() const { return m_progressDetailHasBeenSet; }
+
+    /**
+     * <p>Information about how the deployment is progressing.</p>
+     */
     inline void SetProgressDetail(const ProgressDetail& value) { m_progressDetailHasBeenSet = true; m_progressDetail = value; }
 
     /**
@@ -200,6 +226,11 @@ namespace Model
      * <p>A short description of the reason why the robot deployment failed.</p>
      */
     inline const Aws::String& GetFailureReason() const{ return m_failureReason; }
+
+    /**
+     * <p>A short description of the reason why the robot deployment failed.</p>
+     */
+    inline bool FailureReasonHasBeenSet() const { return m_failureReasonHasBeenSet; }
 
     /**
      * <p>A short description of the reason why the robot deployment failed.</p>
@@ -236,6 +267,11 @@ namespace Model
      * <p>The robot deployment failure code.</p>
      */
     inline const DeploymentJobErrorCode& GetFailureCode() const{ return m_failureCode; }
+
+    /**
+     * <p>The robot deployment failure code.</p>
+     */
+    inline bool FailureCodeHasBeenSet() const { return m_failureCodeHasBeenSet; }
 
     /**
      * <p>The robot deployment failure code.</p>

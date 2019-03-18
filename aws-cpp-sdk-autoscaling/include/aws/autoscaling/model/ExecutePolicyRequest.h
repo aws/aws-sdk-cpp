@@ -54,6 +54,11 @@ namespace Model
     /**
      * <p>The name of the Auto Scaling group.</p>
      */
+    inline bool AutoScalingGroupNameHasBeenSet() const { return m_autoScalingGroupNameHasBeenSet; }
+
+    /**
+     * <p>The name of the Auto Scaling group.</p>
+     */
     inline void SetAutoScalingGroupName(const Aws::String& value) { m_autoScalingGroupNameHasBeenSet = true; m_autoScalingGroupName = value; }
 
     /**
@@ -86,6 +91,11 @@ namespace Model
      * <p>The name or ARN of the policy.</p>
      */
     inline const Aws::String& GetPolicyName() const{ return m_policyName; }
+
+    /**
+     * <p>The name or ARN of the policy.</p>
+     */
+    inline bool PolicyNameHasBeenSet() const { return m_policyNameHasBeenSet; }
 
     /**
      * <p>The name or ARN of the policy.</p>
@@ -134,6 +144,15 @@ namespace Model
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/Cooldown.html">Scaling
      * Cooldowns</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
      */
+    inline bool HonorCooldownHasBeenSet() const { return m_honorCooldownHasBeenSet; }
+
+    /**
+     * <p>Indicates whether Amazon EC2 Auto Scaling waits for the cooldown period to
+     * complete before executing the policy.</p> <p>This parameter is not supported if
+     * the policy type is <code>StepScaling</code>.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/Cooldown.html">Scaling
+     * Cooldowns</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+     */
     inline void SetHonorCooldown(bool value) { m_honorCooldownHasBeenSet = true; m_honorCooldown = value; }
 
     /**
@@ -168,6 +187,18 @@ namespace Model
      * <p>Conditional: This parameter is required if the policy type is
      * <code>StepScaling</code> and not supported otherwise.</p>
      */
+    inline bool MetricValueHasBeenSet() const { return m_metricValueHasBeenSet; }
+
+    /**
+     * <p>The metric value to compare to <code>BreachThreshold</code>. This enables you
+     * to execute a policy of type <code>StepScaling</code> and determine which step
+     * adjustment to use. For example, if the breach threshold is 50 and you want to
+     * use a step adjustment with a lower bound of 0 and an upper bound of 10, you can
+     * set the metric value to 59.</p> <p>If you specify a metric value that doesn't
+     * correspond to a step adjustment for the policy, the call returns an error.</p>
+     * <p>Conditional: This parameter is required if the policy type is
+     * <code>StepScaling</code> and not supported otherwise.</p>
+     */
     inline void SetMetricValue(double value) { m_metricValueHasBeenSet = true; m_metricValue = value; }
 
     /**
@@ -189,6 +220,13 @@ namespace Model
      * otherwise.</p>
      */
     inline double GetBreachThreshold() const{ return m_breachThreshold; }
+
+    /**
+     * <p>The breach threshold for the alarm.</p> <p>Conditional: This parameter is
+     * required if the policy type is <code>StepScaling</code> and not supported
+     * otherwise.</p>
+     */
+    inline bool BreachThresholdHasBeenSet() const { return m_breachThresholdHasBeenSet; }
 
     /**
      * <p>The breach threshold for the alarm.</p> <p>Conditional: This parameter is

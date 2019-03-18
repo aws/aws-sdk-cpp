@@ -52,6 +52,11 @@ namespace Model
     /**
      * <p>The ID of the project.</p>
      */
+    inline bool ProjectIdHasBeenSet() const { return m_projectIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the project.</p>
+     */
     inline void SetProjectId(const Aws::String& value) { m_projectIdHasBeenSet = true; m_projectId = value; }
 
     /**
@@ -85,6 +90,12 @@ namespace Model
      * membership attributes.</p>
      */
     inline const Aws::String& GetUserArn() const{ return m_userArn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the user for whom you want to change team
+     * membership attributes.</p>
+     */
+    inline bool UserArnHasBeenSet() const { return m_userArnHasBeenSet; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the user for whom you want to change team
@@ -130,6 +141,14 @@ namespace Model
      * with Teams</a> in the <i>AWS CodeStar User Guide</i>.</p>
      */
     inline const Aws::String& GetProjectRole() const{ return m_projectRole; }
+
+    /**
+     * <p>The role assigned to the user in the project. Project roles have different
+     * levels of access. For more information, see <a
+     * href="http://docs.aws.amazon.com/codestar/latest/userguide/working-with-teams.html">Working
+     * with Teams</a> in the <i>AWS CodeStar User Guide</i>.</p>
+     */
+    inline bool ProjectRoleHasBeenSet() const { return m_projectRoleHasBeenSet; }
 
     /**
      * <p>The role assigned to the user in the project. Project roles have different
@@ -187,6 +206,14 @@ namespace Model
      * can access resources.</p>
      */
     inline bool GetRemoteAccessAllowed() const{ return m_remoteAccessAllowed; }
+
+    /**
+     * <p>Whether a team member is allowed to remotely access project resources using
+     * the SSH public key associated with the user's profile. Even if this is set to
+     * True, the user must associate a public key with their profile before the user
+     * can access resources.</p>
+     */
+    inline bool RemoteAccessAllowedHasBeenSet() const { return m_remoteAccessAllowedHasBeenSet; }
 
     /**
      * <p>Whether a team member is allowed to remotely access project resources using

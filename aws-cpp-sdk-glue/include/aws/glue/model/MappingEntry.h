@@ -55,6 +55,11 @@ namespace Model
     /**
      * <p>The name of the source table.</p>
      */
+    inline bool SourceTableHasBeenSet() const { return m_sourceTableHasBeenSet; }
+
+    /**
+     * <p>The name of the source table.</p>
+     */
     inline void SetSourceTable(const Aws::String& value) { m_sourceTableHasBeenSet = true; m_sourceTable = value; }
 
     /**
@@ -87,6 +92,11 @@ namespace Model
      * <p>The source path.</p>
      */
     inline const Aws::String& GetSourcePath() const{ return m_sourcePath; }
+
+    /**
+     * <p>The source path.</p>
+     */
+    inline bool SourcePathHasBeenSet() const { return m_sourcePathHasBeenSet; }
 
     /**
      * <p>The source path.</p>
@@ -127,6 +137,11 @@ namespace Model
     /**
      * <p>The source type.</p>
      */
+    inline bool SourceTypeHasBeenSet() const { return m_sourceTypeHasBeenSet; }
+
+    /**
+     * <p>The source type.</p>
+     */
     inline void SetSourceType(const Aws::String& value) { m_sourceTypeHasBeenSet = true; m_sourceType = value; }
 
     /**
@@ -159,6 +174,11 @@ namespace Model
      * <p>The target table.</p>
      */
     inline const Aws::String& GetTargetTable() const{ return m_targetTable; }
+
+    /**
+     * <p>The target table.</p>
+     */
+    inline bool TargetTableHasBeenSet() const { return m_targetTableHasBeenSet; }
 
     /**
      * <p>The target table.</p>
@@ -199,6 +219,11 @@ namespace Model
     /**
      * <p>The target path.</p>
      */
+    inline bool TargetPathHasBeenSet() const { return m_targetPathHasBeenSet; }
+
+    /**
+     * <p>The target path.</p>
+     */
     inline void SetTargetPath(const Aws::String& value) { m_targetPathHasBeenSet = true; m_targetPath = value; }
 
     /**
@@ -231,6 +256,11 @@ namespace Model
      * <p>The target type.</p>
      */
     inline const Aws::String& GetTargetType() const{ return m_targetType; }
+
+    /**
+     * <p>The target type.</p>
+     */
+    inline bool TargetTypeHasBeenSet() const { return m_targetTypeHasBeenSet; }
 
     /**
      * <p>The target type.</p>

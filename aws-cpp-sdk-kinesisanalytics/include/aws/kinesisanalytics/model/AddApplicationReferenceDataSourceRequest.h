@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>Name of an existing application.</p>
      */
+    inline bool ApplicationNameHasBeenSet() const { return m_applicationNameHasBeenSet; }
+
+    /**
+     * <p>Name of an existing application.</p>
+     */
     inline void SetApplicationName(const Aws::String& value) { m_applicationNameHasBeenSet = true; m_applicationName = value; }
 
     /**
@@ -98,6 +103,14 @@ namespace Model
      * application version. If the version specified is not the current version, the
      * <code>ConcurrentModificationException</code> is returned.</p>
      */
+    inline bool CurrentApplicationVersionIdHasBeenSet() const { return m_currentApplicationVersionIdHasBeenSet; }
+
+    /**
+     * <p>Version of the application for which you are adding the reference data
+     * source. You can use the <a>DescribeApplication</a> operation to get the current
+     * application version. If the version specified is not the current version, the
+     * <code>ConcurrentModificationException</code> is returned.</p>
+     */
     inline void SetCurrentApplicationVersionId(long long value) { m_currentApplicationVersionIdHasBeenSet = true; m_currentApplicationVersionId = value; }
 
     /**
@@ -118,6 +131,16 @@ namespace Model
      * read the object from your S3 bucket on your behalf.</p>
      */
     inline const ReferenceDataSource& GetReferenceDataSource() const{ return m_referenceDataSource; }
+
+    /**
+     * <p>The reference data source can be an object in your Amazon S3 bucket. Amazon
+     * Kinesis Analytics reads the object and copies the data into the in-application
+     * table that is created. You provide an S3 bucket, object key name, and the
+     * resulting in-application table that is created. You must also provide an IAM
+     * role with the necessary permissions that Amazon Kinesis Analytics can assume to
+     * read the object from your S3 bucket on your behalf.</p>
+     */
+    inline bool ReferenceDataSourceHasBeenSet() const { return m_referenceDataSourceHasBeenSet; }
 
     /**
      * <p>The reference data source can be an object in your Amazon S3 bucket. Amazon

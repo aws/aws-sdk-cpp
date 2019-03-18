@@ -52,6 +52,11 @@ namespace Model
     /**
      * <p>The application name.</p>
      */
+    inline bool ApplicationNameHasBeenSet() const { return m_applicationNameHasBeenSet; }
+
+    /**
+     * <p>The application name.</p>
+     */
     inline void SetApplicationName(const Aws::String& value) { m_applicationNameHasBeenSet = true; m_applicationName = value; }
 
     /**
@@ -90,6 +95,12 @@ namespace Model
      * <p>The version ID of the application. You can retrieve the application version
      * ID using <a>DescribeApplication</a>.</p>
      */
+    inline bool CurrentApplicationVersionIdHasBeenSet() const { return m_currentApplicationVersionIdHasBeenSet; }
+
+    /**
+     * <p>The version ID of the application. You can retrieve the application version
+     * ID using <a>DescribeApplication</a>.</p>
+     */
     inline void SetCurrentApplicationVersionId(long long value) { m_currentApplicationVersionIdHasBeenSet = true; m_currentApplicationVersionId = value; }
 
     /**
@@ -105,6 +116,13 @@ namespace Model
      * using the <a>DescribeApplication</a> operation. </p>
      */
     inline const Aws::String& GetCloudWatchLoggingOptionId() const{ return m_cloudWatchLoggingOptionId; }
+
+    /**
+     * <p>The <code>CloudWatchLoggingOptionId</code> of the Amazon CloudWatch logging
+     * option to delete. You can get the <code>CloudWatchLoggingOptionId</code> by
+     * using the <a>DescribeApplication</a> operation. </p>
+     */
+    inline bool CloudWatchLoggingOptionIdHasBeenSet() const { return m_cloudWatchLoggingOptionIdHasBeenSet; }
 
     /**
      * <p>The <code>CloudWatchLoggingOptionId</code> of the Amazon CloudWatch logging

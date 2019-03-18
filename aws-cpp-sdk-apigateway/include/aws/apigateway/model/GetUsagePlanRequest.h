@@ -56,6 +56,12 @@ namespace Model
      * <p>[Required] The identifier of the <a>UsagePlan</a> resource to be
      * retrieved.</p>
      */
+    inline bool UsagePlanIdHasBeenSet() const { return m_usagePlanIdHasBeenSet; }
+
+    /**
+     * <p>[Required] The identifier of the <a>UsagePlan</a> resource to be
+     * retrieved.</p>
+     */
     inline void SetUsagePlanId(const Aws::String& value) { m_usagePlanIdHasBeenSet = true; m_usagePlanId = value; }
 
     /**

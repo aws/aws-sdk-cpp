@@ -51,6 +51,11 @@ namespace Model
     /**
      * <p>The name of the stream whose retention period you want to change.</p>
      */
+    inline bool StreamNameHasBeenSet() const { return m_streamNameHasBeenSet; }
+
+    /**
+     * <p>The name of the stream whose retention period you want to change.</p>
+     */
     inline void SetStreamName(const Aws::String& value) { m_streamNameHasBeenSet = true; m_streamName = value; }
 
     /**
@@ -84,6 +89,12 @@ namespace Model
      * to change.</p>
      */
     inline const Aws::String& GetStreamARN() const{ return m_streamARN; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the stream whose retention period you want
+     * to change.</p>
+     */
+    inline bool StreamARNHasBeenSet() const { return m_streamARNHasBeenSet; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the stream whose retention period you want
@@ -128,6 +139,13 @@ namespace Model
      * <code>ListStreams</code> API.</p>
      */
     inline const Aws::String& GetCurrentVersion() const{ return m_currentVersion; }
+
+    /**
+     * <p>The version of the stream whose retention period you want to change. To get
+     * the version, call either the <code>DescribeStream</code> or the
+     * <code>ListStreams</code> API.</p>
+     */
+    inline bool CurrentVersionHasBeenSet() const { return m_currentVersionHasBeenSet; }
 
     /**
      * <p>The version of the stream whose retention period you want to change. To get
@@ -180,6 +198,11 @@ namespace Model
     /**
      * <p>Indicates whether you want to increase or decrease the retention period.</p>
      */
+    inline bool OperationHasBeenSet() const { return m_operationHasBeenSet; }
+
+    /**
+     * <p>Indicates whether you want to increase or decrease the retention period.</p>
+     */
     inline void SetOperation(const UpdateDataRetentionOperation& value) { m_operationHasBeenSet = true; m_operation = value; }
 
     /**
@@ -203,6 +226,12 @@ namespace Model
      * value. The maximum value for this parameter is 87600 (ten years).</p>
      */
     inline int GetDataRetentionChangeInHours() const{ return m_dataRetentionChangeInHours; }
+
+    /**
+     * <p>The retention period, in hours. The value you specify replaces the current
+     * value. The maximum value for this parameter is 87600 (ten years).</p>
+     */
+    inline bool DataRetentionChangeInHoursHasBeenSet() const { return m_dataRetentionChangeInHoursHasBeenSet; }
 
     /**
      * <p>The retention period, in hours. The value you specify replaces the current

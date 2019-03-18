@@ -53,6 +53,11 @@ namespace Model
     /**
      * <p>A user-supplied ID that uniquely identifies the <code>DataSource</code>.</p>
      */
+    inline bool DataSourceIdHasBeenSet() const { return m_dataSourceIdHasBeenSet; }
+
+    /**
+     * <p>A user-supplied ID that uniquely identifies the <code>DataSource</code>.</p>
+     */
     inline void SetDataSourceId(const Aws::String& value) { m_dataSourceIdHasBeenSet = true; m_dataSourceId = value; }
 
     /**
@@ -85,6 +90,11 @@ namespace Model
      * <p>A user-supplied name or description of the <code>DataSource</code>. </p>
      */
     inline const Aws::String& GetDataSourceName() const{ return m_dataSourceName; }
+
+    /**
+     * <p>A user-supplied name or description of the <code>DataSource</code>. </p>
+     */
+    inline bool DataSourceNameHasBeenSet() const { return m_dataSourceNameHasBeenSet; }
 
     /**
      * <p>A user-supplied name or description of the <code>DataSource</code>. </p>
@@ -138,6 +148,28 @@ namespace Model
      * </ul>
      */
     inline const RedshiftDataSpec& GetDataSpec() const{ return m_dataSpec; }
+
+    /**
+     * <p>The data specification of an Amazon Redshift <code>DataSource</code>:</p>
+     * <ul> <li><p>DatabaseInformation - <ul> <li> <code>DatabaseName</code> - The name
+     * of the Amazon Redshift database. </li> <li> <code> ClusterIdentifier</code> -
+     * The unique ID for the Amazon Redshift cluster.</li> </ul></p></li>
+     * <li><p>DatabaseCredentials - The AWS Identity and Access Management (IAM)
+     * credentials that are used to connect to the Amazon Redshift database.</p></li>
+     * <li><p>SelectSqlQuery - The query that is used to retrieve the observation data
+     * for the <code>Datasource</code>.</p></li> <li><p>S3StagingLocation - The Amazon
+     * Simple Storage Service (Amazon S3) location for staging Amazon Redshift data.
+     * The data retrieved from Amazon Redshift using the <code>SelectSqlQuery</code>
+     * query is stored in this location.</p></li> <li><p>DataSchemaUri - The Amazon S3
+     * location of the <code>DataSchema</code>.</p></li> <li><p>DataSchema - A JSON
+     * string representing the schema. This is not required if
+     * <code>DataSchemaUri</code> is specified. </p></li> <li> <p>DataRearrangement - A
+     * JSON string that represents the splitting and rearrangement requirements for the
+     * <code>DataSource</code>.</p> <p> Sample - <code>
+     * "{\"splitting\":{\"percentBegin\":10,\"percentEnd\":60}}"</code> </p> </li>
+     * </ul>
+     */
+    inline bool DataSpecHasBeenSet() const { return m_dataSpecHasBeenSet; }
 
     /**
      * <p>The data specification of an Amazon Redshift <code>DataSource</code>:</p>
@@ -246,6 +278,16 @@ namespace Model
      * Amazon ML read/write permissions on the <code>S3StagingLocation</code></p></li>
      * </ul> </p>
      */
+    inline bool RoleARNHasBeenSet() const { return m_roleARNHasBeenSet; }
+
+    /**
+     * <p>A fully specified role Amazon Resource Name (ARN). Amazon ML assumes the role
+     * on behalf of the user to create the following: </p> <p> <ul> <li><p>A security
+     * group to allow Amazon ML to execute the <code>SelectSqlQuery</code> query on an
+     * Amazon Redshift cluster</p></li> <li><p>An Amazon S3 bucket policy to grant
+     * Amazon ML read/write permissions on the <code>S3StagingLocation</code></p></li>
+     * </ul> </p>
+     */
     inline void SetRoleARN(const Aws::String& value) { m_roleARNHasBeenSet = true; m_roleARN = value; }
 
     /**
@@ -307,6 +349,15 @@ namespace Model
      * needs to be used for <code>MLModel</code> training.</p>
      */
     inline bool GetComputeStatistics() const{ return m_computeStatistics; }
+
+    /**
+     * <p>The compute statistics for a <code>DataSource</code>. The statistics are
+     * generated from the observation data referenced by a <code>DataSource</code>.
+     * Amazon ML uses the statistics internally during <code>MLModel</code> training.
+     * This parameter must be set to <code>true</code> if the <code>DataSource</code>
+     * needs to be used for <code>MLModel</code> training.</p>
+     */
+    inline bool ComputeStatisticsHasBeenSet() const { return m_computeStatisticsHasBeenSet; }
 
     /**
      * <p>The compute statistics for a <code>DataSource</code>. The statistics are

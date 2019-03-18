@@ -59,6 +59,11 @@ namespace Model
     /**
      * <p>Specifies the format of the records on the streaming source.</p>
      */
+    inline bool RecordFormatUpdateHasBeenSet() const { return m_recordFormatUpdateHasBeenSet; }
+
+    /**
+     * <p>Specifies the format of the records on the streaming source.</p>
+     */
     inline void SetRecordFormatUpdate(const RecordFormat& value) { m_recordFormatUpdateHasBeenSet = true; m_recordFormatUpdate = value; }
 
     /**
@@ -82,6 +87,12 @@ namespace Model
      * UTF-8.</p>
      */
     inline const Aws::String& GetRecordEncodingUpdate() const{ return m_recordEncodingUpdate; }
+
+    /**
+     * <p>Specifies the encoding of the records in the streaming source; for example,
+     * UTF-8.</p>
+     */
+    inline bool RecordEncodingUpdateHasBeenSet() const { return m_recordEncodingUpdateHasBeenSet; }
 
     /**
      * <p>Specifies the encoding of the records in the streaming source; for example,
@@ -126,6 +137,13 @@ namespace Model
      * in-application stream.</p>
      */
     inline const Aws::Vector<RecordColumn>& GetRecordColumnUpdates() const{ return m_recordColumnUpdates; }
+
+    /**
+     * <p>A list of <code>RecordColumn</code> objects. Each object describes the
+     * mapping of the streaming source element to the corresponding column in the
+     * in-application stream.</p>
+     */
+    inline bool RecordColumnUpdatesHasBeenSet() const { return m_recordColumnUpdatesHasBeenSet; }
 
     /**
      * <p>A list of <code>RecordColumn</code> objects. Each object describes the

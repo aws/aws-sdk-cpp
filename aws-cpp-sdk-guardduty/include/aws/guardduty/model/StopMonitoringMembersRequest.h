@@ -56,6 +56,12 @@ namespace Model
      * A list of account IDs of the GuardDuty member accounts whose findings you want
      * the master account to stop monitoring.
      */
+    inline bool AccountIdsHasBeenSet() const { return m_accountIdsHasBeenSet; }
+
+    /**
+     * A list of account IDs of the GuardDuty member accounts whose findings you want
+     * the master account to stop monitoring.
+     */
     inline void SetAccountIds(const Aws::Vector<Aws::String>& value) { m_accountIdsHasBeenSet = true; m_accountIds = value; }
 
     /**
@@ -100,6 +106,12 @@ namespace Model
      * from monitor members' findings.
      */
     inline const Aws::String& GetDetectorId() const{ return m_detectorId; }
+
+    /**
+     * The unique ID of the detector of the GuardDuty account that you want to stop
+     * from monitor members' findings.
+     */
+    inline bool DetectorIdHasBeenSet() const { return m_detectorIdHasBeenSet; }
 
     /**
      * The unique ID of the detector of the GuardDuty account that you want to stop

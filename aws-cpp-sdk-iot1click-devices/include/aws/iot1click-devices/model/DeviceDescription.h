@@ -55,6 +55,13 @@ namespace Model
  providing user
      * specified device attributes.</p>
      */
+    inline bool AttributesHasBeenSet() const { return m_attributesHasBeenSet; }
+
+    /**
+     * <p>An array of zero or more elements of DeviceAttribute objects
+ providing user
+     * specified device attributes.</p>
+     */
     inline void SetAttributes(const Aws::Map<Aws::String, Aws::String>& value) { m_attributesHasBeenSet = true; m_attributes = value; }
 
     /**
@@ -136,6 +143,11 @@ namespace Model
     /**
      * <p>The unique identifier of the device.</p>
      */
+    inline bool DeviceIdHasBeenSet() const { return m_deviceIdHasBeenSet; }
+
+    /**
+     * <p>The unique identifier of the device.</p>
+     */
     inline void SetDeviceId(const Aws::String& value) { m_deviceIdHasBeenSet = true; m_deviceId = value; }
 
     /**
@@ -172,6 +184,11 @@ namespace Model
     /**
      * <p>A Boolean value indicating whether or not the device is enabled.</p>
      */
+    inline bool EnabledHasBeenSet() const { return m_enabledHasBeenSet; }
+
+    /**
+     * <p>A Boolean value indicating whether or not the device is enabled.</p>
+     */
     inline void SetEnabled(bool value) { m_enabledHasBeenSet = true; m_enabled = value; }
 
     /**
@@ -192,6 +209,13 @@ namespace Model
      * remaining for
  the device.</p>
      */
+    inline bool RemainingLifeHasBeenSet() const { return m_remainingLifeHasBeenSet; }
+
+    /**
+     * <p>A value between 0 and 1 inclusive, representing the fraction of life
+     * remaining for
+ the device.</p>
+     */
     inline void SetRemainingLife(double value) { m_remainingLifeHasBeenSet = true; m_remainingLife = value; }
 
     /**
@@ -206,6 +230,11 @@ namespace Model
      * <p>The type of the device, such as "button".</p>
      */
     inline const Aws::String& GetType() const{ return m_type; }
+
+    /**
+     * <p>The type of the device, such as "button".</p>
+     */
+    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
 
     /**
      * <p>The type of the device, such as "button".</p>

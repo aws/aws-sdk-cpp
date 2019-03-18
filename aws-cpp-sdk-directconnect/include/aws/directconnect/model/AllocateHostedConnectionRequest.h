@@ -52,6 +52,11 @@ namespace Model
     /**
      * <p>The ID of the interconnect or LAG.</p>
      */
+    inline bool ConnectionIdHasBeenSet() const { return m_connectionIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the interconnect or LAG.</p>
+     */
     inline void SetConnectionId(const Aws::String& value) { m_connectionIdHasBeenSet = true; m_connectionId = value; }
 
     /**
@@ -84,6 +89,11 @@ namespace Model
      * <p>The ID of the AWS account ID of the customer for the connection.</p>
      */
     inline const Aws::String& GetOwnerAccount() const{ return m_ownerAccount; }
+
+    /**
+     * <p>The ID of the AWS account ID of the customer for the connection.</p>
+     */
+    inline bool OwnerAccountHasBeenSet() const { return m_ownerAccountHasBeenSet; }
 
     /**
      * <p>The ID of the AWS account ID of the customer for the connection.</p>
@@ -121,6 +131,12 @@ namespace Model
      * 50Mbps, 100Mbps, 200Mbps, 300Mbps, 400Mbps, and 500Mbps.</p>
      */
     inline const Aws::String& GetBandwidth() const{ return m_bandwidth; }
+
+    /**
+     * <p>The bandwidth of the hosted connection, in Mbps. The possible values are
+     * 50Mbps, 100Mbps, 200Mbps, 300Mbps, 400Mbps, and 500Mbps.</p>
+     */
+    inline bool BandwidthHasBeenSet() const { return m_bandwidthHasBeenSet; }
 
     /**
      * <p>The bandwidth of the hosted connection, in Mbps. The possible values are
@@ -167,6 +183,11 @@ namespace Model
     /**
      * <p>The name of the hosted connection.</p>
      */
+    inline bool ConnectionNameHasBeenSet() const { return m_connectionNameHasBeenSet; }
+
+    /**
+     * <p>The name of the hosted connection.</p>
+     */
     inline void SetConnectionName(const Aws::String& value) { m_connectionNameHasBeenSet = true; m_connectionName = value; }
 
     /**
@@ -199,6 +220,11 @@ namespace Model
      * <p>The dedicated VLAN provisioned to the hosted connection.</p>
      */
     inline int GetVlan() const{ return m_vlan; }
+
+    /**
+     * <p>The dedicated VLAN provisioned to the hosted connection.</p>
+     */
+    inline bool VlanHasBeenSet() const { return m_vlanHasBeenSet; }
 
     /**
      * <p>The dedicated VLAN provisioned to the hosted connection.</p>

@@ -61,6 +61,14 @@ namespace Model
      * required permissions, the error response is <code>DryRunOperation</code>.
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
+    inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
+
+    /**
+     * <p>Checks whether you have the required permissions for the action, without
+     * actually making the request, and provides an error response. If you have the
+     * required permissions, the error response is <code>DryRunOperation</code>.
+     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+     */
     inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
 
     /**
@@ -79,6 +87,14 @@ namespace Model
      * Idempotency</a>.</p> <p>Constraint: Maximum 128 ASCII characters.</p>
      */
     inline const Aws::String& GetClientToken() const{ return m_clientToken; }
+
+    /**
+     * <p>Unique, case-sensitive identifier you provide to ensure the idempotency of
+     * the request. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
+     * Idempotency</a>.</p> <p>Constraint: Maximum 128 ASCII characters.</p>
+     */
+    inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
 
     /**
      * <p>Unique, case-sensitive identifier you provide to ensure the idempotency of
@@ -137,6 +153,11 @@ namespace Model
     /**
      * <p>A name for the launch template.</p>
      */
+    inline bool LaunchTemplateNameHasBeenSet() const { return m_launchTemplateNameHasBeenSet; }
+
+    /**
+     * <p>A name for the launch template.</p>
+     */
     inline void SetLaunchTemplateName(const Aws::String& value) { m_launchTemplateNameHasBeenSet = true; m_launchTemplateName = value; }
 
     /**
@@ -173,6 +194,11 @@ namespace Model
     /**
      * <p>A description for the first version of the launch template.</p>
      */
+    inline bool VersionDescriptionHasBeenSet() const { return m_versionDescriptionHasBeenSet; }
+
+    /**
+     * <p>A description for the first version of the launch template.</p>
+     */
     inline void SetVersionDescription(const Aws::String& value) { m_versionDescriptionHasBeenSet = true; m_versionDescription = value; }
 
     /**
@@ -205,6 +231,11 @@ namespace Model
      * <p>The information for the launch template.</p>
      */
     inline const RequestLaunchTemplateData& GetLaunchTemplateData() const{ return m_launchTemplateData; }
+
+    /**
+     * <p>The information for the launch template.</p>
+     */
+    inline bool LaunchTemplateDataHasBeenSet() const { return m_launchTemplateDataHasBeenSet; }
 
     /**
      * <p>The information for the launch template.</p>

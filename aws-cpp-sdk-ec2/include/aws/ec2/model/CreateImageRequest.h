@@ -63,6 +63,13 @@ namespace Model
      * used to modify the encryption status of existing volumes or snapshots. To create
      * an AMI with encrypted snapshots, use the <a>CopyImage</a> action.</p>
      */
+    inline bool BlockDeviceMappingsHasBeenSet() const { return m_blockDeviceMappingsHasBeenSet; }
+
+    /**
+     * <p>Information about one or more block device mappings. This parameter cannot be
+     * used to modify the encryption status of existing volumes or snapshots. To create
+     * an AMI with encrypted snapshots, use the <a>CopyImage</a> action.</p>
+     */
     inline void SetBlockDeviceMappings(const Aws::Vector<BlockDeviceMapping>& value) { m_blockDeviceMappingsHasBeenSet = true; m_blockDeviceMappings = value; }
 
     /**
@@ -109,6 +116,11 @@ namespace Model
     /**
      * <p>A description for the new image.</p>
      */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
+
+    /**
+     * <p>A description for the new image.</p>
+     */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
@@ -151,6 +163,14 @@ namespace Model
      * required permissions, the error response is <code>DryRunOperation</code>.
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
+    inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
+
+    /**
+     * <p>Checks whether you have the required permissions for the action, without
+     * actually making the request, and provides an error response. If you have the
+     * required permissions, the error response is <code>DryRunOperation</code>.
+     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+     */
     inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
 
     /**
@@ -166,6 +186,11 @@ namespace Model
      * <p>The ID of the instance.</p>
      */
     inline const Aws::String& GetInstanceId() const{ return m_instanceId; }
+
+    /**
+     * <p>The ID of the instance.</p>
+     */
+    inline bool InstanceIdHasBeenSet() const { return m_instanceIdHasBeenSet; }
 
     /**
      * <p>The ID of the instance.</p>
@@ -204,6 +229,13 @@ namespace Model
      * dashes (-), single quotes ('), at-signs (@), or underscores(_)</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
+
+    /**
+     * <p>A name for the new image.</p> <p>Constraints: 3-128 alphanumeric characters,
+     * parentheses (()), square brackets ([]), spaces ( ), periods (.), slashes (/),
+     * dashes (-), single quotes ('), at-signs (@), or underscores(_)</p>
+     */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
      * <p>A name for the new image.</p> <p>Constraints: 3-128 alphanumeric characters,
@@ -255,6 +287,14 @@ namespace Model
      * system integrity on the created image can't be guaranteed.</p>
      */
     inline bool GetNoReboot() const{ return m_noReboot; }
+
+    /**
+     * <p>By default, Amazon EC2 attempts to shut down and reboot the instance before
+     * creating the image. If the 'No Reboot' option is set, Amazon EC2 doesn't shut
+     * down the instance before creating the image. When this option is used, file
+     * system integrity on the created image can't be guaranteed.</p>
+     */
+    inline bool NoRebootHasBeenSet() const { return m_noRebootHasBeenSet; }
 
     /**
      * <p>By default, Amazon EC2 attempts to shut down and reboot the instance before

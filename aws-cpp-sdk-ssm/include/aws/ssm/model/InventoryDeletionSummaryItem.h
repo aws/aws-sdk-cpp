@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The inventory type version.</p>
      */
+    inline bool VersionHasBeenSet() const { return m_versionHasBeenSet; }
+
+    /**
+     * <p>The inventory type version.</p>
+     */
     inline void SetVersion(const Aws::String& value) { m_versionHasBeenSet = true; m_version = value; }
 
     /**
@@ -92,6 +97,11 @@ namespace Model
     /**
      * <p>A count of the number of deleted items.</p>
      */
+    inline bool CountHasBeenSet() const { return m_countHasBeenSet; }
+
+    /**
+     * <p>A count of the number of deleted items.</p>
+     */
     inline void SetCount(int value) { m_countHasBeenSet = true; m_count = value; }
 
     /**
@@ -104,6 +114,11 @@ namespace Model
      * <p>The remaining number of items to delete.</p>
      */
     inline int GetRemainingCount() const{ return m_remainingCount; }
+
+    /**
+     * <p>The remaining number of items to delete.</p>
+     */
+    inline bool RemainingCountHasBeenSet() const { return m_remainingCountHasBeenSet; }
 
     /**
      * <p>The remaining number of items to delete.</p>

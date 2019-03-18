@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The details of the cancellation.</p>
      */
+    inline bool DetailsHasBeenSet() const { return m_detailsHasBeenSet; }
+
+    /**
+     * <p>The details of the cancellation.</p>
+     */
     inline void SetDetails(const Aws::String& value) { m_detailsHasBeenSet = true; m_details = value; }
 
     /**
@@ -91,6 +96,14 @@ namespace Model
      * problems by tracing back the chain of events leading up to this event.</p>
      */
     inline long long GetDecisionTaskCompletedEventId() const{ return m_decisionTaskCompletedEventId; }
+
+    /**
+     * <p>The ID of the <code>DecisionTaskCompleted</code> event corresponding to the
+     * decision task that resulted in the <code>CancelWorkflowExecution</code> decision
+     * for this cancellation request. This information can be useful for diagnosing
+     * problems by tracing back the chain of events leading up to this event.</p>
+     */
+    inline bool DecisionTaskCompletedEventIdHasBeenSet() const { return m_decisionTaskCompletedEventIdHasBeenSet; }
 
     /**
      * <p>The ID of the <code>DecisionTaskCompleted</code> event corresponding to the

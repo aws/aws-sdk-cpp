@@ -60,6 +60,11 @@ namespace Model
     /**
      * <p>The AWS account ID.</p>
      */
+    inline bool AwsAccountIdHasBeenSet() const { return m_awsAccountIdHasBeenSet; }
+
+    /**
+     * <p>The AWS account ID.</p>
+     */
     inline void SetAwsAccountId(const Aws::String& value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId = value; }
 
     /**
@@ -96,6 +101,11 @@ namespace Model
     /**
      * <p>The Amazon Chime account ID.</p>
      */
+    inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
+
+    /**
+     * <p>The Amazon Chime account ID.</p>
+     */
     inline void SetAccountId(const Aws::String& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
 
     /**
@@ -128,6 +138,11 @@ namespace Model
      * <p>The Amazon Chime account name.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
+
+    /**
+     * <p>The Amazon Chime account name.</p>
+     */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
      * <p>The Amazon Chime account name.</p>
@@ -176,6 +191,15 @@ namespace Model
      * Your Amazon Chime Accounts</a> in the <i>Amazon Chime Administration
      * Guide</i>.</p>
      */
+    inline bool AccountTypeHasBeenSet() const { return m_accountTypeHasBeenSet; }
+
+    /**
+     * <p>The Amazon Chime account type. For more information about different account
+     * types, see <a
+     * href="https://docs.aws.amazon.com/chime/latest/ag/manage-chime-account.html">Managing
+     * Your Amazon Chime Accounts</a> in the <i>Amazon Chime Administration
+     * Guide</i>.</p>
+     */
     inline void SetAccountType(const AccountType& value) { m_accountTypeHasBeenSet = true; m_accountType = value; }
 
     /**
@@ -214,6 +238,11 @@ namespace Model
     /**
      * <p>The Amazon Chime account creation timestamp, in ISO 8601 format.</p>
      */
+    inline bool CreatedTimestampHasBeenSet() const { return m_createdTimestampHasBeenSet; }
+
+    /**
+     * <p>The Amazon Chime account creation timestamp, in ISO 8601 format.</p>
+     */
     inline void SetCreatedTimestamp(const Aws::Utils::DateTime& value) { m_createdTimestampHasBeenSet = true; m_createdTimestamp = value; }
 
     /**
@@ -240,6 +269,11 @@ namespace Model
     /**
      * <p>The default license for the Amazon Chime account.</p>
      */
+    inline bool DefaultLicenseHasBeenSet() const { return m_defaultLicenseHasBeenSet; }
+
+    /**
+     * <p>The default license for the Amazon Chime account.</p>
+     */
     inline void SetDefaultLicense(const License& value) { m_defaultLicenseHasBeenSet = true; m_defaultLicense = value; }
 
     /**
@@ -262,6 +296,11 @@ namespace Model
      * <p>Supported licenses for the Amazon Chime account.</p>
      */
     inline const Aws::Vector<License>& GetSupportedLicenses() const{ return m_supportedLicenses; }
+
+    /**
+     * <p>Supported licenses for the Amazon Chime account.</p>
+     */
+    inline bool SupportedLicensesHasBeenSet() const { return m_supportedLicensesHasBeenSet; }
 
     /**
      * <p>Supported licenses for the Amazon Chime account.</p>

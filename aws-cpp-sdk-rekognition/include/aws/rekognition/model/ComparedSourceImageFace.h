@@ -59,6 +59,11 @@ namespace Model
     /**
      * <p>Bounding box of the face.</p>
      */
+    inline bool BoundingBoxHasBeenSet() const { return m_boundingBoxHasBeenSet; }
+
+    /**
+     * <p>Bounding box of the face.</p>
+     */
     inline void SetBoundingBox(const BoundingBox& value) { m_boundingBoxHasBeenSet = true; m_boundingBox = value; }
 
     /**
@@ -81,6 +86,11 @@ namespace Model
      * <p>Confidence level that the selected bounding box contains a face.</p>
      */
     inline double GetConfidence() const{ return m_confidence; }
+
+    /**
+     * <p>Confidence level that the selected bounding box contains a face.</p>
+     */
+    inline bool ConfidenceHasBeenSet() const { return m_confidenceHasBeenSet; }
 
     /**
      * <p>Confidence level that the selected bounding box contains a face.</p>

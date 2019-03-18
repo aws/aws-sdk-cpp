@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the target group.</p>
      */
+    inline bool TargetGroupArnHasBeenSet() const { return m_targetGroupArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the target group.</p>
+     */
     inline void SetTargetGroupArn(const Aws::String& value) { m_targetGroupArnHasBeenSet = true; m_targetGroupArn = value; }
 
     /**
@@ -88,6 +93,11 @@ namespace Model
      * <p>The attributes.</p>
      */
     inline const Aws::Vector<TargetGroupAttribute>& GetAttributes() const{ return m_attributes; }
+
+    /**
+     * <p>The attributes.</p>
+     */
+    inline bool AttributesHasBeenSet() const { return m_attributesHasBeenSet; }
 
     /**
      * <p>The attributes.</p>

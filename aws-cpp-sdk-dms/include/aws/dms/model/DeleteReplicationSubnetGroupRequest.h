@@ -55,6 +55,11 @@ namespace Model
     /**
      * <p>The subnet group name of the replication instance.</p>
      */
+    inline bool ReplicationSubnetGroupIdentifierHasBeenSet() const { return m_replicationSubnetGroupIdentifierHasBeenSet; }
+
+    /**
+     * <p>The subnet group name of the replication instance.</p>
+     */
     inline void SetReplicationSubnetGroupIdentifier(const Aws::String& value) { m_replicationSubnetGroupIdentifierHasBeenSet = true; m_replicationSubnetGroupIdentifier = value; }
 
     /**

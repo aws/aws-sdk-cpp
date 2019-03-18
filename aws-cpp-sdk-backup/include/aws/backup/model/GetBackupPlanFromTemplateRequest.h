@@ -50,6 +50,11 @@ namespace Model
     /**
      * <p>Uniquely identifies a stored backup plan template.</p>
      */
+    inline bool BackupPlanTemplateIdHasBeenSet() const { return m_backupPlanTemplateIdHasBeenSet; }
+
+    /**
+     * <p>Uniquely identifies a stored backup plan template.</p>
+     */
     inline void SetBackupPlanTemplateId(const Aws::String& value) { m_backupPlanTemplateIdHasBeenSet = true; m_backupPlanTemplateId = value; }
 
     /**

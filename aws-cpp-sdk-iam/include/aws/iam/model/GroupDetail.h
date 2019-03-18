@@ -67,6 +67,13 @@ namespace Model
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
      * Identifiers</a> in the <i>Using IAM</i> guide.</p>
      */
+    inline bool PathHasBeenSet() const { return m_pathHasBeenSet; }
+
+    /**
+     * <p>The path to the group. For more information about paths, see <a
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
+     * Identifiers</a> in the <i>Using IAM</i> guide.</p>
+     */
     inline void SetPath(const Aws::String& value) { m_pathHasBeenSet = true; m_path = value; }
 
     /**
@@ -113,6 +120,11 @@ namespace Model
     /**
      * <p>The friendly name that identifies the group.</p>
      */
+    inline bool GroupNameHasBeenSet() const { return m_groupNameHasBeenSet; }
+
+    /**
+     * <p>The friendly name that identifies the group.</p>
+     */
     inline void SetGroupName(const Aws::String& value) { m_groupNameHasBeenSet = true; m_groupName = value; }
 
     /**
@@ -148,6 +160,14 @@ namespace Model
      * Identifiers</a> in the <i>Using IAM</i> guide.</p>
      */
     inline const Aws::String& GetGroupId() const{ return m_groupId; }
+
+    /**
+     * <p>The stable and unique string identifying the group. For more information
+     * about IDs, see <a
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
+     * Identifiers</a> in the <i>Using IAM</i> guide.</p>
+     */
+    inline bool GroupIdHasBeenSet() const { return m_groupIdHasBeenSet; }
 
     /**
      * <p>The stable and unique string identifying the group. For more information
@@ -202,6 +222,9 @@ namespace Model
     inline const Aws::String& GetArn() const{ return m_arn; }
 
     
+    inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
+
+    
     inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
 
     
@@ -225,6 +248,12 @@ namespace Model
      * date-time format</a>, when the group was created.</p>
      */
     inline const Aws::Utils::DateTime& GetCreateDate() const{ return m_createDate; }
+
+    /**
+     * <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601
+     * date-time format</a>, when the group was created.</p>
+     */
+    inline bool CreateDateHasBeenSet() const { return m_createDateHasBeenSet; }
 
     /**
      * <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601
@@ -255,6 +284,11 @@ namespace Model
      * <p>A list of the inline policies embedded in the group.</p>
      */
     inline const Aws::Vector<PolicyDetail>& GetGroupPolicyList() const{ return m_groupPolicyList; }
+
+    /**
+     * <p>A list of the inline policies embedded in the group.</p>
+     */
+    inline bool GroupPolicyListHasBeenSet() const { return m_groupPolicyListHasBeenSet; }
 
     /**
      * <p>A list of the inline policies embedded in the group.</p>
@@ -291,6 +325,11 @@ namespace Model
      * <p>A list of the managed policies attached to the group.</p>
      */
     inline const Aws::Vector<AttachedPolicy>& GetAttachedManagedPolicies() const{ return m_attachedManagedPolicies; }
+
+    /**
+     * <p>A list of the managed policies attached to the group.</p>
+     */
+    inline bool AttachedManagedPoliciesHasBeenSet() const { return m_attachedManagedPoliciesHasBeenSet; }
 
     /**
      * <p>A list of the managed policies attached to the group.</p>

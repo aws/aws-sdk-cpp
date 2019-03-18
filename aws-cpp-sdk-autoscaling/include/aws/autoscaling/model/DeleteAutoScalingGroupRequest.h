@@ -54,6 +54,11 @@ namespace Model
     /**
      * <p>The name of the Auto Scaling group.</p>
      */
+    inline bool AutoScalingGroupNameHasBeenSet() const { return m_autoScalingGroupNameHasBeenSet; }
+
+    /**
+     * <p>The name of the Auto Scaling group.</p>
+     */
     inline void SetAutoScalingGroupName(const Aws::String& value) { m_autoScalingGroupNameHasBeenSet = true; m_autoScalingGroupName = value; }
 
     /**
@@ -88,6 +93,13 @@ namespace Model
      * parameter also deletes any lifecycle actions associated with the group.</p>
      */
     inline bool GetForceDelete() const{ return m_forceDelete; }
+
+    /**
+     * <p>Specifies that the group is to be deleted along with all instances associated
+     * with the group, without waiting for all instances to be terminated. This
+     * parameter also deletes any lifecycle actions associated with the group.</p>
+     */
+    inline bool ForceDeleteHasBeenSet() const { return m_forceDeleteHasBeenSet; }
 
     /**
      * <p>Specifies that the group is to be deleted along with all instances associated

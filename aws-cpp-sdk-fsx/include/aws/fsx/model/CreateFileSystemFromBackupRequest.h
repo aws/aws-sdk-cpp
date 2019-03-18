@@ -56,6 +56,9 @@ namespace Model
     inline const Aws::String& GetBackupId() const{ return m_backupId; }
 
     
+    inline bool BackupIdHasBeenSet() const { return m_backupIdHasBeenSet; }
+
+    
     inline void SetBackupId(const Aws::String& value) { m_backupIdHasBeenSet = true; m_backupId = value; }
 
     
@@ -80,6 +83,13 @@ namespace Model
      * when you use the AWS Command Line Interface (AWS CLI) or an AWS SDK.</p>
      */
     inline const Aws::String& GetClientRequestToken() const{ return m_clientRequestToken; }
+
+    /**
+     * <p>(Optional) A string of up to 64 ASCII characters that Amazon FSx uses to
+     * ensure idempotent creation. This string is automatically filled on your behalf
+     * when you use the AWS Command Line Interface (AWS CLI) or an AWS SDK.</p>
+     */
+    inline bool ClientRequestTokenHasBeenSet() const { return m_clientRequestTokenHasBeenSet; }
 
     /**
      * <p>(Optional) A string of up to 64 ASCII characters that Amazon FSx uses to
@@ -130,6 +140,13 @@ namespace Model
      * that subnet's Availability Zone.</p>
      */
     inline const Aws::Vector<Aws::String>& GetSubnetIds() const{ return m_subnetIds; }
+
+    /**
+     * <p>A list of IDs for the subnets that the file system will be accessible from.
+     * Currently, you can specify only one subnet. The file server is also launched in
+     * that subnet's Availability Zone.</p>
+     */
+    inline bool SubnetIdsHasBeenSet() const { return m_subnetIdsHasBeenSet; }
 
     /**
      * <p>A list of IDs for the subnets that the file system will be accessible from.
@@ -193,6 +210,13 @@ namespace Model
      * interfaces created for file system access. These security groups apply to all
      * network interfaces. This value isn't returned in later describe requests.</p>
      */
+    inline bool SecurityGroupIdsHasBeenSet() const { return m_securityGroupIdsHasBeenSet; }
+
+    /**
+     * <p>A list of IDs for the security groups that apply to the specified network
+     * interfaces created for file system access. These security groups apply to all
+     * network interfaces. This value isn't returned in later describe requests.</p>
+     */
     inline void SetSecurityGroupIds(const Aws::Vector<Aws::String>& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds = value; }
 
     /**
@@ -250,6 +274,13 @@ namespace Model
      * value of the <code>Name</code> tag appears in the console as the file system
      * name.</p>
      */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
+
+    /**
+     * <p>The tags to be applied to the file system at file system creation. The key
+     * value of the <code>Name</code> tag appears in the console as the file system
+     * name.</p>
+     */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     /**
@@ -292,6 +323,11 @@ namespace Model
      * <p>The configuration for this Microsoft Windows file system.</p>
      */
     inline const CreateFileSystemWindowsConfiguration& GetWindowsConfiguration() const{ return m_windowsConfiguration; }
+
+    /**
+     * <p>The configuration for this Microsoft Windows file system.</p>
+     */
+    inline bool WindowsConfigurationHasBeenSet() const { return m_windowsConfigurationHasBeenSet; }
 
     /**
      * <p>The configuration for this Microsoft Windows file system.</p>

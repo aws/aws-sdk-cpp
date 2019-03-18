@@ -55,6 +55,12 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) that is associated with the <a>Directory</a>
      * where both objects reside. For more information, see <a>arns</a>.</p>
      */
+    inline bool DirectoryArnHasBeenSet() const { return m_directoryArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) that is associated with the <a>Directory</a>
+     * where both objects reside. For more information, see <a>arns</a>.</p>
+     */
     inline void SetDirectoryArn(const Aws::String& value) { m_directoryArnHasBeenSet = true; m_directoryArn = value; }
 
     /**
@@ -96,6 +102,11 @@ namespace Model
     /**
      * <p>Reference that identifies the policy object.</p>
      */
+    inline bool PolicyReferenceHasBeenSet() const { return m_policyReferenceHasBeenSet; }
+
+    /**
+     * <p>Reference that identifies the policy object.</p>
+     */
     inline void SetPolicyReference(const ObjectReference& value) { m_policyReferenceHasBeenSet = true; m_policyReference = value; }
 
     /**
@@ -119,6 +130,12 @@ namespace Model
      * detached.</p>
      */
     inline const ObjectReference& GetObjectReference() const{ return m_objectReference; }
+
+    /**
+     * <p>Reference that identifies the object whose policy object will be
+     * detached.</p>
+     */
+    inline bool ObjectReferenceHasBeenSet() const { return m_objectReferenceHasBeenSet; }
 
     /**
      * <p>Reference that identifies the object whose policy object will be

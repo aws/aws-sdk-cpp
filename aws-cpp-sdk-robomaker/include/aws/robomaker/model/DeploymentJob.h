@@ -61,6 +61,11 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the deployment job.</p>
      */
+    inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the deployment job.</p>
+     */
     inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
 
     /**
@@ -93,6 +98,11 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the fleet.</p>
      */
     inline const Aws::String& GetFleet() const{ return m_fleet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the fleet.</p>
+     */
+    inline bool FleetHasBeenSet() const { return m_fleetHasBeenSet; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the fleet.</p>
@@ -133,6 +143,11 @@ namespace Model
     /**
      * <p>The status of the deployment job.</p>
      */
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
+
+    /**
+     * <p>The status of the deployment job.</p>
+     */
     inline void SetStatus(const DeploymentStatus& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
@@ -155,6 +170,11 @@ namespace Model
      * <p>The deployment application configuration.</p>
      */
     inline const Aws::Vector<DeploymentApplicationConfig>& GetDeploymentApplicationConfigs() const{ return m_deploymentApplicationConfigs; }
+
+    /**
+     * <p>The deployment application configuration.</p>
+     */
+    inline bool DeploymentApplicationConfigsHasBeenSet() const { return m_deploymentApplicationConfigsHasBeenSet; }
 
     /**
      * <p>The deployment application configuration.</p>
@@ -195,6 +215,11 @@ namespace Model
     /**
      * <p>The deployment configuration.</p>
      */
+    inline bool DeploymentConfigHasBeenSet() const { return m_deploymentConfigHasBeenSet; }
+
+    /**
+     * <p>The deployment configuration.</p>
+     */
     inline void SetDeploymentConfig(const DeploymentConfig& value) { m_deploymentConfigHasBeenSet = true; m_deploymentConfig = value; }
 
     /**
@@ -217,6 +242,11 @@ namespace Model
      * <p>A short description of the reason why the deployment job failed.</p>
      */
     inline const Aws::String& GetFailureReason() const{ return m_failureReason; }
+
+    /**
+     * <p>A short description of the reason why the deployment job failed.</p>
+     */
+    inline bool FailureReasonHasBeenSet() const { return m_failureReasonHasBeenSet; }
 
     /**
      * <p>A short description of the reason why the deployment job failed.</p>
@@ -257,6 +287,11 @@ namespace Model
     /**
      * <p>The deployment job failure code.</p>
      */
+    inline bool FailureCodeHasBeenSet() const { return m_failureCodeHasBeenSet; }
+
+    /**
+     * <p>The deployment job failure code.</p>
+     */
     inline void SetFailureCode(const DeploymentJobErrorCode& value) { m_failureCodeHasBeenSet = true; m_failureCode = value; }
 
     /**
@@ -280,6 +315,12 @@ namespace Model
      * created.</p>
      */
     inline const Aws::Utils::DateTime& GetCreatedAt() const{ return m_createdAt; }
+
+    /**
+     * <p>The time, in milliseconds since the epoch, when the deployment job was
+     * created.</p>
+     */
+    inline bool CreatedAtHasBeenSet() const { return m_createdAtHasBeenSet; }
 
     /**
      * <p>The time, in milliseconds since the epoch, when the deployment job was

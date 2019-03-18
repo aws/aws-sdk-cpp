@@ -61,6 +61,13 @@ namespace Model
      * replication-task-arn | replication-task-id | migration-type | endpoint-arn |
      * replication-instance-arn</p>
      */
+    inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
+
+    /**
+     * <p>Filters applied to the describe action.</p> <p>Valid filter names:
+     * replication-task-arn | replication-task-id | migration-type | endpoint-arn |
+     * replication-instance-arn</p>
+     */
     inline void SetFilters(const Aws::Vector<Filter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
 
     /**
@@ -113,6 +120,14 @@ namespace Model
      * called a marker is included in the response so that the remaining results can be
      * retrieved. </p> <p>Default: 100</p> <p>Constraints: Minimum 20, maximum 100.</p>
      */
+    inline bool MaxRecordsHasBeenSet() const { return m_maxRecordsHasBeenSet; }
+
+    /**
+     * <p> The maximum number of records to include in the response. If more records
+     * exist than the specified <code>MaxRecords</code> value, a pagination token
+     * called a marker is included in the response so that the remaining results can be
+     * retrieved. </p> <p>Default: 100</p> <p>Constraints: Minimum 20, maximum 100.</p>
+     */
     inline void SetMaxRecords(int value) { m_maxRecordsHasBeenSet = true; m_maxRecords = value; }
 
     /**
@@ -130,6 +145,13 @@ namespace Model
      * to the value specified by <code>MaxRecords</code>. </p>
      */
     inline const Aws::String& GetMarker() const{ return m_marker; }
+
+    /**
+     * <p> An optional pagination token provided by a previous request. If this
+     * parameter is specified, the response includes only records beyond the marker, up
+     * to the value specified by <code>MaxRecords</code>. </p>
+     */
+    inline bool MarkerHasBeenSet() const { return m_markerHasBeenSet; }
 
     /**
      * <p> An optional pagination token provided by a previous request. If this
@@ -173,6 +195,35 @@ namespace Model
      */
     inline DescribeReplicationTasksRequest& WithMarker(const char* value) { SetMarker(value); return *this;}
 
+
+    /**
+     * <p>Set this flag to avoid returning setting information. Use this to reduce
+     * overhead when settings are too large. Choose TRUE to use this flag, otherwise
+     * choose FALSE (default).</p>
+     */
+    inline bool GetWithoutSettings() const{ return m_withoutSettings; }
+
+    /**
+     * <p>Set this flag to avoid returning setting information. Use this to reduce
+     * overhead when settings are too large. Choose TRUE to use this flag, otherwise
+     * choose FALSE (default).</p>
+     */
+    inline bool WithoutSettingsHasBeenSet() const { return m_withoutSettingsHasBeenSet; }
+
+    /**
+     * <p>Set this flag to avoid returning setting information. Use this to reduce
+     * overhead when settings are too large. Choose TRUE to use this flag, otherwise
+     * choose FALSE (default).</p>
+     */
+    inline void SetWithoutSettings(bool value) { m_withoutSettingsHasBeenSet = true; m_withoutSettings = value; }
+
+    /**
+     * <p>Set this flag to avoid returning setting information. Use this to reduce
+     * overhead when settings are too large. Choose TRUE to use this flag, otherwise
+     * choose FALSE (default).</p>
+     */
+    inline DescribeReplicationTasksRequest& WithWithoutSettings(bool value) { SetWithoutSettings(value); return *this;}
+
   private:
 
     Aws::Vector<Filter> m_filters;
@@ -183,6 +234,9 @@ namespace Model
 
     Aws::String m_marker;
     bool m_markerHasBeenSet;
+
+    bool m_withoutSettings;
+    bool m_withoutSettingsHasBeenSet;
   };
 
 } // namespace Model

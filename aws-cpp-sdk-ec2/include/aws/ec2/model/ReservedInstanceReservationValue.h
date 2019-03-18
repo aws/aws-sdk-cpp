@@ -61,6 +61,12 @@ namespace Model
      * <p>The total value of the Convertible Reserved Instance that you are
      * exchanging.</p>
      */
+    inline bool ReservationValueHasBeenSet() const { return m_reservationValueHasBeenSet; }
+
+    /**
+     * <p>The total value of the Convertible Reserved Instance that you are
+     * exchanging.</p>
+     */
     inline void SetReservationValue(const ReservationValue& value) { m_reservationValueHasBeenSet = true; m_reservationValue = value; }
 
     /**
@@ -86,6 +92,11 @@ namespace Model
      * <p>The ID of the Convertible Reserved Instance that you are exchanging.</p>
      */
     inline const Aws::String& GetReservedInstanceId() const{ return m_reservedInstanceId; }
+
+    /**
+     * <p>The ID of the Convertible Reserved Instance that you are exchanging.</p>
+     */
+    inline bool ReservedInstanceIdHasBeenSet() const { return m_reservedInstanceIdHasBeenSet; }
 
     /**
      * <p>The ID of the Convertible Reserved Instance that you are exchanging.</p>

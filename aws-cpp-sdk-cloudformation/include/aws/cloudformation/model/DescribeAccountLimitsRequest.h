@@ -60,6 +60,12 @@ namespace Model
      * <p>A string that identifies the next page of limits that you want to
      * retrieve.</p>
      */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
+
+    /**
+     * <p>A string that identifies the next page of limits that you want to
+     * retrieve.</p>
+     */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
     /**

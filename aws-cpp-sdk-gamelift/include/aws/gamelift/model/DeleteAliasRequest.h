@@ -57,6 +57,12 @@ namespace Model
      * <p>Unique identifier for a fleet alias. Specify the alias you want to
      * delete.</p>
      */
+    inline bool AliasIdHasBeenSet() const { return m_aliasIdHasBeenSet; }
+
+    /**
+     * <p>Unique identifier for a fleet alias. Specify the alias you want to
+     * delete.</p>
+     */
     inline void SetAliasId(const Aws::String& value) { m_aliasIdHasBeenSet = true; m_aliasId = value; }
 
     /**

@@ -61,6 +61,14 @@ request. Up to 36 letters, numbers, hyphens, and underscores are
 request. Up to 36 letters, numbers, hyphens, and underscores are
      * allowed.</p>
      */
+    inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
+
+    /**
+     * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
+     * of the
+request. Up to 36 letters, numbers, hyphens, and underscores are
+     * allowed.</p>
+     */
     inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
 
     /**
@@ -112,6 +120,11 @@ request. Up to 36 letters, numbers, hyphens, and underscores are
     /**
      * <p>The name of the service mesh to create the virtual router in.</p>
      */
+    inline bool MeshNameHasBeenSet() const { return m_meshNameHasBeenSet; }
+
+    /**
+     * <p>The name of the service mesh to create the virtual router in.</p>
+     */
     inline void SetMeshName(const Aws::String& value) { m_meshNameHasBeenSet = true; m_meshName = value; }
 
     /**
@@ -148,6 +161,11 @@ request. Up to 36 letters, numbers, hyphens, and underscores are
     /**
      * <p>The virtual router specification to apply.</p>
      */
+    inline bool SpecHasBeenSet() const { return m_specHasBeenSet; }
+
+    /**
+     * <p>The virtual router specification to apply.</p>
+     */
     inline void SetSpec(const VirtualRouterSpec& value) { m_specHasBeenSet = true; m_spec = value; }
 
     /**
@@ -170,6 +188,11 @@ request. Up to 36 letters, numbers, hyphens, and underscores are
      * <p>The name to use for the virtual router.</p>
      */
     inline const Aws::String& GetVirtualRouterName() const{ return m_virtualRouterName; }
+
+    /**
+     * <p>The name to use for the virtual router.</p>
+     */
+    inline bool VirtualRouterNameHasBeenSet() const { return m_virtualRouterNameHasBeenSet; }
 
     /**
      * <p>The name to use for the virtual router.</p>

@@ -63,6 +63,13 @@ namespace Model
      * href="http://wikipedia.org/wiki/regex">regex pattern</a> for an account ID
      * string requires exactly 12 digits.</p>
      */
+    inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
+
+    /**
+     * <p>The unique identifier (ID) of the account.</p> <p>The <a
+     * href="http://wikipedia.org/wiki/regex">regex pattern</a> for an account ID
+     * string requires exactly 12 digits.</p>
+     */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
     /**
@@ -109,6 +116,15 @@ namespace Model
      * Guide</i>.</p>
      */
     inline const Aws::String& GetArn() const{ return m_arn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the account.</p> <p>For more information
+     * about ARNs in Organizations, see <a
+     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_permissions.html#orgs-permissions-arns">ARN
+     * Formats Supported by Organizations</a> in the <i>AWS Organizations User
+     * Guide</i>.</p>
+     */
+    inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the account.</p> <p>For more information
@@ -177,6 +193,13 @@ namespace Model
      * href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a
      * string of characters that represents a standard Internet email address.</p>
      */
+    inline bool EmailHasBeenSet() const { return m_emailHasBeenSet; }
+
+    /**
+     * <p>The email address associated with the AWS account.</p> <p>The <a
+     * href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a
+     * string of characters that represents a standard Internet email address.</p>
+     */
     inline void SetEmail(const Aws::String& value) { m_emailHasBeenSet = true; m_email = value; }
 
     /**
@@ -222,6 +245,14 @@ namespace Model
      * character range.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
+
+    /**
+     * <p>The friendly name of the account.</p> <p>The <a
+     * href="http://wikipedia.org/wiki/regex">regex pattern</a> that is used to
+     * validate this parameter is a string of any of the characters in the ASCII
+     * character range.</p>
+     */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
      * <p>The friendly name of the account.</p> <p>The <a
@@ -280,6 +311,11 @@ namespace Model
     /**
      * <p>The status of the account in the organization.</p>
      */
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
+
+    /**
+     * <p>The status of the account in the organization.</p>
+     */
     inline void SetStatus(const AccountStatus& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
@@ -306,6 +342,11 @@ namespace Model
     /**
      * <p>The method by which the account joined the organization.</p>
      */
+    inline bool JoinedMethodHasBeenSet() const { return m_joinedMethodHasBeenSet; }
+
+    /**
+     * <p>The method by which the account joined the organization.</p>
+     */
     inline void SetJoinedMethod(const AccountJoinedMethod& value) { m_joinedMethodHasBeenSet = true; m_joinedMethod = value; }
 
     /**
@@ -328,6 +369,11 @@ namespace Model
      * <p>The date the account became a part of the organization.</p>
      */
     inline const Aws::Utils::DateTime& GetJoinedTimestamp() const{ return m_joinedTimestamp; }
+
+    /**
+     * <p>The date the account became a part of the organization.</p>
+     */
+    inline bool JoinedTimestampHasBeenSet() const { return m_joinedTimestampHasBeenSet; }
 
     /**
      * <p>The date the account became a part of the organization.</p>

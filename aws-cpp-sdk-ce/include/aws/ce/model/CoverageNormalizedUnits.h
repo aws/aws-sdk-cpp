@@ -67,6 +67,12 @@ namespace Model
      * <p>The number of normalized units that are covered by On-Demand Instances
      * instead of a reservation.</p>
      */
+    inline bool OnDemandNormalizedUnitsHasBeenSet() const { return m_onDemandNormalizedUnitsHasBeenSet; }
+
+    /**
+     * <p>The number of normalized units that are covered by On-Demand Instances
+     * instead of a reservation.</p>
+     */
     inline void SetOnDemandNormalizedUnits(const Aws::String& value) { m_onDemandNormalizedUnitsHasBeenSet = true; m_onDemandNormalizedUnits = value; }
 
     /**
@@ -108,6 +114,11 @@ namespace Model
     /**
      * <p>The number of normalized units that a reservation covers.</p>
      */
+    inline bool ReservedNormalizedUnitsHasBeenSet() const { return m_reservedNormalizedUnitsHasBeenSet; }
+
+    /**
+     * <p>The number of normalized units that a reservation covers.</p>
+     */
     inline void SetReservedNormalizedUnits(const Aws::String& value) { m_reservedNormalizedUnitsHasBeenSet = true; m_reservedNormalizedUnits = value; }
 
     /**
@@ -140,6 +151,11 @@ namespace Model
      * <p>The total number of normalized units that you used.</p>
      */
     inline const Aws::String& GetTotalRunningNormalizedUnits() const{ return m_totalRunningNormalizedUnits; }
+
+    /**
+     * <p>The total number of normalized units that you used.</p>
+     */
+    inline bool TotalRunningNormalizedUnitsHasBeenSet() const { return m_totalRunningNormalizedUnitsHasBeenSet; }
 
     /**
      * <p>The total number of normalized units that you used.</p>
@@ -177,6 +193,12 @@ namespace Model
      * covers.</p>
      */
     inline const Aws::String& GetCoverageNormalizedUnitsPercentage() const{ return m_coverageNormalizedUnitsPercentage; }
+
+    /**
+     * <p>The percentage of your used instance normalized units that a reservation
+     * covers.</p>
+     */
+    inline bool CoverageNormalizedUnitsPercentageHasBeenSet() const { return m_coverageNormalizedUnitsPercentageHasBeenSet; }
 
     /**
      * <p>The percentage of your used instance normalized units that a reservation

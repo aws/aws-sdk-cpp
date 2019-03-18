@@ -65,6 +65,15 @@ namespace Model
      * are left running after they are deregistered from the load balancer and removed
      * from the deployment group.</p> </li> </ul>
      */
+    inline bool ActionHasBeenSet() const { return m_actionHasBeenSet; }
+
+    /**
+     * <p>The action to take on instances in the original environment after a
+     * successful blue/green deployment.</p> <ul> <li> <p>TERMINATE: Instances are
+     * terminated after a specified wait time.</p> </li> <li> <p>KEEP_ALIVE: Instances
+     * are left running after they are deregistered from the load balancer and removed
+     * from the deployment group.</p> </li> </ul>
+     */
     inline void SetAction(const InstanceAction& value) { m_actionHasBeenSet = true; m_action = value; }
 
     /**
@@ -101,6 +110,13 @@ namespace Model
      * minutes (2 days).</p>
      */
     inline int GetTerminationWaitTimeInMinutes() const{ return m_terminationWaitTimeInMinutes; }
+
+    /**
+     * <p>The number of minutes to wait after a successful blue/green deployment before
+     * terminating instances from the original environment. The maximum setting is 2880
+     * minutes (2 days).</p>
+     */
+    inline bool TerminationWaitTimeInMinutesHasBeenSet() const { return m_terminationWaitTimeInMinutesHasBeenSet; }
 
     /**
      * <p>The number of minutes to wait after a successful blue/green deployment before

@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>Name of the SerDe.</p>
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>Name of the SerDe.</p>
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
@@ -90,6 +95,12 @@ namespace Model
      * <code>org.apache.hadoop.hive.serde2.columnar.ColumnarSerDe</code>.</p>
      */
     inline const Aws::String& GetSerializationLibrary() const{ return m_serializationLibrary; }
+
+    /**
+     * <p>Usually the class that implements the SerDe. An example is:
+     * <code>org.apache.hadoop.hive.serde2.columnar.ColumnarSerDe</code>.</p>
+     */
+    inline bool SerializationLibraryHasBeenSet() const { return m_serializationLibraryHasBeenSet; }
 
     /**
      * <p>Usually the class that implements the SerDe. An example is:
@@ -132,6 +143,11 @@ namespace Model
      * <p>These key-value pairs define initialization parameters for the SerDe.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetParameters() const{ return m_parameters; }
+
+    /**
+     * <p>These key-value pairs define initialization parameters for the SerDe.</p>
+     */
+    inline bool ParametersHasBeenSet() const { return m_parametersHasBeenSet; }
 
     /**
      * <p>These key-value pairs define initialization parameters for the SerDe.</p>

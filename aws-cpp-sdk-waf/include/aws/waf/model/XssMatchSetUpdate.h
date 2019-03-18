@@ -63,6 +63,13 @@ namespace Model
      * <a>XssMatchSet</a>. Use <code>DELETE</code> to remove an
      * <code>XssMatchSetUpdate</code> from an <code>XssMatchSet</code>.</p>
      */
+    inline bool ActionHasBeenSet() const { return m_actionHasBeenSet; }
+
+    /**
+     * <p>Specify <code>INSERT</code> to add an <a>XssMatchSetUpdate</a> to an
+     * <a>XssMatchSet</a>. Use <code>DELETE</code> to remove an
+     * <code>XssMatchSetUpdate</code> from an <code>XssMatchSet</code>.</p>
+     */
     inline void SetAction(const ChangeAction& value) { m_actionHasBeenSet = true; m_action = value; }
 
     /**
@@ -93,6 +100,13 @@ namespace Model
      * name of the header.</p>
      */
     inline const XssMatchTuple& GetXssMatchTuple() const{ return m_xssMatchTuple; }
+
+    /**
+     * <p>Specifies the part of a web request that you want AWS WAF to inspect for
+     * cross-site scripting attacks and, if you want AWS WAF to inspect a header, the
+     * name of the header.</p>
+     */
+    inline bool XssMatchTupleHasBeenSet() const { return m_xssMatchTupleHasBeenSet; }
 
     /**
      * <p>Specifies the part of a web request that you want AWS WAF to inspect for

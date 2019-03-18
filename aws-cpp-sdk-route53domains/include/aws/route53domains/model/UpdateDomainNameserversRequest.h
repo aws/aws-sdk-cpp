@@ -63,6 +63,11 @@ namespace Model
     /**
      * <p>The name of the domain that you want to change name servers for.</p>
      */
+    inline bool DomainNameHasBeenSet() const { return m_domainNameHasBeenSet; }
+
+    /**
+     * <p>The name of the domain that you want to change name servers for.</p>
+     */
     inline void SetDomainName(const Aws::String& value) { m_domainNameHasBeenSet = true; m_domainName = value; }
 
     /**
@@ -95,6 +100,11 @@ namespace Model
      * <p>A list of new name servers for the domain.</p>
      */
     inline const Aws::Vector<Nameserver>& GetNameservers() const{ return m_nameservers; }
+
+    /**
+     * <p>A list of new name servers for the domain.</p>
+     */
+    inline bool NameserversHasBeenSet() const { return m_nameserversHasBeenSet; }
 
     /**
      * <p>A list of new name servers for the domain.</p>

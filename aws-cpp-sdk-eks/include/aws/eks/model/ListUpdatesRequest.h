@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The name of the Amazon EKS cluster for which to list updates.</p>
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>The name of the Amazon EKS cluster for which to list updates.</p>
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
@@ -91,6 +96,14 @@ namespace Model
      * of the previous results that returned the <code>nextToken</code> value.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
+    /**
+     * <p>The <code>nextToken</code> value returned from a previous paginated
+     * <code>ListUpdates</code> request where <code>maxResults</code> was used and the
+     * results exceeded the value of that parameter. Pagination continues from the end
+     * of the previous results that returned the <code>nextToken</code> value.</p>
+     */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
      * <p>The <code>nextToken</code> value returned from a previous paginated
@@ -152,6 +165,18 @@ namespace Model
      * results and a <code>nextToken</code> value if applicable.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
+
+    /**
+     * <p>The maximum number of update results returned by <code>ListUpdates</code> in
+     * paginated output. When this parameter is used, <code>ListUpdates</code> only
+     * returns <code>maxResults</code> results in a single page along with a
+     * <code>nextToken</code> response element. The remaining results of the initial
+     * request can be seen by sending another <code>ListUpdates</code> request with the
+     * returned <code>nextToken</code> value. This value can be between 1 and 100. If
+     * this parameter is not used, then <code>ListUpdates</code> returns up to 100
+     * results and a <code>nextToken</code> value if applicable.</p>
+     */
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
 
     /**
      * <p>The maximum number of update results returned by <code>ListUpdates</code> in

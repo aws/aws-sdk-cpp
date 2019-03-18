@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>A unique number that ensures that the request can't be replayed.</p>
      */
+    inline bool CallerReferenceHasBeenSet() const { return m_callerReferenceHasBeenSet; }
+
+    /**
+     * <p>A unique number that ensures that the request can't be replayed.</p>
+     */
     inline void SetCallerReference(const Aws::String& value) { m_callerReferenceHasBeenSet = true; m_callerReference = value; }
 
     /**
@@ -89,6 +94,12 @@ namespace Model
      * field-level encryption.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
+
+    /**
+     * <p>The name for a public key you add to CloudFront to use with features like
+     * field-level encryption.</p>
+     */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
      * <p>The name for a public key you add to CloudFront to use with features like
@@ -137,6 +148,12 @@ namespace Model
      * <p>The encoded public key that you want to add to CloudFront to use with
      * features like field-level encryption.</p>
      */
+    inline bool EncodedKeyHasBeenSet() const { return m_encodedKeyHasBeenSet; }
+
+    /**
+     * <p>The encoded public key that you want to add to CloudFront to use with
+     * features like field-level encryption.</p>
+     */
     inline void SetEncodedKey(const Aws::String& value) { m_encodedKeyHasBeenSet = true; m_encodedKey = value; }
 
     /**
@@ -174,6 +191,11 @@ namespace Model
      * <p>An optional comment about a public key.</p>
      */
     inline const Aws::String& GetComment() const{ return m_comment; }
+
+    /**
+     * <p>An optional comment about a public key.</p>
+     */
+    inline bool CommentHasBeenSet() const { return m_commentHasBeenSet; }
 
     /**
      * <p>An optional comment about a public key.</p>

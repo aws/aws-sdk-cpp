@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The workflowId to pass of match the criteria of this filter.</p>
      */
+    inline bool WorkflowIdHasBeenSet() const { return m_workflowIdHasBeenSet; }
+
+    /**
+     * <p>The workflowId to pass of match the criteria of this filter.</p>
+     */
     inline void SetWorkflowId(const Aws::String& value) { m_workflowIdHasBeenSet = true; m_workflowId = value; }
 
     /**

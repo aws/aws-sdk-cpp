@@ -55,6 +55,11 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of a virtual tape.</p>
      */
+    inline bool TapeARNHasBeenSet() const { return m_tapeARNHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of a virtual tape.</p>
+     */
     inline void SetTapeARN(const Aws::String& value) { m_tapeARNHasBeenSet = true; m_tapeARN = value; }
 
     /**
@@ -87,6 +92,11 @@ namespace Model
      * <p>The barcode that identifies a specific virtual tape.</p>
      */
     inline const Aws::String& GetTapeBarcode() const{ return m_tapeBarcode; }
+
+    /**
+     * <p>The barcode that identifies a specific virtual tape.</p>
+     */
+    inline bool TapeBarcodeHasBeenSet() const { return m_tapeBarcodeHasBeenSet; }
 
     /**
      * <p>The barcode that identifies a specific virtual tape.</p>
@@ -127,6 +137,11 @@ namespace Model
     /**
      * <p>The size, in bytes, of a virtual tape.</p>
      */
+    inline bool TapeSizeInBytesHasBeenSet() const { return m_tapeSizeInBytesHasBeenSet; }
+
+    /**
+     * <p>The size, in bytes, of a virtual tape.</p>
+     */
     inline void SetTapeSizeInBytes(long long value) { m_tapeSizeInBytesHasBeenSet = true; m_tapeSizeInBytes = value; }
 
     /**
@@ -139,6 +154,11 @@ namespace Model
      * <p>The status of the tape.</p>
      */
     inline const Aws::String& GetTapeStatus() const{ return m_tapeStatus; }
+
+    /**
+     * <p>The status of the tape.</p>
+     */
+    inline bool TapeStatusHasBeenSet() const { return m_tapeStatusHasBeenSet; }
 
     /**
      * <p>The status of the tape.</p>
@@ -176,6 +196,12 @@ namespace Model
      * operation to return a list of gateways for your account and region.</p>
      */
     inline const Aws::String& GetGatewayARN() const{ return m_gatewayARN; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a>
+     * operation to return a list of gateways for your account and region.</p>
+     */
+    inline bool GatewayARNHasBeenSet() const { return m_gatewayARNHasBeenSet; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a>

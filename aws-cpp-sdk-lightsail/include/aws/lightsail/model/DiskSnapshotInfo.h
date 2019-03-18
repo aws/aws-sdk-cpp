@@ -53,6 +53,11 @@ namespace Model
     /**
      * <p>The size of the disk in GB (e.g., <code>32</code>).</p>
      */
+    inline bool SizeInGbHasBeenSet() const { return m_sizeInGbHasBeenSet; }
+
+    /**
+     * <p>The size of the disk in GB (e.g., <code>32</code>).</p>
+     */
     inline void SetSizeInGb(int value) { m_sizeInGbHasBeenSet = true; m_sizeInGb = value; }
 
     /**

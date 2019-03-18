@@ -57,6 +57,11 @@ namespace Model
     /**
      * The type of encryption that is used on the content ingested from this source.
      */
+    inline bool DecryptionHasBeenSet() const { return m_decryptionHasBeenSet; }
+
+    /**
+     * The type of encryption that is used on the content ingested from this source.
+     */
     inline void SetDecryption(const Encryption& value) { m_decryptionHasBeenSet = true; m_decryption = value; }
 
     /**
@@ -80,6 +85,12 @@ namespace Model
      * current AWS Elemental MediaConnect account.
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
+
+    /**
+     * A description for the source. This value is not used or seen outside of the
+     * current AWS Elemental MediaConnect account.
+     */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
 
     /**
      * A description for the source. This value is not used or seen outside of the
@@ -124,6 +135,13 @@ namespace Model
      * the ARN is generated as part of the originator's flow.
      */
     inline const Aws::String& GetEntitlementArn() const{ return m_entitlementArn; }
+
+    /**
+     * The ARN of the entitlement that allows you to subscribe to content that comes
+     * from another AWS account. The entitlement is set by the content originator and
+     * the ARN is generated as part of the originator's flow.
+     */
+    inline bool EntitlementArnHasBeenSet() const { return m_entitlementArnHasBeenSet; }
 
     /**
      * The ARN of the entitlement that allows you to subscribe to content that comes
@@ -176,6 +194,11 @@ namespace Model
     /**
      * The IP address that the flow will be listening on for incoming content.
      */
+    inline bool IngestIpHasBeenSet() const { return m_ingestIpHasBeenSet; }
+
+    /**
+     * The IP address that the flow will be listening on for incoming content.
+     */
     inline void SetIngestIp(const Aws::String& value) { m_ingestIpHasBeenSet = true; m_ingestIp = value; }
 
     /**
@@ -212,6 +235,11 @@ namespace Model
     /**
      * The port that the flow will be listening on for incoming content.
      */
+    inline bool IngestPortHasBeenSet() const { return m_ingestPortHasBeenSet; }
+
+    /**
+     * The port that the flow will be listening on for incoming content.
+     */
     inline void SetIngestPort(int value) { m_ingestPortHasBeenSet = true; m_ingestPort = value; }
 
     /**
@@ -224,6 +252,11 @@ namespace Model
      * The name of the source.
      */
     inline const Aws::String& GetName() const{ return m_name; }
+
+    /**
+     * The name of the source.
+     */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
      * The name of the source.
@@ -264,6 +297,11 @@ namespace Model
     /**
      * The ARN of the source.
      */
+    inline bool SourceArnHasBeenSet() const { return m_sourceArnHasBeenSet; }
+
+    /**
+     * The ARN of the source.
+     */
     inline void SetSourceArn(const Aws::String& value) { m_sourceArnHasBeenSet = true; m_sourceArn = value; }
 
     /**
@@ -300,6 +338,11 @@ namespace Model
     /**
      * Attributes related to the transport stream that are used in the source.
      */
+    inline bool TransportHasBeenSet() const { return m_transportHasBeenSet; }
+
+    /**
+     * Attributes related to the transport stream that are used in the source.
+     */
     inline void SetTransport(const Transport& value) { m_transportHasBeenSet = true; m_transport = value; }
 
     /**
@@ -324,6 +367,13 @@ namespace Model
      * Routing (CIDR) block; for example, 10.0.0.0/16.
      */
     inline const Aws::String& GetWhitelistCidr() const{ return m_whitelistCidr; }
+
+    /**
+     * The range of IP addresses that should be allowed to contribute content to your
+     * source. These IP addresses should in the form of a Classless Inter-Domain
+     * Routing (CIDR) block; for example, 10.0.0.0/16.
+     */
+    inline bool WhitelistCidrHasBeenSet() const { return m_whitelistCidrHasBeenSet; }
 
     /**
      * The range of IP addresses that should be allowed to contribute content to your

@@ -63,6 +63,15 @@ namespace Model
      * <code>task.input.text</code> in your template, you can supply the variable in
      * the JSON object as <code>"text": "sample text"</code>.</p>
      */
+    inline bool InputHasBeenSet() const { return m_inputHasBeenSet; }
+
+    /**
+     * <p>A JSON object that contains values for the variables defined in the template.
+     * It is made available to the template under the substitution variable
+     * <code>task.input</code>. For example, if you define a variable
+     * <code>task.input.text</code> in your template, you can supply the variable in
+     * the JSON object as <code>"text": "sample text"</code>.</p>
+     */
     inline void SetInput(const Aws::String& value) { m_inputHasBeenSet = true; m_input = value; }
 
     /**

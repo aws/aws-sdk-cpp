@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The preferred time to perform weekly maintenance, in the UTC time zone.</p>
      */
+    inline bool WeeklyMaintenanceStartTimeHasBeenSet() const { return m_weeklyMaintenanceStartTimeHasBeenSet; }
+
+    /**
+     * <p>The preferred time to perform weekly maintenance, in the UTC time zone.</p>
+     */
     inline void SetWeeklyMaintenanceStartTime(const Aws::String& value) { m_weeklyMaintenanceStartTimeHasBeenSet = true; m_weeklyMaintenanceStartTime = value; }
 
     /**
@@ -88,6 +93,11 @@ namespace Model
      * <p>The preferred time to take daily automatic backups, in the UTC time zone.</p>
      */
     inline const Aws::String& GetDailyAutomaticBackupStartTime() const{ return m_dailyAutomaticBackupStartTime; }
+
+    /**
+     * <p>The preferred time to take daily automatic backups, in the UTC time zone.</p>
+     */
+    inline bool DailyAutomaticBackupStartTimeHasBeenSet() const { return m_dailyAutomaticBackupStartTimeHasBeenSet; }
 
     /**
      * <p>The preferred time to take daily automatic backups, in the UTC time zone.</p>
@@ -126,6 +136,13 @@ namespace Model
      * days.</p>
      */
     inline int GetAutomaticBackupRetentionDays() const{ return m_automaticBackupRetentionDays; }
+
+    /**
+     * <p>The number of days to retain automatic backups. Setting this to 0 disables
+     * automatic backups. You can retain automatic backups for a maximum of 35
+     * days.</p>
+     */
+    inline bool AutomaticBackupRetentionDaysHasBeenSet() const { return m_automaticBackupRetentionDaysHasBeenSet; }
 
     /**
      * <p>The number of days to retain automatic backups. Setting this to 0 disables

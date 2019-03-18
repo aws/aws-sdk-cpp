@@ -56,6 +56,12 @@ namespace Model
      * <p>The IPv4 CIDR range for the route. The value you specify must match the CIDR
      * for the route exactly.</p>
      */
+    inline bool DestinationCidrBlockHasBeenSet() const { return m_destinationCidrBlockHasBeenSet; }
+
+    /**
+     * <p>The IPv4 CIDR range for the route. The value you specify must match the CIDR
+     * for the route exactly.</p>
+     */
     inline void SetDestinationCidrBlock(const Aws::String& value) { m_destinationCidrBlockHasBeenSet = true; m_destinationCidrBlock = value; }
 
     /**
@@ -94,6 +100,12 @@ namespace Model
      * for the route exactly.</p>
      */
     inline const Aws::String& GetDestinationIpv6CidrBlock() const{ return m_destinationIpv6CidrBlock; }
+
+    /**
+     * <p>The IPv6 CIDR range for the route. The value you specify must match the CIDR
+     * for the route exactly.</p>
+     */
+    inline bool DestinationIpv6CidrBlockHasBeenSet() const { return m_destinationIpv6CidrBlockHasBeenSet; }
 
     /**
      * <p>The IPv6 CIDR range for the route. The value you specify must match the CIDR
@@ -146,6 +158,14 @@ namespace Model
      * required permissions, the error response is <code>DryRunOperation</code>.
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
+    inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
+
+    /**
+     * <p>Checks whether you have the required permissions for the action, without
+     * actually making the request, and provides an error response. If you have the
+     * required permissions, the error response is <code>DryRunOperation</code>.
+     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+     */
     inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
 
     /**
@@ -161,6 +181,11 @@ namespace Model
      * <p>The ID of the route table.</p>
      */
     inline const Aws::String& GetRouteTableId() const{ return m_routeTableId; }
+
+    /**
+     * <p>The ID of the route table.</p>
+     */
+    inline bool RouteTableIdHasBeenSet() const { return m_routeTableIdHasBeenSet; }
 
     /**
      * <p>The ID of the route table.</p>

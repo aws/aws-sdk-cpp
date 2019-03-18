@@ -52,6 +52,11 @@ namespace Model
     /**
      * <p>The maximum number of applications to list.</p>
      */
+    inline bool LimitHasBeenSet() const { return m_limitHasBeenSet; }
+
+    /**
+     * <p>The maximum number of applications to list.</p>
+     */
     inline void SetLimit(int value) { m_limitHasBeenSet = true; m_limit = value; }
 
     /**
@@ -67,6 +72,14 @@ namespace Model
      * the AWS Command Line Interface's Pagination Options</a>.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
+    /**
+     * <p>If a previous command returned a pagination token, pass it into this value to
+     * retrieve the next set of results. For more information about pagination, see <a
+     * href="https://docs.aws.amazon.com/cli/latest/userguide/pagination.html">Using
+     * the AWS Command Line Interface's Pagination Options</a>.</p>
+     */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
      * <p>If a previous command returned a pagination token, pass it into this value to

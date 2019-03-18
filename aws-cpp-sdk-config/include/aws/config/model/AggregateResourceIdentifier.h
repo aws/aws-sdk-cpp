@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p>The 12-digit account ID of the source account.</p>
      */
+    inline bool SourceAccountIdHasBeenSet() const { return m_sourceAccountIdHasBeenSet; }
+
+    /**
+     * <p>The 12-digit account ID of the source account.</p>
+     */
     inline void SetSourceAccountId(const Aws::String& value) { m_sourceAccountIdHasBeenSet = true; m_sourceAccountId = value; }
 
     /**
@@ -90,6 +95,11 @@ namespace Model
      * <p>The source region where data is aggregated.</p>
      */
     inline const Aws::String& GetSourceRegion() const{ return m_sourceRegion; }
+
+    /**
+     * <p>The source region where data is aggregated.</p>
+     */
+    inline bool SourceRegionHasBeenSet() const { return m_sourceRegionHasBeenSet; }
 
     /**
      * <p>The source region where data is aggregated.</p>
@@ -130,6 +140,11 @@ namespace Model
     /**
      * <p>The ID of the AWS resource.</p>
      */
+    inline bool ResourceIdHasBeenSet() const { return m_resourceIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the AWS resource.</p>
+     */
     inline void SetResourceId(const Aws::String& value) { m_resourceIdHasBeenSet = true; m_resourceId = value; }
 
     /**
@@ -166,6 +181,11 @@ namespace Model
     /**
      * <p>The type of the AWS resource.</p>
      */
+    inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
+
+    /**
+     * <p>The type of the AWS resource.</p>
+     */
     inline void SetResourceType(const ResourceType& value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
 
     /**
@@ -188,6 +208,11 @@ namespace Model
      * <p>The name of the AWS resource.</p>
      */
     inline const Aws::String& GetResourceName() const{ return m_resourceName; }
+
+    /**
+     * <p>The name of the AWS resource.</p>
+     */
+    inline bool ResourceNameHasBeenSet() const { return m_resourceNameHasBeenSet; }
 
     /**
      * <p>The name of the AWS resource.</p>

@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>Unique identifier for the game session to update.</p>
      */
+    inline bool GameSessionIdHasBeenSet() const { return m_gameSessionIdHasBeenSet; }
+
+    /**
+     * <p>Unique identifier for the game session to update.</p>
+     */
     inline void SetGameSessionId(const Aws::String& value) { m_gameSessionIdHasBeenSet = true; m_gameSessionId = value; }
 
     /**
@@ -95,6 +100,12 @@ namespace Model
      * <p>Maximum number of players that can be connected simultaneously to the game
      * session.</p>
      */
+    inline bool MaximumPlayerSessionCountHasBeenSet() const { return m_maximumPlayerSessionCountHasBeenSet; }
+
+    /**
+     * <p>Maximum number of players that can be connected simultaneously to the game
+     * session.</p>
+     */
     inline void SetMaximumPlayerSessionCount(int value) { m_maximumPlayerSessionCountHasBeenSet = true; m_maximumPlayerSessionCount = value; }
 
     /**
@@ -109,6 +120,12 @@ namespace Model
      * not need to be unique.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
+
+    /**
+     * <p>Descriptive label that is associated with a game session. Session names do
+     * not need to be unique.</p>
+     */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
      * <p>Descriptive label that is associated with a game session. Session names do
@@ -155,6 +172,11 @@ namespace Model
     /**
      * <p>Policy determining whether or not the game session accepts new players.</p>
      */
+    inline bool PlayerSessionCreationPolicyHasBeenSet() const { return m_playerSessionCreationPolicyHasBeenSet; }
+
+    /**
+     * <p>Policy determining whether or not the game session accepts new players.</p>
+     */
     inline void SetPlayerSessionCreationPolicy(const PlayerSessionCreationPolicy& value) { m_playerSessionCreationPolicyHasBeenSet = true; m_playerSessionCreationPolicy = value; }
 
     /**
@@ -181,6 +203,15 @@ namespace Model
      * scale-down event.</p> </li> </ul>
      */
     inline const ProtectionPolicy& GetProtectionPolicy() const{ return m_protectionPolicy; }
+
+    /**
+     * <p>Game session protection policy to apply to this game session only.</p> <ul>
+     * <li> <p> <b>NoProtection</b> -- The game session can be terminated during a
+     * scale-down event.</p> </li> <li> <p> <b>FullProtection</b> -- If the game
+     * session is in an <code>ACTIVE</code> status, it cannot be terminated during a
+     * scale-down event.</p> </li> </ul>
+     */
+    inline bool ProtectionPolicyHasBeenSet() const { return m_protectionPolicyHasBeenSet; }
 
     /**
      * <p>Game session protection policy to apply to this game session only.</p> <ul>

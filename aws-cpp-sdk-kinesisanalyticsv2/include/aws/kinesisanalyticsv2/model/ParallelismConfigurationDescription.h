@@ -58,6 +58,12 @@ namespace Model
      * <p>Describes whether the application uses the default parallelism for the
      * Kinesis Data Analytics service. </p>
      */
+    inline bool ConfigurationTypeHasBeenSet() const { return m_configurationTypeHasBeenSet; }
+
+    /**
+     * <p>Describes whether the application uses the default parallelism for the
+     * Kinesis Data Analytics service. </p>
+     */
     inline void SetConfigurationType(const ConfigurationType& value) { m_configurationTypeHasBeenSet = true; m_configurationType = value; }
 
     /**
@@ -89,6 +95,12 @@ namespace Model
      * <p>Describes the initial number of parallel tasks that a Java-based Kinesis Data
      * Analytics application can perform. </p>
      */
+    inline bool ParallelismHasBeenSet() const { return m_parallelismHasBeenSet; }
+
+    /**
+     * <p>Describes the initial number of parallel tasks that a Java-based Kinesis Data
+     * Analytics application can perform. </p>
+     */
     inline void SetParallelism(int value) { m_parallelismHasBeenSet = true; m_parallelism = value; }
 
     /**
@@ -104,6 +116,13 @@ namespace Model
      * application.</p>
      */
     inline int GetParallelismPerKPU() const{ return m_parallelismPerKPU; }
+
+    /**
+     * <p>Describes the number of parallel tasks that a Java-based Kinesis Data
+     * Analytics application can perform per Kinesis Processing Unit (KPU) used by the
+     * application.</p>
+     */
+    inline bool ParallelismPerKPUHasBeenSet() const { return m_parallelismPerKPUHasBeenSet; }
 
     /**
      * <p>Describes the number of parallel tasks that a Java-based Kinesis Data
@@ -130,6 +149,12 @@ namespace Model
      * <p>Describes the current number of parallel tasks that a Java-based Kinesis Data
      * Analytics application can perform.</p>
      */
+    inline bool CurrentParallelismHasBeenSet() const { return m_currentParallelismHasBeenSet; }
+
+    /**
+     * <p>Describes the current number of parallel tasks that a Java-based Kinesis Data
+     * Analytics application can perform.</p>
+     */
     inline void SetCurrentParallelism(int value) { m_currentParallelismHasBeenSet = true; m_currentParallelism = value; }
 
     /**
@@ -144,6 +169,12 @@ namespace Model
      * parallelism of the application in response to increased throughput.</p>
      */
     inline bool GetAutoScalingEnabled() const{ return m_autoScalingEnabled; }
+
+    /**
+     * <p>Describes whether the Kinesis Data Analytics service can increase the
+     * parallelism of the application in response to increased throughput.</p>
+     */
+    inline bool AutoScalingEnabledHasBeenSet() const { return m_autoScalingEnabledHasBeenSet; }
 
     /**
      * <p>Describes whether the Kinesis Data Analytics service can increase the

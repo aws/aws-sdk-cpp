@@ -60,6 +60,12 @@ namespace Model
      * <p>The ID of the customer master key (CMK) used for encryption, if
      * applicable.</p>
      */
+    inline bool KeyIdHasBeenSet() const { return m_keyIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the customer master key (CMK) used for encryption, if
+     * applicable.</p>
+     */
     inline void SetKeyId(const Aws::String& value) { m_keyIdHasBeenSet = true; m_keyId = value; }
 
     /**
@@ -103,6 +109,12 @@ namespace Model
      * <p>The encryption status. While the status is <code>UPDATING</code>, X-Ray may
      * encrypt data with a combination of the new and old settings.</p>
      */
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
+
+    /**
+     * <p>The encryption status. While the status is <code>UPDATING</code>, X-Ray may
+     * encrypt data with a combination of the new and old settings.</p>
+     */
     inline void SetStatus(const EncryptionStatus& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
@@ -129,6 +141,12 @@ namespace Model
      * to <code>NONE</code> for default encryption.</p>
      */
     inline const EncryptionType& GetType() const{ return m_type; }
+
+    /**
+     * <p>The type of encryption. Set to <code>KMS</code> for encryption with CMKs. Set
+     * to <code>NONE</code> for default encryption.</p>
+     */
+    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
 
     /**
      * <p>The type of encryption. Set to <code>KMS</code> for encryption with CMKs. Set

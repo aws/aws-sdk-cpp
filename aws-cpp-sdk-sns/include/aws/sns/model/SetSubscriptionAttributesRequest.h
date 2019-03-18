@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The ARN of the subscription to modify.</p>
      */
+    inline bool SubscriptionArnHasBeenSet() const { return m_subscriptionArnHasBeenSet; }
+
+    /**
+     * <p>The ARN of the subscription to modify.</p>
+     */
     inline void SetSubscriptionArn(const Aws::String& value) { m_subscriptionArnHasBeenSet = true; m_subscriptionArn = value; }
 
     /**
@@ -99,6 +104,21 @@ namespace Model
      * formatting, which is otherwise created for Amazon SNS metadata.</p> </li> </ul>
      */
     inline const Aws::String& GetAttributeName() const{ return m_attributeName; }
+
+    /**
+     * <p>A map of attributes with their corresponding values.</p> <p>The following
+     * lists the names, descriptions, and values of the special request parameters that
+     * the <code>SetTopicAttributes</code> action uses:</p> <ul> <li> <p>
+     * <code>DeliveryPolicy</code> – The policy that defines how Amazon SNS retries
+     * failed deliveries to HTTP/S endpoints.</p> </li> <li> <p>
+     * <code>FilterPolicy</code> – The simple JSON object that lets your subscriber
+     * receive only a subset of messages, rather than receiving every message published
+     * to the topic.</p> </li> <li> <p> <code>RawMessageDelivery</code> – When set to
+     * <code>true</code>, enables raw message delivery to Amazon SQS or HTTP/S
+     * endpoints. This eliminates the need for the endpoints to process JSON
+     * formatting, which is otherwise created for Amazon SNS metadata.</p> </li> </ul>
+     */
+    inline bool AttributeNameHasBeenSet() const { return m_attributeNameHasBeenSet; }
 
     /**
      * <p>A map of attributes with their corresponding values.</p> <p>The following
@@ -195,6 +215,11 @@ namespace Model
      * <p>The new value for the attribute in JSON format.</p>
      */
     inline const Aws::String& GetAttributeValue() const{ return m_attributeValue; }
+
+    /**
+     * <p>The new value for the attribute in JSON format.</p>
+     */
+    inline bool AttributeValueHasBeenSet() const { return m_attributeValueHasBeenSet; }
 
     /**
      * <p>The new value for the attribute in JSON format.</p>

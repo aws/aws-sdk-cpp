@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>Profile name for the field-level encryption profile.</p>
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>Profile name for the field-level encryption profile.</p>
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
@@ -89,6 +94,11 @@ namespace Model
      * <p>A unique number that ensures that the request can't be replayed.</p>
      */
     inline const Aws::String& GetCallerReference() const{ return m_callerReference; }
+
+    /**
+     * <p>A unique number that ensures that the request can't be replayed.</p>
+     */
+    inline bool CallerReferenceHasBeenSet() const { return m_callerReferenceHasBeenSet; }
 
     /**
      * <p>A unique number that ensures that the request can't be replayed.</p>
@@ -129,6 +139,11 @@ namespace Model
     /**
      * <p>An optional comment for the field-level encryption profile.</p>
      */
+    inline bool CommentHasBeenSet() const { return m_commentHasBeenSet; }
+
+    /**
+     * <p>An optional comment for the field-level encryption profile.</p>
+     */
     inline void SetComment(const Aws::String& value) { m_commentHasBeenSet = true; m_comment = value; }
 
     /**
@@ -163,6 +178,13 @@ namespace Model
      * specifying which fields to encrypt with this key.</p>
      */
     inline const EncryptionEntities& GetEncryptionEntities() const{ return m_encryptionEntities; }
+
+    /**
+     * <p>A complex data type of encryption entities for the field-level encryption
+     * profile that include the public key ID, provider, and field patterns for
+     * specifying which fields to encrypt with this key.</p>
+     */
+    inline bool EncryptionEntitiesHasBeenSet() const { return m_encryptionEntitiesHasBeenSet; }
 
     /**
      * <p>A complex data type of encryption entities for the field-level encryption

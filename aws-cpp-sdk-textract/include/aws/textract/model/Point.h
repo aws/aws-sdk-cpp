@@ -60,6 +60,11 @@ namespace Model
     /**
      * <p>The value of the X coordinate for a point on a <code>Polygon</code>.</p>
      */
+    inline bool XHasBeenSet() const { return m_xHasBeenSet; }
+
+    /**
+     * <p>The value of the X coordinate for a point on a <code>Polygon</code>.</p>
+     */
     inline void SetX(double value) { m_xHasBeenSet = true; m_x = value; }
 
     /**
@@ -72,6 +77,11 @@ namespace Model
      * <p>The value of the Y coordinate for a point on a <code>Polygon</code>.</p>
      */
     inline double GetY() const{ return m_y; }
+
+    /**
+     * <p>The value of the Y coordinate for a point on a <code>Polygon</code>.</p>
+     */
+    inline bool YHasBeenSet() const { return m_yHasBeenSet; }
 
     /**
      * <p>The value of the Y coordinate for a point on a <code>Polygon</code>.</p>

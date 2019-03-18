@@ -55,6 +55,11 @@ namespace Model
     /**
      * <p>The name of the work team. Use this name to identify the work team.</p>
      */
+    inline bool WorkteamNameHasBeenSet() const { return m_workteamNameHasBeenSet; }
+
+    /**
+     * <p>The name of the work team. Use this name to identify the work team.</p>
+     */
     inline void SetWorkteamName(const Aws::String& value) { m_workteamNameHasBeenSet = true; m_workteamName = value; }
 
     /**
@@ -93,6 +98,17 @@ namespace Model
      * <code>ClientId</code> and <code>UserPool</code> values.</p>
      */
     inline const Aws::Vector<MemberDefinition>& GetMemberDefinitions() const{ return m_memberDefinitions; }
+
+    /**
+     * <p>A list of <code>MemberDefinition</code> objects that contains objects that
+     * identify the Amazon Cognito user pool that makes up the work team. For more
+     * information, see <a
+     * href="http://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools.html">Amazon
+     * Cognito User Pools</a>.</p> <p>All of the <code>CognitoMemberDefinition</code>
+     * objects that make up the member definition must have the same
+     * <code>ClientId</code> and <code>UserPool</code> values.</p>
+     */
+    inline bool MemberDefinitionsHasBeenSet() const { return m_memberDefinitionsHasBeenSet; }
 
     /**
      * <p>A list of <code>MemberDefinition</code> objects that contains objects that
@@ -169,6 +185,11 @@ namespace Model
     /**
      * <p>A description of the work team.</p>
      */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
+
+    /**
+     * <p>A description of the work team.</p>
+     */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
@@ -201,6 +222,11 @@ namespace Model
      * <p/>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p/>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
      * <p/>

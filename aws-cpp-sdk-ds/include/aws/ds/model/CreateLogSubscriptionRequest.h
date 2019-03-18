@@ -54,6 +54,12 @@ namespace Model
      * <p>Identifier (ID) of the directory to which you want to subscribe and receive
      * real-time logs to your specified CloudWatch log group.</p>
      */
+    inline bool DirectoryIdHasBeenSet() const { return m_directoryIdHasBeenSet; }
+
+    /**
+     * <p>Identifier (ID) of the directory to which you want to subscribe and receive
+     * real-time logs to your specified CloudWatch log group.</p>
+     */
     inline void SetDirectoryId(const Aws::String& value) { m_directoryIdHasBeenSet = true; m_directoryId = value; }
 
     /**
@@ -92,6 +98,12 @@ namespace Model
      * logs are forwarded.</p>
      */
     inline const Aws::String& GetLogGroupName() const{ return m_logGroupName; }
+
+    /**
+     * <p>The name of the CloudWatch log group where the real-time domain controller
+     * logs are forwarded.</p>
+     */
+    inline bool LogGroupNameHasBeenSet() const { return m_logGroupNameHasBeenSet; }
 
     /**
      * <p>The name of the CloudWatch log group where the real-time domain controller

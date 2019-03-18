@@ -59,6 +59,12 @@ namespace Model
      * <p>The name of the RDS event notification subscription you want to remove a
      * source identifier from.</p>
      */
+    inline bool SubscriptionNameHasBeenSet() const { return m_subscriptionNameHasBeenSet; }
+
+    /**
+     * <p>The name of the RDS event notification subscription you want to remove a
+     * source identifier from.</p>
+     */
     inline void SetSubscriptionName(const Aws::String& value) { m_subscriptionNameHasBeenSet = true; m_subscriptionName = value; }
 
     /**
@@ -97,6 +103,12 @@ namespace Model
      * instance identifier</b> for a DB instance or the name of a security group. </p>
      */
     inline const Aws::String& GetSourceIdentifier() const{ return m_sourceIdentifier; }
+
+    /**
+     * <p> The source identifier to be removed from the subscription, such as the <b>DB
+     * instance identifier</b> for a DB instance or the name of a security group. </p>
+     */
+    inline bool SourceIdentifierHasBeenSet() const { return m_sourceIdentifierHasBeenSet; }
 
     /**
      * <p> The source identifier to be removed from the subscription, such as the <b>DB

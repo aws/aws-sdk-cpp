@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The stream that contains the OTA update.</p>
      */
+    inline bool StreamHasBeenSet() const { return m_streamHasBeenSet; }
+
+    /**
+     * <p>The stream that contains the OTA update.</p>
+     */
     inline void SetStream(const Stream& value) { m_streamHasBeenSet = true; m_stream = value; }
 
     /**
@@ -78,6 +83,11 @@ namespace Model
      * <p>The location of the updated firmware in S3.</p>
      */
     inline const S3Location& GetS3Location() const{ return m_s3Location; }
+
+    /**
+     * <p>The location of the updated firmware in S3.</p>
+     */
+    inline bool S3LocationHasBeenSet() const { return m_s3LocationHasBeenSet; }
 
     /**
      * <p>The location of the updated firmware in S3.</p>

@@ -52,6 +52,11 @@ namespace Model
     /**
      * <p>The address that you want the Snowball shipped to.</p>
      */
+    inline bool AddressHasBeenSet() const { return m_addressHasBeenSet; }
+
+    /**
+     * <p>The address that you want the Snowball shipped to.</p>
+     */
     inline void SetAddress(const Address& value) { m_addressHasBeenSet = true; m_address = value; }
 
     /**

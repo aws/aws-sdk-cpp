@@ -55,6 +55,11 @@ namespace Model
     /**
      * <p>The tag status of the image.</p>
      */
+    inline bool TagStatusHasBeenSet() const { return m_tagStatusHasBeenSet; }
+
+    /**
+     * <p>The tag status of the image.</p>
+     */
     inline void SetTagStatus(const TagStatus& value) { m_tagStatusHasBeenSet = true; m_tagStatus = value; }
 
     /**

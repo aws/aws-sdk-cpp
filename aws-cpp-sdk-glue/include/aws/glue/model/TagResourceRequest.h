@@ -59,6 +59,14 @@ namespace Model
      * href="http://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-common.html#aws-glue-api-regex-aws-glue-arn-id">AWS
      * Glue ARN string pattern</a>.</p>
      */
+    inline bool ResourceArnHasBeenSet() const { return m_resourceArnHasBeenSet; }
+
+    /**
+     * <p>The ARN of the AWS Glue resource to which to add the tags. For more
+     * information about AWS Glue resource ARNs, see the <a
+     * href="http://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-common.html#aws-glue-api-regex-aws-glue-arn-id">AWS
+     * Glue ARN string pattern</a>.</p>
+     */
     inline void SetResourceArn(const Aws::String& value) { m_resourceArnHasBeenSet = true; m_resourceArn = value; }
 
     /**
@@ -106,6 +114,11 @@ namespace Model
      * <p>Tags to add to this resource.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetTagsToAdd() const{ return m_tagsToAdd; }
+
+    /**
+     * <p>Tags to add to this resource.</p>
+     */
+    inline bool TagsToAddHasBeenSet() const { return m_tagsToAddHasBeenSet; }
 
     /**
      * <p>Tags to add to this resource.</p>

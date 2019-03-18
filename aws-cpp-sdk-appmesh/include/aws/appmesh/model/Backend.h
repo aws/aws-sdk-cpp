@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>Specifies a virtual service to use as a backend for a virtual node. </p>
      */
+    inline bool VirtualServiceHasBeenSet() const { return m_virtualServiceHasBeenSet; }
+
+    /**
+     * <p>Specifies a virtual service to use as a backend for a virtual node. </p>
+     */
     inline void SetVirtualService(const VirtualServiceBackend& value) { m_virtualServiceHasBeenSet = true; m_virtualService = value; }
 
     /**

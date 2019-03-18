@@ -50,6 +50,11 @@ namespace Model
     /**
      * <p>The ID for your GraphQL API.</p>
      */
+    inline bool ApiIdHasBeenSet() const { return m_apiIdHasBeenSet; }
+
+    /**
+     * <p>The ID for your GraphQL API.</p>
+     */
     inline void SetApiId(const Aws::String& value) { m_apiIdHasBeenSet = true; m_apiId = value; }
 
     /**
@@ -82,6 +87,11 @@ namespace Model
      * <p>A description of the purpose of the API key.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
+
+    /**
+     * <p>A description of the purpose of the API key.</p>
+     */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
 
     /**
      * <p>A description of the purpose of the API key.</p>
@@ -121,6 +131,14 @@ namespace Model
      * information, see .</p>
      */
     inline long long GetExpires() const{ return m_expires; }
+
+    /**
+     * <p>The time from creation time after which the API key expires. The date is
+     * represented as seconds since the epoch, rounded down to the nearest hour. The
+     * default value for this parameter is 7 days from creation time. For more
+     * information, see .</p>
+     */
+    inline bool ExpiresHasBeenSet() const { return m_expiresHasBeenSet; }
 
     /**
      * <p>The time from creation time after which the API key expires. The date is

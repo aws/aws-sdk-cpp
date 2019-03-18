@@ -57,6 +57,12 @@ namespace Model
      * A list of account ID and email address pairs of the accounts that you want to
      * associate with the master GuardDuty account.
      */
+    inline bool AccountDetailsHasBeenSet() const { return m_accountDetailsHasBeenSet; }
+
+    /**
+     * A list of account ID and email address pairs of the accounts that you want to
+     * associate with the master GuardDuty account.
+     */
     inline void SetAccountDetails(const Aws::Vector<AccountDetail>& value) { m_accountDetailsHasBeenSet = true; m_accountDetails = value; }
 
     /**
@@ -95,6 +101,12 @@ namespace Model
      * associate member accounts.
      */
     inline const Aws::String& GetDetectorId() const{ return m_detectorId; }
+
+    /**
+     * The unique ID of the detector of the GuardDuty account with which you want to
+     * associate member accounts.
+     */
+    inline bool DetectorIdHasBeenSet() const { return m_detectorIdHasBeenSet; }
 
     /**
      * The unique ID of the detector of the GuardDuty account with which you want to

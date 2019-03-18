@@ -54,6 +54,11 @@ namespace Model
     /**
      * <p>The name of the role that you want to modify.</p>
      */
+    inline bool RoleNameHasBeenSet() const { return m_roleNameHasBeenSet; }
+
+    /**
+     * <p>The name of the role that you want to modify.</p>
+     */
     inline void SetRoleName(const Aws::String& value) { m_roleNameHasBeenSet = true; m_roleName = value; }
 
     /**
@@ -86,6 +91,11 @@ namespace Model
      * <p>The new description that you want to apply to the specified role.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
+
+    /**
+     * <p>The new description that you want to apply to the specified role.</p>
+     */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
 
     /**
      * <p>The new description that you want to apply to the specified role.</p>
@@ -136,6 +146,25 @@ namespace Model
      * IAM Roles</a> in the <i>IAM User Guide</i>.</p>
      */
     inline int GetMaxSessionDuration() const{ return m_maxSessionDuration; }
+
+    /**
+     * <p>The maximum session duration (in seconds) that you want to set for the
+     * specified role. If you do not specify a value for this setting, the default
+     * maximum of one hour is applied. This setting can have a value from 1 hour to 12
+     * hours.</p> <p>Anyone who assumes the role from the AWS CLI or API can use the
+     * <code>DurationSeconds</code> API parameter or the <code>duration-seconds</code>
+     * CLI parameter to request a longer session. The <code>MaxSessionDuration</code>
+     * setting determines the maximum duration that can be requested using the
+     * <code>DurationSeconds</code> parameter. If users don't specify a value for the
+     * <code>DurationSeconds</code> parameter, their security credentials are valid for
+     * one hour by default. This applies when you use the <code>AssumeRole*</code> API
+     * operations or the <code>assume-role*</code> CLI operations but does not apply
+     * when you use those operations to create a console URL. For more information, see
+     * <a
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use.html">Using
+     * IAM Roles</a> in the <i>IAM User Guide</i>.</p>
+     */
+    inline bool MaxSessionDurationHasBeenSet() const { return m_maxSessionDurationHasBeenSet; }
 
     /**
      * <p>The maximum session duration (in seconds) that you want to set for the

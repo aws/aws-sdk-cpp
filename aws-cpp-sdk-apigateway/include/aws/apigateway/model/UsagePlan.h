@@ -65,6 +65,11 @@ namespace Model
     /**
      * <p>The identifier of a <a>UsagePlan</a> resource.</p>
      */
+    inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
+
+    /**
+     * <p>The identifier of a <a>UsagePlan</a> resource.</p>
+     */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
     /**
@@ -97,6 +102,11 @@ namespace Model
      * <p>The name of a usage plan.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
+
+    /**
+     * <p>The name of a usage plan.</p>
+     */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
      * <p>The name of a usage plan.</p>
@@ -137,6 +147,11 @@ namespace Model
     /**
      * <p>The description of a usage plan.</p>
      */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
+
+    /**
+     * <p>The description of a usage plan.</p>
+     */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
@@ -169,6 +184,11 @@ namespace Model
      * <p>The associated API stages of a usage plan.</p>
      */
     inline const Aws::Vector<ApiStage>& GetApiStages() const{ return m_apiStages; }
+
+    /**
+     * <p>The associated API stages of a usage plan.</p>
+     */
+    inline bool ApiStagesHasBeenSet() const { return m_apiStagesHasBeenSet; }
 
     /**
      * <p>The associated API stages of a usage plan.</p>
@@ -209,6 +229,11 @@ namespace Model
     /**
      * <p>The request throttle limits of a usage plan.</p>
      */
+    inline bool ThrottleHasBeenSet() const { return m_throttleHasBeenSet; }
+
+    /**
+     * <p>The request throttle limits of a usage plan.</p>
+     */
     inline void SetThrottle(const ThrottleSettings& value) { m_throttleHasBeenSet = true; m_throttle = value; }
 
     /**
@@ -231,6 +256,11 @@ namespace Model
      * <p>The maximum number of permitted requests per a given unit time interval.</p>
      */
     inline const QuotaSettings& GetQuota() const{ return m_quota; }
+
+    /**
+     * <p>The maximum number of permitted requests per a given unit time interval.</p>
+     */
+    inline bool QuotaHasBeenSet() const { return m_quotaHasBeenSet; }
 
     /**
      * <p>The maximum number of permitted requests per a given unit time interval.</p>
@@ -258,6 +288,12 @@ namespace Model
      * SaaS product on AWS Marketplace.</p>
      */
     inline const Aws::String& GetProductCode() const{ return m_productCode; }
+
+    /**
+     * <p>The AWS Markeplace product identifier to associate with the usage plan as a
+     * SaaS product on AWS Marketplace.</p>
+     */
+    inline bool ProductCodeHasBeenSet() const { return m_productCodeHasBeenSet; }
 
     /**
      * <p>The AWS Markeplace product identifier to associate with the usage plan as a

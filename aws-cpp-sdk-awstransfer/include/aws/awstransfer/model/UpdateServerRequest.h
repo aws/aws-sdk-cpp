@@ -55,6 +55,12 @@ namespace Model
      * <p>This response parameter is an array containing all of the information
      * required to call a customer's authentication API method.</p>
      */
+    inline bool IdentityProviderDetailsHasBeenSet() const { return m_identityProviderDetailsHasBeenSet; }
+
+    /**
+     * <p>This response parameter is an array containing all of the information
+     * required to call a customer's authentication API method.</p>
+     */
     inline void SetIdentityProviderDetails(const IdentityProviderDetails& value) { m_identityProviderDetailsHasBeenSet = true; m_identityProviderDetails = value; }
 
     /**
@@ -81,6 +87,12 @@ namespace Model
      * S3 events to be logged in Amazon CloudWatch, turning logging on or off.</p>
      */
     inline const Aws::String& GetLoggingRole() const{ return m_loggingRole; }
+
+    /**
+     * <p>Changes the AWS Identity and Access Management (IAM) role that allows Amazon
+     * S3 events to be logged in Amazon CloudWatch, turning logging on or off.</p>
+     */
+    inline bool LoggingRoleHasBeenSet() const { return m_loggingRoleHasBeenSet; }
 
     /**
      * <p>Changes the AWS Identity and Access Management (IAM) role that allows Amazon
@@ -124,6 +136,12 @@ namespace Model
      * account is assigned to.</p>
      */
     inline const Aws::String& GetServerId() const{ return m_serverId; }
+
+    /**
+     * <p>A system-assigned unique identifier for an SFTP server instance that the user
+     * account is assigned to.</p>
+     */
+    inline bool ServerIdHasBeenSet() const { return m_serverIdHasBeenSet; }
 
     /**
      * <p>A system-assigned unique identifier for an SFTP server instance that the user

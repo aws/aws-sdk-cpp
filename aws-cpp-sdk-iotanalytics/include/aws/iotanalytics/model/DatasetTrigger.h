@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The "Schedule" when the trigger is initiated.</p>
      */
+    inline bool ScheduleHasBeenSet() const { return m_scheduleHasBeenSet; }
+
+    /**
+     * <p>The "Schedule" when the trigger is initiated.</p>
+     */
     inline void SetSchedule(const Schedule& value) { m_scheduleHasBeenSet = true; m_schedule = value; }
 
     /**
@@ -80,6 +85,12 @@ namespace Model
      * contents.</p>
      */
     inline const TriggeringDataset& GetDataset() const{ return m_dataset; }
+
+    /**
+     * <p>The data set whose content creation triggers the creation of this data set's
+     * contents.</p>
+     */
+    inline bool DatasetHasBeenSet() const { return m_datasetHasBeenSet; }
 
     /**
      * <p>The data set whose content creation triggers the creation of this data set's

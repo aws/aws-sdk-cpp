@@ -61,6 +61,13 @@ namespace Model
      * <i>Web server tier</i> – <code>WebServer</code> </p> </li> <li> <p>For <i>Worker
      * tier</i> – <code>Worker</code> </p> </li> </ul>
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>The name of this environment tier.</p> <p>Valid values:</p> <ul> <li> <p>For
+     * <i>Web server tier</i> – <code>WebServer</code> </p> </li> <li> <p>For <i>Worker
+     * tier</i> – <code>Worker</code> </p> </li> </ul>
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
@@ -105,6 +112,13 @@ namespace Model
      * tier</i> – <code>SQS/HTTP</code> </p> </li> </ul>
      */
     inline const Aws::String& GetType() const{ return m_type; }
+
+    /**
+     * <p>The type of this environment tier.</p> <p>Valid values:</p> <ul> <li> <p>For
+     * <i>Web server tier</i> – <code>Standard</code> </p> </li> <li> <p>For <i>Worker
+     * tier</i> – <code>SQS/HTTP</code> </p> </li> </ul>
+     */
+    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
 
     /**
      * <p>The type of this environment tier.</p> <p>Valid values:</p> <ul> <li> <p>For
@@ -156,6 +170,14 @@ namespace Model
      * of date. We recommend leaving it unspecified.</p> </note>
      */
     inline const Aws::String& GetVersion() const{ return m_version; }
+
+    /**
+     * <p>The version of this environment tier. When you don't set a value to it,
+     * Elastic Beanstalk uses the latest compatible worker tier version.</p> <note>
+     * <p>This member is deprecated. Any specific version that you set may become out
+     * of date. We recommend leaving it unspecified.</p> </note>
+     */
+    inline bool VersionHasBeenSet() const { return m_versionHasBeenSet; }
 
     /**
      * <p>The version of this environment tier. When you don't set a value to it,

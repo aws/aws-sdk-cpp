@@ -71,6 +71,11 @@ namespace Model
     /**
      * <p>Defines the amount of money paid to a worker in United States dollars.</p>
      */
+    inline bool AmountInUsdHasBeenSet() const { return m_amountInUsdHasBeenSet; }
+
+    /**
+     * <p>Defines the amount of money paid to a worker in United States dollars.</p>
+     */
     inline void SetAmountInUsd(const USD& value) { m_amountInUsdHasBeenSet = true; m_amountInUsd = value; }
 
     /**

@@ -52,6 +52,11 @@ namespace Model
     /**
      * <p>The ID of the QualificationType.</p>
      */
+    inline bool QualificationTypeIdHasBeenSet() const { return m_qualificationTypeIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the QualificationType.</p>
+     */
     inline void SetQualificationTypeId(const Aws::String& value) { m_qualificationTypeIdHasBeenSet = true; m_qualificationTypeId = value; }
 
     /**
@@ -84,6 +89,11 @@ namespace Model
      * <p>The ID of the Worker whose Qualification is being updated.</p>
      */
     inline const Aws::String& GetWorkerId() const{ return m_workerId; }
+
+    /**
+     * <p>The ID of the Worker whose Qualification is being updated.</p>
+     */
+    inline bool WorkerIdHasBeenSet() const { return m_workerIdHasBeenSet; }
 
     /**
      * <p>The ID of the Worker whose Qualification is being updated.</p>

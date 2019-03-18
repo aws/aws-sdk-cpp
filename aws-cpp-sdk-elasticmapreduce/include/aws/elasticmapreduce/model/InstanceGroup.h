@@ -65,6 +65,11 @@ namespace Model
     /**
      * <p>The identifier of the instance group.</p>
      */
+    inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
+
+    /**
+     * <p>The identifier of the instance group.</p>
+     */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
     /**
@@ -97,6 +102,11 @@ namespace Model
      * <p>The name of the instance group.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
+
+    /**
+     * <p>The name of the instance group.</p>
+     */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
      * <p>The name of the instance group.</p>
@@ -139,6 +149,12 @@ namespace Model
      * <p>The marketplace to provision instances for this group. Valid values are
      * ON_DEMAND or SPOT.</p>
      */
+    inline bool MarketHasBeenSet() const { return m_marketHasBeenSet; }
+
+    /**
+     * <p>The marketplace to provision instances for this group. Valid values are
+     * ON_DEMAND or SPOT.</p>
+     */
     inline void SetMarket(const MarketType& value) { m_marketHasBeenSet = true; m_market = value; }
 
     /**
@@ -164,6 +180,11 @@ namespace Model
      * <p>The type of the instance group. Valid values are MASTER, CORE or TASK.</p>
      */
     inline const InstanceGroupType& GetInstanceGroupType() const{ return m_instanceGroupType; }
+
+    /**
+     * <p>The type of the instance group. Valid values are MASTER, CORE or TASK.</p>
+     */
+    inline bool InstanceGroupTypeHasBeenSet() const { return m_instanceGroupTypeHasBeenSet; }
 
     /**
      * <p>The type of the instance group. Valid values are MASTER, CORE or TASK.</p>
@@ -194,6 +215,15 @@ namespace Model
      * Spot price is set equal to the On-Demand price.</p>
      */
     inline const Aws::String& GetBidPrice() const{ return m_bidPrice; }
+
+    /**
+     * <p>The maximum Spot price your are willing to pay for EC2 instances.</p> <p>An
+     * optional, nullable field that applies if the <code>MarketType</code> for the
+     * instance group is specified as <code>SPOT</code>. Specify the maximum spot price
+     * in USD. If the value is NULL and <code>SPOT</code> is specified, the maximum
+     * Spot price is set equal to the On-Demand price.</p>
+     */
+    inline bool BidPriceHasBeenSet() const { return m_bidPriceHasBeenSet; }
 
     /**
      * <p>The maximum Spot price your are willing to pay for EC2 instances.</p> <p>An
@@ -258,6 +288,11 @@ namespace Model
     /**
      * <p>The EC2 instance type for all instances in the instance group.</p>
      */
+    inline bool InstanceTypeHasBeenSet() const { return m_instanceTypeHasBeenSet; }
+
+    /**
+     * <p>The EC2 instance type for all instances in the instance group.</p>
+     */
     inline void SetInstanceType(const Aws::String& value) { m_instanceTypeHasBeenSet = true; m_instanceType = value; }
 
     /**
@@ -294,6 +329,11 @@ namespace Model
     /**
      * <p>The target number of instances for the instance group.</p>
      */
+    inline bool RequestedInstanceCountHasBeenSet() const { return m_requestedInstanceCountHasBeenSet; }
+
+    /**
+     * <p>The target number of instances for the instance group.</p>
+     */
     inline void SetRequestedInstanceCount(int value) { m_requestedInstanceCountHasBeenSet = true; m_requestedInstanceCount = value; }
 
     /**
@@ -310,6 +350,11 @@ namespace Model
     /**
      * <p>The number of instances currently running in this instance group.</p>
      */
+    inline bool RunningInstanceCountHasBeenSet() const { return m_runningInstanceCountHasBeenSet; }
+
+    /**
+     * <p>The number of instances currently running in this instance group.</p>
+     */
     inline void SetRunningInstanceCount(int value) { m_runningInstanceCountHasBeenSet = true; m_runningInstanceCount = value; }
 
     /**
@@ -322,6 +367,11 @@ namespace Model
      * <p>The current status of the instance group.</p>
      */
     inline const InstanceGroupStatus& GetStatus() const{ return m_status; }
+
+    /**
+     * <p>The current status of the instance group.</p>
+     */
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
     /**
      * <p>The current status of the instance group.</p>
@@ -350,6 +400,13 @@ namespace Model
      * separate configuration for each instance group (master, core, and task).</p>
      */
     inline const Aws::Vector<Configuration>& GetConfigurations() const{ return m_configurations; }
+
+    /**
+     * <note> <p>Amazon EMR releases 4.x or later.</p> </note> <p>The list of
+     * configurations supplied for an EMR cluster instance group. You can specify a
+     * separate configuration for each instance group (master, core, and task).</p>
+     */
+    inline bool ConfigurationsHasBeenSet() const { return m_configurationsHasBeenSet; }
 
     /**
      * <note> <p>Amazon EMR releases 4.x or later.</p> </note> <p>The list of
@@ -402,6 +459,11 @@ namespace Model
     /**
      * <p>The EBS block devices that are mapped to this instance group.</p>
      */
+    inline bool EbsBlockDevicesHasBeenSet() const { return m_ebsBlockDevicesHasBeenSet; }
+
+    /**
+     * <p>The EBS block devices that are mapped to this instance group.</p>
+     */
     inline void SetEbsBlockDevices(const Aws::Vector<EbsBlockDevice>& value) { m_ebsBlockDevicesHasBeenSet = true; m_ebsBlockDevices = value; }
 
     /**
@@ -442,6 +504,13 @@ namespace Model
      * an optimized configuration stack and provides additional, dedicated capacity for
      * Amazon EBS I/O.</p>
      */
+    inline bool EbsOptimizedHasBeenSet() const { return m_ebsOptimizedHasBeenSet; }
+
+    /**
+     * <p>If the instance group is EBS-optimized. An Amazon EBS-optimized instance uses
+     * an optimized configuration stack and provides additional, dedicated capacity for
+     * Amazon EBS I/O.</p>
+     */
     inline void SetEbsOptimized(bool value) { m_ebsOptimizedHasBeenSet = true; m_ebsOptimized = value; }
 
     /**
@@ -456,6 +525,11 @@ namespace Model
      * <p>Policy for customizing shrink operations.</p>
      */
     inline const ShrinkPolicy& GetShrinkPolicy() const{ return m_shrinkPolicy; }
+
+    /**
+     * <p>Policy for customizing shrink operations.</p>
+     */
+    inline bool ShrinkPolicyHasBeenSet() const { return m_shrinkPolicyHasBeenSet; }
 
     /**
      * <p>Policy for customizing shrink operations.</p>
@@ -485,6 +559,14 @@ namespace Model
      * a CloudWatch metric. See PutAutoScalingPolicy.</p>
      */
     inline const AutoScalingPolicyDescription& GetAutoScalingPolicy() const{ return m_autoScalingPolicy; }
+
+    /**
+     * <p>An automatic scaling policy for a core instance group or task instance group
+     * in an Amazon EMR cluster. The automatic scaling policy defines how an instance
+     * group dynamically adds and terminates EC2 instances in response to the value of
+     * a CloudWatch metric. See PutAutoScalingPolicy.</p>
+     */
+    inline bool AutoScalingPolicyHasBeenSet() const { return m_autoScalingPolicyHasBeenSet; }
 
     /**
      * <p>An automatic scaling policy for a core instance group or task instance group

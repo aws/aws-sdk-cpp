@@ -54,6 +54,11 @@ namespace Model
     /**
      * <p>The number of instances in the Assigning state.</p>
      */
+    inline bool AssigningHasBeenSet() const { return m_assigningHasBeenSet; }
+
+    /**
+     * <p>The number of instances in the Assigning state.</p>
+     */
     inline void SetAssigning(int value) { m_assigningHasBeenSet = true; m_assigning = value; }
 
     /**
@@ -66,6 +71,11 @@ namespace Model
      * <p>The number of instances with <code>booting</code> status.</p>
      */
     inline int GetBooting() const{ return m_booting; }
+
+    /**
+     * <p>The number of instances with <code>booting</code> status.</p>
+     */
+    inline bool BootingHasBeenSet() const { return m_bootingHasBeenSet; }
 
     /**
      * <p>The number of instances with <code>booting</code> status.</p>
@@ -86,6 +96,11 @@ namespace Model
     /**
      * <p>The number of instances with <code>connection_lost</code> status.</p>
      */
+    inline bool ConnectionLostHasBeenSet() const { return m_connectionLostHasBeenSet; }
+
+    /**
+     * <p>The number of instances with <code>connection_lost</code> status.</p>
+     */
     inline void SetConnectionLost(int value) { m_connectionLostHasBeenSet = true; m_connectionLost = value; }
 
     /**
@@ -98,6 +113,11 @@ namespace Model
      * <p>The number of instances in the Deregistering state.</p>
      */
     inline int GetDeregistering() const{ return m_deregistering; }
+
+    /**
+     * <p>The number of instances in the Deregistering state.</p>
+     */
+    inline bool DeregisteringHasBeenSet() const { return m_deregisteringHasBeenSet; }
 
     /**
      * <p>The number of instances in the Deregistering state.</p>
@@ -118,6 +138,11 @@ namespace Model
     /**
      * <p>The number of instances with <code>online</code> status.</p>
      */
+    inline bool OnlineHasBeenSet() const { return m_onlineHasBeenSet; }
+
+    /**
+     * <p>The number of instances with <code>online</code> status.</p>
+     */
     inline void SetOnline(int value) { m_onlineHasBeenSet = true; m_online = value; }
 
     /**
@@ -130,6 +155,11 @@ namespace Model
      * <p>The number of instances with <code>pending</code> status.</p>
      */
     inline int GetPending() const{ return m_pending; }
+
+    /**
+     * <p>The number of instances with <code>pending</code> status.</p>
+     */
+    inline bool PendingHasBeenSet() const { return m_pendingHasBeenSet; }
 
     /**
      * <p>The number of instances with <code>pending</code> status.</p>
@@ -150,6 +180,11 @@ namespace Model
     /**
      * <p>The number of instances with <code>rebooting</code> status.</p>
      */
+    inline bool RebootingHasBeenSet() const { return m_rebootingHasBeenSet; }
+
+    /**
+     * <p>The number of instances with <code>rebooting</code> status.</p>
+     */
     inline void SetRebooting(int value) { m_rebootingHasBeenSet = true; m_rebooting = value; }
 
     /**
@@ -162,6 +197,11 @@ namespace Model
      * <p>The number of instances in the Registered state.</p>
      */
     inline int GetRegistered() const{ return m_registered; }
+
+    /**
+     * <p>The number of instances in the Registered state.</p>
+     */
+    inline bool RegisteredHasBeenSet() const { return m_registeredHasBeenSet; }
 
     /**
      * <p>The number of instances in the Registered state.</p>
@@ -182,6 +222,11 @@ namespace Model
     /**
      * <p>The number of instances in the Registering state.</p>
      */
+    inline bool RegisteringHasBeenSet() const { return m_registeringHasBeenSet; }
+
+    /**
+     * <p>The number of instances in the Registering state.</p>
+     */
     inline void SetRegistering(int value) { m_registeringHasBeenSet = true; m_registering = value; }
 
     /**
@@ -194,6 +239,11 @@ namespace Model
      * <p>The number of instances with <code>requested</code> status.</p>
      */
     inline int GetRequested() const{ return m_requested; }
+
+    /**
+     * <p>The number of instances with <code>requested</code> status.</p>
+     */
+    inline bool RequestedHasBeenSet() const { return m_requestedHasBeenSet; }
 
     /**
      * <p>The number of instances with <code>requested</code> status.</p>
@@ -214,6 +264,11 @@ namespace Model
     /**
      * <p>The number of instances with <code>running_setup</code> status.</p>
      */
+    inline bool RunningSetupHasBeenSet() const { return m_runningSetupHasBeenSet; }
+
+    /**
+     * <p>The number of instances with <code>running_setup</code> status.</p>
+     */
     inline void SetRunningSetup(int value) { m_runningSetupHasBeenSet = true; m_runningSetup = value; }
 
     /**
@@ -226,6 +281,11 @@ namespace Model
      * <p>The number of instances with <code>setup_failed</code> status.</p>
      */
     inline int GetSetupFailed() const{ return m_setupFailed; }
+
+    /**
+     * <p>The number of instances with <code>setup_failed</code> status.</p>
+     */
+    inline bool SetupFailedHasBeenSet() const { return m_setupFailedHasBeenSet; }
 
     /**
      * <p>The number of instances with <code>setup_failed</code> status.</p>
@@ -246,6 +306,11 @@ namespace Model
     /**
      * <p>The number of instances with <code>shutting_down</code> status.</p>
      */
+    inline bool ShuttingDownHasBeenSet() const { return m_shuttingDownHasBeenSet; }
+
+    /**
+     * <p>The number of instances with <code>shutting_down</code> status.</p>
+     */
     inline void SetShuttingDown(int value) { m_shuttingDownHasBeenSet = true; m_shuttingDown = value; }
 
     /**
@@ -258,6 +323,11 @@ namespace Model
      * <p>The number of instances with <code>start_failed</code> status.</p>
      */
     inline int GetStartFailed() const{ return m_startFailed; }
+
+    /**
+     * <p>The number of instances with <code>start_failed</code> status.</p>
+     */
+    inline bool StartFailedHasBeenSet() const { return m_startFailedHasBeenSet; }
 
     /**
      * <p>The number of instances with <code>start_failed</code> status.</p>
@@ -278,6 +348,11 @@ namespace Model
     /**
      * <p>The number of instances with <code>stop_failed</code> status.</p>
      */
+    inline bool StopFailedHasBeenSet() const { return m_stopFailedHasBeenSet; }
+
+    /**
+     * <p>The number of instances with <code>stop_failed</code> status.</p>
+     */
     inline void SetStopFailed(int value) { m_stopFailedHasBeenSet = true; m_stopFailed = value; }
 
     /**
@@ -290,6 +365,11 @@ namespace Model
      * <p>The number of instances with <code>stopped</code> status.</p>
      */
     inline int GetStopped() const{ return m_stopped; }
+
+    /**
+     * <p>The number of instances with <code>stopped</code> status.</p>
+     */
+    inline bool StoppedHasBeenSet() const { return m_stoppedHasBeenSet; }
 
     /**
      * <p>The number of instances with <code>stopped</code> status.</p>
@@ -310,6 +390,11 @@ namespace Model
     /**
      * <p>The number of instances with <code>stopping</code> status.</p>
      */
+    inline bool StoppingHasBeenSet() const { return m_stoppingHasBeenSet; }
+
+    /**
+     * <p>The number of instances with <code>stopping</code> status.</p>
+     */
     inline void SetStopping(int value) { m_stoppingHasBeenSet = true; m_stopping = value; }
 
     /**
@@ -322,6 +407,11 @@ namespace Model
      * <p>The number of instances with <code>terminated</code> status.</p>
      */
     inline int GetTerminated() const{ return m_terminated; }
+
+    /**
+     * <p>The number of instances with <code>terminated</code> status.</p>
+     */
+    inline bool TerminatedHasBeenSet() const { return m_terminatedHasBeenSet; }
 
     /**
      * <p>The number of instances with <code>terminated</code> status.</p>
@@ -342,6 +432,11 @@ namespace Model
     /**
      * <p>The number of instances with <code>terminating</code> status.</p>
      */
+    inline bool TerminatingHasBeenSet() const { return m_terminatingHasBeenSet; }
+
+    /**
+     * <p>The number of instances with <code>terminating</code> status.</p>
+     */
     inline void SetTerminating(int value) { m_terminatingHasBeenSet = true; m_terminating = value; }
 
     /**
@@ -354,6 +449,11 @@ namespace Model
      * <p>The number of instances in the Unassigning state.</p>
      */
     inline int GetUnassigning() const{ return m_unassigning; }
+
+    /**
+     * <p>The number of instances in the Unassigning state.</p>
+     */
+    inline bool UnassigningHasBeenSet() const { return m_unassigningHasBeenSet; }
 
     /**
      * <p>The number of instances in the Unassigning state.</p>

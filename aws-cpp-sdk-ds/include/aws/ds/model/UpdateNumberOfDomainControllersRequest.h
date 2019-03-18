@@ -54,6 +54,12 @@ namespace Model
      * <p>Identifier of the directory to which the domain controllers will be added or
      * removed.</p>
      */
+    inline bool DirectoryIdHasBeenSet() const { return m_directoryIdHasBeenSet; }
+
+    /**
+     * <p>Identifier of the directory to which the domain controllers will be added or
+     * removed.</p>
+     */
     inline void SetDirectoryId(const Aws::String& value) { m_directoryIdHasBeenSet = true; m_directoryId = value; }
 
     /**
@@ -91,6 +97,11 @@ namespace Model
      * <p>The number of domain controllers desired in the directory.</p>
      */
     inline int GetDesiredNumber() const{ return m_desiredNumber; }
+
+    /**
+     * <p>The number of domain controllers desired in the directory.</p>
+     */
+    inline bool DesiredNumberHasBeenSet() const { return m_desiredNumberHasBeenSet; }
 
     /**
      * <p>The number of domain controllers desired in the directory.</p>

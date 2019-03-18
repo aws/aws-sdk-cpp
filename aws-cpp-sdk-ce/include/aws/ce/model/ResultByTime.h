@@ -60,6 +60,11 @@ namespace Model
     /**
      * <p>The time period that the result covers.</p>
      */
+    inline bool TimePeriodHasBeenSet() const { return m_timePeriodHasBeenSet; }
+
+    /**
+     * <p>The time period that the result covers.</p>
+     */
     inline void SetTimePeriod(const DateInterval& value) { m_timePeriodHasBeenSet = true; m_timePeriod = value; }
 
     /**
@@ -82,6 +87,11 @@ namespace Model
      * <p>The total amount of cost or usage accrued during the time period.</p>
      */
     inline const Aws::Map<Aws::String, MetricValue>& GetTotal() const{ return m_total; }
+
+    /**
+     * <p>The total amount of cost or usage accrued during the time period.</p>
+     */
+    inline bool TotalHasBeenSet() const { return m_totalHasBeenSet; }
 
     /**
      * <p>The total amount of cost or usage accrued during the time period.</p>
@@ -142,6 +152,11 @@ namespace Model
     /**
      * <p>The groups that this time period includes.</p>
      */
+    inline bool GroupsHasBeenSet() const { return m_groupsHasBeenSet; }
+
+    /**
+     * <p>The groups that this time period includes.</p>
+     */
     inline void SetGroups(const Aws::Vector<Group>& value) { m_groupsHasBeenSet = true; m_groups = value; }
 
     /**
@@ -174,6 +189,11 @@ namespace Model
      * <p>Whether the result is estimated.</p>
      */
     inline bool GetEstimated() const{ return m_estimated; }
+
+    /**
+     * <p>Whether the result is estimated.</p>
+     */
+    inline bool EstimatedHasBeenSet() const { return m_estimatedHasBeenSet; }
 
     /**
      * <p>Whether the result is estimated.</p>

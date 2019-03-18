@@ -59,6 +59,11 @@ namespace Model
     /**
      * <p>The name of the service mesh that the virtual node resides in.</p>
      */
+    inline bool MeshNameHasBeenSet() const { return m_meshNameHasBeenSet; }
+
+    /**
+     * <p>The name of the service mesh that the virtual node resides in.</p>
+     */
     inline void SetMeshName(const Aws::String& value) { m_meshNameHasBeenSet = true; m_meshName = value; }
 
     /**
@@ -95,6 +100,11 @@ namespace Model
     /**
      * <p>The associated metadata for the virtual node.</p>
      */
+    inline bool MetadataHasBeenSet() const { return m_metadataHasBeenSet; }
+
+    /**
+     * <p>The associated metadata for the virtual node.</p>
+     */
     inline void SetMetadata(const ResourceMetadata& value) { m_metadataHasBeenSet = true; m_metadata = value; }
 
     /**
@@ -117,6 +127,11 @@ namespace Model
      * <p>The specifications of the virtual node.</p>
      */
     inline const VirtualNodeSpec& GetSpec() const{ return m_spec; }
+
+    /**
+     * <p>The specifications of the virtual node.</p>
+     */
+    inline bool SpecHasBeenSet() const { return m_specHasBeenSet; }
 
     /**
      * <p>The specifications of the virtual node.</p>
@@ -147,6 +162,11 @@ namespace Model
     /**
      * <p>The current status for the virtual node.</p>
      */
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
+
+    /**
+     * <p>The current status for the virtual node.</p>
+     */
     inline void SetStatus(const VirtualNodeStatus& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
@@ -169,6 +189,11 @@ namespace Model
      * <p>The name of the virtual node.</p>
      */
     inline const Aws::String& GetVirtualNodeName() const{ return m_virtualNodeName; }
+
+    /**
+     * <p>The name of the virtual node.</p>
+     */
+    inline bool VirtualNodeNameHasBeenSet() const { return m_virtualNodeNameHasBeenSet; }
 
     /**
      * <p>The name of the virtual node.</p>

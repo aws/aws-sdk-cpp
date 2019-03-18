@@ -60,6 +60,12 @@ namespace Model
      * <p> <b>Grey.</b> AWS Elastic Beanstalk and the health agent are reporting no
      * data on an instance.</p>
      */
+    inline bool NoDataHasBeenSet() const { return m_noDataHasBeenSet; }
+
+    /**
+     * <p> <b>Grey.</b> AWS Elastic Beanstalk and the health agent are reporting no
+     * data on an instance.</p>
+     */
     inline void SetNoData(int value) { m_noDataHasBeenSet = true; m_noData = value; }
 
     /**
@@ -74,6 +80,12 @@ namespace Model
      * insufficient amount of data on an instance.</p>
      */
     inline int GetUnknown() const{ return m_unknown; }
+
+    /**
+     * <p> <b>Grey.</b> AWS Elastic Beanstalk and the health agent are reporting an
+     * insufficient amount of data on an instance.</p>
+     */
+    inline bool UnknownHasBeenSet() const { return m_unknownHasBeenSet; }
 
     /**
      * <p> <b>Grey.</b> AWS Elastic Beanstalk and the health agent are reporting an
@@ -98,6 +110,12 @@ namespace Model
      * <p> <b>Grey.</b> An operation is in progress on an instance within the command
      * timeout.</p>
      */
+    inline bool PendingHasBeenSet() const { return m_pendingHasBeenSet; }
+
+    /**
+     * <p> <b>Grey.</b> An operation is in progress on an instance within the command
+     * timeout.</p>
+     */
     inline void SetPending(int value) { m_pendingHasBeenSet = true; m_pending = value; }
 
     /**
@@ -112,6 +130,12 @@ namespace Model
      * not reporting any problems.</p>
      */
     inline int GetOk() const{ return m_ok; }
+
+    /**
+     * <p> <b>Green.</b> An instance is passing health checks and the health agent is
+     * not reporting any problems.</p>
+     */
+    inline bool OkHasBeenSet() const { return m_okHasBeenSet; }
 
     /**
      * <p> <b>Green.</b> An instance is passing health checks and the health agent is
@@ -134,6 +158,11 @@ namespace Model
     /**
      * <p> <b>Green.</b> An operation is in progress on an instance.</p>
      */
+    inline bool InfoHasBeenSet() const { return m_infoHasBeenSet; }
+
+    /**
+     * <p> <b>Green.</b> An operation is in progress on an instance.</p>
+     */
     inline void SetInfo(int value) { m_infoHasBeenSet = true; m_info = value; }
 
     /**
@@ -147,6 +176,12 @@ namespace Model
      * failures or other issues for an instance or environment.</p>
      */
     inline int GetWarning() const{ return m_warning; }
+
+    /**
+     * <p> <b>Yellow.</b> The health agent is reporting a moderate number of request
+     * failures or other issues for an instance or environment.</p>
+     */
+    inline bool WarningHasBeenSet() const { return m_warningHasBeenSet; }
 
     /**
      * <p> <b>Yellow.</b> The health agent is reporting a moderate number of request
@@ -171,6 +206,12 @@ namespace Model
      * <p> <b>Red.</b> The health agent is reporting a high number of request failures
      * or other issues for an instance or environment.</p>
      */
+    inline bool DegradedHasBeenSet() const { return m_degradedHasBeenSet; }
+
+    /**
+     * <p> <b>Red.</b> The health agent is reporting a high number of request failures
+     * or other issues for an instance or environment.</p>
+     */
     inline void SetDegraded(int value) { m_degradedHasBeenSet = true; m_degraded = value; }
 
     /**
@@ -185,6 +226,12 @@ namespace Model
      * failures or other issues for an instance or environment.</p>
      */
     inline int GetSevere() const{ return m_severe; }
+
+    /**
+     * <p> <b>Red.</b> The health agent is reporting a very high number of request
+     * failures or other issues for an instance or environment.</p>
+     */
+    inline bool SevereHasBeenSet() const { return m_severeHasBeenSet; }
 
     /**
      * <p> <b>Red.</b> The health agent is reporting a very high number of request

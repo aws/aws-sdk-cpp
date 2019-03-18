@@ -52,6 +52,11 @@ namespace Model
     /**
      * <p>The name of the algorithm to delete.</p>
      */
+    inline bool AlgorithmNameHasBeenSet() const { return m_algorithmNameHasBeenSet; }
+
+    /**
+     * <p>The name of the algorithm to delete.</p>
+     */
     inline void SetAlgorithmName(const Aws::String& value) { m_algorithmNameHasBeenSet = true; m_algorithmName = value; }
 
     /**

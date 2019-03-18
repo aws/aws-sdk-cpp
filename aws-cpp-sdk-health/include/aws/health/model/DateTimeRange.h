@@ -63,6 +63,11 @@ namespace Model
     /**
      * <p>The starting date and time of a time range.</p>
      */
+    inline bool FromHasBeenSet() const { return m_fromHasBeenSet; }
+
+    /**
+     * <p>The starting date and time of a time range.</p>
+     */
     inline void SetFrom(const Aws::Utils::DateTime& value) { m_fromHasBeenSet = true; m_from = value; }
 
     /**
@@ -85,6 +90,11 @@ namespace Model
      * <p>The ending date and time of a time range.</p>
      */
     inline const Aws::Utils::DateTime& GetTo() const{ return m_to; }
+
+    /**
+     * <p>The ending date and time of a time range.</p>
+     */
+    inline bool ToHasBeenSet() const { return m_toHasBeenSet; }
 
     /**
      * <p>The ending date and time of a time range.</p>

@@ -61,6 +61,11 @@ namespace Model
     /**
      * <p/>
      */
+    inline bool BucketHasBeenSet() const { return m_bucketHasBeenSet; }
+
+    /**
+     * <p/>
+     */
     inline void SetBucket(const Aws::String& value) { m_bucketHasBeenSet = true; m_bucket = value; }
 
     /**
@@ -97,6 +102,11 @@ namespace Model
     /**
      * <p>A delimiter is a character you use to group keys.</p>
      */
+    inline bool DelimiterHasBeenSet() const { return m_delimiterHasBeenSet; }
+
+    /**
+     * <p>A delimiter is a character you use to group keys.</p>
+     */
     inline void SetDelimiter(const Aws::String& value) { m_delimiterHasBeenSet = true; m_delimiter = value; }
 
     /**
@@ -129,6 +139,9 @@ namespace Model
     inline const EncodingType& GetEncodingType() const{ return m_encodingType; }
 
     
+    inline bool EncodingTypeHasBeenSet() const { return m_encodingTypeHasBeenSet; }
+
+    
     inline void SetEncodingType(const EncodingType& value) { m_encodingTypeHasBeenSet = true; m_encodingType = value; }
 
     
@@ -145,6 +158,11 @@ namespace Model
      * <p>Specifies the key to start with when listing objects in a bucket.</p>
      */
     inline const Aws::String& GetMarker() const{ return m_marker; }
+
+    /**
+     * <p>Specifies the key to start with when listing objects in a bucket.</p>
+     */
+    inline bool MarkerHasBeenSet() const { return m_markerHasBeenSet; }
 
     /**
      * <p>Specifies the key to start with when listing objects in a bucket.</p>
@@ -187,6 +205,12 @@ namespace Model
      * <p>Sets the maximum number of keys returned in the response. The response might
      * contain fewer keys but will never contain more.</p>
      */
+    inline bool MaxKeysHasBeenSet() const { return m_maxKeysHasBeenSet; }
+
+    /**
+     * <p>Sets the maximum number of keys returned in the response. The response might
+     * contain fewer keys but will never contain more.</p>
+     */
     inline void SetMaxKeys(int value) { m_maxKeysHasBeenSet = true; m_maxKeys = value; }
 
     /**
@@ -200,6 +224,11 @@ namespace Model
      * <p>Limits the response to keys that begin with the specified prefix.</p>
      */
     inline const Aws::String& GetPrefix() const{ return m_prefix; }
+
+    /**
+     * <p>Limits the response to keys that begin with the specified prefix.</p>
+     */
+    inline bool PrefixHasBeenSet() const { return m_prefixHasBeenSet; }
 
     /**
      * <p>Limits the response to keys that begin with the specified prefix.</p>
@@ -244,6 +273,13 @@ namespace Model
      * objects request. Bucket owners need not specify this parameter in their
      * requests.</p>
      */
+    inline bool RequestPayerHasBeenSet() const { return m_requestPayerHasBeenSet; }
+
+    /**
+     * <p>Confirms that the requester knows that she or he will be charged for the list
+     * objects request. Bucket owners need not specify this parameter in their
+     * requests.</p>
+     */
     inline void SetRequestPayer(const RequestPayer& value) { m_requestPayerHasBeenSet = true; m_requestPayer = value; }
 
     /**
@@ -270,6 +306,9 @@ namespace Model
 
     
     inline const Aws::Map<Aws::String, Aws::String>& GetCustomizedAccessLogTag() const{ return m_customizedAccessLogTag; }
+
+    
+    inline bool CustomizedAccessLogTagHasBeenSet() const { return m_customizedAccessLogTagHasBeenSet; }
 
     
     inline void SetCustomizedAccessLogTag(const Aws::Map<Aws::String, Aws::String>& value) { m_customizedAccessLogTagHasBeenSet = true; m_customizedAccessLogTag = value; }

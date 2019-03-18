@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The name of the fleet.</p>
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>The name of the fleet.</p>
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
@@ -89,6 +94,11 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the fleet.</p>
      */
     inline const Aws::String& GetArn() const{ return m_arn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the fleet.</p>
+     */
+    inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the fleet.</p>
@@ -129,6 +139,11 @@ namespace Model
     /**
      * <p>The time, in milliseconds since the epoch, when the fleet was created.</p>
      */
+    inline bool CreatedAtHasBeenSet() const { return m_createdAtHasBeenSet; }
+
+    /**
+     * <p>The time, in milliseconds since the epoch, when the fleet was created.</p>
+     */
     inline void SetCreatedAt(const Aws::Utils::DateTime& value) { m_createdAtHasBeenSet = true; m_createdAt = value; }
 
     /**
@@ -155,6 +170,11 @@ namespace Model
     /**
      * <p>The status of the last fleet deployment.</p>
      */
+    inline bool LastDeploymentStatusHasBeenSet() const { return m_lastDeploymentStatusHasBeenSet; }
+
+    /**
+     * <p>The status of the last fleet deployment.</p>
+     */
     inline void SetLastDeploymentStatus(const DeploymentStatus& value) { m_lastDeploymentStatusHasBeenSet = true; m_lastDeploymentStatus = value; }
 
     /**
@@ -177,6 +197,11 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the last deployment job.</p>
      */
     inline const Aws::String& GetLastDeploymentJob() const{ return m_lastDeploymentJob; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the last deployment job.</p>
+     */
+    inline bool LastDeploymentJobHasBeenSet() const { return m_lastDeploymentJobHasBeenSet; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the last deployment job.</p>
@@ -213,6 +238,11 @@ namespace Model
      * <p>The time of the last deployment.</p>
      */
     inline const Aws::Utils::DateTime& GetLastDeploymentTime() const{ return m_lastDeploymentTime; }
+
+    /**
+     * <p>The time of the last deployment.</p>
+     */
+    inline bool LastDeploymentTimeHasBeenSet() const { return m_lastDeploymentTimeHasBeenSet; }
 
     /**
      * <p>The time of the last deployment.</p>

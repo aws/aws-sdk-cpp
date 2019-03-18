@@ -51,6 +51,11 @@ namespace Model
     /**
      * <p>The name of the channel to be updated.</p>
      */
+    inline bool ChannelNameHasBeenSet() const { return m_channelNameHasBeenSet; }
+
+    /**
+     * <p>The name of the channel to be updated.</p>
+     */
     inline void SetChannelName(const Aws::String& value) { m_channelNameHasBeenSet = true; m_channelName = value; }
 
     /**
@@ -83,6 +88,11 @@ namespace Model
      * <p>How long, in days, message data is kept for the channel.</p>
      */
     inline const RetentionPeriod& GetRetentionPeriod() const{ return m_retentionPeriod; }
+
+    /**
+     * <p>How long, in days, message data is kept for the channel.</p>
+     */
+    inline bool RetentionPeriodHasBeenSet() const { return m_retentionPeriodHasBeenSet; }
 
     /**
      * <p>How long, in days, message data is kept for the channel.</p>

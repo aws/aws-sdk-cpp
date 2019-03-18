@@ -61,6 +61,12 @@ namespace Model
      * <p>A single <code>ExportFilter</code> name. Supported filters:
      * <code>agentId</code>.</p>
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>A single <code>ExportFilter</code> name. Supported filters:
+     * <code>agentId</code>.</p>
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
@@ -102,6 +108,15 @@ namespace Model
      * <code>o-0123456789abcdef0</code>.</p>
      */
     inline const Aws::Vector<Aws::String>& GetValues() const{ return m_values; }
+
+    /**
+     * <p>A single <code>agentId</code> for a Discovery Agent. An <code>agentId</code>
+     * can be found using the <a
+     * href="http://docs.aws.amazon.com/application-discovery/latest/APIReference/API_DescribeExportTasks.html">DescribeAgents</a>
+     * action. Typically an ADS <code>agentId</code> is in the form
+     * <code>o-0123456789abcdef0</code>.</p>
+     */
+    inline bool ValuesHasBeenSet() const { return m_valuesHasBeenSet; }
 
     /**
      * <p>A single <code>agentId</code> for a Discovery Agent. An <code>agentId</code>
@@ -171,6 +186,11 @@ namespace Model
      * <p>Supported condition: <code>EQUALS</code> </p>
      */
     inline const Aws::String& GetCondition() const{ return m_condition; }
+
+    /**
+     * <p>Supported condition: <code>EQUALS</code> </p>
+     */
+    inline bool ConditionHasBeenSet() const { return m_conditionHasBeenSet; }
 
     /**
      * <p>Supported condition: <code>EQUALS</code> </p>

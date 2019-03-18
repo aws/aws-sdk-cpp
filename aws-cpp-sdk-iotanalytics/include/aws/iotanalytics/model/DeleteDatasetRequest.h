@@ -50,6 +50,11 @@ namespace Model
     /**
      * <p>The name of the data set to delete.</p>
      */
+    inline bool DatasetNameHasBeenSet() const { return m_datasetNameHasBeenSet; }
+
+    /**
+     * <p>The name of the data set to delete.</p>
+     */
     inline void SetDatasetName(const Aws::String& value) { m_datasetNameHasBeenSet = true; m_datasetName = value; }
 
     /**

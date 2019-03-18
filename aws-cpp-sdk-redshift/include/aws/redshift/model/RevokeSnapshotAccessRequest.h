@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The identifier of the snapshot that the account can no longer access.</p>
      */
+    inline bool SnapshotIdentifierHasBeenSet() const { return m_snapshotIdentifierHasBeenSet; }
+
+    /**
+     * <p>The identifier of the snapshot that the account can no longer access.</p>
+     */
     inline void SetSnapshotIdentifier(const Aws::String& value) { m_snapshotIdentifierHasBeenSet = true; m_snapshotIdentifier = value; }
 
     /**
@@ -91,6 +96,13 @@ namespace Model
      * that specifies anything other than * for the cluster name.</p>
      */
     inline const Aws::String& GetSnapshotClusterIdentifier() const{ return m_snapshotClusterIdentifier; }
+
+    /**
+     * <p>The identifier of the cluster the snapshot was created from. This parameter
+     * is required if your IAM user has a policy containing a snapshot resource element
+     * that specifies anything other than * for the cluster name.</p>
+     */
+    inline bool SnapshotClusterIdentifierHasBeenSet() const { return m_snapshotClusterIdentifierHasBeenSet; }
 
     /**
      * <p>The identifier of the cluster the snapshot was created from. This parameter
@@ -140,6 +152,12 @@ namespace Model
      * specified snapshot.</p>
      */
     inline const Aws::String& GetAccountWithRestoreAccess() const{ return m_accountWithRestoreAccess; }
+
+    /**
+     * <p>The identifier of the AWS customer account that can no longer restore the
+     * specified snapshot.</p>
+     */
+    inline bool AccountWithRestoreAccessHasBeenSet() const { return m_accountWithRestoreAccessHasBeenSet; }
 
     /**
      * <p>The identifier of the AWS customer account that can no longer restore the

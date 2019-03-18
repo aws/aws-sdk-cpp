@@ -52,6 +52,11 @@ namespace Model
     /**
      * <p>The name of the repository that contains the file to delete.</p>
      */
+    inline bool RepositoryNameHasBeenSet() const { return m_repositoryNameHasBeenSet; }
+
+    /**
+     * <p>The name of the repository that contains the file to delete.</p>
+     */
     inline void SetRepositoryName(const Aws::String& value) { m_repositoryNameHasBeenSet = true; m_repositoryName = value; }
 
     /**
@@ -84,6 +89,11 @@ namespace Model
      * <p>The name of the branch where the commit will be made deleting the file.</p>
      */
     inline const Aws::String& GetBranchName() const{ return m_branchName; }
+
+    /**
+     * <p>The name of the branch where the commit will be made deleting the file.</p>
+     */
+    inline bool BranchNameHasBeenSet() const { return m_branchNameHasBeenSet; }
 
     /**
      * <p>The name of the branch where the commit will be made deleting the file.</p>
@@ -122,6 +132,13 @@ namespace Model
      * qualified path to a file named file.md in a folder named examples.</p>
      */
     inline const Aws::String& GetFilePath() const{ return m_filePath; }
+
+    /**
+     * <p>The fully-qualified path to the file that will be deleted, including the full
+     * name and extension of that file. For example, /examples/file.md is a fully
+     * qualified path to a file named file.md in a folder named examples.</p>
+     */
+    inline bool FilePathHasBeenSet() const { return m_filePathHasBeenSet; }
 
     /**
      * <p>The fully-qualified path to the file that will be deleted, including the full
@@ -173,6 +190,14 @@ namespace Model
      * ID.</p>
      */
     inline const Aws::String& GetParentCommitId() const{ return m_parentCommitId; }
+
+    /**
+     * <p>The ID of the commit that is the tip of the branch where you want to create
+     * the commit that will delete the file. This must be the HEAD commit for the
+     * branch. The commit that deletes the file will be created from this commit
+     * ID.</p>
+     */
+    inline bool ParentCommitIdHasBeenSet() const { return m_parentCommitIdHasBeenSet; }
 
     /**
      * <p>The ID of the commit that is the tip of the branch where you want to create
@@ -241,6 +266,16 @@ namespace Model
      * dir1/dir2/dir3/dir4, and dir2 and dir3 are empty, deleting the last file in dir4
      * will also delete the empty folders dir4, dir3, and dir2.</p>
      */
+    inline bool KeepEmptyFoldersHasBeenSet() const { return m_keepEmptyFoldersHasBeenSet; }
+
+    /**
+     * <p>Specifies whether to delete the folder or directory that contains the file
+     * you want to delete if that file is the only object in the folder or directory.
+     * By default, empty folders will be deleted. This includes empty folders that are
+     * part of the directory structure. For example, if the path to a file is
+     * dir1/dir2/dir3/dir4, and dir2 and dir3 are empty, deleting the last file in dir4
+     * will also delete the empty folders dir4, dir3, and dir2.</p>
+     */
     inline void SetKeepEmptyFolders(bool value) { m_keepEmptyFoldersHasBeenSet = true; m_keepEmptyFolders = value; }
 
     /**
@@ -260,6 +295,13 @@ namespace Model
      * will be used.</p>
      */
     inline const Aws::String& GetCommitMessage() const{ return m_commitMessage; }
+
+    /**
+     * <p>The commit message you want to include as part of deleting the file. Commit
+     * messages are limited to 256 KB. If no message is specified, a default message
+     * will be used.</p>
+     */
+    inline bool CommitMessageHasBeenSet() const { return m_commitMessageHasBeenSet; }
 
     /**
      * <p>The commit message you want to include as part of deleting the file. Commit
@@ -316,6 +358,13 @@ namespace Model
      * specified, the user's ARN will be used as the author name and committer
      * name.</p>
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>The name of the author of the commit that deletes the file. If no name is
+     * specified, the user's ARN will be used as the author name and committer
+     * name.</p>
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
@@ -359,6 +408,12 @@ namespace Model
      * is specified, the email address will be left blank.</p>
      */
     inline const Aws::String& GetEmail() const{ return m_email; }
+
+    /**
+     * <p>The email address for the commit that deletes the file. If no email address
+     * is specified, the email address will be left blank.</p>
+     */
+    inline bool EmailHasBeenSet() const { return m_emailHasBeenSet; }
 
     /**
      * <p>The email address for the commit that deletes the file. If no email address

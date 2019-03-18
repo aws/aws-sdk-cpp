@@ -58,6 +58,9 @@ namespace Model
     inline const AncillarySourceSettings& GetAncillarySourceSettings() const{ return m_ancillarySourceSettings; }
 
     
+    inline bool AncillarySourceSettingsHasBeenSet() const { return m_ancillarySourceSettingsHasBeenSet; }
+
+    
     inline void SetAncillarySourceSettings(const AncillarySourceSettings& value) { m_ancillarySourceSettingsHasBeenSet = true; m_ancillarySourceSettings = value; }
 
     
@@ -72,6 +75,9 @@ namespace Model
 
     
     inline const DvbSubSourceSettings& GetDvbSubSourceSettings() const{ return m_dvbSubSourceSettings; }
+
+    
+    inline bool DvbSubSourceSettingsHasBeenSet() const { return m_dvbSubSourceSettingsHasBeenSet; }
 
     
     inline void SetDvbSubSourceSettings(const DvbSubSourceSettings& value) { m_dvbSubSourceSettingsHasBeenSet = true; m_dvbSubSourceSettings = value; }
@@ -90,6 +96,9 @@ namespace Model
     inline const EmbeddedSourceSettings& GetEmbeddedSourceSettings() const{ return m_embeddedSourceSettings; }
 
     
+    inline bool EmbeddedSourceSettingsHasBeenSet() const { return m_embeddedSourceSettingsHasBeenSet; }
+
+    
     inline void SetEmbeddedSourceSettings(const EmbeddedSourceSettings& value) { m_embeddedSourceSettingsHasBeenSet = true; m_embeddedSourceSettings = value; }
 
     
@@ -104,6 +113,9 @@ namespace Model
 
     
     inline const FileSourceSettings& GetFileSourceSettings() const{ return m_fileSourceSettings; }
+
+    
+    inline bool FileSourceSettingsHasBeenSet() const { return m_fileSourceSettingsHasBeenSet; }
 
     
     inline void SetFileSourceSettings(const FileSourceSettings& value) { m_fileSourceSettingsHasBeenSet = true; m_fileSourceSettings = value; }
@@ -122,6 +134,9 @@ namespace Model
     inline const CaptionSourceType& GetSourceType() const{ return m_sourceType; }
 
     
+    inline bool SourceTypeHasBeenSet() const { return m_sourceTypeHasBeenSet; }
+
+    
     inline void SetSourceType(const CaptionSourceType& value) { m_sourceTypeHasBeenSet = true; m_sourceType = value; }
 
     
@@ -138,6 +153,9 @@ namespace Model
     inline const TeletextSourceSettings& GetTeletextSourceSettings() const{ return m_teletextSourceSettings; }
 
     
+    inline bool TeletextSourceSettingsHasBeenSet() const { return m_teletextSourceSettingsHasBeenSet; }
+
+    
     inline void SetTeletextSourceSettings(const TeletextSourceSettings& value) { m_teletextSourceSettingsHasBeenSet = true; m_teletextSourceSettings = value; }
 
     
@@ -152,6 +170,9 @@ namespace Model
 
     
     inline const TrackSourceSettings& GetTrackSourceSettings() const{ return m_trackSourceSettings; }
+
+    
+    inline bool TrackSourceSettingsHasBeenSet() const { return m_trackSourceSettingsHasBeenSet; }
 
     
     inline void SetTrackSourceSettings(const TrackSourceSettings& value) { m_trackSourceSettingsHasBeenSet = true; m_trackSourceSettings = value; }

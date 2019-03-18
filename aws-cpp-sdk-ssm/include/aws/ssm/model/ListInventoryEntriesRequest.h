@@ -54,6 +54,11 @@ namespace Model
     /**
      * <p>The instance ID for which you want inventory information.</p>
      */
+    inline bool InstanceIdHasBeenSet() const { return m_instanceIdHasBeenSet; }
+
+    /**
+     * <p>The instance ID for which you want inventory information.</p>
+     */
     inline void SetInstanceId(const Aws::String& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
 
     /**
@@ -86,6 +91,11 @@ namespace Model
      * <p>The type of inventory item for which you want information.</p>
      */
     inline const Aws::String& GetTypeName() const{ return m_typeName; }
+
+    /**
+     * <p>The type of inventory item for which you want information.</p>
+     */
+    inline bool TypeNameHasBeenSet() const { return m_typeNameHasBeenSet; }
 
     /**
      * <p>The type of inventory item for which you want information.</p>
@@ -123,6 +133,12 @@ namespace Model
      * results.</p>
      */
     inline const Aws::Vector<InventoryFilter>& GetFilters() const{ return m_filters; }
+
+    /**
+     * <p>One or more filters. Use a filter to return a more specific list of
+     * results.</p>
+     */
+    inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
 
     /**
      * <p>One or more filters. Use a filter to return a more specific list of
@@ -171,6 +187,12 @@ namespace Model
      * <p>The token for the next set of items to return. (You received this token from
      * a previous call.)</p>
      */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
+
+    /**
+     * <p>The token for the next set of items to return. (You received this token from
+     * a previous call.)</p>
+     */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
     /**
@@ -210,6 +232,13 @@ namespace Model
      * results.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
+
+    /**
+     * <p>The maximum number of items to return for this call. The call also returns a
+     * token that you can specify in a subsequent call to get the next set of
+     * results.</p>
+     */
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
 
     /**
      * <p>The maximum number of items to return for this call. The call also returns a

@@ -61,6 +61,13 @@ namespace Model
      * values: alphanumeric characters, hyphens (<code>-</code>), and underscores
      * (<code>_</code>).</p> <p>Queue URLs and names are case-sensitive.</p>
      */
+    inline bool QueueNameHasBeenSet() const { return m_queueNameHasBeenSet; }
+
+    /**
+     * <p>The name of the queue whose URL must be fetched. Maximum 80 characters. Valid
+     * values: alphanumeric characters, hyphens (<code>-</code>), and underscores
+     * (<code>_</code>).</p> <p>Queue URLs and names are case-sensitive.</p>
+     */
     inline void SetQueueName(const Aws::String& value) { m_queueNameHasBeenSet = true; m_queueName = value; }
 
     /**
@@ -103,6 +110,11 @@ namespace Model
      * <p>The AWS account ID of the account that created the queue.</p>
      */
     inline const Aws::String& GetQueueOwnerAWSAccountId() const{ return m_queueOwnerAWSAccountId; }
+
+    /**
+     * <p>The AWS account ID of the account that created the queue.</p>
+     */
+    inline bool QueueOwnerAWSAccountIdHasBeenSet() const { return m_queueOwnerAWSAccountIdHasBeenSet; }
 
     /**
      * <p>The AWS account ID of the account that created the queue.</p>

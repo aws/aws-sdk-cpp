@@ -54,6 +54,11 @@ namespace Model
     /**
      * <p>The name or the unique stack ID of the stack set for the stack operation.</p>
      */
+    inline bool StackSetNameHasBeenSet() const { return m_stackSetNameHasBeenSet; }
+
+    /**
+     * <p>The name or the unique stack ID of the stack set for the stack operation.</p>
+     */
     inline void SetStackSetName(const Aws::String& value) { m_stackSetNameHasBeenSet = true; m_stackSetName = value; }
 
     /**
@@ -86,6 +91,11 @@ namespace Model
      * <p>The unique ID of the stack set operation. </p>
      */
     inline const Aws::String& GetOperationId() const{ return m_operationId; }
+
+    /**
+     * <p>The unique ID of the stack set operation. </p>
+     */
+    inline bool OperationIdHasBeenSet() const { return m_operationIdHasBeenSet; }
 
     /**
      * <p>The unique ID of the stack set operation. </p>

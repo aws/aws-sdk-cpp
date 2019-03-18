@@ -57,6 +57,12 @@ namespace Model
      * <p>The name of the model package. The name must have 1 to 63 characters. Valid
      * characters are a-z, A-Z, 0-9, and - (hyphen).</p>
      */
+    inline bool ModelPackageNameHasBeenSet() const { return m_modelPackageNameHasBeenSet; }
+
+    /**
+     * <p>The name of the model package. The name must have 1 to 63 characters. Valid
+     * characters are a-z, A-Z, 0-9, and - (hyphen).</p>
+     */
     inline void SetModelPackageName(const Aws::String& value) { m_modelPackageNameHasBeenSet = true; m_modelPackageName = value; }
 
     /**
@@ -94,6 +100,11 @@ namespace Model
      * <p>A description of the model package.</p>
      */
     inline const Aws::String& GetModelPackageDescription() const{ return m_modelPackageDescription; }
+
+    /**
+     * <p>A description of the model package.</p>
+     */
+    inline bool ModelPackageDescriptionHasBeenSet() const { return m_modelPackageDescriptionHasBeenSet; }
 
     /**
      * <p>A description of the model package.</p>
@@ -136,6 +147,17 @@ namespace Model
      * </ul>
      */
     inline const InferenceSpecification& GetInferenceSpecification() const{ return m_inferenceSpecification; }
+
+    /**
+     * <p>Specifies details about inference jobs that can be run with models based on
+     * this model package, including the following:</p> <ul> <li> <p>The Amazon ECR
+     * paths of containers that contain the inference code and model artifacts.</p>
+     * </li> <li> <p>The instance types that the model package supports for transform
+     * jobs and real-time endpoints used for inference.</p> </li> <li> <p>The input and
+     * output content formats that the model package supports for inference.</p> </li>
+     * </ul>
+     */
+    inline bool InferenceSpecificationHasBeenSet() const { return m_inferenceSpecificationHasBeenSet; }
 
     /**
      * <p>Specifies details about inference jobs that can be run with models based on
@@ -192,6 +214,12 @@ namespace Model
      * <p>Specifies configurations for one or more transform jobs that Amazon SageMaker
      * runs to test the model package.</p>
      */
+    inline bool ValidationSpecificationHasBeenSet() const { return m_validationSpecificationHasBeenSet; }
+
+    /**
+     * <p>Specifies configurations for one or more transform jobs that Amazon SageMaker
+     * runs to test the model package.</p>
+     */
     inline void SetValidationSpecification(const ModelPackageValidationSpecification& value) { m_validationSpecificationHasBeenSet = true; m_validationSpecification = value; }
 
     /**
@@ -221,6 +249,11 @@ namespace Model
     /**
      * <p>Details about the algorithm that was used to create the model package.</p>
      */
+    inline bool SourceAlgorithmSpecificationHasBeenSet() const { return m_sourceAlgorithmSpecificationHasBeenSet; }
+
+    /**
+     * <p>Details about the algorithm that was used to create the model package.</p>
+     */
     inline void SetSourceAlgorithmSpecification(const SourceAlgorithmSpecification& value) { m_sourceAlgorithmSpecificationHasBeenSet = true; m_sourceAlgorithmSpecification = value; }
 
     /**
@@ -243,6 +276,11 @@ namespace Model
      * <p>Whether to certify the model package for listing on AWS Marketplace.</p>
      */
     inline bool GetCertifyForMarketplace() const{ return m_certifyForMarketplace; }
+
+    /**
+     * <p>Whether to certify the model package for listing on AWS Marketplace.</p>
+     */
+    inline bool CertifyForMarketplaceHasBeenSet() const { return m_certifyForMarketplaceHasBeenSet; }
 
     /**
      * <p>Whether to certify the model package for listing on AWS Marketplace.</p>

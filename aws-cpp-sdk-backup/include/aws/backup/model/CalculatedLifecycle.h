@@ -66,6 +66,12 @@ namespace Model
      * <p>A timestamp that specifies when to transition a recovery point to cold
      * storage.</p>
      */
+    inline bool MoveToColdStorageAtHasBeenSet() const { return m_moveToColdStorageAtHasBeenSet; }
+
+    /**
+     * <p>A timestamp that specifies when to transition a recovery point to cold
+     * storage.</p>
+     */
     inline void SetMoveToColdStorageAt(const Aws::Utils::DateTime& value) { m_moveToColdStorageAtHasBeenSet = true; m_moveToColdStorageAt = value; }
 
     /**
@@ -91,6 +97,11 @@ namespace Model
      * <p>A timestamp that specifies when to delete a recovery point.</p>
      */
     inline const Aws::Utils::DateTime& GetDeleteAt() const{ return m_deleteAt; }
+
+    /**
+     * <p>A timestamp that specifies when to delete a recovery point.</p>
+     */
+    inline bool DeleteAtHasBeenSet() const { return m_deleteAtHasBeenSet; }
 
     /**
      * <p>A timestamp that specifies when to delete a recovery point.</p>

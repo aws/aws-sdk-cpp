@@ -50,6 +50,11 @@ namespace Model
     /**
      * The name of the preset to be deleted.
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * The name of the preset to be deleted.
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**

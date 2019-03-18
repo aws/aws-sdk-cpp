@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The ID used to identify the metrics configuration.</p>
      */
+    inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
+
+    /**
+     * <p>The ID used to identify the metrics configuration.</p>
+     */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
     /**
@@ -90,6 +95,13 @@ namespace Model
      * tag, or a conjunction (MetricsAndOperator).</p>
      */
     inline const MetricsFilter& GetFilter() const{ return m_filter; }
+
+    /**
+     * <p>Specifies a metrics configuration filter. The metrics configuration will only
+     * include objects that meet the filter's criteria. A filter must be a prefix, a
+     * tag, or a conjunction (MetricsAndOperator).</p>
+     */
+    inline bool FilterHasBeenSet() const { return m_filterHasBeenSet; }
 
     /**
      * <p>Specifies a metrics configuration filter. The metrics configuration will only

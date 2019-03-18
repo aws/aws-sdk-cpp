@@ -61,6 +61,12 @@ namespace Model
      * <p>The name of the option group to describe. Can't be supplied together with
      * EngineName or MajorEngineVersion.</p>
      */
+    inline bool OptionGroupNameHasBeenSet() const { return m_optionGroupNameHasBeenSet; }
+
+    /**
+     * <p>The name of the option group to describe. Can't be supplied together with
+     * EngineName or MajorEngineVersion.</p>
+     */
     inline void SetOptionGroupName(const Aws::String& value) { m_optionGroupNameHasBeenSet = true; m_optionGroupName = value; }
 
     /**
@@ -102,6 +108,11 @@ namespace Model
     /**
      * <p>This parameter is not currently supported.</p>
      */
+    inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
+
+    /**
+     * <p>This parameter is not currently supported.</p>
+     */
     inline void SetFilters(const Aws::Vector<Filter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
 
     /**
@@ -136,6 +147,13 @@ namespace Model
      * beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
      */
     inline const Aws::String& GetMarker() const{ return m_marker; }
+
+    /**
+     * <p> An optional pagination token provided by a previous DescribeOptionGroups
+     * request. If this parameter is specified, the response includes only records
+     * beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
+     */
+    inline bool MarkerHasBeenSet() const { return m_markerHasBeenSet; }
 
     /**
      * <p> An optional pagination token provided by a previous DescribeOptionGroups
@@ -194,6 +212,14 @@ namespace Model
      * called a marker is included in the response so that the remaining results can be
      * retrieved. </p> <p>Default: 100</p> <p>Constraints: Minimum 20, maximum 100.</p>
      */
+    inline bool MaxRecordsHasBeenSet() const { return m_maxRecordsHasBeenSet; }
+
+    /**
+     * <p> The maximum number of records to include in the response. If more records
+     * exist than the specified <code>MaxRecords</code> value, a pagination token
+     * called a marker is included in the response so that the remaining results can be
+     * retrieved. </p> <p>Default: 100</p> <p>Constraints: Minimum 20, maximum 100.</p>
+     */
     inline void SetMaxRecords(int value) { m_maxRecordsHasBeenSet = true; m_maxRecords = value; }
 
     /**
@@ -210,6 +236,12 @@ namespace Model
      * specific database engine.</p>
      */
     inline const Aws::String& GetEngineName() const{ return m_engineName; }
+
+    /**
+     * <p>Filters the list of option groups to only include groups associated with a
+     * specific database engine.</p>
+     */
+    inline bool EngineNameHasBeenSet() const { return m_engineNameHasBeenSet; }
 
     /**
      * <p>Filters the list of option groups to only include groups associated with a
@@ -254,6 +286,13 @@ namespace Model
      * specified.</p>
      */
     inline const Aws::String& GetMajorEngineVersion() const{ return m_majorEngineVersion; }
+
+    /**
+     * <p>Filters the list of option groups to only include groups associated with a
+     * specific database engine version. If specified, then EngineName must also be
+     * specified.</p>
+     */
+    inline bool MajorEngineVersionHasBeenSet() const { return m_majorEngineVersionHasBeenSet; }
 
     /**
      * <p>Filters the list of option groups to only include groups associated with a

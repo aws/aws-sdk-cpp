@@ -55,6 +55,11 @@ namespace Model
     /**
      * <p>A list of attribute names.</p>
      */
+    inline bool AttributeNamesHasBeenSet() const { return m_attributeNamesHasBeenSet; }
+
+    /**
+     * <p>A list of attribute names.</p>
+     */
     inline void SetAttributeNames(const Aws::Vector<Aws::String>& value) { m_attributeNamesHasBeenSet = true; m_attributeNames = value; }
 
     /**

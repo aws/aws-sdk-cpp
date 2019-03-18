@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The current status of the virtual service.</p>
      */
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
+
+    /**
+     * <p>The current status of the virtual service.</p>
+     */
     inline void SetStatus(const VirtualServiceStatusCode& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**

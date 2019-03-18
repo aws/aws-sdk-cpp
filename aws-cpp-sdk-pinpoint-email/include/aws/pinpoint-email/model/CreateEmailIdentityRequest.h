@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The email address or domain that you want to verify.</p>
      */
+    inline bool EmailIdentityHasBeenSet() const { return m_emailIdentityHasBeenSet; }
+
+    /**
+     * <p>The email address or domain that you want to verify.</p>
+     */
     inline void SetEmailIdentity(const Aws::String& value) { m_emailIdentityHasBeenSet = true; m_emailIdentity = value; }
 
     /**

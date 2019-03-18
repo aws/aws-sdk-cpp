@@ -60,6 +60,12 @@ namespace Model
      * <p>Describes the starting parameters for an SQL-based Kinesis Data Analytics
      * application.</p>
      */
+    inline bool SqlRunConfigurationsHasBeenSet() const { return m_sqlRunConfigurationsHasBeenSet; }
+
+    /**
+     * <p>Describes the starting parameters for an SQL-based Kinesis Data Analytics
+     * application.</p>
+     */
     inline void SetSqlRunConfigurations(const Aws::Vector<SqlRunConfiguration>& value) { m_sqlRunConfigurationsHasBeenSet = true; m_sqlRunConfigurations = value; }
 
     /**
@@ -97,6 +103,11 @@ namespace Model
      * <p>Describes the restore behavior of a restarting application.</p>
      */
     inline const ApplicationRestoreConfiguration& GetApplicationRestoreConfiguration() const{ return m_applicationRestoreConfiguration; }
+
+    /**
+     * <p>Describes the restore behavior of a restarting application.</p>
+     */
+    inline bool ApplicationRestoreConfigurationHasBeenSet() const { return m_applicationRestoreConfigurationHasBeenSet; }
 
     /**
      * <p>Describes the restore behavior of a restarting application.</p>

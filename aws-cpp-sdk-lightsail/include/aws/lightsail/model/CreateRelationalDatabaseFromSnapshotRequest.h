@@ -59,6 +59,13 @@ namespace Model
      * <p>Must contain from 2 to 255 alphanumeric characters, or hyphens.</p> </li>
      * <li> <p>The first and last character must be a letter or number.</p> </li> </ul>
      */
+    inline bool RelationalDatabaseNameHasBeenSet() const { return m_relationalDatabaseNameHasBeenSet; }
+
+    /**
+     * <p>The name to use for your new database.</p> <p>Constraints:</p> <ul> <li>
+     * <p>Must contain from 2 to 255 alphanumeric characters, or hyphens.</p> </li>
+     * <li> <p>The first and last character must be a letter or number.</p> </li> </ul>
+     */
     inline void SetRelationalDatabaseName(const Aws::String& value) { m_relationalDatabaseNameHasBeenSet = true; m_relationalDatabaseName = value; }
 
     /**
@@ -105,6 +112,15 @@ namespace Model
      * your request.</p>
      */
     inline const Aws::String& GetAvailabilityZone() const{ return m_availabilityZone; }
+
+    /**
+     * <p>The Availability Zone in which to create your new database. Use the
+     * <code>us-east-2a</code> case-sensitive format.</p> <p>You can get a list of
+     * Availability Zones by using the <code>get regions</code> operation. Be sure to
+     * add the <code>include relational database Availability Zones</code> parameter to
+     * your request.</p>
+     */
+    inline bool AvailabilityZoneHasBeenSet() const { return m_availabilityZoneHasBeenSet; }
 
     /**
      * <p>The Availability Zone in which to create your new database. Use the
@@ -177,6 +193,15 @@ namespace Model
      * is available only to your Lightsail resources in the same region as your
      * database.</p>
      */
+    inline bool PubliclyAccessibleHasBeenSet() const { return m_publiclyAccessibleHasBeenSet; }
+
+    /**
+     * <p>Specifies the accessibility options for your new database. A value of
+     * <code>true</code> specifies a database that is available to resources outside of
+     * your Lightsail account. A value of <code>false</code> specifies a database that
+     * is available only to your Lightsail resources in the same region as your
+     * database.</p>
+     */
     inline void SetPubliclyAccessible(bool value) { m_publiclyAccessibleHasBeenSet = true; m_publiclyAccessible = value; }
 
     /**
@@ -193,6 +218,11 @@ namespace Model
      * <p>The name of the database snapshot from which to create your new database.</p>
      */
     inline const Aws::String& GetRelationalDatabaseSnapshotName() const{ return m_relationalDatabaseSnapshotName; }
+
+    /**
+     * <p>The name of the database snapshot from which to create your new database.</p>
+     */
+    inline bool RelationalDatabaseSnapshotNameHasBeenSet() const { return m_relationalDatabaseSnapshotNameHasBeenSet; }
 
     /**
      * <p>The name of the database snapshot from which to create your new database.</p>
@@ -233,6 +263,15 @@ namespace Model
      * is smaller than the bundle of the source database.</p>
      */
     inline const Aws::String& GetRelationalDatabaseBundleId() const{ return m_relationalDatabaseBundleId; }
+
+    /**
+     * <p>The bundle ID for your new database. A bundle describes the performance
+     * specifications for your database.</p> <p>You can get a list of database bundle
+     * IDs by using the <code>get relational database bundles</code> operation.</p>
+     * <p>When creating a new database from a snapshot, you cannot choose a bundle that
+     * is smaller than the bundle of the source database.</p>
+     */
+    inline bool RelationalDatabaseBundleIdHasBeenSet() const { return m_relationalDatabaseBundleIdHasBeenSet; }
 
     /**
      * <p>The bundle ID for your new database. A bundle describes the performance
@@ -297,6 +336,11 @@ namespace Model
     /**
      * <p>The name of the source database.</p>
      */
+    inline bool SourceRelationalDatabaseNameHasBeenSet() const { return m_sourceRelationalDatabaseNameHasBeenSet; }
+
+    /**
+     * <p>The name of the source database.</p>
+     */
     inline void SetSourceRelationalDatabaseName(const Aws::String& value) { m_sourceRelationalDatabaseNameHasBeenSet = true; m_sourceRelationalDatabaseName = value; }
 
     /**
@@ -335,6 +379,17 @@ namespace Model
      * UTC, then you input <code>1538424000</code> as the restore time.</p> </li> </ul>
      */
     inline const Aws::Utils::DateTime& GetRestoreTime() const{ return m_restoreTime; }
+
+    /**
+     * <p>The date and time to restore your database from.</p> <p>Constraints:</p> <ul>
+     * <li> <p>Must be before the latest restorable time for the database.</p> </li>
+     * <li> <p>Cannot be specified if the <code>use latest restorable time</code>
+     * parameter is <code>true</code>.</p> </li> <li> <p>Specified in Universal
+     * Coordinated Time (UTC).</p> </li> <li> <p>Specified in the Unix time format.</p>
+     * <p>For example, if you wish to use a restore time of October 1, 2018, at 8 PM
+     * UTC, then you input <code>1538424000</code> as the restore time.</p> </li> </ul>
+     */
+    inline bool RestoreTimeHasBeenSet() const { return m_restoreTimeHasBeenSet; }
 
     /**
      * <p>The date and time to restore your database from.</p> <p>Constraints:</p> <ul>
@@ -395,6 +450,14 @@ namespace Model
      * <p>Default: <code>false</code> </p> <p>Constraints: Cannot be specified if the
      * <code>restore time</code> parameter is provided.</p>
      */
+    inline bool UseLatestRestorableTimeHasBeenSet() const { return m_useLatestRestorableTimeHasBeenSet; }
+
+    /**
+     * <p>Specifies whether your database is restored from the latest backup time. A
+     * value of <code>true</code> restores from the latest backup time. </p>
+     * <p>Default: <code>false</code> </p> <p>Constraints: Cannot be specified if the
+     * <code>restore time</code> parameter is provided.</p>
+     */
     inline void SetUseLatestRestorableTime(bool value) { m_useLatestRestorableTimeHasBeenSet = true; m_useLatestRestorableTime = value; }
 
     /**
@@ -412,6 +475,13 @@ namespace Model
      * resource</code> operation.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>The tag keys and optional values to add to the resource during create.</p>
+     * <p>To tag a resource after it has been created, see the <code>tag
+     * resource</code> operation.</p>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
      * <p>The tag keys and optional values to add to the resource during create.</p>

@@ -55,6 +55,11 @@ namespace Model
     /**
      * <p>The name of the document.</p>
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>The name of the document.</p>
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
@@ -91,6 +96,11 @@ namespace Model
     /**
      * <p>The default version of the document.</p>
      */
+    inline bool DefaultVersionHasBeenSet() const { return m_defaultVersionHasBeenSet; }
+
+    /**
+     * <p>The default version of the document.</p>
+     */
     inline void SetDefaultVersion(const Aws::String& value) { m_defaultVersionHasBeenSet = true; m_defaultVersion = value; }
 
     /**
@@ -123,6 +133,11 @@ namespace Model
      * <p>The default version of the artifact associated with the document.</p>
      */
     inline const Aws::String& GetDefaultVersionName() const{ return m_defaultVersionName; }
+
+    /**
+     * <p>The default version of the artifact associated with the document.</p>
+     */
+    inline bool DefaultVersionNameHasBeenSet() const { return m_defaultVersionNameHasBeenSet; }
 
     /**
      * <p>The default version of the artifact associated with the document.</p>

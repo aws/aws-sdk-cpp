@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The name of the Amazon Lex bot in the association.</p>
      */
+    inline bool BotNameHasBeenSet() const { return m_botNameHasBeenSet; }
+
+    /**
+     * <p>The name of the Amazon Lex bot in the association.</p>
+     */
     inline void SetBotName(const Aws::String& value) { m_botNameHasBeenSet = true; m_botName = value; }
 
     /**
@@ -89,6 +94,12 @@ namespace Model
      * association is being made.</p>
      */
     inline const Aws::String& GetBotAlias() const{ return m_botAlias; }
+
+    /**
+     * <p>An alias pointing to the specific version of the Amazon Lex bot to which this
+     * association is being made.</p>
+     */
+    inline bool BotAliasHasBeenSet() const { return m_botAliasHasBeenSet; }
 
     /**
      * <p>An alias pointing to the specific version of the Amazon Lex bot to which this
@@ -134,6 +145,14 @@ namespace Model
      * in the next request. </p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
+    /**
+     * <p>A pagination token for fetching the next page of associations. If the
+     * response to this call is truncated, Amazon Lex returns a pagination token in the
+     * response. To fetch the next page of associations, specify the pagination token
+     * in the next request. </p>
+     */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
      * <p>A pagination token for fetching the next page of associations. If the
@@ -194,6 +213,12 @@ namespace Model
      * <p>The maximum number of associations to return in the response. The default is
      * 50. </p>
      */
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
+
+    /**
+     * <p>The maximum number of associations to return in the response. The default is
+     * 50. </p>
+     */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
@@ -210,6 +235,14 @@ namespace Model
      * a hyphen ("-") as the <code>nameContains</code> parameter.</p>
      */
     inline const Aws::String& GetNameContains() const{ return m_nameContains; }
+
+    /**
+     * <p>Substring to match in channel association names. An association will be
+     * returned if any part of its name matches the substring. For example, "xyz"
+     * matches both "xyzabc" and "abcxyz." To return all bot channel associations, use
+     * a hyphen ("-") as the <code>nameContains</code> parameter.</p>
+     */
+    inline bool NameContainsHasBeenSet() const { return m_nameContainsHasBeenSet; }
 
     /**
      * <p>Substring to match in channel association names. An association will be

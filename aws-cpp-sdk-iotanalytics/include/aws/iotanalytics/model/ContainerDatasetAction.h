@@ -63,6 +63,13 @@ namespace Model
      * contains an application and needed support libraries and is used to generate
      * data set contents.</p>
      */
+    inline bool ImageHasBeenSet() const { return m_imageHasBeenSet; }
+
+    /**
+     * <p>The ARN of the Docker container stored in your account. The Docker container
+     * contains an application and needed support libraries and is used to generate
+     * data set contents.</p>
+     */
     inline void SetImage(const Aws::String& value) { m_imageHasBeenSet = true; m_image = value; }
 
     /**
@@ -108,6 +115,14 @@ namespace Model
      * containerized application.</p>
      */
     inline const Aws::String& GetExecutionRoleArn() const{ return m_executionRoleArn; }
+
+    /**
+     * <p>The ARN of the role which gives permission to the system to access needed
+     * resources in order to run the "containerAction". This includes, at minimum,
+     * permission to retrieve the data set contents which are the input to the
+     * containerized application.</p>
+     */
+    inline bool ExecutionRoleArnHasBeenSet() const { return m_executionRoleArnHasBeenSet; }
 
     /**
      * <p>The ARN of the role which gives permission to the system to access needed
@@ -166,6 +181,11 @@ namespace Model
     /**
      * <p>Configuration of the resource which executes the "containerAction".</p>
      */
+    inline bool ResourceConfigurationHasBeenSet() const { return m_resourceConfigurationHasBeenSet; }
+
+    /**
+     * <p>Configuration of the resource which executes the "containerAction".</p>
+     */
     inline void SetResourceConfiguration(const ResourceConfiguration& value) { m_resourceConfigurationHasBeenSet = true; m_resourceConfiguration = value; }
 
     /**
@@ -191,6 +211,14 @@ namespace Model
      * "datasetContentVersionValue", or "outputFileUriValue".</p>
      */
     inline const Aws::Vector<Variable>& GetVariables() const{ return m_variables; }
+
+    /**
+     * <p>The values of variables used within the context of the execution of the
+     * containerized application (basically, parameters passed to the application).
+     * Each variable must have a name and a value given by one of "stringValue",
+     * "datasetContentVersionValue", or "outputFileUriValue".</p>
+     */
+    inline bool VariablesHasBeenSet() const { return m_variablesHasBeenSet; }
 
     /**
      * <p>The values of variables used within the context of the execution of the

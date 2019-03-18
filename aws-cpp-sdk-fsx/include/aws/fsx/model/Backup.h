@@ -64,6 +64,11 @@ namespace Model
     /**
      * <p>The ID of the backup.</p>
      */
+    inline bool BackupIdHasBeenSet() const { return m_backupIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the backup.</p>
+     */
     inline void SetBackupId(const Aws::String& value) { m_backupIdHasBeenSet = true; m_backupId = value; }
 
     /**
@@ -100,6 +105,11 @@ namespace Model
     /**
      * <p>The lifecycle status of the backup.</p>
      */
+    inline bool LifecycleHasBeenSet() const { return m_lifecycleHasBeenSet; }
+
+    /**
+     * <p>The lifecycle status of the backup.</p>
+     */
     inline void SetLifecycle(const BackupLifecycle& value) { m_lifecycleHasBeenSet = true; m_lifecycle = value; }
 
     /**
@@ -122,6 +132,11 @@ namespace Model
      * <p>Details explaining any failures that occur when creating a backup.</p>
      */
     inline const BackupFailureDetails& GetFailureDetails() const{ return m_failureDetails; }
+
+    /**
+     * <p>Details explaining any failures that occur when creating a backup.</p>
+     */
+    inline bool FailureDetailsHasBeenSet() const { return m_failureDetailsHasBeenSet; }
 
     /**
      * <p>Details explaining any failures that occur when creating a backup.</p>
@@ -152,6 +167,11 @@ namespace Model
     /**
      * <p>The type of the backup.</p>
      */
+    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
+
+    /**
+     * <p>The type of the backup.</p>
+     */
     inline void SetType(const BackupType& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
@@ -174,6 +194,9 @@ namespace Model
     inline int GetProgressPercent() const{ return m_progressPercent; }
 
     
+    inline bool ProgressPercentHasBeenSet() const { return m_progressPercentHasBeenSet; }
+
+    
     inline void SetProgressPercent(int value) { m_progressPercentHasBeenSet = true; m_progressPercent = value; }
 
     
@@ -184,6 +207,11 @@ namespace Model
      * <p>The time when a particular backup was created.</p>
      */
     inline const Aws::Utils::DateTime& GetCreationTime() const{ return m_creationTime; }
+
+    /**
+     * <p>The time when a particular backup was created.</p>
+     */
+    inline bool CreationTimeHasBeenSet() const { return m_creationTimeHasBeenSet; }
 
     /**
      * <p>The time when a particular backup was created.</p>
@@ -211,6 +239,12 @@ namespace Model
      * backup's data.</p>
      */
     inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
+
+    /**
+     * <p>The ID of the AWS Key Management Service (AWS KMS) key used to encrypt this
+     * backup's data.</p>
+     */
+    inline bool KmsKeyIdHasBeenSet() const { return m_kmsKeyIdHasBeenSet; }
 
     /**
      * <p>The ID of the AWS Key Management Service (AWS KMS) key used to encrypt this
@@ -257,6 +291,11 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) for the backup resource.</p>
      */
+    inline bool ResourceARNHasBeenSet() const { return m_resourceARNHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) for the backup resource.</p>
+     */
     inline void SetResourceARN(const Aws::String& value) { m_resourceARNHasBeenSet = true; m_resourceARN = value; }
 
     /**
@@ -289,6 +328,11 @@ namespace Model
      * <p>Tags associated with a particular file system.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>Tags associated with a particular file system.</p>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
      * <p>Tags associated with a particular file system.</p>
@@ -326,6 +370,12 @@ namespace Model
      * persisted even if the file system is deleted.</p>
      */
     inline const FileSystem& GetFileSystem() const{ return m_fileSystem; }
+
+    /**
+     * <p>Metadata of the file system associated with the backup. This metadata is
+     * persisted even if the file system is deleted.</p>
+     */
+    inline bool FileSystemHasBeenSet() const { return m_fileSystemHasBeenSet; }
 
     /**
      * <p>Metadata of the file system associated with the backup. This metadata is

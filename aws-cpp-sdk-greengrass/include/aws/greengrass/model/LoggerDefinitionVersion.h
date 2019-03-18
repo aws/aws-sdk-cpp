@@ -56,6 +56,11 @@ namespace Model
     /**
      * A list of loggers.
      */
+    inline bool LoggersHasBeenSet() const { return m_loggersHasBeenSet; }
+
+    /**
+     * A list of loggers.
+     */
     inline void SetLoggers(const Aws::Vector<Logger>& value) { m_loggersHasBeenSet = true; m_loggers = value; }
 
     /**

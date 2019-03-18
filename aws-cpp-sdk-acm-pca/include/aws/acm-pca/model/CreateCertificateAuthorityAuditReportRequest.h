@@ -59,6 +59,14 @@ namespace Model
      * <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i>
      * </code>.</p>
      */
+    inline bool CertificateAuthorityArnHasBeenSet() const { return m_certificateAuthorityArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the CA to be audited. This is of the
+     * form:</p> <p>
+     * <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i>
+     * </code>.</p>
+     */
     inline void SetCertificateAuthorityArn(const Aws::String& value) { m_certificateAuthorityArnHasBeenSet = true; m_certificateAuthorityArn = value; }
 
     /**
@@ -110,6 +118,11 @@ namespace Model
     /**
      * <p>The name of the S3 bucket that will contain the audit report.</p>
      */
+    inline bool S3BucketNameHasBeenSet() const { return m_s3BucketNameHasBeenSet; }
+
+    /**
+     * <p>The name of the S3 bucket that will contain the audit report.</p>
+     */
     inline void SetS3BucketName(const Aws::String& value) { m_s3BucketNameHasBeenSet = true; m_s3BucketName = value; }
 
     /**
@@ -143,6 +156,12 @@ namespace Model
      * <b>CSV</b>.</p>
      */
     inline const AuditReportResponseFormat& GetAuditReportResponseFormat() const{ return m_auditReportResponseFormat; }
+
+    /**
+     * <p>The format in which to create the report. This can be either <b>JSON</b> or
+     * <b>CSV</b>.</p>
+     */
+    inline bool AuditReportResponseFormatHasBeenSet() const { return m_auditReportResponseFormatHasBeenSet; }
 
     /**
      * <p>The format in which to create the report. This can be either <b>JSON</b> or

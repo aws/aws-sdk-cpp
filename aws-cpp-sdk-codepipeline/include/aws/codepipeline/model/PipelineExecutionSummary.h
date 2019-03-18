@@ -59,6 +59,11 @@ namespace Model
     /**
      * <p>The ID of the pipeline execution.</p>
      */
+    inline bool PipelineExecutionIdHasBeenSet() const { return m_pipelineExecutionIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the pipeline execution.</p>
+     */
     inline void SetPipelineExecutionId(const Aws::String& value) { m_pipelineExecutionIdHasBeenSet = true; m_pipelineExecutionId = value; }
 
     /**
@@ -97,6 +102,17 @@ namespace Model
      * successfully.</p> </li> </ul>
      */
     inline const PipelineExecutionStatus& GetStatus() const{ return m_status; }
+
+    /**
+     * <p>The status of the pipeline execution.</p> <ul> <li> <p>InProgress: The
+     * pipeline execution is currently running.</p> </li> <li> <p>Succeeded: The
+     * pipeline execution was completed successfully. </p> </li> <li> <p>Superseded:
+     * While this pipeline execution was waiting for the next stage to be completed, a
+     * newer pipeline execution advanced and continued through the pipeline instead.
+     * </p> </li> <li> <p>Failed: The pipeline execution was not completed
+     * successfully.</p> </li> </ul>
+     */
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
     /**
      * <p>The status of the pipeline execution.</p> <ul> <li> <p>InProgress: The
@@ -151,6 +167,11 @@ namespace Model
     /**
      * <p>The date and time when the pipeline execution began, in timestamp format.</p>
      */
+    inline bool StartTimeHasBeenSet() const { return m_startTimeHasBeenSet; }
+
+    /**
+     * <p>The date and time when the pipeline execution began, in timestamp format.</p>
+     */
     inline void SetStartTime(const Aws::Utils::DateTime& value) { m_startTimeHasBeenSet = true; m_startTime = value; }
 
     /**
@@ -174,6 +195,12 @@ namespace Model
      * format.</p>
      */
     inline const Aws::Utils::DateTime& GetLastUpdateTime() const{ return m_lastUpdateTime; }
+
+    /**
+     * <p>The date and time of the last change to the pipeline execution, in timestamp
+     * format.</p>
+     */
+    inline bool LastUpdateTimeHasBeenSet() const { return m_lastUpdateTimeHasBeenSet; }
 
     /**
      * <p>The date and time of the last change to the pipeline execution, in timestamp
@@ -205,6 +232,12 @@ namespace Model
      * execution.</p>
      */
     inline const Aws::Vector<SourceRevision>& GetSourceRevisions() const{ return m_sourceRevisions; }
+
+    /**
+     * <p>A list of the source artifact revisions that initiated a pipeline
+     * execution.</p>
+     */
+    inline bool SourceRevisionsHasBeenSet() const { return m_sourceRevisionsHasBeenSet; }
 
     /**
      * <p>A list of the source artifact revisions that initiated a pipeline

@@ -50,6 +50,11 @@ namespace Model
     /**
      * <p>The ARN of the fleet.</p>
      */
+    inline bool FleetArnHasBeenSet() const { return m_fleetArnHasBeenSet; }
+
+    /**
+     * <p>The ARN of the fleet.</p>
+     */
     inline void SetFleetArn(const Aws::String& value) { m_fleetArnHasBeenSet = true; m_fleetArn = value; }
 
     /**
@@ -82,6 +87,11 @@ namespace Model
      * <p>A unique identifier for a registered user's device.</p>
      */
     inline const Aws::String& GetDeviceId() const{ return m_deviceId; }
+
+    /**
+     * <p>A unique identifier for a registered user's device.</p>
+     */
+    inline bool DeviceIdHasBeenSet() const { return m_deviceIdHasBeenSet; }
 
     /**
      * <p>A unique identifier for a registered user's device.</p>

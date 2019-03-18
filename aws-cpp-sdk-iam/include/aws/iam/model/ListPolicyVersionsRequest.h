@@ -62,6 +62,15 @@ namespace Model
      * Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General
      * Reference</i>.</p>
      */
+    inline bool PolicyArnHasBeenSet() const { return m_policyArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the IAM policy for which you want the
+     * versions.</p> <p>For more information about ARNs, see <a
+     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General
+     * Reference</i>.</p>
+     */
     inline void SetPolicyArn(const Aws::String& value) { m_policyArnHasBeenSet = true; m_policyArn = value; }
 
     /**
@@ -124,6 +133,14 @@ namespace Model
      * <code>Marker</code> element in the response that you received to indicate where
      * the next call should start.</p>
      */
+    inline bool MarkerHasBeenSet() const { return m_markerHasBeenSet; }
+
+    /**
+     * <p>Use this parameter only when paginating results and only after you receive a
+     * response indicating that the results are truncated. Set it to the value of the
+     * <code>Marker</code> element in the response that you received to indicate where
+     * the next call should start.</p>
+     */
     inline void SetMarker(const Aws::String& value) { m_markerHasBeenSet = true; m_marker = value; }
 
     /**
@@ -178,6 +195,18 @@ namespace Model
      * subsequent call that tells the service where to continue from.</p>
      */
     inline int GetMaxItems() const{ return m_maxItems; }
+
+    /**
+     * <p>Use this only when paginating results to indicate the maximum number of items
+     * you want in the response. If additional items exist beyond the maximum you
+     * specify, the <code>IsTruncated</code> response element is <code>true</code>.</p>
+     * <p>If you do not include this parameter, the number of items defaults to 100.
+     * Note that IAM might return fewer results, even when there are more results
+     * available. In that case, the <code>IsTruncated</code> response element returns
+     * <code>true</code>, and <code>Marker</code> contains a value to include in the
+     * subsequent call that tells the service where to continue from.</p>
+     */
+    inline bool MaxItemsHasBeenSet() const { return m_maxItemsHasBeenSet; }
 
     /**
      * <p>Use this only when paginating results to indicate the maximum number of items

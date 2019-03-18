@@ -55,6 +55,11 @@ namespace Model
     /**
      * The ARN of the version.
      */
+    inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
+
+    /**
+     * The ARN of the version.
+     */
     inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
 
     /**
@@ -87,6 +92,11 @@ namespace Model
      * The time, in milliseconds since the epoch, when the version was created.
      */
     inline const Aws::String& GetCreationTimestamp() const{ return m_creationTimestamp; }
+
+    /**
+     * The time, in milliseconds since the epoch, when the version was created.
+     */
+    inline bool CreationTimestampHasBeenSet() const { return m_creationTimestampHasBeenSet; }
 
     /**
      * The time, in milliseconds since the epoch, when the version was created.
@@ -127,6 +137,11 @@ namespace Model
     /**
      * The ID of the version.
      */
+    inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
+
+    /**
+     * The ID of the version.
+     */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
     /**
@@ -159,6 +174,11 @@ namespace Model
      * The unique ID of the version.
      */
     inline const Aws::String& GetVersion() const{ return m_version; }
+
+    /**
+     * The unique ID of the version.
+     */
+    inline bool VersionHasBeenSet() const { return m_versionHasBeenSet; }
 
     /**
      * The unique ID of the version.

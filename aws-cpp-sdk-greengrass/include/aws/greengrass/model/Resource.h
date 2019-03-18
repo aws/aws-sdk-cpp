@@ -60,6 +60,13 @@ namespace Model
      * configuration. Max length is 128 characters with pattern ''[a-zA-Z0-9:_-]+''.
      * This must be unique within a Greengrass group.
      */
+    inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
+
+    /**
+     * The resource ID, used to refer to a resource in the Lambda function
+     * configuration. Max length is 128 characters with pattern ''[a-zA-Z0-9:_-]+''.
+     * This must be unique within a Greengrass group.
+     */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
     /**
@@ -110,6 +117,13 @@ namespace Model
      * console. Max length 128 characters with pattern ''[a-zA-Z0-9:_-]+''. This must
      * be unique within a Greengrass group.
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * The descriptive resource name, which is displayed on the AWS IoT Greengrass
+     * console. Max length 128 characters with pattern ''[a-zA-Z0-9:_-]+''. This must
+     * be unique within a Greengrass group.
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
@@ -152,6 +166,11 @@ namespace Model
      * A container of data for all resource types.
      */
     inline const ResourceDataContainer& GetResourceDataContainer() const{ return m_resourceDataContainer; }
+
+    /**
+     * A container of data for all resource types.
+     */
+    inline bool ResourceDataContainerHasBeenSet() const { return m_resourceDataContainerHasBeenSet; }
 
     /**
      * A container of data for all resource types.

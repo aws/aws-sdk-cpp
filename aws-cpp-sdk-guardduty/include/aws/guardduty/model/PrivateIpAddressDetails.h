@@ -56,6 +56,11 @@ namespace Model
     /**
      * Private DNS name of the EC2 instance.
      */
+    inline bool PrivateDnsNameHasBeenSet() const { return m_privateDnsNameHasBeenSet; }
+
+    /**
+     * Private DNS name of the EC2 instance.
+     */
     inline void SetPrivateDnsName(const Aws::String& value) { m_privateDnsNameHasBeenSet = true; m_privateDnsName = value; }
 
     /**
@@ -88,6 +93,11 @@ namespace Model
      * Private IP address of the EC2 instance.
      */
     inline const Aws::String& GetPrivateIpAddress() const{ return m_privateIpAddress; }
+
+    /**
+     * Private IP address of the EC2 instance.
+     */
+    inline bool PrivateIpAddressHasBeenSet() const { return m_privateIpAddressHasBeenSet; }
 
     /**
      * Private IP address of the EC2 instance.

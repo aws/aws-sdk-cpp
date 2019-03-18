@@ -69,6 +69,14 @@ namespace Model
      * <code>AttributeDefinitions</code> must include the key element(s) of the new
      * index.</p>
      */
+    inline bool AttributeDefinitionsHasBeenSet() const { return m_attributeDefinitionsHasBeenSet; }
+
+    /**
+     * <p>An array of attributes that describe the key schema for the table and
+     * indexes. If you are adding a new global secondary index to the table,
+     * <code>AttributeDefinitions</code> must include the key element(s) of the new
+     * index.</p>
+     */
     inline void SetAttributeDefinitions(const Aws::Vector<AttributeDefinition>& value) { m_attributeDefinitionsHasBeenSet = true; m_attributeDefinitions = value; }
 
     /**
@@ -120,6 +128,11 @@ namespace Model
     /**
      * <p>The name of the table to be updated.</p>
      */
+    inline bool TableNameHasBeenSet() const { return m_tableNameHasBeenSet; }
+
+    /**
+     * <p>The name of the table to be updated.</p>
+     */
     inline void SetTableName(const Aws::String& value) { m_tableNameHasBeenSet = true; m_tableName = value; }
 
     /**
@@ -161,6 +174,20 @@ namespace Model
      * for unpredictable workloads. </p> </li> </ul>
      */
     inline const BillingMode& GetBillingMode() const{ return m_billingMode; }
+
+    /**
+     * <p>Controls how you are charged for read and write throughput and how you manage
+     * capacity. When switching from pay-per-request to provisioned capacity, initial
+     * provisioned capacity values must be set. The initial provisioned capacity values
+     * are estimated based on the consumed read and write capacity of your table and
+     * global secondary indexes over the past 30 minutes.</p> <ul> <li> <p>
+     * <code>PROVISIONED</code> - Sets the billing mode to <code>PROVISIONED</code>. We
+     * recommend using <code>PROVISIONED</code> for predictable workloads.</p> </li>
+     * <li> <p> <code>PAY_PER_REQUEST</code> - Sets the billing mode to
+     * <code>PAY_PER_REQUEST</code>. We recommend using <code>PAY_PER_REQUEST</code>
+     * for unpredictable workloads. </p> </li> </ul>
+     */
+    inline bool BillingModeHasBeenSet() const { return m_billingModeHasBeenSet; }
 
     /**
      * <p>Controls how you are charged for read and write throughput and how you manage
@@ -227,6 +254,11 @@ namespace Model
     /**
      * <p>The new provisioned throughput settings for the specified table or index.</p>
      */
+    inline bool ProvisionedThroughputHasBeenSet() const { return m_provisionedThroughputHasBeenSet; }
+
+    /**
+     * <p>The new provisioned throughput settings for the specified table or index.</p>
+     */
     inline void SetProvisionedThroughput(const ProvisionedThroughput& value) { m_provisionedThroughputHasBeenSet = true; m_provisionedThroughput = value; }
 
     /**
@@ -257,6 +289,19 @@ namespace Model
      * Global Secondary Indexes</a> in the <i>Amazon DynamoDB Developer Guide</i>. </p>
      */
     inline const Aws::Vector<GlobalSecondaryIndexUpdate>& GetGlobalSecondaryIndexUpdates() const{ return m_globalSecondaryIndexUpdates; }
+
+    /**
+     * <p>An array of one or more global secondary indexes for the table. For each
+     * index in the array, you can request one action:</p> <ul> <li> <p>
+     * <code>Create</code> - add a new global secondary index to the table.</p> </li>
+     * <li> <p> <code>Update</code> - modify the provisioned throughput settings of an
+     * existing global secondary index.</p> </li> <li> <p> <code>Delete</code> - remove
+     * a global secondary index from the table.</p> </li> </ul> <p>For more
+     * information, see <a
+     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/GSI.OnlineOps.html">Managing
+     * Global Secondary Indexes</a> in the <i>Amazon DynamoDB Developer Guide</i>. </p>
+     */
+    inline bool GlobalSecondaryIndexUpdatesHasBeenSet() const { return m_globalSecondaryIndexUpdatesHasBeenSet; }
 
     /**
      * <p>An array of one or more global secondary indexes for the table. For each
@@ -351,6 +396,14 @@ namespace Model
      * enable a stream on a table that already has a stream, or if you attempt to
      * disable a stream on a table which does not have a stream.</p> </note>
      */
+    inline bool StreamSpecificationHasBeenSet() const { return m_streamSpecificationHasBeenSet; }
+
+    /**
+     * <p>Represents the DynamoDB Streams configuration for the table.</p> <note>
+     * <p>You will receive a <code>ResourceInUseException</code> if you attempt to
+     * enable a stream on a table that already has a stream, or if you attempt to
+     * disable a stream on a table which does not have a stream.</p> </note>
+     */
     inline void SetStreamSpecification(const StreamSpecification& value) { m_streamSpecificationHasBeenSet = true; m_streamSpecification = value; }
 
     /**
@@ -382,6 +435,11 @@ namespace Model
      * <p>The new server-side encryption settings for the specified table.</p>
      */
     inline const SSESpecification& GetSSESpecification() const{ return m_sSESpecification; }
+
+    /**
+     * <p>The new server-side encryption settings for the specified table.</p>
+     */
+    inline bool SSESpecificationHasBeenSet() const { return m_sSESpecificationHasBeenSet; }
 
     /**
      * <p>The new server-side encryption settings for the specified table.</p>

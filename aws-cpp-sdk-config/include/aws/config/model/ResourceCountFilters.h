@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The type of the AWS resource.</p>
      */
+    inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
+
+    /**
+     * <p>The type of the AWS resource.</p>
+     */
     inline void SetResourceType(const ResourceType& value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
 
     /**
@@ -79,6 +84,11 @@ namespace Model
      * <p>The 12-digit ID of the account.</p>
      */
     inline const Aws::String& GetAccountId() const{ return m_accountId; }
+
+    /**
+     * <p>The 12-digit ID of the account.</p>
+     */
+    inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
 
     /**
      * <p>The 12-digit ID of the account.</p>
@@ -115,6 +125,11 @@ namespace Model
      * <p>The region where the account is located.</p>
      */
     inline const Aws::String& GetRegion() const{ return m_region; }
+
+    /**
+     * <p>The region where the account is located.</p>
+     */
+    inline bool RegionHasBeenSet() const { return m_regionHasBeenSet; }
 
     /**
      * <p>The region where the account is located.</p>

@@ -57,6 +57,11 @@ namespace Model
     /**
      * The unique ID of the Amazon Pinpoint project used to send the message.
      */
+    inline bool ApplicationIdHasBeenSet() const { return m_applicationIdHasBeenSet; }
+
+    /**
+     * The unique ID of the Amazon Pinpoint project used to send the message.
+     */
     inline void SetApplicationId(const Aws::String& value) { m_applicationIdHasBeenSet = true; m_applicationId = value; }
 
     /**
@@ -89,6 +94,11 @@ namespace Model
      * The unique ID assigned to the users-messages request.
      */
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    /**
+     * The unique ID assigned to the users-messages request.
+     */
+    inline bool RequestIdHasBeenSet() const { return m_requestIdHasBeenSet; }
 
     /**
      * The unique ID assigned to the users-messages request.
@@ -128,6 +138,14 @@ namespace Model
      * object.
      */
     inline const Aws::Map<Aws::String, Aws::Map<Aws::String, EndpointMessageResult>>& GetResult() const{ return m_result; }
+
+    /**
+     * An object that shows the endpoints that were messaged for each user. The object
+     * provides a list of user IDs. For each user ID, it provides the endpoint IDs that
+     * were messaged. For each endpoint ID, it provides an EndpointMessageResult
+     * object.
+     */
+    inline bool ResultHasBeenSet() const { return m_resultHasBeenSet; }
 
     /**
      * An object that shows the endpoints that were messaged for each user. The object

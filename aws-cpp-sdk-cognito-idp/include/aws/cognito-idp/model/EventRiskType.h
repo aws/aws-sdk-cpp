@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The risk decision.</p>
      */
+    inline bool RiskDecisionHasBeenSet() const { return m_riskDecisionHasBeenSet; }
+
+    /**
+     * <p>The risk decision.</p>
+     */
     inline void SetRiskDecision(const RiskDecisionType& value) { m_riskDecisionHasBeenSet = true; m_riskDecision = value; }
 
     /**
@@ -78,6 +83,11 @@ namespace Model
      * <p>The risk level.</p>
      */
     inline const RiskLevelType& GetRiskLevel() const{ return m_riskLevel; }
+
+    /**
+     * <p>The risk level.</p>
+     */
+    inline bool RiskLevelHasBeenSet() const { return m_riskLevelHasBeenSet; }
 
     /**
      * <p>The risk level.</p>

@@ -59,6 +59,12 @@ namespace Model
      * <p>A value that indicates whether all output fields should be contained within
      * quotation marks.</p>
      */
+    inline bool QuoteFieldsHasBeenSet() const { return m_quoteFieldsHasBeenSet; }
+
+    /**
+     * <p>A value that indicates whether all output fields should be contained within
+     * quotation marks.</p>
+     */
     inline void SetQuoteFields(const QuoteFields& value) { m_quoteFieldsHasBeenSet = true; m_quoteFields = value; }
 
     /**
@@ -85,6 +91,12 @@ namespace Model
      * already escaped value.</p>
      */
     inline const Aws::String& GetQuoteEscapeCharacter() const{ return m_quoteEscapeCharacter; }
+
+    /**
+     * <p>A single character used for escaping the quotation-mark character inside an
+     * already escaped value.</p>
+     */
+    inline bool QuoteEscapeCharacterHasBeenSet() const { return m_quoteEscapeCharacterHasBeenSet; }
 
     /**
      * <p>A single character used for escaping the quotation-mark character inside an
@@ -131,6 +143,11 @@ namespace Model
     /**
      * <p>A value used to separate individual records from each other.</p>
      */
+    inline bool RecordDelimiterHasBeenSet() const { return m_recordDelimiterHasBeenSet; }
+
+    /**
+     * <p>A value used to separate individual records from each other.</p>
+     */
     inline void SetRecordDelimiter(const Aws::String& value) { m_recordDelimiterHasBeenSet = true; m_recordDelimiter = value; }
 
     /**
@@ -164,6 +181,12 @@ namespace Model
      * record.</p>
      */
     inline const Aws::String& GetFieldDelimiter() const{ return m_fieldDelimiter; }
+
+    /**
+     * <p>A value used to separate individual fields from each other within a
+     * record.</p>
+     */
+    inline bool FieldDelimiterHasBeenSet() const { return m_fieldDelimiterHasBeenSet; }
 
     /**
      * <p>A value used to separate individual fields from each other within a
@@ -207,6 +230,12 @@ namespace Model
      * value.</p>
      */
     inline const Aws::String& GetQuoteCharacter() const{ return m_quoteCharacter; }
+
+    /**
+     * <p>A value used as an escape character where the field delimiter is part of the
+     * value.</p>
+     */
+    inline bool QuoteCharacterHasBeenSet() const { return m_quoteCharacterHasBeenSet; }
 
     /**
      * <p>A value used as an escape character where the field delimiter is part of the

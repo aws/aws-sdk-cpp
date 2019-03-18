@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The URL where the Git repository is located.</p>
      */
+    inline bool RepositoryUrlHasBeenSet() const { return m_repositoryUrlHasBeenSet; }
+
+    /**
+     * <p>The URL where the Git repository is located.</p>
+     */
     inline void SetRepositoryUrl(const Aws::String& value) { m_repositoryUrlHasBeenSet = true; m_repositoryUrl = value; }
 
     /**
@@ -88,6 +93,11 @@ namespace Model
      * <p>The default branch for the Git repository.</p>
      */
     inline const Aws::String& GetBranch() const{ return m_branch; }
+
+    /**
+     * <p>The default branch for the Git repository.</p>
+     */
+    inline bool BranchHasBeenSet() const { return m_branchHasBeenSet; }
 
     /**
      * <p>The default branch for the Git repository.</p>
@@ -128,6 +138,15 @@ namespace Model
      * <i>Password</i>}</code> </p>
      */
     inline const Aws::String& GetSecretArn() const{ return m_secretArn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the AWS Secrets Manager secret that
+     * contains the credentials used to access the git repository. The secret must have
+     * a staging label of <code>AWSCURRENT</code> and must be in the following
+     * format:</p> <p> <code>{"username": <i>UserName</i>, "password":
+     * <i>Password</i>}</code> </p>
+     */
+    inline bool SecretArnHasBeenSet() const { return m_secretArnHasBeenSet; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the AWS Secrets Manager secret that

@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p>The identifier of the cluster step.</p>
      */
+    inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
+
+    /**
+     * <p>The identifier of the cluster step.</p>
+     */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
     /**
@@ -90,6 +95,11 @@ namespace Model
      * <p>The name of the cluster step.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
+
+    /**
+     * <p>The name of the cluster step.</p>
+     */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
      * <p>The name of the cluster step.</p>
@@ -130,6 +140,11 @@ namespace Model
     /**
      * <p>The Hadoop job configuration of the cluster step.</p>
      */
+    inline bool ConfigHasBeenSet() const { return m_configHasBeenSet; }
+
+    /**
+     * <p>The Hadoop job configuration of the cluster step.</p>
+     */
     inline void SetConfig(const HadoopStepConfig& value) { m_configHasBeenSet = true; m_config = value; }
 
     /**
@@ -155,6 +170,14 @@ namespace Model
      * instead.</p>
      */
     inline const ActionOnFailure& GetActionOnFailure() const{ return m_actionOnFailure; }
+
+    /**
+     * <p>The action to take when the cluster step fails. Possible values are
+     * TERMINATE_CLUSTER, CANCEL_AND_WAIT, and CONTINUE. TERMINATE_JOB_FLOW is
+     * available for backward compatibility. We recommend using TERMINATE_CLUSTER
+     * instead.</p>
+     */
+    inline bool ActionOnFailureHasBeenSet() const { return m_actionOnFailureHasBeenSet; }
 
     /**
      * <p>The action to take when the cluster step fails. Possible values are
@@ -193,6 +216,11 @@ namespace Model
      * <p>The current execution status details of the cluster step.</p>
      */
     inline const StepStatus& GetStatus() const{ return m_status; }
+
+    /**
+     * <p>The current execution status details of the cluster step.</p>
+     */
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
     /**
      * <p>The current execution status details of the cluster step.</p>

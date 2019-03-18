@@ -60,6 +60,12 @@ namespace Model
      * <p>The stack name or unique stack ID that includes the resource that you want to
      * signal.</p>
      */
+    inline bool StackNameHasBeenSet() const { return m_stackNameHasBeenSet; }
+
+    /**
+     * <p>The stack name or unique stack ID that includes the resource that you want to
+     * signal.</p>
+     */
     inline void SetStackName(const Aws::String& value) { m_stackNameHasBeenSet = true; m_stackName = value; }
 
     /**
@@ -98,6 +104,12 @@ namespace Model
      * name of the resource that given in the template.</p>
      */
     inline const Aws::String& GetLogicalResourceId() const{ return m_logicalResourceId; }
+
+    /**
+     * <p>The logical ID of the resource that you want to signal. The logical ID is the
+     * name of the resource that given in the template.</p>
+     */
+    inline bool LogicalResourceIdHasBeenSet() const { return m_logicalResourceIdHasBeenSet; }
 
     /**
      * <p>The logical ID of the resource that you want to signal. The logical ID is the
@@ -143,6 +155,14 @@ namespace Model
      * condition), each signal requires a different unique ID.</p>
      */
     inline const Aws::String& GetUniqueId() const{ return m_uniqueId; }
+
+    /**
+     * <p>A unique ID of the signal. When you signal Amazon EC2 instances or Auto
+     * Scaling groups, specify the instance ID that you are signaling as the unique ID.
+     * If you send multiple signals to a single resource (such as signaling a wait
+     * condition), each signal requires a different unique ID.</p>
+     */
+    inline bool UniqueIdHasBeenSet() const { return m_uniqueIdHasBeenSet; }
 
     /**
      * <p>A unique ID of the signal. When you signal Amazon EC2 instances or Auto
@@ -199,6 +219,13 @@ namespace Model
      * update.</p>
      */
     inline const ResourceSignalStatus& GetStatus() const{ return m_status; }
+
+    /**
+     * <p>The status of the signal, which is either success or failure. A failure
+     * signal causes AWS CloudFormation to immediately fail the stack creation or
+     * update.</p>
+     */
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
     /**
      * <p>The status of the signal, which is either success or failure. A failure

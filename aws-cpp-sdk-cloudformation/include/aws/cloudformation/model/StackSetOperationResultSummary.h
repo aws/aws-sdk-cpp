@@ -60,6 +60,11 @@ namespace Model
     /**
      * <p>The name of the AWS account for this operation result.</p>
      */
+    inline bool AccountHasBeenSet() const { return m_accountHasBeenSet; }
+
+    /**
+     * <p>The name of the AWS account for this operation result.</p>
+     */
     inline void SetAccount(const Aws::String& value) { m_accountHasBeenSet = true; m_account = value; }
 
     /**
@@ -92,6 +97,11 @@ namespace Model
      * <p>The name of the AWS region for this operation result.</p>
      */
     inline const Aws::String& GetRegion() const{ return m_region; }
+
+    /**
+     * <p>The name of the AWS region for this operation result.</p>
+     */
+    inline bool RegionHasBeenSet() const { return m_regionHasBeenSet; }
 
     /**
      * <p>The name of the AWS region for this operation result.</p>
@@ -140,6 +150,23 @@ namespace Model
      * completed successfully.</p> </li> </ul>
      */
     inline const StackSetOperationResultStatus& GetStatus() const{ return m_status; }
+
+    /**
+     * <p>The result status of the stack set operation for the given account in the
+     * given region.</p> <ul> <li> <p> <code>CANCELLED</code>: The operation in the
+     * specified account and region has been cancelled. This is either because a user
+     * has stopped the stack set operation, or because the failure tolerance of the
+     * stack set operation has been exceeded.</p> </li> <li> <p> <code>FAILED</code>:
+     * The operation in the specified account and region failed. </p> <p>If the stack
+     * set operation fails in enough accounts within a region, the failure tolerance
+     * for the stack set operation as a whole might be exceeded. </p> </li> <li> <p>
+     * <code>RUNNING</code>: The operation in the specified account and region is
+     * currently in progress.</p> </li> <li> <p> <code>PENDING</code>: The operation in
+     * the specified account and region has yet to start. </p> </li> <li> <p>
+     * <code>SUCCEEDED</code>: The operation in the specified account and region
+     * completed successfully.</p> </li> </ul>
+     */
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
     /**
      * <p>The result status of the stack set operation for the given account in the
@@ -218,6 +245,11 @@ namespace Model
     /**
      * <p>The reason for the assigned result status.</p>
      */
+    inline bool StatusReasonHasBeenSet() const { return m_statusReasonHasBeenSet; }
+
+    /**
+     * <p>The reason for the assigned result status.</p>
+     */
     inline void SetStatusReason(const Aws::String& value) { m_statusReasonHasBeenSet = true; m_statusReason = value; }
 
     /**
@@ -251,6 +283,12 @@ namespace Model
      * present, before proceeding with stack set operations in an account</p>
      */
     inline const AccountGateResult& GetAccountGateResult() const{ return m_accountGateResult; }
+
+    /**
+     * <p>The results of the account gate function AWS CloudFormation invokes, if
+     * present, before proceeding with stack set operations in an account</p>
+     */
+    inline bool AccountGateResultHasBeenSet() const { return m_accountGateResultHasBeenSet; }
 
     /**
      * <p>The results of the account gate function AWS CloudFormation invokes, if

@@ -54,6 +54,11 @@ namespace Model
     /**
      * <p>The CA certificate identifier.</p>
      */
+    inline bool CertificateIdHasBeenSet() const { return m_certificateIdHasBeenSet; }
+
+    /**
+     * <p>The CA certificate identifier.</p>
+     */
     inline void SetCertificateId(const Aws::String& value) { m_certificateIdHasBeenSet = true; m_certificateId = value; }
 
     /**

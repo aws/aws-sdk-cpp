@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The name of the alarm.</p>
      */
+    inline bool AlarmNameHasBeenSet() const { return m_alarmNameHasBeenSet; }
+
+    /**
+     * <p>The name of the alarm.</p>
+     */
     inline void SetAlarmName(const Aws::String& value) { m_alarmNameHasBeenSet = true; m_alarmName = value; }
 
     /**
@@ -88,6 +93,11 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the alarm.</p>
      */
     inline const Aws::String& GetAlarmARN() const{ return m_alarmARN; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the alarm.</p>
+     */
+    inline bool AlarmARNHasBeenSet() const { return m_alarmARNHasBeenSet; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the alarm.</p>

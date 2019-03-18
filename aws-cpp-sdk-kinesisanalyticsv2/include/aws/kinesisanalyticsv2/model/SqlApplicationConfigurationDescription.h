@@ -61,6 +61,12 @@ namespace Model
      * <p>The array of <a>InputDescription</a> objects describing the input streams
      * used by the application.</p>
      */
+    inline bool InputDescriptionsHasBeenSet() const { return m_inputDescriptionsHasBeenSet; }
+
+    /**
+     * <p>The array of <a>InputDescription</a> objects describing the input streams
+     * used by the application.</p>
+     */
     inline void SetInputDescriptions(const Aws::Vector<InputDescription>& value) { m_inputDescriptionsHasBeenSet = true; m_inputDescriptions = value; }
 
     /**
@@ -104,6 +110,12 @@ namespace Model
      * <p>The array of <a>OutputDescription</a> objects describing the destination
      * streams used by the application.</p>
      */
+    inline bool OutputDescriptionsHasBeenSet() const { return m_outputDescriptionsHasBeenSet; }
+
+    /**
+     * <p>The array of <a>OutputDescription</a> objects describing the destination
+     * streams used by the application.</p>
+     */
     inline void SetOutputDescriptions(const Aws::Vector<OutputDescription>& value) { m_outputDescriptionsHasBeenSet = true; m_outputDescriptions = value; }
 
     /**
@@ -142,6 +154,12 @@ namespace Model
      * reference data sources used by the application.</p>
      */
     inline const Aws::Vector<ReferenceDataSourceDescription>& GetReferenceDataSourceDescriptions() const{ return m_referenceDataSourceDescriptions; }
+
+    /**
+     * <p>The array of <a>ReferenceDataSourceDescription</a> objects describing the
+     * reference data sources used by the application.</p>
+     */
+    inline bool ReferenceDataSourceDescriptionsHasBeenSet() const { return m_referenceDataSourceDescriptionsHasBeenSet; }
 
     /**
      * <p>The array of <a>ReferenceDataSourceDescription</a> objects describing the

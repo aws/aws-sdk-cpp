@@ -51,6 +51,9 @@ namespace Model
     inline const HlsSettings& GetHlsSettings() const{ return m_hlsSettings; }
 
     
+    inline bool HlsSettingsHasBeenSet() const { return m_hlsSettingsHasBeenSet; }
+
+    
     inline void SetHlsSettings(const HlsSettings& value) { m_hlsSettingsHasBeenSet = true; m_hlsSettings = value; }
 
     

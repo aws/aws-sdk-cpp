@@ -60,6 +60,11 @@ namespace Model
     /**
      * <p> An ARN of a CloudFront resource.</p>
      */
+    inline bool ResourceHasBeenSet() const { return m_resourceHasBeenSet; }
+
+    /**
+     * <p> An ARN of a CloudFront resource.</p>
+     */
     inline void SetResource(const Aws::String& value) { m_resourceHasBeenSet = true; m_resource = value; }
 
     /**

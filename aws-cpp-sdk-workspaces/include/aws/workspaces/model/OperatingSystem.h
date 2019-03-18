@@ -55,6 +55,11 @@ namespace Model
     /**
      * <p>The operating system.</p>
      */
+    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
+
+    /**
+     * <p>The operating system.</p>
+     */
     inline void SetType(const OperatingSystemType& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**

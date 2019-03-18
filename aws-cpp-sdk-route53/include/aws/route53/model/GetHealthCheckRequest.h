@@ -60,6 +60,14 @@ namespace Model
      * specify which health check to use. The value can be up to 64 characters
      * long.</p>
      */
+    inline bool HealthCheckIdHasBeenSet() const { return m_healthCheckIdHasBeenSet; }
+
+    /**
+     * <p>The identifier that Amazon Route 53 assigned to the health check when you
+     * created it. When you add or update a resource record set, you use this value to
+     * specify which health check to use. The value can be up to 64 characters
+     * long.</p>
+     */
     inline void SetHealthCheckId(const Aws::String& value) { m_healthCheckIdHasBeenSet = true; m_healthCheckId = value; }
 
     /**

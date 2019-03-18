@@ -53,6 +53,11 @@ namespace Model
     /**
      * <p>The name of the application.</p>
      */
+    inline bool ApplicationNameHasBeenSet() const { return m_applicationNameHasBeenSet; }
+
+    /**
+     * <p>The name of the application.</p>
+     */
     inline void SetApplicationName(const Aws::String& value) { m_applicationNameHasBeenSet = true; m_applicationName = value; }
 
     /**
@@ -86,6 +91,12 @@ namespace Model
      * Analytics application.</p>
      */
     inline const RunConfiguration& GetRunConfiguration() const{ return m_runConfiguration; }
+
+    /**
+     * <p>Identifies the run configuration (start parameters) of a Kinesis Data
+     * Analytics application.</p>
+     */
+    inline bool RunConfigurationHasBeenSet() const { return m_runConfigurationHasBeenSet; }
 
     /**
      * <p>Identifies the run configuration (start parameters) of a Kinesis Data

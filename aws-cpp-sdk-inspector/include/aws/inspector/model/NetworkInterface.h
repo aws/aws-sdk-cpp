@@ -60,6 +60,11 @@ namespace Model
     /**
      * <p>The ID of the network interface.</p>
      */
+    inline bool NetworkInterfaceIdHasBeenSet() const { return m_networkInterfaceIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the network interface.</p>
+     */
     inline void SetNetworkInterfaceId(const Aws::String& value) { m_networkInterfaceIdHasBeenSet = true; m_networkInterfaceId = value; }
 
     /**
@@ -92,6 +97,11 @@ namespace Model
      * <p>The ID of a subnet associated with the network interface.</p>
      */
     inline const Aws::String& GetSubnetId() const{ return m_subnetId; }
+
+    /**
+     * <p>The ID of a subnet associated with the network interface.</p>
+     */
+    inline bool SubnetIdHasBeenSet() const { return m_subnetIdHasBeenSet; }
 
     /**
      * <p>The ID of a subnet associated with the network interface.</p>
@@ -132,6 +142,11 @@ namespace Model
     /**
      * <p>The ID of a VPC associated with the network interface.</p>
      */
+    inline bool VpcIdHasBeenSet() const { return m_vpcIdHasBeenSet; }
+
+    /**
+     * <p>The ID of a VPC associated with the network interface.</p>
+     */
     inline void SetVpcId(const Aws::String& value) { m_vpcIdHasBeenSet = true; m_vpcId = value; }
 
     /**
@@ -164,6 +179,11 @@ namespace Model
      * <p>The name of a private DNS associated with the network interface.</p>
      */
     inline const Aws::String& GetPrivateDnsName() const{ return m_privateDnsName; }
+
+    /**
+     * <p>The name of a private DNS associated with the network interface.</p>
+     */
+    inline bool PrivateDnsNameHasBeenSet() const { return m_privateDnsNameHasBeenSet; }
 
     /**
      * <p>The name of a private DNS associated with the network interface.</p>
@@ -204,6 +224,11 @@ namespace Model
     /**
      * <p>The private IP address associated with the network interface.</p>
      */
+    inline bool PrivateIpAddressHasBeenSet() const { return m_privateIpAddressHasBeenSet; }
+
+    /**
+     * <p>The private IP address associated with the network interface.</p>
+     */
     inline void SetPrivateIpAddress(const Aws::String& value) { m_privateIpAddressHasBeenSet = true; m_privateIpAddress = value; }
 
     /**
@@ -237,6 +262,12 @@ namespace Model
      * Includes the privateDnsName and privateIpAddress.</p>
      */
     inline const Aws::Vector<PrivateIp>& GetPrivateIpAddresses() const{ return m_privateIpAddresses; }
+
+    /**
+     * <p>A list of the private IP addresses associated with the network interface.
+     * Includes the privateDnsName and privateIpAddress.</p>
+     */
+    inline bool PrivateIpAddressesHasBeenSet() const { return m_privateIpAddressesHasBeenSet; }
 
     /**
      * <p>A list of the private IP addresses associated with the network interface.
@@ -283,6 +314,11 @@ namespace Model
     /**
      * <p>The name of a public DNS associated with the network interface.</p>
      */
+    inline bool PublicDnsNameHasBeenSet() const { return m_publicDnsNameHasBeenSet; }
+
+    /**
+     * <p>The name of a public DNS associated with the network interface.</p>
+     */
     inline void SetPublicDnsName(const Aws::String& value) { m_publicDnsNameHasBeenSet = true; m_publicDnsName = value; }
 
     /**
@@ -319,6 +355,11 @@ namespace Model
     /**
      * <p>The public IP address from which the network interface is reachable.</p>
      */
+    inline bool PublicIpHasBeenSet() const { return m_publicIpHasBeenSet; }
+
+    /**
+     * <p>The public IP address from which the network interface is reachable.</p>
+     */
     inline void SetPublicIp(const Aws::String& value) { m_publicIpHasBeenSet = true; m_publicIp = value; }
 
     /**
@@ -351,6 +392,11 @@ namespace Model
      * <p>The IP addresses associated with the network interface.</p>
      */
     inline const Aws::Vector<Aws::String>& GetIpv6Addresses() const{ return m_ipv6Addresses; }
+
+    /**
+     * <p>The IP addresses associated with the network interface.</p>
+     */
+    inline bool Ipv6AddressesHasBeenSet() const { return m_ipv6AddressesHasBeenSet; }
 
     /**
      * <p>The IP addresses associated with the network interface.</p>
@@ -393,6 +439,12 @@ namespace Model
      * the groupId and groupName.</p>
      */
     inline const Aws::Vector<SecurityGroup>& GetSecurityGroups() const{ return m_securityGroups; }
+
+    /**
+     * <p>A list of the security groups associated with the network interface. Includes
+     * the groupId and groupName.</p>
+     */
+    inline bool SecurityGroupsHasBeenSet() const { return m_securityGroupsHasBeenSet; }
 
     /**
      * <p>A list of the security groups associated with the network interface. Includes

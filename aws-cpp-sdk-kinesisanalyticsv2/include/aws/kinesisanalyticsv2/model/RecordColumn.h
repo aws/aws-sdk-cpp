@@ -60,6 +60,12 @@ namespace Model
      * <p>The name of the column that is created in the in-application input stream or
      * reference table.</p>
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>The name of the column that is created in the in-application input stream or
+     * reference table.</p>
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
@@ -103,6 +109,12 @@ namespace Model
      * <p>A reference to the data element in the streaming input of the reference data
      * source.</p>
      */
+    inline bool MappingHasBeenSet() const { return m_mappingHasBeenSet; }
+
+    /**
+     * <p>A reference to the data element in the streaming input of the reference data
+     * source.</p>
+     */
     inline void SetMapping(const Aws::String& value) { m_mappingHasBeenSet = true; m_mapping = value; }
 
     /**
@@ -141,6 +153,12 @@ namespace Model
      * table.</p>
      */
     inline const Aws::String& GetSqlType() const{ return m_sqlType; }
+
+    /**
+     * <p>The type of column created in the in-application input stream or reference
+     * table.</p>
+     */
+    inline bool SqlTypeHasBeenSet() const { return m_sqlTypeHasBeenSet; }
 
     /**
      * <p>The type of column created in the in-application input stream or reference

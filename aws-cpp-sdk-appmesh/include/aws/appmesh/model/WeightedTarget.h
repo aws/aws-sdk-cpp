@@ -62,6 +62,11 @@ namespace Model
     /**
      * <p>The virtual node to associate with the weighted target.</p>
      */
+    inline bool VirtualNodeHasBeenSet() const { return m_virtualNodeHasBeenSet; }
+
+    /**
+     * <p>The virtual node to associate with the weighted target.</p>
+     */
     inline void SetVirtualNode(const Aws::String& value) { m_virtualNodeHasBeenSet = true; m_virtualNode = value; }
 
     /**
@@ -94,6 +99,11 @@ namespace Model
      * <p>The relative weight of the weighted target.</p>
      */
     inline int GetWeight() const{ return m_weight; }
+
+    /**
+     * <p>The relative weight of the weighted target.</p>
+     */
+    inline bool WeightHasBeenSet() const { return m_weightHasBeenSet; }
 
     /**
      * <p>The relative weight of the weighted target.</p>

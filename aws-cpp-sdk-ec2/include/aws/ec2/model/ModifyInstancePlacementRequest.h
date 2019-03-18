@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The affinity setting for the instance.</p>
      */
+    inline bool AffinityHasBeenSet() const { return m_affinityHasBeenSet; }
+
+    /**
+     * <p>The affinity setting for the instance.</p>
+     */
     inline void SetAffinity(const Affinity& value) { m_affinityHasBeenSet = true; m_affinity = value; }
 
     /**
@@ -82,6 +87,15 @@ namespace Model
      * from a placement group, specify an empty string ("").</p>
      */
     inline const Aws::String& GetGroupName() const{ return m_groupName; }
+
+    /**
+     * <p>The name of the placement group in which to place the instance. For spread
+     * placement groups, the instance must have a tenancy of <code>default</code>. For
+     * cluster and partition placement groups, the instance must have a tenancy of
+     * <code>default</code> or <code>dedicated</code>.</p> <p>To remove an instance
+     * from a placement group, specify an empty string ("").</p>
+     */
+    inline bool GroupNameHasBeenSet() const { return m_groupNameHasBeenSet; }
 
     /**
      * <p>The name of the placement group in which to place the instance. For spread
@@ -146,6 +160,11 @@ namespace Model
     /**
      * <p>The ID of the Dedicated Host with which to associate the instance.</p>
      */
+    inline bool HostIdHasBeenSet() const { return m_hostIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the Dedicated Host with which to associate the instance.</p>
+     */
     inline void SetHostId(const Aws::String& value) { m_hostIdHasBeenSet = true; m_hostId = value; }
 
     /**
@@ -178,6 +197,11 @@ namespace Model
      * <p>The ID of the instance that you are modifying.</p>
      */
     inline const Aws::String& GetInstanceId() const{ return m_instanceId; }
+
+    /**
+     * <p>The ID of the instance that you are modifying.</p>
+     */
+    inline bool InstanceIdHasBeenSet() const { return m_instanceIdHasBeenSet; }
 
     /**
      * <p>The ID of the instance that you are modifying.</p>
@@ -218,6 +242,11 @@ namespace Model
     /**
      * <p>The tenancy for the instance.</p>
      */
+    inline bool TenancyHasBeenSet() const { return m_tenancyHasBeenSet; }
+
+    /**
+     * <p>The tenancy for the instance.</p>
+     */
     inline void SetTenancy(const HostTenancy& value) { m_tenancyHasBeenSet = true; m_tenancy = value; }
 
     /**
@@ -240,6 +269,11 @@ namespace Model
      * <p>Reserved for future use.</p>
      */
     inline int GetPartitionNumber() const{ return m_partitionNumber; }
+
+    /**
+     * <p>Reserved for future use.</p>
+     */
+    inline bool PartitionNumberHasBeenSet() const { return m_partitionNumberHasBeenSet; }
 
     /**
      * <p>Reserved for future use.</p>

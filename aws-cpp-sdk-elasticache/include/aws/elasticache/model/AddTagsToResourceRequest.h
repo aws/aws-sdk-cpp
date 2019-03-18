@@ -74,6 +74,18 @@ namespace Model
      * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
      * Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
      */
+    inline bool ResourceNameHasBeenSet() const { return m_resourceNameHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the resource to which the tags are to be
+     * added, for example
+     * <code>arn:aws:elasticache:us-west-2:0123456789:cluster:myCluster</code> or
+     * <code>arn:aws:elasticache:us-west-2:0123456789:snapshot:mySnapshot</code>.
+     * ElastiCache resources are <i>cluster</i> and <i>snapshot</i>.</p> <p>For more
+     * information about ARNs, see <a
+     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
+     */
     inline void SetResourceName(const Aws::String& value) { m_resourceNameHasBeenSet = true; m_resourceName = value; }
 
     /**
@@ -142,6 +154,12 @@ namespace Model
      * key-value pair. A tag key must be accompanied by a tag value.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>A list of cost allocation tags to be added to this resource. A tag is a
+     * key-value pair. A tag key must be accompanied by a tag value.</p>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
      * <p>A list of cost allocation tags to be added to this resource. A tag is a

@@ -61,6 +61,15 @@ namespace Model
      * immediately call <a>DescribeWorkspaces</a> with this identifier, no information
      * is returned.</p>
      */
+    inline bool WorkspaceIdsHasBeenSet() const { return m_workspaceIdsHasBeenSet; }
+
+    /**
+     * <p>The identifiers of the WorkSpaces. You cannot combine this parameter with any
+     * other filter.</p> <p>Because the <a>CreateWorkspaces</a> operation is
+     * asynchronous, the identifier it returns is not immediately available. If you
+     * immediately call <a>DescribeWorkspaces</a> with this identifier, no information
+     * is returned.</p>
+     */
     inline void SetWorkspaceIds(const Aws::Vector<Aws::String>& value) { m_workspaceIdsHasBeenSet = true; m_workspaceIds = value; }
 
     /**
@@ -130,6 +139,13 @@ namespace Model
      * specific directory user (see <code>UserName</code>). You cannot combine this
      * parameter with any other filter.</p>
      */
+    inline bool DirectoryIdHasBeenSet() const { return m_directoryIdHasBeenSet; }
+
+    /**
+     * <p>The identifier of the directory. In addition, you can optionally specify a
+     * specific directory user (see <code>UserName</code>). You cannot combine this
+     * parameter with any other filter.</p>
+     */
     inline void SetDirectoryId(const Aws::String& value) { m_directoryIdHasBeenSet = true; m_directoryId = value; }
 
     /**
@@ -178,6 +194,12 @@ namespace Model
      * <p>The name of the directory user. You must specify this parameter with
      * <code>DirectoryId</code>.</p>
      */
+    inline bool UserNameHasBeenSet() const { return m_userNameHasBeenSet; }
+
+    /**
+     * <p>The name of the directory user. You must specify this parameter with
+     * <code>DirectoryId</code>.</p>
+     */
     inline void SetUserName(const Aws::String& value) { m_userNameHasBeenSet = true; m_userName = value; }
 
     /**
@@ -217,6 +239,13 @@ namespace Model
      * filter.</p>
      */
     inline const Aws::String& GetBundleId() const{ return m_bundleId; }
+
+    /**
+     * <p>The identifier of the bundle. All WorkSpaces that are created from this
+     * bundle are retrieved. You cannot combine this parameter with any other
+     * filter.</p>
+     */
+    inline bool BundleIdHasBeenSet() const { return m_bundleIdHasBeenSet; }
 
     /**
      * <p>The identifier of the bundle. All WorkSpaces that are created from this
@@ -269,6 +298,11 @@ namespace Model
     /**
      * <p>The maximum number of items to return.</p>
      */
+    inline bool LimitHasBeenSet() const { return m_limitHasBeenSet; }
+
+    /**
+     * <p>The maximum number of items to return.</p>
+     */
     inline void SetLimit(int value) { m_limitHasBeenSet = true; m_limit = value; }
 
     /**
@@ -282,6 +316,12 @@ namespace Model
      * paginated, provide this token to receive the next set of results.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
+    /**
+     * <p>If you received a <code>NextToken</code> from a previous call that was
+     * paginated, provide this token to receive the next set of results.</p>
+     */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
      * <p>If you received a <code>NextToken</code> from a previous call that was

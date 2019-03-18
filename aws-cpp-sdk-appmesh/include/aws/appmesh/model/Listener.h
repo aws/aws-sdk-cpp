@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The health check information for the listener.</p>
      */
+    inline bool HealthCheckHasBeenSet() const { return m_healthCheckHasBeenSet; }
+
+    /**
+     * <p>The health check information for the listener.</p>
+     */
     inline void SetHealthCheck(const HealthCheckPolicy& value) { m_healthCheckHasBeenSet = true; m_healthCheck = value; }
 
     /**
@@ -79,6 +84,11 @@ namespace Model
      * <p>The port mapping information for the listener.</p>
      */
     inline const PortMapping& GetPortMapping() const{ return m_portMapping; }
+
+    /**
+     * <p>The port mapping information for the listener.</p>
+     */
+    inline bool PortMappingHasBeenSet() const { return m_portMappingHasBeenSet; }
 
     /**
      * <p>The port mapping information for the listener.</p>

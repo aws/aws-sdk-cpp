@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p>The name of the application the environment is associated with.</p>
      */
+    inline bool ApplicationNameHasBeenSet() const { return m_applicationNameHasBeenSet; }
+
+    /**
+     * <p>The name of the application the environment is associated with.</p>
+     */
     inline void SetApplicationName(const Aws::String& value) { m_applicationNameHasBeenSet = true; m_applicationName = value; }
 
     /**
@@ -90,6 +95,11 @@ namespace Model
      * <p>The name of the environment to delete the draft configuration from.</p>
      */
     inline const Aws::String& GetEnvironmentName() const{ return m_environmentName; }
+
+    /**
+     * <p>The name of the environment to delete the draft configuration from.</p>
+     */
+    inline bool EnvironmentNameHasBeenSet() const { return m_environmentNameHasBeenSet; }
 
     /**
      * <p>The name of the environment to delete the draft configuration from.</p>

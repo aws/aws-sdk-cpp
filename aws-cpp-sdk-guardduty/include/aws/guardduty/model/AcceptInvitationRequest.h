@@ -53,6 +53,11 @@ namespace Model
     /**
      * The unique ID of the detector of the GuardDuty member account.
      */
+    inline bool DetectorIdHasBeenSet() const { return m_detectorIdHasBeenSet; }
+
+    /**
+     * The unique ID of the detector of the GuardDuty member account.
+     */
     inline void SetDetectorId(const Aws::String& value) { m_detectorIdHasBeenSet = true; m_detectorId = value; }
 
     /**
@@ -85,6 +90,11 @@ namespace Model
      * This value is used to validate the master account to the member account.
      */
     inline const Aws::String& GetInvitationId() const{ return m_invitationId; }
+
+    /**
+     * This value is used to validate the master account to the member account.
+     */
+    inline bool InvitationIdHasBeenSet() const { return m_invitationIdHasBeenSet; }
 
     /**
      * This value is used to validate the master account to the member account.
@@ -122,6 +132,12 @@ namespace Model
      * accepting.
      */
     inline const Aws::String& GetMasterId() const{ return m_masterId; }
+
+    /**
+     * The account ID of the master GuardDuty account whose invitation you're
+     * accepting.
+     */
+    inline bool MasterIdHasBeenSet() const { return m_masterIdHasBeenSet; }
 
     /**
      * The account ID of the master GuardDuty account whose invitation you're

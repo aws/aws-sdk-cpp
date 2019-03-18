@@ -55,6 +55,12 @@ namespace Model
      * <p>A list of trigger names, which may be the names returned from the
      * <code>ListTriggers</code> operation.</p>
      */
+    inline bool TriggerNamesHasBeenSet() const { return m_triggerNamesHasBeenSet; }
+
+    /**
+     * <p>A list of trigger names, which may be the names returned from the
+     * <code>ListTriggers</code> operation.</p>
+     */
     inline void SetTriggerNames(const Aws::Vector<Aws::String>& value) { m_triggerNamesHasBeenSet = true; m_triggerNames = value; }
 
     /**

@@ -63,6 +63,14 @@ namespace Model
      * <code>KMS</code>. If disabled (false) or not specified, server-side encryption
      * is set to AWS owned CMK.</p>
      */
+    inline bool EnabledHasBeenSet() const { return m_enabledHasBeenSet; }
+
+    /**
+     * <p>Indicates whether server-side encryption is enabled (true) or disabled
+     * (false) on the table. If enabled (true), server-side encryption type is set to
+     * <code>KMS</code>. If disabled (false) or not specified, server-side encryption
+     * is set to AWS owned CMK.</p>
+     */
     inline void SetEnabled(bool value) { m_enabledHasBeenSet = true; m_enabled = value; }
 
     /**
@@ -82,6 +90,15 @@ namespace Model
      * charges apply).</p> </li> </ul>
      */
     inline const SSEType& GetSSEType() const{ return m_sSEType; }
+
+    /**
+     * <p>Server-side encryption type:</p> <ul> <li> <p> <code>AES256</code> -
+     * Server-side encryption which uses the AES256 algorithm (not applicable).</p>
+     * </li> <li> <p> <code>KMS</code> - Server-side encryption which uses AWS Key
+     * Management Service. Key is stored in your account and is managed by AWS KMS (KMS
+     * charges apply).</p> </li> </ul>
+     */
+    inline bool SSETypeHasBeenSet() const { return m_sSETypeHasBeenSet; }
 
     /**
      * <p>Server-side encryption type:</p> <ul> <li> <p> <code>AES256</code> -
@@ -127,6 +144,14 @@ namespace Model
      * from the default DynamoDB KMS Master Key alias/aws/dynamodb.</p>
      */
     inline const Aws::String& GetKMSMasterKeyId() const{ return m_kMSMasterKeyId; }
+
+    /**
+     * <p>The KMS Master Key (CMK) which should be used for the KMS encryption. To
+     * specify a CMK, use its key ID, Amazon Resource Name (ARN), alias name, or alias
+     * ARN. Note that you should only provide this parameter if the key is different
+     * from the default DynamoDB KMS Master Key alias/aws/dynamodb.</p>
+     */
+    inline bool KMSMasterKeyIdHasBeenSet() const { return m_kMSMasterKeyIdHasBeenSet; }
 
     /**
      * <p>The KMS Master Key (CMK) which should be used for the KMS encryption. To

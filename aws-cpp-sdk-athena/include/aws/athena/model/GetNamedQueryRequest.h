@@ -52,6 +52,11 @@ namespace Model
     /**
      * <p>The unique ID of the query. Use <a>ListNamedQueries</a> to get query IDs.</p>
      */
+    inline bool NamedQueryIdHasBeenSet() const { return m_namedQueryIdHasBeenSet; }
+
+    /**
+     * <p>The unique ID of the query. Use <a>ListNamedQueries</a> to get query IDs.</p>
+     */
     inline void SetNamedQueryId(const Aws::String& value) { m_namedQueryIdHasBeenSet = true; m_namedQueryId = value; }
 
     /**

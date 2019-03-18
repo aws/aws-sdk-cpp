@@ -60,6 +60,13 @@ namespace Model
      * request was truncated, the response includes a <code>NextToken</code>. To
      * retrieve the next set of tuning jobs, use the token in the next request.</p>
      */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
+
+    /**
+     * <p>If the result of the previous <code>ListHyperParameterTuningJobs</code>
+     * request was truncated, the response includes a <code>NextToken</code>. To
+     * retrieve the next set of tuning jobs, use the token in the next request.</p>
+     */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
     /**
@@ -106,6 +113,11 @@ namespace Model
     /**
      * <p>The maximum number of tuning jobs to return. The default value is 10.</p>
      */
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
+
+    /**
+     * <p>The maximum number of tuning jobs to return. The default value is 10.</p>
+     */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
@@ -118,6 +130,11 @@ namespace Model
      * <p>The field to sort results by. The default is <code>Name</code>.</p>
      */
     inline const HyperParameterTuningJobSortByOptions& GetSortBy() const{ return m_sortBy; }
+
+    /**
+     * <p>The field to sort results by. The default is <code>Name</code>.</p>
+     */
+    inline bool SortByHasBeenSet() const { return m_sortByHasBeenSet; }
 
     /**
      * <p>The field to sort results by. The default is <code>Name</code>.</p>
@@ -148,6 +165,11 @@ namespace Model
     /**
      * <p>The sort order for results. The default is <code>Ascending</code>.</p>
      */
+    inline bool SortOrderHasBeenSet() const { return m_sortOrderHasBeenSet; }
+
+    /**
+     * <p>The sort order for results. The default is <code>Ascending</code>.</p>
+     */
     inline void SetSortOrder(const SortOrder& value) { m_sortOrderHasBeenSet = true; m_sortOrder = value; }
 
     /**
@@ -171,6 +193,12 @@ namespace Model
      * name contains the specified string.</p>
      */
     inline const Aws::String& GetNameContains() const{ return m_nameContains; }
+
+    /**
+     * <p>A string in the tuning job name. This filter returns only tuning jobs whose
+     * name contains the specified string.</p>
+     */
+    inline bool NameContainsHasBeenSet() const { return m_nameContainsHasBeenSet; }
 
     /**
      * <p>A string in the tuning job name. This filter returns only tuning jobs whose
@@ -219,6 +247,12 @@ namespace Model
      * <p>A filter that returns only tuning jobs that were created after the specified
      * time.</p>
      */
+    inline bool CreationTimeAfterHasBeenSet() const { return m_creationTimeAfterHasBeenSet; }
+
+    /**
+     * <p>A filter that returns only tuning jobs that were created after the specified
+     * time.</p>
+     */
     inline void SetCreationTimeAfter(const Aws::Utils::DateTime& value) { m_creationTimeAfterHasBeenSet = true; m_creationTimeAfter = value; }
 
     /**
@@ -245,6 +279,12 @@ namespace Model
      * time.</p>
      */
     inline const Aws::Utils::DateTime& GetCreationTimeBefore() const{ return m_creationTimeBefore; }
+
+    /**
+     * <p>A filter that returns only tuning jobs that were created before the specified
+     * time.</p>
+     */
+    inline bool CreationTimeBeforeHasBeenSet() const { return m_creationTimeBeforeHasBeenSet; }
 
     /**
      * <p>A filter that returns only tuning jobs that were created before the specified
@@ -281,6 +321,12 @@ namespace Model
      * <p>A filter that returns only tuning jobs that were modified after the specified
      * time.</p>
      */
+    inline bool LastModifiedTimeAfterHasBeenSet() const { return m_lastModifiedTimeAfterHasBeenSet; }
+
+    /**
+     * <p>A filter that returns only tuning jobs that were modified after the specified
+     * time.</p>
+     */
     inline void SetLastModifiedTimeAfter(const Aws::Utils::DateTime& value) { m_lastModifiedTimeAfterHasBeenSet = true; m_lastModifiedTimeAfter = value; }
 
     /**
@@ -312,6 +358,12 @@ namespace Model
      * <p>A filter that returns only tuning jobs that were modified before the
      * specified time.</p>
      */
+    inline bool LastModifiedTimeBeforeHasBeenSet() const { return m_lastModifiedTimeBeforeHasBeenSet; }
+
+    /**
+     * <p>A filter that returns only tuning jobs that were modified before the
+     * specified time.</p>
+     */
     inline void SetLastModifiedTimeBefore(const Aws::Utils::DateTime& value) { m_lastModifiedTimeBeforeHasBeenSet = true; m_lastModifiedTimeBefore = value; }
 
     /**
@@ -337,6 +389,11 @@ namespace Model
      * <p>A filter that returns only tuning jobs with the specified status.</p>
      */
     inline const HyperParameterTuningJobStatus& GetStatusEquals() const{ return m_statusEquals; }
+
+    /**
+     * <p>A filter that returns only tuning jobs with the specified status.</p>
+     */
+    inline bool StatusEqualsHasBeenSet() const { return m_statusEqualsHasBeenSet; }
 
     /**
      * <p>A filter that returns only tuning jobs with the specified status.</p>

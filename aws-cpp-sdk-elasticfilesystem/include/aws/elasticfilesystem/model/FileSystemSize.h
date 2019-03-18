@@ -64,6 +64,12 @@ namespace Model
      * <p>The latest known metered size (in bytes) of data stored in the file
      * system.</p>
      */
+    inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
+
+    /**
+     * <p>The latest known metered size (in bytes) of data stored in the file
+     * system.</p>
+     */
     inline void SetValue(long long value) { m_valueHasBeenSet = true; m_value = value; }
 
     /**
@@ -79,6 +85,13 @@ namespace Model
      * 1970-01-01T00:00:00Z.</p>
      */
     inline const Aws::Utils::DateTime& GetTimestamp() const{ return m_timestamp; }
+
+    /**
+     * <p>The time at which the size of data, returned in the <code>Value</code> field,
+     * was determined. The value is the integer number of seconds since
+     * 1970-01-01T00:00:00Z.</p>
+     */
+    inline bool TimestampHasBeenSet() const { return m_timestampHasBeenSet; }
 
     /**
      * <p>The time at which the size of data, returned in the <code>Value</code> field,
@@ -119,6 +132,12 @@ namespace Model
      * <p>The latest known metered size (in bytes) of data stored in the Infrequent
      * Access storage class.</p>
      */
+    inline bool ValueInIAHasBeenSet() const { return m_valueInIAHasBeenSet; }
+
+    /**
+     * <p>The latest known metered size (in bytes) of data stored in the Infrequent
+     * Access storage class.</p>
+     */
     inline void SetValueInIA(long long value) { m_valueInIAHasBeenSet = true; m_valueInIA = value; }
 
     /**
@@ -133,6 +152,12 @@ namespace Model
      * storage class.</p>
      */
     inline long long GetValueInStandard() const{ return m_valueInStandard; }
+
+    /**
+     * <p>The latest known metered size (in bytes) of data stored in the Standard
+     * storage class.</p>
+     */
+    inline bool ValueInStandardHasBeenSet() const { return m_valueInStandardHasBeenSet; }
 
     /**
      * <p>The latest known metered size (in bytes) of data stored in the Standard

@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>A distribution configuration.</p>
      */
+    inline bool DistributionConfigHasBeenSet() const { return m_distributionConfigHasBeenSet; }
+
+    /**
+     * <p>A distribution configuration.</p>
+     */
     inline void SetDistributionConfig(const DistributionConfig& value) { m_distributionConfigHasBeenSet = true; m_distributionConfig = value; }
 
     /**
@@ -79,6 +84,11 @@ namespace Model
      * <p>A complex type that contains zero or more <code>Tag</code> elements.</p>
      */
     inline const Tags& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>A complex type that contains zero or more <code>Tag</code> elements.</p>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
      * <p>A complex type that contains zero or more <code>Tag</code> elements.</p>

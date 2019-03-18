@@ -53,6 +53,11 @@ namespace Model
     /**
      * <p/>
      */
+    inline bool TimeoutCountHasBeenSet() const { return m_timeoutCountHasBeenSet; }
+
+    /**
+     * <p/>
+     */
     inline void SetTimeoutCount(int value) { m_timeoutCountHasBeenSet = true; m_timeoutCount = value; }
 
     /**
@@ -65,6 +70,11 @@ namespace Model
      * <p/>
      */
     inline int GetConnectionRefusedCount() const{ return m_connectionRefusedCount; }
+
+    /**
+     * <p/>
+     */
+    inline bool ConnectionRefusedCountHasBeenSet() const { return m_connectionRefusedCountHasBeenSet; }
 
     /**
      * <p/>
@@ -85,6 +95,11 @@ namespace Model
     /**
      * <p/>
      */
+    inline bool HTTPCode4XXCountHasBeenSet() const { return m_hTTPCode4XXCountHasBeenSet; }
+
+    /**
+     * <p/>
+     */
     inline void SetHTTPCode4XXCount(int value) { m_hTTPCode4XXCountHasBeenSet = true; m_hTTPCode4XXCount = value; }
 
     /**
@@ -97,6 +112,11 @@ namespace Model
      * <p/>
      */
     inline int GetHTTPCode5XXCount() const{ return m_hTTPCode5XXCount; }
+
+    /**
+     * <p/>
+     */
+    inline bool HTTPCode5XXCountHasBeenSet() const { return m_hTTPCode5XXCountHasBeenSet; }
 
     /**
      * <p/>
@@ -117,6 +137,11 @@ namespace Model
     /**
      * <p/>
      */
+    inline bool UnknownHostCountHasBeenSet() const { return m_unknownHostCountHasBeenSet; }
+
+    /**
+     * <p/>
+     */
     inline void SetUnknownHostCount(int value) { m_unknownHostCountHasBeenSet = true; m_unknownHostCount = value; }
 
     /**
@@ -129,6 +154,11 @@ namespace Model
      * <p/>
      */
     inline int GetOtherCount() const{ return m_otherCount; }
+
+    /**
+     * <p/>
+     */
+    inline bool OtherCountHasBeenSet() const { return m_otherCountHasBeenSet; }
 
     /**
      * <p/>

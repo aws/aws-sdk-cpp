@@ -60,6 +60,13 @@ namespace Model
      * href="http://docs.aws.amazon.com/workspaces/latest/adminguide/running-mode.html">Manage
      * the WorkSpace Running Mode</a>.</p>
      */
+    inline bool RunningModeHasBeenSet() const { return m_runningModeHasBeenSet; }
+
+    /**
+     * <p>The running mode. For more information, see <a
+     * href="http://docs.aws.amazon.com/workspaces/latest/adminguide/running-mode.html">Manage
+     * the WorkSpace Running Mode</a>.</p>
+     */
     inline void SetRunningMode(const RunningMode& value) { m_runningModeHasBeenSet = true; m_runningMode = value; }
 
     /**
@@ -94,6 +101,12 @@ namespace Model
      * <p>The time after a user logs off when WorkSpaces are automatically stopped.
      * Configured in 60 minute intervals.</p>
      */
+    inline bool RunningModeAutoStopTimeoutInMinutesHasBeenSet() const { return m_runningModeAutoStopTimeoutInMinutesHasBeenSet; }
+
+    /**
+     * <p>The time after a user logs off when WorkSpaces are automatically stopped.
+     * Configured in 60 minute intervals.</p>
+     */
     inline void SetRunningModeAutoStopTimeoutInMinutes(int value) { m_runningModeAutoStopTimeoutInMinutesHasBeenSet = true; m_runningModeAutoStopTimeoutInMinutes = value; }
 
     /**
@@ -107,6 +120,11 @@ namespace Model
      * <p>The size of the root volume.</p>
      */
     inline int GetRootVolumeSizeGib() const{ return m_rootVolumeSizeGib; }
+
+    /**
+     * <p>The size of the root volume.</p>
+     */
+    inline bool RootVolumeSizeGibHasBeenSet() const { return m_rootVolumeSizeGibHasBeenSet; }
 
     /**
      * <p>The size of the root volume.</p>
@@ -127,6 +145,11 @@ namespace Model
     /**
      * <p>The size of the user storage.</p>
      */
+    inline bool UserVolumeSizeGibHasBeenSet() const { return m_userVolumeSizeGibHasBeenSet; }
+
+    /**
+     * <p>The size of the user storage.</p>
+     */
     inline void SetUserVolumeSizeGib(int value) { m_userVolumeSizeGibHasBeenSet = true; m_userVolumeSizeGib = value; }
 
     /**
@@ -141,6 +164,13 @@ namespace Model
      * WorkSpaces Bundles</a>.</p>
      */
     inline const Compute& GetComputeTypeName() const{ return m_computeTypeName; }
+
+    /**
+     * <p>The compute type. For more information, see <a
+     * href="http://aws.amazon.com/workspaces/details/#Amazon_WorkSpaces_Bundles">Amazon
+     * WorkSpaces Bundles</a>.</p>
+     */
+    inline bool ComputeTypeNameHasBeenSet() const { return m_computeTypeNameHasBeenSet; }
 
     /**
      * <p>The compute type. For more information, see <a

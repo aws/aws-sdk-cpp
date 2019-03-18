@@ -63,6 +63,11 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the accelerator.</p>
      */
+    inline bool AcceleratorArnHasBeenSet() const { return m_acceleratorArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the accelerator.</p>
+     */
     inline void SetAcceleratorArn(const Aws::String& value) { m_acceleratorArnHasBeenSet = true; m_acceleratorArn = value; }
 
     /**
@@ -97,6 +102,13 @@ namespace Model
      * end with a hyphen.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
+
+    /**
+     * <p>The name of the accelerator. The name can have a maximum of 32 characters,
+     * must contain only alphanumeric characters or hyphens (-), and must not begin or
+     * end with a hyphen.</p>
+     */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
      * <p>The name of the accelerator. The name can have a maximum of 32 characters,
@@ -149,6 +161,11 @@ namespace Model
     /**
      * <p>The value for the address type must be IPv4. </p>
      */
+    inline bool IpAddressTypeHasBeenSet() const { return m_ipAddressTypeHasBeenSet; }
+
+    /**
+     * <p>The value for the address type must be IPv4. </p>
+     */
     inline void SetIpAddressType(const IpAddressType& value) { m_ipAddressTypeHasBeenSet = true; m_ipAddressType = value; }
 
     /**
@@ -179,6 +196,13 @@ namespace Model
      * default value is true. </p> <p>If the value is set to true, the accelerator
      * cannot be deleted. If set to false, accelerator can be deleted.</p>
      */
+    inline bool EnabledHasBeenSet() const { return m_enabledHasBeenSet; }
+
+    /**
+     * <p>Indicates whether theaccelerator is enabled. The value is true or false. The
+     * default value is true. </p> <p>If the value is set to true, the accelerator
+     * cannot be deleted. If set to false, accelerator can be deleted.</p>
+     */
     inline void SetEnabled(bool value) { m_enabledHasBeenSet = true; m_enabled = value; }
 
     /**
@@ -193,6 +217,11 @@ namespace Model
      * <p>IP address set associated with the accelerator.</p>
      */
     inline const Aws::Vector<IpSet>& GetIpSets() const{ return m_ipSets; }
+
+    /**
+     * <p>IP address set associated with the accelerator.</p>
+     */
+    inline bool IpSetsHasBeenSet() const { return m_ipSetsHasBeenSet; }
 
     /**
      * <p>IP address set associated with the accelerator.</p>
@@ -233,6 +262,11 @@ namespace Model
     /**
      * <p>Describes the deployment status of the accelerator.</p>
      */
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
+
+    /**
+     * <p>Describes the deployment status of the accelerator.</p>
+     */
     inline void SetStatus(const AcceleratorStatus& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
@@ -259,6 +293,11 @@ namespace Model
     /**
      * <p>The date and time that the accelerator was created.</p>
      */
+    inline bool CreatedTimeHasBeenSet() const { return m_createdTimeHasBeenSet; }
+
+    /**
+     * <p>The date and time that the accelerator was created.</p>
+     */
     inline void SetCreatedTime(const Aws::Utils::DateTime& value) { m_createdTimeHasBeenSet = true; m_createdTime = value; }
 
     /**
@@ -281,6 +320,11 @@ namespace Model
      * <p>The date and time that the accelerator was last modified.</p>
      */
     inline const Aws::Utils::DateTime& GetLastModifiedTime() const{ return m_lastModifiedTime; }
+
+    /**
+     * <p>The date and time that the accelerator was last modified.</p>
+     */
+    inline bool LastModifiedTimeHasBeenSet() const { return m_lastModifiedTimeHasBeenSet; }
 
     /**
      * <p>The date and time that the accelerator was last modified.</p>

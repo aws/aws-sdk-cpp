@@ -66,6 +66,14 @@ namespace Model
      * must start with a letter or number and can contain the following characters: a-z
      * (lowercase), 0-9, and - (hyphen).</p>
      */
+    inline bool DomainNameHasBeenSet() const { return m_domainNameHasBeenSet; }
+
+    /**
+     * <p>The name of the Elasticsearch domain that you are creating. Domain names are
+     * unique across the domains owned by an account within an AWS region. Domain names
+     * must start with a letter or number and can contain the following characters: a-z
+     * (lowercase), 0-9, and - (hyphen).</p>
+     */
     inline void SetDomainName(const Aws::String& value) { m_domainNameHasBeenSet = true; m_domainName = value; }
 
     /**
@@ -117,6 +125,15 @@ namespace Model
      * Elasticsearch Service Developer Guide</i>.</p>
      */
     inline const Aws::String& GetElasticsearchVersion() const{ return m_elasticsearchVersion; }
+
+    /**
+     * <p>String of format X.Y to specify version for the Elasticsearch domain eg.
+     * "1.5" or "2.3". For more information, see <a
+     * href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomains"
+     * target="_blank">Creating Elasticsearch Domains</a> in the <i>Amazon
+     * Elasticsearch Service Developer Guide</i>.</p>
+     */
+    inline bool ElasticsearchVersionHasBeenSet() const { return m_elasticsearchVersionHasBeenSet; }
 
     /**
      * <p>String of format X.Y to specify version for the Elasticsearch domain eg.
@@ -183,6 +200,12 @@ namespace Model
      * <p>Configuration options for an Elasticsearch domain. Specifies the instance
      * type and number of instances in the domain cluster. </p>
      */
+    inline bool ElasticsearchClusterConfigHasBeenSet() const { return m_elasticsearchClusterConfigHasBeenSet; }
+
+    /**
+     * <p>Configuration options for an Elasticsearch domain. Specifies the instance
+     * type and number of instances in the domain cluster. </p>
+     */
     inline void SetElasticsearchClusterConfig(const ElasticsearchClusterConfig& value) { m_elasticsearchClusterConfigHasBeenSet = true; m_elasticsearchClusterConfig = value; }
 
     /**
@@ -214,6 +237,12 @@ namespace Model
      * <p>Options to enable, disable and specify the type and size of EBS storage
      * volumes. </p>
      */
+    inline bool EBSOptionsHasBeenSet() const { return m_eBSOptionsHasBeenSet; }
+
+    /**
+     * <p>Options to enable, disable and specify the type and size of EBS storage
+     * volumes. </p>
+     */
     inline void SetEBSOptions(const EBSOptions& value) { m_eBSOptionsHasBeenSet = true; m_eBSOptions = value; }
 
     /**
@@ -239,6 +268,11 @@ namespace Model
      * <p> IAM access policy as a JSON-formatted string.</p>
      */
     inline const Aws::String& GetAccessPolicies() const{ return m_accessPolicies; }
+
+    /**
+     * <p> IAM access policy as a JSON-formatted string.</p>
+     */
+    inline bool AccessPoliciesHasBeenSet() const { return m_accessPoliciesHasBeenSet; }
 
     /**
      * <p> IAM access policy as a JSON-formatted string.</p>
@@ -281,6 +315,12 @@ namespace Model
      * <p>Option to set time, in UTC format, of the daily automated snapshot. Default
      * value is 0 hours. </p>
      */
+    inline bool SnapshotOptionsHasBeenSet() const { return m_snapshotOptionsHasBeenSet; }
+
+    /**
+     * <p>Option to set time, in UTC format, of the daily automated snapshot. Default
+     * value is 0 hours. </p>
+     */
     inline void SetSnapshotOptions(const SnapshotOptions& value) { m_snapshotOptionsHasBeenSet = true; m_snapshotOptions = value; }
 
     /**
@@ -310,6 +350,15 @@ namespace Model
      * Service Domains</i></p>
      */
     inline const VPCOptions& GetVPCOptions() const{ return m_vPCOptions; }
+
+    /**
+     * <p>Options to specify the subnets and security groups for VPC endpoint. For more
+     * information, see <a
+     * href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-vpc.html#es-creating-vpc"
+     * target="_blank">Creating a VPC</a> in <i>VPC Endpoints for Amazon Elasticsearch
+     * Service Domains</i></p>
+     */
+    inline bool VPCOptionsHasBeenSet() const { return m_vPCOptionsHasBeenSet; }
 
     /**
      * <p>Options to specify the subnets and security groups for VPC endpoint. For more
@@ -362,6 +411,14 @@ namespace Model
      * href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-cognito-auth.html"
      * target="_blank">Amazon Cognito Authentication for Kibana</a>.</p>
      */
+    inline bool CognitoOptionsHasBeenSet() const { return m_cognitoOptionsHasBeenSet; }
+
+    /**
+     * <p>Options to specify the Cognito user and identity pools for Kibana
+     * authentication. For more information, see <a
+     * href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-cognito-auth.html"
+     * target="_blank">Amazon Cognito Authentication for Kibana</a>.</p>
+     */
     inline void SetCognitoOptions(const CognitoOptions& value) { m_cognitoOptionsHasBeenSet = true; m_cognitoOptions = value; }
 
     /**
@@ -397,6 +454,11 @@ namespace Model
     /**
      * <p>Specifies the Encryption At Rest Options.</p>
      */
+    inline bool EncryptionAtRestOptionsHasBeenSet() const { return m_encryptionAtRestOptionsHasBeenSet; }
+
+    /**
+     * <p>Specifies the Encryption At Rest Options.</p>
+     */
     inline void SetEncryptionAtRestOptions(const EncryptionAtRestOptions& value) { m_encryptionAtRestOptionsHasBeenSet = true; m_encryptionAtRestOptions = value; }
 
     /**
@@ -419,6 +481,11 @@ namespace Model
      * <p>Specifies the NodeToNodeEncryptionOptions.</p>
      */
     inline const NodeToNodeEncryptionOptions& GetNodeToNodeEncryptionOptions() const{ return m_nodeToNodeEncryptionOptions; }
+
+    /**
+     * <p>Specifies the NodeToNodeEncryptionOptions.</p>
+     */
+    inline bool NodeToNodeEncryptionOptionsHasBeenSet() const { return m_nodeToNodeEncryptionOptionsHasBeenSet; }
 
     /**
      * <p>Specifies the NodeToNodeEncryptionOptions.</p>
@@ -449,6 +516,15 @@ namespace Model
      * target="_blank">Configuration Advanced Options</a> for more information.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetAdvancedOptions() const{ return m_advancedOptions; }
+
+    /**
+     * <p> Option to allow references to indices in an HTTP request body. Must be
+     * <code>false</code> when configuring access to individual sub-resources. By
+     * default, the value is <code>true</code>. See <a
+     * href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomain-configure-advanced-options"
+     * target="_blank">Configuration Advanced Options</a> for more information.</p>
+     */
+    inline bool AdvancedOptionsHasBeenSet() const { return m_advancedOptionsHasBeenSet; }
 
     /**
      * <p> Option to allow references to indices in an HTTP request body. Must be
@@ -555,6 +631,12 @@ namespace Model
      * containing options to publish a given type of Elasticsearch log.</p>
      */
     inline const Aws::Map<LogType, LogPublishingOption>& GetLogPublishingOptions() const{ return m_logPublishingOptions; }
+
+    /**
+     * <p>Map of <code>LogType</code> and <code>LogPublishingOption</code>, each
+     * containing options to publish a given type of Elasticsearch log.</p>
+     */
+    inline bool LogPublishingOptionsHasBeenSet() const { return m_logPublishingOptionsHasBeenSet; }
 
     /**
      * <p>Map of <code>LogType</code> and <code>LogPublishingOption</code>, each

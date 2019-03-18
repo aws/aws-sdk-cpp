@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The name of the repository in which you want to create the new branch.</p>
      */
+    inline bool RepositoryNameHasBeenSet() const { return m_repositoryNameHasBeenSet; }
+
+    /**
+     * <p>The name of the repository in which you want to create the new branch.</p>
+     */
     inline void SetRepositoryName(const Aws::String& value) { m_repositoryNameHasBeenSet = true; m_repositoryName = value; }
 
     /**
@@ -92,6 +97,11 @@ namespace Model
     /**
      * <p>The name of the new branch to create.</p>
      */
+    inline bool BranchNameHasBeenSet() const { return m_branchNameHasBeenSet; }
+
+    /**
+     * <p>The name of the new branch to create.</p>
+     */
     inline void SetBranchName(const Aws::String& value) { m_branchNameHasBeenSet = true; m_branchName = value; }
 
     /**
@@ -124,6 +134,11 @@ namespace Model
      * <p>The ID of the commit to point the new branch to.</p>
      */
     inline const Aws::String& GetCommitId() const{ return m_commitId; }
+
+    /**
+     * <p>The ID of the commit to point the new branch to.</p>
+     */
+    inline bool CommitIdHasBeenSet() const { return m_commitIdHasBeenSet; }
 
     /**
      * <p>The ID of the commit to point the new branch to.</p>

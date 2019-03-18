@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The number of status codes.</p>
      */
+    inline bool QuantityHasBeenSet() const { return m_quantityHasBeenSet; }
+
+    /**
+     * <p>The number of status codes.</p>
+     */
     inline void SetQuantity(int value) { m_quantityHasBeenSet = true; m_quantity = value; }
 
     /**
@@ -69,6 +74,11 @@ namespace Model
      * <p>The items (status codes) for an origin group.</p>
      */
     inline const Aws::Vector<int>& GetItems() const{ return m_items; }
+
+    /**
+     * <p>The items (status codes) for an origin group.</p>
+     */
+    inline bool ItemsHasBeenSet() const { return m_itemsHasBeenSet; }
 
     /**
      * <p>The items (status codes) for an origin group.</p>

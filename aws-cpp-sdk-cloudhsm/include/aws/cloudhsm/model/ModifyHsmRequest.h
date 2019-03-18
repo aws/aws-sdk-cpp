@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The ARN of the HSM to modify.</p>
      */
+    inline bool HsmArnHasBeenSet() const { return m_hsmArnHasBeenSet; }
+
+    /**
+     * <p>The ARN of the HSM to modify.</p>
+     */
     inline void SetHsmArn(const Aws::String& value) { m_hsmArnHasBeenSet = true; m_hsmArn = value; }
 
     /**
@@ -89,6 +94,12 @@ namespace Model
      * in the same Availability Zone as the current subnet.</p>
      */
     inline const Aws::String& GetSubnetId() const{ return m_subnetId; }
+
+    /**
+     * <p>The new identifier of the subnet that the HSM is in. The new subnet must be
+     * in the same Availability Zone as the current subnet.</p>
+     */
+    inline bool SubnetIdHasBeenSet() const { return m_subnetIdHasBeenSet; }
 
     /**
      * <p>The new identifier of the subnet that the HSM is in. The new subnet must be
@@ -134,6 +145,14 @@ namespace Model
      * subnet.</p>
      */
     inline const Aws::String& GetEniIp() const{ return m_eniIp; }
+
+    /**
+     * <p>The new IP address for the elastic network interface (ENI) attached to the
+     * HSM.</p> <p>If the HSM is moved to a different subnet, and an IP address is not
+     * specified, an IP address will be randomly chosen from the CIDR range of the new
+     * subnet.</p>
+     */
+    inline bool EniIpHasBeenSet() const { return m_eniIpHasBeenSet; }
 
     /**
      * <p>The new IP address for the elastic network interface (ENI) attached to the
@@ -192,6 +211,11 @@ namespace Model
     /**
      * <p>The new IAM role ARN.</p>
      */
+    inline bool IamRoleArnHasBeenSet() const { return m_iamRoleArnHasBeenSet; }
+
+    /**
+     * <p>The new IAM role ARN.</p>
+     */
     inline void SetIamRoleArn(const Aws::String& value) { m_iamRoleArnHasBeenSet = true; m_iamRoleArn = value; }
 
     /**
@@ -224,6 +248,11 @@ namespace Model
      * <p>The new external ID.</p>
      */
     inline const Aws::String& GetExternalId() const{ return m_externalId; }
+
+    /**
+     * <p>The new external ID.</p>
+     */
+    inline bool ExternalIdHasBeenSet() const { return m_externalIdHasBeenSet; }
 
     /**
      * <p>The new external ID.</p>
@@ -261,6 +290,12 @@ namespace Model
      * only supports one syslog monitoring server.</p>
      */
     inline const Aws::String& GetSyslogIp() const{ return m_syslogIp; }
+
+    /**
+     * <p>The new IP address for the syslog monitoring server. The AWS CloudHSM service
+     * only supports one syslog monitoring server.</p>
+     */
+    inline bool SyslogIpHasBeenSet() const { return m_syslogIpHasBeenSet; }
 
     /**
      * <p>The new IP address for the syslog monitoring server. The AWS CloudHSM service

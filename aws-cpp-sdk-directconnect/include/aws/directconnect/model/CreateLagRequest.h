@@ -54,6 +54,12 @@ namespace Model
      * <p>The number of physical connections initially provisioned and bundled by the
      * LAG.</p>
      */
+    inline bool NumberOfConnectionsHasBeenSet() const { return m_numberOfConnectionsHasBeenSet; }
+
+    /**
+     * <p>The number of physical connections initially provisioned and bundled by the
+     * LAG.</p>
+     */
     inline void SetNumberOfConnections(int value) { m_numberOfConnectionsHasBeenSet = true; m_numberOfConnections = value; }
 
     /**
@@ -67,6 +73,11 @@ namespace Model
      * <p>The location for the LAG.</p>
      */
     inline const Aws::String& GetLocation() const{ return m_location; }
+
+    /**
+     * <p>The location for the LAG.</p>
+     */
+    inline bool LocationHasBeenSet() const { return m_locationHasBeenSet; }
 
     /**
      * <p>The location for the LAG.</p>
@@ -104,6 +115,12 @@ namespace Model
      * possible values are 1Gbps and 10Gbps.</p>
      */
     inline const Aws::String& GetConnectionsBandwidth() const{ return m_connectionsBandwidth; }
+
+    /**
+     * <p>The bandwidth of the individual physical connections bundled by the LAG. The
+     * possible values are 1Gbps and 10Gbps.</p>
+     */
+    inline bool ConnectionsBandwidthHasBeenSet() const { return m_connectionsBandwidthHasBeenSet; }
 
     /**
      * <p>The bandwidth of the individual physical connections bundled by the LAG. The
@@ -150,6 +167,11 @@ namespace Model
     /**
      * <p>The name of the LAG.</p>
      */
+    inline bool LagNameHasBeenSet() const { return m_lagNameHasBeenSet; }
+
+    /**
+     * <p>The name of the LAG.</p>
+     */
     inline void SetLagName(const Aws::String& value) { m_lagNameHasBeenSet = true; m_lagName = value; }
 
     /**
@@ -182,6 +204,11 @@ namespace Model
      * <p>The ID of an existing connection to migrate to the LAG.</p>
      */
     inline const Aws::String& GetConnectionId() const{ return m_connectionId; }
+
+    /**
+     * <p>The ID of an existing connection to migrate to the LAG.</p>
+     */
+    inline bool ConnectionIdHasBeenSet() const { return m_connectionIdHasBeenSet; }
 
     /**
      * <p>The ID of an existing connection to migrate to the LAG.</p>

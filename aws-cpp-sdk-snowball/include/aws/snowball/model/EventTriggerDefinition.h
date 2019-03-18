@@ -58,6 +58,12 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) for any local Amazon S3 resource that is an
      * AWS Lambda function's event trigger associated with this job.</p>
      */
+    inline bool EventResourceARNHasBeenSet() const { return m_eventResourceARNHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) for any local Amazon S3 resource that is an
+     * AWS Lambda function's event trigger associated with this job.</p>
+     */
     inline void SetEventResourceARN(const Aws::String& value) { m_eventResourceARNHasBeenSet = true; m_eventResourceARN = value; }
 
     /**

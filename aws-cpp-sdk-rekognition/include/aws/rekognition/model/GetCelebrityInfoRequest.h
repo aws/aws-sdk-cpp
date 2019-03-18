@@ -56,6 +56,13 @@ namespace Model
      * <a>RecognizeCelebrities</a> operation, which recognizes celebrities in an image.
      * </p>
      */
+    inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
+
+    /**
+     * <p>The ID for the celebrity. You get the celebrity ID from a call to the
+     * <a>RecognizeCelebrities</a> operation, which recognizes celebrities in an image.
+     * </p>
+     */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
     /**

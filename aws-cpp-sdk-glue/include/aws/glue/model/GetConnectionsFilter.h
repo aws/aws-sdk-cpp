@@ -60,6 +60,12 @@ namespace Model
      * <p>A criteria string that must match the criteria recorded in the connection
      * definition for that connection definition to be returned.</p>
      */
+    inline bool MatchCriteriaHasBeenSet() const { return m_matchCriteriaHasBeenSet; }
+
+    /**
+     * <p>A criteria string that must match the criteria recorded in the connection
+     * definition for that connection definition to be returned.</p>
+     */
     inline void SetMatchCriteria(const Aws::Vector<Aws::String>& value) { m_matchCriteriaHasBeenSet = true; m_matchCriteria = value; }
 
     /**
@@ -104,6 +110,12 @@ namespace Model
      * not supported.</p>
      */
     inline const ConnectionType& GetConnectionType() const{ return m_connectionType; }
+
+    /**
+     * <p>The type of connections to return. Currently, only JDBC is supported; SFTP is
+     * not supported.</p>
+     */
+    inline bool ConnectionTypeHasBeenSet() const { return m_connectionTypeHasBeenSet; }
 
     /**
      * <p>The type of connections to return. Currently, only JDBC is supported; SFTP is

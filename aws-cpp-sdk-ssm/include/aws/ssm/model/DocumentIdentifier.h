@@ -61,6 +61,11 @@ namespace Model
     /**
      * <p>The name of the Systems Manager document.</p>
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>The name of the Systems Manager document.</p>
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
@@ -93,6 +98,11 @@ namespace Model
      * <p>The AWS user account that created the document.</p>
      */
     inline const Aws::String& GetOwner() const{ return m_owner; }
+
+    /**
+     * <p>The AWS user account that created the document.</p>
+     */
+    inline bool OwnerHasBeenSet() const { return m_ownerHasBeenSet; }
 
     /**
      * <p>The AWS user account that created the document.</p>
@@ -131,6 +141,13 @@ namespace Model
      * versions of a document, and cannot be changed.</p>
      */
     inline const Aws::String& GetVersionName() const{ return m_versionName; }
+
+    /**
+     * <p>An optional field specifying the version of the artifact associated with the
+     * document. For example, "Release 12, Update 6". This value is unique across all
+     * versions of a document, and cannot be changed.</p>
+     */
+    inline bool VersionNameHasBeenSet() const { return m_versionNameHasBeenSet; }
 
     /**
      * <p>An optional field specifying the version of the artifact associated with the
@@ -183,6 +200,11 @@ namespace Model
     /**
      * <p>The operating system platform. </p>
      */
+    inline bool PlatformTypesHasBeenSet() const { return m_platformTypesHasBeenSet; }
+
+    /**
+     * <p>The operating system platform. </p>
+     */
     inline void SetPlatformTypes(const Aws::Vector<PlatformType>& value) { m_platformTypesHasBeenSet = true; m_platformTypes = value; }
 
     /**
@@ -215,6 +237,11 @@ namespace Model
      * <p>The document version.</p>
      */
     inline const Aws::String& GetDocumentVersion() const{ return m_documentVersion; }
+
+    /**
+     * <p>The document version.</p>
+     */
+    inline bool DocumentVersionHasBeenSet() const { return m_documentVersionHasBeenSet; }
 
     /**
      * <p>The document version.</p>
@@ -255,6 +282,11 @@ namespace Model
     /**
      * <p>The document type.</p>
      */
+    inline bool DocumentTypeHasBeenSet() const { return m_documentTypeHasBeenSet; }
+
+    /**
+     * <p>The document type.</p>
+     */
     inline void SetDocumentType(const DocumentType& value) { m_documentTypeHasBeenSet = true; m_documentType = value; }
 
     /**
@@ -277,6 +309,11 @@ namespace Model
      * <p>The schema version.</p>
      */
     inline const Aws::String& GetSchemaVersion() const{ return m_schemaVersion; }
+
+    /**
+     * <p>The schema version.</p>
+     */
+    inline bool SchemaVersionHasBeenSet() const { return m_schemaVersionHasBeenSet; }
 
     /**
      * <p>The schema version.</p>
@@ -317,6 +354,11 @@ namespace Model
     /**
      * <p>The document format, either JSON or YAML.</p>
      */
+    inline bool DocumentFormatHasBeenSet() const { return m_documentFormatHasBeenSet; }
+
+    /**
+     * <p>The document format, either JSON or YAML.</p>
+     */
     inline void SetDocumentFormat(const DocumentFormat& value) { m_documentFormatHasBeenSet = true; m_documentFormat = value; }
 
     /**
@@ -342,6 +384,14 @@ namespace Model
      * Resource Types Reference</a> in the <i>AWS CloudFormation User Guide</i>. </p>
      */
     inline const Aws::String& GetTargetType() const{ return m_targetType; }
+
+    /**
+     * <p>The target type which defines the kinds of resources the document can run on.
+     * For example, /AWS::EC2::Instance. For a list of valid resource types, see <a
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
+     * Resource Types Reference</a> in the <i>AWS CloudFormation User Guide</i>. </p>
+     */
+    inline bool TargetTypeHasBeenSet() const { return m_targetTypeHasBeenSet; }
 
     /**
      * <p>The target type which defines the kinds of resources the document can run on.
@@ -396,6 +446,11 @@ namespace Model
      * <p>The tags, or metadata, that have been applied to the document.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>The tags, or metadata, that have been applied to the document.</p>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
      * <p>The tags, or metadata, that have been applied to the document.</p>

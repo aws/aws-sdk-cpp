@@ -70,6 +70,11 @@ namespace Model
     /**
      * <p>Ideal number of active instances in the fleet.</p>
      */
+    inline bool DESIREDHasBeenSet() const { return m_dESIREDHasBeenSet; }
+
+    /**
+     * <p>Ideal number of active instances in the fleet.</p>
+     */
     inline void SetDESIRED(int value) { m_dESIREDHasBeenSet = true; m_dESIRED = value; }
 
     /**
@@ -82,6 +87,11 @@ namespace Model
      * <p>Minimum value allowed for the fleet's instance count.</p>
      */
     inline int GetMINIMUM() const{ return m_mINIMUM; }
+
+    /**
+     * <p>Minimum value allowed for the fleet's instance count.</p>
+     */
+    inline bool MINIMUMHasBeenSet() const { return m_mINIMUMHasBeenSet; }
 
     /**
      * <p>Minimum value allowed for the fleet's instance count.</p>
@@ -102,6 +112,11 @@ namespace Model
     /**
      * <p>Maximum value allowed for the fleet's instance count.</p>
      */
+    inline bool MAXIMUMHasBeenSet() const { return m_mAXIMUMHasBeenSet; }
+
+    /**
+     * <p>Maximum value allowed for the fleet's instance count.</p>
+     */
     inline void SetMAXIMUM(int value) { m_mAXIMUMHasBeenSet = true; m_mAXIMUM = value; }
 
     /**
@@ -118,6 +133,11 @@ namespace Model
     /**
      * <p>Number of instances in the fleet that are starting but not yet active.</p>
      */
+    inline bool PENDINGHasBeenSet() const { return m_pENDINGHasBeenSet; }
+
+    /**
+     * <p>Number of instances in the fleet that are starting but not yet active.</p>
+     */
     inline void SetPENDING(int value) { m_pENDINGHasBeenSet = true; m_pENDING = value; }
 
     /**
@@ -130,6 +150,11 @@ namespace Model
      * <p>Actual number of active instances in the fleet.</p>
      */
     inline int GetACTIVE() const{ return m_aCTIVE; }
+
+    /**
+     * <p>Actual number of active instances in the fleet.</p>
+     */
+    inline bool ACTIVEHasBeenSet() const { return m_aCTIVEHasBeenSet; }
 
     /**
      * <p>Actual number of active instances in the fleet.</p>
@@ -152,6 +177,12 @@ namespace Model
      * <p>Number of active instances in the fleet that are not currently hosting a game
      * session.</p>
      */
+    inline bool IDLEHasBeenSet() const { return m_iDLEHasBeenSet; }
+
+    /**
+     * <p>Number of active instances in the fleet that are not currently hosting a game
+     * session.</p>
+     */
     inline void SetIDLE(int value) { m_iDLEHasBeenSet = true; m_iDLE = value; }
 
     /**
@@ -166,6 +197,12 @@ namespace Model
      * been terminated.</p>
      */
     inline int GetTERMINATING() const{ return m_tERMINATING; }
+
+    /**
+     * <p>Number of instances in the fleet that are no longer active but haven't yet
+     * been terminated.</p>
+     */
+    inline bool TERMINATINGHasBeenSet() const { return m_tERMINATINGHasBeenSet; }
 
     /**
      * <p>Number of instances in the fleet that are no longer active but haven't yet

@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>A unique string that identifies the predictive inbox placement test.</p>
      */
+    inline bool ReportIdHasBeenSet() const { return m_reportIdHasBeenSet; }
+
+    /**
+     * <p>A unique string that identifies the predictive inbox placement test.</p>
+     */
     inline void SetReportId(const Aws::String& value) { m_reportIdHasBeenSet = true; m_reportId = value; }
 
     /**

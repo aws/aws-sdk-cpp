@@ -65,6 +65,11 @@ namespace Model
     /**
      * <p>The name of the IAM user that the access key is associated with.</p>
      */
+    inline bool UserNameHasBeenSet() const { return m_userNameHasBeenSet; }
+
+    /**
+     * <p>The name of the IAM user that the access key is associated with.</p>
+     */
     inline void SetUserName(const Aws::String& value) { m_userNameHasBeenSet = true; m_userName = value; }
 
     /**
@@ -97,6 +102,11 @@ namespace Model
      * <p>The ID for this access key.</p>
      */
     inline const Aws::String& GetAccessKeyId() const{ return m_accessKeyId; }
+
+    /**
+     * <p>The ID for this access key.</p>
+     */
+    inline bool AccessKeyIdHasBeenSet() const { return m_accessKeyIdHasBeenSet; }
 
     /**
      * <p>The ID for this access key.</p>
@@ -139,6 +149,12 @@ namespace Model
      * <p>The status of the access key. <code>Active</code> means that the key is valid
      * for API calls, while <code>Inactive</code> means it is not. </p>
      */
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
+
+    /**
+     * <p>The status of the access key. <code>Active</code> means that the key is valid
+     * for API calls, while <code>Inactive</code> means it is not. </p>
+     */
     inline void SetStatus(const StatusType& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
@@ -164,6 +180,11 @@ namespace Model
      * <p>The secret key used to sign requests.</p>
      */
     inline const Aws::String& GetSecretAccessKey() const{ return m_secretAccessKey; }
+
+    /**
+     * <p>The secret key used to sign requests.</p>
+     */
+    inline bool SecretAccessKeyHasBeenSet() const { return m_secretAccessKeyHasBeenSet; }
 
     /**
      * <p>The secret key used to sign requests.</p>
@@ -200,6 +221,11 @@ namespace Model
      * <p>The date when the access key was created.</p>
      */
     inline const Aws::Utils::DateTime& GetCreateDate() const{ return m_createDate; }
+
+    /**
+     * <p>The date when the access key was created.</p>
+     */
+    inline bool CreateDateHasBeenSet() const { return m_createDateHasBeenSet; }
 
     /**
      * <p>The date when the access key was created.</p>

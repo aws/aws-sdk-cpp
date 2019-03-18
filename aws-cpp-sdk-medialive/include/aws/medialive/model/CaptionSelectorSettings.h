@@ -56,6 +56,9 @@ namespace Model
     inline const AribSourceSettings& GetAribSourceSettings() const{ return m_aribSourceSettings; }
 
     
+    inline bool AribSourceSettingsHasBeenSet() const { return m_aribSourceSettingsHasBeenSet; }
+
+    
     inline void SetAribSourceSettings(const AribSourceSettings& value) { m_aribSourceSettingsHasBeenSet = true; m_aribSourceSettings = value; }
 
     
@@ -70,6 +73,9 @@ namespace Model
 
     
     inline const DvbSubSourceSettings& GetDvbSubSourceSettings() const{ return m_dvbSubSourceSettings; }
+
+    
+    inline bool DvbSubSourceSettingsHasBeenSet() const { return m_dvbSubSourceSettingsHasBeenSet; }
 
     
     inline void SetDvbSubSourceSettings(const DvbSubSourceSettings& value) { m_dvbSubSourceSettingsHasBeenSet = true; m_dvbSubSourceSettings = value; }
@@ -88,6 +94,9 @@ namespace Model
     inline const EmbeddedSourceSettings& GetEmbeddedSourceSettings() const{ return m_embeddedSourceSettings; }
 
     
+    inline bool EmbeddedSourceSettingsHasBeenSet() const { return m_embeddedSourceSettingsHasBeenSet; }
+
+    
     inline void SetEmbeddedSourceSettings(const EmbeddedSourceSettings& value) { m_embeddedSourceSettingsHasBeenSet = true; m_embeddedSourceSettings = value; }
 
     
@@ -102,6 +111,9 @@ namespace Model
 
     
     inline const Scte20SourceSettings& GetScte20SourceSettings() const{ return m_scte20SourceSettings; }
+
+    
+    inline bool Scte20SourceSettingsHasBeenSet() const { return m_scte20SourceSettingsHasBeenSet; }
 
     
     inline void SetScte20SourceSettings(const Scte20SourceSettings& value) { m_scte20SourceSettingsHasBeenSet = true; m_scte20SourceSettings = value; }
@@ -120,6 +132,9 @@ namespace Model
     inline const Scte27SourceSettings& GetScte27SourceSettings() const{ return m_scte27SourceSettings; }
 
     
+    inline bool Scte27SourceSettingsHasBeenSet() const { return m_scte27SourceSettingsHasBeenSet; }
+
+    
     inline void SetScte27SourceSettings(const Scte27SourceSettings& value) { m_scte27SourceSettingsHasBeenSet = true; m_scte27SourceSettings = value; }
 
     
@@ -134,6 +149,9 @@ namespace Model
 
     
     inline const TeletextSourceSettings& GetTeletextSourceSettings() const{ return m_teletextSourceSettings; }
+
+    
+    inline bool TeletextSourceSettingsHasBeenSet() const { return m_teletextSourceSettingsHasBeenSet; }
 
     
     inline void SetTeletextSourceSettings(const TeletextSourceSettings& value) { m_teletextSourceSettingsHasBeenSet = true; m_teletextSourceSettings = value; }

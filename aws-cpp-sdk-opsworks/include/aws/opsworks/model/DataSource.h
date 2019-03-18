@@ -59,6 +59,13 @@ namespace Model
      * <code>OpsworksMysqlInstance</code>, <code>RdsDbInstance</code>, or
      * <code>None</code>.</p>
      */
+    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
+
+    /**
+     * <p>The data source's type, <code>AutoSelectOpsworksMysqlInstance</code>,
+     * <code>OpsworksMysqlInstance</code>, <code>RdsDbInstance</code>, or
+     * <code>None</code>.</p>
+     */
     inline void SetType(const Aws::String& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
@@ -105,6 +112,11 @@ namespace Model
     /**
      * <p>The data source's ARN.</p>
      */
+    inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
+
+    /**
+     * <p>The data source's ARN.</p>
+     */
     inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
 
     /**
@@ -137,6 +149,11 @@ namespace Model
      * <p>The database name.</p>
      */
     inline const Aws::String& GetDatabaseName() const{ return m_databaseName; }
+
+    /**
+     * <p>The database name.</p>
+     */
+    inline bool DatabaseNameHasBeenSet() const { return m_databaseNameHasBeenSet; }
 
     /**
      * <p>The database name.</p>

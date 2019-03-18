@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The summary of the current status of the approval request.</p>
      */
+    inline bool SummaryHasBeenSet() const { return m_summaryHasBeenSet; }
+
+    /**
+     * <p>The summary of the current status of the approval request.</p>
+     */
     inline void SetSummary(const Aws::String& value) { m_summaryHasBeenSet = true; m_summary = value; }
 
     /**
@@ -90,6 +95,12 @@ namespace Model
      * request.</p>
      */
     inline const ApprovalStatus& GetStatus() const{ return m_status; }
+
+    /**
+     * <p>The response submitted by a reviewer assigned to an approval action
+     * request.</p>
+     */
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
     /**
      * <p>The response submitted by a reviewer assigned to an approval action

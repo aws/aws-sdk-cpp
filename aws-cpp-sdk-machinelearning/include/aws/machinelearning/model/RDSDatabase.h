@@ -55,6 +55,11 @@ namespace Model
     /**
      * <p>The ID of an RDS DB instance.</p>
      */
+    inline bool InstanceIdentifierHasBeenSet() const { return m_instanceIdentifierHasBeenSet; }
+
+    /**
+     * <p>The ID of an RDS DB instance.</p>
+     */
     inline void SetInstanceIdentifier(const Aws::String& value) { m_instanceIdentifierHasBeenSet = true; m_instanceIdentifier = value; }
 
     /**
@@ -85,6 +90,9 @@ namespace Model
 
     
     inline const Aws::String& GetDatabaseName() const{ return m_databaseName; }
+
+    
+    inline bool DatabaseNameHasBeenSet() const { return m_databaseNameHasBeenSet; }
 
     
     inline void SetDatabaseName(const Aws::String& value) { m_databaseNameHasBeenSet = true; m_databaseName = value; }

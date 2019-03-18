@@ -54,6 +54,12 @@ namespace Model
      * <p>The name of the AWS Config rule for which you want to delete remediation
      * configuration.</p>
      */
+    inline bool ConfigRuleNameHasBeenSet() const { return m_configRuleNameHasBeenSet; }
+
+    /**
+     * <p>The name of the AWS Config rule for which you want to delete remediation
+     * configuration.</p>
+     */
     inline void SetConfigRuleName(const Aws::String& value) { m_configRuleNameHasBeenSet = true; m_configRuleName = value; }
 
     /**
@@ -91,6 +97,11 @@ namespace Model
      * <p>The type of a resource.</p>
      */
     inline const Aws::String& GetResourceType() const{ return m_resourceType; }
+
+    /**
+     * <p>The type of a resource.</p>
+     */
+    inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
 
     /**
      * <p>The type of a resource.</p>

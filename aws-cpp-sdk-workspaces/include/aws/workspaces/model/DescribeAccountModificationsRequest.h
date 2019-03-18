@@ -54,6 +54,12 @@ namespace Model
      * <p>If you received a <code>NextToken</code> from a previous call that was
      * paginated, provide this token to receive the next set of results.</p>
      */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
+
+    /**
+     * <p>If you received a <code>NextToken</code> from a previous call that was
+     * paginated, provide this token to receive the next set of results.</p>
+     */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
     /**

@@ -60,6 +60,12 @@ namespace Model
      * <p>(Optional) IDs of the backups you want to retrieve (String). This overrides
      * any filters. If any IDs are not found, BackupNotFound will be thrown.</p>
      */
+    inline bool BackupIdsHasBeenSet() const { return m_backupIdsHasBeenSet; }
+
+    /**
+     * <p>(Optional) IDs of the backups you want to retrieve (String). This overrides
+     * any filters. If any IDs are not found, BackupNotFound will be thrown.</p>
+     */
     inline void SetBackupIds(const Aws::Vector<Aws::String>& value) { m_backupIdsHasBeenSet = true; m_backupIds = value; }
 
     /**
@@ -104,6 +110,12 @@ namespace Model
      * backup-type.</p>
      */
     inline const Aws::Vector<Filter>& GetFilters() const{ return m_filters; }
+
+    /**
+     * <p>(Optional) Filters structure. Supported names are file-system-id and
+     * backup-type.</p>
+     */
+    inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
 
     /**
      * <p>(Optional) Filters structure. Supported names are file-system-id and
@@ -156,6 +168,14 @@ namespace Model
      * returns is the minimum of the <code>MaxResults</code> parameter specified in the
      * request and the service's internal maximum number of items per page.</p>
      */
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
+
+    /**
+     * <p>(Optional) Maximum number of backups to return in the response (integer).
+     * This parameter value must be greater than 0. The number of items that Amazon FSx
+     * returns is the minimum of the <code>MaxResults</code> parameter specified in the
+     * request and the service's internal maximum number of items per page.</p>
+     */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
@@ -173,6 +193,13 @@ namespace Model
      * continues the list from where the returning call left off.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
+    /**
+     * <p>(Optional) Opaque pagination token returned from a previous
+     * <code>DescribeBackups</code> operation (String). If a token present, the action
+     * continues the list from where the returning call left off.</p>
+     */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
      * <p>(Optional) Opaque pagination token returned from a previous

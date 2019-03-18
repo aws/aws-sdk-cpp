@@ -55,6 +55,11 @@ namespace Model
     /**
      * <p>Reserved for future use.</p>
      */
+    inline bool S3OutputUrlHasBeenSet() const { return m_s3OutputUrlHasBeenSet; }
+
+    /**
+     * <p>Reserved for future use.</p>
+     */
     inline void SetS3OutputUrl(const Aws::String& value) { m_s3OutputUrlHasBeenSet = true; m_s3OutputUrl = value; }
 
     /**
@@ -87,6 +92,11 @@ namespace Model
      * <p>Reserved for future use.</p>
      */
     inline const Aws::String& GetCloudWatchOutputUrl() const{ return m_cloudWatchOutputUrl; }
+
+    /**
+     * <p>Reserved for future use.</p>
+     */
+    inline bool CloudWatchOutputUrlHasBeenSet() const { return m_cloudWatchOutputUrlHasBeenSet; }
 
     /**
      * <p>Reserved for future use.</p>

@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The identifier of the server.</p>
      */
+    inline bool ServerIdHasBeenSet() const { return m_serverIdHasBeenSet; }
+
+    /**
+     * <p>The identifier of the server.</p>
+     */
     inline void SetServerId(const Aws::String& value) { m_serverIdHasBeenSet = true; m_serverId = value; }
 
     /**
@@ -93,6 +98,11 @@ namespace Model
     /**
      * <p>The type of server.</p>
      */
+    inline bool ServerTypeHasBeenSet() const { return m_serverTypeHasBeenSet; }
+
+    /**
+     * <p>The type of server.</p>
+     */
     inline void SetServerType(const ServerType& value) { m_serverTypeHasBeenSet = true; m_serverType = value; }
 
     /**
@@ -119,6 +129,11 @@ namespace Model
     /**
      * <p>Information about the VM server.</p>
      */
+    inline bool VmServerHasBeenSet() const { return m_vmServerHasBeenSet; }
+
+    /**
+     * <p>Information about the VM server.</p>
+     */
     inline void SetVmServer(const VmServer& value) { m_vmServerHasBeenSet = true; m_vmServer = value; }
 
     /**
@@ -141,6 +156,11 @@ namespace Model
      * <p>The identifier of the replication job.</p>
      */
     inline const Aws::String& GetReplicationJobId() const{ return m_replicationJobId; }
+
+    /**
+     * <p>The identifier of the replication job.</p>
+     */
+    inline bool ReplicationJobIdHasBeenSet() const { return m_replicationJobIdHasBeenSet; }
 
     /**
      * <p>The identifier of the replication job.</p>
@@ -177,6 +197,11 @@ namespace Model
      * <p>Indicates whether the replication job is deleted or failed.</p>
      */
     inline bool GetReplicationJobTerminated() const{ return m_replicationJobTerminated; }
+
+    /**
+     * <p>Indicates whether the replication job is deleted or failed.</p>
+     */
+    inline bool ReplicationJobTerminatedHasBeenSet() const { return m_replicationJobTerminatedHasBeenSet; }
 
     /**
      * <p>Indicates whether the replication job is deleted or failed.</p>

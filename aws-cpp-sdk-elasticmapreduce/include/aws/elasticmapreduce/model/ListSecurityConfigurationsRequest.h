@@ -52,6 +52,11 @@ namespace Model
     /**
      * <p>The pagination token that indicates the set of results to retrieve.</p>
      */
+    inline bool MarkerHasBeenSet() const { return m_markerHasBeenSet; }
+
+    /**
+     * <p>The pagination token that indicates the set of results to retrieve.</p>
+     */
     inline void SetMarker(const Aws::String& value) { m_markerHasBeenSet = true; m_marker = value; }
 
     /**

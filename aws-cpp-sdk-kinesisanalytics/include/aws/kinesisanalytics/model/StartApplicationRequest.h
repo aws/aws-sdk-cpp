@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>Name of the application.</p>
      */
+    inline bool ApplicationNameHasBeenSet() const { return m_applicationNameHasBeenSet; }
+
+    /**
+     * <p>Name of the application.</p>
+     */
     inline void SetApplicationName(const Aws::String& value) { m_applicationNameHasBeenSet = true; m_applicationName = value; }
 
     /**
@@ -92,6 +97,14 @@ namespace Model
      * Kinesis Analytics to start reading.</p>
      */
     inline const Aws::Vector<InputConfiguration>& GetInputConfigurations() const{ return m_inputConfigurations; }
+
+    /**
+     * <p>Identifies the specific input, by ID, that the application starts consuming.
+     * Amazon Kinesis Analytics starts reading the streaming source associated with the
+     * input. You can also specify where in the streaming source you want Amazon
+     * Kinesis Analytics to start reading.</p>
+     */
+    inline bool InputConfigurationsHasBeenSet() const { return m_inputConfigurationsHasBeenSet; }
 
     /**
      * <p>Identifies the specific input, by ID, that the application starts consuming.

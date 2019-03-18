@@ -63,6 +63,12 @@ namespace Model
      * <p>The identifier for the distribution, for example,
      * <code>EDFDVBD632BHDS5</code>.</p>
      */
+    inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
+
+    /**
+     * <p>The identifier for the distribution, for example,
+     * <code>EDFDVBD632BHDS5</code>.</p>
+     */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
     /**
@@ -102,6 +108,13 @@ namespace Model
      * where <code>123456789012</code> is your AWS account ID.</p>
      */
     inline const Aws::String& GetARN() const{ return m_aRN; }
+
+    /**
+     * <p> The ARN (Amazon Resource Name) for the streaming distribution. For example:
+     * <code>arn:aws:cloudfront::123456789012:streaming-distribution/EDFDVBD632BHDS5</code>,
+     * where <code>123456789012</code> is your AWS account ID.</p>
+     */
+    inline bool ARNHasBeenSet() const { return m_aRNHasBeenSet; }
 
     /**
      * <p> The ARN (Amazon Resource Name) for the streaming distribution. For example:
@@ -158,6 +171,13 @@ namespace Model
      * <code>Deployed</code>, the distribution's information is fully propagated
      * throughout the Amazon CloudFront system.</p>
      */
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
+
+    /**
+     * <p> Indicates the current status of the distribution. When the status is
+     * <code>Deployed</code>, the distribution's information is fully propagated
+     * throughout the Amazon CloudFront system.</p>
+     */
     inline void SetStatus(const Aws::String& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
@@ -204,6 +224,11 @@ namespace Model
     /**
      * <p>The date and time the distribution was last modified.</p>
      */
+    inline bool LastModifiedTimeHasBeenSet() const { return m_lastModifiedTimeHasBeenSet; }
+
+    /**
+     * <p>The date and time the distribution was last modified.</p>
+     */
     inline void SetLastModifiedTime(const Aws::Utils::DateTime& value) { m_lastModifiedTimeHasBeenSet = true; m_lastModifiedTime = value; }
 
     /**
@@ -227,6 +252,12 @@ namespace Model
      * <code>d111111abcdef8.cloudfront.net</code>.</p>
      */
     inline const Aws::String& GetDomainName() const{ return m_domainName; }
+
+    /**
+     * <p>The domain name corresponding to the distribution, for example,
+     * <code>d111111abcdef8.cloudfront.net</code>.</p>
+     */
+    inline bool DomainNameHasBeenSet() const { return m_domainNameHasBeenSet; }
 
     /**
      * <p>The domain name corresponding to the distribution, for example,
@@ -275,6 +306,12 @@ namespace Model
      * <p>A complex type that contains information about the Amazon S3 bucket from
      * which you want CloudFront to get your media files for distribution.</p>
      */
+    inline bool S3OriginHasBeenSet() const { return m_s3OriginHasBeenSet; }
+
+    /**
+     * <p>A complex type that contains information about the Amazon S3 bucket from
+     * which you want CloudFront to get your media files for distribution.</p>
+     */
     inline void SetS3Origin(const S3Origin& value) { m_s3OriginHasBeenSet = true; m_s3Origin = value; }
 
     /**
@@ -301,6 +338,12 @@ namespace Model
      * names), if any, for this streaming distribution.</p>
      */
     inline const Aliases& GetAliases() const{ return m_aliases; }
+
+    /**
+     * <p>A complex type that contains information about CNAMEs (alternate domain
+     * names), if any, for this streaming distribution.</p>
+     */
+    inline bool AliasesHasBeenSet() const { return m_aliasesHasBeenSet; }
 
     /**
      * <p>A complex type that contains information about CNAMEs (alternate domain
@@ -343,6 +386,23 @@ namespace Model
      * distribution.</p>
      */
     inline const TrustedSigners& GetTrustedSigners() const{ return m_trustedSigners; }
+
+    /**
+     * <p>A complex type that specifies the AWS accounts, if any, that you want to
+     * allow to create signed URLs for private content. If you want to require signed
+     * URLs in requests for objects in the target origin that match the
+     * <code>PathPattern</code> for this cache behavior, specify <code>true</code> for
+     * <code>Enabled</code>, and specify the applicable values for
+     * <code>Quantity</code> and <code>Items</code>.If you don't want to require signed
+     * URLs in requests for objects that match <code>PathPattern</code>, specify
+     * <code>false</code> for <code>Enabled</code> and <code>0</code> for
+     * <code>Quantity</code>. Omit <code>Items</code>. To add, change, or remove one or
+     * more trusted signers, change <code>Enabled</code> to <code>true</code> (if it's
+     * currently <code>false</code>), change <code>Quantity</code> as applicable, and
+     * specify all of the trusted signers that you want to include in the updated
+     * distribution.</p>
+     */
+    inline bool TrustedSignersHasBeenSet() const { return m_trustedSignersHasBeenSet; }
 
     /**
      * <p>A complex type that specifies the AWS accounts, if any, that you want to
@@ -421,6 +481,11 @@ namespace Model
     /**
      * <p>The comment originally specified when this distribution was created.</p>
      */
+    inline bool CommentHasBeenSet() const { return m_commentHasBeenSet; }
+
+    /**
+     * <p>The comment originally specified when this distribution was created.</p>
+     */
     inline void SetComment(const Aws::String& value) { m_commentHasBeenSet = true; m_comment = value; }
 
     /**
@@ -457,6 +522,11 @@ namespace Model
     /**
      * <p/>
      */
+    inline bool PriceClassHasBeenSet() const { return m_priceClassHasBeenSet; }
+
+    /**
+     * <p/>
+     */
     inline void SetPriceClass(const PriceClass& value) { m_priceClassHasBeenSet = true; m_priceClass = value; }
 
     /**
@@ -480,6 +550,12 @@ namespace Model
      * content.</p>
      */
     inline bool GetEnabled() const{ return m_enabled; }
+
+    /**
+     * <p>Whether the distribution is enabled to accept end user requests for
+     * content.</p>
+     */
+    inline bool EnabledHasBeenSet() const { return m_enabledHasBeenSet; }
 
     /**
      * <p>Whether the distribution is enabled to accept end user requests for

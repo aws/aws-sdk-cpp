@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The current status of the virtual node.</p>
      */
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
+
+    /**
+     * <p>The current status of the virtual node.</p>
+     */
     inline void SetStatus(const VirtualNodeStatusCode& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**

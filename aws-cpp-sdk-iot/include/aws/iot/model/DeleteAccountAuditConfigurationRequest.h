@@ -54,6 +54,11 @@ namespace Model
     /**
      * <p>If true, all scheduled audits are deleted.</p>
      */
+    inline bool DeleteScheduledAuditsHasBeenSet() const { return m_deleteScheduledAuditsHasBeenSet; }
+
+    /**
+     * <p>If true, all scheduled audits are deleted.</p>
+     */
     inline void SetDeleteScheduledAudits(bool value) { m_deleteScheduledAuditsHasBeenSet = true; m_deleteScheduledAudits = value; }
 
     /**

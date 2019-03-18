@@ -58,6 +58,12 @@ namespace Model
      * <p>Configuration information for delivery of data set contents to AWS IoT
      * Events.</p>
      */
+    inline bool IotEventsDestinationConfigurationHasBeenSet() const { return m_iotEventsDestinationConfigurationHasBeenSet; }
+
+    /**
+     * <p>Configuration information for delivery of data set contents to AWS IoT
+     * Events.</p>
+     */
     inline void SetIotEventsDestinationConfiguration(const IotEventsDestinationConfiguration& value) { m_iotEventsDestinationConfigurationHasBeenSet = true; m_iotEventsDestinationConfiguration = value; }
 
     /**

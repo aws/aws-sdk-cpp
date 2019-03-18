@@ -55,6 +55,12 @@ namespace Model
      * <p>A stack ID. If you use this parameter, <code>DescribeInstances</code> returns
      * descriptions of the instances associated with the specified stack.</p>
      */
+    inline bool StackIdHasBeenSet() const { return m_stackIdHasBeenSet; }
+
+    /**
+     * <p>A stack ID. If you use this parameter, <code>DescribeInstances</code> returns
+     * descriptions of the instances associated with the specified stack.</p>
+     */
     inline void SetStackId(const Aws::String& value) { m_stackIdHasBeenSet = true; m_stackId = value; }
 
     /**
@@ -93,6 +99,12 @@ namespace Model
      * descriptions of the instances associated with the specified layer.</p>
      */
     inline const Aws::String& GetLayerId() const{ return m_layerId; }
+
+    /**
+     * <p>A layer ID. If you use this parameter, <code>DescribeInstances</code> returns
+     * descriptions of the instances associated with the specified layer.</p>
+     */
+    inline bool LayerIdHasBeenSet() const { return m_layerIdHasBeenSet; }
 
     /**
      * <p>A layer ID. If you use this parameter, <code>DescribeInstances</code> returns
@@ -137,6 +149,13 @@ namespace Model
      * Otherwise, it returns a description of every instance.</p>
      */
     inline const Aws::Vector<Aws::String>& GetInstanceIds() const{ return m_instanceIds; }
+
+    /**
+     * <p>An array of instance IDs to be described. If you use this parameter,
+     * <code>DescribeInstances</code> returns a description of the specified instances.
+     * Otherwise, it returns a description of every instance.</p>
+     */
+    inline bool InstanceIdsHasBeenSet() const { return m_instanceIdsHasBeenSet; }
 
     /**
      * <p>An array of instance IDs to be described. If you use this parameter,

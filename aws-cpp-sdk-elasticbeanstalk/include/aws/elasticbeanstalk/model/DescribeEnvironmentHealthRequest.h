@@ -62,6 +62,12 @@ namespace Model
      * <p>Specify the environment by name.</p> <p>You must specify either this or an
      * EnvironmentName, or both.</p>
      */
+    inline bool EnvironmentNameHasBeenSet() const { return m_environmentNameHasBeenSet; }
+
+    /**
+     * <p>Specify the environment by name.</p> <p>You must specify either this or an
+     * EnvironmentName, or both.</p>
+     */
     inline void SetEnvironmentName(const Aws::String& value) { m_environmentNameHasBeenSet = true; m_environmentName = value; }
 
     /**
@@ -100,6 +106,12 @@ namespace Model
      * EnvironmentName, or both.</p>
      */
     inline const Aws::String& GetEnvironmentId() const{ return m_environmentId; }
+
+    /**
+     * <p>Specify the environment by ID.</p> <p>You must specify either this or an
+     * EnvironmentName, or both.</p>
+     */
+    inline bool EnvironmentIdHasBeenSet() const { return m_environmentIdHasBeenSet; }
 
     /**
      * <p>Specify the environment by ID.</p> <p>You must specify either this or an
@@ -144,6 +156,13 @@ namespace Model
      * environment.</p>
      */
     inline const Aws::Vector<EnvironmentHealthAttribute>& GetAttributeNames() const{ return m_attributeNames; }
+
+    /**
+     * <p>Specify the response elements to return. To retrieve all attributes, set to
+     * <code>All</code>. If no attribute names are specified, returns the name of the
+     * environment.</p>
+     */
+    inline bool AttributeNamesHasBeenSet() const { return m_attributeNamesHasBeenSet; }
 
     /**
      * <p>Specify the response elements to return. To retrieve all attributes, set to

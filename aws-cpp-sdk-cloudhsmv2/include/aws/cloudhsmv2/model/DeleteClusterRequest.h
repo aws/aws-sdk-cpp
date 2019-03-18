@@ -54,6 +54,12 @@ namespace Model
      * <p>The identifier (ID) of the cluster that you are deleting. To find the cluster
      * ID, use <a>DescribeClusters</a>.</p>
      */
+    inline bool ClusterIdHasBeenSet() const { return m_clusterIdHasBeenSet; }
+
+    /**
+     * <p>The identifier (ID) of the cluster that you are deleting. To find the cluster
+     * ID, use <a>DescribeClusters</a>.</p>
+     */
     inline void SetClusterId(const Aws::String& value) { m_clusterIdHasBeenSet = true; m_clusterId = value; }
 
     /**

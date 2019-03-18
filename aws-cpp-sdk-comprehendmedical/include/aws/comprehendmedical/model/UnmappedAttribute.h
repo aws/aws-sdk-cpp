@@ -61,6 +61,13 @@ namespace Model
      * "MEDICATION", "MEDICAL_CONDITION", "ANATOMY", "TEST_AND_TREATMENT_PROCEDURE" or
      * "PERSONAL_HEALTH_INFORMATION". </p>
      */
+    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
+
+    /**
+     * <p> The type of the attribute, could be one of the following values:
+     * "MEDICATION", "MEDICAL_CONDITION", "ANATOMY", "TEST_AND_TREATMENT_PROCEDURE" or
+     * "PERSONAL_HEALTH_INFORMATION". </p>
+     */
     inline void SetType(const EntityType& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
@@ -90,6 +97,12 @@ namespace Model
      * </p>
      */
     inline const Attribute& GetAttribute() const{ return m_attribute; }
+
+    /**
+     * <p> The specific attribute that has been extracted but not mapped to an entity.
+     * </p>
+     */
+    inline bool AttributeHasBeenSet() const { return m_attributeHasBeenSet; }
 
     /**
      * <p> The specific attribute that has been extracted but not mapped to an entity.

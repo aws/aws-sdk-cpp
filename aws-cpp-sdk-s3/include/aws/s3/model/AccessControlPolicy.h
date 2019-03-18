@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>A list of grants.</p>
      */
+    inline bool GrantsHasBeenSet() const { return m_grantsHasBeenSet; }
+
+    /**
+     * <p>A list of grants.</p>
+     */
     inline void SetGrants(const Aws::Vector<Grant>& value) { m_grantsHasBeenSet = true; m_grants = value; }
 
     /**
@@ -89,6 +94,11 @@ namespace Model
      * <p/>
      */
     inline const Owner& GetOwner() const{ return m_owner; }
+
+    /**
+     * <p/>
+     */
+    inline bool OwnerHasBeenSet() const { return m_ownerHasBeenSet; }
 
     /**
      * <p/>

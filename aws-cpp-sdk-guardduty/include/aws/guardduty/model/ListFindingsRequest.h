@@ -57,6 +57,12 @@ namespace Model
      * The ID of the detector that specifies the GuardDuty service whose findings you
      * want to list.
      */
+    inline bool DetectorIdHasBeenSet() const { return m_detectorIdHasBeenSet; }
+
+    /**
+     * The ID of the detector that specifies the GuardDuty service whose findings you
+     * want to list.
+     */
     inline void SetDetectorId(const Aws::String& value) { m_detectorIdHasBeenSet = true; m_detectorId = value; }
 
     /**
@@ -98,6 +104,11 @@ namespace Model
     /**
      * Represents the criteria used for querying findings.
      */
+    inline bool FindingCriteriaHasBeenSet() const { return m_findingCriteriaHasBeenSet; }
+
+    /**
+     * Represents the criteria used for querying findings.
+     */
     inline void SetFindingCriteria(const FindingCriteria& value) { m_findingCriteriaHasBeenSet = true; m_findingCriteria = value; }
 
     /**
@@ -126,6 +137,12 @@ namespace Model
      * You can use this parameter to indicate the maximum number of items you want in
      * the response. The default value is 50. The maximum value is 50.
      */
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
+
+    /**
+     * You can use this parameter to indicate the maximum number of items you want in
+     * the response. The default value is 50. The maximum value is 50.
+     */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
@@ -142,6 +159,14 @@ namespace Model
      * from the previous response to continue listing data.
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
+    /**
+     * You can use this parameter when paginating results. Set the value of this
+     * parameter to null on your first call to the ListFindings action. For subsequent
+     * calls to the action fill nextToken in the request with the value of nextToken
+     * from the previous response to continue listing data.
+     */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
      * You can use this parameter when paginating results. Set the value of this
@@ -196,6 +221,11 @@ namespace Model
      * Represents the criteria used for sorting findings.
      */
     inline const SortCriteria& GetSortCriteria() const{ return m_sortCriteria; }
+
+    /**
+     * Represents the criteria used for sorting findings.
+     */
+    inline bool SortCriteriaHasBeenSet() const { return m_sortCriteriaHasBeenSet; }
 
     /**
      * Represents the criteria used for sorting findings.

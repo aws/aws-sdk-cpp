@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The account ID that is associated with the recommendation. </p>
      */
+    inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
+
+    /**
+     * <p>The account ID that is associated with the recommendation. </p>
+     */
     inline void SetAccountId(const Aws::String& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
 
     /**
@@ -89,6 +94,11 @@ namespace Model
      * <p>The specific service that you want recommendations for.</p>
      */
     inline const Aws::String& GetService() const{ return m_service; }
+
+    /**
+     * <p>The specific service that you want recommendations for.</p>
+     */
+    inline bool ServiceHasBeenSet() const { return m_serviceHasBeenSet; }
 
     /**
      * <p>The specific service that you want recommendations for.</p>
@@ -137,6 +147,15 @@ namespace Model
      * accounts when it calculates its recommendations.</p> <p>Valid values are
      * <code>PAYER</code> and <code>LINKED</code>.</p>
      */
+    inline bool AccountScopeHasBeenSet() const { return m_accountScopeHasBeenSet; }
+
+    /**
+     * <p>The account scope that you want recommendations for. <code>PAYER</code> means
+     * that AWS includes the master account and any member accounts when it calculates
+     * its recommendations. <code>LINKED</code> means that AWS includes only member
+     * accounts when it calculates its recommendations.</p> <p>Valid values are
+     * <code>PAYER</code> and <code>LINKED</code>.</p>
+     */
     inline void SetAccountScope(const AccountScope& value) { m_accountScopeHasBeenSet = true; m_accountScope = value; }
 
     /**
@@ -177,6 +196,12 @@ namespace Model
      * <p>The number of previous days that you want AWS to consider when it calculates
      * your recommendations.</p>
      */
+    inline bool LookbackPeriodInDaysHasBeenSet() const { return m_lookbackPeriodInDaysHasBeenSet; }
+
+    /**
+     * <p>The number of previous days that you want AWS to consider when it calculates
+     * your recommendations.</p>
+     */
     inline void SetLookbackPeriodInDays(const LookbackPeriodInDays& value) { m_lookbackPeriodInDaysHasBeenSet = true; m_lookbackPeriodInDays = value; }
 
     /**
@@ -202,6 +227,11 @@ namespace Model
      * <p>The reservation term that you want recommendations for.</p>
      */
     inline const TermInYears& GetTermInYears() const{ return m_termInYears; }
+
+    /**
+     * <p>The reservation term that you want recommendations for.</p>
+     */
+    inline bool TermInYearsHasBeenSet() const { return m_termInYearsHasBeenSet; }
 
     /**
      * <p>The reservation term that you want recommendations for.</p>
@@ -232,6 +262,11 @@ namespace Model
     /**
      * <p>The reservation purchase option that you want recommendations for.</p>
      */
+    inline bool PaymentOptionHasBeenSet() const { return m_paymentOptionHasBeenSet; }
+
+    /**
+     * <p>The reservation purchase option that you want recommendations for.</p>
+     */
     inline void SetPaymentOption(const PaymentOption& value) { m_paymentOptionHasBeenSet = true; m_paymentOption = value; }
 
     /**
@@ -255,6 +290,12 @@ namespace Model
      * recommendations for, such as standard or convertible Amazon EC2 instances.</p>
      */
     inline const ServiceSpecification& GetServiceSpecification() const{ return m_serviceSpecification; }
+
+    /**
+     * <p>The hardware specifications for the service instances that you want
+     * recommendations for, such as standard or convertible Amazon EC2 instances.</p>
+     */
+    inline bool ServiceSpecificationHasBeenSet() const { return m_serviceSpecificationHasBeenSet; }
 
     /**
      * <p>The hardware specifications for the service instances that you want
@@ -291,6 +332,12 @@ namespace Model
      * <p>The number of recommendations that you want returned in a single response
      * object.</p>
      */
+    inline bool PageSizeHasBeenSet() const { return m_pageSizeHasBeenSet; }
+
+    /**
+     * <p>The number of recommendations that you want returned in a single response
+     * object.</p>
+     */
     inline void SetPageSize(int value) { m_pageSizeHasBeenSet = true; m_pageSize = value; }
 
     /**
@@ -305,6 +352,12 @@ namespace Model
      * retrieve.</p>
      */
     inline const Aws::String& GetNextPageToken() const{ return m_nextPageToken; }
+
+    /**
+     * <p>The pagination token that indicates the next set of results that you want to
+     * retrieve.</p>
+     */
+    inline bool NextPageTokenHasBeenSet() const { return m_nextPageTokenHasBeenSet; }
 
     /**
      * <p>The pagination token that indicates the next set of results that you want to

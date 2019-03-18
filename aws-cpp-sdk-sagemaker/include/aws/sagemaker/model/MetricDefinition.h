@@ -59,6 +59,11 @@ namespace Model
     /**
      * <p>The name of the metric.</p>
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>The name of the metric.</p>
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
@@ -95,6 +100,15 @@ namespace Model
      * Objective Metrics</a>.</p>
      */
     inline const Aws::String& GetRegex() const{ return m_regex; }
+
+    /**
+     * <p>A regular expression that searches the output of a training job and gets the
+     * value of the metric. For more information about using regular expressions to
+     * define metrics, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-metrics.html">Defining
+     * Objective Metrics</a>.</p>
+     */
+    inline bool RegexHasBeenSet() const { return m_regexHasBeenSet; }
 
     /**
      * <p>A regular expression that searches the output of a training job and gets the

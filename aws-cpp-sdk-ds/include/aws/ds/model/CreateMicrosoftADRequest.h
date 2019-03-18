@@ -63,6 +63,13 @@ namespace Model
      * <code>corp.example.com</code>. This name will resolve inside your VPC only. It
      * does not need to be publicly resolvable.</p>
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>The fully qualified domain name for the directory, such as
+     * <code>corp.example.com</code>. This name will resolve inside your VPC only. It
+     * does not need to be publicly resolvable.</p>
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
@@ -108,6 +115,14 @@ namespace Model
      * directory DNS <code>corp.example.com</code>. </p>
      */
     inline const Aws::String& GetShortName() const{ return m_shortName; }
+
+    /**
+     * <p>The NetBIOS name for your domain. A short identifier for your domain, such as
+     * <code>CORP</code>. If you don't specify a NetBIOS name, it will default to the
+     * first part of your directory DNS. For example, <code>CORP</code> for the
+     * directory DNS <code>corp.example.com</code>. </p>
+     */
+    inline bool ShortNameHasBeenSet() const { return m_shortNameHasBeenSet; }
 
     /**
      * <p>The NetBIOS name for your domain. A short identifier for your domain, such as
@@ -168,6 +183,12 @@ namespace Model
      * <p>The password for the default administrative user named
      * <code>Admin</code>.</p>
      */
+    inline bool PasswordHasBeenSet() const { return m_passwordHasBeenSet; }
+
+    /**
+     * <p>The password for the default administrative user named
+     * <code>Admin</code>.</p>
+     */
     inline void SetPassword(const Aws::String& value) { m_passwordHasBeenSet = true; m_password = value; }
 
     /**
@@ -206,6 +227,12 @@ namespace Model
      * console <code>Directory Details</code> page after the directory is created.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
+
+    /**
+     * <p>A textual description for the directory. This label will appear on the AWS
+     * console <code>Directory Details</code> page after the directory is created.</p>
+     */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
 
     /**
      * <p>A textual description for the directory. This label will appear on the AWS
@@ -254,6 +281,12 @@ namespace Model
      * <p>Contains VPC information for the <a>CreateDirectory</a> or
      * <a>CreateMicrosoftAD</a> operation.</p>
      */
+    inline bool VpcSettingsHasBeenSet() const { return m_vpcSettingsHasBeenSet; }
+
+    /**
+     * <p>Contains VPC information for the <a>CreateDirectory</a> or
+     * <a>CreateMicrosoftAD</a> operation.</p>
+     */
     inline void SetVpcSettings(const DirectoryVpcSettings& value) { m_vpcSettingsHasBeenSet = true; m_vpcSettings = value; }
 
     /**
@@ -285,6 +318,12 @@ namespace Model
      * <p>AWS Managed Microsoft AD is available in two editions: Standard and
      * Enterprise. Enterprise is the default.</p>
      */
+    inline bool EditionHasBeenSet() const { return m_editionHasBeenSet; }
+
+    /**
+     * <p>AWS Managed Microsoft AD is available in two editions: Standard and
+     * Enterprise. Enterprise is the default.</p>
+     */
     inline void SetEdition(const DirectoryEdition& value) { m_editionHasBeenSet = true; m_edition = value; }
 
     /**
@@ -310,6 +349,11 @@ namespace Model
      * <p>The tags to be assigned to the AWS Managed Microsoft AD directory.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>The tags to be assigned to the AWS Managed Microsoft AD directory.</p>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
      * <p>The tags to be assigned to the AWS Managed Microsoft AD directory.</p>

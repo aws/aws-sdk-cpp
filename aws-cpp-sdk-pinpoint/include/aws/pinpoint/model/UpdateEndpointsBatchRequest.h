@@ -51,6 +51,11 @@ namespace Model
     /**
      * The unique ID of your Amazon Pinpoint application.
      */
+    inline bool ApplicationIdHasBeenSet() const { return m_applicationIdHasBeenSet; }
+
+    /**
+     * The unique ID of your Amazon Pinpoint application.
+     */
     inline void SetApplicationId(const Aws::String& value) { m_applicationIdHasBeenSet = true; m_applicationId = value; }
 
     /**
@@ -81,6 +86,9 @@ namespace Model
 
     
     inline const EndpointBatchRequest& GetEndpointBatchRequest() const{ return m_endpointBatchRequest; }
+
+    
+    inline bool EndpointBatchRequestHasBeenSet() const { return m_endpointBatchRequestHasBeenSet; }
 
     
     inline void SetEndpointBatchRequest(const EndpointBatchRequest& value) { m_endpointBatchRequestHasBeenSet = true; m_endpointBatchRequest = value; }

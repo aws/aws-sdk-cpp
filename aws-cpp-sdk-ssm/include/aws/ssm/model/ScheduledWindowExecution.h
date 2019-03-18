@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The ID of the Maintenance Window to be run.</p>
      */
+    inline bool WindowIdHasBeenSet() const { return m_windowIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the Maintenance Window to be run.</p>
+     */
     inline void SetWindowId(const Aws::String& value) { m_windowIdHasBeenSet = true; m_windowId = value; }
 
     /**
@@ -88,6 +93,11 @@ namespace Model
      * <p>The name of the Maintenance Window to be run.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
+
+    /**
+     * <p>The name of the Maintenance Window to be run.</p>
+     */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
      * <p>The name of the Maintenance Window to be run.</p>
@@ -125,6 +135,12 @@ namespace Model
      * scheduled to be run.</p>
      */
     inline const Aws::String& GetExecutionTime() const{ return m_executionTime; }
+
+    /**
+     * <p>The time, in ISO-8601 Extended format, that the Maintenance Window is
+     * scheduled to be run.</p>
+     */
+    inline bool ExecutionTimeHasBeenSet() const { return m_executionTimeHasBeenSet; }
 
     /**
      * <p>The time, in ISO-8601 Extended format, that the Maintenance Window is

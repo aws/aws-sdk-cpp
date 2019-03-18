@@ -61,6 +61,12 @@ namespace Model
      * <p>The names of the policy types. If no names are specified, describes all
      * policy types defined by Elastic Load Balancing.</p>
      */
+    inline bool PolicyTypeNamesHasBeenSet() const { return m_policyTypeNamesHasBeenSet; }
+
+    /**
+     * <p>The names of the policy types. If no names are specified, describes all
+     * policy types defined by Elastic Load Balancing.</p>
+     */
     inline void SetPolicyTypeNames(const Aws::Vector<Aws::String>& value) { m_policyTypeNamesHasBeenSet = true; m_policyTypeNames = value; }
 
     /**

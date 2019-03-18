@@ -164,6 +164,11 @@ void MediaConvertClient::AssociateCertificateAsyncHelper(const AssociateCertific
 
 CancelJobOutcome MediaConvertClient::CancelJob(const CancelJobRequest& request) const
 {
+  if (!request.IdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("CancelJob", "Required field: Id, is not set");
+    return CancelJobOutcome(Aws::Client::AWSError<MediaConvertErrors>(MediaConvertErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Id]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/2017-08-29/jobs/";
@@ -340,6 +345,11 @@ void MediaConvertClient::CreateQueueAsyncHelper(const CreateQueueRequest& reques
 
 DeleteJobTemplateOutcome MediaConvertClient::DeleteJobTemplate(const DeleteJobTemplateRequest& request) const
 {
+  if (!request.NameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteJobTemplate", "Required field: Name, is not set");
+    return DeleteJobTemplateOutcome(Aws::Client::AWSError<MediaConvertErrors>(MediaConvertErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Name]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/2017-08-29/jobTemplates/";
@@ -376,6 +386,11 @@ void MediaConvertClient::DeleteJobTemplateAsyncHelper(const DeleteJobTemplateReq
 
 DeletePresetOutcome MediaConvertClient::DeletePreset(const DeletePresetRequest& request) const
 {
+  if (!request.NameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeletePreset", "Required field: Name, is not set");
+    return DeletePresetOutcome(Aws::Client::AWSError<MediaConvertErrors>(MediaConvertErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Name]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/2017-08-29/presets/";
@@ -412,6 +427,11 @@ void MediaConvertClient::DeletePresetAsyncHelper(const DeletePresetRequest& requ
 
 DeleteQueueOutcome MediaConvertClient::DeleteQueue(const DeleteQueueRequest& request) const
 {
+  if (!request.NameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteQueue", "Required field: Name, is not set");
+    return DeleteQueueOutcome(Aws::Client::AWSError<MediaConvertErrors>(MediaConvertErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Name]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/2017-08-29/queues/";
@@ -519,6 +539,11 @@ void MediaConvertClient::DisassociateCertificateAsyncHelper(const DisassociateCe
 
 GetJobOutcome MediaConvertClient::GetJob(const GetJobRequest& request) const
 {
+  if (!request.IdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetJob", "Required field: Id, is not set");
+    return GetJobOutcome(Aws::Client::AWSError<MediaConvertErrors>(MediaConvertErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Id]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/2017-08-29/jobs/";
@@ -555,6 +580,11 @@ void MediaConvertClient::GetJobAsyncHelper(const GetJobRequest& request, const G
 
 GetJobTemplateOutcome MediaConvertClient::GetJobTemplate(const GetJobTemplateRequest& request) const
 {
+  if (!request.NameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetJobTemplate", "Required field: Name, is not set");
+    return GetJobTemplateOutcome(Aws::Client::AWSError<MediaConvertErrors>(MediaConvertErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Name]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/2017-08-29/jobTemplates/";
@@ -591,6 +621,11 @@ void MediaConvertClient::GetJobTemplateAsyncHelper(const GetJobTemplateRequest& 
 
 GetPresetOutcome MediaConvertClient::GetPreset(const GetPresetRequest& request) const
 {
+  if (!request.NameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetPreset", "Required field: Name, is not set");
+    return GetPresetOutcome(Aws::Client::AWSError<MediaConvertErrors>(MediaConvertErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Name]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/2017-08-29/presets/";
@@ -627,6 +662,11 @@ void MediaConvertClient::GetPresetAsyncHelper(const GetPresetRequest& request, c
 
 GetQueueOutcome MediaConvertClient::GetQueue(const GetQueueRequest& request) const
 {
+  if (!request.NameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetQueue", "Required field: Name, is not set");
+    return GetQueueOutcome(Aws::Client::AWSError<MediaConvertErrors>(MediaConvertErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Name]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/2017-08-29/queues/";
@@ -803,6 +843,11 @@ void MediaConvertClient::ListQueuesAsyncHelper(const ListQueuesRequest& request,
 
 ListTagsForResourceOutcome MediaConvertClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
 {
+  if (!request.ArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListTagsForResource", "Required field: Arn, is not set");
+    return ListTagsForResourceOutcome(Aws::Client::AWSError<MediaConvertErrors>(MediaConvertErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Arn]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/2017-08-29/tags/";
@@ -874,6 +919,11 @@ void MediaConvertClient::TagResourceAsyncHelper(const TagResourceRequest& reques
 
 UntagResourceOutcome MediaConvertClient::UntagResource(const UntagResourceRequest& request) const
 {
+  if (!request.ArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UntagResource", "Required field: Arn, is not set");
+    return UntagResourceOutcome(Aws::Client::AWSError<MediaConvertErrors>(MediaConvertErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Arn]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/2017-08-29/tags/";
@@ -910,6 +960,11 @@ void MediaConvertClient::UntagResourceAsyncHelper(const UntagResourceRequest& re
 
 UpdateJobTemplateOutcome MediaConvertClient::UpdateJobTemplate(const UpdateJobTemplateRequest& request) const
 {
+  if (!request.NameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateJobTemplate", "Required field: Name, is not set");
+    return UpdateJobTemplateOutcome(Aws::Client::AWSError<MediaConvertErrors>(MediaConvertErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Name]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/2017-08-29/jobTemplates/";
@@ -946,6 +1001,11 @@ void MediaConvertClient::UpdateJobTemplateAsyncHelper(const UpdateJobTemplateReq
 
 UpdatePresetOutcome MediaConvertClient::UpdatePreset(const UpdatePresetRequest& request) const
 {
+  if (!request.NameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdatePreset", "Required field: Name, is not set");
+    return UpdatePresetOutcome(Aws::Client::AWSError<MediaConvertErrors>(MediaConvertErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Name]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/2017-08-29/presets/";
@@ -982,6 +1042,11 @@ void MediaConvertClient::UpdatePresetAsyncHelper(const UpdatePresetRequest& requ
 
 UpdateQueueOutcome MediaConvertClient::UpdateQueue(const UpdateQueueRequest& request) const
 {
+  if (!request.NameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateQueue", "Required field: Name, is not set");
+    return UpdateQueueOutcome(Aws::Client::AWSError<MediaConvertErrors>(MediaConvertErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Name]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/2017-08-29/queues/";

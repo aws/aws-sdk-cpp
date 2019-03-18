@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The position of the label instance on the image.</p>
      */
+    inline bool BoundingBoxHasBeenSet() const { return m_boundingBoxHasBeenSet; }
+
+    /**
+     * <p>The position of the label instance on the image.</p>
+     */
     inline void SetBoundingBox(const BoundingBox& value) { m_boundingBoxHasBeenSet = true; m_boundingBox = value; }
 
     /**
@@ -80,6 +85,12 @@ namespace Model
      * box.</p>
      */
     inline double GetConfidence() const{ return m_confidence; }
+
+    /**
+     * <p>The confidence that Amazon Rekognition has in the accuracy of the bounding
+     * box.</p>
+     */
+    inline bool ConfidenceHasBeenSet() const { return m_confidenceHasBeenSet; }
 
     /**
      * <p>The confidence that Amazon Rekognition has in the accuracy of the bounding

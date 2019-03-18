@@ -60,6 +60,11 @@ namespace Model
     /**
      * <p>The engine type of a DB instance.</p>
      */
+    inline bool EngineHasBeenSet() const { return m_engineHasBeenSet; }
+
+    /**
+     * <p>The engine type of a DB instance.</p>
+     */
     inline void SetEngine(const Aws::String& value) { m_engineHasBeenSet = true; m_engine = value; }
 
     /**
@@ -92,6 +97,11 @@ namespace Model
      * <p>The engine version of a DB instance.</p>
      */
     inline const Aws::String& GetEngineVersion() const{ return m_engineVersion; }
+
+    /**
+     * <p>The engine version of a DB instance.</p>
+     */
+    inline bool EngineVersionHasBeenSet() const { return m_engineVersionHasBeenSet; }
 
     /**
      * <p>The engine version of a DB instance.</p>
@@ -132,6 +142,11 @@ namespace Model
     /**
      * <p>The DB instance class for a DB instance.</p>
      */
+    inline bool DBInstanceClassHasBeenSet() const { return m_dBInstanceClassHasBeenSet; }
+
+    /**
+     * <p>The DB instance class for a DB instance.</p>
+     */
     inline void SetDBInstanceClass(const Aws::String& value) { m_dBInstanceClassHasBeenSet = true; m_dBInstanceClass = value; }
 
     /**
@@ -164,6 +179,11 @@ namespace Model
      * <p>The license model for a DB instance.</p>
      */
     inline const Aws::String& GetLicenseModel() const{ return m_licenseModel; }
+
+    /**
+     * <p>The license model for a DB instance.</p>
+     */
+    inline bool LicenseModelHasBeenSet() const { return m_licenseModelHasBeenSet; }
 
     /**
      * <p>The license model for a DB instance.</p>
@@ -204,6 +224,11 @@ namespace Model
     /**
      * <p>A list of Availability Zones for a DB instance.</p>
      */
+    inline bool AvailabilityZonesHasBeenSet() const { return m_availabilityZonesHasBeenSet; }
+
+    /**
+     * <p>A list of Availability Zones for a DB instance.</p>
+     */
     inline void SetAvailabilityZones(const Aws::Vector<AvailabilityZone>& value) { m_availabilityZonesHasBeenSet = true; m_availabilityZones = value; }
 
     /**
@@ -236,6 +261,11 @@ namespace Model
      * <p>Indicates whether a DB instance is in a virtual private cloud (VPC).</p>
      */
     inline bool GetVpc() const{ return m_vpc; }
+
+    /**
+     * <p>Indicates whether a DB instance is in a virtual private cloud (VPC).</p>
+     */
+    inline bool VpcHasBeenSet() const { return m_vpcHasBeenSet; }
 
     /**
      * <p>Indicates whether a DB instance is in a virtual private cloud (VPC).</p>

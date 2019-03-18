@@ -63,6 +63,13 @@ namespace Model
      * a limited time (180 days). Requesting a start time prior to what is retained
      * results in an "InvalidRequestException".</p>
      */
+    inline bool StartTimeHasBeenSet() const { return m_startTimeHasBeenSet; }
+
+    /**
+     * <p>The beginning of the time period. Note that audit information is retained for
+     * a limited time (180 days). Requesting a start time prior to what is retained
+     * results in an "InvalidRequestException".</p>
+     */
     inline void SetStartTime(const Aws::Utils::DateTime& value) { m_startTimeHasBeenSet = true; m_startTime = value; }
 
     /**
@@ -95,6 +102,11 @@ namespace Model
     /**
      * <p>The end of the time period.</p>
      */
+    inline bool EndTimeHasBeenSet() const { return m_endTimeHasBeenSet; }
+
+    /**
+     * <p>The end of the time period.</p>
+     */
     inline void SetEndTime(const Aws::Utils::DateTime& value) { m_endTimeHasBeenSet = true; m_endTime = value; }
 
     /**
@@ -118,6 +130,12 @@ namespace Model
      * "ON_DEMAND_AUDIT_TASK" or "SCHEDULED__AUDIT_TASK".</p>
      */
     inline const AuditTaskType& GetTaskType() const{ return m_taskType; }
+
+    /**
+     * <p>A filter to limit the output to the specified type of audit: can be one of
+     * "ON_DEMAND_AUDIT_TASK" or "SCHEDULED__AUDIT_TASK".</p>
+     */
+    inline bool TaskTypeHasBeenSet() const { return m_taskTypeHasBeenSet; }
 
     /**
      * <p>A filter to limit the output to the specified type of audit: can be one of
@@ -154,6 +172,12 @@ namespace Model
      * <p>A filter to limit the output to audits with the specified completion status:
      * can be one of "IN_PROGRESS", "COMPLETED", "FAILED" or "CANCELED".</p>
      */
+    inline bool TaskStatusHasBeenSet() const { return m_taskStatusHasBeenSet; }
+
+    /**
+     * <p>A filter to limit the output to audits with the specified completion status:
+     * can be one of "IN_PROGRESS", "COMPLETED", "FAILED" or "CANCELED".</p>
+     */
     inline void SetTaskStatus(const AuditTaskStatus& value) { m_taskStatusHasBeenSet = true; m_taskStatus = value; }
 
     /**
@@ -179,6 +203,11 @@ namespace Model
      * <p>The token for the next set of results.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
+    /**
+     * <p>The token for the next set of results.</p>
+     */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
      * <p>The token for the next set of results.</p>
@@ -215,6 +244,11 @@ namespace Model
      * <p>The maximum number of results to return at one time. The default is 25.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
+
+    /**
+     * <p>The maximum number of results to return at one time. The default is 25.</p>
+     */
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
 
     /**
      * <p>The maximum number of results to return at one time. The default is 25.</p>

@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p>The Availability Zone for the virtual private gateway.</p>
      */
+    inline bool AvailabilityZoneHasBeenSet() const { return m_availabilityZoneHasBeenSet; }
+
+    /**
+     * <p>The Availability Zone for the virtual private gateway.</p>
+     */
     inline void SetAvailabilityZone(const Aws::String& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = value; }
 
     /**
@@ -94,6 +99,11 @@ namespace Model
     /**
      * <p>The type of VPN connection this virtual private gateway supports.</p>
      */
+    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
+
+    /**
+     * <p>The type of VPN connection this virtual private gateway supports.</p>
+     */
     inline void SetType(const GatewayType& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
@@ -126,6 +136,14 @@ namespace Model
      * If you're using a 32-bit ASN, it must be in the 4200000000 to 4294967294
      * range.</p> <p>Default: 64512</p>
      */
+    inline bool AmazonSideAsnHasBeenSet() const { return m_amazonSideAsnHasBeenSet; }
+
+    /**
+     * <p>A private Autonomous System Number (ASN) for the Amazon side of a BGP
+     * session. If you're using a 16-bit ASN, it must be in the 64512 to 65534 range.
+     * If you're using a 32-bit ASN, it must be in the 4200000000 to 4294967294
+     * range.</p> <p>Default: 64512</p>
+     */
     inline void SetAmazonSideAsn(long long value) { m_amazonSideAsnHasBeenSet = true; m_amazonSideAsn = value; }
 
     /**
@@ -144,6 +162,14 @@ namespace Model
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
     inline bool GetDryRun() const{ return m_dryRun; }
+
+    /**
+     * <p>Checks whether you have the required permissions for the action, without
+     * actually making the request, and provides an error response. If you have the
+     * required permissions, the error response is <code>DryRunOperation</code>.
+     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+     */
+    inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
 
     /**
      * <p>Checks whether you have the required permissions for the action, without

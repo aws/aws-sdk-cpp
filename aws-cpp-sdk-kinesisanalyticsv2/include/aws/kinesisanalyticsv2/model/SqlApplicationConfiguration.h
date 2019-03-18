@@ -61,6 +61,12 @@ namespace Model
      * <p>The array of <a>Input</a> objects describing the input streams used by the
      * application.</p>
      */
+    inline bool InputsHasBeenSet() const { return m_inputsHasBeenSet; }
+
+    /**
+     * <p>The array of <a>Input</a> objects describing the input streams used by the
+     * application.</p>
+     */
     inline void SetInputs(const Aws::Vector<Input>& value) { m_inputsHasBeenSet = true; m_inputs = value; }
 
     /**
@@ -104,6 +110,12 @@ namespace Model
      * <p>The array of <a>Output</a> objects describing the destination streams used by
      * the application.</p>
      */
+    inline bool OutputsHasBeenSet() const { return m_outputsHasBeenSet; }
+
+    /**
+     * <p>The array of <a>Output</a> objects describing the destination streams used by
+     * the application.</p>
+     */
     inline void SetOutputs(const Aws::Vector<Output>& value) { m_outputsHasBeenSet = true; m_outputs = value; }
 
     /**
@@ -142,6 +154,12 @@ namespace Model
      * sources used by the application.</p>
      */
     inline const Aws::Vector<ReferenceDataSource>& GetReferenceDataSources() const{ return m_referenceDataSources; }
+
+    /**
+     * <p>The array of <a>ReferenceDataSource</a> objects describing the reference data
+     * sources used by the application.</p>
+     */
+    inline bool ReferenceDataSourcesHasBeenSet() const { return m_referenceDataSourcesHasBeenSet; }
 
     /**
      * <p>The array of <a>ReferenceDataSource</a> objects describing the reference data

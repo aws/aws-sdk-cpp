@@ -61,6 +61,11 @@ namespace Model
     /**
      * <p/>
      */
+    inline bool ExpirationHasBeenSet() const { return m_expirationHasBeenSet; }
+
+    /**
+     * <p/>
+     */
     inline void SetExpiration(const LifecycleExpiration& value) { m_expirationHasBeenSet = true; m_expiration = value; }
 
     /**
@@ -84,6 +89,12 @@ namespace Model
      * characters.</p>
      */
     inline const Aws::String& GetID() const{ return m_iD; }
+
+    /**
+     * <p>Unique identifier for the rule. The value cannot be longer than 255
+     * characters.</p>
+     */
+    inline bool IDHasBeenSet() const { return m_iDHasBeenSet; }
 
     /**
      * <p>Unique identifier for the rule. The value cannot be longer than 255
@@ -130,6 +141,11 @@ namespace Model
     /**
      * <p>Prefix identifying one or more objects to which the rule applies.</p>
      */
+    inline bool PrefixHasBeenSet() const { return m_prefixHasBeenSet; }
+
+    /**
+     * <p>Prefix identifying one or more objects to which the rule applies.</p>
+     */
     inline void SetPrefix(const Aws::String& value) { m_prefixHasBeenSet = true; m_prefix = value; }
 
     /**
@@ -168,6 +184,12 @@ namespace Model
      * <p>If 'Enabled', the rule is currently being applied. If 'Disabled', the rule is
      * not currently being applied.</p>
      */
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
+
+    /**
+     * <p>If 'Enabled', the rule is currently being applied. If 'Disabled', the rule is
+     * not currently being applied.</p>
+     */
     inline void SetStatus(const ExpirationStatus& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
@@ -197,6 +219,11 @@ namespace Model
     /**
      * <p/>
      */
+    inline bool TransitionHasBeenSet() const { return m_transitionHasBeenSet; }
+
+    /**
+     * <p/>
+     */
     inline void SetTransition(const Transition& value) { m_transitionHasBeenSet = true; m_transition = value; }
 
     /**
@@ -219,6 +246,9 @@ namespace Model
     inline const NoncurrentVersionTransition& GetNoncurrentVersionTransition() const{ return m_noncurrentVersionTransition; }
 
     
+    inline bool NoncurrentVersionTransitionHasBeenSet() const { return m_noncurrentVersionTransitionHasBeenSet; }
+
+    
     inline void SetNoncurrentVersionTransition(const NoncurrentVersionTransition& value) { m_noncurrentVersionTransitionHasBeenSet = true; m_noncurrentVersionTransition = value; }
 
     
@@ -235,6 +265,9 @@ namespace Model
     inline const NoncurrentVersionExpiration& GetNoncurrentVersionExpiration() const{ return m_noncurrentVersionExpiration; }
 
     
+    inline bool NoncurrentVersionExpirationHasBeenSet() const { return m_noncurrentVersionExpirationHasBeenSet; }
+
+    
     inline void SetNoncurrentVersionExpiration(const NoncurrentVersionExpiration& value) { m_noncurrentVersionExpirationHasBeenSet = true; m_noncurrentVersionExpiration = value; }
 
     
@@ -249,6 +282,9 @@ namespace Model
 
     
     inline const AbortIncompleteMultipartUpload& GetAbortIncompleteMultipartUpload() const{ return m_abortIncompleteMultipartUpload; }
+
+    
+    inline bool AbortIncompleteMultipartUploadHasBeenSet() const { return m_abortIncompleteMultipartUploadHasBeenSet; }
 
     
     inline void SetAbortIncompleteMultipartUpload(const AbortIncompleteMultipartUpload& value) { m_abortIncompleteMultipartUploadHasBeenSet = true; m_abortIncompleteMultipartUpload = value; }

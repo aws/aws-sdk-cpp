@@ -62,6 +62,12 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the volume. Use the <a>ListVolumes</a>
      * operation to return a list of gateway volumes.</p>
      */
+    inline bool VolumeARNHasBeenSet() const { return m_volumeARNHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the volume. Use the <a>ListVolumes</a>
+     * operation to return a list of gateway volumes.</p>
+     */
     inline void SetVolumeARN(const Aws::String& value) { m_volumeARNHasBeenSet = true; m_volumeARN = value; }
 
     /**
@@ -107,6 +113,13 @@ namespace Model
      * <i>hh</i>, where <i>hh</i> is the hour (0 to 23). The hour of the day is in the
      * time zone of the gateway.</p>
      */
+    inline bool StartAtHasBeenSet() const { return m_startAtHasBeenSet; }
+
+    /**
+     * <p>The hour of the day at which the snapshot schedule begins represented as
+     * <i>hh</i>, where <i>hh</i> is the hour (0 to 23). The hour of the day is in the
+     * time zone of the gateway.</p>
+     */
     inline void SetStartAt(int value) { m_startAtHasBeenSet = true; m_startAt = value; }
 
     /**
@@ -125,6 +138,11 @@ namespace Model
     /**
      * <p>Frequency of snapshots. Specify the number of hours between snapshots.</p>
      */
+    inline bool RecurrenceInHoursHasBeenSet() const { return m_recurrenceInHoursHasBeenSet; }
+
+    /**
+     * <p>Frequency of snapshots. Specify the number of hours between snapshots.</p>
+     */
     inline void SetRecurrenceInHours(int value) { m_recurrenceInHoursHasBeenSet = true; m_recurrenceInHours = value; }
 
     /**
@@ -138,6 +156,12 @@ namespace Model
      * description.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
+
+    /**
+     * <p>Optional description of the snapshot that overwrites the existing
+     * description.</p>
+     */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
 
     /**
      * <p>Optional description of the snapshot that overwrites the existing

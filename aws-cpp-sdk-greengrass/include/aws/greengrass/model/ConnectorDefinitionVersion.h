@@ -59,6 +59,12 @@ namespace Model
      * A list of references to connectors in this version, with their corresponding
      * configuration settings.
      */
+    inline bool ConnectorsHasBeenSet() const { return m_connectorsHasBeenSet; }
+
+    /**
+     * A list of references to connectors in this version, with their corresponding
+     * configuration settings.
+     */
     inline void SetConnectors(const Aws::Vector<Connector>& value) { m_connectorsHasBeenSet = true; m_connectors = value; }
 
     /**

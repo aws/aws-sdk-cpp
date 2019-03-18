@@ -59,6 +59,11 @@ namespace Model
     /**
      * <p>Specifies the type of the resource for which details are provided.</p>
      */
+    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
+
+    /**
+     * <p>Specifies the type of the resource for which details are provided.</p>
+     */
     inline void SetType(const Aws::String& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
@@ -91,6 +96,11 @@ namespace Model
      * <p>The canonical identifier for the given resource type.</p>
      */
     inline const Aws::String& GetId() const{ return m_id; }
+
+    /**
+     * <p>The canonical identifier for the given resource type.</p>
+     */
+    inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
 
     /**
      * <p>The canonical identifier for the given resource type.</p>
@@ -131,6 +141,11 @@ namespace Model
     /**
      * <p>The canonical AWS partition name to which the region is assigned.</p>
      */
+    inline bool PartitionHasBeenSet() const { return m_partitionHasBeenSet; }
+
+    /**
+     * <p>The canonical AWS partition name to which the region is assigned.</p>
+     */
     inline void SetPartition(const Partition& value) { m_partitionHasBeenSet = true; m_partition = value; }
 
     /**
@@ -153,6 +168,11 @@ namespace Model
      * <p>The canonical AWS external region name where this resource is located.</p>
      */
     inline const Aws::String& GetRegion() const{ return m_region; }
+
+    /**
+     * <p>The canonical AWS external region name where this resource is located.</p>
+     */
+    inline bool RegionHasBeenSet() const { return m_regionHasBeenSet; }
 
     /**
      * <p>The canonical AWS external region name where this resource is located.</p>
@@ -190,6 +210,12 @@ namespace Model
      * processed.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>A list of AWS tags associated with a resource at the time the finding was
+     * processed.</p>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
      * <p>A list of AWS tags associated with a resource at the time the finding was
@@ -262,6 +288,11 @@ namespace Model
      * <p>Provides additional details about the resource.</p>
      */
     inline const ResourceDetails& GetDetails() const{ return m_details; }
+
+    /**
+     * <p>Provides additional details about the resource.</p>
+     */
+    inline bool DetailsHasBeenSet() const { return m_detailsHasBeenSet; }
 
     /**
      * <p>Provides additional details about the resource.</p>

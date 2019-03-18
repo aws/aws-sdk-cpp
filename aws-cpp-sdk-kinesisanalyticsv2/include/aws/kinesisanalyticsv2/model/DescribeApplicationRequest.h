@@ -52,6 +52,11 @@ namespace Model
     /**
      * <p>The name of the application.</p>
      */
+    inline bool ApplicationNameHasBeenSet() const { return m_applicationNameHasBeenSet; }
+
+    /**
+     * <p>The name of the application.</p>
+     */
     inline void SetApplicationName(const Aws::String& value) { m_applicationNameHasBeenSet = true; m_applicationName = value; }
 
     /**
@@ -85,6 +90,12 @@ namespace Model
      * including the application's job plan.</p>
      */
     inline bool GetIncludeAdditionalDetails() const{ return m_includeAdditionalDetails; }
+
+    /**
+     * <p>Displays verbose information about a Kinesis Data Analytics application,
+     * including the application's job plan.</p>
+     */
+    inline bool IncludeAdditionalDetailsHasBeenSet() const { return m_includeAdditionalDetailsHasBeenSet; }
 
     /**
      * <p>Displays verbose information about a Kinesis Data Analytics application,

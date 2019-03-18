@@ -52,6 +52,11 @@ namespace Model
     /**
      * <p>The ID of the Direct Connect gateway.</p>
      */
+    inline bool DirectConnectGatewayIdHasBeenSet() const { return m_directConnectGatewayIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the Direct Connect gateway.</p>
+     */
     inline void SetDirectConnectGatewayId(const Aws::String& value) { m_directConnectGatewayIdHasBeenSet = true; m_directConnectGatewayId = value; }
 
     /**

@@ -107,6 +107,11 @@ void CloudSearchDomainClient::OverrideEndpoint(const Aws::String& endpoint)
 }
 SearchOutcome CloudSearchDomainClient::Search(const SearchRequest& request) const
 {
+  if (!request.QueryHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("Search", "Required field: Query, is not set");
+    return SearchOutcome(Aws::Client::AWSError<CloudSearchDomainErrors>(CloudSearchDomainErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Query]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/2013-01-01/search";
@@ -144,6 +149,16 @@ void CloudSearchDomainClient::SearchAsyncHelper(const SearchRequest& request, co
 
 SuggestOutcome CloudSearchDomainClient::Suggest(const SuggestRequest& request) const
 {
+  if (!request.QueryHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("Suggest", "Required field: Query, is not set");
+    return SuggestOutcome(Aws::Client::AWSError<CloudSearchDomainErrors>(CloudSearchDomainErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Query]", false));
+  }
+  if (!request.SuggesterHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("Suggest", "Required field: Suggester, is not set");
+    return SuggestOutcome(Aws::Client::AWSError<CloudSearchDomainErrors>(CloudSearchDomainErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Suggester]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/2013-01-01/suggest";

@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>Specifies whether connection draining is enabled for the load balancer.</p>
      */
+    inline bool EnabledHasBeenSet() const { return m_enabledHasBeenSet; }
+
+    /**
+     * <p>Specifies whether connection draining is enabled for the load balancer.</p>
+     */
     inline void SetEnabled(bool value) { m_enabledHasBeenSet = true; m_enabled = value; }
 
     /**
@@ -69,6 +74,12 @@ namespace Model
      * deregistering the instances.</p>
      */
     inline int GetTimeout() const{ return m_timeout; }
+
+    /**
+     * <p>The maximum time, in seconds, to keep the existing connections open before
+     * deregistering the instances.</p>
+     */
+    inline bool TimeoutHasBeenSet() const { return m_timeoutHasBeenSet; }
 
     /**
      * <p>The maximum time, in seconds, to keep the existing connections open before

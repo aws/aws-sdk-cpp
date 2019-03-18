@@ -77,6 +77,19 @@ namespace Model
      * response was <code>false</code>, there are no more traffic policy instances to
      * get.</p>
      */
+    inline bool HostedZoneIdMarkerHasBeenSet() const { return m_hostedZoneIdMarkerHasBeenSet; }
+
+    /**
+     * <p>If the value of <code>IsTruncated</code> in the previous response was
+     * <code>true</code>, you have more traffic policy instances. To get more traffic
+     * policy instances, submit another <code>ListTrafficPolicyInstances</code>
+     * request. For the value of <code>HostedZoneId</code>, specify the value of
+     * <code>HostedZoneIdMarker</code> from the previous response, which is the hosted
+     * zone ID of the first traffic policy instance in the next group of traffic policy
+     * instances.</p> <p>If the value of <code>IsTruncated</code> in the previous
+     * response was <code>false</code>, there are no more traffic policy instances to
+     * get.</p>
+     */
     inline void SetHostedZoneIdMarker(const Aws::String& value) { m_hostedZoneIdMarkerHasBeenSet = true; m_hostedZoneIdMarker = value; }
 
     /**
@@ -157,6 +170,19 @@ namespace Model
      * are no more traffic policy instances to get.</p>
      */
     inline const Aws::String& GetTrafficPolicyInstanceNameMarker() const{ return m_trafficPolicyInstanceNameMarker; }
+
+    /**
+     * <p>If the value of <code>IsTruncated</code> in the previous response was
+     * <code>true</code>, you have more traffic policy instances. To get more traffic
+     * policy instances, submit another <code>ListTrafficPolicyInstances</code>
+     * request. For the value of <code>trafficpolicyinstancename</code>, specify the
+     * value of <code>TrafficPolicyInstanceNameMarker</code> from the previous
+     * response, which is the name of the first traffic policy instance in the next
+     * group of traffic policy instances.</p> <p>If the value of
+     * <code>IsTruncated</code> in the previous response was <code>false</code>, there
+     * are no more traffic policy instances to get.</p>
+     */
+    inline bool TrafficPolicyInstanceNameMarkerHasBeenSet() const { return m_trafficPolicyInstanceNameMarkerHasBeenSet; }
 
     /**
      * <p>If the value of <code>IsTruncated</code> in the previous response was
@@ -261,6 +287,19 @@ namespace Model
      * <code>IsTruncated</code> in the previous response was <code>false</code>, there
      * are no more traffic policy instances to get.</p>
      */
+    inline bool TrafficPolicyInstanceTypeMarkerHasBeenSet() const { return m_trafficPolicyInstanceTypeMarkerHasBeenSet; }
+
+    /**
+     * <p>If the value of <code>IsTruncated</code> in the previous response was
+     * <code>true</code>, you have more traffic policy instances. To get more traffic
+     * policy instances, submit another <code>ListTrafficPolicyInstances</code>
+     * request. For the value of <code>trafficpolicyinstancetype</code>, specify the
+     * value of <code>TrafficPolicyInstanceTypeMarker</code> from the previous
+     * response, which is the type of the first traffic policy instance in the next
+     * group of traffic policy instances.</p> <p>If the value of
+     * <code>IsTruncated</code> in the previous response was <code>false</code>, there
+     * are no more traffic policy instances to get.</p>
+     */
     inline void SetTrafficPolicyInstanceTypeMarker(const RRType& value) { m_trafficPolicyInstanceTypeMarkerHasBeenSet = true; m_trafficPolicyInstanceTypeMarker = value; }
 
     /**
@@ -315,6 +354,19 @@ namespace Model
      * instances.</p>
      */
     inline const Aws::String& GetMaxItems() const{ return m_maxItems; }
+
+    /**
+     * <p>The maximum number of traffic policy instances that you want Amazon Route 53
+     * to return in response to a <code>ListTrafficPolicyInstances</code> request. If
+     * you have more than <code>MaxItems</code> traffic policy instances, the value of
+     * the <code>IsTruncated</code> element in the response is <code>true</code>, and
+     * the values of <code>HostedZoneIdMarker</code>,
+     * <code>TrafficPolicyInstanceNameMarker</code>, and
+     * <code>TrafficPolicyInstanceTypeMarker</code> represent the first traffic policy
+     * instance in the next group of <code>MaxItems</code> traffic policy
+     * instances.</p>
+     */
+    inline bool MaxItemsHasBeenSet() const { return m_maxItemsHasBeenSet; }
 
     /**
      * <p>The maximum number of traffic policy instances that you want Amazon Route 53

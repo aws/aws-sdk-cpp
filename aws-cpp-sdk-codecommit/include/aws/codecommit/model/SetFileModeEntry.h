@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The full path to the file, including the name of the file.</p>
      */
+    inline bool FilePathHasBeenSet() const { return m_filePathHasBeenSet; }
+
+    /**
+     * <p>The full path to the file, including the name of the file.</p>
+     */
     inline void SetFilePath(const Aws::String& value) { m_filePathHasBeenSet = true; m_filePath = value; }
 
     /**
@@ -88,6 +93,11 @@ namespace Model
      * <p>The file mode for the file.</p>
      */
     inline const FileModeTypeEnum& GetFileMode() const{ return m_fileMode; }
+
+    /**
+     * <p>The file mode for the file.</p>
+     */
+    inline bool FileModeHasBeenSet() const { return m_fileModeHasBeenSet; }
 
     /**
      * <p>The file mode for the file.</p>

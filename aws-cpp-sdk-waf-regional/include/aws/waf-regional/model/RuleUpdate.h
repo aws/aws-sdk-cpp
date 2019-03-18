@@ -62,6 +62,13 @@ namespace Model
      * <code>Rule</code>. Use <code>DELETE</code> to remove a <code>Predicate</code>
      * from a <code>Rule</code>.</p>
      */
+    inline bool ActionHasBeenSet() const { return m_actionHasBeenSet; }
+
+    /**
+     * <p>Specify <code>INSERT</code> to add a <code>Predicate</code> to a
+     * <code>Rule</code>. Use <code>DELETE</code> to remove a <code>Predicate</code>
+     * from a <code>Rule</code>.</p>
+     */
     inline void SetAction(const ChangeAction& value) { m_actionHasBeenSet = true; m_action = value; }
 
     /**
@@ -91,6 +98,12 @@ namespace Model
      * want to add to a <code>Rule</code>.</p>
      */
     inline const Predicate& GetPredicate() const{ return m_predicate; }
+
+    /**
+     * <p>The ID of the <code>Predicate</code> (such as an <code>IPSet</code>) that you
+     * want to add to a <code>Rule</code>.</p>
+     */
+    inline bool PredicateHasBeenSet() const { return m_predicateHasBeenSet; }
 
     /**
      * <p>The ID of the <code>Predicate</code> (such as an <code>IPSet</code>) that you

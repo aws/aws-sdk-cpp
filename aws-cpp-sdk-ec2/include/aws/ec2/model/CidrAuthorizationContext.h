@@ -62,6 +62,11 @@ namespace Model
     /**
      * <p>The plain-text authorization message for the prefix and account.</p>
      */
+    inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
+
+    /**
+     * <p>The plain-text authorization message for the prefix and account.</p>
+     */
     inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
 
     /**
@@ -94,6 +99,11 @@ namespace Model
      * <p>The signed authorization message for the prefix and account.</p>
      */
     inline const Aws::String& GetSignature() const{ return m_signature; }
+
+    /**
+     * <p>The signed authorization message for the prefix and account.</p>
+     */
+    inline bool SignatureHasBeenSet() const { return m_signatureHasBeenSet; }
 
     /**
      * <p>The signed authorization message for the prefix and account.</p>

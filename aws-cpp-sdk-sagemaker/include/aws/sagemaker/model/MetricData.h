@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The name of the metric.</p>
      */
+    inline bool MetricNameHasBeenSet() const { return m_metricNameHasBeenSet; }
+
+    /**
+     * <p>The name of the metric.</p>
+     */
     inline void SetMetricName(const Aws::String& value) { m_metricNameHasBeenSet = true; m_metricName = value; }
 
     /**
@@ -93,6 +98,11 @@ namespace Model
     /**
      * <p>The value of the metric.</p>
      */
+    inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
+
+    /**
+     * <p>The value of the metric.</p>
+     */
     inline void SetValue(double value) { m_valueHasBeenSet = true; m_value = value; }
 
     /**
@@ -105,6 +115,11 @@ namespace Model
      * <p>The date and time that the algorithm emitted the metric.</p>
      */
     inline const Aws::Utils::DateTime& GetTimestamp() const{ return m_timestamp; }
+
+    /**
+     * <p>The date and time that the algorithm emitted the metric.</p>
+     */
+    inline bool TimestampHasBeenSet() const { return m_timestampHasBeenSet; }
 
     /**
      * <p>The date and time that the algorithm emitted the metric.</p>

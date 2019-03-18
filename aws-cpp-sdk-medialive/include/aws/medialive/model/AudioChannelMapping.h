@@ -58,6 +58,12 @@ namespace Model
      * Indices and gain values for each input channel that should be remixed into this
      * output channel.
      */
+    inline bool InputChannelLevelsHasBeenSet() const { return m_inputChannelLevelsHasBeenSet; }
+
+    /**
+     * Indices and gain values for each input channel that should be remixed into this
+     * output channel.
+     */
     inline void SetInputChannelLevels(const Aws::Vector<InputChannelLevel>& value) { m_inputChannelLevelsHasBeenSet = true; m_inputChannelLevels = value; }
 
     /**
@@ -95,6 +101,11 @@ namespace Model
      * The index of the output channel being produced.
      */
     inline int GetOutputChannel() const{ return m_outputChannel; }
+
+    /**
+     * The index of the output channel being produced.
+     */
+    inline bool OutputChannelHasBeenSet() const { return m_outputChannelHasBeenSet; }
 
     /**
      * The index of the output channel being produced.

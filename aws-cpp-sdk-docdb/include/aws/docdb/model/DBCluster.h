@@ -64,6 +64,12 @@ namespace Model
      * <p>Provides the list of Amazon EC2 Availability Zones that instances in the DB
      * cluster can be created in.</p>
      */
+    inline bool AvailabilityZonesHasBeenSet() const { return m_availabilityZonesHasBeenSet; }
+
+    /**
+     * <p>Provides the list of Amazon EC2 Availability Zones that instances in the DB
+     * cluster can be created in.</p>
+     */
     inline void SetAvailabilityZones(const Aws::Vector<Aws::String>& value) { m_availabilityZonesHasBeenSet = true; m_availabilityZones = value; }
 
     /**
@@ -113,6 +119,12 @@ namespace Model
      * <p>Specifies the number of days for which automatic DB snapshots are
      * retained.</p>
      */
+    inline bool BackupRetentionPeriodHasBeenSet() const { return m_backupRetentionPeriodHasBeenSet; }
+
+    /**
+     * <p>Specifies the number of days for which automatic DB snapshots are
+     * retained.</p>
+     */
     inline void SetBackupRetentionPeriod(int value) { m_backupRetentionPeriodHasBeenSet = true; m_backupRetentionPeriod = value; }
 
     /**
@@ -127,6 +139,12 @@ namespace Model
      * key that identifies a DB cluster.</p>
      */
     inline const Aws::String& GetDBClusterIdentifier() const{ return m_dBClusterIdentifier; }
+
+    /**
+     * <p>Contains a user-supplied DB cluster identifier. This identifier is the unique
+     * key that identifies a DB cluster.</p>
+     */
+    inline bool DBClusterIdentifierHasBeenSet() const { return m_dBClusterIdentifierHasBeenSet; }
 
     /**
      * <p>Contains a user-supplied DB cluster identifier. This identifier is the unique
@@ -173,6 +191,11 @@ namespace Model
     /**
      * <p>Specifies the name of the DB cluster parameter group for the DB cluster.</p>
      */
+    inline bool DBClusterParameterGroupHasBeenSet() const { return m_dBClusterParameterGroupHasBeenSet; }
+
+    /**
+     * <p>Specifies the name of the DB cluster parameter group for the DB cluster.</p>
+     */
     inline void SetDBClusterParameterGroup(const Aws::String& value) { m_dBClusterParameterGroupHasBeenSet = true; m_dBClusterParameterGroup = value; }
 
     /**
@@ -206,6 +229,12 @@ namespace Model
      * cluster, including the name, description, and subnets in the subnet group.</p>
      */
     inline const Aws::String& GetDBSubnetGroup() const{ return m_dBSubnetGroup; }
+
+    /**
+     * <p>Specifies information on the subnet group that is associated with the DB
+     * cluster, including the name, description, and subnets in the subnet group.</p>
+     */
+    inline bool DBSubnetGroupHasBeenSet() const { return m_dBSubnetGroupHasBeenSet; }
 
     /**
      * <p>Specifies information on the subnet group that is associated with the DB
@@ -252,6 +281,11 @@ namespace Model
     /**
      * <p>Specifies the current state of this DB cluster.</p>
      */
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
+
+    /**
+     * <p>Specifies the current state of this DB cluster.</p>
+     */
     inline void SetStatus(const Aws::String& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
@@ -284,6 +318,11 @@ namespace Model
      * <p>Specifies the progress of the operation as a percentage.</p>
      */
     inline const Aws::String& GetPercentProgress() const{ return m_percentProgress; }
+
+    /**
+     * <p>Specifies the progress of the operation as a percentage.</p>
+     */
+    inline bool PercentProgressHasBeenSet() const { return m_percentProgressHasBeenSet; }
 
     /**
      * <p>Specifies the progress of the operation as a percentage.</p>
@@ -326,6 +365,12 @@ namespace Model
      * <p>The earliest time to which a database can be restored with point-in-time
      * restore.</p>
      */
+    inline bool EarliestRestorableTimeHasBeenSet() const { return m_earliestRestorableTimeHasBeenSet; }
+
+    /**
+     * <p>The earliest time to which a database can be restored with point-in-time
+     * restore.</p>
+     */
     inline void SetEarliestRestorableTime(const Aws::Utils::DateTime& value) { m_earliestRestorableTimeHasBeenSet = true; m_earliestRestorableTime = value; }
 
     /**
@@ -352,6 +397,12 @@ namespace Model
      * cluster.</p>
      */
     inline const Aws::String& GetEndpoint() const{ return m_endpoint; }
+
+    /**
+     * <p>Specifies the connection endpoint for the primary instance of the DB
+     * cluster.</p>
+     */
+    inline bool EndpointHasBeenSet() const { return m_endpointHasBeenSet; }
 
     /**
      * <p>Specifies the connection endpoint for the primary instance of the DB
@@ -403,6 +454,20 @@ namespace Model
      * the cluster, you can then reconnect to the reader endpoint.</p>
      */
     inline const Aws::String& GetReaderEndpoint() const{ return m_readerEndpoint; }
+
+    /**
+     * <p>The reader endpoint for the DB cluster. The reader endpoint for a DB cluster
+     * load balances connections across the Amazon DocumentDB replicas that are
+     * available in a DB cluster. As clients request new connections to the reader
+     * endpoint, Amazon DocumentDB distributes the connection requests among the Amazon
+     * DocumentDB replicas in the DB cluster. This functionality can help balance your
+     * read workload across multiple Amazon DocumentDB replicas in your DB cluster.
+     * </p> <p>If a failover occurs, and the Amazon DocumentDB replica that you are
+     * connected to is promoted to be the primary instance, your connection is dropped.
+     * To continue sending your read workload to other Amazon DocumentDB replicas in
+     * the cluster, you can then reconnect to the reader endpoint.</p>
+     */
+    inline bool ReaderEndpointHasBeenSet() const { return m_readerEndpointHasBeenSet; }
 
     /**
      * <p>The reader endpoint for the DB cluster. The reader endpoint for a DB cluster
@@ -499,6 +564,12 @@ namespace Model
      * <p>Specifies whether the DB cluster has instances in multiple Availability
      * Zones.</p>
      */
+    inline bool MultiAZHasBeenSet() const { return m_multiAZHasBeenSet; }
+
+    /**
+     * <p>Specifies whether the DB cluster has instances in multiple Availability
+     * Zones.</p>
+     */
     inline void SetMultiAZ(bool value) { m_multiAZHasBeenSet = true; m_multiAZ = value; }
 
     /**
@@ -512,6 +583,11 @@ namespace Model
      * <p>Provides the name of the database engine to be used for this DB cluster.</p>
      */
     inline const Aws::String& GetEngine() const{ return m_engine; }
+
+    /**
+     * <p>Provides the name of the database engine to be used for this DB cluster.</p>
+     */
+    inline bool EngineHasBeenSet() const { return m_engineHasBeenSet; }
 
     /**
      * <p>Provides the name of the database engine to be used for this DB cluster.</p>
@@ -548,6 +624,11 @@ namespace Model
      * <p>Indicates the database engine version.</p>
      */
     inline const Aws::String& GetEngineVersion() const{ return m_engineVersion; }
+
+    /**
+     * <p>Indicates the database engine version.</p>
+     */
+    inline bool EngineVersionHasBeenSet() const { return m_engineVersionHasBeenSet; }
 
     /**
      * <p>Indicates the database engine version.</p>
@@ -590,6 +671,12 @@ namespace Model
      * <p>Specifies the latest time to which a database can be restored with
      * point-in-time restore.</p>
      */
+    inline bool LatestRestorableTimeHasBeenSet() const { return m_latestRestorableTimeHasBeenSet; }
+
+    /**
+     * <p>Specifies the latest time to which a database can be restored with
+     * point-in-time restore.</p>
+     */
     inline void SetLatestRestorableTime(const Aws::Utils::DateTime& value) { m_latestRestorableTimeHasBeenSet = true; m_latestRestorableTime = value; }
 
     /**
@@ -619,6 +706,11 @@ namespace Model
     /**
      * <p>Specifies the port that the database engine is listening on.</p>
      */
+    inline bool PortHasBeenSet() const { return m_portHasBeenSet; }
+
+    /**
+     * <p>Specifies the port that the database engine is listening on.</p>
+     */
     inline void SetPort(int value) { m_portHasBeenSet = true; m_port = value; }
 
     /**
@@ -631,6 +723,11 @@ namespace Model
      * <p>Contains the master user name for the DB cluster.</p>
      */
     inline const Aws::String& GetMasterUsername() const{ return m_masterUsername; }
+
+    /**
+     * <p>Contains the master user name for the DB cluster.</p>
+     */
+    inline bool MasterUsernameHasBeenSet() const { return m_masterUsernameHasBeenSet; }
 
     /**
      * <p>Contains the master user name for the DB cluster.</p>
@@ -669,6 +766,13 @@ namespace Model
      * <code>BackupRetentionPeriod</code>. </p>
      */
     inline const Aws::String& GetPreferredBackupWindow() const{ return m_preferredBackupWindow; }
+
+    /**
+     * <p>Specifies the daily time range during which automated backups are created if
+     * automated backups are enabled, as determined by the
+     * <code>BackupRetentionPeriod</code>. </p>
+     */
+    inline bool PreferredBackupWindowHasBeenSet() const { return m_preferredBackupWindowHasBeenSet; }
 
     /**
      * <p>Specifies the daily time range during which automated backups are created if
@@ -723,6 +827,12 @@ namespace Model
      * <p>Specifies the weekly time range during which system maintenance can occur, in
      * Universal Coordinated Time (UTC).</p>
      */
+    inline bool PreferredMaintenanceWindowHasBeenSet() const { return m_preferredMaintenanceWindowHasBeenSet; }
+
+    /**
+     * <p>Specifies the weekly time range during which system maintenance can occur, in
+     * Universal Coordinated Time (UTC).</p>
+     */
     inline void SetPreferredMaintenanceWindow(const Aws::String& value) { m_preferredMaintenanceWindowHasBeenSet = true; m_preferredMaintenanceWindow = value; }
 
     /**
@@ -764,6 +874,11 @@ namespace Model
     /**
      * <p>Provides the list of instances that make up the DB cluster.</p>
      */
+    inline bool DBClusterMembersHasBeenSet() const { return m_dBClusterMembersHasBeenSet; }
+
+    /**
+     * <p>Provides the list of instances that make up the DB cluster.</p>
+     */
     inline void SetDBClusterMembers(const Aws::Vector<DBClusterMember>& value) { m_dBClusterMembersHasBeenSet = true; m_dBClusterMembers = value; }
 
     /**
@@ -797,6 +912,12 @@ namespace Model
      * cluster belongs to.</p>
      */
     inline const Aws::Vector<VpcSecurityGroupMembership>& GetVpcSecurityGroups() const{ return m_vpcSecurityGroups; }
+
+    /**
+     * <p>Provides a list of virtual private cloud (VPC) security groups that the DB
+     * cluster belongs to.</p>
+     */
+    inline bool VpcSecurityGroupsHasBeenSet() const { return m_vpcSecurityGroupsHasBeenSet; }
 
     /**
      * <p>Provides a list of virtual private cloud (VPC) security groups that the DB
@@ -845,6 +966,12 @@ namespace Model
      * <p>Specifies the ID that Amazon Route 53 assigns when you create a hosted
      * zone.</p>
      */
+    inline bool HostedZoneIdHasBeenSet() const { return m_hostedZoneIdHasBeenSet; }
+
+    /**
+     * <p>Specifies the ID that Amazon Route 53 assigns when you create a hosted
+     * zone.</p>
+     */
     inline void SetHostedZoneId(const Aws::String& value) { m_hostedZoneIdHasBeenSet = true; m_hostedZoneId = value; }
 
     /**
@@ -886,6 +1013,11 @@ namespace Model
     /**
      * <p>Specifies whether the DB cluster is encrypted.</p>
      */
+    inline bool StorageEncryptedHasBeenSet() const { return m_storageEncryptedHasBeenSet; }
+
+    /**
+     * <p>Specifies whether the DB cluster is encrypted.</p>
+     */
     inline void SetStorageEncrypted(bool value) { m_storageEncryptedHasBeenSet = true; m_storageEncrypted = value; }
 
     /**
@@ -899,6 +1031,12 @@ namespace Model
      * identifier for the encrypted DB cluster.</p>
      */
     inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
+
+    /**
+     * <p>If <code>StorageEncrypted</code> is <code>true</code>, the AWS KMS key
+     * identifier for the encrypted DB cluster.</p>
+     */
+    inline bool KmsKeyIdHasBeenSet() const { return m_kmsKeyIdHasBeenSet; }
 
     /**
      * <p>If <code>StorageEncrypted</code> is <code>true</code>, the AWS KMS key
@@ -943,6 +1081,13 @@ namespace Model
      * the DB cluster is accessed.</p>
      */
     inline const Aws::String& GetDbClusterResourceId() const{ return m_dbClusterResourceId; }
+
+    /**
+     * <p>The AWS Region-unique, immutable identifier for the DB cluster. This
+     * identifier is found in AWS CloudTrail log entries whenever the AWS KMS key for
+     * the DB cluster is accessed.</p>
+     */
+    inline bool DbClusterResourceIdHasBeenSet() const { return m_dbClusterResourceIdHasBeenSet; }
 
     /**
      * <p>The AWS Region-unique, immutable identifier for the DB cluster. This
@@ -995,6 +1140,11 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) for the DB cluster.</p>
      */
+    inline bool DBClusterArnHasBeenSet() const { return m_dBClusterArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) for the DB cluster.</p>
+     */
     inline void SetDBClusterArn(const Aws::String& value) { m_dBClusterArnHasBeenSet = true; m_dBClusterArn = value; }
 
     /**
@@ -1030,6 +1180,14 @@ namespace Model
      * behalf.</p>
      */
     inline const Aws::Vector<DBClusterRole>& GetAssociatedRoles() const{ return m_associatedRoles; }
+
+    /**
+     * <p>Provides a list of the AWS Identity and Access Management (IAM) roles that
+     * are associated with the DB cluster. IAM roles that are associated with a DB
+     * cluster grant permission for the DB cluster to access other AWS services on your
+     * behalf.</p>
+     */
+    inline bool AssociatedRolesHasBeenSet() const { return m_associatedRolesHasBeenSet; }
 
     /**
      * <p>Provides a list of the AWS Identity and Access Management (IAM) roles that
@@ -1090,6 +1248,12 @@ namespace Model
      * <p>Specifies the time when the DB cluster was created, in Universal Coordinated
      * Time (UTC).</p>
      */
+    inline bool ClusterCreateTimeHasBeenSet() const { return m_clusterCreateTimeHasBeenSet; }
+
+    /**
+     * <p>Specifies the time when the DB cluster was created, in Universal Coordinated
+     * Time (UTC).</p>
+     */
     inline void SetClusterCreateTime(const Aws::Utils::DateTime& value) { m_clusterCreateTimeHasBeenSet = true; m_clusterCreateTime = value; }
 
     /**
@@ -1116,6 +1280,12 @@ namespace Model
      * CloudWatch Logs.</p>
      */
     inline const Aws::Vector<Aws::String>& GetEnabledCloudwatchLogsExports() const{ return m_enabledCloudwatchLogsExports; }
+
+    /**
+     * <p>A list of log types that this DB cluster is configured to export to Amazon
+     * CloudWatch Logs.</p>
+     */
+    inline bool EnabledCloudwatchLogsExportsHasBeenSet() const { return m_enabledCloudwatchLogsExportsHasBeenSet; }
 
     /**
      * <p>A list of log types that this DB cluster is configured to export to Amazon

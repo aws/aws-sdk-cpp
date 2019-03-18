@@ -55,6 +55,12 @@ namespace Model
      * <p>The ID of the Data Catalog in which the connections reside. If none is
      * provided, the AWS account ID is used by default.</p>
      */
+    inline bool CatalogIdHasBeenSet() const { return m_catalogIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the Data Catalog in which the connections reside. If none is
+     * provided, the AWS account ID is used by default.</p>
+     */
     inline void SetCatalogId(const Aws::String& value) { m_catalogIdHasBeenSet = true; m_catalogId = value; }
 
     /**
@@ -96,6 +102,11 @@ namespace Model
     /**
      * <p>A filter that controls which connections will be returned.</p>
      */
+    inline bool FilterHasBeenSet() const { return m_filterHasBeenSet; }
+
+    /**
+     * <p>A filter that controls which connections will be returned.</p>
+     */
     inline void SetFilter(const GetConnectionsFilter& value) { m_filterHasBeenSet = true; m_filter = value; }
 
     /**
@@ -130,6 +141,15 @@ namespace Model
      * caller might not have permission to use the AWS KMS key to decrypt the password,
      * but does have permission to access the rest of the connection properties.</p>
      */
+    inline bool HidePasswordHasBeenSet() const { return m_hidePasswordHasBeenSet; }
+
+    /**
+     * <p>Allows you to retrieve the connection metadata without returning the
+     * password. For instance, the AWS Glue console uses this flag to retrieve the
+     * connection, and does not display the password. Set this parameter when the
+     * caller might not have permission to use the AWS KMS key to decrypt the password,
+     * but does have permission to access the rest of the connection properties.</p>
+     */
     inline void SetHidePassword(bool value) { m_hidePasswordHasBeenSet = true; m_hidePassword = value; }
 
     /**
@@ -146,6 +166,11 @@ namespace Model
      * <p>A continuation token, if this is a continuation call.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
+    /**
+     * <p>A continuation token, if this is a continuation call.</p>
+     */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
      * <p>A continuation token, if this is a continuation call.</p>
@@ -182,6 +207,11 @@ namespace Model
      * <p>The maximum number of connections to return in one response.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
+
+    /**
+     * <p>The maximum number of connections to return in one response.</p>
+     */
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
 
     /**
      * <p>The maximum number of connections to return in one response.</p>

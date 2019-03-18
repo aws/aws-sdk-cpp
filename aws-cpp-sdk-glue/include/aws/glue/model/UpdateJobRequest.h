@@ -53,6 +53,11 @@ namespace Model
     /**
      * <p>Name of the job definition to update.</p>
      */
+    inline bool JobNameHasBeenSet() const { return m_jobNameHasBeenSet; }
+
+    /**
+     * <p>Name of the job definition to update.</p>
+     */
     inline void SetJobName(const Aws::String& value) { m_jobNameHasBeenSet = true; m_jobName = value; }
 
     /**
@@ -85,6 +90,11 @@ namespace Model
      * <p>Specifies the values with which to update the job definition.</p>
      */
     inline const JobUpdate& GetJobUpdate() const{ return m_jobUpdate; }
+
+    /**
+     * <p>Specifies the values with which to update the job definition.</p>
+     */
+    inline bool JobUpdateHasBeenSet() const { return m_jobUpdateHasBeenSet; }
 
     /**
      * <p>Specifies the values with which to update the job definition.</p>

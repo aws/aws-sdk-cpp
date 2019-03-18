@@ -58,6 +58,12 @@ namespace Model
      * <p>The level of confidence that Amazon Comprehend has in the accuracy of the
      * detection.</p>
      */
+    inline bool ScoreHasBeenSet() const { return m_scoreHasBeenSet; }
+
+    /**
+     * <p>The level of confidence that Amazon Comprehend has in the accuracy of the
+     * detection.</p>
+     */
     inline void SetScore(double value) { m_scoreHasBeenSet = true; m_score = value; }
 
     /**
@@ -71,6 +77,11 @@ namespace Model
      * <p>The entity's type.</p>
      */
     inline const EntityType& GetType() const{ return m_type; }
+
+    /**
+     * <p>The entity's type.</p>
+     */
+    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
 
     /**
      * <p>The entity's type.</p>
@@ -97,6 +108,11 @@ namespace Model
      * <p>The text of the entity.</p>
      */
     inline const Aws::String& GetText() const{ return m_text; }
+
+    /**
+     * <p>The text of the entity.</p>
+     */
+    inline bool TextHasBeenSet() const { return m_textHasBeenSet; }
 
     /**
      * <p>The text of the entity.</p>
@@ -145,6 +161,15 @@ namespace Model
      * particular graphical representation. For example, a multi-byte UTF-8 character
      * maps to a single code point.</p>
      */
+    inline bool BeginOffsetHasBeenSet() const { return m_beginOffsetHasBeenSet; }
+
+    /**
+     * <p>A character offset in the input text that shows where the entity begins (the
+     * first character is at position 0). The offset returns the position of each UTF-8
+     * code point in the string. A <i>code point</i> is the abstract character from a
+     * particular graphical representation. For example, a multi-byte UTF-8 character
+     * maps to a single code point.</p>
+     */
     inline void SetBeginOffset(int value) { m_beginOffsetHasBeenSet = true; m_beginOffset = value; }
 
     /**
@@ -164,6 +189,14 @@ namespace Model
      * For example, a multi-byte UTF-8 character maps to a single code point. </p>
      */
     inline int GetEndOffset() const{ return m_endOffset; }
+
+    /**
+     * <p>A character offset in the input text that shows where the entity ends. The
+     * offset returns the position of each UTF-8 code point in the string. A <i>code
+     * point</i> is the abstract character from a particular graphical representation.
+     * For example, a multi-byte UTF-8 character maps to a single code point. </p>
+     */
+    inline bool EndOffsetHasBeenSet() const { return m_endOffsetHasBeenSet; }
 
     /**
      * <p>A character offset in the input text that shows where the entity ends. The

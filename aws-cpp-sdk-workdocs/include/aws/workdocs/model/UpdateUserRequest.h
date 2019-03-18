@@ -58,6 +58,12 @@ namespace Model
      * <p>Amazon WorkDocs authentication token. Do not set this field when using
      * administrative API actions, as in accessing the API using AWS credentials.</p>
      */
+    inline bool AuthenticationTokenHasBeenSet() const { return m_authenticationTokenHasBeenSet; }
+
+    /**
+     * <p>Amazon WorkDocs authentication token. Do not set this field when using
+     * administrative API actions, as in accessing the API using AWS credentials.</p>
+     */
     inline void SetAuthenticationToken(const Aws::String& value) { m_authenticationTokenHasBeenSet = true; m_authenticationToken = value; }
 
     /**
@@ -99,6 +105,11 @@ namespace Model
     /**
      * <p>The ID of the user.</p>
      */
+    inline bool UserIdHasBeenSet() const { return m_userIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the user.</p>
+     */
     inline void SetUserId(const Aws::String& value) { m_userIdHasBeenSet = true; m_userId = value; }
 
     /**
@@ -131,6 +142,11 @@ namespace Model
      * <p>The given name of the user.</p>
      */
     inline const Aws::String& GetGivenName() const{ return m_givenName; }
+
+    /**
+     * <p>The given name of the user.</p>
+     */
+    inline bool GivenNameHasBeenSet() const { return m_givenNameHasBeenSet; }
 
     /**
      * <p>The given name of the user.</p>
@@ -171,6 +187,11 @@ namespace Model
     /**
      * <p>The surname of the user.</p>
      */
+    inline bool SurnameHasBeenSet() const { return m_surnameHasBeenSet; }
+
+    /**
+     * <p>The surname of the user.</p>
+     */
     inline void SetSurname(const Aws::String& value) { m_surnameHasBeenSet = true; m_surname = value; }
 
     /**
@@ -207,6 +228,11 @@ namespace Model
     /**
      * <p>The type of the user.</p>
      */
+    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
+
+    /**
+     * <p>The type of the user.</p>
+     */
     inline void SetType(const UserType& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
@@ -233,6 +259,11 @@ namespace Model
     /**
      * <p>The amount of storage for the user.</p>
      */
+    inline bool StorageRuleHasBeenSet() const { return m_storageRuleHasBeenSet; }
+
+    /**
+     * <p>The amount of storage for the user.</p>
+     */
     inline void SetStorageRule(const StorageRuleType& value) { m_storageRuleHasBeenSet = true; m_storageRule = value; }
 
     /**
@@ -255,6 +286,11 @@ namespace Model
      * <p>The time zone ID of the user.</p>
      */
     inline const Aws::String& GetTimeZoneId() const{ return m_timeZoneId; }
+
+    /**
+     * <p>The time zone ID of the user.</p>
+     */
+    inline bool TimeZoneIdHasBeenSet() const { return m_timeZoneIdHasBeenSet; }
 
     /**
      * <p>The time zone ID of the user.</p>
@@ -295,6 +331,11 @@ namespace Model
     /**
      * <p>The locale of the user.</p>
      */
+    inline bool LocaleHasBeenSet() const { return m_localeHasBeenSet; }
+
+    /**
+     * <p>The locale of the user.</p>
+     */
     inline void SetLocale(const LocaleType& value) { m_localeHasBeenSet = true; m_locale = value; }
 
     /**
@@ -318,6 +359,12 @@ namespace Model
      * privileges.</p>
      */
     inline const BooleanEnumType& GetGrantPoweruserPrivileges() const{ return m_grantPoweruserPrivileges; }
+
+    /**
+     * <p>Boolean value to determine whether the user is granted Poweruser
+     * privileges.</p>
+     */
+    inline bool GrantPoweruserPrivilegesHasBeenSet() const { return m_grantPoweruserPrivilegesHasBeenSet; }
 
     /**
      * <p>Boolean value to determine whether the user is granted Poweruser

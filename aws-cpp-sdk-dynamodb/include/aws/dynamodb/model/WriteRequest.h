@@ -60,6 +60,11 @@ namespace Model
     /**
      * <p>A request to perform a <code>PutItem</code> operation.</p>
      */
+    inline bool PutRequestHasBeenSet() const { return m_putRequestHasBeenSet; }
+
+    /**
+     * <p>A request to perform a <code>PutItem</code> operation.</p>
+     */
     inline void SetPutRequest(const PutRequest& value) { m_putRequestHasBeenSet = true; m_putRequest = value; }
 
     /**
@@ -82,6 +87,11 @@ namespace Model
      * <p>A request to perform a <code>DeleteItem</code> operation.</p>
      */
     inline const DeleteRequest& GetDeleteRequest() const{ return m_deleteRequest; }
+
+    /**
+     * <p>A request to perform a <code>DeleteItem</code> operation.</p>
+     */
+    inline bool DeleteRequestHasBeenSet() const { return m_deleteRequestHasBeenSet; }
 
     /**
      * <p>A request to perform a <code>DeleteItem</code> operation.</p>

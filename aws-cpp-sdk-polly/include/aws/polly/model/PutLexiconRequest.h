@@ -54,6 +54,13 @@ namespace Model
      * [0-9A-Za-z]{1,20}. That is, the name is a case-sensitive alphanumeric string up
      * to 20 characters long. </p>
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>Name of the lexicon. The name must follow the regular express format
+     * [0-9A-Za-z]{1,20}. That is, the name is a case-sensitive alphanumeric string up
+     * to 20 characters long. </p>
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
@@ -96,6 +103,11 @@ namespace Model
      * <p>Content of the PLS lexicon as string data.</p>
      */
     inline const Aws::String& GetContent() const{ return m_content; }
+
+    /**
+     * <p>Content of the PLS lexicon as string data.</p>
+     */
+    inline bool ContentHasBeenSet() const { return m_contentHasBeenSet; }
 
     /**
      * <p>Content of the PLS lexicon as string data.</p>

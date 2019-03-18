@@ -64,6 +64,14 @@ namespace Model
      * parameter in the call to <code>DetectModerationLabels</code>, the operation
      * returns labels with a confidence value greater than or equal to 50 percent.</p>
      */
+    inline bool ConfidenceHasBeenSet() const { return m_confidenceHasBeenSet; }
+
+    /**
+     * <p>Specifies the confidence that Amazon Rekognition has that the label has been
+     * correctly identified.</p> <p>If you don't specify the <code>MinConfidence</code>
+     * parameter in the call to <code>DetectModerationLabels</code>, the operation
+     * returns labels with a confidence value greater than or equal to 50 percent.</p>
+     */
     inline void SetConfidence(double value) { m_confidenceHasBeenSet = true; m_confidence = value; }
 
     /**
@@ -79,6 +87,11 @@ namespace Model
      * <p>The label name for the type of content detected in the image.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
+
+    /**
+     * <p>The label name for the type of content detected in the image.</p>
+     */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
      * <p>The label name for the type of content detected in the image.</p>
@@ -116,6 +129,12 @@ namespace Model
      * the parent label <code>""</code>.</p>
      */
     inline const Aws::String& GetParentName() const{ return m_parentName; }
+
+    /**
+     * <p>The name for the parent label. Labels at the top level of the hierarchy have
+     * the parent label <code>""</code>.</p>
+     */
+    inline bool ParentNameHasBeenSet() const { return m_parentNameHasBeenSet; }
 
     /**
      * <p>The name for the parent label. Labels at the top level of the hierarchy have

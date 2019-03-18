@@ -54,6 +54,11 @@ namespace Model
     /**
      * The name of the domain to delete.
      */
+    inline bool DomainNameHasBeenSet() const { return m_domainNameHasBeenSet; }
+
+    /**
+     * The name of the domain to delete.
+     */
     inline void SetDomainName(const Aws::String& value) { m_domainNameHasBeenSet = true; m_domainName = value; }
 
     /**

@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p>The CIDR block associated with the local subnet of the customer network.</p>
      */
+    inline bool DestinationCidrBlockHasBeenSet() const { return m_destinationCidrBlockHasBeenSet; }
+
+    /**
+     * <p>The CIDR block associated with the local subnet of the customer network.</p>
+     */
     inline void SetDestinationCidrBlock(const Aws::String& value) { m_destinationCidrBlockHasBeenSet = true; m_destinationCidrBlock = value; }
 
     /**
@@ -90,6 +95,11 @@ namespace Model
      * <p>The ID of the VPN connection.</p>
      */
     inline const Aws::String& GetVpnConnectionId() const{ return m_vpnConnectionId; }
+
+    /**
+     * <p>The ID of the VPN connection.</p>
+     */
+    inline bool VpnConnectionIdHasBeenSet() const { return m_vpnConnectionIdHasBeenSet; }
 
     /**
      * <p>The ID of the VPN connection.</p>

@@ -68,6 +68,15 @@ namespace Model
      * </li> <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p>
      * </li> </ul> <p>Example: <code>mydbinstance</code> </p>
      */
+    inline bool DBInstanceIdentifierHasBeenSet() const { return m_dBInstanceIdentifierHasBeenSet; }
+
+    /**
+     * <p>The DB instance identifier. This parameter is stored as a lowercase
+     * string.</p> <p>Constraints:</p> <ul> <li> <p>Must contain from 1 to 63 letters,
+     * numbers, or hyphens.</p> </li> <li> <p>The first character must be a letter.</p>
+     * </li> <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p>
+     * </li> </ul> <p>Example: <code>mydbinstance</code> </p>
+     */
     inline void SetDBInstanceIdentifier(const Aws::String& value) { m_dBInstanceIdentifierHasBeenSet = true; m_dBInstanceIdentifier = value; }
 
     /**
@@ -126,6 +135,12 @@ namespace Model
      * <p>The compute and memory capacity of the DB instance; for example,
      * <code>db.m4.large</code>. </p>
      */
+    inline bool DBInstanceClassHasBeenSet() const { return m_dBInstanceClassHasBeenSet; }
+
+    /**
+     * <p>The compute and memory capacity of the DB instance; for example,
+     * <code>db.m4.large</code>. </p>
+     */
     inline void SetDBInstanceClass(const Aws::String& value) { m_dBInstanceClassHasBeenSet = true; m_dBInstanceClass = value; }
 
     /**
@@ -164,6 +179,12 @@ namespace Model
      * value: <code>docdb</code> </p>
      */
     inline const Aws::String& GetEngine() const{ return m_engine; }
+
+    /**
+     * <p>The name of the database engine to be used for this instance.</p> <p>Valid
+     * value: <code>docdb</code> </p>
+     */
+    inline bool EngineHasBeenSet() const { return m_engineHasBeenSet; }
 
     /**
      * <p>The name of the database engine to be used for this instance.</p> <p>Valid
@@ -211,6 +232,16 @@ namespace Model
      * Availability Zone must be in the same AWS Region as the current endpoint. </p>
      */
     inline const Aws::String& GetAvailabilityZone() const{ return m_availabilityZone; }
+
+    /**
+     * <p> The Amazon EC2 Availability Zone that the DB instance is created in.</p>
+     * <p>Default: A random, system-chosen Availability Zone in the endpoint's AWS
+     * Region.</p> <p> Example: <code>us-east-1d</code> </p> <p> Constraint: The
+     * <code>AvailabilityZone</code> parameter can't be specified if the
+     * <code>MultiAZ</code> parameter is set to <code>true</code>. The specified
+     * Availability Zone must be in the same AWS Region as the current endpoint. </p>
+     */
+    inline bool AvailabilityZoneHasBeenSet() const { return m_availabilityZoneHasBeenSet; }
 
     /**
      * <p> The Amazon EC2 Availability Zone that the DB instance is created in.</p>
@@ -291,6 +322,16 @@ namespace Model
      * on a random day of the week. </p> <p>Valid days: Mon, Tue, Wed, Thu, Fri, Sat,
      * Sun</p> <p>Constraints: Minimum 30-minute window.</p>
      */
+    inline bool PreferredMaintenanceWindowHasBeenSet() const { return m_preferredMaintenanceWindowHasBeenSet; }
+
+    /**
+     * <p>The time range each week during which system maintenance can occur, in
+     * Universal Coordinated Time (UTC).</p> <p> Format:
+     * <code>ddd:hh24:mi-ddd:hh24:mi</code> </p> <p>The default is a 30-minute window
+     * selected at random from an 8-hour block of time for each AWS Region, occurring
+     * on a random day of the week. </p> <p>Valid days: Mon, Tue, Wed, Thu, Fri, Sat,
+     * Sun</p> <p>Constraints: Minimum 30-minute window.</p>
+     */
     inline void SetPreferredMaintenanceWindow(const Aws::String& value) { m_preferredMaintenanceWindowHasBeenSet = true; m_preferredMaintenanceWindow = value; }
 
     /**
@@ -354,6 +395,12 @@ namespace Model
      * <p>Indicates that minor engine upgrades are applied automatically to the DB
      * instance during the maintenance window.</p> <p>Default: <code>true</code> </p>
      */
+    inline bool AutoMinorVersionUpgradeHasBeenSet() const { return m_autoMinorVersionUpgradeHasBeenSet; }
+
+    /**
+     * <p>Indicates that minor engine upgrades are applied automatically to the DB
+     * instance during the maintenance window.</p> <p>Default: <code>true</code> </p>
+     */
     inline void SetAutoMinorVersionUpgrade(bool value) { m_autoMinorVersionUpgradeHasBeenSet = true; m_autoMinorVersionUpgrade = value; }
 
     /**
@@ -367,6 +414,11 @@ namespace Model
      * <p>The tags to be assigned to the DB instance.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>The tags to be assigned to the DB instance.</p>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
      * <p>The tags to be assigned to the DB instance.</p>
@@ -407,6 +459,11 @@ namespace Model
     /**
      * <p>The identifier of the DB cluster that the instance will belong to.</p>
      */
+    inline bool DBClusterIdentifierHasBeenSet() const { return m_dBClusterIdentifierHasBeenSet; }
+
+    /**
+     * <p>The identifier of the DB cluster that the instance will belong to.</p>
+     */
     inline void SetDBClusterIdentifier(const Aws::String& value) { m_dBClusterIdentifierHasBeenSet = true; m_dBClusterIdentifier = value; }
 
     /**
@@ -441,6 +498,13 @@ namespace Model
      * instance.</p> <p>Default: 1</p> <p>Valid values: 0-15</p>
      */
     inline int GetPromotionTier() const{ return m_promotionTier; }
+
+    /**
+     * <p>A value that specifies the order in which an Amazon DocumentDB replica is
+     * promoted to the primary instance after a failure of the existing primary
+     * instance.</p> <p>Default: 1</p> <p>Valid values: 0-15</p>
+     */
+    inline bool PromotionTierHasBeenSet() const { return m_promotionTierHasBeenSet; }
 
     /**
      * <p>A value that specifies the order in which an Amazon DocumentDB replica is

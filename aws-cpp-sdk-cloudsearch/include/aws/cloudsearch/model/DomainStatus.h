@@ -55,6 +55,9 @@ namespace Model
     inline const Aws::String& GetDomainId() const{ return m_domainId; }
 
     
+    inline bool DomainIdHasBeenSet() const { return m_domainIdHasBeenSet; }
+
+    
     inline void SetDomainId(const Aws::String& value) { m_domainIdHasBeenSet = true; m_domainId = value; }
 
     
@@ -77,6 +80,9 @@ namespace Model
     inline const Aws::String& GetDomainName() const{ return m_domainName; }
 
     
+    inline bool DomainNameHasBeenSet() const { return m_domainNameHasBeenSet; }
+
+    
     inline void SetDomainName(const Aws::String& value) { m_domainNameHasBeenSet = true; m_domainName = value; }
 
     
@@ -97,6 +103,9 @@ namespace Model
 
     
     inline const Aws::String& GetARN() const{ return m_aRN; }
+
+    
+    inline bool ARNHasBeenSet() const { return m_aRNHasBeenSet; }
 
     
     inline void SetARN(const Aws::String& value) { m_aRNHasBeenSet = true; m_aRN = value; }
@@ -131,6 +140,14 @@ namespace Model
      * domains are returned from <a>DescribeDomains</a> with a false value for Created
      * until domain creation is complete.</p>
      */
+    inline bool CreatedHasBeenSet() const { return m_createdHasBeenSet; }
+
+    /**
+     * <p>True if the search domain is created. It can take several minutes to
+     * initialize a domain when <a>CreateDomain</a> is called. Newly created search
+     * domains are returned from <a>DescribeDomains</a> with a false value for Created
+     * until domain creation is complete.</p>
+     */
     inline void SetCreated(bool value) { m_createdHasBeenSet = true; m_created = value; }
 
     /**
@@ -150,6 +167,15 @@ namespace Model
      * complete.</p>
      */
     inline bool GetDeleted() const{ return m_deleted; }
+
+    /**
+     * <p>True if the search domain has been deleted. The system must clean up
+     * resources dedicated to the search domain when <a>DeleteDomain</a> is called.
+     * Newly deleted search domains are returned from <a>DescribeDomains</a> with a
+     * true value for IsDeleted for several minutes until resource cleanup is
+     * complete.</p>
+     */
+    inline bool DeletedHasBeenSet() const { return m_deletedHasBeenSet; }
 
     /**
      * <p>True if the search domain has been deleted. The system must clean up
@@ -178,6 +204,11 @@ namespace Model
     /**
      * <p>The service endpoint for updating documents in a search domain.</p>
      */
+    inline bool DocServiceHasBeenSet() const { return m_docServiceHasBeenSet; }
+
+    /**
+     * <p>The service endpoint for updating documents in a search domain.</p>
+     */
     inline void SetDocService(const ServiceEndpoint& value) { m_docServiceHasBeenSet = true; m_docService = value; }
 
     /**
@@ -200,6 +231,11 @@ namespace Model
      * <p>The service endpoint for requesting search results from a search domain.</p>
      */
     inline const ServiceEndpoint& GetSearchService() const{ return m_searchService; }
+
+    /**
+     * <p>The service endpoint for requesting search results from a search domain.</p>
+     */
+    inline bool SearchServiceHasBeenSet() const { return m_searchServiceHasBeenSet; }
 
     /**
      * <p>The service endpoint for requesting search results from a search domain.</p>
@@ -232,6 +268,12 @@ namespace Model
      * <p>True if <a>IndexDocuments</a> needs to be called to activate the current
      * domain configuration.</p>
      */
+    inline bool RequiresIndexDocumentsHasBeenSet() const { return m_requiresIndexDocumentsHasBeenSet; }
+
+    /**
+     * <p>True if <a>IndexDocuments</a> needs to be called to activate the current
+     * domain configuration.</p>
+     */
     inline void SetRequiresIndexDocuments(bool value) { m_requiresIndexDocumentsHasBeenSet = true; m_requiresIndexDocuments = value; }
 
     /**
@@ -251,6 +293,12 @@ namespace Model
      * <p>True if processing is being done to activate the current domain
      * configuration.</p>
      */
+    inline bool ProcessingHasBeenSet() const { return m_processingHasBeenSet; }
+
+    /**
+     * <p>True if processing is being done to activate the current domain
+     * configuration.</p>
+     */
     inline void SetProcessing(bool value) { m_processingHasBeenSet = true; m_processing = value; }
 
     /**
@@ -264,6 +312,11 @@ namespace Model
      * <p>The instance type that is being used to process search requests.</p>
      */
     inline const Aws::String& GetSearchInstanceType() const{ return m_searchInstanceType; }
+
+    /**
+     * <p>The instance type that is being used to process search requests.</p>
+     */
+    inline bool SearchInstanceTypeHasBeenSet() const { return m_searchInstanceTypeHasBeenSet; }
 
     /**
      * <p>The instance type that is being used to process search requests.</p>
@@ -304,6 +357,11 @@ namespace Model
     /**
      * <p>The number of partitions across which the search index is spread.</p>
      */
+    inline bool SearchPartitionCountHasBeenSet() const { return m_searchPartitionCountHasBeenSet; }
+
+    /**
+     * <p>The number of partitions across which the search index is spread.</p>
+     */
     inline void SetSearchPartitionCount(int value) { m_searchPartitionCountHasBeenSet = true; m_searchPartitionCount = value; }
 
     /**
@@ -322,6 +380,12 @@ namespace Model
      * <p>The number of search instances that are available to process search
      * requests.</p>
      */
+    inline bool SearchInstanceCountHasBeenSet() const { return m_searchInstanceCountHasBeenSet; }
+
+    /**
+     * <p>The number of search instances that are available to process search
+     * requests.</p>
+     */
     inline void SetSearchInstanceCount(int value) { m_searchInstanceCountHasBeenSet = true; m_searchInstanceCount = value; }
 
     /**
@@ -333,6 +397,9 @@ namespace Model
 
     
     inline const Limits& GetLimits() const{ return m_limits; }
+
+    
+    inline bool LimitsHasBeenSet() const { return m_limitsHasBeenSet; }
 
     
     inline void SetLimits(const Limits& value) { m_limitsHasBeenSet = true; m_limits = value; }

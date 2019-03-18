@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>Gender of the face.</p>
      */
+    inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
+
+    /**
+     * <p>Gender of the face.</p>
+     */
     inline void SetValue(const GenderType& value) { m_valueHasBeenSet = true; m_value = value; }
 
     /**
@@ -78,6 +83,11 @@ namespace Model
      * <p>Level of confidence in the determination.</p>
      */
     inline double GetConfidence() const{ return m_confidence; }
+
+    /**
+     * <p>Level of confidence in the determination.</p>
+     */
+    inline bool ConfidenceHasBeenSet() const { return m_confidenceHasBeenSet; }
 
     /**
      * <p>Level of confidence in the determination.</p>

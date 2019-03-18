@@ -51,6 +51,11 @@ namespace Model
     /**
      * <p>The start of the time frame for which to generate a graph.</p>
      */
+    inline bool StartTimeHasBeenSet() const { return m_startTimeHasBeenSet; }
+
+    /**
+     * <p>The start of the time frame for which to generate a graph.</p>
+     */
     inline void SetStartTime(const Aws::Utils::DateTime& value) { m_startTimeHasBeenSet = true; m_startTime = value; }
 
     /**
@@ -77,6 +82,11 @@ namespace Model
     /**
      * <p>The end of the timeframe for which to generate a graph.</p>
      */
+    inline bool EndTimeHasBeenSet() const { return m_endTimeHasBeenSet; }
+
+    /**
+     * <p>The end of the timeframe for which to generate a graph.</p>
+     */
     inline void SetEndTime(const Aws::Utils::DateTime& value) { m_endTimeHasBeenSet = true; m_endTime = value; }
 
     /**
@@ -99,6 +109,11 @@ namespace Model
      * <p>The name of a group to generate a graph based on.</p>
      */
     inline const Aws::String& GetGroupName() const{ return m_groupName; }
+
+    /**
+     * <p>The name of a group to generate a graph based on.</p>
+     */
+    inline bool GroupNameHasBeenSet() const { return m_groupNameHasBeenSet; }
 
     /**
      * <p>The name of a group to generate a graph based on.</p>
@@ -139,6 +154,11 @@ namespace Model
     /**
      * <p>The ARN of a group to generate a graph based on.</p>
      */
+    inline bool GroupARNHasBeenSet() const { return m_groupARNHasBeenSet; }
+
+    /**
+     * <p>The ARN of a group to generate a graph based on.</p>
+     */
     inline void SetGroupARN(const Aws::String& value) { m_groupARNHasBeenSet = true; m_groupARN = value; }
 
     /**
@@ -171,6 +191,11 @@ namespace Model
      * <p>Pagination token. Not used.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
+    /**
+     * <p>Pagination token. Not used.</p>
+     */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
      * <p>Pagination token. Not used.</p>

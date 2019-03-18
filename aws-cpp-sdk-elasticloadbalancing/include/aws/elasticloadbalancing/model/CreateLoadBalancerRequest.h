@@ -66,6 +66,14 @@ namespace Model
      * contain only alphanumeric characters or hyphens, and cannot begin or end with a
      * hyphen.</p>
      */
+    inline bool LoadBalancerNameHasBeenSet() const { return m_loadBalancerNameHasBeenSet; }
+
+    /**
+     * <p>The name of the load balancer.</p> <p>This name must be unique within your
+     * set of load balancers for the region, must have a maximum of 32 characters, must
+     * contain only alphanumeric characters or hyphens, and cannot begin or end with a
+     * hyphen.</p>
+     */
     inline void SetLoadBalancerName(const Aws::String& value) { m_loadBalancerNameHasBeenSet = true; m_loadBalancerName = value; }
 
     /**
@@ -123,6 +131,14 @@ namespace Model
      * for Your Classic Load Balancer</a> in the <i>Classic Load Balancers
      * Guide</i>.</p>
      */
+    inline bool ListenersHasBeenSet() const { return m_listenersHasBeenSet; }
+
+    /**
+     * <p>The listeners.</p> <p>For more information, see <a
+     * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-listener-config.html">Listeners
+     * for Your Classic Load Balancer</a> in the <i>Classic Load Balancers
+     * Guide</i>.</p>
+     */
     inline void SetListeners(const Aws::Vector<Listener>& value) { m_listenersHasBeenSet = true; m_listeners = value; }
 
     /**
@@ -173,6 +189,14 @@ namespace Model
      * <a>EnableAvailabilityZonesForLoadBalancer</a>.</p>
      */
     inline const Aws::Vector<Aws::String>& GetAvailabilityZones() const{ return m_availabilityZones; }
+
+    /**
+     * <p>One or more Availability Zones from the same region as the load balancer.</p>
+     * <p>You must specify at least one Availability Zone.</p> <p>You can add more
+     * Availability Zones after you create the load balancer using
+     * <a>EnableAvailabilityZonesForLoadBalancer</a>.</p>
+     */
+    inline bool AvailabilityZonesHasBeenSet() const { return m_availabilityZonesHasBeenSet; }
 
     /**
      * <p>One or more Availability Zones from the same region as the load balancer.</p>
@@ -243,6 +267,13 @@ namespace Model
      * one subnet per Availability Zone specified in
      * <code>AvailabilityZones</code>.</p>
      */
+    inline bool SubnetsHasBeenSet() const { return m_subnetsHasBeenSet; }
+
+    /**
+     * <p>The IDs of the subnets in your VPC to attach to the load balancer. Specify
+     * one subnet per Availability Zone specified in
+     * <code>AvailabilityZones</code>.</p>
+     */
     inline void SetSubnets(const Aws::Vector<Aws::String>& value) { m_subnetsHasBeenSet = true; m_subnets = value; }
 
     /**
@@ -296,6 +327,11 @@ namespace Model
     /**
      * <p>The IDs of the security groups to assign to the load balancer.</p>
      */
+    inline bool SecurityGroupsHasBeenSet() const { return m_securityGroupsHasBeenSet; }
+
+    /**
+     * <p>The IDs of the security groups to assign to the load balancer.</p>
+     */
     inline void SetSecurityGroups(const Aws::Vector<Aws::String>& value) { m_securityGroupsHasBeenSet = true; m_securityGroups = value; }
 
     /**
@@ -340,6 +376,18 @@ namespace Model
      * resolves to private IP addresses.</p>
      */
     inline const Aws::String& GetScheme() const{ return m_scheme; }
+
+    /**
+     * <p>The type of a load balancer. Valid only for load balancers in a VPC.</p>
+     * <p>By default, Elastic Load Balancing creates an Internet-facing load balancer
+     * with a DNS name that resolves to public IP addresses. For more information about
+     * Internet-facing and Internal load balancers, see <a
+     * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/userguide/how-elastic-load-balancing-works.html#load-balancer-scheme">Load
+     * Balancer Scheme</a> in the <i>Elastic Load Balancing User Guide</i>.</p>
+     * <p>Specify <code>internal</code> to create a load balancer with a DNS name that
+     * resolves to private IP addresses.</p>
+     */
+    inline bool SchemeHasBeenSet() const { return m_schemeHasBeenSet; }
 
     /**
      * <p>The type of a load balancer. Valid only for load balancers in a VPC.</p>
@@ -421,6 +469,14 @@ namespace Model
      * Your Classic Load Balancer</a> in the <i>Classic Load Balancers Guide</i>.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>A list of tags to assign to the load balancer.</p> <p>For more information
+     * about tagging your load balancer, see <a
+     * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/add-remove-tags.html">Tag
+     * Your Classic Load Balancer</a> in the <i>Classic Load Balancers Guide</i>.</p>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
      * <p>A list of tags to assign to the load balancer.</p> <p>For more information

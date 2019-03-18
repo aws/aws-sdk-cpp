@@ -62,6 +62,12 @@ namespace Model
      * <p>The name of the Amazon S3 bucket whose <code>PublicAccessBlock</code>
      * configuration you want to set.</p>
      */
+    inline bool BucketHasBeenSet() const { return m_bucketHasBeenSet; }
+
+    /**
+     * <p>The name of the Amazon S3 bucket whose <code>PublicAccessBlock</code>
+     * configuration you want to set.</p>
+     */
     inline void SetBucket(const Aws::String& value) { m_bucketHasBeenSet = true; m_bucket = value; }
 
     /**
@@ -99,6 +105,11 @@ namespace Model
      * <p>The MD5 hash of the <code>PutPublicAccessBlock</code> request body. </p>
      */
     inline const Aws::String& GetContentMD5() const{ return m_contentMD5; }
+
+    /**
+     * <p>The MD5 hash of the <code>PutPublicAccessBlock</code> request body. </p>
+     */
+    inline bool ContentMD5HasBeenSet() const { return m_contentMD5HasBeenSet; }
 
     /**
      * <p>The MD5 hash of the <code>PutPublicAccessBlock</code> request body. </p>
@@ -151,6 +162,17 @@ namespace Model
      * Meaning of "Public"</a> in the <i>Amazon Simple Storage Service Developer
      * Guide</i>.</p>
      */
+    inline bool PublicAccessBlockConfigurationHasBeenSet() const { return m_publicAccessBlockConfigurationHasBeenSet; }
+
+    /**
+     * <p>The <code>PublicAccessBlock</code> configuration that you want to apply to
+     * this Amazon S3 bucket. You can enable the configuration options in any
+     * combination. For more information about when Amazon S3 considers a bucket or
+     * object public, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html#access-control-block-public-access-policy-status">The
+     * Meaning of "Public"</a> in the <i>Amazon Simple Storage Service Developer
+     * Guide</i>.</p>
+     */
     inline void SetPublicAccessBlockConfiguration(const PublicAccessBlockConfiguration& value) { m_publicAccessBlockConfigurationHasBeenSet = true; m_publicAccessBlockConfiguration = value; }
 
     /**
@@ -189,6 +211,9 @@ namespace Model
 
     
     inline const Aws::Map<Aws::String, Aws::String>& GetCustomizedAccessLogTag() const{ return m_customizedAccessLogTag; }
+
+    
+    inline bool CustomizedAccessLogTagHasBeenSet() const { return m_customizedAccessLogTagHasBeenSet; }
 
     
     inline void SetCustomizedAccessLogTag(const Aws::Map<Aws::String, Aws::String>& value) { m_customizedAccessLogTagHasBeenSet = true; m_customizedAccessLogTag = value; }

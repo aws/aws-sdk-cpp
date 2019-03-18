@@ -60,6 +60,11 @@ namespace Model
     /**
      * <p> ARN for a branch, part of an Amplify App. </p>
      */
+    inline bool BranchArnHasBeenSet() const { return m_branchArnHasBeenSet; }
+
+    /**
+     * <p> ARN for a branch, part of an Amplify App. </p>
+     */
     inline void SetBranchArn(const Aws::String& value) { m_branchArnHasBeenSet = true; m_branchArn = value; }
 
     /**
@@ -92,6 +97,11 @@ namespace Model
      * <p> Name for a branch, part of an Amplify App. </p>
      */
     inline const Aws::String& GetBranchName() const{ return m_branchName; }
+
+    /**
+     * <p> Name for a branch, part of an Amplify App. </p>
+     */
+    inline bool BranchNameHasBeenSet() const { return m_branchNameHasBeenSet; }
 
     /**
      * <p> Name for a branch, part of an Amplify App. </p>
@@ -132,6 +142,11 @@ namespace Model
     /**
      * <p> Description for a branch, part of an Amplify App. </p>
      */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
+
+    /**
+     * <p> Description for a branch, part of an Amplify App. </p>
+     */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
@@ -164,6 +179,11 @@ namespace Model
      * <p> Tag for branch for Amplify App. </p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p> Tag for branch for Amplify App. </p>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
      * <p> Tag for branch for Amplify App. </p>
@@ -229,6 +249,11 @@ namespace Model
     /**
      * <p> Stage for a branch, part of an Amplify App. </p>
      */
+    inline bool StageHasBeenSet() const { return m_stageHasBeenSet; }
+
+    /**
+     * <p> Stage for a branch, part of an Amplify App. </p>
+     */
     inline void SetStage(const Stage& value) { m_stageHasBeenSet = true; m_stage = value; }
 
     /**
@@ -251,6 +276,11 @@ namespace Model
      * <p> Display name for a branch, part of an Amplify App. </p>
      */
     inline const Aws::String& GetDisplayName() const{ return m_displayName; }
+
+    /**
+     * <p> Display name for a branch, part of an Amplify App. </p>
+     */
+    inline bool DisplayNameHasBeenSet() const { return m_displayNameHasBeenSet; }
 
     /**
      * <p> Display name for a branch, part of an Amplify App. </p>
@@ -291,6 +321,11 @@ namespace Model
     /**
      * <p> Enables notifications for a branch, part of an Amplify App. </p>
      */
+    inline bool EnableNotificationHasBeenSet() const { return m_enableNotificationHasBeenSet; }
+
+    /**
+     * <p> Enables notifications for a branch, part of an Amplify App. </p>
+     */
     inline void SetEnableNotification(bool value) { m_enableNotificationHasBeenSet = true; m_enableNotification = value; }
 
     /**
@@ -303,6 +338,11 @@ namespace Model
      * <p> Creation date and time for a branch, part of an Amplify App. </p>
      */
     inline const Aws::Utils::DateTime& GetCreateTime() const{ return m_createTime; }
+
+    /**
+     * <p> Creation date and time for a branch, part of an Amplify App. </p>
+     */
+    inline bool CreateTimeHasBeenSet() const { return m_createTimeHasBeenSet; }
 
     /**
      * <p> Creation date and time for a branch, part of an Amplify App. </p>
@@ -333,6 +373,11 @@ namespace Model
     /**
      * <p> Last updated date and time for a branch, part of an Amplify App. </p>
      */
+    inline bool UpdateTimeHasBeenSet() const { return m_updateTimeHasBeenSet; }
+
+    /**
+     * <p> Last updated date and time for a branch, part of an Amplify App. </p>
+     */
     inline void SetUpdateTime(const Aws::Utils::DateTime& value) { m_updateTimeHasBeenSet = true; m_updateTime = value; }
 
     /**
@@ -355,6 +400,11 @@ namespace Model
      * <p> Environment Variables specific to a branch, part of an Amplify App. </p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetEnvironmentVariables() const{ return m_environmentVariables; }
+
+    /**
+     * <p> Environment Variables specific to a branch, part of an Amplify App. </p>
+     */
+    inline bool EnvironmentVariablesHasBeenSet() const { return m_environmentVariablesHasBeenSet; }
 
     /**
      * <p> Environment Variables specific to a branch, part of an Amplify App. </p>
@@ -420,6 +470,11 @@ namespace Model
     /**
      * <p> Enables auto-building on push for a branch, part of an Amplify App. </p>
      */
+    inline bool EnableAutoBuildHasBeenSet() const { return m_enableAutoBuildHasBeenSet; }
+
+    /**
+     * <p> Enables auto-building on push for a branch, part of an Amplify App. </p>
+     */
     inline void SetEnableAutoBuild(bool value) { m_enableAutoBuildHasBeenSet = true; m_enableAutoBuild = value; }
 
     /**
@@ -432,6 +487,11 @@ namespace Model
      * <p> Custom domains for a branch, part of an Amplify App. </p>
      */
     inline const Aws::Vector<Aws::String>& GetCustomDomains() const{ return m_customDomains; }
+
+    /**
+     * <p> Custom domains for a branch, part of an Amplify App. </p>
+     */
+    inline bool CustomDomainsHasBeenSet() const { return m_customDomainsHasBeenSet; }
 
     /**
      * <p> Custom domains for a branch, part of an Amplify App. </p>
@@ -477,6 +537,11 @@ namespace Model
     /**
      * <p> Framework for a branch, part of an Amplify App. </p>
      */
+    inline bool FrameworkHasBeenSet() const { return m_frameworkHasBeenSet; }
+
+    /**
+     * <p> Framework for a branch, part of an Amplify App. </p>
+     */
     inline void SetFramework(const Aws::String& value) { m_frameworkHasBeenSet = true; m_framework = value; }
 
     /**
@@ -509,6 +574,11 @@ namespace Model
      * <p> Id of the active job for a branch, part of an Amplify App. </p>
      */
     inline const Aws::String& GetActiveJobId() const{ return m_activeJobId; }
+
+    /**
+     * <p> Id of the active job for a branch, part of an Amplify App. </p>
+     */
+    inline bool ActiveJobIdHasBeenSet() const { return m_activeJobIdHasBeenSet; }
 
     /**
      * <p> Id of the active job for a branch, part of an Amplify App. </p>
@@ -549,6 +619,11 @@ namespace Model
     /**
      * <p> Total number of Jobs part of an Amplify App. </p>
      */
+    inline bool TotalNumberOfJobsHasBeenSet() const { return m_totalNumberOfJobsHasBeenSet; }
+
+    /**
+     * <p> Total number of Jobs part of an Amplify App. </p>
+     */
     inline void SetTotalNumberOfJobs(const Aws::String& value) { m_totalNumberOfJobsHasBeenSet = true; m_totalNumberOfJobs = value; }
 
     /**
@@ -585,6 +660,11 @@ namespace Model
     /**
      * <p> Enables Basic Authorization for a branch, part of an Amplify App. </p>
      */
+    inline bool EnableBasicAuthHasBeenSet() const { return m_enableBasicAuthHasBeenSet; }
+
+    /**
+     * <p> Enables Basic Authorization for a branch, part of an Amplify App. </p>
+     */
     inline void SetEnableBasicAuth(bool value) { m_enableBasicAuthHasBeenSet = true; m_enableBasicAuth = value; }
 
     /**
@@ -597,6 +677,11 @@ namespace Model
      * <p> Thumbnail Url for the branch. </p>
      */
     inline const Aws::String& GetThumbnailUrl() const{ return m_thumbnailUrl; }
+
+    /**
+     * <p> Thumbnail Url for the branch. </p>
+     */
+    inline bool ThumbnailUrlHasBeenSet() const { return m_thumbnailUrlHasBeenSet; }
 
     /**
      * <p> Thumbnail Url for the branch. </p>
@@ -637,6 +722,11 @@ namespace Model
     /**
      * <p> Basic Authorization credentials for a branch, part of an Amplify App. </p>
      */
+    inline bool BasicAuthCredentialsHasBeenSet() const { return m_basicAuthCredentialsHasBeenSet; }
+
+    /**
+     * <p> Basic Authorization credentials for a branch, part of an Amplify App. </p>
+     */
     inline void SetBasicAuthCredentials(const Aws::String& value) { m_basicAuthCredentialsHasBeenSet = true; m_basicAuthCredentials = value; }
 
     /**
@@ -673,6 +763,11 @@ namespace Model
     /**
      * <p> BuildSpec content for branch for Amplify App. </p>
      */
+    inline bool BuildSpecHasBeenSet() const { return m_buildSpecHasBeenSet; }
+
+    /**
+     * <p> BuildSpec content for branch for Amplify App. </p>
+     */
     inline void SetBuildSpec(const Aws::String& value) { m_buildSpecHasBeenSet = true; m_buildSpec = value; }
 
     /**
@@ -705,6 +800,11 @@ namespace Model
      * <p> The content TTL for the website in seconds. </p>
      */
     inline const Aws::String& GetTtl() const{ return m_ttl; }
+
+    /**
+     * <p> The content TTL for the website in seconds. </p>
+     */
+    inline bool TtlHasBeenSet() const { return m_ttlHasBeenSet; }
 
     /**
      * <p> The content TTL for the website in seconds. </p>

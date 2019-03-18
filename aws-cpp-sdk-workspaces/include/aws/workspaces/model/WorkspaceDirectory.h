@@ -60,6 +60,11 @@ namespace Model
     /**
      * <p>The directory identifier.</p>
      */
+    inline bool DirectoryIdHasBeenSet() const { return m_directoryIdHasBeenSet; }
+
+    /**
+     * <p>The directory identifier.</p>
+     */
     inline void SetDirectoryId(const Aws::String& value) { m_directoryIdHasBeenSet = true; m_directoryId = value; }
 
     /**
@@ -92,6 +97,11 @@ namespace Model
      * <p>The directory alias.</p>
      */
     inline const Aws::String& GetAlias() const{ return m_alias; }
+
+    /**
+     * <p>The directory alias.</p>
+     */
+    inline bool AliasHasBeenSet() const { return m_aliasHasBeenSet; }
 
     /**
      * <p>The directory alias.</p>
@@ -132,6 +142,11 @@ namespace Model
     /**
      * <p>The name of the directory.</p>
      */
+    inline bool DirectoryNameHasBeenSet() const { return m_directoryNameHasBeenSet; }
+
+    /**
+     * <p>The name of the directory.</p>
+     */
     inline void SetDirectoryName(const Aws::String& value) { m_directoryNameHasBeenSet = true; m_directoryName = value; }
 
     /**
@@ -165,6 +180,12 @@ namespace Model
      * their Amazon WorkSpaces client application to connect to the directory.</p>
      */
     inline const Aws::String& GetRegistrationCode() const{ return m_registrationCode; }
+
+    /**
+     * <p>The registration code for the directory. This is the code that users enter in
+     * their Amazon WorkSpaces client application to connect to the directory.</p>
+     */
+    inline bool RegistrationCodeHasBeenSet() const { return m_registrationCodeHasBeenSet; }
 
     /**
      * <p>The registration code for the directory. This is the code that users enter in
@@ -211,6 +232,11 @@ namespace Model
     /**
      * <p>The identifiers of the subnets used with the directory.</p>
      */
+    inline bool SubnetIdsHasBeenSet() const { return m_subnetIdsHasBeenSet; }
+
+    /**
+     * <p>The identifiers of the subnets used with the directory.</p>
+     */
     inline void SetSubnetIds(const Aws::Vector<Aws::String>& value) { m_subnetIdsHasBeenSet = true; m_subnetIds = value; }
 
     /**
@@ -248,6 +274,11 @@ namespace Model
      * <p>The IP addresses of the DNS servers for the directory.</p>
      */
     inline const Aws::Vector<Aws::String>& GetDnsIpAddresses() const{ return m_dnsIpAddresses; }
+
+    /**
+     * <p>The IP addresses of the DNS servers for the directory.</p>
+     */
+    inline bool DnsIpAddressesHasBeenSet() const { return m_dnsIpAddressesHasBeenSet; }
 
     /**
      * <p>The IP addresses of the DNS servers for the directory.</p>
@@ -293,6 +324,11 @@ namespace Model
     /**
      * <p>The user name for the service account.</p>
      */
+    inline bool CustomerUserNameHasBeenSet() const { return m_customerUserNameHasBeenSet; }
+
+    /**
+     * <p>The user name for the service account.</p>
+     */
     inline void SetCustomerUserName(const Aws::String& value) { m_customerUserNameHasBeenSet = true; m_customerUserName = value; }
 
     /**
@@ -327,6 +363,13 @@ namespace Model
      * behalf.</p>
      */
     inline const Aws::String& GetIamRoleId() const{ return m_iamRoleId; }
+
+    /**
+     * <p>The identifier of the IAM role. This is the role that allows Amazon
+     * WorkSpaces to make calls to other services, such as Amazon EC2, on your
+     * behalf.</p>
+     */
+    inline bool IamRoleIdHasBeenSet() const { return m_iamRoleIdHasBeenSet; }
 
     /**
      * <p>The identifier of the IAM role. This is the role that allows Amazon
@@ -379,6 +422,11 @@ namespace Model
     /**
      * <p>The directory type.</p>
      */
+    inline bool DirectoryTypeHasBeenSet() const { return m_directoryTypeHasBeenSet; }
+
+    /**
+     * <p>The directory type.</p>
+     */
     inline void SetDirectoryType(const WorkspaceDirectoryType& value) { m_directoryTypeHasBeenSet = true; m_directoryType = value; }
 
     /**
@@ -401,6 +449,11 @@ namespace Model
      * <p>The identifier of the security group that is assigned to new WorkSpaces.</p>
      */
     inline const Aws::String& GetWorkspaceSecurityGroupId() const{ return m_workspaceSecurityGroupId; }
+
+    /**
+     * <p>The identifier of the security group that is assigned to new WorkSpaces.</p>
+     */
+    inline bool WorkspaceSecurityGroupIdHasBeenSet() const { return m_workspaceSecurityGroupIdHasBeenSet; }
 
     /**
      * <p>The identifier of the security group that is assigned to new WorkSpaces.</p>
@@ -441,6 +494,11 @@ namespace Model
     /**
      * <p>The state of the directory's registration with Amazon WorkSpaces</p>
      */
+    inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
+
+    /**
+     * <p>The state of the directory's registration with Amazon WorkSpaces</p>
+     */
     inline void SetState(const WorkspaceDirectoryState& value) { m_stateHasBeenSet = true; m_state = value; }
 
     /**
@@ -463,6 +521,11 @@ namespace Model
      * <p>The default creation properties for all WorkSpaces in the directory.</p>
      */
     inline const DefaultWorkspaceCreationProperties& GetWorkspaceCreationProperties() const{ return m_workspaceCreationProperties; }
+
+    /**
+     * <p>The default creation properties for all WorkSpaces in the directory.</p>
+     */
+    inline bool WorkspaceCreationPropertiesHasBeenSet() const { return m_workspaceCreationPropertiesHasBeenSet; }
 
     /**
      * <p>The default creation properties for all WorkSpaces in the directory.</p>
@@ -490,6 +553,12 @@ namespace Model
      * directory.</p>
      */
     inline const Aws::Vector<Aws::String>& GetIpGroupIds() const{ return m_ipGroupIds; }
+
+    /**
+     * <p>The identifiers of the IP access control groups associated with the
+     * directory.</p>
+     */
+    inline bool IpGroupIdsHasBeenSet() const { return m_ipGroupIdsHasBeenSet; }
 
     /**
      * <p>The identifiers of the IP access control groups associated with the

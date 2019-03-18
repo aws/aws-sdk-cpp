@@ -59,6 +59,12 @@ namespace Model
      * <p>The service that the policy is using to protect the resources. This value is
      * <code>WAF</code>.</p>
      */
+    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
+
+    /**
+     * <p>The service that the policy is using to protect the resources. This value is
+     * <code>WAF</code>.</p>
+     */
     inline void SetType(const SecurityServiceType& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
@@ -88,6 +94,15 @@ namespace Model
      * \"COUNT\"}}], \"defaultAction\": {\"type\": \"BLOCK\"}}</code> </p>
      */
     inline const Aws::String& GetManagedServiceData() const{ return m_managedServiceData; }
+
+    /**
+     * <p>Details about the service. This contains <code>WAF</code> data in JSON
+     * format, as shown in the following example:</p> <p> <code>ManagedServiceData":
+     * "{\"type\": \"WAF\", \"ruleGroups\": [{\"id\":
+     * \"12345678-1bcd-9012-efga-0987654321ab\", \"overrideAction\" : {\"type\":
+     * \"COUNT\"}}], \"defaultAction\": {\"type\": \"BLOCK\"}}</code> </p>
+     */
+    inline bool ManagedServiceDataHasBeenSet() const { return m_managedServiceDataHasBeenSet; }
 
     /**
      * <p>Details about the service. This contains <code>WAF</code> data in JSON

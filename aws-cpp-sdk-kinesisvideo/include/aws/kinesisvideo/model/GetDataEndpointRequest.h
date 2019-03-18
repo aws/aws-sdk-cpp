@@ -53,6 +53,12 @@ namespace Model
      * <p>The name of the stream that you want to get the endpoint for. You must
      * specify either this parameter or a <code>StreamARN</code> in the request.</p>
      */
+    inline bool StreamNameHasBeenSet() const { return m_streamNameHasBeenSet; }
+
+    /**
+     * <p>The name of the stream that you want to get the endpoint for. You must
+     * specify either this parameter or a <code>StreamARN</code> in the request.</p>
+     */
     inline void SetStreamName(const Aws::String& value) { m_streamNameHasBeenSet = true; m_streamName = value; }
 
     /**
@@ -92,6 +98,13 @@ namespace Model
      * <code>StreamName</code> in the request. </p>
      */
     inline const Aws::String& GetStreamARN() const{ return m_streamARN; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the stream that you want to get the
+     * endpoint for. You must specify either this parameter or a
+     * <code>StreamName</code> in the request. </p>
+     */
+    inline bool StreamARNHasBeenSet() const { return m_streamARNHasBeenSet; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the stream that you want to get the
@@ -140,6 +153,11 @@ namespace Model
      * <p>The name of the API action for which to get an endpoint.</p>
      */
     inline const APIName& GetAPIName() const{ return m_aPIName; }
+
+    /**
+     * <p>The name of the API action for which to get an endpoint.</p>
+     */
+    inline bool APINameHasBeenSet() const { return m_aPINameHasBeenSet; }
 
     /**
      * <p>The name of the API action for which to get an endpoint.</p>

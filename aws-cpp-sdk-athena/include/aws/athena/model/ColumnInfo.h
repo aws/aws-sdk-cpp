@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The catalog to which the query results belong.</p>
      */
+    inline bool CatalogNameHasBeenSet() const { return m_catalogNameHasBeenSet; }
+
+    /**
+     * <p>The catalog to which the query results belong.</p>
+     */
     inline void SetCatalogName(const Aws::String& value) { m_catalogNameHasBeenSet = true; m_catalogName = value; }
 
     /**
@@ -89,6 +94,11 @@ namespace Model
      * <p>The schema name (database name) to which the query results belong.</p>
      */
     inline const Aws::String& GetSchemaName() const{ return m_schemaName; }
+
+    /**
+     * <p>The schema name (database name) to which the query results belong.</p>
+     */
+    inline bool SchemaNameHasBeenSet() const { return m_schemaNameHasBeenSet; }
 
     /**
      * <p>The schema name (database name) to which the query results belong.</p>
@@ -129,6 +139,11 @@ namespace Model
     /**
      * <p>The table name for the query results.</p>
      */
+    inline bool TableNameHasBeenSet() const { return m_tableNameHasBeenSet; }
+
+    /**
+     * <p>The table name for the query results.</p>
+     */
     inline void SetTableName(const Aws::String& value) { m_tableNameHasBeenSet = true; m_tableName = value; }
 
     /**
@@ -161,6 +176,11 @@ namespace Model
      * <p>The name of the column.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
+
+    /**
+     * <p>The name of the column.</p>
+     */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
      * <p>The name of the column.</p>
@@ -201,6 +221,11 @@ namespace Model
     /**
      * <p>A column label.</p>
      */
+    inline bool LabelHasBeenSet() const { return m_labelHasBeenSet; }
+
+    /**
+     * <p>A column label.</p>
+     */
     inline void SetLabel(const Aws::String& value) { m_labelHasBeenSet = true; m_label = value; }
 
     /**
@@ -233,6 +258,11 @@ namespace Model
      * <p>The data type of the column.</p>
      */
     inline const Aws::String& GetType() const{ return m_type; }
+
+    /**
+     * <p>The data type of the column.</p>
+     */
+    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
 
     /**
      * <p>The data type of the column.</p>
@@ -275,6 +305,12 @@ namespace Model
      * <p>For <code>DECIMAL</code> data types, specifies the total number of digits, up
      * to 38. For performance reasons, we recommend up to 18 digits.</p>
      */
+    inline bool PrecisionHasBeenSet() const { return m_precisionHasBeenSet; }
+
+    /**
+     * <p>For <code>DECIMAL</code> data types, specifies the total number of digits, up
+     * to 38. For performance reasons, we recommend up to 18 digits.</p>
+     */
     inline void SetPrecision(int value) { m_precisionHasBeenSet = true; m_precision = value; }
 
     /**
@@ -294,6 +330,12 @@ namespace Model
      * <p>For <code>DECIMAL</code> data types, specifies the total number of digits in
      * the fractional part of the value. Defaults to 0.</p>
      */
+    inline bool ScaleHasBeenSet() const { return m_scaleHasBeenSet; }
+
+    /**
+     * <p>For <code>DECIMAL</code> data types, specifies the total number of digits in
+     * the fractional part of the value. Defaults to 0.</p>
+     */
     inline void SetScale(int value) { m_scaleHasBeenSet = true; m_scale = value; }
 
     /**
@@ -307,6 +349,11 @@ namespace Model
      * <p>Indicates the column's nullable status.</p>
      */
     inline const ColumnNullable& GetNullable() const{ return m_nullable; }
+
+    /**
+     * <p>Indicates the column's nullable status.</p>
+     */
+    inline bool NullableHasBeenSet() const { return m_nullableHasBeenSet; }
 
     /**
      * <p>Indicates the column's nullable status.</p>
@@ -333,6 +380,11 @@ namespace Model
      * <p>Indicates whether values in the column are case-sensitive.</p>
      */
     inline bool GetCaseSensitive() const{ return m_caseSensitive; }
+
+    /**
+     * <p>Indicates whether values in the column are case-sensitive.</p>
+     */
+    inline bool CaseSensitiveHasBeenSet() const { return m_caseSensitiveHasBeenSet; }
 
     /**
      * <p>Indicates whether values in the column are case-sensitive.</p>

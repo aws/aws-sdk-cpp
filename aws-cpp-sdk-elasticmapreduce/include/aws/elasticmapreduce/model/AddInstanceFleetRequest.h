@@ -53,6 +53,11 @@ namespace Model
     /**
      * <p>The unique identifier of the cluster.</p>
      */
+    inline bool ClusterIdHasBeenSet() const { return m_clusterIdHasBeenSet; }
+
+    /**
+     * <p>The unique identifier of the cluster.</p>
+     */
     inline void SetClusterId(const Aws::String& value) { m_clusterIdHasBeenSet = true; m_clusterId = value; }
 
     /**
@@ -85,6 +90,11 @@ namespace Model
      * <p>Specifies the configuration of the instance fleet.</p>
      */
     inline const InstanceFleetConfig& GetInstanceFleet() const{ return m_instanceFleet; }
+
+    /**
+     * <p>Specifies the configuration of the instance fleet.</p>
+     */
+    inline bool InstanceFleetHasBeenSet() const { return m_instanceFleetHasBeenSet; }
 
     /**
      * <p>Specifies the configuration of the instance fleet.</p>

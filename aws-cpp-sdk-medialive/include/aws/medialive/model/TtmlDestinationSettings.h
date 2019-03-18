@@ -59,6 +59,13 @@ namespace Model
      * TTML-like input source (TTML, SMPTE-TT, CFF-TT) to the CFF-TT output or TTML
      * output.
      */
+    inline bool StyleControlHasBeenSet() const { return m_styleControlHasBeenSet; }
+
+    /**
+     * When set to passthrough, passes through style and position information from a
+     * TTML-like input source (TTML, SMPTE-TT, CFF-TT) to the CFF-TT output or TTML
+     * output.
+     */
     inline void SetStyleControl(const TtmlDestinationStyleControl& value) { m_styleControlHasBeenSet = true; m_styleControl = value; }
 
     /**

@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>A type that can be either <code>Update</code> or <code>Delete</code>.</p>
      */
+    inline bool ObjectAttributeActionTypeHasBeenSet() const { return m_objectAttributeActionTypeHasBeenSet; }
+
+    /**
+     * <p>A type that can be either <code>Update</code> or <code>Delete</code>.</p>
+     */
     inline void SetObjectAttributeActionType(const UpdateActionType& value) { m_objectAttributeActionTypeHasBeenSet = true; m_objectAttributeActionType = value; }
 
     /**
@@ -78,6 +83,11 @@ namespace Model
      * <p>The value that you want to update to.</p>
      */
     inline const TypedAttributeValue& GetObjectAttributeUpdateValue() const{ return m_objectAttributeUpdateValue; }
+
+    /**
+     * <p>The value that you want to update to.</p>
+     */
+    inline bool ObjectAttributeUpdateValueHasBeenSet() const { return m_objectAttributeUpdateValueHasBeenSet; }
 
     /**
      * <p>The value that you want to update to.</p>

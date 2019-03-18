@@ -54,6 +54,12 @@ namespace Model
      * <p>The token returned in either the AssociateNodeResponse or the
      * DisassociateNodeResponse. </p>
      */
+    inline bool NodeAssociationStatusTokenHasBeenSet() const { return m_nodeAssociationStatusTokenHasBeenSet; }
+
+    /**
+     * <p>The token returned in either the AssociateNodeResponse or the
+     * DisassociateNodeResponse. </p>
+     */
     inline void SetNodeAssociationStatusToken(const Aws::String& value) { m_nodeAssociationStatusTokenHasBeenSet = true; m_nodeAssociationStatusToken = value; }
 
     /**
@@ -91,6 +97,11 @@ namespace Model
      * <p>The name of the server from which to disassociate the node. </p>
      */
     inline const Aws::String& GetServerName() const{ return m_serverName; }
+
+    /**
+     * <p>The name of the server from which to disassociate the node. </p>
+     */
+    inline bool ServerNameHasBeenSet() const { return m_serverNameHasBeenSet; }
 
     /**
      * <p>The name of the server from which to disassociate the node. </p>

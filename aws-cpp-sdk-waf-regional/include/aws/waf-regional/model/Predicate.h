@@ -85,6 +85,23 @@ namespace Model
      * address <code>192.0.2.44</code>, AWS WAF will allow, block, or count requests
      * based on all IP addresses <i>except</i> <code>192.0.2.44</code>.</p>
      */
+    inline bool NegatedHasBeenSet() const { return m_negatedHasBeenSet; }
+
+    /**
+     * <p>Set <code>Negated</code> to <code>False</code> if you want AWS WAF to allow,
+     * block, or count requests based on the settings in the specified
+     * <a>ByteMatchSet</a>, <a>IPSet</a>, <a>SqlInjectionMatchSet</a>,
+     * <a>XssMatchSet</a>, <a>RegexMatchSet</a>, <a>GeoMatchSet</a>, or
+     * <a>SizeConstraintSet</a>. For example, if an <code>IPSet</code> includes the IP
+     * address <code>192.0.2.44</code>, AWS WAF will allow or block requests based on
+     * that IP address.</p> <p>Set <code>Negated</code> to <code>True</code> if you
+     * want AWS WAF to allow or block a request based on the negation of the settings
+     * in the <a>ByteMatchSet</a>, <a>IPSet</a>, <a>SqlInjectionMatchSet</a>,
+     * <a>XssMatchSet</a>, <a>RegexMatchSet</a>, <a>GeoMatchSet</a>, or
+     * <a>SizeConstraintSet</a>. For example, if an <code>IPSet</code> includes the IP
+     * address <code>192.0.2.44</code>, AWS WAF will allow, block, or count requests
+     * based on all IP addresses <i>except</i> <code>192.0.2.44</code>.</p>
+     */
     inline void SetNegated(bool value) { m_negatedHasBeenSet = true; m_negated = value; }
 
     /**
@@ -110,6 +127,12 @@ namespace Model
      * or <code>IPSet</code>.</p>
      */
     inline const PredicateType& GetType() const{ return m_type; }
+
+    /**
+     * <p>The type of predicate in a <code>Rule</code>, such as <code>ByteMatch</code>
+     * or <code>IPSet</code>.</p>
+     */
+    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
 
     /**
      * <p>The type of predicate in a <code>Rule</code>, such as <code>ByteMatch</code>
@@ -142,6 +165,13 @@ namespace Model
      * corresponding <code>Create</code> or <code>List</code> command.</p>
      */
     inline const Aws::String& GetDataId() const{ return m_dataId; }
+
+    /**
+     * <p>A unique identifier for a predicate in a <code>Rule</code>, such as
+     * <code>ByteMatchSetId</code> or <code>IPSetId</code>. The ID is returned by the
+     * corresponding <code>Create</code> or <code>List</code> command.</p>
+     */
+    inline bool DataIdHasBeenSet() const { return m_dataIdHasBeenSet; }
 
     /**
      * <p>A unique identifier for a predicate in a <code>Rule</code>, such as

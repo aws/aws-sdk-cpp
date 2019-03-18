@@ -60,6 +60,11 @@ namespace Model
     /**
      * <p>The entity types in the input data for an entity recognizer.</p>
      */
+    inline bool EntityTypesHasBeenSet() const { return m_entityTypesHasBeenSet; }
+
+    /**
+     * <p>The entity types in the input data for an entity recognizer.</p>
+     */
     inline void SetEntityTypes(const Aws::Vector<EntityTypesListItem>& value) { m_entityTypesHasBeenSet = true; m_entityTypes = value; }
 
     /**
@@ -96,6 +101,11 @@ namespace Model
     /**
      * <p>S3 location of the documents folder for an entity recognizer</p>
      */
+    inline bool DocumentsHasBeenSet() const { return m_documentsHasBeenSet; }
+
+    /**
+     * <p>S3 location of the documents folder for an entity recognizer</p>
+     */
     inline void SetDocuments(const EntityRecognizerDocuments& value) { m_documentsHasBeenSet = true; m_documents = value; }
 
     /**
@@ -122,6 +132,11 @@ namespace Model
     /**
      * <p>S3 location of the annotations file for an entity recognizer.</p>
      */
+    inline bool AnnotationsHasBeenSet() const { return m_annotationsHasBeenSet; }
+
+    /**
+     * <p>S3 location of the annotations file for an entity recognizer.</p>
+     */
     inline void SetAnnotations(const EntityRecognizerAnnotations& value) { m_annotationsHasBeenSet = true; m_annotations = value; }
 
     /**
@@ -144,6 +159,11 @@ namespace Model
      * <p>S3 location of the entity list for an entity recognizer.</p>
      */
     inline const EntityRecognizerEntityList& GetEntityList() const{ return m_entityList; }
+
+    /**
+     * <p>S3 location of the entity list for an entity recognizer.</p>
+     */
+    inline bool EntityListHasBeenSet() const { return m_entityListHasBeenSet; }
 
     /**
      * <p>S3 location of the entity list for an entity recognizer.</p>

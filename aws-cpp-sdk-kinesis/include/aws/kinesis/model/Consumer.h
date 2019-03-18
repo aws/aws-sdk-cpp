@@ -60,6 +60,12 @@ namespace Model
      * <p>The name of the consumer is something you choose when you register the
      * consumer.</p>
      */
+    inline bool ConsumerNameHasBeenSet() const { return m_consumerNameHasBeenSet; }
+
+    /**
+     * <p>The name of the consumer is something you choose when you register the
+     * consumer.</p>
+     */
     inline void SetConsumerName(const Aws::String& value) { m_consumerNameHasBeenSet = true; m_consumerName = value; }
 
     /**
@@ -102,6 +108,16 @@ namespace Model
      * ARNs.</p>
      */
     inline const Aws::String& GetConsumerARN() const{ return m_consumerARN; }
+
+    /**
+     * <p>When you register a consumer, Kinesis Data Streams generates an ARN for it.
+     * You need this ARN to be able to call <a>SubscribeToShard</a>.</p> <p>If you
+     * delete a consumer and then create a new one with the same name, it won't have
+     * the same ARN. That's because consumer ARNs contain the creation timestamp. This
+     * is important to keep in mind if you have IAM policies that reference consumer
+     * ARNs.</p>
+     */
+    inline bool ConsumerARNHasBeenSet() const { return m_consumerARNHasBeenSet; }
 
     /**
      * <p>When you register a consumer, Kinesis Data Streams generates an ARN for it.
@@ -174,6 +190,12 @@ namespace Model
      * <p>A consumer can't read data while in the <code>CREATING</code> or
      * <code>DELETING</code> states.</p>
      */
+    inline bool ConsumerStatusHasBeenSet() const { return m_consumerStatusHasBeenSet; }
+
+    /**
+     * <p>A consumer can't read data while in the <code>CREATING</code> or
+     * <code>DELETING</code> states.</p>
+     */
     inline void SetConsumerStatus(const ConsumerStatus& value) { m_consumerStatusHasBeenSet = true; m_consumerStatus = value; }
 
     /**
@@ -199,6 +221,11 @@ namespace Model
      * <p/>
      */
     inline const Aws::Utils::DateTime& GetConsumerCreationTimestamp() const{ return m_consumerCreationTimestamp; }
+
+    /**
+     * <p/>
+     */
+    inline bool ConsumerCreationTimestampHasBeenSet() const { return m_consumerCreationTimestampHasBeenSet; }
 
     /**
      * <p/>

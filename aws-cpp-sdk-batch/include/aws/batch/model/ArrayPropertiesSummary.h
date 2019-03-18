@@ -56,6 +56,12 @@ namespace Model
      * <p>The size of the array job. This parameter is returned for parent array
      * jobs.</p>
      */
+    inline bool SizeHasBeenSet() const { return m_sizeHasBeenSet; }
+
+    /**
+     * <p>The size of the array job. This parameter is returned for parent array
+     * jobs.</p>
+     */
     inline void SetSize(int value) { m_sizeHasBeenSet = true; m_size = value; }
 
     /**
@@ -70,6 +76,12 @@ namespace Model
      * parameter is returned for children of array jobs.</p>
      */
     inline int GetIndex() const{ return m_index; }
+
+    /**
+     * <p>The job index within the array that is associated with this job. This
+     * parameter is returned for children of array jobs.</p>
+     */
+    inline bool IndexHasBeenSet() const { return m_indexHasBeenSet; }
 
     /**
      * <p>The job index within the array that is associated with this job. This

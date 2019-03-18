@@ -69,6 +69,11 @@ namespace Model
     /**
      * <p>The <code>activityId</code> of the activity task to be canceled.</p>
      */
+    inline bool ActivityIdHasBeenSet() const { return m_activityIdHasBeenSet; }
+
+    /**
+     * <p>The <code>activityId</code> of the activity task to be canceled.</p>
+     */
     inline void SetActivityId(const Aws::String& value) { m_activityIdHasBeenSet = true; m_activityId = value; }
 
     /**

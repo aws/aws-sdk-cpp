@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The ID of the Direct Connect gateway.</p>
      */
+    inline bool DirectConnectGatewayIdHasBeenSet() const { return m_directConnectGatewayIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the Direct Connect gateway.</p>
+     */
     inline void SetDirectConnectGatewayId(const Aws::String& value) { m_directConnectGatewayIdHasBeenSet = true; m_directConnectGatewayId = value; }
 
     /**
@@ -90,6 +95,12 @@ namespace Model
      * interfaces.</p>
      */
     inline const Aws::String& GetVirtualGatewayId() const{ return m_virtualGatewayId; }
+
+    /**
+     * <p>The ID of the virtual private gateway. Applies only to private virtual
+     * interfaces.</p>
+     */
+    inline bool VirtualGatewayIdHasBeenSet() const { return m_virtualGatewayIdHasBeenSet; }
 
     /**
      * <p>The ID of the virtual private gateway. Applies only to private virtual
@@ -136,6 +147,11 @@ namespace Model
     /**
      * <p>The AWS Region where the virtual private gateway is located.</p>
      */
+    inline bool VirtualGatewayRegionHasBeenSet() const { return m_virtualGatewayRegionHasBeenSet; }
+
+    /**
+     * <p>The AWS Region where the virtual private gateway is located.</p>
+     */
     inline void SetVirtualGatewayRegion(const Aws::String& value) { m_virtualGatewayRegionHasBeenSet = true; m_virtualGatewayRegion = value; }
 
     /**
@@ -168,6 +184,11 @@ namespace Model
      * <p>The ID of the AWS account that owns the virtual private gateway.</p>
      */
     inline const Aws::String& GetVirtualGatewayOwnerAccount() const{ return m_virtualGatewayOwnerAccount; }
+
+    /**
+     * <p>The ID of the AWS account that owns the virtual private gateway.</p>
+     */
+    inline bool VirtualGatewayOwnerAccountHasBeenSet() const { return m_virtualGatewayOwnerAccountHasBeenSet; }
 
     /**
      * <p>The ID of the AWS account that owns the virtual private gateway.</p>
@@ -213,6 +234,20 @@ namespace Model
      * virtual private gateway is stopped.</p> </li> </ul>
      */
     inline const DirectConnectGatewayAssociationState& GetAssociationState() const{ return m_associationState; }
+
+    /**
+     * <p>The state of the association. The following are the possible values:</p> <ul>
+     * <li> <p> <code>associating</code>: The initial state after calling
+     * <a>CreateDirectConnectGatewayAssociation</a>.</p> </li> <li> <p>
+     * <code>associated</code>: The Direct Connect gateway and virtual private gateway
+     * are successfully associated and ready to pass traffic.</p> </li> <li> <p>
+     * <code>disassociating</code>: The initial state after calling
+     * <a>DeleteDirectConnectGatewayAssociation</a>.</p> </li> <li> <p>
+     * <code>disassociated</code>: The virtual private gateway is disassociated from
+     * the Direct Connect gateway. Traffic flow between the Direct Connect gateway and
+     * virtual private gateway is stopped.</p> </li> </ul>
+     */
+    inline bool AssociationStateHasBeenSet() const { return m_associationStateHasBeenSet; }
 
     /**
      * <p>The state of the association. The following are the possible values:</p> <ul>
@@ -275,6 +310,11 @@ namespace Model
      * <p>The error message if the state of an object failed to advance.</p>
      */
     inline const Aws::String& GetStateChangeError() const{ return m_stateChangeError; }
+
+    /**
+     * <p>The error message if the state of an object failed to advance.</p>
+     */
+    inline bool StateChangeErrorHasBeenSet() const { return m_stateChangeErrorHasBeenSet; }
 
     /**
      * <p>The error message if the state of an object failed to advance.</p>

@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>Unique identifier for a fleet to update run-time configuration for.</p>
      */
+    inline bool FleetIdHasBeenSet() const { return m_fleetIdHasBeenSet; }
+
+    /**
+     * <p>Unique identifier for a fleet to update run-time configuration for.</p>
+     */
     inline void SetFleetId(const Aws::String& value) { m_fleetIdHasBeenSet = true; m_fleetId = value; }
 
     /**
@@ -93,6 +98,16 @@ namespace Model
      * configuration to maintain on each instance.</p>
      */
     inline const RuntimeConfiguration& GetRuntimeConfiguration() const{ return m_runtimeConfiguration; }
+
+    /**
+     * <p>Instructions for launching server processes on each instance in the fleet.
+     * The run-time configuration for a fleet has a collection of server process
+     * configurations, one for each type of server process to run on an instance. A
+     * server process configuration specifies the location of the server executable,
+     * launch parameters, and the number of concurrent processes with that
+     * configuration to maintain on each instance.</p>
+     */
+    inline bool RuntimeConfigurationHasBeenSet() const { return m_runtimeConfigurationHasBeenSet; }
 
     /**
      * <p>Instructions for launching server processes on each instance in the fleet.

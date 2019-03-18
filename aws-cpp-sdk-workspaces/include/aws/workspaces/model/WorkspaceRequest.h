@@ -63,6 +63,13 @@ namespace Model
      * can use <a>DescribeWorkspaceDirectories</a> to list the available
      * directories.</p>
      */
+    inline bool DirectoryIdHasBeenSet() const { return m_directoryIdHasBeenSet; }
+
+    /**
+     * <p>The identifier of the AWS Directory Service directory for the WorkSpace. You
+     * can use <a>DescribeWorkspaceDirectories</a> to list the available
+     * directories.</p>
+     */
     inline void SetDirectoryId(const Aws::String& value) { m_directoryIdHasBeenSet = true; m_directoryId = value; }
 
     /**
@@ -111,6 +118,12 @@ namespace Model
      * <p>The username of the user for the WorkSpace. This username must exist in the
      * AWS Directory Service directory for the WorkSpace.</p>
      */
+    inline bool UserNameHasBeenSet() const { return m_userNameHasBeenSet; }
+
+    /**
+     * <p>The username of the user for the WorkSpace. This username must exist in the
+     * AWS Directory Service directory for the WorkSpace.</p>
+     */
     inline void SetUserName(const Aws::String& value) { m_userNameHasBeenSet = true; m_userName = value; }
 
     /**
@@ -149,6 +162,12 @@ namespace Model
      * <a>DescribeWorkspaceBundles</a> to list the available bundles.</p>
      */
     inline const Aws::String& GetBundleId() const{ return m_bundleId; }
+
+    /**
+     * <p>The identifier of the bundle for the WorkSpace. You can use
+     * <a>DescribeWorkspaceBundles</a> to list the available bundles.</p>
+     */
+    inline bool BundleIdHasBeenSet() const { return m_bundleIdHasBeenSet; }
 
     /**
      * <p>The identifier of the bundle for the WorkSpace. You can use
@@ -195,6 +214,11 @@ namespace Model
     /**
      * <p>The KMS key used to encrypt data stored on your WorkSpace.</p>
      */
+    inline bool VolumeEncryptionKeyHasBeenSet() const { return m_volumeEncryptionKeyHasBeenSet; }
+
+    /**
+     * <p>The KMS key used to encrypt data stored on your WorkSpace.</p>
+     */
     inline void SetVolumeEncryptionKey(const Aws::String& value) { m_volumeEncryptionKeyHasBeenSet = true; m_volumeEncryptionKey = value; }
 
     /**
@@ -231,6 +255,11 @@ namespace Model
     /**
      * <p>Indicates whether the data stored on the user volume is encrypted.</p>
      */
+    inline bool UserVolumeEncryptionEnabledHasBeenSet() const { return m_userVolumeEncryptionEnabledHasBeenSet; }
+
+    /**
+     * <p>Indicates whether the data stored on the user volume is encrypted.</p>
+     */
     inline void SetUserVolumeEncryptionEnabled(bool value) { m_userVolumeEncryptionEnabledHasBeenSet = true; m_userVolumeEncryptionEnabled = value; }
 
     /**
@@ -247,6 +276,11 @@ namespace Model
     /**
      * <p>Indicates whether the data stored on the root volume is encrypted.</p>
      */
+    inline bool RootVolumeEncryptionEnabledHasBeenSet() const { return m_rootVolumeEncryptionEnabledHasBeenSet; }
+
+    /**
+     * <p>Indicates whether the data stored on the root volume is encrypted.</p>
+     */
     inline void SetRootVolumeEncryptionEnabled(bool value) { m_rootVolumeEncryptionEnabledHasBeenSet = true; m_rootVolumeEncryptionEnabled = value; }
 
     /**
@@ -259,6 +293,11 @@ namespace Model
      * <p>The WorkSpace properties.</p>
      */
     inline const WorkspaceProperties& GetWorkspaceProperties() const{ return m_workspaceProperties; }
+
+    /**
+     * <p>The WorkSpace properties.</p>
+     */
+    inline bool WorkspacePropertiesHasBeenSet() const { return m_workspacePropertiesHasBeenSet; }
 
     /**
      * <p>The WorkSpace properties.</p>
@@ -285,6 +324,11 @@ namespace Model
      * <p>The tags for the WorkSpace.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>The tags for the WorkSpace.</p>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
      * <p>The tags for the WorkSpace.</p>

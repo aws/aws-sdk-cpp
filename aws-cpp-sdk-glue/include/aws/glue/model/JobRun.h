@@ -61,6 +61,11 @@ namespace Model
     /**
      * <p>The ID of this job run.</p>
      */
+    inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
+
+    /**
+     * <p>The ID of this job run.</p>
+     */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
     /**
@@ -97,6 +102,11 @@ namespace Model
     /**
      * <p>The number of the attempt to run this job.</p>
      */
+    inline bool AttemptHasBeenSet() const { return m_attemptHasBeenSet; }
+
+    /**
+     * <p>The number of the attempt to run this job.</p>
+     */
     inline void SetAttempt(int value) { m_attemptHasBeenSet = true; m_attempt = value; }
 
     /**
@@ -110,6 +120,12 @@ namespace Model
      * in the StartJobRun action.</p>
      */
     inline const Aws::String& GetPreviousRunId() const{ return m_previousRunId; }
+
+    /**
+     * <p>The ID of the previous run of this job. For example, the JobRunId specified
+     * in the StartJobRun action.</p>
+     */
+    inline bool PreviousRunIdHasBeenSet() const { return m_previousRunIdHasBeenSet; }
 
     /**
      * <p>The ID of the previous run of this job. For example, the JobRunId specified
@@ -156,6 +172,11 @@ namespace Model
     /**
      * <p>The name of the trigger that started this job run.</p>
      */
+    inline bool TriggerNameHasBeenSet() const { return m_triggerNameHasBeenSet; }
+
+    /**
+     * <p>The name of the trigger that started this job run.</p>
+     */
     inline void SetTriggerName(const Aws::String& value) { m_triggerNameHasBeenSet = true; m_triggerName = value; }
 
     /**
@@ -188,6 +209,11 @@ namespace Model
      * <p>The name of the job definition being used in this run.</p>
      */
     inline const Aws::String& GetJobName() const{ return m_jobName; }
+
+    /**
+     * <p>The name of the job definition being used in this run.</p>
+     */
+    inline bool JobNameHasBeenSet() const { return m_jobNameHasBeenSet; }
 
     /**
      * <p>The name of the job definition being used in this run.</p>
@@ -228,6 +254,11 @@ namespace Model
     /**
      * <p>The date and time at which this job run was started.</p>
      */
+    inline bool StartedOnHasBeenSet() const { return m_startedOnHasBeenSet; }
+
+    /**
+     * <p>The date and time at which this job run was started.</p>
+     */
     inline void SetStartedOn(const Aws::Utils::DateTime& value) { m_startedOnHasBeenSet = true; m_startedOn = value; }
 
     /**
@@ -250,6 +281,11 @@ namespace Model
      * <p>The last time this job run was modified.</p>
      */
     inline const Aws::Utils::DateTime& GetLastModifiedOn() const{ return m_lastModifiedOn; }
+
+    /**
+     * <p>The last time this job run was modified.</p>
+     */
+    inline bool LastModifiedOnHasBeenSet() const { return m_lastModifiedOnHasBeenSet; }
 
     /**
      * <p>The last time this job run was modified.</p>
@@ -280,6 +316,11 @@ namespace Model
     /**
      * <p>The date and time this job run completed.</p>
      */
+    inline bool CompletedOnHasBeenSet() const { return m_completedOnHasBeenSet; }
+
+    /**
+     * <p>The date and time this job run completed.</p>
+     */
     inline void SetCompletedOn(const Aws::Utils::DateTime& value) { m_completedOnHasBeenSet = true; m_completedOn = value; }
 
     /**
@@ -302,6 +343,11 @@ namespace Model
      * <p>The current state of the job run.</p>
      */
     inline const JobRunState& GetJobRunState() const{ return m_jobRunState; }
+
+    /**
+     * <p>The current state of the job run.</p>
+     */
+    inline bool JobRunStateHasBeenSet() const { return m_jobRunStateHasBeenSet; }
 
     /**
      * <p>The current state of the job run.</p>
@@ -337,6 +383,20 @@ namespace Model
      * Parameters Used by AWS Glue</a> topic in the developer guide.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetArguments() const{ return m_arguments; }
+
+    /**
+     * <p>The job arguments associated with this run. For this job run, they replace
+     * the default arguments set in the job definition itself.</p> <p>You can specify
+     * arguments here that your own job-execution script consumes, as well as arguments
+     * that AWS Glue itself consumes.</p> <p>For information about how to specify and
+     * consume your own job arguments, see the <a
+     * href="http://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-calling.html">Calling
+     * AWS Glue APIs in Python</a> topic in the developer guide.</p> <p>For information
+     * about the key-value pairs that AWS Glue consumes to set up your job, see the <a
+     * href="http://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-etl-glue-arguments.html">Special
+     * Parameters Used by AWS Glue</a> topic in the developer guide.</p>
+     */
+    inline bool ArgumentsHasBeenSet() const { return m_argumentsHasBeenSet; }
 
     /**
      * <p>The job arguments associated with this run. For this job run, they replace
@@ -501,6 +561,11 @@ namespace Model
     /**
      * <p>An error message associated with this job run.</p>
      */
+    inline bool ErrorMessageHasBeenSet() const { return m_errorMessageHasBeenSet; }
+
+    /**
+     * <p>An error message associated with this job run.</p>
+     */
     inline void SetErrorMessage(const Aws::String& value) { m_errorMessageHasBeenSet = true; m_errorMessage = value; }
 
     /**
@@ -533,6 +598,11 @@ namespace Model
      * <p>A list of predecessors to this job run.</p>
      */
     inline const Aws::Vector<Predecessor>& GetPredecessorRuns() const{ return m_predecessorRuns; }
+
+    /**
+     * <p>A list of predecessors to this job run.</p>
+     */
+    inline bool PredecessorRunsHasBeenSet() const { return m_predecessorRunsHasBeenSet; }
 
     /**
      * <p>A list of predecessors to this job run.</p>
@@ -573,6 +643,11 @@ namespace Model
     /**
      * <p>The amount of time (in seconds) that the job run consumed resources.</p>
      */
+    inline bool ExecutionTimeHasBeenSet() const { return m_executionTimeHasBeenSet; }
+
+    /**
+     * <p>The amount of time (in seconds) that the job run consumed resources.</p>
+     */
     inline void SetExecutionTime(int value) { m_executionTimeHasBeenSet = true; m_executionTime = value; }
 
     /**
@@ -588,6 +663,14 @@ namespace Model
      * value set in the parent job.</p>
      */
     inline int GetTimeout() const{ return m_timeout; }
+
+    /**
+     * <p>The JobRun timeout in minutes. This is the maximum time that a job run can
+     * consume resources before it is terminated and enters <code>TIMEOUT</code>
+     * status. The default is 2,880 minutes (48 hours). This overrides the timeout
+     * value set in the parent job.</p>
+     */
+    inline bool TimeoutHasBeenSet() const { return m_timeoutHasBeenSet; }
 
     /**
      * <p>The JobRun timeout in minutes. This is the maximum time that a job run can
@@ -636,6 +719,22 @@ namespace Model
      * to 100 DPUs. The default is 10 DPUs. This job type cannot have a fractional DPU
      * allocation.</p> </li> </ul>
      */
+    inline bool MaxCapacityHasBeenSet() const { return m_maxCapacityHasBeenSet; }
+
+    /**
+     * <p>The number of AWS Glue data processing units (DPUs) that can be allocated
+     * when this job runs. A DPU is a relative measure of processing power that
+     * consists of 4 vCPUs of compute capacity and 16 GB of memory. For more
+     * information, see the <a href="https://aws.amazon.com/glue/pricing/">AWS Glue
+     * pricing page</a>.</p> <p>The value that can be allocated for
+     * <code>MaxCapacity</code> depends on whether you are running a python shell job,
+     * or an Apache Spark ETL job:</p> <ul> <li> <p>When you specify a python shell job
+     * (<code>JobCommand.Name</code>="pythonshell"), you can allocate either 0.0625 or
+     * 1 DPU. The default is 0.0625 DPU.</p> </li> <li> <p>When you specify an Apache
+     * Spark ETL job (<code>JobCommand.Name</code>="glueetl"), you can allocate from 2
+     * to 100 DPUs. The default is 10 DPUs. This job type cannot have a fractional DPU
+     * allocation.</p> </li> </ul>
+     */
     inline void SetMaxCapacity(double value) { m_maxCapacityHasBeenSet = true; m_maxCapacity = value; }
 
     /**
@@ -663,6 +762,11 @@ namespace Model
     /**
      * <p>Specifies configuration properties of a job run notification.</p>
      */
+    inline bool NotificationPropertyHasBeenSet() const { return m_notificationPropertyHasBeenSet; }
+
+    /**
+     * <p>Specifies configuration properties of a job run notification.</p>
+     */
     inline void SetNotificationProperty(const NotificationProperty& value) { m_notificationPropertyHasBeenSet = true; m_notificationProperty = value; }
 
     /**
@@ -686,6 +790,12 @@ namespace Model
      * run.</p>
      */
     inline const Aws::String& GetSecurityConfiguration() const{ return m_securityConfiguration; }
+
+    /**
+     * <p>The name of the SecurityConfiguration structure to be used with this job
+     * run.</p>
+     */
+    inline bool SecurityConfigurationHasBeenSet() const { return m_securityConfigurationHasBeenSet; }
 
     /**
      * <p>The name of the SecurityConfiguration structure to be used with this job
@@ -734,6 +844,17 @@ namespace Model
      * that security configuration will be used to encrypt the log group.</p>
      */
     inline const Aws::String& GetLogGroupName() const{ return m_logGroupName; }
+
+    /**
+     * <p>The name of the log group for secure logging, that can be server-side
+     * encrypted in CloudWatch using KMS. This name can be
+     * <code>/aws-glue/jobs/</code>, in which case the default encryption is
+     * <code>NONE</code>. If you add a role name and SecurityConfiguration name (in
+     * other words,
+     * <code>/aws-glue/jobs-yourRoleName-yourSecurityConfigurationName/</code>), then
+     * that security configuration will be used to encrypt the log group.</p>
+     */
+    inline bool LogGroupNameHasBeenSet() const { return m_logGroupNameHasBeenSet; }
 
     /**
      * <p>The name of the log group for secure logging, that can be server-side

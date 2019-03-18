@@ -56,6 +56,12 @@ namespace Model
      * A list of account IDs of the accounts that you want to invite to GuardDuty as
      * members.
      */
+    inline bool AccountIdsHasBeenSet() const { return m_accountIdsHasBeenSet; }
+
+    /**
+     * A list of account IDs of the accounts that you want to invite to GuardDuty as
+     * members.
+     */
     inline void SetAccountIds(const Aws::Vector<Aws::String>& value) { m_accountIdsHasBeenSet = true; m_accountIds = value; }
 
     /**
@@ -105,6 +111,12 @@ namespace Model
      * The unique ID of the detector of the GuardDuty account with which you want to
      * invite members.
      */
+    inline bool DetectorIdHasBeenSet() const { return m_detectorIdHasBeenSet; }
+
+    /**
+     * The unique ID of the detector of the GuardDuty account with which you want to
+     * invite members.
+     */
     inline void SetDetectorId(const Aws::String& value) { m_detectorIdHasBeenSet = true; m_detectorId = value; }
 
     /**
@@ -148,6 +160,12 @@ namespace Model
      * A boolean value that specifies whether you want to disable email notification to
      * the accounts that you’re inviting to GuardDuty as members.
      */
+    inline bool DisableEmailNotificationHasBeenSet() const { return m_disableEmailNotificationHasBeenSet; }
+
+    /**
+     * A boolean value that specifies whether you want to disable email notification to
+     * the accounts that you’re inviting to GuardDuty as members.
+     */
     inline void SetDisableEmailNotification(bool value) { m_disableEmailNotificationHasBeenSet = true; m_disableEmailNotification = value; }
 
     /**
@@ -162,6 +180,12 @@ namespace Model
      * inviting to GuardDuty as members.
      */
     inline const Aws::String& GetMessage() const{ return m_message; }
+
+    /**
+     * The invitation message that you want to send to the accounts that you’re
+     * inviting to GuardDuty as members.
+     */
+    inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
 
     /**
      * The invitation message that you want to send to the accounts that you’re

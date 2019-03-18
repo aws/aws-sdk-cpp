@@ -62,6 +62,12 @@ namespace Model
      * <p>The Amazon S3 bucket to access. This bucket is used as a parameter in the
      * <a>CreateLocationS3</a> operation. </p>
      */
+    inline bool BucketAccessRoleArnHasBeenSet() const { return m_bucketAccessRoleArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon S3 bucket to access. This bucket is used as a parameter in the
+     * <a>CreateLocationS3</a> operation. </p>
+     */
     inline void SetBucketAccessRoleArn(const Aws::String& value) { m_bucketAccessRoleArnHasBeenSet = true; m_bucketAccessRoleArn = value; }
 
     /**

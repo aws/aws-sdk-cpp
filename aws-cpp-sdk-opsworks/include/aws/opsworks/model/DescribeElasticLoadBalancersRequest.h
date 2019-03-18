@@ -55,6 +55,12 @@ namespace Model
      * <p>A stack ID. The action describes the stack's Elastic Load Balancing
      * instances.</p>
      */
+    inline bool StackIdHasBeenSet() const { return m_stackIdHasBeenSet; }
+
+    /**
+     * <p>A stack ID. The action describes the stack's Elastic Load Balancing
+     * instances.</p>
+     */
     inline void SetStackId(const Aws::String& value) { m_stackIdHasBeenSet = true; m_stackId = value; }
 
     /**
@@ -93,6 +99,12 @@ namespace Model
      * instances for the specified layers.</p>
      */
     inline const Aws::Vector<Aws::String>& GetLayerIds() const{ return m_layerIds; }
+
+    /**
+     * <p>A list of layer IDs. The action describes the Elastic Load Balancing
+     * instances for the specified layers.</p>
+     */
+    inline bool LayerIdsHasBeenSet() const { return m_layerIdsHasBeenSet; }
 
     /**
      * <p>A list of layer IDs. The action describes the Elastic Load Balancing

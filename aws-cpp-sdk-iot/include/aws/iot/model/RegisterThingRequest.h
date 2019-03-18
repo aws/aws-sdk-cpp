@@ -55,6 +55,13 @@ namespace Model
      * href="https://docs.aws.amazon.com/iot/latest/developerguide/programmatic-provisioning.html">Programmatic
      * Provisioning</a> for more information.</p>
      */
+    inline bool TemplateBodyHasBeenSet() const { return m_templateBodyHasBeenSet; }
+
+    /**
+     * <p>The provisioning template. See <a
+     * href="https://docs.aws.amazon.com/iot/latest/developerguide/programmatic-provisioning.html">Programmatic
+     * Provisioning</a> for more information.</p>
+     */
     inline void SetTemplateBody(const Aws::String& value) { m_templateBodyHasBeenSet = true; m_templateBody = value; }
 
     /**
@@ -99,6 +106,13 @@ namespace Model
      * Provisioning</a> for more information.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetParameters() const{ return m_parameters; }
+
+    /**
+     * <p>The parameters for provisioning a thing. See <a
+     * href="https://docs.aws.amazon.com/iot/latest/developerguide/programmatic-provisioning.html">Programmatic
+     * Provisioning</a> for more information.</p>
+     */
+    inline bool ParametersHasBeenSet() const { return m_parametersHasBeenSet; }
 
     /**
      * <p>The parameters for provisioning a thing. See <a

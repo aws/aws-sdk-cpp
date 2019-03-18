@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p>Information about the user and associated stack.</p>
      */
+    inline bool UserStackAssociationHasBeenSet() const { return m_userStackAssociationHasBeenSet; }
+
+    /**
+     * <p>Information about the user and associated stack.</p>
+     */
     inline void SetUserStackAssociation(const UserStackAssociation& value) { m_userStackAssociationHasBeenSet = true; m_userStackAssociation = value; }
 
     /**
@@ -81,6 +86,12 @@ namespace Model
      * with or disassociated from a stack.</p>
      */
     inline const UserStackAssociationErrorCode& GetErrorCode() const{ return m_errorCode; }
+
+    /**
+     * <p>The error code for the error that is returned when a user can’t be associated
+     * with or disassociated from a stack.</p>
+     */
+    inline bool ErrorCodeHasBeenSet() const { return m_errorCodeHasBeenSet; }
 
     /**
      * <p>The error code for the error that is returned when a user can’t be associated
@@ -112,6 +123,12 @@ namespace Model
      * associated with or disassociated from a stack.</p>
      */
     inline const Aws::String& GetErrorMessage() const{ return m_errorMessage; }
+
+    /**
+     * <p>The error message for the error that is returned when a user can’t be
+     * associated with or disassociated from a stack.</p>
+     */
+    inline bool ErrorMessageHasBeenSet() const { return m_errorMessageHasBeenSet; }
 
     /**
      * <p>The error message for the error that is returned when a user can’t be

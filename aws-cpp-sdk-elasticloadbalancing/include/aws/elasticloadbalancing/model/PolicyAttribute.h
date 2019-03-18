@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The name of the attribute.</p>
      */
+    inline bool AttributeNameHasBeenSet() const { return m_attributeNameHasBeenSet; }
+
+    /**
+     * <p>The name of the attribute.</p>
+     */
     inline void SetAttributeName(const Aws::String& value) { m_attributeNameHasBeenSet = true; m_attributeName = value; }
 
     /**
@@ -89,6 +94,11 @@ namespace Model
      * <p>The value of the attribute.</p>
      */
     inline const Aws::String& GetAttributeValue() const{ return m_attributeValue; }
+
+    /**
+     * <p>The value of the attribute.</p>
+     */
+    inline bool AttributeValueHasBeenSet() const { return m_attributeValueHasBeenSet; }
 
     /**
      * <p>The value of the attribute.</p>

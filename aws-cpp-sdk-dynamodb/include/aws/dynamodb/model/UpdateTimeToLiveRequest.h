@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The name of the table to be configured.</p>
      */
+    inline bool TableNameHasBeenSet() const { return m_tableNameHasBeenSet; }
+
+    /**
+     * <p>The name of the table to be configured.</p>
+     */
     inline void SetTableName(const Aws::String& value) { m_tableNameHasBeenSet = true; m_tableName = value; }
 
     /**
@@ -90,6 +95,12 @@ namespace Model
      * specified table.</p>
      */
     inline const TimeToLiveSpecification& GetTimeToLiveSpecification() const{ return m_timeToLiveSpecification; }
+
+    /**
+     * <p>Represents the settings used to enable or disable Time to Live for the
+     * specified table.</p>
+     */
+    inline bool TimeToLiveSpecificationHasBeenSet() const { return m_timeToLiveSpecificationHasBeenSet; }
 
     /**
      * <p>Represents the settings used to enable or disable Time to Live for the

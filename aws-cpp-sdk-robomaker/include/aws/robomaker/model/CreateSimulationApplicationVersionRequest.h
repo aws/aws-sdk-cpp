@@ -50,6 +50,11 @@ namespace Model
     /**
      * <p>The application information for the simulation application.</p>
      */
+    inline bool ApplicationHasBeenSet() const { return m_applicationHasBeenSet; }
+
+    /**
+     * <p>The application information for the simulation application.</p>
+     */
     inline void SetApplication(const Aws::String& value) { m_applicationHasBeenSet = true; m_application = value; }
 
     /**
@@ -83,6 +88,12 @@ namespace Model
      * value and it matches the latest revision ID, a new version will be created.</p>
      */
     inline const Aws::String& GetCurrentRevisionId() const{ return m_currentRevisionId; }
+
+    /**
+     * <p>The current revision id for the simulation application. If you provide a
+     * value and it matches the latest revision ID, a new version will be created.</p>
+     */
+    inline bool CurrentRevisionIdHasBeenSet() const { return m_currentRevisionIdHasBeenSet; }
 
     /**
      * <p>The current revision id for the simulation application. If you provide a

@@ -52,6 +52,11 @@ namespace Model
     /**
      * <p>The cluster's ARN.</p>
      */
+    inline bool EcsClusterArnHasBeenSet() const { return m_ecsClusterArnHasBeenSet; }
+
+    /**
+     * <p>The cluster's ARN.</p>
+     */
     inline void SetEcsClusterArn(const Aws::String& value) { m_ecsClusterArnHasBeenSet = true; m_ecsClusterArn = value; }
 
     /**
@@ -84,6 +89,11 @@ namespace Model
      * <p>The stack ID.</p>
      */
     inline const Aws::String& GetStackId() const{ return m_stackId; }
+
+    /**
+     * <p>The stack ID.</p>
+     */
+    inline bool StackIdHasBeenSet() const { return m_stackIdHasBeenSet; }
 
     /**
      * <p>The stack ID.</p>

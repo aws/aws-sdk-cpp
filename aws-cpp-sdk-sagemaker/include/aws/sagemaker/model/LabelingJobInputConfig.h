@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The location of the input data.</p>
      */
+    inline bool DataSourceHasBeenSet() const { return m_dataSourceHasBeenSet; }
+
+    /**
+     * <p>The location of the input data.</p>
+     */
     inline void SetDataSource(const LabelingJobDataSource& value) { m_dataSourceHasBeenSet = true; m_dataSource = value; }
 
     /**
@@ -79,6 +84,11 @@ namespace Model
      * <p>Attributes of the data specified by the customer.</p>
      */
     inline const LabelingJobDataAttributes& GetDataAttributes() const{ return m_dataAttributes; }
+
+    /**
+     * <p>Attributes of the data specified by the customer.</p>
+     */
+    inline bool DataAttributesHasBeenSet() const { return m_dataAttributesHasBeenSet; }
 
     /**
      * <p>Attributes of the data specified by the customer.</p>

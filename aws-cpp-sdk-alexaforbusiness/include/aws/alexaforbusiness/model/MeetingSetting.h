@@ -60,6 +60,11 @@ namespace Model
     /**
      * <p>The values that indicate whether the pin is always required.</p>
      */
+    inline bool RequirePinHasBeenSet() const { return m_requirePinHasBeenSet; }
+
+    /**
+     * <p>The values that indicate whether the pin is always required.</p>
+     */
     inline void SetRequirePin(const RequirePin& value) { m_requirePinHasBeenSet = true; m_requirePin = value; }
 
     /**

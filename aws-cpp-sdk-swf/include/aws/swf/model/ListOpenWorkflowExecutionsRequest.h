@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The name of the domain that contains the workflow executions to list.</p>
      */
+    inline bool DomainHasBeenSet() const { return m_domainHasBeenSet; }
+
+    /**
+     * <p>The name of the domain that contains the workflow executions to list.</p>
+     */
     inline void SetDomain(const Aws::String& value) { m_domainHasBeenSet = true; m_domain = value; }
 
     /**
@@ -94,6 +99,12 @@ namespace Model
      * <p>Workflow executions are included in the returned results based on whether
      * their start times are within the range specified by this filter.</p>
      */
+    inline bool StartTimeFilterHasBeenSet() const { return m_startTimeFilterHasBeenSet; }
+
+    /**
+     * <p>Workflow executions are included in the returned results based on whether
+     * their start times are within the range specified by this filter.</p>
+     */
     inline void SetStartTimeFilter(const ExecutionTimeFilter& value) { m_startTimeFilterHasBeenSet = true; m_startTimeFilter = value; }
 
     /**
@@ -122,6 +133,14 @@ namespace Model
      * of these in a request.</p> </note>
      */
     inline const WorkflowTypeFilter& GetTypeFilter() const{ return m_typeFilter; }
+
+    /**
+     * <p>If specified, only executions of the type specified in the filter are
+     * returned.</p> <note> <p> <code>executionFilter</code>, <code>typeFilter</code>
+     * and <code>tagFilter</code> are mutually exclusive. You can specify at most one
+     * of these in a request.</p> </note>
+     */
+    inline bool TypeFilterHasBeenSet() const { return m_typeFilterHasBeenSet; }
 
     /**
      * <p>If specified, only executions of the type specified in the filter are
@@ -170,6 +189,14 @@ namespace Model
      * <code>tagFilter</code> are mutually exclusive. You can specify at most one of
      * these in a request.</p> </note>
      */
+    inline bool TagFilterHasBeenSet() const { return m_tagFilterHasBeenSet; }
+
+    /**
+     * <p>If specified, only executions that have the matching tag are listed.</p>
+     * <note> <p> <code>executionFilter</code>, <code>typeFilter</code> and
+     * <code>tagFilter</code> are mutually exclusive. You can specify at most one of
+     * these in a request.</p> </note>
+     */
     inline void SetTagFilter(const TagFilter& value) { m_tagFilterHasBeenSet = true; m_tagFilter = value; }
 
     /**
@@ -205,6 +232,15 @@ namespace Model
      * determines how many results can be returned in a single call.</p>
      */
     inline const Aws::String& GetNextPageToken() const{ return m_nextPageToken; }
+
+    /**
+     * <p>If a <code>NextPageToken</code> was returned by a previous call, there are
+     * more results available. To retrieve the next page of results, make the call
+     * again using the returned token in <code>nextPageToken</code>. Keep all other
+     * arguments unchanged.</p> <p>The configured <code>maximumPageSize</code>
+     * determines how many results can be returned in a single call.</p>
+     */
+    inline bool NextPageTokenHasBeenSet() const { return m_nextPageTokenHasBeenSet; }
 
     /**
      * <p>If a <code>NextPageToken</code> was returned by a previous call, there are
@@ -279,6 +315,16 @@ namespace Model
      * limit only; the actual number of results returned per call may be fewer than the
      * specified maximum.</p>
      */
+    inline bool MaximumPageSizeHasBeenSet() const { return m_maximumPageSizeHasBeenSet; }
+
+    /**
+     * <p>The maximum number of results that are returned per call.
+     * <code>nextPageToken</code> can be used to obtain futher pages of results. The
+     * default is 1000, which is the maximum allowed page size. You can, however,
+     * specify a page size <i>smaller</i> than the maximum.</p> <p>This is an upper
+     * limit only; the actual number of results returned per call may be fewer than the
+     * specified maximum.</p>
+     */
     inline void SetMaximumPageSize(int value) { m_maximumPageSizeHasBeenSet = true; m_maximumPageSize = value; }
 
     /**
@@ -304,6 +350,13 @@ namespace Model
      * default the results are returned in descending order of the start time of the
      * executions.</p>
      */
+    inline bool ReverseOrderHasBeenSet() const { return m_reverseOrderHasBeenSet; }
+
+    /**
+     * <p>When set to <code>true</code>, returns the results in reverse order. By
+     * default the results are returned in descending order of the start time of the
+     * executions.</p>
+     */
     inline void SetReverseOrder(bool value) { m_reverseOrderHasBeenSet = true; m_reverseOrder = value; }
 
     /**
@@ -321,6 +374,14 @@ namespace Model
      * can specify at most one of these in a request.</p> </note>
      */
     inline const WorkflowExecutionFilter& GetExecutionFilter() const{ return m_executionFilter; }
+
+    /**
+     * <p>If specified, only workflow executions matching the workflow ID specified in
+     * the filter are returned.</p> <note> <p> <code>executionFilter</code>,
+     * <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You
+     * can specify at most one of these in a request.</p> </note>
+     */
+    inline bool ExecutionFilterHasBeenSet() const { return m_executionFilterHasBeenSet; }
 
     /**
      * <p>If specified, only workflow executions matching the workflow ID specified in

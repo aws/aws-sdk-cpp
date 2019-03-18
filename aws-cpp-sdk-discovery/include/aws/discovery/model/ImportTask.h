@@ -61,6 +61,12 @@ namespace Model
      * <p>The unique ID for a specific import task. These IDs aren't globally unique,
      * but they are unique within an AWS account.</p>
      */
+    inline bool ImportTaskIdHasBeenSet() const { return m_importTaskIdHasBeenSet; }
+
+    /**
+     * <p>The unique ID for a specific import task. These IDs aren't globally unique,
+     * but they are unique within an AWS account.</p>
+     */
     inline void SetImportTaskId(const Aws::String& value) { m_importTaskIdHasBeenSet = true; m_importTaskId = value; }
 
     /**
@@ -100,6 +106,13 @@ namespace Model
      * when the import task request was sent.</p>
      */
     inline const Aws::String& GetClientRequestToken() const{ return m_clientRequestToken; }
+
+    /**
+     * <p>A unique token used to prevent the same import request from occurring more
+     * than once. If you didn't provide a token, a token was automatically generated
+     * when the import task request was sent.</p>
+     */
+    inline bool ClientRequestTokenHasBeenSet() const { return m_clientRequestTokenHasBeenSet; }
 
     /**
      * <p>A unique token used to prevent the same import request from occurring more
@@ -158,6 +171,14 @@ namespace Model
      * servers that were included in this import task. We recommend that you use a
      * meaningful name for each import task.</p>
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>A descriptive name for an import task. You can use this name to filter future
+     * requests related to this import task, such as identifying applications and
+     * servers that were included in this import task. We recommend that you use a
+     * meaningful name for each import task.</p>
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
@@ -209,6 +230,11 @@ namespace Model
     /**
      * <p>The URL for your import file that you've uploaded to Amazon S3.</p>
      */
+    inline bool ImportUrlHasBeenSet() const { return m_importUrlHasBeenSet; }
+
+    /**
+     * <p>The URL for your import file that you've uploaded to Amazon S3.</p>
+     */
     inline void SetImportUrl(const Aws::String& value) { m_importUrlHasBeenSet = true; m_importUrl = value; }
 
     /**
@@ -245,6 +271,15 @@ namespace Model
      * Hub management console.</p>
      */
     inline const ImportStatus& GetStatus() const{ return m_status; }
+
+    /**
+     * <p>The status of the import task. An import can have the status of
+     * <code>IMPORT_COMPLETE</code> and still have some records fail to import from the
+     * overall request. More information can be found in the downloadable archive
+     * defined in the <code>errorsAndFailedEntriesZip</code> field, or in the Migration
+     * Hub management console.</p>
+     */
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
     /**
      * <p>The status of the import task. An import can have the status of
@@ -293,6 +328,12 @@ namespace Model
      * <p>The time that the import task request was made, presented in the Unix time
      * stamp format.</p>
      */
+    inline bool ImportRequestTimeHasBeenSet() const { return m_importRequestTimeHasBeenSet; }
+
+    /**
+     * <p>The time that the import task request was made, presented in the Unix time
+     * stamp format.</p>
+     */
     inline void SetImportRequestTime(const Aws::Utils::DateTime& value) { m_importRequestTimeHasBeenSet = true; m_importRequestTime = value; }
 
     /**
@@ -319,6 +360,12 @@ namespace Model
      * stamp format.</p>
      */
     inline const Aws::Utils::DateTime& GetImportCompletionTime() const{ return m_importCompletionTime; }
+
+    /**
+     * <p>The time that the import task request finished, presented in the Unix time
+     * stamp format.</p>
+     */
+    inline bool ImportCompletionTimeHasBeenSet() const { return m_importCompletionTimeHasBeenSet; }
 
     /**
      * <p>The time that the import task request finished, presented in the Unix time
@@ -355,6 +402,12 @@ namespace Model
      * <p>The time that the import task request was deleted, presented in the Unix time
      * stamp format.</p>
      */
+    inline bool ImportDeletedTimeHasBeenSet() const { return m_importDeletedTimeHasBeenSet; }
+
+    /**
+     * <p>The time that the import task request was deleted, presented in the Unix time
+     * stamp format.</p>
+     */
     inline void SetImportDeletedTime(const Aws::Utils::DateTime& value) { m_importDeletedTimeHasBeenSet = true; m_importDeletedTime = value; }
 
     /**
@@ -386,6 +439,12 @@ namespace Model
      * <p>The total number of server records in the import file that were successfully
      * imported.</p>
      */
+    inline bool ServerImportSuccessHasBeenSet() const { return m_serverImportSuccessHasBeenSet; }
+
+    /**
+     * <p>The total number of server records in the import file that were successfully
+     * imported.</p>
+     */
     inline void SetServerImportSuccess(int value) { m_serverImportSuccessHasBeenSet = true; m_serverImportSuccess = value; }
 
     /**
@@ -400,6 +459,12 @@ namespace Model
      * imported.</p>
      */
     inline int GetServerImportFailure() const{ return m_serverImportFailure; }
+
+    /**
+     * <p>The total number of server records in the import file that failed to be
+     * imported.</p>
+     */
+    inline bool ServerImportFailureHasBeenSet() const { return m_serverImportFailureHasBeenSet; }
 
     /**
      * <p>The total number of server records in the import file that failed to be
@@ -424,6 +489,12 @@ namespace Model
      * <p>The total number of application records in the import file that were
      * successfully imported.</p>
      */
+    inline bool ApplicationImportSuccessHasBeenSet() const { return m_applicationImportSuccessHasBeenSet; }
+
+    /**
+     * <p>The total number of application records in the import file that were
+     * successfully imported.</p>
+     */
     inline void SetApplicationImportSuccess(int value) { m_applicationImportSuccessHasBeenSet = true; m_applicationImportSuccess = value; }
 
     /**
@@ -438,6 +509,12 @@ namespace Model
      * imported.</p>
      */
     inline int GetApplicationImportFailure() const{ return m_applicationImportFailure; }
+
+    /**
+     * <p>The total number of application records in the import file that failed to be
+     * imported.</p>
+     */
+    inline bool ApplicationImportFailureHasBeenSet() const { return m_applicationImportFailureHasBeenSet; }
 
     /**
      * <p>The total number of application records in the import file that failed to be
@@ -465,6 +542,20 @@ namespace Model
      * original file and attempt importing it again.</p>
      */
     inline const Aws::String& GetErrorsAndFailedEntriesZip() const{ return m_errorsAndFailedEntriesZip; }
+
+    /**
+     * <p>A link to a compressed archive folder (in the ZIP format) that contains an
+     * error log and a file of failed records. You can use these two files to quickly
+     * identify records that failed, why they failed, and correct those records.
+     * Afterward, you can upload the corrected file to your Amazon S3 bucket and create
+     * another import task request.</p> <p>This field also includes authorization
+     * information so you can confirm the authenticity of the compressed archive before
+     * you download it.</p> <p>If some records failed to be imported we recommend that
+     * you correct the records in the failed entries file and then imports that failed
+     * entries file. This prevents you from having to correct and update the larger
+     * original file and attempt importing it again.</p>
+     */
+    inline bool ErrorsAndFailedEntriesZipHasBeenSet() const { return m_errorsAndFailedEntriesZipHasBeenSet; }
 
     /**
      * <p>A link to a compressed archive folder (in the ZIP format) that contains an

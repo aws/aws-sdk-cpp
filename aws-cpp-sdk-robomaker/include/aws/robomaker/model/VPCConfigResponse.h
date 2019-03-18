@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>A list of subnet IDs associated with the simulation job.</p>
      */
+    inline bool SubnetsHasBeenSet() const { return m_subnetsHasBeenSet; }
+
+    /**
+     * <p>A list of subnet IDs associated with the simulation job.</p>
+     */
     inline void SetSubnets(const Aws::Vector<Aws::String>& value) { m_subnetsHasBeenSet = true; m_subnets = value; }
 
     /**
@@ -94,6 +99,11 @@ namespace Model
      * <p>A list of security group IDs associated with the simulation job.</p>
      */
     inline const Aws::Vector<Aws::String>& GetSecurityGroups() const{ return m_securityGroups; }
+
+    /**
+     * <p>A list of security group IDs associated with the simulation job.</p>
+     */
+    inline bool SecurityGroupsHasBeenSet() const { return m_securityGroupsHasBeenSet; }
 
     /**
      * <p>A list of security group IDs associated with the simulation job.</p>
@@ -139,6 +149,11 @@ namespace Model
     /**
      * <p>The VPC ID associated with your simulation job.</p>
      */
+    inline bool VpcIdHasBeenSet() const { return m_vpcIdHasBeenSet; }
+
+    /**
+     * <p>The VPC ID associated with your simulation job.</p>
+     */
     inline void SetVpcId(const Aws::String& value) { m_vpcIdHasBeenSet = true; m_vpcId = value; }
 
     /**
@@ -171,6 +186,11 @@ namespace Model
      * <p>A boolean indicating if a public IP was assigned.</p>
      */
     inline bool GetAssignPublicIp() const{ return m_assignPublicIp; }
+
+    /**
+     * <p>A boolean indicating if a public IP was assigned.</p>
+     */
+    inline bool AssignPublicIpHasBeenSet() const { return m_assignPublicIpHasBeenSet; }
 
     /**
      * <p>A boolean indicating if a public IP was assigned.</p>

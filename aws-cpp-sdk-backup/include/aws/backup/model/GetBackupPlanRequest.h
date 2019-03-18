@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>Uniquely identifies a backup plan.</p>
      */
+    inline bool BackupPlanIdHasBeenSet() const { return m_backupPlanIdHasBeenSet; }
+
+    /**
+     * <p>Uniquely identifies a backup plan.</p>
+     */
     inline void SetBackupPlanId(const Aws::String& value) { m_backupPlanIdHasBeenSet = true; m_backupPlanId = value; }
 
     /**
@@ -89,6 +94,12 @@ namespace Model
      * 1,024 bytes long. Version IDs cannot be edited.</p>
      */
     inline const Aws::String& GetVersionId() const{ return m_versionId; }
+
+    /**
+     * <p>Unique, randomly generated, Unicode, UTF-8 encoded strings that are at most
+     * 1,024 bytes long. Version IDs cannot be edited.</p>
+     */
+    inline bool VersionIdHasBeenSet() const { return m_versionIdHasBeenSet; }
 
     /**
      * <p>Unique, randomly generated, Unicode, UTF-8 encoded strings that are at most

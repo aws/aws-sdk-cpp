@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The reason for canceling the task.</p>
      */
+    inline bool CancelReasonHasBeenSet() const { return m_cancelReasonHasBeenSet; }
+
+    /**
+     * <p>The reason for canceling the task.</p>
+     */
     inline void SetCancelReason(const Aws::String& value) { m_cancelReasonHasBeenSet = true; m_cancelReason = value; }
 
     /**
@@ -99,6 +104,14 @@ namespace Model
      * required permissions, the error response is <code>DryRunOperation</code>.
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
+    inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
+
+    /**
+     * <p>Checks whether you have the required permissions for the action, without
+     * actually making the request, and provides an error response. If you have the
+     * required permissions, the error response is <code>DryRunOperation</code>.
+     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+     */
     inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
 
     /**
@@ -114,6 +127,11 @@ namespace Model
      * <p>The ID of the import image or import snapshot task to be canceled.</p>
      */
     inline const Aws::String& GetImportTaskId() const{ return m_importTaskId; }
+
+    /**
+     * <p>The ID of the import image or import snapshot task to be canceled.</p>
+     */
+    inline bool ImportTaskIdHasBeenSet() const { return m_importTaskIdHasBeenSet; }
 
     /**
      * <p>The ID of the import image or import snapshot task to be canceled.</p>

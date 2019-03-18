@@ -53,6 +53,11 @@ namespace Model
     /**
      * <p>A unique identifier of the <code>MLModel</code>.</p>
      */
+    inline bool MLModelIdHasBeenSet() const { return m_mLModelIdHasBeenSet; }
+
+    /**
+     * <p>A unique identifier of the <code>MLModel</code>.</p>
+     */
     inline void SetMLModelId(const Aws::String& value) { m_mLModelIdHasBeenSet = true; m_mLModelId = value; }
 
     /**
@@ -83,6 +88,9 @@ namespace Model
 
     
     inline const Aws::Map<Aws::String, Aws::String>& GetRecord() const{ return m_record; }
+
+    
+    inline bool RecordHasBeenSet() const { return m_recordHasBeenSet; }
 
     
     inline void SetRecord(const Aws::Map<Aws::String, Aws::String>& value) { m_recordHasBeenSet = true; m_record = value; }
@@ -120,6 +128,9 @@ namespace Model
 
     
     inline const Aws::String& GetPredictEndpoint() const{ return m_predictEndpoint; }
+
+    
+    inline bool PredictEndpointHasBeenSet() const { return m_predictEndpointHasBeenSet; }
 
     
     inline void SetPredictEndpoint(const Aws::String& value) { m_predictEndpointHasBeenSet = true; m_predictEndpoint = value; }

@@ -62,6 +62,11 @@ namespace Model
     /**
      * <p> A unique ID of an <code>ECSTaskSet</code>. </p>
      */
+    inline bool IdentiferHasBeenSet() const { return m_identiferHasBeenSet; }
+
+    /**
+     * <p> A unique ID of an <code>ECSTaskSet</code>. </p>
+     */
     inline void SetIdentifer(const Aws::String& value) { m_identiferHasBeenSet = true; m_identifer = value; }
 
     /**
@@ -104,6 +109,14 @@ namespace Model
      * uses this value to determine how many tasks to create. After the updated task
      * set is created, CodeDeploy shifts traffic to the new task set. </p>
      */
+    inline bool DesiredCountHasBeenSet() const { return m_desiredCountHasBeenSet; }
+
+    /**
+     * <p> The number of tasks in a task set. During a deployment that uses the Amazon
+     * ECS compute type, CodeDeploy instructs Amazon ECS to create a new task set and
+     * uses this value to determine how many tasks to create. After the updated task
+     * set is created, CodeDeploy shifts traffic to the new task set. </p>
+     */
     inline void SetDesiredCount(long long value) { m_desiredCountHasBeenSet = true; m_desiredCount = value; }
 
     /**
@@ -123,6 +136,15 @@ namespace Model
      * restarted after being in the <code>STOPPED</code> state. </p>
      */
     inline long long GetPendingCount() const{ return m_pendingCount; }
+
+    /**
+     * <p> The number of tasks in the task set that are in the <code>PENDING</code>
+     * status during an Amazon ECS deployment. A task in the <code>PENDING</code> state
+     * is preparing to enter the <code>RUNNING</code> state. A task set enters the
+     * <code>PENDING</code> status when it launches for the first time, or when it is
+     * restarted after being in the <code>STOPPED</code> state. </p>
+     */
+    inline bool PendingCountHasBeenSet() const { return m_pendingCountHasBeenSet; }
 
     /**
      * <p> The number of tasks in the task set that are in the <code>PENDING</code>
@@ -155,6 +177,13 @@ namespace Model
      * status during an Amazon ECS deployment. A task in the <code>RUNNING</code> state
      * is running and ready for use. </p>
      */
+    inline bool RunningCountHasBeenSet() const { return m_runningCountHasBeenSet; }
+
+    /**
+     * <p> The number of tasks in the task set that are in the <code>RUNNING</code>
+     * status during an Amazon ECS deployment. A task in the <code>RUNNING</code> state
+     * is running and ready for use. </p>
+     */
     inline void SetRunningCount(long long value) { m_runningCountHasBeenSet = true; m_runningCount = value; }
 
     /**
@@ -174,6 +203,16 @@ namespace Model
      * being deregistered from their target group. </p> </li> </ul>
      */
     inline const Aws::String& GetStatus() const{ return m_status; }
+
+    /**
+     * <p> The status of the task set. There are three valid task set statuses: </p>
+     * <ul> <li> <p> <code>PRIMARY</code>: Indicates the task set is serving production
+     * traffic. </p> </li> <li> <p> <code>ACTIVE</code>: Indicates the task set is not
+     * serving production traffic. </p> </li> <li> <p> <code>DRAINING</code>: Indicates
+     * the tasks in the task set are being stopped and their corresponding targets are
+     * being deregistered from their target group. </p> </li> </ul>
+     */
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
     /**
      * <p> The status of the task set. There are three valid task set statuses: </p>
@@ -244,6 +283,11 @@ namespace Model
     /**
      * <p> The percentage of traffic served by this task set. </p>
      */
+    inline bool TrafficWeightHasBeenSet() const { return m_trafficWeightHasBeenSet; }
+
+    /**
+     * <p> The percentage of traffic served by this task set. </p>
+     */
     inline void SetTrafficWeight(double value) { m_trafficWeightHasBeenSet = true; m_trafficWeight = value; }
 
     /**
@@ -257,6 +301,12 @@ namespace Model
      * AWS CodeDeploy to manage traffic to a task set. </p>
      */
     inline const TargetGroupInfo& GetTargetGroup() const{ return m_targetGroup; }
+
+    /**
+     * <p> The target group associated with the task set. The target group is used by
+     * AWS CodeDeploy to manage traffic to a task set. </p>
+     */
+    inline bool TargetGroupHasBeenSet() const { return m_targetGroupHasBeenSet; }
 
     /**
      * <p> The target group associated with the task set. The target group is used by
@@ -288,6 +338,12 @@ namespace Model
      * (<code>BLUE</code>) or a replacement target (<code>GREEN</code>). </p>
      */
     inline const TargetLabel& GetTaskSetLabel() const{ return m_taskSetLabel; }
+
+    /**
+     * <p> A label that identifies whether the ECS task set is an original target
+     * (<code>BLUE</code>) or a replacement target (<code>GREEN</code>). </p>
+     */
+    inline bool TaskSetLabelHasBeenSet() const { return m_taskSetLabelHasBeenSet; }
 
     /**
      * <p> A label that identifies whether the ECS task set is an original target

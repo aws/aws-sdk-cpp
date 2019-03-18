@@ -60,6 +60,13 @@ namespace Model
      * <code>MAX_ZONES_BY_REUSABLE_DELEGATION_SET</code>, the maximum number of hosted
      * zones that you can associate with the specified reusable delegation set.</p>
      */
+    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
+
+    /**
+     * <p>The limit that you requested:
+     * <code>MAX_ZONES_BY_REUSABLE_DELEGATION_SET</code>, the maximum number of hosted
+     * zones that you can associate with the specified reusable delegation set.</p>
+     */
     inline void SetType(const ReusableDelegationSetLimitType& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
@@ -89,6 +96,12 @@ namespace Model
      * limit.</p>
      */
     inline long long GetValue() const{ return m_value; }
+
+    /**
+     * <p>The current value for the <code>MAX_ZONES_BY_REUSABLE_DELEGATION_SET</code>
+     * limit.</p>
+     */
+    inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
 
     /**
      * <p>The current value for the <code>MAX_ZONES_BY_REUSABLE_DELEGATION_SET</code>

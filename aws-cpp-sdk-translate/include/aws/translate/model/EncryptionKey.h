@@ -59,6 +59,12 @@ namespace Model
      * <p>The type of encryption key used by Amazon Translate to encrypt custom
      * terminologies.</p>
      */
+    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
+
+    /**
+     * <p>The type of encryption key used by Amazon Translate to encrypt custom
+     * terminologies.</p>
+     */
     inline void SetType(const EncryptionKeyType& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
@@ -85,6 +91,12 @@ namespace Model
      * the custom terminology.</p>
      */
     inline const Aws::String& GetId() const{ return m_id; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the encryption key being used to encrypt
+     * the custom terminology.</p>
+     */
+    inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the encryption key being used to encrypt

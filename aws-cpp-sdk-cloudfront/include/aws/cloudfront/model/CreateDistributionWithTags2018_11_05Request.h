@@ -54,6 +54,11 @@ namespace Model
     /**
      * <p>The distribution's configuration information. </p>
      */
+    inline bool DistributionConfigWithTagsHasBeenSet() const { return m_distributionConfigWithTagsHasBeenSet; }
+
+    /**
+     * <p>The distribution's configuration information. </p>
+     */
     inline void SetDistributionConfigWithTags(const DistributionConfigWithTags& value) { m_distributionConfigWithTagsHasBeenSet = true; m_distributionConfigWithTags = value; }
 
     /**

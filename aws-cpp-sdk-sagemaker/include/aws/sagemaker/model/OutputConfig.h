@@ -59,6 +59,12 @@ namespace Model
      * <p>Identifies the S3 path where you want Amazon SageMaker to store the model
      * artifacts. For example, s3://bucket-name/key-name-prefix.</p>
      */
+    inline bool S3OutputLocationHasBeenSet() const { return m_s3OutputLocationHasBeenSet; }
+
+    /**
+     * <p>Identifies the S3 path where you want Amazon SageMaker to store the model
+     * artifacts. For example, s3://bucket-name/key-name-prefix.</p>
+     */
     inline void SetS3OutputLocation(const Aws::String& value) { m_s3OutputLocationHasBeenSet = true; m_s3OutputLocation = value; }
 
     /**
@@ -97,6 +103,12 @@ namespace Model
      * compiled. For example: ml_c5.</p>
      */
     inline const TargetDevice& GetTargetDevice() const{ return m_targetDevice; }
+
+    /**
+     * <p>Identifies the device that you want to run your model on after it has been
+     * compiled. For example: ml_c5.</p>
+     */
+    inline bool TargetDeviceHasBeenSet() const { return m_targetDeviceHasBeenSet; }
 
     /**
      * <p>Identifies the device that you want to run your model on after it has been

@@ -60,6 +60,12 @@ namespace Model
      * <p>Describes whether to use the default CloudWatch logging configuration for an
      * application.</p>
      */
+    inline bool ConfigurationTypeHasBeenSet() const { return m_configurationTypeHasBeenSet; }
+
+    /**
+     * <p>Describes whether to use the default CloudWatch logging configuration for an
+     * application.</p>
+     */
     inline void SetConfigurationType(const ConfigurationType& value) { m_configurationTypeHasBeenSet = true; m_configurationType = value; }
 
     /**
@@ -89,6 +95,11 @@ namespace Model
     /**
      * <p>Describes the granularity of the CloudWatch Logs for an application.</p>
      */
+    inline bool MetricsLevelHasBeenSet() const { return m_metricsLevelHasBeenSet; }
+
+    /**
+     * <p>Describes the granularity of the CloudWatch Logs for an application.</p>
+     */
     inline void SetMetricsLevel(const MetricsLevel& value) { m_metricsLevelHasBeenSet = true; m_metricsLevel = value; }
 
     /**
@@ -111,6 +122,11 @@ namespace Model
      * <p>Describes the verbosity of the CloudWatch Logs for an application.</p>
      */
     inline const LogLevel& GetLogLevel() const{ return m_logLevel; }
+
+    /**
+     * <p>Describes the verbosity of the CloudWatch Logs for an application.</p>
+     */
+    inline bool LogLevelHasBeenSet() const { return m_logLevelHasBeenSet; }
 
     /**
      * <p>Describes the verbosity of the CloudWatch Logs for an application.</p>

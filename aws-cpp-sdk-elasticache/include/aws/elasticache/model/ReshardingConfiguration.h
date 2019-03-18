@@ -60,6 +60,11 @@ namespace Model
     /**
      * <p>The 4-digit id for the node group these configuration values apply to.</p>
      */
+    inline bool NodeGroupIdHasBeenSet() const { return m_nodeGroupIdHasBeenSet; }
+
+    /**
+     * <p>The 4-digit id for the node group these configuration values apply to.</p>
+     */
     inline void SetNodeGroupId(const Aws::String& value) { m_nodeGroupIdHasBeenSet = true; m_nodeGroupId = value; }
 
     /**
@@ -92,6 +97,11 @@ namespace Model
      * <p>A list of preferred availability zones for the nodes in this cluster.</p>
      */
     inline const Aws::Vector<Aws::String>& GetPreferredAvailabilityZones() const{ return m_preferredAvailabilityZones; }
+
+    /**
+     * <p>A list of preferred availability zones for the nodes in this cluster.</p>
+     */
+    inline bool PreferredAvailabilityZonesHasBeenSet() const { return m_preferredAvailabilityZonesHasBeenSet; }
 
     /**
      * <p>A list of preferred availability zones for the nodes in this cluster.</p>

@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p>The name of the project for which to obtain information from.</p>
      */
+    inline bool ProjectNameHasBeenSet() const { return m_projectNameHasBeenSet; }
+
+    /**
+     * <p>The name of the project for which to obtain information from.</p>
+     */
     inline void SetProjectName(const Aws::String& value) { m_projectNameHasBeenSet = true; m_projectName = value; }
 
     /**
@@ -90,6 +95,11 @@ namespace Model
      * <p>The description of the project.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
+
+    /**
+     * <p>The description of the project.</p>
+     */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
 
     /**
      * <p>The description of the project.</p>
@@ -132,6 +142,12 @@ namespace Model
      * <p>The date when the project was originally created, in UNIX epoch time
      * format.</p>
      */
+    inline bool CreatedDateHasBeenSet() const { return m_createdDateHasBeenSet; }
+
+    /**
+     * <p>The date when the project was originally created, in UNIX epoch time
+     * format.</p>
+     */
     inline void SetCreatedDate(const Aws::Utils::DateTime& value) { m_createdDateHasBeenSet = true; m_createdDate = value; }
 
     /**
@@ -159,6 +175,13 @@ namespace Model
      * <code>updatedDate</code> are the same.</p>
      */
     inline const Aws::Utils::DateTime& GetUpdatedDate() const{ return m_updatedDate; }
+
+    /**
+     * <p>The date when the project was last updated, in UNIX epoch time format. If the
+     * project was not updated, then <code>createdDate</code> and
+     * <code>updatedDate</code> are the same.</p>
+     */
+    inline bool UpdatedDateHasBeenSet() const { return m_updatedDateHasBeenSet; }
 
     /**
      * <p>The date when the project was last updated, in UNIX epoch time format. If the
@@ -193,6 +216,11 @@ namespace Model
      * <p>An object describing the project's placement specifications.</p>
      */
     inline const PlacementTemplate& GetPlacementTemplate() const{ return m_placementTemplate; }
+
+    /**
+     * <p>An object describing the project's placement specifications.</p>
+     */
+    inline bool PlacementTemplateHasBeenSet() const { return m_placementTemplateHasBeenSet; }
 
     /**
      * <p>An object describing the project's placement specifications.</p>

@@ -54,6 +54,12 @@ namespace Model
      * <p>A user-supplied ID that uniquely identifies the
      * <code>BatchPrediction</code>.</p>
      */
+    inline bool BatchPredictionIdHasBeenSet() const { return m_batchPredictionIdHasBeenSet; }
+
+    /**
+     * <p>A user-supplied ID that uniquely identifies the
+     * <code>BatchPrediction</code>.</p>
+     */
     inline void SetBatchPredictionId(const Aws::String& value) { m_batchPredictionIdHasBeenSet = true; m_batchPredictionId = value; }
 
     /**

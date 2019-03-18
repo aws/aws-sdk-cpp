@@ -62,6 +62,11 @@ namespace Model
     /**
      * <p> Unique Id for the Amplify App. </p>
      */
+    inline bool AppIdHasBeenSet() const { return m_appIdHasBeenSet; }
+
+    /**
+     * <p> Unique Id for the Amplify App. </p>
+     */
     inline void SetAppId(const Aws::String& value) { m_appIdHasBeenSet = true; m_appId = value; }
 
     /**
@@ -94,6 +99,11 @@ namespace Model
      * <p> ARN for the Amplify App. </p>
      */
     inline const Aws::String& GetAppArn() const{ return m_appArn; }
+
+    /**
+     * <p> ARN for the Amplify App. </p>
+     */
+    inline bool AppArnHasBeenSet() const { return m_appArnHasBeenSet; }
 
     /**
      * <p> ARN for the Amplify App. </p>
@@ -134,6 +144,11 @@ namespace Model
     /**
      * <p> Name for the Amplify App. </p>
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p> Name for the Amplify App. </p>
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
@@ -166,6 +181,11 @@ namespace Model
      * <p> Tag for Amplify App. </p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p> Tag for Amplify App. </p>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
      * <p> Tag for Amplify App. </p>
@@ -231,6 +251,11 @@ namespace Model
     /**
      * <p> Description for the Amplify App. </p>
      */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
+
+    /**
+     * <p> Description for the Amplify App. </p>
+     */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
@@ -263,6 +288,11 @@ namespace Model
      * <p> Repository for the Amplify App. </p>
      */
     inline const Aws::String& GetRepository() const{ return m_repository; }
+
+    /**
+     * <p> Repository for the Amplify App. </p>
+     */
+    inline bool RepositoryHasBeenSet() const { return m_repositoryHasBeenSet; }
 
     /**
      * <p> Repository for the Amplify App. </p>
@@ -303,6 +333,11 @@ namespace Model
     /**
      * <p> Platform for the Amplify App. </p>
      */
+    inline bool PlatformHasBeenSet() const { return m_platformHasBeenSet; }
+
+    /**
+     * <p> Platform for the Amplify App. </p>
+     */
     inline void SetPlatform(const Platform& value) { m_platformHasBeenSet = true; m_platform = value; }
 
     /**
@@ -325,6 +360,11 @@ namespace Model
      * <p> Create date / time for the Amplify App. </p>
      */
     inline const Aws::Utils::DateTime& GetCreateTime() const{ return m_createTime; }
+
+    /**
+     * <p> Create date / time for the Amplify App. </p>
+     */
+    inline bool CreateTimeHasBeenSet() const { return m_createTimeHasBeenSet; }
 
     /**
      * <p> Create date / time for the Amplify App. </p>
@@ -355,6 +395,11 @@ namespace Model
     /**
      * <p> Update date / time for the Amplify App. </p>
      */
+    inline bool UpdateTimeHasBeenSet() const { return m_updateTimeHasBeenSet; }
+
+    /**
+     * <p> Update date / time for the Amplify App. </p>
+     */
     inline void SetUpdateTime(const Aws::Utils::DateTime& value) { m_updateTimeHasBeenSet = true; m_updateTime = value; }
 
     /**
@@ -377,6 +422,11 @@ namespace Model
      * <p> IAM service role ARN for the Amplify App. </p>
      */
     inline const Aws::String& GetIamServiceRoleArn() const{ return m_iamServiceRoleArn; }
+
+    /**
+     * <p> IAM service role ARN for the Amplify App. </p>
+     */
+    inline bool IamServiceRoleArnHasBeenSet() const { return m_iamServiceRoleArnHasBeenSet; }
 
     /**
      * <p> IAM service role ARN for the Amplify App. </p>
@@ -413,6 +463,11 @@ namespace Model
      * <p> Environment Variables for the Amplify App. </p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetEnvironmentVariables() const{ return m_environmentVariables; }
+
+    /**
+     * <p> Environment Variables for the Amplify App. </p>
+     */
+    inline bool EnvironmentVariablesHasBeenSet() const { return m_environmentVariablesHasBeenSet; }
 
     /**
      * <p> Environment Variables for the Amplify App. </p>
@@ -478,6 +533,11 @@ namespace Model
     /**
      * <p> Default domain for the Amplify App. </p>
      */
+    inline bool DefaultDomainHasBeenSet() const { return m_defaultDomainHasBeenSet; }
+
+    /**
+     * <p> Default domain for the Amplify App. </p>
+     */
     inline void SetDefaultDomain(const Aws::String& value) { m_defaultDomainHasBeenSet = true; m_defaultDomain = value; }
 
     /**
@@ -514,6 +574,11 @@ namespace Model
     /**
      * <p> Enables auto-building of branches for the Amplify App. </p>
      */
+    inline bool EnableBranchAutoBuildHasBeenSet() const { return m_enableBranchAutoBuildHasBeenSet; }
+
+    /**
+     * <p> Enables auto-building of branches for the Amplify App. </p>
+     */
     inline void SetEnableBranchAutoBuild(bool value) { m_enableBranchAutoBuildHasBeenSet = true; m_enableBranchAutoBuild = value; }
 
     /**
@@ -530,6 +595,11 @@ namespace Model
     /**
      * <p> Enables Basic Authorization for branches for the Amplify App. </p>
      */
+    inline bool EnableBasicAuthHasBeenSet() const { return m_enableBasicAuthHasBeenSet; }
+
+    /**
+     * <p> Enables Basic Authorization for branches for the Amplify App. </p>
+     */
     inline void SetEnableBasicAuth(bool value) { m_enableBasicAuthHasBeenSet = true; m_enableBasicAuth = value; }
 
     /**
@@ -542,6 +612,11 @@ namespace Model
      * <p> Basic Authorization credentials for branches for the Amplify App. </p>
      */
     inline const Aws::String& GetBasicAuthCredentials() const{ return m_basicAuthCredentials; }
+
+    /**
+     * <p> Basic Authorization credentials for branches for the Amplify App. </p>
+     */
+    inline bool BasicAuthCredentialsHasBeenSet() const { return m_basicAuthCredentialsHasBeenSet; }
 
     /**
      * <p> Basic Authorization credentials for branches for the Amplify App. </p>
@@ -582,6 +657,11 @@ namespace Model
     /**
      * <p> Custom redirect / rewrite rules for the Amplify App. </p>
      */
+    inline bool CustomRulesHasBeenSet() const { return m_customRulesHasBeenSet; }
+
+    /**
+     * <p> Custom redirect / rewrite rules for the Amplify App. </p>
+     */
     inline void SetCustomRules(const Aws::Vector<CustomRule>& value) { m_customRulesHasBeenSet = true; m_customRules = value; }
 
     /**
@@ -618,6 +698,11 @@ namespace Model
     /**
      * <p> Structure with Production Branch information. </p>
      */
+    inline bool ProductionBranchHasBeenSet() const { return m_productionBranchHasBeenSet; }
+
+    /**
+     * <p> Structure with Production Branch information. </p>
+     */
     inline void SetProductionBranch(const ProductionBranch& value) { m_productionBranchHasBeenSet = true; m_productionBranch = value; }
 
     /**
@@ -640,6 +725,11 @@ namespace Model
      * <p> BuildSpec content for Amplify App. </p>
      */
     inline const Aws::String& GetBuildSpec() const{ return m_buildSpec; }
+
+    /**
+     * <p> BuildSpec content for Amplify App. </p>
+     */
+    inline bool BuildSpecHasBeenSet() const { return m_buildSpecHasBeenSet; }
 
     /**
      * <p> BuildSpec content for Amplify App. </p>

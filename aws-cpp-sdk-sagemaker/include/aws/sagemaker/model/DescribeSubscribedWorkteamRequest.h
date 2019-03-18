@@ -52,6 +52,11 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the subscribed work team to describe.</p>
      */
+    inline bool WorkteamArnHasBeenSet() const { return m_workteamArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the subscribed work team to describe.</p>
+     */
     inline void SetWorkteamArn(const Aws::String& value) { m_workteamArnHasBeenSet = true; m_workteamArn = value; }
 
     /**

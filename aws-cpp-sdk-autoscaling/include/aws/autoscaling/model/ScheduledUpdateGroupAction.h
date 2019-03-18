@@ -59,6 +59,11 @@ namespace Model
     /**
      * <p>The name of the Auto Scaling group.</p>
      */
+    inline bool AutoScalingGroupNameHasBeenSet() const { return m_autoScalingGroupNameHasBeenSet; }
+
+    /**
+     * <p>The name of the Auto Scaling group.</p>
+     */
     inline void SetAutoScalingGroupName(const Aws::String& value) { m_autoScalingGroupNameHasBeenSet = true; m_autoScalingGroupName = value; }
 
     /**
@@ -91,6 +96,11 @@ namespace Model
      * <p>The name of the scheduled action.</p>
      */
     inline const Aws::String& GetScheduledActionName() const{ return m_scheduledActionName; }
+
+    /**
+     * <p>The name of the scheduled action.</p>
+     */
+    inline bool ScheduledActionNameHasBeenSet() const { return m_scheduledActionNameHasBeenSet; }
 
     /**
      * <p>The name of the scheduled action.</p>
@@ -131,6 +141,11 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the scheduled action.</p>
      */
+    inline bool ScheduledActionARNHasBeenSet() const { return m_scheduledActionARNHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the scheduled action.</p>
+     */
     inline void SetScheduledActionARN(const Aws::String& value) { m_scheduledActionARNHasBeenSet = true; m_scheduledActionARN = value; }
 
     /**
@@ -167,6 +182,11 @@ namespace Model
     /**
      * <p>This parameter is deprecated.</p>
      */
+    inline bool TimeHasBeenSet() const { return m_timeHasBeenSet; }
+
+    /**
+     * <p>This parameter is deprecated.</p>
+     */
     inline void SetTime(const Aws::Utils::DateTime& value) { m_timeHasBeenSet = true; m_time = value; }
 
     /**
@@ -192,6 +212,14 @@ namespace Model
      * starts and stops.</p>
      */
     inline const Aws::Utils::DateTime& GetStartTime() const{ return m_startTime; }
+
+    /**
+     * <p>The date and time that the action is scheduled to begin. </p> <p>When
+     * <code>StartTime</code> and <code>EndTime</code> are specified with
+     * <code>Recurrence</code>, they form the boundaries of when the recurring action
+     * starts and stops.</p>
+     */
+    inline bool StartTimeHasBeenSet() const { return m_startTimeHasBeenSet; }
 
     /**
      * <p>The date and time that the action is scheduled to begin. </p> <p>When
@@ -234,6 +262,11 @@ namespace Model
     /**
      * <p>The date and time that the action is scheduled to end. </p>
      */
+    inline bool EndTimeHasBeenSet() const { return m_endTimeHasBeenSet; }
+
+    /**
+     * <p>The date and time that the action is scheduled to end. </p>
+     */
     inline void SetEndTime(const Aws::Utils::DateTime& value) { m_endTimeHasBeenSet = true; m_endTime = value; }
 
     /**
@@ -256,6 +289,11 @@ namespace Model
      * <p>The recurring schedule for the action.</p>
      */
     inline const Aws::String& GetRecurrence() const{ return m_recurrence; }
+
+    /**
+     * <p>The recurring schedule for the action.</p>
+     */
+    inline bool RecurrenceHasBeenSet() const { return m_recurrenceHasBeenSet; }
 
     /**
      * <p>The recurring schedule for the action.</p>
@@ -296,6 +334,11 @@ namespace Model
     /**
      * <p>The minimum size of the group.</p>
      */
+    inline bool MinSizeHasBeenSet() const { return m_minSizeHasBeenSet; }
+
+    /**
+     * <p>The minimum size of the group.</p>
+     */
     inline void SetMinSize(int value) { m_minSizeHasBeenSet = true; m_minSize = value; }
 
     /**
@@ -312,6 +355,11 @@ namespace Model
     /**
      * <p>The maximum size of the group.</p>
      */
+    inline bool MaxSizeHasBeenSet() const { return m_maxSizeHasBeenSet; }
+
+    /**
+     * <p>The maximum size of the group.</p>
+     */
     inline void SetMaxSize(int value) { m_maxSizeHasBeenSet = true; m_maxSize = value; }
 
     /**
@@ -324,6 +372,11 @@ namespace Model
      * <p>The number of instances you prefer to maintain in the group.</p>
      */
     inline int GetDesiredCapacity() const{ return m_desiredCapacity; }
+
+    /**
+     * <p>The number of instances you prefer to maintain in the group.</p>
+     */
+    inline bool DesiredCapacityHasBeenSet() const { return m_desiredCapacityHasBeenSet; }
 
     /**
      * <p>The number of instances you prefer to maintain in the group.</p>

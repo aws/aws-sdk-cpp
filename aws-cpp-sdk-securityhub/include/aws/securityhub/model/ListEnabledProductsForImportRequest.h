@@ -62,6 +62,14 @@ namespace Model
      * operation, fill nextToken in the request with the value of NextToken from the
      * previous response to continue listing data.</p>
      */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
+
+    /**
+     * <p>Paginates results. Set the value of this parameter to NULL on your first call
+     * to the ListEnabledProductsForImport operation. For subsequent calls to the
+     * operation, fill nextToken in the request with the value of NextToken from the
+     * previous response to continue listing data.</p>
+     */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
     /**
@@ -109,6 +117,11 @@ namespace Model
      * <p>Indicates the maximum number of items that you want in the response.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
+
+    /**
+     * <p>Indicates the maximum number of items that you want in the response.</p>
+     */
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
 
     /**
      * <p>Indicates the maximum number of items that you want in the response.</p>

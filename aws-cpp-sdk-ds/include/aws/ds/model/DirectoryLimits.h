@@ -54,6 +54,11 @@ namespace Model
     /**
      * <p>The maximum number of cloud directories allowed in the region.</p>
      */
+    inline bool CloudOnlyDirectoriesLimitHasBeenSet() const { return m_cloudOnlyDirectoriesLimitHasBeenSet; }
+
+    /**
+     * <p>The maximum number of cloud directories allowed in the region.</p>
+     */
     inline void SetCloudOnlyDirectoriesLimit(int value) { m_cloudOnlyDirectoriesLimitHasBeenSet = true; m_cloudOnlyDirectoriesLimit = value; }
 
     /**
@@ -70,6 +75,11 @@ namespace Model
     /**
      * <p>The current number of cloud directories in the region.</p>
      */
+    inline bool CloudOnlyDirectoriesCurrentCountHasBeenSet() const { return m_cloudOnlyDirectoriesCurrentCountHasBeenSet; }
+
+    /**
+     * <p>The current number of cloud directories in the region.</p>
+     */
     inline void SetCloudOnlyDirectoriesCurrentCount(int value) { m_cloudOnlyDirectoriesCurrentCountHasBeenSet = true; m_cloudOnlyDirectoriesCurrentCount = value; }
 
     /**
@@ -82,6 +92,11 @@ namespace Model
      * <p>Indicates if the cloud directory limit has been reached.</p>
      */
     inline bool GetCloudOnlyDirectoriesLimitReached() const{ return m_cloudOnlyDirectoriesLimitReached; }
+
+    /**
+     * <p>Indicates if the cloud directory limit has been reached.</p>
+     */
+    inline bool CloudOnlyDirectoriesLimitReachedHasBeenSet() const { return m_cloudOnlyDirectoriesLimitReachedHasBeenSet; }
 
     /**
      * <p>Indicates if the cloud directory limit has been reached.</p>
@@ -104,6 +119,12 @@ namespace Model
      * <p>The maximum number of AWS Managed Microsoft AD directories allowed in the
      * region.</p>
      */
+    inline bool CloudOnlyMicrosoftADLimitHasBeenSet() const { return m_cloudOnlyMicrosoftADLimitHasBeenSet; }
+
+    /**
+     * <p>The maximum number of AWS Managed Microsoft AD directories allowed in the
+     * region.</p>
+     */
     inline void SetCloudOnlyMicrosoftADLimit(int value) { m_cloudOnlyMicrosoftADLimitHasBeenSet = true; m_cloudOnlyMicrosoftADLimit = value; }
 
     /**
@@ -117,6 +138,11 @@ namespace Model
      * <p>The current number of AWS Managed Microsoft AD directories in the region.</p>
      */
     inline int GetCloudOnlyMicrosoftADCurrentCount() const{ return m_cloudOnlyMicrosoftADCurrentCount; }
+
+    /**
+     * <p>The current number of AWS Managed Microsoft AD directories in the region.</p>
+     */
+    inline bool CloudOnlyMicrosoftADCurrentCountHasBeenSet() const { return m_cloudOnlyMicrosoftADCurrentCountHasBeenSet; }
 
     /**
      * <p>The current number of AWS Managed Microsoft AD directories in the region.</p>
@@ -139,6 +165,12 @@ namespace Model
      * <p>Indicates if the AWS Managed Microsoft AD directory limit has been
      * reached.</p>
      */
+    inline bool CloudOnlyMicrosoftADLimitReachedHasBeenSet() const { return m_cloudOnlyMicrosoftADLimitReachedHasBeenSet; }
+
+    /**
+     * <p>Indicates if the AWS Managed Microsoft AD directory limit has been
+     * reached.</p>
+     */
     inline void SetCloudOnlyMicrosoftADLimitReached(bool value) { m_cloudOnlyMicrosoftADLimitReachedHasBeenSet = true; m_cloudOnlyMicrosoftADLimitReached = value; }
 
     /**
@@ -152,6 +184,11 @@ namespace Model
      * <p>The maximum number of connected directories allowed in the region.</p>
      */
     inline int GetConnectedDirectoriesLimit() const{ return m_connectedDirectoriesLimit; }
+
+    /**
+     * <p>The maximum number of connected directories allowed in the region.</p>
+     */
+    inline bool ConnectedDirectoriesLimitHasBeenSet() const { return m_connectedDirectoriesLimitHasBeenSet; }
 
     /**
      * <p>The maximum number of connected directories allowed in the region.</p>
@@ -172,6 +209,11 @@ namespace Model
     /**
      * <p>The current number of connected directories in the region.</p>
      */
+    inline bool ConnectedDirectoriesCurrentCountHasBeenSet() const { return m_connectedDirectoriesCurrentCountHasBeenSet; }
+
+    /**
+     * <p>The current number of connected directories in the region.</p>
+     */
     inline void SetConnectedDirectoriesCurrentCount(int value) { m_connectedDirectoriesCurrentCountHasBeenSet = true; m_connectedDirectoriesCurrentCount = value; }
 
     /**
@@ -184,6 +226,11 @@ namespace Model
      * <p>Indicates if the connected directory limit has been reached.</p>
      */
     inline bool GetConnectedDirectoriesLimitReached() const{ return m_connectedDirectoriesLimitReached; }
+
+    /**
+     * <p>Indicates if the connected directory limit has been reached.</p>
+     */
+    inline bool ConnectedDirectoriesLimitReachedHasBeenSet() const { return m_connectedDirectoriesLimitReachedHasBeenSet; }
 
     /**
      * <p>Indicates if the connected directory limit has been reached.</p>

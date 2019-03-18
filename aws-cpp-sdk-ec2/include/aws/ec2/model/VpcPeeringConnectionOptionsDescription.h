@@ -57,6 +57,12 @@ namespace Model
      * <p>Indicates whether a local VPC can resolve public DNS hostnames to private IP
      * addresses when queried from instances in a peer VPC.</p>
      */
+    inline bool AllowDnsResolutionFromRemoteVpcHasBeenSet() const { return m_allowDnsResolutionFromRemoteVpcHasBeenSet; }
+
+    /**
+     * <p>Indicates whether a local VPC can resolve public DNS hostnames to private IP
+     * addresses when queried from instances in a peer VPC.</p>
+     */
     inline void SetAllowDnsResolutionFromRemoteVpc(bool value) { m_allowDnsResolutionFromRemoteVpcHasBeenSet = true; m_allowDnsResolutionFromRemoteVpc = value; }
 
     /**
@@ -76,6 +82,12 @@ namespace Model
      * <p>Indicates whether a local ClassicLink connection can communicate with the
      * peer VPC over the VPC peering connection.</p>
      */
+    inline bool AllowEgressFromLocalClassicLinkToRemoteVpcHasBeenSet() const { return m_allowEgressFromLocalClassicLinkToRemoteVpcHasBeenSet; }
+
+    /**
+     * <p>Indicates whether a local ClassicLink connection can communicate with the
+     * peer VPC over the VPC peering connection.</p>
+     */
     inline void SetAllowEgressFromLocalClassicLinkToRemoteVpc(bool value) { m_allowEgressFromLocalClassicLinkToRemoteVpcHasBeenSet = true; m_allowEgressFromLocalClassicLinkToRemoteVpc = value; }
 
     /**
@@ -90,6 +102,12 @@ namespace Model
      * in the peer VPC over the VPC peering connection.</p>
      */
     inline bool GetAllowEgressFromLocalVpcToRemoteClassicLink() const{ return m_allowEgressFromLocalVpcToRemoteClassicLink; }
+
+    /**
+     * <p>Indicates whether a local VPC can communicate with a ClassicLink connection
+     * in the peer VPC over the VPC peering connection.</p>
+     */
+    inline bool AllowEgressFromLocalVpcToRemoteClassicLinkHasBeenSet() const { return m_allowEgressFromLocalVpcToRemoteClassicLinkHasBeenSet; }
 
     /**
      * <p>Indicates whether a local VPC can communicate with a ClassicLink connection

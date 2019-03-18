@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p>The name of the application.</p>
      */
+    inline bool ApplicationNameHasBeenSet() const { return m_applicationNameHasBeenSet; }
+
+    /**
+     * <p>The name of the application.</p>
+     */
     inline void SetApplicationName(const Aws::String& value) { m_applicationNameHasBeenSet = true; m_applicationName = value; }
 
     /**
@@ -90,6 +95,11 @@ namespace Model
      * <p>The ARN of the application.</p>
      */
     inline const Aws::String& GetApplicationARN() const{ return m_applicationARN; }
+
+    /**
+     * <p>The ARN of the application.</p>
+     */
+    inline bool ApplicationARNHasBeenSet() const { return m_applicationARNHasBeenSet; }
 
     /**
      * <p>The ARN of the application.</p>
@@ -130,6 +140,11 @@ namespace Model
     /**
      * <p>The status of the application.</p>
      */
+    inline bool ApplicationStatusHasBeenSet() const { return m_applicationStatusHasBeenSet; }
+
+    /**
+     * <p>The status of the application.</p>
+     */
     inline void SetApplicationStatus(const ApplicationStatus& value) { m_applicationStatusHasBeenSet = true; m_applicationStatus = value; }
 
     /**
@@ -156,6 +171,11 @@ namespace Model
     /**
      * <p>Provides the current application version.</p>
      */
+    inline bool ApplicationVersionIdHasBeenSet() const { return m_applicationVersionIdHasBeenSet; }
+
+    /**
+     * <p>Provides the current application version.</p>
+     */
     inline void SetApplicationVersionId(long long value) { m_applicationVersionIdHasBeenSet = true; m_applicationVersionId = value; }
 
     /**
@@ -169,6 +189,12 @@ namespace Model
      * <code>JAVA-8-FLINK-1.5</code>).</p>
      */
     inline const RuntimeEnvironment& GetRuntimeEnvironment() const{ return m_runtimeEnvironment; }
+
+    /**
+     * <p>The runtime environment for the application (<code>SQL-1.0</code> or
+     * <code>JAVA-8-FLINK-1.5</code>).</p>
+     */
+    inline bool RuntimeEnvironmentHasBeenSet() const { return m_runtimeEnvironmentHasBeenSet; }
 
     /**
      * <p>The runtime environment for the application (<code>SQL-1.0</code> or

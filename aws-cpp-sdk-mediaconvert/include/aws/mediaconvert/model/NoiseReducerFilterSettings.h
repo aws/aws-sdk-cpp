@@ -55,6 +55,12 @@ namespace Model
      * Relative strength of noise reducing filter. Higher values produce stronger
      * filtering.
      */
+    inline bool StrengthHasBeenSet() const { return m_strengthHasBeenSet; }
+
+    /**
+     * Relative strength of noise reducing filter. Higher values produce stronger
+     * filtering.
+     */
     inline void SetStrength(int value) { m_strengthHasBeenSet = true; m_strength = value; }
 
     /**

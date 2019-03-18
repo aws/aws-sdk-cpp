@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The unique system-generated ID used for identifying the job.</p>
      */
+    inline bool JobIdHasBeenSet() const { return m_jobIdHasBeenSet; }
+
+    /**
+     * <p>The unique system-generated ID used for identifying the job.</p>
+     */
     inline void SetJobId(const Aws::String& value) { m_jobIdHasBeenSet = true; m_jobId = value; }
 
     /**
@@ -89,6 +94,12 @@ namespace Model
      * that the calling entity is allowed access to the job and its details.</p>
      */
     inline const Aws::String& GetClientToken() const{ return m_clientToken; }
+
+    /**
+     * <p>The clientToken portion of the clientId and clientToken pair used to verify
+     * that the calling entity is allowed access to the job and its details.</p>
+     */
+    inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
 
     /**
      * <p>The clientToken portion of the clientId and clientToken pair used to verify

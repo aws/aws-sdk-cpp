@@ -52,6 +52,9 @@ namespace Model
     inline const PortMapping& GetPortMapping() const{ return m_portMapping; }
 
     
+    inline bool PortMappingHasBeenSet() const { return m_portMappingHasBeenSet; }
+
+    
     inline void SetPortMapping(const PortMapping& value) { m_portMappingHasBeenSet = true; m_portMapping = value; }
 
     

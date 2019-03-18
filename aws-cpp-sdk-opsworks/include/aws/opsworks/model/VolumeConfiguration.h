@@ -55,6 +55,11 @@ namespace Model
     /**
      * <p>The volume mount point. For example "/dev/sdh".</p>
      */
+    inline bool MountPointHasBeenSet() const { return m_mountPointHasBeenSet; }
+
+    /**
+     * <p>The volume mount point. For example "/dev/sdh".</p>
+     */
     inline void SetMountPoint(const Aws::String& value) { m_mountPointHasBeenSet = true; m_mountPoint = value; }
 
     /**
@@ -93,6 +98,12 @@ namespace Model
      * <p>The volume <a href="http://en.wikipedia.org/wiki/Standard_RAID_levels">RAID
      * level</a>.</p>
      */
+    inline bool RaidLevelHasBeenSet() const { return m_raidLevelHasBeenSet; }
+
+    /**
+     * <p>The volume <a href="http://en.wikipedia.org/wiki/Standard_RAID_levels">RAID
+     * level</a>.</p>
+     */
     inline void SetRaidLevel(int value) { m_raidLevelHasBeenSet = true; m_raidLevel = value; }
 
     /**
@@ -110,6 +121,11 @@ namespace Model
     /**
      * <p>The number of disks in the volume.</p>
      */
+    inline bool NumberOfDisksHasBeenSet() const { return m_numberOfDisksHasBeenSet; }
+
+    /**
+     * <p>The number of disks in the volume.</p>
+     */
     inline void SetNumberOfDisks(int value) { m_numberOfDisksHasBeenSet = true; m_numberOfDisks = value; }
 
     /**
@@ -122,6 +138,11 @@ namespace Model
      * <p>The volume size.</p>
      */
     inline int GetSize() const{ return m_size; }
+
+    /**
+     * <p>The volume size.</p>
+     */
+    inline bool SizeHasBeenSet() const { return m_sizeHasBeenSet; }
 
     /**
      * <p>The volume size.</p>
@@ -149,6 +170,22 @@ namespace Model
      * have a minimum size of 500 GiB and a maximum size of 16384 GiB.</p> </li> </ul>
      */
     inline const Aws::String& GetVolumeType() const{ return m_volumeType; }
+
+    /**
+     * <p>The volume type. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">
+     * Amazon EBS Volume Types</a>.</p> <ul> <li> <p> <code>standard</code> - Magnetic.
+     * Magnetic volumes must have a minimum size of 1 GiB and a maximum size of 1024
+     * GiB.</p> </li> <li> <p> <code>io1</code> - Provisioned IOPS (SSD). PIOPS volumes
+     * must have a minimum size of 4 GiB and a maximum size of 16384 GiB.</p> </li>
+     * <li> <p> <code>gp2</code> - General Purpose (SSD). General purpose volumes must
+     * have a minimum size of 1 GiB and a maximum size of 16384 GiB.</p> </li> <li> <p>
+     * <code>st1</code> - Throughput Optimized hard disk drive (HDD). Throughput
+     * optimized HDD volumes must have a minimum size of 500 GiB and a maximum size of
+     * 16384 GiB.</p> </li> <li> <p> <code>sc1</code> - Cold HDD. Cold HDD volumes must
+     * have a minimum size of 500 GiB and a maximum size of 16384 GiB.</p> </li> </ul>
+     */
+    inline bool VolumeTypeHasBeenSet() const { return m_volumeTypeHasBeenSet; }
 
     /**
      * <p>The volume type. For more information, see <a
@@ -255,6 +292,11 @@ namespace Model
     /**
      * <p>For PIOPS volumes, the IOPS per disk.</p>
      */
+    inline bool IopsHasBeenSet() const { return m_iopsHasBeenSet; }
+
+    /**
+     * <p>For PIOPS volumes, the IOPS per disk.</p>
+     */
     inline void SetIops(int value) { m_iopsHasBeenSet = true; m_iops = value; }
 
     /**
@@ -270,6 +312,14 @@ namespace Model
      * EBS Encryption</a>.</p>
      */
     inline bool GetEncrypted() const{ return m_encrypted; }
+
+    /**
+     * <p>Specifies whether an Amazon EBS volume is encrypted. For more information,
+     * see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon
+     * EBS Encryption</a>.</p>
+     */
+    inline bool EncryptedHasBeenSet() const { return m_encryptedHasBeenSet; }
 
     /**
      * <p>Specifies whether an Amazon EBS volume is encrypted. For more information,

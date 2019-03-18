@@ -63,6 +63,11 @@ namespace Model
     /**
      * <p>The name (friendly name, not ARN) identifying the group.</p>
      */
+    inline bool GroupNameHasBeenSet() const { return m_groupNameHasBeenSet; }
+
+    /**
+     * <p>The name (friendly name, not ARN) identifying the group.</p>
+     */
     inline void SetGroupName(const Aws::String& value) { m_groupNameHasBeenSet = true; m_groupName = value; }
 
     /**
@@ -98,6 +103,14 @@ namespace Model
      * Identifiers</a> in the <i>IAM User Guide</i>.</p>
      */
     inline const Aws::String& GetGroupId() const{ return m_groupId; }
+
+    /**
+     * <p>The stable and unique string identifying the group. For more information
+     * about IDs, see <a
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM
+     * Identifiers</a> in the <i>IAM User Guide</i>.</p>
+     */
+    inline bool GroupIdHasBeenSet() const { return m_groupIdHasBeenSet; }
 
     /**
      * <p>The stable and unique string identifying the group. For more information

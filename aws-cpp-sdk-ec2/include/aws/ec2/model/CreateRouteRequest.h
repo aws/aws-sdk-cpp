@@ -56,6 +56,12 @@ namespace Model
      * <p>The IPv4 CIDR address block used for the destination match. Routing decisions
      * are based on the most specific match.</p>
      */
+    inline bool DestinationCidrBlockHasBeenSet() const { return m_destinationCidrBlockHasBeenSet; }
+
+    /**
+     * <p>The IPv4 CIDR address block used for the destination match. Routing decisions
+     * are based on the most specific match.</p>
+     */
     inline void SetDestinationCidrBlock(const Aws::String& value) { m_destinationCidrBlockHasBeenSet = true; m_destinationCidrBlock = value; }
 
     /**
@@ -94,6 +100,12 @@ namespace Model
      * based on the most specific match.</p>
      */
     inline const Aws::String& GetDestinationIpv6CidrBlock() const{ return m_destinationIpv6CidrBlock; }
+
+    /**
+     * <p>The IPv6 CIDR block used for the destination match. Routing decisions are
+     * based on the most specific match.</p>
+     */
+    inline bool DestinationIpv6CidrBlockHasBeenSet() const { return m_destinationIpv6CidrBlockHasBeenSet; }
 
     /**
      * <p>The IPv6 CIDR block used for the destination match. Routing decisions are
@@ -146,6 +158,14 @@ namespace Model
      * required permissions, the error response is <code>DryRunOperation</code>.
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
+    inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
+
+    /**
+     * <p>Checks whether you have the required permissions for the action, without
+     * actually making the request, and provides an error response. If you have the
+     * required permissions, the error response is <code>DryRunOperation</code>.
+     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+     */
     inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
 
     /**
@@ -161,6 +181,11 @@ namespace Model
      * <p>[IPv6 traffic only] The ID of an egress-only internet gateway.</p>
      */
     inline const Aws::String& GetEgressOnlyInternetGatewayId() const{ return m_egressOnlyInternetGatewayId; }
+
+    /**
+     * <p>[IPv6 traffic only] The ID of an egress-only internet gateway.</p>
+     */
+    inline bool EgressOnlyInternetGatewayIdHasBeenSet() const { return m_egressOnlyInternetGatewayIdHasBeenSet; }
 
     /**
      * <p>[IPv6 traffic only] The ID of an egress-only internet gateway.</p>
@@ -198,6 +223,12 @@ namespace Model
      * VPC.</p>
      */
     inline const Aws::String& GetGatewayId() const{ return m_gatewayId; }
+
+    /**
+     * <p>The ID of an internet gateway or virtual private gateway attached to your
+     * VPC.</p>
+     */
+    inline bool GatewayIdHasBeenSet() const { return m_gatewayIdHasBeenSet; }
 
     /**
      * <p>The ID of an internet gateway or virtual private gateway attached to your
@@ -246,6 +277,12 @@ namespace Model
      * <p>The ID of a NAT instance in your VPC. The operation fails if you specify an
      * instance ID unless exactly one network interface is attached.</p>
      */
+    inline bool InstanceIdHasBeenSet() const { return m_instanceIdHasBeenSet; }
+
+    /**
+     * <p>The ID of a NAT instance in your VPC. The operation fails if you specify an
+     * instance ID unless exactly one network interface is attached.</p>
+     */
     inline void SetInstanceId(const Aws::String& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
 
     /**
@@ -287,6 +324,11 @@ namespace Model
     /**
      * <p>[IPv4 traffic only] The ID of a NAT gateway.</p>
      */
+    inline bool NatGatewayIdHasBeenSet() const { return m_natGatewayIdHasBeenSet; }
+
+    /**
+     * <p>[IPv4 traffic only] The ID of a NAT gateway.</p>
+     */
     inline void SetNatGatewayId(const Aws::String& value) { m_natGatewayIdHasBeenSet = true; m_natGatewayId = value; }
 
     /**
@@ -319,6 +361,11 @@ namespace Model
      * <p>The ID of a transit gateway.</p>
      */
     inline const Aws::String& GetTransitGatewayId() const{ return m_transitGatewayId; }
+
+    /**
+     * <p>The ID of a transit gateway.</p>
+     */
+    inline bool TransitGatewayIdHasBeenSet() const { return m_transitGatewayIdHasBeenSet; }
 
     /**
      * <p>The ID of a transit gateway.</p>
@@ -359,6 +406,11 @@ namespace Model
     /**
      * <p>The ID of a network interface.</p>
      */
+    inline bool NetworkInterfaceIdHasBeenSet() const { return m_networkInterfaceIdHasBeenSet; }
+
+    /**
+     * <p>The ID of a network interface.</p>
+     */
     inline void SetNetworkInterfaceId(const Aws::String& value) { m_networkInterfaceIdHasBeenSet = true; m_networkInterfaceId = value; }
 
     /**
@@ -395,6 +447,11 @@ namespace Model
     /**
      * <p>The ID of the route table for the route.</p>
      */
+    inline bool RouteTableIdHasBeenSet() const { return m_routeTableIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the route table for the route.</p>
+     */
     inline void SetRouteTableId(const Aws::String& value) { m_routeTableIdHasBeenSet = true; m_routeTableId = value; }
 
     /**
@@ -427,6 +484,11 @@ namespace Model
      * <p>The ID of a VPC peering connection.</p>
      */
     inline const Aws::String& GetVpcPeeringConnectionId() const{ return m_vpcPeeringConnectionId; }
+
+    /**
+     * <p>The ID of a VPC peering connection.</p>
+     */
+    inline bool VpcPeeringConnectionIdHasBeenSet() const { return m_vpcPeeringConnectionIdHasBeenSet; }
 
     /**
      * <p>The ID of a VPC peering connection.</p>

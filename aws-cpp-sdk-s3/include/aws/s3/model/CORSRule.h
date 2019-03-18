@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>Specifies which headers are allowed in a pre-flight OPTIONS request.</p>
      */
+    inline bool AllowedHeadersHasBeenSet() const { return m_allowedHeadersHasBeenSet; }
+
+    /**
+     * <p>Specifies which headers are allowed in a pre-flight OPTIONS request.</p>
+     */
     inline void SetAllowedHeaders(const Aws::Vector<Aws::String>& value) { m_allowedHeadersHasBeenSet = true; m_allowedHeaders = value; }
 
     /**
@@ -94,6 +99,12 @@ namespace Model
      * allowed to execute.</p>
      */
     inline const Aws::Vector<Aws::String>& GetAllowedMethods() const{ return m_allowedMethods; }
+
+    /**
+     * <p>Identifies HTTP methods that the domain/origin specified in the rule is
+     * allowed to execute.</p>
+     */
+    inline bool AllowedMethodsHasBeenSet() const { return m_allowedMethodsHasBeenSet; }
 
     /**
      * <p>Identifies HTTP methods that the domain/origin specified in the rule is
@@ -143,6 +154,12 @@ namespace Model
      * from.</p>
      */
     inline const Aws::Vector<Aws::String>& GetAllowedOrigins() const{ return m_allowedOrigins; }
+
+    /**
+     * <p>One or more origins you want customers to be able to access the bucket
+     * from.</p>
+     */
+    inline bool AllowedOriginsHasBeenSet() const { return m_allowedOriginsHasBeenSet; }
 
     /**
      * <p>One or more origins you want customers to be able to access the bucket
@@ -199,6 +216,13 @@ namespace Model
      * access from their applications (for example, from a JavaScript XMLHttpRequest
      * object).</p>
      */
+    inline bool ExposeHeadersHasBeenSet() const { return m_exposeHeadersHasBeenSet; }
+
+    /**
+     * <p>One or more headers in the response that you want customers to be able to
+     * access from their applications (for example, from a JavaScript XMLHttpRequest
+     * object).</p>
+     */
     inline void SetExposeHeaders(const Aws::Vector<Aws::String>& value) { m_exposeHeadersHasBeenSet = true; m_exposeHeaders = value; }
 
     /**
@@ -249,6 +273,12 @@ namespace Model
      * the specified resource.</p>
      */
     inline int GetMaxAgeSeconds() const{ return m_maxAgeSeconds; }
+
+    /**
+     * <p>The time in seconds that your browser is to cache the preflight response for
+     * the specified resource.</p>
+     */
+    inline bool MaxAgeSecondsHasBeenSet() const { return m_maxAgeSecondsHasBeenSet; }
 
     /**
      * <p>The time in seconds that your browser is to cache the preflight response for

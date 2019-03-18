@@ -62,6 +62,12 @@ namespace Model
      * <p>The VPC Id for the Elasticsearch domain. Exists only if the domain was
      * created with VPCOptions.</p>
      */
+    inline bool VPCIdHasBeenSet() const { return m_vPCIdHasBeenSet; }
+
+    /**
+     * <p>The VPC Id for the Elasticsearch domain. Exists only if the domain was
+     * created with VPCOptions.</p>
+     */
     inline void SetVPCId(const Aws::String& value) { m_vPCIdHasBeenSet = true; m_vPCId = value; }
 
     /**
@@ -99,6 +105,11 @@ namespace Model
      * <p>Specifies the subnets for VPC endpoint.</p>
      */
     inline const Aws::Vector<Aws::String>& GetSubnetIds() const{ return m_subnetIds; }
+
+    /**
+     * <p>Specifies the subnets for VPC endpoint.</p>
+     */
+    inline bool SubnetIdsHasBeenSet() const { return m_subnetIdsHasBeenSet; }
 
     /**
      * <p>Specifies the subnets for VPC endpoint.</p>
@@ -141,6 +152,12 @@ namespace Model
      * domain was created with VPCOptions.</p>
      */
     inline const Aws::Vector<Aws::String>& GetAvailabilityZones() const{ return m_availabilityZones; }
+
+    /**
+     * <p>The availability zones for the Elasticsearch domain. Exists only if the
+     * domain was created with VPCOptions.</p>
+     */
+    inline bool AvailabilityZonesHasBeenSet() const { return m_availabilityZonesHasBeenSet; }
 
     /**
      * <p>The availability zones for the Elasticsearch domain. Exists only if the
@@ -189,6 +206,11 @@ namespace Model
      * <p>Specifies the security groups for VPC endpoint.</p>
      */
     inline const Aws::Vector<Aws::String>& GetSecurityGroupIds() const{ return m_securityGroupIds; }
+
+    /**
+     * <p>Specifies the security groups for VPC endpoint.</p>
+     */
+    inline bool SecurityGroupIdsHasBeenSet() const { return m_securityGroupIdsHasBeenSet; }
 
     /**
      * <p>Specifies the security groups for VPC endpoint.</p>

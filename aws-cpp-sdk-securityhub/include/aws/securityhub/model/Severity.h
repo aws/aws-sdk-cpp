@@ -55,6 +55,12 @@ namespace Model
      * <p>The native severity as defined by the security findings provider's solution
      * that generated the finding.</p>
      */
+    inline bool ProductHasBeenSet() const { return m_productHasBeenSet; }
+
+    /**
+     * <p>The native severity as defined by the security findings provider's solution
+     * that generated the finding.</p>
+     */
     inline void SetProduct(double value) { m_productHasBeenSet = true; m_product = value; }
 
     /**
@@ -68,6 +74,11 @@ namespace Model
      * <p>The normalized severity of a finding.</p>
      */
     inline int GetNormalized() const{ return m_normalized; }
+
+    /**
+     * <p>The normalized severity of a finding.</p>
+     */
+    inline bool NormalizedHasBeenSet() const { return m_normalizedHasBeenSet; }
 
     /**
      * <p>The normalized severity of a finding.</p>

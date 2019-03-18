@@ -55,6 +55,12 @@ namespace Model
      * <p>Identifier (ID) of the directory from which you want to remove the IP
      * addresses.</p>
      */
+    inline bool DirectoryIdHasBeenSet() const { return m_directoryIdHasBeenSet; }
+
+    /**
+     * <p>Identifier (ID) of the directory from which you want to remove the IP
+     * addresses.</p>
+     */
     inline void SetDirectoryId(const Aws::String& value) { m_directoryIdHasBeenSet = true; m_directoryId = value; }
 
     /**
@@ -92,6 +98,11 @@ namespace Model
      * <p>IP address blocks that you want to remove.</p>
      */
     inline const Aws::Vector<Aws::String>& GetCidrIps() const{ return m_cidrIps; }
+
+    /**
+     * <p>IP address blocks that you want to remove.</p>
+     */
+    inline bool CidrIpsHasBeenSet() const { return m_cidrIpsHasBeenSet; }
 
     /**
      * <p>IP address blocks that you want to remove.</p>

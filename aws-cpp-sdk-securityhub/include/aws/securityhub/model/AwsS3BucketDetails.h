@@ -55,6 +55,11 @@ namespace Model
     /**
      * <p>The canonical user ID of the owner of the S3 bucket.</p>
      */
+    inline bool OwnerIdHasBeenSet() const { return m_ownerIdHasBeenSet; }
+
+    /**
+     * <p>The canonical user ID of the owner of the S3 bucket.</p>
+     */
     inline void SetOwnerId(const Aws::String& value) { m_ownerIdHasBeenSet = true; m_ownerId = value; }
 
     /**
@@ -87,6 +92,11 @@ namespace Model
      * <p>The display name of the owner of the S3 bucket.</p>
      */
     inline const Aws::String& GetOwnerName() const{ return m_ownerName; }
+
+    /**
+     * <p>The display name of the owner of the S3 bucket.</p>
+     */
+    inline bool OwnerNameHasBeenSet() const { return m_ownerNameHasBeenSet; }
 
     /**
      * <p>The display name of the owner of the S3 bucket.</p>

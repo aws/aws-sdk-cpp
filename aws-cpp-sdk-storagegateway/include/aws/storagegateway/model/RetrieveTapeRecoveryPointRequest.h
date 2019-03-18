@@ -57,6 +57,12 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the virtual tape for which you want to
      * retrieve the recovery point.</p>
      */
+    inline bool TapeARNHasBeenSet() const { return m_tapeARNHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the virtual tape for which you want to
+     * retrieve the recovery point.</p>
+     */
     inline void SetTapeARN(const Aws::String& value) { m_tapeARNHasBeenSet = true; m_tapeARN = value; }
 
     /**
@@ -92,6 +98,9 @@ namespace Model
 
     
     inline const Aws::String& GetGatewayARN() const{ return m_gatewayARN; }
+
+    
+    inline bool GatewayARNHasBeenSet() const { return m_gatewayARNHasBeenSet; }
 
     
     inline void SetGatewayARN(const Aws::String& value) { m_gatewayARNHasBeenSet = true; m_gatewayARN = value; }

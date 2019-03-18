@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p/>
      */
+    inline bool ObjectsHasBeenSet() const { return m_objectsHasBeenSet; }
+
+    /**
+     * <p/>
+     */
     inline void SetObjects(const Aws::Vector<ObjectIdentifier>& value) { m_objectsHasBeenSet = true; m_objects = value; }
 
     /**
@@ -89,6 +94,12 @@ namespace Model
      * must set its value to true.</p>
      */
     inline bool GetQuiet() const{ return m_quiet; }
+
+    /**
+     * <p>Element to enable quiet mode for the request. When you add this element, you
+     * must set its value to true.</p>
+     */
+    inline bool QuietHasBeenSet() const { return m_quietHasBeenSet; }
 
     /**
      * <p>Element to enable quiet mode for the request. When you add this element, you

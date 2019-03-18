@@ -61,6 +61,12 @@ namespace Model
      * <p>The type of pending maintenance action that is available for the
      * resource.</p>
      */
+    inline bool ActionHasBeenSet() const { return m_actionHasBeenSet; }
+
+    /**
+     * <p>The type of pending maintenance action that is available for the
+     * resource.</p>
+     */
     inline void SetAction(const Aws::String& value) { m_actionHasBeenSet = true; m_action = value; }
 
     /**
@@ -101,6 +107,14 @@ namespace Model
      * <code>next-maintenance</code> opt-in requests are ignored.</p>
      */
     inline const Aws::Utils::DateTime& GetAutoAppliedAfterDate() const{ return m_autoAppliedAfterDate; }
+
+    /**
+     * <p>The date of the maintenance window when the action is applied. The
+     * maintenance action is applied to the resource during its first maintenance
+     * window after this date. If this date is specified, any
+     * <code>next-maintenance</code> opt-in requests are ignored.</p>
+     */
+    inline bool AutoAppliedAfterDateHasBeenSet() const { return m_autoAppliedAfterDateHasBeenSet; }
 
     /**
      * <p>The date of the maintenance window when the action is applied. The
@@ -149,6 +163,14 @@ namespace Model
      * maintenance window for the resource. If this date is specified, any
      * <code>immediate</code> opt-in requests are ignored.</p>
      */
+    inline bool ForcedApplyDateHasBeenSet() const { return m_forcedApplyDateHasBeenSet; }
+
+    /**
+     * <p>The date when the maintenance action is automatically applied. The
+     * maintenance action is applied to the resource on this date regardless of the
+     * maintenance window for the resource. If this date is specified, any
+     * <code>immediate</code> opt-in requests are ignored.</p>
+     */
     inline void SetForcedApplyDate(const Aws::Utils::DateTime& value) { m_forcedApplyDateHasBeenSet = true; m_forcedApplyDate = value; }
 
     /**
@@ -181,6 +203,12 @@ namespace Model
      * resource.</p>
      */
     inline const Aws::String& GetOptInStatus() const{ return m_optInStatus; }
+
+    /**
+     * <p>Indicates the type of opt-in request that has been received for the
+     * resource.</p>
+     */
+    inline bool OptInStatusHasBeenSet() const { return m_optInStatusHasBeenSet; }
 
     /**
      * <p>Indicates the type of opt-in request that has been received for the
@@ -229,6 +257,12 @@ namespace Model
      * <p>The effective date when the pending maintenance action is applied to the
      * resource.</p>
      */
+    inline bool CurrentApplyDateHasBeenSet() const { return m_currentApplyDateHasBeenSet; }
+
+    /**
+     * <p>The effective date when the pending maintenance action is applied to the
+     * resource.</p>
+     */
     inline void SetCurrentApplyDate(const Aws::Utils::DateTime& value) { m_currentApplyDateHasBeenSet = true; m_currentApplyDate = value; }
 
     /**
@@ -254,6 +288,11 @@ namespace Model
      * <p>A description providing more detail about the maintenance action.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
+
+    /**
+     * <p>A description providing more detail about the maintenance action.</p>
+     */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
 
     /**
      * <p>A description providing more detail about the maintenance action.</p>

@@ -62,6 +62,13 @@ namespace Model
      * values are both required. Keys cannot be null or empty strings. Value-only tags
      * are not allowed.</p>
      */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
+
+    /**
+     * <p>The tag key-value pairs to add to the on-premises instances.</p> <p>Keys and
+     * values are both required. Keys cannot be null or empty strings. Value-only tags
+     * are not allowed.</p>
+     */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     /**
@@ -104,6 +111,11 @@ namespace Model
      * <p>The names of the on-premises instances to which to add tags.</p>
      */
     inline const Aws::Vector<Aws::String>& GetInstanceNames() const{ return m_instanceNames; }
+
+    /**
+     * <p>The names of the on-premises instances to which to add tags.</p>
+     */
+    inline bool InstanceNamesHasBeenSet() const { return m_instanceNamesHasBeenSet; }
 
     /**
      * <p>The names of the on-premises instances to which to add tags.</p>

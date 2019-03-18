@@ -59,6 +59,12 @@ namespace Model
      * <p>Number of profiles for query argument-profile mapping for field-level
      * encryption.</p>
      */
+    inline bool QuantityHasBeenSet() const { return m_quantityHasBeenSet; }
+
+    /**
+     * <p>Number of profiles for query argument-profile mapping for field-level
+     * encryption.</p>
+     */
     inline void SetQuantity(int value) { m_quantityHasBeenSet = true; m_quantity = value; }
 
     /**
@@ -73,6 +79,12 @@ namespace Model
      * encryption.</p>
      */
     inline const Aws::Vector<QueryArgProfile>& GetItems() const{ return m_items; }
+
+    /**
+     * <p>Number of items for query argument-profile mapping for field-level
+     * encryption.</p>
+     */
+    inline bool ItemsHasBeenSet() const { return m_itemsHasBeenSet; }
 
     /**
      * <p>Number of items for query argument-profile mapping for field-level

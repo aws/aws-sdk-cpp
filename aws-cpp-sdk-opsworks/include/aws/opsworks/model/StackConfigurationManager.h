@@ -55,6 +55,11 @@ namespace Model
     /**
      * <p>The name. This parameter must be set to "Chef".</p>
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>The name. This parameter must be set to "Chef".</p>
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
@@ -89,6 +94,13 @@ namespace Model
      * 11.4.</p>
      */
     inline const Aws::String& GetVersion() const{ return m_version; }
+
+    /**
+     * <p>The Chef version. This parameter must be set to 12, 11.10, or 11.4 for Linux
+     * stacks, and to 12.2 for Windows stacks. The default value for Linux stacks is
+     * 11.4.</p>
+     */
+    inline bool VersionHasBeenSet() const { return m_versionHasBeenSet; }
 
     /**
      * <p>The Chef version. This parameter must be set to 12, 11.10, or 11.4 for Linux

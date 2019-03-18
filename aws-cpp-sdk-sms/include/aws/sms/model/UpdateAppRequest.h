@@ -55,6 +55,11 @@ namespace Model
     /**
      * <p>ID of the application to update.</p>
      */
+    inline bool AppIdHasBeenSet() const { return m_appIdHasBeenSet; }
+
+    /**
+     * <p>ID of the application to update.</p>
+     */
     inline void SetAppId(const Aws::String& value) { m_appIdHasBeenSet = true; m_appId = value; }
 
     /**
@@ -87,6 +92,11 @@ namespace Model
      * <p>New name of the application.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
+
+    /**
+     * <p>New name of the application.</p>
+     */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
      * <p>New name of the application.</p>
@@ -127,6 +137,11 @@ namespace Model
     /**
      * <p>New description of the application.</p>
      */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
+
+    /**
+     * <p>New description of the application.</p>
+     */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
@@ -159,6 +174,11 @@ namespace Model
      * <p>Name of the service role in the customer's account used by AWS SMS.</p>
      */
     inline const Aws::String& GetRoleName() const{ return m_roleName; }
+
+    /**
+     * <p>Name of the service role in the customer's account used by AWS SMS.</p>
+     */
+    inline bool RoleNameHasBeenSet() const { return m_roleNameHasBeenSet; }
 
     /**
      * <p>Name of the service role in the customer's account used by AWS SMS.</p>
@@ -199,6 +219,11 @@ namespace Model
     /**
      * <p>List of server groups in the application to update.</p>
      */
+    inline bool ServerGroupsHasBeenSet() const { return m_serverGroupsHasBeenSet; }
+
+    /**
+     * <p>List of server groups in the application to update.</p>
+     */
     inline void SetServerGroups(const Aws::Vector<ServerGroup>& value) { m_serverGroupsHasBeenSet = true; m_serverGroups = value; }
 
     /**
@@ -231,6 +256,11 @@ namespace Model
      * <p>List of tags to associate with the application.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>List of tags to associate with the application.</p>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
      * <p>List of tags to associate with the application.</p>

@@ -55,6 +55,11 @@ namespace Model
     /**
      * <p>The start date.</p>
      */
+    inline bool StartDateHasBeenSet() const { return m_startDateHasBeenSet; }
+
+    /**
+     * <p>The start date.</p>
+     */
     inline void SetStartDate(const Aws::String& value) { m_startDateHasBeenSet = true; m_startDate = value; }
 
     /**

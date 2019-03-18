@@ -50,6 +50,11 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the application.</p>
      */
+    inline bool ApplicationIdHasBeenSet() const { return m_applicationIdHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the application.</p>
+     */
     inline void SetApplicationId(const Aws::String& value) { m_applicationIdHasBeenSet = true; m_applicationId = value; }
 
     /**
@@ -82,6 +87,11 @@ namespace Model
      * <p>The semantic version of the new version.</p>
      */
     inline const Aws::String& GetSemanticVersion() const{ return m_semanticVersion; }
+
+    /**
+     * <p>The semantic version of the new version.</p>
+     */
+    inline bool SemanticVersionHasBeenSet() const { return m_semanticVersionHasBeenSet; }
 
     /**
      * <p>The semantic version of the new version.</p>
@@ -119,6 +129,12 @@ namespace Model
      * this version of your application.</p><p>Maximum size 50 MB</p>
      */
     inline const Aws::String& GetSourceCodeArchiveUrl() const{ return m_sourceCodeArchiveUrl; }
+
+    /**
+     * <p>A link to the S3 object that contains the ZIP archive of the source code for
+     * this version of your application.</p><p>Maximum size 50 MB</p>
+     */
+    inline bool SourceCodeArchiveUrlHasBeenSet() const { return m_sourceCodeArchiveUrlHasBeenSet; }
 
     /**
      * <p>A link to the S3 object that contains the ZIP archive of the source code for
@@ -167,6 +183,12 @@ namespace Model
      * <p>A link to a public repository for the source code of your application, for
      * example the URL of a specific GitHub commit.</p>
      */
+    inline bool SourceCodeUrlHasBeenSet() const { return m_sourceCodeUrlHasBeenSet; }
+
+    /**
+     * <p>A link to a public repository for the source code of your application, for
+     * example the URL of a specific GitHub commit.</p>
+     */
     inline void SetSourceCodeUrl(const Aws::String& value) { m_sourceCodeUrlHasBeenSet = true; m_sourceCodeUrl = value; }
 
     /**
@@ -208,6 +230,11 @@ namespace Model
     /**
      * <p>The raw packaged AWS SAM template of your application.</p>
      */
+    inline bool TemplateBodyHasBeenSet() const { return m_templateBodyHasBeenSet; }
+
+    /**
+     * <p>The raw packaged AWS SAM template of your application.</p>
+     */
     inline void SetTemplateBody(const Aws::String& value) { m_templateBodyHasBeenSet = true; m_templateBody = value; }
 
     /**
@@ -240,6 +267,11 @@ namespace Model
      * <p>A link to the packaged AWS SAM template of your application.</p>
      */
     inline const Aws::String& GetTemplateUrl() const{ return m_templateUrl; }
+
+    /**
+     * <p>A link to the packaged AWS SAM template of your application.</p>
+     */
+    inline bool TemplateUrlHasBeenSet() const { return m_templateUrlHasBeenSet; }
 
     /**
      * <p>A link to the packaged AWS SAM template of your application.</p>

@@ -60,6 +60,13 @@ namespace Model
      * be 'identity' or a reverse DNS string. May be omitted to indicate an implicit
      * value of 'identity'.
      */
+    inline bool KeyFormatHasBeenSet() const { return m_keyFormatHasBeenSet; }
+
+    /**
+     * Relates to DRM implementation. Sets the value of the KEYFORMAT attribute. Must
+     * be 'identity' or a reverse DNS string. May be omitted to indicate an implicit
+     * value of 'identity'.
+     */
     inline void SetKeyFormat(const Aws::String& value) { m_keyFormatHasBeenSet = true; m_keyFormat = value; }
 
     /**
@@ -108,6 +115,12 @@ namespace Model
      * Relates to DRM implementation. Either a single positive integer version value or
      * a slash delimited list of version values (1/2/3).
      */
+    inline bool KeyFormatVersionsHasBeenSet() const { return m_keyFormatVersionsHasBeenSet; }
+
+    /**
+     * Relates to DRM implementation. Either a single positive integer version value or
+     * a slash delimited list of version values (1/2/3).
+     */
     inline void SetKeyFormatVersions(const Aws::String& value) { m_keyFormatVersionsHasBeenSet = true; m_keyFormatVersions = value; }
 
     /**
@@ -151,6 +164,12 @@ namespace Model
      * Relates to DRM implementation. Use a 32-character hexidecimal string to specify
      * Key Value (StaticKeyValue).
      */
+    inline bool StaticKeyValueHasBeenSet() const { return m_staticKeyValueHasBeenSet; }
+
+    /**
+     * Relates to DRM implementation. Use a 32-character hexidecimal string to specify
+     * Key Value (StaticKeyValue).
+     */
     inline void SetStaticKeyValue(const Aws::String& value) { m_staticKeyValueHasBeenSet = true; m_staticKeyValue = value; }
 
     /**
@@ -189,6 +208,12 @@ namespace Model
      * protecting content.
      */
     inline const Aws::String& GetUrl() const{ return m_url; }
+
+    /**
+     * Relates to DRM implementation. The location of the license server used for
+     * protecting content.
+     */
+    inline bool UrlHasBeenSet() const { return m_urlHasBeenSet; }
 
     /**
      * Relates to DRM implementation. The location of the license server used for

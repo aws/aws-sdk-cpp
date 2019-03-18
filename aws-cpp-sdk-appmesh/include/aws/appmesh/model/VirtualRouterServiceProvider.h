@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The name of the virtual router that is acting as a service provider.</p>
      */
+    inline bool VirtualRouterNameHasBeenSet() const { return m_virtualRouterNameHasBeenSet; }
+
+    /**
+     * <p>The name of the virtual router that is acting as a service provider.</p>
+     */
     inline void SetVirtualRouterName(const Aws::String& value) { m_virtualRouterNameHasBeenSet = true; m_virtualRouterName = value; }
 
     /**

@@ -61,6 +61,11 @@ namespace Model
     /**
      * <p>The name of your custom platform.</p>
      */
+    inline bool PlatformNameHasBeenSet() const { return m_platformNameHasBeenSet; }
+
+    /**
+     * <p>The name of your custom platform.</p>
+     */
     inline void SetPlatformName(const Aws::String& value) { m_platformNameHasBeenSet = true; m_platformName = value; }
 
     /**
@@ -93,6 +98,11 @@ namespace Model
      * <p>The number, such as 1.0.2, for the new platform version.</p>
      */
     inline const Aws::String& GetPlatformVersion() const{ return m_platformVersion; }
+
+    /**
+     * <p>The number, such as 1.0.2, for the new platform version.</p>
+     */
+    inline bool PlatformVersionHasBeenSet() const { return m_platformVersionHasBeenSet; }
 
     /**
      * <p>The number, such as 1.0.2, for the new platform version.</p>
@@ -133,6 +143,11 @@ namespace Model
     /**
      * <p>The location of the platform definition archive in Amazon S3.</p>
      */
+    inline bool PlatformDefinitionBundleHasBeenSet() const { return m_platformDefinitionBundleHasBeenSet; }
+
+    /**
+     * <p>The location of the platform definition archive in Amazon S3.</p>
+     */
     inline void SetPlatformDefinitionBundle(const S3Location& value) { m_platformDefinitionBundleHasBeenSet = true; m_platformDefinitionBundle = value; }
 
     /**
@@ -155,6 +170,11 @@ namespace Model
      * <p>The name of the builder environment.</p>
      */
     inline const Aws::String& GetEnvironmentName() const{ return m_environmentName; }
+
+    /**
+     * <p>The name of the builder environment.</p>
+     */
+    inline bool EnvironmentNameHasBeenSet() const { return m_environmentNameHasBeenSet; }
 
     /**
      * <p>The name of the builder environment.</p>
@@ -195,6 +215,11 @@ namespace Model
     /**
      * <p>The configuration option settings to apply to the builder environment.</p>
      */
+    inline bool OptionSettingsHasBeenSet() const { return m_optionSettingsHasBeenSet; }
+
+    /**
+     * <p>The configuration option settings to apply to the builder environment.</p>
+     */
     inline void SetOptionSettings(const Aws::Vector<ConfigurationOptionSetting>& value) { m_optionSettingsHasBeenSet = true; m_optionSettings = value; }
 
     /**
@@ -229,6 +254,13 @@ namespace Model
      * create using the platform version don't inherit the tags.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>Specifies the tags applied to the new platform version.</p> <p>Elastic
+     * Beanstalk applies these tags only to the platform version. Environments that you
+     * create using the platform version don't inherit the tags.</p>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
      * <p>Specifies the tags applied to the new platform version.</p> <p>Elastic

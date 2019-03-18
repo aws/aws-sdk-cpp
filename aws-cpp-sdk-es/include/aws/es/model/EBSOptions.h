@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p>Specifies whether EBS-based storage is enabled.</p>
      */
+    inline bool EBSEnabledHasBeenSet() const { return m_eBSEnabledHasBeenSet; }
+
+    /**
+     * <p>Specifies whether EBS-based storage is enabled.</p>
+     */
     inline void SetEBSEnabled(bool value) { m_eBSEnabledHasBeenSet = true; m_eBSEnabled = value; }
 
     /**
@@ -70,6 +75,11 @@ namespace Model
      * <p> Specifies the volume type for EBS-based storage.</p>
      */
     inline const VolumeType& GetVolumeType() const{ return m_volumeType; }
+
+    /**
+     * <p> Specifies the volume type for EBS-based storage.</p>
+     */
+    inline bool VolumeTypeHasBeenSet() const { return m_volumeTypeHasBeenSet; }
 
     /**
      * <p> Specifies the volume type for EBS-based storage.</p>
@@ -100,6 +110,11 @@ namespace Model
     /**
      * <p> Integer to specify the size of an EBS volume.</p>
      */
+    inline bool VolumeSizeHasBeenSet() const { return m_volumeSizeHasBeenSet; }
+
+    /**
+     * <p> Integer to specify the size of an EBS volume.</p>
+     */
     inline void SetVolumeSize(int value) { m_volumeSizeHasBeenSet = true; m_volumeSize = value; }
 
     /**
@@ -112,6 +127,11 @@ namespace Model
      * <p>Specifies the IOPD for a Provisioned IOPS EBS volume (SSD).</p>
      */
     inline int GetIops() const{ return m_iops; }
+
+    /**
+     * <p>Specifies the IOPD for a Provisioned IOPS EBS volume (SSD).</p>
+     */
+    inline bool IopsHasBeenSet() const { return m_iopsHasBeenSet; }
 
     /**
      * <p>Specifies the IOPD for a Provisioned IOPS EBS volume (SSD).</p>

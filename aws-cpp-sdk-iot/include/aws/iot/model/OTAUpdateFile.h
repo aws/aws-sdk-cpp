@@ -59,6 +59,11 @@ namespace Model
     /**
      * <p>The name of the file.</p>
      */
+    inline bool FileNameHasBeenSet() const { return m_fileNameHasBeenSet; }
+
+    /**
+     * <p>The name of the file.</p>
+     */
     inline void SetFileName(const Aws::String& value) { m_fileNameHasBeenSet = true; m_fileName = value; }
 
     /**
@@ -91,6 +96,11 @@ namespace Model
      * <p>The file version.</p>
      */
     inline const Aws::String& GetFileVersion() const{ return m_fileVersion; }
+
+    /**
+     * <p>The file version.</p>
+     */
+    inline bool FileVersionHasBeenSet() const { return m_fileVersionHasBeenSet; }
 
     /**
      * <p>The file version.</p>
@@ -131,6 +141,11 @@ namespace Model
     /**
      * <p>The location of the updated firmware.</p>
      */
+    inline bool FileLocationHasBeenSet() const { return m_fileLocationHasBeenSet; }
+
+    /**
+     * <p>The location of the updated firmware.</p>
+     */
     inline void SetFileLocation(const FileLocation& value) { m_fileLocationHasBeenSet = true; m_fileLocation = value; }
 
     /**
@@ -157,6 +172,11 @@ namespace Model
     /**
      * <p>The code signing method of the file.</p>
      */
+    inline bool CodeSigningHasBeenSet() const { return m_codeSigningHasBeenSet; }
+
+    /**
+     * <p>The code signing method of the file.</p>
+     */
     inline void SetCodeSigning(const CodeSigning& value) { m_codeSigningHasBeenSet = true; m_codeSigning = value; }
 
     /**
@@ -179,6 +199,11 @@ namespace Model
      * <p>A list of name/attribute pairs.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetAttributes() const{ return m_attributes; }
+
+    /**
+     * <p>A list of name/attribute pairs.</p>
+     */
+    inline bool AttributesHasBeenSet() const { return m_attributesHasBeenSet; }
 
     /**
      * <p>A list of name/attribute pairs.</p>

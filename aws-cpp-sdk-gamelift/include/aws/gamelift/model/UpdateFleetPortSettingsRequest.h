@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>Unique identifier for a fleet to update port settings for.</p>
      */
+    inline bool FleetIdHasBeenSet() const { return m_fleetIdHasBeenSet; }
+
+    /**
+     * <p>Unique identifier for a fleet to update port settings for.</p>
+     */
     inline void SetFleetId(const Aws::String& value) { m_fleetIdHasBeenSet = true; m_fleetId = value; }
 
     /**
@@ -93,6 +98,11 @@ namespace Model
     /**
      * <p>Collection of port settings to be added to the fleet record.</p>
      */
+    inline bool InboundPermissionAuthorizationsHasBeenSet() const { return m_inboundPermissionAuthorizationsHasBeenSet; }
+
+    /**
+     * <p>Collection of port settings to be added to the fleet record.</p>
+     */
     inline void SetInboundPermissionAuthorizations(const Aws::Vector<IpPermission>& value) { m_inboundPermissionAuthorizationsHasBeenSet = true; m_inboundPermissionAuthorizations = value; }
 
     /**
@@ -125,6 +135,11 @@ namespace Model
      * <p>Collection of port settings to be removed from the fleet record.</p>
      */
     inline const Aws::Vector<IpPermission>& GetInboundPermissionRevocations() const{ return m_inboundPermissionRevocations; }
+
+    /**
+     * <p>Collection of port settings to be removed from the fleet record.</p>
+     */
+    inline bool InboundPermissionRevocationsHasBeenSet() const { return m_inboundPermissionRevocationsHasBeenSet; }
 
     /**
      * <p>Collection of port settings to be removed from the fleet record.</p>

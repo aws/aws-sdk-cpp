@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p>The identifier of the computer.</p>
      */
+    inline bool ComputerIdHasBeenSet() const { return m_computerIdHasBeenSet; }
+
+    /**
+     * <p>The identifier of the computer.</p>
+     */
     inline void SetComputerId(const Aws::String& value) { m_computerIdHasBeenSet = true; m_computerId = value; }
 
     /**
@@ -90,6 +95,11 @@ namespace Model
      * <p>The computer name.</p>
      */
     inline const Aws::String& GetComputerName() const{ return m_computerName; }
+
+    /**
+     * <p>The computer name.</p>
+     */
+    inline bool ComputerNameHasBeenSet() const { return m_computerNameHasBeenSet; }
 
     /**
      * <p>The computer name.</p>
@@ -127,6 +137,12 @@ namespace Model
      * belong to the computer account.</p>
      */
     inline const Aws::Vector<Attribute>& GetComputerAttributes() const{ return m_computerAttributes; }
+
+    /**
+     * <p>An array of <a>Attribute</a> objects containing the LDAP attributes that
+     * belong to the computer account.</p>
+     */
+    inline bool ComputerAttributesHasBeenSet() const { return m_computerAttributesHasBeenSet; }
 
     /**
      * <p>An array of <a>Attribute</a> objects containing the LDAP attributes that

@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The name of the stream.</p>
      */
+    inline bool StreamNameHasBeenSet() const { return m_streamNameHasBeenSet; }
+
+    /**
+     * <p>The name of the stream.</p>
+     */
     inline void SetStreamName(const Aws::String& value) { m_streamNameHasBeenSet = true; m_streamName = value; }
 
     /**
@@ -90,6 +95,13 @@ namespace Model
      * <code>ExclusiveStartTagKey</code>. </p>
      */
     inline const Aws::String& GetExclusiveStartTagKey() const{ return m_exclusiveStartTagKey; }
+
+    /**
+     * <p>The key to use as the starting point for the list of tags. If this parameter
+     * is set, <code>ListTagsForStream</code> gets all tags that occur after
+     * <code>ExclusiveStartTagKey</code>. </p>
+     */
+    inline bool ExclusiveStartTagKeyHasBeenSet() const { return m_exclusiveStartTagKeyHasBeenSet; }
 
     /**
      * <p>The key to use as the starting point for the list of tags. If this parameter
@@ -141,6 +153,14 @@ namespace Model
      * <code>ExclusiveStartTagKey</code> to the last key in the response.</p>
      */
     inline int GetLimit() const{ return m_limit; }
+
+    /**
+     * <p>The number of tags to return. If this number is less than the total number of
+     * tags associated with the stream, <code>HasMoreTags</code> is set to
+     * <code>true</code>. To list additional tags, set
+     * <code>ExclusiveStartTagKey</code> to the last key in the response.</p>
+     */
+    inline bool LimitHasBeenSet() const { return m_limitHasBeenSet; }
 
     /**
      * <p>The number of tags to return. If this number is less than the total number of

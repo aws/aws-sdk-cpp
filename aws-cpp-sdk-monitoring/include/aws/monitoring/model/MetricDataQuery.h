@@ -90,6 +90,16 @@ namespace Model
      * characters are letters, numbers, and underscore. The first character must be a
      * lowercase letter.</p>
      */
+    inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
+
+    /**
+     * <p>A short name used to tie this object to the results in the response. This
+     * name must be unique within a single call to <code>GetMetricData</code>. If you
+     * are performing math expressions on this set of data, this name represents that
+     * data and can serve as a variable in the mathematical expression. The valid
+     * characters are letters, numbers, and underscore. The first character must be a
+     * lowercase letter.</p>
+     */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
     /**
@@ -159,6 +169,15 @@ namespace Model
      * specify either <code>Expression</code> or <code>MetricStat</code> but not
      * both.</p>
      */
+    inline bool MetricStatHasBeenSet() const { return m_metricStatHasBeenSet; }
+
+    /**
+     * <p>The metric to be returned, along with statistics, period, and units. Use this
+     * parameter only if this object is retrieving a metric and not performing a math
+     * expression on returned data.</p> <p>Within one MetricDataQuery object, you must
+     * specify either <code>Expression</code> or <code>MetricStat</code> but not
+     * both.</p>
+     */
     inline void SetMetricStat(const MetricStat& value) { m_metricStatHasBeenSet = true; m_metricStat = value; }
 
     /**
@@ -201,6 +220,19 @@ namespace Model
      * <code>Expression</code> or <code>MetricStat</code> but not both.</p>
      */
     inline const Aws::String& GetExpression() const{ return m_expression; }
+
+    /**
+     * <p>The math expression to be performed on the returned data, if this object is
+     * performing a math expression. This expression can use the <code>Id</code> of the
+     * other metrics to refer to those metrics, and can also use the <code>Id</code> of
+     * other expressions to use the result of those expressions. For more information
+     * about metric math expressions, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/using-metric-math.html#metric-math-syntax">Metric
+     * Math Syntax and Functions</a> in the <i>Amazon CloudWatch User Guide</i>.</p>
+     * <p>Within each MetricDataQuery object, you must specify either
+     * <code>Expression</code> or <code>MetricStat</code> but not both.</p>
+     */
+    inline bool ExpressionHasBeenSet() const { return m_expressionHasBeenSet; }
 
     /**
      * <p>The math expression to be performed on the returned data, if this object is
@@ -295,6 +327,14 @@ namespace Model
      * the metric or expression is shown in a CloudWatch dashboard widget, the label is
      * shown. If Label is omitted, CloudWatch generates a default.</p>
      */
+    inline bool LabelHasBeenSet() const { return m_labelHasBeenSet; }
+
+    /**
+     * <p>A human-readable label for this metric or expression. This is especially
+     * useful if this is an expression, so that you know what the value represents. If
+     * the metric or expression is shown in a CloudWatch dashboard widget, the label is
+     * shown. If Label is omitted, CloudWatch generates a default.</p>
+     */
     inline void SetLabel(const Aws::String& value) { m_labelHasBeenSet = true; m_label = value; }
 
     /**
@@ -349,6 +389,18 @@ namespace Model
      * operation, specify <code>ReturnData</code> as False.</p>
      */
     inline bool GetReturnData() const{ return m_returnData; }
+
+    /**
+     * <p>When used in <code>GetMetricData</code>, this option indicates whether to
+     * return the timestamps and raw data values of this metric. If you are performing
+     * this call just to do math expressions and do not also need the raw data
+     * returned, you can specify <code>False</code>. If you omit this, the default of
+     * <code>True</code> is used.</p> <p>When used in <code>PutMetricAlarm</code>,
+     * specify <code>True</code> for the one expression result to use as the alarm. For
+     * all other metrics and expressions in the same <code>PutMetricAlarm</code>
+     * operation, specify <code>ReturnData</code> as False.</p>
+     */
+    inline bool ReturnDataHasBeenSet() const { return m_returnDataHasBeenSet; }
 
     /**
      * <p>When used in <code>GetMetricData</code>, this option indicates whether to

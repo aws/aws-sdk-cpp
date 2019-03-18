@@ -61,6 +61,14 @@ namespace Model
      * doesn't include the periods during which Kinesis Data Firehose waits for
      * acknowledgment from Splunk after each attempt.</p>
      */
+    inline bool DurationInSecondsHasBeenSet() const { return m_durationInSecondsHasBeenSet; }
+
+    /**
+     * <p>The total amount of time that Kinesis Data Firehose spends on retries. This
+     * duration starts after the initial attempt to send data to Splunk fails. It
+     * doesn't include the periods during which Kinesis Data Firehose waits for
+     * acknowledgment from Splunk after each attempt.</p>
+     */
     inline void SetDurationInSeconds(int value) { m_durationInSecondsHasBeenSet = true; m_durationInSeconds = value; }
 
     /**

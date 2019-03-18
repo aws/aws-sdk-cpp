@@ -55,6 +55,12 @@ namespace Model
      * <p> The unique ID of a deployment. Pass this ID to a Lambda function that
      * validates a deployment lifecycle event. </p>
      */
+    inline bool DeploymentIdHasBeenSet() const { return m_deploymentIdHasBeenSet; }
+
+    /**
+     * <p> The unique ID of a deployment. Pass this ID to a Lambda function that
+     * validates a deployment lifecycle event. </p>
+     */
     inline void SetDeploymentId(const Aws::String& value) { m_deploymentIdHasBeenSet = true; m_deploymentId = value; }
 
     /**
@@ -98,6 +104,12 @@ namespace Model
      * <p> The execution ID of a deployment's lifecycle hook. A deployment lifecycle
      * hook is specified in the <code>hooks</code> section of the AppSpec file. </p>
      */
+    inline bool LifecycleEventHookExecutionIdHasBeenSet() const { return m_lifecycleEventHookExecutionIdHasBeenSet; }
+
+    /**
+     * <p> The execution ID of a deployment's lifecycle hook. A deployment lifecycle
+     * hook is specified in the <code>hooks</code> section of the AppSpec file. </p>
+     */
     inline void SetLifecycleEventHookExecutionId(const Aws::String& value) { m_lifecycleEventHookExecutionIdHasBeenSet = true; m_lifecycleEventHookExecutionId = value; }
 
     /**
@@ -136,6 +148,12 @@ namespace Model
      * (<code>Succeeded</code> or <code>Failed</code>).</p>
      */
     inline const LifecycleEventStatus& GetStatus() const{ return m_status; }
+
+    /**
+     * <p>The result of a Lambda function that validates a deployment lifecycle event
+     * (<code>Succeeded</code> or <code>Failed</code>).</p>
+     */
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
     /**
      * <p>The result of a Lambda function that validates a deployment lifecycle event

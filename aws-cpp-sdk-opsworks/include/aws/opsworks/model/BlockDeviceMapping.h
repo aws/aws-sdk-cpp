@@ -65,6 +65,14 @@ namespace Model
      * or you can set this parameter to <code>ROOT_DEVICE</code> and AWS OpsWorks
      * Stacks will provide the correct device name.</p>
      */
+    inline bool DeviceNameHasBeenSet() const { return m_deviceNameHasBeenSet; }
+
+    /**
+     * <p>The device name that is exposed to the instance, such as
+     * <code>/dev/sdh</code>. For the root device, you can use the explicit device name
+     * or you can set this parameter to <code>ROOT_DEVICE</code> and AWS OpsWorks
+     * Stacks will provide the correct device name.</p>
+     */
     inline void SetDeviceName(const Aws::String& value) { m_deviceNameHasBeenSet = true; m_deviceName = value; }
 
     /**
@@ -118,6 +126,12 @@ namespace Model
      * <p>Suppresses the specified device included in the AMI's block device
      * mapping.</p>
      */
+    inline bool NoDeviceHasBeenSet() const { return m_noDeviceHasBeenSet; }
+
+    /**
+     * <p>Suppresses the specified device included in the AMI's block device
+     * mapping.</p>
+     */
     inline void SetNoDevice(const Aws::String& value) { m_noDeviceHasBeenSet = true; m_noDevice = value; }
 
     /**
@@ -161,6 +175,12 @@ namespace Model
      * <p>The virtual device name. For more information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_BlockDeviceMapping.html">BlockDeviceMapping</a>.</p>
      */
+    inline bool VirtualNameHasBeenSet() const { return m_virtualNameHasBeenSet; }
+
+    /**
+     * <p>The virtual device name. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_BlockDeviceMapping.html">BlockDeviceMapping</a>.</p>
+     */
     inline void SetVirtualName(const Aws::String& value) { m_virtualNameHasBeenSet = true; m_virtualName = value; }
 
     /**
@@ -199,6 +219,12 @@ namespace Model
      * volume when the instance is launched.</p>
      */
     inline const EbsBlockDevice& GetEbs() const{ return m_ebs; }
+
+    /**
+     * <p>An <code>EBSBlockDevice</code> that defines how to configure an Amazon EBS
+     * volume when the instance is launched.</p>
+     */
+    inline bool EbsHasBeenSet() const { return m_ebsHasBeenSet; }
 
     /**
      * <p>An <code>EBSBlockDevice</code> that defines how to configure an Amazon EBS

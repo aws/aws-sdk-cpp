@@ -56,6 +56,12 @@ namespace Model
      * <p>The name or unique ID of the stack set that you want to list stack instances
      * for.</p>
      */
+    inline bool StackSetNameHasBeenSet() const { return m_stackSetNameHasBeenSet; }
+
+    /**
+     * <p>The name or unique ID of the stack set that you want to list stack instances
+     * for.</p>
+     */
     inline void SetStackSetName(const Aws::String& value) { m_stackSetNameHasBeenSet = true; m_stackSetName = value; }
 
     /**
@@ -98,6 +104,16 @@ namespace Model
      * parameter is set to <code>null</code>.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
+    /**
+     * <p>If the previous request didn't return all of the remaining results, the
+     * response's <code>NextToken</code> parameter value is set to a token. To retrieve
+     * the next set of results, call <code>ListStackInstances</code> again and assign
+     * that token to the request object's <code>NextToken</code> parameter. If there
+     * are no remaining results, the previous response object's <code>NextToken</code>
+     * parameter is set to <code>null</code>.</p>
+     */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
      * <p>If the previous request didn't return all of the remaining results, the
@@ -174,6 +190,14 @@ namespace Model
      * <code>NextToken</code> value that you can assign to the <code>NextToken</code>
      * request parameter to get the next set of results.</p>
      */
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
+
+    /**
+     * <p>The maximum number of results to be returned with a single call. If the
+     * number of available results exceeds this maximum, the response includes a
+     * <code>NextToken</code> value that you can assign to the <code>NextToken</code>
+     * request parameter to get the next set of results.</p>
+     */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
@@ -189,6 +213,11 @@ namespace Model
      * <p>The name of the AWS account that you want to list stack instances for.</p>
      */
     inline const Aws::String& GetStackInstanceAccount() const{ return m_stackInstanceAccount; }
+
+    /**
+     * <p>The name of the AWS account that you want to list stack instances for.</p>
+     */
+    inline bool StackInstanceAccountHasBeenSet() const { return m_stackInstanceAccountHasBeenSet; }
 
     /**
      * <p>The name of the AWS account that you want to list stack instances for.</p>
@@ -225,6 +254,11 @@ namespace Model
      * <p>The name of the region where you want to list stack instances. </p>
      */
     inline const Aws::String& GetStackInstanceRegion() const{ return m_stackInstanceRegion; }
+
+    /**
+     * <p>The name of the region where you want to list stack instances. </p>
+     */
+    inline bool StackInstanceRegionHasBeenSet() const { return m_stackInstanceRegionHasBeenSet; }
 
     /**
      * <p>The name of the region where you want to list stack instances. </p>

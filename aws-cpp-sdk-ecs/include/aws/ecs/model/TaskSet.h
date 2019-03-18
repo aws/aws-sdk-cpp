@@ -65,6 +65,11 @@ namespace Model
     /**
      * <p>The ID of the task set.</p>
      */
+    inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
+
+    /**
+     * <p>The ID of the task set.</p>
+     */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
     /**
@@ -97,6 +102,11 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the task set.</p>
      */
     inline const Aws::String& GetTaskSetArn() const{ return m_taskSetArn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the task set.</p>
+     */
+    inline bool TaskSetArnHasBeenSet() const { return m_taskSetArnHasBeenSet; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the task set.</p>
@@ -135,6 +145,13 @@ namespace Model
      * <code>CODE_DEPLOY</code>.</p>
      */
     inline const Aws::String& GetStartedBy() const{ return m_startedBy; }
+
+    /**
+     * <p>The tag specified when a task set is started. If the task is started by an
+     * AWS CodeDeploy deployment, then the <code>startedBy</code> parameter is
+     * <code>CODE_DEPLOY</code>.</p>
+     */
+    inline bool StartedByHasBeenSet() const { return m_startedByHasBeenSet; }
 
     /**
      * <p>The tag specified when a task set is started. If the task is started by an
@@ -187,6 +204,11 @@ namespace Model
     /**
      * <p>The deployment ID of the AWS CodeDeploy deployment.</p>
      */
+    inline bool ExternalIdHasBeenSet() const { return m_externalIdHasBeenSet; }
+
+    /**
+     * <p>The deployment ID of the AWS CodeDeploy deployment.</p>
+     */
     inline void SetExternalId(const Aws::String& value) { m_externalIdHasBeenSet = true; m_externalId = value; }
 
     /**
@@ -224,6 +246,16 @@ namespace Model
      * </dd> </dl>
      */
     inline const Aws::String& GetStatus() const{ return m_status; }
+
+    /**
+     * <p>The status of the task set. The following describes each state:</p> <dl>
+     * <dt>PRIMARY</dt> <dd> <p>The task set is serving production traffic.</p> </dd>
+     * <dt>ACTIVE</dt> <dd> <p>The task set is not serving production traffic.</p>
+     * </dd> <dt>DRAINING</dt> <dd> <p>The tasks in the task set are being stopped and
+     * their corresponding targets are being deregistered from their target group.</p>
+     * </dd> </dl>
+     */
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
     /**
      * <p>The status of the task set. The following describes each state:</p> <dl>
@@ -294,6 +326,11 @@ namespace Model
     /**
      * <p>The task definition the task set is using.</p>
      */
+    inline bool TaskDefinitionHasBeenSet() const { return m_taskDefinitionHasBeenSet; }
+
+    /**
+     * <p>The task definition the task set is using.</p>
+     */
     inline void SetTaskDefinition(const Aws::String& value) { m_taskDefinitionHasBeenSet = true; m_taskDefinition = value; }
 
     /**
@@ -334,6 +371,13 @@ namespace Model
      * multiplying the service's <code>desiredCount</code> by the task set's
      * <code>scale</code> percentage.</p>
      */
+    inline bool ComputedDesiredCountHasBeenSet() const { return m_computedDesiredCountHasBeenSet; }
+
+    /**
+     * <p>The computed desired count for the task set. This is calculated by
+     * multiplying the service's <code>desiredCount</code> by the task set's
+     * <code>scale</code> percentage.</p>
+     */
     inline void SetComputedDesiredCount(int value) { m_computedDesiredCountHasBeenSet = true; m_computedDesiredCount = value; }
 
     /**
@@ -352,6 +396,15 @@ namespace Model
      * restarted after being in the <code>STOPPED</code> state.</p>
      */
     inline int GetPendingCount() const{ return m_pendingCount; }
+
+    /**
+     * <p>The number of tasks in the task set that are in the <code>PENDING</code>
+     * status during a deployment. A task in the <code>PENDING</code> state is
+     * preparing to enter the <code>RUNNING</code> state. A task set enters the
+     * <code>PENDING</code> status when it launches for the first time, or when it is
+     * restarted after being in the <code>STOPPED</code> state.</p>
+     */
+    inline bool PendingCountHasBeenSet() const { return m_pendingCountHasBeenSet; }
 
     /**
      * <p>The number of tasks in the task set that are in the <code>PENDING</code>
@@ -384,6 +437,13 @@ namespace Model
      * status during a deployment. A task in the <code>RUNNING</code> state is running
      * and ready for use.</p>
      */
+    inline bool RunningCountHasBeenSet() const { return m_runningCountHasBeenSet; }
+
+    /**
+     * <p>The number of tasks in the task set that are in the <code>RUNNING</code>
+     * status during a deployment. A task in the <code>RUNNING</code> state is running
+     * and ready for use.</p>
+     */
     inline void SetRunningCount(int value) { m_runningCountHasBeenSet = true; m_runningCount = value; }
 
     /**
@@ -398,6 +458,11 @@ namespace Model
      * <p>The Unix timestamp for when the task set was created.</p>
      */
     inline const Aws::Utils::DateTime& GetCreatedAt() const{ return m_createdAt; }
+
+    /**
+     * <p>The Unix timestamp for when the task set was created.</p>
+     */
+    inline bool CreatedAtHasBeenSet() const { return m_createdAtHasBeenSet; }
 
     /**
      * <p>The Unix timestamp for when the task set was created.</p>
@@ -428,6 +493,11 @@ namespace Model
     /**
      * <p>The Unix timestamp for when the task set was last updated.</p>
      */
+    inline bool UpdatedAtHasBeenSet() const { return m_updatedAtHasBeenSet; }
+
+    /**
+     * <p>The Unix timestamp for when the task set was last updated.</p>
+     */
     inline void SetUpdatedAt(const Aws::Utils::DateTime& value) { m_updatedAtHasBeenSet = true; m_updatedAt = value; }
 
     /**
@@ -454,6 +524,15 @@ namespace Model
      * Guide</i>.</p>
      */
     inline const LaunchType& GetLaunchType() const{ return m_launchType; }
+
+    /**
+     * <p>The launch type the tasks in the task set are using. For more information,
+     * see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon
+     * ECS Launch Types</a> in the <i>Amazon Elastic Container Service Developer
+     * Guide</i>.</p>
+     */
+    inline bool LaunchTypeHasBeenSet() const { return m_launchTypeHasBeenSet; }
 
     /**
      * <p>The launch type the tasks in the task set are using. For more information,
@@ -502,6 +581,17 @@ namespace Model
      * Developer Guide</i>.</p>
      */
     inline const Aws::String& GetPlatformVersion() const{ return m_platformVersion; }
+
+    /**
+     * <p>The platform version on which the tasks in the task set are running. A
+     * platform version is only specified for tasks using the Fargate launch type. If
+     * one is not specified, the <code>LATEST</code> platform version is used by
+     * default. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS
+     * Fargate Platform Versions</a> in the <i>Amazon Elastic Container Service
+     * Developer Guide</i>.</p>
+     */
+    inline bool PlatformVersionHasBeenSet() const { return m_platformVersionHasBeenSet; }
 
     /**
      * <p>The platform version on which the tasks in the task set are running. A
@@ -578,6 +668,11 @@ namespace Model
     /**
      * <p>The network configuration for the task set.</p>
      */
+    inline bool NetworkConfigurationHasBeenSet() const { return m_networkConfigurationHasBeenSet; }
+
+    /**
+     * <p>The network configuration for the task set.</p>
+     */
     inline void SetNetworkConfiguration(const NetworkConfiguration& value) { m_networkConfigurationHasBeenSet = true; m_networkConfiguration = value; }
 
     /**
@@ -600,6 +695,11 @@ namespace Model
      * <p>Details on a load balancer that is used with a task set.</p>
      */
     inline const Aws::Vector<LoadBalancer>& GetLoadBalancers() const{ return m_loadBalancers; }
+
+    /**
+     * <p>Details on a load balancer that is used with a task set.</p>
+     */
+    inline bool LoadBalancersHasBeenSet() const { return m_loadBalancersHasBeenSet; }
 
     /**
      * <p>Details on a load balancer that is used with a task set.</p>
@@ -642,6 +742,12 @@ namespace Model
      * <p>A floating-point percentage of the desired number of tasks to place and keep
      * running in the service.</p>
      */
+    inline bool ScaleHasBeenSet() const { return m_scaleHasBeenSet; }
+
+    /**
+     * <p>A floating-point percentage of the desired number of tasks to place and keep
+     * running in the service.</p>
+     */
     inline void SetScale(const Scale& value) { m_scaleHasBeenSet = true; m_scale = value; }
 
     /**
@@ -676,6 +782,20 @@ namespace Model
      * <code>STABILIZING</code>.</p>
      */
     inline const StabilityStatus& GetStabilityStatus() const{ return m_stabilityStatus; }
+
+    /**
+     * <p>The stability status, which indicates whether the task set has reached a
+     * steady state. If the following conditions are met, the task set will be in
+     * <code>STEADY_STATE</code>:</p> <ul> <li> <p>The task <code>runningCount</code>
+     * is equal to the <code>computedDesiredCount</code>.</p> </li> <li> <p>The
+     * <code>pendingCount</code> is <code>0</code>.</p> </li> <li> <p>There are no
+     * tasks running on container instances in the <code>DRAINING</code> status.</p>
+     * </li> <li> <p>All tasks are reporting a healthy status from the load balancers,
+     * service discovery, and container health checks.</p> </li> </ul> <p>If any of
+     * those conditions are not met, the stability status returns
+     * <code>STABILIZING</code>.</p>
+     */
+    inline bool StabilityStatusHasBeenSet() const { return m_stabilityStatusHasBeenSet; }
 
     /**
      * <p>The stability status, which indicates whether the task set has reached a
@@ -738,6 +858,11 @@ namespace Model
      * <p>The Unix timestamp for when the task set stability status was retrieved.</p>
      */
     inline const Aws::Utils::DateTime& GetStabilityStatusAt() const{ return m_stabilityStatusAt; }
+
+    /**
+     * <p>The Unix timestamp for when the task set stability status was retrieved.</p>
+     */
+    inline bool StabilityStatusAtHasBeenSet() const { return m_stabilityStatusAtHasBeenSet; }
 
     /**
      * <p>The Unix timestamp for when the task set stability status was retrieved.</p>

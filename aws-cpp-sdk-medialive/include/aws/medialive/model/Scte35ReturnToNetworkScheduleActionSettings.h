@@ -53,6 +53,11 @@ namespace Model
     /**
      * The splice_event_id for the SCTE-35 splice_insert, as defined in SCTE-35.
      */
+    inline bool SpliceEventIdHasBeenSet() const { return m_spliceEventIdHasBeenSet; }
+
+    /**
+     * The splice_event_id for the SCTE-35 splice_insert, as defined in SCTE-35.
+     */
     inline void SetSpliceEventId(long long value) { m_spliceEventIdHasBeenSet = true; m_spliceEventId = value; }
 
     /**

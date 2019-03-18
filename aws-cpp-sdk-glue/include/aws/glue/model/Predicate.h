@@ -60,6 +60,12 @@ namespace Model
      * <p>Optional field if only one condition is listed. If multiple conditions are
      * listed, then this field is required.</p>
      */
+    inline bool LogicalHasBeenSet() const { return m_logicalHasBeenSet; }
+
+    /**
+     * <p>Optional field if only one condition is listed. If multiple conditions are
+     * listed, then this field is required.</p>
+     */
     inline void SetLogical(const Logical& value) { m_logicalHasBeenSet = true; m_logical = value; }
 
     /**
@@ -85,6 +91,11 @@ namespace Model
      * <p>A list of the conditions that determine when the trigger will fire.</p>
      */
     inline const Aws::Vector<Condition>& GetConditions() const{ return m_conditions; }
+
+    /**
+     * <p>A list of the conditions that determine when the trigger will fire.</p>
+     */
+    inline bool ConditionsHasBeenSet() const { return m_conditionsHasBeenSet; }
 
     /**
      * <p>A list of the conditions that determine when the trigger will fire.</p>

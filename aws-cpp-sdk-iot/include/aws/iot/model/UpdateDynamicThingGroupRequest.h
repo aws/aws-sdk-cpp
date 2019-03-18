@@ -51,6 +51,11 @@ namespace Model
     /**
      * <p>The name of the dynamic thing group to update.</p>
      */
+    inline bool ThingGroupNameHasBeenSet() const { return m_thingGroupNameHasBeenSet; }
+
+    /**
+     * <p>The name of the dynamic thing group to update.</p>
+     */
     inline void SetThingGroupName(const Aws::String& value) { m_thingGroupNameHasBeenSet = true; m_thingGroupName = value; }
 
     /**
@@ -87,6 +92,11 @@ namespace Model
     /**
      * <p>The dynamic thing group properties to update.</p>
      */
+    inline bool ThingGroupPropertiesHasBeenSet() const { return m_thingGroupPropertiesHasBeenSet; }
+
+    /**
+     * <p>The dynamic thing group properties to update.</p>
+     */
     inline void SetThingGroupProperties(const ThingGroupProperties& value) { m_thingGroupPropertiesHasBeenSet = true; m_thingGroupProperties = value; }
 
     /**
@@ -113,6 +123,11 @@ namespace Model
     /**
      * <p>The expected version of the dynamic thing group to update.</p>
      */
+    inline bool ExpectedVersionHasBeenSet() const { return m_expectedVersionHasBeenSet; }
+
+    /**
+     * <p>The expected version of the dynamic thing group to update.</p>
+     */
     inline void SetExpectedVersion(long long value) { m_expectedVersionHasBeenSet = true; m_expectedVersion = value; }
 
     /**
@@ -126,6 +141,12 @@ namespace Model
      * supported: 'AWS_Things'.</p> </note>
      */
     inline const Aws::String& GetIndexName() const{ return m_indexName; }
+
+    /**
+     * <p>The dynamic thing group index to update.</p> <note> <p>Currently one index is
+     * supported: 'AWS_Things'.</p> </note>
+     */
+    inline bool IndexNameHasBeenSet() const { return m_indexNameHasBeenSet; }
 
     /**
      * <p>The dynamic thing group index to update.</p> <note> <p>Currently one index is
@@ -172,6 +193,11 @@ namespace Model
     /**
      * <p>The dynamic thing group search query string to update.</p>
      */
+    inline bool QueryStringHasBeenSet() const { return m_queryStringHasBeenSet; }
+
+    /**
+     * <p>The dynamic thing group search query string to update.</p>
+     */
     inline void SetQueryString(const Aws::String& value) { m_queryStringHasBeenSet = true; m_queryString = value; }
 
     /**
@@ -206,6 +232,13 @@ namespace Model
      * defaults to this value.</p> </note>
      */
     inline const Aws::String& GetQueryVersion() const{ return m_queryVersion; }
+
+    /**
+     * <p>The dynamic thing group query version to update.</p> <note> <p>Currently one
+     * query version is supported: "2017-09-30". If not specified, the query version
+     * defaults to this value.</p> </note>
+     */
+    inline bool QueryVersionHasBeenSet() const { return m_queryVersionHasBeenSet; }
 
     /**
      * <p>The dynamic thing group query version to update.</p> <note> <p>Currently one

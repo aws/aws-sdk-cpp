@@ -54,6 +54,12 @@ namespace Model
      * <p>The name of the model package. The name must have 1 to 63 characters. Valid
      * characters are a-z, A-Z, 0-9, and - (hyphen).</p>
      */
+    inline bool ModelPackageNameHasBeenSet() const { return m_modelPackageNameHasBeenSet; }
+
+    /**
+     * <p>The name of the model package. The name must have 1 to 63 characters. Valid
+     * characters are a-z, A-Z, 0-9, and - (hyphen).</p>
+     */
     inline void SetModelPackageName(const Aws::String& value) { m_modelPackageNameHasBeenSet = true; m_modelPackageName = value; }
 
     /**

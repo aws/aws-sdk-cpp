@@ -50,6 +50,11 @@ namespace Model
     /**
      * <p>A unique name for the fleet.</p>
      */
+    inline bool FleetNameHasBeenSet() const { return m_fleetNameHasBeenSet; }
+
+    /**
+     * <p>A unique name for the fleet.</p>
+     */
     inline void SetFleetName(const Aws::String& value) { m_fleetNameHasBeenSet = true; m_fleetName = value; }
 
     /**
@@ -82,6 +87,11 @@ namespace Model
      * <p>The fleet name to display.</p>
      */
     inline const Aws::String& GetDisplayName() const{ return m_displayName; }
+
+    /**
+     * <p>The fleet name to display.</p>
+     */
+    inline bool DisplayNameHasBeenSet() const { return m_displayNameHasBeenSet; }
 
     /**
      * <p>The fleet name to display.</p>
@@ -119,6 +129,12 @@ namespace Model
      * closest AWS Region to users, which may be outside of your home Region.</p>
      */
     inline bool GetOptimizeForEndUserLocation() const{ return m_optimizeForEndUserLocation; }
+
+    /**
+     * <p>The option to optimize for better performance by routing traffic through the
+     * closest AWS Region to users, which may be outside of your home Region.</p>
+     */
+    inline bool OptimizeForEndUserLocationHasBeenSet() const { return m_optimizeForEndUserLocationHasBeenSet; }
 
     /**
      * <p>The option to optimize for better performance by routing traffic through the

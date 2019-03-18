@@ -59,6 +59,12 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the new AWS Lambda function that is used to
      * preprocess the records in the stream.</p>
      */
+    inline bool ResourceARNUpdateHasBeenSet() const { return m_resourceARNUpdateHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the new AWS Lambda function that is used to
+     * preprocess the records in the stream.</p>
+     */
     inline void SetResourceARNUpdate(const Aws::String& value) { m_resourceARNUpdateHasBeenSet = true; m_resourceARNUpdate = value; }
 
     /**

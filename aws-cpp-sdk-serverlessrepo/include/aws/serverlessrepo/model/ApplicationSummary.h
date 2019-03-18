@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The application Amazon Resource Name (ARN).</p>
      */
+    inline bool ApplicationIdHasBeenSet() const { return m_applicationIdHasBeenSet; }
+
+    /**
+     * <p>The application Amazon Resource Name (ARN).</p>
+     */
     inline void SetApplicationId(const Aws::String& value) { m_applicationIdHasBeenSet = true; m_applicationId = value; }
 
     /**
@@ -89,6 +94,12 @@ namespace Model
      * length=127.</p><p>Pattern "^[a-z0-9](([a-z0-9]|-(?!-))*[a-z0-9])?$";</p>
      */
     inline const Aws::String& GetAuthor() const{ return m_author; }
+
+    /**
+     * <p>The name of the author publishing the app.</p><p>Minimum length=1. Maximum
+     * length=127.</p><p>Pattern "^[a-z0-9](([a-z0-9]|-(?!-))*[a-z0-9])?$";</p>
+     */
+    inline bool AuthorHasBeenSet() const { return m_authorHasBeenSet; }
 
     /**
      * <p>The name of the author publishing the app.</p><p>Minimum length=1. Maximum
@@ -135,6 +146,11 @@ namespace Model
     /**
      * <p>The date and time this resource was created.</p>
      */
+    inline bool CreationTimeHasBeenSet() const { return m_creationTimeHasBeenSet; }
+
+    /**
+     * <p>The date and time this resource was created.</p>
+     */
     inline void SetCreationTime(const Aws::String& value) { m_creationTimeHasBeenSet = true; m_creationTime = value; }
 
     /**
@@ -168,6 +184,12 @@ namespace Model
      * length=256</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
+
+    /**
+     * <p>The description of the application.</p><p>Minimum length=1. Maximum
+     * length=256</p>
+     */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
 
     /**
      * <p>The description of the application.</p><p>Minimum length=1. Maximum
@@ -216,6 +238,12 @@ namespace Model
      * <p>A URL with more information about the application, for example the location
      * of your GitHub repository for the application.</p>
      */
+    inline bool HomePageUrlHasBeenSet() const { return m_homePageUrlHasBeenSet; }
+
+    /**
+     * <p>A URL with more information about the application, for example the location
+     * of your GitHub repository for the application.</p>
+     */
     inline void SetHomePageUrl(const Aws::String& value) { m_homePageUrlHasBeenSet = true; m_homePageUrl = value; }
 
     /**
@@ -255,6 +283,13 @@ namespace Model
      * "^[a-zA-Z0-9+\\-_:\\/@]+$";</p>
      */
     inline const Aws::Vector<Aws::String>& GetLabels() const{ return m_labels; }
+
+    /**
+     * <p>Labels to improve discovery of apps in search results.</p><p>Minimum
+     * length=1. Maximum length=127. Maximum number of labels: 10</p><p>Pattern:
+     * "^[a-zA-Z0-9+\\-_:\\/@]+$";</p>
+     */
+    inline bool LabelsHasBeenSet() const { return m_labelsHasBeenSet; }
 
     /**
      * <p>Labels to improve discovery of apps in search results.</p><p>Minimum
@@ -316,6 +351,12 @@ namespace Model
      * <p>The name of the application.</p><p>Minimum length=1. Maximum
      * length=140</p><p>Pattern: "[a-zA-Z0-9\\-]+";</p>
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>The name of the application.</p><p>Minimum length=1. Maximum
+     * length=140</p><p>Pattern: "[a-zA-Z0-9\\-]+";</p>
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
@@ -354,6 +395,12 @@ namespace Model
      * href="https://spdx.org/licenses/">https://spdx.org/licenses/</a>.</p>
      */
     inline const Aws::String& GetSpdxLicenseId() const{ return m_spdxLicenseId; }
+
+    /**
+     * <p>A valid identifier from <a
+     * href="https://spdx.org/licenses/">https://spdx.org/licenses/</a>.</p>
+     */
+    inline bool SpdxLicenseIdHasBeenSet() const { return m_spdxLicenseIdHasBeenSet; }
 
     /**
      * <p>A valid identifier from <a

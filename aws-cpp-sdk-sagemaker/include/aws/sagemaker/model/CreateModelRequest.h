@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The name of the new model.</p>
      */
+    inline bool ModelNameHasBeenSet() const { return m_modelNameHasBeenSet; }
+
+    /**
+     * <p>The name of the new model.</p>
+     */
     inline void SetModelName(const Aws::String& value) { m_modelNameHasBeenSet = true; m_modelName = value; }
 
     /**
@@ -96,6 +101,13 @@ namespace Model
      * associated artifacts, and custom environment map that the inference code uses
      * when the model is deployed for predictions. </p>
      */
+    inline bool PrimaryContainerHasBeenSet() const { return m_primaryContainerHasBeenSet; }
+
+    /**
+     * <p>The location of the primary docker image containing inference code,
+     * associated artifacts, and custom environment map that the inference code uses
+     * when the model is deployed for predictions. </p>
+     */
     inline void SetPrimaryContainer(const ContainerDefinition& value) { m_primaryContainerHasBeenSet = true; m_primaryContainer = value; }
 
     /**
@@ -124,6 +136,11 @@ namespace Model
      * <p>Specifies the containers in the inference pipeline.</p>
      */
     inline const Aws::Vector<ContainerDefinition>& GetContainers() const{ return m_containers; }
+
+    /**
+     * <p>Specifies the containers in the inference pipeline.</p>
+     */
+    inline bool ContainersHasBeenSet() const { return m_containersHasBeenSet; }
 
     /**
      * <p>Specifies the containers in the inference pipeline.</p>
@@ -167,6 +184,18 @@ namespace Model
      * permission.</p> </note>
      */
     inline const Aws::String& GetExecutionRoleArn() const{ return m_executionRoleArn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the IAM role that Amazon SageMaker can
+     * assume to access model artifacts and docker image for deployment on ML compute
+     * instances or for batch transform jobs. Deploying on ML compute instances is part
+     * of model hosting. For more information, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon
+     * SageMaker Roles</a>. </p> <note> <p>To be able to pass this role to Amazon
+     * SageMaker, the caller of this API must have the <code>iam:PassRole</code>
+     * permission.</p> </note>
+     */
+    inline bool ExecutionRoleArnHasBeenSet() const { return m_executionRoleArnHasBeenSet; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the IAM role that Amazon SageMaker can
@@ -255,6 +284,14 @@ namespace Model
      * Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management User
      * Guide</i>. </p>
      */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
+
+    /**
+     * <p>An array of key-value pairs. For more information, see <a
+     * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-what">Using
+     * Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management User
+     * Guide</i>. </p>
+     */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     /**
@@ -320,6 +357,18 @@ namespace Model
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/batch-vpc.html">Protect
      * Data in Batch Transform Jobs by Using an Amazon Virtual Private Cloud</a>.</p>
      */
+    inline bool VpcConfigHasBeenSet() const { return m_vpcConfigHasBeenSet; }
+
+    /**
+     * <p>A <a>VpcConfig</a> object that specifies the VPC that you want your model to
+     * connect to. Control access to and from your model container by configuring the
+     * VPC. <code>VpcConfig</code> is used in hosting services and in batch transform.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/host-vpc.html">Protect
+     * Endpoints by Using an Amazon Virtual Private Cloud</a> and <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/batch-vpc.html">Protect
+     * Data in Batch Transform Jobs by Using an Amazon Virtual Private Cloud</a>.</p>
+     */
     inline void SetVpcConfig(const VpcConfig& value) { m_vpcConfigHasBeenSet = true; m_vpcConfig = value; }
 
     /**
@@ -365,6 +414,13 @@ namespace Model
      * built-in algorithm does not support network isolation.</p> </note>
      */
     inline bool GetEnableNetworkIsolation() const{ return m_enableNetworkIsolation; }
+
+    /**
+     * <p>Isolates the model container. No inbound or outbound network calls can be
+     * made to or from the model container.</p> <note> <p>The Semantic Segmentation
+     * built-in algorithm does not support network isolation.</p> </note>
+     */
+    inline bool EnableNetworkIsolationHasBeenSet() const { return m_enableNetworkIsolationHasBeenSet; }
 
     /**
      * <p>Isolates the model container. No inbound or outbound network calls can be

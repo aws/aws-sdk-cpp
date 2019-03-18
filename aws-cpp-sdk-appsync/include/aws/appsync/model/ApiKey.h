@@ -78,6 +78,11 @@ namespace Model
     /**
      * <p>The API key ID.</p>
      */
+    inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
+
+    /**
+     * <p>The API key ID.</p>
+     */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
     /**
@@ -110,6 +115,11 @@ namespace Model
      * <p>A description of the purpose of the API key.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
+
+    /**
+     * <p>A description of the purpose of the API key.</p>
+     */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
 
     /**
      * <p>A description of the purpose of the API key.</p>
@@ -147,6 +157,12 @@ namespace Model
      * since the epoch, rounded down to the nearest hour.</p>
      */
     inline long long GetExpires() const{ return m_expires; }
+
+    /**
+     * <p>The time after which the API key expires. The date is represented as seconds
+     * since the epoch, rounded down to the nearest hour.</p>
+     */
+    inline bool ExpiresHasBeenSet() const { return m_expiresHasBeenSet; }
 
     /**
      * <p>The time after which the API key expires. The date is represented as seconds

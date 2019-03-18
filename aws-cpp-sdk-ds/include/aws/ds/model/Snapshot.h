@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p>The directory identifier.</p>
      */
+    inline bool DirectoryIdHasBeenSet() const { return m_directoryIdHasBeenSet; }
+
+    /**
+     * <p>The directory identifier.</p>
+     */
     inline void SetDirectoryId(const Aws::String& value) { m_directoryIdHasBeenSet = true; m_directoryId = value; }
 
     /**
@@ -90,6 +95,11 @@ namespace Model
      * <p>The snapshot identifier.</p>
      */
     inline const Aws::String& GetSnapshotId() const{ return m_snapshotId; }
+
+    /**
+     * <p>The snapshot identifier.</p>
+     */
+    inline bool SnapshotIdHasBeenSet() const { return m_snapshotIdHasBeenSet; }
 
     /**
      * <p>The snapshot identifier.</p>
@@ -130,6 +140,11 @@ namespace Model
     /**
      * <p>The snapshot type.</p>
      */
+    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
+
+    /**
+     * <p>The snapshot type.</p>
+     */
     inline void SetType(const SnapshotType& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
@@ -152,6 +167,11 @@ namespace Model
      * <p>The descriptive name of the snapshot.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
+
+    /**
+     * <p>The descriptive name of the snapshot.</p>
+     */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
      * <p>The descriptive name of the snapshot.</p>
@@ -192,6 +212,11 @@ namespace Model
     /**
      * <p>The snapshot status.</p>
      */
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
+
+    /**
+     * <p>The snapshot status.</p>
+     */
     inline void SetStatus(const SnapshotStatus& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
@@ -214,6 +239,11 @@ namespace Model
      * <p>The date and time that the snapshot was taken.</p>
      */
     inline const Aws::Utils::DateTime& GetStartTime() const{ return m_startTime; }
+
+    /**
+     * <p>The date and time that the snapshot was taken.</p>
+     */
+    inline bool StartTimeHasBeenSet() const { return m_startTimeHasBeenSet; }
 
     /**
      * <p>The date and time that the snapshot was taken.</p>

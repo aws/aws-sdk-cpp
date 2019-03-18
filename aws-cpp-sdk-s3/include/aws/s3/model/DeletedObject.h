@@ -55,6 +55,11 @@ namespace Model
     /**
      * <p/>
      */
+    inline bool KeyHasBeenSet() const { return m_keyHasBeenSet; }
+
+    /**
+     * <p/>
+     */
     inline void SetKey(const Aws::String& value) { m_keyHasBeenSet = true; m_key = value; }
 
     /**
@@ -87,6 +92,11 @@ namespace Model
      * <p/>
      */
     inline const Aws::String& GetVersionId() const{ return m_versionId; }
+
+    /**
+     * <p/>
+     */
+    inline bool VersionIdHasBeenSet() const { return m_versionIdHasBeenSet; }
 
     /**
      * <p/>
@@ -127,6 +137,11 @@ namespace Model
     /**
      * <p/>
      */
+    inline bool DeleteMarkerHasBeenSet() const { return m_deleteMarkerHasBeenSet; }
+
+    /**
+     * <p/>
+     */
     inline void SetDeleteMarker(bool value) { m_deleteMarkerHasBeenSet = true; m_deleteMarker = value; }
 
     /**
@@ -139,6 +154,11 @@ namespace Model
      * <p/>
      */
     inline const Aws::String& GetDeleteMarkerVersionId() const{ return m_deleteMarkerVersionId; }
+
+    /**
+     * <p/>
+     */
+    inline bool DeleteMarkerVersionIdHasBeenSet() const { return m_deleteMarkerVersionIdHasBeenSet; }
 
     /**
      * <p/>

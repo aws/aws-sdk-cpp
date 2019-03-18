@@ -62,6 +62,14 @@ namespace Model
      * for using a custom authorizer, or <code>COGNITO_USER_POOLS</code> for using a
      * Cognito user pool.</p>
      */
+    inline bool AuthorizationTypeHasBeenSet() const { return m_authorizationTypeHasBeenSet; }
+
+    /**
+     * <p>The method's authorization type. Valid values are <code>NONE</code> for open
+     * access, <code>AWS_IAM</code> for using AWS IAM permissions, <code>CUSTOM</code>
+     * for using a custom authorizer, or <code>COGNITO_USER_POOLS</code> for using a
+     * Cognito user pool.</p>
+     */
     inline void SetAuthorizationType(const Aws::String& value) { m_authorizationTypeHasBeenSet = true; m_authorizationType = value; }
 
     /**
@@ -109,6 +117,11 @@ namespace Model
      * <p>Specifies whether the method requires a valid <a>ApiKey</a>.</p>
      */
     inline bool GetApiKeyRequired() const{ return m_apiKeyRequired; }
+
+    /**
+     * <p>Specifies whether the method requires a valid <a>ApiKey</a>.</p>
+     */
+    inline bool ApiKeyRequiredHasBeenSet() const { return m_apiKeyRequiredHasBeenSet; }
 
     /**
      * <p>Specifies whether the method requires a valid <a>ApiKey</a>.</p>

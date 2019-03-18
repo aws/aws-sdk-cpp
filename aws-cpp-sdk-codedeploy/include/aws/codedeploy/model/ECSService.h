@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p> The name of the target Amazon ECS service. </p>
      */
+    inline bool ServiceNameHasBeenSet() const { return m_serviceNameHasBeenSet; }
+
+    /**
+     * <p> The name of the target Amazon ECS service. </p>
+     */
     inline void SetServiceName(const Aws::String& value) { m_serviceNameHasBeenSet = true; m_serviceName = value; }
 
     /**
@@ -88,6 +93,11 @@ namespace Model
      * <p> The name of the cluster that the Amazon ECS service is associated with. </p>
      */
     inline const Aws::String& GetClusterName() const{ return m_clusterName; }
+
+    /**
+     * <p> The name of the cluster that the Amazon ECS service is associated with. </p>
+     */
+    inline bool ClusterNameHasBeenSet() const { return m_clusterNameHasBeenSet; }
 
     /**
      * <p> The name of the cluster that the Amazon ECS service is associated with. </p>

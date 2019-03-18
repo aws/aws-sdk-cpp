@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the task to start.</p>
      */
+    inline bool TaskArnHasBeenSet() const { return m_taskArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the task to start.</p>
+     */
     inline void SetTaskArn(const Aws::String& value) { m_taskArnHasBeenSet = true; m_taskArn = value; }
 
     /**
@@ -86,6 +91,9 @@ namespace Model
 
     
     inline const Options& GetOverrideOptions() const{ return m_overrideOptions; }
+
+    
+    inline bool OverrideOptionsHasBeenSet() const { return m_overrideOptionsHasBeenSet; }
 
     
     inline void SetOverrideOptions(const Options& value) { m_overrideOptionsHasBeenSet = true; m_overrideOptions = value; }

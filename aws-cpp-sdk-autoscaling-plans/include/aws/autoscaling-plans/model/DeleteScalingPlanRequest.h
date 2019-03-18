@@ -52,6 +52,11 @@ namespace Model
     /**
      * <p>The name of the scaling plan.</p>
      */
+    inline bool ScalingPlanNameHasBeenSet() const { return m_scalingPlanNameHasBeenSet; }
+
+    /**
+     * <p>The name of the scaling plan.</p>
+     */
     inline void SetScalingPlanName(const Aws::String& value) { m_scalingPlanNameHasBeenSet = true; m_scalingPlanName = value; }
 
     /**
@@ -84,6 +89,11 @@ namespace Model
      * <p>The version number of the scaling plan.</p>
      */
     inline long long GetScalingPlanVersion() const{ return m_scalingPlanVersion; }
+
+    /**
+     * <p>The version number of the scaling plan.</p>
+     */
+    inline bool ScalingPlanVersionHasBeenSet() const { return m_scalingPlanVersionHasBeenSet; }
 
     /**
      * <p>The version number of the scaling plan.</p>

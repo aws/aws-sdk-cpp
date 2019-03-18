@@ -53,6 +53,11 @@ namespace Model
     /**
      * <p>The identifier of the image.</p>
      */
+    inline bool ImageIdsHasBeenSet() const { return m_imageIdsHasBeenSet; }
+
+    /**
+     * <p>The identifier of the image.</p>
+     */
     inline void SetImageIds(const Aws::Vector<Aws::String>& value) { m_imageIdsHasBeenSet = true; m_imageIds = value; }
 
     /**
@@ -96,6 +101,12 @@ namespace Model
      * <p>If you received a <code>NextToken</code> from a previous call that was
      * paginated, provide this token to receive the next set of results.</p>
      */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
+
+    /**
+     * <p>If you received a <code>NextToken</code> from a previous call that was
+     * paginated, provide this token to receive the next set of results.</p>
+     */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
     /**
@@ -133,6 +144,11 @@ namespace Model
      * <p>The maximum number of items to return.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
+
+    /**
+     * <p>The maximum number of items to return.</p>
+     */
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
 
     /**
      * <p>The maximum number of items to return.</p>

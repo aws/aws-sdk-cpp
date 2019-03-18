@@ -58,6 +58,12 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the resource you want to remove the tags
      * from.</p>
      */
+    inline bool ResourceARNHasBeenSet() const { return m_resourceARNHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the resource you want to remove the tags
+     * from.</p>
+     */
     inline void SetResourceARN(const Aws::String& value) { m_resourceARNHasBeenSet = true; m_resourceARN = value; }
 
     /**
@@ -96,6 +102,12 @@ namespace Model
      * composed of a key/value pair.</p>
      */
     inline const Aws::Vector<Aws::String>& GetTagKeys() const{ return m_tagKeys; }
+
+    /**
+     * <p>The keys of the tags you want to remove from the specified resource. A tag is
+     * composed of a key/value pair.</p>
+     */
+    inline bool TagKeysHasBeenSet() const { return m_tagKeysHasBeenSet; }
 
     /**
      * <p>The keys of the tags you want to remove from the specified resource. A tag is

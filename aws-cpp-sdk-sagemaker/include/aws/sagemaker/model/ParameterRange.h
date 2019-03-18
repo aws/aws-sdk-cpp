@@ -60,6 +60,12 @@ namespace Model
      * <p>A <code>IntegerParameterRangeSpecification</code> object that defines the
      * possible values for an integer hyperparameter.</p>
      */
+    inline bool IntegerParameterRangeSpecificationHasBeenSet() const { return m_integerParameterRangeSpecificationHasBeenSet; }
+
+    /**
+     * <p>A <code>IntegerParameterRangeSpecification</code> object that defines the
+     * possible values for an integer hyperparameter.</p>
+     */
     inline void SetIntegerParameterRangeSpecification(const IntegerParameterRangeSpecification& value) { m_integerParameterRangeSpecificationHasBeenSet = true; m_integerParameterRangeSpecification = value; }
 
     /**
@@ -91,6 +97,12 @@ namespace Model
      * <p>A <code>ContinuousParameterRangeSpecification</code> object that defines the
      * possible values for a continuous hyperparameter.</p>
      */
+    inline bool ContinuousParameterRangeSpecificationHasBeenSet() const { return m_continuousParameterRangeSpecificationHasBeenSet; }
+
+    /**
+     * <p>A <code>ContinuousParameterRangeSpecification</code> object that defines the
+     * possible values for a continuous hyperparameter.</p>
+     */
     inline void SetContinuousParameterRangeSpecification(const ContinuousParameterRangeSpecification& value) { m_continuousParameterRangeSpecificationHasBeenSet = true; m_continuousParameterRangeSpecification = value; }
 
     /**
@@ -117,6 +129,12 @@ namespace Model
      * possible values for a categorical hyperparameter.</p>
      */
     inline const CategoricalParameterRangeSpecification& GetCategoricalParameterRangeSpecification() const{ return m_categoricalParameterRangeSpecification; }
+
+    /**
+     * <p>A <code>CategoricalParameterRangeSpecification</code> object that defines the
+     * possible values for a categorical hyperparameter.</p>
+     */
+    inline bool CategoricalParameterRangeSpecificationHasBeenSet() const { return m_categoricalParameterRangeSpecificationHasBeenSet; }
 
     /**
      * <p>A <code>CategoricalParameterRangeSpecification</code> object that defines the

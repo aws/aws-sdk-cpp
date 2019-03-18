@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The name of the state.</p>
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>The name of the state.</p>
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
@@ -88,6 +93,11 @@ namespace Model
      * <p>The string that contains the JSON input data for the state.</p>
      */
     inline const Aws::String& GetInput() const{ return m_input; }
+
+    /**
+     * <p>The string that contains the JSON input data for the state.</p>
+     */
+    inline bool InputHasBeenSet() const { return m_inputHasBeenSet; }
 
     /**
      * <p>The string that contains the JSON input data for the state.</p>

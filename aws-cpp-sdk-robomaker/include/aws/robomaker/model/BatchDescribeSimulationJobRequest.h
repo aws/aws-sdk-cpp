@@ -51,6 +51,11 @@ namespace Model
     /**
      * <p>A list of Amazon Resource Names (ARNs) of simulation jobs to describe.</p>
      */
+    inline bool JobsHasBeenSet() const { return m_jobsHasBeenSet; }
+
+    /**
+     * <p>A list of Amazon Resource Names (ARNs) of simulation jobs to describe.</p>
+     */
     inline void SetJobs(const Aws::Vector<Aws::String>& value) { m_jobsHasBeenSet = true; m_jobs = value; }
 
     /**

@@ -56,6 +56,13 @@ namespace Model
      * you do not specify a value for this parameter, then the operation uses the
      * default value of <code>6</code>.</p>
      */
+    inline bool MinimumPasswordLengthHasBeenSet() const { return m_minimumPasswordLengthHasBeenSet; }
+
+    /**
+     * <p>The minimum number of characters allowed in an IAM user password.</p> <p>If
+     * you do not specify a value for this parameter, then the operation uses the
+     * default value of <code>6</code>.</p>
+     */
     inline void SetMinimumPasswordLength(int value) { m_minimumPasswordLengthHasBeenSet = true; m_minimumPasswordLength = value; }
 
     /**
@@ -74,6 +81,15 @@ namespace Model
      * passwords do not require at least one symbol character.</p>
      */
     inline bool GetRequireSymbols() const{ return m_requireSymbols; }
+
+    /**
+     * <p>Specifies whether IAM user passwords must contain at least one of the
+     * following non-alphanumeric characters:</p> <p>! @ # $ % ^ &amp; * ( ) _ + - = [
+     * ] { } | '</p> <p>If you do not specify a value for this parameter, then the
+     * operation uses the default value of <code>false</code>. The result is that
+     * passwords do not require at least one symbol character.</p>
+     */
+    inline bool RequireSymbolsHasBeenSet() const { return m_requireSymbolsHasBeenSet; }
 
     /**
      * <p>Specifies whether IAM user passwords must contain at least one of the
@@ -108,6 +124,14 @@ namespace Model
      * then the operation uses the default value of <code>false</code>. The result is
      * that passwords do not require at least one numeric character.</p>
      */
+    inline bool RequireNumbersHasBeenSet() const { return m_requireNumbersHasBeenSet; }
+
+    /**
+     * <p>Specifies whether IAM user passwords must contain at least one numeric
+     * character (0 to 9).</p> <p>If you do not specify a value for this parameter,
+     * then the operation uses the default value of <code>false</code>. The result is
+     * that passwords do not require at least one numeric character.</p>
+     */
     inline void SetRequireNumbers(bool value) { m_requireNumbersHasBeenSet = true; m_requireNumbers = value; }
 
     /**
@@ -127,6 +151,15 @@ namespace Model
      * uppercase character.</p>
      */
     inline bool GetRequireUppercaseCharacters() const{ return m_requireUppercaseCharacters; }
+
+    /**
+     * <p>Specifies whether IAM user passwords must contain at least one uppercase
+     * character from the ISO basic Latin alphabet (A to Z).</p> <p>If you do not
+     * specify a value for this parameter, then the operation uses the default value of
+     * <code>false</code>. The result is that passwords do not require at least one
+     * uppercase character.</p>
+     */
+    inline bool RequireUppercaseCharactersHasBeenSet() const { return m_requireUppercaseCharactersHasBeenSet; }
 
     /**
      * <p>Specifies whether IAM user passwords must contain at least one uppercase
@@ -155,6 +188,15 @@ namespace Model
      * lowercase character.</p>
      */
     inline bool GetRequireLowercaseCharacters() const{ return m_requireLowercaseCharacters; }
+
+    /**
+     * <p>Specifies whether IAM user passwords must contain at least one lowercase
+     * character from the ISO basic Latin alphabet (a to z).</p> <p>If you do not
+     * specify a value for this parameter, then the operation uses the default value of
+     * <code>false</code>. The result is that passwords do not require at least one
+     * lowercase character.</p>
+     */
+    inline bool RequireLowercaseCharactersHasBeenSet() const { return m_requireLowercaseCharactersHasBeenSet; }
 
     /**
      * <p>Specifies whether IAM user passwords must contain at least one lowercase
@@ -195,6 +237,17 @@ namespace Model
      * default value of <code>false</code>. The result is that IAM users in the account
      * do not automatically have permissions to change their own password.</p>
      */
+    inline bool AllowUsersToChangePasswordHasBeenSet() const { return m_allowUsersToChangePasswordHasBeenSet; }
+
+    /**
+     * <p> Allows all IAM users in your account to use the AWS Management Console to
+     * change their own passwords. For more information, see <a
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/HowToPwdIAMUser.html">Letting
+     * IAM Users Change Their Own Passwords</a> in the <i>IAM User Guide</i>.</p> <p>If
+     * you do not specify a value for this parameter, then the operation uses the
+     * default value of <code>false</code>. The result is that IAM users in the account
+     * do not automatically have permissions to change their own password.</p>
+     */
     inline void SetAllowUsersToChangePassword(bool value) { m_allowUsersToChangePasswordHasBeenSet = true; m_allowUsersToChangePassword = value; }
 
     /**
@@ -215,6 +268,13 @@ namespace Model
      * <code>0</code>. The result is that IAM user passwords never expire.</p>
      */
     inline int GetMaxPasswordAge() const{ return m_maxPasswordAge; }
+
+    /**
+     * <p>The number of days that an IAM user password is valid.</p> <p>If you do not
+     * specify a value for this parameter, then the operation uses the default value of
+     * <code>0</code>. The result is that IAM user passwords never expire.</p>
+     */
+    inline bool MaxPasswordAgeHasBeenSet() const { return m_maxPasswordAgeHasBeenSet; }
 
     /**
      * <p>The number of days that an IAM user password is valid.</p> <p>If you do not
@@ -245,6 +305,14 @@ namespace Model
      * operation uses the default value of <code>0</code>. The result is that IAM users
      * are not prevented from reusing previous passwords.</p>
      */
+    inline bool PasswordReusePreventionHasBeenSet() const { return m_passwordReusePreventionHasBeenSet; }
+
+    /**
+     * <p>Specifies the number of previous passwords that IAM users are prevented from
+     * reusing.</p> <p>If you do not specify a value for this parameter, then the
+     * operation uses the default value of <code>0</code>. The result is that IAM users
+     * are not prevented from reusing previous passwords.</p>
+     */
     inline void SetPasswordReusePrevention(int value) { m_passwordReusePreventionHasBeenSet = true; m_passwordReusePrevention = value; }
 
     /**
@@ -265,6 +333,16 @@ namespace Model
      * the user.</p>
      */
     inline bool GetHardExpiry() const{ return m_hardExpiry; }
+
+    /**
+     * <p>Prevents IAM users from setting a new password after their password has
+     * expired. The IAM user cannot be accessed until an administrator resets the
+     * password.</p> <p>If you do not specify a value for this parameter, then the
+     * operation uses the default value of <code>false</code>. The result is that IAM
+     * users can change their passwords after they expire and continue to sign in as
+     * the user.</p>
+     */
+    inline bool HardExpiryHasBeenSet() const { return m_hardExpiryHasBeenSet; }
 
     /**
      * <p>Prevents IAM users from setting a new password after their password has

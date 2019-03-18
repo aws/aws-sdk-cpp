@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The name of the destination.</p>
      */
+    inline bool DestinationNameHasBeenSet() const { return m_destinationNameHasBeenSet; }
+
+    /**
+     * <p>The name of the destination.</p>
+     */
     inline void SetDestinationName(const Aws::String& value) { m_destinationNameHasBeenSet = true; m_destinationName = value; }
 
     /**
@@ -89,6 +94,12 @@ namespace Model
      * are delivered (for example, a Kinesis stream).</p>
      */
     inline const Aws::String& GetTargetArn() const{ return m_targetArn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the physical target to where the log events
+     * are delivered (for example, a Kinesis stream).</p>
+     */
+    inline bool TargetArnHasBeenSet() const { return m_targetArnHasBeenSet; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the physical target to where the log events
@@ -135,6 +146,11 @@ namespace Model
     /**
      * <p>A role for impersonation, used when delivering log events to the target.</p>
      */
+    inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
+
+    /**
+     * <p>A role for impersonation, used when delivering log events to the target.</p>
+     */
     inline void SetRoleArn(const Aws::String& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
 
     /**
@@ -168,6 +184,12 @@ namespace Model
      * subscription filters against this destination.</p>
      */
     inline const Aws::String& GetAccessPolicy() const{ return m_accessPolicy; }
+
+    /**
+     * <p>An IAM policy document that governs which AWS accounts can create
+     * subscription filters against this destination.</p>
+     */
+    inline bool AccessPolicyHasBeenSet() const { return m_accessPolicyHasBeenSet; }
 
     /**
      * <p>An IAM policy document that governs which AWS accounts can create
@@ -214,6 +236,11 @@ namespace Model
     /**
      * <p>The ARN of this destination.</p>
      */
+    inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
+
+    /**
+     * <p>The ARN of this destination.</p>
+     */
     inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
 
     /**
@@ -247,6 +274,12 @@ namespace Model
      * after Jan 1, 1970 00:00:00 UTC.</p>
      */
     inline long long GetCreationTime() const{ return m_creationTime; }
+
+    /**
+     * <p>The creation time of the destination, expressed as the number of milliseconds
+     * after Jan 1, 1970 00:00:00 UTC.</p>
+     */
+    inline bool CreationTimeHasBeenSet() const { return m_creationTimeHasBeenSet; }
 
     /**
      * <p>The creation time of the destination, expressed as the number of milliseconds

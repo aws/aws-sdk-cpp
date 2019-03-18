@@ -53,6 +53,11 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the AWS CloudHSM resource.</p>
      */
+    inline bool ResourceArnHasBeenSet() const { return m_resourceArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the AWS CloudHSM resource.</p>
+     */
     inline void SetResourceArn(const Aws::String& value) { m_resourceArnHasBeenSet = true; m_resourceArn = value; }
 
     /**
@@ -87,6 +92,13 @@ namespace Model
      * <a>AddTagsToResource</a>.</p>
      */
     inline const Aws::Vector<Aws::String>& GetTagKeyList() const{ return m_tagKeyList; }
+
+    /**
+     * <p>The tag key or keys to remove.</p> <p>Specify only the tag key to remove (not
+     * the value). To overwrite the value for an existing tag, use
+     * <a>AddTagsToResource</a>.</p>
+     */
+    inline bool TagKeyListHasBeenSet() const { return m_tagKeyListHasBeenSet; }
 
     /**
      * <p>The tag key or keys to remove.</p> <p>Specify only the tag key to remove (not

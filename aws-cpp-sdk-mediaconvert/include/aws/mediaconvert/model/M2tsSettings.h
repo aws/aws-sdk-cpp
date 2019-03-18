@@ -76,6 +76,9 @@ namespace Model
     inline const M2tsAudioBufferModel& GetAudioBufferModel() const{ return m_audioBufferModel; }
 
     
+    inline bool AudioBufferModelHasBeenSet() const { return m_audioBufferModelHasBeenSet; }
+
+    
     inline void SetAudioBufferModel(const M2tsAudioBufferModel& value) { m_audioBufferModelHasBeenSet = true; m_audioBufferModel = value; }
 
     
@@ -96,6 +99,11 @@ namespace Model
     /**
      * The number of audio frames to insert for each PES packet.
      */
+    inline bool AudioFramesPerPesHasBeenSet() const { return m_audioFramesPerPesHasBeenSet; }
+
+    /**
+     * The number of audio frames to insert for each PES packet.
+     */
     inline void SetAudioFramesPerPes(int value) { m_audioFramesPerPesHasBeenSet = true; m_audioFramesPerPes = value; }
 
     /**
@@ -110,6 +118,13 @@ namespace Model
      * range 482-492.
      */
     inline const Aws::Vector<int>& GetAudioPids() const{ return m_audioPids; }
+
+    /**
+     * Specify the packet identifiers (PIDs) for any elementary audio streams you
+     * include in this output. Specify multiple PIDs as a JSON array. Default is the
+     * range 482-492.
+     */
+    inline bool AudioPidsHasBeenSet() const { return m_audioPidsHasBeenSet; }
 
     /**
      * Specify the packet identifiers (PIDs) for any elementary audio streams you
@@ -159,6 +174,13 @@ namespace Model
      * to 0 lets the muxer automatically determine the appropriate bitrate. Other
      * common values are 3750000, 7500000, and 15000000.
      */
+    inline bool BitrateHasBeenSet() const { return m_bitrateHasBeenSet; }
+
+    /**
+     * Specify the output bitrate of the transport stream in bits per second. Setting
+     * to 0 lets the muxer automatically determine the appropriate bitrate. Other
+     * common values are 3750000, 7500000, and 15000000.
+     */
     inline void SetBitrate(int value) { m_bitrateHasBeenSet = true; m_bitrate = value; }
 
     /**
@@ -171,6 +193,9 @@ namespace Model
 
     
     inline const M2tsBufferModel& GetBufferModel() const{ return m_bufferModel; }
+
+    
+    inline bool BufferModelHasBeenSet() const { return m_bufferModelHasBeenSet; }
 
     
     inline void SetBufferModel(const M2tsBufferModel& value) { m_bufferModelHasBeenSet = true; m_bufferModel = value; }
@@ -189,6 +214,9 @@ namespace Model
     inline const DvbNitSettings& GetDvbNitSettings() const{ return m_dvbNitSettings; }
 
     
+    inline bool DvbNitSettingsHasBeenSet() const { return m_dvbNitSettingsHasBeenSet; }
+
+    
     inline void SetDvbNitSettings(const DvbNitSettings& value) { m_dvbNitSettingsHasBeenSet = true; m_dvbNitSettings = value; }
 
     
@@ -203,6 +231,9 @@ namespace Model
 
     
     inline const DvbSdtSettings& GetDvbSdtSettings() const{ return m_dvbSdtSettings; }
+
+    
+    inline bool DvbSdtSettingsHasBeenSet() const { return m_dvbSdtSettingsHasBeenSet; }
 
     
     inline void SetDvbSdtSettings(const DvbSdtSettings& value) { m_dvbSdtSettingsHasBeenSet = true; m_dvbSdtSettings = value; }
@@ -222,6 +253,12 @@ namespace Model
      * output. Specify multiple PIDs as a JSON array. Default is the range 460-479.
      */
     inline const Aws::Vector<int>& GetDvbSubPids() const{ return m_dvbSubPids; }
+
+    /**
+     * Specify the packet identifiers (PIDs) for DVB subtitle data included in this
+     * output. Specify multiple PIDs as a JSON array. Default is the range 460-479.
+     */
+    inline bool DvbSubPidsHasBeenSet() const { return m_dvbSubPidsHasBeenSet; }
 
     /**
      * Specify the packet identifiers (PIDs) for DVB subtitle data included in this
@@ -258,6 +295,9 @@ namespace Model
     inline const DvbTdtSettings& GetDvbTdtSettings() const{ return m_dvbTdtSettings; }
 
     
+    inline bool DvbTdtSettingsHasBeenSet() const { return m_dvbTdtSettingsHasBeenSet; }
+
+    
     inline void SetDvbTdtSettings(const DvbTdtSettings& value) { m_dvbTdtSettingsHasBeenSet = true; m_dvbTdtSettings = value; }
 
     
@@ -280,6 +320,12 @@ namespace Model
      * Specify the packet identifier (PID) for DVB teletext data you include in this
      * output. Default is 499.
      */
+    inline bool DvbTeletextPidHasBeenSet() const { return m_dvbTeletextPidHasBeenSet; }
+
+    /**
+     * Specify the packet identifier (PID) for DVB teletext data you include in this
+     * output. Default is 499.
+     */
     inline void SetDvbTeletextPid(int value) { m_dvbTeletextPidHasBeenSet = true; m_dvbTeletextPid = value; }
 
     /**
@@ -291,6 +337,9 @@ namespace Model
 
     
     inline const M2tsEbpAudioInterval& GetEbpAudioInterval() const{ return m_ebpAudioInterval; }
+
+    
+    inline bool EbpAudioIntervalHasBeenSet() const { return m_ebpAudioIntervalHasBeenSet; }
 
     
     inline void SetEbpAudioInterval(const M2tsEbpAudioInterval& value) { m_ebpAudioIntervalHasBeenSet = true; m_ebpAudioInterval = value; }
@@ -309,6 +358,9 @@ namespace Model
     inline const M2tsEbpPlacement& GetEbpPlacement() const{ return m_ebpPlacement; }
 
     
+    inline bool EbpPlacementHasBeenSet() const { return m_ebpPlacementHasBeenSet; }
+
+    
     inline void SetEbpPlacement(const M2tsEbpPlacement& value) { m_ebpPlacementHasBeenSet = true; m_ebpPlacement = value; }
 
     
@@ -323,6 +375,9 @@ namespace Model
 
     
     inline const M2tsEsRateInPes& GetEsRateInPes() const{ return m_esRateInPes; }
+
+    
+    inline bool EsRateInPesHasBeenSet() const { return m_esRateInPesHasBeenSet; }
 
     
     inline void SetEsRateInPes(const M2tsEsRateInPes& value) { m_esRateInPesHasBeenSet = true; m_esRateInPes = value; }
@@ -343,6 +398,13 @@ namespace Model
      * set this value to Force (FORCE).
      */
     inline const M2tsForceTsVideoEbpOrder& GetForceTsVideoEbpOrder() const{ return m_forceTsVideoEbpOrder; }
+
+    /**
+     * Keep the default value (DEFAULT) unless you know that your audio EBP markers are
+     * incorrectly appearing before your video EBP markers. To correct this problem,
+     * set this value to Force (FORCE).
+     */
+    inline bool ForceTsVideoEbpOrderHasBeenSet() const { return m_forceTsVideoEbpOrderHasBeenSet; }
 
     /**
      * Keep the default value (DEFAULT) unless you know that your audio EBP markers are
@@ -381,6 +443,11 @@ namespace Model
     /**
      * The length, in seconds, of each fragment. Only used with EBP markers.
      */
+    inline bool FragmentTimeHasBeenSet() const { return m_fragmentTimeHasBeenSet; }
+
+    /**
+     * The length, in seconds, of each fragment. Only used with EBP markers.
+     */
     inline void SetFragmentTime(double value) { m_fragmentTimeHasBeenSet = true; m_fragmentTime = value; }
 
     /**
@@ -394,6 +461,12 @@ namespace Model
      * (PCRs) inserted into the transport stream.
      */
     inline int GetMaxPcrInterval() const{ return m_maxPcrInterval; }
+
+    /**
+     * Specify the maximum time, in milliseconds, between Program Clock References
+     * (PCRs) inserted into the transport stream.
+     */
+    inline bool MaxPcrIntervalHasBeenSet() const { return m_maxPcrIntervalHasBeenSet; }
 
     /**
      * Specify the maximum time, in milliseconds, between Program Clock References
@@ -426,6 +499,16 @@ namespace Model
      * does not add latency to the system. The Live Event must be configured elsewhere
      * to create sufficient latency to make the lookahead accurate.
      */
+    inline bool MinEbpIntervalHasBeenSet() const { return m_minEbpIntervalHasBeenSet; }
+
+    /**
+     * When set, enforces that Encoder Boundary Points do not come within the specified
+     * time interval of each other by looking ahead at input video. If another EBP is
+     * going to come in within the specified time interval, the current EBP is not
+     * emitted, and the segment is "stretched" to the next marker. The lookahead value
+     * does not add latency to the system. The Live Event must be configured elsewhere
+     * to create sufficient latency to make the lookahead accurate.
+     */
     inline void SetMinEbpInterval(int value) { m_minEbpIntervalHasBeenSet = true; m_minEbpInterval = value; }
 
     /**
@@ -441,6 +524,9 @@ namespace Model
 
     
     inline const M2tsNielsenId3& GetNielsenId3() const{ return m_nielsenId3; }
+
+    
+    inline bool NielsenId3HasBeenSet() const { return m_nielsenId3HasBeenSet; }
 
     
     inline void SetNielsenId3(const M2tsNielsenId3& value) { m_nielsenId3HasBeenSet = true; m_nielsenId3 = value; }
@@ -467,6 +553,13 @@ namespace Model
      * stream. This can be used if a downstream encryption system requires periodic
      * null packets.
      */
+    inline bool NullPacketBitrateHasBeenSet() const { return m_nullPacketBitrateHasBeenSet; }
+
+    /**
+     * Value in bits per second of extra null packets to insert into the transport
+     * stream. This can be used if a downstream encryption system requires periodic
+     * null packets.
+     */
     inline void SetNullPacketBitrate(double value) { m_nullPacketBitrateHasBeenSet = true; m_nullPacketBitrate = value; }
 
     /**
@@ -487,6 +580,12 @@ namespace Model
      * The number of milliseconds between instances of this table in the output
      * transport stream.
      */
+    inline bool PatIntervalHasBeenSet() const { return m_patIntervalHasBeenSet; }
+
+    /**
+     * The number of milliseconds between instances of this table in the output
+     * transport stream.
+     */
     inline void SetPatInterval(int value) { m_patIntervalHasBeenSet = true; m_patInterval = value; }
 
     /**
@@ -498,6 +597,9 @@ namespace Model
 
     
     inline const M2tsPcrControl& GetPcrControl() const{ return m_pcrControl; }
+
+    
+    inline bool PcrControlHasBeenSet() const { return m_pcrControlHasBeenSet; }
 
     
     inline void SetPcrControl(const M2tsPcrControl& value) { m_pcrControlHasBeenSet = true; m_pcrControl = value; }
@@ -524,6 +626,13 @@ namespace Model
      * this output. If you do not specify a value, the service will use the value for
      * Video PID (VideoPid).
      */
+    inline bool PcrPidHasBeenSet() const { return m_pcrPidHasBeenSet; }
+
+    /**
+     * Specify the packet identifier (PID) for the program clock reference (PCR) in
+     * this output. If you do not specify a value, the service will use the value for
+     * Video PID (VideoPid).
+     */
     inline void SetPcrPid(int value) { m_pcrPidHasBeenSet = true; m_pcrPid = value; }
 
     /**
@@ -539,6 +648,12 @@ namespace Model
      * (PMT) in the output transport stream.
      */
     inline int GetPmtInterval() const{ return m_pmtInterval; }
+
+    /**
+     * Specify the number of milliseconds between instances of the program map table
+     * (PMT) in the output transport stream.
+     */
+    inline bool PmtIntervalHasBeenSet() const { return m_pmtIntervalHasBeenSet; }
 
     /**
      * Specify the number of milliseconds between instances of the program map table
@@ -563,6 +678,12 @@ namespace Model
      * Specify the packet identifier (PID) for the program map table (PMT) itself.
      * Default is 480.
      */
+    inline bool PmtPidHasBeenSet() const { return m_pmtPidHasBeenSet; }
+
+    /**
+     * Specify the packet identifier (PID) for the program map table (PMT) itself.
+     * Default is 480.
+     */
     inline void SetPmtPid(int value) { m_pmtPidHasBeenSet = true; m_pmtPid = value; }
 
     /**
@@ -577,6 +698,12 @@ namespace Model
      * 503.
      */
     inline int GetPrivateMetadataPid() const{ return m_privateMetadataPid; }
+
+    /**
+     * Specify the packet identifier (PID) of the private metadata stream. Default is
+     * 503.
+     */
+    inline bool PrivateMetadataPidHasBeenSet() const { return m_privateMetadataPidHasBeenSet; }
 
     /**
      * Specify the packet identifier (PID) of the private metadata stream. Default is
@@ -605,6 +732,14 @@ namespace Model
      * program map tables are parts of MPEG-2 transport stream containers, used for
      * organizing data.
      */
+    inline bool ProgramNumberHasBeenSet() const { return m_programNumberHasBeenSet; }
+
+    /**
+     * Use Program number (programNumber) to specify the program number used in the
+     * program map table (PMT) for this output. Default is 1. Program numbers and
+     * program map tables are parts of MPEG-2 transport stream containers, used for
+     * organizing data.
+     */
     inline void SetProgramNumber(int value) { m_programNumberHasBeenSet = true; m_programNumber = value; }
 
     /**
@@ -618,6 +753,9 @@ namespace Model
 
     
     inline const M2tsRateMode& GetRateMode() const{ return m_rateMode; }
+
+    
+    inline bool RateModeHasBeenSet() const { return m_rateModeHasBeenSet; }
 
     
     inline void SetRateMode(const M2tsRateMode& value) { m_rateModeHasBeenSet = true; m_rateMode = value; }
@@ -638,6 +776,13 @@ namespace Model
      * document. Provide the document in the setting SCC XML (sccXml).
      */
     inline const M2tsScte35Esam& GetScte35Esam() const{ return m_scte35Esam; }
+
+    /**
+     * Include this in your job settings to put SCTE-35 markers in your HLS and
+     * transport stream outputs at the insertion points that you specify in an ESAM XML
+     * document. Provide the document in the setting SCC XML (sccXml).
+     */
+    inline bool Scte35EsamHasBeenSet() const { return m_scte35EsamHasBeenSet; }
 
     /**
      * Include this in your job settings to put SCTE-35 markers in your HLS and
@@ -678,6 +823,12 @@ namespace Model
      * Specify the packet identifier (PID) of the SCTE-35 stream in the transport
      * stream.
      */
+    inline bool Scte35PidHasBeenSet() const { return m_scte35PidHasBeenSet; }
+
+    /**
+     * Specify the packet identifier (PID) of the SCTE-35 stream in the transport
+     * stream.
+     */
     inline void SetScte35Pid(int value) { m_scte35PidHasBeenSet = true; m_scte35Pid = value; }
 
     /**
@@ -689,6 +840,9 @@ namespace Model
 
     
     inline const M2tsScte35Source& GetScte35Source() const{ return m_scte35Source; }
+
+    
+    inline bool Scte35SourceHasBeenSet() const { return m_scte35SourceHasBeenSet; }
 
     
     inline void SetScte35Source(const M2tsScte35Source& value) { m_scte35SourceHasBeenSet = true; m_scte35Source = value; }
@@ -707,6 +861,9 @@ namespace Model
     inline const M2tsSegmentationMarkers& GetSegmentationMarkers() const{ return m_segmentationMarkers; }
 
     
+    inline bool SegmentationMarkersHasBeenSet() const { return m_segmentationMarkersHasBeenSet; }
+
+    
     inline void SetSegmentationMarkers(const M2tsSegmentationMarkers& value) { m_segmentationMarkersHasBeenSet = true; m_segmentationMarkers = value; }
 
     
@@ -721,6 +878,9 @@ namespace Model
 
     
     inline const M2tsSegmentationStyle& GetSegmentationStyle() const{ return m_segmentationStyle; }
+
+    
+    inline bool SegmentationStyleHasBeenSet() const { return m_segmentationStyleHasBeenSet; }
 
     
     inline void SetSegmentationStyle(const M2tsSegmentationStyle& value) { m_segmentationStyleHasBeenSet = true; m_segmentationStyle = value; }
@@ -745,6 +905,12 @@ namespace Model
      * Specify the length, in seconds, of each segment. Required unless markers is set
      * to _none_.
      */
+    inline bool SegmentationTimeHasBeenSet() const { return m_segmentationTimeHasBeenSet; }
+
+    /**
+     * Specify the length, in seconds, of each segment. Required unless markers is set
+     * to _none_.
+     */
     inline void SetSegmentationTime(double value) { m_segmentationTimeHasBeenSet = true; m_segmentationTime = value; }
 
     /**
@@ -759,6 +925,12 @@ namespace Model
      * is 502.
      */
     inline int GetTimedMetadataPid() const{ return m_timedMetadataPid; }
+
+    /**
+     * Specify the packet identifier (PID) for timed metadata in this output. Default
+     * is 502.
+     */
+    inline bool TimedMetadataPidHasBeenSet() const { return m_timedMetadataPidHasBeenSet; }
 
     /**
      * Specify the packet identifier (PID) for timed metadata in this output. Default
@@ -785,6 +957,13 @@ namespace Model
      * output. Transport stream IDs and program map tables are parts of MPEG-2
      * transport stream containers, used for organizing data.
      */
+    inline bool TransportStreamIdHasBeenSet() const { return m_transportStreamIdHasBeenSet; }
+
+    /**
+     * Specify the ID for the transport stream itself in the program map table for this
+     * output. Transport stream IDs and program map tables are parts of MPEG-2
+     * transport stream containers, used for organizing data.
+     */
     inline void SetTransportStreamId(int value) { m_transportStreamIdHasBeenSet = true; m_transportStreamId = value; }
 
     /**
@@ -800,6 +979,12 @@ namespace Model
      * transport stream.
      */
     inline int GetVideoPid() const{ return m_videoPid; }
+
+    /**
+     * Specify the packet identifier (PID) of the elementary video stream in the
+     * transport stream.
+     */
+    inline bool VideoPidHasBeenSet() const { return m_videoPidHasBeenSet; }
 
     /**
      * Specify the packet identifier (PID) of the elementary video stream in the

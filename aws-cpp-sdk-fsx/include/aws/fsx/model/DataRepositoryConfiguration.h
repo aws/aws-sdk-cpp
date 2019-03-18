@@ -65,6 +65,15 @@ namespace Model
      * the Amazon S3 bucket name, only object keys with that prefix are loaded into the
      * file system.</p>
      */
+    inline bool ImportPathHasBeenSet() const { return m_importPathHasBeenSet; }
+
+    /**
+     * <p>The import path to the Amazon S3 bucket (and optional prefix) that you're
+     * using as the data repository for your FSx for Lustre file system, for example
+     * <code>s3://import-bucket/optional-prefix</code>. If a prefix is specified after
+     * the Amazon S3 bucket name, only object keys with that prefix are loaded into the
+     * file system.</p>
+     */
     inline void SetImportPath(const Aws::String& value) { m_importPathHasBeenSet = true; m_importPath = value; }
 
     /**
@@ -123,6 +132,12 @@ namespace Model
      * <p>The export path to the Amazon S3 bucket (and prefix) that you are using to
      * store new and changed Lustre file system files in S3.</p>
      */
+    inline bool ExportPathHasBeenSet() const { return m_exportPathHasBeenSet; }
+
+    /**
+     * <p>The export path to the Amazon S3 bucket (and prefix) that you are using to
+     * store new and changed Lustre file system files in S3.</p>
+     */
     inline void SetExportPath(const Aws::String& value) { m_exportPathHasBeenSet = true; m_exportPath = value; }
 
     /**
@@ -165,6 +180,16 @@ namespace Model
      * GiB). Amazon S3 objects have a maximum size of 5 TB.</p>
      */
     inline int GetImportedFileChunkSize() const{ return m_importedFileChunkSize; }
+
+    /**
+     * <p>For files imported from a data repository, this value determines the stripe
+     * count and maximum amount of data per file (in MiB) stored on a single physical
+     * disk. The maximum number of disks that a single file can be striped across is
+     * limited by the total number of disks that make up the file system.</p> <p>The
+     * default chunk size is 1,024 MiB (1 GiB) and can go as high as 512,000 MiB (500
+     * GiB). Amazon S3 objects have a maximum size of 5 TB.</p>
+     */
+    inline bool ImportedFileChunkSizeHasBeenSet() const { return m_importedFileChunkSizeHasBeenSet; }
 
     /**
      * <p>For files imported from a data repository, this value determines the stripe

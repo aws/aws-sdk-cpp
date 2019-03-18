@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The value you provided for the <code>Marker</code> request parameter.</p>
      */
+    inline bool MarkerHasBeenSet() const { return m_markerHasBeenSet; }
+
+    /**
+     * <p>The value you provided for the <code>Marker</code> request parameter.</p>
+     */
     inline void SetMarker(const Aws::String& value) { m_markerHasBeenSet = true; m_marker = value; }
 
     /**
@@ -91,6 +96,13 @@ namespace Model
      * continue listing your distributions where they left off. </p>
      */
     inline const Aws::String& GetNextMarker() const{ return m_nextMarker; }
+
+    /**
+     * <p>If <code>IsTruncated</code> is <code>true</code>, this element is present and
+     * contains the value you can use for the <code>Marker</code> request parameter to
+     * continue listing your distributions where they left off. </p>
+     */
+    inline bool NextMarkerHasBeenSet() const { return m_nextMarkerHasBeenSet; }
 
     /**
      * <p>If <code>IsTruncated</code> is <code>true</code>, this element is present and
@@ -143,6 +155,11 @@ namespace Model
     /**
      * <p>The value you provided for the <code>MaxItems</code> request parameter.</p>
      */
+    inline bool MaxItemsHasBeenSet() const { return m_maxItemsHasBeenSet; }
+
+    /**
+     * <p>The value you provided for the <code>MaxItems</code> request parameter.</p>
+     */
     inline void SetMaxItems(int value) { m_maxItemsHasBeenSet = true; m_maxItems = value; }
 
     /**
@@ -158,6 +175,14 @@ namespace Model
      * list.</p>
      */
     inline bool GetIsTruncated() const{ return m_isTruncated; }
+
+    /**
+     * <p>A flag that indicates whether more distributions remain to be listed. If your
+     * results were truncated, you can make a follow-up pagination request using the
+     * <code>Marker</code> request parameter to retrieve more distributions in the
+     * list.</p>
+     */
+    inline bool IsTruncatedHasBeenSet() const { return m_isTruncatedHasBeenSet; }
 
     /**
      * <p>A flag that indicates whether more distributions remain to be listed. If your
@@ -186,6 +211,12 @@ namespace Model
      * <p>The number of distributions that were created by the current AWS account.
      * </p>
      */
+    inline bool QuantityHasBeenSet() const { return m_quantityHasBeenSet; }
+
+    /**
+     * <p>The number of distributions that were created by the current AWS account.
+     * </p>
+     */
     inline void SetQuantity(int value) { m_quantityHasBeenSet = true; m_quantity = value; }
 
     /**
@@ -200,6 +231,12 @@ namespace Model
      * each distribution that was created by the current AWS account.</p>
      */
     inline const Aws::Vector<DistributionSummary>& GetItems() const{ return m_items; }
+
+    /**
+     * <p>A complex type that contains one <code>DistributionSummary</code> element for
+     * each distribution that was created by the current AWS account.</p>
+     */
+    inline bool ItemsHasBeenSet() const { return m_itemsHasBeenSet; }
 
     /**
      * <p>A complex type that contains one <code>DistributionSummary</code> element for

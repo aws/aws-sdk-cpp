@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The name of the job definition used in the job run that was stopped.</p>
      */
+    inline bool JobNameHasBeenSet() const { return m_jobNameHasBeenSet; }
+
+    /**
+     * <p>The name of the job definition used in the job run that was stopped.</p>
+     */
     inline void SetJobName(const Aws::String& value) { m_jobNameHasBeenSet = true; m_jobName = value; }
 
     /**
@@ -88,6 +93,11 @@ namespace Model
      * <p>The JobRunId of the job run that was stopped.</p>
      */
     inline const Aws::String& GetJobRunId() const{ return m_jobRunId; }
+
+    /**
+     * <p>The JobRunId of the job run that was stopped.</p>
+     */
+    inline bool JobRunIdHasBeenSet() const { return m_jobRunIdHasBeenSet; }
 
     /**
      * <p>The JobRunId of the job run that was stopped.</p>

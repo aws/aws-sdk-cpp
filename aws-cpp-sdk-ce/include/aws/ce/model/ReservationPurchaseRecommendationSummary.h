@@ -59,6 +59,12 @@ namespace Model
      * <p>The total amount that AWS estimates that this recommendation could save you
      * in a month.</p>
      */
+    inline bool TotalEstimatedMonthlySavingsAmountHasBeenSet() const { return m_totalEstimatedMonthlySavingsAmountHasBeenSet; }
+
+    /**
+     * <p>The total amount that AWS estimates that this recommendation could save you
+     * in a month.</p>
+     */
     inline void SetTotalEstimatedMonthlySavingsAmount(const Aws::String& value) { m_totalEstimatedMonthlySavingsAmountHasBeenSet = true; m_totalEstimatedMonthlySavingsAmount = value; }
 
     /**
@@ -102,6 +108,12 @@ namespace Model
      * <p>The total amount that AWS estimates that this recommendation could save you
      * in a month, as a percentage of your costs.</p>
      */
+    inline bool TotalEstimatedMonthlySavingsPercentageHasBeenSet() const { return m_totalEstimatedMonthlySavingsPercentageHasBeenSet; }
+
+    /**
+     * <p>The total amount that AWS estimates that this recommendation could save you
+     * in a month, as a percentage of your costs.</p>
+     */
     inline void SetTotalEstimatedMonthlySavingsPercentage(const Aws::String& value) { m_totalEstimatedMonthlySavingsPercentageHasBeenSet = true; m_totalEstimatedMonthlySavingsPercentage = value; }
 
     /**
@@ -139,6 +151,11 @@ namespace Model
      * <p>The currency code used for this recommendation.</p>
      */
     inline const Aws::String& GetCurrencyCode() const{ return m_currencyCode; }
+
+    /**
+     * <p>The currency code used for this recommendation.</p>
+     */
+    inline bool CurrencyCodeHasBeenSet() const { return m_currencyCodeHasBeenSet; }
 
     /**
      * <p>The currency code used for this recommendation.</p>

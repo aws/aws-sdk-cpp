@@ -66,6 +66,12 @@ namespace Model
      * <p> Set this value to limit the number of results returned. Value provided must
      * be greater than 10 else it wont be honored. </p>
      */
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
+
+    /**
+     * <p> Set this value to limit the number of results returned. Value provided must
+     * be greater than 10 else it wont be honored. </p>
+     */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
@@ -77,6 +83,9 @@ namespace Model
 
     
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
+    
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }

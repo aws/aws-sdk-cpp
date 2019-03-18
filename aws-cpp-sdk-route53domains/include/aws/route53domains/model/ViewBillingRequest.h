@@ -61,6 +61,13 @@ namespace Model
      * billing records. Specify the date and time in Coordinated Universal time
      * (UTC).</p>
      */
+    inline bool StartHasBeenSet() const { return m_startHasBeenSet; }
+
+    /**
+     * <p>The beginning date and time for the time period for which you want a list of
+     * billing records. Specify the date and time in Coordinated Universal time
+     * (UTC).</p>
+     */
     inline void SetStart(const Aws::Utils::DateTime& value) { m_startHasBeenSet = true; m_start = value; }
 
     /**
@@ -91,6 +98,13 @@ namespace Model
      * (UTC).</p>
      */
     inline const Aws::Utils::DateTime& GetEnd() const{ return m_end; }
+
+    /**
+     * <p>The end date and time for the time period for which you want a list of
+     * billing records. Specify the date and time in Coordinated Universal time
+     * (UTC).</p>
+     */
+    inline bool EndHasBeenSet() const { return m_endHasBeenSet; }
 
     /**
      * <p>The end date and time for the time period for which you want a list of
@@ -133,6 +147,19 @@ namespace Model
      * that was returned in the previous response.</p>
      */
     inline const Aws::String& GetMarker() const{ return m_marker; }
+
+    /**
+     * <p>For an initial request for a list of billing records, omit this element. If
+     * the number of billing records that are associated with the current AWS account
+     * during the specified period is greater than the value that you specified for
+     * <code>MaxItems</code>, you can use <code>Marker</code> to return additional
+     * billing records. Get the value of <code>NextPageMarker</code> from the previous
+     * response, and submit another request that includes the value of
+     * <code>NextPageMarker</code> in the <code>Marker</code> element. </p>
+     * <p>Constraints: The marker must match the value of <code>NextPageMarker</code>
+     * that was returned in the previous response.</p>
+     */
+    inline bool MarkerHasBeenSet() const { return m_markerHasBeenSet; }
 
     /**
      * <p>For an initial request for a list of billing records, omit this element. If
@@ -217,6 +244,11 @@ namespace Model
      * <p>The number of billing records to be returned.</p> <p>Default: 20</p>
      */
     inline int GetMaxItems() const{ return m_maxItems; }
+
+    /**
+     * <p>The number of billing records to be returned.</p> <p>Default: 20</p>
+     */
+    inline bool MaxItemsHasBeenSet() const { return m_maxItemsHasBeenSet; }
 
     /**
      * <p>The number of billing records to be returned.</p> <p>Default: 20</p>

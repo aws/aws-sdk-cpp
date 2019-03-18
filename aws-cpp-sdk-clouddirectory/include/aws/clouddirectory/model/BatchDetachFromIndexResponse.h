@@ -58,6 +58,12 @@ namespace Model
      * <p>The <code>ObjectIdentifier</code> of the object that was detached from the
      * index.</p>
      */
+    inline bool DetachedObjectIdentifierHasBeenSet() const { return m_detachedObjectIdentifierHasBeenSet; }
+
+    /**
+     * <p>The <code>ObjectIdentifier</code> of the object that was detached from the
+     * index.</p>
+     */
     inline void SetDetachedObjectIdentifier(const Aws::String& value) { m_detachedObjectIdentifierHasBeenSet = true; m_detachedObjectIdentifier = value; }
 
     /**

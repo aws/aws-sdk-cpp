@@ -64,6 +64,12 @@ namespace Model
      * <p>The time, in milliseconds from the beginning of the video, that the person
      * was matched in the video.</p>
      */
+    inline bool TimestampHasBeenSet() const { return m_timestampHasBeenSet; }
+
+    /**
+     * <p>The time, in milliseconds from the beginning of the video, that the person
+     * was matched in the video.</p>
+     */
     inline void SetTimestamp(long long value) { m_timestampHasBeenSet = true; m_timestamp = value; }
 
     /**
@@ -77,6 +83,11 @@ namespace Model
      * <p>Information about the matched person.</p>
      */
     inline const PersonDetail& GetPerson() const{ return m_person; }
+
+    /**
+     * <p>Information about the matched person.</p>
+     */
+    inline bool PersonHasBeenSet() const { return m_personHasBeenSet; }
 
     /**
      * <p>Information about the matched person.</p>
@@ -104,6 +115,12 @@ namespace Model
      * person in the video.</p>
      */
     inline const Aws::Vector<FaceMatch>& GetFaceMatches() const{ return m_faceMatches; }
+
+    /**
+     * <p>Information about the faces in the input collection that match the face of a
+     * person in the video.</p>
+     */
+    inline bool FaceMatchesHasBeenSet() const { return m_faceMatchesHasBeenSet; }
 
     /**
      * <p>Information about the faces in the input collection that match the face of a

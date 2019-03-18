@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The ARN of the IAM role that grants access.</p>
      */
+    inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
+
+    /**
+     * <p>The ARN of the IAM role that grants access.</p>
+     */
     inline void SetRoleArn(const Aws::String& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
 
     /**
@@ -89,6 +94,11 @@ namespace Model
      * <p>The Amazon S3 bucket.</p>
      */
     inline const Aws::String& GetBucketName() const{ return m_bucketName; }
+
+    /**
+     * <p>The Amazon S3 bucket.</p>
+     */
+    inline bool BucketNameHasBeenSet() const { return m_bucketNameHasBeenSet; }
 
     /**
      * <p>The Amazon S3 bucket.</p>
@@ -129,6 +139,11 @@ namespace Model
     /**
      * <p>The object key.</p>
      */
+    inline bool KeyHasBeenSet() const { return m_keyHasBeenSet; }
+
+    /**
+     * <p>The object key.</p>
+     */
     inline void SetKey(const Aws::String& value) { m_keyHasBeenSet = true; m_key = value; }
 
     /**
@@ -164,6 +179,14 @@ namespace Model
      * canned ACLs</a>.</p>
      */
     inline const CannedAccessControlList& GetCannedAcl() const{ return m_cannedAcl; }
+
+    /**
+     * <p>The Amazon S3 canned ACL that controls access to the object identified by the
+     * object key. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#canned-acl">S3
+     * canned ACLs</a>.</p>
+     */
+    inline bool CannedAclHasBeenSet() const { return m_cannedAclHasBeenSet; }
 
     /**
      * <p>The Amazon S3 canned ACL that controls access to the object identified by the

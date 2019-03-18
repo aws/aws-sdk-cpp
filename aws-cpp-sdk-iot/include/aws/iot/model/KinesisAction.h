@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The ARN of the IAM role that grants access to the Amazon Kinesis stream.</p>
      */
+    inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
+
+    /**
+     * <p>The ARN of the IAM role that grants access to the Amazon Kinesis stream.</p>
+     */
     inline void SetRoleArn(const Aws::String& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
 
     /**
@@ -92,6 +97,11 @@ namespace Model
     /**
      * <p>The name of the Amazon Kinesis stream.</p>
      */
+    inline bool StreamNameHasBeenSet() const { return m_streamNameHasBeenSet; }
+
+    /**
+     * <p>The name of the Amazon Kinesis stream.</p>
+     */
     inline void SetStreamName(const Aws::String& value) { m_streamNameHasBeenSet = true; m_streamName = value; }
 
     /**
@@ -124,6 +134,11 @@ namespace Model
      * <p>The partition key.</p>
      */
     inline const Aws::String& GetPartitionKey() const{ return m_partitionKey; }
+
+    /**
+     * <p>The partition key.</p>
+     */
+    inline bool PartitionKeyHasBeenSet() const { return m_partitionKeyHasBeenSet; }
 
     /**
      * <p>The partition key.</p>

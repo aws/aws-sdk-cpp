@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The identifier of the Amazon Redshift HSM configuration to be deleted.</p>
      */
+    inline bool HsmConfigurationIdentifierHasBeenSet() const { return m_hsmConfigurationIdentifierHasBeenSet; }
+
+    /**
+     * <p>The identifier of the Amazon Redshift HSM configuration to be deleted.</p>
+     */
     inline void SetHsmConfigurationIdentifier(const Aws::String& value) { m_hsmConfigurationIdentifierHasBeenSet = true; m_hsmConfigurationIdentifier = value; }
 
     /**

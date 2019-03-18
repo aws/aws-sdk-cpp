@@ -57,6 +57,13 @@ namespace Model
      * Currently, the supported resources are Amazon ECS tasks, services, task
      * definitions, clusters, and container instances.</p>
      */
+    inline bool ResourceArnHasBeenSet() const { return m_resourceArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the resource from which to delete tags.
+     * Currently, the supported resources are Amazon ECS tasks, services, task
+     * definitions, clusters, and container instances.</p>
+     */
     inline void SetResourceArn(const Aws::String& value) { m_resourceArnHasBeenSet = true; m_resourceArn = value; }
 
     /**
@@ -99,6 +106,11 @@ namespace Model
      * <p>The keys of the tags to be removed.</p>
      */
     inline const Aws::Vector<Aws::String>& GetTagKeys() const{ return m_tagKeys; }
+
+    /**
+     * <p>The keys of the tags to be removed.</p>
+     */
+    inline bool TagKeysHasBeenSet() const { return m_tagKeysHasBeenSet; }
 
     /**
      * <p>The keys of the tags to be removed.</p>

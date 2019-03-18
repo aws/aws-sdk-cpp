@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The OTA update ID.</p>
      */
+    inline bool OtaUpdateIdHasBeenSet() const { return m_otaUpdateIdHasBeenSet; }
+
+    /**
+     * <p>The OTA update ID.</p>
+     */
     inline void SetOtaUpdateId(const Aws::String& value) { m_otaUpdateIdHasBeenSet = true; m_otaUpdateId = value; }
 
     /**
@@ -92,6 +97,11 @@ namespace Model
     /**
      * <p>The OTA update ARN.</p>
      */
+    inline bool OtaUpdateArnHasBeenSet() const { return m_otaUpdateArnHasBeenSet; }
+
+    /**
+     * <p>The OTA update ARN.</p>
+     */
     inline void SetOtaUpdateArn(const Aws::String& value) { m_otaUpdateArnHasBeenSet = true; m_otaUpdateArn = value; }
 
     /**
@@ -124,6 +134,11 @@ namespace Model
      * <p>The date when the OTA update was created.</p>
      */
     inline const Aws::Utils::DateTime& GetCreationDate() const{ return m_creationDate; }
+
+    /**
+     * <p>The date when the OTA update was created.</p>
+     */
+    inline bool CreationDateHasBeenSet() const { return m_creationDateHasBeenSet; }
 
     /**
      * <p>The date when the OTA update was created.</p>

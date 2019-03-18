@@ -56,6 +56,12 @@ namespace Model
      * <p>Boolean value that indicates whether the face is wearing sunglasses or
      * not.</p>
      */
+    inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
+
+    /**
+     * <p>Boolean value that indicates whether the face is wearing sunglasses or
+     * not.</p>
+     */
     inline void SetValue(bool value) { m_valueHasBeenSet = true; m_value = value; }
 
     /**
@@ -69,6 +75,11 @@ namespace Model
      * <p>Level of confidence in the determination.</p>
      */
     inline double GetConfidence() const{ return m_confidence; }
+
+    /**
+     * <p>Level of confidence in the determination.</p>
+     */
+    inline bool ConfidenceHasBeenSet() const { return m_confidenceHasBeenSet; }
 
     /**
      * <p>Level of confidence in the determination.</p>

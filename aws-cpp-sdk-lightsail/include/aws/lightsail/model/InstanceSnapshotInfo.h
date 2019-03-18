@@ -59,6 +59,12 @@ namespace Model
      * <p>The bundle ID from which the source instance was created (e.g.,
      * <code>micro_1_0</code>).</p>
      */
+    inline bool FromBundleIdHasBeenSet() const { return m_fromBundleIdHasBeenSet; }
+
+    /**
+     * <p>The bundle ID from which the source instance was created (e.g.,
+     * <code>micro_1_0</code>).</p>
+     */
     inline void SetFromBundleId(const Aws::String& value) { m_fromBundleIdHasBeenSet = true; m_fromBundleId = value; }
 
     /**
@@ -102,6 +108,12 @@ namespace Model
      * <p>The blueprint ID from which the source instance (e.g.,
      * <code>os_debian_8_3</code>).</p>
      */
+    inline bool FromBlueprintIdHasBeenSet() const { return m_fromBlueprintIdHasBeenSet; }
+
+    /**
+     * <p>The blueprint ID from which the source instance (e.g.,
+     * <code>os_debian_8_3</code>).</p>
+     */
     inline void SetFromBlueprintId(const Aws::String& value) { m_fromBlueprintIdHasBeenSet = true; m_fromBlueprintId = value; }
 
     /**
@@ -140,6 +152,12 @@ namespace Model
      * instance.</p>
      */
     inline const Aws::Vector<DiskInfo>& GetFromDiskInfo() const{ return m_fromDiskInfo; }
+
+    /**
+     * <p>A list of objects describing the disks that were attached to the source
+     * instance.</p>
+     */
+    inline bool FromDiskInfoHasBeenSet() const { return m_fromDiskInfoHasBeenSet; }
 
     /**
      * <p>A list of objects describing the disks that were attached to the source

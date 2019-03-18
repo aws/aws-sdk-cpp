@@ -61,6 +61,13 @@ namespace Model
      * <b>RDS_HTTP_ENDPOINT</b>: The relational database source type is an Amazon RDS
      * HTTP endpoint.</p> </li> </ul>
      */
+    inline bool RelationalDatabaseSourceTypeHasBeenSet() const { return m_relationalDatabaseSourceTypeHasBeenSet; }
+
+    /**
+     * <p>Source type for the relational database.</p> <ul> <li> <p>
+     * <b>RDS_HTTP_ENDPOINT</b>: The relational database source type is an Amazon RDS
+     * HTTP endpoint.</p> </li> </ul>
+     */
     inline void SetRelationalDatabaseSourceType(const RelationalDatabaseSourceType& value) { m_relationalDatabaseSourceTypeHasBeenSet = true; m_relationalDatabaseSourceType = value; }
 
     /**
@@ -89,6 +96,11 @@ namespace Model
      * <p>Amazon RDS HTTP endpoint settings.</p>
      */
     inline const RdsHttpEndpointConfig& GetRdsHttpEndpointConfig() const{ return m_rdsHttpEndpointConfig; }
+
+    /**
+     * <p>Amazon RDS HTTP endpoint settings.</p>
+     */
+    inline bool RdsHttpEndpointConfigHasBeenSet() const { return m_rdsHttpEndpointConfigHasBeenSet; }
 
     /**
      * <p>Amazon RDS HTTP endpoint settings.</p>

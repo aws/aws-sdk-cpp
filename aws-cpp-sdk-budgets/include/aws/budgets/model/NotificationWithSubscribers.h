@@ -59,6 +59,11 @@ namespace Model
     /**
      * <p>The notification that is associated with a budget.</p>
      */
+    inline bool NotificationHasBeenSet() const { return m_notificationHasBeenSet; }
+
+    /**
+     * <p>The notification that is associated with a budget.</p>
+     */
     inline void SetNotification(const Notification& value) { m_notificationHasBeenSet = true; m_notification = value; }
 
     /**
@@ -81,6 +86,11 @@ namespace Model
      * <p>A list of subscribers who are subscribed to this notification.</p>
      */
     inline const Aws::Vector<Subscriber>& GetSubscribers() const{ return m_subscribers; }
+
+    /**
+     * <p>A list of subscribers who are subscribed to this notification.</p>
+     */
+    inline bool SubscribersHasBeenSet() const { return m_subscribersHasBeenSet; }
 
     /**
      * <p>A list of subscribers who are subscribed to this notification.</p>

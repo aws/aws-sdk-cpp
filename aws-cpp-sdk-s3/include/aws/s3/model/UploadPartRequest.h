@@ -59,6 +59,11 @@ namespace Model
     /**
      * <p>Name of the bucket to which the multipart upload was initiated.</p>
      */
+    inline bool BucketHasBeenSet() const { return m_bucketHasBeenSet; }
+
+    /**
+     * <p>Name of the bucket to which the multipart upload was initiated.</p>
+     */
     inline void SetBucket(const Aws::String& value) { m_bucketHasBeenSet = true; m_bucket = value; }
 
     /**
@@ -97,6 +102,12 @@ namespace Model
      * <p>Size of the body in bytes. This parameter is useful when the size of the body
      * cannot be determined automatically.</p>
      */
+    inline bool ContentLengthHasBeenSet() const { return m_contentLengthHasBeenSet; }
+
+    /**
+     * <p>Size of the body in bytes. This parameter is useful when the size of the body
+     * cannot be determined automatically.</p>
+     */
     inline void SetContentLength(long long value) { m_contentLengthHasBeenSet = true; m_contentLength = value; }
 
     /**
@@ -110,6 +121,11 @@ namespace Model
      * <p>The base64-encoded 128-bit MD5 digest of the part data.</p>
      */
     inline const Aws::String& GetContentMD5() const{ return m_contentMD5; }
+
+    /**
+     * <p>The base64-encoded 128-bit MD5 digest of the part data.</p>
+     */
+    inline bool ContentMD5HasBeenSet() const { return m_contentMD5HasBeenSet; }
 
     /**
      * <p>The base64-encoded 128-bit MD5 digest of the part data.</p>
@@ -146,6 +162,11 @@ namespace Model
      * <p>Object key for which the multipart upload was initiated.</p>
      */
     inline const Aws::String& GetKey() const{ return m_key; }
+
+    /**
+     * <p>Object key for which the multipart upload was initiated.</p>
+     */
+    inline bool KeyHasBeenSet() const { return m_keyHasBeenSet; }
 
     /**
      * <p>Object key for which the multipart upload was initiated.</p>
@@ -188,6 +209,12 @@ namespace Model
      * <p>Part number of part being uploaded. This is a positive integer between 1 and
      * 10,000.</p>
      */
+    inline bool PartNumberHasBeenSet() const { return m_partNumberHasBeenSet; }
+
+    /**
+     * <p>Part number of part being uploaded. This is a positive integer between 1 and
+     * 10,000.</p>
+     */
     inline void SetPartNumber(int value) { m_partNumberHasBeenSet = true; m_partNumber = value; }
 
     /**
@@ -201,6 +228,11 @@ namespace Model
      * <p>Upload ID identifying the multipart upload whose part is being uploaded.</p>
      */
     inline const Aws::String& GetUploadId() const{ return m_uploadId; }
+
+    /**
+     * <p>Upload ID identifying the multipart upload whose part is being uploaded.</p>
+     */
+    inline bool UploadIdHasBeenSet() const { return m_uploadIdHasBeenSet; }
 
     /**
      * <p>Upload ID identifying the multipart upload whose part is being uploaded.</p>
@@ -238,6 +270,12 @@ namespace Model
      * AES256).</p>
      */
     inline const Aws::String& GetSSECustomerAlgorithm() const{ return m_sSECustomerAlgorithm; }
+
+    /**
+     * <p>Specifies the algorithm to use to when encrypting the object (e.g.,
+     * AES256).</p>
+     */
+    inline bool SSECustomerAlgorithmHasBeenSet() const { return m_sSECustomerAlgorithmHasBeenSet; }
 
     /**
      * <p>Specifies the algorithm to use to when encrypting the object (e.g.,
@@ -285,6 +323,16 @@ namespace Model
      * encryption key specified in the initiate multipart upload request.</p>
      */
     inline const Aws::String& GetSSECustomerKey() const{ return m_sSECustomerKey; }
+
+    /**
+     * <p>Specifies the customer-provided encryption key for Amazon S3 to use in
+     * encrypting data. This value is used to store the object and then it is
+     * discarded; Amazon does not store the encryption key. The key must be appropriate
+     * for use with the algorithm specified in the
+     * x-amz-server-side​-encryption​-customer-algorithm header. This must be the same
+     * encryption key specified in the initiate multipart upload request.</p>
+     */
+    inline bool SSECustomerKeyHasBeenSet() const { return m_sSECustomerKeyHasBeenSet; }
 
     /**
      * <p>Specifies the customer-provided encryption key for Amazon S3 to use in
@@ -359,6 +407,13 @@ namespace Model
      * Amazon S3 uses this header for a message integrity check to ensure the
      * encryption key was transmitted without error.</p>
      */
+    inline bool SSECustomerKeyMD5HasBeenSet() const { return m_sSECustomerKeyMD5HasBeenSet; }
+
+    /**
+     * <p>Specifies the 128-bit MD5 digest of the encryption key according to RFC 1321.
+     * Amazon S3 uses this header for a message integrity check to ensure the
+     * encryption key was transmitted without error.</p>
+     */
     inline void SetSSECustomerKeyMD5(const Aws::String& value) { m_sSECustomerKeyMD5HasBeenSet = true; m_sSECustomerKeyMD5 = value; }
 
     /**
@@ -401,6 +456,9 @@ namespace Model
     inline const RequestPayer& GetRequestPayer() const{ return m_requestPayer; }
 
     
+    inline bool RequestPayerHasBeenSet() const { return m_requestPayerHasBeenSet; }
+
+    
     inline void SetRequestPayer(const RequestPayer& value) { m_requestPayerHasBeenSet = true; m_requestPayer = value; }
 
     
@@ -415,6 +473,9 @@ namespace Model
 
     
     inline const Aws::Map<Aws::String, Aws::String>& GetCustomizedAccessLogTag() const{ return m_customizedAccessLogTag; }
+
+    
+    inline bool CustomizedAccessLogTagHasBeenSet() const { return m_customizedAccessLogTagHasBeenSet; }
 
     
     inline void SetCustomizedAccessLogTag(const Aws::Map<Aws::String, Aws::String>& value) { m_customizedAccessLogTagHasBeenSet = true; m_customizedAccessLogTag = value; }

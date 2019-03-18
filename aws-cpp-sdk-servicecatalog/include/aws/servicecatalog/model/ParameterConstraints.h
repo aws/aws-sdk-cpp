@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The values that the administrator has allowed for the parameter.</p>
      */
+    inline bool AllowedValuesHasBeenSet() const { return m_allowedValuesHasBeenSet; }
+
+    /**
+     * <p>The values that the administrator has allowed for the parameter.</p>
+     */
     inline void SetAllowedValues(const Aws::Vector<Aws::String>& value) { m_allowedValuesHasBeenSet = true; m_allowedValues = value; }
 
     /**

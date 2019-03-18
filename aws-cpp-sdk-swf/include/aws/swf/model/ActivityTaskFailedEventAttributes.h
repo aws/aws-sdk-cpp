@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The reason provided for the failure.</p>
      */
+    inline bool ReasonHasBeenSet() const { return m_reasonHasBeenSet; }
+
+    /**
+     * <p>The reason provided for the failure.</p>
+     */
     inline void SetReason(const Aws::String& value) { m_reasonHasBeenSet = true; m_reason = value; }
 
     /**
@@ -88,6 +93,11 @@ namespace Model
      * <p>The details of the failure.</p>
      */
     inline const Aws::String& GetDetails() const{ return m_details; }
+
+    /**
+     * <p>The details of the failure.</p>
+     */
+    inline bool DetailsHasBeenSet() const { return m_detailsHasBeenSet; }
 
     /**
      * <p>The details of the failure.</p>
@@ -132,6 +142,13 @@ namespace Model
      * this activity task was scheduled. This information can be useful for diagnosing
      * problems by tracing back the chain of events leading up to this event.</p>
      */
+    inline bool ScheduledEventIdHasBeenSet() const { return m_scheduledEventIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the <code>ActivityTaskScheduled</code> event that was recorded when
+     * this activity task was scheduled. This information can be useful for diagnosing
+     * problems by tracing back the chain of events leading up to this event.</p>
+     */
     inline void SetScheduledEventId(long long value) { m_scheduledEventIdHasBeenSet = true; m_scheduledEventId = value; }
 
     /**
@@ -148,6 +165,13 @@ namespace Model
      * problems by tracing back the chain of events leading up to this event.</p>
      */
     inline long long GetStartedEventId() const{ return m_startedEventId; }
+
+    /**
+     * <p>The ID of the <code>ActivityTaskStarted</code> event recorded when this
+     * activity task was started. This information can be useful for diagnosing
+     * problems by tracing back the chain of events leading up to this event.</p>
+     */
+    inline bool StartedEventIdHasBeenSet() const { return m_startedEventIdHasBeenSet; }
 
     /**
      * <p>The ID of the <code>ActivityTaskStarted</code> event recorded when this

@@ -52,6 +52,11 @@ namespace Model
     /**
      * <p>The ID of the environment to delete the environment member from.</p>
      */
+    inline bool EnvironmentIdHasBeenSet() const { return m_environmentIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the environment to delete the environment member from.</p>
+     */
     inline void SetEnvironmentId(const Aws::String& value) { m_environmentIdHasBeenSet = true; m_environmentId = value; }
 
     /**
@@ -85,6 +90,12 @@ namespace Model
      * environment.</p>
      */
     inline const Aws::String& GetUserArn() const{ return m_userArn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the environment member to delete from the
+     * environment.</p>
+     */
+    inline bool UserArnHasBeenSet() const { return m_userArnHasBeenSet; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the environment member to delete from the

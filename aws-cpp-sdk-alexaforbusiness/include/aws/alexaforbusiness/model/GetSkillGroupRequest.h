@@ -52,6 +52,11 @@ namespace Model
     /**
      * <p>The ARN of the skill group for which to get details. Required.</p>
      */
+    inline bool SkillGroupArnHasBeenSet() const { return m_skillGroupArnHasBeenSet; }
+
+    /**
+     * <p>The ARN of the skill group for which to get details. Required.</p>
+     */
     inline void SetSkillGroupArn(const Aws::String& value) { m_skillGroupArnHasBeenSet = true; m_skillGroupArn = value; }
 
     /**

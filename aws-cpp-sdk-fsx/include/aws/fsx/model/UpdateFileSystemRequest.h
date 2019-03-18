@@ -55,6 +55,9 @@ namespace Model
     inline const Aws::String& GetFileSystemId() const{ return m_fileSystemId; }
 
     
+    inline bool FileSystemIdHasBeenSet() const { return m_fileSystemIdHasBeenSet; }
+
+    
     inline void SetFileSystemId(const Aws::String& value) { m_fileSystemIdHasBeenSet = true; m_fileSystemId = value; }
 
     
@@ -79,6 +82,13 @@ namespace Model
      * when you use the AWS Command Line Interface (AWS CLI) or an AWS SDK.</p>
      */
     inline const Aws::String& GetClientRequestToken() const{ return m_clientRequestToken; }
+
+    /**
+     * <p>(Optional) A string of up to 64 ASCII characters that Amazon FSx uses to
+     * ensure idempotent updates. This string is automatically filled on your behalf
+     * when you use the AWS Command Line Interface (AWS CLI) or an AWS SDK.</p>
+     */
+    inline bool ClientRequestTokenHasBeenSet() const { return m_clientRequestTokenHasBeenSet; }
 
     /**
      * <p>(Optional) A string of up to 64 ASCII characters that Amazon FSx uses to
@@ -133,6 +143,12 @@ namespace Model
      * <p>The configuration for this Microsoft Windows file system. The only supported
      * options are for backup and maintenance.</p>
      */
+    inline bool WindowsConfigurationHasBeenSet() const { return m_windowsConfigurationHasBeenSet; }
+
+    /**
+     * <p>The configuration for this Microsoft Windows file system. The only supported
+     * options are for backup and maintenance.</p>
+     */
     inline void SetWindowsConfiguration(const UpdateFileSystemWindowsConfiguration& value) { m_windowsConfigurationHasBeenSet = true; m_windowsConfiguration = value; }
 
     /**
@@ -156,6 +172,9 @@ namespace Model
 
     
     inline const UpdateFileSystemLustreConfiguration& GetLustreConfiguration() const{ return m_lustreConfiguration; }
+
+    
+    inline bool LustreConfigurationHasBeenSet() const { return m_lustreConfigurationHasBeenSet; }
 
     
     inline void SetLustreConfiguration(const UpdateFileSystemLustreConfiguration& value) { m_lustreConfigurationHasBeenSet = true; m_lustreConfiguration = value; }

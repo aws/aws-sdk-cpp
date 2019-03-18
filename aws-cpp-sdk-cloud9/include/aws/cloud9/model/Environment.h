@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p>The ID of the environment.</p>
      */
+    inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
+
+    /**
+     * <p>The ID of the environment.</p>
+     */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
     /**
@@ -94,6 +99,11 @@ namespace Model
     /**
      * <p>The name of the environment.</p>
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>The name of the environment.</p>
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
@@ -126,6 +136,11 @@ namespace Model
      * <p>The description for the environment.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
+
+    /**
+     * <p>The description for the environment.</p>
+     */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
 
     /**
      * <p>The description for the environment.</p>
@@ -172,6 +187,14 @@ namespace Model
      * connects to the environment.</p> </li> <li> <p> <code>ssh</code>: Your own
      * server connects to the environment.</p> </li> </ul>
      */
+    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
+
+    /**
+     * <p>The type of environment. Valid values include the following:</p> <ul> <li>
+     * <p> <code>ec2</code>: An Amazon Elastic Compute Cloud (Amazon EC2) instance
+     * connects to the environment.</p> </li> <li> <p> <code>ssh</code>: Your own
+     * server connects to the environment.</p> </li> </ul>
+     */
     inline void SetType(const EnvironmentType& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
@@ -203,6 +226,11 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the environment.</p>
      */
     inline const Aws::String& GetArn() const{ return m_arn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the environment.</p>
+     */
+    inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the environment.</p>
@@ -243,6 +271,11 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the environment owner.</p>
      */
+    inline bool OwnerArnHasBeenSet() const { return m_ownerArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the environment owner.</p>
+     */
     inline void SetOwnerArn(const Aws::String& value) { m_ownerArnHasBeenSet = true; m_ownerArn = value; }
 
     /**
@@ -275,6 +308,11 @@ namespace Model
      * <p>The state of the environment in its creation or deletion lifecycle.</p>
      */
     inline const EnvironmentLifecycle& GetLifecycle() const{ return m_lifecycle; }
+
+    /**
+     * <p>The state of the environment in its creation or deletion lifecycle.</p>
+     */
+    inline bool LifecycleHasBeenSet() const { return m_lifecycleHasBeenSet; }
 
     /**
      * <p>The state of the environment in its creation or deletion lifecycle.</p>

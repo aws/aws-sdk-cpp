@@ -57,6 +57,12 @@ namespace Model
      * <p>The prefix that an object must have to be included in the inventory
      * results.</p>
      */
+    inline bool PrefixHasBeenSet() const { return m_prefixHasBeenSet; }
+
+    /**
+     * <p>The prefix that an object must have to be included in the inventory
+     * results.</p>
+     */
     inline void SetPrefix(const Aws::String& value) { m_prefixHasBeenSet = true; m_prefix = value; }
 
     /**

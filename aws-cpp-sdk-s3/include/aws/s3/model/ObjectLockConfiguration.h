@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>Indicates whether this bucket has an Object Lock configuration enabled.</p>
      */
+    inline bool ObjectLockEnabledHasBeenSet() const { return m_objectLockEnabledHasBeenSet; }
+
+    /**
+     * <p>Indicates whether this bucket has an Object Lock configuration enabled.</p>
+     */
     inline void SetObjectLockEnabled(const ObjectLockEnabled& value) { m_objectLockEnabledHasBeenSet = true; m_objectLockEnabled = value; }
 
     /**
@@ -79,6 +84,11 @@ namespace Model
      * <p>The Object Lock rule in place for the specified object.</p>
      */
     inline const ObjectLockRule& GetRule() const{ return m_rule; }
+
+    /**
+     * <p>The Object Lock rule in place for the specified object.</p>
+     */
+    inline bool RuleHasBeenSet() const { return m_ruleHasBeenSet; }
 
     /**
      * <p>The Object Lock rule in place for the specified object.</p>

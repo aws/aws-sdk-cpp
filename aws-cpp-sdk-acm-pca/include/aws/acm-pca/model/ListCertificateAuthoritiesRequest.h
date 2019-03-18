@@ -56,6 +56,13 @@ namespace Model
      * receive a response with truncated results. Set it to the value of the
      * <code>NextToken</code> parameter from the response you just received.</p>
      */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
+
+    /**
+     * <p>Use this parameter when paginating results in a subsequent request after you
+     * receive a response with truncated results. Set it to the value of the
+     * <code>NextToken</code> parameter from the response you just received.</p>
+     */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
     /**
@@ -102,6 +109,15 @@ namespace Model
      * retrieve additional items.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
+
+    /**
+     * <p>Use this parameter when paginating results to specify the maximum number of
+     * items to return in the response on each page. If additional items exist beyond
+     * the number you specify, the <code>NextToken</code> element is sent in the
+     * response. Use this <code>NextToken</code> value in a subsequent request to
+     * retrieve additional items.</p>
+     */
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
 
     /**
      * <p>Use this parameter when paginating results to specify the maximum number of

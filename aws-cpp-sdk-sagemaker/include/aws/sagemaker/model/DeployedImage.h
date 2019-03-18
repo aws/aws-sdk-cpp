@@ -65,6 +65,11 @@ namespace Model
     /**
      * <p>The image path you specified when you created the model.</p>
      */
+    inline bool SpecifiedImageHasBeenSet() const { return m_specifiedImageHasBeenSet; }
+
+    /**
+     * <p>The image path you specified when you created the model.</p>
+     */
     inline void SetSpecifiedImage(const Aws::String& value) { m_specifiedImageHasBeenSet = true; m_specifiedImage = value; }
 
     /**
@@ -98,6 +103,12 @@ namespace Model
      * <code>ProductionVariant</code>.</p>
      */
     inline const Aws::String& GetResolvedImage() const{ return m_resolvedImage; }
+
+    /**
+     * <p>The specific digest path of the image hosted in this
+     * <code>ProductionVariant</code>.</p>
+     */
+    inline bool ResolvedImageHasBeenSet() const { return m_resolvedImageHasBeenSet; }
 
     /**
      * <p>The specific digest path of the image hosted in this
@@ -141,6 +152,12 @@ namespace Model
      * <code>ResolvedImage</code> </p>
      */
     inline const Aws::Utils::DateTime& GetResolutionTime() const{ return m_resolutionTime; }
+
+    /**
+     * <p>The date and time when the image path for the model resolved to the
+     * <code>ResolvedImage</code> </p>
+     */
+    inline bool ResolutionTimeHasBeenSet() const { return m_resolutionTimeHasBeenSet; }
 
     /**
      * <p>The date and time when the image path for the model resolved to the

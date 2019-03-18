@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>Information about the WorkSpace.</p>
      */
+    inline bool WorkspaceRequestHasBeenSet() const { return m_workspaceRequestHasBeenSet; }
+
+    /**
+     * <p>Information about the WorkSpace.</p>
+     */
     inline void SetWorkspaceRequest(const WorkspaceRequest& value) { m_workspaceRequestHasBeenSet = true; m_workspaceRequest = value; }
 
     /**
@@ -78,6 +83,11 @@ namespace Model
      * <p>The error code that is returned if the WorkSpace cannot be created.</p>
      */
     inline const Aws::String& GetErrorCode() const{ return m_errorCode; }
+
+    /**
+     * <p>The error code that is returned if the WorkSpace cannot be created.</p>
+     */
+    inline bool ErrorCodeHasBeenSet() const { return m_errorCodeHasBeenSet; }
 
     /**
      * <p>The error code that is returned if the WorkSpace cannot be created.</p>
@@ -115,6 +125,12 @@ namespace Model
      * created.</p>
      */
     inline const Aws::String& GetErrorMessage() const{ return m_errorMessage; }
+
+    /**
+     * <p>The text of the error message that is returned if the WorkSpace cannot be
+     * created.</p>
+     */
+    inline bool ErrorMessageHasBeenSet() const { return m_errorMessageHasBeenSet; }
 
     /**
      * <p>The text of the error message that is returned if the WorkSpace cannot be

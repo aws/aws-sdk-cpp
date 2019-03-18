@@ -52,6 +52,11 @@ namespace Model
     /**
      * <p>The instance ID.</p>
      */
+    inline bool InstanceIdHasBeenSet() const { return m_instanceIdHasBeenSet; }
+
+    /**
+     * <p>The instance ID.</p>
+     */
     inline void SetInstanceId(const Aws::String& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
 
     /**
@@ -88,6 +93,11 @@ namespace Model
     /**
      * <p>Whether to delete the instance Elastic IP address.</p>
      */
+    inline bool DeleteElasticIpHasBeenSet() const { return m_deleteElasticIpHasBeenSet; }
+
+    /**
+     * <p>Whether to delete the instance Elastic IP address.</p>
+     */
     inline void SetDeleteElasticIp(bool value) { m_deleteElasticIpHasBeenSet = true; m_deleteElasticIp = value; }
 
     /**
@@ -100,6 +110,11 @@ namespace Model
      * <p>Whether to delete the instance's Amazon EBS volumes.</p>
      */
     inline bool GetDeleteVolumes() const{ return m_deleteVolumes; }
+
+    /**
+     * <p>Whether to delete the instance's Amazon EBS volumes.</p>
+     */
+    inline bool DeleteVolumesHasBeenSet() const { return m_deleteVolumesHasBeenSet; }
 
     /**
      * <p>Whether to delete the instance's Amazon EBS volumes.</p>

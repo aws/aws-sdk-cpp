@@ -69,6 +69,11 @@ namespace Model
     /**
      * <p>The ID of the service setting.</p>
      */
+    inline bool SettingIdHasBeenSet() const { return m_settingIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the service setting.</p>
+     */
     inline void SetSettingId(const Aws::String& value) { m_settingIdHasBeenSet = true; m_settingId = value; }
 
     /**
@@ -101,6 +106,11 @@ namespace Model
      * <p>The value of the service setting.</p>
      */
     inline const Aws::String& GetSettingValue() const{ return m_settingValue; }
+
+    /**
+     * <p>The value of the service setting.</p>
+     */
+    inline bool SettingValueHasBeenSet() const { return m_settingValueHasBeenSet; }
 
     /**
      * <p>The value of the service setting.</p>
@@ -141,6 +151,11 @@ namespace Model
     /**
      * <p>The last time the service setting was modified.</p>
      */
+    inline bool LastModifiedDateHasBeenSet() const { return m_lastModifiedDateHasBeenSet; }
+
+    /**
+     * <p>The last time the service setting was modified.</p>
+     */
     inline void SetLastModifiedDate(const Aws::Utils::DateTime& value) { m_lastModifiedDateHasBeenSet = true; m_lastModifiedDate = value; }
 
     /**
@@ -164,6 +179,12 @@ namespace Model
      * setting value was overwritten.</p>
      */
     inline const Aws::String& GetLastModifiedUser() const{ return m_lastModifiedUser; }
+
+    /**
+     * <p>The ARN of the last modified user. This field is populated only if the
+     * setting value was overwritten.</p>
+     */
+    inline bool LastModifiedUserHasBeenSet() const { return m_lastModifiedUserHasBeenSet; }
 
     /**
      * <p>The ARN of the last modified user. This field is populated only if the
@@ -210,6 +231,11 @@ namespace Model
     /**
      * <p>The ARN of the service setting.</p>
      */
+    inline bool ARNHasBeenSet() const { return m_aRNHasBeenSet; }
+
+    /**
+     * <p>The ARN of the service setting.</p>
+     */
     inline void SetARN(const Aws::String& value) { m_aRNHasBeenSet = true; m_aRN = value; }
 
     /**
@@ -247,6 +273,16 @@ namespace Model
      * setting change request is pending approval.</p> </li> </ul>
      */
     inline const Aws::String& GetStatus() const{ return m_status; }
+
+    /**
+     * <p>The status of the service setting. The value can be Default, Customized or
+     * PendingUpdate.</p> <ul> <li> <p>Default: The current setting uses a default
+     * value provisioned by the AWS service team.</p> </li> <li> <p>Customized: The
+     * current setting use a custom value specified by the customer.</p> </li> <li>
+     * <p>PendingUpdate: The current setting uses a default or custom value, but a
+     * setting change request is pending approval.</p> </li> </ul>
+     */
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
     /**
      * <p>The status of the service setting. The value can be Default, Customized or

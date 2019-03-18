@@ -52,6 +52,11 @@ namespace Model
     /**
      * <p>The name of the log group to search.</p>
      */
+    inline bool LogGroupNameHasBeenSet() const { return m_logGroupNameHasBeenSet; }
+
+    /**
+     * <p>The name of the log group to search.</p>
+     */
     inline void SetLogGroupName(const Aws::String& value) { m_logGroupNameHasBeenSet = true; m_logGroupName = value; }
 
     /**
@@ -88,6 +93,15 @@ namespace Model
      * 00:00:00 UTC.</p>
      */
     inline long long GetTime() const{ return m_time; }
+
+    /**
+     * <p>The time to set as the center of the query. If you specify <code>time</code>,
+     * the 8 minutes before and 8 minutes after this time are searched. If you omit
+     * <code>time</code>, the past 15 minutes are queried.</p> <p>The <code>time</code>
+     * value is specified as epoch time, the number of seconds since January 1, 1970,
+     * 00:00:00 UTC.</p>
+     */
+    inline bool TimeHasBeenSet() const { return m_timeHasBeenSet; }
 
     /**
      * <p>The time to set as the center of the query. If you specify <code>time</code>,

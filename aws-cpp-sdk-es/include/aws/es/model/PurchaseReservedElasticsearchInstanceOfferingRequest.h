@@ -55,6 +55,11 @@ namespace Model
     /**
      * <p>The ID of the reserved Elasticsearch instance offering to purchase.</p>
      */
+    inline bool ReservedElasticsearchInstanceOfferingIdHasBeenSet() const { return m_reservedElasticsearchInstanceOfferingIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the reserved Elasticsearch instance offering to purchase.</p>
+     */
     inline void SetReservedElasticsearchInstanceOfferingId(const Aws::String& value) { m_reservedElasticsearchInstanceOfferingIdHasBeenSet = true; m_reservedElasticsearchInstanceOfferingId = value; }
 
     /**
@@ -91,6 +96,11 @@ namespace Model
     /**
      * <p>A customer-specified identifier to track this reservation.</p>
      */
+    inline bool ReservationNameHasBeenSet() const { return m_reservationNameHasBeenSet; }
+
+    /**
+     * <p>A customer-specified identifier to track this reservation.</p>
+     */
     inline void SetReservationName(const Aws::String& value) { m_reservationNameHasBeenSet = true; m_reservationName = value; }
 
     /**
@@ -123,6 +133,11 @@ namespace Model
      * <p>The number of Elasticsearch instances to reserve.</p>
      */
     inline int GetInstanceCount() const{ return m_instanceCount; }
+
+    /**
+     * <p>The number of Elasticsearch instances to reserve.</p>
+     */
+    inline bool InstanceCountHasBeenSet() const { return m_instanceCountHasBeenSet; }
 
     /**
      * <p>The number of Elasticsearch instances to reserve.</p>

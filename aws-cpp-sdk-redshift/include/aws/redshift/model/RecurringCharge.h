@@ -59,6 +59,12 @@ namespace Model
      * <p>The amount charged per the period of time specified by the recurring charge
      * frequency.</p>
      */
+    inline bool RecurringChargeAmountHasBeenSet() const { return m_recurringChargeAmountHasBeenSet; }
+
+    /**
+     * <p>The amount charged per the period of time specified by the recurring charge
+     * frequency.</p>
+     */
     inline void SetRecurringChargeAmount(double value) { m_recurringChargeAmountHasBeenSet = true; m_recurringChargeAmount = value; }
 
     /**
@@ -72,6 +78,11 @@ namespace Model
      * <p>The frequency at which the recurring charge amount is applied.</p>
      */
     inline const Aws::String& GetRecurringChargeFrequency() const{ return m_recurringChargeFrequency; }
+
+    /**
+     * <p>The frequency at which the recurring charge amount is applied.</p>
+     */
+    inline bool RecurringChargeFrequencyHasBeenSet() const { return m_recurringChargeFrequencyHasBeenSet; }
 
     /**
      * <p>The frequency at which the recurring charge amount is applied.</p>

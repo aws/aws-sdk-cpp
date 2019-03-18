@@ -60,6 +60,12 @@ namespace Model
      * <p>The total time in milliseconds that AWS DataSync spent in the PREPARING
      * phase. </p>
      */
+    inline bool PrepareDurationHasBeenSet() const { return m_prepareDurationHasBeenSet; }
+
+    /**
+     * <p>The total time in milliseconds that AWS DataSync spent in the PREPARING
+     * phase. </p>
+     */
     inline void SetPrepareDuration(long long value) { m_prepareDurationHasBeenSet = true; m_prepareDuration = value; }
 
     /**
@@ -73,6 +79,11 @@ namespace Model
      * <p>The status of the PREPARING phase.</p>
      */
     inline const PhaseStatus& GetPrepareStatus() const{ return m_prepareStatus; }
+
+    /**
+     * <p>The status of the PREPARING phase.</p>
+     */
+    inline bool PrepareStatusHasBeenSet() const { return m_prepareStatusHasBeenSet; }
 
     /**
      * <p>The status of the PREPARING phase.</p>
@@ -105,6 +116,12 @@ namespace Model
      * <p>The total time in milliseconds that AWS DataSync spent in the TRANSFERRING
      * phase.</p>
      */
+    inline bool TransferDurationHasBeenSet() const { return m_transferDurationHasBeenSet; }
+
+    /**
+     * <p>The total time in milliseconds that AWS DataSync spent in the TRANSFERRING
+     * phase.</p>
+     */
     inline void SetTransferDuration(long long value) { m_transferDurationHasBeenSet = true; m_transferDuration = value; }
 
     /**
@@ -118,6 +135,11 @@ namespace Model
      * <p>The status of the TRANSFERRING Phase.</p>
      */
     inline const PhaseStatus& GetTransferStatus() const{ return m_transferStatus; }
+
+    /**
+     * <p>The status of the TRANSFERRING Phase.</p>
+     */
+    inline bool TransferStatusHasBeenSet() const { return m_transferStatusHasBeenSet; }
 
     /**
      * <p>The status of the TRANSFERRING Phase.</p>
@@ -150,6 +172,12 @@ namespace Model
      * <p>The total time in milliseconds that AWS DataSync spent in the VERIFYING
      * phase.</p>
      */
+    inline bool VerifyDurationHasBeenSet() const { return m_verifyDurationHasBeenSet; }
+
+    /**
+     * <p>The total time in milliseconds that AWS DataSync spent in the VERIFYING
+     * phase.</p>
+     */
     inline void SetVerifyDuration(long long value) { m_verifyDurationHasBeenSet = true; m_verifyDuration = value; }
 
     /**
@@ -163,6 +191,11 @@ namespace Model
      * <p>The status of the VERIFYING Phase.</p>
      */
     inline const PhaseStatus& GetVerifyStatus() const{ return m_verifyStatus; }
+
+    /**
+     * <p>The status of the VERIFYING Phase.</p>
+     */
+    inline bool VerifyStatusHasBeenSet() const { return m_verifyStatusHasBeenSet; }
 
     /**
      * <p>The status of the VERIFYING Phase.</p>
@@ -190,6 +223,12 @@ namespace Model
      * use this error code to help troubleshoot issues.</p>
      */
     inline const Aws::String& GetErrorCode() const{ return m_errorCode; }
+
+    /**
+     * <p>Errors that AWS DataSync encountered during execution of the task. You can
+     * use this error code to help troubleshoot issues.</p>
+     */
+    inline bool ErrorCodeHasBeenSet() const { return m_errorCodeHasBeenSet; }
 
     /**
      * <p>Errors that AWS DataSync encountered during execution of the task. You can
@@ -233,6 +272,12 @@ namespace Model
      * execution. You can use this information to help troubleshoot issues. </p>
      */
     inline const Aws::String& GetErrorDetail() const{ return m_errorDetail; }
+
+    /**
+     * <p>Detailed description of an error that was encountered during the task
+     * execution. You can use this information to help troubleshoot issues. </p>
+     */
+    inline bool ErrorDetailHasBeenSet() const { return m_errorDetailHasBeenSet; }
 
     /**
      * <p>Detailed description of an error that was encountered during the task

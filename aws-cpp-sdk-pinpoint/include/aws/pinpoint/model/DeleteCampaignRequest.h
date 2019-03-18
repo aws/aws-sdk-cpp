@@ -50,6 +50,11 @@ namespace Model
     /**
      * The unique ID of your Amazon Pinpoint application.
      */
+    inline bool ApplicationIdHasBeenSet() const { return m_applicationIdHasBeenSet; }
+
+    /**
+     * The unique ID of your Amazon Pinpoint application.
+     */
     inline void SetApplicationId(const Aws::String& value) { m_applicationIdHasBeenSet = true; m_applicationId = value; }
 
     /**
@@ -82,6 +87,11 @@ namespace Model
      * The unique ID of the campaign.
      */
     inline const Aws::String& GetCampaignId() const{ return m_campaignId; }
+
+    /**
+     * The unique ID of the campaign.
+     */
+    inline bool CampaignIdHasBeenSet() const { return m_campaignIdHasBeenSet; }
 
     /**
      * The unique ID of the campaign.

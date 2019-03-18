@@ -61,6 +61,12 @@ namespace Model
      * <p>Amazon WorkDocs authentication token. Do not set this field when using
      * administrative API actions, as in accessing the API using AWS credentials.</p>
      */
+    inline bool AuthenticationTokenHasBeenSet() const { return m_authenticationTokenHasBeenSet; }
+
+    /**
+     * <p>Amazon WorkDocs authentication token. Do not set this field when using
+     * administrative API actions, as in accessing the API using AWS credentials.</p>
+     */
     inline void SetAuthenticationToken(const Aws::String& value) { m_authenticationTokenHasBeenSet = true; m_authenticationToken = value; }
 
     /**
@@ -104,6 +110,12 @@ namespace Model
      * <p>The timestamp that determines the starting time of the activities. The
      * response includes the activities performed after the specified timestamp.</p>
      */
+    inline bool StartTimeHasBeenSet() const { return m_startTimeHasBeenSet; }
+
+    /**
+     * <p>The timestamp that determines the starting time of the activities. The
+     * response includes the activities performed after the specified timestamp.</p>
+     */
     inline void SetStartTime(const Aws::Utils::DateTime& value) { m_startTimeHasBeenSet = true; m_startTime = value; }
 
     /**
@@ -135,6 +147,12 @@ namespace Model
      * <p>The timestamp that determines the end time of the activities. The response
      * includes the activities performed before the specified timestamp.</p>
      */
+    inline bool EndTimeHasBeenSet() const { return m_endTimeHasBeenSet; }
+
+    /**
+     * <p>The timestamp that determines the end time of the activities. The response
+     * includes the activities performed before the specified timestamp.</p>
+     */
     inline void SetEndTime(const Aws::Utils::DateTime& value) { m_endTimeHasBeenSet = true; m_endTime = value; }
 
     /**
@@ -161,6 +179,12 @@ namespace Model
      * administrative API (SigV4) requests.</p>
      */
     inline const Aws::String& GetOrganizationId() const{ return m_organizationId; }
+
+    /**
+     * <p>The ID of the organization. This is a mandatory parameter when using
+     * administrative API (SigV4) requests.</p>
+     */
+    inline bool OrganizationIdHasBeenSet() const { return m_organizationIdHasBeenSet; }
 
     /**
      * <p>The ID of the organization. This is a mandatory parameter when using
@@ -209,6 +233,12 @@ namespace Model
      * <p>Specifies which activity types to include in the response. If this field is
      * left empty, all activity types are returned.</p>
      */
+    inline bool ActivityTypesHasBeenSet() const { return m_activityTypesHasBeenSet; }
+
+    /**
+     * <p>Specifies which activity types to include in the response. If this field is
+     * left empty, all activity types are returned.</p>
+     */
     inline void SetActivityTypes(const Aws::String& value) { m_activityTypesHasBeenSet = true; m_activityTypes = value; }
 
     /**
@@ -250,6 +280,11 @@ namespace Model
     /**
      * <p>The document or folder ID for which to describe activity types.</p>
      */
+    inline bool ResourceIdHasBeenSet() const { return m_resourceIdHasBeenSet; }
+
+    /**
+     * <p>The document or folder ID for which to describe activity types.</p>
+     */
     inline void SetResourceId(const Aws::String& value) { m_resourceIdHasBeenSet = true; m_resourceId = value; }
 
     /**
@@ -284,6 +319,13 @@ namespace Model
      * for administrative API (SigV4) requests.</p>
      */
     inline const Aws::String& GetUserId() const{ return m_userId; }
+
+    /**
+     * <p>The ID of the user who performed the action. The response includes activities
+     * pertaining to this user. This is an optional parameter and is only applicable
+     * for administrative API (SigV4) requests.</p>
+     */
+    inline bool UserIdHasBeenSet() const { return m_userIdHasBeenSet; }
 
     /**
      * <p>The ID of the user who performed the action. The response includes activities
@@ -342,6 +384,14 @@ namespace Model
      * (the direct activity) shares all of the subfolders and documents within the
      * parent folder (the indirect activity).</p>
      */
+    inline bool IncludeIndirectActivitiesHasBeenSet() const { return m_includeIndirectActivitiesHasBeenSet; }
+
+    /**
+     * <p>Includes indirect activities. An indirect activity results from a direct
+     * activity performed on a parent resource. For example, sharing a parent folder
+     * (the direct activity) shares all of the subfolders and documents within the
+     * parent folder (the indirect activity).</p>
+     */
     inline void SetIncludeIndirectActivities(bool value) { m_includeIndirectActivitiesHasBeenSet = true; m_includeIndirectActivities = value; }
 
     /**
@@ -361,6 +411,11 @@ namespace Model
     /**
      * <p>The maximum number of items to return.</p>
      */
+    inline bool LimitHasBeenSet() const { return m_limitHasBeenSet; }
+
+    /**
+     * <p>The maximum number of items to return.</p>
+     */
     inline void SetLimit(int value) { m_limitHasBeenSet = true; m_limit = value; }
 
     /**
@@ -373,6 +428,11 @@ namespace Model
      * <p>The marker for the next set of results.</p>
      */
     inline const Aws::String& GetMarker() const{ return m_marker; }
+
+    /**
+     * <p>The marker for the next set of results.</p>
+     */
+    inline bool MarkerHasBeenSet() const { return m_markerHasBeenSet; }
 
     /**
      * <p>The marker for the next set of results.</p>

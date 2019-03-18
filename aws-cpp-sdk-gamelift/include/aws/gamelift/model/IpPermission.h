@@ -60,6 +60,11 @@ namespace Model
     /**
      * <p>Starting value for a range of allowed port numbers.</p>
      */
+    inline bool FromPortHasBeenSet() const { return m_fromPortHasBeenSet; }
+
+    /**
+     * <p>Starting value for a range of allowed port numbers.</p>
+     */
     inline void SetFromPort(int value) { m_fromPortHasBeenSet = true; m_fromPort = value; }
 
     /**
@@ -73,6 +78,12 @@ namespace Model
      * end-inclusive. This value must be higher than <code>FromPort</code>.</p>
      */
     inline int GetToPort() const{ return m_toPort; }
+
+    /**
+     * <p>Ending value for a range of allowed port numbers. Port numbers are
+     * end-inclusive. This value must be higher than <code>FromPort</code>.</p>
+     */
+    inline bool ToPortHasBeenSet() const { return m_toPortHasBeenSet; }
 
     /**
      * <p>Ending value for a range of allowed port numbers. Port numbers are
@@ -93,6 +104,13 @@ namespace Model
      * shortened version "<code>0.0.0.0/[subnet mask]</code>".</p>
      */
     inline const Aws::String& GetIpRange() const{ return m_ipRange; }
+
+    /**
+     * <p>Range of allowed IP addresses. This value must be expressed in CIDR notation.
+     * Example: "<code>000.000.000.000/[subnet mask]</code>" or optionally the
+     * shortened version "<code>0.0.0.0/[subnet mask]</code>".</p>
+     */
+    inline bool IpRangeHasBeenSet() const { return m_ipRangeHasBeenSet; }
 
     /**
      * <p>Range of allowed IP addresses. This value must be expressed in CIDR notation.
@@ -141,6 +159,11 @@ namespace Model
      * <p>Network communication protocol used by the fleet.</p>
      */
     inline const IpProtocol& GetProtocol() const{ return m_protocol; }
+
+    /**
+     * <p>Network communication protocol used by the fleet.</p>
+     */
+    inline bool ProtocolHasBeenSet() const { return m_protocolHasBeenSet; }
 
     /**
      * <p>Network communication protocol used by the fleet.</p>

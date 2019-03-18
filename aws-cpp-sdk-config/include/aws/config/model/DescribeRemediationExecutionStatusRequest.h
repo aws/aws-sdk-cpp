@@ -54,6 +54,11 @@ namespace Model
     /**
      * <p>A list of AWS Config rule names.</p>
      */
+    inline bool ConfigRuleNameHasBeenSet() const { return m_configRuleNameHasBeenSet; }
+
+    /**
+     * <p>A list of AWS Config rule names.</p>
+     */
     inline void SetConfigRuleName(const Aws::String& value) { m_configRuleNameHasBeenSet = true; m_configRuleName = value; }
 
     /**
@@ -87,6 +92,12 @@ namespace Model
      * element in the list consists of the resource type and resource ID. </p>
      */
     inline const Aws::Vector<ResourceKey>& GetResourceKeys() const{ return m_resourceKeys; }
+
+    /**
+     * <p>A list of resource keys to be processed with the current request. Each
+     * element in the list consists of the resource type and resource ID. </p>
+     */
+    inline bool ResourceKeysHasBeenSet() const { return m_resourceKeysHasBeenSet; }
 
     /**
      * <p>A list of resource keys to be processed with the current request. Each
@@ -135,6 +146,12 @@ namespace Model
      * <p>The maximum number of RemediationExecutionStatuses returned on each page. The
      * default is maximum. If you specify 0, AWS Config uses the default. </p>
      */
+    inline bool LimitHasBeenSet() const { return m_limitHasBeenSet; }
+
+    /**
+     * <p>The maximum number of RemediationExecutionStatuses returned on each page. The
+     * default is maximum. If you specify 0, AWS Config uses the default. </p>
+     */
     inline void SetLimit(int value) { m_limitHasBeenSet = true; m_limit = value; }
 
     /**
@@ -149,6 +166,12 @@ namespace Model
      * get the next page of results in a paginated response.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
+    /**
+     * <p>The <code>nextToken</code> string returned on a previous page that you use to
+     * get the next page of results in a paginated response.</p>
+     */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
      * <p>The <code>nextToken</code> string returned on a previous page that you use to

@@ -60,6 +60,11 @@ namespace Model
     /**
      * <p>One or more target groups.</p>
      */
+    inline bool TargetGroupsHasBeenSet() const { return m_targetGroupsHasBeenSet; }
+
+    /**
+     * <p>One or more target groups.</p>
+     */
     inline void SetTargetGroups(const Aws::Vector<TargetGroup>& value) { m_targetGroupsHasBeenSet = true; m_targetGroups = value; }
 
     /**

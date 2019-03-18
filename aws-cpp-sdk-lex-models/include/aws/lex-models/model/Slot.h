@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p>The name of the slot.</p>
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>The name of the slot.</p>
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
@@ -90,6 +95,11 @@ namespace Model
      * <p>A description of the slot.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
+
+    /**
+     * <p>A description of the slot.</p>
+     */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
 
     /**
      * <p>A description of the slot.</p>
@@ -130,6 +140,11 @@ namespace Model
     /**
      * <p>Specifies whether the slot is required or optional. </p>
      */
+    inline bool SlotConstraintHasBeenSet() const { return m_slotConstraintHasBeenSet; }
+
+    /**
+     * <p>Specifies whether the slot is required or optional. </p>
+     */
     inline void SetSlotConstraint(const SlotConstraint& value) { m_slotConstraintHasBeenSet = true; m_slotConstraint = value; }
 
     /**
@@ -153,6 +168,12 @@ namespace Model
      * the built-in slot types.</p>
      */
     inline const Aws::String& GetSlotType() const{ return m_slotType; }
+
+    /**
+     * <p>The type of the slot, either a custom slot type that you defined or one of
+     * the built-in slot types.</p>
+     */
+    inline bool SlotTypeHasBeenSet() const { return m_slotTypeHasBeenSet; }
 
     /**
      * <p>The type of the slot, either a custom slot type that you defined or one of
@@ -199,6 +220,11 @@ namespace Model
     /**
      * <p>The version of the slot type.</p>
      */
+    inline bool SlotTypeVersionHasBeenSet() const { return m_slotTypeVersionHasBeenSet; }
+
+    /**
+     * <p>The version of the slot type.</p>
+     */
     inline void SetSlotTypeVersion(const Aws::String& value) { m_slotTypeVersionHasBeenSet = true; m_slotTypeVersion = value; }
 
     /**
@@ -235,6 +261,11 @@ namespace Model
     /**
      * <p>The prompt that Amazon Lex uses to elicit the slot value from the user.</p>
      */
+    inline bool ValueElicitationPromptHasBeenSet() const { return m_valueElicitationPromptHasBeenSet; }
+
+    /**
+     * <p>The prompt that Amazon Lex uses to elicit the slot value from the user.</p>
+     */
     inline void SetValueElicitationPrompt(const Prompt& value) { m_valueElicitationPromptHasBeenSet = true; m_valueElicitationPrompt = value; }
 
     /**
@@ -267,6 +298,14 @@ namespace Model
      * elicits a value for the slot with priority 1.</p> <p>If multiple slots share the
      * same priority, the order in which Lex elicits values is arbitrary.</p>
      */
+    inline bool PriorityHasBeenSet() const { return m_priorityHasBeenSet; }
+
+    /**
+     * <p> Directs Lex the order in which to elicit this slot value from the user. For
+     * example, if the intent has two slots with priorities 1 and 2, AWS Lex first
+     * elicits a value for the slot with priority 1.</p> <p>If multiple slots share the
+     * same priority, the order in which Lex elicits values is arbitrary.</p>
+     */
     inline void SetPriority(int value) { m_priorityHasBeenSet = true; m_priority = value; }
 
     /**
@@ -285,6 +324,14 @@ namespace Model
      * understanding user utterances. </p>
      */
     inline const Aws::Vector<Aws::String>& GetSampleUtterances() const{ return m_sampleUtterances; }
+
+    /**
+     * <p> If you know a specific pattern with which users might respond to an Amazon
+     * Lex request for a slot value, you can provide those utterances to improve
+     * accuracy. This is optional. In most cases, Amazon Lex is capable of
+     * understanding user utterances. </p>
+     */
+    inline bool SampleUtterancesHasBeenSet() const { return m_sampleUtterancesHasBeenSet; }
 
     /**
      * <p> If you know a specific pattern with which users might respond to an Amazon
@@ -349,6 +396,13 @@ namespace Model
      * </p>
      */
     inline const Aws::String& GetResponseCard() const{ return m_responseCard; }
+
+    /**
+     * <p> A set of possible responses for the slot type used by text-based clients. A
+     * user chooses an option from the response card, instead of using text to reply.
+     * </p>
+     */
+    inline bool ResponseCardHasBeenSet() const { return m_responseCardHasBeenSet; }
 
     /**
      * <p> A set of possible responses for the slot type used by text-based clients. A

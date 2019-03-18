@@ -57,6 +57,13 @@ namespace Model
      * this parameter, <code>DescribeStacks</code> returns a description of every
      * stack.</p>
      */
+    inline bool StackIdsHasBeenSet() const { return m_stackIdsHasBeenSet; }
+
+    /**
+     * <p>An array of stack IDs that specify the stacks to be described. If you omit
+     * this parameter, <code>DescribeStacks</code> returns a description of every
+     * stack.</p>
+     */
     inline void SetStackIds(const Aws::Vector<Aws::String>& value) { m_stackIdsHasBeenSet = true; m_stackIds = value; }
 
     /**

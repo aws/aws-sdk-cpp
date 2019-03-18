@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p>The ID of the app client associated with the user pool.</p>
      */
+    inline bool ClientIdHasBeenSet() const { return m_clientIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the app client associated with the user pool.</p>
+     */
     inline void SetClientId(const Aws::String& value) { m_clientIdHasBeenSet = true; m_clientId = value; }
 
     /**
@@ -91,6 +96,12 @@ namespace Model
      * key of a user pool client and username plus the client ID in the message.</p>
      */
     inline const Aws::String& GetSecretHash() const{ return m_secretHash; }
+
+    /**
+     * <p>A keyed-hash message authentication code (HMAC) calculated using the secret
+     * key of a user pool client and username plus the client ID in the message.</p>
+     */
+    inline bool SecretHashHasBeenSet() const { return m_secretHashHasBeenSet; }
 
     /**
      * <p>A keyed-hash message authentication code (HMAC) calculated using the secret
@@ -137,6 +148,11 @@ namespace Model
     /**
      * <p>The user name of the user whose registration you wish to confirm.</p>
      */
+    inline bool UsernameHasBeenSet() const { return m_usernameHasBeenSet; }
+
+    /**
+     * <p>The user name of the user whose registration you wish to confirm.</p>
+     */
     inline void SetUsername(const Aws::String& value) { m_usernameHasBeenSet = true; m_username = value; }
 
     /**
@@ -169,6 +185,11 @@ namespace Model
      * <p>The confirmation code sent by a user's request to confirm registration.</p>
      */
     inline const Aws::String& GetConfirmationCode() const{ return m_confirmationCode; }
+
+    /**
+     * <p>The confirmation code sent by a user's request to confirm registration.</p>
+     */
+    inline bool ConfirmationCodeHasBeenSet() const { return m_confirmationCodeHasBeenSet; }
 
     /**
      * <p>The confirmation code sent by a user's request to confirm registration.</p>
@@ -221,6 +242,17 @@ namespace Model
      * to <code>False</code>, the API will throw an <b>AliasExistsException</b>
      * error.</p>
      */
+    inline bool ForceAliasCreationHasBeenSet() const { return m_forceAliasCreationHasBeenSet; }
+
+    /**
+     * <p>Boolean to be specified to force user confirmation irrespective of existing
+     * alias. By default set to <code>False</code>. If this parameter is set to
+     * <code>True</code> and the phone number/email used for sign up confirmation
+     * already exists as an alias with a different user, the API call will migrate the
+     * alias from the previous user to the newly created user being confirmed. If set
+     * to <code>False</code>, the API will throw an <b>AliasExistsException</b>
+     * error.</p>
+     */
     inline void SetForceAliasCreation(bool value) { m_forceAliasCreationHasBeenSet = true; m_forceAliasCreation = value; }
 
     /**
@@ -240,6 +272,12 @@ namespace Model
      * <code>ConfirmSignUp</code> calls.</p>
      */
     inline const AnalyticsMetadataType& GetAnalyticsMetadata() const{ return m_analyticsMetadata; }
+
+    /**
+     * <p>The Amazon Pinpoint analytics metadata for collecting metrics for
+     * <code>ConfirmSignUp</code> calls.</p>
+     */
+    inline bool AnalyticsMetadataHasBeenSet() const { return m_analyticsMetadataHasBeenSet; }
 
     /**
      * <p>The Amazon Pinpoint analytics metadata for collecting metrics for
@@ -272,6 +310,13 @@ namespace Model
      * advanced security.</p>
      */
     inline const UserContextDataType& GetUserContextData() const{ return m_userContextData; }
+
+    /**
+     * <p>Contextual data such as the user's device fingerprint, IP address, or
+     * location used for evaluating the risk of an unexpected event by Amazon Cognito
+     * advanced security.</p>
+     */
+    inline bool UserContextDataHasBeenSet() const { return m_userContextDataHasBeenSet; }
 
     /**
      * <p>Contextual data such as the user's device fingerprint, IP address, or

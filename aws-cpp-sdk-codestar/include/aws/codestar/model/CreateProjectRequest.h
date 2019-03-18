@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The display name for the project to be created in AWS CodeStar.</p>
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>The display name for the project to be created in AWS CodeStar.</p>
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
@@ -88,6 +93,11 @@ namespace Model
      * <p>The ID of the project to be created in AWS CodeStar.</p>
      */
     inline const Aws::String& GetId() const{ return m_id; }
+
+    /**
+     * <p>The ID of the project to be created in AWS CodeStar.</p>
+     */
+    inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
 
     /**
      * <p>The ID of the project to be created in AWS CodeStar.</p>
@@ -128,6 +138,11 @@ namespace Model
     /**
      * <p>The description of the project, if any.</p>
      */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
+
+    /**
+     * <p>The description of the project, if any.</p>
+     */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
@@ -161,6 +176,12 @@ namespace Model
      * project creation. This token can be used to repeat the request.</p>
      */
     inline const Aws::String& GetClientRequestToken() const{ return m_clientRequestToken; }
+
+    /**
+     * <p>A user- or system-generated token that identifies the entity that requested
+     * project creation. This token can be used to repeat the request.</p>
+     */
+    inline bool ClientRequestTokenHasBeenSet() const { return m_clientRequestTokenHasBeenSet; }
 
     /**
      * <p>A user- or system-generated token that identifies the entity that requested
@@ -205,6 +226,13 @@ namespace Model
      * parameter.</p>
      */
     inline const Aws::Vector<Code>& GetSourceCode() const{ return m_sourceCode; }
+
+    /**
+     * <p>A list of the Code objects submitted with the project request. If this
+     * parameter is specified, the request must also include the toolchain
+     * parameter.</p>
+     */
+    inline bool SourceCodeHasBeenSet() const { return m_sourceCodeHasBeenSet; }
 
     /**
      * <p>A list of the Code objects submitted with the project request. If this
@@ -261,6 +289,13 @@ namespace Model
      * If this parameter is specified, the request must also include the sourceCode
      * parameter.</p>
      */
+    inline bool ToolchainHasBeenSet() const { return m_toolchainHasBeenSet; }
+
+    /**
+     * <p>The name of the toolchain template file submitted with the project request.
+     * If this parameter is specified, the request must also include the sourceCode
+     * parameter.</p>
+     */
     inline void SetToolchain(const Toolchain& value) { m_toolchainHasBeenSet = true; m_toolchain = value; }
 
     /**
@@ -289,6 +324,11 @@ namespace Model
      * <p>The tags created for the project.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>The tags created for the project.</p>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
      * <p>The tags created for the project.</p>

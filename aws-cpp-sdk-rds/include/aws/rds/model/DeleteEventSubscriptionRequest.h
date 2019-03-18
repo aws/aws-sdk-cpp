@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The name of the RDS event notification subscription you want to delete.</p>
      */
+    inline bool SubscriptionNameHasBeenSet() const { return m_subscriptionNameHasBeenSet; }
+
+    /**
+     * <p>The name of the RDS event notification subscription you want to delete.</p>
+     */
     inline void SetSubscriptionName(const Aws::String& value) { m_subscriptionNameHasBeenSet = true; m_subscriptionName = value; }
 
     /**

@@ -55,6 +55,12 @@ namespace Model
      * <p>A list of AWS Config rule names of remediation configurations for which you
      * want details. </p>
      */
+    inline bool ConfigRuleNamesHasBeenSet() const { return m_configRuleNamesHasBeenSet; }
+
+    /**
+     * <p>A list of AWS Config rule names of remediation configurations for which you
+     * want details. </p>
+     */
     inline void SetConfigRuleNames(const Aws::Vector<Aws::String>& value) { m_configRuleNamesHasBeenSet = true; m_configRuleNames = value; }
 
     /**

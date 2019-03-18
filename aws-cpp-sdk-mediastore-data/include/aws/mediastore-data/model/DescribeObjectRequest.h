@@ -52,6 +52,12 @@ namespace Model
      * <p>The path (including the file name) where the object is stored in the
      * container. Format: &lt;folder name&gt;/&lt;folder name&gt;/&lt;file name&gt;</p>
      */
+    inline bool PathHasBeenSet() const { return m_pathHasBeenSet; }
+
+    /**
+     * <p>The path (including the file name) where the object is stored in the
+     * container. Format: &lt;folder name&gt;/&lt;folder name&gt;/&lt;file name&gt;</p>
+     */
     inline void SetPath(const Aws::String& value) { m_pathHasBeenSet = true; m_path = value; }
 
     /**

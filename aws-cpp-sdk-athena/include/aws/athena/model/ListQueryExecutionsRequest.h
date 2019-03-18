@@ -54,6 +54,12 @@ namespace Model
      * <p>The token that specifies where to start pagination if a previous request was
      * truncated.</p>
      */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
+
+    /**
+     * <p>The token that specifies where to start pagination if a previous request was
+     * truncated.</p>
+     */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
     /**
@@ -95,6 +101,11 @@ namespace Model
     /**
      * <p>The maximum number of query executions to return in this request.</p>
      */
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
+
+    /**
+     * <p>The maximum number of query executions to return in this request.</p>
+     */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
@@ -107,6 +118,11 @@ namespace Model
      * <p>The name of the workgroup from which queries are being returned.</p>
      */
     inline const Aws::String& GetWorkGroup() const{ return m_workGroup; }
+
+    /**
+     * <p>The name of the workgroup from which queries are being returned.</p>
+     */
+    inline bool WorkGroupHasBeenSet() const { return m_workGroupHasBeenSet; }
 
     /**
      * <p>The name of the workgroup from which queries are being returned.</p>

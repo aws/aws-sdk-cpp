@@ -59,6 +59,12 @@ namespace Model
      * <p>The ID of the private hosted zone that you want to authorize associating a
      * VPC with.</p>
      */
+    inline bool HostedZoneIdHasBeenSet() const { return m_hostedZoneIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the private hosted zone that you want to authorize associating a
+     * VPC with.</p>
+     */
     inline void SetHostedZoneId(const Aws::String& value) { m_hostedZoneIdHasBeenSet = true; m_hostedZoneId = value; }
 
     /**
@@ -97,6 +103,12 @@ namespace Model
      * to authorize associating with your hosted zone.</p>
      */
     inline const VPC& GetVPC() const{ return m_vPC; }
+
+    /**
+     * <p>A complex type that contains the VPC ID and region for the VPC that you want
+     * to authorize associating with your hosted zone.</p>
+     */
+    inline bool VPCHasBeenSet() const { return m_vPCHasBeenSet; }
 
     /**
      * <p>A complex type that contains the VPC ID and region for the VPC that you want

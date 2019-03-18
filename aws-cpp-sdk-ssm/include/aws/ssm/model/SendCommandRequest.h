@@ -68,6 +68,16 @@ namespace Model
      * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Sending
      * Commands to a Fleet</a> in the <i>AWS Systems Manager User Guide</i>.</p>
      */
+    inline bool InstanceIdsHasBeenSet() const { return m_instanceIdsHasBeenSet; }
+
+    /**
+     * <p>The instance IDs where the command should execute. You can specify a maximum
+     * of 50 IDs. If you prefer not to list individual instance IDs, you can instead
+     * send commands to a fleet of instances using the Targets parameter, which accepts
+     * EC2 tags. For more information about how to use targets, see <a
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Sending
+     * Commands to a Fleet</a> in the <i>AWS Systems Manager User Guide</i>.</p>
+     */
     inline void SetInstanceIds(const Aws::Vector<Aws::String>& value) { m_instanceIdsHasBeenSet = true; m_instanceIds = value; }
 
     /**
@@ -149,6 +159,16 @@ namespace Model
      * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Sending
      * Commands to a Fleet</a> in the <i>AWS Systems Manager User Guide</i>.</p>
      */
+    inline bool TargetsHasBeenSet() const { return m_targetsHasBeenSet; }
+
+    /**
+     * <p>(Optional) An array of search criteria that targets instances using a
+     * Key,Value combination that you specify. Targets is required if you don't provide
+     * one or more instance IDs in the call. For more information about how to use
+     * targets, see <a
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Sending
+     * Commands to a Fleet</a> in the <i>AWS Systems Manager User Guide</i>.</p>
+     */
     inline void SetTargets(const Aws::Vector<Target>& value) { m_targetsHasBeenSet = true; m_targets = value; }
 
     /**
@@ -212,6 +232,12 @@ namespace Model
      * <p>Required. The name of the Systems Manager document to execute. This can be a
      * public document or a custom document.</p>
      */
+    inline bool DocumentNameHasBeenSet() const { return m_documentNameHasBeenSet; }
+
+    /**
+     * <p>Required. The name of the Systems Manager document to execute. This can be a
+     * public document or a custom document.</p>
+     */
     inline void SetDocumentName(const Aws::String& value) { m_documentNameHasBeenSet = true; m_documentName = value; }
 
     /**
@@ -254,6 +280,16 @@ namespace Model
      * "\$LATEST"</p> <p>--document-version "3"</p>
      */
     inline const Aws::String& GetDocumentVersion() const{ return m_documentVersion; }
+
+    /**
+     * <p>The SSM document version to use in the request. You can specify $DEFAULT,
+     * $LATEST, or a specific version number. If you execute commands by using the AWS
+     * CLI, then you must escape the first two options by using a backslash. If you
+     * specify a version number, then you don't need to use the backslash. For
+     * example:</p> <p>--document-version "\$DEFAULT"</p> <p>--document-version
+     * "\$LATEST"</p> <p>--document-version "3"</p>
+     */
+    inline bool DocumentVersionHasBeenSet() const { return m_documentVersionHasBeenSet; }
 
     /**
      * <p>The SSM document version to use in the request. You can specify $DEFAULT,
@@ -326,6 +362,12 @@ namespace Model
      * <p>The Sha256 or Sha1 hash created by the system when the document was created.
      * </p> <note> <p>Sha1 hashes have been deprecated.</p> </note>
      */
+    inline bool DocumentHashHasBeenSet() const { return m_documentHashHasBeenSet; }
+
+    /**
+     * <p>The Sha256 or Sha1 hash created by the system when the document was created.
+     * </p> <note> <p>Sha1 hashes have been deprecated.</p> </note>
+     */
     inline void SetDocumentHash(const Aws::String& value) { m_documentHashHasBeenSet = true; m_documentHash = value; }
 
     /**
@@ -367,6 +409,11 @@ namespace Model
     /**
      * <p>Sha256 or Sha1.</p> <note> <p>Sha1 hashes have been deprecated.</p> </note>
      */
+    inline bool DocumentHashTypeHasBeenSet() const { return m_documentHashTypeHasBeenSet; }
+
+    /**
+     * <p>Sha256 or Sha1.</p> <note> <p>Sha1 hashes have been deprecated.</p> </note>
+     */
     inline void SetDocumentHashType(const DocumentHashType& value) { m_documentHashTypeHasBeenSet = true; m_documentHashType = value; }
 
     /**
@@ -395,6 +442,12 @@ namespace Model
      * <p>If this time is reached and the command has not already started executing, it
      * will not run.</p>
      */
+    inline bool TimeoutSecondsHasBeenSet() const { return m_timeoutSecondsHasBeenSet; }
+
+    /**
+     * <p>If this time is reached and the command has not already started executing, it
+     * will not run.</p>
+     */
     inline void SetTimeoutSeconds(int value) { m_timeoutSecondsHasBeenSet = true; m_timeoutSeconds = value; }
 
     /**
@@ -409,6 +462,12 @@ namespace Model
      * what the command should do.</p>
      */
     inline const Aws::String& GetComment() const{ return m_comment; }
+
+    /**
+     * <p>User-specified information about the command, such as a brief description of
+     * what the command should do.</p>
+     */
+    inline bool CommentHasBeenSet() const { return m_commentHasBeenSet; }
 
     /**
      * <p>User-specified information about the command, such as a brief description of
@@ -452,6 +511,12 @@ namespace Model
      * executed.</p>
      */
     inline const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& GetParameters() const{ return m_parameters; }
+
+    /**
+     * <p>The required and optional parameters specified in the document being
+     * executed.</p>
+     */
+    inline bool ParametersHasBeenSet() const { return m_parametersHasBeenSet; }
 
     /**
      * <p>The required and optional parameters specified in the document being
@@ -526,6 +591,13 @@ namespace Model
      * Instead, Systems Manager automatically determines the Amazon S3 bucket
      * region.</p>
      */
+    inline bool OutputS3RegionHasBeenSet() const { return m_outputS3RegionHasBeenSet; }
+
+    /**
+     * <p>(Deprecated) You can no longer specify this parameter. The system ignores it.
+     * Instead, Systems Manager automatically determines the Amazon S3 bucket
+     * region.</p>
+     */
     inline void SetOutputS3Region(const Aws::String& value) { m_outputS3RegionHasBeenSet = true; m_outputS3Region = value; }
 
     /**
@@ -574,6 +646,12 @@ namespace Model
      * <p>The name of the S3 bucket where command execution responses should be
      * stored.</p>
      */
+    inline bool OutputS3BucketNameHasBeenSet() const { return m_outputS3BucketNameHasBeenSet; }
+
+    /**
+     * <p>The name of the S3 bucket where command execution responses should be
+     * stored.</p>
+     */
     inline void SetOutputS3BucketName(const Aws::String& value) { m_outputS3BucketNameHasBeenSet = true; m_outputS3BucketName = value; }
 
     /**
@@ -612,6 +690,12 @@ namespace Model
      * stored.</p>
      */
     inline const Aws::String& GetOutputS3KeyPrefix() const{ return m_outputS3KeyPrefix; }
+
+    /**
+     * <p>The directory structure within the S3 bucket where the responses should be
+     * stored.</p>
+     */
+    inline bool OutputS3KeyPrefixHasBeenSet() const { return m_outputS3KeyPrefixHasBeenSet; }
 
     /**
      * <p>The directory structure within the S3 bucket where the responses should be
@@ -659,6 +743,16 @@ namespace Model
      * Concurrency Controls</a> in the <i>AWS Systems Manager User Guide</i>.</p>
      */
     inline const Aws::String& GetMaxConcurrency() const{ return m_maxConcurrency; }
+
+    /**
+     * <p>(Optional) The maximum number of instances that are allowed to execute the
+     * command at the same time. You can specify a number such as 10 or a percentage
+     * such as 10%. The default value is 50. For more information about how to use
+     * MaxConcurrency, see <a
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html#send-commands-velocity">Using
+     * Concurrency Controls</a> in the <i>AWS Systems Manager User Guide</i>.</p>
+     */
+    inline bool MaxConcurrencyHasBeenSet() const { return m_maxConcurrencyHasBeenSet; }
 
     /**
      * <p>(Optional) The maximum number of instances that are allowed to execute the
@@ -741,6 +835,17 @@ namespace Model
      * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html#send-commands-maxerrors">Using
      * Error Controls</a> in the <i>AWS Systems Manager User Guide</i>.</p>
      */
+    inline bool MaxErrorsHasBeenSet() const { return m_maxErrorsHasBeenSet; }
+
+    /**
+     * <p>The maximum number of errors allowed without the command failing. When the
+     * command fails one more time beyond the value of MaxErrors, the systems stops
+     * sending the command to additional targets. You can specify a number like 10 or a
+     * percentage like 10%. The default value is 0. For more information about how to
+     * use MaxErrors, see <a
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html#send-commands-maxerrors">Using
+     * Error Controls</a> in the <i>AWS Systems Manager User Guide</i>.</p>
+     */
     inline void SetMaxErrors(const Aws::String& value) { m_maxErrorsHasBeenSet = true; m_maxErrors = value; }
 
     /**
@@ -807,6 +912,11 @@ namespace Model
     /**
      * <p>The IAM role that Systems Manager uses to send notifications. </p>
      */
+    inline bool ServiceRoleArnHasBeenSet() const { return m_serviceRoleArnHasBeenSet; }
+
+    /**
+     * <p>The IAM role that Systems Manager uses to send notifications. </p>
+     */
     inline void SetServiceRoleArn(const Aws::String& value) { m_serviceRoleArnHasBeenSet = true; m_serviceRoleArn = value; }
 
     /**
@@ -843,6 +953,11 @@ namespace Model
     /**
      * <p>Configurations for sending notifications.</p>
      */
+    inline bool NotificationConfigHasBeenSet() const { return m_notificationConfigHasBeenSet; }
+
+    /**
+     * <p>Configurations for sending notifications.</p>
+     */
     inline void SetNotificationConfig(const NotificationConfig& value) { m_notificationConfigHasBeenSet = true; m_notificationConfig = value; }
 
     /**
@@ -866,6 +981,12 @@ namespace Model
      * </p>
      */
     inline const CloudWatchOutputConfig& GetCloudWatchOutputConfig() const{ return m_cloudWatchOutputConfig; }
+
+    /**
+     * <p>Enables Systems Manager to send Run Command output to Amazon CloudWatch Logs.
+     * </p>
+     */
+    inline bool CloudWatchOutputConfigHasBeenSet() const { return m_cloudWatchOutputConfigHasBeenSet; }
 
     /**
      * <p>Enables Systems Manager to send Run Command output to Amazon CloudWatch Logs.

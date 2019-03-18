@@ -53,6 +53,11 @@ namespace Model
     /**
      * <p>The IDs of the agents or connectors from which to stop collecting data.</p>
      */
+    inline bool AgentIdsHasBeenSet() const { return m_agentIdsHasBeenSet; }
+
+    /**
+     * <p>The IDs of the agents or connectors from which to stop collecting data.</p>
+     */
     inline void SetAgentIds(const Aws::Vector<Aws::String>& value) { m_agentIdsHasBeenSet = true; m_agentIds = value; }
 
     /**

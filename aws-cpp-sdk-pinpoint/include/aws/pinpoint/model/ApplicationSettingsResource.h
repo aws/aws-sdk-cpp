@@ -58,6 +58,11 @@ namespace Model
     /**
      * The unique ID for the application.
      */
+    inline bool ApplicationIdHasBeenSet() const { return m_applicationIdHasBeenSet; }
+
+    /**
+     * The unique ID for the application.
+     */
     inline void SetApplicationId(const Aws::String& value) { m_applicationIdHasBeenSet = true; m_applicationId = value; }
 
     /**
@@ -94,6 +99,11 @@ namespace Model
     /**
      * Default campaign hook.
      */
+    inline bool CampaignHookHasBeenSet() const { return m_campaignHookHasBeenSet; }
+
+    /**
+     * Default campaign hook.
+     */
     inline void SetCampaignHook(const CampaignHook& value) { m_campaignHookHasBeenSet = true; m_campaignHook = value; }
 
     /**
@@ -116,6 +126,11 @@ namespace Model
      * The date that the settings were last updated in ISO 8601 format.
      */
     inline const Aws::String& GetLastModifiedDate() const{ return m_lastModifiedDate; }
+
+    /**
+     * The date that the settings were last updated in ISO 8601 format.
+     */
+    inline bool LastModifiedDateHasBeenSet() const { return m_lastModifiedDateHasBeenSet; }
 
     /**
      * The date that the settings were last updated in ISO 8601 format.
@@ -153,6 +168,12 @@ namespace Model
      * the app, unless the campaign overrides the default with limits of its own.
      */
     inline const CampaignLimits& GetLimits() const{ return m_limits; }
+
+    /**
+     * The default campaign limits for the app. These limits apply to each campaign for
+     * the app, unless the campaign overrides the default with limits of its own.
+     */
+    inline bool LimitsHasBeenSet() const { return m_limitsHasBeenSet; }
 
     /**
      * The default campaign limits for the app. These limits apply to each campaign for
@@ -205,6 +226,33 @@ Individual campaigns within the app can have their own quiet time
      * settings, which override the quiet time settings at the app level.
      */
     inline const QuietTime& GetQuietTime() const{ return m_quietTime; }
+
+    /**
+     * The default quiet time for the app. Campaigns in the app don't send messages to
+     * endpoints during the quiet time.
+
+Note: Make sure that your endpoints include
+     * the Demographics.Timezone attribute if you plan to enable a quiet time for your
+     * app. If your endpoints don't include this attribute, they'll receive the
+     * messages that you send them, even if quiet time is enabled.
+
+When you set up an
+     * app to use quiet time, campaigns in that app don't send messages during the time
+     * range you specified, as long as all of the following are true:
+- The endpoint
+     * includes a valid Demographic.Timezone attribute.
+- The current time in the
+     * endpoint's time zone is later than or equal to the time specified in the
+     * QuietTime.Start attribute for the app (or campaign, if applicable).
+- The
+     * current time in the endpoint's time zone is earlier than or equal to the time
+     * specified in the QuietTime.End attribute for the app (or campaign, if
+     * applicable).
+
+Individual campaigns within the app can have their own quiet time
+     * settings, which override the quiet time settings at the app level.
+     */
+    inline bool QuietTimeHasBeenSet() const { return m_quietTimeHasBeenSet; }
 
     /**
      * The default quiet time for the app. Campaigns in the app don't send messages to

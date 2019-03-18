@@ -52,6 +52,11 @@ namespace Model
     /**
      * <p>The domain name.</p>
      */
+    inline bool DomainNameHasBeenSet() const { return m_domainNameHasBeenSet; }
+
+    /**
+     * <p>The domain name.</p>
+     */
     inline void SetDomainName(const Aws::String& value) { m_domainNameHasBeenSet = true; m_domainName = value; }
 
     /**
@@ -84,6 +89,11 @@ namespace Model
      * <p>The domain name configurations.</p>
      */
     inline const Aws::Vector<DomainNameConfiguration>& GetDomainNameConfigurations() const{ return m_domainNameConfigurations; }
+
+    /**
+     * <p>The domain name configurations.</p>
+     */
+    inline bool DomainNameConfigurationsHasBeenSet() const { return m_domainNameConfigurationsHasBeenSet; }
 
     /**
      * <p>The domain name configurations.</p>

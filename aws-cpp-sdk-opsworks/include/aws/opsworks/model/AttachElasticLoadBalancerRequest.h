@@ -52,6 +52,11 @@ namespace Model
     /**
      * <p>The Elastic Load Balancing instance's name.</p>
      */
+    inline bool ElasticLoadBalancerNameHasBeenSet() const { return m_elasticLoadBalancerNameHasBeenSet; }
+
+    /**
+     * <p>The Elastic Load Balancing instance's name.</p>
+     */
     inline void SetElasticLoadBalancerName(const Aws::String& value) { m_elasticLoadBalancerNameHasBeenSet = true; m_elasticLoadBalancerName = value; }
 
     /**
@@ -85,6 +90,12 @@ namespace Model
      * attached.</p>
      */
     inline const Aws::String& GetLayerId() const{ return m_layerId; }
+
+    /**
+     * <p>The ID of the layer to which the Elastic Load Balancing instance is to be
+     * attached.</p>
+     */
+    inline bool LayerIdHasBeenSet() const { return m_layerIdHasBeenSet; }
 
     /**
      * <p>The ID of the layer to which the Elastic Load Balancing instance is to be

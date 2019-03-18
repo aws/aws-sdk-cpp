@@ -63,6 +63,12 @@ namespace Model
      * <p>A token returned from a previous call to <code>ListReceiptRuleSets</code> to
      * indicate the position in the receipt rule set list.</p>
      */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
+
+    /**
+     * <p>A token returned from a previous call to <code>ListReceiptRuleSets</code> to
+     * indicate the position in the receipt rule set list.</p>
+     */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
     /**

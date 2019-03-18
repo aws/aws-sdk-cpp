@@ -53,6 +53,11 @@ namespace Model
     /**
      * <p>ID of the application associated with the change set.</p>
      */
+    inline bool AppIdHasBeenSet() const { return m_appIdHasBeenSet; }
+
+    /**
+     * <p>ID of the application associated with the change set.</p>
+     */
     inline void SetAppId(const Aws::String& value) { m_appIdHasBeenSet = true; m_appId = value; }
 
     /**
@@ -85,6 +90,11 @@ namespace Model
      * <p>Format for the change set.</p>
      */
     inline const OutputFormat& GetChangesetFormat() const{ return m_changesetFormat; }
+
+    /**
+     * <p>Format for the change set.</p>
+     */
+    inline bool ChangesetFormatHasBeenSet() const { return m_changesetFormatHasBeenSet; }
 
     /**
      * <p>Format for the change set.</p>

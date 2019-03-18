@@ -60,6 +60,14 @@ namespace Model
      * value for <code>MaxResults</code>, Resolver returns up to 100 resolver
      * endpoints. </p>
      */
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
+
+    /**
+     * <p>The maximum number of resolver endpoints that you want to return in the
+     * response to a <code>ListResolverEndpoints</code> request. If you don't specify a
+     * value for <code>MaxResults</code>, Resolver returns up to 100 resolver
+     * endpoints. </p>
+     */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
@@ -79,6 +87,15 @@ namespace Model
      * <code>NextToken</code> from the previous response. </p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
+    /**
+     * <p>For the first <code>ListResolverEndpoints</code> request, omit this
+     * value.</p> <p>If you have more than <code>MaxResults</code> resolver endpoints,
+     * you can submit another <code>ListResolverEndpoints</code> request to get the
+     * next group of resolver endpoints. In the next request, specify the value of
+     * <code>NextToken</code> from the previous response. </p>
+     */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
      * <p>For the first <code>ListResolverEndpoints</code> request, omit this
@@ -143,6 +160,15 @@ namespace Model
      * <code>Filters</code>, if any, as in the previous request.</p> </note>
      */
     inline const Aws::Vector<Filter>& GetFilters() const{ return m_filters; }
+
+    /**
+     * <p>An optional specification to return a subset of resolver endpoints, such as
+     * all inbound resolver endpoints.</p> <note> <p>If you submit a second or
+     * subsequent <code>ListResolverEndpoints</code> request and specify the
+     * <code>NextToken</code> parameter, you must use the same values for
+     * <code>Filters</code>, if any, as in the previous request.</p> </note>
+     */
+    inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
 
     /**
      * <p>An optional specification to return a subset of resolver endpoints, such as

@@ -65,6 +65,16 @@ namespace Model
      * there are no remaining results, the previous response object's
      * <code>NextToken</code> parameter is set to <code>null</code>.</p>
      */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
+
+    /**
+     * <p>If the previous paginated request didn't return all of the remaining results,
+     * the response object's <code>NextToken</code> parameter value is set to a token.
+     * To retrieve the next set of results, call <code>ListStackSets</code> again and
+     * assign that token to the request object's <code>NextToken</code> parameter. If
+     * there are no remaining results, the previous response object's
+     * <code>NextToken</code> parameter is set to <code>null</code>.</p>
+     */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
     /**
@@ -132,6 +142,14 @@ namespace Model
      * <code>NextToken</code> value that you can assign to the <code>NextToken</code>
      * request parameter to get the next set of results.</p>
      */
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
+
+    /**
+     * <p>The maximum number of results to be returned with a single call. If the
+     * number of available results exceeds this maximum, the response includes a
+     * <code>NextToken</code> value that you can assign to the <code>NextToken</code>
+     * request parameter to get the next set of results.</p>
+     */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
@@ -148,6 +166,12 @@ namespace Model
      * about.</p>
      */
     inline const StackSetStatus& GetStatus() const{ return m_status; }
+
+    /**
+     * <p>The status of the stack sets that you want to get summary information
+     * about.</p>
+     */
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
     /**
      * <p>The status of the stack sets that you want to get summary information

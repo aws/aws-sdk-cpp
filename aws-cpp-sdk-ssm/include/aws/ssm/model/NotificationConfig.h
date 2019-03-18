@@ -60,6 +60,12 @@ namespace Model
      * <p>An Amazon Resource Name (ARN) for a Simple Notification Service (SNS) topic.
      * Run Command pushes notifications about command status changes to this topic.</p>
      */
+    inline bool NotificationArnHasBeenSet() const { return m_notificationArnHasBeenSet; }
+
+    /**
+     * <p>An Amazon Resource Name (ARN) for a Simple Notification Service (SNS) topic.
+     * Run Command pushes notifications about command status changes to this topic.</p>
+     */
     inline void SetNotificationArn(const Aws::String& value) { m_notificationArnHasBeenSet = true; m_notificationArn = value; }
 
     /**
@@ -102,6 +108,16 @@ namespace Model
      * Guide</i>.</p>
      */
     inline const Aws::Vector<NotificationEvent>& GetNotificationEvents() const{ return m_notificationEvents; }
+
+    /**
+     * <p>The different events for which you can receive notifications. These events
+     * include the following: All (events), InProgress, Success, TimedOut, Cancelled,
+     * Failed. To learn more about these events, see <a
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/rc-sns-notifications.html">Configuring
+     * Amazon SNS Notifications for Run Command</a> in the <i>AWS Systems Manager User
+     * Guide</i>.</p>
+     */
+    inline bool NotificationEventsHasBeenSet() const { return m_notificationEventsHasBeenSet; }
 
     /**
      * <p>The different events for which you can receive notifications. These events
@@ -170,6 +186,13 @@ namespace Model
      * per-instance basis when the status of a command changes. </p>
      */
     inline const NotificationType& GetNotificationType() const{ return m_notificationType; }
+
+    /**
+     * <p>Command: Receive notification when the status of a command changes.
+     * Invocation: For commands sent to multiple instances, receive notification on a
+     * per-instance basis when the status of a command changes. </p>
+     */
+    inline bool NotificationTypeHasBeenSet() const { return m_notificationTypeHasBeenSet; }
 
     /**
      * <p>Command: Receive notification when the status of a command changes.

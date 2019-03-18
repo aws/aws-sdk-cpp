@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The configuration data for the action.</p>
      */
+    inline bool ConfigurationHasBeenSet() const { return m_configurationHasBeenSet; }
+
+    /**
+     * <p>The configuration data for the action.</p>
+     */
     inline void SetConfiguration(const Aws::Map<Aws::String, Aws::String>& value) { m_configurationHasBeenSet = true; m_configuration = value; }
 
     /**

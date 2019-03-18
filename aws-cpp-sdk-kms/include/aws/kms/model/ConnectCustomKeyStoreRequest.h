@@ -56,6 +56,13 @@ namespace Model
      * find the ID of a custom key store, use the <a>DescribeCustomKeyStores</a>
      * operation.</p>
      */
+    inline bool CustomKeyStoreIdHasBeenSet() const { return m_customKeyStoreIdHasBeenSet; }
+
+    /**
+     * <p>Enter the key store ID of the custom key store that you want to connect. To
+     * find the ID of a custom key store, use the <a>DescribeCustomKeyStores</a>
+     * operation.</p>
+     */
     inline void SetCustomKeyStoreId(const Aws::String& value) { m_customKeyStoreIdHasBeenSet = true; m_customKeyStoreId = value; }
 
     /**

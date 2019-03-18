@@ -124,6 +124,12 @@ namespace Model
      * <p>For information about how and when to use
      * <code>CloudFrontDefaultCertificate</code>, see <a>ViewerCertificate</a>.</p>
      */
+    inline bool CloudFrontDefaultCertificateHasBeenSet() const { return m_cloudFrontDefaultCertificateHasBeenSet; }
+
+    /**
+     * <p>For information about how and when to use
+     * <code>CloudFrontDefaultCertificate</code>, see <a>ViewerCertificate</a>.</p>
+     */
     inline void SetCloudFrontDefaultCertificate(bool value) { m_cloudFrontDefaultCertificateHasBeenSet = true; m_cloudFrontDefaultCertificate = value; }
 
     /**
@@ -138,6 +144,12 @@ namespace Model
      * <a>ViewerCertificate</a>.</p>
      */
     inline const Aws::String& GetIAMCertificateId() const{ return m_iAMCertificateId; }
+
+    /**
+     * <p>For information about how and when to use <code>IAMCertificateId</code>, see
+     * <a>ViewerCertificate</a>.</p>
+     */
+    inline bool IAMCertificateIdHasBeenSet() const { return m_iAMCertificateIdHasBeenSet; }
 
     /**
      * <p>For information about how and when to use <code>IAMCertificateId</code>, see
@@ -181,6 +193,12 @@ namespace Model
      * <a>ViewerCertificate</a>.</p>
      */
     inline const Aws::String& GetACMCertificateArn() const{ return m_aCMCertificateArn; }
+
+    /**
+     * <p>For information about how and when to use <code>ACMCertificateArn</code>, see
+     * <a>ViewerCertificate</a>.</p>
+     */
+    inline bool ACMCertificateArnHasBeenSet() const { return m_aCMCertificateArnHasBeenSet; }
 
     /**
      * <p>For information about how and when to use <code>ACMCertificateArn</code>, see
@@ -246,6 +264,34 @@ namespace Model
      * Guide</i>.</p>
      */
     inline const SSLSupportMethod& GetSSLSupportMethod() const{ return m_sSLSupportMethod; }
+
+    /**
+     * <p>If you specify a value for <a>ViewerCertificate$ACMCertificateArn</a> or for
+     * <a>ViewerCertificate$IAMCertificateId</a>, you must also specify how you want
+     * CloudFront to serve HTTPS requests: using a method that works for all clients or
+     * one that works for most clients:</p> <ul> <li> <p> <code>vip</code>: CloudFront
+     * uses dedicated IP addresses for your content and can respond to HTTPS requests
+     * from any viewer. However, you will incur additional monthly charges.</p> </li>
+     * <li> <p> <code>sni-only</code>: CloudFront can respond to HTTPS requests from
+     * viewers that support Server Name Indication (SNI). All modern browsers support
+     * SNI, but some browsers still in use don't support SNI. If some of your users'
+     * browsers don't support SNI, we recommend that you do one of the following:</p>
+     * <ul> <li> <p>Use the <code>vip</code> option (dedicated IP addresses) instead of
+     * <code>sni-only</code>.</p> </li> <li> <p>Use the CloudFront SSL/TLS certificate
+     * instead of a custom certificate. This requires that you use the CloudFront
+     * domain name of your distribution in the URLs for your objects, for example,
+     * <code>https://d111111abcdef8.cloudfront.net/logo.png</code>.</p> </li> <li>
+     * <p>If you can control which browser your users use, upgrade the browser to one
+     * that supports SNI.</p> </li> <li> <p>Use HTTP instead of HTTPS.</p> </li> </ul>
+     * </li> </ul> <p>Don't specify a value for <code>SSLSupportMethod</code> if you
+     * specified
+     * <code>&lt;CloudFrontDefaultCertificate&gt;true&lt;CloudFrontDefaultCertificate&gt;</code>.</p>
+     * <p>For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/SecureConnections.html#CNAMEsAndHTTPS.html">Using
+     * Alternate Domain Names and HTTPS</a> in the <i>Amazon CloudFront Developer
+     * Guide</i>.</p>
+     */
+    inline bool SSLSupportMethodHasBeenSet() const { return m_sSLSupportMethodHasBeenSet; }
 
     /**
      * <p>If you specify a value for <a>ViewerCertificate$ACMCertificateArn</a> or for
@@ -385,6 +431,32 @@ namespace Model
      * CloudFront</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
      */
     inline const MinimumProtocolVersion& GetMinimumProtocolVersion() const{ return m_minimumProtocolVersion; }
+
+    /**
+     * <p>Specify the security policy that you want CloudFront to use for HTTPS
+     * connections. A security policy determines two settings:</p> <ul> <li> <p>The
+     * minimum SSL/TLS protocol that CloudFront uses to communicate with viewers</p>
+     * </li> <li> <p>The cipher that CloudFront uses to encrypt the content that it
+     * returns to viewers</p> </li> </ul> <note> <p>On the CloudFront console, this
+     * setting is called <b>Security policy</b>.</p> </note> <p>We recommend that you
+     * specify <code>TLSv1.1_2016</code> unless your users are using browsers or
+     * devices that do not support TLSv1.1 or later.</p> <p>When both of the following
+     * are true, you must specify <code>TLSv1</code> or later for the security policy:
+     * </p> <ul> <li> <p>You're using a custom certificate: you specified a value for
+     * <code>ACMCertificateArn</code> or for <code>IAMCertificateId</code> </p> </li>
+     * <li> <p>You're using SNI: you specified <code>sni-only</code> for
+     * <code>SSLSupportMethod</code> </p> </li> </ul> <p>If you specify
+     * <code>true</code> for <code>CloudFrontDefaultCertificate</code>, CloudFront
+     * automatically sets the security policy to <code>TLSv1</code> regardless of the
+     * value that you specify for <code>MinimumProtocolVersion</code>.</p> <p>For
+     * information about the relationship between the security policy that you choose
+     * and the protocols and ciphers that CloudFront uses to communicate with viewers,
+     * see <a
+     * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/secure-connections-supported-viewer-protocols-ciphers.html#secure-connections-supported-ciphers">
+     * Supported SSL/TLS Protocols and Ciphers for Communication Between Viewers and
+     * CloudFront</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
+     */
+    inline bool MinimumProtocolVersionHasBeenSet() const { return m_minimumProtocolVersionHasBeenSet; }
 
     /**
      * <p>Specify the security policy that you want CloudFront to use for HTTPS

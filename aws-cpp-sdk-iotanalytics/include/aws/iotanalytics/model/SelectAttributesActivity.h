@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The name of the 'selectAttributes' activity.</p>
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>The name of the 'selectAttributes' activity.</p>
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
@@ -89,6 +94,11 @@ namespace Model
      * <p>A list of the attributes to select from the message.</p>
      */
     inline const Aws::Vector<Aws::String>& GetAttributes() const{ return m_attributes; }
+
+    /**
+     * <p>A list of the attributes to select from the message.</p>
+     */
+    inline bool AttributesHasBeenSet() const { return m_attributesHasBeenSet; }
 
     /**
      * <p>A list of the attributes to select from the message.</p>
@@ -130,6 +140,11 @@ namespace Model
      * <p>The next activity in the pipeline.</p>
      */
     inline const Aws::String& GetNext() const{ return m_next; }
+
+    /**
+     * <p>The next activity in the pipeline.</p>
+     */
+    inline bool NextHasBeenSet() const { return m_nextHasBeenSet; }
 
     /**
      * <p>The next activity in the pipeline.</p>

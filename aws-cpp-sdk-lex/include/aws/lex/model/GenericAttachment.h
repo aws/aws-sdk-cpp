@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p>The title of the option.</p>
      */
+    inline bool TitleHasBeenSet() const { return m_titleHasBeenSet; }
+
+    /**
+     * <p>The title of the option.</p>
+     */
     inline void SetTitle(const Aws::String& value) { m_titleHasBeenSet = true; m_title = value; }
 
     /**
@@ -90,6 +95,11 @@ namespace Model
      * <p>The subtitle shown below the title.</p>
      */
     inline const Aws::String& GetSubTitle() const{ return m_subTitle; }
+
+    /**
+     * <p>The subtitle shown below the title.</p>
+     */
+    inline bool SubTitleHasBeenSet() const { return m_subTitleHasBeenSet; }
 
     /**
      * <p>The subtitle shown below the title.</p>
@@ -130,6 +140,11 @@ namespace Model
     /**
      * <p>The URL of an attachment to the response card.</p>
      */
+    inline bool AttachmentLinkUrlHasBeenSet() const { return m_attachmentLinkUrlHasBeenSet; }
+
+    /**
+     * <p>The URL of an attachment to the response card.</p>
+     */
     inline void SetAttachmentLinkUrl(const Aws::String& value) { m_attachmentLinkUrlHasBeenSet = true; m_attachmentLinkUrl = value; }
 
     /**
@@ -166,6 +181,11 @@ namespace Model
     /**
      * <p>The URL of an image that is displayed to the user.</p>
      */
+    inline bool ImageUrlHasBeenSet() const { return m_imageUrlHasBeenSet; }
+
+    /**
+     * <p>The URL of an image that is displayed to the user.</p>
+     */
     inline void SetImageUrl(const Aws::String& value) { m_imageUrlHasBeenSet = true; m_imageUrl = value; }
 
     /**
@@ -198,6 +218,11 @@ namespace Model
      * <p>The list of options to show to the user.</p>
      */
     inline const Aws::Vector<Button>& GetButtons() const{ return m_buttons; }
+
+    /**
+     * <p>The list of options to show to the user.</p>
+     */
+    inline bool ButtonsHasBeenSet() const { return m_buttonsHasBeenSet; }
 
     /**
      * <p>The list of options to show to the user.</p>

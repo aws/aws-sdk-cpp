@@ -59,6 +59,11 @@ namespace Model
     /**
      * <p>The system instance health or application instance health.</p>
      */
+    inline bool DetailsHasBeenSet() const { return m_detailsHasBeenSet; }
+
+    /**
+     * <p>The system instance health or application instance health.</p>
+     */
     inline void SetDetails(const Aws::Vector<InstanceStatusDetails>& value) { m_detailsHasBeenSet = true; m_details = value; }
 
     /**
@@ -91,6 +96,11 @@ namespace Model
      * <p>The status.</p>
      */
     inline const SummaryStatus& GetStatus() const{ return m_status; }
+
+    /**
+     * <p>The status.</p>
+     */
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
     /**
      * <p>The status.</p>

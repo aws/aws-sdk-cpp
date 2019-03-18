@@ -55,6 +55,11 @@ namespace Model
     /**
      * <p>The name of the region.</p>
      */
+    inline bool RegionNameHasBeenSet() const { return m_regionNameHasBeenSet; }
+
+    /**
+     * <p>The name of the region.</p>
+     */
     inline void SetRegionName(const Aws::String& value) { m_regionNameHasBeenSet = true; m_regionName = value; }
 
     /**

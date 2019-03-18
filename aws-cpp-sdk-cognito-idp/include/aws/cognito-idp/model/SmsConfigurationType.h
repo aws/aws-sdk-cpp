@@ -57,6 +57,12 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the Amazon Simple Notification Service
      * (SNS) caller.</p>
      */
+    inline bool SnsCallerArnHasBeenSet() const { return m_snsCallerArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the Amazon Simple Notification Service
+     * (SNS) caller.</p>
+     */
     inline void SetSnsCallerArn(const Aws::String& value) { m_snsCallerArnHasBeenSet = true; m_snsCallerArn = value; }
 
     /**
@@ -94,6 +100,11 @@ namespace Model
      * <p>The external ID.</p>
      */
     inline const Aws::String& GetExternalId() const{ return m_externalId; }
+
+    /**
+     * <p>The external ID.</p>
+     */
+    inline bool ExternalIdHasBeenSet() const { return m_externalIdHasBeenSet; }
 
     /**
      * <p>The external ID.</p>

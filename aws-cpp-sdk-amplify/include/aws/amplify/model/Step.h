@@ -59,6 +59,11 @@ namespace Model
     /**
      * <p> Name of the execution step. </p>
      */
+    inline bool StepNameHasBeenSet() const { return m_stepNameHasBeenSet; }
+
+    /**
+     * <p> Name of the execution step. </p>
+     */
     inline void SetStepName(const Aws::String& value) { m_stepNameHasBeenSet = true; m_stepName = value; }
 
     /**
@@ -95,6 +100,11 @@ namespace Model
     /**
      * <p> Start date/ time of the execution step. </p>
      */
+    inline bool StartTimeHasBeenSet() const { return m_startTimeHasBeenSet; }
+
+    /**
+     * <p> Start date/ time of the execution step. </p>
+     */
     inline void SetStartTime(const Aws::Utils::DateTime& value) { m_startTimeHasBeenSet = true; m_startTime = value; }
 
     /**
@@ -117,6 +127,11 @@ namespace Model
      * <p> Status of the execution step. </p>
      */
     inline const JobStatus& GetStatus() const{ return m_status; }
+
+    /**
+     * <p> Status of the execution step. </p>
+     */
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
     /**
      * <p> Status of the execution step. </p>
@@ -147,6 +162,11 @@ namespace Model
     /**
      * <p> End date/ time of the execution step. </p>
      */
+    inline bool EndTimeHasBeenSet() const { return m_endTimeHasBeenSet; }
+
+    /**
+     * <p> End date/ time of the execution step. </p>
+     */
     inline void SetEndTime(const Aws::Utils::DateTime& value) { m_endTimeHasBeenSet = true; m_endTime = value; }
 
     /**
@@ -169,6 +189,11 @@ namespace Model
      * <p> Url to the logs for the execution step. </p>
      */
     inline const Aws::String& GetLogUrl() const{ return m_logUrl; }
+
+    /**
+     * <p> Url to the logs for the execution step. </p>
+     */
+    inline bool LogUrlHasBeenSet() const { return m_logUrlHasBeenSet; }
 
     /**
      * <p> Url to the logs for the execution step. </p>
@@ -209,6 +234,11 @@ namespace Model
     /**
      * <p> Url to teh artifact for the execution step. </p>
      */
+    inline bool ArtifactsUrlHasBeenSet() const { return m_artifactsUrlHasBeenSet; }
+
+    /**
+     * <p> Url to teh artifact for the execution step. </p>
+     */
     inline void SetArtifactsUrl(const Aws::String& value) { m_artifactsUrlHasBeenSet = true; m_artifactsUrl = value; }
 
     /**
@@ -241,6 +271,11 @@ namespace Model
      * <p> List of screenshot Urls for the execution step, if relevant. </p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetScreenshots() const{ return m_screenshots; }
+
+    /**
+     * <p> List of screenshot Urls for the execution step, if relevant. </p>
+     */
+    inline bool ScreenshotsHasBeenSet() const { return m_screenshotsHasBeenSet; }
 
     /**
      * <p> List of screenshot Urls for the execution step, if relevant. </p>

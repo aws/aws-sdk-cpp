@@ -60,6 +60,11 @@ namespace Model
     /**
      * <p>The Availability Zone.</p>
      */
+    inline bool AvailabilityZoneHasBeenSet() const { return m_availabilityZoneHasBeenSet; }
+
+    /**
+     * <p>The Availability Zone.</p>
+     */
     inline void SetAvailabilityZone(const Aws::String& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = value; }
 
     /**
@@ -96,6 +101,11 @@ namespace Model
     /**
      * <p>The number of available instances.</p>
      */
+    inline bool AvailableInstanceCountHasBeenSet() const { return m_availableInstanceCountHasBeenSet; }
+
+    /**
+     * <p>The number of available instances.</p>
+     */
     inline void SetAvailableInstanceCount(int value) { m_availableInstanceCountHasBeenSet = true; m_availableInstanceCount = value; }
 
     /**
@@ -108,6 +118,11 @@ namespace Model
      * <p>The time period for the first schedule to start.</p>
      */
     inline const Aws::Utils::DateTime& GetFirstSlotStartTime() const{ return m_firstSlotStartTime; }
+
+    /**
+     * <p>The time period for the first schedule to start.</p>
+     */
+    inline bool FirstSlotStartTimeHasBeenSet() const { return m_firstSlotStartTimeHasBeenSet; }
 
     /**
      * <p>The time period for the first schedule to start.</p>
@@ -134,6 +149,11 @@ namespace Model
      * <p>The hourly price for a single instance.</p>
      */
     inline const Aws::String& GetHourlyPrice() const{ return m_hourlyPrice; }
+
+    /**
+     * <p>The hourly price for a single instance.</p>
+     */
+    inline bool HourlyPriceHasBeenSet() const { return m_hourlyPriceHasBeenSet; }
 
     /**
      * <p>The hourly price for a single instance.</p>
@@ -171,6 +191,12 @@ namespace Model
      * types.</p>
      */
     inline const Aws::String& GetInstanceType() const{ return m_instanceType; }
+
+    /**
+     * <p>The instance type. You can specify one of the C3, C4, M4, or R3 instance
+     * types.</p>
+     */
+    inline bool InstanceTypeHasBeenSet() const { return m_instanceTypeHasBeenSet; }
 
     /**
      * <p>The instance type. You can specify one of the C3, C4, M4, or R3 instance
@@ -217,6 +243,11 @@ namespace Model
     /**
      * <p>The maximum term. The only possible value is 365 days.</p>
      */
+    inline bool MaxTermDurationInDaysHasBeenSet() const { return m_maxTermDurationInDaysHasBeenSet; }
+
+    /**
+     * <p>The maximum term. The only possible value is 365 days.</p>
+     */
     inline void SetMaxTermDurationInDays(int value) { m_maxTermDurationInDaysHasBeenSet = true; m_maxTermDurationInDays = value; }
 
     /**
@@ -233,6 +264,11 @@ namespace Model
     /**
      * <p>The minimum term. The only possible value is 365 days.</p>
      */
+    inline bool MinTermDurationInDaysHasBeenSet() const { return m_minTermDurationInDaysHasBeenSet; }
+
+    /**
+     * <p>The minimum term. The only possible value is 365 days.</p>
+     */
     inline void SetMinTermDurationInDays(int value) { m_minTermDurationInDaysHasBeenSet = true; m_minTermDurationInDays = value; }
 
     /**
@@ -245,6 +281,11 @@ namespace Model
      * <p>The network platform (<code>EC2-Classic</code> or <code>EC2-VPC</code>).</p>
      */
     inline const Aws::String& GetNetworkPlatform() const{ return m_networkPlatform; }
+
+    /**
+     * <p>The network platform (<code>EC2-Classic</code> or <code>EC2-VPC</code>).</p>
+     */
+    inline bool NetworkPlatformHasBeenSet() const { return m_networkPlatformHasBeenSet; }
 
     /**
      * <p>The network platform (<code>EC2-Classic</code> or <code>EC2-VPC</code>).</p>
@@ -285,6 +326,11 @@ namespace Model
     /**
      * <p>The platform (<code>Linux/UNIX</code> or <code>Windows</code>).</p>
      */
+    inline bool PlatformHasBeenSet() const { return m_platformHasBeenSet; }
+
+    /**
+     * <p>The platform (<code>Linux/UNIX</code> or <code>Windows</code>).</p>
+     */
     inline void SetPlatform(const Aws::String& value) { m_platformHasBeenSet = true; m_platform = value; }
 
     /**
@@ -317,6 +363,11 @@ namespace Model
      * <p>The purchase token. This token expires in two hours.</p>
      */
     inline const Aws::String& GetPurchaseToken() const{ return m_purchaseToken; }
+
+    /**
+     * <p>The purchase token. This token expires in two hours.</p>
+     */
+    inline bool PurchaseTokenHasBeenSet() const { return m_purchaseTokenHasBeenSet; }
 
     /**
      * <p>The purchase token. This token expires in two hours.</p>
@@ -357,6 +408,11 @@ namespace Model
     /**
      * <p>The schedule recurrence.</p>
      */
+    inline bool RecurrenceHasBeenSet() const { return m_recurrenceHasBeenSet; }
+
+    /**
+     * <p>The schedule recurrence.</p>
+     */
     inline void SetRecurrence(const ScheduledInstanceRecurrence& value) { m_recurrenceHasBeenSet = true; m_recurrence = value; }
 
     /**
@@ -383,6 +439,11 @@ namespace Model
     /**
      * <p>The number of hours in the schedule.</p>
      */
+    inline bool SlotDurationInHoursHasBeenSet() const { return m_slotDurationInHoursHasBeenSet; }
+
+    /**
+     * <p>The number of hours in the schedule.</p>
+     */
     inline void SetSlotDurationInHours(int value) { m_slotDurationInHoursHasBeenSet = true; m_slotDurationInHours = value; }
 
     /**
@@ -395,6 +456,11 @@ namespace Model
      * <p>The total number of hours for a single instance for the entire term.</p>
      */
     inline int GetTotalScheduledInstanceHours() const{ return m_totalScheduledInstanceHours; }
+
+    /**
+     * <p>The total number of hours for a single instance for the entire term.</p>
+     */
+    inline bool TotalScheduledInstanceHoursHasBeenSet() const { return m_totalScheduledInstanceHoursHasBeenSet; }
 
     /**
      * <p>The total number of hours for a single instance for the entire term.</p>

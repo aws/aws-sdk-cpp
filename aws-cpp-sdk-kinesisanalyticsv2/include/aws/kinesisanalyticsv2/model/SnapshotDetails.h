@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p>The identifier for the application snapshot.</p>
      */
+    inline bool SnapshotNameHasBeenSet() const { return m_snapshotNameHasBeenSet; }
+
+    /**
+     * <p>The identifier for the application snapshot.</p>
+     */
     inline void SetSnapshotName(const Aws::String& value) { m_snapshotNameHasBeenSet = true; m_snapshotName = value; }
 
     /**
@@ -94,6 +99,11 @@ namespace Model
     /**
      * <p>The status of the application snapshot.</p>
      */
+    inline bool SnapshotStatusHasBeenSet() const { return m_snapshotStatusHasBeenSet; }
+
+    /**
+     * <p>The status of the application snapshot.</p>
+     */
     inline void SetSnapshotStatus(const SnapshotStatus& value) { m_snapshotStatusHasBeenSet = true; m_snapshotStatus = value; }
 
     /**
@@ -120,6 +130,11 @@ namespace Model
     /**
      * <p>The current application version ID when the snapshot was created.</p>
      */
+    inline bool ApplicationVersionIdHasBeenSet() const { return m_applicationVersionIdHasBeenSet; }
+
+    /**
+     * <p>The current application version ID when the snapshot was created.</p>
+     */
     inline void SetApplicationVersionId(long long value) { m_applicationVersionIdHasBeenSet = true; m_applicationVersionId = value; }
 
     /**
@@ -132,6 +147,11 @@ namespace Model
      * <p>The timestamp of the application snapshot.</p>
      */
     inline const Aws::Utils::DateTime& GetSnapshotCreationTimestamp() const{ return m_snapshotCreationTimestamp; }
+
+    /**
+     * <p>The timestamp of the application snapshot.</p>
+     */
+    inline bool SnapshotCreationTimestampHasBeenSet() const { return m_snapshotCreationTimestampHasBeenSet; }
 
     /**
      * <p>The timestamp of the application snapshot.</p>

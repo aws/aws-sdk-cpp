@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The endpoint ID.</p>
      */
+    inline bool AnalyticsEndpointIdHasBeenSet() const { return m_analyticsEndpointIdHasBeenSet; }
+
+    /**
+     * <p>The endpoint ID.</p>
+     */
     inline void SetAnalyticsEndpointId(const Aws::String& value) { m_analyticsEndpointIdHasBeenSet = true; m_analyticsEndpointId = value; }
 
     /**

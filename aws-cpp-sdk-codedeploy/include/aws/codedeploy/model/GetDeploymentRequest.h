@@ -58,6 +58,12 @@ namespace Model
      * <p> The unique ID of a deployment associated with the IAM user or AWS account.
      * </p>
      */
+    inline bool DeploymentIdHasBeenSet() const { return m_deploymentIdHasBeenSet; }
+
+    /**
+     * <p> The unique ID of a deployment associated with the IAM user or AWS account.
+     * </p>
+     */
     inline void SetDeploymentId(const Aws::String& value) { m_deploymentIdHasBeenSet = true; m_deploymentId = value; }
 
     /**

@@ -51,6 +51,11 @@ namespace Model
     /**
      * <p>The ARNS of the insights that you want to describe.</p>
      */
+    inline bool InsightArnsHasBeenSet() const { return m_insightArnsHasBeenSet; }
+
+    /**
+     * <p>The ARNS of the insights that you want to describe.</p>
+     */
     inline void SetInsightArns(const Aws::Vector<Aws::String>& value) { m_insightArnsHasBeenSet = true; m_insightArns = value; }
 
     /**
@@ -91,6 +96,14 @@ namespace Model
      * to continue listing data.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
+    /**
+     * <p>Paginates results. Set the value of this parameter to NULL on your first call
+     * to the GetInsights operation. For subsequent calls to the operation, fill
+     * nextToken in the request with the value of nextToken from the previous response
+     * to continue listing data.</p>
+     */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
      * <p>Paginates results. Set the value of this parameter to NULL on your first call
@@ -145,6 +158,11 @@ namespace Model
      * <p>Indicates the maximum number of items that you want in the response.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
+
+    /**
+     * <p>Indicates the maximum number of items that you want in the response.</p>
+     */
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
 
     /**
      * <p>Indicates the maximum number of items that you want in the response.</p>

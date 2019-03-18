@@ -54,6 +54,11 @@ namespace Model
     /**
      * <p>The first sequence number.</p>
      */
+    inline bool StartingSequenceNumberHasBeenSet() const { return m_startingSequenceNumberHasBeenSet; }
+
+    /**
+     * <p>The first sequence number.</p>
+     */
     inline void SetStartingSequenceNumber(const Aws::String& value) { m_startingSequenceNumberHasBeenSet = true; m_startingSequenceNumber = value; }
 
     /**
@@ -86,6 +91,11 @@ namespace Model
      * <p>The last sequence number.</p>
      */
     inline const Aws::String& GetEndingSequenceNumber() const{ return m_endingSequenceNumber; }
+
+    /**
+     * <p>The last sequence number.</p>
+     */
+    inline bool EndingSequenceNumberHasBeenSet() const { return m_endingSequenceNumberHasBeenSet; }
 
     /**
      * <p>The last sequence number.</p>

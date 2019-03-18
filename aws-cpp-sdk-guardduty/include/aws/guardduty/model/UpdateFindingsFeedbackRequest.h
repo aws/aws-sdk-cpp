@@ -55,6 +55,11 @@ namespace Model
     /**
      * Additional feedback about the GuardDuty findings.
      */
+    inline bool CommentsHasBeenSet() const { return m_commentsHasBeenSet; }
+
+    /**
+     * Additional feedback about the GuardDuty findings.
+     */
     inline void SetComments(const Aws::String& value) { m_commentsHasBeenSet = true; m_comments = value; }
 
     /**
@@ -88,6 +93,12 @@ namespace Model
      * want to mark as useful or not useful.
      */
     inline const Aws::String& GetDetectorId() const{ return m_detectorId; }
+
+    /**
+     * The ID of the detector that specifies the GuardDuty service whose findings you
+     * want to mark as useful or not useful.
+     */
+    inline bool DetectorIdHasBeenSet() const { return m_detectorIdHasBeenSet; }
 
     /**
      * The ID of the detector that specifies the GuardDuty service whose findings you
@@ -134,6 +145,11 @@ namespace Model
     /**
      * Valid values: USEFUL | NOT_USEFUL
      */
+    inline bool FeedbackHasBeenSet() const { return m_feedbackHasBeenSet; }
+
+    /**
+     * Valid values: USEFUL | NOT_USEFUL
+     */
     inline void SetFeedback(const Feedback& value) { m_feedbackHasBeenSet = true; m_feedback = value; }
 
     /**
@@ -156,6 +172,11 @@ namespace Model
      * IDs of the findings that you want to mark as useful or not useful.
      */
     inline const Aws::Vector<Aws::String>& GetFindingIds() const{ return m_findingIds; }
+
+    /**
+     * IDs of the findings that you want to mark as useful or not useful.
+     */
+    inline bool FindingIdsHasBeenSet() const { return m_findingIdsHasBeenSet; }
 
     /**
      * IDs of the findings that you want to mark as useful or not useful.

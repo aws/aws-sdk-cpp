@@ -53,6 +53,11 @@ namespace Model
     /**
      * <p>Collection from which to remove the specific faces.</p>
      */
+    inline bool CollectionIdHasBeenSet() const { return m_collectionIdHasBeenSet; }
+
+    /**
+     * <p>Collection from which to remove the specific faces.</p>
+     */
     inline void SetCollectionId(const Aws::String& value) { m_collectionIdHasBeenSet = true; m_collectionId = value; }
 
     /**
@@ -85,6 +90,11 @@ namespace Model
      * <p>An array of face IDs to delete.</p>
      */
     inline const Aws::Vector<Aws::String>& GetFaceIds() const{ return m_faceIds; }
+
+    /**
+     * <p>An array of face IDs to delete.</p>
+     */
+    inline bool FaceIdsHasBeenSet() const { return m_faceIdsHasBeenSet; }
 
     /**
      * <p>An array of face IDs to delete.</p>

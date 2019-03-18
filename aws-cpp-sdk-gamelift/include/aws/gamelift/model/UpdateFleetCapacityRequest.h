@@ -55,6 +55,11 @@ namespace Model
     /**
      * <p>Unique identifier for a fleet to update capacity for.</p>
      */
+    inline bool FleetIdHasBeenSet() const { return m_fleetIdHasBeenSet; }
+
+    /**
+     * <p>Unique identifier for a fleet to update capacity for.</p>
+     */
     inline void SetFleetId(const Aws::String& value) { m_fleetIdHasBeenSet = true; m_fleetId = value; }
 
     /**
@@ -91,6 +96,11 @@ namespace Model
     /**
      * <p>Number of EC2 instances you want this fleet to host.</p>
      */
+    inline bool DesiredInstancesHasBeenSet() const { return m_desiredInstancesHasBeenSet; }
+
+    /**
+     * <p>Number of EC2 instances you want this fleet to host.</p>
+     */
     inline void SetDesiredInstances(int value) { m_desiredInstancesHasBeenSet = true; m_desiredInstances = value; }
 
     /**
@@ -104,6 +114,12 @@ namespace Model
      * 0.</p>
      */
     inline int GetMinSize() const{ return m_minSize; }
+
+    /**
+     * <p>Minimum value allowed for the fleet's instance count. Default if not set is
+     * 0.</p>
+     */
+    inline bool MinSizeHasBeenSet() const { return m_minSizeHasBeenSet; }
 
     /**
      * <p>Minimum value allowed for the fleet's instance count. Default if not set is
@@ -123,6 +139,12 @@ namespace Model
      * 1.</p>
      */
     inline int GetMaxSize() const{ return m_maxSize; }
+
+    /**
+     * <p>Maximum value allowed for the fleet's instance count. Default if not set is
+     * 1.</p>
+     */
+    inline bool MaxSizeHasBeenSet() const { return m_maxSizeHasBeenSet; }
 
     /**
      * <p>Maximum value allowed for the fleet's instance count. Default if not set is

@@ -61,6 +61,11 @@ namespace Model
     /**
      * <p>Item in the request which caused the transaction to get cancelled.</p>
      */
+    inline bool ItemHasBeenSet() const { return m_itemHasBeenSet; }
+
+    /**
+     * <p>Item in the request which caused the transaction to get cancelled.</p>
+     */
     inline void SetItem(const Aws::Map<Aws::String, AttributeValue>& value) { m_itemHasBeenSet = true; m_item = value; }
 
     /**
@@ -117,6 +122,11 @@ namespace Model
     /**
      * <p>Status code for the result of the cancelled transaction.</p>
      */
+    inline bool CodeHasBeenSet() const { return m_codeHasBeenSet; }
+
+    /**
+     * <p>Status code for the result of the cancelled transaction.</p>
+     */
     inline void SetCode(const Aws::String& value) { m_codeHasBeenSet = true; m_code = value; }
 
     /**
@@ -149,6 +159,11 @@ namespace Model
      * <p>Cancellation reason message description.</p>
      */
     inline const Aws::String& GetMessage() const{ return m_message; }
+
+    /**
+     * <p>Cancellation reason message description.</p>
+     */
+    inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
 
     /**
      * <p>Cancellation reason message description.</p>

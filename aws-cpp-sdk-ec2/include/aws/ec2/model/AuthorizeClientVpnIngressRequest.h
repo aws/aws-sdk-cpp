@@ -54,6 +54,11 @@ namespace Model
     /**
      * <p>The ID of the Client VPN endpoint.</p>
      */
+    inline bool ClientVpnEndpointIdHasBeenSet() const { return m_clientVpnEndpointIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the Client VPN endpoint.</p>
+     */
     inline void SetClientVpnEndpointId(const Aws::String& value) { m_clientVpnEndpointIdHasBeenSet = true; m_clientVpnEndpointId = value; }
 
     /**
@@ -87,6 +92,12 @@ namespace Model
      * being authorized.</p>
      */
     inline const Aws::String& GetTargetNetworkCidr() const{ return m_targetNetworkCidr; }
+
+    /**
+     * <p>The IPv4 address range, in CIDR notation, of the network for which access is
+     * being authorized.</p>
+     */
+    inline bool TargetNetworkCidrHasBeenSet() const { return m_targetNetworkCidrHasBeenSet; }
 
     /**
      * <p>The IPv4 address range, in CIDR notation, of the network for which access is
@@ -133,6 +144,11 @@ namespace Model
     /**
      * <p>The ID of the Active Directory group to grant access.</p>
      */
+    inline bool AccessGroupIdHasBeenSet() const { return m_accessGroupIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the Active Directory group to grant access.</p>
+     */
     inline void SetAccessGroupId(const Aws::String& value) { m_accessGroupIdHasBeenSet = true; m_accessGroupId = value; }
 
     /**
@@ -173,6 +189,13 @@ namespace Model
      * grant all clients who successfully establish a VPN connection access to the
      * network.</p>
      */
+    inline bool AuthorizeAllGroupsHasBeenSet() const { return m_authorizeAllGroupsHasBeenSet; }
+
+    /**
+     * <p>Indicates whether to grant access to all clients. Use <code>true</code> to
+     * grant all clients who successfully establish a VPN connection access to the
+     * network.</p>
+     */
     inline void SetAuthorizeAllGroups(bool value) { m_authorizeAllGroupsHasBeenSet = true; m_authorizeAllGroups = value; }
 
     /**
@@ -187,6 +210,11 @@ namespace Model
      * <p>A brief description of the authorization rule.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
+
+    /**
+     * <p>A brief description of the authorization rule.</p>
+     */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
 
     /**
      * <p>A brief description of the authorization rule.</p>
@@ -226,6 +254,14 @@ namespace Model
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
     inline bool GetDryRun() const{ return m_dryRun; }
+
+    /**
+     * <p>Checks whether you have the required permissions for the action, without
+     * actually making the request, and provides an error response. If you have the
+     * required permissions, the error response is <code>DryRunOperation</code>.
+     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+     */
+    inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
 
     /**
      * <p>Checks whether you have the required permissions for the action, without

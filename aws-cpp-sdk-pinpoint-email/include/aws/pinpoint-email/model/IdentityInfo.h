@@ -64,6 +64,15 @@ namespace Model
      * <p> <code>MANAGED_DOMAIN</code> – The identity is a domain that is managed by
      * AWS.</p> </li> </ul>
      */
+    inline bool IdentityTypeHasBeenSet() const { return m_identityTypeHasBeenSet; }
+
+    /**
+     * <p>The email identity type. The identity type can be one of the following:</p>
+     * <ul> <li> <p> <code>EMAIL_ADDRESS</code> – The identity is an email address.</p>
+     * </li> <li> <p> <code>DOMAIN</code> – The identity is a domain.</p> </li> <li>
+     * <p> <code>MANAGED_DOMAIN</code> – The identity is a domain that is managed by
+     * AWS.</p> </li> </ul>
+     */
     inline void SetIdentityType(const IdentityType& value) { m_identityTypeHasBeenSet = true; m_identityType = value; }
 
     /**
@@ -98,6 +107,11 @@ namespace Model
      * <p>The address or domain of the identity.</p>
      */
     inline const Aws::String& GetIdentityName() const{ return m_identityName; }
+
+    /**
+     * <p>The address or domain of the identity.</p>
+     */
+    inline bool IdentityNameHasBeenSet() const { return m_identityNameHasBeenSet; }
 
     /**
      * <p>The address or domain of the identity.</p>
@@ -138,6 +152,15 @@ namespace Model
      * that identity.</p>
      */
     inline bool GetSendingEnabled() const{ return m_sendingEnabled; }
+
+    /**
+     * <p>Indicates whether or not you can send email from the identity.</p> <p>In
+     * Amazon Pinpoint, an identity is an email address or domain that you send email
+     * from. Before you can send email from an identity, you have to demostrate that
+     * you own the identity, and that you authorize Amazon Pinpoint to send email from
+     * that identity.</p>
+     */
+    inline bool SendingEnabledHasBeenSet() const { return m_sendingEnabledHasBeenSet; }
 
     /**
      * <p>Indicates whether or not you can send email from the identity.</p> <p>In

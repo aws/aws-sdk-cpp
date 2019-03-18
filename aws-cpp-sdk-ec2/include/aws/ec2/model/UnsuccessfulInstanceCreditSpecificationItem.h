@@ -59,6 +59,11 @@ namespace Model
     /**
      * <p>The ID of the instance.</p>
      */
+    inline bool InstanceIdHasBeenSet() const { return m_instanceIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the instance.</p>
+     */
     inline void SetInstanceId(const Aws::String& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
 
     /**
@@ -92,6 +97,12 @@ namespace Model
      * usage was not modified.</p>
      */
     inline const UnsuccessfulInstanceCreditSpecificationItemError& GetError() const{ return m_error; }
+
+    /**
+     * <p>The applicable error for the T2 or T3 instance whose credit option for CPU
+     * usage was not modified.</p>
+     */
+    inline bool ErrorHasBeenSet() const { return m_errorHasBeenSet; }
 
     /**
      * <p>The applicable error for the T2 or T3 instance whose credit option for CPU

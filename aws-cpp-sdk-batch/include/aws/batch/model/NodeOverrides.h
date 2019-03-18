@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The node property overrides for the job.</p>
      */
+    inline bool NodePropertyOverridesHasBeenSet() const { return m_nodePropertyOverridesHasBeenSet; }
+
+    /**
+     * <p>The node property overrides for the job.</p>
+     */
     inline void SetNodePropertyOverrides(const Aws::Vector<NodePropertyOverride>& value) { m_nodePropertyOverridesHasBeenSet = true; m_nodePropertyOverrides = value; }
 
     /**

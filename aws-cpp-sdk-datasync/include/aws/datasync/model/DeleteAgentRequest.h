@@ -59,6 +59,13 @@ namespace Model
      * <code>ListAgents</code> operation to return a list of agents for your account
      * and AWS Region.</p>
      */
+    inline bool AgentArnHasBeenSet() const { return m_agentArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the agent to delete. Use the
+     * <code>ListAgents</code> operation to return a list of agents for your account
+     * and AWS Region.</p>
+     */
     inline void SetAgentArn(const Aws::String& value) { m_agentArnHasBeenSet = true; m_agentArn = value; }
 
     /**

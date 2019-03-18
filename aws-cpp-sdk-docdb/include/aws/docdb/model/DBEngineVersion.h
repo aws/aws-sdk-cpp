@@ -60,6 +60,11 @@ namespace Model
     /**
      * <p>The name of the database engine.</p>
      */
+    inline bool EngineHasBeenSet() const { return m_engineHasBeenSet; }
+
+    /**
+     * <p>The name of the database engine.</p>
+     */
     inline void SetEngine(const Aws::String& value) { m_engineHasBeenSet = true; m_engine = value; }
 
     /**
@@ -92,6 +97,11 @@ namespace Model
      * <p>The version number of the database engine.</p>
      */
     inline const Aws::String& GetEngineVersion() const{ return m_engineVersion; }
+
+    /**
+     * <p>The version number of the database engine.</p>
+     */
+    inline bool EngineVersionHasBeenSet() const { return m_engineVersionHasBeenSet; }
 
     /**
      * <p>The version number of the database engine.</p>
@@ -132,6 +142,11 @@ namespace Model
     /**
      * <p>The name of the DB parameter group family for the database engine.</p>
      */
+    inline bool DBParameterGroupFamilyHasBeenSet() const { return m_dBParameterGroupFamilyHasBeenSet; }
+
+    /**
+     * <p>The name of the DB parameter group family for the database engine.</p>
+     */
     inline void SetDBParameterGroupFamily(const Aws::String& value) { m_dBParameterGroupFamilyHasBeenSet = true; m_dBParameterGroupFamily = value; }
 
     /**
@@ -164,6 +179,11 @@ namespace Model
      * <p>The description of the database engine.</p>
      */
     inline const Aws::String& GetDBEngineDescription() const{ return m_dBEngineDescription; }
+
+    /**
+     * <p>The description of the database engine.</p>
+     */
+    inline bool DBEngineDescriptionHasBeenSet() const { return m_dBEngineDescriptionHasBeenSet; }
 
     /**
      * <p>The description of the database engine.</p>
@@ -204,6 +224,11 @@ namespace Model
     /**
      * <p>The description of the database engine version.</p>
      */
+    inline bool DBEngineVersionDescriptionHasBeenSet() const { return m_dBEngineVersionDescriptionHasBeenSet; }
+
+    /**
+     * <p>The description of the database engine version.</p>
+     */
     inline void SetDBEngineVersionDescription(const Aws::String& value) { m_dBEngineVersionDescriptionHasBeenSet = true; m_dBEngineVersionDescription = value; }
 
     /**
@@ -237,6 +262,12 @@ namespace Model
      * to.</p>
      */
     inline const Aws::Vector<UpgradeTarget>& GetValidUpgradeTarget() const{ return m_validUpgradeTarget; }
+
+    /**
+     * <p>A list of engine versions that this database engine version can be upgraded
+     * to.</p>
+     */
+    inline bool ValidUpgradeTargetHasBeenSet() const { return m_validUpgradeTargetHasBeenSet; }
 
     /**
      * <p>A list of engine versions that this database engine version can be upgraded
@@ -280,6 +311,12 @@ namespace Model
      * CloudWatch Logs.</p>
      */
     inline const Aws::Vector<Aws::String>& GetExportableLogTypes() const{ return m_exportableLogTypes; }
+
+    /**
+     * <p>The types of logs that the database engine has available for export to Amazon
+     * CloudWatch Logs.</p>
+     */
+    inline bool ExportableLogTypesHasBeenSet() const { return m_exportableLogTypesHasBeenSet; }
 
     /**
      * <p>The types of logs that the database engine has available for export to Amazon
@@ -329,6 +366,12 @@ namespace Model
      * types specified by <code>ExportableLogTypes</code> to CloudWatch Logs.</p>
      */
     inline bool GetSupportsLogExportsToCloudwatchLogs() const{ return m_supportsLogExportsToCloudwatchLogs; }
+
+    /**
+     * <p>A value that indicates whether the engine version supports exporting the log
+     * types specified by <code>ExportableLogTypes</code> to CloudWatch Logs.</p>
+     */
+    inline bool SupportsLogExportsToCloudwatchLogsHasBeenSet() const { return m_supportsLogExportsToCloudwatchLogsHasBeenSet; }
 
     /**
      * <p>A value that indicates whether the engine version supports exporting the log

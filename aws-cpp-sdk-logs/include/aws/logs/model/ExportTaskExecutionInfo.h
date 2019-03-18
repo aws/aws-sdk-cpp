@@ -55,6 +55,12 @@ namespace Model
      * <p>The creation time of the export task, expressed as the number of milliseconds
      * after Jan 1, 1970 00:00:00 UTC.</p>
      */
+    inline bool CreationTimeHasBeenSet() const { return m_creationTimeHasBeenSet; }
+
+    /**
+     * <p>The creation time of the export task, expressed as the number of milliseconds
+     * after Jan 1, 1970 00:00:00 UTC.</p>
+     */
     inline void SetCreationTime(long long value) { m_creationTimeHasBeenSet = true; m_creationTime = value; }
 
     /**
@@ -69,6 +75,12 @@ namespace Model
      * milliseconds after Jan 1, 1970 00:00:00 UTC.</p>
      */
     inline long long GetCompletionTime() const{ return m_completionTime; }
+
+    /**
+     * <p>The completion time of the export task, expressed as the number of
+     * milliseconds after Jan 1, 1970 00:00:00 UTC.</p>
+     */
+    inline bool CompletionTimeHasBeenSet() const { return m_completionTimeHasBeenSet; }
 
     /**
      * <p>The completion time of the export task, expressed as the number of

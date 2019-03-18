@@ -60,6 +60,13 @@ namespace Model
      * filters per filter type (for example, <code>auto-scaling-group</code>) is
      * 1000.</p>
      */
+    inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
+
+    /**
+     * <p>One or more filters to scope the tags to return. The maximum number of
+     * filters per filter type (for example, <code>auto-scaling-group</code>) is
+     * 1000.</p>
+     */
     inline void SetFilters(const Aws::Vector<Filter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
 
     /**
@@ -108,6 +115,12 @@ namespace Model
      * <p>The token for the next set of items to return. (You received this token from
      * a previous call.)</p>
      */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
+
+    /**
+     * <p>The token for the next set of items to return. (You received this token from
+     * a previous call.)</p>
+     */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
     /**
@@ -146,6 +159,12 @@ namespace Model
      * <code>50</code> and the maximum value is <code>100</code>.</p>
      */
     inline int GetMaxRecords() const{ return m_maxRecords; }
+
+    /**
+     * <p>The maximum number of items to return with this call. The default value is
+     * <code>50</code> and the maximum value is <code>100</code>.</p>
+     */
+    inline bool MaxRecordsHasBeenSet() const { return m_maxRecordsHasBeenSet; }
 
     /**
      * <p>The maximum number of items to return with this call. The default value is

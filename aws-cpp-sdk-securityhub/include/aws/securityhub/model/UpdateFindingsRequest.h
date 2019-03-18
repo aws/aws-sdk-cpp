@@ -52,6 +52,11 @@ namespace Model
     /**
      * <p>A collection of attributes that specify what findings you want to update.</p>
      */
+    inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
+
+    /**
+     * <p>A collection of attributes that specify what findings you want to update.</p>
+     */
     inline void SetFilters(const AwsSecurityFindingFilters& value) { m_filtersHasBeenSet = true; m_filters = value; }
 
     /**
@@ -78,6 +83,11 @@ namespace Model
     /**
      * <p>The updated note for the finding.</p>
      */
+    inline bool NoteHasBeenSet() const { return m_noteHasBeenSet; }
+
+    /**
+     * <p>The updated note for the finding.</p>
+     */
     inline void SetNote(const NoteUpdate& value) { m_noteHasBeenSet = true; m_note = value; }
 
     /**
@@ -100,6 +110,11 @@ namespace Model
      * <p>The updated record state for the finding.</p>
      */
     inline const RecordState& GetRecordState() const{ return m_recordState; }
+
+    /**
+     * <p>The updated record state for the finding.</p>
+     */
+    inline bool RecordStateHasBeenSet() const { return m_recordStateHasBeenSet; }
 
     /**
      * <p>The updated record state for the finding.</p>

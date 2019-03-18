@@ -58,6 +58,12 @@ namespace Model
      * <p>Specifies the daily snapshot options specified for the Elasticsearch
      * domain.</p>
      */
+    inline bool OptionsHasBeenSet() const { return m_optionsHasBeenSet; }
+
+    /**
+     * <p>Specifies the daily snapshot options specified for the Elasticsearch
+     * domain.</p>
+     */
     inline void SetOptions(const SnapshotOptions& value) { m_optionsHasBeenSet = true; m_options = value; }
 
     /**
@@ -83,6 +89,11 @@ namespace Model
      * <p>Specifies the status of a daily automated snapshot.</p>
      */
     inline const OptionStatus& GetStatus() const{ return m_status; }
+
+    /**
+     * <p>Specifies the status of a daily automated snapshot.</p>
+     */
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
     /**
      * <p>Specifies the status of a daily automated snapshot.</p>

@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>Specifies the DNS service discovery hostname for the virtual node. </p>
      */
+    inline bool HostnameHasBeenSet() const { return m_hostnameHasBeenSet; }
+
+    /**
+     * <p>Specifies the DNS service discovery hostname for the virtual node. </p>
+     */
     inline void SetHostname(const Aws::String& value) { m_hostnameHasBeenSet = true; m_hostname = value; }
 
     /**

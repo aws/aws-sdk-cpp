@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The name of the project containing the placement.</p>
      */
+    inline bool ProjectNameHasBeenSet() const { return m_projectNameHasBeenSet; }
+
+    /**
+     * <p>The name of the project containing the placement.</p>
+     */
     inline void SetProjectName(const Aws::String& value) { m_projectNameHasBeenSet = true; m_projectName = value; }
 
     /**
@@ -89,6 +94,11 @@ namespace Model
      * <p>The name of the placement being summarized.</p>
      */
     inline const Aws::String& GetPlacementName() const{ return m_placementName; }
+
+    /**
+     * <p>The name of the placement being summarized.</p>
+     */
+    inline bool PlacementNameHasBeenSet() const { return m_placementNameHasBeenSet; }
 
     /**
      * <p>The name of the placement being summarized.</p>
@@ -131,6 +141,12 @@ namespace Model
      * <p>The date when the placement was originally created, in UNIX epoch time
      * format.</p>
      */
+    inline bool CreatedDateHasBeenSet() const { return m_createdDateHasBeenSet; }
+
+    /**
+     * <p>The date when the placement was originally created, in UNIX epoch time
+     * format.</p>
+     */
     inline void SetCreatedDate(const Aws::Utils::DateTime& value) { m_createdDateHasBeenSet = true; m_createdDate = value; }
 
     /**
@@ -158,6 +174,13 @@ namespace Model
      * <code>updatedDate</code> are the same.</p>
      */
     inline const Aws::Utils::DateTime& GetUpdatedDate() const{ return m_updatedDate; }
+
+    /**
+     * <p>The date when the placement was last updated, in UNIX epoch time format. If
+     * the placement was not updated, then <code>createdDate</code> and
+     * <code>updatedDate</code> are the same.</p>
+     */
+    inline bool UpdatedDateHasBeenSet() const { return m_updatedDateHasBeenSet; }
 
     /**
      * <p>The date when the placement was last updated, in UNIX epoch time format. If

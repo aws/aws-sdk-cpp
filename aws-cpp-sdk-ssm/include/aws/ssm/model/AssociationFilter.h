@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The name of the filter.</p>
      */
+    inline bool KeyHasBeenSet() const { return m_keyHasBeenSet; }
+
+    /**
+     * <p>The name of the filter.</p>
+     */
     inline void SetKey(const AssociationFilterKey& value) { m_keyHasBeenSet = true; m_key = value; }
 
     /**
@@ -78,6 +83,11 @@ namespace Model
      * <p>The filter value.</p>
      */
     inline const Aws::String& GetValue() const{ return m_value; }
+
+    /**
+     * <p>The filter value.</p>
+     */
+    inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
 
     /**
      * <p>The filter value.</p>

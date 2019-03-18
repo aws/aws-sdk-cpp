@@ -57,6 +57,12 @@ namespace Model
      * <p>The ID of the pipeline that was assigned by AWS Data Pipeline. This is a
      * string of the form <code>df-297EG78HU43EEXAMPLE</code>.</p>
      */
+    inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
+
+    /**
+     * <p>The ID of the pipeline that was assigned by AWS Data Pipeline. This is a
+     * string of the form <code>df-297EG78HU43EEXAMPLE</code>.</p>
+     */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
     /**
@@ -94,6 +100,11 @@ namespace Model
      * <p>The name of the pipeline.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
+
+    /**
+     * <p>The name of the pipeline.</p>
+     */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
      * <p>The name of the pipeline.</p>

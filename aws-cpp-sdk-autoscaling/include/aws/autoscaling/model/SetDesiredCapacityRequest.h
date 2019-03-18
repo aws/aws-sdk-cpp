@@ -54,6 +54,11 @@ namespace Model
     /**
      * <p>The name of the Auto Scaling group.</p>
      */
+    inline bool AutoScalingGroupNameHasBeenSet() const { return m_autoScalingGroupNameHasBeenSet; }
+
+    /**
+     * <p>The name of the Auto Scaling group.</p>
+     */
     inline void SetAutoScalingGroupName(const Aws::String& value) { m_autoScalingGroupNameHasBeenSet = true; m_autoScalingGroupName = value; }
 
     /**
@@ -92,6 +97,12 @@ namespace Model
      * <p>The number of EC2 instances that should be running in the Auto Scaling
      * group.</p>
      */
+    inline bool DesiredCapacityHasBeenSet() const { return m_desiredCapacityHasBeenSet; }
+
+    /**
+     * <p>The number of EC2 instances that should be running in the Auto Scaling
+     * group.</p>
+     */
     inline void SetDesiredCapacity(int value) { m_desiredCapacityHasBeenSet = true; m_desiredCapacity = value; }
 
     /**
@@ -108,6 +119,14 @@ namespace Model
      * cooldown period during manual scaling activities.</p>
      */
     inline bool GetHonorCooldown() const{ return m_honorCooldown; }
+
+    /**
+     * <p>Indicates whether Amazon EC2 Auto Scaling waits for the cooldown period to
+     * complete before initiating a scaling activity to set your Auto Scaling group to
+     * its new capacity. By default, Amazon EC2 Auto Scaling does not honor the
+     * cooldown period during manual scaling activities.</p>
+     */
+    inline bool HonorCooldownHasBeenSet() const { return m_honorCooldownHasBeenSet; }
 
     /**
      * <p>Indicates whether Amazon EC2 Auto Scaling waits for the cooldown period to

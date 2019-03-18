@@ -58,6 +58,12 @@ namespace Model
      * <p>The Amazon S3 bucket name where the source code files provided with the
      * project request are stored.</p>
      */
+    inline bool BucketNameHasBeenSet() const { return m_bucketNameHasBeenSet; }
+
+    /**
+     * <p>The Amazon S3 bucket name where the source code files provided with the
+     * project request are stored.</p>
+     */
     inline void SetBucketName(const Aws::String& value) { m_bucketNameHasBeenSet = true; m_bucketName = value; }
 
     /**
@@ -96,6 +102,12 @@ namespace Model
      * project request are stored.</p>
      */
     inline const Aws::String& GetBucketKey() const{ return m_bucketKey; }
+
+    /**
+     * <p>The Amazon S3 object key where the source code files provided with the
+     * project request are stored.</p>
+     */
+    inline bool BucketKeyHasBeenSet() const { return m_bucketKeyHasBeenSet; }
 
     /**
      * <p>The Amazon S3 object key where the source code files provided with the

@@ -80,6 +80,22 @@ namespace Model
      * <b>VpcIdNotFound</b>: The VPC associated with the cluster could not be
      * found.</p> </li> </ul>
      */
+    inline bool ErrorCodeHasBeenSet() const { return m_errorCodeHasBeenSet; }
+
+    /**
+     * <p>A brief description of the error. </p> <ul> <li> <p> <b>SubnetNotFound</b>:
+     * One of the subnets associated with the cluster could not be found.</p> </li>
+     * <li> <p> <b>SecurityGroupNotFound</b>: One of the security groups associated
+     * with the cluster could not be found.</p> </li> <li> <p> <b>EniLimitReached</b>:
+     * You have reached the elastic network interface limit for your account.</p> </li>
+     * <li> <p> <b>IpNotAvailable</b>: A subnet associated with the cluster does not
+     * have any free IP addresses.</p> </li> <li> <p> <b>AccessDenied</b>: You do not
+     * have permissions to perform the specified operation.</p> </li> <li> <p>
+     * <b>OperationNotPermitted</b>: The service role associated with the cluster does
+     * not have the required access permissions for Amazon EKS.</p> </li> <li> <p>
+     * <b>VpcIdNotFound</b>: The VPC associated with the cluster could not be
+     * found.</p> </li> </ul>
+     */
     inline void SetErrorCode(const ErrorCode& value) { m_errorCodeHasBeenSet = true; m_errorCode = value; }
 
     /**
@@ -139,6 +155,11 @@ namespace Model
     /**
      * <p>A more complete description of the error.</p>
      */
+    inline bool ErrorMessageHasBeenSet() const { return m_errorMessageHasBeenSet; }
+
+    /**
+     * <p>A more complete description of the error.</p>
+     */
     inline void SetErrorMessage(const Aws::String& value) { m_errorMessageHasBeenSet = true; m_errorMessage = value; }
 
     /**
@@ -172,6 +193,12 @@ namespace Model
      * error.</p>
      */
     inline const Aws::Vector<Aws::String>& GetResourceIds() const{ return m_resourceIds; }
+
+    /**
+     * <p>An optional field that contains the resource IDs associated with the
+     * error.</p>
+     */
+    inline bool ResourceIdsHasBeenSet() const { return m_resourceIdsHasBeenSet; }
 
     /**
      * <p>An optional field that contains the resource IDs associated with the

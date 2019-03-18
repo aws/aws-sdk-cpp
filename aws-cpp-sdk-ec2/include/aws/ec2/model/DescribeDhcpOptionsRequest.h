@@ -58,6 +58,12 @@ namespace Model
      * <p>The IDs of one or more DHCP options sets.</p> <p>Default: Describes all your
      * DHCP options sets.</p>
      */
+    inline bool DhcpOptionsIdsHasBeenSet() const { return m_dhcpOptionsIdsHasBeenSet; }
+
+    /**
+     * <p>The IDs of one or more DHCP options sets.</p> <p>Default: Describes all your
+     * DHCP options sets.</p>
+     */
     inline void SetDhcpOptionsIds(const Aws::Vector<Aws::String>& value) { m_dhcpOptionsIdsHasBeenSet = true; m_dhcpOptionsIds = value; }
 
     /**
@@ -113,6 +119,23 @@ namespace Model
      * specific key, regardless of the tag value.</p> </li> </ul>
      */
     inline const Aws::Vector<Filter>& GetFilters() const{ return m_filters; }
+
+    /**
+     * <p>One or more filters.</p> <ul> <li> <p> <code>dhcp-options-id</code> - The ID
+     * of a DHCP options set.</p> </li> <li> <p> <code>key</code> - The key for one of
+     * the options (for example, <code>domain-name</code>).</p> </li> <li> <p>
+     * <code>value</code> - The value for one of the options.</p> </li> <li> <p>
+     * <code>owner-id</code> - The ID of the AWS account that owns the DHCP options
+     * set.</p> </li> <li> <p> <code>tag</code>:&lt;key&gt; - The key/value combination
+     * of a tag assigned to the resource. Use the tag key in the filter name and the
+     * tag value as the filter value. For example, to find all resources that have a
+     * tag with the key <code>Owner</code> and the value <code>TeamA</code>, specify
+     * <code>tag:Owner</code> for the filter name and <code>TeamA</code> for the filter
+     * value.</p> </li> <li> <p> <code>tag-key</code> - The key of a tag assigned to
+     * the resource. Use this filter to find all resources assigned a tag with a
+     * specific key, regardless of the tag value.</p> </li> </ul>
+     */
+    inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
 
     /**
      * <p>One or more filters.</p> <ul> <li> <p> <code>dhcp-options-id</code> - The ID
@@ -224,6 +247,14 @@ namespace Model
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
     inline bool GetDryRun() const{ return m_dryRun; }
+
+    /**
+     * <p>Checks whether you have the required permissions for the action, without
+     * actually making the request, and provides an error response. If you have the
+     * required permissions, the error response is <code>DryRunOperation</code>.
+     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+     */
+    inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
 
     /**
      * <p>Checks whether you have the required permissions for the action, without

@@ -51,6 +51,11 @@ namespace Model
     /**
      * <p>The name of the project to be updated.</p>
      */
+    inline bool ProjectNameHasBeenSet() const { return m_projectNameHasBeenSet; }
+
+    /**
+     * <p>The name of the project to be updated.</p>
+     */
     inline void SetProjectName(const Aws::String& value) { m_projectNameHasBeenSet = true; m_projectName = value; }
 
     /**
@@ -83,6 +88,11 @@ namespace Model
      * <p>An optional user-defined description for the project.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
+
+    /**
+     * <p>An optional user-defined description for the project.</p>
+     */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
 
     /**
      * <p>An optional user-defined description for the project.</p>
@@ -122,6 +132,14 @@ namespace Model
      * <code>callbackOverrides</code> for the device definition using this API.</p>
      */
     inline const PlacementTemplate& GetPlacementTemplate() const{ return m_placementTemplate; }
+
+    /**
+     * <p>An object defining the project update. Once a project has been created, you
+     * cannot add device template names to the project. However, for a given
+     * <code>placementTemplate</code>, you can update the associated
+     * <code>callbackOverrides</code> for the device definition using this API.</p>
+     */
+    inline bool PlacementTemplateHasBeenSet() const { return m_placementTemplateHasBeenSet; }
 
     /**
      * <p>An object defining the project update. Once a project has been created, you

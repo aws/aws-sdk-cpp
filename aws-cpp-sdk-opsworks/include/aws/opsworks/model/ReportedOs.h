@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The operating system family.</p>
      */
+    inline bool FamilyHasBeenSet() const { return m_familyHasBeenSet; }
+
+    /**
+     * <p>The operating system family.</p>
+     */
     inline void SetFamily(const Aws::String& value) { m_familyHasBeenSet = true; m_family = value; }
 
     /**
@@ -92,6 +97,11 @@ namespace Model
     /**
      * <p>The operating system name.</p>
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>The operating system name.</p>
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
@@ -124,6 +134,11 @@ namespace Model
      * <p>The operating system version.</p>
      */
     inline const Aws::String& GetVersion() const{ return m_version; }
+
+    /**
+     * <p>The operating system version.</p>
+     */
+    inline bool VersionHasBeenSet() const { return m_versionHasBeenSet; }
 
     /**
      * <p>The operating system version.</p>

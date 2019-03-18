@@ -55,6 +55,11 @@ namespace Model
     /**
      * <p>The name of the configuration aggregator.</p>
      */
+    inline bool ConfigurationAggregatorNameHasBeenSet() const { return m_configurationAggregatorNameHasBeenSet; }
+
+    /**
+     * <p>The name of the configuration aggregator.</p>
+     */
     inline void SetConfigurationAggregatorName(const Aws::String& value) { m_configurationAggregatorNameHasBeenSet = true; m_configurationAggregatorName = value; }
 
     /**
@@ -91,6 +96,11 @@ namespace Model
     /**
      * <p>A list of AccountAggregationSource object. </p>
      */
+    inline bool AccountAggregationSourcesHasBeenSet() const { return m_accountAggregationSourcesHasBeenSet; }
+
+    /**
+     * <p>A list of AccountAggregationSource object. </p>
+     */
     inline void SetAccountAggregationSources(const Aws::Vector<AccountAggregationSource>& value) { m_accountAggregationSourcesHasBeenSet = true; m_accountAggregationSources = value; }
 
     /**
@@ -123,6 +133,11 @@ namespace Model
      * <p>An OrganizationAggregationSource object.</p>
      */
     inline const OrganizationAggregationSource& GetOrganizationAggregationSource() const{ return m_organizationAggregationSource; }
+
+    /**
+     * <p>An OrganizationAggregationSource object.</p>
+     */
+    inline bool OrganizationAggregationSourceHasBeenSet() const { return m_organizationAggregationSourceHasBeenSet; }
 
     /**
      * <p>An OrganizationAggregationSource object.</p>

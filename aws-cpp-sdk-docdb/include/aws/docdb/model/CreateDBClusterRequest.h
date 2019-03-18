@@ -61,6 +61,12 @@ namespace Model
      * <p>A list of Amazon EC2 Availability Zones that instances in the DB cluster can
      * be created in.</p>
      */
+    inline bool AvailabilityZonesHasBeenSet() const { return m_availabilityZonesHasBeenSet; }
+
+    /**
+     * <p>A list of Amazon EC2 Availability Zones that instances in the DB cluster can
+     * be created in.</p>
+     */
     inline void SetAvailabilityZones(const Aws::Vector<Aws::String>& value) { m_availabilityZonesHasBeenSet = true; m_availabilityZones = value; }
 
     /**
@@ -112,6 +118,13 @@ namespace Model
      * a minimum value of 1.</p> <p>Default: 1</p> <p>Constraints:</p> <ul> <li>
      * <p>Must be a value from 1 to 35.</p> </li> </ul>
      */
+    inline bool BackupRetentionPeriodHasBeenSet() const { return m_backupRetentionPeriodHasBeenSet; }
+
+    /**
+     * <p>The number of days for which automated backups are retained. You must specify
+     * a minimum value of 1.</p> <p>Default: 1</p> <p>Constraints:</p> <ul> <li>
+     * <p>Must be a value from 1 to 35.</p> </li> </ul>
+     */
     inline void SetBackupRetentionPeriod(int value) { m_backupRetentionPeriodHasBeenSet = true; m_backupRetentionPeriod = value; }
 
     /**
@@ -130,6 +143,15 @@ namespace Model
      * </li> </ul> <p>Example: <code>my-cluster</code> </p>
      */
     inline const Aws::String& GetDBClusterIdentifier() const{ return m_dBClusterIdentifier; }
+
+    /**
+     * <p>The DB cluster identifier. This parameter is stored as a lowercase
+     * string.</p> <p>Constraints:</p> <ul> <li> <p>Must contain from 1 to 63 letters,
+     * numbers, or hyphens.</p> </li> <li> <p>The first character must be a letter.</p>
+     * </li> <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p>
+     * </li> </ul> <p>Example: <code>my-cluster</code> </p>
+     */
+    inline bool DBClusterIdentifierHasBeenSet() const { return m_dBClusterIdentifierHasBeenSet; }
 
     /**
      * <p>The DB cluster identifier. This parameter is stored as a lowercase
@@ -196,6 +218,12 @@ namespace Model
      * <p> The name of the DB cluster parameter group to associate with this DB
      * cluster.</p>
      */
+    inline bool DBClusterParameterGroupNameHasBeenSet() const { return m_dBClusterParameterGroupNameHasBeenSet; }
+
+    /**
+     * <p> The name of the DB cluster parameter group to associate with this DB
+     * cluster.</p>
+     */
     inline void SetDBClusterParameterGroupName(const Aws::String& value) { m_dBClusterParameterGroupNameHasBeenSet = true; m_dBClusterParameterGroupName = value; }
 
     /**
@@ -233,6 +261,11 @@ namespace Model
      * <p>A list of EC2 VPC security groups to associate with this DB cluster.</p>
      */
     inline const Aws::Vector<Aws::String>& GetVpcSecurityGroupIds() const{ return m_vpcSecurityGroupIds; }
+
+    /**
+     * <p>A list of EC2 VPC security groups to associate with this DB cluster.</p>
+     */
+    inline bool VpcSecurityGroupIdsHasBeenSet() const { return m_vpcSecurityGroupIdsHasBeenSet; }
 
     /**
      * <p>A list of EC2 VPC security groups to associate with this DB cluster.</p>
@@ -276,6 +309,13 @@ namespace Model
      * default.</p> <p>Example: <code>mySubnetgroup</code> </p>
      */
     inline const Aws::String& GetDBSubnetGroupName() const{ return m_dBSubnetGroupName; }
+
+    /**
+     * <p>A DB subnet group to associate with this DB cluster.</p> <p>Constraints: Must
+     * match the name of an existing <code>DBSubnetGroup</code>. Must not be
+     * default.</p> <p>Example: <code>mySubnetgroup</code> </p>
+     */
+    inline bool DBSubnetGroupNameHasBeenSet() const { return m_dBSubnetGroupNameHasBeenSet; }
 
     /**
      * <p>A DB subnet group to associate with this DB cluster.</p> <p>Constraints: Must
@@ -330,6 +370,12 @@ namespace Model
      * <p>The name of the database engine to be used for this DB cluster.</p> <p>Valid
      * values: <code>docdb</code> </p>
      */
+    inline bool EngineHasBeenSet() const { return m_engineHasBeenSet; }
+
+    /**
+     * <p>The name of the database engine to be used for this DB cluster.</p> <p>Valid
+     * values: <code>docdb</code> </p>
+     */
     inline void SetEngine(const Aws::String& value) { m_engineHasBeenSet = true; m_engine = value; }
 
     /**
@@ -367,6 +413,11 @@ namespace Model
      * <p>The version number of the database engine to use.</p>
      */
     inline const Aws::String& GetEngineVersion() const{ return m_engineVersion; }
+
+    /**
+     * <p>The version number of the database engine to use.</p>
+     */
+    inline bool EngineVersionHasBeenSet() const { return m_engineVersionHasBeenSet; }
 
     /**
      * <p>The version number of the database engine to use.</p>
@@ -409,6 +460,12 @@ namespace Model
      * <p>The port number on which the instances in the DB cluster accept
      * connections.</p>
      */
+    inline bool PortHasBeenSet() const { return m_portHasBeenSet; }
+
+    /**
+     * <p>The port number on which the instances in the DB cluster accept
+     * connections.</p>
+     */
     inline void SetPort(int value) { m_portHasBeenSet = true; m_port = value; }
 
     /**
@@ -425,6 +482,14 @@ namespace Model
      * chosen database engine.</p> </li> </ul>
      */
     inline const Aws::String& GetMasterUsername() const{ return m_masterUsername; }
+
+    /**
+     * <p>The name of the master user for the DB cluster.</p> <p>Constraints:</p> <ul>
+     * <li> <p>Must be from 1 to 16 letters or numbers.</p> </li> <li> <p>The first
+     * character must be a letter.</p> </li> <li> <p>Cannot be a reserved word for the
+     * chosen database engine.</p> </li> </ul>
+     */
+    inline bool MasterUsernameHasBeenSet() const { return m_masterUsernameHasBeenSet; }
 
     /**
      * <p>The name of the master user for the DB cluster.</p> <p>Constraints:</p> <ul>
@@ -487,6 +552,13 @@ namespace Model
      * printable ASCII character except "/", """, or "@".</p> <p>Constraints: Must
      * contain from 8 to 41 characters.</p>
      */
+    inline bool MasterUserPasswordHasBeenSet() const { return m_masterUserPasswordHasBeenSet; }
+
+    /**
+     * <p>The password for the master database user. This password can contain any
+     * printable ASCII character except "/", """, or "@".</p> <p>Constraints: Must
+     * contain from 8 to 41 characters.</p>
+     */
     inline void SetMasterUserPassword(const Aws::String& value) { m_masterUserPasswordHasBeenSet = true; m_masterUserPassword = value; }
 
     /**
@@ -536,6 +608,18 @@ namespace Model
      * </ul>
      */
     inline const Aws::String& GetPreferredBackupWindow() const{ return m_preferredBackupWindow; }
+
+    /**
+     * <p>The daily time range during which automated backups are created if automated
+     * backups are enabled using the <code>BackupRetentionPeriod</code> parameter. </p>
+     * <p>The default is a 30-minute window selected at random from an 8-hour block of
+     * time for each AWS Region. </p> <p>Constraints:</p> <ul> <li> <p>Must be in the
+     * format <code>hh24:mi-hh24:mi</code>.</p> </li> <li> <p>Must be in Universal
+     * Coordinated Time (UTC).</p> </li> <li> <p>Must not conflict with the preferred
+     * maintenance window.</p> </li> <li> <p>Must be at least 30 minutes.</p> </li>
+     * </ul>
+     */
+    inline bool PreferredBackupWindowHasBeenSet() const { return m_preferredBackupWindowHasBeenSet; }
 
     /**
      * <p>The daily time range during which automated backups are created if automated
@@ -628,6 +712,16 @@ namespace Model
      * days: Mon, Tue, Wed, Thu, Fri, Sat, Sun</p> <p>Constraints: Minimum 30-minute
      * window.</p>
      */
+    inline bool PreferredMaintenanceWindowHasBeenSet() const { return m_preferredMaintenanceWindowHasBeenSet; }
+
+    /**
+     * <p>The weekly time range during which system maintenance can occur, in Universal
+     * Coordinated Time (UTC).</p> <p>Format: <code>ddd:hh24:mi-ddd:hh24:mi</code> </p>
+     * <p>The default is a 30-minute window selected at random from an 8-hour block of
+     * time for each AWS Region, occurring on a random day of the week.</p> <p>Valid
+     * days: Mon, Tue, Wed, Thu, Fri, Sat, Sun</p> <p>Constraints: Minimum 30-minute
+     * window.</p>
+     */
     inline void SetPreferredMaintenanceWindow(const Aws::String& value) { m_preferredMaintenanceWindowHasBeenSet = true; m_preferredMaintenanceWindow = value; }
 
     /**
@@ -689,6 +783,11 @@ namespace Model
     /**
      * <p>The tags to be assigned to the DB cluster.</p>
      */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
+
+    /**
+     * <p>The tags to be assigned to the DB cluster.</p>
+     */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     /**
@@ -725,6 +824,11 @@ namespace Model
     /**
      * <p>Specifies whether the DB cluster is encrypted.</p>
      */
+    inline bool StorageEncryptedHasBeenSet() const { return m_storageEncryptedHasBeenSet; }
+
+    /**
+     * <p>Specifies whether the DB cluster is encrypted.</p>
+     */
     inline void SetStorageEncrypted(bool value) { m_storageEncryptedHasBeenSet = true; m_storageEncrypted = value; }
 
     /**
@@ -753,6 +857,27 @@ namespace Model
      * encrypt the replica in that AWS Region.</p>
      */
     inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
+
+    /**
+     * <p>The AWS KMS key identifier for an encrypted DB cluster.</p> <p>The AWS KMS
+     * key identifier is the Amazon Resource Name (ARN) for the AWS KMS encryption key.
+     * If you are creating a DB cluster using the same AWS account that owns the AWS
+     * KMS encryption key that is used to encrypt the new DB cluster, you can use the
+     * AWS KMS key alias instead of the ARN for the AWS KMS encryption key.</p> <p>If
+     * an encryption key is not specified in <code>KmsKeyId</code>:</p> <ul> <li> <p>If
+     * <code>ReplicationSourceIdentifier</code> identifies an encrypted source, then
+     * Amazon DocumentDB uses the encryption key that is used to encrypt the source.
+     * Otherwise, Amazon DocumentDB uses your default encryption key. </p> </li> <li>
+     * <p>If the <code>StorageEncrypted</code> parameter is <code>true</code> and
+     * <code>ReplicationSourceIdentifier</code> is not specified, Amazon DocumentDB
+     * uses your default encryption key.</p> </li> </ul> <p>AWS KMS creates the default
+     * encryption key for your AWS account. Your AWS account has a different default
+     * encryption key for each AWS Region.</p> <p>If you create a replica of an
+     * encrypted DB cluster in another AWS Region, you must set <code>KmsKeyId</code>
+     * to a KMS key ID that is valid in the destination AWS Region. This key is used to
+     * encrypt the replica in that AWS Region.</p>
+     */
+    inline bool KmsKeyIdHasBeenSet() const { return m_kmsKeyIdHasBeenSet; }
 
     /**
      * <p>The AWS KMS key identifier for an encrypted DB cluster.</p> <p>The AWS KMS
@@ -886,6 +1011,12 @@ namespace Model
      * CloudWatch Logs.</p>
      */
     inline const Aws::Vector<Aws::String>& GetEnableCloudwatchLogsExports() const{ return m_enableCloudwatchLogsExports; }
+
+    /**
+     * <p>A list of log types that need to be enabled for exporting to Amazon
+     * CloudWatch Logs.</p>
+     */
+    inline bool EnableCloudwatchLogsExportsHasBeenSet() const { return m_enableCloudwatchLogsExportsHasBeenSet; }
 
     /**
      * <p>A list of log types that need to be enabled for exporting to Amazon

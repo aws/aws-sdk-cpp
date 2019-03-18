@@ -59,6 +59,11 @@ namespace Model
     /**
      * <p>Time of the data point.</p>
      */
+    inline bool TimestampHasBeenSet() const { return m_timestampHasBeenSet; }
+
+    /**
+     * <p>Time of the data point.</p>
+     */
     inline void SetTimestamp(const Aws::Utils::DateTime& value) { m_timestampHasBeenSet = true; m_timestamp = value; }
 
     /**
@@ -85,6 +90,11 @@ namespace Model
     /**
      * <p>Number of emails that have been sent.</p>
      */
+    inline bool DeliveryAttemptsHasBeenSet() const { return m_deliveryAttemptsHasBeenSet; }
+
+    /**
+     * <p>Number of emails that have been sent.</p>
+     */
     inline void SetDeliveryAttempts(long long value) { m_deliveryAttemptsHasBeenSet = true; m_deliveryAttempts = value; }
 
     /**
@@ -97,6 +107,11 @@ namespace Model
      * <p>Number of emails that have bounced.</p>
      */
     inline long long GetBounces() const{ return m_bounces; }
+
+    /**
+     * <p>Number of emails that have bounced.</p>
+     */
+    inline bool BouncesHasBeenSet() const { return m_bouncesHasBeenSet; }
 
     /**
      * <p>Number of emails that have bounced.</p>
@@ -117,6 +132,11 @@ namespace Model
     /**
      * <p>Number of unwanted emails that were rejected by recipients.</p>
      */
+    inline bool ComplaintsHasBeenSet() const { return m_complaintsHasBeenSet; }
+
+    /**
+     * <p>Number of unwanted emails that were rejected by recipients.</p>
+     */
     inline void SetComplaints(long long value) { m_complaintsHasBeenSet = true; m_complaints = value; }
 
     /**
@@ -129,6 +149,11 @@ namespace Model
      * <p>Number of emails rejected by Amazon SES.</p>
      */
     inline long long GetRejects() const{ return m_rejects; }
+
+    /**
+     * <p>Number of emails rejected by Amazon SES.</p>
+     */
+    inline bool RejectsHasBeenSet() const { return m_rejectsHasBeenSet; }
 
     /**
      * <p>Number of emails rejected by Amazon SES.</p>

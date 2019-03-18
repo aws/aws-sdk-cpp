@@ -62,6 +62,16 @@ namespace Model
      * request ID string requires "car-" followed by from 8 to 32 lower-case letters or
      * digits.</p>
      */
+    inline bool CreateAccountRequestIdHasBeenSet() const { return m_createAccountRequestIdHasBeenSet; }
+
+    /**
+     * <p>Specifies the <code>operationId</code> that uniquely identifies the request.
+     * You can get the ID from the response to an earlier <a>CreateAccount</a> request,
+     * or from the <a>ListCreateAccountStatus</a> operation.</p> <p>The <a
+     * href="http://wikipedia.org/wiki/regex">regex pattern</a> for an create account
+     * request ID string requires "car-" followed by from 8 to 32 lower-case letters or
+     * digits.</p>
+     */
     inline void SetCreateAccountRequestId(const Aws::String& value) { m_createAccountRequestIdHasBeenSet = true; m_createAccountRequestId = value; }
 
     /**

@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The unique identifier assigned to this job when it was created.</p>
      */
+    inline bool JobIdHasBeenSet() const { return m_jobIdHasBeenSet; }
+
+    /**
+     * <p>The unique identifier assigned to this job when it was created.</p>
+     */
     inline void SetJobId(const Aws::String& value) { m_jobIdHasBeenSet = true; m_jobId = value; }
 
     /**
@@ -89,6 +94,12 @@ namespace Model
      * on.</p>
      */
     inline const Aws::String& GetThingName() const{ return m_thingName; }
+
+    /**
+     * <p>The thing name associated with the device the job execution is running
+     * on.</p>
+     */
+    inline bool ThingNameHasBeenSet() const { return m_thingNameHasBeenSet; }
 
     /**
      * <p>The thing name associated with the device the job execution is running
@@ -137,6 +148,12 @@ namespace Model
      * <p>Optional. When set to true, the response contains the job document. The
      * default is false.</p>
      */
+    inline bool IncludeJobDocumentHasBeenSet() const { return m_includeJobDocumentHasBeenSet; }
+
+    /**
+     * <p>Optional. When set to true, the response contains the job document. The
+     * default is false.</p>
+     */
     inline void SetIncludeJobDocument(bool value) { m_includeJobDocumentHasBeenSet = true; m_includeJobDocument = value; }
 
     /**
@@ -151,6 +168,12 @@ namespace Model
      * device. If not specified, the latest job execution is returned.</p>
      */
     inline long long GetExecutionNumber() const{ return m_executionNumber; }
+
+    /**
+     * <p>Optional. A number that identifies a particular job execution on a particular
+     * device. If not specified, the latest job execution is returned.</p>
+     */
+    inline bool ExecutionNumberHasBeenSet() const { return m_executionNumberHasBeenSet; }
 
     /**
      * <p>Optional. A number that identifies a particular job execution on a particular

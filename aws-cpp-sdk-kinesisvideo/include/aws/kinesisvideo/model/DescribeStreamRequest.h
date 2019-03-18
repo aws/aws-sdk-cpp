@@ -50,6 +50,11 @@ namespace Model
     /**
      * <p>The name of the stream.</p>
      */
+    inline bool StreamNameHasBeenSet() const { return m_streamNameHasBeenSet; }
+
+    /**
+     * <p>The name of the stream.</p>
+     */
     inline void SetStreamName(const Aws::String& value) { m_streamNameHasBeenSet = true; m_streamName = value; }
 
     /**
@@ -82,6 +87,11 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the stream.</p>
      */
     inline const Aws::String& GetStreamARN() const{ return m_streamARN; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the stream.</p>
+     */
+    inline bool StreamARNHasBeenSet() const { return m_streamARNHasBeenSet; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the stream.</p>

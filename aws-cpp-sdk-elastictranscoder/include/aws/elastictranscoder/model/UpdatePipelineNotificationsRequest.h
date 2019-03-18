@@ -57,6 +57,12 @@ namespace Model
      * <p>The identifier of the pipeline for which you want to change notification
      * settings.</p>
      */
+    inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
+
+    /**
+     * <p>The identifier of the pipeline for which you want to change notification
+     * settings.</p>
+     */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
     /**
@@ -109,6 +115,26 @@ namespace Model
      * Amazon SNS returned when you created the topic.</p> </li> </ul>
      */
     inline const Notifications& GetNotifications() const{ return m_notifications; }
+
+    /**
+     * <p>The topic ARN for the Amazon Simple Notification Service (Amazon SNS) topic
+     * that you want to notify to report job status.</p> <important> <p>To receive
+     * notifications, you must also subscribe to the new topic in the Amazon SNS
+     * console.</p> </important> <ul> <li> <p> <b>Progressing</b>: The topic ARN for
+     * the Amazon Simple Notification Service (Amazon SNS) topic that you want to
+     * notify when Elastic Transcoder has started to process jobs that are added to
+     * this pipeline. This is the ARN that Amazon SNS returned when you created the
+     * topic.</p> </li> <li> <p> <b>Complete</b>: The topic ARN for the Amazon SNS
+     * topic that you want to notify when Elastic Transcoder has finished processing a
+     * job. This is the ARN that Amazon SNS returned when you created the topic.</p>
+     * </li> <li> <p> <b>Warning</b>: The topic ARN for the Amazon SNS topic that you
+     * want to notify when Elastic Transcoder encounters a warning condition. This is
+     * the ARN that Amazon SNS returned when you created the topic.</p> </li> <li> <p>
+     * <b>Error</b>: The topic ARN for the Amazon SNS topic that you want to notify
+     * when Elastic Transcoder encounters an error condition. This is the ARN that
+     * Amazon SNS returned when you created the topic.</p> </li> </ul>
+     */
+    inline bool NotificationsHasBeenSet() const { return m_notificationsHasBeenSet; }
 
     /**
      * <p>The topic ARN for the Amazon Simple Notification Service (Amazon SNS) topic

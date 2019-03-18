@@ -53,6 +53,11 @@ namespace Model
     /**
      * <p>Information about the broker nodes in the cluster.</p>
      */
+    inline bool BrokerNodeGroupInfoHasBeenSet() const { return m_brokerNodeGroupInfoHasBeenSet; }
+
+    /**
+     * <p>Information about the broker nodes in the cluster.</p>
+     */
     inline void SetBrokerNodeGroupInfo(const BrokerNodeGroupInfo& value) { m_brokerNodeGroupInfoHasBeenSet = true; m_brokerNodeGroupInfo = value; }
 
     /**
@@ -75,6 +80,11 @@ namespace Model
      * <p>The name of the cluster.</p>
      */
     inline const Aws::String& GetClusterName() const{ return m_clusterName; }
+
+    /**
+     * <p>The name of the cluster.</p>
+     */
+    inline bool ClusterNameHasBeenSet() const { return m_clusterNameHasBeenSet; }
 
     /**
      * <p>The name of the cluster.</p>
@@ -115,6 +125,11 @@ namespace Model
     /**
      * <p>Includes all encryption-related information.</p>
      */
+    inline bool EncryptionInfoHasBeenSet() const { return m_encryptionInfoHasBeenSet; }
+
+    /**
+     * <p>Includes all encryption-related information.</p>
+     */
     inline void SetEncryptionInfo(const EncryptionInfo& value) { m_encryptionInfoHasBeenSet = true; m_encryptionInfo = value; }
 
     /**
@@ -138,6 +153,12 @@ namespace Model
      * are DEFAULT, PER_BROKER, and PER_TOPIC_PER_BROKER.</p>
      */
     inline const EnhancedMonitoring& GetEnhancedMonitoring() const{ return m_enhancedMonitoring; }
+
+    /**
+     * <p>Specifies the level of monitoring for the MSK cluster. The possible values
+     * are DEFAULT, PER_BROKER, and PER_TOPIC_PER_BROKER.</p>
+     */
+    inline bool EnhancedMonitoringHasBeenSet() const { return m_enhancedMonitoringHasBeenSet; }
 
     /**
      * <p>Specifies the level of monitoring for the MSK cluster. The possible values
@@ -168,6 +189,11 @@ namespace Model
      * <p>The version of Apache Kafka.</p>
      */
     inline const Aws::String& GetKafkaVersion() const{ return m_kafkaVersion; }
+
+    /**
+     * <p>The version of Apache Kafka.</p>
+     */
+    inline bool KafkaVersionHasBeenSet() const { return m_kafkaVersionHasBeenSet; }
 
     /**
      * <p>The version of Apache Kafka.</p>
@@ -204,6 +230,11 @@ namespace Model
      * <p>The number of Kafka broker nodes in the Amazon MSK cluster.</p>
      */
     inline int GetNumberOfBrokerNodes() const{ return m_numberOfBrokerNodes; }
+
+    /**
+     * <p>The number of Kafka broker nodes in the Amazon MSK cluster.</p>
+     */
+    inline bool NumberOfBrokerNodesHasBeenSet() const { return m_numberOfBrokerNodesHasBeenSet; }
 
     /**
      * <p>The number of Kafka broker nodes in the Amazon MSK cluster.</p>

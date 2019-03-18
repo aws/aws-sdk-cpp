@@ -63,6 +63,11 @@ namespace Model
     /**
      * <p>The bucket containing the object that you want to place a Legal Hold on.</p>
      */
+    inline bool BucketHasBeenSet() const { return m_bucketHasBeenSet; }
+
+    /**
+     * <p>The bucket containing the object that you want to place a Legal Hold on.</p>
+     */
     inline void SetBucket(const Aws::String& value) { m_bucketHasBeenSet = true; m_bucket = value; }
 
     /**
@@ -95,6 +100,11 @@ namespace Model
      * <p>The key name for the object that you want to place a Legal Hold on.</p>
      */
     inline const Aws::String& GetKey() const{ return m_key; }
+
+    /**
+     * <p>The key name for the object that you want to place a Legal Hold on.</p>
+     */
+    inline bool KeyHasBeenSet() const { return m_keyHasBeenSet; }
 
     /**
      * <p>The key name for the object that you want to place a Legal Hold on.</p>
@@ -137,6 +147,12 @@ namespace Model
      * <p>Container element for the Legal Hold configuration you want to apply to the
      * specified object.</p>
      */
+    inline bool LegalHoldHasBeenSet() const { return m_legalHoldHasBeenSet; }
+
+    /**
+     * <p>Container element for the Legal Hold configuration you want to apply to the
+     * specified object.</p>
+     */
     inline void SetLegalHold(const ObjectLockLegalHold& value) { m_legalHoldHasBeenSet = true; m_legalHold = value; }
 
     /**
@@ -162,6 +178,9 @@ namespace Model
     inline const RequestPayer& GetRequestPayer() const{ return m_requestPayer; }
 
     
+    inline bool RequestPayerHasBeenSet() const { return m_requestPayerHasBeenSet; }
+
+    
     inline void SetRequestPayer(const RequestPayer& value) { m_requestPayerHasBeenSet = true; m_requestPayer = value; }
 
     
@@ -178,6 +197,11 @@ namespace Model
      * <p>The version ID of the object that you want to place a Legal Hold on.</p>
      */
     inline const Aws::String& GetVersionId() const{ return m_versionId; }
+
+    /**
+     * <p>The version ID of the object that you want to place a Legal Hold on.</p>
+     */
+    inline bool VersionIdHasBeenSet() const { return m_versionIdHasBeenSet; }
 
     /**
      * <p>The version ID of the object that you want to place a Legal Hold on.</p>
@@ -218,6 +242,11 @@ namespace Model
     /**
      * <p>The MD5 hash for the request body.</p>
      */
+    inline bool ContentMD5HasBeenSet() const { return m_contentMD5HasBeenSet; }
+
+    /**
+     * <p>The MD5 hash for the request body.</p>
+     */
     inline void SetContentMD5(const Aws::String& value) { m_contentMD5HasBeenSet = true; m_contentMD5 = value; }
 
     /**
@@ -248,6 +277,9 @@ namespace Model
 
     
     inline const Aws::Map<Aws::String, Aws::String>& GetCustomizedAccessLogTag() const{ return m_customizedAccessLogTag; }
+
+    
+    inline bool CustomizedAccessLogTagHasBeenSet() const { return m_customizedAccessLogTagHasBeenSet; }
 
     
     inline void SetCustomizedAccessLogTag(const Aws::Map<Aws::String, Aws::String>& value) { m_customizedAccessLogTagHasBeenSet = true; m_customizedAccessLogTag = value; }

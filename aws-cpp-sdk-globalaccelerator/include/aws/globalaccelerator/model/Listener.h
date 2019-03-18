@@ -59,6 +59,11 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the listener.</p>
      */
+    inline bool ListenerArnHasBeenSet() const { return m_listenerArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the listener.</p>
+     */
     inline void SetListenerArn(const Aws::String& value) { m_listenerArnHasBeenSet = true; m_listenerArn = value; }
 
     /**
@@ -92,6 +97,12 @@ namespace Model
      * accelerator.</p>
      */
     inline const Aws::Vector<PortRange>& GetPortRanges() const{ return m_portRanges; }
+
+    /**
+     * <p>The list of port ranges for the connections from clients to the
+     * accelerator.</p>
+     */
+    inline bool PortRangesHasBeenSet() const { return m_portRangesHasBeenSet; }
 
     /**
      * <p>The list of port ranges for the connections from clients to the
@@ -138,6 +149,11 @@ namespace Model
     /**
      * <p>The protocol for the connections from clients to the accelerator.</p>
      */
+    inline bool ProtocolHasBeenSet() const { return m_protocolHasBeenSet; }
+
+    /**
+     * <p>The protocol for the connections from clients to the accelerator.</p>
+     */
     inline void SetProtocol(const Protocol& value) { m_protocolHasBeenSet = true; m_protocol = value; }
 
     /**
@@ -175,6 +191,26 @@ namespace Model
      * value is <code>NONE</code>.</p>
      */
     inline const ClientAffinity& GetClientAffinity() const{ return m_clientAffinity; }
+
+    /**
+     * <p>Client affinity lets you direct all requests from a user to the same
+     * endpoint, if you have stateful applications, regardless of the port and protocol
+     * of the client request. Clienty affinity gives you control over whether to always
+     * route each client to the same specific endpoint.</p> <p>AWS Global Accelerator
+     * uses a consistent-flow hashing algorithm to choose the optimal endpoint for a
+     * connection. If client affinity is <code>NONE</code>, Global Accelerator uses the
+     * "five-tuple" (5-tuple) properties—source IP address, source port, destination IP
+     * address, destination port, and protocol—to select the hash value, and then
+     * chooses the best endpoint. However, with this setting, if someone uses different
+     * ports to connect to Global Accelerator, their connections might not be always
+     * routed to the same endpoint because the hash value changes. </p> <p>If you want
+     * a given client to always be routed to the same endpoint, set client affinity to
+     * <code>SOURCE_IP</code> instead. When you use the <code>SOURCE_IP</code> setting,
+     * Global Accelerator uses the "two-tuple" (2-tuple) properties— source (client) IP
+     * address and destination IP address—to select the hash value.</p> <p>The default
+     * value is <code>NONE</code>.</p>
+     */
+    inline bool ClientAffinityHasBeenSet() const { return m_clientAffinityHasBeenSet; }
 
     /**
      * <p>Client affinity lets you direct all requests from a user to the same

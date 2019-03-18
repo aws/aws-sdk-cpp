@@ -59,6 +59,11 @@ namespace Model
     /**
      * <p>Prompts for information from the user. </p>
      */
+    inline bool PromptHasBeenSet() const { return m_promptHasBeenSet; }
+
+    /**
+     * <p>Prompts for information from the user. </p>
+     */
     inline void SetPrompt(const Prompt& value) { m_promptHasBeenSet = true; m_prompt = value; }
 
     /**
@@ -83,6 +88,13 @@ namespace Model
      * was canceled. </p>
      */
     inline const Statement& GetRejectionStatement() const{ return m_rejectionStatement; }
+
+    /**
+     * <p>If the user answers "no" to the question defined in the <code>prompt</code>
+     * field, Amazon Lex responds with this statement to acknowledge that the intent
+     * was canceled. </p>
+     */
+    inline bool RejectionStatementHasBeenSet() const { return m_rejectionStatementHasBeenSet; }
 
     /**
      * <p>If the user answers "no" to the question defined in the <code>prompt</code>

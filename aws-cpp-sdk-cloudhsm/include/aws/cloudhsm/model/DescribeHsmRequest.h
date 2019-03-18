@@ -58,6 +58,12 @@ namespace Model
      * <p>The ARN of the HSM. Either the <code>HsmArn</code> or the
      * <code>SerialNumber</code> parameter must be specified.</p>
      */
+    inline bool HsmArnHasBeenSet() const { return m_hsmArnHasBeenSet; }
+
+    /**
+     * <p>The ARN of the HSM. Either the <code>HsmArn</code> or the
+     * <code>SerialNumber</code> parameter must be specified.</p>
+     */
     inline void SetHsmArn(const Aws::String& value) { m_hsmArnHasBeenSet = true; m_hsmArn = value; }
 
     /**
@@ -96,6 +102,12 @@ namespace Model
      * <code>HsmSerialNumber</code> parameter must be specified.</p>
      */
     inline const Aws::String& GetHsmSerialNumber() const{ return m_hsmSerialNumber; }
+
+    /**
+     * <p>The serial number of the HSM. Either the <code>HsmArn</code> or the
+     * <code>HsmSerialNumber</code> parameter must be specified.</p>
+     */
+    inline bool HsmSerialNumberHasBeenSet() const { return m_hsmSerialNumberHasBeenSet; }
 
     /**
      * <p>The serial number of the HSM. Either the <code>HsmArn</code> or the

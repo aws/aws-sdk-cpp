@@ -60,6 +60,11 @@ namespace Model
     /**
      * <p>The ID of the pipeline.</p>
      */
+    inline bool PipelineIdHasBeenSet() const { return m_pipelineIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the pipeline.</p>
+     */
     inline void SetPipelineId(const Aws::String& value) { m_pipelineIdHasBeenSet = true; m_pipelineId = value; }
 
     /**
@@ -93,6 +98,12 @@ namespace Model
      * pipeline definition.</p>
      */
     inline const Aws::Vector<PipelineObject>& GetPipelineObjects() const{ return m_pipelineObjects; }
+
+    /**
+     * <p>The objects that define the pipeline. These objects overwrite the existing
+     * pipeline definition.</p>
+     */
+    inline bool PipelineObjectsHasBeenSet() const { return m_pipelineObjectsHasBeenSet; }
 
     /**
      * <p>The objects that define the pipeline. These objects overwrite the existing
@@ -139,6 +150,11 @@ namespace Model
     /**
      * <p>The parameter objects used with the pipeline.</p>
      */
+    inline bool ParameterObjectsHasBeenSet() const { return m_parameterObjectsHasBeenSet; }
+
+    /**
+     * <p>The parameter objects used with the pipeline.</p>
+     */
     inline void SetParameterObjects(const Aws::Vector<ParameterObject>& value) { m_parameterObjectsHasBeenSet = true; m_parameterObjects = value; }
 
     /**
@@ -171,6 +187,11 @@ namespace Model
      * <p>The parameter values used with the pipeline.</p>
      */
     inline const Aws::Vector<ParameterValue>& GetParameterValues() const{ return m_parameterValues; }
+
+    /**
+     * <p>The parameter values used with the pipeline.</p>
+     */
+    inline bool ParameterValuesHasBeenSet() const { return m_parameterValuesHasBeenSet; }
 
     /**
      * <p>The parameter values used with the pipeline.</p>

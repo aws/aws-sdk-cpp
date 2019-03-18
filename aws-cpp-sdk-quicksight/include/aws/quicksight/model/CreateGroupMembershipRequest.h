@@ -50,6 +50,11 @@ namespace Model
     /**
      * <p>The name of the user that you want to add to the group membership.</p>
      */
+    inline bool MemberNameHasBeenSet() const { return m_memberNameHasBeenSet; }
+
+    /**
+     * <p>The name of the user that you want to add to the group membership.</p>
+     */
     inline void SetMemberName(const Aws::String& value) { m_memberNameHasBeenSet = true; m_memberName = value; }
 
     /**
@@ -82,6 +87,11 @@ namespace Model
      * <p>The name of the group that you want to add the user to.</p>
      */
     inline const Aws::String& GetGroupName() const{ return m_groupName; }
+
+    /**
+     * <p>The name of the group that you want to add the user to.</p>
+     */
+    inline bool GroupNameHasBeenSet() const { return m_groupNameHasBeenSet; }
 
     /**
      * <p>The name of the group that you want to add the user to.</p>
@@ -124,6 +134,12 @@ namespace Model
      * <p>The ID for the AWS account that the group is in. Currently, you use the ID
      * for the AWS account that contains your Amazon QuickSight account.</p>
      */
+    inline bool AwsAccountIdHasBeenSet() const { return m_awsAccountIdHasBeenSet; }
+
+    /**
+     * <p>The ID for the AWS account that the group is in. Currently, you use the ID
+     * for the AWS account that contains your Amazon QuickSight account.</p>
+     */
     inline void SetAwsAccountId(const Aws::String& value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId = value; }
 
     /**
@@ -161,6 +177,11 @@ namespace Model
      * <p>The namespace. Currently, you should set this to <code>default</code>.</p>
      */
     inline const Aws::String& GetNamespace() const{ return m_namespace; }
+
+    /**
+     * <p>The namespace. Currently, you should set this to <code>default</code>.</p>
+     */
+    inline bool NamespaceHasBeenSet() const { return m_namespaceHasBeenSet; }
 
     /**
      * <p>The namespace. Currently, you should set this to <code>default</code>.</p>

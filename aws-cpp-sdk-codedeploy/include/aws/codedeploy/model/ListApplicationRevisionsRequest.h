@@ -61,6 +61,12 @@ namespace Model
      * <p> The name of an AWS CodeDeploy application associated with the IAM user or
      * AWS account. </p>
      */
+    inline bool ApplicationNameHasBeenSet() const { return m_applicationNameHasBeenSet; }
+
+    /**
+     * <p> The name of an AWS CodeDeploy application associated with the IAM user or
+     * AWS account. </p>
+     */
     inline void SetApplicationName(const Aws::String& value) { m_applicationNameHasBeenSet = true; m_applicationName = value; }
 
     /**
@@ -103,6 +109,16 @@ namespace Model
      * or set to null, the results are returned in an arbitrary order. </p>
      */
     inline const ApplicationRevisionSortBy& GetSortBy() const{ return m_sortBy; }
+
+    /**
+     * <p>The column name to use to sort the list results:</p> <ul> <li>
+     * <p>registerTime: Sort by the time the revisions were registered with AWS
+     * CodeDeploy.</p> </li> <li> <p>firstUsedTime: Sort by the time the revisions were
+     * first used in a deployment.</p> </li> <li> <p>lastUsedTime: Sort by the time the
+     * revisions were last used in a deployment.</p> </li> </ul> <p> If not specified
+     * or set to null, the results are returned in an arbitrary order. </p>
+     */
+    inline bool SortByHasBeenSet() const { return m_sortByHasBeenSet; }
 
     /**
      * <p>The column name to use to sort the list results:</p> <ul> <li>
@@ -159,6 +175,14 @@ namespace Model
      * <p>If not specified, the results are sorted in ascending order.</p> <p>If set to
      * null, the results are sorted in an arbitrary order.</p>
      */
+    inline bool SortOrderHasBeenSet() const { return m_sortOrderHasBeenSet; }
+
+    /**
+     * <p> The order in which to sort the list results: </p> <ul> <li> <p>ascending:
+     * ascending order.</p> </li> <li> <p>descending: descending order.</p> </li> </ul>
+     * <p>If not specified, the results are sorted in ascending order.</p> <p>If set to
+     * null, the results are sorted in an arbitrary order.</p>
+     */
     inline void SetSortOrder(const SortOrder& value) { m_sortOrderHasBeenSet = true; m_sortOrder = value; }
 
     /**
@@ -191,6 +215,12 @@ namespace Model
      * to null, all of the user's buckets are searched. </p>
      */
     inline const Aws::String& GetS3Bucket() const{ return m_s3Bucket; }
+
+    /**
+     * <p> An Amazon S3 bucket name to limit the search for revisions. </p> <p> If set
+     * to null, all of the user's buckets are searched. </p>
+     */
+    inline bool S3BucketHasBeenSet() const { return m_s3BucketHasBeenSet; }
 
     /**
      * <p> An Amazon S3 bucket name to limit the search for revisions. </p> <p> If set
@@ -234,6 +264,12 @@ namespace Model
      * revisions. </p>
      */
     inline const Aws::String& GetS3KeyPrefix() const{ return m_s3KeyPrefix; }
+
+    /**
+     * <p> A key prefix for the set of Amazon S3 objects to limit the search for
+     * revisions. </p>
+     */
+    inline bool S3KeyPrefixHasBeenSet() const { return m_s3KeyPrefixHasBeenSet; }
 
     /**
      * <p> A key prefix for the set of Amazon S3 objects to limit the search for
@@ -288,6 +324,15 @@ namespace Model
      * list revisions that are target revisions of a deployment group.</p> </li> <li>
      * <p>ignore: List all revisions.</p> </li> </ul>
      */
+    inline bool DeployedHasBeenSet() const { return m_deployedHasBeenSet; }
+
+    /**
+     * <p> Whether to list revisions based on whether the revision is the target
+     * revision of an deployment group: </p> <ul> <li> <p>include: List revisions that
+     * are target revisions of a deployment group.</p> </li> <li> <p>exclude: Do not
+     * list revisions that are target revisions of a deployment group.</p> </li> <li>
+     * <p>ignore: List all revisions.</p> </li> </ul>
+     */
     inline void SetDeployed(const ListStateFilterAction& value) { m_deployedHasBeenSet = true; m_deployed = value; }
 
     /**
@@ -324,6 +369,13 @@ namespace Model
      * set of applications in the list.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
+    /**
+     * <p>An identifier returned from the previous
+     * <code>ListApplicationRevisions</code> call. It can be used to return the next
+     * set of applications in the list.</p>
+     */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
      * <p>An identifier returned from the previous

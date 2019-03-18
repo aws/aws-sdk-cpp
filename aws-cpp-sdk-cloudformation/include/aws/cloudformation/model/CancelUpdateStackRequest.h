@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p>The name or the unique stack ID that is associated with the stack.</p>
      */
+    inline bool StackNameHasBeenSet() const { return m_stackNameHasBeenSet; }
+
+    /**
+     * <p>The name or the unique stack ID that is associated with the stack.</p>
+     */
     inline void SetStackName(const Aws::String& value) { m_stackNameHasBeenSet = true; m_stackName = value; }
 
     /**
@@ -94,6 +99,15 @@ namespace Model
      * CloudFormation successfully received them.</p>
      */
     inline const Aws::String& GetClientRequestToken() const{ return m_clientRequestToken; }
+
+    /**
+     * <p>A unique identifier for this <code>CancelUpdateStack</code> request. Specify
+     * this token if you plan to retry requests so that AWS CloudFormation knows that
+     * you're not attempting to cancel an update on a stack with the same name. You
+     * might retry <code>CancelUpdateStack</code> requests to ensure that AWS
+     * CloudFormation successfully received them.</p>
+     */
+    inline bool ClientRequestTokenHasBeenSet() const { return m_clientRequestTokenHasBeenSet; }
 
     /**
      * <p>A unique identifier for this <code>CancelUpdateStack</code> request. Specify

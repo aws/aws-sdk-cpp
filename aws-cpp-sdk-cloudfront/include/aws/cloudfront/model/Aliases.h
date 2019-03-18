@@ -59,6 +59,12 @@ namespace Model
      * <p>The number of CNAME aliases, if any, that you want to associate with this
      * distribution.</p>
      */
+    inline bool QuantityHasBeenSet() const { return m_quantityHasBeenSet; }
+
+    /**
+     * <p>The number of CNAME aliases, if any, that you want to associate with this
+     * distribution.</p>
+     */
     inline void SetQuantity(int value) { m_quantityHasBeenSet = true; m_quantity = value; }
 
     /**
@@ -73,6 +79,12 @@ namespace Model
      * associate with this distribution.</p>
      */
     inline const Aws::Vector<Aws::String>& GetItems() const{ return m_items; }
+
+    /**
+     * <p>A complex type that contains the CNAME aliases, if any, that you want to
+     * associate with this distribution.</p>
+     */
+    inline bool ItemsHasBeenSet() const { return m_itemsHasBeenSet; }
 
     /**
      * <p>A complex type that contains the CNAME aliases, if any, that you want to

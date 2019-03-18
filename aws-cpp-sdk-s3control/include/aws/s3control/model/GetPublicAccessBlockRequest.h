@@ -54,6 +54,12 @@ namespace Model
      * <p>The Account ID for the Amazon Web Services account whose Public Access Block
      * configuration you want to retrieve.</p>
      */
+    inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
+
+    /**
+     * <p>The Account ID for the Amazon Web Services account whose Public Access Block
+     * configuration you want to retrieve.</p>
+     */
     inline void SetAccountId(const Aws::String& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
 
     /**

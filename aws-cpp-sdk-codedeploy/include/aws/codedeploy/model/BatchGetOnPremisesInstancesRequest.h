@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The names of the on-premises instances about which to get information.</p>
      */
+    inline bool InstanceNamesHasBeenSet() const { return m_instanceNamesHasBeenSet; }
+
+    /**
+     * <p>The names of the on-premises instances about which to get information.</p>
+     */
     inline void SetInstanceNames(const Aws::Vector<Aws::String>& value) { m_instanceNamesHasBeenSet = true; m_instanceNames = value; }
 
     /**

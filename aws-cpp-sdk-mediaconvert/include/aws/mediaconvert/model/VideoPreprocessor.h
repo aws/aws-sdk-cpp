@@ -65,6 +65,13 @@ namespace Model
      * disable this feature for each output individually. This setting is disabled by
      * default.
      */
+    inline bool ColorCorrectorHasBeenSet() const { return m_colorCorrectorHasBeenSet; }
+
+    /**
+     * Enable the Color corrector (ColorCorrector) feature if necessary. Enable or
+     * disable this feature for each output individually. This setting is disabled by
+     * default.
+     */
     inline void SetColorCorrector(const ColorCorrector& value) { m_colorCorrectorHasBeenSet = true; m_colorCorrector = value; }
 
     /**
@@ -99,6 +106,12 @@ namespace Model
      * Use Deinterlacer (Deinterlacer) to produce smoother motion and a clearer
      * picture.
      */
+    inline bool DeinterlacerHasBeenSet() const { return m_deinterlacerHasBeenSet; }
+
+    /**
+     * Use Deinterlacer (Deinterlacer) to produce smoother motion and a clearer
+     * picture.
+     */
     inline void SetDeinterlacer(const Deinterlacer& value) { m_deinterlacerHasBeenSet = true; m_deinterlacer = value; }
 
     /**
@@ -126,6 +139,13 @@ namespace Model
      * setting is disabled by default.
      */
     inline const ImageInserter& GetImageInserter() const{ return m_imageInserter; }
+
+    /**
+     * Enable the Image inserter (ImageInserter) feature to include a graphic overlay
+     * on your video. Enable or disable this feature for each output individually. This
+     * setting is disabled by default.
+     */
+    inline bool ImageInserterHasBeenSet() const { return m_imageInserterHasBeenSet; }
 
     /**
      * Enable the Image inserter (ImageInserter) feature to include a graphic overlay
@@ -168,6 +188,13 @@ namespace Model
      * output if necessary. Enable or disable this feature for each output
      * individually. This setting is disabled by default.
      */
+    inline bool NoiseReducerHasBeenSet() const { return m_noiseReducerHasBeenSet; }
+
+    /**
+     * Enable the Noise reducer (NoiseReducer) feature to remove noise from your video
+     * output if necessary. Enable or disable this feature for each output
+     * individually. This setting is disabled by default.
+     */
     inline void SetNoiseReducer(const NoiseReducer& value) { m_noiseReducerHasBeenSet = true; m_noiseReducer = value; }
 
     /**
@@ -197,6 +224,12 @@ namespace Model
      * prefix into the output.
      */
     inline const TimecodeBurnin& GetTimecodeBurnin() const{ return m_timecodeBurnin; }
+
+    /**
+     * Timecode burn-in (TimecodeBurnIn)--Burns the output timecode and specified
+     * prefix into the output.
+     */
+    inline bool TimecodeBurninHasBeenSet() const { return m_timecodeBurninHasBeenSet; }
 
     /**
      * Timecode burn-in (TimecodeBurnIn)--Burns the output timecode and specified

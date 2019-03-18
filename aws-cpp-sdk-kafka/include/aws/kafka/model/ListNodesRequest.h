@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) that uniquely identifies the cluster.</p>
      */
+    inline bool ClusterArnHasBeenSet() const { return m_clusterArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) that uniquely identifies the cluster.</p>
+     */
     inline void SetClusterArn(const Aws::String& value) { m_clusterArnHasBeenSet = true; m_clusterArn = value; }
 
     /**
@@ -94,6 +99,12 @@ namespace Model
      * <p>The maximum number of clusters to return in the response. If there are more
      * clusters, the response includes a NextToken parameter.</p>
      */
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
+
+    /**
+     * <p>The maximum number of clusters to return in the response. If there are more
+     * clusters, the response includes a NextToken parameter.</p>
+     */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
@@ -110,6 +121,14 @@ namespace Model
      * clusters, provide this token in your next request.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
+    /**
+     * <p>The paginated results marker. When the result of a ListClusters operation is
+     * truncated, the call returns NextToken in the response. 
+ To get another batch of
+     * clusters, provide this token in your next request.</p>
+     */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
      * <p>The paginated results marker. When the result of a ListClusters operation is

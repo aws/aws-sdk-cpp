@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The 12-digit account ID of the source account.</p>
      */
+    inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
+
+    /**
+     * <p>The 12-digit account ID of the source account.</p>
+     */
     inline void SetAccountId(const Aws::String& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
 
     /**
@@ -88,6 +93,11 @@ namespace Model
      * <p>The source region where the data is aggregated.</p>
      */
     inline const Aws::String& GetAwsRegion() const{ return m_awsRegion; }
+
+    /**
+     * <p>The source region where the data is aggregated.</p>
+     */
+    inline bool AwsRegionHasBeenSet() const { return m_awsRegionHasBeenSet; }
 
     /**
      * <p>The source region where the data is aggregated.</p>

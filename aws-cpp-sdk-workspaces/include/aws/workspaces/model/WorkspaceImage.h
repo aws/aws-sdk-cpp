@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p>The identifier of the image.</p>
      */
+    inline bool ImageIdHasBeenSet() const { return m_imageIdHasBeenSet; }
+
+    /**
+     * <p>The identifier of the image.</p>
+     */
     inline void SetImageId(const Aws::String& value) { m_imageIdHasBeenSet = true; m_imageId = value; }
 
     /**
@@ -90,6 +95,11 @@ namespace Model
      * <p>The name of the image.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
+
+    /**
+     * <p>The name of the image.</p>
+     */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
      * <p>The name of the image.</p>
@@ -130,6 +140,11 @@ namespace Model
     /**
      * <p>The description of the image.</p>
      */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
+
+    /**
+     * <p>The description of the image.</p>
+     */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
@@ -166,6 +181,11 @@ namespace Model
     /**
      * <p>The operating system that the image is running. </p>
      */
+    inline bool OperatingSystemHasBeenSet() const { return m_operatingSystemHasBeenSet; }
+
+    /**
+     * <p>The operating system that the image is running. </p>
+     */
     inline void SetOperatingSystem(const OperatingSystem& value) { m_operatingSystemHasBeenSet = true; m_operatingSystem = value; }
 
     /**
@@ -188,6 +208,11 @@ namespace Model
      * <p>The status of the image.</p>
      */
     inline const WorkspaceImageState& GetState() const{ return m_state; }
+
+    /**
+     * <p>The status of the image.</p>
+     */
+    inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
 
     /**
      * <p>The status of the image.</p>
@@ -220,6 +245,12 @@ namespace Model
      * <p>Specifies whether the image is running on dedicated hardware. When bring your
      * own license (BYOL) is enabled, this value is set to DEDICATED. </p>
      */
+    inline bool RequiredTenancyHasBeenSet() const { return m_requiredTenancyHasBeenSet; }
+
+    /**
+     * <p>Specifies whether the image is running on dedicated hardware. When bring your
+     * own license (BYOL) is enabled, this value is set to DEDICATED. </p>
+     */
     inline void SetRequiredTenancy(const WorkspaceImageRequiredTenancy& value) { m_requiredTenancyHasBeenSet = true; m_requiredTenancy = value; }
 
     /**
@@ -245,6 +276,11 @@ namespace Model
      * <p>The error code that is returned for the image.</p>
      */
     inline const Aws::String& GetErrorCode() const{ return m_errorCode; }
+
+    /**
+     * <p>The error code that is returned for the image.</p>
+     */
+    inline bool ErrorCodeHasBeenSet() const { return m_errorCodeHasBeenSet; }
 
     /**
      * <p>The error code that is returned for the image.</p>
@@ -281,6 +317,11 @@ namespace Model
      * <p>The text of the error message that is returned for the image.</p>
      */
     inline const Aws::String& GetErrorMessage() const{ return m_errorMessage; }
+
+    /**
+     * <p>The text of the error message that is returned for the image.</p>
+     */
+    inline bool ErrorMessageHasBeenSet() const { return m_errorMessageHasBeenSet; }
 
     /**
      * <p>The text of the error message that is returned for the image.</p>

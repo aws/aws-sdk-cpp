@@ -52,6 +52,12 @@ namespace Model
      * <p>The account ID of the master Security Hub account whose invitation you're
      * accepting. </p>
      */
+    inline bool MasterIdHasBeenSet() const { return m_masterIdHasBeenSet; }
+
+    /**
+     * <p>The account ID of the master Security Hub account whose invitation you're
+     * accepting. </p>
+     */
     inline void SetMasterId(const Aws::String& value) { m_masterIdHasBeenSet = true; m_masterId = value; }
 
     /**
@@ -90,6 +96,12 @@ namespace Model
      * master account. </p>
      */
     inline const Aws::String& GetInvitationId() const{ return m_invitationId; }
+
+    /**
+     * <p>The ID of the invitation that is sent to the AWS account by the Security Hub
+     * master account. </p>
+     */
+    inline bool InvitationIdHasBeenSet() const { return m_invitationIdHasBeenSet; }
 
     /**
      * <p>The ID of the invitation that is sent to the AWS account by the Security Hub

@@ -70,6 +70,11 @@ namespace Model
     /**
      * <p>A string used to name the user pool.</p>
      */
+    inline bool PoolNameHasBeenSet() const { return m_poolNameHasBeenSet; }
+
+    /**
+     * <p>A string used to name the user pool.</p>
+     */
     inline void SetPoolName(const Aws::String& value) { m_poolNameHasBeenSet = true; m_poolName = value; }
 
     /**
@@ -106,6 +111,11 @@ namespace Model
     /**
      * <p>The policies associated with the new user pool.</p>
      */
+    inline bool PoliciesHasBeenSet() const { return m_policiesHasBeenSet; }
+
+    /**
+     * <p>The policies associated with the new user pool.</p>
+     */
     inline void SetPolicies(const UserPoolPolicyType& value) { m_policiesHasBeenSet = true; m_policies = value; }
 
     /**
@@ -137,6 +147,20 @@ namespace Model
      * add-permission </a>.</p> </note>
      */
     inline const LambdaConfigType& GetLambdaConfig() const{ return m_lambdaConfig; }
+
+    /**
+     * <p>The Lambda trigger configuration information for the new user pool.</p>
+     * <note> <p>In a push model, event sources (such as Amazon S3 and custom
+     * applications) need permission to invoke a function. So you will need to make an
+     * extra call to add permission for these event sources to invoke your Lambda
+     * function.</p> <p/> <p>For more information on using the Lambda API to add
+     * permission, see <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/API_AddPermission.html">
+     * AddPermission </a>. </p> <p>For adding permission using the AWS CLI, see <a
+     * href="https://docs.aws.amazon.com/cli/latest/reference/lambda/add-permission.html">
+     * add-permission </a>.</p> </note>
+     */
+    inline bool LambdaConfigHasBeenSet() const { return m_lambdaConfigHasBeenSet; }
 
     /**
      * <p>The Lambda trigger configuration information for the new user pool.</p>
@@ -205,6 +229,12 @@ namespace Model
      * <p>The attributes to be auto-verified. Possible values: <b>email</b>,
      * <b>phone_number</b>.</p>
      */
+    inline bool AutoVerifiedAttributesHasBeenSet() const { return m_autoVerifiedAttributesHasBeenSet; }
+
+    /**
+     * <p>The attributes to be auto-verified. Possible values: <b>email</b>,
+     * <b>phone_number</b>.</p>
+     */
     inline void SetAutoVerifiedAttributes(const Aws::Vector<VerifiedAttributeType>& value) { m_autoVerifiedAttributesHasBeenSet = true; m_autoVerifiedAttributes = value; }
 
     /**
@@ -243,6 +273,12 @@ namespace Model
      * <b>phone_number</b>, <b>email</b>, or <b>preferred_username</b>.</p>
      */
     inline const Aws::Vector<AliasAttributeType>& GetAliasAttributes() const{ return m_aliasAttributes; }
+
+    /**
+     * <p>Attributes supported as an alias for this user pool. Possible values:
+     * <b>phone_number</b>, <b>email</b>, or <b>preferred_username</b>.</p>
+     */
+    inline bool AliasAttributesHasBeenSet() const { return m_aliasAttributesHasBeenSet; }
 
     /**
      * <p>Attributes supported as an alias for this user pool. Possible values:
@@ -291,6 +327,12 @@ namespace Model
      * <p>Specifies whether email addresses or phone numbers can be specified as
      * usernames when a user signs up.</p>
      */
+    inline bool UsernameAttributesHasBeenSet() const { return m_usernameAttributesHasBeenSet; }
+
+    /**
+     * <p>Specifies whether email addresses or phone numbers can be specified as
+     * usernames when a user signs up.</p>
+     */
     inline void SetUsernameAttributes(const Aws::Vector<UsernameAttributeType>& value) { m_usernameAttributesHasBeenSet = true; m_usernameAttributes = value; }
 
     /**
@@ -332,6 +374,11 @@ namespace Model
     /**
      * <p>A string representing the SMS verification message.</p>
      */
+    inline bool SmsVerificationMessageHasBeenSet() const { return m_smsVerificationMessageHasBeenSet; }
+
+    /**
+     * <p>A string representing the SMS verification message.</p>
+     */
     inline void SetSmsVerificationMessage(const Aws::String& value) { m_smsVerificationMessageHasBeenSet = true; m_smsVerificationMessage = value; }
 
     /**
@@ -368,6 +415,11 @@ namespace Model
     /**
      * <p>A string representing the email verification message.</p>
      */
+    inline bool EmailVerificationMessageHasBeenSet() const { return m_emailVerificationMessageHasBeenSet; }
+
+    /**
+     * <p>A string representing the email verification message.</p>
+     */
     inline void SetEmailVerificationMessage(const Aws::String& value) { m_emailVerificationMessageHasBeenSet = true; m_emailVerificationMessage = value; }
 
     /**
@@ -400,6 +452,11 @@ namespace Model
      * <p>A string representing the email verification subject.</p>
      */
     inline const Aws::String& GetEmailVerificationSubject() const{ return m_emailVerificationSubject; }
+
+    /**
+     * <p>A string representing the email verification subject.</p>
+     */
+    inline bool EmailVerificationSubjectHasBeenSet() const { return m_emailVerificationSubjectHasBeenSet; }
 
     /**
      * <p>A string representing the email verification subject.</p>
@@ -442,6 +499,12 @@ namespace Model
      * <p>The template for the verification message that the user sees when the app
      * requests permission to access the user's information.</p>
      */
+    inline bool VerificationMessageTemplateHasBeenSet() const { return m_verificationMessageTemplateHasBeenSet; }
+
+    /**
+     * <p>The template for the verification message that the user sees when the app
+     * requests permission to access the user's information.</p>
+     */
     inline void SetVerificationMessageTemplate(const VerificationMessageTemplateType& value) { m_verificationMessageTemplateHasBeenSet = true; m_verificationMessageTemplate = value; }
 
     /**
@@ -467,6 +530,11 @@ namespace Model
      * <p>A string representing the SMS authentication message.</p>
      */
     inline const Aws::String& GetSmsAuthenticationMessage() const{ return m_smsAuthenticationMessage; }
+
+    /**
+     * <p>A string representing the SMS authentication message.</p>
+     */
+    inline bool SmsAuthenticationMessageHasBeenSet() const { return m_smsAuthenticationMessageHasBeenSet; }
 
     /**
      * <p>A string representing the SMS authentication message.</p>
@@ -507,6 +575,11 @@ namespace Model
     /**
      * <p>Specifies MFA configuration details.</p>
      */
+    inline bool MfaConfigurationHasBeenSet() const { return m_mfaConfigurationHasBeenSet; }
+
+    /**
+     * <p>Specifies MFA configuration details.</p>
+     */
     inline void SetMfaConfiguration(const UserPoolMfaType& value) { m_mfaConfigurationHasBeenSet = true; m_mfaConfiguration = value; }
 
     /**
@@ -529,6 +602,11 @@ namespace Model
      * <p>The device configuration.</p>
      */
     inline const DeviceConfigurationType& GetDeviceConfiguration() const{ return m_deviceConfiguration; }
+
+    /**
+     * <p>The device configuration.</p>
+     */
+    inline bool DeviceConfigurationHasBeenSet() const { return m_deviceConfigurationHasBeenSet; }
 
     /**
      * <p>The device configuration.</p>
@@ -559,6 +637,11 @@ namespace Model
     /**
      * <p>The email configuration.</p>
      */
+    inline bool EmailConfigurationHasBeenSet() const { return m_emailConfigurationHasBeenSet; }
+
+    /**
+     * <p>The email configuration.</p>
+     */
     inline void SetEmailConfiguration(const EmailConfigurationType& value) { m_emailConfigurationHasBeenSet = true; m_emailConfiguration = value; }
 
     /**
@@ -581,6 +664,11 @@ namespace Model
      * <p>The SMS configuration.</p>
      */
     inline const SmsConfigurationType& GetSmsConfiguration() const{ return m_smsConfiguration; }
+
+    /**
+     * <p>The SMS configuration.</p>
+     */
+    inline bool SmsConfigurationHasBeenSet() const { return m_smsConfigurationHasBeenSet; }
 
     /**
      * <p>The SMS configuration.</p>
@@ -609,6 +697,13 @@ namespace Model
      * Cost Allocation Tags to Your User Pool</a> </p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetUserPoolTags() const{ return m_userPoolTags; }
+
+    /**
+     * <p>The cost allocation tags for the user pool. For more information, see <a
+     * href="http://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-cost-allocation-tagging.html">Adding
+     * Cost Allocation Tags to Your User Pool</a> </p>
+     */
+    inline bool UserPoolTagsHasBeenSet() const { return m_userPoolTagsHasBeenSet; }
 
     /**
      * <p>The cost allocation tags for the user pool. For more information, see <a
@@ -696,6 +791,11 @@ namespace Model
     /**
      * <p>The configuration for <code>AdminCreateUser</code> requests.</p>
      */
+    inline bool AdminCreateUserConfigHasBeenSet() const { return m_adminCreateUserConfigHasBeenSet; }
+
+    /**
+     * <p>The configuration for <code>AdminCreateUser</code> requests.</p>
+     */
     inline void SetAdminCreateUserConfig(const AdminCreateUserConfigType& value) { m_adminCreateUserConfigHasBeenSet = true; m_adminCreateUserConfig = value; }
 
     /**
@@ -719,6 +819,12 @@ namespace Model
      * standard or custom attributes.</p>
      */
     inline const Aws::Vector<SchemaAttributeType>& GetSchema() const{ return m_schema; }
+
+    /**
+     * <p>An array of schema attributes for the new user pool. These attributes can be
+     * standard or custom attributes.</p>
+     */
+    inline bool SchemaHasBeenSet() const { return m_schemaHasBeenSet; }
 
     /**
      * <p>An array of schema attributes for the new user pool. These attributes can be
@@ -762,6 +868,12 @@ namespace Model
      * <code>AdvancedSecurityMode</code> to the value "AUDIT".</p>
      */
     inline const UserPoolAddOnsType& GetUserPoolAddOns() const{ return m_userPoolAddOns; }
+
+    /**
+     * <p>Used to enable advanced security risk detection. Set the key
+     * <code>AdvancedSecurityMode</code> to the value "AUDIT".</p>
+     */
+    inline bool UserPoolAddOnsHasBeenSet() const { return m_userPoolAddOnsHasBeenSet; }
 
     /**
      * <p>Used to enable advanced security risk detection. Set the key

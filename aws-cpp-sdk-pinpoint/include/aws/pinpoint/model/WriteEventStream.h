@@ -65,6 +65,16 @@ namespace Model
  Kinesis ARN:
      * arn:aws:kinesis:REGION:ACCOUNT_ID:stream/STREAM_NAME
      */
+    inline bool DestinationStreamArnHasBeenSet() const { return m_destinationStreamArnHasBeenSet; }
+
+    /**
+     * The Amazon Resource Name (ARN) of the Amazon Kinesis stream or Firehose delivery
+     * stream to which you want to publish events.
+ Firehose ARN:
+     * arn:aws:firehose:REGION:ACCOUNT_ID:deliverystream/STREAM_NAME
+ Kinesis ARN:
+     * arn:aws:kinesis:REGION:ACCOUNT_ID:stream/STREAM_NAME
+     */
     inline void SetDestinationStreamArn(const Aws::String& value) { m_destinationStreamArnHasBeenSet = true; m_destinationStreamArn = value; }
 
     /**
@@ -123,6 +133,12 @@ namespace Model
      * your account.
      */
     inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
+
+    /**
+     * The IAM role that authorizes Amazon Pinpoint to publish events to the stream in
+     * your account.
+     */
+    inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
 
     /**
      * The IAM role that authorizes Amazon Pinpoint to publish events to the stream in

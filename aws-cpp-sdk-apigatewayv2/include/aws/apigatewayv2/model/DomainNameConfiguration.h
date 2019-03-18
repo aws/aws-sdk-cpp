@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>A domain name for the WebSocket API.</p>
      */
+    inline bool ApiGatewayDomainNameHasBeenSet() const { return m_apiGatewayDomainNameHasBeenSet; }
+
+    /**
+     * <p>A domain name for the WebSocket API.</p>
+     */
     inline void SetApiGatewayDomainName(const Aws::String& value) { m_apiGatewayDomainNameHasBeenSet = true; m_apiGatewayDomainName = value; }
 
     /**
@@ -91,6 +96,13 @@ namespace Model
  this domain name. AWS Certificate Manager is the only supported source.</p>
      */
     inline const Aws::String& GetCertificateArn() const{ return m_certificateArn; }
+
+    /**
+     * <p>An AWS-managed certificate that will be used by the edge-optimized endpoint
+     * for
+ this domain name. AWS Certificate Manager is the only supported source.</p>
+     */
+    inline bool CertificateArnHasBeenSet() const { return m_certificateArnHasBeenSet; }
 
     /**
      * <p>An AWS-managed certificate that will be used by the edge-optimized endpoint
@@ -147,6 +159,13 @@ namespace Model
      * edge-optimized
  endpoint for this domain name.</p>
      */
+    inline bool CertificateNameHasBeenSet() const { return m_certificateNameHasBeenSet; }
+
+    /**
+     * <p>The user-friendly name of the certificate that will be used by the
+     * edge-optimized
+ endpoint for this domain name.</p>
+     */
     inline void SetCertificateName(const Aws::String& value) { m_certificateNameHasBeenSet = true; m_certificateName = value; }
 
     /**
@@ -197,6 +216,13 @@ namespace Model
      * for
  this domain name was uploaded.</p>
      */
+    inline bool CertificateUploadDateHasBeenSet() const { return m_certificateUploadDateHasBeenSet; }
+
+    /**
+     * <p>The timestamp when the certificate that was used by edge-optimized endpoint
+     * for
+ this domain name was uploaded.</p>
+     */
     inline void SetCertificateUploadDate(const Aws::Utils::DateTime& value) { m_certificateUploadDateHasBeenSet = true; m_certificateUploadDate = value; }
 
     /**
@@ -229,6 +255,11 @@ namespace Model
     /**
      * <p>The endpoint type.</p>
      */
+    inline bool EndpointTypeHasBeenSet() const { return m_endpointTypeHasBeenSet; }
+
+    /**
+     * <p>The endpoint type.</p>
+     */
     inline void SetEndpointType(const EndpointType& value) { m_endpointTypeHasBeenSet = true; m_endpointType = value; }
 
     /**
@@ -251,6 +282,11 @@ namespace Model
      * <p>The Amazon Route 53 Hosted Zone ID of the endpoint.</p>
      */
     inline const Aws::String& GetHostedZoneId() const{ return m_hostedZoneId; }
+
+    /**
+     * <p>The Amazon Route 53 Hosted Zone ID of the endpoint.</p>
+     */
+    inline bool HostedZoneIdHasBeenSet() const { return m_hostedZoneIdHasBeenSet; }
 
     /**
      * <p>The Amazon Route 53 Hosted Zone ID of the endpoint.</p>

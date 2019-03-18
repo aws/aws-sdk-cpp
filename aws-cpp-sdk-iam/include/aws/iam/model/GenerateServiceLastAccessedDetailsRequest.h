@@ -58,6 +58,13 @@ namespace Model
      * generate information about when the resource was last used in an attempt to
      * access an AWS service.</p>
      */
+    inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
+
+    /**
+     * <p>The ARN of the IAM resource (user, group, role, or managed policy) used to
+     * generate information about when the resource was last used in an attempt to
+     * access an AWS service.</p>
+     */
     inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
 
     /**

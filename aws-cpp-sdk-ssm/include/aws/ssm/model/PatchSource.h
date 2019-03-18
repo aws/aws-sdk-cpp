@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p>The name specified to identify the patch source.</p>
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>The name specified to identify the patch source.</p>
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
@@ -92,6 +97,13 @@ namespace Model
      * For lists of supported product values, see <a>PatchFilter</a>.</p>
      */
     inline const Aws::Vector<Aws::String>& GetProducts() const{ return m_products; }
+
+    /**
+     * <p>The specific operating system versions a patch repository applies to, such as
+     * "Ubuntu16.04", "AmazonLinux2016.09", "RedhatEnterpriseLinux7.2" or "Suse12.7".
+     * For lists of supported product values, see <a>PatchFilter</a>.</p>
+     */
+    inline bool ProductsHasBeenSet() const { return m_productsHasBeenSet; }
 
     /**
      * <p>The specific operating system versions a patch repository applies to, such as
@@ -150,6 +162,14 @@ namespace Model
      * <code>keepcache=0</code> </p> <p> <code>debuglevel=2</code> </p>
      */
     inline const Aws::String& GetConfiguration() const{ return m_configuration; }
+
+    /**
+     * <p>The value of the yum repo configuration. For example:</p> <p>
+     * <code>[main]</code> </p> <p>
+     * <code>cachedir=/var/cache/yum/$basesearch$releasever</code> </p> <p>
+     * <code>keepcache=0</code> </p> <p> <code>debuglevel=2</code> </p>
+     */
+    inline bool ConfigurationHasBeenSet() const { return m_configurationHasBeenSet; }
 
     /**
      * <p>The value of the yum repo configuration. For example:</p> <p>

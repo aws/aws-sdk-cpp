@@ -52,6 +52,11 @@ namespace Model
     /**
      * <p>The HIT to update.</p>
      */
+    inline bool HITIdHasBeenSet() const { return m_hITIdHasBeenSet; }
+
+    /**
+     * <p>The HIT to update.</p>
+     */
     inline void SetHITId(const Aws::String& value) { m_hITIdHasBeenSet = true; m_hITId = value; }
 
     /**
@@ -84,6 +89,11 @@ namespace Model
      * <p>The ID of the new HIT type.</p>
      */
     inline const Aws::String& GetHITTypeId() const{ return m_hITTypeId; }
+
+    /**
+     * <p>The ID of the new HIT type.</p>
+     */
+    inline bool HITTypeIdHasBeenSet() const { return m_hITTypeIdHasBeenSet; }
 
     /**
      * <p>The ID of the new HIT type.</p>

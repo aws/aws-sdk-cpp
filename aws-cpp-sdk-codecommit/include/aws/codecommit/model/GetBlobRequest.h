@@ -55,6 +55,11 @@ namespace Model
     /**
      * <p>The name of the repository that contains the blob.</p>
      */
+    inline bool RepositoryNameHasBeenSet() const { return m_repositoryNameHasBeenSet; }
+
+    /**
+     * <p>The name of the repository that contains the blob.</p>
+     */
     inline void SetRepositoryName(const Aws::String& value) { m_repositoryNameHasBeenSet = true; m_repositoryName = value; }
 
     /**
@@ -87,6 +92,11 @@ namespace Model
      * <p>The ID of the blob, which is its SHA-1 pointer.</p>
      */
     inline const Aws::String& GetBlobId() const{ return m_blobId; }
+
+    /**
+     * <p>The ID of the blob, which is its SHA-1 pointer.</p>
+     */
+    inline bool BlobIdHasBeenSet() const { return m_blobIdHasBeenSet; }
 
     /**
      * <p>The ID of the blob, which is its SHA-1 pointer.</p>

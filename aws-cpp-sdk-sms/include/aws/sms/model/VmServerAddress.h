@@ -55,6 +55,11 @@ namespace Model
     /**
      * <p>The identifier of the VM manager.</p>
      */
+    inline bool VmManagerIdHasBeenSet() const { return m_vmManagerIdHasBeenSet; }
+
+    /**
+     * <p>The identifier of the VM manager.</p>
+     */
     inline void SetVmManagerId(const Aws::String& value) { m_vmManagerIdHasBeenSet = true; m_vmManagerId = value; }
 
     /**
@@ -87,6 +92,11 @@ namespace Model
      * <p>The identifier of the VM.</p>
      */
     inline const Aws::String& GetVmId() const{ return m_vmId; }
+
+    /**
+     * <p>The identifier of the VM.</p>
+     */
+    inline bool VmIdHasBeenSet() const { return m_vmIdHasBeenSet; }
 
     /**
      * <p>The identifier of the VM.</p>

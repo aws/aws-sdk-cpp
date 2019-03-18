@@ -62,6 +62,13 @@ namespace Model
      * criteria (containing a <code>value</code> or
      * <code>statisticalThreshold</code>).</p>
      */
+    inline bool ComparisonOperatorHasBeenSet() const { return m_comparisonOperatorHasBeenSet; }
+
+    /**
+     * <p>The operator that relates the thing measured (<code>metric</code>) to the
+     * criteria (containing a <code>value</code> or
+     * <code>statisticalThreshold</code>).</p>
+     */
     inline void SetComparisonOperator(const ComparisonOperator& value) { m_comparisonOperatorHasBeenSet = true; m_comparisonOperator = value; }
 
     /**
@@ -90,6 +97,11 @@ namespace Model
      * <p>The value to be compared with the <code>metric</code>.</p>
      */
     inline const MetricValue& GetValue() const{ return m_value; }
+
+    /**
+     * <p>The value to be compared with the <code>metric</code>.</p>
+     */
+    inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
 
     /**
      * <p>The value to be compared with the <code>metric</code>.</p>
@@ -132,6 +144,17 @@ namespace Model
      * from an individual device are also accumulated over this time duration before
      * being given a percentile rank.</p>
      */
+    inline bool DurationSecondsHasBeenSet() const { return m_durationSecondsHasBeenSet; }
+
+    /**
+     * <p>Use this to specify the time duration over which the behavior is evaluated,
+     * for those criteria which have a time dimension (for example,
+     * <code>NUM_MESSAGES_SENT</code>). For a <code>statisticalThreshhold</code> metric
+     * comparison, measurements from all devices are accumulated over this time
+     * duration before being used to calculate percentiles, and later, measurements
+     * from an individual device are also accumulated over this time duration before
+     * being given a percentile rank.</p>
+     */
     inline void SetDurationSeconds(int value) { m_durationSecondsHasBeenSet = true; m_durationSeconds = value; }
 
     /**
@@ -151,6 +174,12 @@ namespace Model
      * consecutive datapoints, an alarm occurs. If not specified, the default is 1.</p>
      */
     inline int GetConsecutiveDatapointsToAlarm() const{ return m_consecutiveDatapointsToAlarm; }
+
+    /**
+     * <p>If a device is in violation of the behavior for the specified number of
+     * consecutive datapoints, an alarm occurs. If not specified, the default is 1.</p>
+     */
+    inline bool ConsecutiveDatapointsToAlarmHasBeenSet() const { return m_consecutiveDatapointsToAlarmHasBeenSet; }
 
     /**
      * <p>If a device is in violation of the behavior for the specified number of
@@ -177,6 +206,13 @@ namespace Model
      * of the behavior for the specified number of consecutive datapoints, the alarm is
      * cleared. If not specified, the default is 1.</p>
      */
+    inline bool ConsecutiveDatapointsToClearHasBeenSet() const { return m_consecutiveDatapointsToClearHasBeenSet; }
+
+    /**
+     * <p>If an alarm has occurred and the offending device is no longer in violation
+     * of the behavior for the specified number of consecutive datapoints, the alarm is
+     * cleared. If not specified, the default is 1.</p>
+     */
     inline void SetConsecutiveDatapointsToClear(int value) { m_consecutiveDatapointsToClearHasBeenSet = true; m_consecutiveDatapointsToClear = value; }
 
     /**
@@ -193,6 +229,13 @@ namespace Model
      * behavior.</p>
      */
     inline const StatisticalThreshold& GetStatisticalThreshold() const{ return m_statisticalThreshold; }
+
+    /**
+     * <p>A statistical ranking (percentile) which indicates a threshold value by which
+     * a behavior is determined to be in compliance or in violation of the
+     * behavior.</p>
+     */
+    inline bool StatisticalThresholdHasBeenSet() const { return m_statisticalThresholdHasBeenSet; }
 
     /**
      * <p>A statistical ranking (percentile) which indicates a threshold value by which

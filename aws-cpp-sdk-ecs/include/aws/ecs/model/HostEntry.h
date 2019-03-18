@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The hostname to use in the <code>/etc/hosts</code> entry.</p>
      */
+    inline bool HostnameHasBeenSet() const { return m_hostnameHasBeenSet; }
+
+    /**
+     * <p>The hostname to use in the <code>/etc/hosts</code> entry.</p>
+     */
     inline void SetHostname(const Aws::String& value) { m_hostnameHasBeenSet = true; m_hostname = value; }
 
     /**
@@ -89,6 +94,11 @@ namespace Model
      * <p>The IP address to use in the <code>/etc/hosts</code> entry.</p>
      */
     inline const Aws::String& GetIpAddress() const{ return m_ipAddress; }
+
+    /**
+     * <p>The IP address to use in the <code>/etc/hosts</code> entry.</p>
+     */
+    inline bool IpAddressHasBeenSet() const { return m_ipAddressHasBeenSet; }
 
     /**
      * <p>The IP address to use in the <code>/etc/hosts</code> entry.</p>

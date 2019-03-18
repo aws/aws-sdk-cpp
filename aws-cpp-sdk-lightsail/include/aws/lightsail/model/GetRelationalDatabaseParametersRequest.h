@@ -52,6 +52,11 @@ namespace Model
     /**
      * <p>The name of your database for which to get parameters.</p>
      */
+    inline bool RelationalDatabaseNameHasBeenSet() const { return m_relationalDatabaseNameHasBeenSet; }
+
+    /**
+     * <p>The name of your database for which to get parameters.</p>
+     */
     inline void SetRelationalDatabaseName(const Aws::String& value) { m_relationalDatabaseNameHasBeenSet = true; m_relationalDatabaseName = value; }
 
     /**
@@ -85,6 +90,12 @@ namespace Model
      * relational database parameters</code> request.</p>
      */
     inline const Aws::String& GetPageToken() const{ return m_pageToken; }
+
+    /**
+     * <p>A token used for advancing to a specific page of results for your <code>get
+     * relational database parameters</code> request.</p>
+     */
+    inline bool PageTokenHasBeenSet() const { return m_pageTokenHasBeenSet; }
 
     /**
      * <p>A token used for advancing to a specific page of results for your <code>get

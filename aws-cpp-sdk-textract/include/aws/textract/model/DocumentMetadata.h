@@ -53,6 +53,11 @@ namespace Model
     /**
      * <p>The number of pages detected in the document.</p>
      */
+    inline bool PagesHasBeenSet() const { return m_pagesHasBeenSet; }
+
+    /**
+     * <p>The number of pages detected in the document.</p>
+     */
     inline void SetPages(int value) { m_pagesHasBeenSet = true; m_pages = value; }
 
     /**

@@ -80,6 +80,11 @@ namespace Model
     /**
      * <p>The name of the lifecycle hook.</p>
      */
+    inline bool LifecycleHookNameHasBeenSet() const { return m_lifecycleHookNameHasBeenSet; }
+
+    /**
+     * <p>The name of the lifecycle hook.</p>
+     */
     inline void SetLifecycleHookName(const Aws::String& value) { m_lifecycleHookNameHasBeenSet = true; m_lifecycleHookName = value; }
 
     /**
@@ -114,6 +119,13 @@ namespace Model
      * </li> <li> <p>autoscaling:EC2_INSTANCE_TERMINATING</p> </li> </ul>
      */
     inline const Aws::String& GetLifecycleTransition() const{ return m_lifecycleTransition; }
+
+    /**
+     * <p>The state of the EC2 instance to which you want to attach the lifecycle hook.
+     * The valid values are:</p> <ul> <li> <p>autoscaling:EC2_INSTANCE_LAUNCHING</p>
+     * </li> <li> <p>autoscaling:EC2_INSTANCE_TERMINATING</p> </li> </ul>
+     */
+    inline bool LifecycleTransitionHasBeenSet() const { return m_lifecycleTransitionHasBeenSet; }
 
     /**
      * <p>The state of the EC2 instance to which you want to attach the lifecycle hook.
@@ -168,6 +180,12 @@ namespace Model
      * <p>Additional information that you want to include any time Amazon EC2 Auto
      * Scaling sends a message to the notification target.</p>
      */
+    inline bool NotificationMetadataHasBeenSet() const { return m_notificationMetadataHasBeenSet; }
+
+    /**
+     * <p>Additional information that you want to include any time Amazon EC2 Auto
+     * Scaling sends a message to the notification target.</p>
+     */
     inline void SetNotificationMetadata(const Aws::String& value) { m_notificationMetadataHasBeenSet = true; m_notificationMetadata = value; }
 
     /**
@@ -217,6 +235,15 @@ namespace Model
      * can prevent the lifecycle hook from timing out by calling
      * <a>RecordLifecycleActionHeartbeat</a>.</p>
      */
+    inline bool HeartbeatTimeoutHasBeenSet() const { return m_heartbeatTimeoutHasBeenSet; }
+
+    /**
+     * <p>The maximum time, in seconds, that can elapse before the lifecycle hook times
+     * out.</p> <p>If the lifecycle hook times out, Amazon EC2 Auto Scaling performs
+     * the action that you specified in the <code>DefaultResult</code> parameter. You
+     * can prevent the lifecycle hook from timing out by calling
+     * <a>RecordLifecycleActionHeartbeat</a>.</p>
+     */
     inline void SetHeartbeatTimeout(int value) { m_heartbeatTimeoutHasBeenSet = true; m_heartbeatTimeout = value; }
 
     /**
@@ -236,6 +263,14 @@ namespace Model
      * <code>ABANDON</code>.</p>
      */
     inline const Aws::String& GetDefaultResult() const{ return m_defaultResult; }
+
+    /**
+     * <p>Defines the action the Auto Scaling group should take when the lifecycle hook
+     * timeout elapses or if an unexpected failure occurs. The valid values are
+     * <code>CONTINUE</code> and <code>ABANDON</code>. The default value is
+     * <code>ABANDON</code>.</p>
+     */
+    inline bool DefaultResultHasBeenSet() const { return m_defaultResultHasBeenSet; }
 
     /**
      * <p>Defines the action the Auto Scaling group should take when the lifecycle hook
@@ -298,6 +333,13 @@ namespace Model
      * when an instance is in the transition state for the lifecycle hook. The
      * notification target can be either an SQS queue or an SNS topic.</p>
      */
+    inline bool NotificationTargetARNHasBeenSet() const { return m_notificationTargetARNHasBeenSet; }
+
+    /**
+     * <p>The ARN of the target that Amazon EC2 Auto Scaling sends notifications to
+     * when an instance is in the transition state for the lifecycle hook. The
+     * notification target can be either an SQS queue or an SNS topic.</p>
+     */
     inline void SetNotificationTargetARN(const Aws::String& value) { m_notificationTargetARNHasBeenSet = true; m_notificationTargetARN = value; }
 
     /**
@@ -342,6 +384,13 @@ namespace Model
      * queue.</p>
      */
     inline const Aws::String& GetRoleARN() const{ return m_roleARN; }
+
+    /**
+     * <p>The ARN of the IAM role that allows the Auto Scaling group to publish to the
+     * specified notification target, for example, an Amazon SNS topic or an Amazon SQS
+     * queue.</p>
+     */
+    inline bool RoleARNHasBeenSet() const { return m_roleARNHasBeenSet; }
 
     /**
      * <p>The ARN of the IAM role that allows the Auto Scaling group to publish to the

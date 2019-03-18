@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The number of origins in an origin group.</p>
      */
+    inline bool QuantityHasBeenSet() const { return m_quantityHasBeenSet; }
+
+    /**
+     * <p>The number of origins in an origin group.</p>
+     */
     inline void SetQuantity(int value) { m_quantityHasBeenSet = true; m_quantity = value; }
 
     /**
@@ -69,6 +74,11 @@ namespace Model
      * <p>Items (origins) in an origin group.</p>
      */
     inline const Aws::Vector<OriginGroupMember>& GetItems() const{ return m_items; }
+
+    /**
+     * <p>Items (origins) in an origin group.</p>
+     */
+    inline bool ItemsHasBeenSet() const { return m_itemsHasBeenSet; }
 
     /**
      * <p>Items (origins) in an origin group.</p>

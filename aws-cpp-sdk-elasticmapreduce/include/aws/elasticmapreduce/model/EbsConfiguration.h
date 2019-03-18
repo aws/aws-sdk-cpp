@@ -59,6 +59,12 @@ namespace Model
      * <p>An array of Amazon EBS volume specifications attached to a cluster
      * instance.</p>
      */
+    inline bool EbsBlockDeviceConfigsHasBeenSet() const { return m_ebsBlockDeviceConfigsHasBeenSet; }
+
+    /**
+     * <p>An array of Amazon EBS volume specifications attached to a cluster
+     * instance.</p>
+     */
     inline void SetEbsBlockDeviceConfigs(const Aws::Vector<EbsBlockDeviceConfig>& value) { m_ebsBlockDeviceConfigsHasBeenSet = true; m_ebsBlockDeviceConfigs = value; }
 
     /**
@@ -96,6 +102,11 @@ namespace Model
      * <p>Indicates whether an Amazon EBS volume is EBS-optimized.</p>
      */
     inline bool GetEbsOptimized() const{ return m_ebsOptimized; }
+
+    /**
+     * <p>Indicates whether an Amazon EBS volume is EBS-optimized.</p>
+     */
+    inline bool EbsOptimizedHasBeenSet() const { return m_ebsOptimizedHasBeenSet; }
 
     /**
      * <p>Indicates whether an Amazon EBS volume is EBS-optimized.</p>

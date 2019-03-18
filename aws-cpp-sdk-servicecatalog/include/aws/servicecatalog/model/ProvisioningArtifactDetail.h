@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p>The identifier of the provisioning artifact.</p>
      */
+    inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
+
+    /**
+     * <p>The identifier of the provisioning artifact.</p>
+     */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
     /**
@@ -94,6 +99,11 @@ namespace Model
     /**
      * <p>The name of the provisioning artifact.</p>
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>The name of the provisioning artifact.</p>
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
@@ -126,6 +136,11 @@ namespace Model
      * <p>The description of the provisioning artifact.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
+
+    /**
+     * <p>The description of the provisioning artifact.</p>
+     */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
 
     /**
      * <p>The description of the provisioning artifact.</p>
@@ -174,6 +189,15 @@ namespace Model
      * <code>MARKETPLACE_CAR</code> - AWS Marketplace Clusters and AWS Resources</p>
      * </li> </ul>
      */
+    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
+
+    /**
+     * <p>The type of provisioning artifact.</p> <ul> <li> <p>
+     * <code>CLOUD_FORMATION_TEMPLATE</code> - AWS CloudFormation template</p> </li>
+     * <li> <p> <code>MARKETPLACE_AMI</code> - AWS Marketplace AMI</p> </li> <li> <p>
+     * <code>MARKETPLACE_CAR</code> - AWS Marketplace Clusters and AWS Resources</p>
+     * </li> </ul>
+     */
     inline void SetType(const ProvisioningArtifactType& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
@@ -212,6 +236,11 @@ namespace Model
     /**
      * <p>The UTC time stamp of the creation time.</p>
      */
+    inline bool CreatedTimeHasBeenSet() const { return m_createdTimeHasBeenSet; }
+
+    /**
+     * <p>The UTC time stamp of the creation time.</p>
+     */
     inline void SetCreatedTime(const Aws::Utils::DateTime& value) { m_createdTimeHasBeenSet = true; m_createdTime = value; }
 
     /**
@@ -234,6 +263,11 @@ namespace Model
      * <p>Indicates whether the product version is active.</p>
      */
     inline bool GetActive() const{ return m_active; }
+
+    /**
+     * <p>Indicates whether the product version is active.</p>
+     */
+    inline bool ActiveHasBeenSet() const { return m_activeHasBeenSet; }
 
     /**
      * <p>Indicates whether the product version is active.</p>

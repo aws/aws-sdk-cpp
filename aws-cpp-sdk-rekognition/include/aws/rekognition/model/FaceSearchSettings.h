@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The ID of a collection that contains faces that you want to search for.</p>
      */
+    inline bool CollectionIdHasBeenSet() const { return m_collectionIdHasBeenSet; }
+
+    /**
+     * <p>The ID of a collection that contains faces that you want to search for.</p>
+     */
     inline void SetCollectionId(const Aws::String& value) { m_collectionIdHasBeenSet = true; m_collectionId = value; }
 
     /**
@@ -91,6 +96,13 @@ namespace Model
      * confidence.</p>
      */
     inline double GetFaceMatchThreshold() const{ return m_faceMatchThreshold; }
+
+    /**
+     * <p>Minimum face match confidence score that must be met to return a result for a
+     * recognized face. Default is 70. 0 is the lowest confidence. 100 is the highest
+     * confidence.</p>
+     */
+    inline bool FaceMatchThresholdHasBeenSet() const { return m_faceMatchThresholdHasBeenSet; }
 
     /**
      * <p>Minimum face match confidence score that must be met to return a result for a

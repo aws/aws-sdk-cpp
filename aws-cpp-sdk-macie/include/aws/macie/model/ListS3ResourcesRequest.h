@@ -54,6 +54,12 @@ namespace Model
      * <p>The Amazon Macie member account ID whose associated S3 resources you want to
      * list. </p>
      */
+    inline bool MemberAccountIdHasBeenSet() const { return m_memberAccountIdHasBeenSet; }
+
+    /**
+     * <p>The Amazon Macie member account ID whose associated S3 resources you want to
+     * list. </p>
+     */
     inline void SetMemberAccountId(const Aws::String& value) { m_memberAccountIdHasBeenSet = true; m_memberAccountId = value; }
 
     /**
@@ -94,6 +100,14 @@ namespace Model
      * to continue listing data. </p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
+    /**
+     * <p>Use this parameter when paginating results. Set its value to null on your
+     * first call to the ListS3Resources action. Subsequent calls to the action fill
+     * nextToken in the request with the value of nextToken from the previous response
+     * to continue listing data. </p>
+     */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
      * <p>Use this parameter when paginating results. Set its value to null on your
@@ -149,6 +163,12 @@ namespace Model
      * the response. The default value is 250. </p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
+
+    /**
+     * <p>Use this parameter to indicate the maximum number of items that you want in
+     * the response. The default value is 250. </p>
+     */
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
 
     /**
      * <p>Use this parameter to indicate the maximum number of items that you want in

@@ -63,6 +63,16 @@ namespace Model
      * <code>containerInstanceLongArnFormat</code> is specified, the ARN and resource
      * ID for your Amazon ECS container instances are affected.</p>
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>The resource type to enable the new format for. If
+     * <code>serviceLongArnFormat</code> is specified, the ARN for your Amazon ECS
+     * services is affected. If <code>taskLongArnFormat</code> is specified, the ARN
+     * and resource ID for your Amazon ECS tasks are affected. If
+     * <code>containerInstanceLongArnFormat</code> is specified, the ARN and resource
+     * ID for your Amazon ECS container instances are affected.</p>
+     */
     inline void SetName(const SettingName& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
@@ -101,6 +111,12 @@ namespace Model
      * are <code>enabled</code> and <code>disabled</code>.</p>
      */
     inline const Aws::String& GetValue() const{ return m_value; }
+
+    /**
+     * <p>The account setting value for the specified principal ARN. Accepted values
+     * are <code>enabled</code> and <code>disabled</code>.</p>
+     */
+    inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
 
     /**
      * <p>The account setting value for the specified principal ARN. Accepted values

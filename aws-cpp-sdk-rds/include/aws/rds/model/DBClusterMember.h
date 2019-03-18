@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p>Specifies the instance identifier for this member of the DB cluster.</p>
      */
+    inline bool DBInstanceIdentifierHasBeenSet() const { return m_dBInstanceIdentifierHasBeenSet; }
+
+    /**
+     * <p>Specifies the instance identifier for this member of the DB cluster.</p>
+     */
     inline void SetDBInstanceIdentifier(const Aws::String& value) { m_dBInstanceIdentifierHasBeenSet = true; m_dBInstanceIdentifier = value; }
 
     /**
@@ -96,6 +101,12 @@ namespace Model
      * <p>Value that is <code>true</code> if the cluster member is the primary instance
      * for the DB cluster and <code>false</code> otherwise.</p>
      */
+    inline bool IsClusterWriterHasBeenSet() const { return m_isClusterWriterHasBeenSet; }
+
+    /**
+     * <p>Value that is <code>true</code> if the cluster member is the primary instance
+     * for the DB cluster and <code>false</code> otherwise.</p>
+     */
     inline void SetIsClusterWriter(bool value) { m_isClusterWriterHasBeenSet = true; m_isClusterWriter = value; }
 
     /**
@@ -110,6 +121,12 @@ namespace Model
      * DB cluster.</p>
      */
     inline const Aws::String& GetDBClusterParameterGroupStatus() const{ return m_dBClusterParameterGroupStatus; }
+
+    /**
+     * <p>Specifies the status of the DB cluster parameter group for this member of the
+     * DB cluster.</p>
+     */
+    inline bool DBClusterParameterGroupStatusHasBeenSet() const { return m_dBClusterParameterGroupStatusHasBeenSet; }
 
     /**
      * <p>Specifies the status of the DB cluster parameter group for this member of the
@@ -157,6 +174,16 @@ namespace Model
      * Guide</i>. </p>
      */
     inline int GetPromotionTier() const{ return m_promotionTier; }
+
+    /**
+     * <p>A value that specifies the order in which an Aurora Replica is promoted to
+     * the primary instance after a failure of the existing primary instance. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.Managing.Backups.html#Aurora.Managing.FaultTolerance">
+     * Fault Tolerance for an Aurora DB Cluster</a> in the <i>Amazon Aurora User
+     * Guide</i>. </p>
+     */
+    inline bool PromotionTierHasBeenSet() const { return m_promotionTierHasBeenSet; }
 
     /**
      * <p>A value that specifies the order in which an Aurora Replica is promoted to

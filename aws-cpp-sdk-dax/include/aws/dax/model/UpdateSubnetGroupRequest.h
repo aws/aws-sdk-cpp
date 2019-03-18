@@ -53,6 +53,11 @@ namespace Model
     /**
      * <p>The name of the subnet group.</p>
      */
+    inline bool SubnetGroupNameHasBeenSet() const { return m_subnetGroupNameHasBeenSet; }
+
+    /**
+     * <p>The name of the subnet group.</p>
+     */
     inline void SetSubnetGroupName(const Aws::String& value) { m_subnetGroupNameHasBeenSet = true; m_subnetGroupName = value; }
 
     /**
@@ -89,6 +94,11 @@ namespace Model
     /**
      * <p>A description of the subnet group.</p>
      */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
+
+    /**
+     * <p>A description of the subnet group.</p>
+     */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
@@ -121,6 +131,11 @@ namespace Model
      * <p>A list of subnet IDs in the subnet group.</p>
      */
     inline const Aws::Vector<Aws::String>& GetSubnetIds() const{ return m_subnetIds; }
+
+    /**
+     * <p>A list of subnet IDs in the subnet group.</p>
+     */
+    inline bool SubnetIdsHasBeenSet() const { return m_subnetIdsHasBeenSet; }
 
     /**
      * <p>A list of subnet IDs in the subnet group.</p>

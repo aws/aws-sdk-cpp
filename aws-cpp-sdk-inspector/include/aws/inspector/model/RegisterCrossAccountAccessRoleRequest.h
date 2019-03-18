@@ -54,6 +54,12 @@ namespace Model
      * <p>The ARN of the IAM role that grants Amazon Inspector access to AWS Services
      * needed to perform security assessments. </p>
      */
+    inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
+
+    /**
+     * <p>The ARN of the IAM role that grants Amazon Inspector access to AWS Services
+     * needed to perform security assessments. </p>
+     */
     inline void SetRoleArn(const Aws::String& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
 
     /**

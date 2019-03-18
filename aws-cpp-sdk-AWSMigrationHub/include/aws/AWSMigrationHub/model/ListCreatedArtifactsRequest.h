@@ -52,6 +52,11 @@ namespace Model
     /**
      * <p>The name of the ProgressUpdateStream. </p>
      */
+    inline bool ProgressUpdateStreamHasBeenSet() const { return m_progressUpdateStreamHasBeenSet; }
+
+    /**
+     * <p>The name of the ProgressUpdateStream. </p>
+     */
     inline void SetProgressUpdateStream(const Aws::String& value) { m_progressUpdateStreamHasBeenSet = true; m_progressUpdateStream = value; }
 
     /**
@@ -84,6 +89,11 @@ namespace Model
      * <p>Unique identifier that references the migration task.</p>
      */
     inline const Aws::String& GetMigrationTaskName() const{ return m_migrationTaskName; }
+
+    /**
+     * <p>Unique identifier that references the migration task.</p>
+     */
+    inline bool MigrationTaskNameHasBeenSet() const { return m_migrationTaskNameHasBeenSet; }
 
     /**
      * <p>Unique identifier that references the migration task.</p>
@@ -122,6 +132,13 @@ namespace Model
      * using the returned token in <code>NextToken</code>.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
+    /**
+     * <p>If a <code>NextToken</code> was returned by a previous call, there are more
+     * results available. To retrieve the next page of results, make the call again
+     * using the returned token in <code>NextToken</code>.</p>
+     */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
      * <p>If a <code>NextToken</code> was returned by a previous call, there are more
@@ -170,6 +187,11 @@ namespace Model
      * <p>Maximum number of results to be returned per page.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
+
+    /**
+     * <p>Maximum number of results to be returned per page.</p>
+     */
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
 
     /**
      * <p>Maximum number of results to be returned per page.</p>

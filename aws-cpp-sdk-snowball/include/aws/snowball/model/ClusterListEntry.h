@@ -60,6 +60,12 @@ namespace Model
      * <p>The 39-character ID for the cluster that you want to list, for example
      * <code>CID123e4567-e89b-12d3-a456-426655440000</code>.</p>
      */
+    inline bool ClusterIdHasBeenSet() const { return m_clusterIdHasBeenSet; }
+
+    /**
+     * <p>The 39-character ID for the cluster that you want to list, for example
+     * <code>CID123e4567-e89b-12d3-a456-426655440000</code>.</p>
+     */
     inline void SetClusterId(const Aws::String& value) { m_clusterIdHasBeenSet = true; m_clusterId = value; }
 
     /**
@@ -103,6 +109,12 @@ namespace Model
      * <p>The current state of this cluster. For information about the state of a
      * specific node, see <a>JobListEntry$JobState</a>.</p>
      */
+    inline bool ClusterStateHasBeenSet() const { return m_clusterStateHasBeenSet; }
+
+    /**
+     * <p>The current state of this cluster. For information about the state of a
+     * specific node, see <a>JobListEntry$JobState</a>.</p>
+     */
     inline void SetClusterState(const ClusterState& value) { m_clusterStateHasBeenSet = true; m_clusterState = value; }
 
     /**
@@ -132,6 +144,11 @@ namespace Model
     /**
      * <p>The creation date for this cluster.</p>
      */
+    inline bool CreationDateHasBeenSet() const { return m_creationDateHasBeenSet; }
+
+    /**
+     * <p>The creation date for this cluster.</p>
+     */
     inline void SetCreationDate(const Aws::Utils::DateTime& value) { m_creationDateHasBeenSet = true; m_creationDate = value; }
 
     /**
@@ -155,6 +172,12 @@ namespace Model
      * <code>Environmental Data Cluster-01</code>.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
+
+    /**
+     * <p>Defines an optional description of the cluster, for example
+     * <code>Environmental Data Cluster-01</code>.</p>
+     */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
 
     /**
      * <p>Defines an optional description of the cluster, for example

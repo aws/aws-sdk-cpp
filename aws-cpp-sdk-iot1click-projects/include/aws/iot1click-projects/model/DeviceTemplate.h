@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The device type, which currently must be <code>"button"</code>.</p>
      */
+    inline bool DeviceTypeHasBeenSet() const { return m_deviceTypeHasBeenSet; }
+
+    /**
+     * <p>The device type, which currently must be <code>"button"</code>.</p>
+     */
     inline void SetDeviceType(const Aws::String& value) { m_deviceTypeHasBeenSet = true; m_deviceType = value; }
 
     /**
@@ -90,6 +95,12 @@ namespace Model
      * provided by the placement template.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetCallbackOverrides() const{ return m_callbackOverrides; }
+
+    /**
+     * <p>An optional Lambda function to invoke instead of the default Lambda function
+     * provided by the placement template.</p>
+     */
+    inline bool CallbackOverridesHasBeenSet() const { return m_callbackOverridesHasBeenSet; }
 
     /**
      * <p>An optional Lambda function to invoke instead of the default Lambda function

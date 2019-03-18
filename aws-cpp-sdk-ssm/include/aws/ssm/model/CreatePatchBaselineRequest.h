@@ -63,6 +63,12 @@ namespace Model
      * <p>Defines the operating system the patch baseline applies to. The Default value
      * is WINDOWS.</p>
      */
+    inline bool OperatingSystemHasBeenSet() const { return m_operatingSystemHasBeenSet; }
+
+    /**
+     * <p>Defines the operating system the patch baseline applies to. The Default value
+     * is WINDOWS.</p>
+     */
     inline void SetOperatingSystem(const OperatingSystem& value) { m_operatingSystemHasBeenSet = true; m_operatingSystem = value; }
 
     /**
@@ -88,6 +94,11 @@ namespace Model
      * <p>The name of the patch baseline.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
+
+    /**
+     * <p>The name of the patch baseline.</p>
+     */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
      * <p>The name of the patch baseline.</p>
@@ -128,6 +139,11 @@ namespace Model
     /**
      * <p>A set of global filters used to include patches in the baseline.</p>
      */
+    inline bool GlobalFiltersHasBeenSet() const { return m_globalFiltersHasBeenSet; }
+
+    /**
+     * <p>A set of global filters used to include patches in the baseline.</p>
+     */
     inline void SetGlobalFilters(const PatchFilterGroup& value) { m_globalFiltersHasBeenSet = true; m_globalFilters = value; }
 
     /**
@@ -150,6 +166,11 @@ namespace Model
      * <p>A set of rules used to include patches in the baseline.</p>
      */
     inline const PatchRuleGroup& GetApprovalRules() const{ return m_approvalRules; }
+
+    /**
+     * <p>A set of rules used to include patches in the baseline.</p>
+     */
+    inline bool ApprovalRulesHasBeenSet() const { return m_approvalRulesHasBeenSet; }
 
     /**
      * <p>A set of rules used to include patches in the baseline.</p>
@@ -181,6 +202,16 @@ namespace Model
      * Manager User Guide</i>.</p>
      */
     inline const Aws::Vector<Aws::String>& GetApprovedPatches() const{ return m_approvedPatches; }
+
+    /**
+     * <p>A list of explicitly approved patches for the baseline.</p> <p>For
+     * information about accepted formats for lists of approved patches and rejected
+     * patches, see <a
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-approved-rejected-package-name-formats.html">Package
+     * Name Formats for Approved and Rejected Patch Lists</a> in the <i>AWS Systems
+     * Manager User Guide</i>.</p>
+     */
+    inline bool ApprovedPatchesHasBeenSet() const { return m_approvedPatchesHasBeenSet; }
 
     /**
      * <p>A list of explicitly approved patches for the baseline.</p> <p>For
@@ -265,6 +296,13 @@ namespace Model
      * approved patch is reported as missing, this is the severity of the compliance
      * violation. The default value is UNSPECIFIED.</p>
      */
+    inline bool ApprovedPatchesComplianceLevelHasBeenSet() const { return m_approvedPatchesComplianceLevelHasBeenSet; }
+
+    /**
+     * <p>Defines the compliance level for approved patches. This means that if an
+     * approved patch is reported as missing, this is the severity of the compliance
+     * violation. The default value is UNSPECIFIED.</p>
+     */
     inline void SetApprovedPatchesComplianceLevel(const PatchComplianceLevel& value) { m_approvedPatchesComplianceLevelHasBeenSet = true; m_approvedPatchesComplianceLevel = value; }
 
     /**
@@ -301,6 +339,13 @@ namespace Model
      * that should be applied to the instances. The default value is 'false'. Applies
      * to Linux instances only.</p>
      */
+    inline bool ApprovedPatchesEnableNonSecurityHasBeenSet() const { return m_approvedPatchesEnableNonSecurityHasBeenSet; }
+
+    /**
+     * <p>Indicates whether the list of approved patches includes non-security updates
+     * that should be applied to the instances. The default value is 'false'. Applies
+     * to Linux instances only.</p>
+     */
     inline void SetApprovedPatchesEnableNonSecurity(bool value) { m_approvedPatchesEnableNonSecurityHasBeenSet = true; m_approvedPatchesEnableNonSecurity = value; }
 
     /**
@@ -320,6 +365,16 @@ namespace Model
      * Manager User Guide</i>.</p>
      */
     inline const Aws::Vector<Aws::String>& GetRejectedPatches() const{ return m_rejectedPatches; }
+
+    /**
+     * <p>A list of explicitly rejected patches for the baseline.</p> <p>For
+     * information about accepted formats for lists of approved patches and rejected
+     * patches, see <a
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-approved-rejected-package-name-formats.html">Package
+     * Name Formats for Approved and Rejected Patch Lists</a> in the <i>AWS Systems
+     * Manager User Guide</i>.</p>
+     */
+    inline bool RejectedPatchesHasBeenSet() const { return m_rejectedPatchesHasBeenSet; }
 
     /**
      * <p>A list of explicitly rejected patches for the baseline.</p> <p>For
@@ -418,6 +473,20 @@ namespace Model
      * Rejected patches list, it is considered non-compliant with the patch baseline,
      * and its status is reported as <i>InstalledRejected</i>.</p> </li> </ul>
      */
+    inline bool RejectedPatchesActionHasBeenSet() const { return m_rejectedPatchesActionHasBeenSet; }
+
+    /**
+     * <p>The action for Patch Manager to take on patches included in the
+     * RejectedPackages list.</p> <ul> <li> <p> <b>ALLOW_AS_DEPENDENCY</b>: A package
+     * in the Rejected patches list is installed only if it is a dependency of another
+     * package. It is considered compliant with the patch baseline, and its status is
+     * reported as <i>InstalledOther</i>. This is the default action if no option is
+     * specified.</p> </li> <li> <p> <b>BLOCK</b>: Packages in the RejectedPatches
+     * list, and packages that include them as dependencies, are not installed under
+     * any circumstances. If a package was installed before it was added to the
+     * Rejected patches list, it is considered non-compliant with the patch baseline,
+     * and its status is reported as <i>InstalledRejected</i>.</p> </li> </ul>
+     */
     inline void SetRejectedPatchesAction(const PatchAction& value) { m_rejectedPatchesActionHasBeenSet = true; m_rejectedPatchesAction = value; }
 
     /**
@@ -471,6 +540,11 @@ namespace Model
     /**
      * <p>A description of the patch baseline.</p>
      */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
+
+    /**
+     * <p>A description of the patch baseline.</p>
+     */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
@@ -505,6 +579,13 @@ namespace Model
      * only.</p>
      */
     inline const Aws::Vector<PatchSource>& GetSources() const{ return m_sources; }
+
+    /**
+     * <p>Information about the patches to use to update the instances, including
+     * target operating systems and source repositories. Applies to Linux instances
+     * only.</p>
+     */
+    inline bool SourcesHasBeenSet() const { return m_sourcesHasBeenSet; }
 
     /**
      * <p>Information about the patches to use to update the instances, including
@@ -557,6 +638,11 @@ namespace Model
     /**
      * <p>User-provided idempotency token.</p>
      */
+    inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
+
+    /**
+     * <p>User-provided idempotency token.</p>
+     */
     inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
 
     /**
@@ -597,6 +683,19 @@ namespace Model
      * action.</p> </note>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>Optional metadata that you assign to a resource. Tags enable you to
+     * categorize a resource in different ways, such as by purpose, owner, or
+     * environment. For example, you might want to tag a patch baseline to identify the
+     * severity level of patches it specifies and the operating system family it
+     * applies to. In this case, you could specify the following key name/value
+     * pairs:</p> <ul> <li> <p> <code>Key=PatchSeverity,Value=Critical</code> </p>
+     * </li> <li> <p> <code>Key=OS,Value=Windows</code> </p> </li> </ul> <note> <p>To
+     * add tags to an existing patch baseline, use the <a>AddTagsToResource</a>
+     * action.</p> </note>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
      * <p>Optional metadata that you assign to a resource. Tags enable you to

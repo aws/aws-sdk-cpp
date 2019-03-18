@@ -70,6 +70,12 @@ namespace Model
      * <p>Indicates how to allocate the target capacity across the Spot pools specified
      * by the Spot Fleet request. The default is <code>lowestPrice</code>.</p>
      */
+    inline bool AllocationStrategyHasBeenSet() const { return m_allocationStrategyHasBeenSet; }
+
+    /**
+     * <p>Indicates how to allocate the target capacity across the Spot pools specified
+     * by the Spot Fleet request. The default is <code>lowestPrice</code>.</p>
+     */
     inline void SetAllocationStrategy(const AllocationStrategy& value) { m_allocationStrategyHasBeenSet = true; m_allocationStrategy = value; }
 
     /**
@@ -100,6 +106,16 @@ namespace Model
      * you do not specify a value, Spot Fleet defaults to <code>lowestPrice</code>.</p>
      */
     inline const OnDemandAllocationStrategy& GetOnDemandAllocationStrategy() const{ return m_onDemandAllocationStrategy; }
+
+    /**
+     * <p>The order of the launch template overrides to use in fulfilling On-Demand
+     * capacity. If you specify <code>lowestPrice</code>, Spot Fleet uses price to
+     * determine the order, launching the lowest price first. If you specify
+     * <code>prioritized</code>, Spot Fleet uses the priority that you assign to each
+     * Spot Fleet launch template override, launching the highest priority first. If
+     * you do not specify a value, Spot Fleet defaults to <code>lowestPrice</code>.</p>
+     */
+    inline bool OnDemandAllocationStrategyHasBeenSet() const { return m_onDemandAllocationStrategyHasBeenSet; }
 
     /**
      * <p>The order of the launch template overrides to use in fulfilling On-Demand
@@ -150,6 +166,15 @@ namespace Model
      * Idempotency</a>.</p>
      */
     inline const Aws::String& GetClientToken() const{ return m_clientToken; }
+
+    /**
+     * <p>A unique, case-sensitive identifier that you provide to ensure the
+     * idempotency of your listings. This helps to avoid duplicate listings. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
+     * Idempotency</a>.</p>
+     */
+    inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
 
     /**
      * <p>A unique, case-sensitive identifier that you provide to ensure the
@@ -218,6 +243,13 @@ namespace Model
      * capacity of the Spot Fleet request is decreased below the current size of the
      * Spot Fleet.</p>
      */
+    inline bool ExcessCapacityTerminationPolicyHasBeenSet() const { return m_excessCapacityTerminationPolicyHasBeenSet; }
+
+    /**
+     * <p>Indicates whether running Spot Instances should be terminated if the target
+     * capacity of the Spot Fleet request is decreased below the current size of the
+     * Spot Fleet.</p>
+     */
     inline void SetExcessCapacityTerminationPolicy(const ExcessCapacityTerminationPolicy& value) { m_excessCapacityTerminationPolicyHasBeenSet = true; m_excessCapacityTerminationPolicy = value; }
 
     /**
@@ -252,6 +284,12 @@ namespace Model
      * <p>The number of units fulfilled by this request compared to the set target
      * capacity. You cannot set this value.</p>
      */
+    inline bool FulfilledCapacityHasBeenSet() const { return m_fulfilledCapacityHasBeenSet; }
+
+    /**
+     * <p>The number of units fulfilled by this request compared to the set target
+     * capacity. You cannot set this value.</p>
+     */
     inline void SetFulfilledCapacity(double value) { m_fulfilledCapacityHasBeenSet = true; m_fulfilledCapacity = value; }
 
     /**
@@ -266,6 +304,12 @@ namespace Model
      * target On-Demand capacity.</p>
      */
     inline double GetOnDemandFulfilledCapacity() const{ return m_onDemandFulfilledCapacity; }
+
+    /**
+     * <p>The number of On-Demand units fulfilled by this request compared to the set
+     * target On-Demand capacity.</p>
+     */
+    inline bool OnDemandFulfilledCapacityHasBeenSet() const { return m_onDemandFulfilledCapacityHasBeenSet; }
 
     /**
      * <p>The number of On-Demand units fulfilled by this request compared to the set
@@ -287,6 +331,14 @@ namespace Model
      * <code>terminateInstancesWithExpiration</code>.</p>
      */
     inline const Aws::String& GetIamFleetRole() const{ return m_iamFleetRole; }
+
+    /**
+     * <p>Grants the Spot Fleet permission to terminate Spot Instances on your behalf
+     * when you cancel its Spot Fleet request using <a>CancelSpotFleetRequests</a> or
+     * when the Spot Fleet request expires, if you set
+     * <code>terminateInstancesWithExpiration</code>.</p>
+     */
+    inline bool IamFleetRoleHasBeenSet() const { return m_iamFleetRoleHasBeenSet; }
 
     /**
      * <p>Grants the Spot Fleet permission to terminate Spot Instances on your behalf
@@ -345,6 +397,11 @@ namespace Model
     /**
      * <p>The launch specifications for the Spot Fleet request.</p>
      */
+    inline bool LaunchSpecificationsHasBeenSet() const { return m_launchSpecificationsHasBeenSet; }
+
+    /**
+     * <p>The launch specifications for the Spot Fleet request.</p>
+     */
     inline void SetLaunchSpecifications(const Aws::Vector<SpotFleetLaunchSpecification>& value) { m_launchSpecificationsHasBeenSet = true; m_launchSpecifications = value; }
 
     /**
@@ -377,6 +434,11 @@ namespace Model
      * <p>The launch template and overrides.</p>
      */
     inline const Aws::Vector<LaunchTemplateConfig>& GetLaunchTemplateConfigs() const{ return m_launchTemplateConfigs; }
+
+    /**
+     * <p>The launch template and overrides.</p>
+     */
+    inline bool LaunchTemplateConfigsHasBeenSet() const { return m_launchTemplateConfigsHasBeenSet; }
 
     /**
      * <p>The launch template and overrides.</p>
@@ -414,6 +476,12 @@ namespace Model
      * Instance. The default is the On-Demand price.</p>
      */
     inline const Aws::String& GetSpotPrice() const{ return m_spotPrice; }
+
+    /**
+     * <p>The maximum price per unit hour that you are willing to pay for a Spot
+     * Instance. The default is the On-Demand price.</p>
+     */
+    inline bool SpotPriceHasBeenSet() const { return m_spotPriceHasBeenSet; }
 
     /**
      * <p>The maximum price per unit hour that you are willing to pay for a Spot
@@ -468,6 +536,15 @@ namespace Model
      * <code>maintain</code>, you can specify a target capacity of 0 and add capacity
      * later.</p>
      */
+    inline bool TargetCapacityHasBeenSet() const { return m_targetCapacityHasBeenSet; }
+
+    /**
+     * <p>The number of units to request. You can choose to set the target capacity in
+     * terms of instances or a performance characteristic that is important to your
+     * application workload, such as vCPUs, memory, or I/O. If the request type is
+     * <code>maintain</code>, you can specify a target capacity of 0 and add capacity
+     * later.</p>
+     */
     inline void SetTargetCapacity(int value) { m_targetCapacityHasBeenSet = true; m_targetCapacity = value; }
 
     /**
@@ -488,6 +565,15 @@ namespace Model
      * capacity later.</p>
      */
     inline int GetOnDemandTargetCapacity() const{ return m_onDemandTargetCapacity; }
+
+    /**
+     * <p>The number of On-Demand units to request. You can choose to set the target
+     * capacity in terms of instances or a performance characteristic that is important
+     * to your application workload, such as vCPUs, memory, or I/O. If the request type
+     * is <code>maintain</code>, you can specify a target capacity of 0 and add
+     * capacity later.</p>
+     */
+    inline bool OnDemandTargetCapacityHasBeenSet() const { return m_onDemandTargetCapacityHasBeenSet; }
 
     /**
      * <p>The number of On-Demand units to request. You can choose to set the target
@@ -518,6 +604,12 @@ namespace Model
      * <p>Indicates whether running Spot Instances should be terminated when the Spot
      * Fleet request expires.</p>
      */
+    inline bool TerminateInstancesWithExpirationHasBeenSet() const { return m_terminateInstancesWithExpirationHasBeenSet; }
+
+    /**
+     * <p>Indicates whether running Spot Instances should be terminated when the Spot
+     * Fleet request expires.</p>
+     */
     inline void SetTerminateInstancesWithExpiration(bool value) { m_terminateInstancesWithExpirationHasBeenSet = true; m_terminateInstancesWithExpiration = value; }
 
     /**
@@ -540,6 +632,20 @@ namespace Model
      * Fleet.</p>
      */
     inline const FleetType& GetType() const{ return m_type; }
+
+    /**
+     * <p>The type of request. Indicates whether the Spot Fleet only requests the
+     * target capacity or also attempts to maintain it. When this value is
+     * <code>request</code>, the Spot Fleet only places the required requests. It does
+     * not attempt to replenish Spot Instances if capacity is diminished, nor does it
+     * submit requests in alternative Spot pools if capacity is not available. When
+     * this value is <code>maintain</code>, the Spot Fleet maintains the target
+     * capacity. The Spot Fleet places the required requests to meet capacity and
+     * automatically replenishes any interrupted instances. Default:
+     * <code>maintain</code>. <code>instant</code> is listed but is not used by Spot
+     * Fleet.</p>
+     */
+    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
 
     /**
      * <p>The type of request. Indicates whether the Spot Fleet only requests the
@@ -610,6 +716,13 @@ namespace Model
      * <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z). The default is
      * to start fulfilling the request immediately.</p>
      */
+    inline bool ValidFromHasBeenSet() const { return m_validFromHasBeenSet; }
+
+    /**
+     * <p>The start date and time of the request, in UTC format (for example,
+     * <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z). The default is
+     * to start fulfilling the request immediately.</p>
+     */
     inline void SetValidFrom(const Aws::Utils::DateTime& value) { m_validFromHasBeenSet = true; m_validFrom = value; }
 
     /**
@@ -641,6 +754,14 @@ namespace Model
      * value is specified, the Spot Fleet request remains until you cancel it.</p>
      */
     inline const Aws::Utils::DateTime& GetValidUntil() const{ return m_validUntil; }
+
+    /**
+     * <p>The end date and time of the request, in UTC format (for example,
+     * <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z). At this point,
+     * no new Spot Instance requests are placed or able to fulfill the request. If no
+     * value is specified, the Spot Fleet request remains until you cancel it.</p>
+     */
+    inline bool ValidUntilHasBeenSet() const { return m_validUntilHasBeenSet; }
 
     /**
      * <p>The end date and time of the request, in UTC format (for example,
@@ -683,6 +804,11 @@ namespace Model
     /**
      * <p>Indicates whether Spot Fleet should replace unhealthy instances.</p>
      */
+    inline bool ReplaceUnhealthyInstancesHasBeenSet() const { return m_replaceUnhealthyInstancesHasBeenSet; }
+
+    /**
+     * <p>Indicates whether Spot Fleet should replace unhealthy instances.</p>
+     */
     inline void SetReplaceUnhealthyInstances(bool value) { m_replaceUnhealthyInstancesHasBeenSet = true; m_replaceUnhealthyInstances = value; }
 
     /**
@@ -696,6 +822,12 @@ namespace Model
      * <code>terminate</code>.</p>
      */
     inline const InstanceInterruptionBehavior& GetInstanceInterruptionBehavior() const{ return m_instanceInterruptionBehavior; }
+
+    /**
+     * <p>The behavior when a Spot Instance is interrupted. The default is
+     * <code>terminate</code>.</p>
+     */
+    inline bool InstanceInterruptionBehaviorHasBeenSet() const { return m_instanceInterruptionBehaviorHasBeenSet; }
 
     /**
      * <p>The behavior when a Spot Instance is interrupted. The default is
@@ -731,6 +863,16 @@ namespace Model
      * T1.</p>
      */
     inline const LoadBalancersConfig& GetLoadBalancersConfig() const{ return m_loadBalancersConfig; }
+
+    /**
+     * <p>One or more Classic Load Balancers and target groups to attach to the Spot
+     * Fleet request. Spot Fleet registers the running Spot Instances with the
+     * specified Classic Load Balancers and target groups.</p> <p>With Network Load
+     * Balancers, Spot Fleet cannot register instances that have the following instance
+     * types: C1, CC1, CC2, CG1, CG2, CR1, CS1, G1, G2, HI1, HS1, M1, M2, M3, and
+     * T1.</p>
+     */
+    inline bool LoadBalancersConfigHasBeenSet() const { return m_loadBalancersConfigHasBeenSet; }
 
     /**
      * <p>One or more Classic Load Balancers and target groups to attach to the Spot
@@ -781,6 +923,15 @@ namespace Model
      * specify.</p>
      */
     inline int GetInstancePoolsToUseCount() const{ return m_instancePoolsToUseCount; }
+
+    /**
+     * <p>The number of Spot pools across which to allocate your target Spot capacity.
+     * Valid only when Spot <b>AllocationStrategy</b> is set to
+     * <code>lowest-price</code>. Spot Fleet selects the cheapest Spot pools and evenly
+     * allocates your target Spot capacity across the number of Spot pools that you
+     * specify.</p>
+     */
+    inline bool InstancePoolsToUseCountHasBeenSet() const { return m_instancePoolsToUseCountHasBeenSet; }
 
     /**
      * <p>The number of Spot pools across which to allocate your target Spot capacity.

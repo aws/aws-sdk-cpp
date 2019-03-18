@@ -70,6 +70,11 @@ namespace Model
     /**
      * <p>Write to a DynamoDB table.</p>
      */
+    inline bool DynamoDBHasBeenSet() const { return m_dynamoDBHasBeenSet; }
+
+    /**
+     * <p>Write to a DynamoDB table.</p>
+     */
     inline void SetDynamoDB(const DynamoDBAction& value) { m_dynamoDBHasBeenSet = true; m_dynamoDB = value; }
 
     /**
@@ -94,6 +99,13 @@ namespace Model
      * DynamoDB column.</p>
      */
     inline const DynamoDBv2Action& GetDynamoDBv2() const{ return m_dynamoDBv2; }
+
+    /**
+     * <p>Write to a DynamoDB table. This is a new version of the DynamoDB action. It
+     * allows you to write each attribute in an MQTT message payload into a separate
+     * DynamoDB column.</p>
+     */
+    inline bool DynamoDBv2HasBeenSet() const { return m_dynamoDBv2HasBeenSet; }
 
     /**
      * <p>Write to a DynamoDB table. This is a new version of the DynamoDB action. It
@@ -132,6 +144,11 @@ namespace Model
     /**
      * <p>Invoke a Lambda function.</p>
      */
+    inline bool LambdaHasBeenSet() const { return m_lambdaHasBeenSet; }
+
+    /**
+     * <p>Invoke a Lambda function.</p>
+     */
     inline void SetLambda(const LambdaAction& value) { m_lambdaHasBeenSet = true; m_lambda = value; }
 
     /**
@@ -154,6 +171,11 @@ namespace Model
      * <p>Publish to an Amazon SNS topic.</p>
      */
     inline const SnsAction& GetSns() const{ return m_sns; }
+
+    /**
+     * <p>Publish to an Amazon SNS topic.</p>
+     */
+    inline bool SnsHasBeenSet() const { return m_snsHasBeenSet; }
 
     /**
      * <p>Publish to an Amazon SNS topic.</p>
@@ -184,6 +206,11 @@ namespace Model
     /**
      * <p>Publish to an Amazon SQS queue.</p>
      */
+    inline bool SqsHasBeenSet() const { return m_sqsHasBeenSet; }
+
+    /**
+     * <p>Publish to an Amazon SQS queue.</p>
+     */
     inline void SetSqs(const SqsAction& value) { m_sqsHasBeenSet = true; m_sqs = value; }
 
     /**
@@ -206,6 +233,11 @@ namespace Model
      * <p>Write data to an Amazon Kinesis stream.</p>
      */
     inline const KinesisAction& GetKinesis() const{ return m_kinesis; }
+
+    /**
+     * <p>Write data to an Amazon Kinesis stream.</p>
+     */
+    inline bool KinesisHasBeenSet() const { return m_kinesisHasBeenSet; }
 
     /**
      * <p>Write data to an Amazon Kinesis stream.</p>
@@ -236,6 +268,11 @@ namespace Model
     /**
      * <p>Publish to another MQTT topic.</p>
      */
+    inline bool RepublishHasBeenSet() const { return m_republishHasBeenSet; }
+
+    /**
+     * <p>Publish to another MQTT topic.</p>
+     */
     inline void SetRepublish(const RepublishAction& value) { m_republishHasBeenSet = true; m_republish = value; }
 
     /**
@@ -258,6 +295,11 @@ namespace Model
      * <p>Write to an Amazon S3 bucket.</p>
      */
     inline const S3Action& GetS3() const{ return m_s3; }
+
+    /**
+     * <p>Write to an Amazon S3 bucket.</p>
+     */
+    inline bool S3HasBeenSet() const { return m_s3HasBeenSet; }
 
     /**
      * <p>Write to an Amazon S3 bucket.</p>
@@ -288,6 +330,11 @@ namespace Model
     /**
      * <p>Write to an Amazon Kinesis Firehose stream.</p>
      */
+    inline bool FirehoseHasBeenSet() const { return m_firehoseHasBeenSet; }
+
+    /**
+     * <p>Write to an Amazon Kinesis Firehose stream.</p>
+     */
     inline void SetFirehose(const FirehoseAction& value) { m_firehoseHasBeenSet = true; m_firehose = value; }
 
     /**
@@ -310,6 +357,11 @@ namespace Model
      * <p>Capture a CloudWatch metric.</p>
      */
     inline const CloudwatchMetricAction& GetCloudwatchMetric() const{ return m_cloudwatchMetric; }
+
+    /**
+     * <p>Capture a CloudWatch metric.</p>
+     */
+    inline bool CloudwatchMetricHasBeenSet() const { return m_cloudwatchMetricHasBeenSet; }
 
     /**
      * <p>Capture a CloudWatch metric.</p>
@@ -340,6 +392,11 @@ namespace Model
     /**
      * <p>Change the state of a CloudWatch alarm.</p>
      */
+    inline bool CloudwatchAlarmHasBeenSet() const { return m_cloudwatchAlarmHasBeenSet; }
+
+    /**
+     * <p>Change the state of a CloudWatch alarm.</p>
+     */
     inline void SetCloudwatchAlarm(const CloudwatchAlarmAction& value) { m_cloudwatchAlarmHasBeenSet = true; m_cloudwatchAlarm = value; }
 
     /**
@@ -362,6 +419,11 @@ namespace Model
      * <p>Write data to an Amazon Elasticsearch Service domain.</p>
      */
     inline const ElasticsearchAction& GetElasticsearch() const{ return m_elasticsearch; }
+
+    /**
+     * <p>Write data to an Amazon Elasticsearch Service domain.</p>
+     */
+    inline bool ElasticsearchHasBeenSet() const { return m_elasticsearchHasBeenSet; }
 
     /**
      * <p>Write data to an Amazon Elasticsearch Service domain.</p>
@@ -392,6 +454,11 @@ namespace Model
     /**
      * <p>Send a message to a Salesforce IoT Cloud Input Stream.</p>
      */
+    inline bool SalesforceHasBeenSet() const { return m_salesforceHasBeenSet; }
+
+    /**
+     * <p>Send a message to a Salesforce IoT Cloud Input Stream.</p>
+     */
     inline void SetSalesforce(const SalesforceAction& value) { m_salesforceHasBeenSet = true; m_salesforce = value; }
 
     /**
@@ -414,6 +481,11 @@ namespace Model
      * <p>Sends message data to an AWS IoT Analytics channel.</p>
      */
     inline const IotAnalyticsAction& GetIotAnalytics() const{ return m_iotAnalytics; }
+
+    /**
+     * <p>Sends message data to an AWS IoT Analytics channel.</p>
+     */
+    inline bool IotAnalyticsHasBeenSet() const { return m_iotAnalyticsHasBeenSet; }
 
     /**
      * <p>Sends message data to an AWS IoT Analytics channel.</p>
@@ -444,6 +516,11 @@ namespace Model
     /**
      * <p>Sends an input to an AWS IoT Events detector.</p>
      */
+    inline bool IotEventsHasBeenSet() const { return m_iotEventsHasBeenSet; }
+
+    /**
+     * <p>Sends an input to an AWS IoT Events detector.</p>
+     */
     inline void SetIotEvents(const IotEventsAction& value) { m_iotEventsHasBeenSet = true; m_iotEvents = value; }
 
     /**
@@ -466,6 +543,11 @@ namespace Model
      * <p>Starts execution of a Step Functions state machine.</p>
      */
     inline const StepFunctionsAction& GetStepFunctions() const{ return m_stepFunctions; }
+
+    /**
+     * <p>Starts execution of a Step Functions state machine.</p>
+     */
+    inline bool StepFunctionsHasBeenSet() const { return m_stepFunctionsHasBeenSet; }
 
     /**
      * <p>Starts execution of a Step Functions state machine.</p>

@@ -62,6 +62,15 @@ namespace Model
      * alphanumeric characters with no spaces. You can also include any of the
      * following characters: _+=,.@-</p>
      */
+    inline bool UserNameHasBeenSet() const { return m_userNameHasBeenSet; }
+
+    /**
+     * <p>The name of the user whose MFA device you want to deactivate.</p> <p>This
+     * parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex
+     * pattern</a>) a string of characters consisting of upper and lowercase
+     * alphanumeric characters with no spaces. You can also include any of the
+     * following characters: _+=,.@-</p>
+     */
     inline void SetUserName(const Aws::String& value) { m_userNameHasBeenSet = true; m_userName = value; }
 
     /**
@@ -119,6 +128,16 @@ namespace Model
      * =,.@:/-</p>
      */
     inline const Aws::String& GetSerialNumber() const{ return m_serialNumber; }
+
+    /**
+     * <p>The serial number that uniquely identifies the MFA device. For virtual MFA
+     * devices, the serial number is the device ARN.</p> <p>This parameter allows
+     * (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a
+     * string of characters consisting of upper and lowercase alphanumeric characters
+     * with no spaces. You can also include any of the following characters:
+     * =,.@:/-</p>
+     */
+    inline bool SerialNumberHasBeenSet() const { return m_serialNumberHasBeenSet; }
 
     /**
      * <p>The serial number that uniquely identifies the MFA device. For virtual MFA

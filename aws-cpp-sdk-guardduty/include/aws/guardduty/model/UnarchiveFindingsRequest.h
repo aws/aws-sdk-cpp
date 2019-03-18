@@ -56,6 +56,12 @@ namespace Model
      * The ID of the detector that specifies the GuardDuty service whose findings you
      * want to unarchive.
      */
+    inline bool DetectorIdHasBeenSet() const { return m_detectorIdHasBeenSet; }
+
+    /**
+     * The ID of the detector that specifies the GuardDuty service whose findings you
+     * want to unarchive.
+     */
     inline void SetDetectorId(const Aws::String& value) { m_detectorIdHasBeenSet = true; m_detectorId = value; }
 
     /**
@@ -93,6 +99,11 @@ namespace Model
      * IDs of the findings that you want to unarchive.
      */
     inline const Aws::Vector<Aws::String>& GetFindingIds() const{ return m_findingIds; }
+
+    /**
+     * IDs of the findings that you want to unarchive.
+     */
+    inline bool FindingIdsHasBeenSet() const { return m_findingIdsHasBeenSet; }
 
     /**
      * IDs of the findings that you want to unarchive.

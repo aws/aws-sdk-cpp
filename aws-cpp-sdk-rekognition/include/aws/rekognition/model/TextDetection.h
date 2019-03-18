@@ -64,6 +64,11 @@ namespace Model
     /**
      * <p>The word or line of text recognized by Amazon Rekognition. </p>
      */
+    inline bool DetectedTextHasBeenSet() const { return m_detectedTextHasBeenSet; }
+
+    /**
+     * <p>The word or line of text recognized by Amazon Rekognition. </p>
+     */
     inline void SetDetectedText(const Aws::String& value) { m_detectedTextHasBeenSet = true; m_detectedText = value; }
 
     /**
@@ -100,6 +105,11 @@ namespace Model
     /**
      * <p>The type of text that was detected.</p>
      */
+    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
+
+    /**
+     * <p>The type of text that was detected.</p>
+     */
     inline void SetType(const TextTypes& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
@@ -128,6 +138,12 @@ namespace Model
      * <p>The identifier for the detected text. The identifier is only unique for a
      * single call to <code>DetectText</code>. </p>
      */
+    inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
+
+    /**
+     * <p>The identifier for the detected text. The identifier is only unique for a
+     * single call to <code>DetectText</code>. </p>
+     */
     inline void SetId(int value) { m_idHasBeenSet = true; m_id = value; }
 
     /**
@@ -143,6 +159,13 @@ namespace Model
      * <code>ParentId</code> is <code>Null</code>. </p>
      */
     inline int GetParentId() const{ return m_parentId; }
+
+    /**
+     * <p>The Parent identifier for the detected text identified by the value of
+     * <code>ID</code>. If the type of detected text is <code>LINE</code>, the value of
+     * <code>ParentId</code> is <code>Null</code>. </p>
+     */
+    inline bool ParentIdHasBeenSet() const { return m_parentIdHasBeenSet; }
 
     /**
      * <p>The Parent identifier for the detected text identified by the value of
@@ -169,6 +192,12 @@ namespace Model
      * <p>The confidence that Amazon Rekognition has in the accuracy of the detected
      * text and the accuracy of the geometry points around the detected text.</p>
      */
+    inline bool ConfidenceHasBeenSet() const { return m_confidenceHasBeenSet; }
+
+    /**
+     * <p>The confidence that Amazon Rekognition has in the accuracy of the detected
+     * text and the accuracy of the geometry points around the detected text.</p>
+     */
     inline void SetConfidence(double value) { m_confidenceHasBeenSet = true; m_confidence = value; }
 
     /**
@@ -184,6 +213,13 @@ namespace Model
      * accurate spatial information.</p>
      */
     inline const Geometry& GetGeometry() const{ return m_geometry; }
+
+    /**
+     * <p>The location of the detected text on the image. Includes an axis aligned
+     * coarse bounding box surrounding the text and a finer grain polygon for more
+     * accurate spatial information.</p>
+     */
+    inline bool GeometryHasBeenSet() const { return m_geometryHasBeenSet; }
 
     /**
      * <p>The location of the detected text on the image. Includes an axis aligned

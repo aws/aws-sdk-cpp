@@ -62,6 +62,15 @@ namespace Model
      * with no spaces. You can also include any of the following characters:
      * _+=,.@-</p>
      */
+    inline bool RoleNameHasBeenSet() const { return m_roleNameHasBeenSet; }
+
+    /**
+     * <p>The name of the role associated with the policy.</p> <p>This parameter allows
+     * (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a
+     * string of characters consisting of upper and lowercase alphanumeric characters
+     * with no spaces. You can also include any of the following characters:
+     * _+=,.@-</p>
+     */
     inline void SetRoleName(const Aws::String& value) { m_roleNameHasBeenSet = true; m_roleName = value; }
 
     /**
@@ -117,6 +126,14 @@ namespace Model
      * spaces. You can also include any of the following characters: _+=,.@-</p>
      */
     inline const Aws::String& GetPolicyName() const{ return m_policyName; }
+
+    /**
+     * <p>The name of the policy document to get.</p> <p>This parameter allows (through
+     * its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     * characters consisting of upper and lowercase alphanumeric characters with no
+     * spaces. You can also include any of the following characters: _+=,.@-</p>
+     */
+    inline bool PolicyNameHasBeenSet() const { return m_policyNameHasBeenSet; }
 
     /**
      * <p>The name of the policy document to get.</p> <p>This parameter allows (through

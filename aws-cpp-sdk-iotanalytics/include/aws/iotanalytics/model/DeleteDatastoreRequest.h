@@ -50,6 +50,11 @@ namespace Model
     /**
      * <p>The name of the data store to delete.</p>
      */
+    inline bool DatastoreNameHasBeenSet() const { return m_datastoreNameHasBeenSet; }
+
+    /**
+     * <p>The name of the data store to delete.</p>
+     */
     inline void SetDatastoreName(const Aws::String& value) { m_datastoreNameHasBeenSet = true; m_datastoreName = value; }
 
     /**

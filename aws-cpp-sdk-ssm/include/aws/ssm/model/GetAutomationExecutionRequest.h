@@ -56,6 +56,13 @@ namespace Model
      * execution ID is returned by StartAutomationExecution when the execution of an
      * Automation document is initiated.</p>
      */
+    inline bool AutomationExecutionIdHasBeenSet() const { return m_automationExecutionIdHasBeenSet; }
+
+    /**
+     * <p>The unique identifier for an existing automation execution to examine. The
+     * execution ID is returned by StartAutomationExecution when the execution of an
+     * Automation document is initiated.</p>
+     */
     inline void SetAutomationExecutionId(const Aws::String& value) { m_automationExecutionIdHasBeenSet = true; m_automationExecutionId = value; }
 
     /**

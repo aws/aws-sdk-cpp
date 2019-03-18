@@ -58,6 +58,12 @@ namespace Model
      * <p>The array of file formats for the output captions. If you leave this value
      * blank, Elastic Transcoder returns an error.</p>
      */
+    inline bool CaptionFormatsHasBeenSet() const { return m_captionFormatsHasBeenSet; }
+
+    /**
+     * <p>The array of file formats for the output captions. If you leave this value
+     * blank, Elastic Transcoder returns an error.</p>
+     */
     inline void SetCaptionFormats(const Aws::Vector<CaptionFormat>& value) { m_captionFormatsHasBeenSet = true; m_captionFormats = value; }
 
     /**

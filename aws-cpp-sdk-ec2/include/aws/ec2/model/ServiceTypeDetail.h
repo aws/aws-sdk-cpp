@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p>The type of service.</p>
      */
+    inline bool ServiceTypeHasBeenSet() const { return m_serviceTypeHasBeenSet; }
+
+    /**
+     * <p>The type of service.</p>
+     */
     inline void SetServiceType(const ServiceType& value) { m_serviceTypeHasBeenSet = true; m_serviceType = value; }
 
     /**

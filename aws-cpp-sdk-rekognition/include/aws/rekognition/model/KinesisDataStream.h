@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p>ARN of the output Amazon Kinesis Data Streams stream.</p>
      */
+    inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
+
+    /**
+     * <p>ARN of the output Amazon Kinesis Data Streams stream.</p>
+     */
     inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
 
     /**

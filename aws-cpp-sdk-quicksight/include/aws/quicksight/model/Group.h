@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) for the group.</p>
      */
+    inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) for the group.</p>
+     */
     inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
 
     /**
@@ -90,6 +95,11 @@ namespace Model
      * <p>The name of the group.</p>
      */
     inline const Aws::String& GetGroupName() const{ return m_groupName; }
+
+    /**
+     * <p>The name of the group.</p>
+     */
+    inline bool GroupNameHasBeenSet() const { return m_groupNameHasBeenSet; }
 
     /**
      * <p>The name of the group.</p>
@@ -130,6 +140,11 @@ namespace Model
     /**
      * <p>The group description.</p>
      */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
+
+    /**
+     * <p>The group description.</p>
+     */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
@@ -162,6 +177,11 @@ namespace Model
      * <p>The principal ID of the group.</p>
      */
     inline const Aws::String& GetPrincipalId() const{ return m_principalId; }
+
+    /**
+     * <p>The principal ID of the group.</p>
+     */
+    inline bool PrincipalIdHasBeenSet() const { return m_principalIdHasBeenSet; }
 
     /**
      * <p>The principal ID of the group.</p>

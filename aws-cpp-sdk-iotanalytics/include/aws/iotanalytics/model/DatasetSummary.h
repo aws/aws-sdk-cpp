@@ -60,6 +60,11 @@ namespace Model
     /**
      * <p>The name of the data set.</p>
      */
+    inline bool DatasetNameHasBeenSet() const { return m_datasetNameHasBeenSet; }
+
+    /**
+     * <p>The name of the data set.</p>
+     */
     inline void SetDatasetName(const Aws::String& value) { m_datasetNameHasBeenSet = true; m_datasetName = value; }
 
     /**
@@ -96,6 +101,11 @@ namespace Model
     /**
      * <p>The status of the data set.</p>
      */
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
+
+    /**
+     * <p>The status of the data set.</p>
+     */
     inline void SetStatus(const DatasetStatus& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
@@ -118,6 +128,11 @@ namespace Model
      * <p>The time the data set was created.</p>
      */
     inline const Aws::Utils::DateTime& GetCreationTime() const{ return m_creationTime; }
+
+    /**
+     * <p>The time the data set was created.</p>
+     */
+    inline bool CreationTimeHasBeenSet() const { return m_creationTimeHasBeenSet; }
 
     /**
      * <p>The time the data set was created.</p>
@@ -148,6 +163,11 @@ namespace Model
     /**
      * <p>The last time the data set was updated.</p>
      */
+    inline bool LastUpdateTimeHasBeenSet() const { return m_lastUpdateTimeHasBeenSet; }
+
+    /**
+     * <p>The last time the data set was updated.</p>
+     */
     inline void SetLastUpdateTime(const Aws::Utils::DateTime& value) { m_lastUpdateTimeHasBeenSet = true; m_lastUpdateTime = value; }
 
     /**
@@ -172,6 +192,13 @@ namespace Model
      * triggers can be empty or contain up to five DataSetTrigger objects</p>
      */
     inline const Aws::Vector<DatasetTrigger>& GetTriggers() const{ return m_triggers; }
+
+    /**
+     * <p>A list of triggers. A trigger causes data set content to be populated at a
+     * specified time interval or when another data set is populated. The list of
+     * triggers can be empty or contain up to five DataSetTrigger objects</p>
+     */
+    inline bool TriggersHasBeenSet() const { return m_triggersHasBeenSet; }
 
     /**
      * <p>A list of triggers. A trigger causes data set content to be populated at a
@@ -220,6 +247,11 @@ namespace Model
      * <p>A list of "DataActionSummary" objects.</p>
      */
     inline const Aws::Vector<DatasetActionSummary>& GetActions() const{ return m_actions; }
+
+    /**
+     * <p>A list of "DataActionSummary" objects.</p>
+     */
+    inline bool ActionsHasBeenSet() const { return m_actionsHasBeenSet; }
 
     /**
      * <p>A list of "DataActionSummary" objects.</p>

@@ -59,6 +59,12 @@ namespace Model
      * <p>Specifies whether to insert a <code>Rule</code> into or delete a
      * <code>Rule</code> from a <code>WebACL</code>.</p>
      */
+    inline bool ActionHasBeenSet() const { return m_actionHasBeenSet; }
+
+    /**
+     * <p>Specifies whether to insert a <code>Rule</code> into or delete a
+     * <code>Rule</code> from a <code>WebACL</code>.</p>
+     */
     inline void SetAction(const ChangeAction& value) { m_actionHasBeenSet = true; m_action = value; }
 
     /**
@@ -88,6 +94,15 @@ namespace Model
      * (<code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>).</p>
      */
     inline const ActivatedRule& GetActivatedRule() const{ return m_activatedRule; }
+
+    /**
+     * <p>The <code>ActivatedRule</code> object in an <a>UpdateWebACL</a> request
+     * specifies a <code>Rule</code> that you want to insert or delete, the priority of
+     * the <code>Rule</code> in the <code>WebACL</code>, and the action that you want
+     * AWS WAF to take when a web request matches the <code>Rule</code>
+     * (<code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>).</p>
+     */
+    inline bool ActivatedRuleHasBeenSet() const { return m_activatedRuleHasBeenSet; }
 
     /**
      * <p>The <code>ActivatedRule</code> object in an <a>UpdateWebACL</a> request

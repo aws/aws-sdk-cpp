@@ -68,6 +68,16 @@ namespace Model
      * is no default value.</p> <p>Required: Conditional. If you do not specify
      * <code>StackName</code>, you must specify <code>PhysicalResourceId</code>.</p>
      */
+    inline bool StackNameHasBeenSet() const { return m_stackNameHasBeenSet; }
+
+    /**
+     * <p>The name or the unique stack ID that is associated with the stack, which are
+     * not always interchangeable:</p> <ul> <li> <p>Running stacks: You can specify
+     * either the stack's name or its unique stack ID.</p> </li> <li> <p>Deleted
+     * stacks: You must specify the unique stack ID.</p> </li> </ul> <p>Default: There
+     * is no default value.</p> <p>Required: Conditional. If you do not specify
+     * <code>StackName</code>, you must specify <code>PhysicalResourceId</code>.</p>
+     */
     inline void SetStackName(const Aws::String& value) { m_stackNameHasBeenSet = true; m_stackName = value; }
 
     /**
@@ -131,6 +141,12 @@ namespace Model
      * <p>The logical name of the resource as specified in the template.</p>
      * <p>Default: There is no default value.</p>
      */
+    inline bool LogicalResourceIdHasBeenSet() const { return m_logicalResourceIdHasBeenSet; }
+
+    /**
+     * <p>The logical name of the resource as specified in the template.</p>
+     * <p>Default: There is no default value.</p>
+     */
     inline void SetLogicalResourceId(const Aws::String& value) { m_logicalResourceIdHasBeenSet = true; m_logicalResourceId = value; }
 
     /**
@@ -176,6 +192,19 @@ namespace Model
      * <p>Default: There is no default value.</p>
      */
     inline const Aws::String& GetPhysicalResourceId() const{ return m_physicalResourceId; }
+
+    /**
+     * <p>The name or unique identifier that corresponds to a physical instance ID of a
+     * resource supported by AWS CloudFormation.</p> <p>For example, for an Amazon
+     * Elastic Compute Cloud (EC2) instance, <code>PhysicalResourceId</code>
+     * corresponds to the <code>InstanceId</code>. You can pass the EC2
+     * <code>InstanceId</code> to <code>DescribeStackResources</code> to find which
+     * stack the instance belongs to and what other resources are part of the
+     * stack.</p> <p>Required: Conditional. If you do not specify
+     * <code>PhysicalResourceId</code>, you must specify <code>StackName</code>.</p>
+     * <p>Default: There is no default value.</p>
+     */
+    inline bool PhysicalResourceIdHasBeenSet() const { return m_physicalResourceIdHasBeenSet; }
 
     /**
      * <p>The name or unique identifier that corresponds to a physical instance ID of a

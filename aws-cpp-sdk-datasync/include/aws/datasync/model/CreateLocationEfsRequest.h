@@ -62,6 +62,13 @@ namespace Model
      * system is used to read data from the EFS source location or write data to the
      * EFS destination. By default, AWS DataSync uses the root directory.</p>
      */
+    inline bool SubdirectoryHasBeenSet() const { return m_subdirectoryHasBeenSet; }
+
+    /**
+     * <p>A subdirectory in the location’s path. This subdirectory in the EFS file
+     * system is used to read data from the EFS source location or write data to the
+     * EFS destination. By default, AWS DataSync uses the root directory.</p>
+     */
     inline void SetSubdirectory(const Aws::String& value) { m_subdirectoryHasBeenSet = true; m_subdirectory = value; }
 
     /**
@@ -108,6 +115,11 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) for the Amazon EFS file system.</p>
      */
+    inline bool EfsFilesystemArnHasBeenSet() const { return m_efsFilesystemArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) for the Amazon EFS file system.</p>
+     */
     inline void SetEfsFilesystemArn(const Aws::String& value) { m_efsFilesystemArnHasBeenSet = true; m_efsFilesystemArn = value; }
 
     /**
@@ -144,6 +156,11 @@ namespace Model
     /**
      * <p>The subnet and security group that the Amazon EFS file system uses.</p>
      */
+    inline bool Ec2ConfigHasBeenSet() const { return m_ec2ConfigHasBeenSet; }
+
+    /**
+     * <p>The subnet and security group that the Amazon EFS file system uses.</p>
+     */
     inline void SetEc2Config(const Ec2Config& value) { m_ec2ConfigHasBeenSet = true; m_ec2Config = value; }
 
     /**
@@ -169,6 +186,14 @@ namespace Model
      * location.</p>
      */
     inline const Aws::Vector<TagListEntry>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>The key-value pair that represents a tag that you want to add to the
+     * resource. The value can be an empty string. This value helps you manage, filter,
+     * and search for your resources. We recommend that you create a name tag for your
+     * location.</p>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
      * <p>The key-value pair that represents a tag that you want to add to the

@@ -62,6 +62,12 @@ namespace Model
      * <p>The identifier of the event source for which events are returned. If not
      * specified, all sources are included in the response.</p>
      */
+    inline bool SourceIdentifierHasBeenSet() const { return m_sourceIdentifierHasBeenSet; }
+
+    /**
+     * <p>The identifier of the event source for which events are returned. If not
+     * specified, all sources are included in the response.</p>
+     */
     inline void SetSourceIdentifier(const Aws::String& value) { m_sourceIdentifierHasBeenSet = true; m_sourceIdentifier = value; }
 
     /**
@@ -105,6 +111,12 @@ namespace Model
      * <p>The event source to retrieve events for. If no value is specified, all events
      * are returned.</p>
      */
+    inline bool SourceTypeHasBeenSet() const { return m_sourceTypeHasBeenSet; }
+
+    /**
+     * <p>The event source to retrieve events for. If no value is specified, all events
+     * are returned.</p>
+     */
     inline void SetSourceType(const SourceType& value) { m_sourceTypeHasBeenSet = true; m_sourceType = value; }
 
     /**
@@ -131,6 +143,12 @@ namespace Model
      * 8601 format.</p> <p> <b>Example:</b> 2017-03-30T07:03:49.555Z</p>
      */
     inline const Aws::Utils::DateTime& GetStartTime() const{ return m_startTime; }
+
+    /**
+     * <p>The beginning of the time interval to retrieve events for, specified in ISO
+     * 8601 format.</p> <p> <b>Example:</b> 2017-03-30T07:03:49.555Z</p>
+     */
+    inline bool StartTimeHasBeenSet() const { return m_startTimeHasBeenSet; }
 
     /**
      * <p>The beginning of the time interval to retrieve events for, specified in ISO
@@ -167,6 +185,12 @@ namespace Model
      * <p>The end of the time interval for which to retrieve events, specified in ISO
      * 8601 format.</p> <p> <b>Example:</b> 2017-03-30T07:03:49.555Z</p>
      */
+    inline bool EndTimeHasBeenSet() const { return m_endTimeHasBeenSet; }
+
+    /**
+     * <p>The end of the time interval for which to retrieve events, specified in ISO
+     * 8601 format.</p> <p> <b>Example:</b> 2017-03-30T07:03:49.555Z</p>
+     */
     inline void SetEndTime(const Aws::Utils::DateTime& value) { m_endTimeHasBeenSet = true; m_endTime = value; }
 
     /**
@@ -196,6 +220,11 @@ namespace Model
     /**
      * <p>The number of minutes worth of events to retrieve.</p>
      */
+    inline bool DurationHasBeenSet() const { return m_durationHasBeenSet; }
+
+    /**
+     * <p>The number of minutes worth of events to retrieve.</p>
+     */
     inline void SetDuration(int value) { m_durationHasBeenSet = true; m_duration = value; }
 
     /**
@@ -211,6 +240,14 @@ namespace Model
      * 100</p> <p>Constraints: minimum 20; maximum 100.</p>
      */
     inline int GetMaxRecords() const{ return m_maxRecords; }
+
+    /**
+     * <p>The maximum number of records to include in the response. If more records
+     * exist than the specified <code>MaxRecords</code> value, a marker is included in
+     * the response so that the remaining results can be retrieved.</p> <p>Default:
+     * 100</p> <p>Constraints: minimum 20; maximum 100.</p>
+     */
+    inline bool MaxRecordsHasBeenSet() const { return m_maxRecordsHasBeenSet; }
 
     /**
      * <p>The maximum number of records to include in the response. If more records
@@ -236,6 +273,14 @@ namespace Model
      * <code>MaxRecords</code>.</p>
      */
     inline const Aws::String& GetMarker() const{ return m_marker; }
+
+    /**
+     * <p>An optional marker returned from a prior request. Use this marker for
+     * pagination of results from this operation. If this parameter is specified, the
+     * response includes only records beyond the marker, up to the value specified by
+     * <code>MaxRecords</code>.</p>
+     */
+    inline bool MarkerHasBeenSet() const { return m_markerHasBeenSet; }
 
     /**
      * <p>An optional marker returned from a prior request. Use this marker for

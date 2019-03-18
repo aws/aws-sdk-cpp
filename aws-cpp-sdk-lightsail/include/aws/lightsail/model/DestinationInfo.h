@@ -55,6 +55,11 @@ namespace Model
     /**
      * <p>The ID of the resource created at the destination.</p>
      */
+    inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
+
+    /**
+     * <p>The ID of the resource created at the destination.</p>
+     */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
     /**
@@ -87,6 +92,11 @@ namespace Model
      * <p>The destination service of the record.</p>
      */
     inline const Aws::String& GetService() const{ return m_service; }
+
+    /**
+     * <p>The destination service of the record.</p>
+     */
+    inline bool ServiceHasBeenSet() const { return m_serviceHasBeenSet; }
 
     /**
      * <p>The destination service of the record.</p>

@@ -51,6 +51,9 @@ namespace Model
     inline const EmbeddedConvert608To708& GetConvert608To708() const{ return m_convert608To708; }
 
     
+    inline bool Convert608To708HasBeenSet() const { return m_convert608To708HasBeenSet; }
+
+    
     inline void SetConvert608To708(const EmbeddedConvert608To708& value) { m_convert608To708HasBeenSet = true; m_convert608To708 = value; }
 
     
@@ -73,6 +76,12 @@ namespace Model
      * Specifies the 608/708 channel number within the video track from which to
      * extract captions. Unused for passthrough.
      */
+    inline bool Source608ChannelNumberHasBeenSet() const { return m_source608ChannelNumberHasBeenSet; }
+
+    /**
+     * Specifies the 608/708 channel number within the video track from which to
+     * extract captions. Unused for passthrough.
+     */
     inline void SetSource608ChannelNumber(int value) { m_source608ChannelNumberHasBeenSet = true; m_source608ChannelNumber = value; }
 
     /**
@@ -87,6 +96,12 @@ namespace Model
      * supports one input video track, so this should always be set to '1'.
      */
     inline int GetSource608TrackNumber() const{ return m_source608TrackNumber; }
+
+    /**
+     * Specifies the video track index used for extracting captions. The system only
+     * supports one input video track, so this should always be set to '1'.
+     */
+    inline bool Source608TrackNumberHasBeenSet() const { return m_source608TrackNumberHasBeenSet; }
 
     /**
      * Specifies the video track index used for extracting captions. The system only

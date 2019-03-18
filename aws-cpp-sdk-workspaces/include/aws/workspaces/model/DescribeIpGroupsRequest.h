@@ -53,6 +53,11 @@ namespace Model
     /**
      * <p>The identifiers of one or more IP access control groups.</p>
      */
+    inline bool GroupIdsHasBeenSet() const { return m_groupIdsHasBeenSet; }
+
+    /**
+     * <p>The identifiers of one or more IP access control groups.</p>
+     */
     inline void SetGroupIds(const Aws::Vector<Aws::String>& value) { m_groupIdsHasBeenSet = true; m_groupIds = value; }
 
     /**
@@ -96,6 +101,12 @@ namespace Model
      * <p>If you received a <code>NextToken</code> from a previous call that was
      * paginated, provide this token to receive the next set of results.</p>
      */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
+
+    /**
+     * <p>If you received a <code>NextToken</code> from a previous call that was
+     * paginated, provide this token to receive the next set of results.</p>
+     */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
     /**
@@ -133,6 +144,11 @@ namespace Model
      * <p>The maximum number of items to return.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
+
+    /**
+     * <p>The maximum number of items to return.</p>
+     */
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
 
     /**
      * <p>The maximum number of items to return.</p>

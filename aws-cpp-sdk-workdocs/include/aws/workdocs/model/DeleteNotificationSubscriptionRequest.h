@@ -50,6 +50,11 @@ namespace Model
     /**
      * <p>The ID of the subscription.</p>
      */
+    inline bool SubscriptionIdHasBeenSet() const { return m_subscriptionIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the subscription.</p>
+     */
     inline void SetSubscriptionId(const Aws::String& value) { m_subscriptionIdHasBeenSet = true; m_subscriptionId = value; }
 
     /**
@@ -82,6 +87,11 @@ namespace Model
      * <p>The ID of the organization.</p>
      */
     inline const Aws::String& GetOrganizationId() const{ return m_organizationId; }
+
+    /**
+     * <p>The ID of the organization.</p>
+     */
+    inline bool OrganizationIdHasBeenSet() const { return m_organizationIdHasBeenSet; }
 
     /**
      * <p>The ID of the organization.</p>

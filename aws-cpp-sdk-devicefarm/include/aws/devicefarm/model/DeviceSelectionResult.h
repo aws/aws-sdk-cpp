@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p>The filters in a device selection result.</p>
      */
+    inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
+
+    /**
+     * <p>The filters in a device selection result.</p>
+     */
     inline void SetFilters(const Aws::Vector<DeviceFilter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
 
     /**
@@ -94,6 +99,11 @@ namespace Model
     /**
      * <p>The number of devices that matched the device filter selection criteria.</p>
      */
+    inline bool MatchedDevicesCountHasBeenSet() const { return m_matchedDevicesCountHasBeenSet; }
+
+    /**
+     * <p>The number of devices that matched the device filter selection criteria.</p>
+     */
     inline void SetMatchedDevicesCount(int value) { m_matchedDevicesCountHasBeenSet = true; m_matchedDevicesCount = value; }
 
     /**
@@ -107,6 +117,12 @@ namespace Model
      * in a test run.</p>
      */
     inline int GetMaxDevices() const{ return m_maxDevices; }
+
+    /**
+     * <p>The maximum number of devices to be selected by a device filter and included
+     * in a test run.</p>
+     */
+    inline bool MaxDevicesHasBeenSet() const { return m_maxDevicesHasBeenSet; }
 
     /**
      * <p>The maximum number of devices to be selected by a device filter and included

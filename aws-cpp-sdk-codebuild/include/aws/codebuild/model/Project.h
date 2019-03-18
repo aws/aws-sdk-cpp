@@ -66,6 +66,11 @@ namespace Model
     /**
      * <p>The name of the build project.</p>
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>The name of the build project.</p>
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
@@ -98,6 +103,11 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the build project.</p>
      */
     inline const Aws::String& GetArn() const{ return m_arn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the build project.</p>
+     */
+    inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the build project.</p>
@@ -138,6 +148,11 @@ namespace Model
     /**
      * <p>A description that makes the build project easy to identify.</p>
      */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
+
+    /**
+     * <p>A description that makes the build project easy to identify.</p>
+     */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
@@ -174,6 +189,11 @@ namespace Model
     /**
      * <p>Information about the build input source code for this build project.</p>
      */
+    inline bool SourceHasBeenSet() const { return m_sourceHasBeenSet; }
+
+    /**
+     * <p>Information about the build input source code for this build project.</p>
+     */
     inline void SetSource(const ProjectSource& value) { m_sourceHasBeenSet = true; m_source = value; }
 
     /**
@@ -196,6 +216,11 @@ namespace Model
      * <p> An array of <code>ProjectSource</code> objects. </p>
      */
     inline const Aws::Vector<ProjectSource>& GetSecondarySources() const{ return m_secondarySources; }
+
+    /**
+     * <p> An array of <code>ProjectSource</code> objects. </p>
+     */
+    inline bool SecondarySourcesHasBeenSet() const { return m_secondarySourcesHasBeenSet; }
 
     /**
      * <p> An array of <code>ProjectSource</code> objects. </p>
@@ -236,6 +261,11 @@ namespace Model
     /**
      * <p>Information about the build output artifacts for the build project.</p>
      */
+    inline bool ArtifactsHasBeenSet() const { return m_artifactsHasBeenSet; }
+
+    /**
+     * <p>Information about the build output artifacts for the build project.</p>
+     */
     inline void SetArtifacts(const ProjectArtifacts& value) { m_artifactsHasBeenSet = true; m_artifacts = value; }
 
     /**
@@ -258,6 +288,11 @@ namespace Model
      * <p> An array of <code>ProjectArtifacts</code> objects. </p>
      */
     inline const Aws::Vector<ProjectArtifacts>& GetSecondaryArtifacts() const{ return m_secondaryArtifacts; }
+
+    /**
+     * <p> An array of <code>ProjectArtifacts</code> objects. </p>
+     */
+    inline bool SecondaryArtifactsHasBeenSet() const { return m_secondaryArtifactsHasBeenSet; }
 
     /**
      * <p> An array of <code>ProjectArtifacts</code> objects. </p>
@@ -298,6 +333,11 @@ namespace Model
     /**
      * <p>Information about the cache for the build project.</p>
      */
+    inline bool CacheHasBeenSet() const { return m_cacheHasBeenSet; }
+
+    /**
+     * <p>Information about the cache for the build project.</p>
+     */
     inline void SetCache(const ProjectCache& value) { m_cacheHasBeenSet = true; m_cache = value; }
 
     /**
@@ -320,6 +360,11 @@ namespace Model
      * <p>Information about the build environment for this build project.</p>
      */
     inline const ProjectEnvironment& GetEnvironment() const{ return m_environment; }
+
+    /**
+     * <p>Information about the build environment for this build project.</p>
+     */
+    inline bool EnvironmentHasBeenSet() const { return m_environmentHasBeenSet; }
 
     /**
      * <p>Information about the build environment for this build project.</p>
@@ -348,6 +393,13 @@ namespace Model
      * account.</p>
      */
     inline const Aws::String& GetServiceRole() const{ return m_serviceRole; }
+
+    /**
+     * <p>The ARN of the AWS Identity and Access Management (IAM) role that enables AWS
+     * CodeBuild to interact with dependent AWS services on behalf of the AWS
+     * account.</p>
+     */
+    inline bool ServiceRoleHasBeenSet() const { return m_serviceRoleHasBeenSet; }
 
     /**
      * <p>The ARN of the AWS Identity and Access Management (IAM) role that enables AWS
@@ -404,6 +456,13 @@ namespace Model
      * before timing out any related build that did not get marked as completed. The
      * default is 60 minutes.</p>
      */
+    inline bool TimeoutInMinutesHasBeenSet() const { return m_timeoutInMinutesHasBeenSet; }
+
+    /**
+     * <p>How long, in minutes, from 5 to 480 (8 hours), for AWS CodeBuild to wait
+     * before timing out any related build that did not get marked as completed. The
+     * default is 60 minutes.</p>
+     */
     inline void SetTimeoutInMinutes(int value) { m_timeoutInMinutesHasBeenSet = true; m_timeoutInMinutes = value; }
 
     /**
@@ -419,6 +478,12 @@ namespace Model
      * </p>
      */
     inline int GetQueuedTimeoutInMinutes() const{ return m_queuedTimeoutInMinutes; }
+
+    /**
+     * <p> The number of minutes a build is allowed to be queued before it times out.
+     * </p>
+     */
+    inline bool QueuedTimeoutInMinutesHasBeenSet() const { return m_queuedTimeoutInMinutesHasBeenSet; }
 
     /**
      * <p> The number of minutes a build is allowed to be queued before it times out.
@@ -442,6 +507,16 @@ namespace Model
      * format <code>alias/<i>alias-name</i> </code>).</p>
      */
     inline const Aws::String& GetEncryptionKey() const{ return m_encryptionKey; }
+
+    /**
+     * <p>The AWS Key Management Service (AWS KMS) customer master key (CMK) to be used
+     * for encrypting the build output artifacts.</p> <note> <p> You can use a
+     * cross-account KMS key to encrypt the build output artifacts if your service role
+     * has permission to that key. </p> </note> <p>You can specify either the Amazon
+     * Resource Name (ARN) of the CMK or, if available, the CMK's alias (using the
+     * format <code>alias/<i>alias-name</i> </code>).</p>
+     */
+    inline bool EncryptionKeyHasBeenSet() const { return m_encryptionKeyHasBeenSet; }
 
     /**
      * <p>The AWS Key Management Service (AWS KMS) customer master key (CMK) to be used
@@ -514,6 +589,12 @@ namespace Model
      * <p>The tags for this build project.</p> <p>These tags are available for use by
      * AWS services that support AWS CodeBuild build project tags.</p>
      */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
+
+    /**
+     * <p>The tags for this build project.</p> <p>These tags are available for use by
+     * AWS services that support AWS CodeBuild build project tags.</p>
+     */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     /**
@@ -555,6 +636,11 @@ namespace Model
     /**
      * <p>When the build project was created, expressed in Unix time format.</p>
      */
+    inline bool CreatedHasBeenSet() const { return m_createdHasBeenSet; }
+
+    /**
+     * <p>When the build project was created, expressed in Unix time format.</p>
+     */
     inline void SetCreated(const Aws::Utils::DateTime& value) { m_createdHasBeenSet = true; m_created = value; }
 
     /**
@@ -578,6 +664,12 @@ namespace Model
      * format.</p>
      */
     inline const Aws::Utils::DateTime& GetLastModified() const{ return m_lastModified; }
+
+    /**
+     * <p>When the build project's settings were last modified, expressed in Unix time
+     * format.</p>
+     */
+    inline bool LastModifiedHasBeenSet() const { return m_lastModifiedHasBeenSet; }
 
     /**
      * <p>When the build project's settings were last modified, expressed in Unix time
@@ -614,6 +706,12 @@ namespace Model
      * <p>Information about a webhook that connects repository events to a build
      * project in AWS CodeBuild.</p>
      */
+    inline bool WebhookHasBeenSet() const { return m_webhookHasBeenSet; }
+
+    /**
+     * <p>Information about a webhook that connects repository events to a build
+     * project in AWS CodeBuild.</p>
+     */
     inline void SetWebhook(const Webhook& value) { m_webhookHasBeenSet = true; m_webhook = value; }
 
     /**
@@ -639,6 +737,11 @@ namespace Model
      * <p>Information about the VPC configuration that AWS CodeBuild accesses.</p>
      */
     inline const VpcConfig& GetVpcConfig() const{ return m_vpcConfig; }
+
+    /**
+     * <p>Information about the VPC configuration that AWS CodeBuild accesses.</p>
+     */
+    inline bool VpcConfigHasBeenSet() const { return m_vpcConfigHasBeenSet; }
 
     /**
      * <p>Information about the VPC configuration that AWS CodeBuild accesses.</p>
@@ -669,6 +772,11 @@ namespace Model
     /**
      * <p>Information about the build badge for the build project.</p>
      */
+    inline bool BadgeHasBeenSet() const { return m_badgeHasBeenSet; }
+
+    /**
+     * <p>Information about the build badge for the build project.</p>
+     */
     inline void SetBadge(const ProjectBadge& value) { m_badgeHasBeenSet = true; m_badge = value; }
 
     /**
@@ -692,6 +800,12 @@ namespace Model
      * Amazon CloudWatch Logs, an S3 bucket, or both. </p>
      */
     inline const LogsConfig& GetLogsConfig() const{ return m_logsConfig; }
+
+    /**
+     * <p> Information about logs for the build project. A project can create logs in
+     * Amazon CloudWatch Logs, an S3 bucket, or both. </p>
+     */
+    inline bool LogsConfigHasBeenSet() const { return m_logsConfigHasBeenSet; }
 
     /**
      * <p> Information about logs for the build project. A project can create logs in

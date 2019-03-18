@@ -66,6 +66,12 @@ namespace Model
      * Used to select the audio stream to decode for inputs that have multiple
      * available.
      */
+    inline bool AudioSelectorsHasBeenSet() const { return m_audioSelectorsHasBeenSet; }
+
+    /**
+     * Used to select the audio stream to decode for inputs that have multiple
+     * available.
+     */
     inline void SetAudioSelectors(const Aws::Vector<AudioSelector>& value) { m_audioSelectorsHasBeenSet = true; m_audioSelectors = value; }
 
     /**
@@ -107,6 +113,11 @@ namespace Model
     /**
      * Used to select the caption input to use for inputs that have multiple available.
      */
+    inline bool CaptionSelectorsHasBeenSet() const { return m_captionSelectorsHasBeenSet; }
+
+    /**
+     * Used to select the caption input to use for inputs that have multiple available.
+     */
     inline void SetCaptionSelectors(const Aws::Vector<CaptionSelector>& value) { m_captionSelectorsHasBeenSet = true; m_captionSelectors = value; }
 
     /**
@@ -143,6 +154,11 @@ namespace Model
     /**
      * Enable or disable the deblock filter when filtering.
      */
+    inline bool DeblockFilterHasBeenSet() const { return m_deblockFilterHasBeenSet; }
+
+    /**
+     * Enable or disable the deblock filter when filtering.
+     */
     inline void SetDeblockFilter(const InputDeblockFilter& value) { m_deblockFilterHasBeenSet = true; m_deblockFilter = value; }
 
     /**
@@ -165,6 +181,11 @@ namespace Model
      * Enable or disable the denoise filter when filtering.
      */
     inline const InputDenoiseFilter& GetDenoiseFilter() const{ return m_denoiseFilter; }
+
+    /**
+     * Enable or disable the denoise filter when filtering.
+     */
+    inline bool DenoiseFilterHasBeenSet() const { return m_denoiseFilterHasBeenSet; }
 
     /**
      * Enable or disable the denoise filter when filtering.
@@ -195,6 +216,11 @@ namespace Model
     /**
      * Adjusts the magnitude of filtering from 1 (minimal) to 5 (strongest).
      */
+    inline bool FilterStrengthHasBeenSet() const { return m_filterStrengthHasBeenSet; }
+
+    /**
+     * Adjusts the magnitude of filtering from 1 (minimal) to 5 (strongest).
+     */
     inline void SetFilterStrength(int value) { m_filterStrengthHasBeenSet = true; m_filterStrength = value; }
 
     /**
@@ -213,6 +239,17 @@ namespace Model
      * filtering will be applied regardless of input type
      */
     inline const InputFilter& GetInputFilter() const{ return m_inputFilter; }
+
+    /**
+     * Turns on the filter for this input. MPEG-2 inputs have the deblocking filter
+     * enabled by default.
+1) auto - filtering will be applied depending on input
+     * type/quality
+2) disabled - no filtering will be applied to the input
+3) forced -
+     * filtering will be applied regardless of input type
+     */
+    inline bool InputFilterHasBeenSet() const { return m_inputFilterHasBeenSet; }
 
     /**
      * Turns on the filter for this input. MPEG-2 inputs have the deblocking filter
@@ -267,6 +304,11 @@ namespace Model
     /**
      * Input settings.
      */
+    inline bool NetworkInputSettingsHasBeenSet() const { return m_networkInputSettingsHasBeenSet; }
+
+    /**
+     * Input settings.
+     */
     inline void SetNetworkInputSettings(const NetworkInputSettings& value) { m_networkInputSettingsHasBeenSet = true; m_networkInputSettings = value; }
 
     /**
@@ -290,6 +332,12 @@ namespace Model
      * indefinitely.
      */
     inline const InputSourceEndBehavior& GetSourceEndBehavior() const{ return m_sourceEndBehavior; }
+
+    /**
+     * Loop input if it is a file. This allows a file input to be streamed
+     * indefinitely.
+     */
+    inline bool SourceEndBehaviorHasBeenSet() const { return m_sourceEndBehaviorHasBeenSet; }
 
     /**
      * Loop input if it is a file. This allows a file input to be streamed
@@ -321,6 +369,12 @@ namespace Model
      * multiple available.
      */
     inline const VideoSelector& GetVideoSelector() const{ return m_videoSelector; }
+
+    /**
+     * Informs which video elementary stream to decode for input types that have
+     * multiple available.
+     */
+    inline bool VideoSelectorHasBeenSet() const { return m_videoSelectorHasBeenSet; }
 
     /**
      * Informs which video elementary stream to decode for input types that have

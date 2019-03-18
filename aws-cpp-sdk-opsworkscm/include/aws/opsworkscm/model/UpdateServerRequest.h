@@ -54,6 +54,12 @@ namespace Model
      * <p>Setting DisableAutomatedBackup to <code>true</code> disables automated or
      * scheduled backups. Automated backups are enabled by default. </p>
      */
+    inline bool DisableAutomatedBackupHasBeenSet() const { return m_disableAutomatedBackupHasBeenSet; }
+
+    /**
+     * <p>Setting DisableAutomatedBackup to <code>true</code> disables automated or
+     * scheduled backups. Automated backups are enabled by default. </p>
+     */
     inline void SetDisableAutomatedBackup(bool value) { m_disableAutomatedBackupHasBeenSet = true; m_disableAutomatedBackup = value; }
 
     /**
@@ -71,6 +77,11 @@ namespace Model
     /**
      * <p>Sets the number of automated backups that you want to keep. </p>
      */
+    inline bool BackupRetentionCountHasBeenSet() const { return m_backupRetentionCountHasBeenSet; }
+
+    /**
+     * <p>Sets the number of automated backups that you want to keep. </p>
+     */
     inline void SetBackupRetentionCount(int value) { m_backupRetentionCountHasBeenSet = true; m_backupRetentionCount = value; }
 
     /**
@@ -83,6 +94,11 @@ namespace Model
      * <p>The name of the server to update. </p>
      */
     inline const Aws::String& GetServerName() const{ return m_serverName; }
+
+    /**
+     * <p>The name of the server to update. </p>
+     */
+    inline bool ServerNameHasBeenSet() const { return m_serverNameHasBeenSet; }
 
     /**
      * <p>The name of the server to update. </p>
@@ -119,6 +135,9 @@ namespace Model
     inline const Aws::String& GetPreferredMaintenanceWindow() const{ return m_preferredMaintenanceWindow; }
 
     
+    inline bool PreferredMaintenanceWindowHasBeenSet() const { return m_preferredMaintenanceWindowHasBeenSet; }
+
+    
     inline void SetPreferredMaintenanceWindow(const Aws::String& value) { m_preferredMaintenanceWindowHasBeenSet = true; m_preferredMaintenanceWindow = value; }
 
     
@@ -139,6 +158,9 @@ namespace Model
 
     
     inline const Aws::String& GetPreferredBackupWindow() const{ return m_preferredBackupWindow; }
+
+    
+    inline bool PreferredBackupWindowHasBeenSet() const { return m_preferredBackupWindowHasBeenSet; }
 
     
     inline void SetPreferredBackupWindow(const Aws::String& value) { m_preferredBackupWindowHasBeenSet = true; m_preferredBackupWindow = value; }

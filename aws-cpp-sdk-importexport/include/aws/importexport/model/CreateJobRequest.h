@@ -54,6 +54,9 @@ namespace Model
     inline const JobType& GetJobType() const{ return m_jobType; }
 
     
+    inline bool JobTypeHasBeenSet() const { return m_jobTypeHasBeenSet; }
+
+    
     inline void SetJobType(const JobType& value) { m_jobTypeHasBeenSet = true; m_jobType = value; }
 
     
@@ -68,6 +71,9 @@ namespace Model
 
     
     inline const Aws::String& GetManifest() const{ return m_manifest; }
+
+    
+    inline bool ManifestHasBeenSet() const { return m_manifestHasBeenSet; }
 
     
     inline void SetManifest(const Aws::String& value) { m_manifestHasBeenSet = true; m_manifest = value; }
@@ -92,6 +98,9 @@ namespace Model
     inline const Aws::String& GetManifestAddendum() const{ return m_manifestAddendum; }
 
     
+    inline bool ManifestAddendumHasBeenSet() const { return m_manifestAddendumHasBeenSet; }
+
+    
     inline void SetManifestAddendum(const Aws::String& value) { m_manifestAddendumHasBeenSet = true; m_manifestAddendum = value; }
 
     
@@ -114,6 +123,9 @@ namespace Model
     inline bool GetValidateOnly() const{ return m_validateOnly; }
 
     
+    inline bool ValidateOnlyHasBeenSet() const { return m_validateOnlyHasBeenSet; }
+
+    
     inline void SetValidateOnly(bool value) { m_validateOnlyHasBeenSet = true; m_validateOnly = value; }
 
     
@@ -122,6 +134,9 @@ namespace Model
 
     
     inline const Aws::String& GetAPIVersion() const{ return m_aPIVersion; }
+
+    
+    inline bool APIVersionHasBeenSet() const { return m_aPIVersionHasBeenSet; }
 
     
     inline void SetAPIVersion(const Aws::String& value) { m_aPIVersionHasBeenSet = true; m_aPIVersion = value; }

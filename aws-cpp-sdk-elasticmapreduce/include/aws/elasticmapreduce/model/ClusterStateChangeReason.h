@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The programmatic code for the state change reason.</p>
      */
+    inline bool CodeHasBeenSet() const { return m_codeHasBeenSet; }
+
+    /**
+     * <p>The programmatic code for the state change reason.</p>
+     */
     inline void SetCode(const ClusterStateChangeReasonCode& value) { m_codeHasBeenSet = true; m_code = value; }
 
     /**
@@ -79,6 +84,11 @@ namespace Model
      * <p>The descriptive message for the state change reason.</p>
      */
     inline const Aws::String& GetMessage() const{ return m_message; }
+
+    /**
+     * <p>The descriptive message for the state change reason.</p>
+     */
+    inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
 
     /**
      * <p>The descriptive message for the state change reason.</p>

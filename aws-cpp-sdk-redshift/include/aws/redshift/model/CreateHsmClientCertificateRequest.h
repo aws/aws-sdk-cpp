@@ -61,6 +61,12 @@ namespace Model
      * <p>The identifier to be assigned to the new HSM client certificate that the
      * cluster will use to connect to the HSM to use the database encryption keys.</p>
      */
+    inline bool HsmClientCertificateIdentifierHasBeenSet() const { return m_hsmClientCertificateIdentifierHasBeenSet; }
+
+    /**
+     * <p>The identifier to be assigned to the new HSM client certificate that the
+     * cluster will use to connect to the HSM to use the database encryption keys.</p>
+     */
     inline void SetHsmClientCertificateIdentifier(const Aws::String& value) { m_hsmClientCertificateIdentifierHasBeenSet = true; m_hsmClientCertificateIdentifier = value; }
 
     /**
@@ -98,6 +104,11 @@ namespace Model
      * <p>A list of tag instances.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>A list of tag instances.</p>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
      * <p>A list of tag instances.</p>

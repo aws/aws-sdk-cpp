@@ -59,6 +59,11 @@ namespace Model
     /**
      * <p>The resource type.</p>
      */
+    inline bool ResourceTypesHasBeenSet() const { return m_resourceTypesHasBeenSet; }
+
+    /**
+     * <p>The resource type.</p>
+     */
     inline void SetResourceTypes(const Aws::Vector<ResourceTypeValues>& value) { m_resourceTypesHasBeenSet = true; m_resourceTypes = value; }
 
     /**
@@ -95,6 +100,11 @@ namespace Model
     /**
      * <p>The single tag that identifies targeted resources for this policy.</p>
      */
+    inline bool TargetTagsHasBeenSet() const { return m_targetTagsHasBeenSet; }
+
+    /**
+     * <p>The single tag that identifies targeted resources for this policy.</p>
+     */
     inline void SetTargetTags(const Aws::Vector<Tag>& value) { m_targetTagsHasBeenSet = true; m_targetTags = value; }
 
     /**
@@ -127,6 +137,11 @@ namespace Model
      * <p>The schedule of policy-defined actions.</p>
      */
     inline const Aws::Vector<Schedule>& GetSchedules() const{ return m_schedules; }
+
+    /**
+     * <p>The schedule of policy-defined actions.</p>
+     */
+    inline bool SchedulesHasBeenSet() const { return m_schedulesHasBeenSet; }
 
     /**
      * <p>The schedule of policy-defined actions.</p>

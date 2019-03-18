@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The list of abort criteria to define rules to abort the job.</p>
      */
+    inline bool CriteriaListHasBeenSet() const { return m_criteriaListHasBeenSet; }
+
+    /**
+     * <p>The list of abort criteria to define rules to abort the job.</p>
+     */
     inline void SetCriteriaList(const Aws::Vector<AbortCriteria>& value) { m_criteriaListHasBeenSet = true; m_criteriaList = value; }
 
     /**

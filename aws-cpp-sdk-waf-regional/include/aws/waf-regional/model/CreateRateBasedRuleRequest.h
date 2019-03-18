@@ -55,6 +55,12 @@ namespace Model
      * <p>A friendly name or description of the <a>RateBasedRule</a>. You can't change
      * the name of a <code>RateBasedRule</code> after you create it.</p>
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>A friendly name or description of the <a>RateBasedRule</a>. You can't change
+     * the name of a <code>RateBasedRule</code> after you create it.</p>
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
@@ -95,6 +101,14 @@ namespace Model
      * the metric after you create the <code>RateBasedRule</code>.</p>
      */
     inline const Aws::String& GetMetricName() const{ return m_metricName; }
+
+    /**
+     * <p>A friendly name or description for the metrics for this
+     * <code>RateBasedRule</code>. The name can contain only alphanumeric characters
+     * (A-Z, a-z, 0-9); the name can't contain whitespace. You can't change the name of
+     * the metric after you create the <code>RateBasedRule</code>.</p>
+     */
+    inline bool MetricNameHasBeenSet() const { return m_metricNameHasBeenSet; }
 
     /**
      * <p>A friendly name or description for the metrics for this
@@ -161,6 +175,15 @@ namespace Model
      * that arrive from the same IP address are subject to the <code>RateLimit</code>
      * that is specified in the <code>RateBasedRule</code>.</p>
      */
+    inline bool RateKeyHasBeenSet() const { return m_rateKeyHasBeenSet; }
+
+    /**
+     * <p>The field that AWS WAF uses to determine if requests are likely arriving from
+     * a single source and thus subject to rate monitoring. The only valid value for
+     * <code>RateKey</code> is <code>IP</code>. <code>IP</code> indicates that requests
+     * that arrive from the same IP address are subject to the <code>RateLimit</code>
+     * that is specified in the <code>RateBasedRule</code>.</p>
+     */
     inline void SetRateKey(const RateKey& value) { m_rateKeyHasBeenSet = true; m_rateKey = value; }
 
     /**
@@ -207,6 +230,15 @@ namespace Model
      * predicates specified in the rule are also met, AWS WAF triggers the action that
      * is specified for this rule.</p>
      */
+    inline bool RateLimitHasBeenSet() const { return m_rateLimitHasBeenSet; }
+
+    /**
+     * <p>The maximum number of requests, which have an identical value in the field
+     * that is specified by <code>RateKey</code>, allowed in a five-minute period. If
+     * the number of requests exceeds the <code>RateLimit</code> and the other
+     * predicates specified in the rule are also met, AWS WAF triggers the action that
+     * is specified for this rule.</p>
+     */
     inline void SetRateLimit(long long value) { m_rateLimitHasBeenSet = true; m_rateLimit = value; }
 
     /**
@@ -226,6 +258,14 @@ namespace Model
      * <a>GetChangeTokenStatus</a>.</p>
      */
     inline const Aws::String& GetChangeToken() const{ return m_changeToken; }
+
+    /**
+     * <p>The <code>ChangeToken</code> that you used to submit the
+     * <code>CreateRateBasedRule</code> request. You can also use this value to query
+     * the status of the request. For more information, see
+     * <a>GetChangeTokenStatus</a>.</p>
+     */
+    inline bool ChangeTokenHasBeenSet() const { return m_changeTokenHasBeenSet; }
 
     /**
      * <p>The <code>ChangeToken</code> that you used to submit the

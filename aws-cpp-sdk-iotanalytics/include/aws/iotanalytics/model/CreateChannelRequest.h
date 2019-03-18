@@ -53,6 +53,11 @@ namespace Model
     /**
      * <p>The name of the channel.</p>
      */
+    inline bool ChannelNameHasBeenSet() const { return m_channelNameHasBeenSet; }
+
+    /**
+     * <p>The name of the channel.</p>
+     */
     inline void SetChannelName(const Aws::String& value) { m_channelNameHasBeenSet = true; m_channelName = value; }
 
     /**
@@ -89,6 +94,11 @@ namespace Model
     /**
      * <p>How long, in days, message data is kept for the channel.</p>
      */
+    inline bool RetentionPeriodHasBeenSet() const { return m_retentionPeriodHasBeenSet; }
+
+    /**
+     * <p>How long, in days, message data is kept for the channel.</p>
+     */
     inline void SetRetentionPeriod(const RetentionPeriod& value) { m_retentionPeriodHasBeenSet = true; m_retentionPeriod = value; }
 
     /**
@@ -111,6 +121,11 @@ namespace Model
      * <p>Metadata which can be used to manage the channel.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>Metadata which can be used to manage the channel.</p>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
      * <p>Metadata which can be used to manage the channel.</p>

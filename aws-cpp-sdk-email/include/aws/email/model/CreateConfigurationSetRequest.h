@@ -61,6 +61,11 @@ namespace Model
     /**
      * <p>A data structure that contains the name of the configuration set.</p>
      */
+    inline bool ConfigurationSetHasBeenSet() const { return m_configurationSetHasBeenSet; }
+
+    /**
+     * <p>A data structure that contains the name of the configuration set.</p>
+     */
     inline void SetConfigurationSet(const ConfigurationSet& value) { m_configurationSetHasBeenSet = true; m_configurationSet = value; }
 
     /**

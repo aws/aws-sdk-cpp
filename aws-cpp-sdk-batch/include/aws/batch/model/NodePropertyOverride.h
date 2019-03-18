@@ -67,6 +67,16 @@ namespace Model
      * (<code>n:</code>), then the highest possible node index is used to end the
      * range.</p>
      */
+    inline bool TargetNodesHasBeenSet() const { return m_targetNodesHasBeenSet; }
+
+    /**
+     * <p>The range of nodes, using node index values, with which to override. A range
+     * of <code>0:3</code> indicates nodes with index values of <code>0</code> through
+     * <code>3</code>. If the starting range value is omitted (<code>:n</code>), then
+     * <code>0</code> is used to start the range. If the ending range value is omitted
+     * (<code>n:</code>), then the highest possible node index is used to end the
+     * range.</p>
+     */
     inline void SetTargetNodes(const Aws::String& value) { m_targetNodesHasBeenSet = true; m_targetNodes = value; }
 
     /**
@@ -124,6 +134,11 @@ namespace Model
      * <p>The overrides that should be sent to a node range.</p>
      */
     inline const ContainerOverrides& GetContainerOverrides() const{ return m_containerOverrides; }
+
+    /**
+     * <p>The overrides that should be sent to a node range.</p>
+     */
+    inline bool ContainerOverridesHasBeenSet() const { return m_containerOverridesHasBeenSet; }
 
     /**
      * <p>The overrides that should be sent to a node range.</p>

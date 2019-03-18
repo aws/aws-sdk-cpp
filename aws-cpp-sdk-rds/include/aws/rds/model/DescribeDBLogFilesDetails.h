@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p>The name of the log file for the specified DB instance.</p>
      */
+    inline bool LogFileNameHasBeenSet() const { return m_logFileNameHasBeenSet; }
+
+    /**
+     * <p>The name of the log file for the specified DB instance.</p>
+     */
     inline void SetLogFileName(const Aws::String& value) { m_logFileNameHasBeenSet = true; m_logFileName = value; }
 
     /**
@@ -94,6 +99,11 @@ namespace Model
     /**
      * <p>A POSIX timestamp when the last log entry was written.</p>
      */
+    inline bool LastWrittenHasBeenSet() const { return m_lastWrittenHasBeenSet; }
+
+    /**
+     * <p>A POSIX timestamp when the last log entry was written.</p>
+     */
     inline void SetLastWritten(long long value) { m_lastWrittenHasBeenSet = true; m_lastWritten = value; }
 
     /**
@@ -106,6 +116,11 @@ namespace Model
      * <p>The size, in bytes, of the log file for the specified DB instance.</p>
      */
     inline long long GetSize() const{ return m_size; }
+
+    /**
+     * <p>The size, in bytes, of the log file for the specified DB instance.</p>
+     */
+    inline bool SizeHasBeenSet() const { return m_sizeHasBeenSet; }
 
     /**
      * <p>The size, in bytes, of the log file for the specified DB instance.</p>

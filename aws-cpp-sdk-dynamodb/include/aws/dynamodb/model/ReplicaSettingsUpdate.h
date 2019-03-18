@@ -59,6 +59,11 @@ namespace Model
     /**
      * <p>The region of the replica to be added.</p>
      */
+    inline bool RegionNameHasBeenSet() const { return m_regionNameHasBeenSet; }
+
+    /**
+     * <p>The region of the replica to be added.</p>
+     */
     inline void SetRegionName(const Aws::String& value) { m_regionNameHasBeenSet = true; m_regionName = value; }
 
     /**
@@ -105,6 +110,16 @@ namespace Model
      * Read and Write Requirements</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      */
+    inline bool ReplicaProvisionedReadCapacityUnitsHasBeenSet() const { return m_replicaProvisionedReadCapacityUnitsHasBeenSet; }
+
+    /**
+     * <p>The maximum number of strongly consistent reads consumed per second before
+     * DynamoDB returns a <code>ThrottlingException</code>. For more information, see
+     * <a
+     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#ProvisionedThroughput">Specifying
+     * Read and Write Requirements</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     * </p>
+     */
     inline void SetReplicaProvisionedReadCapacityUnits(long long value) { m_replicaProvisionedReadCapacityUnitsHasBeenSet = true; m_replicaProvisionedReadCapacityUnits = value; }
 
     /**
@@ -123,6 +138,12 @@ namespace Model
      * units.</p>
      */
     inline const AutoScalingSettingsUpdate& GetReplicaProvisionedReadCapacityAutoScalingSettingsUpdate() const{ return m_replicaProvisionedReadCapacityAutoScalingSettingsUpdate; }
+
+    /**
+     * <p>Autoscaling settings for managing a global table replica's read capacity
+     * units.</p>
+     */
+    inline bool ReplicaProvisionedReadCapacityAutoScalingSettingsUpdateHasBeenSet() const { return m_replicaProvisionedReadCapacityAutoScalingSettingsUpdateHasBeenSet; }
 
     /**
      * <p>Autoscaling settings for managing a global table replica's read capacity
@@ -154,6 +175,12 @@ namespace Model
      * will be modified.</p>
      */
     inline const Aws::Vector<ReplicaGlobalSecondaryIndexSettingsUpdate>& GetReplicaGlobalSecondaryIndexSettingsUpdate() const{ return m_replicaGlobalSecondaryIndexSettingsUpdate; }
+
+    /**
+     * <p>Represents the settings of a global secondary index for a global table that
+     * will be modified.</p>
+     */
+    inline bool ReplicaGlobalSecondaryIndexSettingsUpdateHasBeenSet() const { return m_replicaGlobalSecondaryIndexSettingsUpdateHasBeenSet; }
 
     /**
      * <p>Represents the settings of a global secondary index for a global table that

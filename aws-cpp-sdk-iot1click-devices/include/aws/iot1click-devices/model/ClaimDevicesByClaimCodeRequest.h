@@ -52,6 +52,12 @@ namespace Model
      * <p>The claim code, starting with "C-", as provided by the device
      * manufacturer.</p>
      */
+    inline bool ClaimCodeHasBeenSet() const { return m_claimCodeHasBeenSet; }
+
+    /**
+     * <p>The claim code, starting with "C-", as provided by the device
+     * manufacturer.</p>
+     */
     inline void SetClaimCode(const Aws::String& value) { m_claimCodeHasBeenSet = true; m_claimCode = value; }
 
     /**

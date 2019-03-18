@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The minimum integer value allowed.</p>
      */
+    inline bool MinValueHasBeenSet() const { return m_minValueHasBeenSet; }
+
+    /**
+     * <p>The minimum integer value allowed.</p>
+     */
     inline void SetMinValue(const Aws::String& value) { m_minValueHasBeenSet = true; m_minValue = value; }
 
     /**
@@ -88,6 +93,11 @@ namespace Model
      * <p>The maximum integer value allowed.</p>
      */
     inline const Aws::String& GetMaxValue() const{ return m_maxValue; }
+
+    /**
+     * <p>The maximum integer value allowed.</p>
+     */
+    inline bool MaxValueHasBeenSet() const { return m_maxValueHasBeenSet; }
 
     /**
      * <p>The maximum integer value allowed.</p>

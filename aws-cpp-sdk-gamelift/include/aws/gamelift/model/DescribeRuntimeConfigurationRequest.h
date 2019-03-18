@@ -55,6 +55,11 @@ namespace Model
     /**
      * <p>Unique identifier for a fleet to get the run-time configuration for.</p>
      */
+    inline bool FleetIdHasBeenSet() const { return m_fleetIdHasBeenSet; }
+
+    /**
+     * <p>Unique identifier for a fleet to get the run-time configuration for.</p>
+     */
     inline void SetFleetId(const Aws::String& value) { m_fleetIdHasBeenSet = true; m_fleetId = value; }
 
     /**

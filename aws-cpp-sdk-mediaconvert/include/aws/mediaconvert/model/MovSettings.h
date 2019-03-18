@@ -55,6 +55,9 @@ namespace Model
     inline const MovClapAtom& GetClapAtom() const{ return m_clapAtom; }
 
     
+    inline bool ClapAtomHasBeenSet() const { return m_clapAtomHasBeenSet; }
+
+    
     inline void SetClapAtom(const MovClapAtom& value) { m_clapAtomHasBeenSet = true; m_clapAtom = value; }
 
     
@@ -69,6 +72,9 @@ namespace Model
 
     
     inline const MovCslgAtom& GetCslgAtom() const{ return m_cslgAtom; }
+
+    
+    inline bool CslgAtomHasBeenSet() const { return m_cslgAtomHasBeenSet; }
 
     
     inline void SetCslgAtom(const MovCslgAtom& value) { m_cslgAtomHasBeenSet = true; m_cslgAtom = value; }
@@ -87,6 +93,9 @@ namespace Model
     inline const MovMpeg2FourCCControl& GetMpeg2FourCCControl() const{ return m_mpeg2FourCCControl; }
 
     
+    inline bool Mpeg2FourCCControlHasBeenSet() const { return m_mpeg2FourCCControlHasBeenSet; }
+
+    
     inline void SetMpeg2FourCCControl(const MovMpeg2FourCCControl& value) { m_mpeg2FourCCControlHasBeenSet = true; m_mpeg2FourCCControl = value; }
 
     
@@ -103,6 +112,9 @@ namespace Model
     inline const MovPaddingControl& GetPaddingControl() const{ return m_paddingControl; }
 
     
+    inline bool PaddingControlHasBeenSet() const { return m_paddingControlHasBeenSet; }
+
+    
     inline void SetPaddingControl(const MovPaddingControl& value) { m_paddingControlHasBeenSet = true; m_paddingControl = value; }
 
     
@@ -117,6 +129,9 @@ namespace Model
 
     
     inline const MovReference& GetReference() const{ return m_reference; }
+
+    
+    inline bool ReferenceHasBeenSet() const { return m_referenceHasBeenSet; }
 
     
     inline void SetReference(const MovReference& value) { m_referenceHasBeenSet = true; m_reference = value; }

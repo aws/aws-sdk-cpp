@@ -56,6 +56,12 @@ namespace Model
      * <p>The number of AWS resources that were analyzed by the Trusted Advisor
      * check.</p>
      */
+    inline bool ResourcesProcessedHasBeenSet() const { return m_resourcesProcessedHasBeenSet; }
+
+    /**
+     * <p>The number of AWS resources that were analyzed by the Trusted Advisor
+     * check.</p>
+     */
     inline void SetResourcesProcessed(long long value) { m_resourcesProcessedHasBeenSet = true; m_resourcesProcessed = value; }
 
     /**
@@ -70,6 +76,12 @@ namespace Model
      * check.</p>
      */
     inline long long GetResourcesFlagged() const{ return m_resourcesFlagged; }
+
+    /**
+     * <p>The number of AWS resources that were flagged (listed) by the Trusted Advisor
+     * check.</p>
+     */
+    inline bool ResourcesFlaggedHasBeenSet() const { return m_resourcesFlaggedHasBeenSet; }
 
     /**
      * <p>The number of AWS resources that were flagged (listed) by the Trusted Advisor
@@ -94,6 +106,12 @@ namespace Model
      * <p>The number of AWS resources ignored by Trusted Advisor because information
      * was unavailable.</p>
      */
+    inline bool ResourcesIgnoredHasBeenSet() const { return m_resourcesIgnoredHasBeenSet; }
+
+    /**
+     * <p>The number of AWS resources ignored by Trusted Advisor because information
+     * was unavailable.</p>
+     */
     inline void SetResourcesIgnored(long long value) { m_resourcesIgnoredHasBeenSet = true; m_resourcesIgnored = value; }
 
     /**
@@ -108,6 +126,12 @@ namespace Model
      * marked as suppressed by the user.</p>
      */
     inline long long GetResourcesSuppressed() const{ return m_resourcesSuppressed; }
+
+    /**
+     * <p>The number of AWS resources ignored by Trusted Advisor because they were
+     * marked as suppressed by the user.</p>
+     */
+    inline bool ResourcesSuppressedHasBeenSet() const { return m_resourcesSuppressedHasBeenSet; }
 
     /**
      * <p>The number of AWS resources ignored by Trusted Advisor because they were

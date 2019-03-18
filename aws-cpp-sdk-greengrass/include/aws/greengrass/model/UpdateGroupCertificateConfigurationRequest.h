@@ -50,6 +50,11 @@ namespace Model
     /**
      * The amount of time remaining before the certificate expires, in milliseconds.
      */
+    inline bool CertificateExpiryInMillisecondsHasBeenSet() const { return m_certificateExpiryInMillisecondsHasBeenSet; }
+
+    /**
+     * The amount of time remaining before the certificate expires, in milliseconds.
+     */
     inline void SetCertificateExpiryInMilliseconds(const Aws::String& value) { m_certificateExpiryInMillisecondsHasBeenSet = true; m_certificateExpiryInMilliseconds = value; }
 
     /**
@@ -82,6 +87,11 @@ namespace Model
      * The ID of the Greengrass group.
      */
     inline const Aws::String& GetGroupId() const{ return m_groupId; }
+
+    /**
+     * The ID of the Greengrass group.
+     */
+    inline bool GroupIdHasBeenSet() const { return m_groupIdHasBeenSet; }
 
     /**
      * The ID of the Greengrass group.

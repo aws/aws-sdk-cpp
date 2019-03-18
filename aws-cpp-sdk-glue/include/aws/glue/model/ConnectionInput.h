@@ -61,6 +61,11 @@ namespace Model
     /**
      * <p>The name of the connection.</p>
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>The name of the connection.</p>
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
@@ -93,6 +98,11 @@ namespace Model
      * <p>The description of the connection.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
+
+    /**
+     * <p>The description of the connection.</p>
+     */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
 
     /**
      * <p>The description of the connection.</p>
@@ -135,6 +145,12 @@ namespace Model
      * <p>The type of the connection. Currently, only JDBC is supported; SFTP is not
      * supported.</p>
      */
+    inline bool ConnectionTypeHasBeenSet() const { return m_connectionTypeHasBeenSet; }
+
+    /**
+     * <p>The type of the connection. Currently, only JDBC is supported; SFTP is not
+     * supported.</p>
+     */
     inline void SetConnectionType(const ConnectionType& value) { m_connectionTypeHasBeenSet = true; m_connectionType = value; }
 
     /**
@@ -160,6 +176,11 @@ namespace Model
      * <p>A list of criteria that can be used in selecting this connection.</p>
      */
     inline const Aws::Vector<Aws::String>& GetMatchCriteria() const{ return m_matchCriteria; }
+
+    /**
+     * <p>A list of criteria that can be used in selecting this connection.</p>
+     */
+    inline bool MatchCriteriaHasBeenSet() const { return m_matchCriteriaHasBeenSet; }
 
     /**
      * <p>A list of criteria that can be used in selecting this connection.</p>
@@ -201,6 +222,11 @@ namespace Model
      * <p>These key-value pairs define parameters for the connection.</p>
      */
     inline const Aws::Map<ConnectionPropertyKey, Aws::String>& GetConnectionProperties() const{ return m_connectionProperties; }
+
+    /**
+     * <p>These key-value pairs define parameters for the connection.</p>
+     */
+    inline bool ConnectionPropertiesHasBeenSet() const { return m_connectionPropertiesHasBeenSet; }
 
     /**
      * <p>These key-value pairs define parameters for the connection.</p>
@@ -259,6 +285,13 @@ namespace Model
      * connection.</p>
      */
     inline const PhysicalConnectionRequirements& GetPhysicalConnectionRequirements() const{ return m_physicalConnectionRequirements; }
+
+    /**
+     * <p>A map of physical connection requirements, such as virtual private cloud
+     * (VPC) and <code>SecurityGroup</code>, that are needed to successfully make this
+     * connection.</p>
+     */
+    inline bool PhysicalConnectionRequirementsHasBeenSet() const { return m_physicalConnectionRequirementsHasBeenSet; }
 
     /**
      * <p>A map of physical connection requirements, such as virtual private cloud

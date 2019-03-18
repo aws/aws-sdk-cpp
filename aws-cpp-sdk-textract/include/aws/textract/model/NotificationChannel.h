@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The Amazon SNS topic that Amazon Textract posts the completion status to.</p>
      */
+    inline bool SNSTopicArnHasBeenSet() const { return m_sNSTopicArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon SNS topic that Amazon Textract posts the completion status to.</p>
+     */
     inline void SetSNSTopicArn(const Aws::String& value) { m_sNSTopicArnHasBeenSet = true; m_sNSTopicArn = value; }
 
     /**
@@ -90,6 +95,12 @@ namespace Model
      * publishing permissions to the Amazon SNS topic. </p>
      */
     inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of an IAM role that gives Amazon Textract
+     * publishing permissions to the Amazon SNS topic. </p>
+     */
+    inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of an IAM role that gives Amazon Textract

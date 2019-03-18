@@ -59,6 +59,12 @@ namespace Model
      * <p>A string representing the node identifier for the DC1 Reserved Node to be
      * exchanged.</p>
      */
+    inline bool ReservedNodeIdHasBeenSet() const { return m_reservedNodeIdHasBeenSet; }
+
+    /**
+     * <p>A string representing the node identifier for the DC1 Reserved Node to be
+     * exchanged.</p>
+     */
     inline void SetReservedNodeId(const Aws::String& value) { m_reservedNodeIdHasBeenSet = true; m_reservedNodeId = value; }
 
     /**
@@ -102,6 +108,12 @@ namespace Model
      * <p>An integer setting the maximum number of ReservedNodeOfferings to
      * retrieve.</p>
      */
+    inline bool MaxRecordsHasBeenSet() const { return m_maxRecordsHasBeenSet; }
+
+    /**
+     * <p>An integer setting the maximum number of ReservedNodeOfferings to
+     * retrieve.</p>
+     */
     inline void SetMaxRecords(int value) { m_maxRecordsHasBeenSet = true; m_maxRecords = value; }
 
     /**
@@ -116,6 +128,12 @@ namespace Model
      * ReservedNodeOfferings.</p>
      */
     inline const Aws::String& GetMarker() const{ return m_marker; }
+
+    /**
+     * <p>A value that indicates the starting point for the next set of
+     * ReservedNodeOfferings.</p>
+     */
+    inline bool MarkerHasBeenSet() const { return m_markerHasBeenSet; }
 
     /**
      * <p>A value that indicates the starting point for the next set of

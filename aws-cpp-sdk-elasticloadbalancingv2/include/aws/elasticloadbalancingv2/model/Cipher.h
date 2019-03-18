@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The name of the cipher.</p>
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>The name of the cipher.</p>
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
@@ -89,6 +94,11 @@ namespace Model
      * <p>The priority of the cipher.</p>
      */
     inline int GetPriority() const{ return m_priority; }
+
+    /**
+     * <p>The priority of the cipher.</p>
+     */
+    inline bool PriorityHasBeenSet() const { return m_priorityHasBeenSet; }
 
     /**
      * <p>The priority of the cipher.</p>

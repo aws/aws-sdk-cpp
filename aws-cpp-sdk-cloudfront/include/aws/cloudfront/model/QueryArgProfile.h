@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>Query argument for field-level encryption query argument-profile mapping.</p>
      */
+    inline bool QueryArgHasBeenSet() const { return m_queryArgHasBeenSet; }
+
+    /**
+     * <p>Query argument for field-level encryption query argument-profile mapping.</p>
+     */
     inline void SetQueryArg(const Aws::String& value) { m_queryArgHasBeenSet = true; m_queryArg = value; }
 
     /**
@@ -89,6 +94,12 @@ namespace Model
      * mapping</p>
      */
     inline const Aws::String& GetProfileId() const{ return m_profileId; }
+
+    /**
+     * <p>ID of profile to use for field-level encryption query argument-profile
+     * mapping</p>
+     */
+    inline bool ProfileIdHasBeenSet() const { return m_profileIdHasBeenSet; }
 
     /**
      * <p>ID of profile to use for field-level encryption query argument-profile

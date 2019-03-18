@@ -63,6 +63,12 @@ namespace Model
      * <p>Describes whether the application uses the default parallelism for the
      * Kinesis Data Analytics service.</p>
      */
+    inline bool ConfigurationTypeHasBeenSet() const { return m_configurationTypeHasBeenSet; }
+
+    /**
+     * <p>Describes whether the application uses the default parallelism for the
+     * Kinesis Data Analytics service.</p>
+     */
     inline void SetConfigurationType(const ConfigurationType& value) { m_configurationTypeHasBeenSet = true; m_configurationType = value; }
 
     /**
@@ -100,6 +106,15 @@ namespace Model
      * <a>ParallelismConfiguration$AutoScalingEnabled</a> is set to
      * <code>true</code>.</p>
      */
+    inline bool ParallelismHasBeenSet() const { return m_parallelismHasBeenSet; }
+
+    /**
+     * <p>Describes the initial number of parallel tasks that a Java-based Kinesis Data
+     * Analytics application can perform. The Kinesis Data Analytics service can
+     * increase this number automatically if
+     * <a>ParallelismConfiguration$AutoScalingEnabled</a> is set to
+     * <code>true</code>.</p>
+     */
     inline void SetParallelism(int value) { m_parallelismHasBeenSet = true; m_parallelism = value; }
 
     /**
@@ -128,6 +143,15 @@ namespace Model
      * href="http://aws.amazon.com/kinesis/data-analytics/pricing/">Amazon Kinesis Data
      * Analytics Pricing</a>.</p>
      */
+    inline bool ParallelismPerKPUHasBeenSet() const { return m_parallelismPerKPUHasBeenSet; }
+
+    /**
+     * <p>Describes the number of parallel tasks that a Java-based Kinesis Data
+     * Analytics application can perform per Kinesis Processing Unit (KPU) used by the
+     * application. For more information about KPUs, see <a
+     * href="http://aws.amazon.com/kinesis/data-analytics/pricing/">Amazon Kinesis Data
+     * Analytics Pricing</a>.</p>
+     */
     inline void SetParallelismPerKPU(int value) { m_parallelismPerKPUHasBeenSet = true; m_parallelismPerKPU = value; }
 
     /**
@@ -145,6 +169,12 @@ namespace Model
      * parallelism of the application in response to increased throughput.</p>
      */
     inline bool GetAutoScalingEnabled() const{ return m_autoScalingEnabled; }
+
+    /**
+     * <p>Describes whether the Kinesis Data Analytics service can increase the
+     * parallelism of the application in response to increased throughput.</p>
+     */
+    inline bool AutoScalingEnabledHasBeenSet() const { return m_autoScalingEnabledHasBeenSet; }
 
     /**
      * <p>Describes whether the Kinesis Data Analytics service can increase the

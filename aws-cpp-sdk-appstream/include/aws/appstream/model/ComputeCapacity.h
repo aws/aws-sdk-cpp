@@ -53,6 +53,11 @@ namespace Model
     /**
      * <p>The desired number of streaming instances.</p>
      */
+    inline bool DesiredInstancesHasBeenSet() const { return m_desiredInstancesHasBeenSet; }
+
+    /**
+     * <p>The desired number of streaming instances.</p>
+     */
     inline void SetDesiredInstances(int value) { m_desiredInstancesHasBeenSet = true; m_desiredInstances = value; }
 
     /**

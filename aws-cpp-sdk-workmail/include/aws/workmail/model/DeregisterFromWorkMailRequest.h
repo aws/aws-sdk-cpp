@@ -54,6 +54,12 @@ namespace Model
      * <p>The identifier for the organization under which the Amazon WorkMail entity
      * exists.</p>
      */
+    inline bool OrganizationIdHasBeenSet() const { return m_organizationIdHasBeenSet; }
+
+    /**
+     * <p>The identifier for the organization under which the Amazon WorkMail entity
+     * exists.</p>
+     */
     inline void SetOrganizationId(const Aws::String& value) { m_organizationIdHasBeenSet = true; m_organizationId = value; }
 
     /**
@@ -91,6 +97,11 @@ namespace Model
      * <p>The identifier for the entity to be updated.</p>
      */
     inline const Aws::String& GetEntityId() const{ return m_entityId; }
+
+    /**
+     * <p>The identifier for the entity to be updated.</p>
+     */
+    inline bool EntityIdHasBeenSet() const { return m_entityIdHasBeenSet; }
 
     /**
      * <p>The identifier for the entity to be updated.</p>

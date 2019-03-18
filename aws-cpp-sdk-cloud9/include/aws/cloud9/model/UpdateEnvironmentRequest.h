@@ -52,6 +52,11 @@ namespace Model
     /**
      * <p>The ID of the environment to change settings.</p>
      */
+    inline bool EnvironmentIdHasBeenSet() const { return m_environmentIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the environment to change settings.</p>
+     */
     inline void SetEnvironmentId(const Aws::String& value) { m_environmentIdHasBeenSet = true; m_environmentId = value; }
 
     /**
@@ -88,6 +93,11 @@ namespace Model
     /**
      * <p>A replacement name for the environment.</p>
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>A replacement name for the environment.</p>
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
@@ -120,6 +130,11 @@ namespace Model
      * <p>Any new or replacement description for the environment.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
+
+    /**
+     * <p>Any new or replacement description for the environment.</p>
+     */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
 
     /**
      * <p>Any new or replacement description for the environment.</p>

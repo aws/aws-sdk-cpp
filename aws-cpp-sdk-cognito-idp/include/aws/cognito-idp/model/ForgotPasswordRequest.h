@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p>The ID of the client associated with the user pool.</p>
      */
+    inline bool ClientIdHasBeenSet() const { return m_clientIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the client associated with the user pool.</p>
+     */
     inline void SetClientId(const Aws::String& value) { m_clientIdHasBeenSet = true; m_clientId = value; }
 
     /**
@@ -91,6 +96,12 @@ namespace Model
      * key of a user pool client and username plus the client ID in the message.</p>
      */
     inline const Aws::String& GetSecretHash() const{ return m_secretHash; }
+
+    /**
+     * <p>A keyed-hash message authentication code (HMAC) calculated using the secret
+     * key of a user pool client and username plus the client ID in the message.</p>
+     */
+    inline bool SecretHashHasBeenSet() const { return m_secretHashHasBeenSet; }
 
     /**
      * <p>A keyed-hash message authentication code (HMAC) calculated using the secret
@@ -141,6 +152,13 @@ namespace Model
      * location used for evaluating the risk of an unexpected event by Amazon Cognito
      * advanced security.</p>
      */
+    inline bool UserContextDataHasBeenSet() const { return m_userContextDataHasBeenSet; }
+
+    /**
+     * <p>Contextual data such as the user's device fingerprint, IP address, or
+     * location used for evaluating the risk of an unexpected event by Amazon Cognito
+     * advanced security.</p>
+     */
     inline void SetUserContextData(const UserContextDataType& value) { m_userContextDataHasBeenSet = true; m_userContextData = value; }
 
     /**
@@ -170,6 +188,12 @@ namespace Model
      * forgotten password.</p>
      */
     inline const Aws::String& GetUsername() const{ return m_username; }
+
+    /**
+     * <p>The user name of the user for whom you want to enter a code to reset a
+     * forgotten password.</p>
+     */
+    inline bool UsernameHasBeenSet() const { return m_usernameHasBeenSet; }
 
     /**
      * <p>The user name of the user for whom you want to enter a code to reset a
@@ -213,6 +237,12 @@ namespace Model
      * <code>ForgotPassword</code> calls.</p>
      */
     inline const AnalyticsMetadataType& GetAnalyticsMetadata() const{ return m_analyticsMetadata; }
+
+    /**
+     * <p>The Amazon Pinpoint analytics metadata for collecting metrics for
+     * <code>ForgotPassword</code> calls.</p>
+     */
+    inline bool AnalyticsMetadataHasBeenSet() const { return m_analyticsMetadataHasBeenSet; }
 
     /**
      * <p>The Amazon Pinpoint analytics metadata for collecting metrics for

@@ -58,6 +58,12 @@ namespace Model
      * <p>The ID for the AWS account that the user is in. Currently, you use the ID for
      * the AWS account that contains your Amazon QuickSight account.</p>
      */
+    inline bool AwsAccountIdHasBeenSet() const { return m_awsAccountIdHasBeenSet; }
+
+    /**
+     * <p>The ID for the AWS account that the user is in. Currently, you use the ID for
+     * the AWS account that contains your Amazon QuickSight account.</p>
+     */
     inline void SetAwsAccountId(const Aws::String& value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId = value; }
 
     /**
@@ -99,6 +105,11 @@ namespace Model
     /**
      * <p>A pagination token that can be used in a subsequent request.</p>
      */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
+
+    /**
+     * <p>A pagination token that can be used in a subsequent request.</p>
+     */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
     /**
@@ -135,6 +146,11 @@ namespace Model
     /**
      * <p>The maximum number of results to return from this request.</p>
      */
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
+
+    /**
+     * <p>The maximum number of results to return from this request.</p>
+     */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
@@ -147,6 +163,11 @@ namespace Model
      * <p>The namespace. Currently, you should set this to <code>default</code>.</p>
      */
     inline const Aws::String& GetNamespace() const{ return m_namespace; }
+
+    /**
+     * <p>The namespace. Currently, you should set this to <code>default</code>.</p>
+     */
+    inline bool NamespaceHasBeenSet() const { return m_namespaceHasBeenSet; }
 
     /**
      * <p>The namespace. Currently, you should set this to <code>default</code>.</p>

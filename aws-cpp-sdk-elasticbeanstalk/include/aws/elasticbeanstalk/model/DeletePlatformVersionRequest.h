@@ -54,6 +54,11 @@ namespace Model
     /**
      * <p>The ARN of the version of the custom platform.</p>
      */
+    inline bool PlatformArnHasBeenSet() const { return m_platformArnHasBeenSet; }
+
+    /**
+     * <p>The ARN of the version of the custom platform.</p>
+     */
     inline void SetPlatformArn(const Aws::String& value) { m_platformArnHasBeenSet = true; m_platformArn = value; }
 
     /**

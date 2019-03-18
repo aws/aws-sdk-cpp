@@ -58,6 +58,12 @@ namespace Model
      * <p>A list of EC2 Availability Zones that instances in the restored DB cluster
      * can be created in.</p>
      */
+    inline bool AvailabilityZonesHasBeenSet() const { return m_availabilityZonesHasBeenSet; }
+
+    /**
+     * <p>A list of EC2 Availability Zones that instances in the restored DB cluster
+     * can be created in.</p>
+     */
     inline void SetAvailabilityZones(const Aws::Vector<Aws::String>& value) { m_availabilityZonesHasBeenSet = true; m_availabilityZones = value; }
 
     /**
@@ -109,6 +115,13 @@ namespace Model
      * retained. You must specify a minimum value of 1.</p> <p>Default: 1</p>
      * <p>Constraints:</p> <ul> <li> <p>Must be a value from 1 to 35</p> </li> </ul>
      */
+    inline bool BackupRetentionPeriodHasBeenSet() const { return m_backupRetentionPeriodHasBeenSet; }
+
+    /**
+     * <p>The number of days for which automated backups of the restored DB cluster are
+     * retained. You must specify a minimum value of 1.</p> <p>Default: 1</p>
+     * <p>Constraints:</p> <ul> <li> <p>Must be a value from 1 to 35</p> </li> </ul>
+     */
     inline void SetBackupRetentionPeriod(int value) { m_backupRetentionPeriodHasBeenSet = true; m_backupRetentionPeriod = value; }
 
     /**
@@ -124,6 +137,12 @@ namespace Model
      * the specified CharacterSet.</p>
      */
     inline const Aws::String& GetCharacterSetName() const{ return m_characterSetName; }
+
+    /**
+     * <p>A value that indicates that the restored DB cluster should be associated with
+     * the specified CharacterSet.</p>
+     */
+    inline bool CharacterSetNameHasBeenSet() const { return m_characterSetNameHasBeenSet; }
 
     /**
      * <p>A value that indicates that the restored DB cluster should be associated with
@@ -170,6 +189,11 @@ namespace Model
     /**
      * <p>The database name for the restored DB cluster.</p>
      */
+    inline bool DatabaseNameHasBeenSet() const { return m_databaseNameHasBeenSet; }
+
+    /**
+     * <p>The database name for the restored DB cluster.</p>
+     */
     inline void SetDatabaseName(const Aws::String& value) { m_databaseNameHasBeenSet = true; m_databaseName = value; }
 
     /**
@@ -207,6 +231,16 @@ namespace Model
      * <code>my-cluster1</code> </p>
      */
     inline const Aws::String& GetDBClusterIdentifier() const{ return m_dBClusterIdentifier; }
+
+    /**
+     * <p>The name of the DB cluster to create from the source data in the Amazon S3
+     * bucket. This parameter is isn't case-sensitive.</p> <p>Constraints:</p> <ul>
+     * <li> <p>Must contain from 1 to 63 letters, numbers, or hyphens.</p> </li> <li>
+     * <p>First character must be a letter.</p> </li> <li> <p>Can't end with a hyphen
+     * or contain two consecutive hyphens.</p> </li> </ul> <p>Example:
+     * <code>my-cluster1</code> </p>
+     */
+    inline bool DBClusterIdentifierHasBeenSet() const { return m_dBClusterIdentifierHasBeenSet; }
 
     /**
      * <p>The name of the DB cluster to create from the source data in the Amazon S3
@@ -283,6 +317,14 @@ namespace Model
      * </p> <p>Constraints:</p> <ul> <li> <p>If supplied, must match the name of an
      * existing DBClusterParameterGroup.</p> </li> </ul>
      */
+    inline bool DBClusterParameterGroupNameHasBeenSet() const { return m_dBClusterParameterGroupNameHasBeenSet; }
+
+    /**
+     * <p>The name of the DB cluster parameter group to associate with the restored DB
+     * cluster. If this argument is omitted, <code>default.aurora5.6</code> is used.
+     * </p> <p>Constraints:</p> <ul> <li> <p>If supplied, must match the name of an
+     * existing DBClusterParameterGroup.</p> </li> </ul>
+     */
     inline void SetDBClusterParameterGroupName(const Aws::String& value) { m_dBClusterParameterGroupNameHasBeenSet = true; m_dBClusterParameterGroupName = value; }
 
     /**
@@ -331,6 +373,12 @@ namespace Model
      * cluster.</p>
      */
     inline const Aws::Vector<Aws::String>& GetVpcSecurityGroupIds() const{ return m_vpcSecurityGroupIds; }
+
+    /**
+     * <p>A list of EC2 VPC security groups to associate with the restored DB
+     * cluster.</p>
+     */
+    inline bool VpcSecurityGroupIdsHasBeenSet() const { return m_vpcSecurityGroupIdsHasBeenSet; }
 
     /**
      * <p>A list of EC2 VPC security groups to associate with the restored DB
@@ -387,6 +435,13 @@ namespace Model
      * <p>Constraints: If supplied, must match the name of an existing DBSubnetGroup.
      * </p> <p>Example: <code>mySubnetgroup</code> </p>
      */
+    inline bool DBSubnetGroupNameHasBeenSet() const { return m_dBSubnetGroupNameHasBeenSet; }
+
+    /**
+     * <p>A DB subnet group to associate with the restored DB cluster.</p>
+     * <p>Constraints: If supplied, must match the name of an existing DBSubnetGroup.
+     * </p> <p>Example: <code>mySubnetgroup</code> </p>
+     */
     inline void SetDBSubnetGroupName(const Aws::String& value) { m_dBSubnetGroupNameHasBeenSet = true; m_dBSubnetGroupName = value; }
 
     /**
@@ -435,6 +490,12 @@ namespace Model
      * <p>The name of the database engine to be used for the restored DB cluster.</p>
      * <p>Valid Values: <code>aurora</code>, <code>aurora-postgresql</code> </p>
      */
+    inline bool EngineHasBeenSet() const { return m_engineHasBeenSet; }
+
+    /**
+     * <p>The name of the database engine to be used for the restored DB cluster.</p>
+     * <p>Valid Values: <code>aurora</code>, <code>aurora-postgresql</code> </p>
+     */
     inline void SetEngine(const Aws::String& value) { m_engineHasBeenSet = true; m_engine = value; }
 
     /**
@@ -474,6 +535,13 @@ namespace Model
      * <p>Example: <code>9.6.3</code> </p>
      */
     inline const Aws::String& GetEngineVersion() const{ return m_engineVersion; }
+
+    /**
+     * <p>The version number of the database engine to use.</p> <p> <b>Aurora MySQL</b>
+     * </p> <p>Example: <code>5.6.10a</code> </p> <p> <b>Aurora PostgreSQL</b> </p>
+     * <p>Example: <code>9.6.3</code> </p>
+     */
+    inline bool EngineVersionHasBeenSet() const { return m_engineVersionHasBeenSet; }
 
     /**
      * <p>The version number of the database engine to use.</p> <p> <b>Aurora MySQL</b>
@@ -528,6 +596,12 @@ namespace Model
      * <p>The port number on which the instances in the restored DB cluster accept
      * connections.</p> <p> Default: <code>3306</code> </p>
      */
+    inline bool PortHasBeenSet() const { return m_portHasBeenSet; }
+
+    /**
+     * <p>The port number on which the instances in the restored DB cluster accept
+     * connections.</p> <p> Default: <code>3306</code> </p>
+     */
     inline void SetPort(int value) { m_portHasBeenSet = true; m_port = value; }
 
     /**
@@ -544,6 +618,14 @@ namespace Model
      * word for the chosen database engine.</p> </li> </ul>
      */
     inline const Aws::String& GetMasterUsername() const{ return m_masterUsername; }
+
+    /**
+     * <p>The name of the master user for the restored DB cluster.</p>
+     * <p>Constraints:</p> <ul> <li> <p>Must be 1 to 16 letters or numbers.</p> </li>
+     * <li> <p>First character must be a letter.</p> </li> <li> <p>Can't be a reserved
+     * word for the chosen database engine.</p> </li> </ul>
+     */
+    inline bool MasterUsernameHasBeenSet() const { return m_masterUsernameHasBeenSet; }
 
     /**
      * <p>The name of the master user for the restored DB cluster.</p>
@@ -606,6 +688,13 @@ namespace Model
      * printable ASCII character except "/", """, or "@".</p> <p>Constraints: Must
      * contain from 8 to 41 characters.</p>
      */
+    inline bool MasterUserPasswordHasBeenSet() const { return m_masterUserPasswordHasBeenSet; }
+
+    /**
+     * <p>The password for the master database user. This password can contain any
+     * printable ASCII character except "/", """, or "@".</p> <p>Constraints: Must
+     * contain from 8 to 41 characters.</p>
+     */
     inline void SetMasterUserPassword(const Aws::String& value) { m_masterUserPasswordHasBeenSet = true; m_masterUserPassword = value; }
 
     /**
@@ -651,6 +740,14 @@ namespace Model
      * associated with a DB cluster.</p>
      */
     inline const Aws::String& GetOptionGroupName() const{ return m_optionGroupName; }
+
+    /**
+     * <p>A value that indicates that the restored DB cluster should be associated with
+     * the specified option group.</p> <p>Permanent options can't be removed from an
+     * option group. An option group can't be removed from a DB cluster once it is
+     * associated with a DB cluster.</p>
+     */
+    inline bool OptionGroupNameHasBeenSet() const { return m_optionGroupNameHasBeenSet; }
 
     /**
      * <p>A value that indicates that the restored DB cluster should be associated with
@@ -714,6 +811,20 @@ namespace Model
      * window.</p> </li> <li> <p>Must be at least 30 minutes.</p> </li> </ul>
      */
     inline const Aws::String& GetPreferredBackupWindow() const{ return m_preferredBackupWindow; }
+
+    /**
+     * <p>The daily time range during which automated backups are created if automated
+     * backups are enabled using the <code>BackupRetentionPeriod</code> parameter. </p>
+     * <p>The default is a 30-minute window selected at random from an 8-hour block of
+     * time for each AWS Region. To see the time blocks available, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_UpgradeDBInstance.Maintenance.html#AdjustingTheMaintenanceWindow.Aurora">
+     * Adjusting the Preferred Maintenance Window</a> in the <i>Amazon Aurora User
+     * Guide.</i> </p> <p>Constraints:</p> <ul> <li> <p>Must be in the format
+     * <code>hh24:mi-hh24:mi</code>.</p> </li> <li> <p>Must be in Universal Coordinated
+     * Time (UTC).</p> </li> <li> <p>Must not conflict with the preferred maintenance
+     * window.</p> </li> <li> <p>Must be at least 30 minutes.</p> </li> </ul>
+     */
+    inline bool PreferredBackupWindowHasBeenSet() const { return m_preferredBackupWindowHasBeenSet; }
 
     /**
      * <p>The daily time range during which automated backups are created if automated
@@ -824,6 +935,19 @@ namespace Model
      * Guide.</i> </p> <p>Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun.</p>
      * <p>Constraints: Minimum 30-minute window.</p>
      */
+    inline bool PreferredMaintenanceWindowHasBeenSet() const { return m_preferredMaintenanceWindowHasBeenSet; }
+
+    /**
+     * <p>The weekly time range during which system maintenance can occur, in Universal
+     * Coordinated Time (UTC).</p> <p>Format: <code>ddd:hh24:mi-ddd:hh24:mi</code> </p>
+     * <p>The default is a 30-minute window selected at random from an 8-hour block of
+     * time for each AWS Region, occurring on a random day of the week. To see the time
+     * blocks available, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_UpgradeDBInstance.Maintenance.html#AdjustingTheMaintenanceWindow.Aurora">
+     * Adjusting the Preferred Maintenance Window</a> in the <i>Amazon Aurora User
+     * Guide.</i> </p> <p>Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun.</p>
+     * <p>Constraints: Minimum 30-minute window.</p>
+     */
     inline void SetPreferredMaintenanceWindow(const Aws::String& value) { m_preferredMaintenanceWindowHasBeenSet = true; m_preferredMaintenanceWindow = value; }
 
     /**
@@ -896,6 +1020,9 @@ namespace Model
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
 
     
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
+
+    
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     
@@ -922,6 +1049,11 @@ namespace Model
     /**
      * <p>Specifies whether the restored DB cluster is encrypted.</p>
      */
+    inline bool StorageEncryptedHasBeenSet() const { return m_storageEncryptedHasBeenSet; }
+
+    /**
+     * <p>Specifies whether the restored DB cluster is encrypted.</p>
+     */
     inline void SetStorageEncrypted(bool value) { m_storageEncryptedHasBeenSet = true; m_storageEncrypted = value; }
 
     /**
@@ -942,6 +1074,19 @@ namespace Model
      * Your AWS account has a different default encryption key for each AWS Region.</p>
      */
     inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
+
+    /**
+     * <p>The AWS KMS key identifier for an encrypted DB cluster.</p> <p>The KMS key
+     * identifier is the Amazon Resource Name (ARN) for the KMS encryption key. If you
+     * are creating a DB cluster with the same AWS account that owns the KMS encryption
+     * key used to encrypt the new DB cluster, then you can use the KMS key alias
+     * instead of the ARN for the KM encryption key.</p> <p>If the
+     * <code>StorageEncrypted</code> parameter is true, and you do not specify a value
+     * for the <code>KmsKeyId</code> parameter, then Amazon RDS will use your default
+     * encryption key. AWS KMS creates the default encryption key for your AWS account.
+     * Your AWS account has a different default encryption key for each AWS Region.</p>
+     */
+    inline bool KmsKeyIdHasBeenSet() const { return m_kmsKeyIdHasBeenSet; }
 
     /**
      * <p>The AWS KMS key identifier for an encrypted DB cluster.</p> <p>The KMS key
@@ -1034,6 +1179,13 @@ namespace Model
      * to database accounts, and otherwise false.</p> <p>Default: <code>false</code>
      * </p>
      */
+    inline bool EnableIAMDatabaseAuthenticationHasBeenSet() const { return m_enableIAMDatabaseAuthenticationHasBeenSet; }
+
+    /**
+     * <p>True to enable mapping of AWS Identity and Access Management (IAM) accounts
+     * to database accounts, and otherwise false.</p> <p>Default: <code>false</code>
+     * </p>
+     */
     inline void SetEnableIAMDatabaseAuthentication(bool value) { m_enableIAMDatabaseAuthenticationHasBeenSet = true; m_enableIAMDatabaseAuthentication = value; }
 
     /**
@@ -1049,6 +1201,12 @@ namespace Model
      * stored in the Amazon S3 bucket. </p> <p>Valid values: <code>mysql</code> </p>
      */
     inline const Aws::String& GetSourceEngine() const{ return m_sourceEngine; }
+
+    /**
+     * <p>The identifier for the database engine that was backed up to create the files
+     * stored in the Amazon S3 bucket. </p> <p>Valid values: <code>mysql</code> </p>
+     */
+    inline bool SourceEngineHasBeenSet() const { return m_sourceEngineHasBeenSet; }
 
     /**
      * <p>The identifier for the database engine that was backed up to create the files
@@ -1093,6 +1251,13 @@ namespace Model
      * </p>
      */
     inline const Aws::String& GetSourceEngineVersion() const{ return m_sourceEngineVersion; }
+
+    /**
+     * <p>The version of the database that the backup files were created from.</p>
+     * <p>MySQL version 5.5 and 5.6 are supported. </p> <p>Example: <code>5.6.22</code>
+     * </p>
+     */
+    inline bool SourceEngineVersionHasBeenSet() const { return m_sourceEngineVersionHasBeenSet; }
 
     /**
      * <p>The version of the database that the backup files were created from.</p>
@@ -1147,6 +1312,12 @@ namespace Model
      * <p>The name of the Amazon S3 bucket that contains the data used to create the
      * Amazon Aurora DB cluster.</p>
      */
+    inline bool S3BucketNameHasBeenSet() const { return m_s3BucketNameHasBeenSet; }
+
+    /**
+     * <p>The name of the Amazon S3 bucket that contains the data used to create the
+     * Amazon Aurora DB cluster.</p>
+     */
     inline void SetS3BucketName(const Aws::String& value) { m_s3BucketNameHasBeenSet = true; m_s3BucketName = value; }
 
     /**
@@ -1187,6 +1358,14 @@ namespace Model
      * Amazon S3 bucket.</p>
      */
     inline const Aws::String& GetS3Prefix() const{ return m_s3Prefix; }
+
+    /**
+     * <p>The prefix for all of the file names that contain the data used to create the
+     * Amazon Aurora DB cluster. If you do not specify a <b>SourceS3Prefix</b> value,
+     * then the Amazon Aurora DB cluster is created by using all of the files in the
+     * Amazon S3 bucket.</p>
+     */
+    inline bool S3PrefixHasBeenSet() const { return m_s3PrefixHasBeenSet; }
 
     /**
      * <p>The prefix for all of the file names that contain the data used to create the
@@ -1249,6 +1428,13 @@ namespace Model
      * (IAM) role that authorizes Amazon RDS to access the Amazon S3 bucket on your
      * behalf.</p>
      */
+    inline bool S3IngestionRoleArnHasBeenSet() const { return m_s3IngestionRoleArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management
+     * (IAM) role that authorizes Amazon RDS to access the Amazon S3 bucket on your
+     * behalf.</p>
+     */
     inline void SetS3IngestionRoleArn(const Aws::String& value) { m_s3IngestionRoleArnHasBeenSet = true; m_s3IngestionRoleArn = value; }
 
     /**
@@ -1299,6 +1485,13 @@ namespace Model
      * value to 0.</p> <p>Default: 0</p> <p>Constraints:</p> <ul> <li> <p>If specified,
      * this value must be set to a number from 0 to 259,200 (72 hours).</p> </li> </ul>
      */
+    inline bool BacktrackWindowHasBeenSet() const { return m_backtrackWindowHasBeenSet; }
+
+    /**
+     * <p>The target backtrack window, in seconds. To disable backtracking, set this
+     * value to 0.</p> <p>Default: 0</p> <p>Constraints:</p> <ul> <li> <p>If specified,
+     * this value must be set to a number from 0 to 259,200 (72 hours).</p> </li> </ul>
+     */
     inline void SetBacktrackWindow(long long value) { m_backtrackWindowHasBeenSet = true; m_backtrackWindow = value; }
 
     /**
@@ -1318,6 +1511,16 @@ namespace Model
      * Guide</i>.</p>
      */
     inline const Aws::Vector<Aws::String>& GetEnableCloudwatchLogsExports() const{ return m_enableCloudwatchLogsExports; }
+
+    /**
+     * <p>The list of logs that the restored DB cluster is to export to CloudWatch
+     * Logs. The values in the list depend on the DB engine being used. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing
+     * Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon Aurora User
+     * Guide</i>.</p>
+     */
+    inline bool EnableCloudwatchLogsExportsHasBeenSet() const { return m_enableCloudwatchLogsExportsHasBeenSet; }
 
     /**
      * <p>The list of logs that the restored DB cluster is to export to CloudWatch
@@ -1402,6 +1605,13 @@ namespace Model
      * database can't be deleted when this value is set to true. The default is false.
      * </p>
      */
+    inline bool DeletionProtectionHasBeenSet() const { return m_deletionProtectionHasBeenSet; }
+
+    /**
+     * <p>Indicates if the DB cluster should have deletion protection enabled. The
+     * database can't be deleted when this value is set to true. The default is false.
+     * </p>
+     */
     inline void SetDeletionProtection(bool value) { m_deletionProtectionHasBeenSet = true; m_deletionProtection = value; }
 
     /**
@@ -1417,6 +1627,12 @@ namespace Model
      * restored DB cluster, and otherwise false. The default is false.</p>
      */
     inline bool GetCopyTagsToSnapshot() const{ return m_copyTagsToSnapshot; }
+
+    /**
+     * <p>True to copy all tags from the restored DB cluster to snapshots of the
+     * restored DB cluster, and otherwise false. The default is false.</p>
+     */
+    inline bool CopyTagsToSnapshotHasBeenSet() const { return m_copyTagsToSnapshotHasBeenSet; }
 
     /**
      * <p>True to copy all tags from the restored DB cluster to snapshots of the

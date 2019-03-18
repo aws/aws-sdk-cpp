@@ -69,6 +69,17 @@ If
      * request was processed successfully) or 400 (if the payload was invalid, or
      * required fields were missing).
      */
+    inline bool ResultsHasBeenSet() const { return m_resultsHasBeenSet; }
+
+    /**
+     * A map that contains a multipart response for each endpoint. Each item in this
+     * object uses the endpoint ID as the key, and the item response as the value.
+
+If
+     * no item response exists, the value can also be one of the following: 202 (if the
+     * request was processed successfully) or 400 (if the payload was invalid, or
+     * required fields were missing).
+     */
     inline void SetResults(const Aws::Map<Aws::String, ItemResponse>& value) { m_resultsHasBeenSet = true; m_results = value; }
 
     /**

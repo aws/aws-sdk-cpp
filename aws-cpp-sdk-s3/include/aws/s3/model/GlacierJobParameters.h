@@ -55,6 +55,11 @@ namespace Model
     /**
      * <p>Glacier retrieval tier at which the restore will be processed.</p>
      */
+    inline bool TierHasBeenSet() const { return m_tierHasBeenSet; }
+
+    /**
+     * <p>Glacier retrieval tier at which the restore will be processed.</p>
+     */
     inline void SetTier(const Tier& value) { m_tierHasBeenSet = true; m_tier = value; }
 
     /**

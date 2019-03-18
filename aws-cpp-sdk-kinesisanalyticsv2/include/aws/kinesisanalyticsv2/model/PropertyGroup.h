@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>Describes the key of an application execution property key-value pair.</p>
      */
+    inline bool PropertyGroupIdHasBeenSet() const { return m_propertyGroupIdHasBeenSet; }
+
+    /**
+     * <p>Describes the key of an application execution property key-value pair.</p>
+     */
     inline void SetPropertyGroupId(const Aws::String& value) { m_propertyGroupIdHasBeenSet = true; m_propertyGroupId = value; }
 
     /**
@@ -89,6 +94,11 @@ namespace Model
      * <p>Describes the value of an application execution property key-value pair.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetPropertyMap() const{ return m_propertyMap; }
+
+    /**
+     * <p>Describes the value of an application execution property key-value pair.</p>
+     */
+    inline bool PropertyMapHasBeenSet() const { return m_propertyMapHasBeenSet; }
 
     /**
      * <p>Describes the value of an application execution property key-value pair.</p>

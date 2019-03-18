@@ -65,6 +65,15 @@ namespace Model
      * </li> <li> <p> <code>DELETING</code>: The environment is in the process of being
      * deleted.</p> </li> </ul>
      */
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
+
+    /**
+     * <p>The current creation or deletion lifecycle state of the environment.</p> <ul>
+     * <li> <p> <code>CREATED</code>: The environment was successfully created.</p>
+     * </li> <li> <p> <code>DELETE_FAILED</code>: The environment failed to delete.</p>
+     * </li> <li> <p> <code>DELETING</code>: The environment is in the process of being
+     * deleted.</p> </li> </ul>
+     */
     inline void SetStatus(const EnvironmentLifecycleStatus& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
@@ -103,6 +112,11 @@ namespace Model
     /**
      * <p>Any informational message about the lifecycle state of the environment.</p>
      */
+    inline bool ReasonHasBeenSet() const { return m_reasonHasBeenSet; }
+
+    /**
+     * <p>Any informational message about the lifecycle state of the environment.</p>
+     */
     inline void SetReason(const Aws::String& value) { m_reasonHasBeenSet = true; m_reason = value; }
 
     /**
@@ -136,6 +150,12 @@ namespace Model
      * related AWS resource.</p>
      */
     inline const Aws::String& GetFailureResource() const{ return m_failureResource; }
+
+    /**
+     * <p>If the environment failed to delete, the Amazon Resource Name (ARN) of the
+     * related AWS resource.</p>
+     */
+    inline bool FailureResourceHasBeenSet() const { return m_failureResourceHasBeenSet; }
 
     /**
      * <p>If the environment failed to delete, the Amazon Resource Name (ARN) of the

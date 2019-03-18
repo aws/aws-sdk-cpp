@@ -58,6 +58,12 @@ namespace Model
      * <p>The Amazon S3 location of the manifest file that describes the input data
      * objects.</p>
      */
+    inline bool ManifestS3UriHasBeenSet() const { return m_manifestS3UriHasBeenSet; }
+
+    /**
+     * <p>The Amazon S3 location of the manifest file that describes the input data
+     * objects.</p>
+     */
     inline void SetManifestS3Uri(const Aws::String& value) { m_manifestS3UriHasBeenSet = true; m_manifestS3Uri = value; }
 
     /**

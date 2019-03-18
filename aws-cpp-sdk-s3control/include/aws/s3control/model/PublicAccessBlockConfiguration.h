@@ -86,6 +86,16 @@ namespace Model
      * fail if the request includes an object ACL.</p> </li> </ul> <p>Note that
      * enabling this setting doesn't affect existing policies or ACLs.</p>
      */
+    inline bool BlockPublicAclsHasBeenSet() const { return m_blockPublicAclsHasBeenSet; }
+
+    /**
+     * <p>Specifies whether Amazon S3 should block public ACLs for buckets in this
+     * account. Setting this element to <code>TRUE</code> causes the following
+     * behavior:</p> <ul> <li> <p>PUT Bucket acl and PUT Object acl calls will fail if
+     * the specified ACL allows public access.</p> </li> <li> <p>PUT Object calls will
+     * fail if the request includes an object ACL.</p> </li> </ul> <p>Note that
+     * enabling this setting doesn't affect existing policies or ACLs.</p>
+     */
     inline void SetBlockPublicAcls(bool value) { m_blockPublicAclsHasBeenSet = true; m_blockPublicAcls = value; }
 
     /**
@@ -107,6 +117,15 @@ namespace Model
      * existing ACLs and doesn't prevent new public ACLs from being set.</p>
      */
     inline bool GetIgnorePublicAcls() const{ return m_ignorePublicAcls; }
+
+    /**
+     * <p>Specifies whether Amazon S3 should ignore public ACLs for buckets in this
+     * account. Setting this element to <code>TRUE</code> causes Amazon S3 to ignore
+     * all public ACLs on buckets in this account and any objects that they contain.
+     * </p> <p>Note that enabling this setting doesn't affect the persistence of any
+     * existing ACLs and doesn't prevent new public ACLs from being set.</p>
+     */
+    inline bool IgnorePublicAclsHasBeenSet() const { return m_ignorePublicAclsHasBeenSet; }
 
     /**
      * <p>Specifies whether Amazon S3 should ignore public ACLs for buckets in this
@@ -143,6 +162,15 @@ namespace Model
      * access. </p> <p>Note that enabling this setting doesn't affect existing bucket
      * policies.</p>
      */
+    inline bool BlockPublicPolicyHasBeenSet() const { return m_blockPublicPolicyHasBeenSet; }
+
+    /**
+     * <p>Specifies whether Amazon S3 should block public bucket policies for buckets
+     * in this account. Setting this element to <code>TRUE</code> causes Amazon S3 to
+     * reject calls to PUT Bucket policy if the specified bucket policy allows public
+     * access. </p> <p>Note that enabling this setting doesn't affect existing bucket
+     * policies.</p>
+     */
     inline void SetBlockPublicPolicy(bool value) { m_blockPublicPolicyHasBeenSet = true; m_blockPublicPolicy = value; }
 
     /**
@@ -164,6 +192,16 @@ namespace Model
      * policy, including non-public delegation to specific accounts, is blocked. </p>
      */
     inline bool GetRestrictPublicBuckets() const{ return m_restrictPublicBuckets; }
+
+    /**
+     * <p>Specifies whether Amazon S3 should restrict public bucket policies for
+     * buckets in this account. If this element is set to <code>TRUE</code>, then only
+     * the bucket owner and AWS Services can access buckets with public policies.</p>
+     * <p>Note that enabling this setting doesn't affect previously stored bucket
+     * policies, except that public and cross-account access within any public bucket
+     * policy, including non-public delegation to specific accounts, is blocked. </p>
+     */
+    inline bool RestrictPublicBucketsHasBeenSet() const { return m_restrictPublicBucketsHasBeenSet; }
 
     /**
      * <p>Specifies whether Amazon S3 should restrict public bucket policies for

@@ -63,6 +63,13 @@ namespace Model
      * exchange. This is the sum of the list value, remaining upfront price, and
      * additional upfront cost of the exchange.</p>
      */
+    inline bool ReservationValueHasBeenSet() const { return m_reservationValueHasBeenSet; }
+
+    /**
+     * <p>The total value of the Convertible Reserved Instances that make up the
+     * exchange. This is the sum of the list value, remaining upfront price, and
+     * additional upfront cost of the exchange.</p>
+     */
     inline void SetReservationValue(const ReservationValue& value) { m_reservationValueHasBeenSet = true; m_reservationValue = value; }
 
     /**
@@ -92,6 +99,12 @@ namespace Model
      * exchange.</p>
      */
     inline const TargetConfiguration& GetTargetConfiguration() const{ return m_targetConfiguration; }
+
+    /**
+     * <p>The configuration of the Convertible Reserved Instances that make up the
+     * exchange.</p>
+     */
+    inline bool TargetConfigurationHasBeenSet() const { return m_targetConfigurationHasBeenSet; }
 
     /**
      * <p>The configuration of the Convertible Reserved Instances that make up the

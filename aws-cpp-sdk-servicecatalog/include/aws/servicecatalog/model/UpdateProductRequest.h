@@ -58,6 +58,13 @@ namespace Model
      * </li> <li> <p> <code>jp</code> - Japanese</p> </li> <li> <p> <code>zh</code> -
      * Chinese</p> </li> </ul>
      */
+    inline bool AcceptLanguageHasBeenSet() const { return m_acceptLanguageHasBeenSet; }
+
+    /**
+     * <p>The language code.</p> <ul> <li> <p> <code>en</code> - English (default)</p>
+     * </li> <li> <p> <code>jp</code> - Japanese</p> </li> <li> <p> <code>zh</code> -
+     * Chinese</p> </li> </ul>
+     */
     inline void SetAcceptLanguage(const Aws::String& value) { m_acceptLanguageHasBeenSet = true; m_acceptLanguage = value; }
 
     /**
@@ -104,6 +111,11 @@ namespace Model
     /**
      * <p>The product identifier.</p>
      */
+    inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
+
+    /**
+     * <p>The product identifier.</p>
+     */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
     /**
@@ -136,6 +148,11 @@ namespace Model
      * <p>The updated product name.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
+
+    /**
+     * <p>The updated product name.</p>
+     */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
      * <p>The updated product name.</p>
@@ -176,6 +193,11 @@ namespace Model
     /**
      * <p>The updated owner of the product.</p>
      */
+    inline bool OwnerHasBeenSet() const { return m_ownerHasBeenSet; }
+
+    /**
+     * <p>The updated owner of the product.</p>
+     */
     inline void SetOwner(const Aws::String& value) { m_ownerHasBeenSet = true; m_owner = value; }
 
     /**
@@ -208,6 +230,11 @@ namespace Model
      * <p>The updated description of the product.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
+
+    /**
+     * <p>The updated description of the product.</p>
+     */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
 
     /**
      * <p>The updated description of the product.</p>
@@ -248,6 +275,11 @@ namespace Model
     /**
      * <p>The updated distributor of the product.</p>
      */
+    inline bool DistributorHasBeenSet() const { return m_distributorHasBeenSet; }
+
+    /**
+     * <p>The updated distributor of the product.</p>
+     */
     inline void SetDistributor(const Aws::String& value) { m_distributorHasBeenSet = true; m_distributor = value; }
 
     /**
@@ -280,6 +312,11 @@ namespace Model
      * <p>The updated support description for the product.</p>
      */
     inline const Aws::String& GetSupportDescription() const{ return m_supportDescription; }
+
+    /**
+     * <p>The updated support description for the product.</p>
+     */
+    inline bool SupportDescriptionHasBeenSet() const { return m_supportDescriptionHasBeenSet; }
 
     /**
      * <p>The updated support description for the product.</p>
@@ -320,6 +357,11 @@ namespace Model
     /**
      * <p>The updated support email for the product.</p>
      */
+    inline bool SupportEmailHasBeenSet() const { return m_supportEmailHasBeenSet; }
+
+    /**
+     * <p>The updated support email for the product.</p>
+     */
     inline void SetSupportEmail(const Aws::String& value) { m_supportEmailHasBeenSet = true; m_supportEmail = value; }
 
     /**
@@ -352,6 +394,11 @@ namespace Model
      * <p>The updated support URL for the product.</p>
      */
     inline const Aws::String& GetSupportUrl() const{ return m_supportUrl; }
+
+    /**
+     * <p>The updated support URL for the product.</p>
+     */
+    inline bool SupportUrlHasBeenSet() const { return m_supportUrlHasBeenSet; }
 
     /**
      * <p>The updated support URL for the product.</p>
@@ -392,6 +439,11 @@ namespace Model
     /**
      * <p>The tags to add to the product.</p>
      */
+    inline bool AddTagsHasBeenSet() const { return m_addTagsHasBeenSet; }
+
+    /**
+     * <p>The tags to add to the product.</p>
+     */
     inline void SetAddTags(const Aws::Vector<Tag>& value) { m_addTagsHasBeenSet = true; m_addTags = value; }
 
     /**
@@ -424,6 +476,11 @@ namespace Model
      * <p>The tags to remove from the product.</p>
      */
     inline const Aws::Vector<Aws::String>& GetRemoveTags() const{ return m_removeTags; }
+
+    /**
+     * <p>The tags to remove from the product.</p>
+     */
+    inline bool RemoveTagsHasBeenSet() const { return m_removeTagsHasBeenSet; }
 
     /**
      * <p>The tags to remove from the product.</p>

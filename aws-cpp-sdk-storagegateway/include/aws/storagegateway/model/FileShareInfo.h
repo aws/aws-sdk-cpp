@@ -52,6 +52,9 @@ namespace Model
     inline const FileShareType& GetFileShareType() const{ return m_fileShareType; }
 
     
+    inline bool FileShareTypeHasBeenSet() const { return m_fileShareTypeHasBeenSet; }
+
+    
     inline void SetFileShareType(const FileShareType& value) { m_fileShareTypeHasBeenSet = true; m_fileShareType = value; }
 
     
@@ -66,6 +69,9 @@ namespace Model
 
     
     inline const Aws::String& GetFileShareARN() const{ return m_fileShareARN; }
+
+    
+    inline bool FileShareARNHasBeenSet() const { return m_fileShareARNHasBeenSet; }
 
     
     inline void SetFileShareARN(const Aws::String& value) { m_fileShareARNHasBeenSet = true; m_fileShareARN = value; }
@@ -90,6 +96,9 @@ namespace Model
     inline const Aws::String& GetFileShareId() const{ return m_fileShareId; }
 
     
+    inline bool FileShareIdHasBeenSet() const { return m_fileShareIdHasBeenSet; }
+
+    
     inline void SetFileShareId(const Aws::String& value) { m_fileShareIdHasBeenSet = true; m_fileShareId = value; }
 
     
@@ -112,6 +121,9 @@ namespace Model
     inline const Aws::String& GetFileShareStatus() const{ return m_fileShareStatus; }
 
     
+    inline bool FileShareStatusHasBeenSet() const { return m_fileShareStatusHasBeenSet; }
+
+    
     inline void SetFileShareStatus(const Aws::String& value) { m_fileShareStatusHasBeenSet = true; m_fileShareStatus = value; }
 
     
@@ -132,6 +144,9 @@ namespace Model
 
     
     inline const Aws::String& GetGatewayARN() const{ return m_gatewayARN; }
+
+    
+    inline bool GatewayARNHasBeenSet() const { return m_gatewayARNHasBeenSet; }
 
     
     inline void SetGatewayARN(const Aws::String& value) { m_gatewayARNHasBeenSet = true; m_gatewayARN = value; }

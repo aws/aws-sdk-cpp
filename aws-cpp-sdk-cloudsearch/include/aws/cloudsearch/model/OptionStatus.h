@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p>A timestamp for when this option was created.</p>
      */
+    inline bool CreationDateHasBeenSet() const { return m_creationDateHasBeenSet; }
+
+    /**
+     * <p>A timestamp for when this option was created.</p>
+     */
     inline void SetCreationDate(const Aws::Utils::DateTime& value) { m_creationDateHasBeenSet = true; m_creationDate = value; }
 
     /**
@@ -80,6 +85,11 @@ namespace Model
      * <p>A timestamp for when this option was last updated.</p>
      */
     inline const Aws::Utils::DateTime& GetUpdateDate() const{ return m_updateDate; }
+
+    /**
+     * <p>A timestamp for when this option was last updated.</p>
+     */
+    inline bool UpdateDateHasBeenSet() const { return m_updateDateHasBeenSet; }
 
     /**
      * <p>A timestamp for when this option was last updated.</p>
@@ -110,6 +120,11 @@ namespace Model
     /**
      * <p>A unique integer that indicates when this option was last updated.</p>
      */
+    inline bool UpdateVersionHasBeenSet() const { return m_updateVersionHasBeenSet; }
+
+    /**
+     * <p>A unique integer that indicates when this option was last updated.</p>
+     */
     inline void SetUpdateVersion(int value) { m_updateVersionHasBeenSet = true; m_updateVersion = value; }
 
     /**
@@ -130,6 +145,19 @@ namespace Model
      * incompatible documents.</li> </ul>
      */
     inline const OptionState& GetState() const{ return m_state; }
+
+    /**
+     * <p>The state of processing a change to an option. Possible values:</p> <ul> <li>
+     * <code>RequiresIndexDocuments</code>: the option's latest value will not be
+     * deployed until <a>IndexDocuments</a> has been called and indexing is
+     * complete.</li> <li> <code>Processing</code>: the option's latest value is in the
+     * process of being activated. </li> <li> <code>Active</code>: the option's latest
+     * value is completely deployed.</li> <li> <code>FailedToValidate</code>: the
+     * option value is not compatible with the domain's data and cannot be used to
+     * index the data. You must either modify the option value or update or remove the
+     * incompatible documents.</li> </ul>
+     */
+    inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
 
     /**
      * <p>The state of processing a change to an option. Possible values:</p> <ul> <li>
@@ -188,6 +216,11 @@ namespace Model
      * <p>Indicates that the option will be deleted once processing is complete.</p>
      */
     inline bool GetPendingDeletion() const{ return m_pendingDeletion; }
+
+    /**
+     * <p>Indicates that the option will be deleted once processing is complete.</p>
+     */
+    inline bool PendingDeletionHasBeenSet() const { return m_pendingDeletionHasBeenSet; }
 
     /**
      * <p>Indicates that the option will be deleted once processing is complete.</p>

@@ -63,6 +63,11 @@ namespace Model
     /**
      * <p>The identifier of the client certificate.</p>
      */
+    inline bool ClientCertificateIdHasBeenSet() const { return m_clientCertificateIdHasBeenSet; }
+
+    /**
+     * <p>The identifier of the client certificate.</p>
+     */
     inline void SetClientCertificateId(const Aws::String& value) { m_clientCertificateIdHasBeenSet = true; m_clientCertificateId = value; }
 
     /**
@@ -95,6 +100,11 @@ namespace Model
      * <p>The description of the client certificate.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
+
+    /**
+     * <p>The description of the client certificate.</p>
+     */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
 
     /**
      * <p>The description of the client certificate.</p>
@@ -132,6 +142,12 @@ namespace Model
      * configure certificate authentication in the integration endpoint .</p>
      */
     inline const Aws::String& GetPemEncodedCertificate() const{ return m_pemEncodedCertificate; }
+
+    /**
+     * <p>The PEM-encoded public key of the client certificate, which can be used to
+     * configure certificate authentication in the integration endpoint .</p>
+     */
+    inline bool PemEncodedCertificateHasBeenSet() const { return m_pemEncodedCertificateHasBeenSet; }
 
     /**
      * <p>The PEM-encoded public key of the client certificate, which can be used to
@@ -178,6 +194,11 @@ namespace Model
     /**
      * <p>The timestamp when the client certificate was created.</p>
      */
+    inline bool CreatedDateHasBeenSet() const { return m_createdDateHasBeenSet; }
+
+    /**
+     * <p>The timestamp when the client certificate was created.</p>
+     */
     inline void SetCreatedDate(const Aws::Utils::DateTime& value) { m_createdDateHasBeenSet = true; m_createdDate = value; }
 
     /**
@@ -200,6 +221,11 @@ namespace Model
      * <p>The timestamp when the client certificate will expire.</p>
      */
     inline const Aws::Utils::DateTime& GetExpirationDate() const{ return m_expirationDate; }
+
+    /**
+     * <p>The timestamp when the client certificate will expire.</p>
+     */
+    inline bool ExpirationDateHasBeenSet() const { return m_expirationDateHasBeenSet; }
 
     /**
      * <p>The timestamp when the client certificate will expire.</p>

@@ -59,6 +59,12 @@ namespace Model
      * <p>The name or the Amazon Resource Name (ARN) of the stack for which you want to
      * list change sets.</p>
      */
+    inline bool StackNameHasBeenSet() const { return m_stackNameHasBeenSet; }
+
+    /**
+     * <p>The name or the Amazon Resource Name (ARN) of the stack for which you want to
+     * list change sets.</p>
+     */
     inline void SetStackName(const Aws::String& value) { m_stackNameHasBeenSet = true; m_stackName = value; }
 
     /**
@@ -97,6 +103,12 @@ namespace Model
      * identifies the next page of change sets that you want to retrieve.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
+    /**
+     * <p>A string (provided by the <a>ListChangeSets</a> response output) that
+     * identifies the next page of change sets that you want to retrieve.</p>
+     */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
      * <p>A string (provided by the <a>ListChangeSets</a> response output) that

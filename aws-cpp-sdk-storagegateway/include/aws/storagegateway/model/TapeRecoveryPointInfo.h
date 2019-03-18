@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the virtual tape.</p>
      */
+    inline bool TapeARNHasBeenSet() const { return m_tapeARNHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the virtual tape.</p>
+     */
     inline void SetTapeARN(const Aws::String& value) { m_tapeARNHasBeenSet = true; m_tapeARN = value; }
 
     /**
@@ -96,6 +101,13 @@ namespace Model
      * later recovery.</p> <p>The default time stamp format of the tape recovery point
      * time is in the ISO8601 extended YYYY-MM-DD'T'HH:MM:SS'Z' format.</p>
      */
+    inline bool TapeRecoveryPointTimeHasBeenSet() const { return m_tapeRecoveryPointTimeHasBeenSet; }
+
+    /**
+     * <p>The time when the point-in-time view of the virtual tape was replicated for
+     * later recovery.</p> <p>The default time stamp format of the tape recovery point
+     * time is in the ISO8601 extended YYYY-MM-DD'T'HH:MM:SS'Z' format.</p>
+     */
     inline void SetTapeRecoveryPointTime(const Aws::Utils::DateTime& value) { m_tapeRecoveryPointTimeHasBeenSet = true; m_tapeRecoveryPointTime = value; }
 
     /**
@@ -128,6 +140,11 @@ namespace Model
     /**
      * <p>The size, in bytes, of the virtual tapes to recover.</p>
      */
+    inline bool TapeSizeInBytesHasBeenSet() const { return m_tapeSizeInBytesHasBeenSet; }
+
+    /**
+     * <p>The size, in bytes, of the virtual tapes to recover.</p>
+     */
     inline void SetTapeSizeInBytes(long long value) { m_tapeSizeInBytesHasBeenSet = true; m_tapeSizeInBytes = value; }
 
     /**
@@ -140,6 +157,11 @@ namespace Model
      * <p>The status of the virtual tapes.</p>
      */
     inline const Aws::String& GetTapeStatus() const{ return m_tapeStatus; }
+
+    /**
+     * <p>The status of the virtual tapes.</p>
+     */
+    inline bool TapeStatusHasBeenSet() const { return m_tapeStatusHasBeenSet; }
 
     /**
      * <p>The status of the virtual tapes.</p>

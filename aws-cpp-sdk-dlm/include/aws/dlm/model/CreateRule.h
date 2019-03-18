@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The interval. The supported values are 12 and 24.</p>
      */
+    inline bool IntervalHasBeenSet() const { return m_intervalHasBeenSet; }
+
+    /**
+     * <p>The interval. The supported values are 12 and 24.</p>
+     */
     inline void SetInterval(int value) { m_intervalHasBeenSet = true; m_interval = value; }
 
     /**
@@ -69,6 +74,11 @@ namespace Model
      * <p>The interval unit.</p>
      */
     inline const IntervalUnitValues& GetIntervalUnit() const{ return m_intervalUnit; }
+
+    /**
+     * <p>The interval unit.</p>
+     */
+    inline bool IntervalUnitHasBeenSet() const { return m_intervalUnitHasBeenSet; }
 
     /**
      * <p>The interval unit.</p>
@@ -96,6 +106,12 @@ namespace Model
      * a one-hour window following the specified time.</p>
      */
     inline const Aws::Vector<Aws::String>& GetTimes() const{ return m_times; }
+
+    /**
+     * <p>The time, in UTC, to start the operation.</p> <p>The operation occurs within
+     * a one-hour window following the specified time.</p>
+     */
+    inline bool TimesHasBeenSet() const { return m_timesHasBeenSet; }
 
     /**
      * <p>The time, in UTC, to start the operation.</p> <p>The operation occurs within

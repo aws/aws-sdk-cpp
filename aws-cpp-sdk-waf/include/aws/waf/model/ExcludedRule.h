@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p>The unique identifier for the rule to exclude from the rule group.</p>
      */
+    inline bool RuleIdHasBeenSet() const { return m_ruleIdHasBeenSet; }
+
+    /**
+     * <p>The unique identifier for the rule to exclude from the rule group.</p>
+     */
     inline void SetRuleId(const Aws::String& value) { m_ruleIdHasBeenSet = true; m_ruleId = value; }
 
     /**

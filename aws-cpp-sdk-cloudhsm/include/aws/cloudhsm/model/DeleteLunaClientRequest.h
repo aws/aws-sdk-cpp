@@ -52,6 +52,11 @@ namespace Model
     /**
      * <p>The ARN of the client to delete.</p>
      */
+    inline bool ClientArnHasBeenSet() const { return m_clientArnHasBeenSet; }
+
+    /**
+     * <p>The ARN of the client to delete.</p>
+     */
     inline void SetClientArn(const Aws::String& value) { m_clientArnHasBeenSet = true; m_clientArn = value; }
 
     /**

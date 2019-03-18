@@ -69,6 +69,15 @@ namespace Model
      * is forwarding requests to an Amazon S3 origin, specify none for the
      * <code>Forward</code> element. </p>
      */
+    inline bool ForwardHasBeenSet() const { return m_forwardHasBeenSet; }
+
+    /**
+     * <p>Specifies which cookies to forward to the origin for this cache behavior:
+     * all, none, or the list of cookies specified in the <code>WhitelistedNames</code>
+     * complex type.</p> <p>Amazon S3 doesn't process cookies. When the cache behavior
+     * is forwarding requests to an Amazon S3 origin, specify none for the
+     * <code>Forward</code> element. </p>
+     */
     inline void SetForward(const ItemSelection& value) { m_forwardHasBeenSet = true; m_forward = value; }
 
     /**
@@ -114,6 +123,22 @@ namespace Model
      * CloudFront Limits</a> in the <i>AWS General Reference</i>.</p>
      */
     inline const CookieNames& GetWhitelistedNames() const{ return m_whitelistedNames; }
+
+    /**
+     * <p>Required if you specify <code>whitelist</code> for the value of
+     * <code>Forward:</code>. A complex type that specifies how many different cookies
+     * you want CloudFront to forward to the origin for this cache behavior and, if you
+     * want to forward selected cookies, the names of those cookies.</p> <p>If you
+     * specify <code>all</code> or none for the value of <code>Forward</code>, omit
+     * <code>WhitelistedNames</code>. If you change the value of <code>Forward</code>
+     * from <code>whitelist</code> to all or none and you don't delete the
+     * <code>WhitelistedNames</code> element and its child elements, CloudFront deletes
+     * them automatically.</p> <p>For the current limit on the number of cookie names
+     * that you can whitelist for each cache behavior, see <a
+     * href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits_cloudfront">Amazon
+     * CloudFront Limits</a> in the <i>AWS General Reference</i>.</p>
+     */
+    inline bool WhitelistedNamesHasBeenSet() const { return m_whitelistedNamesHasBeenSet; }
 
     /**
      * <p>Required if you specify <code>whitelist</code> for the value of

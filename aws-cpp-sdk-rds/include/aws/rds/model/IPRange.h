@@ -60,6 +60,12 @@ namespace Model
      * <p>Specifies the status of the IP range. Status can be "authorizing",
      * "authorized", "revoking", and "revoked".</p>
      */
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
+
+    /**
+     * <p>Specifies the status of the IP range. Status can be "authorizing",
+     * "authorized", "revoking", and "revoked".</p>
+     */
     inline void SetStatus(const Aws::String& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
@@ -97,6 +103,11 @@ namespace Model
      * <p>Specifies the IP range.</p>
      */
     inline const Aws::String& GetCIDRIP() const{ return m_cIDRIP; }
+
+    /**
+     * <p>Specifies the IP range.</p>
+     */
+    inline bool CIDRIPHasBeenSet() const { return m_cIDRIPHasBeenSet; }
 
     /**
      * <p>Specifies the IP range.</p>

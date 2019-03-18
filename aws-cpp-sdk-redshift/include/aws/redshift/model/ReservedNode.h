@@ -63,6 +63,11 @@ namespace Model
     /**
      * <p>The unique identifier for the reservation.</p>
      */
+    inline bool ReservedNodeIdHasBeenSet() const { return m_reservedNodeIdHasBeenSet; }
+
+    /**
+     * <p>The unique identifier for the reservation.</p>
+     */
     inline void SetReservedNodeId(const Aws::String& value) { m_reservedNodeIdHasBeenSet = true; m_reservedNodeId = value; }
 
     /**
@@ -99,6 +104,11 @@ namespace Model
     /**
      * <p>The identifier for the reserved node offering.</p>
      */
+    inline bool ReservedNodeOfferingIdHasBeenSet() const { return m_reservedNodeOfferingIdHasBeenSet; }
+
+    /**
+     * <p>The identifier for the reserved node offering.</p>
+     */
     inline void SetReservedNodeOfferingId(const Aws::String& value) { m_reservedNodeOfferingIdHasBeenSet = true; m_reservedNodeOfferingId = value; }
 
     /**
@@ -131,6 +141,11 @@ namespace Model
      * <p>The node type of the reserved node.</p>
      */
     inline const Aws::String& GetNodeType() const{ return m_nodeType; }
+
+    /**
+     * <p>The node type of the reserved node.</p>
+     */
+    inline bool NodeTypeHasBeenSet() const { return m_nodeTypeHasBeenSet; }
 
     /**
      * <p>The node type of the reserved node.</p>
@@ -173,6 +188,12 @@ namespace Model
      * <p>The time the reservation started. You purchase a reserved node offering for a
      * duration. This is the start time of that duration.</p>
      */
+    inline bool StartTimeHasBeenSet() const { return m_startTimeHasBeenSet; }
+
+    /**
+     * <p>The time the reservation started. You purchase a reserved node offering for a
+     * duration. This is the start time of that duration.</p>
+     */
     inline void SetStartTime(const Aws::Utils::DateTime& value) { m_startTimeHasBeenSet = true; m_startTime = value; }
 
     /**
@@ -202,6 +223,11 @@ namespace Model
     /**
      * <p>The duration of the node reservation in seconds.</p>
      */
+    inline bool DurationHasBeenSet() const { return m_durationHasBeenSet; }
+
+    /**
+     * <p>The duration of the node reservation in seconds.</p>
+     */
     inline void SetDuration(int value) { m_durationHasBeenSet = true; m_duration = value; }
 
     /**
@@ -214,6 +240,11 @@ namespace Model
      * <p>The fixed cost Amazon Redshift charges you for this reserved node.</p>
      */
     inline double GetFixedPrice() const{ return m_fixedPrice; }
+
+    /**
+     * <p>The fixed cost Amazon Redshift charges you for this reserved node.</p>
+     */
+    inline bool FixedPriceHasBeenSet() const { return m_fixedPriceHasBeenSet; }
 
     /**
      * <p>The fixed cost Amazon Redshift charges you for this reserved node.</p>
@@ -234,6 +265,11 @@ namespace Model
     /**
      * <p>The hourly rate Amazon Redshift charges you for this reserved node.</p>
      */
+    inline bool UsagePriceHasBeenSet() const { return m_usagePriceHasBeenSet; }
+
+    /**
+     * <p>The hourly rate Amazon Redshift charges you for this reserved node.</p>
+     */
     inline void SetUsagePrice(double value) { m_usagePriceHasBeenSet = true; m_usagePrice = value; }
 
     /**
@@ -246,6 +282,11 @@ namespace Model
      * <p>The currency code for the reserved cluster.</p>
      */
     inline const Aws::String& GetCurrencyCode() const{ return m_currencyCode; }
+
+    /**
+     * <p>The currency code for the reserved cluster.</p>
+     */
+    inline bool CurrencyCodeHasBeenSet() const { return m_currencyCodeHasBeenSet; }
 
     /**
      * <p>The currency code for the reserved cluster.</p>
@@ -286,6 +327,11 @@ namespace Model
     /**
      * <p>The number of reserved compute nodes.</p>
      */
+    inline bool NodeCountHasBeenSet() const { return m_nodeCountHasBeenSet; }
+
+    /**
+     * <p>The number of reserved compute nodes.</p>
+     */
     inline void SetNodeCount(int value) { m_nodeCountHasBeenSet = true; m_nodeCount = value; }
 
     /**
@@ -305,6 +351,18 @@ namespace Model
      * another reserved node.</p> </li> </ul>
      */
     inline const Aws::String& GetState() const{ return m_state; }
+
+    /**
+     * <p>The state of the reserved compute node.</p> <p>Possible Values:</p> <ul> <li>
+     * <p>pending-payment-This reserved node has recently been purchased, and the sale
+     * has been approved, but payment has not yet been confirmed.</p> </li> <li>
+     * <p>active-This reserved node is owned by the caller and is available for
+     * use.</p> </li> <li> <p>payment-failed-Payment failed for the purchase
+     * attempt.</p> </li> <li> <p>retired-The reserved node is no longer available.
+     * </p> </li> <li> <p>exchanging-The owner is exchanging the reserved node for
+     * another reserved node.</p> </li> </ul>
+     */
+    inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
 
     /**
      * <p>The state of the reserved compute node.</p> <p>Possible Values:</p> <ul> <li>
@@ -389,6 +447,12 @@ namespace Model
      * <p>The anticipated utilization of the reserved node, as defined in the reserved
      * node offering.</p>
      */
+    inline bool OfferingTypeHasBeenSet() const { return m_offeringTypeHasBeenSet; }
+
+    /**
+     * <p>The anticipated utilization of the reserved node, as defined in the reserved
+     * node offering.</p>
+     */
     inline void SetOfferingType(const Aws::String& value) { m_offeringTypeHasBeenSet = true; m_offeringType = value; }
 
     /**
@@ -430,6 +494,11 @@ namespace Model
     /**
      * <p>The recurring charges for the reserved node.</p>
      */
+    inline bool RecurringChargesHasBeenSet() const { return m_recurringChargesHasBeenSet; }
+
+    /**
+     * <p>The recurring charges for the reserved node.</p>
+     */
     inline void SetRecurringCharges(const Aws::Vector<RecurringCharge>& value) { m_recurringChargesHasBeenSet = true; m_recurringCharges = value; }
 
     /**
@@ -460,6 +529,9 @@ namespace Model
 
     
     inline const ReservedNodeOfferingType& GetReservedNodeOfferingType() const{ return m_reservedNodeOfferingType; }
+
+    
+    inline bool ReservedNodeOfferingTypeHasBeenSet() const { return m_reservedNodeOfferingTypeHasBeenSet; }
 
     
     inline void SetReservedNodeOfferingType(const ReservedNodeOfferingType& value) { m_reservedNodeOfferingTypeHasBeenSet = true; m_reservedNodeOfferingType = value; }

@@ -61,6 +61,14 @@ namespace Model
      * described. If unknown activities are requested, they are ignored with no error.
      * If you specify an Auto Scaling group, the results are limited to that group.</p>
      */
+    inline bool ActivityIdsHasBeenSet() const { return m_activityIdsHasBeenSet; }
+
+    /**
+     * <p>The activity IDs of the desired scaling activities. You can specify up to 50
+     * IDs. If you omit this parameter, all activities for the past six weeks are
+     * described. If unknown activities are requested, they are ignored with no error.
+     * If you specify an Auto Scaling group, the results are limited to that group.</p>
+     */
     inline void SetActivityIds(const Aws::Vector<Aws::String>& value) { m_activityIdsHasBeenSet = true; m_activityIds = value; }
 
     /**
@@ -120,6 +128,11 @@ namespace Model
     /**
      * <p>The name of the Auto Scaling group.</p>
      */
+    inline bool AutoScalingGroupNameHasBeenSet() const { return m_autoScalingGroupNameHasBeenSet; }
+
+    /**
+     * <p>The name of the Auto Scaling group.</p>
+     */
     inline void SetAutoScalingGroupName(const Aws::String& value) { m_autoScalingGroupNameHasBeenSet = true; m_autoScalingGroupName = value; }
 
     /**
@@ -158,6 +171,12 @@ namespace Model
      * <p>The maximum number of items to return with this call. The default value is
      * <code>100</code> and the maximum value is <code>100</code>.</p>
      */
+    inline bool MaxRecordsHasBeenSet() const { return m_maxRecordsHasBeenSet; }
+
+    /**
+     * <p>The maximum number of items to return with this call. The default value is
+     * <code>100</code> and the maximum value is <code>100</code>.</p>
+     */
     inline void SetMaxRecords(int value) { m_maxRecordsHasBeenSet = true; m_maxRecords = value; }
 
     /**
@@ -172,6 +191,12 @@ namespace Model
      * a previous call.)</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
+    /**
+     * <p>The token for the next set of items to return. (You received this token from
+     * a previous call.)</p>
+     */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
      * <p>The token for the next set of items to return. (You received this token from

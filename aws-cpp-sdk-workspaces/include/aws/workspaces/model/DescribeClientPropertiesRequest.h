@@ -53,6 +53,11 @@ namespace Model
     /**
      * <p>The resource identifiers, in the form of directory IDs.</p>
      */
+    inline bool ResourceIdsHasBeenSet() const { return m_resourceIdsHasBeenSet; }
+
+    /**
+     * <p>The resource identifiers, in the form of directory IDs.</p>
+     */
     inline void SetResourceIds(const Aws::Vector<Aws::String>& value) { m_resourceIdsHasBeenSet = true; m_resourceIds = value; }
 
     /**

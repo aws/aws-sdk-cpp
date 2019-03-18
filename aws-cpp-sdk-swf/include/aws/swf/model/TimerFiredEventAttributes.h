@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The unique ID of the timer that fired.</p>
      */
+    inline bool TimerIdHasBeenSet() const { return m_timerIdHasBeenSet; }
+
+    /**
+     * <p>The unique ID of the timer that fired.</p>
+     */
     inline void SetTimerId(const Aws::String& value) { m_timerIdHasBeenSet = true; m_timerId = value; }
 
     /**
@@ -90,6 +95,13 @@ namespace Model
      * tracing back the chain of events leading up to this event.</p>
      */
     inline long long GetStartedEventId() const{ return m_startedEventId; }
+
+    /**
+     * <p>The ID of the <code>TimerStarted</code> event that was recorded when this
+     * timer was started. This information can be useful for diagnosing problems by
+     * tracing back the chain of events leading up to this event.</p>
+     */
+    inline bool StartedEventIdHasBeenSet() const { return m_startedEventIdHasBeenSet; }
 
     /**
      * <p>The ID of the <code>TimerStarted</code> event that was recorded when this

@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p>The name of the custom terminology.</p>
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>The name of the custom terminology.</p>
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
@@ -90,6 +95,11 @@ namespace Model
      * <p>The description of the custom terminology properties.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
+
+    /**
+     * <p>The description of the custom terminology properties.</p>
+     */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
 
     /**
      * <p>The description of the custom terminology properties.</p>
@@ -130,6 +140,11 @@ namespace Model
     /**
      * <p> The Amazon Resource Name (ARN) of the custom terminology. </p>
      */
+    inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
+
+    /**
+     * <p> The Amazon Resource Name (ARN) of the custom terminology. </p>
+     */
     inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
 
     /**
@@ -163,6 +178,12 @@ namespace Model
      * the custom terminology is being used.</p>
      */
     inline const Aws::String& GetSourceLanguageCode() const{ return m_sourceLanguageCode; }
+
+    /**
+     * <p>The language code for the source text of the translation request for which
+     * the custom terminology is being used.</p>
+     */
+    inline bool SourceLanguageCodeHasBeenSet() const { return m_sourceLanguageCodeHasBeenSet; }
 
     /**
      * <p>The language code for the source text of the translation request for which
@@ -206,6 +227,12 @@ namespace Model
      * terminology file. All possible target languages are returned in array.</p>
      */
     inline const Aws::Vector<Aws::String>& GetTargetLanguageCodes() const{ return m_targetLanguageCodes; }
+
+    /**
+     * <p>The language codes for the target languages available with the custom
+     * terminology file. All possible target languages are returned in array.</p>
+     */
+    inline bool TargetLanguageCodesHasBeenSet() const { return m_targetLanguageCodesHasBeenSet; }
 
     /**
      * <p>The language codes for the target languages available with the custom
@@ -258,6 +285,11 @@ namespace Model
     /**
      * <p>The encryption key for the custom terminology.</p>
      */
+    inline bool EncryptionKeyHasBeenSet() const { return m_encryptionKeyHasBeenSet; }
+
+    /**
+     * <p>The encryption key for the custom terminology.</p>
+     */
     inline void SetEncryptionKey(const EncryptionKey& value) { m_encryptionKeyHasBeenSet = true; m_encryptionKey = value; }
 
     /**
@@ -284,6 +316,11 @@ namespace Model
     /**
      * <p>The size of the file used when importing a custom terminology.</p>
      */
+    inline bool SizeBytesHasBeenSet() const { return m_sizeBytesHasBeenSet; }
+
+    /**
+     * <p>The size of the file used when importing a custom terminology.</p>
+     */
     inline void SetSizeBytes(int value) { m_sizeBytesHasBeenSet = true; m_sizeBytes = value; }
 
     /**
@@ -296,6 +333,11 @@ namespace Model
      * <p>The number of terms included in the custom terminology.</p>
      */
     inline int GetTermCount() const{ return m_termCount; }
+
+    /**
+     * <p>The number of terms included in the custom terminology.</p>
+     */
+    inline bool TermCountHasBeenSet() const { return m_termCountHasBeenSet; }
 
     /**
      * <p>The number of terms included in the custom terminology.</p>
@@ -313,6 +355,12 @@ namespace Model
      * timestamp.</p>
      */
     inline const Aws::Utils::DateTime& GetCreatedAt() const{ return m_createdAt; }
+
+    /**
+     * <p>The time at which the custom terminology was created, based on the
+     * timestamp.</p>
+     */
+    inline bool CreatedAtHasBeenSet() const { return m_createdAtHasBeenSet; }
 
     /**
      * <p>The time at which the custom terminology was created, based on the
@@ -344,6 +392,12 @@ namespace Model
      * timestamp.</p>
      */
     inline const Aws::Utils::DateTime& GetLastUpdatedAt() const{ return m_lastUpdatedAt; }
+
+    /**
+     * <p>The time at which the custom terminology was last update, based on the
+     * timestamp.</p>
+     */
+    inline bool LastUpdatedAtHasBeenSet() const { return m_lastUpdatedAtHasBeenSet; }
 
     /**
      * <p>The time at which the custom terminology was last update, based on the

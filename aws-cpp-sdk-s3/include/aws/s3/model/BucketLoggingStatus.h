@@ -51,6 +51,9 @@ namespace Model
     inline const LoggingEnabled& GetLoggingEnabled() const{ return m_loggingEnabled; }
 
     
+    inline bool LoggingEnabledHasBeenSet() const { return m_loggingEnabledHasBeenSet; }
+
+    
     inline void SetLoggingEnabled(const LoggingEnabled& value) { m_loggingEnabledHasBeenSet = true; m_loggingEnabled = value; }
 
     

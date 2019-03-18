@@ -60,6 +60,13 @@ namespace Model
      * was returned for <code>LastEvaluatedTableName</code> in a previous operation, so
      * that you can obtain the next page of results.</p>
      */
+    inline bool ExclusiveStartTableNameHasBeenSet() const { return m_exclusiveStartTableNameHasBeenSet; }
+
+    /**
+     * <p>The first table name that this operation will evaluate. Use the value that
+     * was returned for <code>LastEvaluatedTableName</code> in a previous operation, so
+     * that you can obtain the next page of results.</p>
+     */
     inline void SetExclusiveStartTableName(const Aws::String& value) { m_exclusiveStartTableNameHasBeenSet = true; m_exclusiveStartTableName = value; }
 
     /**
@@ -103,6 +110,12 @@ namespace Model
      * specified, the limit is 100.</p>
      */
     inline int GetLimit() const{ return m_limit; }
+
+    /**
+     * <p>A maximum number of table names to return. If this parameter is not
+     * specified, the limit is 100.</p>
+     */
+    inline bool LimitHasBeenSet() const { return m_limitHasBeenSet; }
 
     /**
      * <p>A maximum number of table names to return. If this parameter is not

@@ -62,6 +62,12 @@ namespace Model
      * <p>The fully qualified name of the directory (for example,
      * corp.example.com).</p>
      */
+    inline bool DirectoryNameHasBeenSet() const { return m_directoryNameHasBeenSet; }
+
+    /**
+     * <p>The fully qualified name of the directory (for example,
+     * corp.example.com).</p>
+     */
     inline void SetDirectoryName(const Aws::String& value) { m_directoryNameHasBeenSet = true; m_directoryName = value; }
 
     /**
@@ -100,6 +106,12 @@ namespace Model
      * accounts.</p>
      */
     inline const Aws::Vector<Aws::String>& GetOrganizationalUnitDistinguishedNames() const{ return m_organizationalUnitDistinguishedNames; }
+
+    /**
+     * <p>The distinguished names of the organizational units for computer
+     * accounts.</p>
+     */
+    inline bool OrganizationalUnitDistinguishedNamesHasBeenSet() const { return m_organizationalUnitDistinguishedNamesHasBeenSet; }
 
     /**
      * <p>The distinguished names of the organizational units for computer
@@ -154,6 +166,12 @@ namespace Model
      * <p>The credentials for the service account used by the streaming instance to
      * connect to the directory.</p>
      */
+    inline bool ServiceAccountCredentialsHasBeenSet() const { return m_serviceAccountCredentialsHasBeenSet; }
+
+    /**
+     * <p>The credentials for the service account used by the streaming instance to
+     * connect to the directory.</p>
+     */
     inline void SetServiceAccountCredentials(const ServiceAccountCredentials& value) { m_serviceAccountCredentialsHasBeenSet = true; m_serviceAccountCredentials = value; }
 
     /**
@@ -179,6 +197,11 @@ namespace Model
      * <p>The time the directory configuration was created.</p>
      */
     inline const Aws::Utils::DateTime& GetCreatedTime() const{ return m_createdTime; }
+
+    /**
+     * <p>The time the directory configuration was created.</p>
+     */
+    inline bool CreatedTimeHasBeenSet() const { return m_createdTimeHasBeenSet; }
 
     /**
      * <p>The time the directory configuration was created.</p>

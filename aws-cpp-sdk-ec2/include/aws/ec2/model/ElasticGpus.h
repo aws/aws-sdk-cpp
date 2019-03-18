@@ -59,6 +59,11 @@ namespace Model
     /**
      * <p>The ID of the Elastic Graphics accelerator.</p>
      */
+    inline bool ElasticGpuIdHasBeenSet() const { return m_elasticGpuIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the Elastic Graphics accelerator.</p>
+     */
     inline void SetElasticGpuId(const Aws::String& value) { m_elasticGpuIdHasBeenSet = true; m_elasticGpuId = value; }
 
     /**
@@ -92,6 +97,12 @@ namespace Model
      * resides.</p>
      */
     inline const Aws::String& GetAvailabilityZone() const{ return m_availabilityZone; }
+
+    /**
+     * <p>The Availability Zone in the which the Elastic Graphics accelerator
+     * resides.</p>
+     */
+    inline bool AvailabilityZoneHasBeenSet() const { return m_availabilityZoneHasBeenSet; }
 
     /**
      * <p>The Availability Zone in the which the Elastic Graphics accelerator
@@ -138,6 +149,11 @@ namespace Model
     /**
      * <p>The type of Elastic Graphics accelerator.</p>
      */
+    inline bool ElasticGpuTypeHasBeenSet() const { return m_elasticGpuTypeHasBeenSet; }
+
+    /**
+     * <p>The type of Elastic Graphics accelerator.</p>
+     */
     inline void SetElasticGpuType(const Aws::String& value) { m_elasticGpuTypeHasBeenSet = true; m_elasticGpuType = value; }
 
     /**
@@ -174,6 +190,11 @@ namespace Model
     /**
      * <p>The status of the Elastic Graphics accelerator.</p>
      */
+    inline bool ElasticGpuHealthHasBeenSet() const { return m_elasticGpuHealthHasBeenSet; }
+
+    /**
+     * <p>The status of the Elastic Graphics accelerator.</p>
+     */
     inline void SetElasticGpuHealth(const ElasticGpuHealth& value) { m_elasticGpuHealthHasBeenSet = true; m_elasticGpuHealth = value; }
 
     /**
@@ -196,6 +217,11 @@ namespace Model
      * <p>The state of the Elastic Graphics accelerator.</p>
      */
     inline const ElasticGpuState& GetElasticGpuState() const{ return m_elasticGpuState; }
+
+    /**
+     * <p>The state of the Elastic Graphics accelerator.</p>
+     */
+    inline bool ElasticGpuStateHasBeenSet() const { return m_elasticGpuStateHasBeenSet; }
 
     /**
      * <p>The state of the Elastic Graphics accelerator.</p>
@@ -223,6 +249,12 @@ namespace Model
      * attached.</p>
      */
     inline const Aws::String& GetInstanceId() const{ return m_instanceId; }
+
+    /**
+     * <p>The ID of the instance to which the Elastic Graphics accelerator is
+     * attached.</p>
+     */
+    inline bool InstanceIdHasBeenSet() const { return m_instanceIdHasBeenSet; }
 
     /**
      * <p>The ID of the instance to which the Elastic Graphics accelerator is

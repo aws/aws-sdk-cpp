@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The number of instance running hours that On-Demand Instances covered.</p>
      */
+    inline bool OnDemandHoursHasBeenSet() const { return m_onDemandHoursHasBeenSet; }
+
+    /**
+     * <p>The number of instance running hours that On-Demand Instances covered.</p>
+     */
     inline void SetOnDemandHours(const Aws::String& value) { m_onDemandHoursHasBeenSet = true; m_onDemandHours = value; }
 
     /**
@@ -88,6 +93,11 @@ namespace Model
      * <p>The number of instance running hours that reservations covered.</p>
      */
     inline const Aws::String& GetReservedHours() const{ return m_reservedHours; }
+
+    /**
+     * <p>The number of instance running hours that reservations covered.</p>
+     */
+    inline bool ReservedHoursHasBeenSet() const { return m_reservedHoursHasBeenSet; }
 
     /**
      * <p>The number of instance running hours that reservations covered.</p>
@@ -128,6 +138,11 @@ namespace Model
     /**
      * <p>The total instance usage, in hours.</p>
      */
+    inline bool TotalRunningHoursHasBeenSet() const { return m_totalRunningHoursHasBeenSet; }
+
+    /**
+     * <p>The total instance usage, in hours.</p>
+     */
     inline void SetTotalRunningHours(const Aws::String& value) { m_totalRunningHoursHasBeenSet = true; m_totalRunningHours = value; }
 
     /**
@@ -160,6 +175,11 @@ namespace Model
      * <p>The percentage of instance hours that a reservation covered.</p>
      */
     inline const Aws::String& GetCoverageHoursPercentage() const{ return m_coverageHoursPercentage; }
+
+    /**
+     * <p>The percentage of instance hours that a reservation covered.</p>
+     */
+    inline bool CoverageHoursPercentageHasBeenSet() const { return m_coverageHoursPercentageHasBeenSet; }
 
     /**
      * <p>The percentage of instance hours that a reservation covered.</p>

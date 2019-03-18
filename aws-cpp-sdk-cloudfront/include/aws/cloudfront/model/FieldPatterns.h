@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The number of field-level encryption field patterns.</p>
      */
+    inline bool QuantityHasBeenSet() const { return m_quantityHasBeenSet; }
+
+    /**
+     * <p>The number of field-level encryption field patterns.</p>
+     */
     inline void SetQuantity(int value) { m_quantityHasBeenSet = true; m_quantity = value; }
 
     /**
@@ -69,6 +74,11 @@ namespace Model
      * <p>An array of the field-level encryption field patterns.</p>
      */
     inline const Aws::Vector<Aws::String>& GetItems() const{ return m_items; }
+
+    /**
+     * <p>An array of the field-level encryption field patterns.</p>
+     */
+    inline bool ItemsHasBeenSet() const { return m_itemsHasBeenSet; }
 
     /**
      * <p>An array of the field-level encryption field patterns.</p>

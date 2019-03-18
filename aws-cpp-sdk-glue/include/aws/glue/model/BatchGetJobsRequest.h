@@ -55,6 +55,12 @@ namespace Model
      * <p>A list of job names, which may be the names returned from the
      * <code>ListJobs</code> operation.</p>
      */
+    inline bool JobNamesHasBeenSet() const { return m_jobNamesHasBeenSet; }
+
+    /**
+     * <p>A list of job names, which may be the names returned from the
+     * <code>ListJobs</code> operation.</p>
+     */
     inline void SetJobNames(const Aws::Vector<Aws::String>& value) { m_jobNamesHasBeenSet = true; m_jobNames = value; }
 
     /**

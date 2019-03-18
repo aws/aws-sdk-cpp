@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The period of time that the forecast covers.</p>
      */
+    inline bool TimePeriodHasBeenSet() const { return m_timePeriodHasBeenSet; }
+
+    /**
+     * <p>The period of time that the forecast covers.</p>
+     */
     inline void SetTimePeriod(const DateInterval& value) { m_timePeriodHasBeenSet = true; m_timePeriod = value; }
 
     /**
@@ -78,6 +83,11 @@ namespace Model
      * <p>The mean value of the forecast.</p>
      */
     inline const Aws::String& GetMeanValue() const{ return m_meanValue; }
+
+    /**
+     * <p>The mean value of the forecast.</p>
+     */
+    inline bool MeanValueHasBeenSet() const { return m_meanValueHasBeenSet; }
 
     /**
      * <p>The mean value of the forecast.</p>
@@ -118,6 +128,11 @@ namespace Model
     /**
      * <p>The lower limit for the prediction interval. </p>
      */
+    inline bool PredictionIntervalLowerBoundHasBeenSet() const { return m_predictionIntervalLowerBoundHasBeenSet; }
+
+    /**
+     * <p>The lower limit for the prediction interval. </p>
+     */
     inline void SetPredictionIntervalLowerBound(const Aws::String& value) { m_predictionIntervalLowerBoundHasBeenSet = true; m_predictionIntervalLowerBound = value; }
 
     /**
@@ -150,6 +165,11 @@ namespace Model
      * <p>The upper limit for the prediction interval. </p>
      */
     inline const Aws::String& GetPredictionIntervalUpperBound() const{ return m_predictionIntervalUpperBound; }
+
+    /**
+     * <p>The upper limit for the prediction interval. </p>
+     */
+    inline bool PredictionIntervalUpperBoundHasBeenSet() const { return m_predictionIntervalUpperBoundHasBeenSet; }
 
     /**
      * <p>The upper limit for the prediction interval. </p>

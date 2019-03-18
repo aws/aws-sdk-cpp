@@ -58,6 +58,12 @@ namespace Model
      * <p>The time the event occurred, expressed as the number of milliseconds after
      * Jan 1, 1970 00:00:00 UTC.</p>
      */
+    inline bool TimestampHasBeenSet() const { return m_timestampHasBeenSet; }
+
+    /**
+     * <p>The time the event occurred, expressed as the number of milliseconds after
+     * Jan 1, 1970 00:00:00 UTC.</p>
+     */
     inline void SetTimestamp(long long value) { m_timestampHasBeenSet = true; m_timestamp = value; }
 
     /**
@@ -71,6 +77,11 @@ namespace Model
      * <p>The raw event message.</p>
      */
     inline const Aws::String& GetMessage() const{ return m_message; }
+
+    /**
+     * <p>The raw event message.</p>
+     */
+    inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
 
     /**
      * <p>The raw event message.</p>

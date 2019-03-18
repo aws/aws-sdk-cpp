@@ -62,6 +62,13 @@ namespace Model
      * includes a set of profiles that specify certain selected data fields to be
      * encrypted by specific public keys.</p>
      */
+    inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
+
+    /**
+     * <p>The configuration ID for a field-level encryption configuration which
+     * includes a set of profiles that specify certain selected data fields to be
+     * encrypted by specific public keys.</p>
+     */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
     /**
@@ -108,6 +115,11 @@ namespace Model
     /**
      * <p>The last time the field-level encryption configuration was changed. </p>
      */
+    inline bool LastModifiedTimeHasBeenSet() const { return m_lastModifiedTimeHasBeenSet; }
+
+    /**
+     * <p>The last time the field-level encryption configuration was changed. </p>
+     */
     inline void SetLastModifiedTime(const Aws::Utils::DateTime& value) { m_lastModifiedTimeHasBeenSet = true; m_lastModifiedTime = value; }
 
     /**
@@ -131,6 +143,12 @@ namespace Model
      * field-level encryption. </p>
      */
     inline const FieldLevelEncryptionConfig& GetFieldLevelEncryptionConfig() const{ return m_fieldLevelEncryptionConfig; }
+
+    /**
+     * <p>A complex data type that includes the profile configurations specified for
+     * field-level encryption. </p>
+     */
+    inline bool FieldLevelEncryptionConfigHasBeenSet() const { return m_fieldLevelEncryptionConfigHasBeenSet; }
 
     /**
      * <p>A complex data type that includes the profile configurations specified for

@@ -51,6 +51,11 @@ namespace Model
     /**
      * <p>The name of the billing group.</p>
      */
+    inline bool BillingGroupNameHasBeenSet() const { return m_billingGroupNameHasBeenSet; }
+
+    /**
+     * <p>The name of the billing group.</p>
+     */
     inline void SetBillingGroupName(const Aws::String& value) { m_billingGroupNameHasBeenSet = true; m_billingGroupName = value; }
 
     /**
@@ -87,6 +92,11 @@ namespace Model
     /**
      * <p>The properties of the billing group.</p>
      */
+    inline bool BillingGroupPropertiesHasBeenSet() const { return m_billingGroupPropertiesHasBeenSet; }
+
+    /**
+     * <p>The properties of the billing group.</p>
+     */
     inline void SetBillingGroupProperties(const BillingGroupProperties& value) { m_billingGroupPropertiesHasBeenSet = true; m_billingGroupProperties = value; }
 
     /**
@@ -112,6 +122,14 @@ namespace Model
      * <code>VersionConflictException</code>.</p>
      */
     inline long long GetExpectedVersion() const{ return m_expectedVersion; }
+
+    /**
+     * <p>The expected version of the billing group. If the version of the billing
+     * group does not match the expected version specified in the request, the
+     * <code>UpdateBillingGroup</code> request is rejected with a
+     * <code>VersionConflictException</code>.</p>
+     */
+    inline bool ExpectedVersionHasBeenSet() const { return m_expectedVersionHasBeenSet; }
 
     /**
      * <p>The expected version of the billing group. If the version of the billing

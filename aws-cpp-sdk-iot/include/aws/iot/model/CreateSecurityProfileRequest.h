@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The name you are giving to the security profile.</p>
      */
+    inline bool SecurityProfileNameHasBeenSet() const { return m_securityProfileNameHasBeenSet; }
+
+    /**
+     * <p>The name you are giving to the security profile.</p>
+     */
     inline void SetSecurityProfileName(const Aws::String& value) { m_securityProfileNameHasBeenSet = true; m_securityProfileName = value; }
 
     /**
@@ -88,6 +93,11 @@ namespace Model
      * <p>A description of the security profile.</p>
      */
     inline const Aws::String& GetSecurityProfileDescription() const{ return m_securityProfileDescription; }
+
+    /**
+     * <p>A description of the security profile.</p>
+     */
+    inline bool SecurityProfileDescriptionHasBeenSet() const { return m_securityProfileDescriptionHasBeenSet; }
 
     /**
      * <p>A description of the security profile.</p>
@@ -125,6 +135,12 @@ namespace Model
      * alert.</p>
      */
     inline const Aws::Vector<Behavior>& GetBehaviors() const{ return m_behaviors; }
+
+    /**
+     * <p>Specifies the behaviors that, when violated by a device (thing), cause an
+     * alert.</p>
+     */
+    inline bool BehaviorsHasBeenSet() const { return m_behaviorsHasBeenSet; }
 
     /**
      * <p>Specifies the behaviors that, when violated by a device (thing), cause an
@@ -169,6 +185,13 @@ namespace Model
      * behavior.</p>
      */
     inline const Aws::Map<AlertTargetType, AlertTarget>& GetAlertTargets() const{ return m_alertTargets; }
+
+    /**
+     * <p>Specifies the destinations to which alerts are sent. (Alerts are always sent
+     * to the console.) Alerts are generated when a device (thing) violates a
+     * behavior.</p>
+     */
+    inline bool AlertTargetsHasBeenSet() const { return m_alertTargetsHasBeenSet; }
 
     /**
      * <p>Specifies the destinations to which alerts are sent. (Alerts are always sent
@@ -239,6 +262,13 @@ namespace Model
      * retained for any metric used in the profile's <code>behaviors</code> but it is
      * also retained for any metric specified here.</p>
      */
+    inline bool AdditionalMetricsToRetainHasBeenSet() const { return m_additionalMetricsToRetainHasBeenSet; }
+
+    /**
+     * <p>A list of metrics whose data is retained (stored). By default, data is
+     * retained for any metric used in the profile's <code>behaviors</code> but it is
+     * also retained for any metric specified here.</p>
+     */
     inline void SetAdditionalMetricsToRetain(const Aws::Vector<Aws::String>& value) { m_additionalMetricsToRetainHasBeenSet = true; m_additionalMetricsToRetain = value; }
 
     /**
@@ -288,6 +318,11 @@ namespace Model
      * <p>Metadata which can be used to manage the security profile.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>Metadata which can be used to manage the security profile.</p>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
      * <p>Metadata which can be used to manage the security profile.</p>

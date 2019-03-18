@@ -54,6 +54,11 @@ namespace Model
     /**
      * <p>The name of the DB cluster to disassociate the IAM role from.</p>
      */
+    inline bool DBClusterIdentifierHasBeenSet() const { return m_dBClusterIdentifierHasBeenSet; }
+
+    /**
+     * <p>The name of the DB cluster to disassociate the IAM role from.</p>
+     */
     inline void SetDBClusterIdentifier(const Aws::String& value) { m_dBClusterIdentifierHasBeenSet = true; m_dBClusterIdentifier = value; }
 
     /**
@@ -88,6 +93,13 @@ namespace Model
      * <code>arn:aws:iam::123456789012:role/AuroraAccessRole</code>.</p>
      */
     inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the IAM role to disassociate from the
+     * Aurora DB cluster, for example
+     * <code>arn:aws:iam::123456789012:role/AuroraAccessRole</code>.</p>
+     */
+    inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the IAM role to disassociate from the

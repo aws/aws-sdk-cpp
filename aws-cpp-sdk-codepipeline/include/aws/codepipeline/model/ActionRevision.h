@@ -59,6 +59,12 @@ namespace Model
      * <p>The system-generated unique ID that identifies the revision number of the
      * action.</p>
      */
+    inline bool RevisionIdHasBeenSet() const { return m_revisionIdHasBeenSet; }
+
+    /**
+     * <p>The system-generated unique ID that identifies the revision number of the
+     * action.</p>
+     */
     inline void SetRevisionId(const Aws::String& value) { m_revisionIdHasBeenSet = true; m_revisionId = value; }
 
     /**
@@ -102,6 +108,12 @@ namespace Model
      * <p>The unique identifier of the change that set the state to this revision, for
      * example a deployment ID or timestamp.</p>
      */
+    inline bool RevisionChangeIdHasBeenSet() const { return m_revisionChangeIdHasBeenSet; }
+
+    /**
+     * <p>The unique identifier of the change that set the state to this revision, for
+     * example a deployment ID or timestamp.</p>
+     */
     inline void SetRevisionChangeId(const Aws::String& value) { m_revisionChangeIdHasBeenSet = true; m_revisionChangeId = value; }
 
     /**
@@ -140,6 +152,12 @@ namespace Model
      * timestamp format.</p>
      */
     inline const Aws::Utils::DateTime& GetCreated() const{ return m_created; }
+
+    /**
+     * <p>The date and time when the most recent version of the action was created, in
+     * timestamp format.</p>
+     */
+    inline bool CreatedHasBeenSet() const { return m_createdHasBeenSet; }
 
     /**
      * <p>The date and time when the most recent version of the action was created, in

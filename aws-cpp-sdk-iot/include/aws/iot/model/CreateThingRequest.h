@@ -54,6 +54,11 @@ namespace Model
     /**
      * <p>The name of the thing to create.</p>
      */
+    inline bool ThingNameHasBeenSet() const { return m_thingNameHasBeenSet; }
+
+    /**
+     * <p>The name of the thing to create.</p>
+     */
     inline void SetThingName(const Aws::String& value) { m_thingNameHasBeenSet = true; m_thingName = value; }
 
     /**
@@ -86,6 +91,11 @@ namespace Model
      * <p>The name of the thing type associated with the new thing.</p>
      */
     inline const Aws::String& GetThingTypeName() const{ return m_thingTypeName; }
+
+    /**
+     * <p>The name of the thing type associated with the new thing.</p>
+     */
+    inline bool ThingTypeNameHasBeenSet() const { return m_thingTypeNameHasBeenSet; }
 
     /**
      * <p>The name of the thing type associated with the new thing.</p>
@@ -130,6 +140,13 @@ namespace Model
      * JSON document. For example:</p> <p>
      * <code>{\"attributes\":{\"string1\":\"string2\"}}</code> </p>
      */
+    inline bool AttributePayloadHasBeenSet() const { return m_attributePayloadHasBeenSet; }
+
+    /**
+     * <p>The attribute payload, which consists of up to three name/value pairs in a
+     * JSON document. For example:</p> <p>
+     * <code>{\"attributes\":{\"string1\":\"string2\"}}</code> </p>
+     */
     inline void SetAttributePayload(const AttributePayload& value) { m_attributePayloadHasBeenSet = true; m_attributePayload = value; }
 
     /**
@@ -158,6 +175,11 @@ namespace Model
      * <p>The name of the billing group the thing will be added to.</p>
      */
     inline const Aws::String& GetBillingGroupName() const{ return m_billingGroupName; }
+
+    /**
+     * <p>The name of the billing group the thing will be added to.</p>
+     */
+    inline bool BillingGroupNameHasBeenSet() const { return m_billingGroupNameHasBeenSet; }
 
     /**
      * <p>The name of the billing group the thing will be added to.</p>

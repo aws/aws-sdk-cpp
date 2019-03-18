@@ -64,6 +64,13 @@ namespace Model
      * instances. Any parameters that you specify in the Overrides override the same
      * parameters in the launch template.</p>
      */
+    inline bool LaunchTemplateAndOverridesHasBeenSet() const { return m_launchTemplateAndOverridesHasBeenSet; }
+
+    /**
+     * <p>The launch templates and overrides that were used for launching the
+     * instances. Any parameters that you specify in the Overrides override the same
+     * parameters in the launch template.</p>
+     */
     inline void SetLaunchTemplateAndOverrides(const LaunchTemplateAndOverridesResponse& value) { m_launchTemplateAndOverridesHasBeenSet = true; m_launchTemplateAndOverrides = value; }
 
     /**
@@ -98,6 +105,12 @@ namespace Model
      * <p>Indicates if the instance that could not be launched was a Spot Instance or
      * On-Demand Instance.</p>
      */
+    inline bool LifecycleHasBeenSet() const { return m_lifecycleHasBeenSet; }
+
+    /**
+     * <p>Indicates if the instance that could not be launched was a Spot Instance or
+     * On-Demand Instance.</p>
+     */
     inline void SetLifecycle(const InstanceLifecycle& value) { m_lifecycleHasBeenSet = true; m_lifecycle = value; }
 
     /**
@@ -126,6 +139,14 @@ namespace Model
      * Codes</a>.</p>
      */
     inline const Aws::String& GetErrorCode() const{ return m_errorCode; }
+
+    /**
+     * <p>The error code that indicates why the instance could not be launched. For
+     * more information about error codes, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/errors-overview.html.html">Error
+     * Codes</a>.</p>
+     */
+    inline bool ErrorCodeHasBeenSet() const { return m_errorCodeHasBeenSet; }
 
     /**
      * <p>The error code that indicates why the instance could not be launched. For
@@ -183,6 +204,14 @@ namespace Model
      * Codes</a>.</p>
      */
     inline const Aws::String& GetErrorMessage() const{ return m_errorMessage; }
+
+    /**
+     * <p>The error message that describes why the instance could not be launched. For
+     * more information about error messages, see ee <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/errors-overview.html.html">Error
+     * Codes</a>.</p>
+     */
+    inline bool ErrorMessageHasBeenSet() const { return m_errorMessageHasBeenSet; }
 
     /**
      * <p>The error message that describes why the instance could not be launched. For

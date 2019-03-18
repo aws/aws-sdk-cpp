@@ -60,6 +60,12 @@ namespace Model
      * <p>The ID that Amazon Route 53 assigned to the traffic policy when you created
      * it.</p>
      */
+    inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
+
+    /**
+     * <p>The ID that Amazon Route 53 assigned to the traffic policy when you created
+     * it.</p>
+     */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
     /**
@@ -97,6 +103,11 @@ namespace Model
      * <p>The name that you specified for the traffic policy when you created it.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
+
+    /**
+     * <p>The name that you specified for the traffic policy when you created it.</p>
+     */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
      * <p>The name that you specified for the traffic policy when you created it.</p>
@@ -139,6 +150,12 @@ namespace Model
      * <p>The DNS type of the resource record sets that Amazon Route 53 creates when
      * you use a traffic policy to create a traffic policy instance.</p>
      */
+    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
+
+    /**
+     * <p>The DNS type of the resource record sets that Amazon Route 53 creates when
+     * you use a traffic policy to create a traffic policy instance.</p>
+     */
     inline void SetType(const RRType& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
@@ -168,6 +185,11 @@ namespace Model
     /**
      * <p>The version number of the latest version of the traffic policy.</p>
      */
+    inline bool LatestVersionHasBeenSet() const { return m_latestVersionHasBeenSet; }
+
+    /**
+     * <p>The version number of the latest version of the traffic policy.</p>
+     */
     inline void SetLatestVersion(int value) { m_latestVersionHasBeenSet = true; m_latestVersion = value; }
 
     /**
@@ -181,6 +203,12 @@ namespace Model
      * account.</p>
      */
     inline int GetTrafficPolicyCount() const{ return m_trafficPolicyCount; }
+
+    /**
+     * <p>The number of traffic policies that are associated with the current AWS
+     * account.</p>
+     */
+    inline bool TrafficPolicyCountHasBeenSet() const { return m_trafficPolicyCountHasBeenSet; }
 
     /**
      * <p>The number of traffic policies that are associated with the current AWS

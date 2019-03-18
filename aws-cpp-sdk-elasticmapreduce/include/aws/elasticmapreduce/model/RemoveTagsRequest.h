@@ -59,6 +59,12 @@ namespace Model
      * <p>The Amazon EMR resource identifier from which tags will be removed. This
      * value must be a cluster identifier.</p>
      */
+    inline bool ResourceIdHasBeenSet() const { return m_resourceIdHasBeenSet; }
+
+    /**
+     * <p>The Amazon EMR resource identifier from which tags will be removed. This
+     * value must be a cluster identifier.</p>
+     */
     inline void SetResourceId(const Aws::String& value) { m_resourceIdHasBeenSet = true; m_resourceId = value; }
 
     /**
@@ -96,6 +102,11 @@ namespace Model
      * <p>A list of tag keys to remove from a resource.</p>
      */
     inline const Aws::Vector<Aws::String>& GetTagKeys() const{ return m_tagKeys; }
+
+    /**
+     * <p>A list of tag keys to remove from a resource.</p>
+     */
+    inline bool TagKeysHasBeenSet() const { return m_tagKeysHasBeenSet; }
 
     /**
      * <p>A list of tag keys to remove from a resource.</p>

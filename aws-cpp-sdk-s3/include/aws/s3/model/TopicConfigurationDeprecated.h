@@ -53,6 +53,9 @@ namespace Model
     inline const Aws::String& GetId() const{ return m_id; }
 
     
+    inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
+
+    
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
     
@@ -75,6 +78,11 @@ namespace Model
      * <p/>
      */
     inline const Aws::Vector<Event>& GetEvents() const{ return m_events; }
+
+    /**
+     * <p/>
+     */
+    inline bool EventsHasBeenSet() const { return m_eventsHasBeenSet; }
 
     /**
      * <p/>
@@ -112,6 +120,12 @@ namespace Model
      * specified events for the bucket.</p>
      */
     inline const Aws::String& GetTopic() const{ return m_topic; }
+
+    /**
+     * <p>Amazon SNS topic to which Amazon S3 will publish a message to report the
+     * specified events for the bucket.</p>
+     */
+    inline bool TopicHasBeenSet() const { return m_topicHasBeenSet; }
 
     /**
      * <p>Amazon SNS topic to which Amazon S3 will publish a message to report the

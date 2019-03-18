@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The location of the document to be processed.</p>
      */
+    inline bool DocumentLocationHasBeenSet() const { return m_documentLocationHasBeenSet; }
+
+    /**
+     * <p>The location of the document to be processed.</p>
+     */
     inline void SetDocumentLocation(const DocumentLocation& value) { m_documentLocationHasBeenSet = true; m_documentLocation = value; }
 
     /**
@@ -81,6 +86,14 @@ namespace Model
      * analysis, add TABLES and FORMS to <code>FeatureTypes</code>.</p>
      */
     inline const Aws::Vector<FeatureType>& GetFeatureTypes() const{ return m_featureTypes; }
+
+    /**
+     * <p>A list of the types of analysis to perform. Add TABLES to the list to return
+     * information about the tables that are detected in the input document. Add FORMS
+     * to return detected fields and the associated text. To perform both types of
+     * analysis, add TABLES and FORMS to <code>FeatureTypes</code>.</p>
+     */
+    inline bool FeatureTypesHasBeenSet() const { return m_featureTypesHasBeenSet; }
 
     /**
      * <p>A list of the types of analysis to perform. Add TABLES to the list to return
@@ -145,6 +158,14 @@ namespace Model
      * same <code>JobId</code> is returned. Use <code>ClientRequestToken</code> to
      * prevent the same job from being accidentally started more than once. </p>
      */
+    inline bool ClientRequestTokenHasBeenSet() const { return m_clientRequestTokenHasBeenSet; }
+
+    /**
+     * <p>The idempotent token that you use to identify the start request. If you use
+     * the same token with multiple <code>StartDocumentAnalysis</code> requests, the
+     * same <code>JobId</code> is returned. Use <code>ClientRequestToken</code> to
+     * prevent the same job from being accidentally started more than once. </p>
+     */
     inline void SetClientRequestToken(const Aws::String& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = value; }
 
     /**
@@ -198,6 +219,12 @@ namespace Model
      * <p>The unique identifier you specify to identify the job in the completion
      * status that's published to the Amazon SNS topic.</p>
      */
+    inline bool JobTagHasBeenSet() const { return m_jobTagHasBeenSet; }
+
+    /**
+     * <p>The unique identifier you specify to identify the job in the completion
+     * status that's published to the Amazon SNS topic.</p>
+     */
     inline void SetJobTag(const Aws::String& value) { m_jobTagHasBeenSet = true; m_jobTag = value; }
 
     /**
@@ -236,6 +263,12 @@ namespace Model
      * completion status of the operation to. </p>
      */
     inline const NotificationChannel& GetNotificationChannel() const{ return m_notificationChannel; }
+
+    /**
+     * <p>The Amazon SNS topic ARN that you want Amazon Textract to publish the
+     * completion status of the operation to. </p>
+     */
+    inline bool NotificationChannelHasBeenSet() const { return m_notificationChannelHasBeenSet; }
 
     /**
      * <p>The Amazon SNS topic ARN that you want Amazon Textract to publish the

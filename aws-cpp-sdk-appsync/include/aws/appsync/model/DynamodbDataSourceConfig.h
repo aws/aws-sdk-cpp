@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The table name.</p>
      */
+    inline bool TableNameHasBeenSet() const { return m_tableNameHasBeenSet; }
+
+    /**
+     * <p>The table name.</p>
+     */
     inline void SetTableName(const Aws::String& value) { m_tableNameHasBeenSet = true; m_tableName = value; }
 
     /**
@@ -92,6 +97,11 @@ namespace Model
     /**
      * <p>The AWS Region.</p>
      */
+    inline bool AwsRegionHasBeenSet() const { return m_awsRegionHasBeenSet; }
+
+    /**
+     * <p>The AWS Region.</p>
+     */
     inline void SetAwsRegion(const Aws::String& value) { m_awsRegionHasBeenSet = true; m_awsRegion = value; }
 
     /**
@@ -124,6 +134,11 @@ namespace Model
      * <p>Set to TRUE to use Amazon Cognito credentials with this data source.</p>
      */
     inline bool GetUseCallerCredentials() const{ return m_useCallerCredentials; }
+
+    /**
+     * <p>Set to TRUE to use Amazon Cognito credentials with this data source.</p>
+     */
+    inline bool UseCallerCredentialsHasBeenSet() const { return m_useCallerCredentialsHasBeenSet; }
 
     /**
      * <p>Set to TRUE to use Amazon Cognito credentials with this data source.</p>

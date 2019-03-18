@@ -57,6 +57,12 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) that is associated with the <a>Facet</a>. For
      * more information, see <a>arns</a>.</p>
      */
+    inline bool SchemaArnHasBeenSet() const { return m_schemaArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) that is associated with the <a>Facet</a>. For
+     * more information, see <a>arns</a>.</p>
+     */
     inline void SetSchemaArn(const Aws::String& value) { m_schemaArnHasBeenSet = true; m_schemaArn = value; }
 
     /**
@@ -98,6 +104,11 @@ namespace Model
     /**
      * <p>The name of the facet.</p>
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>The name of the facet.</p>
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
@@ -132,6 +143,13 @@ namespace Model
      * type of update operation to perform. </p>
      */
     inline const Aws::Vector<FacetAttributeUpdate>& GetAttributeUpdates() const{ return m_attributeUpdates; }
+
+    /**
+     * <p>List of attributes that need to be updated in a given schema <a>Facet</a>.
+     * Each attribute is followed by <code>AttributeAction</code>, which specifies the
+     * type of update operation to perform. </p>
+     */
+    inline bool AttributeUpdatesHasBeenSet() const { return m_attributeUpdatesHasBeenSet; }
 
     /**
      * <p>List of attributes that need to be updated in a given schema <a>Facet</a>.
@@ -181,6 +199,12 @@ namespace Model
      * <a>CreateFacetRequest$ObjectType</a> for more details.</p>
      */
     inline const ObjectType& GetObjectType() const{ return m_objectType; }
+
+    /**
+     * <p>The object type that is associated with the facet. See
+     * <a>CreateFacetRequest$ObjectType</a> for more details.</p>
+     */
+    inline bool ObjectTypeHasBeenSet() const { return m_objectTypeHasBeenSet; }
 
     /**
      * <p>The object type that is associated with the facet. See

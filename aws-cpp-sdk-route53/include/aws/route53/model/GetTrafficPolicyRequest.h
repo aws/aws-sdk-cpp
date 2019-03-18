@@ -54,6 +54,11 @@ namespace Model
     /**
      * <p>The ID of the traffic policy that you want to get information about.</p>
      */
+    inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
+
+    /**
+     * <p>The ID of the traffic policy that you want to get information about.</p>
+     */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
     /**
@@ -87,6 +92,12 @@ namespace Model
      * about.</p>
      */
     inline int GetVersion() const{ return m_version; }
+
+    /**
+     * <p>The version number of the traffic policy that you want to get information
+     * about.</p>
+     */
+    inline bool VersionHasBeenSet() const { return m_versionHasBeenSet; }
 
     /**
      * <p>The version number of the traffic policy that you want to get information

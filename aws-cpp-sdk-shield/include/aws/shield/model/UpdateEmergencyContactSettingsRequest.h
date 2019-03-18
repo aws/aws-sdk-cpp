@@ -55,6 +55,12 @@ namespace Model
      * <p>A list of email addresses that the DRT can use to contact you during a
      * suspected attack.</p>
      */
+    inline bool EmergencyContactListHasBeenSet() const { return m_emergencyContactListHasBeenSet; }
+
+    /**
+     * <p>A list of email addresses that the DRT can use to contact you during a
+     * suspected attack.</p>
+     */
     inline void SetEmergencyContactList(const Aws::Vector<EmergencyContact>& value) { m_emergencyContactListHasBeenSet = true; m_emergencyContactList = value; }
 
     /**

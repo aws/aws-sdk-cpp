@@ -55,6 +55,11 @@ namespace Model
     /**
      * <p>The rule priorities.</p>
      */
+    inline bool RulePrioritiesHasBeenSet() const { return m_rulePrioritiesHasBeenSet; }
+
+    /**
+     * <p>The rule priorities.</p>
+     */
     inline void SetRulePriorities(const Aws::Vector<RulePriorityPair>& value) { m_rulePrioritiesHasBeenSet = true; m_rulePriorities = value; }
 
     /**

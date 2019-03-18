@@ -59,6 +59,11 @@ namespace Model
     /**
      * <p>A list of one or more subnet IDs in your VPC.</p>
      */
+    inline bool SubnetsHasBeenSet() const { return m_subnetsHasBeenSet; }
+
+    /**
+     * <p>A list of one or more subnet IDs in your VPC.</p>
+     */
     inline void SetSubnets(const Aws::Vector<Aws::String>& value) { m_subnetsHasBeenSet = true; m_subnets = value; }
 
     /**
@@ -100,6 +105,11 @@ namespace Model
     /**
      * <p>A list of one or more security groups IDs in your VPC.</p>
      */
+    inline bool SecurityGroupsHasBeenSet() const { return m_securityGroupsHasBeenSet; }
+
+    /**
+     * <p>A list of one or more security groups IDs in your VPC.</p>
+     */
     inline void SetSecurityGroups(const Aws::Vector<Aws::String>& value) { m_securityGroupsHasBeenSet = true; m_securityGroups = value; }
 
     /**
@@ -137,6 +147,11 @@ namespace Model
      * <p>A boolean indicating whether to assign a public IP address.</p>
      */
     inline bool GetAssignPublicIp() const{ return m_assignPublicIp; }
+
+    /**
+     * <p>A boolean indicating whether to assign a public IP address.</p>
+     */
+    inline bool AssignPublicIpHasBeenSet() const { return m_assignPublicIpHasBeenSet; }
 
     /**
      * <p>A boolean indicating whether to assign a public IP address.</p>

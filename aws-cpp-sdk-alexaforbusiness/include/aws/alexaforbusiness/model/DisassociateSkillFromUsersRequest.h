@@ -52,6 +52,11 @@ namespace Model
     /**
      * <p> The private skill ID you want to make unavailable for enrolled users.</p>
      */
+    inline bool SkillIdHasBeenSet() const { return m_skillIdHasBeenSet; }
+
+    /**
+     * <p> The private skill ID you want to make unavailable for enrolled users.</p>
+     */
     inline void SetSkillId(const Aws::String& value) { m_skillIdHasBeenSet = true; m_skillId = value; }
 
     /**

@@ -59,6 +59,12 @@ namespace Model
      * When specified this field indicates the three letter language code of the
      * caption track to extract from the source.
      */
+    inline bool LanguageCodeHasBeenSet() const { return m_languageCodeHasBeenSet; }
+
+    /**
+     * When specified this field indicates the three letter language code of the
+     * caption track to extract from the source.
+     */
     inline void SetLanguageCode(const Aws::String& value) { m_languageCodeHasBeenSet = true; m_languageCode = value; }
 
     /**
@@ -98,6 +104,13 @@ namespace Model
      * within an event.
      */
     inline const Aws::String& GetName() const{ return m_name; }
+
+    /**
+     * Name identifier for a caption selector.  This name is used to associate this
+     * caption selector with one or more caption descriptions.  Names must be unique
+     * within an event.
+     */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
      * Name identifier for a caption selector.  This name is used to associate this
@@ -146,6 +159,11 @@ namespace Model
      * Caption selector settings.
      */
     inline const CaptionSelectorSettings& GetSelectorSettings() const{ return m_selectorSettings; }
+
+    /**
+     * Caption selector settings.
+     */
+    inline bool SelectorSettingsHasBeenSet() const { return m_selectorSettingsHasBeenSet; }
 
     /**
      * Caption selector settings.

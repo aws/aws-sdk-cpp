@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>Uniquely identifies the job that restores a recovery point.</p>
      */
+    inline bool RestoreJobIdHasBeenSet() const { return m_restoreJobIdHasBeenSet; }
+
+    /**
+     * <p>Uniquely identifies the job that restores a recovery point.</p>
+     */
     inline void SetRestoreJobId(const Aws::String& value) { m_restoreJobIdHasBeenSet = true; m_restoreJobId = value; }
 
     /**
@@ -90,6 +95,12 @@ namespace Model
      * <code>arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45</code>.</p>
      */
     inline const Aws::String& GetRecoveryPointArn() const{ return m_recoveryPointArn; }
+
+    /**
+     * <p>An ARN that uniquely identifies a recovery point; for example,
+     * <code>arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45</code>.</p>
+     */
+    inline bool RecoveryPointArnHasBeenSet() const { return m_recoveryPointArnHasBeenSet; }
 
     /**
      * <p>An ARN that uniquely identifies a recovery point; for example,
@@ -142,6 +153,14 @@ namespace Model
      * milliseconds. For example, the value 1516925490.087 represents Friday, January
      * 26, 2018 12:11:30.087 AM.</p>
      */
+    inline bool CreationDateHasBeenSet() const { return m_creationDateHasBeenSet; }
+
+    /**
+     * <p>The date and time a restore job is created, in Unix format and Coordinated
+     * Universal Time (UTC). The value of <code>CreationDate</code> is accurate to
+     * milliseconds. For example, the value 1516925490.087 represents Friday, January
+     * 26, 2018 12:11:30.087 AM.</p>
+     */
     inline void SetCreationDate(const Aws::Utils::DateTime& value) { m_creationDateHasBeenSet = true; m_creationDate = value; }
 
     /**
@@ -176,6 +195,14 @@ namespace Model
      * 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
      */
     inline const Aws::Utils::DateTime& GetCompletionDate() const{ return m_completionDate; }
+
+    /**
+     * <p>The date and time a job to restore a recovery point is completed, in Unix
+     * format and Coordinated Universal Time (UTC). The value of
+     * <code>CompletionDate</code> is accurate to milliseconds. For example, the value
+     * 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
+     */
+    inline bool CompletionDateHasBeenSet() const { return m_completionDateHasBeenSet; }
 
     /**
      * <p>The date and time a job to restore a recovery point is completed, in Unix
@@ -220,6 +247,12 @@ namespace Model
      * <p>A status code specifying the state of the job initiated by AWS Backup to
      * restore a recovery point.</p>
      */
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
+
+    /**
+     * <p>A status code specifying the state of the job initiated by AWS Backup to
+     * restore a recovery point.</p>
+     */
     inline void SetStatus(const RestoreJobStatus& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
@@ -246,6 +279,12 @@ namespace Model
      * point.</p>
      */
     inline const Aws::String& GetStatusMessage() const{ return m_statusMessage; }
+
+    /**
+     * <p>A detailed message explaining the status of the job to restore a recovery
+     * point.</p>
+     */
+    inline bool StatusMessageHasBeenSet() const { return m_statusMessageHasBeenSet; }
 
     /**
      * <p>A detailed message explaining the status of the job to restore a recovery
@@ -294,6 +333,12 @@ namespace Model
      * <p>Contains an estimated percentage complete of a job at the time the job status
      * was queried.</p>
      */
+    inline bool PercentDoneHasBeenSet() const { return m_percentDoneHasBeenSet; }
+
+    /**
+     * <p>Contains an estimated percentage complete of a job at the time the job status
+     * was queried.</p>
+     */
     inline void SetPercentDone(const Aws::String& value) { m_percentDoneHasBeenSet = true; m_percentDone = value; }
 
     /**
@@ -335,6 +380,11 @@ namespace Model
     /**
      * <p>The size, in bytes, of the restored resource.</p>
      */
+    inline bool BackupSizeInBytesHasBeenSet() const { return m_backupSizeInBytesHasBeenSet; }
+
+    /**
+     * <p>The size, in bytes, of the restored resource.</p>
+     */
     inline void SetBackupSizeInBytes(long long value) { m_backupSizeInBytesHasBeenSet = true; m_backupSizeInBytes = value; }
 
     /**
@@ -348,6 +398,12 @@ namespace Model
      * example, <code>arn:aws:iam::123456789012:role/S3Access</code>.</p>
      */
     inline const Aws::String& GetIamRoleArn() const{ return m_iamRoleArn; }
+
+    /**
+     * <p>Specifies the IAM role ARN used to create the target recovery point; for
+     * example, <code>arn:aws:iam::123456789012:role/S3Access</code>.</p>
+     */
+    inline bool IamRoleArnHasBeenSet() const { return m_iamRoleArnHasBeenSet; }
 
     /**
      * <p>Specifies the IAM role ARN used to create the target recovery point; for
@@ -396,6 +452,12 @@ namespace Model
      * <p>The amount of time in minutes that a job restoring a recovery point is
      * expected to take.</p>
      */
+    inline bool ExpectedCompletionTimeMinutesHasBeenSet() const { return m_expectedCompletionTimeMinutesHasBeenSet; }
+
+    /**
+     * <p>The amount of time in minutes that a job restoring a recovery point is
+     * expected to take.</p>
+     */
     inline void SetExpectedCompletionTimeMinutes(long long value) { m_expectedCompletionTimeMinutesHasBeenSet = true; m_expectedCompletionTimeMinutes = value; }
 
     /**
@@ -410,6 +472,12 @@ namespace Model
      * of the ARN depends on the resource type.</p>
      */
     inline const Aws::String& GetCreatedResourceArn() const{ return m_createdResourceArn; }
+
+    /**
+     * <p>An Amazon Resource Name (ARN) that uniquely identifies a resource. The format
+     * of the ARN depends on the resource type.</p>
+     */
+    inline bool CreatedResourceArnHasBeenSet() const { return m_createdResourceArnHasBeenSet; }
 
     /**
      * <p>An Amazon Resource Name (ARN) that uniquely identifies a resource. The format

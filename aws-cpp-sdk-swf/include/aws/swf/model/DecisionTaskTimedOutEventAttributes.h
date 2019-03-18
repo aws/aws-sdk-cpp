@@ -58,6 +58,12 @@ namespace Model
      * <p>The type of timeout that expired before the decision task could be
      * completed.</p>
      */
+    inline bool TimeoutTypeHasBeenSet() const { return m_timeoutTypeHasBeenSet; }
+
+    /**
+     * <p>The type of timeout that expired before the decision task could be
+     * completed.</p>
+     */
     inline void SetTimeoutType(const DecisionTaskTimeoutType& value) { m_timeoutTypeHasBeenSet = true; m_timeoutType = value; }
 
     /**
@@ -91,6 +97,13 @@ namespace Model
      * this decision task was scheduled. This information can be useful for diagnosing
      * problems by tracing back the chain of events leading up to this event.</p>
      */
+    inline bool ScheduledEventIdHasBeenSet() const { return m_scheduledEventIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the <code>DecisionTaskScheduled</code> event that was recorded when
+     * this decision task was scheduled. This information can be useful for diagnosing
+     * problems by tracing back the chain of events leading up to this event.</p>
+     */
     inline void SetScheduledEventId(long long value) { m_scheduledEventIdHasBeenSet = true; m_scheduledEventId = value; }
 
     /**
@@ -107,6 +120,13 @@ namespace Model
      * problems by tracing back the chain of events leading up to this event.</p>
      */
     inline long long GetStartedEventId() const{ return m_startedEventId; }
+
+    /**
+     * <p>The ID of the <code>DecisionTaskStarted</code> event recorded when this
+     * decision task was started. This information can be useful for diagnosing
+     * problems by tracing back the chain of events leading up to this event.</p>
+     */
+    inline bool StartedEventIdHasBeenSet() const { return m_startedEventIdHasBeenSet; }
 
     /**
      * <p>The ID of the <code>DecisionTaskStarted</code> event recorded when this

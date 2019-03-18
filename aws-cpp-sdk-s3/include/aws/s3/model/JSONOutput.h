@@ -55,6 +55,11 @@ namespace Model
     /**
      * <p>The value used to separate individual records in the output.</p>
      */
+    inline bool RecordDelimiterHasBeenSet() const { return m_recordDelimiterHasBeenSet; }
+
+    /**
+     * <p>The value used to separate individual records in the output.</p>
+     */
     inline void SetRecordDelimiter(const Aws::String& value) { m_recordDelimiterHasBeenSet = true; m_recordDelimiter = value; }
 
     /**

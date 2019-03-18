@@ -52,6 +52,12 @@ namespace Model
      * <p>The case-sensitive name of the new group. Default is a reserved name and
      * names must be unique.</p>
      */
+    inline bool GroupNameHasBeenSet() const { return m_groupNameHasBeenSet; }
+
+    /**
+     * <p>The case-sensitive name of the new group. Default is a reserved name and
+     * names must be unique.</p>
+     */
     inline void SetGroupName(const Aws::String& value) { m_groupNameHasBeenSet = true; m_groupName = value; }
 
     /**
@@ -89,6 +95,11 @@ namespace Model
      * <p>The filter expression defining criteria by which to group traces.</p>
      */
     inline const Aws::String& GetFilterExpression() const{ return m_filterExpression; }
+
+    /**
+     * <p>The filter expression defining criteria by which to group traces.</p>
+     */
+    inline bool FilterExpressionHasBeenSet() const { return m_filterExpressionHasBeenSet; }
 
     /**
      * <p>The filter expression defining criteria by which to group traces.</p>

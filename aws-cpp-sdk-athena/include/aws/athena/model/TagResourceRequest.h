@@ -56,6 +56,12 @@ namespace Model
      * <p>Requests that one or more tags are added to the resource (such as a
      * workgroup) for the specified ARN.</p>
      */
+    inline bool ResourceARNHasBeenSet() const { return m_resourceARNHasBeenSet; }
+
+    /**
+     * <p>Requests that one or more tags are added to the resource (such as a
+     * workgroup) for the specified ARN.</p>
+     */
     inline void SetResourceARN(const Aws::String& value) { m_resourceARNHasBeenSet = true; m_resourceARN = value; }
 
     /**
@@ -94,6 +100,12 @@ namespace Model
      * workgroup.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>One or more tags, separated by commas, to be added to the resource, such as a
+     * workgroup.</p>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
      * <p>One or more tags, separated by commas, to be added to the resource, such as a

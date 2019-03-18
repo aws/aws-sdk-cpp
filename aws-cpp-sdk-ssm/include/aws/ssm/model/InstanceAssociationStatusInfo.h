@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p>The association ID.</p>
      */
+    inline bool AssociationIdHasBeenSet() const { return m_associationIdHasBeenSet; }
+
+    /**
+     * <p>The association ID.</p>
+     */
     inline void SetAssociationId(const Aws::String& value) { m_associationIdHasBeenSet = true; m_associationId = value; }
 
     /**
@@ -90,6 +95,11 @@ namespace Model
      * <p>The name of the association.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
+
+    /**
+     * <p>The name of the association.</p>
+     */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
      * <p>The name of the association.</p>
@@ -130,6 +140,11 @@ namespace Model
     /**
      * <p>The association document verions.</p>
      */
+    inline bool DocumentVersionHasBeenSet() const { return m_documentVersionHasBeenSet; }
+
+    /**
+     * <p>The association document verions.</p>
+     */
     inline void SetDocumentVersion(const Aws::String& value) { m_documentVersionHasBeenSet = true; m_documentVersion = value; }
 
     /**
@@ -162,6 +177,11 @@ namespace Model
      * <p>The version of the association applied to the instance.</p>
      */
     inline const Aws::String& GetAssociationVersion() const{ return m_associationVersion; }
+
+    /**
+     * <p>The version of the association applied to the instance.</p>
+     */
+    inline bool AssociationVersionHasBeenSet() const { return m_associationVersionHasBeenSet; }
 
     /**
      * <p>The version of the association applied to the instance.</p>
@@ -202,6 +222,11 @@ namespace Model
     /**
      * <p>The instance ID where the association was created.</p>
      */
+    inline bool InstanceIdHasBeenSet() const { return m_instanceIdHasBeenSet; }
+
+    /**
+     * <p>The instance ID where the association was created.</p>
+     */
     inline void SetInstanceId(const Aws::String& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
 
     /**
@@ -238,6 +263,11 @@ namespace Model
     /**
      * <p>The date the instance association executed. </p>
      */
+    inline bool ExecutionDateHasBeenSet() const { return m_executionDateHasBeenSet; }
+
+    /**
+     * <p>The date the instance association executed. </p>
+     */
     inline void SetExecutionDate(const Aws::Utils::DateTime& value) { m_executionDateHasBeenSet = true; m_executionDate = value; }
 
     /**
@@ -260,6 +290,11 @@ namespace Model
      * <p>Status information about the instance association.</p>
      */
     inline const Aws::String& GetStatus() const{ return m_status; }
+
+    /**
+     * <p>Status information about the instance association.</p>
+     */
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
     /**
      * <p>Status information about the instance association.</p>
@@ -300,6 +335,11 @@ namespace Model
     /**
      * <p>Detailed status information about the instance association.</p>
      */
+    inline bool DetailedStatusHasBeenSet() const { return m_detailedStatusHasBeenSet; }
+
+    /**
+     * <p>Detailed status information about the instance association.</p>
+     */
     inline void SetDetailedStatus(const Aws::String& value) { m_detailedStatusHasBeenSet = true; m_detailedStatus = value; }
 
     /**
@@ -336,6 +376,11 @@ namespace Model
     /**
      * <p>Summary information about association execution.</p>
      */
+    inline bool ExecutionSummaryHasBeenSet() const { return m_executionSummaryHasBeenSet; }
+
+    /**
+     * <p>Summary information about association execution.</p>
+     */
     inline void SetExecutionSummary(const Aws::String& value) { m_executionSummaryHasBeenSet = true; m_executionSummary = value; }
 
     /**
@@ -368,6 +413,11 @@ namespace Model
      * <p>An error code returned by the request to create the association.</p>
      */
     inline const Aws::String& GetErrorCode() const{ return m_errorCode; }
+
+    /**
+     * <p>An error code returned by the request to create the association.</p>
+     */
+    inline bool ErrorCodeHasBeenSet() const { return m_errorCodeHasBeenSet; }
 
     /**
      * <p>An error code returned by the request to create the association.</p>
@@ -410,6 +460,12 @@ namespace Model
      * <p>A URL for an Amazon S3 bucket where you want to store the results of this
      * request.</p>
      */
+    inline bool OutputUrlHasBeenSet() const { return m_outputUrlHasBeenSet; }
+
+    /**
+     * <p>A URL for an Amazon S3 bucket where you want to store the results of this
+     * request.</p>
+     */
     inline void SetOutputUrl(const InstanceAssociationOutputUrl& value) { m_outputUrlHasBeenSet = true; m_outputUrl = value; }
 
     /**
@@ -435,6 +491,11 @@ namespace Model
      * <p>The name of the association applied to the instance.</p>
      */
     inline const Aws::String& GetAssociationName() const{ return m_associationName; }
+
+    /**
+     * <p>The name of the association applied to the instance.</p>
+     */
+    inline bool AssociationNameHasBeenSet() const { return m_associationNameHasBeenSet; }
 
     /**
      * <p>The name of the association applied to the instance.</p>

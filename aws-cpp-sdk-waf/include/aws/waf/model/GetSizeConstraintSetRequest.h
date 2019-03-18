@@ -56,6 +56,13 @@ namespace Model
      * want to get. <code>SizeConstraintSetId</code> is returned by
      * <a>CreateSizeConstraintSet</a> and by <a>ListSizeConstraintSets</a>.</p>
      */
+    inline bool SizeConstraintSetIdHasBeenSet() const { return m_sizeConstraintSetIdHasBeenSet; }
+
+    /**
+     * <p>The <code>SizeConstraintSetId</code> of the <a>SizeConstraintSet</a> that you
+     * want to get. <code>SizeConstraintSetId</code> is returned by
+     * <a>CreateSizeConstraintSet</a> and by <a>ListSizeConstraintSets</a>.</p>
+     */
     inline void SetSizeConstraintSetId(const Aws::String& value) { m_sizeConstraintSetIdHasBeenSet = true; m_sizeConstraintSetId = value; }
 
     /**

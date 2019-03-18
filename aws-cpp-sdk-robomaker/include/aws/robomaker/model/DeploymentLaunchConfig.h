@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The package name.</p>
      */
+    inline bool PackageNameHasBeenSet() const { return m_packageNameHasBeenSet; }
+
+    /**
+     * <p>The package name.</p>
+     */
     inline void SetPackageName(const Aws::String& value) { m_packageNameHasBeenSet = true; m_packageName = value; }
 
     /**
@@ -90,6 +95,12 @@ namespace Model
      * launch file.</p>
      */
     inline const Aws::String& GetPreLaunchFile() const{ return m_preLaunchFile; }
+
+    /**
+     * <p>The deployment pre-launch file. This file will be executed prior to the
+     * launch file.</p>
+     */
+    inline bool PreLaunchFileHasBeenSet() const { return m_preLaunchFileHasBeenSet; }
 
     /**
      * <p>The deployment pre-launch file. This file will be executed prior to the
@@ -136,6 +147,11 @@ namespace Model
     /**
      * <p>The launch file name.</p>
      */
+    inline bool LaunchFileHasBeenSet() const { return m_launchFileHasBeenSet; }
+
+    /**
+     * <p>The launch file name.</p>
+     */
     inline void SetLaunchFile(const Aws::String& value) { m_launchFileHasBeenSet = true; m_launchFile = value; }
 
     /**
@@ -169,6 +185,12 @@ namespace Model
      * file.</p>
      */
     inline const Aws::String& GetPostLaunchFile() const{ return m_postLaunchFile; }
+
+    /**
+     * <p>The deployment post-launch file. This file will be executed after the launch
+     * file.</p>
+     */
+    inline bool PostLaunchFileHasBeenSet() const { return m_postLaunchFileHasBeenSet; }
 
     /**
      * <p>The deployment post-launch file. This file will be executed after the launch
@@ -212,6 +234,12 @@ namespace Model
      * application</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetEnvironmentVariables() const{ return m_environmentVariables; }
+
+    /**
+     * <p>An array of key/value pairs specifying environment variables for the robot
+     * application</p>
+     */
+    inline bool EnvironmentVariablesHasBeenSet() const { return m_environmentVariablesHasBeenSet; }
 
     /**
      * <p>An array of key/value pairs specifying environment variables for the robot

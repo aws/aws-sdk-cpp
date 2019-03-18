@@ -52,6 +52,11 @@ namespace Model
     /**
      * <p>The ID of the VPC that you want to disassociate the resolver rule from.</p>
      */
+    inline bool VPCIdHasBeenSet() const { return m_vPCIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the VPC that you want to disassociate the resolver rule from.</p>
+     */
     inline void SetVPCId(const Aws::String& value) { m_vPCIdHasBeenSet = true; m_vPCId = value; }
 
     /**
@@ -85,6 +90,12 @@ namespace Model
      * VPC.</p>
      */
     inline const Aws::String& GetResolverRuleId() const{ return m_resolverRuleId; }
+
+    /**
+     * <p>The ID of the resolver rule that you want to disassociate from the specified
+     * VPC.</p>
+     */
+    inline bool ResolverRuleIdHasBeenSet() const { return m_resolverRuleIdHasBeenSet; }
 
     /**
      * <p>The ID of the resolver rule that you want to disassociate from the specified

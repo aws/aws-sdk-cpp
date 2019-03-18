@@ -55,6 +55,11 @@ namespace Model
     /**
      * Platform credential API key from Google.
      */
+    inline bool ApiKeyHasBeenSet() const { return m_apiKeyHasBeenSet; }
+
+    /**
+     * Platform credential API key from Google.
+     */
     inline void SetApiKey(const Aws::String& value) { m_apiKeyHasBeenSet = true; m_apiKey = value; }
 
     /**
@@ -87,6 +92,11 @@ namespace Model
      * If the channel is enabled for sending messages.
      */
     inline bool GetEnabled() const{ return m_enabled; }
+
+    /**
+     * If the channel is enabled for sending messages.
+     */
+    inline bool EnabledHasBeenSet() const { return m_enabledHasBeenSet; }
 
     /**
      * If the channel is enabled for sending messages.

@@ -59,6 +59,12 @@ namespace Model
      * The default configuration that applies to all Lambda functions in this function
      * definition version. Individual Lambda functions can override these settings.
      */
+    inline bool DefaultConfigHasBeenSet() const { return m_defaultConfigHasBeenSet; }
+
+    /**
+     * The default configuration that applies to all Lambda functions in this function
+     * definition version. Individual Lambda functions can override these settings.
+     */
     inline void SetDefaultConfig(const FunctionDefaultConfig& value) { m_defaultConfigHasBeenSet = true; m_defaultConfig = value; }
 
     /**
@@ -84,6 +90,11 @@ namespace Model
      * A list of Lambda functions in this function definition version.
      */
     inline const Aws::Vector<Function>& GetFunctions() const{ return m_functions; }
+
+    /**
+     * A list of Lambda functions in this function definition version.
+     */
+    inline bool FunctionsHasBeenSet() const { return m_functionsHasBeenSet; }
 
     /**
      * A list of Lambda functions in this function definition version.

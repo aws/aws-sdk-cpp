@@ -57,6 +57,12 @@ namespace Model
      * <p>The name of the key-value pair. For environment variables, this is the name
      * of the environment variable.</p>
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>The name of the key-value pair. For environment variables, this is the name
+     * of the environment variable.</p>
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
@@ -95,6 +101,12 @@ namespace Model
      * of the environment variable.</p>
      */
     inline const Aws::String& GetValue() const{ return m_value; }
+
+    /**
+     * <p>The value of the key-value pair. For environment variables, this is the value
+     * of the environment variable.</p>
+     */
+    inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
 
     /**
      * <p>The value of the key-value pair. For environment variables, this is the value

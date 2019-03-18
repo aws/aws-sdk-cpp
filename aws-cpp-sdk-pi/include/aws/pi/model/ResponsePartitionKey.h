@@ -59,6 +59,11 @@ namespace Model
     /**
      * <p>A dimension map that contains the dimension(s) for this partition.</p>
      */
+    inline bool DimensionsHasBeenSet() const { return m_dimensionsHasBeenSet; }
+
+    /**
+     * <p>A dimension map that contains the dimension(s) for this partition.</p>
+     */
     inline void SetDimensions(const Aws::Map<Aws::String, Aws::String>& value) { m_dimensionsHasBeenSet = true; m_dimensions = value; }
 
     /**

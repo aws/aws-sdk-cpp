@@ -69,6 +69,14 @@ namespace Model
      * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-resources">Policy
      * Resources</a> in the <i>AWS Secrets Manager User Guide</i>.</p>
      */
+    inline bool ARNHasBeenSet() const { return m_aRNHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the secret.</p> <p>For more information
+     * about ARNs in Secrets Manager, see <a
+     * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-resources">Policy
+     * Resources</a> in the <i>AWS Secrets Manager User Guide</i>.</p>
+     */
     inline void SetARN(const Aws::String& value) { m_aRNHasBeenSet = true; m_aRN = value; }
 
     /**
@@ -119,6 +127,14 @@ namespace Model
      * folder <code>databases</code> in the folder <code>prod</code>. </p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
+
+    /**
+     * <p>The friendly name of the secret. You can use forward slashes in the name to
+     * represent a path hierarchy. For example, <code>/prod/databases/dbserver1</code>
+     * could represent the secret for a server named <code>dbserver1</code> in the
+     * folder <code>databases</code> in the folder <code>prod</code>. </p>
+     */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
      * <p>The friendly name of the secret. You can use forward slashes in the name to
@@ -177,6 +193,11 @@ namespace Model
     /**
      * <p>The user-provided description of the secret.</p>
      */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
+
+    /**
+     * <p>The user-provided description of the secret.</p>
+     */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
@@ -213,6 +234,15 @@ namespace Model
      * <code>awssecretsmanager</code>) for this account.</p>
      */
     inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
+
+    /**
+     * <p>The ARN or alias of the AWS KMS customer master key (CMK) that's used to
+     * encrypt the <code>SecretString</code> and <code>SecretBinary</code> fields in
+     * each version of the secret. If you don't provide a key, then Secrets Manager
+     * defaults to encrypting the secret fields with the default KMS CMK (the one named
+     * <code>awssecretsmanager</code>) for this account.</p>
+     */
+    inline bool KmsKeyIdHasBeenSet() const { return m_kmsKeyIdHasBeenSet; }
 
     /**
      * <p>The ARN or alias of the AWS KMS customer master key (CMK) that's used to
@@ -279,6 +309,12 @@ namespace Model
      * <p>Indicated whether automatic, scheduled rotation is enabled for this
      * secret.</p>
      */
+    inline bool RotationEnabledHasBeenSet() const { return m_rotationEnabledHasBeenSet; }
+
+    /**
+     * <p>Indicated whether automatic, scheduled rotation is enabled for this
+     * secret.</p>
+     */
     inline void SetRotationEnabled(bool value) { m_rotationEnabledHasBeenSet = true; m_rotationEnabled = value; }
 
     /**
@@ -294,6 +330,13 @@ namespace Model
      * call to <a>RotateSecret</a>.</p>
      */
     inline const Aws::String& GetRotationLambdaARN() const{ return m_rotationLambdaARN; }
+
+    /**
+     * <p>The ARN of an AWS Lambda function that's invoked by Secrets Manager to rotate
+     * and expire the secret either automatically per the schedule or manually by a
+     * call to <a>RotateSecret</a>.</p>
+     */
+    inline bool RotationLambdaARNHasBeenSet() const { return m_rotationLambdaARNHasBeenSet; }
 
     /**
      * <p>The ARN of an AWS Lambda function that's invoked by Secrets Manager to rotate
@@ -346,6 +389,11 @@ namespace Model
     /**
      * <p>A structure that defines the rotation configuration for the secret.</p>
      */
+    inline bool RotationRulesHasBeenSet() const { return m_rotationRulesHasBeenSet; }
+
+    /**
+     * <p>A structure that defines the rotation configuration for the secret.</p>
+     */
     inline void SetRotationRules(const RotationRulesType& value) { m_rotationRulesHasBeenSet = true; m_rotationRules = value; }
 
     /**
@@ -369,6 +417,12 @@ namespace Model
      * invoked.</p>
      */
     inline const Aws::Utils::DateTime& GetLastRotatedDate() const{ return m_lastRotatedDate; }
+
+    /**
+     * <p>The last date and time that the rotation process for this secret was
+     * invoked.</p>
+     */
+    inline bool LastRotatedDateHasBeenSet() const { return m_lastRotatedDateHasBeenSet; }
 
     /**
      * <p>The last date and time that the rotation process for this secret was
@@ -403,6 +457,11 @@ namespace Model
     /**
      * <p>The last date and time that this secret was modified in any way.</p>
      */
+    inline bool LastChangedDateHasBeenSet() const { return m_lastChangedDateHasBeenSet; }
+
+    /**
+     * <p>The last date and time that this secret was modified in any way.</p>
+     */
     inline void SetLastChangedDate(const Aws::Utils::DateTime& value) { m_lastChangedDateHasBeenSet = true; m_lastChangedDate = value; }
 
     /**
@@ -426,6 +485,12 @@ namespace Model
      * midnight of the date and therefore shows only the date, not the time.</p>
      */
     inline const Aws::Utils::DateTime& GetLastAccessedDate() const{ return m_lastAccessedDate; }
+
+    /**
+     * <p>The last date that this secret was accessed. This value is truncated to
+     * midnight of the date and therefore shows only the date, not the time.</p>
+     */
+    inline bool LastAccessedDateHasBeenSet() const { return m_lastAccessedDateHasBeenSet; }
 
     /**
      * <p>The last date that this secret was accessed. This value is truncated to
@@ -466,6 +531,14 @@ namespace Model
      * window has passed, as specified in the <code>RecoveryWindowInDays</code>
      * parameter of the <a>DeleteSecret</a> operation.</p>
      */
+    inline bool DeletedDateHasBeenSet() const { return m_deletedDateHasBeenSet; }
+
+    /**
+     * <p>The date and time on which this secret was deleted. Not present on active
+     * secrets. The secret can be recovered until the number of days in the recovery
+     * window has passed, as specified in the <code>RecoveryWindowInDays</code>
+     * parameter of the <a>DeleteSecret</a> operation.</p>
+     */
     inline void SetDeletedDate(const Aws::Utils::DateTime& value) { m_deletedDateHasBeenSet = true; m_deletedDate = value; }
 
     /**
@@ -499,6 +572,13 @@ namespace Model
      * <a>UntagResource</a>.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>The list of user-defined tags that are associated with the secret. To add
+     * tags to a secret, use <a>TagResource</a>. To remove tags, use
+     * <a>UntagResource</a>.</p>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
      * <p>The list of user-defined tags that are associated with the secret. To add
@@ -552,6 +632,16 @@ namespace Model
      * deletion. Such versions are not included in this list.</p> </note>
      */
     inline const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& GetSecretVersionsToStages() const{ return m_secretVersionsToStages; }
+
+    /**
+     * <p>A list of all of the currently assigned <code>SecretVersionStage</code>
+     * staging labels and the <code>SecretVersionId</code> that each is attached to.
+     * Staging labels are used to keep track of the different versions during the
+     * rotation process.</p> <note> <p>A version that does not have any
+     * <code>SecretVersionStage</code> is considered deprecated and subject to
+     * deletion. Such versions are not included in this list.</p> </note>
+     */
+    inline bool SecretVersionsToStagesHasBeenSet() const { return m_secretVersionsToStagesHasBeenSet; }
 
     /**
      * <p>A list of all of the currently assigned <code>SecretVersionStage</code>

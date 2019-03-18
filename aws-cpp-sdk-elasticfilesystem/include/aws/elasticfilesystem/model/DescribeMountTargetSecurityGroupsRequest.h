@@ -53,6 +53,11 @@ namespace Model
     /**
      * <p>The ID of the mount target whose security groups you want to retrieve.</p>
      */
+    inline bool MountTargetIdHasBeenSet() const { return m_mountTargetIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the mount target whose security groups you want to retrieve.</p>
+     */
     inline void SetMountTargetId(const Aws::String& value) { m_mountTargetIdHasBeenSet = true; m_mountTargetId = value; }
 
     /**

@@ -63,6 +63,11 @@ namespace Model
     /**
      * <p>The name of the simulated resource, in Amazon Resource Name (ARN) format.</p>
      */
+    inline bool EvalResourceNameHasBeenSet() const { return m_evalResourceNameHasBeenSet; }
+
+    /**
+     * <p>The name of the simulated resource, in Amazon Resource Name (ARN) format.</p>
+     */
     inline void SetEvalResourceName(const Aws::String& value) { m_evalResourceNameHasBeenSet = true; m_evalResourceName = value; }
 
     /**
@@ -101,6 +106,12 @@ namespace Model
      * <p>The result of the simulation of the simulated API operation on the resource
      * specified in <code>EvalResourceName</code>.</p>
      */
+    inline bool EvalResourceDecisionHasBeenSet() const { return m_evalResourceDecisionHasBeenSet; }
+
+    /**
+     * <p>The result of the simulation of the simulated API operation on the resource
+     * specified in <code>EvalResourceName</code>.</p>
+     */
     inline void SetEvalResourceDecision(const PolicyEvaluationDecisionType& value) { m_evalResourceDecisionHasBeenSet = true; m_evalResourceDecision = value; }
 
     /**
@@ -130,6 +141,15 @@ namespace Model
      * only entry included in the result.</p>
      */
     inline const Aws::Vector<Statement>& GetMatchedStatements() const{ return m_matchedStatements; }
+
+    /**
+     * <p>A list of the statements in the input policies that determine the result for
+     * this part of the simulation. Remember that even if multiple statements allow the
+     * operation on the resource, if <i>any</i> statement denies that operation, then
+     * the explicit deny overrides any allow. In addition, the deny statement is the
+     * only entry included in the result.</p>
+     */
+    inline bool MatchedStatementsHasBeenSet() const { return m_matchedStatementsHasBeenSet; }
 
     /**
      * <p>A list of the statements in the input policies that determine the result for
@@ -199,6 +219,20 @@ namespace Model
      * <a>GetContextKeysForPrincipalPolicy</a>.</p>
      */
     inline const Aws::Vector<Aws::String>& GetMissingContextValues() const{ return m_missingContextValues; }
+
+    /**
+     * <p>A list of context keys that are required by the included input policies but
+     * that were not provided by one of the input parameters. This list is used when a
+     * list of ARNs is included in the <code>ResourceArns</code> parameter instead of
+     * "*". If you do not specify individual resources, by setting
+     * <code>ResourceArns</code> to "*" or by not including the
+     * <code>ResourceArns</code> parameter, then any missing context values are instead
+     * included under the <code>EvaluationResults</code> section. To discover the
+     * context keys used by a set of policies, you can call
+     * <a>GetContextKeysForCustomPolicy</a> or
+     * <a>GetContextKeysForPrincipalPolicy</a>.</p>
+     */
+    inline bool MissingContextValuesHasBeenSet() const { return m_missingContextValuesHasBeenSet; }
 
     /**
      * <p>A list of context keys that are required by the included input policies but
@@ -307,6 +341,15 @@ namespace Model
      * caller's IAM policy must grant access.</p>
      */
     inline const Aws::Map<Aws::String, PolicyEvaluationDecisionType>& GetEvalDecisionDetails() const{ return m_evalDecisionDetails; }
+
+    /**
+     * <p>Additional details about the results of the evaluation decision. When there
+     * are both IAM policies and resource policies, this parameter explains how each
+     * set of policies contributes to the final evaluation decision. When simulating
+     * cross-account access to a resource, both the resource-based policy and the
+     * caller's IAM policy must grant access.</p>
+     */
+    inline bool EvalDecisionDetailsHasBeenSet() const { return m_evalDecisionDetailsHasBeenSet; }
 
     /**
      * <p>Additional details about the results of the evaluation decision. When there

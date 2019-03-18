@@ -62,6 +62,11 @@ namespace Model
     /**
      * <p>The name of the domain.</p>
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>The name of the domain.</p>
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
@@ -95,6 +100,12 @@ namespace Model
      * <code>arn:aws:lightsail:global:123456789101:Domain/824cede0-abc7-4f84-8dbc-12345EXAMPLE</code>).</p>
      */
     inline const Aws::String& GetArn() const{ return m_arn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the domain recordset (e.g.,
+     * <code>arn:aws:lightsail:global:123456789101:Domain/824cede0-abc7-4f84-8dbc-12345EXAMPLE</code>).</p>
+     */
+    inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the domain recordset (e.g.,
@@ -139,6 +150,13 @@ namespace Model
      * our support team to look up your Lightsail information more easily.</p>
      */
     inline const Aws::String& GetSupportCode() const{ return m_supportCode; }
+
+    /**
+     * <p>The support code. Include this code in your email to support when you have
+     * questions about an instance or another resource in Lightsail. This code enables
+     * our support team to look up your Lightsail information more easily.</p>
+     */
+    inline bool SupportCodeHasBeenSet() const { return m_supportCodeHasBeenSet; }
 
     /**
      * <p>The support code. Include this code in your email to support when you have
@@ -191,6 +209,11 @@ namespace Model
     /**
      * <p>The date when the domain recordset was created.</p>
      */
+    inline bool CreatedAtHasBeenSet() const { return m_createdAtHasBeenSet; }
+
+    /**
+     * <p>The date when the domain recordset was created.</p>
+     */
     inline void SetCreatedAt(const Aws::Utils::DateTime& value) { m_createdAtHasBeenSet = true; m_createdAt = value; }
 
     /**
@@ -214,6 +237,12 @@ namespace Model
      * created.</p>
      */
     inline const ResourceLocation& GetLocation() const{ return m_location; }
+
+    /**
+     * <p>The AWS Region and Availability Zones where the domain recordset was
+     * created.</p>
+     */
+    inline bool LocationHasBeenSet() const { return m_locationHasBeenSet; }
 
     /**
      * <p>The AWS Region and Availability Zones where the domain recordset was
@@ -248,6 +277,11 @@ namespace Model
     /**
      * <p>The resource type. </p>
      */
+    inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
+
+    /**
+     * <p>The resource type. </p>
+     */
     inline void SetResourceType(const ResourceType& value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
 
     /**
@@ -273,6 +307,14 @@ namespace Model
      * Dev Guide</a>.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>The tag keys and optional values for the resource. For more information about
+     * tags in Lightsail, see the <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-tags">Lightsail
+     * Dev Guide</a>.</p>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
      * <p>The tag keys and optional values for the resource. For more information about
@@ -328,6 +370,12 @@ namespace Model
      * entries.</p>
      */
     inline const Aws::Vector<DomainEntry>& GetDomainEntries() const{ return m_domainEntries; }
+
+    /**
+     * <p>An array of key-value pairs containing information about the domain
+     * entries.</p>
+     */
+    inline bool DomainEntriesHasBeenSet() const { return m_domainEntriesHasBeenSet; }
 
     /**
      * <p>An array of key-value pairs containing information about the domain

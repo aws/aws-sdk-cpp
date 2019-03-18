@@ -59,6 +59,11 @@ namespace Model
     /**
      * <p>Additional information about the error.</p>
      */
+    inline bool ErrorCodeHasBeenSet() const { return m_errorCodeHasBeenSet; }
+
+    /**
+     * <p>Additional information about the error.</p>
+     */
     inline void SetErrorCode(const ErrorCode& value) { m_errorCodeHasBeenSet = true; m_errorCode = value; }
 
     /**
@@ -81,6 +86,11 @@ namespace Model
      * <p>Human-readable text that provides detail about the error that occurred.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetErrorDetails() const{ return m_errorDetails; }
+
+    /**
+     * <p>Human-readable text that provides detail about the error that occurred.</p>
+     */
+    inline bool ErrorDetailsHasBeenSet() const { return m_errorDetailsHasBeenSet; }
 
     /**
      * <p>Human-readable text that provides detail about the error that occurred.</p>

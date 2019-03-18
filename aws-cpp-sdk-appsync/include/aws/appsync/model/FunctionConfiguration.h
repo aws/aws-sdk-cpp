@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>A unique ID representing the <code>Function</code> object.</p>
      */
+    inline bool FunctionIdHasBeenSet() const { return m_functionIdHasBeenSet; }
+
+    /**
+     * <p>A unique ID representing the <code>Function</code> object.</p>
+     */
     inline void SetFunctionId(const Aws::String& value) { m_functionIdHasBeenSet = true; m_functionId = value; }
 
     /**
@@ -88,6 +93,11 @@ namespace Model
      * <p>The ARN of the <code>Function</code> object.</p>
      */
     inline const Aws::String& GetFunctionArn() const{ return m_functionArn; }
+
+    /**
+     * <p>The ARN of the <code>Function</code> object.</p>
+     */
+    inline bool FunctionArnHasBeenSet() const { return m_functionArnHasBeenSet; }
 
     /**
      * <p>The ARN of the <code>Function</code> object.</p>
@@ -128,6 +138,11 @@ namespace Model
     /**
      * <p>The name of the <code>Function</code> object.</p>
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>The name of the <code>Function</code> object.</p>
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
@@ -160,6 +175,11 @@ namespace Model
      * <p>The <code>Function</code> description.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
+
+    /**
+     * <p>The <code>Function</code> description.</p>
+     */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
 
     /**
      * <p>The <code>Function</code> description.</p>
@@ -200,6 +220,11 @@ namespace Model
     /**
      * <p>The name of the <code>DataSource</code>.</p>
      */
+    inline bool DataSourceNameHasBeenSet() const { return m_dataSourceNameHasBeenSet; }
+
+    /**
+     * <p>The name of the <code>DataSource</code>.</p>
+     */
     inline void SetDataSourceName(const Aws::String& value) { m_dataSourceNameHasBeenSet = true; m_dataSourceName = value; }
 
     /**
@@ -233,6 +258,12 @@ namespace Model
      * the 2018-05-29 version of the request mapping template.</p>
      */
     inline const Aws::String& GetRequestMappingTemplate() const{ return m_requestMappingTemplate; }
+
+    /**
+     * <p>The <code>Function</code> request mapping template. Functions support only
+     * the 2018-05-29 version of the request mapping template.</p>
+     */
+    inline bool RequestMappingTemplateHasBeenSet() const { return m_requestMappingTemplateHasBeenSet; }
 
     /**
      * <p>The <code>Function</code> request mapping template. Functions support only
@@ -279,6 +310,11 @@ namespace Model
     /**
      * <p>The <code>Function</code> response mapping template.</p>
      */
+    inline bool ResponseMappingTemplateHasBeenSet() const { return m_responseMappingTemplateHasBeenSet; }
+
+    /**
+     * <p>The <code>Function</code> response mapping template.</p>
+     */
     inline void SetResponseMappingTemplate(const Aws::String& value) { m_responseMappingTemplateHasBeenSet = true; m_responseMappingTemplate = value; }
 
     /**
@@ -312,6 +348,12 @@ namespace Model
      * version of the template is supported.</p>
      */
     inline const Aws::String& GetFunctionVersion() const{ return m_functionVersion; }
+
+    /**
+     * <p>The version of the request mapping template. Currently only the 2018-05-29
+     * version of the template is supported.</p>
+     */
+    inline bool FunctionVersionHasBeenSet() const { return m_functionVersionHasBeenSet; }
 
     /**
      * <p>The version of the request mapping template. Currently only the 2018-05-29

@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The device (phone or tablet) that you wish to return information about.</p>
      */
+    inline bool DeviceHasBeenSet() const { return m_deviceHasBeenSet; }
+
+    /**
+     * <p>The device (phone or tablet) that you wish to return information about.</p>
+     */
     inline void SetDevice(const Device& value) { m_deviceHasBeenSet = true; m_device = value; }
 
     /**
@@ -83,6 +88,11 @@ namespace Model
     /**
      * <p>Whether the result was compatible with the device pool.</p>
      */
+    inline bool CompatibleHasBeenSet() const { return m_compatibleHasBeenSet; }
+
+    /**
+     * <p>Whether the result was compatible with the device pool.</p>
+     */
     inline void SetCompatible(bool value) { m_compatibleHasBeenSet = true; m_compatible = value; }
 
     /**
@@ -95,6 +105,11 @@ namespace Model
      * <p>Information about the compatibility.</p>
      */
     inline const Aws::Vector<IncompatibilityMessage>& GetIncompatibilityMessages() const{ return m_incompatibilityMessages; }
+
+    /**
+     * <p>Information about the compatibility.</p>
+     */
+    inline bool IncompatibilityMessagesHasBeenSet() const { return m_incompatibilityMessagesHasBeenSet; }
 
     /**
      * <p>Information about the compatibility.</p>

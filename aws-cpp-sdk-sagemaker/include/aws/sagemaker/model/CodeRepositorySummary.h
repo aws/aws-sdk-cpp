@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p>The name of the Git repository.</p>
      */
+    inline bool CodeRepositoryNameHasBeenSet() const { return m_codeRepositoryNameHasBeenSet; }
+
+    /**
+     * <p>The name of the Git repository.</p>
+     */
     inline void SetCodeRepositoryName(const Aws::String& value) { m_codeRepositoryNameHasBeenSet = true; m_codeRepositoryName = value; }
 
     /**
@@ -90,6 +95,11 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the Git repository.</p>
      */
     inline const Aws::String& GetCodeRepositoryArn() const{ return m_codeRepositoryArn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the Git repository.</p>
+     */
+    inline bool CodeRepositoryArnHasBeenSet() const { return m_codeRepositoryArnHasBeenSet; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the Git repository.</p>
@@ -130,6 +140,11 @@ namespace Model
     /**
      * <p>The date and time that the Git repository was created.</p>
      */
+    inline bool CreationTimeHasBeenSet() const { return m_creationTimeHasBeenSet; }
+
+    /**
+     * <p>The date and time that the Git repository was created.</p>
+     */
     inline void SetCreationTime(const Aws::Utils::DateTime& value) { m_creationTimeHasBeenSet = true; m_creationTime = value; }
 
     /**
@@ -152,6 +167,11 @@ namespace Model
      * <p>The date and time that the Git repository was last modified.</p>
      */
     inline const Aws::Utils::DateTime& GetLastModifiedTime() const{ return m_lastModifiedTime; }
+
+    /**
+     * <p>The date and time that the Git repository was last modified.</p>
+     */
+    inline bool LastModifiedTimeHasBeenSet() const { return m_lastModifiedTimeHasBeenSet; }
 
     /**
      * <p>The date and time that the Git repository was last modified.</p>
@@ -180,6 +200,13 @@ namespace Model
      * credentials used to access the repository.</p>
      */
     inline const GitConfig& GetGitConfig() const{ return m_gitConfig; }
+
+    /**
+     * <p>Configuration details for the Git repository, including the URL where it is
+     * located and the ARN of the AWS Secrets Manager secret that contains the
+     * credentials used to access the repository.</p>
+     */
+    inline bool GitConfigHasBeenSet() const { return m_gitConfigHasBeenSet; }
 
     /**
      * <p>Configuration details for the Git repository, including the URL where it is

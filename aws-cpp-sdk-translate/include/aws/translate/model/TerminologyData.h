@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The file containing the custom terminology data.</p>
      */
+    inline bool FileHasBeenSet() const { return m_fileHasBeenSet; }
+
+    /**
+     * <p>The file containing the custom terminology data.</p>
+     */
     inline void SetFile(const Aws::Utils::CryptoBuffer& value) { m_fileHasBeenSet = true; m_file = value; }
 
     /**
@@ -79,6 +84,11 @@ namespace Model
      * <p>The data format of the custom terminology. Either CSV or TMX.</p>
      */
     inline const TerminologyDataFormat& GetFormat() const{ return m_format; }
+
+    /**
+     * <p>The data format of the custom terminology. Either CSV or TMX.</p>
+     */
+    inline bool FormatHasBeenSet() const { return m_formatHasBeenSet; }
 
     /**
      * <p>The data format of the custom terminology. Either CSV or TMX.</p>

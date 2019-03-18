@@ -54,6 +54,11 @@ namespace Model
     /**
      * <p>The name of the log group.</p>
      */
+    inline bool LogGroupNameHasBeenSet() const { return m_logGroupNameHasBeenSet; }
+
+    /**
+     * <p>The name of the log group.</p>
+     */
     inline void SetLogGroupName(const Aws::String& value) { m_logGroupNameHasBeenSet = true; m_logGroupName = value; }
 
     /**
@@ -86,6 +91,11 @@ namespace Model
      * <p>A name for the metric filter.</p>
      */
     inline const Aws::String& GetFilterName() const{ return m_filterName; }
+
+    /**
+     * <p>A name for the metric filter.</p>
+     */
+    inline bool FilterNameHasBeenSet() const { return m_filterNameHasBeenSet; }
 
     /**
      * <p>A name for the metric filter.</p>
@@ -126,6 +136,11 @@ namespace Model
     /**
      * <p>A filter pattern for extracting metric data out of ingested log events.</p>
      */
+    inline bool FilterPatternHasBeenSet() const { return m_filterPatternHasBeenSet; }
+
+    /**
+     * <p>A filter pattern for extracting metric data out of ingested log events.</p>
+     */
     inline void SetFilterPattern(const Aws::String& value) { m_filterPatternHasBeenSet = true; m_filterPattern = value; }
 
     /**
@@ -158,6 +173,11 @@ namespace Model
      * <p>A collection of information that defines how metric data gets emitted.</p>
      */
     inline const Aws::Vector<MetricTransformation>& GetMetricTransformations() const{ return m_metricTransformations; }
+
+    /**
+     * <p>A collection of information that defines how metric data gets emitted.</p>
+     */
+    inline bool MetricTransformationsHasBeenSet() const { return m_metricTransformationsHasBeenSet; }
 
     /**
      * <p>A collection of information that defines how metric data gets emitted.</p>

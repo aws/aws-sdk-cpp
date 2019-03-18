@@ -52,6 +52,11 @@ namespace Model
     /**
      * <p>The identifier of the IP access control group.</p>
      */
+    inline bool GroupIdHasBeenSet() const { return m_groupIdHasBeenSet; }
+
+    /**
+     * <p>The identifier of the IP access control group.</p>
+     */
     inline void SetGroupId(const Aws::String& value) { m_groupIdHasBeenSet = true; m_groupId = value; }
 
     /**

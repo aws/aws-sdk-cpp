@@ -53,6 +53,12 @@ namespace Model
      * <p>A list of account IDs for the Security Hub member accounts on which you want
      * to return the details. </p>
      */
+    inline bool AccountIdsHasBeenSet() const { return m_accountIdsHasBeenSet; }
+
+    /**
+     * <p>A list of account IDs for the Security Hub member accounts on which you want
+     * to return the details. </p>
+     */
     inline void SetAccountIds(const Aws::Vector<Aws::String>& value) { m_accountIdsHasBeenSet = true; m_accountIds = value; }
 
     /**

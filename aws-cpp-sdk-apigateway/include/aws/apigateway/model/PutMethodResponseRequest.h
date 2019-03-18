@@ -55,6 +55,11 @@ namespace Model
     /**
      * <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
      */
+    inline bool RestApiIdHasBeenSet() const { return m_restApiIdHasBeenSet; }
+
+    /**
+     * <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
+     */
     inline void SetRestApiId(const Aws::String& value) { m_restApiIdHasBeenSet = true; m_restApiId = value; }
 
     /**
@@ -87,6 +92,11 @@ namespace Model
      * <p>[Required] The <a>Resource</a> identifier for the <a>Method</a> resource.</p>
      */
     inline const Aws::String& GetResourceId() const{ return m_resourceId; }
+
+    /**
+     * <p>[Required] The <a>Resource</a> identifier for the <a>Method</a> resource.</p>
+     */
+    inline bool ResourceIdHasBeenSet() const { return m_resourceIdHasBeenSet; }
 
     /**
      * <p>[Required] The <a>Resource</a> identifier for the <a>Method</a> resource.</p>
@@ -127,6 +137,11 @@ namespace Model
     /**
      * <p>[Required] The HTTP verb of the <a>Method</a> resource.</p>
      */
+    inline bool HttpMethodHasBeenSet() const { return m_httpMethodHasBeenSet; }
+
+    /**
+     * <p>[Required] The HTTP verb of the <a>Method</a> resource.</p>
+     */
     inline void SetHttpMethod(const Aws::String& value) { m_httpMethodHasBeenSet = true; m_httpMethod = value; }
 
     /**
@@ -159,6 +174,11 @@ namespace Model
      * <p>[Required] The method response's status code.</p>
      */
     inline const Aws::String& GetStatusCode() const{ return m_statusCode; }
+
+    /**
+     * <p>[Required] The method response's status code.</p>
+     */
+    inline bool StatusCodeHasBeenSet() const { return m_statusCodeHasBeenSet; }
 
     /**
      * <p>[Required] The method response's status code.</p>
@@ -208,6 +228,24 @@ namespace Model
      * <code>$</code> prefix.)</p>
      */
     inline const Aws::Map<Aws::String, bool>& GetResponseParameters() const{ return m_responseParameters; }
+
+    /**
+     * <p>A key-value map specifying required or optional response parameters that API
+     * Gateway can send back to the caller. A key defines a method response header name
+     * and the associated value is a Boolean flag indicating whether the method
+     * response parameter is required or not. The method response header names must
+     * match the pattern of <code>method.response.header.{name}</code>, where
+     * <code>name</code> is a valid and unique header name. The response parameter
+     * names defined here are available in the integration response to be mapped from
+     * an integration response header expressed in
+     * <code>integration.response.header.{name}</code>, a static value enclosed within
+     * a pair of single quotes (e.g., <code>'application/json'</code>), or a JSON
+     * expression from the back-end response payload in the form of
+     * <code>integration.response.body.{JSON-expression}</code>, where
+     * <code>JSON-expression</code> is a valid JSON expression without the
+     * <code>$</code> prefix.)</p>
+     */
+    inline bool ResponseParametersHasBeenSet() const { return m_responseParametersHasBeenSet; }
 
     /**
      * <p>A key-value map specifying required or optional response parameters that API
@@ -342,6 +380,13 @@ namespace Model
      * key and a <a>Model</a> name as the value.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetResponseModels() const{ return m_responseModels; }
+
+    /**
+     * <p>Specifies the <a>Model</a> resources used for the response's content type.
+     * Response models are represented as a key/value map, with a content type as the
+     * key and a <a>Model</a> name as the value.</p>
+     */
+    inline bool ResponseModelsHasBeenSet() const { return m_responseModelsHasBeenSet; }
 
     /**
      * <p>Specifies the <a>Model</a> resources used for the response's content type.

@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>Uniquely identifies a backup plan.</p>
      */
+    inline bool BackupPlanIdHasBeenSet() const { return m_backupPlanIdHasBeenSet; }
+
+    /**
+     * <p>Uniquely identifies a backup plan.</p>
+     */
     inline void SetBackupPlanId(const Aws::String& value) { m_backupPlanIdHasBeenSet = true; m_backupPlanId = value; }
 
     /**
@@ -90,6 +95,13 @@ namespace Model
      * <code>arn:aws:backup:us-east-1:123456789012:plan:8F81F553-3A74-4A3F-B93D-B3360DC80C50</code>.</p>
      */
     inline const Aws::String& GetBackupPlanArn() const{ return m_backupPlanArn; }
+
+    /**
+     * <p>An Amazon Resource Name (ARN) that uniquely identifies a backup plan; for
+     * example,
+     * <code>arn:aws:backup:us-east-1:123456789012:plan:8F81F553-3A74-4A3F-B93D-B3360DC80C50</code>.</p>
+     */
+    inline bool BackupPlanArnHasBeenSet() const { return m_backupPlanArnHasBeenSet; }
 
     /**
      * <p>An Amazon Resource Name (ARN) that uniquely identifies a backup plan; for
@@ -144,6 +156,12 @@ namespace Model
      * <p>Version IDs are unique, randomly generated, Unicode, UTF-8 encoded strings
      * that are at most 1,024 bytes long. They cannot be edited.</p>
      */
+    inline bool BackupPlanVersionHasBeenSet() const { return m_backupPlanVersionHasBeenSet; }
+
+    /**
+     * <p>Version IDs are unique, randomly generated, Unicode, UTF-8 encoded strings
+     * that are at most 1,024 bytes long. They cannot be edited.</p>
+     */
     inline void SetBackupPlanVersion(const Aws::String& value) { m_backupPlanVersionHasBeenSet = true; m_backupPlanVersion = value; }
 
     /**
@@ -182,6 +200,12 @@ namespace Model
      * resources.</p>
      */
     inline const Aws::String& GetBackupRuleId() const{ return m_backupRuleId; }
+
+    /**
+     * <p>Uniquely identifies a rule used to schedule the backup of a selection of
+     * resources.</p>
+     */
+    inline bool BackupRuleIdHasBeenSet() const { return m_backupRuleIdHasBeenSet; }
 
     /**
      * <p>Uniquely identifies a rule used to schedule the backup of a selection of

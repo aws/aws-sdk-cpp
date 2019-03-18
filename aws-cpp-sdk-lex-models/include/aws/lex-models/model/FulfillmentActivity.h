@@ -71,6 +71,12 @@ namespace Model
      * <p> How the intent should be fulfilled, either by running a Lambda function or
      * by returning the slot data to the client application. </p>
      */
+    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
+
+    /**
+     * <p> How the intent should be fulfilled, either by running a Lambda function or
+     * by returning the slot data to the client application. </p>
+     */
     inline void SetType(const FulfillmentActivityType& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
@@ -96,6 +102,11 @@ namespace Model
      * <p> A description of the Lambda function that is run to fulfill the intent. </p>
      */
     inline const CodeHook& GetCodeHook() const{ return m_codeHook; }
+
+    /**
+     * <p> A description of the Lambda function that is run to fulfill the intent. </p>
+     */
+    inline bool CodeHookHasBeenSet() const { return m_codeHookHasBeenSet; }
 
     /**
      * <p> A description of the Lambda function that is run to fulfill the intent. </p>

@@ -58,6 +58,12 @@ namespace Model
      * <p>The time, in seconds, that the connection is allowed to be idle (no data has
      * been sent over the connection) before it is closed by the load balancer.</p>
      */
+    inline bool IdleTimeoutHasBeenSet() const { return m_idleTimeoutHasBeenSet; }
+
+    /**
+     * <p>The time, in seconds, that the connection is allowed to be idle (no data has
+     * been sent over the connection) before it is closed by the load balancer.</p>
+     */
     inline void SetIdleTimeout(int value) { m_idleTimeoutHasBeenSet = true; m_idleTimeout = value; }
 
     /**

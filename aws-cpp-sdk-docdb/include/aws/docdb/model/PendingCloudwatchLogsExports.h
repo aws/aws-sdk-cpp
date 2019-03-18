@@ -62,6 +62,12 @@ namespace Model
      * <p>Log types that are in the process of being deactivated. After they are
      * deactivated, these log types aren't exported to CloudWatch Logs.</p>
      */
+    inline bool LogTypesToEnableHasBeenSet() const { return m_logTypesToEnableHasBeenSet; }
+
+    /**
+     * <p>Log types that are in the process of being deactivated. After they are
+     * deactivated, these log types aren't exported to CloudWatch Logs.</p>
+     */
     inline void SetLogTypesToEnable(const Aws::Vector<Aws::String>& value) { m_logTypesToEnableHasBeenSet = true; m_logTypesToEnable = value; }
 
     /**
@@ -106,6 +112,12 @@ namespace Model
      * these log types are exported to Amazon CloudWatch Logs.</p>
      */
     inline const Aws::Vector<Aws::String>& GetLogTypesToDisable() const{ return m_logTypesToDisable; }
+
+    /**
+     * <p>Log types that are in the process of being enabled. After they are enabled,
+     * these log types are exported to Amazon CloudWatch Logs.</p>
+     */
+    inline bool LogTypesToDisableHasBeenSet() const { return m_logTypesToDisableHasBeenSet; }
 
     /**
      * <p>Log types that are in the process of being enabled. After they are enabled,

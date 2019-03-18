@@ -62,6 +62,12 @@ namespace Model
      * <p>The ID of the managed instance the high-level patch compliance information
      * was collected for.</p>
      */
+    inline bool InstanceIdHasBeenSet() const { return m_instanceIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the managed instance the high-level patch compliance information
+     * was collected for.</p>
+     */
     inline void SetInstanceId(const Aws::String& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
 
     /**
@@ -103,6 +109,11 @@ namespace Model
     /**
      * <p>The name of the patch group the managed instance belongs to.</p>
      */
+    inline bool PatchGroupHasBeenSet() const { return m_patchGroupHasBeenSet; }
+
+    /**
+     * <p>The name of the patch group the managed instance belongs to.</p>
+     */
     inline void SetPatchGroup(const Aws::String& value) { m_patchGroupHasBeenSet = true; m_patchGroup = value; }
 
     /**
@@ -135,6 +146,11 @@ namespace Model
      * <p>The ID of the patch baseline used to patch the instance.</p>
      */
     inline const Aws::String& GetBaselineId() const{ return m_baselineId; }
+
+    /**
+     * <p>The ID of the patch baseline used to patch the instance.</p>
+     */
+    inline bool BaselineIdHasBeenSet() const { return m_baselineIdHasBeenSet; }
 
     /**
      * <p>The ID of the patch baseline used to patch the instance.</p>
@@ -172,6 +188,12 @@ namespace Model
      * this compliance data was collected.</p>
      */
     inline const Aws::String& GetSnapshotId() const{ return m_snapshotId; }
+
+    /**
+     * <p>The ID of the patch baseline snapshot used during the patching operation when
+     * this compliance data was collected.</p>
+     */
+    inline bool SnapshotIdHasBeenSet() const { return m_snapshotIdHasBeenSet; }
 
     /**
      * <p>The ID of the patch baseline snapshot used during the patching operation when
@@ -222,6 +244,19 @@ namespace Model
      * Guide</i>.</p>
      */
     inline const Aws::String& GetInstallOverrideList() const{ return m_installOverrideList; }
+
+    /**
+     * <p>An https URL or an Amazon S3 path-style URL to a list of patches to be
+     * installed. This patch installation list, which you maintain in an Amazon S3
+     * bucket in YAML format and specify in the SSM document
+     * <code>AWS-RunPatchBaseline</code>, overrides the patches specified by the
+     * default patch baseline.</p> <p>For more information about the
+     * <code>InstallOverrideList</code> parameter, see <a
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-about-aws-runpatchbaseline.html">About
+     * the SSM Document AWS-RunPatchBaseline</a> in the <i>AWS Systems Manager User
+     * Guide</i>.</p>
+     */
+    inline bool InstallOverrideListHasBeenSet() const { return m_installOverrideListHasBeenSet; }
 
     /**
      * <p>An https URL or an Amazon S3 path-style URL to a list of patches to be
@@ -312,6 +347,12 @@ namespace Model
      * <p>Placeholder information. This field will always be empty in the current
      * release of the service.</p>
      */
+    inline bool OwnerInformationHasBeenSet() const { return m_ownerInformationHasBeenSet; }
+
+    /**
+     * <p>Placeholder information. This field will always be empty in the current
+     * release of the service.</p>
+     */
     inline void SetOwnerInformation(const Aws::String& value) { m_ownerInformationHasBeenSet = true; m_ownerInformation = value; }
 
     /**
@@ -355,6 +396,12 @@ namespace Model
      * <p>The number of patches from the patch baseline that are installed on the
      * instance.</p>
      */
+    inline bool InstalledCountHasBeenSet() const { return m_installedCountHasBeenSet; }
+
+    /**
+     * <p>The number of patches from the patch baseline that are installed on the
+     * instance.</p>
+     */
     inline void SetInstalledCount(int value) { m_installedCountHasBeenSet = true; m_installedCount = value; }
 
     /**
@@ -369,6 +416,12 @@ namespace Model
      * on the instance.</p>
      */
     inline int GetInstalledOtherCount() const{ return m_installedOtherCount; }
+
+    /**
+     * <p>The number of patches not specified in the patch baseline that are installed
+     * on the instance.</p>
+     */
+    inline bool InstalledOtherCountHasBeenSet() const { return m_installedOtherCountHasBeenSet; }
 
     /**
      * <p>The number of patches not specified in the patch baseline that are installed
@@ -399,6 +452,15 @@ namespace Model
      * <p>If ALLOW_AS_DEPENDENCY is the specified option for RejectedPatchesAction, the
      * value of InstalledRejectedCount will always be 0 (zero).</p> </note>
      */
+    inline bool InstalledRejectedCountHasBeenSet() const { return m_installedRejectedCountHasBeenSet; }
+
+    /**
+     * <p>The number of instances with patches installed that are specified in a
+     * RejectedPatches list. Patches with a status of <i>InstalledRejected</i> were
+     * typically installed before they were added to a RejectedPatches list.</p> <note>
+     * <p>If ALLOW_AS_DEPENDENCY is the specified option for RejectedPatchesAction, the
+     * value of InstalledRejectedCount will always be 0 (zero).</p> </note>
+     */
     inline void SetInstalledRejectedCount(int value) { m_installedRejectedCountHasBeenSet = true; m_installedRejectedCount = value; }
 
     /**
@@ -416,6 +478,12 @@ namespace Model
      * instance but aren't currently installed.</p>
      */
     inline int GetMissingCount() const{ return m_missingCount; }
+
+    /**
+     * <p>The number of patches from the patch baseline that are applicable for the
+     * instance but aren't currently installed.</p>
+     */
+    inline bool MissingCountHasBeenSet() const { return m_missingCountHasBeenSet; }
 
     /**
      * <p>The number of patches from the patch baseline that are applicable for the
@@ -440,6 +508,12 @@ namespace Model
      * <p>The number of patches from the patch baseline that were attempted to be
      * installed during the last patching operation, but failed to install.</p>
      */
+    inline bool FailedCountHasBeenSet() const { return m_failedCountHasBeenSet; }
+
+    /**
+     * <p>The number of patches from the patch baseline that were attempted to be
+     * installed during the last patching operation, but failed to install.</p>
+     */
     inline void SetFailedCount(int value) { m_failedCountHasBeenSet = true; m_failedCount = value; }
 
     /**
@@ -459,6 +533,12 @@ namespace Model
      * <p>The number of patches from the patch baseline that aren't applicable for the
      * instance and hence aren't installed on the instance.</p>
      */
+    inline bool NotApplicableCountHasBeenSet() const { return m_notApplicableCountHasBeenSet; }
+
+    /**
+     * <p>The number of patches from the patch baseline that aren't applicable for the
+     * instance and hence aren't installed on the instance.</p>
+     */
     inline void SetNotApplicableCount(int value) { m_notApplicableCountHasBeenSet = true; m_notApplicableCount = value; }
 
     /**
@@ -472,6 +552,11 @@ namespace Model
      * <p>The time the most recent patching operation was started on the instance.</p>
      */
     inline const Aws::Utils::DateTime& GetOperationStartTime() const{ return m_operationStartTime; }
+
+    /**
+     * <p>The time the most recent patching operation was started on the instance.</p>
+     */
+    inline bool OperationStartTimeHasBeenSet() const { return m_operationStartTimeHasBeenSet; }
 
     /**
      * <p>The time the most recent patching operation was started on the instance.</p>
@@ -502,6 +587,11 @@ namespace Model
     /**
      * <p>The time the most recent patching operation completed on the instance.</p>
      */
+    inline bool OperationEndTimeHasBeenSet() const { return m_operationEndTimeHasBeenSet; }
+
+    /**
+     * <p>The time the most recent patching operation completed on the instance.</p>
+     */
     inline void SetOperationEndTime(const Aws::Utils::DateTime& value) { m_operationEndTimeHasBeenSet = true; m_operationEndTime = value; }
 
     /**
@@ -525,6 +615,12 @@ namespace Model
      * compliance state) or INSTALL (install missing patches).</p>
      */
     inline const PatchOperationType& GetOperation() const{ return m_operation; }
+
+    /**
+     * <p>The type of patching operation that was performed: SCAN (assess patch
+     * compliance state) or INSTALL (install missing patches).</p>
+     */
+    inline bool OperationHasBeenSet() const { return m_operationHasBeenSet; }
 
     /**
      * <p>The type of patching operation that was performed: SCAN (assess patch

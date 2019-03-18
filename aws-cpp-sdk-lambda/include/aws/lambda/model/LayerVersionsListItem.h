@@ -59,6 +59,11 @@ namespace Model
     /**
      * <p>The ARN of the layer version.</p>
      */
+    inline bool LayerVersionArnHasBeenSet() const { return m_layerVersionArnHasBeenSet; }
+
+    /**
+     * <p>The ARN of the layer version.</p>
+     */
     inline void SetLayerVersionArn(const Aws::String& value) { m_layerVersionArnHasBeenSet = true; m_layerVersionArn = value; }
 
     /**
@@ -95,6 +100,11 @@ namespace Model
     /**
      * <p>The version number.</p>
      */
+    inline bool VersionHasBeenSet() const { return m_versionHasBeenSet; }
+
+    /**
+     * <p>The version number.</p>
+     */
     inline void SetVersion(long long value) { m_versionHasBeenSet = true; m_version = value; }
 
     /**
@@ -107,6 +117,11 @@ namespace Model
      * <p>The description of the version.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
+
+    /**
+     * <p>The description of the version.</p>
+     */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
 
     /**
      * <p>The description of the version.</p>
@@ -144,6 +159,12 @@ namespace Model
      * <code>2018-11-27T15:10:45.123+0000</code>.</p>
      */
     inline const Aws::String& GetCreatedDate() const{ return m_createdDate; }
+
+    /**
+     * <p>The date that the version was created, in ISO 8601 format. For example,
+     * <code>2018-11-27T15:10:45.123+0000</code>.</p>
+     */
+    inline bool CreatedDateHasBeenSet() const { return m_createdDateHasBeenSet; }
 
     /**
      * <p>The date that the version was created, in ISO 8601 format. For example,
@@ -190,6 +211,11 @@ namespace Model
     /**
      * <p>The layer's compatible runtimes.</p>
      */
+    inline bool CompatibleRuntimesHasBeenSet() const { return m_compatibleRuntimesHasBeenSet; }
+
+    /**
+     * <p>The layer's compatible runtimes.</p>
+     */
     inline void SetCompatibleRuntimes(const Aws::Vector<Runtime>& value) { m_compatibleRuntimesHasBeenSet = true; m_compatibleRuntimes = value; }
 
     /**
@@ -222,6 +248,11 @@ namespace Model
      * <p>The layer's open-source license.</p>
      */
     inline const Aws::String& GetLicenseInfo() const{ return m_licenseInfo; }
+
+    /**
+     * <p>The layer's open-source license.</p>
+     */
+    inline bool LicenseInfoHasBeenSet() const { return m_licenseInfoHasBeenSet; }
 
     /**
      * <p>The layer's open-source license.</p>

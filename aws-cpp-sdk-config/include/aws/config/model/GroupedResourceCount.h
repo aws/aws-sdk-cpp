@@ -60,6 +60,13 @@ namespace Model
      * example, region1, region2 if the region was chosen as
      * <code>GroupByKey</code>.</p>
      */
+    inline bool GroupNameHasBeenSet() const { return m_groupNameHasBeenSet; }
+
+    /**
+     * <p>The name of the group that can be region, account ID, or resource type. For
+     * example, region1, region2 if the region was chosen as
+     * <code>GroupByKey</code>.</p>
+     */
     inline void SetGroupName(const Aws::String& value) { m_groupNameHasBeenSet = true; m_groupName = value; }
 
     /**
@@ -102,6 +109,11 @@ namespace Model
      * <p>The number of resources in the group.</p>
      */
     inline long long GetResourceCount() const{ return m_resourceCount; }
+
+    /**
+     * <p>The number of resources in the group.</p>
+     */
+    inline bool ResourceCountHasBeenSet() const { return m_resourceCountHasBeenSet; }
 
     /**
      * <p>The number of resources in the group.</p>

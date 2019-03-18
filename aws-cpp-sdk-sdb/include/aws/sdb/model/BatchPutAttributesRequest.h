@@ -56,6 +56,11 @@ namespace Model
     /**
      * The name of the domain in which the attributes are being stored.
      */
+    inline bool DomainNameHasBeenSet() const { return m_domainNameHasBeenSet; }
+
+    /**
+     * The name of the domain in which the attributes are being stored.
+     */
     inline void SetDomainName(const Aws::String& value) { m_domainNameHasBeenSet = true; m_domainName = value; }
 
     /**
@@ -88,6 +93,11 @@ namespace Model
      * A list of items on which to perform the operation.
      */
     inline const Aws::Vector<ReplaceableItem>& GetItems() const{ return m_items; }
+
+    /**
+     * A list of items on which to perform the operation.
+     */
+    inline bool ItemsHasBeenSet() const { return m_itemsHasBeenSet; }
 
     /**
      * A list of items on which to perform the operation.

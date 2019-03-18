@@ -53,6 +53,12 @@ namespace Model
      * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
      * of the request.</p>
      */
+    inline bool ClientRequestTokenHasBeenSet() const { return m_clientRequestTokenHasBeenSet; }
+
+    /**
+     * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
+     * of the request.</p>
+     */
     inline void SetClientRequestToken(const Aws::String& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = value; }
 
     /**
@@ -90,6 +96,11 @@ namespace Model
      * <p>The target fleet for the synchronization.</p>
      */
     inline const Aws::String& GetFleet() const{ return m_fleet; }
+
+    /**
+     * <p>The target fleet for the synchronization.</p>
+     */
+    inline bool FleetHasBeenSet() const { return m_fleetHasBeenSet; }
 
     /**
      * <p>The target fleet for the synchronization.</p>

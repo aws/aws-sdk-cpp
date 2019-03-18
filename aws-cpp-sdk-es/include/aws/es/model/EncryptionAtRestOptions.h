@@ -55,6 +55,11 @@ namespace Model
     /**
      * <p>Specifies the option to enable Encryption At Rest.</p>
      */
+    inline bool EnabledHasBeenSet() const { return m_enabledHasBeenSet; }
+
+    /**
+     * <p>Specifies the option to enable Encryption At Rest.</p>
+     */
     inline void SetEnabled(bool value) { m_enabledHasBeenSet = true; m_enabled = value; }
 
     /**
@@ -67,6 +72,11 @@ namespace Model
      * <p> Specifies the KMS Key ID for Encryption At Rest options.</p>
      */
     inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
+
+    /**
+     * <p> Specifies the KMS Key ID for Encryption At Rest options.</p>
+     */
+    inline bool KmsKeyIdHasBeenSet() const { return m_kmsKeyIdHasBeenSet; }
 
     /**
      * <p> Specifies the KMS Key ID for Encryption At Rest options.</p>

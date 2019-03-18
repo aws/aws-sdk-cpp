@@ -67,6 +67,12 @@ namespace Model
      * The value of the "Acquisition Point Identity" element used in each message
      * placed in the sparse track.  Only enabled if sparseTrackType is not "none".
      */
+    inline bool AcquisitionPointIdHasBeenSet() const { return m_acquisitionPointIdHasBeenSet; }
+
+    /**
+     * The value of the "Acquisition Point Identity" element used in each message
+     * placed in the sparse track.  Only enabled if sparseTrackType is not "none".
+     */
     inline void SetAcquisitionPointId(const Aws::String& value) { m_acquisitionPointIdHasBeenSet = true; m_acquisitionPointId = value; }
 
     /**
@@ -112,6 +118,13 @@ namespace Model
      * time will be set to the current timecode. This option does not write timecodes
      * to the audio elementary stream.
      */
+    inline bool AudioOnlyTimecodeControlHasBeenSet() const { return m_audioOnlyTimecodeControlHasBeenSet; }
+
+    /**
+     * If set to passthrough for an audio-only MS Smooth output, the fragment absolute
+     * time will be set to the current timecode. This option does not write timecodes
+     * to the audio elementary stream.
+     */
     inline void SetAudioOnlyTimecodeControl(const SmoothGroupAudioOnlyTimecodeControl& value) { m_audioOnlyTimecodeControlHasBeenSet = true; m_audioOnlyTimecodeControl = value; }
 
     /**
@@ -142,6 +155,13 @@ namespace Model
      * certificates to fail.
      */
     inline const SmoothGroupCertificateMode& GetCertificateMode() const{ return m_certificateMode; }
+
+    /**
+     * If set to verifyAuthenticity, verify the https certificate chain to a trusted
+     * Certificate Authority (CA).  This will cause https outputs to self-signed
+     * certificates to fail.
+     */
+    inline bool CertificateModeHasBeenSet() const { return m_certificateModeHasBeenSet; }
 
     /**
      * If set to verifyAuthenticity, verify the https certificate chain to a trusted
@@ -184,6 +204,13 @@ namespace Model
      * connection is lost. Content will be cached during this time and the cache will
      * be be delivered to the IIS server once the connection is re-established.
      */
+    inline bool ConnectionRetryIntervalHasBeenSet() const { return m_connectionRetryIntervalHasBeenSet; }
+
+    /**
+     * Number of seconds to wait before retrying connection to the IIS server if the
+     * connection is lost. Content will be cached during this time and the cache will
+     * be be delivered to the IIS server once the connection is re-established.
+     */
     inline void SetConnectionRetryInterval(int value) { m_connectionRetryIntervalHasBeenSet = true; m_connectionRetryInterval = value; }
 
     /**
@@ -199,6 +226,12 @@ namespace Model
      * encoder to IIS.
      */
     inline const OutputLocationRef& GetDestination() const{ return m_destination; }
+
+    /**
+     * Smooth Streaming publish point on an IIS server. Elemental Live acts as a "Push"
+     * encoder to IIS.
+     */
+    inline bool DestinationHasBeenSet() const { return m_destinationHasBeenSet; }
 
     /**
      * Smooth Streaming publish point on an IIS server. Elemental Live acts as a "Push"
@@ -232,6 +265,14 @@ Should only be specified if
      * eventIdMode is set to useConfigured.
      */
     inline const Aws::String& GetEventId() const{ return m_eventId; }
+
+    /**
+     * MS Smooth event ID to be sent to the IIS server.
+
+Should only be specified if
+     * eventIdMode is set to useConfigured.
+     */
+    inline bool EventIdHasBeenSet() const { return m_eventIdHasBeenSet; }
 
     /**
      * MS Smooth event ID to be sent to the IIS server.
@@ -310,6 +351,21 @@ Options:
 - "noEventId" - do not send
      * an event ID to the IIS server.
      */
+    inline bool EventIdModeHasBeenSet() const { return m_eventIdModeHasBeenSet; }
+
+    /**
+     * Specifies whether or not to send an event ID to the IIS server. If no event ID
+     * is sent and the same Live Event is used without changing the publishing point,
+     * clients might see cached video from the previous run.
+
+Options:
+-
+     * "useConfigured" - use the value provided in eventId
+- "useTimestamp" - generate
+     * and send an event ID based on the current timestamp
+- "noEventId" - do not send
+     * an event ID to the IIS server.
+     */
     inline void SetEventIdMode(const SmoothGroupEventIdMode& value) { m_eventIdModeHasBeenSet = true; m_eventIdMode = value; }
 
     /**
@@ -366,6 +422,11 @@ Options:
     /**
      * When set to sendEos, send EOS signal to IIS server when stopping the event
      */
+    inline bool EventStopBehaviorHasBeenSet() const { return m_eventStopBehaviorHasBeenSet; }
+
+    /**
+     * When set to sendEos, send EOS signal to IIS server when stopping the event
+     */
     inline void SetEventStopBehavior(const SmoothGroupEventStopBehavior& value) { m_eventStopBehaviorHasBeenSet = true; m_eventStopBehavior = value; }
 
     /**
@@ -392,6 +453,11 @@ Options:
     /**
      * Size in seconds of file cache for streaming outputs.
      */
+    inline bool FilecacheDurationHasBeenSet() const { return m_filecacheDurationHasBeenSet; }
+
+    /**
+     * Size in seconds of file cache for streaming outputs.
+     */
     inline void SetFilecacheDuration(int value) { m_filecacheDurationHasBeenSet = true; m_filecacheDuration = value; }
 
     /**
@@ -410,6 +476,12 @@ Options:
      * Length of mp4 fragments to generate (in seconds). Fragment length must be
      * compatible with GOP size and framerate.
      */
+    inline bool FragmentLengthHasBeenSet() const { return m_fragmentLengthHasBeenSet; }
+
+    /**
+     * Length of mp4 fragments to generate (in seconds). Fragment length must be
+     * compatible with GOP size and framerate.
+     */
     inline void SetFragmentLength(int value) { m_fragmentLengthHasBeenSet = true; m_fragmentLength = value; }
 
     /**
@@ -423,6 +495,11 @@ Options:
      * Parameter that control output group behavior on input loss.
      */
     inline const InputLossActionForMsSmoothOut& GetInputLossAction() const{ return m_inputLossAction; }
+
+    /**
+     * Parameter that control output group behavior on input loss.
+     */
+    inline bool InputLossActionHasBeenSet() const { return m_inputLossActionHasBeenSet; }
 
     /**
      * Parameter that control output group behavior on input loss.
@@ -453,6 +530,11 @@ Options:
     /**
      * Number of retry attempts.
      */
+    inline bool NumRetriesHasBeenSet() const { return m_numRetriesHasBeenSet; }
+
+    /**
+     * Number of retry attempts.
+     */
     inline void SetNumRetries(int value) { m_numRetriesHasBeenSet = true; m_numRetries = value; }
 
     /**
@@ -466,6 +548,12 @@ Options:
      * exhausting the numRetries on one segment, or exceeding filecacheDuration.
      */
     inline int GetRestartDelay() const{ return m_restartDelay; }
+
+    /**
+     * Number of seconds before initiating a restart due to output failure, due to
+     * exhausting the numRetries on one segment, or exceeding filecacheDuration.
+     */
+    inline bool RestartDelayHasBeenSet() const { return m_restartDelayHasBeenSet; }
 
     /**
      * Number of seconds before initiating a restart due to output failure, due to
@@ -485,6 +573,12 @@ Options:
      * used.
      */
     inline const SmoothGroupSegmentationMode& GetSegmentationMode() const{ return m_segmentationMode; }
+
+    /**
+     * useInputSegmentation has been deprecated. The configured segment size is always
+     * used.
+     */
+    inline bool SegmentationModeHasBeenSet() const { return m_segmentationModeHasBeenSet; }
 
     /**
      * useInputSegmentation has been deprecated. The configured segment size is always
@@ -519,6 +613,11 @@ Options:
     /**
      * Number of milliseconds to delay the output from the second pipeline.
      */
+    inline bool SendDelayMsHasBeenSet() const { return m_sendDelayMsHasBeenSet; }
+
+    /**
+     * Number of milliseconds to delay the output from the second pipeline.
+     */
     inline void SetSendDelayMs(int value) { m_sendDelayMsHasBeenSet = true; m_sendDelayMs = value; }
 
     /**
@@ -532,6 +631,12 @@ Options:
      * this group of MS-Smooth outputs.
      */
     inline const SmoothGroupSparseTrackType& GetSparseTrackType() const{ return m_sparseTrackType; }
+
+    /**
+     * If set to scte35, use incoming SCTE-35 messages to generate a sparse track in
+     * this group of MS-Smooth outputs.
+     */
+    inline bool SparseTrackTypeHasBeenSet() const { return m_sparseTrackTypeHasBeenSet; }
 
     /**
      * If set to scte35, use incoming SCTE-35 messages to generate a sparse track in
@@ -568,6 +673,12 @@ Options:
      * When set to send, send stream manifest so publishing point doesn't start until
      * all streams start.
      */
+    inline bool StreamManifestBehaviorHasBeenSet() const { return m_streamManifestBehaviorHasBeenSet; }
+
+    /**
+     * When set to send, send stream manifest so publishing point doesn't start until
+     * all streams start.
+     */
     inline void SetStreamManifestBehavior(const SmoothGroupStreamManifestBehavior& value) { m_streamManifestBehaviorHasBeenSet = true; m_streamManifestBehavior = value; }
 
     /**
@@ -594,6 +705,12 @@ Options:
      * useConfiguredOffset.
      */
     inline const Aws::String& GetTimestampOffset() const{ return m_timestampOffset; }
+
+    /**
+     * Timestamp offset for the event.  Only used if timestampOffsetMode is set to
+     * useConfiguredOffset.
+     */
+    inline bool TimestampOffsetHasBeenSet() const { return m_timestampOffsetHasBeenSet; }
 
     /**
      * Timestamp offset for the event.  Only used if timestampOffsetMode is set to
@@ -640,6 +757,15 @@ Options:
      * configured date as the offset
      */
     inline const SmoothGroupTimestampOffsetMode& GetTimestampOffsetMode() const{ return m_timestampOffsetMode; }
+
+    /**
+     * Type of timestamp date offset to use.
+- useEventStartDate: Use the date the
+     * event was started as the offset
+- useConfiguredOffset: Use an explicitly
+     * configured date as the offset
+     */
+    inline bool TimestampOffsetModeHasBeenSet() const { return m_timestampOffsetModeHasBeenSet; }
 
     /**
      * Type of timestamp date offset to use.

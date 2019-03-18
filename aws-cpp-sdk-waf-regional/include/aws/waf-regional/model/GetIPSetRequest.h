@@ -56,6 +56,13 @@ namespace Model
      * <code>IPSetId</code> is returned by <a>CreateIPSet</a> and by
      * <a>ListIPSets</a>.</p>
      */
+    inline bool IPSetIdHasBeenSet() const { return m_iPSetIdHasBeenSet; }
+
+    /**
+     * <p>The <code>IPSetId</code> of the <a>IPSet</a> that you want to get.
+     * <code>IPSetId</code> is returned by <a>CreateIPSet</a> and by
+     * <a>ListIPSets</a>.</p>
+     */
     inline void SetIPSetId(const Aws::String& value) { m_iPSetIdHasBeenSet = true; m_iPSetId = value; }
 
     /**

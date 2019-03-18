@@ -53,6 +53,12 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) for the playback configuration. You can get
      * this from the response to any playback configuration request. </p>
      */
+    inline bool ResourceArnHasBeenSet() const { return m_resourceArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) for the playback configuration. You can get
+     * this from the response to any playback configuration request. </p>
+     */
     inline void SetResourceArn(const Aws::String& value) { m_resourceArnHasBeenSet = true; m_resourceArn = value; }
 
     /**
@@ -96,6 +102,17 @@ namespace Model
  </p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>A comma-separated list of tag key:value pairs. For example: 
+ {
+ "Key1":
+     * "Value1",
+ "Key2": "Value2"
+ }
+ </p>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
      * <p>A comma-separated list of tag key:value pairs. For example: 

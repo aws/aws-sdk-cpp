@@ -159,6 +159,11 @@ void AmplifyClient::CreateAppAsyncHelper(const CreateAppRequest& request, const 
 
 CreateBranchOutcome AmplifyClient::CreateBranch(const CreateBranchRequest& request) const
 {
+  if (!request.AppIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("CreateBranch", "Required field: AppId, is not set");
+    return CreateBranchOutcome(Aws::Client::AWSError<AmplifyErrors>(AmplifyErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AppId]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/apps/";
@@ -196,6 +201,11 @@ void AmplifyClient::CreateBranchAsyncHelper(const CreateBranchRequest& request, 
 
 CreateDomainAssociationOutcome AmplifyClient::CreateDomainAssociation(const CreateDomainAssociationRequest& request) const
 {
+  if (!request.AppIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("CreateDomainAssociation", "Required field: AppId, is not set");
+    return CreateDomainAssociationOutcome(Aws::Client::AWSError<AmplifyErrors>(AmplifyErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AppId]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/apps/";
@@ -233,6 +243,11 @@ void AmplifyClient::CreateDomainAssociationAsyncHelper(const CreateDomainAssocia
 
 DeleteAppOutcome AmplifyClient::DeleteApp(const DeleteAppRequest& request) const
 {
+  if (!request.AppIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteApp", "Required field: AppId, is not set");
+    return DeleteAppOutcome(Aws::Client::AWSError<AmplifyErrors>(AmplifyErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AppId]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/apps/";
@@ -269,6 +284,16 @@ void AmplifyClient::DeleteAppAsyncHelper(const DeleteAppRequest& request, const 
 
 DeleteBranchOutcome AmplifyClient::DeleteBranch(const DeleteBranchRequest& request) const
 {
+  if (!request.AppIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteBranch", "Required field: AppId, is not set");
+    return DeleteBranchOutcome(Aws::Client::AWSError<AmplifyErrors>(AmplifyErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AppId]", false));
+  }
+  if (!request.BranchNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteBranch", "Required field: BranchName, is not set");
+    return DeleteBranchOutcome(Aws::Client::AWSError<AmplifyErrors>(AmplifyErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [BranchName]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/apps/";
@@ -307,6 +332,16 @@ void AmplifyClient::DeleteBranchAsyncHelper(const DeleteBranchRequest& request, 
 
 DeleteDomainAssociationOutcome AmplifyClient::DeleteDomainAssociation(const DeleteDomainAssociationRequest& request) const
 {
+  if (!request.AppIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteDomainAssociation", "Required field: AppId, is not set");
+    return DeleteDomainAssociationOutcome(Aws::Client::AWSError<AmplifyErrors>(AmplifyErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AppId]", false));
+  }
+  if (!request.DomainNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteDomainAssociation", "Required field: DomainName, is not set");
+    return DeleteDomainAssociationOutcome(Aws::Client::AWSError<AmplifyErrors>(AmplifyErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DomainName]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/apps/";
@@ -345,6 +380,21 @@ void AmplifyClient::DeleteDomainAssociationAsyncHelper(const DeleteDomainAssocia
 
 DeleteJobOutcome AmplifyClient::DeleteJob(const DeleteJobRequest& request) const
 {
+  if (!request.AppIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteJob", "Required field: AppId, is not set");
+    return DeleteJobOutcome(Aws::Client::AWSError<AmplifyErrors>(AmplifyErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AppId]", false));
+  }
+  if (!request.BranchNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteJob", "Required field: BranchName, is not set");
+    return DeleteJobOutcome(Aws::Client::AWSError<AmplifyErrors>(AmplifyErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [BranchName]", false));
+  }
+  if (!request.JobIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteJob", "Required field: JobId, is not set");
+    return DeleteJobOutcome(Aws::Client::AWSError<AmplifyErrors>(AmplifyErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [JobId]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/apps/";
@@ -385,6 +435,11 @@ void AmplifyClient::DeleteJobAsyncHelper(const DeleteJobRequest& request, const 
 
 GetAppOutcome AmplifyClient::GetApp(const GetAppRequest& request) const
 {
+  if (!request.AppIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetApp", "Required field: AppId, is not set");
+    return GetAppOutcome(Aws::Client::AWSError<AmplifyErrors>(AmplifyErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AppId]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/apps/";
@@ -421,6 +476,16 @@ void AmplifyClient::GetAppAsyncHelper(const GetAppRequest& request, const GetApp
 
 GetBranchOutcome AmplifyClient::GetBranch(const GetBranchRequest& request) const
 {
+  if (!request.AppIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetBranch", "Required field: AppId, is not set");
+    return GetBranchOutcome(Aws::Client::AWSError<AmplifyErrors>(AmplifyErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AppId]", false));
+  }
+  if (!request.BranchNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetBranch", "Required field: BranchName, is not set");
+    return GetBranchOutcome(Aws::Client::AWSError<AmplifyErrors>(AmplifyErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [BranchName]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/apps/";
@@ -459,6 +524,16 @@ void AmplifyClient::GetBranchAsyncHelper(const GetBranchRequest& request, const 
 
 GetDomainAssociationOutcome AmplifyClient::GetDomainAssociation(const GetDomainAssociationRequest& request) const
 {
+  if (!request.AppIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetDomainAssociation", "Required field: AppId, is not set");
+    return GetDomainAssociationOutcome(Aws::Client::AWSError<AmplifyErrors>(AmplifyErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AppId]", false));
+  }
+  if (!request.DomainNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetDomainAssociation", "Required field: DomainName, is not set");
+    return GetDomainAssociationOutcome(Aws::Client::AWSError<AmplifyErrors>(AmplifyErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DomainName]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/apps/";
@@ -497,6 +572,21 @@ void AmplifyClient::GetDomainAssociationAsyncHelper(const GetDomainAssociationRe
 
 GetJobOutcome AmplifyClient::GetJob(const GetJobRequest& request) const
 {
+  if (!request.AppIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetJob", "Required field: AppId, is not set");
+    return GetJobOutcome(Aws::Client::AWSError<AmplifyErrors>(AmplifyErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AppId]", false));
+  }
+  if (!request.BranchNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetJob", "Required field: BranchName, is not set");
+    return GetJobOutcome(Aws::Client::AWSError<AmplifyErrors>(AmplifyErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [BranchName]", false));
+  }
+  if (!request.JobIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetJob", "Required field: JobId, is not set");
+    return GetJobOutcome(Aws::Client::AWSError<AmplifyErrors>(AmplifyErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [JobId]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/apps/";
@@ -572,6 +662,11 @@ void AmplifyClient::ListAppsAsyncHelper(const ListAppsRequest& request, const Li
 
 ListBranchesOutcome AmplifyClient::ListBranches(const ListBranchesRequest& request) const
 {
+  if (!request.AppIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListBranches", "Required field: AppId, is not set");
+    return ListBranchesOutcome(Aws::Client::AWSError<AmplifyErrors>(AmplifyErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AppId]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/apps/";
@@ -609,6 +704,11 @@ void AmplifyClient::ListBranchesAsyncHelper(const ListBranchesRequest& request, 
 
 ListDomainAssociationsOutcome AmplifyClient::ListDomainAssociations(const ListDomainAssociationsRequest& request) const
 {
+  if (!request.AppIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListDomainAssociations", "Required field: AppId, is not set");
+    return ListDomainAssociationsOutcome(Aws::Client::AWSError<AmplifyErrors>(AmplifyErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AppId]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/apps/";
@@ -646,6 +746,16 @@ void AmplifyClient::ListDomainAssociationsAsyncHelper(const ListDomainAssociatio
 
 ListJobsOutcome AmplifyClient::ListJobs(const ListJobsRequest& request) const
 {
+  if (!request.AppIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListJobs", "Required field: AppId, is not set");
+    return ListJobsOutcome(Aws::Client::AWSError<AmplifyErrors>(AmplifyErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AppId]", false));
+  }
+  if (!request.BranchNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListJobs", "Required field: BranchName, is not set");
+    return ListJobsOutcome(Aws::Client::AWSError<AmplifyErrors>(AmplifyErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [BranchName]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/apps/";
@@ -685,6 +795,16 @@ void AmplifyClient::ListJobsAsyncHelper(const ListJobsRequest& request, const Li
 
 StartJobOutcome AmplifyClient::StartJob(const StartJobRequest& request) const
 {
+  if (!request.AppIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("StartJob", "Required field: AppId, is not set");
+    return StartJobOutcome(Aws::Client::AWSError<AmplifyErrors>(AmplifyErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AppId]", false));
+  }
+  if (!request.BranchNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("StartJob", "Required field: BranchName, is not set");
+    return StartJobOutcome(Aws::Client::AWSError<AmplifyErrors>(AmplifyErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [BranchName]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/apps/";
@@ -724,6 +844,21 @@ void AmplifyClient::StartJobAsyncHelper(const StartJobRequest& request, const St
 
 StopJobOutcome AmplifyClient::StopJob(const StopJobRequest& request) const
 {
+  if (!request.AppIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("StopJob", "Required field: AppId, is not set");
+    return StopJobOutcome(Aws::Client::AWSError<AmplifyErrors>(AmplifyErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AppId]", false));
+  }
+  if (!request.BranchNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("StopJob", "Required field: BranchName, is not set");
+    return StopJobOutcome(Aws::Client::AWSError<AmplifyErrors>(AmplifyErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [BranchName]", false));
+  }
+  if (!request.JobIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("StopJob", "Required field: JobId, is not set");
+    return StopJobOutcome(Aws::Client::AWSError<AmplifyErrors>(AmplifyErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [JobId]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/apps/";
@@ -765,6 +900,11 @@ void AmplifyClient::StopJobAsyncHelper(const StopJobRequest& request, const Stop
 
 UpdateAppOutcome AmplifyClient::UpdateApp(const UpdateAppRequest& request) const
 {
+  if (!request.AppIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateApp", "Required field: AppId, is not set");
+    return UpdateAppOutcome(Aws::Client::AWSError<AmplifyErrors>(AmplifyErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AppId]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/apps/";
@@ -801,6 +941,16 @@ void AmplifyClient::UpdateAppAsyncHelper(const UpdateAppRequest& request, const 
 
 UpdateBranchOutcome AmplifyClient::UpdateBranch(const UpdateBranchRequest& request) const
 {
+  if (!request.AppIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateBranch", "Required field: AppId, is not set");
+    return UpdateBranchOutcome(Aws::Client::AWSError<AmplifyErrors>(AmplifyErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AppId]", false));
+  }
+  if (!request.BranchNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateBranch", "Required field: BranchName, is not set");
+    return UpdateBranchOutcome(Aws::Client::AWSError<AmplifyErrors>(AmplifyErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [BranchName]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/apps/";
@@ -839,6 +989,16 @@ void AmplifyClient::UpdateBranchAsyncHelper(const UpdateBranchRequest& request, 
 
 UpdateDomainAssociationOutcome AmplifyClient::UpdateDomainAssociation(const UpdateDomainAssociationRequest& request) const
 {
+  if (!request.AppIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateDomainAssociation", "Required field: AppId, is not set");
+    return UpdateDomainAssociationOutcome(Aws::Client::AWSError<AmplifyErrors>(AmplifyErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AppId]", false));
+  }
+  if (!request.DomainNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateDomainAssociation", "Required field: DomainName, is not set");
+    return UpdateDomainAssociationOutcome(Aws::Client::AWSError<AmplifyErrors>(AmplifyErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DomainName]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/apps/";

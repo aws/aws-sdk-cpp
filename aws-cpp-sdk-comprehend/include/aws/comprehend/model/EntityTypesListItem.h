@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>Entity type of an item on an entity type list.</p>
      */
+    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
+
+    /**
+     * <p>Entity type of an item on an entity type list.</p>
+     */
     inline void SetType(const Aws::String& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**

@@ -54,6 +54,12 @@ namespace Model
      * <p>The ID of the file system for which you are creating the
      * <code>LifecycleConfiguration</code> object (String).</p>
      */
+    inline bool FileSystemIdHasBeenSet() const { return m_fileSystemIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the file system for which you are creating the
+     * <code>LifecycleConfiguration</code> object (String).</p>
+     */
     inline void SetFileSystemId(const Aws::String& value) { m_fileSystemIdHasBeenSet = true; m_fileSystemId = value; }
 
     /**
@@ -95,6 +101,15 @@ namespace Model
      * storage class.</p>
      */
     inline const Aws::Vector<LifecyclePolicy>& GetLifecyclePolicies() const{ return m_lifecyclePolicies; }
+
+    /**
+     * <p>An array of <code>LifecyclePolicy</code> objects that define the file
+     * system's <code>LifecycleConfiguration</code> object. A
+     * <code>LifecycleConfiguration</code> object tells lifecycle management when to
+     * transition files from the Standard storage class to the Infrequent Access
+     * storage class.</p>
+     */
+    inline bool LifecyclePoliciesHasBeenSet() const { return m_lifecyclePoliciesHasBeenSet; }
 
     /**
      * <p>An array of <code>LifecyclePolicy</code> objects that define the file

@@ -53,6 +53,9 @@ namespace Model
     inline const Aws::String& GetId() const{ return m_id; }
 
     
+    inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
+
+    
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
     
@@ -75,6 +78,11 @@ namespace Model
      * <p/>
      */
     inline const Aws::Vector<Event>& GetEvents() const{ return m_events; }
+
+    /**
+     * <p/>
+     */
+    inline bool EventsHasBeenSet() const { return m_eventsHasBeenSet; }
 
     /**
      * <p/>
@@ -115,6 +123,11 @@ namespace Model
     /**
      * <p/>
      */
+    inline bool CloudFunctionHasBeenSet() const { return m_cloudFunctionHasBeenSet; }
+
+    /**
+     * <p/>
+     */
     inline void SetCloudFunction(const Aws::String& value) { m_cloudFunctionHasBeenSet = true; m_cloudFunction = value; }
 
     /**
@@ -147,6 +160,11 @@ namespace Model
      * <p/>
      */
     inline const Aws::String& GetInvocationRole() const{ return m_invocationRole; }
+
+    /**
+     * <p/>
+     */
+    inline bool InvocationRoleHasBeenSet() const { return m_invocationRoleHasBeenSet; }
 
     /**
      * <p/>

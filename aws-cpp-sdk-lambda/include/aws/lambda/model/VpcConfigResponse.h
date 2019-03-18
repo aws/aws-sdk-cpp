@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>A list of VPC subnet IDs.</p>
      */
+    inline bool SubnetIdsHasBeenSet() const { return m_subnetIdsHasBeenSet; }
+
+    /**
+     * <p>A list of VPC subnet IDs.</p>
+     */
     inline void SetSubnetIds(const Aws::Vector<Aws::String>& value) { m_subnetIdsHasBeenSet = true; m_subnetIds = value; }
 
     /**
@@ -98,6 +103,11 @@ namespace Model
     /**
      * <p>A list of VPC security groups IDs.</p>
      */
+    inline bool SecurityGroupIdsHasBeenSet() const { return m_securityGroupIdsHasBeenSet; }
+
+    /**
+     * <p>A list of VPC security groups IDs.</p>
+     */
     inline void SetSecurityGroupIds(const Aws::Vector<Aws::String>& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds = value; }
 
     /**
@@ -135,6 +145,11 @@ namespace Model
      * <p>The ID of the VPC.</p>
      */
     inline const Aws::String& GetVpcId() const{ return m_vpcId; }
+
+    /**
+     * <p>The ID of the VPC.</p>
+     */
+    inline bool VpcIdHasBeenSet() const { return m_vpcIdHasBeenSet; }
 
     /**
      * <p>The ID of the VPC.</p>

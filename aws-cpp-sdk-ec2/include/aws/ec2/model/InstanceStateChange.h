@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p>The current state of the instance.</p>
      */
+    inline bool CurrentStateHasBeenSet() const { return m_currentStateHasBeenSet; }
+
+    /**
+     * <p>The current state of the instance.</p>
+     */
     inline void SetCurrentState(const InstanceState& value) { m_currentStateHasBeenSet = true; m_currentState = value; }
 
     /**
@@ -80,6 +85,11 @@ namespace Model
      * <p>The ID of the instance.</p>
      */
     inline const Aws::String& GetInstanceId() const{ return m_instanceId; }
+
+    /**
+     * <p>The ID of the instance.</p>
+     */
+    inline bool InstanceIdHasBeenSet() const { return m_instanceIdHasBeenSet; }
 
     /**
      * <p>The ID of the instance.</p>
@@ -116,6 +126,11 @@ namespace Model
      * <p>The previous state of the instance.</p>
      */
     inline const InstanceState& GetPreviousState() const{ return m_previousState; }
+
+    /**
+     * <p>The previous state of the instance.</p>
+     */
+    inline bool PreviousStateHasBeenSet() const { return m_previousStateHasBeenSet; }
 
     /**
      * <p>The previous state of the instance.</p>

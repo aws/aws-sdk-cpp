@@ -59,6 +59,12 @@ namespace Model
      * <p>The ID of the task assigned to the task runner. This value is provided in the
      * response for <a>PollForTask</a>.</p>
      */
+    inline bool TaskIdHasBeenSet() const { return m_taskIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the task assigned to the task runner. This value is provided in the
+     * response for <a>PollForTask</a>.</p>
+     */
     inline void SetTaskId(const Aws::String& value) { m_taskIdHasBeenSet = true; m_taskId = value; }
 
     /**
@@ -97,6 +103,12 @@ namespace Model
      * object.</p>
      */
     inline const Aws::Vector<Field>& GetFields() const{ return m_fields; }
+
+    /**
+     * <p>Key-value pairs that define the properties of the ReportTaskProgressInput
+     * object.</p>
+     */
+    inline bool FieldsHasBeenSet() const { return m_fieldsHasBeenSet; }
 
     /**
      * <p>Key-value pairs that define the properties of the ReportTaskProgressInput

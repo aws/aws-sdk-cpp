@@ -63,6 +63,16 @@ namespace Model
      * indefinitely and there is an expectation that you will enter a return_to_network
      * to end the splice_insert at the appropriate time.
      */
+    inline bool DurationHasBeenSet() const { return m_durationHasBeenSet; }
+
+    /**
+     * Optional, the duration for the splice_insert, in 90 KHz ticks. To convert
+     * seconds to ticks, multiple the seconds by 90,000. If you enter a duration, there
+     * is an expectation that the downstream system can read the duration and cue in at
+     * that time. If you do not enter a duration, the splice_insert will continue
+     * indefinitely and there is an expectation that you will enter a return_to_network
+     * to end the splice_insert at the appropriate time.
+     */
     inline void SetDuration(long long value) { m_durationHasBeenSet = true; m_duration = value; }
 
     /**
@@ -80,6 +90,11 @@ namespace Model
      * The splice_event_id for the SCTE-35 splice_insert, as defined in SCTE-35.
      */
     inline long long GetSpliceEventId() const{ return m_spliceEventId; }
+
+    /**
+     * The splice_event_id for the SCTE-35 splice_insert, as defined in SCTE-35.
+     */
+    inline bool SpliceEventIdHasBeenSet() const { return m_spliceEventIdHasBeenSet; }
 
     /**
      * The splice_event_id for the SCTE-35 splice_insert, as defined in SCTE-35.

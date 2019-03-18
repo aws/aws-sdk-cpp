@@ -52,6 +52,11 @@ namespace Model
     /**
      * <p>Name of the crawler to retrieve metadata for.</p>
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>Name of the crawler to retrieve metadata for.</p>
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**

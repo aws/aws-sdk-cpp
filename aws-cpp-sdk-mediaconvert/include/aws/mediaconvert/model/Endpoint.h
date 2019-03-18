@@ -55,6 +55,11 @@ namespace Model
     /**
      * URL of endpoint
      */
+    inline bool UrlHasBeenSet() const { return m_urlHasBeenSet; }
+
+    /**
+     * URL of endpoint
+     */
     inline void SetUrl(const Aws::String& value) { m_urlHasBeenSet = true; m_url = value; }
 
     /**

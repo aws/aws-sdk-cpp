@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The attribute name of the typed link.</p>
      */
+    inline bool AttributeNameHasBeenSet() const { return m_attributeNameHasBeenSet; }
+
+    /**
+     * <p>The attribute name of the typed link.</p>
+     */
     inline void SetAttributeName(const Aws::String& value) { m_attributeNameHasBeenSet = true; m_attributeName = value; }
 
     /**
@@ -89,6 +94,11 @@ namespace Model
      * <p>The value for the typed link.</p>
      */
     inline const TypedAttributeValue& GetValue() const{ return m_value; }
+
+    /**
+     * <p>The value for the typed link.</p>
+     */
+    inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
 
     /**
      * <p>The value for the typed link.</p>

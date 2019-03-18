@@ -66,6 +66,15 @@ namespace Model
      * get a list of export snapshot records that you can use to create a
      * CloudFormation stack.</p>
      */
+    inline bool SourceNameHasBeenSet() const { return m_sourceNameHasBeenSet; }
+
+    /**
+     * <p>The name of the export snapshot record, which contains the exported Lightsail
+     * instance snapshot that will be used as the source of the new Amazon EC2
+     * instance.</p> <p>Use the <code>get export snapshot records</code> operation to
+     * get a list of export snapshot records that you can use to create a
+     * CloudFormation stack.</p>
+     */
     inline void SetSourceName(const Aws::String& value) { m_sourceNameHasBeenSet = true; m_sourceName = value; }
 
     /**
@@ -124,6 +133,12 @@ namespace Model
      * <p>The instance type (e.g., <code>t2.micro</code>) to use for the new Amazon EC2
      * instance.</p>
      */
+    inline bool InstanceTypeHasBeenSet() const { return m_instanceTypeHasBeenSet; }
+
+    /**
+     * <p>The instance type (e.g., <code>t2.micro</code>) to use for the new Amazon EC2
+     * instance.</p>
+     */
     inline void SetInstanceType(const Aws::String& value) { m_instanceTypeHasBeenSet = true; m_instanceType = value; }
 
     /**
@@ -175,6 +190,16 @@ namespace Model
      * — Default to Amazon EC2.</p> </li> <li> <p>CLOSED — All ports closed.</p> </li>
      * </ul>
      */
+    inline bool PortInfoSourceHasBeenSet() const { return m_portInfoSourceHasBeenSet; }
+
+    /**
+     * <p>The port configuration to use for the new Amazon EC2 instance.</p> <p>The
+     * following configuration options are available:</p> <ul> <li> <p>DEFAULT — Use
+     * the default firewall settings from the image.</p> </li> <li> <p>INSTANCE — Use
+     * the firewall settings from the source Lightsail instance.</p> </li> <li> <p>NONE
+     * — Default to Amazon EC2.</p> </li> <li> <p>CLOSED — All ports closed.</p> </li>
+     * </ul>
+     */
     inline void SetPortInfoSource(const PortInfoSourceType& value) { m_portInfoSourceHasBeenSet = true; m_portInfoSource = value; }
 
     /**
@@ -217,6 +242,16 @@ namespace Model
      * </note>
      */
     inline const Aws::String& GetUserData() const{ return m_userData; }
+
+    /**
+     * <p>A launch script you can create that configures a server with additional user
+     * data. For example, you might want to run <code>apt-get -y update</code>.</p>
+     * <note> <p>Depending on the machine image you choose, the command to get software
+     * on your instance varies. Amazon Linux and CentOS use <code>yum</code>, Debian
+     * and Ubuntu use <code>apt-get</code>, and FreeBSD uses <code>pkg</code>.</p>
+     * </note>
+     */
+    inline bool UserDataHasBeenSet() const { return m_userDataHasBeenSet; }
 
     /**
      * <p>A launch script you can create that configures a server with additional user
@@ -283,6 +318,11 @@ namespace Model
      * <p>The Availability Zone for the new Amazon EC2 instance.</p>
      */
     inline const Aws::String& GetAvailabilityZone() const{ return m_availabilityZone; }
+
+    /**
+     * <p>The Availability Zone for the new Amazon EC2 instance.</p>
+     */
+    inline bool AvailabilityZoneHasBeenSet() const { return m_availabilityZoneHasBeenSet; }
 
     /**
      * <p>The Availability Zone for the new Amazon EC2 instance.</p>

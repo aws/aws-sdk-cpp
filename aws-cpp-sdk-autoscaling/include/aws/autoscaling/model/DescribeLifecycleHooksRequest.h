@@ -55,6 +55,11 @@ namespace Model
     /**
      * <p>The name of the Auto Scaling group.</p>
      */
+    inline bool AutoScalingGroupNameHasBeenSet() const { return m_autoScalingGroupNameHasBeenSet; }
+
+    /**
+     * <p>The name of the Auto Scaling group.</p>
+     */
     inline void SetAutoScalingGroupName(const Aws::String& value) { m_autoScalingGroupNameHasBeenSet = true; m_autoScalingGroupName = value; }
 
     /**
@@ -88,6 +93,12 @@ namespace Model
      * lifecycle hooks are described.</p>
      */
     inline const Aws::Vector<Aws::String>& GetLifecycleHookNames() const{ return m_lifecycleHookNames; }
+
+    /**
+     * <p>The names of one or more lifecycle hooks. If you omit this parameter, all
+     * lifecycle hooks are described.</p>
+     */
+    inline bool LifecycleHookNamesHasBeenSet() const { return m_lifecycleHookNamesHasBeenSet; }
 
     /**
      * <p>The names of one or more lifecycle hooks. If you omit this parameter, all

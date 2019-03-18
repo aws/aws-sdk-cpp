@@ -62,6 +62,12 @@ namespace Model
      * <p>An AWS resource used for access control. It should uniquely identify the
      * migration tool as it is used for all updates made by the tool.</p>
      */
+    inline bool ProgressUpdateStreamHasBeenSet() const { return m_progressUpdateStreamHasBeenSet; }
+
+    /**
+     * <p>An AWS resource used for access control. It should uniquely identify the
+     * migration tool as it is used for all updates made by the tool.</p>
+     */
     inline void SetProgressUpdateStream(const Aws::String& value) { m_progressUpdateStreamHasBeenSet = true; m_progressUpdateStream = value; }
 
     /**
@@ -103,6 +109,11 @@ namespace Model
     /**
      * <p>Unique identifier that references the migration task.</p>
      */
+    inline bool MigrationTaskNameHasBeenSet() const { return m_migrationTaskNameHasBeenSet; }
+
+    /**
+     * <p>Unique identifier that references the migration task.</p>
+     */
     inline void SetMigrationTaskName(const Aws::String& value) { m_migrationTaskNameHasBeenSet = true; m_migrationTaskName = value; }
 
     /**
@@ -139,6 +150,11 @@ namespace Model
     /**
      * <p>Status of the task.</p>
      */
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
+
+    /**
+     * <p>Status of the task.</p>
+     */
     inline void SetStatus(const Status& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
@@ -165,6 +181,11 @@ namespace Model
     /**
      * <p/>
      */
+    inline bool ProgressPercentHasBeenSet() const { return m_progressPercentHasBeenSet; }
+
+    /**
+     * <p/>
+     */
     inline void SetProgressPercent(int value) { m_progressPercentHasBeenSet = true; m_progressPercent = value; }
 
     /**
@@ -177,6 +198,11 @@ namespace Model
      * <p>Detail information of what is being done within the overall status state.</p>
      */
     inline const Aws::String& GetStatusDetail() const{ return m_statusDetail; }
+
+    /**
+     * <p>Detail information of what is being done within the overall status state.</p>
+     */
+    inline bool StatusDetailHasBeenSet() const { return m_statusDetailHasBeenSet; }
 
     /**
      * <p>Detail information of what is being done within the overall status state.</p>
@@ -213,6 +239,11 @@ namespace Model
      * <p>The timestamp when the task was gathered.</p>
      */
     inline const Aws::Utils::DateTime& GetUpdateDateTime() const{ return m_updateDateTime; }
+
+    /**
+     * <p>The timestamp when the task was gathered.</p>
+     */
+    inline bool UpdateDateTimeHasBeenSet() const { return m_updateDateTimeHasBeenSet; }
 
     /**
      * <p>The timestamp when the task was gathered.</p>

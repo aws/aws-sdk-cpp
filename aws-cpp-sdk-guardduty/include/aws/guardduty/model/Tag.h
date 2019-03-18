@@ -55,6 +55,11 @@ namespace Model
     /**
      * EC2 instance tag key.
      */
+    inline bool KeyHasBeenSet() const { return m_keyHasBeenSet; }
+
+    /**
+     * EC2 instance tag key.
+     */
     inline void SetKey(const Aws::String& value) { m_keyHasBeenSet = true; m_key = value; }
 
     /**
@@ -87,6 +92,11 @@ namespace Model
      * EC2 instance tag value.
      */
     inline const Aws::String& GetValue() const{ return m_value; }
+
+    /**
+     * EC2 instance tag value.
+     */
+    inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
 
     /**
      * EC2 instance tag value.

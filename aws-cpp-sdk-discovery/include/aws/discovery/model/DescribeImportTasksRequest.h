@@ -58,6 +58,13 @@ namespace Model
      * <code>DescribeImportTask</code> request to a specific subset of results.
      * Currently, wildcard values aren't supported for filters.</p>
      */
+    inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
+
+    /**
+     * <p>An array of name-value pairs that you provide to filter the results for the
+     * <code>DescribeImportTask</code> request to a specific subset of results.
+     * Currently, wildcard values aren't supported for filters.</p>
+     */
     inline void SetFilters(const Aws::Vector<ImportTaskFilter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
 
     /**
@@ -106,6 +113,12 @@ namespace Model
      * <p>The maximum number of results that you want this request to return, up to
      * 100.</p>
      */
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
+
+    /**
+     * <p>The maximum number of results that you want this request to return, up to
+     * 100.</p>
+     */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
@@ -119,6 +132,11 @@ namespace Model
      * <p>The token to request a specific page of results.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
+    /**
+     * <p>The token to request a specific page of results.</p>
+     */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
      * <p>The token to request a specific page of results.</p>

@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The content type of the message string.</p>
      */
+    inline bool ContentTypeHasBeenSet() const { return m_contentTypeHasBeenSet; }
+
+    /**
+     * <p>The content type of the message string.</p>
+     */
     inline void SetContentType(const ContentType& value) { m_contentTypeHasBeenSet = true; m_contentType = value; }
 
     /**
@@ -79,6 +84,11 @@ namespace Model
      * <p>The text of the message.</p>
      */
     inline const Aws::String& GetContent() const{ return m_content; }
+
+    /**
+     * <p>The text of the message.</p>
+     */
+    inline bool ContentHasBeenSet() const { return m_contentHasBeenSet; }
 
     /**
      * <p>The text of the message.</p>
@@ -117,6 +127,13 @@ namespace Model
      * response.</p>
      */
     inline int GetGroupNumber() const{ return m_groupNumber; }
+
+    /**
+     * <p>Identifies the message group that the message belongs to. When a group is
+     * assigned to a message, Amazon Lex returns one message from each group in the
+     * response.</p>
+     */
+    inline bool GroupNumberHasBeenSet() const { return m_groupNumberHasBeenSet; }
 
     /**
      * <p>Identifies the message group that the message belongs to. When a group is

@@ -58,6 +58,12 @@ namespace Model
      * <p>The unique device ID or other distinguishing data that identifies a local
      * disk.</p>
      */
+    inline bool DiskIdHasBeenSet() const { return m_diskIdHasBeenSet; }
+
+    /**
+     * <p>The unique device ID or other distinguishing data that identifies a local
+     * disk.</p>
+     */
     inline void SetDiskId(const Aws::String& value) { m_diskIdHasBeenSet = true; m_diskId = value; }
 
     /**
@@ -99,6 +105,11 @@ namespace Model
     /**
      * <p>The path of a local disk in the gateway virtual machine (VM).</p>
      */
+    inline bool DiskPathHasBeenSet() const { return m_diskPathHasBeenSet; }
+
+    /**
+     * <p>The path of a local disk in the gateway virtual machine (VM).</p>
+     */
     inline void SetDiskPath(const Aws::String& value) { m_diskPathHasBeenSet = true; m_diskPath = value; }
 
     /**
@@ -132,6 +143,12 @@ namespace Model
      * environment.</p>
      */
     inline const Aws::String& GetDiskNode() const{ return m_diskNode; }
+
+    /**
+     * <p>The device node of a local disk as assigned by the virtualization
+     * environment.</p>
+     */
+    inline bool DiskNodeHasBeenSet() const { return m_diskNodeHasBeenSet; }
 
     /**
      * <p>The device node of a local disk as assigned by the virtualization
@@ -178,6 +195,11 @@ namespace Model
     /**
      * <p>A value that represents the status of a local disk.</p>
      */
+    inline bool DiskStatusHasBeenSet() const { return m_diskStatusHasBeenSet; }
+
+    /**
+     * <p>A value that represents the status of a local disk.</p>
+     */
     inline void SetDiskStatus(const Aws::String& value) { m_diskStatusHasBeenSet = true; m_diskStatus = value; }
 
     /**
@@ -214,6 +236,11 @@ namespace Model
     /**
      * <p>The local disk size in bytes.</p>
      */
+    inline bool DiskSizeInBytesHasBeenSet() const { return m_diskSizeInBytesHasBeenSet; }
+
+    /**
+     * <p>The local disk size in bytes.</p>
+     */
     inline void SetDiskSizeInBytes(long long value) { m_diskSizeInBytesHasBeenSet = true; m_diskSizeInBytes = value; }
 
     /**
@@ -224,6 +251,9 @@ namespace Model
 
     
     inline const Aws::String& GetDiskAllocationType() const{ return m_diskAllocationType; }
+
+    
+    inline bool DiskAllocationTypeHasBeenSet() const { return m_diskAllocationTypeHasBeenSet; }
 
     
     inline void SetDiskAllocationType(const Aws::String& value) { m_diskAllocationTypeHasBeenSet = true; m_diskAllocationType = value; }
@@ -250,6 +280,13 @@ namespace Model
      * The format of this field is <i>targetIqn::LUNNumber::region-volumeId</i>. </p>
      */
     inline const Aws::String& GetDiskAllocationResource() const{ return m_diskAllocationResource; }
+
+    /**
+     * <p>The iSCSI qualified name (IQN) that is defined for a disk. This field is not
+     * included in the response if the local disk is not defined as an iSCSI target.
+     * The format of this field is <i>targetIqn::LUNNumber::region-volumeId</i>. </p>
+     */
+    inline bool DiskAllocationResourceHasBeenSet() const { return m_diskAllocationResourceHasBeenSet; }
 
     /**
      * <p>The iSCSI qualified name (IQN) that is defined for a disk. This field is not
@@ -296,6 +333,9 @@ namespace Model
 
     
     inline const Aws::Vector<Aws::String>& GetDiskAttributeList() const{ return m_diskAttributeList; }
+
+    
+    inline bool DiskAttributeListHasBeenSet() const { return m_diskAttributeListHasBeenSet; }
 
     
     inline void SetDiskAttributeList(const Aws::Vector<Aws::String>& value) { m_diskAttributeListHasBeenSet = true; m_diskAttributeList = value; }

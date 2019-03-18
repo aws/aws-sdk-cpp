@@ -55,6 +55,12 @@ namespace Model
      * <p>Amazon WorkDocs authentication token. Do not set this field when using
      * administrative API actions, as in accessing the API using AWS credentials.</p>
      */
+    inline bool AuthenticationTokenHasBeenSet() const { return m_authenticationTokenHasBeenSet; }
+
+    /**
+     * <p>Amazon WorkDocs authentication token. Do not set this field when using
+     * administrative API actions, as in accessing the API using AWS credentials.</p>
+     */
     inline void SetAuthenticationToken(const Aws::String& value) { m_authenticationTokenHasBeenSet = true; m_authenticationToken = value; }
 
     /**
@@ -96,6 +102,11 @@ namespace Model
     /**
      * <p>The ID of the document.</p>
      */
+    inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
+
+    /**
+     * <p>The ID of the document.</p>
+     */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
     /**
@@ -128,6 +139,11 @@ namespace Model
      * <p>The name of the document.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
+
+    /**
+     * <p>The name of the document.</p>
+     */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
      * <p>The name of the document.</p>
@@ -168,6 +184,11 @@ namespace Model
     /**
      * <p>The timestamp when the content of the document was originally created.</p>
      */
+    inline bool ContentCreatedTimestampHasBeenSet() const { return m_contentCreatedTimestampHasBeenSet; }
+
+    /**
+     * <p>The timestamp when the content of the document was originally created.</p>
+     */
     inline void SetContentCreatedTimestamp(const Aws::Utils::DateTime& value) { m_contentCreatedTimestampHasBeenSet = true; m_contentCreatedTimestamp = value; }
 
     /**
@@ -194,6 +215,11 @@ namespace Model
     /**
      * <p>The timestamp when the content of the document was modified.</p>
      */
+    inline bool ContentModifiedTimestampHasBeenSet() const { return m_contentModifiedTimestampHasBeenSet; }
+
+    /**
+     * <p>The timestamp when the content of the document was modified.</p>
+     */
     inline void SetContentModifiedTimestamp(const Aws::Utils::DateTime& value) { m_contentModifiedTimestampHasBeenSet = true; m_contentModifiedTimestamp = value; }
 
     /**
@@ -216,6 +242,11 @@ namespace Model
      * <p>The content type of the document.</p>
      */
     inline const Aws::String& GetContentType() const{ return m_contentType; }
+
+    /**
+     * <p>The content type of the document.</p>
+     */
+    inline bool ContentTypeHasBeenSet() const { return m_contentTypeHasBeenSet; }
 
     /**
      * <p>The content type of the document.</p>
@@ -256,6 +287,11 @@ namespace Model
     /**
      * <p>The size of the document, in bytes.</p>
      */
+    inline bool DocumentSizeInBytesHasBeenSet() const { return m_documentSizeInBytesHasBeenSet; }
+
+    /**
+     * <p>The size of the document, in bytes.</p>
+     */
     inline void SetDocumentSizeInBytes(long long value) { m_documentSizeInBytesHasBeenSet = true; m_documentSizeInBytes = value; }
 
     /**
@@ -268,6 +304,11 @@ namespace Model
      * <p>The ID of the parent folder.</p>
      */
     inline const Aws::String& GetParentFolderId() const{ return m_parentFolderId; }
+
+    /**
+     * <p>The ID of the parent folder.</p>
+     */
+    inline bool ParentFolderIdHasBeenSet() const { return m_parentFolderIdHasBeenSet; }
 
     /**
      * <p>The ID of the parent folder.</p>

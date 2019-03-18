@@ -63,6 +63,16 @@ namespace Model
      * <code>containerInstanceLongArnFormat</code> is specified, the ARN and resource
      * ID for your Amazon ECS container instances is affected.</p>
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>The resource name for which to enable the new format. If
+     * <code>serviceLongArnFormat</code> is specified, the ARN for your Amazon ECS
+     * services is affected. If <code>taskLongArnFormat</code> is specified, the ARN
+     * and resource ID for your Amazon ECS tasks is affected. If
+     * <code>containerInstanceLongArnFormat</code> is specified, the ARN and resource
+     * ID for your Amazon ECS container instances is affected.</p>
+     */
     inline void SetName(const SettingName& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
@@ -101,6 +111,12 @@ namespace Model
      * are <code>enabled</code> and <code>disabled</code>.</p>
      */
     inline const Aws::String& GetValue() const{ return m_value; }
+
+    /**
+     * <p>The account setting value for the specified principal ARN. Accepted values
+     * are <code>enabled</code> and <code>disabled</code>.</p>
+     */
+    inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
 
     /**
      * <p>The account setting value for the specified principal ARN. Accepted values
@@ -147,6 +163,15 @@ namespace Model
      * is omitted, the settings are changed only for the authenticated user.</p>
      */
     inline const Aws::String& GetPrincipalArn() const{ return m_principalArn; }
+
+    /**
+     * <p>The ARN of the principal, which can be an IAM user, IAM role, or the root
+     * user. If you specify the root user, it modifies the ARN and resource ID format
+     * for all IAM users, IAM roles, and the root user of the account unless an IAM
+     * user or role explicitly overrides these settings for themselves. If this field
+     * is omitted, the settings are changed only for the authenticated user.</p>
+     */
+    inline bool PrincipalArnHasBeenSet() const { return m_principalArnHasBeenSet; }
 
     /**
      * <p>The ARN of the principal, which can be an IAM user, IAM role, or the root

@@ -52,6 +52,11 @@ namespace Model
     /**
      * <p>The load balancer name.</p>
      */
+    inline bool LoadBalancerNameHasBeenSet() const { return m_loadBalancerNameHasBeenSet; }
+
+    /**
+     * <p>The load balancer name.</p>
+     */
     inline void SetLoadBalancerName(const Aws::String& value) { m_loadBalancerNameHasBeenSet = true; m_loadBalancerName = value; }
 
     /**
@@ -84,6 +89,11 @@ namespace Model
      * <p>The SSL/TLS certificate name.</p>
      */
     inline const Aws::String& GetCertificateName() const{ return m_certificateName; }
+
+    /**
+     * <p>The SSL/TLS certificate name.</p>
+     */
+    inline bool CertificateNameHasBeenSet() const { return m_certificateNameHasBeenSet; }
 
     /**
      * <p>The SSL/TLS certificate name.</p>
@@ -124,6 +134,15 @@ namespace Model
      * balancer.</p>
      */
     inline bool GetForce() const{ return m_force; }
+
+    /**
+     * <p>When <code>true</code>, forces the deletion of an SSL/TLS certificate.</p>
+     * <p>There can be two certificates associated with a Lightsail load balancer: the
+     * primary and the backup. The <code>force</code> parameter is required when the
+     * primary SSL/TLS certificate is in use by an instance attached to the load
+     * balancer.</p>
+     */
+    inline bool ForceHasBeenSet() const { return m_forceHasBeenSet; }
 
     /**
      * <p>When <code>true</code>, forces the deletion of an SSL/TLS certificate.</p>

@@ -59,6 +59,12 @@ namespace Model
      * <p>The full path to the file that will be added or updated, including the name
      * of the file.</p>
      */
+    inline bool AbsolutePathHasBeenSet() const { return m_absolutePathHasBeenSet; }
+
+    /**
+     * <p>The full path to the file that will be added or updated, including the name
+     * of the file.</p>
+     */
     inline void SetAbsolutePath(const Aws::String& value) { m_absolutePathHasBeenSet = true; m_absolutePath = value; }
 
     /**
@@ -100,6 +106,11 @@ namespace Model
     /**
      * <p>The blob ID that contains the file information.</p>
      */
+    inline bool BlobIdHasBeenSet() const { return m_blobIdHasBeenSet; }
+
+    /**
+     * <p>The blob ID that contains the file information.</p>
+     */
     inline void SetBlobId(const Aws::String& value) { m_blobIdHasBeenSet = true; m_blobId = value; }
 
     /**
@@ -133,6 +144,12 @@ namespace Model
      * EXECUTABLE and NORMAL.</p>
      */
     inline const FileModeTypeEnum& GetFileMode() const{ return m_fileMode; }
+
+    /**
+     * <p>The extrapolated file mode permissions for the file. Valid values include
+     * EXECUTABLE and NORMAL.</p>
+     */
+    inline bool FileModeHasBeenSet() const { return m_fileModeHasBeenSet; }
 
     /**
      * <p>The extrapolated file mode permissions for the file. Valid values include

@@ -53,6 +53,11 @@ namespace Model
     /**
      * <p>The instance ID.</p>
      */
+    inline bool InstanceIdHasBeenSet() const { return m_instanceIdHasBeenSet; }
+
+    /**
+     * <p>The instance ID.</p>
+     */
     inline void SetInstanceId(const Aws::String& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
 
     /**
@@ -86,6 +91,12 @@ namespace Model
      * registered instance to a built-in layer.</p>
      */
     inline const Aws::Vector<Aws::String>& GetLayerIds() const{ return m_layerIds; }
+
+    /**
+     * <p>The layer ID, which must correspond to a custom layer. You cannot assign a
+     * registered instance to a built-in layer.</p>
+     */
+    inline bool LayerIdsHasBeenSet() const { return m_layerIdsHasBeenSet; }
 
     /**
      * <p>The layer ID, which must correspond to a custom layer. You cannot assign a

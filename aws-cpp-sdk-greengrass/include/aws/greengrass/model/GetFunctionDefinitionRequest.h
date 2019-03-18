@@ -50,6 +50,11 @@ namespace Model
     /**
      * The ID of the Lambda function definition.
      */
+    inline bool FunctionDefinitionIdHasBeenSet() const { return m_functionDefinitionIdHasBeenSet; }
+
+    /**
+     * The ID of the Lambda function definition.
+     */
     inline void SetFunctionDefinitionId(const Aws::String& value) { m_functionDefinitionIdHasBeenSet = true; m_functionDefinitionId = value; }
 
     /**

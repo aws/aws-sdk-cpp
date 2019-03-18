@@ -60,6 +60,13 @@ namespace Model
      * checks is <code>healthcheck</code>.</p> </li> <li> <p>The resource type for
      * hosted zones is <code>hostedzone</code>.</p> </li> </ul>
      */
+    inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
+
+    /**
+     * <p>The type of the resources.</p> <ul> <li> <p>The resource type for health
+     * checks is <code>healthcheck</code>.</p> </li> <li> <p>The resource type for
+     * hosted zones is <code>hostedzone</code>.</p> </li> </ul>
+     */
     inline void SetResourceType(const TagResourceType& value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
 
     /**
@@ -89,6 +96,12 @@ namespace Model
      * which you want to get a list of tags.</p>
      */
     inline const Aws::Vector<Aws::String>& GetResourceIds() const{ return m_resourceIds; }
+
+    /**
+     * <p>A complex type that contains the ResourceId element for each resource for
+     * which you want to get a list of tags.</p>
+     */
+    inline bool ResourceIdsHasBeenSet() const { return m_resourceIdsHasBeenSet; }
 
     /**
      * <p>A complex type that contains the ResourceId element for each resource for

@@ -53,6 +53,11 @@ namespace Model
     /**
      * Selects a specific PID from within a source.
      */
+    inline bool PidHasBeenSet() const { return m_pidHasBeenSet; }
+
+    /**
+     * Selects a specific PID from within a source.
+     */
     inline void SetPid(int value) { m_pidHasBeenSet = true; m_pid = value; }
 
     /**

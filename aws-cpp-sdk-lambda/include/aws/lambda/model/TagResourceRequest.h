@@ -51,6 +51,11 @@ namespace Model
     /**
      * <p>The function's Amazon Resource Name (ARN).</p>
      */
+    inline bool ResourceHasBeenSet() const { return m_resourceHasBeenSet; }
+
+    /**
+     * <p>The function's Amazon Resource Name (ARN).</p>
+     */
     inline void SetResource(const Aws::String& value) { m_resourceHasBeenSet = true; m_resource = value; }
 
     /**
@@ -83,6 +88,11 @@ namespace Model
      * <p>A list of tags to apply to the function.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>A list of tags to apply to the function.</p>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
      * <p>A list of tags to apply to the function.</p>

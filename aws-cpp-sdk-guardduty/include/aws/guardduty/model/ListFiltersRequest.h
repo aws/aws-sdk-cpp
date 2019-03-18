@@ -58,6 +58,12 @@ namespace Model
      * The ID of the detector that specifies the GuardDuty service where you want to
      * list filters.
      */
+    inline bool DetectorIdHasBeenSet() const { return m_detectorIdHasBeenSet; }
+
+    /**
+     * The ID of the detector that specifies the GuardDuty service where you want to
+     * list filters.
+     */
     inline void SetDetectorId(const Aws::String& value) { m_detectorIdHasBeenSet = true; m_detectorId = value; }
 
     /**
@@ -101,6 +107,12 @@ namespace Model
      * Indicates the maximum number of items that you want in the response. The maximum
      * value is 50.
      */
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
+
+    /**
+     * Indicates the maximum number of items that you want in the response. The maximum
+     * value is 50.
+     */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
@@ -117,6 +129,14 @@ namespace Model
      * continue listing data.
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
+    /**
+     * Paginates results. Set the value of this parameter to NULL on your first call to
+     * the ListFilters operation.For subsequent calls to the operation, fill nextToken
+     * in the request with the value of nextToken from the previous response to
+     * continue listing data.
+     */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
      * Paginates results. Set the value of this parameter to NULL on your first call to

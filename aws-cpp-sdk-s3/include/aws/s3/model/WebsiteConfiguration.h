@@ -59,6 +59,11 @@ namespace Model
     /**
      * <p/>
      */
+    inline bool ErrorDocumentHasBeenSet() const { return m_errorDocumentHasBeenSet; }
+
+    /**
+     * <p/>
+     */
     inline void SetErrorDocument(const ErrorDocument& value) { m_errorDocumentHasBeenSet = true; m_errorDocument = value; }
 
     /**
@@ -81,6 +86,11 @@ namespace Model
      * <p/>
      */
     inline const IndexDocument& GetIndexDocument() const{ return m_indexDocument; }
+
+    /**
+     * <p/>
+     */
+    inline bool IndexDocumentHasBeenSet() const { return m_indexDocumentHasBeenSet; }
 
     /**
      * <p/>
@@ -111,6 +121,11 @@ namespace Model
     /**
      * <p/>
      */
+    inline bool RedirectAllRequestsToHasBeenSet() const { return m_redirectAllRequestsToHasBeenSet; }
+
+    /**
+     * <p/>
+     */
     inline void SetRedirectAllRequestsTo(const RedirectAllRequestsTo& value) { m_redirectAllRequestsToHasBeenSet = true; m_redirectAllRequestsTo = value; }
 
     /**
@@ -133,6 +148,11 @@ namespace Model
      * <p/>
      */
     inline const Aws::Vector<RoutingRule>& GetRoutingRules() const{ return m_routingRules; }
+
+    /**
+     * <p/>
+     */
+    inline bool RoutingRulesHasBeenSet() const { return m_routingRulesHasBeenSet; }
 
     /**
      * <p/>

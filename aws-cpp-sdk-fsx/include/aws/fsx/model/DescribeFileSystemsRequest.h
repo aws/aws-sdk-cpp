@@ -59,6 +59,12 @@ namespace Model
      * <p>(Optional) IDs of the file systems whose descriptions you want to retrieve
      * (String).</p>
      */
+    inline bool FileSystemIdsHasBeenSet() const { return m_fileSystemIdsHasBeenSet; }
+
+    /**
+     * <p>(Optional) IDs of the file systems whose descriptions you want to retrieve
+     * (String).</p>
+     */
     inline void SetFileSystemIds(const Aws::Vector<Aws::String>& value) { m_fileSystemIdsHasBeenSet = true; m_fileSystemIds = value; }
 
     /**
@@ -114,6 +120,15 @@ namespace Model
      * specified in the request and the service's internal maximum number of items per
      * page.</p>
      */
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
+
+    /**
+     * <p>(Optional) Maximum number of file systems to return in the response
+     * (integer). This parameter value must be greater than 0. The number of items that
+     * Amazon FSx returns is the minimum of the <code>MaxResults</code> parameter
+     * specified in the request and the service's internal maximum number of items per
+     * page.</p>
+     */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
@@ -132,6 +147,13 @@ namespace Model
      * action continues the list from where the returning call left off.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
+    /**
+     * <p>(Optional) Opaque pagination token returned from a previous
+     * <code>DescribeFileSystems</code> operation (String). If a token present, the
+     * action continues the list from where the returning call left off.</p>
+     */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
      * <p>(Optional) Opaque pagination token returned from a previous

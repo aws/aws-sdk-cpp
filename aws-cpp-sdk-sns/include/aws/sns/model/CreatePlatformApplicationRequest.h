@@ -62,6 +62,13 @@ namespace Model
      * letters, numbers, underscores, hyphens, and periods, and must be between 1 and
      * 256 characters long.</p>
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>Application names must be made up of only uppercase and lowercase ASCII
+     * letters, numbers, underscores, hyphens, and periods, and must be between 1 and
+     * 256 characters long.</p>
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
@@ -112,6 +119,13 @@ namespace Model
      * (Apple Push Notification Service), APNS_SANDBOX, and GCM (Google Cloud
      * Messaging).</p>
      */
+    inline bool PlatformHasBeenSet() const { return m_platformHasBeenSet; }
+
+    /**
+     * <p>The following platforms are supported: ADM (Amazon Device Messaging), APNS
+     * (Apple Push Notification Service), APNS_SANDBOX, and GCM (Google Cloud
+     * Messaging).</p>
+     */
     inline void SetPlatform(const Aws::String& value) { m_platformHasBeenSet = true; m_platform = value; }
 
     /**
@@ -156,6 +170,13 @@ namespace Model
      * </p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetAttributes() const{ return m_attributes; }
+
+    /**
+     * <p>For a list of attributes, see <a
+     * href="http://docs.aws.amazon.com/sns/latest/api/API_SetPlatformApplicationAttributes.html">SetPlatformApplicationAttributes</a>
+     * </p>
+     */
+    inline bool AttributesHasBeenSet() const { return m_attributesHasBeenSet; }
 
     /**
      * <p>For a list of attributes, see <a

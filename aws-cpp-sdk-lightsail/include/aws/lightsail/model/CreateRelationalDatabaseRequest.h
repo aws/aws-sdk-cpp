@@ -58,6 +58,13 @@ namespace Model
      * <p>Must contain from 2 to 255 alphanumeric characters, or hyphens.</p> </li>
      * <li> <p>The first and last character must be a letter or number.</p> </li> </ul>
      */
+    inline bool RelationalDatabaseNameHasBeenSet() const { return m_relationalDatabaseNameHasBeenSet; }
+
+    /**
+     * <p>The name to use for your new database.</p> <p>Constraints:</p> <ul> <li>
+     * <p>Must contain from 2 to 255 alphanumeric characters, or hyphens.</p> </li>
+     * <li> <p>The first and last character must be a letter or number.</p> </li> </ul>
+     */
     inline void SetRelationalDatabaseName(const Aws::String& value) { m_relationalDatabaseNameHasBeenSet = true; m_relationalDatabaseName = value; }
 
     /**
@@ -104,6 +111,15 @@ namespace Model
      * your request.</p>
      */
     inline const Aws::String& GetAvailabilityZone() const{ return m_availabilityZone; }
+
+    /**
+     * <p>The Availability Zone in which to create your new database. Use the
+     * <code>us-east-2a</code> case-sensitive format.</p> <p>You can get a list of
+     * Availability Zones by using the <code>get regions</code> operation. Be sure to
+     * add the <code>include relational database Availability Zones</code> parameter to
+     * your request.</p>
+     */
+    inline bool AvailabilityZoneHasBeenSet() const { return m_availabilityZoneHasBeenSet; }
 
     /**
      * <p>The Availability Zone in which to create your new database. Use the
@@ -172,6 +188,13 @@ namespace Model
      * engine version of a database.</p> <p>You can get a list of database blueprints
      * IDs by using the <code>get relational database blueprints</code> operation.</p>
      */
+    inline bool RelationalDatabaseBlueprintIdHasBeenSet() const { return m_relationalDatabaseBlueprintIdHasBeenSet; }
+
+    /**
+     * <p>The blueprint ID for your new database. A blueprint describes the major
+     * engine version of a database.</p> <p>You can get a list of database blueprints
+     * IDs by using the <code>get relational database blueprints</code> operation.</p>
+     */
     inline void SetRelationalDatabaseBlueprintId(const Aws::String& value) { m_relationalDatabaseBlueprintIdHasBeenSet = true; m_relationalDatabaseBlueprintId = value; }
 
     /**
@@ -216,6 +239,13 @@ namespace Model
      * IDs by using the <code>get relational database bundles</code> operation.</p>
      */
     inline const Aws::String& GetRelationalDatabaseBundleId() const{ return m_relationalDatabaseBundleId; }
+
+    /**
+     * <p>The bundle ID for your new database. A bundle describes the performance
+     * specifications for your database.</p> <p>You can get a list of database bundle
+     * IDs by using the <code>get relational database bundles</code> operation.</p>
+     */
+    inline bool RelationalDatabaseBundleIdHasBeenSet() const { return m_relationalDatabaseBundleIdHasBeenSet; }
 
     /**
      * <p>The bundle ID for your new database. A bundle describes the performance
@@ -267,6 +297,14 @@ namespace Model
      * specified database engine</p> </li> </ul>
      */
     inline const Aws::String& GetMasterDatabaseName() const{ return m_masterDatabaseName; }
+
+    /**
+     * <p>The name of the master database created when the Lightsail database resource
+     * is created.</p> <p>Constraints:</p> <ul> <li> <p>Must contain from 1 to 64
+     * alphanumeric characters.</p> </li> <li> <p>Cannot be a word reserved by the
+     * specified database engine</p> </li> </ul>
+     */
+    inline bool MasterDatabaseNameHasBeenSet() const { return m_masterDatabaseNameHasBeenSet; }
 
     /**
      * <p>The name of the master database created when the Lightsail database resource
@@ -329,6 +367,19 @@ namespace Model
      * respectively.</p> </li> </ul>
      */
     inline const Aws::String& GetMasterUsername() const{ return m_masterUsername; }
+
+    /**
+     * <p>The master user name for your new database.</p> <p>Constraints:</p> <ul> <li>
+     * <p>Master user name is required.</p> </li> <li> <p>Must contain from 1 to 16
+     * alphanumeric characters.</p> </li> <li> <p>The first character must be a
+     * letter.</p> </li> <li> <p>Cannot be a reserved word for the database engine you
+     * choose.</p> <p>For more information about reserved words in MySQL 5.6 or 5.7,
+     * see the Keywords and Reserved Words articles for <a
+     * href="https://dev.mysql.com/doc/refman/5.6/en/keywords.html">MySQL 5.6</a> or <a
+     * href="https://dev.mysql.com/doc/refman/5.7/en/keywords.html">MySQL 5.7</a>
+     * respectively.</p> </li> </ul>
+     */
+    inline bool MasterUsernameHasBeenSet() const { return m_masterUsernameHasBeenSet; }
 
     /**
      * <p>The master user name for your new database.</p> <p>Constraints:</p> <ul> <li>
@@ -421,6 +472,13 @@ namespace Model
      * include any printable ASCII character except "/", """, or "@".</p>
      * <p>Constraints: Must contain 8 to 41 characters.</p>
      */
+    inline bool MasterUserPasswordHasBeenSet() const { return m_masterUserPasswordHasBeenSet; }
+
+    /**
+     * <p>The password for the master user of your new database. The password can
+     * include any printable ASCII character except "/", """, or "@".</p>
+     * <p>Constraints: Must contain 8 to 41 characters.</p>
+     */
     inline void SetMasterUserPassword(const Aws::String& value) { m_masterUserPasswordHasBeenSet = true; m_masterUserPassword = value; }
 
     /**
@@ -474,6 +532,22 @@ namespace Model
      * <p>Must be at least 30 minutes.</p> </li> </ul>
      */
     inline const Aws::String& GetPreferredBackupWindow() const{ return m_preferredBackupWindow; }
+
+    /**
+     * <p>The daily time range during which automated backups are created for your new
+     * database if automated backups are enabled.</p> <p>The default is a 30-minute
+     * window selected at random from an 8-hour block of time for each AWS Region. For
+     * more information about the preferred backup window time blocks for each region,
+     * see the <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_WorkingWithAutomatedBackups.html#USER_WorkingWithAutomatedBackups.BackupWindow">Working
+     * With Backups</a> guide in the Amazon Relational Database Service (Amazon RDS)
+     * documentation.</p> <p>Constraints:</p> <ul> <li> <p>Must be in the
+     * <code>hh24:mi-hh24:mi</code> format.</p> <p>Example: <code>16:00-16:30</code>
+     * </p> </li> <li> <p>Specified in Universal Coordinated Time (UTC).</p> </li> <li>
+     * <p>Must not conflict with the preferred maintenance window.</p> </li> <li>
+     * <p>Must be at least 30 minutes.</p> </li> </ul>
+     */
+    inline bool PreferredBackupWindowHasBeenSet() const { return m_preferredBackupWindowHasBeenSet; }
 
     /**
      * <p>The daily time range during which automated backups are created for your new
@@ -594,6 +668,18 @@ namespace Model
      * </li> <li> <p>Specified in Universal Coordinated Time (UTC).</p> </li> <li>
      * <p>Example: <code>Tue:17:00-Tue:17:30</code> </p> </li> </ul>
      */
+    inline bool PreferredMaintenanceWindowHasBeenSet() const { return m_preferredMaintenanceWindowHasBeenSet; }
+
+    /**
+     * <p>The weekly time range during which system maintenance can occur on your new
+     * database.</p> <p>The default is a 30-minute window selected at random from an
+     * 8-hour block of time for each AWS Region, occurring on a random day of the
+     * week.</p> <p>Constraints:</p> <ul> <li> <p>Must be in the
+     * <code>ddd:hh24:mi-ddd:hh24:mi</code> format.</p> </li> <li> <p>Valid days: Mon,
+     * Tue, Wed, Thu, Fri, Sat, Sun.</p> </li> <li> <p>Must be at least 30 minutes.</p>
+     * </li> <li> <p>Specified in Universal Coordinated Time (UTC).</p> </li> <li>
+     * <p>Example: <code>Tue:17:00-Tue:17:30</code> </p> </li> </ul>
+     */
     inline void SetPreferredMaintenanceWindow(const Aws::String& value) { m_preferredMaintenanceWindowHasBeenSet = true; m_preferredMaintenanceWindow = value; }
 
     /**
@@ -673,6 +759,15 @@ namespace Model
      * is available only to your Lightsail resources in the same region as your
      * database.</p>
      */
+    inline bool PubliclyAccessibleHasBeenSet() const { return m_publiclyAccessibleHasBeenSet; }
+
+    /**
+     * <p>Specifies the accessibility options for your new database. A value of
+     * <code>true</code> specifies a database that is available to resources outside of
+     * your Lightsail account. A value of <code>false</code> specifies a database that
+     * is available only to your Lightsail resources in the same region as your
+     * database.</p>
+     */
     inline void SetPubliclyAccessible(bool value) { m_publiclyAccessibleHasBeenSet = true; m_publiclyAccessible = value; }
 
     /**
@@ -691,6 +786,13 @@ namespace Model
      * resource</code> operation.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>The tag keys and optional values to add to the resource during create.</p>
+     * <p>To tag a resource after it has been created, see the <code>tag
+     * resource</code> operation.</p>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
      * <p>The tag keys and optional values to add to the resource during create.</p>

@@ -55,6 +55,11 @@ namespace Model
     /**
      * The Client ID that you obtained from the Amazon App Distribution Portal.
      */
+    inline bool ClientIdHasBeenSet() const { return m_clientIdHasBeenSet; }
+
+    /**
+     * The Client ID that you obtained from the Amazon App Distribution Portal.
+     */
     inline void SetClientId(const Aws::String& value) { m_clientIdHasBeenSet = true; m_clientId = value; }
 
     /**
@@ -91,6 +96,11 @@ namespace Model
     /**
      * The Client Secret that you obtained from the Amazon App Distribution Portal.
      */
+    inline bool ClientSecretHasBeenSet() const { return m_clientSecretHasBeenSet; }
+
+    /**
+     * The Client Secret that you obtained from the Amazon App Distribution Portal.
+     */
     inline void SetClientSecret(const Aws::String& value) { m_clientSecretHasBeenSet = true; m_clientSecret = value; }
 
     /**
@@ -123,6 +133,11 @@ namespace Model
      * Indicates whether or not the channel is enabled for sending messages.
      */
     inline bool GetEnabled() const{ return m_enabled; }
+
+    /**
+     * Indicates whether or not the channel is enabled for sending messages.
+     */
+    inline bool EnabledHasBeenSet() const { return m_enabledHasBeenSet; }
 
     /**
      * Indicates whether or not the channel is enabled for sending messages.

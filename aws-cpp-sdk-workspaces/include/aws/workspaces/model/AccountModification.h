@@ -59,6 +59,11 @@ namespace Model
     /**
      * <p>The state of the modification to the configuration of BYOL.</p>
      */
+    inline bool ModificationStateHasBeenSet() const { return m_modificationStateHasBeenSet; }
+
+    /**
+     * <p>The state of the modification to the configuration of BYOL.</p>
+     */
     inline void SetModificationState(const DedicatedTenancyModificationStateEnum& value) { m_modificationStateHasBeenSet = true; m_modificationState = value; }
 
     /**
@@ -81,6 +86,11 @@ namespace Model
      * <p>The status of BYOL (whether BYOL is being enabled or disabled).</p>
      */
     inline const DedicatedTenancySupportResultEnum& GetDedicatedTenancySupport() const{ return m_dedicatedTenancySupport; }
+
+    /**
+     * <p>The status of BYOL (whether BYOL is being enabled or disabled).</p>
+     */
+    inline bool DedicatedTenancySupportHasBeenSet() const { return m_dedicatedTenancySupportHasBeenSet; }
 
     /**
      * <p>The status of BYOL (whether BYOL is being enabled or disabled).</p>
@@ -108,6 +118,12 @@ namespace Model
      * network interface used for the account.</p>
      */
     inline const Aws::String& GetDedicatedTenancyManagementCidrRange() const{ return m_dedicatedTenancyManagementCidrRange; }
+
+    /**
+     * <p>The IP address range, specified as an IPv4 CIDR block, for the management
+     * network interface used for the account.</p>
+     */
+    inline bool DedicatedTenancyManagementCidrRangeHasBeenSet() const { return m_dedicatedTenancyManagementCidrRangeHasBeenSet; }
 
     /**
      * <p>The IP address range, specified as an IPv4 CIDR block, for the management
@@ -156,6 +172,12 @@ namespace Model
      * <p>The timestamp when the modification of the BYOL configuration was
      * started.</p>
      */
+    inline bool StartTimeHasBeenSet() const { return m_startTimeHasBeenSet; }
+
+    /**
+     * <p>The timestamp when the modification of the BYOL configuration was
+     * started.</p>
+     */
     inline void SetStartTime(const Aws::Utils::DateTime& value) { m_startTimeHasBeenSet = true; m_startTime = value; }
 
     /**
@@ -182,6 +204,12 @@ namespace Model
      * modified.</p>
      */
     inline const Aws::String& GetErrorCode() const{ return m_errorCode; }
+
+    /**
+     * <p>The error code that is returned if the configuration of BYOL cannot be
+     * modified.</p>
+     */
+    inline bool ErrorCodeHasBeenSet() const { return m_errorCodeHasBeenSet; }
 
     /**
      * <p>The error code that is returned if the configuration of BYOL cannot be
@@ -225,6 +253,12 @@ namespace Model
      * cannot be modified.</p>
      */
     inline const Aws::String& GetErrorMessage() const{ return m_errorMessage; }
+
+    /**
+     * <p>The text of the error message that is returned if the configuration of BYOL
+     * cannot be modified.</p>
+     */
+    inline bool ErrorMessageHasBeenSet() const { return m_errorMessageHasBeenSet; }
 
     /**
      * <p>The text of the error message that is returned if the configuration of BYOL

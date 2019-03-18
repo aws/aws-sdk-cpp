@@ -60,6 +60,14 @@ namespace Model
      * consisting of upper and lowercase alphanumeric characters with no spaces. You
      * can also include any of the following characters: _+=,.@-</p>
      */
+    inline bool PolicyNameHasBeenSet() const { return m_policyNameHasBeenSet; }
+
+    /**
+     * <p>The friendly name of the policy.</p> <p>This parameter allows (through its <a
+     * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
+     * consisting of upper and lowercase alphanumeric characters with no spaces. You
+     * can also include any of the following characters: _+=,.@-</p>
+     */
     inline void SetPolicyName(const Aws::String& value) { m_policyNameHasBeenSet = true; m_policyName = value; }
 
     /**
@@ -116,6 +124,20 @@ namespace Model
      * letters.</p>
      */
     inline const Aws::String& GetPath() const{ return m_path; }
+
+    /**
+     * <p>The path for the policy.</p> <p>For more information about paths, see <a
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
+     * Identifiers</a> in the <i>IAM User Guide</i>.</p> <p>This parameter is optional.
+     * If it is not included, it defaults to a slash (/).</p> <p>This parameter allows
+     * (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a
+     * string of characters consisting of either a forward slash (/) by itself or a
+     * string that must begin and end with forward slashes. In addition, it can contain
+     * any ASCII character from the ! (\u0021) through the DEL character (\u007F),
+     * including most punctuation characters, digits, and upper and lowercased
+     * letters.</p>
+     */
+    inline bool PathHasBeenSet() const { return m_pathHasBeenSet; }
 
     /**
      * <p>The path for the policy.</p> <p>For more information about paths, see <a
@@ -224,6 +246,18 @@ namespace Model
      * set (through \u00FF)</p> </li> <li> <p>The special characters tab (\u0009), line
      * feed (\u000A), and carriage return (\u000D)</p> </li> </ul>
      */
+    inline bool PolicyDocumentHasBeenSet() const { return m_policyDocumentHasBeenSet; }
+
+    /**
+     * <p>The JSON policy document that you want to use as the content for the new
+     * policy.</p> <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
+     * used to validate this parameter is a string of characters consisting of the
+     * following:</p> <ul> <li> <p>Any printable ASCII character ranging from the space
+     * character (\u0020) through the end of the ASCII character range</p> </li> <li>
+     * <p>The printable characters in the Basic Latin and Latin-1 Supplement character
+     * set (through \u00FF)</p> </li> <li> <p>The special characters tab (\u0009), line
+     * feed (\u000A), and carriage return (\u000D)</p> </li> </ul>
+     */
     inline void SetPolicyDocument(const Aws::String& value) { m_policyDocumentHasBeenSet = true; m_policyDocument = value; }
 
     /**
@@ -294,6 +328,14 @@ namespace Model
      * immutable. After a value is assigned, it cannot be changed.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
+
+    /**
+     * <p>A friendly description of the policy.</p> <p>Typically used to store
+     * information about the permissions defined in the policy. For example, "Grants
+     * access to production DynamoDB tables."</p> <p>The policy description is
+     * immutable. After a value is assigned, it cannot be changed.</p>
+     */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
 
     /**
      * <p>A friendly description of the policy.</p> <p>Typically used to store

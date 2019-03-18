@@ -58,6 +58,11 @@ namespace Model
     /**
      * A list of EC2 instance IPv6 address information.
      */
+    inline bool Ipv6AddressesHasBeenSet() const { return m_ipv6AddressesHasBeenSet; }
+
+    /**
+     * A list of EC2 instance IPv6 address information.
+     */
     inline void SetIpv6Addresses(const Aws::Vector<Aws::String>& value) { m_ipv6AddressesHasBeenSet = true; m_ipv6Addresses = value; }
 
     /**
@@ -99,6 +104,11 @@ namespace Model
     /**
      * The ID of the network interface
      */
+    inline bool NetworkInterfaceIdHasBeenSet() const { return m_networkInterfaceIdHasBeenSet; }
+
+    /**
+     * The ID of the network interface
+     */
     inline void SetNetworkInterfaceId(const Aws::String& value) { m_networkInterfaceIdHasBeenSet = true; m_networkInterfaceId = value; }
 
     /**
@@ -131,6 +141,11 @@ namespace Model
      * Private DNS name of the EC2 instance.
      */
     inline const Aws::String& GetPrivateDnsName() const{ return m_privateDnsName; }
+
+    /**
+     * Private DNS name of the EC2 instance.
+     */
+    inline bool PrivateDnsNameHasBeenSet() const { return m_privateDnsNameHasBeenSet; }
 
     /**
      * Private DNS name of the EC2 instance.
@@ -171,6 +186,11 @@ namespace Model
     /**
      * Private IP address of the EC2 instance.
      */
+    inline bool PrivateIpAddressHasBeenSet() const { return m_privateIpAddressHasBeenSet; }
+
+    /**
+     * Private IP address of the EC2 instance.
+     */
     inline void SetPrivateIpAddress(const Aws::String& value) { m_privateIpAddressHasBeenSet = true; m_privateIpAddress = value; }
 
     /**
@@ -203,6 +223,11 @@ namespace Model
      * Other private IP address information of the EC2 instance.
      */
     inline const Aws::Vector<PrivateIpAddressDetails>& GetPrivateIpAddresses() const{ return m_privateIpAddresses; }
+
+    /**
+     * Other private IP address information of the EC2 instance.
+     */
+    inline bool PrivateIpAddressesHasBeenSet() const { return m_privateIpAddressesHasBeenSet; }
 
     /**
      * Other private IP address information of the EC2 instance.
@@ -243,6 +268,11 @@ namespace Model
     /**
      * Public DNS name of the EC2 instance.
      */
+    inline bool PublicDnsNameHasBeenSet() const { return m_publicDnsNameHasBeenSet; }
+
+    /**
+     * Public DNS name of the EC2 instance.
+     */
     inline void SetPublicDnsName(const Aws::String& value) { m_publicDnsNameHasBeenSet = true; m_publicDnsName = value; }
 
     /**
@@ -275,6 +305,11 @@ namespace Model
      * Public IP address of the EC2 instance.
      */
     inline const Aws::String& GetPublicIp() const{ return m_publicIp; }
+
+    /**
+     * Public IP address of the EC2 instance.
+     */
+    inline bool PublicIpHasBeenSet() const { return m_publicIpHasBeenSet; }
 
     /**
      * Public IP address of the EC2 instance.
@@ -315,6 +350,11 @@ namespace Model
     /**
      * Security groups associated with the EC2 instance.
      */
+    inline bool SecurityGroupsHasBeenSet() const { return m_securityGroupsHasBeenSet; }
+
+    /**
+     * Security groups associated with the EC2 instance.
+     */
     inline void SetSecurityGroups(const Aws::Vector<SecurityGroup>& value) { m_securityGroupsHasBeenSet = true; m_securityGroups = value; }
 
     /**
@@ -351,6 +391,11 @@ namespace Model
     /**
      * The subnet ID of the EC2 instance.
      */
+    inline bool SubnetIdHasBeenSet() const { return m_subnetIdHasBeenSet; }
+
+    /**
+     * The subnet ID of the EC2 instance.
+     */
     inline void SetSubnetId(const Aws::String& value) { m_subnetIdHasBeenSet = true; m_subnetId = value; }
 
     /**
@@ -383,6 +428,11 @@ namespace Model
      * The VPC ID of the EC2 instance.
      */
     inline const Aws::String& GetVpcId() const{ return m_vpcId; }
+
+    /**
+     * The VPC ID of the EC2 instance.
+     */
+    inline bool VpcIdHasBeenSet() const { return m_vpcIdHasBeenSet; }
 
     /**
      * The VPC ID of the EC2 instance.

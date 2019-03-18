@@ -53,6 +53,11 @@ namespace Model
     /**
      * <p>The name of the log group.</p>
      */
+    inline bool LogGroupNameHasBeenSet() const { return m_logGroupNameHasBeenSet; }
+
+    /**
+     * <p>The name of the log group.</p>
+     */
     inline void SetLogGroupName(const Aws::String& value) { m_logGroupNameHasBeenSet = true; m_logGroupName = value; }
 
     /**
@@ -86,6 +91,12 @@ namespace Model
      * <code>LastEventTime</code>,you cannot specify this parameter.</p>
      */
     inline const Aws::String& GetLogStreamNamePrefix() const{ return m_logStreamNamePrefix; }
+
+    /**
+     * <p>The prefix to match.</p> <p>If <code>orderBy</code> is
+     * <code>LastEventTime</code>,you cannot specify this parameter.</p>
+     */
+    inline bool LogStreamNamePrefixHasBeenSet() const { return m_logStreamNamePrefixHasBeenSet; }
 
     /**
      * <p>The prefix to match.</p> <p>If <code>orderBy</code> is
@@ -137,6 +148,20 @@ namespace Model
      * situations.</p>
      */
     inline const OrderBy& GetOrderBy() const{ return m_orderBy; }
+
+    /**
+     * <p>If the value is <code>LogStreamName</code>, the results are ordered by log
+     * stream name. If the value is <code>LastEventTime</code>, the results are ordered
+     * by the event time. The default value is <code>LogStreamName</code>.</p> <p>If
+     * you order the results by event time, you cannot specify the
+     * <code>logStreamNamePrefix</code> parameter.</p> <p>lastEventTimestamp represents
+     * the time of the most recent log event in the log stream in CloudWatch Logs. This
+     * number is expressed as the number of milliseconds after Jan 1, 1970 00:00:00
+     * UTC. lastEventTimeStamp updates on an eventual consistency basis. It typically
+     * updates in less than an hour from ingestion, but may take longer in some rare
+     * situations.</p>
+     */
+    inline bool OrderByHasBeenSet() const { return m_orderByHasBeenSet; }
 
     /**
      * <p>If the value is <code>LogStreamName</code>, the results are ordered by log
@@ -207,6 +232,13 @@ namespace Model
      * is to false, results are returned in ascending order. The default value is
      * false.</p>
      */
+    inline bool DescendingHasBeenSet() const { return m_descendingHasBeenSet; }
+
+    /**
+     * <p>If the value is true, results are returned in descending order. If the value
+     * is to false, results are returned in ascending order. The default value is
+     * false.</p>
+     */
     inline void SetDescending(bool value) { m_descendingHasBeenSet = true; m_descending = value; }
 
     /**
@@ -222,6 +254,12 @@ namespace Model
      * a previous call.)</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
+    /**
+     * <p>The token for the next set of items to return. (You received this token from
+     * a previous call.)</p>
+     */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
      * <p>The token for the next set of items to return. (You received this token from
@@ -265,6 +303,12 @@ namespace Model
      * default is up to 50 items.</p>
      */
     inline int GetLimit() const{ return m_limit; }
+
+    /**
+     * <p>The maximum number of items returned. If you don't specify a value, the
+     * default is up to 50 items.</p>
+     */
+    inline bool LimitHasBeenSet() const { return m_limitHasBeenSet; }
 
     /**
      * <p>The maximum number of items returned. If you don't specify a value, the

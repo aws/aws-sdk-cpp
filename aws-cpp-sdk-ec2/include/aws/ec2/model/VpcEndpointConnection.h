@@ -60,6 +60,11 @@ namespace Model
     /**
      * <p>The ID of the service to which the endpoint is connected.</p>
      */
+    inline bool ServiceIdHasBeenSet() const { return m_serviceIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the service to which the endpoint is connected.</p>
+     */
     inline void SetServiceId(const Aws::String& value) { m_serviceIdHasBeenSet = true; m_serviceId = value; }
 
     /**
@@ -92,6 +97,11 @@ namespace Model
      * <p>The ID of the VPC endpoint.</p>
      */
     inline const Aws::String& GetVpcEndpointId() const{ return m_vpcEndpointId; }
+
+    /**
+     * <p>The ID of the VPC endpoint.</p>
+     */
+    inline bool VpcEndpointIdHasBeenSet() const { return m_vpcEndpointIdHasBeenSet; }
 
     /**
      * <p>The ID of the VPC endpoint.</p>
@@ -132,6 +142,11 @@ namespace Model
     /**
      * <p>The AWS account ID of the owner of the VPC endpoint.</p>
      */
+    inline bool VpcEndpointOwnerHasBeenSet() const { return m_vpcEndpointOwnerHasBeenSet; }
+
+    /**
+     * <p>The AWS account ID of the owner of the VPC endpoint.</p>
+     */
     inline void SetVpcEndpointOwner(const Aws::String& value) { m_vpcEndpointOwnerHasBeenSet = true; m_vpcEndpointOwner = value; }
 
     /**
@@ -168,6 +183,11 @@ namespace Model
     /**
      * <p>The state of the VPC endpoint.</p>
      */
+    inline bool VpcEndpointStateHasBeenSet() const { return m_vpcEndpointStateHasBeenSet; }
+
+    /**
+     * <p>The state of the VPC endpoint.</p>
+     */
     inline void SetVpcEndpointState(const State& value) { m_vpcEndpointStateHasBeenSet = true; m_vpcEndpointState = value; }
 
     /**
@@ -190,6 +210,11 @@ namespace Model
      * <p>The date and time the VPC endpoint was created.</p>
      */
     inline const Aws::Utils::DateTime& GetCreationTimestamp() const{ return m_creationTimestamp; }
+
+    /**
+     * <p>The date and time the VPC endpoint was created.</p>
+     */
+    inline bool CreationTimestampHasBeenSet() const { return m_creationTimestampHasBeenSet; }
 
     /**
      * <p>The date and time the VPC endpoint was created.</p>

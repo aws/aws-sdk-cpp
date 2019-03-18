@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The resolver type name.</p>
      */
+    inline bool TypeNameHasBeenSet() const { return m_typeNameHasBeenSet; }
+
+    /**
+     * <p>The resolver type name.</p>
+     */
     inline void SetTypeName(const Aws::String& value) { m_typeNameHasBeenSet = true; m_typeName = value; }
 
     /**
@@ -89,6 +94,11 @@ namespace Model
      * <p>The resolver field name.</p>
      */
     inline const Aws::String& GetFieldName() const{ return m_fieldName; }
+
+    /**
+     * <p>The resolver field name.</p>
+     */
+    inline bool FieldNameHasBeenSet() const { return m_fieldNameHasBeenSet; }
 
     /**
      * <p>The resolver field name.</p>
@@ -129,6 +139,11 @@ namespace Model
     /**
      * <p>The resolver data source name.</p>
      */
+    inline bool DataSourceNameHasBeenSet() const { return m_dataSourceNameHasBeenSet; }
+
+    /**
+     * <p>The resolver data source name.</p>
+     */
     inline void SetDataSourceName(const Aws::String& value) { m_dataSourceNameHasBeenSet = true; m_dataSourceName = value; }
 
     /**
@@ -161,6 +176,11 @@ namespace Model
      * <p>The resolver ARN.</p>
      */
     inline const Aws::String& GetResolverArn() const{ return m_resolverArn; }
+
+    /**
+     * <p>The resolver ARN.</p>
+     */
+    inline bool ResolverArnHasBeenSet() const { return m_resolverArnHasBeenSet; }
 
     /**
      * <p>The resolver ARN.</p>
@@ -201,6 +221,11 @@ namespace Model
     /**
      * <p>The request mapping template.</p>
      */
+    inline bool RequestMappingTemplateHasBeenSet() const { return m_requestMappingTemplateHasBeenSet; }
+
+    /**
+     * <p>The request mapping template.</p>
+     */
     inline void SetRequestMappingTemplate(const Aws::String& value) { m_requestMappingTemplateHasBeenSet = true; m_requestMappingTemplate = value; }
 
     /**
@@ -233,6 +258,11 @@ namespace Model
      * <p>The response mapping template.</p>
      */
     inline const Aws::String& GetResponseMappingTemplate() const{ return m_responseMappingTemplate; }
+
+    /**
+     * <p>The response mapping template.</p>
+     */
+    inline bool ResponseMappingTemplateHasBeenSet() const { return m_responseMappingTemplateHasBeenSet; }
 
     /**
      * <p>The response mapping template.</p>
@@ -285,6 +315,17 @@ namespace Model
      * pipeline resolver to execute a GraphQL query against multiple data sources.</p>
      * </li> </ul>
      */
+    inline bool KindHasBeenSet() const { return m_kindHasBeenSet; }
+
+    /**
+     * <p>The resolver type.</p> <ul> <li> <p> <b>UNIT</b>: A UNIT resolver type. A
+     * UNIT resolver is the default resolver type. A UNIT resolver enables you to
+     * execute a GraphQL query against a single data source.</p> </li> <li> <p>
+     * <b>PIPELINE</b>: A PIPELINE resolver type. A PIPELINE resolver enables you to
+     * execute a series of <code>Function</code> in a serial manner. You can use a
+     * pipeline resolver to execute a GraphQL query against multiple data sources.</p>
+     * </li> </ul>
+     */
     inline void SetKind(const ResolverKind& value) { m_kindHasBeenSet = true; m_kind = value; }
 
     /**
@@ -325,6 +366,11 @@ namespace Model
      * <p>The <code>PipelineConfig</code>.</p>
      */
     inline const PipelineConfig& GetPipelineConfig() const{ return m_pipelineConfig; }
+
+    /**
+     * <p>The <code>PipelineConfig</code>.</p>
+     */
+    inline bool PipelineConfigHasBeenSet() const { return m_pipelineConfigHasBeenSet; }
 
     /**
      * <p>The <code>PipelineConfig</code>.</p>

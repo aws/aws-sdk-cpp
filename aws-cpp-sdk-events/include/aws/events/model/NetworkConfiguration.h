@@ -60,6 +60,13 @@ namespace Model
      * task, and whether a public IP address is to be used. This structure is relevant
      * only for ECS tasks that use the <code>awsvpc</code> network mode.</p>
      */
+    inline bool AwsvpcConfigurationHasBeenSet() const { return m_awsvpcConfigurationHasBeenSet; }
+
+    /**
+     * <p>Use this structure to specify the VPC subnets and security groups for the
+     * task, and whether a public IP address is to be used. This structure is relevant
+     * only for ECS tasks that use the <code>awsvpc</code> network mode.</p>
+     */
     inline void SetAwsvpcConfiguration(const AwsVpcConfiguration& value) { m_awsvpcConfigurationHasBeenSet = true; m_awsvpcConfiguration = value; }
 
     /**

@@ -59,6 +59,13 @@ namespace Model
      * captions. Range of 0x100 (256) to 0x8FF (2303). Unused for passthrough. Should
      * be specified as a hexadecimal string with no "0x" prefix.
      */
+    inline bool PageNumberHasBeenSet() const { return m_pageNumberHasBeenSet; }
+
+    /**
+     * Specifies the teletext page number within the data stream from which to extract
+     * captions. Range of 0x100 (256) to 0x8FF (2303). Unused for passthrough. Should
+     * be specified as a hexadecimal string with no "0x" prefix.
+     */
     inline void SetPageNumber(const Aws::String& value) { m_pageNumberHasBeenSet = true; m_pageNumber = value; }
 
     /**

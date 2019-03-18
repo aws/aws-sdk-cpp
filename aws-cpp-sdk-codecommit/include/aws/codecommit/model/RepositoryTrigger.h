@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The name of the trigger.</p>
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>The name of the trigger.</p>
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
@@ -90,6 +95,12 @@ namespace Model
      * ARN of a topic in Amazon Simple Notification Service (SNS).</p>
      */
     inline const Aws::String& GetDestinationArn() const{ return m_destinationArn; }
+
+    /**
+     * <p>The ARN of the resource that is the target for a trigger. For example, the
+     * ARN of a topic in Amazon Simple Notification Service (SNS).</p>
+     */
+    inline bool DestinationArnHasBeenSet() const { return m_destinationArnHasBeenSet; }
 
     /**
      * <p>The ARN of the resource that is the target for a trigger. For example, the
@@ -138,6 +149,12 @@ namespace Model
      * <p>Any custom data associated with the trigger that will be included in the
      * information sent to the target of the trigger.</p>
      */
+    inline bool CustomDataHasBeenSet() const { return m_customDataHasBeenSet; }
+
+    /**
+     * <p>Any custom data associated with the trigger that will be included in the
+     * information sent to the target of the trigger.</p>
+     */
     inline void SetCustomData(const Aws::String& value) { m_customDataHasBeenSet = true; m_customData = value; }
 
     /**
@@ -178,6 +195,14 @@ namespace Model
      * itself.</p> </note>
      */
     inline const Aws::Vector<Aws::String>& GetBranches() const{ return m_branches; }
+
+    /**
+     * <p>The branches that will be included in the trigger configuration. If you
+     * specify an empty array, the trigger will apply to all branches.</p> <note>
+     * <p>While no content is required in the array, you must include the array
+     * itself.</p> </note>
+     */
+    inline bool BranchesHasBeenSet() const { return m_branchesHasBeenSet; }
 
     /**
      * <p>The branches that will be included in the trigger configuration. If you
@@ -243,6 +268,14 @@ namespace Model
      * other values.</p> </note>
      */
     inline const Aws::Vector<RepositoryTriggerEventEnum>& GetEvents() const{ return m_events; }
+
+    /**
+     * <p>The repository events that will cause the trigger to run actions in another
+     * service, such as sending a notification through Amazon Simple Notification
+     * Service (SNS). </p> <note> <p>The valid value "all" cannot be used with any
+     * other values.</p> </note>
+     */
+    inline bool EventsHasBeenSet() const { return m_eventsHasBeenSet; }
 
     /**
      * <p>The repository events that will cause the trigger to run actions in another

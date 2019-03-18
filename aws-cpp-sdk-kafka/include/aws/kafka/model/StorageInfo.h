@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>EBS volume information.</p>
      */
+    inline bool EbsStorageInfoHasBeenSet() const { return m_ebsStorageInfoHasBeenSet; }
+
+    /**
+     * <p>EBS volume information.</p>
+     */
     inline void SetEbsStorageInfo(const EBSStorageInfo& value) { m_ebsStorageInfoHasBeenSet = true; m_ebsStorageInfo = value; }
 
     /**

@@ -53,6 +53,11 @@ namespace Model
     /**
      * <p>The name of the service mesh to delete the virtual service in.</p>
      */
+    inline bool MeshNameHasBeenSet() const { return m_meshNameHasBeenSet; }
+
+    /**
+     * <p>The name of the service mesh to delete the virtual service in.</p>
+     */
     inline void SetMeshName(const Aws::String& value) { m_meshNameHasBeenSet = true; m_meshName = value; }
 
     /**
@@ -85,6 +90,11 @@ namespace Model
      * <p>The name of the virtual service to delete.</p>
      */
     inline const Aws::String& GetVirtualServiceName() const{ return m_virtualServiceName; }
+
+    /**
+     * <p>The name of the virtual service to delete.</p>
+     */
+    inline bool VirtualServiceNameHasBeenSet() const { return m_virtualServiceNameHasBeenSet; }
 
     /**
      * <p>The name of the virtual service to delete.</p>

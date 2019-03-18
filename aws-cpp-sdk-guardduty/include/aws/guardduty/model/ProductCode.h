@@ -55,6 +55,11 @@ namespace Model
     /**
      * Product code information.
      */
+    inline bool CodeHasBeenSet() const { return m_codeHasBeenSet; }
+
+    /**
+     * Product code information.
+     */
     inline void SetCode(const Aws::String& value) { m_codeHasBeenSet = true; m_code = value; }
 
     /**
@@ -87,6 +92,11 @@ namespace Model
      * Product code type.
      */
     inline const Aws::String& GetProductType() const{ return m_productType; }
+
+    /**
+     * Product code type.
+     */
+    inline bool ProductTypeHasBeenSet() const { return m_productTypeHasBeenSet; }
 
     /**
      * Product code type.

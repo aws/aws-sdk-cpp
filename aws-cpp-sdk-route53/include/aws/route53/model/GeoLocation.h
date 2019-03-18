@@ -64,6 +64,15 @@ namespace Model
      * <code>ContinentCode</code> with either <code>CountryCode</code> or
      * <code>SubdivisionCode</code> returns an <code>InvalidInput</code> error.</p>
      */
+    inline bool ContinentCodeHasBeenSet() const { return m_continentCodeHasBeenSet; }
+
+    /**
+     * <p>The two-letter code for the continent.</p> <p>Valid values: <code>AF</code> |
+     * <code>AN</code> | <code>AS</code> | <code>EU</code> | <code>OC</code> |
+     * <code>NA</code> | <code>SA</code> </p> <p>Constraint: Specifying
+     * <code>ContinentCode</code> with either <code>CountryCode</code> or
+     * <code>SubdivisionCode</code> returns an <code>InvalidInput</code> error.</p>
+     */
     inline void SetContinentCode(const Aws::String& value) { m_continentCodeHasBeenSet = true; m_continentCode = value; }
 
     /**
@@ -120,6 +129,11 @@ namespace Model
     /**
      * <p>The two-letter code for the country.</p>
      */
+    inline bool CountryCodeHasBeenSet() const { return m_countryCodeHasBeenSet; }
+
+    /**
+     * <p>The two-letter code for the country.</p>
+     */
     inline void SetCountryCode(const Aws::String& value) { m_countryCodeHasBeenSet = true; m_countryCode = value; }
 
     /**
@@ -153,6 +167,12 @@ namespace Model
      * United States.</p>
      */
     inline const Aws::String& GetSubdivisionCode() const{ return m_subdivisionCode; }
+
+    /**
+     * <p>The code for the subdivision. Route 53 currently supports only states in the
+     * United States.</p>
+     */
+    inline bool SubdivisionCodeHasBeenSet() const { return m_subdivisionCodeHasBeenSet; }
 
     /**
      * <p>The code for the subdivision. Route 53 currently supports only states in the

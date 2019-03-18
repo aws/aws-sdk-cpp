@@ -59,6 +59,13 @@ namespace Model
      * <code>CSV</code>. <b>Note:</b> <i>The</i> <code>GRAPHML</code> <i>option has
      * been deprecated.</i> </p>
      */
+    inline bool ExportDataFormatHasBeenSet() const { return m_exportDataFormatHasBeenSet; }
+
+    /**
+     * <p>The file format for the returned export data. Default value is
+     * <code>CSV</code>. <b>Note:</b> <i>The</i> <code>GRAPHML</code> <i>option has
+     * been deprecated.</i> </p>
+     */
     inline void SetExportDataFormat(const Aws::Vector<ExportDataFormat>& value) { m_exportDataFormatHasBeenSet = true; m_exportDataFormat = value; }
 
     /**
@@ -106,6 +113,16 @@ namespace Model
      * data from Application Discovery agents. </p>
      */
     inline const Aws::Vector<ExportFilter>& GetFilters() const{ return m_filters; }
+
+    /**
+     * <p>If a filter is present, it selects the single <code>agentId</code> of the
+     * Application Discovery Agent for which data is exported. The <code>agentId</code>
+     * can be found in the results of the <code>DescribeAgents</code> API or CLI. If no
+     * filter is present, <code>startTime</code> and <code>endTime</code> are ignored
+     * and exported data includes both Agentless Discovery Connector data and summary
+     * data from Application Discovery agents. </p>
+     */
+    inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
 
     /**
      * <p>If a filter is present, it selects the single <code>agentId</code> of the
@@ -180,6 +197,13 @@ namespace Model
      * Agent selected in the filters. If no value is specified, data is exported
      * starting from the first data collected by the agent.</p>
      */
+    inline bool StartTimeHasBeenSet() const { return m_startTimeHasBeenSet; }
+
+    /**
+     * <p>The start timestamp for exported data from the single Application Discovery
+     * Agent selected in the filters. If no value is specified, data is exported
+     * starting from the first data collected by the agent.</p>
+     */
     inline void SetStartTime(const Aws::Utils::DateTime& value) { m_startTimeHasBeenSet = true; m_startTime = value; }
 
     /**
@@ -210,6 +234,13 @@ namespace Model
      * the most recent data collected by the agent.</p>
      */
     inline const Aws::Utils::DateTime& GetEndTime() const{ return m_endTime; }
+
+    /**
+     * <p>The end timestamp for exported data from the single Application Discovery
+     * Agent selected in the filters. If no value is specified, exported data includes
+     * the most recent data collected by the agent.</p>
+     */
+    inline bool EndTimeHasBeenSet() const { return m_endTimeHasBeenSet; }
 
     /**
      * <p>The end timestamp for exported data from the single Application Discovery

@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The Amazon S3 bucket name.</p>
      */
+    inline bool S3BucketHasBeenSet() const { return m_s3BucketHasBeenSet; }
+
+    /**
+     * <p>The Amazon S3 bucket name.</p>
+     */
     inline void SetS3Bucket(const Aws::String& value) { m_s3BucketHasBeenSet = true; m_s3Bucket = value; }
 
     /**
@@ -92,6 +97,11 @@ namespace Model
     /**
      * <p>The s3 object key.</p>
      */
+    inline bool S3KeyHasBeenSet() const { return m_s3KeyHasBeenSet; }
+
+    /**
+     * <p>The s3 object key.</p>
+     */
     inline void SetS3Key(const Aws::String& value) { m_s3KeyHasBeenSet = true; m_s3Key = value; }
 
     /**
@@ -124,6 +134,11 @@ namespace Model
      * <p>The target processor architecture for the application.</p>
      */
     inline const Architecture& GetArchitecture() const{ return m_architecture; }
+
+    /**
+     * <p>The target processor architecture for the application.</p>
+     */
+    inline bool ArchitectureHasBeenSet() const { return m_architectureHasBeenSet; }
 
     /**
      * <p>The target processor architecture for the application.</p>

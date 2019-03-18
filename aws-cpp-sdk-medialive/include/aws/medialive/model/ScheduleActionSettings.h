@@ -62,6 +62,11 @@ namespace Model
     /**
      * Action to insert HLS metadata
      */
+    inline bool HlsTimedMetadataSettingsHasBeenSet() const { return m_hlsTimedMetadataSettingsHasBeenSet; }
+
+    /**
+     * Action to insert HLS metadata
+     */
     inline void SetHlsTimedMetadataSettings(const HlsTimedMetadataScheduleActionSettings& value) { m_hlsTimedMetadataSettingsHasBeenSet = true; m_hlsTimedMetadataSettings = value; }
 
     /**
@@ -84,6 +89,11 @@ namespace Model
      * Action to switch the input
      */
     inline const InputSwitchScheduleActionSettings& GetInputSwitchSettings() const{ return m_inputSwitchSettings; }
+
+    /**
+     * Action to switch the input
+     */
+    inline bool InputSwitchSettingsHasBeenSet() const { return m_inputSwitchSettingsHasBeenSet; }
 
     /**
      * Action to switch the input
@@ -114,6 +124,11 @@ namespace Model
     /**
      * Action to pause or unpause one or both channel pipelines
      */
+    inline bool PauseStateSettingsHasBeenSet() const { return m_pauseStateSettingsHasBeenSet; }
+
+    /**
+     * Action to pause or unpause one or both channel pipelines
+     */
     inline void SetPauseStateSettings(const PauseStateScheduleActionSettings& value) { m_pauseStateSettingsHasBeenSet = true; m_pauseStateSettings = value; }
 
     /**
@@ -136,6 +151,11 @@ namespace Model
      * Action to insert SCTE-35 return_to_network message
      */
     inline const Scte35ReturnToNetworkScheduleActionSettings& GetScte35ReturnToNetworkSettings() const{ return m_scte35ReturnToNetworkSettings; }
+
+    /**
+     * Action to insert SCTE-35 return_to_network message
+     */
+    inline bool Scte35ReturnToNetworkSettingsHasBeenSet() const { return m_scte35ReturnToNetworkSettingsHasBeenSet; }
 
     /**
      * Action to insert SCTE-35 return_to_network message
@@ -166,6 +186,11 @@ namespace Model
     /**
      * Action to insert SCTE-35 splice_insert message
      */
+    inline bool Scte35SpliceInsertSettingsHasBeenSet() const { return m_scte35SpliceInsertSettingsHasBeenSet; }
+
+    /**
+     * Action to insert SCTE-35 splice_insert message
+     */
     inline void SetScte35SpliceInsertSettings(const Scte35SpliceInsertScheduleActionSettings& value) { m_scte35SpliceInsertSettingsHasBeenSet = true; m_scte35SpliceInsertSettings = value; }
 
     /**
@@ -188,6 +213,11 @@ namespace Model
      * Action to insert SCTE-35 time_signal message
      */
     inline const Scte35TimeSignalScheduleActionSettings& GetScte35TimeSignalSettings() const{ return m_scte35TimeSignalSettings; }
+
+    /**
+     * Action to insert SCTE-35 time_signal message
+     */
+    inline bool Scte35TimeSignalSettingsHasBeenSet() const { return m_scte35TimeSignalSettingsHasBeenSet; }
 
     /**
      * Action to insert SCTE-35 time_signal message
@@ -218,6 +248,11 @@ namespace Model
     /**
      * Action to activate a static image overlay
      */
+    inline bool StaticImageActivateSettingsHasBeenSet() const { return m_staticImageActivateSettingsHasBeenSet; }
+
+    /**
+     * Action to activate a static image overlay
+     */
     inline void SetStaticImageActivateSettings(const StaticImageActivateScheduleActionSettings& value) { m_staticImageActivateSettingsHasBeenSet = true; m_staticImageActivateSettings = value; }
 
     /**
@@ -240,6 +275,11 @@ namespace Model
      * Action to deactivate a static image overlay
      */
     inline const StaticImageDeactivateScheduleActionSettings& GetStaticImageDeactivateSettings() const{ return m_staticImageDeactivateSettings; }
+
+    /**
+     * Action to deactivate a static image overlay
+     */
+    inline bool StaticImageDeactivateSettingsHasBeenSet() const { return m_staticImageDeactivateSettingsHasBeenSet; }
 
     /**
      * Action to deactivate a static image overlay

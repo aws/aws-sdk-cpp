@@ -56,6 +56,11 @@ namespace Model
     /**
      * Lambda function name or arn to be called for delivery
      */
+    inline bool LambdaFunctionNameHasBeenSet() const { return m_lambdaFunctionNameHasBeenSet; }
+
+    /**
+     * Lambda function name or arn to be called for delivery
+     */
     inline void SetLambdaFunctionName(const Aws::String& value) { m_lambdaFunctionNameHasBeenSet = true; m_lambdaFunctionName = value; }
 
     /**
@@ -92,6 +97,11 @@ namespace Model
     /**
      * What mode Lambda should be invoked in.
      */
+    inline bool ModeHasBeenSet() const { return m_modeHasBeenSet; }
+
+    /**
+     * What mode Lambda should be invoked in.
+     */
     inline void SetMode(const Mode& value) { m_modeHasBeenSet = true; m_mode = value; }
 
     /**
@@ -115,6 +125,12 @@ namespace Model
      * added as authentication to the request
      */
     inline const Aws::String& GetWebUrl() const{ return m_webUrl; }
+
+    /**
+     * Web URL to call for hook. If the URL has authentication specified it will be
+     * added as authentication to the request
+     */
+    inline bool WebUrlHasBeenSet() const { return m_webUrlHasBeenSet; }
 
     /**
      * Web URL to call for hook. If the URL has authentication specified it will be

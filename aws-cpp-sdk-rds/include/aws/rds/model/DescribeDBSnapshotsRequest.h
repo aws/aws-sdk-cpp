@@ -65,6 +65,14 @@ namespace Model
      * This parameter is not case-sensitive. </p> <p>Constraints:</p> <ul> <li> <p>If
      * supplied, must match the identifier of an existing DBInstance.</p> </li> </ul>
      */
+    inline bool DBInstanceIdentifierHasBeenSet() const { return m_dBInstanceIdentifierHasBeenSet; }
+
+    /**
+     * <p>The ID of the DB instance to retrieve the list of DB snapshots for. This
+     * parameter can't be used in conjunction with <code>DBSnapshotIdentifier</code>.
+     * This parameter is not case-sensitive. </p> <p>Constraints:</p> <ul> <li> <p>If
+     * supplied, must match the identifier of an existing DBInstance.</p> </li> </ul>
+     */
     inline void SetDBInstanceIdentifier(const Aws::String& value) { m_dBInstanceIdentifierHasBeenSet = true; m_dBInstanceIdentifier = value; }
 
     /**
@@ -117,6 +125,16 @@ namespace Model
      * be specified.</p> </li> </ul>
      */
     inline const Aws::String& GetDBSnapshotIdentifier() const{ return m_dBSnapshotIdentifier; }
+
+    /**
+     * <p> A specific DB snapshot identifier to describe. This parameter can't be used
+     * in conjunction with <code>DBInstanceIdentifier</code>. This value is stored as a
+     * lowercase string. </p> <p>Constraints:</p> <ul> <li> <p>If supplied, must match
+     * the identifier of an existing DBSnapshot.</p> </li> <li> <p>If this identifier
+     * is for an automated snapshot, the <code>SnapshotType</code> parameter must also
+     * be specified.</p> </li> </ul>
+     */
+    inline bool DBSnapshotIdentifierHasBeenSet() const { return m_dBSnapshotIdentifierHasBeenSet; }
 
     /**
      * <p> A specific DB snapshot identifier to describe. This parameter can't be used
@@ -206,6 +224,34 @@ namespace Model
      * <code>SnapshotType</code> is set to <code>public</code>.</p>
      */
     inline const Aws::String& GetSnapshotType() const{ return m_snapshotType; }
+
+    /**
+     * <p>The type of snapshots to be returned. You can specify one of the following
+     * values:</p> <ul> <li> <p> <code>automated</code> - Return all DB snapshots that
+     * have been automatically taken by Amazon RDS for my AWS account.</p> </li> <li>
+     * <p> <code>manual</code> - Return all DB snapshots that have been taken by my AWS
+     * account.</p> </li> <li> <p> <code>shared</code> - Return all manual DB snapshots
+     * that have been shared to my AWS account.</p> </li> <li> <p> <code>public</code>
+     * - Return all DB snapshots that have been marked as public.</p> </li> <li> <p>
+     * <code>awsbackup</code> - Return the DB snapshots managed by the AWS Backup
+     * service.</p> <p>For information about AWS Backup, see the <a
+     * href="https://docs.aws.amazon.com/aws-backup/latest/devguide/whatisbackup.html">
+     * <i>AWS Backup Developer Guide.</i> </a> </p> <p>The <code>awsbackup</code> type
+     * does not apply to Aurora.</p> </li> </ul> <p>If you don't specify a
+     * <code>SnapshotType</code> value, then both automated and manual snapshots are
+     * returned. Shared and public DB snapshots are not included in the returned
+     * results by default. You can include shared snapshots with these results by
+     * setting the <code>IncludeShared</code> parameter to <code>true</code>. You can
+     * include public snapshots with these results by setting the
+     * <code>IncludePublic</code> parameter to <code>true</code>.</p> <p>The
+     * <code>IncludeShared</code> and <code>IncludePublic</code> parameters don't apply
+     * for <code>SnapshotType</code> values of <code>manual</code> or
+     * <code>automated</code>. The <code>IncludePublic</code> parameter doesn't apply
+     * when <code>SnapshotType</code> is set to <code>shared</code>. The
+     * <code>IncludeShared</code> parameter doesn't apply when
+     * <code>SnapshotType</code> is set to <code>public</code>.</p>
+     */
+    inline bool SnapshotTypeHasBeenSet() const { return m_snapshotTypeHasBeenSet; }
 
     /**
      * <p>The type of snapshots to be returned. You can specify one of the following
@@ -384,6 +430,11 @@ namespace Model
     /**
      * <p>This parameter is not currently supported.</p>
      */
+    inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
+
+    /**
+     * <p>This parameter is not currently supported.</p>
+     */
     inline void SetFilters(const Aws::Vector<Filter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
 
     /**
@@ -426,6 +477,14 @@ namespace Model
      * called a marker is included in the response so that the remaining results can be
      * retrieved. </p> <p>Default: 100</p> <p>Constraints: Minimum 20, maximum 100.</p>
      */
+    inline bool MaxRecordsHasBeenSet() const { return m_maxRecordsHasBeenSet; }
+
+    /**
+     * <p> The maximum number of records to include in the response. If more records
+     * exist than the specified <code>MaxRecords</code> value, a pagination token
+     * called a marker is included in the response so that the remaining results can be
+     * retrieved. </p> <p>Default: 100</p> <p>Constraints: Minimum 20, maximum 100.</p>
+     */
     inline void SetMaxRecords(int value) { m_maxRecordsHasBeenSet = true; m_maxRecords = value; }
 
     /**
@@ -444,6 +503,14 @@ namespace Model
      * <code>MaxRecords</code>. </p>
      */
     inline const Aws::String& GetMarker() const{ return m_marker; }
+
+    /**
+     * <p> An optional pagination token provided by a previous
+     * <code>DescribeDBSnapshots</code> request. If this parameter is specified, the
+     * response includes only records beyond the marker, up to the value specified by
+     * <code>MaxRecords</code>. </p>
+     */
+    inline bool MarkerHasBeenSet() const { return m_markerHasBeenSet; }
 
     /**
      * <p> An optional pagination token provided by a previous
@@ -510,6 +577,15 @@ namespace Model
      * to restore a manual DB snapshot from another AWS account by using the
      * <a>ModifyDBSnapshotAttribute</a> API action.</p>
      */
+    inline bool IncludeSharedHasBeenSet() const { return m_includeSharedHasBeenSet; }
+
+    /**
+     * <p>True to include shared manual DB snapshots from other AWS accounts that this
+     * AWS account has been given permission to copy or restore, and otherwise false.
+     * The default is <code>false</code>.</p> <p>You can give an AWS account permission
+     * to restore a manual DB snapshot from another AWS account by using the
+     * <a>ModifyDBSnapshotAttribute</a> API action.</p>
+     */
     inline void SetIncludeShared(bool value) { m_includeSharedHasBeenSet = true; m_includeShared = value; }
 
     /**
@@ -536,6 +612,14 @@ namespace Model
      * <p>You can share a manual DB snapshot as public by using the
      * <a>ModifyDBSnapshotAttribute</a> API.</p>
      */
+    inline bool IncludePublicHasBeenSet() const { return m_includePublicHasBeenSet; }
+
+    /**
+     * <p>True to include manual DB snapshots that are public and can be copied or
+     * restored by any AWS account, and otherwise false. The default is false.</p>
+     * <p>You can share a manual DB snapshot as public by using the
+     * <a>ModifyDBSnapshotAttribute</a> API.</p>
+     */
     inline void SetIncludePublic(bool value) { m_includePublicHasBeenSet = true; m_includePublic = value; }
 
     /**
@@ -551,6 +635,11 @@ namespace Model
      * <p>A specific DB resource ID to describe.</p>
      */
     inline const Aws::String& GetDbiResourceId() const{ return m_dbiResourceId; }
+
+    /**
+     * <p>A specific DB resource ID to describe.</p>
+     */
+    inline bool DbiResourceIdHasBeenSet() const { return m_dbiResourceIdHasBeenSet; }
 
     /**
      * <p>A specific DB resource ID to describe.</p>

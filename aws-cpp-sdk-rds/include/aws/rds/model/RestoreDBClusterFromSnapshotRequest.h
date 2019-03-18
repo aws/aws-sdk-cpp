@@ -62,6 +62,12 @@ namespace Model
      * <p>Provides the list of Amazon EC2 Availability Zones that instances in the
      * restored DB cluster can be created in.</p>
      */
+    inline bool AvailabilityZonesHasBeenSet() const { return m_availabilityZonesHasBeenSet; }
+
+    /**
+     * <p>Provides the list of Amazon EC2 Availability Zones that instances in the
+     * restored DB cluster can be created in.</p>
+     */
     inline void SetAvailabilityZones(const Aws::Vector<Aws::String>& value) { m_availabilityZonesHasBeenSet = true; m_availabilityZones = value; }
 
     /**
@@ -110,6 +116,16 @@ namespace Model
      * <code>my-snapshot-id</code> </p>
      */
     inline const Aws::String& GetDBClusterIdentifier() const{ return m_dBClusterIdentifier; }
+
+    /**
+     * <p>The name of the DB cluster to create from the DB snapshot or DB cluster
+     * snapshot. This parameter isn't case-sensitive.</p> <p>Constraints:</p> <ul> <li>
+     * <p>Must contain from 1 to 63 letters, numbers, or hyphens</p> </li> <li>
+     * <p>First character must be a letter</p> </li> <li> <p>Can't end with a hyphen or
+     * contain two consecutive hyphens</p> </li> </ul> <p>Example:
+     * <code>my-snapshot-id</code> </p>
+     */
+    inline bool DBClusterIdentifierHasBeenSet() const { return m_dBClusterIdentifierHasBeenSet; }
 
     /**
      * <p>The name of the DB cluster to create from the DB snapshot or DB cluster
@@ -188,6 +204,15 @@ namespace Model
      * snapshot.</p> <p>Constraints:</p> <ul> <li> <p>Must match the identifier of an
      * existing Snapshot.</p> </li> </ul>
      */
+    inline bool SnapshotIdentifierHasBeenSet() const { return m_snapshotIdentifierHasBeenSet; }
+
+    /**
+     * <p>The identifier for the DB snapshot or DB cluster snapshot to restore
+     * from.</p> <p>You can use either the name or the Amazon Resource Name (ARN) to
+     * specify a DB cluster snapshot. However, you can use only the ARN to specify a DB
+     * snapshot.</p> <p>Constraints:</p> <ul> <li> <p>Must match the identifier of an
+     * existing Snapshot.</p> </li> </ul>
+     */
     inline void SetSnapshotIdentifier(const Aws::String& value) { m_snapshotIdentifierHasBeenSet = true; m_snapshotIdentifier = value; }
 
     /**
@@ -248,6 +273,13 @@ namespace Model
      * as source</p> <p>Constraint: Must be compatible with the engine of the
      * source</p>
      */
+    inline bool EngineHasBeenSet() const { return m_engineHasBeenSet; }
+
+    /**
+     * <p>The database engine to use for the new DB cluster.</p> <p>Default: The same
+     * as source</p> <p>Constraint: Must be compatible with the engine of the
+     * source</p>
+     */
     inline void SetEngine(const Aws::String& value) { m_engineHasBeenSet = true; m_engine = value; }
 
     /**
@@ -294,6 +326,11 @@ namespace Model
     /**
      * <p>The version of the database engine to use for the new DB cluster.</p>
      */
+    inline bool EngineVersionHasBeenSet() const { return m_engineVersionHasBeenSet; }
+
+    /**
+     * <p>The version of the database engine to use for the new DB cluster.</p>
+     */
     inline void SetEngineVersion(const Aws::String& value) { m_engineVersionHasBeenSet = true; m_engineVersion = value; }
 
     /**
@@ -334,6 +371,13 @@ namespace Model
      * <p>Constraints: This value must be <code>1150-65535</code> </p> <p>Default: The
      * same port as the original DB cluster.</p>
      */
+    inline bool PortHasBeenSet() const { return m_portHasBeenSet; }
+
+    /**
+     * <p>The port number on which the new DB cluster accepts connections.</p>
+     * <p>Constraints: This value must be <code>1150-65535</code> </p> <p>Default: The
+     * same port as the original DB cluster.</p>
+     */
     inline void SetPort(int value) { m_portHasBeenSet = true; m_port = value; }
 
     /**
@@ -350,6 +394,13 @@ namespace Model
      * group.</p> <p>Example: <code>mySubnetgroup</code> </p>
      */
     inline const Aws::String& GetDBSubnetGroupName() const{ return m_dBSubnetGroupName; }
+
+    /**
+     * <p>The name of the DB subnet group to use for the new DB cluster.</p>
+     * <p>Constraints: If supplied, must match the name of an existing DB subnet
+     * group.</p> <p>Example: <code>mySubnetgroup</code> </p>
+     */
+    inline bool DBSubnetGroupNameHasBeenSet() const { return m_dBSubnetGroupNameHasBeenSet; }
 
     /**
      * <p>The name of the DB subnet group to use for the new DB cluster.</p>
@@ -402,6 +453,11 @@ namespace Model
     /**
      * <p>The database name for the restored DB cluster.</p>
      */
+    inline bool DatabaseNameHasBeenSet() const { return m_databaseNameHasBeenSet; }
+
+    /**
+     * <p>The database name for the restored DB cluster.</p>
+     */
     inline void SetDatabaseName(const Aws::String& value) { m_databaseNameHasBeenSet = true; m_databaseName = value; }
 
     /**
@@ -438,6 +494,11 @@ namespace Model
     /**
      * <p>The name of the option group to use for the restored DB cluster.</p>
      */
+    inline bool OptionGroupNameHasBeenSet() const { return m_optionGroupNameHasBeenSet; }
+
+    /**
+     * <p>The name of the option group to use for the restored DB cluster.</p>
+     */
     inline void SetOptionGroupName(const Aws::String& value) { m_optionGroupNameHasBeenSet = true; m_optionGroupName = value; }
 
     /**
@@ -470,6 +531,11 @@ namespace Model
      * <p>A list of VPC security groups that the new DB cluster will belong to.</p>
      */
     inline const Aws::Vector<Aws::String>& GetVpcSecurityGroupIds() const{ return m_vpcSecurityGroupIds; }
+
+    /**
+     * <p>A list of VPC security groups that the new DB cluster will belong to.</p>
+     */
+    inline bool VpcSecurityGroupIdsHasBeenSet() const { return m_vpcSecurityGroupIdsHasBeenSet; }
 
     /**
      * <p>A list of VPC security groups that the new DB cluster will belong to.</p>
@@ -511,6 +577,11 @@ namespace Model
      * <p>The tags to be assigned to the restored DB cluster.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>The tags to be assigned to the restored DB cluster.</p>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
      * <p>The tags to be assigned to the restored DB cluster.</p>
@@ -558,6 +629,22 @@ namespace Model
      * encrypted, then the restored DB cluster is not encrypted.</p> </li> </ul>
      */
     inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
+
+    /**
+     * <p>The AWS KMS key identifier to use when restoring an encrypted DB cluster from
+     * a DB snapshot or DB cluster snapshot.</p> <p>The KMS key identifier is the
+     * Amazon Resource Name (ARN) for the KMS encryption key. If you are restoring a DB
+     * cluster with the same AWS account that owns the KMS encryption key used to
+     * encrypt the new DB cluster, then you can use the KMS key alias instead of the
+     * ARN for the KMS encryption key.</p> <p>If you don't specify a value for the
+     * <code>KmsKeyId</code> parameter, then the following occurs:</p> <ul> <li> <p>If
+     * the DB snapshot or DB cluster snapshot in <code>SnapshotIdentifier</code> is
+     * encrypted, then the restored DB cluster is encrypted using the KMS key that was
+     * used to encrypt the DB snapshot or DB cluster snapshot.</p> </li> <li> <p>If the
+     * DB snapshot or DB cluster snapshot in <code>SnapshotIdentifier</code> is not
+     * encrypted, then the restored DB cluster is not encrypted.</p> </li> </ul>
+     */
+    inline bool KmsKeyIdHasBeenSet() const { return m_kmsKeyIdHasBeenSet; }
 
     /**
      * <p>The AWS KMS key identifier to use when restoring an encrypted DB cluster from
@@ -668,6 +755,13 @@ namespace Model
      * to database accounts, and otherwise false.</p> <p>Default: <code>false</code>
      * </p>
      */
+    inline bool EnableIAMDatabaseAuthenticationHasBeenSet() const { return m_enableIAMDatabaseAuthenticationHasBeenSet; }
+
+    /**
+     * <p>True to enable mapping of AWS Identity and Access Management (IAM) accounts
+     * to database accounts, and otherwise false.</p> <p>Default: <code>false</code>
+     * </p>
+     */
     inline void SetEnableIAMDatabaseAuthentication(bool value) { m_enableIAMDatabaseAuthenticationHasBeenSet = true; m_enableIAMDatabaseAuthentication = value; }
 
     /**
@@ -684,6 +778,13 @@ namespace Model
      * this value must be set to a number from 0 to 259,200 (72 hours).</p> </li> </ul>
      */
     inline long long GetBacktrackWindow() const{ return m_backtrackWindow; }
+
+    /**
+     * <p>The target backtrack window, in seconds. To disable backtracking, set this
+     * value to 0.</p> <p>Default: 0</p> <p>Constraints:</p> <ul> <li> <p>If specified,
+     * this value must be set to a number from 0 to 259,200 (72 hours).</p> </li> </ul>
+     */
+    inline bool BacktrackWindowHasBeenSet() const { return m_backtrackWindowHasBeenSet; }
 
     /**
      * <p>The target backtrack window, in seconds. To disable backtracking, set this
@@ -709,6 +810,16 @@ namespace Model
      * Guide</i>.</p>
      */
     inline const Aws::Vector<Aws::String>& GetEnableCloudwatchLogsExports() const{ return m_enableCloudwatchLogsExports; }
+
+    /**
+     * <p>The list of logs that the restored DB cluster is to export to Amazon
+     * CloudWatch Logs. The values in the list depend on the DB engine being used. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing
+     * Database Logs to Amazon CloudWatch Logs </a> in the <i>Amazon Aurora User
+     * Guide</i>.</p>
+     */
+    inline bool EnableCloudwatchLogsExportsHasBeenSet() const { return m_enableCloudwatchLogsExportsHasBeenSet; }
 
     /**
      * <p>The list of logs that the restored DB cluster is to export to Amazon
@@ -791,6 +902,12 @@ namespace Model
      * <p>The DB engine mode of the DB cluster, either <code>provisioned</code>,
      * <code>serverless</code>, or <code>parallelquery</code>.</p>
      */
+    inline bool EngineModeHasBeenSet() const { return m_engineModeHasBeenSet; }
+
+    /**
+     * <p>The DB engine mode of the DB cluster, either <code>provisioned</code>,
+     * <code>serverless</code>, or <code>parallelquery</code>.</p>
+     */
     inline void SetEngineMode(const Aws::String& value) { m_engineModeHasBeenSet = true; m_engineMode = value; }
 
     /**
@@ -834,6 +951,12 @@ namespace Model
      * <p>For DB clusters in <code>serverless</code> DB engine mode, the scaling
      * properties of the DB cluster.</p>
      */
+    inline bool ScalingConfigurationHasBeenSet() const { return m_scalingConfigurationHasBeenSet; }
+
+    /**
+     * <p>For DB clusters in <code>serverless</code> DB engine mode, the scaling
+     * properties of the DB cluster.</p>
+     */
     inline void SetScalingConfiguration(const ScalingConfiguration& value) { m_scalingConfigurationHasBeenSet = true; m_scalingConfiguration = value; }
 
     /**
@@ -865,6 +988,17 @@ namespace Model
      * two consecutive hyphens.</p> </li> </ul>
      */
     inline const Aws::String& GetDBClusterParameterGroupName() const{ return m_dBClusterParameterGroupName; }
+
+    /**
+     * <p>The name of the DB cluster parameter group to associate with this DB cluster.
+     * If this argument is omitted, the default DB cluster parameter group for the
+     * specified engine is used.</p> <p>Constraints:</p> <ul> <li> <p>If supplied, must
+     * match the name of an existing default DB cluster parameter group.</p> </li> <li>
+     * <p>Must be 1 to 255 letters, numbers, or hyphens.</p> </li> <li> <p>First
+     * character must be a letter.</p> </li> <li> <p>Can't end with a hyphen or contain
+     * two consecutive hyphens.</p> </li> </ul>
+     */
+    inline bool DBClusterParameterGroupNameHasBeenSet() const { return m_dBClusterParameterGroupNameHasBeenSet; }
 
     /**
      * <p>The name of the DB cluster parameter group to associate with this DB cluster.
@@ -945,6 +1079,13 @@ namespace Model
      * database can't be deleted when this value is set to true. The default is false.
      * </p>
      */
+    inline bool DeletionProtectionHasBeenSet() const { return m_deletionProtectionHasBeenSet; }
+
+    /**
+     * <p>Indicates if the DB cluster should have deletion protection enabled. The
+     * database can't be deleted when this value is set to true. The default is false.
+     * </p>
+     */
     inline void SetDeletionProtection(bool value) { m_deletionProtectionHasBeenSet = true; m_deletionProtection = value; }
 
     /**
@@ -960,6 +1101,12 @@ namespace Model
      * restored DB cluster, and otherwise false. The default is false.</p>
      */
     inline bool GetCopyTagsToSnapshot() const{ return m_copyTagsToSnapshot; }
+
+    /**
+     * <p>True to copy all tags from the restored DB cluster to snapshots of the
+     * restored DB cluster, and otherwise false. The default is false.</p>
+     */
+    inline bool CopyTagsToSnapshotHasBeenSet() const { return m_copyTagsToSnapshotHasBeenSet; }
 
     /**
      * <p>True to copy all tags from the restored DB cluster to snapshots of the

@@ -59,6 +59,11 @@ namespace Model
     /**
      * channel ID
      */
+    inline bool ChannelIdHasBeenSet() const { return m_channelIdHasBeenSet; }
+
+    /**
+     * channel ID
+     */
     inline void SetChannelId(const Aws::String& value) { m_channelIdHasBeenSet = true; m_channelId = value; }
 
     /**
@@ -91,6 +96,11 @@ namespace Model
      * A list of output destinations for this channel.
      */
     inline const Aws::Vector<OutputDestination>& GetDestinations() const{ return m_destinations; }
+
+    /**
+     * A list of output destinations for this channel.
+     */
+    inline bool DestinationsHasBeenSet() const { return m_destinationsHasBeenSet; }
 
     /**
      * A list of output destinations for this channel.
@@ -131,6 +141,11 @@ namespace Model
     /**
      * The encoder settings for this channel.
      */
+    inline bool EncoderSettingsHasBeenSet() const { return m_encoderSettingsHasBeenSet; }
+
+    /**
+     * The encoder settings for this channel.
+     */
     inline void SetEncoderSettings(const EncoderSettings& value) { m_encoderSettingsHasBeenSet = true; m_encoderSettings = value; }
 
     /**
@@ -151,6 +166,9 @@ namespace Model
 
     
     inline const Aws::Vector<InputAttachment>& GetInputAttachments() const{ return m_inputAttachments; }
+
+    
+    inline bool InputAttachmentsHasBeenSet() const { return m_inputAttachmentsHasBeenSet; }
 
     
     inline void SetInputAttachments(const Aws::Vector<InputAttachment>& value) { m_inputAttachmentsHasBeenSet = true; m_inputAttachments = value; }
@@ -175,6 +193,11 @@ namespace Model
      * Specification of input for this channel (max. bitrate, resolution, codec, etc.)
      */
     inline const InputSpecification& GetInputSpecification() const{ return m_inputSpecification; }
+
+    /**
+     * Specification of input for this channel (max. bitrate, resolution, codec, etc.)
+     */
+    inline bool InputSpecificationHasBeenSet() const { return m_inputSpecificationHasBeenSet; }
 
     /**
      * Specification of input for this channel (max. bitrate, resolution, codec, etc.)
@@ -205,6 +228,11 @@ namespace Model
     /**
      * The log level to write to CloudWatch Logs.
      */
+    inline bool LogLevelHasBeenSet() const { return m_logLevelHasBeenSet; }
+
+    /**
+     * The log level to write to CloudWatch Logs.
+     */
     inline void SetLogLevel(const LogLevel& value) { m_logLevelHasBeenSet = true; m_logLevel = value; }
 
     /**
@@ -227,6 +255,11 @@ namespace Model
      * The name of the channel.
      */
     inline const Aws::String& GetName() const{ return m_name; }
+
+    /**
+     * The name of the channel.
+     */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
      * The name of the channel.
@@ -265,6 +298,13 @@ namespace Model
      * previously set that role will be removed.
      */
     inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
+
+    /**
+     * An optional Amazon Resource Name (ARN) of the role to assume when running the
+     * Channel. If you do not specify this on an update call but the role was
+     * previously set that role will be removed.
+     */
+    inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
 
     /**
      * An optional Amazon Resource Name (ARN) of the role to assume when running the

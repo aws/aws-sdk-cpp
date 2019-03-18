@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The ID of the launch template.</p>
      */
+    inline bool LaunchTemplateIdHasBeenSet() const { return m_launchTemplateIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the launch template.</p>
+     */
     inline void SetLaunchTemplateId(const Aws::String& value) { m_launchTemplateIdHasBeenSet = true; m_launchTemplateId = value; }
 
     /**
@@ -89,6 +94,11 @@ namespace Model
      * <p>The name of the launch template.</p>
      */
     inline const Aws::String& GetLaunchTemplateName() const{ return m_launchTemplateName; }
+
+    /**
+     * <p>The name of the launch template.</p>
+     */
+    inline bool LaunchTemplateNameHasBeenSet() const { return m_launchTemplateNameHasBeenSet; }
 
     /**
      * <p>The name of the launch template.</p>
@@ -126,6 +136,12 @@ namespace Model
      * version of the launch template.</p>
      */
     inline const Aws::String& GetVersion() const{ return m_version; }
+
+    /**
+     * <p>The version number of the launch template.</p> <p>Default: The default
+     * version of the launch template.</p>
+     */
+    inline bool VersionHasBeenSet() const { return m_versionHasBeenSet; }
 
     /**
      * <p>The version number of the launch template.</p> <p>Default: The default

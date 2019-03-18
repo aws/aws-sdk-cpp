@@ -57,6 +57,12 @@ namespace Model
      * <p>Name of the inventory item type. Valid value: AWS:InstanceInformation.
      * Default Value: AWS:InstanceInformation.</p>
      */
+    inline bool TypeNameHasBeenSet() const { return m_typeNameHasBeenSet; }
+
+    /**
+     * <p>Name of the inventory item type. Valid value: AWS:InstanceInformation.
+     * Default Value: AWS:InstanceInformation.</p>
+     */
     inline void SetTypeName(const Aws::String& value) { m_typeNameHasBeenSet = true; m_typeName = value; }
 
     /**

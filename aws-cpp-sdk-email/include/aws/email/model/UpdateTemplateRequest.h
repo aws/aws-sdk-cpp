@@ -50,6 +50,9 @@ namespace Model
     inline const Template& GetTemplate() const{ return m_template; }
 
     
+    inline bool TemplateHasBeenSet() const { return m_templateHasBeenSet; }
+
+    
     inline void SetTemplate(const Template& value) { m_templateHasBeenSet = true; m_template = value; }
 
     

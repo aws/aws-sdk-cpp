@@ -57,6 +57,12 @@ namespace Model
      * <p>The start time, in Unix time in seconds. For more information see <a
      * href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#parameter-types">timestamp</a>.</p>
      */
+    inline bool FromInclusiveHasBeenSet() const { return m_fromInclusiveHasBeenSet; }
+
+    /**
+     * <p>The start time, in Unix time in seconds. For more information see <a
+     * href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#parameter-types">timestamp</a>.</p>
+     */
     inline void SetFromInclusive(const Aws::Utils::DateTime& value) { m_fromInclusiveHasBeenSet = true; m_fromInclusive = value; }
 
     /**
@@ -83,6 +89,12 @@ namespace Model
      * href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#parameter-types">timestamp</a>.</p>
      */
     inline const Aws::Utils::DateTime& GetToExclusive() const{ return m_toExclusive; }
+
+    /**
+     * <p>The end time, in Unix time in seconds. For more information see <a
+     * href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#parameter-types">timestamp</a>.</p>
+     */
+    inline bool ToExclusiveHasBeenSet() const { return m_toExclusiveHasBeenSet; }
 
     /**
      * <p>The end time, in Unix time in seconds. For more information see <a

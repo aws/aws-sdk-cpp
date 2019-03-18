@@ -66,6 +66,17 @@ namespace Model
      * with no spaces. You can also include any of the following characters:
      * _+=,.@-</p>
      */
+    inline bool UserNameHasBeenSet() const { return m_userNameHasBeenSet; }
+
+    /**
+     * <p>The name of the user whose service-specific credentials you want information
+     * about. If this value is not specified, then the operation assumes the user whose
+     * credentials are used to call the operation.</p> <p>This parameter allows
+     * (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a
+     * string of characters consisting of upper and lowercase alphanumeric characters
+     * with no spaces. You can also include any of the following characters:
+     * _+=,.@-</p>
+     */
     inline void SetUserName(const Aws::String& value) { m_userNameHasBeenSet = true; m_userName = value; }
 
     /**
@@ -130,6 +141,13 @@ namespace Model
      * services.</p>
      */
     inline const Aws::String& GetServiceName() const{ return m_serviceName; }
+
+    /**
+     * <p>Filters the returned results to only those for the specified AWS service. If
+     * not specified, then AWS returns service-specific credentials for all
+     * services.</p>
+     */
+    inline bool ServiceNameHasBeenSet() const { return m_serviceNameHasBeenSet; }
 
     /**
      * <p>Filters the returned results to only those for the specified AWS service. If

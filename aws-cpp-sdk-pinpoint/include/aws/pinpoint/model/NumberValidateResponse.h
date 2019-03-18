@@ -57,6 +57,12 @@ namespace Model
      * The carrier or servive provider that the phone number is currently registered
      * with.
      */
+    inline bool CarrierHasBeenSet() const { return m_carrierHasBeenSet; }
+
+    /**
+     * The carrier or servive provider that the phone number is currently registered
+     * with.
+     */
     inline void SetCarrier(const Aws::String& value) { m_carrierHasBeenSet = true; m_carrier = value; }
 
     /**
@@ -98,6 +104,11 @@ namespace Model
     /**
      * The city where the phone number was originally registered.
      */
+    inline bool CityHasBeenSet() const { return m_cityHasBeenSet; }
+
+    /**
+     * The city where the phone number was originally registered.
+     */
     inline void SetCity(const Aws::String& value) { m_cityHasBeenSet = true; m_city = value; }
 
     /**
@@ -130,6 +141,11 @@ namespace Model
      * The cleansed phone number, shown in E.164 format.
      */
     inline const Aws::String& GetCleansedPhoneNumberE164() const{ return m_cleansedPhoneNumberE164; }
+
+    /**
+     * The cleansed phone number, shown in E.164 format.
+     */
+    inline bool CleansedPhoneNumberE164HasBeenSet() const { return m_cleansedPhoneNumberE164HasBeenSet; }
 
     /**
      * The cleansed phone number, shown in E.164 format.
@@ -170,6 +186,11 @@ namespace Model
     /**
      * The cleansed phone number, shown in the local phone number format.
      */
+    inline bool CleansedPhoneNumberNationalHasBeenSet() const { return m_cleansedPhoneNumberNationalHasBeenSet; }
+
+    /**
+     * The cleansed phone number, shown in the local phone number format.
+     */
     inline void SetCleansedPhoneNumberNational(const Aws::String& value) { m_cleansedPhoneNumberNationalHasBeenSet = true; m_cleansedPhoneNumberNational = value; }
 
     /**
@@ -202,6 +223,11 @@ namespace Model
      * The country or region where the phone number was originally registered.
      */
     inline const Aws::String& GetCountry() const{ return m_country; }
+
+    /**
+     * The country or region where the phone number was originally registered.
+     */
+    inline bool CountryHasBeenSet() const { return m_countryHasBeenSet; }
 
     /**
      * The country or region where the phone number was originally registered.
@@ -239,6 +265,12 @@ namespace Model
      * originally registered.
      */
     inline const Aws::String& GetCountryCodeIso2() const{ return m_countryCodeIso2; }
+
+    /**
+     * The two-character ISO code for the country or region where the phone number was
+     * originally registered.
+     */
+    inline bool CountryCodeIso2HasBeenSet() const { return m_countryCodeIso2HasBeenSet; }
 
     /**
      * The two-character ISO code for the country or region where the phone number was
@@ -287,6 +319,12 @@ namespace Model
      * The numeric code for the country or region where the phone number was originally
      * registered.
      */
+    inline bool CountryCodeNumericHasBeenSet() const { return m_countryCodeNumericHasBeenSet; }
+
+    /**
+     * The numeric code for the country or region where the phone number was originally
+     * registered.
+     */
     inline void SetCountryCodeNumeric(const Aws::String& value) { m_countryCodeNumericHasBeenSet = true; m_countryCodeNumeric = value; }
 
     /**
@@ -328,6 +366,11 @@ namespace Model
     /**
      * The county where the phone number was originally registered.
      */
+    inline bool CountyHasBeenSet() const { return m_countyHasBeenSet; }
+
+    /**
+     * The county where the phone number was originally registered.
+     */
     inline void SetCounty(const Aws::String& value) { m_countyHasBeenSet = true; m_county = value; }
 
     /**
@@ -361,6 +404,12 @@ namespace Model
      * in the request body.
      */
     inline const Aws::String& GetOriginalCountryCodeIso2() const{ return m_originalCountryCodeIso2; }
+
+    /**
+     * The two-character code (in ISO 3166-1 alpha-2 format) for the country or region
+     * in the request body.
+     */
+    inline bool OriginalCountryCodeIso2HasBeenSet() const { return m_originalCountryCodeIso2HasBeenSet; }
 
     /**
      * The two-character code (in ISO 3166-1 alpha-2 format) for the country or region
@@ -407,6 +456,11 @@ namespace Model
     /**
      * The phone number that you included in the request body.
      */
+    inline bool OriginalPhoneNumberHasBeenSet() const { return m_originalPhoneNumberHasBeenSet; }
+
+    /**
+     * The phone number that you included in the request body.
+     */
     inline void SetOriginalPhoneNumber(const Aws::String& value) { m_originalPhoneNumberHasBeenSet = true; m_originalPhoneNumber = value; }
 
     /**
@@ -440,6 +494,12 @@ namespace Model
      * INVALID, PREPAID, and OTHER.
      */
     inline const Aws::String& GetPhoneType() const{ return m_phoneType; }
+
+    /**
+     * A description of the phone type. Possible values are MOBILE, LANDLINE, VOIP,
+     * INVALID, PREPAID, and OTHER.
+     */
+    inline bool PhoneTypeHasBeenSet() const { return m_phoneTypeHasBeenSet; }
 
     /**
      * A description of the phone type. Possible values are MOBILE, LANDLINE, VOIP,
@@ -488,6 +548,12 @@ namespace Model
      * The phone type, represented by an integer. Possible values include 0 (MOBILE), 1
      * (LANDLINE), 2 (VOIP), 3 (INVALID), 4 (OTHER), and 5 (PREPAID).
      */
+    inline bool PhoneTypeCodeHasBeenSet() const { return m_phoneTypeCodeHasBeenSet; }
+
+    /**
+     * The phone type, represented by an integer. Possible values include 0 (MOBILE), 1
+     * (LANDLINE), 2 (VOIP), 3 (INVALID), 4 (OTHER), and 5 (PREPAID).
+     */
     inline void SetPhoneTypeCode(int value) { m_phoneTypeCodeHasBeenSet = true; m_phoneTypeCode = value; }
 
     /**
@@ -501,6 +567,11 @@ namespace Model
      * The time zone for the location where the phone number was originally registered.
      */
     inline const Aws::String& GetTimezone() const{ return m_timezone; }
+
+    /**
+     * The time zone for the location where the phone number was originally registered.
+     */
+    inline bool TimezoneHasBeenSet() const { return m_timezoneHasBeenSet; }
 
     /**
      * The time zone for the location where the phone number was originally registered.
@@ -538,6 +609,12 @@ namespace Model
      * registered.
      */
     inline const Aws::String& GetZipCode() const{ return m_zipCode; }
+
+    /**
+     * The postal code for the location where the phone number was originally
+     * registered.
+     */
+    inline bool ZipCodeHasBeenSet() const { return m_zipCodeHasBeenSet; }
 
     /**
      * The postal code for the location where the phone number was originally

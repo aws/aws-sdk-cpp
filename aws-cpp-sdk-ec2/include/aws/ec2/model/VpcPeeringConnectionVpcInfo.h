@@ -61,6 +61,11 @@ namespace Model
     /**
      * <p>The IPv4 CIDR block for the VPC.</p>
      */
+    inline bool CidrBlockHasBeenSet() const { return m_cidrBlockHasBeenSet; }
+
+    /**
+     * <p>The IPv4 CIDR block for the VPC.</p>
+     */
     inline void SetCidrBlock(const Aws::String& value) { m_cidrBlockHasBeenSet = true; m_cidrBlock = value; }
 
     /**
@@ -93,6 +98,11 @@ namespace Model
      * <p>The IPv6 CIDR block for the VPC.</p>
      */
     inline const Aws::Vector<Ipv6CidrBlock>& GetIpv6CidrBlockSet() const{ return m_ipv6CidrBlockSet; }
+
+    /**
+     * <p>The IPv6 CIDR block for the VPC.</p>
+     */
+    inline bool Ipv6CidrBlockSetHasBeenSet() const { return m_ipv6CidrBlockSetHasBeenSet; }
 
     /**
      * <p>The IPv6 CIDR block for the VPC.</p>
@@ -133,6 +143,11 @@ namespace Model
     /**
      * <p>Information about the IPv4 CIDR blocks for the VPC.</p>
      */
+    inline bool CidrBlockSetHasBeenSet() const { return m_cidrBlockSetHasBeenSet; }
+
+    /**
+     * <p>Information about the IPv4 CIDR blocks for the VPC.</p>
+     */
     inline void SetCidrBlockSet(const Aws::Vector<CidrBlock>& value) { m_cidrBlockSetHasBeenSet = true; m_cidrBlockSet = value; }
 
     /**
@@ -165,6 +180,11 @@ namespace Model
      * <p>The AWS account ID of the VPC owner.</p>
      */
     inline const Aws::String& GetOwnerId() const{ return m_ownerId; }
+
+    /**
+     * <p>The AWS account ID of the VPC owner.</p>
+     */
+    inline bool OwnerIdHasBeenSet() const { return m_ownerIdHasBeenSet; }
 
     /**
      * <p>The AWS account ID of the VPC owner.</p>
@@ -207,6 +227,12 @@ namespace Model
      * <p>Information about the VPC peering connection options for the accepter or
      * requester VPC.</p>
      */
+    inline bool PeeringOptionsHasBeenSet() const { return m_peeringOptionsHasBeenSet; }
+
+    /**
+     * <p>Information about the VPC peering connection options for the accepter or
+     * requester VPC.</p>
+     */
     inline void SetPeeringOptions(const VpcPeeringConnectionOptionsDescription& value) { m_peeringOptionsHasBeenSet = true; m_peeringOptions = value; }
 
     /**
@@ -232,6 +258,11 @@ namespace Model
      * <p>The ID of the VPC.</p>
      */
     inline const Aws::String& GetVpcId() const{ return m_vpcId; }
+
+    /**
+     * <p>The ID of the VPC.</p>
+     */
+    inline bool VpcIdHasBeenSet() const { return m_vpcIdHasBeenSet; }
 
     /**
      * <p>The ID of the VPC.</p>
@@ -268,6 +299,11 @@ namespace Model
      * <p>The region in which the VPC is located.</p>
      */
     inline const Aws::String& GetRegion() const{ return m_region; }
+
+    /**
+     * <p>The region in which the VPC is located.</p>
+     */
+    inline bool RegionHasBeenSet() const { return m_regionHasBeenSet; }
 
     /**
      * <p>The region in which the VPC is located.</p>

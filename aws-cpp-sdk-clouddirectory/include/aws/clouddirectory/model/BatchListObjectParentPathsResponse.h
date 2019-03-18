@@ -60,6 +60,12 @@ namespace Model
      * <p>Returns the path to the <code>ObjectIdentifiers</code> that are associated
      * with the directory.</p>
      */
+    inline bool PathToObjectIdentifiersListHasBeenSet() const { return m_pathToObjectIdentifiersListHasBeenSet; }
+
+    /**
+     * <p>Returns the path to the <code>ObjectIdentifiers</code> that are associated
+     * with the directory.</p>
+     */
     inline void SetPathToObjectIdentifiersList(const Aws::Vector<PathToObjectIdentifiers>& value) { m_pathToObjectIdentifiersListHasBeenSet = true; m_pathToObjectIdentifiersList = value; }
 
     /**
@@ -97,6 +103,11 @@ namespace Model
      * <p>The pagination token.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
+    /**
+     * <p>The pagination token.</p>
+     */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
      * <p>The pagination token.</p>

@@ -63,6 +63,13 @@ namespace Model
      * following: DocumentNamePrefix, ExecutionStatus, ExecutionId, ParentExecutionId,
      * CurrentAction, StartTimeBefore, StartTimeAfter.</p>
      */
+    inline bool KeyHasBeenSet() const { return m_keyHasBeenSet; }
+
+    /**
+     * <p>One or more keys to limit the results. Valid filter keys include the
+     * following: DocumentNamePrefix, ExecutionStatus, ExecutionId, ParentExecutionId,
+     * CurrentAction, StartTimeBefore, StartTimeAfter.</p>
+     */
     inline void SetKey(const AutomationExecutionFilterKey& value) { m_keyHasBeenSet = true; m_key = value; }
 
     /**
@@ -92,6 +99,12 @@ namespace Model
      * filter's key.</p>
      */
     inline const Aws::Vector<Aws::String>& GetValues() const{ return m_values; }
+
+    /**
+     * <p>The values used to limit the execution information associated with the
+     * filter's key.</p>
+     */
+    inline bool ValuesHasBeenSet() const { return m_valuesHasBeenSet; }
 
     /**
      * <p>The values used to limit the execution information associated with the

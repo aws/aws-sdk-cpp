@@ -57,6 +57,13 @@ namespace Model
      * <code>DescribeElasticIps</code> returns a description of the Elastic IP
      * addresses associated with the specified instance.</p>
      */
+    inline bool InstanceIdHasBeenSet() const { return m_instanceIdHasBeenSet; }
+
+    /**
+     * <p>The instance ID. If you include this parameter,
+     * <code>DescribeElasticIps</code> returns a description of the Elastic IP
+     * addresses associated with the specified instance.</p>
+     */
     inline void SetInstanceId(const Aws::String& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
 
     /**
@@ -101,6 +108,13 @@ namespace Model
      * specified stack.</p>
      */
     inline const Aws::String& GetStackId() const{ return m_stackId; }
+
+    /**
+     * <p>A stack ID. If you include this parameter, <code>DescribeElasticIps</code>
+     * returns a description of the Elastic IP addresses that are registered with the
+     * specified stack.</p>
+     */
+    inline bool StackIdHasBeenSet() const { return m_stackIdHasBeenSet; }
 
     /**
      * <p>A stack ID. If you include this parameter, <code>DescribeElasticIps</code>
@@ -152,6 +166,14 @@ namespace Model
      * Elastic IP address.</p>
      */
     inline const Aws::Vector<Aws::String>& GetIps() const{ return m_ips; }
+
+    /**
+     * <p>An array of Elastic IP addresses to be described. If you include this
+     * parameter, <code>DescribeElasticIps</code> returns a description of the
+     * specified Elastic IP addresses. Otherwise, it returns a description of every
+     * Elastic IP address.</p>
+     */
+    inline bool IpsHasBeenSet() const { return m_ipsHasBeenSet; }
 
     /**
      * <p>An array of Elastic IP addresses to be described. If you include this

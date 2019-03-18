@@ -60,6 +60,11 @@ namespace Model
     /**
      * <p>Specifies the ranges of indexed values that you want to query.</p>
      */
+    inline bool RangesOnIndexedValuesHasBeenSet() const { return m_rangesOnIndexedValuesHasBeenSet; }
+
+    /**
+     * <p>Specifies the ranges of indexed values that you want to query.</p>
+     */
     inline void SetRangesOnIndexedValues(const Aws::Vector<ObjectAttributeRange>& value) { m_rangesOnIndexedValuesHasBeenSet = true; m_rangesOnIndexedValues = value; }
 
     /**
@@ -96,6 +101,11 @@ namespace Model
     /**
      * <p>The reference to the index to list.</p>
      */
+    inline bool IndexReferenceHasBeenSet() const { return m_indexReferenceHasBeenSet; }
+
+    /**
+     * <p>The reference to the index to list.</p>
+     */
     inline void SetIndexReference(const ObjectReference& value) { m_indexReferenceHasBeenSet = true; m_indexReference = value; }
 
     /**
@@ -122,6 +132,11 @@ namespace Model
     /**
      * <p>The maximum number of results to retrieve.</p>
      */
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
+
+    /**
+     * <p>The maximum number of results to retrieve.</p>
+     */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
@@ -134,6 +149,11 @@ namespace Model
      * <p>The pagination token.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
+    /**
+     * <p>The pagination token.</p>
+     */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
      * <p>The pagination token.</p>

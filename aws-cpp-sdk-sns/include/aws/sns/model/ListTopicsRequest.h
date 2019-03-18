@@ -54,6 +54,11 @@ namespace Model
     /**
      * <p>Token returned by the previous <code>ListTopics</code> request.</p>
      */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
+
+    /**
+     * <p>Token returned by the previous <code>ListTopics</code> request.</p>
+     */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
     /**

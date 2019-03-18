@@ -58,6 +58,12 @@ namespace Model
      * <p>The ID for the origin access identity, for example,
      * <code>E74FTE3AJFJ256A</code>. </p>
      */
+    inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
+
+    /**
+     * <p>The ID for the origin access identity, for example,
+     * <code>E74FTE3AJFJ256A</code>. </p>
+     */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
     /**
@@ -97,6 +103,13 @@ namespace Model
      * </p>
      */
     inline const Aws::String& GetS3CanonicalUserId() const{ return m_s3CanonicalUserId; }
+
+    /**
+     * <p>The Amazon S3 canonical user ID for the origin access identity, used when
+     * giving the origin access identity read permission to an object in Amazon S3.
+     * </p>
+     */
+    inline bool S3CanonicalUserIdHasBeenSet() const { return m_s3CanonicalUserIdHasBeenSet; }
 
     /**
      * <p>The Amazon S3 canonical user ID for the origin access identity, used when
@@ -145,6 +158,11 @@ namespace Model
      * <p>The current configuration information for the identity. </p>
      */
     inline const CloudFrontOriginAccessIdentityConfig& GetCloudFrontOriginAccessIdentityConfig() const{ return m_cloudFrontOriginAccessIdentityConfig; }
+
+    /**
+     * <p>The current configuration information for the identity. </p>
+     */
+    inline bool CloudFrontOriginAccessIdentityConfigHasBeenSet() const { return m_cloudFrontOriginAccessIdentityConfigHasBeenSet; }
 
     /**
      * <p>The current configuration information for the identity. </p>

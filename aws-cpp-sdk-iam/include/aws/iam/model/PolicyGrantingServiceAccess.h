@@ -62,6 +62,11 @@ namespace Model
     /**
      * <p>The policy name.</p>
      */
+    inline bool PolicyNameHasBeenSet() const { return m_policyNameHasBeenSet; }
+
+    /**
+     * <p>The policy name.</p>
+     */
     inline void SetPolicyName(const Aws::String& value) { m_policyNameHasBeenSet = true; m_policyName = value; }
 
     /**
@@ -102,6 +107,13 @@ namespace Model
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_managed-vs-inline.html">Managed
      * Policies and Inline Policies</a> in the <i>IAM User Guide</i>.</p>
      */
+    inline bool PolicyTypeHasBeenSet() const { return m_policyTypeHasBeenSet; }
+
+    /**
+     * <p>The policy type. For more information about these policy types, see <a
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_managed-vs-inline.html">Managed
+     * Policies and Inline Policies</a> in the <i>IAM User Guide</i>.</p>
+     */
     inline void SetPolicyType(const PolicyType& value) { m_policyTypeHasBeenSet = true; m_policyType = value; }
 
     /**
@@ -130,6 +142,9 @@ namespace Model
     inline const Aws::String& GetPolicyArn() const{ return m_policyArn; }
 
     
+    inline bool PolicyArnHasBeenSet() const { return m_policyArnHasBeenSet; }
+
+    
     inline void SetPolicyArn(const Aws::String& value) { m_policyArnHasBeenSet = true; m_policyArn = value; }
 
     
@@ -156,6 +171,15 @@ namespace Model
      * Policies and Inline Policies</a> in the <i>IAM User Guide</i>.</p>
      */
     inline const PolicyOwnerEntityType& GetEntityType() const{ return m_entityType; }
+
+    /**
+     * <p>The type of entity (user or role) that used the policy to access the service
+     * to which the inline policy is attached.</p> <p>This field is null for managed
+     * policies. For more information about these policy types, see <a
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_managed-vs-inline.html">Managed
+     * Policies and Inline Policies</a> in the <i>IAM User Guide</i>.</p>
+     */
+    inline bool EntityTypeHasBeenSet() const { return m_entityTypeHasBeenSet; }
 
     /**
      * <p>The type of entity (user or role) that used the policy to access the service
@@ -202,6 +226,15 @@ namespace Model
      * Policies and Inline Policies</a> in the <i>IAM User Guide</i>.</p>
      */
     inline const Aws::String& GetEntityName() const{ return m_entityName; }
+
+    /**
+     * <p>The name of the entity (user or role) to which the inline policy is
+     * attached.</p> <p>This field is null for managed policies. For more information
+     * about these policy types, see <a
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_managed-vs-inline.html">Managed
+     * Policies and Inline Policies</a> in the <i>IAM User Guide</i>.</p>
+     */
+    inline bool EntityNameHasBeenSet() const { return m_entityNameHasBeenSet; }
 
     /**
      * <p>The name of the entity (user or role) to which the inline policy is

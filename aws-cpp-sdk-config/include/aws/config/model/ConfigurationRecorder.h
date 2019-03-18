@@ -61,6 +61,13 @@ namespace Model
      * name "default" when creating the configuration recorder. You cannot change the
      * assigned name.</p>
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>The name of the recorder. By default, AWS Config automatically assigns the
+     * name "default" when creating the configuration recorder. You cannot change the
+     * assigned name.</p>
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
@@ -109,6 +116,12 @@ namespace Model
      * <p>Amazon Resource Name (ARN) of the IAM role used to describe the AWS resources
      * associated with the account.</p>
      */
+    inline bool RoleARNHasBeenSet() const { return m_roleARNHasBeenSet; }
+
+    /**
+     * <p>Amazon Resource Name (ARN) of the IAM role used to describe the AWS resources
+     * associated with the account.</p>
+     */
     inline void SetRoleARN(const Aws::String& value) { m_roleARNHasBeenSet = true; m_roleARN = value; }
 
     /**
@@ -147,6 +160,12 @@ namespace Model
      * configuration changes.</p>
      */
     inline const RecordingGroup& GetRecordingGroup() const{ return m_recordingGroup; }
+
+    /**
+     * <p>Specifies the types of AWS resources for which AWS Config records
+     * configuration changes.</p>
+     */
+    inline bool RecordingGroupHasBeenSet() const { return m_recordingGroupHasBeenSet; }
 
     /**
      * <p>Specifies the types of AWS resources for which AWS Config records

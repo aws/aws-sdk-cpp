@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>Enables or disables CloudWatch logging.</p>
      */
+    inline bool EnabledHasBeenSet() const { return m_enabledHasBeenSet; }
+
+    /**
+     * <p>Enables or disables CloudWatch logging.</p>
+     */
     inline void SetEnabled(bool value) { m_enabledHasBeenSet = true; m_enabled = value; }
 
     /**
@@ -69,6 +74,12 @@ namespace Model
      * logging is enabled.</p>
      */
     inline const Aws::String& GetLogGroupName() const{ return m_logGroupName; }
+
+    /**
+     * <p>The CloudWatch group name for logging. This value is required if CloudWatch
+     * logging is enabled.</p>
+     */
+    inline bool LogGroupNameHasBeenSet() const { return m_logGroupNameHasBeenSet; }
 
     /**
      * <p>The CloudWatch group name for logging. This value is required if CloudWatch
@@ -112,6 +123,12 @@ namespace Model
      * CloudWatch logging is enabled.</p>
      */
     inline const Aws::String& GetLogStreamName() const{ return m_logStreamName; }
+
+    /**
+     * <p>The CloudWatch log stream name for logging. This value is required if
+     * CloudWatch logging is enabled.</p>
+     */
+    inline bool LogStreamNameHasBeenSet() const { return m_logStreamNameHasBeenSet; }
 
     /**
      * <p>The CloudWatch log stream name for logging. This value is required if

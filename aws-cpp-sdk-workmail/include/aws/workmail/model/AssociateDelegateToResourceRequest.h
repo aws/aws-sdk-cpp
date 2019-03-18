@@ -52,6 +52,11 @@ namespace Model
     /**
      * <p>The organization under which the resource exists.</p>
      */
+    inline bool OrganizationIdHasBeenSet() const { return m_organizationIdHasBeenSet; }
+
+    /**
+     * <p>The organization under which the resource exists.</p>
+     */
     inline void SetOrganizationId(const Aws::String& value) { m_organizationIdHasBeenSet = true; m_organizationId = value; }
 
     /**
@@ -88,6 +93,11 @@ namespace Model
     /**
      * <p>The resource for which members are associated.</p>
      */
+    inline bool ResourceIdHasBeenSet() const { return m_resourceIdHasBeenSet; }
+
+    /**
+     * <p>The resource for which members are associated.</p>
+     */
     inline void SetResourceId(const Aws::String& value) { m_resourceIdHasBeenSet = true; m_resourceId = value; }
 
     /**
@@ -120,6 +130,11 @@ namespace Model
      * <p>The member (user or group) to associate to the resource.</p>
      */
     inline const Aws::String& GetEntityId() const{ return m_entityId; }
+
+    /**
+     * <p>The member (user or group) to associate to the resource.</p>
+     */
+    inline bool EntityIdHasBeenSet() const { return m_entityIdHasBeenSet; }
 
     /**
      * <p>The member (user or group) to associate to the resource.</p>

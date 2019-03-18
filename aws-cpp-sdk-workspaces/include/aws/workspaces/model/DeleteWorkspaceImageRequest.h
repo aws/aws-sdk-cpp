@@ -52,6 +52,11 @@ namespace Model
     /**
      * <p>The identifier of the image.</p>
      */
+    inline bool ImageIdHasBeenSet() const { return m_imageIdHasBeenSet; }
+
+    /**
+     * <p>The identifier of the image.</p>
+     */
     inline void SetImageId(const Aws::String& value) { m_imageIdHasBeenSet = true; m_imageId = value; }
 
     /**

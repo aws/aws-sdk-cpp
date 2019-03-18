@@ -61,6 +61,12 @@ namespace Model
      * <p>A query parameter to specify the input format to imported API keys.
      * Currently, only the <code>csv</code> format is supported.</p>
      */
+    inline bool FormatHasBeenSet() const { return m_formatHasBeenSet; }
+
+    /**
+     * <p>A query parameter to specify the input format to imported API keys.
+     * Currently, only the <code>csv</code> format is supported.</p>
+     */
     inline void SetFormat(const ApiKeysFormat& value) { m_formatHasBeenSet = true; m_format = value; }
 
     /**
@@ -87,6 +93,12 @@ namespace Model
      * (<code>true</code>) or not (<code>false</code>) when error is encountered.</p>
      */
     inline bool GetFailOnWarnings() const{ return m_failOnWarnings; }
+
+    /**
+     * <p>A query parameter to indicate whether to rollback <a>ApiKey</a> importation
+     * (<code>true</code>) or not (<code>false</code>) when error is encountered.</p>
+     */
+    inline bool FailOnWarningsHasBeenSet() const { return m_failOnWarningsHasBeenSet; }
 
     /**
      * <p>A query parameter to indicate whether to rollback <a>ApiKey</a> importation

@@ -60,6 +60,13 @@ namespace Model
      * Possible values are: ACU_1 (vCPU=4, memory=16GiB) or ACU_2 (vCPU=8,
      * memory=32GiB).</p>
      */
+    inline bool ComputeTypeHasBeenSet() const { return m_computeTypeHasBeenSet; }
+
+    /**
+     * <p>The type of the compute resource used to execute the "containerAction".
+     * Possible values are: ACU_1 (vCPU=4, memory=16GiB) or ACU_2 (vCPU=8,
+     * memory=32GiB).</p>
+     */
     inline void SetComputeType(const ComputeType& value) { m_computeTypeHasBeenSet = true; m_computeType = value; }
 
     /**
@@ -89,6 +96,12 @@ namespace Model
      * used to execute the "containerAction" (min: 1, max: 50).</p>
      */
     inline int GetVolumeSizeInGB() const{ return m_volumeSizeInGB; }
+
+    /**
+     * <p>The size (in GB) of the persistent storage available to the resource instance
+     * used to execute the "containerAction" (min: 1, max: 50).</p>
+     */
+    inline bool VolumeSizeInGBHasBeenSet() const { return m_volumeSizeInGBHasBeenSet; }
 
     /**
      * <p>The size (in GB) of the persistent storage available to the resource instance

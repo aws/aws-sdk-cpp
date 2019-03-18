@@ -52,6 +52,11 @@ namespace Model
     /**
      * <p>The ARN of the contact to update.</p>
      */
+    inline bool ContactArnHasBeenSet() const { return m_contactArnHasBeenSet; }
+
+    /**
+     * <p>The ARN of the contact to update.</p>
+     */
     inline void SetContactArn(const Aws::String& value) { m_contactArnHasBeenSet = true; m_contactArn = value; }
 
     /**
@@ -84,6 +89,11 @@ namespace Model
      * <p>The updated display name of the contact.</p>
      */
     inline const Aws::String& GetDisplayName() const{ return m_displayName; }
+
+    /**
+     * <p>The updated display name of the contact.</p>
+     */
+    inline bool DisplayNameHasBeenSet() const { return m_displayNameHasBeenSet; }
 
     /**
      * <p>The updated display name of the contact.</p>
@@ -124,6 +134,11 @@ namespace Model
     /**
      * <p>The updated first name of the contact.</p>
      */
+    inline bool FirstNameHasBeenSet() const { return m_firstNameHasBeenSet; }
+
+    /**
+     * <p>The updated first name of the contact.</p>
+     */
     inline void SetFirstName(const Aws::String& value) { m_firstNameHasBeenSet = true; m_firstName = value; }
 
     /**
@@ -160,6 +175,11 @@ namespace Model
     /**
      * <p>The updated last name of the contact.</p>
      */
+    inline bool LastNameHasBeenSet() const { return m_lastNameHasBeenSet; }
+
+    /**
+     * <p>The updated last name of the contact.</p>
+     */
     inline void SetLastName(const Aws::String& value) { m_lastNameHasBeenSet = true; m_lastName = value; }
 
     /**
@@ -192,6 +212,11 @@ namespace Model
      * <p>The updated phone number of the contact.</p>
      */
     inline const Aws::String& GetPhoneNumber() const{ return m_phoneNumber; }
+
+    /**
+     * <p>The updated phone number of the contact.</p>
+     */
+    inline bool PhoneNumberHasBeenSet() const { return m_phoneNumberHasBeenSet; }
 
     /**
      * <p>The updated phone number of the contact.</p>

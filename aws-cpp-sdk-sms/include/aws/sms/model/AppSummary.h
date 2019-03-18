@@ -60,6 +60,11 @@ namespace Model
     /**
      * <p>Unique ID of the application.</p>
      */
+    inline bool AppIdHasBeenSet() const { return m_appIdHasBeenSet; }
+
+    /**
+     * <p>Unique ID of the application.</p>
+     */
     inline void SetAppId(const Aws::String& value) { m_appIdHasBeenSet = true; m_appId = value; }
 
     /**
@@ -92,6 +97,11 @@ namespace Model
      * <p>Name of the application.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
+
+    /**
+     * <p>Name of the application.</p>
+     */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
      * <p>Name of the application.</p>
@@ -132,6 +142,11 @@ namespace Model
     /**
      * <p>Description of the application.</p>
      */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
+
+    /**
+     * <p>Description of the application.</p>
+     */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
@@ -168,6 +183,11 @@ namespace Model
     /**
      * <p>Status of the application.</p>
      */
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
+
+    /**
+     * <p>Status of the application.</p>
+     */
     inline void SetStatus(const AppStatus& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
@@ -190,6 +210,11 @@ namespace Model
      * <p>A message related to the status of the application</p>
      */
     inline const Aws::String& GetStatusMessage() const{ return m_statusMessage; }
+
+    /**
+     * <p>A message related to the status of the application</p>
+     */
+    inline bool StatusMessageHasBeenSet() const { return m_statusMessageHasBeenSet; }
 
     /**
      * <p>A message related to the status of the application</p>
@@ -230,6 +255,11 @@ namespace Model
     /**
      * <p>Replication status of the application.</p>
      */
+    inline bool ReplicationStatusHasBeenSet() const { return m_replicationStatusHasBeenSet; }
+
+    /**
+     * <p>Replication status of the application.</p>
+     */
     inline void SetReplicationStatus(const AppReplicationStatus& value) { m_replicationStatusHasBeenSet = true; m_replicationStatus = value; }
 
     /**
@@ -252,6 +282,11 @@ namespace Model
      * <p>A message related to the replication status of the application.</p>
      */
     inline const Aws::String& GetReplicationStatusMessage() const{ return m_replicationStatusMessage; }
+
+    /**
+     * <p>A message related to the replication status of the application.</p>
+     */
+    inline bool ReplicationStatusMessageHasBeenSet() const { return m_replicationStatusMessageHasBeenSet; }
 
     /**
      * <p>A message related to the replication status of the application.</p>
@@ -292,6 +327,11 @@ namespace Model
     /**
      * <p>Timestamp of the application's most recent successful replication.</p>
      */
+    inline bool LatestReplicationTimeHasBeenSet() const { return m_latestReplicationTimeHasBeenSet; }
+
+    /**
+     * <p>Timestamp of the application's most recent successful replication.</p>
+     */
     inline void SetLatestReplicationTime(const Aws::Utils::DateTime& value) { m_latestReplicationTimeHasBeenSet = true; m_latestReplicationTime = value; }
 
     /**
@@ -318,6 +358,11 @@ namespace Model
     /**
      * <p>Launch status of the application.</p>
      */
+    inline bool LaunchStatusHasBeenSet() const { return m_launchStatusHasBeenSet; }
+
+    /**
+     * <p>Launch status of the application.</p>
+     */
     inline void SetLaunchStatus(const AppLaunchStatus& value) { m_launchStatusHasBeenSet = true; m_launchStatus = value; }
 
     /**
@@ -340,6 +385,11 @@ namespace Model
      * <p>A message related to the launch status of the application.</p>
      */
     inline const Aws::String& GetLaunchStatusMessage() const{ return m_launchStatusMessage; }
+
+    /**
+     * <p>A message related to the launch status of the application.</p>
+     */
+    inline bool LaunchStatusMessageHasBeenSet() const { return m_launchStatusMessageHasBeenSet; }
 
     /**
      * <p>A message related to the launch status of the application.</p>
@@ -380,6 +430,11 @@ namespace Model
     /**
      * <p>Details about the latest launch of the application.</p>
      */
+    inline bool LaunchDetailsHasBeenSet() const { return m_launchDetailsHasBeenSet; }
+
+    /**
+     * <p>Details about the latest launch of the application.</p>
+     */
     inline void SetLaunchDetails(const LaunchDetails& value) { m_launchDetailsHasBeenSet = true; m_launchDetails = value; }
 
     /**
@@ -402,6 +457,11 @@ namespace Model
      * <p>Time of creation of this application.</p>
      */
     inline const Aws::Utils::DateTime& GetCreationTime() const{ return m_creationTime; }
+
+    /**
+     * <p>Time of creation of this application.</p>
+     */
+    inline bool CreationTimeHasBeenSet() const { return m_creationTimeHasBeenSet; }
 
     /**
      * <p>Time of creation of this application.</p>
@@ -432,6 +492,11 @@ namespace Model
     /**
      * <p>Timestamp of the application's creation.</p>
      */
+    inline bool LastModifiedHasBeenSet() const { return m_lastModifiedHasBeenSet; }
+
+    /**
+     * <p>Timestamp of the application's creation.</p>
+     */
     inline void SetLastModified(const Aws::Utils::DateTime& value) { m_lastModifiedHasBeenSet = true; m_lastModified = value; }
 
     /**
@@ -454,6 +519,11 @@ namespace Model
      * <p>Name of the service role in the customer's account used by AWS SMS.</p>
      */
     inline const Aws::String& GetRoleName() const{ return m_roleName; }
+
+    /**
+     * <p>Name of the service role in the customer's account used by AWS SMS.</p>
+     */
+    inline bool RoleNameHasBeenSet() const { return m_roleNameHasBeenSet; }
 
     /**
      * <p>Name of the service role in the customer's account used by AWS SMS.</p>
@@ -494,6 +564,11 @@ namespace Model
     /**
      * <p>Number of server groups present in the application.</p>
      */
+    inline bool TotalServerGroupsHasBeenSet() const { return m_totalServerGroupsHasBeenSet; }
+
+    /**
+     * <p>Number of server groups present in the application.</p>
+     */
     inline void SetTotalServerGroups(int value) { m_totalServerGroupsHasBeenSet = true; m_totalServerGroups = value; }
 
     /**
@@ -506,6 +581,11 @@ namespace Model
      * <p>Number of servers present in the application.</p>
      */
     inline int GetTotalServers() const{ return m_totalServers; }
+
+    /**
+     * <p>Number of servers present in the application.</p>
+     */
+    inline bool TotalServersHasBeenSet() const { return m_totalServersHasBeenSet; }
 
     /**
      * <p>Number of servers present in the application.</p>

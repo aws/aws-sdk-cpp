@@ -55,6 +55,12 @@ namespace Model
      * <p>The name of the Git repository. The name must have 1 to 63 characters. Valid
      * characters are a-z, A-Z, 0-9, and - (hyphen).</p>
      */
+    inline bool CodeRepositoryNameHasBeenSet() const { return m_codeRepositoryNameHasBeenSet; }
+
+    /**
+     * <p>The name of the Git repository. The name must have 1 to 63 characters. Valid
+     * characters are a-z, A-Z, 0-9, and - (hyphen).</p>
+     */
     inline void SetCodeRepositoryName(const Aws::String& value) { m_codeRepositoryNameHasBeenSet = true; m_codeRepositoryName = value; }
 
     /**
@@ -94,6 +100,13 @@ namespace Model
      * repository.</p>
      */
     inline const GitConfig& GetGitConfig() const{ return m_gitConfig; }
+
+    /**
+     * <p>Specifies details about the repository, including the URL where the
+     * repository is located, the default branch, and credentials to use to access the
+     * repository.</p>
+     */
+    inline bool GitConfigHasBeenSet() const { return m_gitConfigHasBeenSet; }
 
     /**
      * <p>Specifies details about the repository, including the URL where the

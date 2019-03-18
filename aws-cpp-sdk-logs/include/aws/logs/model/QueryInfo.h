@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The unique ID number of this query.</p>
      */
+    inline bool QueryIdHasBeenSet() const { return m_queryIdHasBeenSet; }
+
+    /**
+     * <p>The unique ID number of this query.</p>
+     */
     inline void SetQueryId(const Aws::String& value) { m_queryIdHasBeenSet = true; m_queryId = value; }
 
     /**
@@ -89,6 +94,11 @@ namespace Model
      * <p>The query string used in this query.</p>
      */
     inline const Aws::String& GetQueryString() const{ return m_queryString; }
+
+    /**
+     * <p>The query string used in this query.</p>
+     */
+    inline bool QueryStringHasBeenSet() const { return m_queryStringHasBeenSet; }
 
     /**
      * <p>The query string used in this query.</p>
@@ -133,6 +143,13 @@ namespace Model
      * <code>Complete</code>, <code>Failed</code>, <code>Running</code>,
      * <code>Scheduled</code>, and <code>Unknown</code>.</p>
      */
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
+
+    /**
+     * <p>The status of this query. Possible values are <code>Cancelled</code>,
+     * <code>Complete</code>, <code>Failed</code>, <code>Running</code>,
+     * <code>Scheduled</code>, and <code>Unknown</code>.</p>
+     */
     inline void SetStatus(const QueryStatus& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
@@ -165,6 +182,11 @@ namespace Model
     /**
      * <p>The date and time that this query was created.</p>
      */
+    inline bool CreateTimeHasBeenSet() const { return m_createTimeHasBeenSet; }
+
+    /**
+     * <p>The date and time that this query was created.</p>
+     */
     inline void SetCreateTime(long long value) { m_createTimeHasBeenSet = true; m_createTime = value; }
 
     /**
@@ -177,6 +199,11 @@ namespace Model
      * <p>The name of the log group scanned by this query.</p>
      */
     inline const Aws::String& GetLogGroupName() const{ return m_logGroupName; }
+
+    /**
+     * <p>The name of the log group scanned by this query.</p>
+     */
+    inline bool LogGroupNameHasBeenSet() const { return m_logGroupNameHasBeenSet; }
 
     /**
      * <p>The name of the log group scanned by this query.</p>

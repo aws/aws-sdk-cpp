@@ -71,6 +71,13 @@ namespace Model
      * HTTP to HTTP, HTTP to HTTPS, and HTTPS to HTTPS. You cannot redirect HTTPS to
      * HTTP.</p>
      */
+    inline bool ProtocolHasBeenSet() const { return m_protocolHasBeenSet; }
+
+    /**
+     * <p>The protocol. You can specify HTTP, HTTPS, or #{protocol}. You can redirect
+     * HTTP to HTTP, HTTP to HTTPS, and HTTPS to HTTPS. You cannot redirect HTTPS to
+     * HTTP.</p>
+     */
     inline void SetProtocol(const Aws::String& value) { m_protocolHasBeenSet = true; m_protocol = value; }
 
     /**
@@ -117,6 +124,11 @@ namespace Model
     /**
      * <p>The port. You can specify a value from 1 to 65535 or #{port}.</p>
      */
+    inline bool PortHasBeenSet() const { return m_portHasBeenSet; }
+
+    /**
+     * <p>The port. You can specify a value from 1 to 65535 or #{port}.</p>
+     */
     inline void SetPort(const Aws::String& value) { m_portHasBeenSet = true; m_port = value; }
 
     /**
@@ -150,6 +162,12 @@ namespace Model
      * #{host}.</p>
      */
     inline const Aws::String& GetHost() const{ return m_host; }
+
+    /**
+     * <p>The hostname. This component is not percent-encoded. The hostname can contain
+     * #{host}.</p>
+     */
+    inline bool HostHasBeenSet() const { return m_hostHasBeenSet; }
 
     /**
      * <p>The hostname. This component is not percent-encoded. The hostname can contain
@@ -193,6 +211,12 @@ namespace Model
      * percent-encoded. The path can contain #{host}, #{path}, and #{port}.</p>
      */
     inline const Aws::String& GetPath() const{ return m_path; }
+
+    /**
+     * <p>The absolute path, starting with the leading "/". This component is not
+     * percent-encoded. The path can contain #{host}, #{path}, and #{port}.</p>
+     */
+    inline bool PathHasBeenSet() const { return m_pathHasBeenSet; }
 
     /**
      * <p>The absolute path, starting with the leading "/". This component is not
@@ -243,6 +267,13 @@ namespace Model
      * not include the leading "?", as it is automatically added. You can specify any
      * of the reserved keywords.</p>
      */
+    inline bool QueryHasBeenSet() const { return m_queryHasBeenSet; }
+
+    /**
+     * <p>The query parameters, URL-encoded when necessary, but not percent-encoded. Do
+     * not include the leading "?", as it is automatically added. You can specify any
+     * of the reserved keywords.</p>
+     */
     inline void SetQuery(const Aws::String& value) { m_queryHasBeenSet = true; m_query = value; }
 
     /**
@@ -286,6 +317,12 @@ namespace Model
      * temporary (HTTP 302).</p>
      */
     inline const RedirectActionStatusCodeEnum& GetStatusCode() const{ return m_statusCode; }
+
+    /**
+     * <p>The HTTP redirect code. The redirect is either permanent (HTTP 301) or
+     * temporary (HTTP 302).</p>
+     */
+    inline bool StatusCodeHasBeenSet() const { return m_statusCodeHasBeenSet; }
 
     /**
      * <p>The HTTP redirect code. The redirect is either permanent (HTTP 301) or

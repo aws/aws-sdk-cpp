@@ -59,6 +59,11 @@ namespace Model
     /**
      * <p>The name of the service mesh that the route resides in.</p>
      */
+    inline bool MeshNameHasBeenSet() const { return m_meshNameHasBeenSet; }
+
+    /**
+     * <p>The name of the service mesh that the route resides in.</p>
+     */
     inline void SetMeshName(const Aws::String& value) { m_meshNameHasBeenSet = true; m_meshName = value; }
 
     /**
@@ -95,6 +100,11 @@ namespace Model
     /**
      * <p>The associated metadata for the route.</p>
      */
+    inline bool MetadataHasBeenSet() const { return m_metadataHasBeenSet; }
+
+    /**
+     * <p>The associated metadata for the route.</p>
+     */
     inline void SetMetadata(const ResourceMetadata& value) { m_metadataHasBeenSet = true; m_metadata = value; }
 
     /**
@@ -117,6 +127,11 @@ namespace Model
      * <p>The name of the route.</p>
      */
     inline const Aws::String& GetRouteName() const{ return m_routeName; }
+
+    /**
+     * <p>The name of the route.</p>
+     */
+    inline bool RouteNameHasBeenSet() const { return m_routeNameHasBeenSet; }
 
     /**
      * <p>The name of the route.</p>
@@ -157,6 +172,11 @@ namespace Model
     /**
      * <p>The specifications of the route.</p>
      */
+    inline bool SpecHasBeenSet() const { return m_specHasBeenSet; }
+
+    /**
+     * <p>The specifications of the route.</p>
+     */
     inline void SetSpec(const RouteSpec& value) { m_specHasBeenSet = true; m_spec = value; }
 
     /**
@@ -183,6 +203,11 @@ namespace Model
     /**
      * <p>The status of the route.</p>
      */
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
+
+    /**
+     * <p>The status of the route.</p>
+     */
     inline void SetStatus(const RouteStatus& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
@@ -205,6 +230,11 @@ namespace Model
      * <p>The virtual router that the route is associated with.</p>
      */
     inline const Aws::String& GetVirtualRouterName() const{ return m_virtualRouterName; }
+
+    /**
+     * <p>The virtual router that the route is associated with.</p>
+     */
+    inline bool VirtualRouterNameHasBeenSet() const { return m_virtualRouterNameHasBeenSet; }
 
     /**
      * <p>The virtual router that the route is associated with.</p>

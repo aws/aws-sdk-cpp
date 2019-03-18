@@ -58,6 +58,13 @@ namespace Model
      * of critical. Critical severity is determined by the organization that published
      * the compliance items.</p>
      */
+    inline bool CriticalCountHasBeenSet() const { return m_criticalCountHasBeenSet; }
+
+    /**
+     * <p>The total number of resources or compliance items that have a severity level
+     * of critical. Critical severity is determined by the organization that published
+     * the compliance items.</p>
+     */
     inline void SetCriticalCount(int value) { m_criticalCountHasBeenSet = true; m_criticalCount = value; }
 
     /**
@@ -74,6 +81,13 @@ namespace Model
      * compliance items.</p>
      */
     inline int GetHighCount() const{ return m_highCount; }
+
+    /**
+     * <p>The total number of resources or compliance items that have a severity level
+     * of high. High severity is determined by the organization that published the
+     * compliance items.</p>
+     */
+    inline bool HighCountHasBeenSet() const { return m_highCountHasBeenSet; }
 
     /**
      * <p>The total number of resources or compliance items that have a severity level
@@ -102,6 +116,13 @@ namespace Model
      * of medium. Medium severity is determined by the organization that published the
      * compliance items.</p>
      */
+    inline bool MediumCountHasBeenSet() const { return m_mediumCountHasBeenSet; }
+
+    /**
+     * <p>The total number of resources or compliance items that have a severity level
+     * of medium. Medium severity is determined by the organization that published the
+     * compliance items.</p>
+     */
     inline void SetMediumCount(int value) { m_mediumCountHasBeenSet = true; m_mediumCount = value; }
 
     /**
@@ -118,6 +139,13 @@ namespace Model
      * compliance items.</p>
      */
     inline int GetLowCount() const{ return m_lowCount; }
+
+    /**
+     * <p>The total number of resources or compliance items that have a severity level
+     * of low. Low severity is determined by the organization that published the
+     * compliance items.</p>
+     */
+    inline bool LowCountHasBeenSet() const { return m_lowCountHasBeenSet; }
 
     /**
      * <p>The total number of resources or compliance items that have a severity level
@@ -146,6 +174,13 @@ namespace Model
      * of informational. Informational severity is determined by the organization that
      * published the compliance items.</p>
      */
+    inline bool InformationalCountHasBeenSet() const { return m_informationalCountHasBeenSet; }
+
+    /**
+     * <p>The total number of resources or compliance items that have a severity level
+     * of informational. Informational severity is determined by the organization that
+     * published the compliance items.</p>
+     */
     inline void SetInformationalCount(int value) { m_informationalCountHasBeenSet = true; m_informationalCount = value; }
 
     /**
@@ -162,6 +197,13 @@ namespace Model
      * published the compliance items.</p>
      */
     inline int GetUnspecifiedCount() const{ return m_unspecifiedCount; }
+
+    /**
+     * <p>The total number of resources or compliance items that have a severity level
+     * of unspecified. Unspecified severity is determined by the organization that
+     * published the compliance items.</p>
+     */
+    inline bool UnspecifiedCountHasBeenSet() const { return m_unspecifiedCountHasBeenSet; }
 
     /**
      * <p>The total number of resources or compliance items that have a severity level

@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The action to take if a match is determined.</p>
      */
+    inline bool ActionHasBeenSet() const { return m_actionHasBeenSet; }
+
+    /**
+     * <p>The action to take if a match is determined.</p>
+     */
     inline void SetAction(const HttpRouteAction& value) { m_actionHasBeenSet = true; m_action = value; }
 
     /**
@@ -79,6 +84,11 @@ namespace Model
      * <p>The criteria for determining an HTTP request match.</p>
      */
     inline const HttpRouteMatch& GetMatch() const{ return m_match; }
+
+    /**
+     * <p>The criteria for determining an HTTP request match.</p>
+     */
+    inline bool MatchHasBeenSet() const { return m_matchHasBeenSet; }
 
     /**
      * <p>The criteria for determining an HTTP request match.</p>

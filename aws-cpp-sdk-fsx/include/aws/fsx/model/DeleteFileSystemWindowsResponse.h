@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p>The ID of the final backup for this file system.</p>
      */
+    inline bool FinalBackupIdHasBeenSet() const { return m_finalBackupIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the final backup for this file system.</p>
+     */
     inline void SetFinalBackupId(const Aws::String& value) { m_finalBackupIdHasBeenSet = true; m_finalBackupId = value; }
 
     /**
@@ -90,6 +95,11 @@ namespace Model
      * <p>The set of tags applied to the final backup.</p>
      */
     inline const Aws::Vector<Tag>& GetFinalBackupTags() const{ return m_finalBackupTags; }
+
+    /**
+     * <p>The set of tags applied to the final backup.</p>
+     */
+    inline bool FinalBackupTagsHasBeenSet() const { return m_finalBackupTagsHasBeenSet; }
 
     /**
      * <p>The set of tags applied to the final backup.</p>

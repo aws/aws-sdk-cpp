@@ -58,6 +58,12 @@ namespace Model
      * <p>The VPC subnets and security groups associated with a task.</p> <note> <p>All
      * specified subnets and security groups must be from the same VPC.</p> </note>
      */
+    inline bool AwsvpcConfigurationHasBeenSet() const { return m_awsvpcConfigurationHasBeenSet; }
+
+    /**
+     * <p>The VPC subnets and security groups associated with a task.</p> <note> <p>All
+     * specified subnets and security groups must be from the same VPC.</p> </note>
+     */
     inline void SetAwsvpcConfiguration(const AwsVpcConfiguration& value) { m_awsvpcConfigurationHasBeenSet = true; m_awsvpcConfiguration = value; }
 
     /**

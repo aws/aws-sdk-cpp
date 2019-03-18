@@ -64,6 +64,16 @@ namespace Model
      * hour). If the duration is longer than one hour, the session for AWS account
      * owners defaults to one hour.</p>
      */
+    inline bool DurationSecondsHasBeenSet() const { return m_durationSecondsHasBeenSet; }
+
+    /**
+     * <p>The duration, in seconds, that the credentials should remain valid.
+     * Acceptable durations for IAM user sessions range from 900 seconds (15 minutes)
+     * to 129600 seconds (36 hours), with 43200 seconds (12 hours) as the default.
+     * Sessions for AWS account owners are restricted to a maximum of 3600 seconds (one
+     * hour). If the duration is longer than one hour, the session for AWS account
+     * owners defaults to one hour.</p>
+     */
     inline void SetDurationSeconds(int value) { m_durationSecondsHasBeenSet = true; m_durationSeconds = value; }
 
     /**
@@ -91,6 +101,21 @@ namespace Model
      * =,.@:/-</p>
      */
     inline const Aws::String& GetSerialNumber() const{ return m_serialNumber; }
+
+    /**
+     * <p>The identification number of the MFA device that is associated with the IAM
+     * user who is making the <code>GetSessionToken</code> call. Specify this value if
+     * the IAM user has a policy that requires MFA authentication. The value is either
+     * the serial number for a hardware device (such as <code>GAHT12345678</code>) or
+     * an Amazon Resource Name (ARN) for a virtual device (such as
+     * <code>arn:aws:iam::123456789012:mfa/user</code>). You can find the device for an
+     * IAM user by going to the AWS Management Console and viewing the user's security
+     * credentials. </p> <p>The regex used to validated this parameter is a string of
+     * characters consisting of upper- and lower-case alphanumeric characters with no
+     * spaces. You can also include underscores or any of the following characters:
+     * =,.@:/-</p>
+     */
+    inline bool SerialNumberHasBeenSet() const { return m_serialNumberHasBeenSet; }
 
     /**
      * <p>The identification number of the MFA device that is associated with the IAM
@@ -193,6 +218,17 @@ namespace Model
      * sequence of six numeric digits.</p>
      */
     inline const Aws::String& GetTokenCode() const{ return m_tokenCode; }
+
+    /**
+     * <p>The value provided by the MFA device, if MFA is required. If any policy
+     * requires the IAM user to submit an MFA code, specify this value. If MFA
+     * authentication is required, and the user does not provide a code when requesting
+     * a set of temporary security credentials, the user will receive an "access
+     * denied" response when requesting resources that require MFA authentication.</p>
+     * <p>The format for this parameter, as described by its regex pattern, is a
+     * sequence of six numeric digits.</p>
+     */
+    inline bool TokenCodeHasBeenSet() const { return m_tokenCodeHasBeenSet; }
 
     /**
      * <p>The value provided by the MFA device, if MFA is required. If any policy

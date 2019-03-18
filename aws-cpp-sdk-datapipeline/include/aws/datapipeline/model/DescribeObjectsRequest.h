@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The ID of the pipeline that contains the object definitions.</p>
      */
+    inline bool PipelineIdHasBeenSet() const { return m_pipelineIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the pipeline that contains the object definitions.</p>
+     */
     inline void SetPipelineId(const Aws::String& value) { m_pipelineIdHasBeenSet = true; m_pipelineId = value; }
 
     /**
@@ -90,6 +95,13 @@ namespace Model
      * <code>DescribeObjects</code>.</p>
      */
     inline const Aws::Vector<Aws::String>& GetObjectIds() const{ return m_objectIds; }
+
+    /**
+     * <p>The IDs of the pipeline objects that contain the definitions to be described.
+     * You can pass as many as 25 identifiers in a single call to
+     * <code>DescribeObjects</code>.</p>
+     */
+    inline bool ObjectIdsHasBeenSet() const { return m_objectIdsHasBeenSet; }
 
     /**
      * <p>The IDs of the pipeline objects that contain the definitions to be described.
@@ -151,6 +163,12 @@ namespace Model
      * <p>Indicates whether any expressions in the object should be evaluated when the
      * object descriptions are returned.</p>
      */
+    inline bool EvaluateExpressionsHasBeenSet() const { return m_evaluateExpressionsHasBeenSet; }
+
+    /**
+     * <p>Indicates whether any expressions in the object should be evaluated when the
+     * object descriptions are returned.</p>
+     */
     inline void SetEvaluateExpressions(bool value) { m_evaluateExpressionsHasBeenSet = true; m_evaluateExpressions = value; }
 
     /**
@@ -167,6 +185,14 @@ namespace Model
      * retrieve the next set of results.</p>
      */
     inline const Aws::String& GetMarker() const{ return m_marker; }
+
+    /**
+     * <p>The starting point for the results to be returned. For the first call, this
+     * value should be empty. As long as there are more results, continue to call
+     * <code>DescribeObjects</code> with the marker value from the previous call to
+     * retrieve the next set of results.</p>
+     */
+    inline bool MarkerHasBeenSet() const { return m_markerHasBeenSet; }
 
     /**
      * <p>The starting point for the results to be returned. For the first call, this

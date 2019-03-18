@@ -55,6 +55,11 @@ namespace Model
     /**
      * <p>The user defined identifier associated with the workflow execution.</p>
      */
+    inline bool WorkflowIdHasBeenSet() const { return m_workflowIdHasBeenSet; }
+
+    /**
+     * <p>The user defined identifier associated with the workflow execution.</p>
+     */
     inline void SetWorkflowId(const Aws::String& value) { m_workflowIdHasBeenSet = true; m_workflowId = value; }
 
     /**
@@ -87,6 +92,11 @@ namespace Model
      * <p>A system-generated unique identifier for the workflow execution.</p>
      */
     inline const Aws::String& GetRunId() const{ return m_runId; }
+
+    /**
+     * <p>A system-generated unique identifier for the workflow execution.</p>
+     */
+    inline bool RunIdHasBeenSet() const { return m_runIdHasBeenSet; }
 
     /**
      * <p>A system-generated unique identifier for the workflow execution.</p>

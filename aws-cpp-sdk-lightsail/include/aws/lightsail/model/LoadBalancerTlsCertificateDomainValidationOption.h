@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The fully qualified domain name in the certificate request.</p>
      */
+    inline bool DomainNameHasBeenSet() const { return m_domainNameHasBeenSet; }
+
+    /**
+     * <p>The fully qualified domain name in the certificate request.</p>
+     */
     inline void SetDomainName(const Aws::String& value) { m_domainNameHasBeenSet = true; m_domainName = value; }
 
     /**
@@ -89,6 +94,11 @@ namespace Model
      * <p>The status of the domain validation. Valid values are listed below.</p>
      */
     inline const LoadBalancerTlsCertificateDomainStatus& GetValidationStatus() const{ return m_validationStatus; }
+
+    /**
+     * <p>The status of the domain validation. Valid values are listed below.</p>
+     */
+    inline bool ValidationStatusHasBeenSet() const { return m_validationStatusHasBeenSet; }
 
     /**
      * <p>The status of the domain validation. Valid values are listed below.</p>

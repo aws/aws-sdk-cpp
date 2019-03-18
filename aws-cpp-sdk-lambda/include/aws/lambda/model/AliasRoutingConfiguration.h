@@ -60,6 +60,12 @@ namespace Model
      * <p>The name of the second alias, and the percentage of traffic that's routed to
      * it.</p>
      */
+    inline bool AdditionalVersionWeightsHasBeenSet() const { return m_additionalVersionWeightsHasBeenSet; }
+
+    /**
+     * <p>The name of the second alias, and the percentage of traffic that's routed to
+     * it.</p>
+     */
     inline void SetAdditionalVersionWeights(const Aws::Map<Aws::String, double>& value) { m_additionalVersionWeightsHasBeenSet = true; m_additionalVersionWeights = value; }
 
     /**

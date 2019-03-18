@@ -54,6 +54,9 @@ namespace Model
     inline const Aws::String& GetDescription() const{ return m_description; }
 
     
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
+
+    
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     
@@ -74,6 +77,9 @@ namespace Model
 
     
     inline const Aws::String& GetURL() const{ return m_uRL; }
+
+    
+    inline bool URLHasBeenSet() const { return m_uRLHasBeenSet; }
 
     
     inline void SetURL(const Aws::String& value) { m_uRLHasBeenSet = true; m_uRL = value; }

@@ -61,6 +61,12 @@ namespace Model
      * <p>The AWS account number specified in the <code>AccountSettings</code>
      * container.</p>
      */
+    inline bool AwsAccountNumberHasBeenSet() const { return m_awsAccountNumberHasBeenSet; }
+
+    /**
+     * <p>The AWS account number specified in the <code>AccountSettings</code>
+     * container.</p>
+     */
     inline void SetAwsAccountNumber(const Aws::String& value) { m_awsAccountNumberHasBeenSet = true; m_awsAccountNumber = value; }
 
     /**
@@ -102,6 +108,11 @@ namespace Model
     /**
      * <p>Returns the unmetered devices you have purchased or want to purchase.</p>
      */
+    inline bool UnmeteredDevicesHasBeenSet() const { return m_unmeteredDevicesHasBeenSet; }
+
+    /**
+     * <p>Returns the unmetered devices you have purchased or want to purchase.</p>
+     */
     inline void SetUnmeteredDevices(const Aws::Map<DevicePlatform, int>& value) { m_unmeteredDevicesHasBeenSet = true; m_unmeteredDevices = value; }
 
     /**
@@ -135,6 +146,12 @@ namespace Model
      * purchase.</p>
      */
     inline const Aws::Map<DevicePlatform, int>& GetUnmeteredRemoteAccessDevices() const{ return m_unmeteredRemoteAccessDevices; }
+
+    /**
+     * <p>Returns the unmetered remote access devices you have purchased or want to
+     * purchase.</p>
+     */
+    inline bool UnmeteredRemoteAccessDevicesHasBeenSet() const { return m_unmeteredRemoteAccessDevicesHasBeenSet; }
 
     /**
      * <p>Returns the unmetered remote access devices you have purchased or want to
@@ -183,6 +200,12 @@ namespace Model
      * <p>The maximum number of minutes a test run will execute before it times
      * out.</p>
      */
+    inline bool MaxJobTimeoutMinutesHasBeenSet() const { return m_maxJobTimeoutMinutesHasBeenSet; }
+
+    /**
+     * <p>The maximum number of minutes a test run will execute before it times
+     * out.</p>
+     */
     inline void SetMaxJobTimeoutMinutes(int value) { m_maxJobTimeoutMinutesHasBeenSet = true; m_maxJobTimeoutMinutes = value; }
 
     /**
@@ -196,6 +219,11 @@ namespace Model
      * <p>Information about an AWS account's usage of free trial device minutes.</p>
      */
     inline const TrialMinutes& GetTrialMinutes() const{ return m_trialMinutes; }
+
+    /**
+     * <p>Information about an AWS account's usage of free trial device minutes.</p>
+     */
+    inline bool TrialMinutesHasBeenSet() const { return m_trialMinutesHasBeenSet; }
 
     /**
      * <p>Information about an AWS account's usage of free trial device minutes.</p>
@@ -225,6 +253,14 @@ namespace Model
      * <code>ListOfferings</code> command.</p>
      */
     inline const Aws::Map<Aws::String, int>& GetMaxSlots() const{ return m_maxSlots; }
+
+    /**
+     * <p>The maximum number of device slots that the AWS account can purchase. Each
+     * maximum is expressed as an <code>offering-id:number</code> pair, where the
+     * <code>offering-id</code> represents one of the IDs returned by the
+     * <code>ListOfferings</code> command.</p>
+     */
+    inline bool MaxSlotsHasBeenSet() const { return m_maxSlotsHasBeenSet; }
 
     /**
      * <p>The maximum number of device slots that the AWS account can purchase. Each
@@ -293,6 +329,12 @@ namespace Model
      * <p>The default number of minutes (at the account level) a test run will execute
      * before it times out. Default value is 60 minutes.</p>
      */
+    inline bool DefaultJobTimeoutMinutesHasBeenSet() const { return m_defaultJobTimeoutMinutesHasBeenSet; }
+
+    /**
+     * <p>The default number of minutes (at the account level) a test run will execute
+     * before it times out. Default value is 60 minutes.</p>
+     */
     inline void SetDefaultJobTimeoutMinutes(int value) { m_defaultJobTimeoutMinutesHasBeenSet = true; m_defaultJobTimeoutMinutes = value; }
 
     /**
@@ -310,6 +352,15 @@ namespace Model
      * you modify my app?</a> in the <i>AWS Device Farm FAQs</i>.</p>
      */
     inline bool GetSkipAppResign() const{ return m_skipAppResign; }
+
+    /**
+     * <p>When set to <code>true</code>, for private devices, Device Farm will not sign
+     * your app again. For public devices, Device Farm always signs your apps again and
+     * this parameter has no effect.</p> <p>For more information about how Device Farm
+     * re-signs your app(s), see <a href="https://aws.amazon.com/device-farm/faq/">Do
+     * you modify my app?</a> in the <i>AWS Device Farm FAQs</i>.</p>
+     */
+    inline bool SkipAppResignHasBeenSet() const { return m_skipAppResignHasBeenSet; }
 
     /**
      * <p>When set to <code>true</code>, for private devices, Device Farm will not sign

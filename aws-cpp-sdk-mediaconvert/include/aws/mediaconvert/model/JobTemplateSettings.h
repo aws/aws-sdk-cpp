@@ -66,6 +66,12 @@ namespace Model
      * When specified, this offset (in milliseconds) is added to the input Ad Avail PTS
      * time.
      */
+    inline bool AdAvailOffsetHasBeenSet() const { return m_adAvailOffsetHasBeenSet; }
+
+    /**
+     * When specified, this offset (in milliseconds) is added to the input Ad Avail PTS
+     * time.
+     */
     inline void SetAdAvailOffset(int value) { m_adAvailOffsetHasBeenSet = true; m_adAvailOffset = value; }
 
     /**
@@ -80,6 +86,12 @@ namespace Model
      * and audio muted during SCTE-35 triggered ad avails.
      */
     inline const AvailBlanking& GetAvailBlanking() const{ return m_availBlanking; }
+
+    /**
+     * Settings for ad avail blanking.  Video can be blanked or overlaid with an image,
+     * and audio muted during SCTE-35 triggered ad avails.
+     */
+    inline bool AvailBlankingHasBeenSet() const { return m_availBlankingHasBeenSet; }
 
     /**
      * Settings for ad avail blanking.  Video can be blanked or overlaid with an image,
@@ -114,6 +126,11 @@ namespace Model
     /**
      * Settings for Event Signaling And Messaging (ESAM).
      */
+    inline bool EsamHasBeenSet() const { return m_esamHasBeenSet; }
+
+    /**
+     * Settings for Event Signaling And Messaging (ESAM).
+     */
     inline void SetEsam(const EsamSettings& value) { m_esamHasBeenSet = true; m_esam = value; }
 
     /**
@@ -138,6 +155,13 @@ namespace Model
      * multiple inputs when referencing a job template.
      */
     inline const Aws::Vector<InputTemplate>& GetInputs() const{ return m_inputs; }
+
+    /**
+     * Use Inputs (inputs) to define the source file used in the transcode job. There
+     * can only be one input in a job template.  Using the API, you can include
+     * multiple inputs when referencing a job template.
+     */
+    inline bool InputsHasBeenSet() const { return m_inputsHasBeenSet; }
 
     /**
      * Use Inputs (inputs) to define the source file used in the transcode job. There
@@ -192,6 +216,12 @@ namespace Model
      * Overlay motion graphics on top of your video. The motion graphics that you
      * specify here appear on all outputs in all output groups.
      */
+    inline bool MotionImageInserterHasBeenSet() const { return m_motionImageInserterHasBeenSet; }
+
+    /**
+     * Overlay motion graphics on top of your video. The motion graphics that you
+     * specify here appear on all outputs in all output groups.
+     */
     inline void SetMotionImageInserter(const MotionImageInserter& value) { m_motionImageInserterHasBeenSet = true; m_motionImageInserter = value; }
 
     /**
@@ -215,6 +245,9 @@ namespace Model
 
     
     inline const NielsenConfiguration& GetNielsenConfiguration() const{ return m_nielsenConfiguration; }
+
+    
+    inline bool NielsenConfigurationHasBeenSet() const { return m_nielsenConfigurationHasBeenSet; }
 
     
     inline void SetNielsenConfiguration(const NielsenConfiguration& value) { m_nielsenConfigurationHasBeenSet = true; m_nielsenConfiguration = value; }
@@ -242,6 +275,20 @@ namespace Model
      * CmafGroupSettings
      */
     inline const Aws::Vector<OutputGroup>& GetOutputGroups() const{ return m_outputGroups; }
+
+    /**
+     * (OutputGroups) contains one group of settings for each set of outputs that share
+     * a common package type. All unpackaged files (MPEG-4, MPEG-2 TS, Quicktime, MXF,
+     * and no container) are grouped in a single output group as well. Required in
+     * (OutputGroups) is a group of settings that apply to the whole group. This
+     * required object depends on the value you set for (Type) under
+     * (OutputGroups)>(OutputGroupSettings). Type, settings object pairs are as
+     * follows. * FILE_GROUP_SETTINGS, FileGroupSettings * HLS_GROUP_SETTINGS,
+     * HlsGroupSettings * DASH_ISO_GROUP_SETTINGS, DashIsoGroupSettings *
+     * MS_SMOOTH_GROUP_SETTINGS, MsSmoothGroupSettings * CMAF_GROUP_SETTINGS,
+     * CmafGroupSettings
+     */
+    inline bool OutputGroupsHasBeenSet() const { return m_outputGroupsHasBeenSet; }
 
     /**
      * (OutputGroups) contains one group of settings for each set of outputs that share
@@ -336,6 +383,11 @@ namespace Model
     /**
      * Contains settings used to acquire and adjust timecode information from inputs.
      */
+    inline bool TimecodeConfigHasBeenSet() const { return m_timecodeConfigHasBeenSet; }
+
+    /**
+     * Contains settings used to acquire and adjust timecode information from inputs.
+     */
     inline void SetTimecodeConfig(const TimecodeConfig& value) { m_timecodeConfigHasBeenSet = true; m_timecodeConfig = value; }
 
     /**
@@ -356,6 +408,9 @@ namespace Model
 
     
     inline const TimedMetadataInsertion& GetTimedMetadataInsertion() const{ return m_timedMetadataInsertion; }
+
+    
+    inline bool TimedMetadataInsertionHasBeenSet() const { return m_timedMetadataInsertionHasBeenSet; }
 
     
     inline void SetTimedMetadataInsertion(const TimedMetadataInsertion& value) { m_timedMetadataInsertionHasBeenSet = true; m_timedMetadataInsertion = value; }

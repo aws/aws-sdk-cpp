@@ -54,6 +54,11 @@ namespace Model
     /**
      * <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
      */
+    inline bool RestApiIdHasBeenSet() const { return m_restApiIdHasBeenSet; }
+
+    /**
+     * <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
+     */
     inline void SetRestApiId(const Aws::String& value) { m_restApiIdHasBeenSet = true; m_restApiId = value; }
 
     /**
@@ -86,6 +91,11 @@ namespace Model
      * <p>[Required] The identifier of the <a>RequestValidator</a> to be deleted.</p>
      */
     inline const Aws::String& GetRequestValidatorId() const{ return m_requestValidatorId; }
+
+    /**
+     * <p>[Required] The identifier of the <a>RequestValidator</a> to be deleted.</p>
+     */
+    inline bool RequestValidatorIdHasBeenSet() const { return m_requestValidatorIdHasBeenSet; }
 
     /**
      * <p>[Required] The identifier of the <a>RequestValidator</a> to be deleted.</p>

@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The data path related to the message.</p>
      */
+    inline bool DataPathHasBeenSet() const { return m_dataPathHasBeenSet; }
+
+    /**
+     * <p>The data path related to the message.</p>
+     */
     inline void SetDataPath(const Aws::String& value) { m_dataPathHasBeenSet = true; m_dataPath = value; }
 
     /**
@@ -89,6 +94,11 @@ namespace Model
      * <p>A message describing the error or warning.</p>
      */
     inline const Aws::String& GetMessage() const{ return m_message; }
+
+    /**
+     * <p>A message describing the error or warning.</p>
+     */
+    inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
 
     /**
      * <p>A message describing the error or warning.</p>

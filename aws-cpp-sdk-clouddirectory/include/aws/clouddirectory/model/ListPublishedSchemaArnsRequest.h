@@ -52,6 +52,12 @@ namespace Model
      * <p>The response for <code>ListPublishedSchemaArns</code> when this parameter is
      * used will list all minor version ARNs for a major version.</p>
      */
+    inline bool SchemaArnHasBeenSet() const { return m_schemaArnHasBeenSet; }
+
+    /**
+     * <p>The response for <code>ListPublishedSchemaArns</code> when this parameter is
+     * used will list all minor version ARNs for a major version.</p>
+     */
     inline void SetSchemaArn(const Aws::String& value) { m_schemaArnHasBeenSet = true; m_schemaArn = value; }
 
     /**
@@ -93,6 +99,11 @@ namespace Model
     /**
      * <p>The pagination token.</p>
      */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
+
+    /**
+     * <p>The pagination token.</p>
+     */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
     /**
@@ -125,6 +136,11 @@ namespace Model
      * <p>The maximum number of results to retrieve.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
+
+    /**
+     * <p>The maximum number of results to retrieve.</p>
+     */
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
 
     /**
      * <p>The maximum number of results to retrieve.</p>

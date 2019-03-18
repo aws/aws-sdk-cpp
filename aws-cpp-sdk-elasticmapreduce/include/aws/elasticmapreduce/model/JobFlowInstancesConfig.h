@@ -64,6 +64,11 @@ namespace Model
     /**
      * <p>The EC2 instance type of the master node.</p>
      */
+    inline bool MasterInstanceTypeHasBeenSet() const { return m_masterInstanceTypeHasBeenSet; }
+
+    /**
+     * <p>The EC2 instance type of the master node.</p>
+     */
     inline void SetMasterInstanceType(const Aws::String& value) { m_masterInstanceTypeHasBeenSet = true; m_masterInstanceType = value; }
 
     /**
@@ -96,6 +101,11 @@ namespace Model
      * <p>The EC2 instance type of the core and task nodes.</p>
      */
     inline const Aws::String& GetSlaveInstanceType() const{ return m_slaveInstanceType; }
+
+    /**
+     * <p>The EC2 instance type of the core and task nodes.</p>
+     */
+    inline bool SlaveInstanceTypeHasBeenSet() const { return m_slaveInstanceTypeHasBeenSet; }
 
     /**
      * <p>The EC2 instance type of the core and task nodes.</p>
@@ -136,6 +146,11 @@ namespace Model
     /**
      * <p>The number of EC2 instances in the cluster.</p>
      */
+    inline bool InstanceCountHasBeenSet() const { return m_instanceCountHasBeenSet; }
+
+    /**
+     * <p>The number of EC2 instances in the cluster.</p>
+     */
     inline void SetInstanceCount(int value) { m_instanceCountHasBeenSet = true; m_instanceCount = value; }
 
     /**
@@ -148,6 +163,11 @@ namespace Model
      * <p>Configuration for the instance groups in a cluster.</p>
      */
     inline const Aws::Vector<InstanceGroupConfig>& GetInstanceGroups() const{ return m_instanceGroups; }
+
+    /**
+     * <p>Configuration for the instance groups in a cluster.</p>
+     */
+    inline bool InstanceGroupsHasBeenSet() const { return m_instanceGroupsHasBeenSet; }
 
     /**
      * <p>Configuration for the instance groups in a cluster.</p>
@@ -187,6 +207,14 @@ namespace Model
      * fleet configuration.</p>
      */
     inline const Aws::Vector<InstanceFleetConfig>& GetInstanceFleets() const{ return m_instanceFleets; }
+
+    /**
+     * <note> <p>The instance fleet configuration is available only in Amazon EMR
+     * versions 4.8.0 and later, excluding 5.0.x versions.</p> </note> <p>Describes the
+     * EC2 instances and instance configurations for clusters that use the instance
+     * fleet configuration.</p>
+     */
+    inline bool InstanceFleetsHasBeenSet() const { return m_instanceFleetsHasBeenSet; }
 
     /**
      * <note> <p>The instance fleet configuration is available only in Amazon EMR
@@ -247,6 +275,12 @@ namespace Model
      * <p>The name of the EC2 key pair that can be used to ssh to the master node as
      * the user called "hadoop."</p>
      */
+    inline bool Ec2KeyNameHasBeenSet() const { return m_ec2KeyNameHasBeenSet; }
+
+    /**
+     * <p>The name of the EC2 key pair that can be used to ssh to the master node as
+     * the user called "hadoop."</p>
+     */
     inline void SetEc2KeyName(const Aws::String& value) { m_ec2KeyNameHasBeenSet = true; m_ec2KeyName = value; }
 
     /**
@@ -288,6 +322,11 @@ namespace Model
     /**
      * <p>The Availability Zone in which the cluster runs.</p>
      */
+    inline bool PlacementHasBeenSet() const { return m_placementHasBeenSet; }
+
+    /**
+     * <p>The Availability Zone in which the cluster runs.</p>
+     */
     inline void SetPlacement(const PlacementType& value) { m_placementHasBeenSet = true; m_placement = value; }
 
     /**
@@ -316,6 +355,12 @@ namespace Model
      * <p>Specifies whether the cluster should remain available after completing all
      * steps.</p>
      */
+    inline bool KeepJobFlowAliveWhenNoStepsHasBeenSet() const { return m_keepJobFlowAliveWhenNoStepsHasBeenSet; }
+
+    /**
+     * <p>Specifies whether the cluster should remain available after completing all
+     * steps.</p>
+     */
     inline void SetKeepJobFlowAliveWhenNoSteps(bool value) { m_keepJobFlowAliveWhenNoStepsHasBeenSet = true; m_keepJobFlowAliveWhenNoSteps = value; }
 
     /**
@@ -331,6 +376,13 @@ namespace Model
      * job-flow error.</p>
      */
     inline bool GetTerminationProtected() const{ return m_terminationProtected; }
+
+    /**
+     * <p>Specifies whether to lock the cluster to prevent the Amazon EC2 instances
+     * from being terminated by API call, user intervention, or in the event of a
+     * job-flow error.</p>
+     */
+    inline bool TerminationProtectedHasBeenSet() const { return m_terminationProtectedHasBeenSet; }
 
     /**
      * <p>Specifies whether to lock the cluster to prevent the Amazon EC2 instances
@@ -356,6 +408,16 @@ namespace Model
      * the default version of Hadoop for that AMI version is used.</p>
      */
     inline const Aws::String& GetHadoopVersion() const{ return m_hadoopVersion; }
+
+    /**
+     * <p>Applies only to Amazon EMR release versions earlier than 4.0. The Hadoop
+     * version for the cluster. Valid inputs are "0.18" (deprecated), "0.20"
+     * (deprecated), "0.20.205" (deprecated), "1.0.3", "2.2.0", or "2.4.0". If you do
+     * not set this value, the default of 0.18 is used, unless the
+     * <code>AmiVersion</code> parameter is set in the RunJobFlow call, in which case
+     * the default version of Hadoop for that AMI version is used.</p>
+     */
+    inline bool HadoopVersionHasBeenSet() const { return m_hadoopVersionHasBeenSet; }
 
     /**
      * <p>Applies only to Amazon EMR release versions earlier than 4.0. The Hadoop
@@ -430,6 +492,19 @@ namespace Model
      * instance type for clusters launched in an Amazon VPC.</p>
      */
     inline const Aws::String& GetEc2SubnetId() const{ return m_ec2SubnetId; }
+
+    /**
+     * <p>Applies to clusters that use the uniform instance group configuration. To
+     * launch the cluster in Amazon Virtual Private Cloud (Amazon VPC), set this
+     * parameter to the identifier of the Amazon VPC subnet where you want the cluster
+     * to launch. If you do not specify this value, the cluster launches in the normal
+     * Amazon Web Services cloud, outside of an Amazon VPC, if the account launching
+     * the cluster supports EC2 Classic networks in the region where the cluster
+     * launches.</p> <p>Amazon VPC currently does not support cluster compute quadruple
+     * extra large (cc1.4xlarge) instances. Thus you cannot specify the cc1.4xlarge
+     * instance type for clusters launched in an Amazon VPC.</p>
+     */
+    inline bool Ec2SubnetIdHasBeenSet() const { return m_ec2SubnetIdHasBeenSet; }
 
     /**
      * <p>Applies to clusters that use the uniform instance group configuration. To
@@ -526,6 +601,15 @@ namespace Model
      * available only in Amazon EMR versions 4.8.0 and later, excluding 5.0.x
      * versions.</p> </note>
      */
+    inline bool Ec2SubnetIdsHasBeenSet() const { return m_ec2SubnetIdsHasBeenSet; }
+
+    /**
+     * <p>Applies to clusters that use the instance fleet configuration. When multiple
+     * EC2 subnet IDs are specified, Amazon EMR evaluates them and launches instances
+     * in the optimal subnet.</p> <note> <p>The instance fleet configuration is
+     * available only in Amazon EMR versions 4.8.0 and later, excluding 5.0.x
+     * versions.</p> </note>
+     */
     inline void SetEc2SubnetIds(const Aws::Vector<Aws::String>& value) { m_ec2SubnetIdsHasBeenSet = true; m_ec2SubnetIds = value; }
 
     /**
@@ -591,6 +675,11 @@ namespace Model
     /**
      * <p>The identifier of the Amazon EC2 security group for the master node.</p>
      */
+    inline bool EmrManagedMasterSecurityGroupHasBeenSet() const { return m_emrManagedMasterSecurityGroupHasBeenSet; }
+
+    /**
+     * <p>The identifier of the Amazon EC2 security group for the master node.</p>
+     */
     inline void SetEmrManagedMasterSecurityGroup(const Aws::String& value) { m_emrManagedMasterSecurityGroupHasBeenSet = true; m_emrManagedMasterSecurityGroup = value; }
 
     /**
@@ -624,6 +713,12 @@ namespace Model
      * nodes.</p>
      */
     inline const Aws::String& GetEmrManagedSlaveSecurityGroup() const{ return m_emrManagedSlaveSecurityGroup; }
+
+    /**
+     * <p>The identifier of the Amazon EC2 security group for the core and task
+     * nodes.</p>
+     */
+    inline bool EmrManagedSlaveSecurityGroupHasBeenSet() const { return m_emrManagedSlaveSecurityGroupHasBeenSet; }
 
     /**
      * <p>The identifier of the Amazon EC2 security group for the core and task
@@ -672,6 +767,12 @@ namespace Model
      * <p>The identifier of the Amazon EC2 security group for the Amazon EMR service to
      * access clusters in VPC private subnets.</p>
      */
+    inline bool ServiceAccessSecurityGroupHasBeenSet() const { return m_serviceAccessSecurityGroupHasBeenSet; }
+
+    /**
+     * <p>The identifier of the Amazon EC2 security group for the Amazon EMR service to
+     * access clusters in VPC private subnets.</p>
+     */
     inline void SetServiceAccessSecurityGroup(const Aws::String& value) { m_serviceAccessSecurityGroupHasBeenSet = true; m_serviceAccessSecurityGroup = value; }
 
     /**
@@ -709,6 +810,11 @@ namespace Model
      * <p>A list of additional Amazon EC2 security group IDs for the master node.</p>
      */
     inline const Aws::Vector<Aws::String>& GetAdditionalMasterSecurityGroups() const{ return m_additionalMasterSecurityGroups; }
+
+    /**
+     * <p>A list of additional Amazon EC2 security group IDs for the master node.</p>
+     */
+    inline bool AdditionalMasterSecurityGroupsHasBeenSet() const { return m_additionalMasterSecurityGroupsHasBeenSet; }
 
     /**
      * <p>A list of additional Amazon EC2 security group IDs for the master node.</p>
@@ -751,6 +857,12 @@ namespace Model
      * nodes.</p>
      */
     inline const Aws::Vector<Aws::String>& GetAdditionalSlaveSecurityGroups() const{ return m_additionalSlaveSecurityGroups; }
+
+    /**
+     * <p>A list of additional Amazon EC2 security group IDs for the core and task
+     * nodes.</p>
+     */
+    inline bool AdditionalSlaveSecurityGroupsHasBeenSet() const { return m_additionalSlaveSecurityGroupsHasBeenSet; }
 
     /**
      * <p>A list of additional Amazon EC2 security group IDs for the core and task

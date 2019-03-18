@@ -63,6 +63,9 @@ namespace Model
     inline const AacAudioDescriptionBroadcasterMix& GetAudioDescriptionBroadcasterMix() const{ return m_audioDescriptionBroadcasterMix; }
 
     
+    inline bool AudioDescriptionBroadcasterMixHasBeenSet() const { return m_audioDescriptionBroadcasterMixHasBeenSet; }
+
+    
     inline void SetAudioDescriptionBroadcasterMix(const AacAudioDescriptionBroadcasterMix& value) { m_audioDescriptionBroadcasterMixHasBeenSet = true; m_audioDescriptionBroadcasterMix = value; }
 
     
@@ -95,6 +98,17 @@ namespace Model
      * Profile (codecProfile), Bitrate control mode (codingMode), and Sample rate
      * (sampleRate). Default values depend on Bitrate control mode and Profile.
      */
+    inline bool BitrateHasBeenSet() const { return m_bitrateHasBeenSet; }
+
+    /**
+     * Average bitrate in bits/second. The set of valid values for this setting is:
+     * 6000, 8000, 10000, 12000, 14000, 16000, 20000, 24000, 28000, 32000, 40000,
+     * 48000, 56000, 64000, 80000, 96000, 112000, 128000, 160000, 192000, 224000,
+     * 256000, 288000, 320000, 384000, 448000, 512000, 576000, 640000, 768000, 896000,
+     * 1024000. The value you set is also constrained by the values you choose for
+     * Profile (codecProfile), Bitrate control mode (codingMode), and Sample rate
+     * (sampleRate). Default values depend on Bitrate control mode and Profile.
+     */
     inline void SetBitrate(int value) { m_bitrateHasBeenSet = true; m_bitrate = value; }
 
     /**
@@ -113,6 +127,9 @@ namespace Model
     inline const AacCodecProfile& GetCodecProfile() const{ return m_codecProfile; }
 
     
+    inline bool CodecProfileHasBeenSet() const { return m_codecProfileHasBeenSet; }
+
+    
     inline void SetCodecProfile(const AacCodecProfile& value) { m_codecProfileHasBeenSet = true; m_codecProfile = value; }
 
     
@@ -127,6 +144,9 @@ namespace Model
 
     
     inline const AacCodingMode& GetCodingMode() const{ return m_codingMode; }
+
+    
+    inline bool CodingModeHasBeenSet() const { return m_codingModeHasBeenSet; }
 
     
     inline void SetCodingMode(const AacCodingMode& value) { m_codingModeHasBeenSet = true; m_codingMode = value; }
@@ -145,6 +165,9 @@ namespace Model
     inline const AacRateControlMode& GetRateControlMode() const{ return m_rateControlMode; }
 
     
+    inline bool RateControlModeHasBeenSet() const { return m_rateControlModeHasBeenSet; }
+
+    
     inline void SetRateControlMode(const AacRateControlMode& value) { m_rateControlModeHasBeenSet = true; m_rateControlMode = value; }
 
     
@@ -159,6 +182,9 @@ namespace Model
 
     
     inline const AacRawFormat& GetRawFormat() const{ return m_rawFormat; }
+
+    
+    inline bool RawFormatHasBeenSet() const { return m_rawFormatHasBeenSet; }
 
     
     inline void SetRawFormat(const AacRawFormat& value) { m_rawFormatHasBeenSet = true; m_rawFormat = value; }
@@ -181,6 +207,11 @@ namespace Model
     /**
      * Sample rate in Hz. Valid values depend on rate control mode and profile.
      */
+    inline bool SampleRateHasBeenSet() const { return m_sampleRateHasBeenSet; }
+
+    /**
+     * Sample rate in Hz. Valid values depend on rate control mode and profile.
+     */
     inline void SetSampleRate(int value) { m_sampleRateHasBeenSet = true; m_sampleRate = value; }
 
     /**
@@ -191,6 +222,9 @@ namespace Model
 
     
     inline const AacSpecification& GetSpecification() const{ return m_specification; }
+
+    
+    inline bool SpecificationHasBeenSet() const { return m_specificationHasBeenSet; }
 
     
     inline void SetSpecification(const AacSpecification& value) { m_specificationHasBeenSet = true; m_specification = value; }
@@ -207,6 +241,9 @@ namespace Model
 
     
     inline const AacVbrQuality& GetVbrQuality() const{ return m_vbrQuality; }
+
+    
+    inline bool VbrQualityHasBeenSet() const { return m_vbrQualityHasBeenSet; }
 
     
     inline void SetVbrQuality(const AacVbrQuality& value) { m_vbrQualityHasBeenSet = true; m_vbrQuality = value; }

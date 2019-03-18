@@ -52,6 +52,11 @@ namespace Model
     /**
      * <p>The name of the key pair for which you are requesting information.</p>
      */
+    inline bool KeyPairNameHasBeenSet() const { return m_keyPairNameHasBeenSet; }
+
+    /**
+     * <p>The name of the key pair for which you are requesting information.</p>
+     */
     inline void SetKeyPairName(const Aws::String& value) { m_keyPairNameHasBeenSet = true; m_keyPairName = value; }
 
     /**

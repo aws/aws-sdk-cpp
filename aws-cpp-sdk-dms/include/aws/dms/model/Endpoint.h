@@ -24,6 +24,7 @@
 #include <aws/dms/model/MongoDbSettings.h>
 #include <aws/dms/model/KinesisSettings.h>
 #include <aws/dms/model/ElasticsearchSettings.h>
+#include <aws/dms/model/RedshiftSettings.h>
 #include <utility>
 
 namespace Aws
@@ -61,6 +62,13 @@ namespace Model
      * or contain two consecutive hyphens.</p>
      */
     inline const Aws::String& GetEndpointIdentifier() const{ return m_endpointIdentifier; }
+
+    /**
+     * <p>The database endpoint identifier. Identifiers must begin with a letter; must
+     * contain only ASCII letters, digits, and hyphens; and must not end with a hyphen
+     * or contain two consecutive hyphens.</p>
+     */
+    inline bool EndpointIdentifierHasBeenSet() const { return m_endpointIdentifierHasBeenSet; }
 
     /**
      * <p>The database endpoint identifier. Identifiers must begin with a letter; must
@@ -113,6 +121,11 @@ namespace Model
     /**
      * <p>The type of endpoint.</p>
      */
+    inline bool EndpointTypeHasBeenSet() const { return m_endpointTypeHasBeenSet; }
+
+    /**
+     * <p>The type of endpoint.</p>
+     */
     inline void SetEndpointType(const ReplicationEndpointTypeValue& value) { m_endpointTypeHasBeenSet = true; m_endpointType = value; }
 
     /**
@@ -137,6 +150,13 @@ namespace Model
      * s3, db2, azuredb, sybase, sybase, dynamodb, mongodb, and sqlserver.</p>
      */
     inline const Aws::String& GetEngineName() const{ return m_engineName; }
+
+    /**
+     * <p>The database engine name. Valid values, depending on the EndPointType,
+     * include mysql, oracle, postgres, mariadb, aurora, aurora-postgresql, redshift,
+     * s3, db2, azuredb, sybase, sybase, dynamodb, mongodb, and sqlserver.</p>
+     */
+    inline bool EngineNameHasBeenSet() const { return m_engineNameHasBeenSet; }
 
     /**
      * <p>The database engine name. Valid values, depending on the EndPointType,
@@ -193,6 +213,13 @@ namespace Model
      * <code>EngineName</code> parameter is "aurora," this value would be "Amazon
      * Aurora MySQL."</p>
      */
+    inline bool EngineDisplayNameHasBeenSet() const { return m_engineDisplayNameHasBeenSet; }
+
+    /**
+     * <p>The expanded name for the engine name. For example, if the
+     * <code>EngineName</code> parameter is "aurora," this value would be "Amazon
+     * Aurora MySQL."</p>
+     */
     inline void SetEngineDisplayName(const Aws::String& value) { m_engineDisplayNameHasBeenSet = true; m_engineDisplayName = value; }
 
     /**
@@ -239,6 +266,11 @@ namespace Model
     /**
      * <p>The user name used to connect to the endpoint.</p>
      */
+    inline bool UsernameHasBeenSet() const { return m_usernameHasBeenSet; }
+
+    /**
+     * <p>The user name used to connect to the endpoint.</p>
+     */
     inline void SetUsername(const Aws::String& value) { m_usernameHasBeenSet = true; m_username = value; }
 
     /**
@@ -271,6 +303,11 @@ namespace Model
      * <p>The name of the server at the endpoint.</p>
      */
     inline const Aws::String& GetServerName() const{ return m_serverName; }
+
+    /**
+     * <p>The name of the server at the endpoint.</p>
+     */
+    inline bool ServerNameHasBeenSet() const { return m_serverNameHasBeenSet; }
 
     /**
      * <p>The name of the server at the endpoint.</p>
@@ -311,6 +348,11 @@ namespace Model
     /**
      * <p>The port value used to access the endpoint.</p>
      */
+    inline bool PortHasBeenSet() const { return m_portHasBeenSet; }
+
+    /**
+     * <p>The port value used to access the endpoint.</p>
+     */
     inline void SetPort(int value) { m_portHasBeenSet = true; m_port = value; }
 
     /**
@@ -323,6 +365,11 @@ namespace Model
      * <p>The name of the database at the endpoint.</p>
      */
     inline const Aws::String& GetDatabaseName() const{ return m_databaseName; }
+
+    /**
+     * <p>The name of the database at the endpoint.</p>
+     */
+    inline bool DatabaseNameHasBeenSet() const { return m_databaseNameHasBeenSet; }
 
     /**
      * <p>The name of the database at the endpoint.</p>
@@ -363,6 +410,11 @@ namespace Model
     /**
      * <p>Additional connection attributes used to connect to the endpoint.</p>
      */
+    inline bool ExtraConnectionAttributesHasBeenSet() const { return m_extraConnectionAttributesHasBeenSet; }
+
+    /**
+     * <p>Additional connection attributes used to connect to the endpoint.</p>
+     */
     inline void SetExtraConnectionAttributes(const Aws::String& value) { m_extraConnectionAttributesHasBeenSet = true; m_extraConnectionAttributes = value; }
 
     /**
@@ -395,6 +447,11 @@ namespace Model
      * <p>The status of the endpoint.</p>
      */
     inline const Aws::String& GetStatus() const{ return m_status; }
+
+    /**
+     * <p>The status of the endpoint.</p>
+     */
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
     /**
      * <p>The status of the endpoint.</p>
@@ -435,6 +492,15 @@ namespace Model
      * default encryption key for each AWS Region.</p>
      */
     inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
+
+    /**
+     * <p>The AWS KMS key identifier that is used to encrypt the content on the
+     * replication instance. If you don't specify a value for the <code>KmsKeyId</code>
+     * parameter, then AWS DMS uses your default encryption key. AWS KMS creates the
+     * default encryption key for your AWS account. Your AWS account has a different
+     * default encryption key for each AWS Region.</p>
+     */
+    inline bool KmsKeyIdHasBeenSet() const { return m_kmsKeyIdHasBeenSet; }
 
     /**
      * <p>The AWS KMS key identifier that is used to encrypt the content on the
@@ -501,6 +567,12 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) string that uniquely identifies the
      * endpoint.</p>
      */
+    inline bool EndpointArnHasBeenSet() const { return m_endpointArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) string that uniquely identifies the
+     * endpoint.</p>
+     */
     inline void SetEndpointArn(const Aws::String& value) { m_endpointArnHasBeenSet = true; m_endpointArn = value; }
 
     /**
@@ -538,6 +610,11 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) used for SSL connection to the endpoint.</p>
      */
     inline const Aws::String& GetCertificateArn() const{ return m_certificateArn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) used for SSL connection to the endpoint.</p>
+     */
+    inline bool CertificateArnHasBeenSet() const { return m_certificateArnHasBeenSet; }
 
     /**
      * <p>The Amazon Resource Name (ARN) used for SSL connection to the endpoint.</p>
@@ -582,6 +659,13 @@ namespace Model
      * four values: none, require, verify-ca, verify-full. </p> <p>The default value is
      * none.</p>
      */
+    inline bool SslModeHasBeenSet() const { return m_sslModeHasBeenSet; }
+
+    /**
+     * <p>The SSL mode used to connect to the endpoint.</p> <p>SSL mode can be one of
+     * four values: none, require, verify-ca, verify-full. </p> <p>The default value is
+     * none.</p>
+     */
     inline void SetSslMode(const DmsSslModeValue& value) { m_sslModeHasBeenSet = true; m_sslMode = value; }
 
     /**
@@ -610,6 +694,11 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) used by the service access IAM role.</p>
      */
     inline const Aws::String& GetServiceAccessRoleArn() const{ return m_serviceAccessRoleArn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) used by the service access IAM role.</p>
+     */
+    inline bool ServiceAccessRoleArnHasBeenSet() const { return m_serviceAccessRoleArnHasBeenSet; }
 
     /**
      * <p>The Amazon Resource Name (ARN) used by the service access IAM role.</p>
@@ -650,6 +739,11 @@ namespace Model
     /**
      * <p>The external table definition.</p>
      */
+    inline bool ExternalTableDefinitionHasBeenSet() const { return m_externalTableDefinitionHasBeenSet; }
+
+    /**
+     * <p>The external table definition.</p>
+     */
     inline void SetExternalTableDefinition(const Aws::String& value) { m_externalTableDefinitionHasBeenSet = true; m_externalTableDefinition = value; }
 
     /**
@@ -684,6 +778,13 @@ namespace Model
      * create the endpoint with a cross-account. </p>
      */
     inline const Aws::String& GetExternalId() const{ return m_externalId; }
+
+    /**
+     * <p> Value returned by a call to CreateEndpoint that can be used for
+     * cross-account validation. Use it on a subsequent call to CreateEndpoint to
+     * create the endpoint with a cross-account. </p>
+     */
+    inline bool ExternalIdHasBeenSet() const { return m_externalIdHasBeenSet; }
 
     /**
      * <p> Value returned by a call to CreateEndpoint that can be used for
@@ -738,6 +839,12 @@ namespace Model
      * <p>The settings for the target DynamoDB database. For more information, see the
      * <code>DynamoDBSettings</code> structure.</p>
      */
+    inline bool DynamoDbSettingsHasBeenSet() const { return m_dynamoDbSettingsHasBeenSet; }
+
+    /**
+     * <p>The settings for the target DynamoDB database. For more information, see the
+     * <code>DynamoDBSettings</code> structure.</p>
+     */
     inline void SetDynamoDbSettings(const DynamoDbSettings& value) { m_dynamoDbSettingsHasBeenSet = true; m_dynamoDbSettings = value; }
 
     /**
@@ -764,6 +871,12 @@ namespace Model
      * <code>S3Settings</code> structure.</p>
      */
     inline const S3Settings& GetS3Settings() const{ return m_s3Settings; }
+
+    /**
+     * <p>The settings for the S3 target endpoint. For more information, see the
+     * <code>S3Settings</code> structure.</p>
+     */
+    inline bool S3SettingsHasBeenSet() const { return m_s3SettingsHasBeenSet; }
 
     /**
      * <p>The settings for the S3 target endpoint. For more information, see the
@@ -798,7 +911,7 @@ namespace Model
      * the S3 bucket to use.</p> </li> <li> <p> <code>compressionType</code> - An
      * optional parameter to use GZIP to compress the target files. To use GZIP, set
      * this value to <code>NONE</code> (the default). To keep the files uncompressed,
-     * don't use this value. </p> </li> </ul> <p>Shorthand syntax for these attributes
+     * don't use this value.</p> </li> </ul> <p>Shorthand syntax for these attributes
      * is as follows:
      * <code>ServiceAccessRoleArn=string,BucketName=string,CompressionType=string</code>
      * </p> <p>JSON syntax for these attributes is as follows: <code>{
@@ -815,7 +928,24 @@ namespace Model
      * the S3 bucket to use.</p> </li> <li> <p> <code>compressionType</code> - An
      * optional parameter to use GZIP to compress the target files. To use GZIP, set
      * this value to <code>NONE</code> (the default). To keep the files uncompressed,
-     * don't use this value. </p> </li> </ul> <p>Shorthand syntax for these attributes
+     * don't use this value.</p> </li> </ul> <p>Shorthand syntax for these attributes
+     * is as follows:
+     * <code>ServiceAccessRoleArn=string,BucketName=string,CompressionType=string</code>
+     * </p> <p>JSON syntax for these attributes is as follows: <code>{
+     * "ServiceAccessRoleArn": "string", "BucketName": "string", "CompressionType":
+     * "none"|"gzip" } </code> </p>
+     */
+    inline bool DmsTransferSettingsHasBeenSet() const { return m_dmsTransferSettingsHasBeenSet; }
+
+    /**
+     * <p>The settings in JSON format for the DMS transfer type of source endpoint.
+     * </p> <p>Possible attributes include the following:</p> <ul> <li> <p>
+     * <code>serviceAccessRoleArn</code> - The IAM role that has permission to access
+     * the Amazon S3 bucket.</p> </li> <li> <p> <code>bucketName</code> - The name of
+     * the S3 bucket to use.</p> </li> <li> <p> <code>compressionType</code> - An
+     * optional parameter to use GZIP to compress the target files. To use GZIP, set
+     * this value to <code>NONE</code> (the default). To keep the files uncompressed,
+     * don't use this value.</p> </li> </ul> <p>Shorthand syntax for these attributes
      * is as follows:
      * <code>ServiceAccessRoleArn=string,BucketName=string,CompressionType=string</code>
      * </p> <p>JSON syntax for these attributes is as follows: <code>{
@@ -832,7 +962,7 @@ namespace Model
      * the S3 bucket to use.</p> </li> <li> <p> <code>compressionType</code> - An
      * optional parameter to use GZIP to compress the target files. To use GZIP, set
      * this value to <code>NONE</code> (the default). To keep the files uncompressed,
-     * don't use this value. </p> </li> </ul> <p>Shorthand syntax for these attributes
+     * don't use this value.</p> </li> </ul> <p>Shorthand syntax for these attributes
      * is as follows:
      * <code>ServiceAccessRoleArn=string,BucketName=string,CompressionType=string</code>
      * </p> <p>JSON syntax for these attributes is as follows: <code>{
@@ -849,7 +979,7 @@ namespace Model
      * the S3 bucket to use.</p> </li> <li> <p> <code>compressionType</code> - An
      * optional parameter to use GZIP to compress the target files. To use GZIP, set
      * this value to <code>NONE</code> (the default). To keep the files uncompressed,
-     * don't use this value. </p> </li> </ul> <p>Shorthand syntax for these attributes
+     * don't use this value.</p> </li> </ul> <p>Shorthand syntax for these attributes
      * is as follows:
      * <code>ServiceAccessRoleArn=string,BucketName=string,CompressionType=string</code>
      * </p> <p>JSON syntax for these attributes is as follows: <code>{
@@ -866,7 +996,7 @@ namespace Model
      * the S3 bucket to use.</p> </li> <li> <p> <code>compressionType</code> - An
      * optional parameter to use GZIP to compress the target files. To use GZIP, set
      * this value to <code>NONE</code> (the default). To keep the files uncompressed,
-     * don't use this value. </p> </li> </ul> <p>Shorthand syntax for these attributes
+     * don't use this value.</p> </li> </ul> <p>Shorthand syntax for these attributes
      * is as follows:
      * <code>ServiceAccessRoleArn=string,BucketName=string,CompressionType=string</code>
      * </p> <p>JSON syntax for these attributes is as follows: <code>{
@@ -881,6 +1011,12 @@ namespace Model
      * <code>MongoDbSettings</code> structure.</p>
      */
     inline const MongoDbSettings& GetMongoDbSettings() const{ return m_mongoDbSettings; }
+
+    /**
+     * <p>The settings for the MongoDB source endpoint. For more information, see the
+     * <code>MongoDbSettings</code> structure.</p>
+     */
+    inline bool MongoDbSettingsHasBeenSet() const { return m_mongoDbSettingsHasBeenSet; }
 
     /**
      * <p>The settings for the MongoDB source endpoint. For more information, see the
@@ -917,6 +1053,12 @@ namespace Model
      * <p>The settings for the Amazon Kinesis source endpoint. For more information,
      * see the <code>KinesisSettings</code> structure.</p>
      */
+    inline bool KinesisSettingsHasBeenSet() const { return m_kinesisSettingsHasBeenSet; }
+
+    /**
+     * <p>The settings for the Amazon Kinesis source endpoint. For more information,
+     * see the <code>KinesisSettings</code> structure.</p>
+     */
     inline void SetKinesisSettings(const KinesisSettings& value) { m_kinesisSettingsHasBeenSet = true; m_kinesisSettings = value; }
 
     /**
@@ -948,6 +1090,12 @@ namespace Model
      * <p>The settings for the Elasticsearch source endpoint. For more information, see
      * the <code>ElasticsearchSettings</code> structure.</p>
      */
+    inline bool ElasticsearchSettingsHasBeenSet() const { return m_elasticsearchSettingsHasBeenSet; }
+
+    /**
+     * <p>The settings for the Elasticsearch source endpoint. For more information, see
+     * the <code>ElasticsearchSettings</code> structure.</p>
+     */
     inline void SetElasticsearchSettings(const ElasticsearchSettings& value) { m_elasticsearchSettingsHasBeenSet = true; m_elasticsearchSettings = value; }
 
     /**
@@ -967,6 +1115,37 @@ namespace Model
      * the <code>ElasticsearchSettings</code> structure.</p>
      */
     inline Endpoint& WithElasticsearchSettings(ElasticsearchSettings&& value) { SetElasticsearchSettings(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Settings for the Amazon Redshift endpoint</p>
+     */
+    inline const RedshiftSettings& GetRedshiftSettings() const{ return m_redshiftSettings; }
+
+    /**
+     * <p>Settings for the Amazon Redshift endpoint</p>
+     */
+    inline bool RedshiftSettingsHasBeenSet() const { return m_redshiftSettingsHasBeenSet; }
+
+    /**
+     * <p>Settings for the Amazon Redshift endpoint</p>
+     */
+    inline void SetRedshiftSettings(const RedshiftSettings& value) { m_redshiftSettingsHasBeenSet = true; m_redshiftSettings = value; }
+
+    /**
+     * <p>Settings for the Amazon Redshift endpoint</p>
+     */
+    inline void SetRedshiftSettings(RedshiftSettings&& value) { m_redshiftSettingsHasBeenSet = true; m_redshiftSettings = std::move(value); }
+
+    /**
+     * <p>Settings for the Amazon Redshift endpoint</p>
+     */
+    inline Endpoint& WithRedshiftSettings(const RedshiftSettings& value) { SetRedshiftSettings(value); return *this;}
+
+    /**
+     * <p>Settings for the Amazon Redshift endpoint</p>
+     */
+    inline Endpoint& WithRedshiftSettings(RedshiftSettings&& value) { SetRedshiftSettings(std::move(value)); return *this;}
 
   private:
 
@@ -1038,6 +1217,9 @@ namespace Model
 
     ElasticsearchSettings m_elasticsearchSettings;
     bool m_elasticsearchSettingsHasBeenSet;
+
+    RedshiftSettings m_redshiftSettings;
+    bool m_redshiftSettingsHasBeenSet;
   };
 
 } // namespace Model

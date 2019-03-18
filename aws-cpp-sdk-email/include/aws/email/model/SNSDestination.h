@@ -72,6 +72,16 @@ namespace Model
      * href="http://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html">Amazon SNS
      * Developer Guide</a>.</p>
      */
+    inline bool TopicARNHasBeenSet() const { return m_topicARNHasBeenSet; }
+
+    /**
+     * <p>The ARN of the Amazon SNS topic that email sending events will be published
+     * to. An example of an Amazon SNS topic ARN is
+     * <code>arn:aws:sns:us-west-2:123456789012:MyTopic</code>. For more information
+     * about Amazon SNS topics, see the <a
+     * href="http://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html">Amazon SNS
+     * Developer Guide</a>.</p>
+     */
     inline void SetTopicARN(const Aws::String& value) { m_topicARNHasBeenSet = true; m_topicARN = value; }
 
     /**

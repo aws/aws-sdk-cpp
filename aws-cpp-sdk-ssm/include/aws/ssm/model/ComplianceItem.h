@@ -65,6 +65,13 @@ namespace Model
      * association), Patch, or Custom:<code>string</code> are all valid compliance
      * types.</p>
      */
+    inline bool ComplianceTypeHasBeenSet() const { return m_complianceTypeHasBeenSet; }
+
+    /**
+     * <p>The compliance type. For example, Association (for a State Manager
+     * association), Patch, or Custom:<code>string</code> are all valid compliance
+     * types.</p>
+     */
     inline void SetComplianceType(const Aws::String& value) { m_complianceTypeHasBeenSet = true; m_complianceType = value; }
 
     /**
@@ -113,6 +120,12 @@ namespace Model
      * <p>The type of resource. <code>ManagedInstance</code> is currently the only
      * supported resource type.</p>
      */
+    inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
+
+    /**
+     * <p>The type of resource. <code>ManagedInstance</code> is currently the only
+     * supported resource type.</p>
+     */
     inline void SetResourceType(const Aws::String& value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
 
     /**
@@ -154,6 +167,11 @@ namespace Model
     /**
      * <p>An ID for the resource. For a managed instance, this is the instance ID.</p>
      */
+    inline bool ResourceIdHasBeenSet() const { return m_resourceIdHasBeenSet; }
+
+    /**
+     * <p>An ID for the resource. For a managed instance, this is the instance ID.</p>
+     */
     inline void SetResourceId(const Aws::String& value) { m_resourceIdHasBeenSet = true; m_resourceId = value; }
 
     /**
@@ -188,6 +206,13 @@ namespace Model
      * KB4010320.</p>
      */
     inline const Aws::String& GetId() const{ return m_id; }
+
+    /**
+     * <p>An ID for the compliance item. For example, if the compliance item is a
+     * Windows patch, the ID could be the number of the KB article; for example:
+     * KB4010320.</p>
+     */
+    inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
 
     /**
      * <p>An ID for the compliance item. For example, if the compliance item is a
@@ -244,6 +269,13 @@ namespace Model
      * Windows patch, the title could be the title of the KB article for the patch; for
      * example: Security Update for Active Directory Federation Services.</p>
      */
+    inline bool TitleHasBeenSet() const { return m_titleHasBeenSet; }
+
+    /**
+     * <p>A title for the compliance item. For example, if the compliance item is a
+     * Windows patch, the title could be the title of the KB article for the patch; for
+     * example: Security Update for Active Directory Federation Services.</p>
+     */
     inline void SetTitle(const Aws::String& value) { m_titleHasBeenSet = true; m_title = value; }
 
     /**
@@ -292,6 +324,12 @@ namespace Model
      * <p>The status of the compliance item. An item is either COMPLIANT or
      * NON_COMPLIANT.</p>
      */
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
+
+    /**
+     * <p>The status of the compliance item. An item is either COMPLIANT or
+     * NON_COMPLIANT.</p>
+     */
     inline void SetStatus(const ComplianceStatus& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
@@ -318,6 +356,12 @@ namespace Model
      * Critical, High, Medium, Low, Informational, Unspecified.</p>
      */
     inline const ComplianceSeverity& GetSeverity() const{ return m_severity; }
+
+    /**
+     * <p>The severity of the compliance status. Severity can be one of the following:
+     * Critical, High, Medium, Low, Informational, Unspecified.</p>
+     */
+    inline bool SeverityHasBeenSet() const { return m_severityHasBeenSet; }
 
     /**
      * <p>The severity of the compliance status. Severity can be one of the following:
@@ -354,6 +398,12 @@ namespace Model
      * <p>A summary for the compliance item. The summary includes an execution ID, the
      * execution type (for example, command), and the execution time.</p>
      */
+    inline bool ExecutionSummaryHasBeenSet() const { return m_executionSummaryHasBeenSet; }
+
+    /**
+     * <p>A summary for the compliance item. The summary includes an execution ID, the
+     * execution type (for example, command), and the execution time.</p>
+     */
     inline void SetExecutionSummary(const ComplianceExecutionSummary& value) { m_executionSummaryHasBeenSet = true; m_executionSummary = value; }
 
     /**
@@ -379,6 +429,11 @@ namespace Model
      * <p>A "Key": "Value" tag combination for the compliance item.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetDetails() const{ return m_details; }
+
+    /**
+     * <p>A "Key": "Value" tag combination for the compliance item.</p>
+     */
+    inline bool DetailsHasBeenSet() const { return m_detailsHasBeenSet; }
 
     /**
      * <p>A "Key": "Value" tag combination for the compliance item.</p>

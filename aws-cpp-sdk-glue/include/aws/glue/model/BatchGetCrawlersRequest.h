@@ -55,6 +55,12 @@ namespace Model
      * <p>A list of crawler names, which may be the names returned from the
      * <code>ListCrawlers</code> operation.</p>
      */
+    inline bool CrawlerNamesHasBeenSet() const { return m_crawlerNamesHasBeenSet; }
+
+    /**
+     * <p>A list of crawler names, which may be the names returned from the
+     * <code>ListCrawlers</code> operation.</p>
+     */
     inline void SetCrawlerNames(const Aws::Vector<Aws::String>& value) { m_crawlerNamesHasBeenSet = true; m_crawlerNames = value; }
 
     /**

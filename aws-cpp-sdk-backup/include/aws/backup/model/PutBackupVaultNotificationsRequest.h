@@ -58,6 +58,14 @@ namespace Model
      * AWS Region where they are created. They consist of lowercase letters, numbers,
      * and hyphens.</p>
      */
+    inline bool BackupVaultNameHasBeenSet() const { return m_backupVaultNameHasBeenSet; }
+
+    /**
+     * <p>The name of a logical container where backups are stored. Backup vaults are
+     * identified by names that are unique to the account used to create them and the
+     * AWS Region where they are created. They consist of lowercase letters, numbers,
+     * and hyphens.</p>
+     */
     inline void SetBackupVaultName(const Aws::String& value) { m_backupVaultNameHasBeenSet = true; m_backupVaultName = value; }
 
     /**
@@ -113,6 +121,13 @@ namespace Model
      * events; for example,
      * <code>arn:aws:sns:us-west-2:111122223333:MyVaultTopic</code>.</p>
      */
+    inline bool SNSTopicArnHasBeenSet() const { return m_sNSTopicArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) that specifies the topic for a backup vault’s
+     * events; for example,
+     * <code>arn:aws:sns:us-west-2:111122223333:MyVaultTopic</code>.</p>
+     */
     inline void SetSNSTopicArn(const Aws::String& value) { m_sNSTopicArnHasBeenSet = true; m_sNSTopicArn = value; }
 
     /**
@@ -156,6 +171,12 @@ namespace Model
      * the backup vault.</p>
      */
     inline const Aws::Vector<BackupVaultEvent>& GetBackupVaultEvents() const{ return m_backupVaultEvents; }
+
+    /**
+     * <p>An array of events that indicate the status of jobs to back up resources to
+     * the backup vault.</p>
+     */
+    inline bool BackupVaultEventsHasBeenSet() const { return m_backupVaultEventsHasBeenSet; }
 
     /**
      * <p>An array of events that indicate the status of jobs to back up resources to

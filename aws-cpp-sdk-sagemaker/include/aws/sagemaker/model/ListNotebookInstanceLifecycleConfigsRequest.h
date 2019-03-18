@@ -59,6 +59,13 @@ namespace Model
      * was truncated, the response includes a <code>NextToken</code>. To get the next
      * set of lifecycle configurations, use the token in the next request.</p>
      */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
+
+    /**
+     * <p>If the result of a <code>ListNotebookInstanceLifecycleConfigs</code> request
+     * was truncated, the response includes a <code>NextToken</code>. To get the next
+     * set of lifecycle configurations, use the token in the next request.</p>
+     */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
     /**
@@ -105,6 +112,11 @@ namespace Model
     /**
      * <p>The maximum number of lifecycle configurations to return in the response.</p>
      */
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
+
+    /**
+     * <p>The maximum number of lifecycle configurations to return in the response.</p>
+     */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
@@ -117,6 +129,11 @@ namespace Model
      * <p>Sorts the list of results. The default is <code>CreationTime</code>.</p>
      */
     inline const NotebookInstanceLifecycleConfigSortKey& GetSortBy() const{ return m_sortBy; }
+
+    /**
+     * <p>Sorts the list of results. The default is <code>CreationTime</code>.</p>
+     */
+    inline bool SortByHasBeenSet() const { return m_sortByHasBeenSet; }
 
     /**
      * <p>Sorts the list of results. The default is <code>CreationTime</code>.</p>
@@ -147,6 +164,11 @@ namespace Model
     /**
      * <p>The sort order for results.</p>
      */
+    inline bool SortOrderHasBeenSet() const { return m_sortOrderHasBeenSet; }
+
+    /**
+     * <p>The sort order for results.</p>
+     */
     inline void SetSortOrder(const NotebookInstanceLifecycleConfigSortOrder& value) { m_sortOrderHasBeenSet = true; m_sortOrder = value; }
 
     /**
@@ -170,6 +192,12 @@ namespace Model
      * lifecycle configurations whose name contains the specified string.</p>
      */
     inline const Aws::String& GetNameContains() const{ return m_nameContains; }
+
+    /**
+     * <p>A string in the lifecycle configuration name. This filter returns only
+     * lifecycle configurations whose name contains the specified string.</p>
+     */
+    inline bool NameContainsHasBeenSet() const { return m_nameContainsHasBeenSet; }
 
     /**
      * <p>A string in the lifecycle configuration name. This filter returns only
@@ -218,6 +246,12 @@ namespace Model
      * <p>A filter that returns only lifecycle configurations that were created before
      * the specified time (timestamp).</p>
      */
+    inline bool CreationTimeBeforeHasBeenSet() const { return m_creationTimeBeforeHasBeenSet; }
+
+    /**
+     * <p>A filter that returns only lifecycle configurations that were created before
+     * the specified time (timestamp).</p>
+     */
     inline void SetCreationTimeBefore(const Aws::Utils::DateTime& value) { m_creationTimeBeforeHasBeenSet = true; m_creationTimeBefore = value; }
 
     /**
@@ -244,6 +278,12 @@ namespace Model
      * the specified time (timestamp).</p>
      */
     inline const Aws::Utils::DateTime& GetCreationTimeAfter() const{ return m_creationTimeAfter; }
+
+    /**
+     * <p>A filter that returns only lifecycle configurations that were created after
+     * the specified time (timestamp).</p>
+     */
+    inline bool CreationTimeAfterHasBeenSet() const { return m_creationTimeAfterHasBeenSet; }
 
     /**
      * <p>A filter that returns only lifecycle configurations that were created after
@@ -280,6 +320,12 @@ namespace Model
      * <p>A filter that returns only lifecycle configurations that were modified before
      * the specified time (timestamp).</p>
      */
+    inline bool LastModifiedTimeBeforeHasBeenSet() const { return m_lastModifiedTimeBeforeHasBeenSet; }
+
+    /**
+     * <p>A filter that returns only lifecycle configurations that were modified before
+     * the specified time (timestamp).</p>
+     */
     inline void SetLastModifiedTimeBefore(const Aws::Utils::DateTime& value) { m_lastModifiedTimeBeforeHasBeenSet = true; m_lastModifiedTimeBefore = value; }
 
     /**
@@ -306,6 +352,12 @@ namespace Model
      * the specified time (timestamp).</p>
      */
     inline const Aws::Utils::DateTime& GetLastModifiedTimeAfter() const{ return m_lastModifiedTimeAfter; }
+
+    /**
+     * <p>A filter that returns only lifecycle configurations that were modified after
+     * the specified time (timestamp).</p>
+     */
+    inline bool LastModifiedTimeAfterHasBeenSet() const { return m_lastModifiedTimeAfterHasBeenSet; }
 
     /**
      * <p>A filter that returns only lifecycle configurations that were modified after

@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p>Indicates whether connection logging is enabled.</p>
      */
+    inline bool EnabledHasBeenSet() const { return m_enabledHasBeenSet; }
+
+    /**
+     * <p>Indicates whether connection logging is enabled.</p>
+     */
     inline void SetEnabled(bool value) { m_enabledHasBeenSet = true; m_enabled = value; }
 
     /**
@@ -70,6 +75,11 @@ namespace Model
      * <p>The name of the CloudWatch Logs log group.</p>
      */
     inline const Aws::String& GetCloudwatchLogGroup() const{ return m_cloudwatchLogGroup; }
+
+    /**
+     * <p>The name of the CloudWatch Logs log group.</p>
+     */
+    inline bool CloudwatchLogGroupHasBeenSet() const { return m_cloudwatchLogGroupHasBeenSet; }
 
     /**
      * <p>The name of the CloudWatch Logs log group.</p>
@@ -107,6 +117,12 @@ namespace Model
      * published.</p>
      */
     inline const Aws::String& GetCloudwatchLogStream() const{ return m_cloudwatchLogStream; }
+
+    /**
+     * <p>The name of the CloudWatch Logs log stream to which the connection data is
+     * published.</p>
+     */
+    inline bool CloudwatchLogStreamHasBeenSet() const { return m_cloudwatchLogStreamHasBeenSet; }
 
     /**
      * <p>The name of the CloudWatch Logs log stream to which the connection data is

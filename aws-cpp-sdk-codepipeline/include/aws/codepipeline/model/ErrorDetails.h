@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The system ID or error number code of the error.</p>
      */
+    inline bool CodeHasBeenSet() const { return m_codeHasBeenSet; }
+
+    /**
+     * <p>The system ID or error number code of the error.</p>
+     */
     inline void SetCode(const Aws::String& value) { m_codeHasBeenSet = true; m_code = value; }
 
     /**
@@ -88,6 +93,11 @@ namespace Model
      * <p>The text of the error message.</p>
      */
     inline const Aws::String& GetMessage() const{ return m_message; }
+
+    /**
+     * <p>The text of the error message.</p>
+     */
+    inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
 
     /**
      * <p>The text of the error message.</p>

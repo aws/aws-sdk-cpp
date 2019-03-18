@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The identifier of the directory of which to take a snapshot.</p>
      */
+    inline bool DirectoryIdHasBeenSet() const { return m_directoryIdHasBeenSet; }
+
+    /**
+     * <p>The identifier of the directory of which to take a snapshot.</p>
+     */
     inline void SetDirectoryId(const Aws::String& value) { m_directoryIdHasBeenSet = true; m_directoryId = value; }
 
     /**
@@ -88,6 +93,11 @@ namespace Model
      * <p>The descriptive name to apply to the snapshot.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
+
+    /**
+     * <p>The descriptive name to apply to the snapshot.</p>
+     */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
      * <p>The descriptive name to apply to the snapshot.</p>

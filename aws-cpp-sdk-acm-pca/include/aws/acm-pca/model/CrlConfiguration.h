@@ -98,6 +98,14 @@ namespace Model
      * when you call the <a>CreateCertificateAuthority</a> operation or for an existing
      * CA when you call the <a>UpdateCertificateAuthority</a> operation. </p>
      */
+    inline bool EnabledHasBeenSet() const { return m_enabledHasBeenSet; }
+
+    /**
+     * <p>Boolean value that specifies whether certificate revocation lists (CRLs) are
+     * enabled. You can use this value to enable certificate revocation for a new CA
+     * when you call the <a>CreateCertificateAuthority</a> operation or for an existing
+     * CA when you call the <a>UpdateCertificateAuthority</a> operation. </p>
+     */
     inline void SetEnabled(bool value) { m_enabledHasBeenSet = true; m_enabled = value; }
 
     /**
@@ -117,6 +125,11 @@ namespace Model
     /**
      * <p>Number of days until a certificate expires.</p>
      */
+    inline bool ExpirationInDaysHasBeenSet() const { return m_expirationInDaysHasBeenSet; }
+
+    /**
+     * <p>Number of days until a certificate expires.</p>
+     */
     inline void SetExpirationInDays(int value) { m_expirationInDaysHasBeenSet = true; m_expirationInDays = value; }
 
     /**
@@ -131,6 +144,13 @@ namespace Model
      * if you don't want the name of your S3 bucket to be public.</p>
      */
     inline const Aws::String& GetCustomCname() const{ return m_customCname; }
+
+    /**
+     * <p>Name inserted into the certificate <b>CRL Distribution Points</b> extension
+     * that enables the use of an alias for the CRL distribution point. Use this value
+     * if you don't want the name of your S3 bucket to be public.</p>
+     */
+    inline bool CustomCnameHasBeenSet() const { return m_customCnameHasBeenSet; }
 
     /**
      * <p>Name inserted into the certificate <b>CRL Distribution Points</b> extension
@@ -184,6 +204,16 @@ namespace Model
      * to your bucket.</p>
      */
     inline const Aws::String& GetS3BucketName() const{ return m_s3BucketName; }
+
+    /**
+     * <p>Name of the S3 bucket that contains the CRL. If you do not provide a value
+     * for the <b>CustomCname</b> argument, the name of your S3 bucket is placed into
+     * the <b>CRL Distribution Points</b> extension of the issued certificate. You can
+     * change the name of your bucket by calling the <a>UpdateCertificateAuthority</a>
+     * operation. You must specify a bucket policy that allows ACM PCA to write the CRL
+     * to your bucket.</p>
+     */
+    inline bool S3BucketNameHasBeenSet() const { return m_s3BucketNameHasBeenSet; }
 
     /**
      * <p>Name of the S3 bucket that contains the CRL. If you do not provide a value

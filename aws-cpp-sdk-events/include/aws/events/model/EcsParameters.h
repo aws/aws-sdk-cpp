@@ -60,6 +60,12 @@ namespace Model
      * <p>The ARN of the task definition to use if the event target is an Amazon ECS
      * task. </p>
      */
+    inline bool TaskDefinitionArnHasBeenSet() const { return m_taskDefinitionArnHasBeenSet; }
+
+    /**
+     * <p>The ARN of the task definition to use if the event target is an Amazon ECS
+     * task. </p>
+     */
     inline void SetTaskDefinitionArn(const Aws::String& value) { m_taskDefinitionArnHasBeenSet = true; m_taskDefinitionArn = value; }
 
     /**
@@ -103,6 +109,12 @@ namespace Model
      * <p>The number of tasks to create based on <code>TaskDefinition</code>. The
      * default is 1.</p>
      */
+    inline bool TaskCountHasBeenSet() const { return m_taskCountHasBeenSet; }
+
+    /**
+     * <p>The number of tasks to create based on <code>TaskDefinition</code>. The
+     * default is 1.</p>
+     */
     inline void SetTaskCount(int value) { m_taskCountHasBeenSet = true; m_taskCount = value; }
 
     /**
@@ -122,6 +134,17 @@ namespace Model
      * Guide</i>.</p>
      */
     inline const LaunchType& GetLaunchType() const{ return m_launchType; }
+
+    /**
+     * <p>Specifies the launch type on which your task is running. The launch type that
+     * you specify here must match one of the launch type (compatibilities) of the
+     * target task. The <code>FARGATE</code> value is supported only in the Regions
+     * where AWS Fargate with Amazon ECS is supported. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/AWS-Fargate.html">AWS
+     * Fargate on Amazon ECS</a> in the <i>Amazon Elastic Container Service Developer
+     * Guide</i>.</p>
+     */
+    inline bool LaunchTypeHasBeenSet() const { return m_launchTypeHasBeenSet; }
 
     /**
      * <p>Specifies the launch type on which your task is running. The launch type that
@@ -188,6 +211,17 @@ namespace Model
      * <code>NetworkConfiguration</code> when the target ECS task does not use the
      * <code>awsvpc</code> network mode, the task fails.</p>
      */
+    inline bool NetworkConfigurationHasBeenSet() const { return m_networkConfigurationHasBeenSet; }
+
+    /**
+     * <p>Use this structure if the ECS task uses the <code>awsvpc</code> network mode.
+     * This structure specifies the VPC subnets and security groups associated with the
+     * task, and whether a public IP address is to be used. This structure is required
+     * if <code>LaunchType</code> is <code>FARGATE</code> because the
+     * <code>awsvpc</code> mode is required for Fargate tasks.</p> <p>If you specify
+     * <code>NetworkConfiguration</code> when the target ECS task does not use the
+     * <code>awsvpc</code> network mode, the task fails.</p>
+     */
     inline void SetNetworkConfiguration(const NetworkConfiguration& value) { m_networkConfigurationHasBeenSet = true; m_networkConfiguration = value; }
 
     /**
@@ -234,6 +268,17 @@ namespace Model
      * Developer Guide</i>.</p>
      */
     inline const Aws::String& GetPlatformVersion() const{ return m_platformVersion; }
+
+    /**
+     * <p>Specifies the platform version for the task. Specify only the numeric portion
+     * of the platform version, such as <code>1.1.0</code>.</p> <p>This structure is
+     * used only if <code>LaunchType</code> is <code>FARGATE</code>. For more
+     * information about valid platform versions, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS
+     * Fargate Platform Versions</a> in the <i>Amazon Elastic Container Service
+     * Developer Guide</i>.</p>
+     */
+    inline bool PlatformVersionHasBeenSet() const { return m_platformVersionHasBeenSet; }
 
     /**
      * <p>Specifies the platform version for the task. Specify only the numeric portion
@@ -307,6 +352,12 @@ namespace Model
      * characters.</p>
      */
     inline const Aws::String& GetGroup() const{ return m_group; }
+
+    /**
+     * <p>Specifies an ECS task group for the task. The maximum length is 255
+     * characters.</p>
+     */
+    inline bool GroupHasBeenSet() const { return m_groupHasBeenSet; }
 
     /**
      * <p>Specifies an ECS task group for the task. The maximum length is 255

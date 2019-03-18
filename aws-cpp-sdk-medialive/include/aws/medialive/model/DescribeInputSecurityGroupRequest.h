@@ -54,6 +54,11 @@ namespace Model
     /**
      * The id of the Input Security Group to describe
      */
+    inline bool InputSecurityGroupIdHasBeenSet() const { return m_inputSecurityGroupIdHasBeenSet; }
+
+    /**
+     * The id of the Input Security Group to describe
+     */
     inline void SetInputSecurityGroupId(const Aws::String& value) { m_inputSecurityGroupIdHasBeenSet = true; m_inputSecurityGroupId = value; }
 
     /**

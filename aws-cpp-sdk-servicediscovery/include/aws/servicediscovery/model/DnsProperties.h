@@ -58,6 +58,12 @@ namespace Model
      * <p>The ID for the Route 53 hosted zone that AWS Cloud Map creates when you
      * create a namespace.</p>
      */
+    inline bool HostedZoneIdHasBeenSet() const { return m_hostedZoneIdHasBeenSet; }
+
+    /**
+     * <p>The ID for the Route 53 hosted zone that AWS Cloud Map creates when you
+     * create a namespace.</p>
+     */
     inline void SetHostedZoneId(const Aws::String& value) { m_hostedZoneIdHasBeenSet = true; m_hostedZoneId = value; }
 
     /**

@@ -53,6 +53,11 @@ namespace Model
     /**
      * <p>The Kinesis Data Analytics application name.</p>
      */
+    inline bool ApplicationNameHasBeenSet() const { return m_applicationNameHasBeenSet; }
+
+    /**
+     * <p>The Kinesis Data Analytics application name.</p>
+     */
     inline void SetApplicationName(const Aws::String& value) { m_applicationNameHasBeenSet = true; m_applicationName = value; }
 
     /**
@@ -91,6 +96,12 @@ namespace Model
      * <p>The version ID of the Kinesis Data Analytics application. You can retrieve
      * the application version ID using <a>DescribeApplication</a>.</p>
      */
+    inline bool CurrentApplicationVersionIdHasBeenSet() const { return m_currentApplicationVersionIdHasBeenSet; }
+
+    /**
+     * <p>The version ID of the Kinesis Data Analytics application. You can retrieve
+     * the application version ID using <a>DescribeApplication</a>.</p>
+     */
     inline void SetCurrentApplicationVersionId(long long value) { m_currentApplicationVersionIdHasBeenSet = true; m_currentApplicationVersionId = value; }
 
     /**
@@ -104,6 +115,11 @@ namespace Model
      * <p>Provides the Amazon CloudWatch log stream Amazon Resource Name (ARN). </p>
      */
     inline const CloudWatchLoggingOption& GetCloudWatchLoggingOption() const{ return m_cloudWatchLoggingOption; }
+
+    /**
+     * <p>Provides the Amazon CloudWatch log stream Amazon Resource Name (ARN). </p>
+     */
+    inline bool CloudWatchLoggingOptionHasBeenSet() const { return m_cloudWatchLoggingOptionHasBeenSet; }
 
     /**
      * <p>Provides the Amazon CloudWatch log stream Amazon Resource Name (ARN). </p>

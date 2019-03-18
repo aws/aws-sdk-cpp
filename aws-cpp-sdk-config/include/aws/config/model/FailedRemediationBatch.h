@@ -60,6 +60,12 @@ namespace Model
      * <p>Returns a failure message. For example, the resource is already
      * compliant.</p>
      */
+    inline bool FailureMessageHasBeenSet() const { return m_failureMessageHasBeenSet; }
+
+    /**
+     * <p>Returns a failure message. For example, the resource is already
+     * compliant.</p>
+     */
     inline void SetFailureMessage(const Aws::String& value) { m_failureMessageHasBeenSet = true; m_failureMessage = value; }
 
     /**
@@ -97,6 +103,11 @@ namespace Model
      * <p>Returns remediation configurations of the failed items.</p>
      */
     inline const Aws::Vector<RemediationConfiguration>& GetFailedItems() const{ return m_failedItems; }
+
+    /**
+     * <p>Returns remediation configurations of the failed items.</p>
+     */
+    inline bool FailedItemsHasBeenSet() const { return m_failedItemsHasBeenSet; }
 
     /**
      * <p>Returns remediation configurations of the failed items.</p>

@@ -67,6 +67,14 @@ namespace Model
      * they are not currently functional. These values are reserved for future use.</p>
      * </note>
      */
+    inline bool CategoryHasBeenSet() const { return m_categoryHasBeenSet; }
+
+    /**
+     * <p>The category of the custom action, such as a build action or a test
+     * action.</p> <note> <p>Although Source and Approval are listed as valid values,
+     * they are not currently functional. These values are reserved for future use.</p>
+     * </note>
+     */
     inline void SetCategory(const ActionCategory& value) { m_categoryHasBeenSet = true; m_category = value; }
 
     /**
@@ -99,6 +107,12 @@ namespace Model
      * CodeDeploy.</p>
      */
     inline const Aws::String& GetProvider() const{ return m_provider; }
+
+    /**
+     * <p>The provider of the service used in the custom action, such as AWS
+     * CodeDeploy.</p>
+     */
+    inline bool ProviderHasBeenSet() const { return m_providerHasBeenSet; }
 
     /**
      * <p>The provider of the service used in the custom action, such as AWS
@@ -145,6 +159,11 @@ namespace Model
     /**
      * <p>The version identifier of the custom action.</p>
      */
+    inline bool VersionHasBeenSet() const { return m_versionHasBeenSet; }
+
+    /**
+     * <p>The version identifier of the custom action.</p>
+     */
     inline void SetVersion(const Aws::String& value) { m_versionHasBeenSet = true; m_version = value; }
 
     /**
@@ -181,6 +200,11 @@ namespace Model
     /**
      * <p>Returns information about the settings for an action type.</p>
      */
+    inline bool SettingsHasBeenSet() const { return m_settingsHasBeenSet; }
+
+    /**
+     * <p>Returns information about the settings for an action type.</p>
+     */
     inline void SetSettings(const ActionTypeSettings& value) { m_settingsHasBeenSet = true; m_settings = value; }
 
     /**
@@ -209,6 +233,17 @@ namespace Model
      * a Custom Action for a Pipeline</a>.</p> </note>
      */
     inline const Aws::Vector<ActionConfigurationProperty>& GetConfigurationProperties() const{ return m_configurationProperties; }
+
+    /**
+     * <p>The configuration properties for the custom action.</p> <note> <p>You can
+     * refer to a name in the configuration properties of the custom action within the
+     * URL templates by following the format of {Config:name}, as long as the
+     * configuration property is both required and not secret. For more information,
+     * see <a
+     * href="http://docs.aws.amazon.com/codepipeline/latest/userguide/how-to-create-custom-action.html">Create
+     * a Custom Action for a Pipeline</a>.</p> </note>
+     */
+    inline bool ConfigurationPropertiesHasBeenSet() const { return m_configurationPropertiesHasBeenSet; }
 
     /**
      * <p>The configuration properties for the custom action.</p> <note> <p>You can
@@ -285,6 +320,11 @@ namespace Model
     /**
      * <p>The details of the input artifact for the action, such as its commit ID.</p>
      */
+    inline bool InputArtifactDetailsHasBeenSet() const { return m_inputArtifactDetailsHasBeenSet; }
+
+    /**
+     * <p>The details of the input artifact for the action, such as its commit ID.</p>
+     */
     inline void SetInputArtifactDetails(const ArtifactDetails& value) { m_inputArtifactDetailsHasBeenSet = true; m_inputArtifactDetails = value; }
 
     /**
@@ -307,6 +347,11 @@ namespace Model
      * <p>The details of the output artifact of the action, such as its commit ID.</p>
      */
     inline const ArtifactDetails& GetOutputArtifactDetails() const{ return m_outputArtifactDetails; }
+
+    /**
+     * <p>The details of the output artifact of the action, such as its commit ID.</p>
+     */
+    inline bool OutputArtifactDetailsHasBeenSet() const { return m_outputArtifactDetailsHasBeenSet; }
 
     /**
      * <p>The details of the output artifact of the action, such as its commit ID.</p>

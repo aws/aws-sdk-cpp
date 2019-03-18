@@ -61,6 +61,13 @@ namespace Model
      * account with a hosted zone that was created with a different AWS account, the ID
      * of the hosted zone.</p>
      */
+    inline bool HostedZoneIdHasBeenSet() const { return m_hostedZoneIdHasBeenSet; }
+
+    /**
+     * <p>When removing authorization to associate a VPC that was created by one AWS
+     * account with a hosted zone that was created with a different AWS account, the ID
+     * of the hosted zone.</p>
+     */
     inline void SetHostedZoneId(const Aws::String& value) { m_hostedZoneIdHasBeenSet = true; m_hostedZoneId = value; }
 
     /**
@@ -105,6 +112,13 @@ namespace Model
      * complex type that includes the ID and region of the VPC.</p>
      */
     inline const VPC& GetVPC() const{ return m_vPC; }
+
+    /**
+     * <p>When removing authorization to associate a VPC that was created by one AWS
+     * account with a hosted zone that was created with a different AWS account, a
+     * complex type that includes the ID and region of the VPC.</p>
+     */
+    inline bool VPCHasBeenSet() const { return m_vPCHasBeenSet; }
 
     /**
      * <p>When removing authorization to associate a VPC that was created by one AWS

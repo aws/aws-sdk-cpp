@@ -63,6 +63,11 @@ namespace Model
     /**
      * <p>The name (friendly name, not ARN) identifying the user.</p>
      */
+    inline bool UserNameHasBeenSet() const { return m_userNameHasBeenSet; }
+
+    /**
+     * <p>The name (friendly name, not ARN) identifying the user.</p>
+     */
     inline void SetUserName(const Aws::String& value) { m_userNameHasBeenSet = true; m_userName = value; }
 
     /**
@@ -98,6 +103,14 @@ namespace Model
      * Identifiers</a> in the <i>IAM User Guide</i>.</p>
      */
     inline const Aws::String& GetUserId() const{ return m_userId; }
+
+    /**
+     * <p>The stable and unique string identifying the user. For more information about
+     * IDs, see <a
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM
+     * Identifiers</a> in the <i>IAM User Guide</i>.</p>
+     */
+    inline bool UserIdHasBeenSet() const { return m_userIdHasBeenSet; }
 
     /**
      * <p>The stable and unique string identifying the user. For more information about

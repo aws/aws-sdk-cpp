@@ -60,6 +60,13 @@ namespace Model
      * include mysql, oracle, postgres, mariadb, aurora, aurora-postgresql, redshift,
      * s3, db2, azuredb, sybase, sybase, dynamodb, mongodb, and sqlserver.</p>
      */
+    inline bool EngineNameHasBeenSet() const { return m_engineNameHasBeenSet; }
+
+    /**
+     * <p>The database engine name. Valid values, depending on the EndPointType,
+     * include mysql, oracle, postgres, mariadb, aurora, aurora-postgresql, redshift,
+     * s3, db2, azuredb, sybase, sybase, dynamodb, mongodb, and sqlserver.</p>
+     */
     inline void SetEngineName(const Aws::String& value) { m_engineNameHasBeenSet = true; m_engineName = value; }
 
     /**
@@ -106,6 +113,11 @@ namespace Model
     /**
      * <p>Indicates if Change Data Capture (CDC) is supported.</p>
      */
+    inline bool SupportsCDCHasBeenSet() const { return m_supportsCDCHasBeenSet; }
+
+    /**
+     * <p>Indicates if Change Data Capture (CDC) is supported.</p>
+     */
     inline void SetSupportsCDC(bool value) { m_supportsCDCHasBeenSet = true; m_supportsCDC = value; }
 
     /**
@@ -118,6 +130,11 @@ namespace Model
      * <p>The type of endpoint.</p>
      */
     inline const ReplicationEndpointTypeValue& GetEndpointType() const{ return m_endpointType; }
+
+    /**
+     * <p>The type of endpoint.</p>
+     */
+    inline bool EndpointTypeHasBeenSet() const { return m_endpointTypeHasBeenSet; }
 
     /**
      * <p>The type of endpoint.</p>
@@ -146,6 +163,13 @@ namespace Model
      * Aurora MySQL."</p>
      */
     inline const Aws::String& GetEngineDisplayName() const{ return m_engineDisplayName; }
+
+    /**
+     * <p>The expanded name for the engine name. For example, if the
+     * <code>EngineName</code> parameter is "aurora," this value would be "Amazon
+     * Aurora MySQL."</p>
+     */
+    inline bool EngineDisplayNameHasBeenSet() const { return m_engineDisplayNameHasBeenSet; }
 
     /**
      * <p>The expanded name for the engine name. For example, if the

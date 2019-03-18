@@ -69,6 +69,11 @@ namespace Model
     /**
      * <p> The <code>workflowId</code> of the workflow execution to be signaled.</p>
      */
+    inline bool WorkflowIdHasBeenSet() const { return m_workflowIdHasBeenSet; }
+
+    /**
+     * <p> The <code>workflowId</code> of the workflow execution to be signaled.</p>
+     */
     inline void SetWorkflowId(const Aws::String& value) { m_workflowIdHasBeenSet = true; m_workflowId = value; }
 
     /**
@@ -101,6 +106,11 @@ namespace Model
      * <p>The <code>runId</code> of the workflow execution to be signaled.</p>
      */
     inline const Aws::String& GetRunId() const{ return m_runId; }
+
+    /**
+     * <p>The <code>runId</code> of the workflow execution to be signaled.</p>
+     */
+    inline bool RunIdHasBeenSet() const { return m_runIdHasBeenSet; }
 
     /**
      * <p>The <code>runId</code> of the workflow execution to be signaled.</p>
@@ -138,6 +148,12 @@ namespace Model
      * and input to process the signal.</p>
      */
     inline const Aws::String& GetSignalName() const{ return m_signalName; }
+
+    /**
+     * <p> The name of the signal.The target workflow execution uses the signal name
+     * and input to process the signal.</p>
+     */
+    inline bool SignalNameHasBeenSet() const { return m_signalNameHasBeenSet; }
 
     /**
      * <p> The name of the signal.The target workflow execution uses the signal name
@@ -186,6 +202,12 @@ namespace Model
      * <p> The input data to be provided with the signal. The target workflow execution
      * uses the signal name and input data to process the signal.</p>
      */
+    inline bool InputHasBeenSet() const { return m_inputHasBeenSet; }
+
+    /**
+     * <p> The input data to be provided with the signal. The target workflow execution
+     * uses the signal name and input data to process the signal.</p>
+     */
     inline void SetInput(const Aws::String& value) { m_inputHasBeenSet = true; m_input = value; }
 
     /**
@@ -224,6 +246,12 @@ namespace Model
      * decision tasks.</p>
      */
     inline const Aws::String& GetControl() const{ return m_control; }
+
+    /**
+     * <p>The data attached to the event that can be used by the decider in subsequent
+     * decision tasks.</p>
+     */
+    inline bool ControlHasBeenSet() const { return m_controlHasBeenSet; }
 
     /**
      * <p>The data attached to the event that can be used by the decider in subsequent

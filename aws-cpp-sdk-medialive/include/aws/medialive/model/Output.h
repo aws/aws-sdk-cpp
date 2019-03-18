@@ -58,6 +58,11 @@ namespace Model
     /**
      * The names of the AudioDescriptions used as audio sources for this output.
      */
+    inline bool AudioDescriptionNamesHasBeenSet() const { return m_audioDescriptionNamesHasBeenSet; }
+
+    /**
+     * The names of the AudioDescriptions used as audio sources for this output.
+     */
     inline void SetAudioDescriptionNames(const Aws::Vector<Aws::String>& value) { m_audioDescriptionNamesHasBeenSet = true; m_audioDescriptionNames = value; }
 
     /**
@@ -95,6 +100,11 @@ namespace Model
      * The names of the CaptionDescriptions used as caption sources for this output.
      */
     inline const Aws::Vector<Aws::String>& GetCaptionDescriptionNames() const{ return m_captionDescriptionNames; }
+
+    /**
+     * The names of the CaptionDescriptions used as caption sources for this output.
+     */
+    inline bool CaptionDescriptionNamesHasBeenSet() const { return m_captionDescriptionNamesHasBeenSet; }
 
     /**
      * The names of the CaptionDescriptions used as caption sources for this output.
@@ -140,6 +150,11 @@ namespace Model
     /**
      * The name used to identify an output.
      */
+    inline bool OutputNameHasBeenSet() const { return m_outputNameHasBeenSet; }
+
+    /**
+     * The name used to identify an output.
+     */
     inline void SetOutputName(const Aws::String& value) { m_outputNameHasBeenSet = true; m_outputName = value; }
 
     /**
@@ -176,6 +191,11 @@ namespace Model
     /**
      * Output type-specific settings.
      */
+    inline bool OutputSettingsHasBeenSet() const { return m_outputSettingsHasBeenSet; }
+
+    /**
+     * Output type-specific settings.
+     */
     inline void SetOutputSettings(const OutputSettings& value) { m_outputSettingsHasBeenSet = true; m_outputSettings = value; }
 
     /**
@@ -198,6 +218,11 @@ namespace Model
      * The name of the VideoDescription used as the source for this output.
      */
     inline const Aws::String& GetVideoDescriptionName() const{ return m_videoDescriptionName; }
+
+    /**
+     * The name of the VideoDescription used as the source for this output.
+     */
+    inline bool VideoDescriptionNameHasBeenSet() const { return m_videoDescriptionNameHasBeenSet; }
 
     /**
      * The name of the VideoDescription used as the source for this output.

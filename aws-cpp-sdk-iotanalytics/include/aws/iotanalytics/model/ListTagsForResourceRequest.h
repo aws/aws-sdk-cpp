@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The ARN of the resource whose tags you want to list.</p>
      */
+    inline bool ResourceArnHasBeenSet() const { return m_resourceArnHasBeenSet; }
+
+    /**
+     * <p>The ARN of the resource whose tags you want to list.</p>
+     */
     inline void SetResourceArn(const Aws::String& value) { m_resourceArnHasBeenSet = true; m_resourceArn = value; }
 
     /**

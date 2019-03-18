@@ -60,6 +60,11 @@ namespace Model
     /**
      * Average bitrate in bits/second. Valid bitrates depend on the coding mode.
      */
+    inline bool BitrateHasBeenSet() const { return m_bitrateHasBeenSet; }
+
+    /**
+     * Average bitrate in bits/second. Valid bitrates depend on the coding mode.
+     */
     inline void SetBitrate(int value) { m_bitrateHasBeenSet = true; m_bitrate = value; }
 
     /**
@@ -70,6 +75,9 @@ namespace Model
 
     
     inline const Ac3BitstreamMode& GetBitstreamMode() const{ return m_bitstreamMode; }
+
+    
+    inline bool BitstreamModeHasBeenSet() const { return m_bitstreamModeHasBeenSet; }
 
     
     inline void SetBitstreamMode(const Ac3BitstreamMode& value) { m_bitstreamModeHasBeenSet = true; m_bitstreamMode = value; }
@@ -86,6 +94,9 @@ namespace Model
 
     
     inline const Ac3CodingMode& GetCodingMode() const{ return m_codingMode; }
+
+    
+    inline bool CodingModeHasBeenSet() const { return m_codingModeHasBeenSet; }
 
     
     inline void SetCodingMode(const Ac3CodingMode& value) { m_codingModeHasBeenSet = true; m_codingMode = value; }
@@ -110,6 +121,12 @@ namespace Model
      * Sets the dialnorm for the output. If blank and input audio is Dolby Digital,
      * dialnorm will be passed through.
      */
+    inline bool DialnormHasBeenSet() const { return m_dialnormHasBeenSet; }
+
+    /**
+     * Sets the dialnorm for the output. If blank and input audio is Dolby Digital,
+     * dialnorm will be passed through.
+     */
     inline void SetDialnorm(int value) { m_dialnormHasBeenSet = true; m_dialnorm = value; }
 
     /**
@@ -121,6 +138,9 @@ namespace Model
 
     
     inline const Ac3DynamicRangeCompressionProfile& GetDynamicRangeCompressionProfile() const{ return m_dynamicRangeCompressionProfile; }
+
+    
+    inline bool DynamicRangeCompressionProfileHasBeenSet() const { return m_dynamicRangeCompressionProfileHasBeenSet; }
 
     
     inline void SetDynamicRangeCompressionProfile(const Ac3DynamicRangeCompressionProfile& value) { m_dynamicRangeCompressionProfileHasBeenSet = true; m_dynamicRangeCompressionProfile = value; }
@@ -139,6 +159,9 @@ namespace Model
     inline const Ac3LfeFilter& GetLfeFilter() const{ return m_lfeFilter; }
 
     
+    inline bool LfeFilterHasBeenSet() const { return m_lfeFilterHasBeenSet; }
+
+    
     inline void SetLfeFilter(const Ac3LfeFilter& value) { m_lfeFilterHasBeenSet = true; m_lfeFilter = value; }
 
     
@@ -153,6 +176,9 @@ namespace Model
 
     
     inline const Ac3MetadataControl& GetMetadataControl() const{ return m_metadataControl; }
+
+    
+    inline bool MetadataControlHasBeenSet() const { return m_metadataControlHasBeenSet; }
 
     
     inline void SetMetadataControl(const Ac3MetadataControl& value) { m_metadataControlHasBeenSet = true; m_metadataControl = value; }
@@ -171,6 +197,11 @@ namespace Model
      * Sample rate in hz. Sample rate is always 48000.
      */
     inline int GetSampleRate() const{ return m_sampleRate; }
+
+    /**
+     * Sample rate in hz. Sample rate is always 48000.
+     */
+    inline bool SampleRateHasBeenSet() const { return m_sampleRateHasBeenSet; }
 
     /**
      * Sample rate in hz. Sample rate is always 48000.

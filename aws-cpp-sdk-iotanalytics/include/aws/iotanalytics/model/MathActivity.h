@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The name of the 'math' activity.</p>
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>The name of the 'math' activity.</p>
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
@@ -88,6 +93,11 @@ namespace Model
      * <p>The name of the attribute that contains the result of the math operation.</p>
      */
     inline const Aws::String& GetAttribute() const{ return m_attribute; }
+
+    /**
+     * <p>The name of the attribute that contains the result of the math operation.</p>
+     */
+    inline bool AttributeHasBeenSet() const { return m_attributeHasBeenSet; }
 
     /**
      * <p>The name of the attribute that contains the result of the math operation.</p>
@@ -130,6 +140,12 @@ namespace Model
      * <p>An expression that uses one or more existing attributes and must return an
      * integer value.</p>
      */
+    inline bool MathHasBeenSet() const { return m_mathHasBeenSet; }
+
+    /**
+     * <p>An expression that uses one or more existing attributes and must return an
+     * integer value.</p>
+     */
     inline void SetMath(const Aws::String& value) { m_mathHasBeenSet = true; m_math = value; }
 
     /**
@@ -167,6 +183,11 @@ namespace Model
      * <p>The next activity in the pipeline.</p>
      */
     inline const Aws::String& GetNext() const{ return m_next; }
+
+    /**
+     * <p>The next activity in the pipeline.</p>
+     */
+    inline bool NextHasBeenSet() const { return m_nextHasBeenSet; }
 
     /**
      * <p>The next activity in the pipeline.</p>

@@ -60,6 +60,13 @@ namespace Model
      * keyprovider. The certificate holds a key used by the keyprovider to encrypt the
      * keys in its response.
      */
+    inline bool CertificateArnHasBeenSet() const { return m_certificateArnHasBeenSet; }
+
+    /**
+     * Optional AWS Certificate Manager ARN for a certificate to send to the
+     * keyprovider. The certificate holds a key used by the keyprovider to encrypt the
+     * keys in its response.
+     */
     inline void SetCertificateArn(const Aws::String& value) { m_certificateArnHasBeenSet = true; m_certificateArn = value; }
 
     /**
@@ -106,6 +113,11 @@ namespace Model
     /**
      * The SPEKE-compliant server uses Resource ID (ResourceId) to identify content.
      */
+    inline bool ResourceIdHasBeenSet() const { return m_resourceIdHasBeenSet; }
+
+    /**
+     * The SPEKE-compliant server uses Resource ID (ResourceId) to identify content.
+     */
     inline void SetResourceId(const Aws::String& value) { m_resourceIdHasBeenSet = true; m_resourceId = value; }
 
     /**
@@ -139,6 +151,12 @@ namespace Model
      * support a max of two system ids. Other group types support one system id.
      */
     inline const Aws::Vector<Aws::String>& GetSystemIds() const{ return m_systemIds; }
+
+    /**
+     * Relates to SPEKE implementation. DRM system identifiers. DASH output groups
+     * support a max of two system ids. Other group types support one system id.
+     */
+    inline bool SystemIdsHasBeenSet() const { return m_systemIdsHasBeenSet; }
 
     /**
      * Relates to SPEKE implementation. DRM system identifiers. DASH output groups
@@ -188,6 +206,12 @@ namespace Model
      * content.
      */
     inline const Aws::String& GetUrl() const{ return m_url; }
+
+    /**
+     * Use URL (Url) to specify the SPEKE-compliant server that will provide keys for
+     * content.
+     */
+    inline bool UrlHasBeenSet() const { return m_urlHasBeenSet; }
 
     /**
      * Use URL (Url) to specify the SPEKE-compliant server that will provide keys for

@@ -58,6 +58,12 @@ namespace Model
      * Packet Identifier (PID) of the SCTE-35 stream in the transport stream generated
      * by ESAM.
      */
+    inline bool Scte35EsamPidHasBeenSet() const { return m_scte35EsamPidHasBeenSet; }
+
+    /**
+     * Packet Identifier (PID) of the SCTE-35 stream in the transport stream generated
+     * by ESAM.
+     */
     inline void SetScte35EsamPid(int value) { m_scte35EsamPidHasBeenSet = true; m_scte35EsamPid = value; }
 
     /**

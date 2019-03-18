@@ -52,6 +52,12 @@ namespace Model
      * <p>The short name or full Amazon Resource Name (ARN) of the queue to delete.
      * </p>
      */
+    inline bool JobQueueHasBeenSet() const { return m_jobQueueHasBeenSet; }
+
+    /**
+     * <p>The short name or full Amazon Resource Name (ARN) of the queue to delete.
+     * </p>
+     */
     inline void SetJobQueue(const Aws::String& value) { m_jobQueueHasBeenSet = true; m_jobQueue = value; }
 
     /**

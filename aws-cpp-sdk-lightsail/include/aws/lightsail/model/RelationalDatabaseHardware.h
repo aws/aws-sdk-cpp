@@ -53,6 +53,11 @@ namespace Model
     /**
      * <p>The number of vCPUs for the database.</p>
      */
+    inline bool CpuCountHasBeenSet() const { return m_cpuCountHasBeenSet; }
+
+    /**
+     * <p>The number of vCPUs for the database.</p>
+     */
     inline void SetCpuCount(int value) { m_cpuCountHasBeenSet = true; m_cpuCount = value; }
 
     /**
@@ -69,6 +74,11 @@ namespace Model
     /**
      * <p>The size of the disk for the database.</p>
      */
+    inline bool DiskSizeInGbHasBeenSet() const { return m_diskSizeInGbHasBeenSet; }
+
+    /**
+     * <p>The size of the disk for the database.</p>
+     */
     inline void SetDiskSizeInGb(int value) { m_diskSizeInGbHasBeenSet = true; m_diskSizeInGb = value; }
 
     /**
@@ -81,6 +91,11 @@ namespace Model
      * <p>The amount of RAM in GB for the database.</p>
      */
     inline double GetRamSizeInGb() const{ return m_ramSizeInGb; }
+
+    /**
+     * <p>The amount of RAM in GB for the database.</p>
+     */
+    inline bool RamSizeInGbHasBeenSet() const { return m_ramSizeInGbHasBeenSet; }
 
     /**
      * <p>The amount of RAM in GB for the database.</p>

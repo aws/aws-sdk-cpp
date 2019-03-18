@@ -67,6 +67,13 @@ namespace Model
      * that Kinesis Data Analytics assigns to each input configuration that you add to
      * your application. </p>
      */
+    inline bool InputIdHasBeenSet() const { return m_inputIdHasBeenSet; }
+
+    /**
+     * <p>The input ID that is associated with the application input. This is the ID
+     * that Kinesis Data Analytics assigns to each input configuration that you add to
+     * your application. </p>
+     */
     inline void SetInputId(const Aws::String& value) { m_inputIdHasBeenSet = true; m_inputId = value; }
 
     /**
@@ -113,6 +120,11 @@ namespace Model
     /**
      * <p>The in-application name prefix.</p>
      */
+    inline bool NamePrefixHasBeenSet() const { return m_namePrefixHasBeenSet; }
+
+    /**
+     * <p>The in-application name prefix.</p>
+     */
     inline void SetNamePrefix(const Aws::String& value) { m_namePrefixHasBeenSet = true; m_namePrefix = value; }
 
     /**
@@ -146,6 +158,12 @@ namespace Model
      * </p>
      */
     inline const Aws::Vector<Aws::String>& GetInAppStreamNames() const{ return m_inAppStreamNames; }
+
+    /**
+     * <p>Returns the in-application stream names that are mapped to the stream source.
+     * </p>
+     */
+    inline bool InAppStreamNamesHasBeenSet() const { return m_inAppStreamNamesHasBeenSet; }
 
     /**
      * <p>Returns the in-application stream names that are mapped to the stream source.
@@ -200,6 +218,12 @@ namespace Model
      * <p>The description of the preprocessor that executes on records in this input
      * before the application's code is run. </p>
      */
+    inline bool InputProcessingConfigurationDescriptionHasBeenSet() const { return m_inputProcessingConfigurationDescriptionHasBeenSet; }
+
+    /**
+     * <p>The description of the preprocessor that executes on records in this input
+     * before the application's code is run. </p>
+     */
     inline void SetInputProcessingConfigurationDescription(const InputProcessingConfigurationDescription& value) { m_inputProcessingConfigurationDescriptionHasBeenSet = true; m_inputProcessingConfigurationDescription = value; }
 
     /**
@@ -226,6 +250,12 @@ namespace Model
      * Kinesis data stream's Amazon Resource Name (ARN). </p>
      */
     inline const KinesisStreamsInputDescription& GetKinesisStreamsInputDescription() const{ return m_kinesisStreamsInputDescription; }
+
+    /**
+     * <p>If a Kinesis data stream is configured as a streaming source, provides the
+     * Kinesis data stream's Amazon Resource Name (ARN). </p>
+     */
+    inline bool KinesisStreamsInputDescriptionHasBeenSet() const { return m_kinesisStreamsInputDescriptionHasBeenSet; }
 
     /**
      * <p>If a Kinesis data stream is configured as a streaming source, provides the
@@ -262,6 +292,12 @@ namespace Model
      * <p>If a Kinesis Data Firehose delivery stream is configured as a streaming
      * source, provides the delivery stream's ARN. </p>
      */
+    inline bool KinesisFirehoseInputDescriptionHasBeenSet() const { return m_kinesisFirehoseInputDescriptionHasBeenSet; }
+
+    /**
+     * <p>If a Kinesis Data Firehose delivery stream is configured as a streaming
+     * source, provides the delivery stream's ARN. </p>
+     */
     inline void SetKinesisFirehoseInputDescription(const KinesisFirehoseInputDescription& value) { m_kinesisFirehoseInputDescriptionHasBeenSet = true; m_kinesisFirehoseInputDescription = value; }
 
     /**
@@ -289,6 +325,13 @@ namespace Model
      * created. </p>
      */
     inline const SourceSchema& GetInputSchema() const{ return m_inputSchema; }
+
+    /**
+     * <p>Describes the format of the data in the streaming source, and how each data
+     * element maps to corresponding columns in the in-application stream that is being
+     * created. </p>
+     */
+    inline bool InputSchemaHasBeenSet() const { return m_inputSchemaHasBeenSet; }
 
     /**
      * <p>Describes the format of the data in the streaming source, and how each data
@@ -329,6 +372,12 @@ namespace Model
      * <p>Describes the configured parallelism (number of in-application streams mapped
      * to the streaming source). </p>
      */
+    inline bool InputParallelismHasBeenSet() const { return m_inputParallelismHasBeenSet; }
+
+    /**
+     * <p>Describes the configured parallelism (number of in-application streams mapped
+     * to the streaming source). </p>
+     */
     inline void SetInputParallelism(const InputParallelism& value) { m_inputParallelismHasBeenSet = true; m_inputParallelism = value; }
 
     /**
@@ -355,6 +404,12 @@ namespace Model
      * stream.</p>
      */
     inline const InputStartingPositionConfiguration& GetInputStartingPositionConfiguration() const{ return m_inputStartingPositionConfiguration; }
+
+    /**
+     * <p>The point at which the application is configured to read from the input
+     * stream.</p>
+     */
+    inline bool InputStartingPositionConfigurationHasBeenSet() const { return m_inputStartingPositionConfigurationHasBeenSet; }
 
     /**
      * <p>The point at which the application is configured to read from the input

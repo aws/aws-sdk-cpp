@@ -61,6 +61,12 @@ namespace Model
      * <p>Provides additional mapping information when JSON is the record format on the
      * streaming source.</p>
      */
+    inline bool JSONMappingParametersHasBeenSet() const { return m_jSONMappingParametersHasBeenSet; }
+
+    /**
+     * <p>Provides additional mapping information when JSON is the record format on the
+     * streaming source.</p>
+     */
     inline void SetJSONMappingParameters(const JSONMappingParameters& value) { m_jSONMappingParametersHasBeenSet = true; m_jSONMappingParameters = value; }
 
     /**
@@ -87,6 +93,12 @@ namespace Model
      * delimiters (for example, CSV).</p>
      */
     inline const CSVMappingParameters& GetCSVMappingParameters() const{ return m_cSVMappingParameters; }
+
+    /**
+     * <p>Provides additional mapping information when the record format uses
+     * delimiters (for example, CSV).</p>
+     */
+    inline bool CSVMappingParametersHasBeenSet() const { return m_cSVMappingParametersHasBeenSet; }
 
     /**
      * <p>Provides additional mapping information when the record format uses

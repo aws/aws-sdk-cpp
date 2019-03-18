@@ -50,6 +50,11 @@ namespace Model
     /**
      * the job ID of the job.
      */
+    inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
+
+    /**
+     * the job ID of the job.
+     */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
     /**

@@ -54,6 +54,11 @@ namespace Model
     /**
      * <p>The specified workgroup that will be updated.</p>
      */
+    inline bool WorkGroupHasBeenSet() const { return m_workGroupHasBeenSet; }
+
+    /**
+     * <p>The specified workgroup that will be updated.</p>
+     */
     inline void SetWorkGroup(const Aws::String& value) { m_workGroupHasBeenSet = true; m_workGroup = value; }
 
     /**
@@ -86,6 +91,11 @@ namespace Model
      * <p>The workgroup description.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
+
+    /**
+     * <p>The workgroup description.</p>
+     */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
 
     /**
      * <p>The workgroup description.</p>
@@ -126,6 +136,11 @@ namespace Model
     /**
      * <p>The workgroup configuration that will be updated for the given workgroup.</p>
      */
+    inline bool ConfigurationUpdatesHasBeenSet() const { return m_configurationUpdatesHasBeenSet; }
+
+    /**
+     * <p>The workgroup configuration that will be updated for the given workgroup.</p>
+     */
     inline void SetConfigurationUpdates(const WorkGroupConfigurationUpdates& value) { m_configurationUpdatesHasBeenSet = true; m_configurationUpdates = value; }
 
     /**
@@ -148,6 +163,11 @@ namespace Model
      * <p>The workgroup state that will be updated for the given workgroup.</p>
      */
     inline const WorkGroupState& GetState() const{ return m_state; }
+
+    /**
+     * <p>The workgroup state that will be updated for the given workgroup.</p>
+     */
+    inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
 
     /**
      * <p>The workgroup state that will be updated for the given workgroup.</p>

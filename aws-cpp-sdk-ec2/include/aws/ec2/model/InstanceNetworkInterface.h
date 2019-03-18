@@ -66,6 +66,12 @@ namespace Model
      * <p>The association information for an Elastic IPv4 associated with the network
      * interface.</p>
      */
+    inline bool AssociationHasBeenSet() const { return m_associationHasBeenSet; }
+
+    /**
+     * <p>The association information for an Elastic IPv4 associated with the network
+     * interface.</p>
+     */
     inline void SetAssociation(const InstanceNetworkInterfaceAssociation& value) { m_associationHasBeenSet = true; m_association = value; }
 
     /**
@@ -95,6 +101,11 @@ namespace Model
     /**
      * <p>The network interface attachment.</p>
      */
+    inline bool AttachmentHasBeenSet() const { return m_attachmentHasBeenSet; }
+
+    /**
+     * <p>The network interface attachment.</p>
+     */
     inline void SetAttachment(const InstanceNetworkInterfaceAttachment& value) { m_attachmentHasBeenSet = true; m_attachment = value; }
 
     /**
@@ -117,6 +128,11 @@ namespace Model
      * <p>The description.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
+
+    /**
+     * <p>The description.</p>
+     */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
 
     /**
      * <p>The description.</p>
@@ -157,6 +173,11 @@ namespace Model
     /**
      * <p>One or more security groups.</p>
      */
+    inline bool GroupsHasBeenSet() const { return m_groupsHasBeenSet; }
+
+    /**
+     * <p>One or more security groups.</p>
+     */
     inline void SetGroups(const Aws::Vector<GroupIdentifier>& value) { m_groupsHasBeenSet = true; m_groups = value; }
 
     /**
@@ -189,6 +210,11 @@ namespace Model
      * <p>One or more IPv6 addresses associated with the network interface.</p>
      */
     inline const Aws::Vector<InstanceIpv6Address>& GetIpv6Addresses() const{ return m_ipv6Addresses; }
+
+    /**
+     * <p>One or more IPv6 addresses associated with the network interface.</p>
+     */
+    inline bool Ipv6AddressesHasBeenSet() const { return m_ipv6AddressesHasBeenSet; }
 
     /**
      * <p>One or more IPv6 addresses associated with the network interface.</p>
@@ -229,6 +255,11 @@ namespace Model
     /**
      * <p>The MAC address.</p>
      */
+    inline bool MacAddressHasBeenSet() const { return m_macAddressHasBeenSet; }
+
+    /**
+     * <p>The MAC address.</p>
+     */
     inline void SetMacAddress(const Aws::String& value) { m_macAddressHasBeenSet = true; m_macAddress = value; }
 
     /**
@@ -261,6 +292,11 @@ namespace Model
      * <p>The ID of the network interface.</p>
      */
     inline const Aws::String& GetNetworkInterfaceId() const{ return m_networkInterfaceId; }
+
+    /**
+     * <p>The ID of the network interface.</p>
+     */
+    inline bool NetworkInterfaceIdHasBeenSet() const { return m_networkInterfaceIdHasBeenSet; }
 
     /**
      * <p>The ID of the network interface.</p>
@@ -301,6 +337,11 @@ namespace Model
     /**
      * <p>The ID of the AWS account that created the network interface.</p>
      */
+    inline bool OwnerIdHasBeenSet() const { return m_ownerIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the AWS account that created the network interface.</p>
+     */
     inline void SetOwnerId(const Aws::String& value) { m_ownerIdHasBeenSet = true; m_ownerId = value; }
 
     /**
@@ -333,6 +374,11 @@ namespace Model
      * <p>The private DNS name.</p>
      */
     inline const Aws::String& GetPrivateDnsName() const{ return m_privateDnsName; }
+
+    /**
+     * <p>The private DNS name.</p>
+     */
+    inline bool PrivateDnsNameHasBeenSet() const { return m_privateDnsNameHasBeenSet; }
 
     /**
      * <p>The private DNS name.</p>
@@ -373,6 +419,11 @@ namespace Model
     /**
      * <p>The IPv4 address of the network interface within the subnet.</p>
      */
+    inline bool PrivateIpAddressHasBeenSet() const { return m_privateIpAddressHasBeenSet; }
+
+    /**
+     * <p>The IPv4 address of the network interface within the subnet.</p>
+     */
     inline void SetPrivateIpAddress(const Aws::String& value) { m_privateIpAddressHasBeenSet = true; m_privateIpAddress = value; }
 
     /**
@@ -405,6 +456,11 @@ namespace Model
      * <p>One or more private IPv4 addresses associated with the network interface.</p>
      */
     inline const Aws::Vector<InstancePrivateIpAddress>& GetPrivateIpAddresses() const{ return m_privateIpAddresses; }
+
+    /**
+     * <p>One or more private IPv4 addresses associated with the network interface.</p>
+     */
+    inline bool PrivateIpAddressesHasBeenSet() const { return m_privateIpAddressesHasBeenSet; }
 
     /**
      * <p>One or more private IPv4 addresses associated with the network interface.</p>
@@ -447,6 +503,12 @@ namespace Model
      * <p>Indicates whether to validate network traffic to or from this network
      * interface.</p>
      */
+    inline bool SourceDestCheckHasBeenSet() const { return m_sourceDestCheckHasBeenSet; }
+
+    /**
+     * <p>Indicates whether to validate network traffic to or from this network
+     * interface.</p>
+     */
     inline void SetSourceDestCheck(bool value) { m_sourceDestCheckHasBeenSet = true; m_sourceDestCheck = value; }
 
     /**
@@ -460,6 +522,11 @@ namespace Model
      * <p>The status of the network interface.</p>
      */
     inline const NetworkInterfaceStatus& GetStatus() const{ return m_status; }
+
+    /**
+     * <p>The status of the network interface.</p>
+     */
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
     /**
      * <p>The status of the network interface.</p>
@@ -486,6 +553,11 @@ namespace Model
      * <p>The ID of the subnet.</p>
      */
     inline const Aws::String& GetSubnetId() const{ return m_subnetId; }
+
+    /**
+     * <p>The ID of the subnet.</p>
+     */
+    inline bool SubnetIdHasBeenSet() const { return m_subnetIdHasBeenSet; }
 
     /**
      * <p>The ID of the subnet.</p>
@@ -522,6 +594,11 @@ namespace Model
      * <p>The ID of the VPC.</p>
      */
     inline const Aws::String& GetVpcId() const{ return m_vpcId; }
+
+    /**
+     * <p>The ID of the VPC.</p>
+     */
+    inline bool VpcIdHasBeenSet() const { return m_vpcIdHasBeenSet; }
 
     /**
      * <p>The ID of the VPC.</p>

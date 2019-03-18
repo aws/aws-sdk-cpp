@@ -61,6 +61,12 @@ namespace Model
      * <p>The identifier of the entity (user or group) to which the permissions are
      * granted.</p>
      */
+    inline bool GranteeIdHasBeenSet() const { return m_granteeIdHasBeenSet; }
+
+    /**
+     * <p>The identifier of the entity (user or group) to which the permissions are
+     * granted.</p>
+     */
     inline void SetGranteeId(const Aws::String& value) { m_granteeIdHasBeenSet = true; m_granteeId = value; }
 
     /**
@@ -102,6 +108,11 @@ namespace Model
     /**
      * <p>The type of entity (user, group) of the entity referred to in GranteeId.</p>
      */
+    inline bool GranteeTypeHasBeenSet() const { return m_granteeTypeHasBeenSet; }
+
+    /**
+     * <p>The type of entity (user, group) of the entity referred to in GranteeId.</p>
+     */
     inline void SetGranteeType(const MemberType& value) { m_granteeTypeHasBeenSet = true; m_granteeType = value; }
 
     /**
@@ -129,6 +140,16 @@ namespace Model
      * of other folder-level permissions set on the mailbox.</p>
      */
     inline const Aws::Vector<PermissionType>& GetPermissionValues() const{ return m_permissionValues; }
+
+    /**
+     * <p>The permissions granted to the grantee. SEND_AS allows the grantee to send
+     * email as the owner of the mailbox (the grantee is not mentioned on these
+     * emails). SEND_ON_BEHALF allows the grantee to send email on behalf of the owner
+     * of the mailbox (the grantee is not mentioned as the physical sender of these
+     * emails). FULL_ACCESS allows the grantee full access to the mailbox, irrespective
+     * of other folder-level permissions set on the mailbox.</p>
+     */
+    inline bool PermissionValuesHasBeenSet() const { return m_permissionValuesHasBeenSet; }
 
     /**
      * <p>The permissions granted to the grantee. SEND_AS allows the grantee to send

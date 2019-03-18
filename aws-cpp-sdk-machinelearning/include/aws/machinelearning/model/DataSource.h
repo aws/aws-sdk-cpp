@@ -61,6 +61,11 @@ namespace Model
     /**
      * <p>The ID that is assigned to the <code>DataSource</code> during creation.</p>
      */
+    inline bool DataSourceIdHasBeenSet() const { return m_dataSourceIdHasBeenSet; }
+
+    /**
+     * <p>The ID that is assigned to the <code>DataSource</code> during creation.</p>
+     */
     inline void SetDataSourceId(const Aws::String& value) { m_dataSourceIdHasBeenSet = true; m_dataSourceId = value; }
 
     /**
@@ -94,6 +99,12 @@ namespace Model
      * S3) that is used by a <code>DataSource</code>.</p>
      */
     inline const Aws::String& GetDataLocationS3() const{ return m_dataLocationS3; }
+
+    /**
+     * <p>The location and name of the data in Amazon Simple Storage Service (Amazon
+     * S3) that is used by a <code>DataSource</code>.</p>
+     */
+    inline bool DataLocationS3HasBeenSet() const { return m_dataLocationS3HasBeenSet; }
 
     /**
      * <p>The location and name of the data in Amazon Simple Storage Service (Amazon
@@ -142,6 +153,12 @@ namespace Model
      * <p>A JSON string that represents the splitting and rearrangement requirement
      * used when this <code>DataSource</code> was created.</p>
      */
+    inline bool DataRearrangementHasBeenSet() const { return m_dataRearrangementHasBeenSet; }
+
+    /**
+     * <p>A JSON string that represents the splitting and rearrangement requirement
+     * used when this <code>DataSource</code> was created.</p>
+     */
     inline void SetDataRearrangement(const Aws::String& value) { m_dataRearrangementHasBeenSet = true; m_dataRearrangement = value; }
 
     /**
@@ -181,6 +198,13 @@ namespace Model
      * Management (IAM) user account.</p>
      */
     inline const Aws::String& GetCreatedByIamUser() const{ return m_createdByIamUser; }
+
+    /**
+     * <p>The AWS user account from which the <code>DataSource</code> was created. The
+     * account type can be either an AWS root account or an AWS Identity and Access
+     * Management (IAM) user account.</p>
+     */
+    inline bool CreatedByIamUserHasBeenSet() const { return m_createdByIamUserHasBeenSet; }
 
     /**
      * <p>The AWS user account from which the <code>DataSource</code> was created. The
@@ -235,6 +259,12 @@ namespace Model
      * <p>The time that the <code>DataSource</code> was created. The time is expressed
      * in epoch time.</p>
      */
+    inline bool CreatedAtHasBeenSet() const { return m_createdAtHasBeenSet; }
+
+    /**
+     * <p>The time that the <code>DataSource</code> was created. The time is expressed
+     * in epoch time.</p>
+     */
     inline void SetCreatedAt(const Aws::Utils::DateTime& value) { m_createdAtHasBeenSet = true; m_createdAt = value; }
 
     /**
@@ -261,6 +291,12 @@ namespace Model
      * time is expressed in epoch time.</p>
      */
     inline const Aws::Utils::DateTime& GetLastUpdatedAt() const{ return m_lastUpdatedAt; }
+
+    /**
+     * <p>The time of the most recent edit to the <code>BatchPrediction</code>. The
+     * time is expressed in epoch time.</p>
+     */
+    inline bool LastUpdatedAtHasBeenSet() const { return m_lastUpdatedAtHasBeenSet; }
 
     /**
      * <p>The time of the most recent edit to the <code>BatchPrediction</code>. The
@@ -297,6 +333,12 @@ namespace Model
      * <p>The total number of observations contained in the data files that the
      * <code>DataSource</code> references.</p>
      */
+    inline bool DataSizeInBytesHasBeenSet() const { return m_dataSizeInBytesHasBeenSet; }
+
+    /**
+     * <p>The total number of observations contained in the data files that the
+     * <code>DataSource</code> references.</p>
+     */
     inline void SetDataSizeInBytes(long long value) { m_dataSizeInBytesHasBeenSet = true; m_dataSizeInBytes = value; }
 
     /**
@@ -314,6 +356,11 @@ namespace Model
     /**
      * <p>The number of data files referenced by the <code>DataSource</code>.</p>
      */
+    inline bool NumberOfFilesHasBeenSet() const { return m_numberOfFilesHasBeenSet; }
+
+    /**
+     * <p>The number of data files referenced by the <code>DataSource</code>.</p>
+     */
     inline void SetNumberOfFiles(long long value) { m_numberOfFilesHasBeenSet = true; m_numberOfFiles = value; }
 
     /**
@@ -326,6 +373,11 @@ namespace Model
      * <p>A user-supplied name or description of the <code>DataSource</code>.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
+
+    /**
+     * <p>A user-supplied name or description of the <code>DataSource</code>.</p>
+     */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
      * <p>A user-supplied name or description of the <code>DataSource</code>.</p>
@@ -368,6 +420,17 @@ namespace Model
      * The <code>DataSource</code> is marked as deleted. It is not usable.</li> </ul>
      */
     inline const EntityStatus& GetStatus() const{ return m_status; }
+
+    /**
+     * <p>The current status of the <code>DataSource</code>. This element can have one
+     * of the following values: </p> <ul> <li>PENDING - Amazon Machine Learning (Amazon
+     * ML) submitted a request to create a <code>DataSource</code>.</li> <li>INPROGRESS
+     * - The creation process is underway.</li> <li>FAILED - The request to create a
+     * <code>DataSource</code> did not run to completion. It is not usable.</li>
+     * <li>COMPLETED - The creation process completed successfully.</li> <li>DELETED -
+     * The <code>DataSource</code> is marked as deleted. It is not usable.</li> </ul>
+     */
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
     /**
      * <p>The current status of the <code>DataSource</code>. This element can have one
@@ -424,6 +487,12 @@ namespace Model
      * <p>A description of the most recent details about creating the
      * <code>DataSource</code>.</p>
      */
+    inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
+
+    /**
+     * <p>A description of the most recent details about creating the
+     * <code>DataSource</code>.</p>
+     */
     inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
 
     /**
@@ -461,6 +530,9 @@ namespace Model
     inline const RedshiftMetadata& GetRedshiftMetadata() const{ return m_redshiftMetadata; }
 
     
+    inline bool RedshiftMetadataHasBeenSet() const { return m_redshiftMetadataHasBeenSet; }
+
+    
     inline void SetRedshiftMetadata(const RedshiftMetadata& value) { m_redshiftMetadataHasBeenSet = true; m_redshiftMetadata = value; }
 
     
@@ -477,6 +549,9 @@ namespace Model
     inline const RDSMetadata& GetRDSMetadata() const{ return m_rDSMetadata; }
 
     
+    inline bool RDSMetadataHasBeenSet() const { return m_rDSMetadataHasBeenSet; }
+
+    
     inline void SetRDSMetadata(const RDSMetadata& value) { m_rDSMetadataHasBeenSet = true; m_rDSMetadata = value; }
 
     
@@ -491,6 +566,9 @@ namespace Model
 
     
     inline const Aws::String& GetRoleARN() const{ return m_roleARN; }
+
+    
+    inline bool RoleARNHasBeenSet() const { return m_roleARNHasBeenSet; }
 
     
     inline void SetRoleARN(const Aws::String& value) { m_roleARNHasBeenSet = true; m_roleARN = value; }
@@ -521,6 +599,12 @@ namespace Model
      * <p> The parameter is <code>true</code> if statistics need to be generated from
      * the observation data. </p>
      */
+    inline bool ComputeStatisticsHasBeenSet() const { return m_computeStatisticsHasBeenSet; }
+
+    /**
+     * <p> The parameter is <code>true</code> if statistics need to be generated from
+     * the observation data. </p>
+     */
     inline void SetComputeStatistics(bool value) { m_computeStatisticsHasBeenSet = true; m_computeStatistics = value; }
 
     /**
@@ -534,6 +618,9 @@ namespace Model
     inline long long GetComputeTime() const{ return m_computeTime; }
 
     
+    inline bool ComputeTimeHasBeenSet() const { return m_computeTimeHasBeenSet; }
+
+    
     inline void SetComputeTime(long long value) { m_computeTimeHasBeenSet = true; m_computeTime = value; }
 
     
@@ -542,6 +629,9 @@ namespace Model
 
     
     inline const Aws::Utils::DateTime& GetFinishedAt() const{ return m_finishedAt; }
+
+    
+    inline bool FinishedAtHasBeenSet() const { return m_finishedAtHasBeenSet; }
 
     
     inline void SetFinishedAt(const Aws::Utils::DateTime& value) { m_finishedAtHasBeenSet = true; m_finishedAt = value; }
@@ -558,6 +648,9 @@ namespace Model
 
     
     inline const Aws::Utils::DateTime& GetStartedAt() const{ return m_startedAt; }
+
+    
+    inline bool StartedAtHasBeenSet() const { return m_startedAtHasBeenSet; }
 
     
     inline void SetStartedAt(const Aws::Utils::DateTime& value) { m_startedAtHasBeenSet = true; m_startedAt = value; }

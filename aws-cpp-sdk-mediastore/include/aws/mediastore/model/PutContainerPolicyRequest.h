@@ -52,6 +52,11 @@ namespace Model
     /**
      * <p>The name of the container.</p>
      */
+    inline bool ContainerNameHasBeenSet() const { return m_containerNameHasBeenSet; }
+
+    /**
+     * <p>The name of the container.</p>
+     */
     inline void SetContainerName(const Aws::String& value) { m_containerNameHasBeenSet = true; m_containerName = value; }
 
     /**
@@ -86,6 +91,13 @@ namespace Model
      * that contains the standard tags for the policy.</p> </li> </ul>
      */
     inline const Aws::String& GetPolicy() const{ return m_policy; }
+
+    /**
+     * <p>The contents of the policy, which includes the following: </p> <ul> <li>
+     * <p>One <code>Version</code> tag</p> </li> <li> <p>One <code>Statement</code> tag
+     * that contains the standard tags for the policy.</p> </li> </ul>
+     */
+    inline bool PolicyHasBeenSet() const { return m_policyHasBeenSet; }
 
     /**
      * <p>The contents of the policy, which includes the following: </p> <ul> <li>

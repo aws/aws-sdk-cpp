@@ -61,6 +61,11 @@ namespace Model
     /**
      * <p>Information about the broker nodes.</p>
      */
+    inline bool BrokerNodeGroupInfoHasBeenSet() const { return m_brokerNodeGroupInfoHasBeenSet; }
+
+    /**
+     * <p>Information about the broker nodes.</p>
+     */
     inline void SetBrokerNodeGroupInfo(const BrokerNodeGroupInfo& value) { m_brokerNodeGroupInfoHasBeenSet = true; m_brokerNodeGroupInfo = value; }
 
     /**
@@ -83,6 +88,11 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) that uniquely identifies the cluster.</p>
      */
     inline const Aws::String& GetClusterArn() const{ return m_clusterArn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) that uniquely identifies the cluster.</p>
+     */
+    inline bool ClusterArnHasBeenSet() const { return m_clusterArnHasBeenSet; }
 
     /**
      * <p>The Amazon Resource Name (ARN) that uniquely identifies the cluster.</p>
@@ -123,6 +133,11 @@ namespace Model
     /**
      * <p>The name of the cluster.</p>
      */
+    inline bool ClusterNameHasBeenSet() const { return m_clusterNameHasBeenSet; }
+
+    /**
+     * <p>The name of the cluster.</p>
+     */
     inline void SetClusterName(const Aws::String& value) { m_clusterNameHasBeenSet = true; m_clusterName = value; }
 
     /**
@@ -159,6 +174,11 @@ namespace Model
     /**
      * <p>The time when the cluster was created.</p>
      */
+    inline bool CreationTimeHasBeenSet() const { return m_creationTimeHasBeenSet; }
+
+    /**
+     * <p>The time when the cluster was created.</p>
+     */
     inline void SetCreationTime(const Aws::Utils::DateTime& value) { m_creationTimeHasBeenSet = true; m_creationTime = value; }
 
     /**
@@ -182,6 +202,12 @@ namespace Model
      * brokers in the cluster.</p>
      */
     inline const BrokerSoftwareInfo& GetCurrentBrokerSoftwareInfo() const{ return m_currentBrokerSoftwareInfo; }
+
+    /**
+     * <p>Information about the version of software currently deployed on the Kafka
+     * brokers in the cluster.</p>
+     */
+    inline bool CurrentBrokerSoftwareInfoHasBeenSet() const { return m_currentBrokerSoftwareInfoHasBeenSet; }
 
     /**
      * <p>Information about the version of software currently deployed on the Kafka
@@ -212,6 +238,11 @@ namespace Model
      * <p>The current version of the MSK cluster.</p>
      */
     inline const Aws::String& GetCurrentVersion() const{ return m_currentVersion; }
+
+    /**
+     * <p>The current version of the MSK cluster.</p>
+     */
+    inline bool CurrentVersionHasBeenSet() const { return m_currentVersionHasBeenSet; }
 
     /**
      * <p>The current version of the MSK cluster.</p>
@@ -252,6 +283,11 @@ namespace Model
     /**
      * <p>Includes all encryption-related information.</p>
      */
+    inline bool EncryptionInfoHasBeenSet() const { return m_encryptionInfoHasBeenSet; }
+
+    /**
+     * <p>Includes all encryption-related information.</p>
+     */
     inline void SetEncryptionInfo(const EncryptionInfo& value) { m_encryptionInfoHasBeenSet = true; m_encryptionInfo = value; }
 
     /**
@@ -275,6 +311,12 @@ namespace Model
      * three possible values: DEFAULT, PER_BROKER, and PER_TOPIC_PER_BROKER.</p>
      */
     inline const EnhancedMonitoring& GetEnhancedMonitoring() const{ return m_enhancedMonitoring; }
+
+    /**
+     * <p>Specifies which metrics are gathered for the MSK cluster. This property has
+     * three possible values: DEFAULT, PER_BROKER, and PER_TOPIC_PER_BROKER.</p>
+     */
+    inline bool EnhancedMonitoringHasBeenSet() const { return m_enhancedMonitoringHasBeenSet; }
 
     /**
      * <p>Specifies which metrics are gathered for the MSK cluster. This property has
@@ -309,6 +351,11 @@ namespace Model
     /**
      * <p>The number of Kafka broker nodes in the cluster.</p>
      */
+    inline bool NumberOfBrokerNodesHasBeenSet() const { return m_numberOfBrokerNodesHasBeenSet; }
+
+    /**
+     * <p>The number of Kafka broker nodes in the cluster.</p>
+     */
     inline void SetNumberOfBrokerNodes(int value) { m_numberOfBrokerNodesHasBeenSet = true; m_numberOfBrokerNodes = value; }
 
     /**
@@ -322,6 +369,12 @@ namespace Model
      * FAILED.</p>
      */
     inline const ClusterState& GetState() const{ return m_state; }
+
+    /**
+     * <p>The state of the cluster. The possible states are CREATING, ACTIVE, and
+     * FAILED.</p>
+     */
+    inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
 
     /**
      * <p>The state of the cluster. The possible states are CREATING, ACTIVE, and
@@ -352,6 +405,11 @@ namespace Model
      * <p>The connection string to use to connect to the Apache ZooKeeper cluster.</p>
      */
     inline const Aws::String& GetZookeeperConnectString() const{ return m_zookeeperConnectString; }
+
+    /**
+     * <p>The connection string to use to connect to the Apache ZooKeeper cluster.</p>
+     */
+    inline bool ZookeeperConnectStringHasBeenSet() const { return m_zookeeperConnectStringHasBeenSet; }
 
     /**
      * <p>The connection string to use to connect to the Apache ZooKeeper cluster.</p>

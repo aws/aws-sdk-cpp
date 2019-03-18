@@ -57,6 +57,12 @@ namespace Model
      * <p>A name for the model compilation job. The name must be unique within the AWS
      * Region and within your AWS account. </p>
      */
+    inline bool CompilationJobNameHasBeenSet() const { return m_compilationJobNameHasBeenSet; }
+
+    /**
+     * <p>A name for the model compilation job. The name must be unique within the AWS
+     * Region and within your AWS account. </p>
+     */
     inline void SetCompilationJobName(const Aws::String& value) { m_compilationJobNameHasBeenSet = true; m_compilationJobName = value; }
 
     /**
@@ -104,6 +110,21 @@ namespace Model
      * SageMaker Roles.</a> </p>
      */
     inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of an IIAMAM role that enables Amazon
+     * SageMaker to perform tasks on your behalf. </p> <p>During model compilation,
+     * Amazon SageMaker needs your permission to:</p> <ul> <li> <p>Read input data from
+     * an S3 bucket</p> </li> <li> <p>Write model artifacts to an S3 bucket</p> </li>
+     * <li> <p>Write logs to Amazon CloudWatch Logs</p> </li> <li> <p>Publish metrics
+     * to Amazon CloudWatch</p> </li> </ul> <p>You grant permissions for all of these
+     * tasks to an IAM role. To pass this role to Amazon SageMaker, the caller of this
+     * API must have the <code>iam:PassRole</code> permission. For more information,
+     * see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon
+     * SageMaker Roles.</a> </p>
+     */
+    inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of an IIAMAM role that enables Amazon
@@ -208,6 +229,13 @@ namespace Model
      * and shape of the expected data inputs, and the framework in which the model was
      * trained.</p>
      */
+    inline bool InputConfigHasBeenSet() const { return m_inputConfigHasBeenSet; }
+
+    /**
+     * <p>Provides information about the location of input model artifacts, the name
+     * and shape of the expected data inputs, and the framework in which the model was
+     * trained.</p>
+     */
     inline void SetInputConfig(const InputConfig& value) { m_inputConfigHasBeenSet = true; m_inputConfig = value; }
 
     /**
@@ -242,6 +270,12 @@ namespace Model
      * <p>Provides information about the output location for the compiled model and the
      * target device the model runs on.</p>
      */
+    inline bool OutputConfigHasBeenSet() const { return m_outputConfigHasBeenSet; }
+
+    /**
+     * <p>Provides information about the output location for the compiled model and the
+     * target device the model runs on.</p>
+     */
     inline void SetOutputConfig(const OutputConfig& value) { m_outputConfigHasBeenSet = true; m_outputConfig = value; }
 
     /**
@@ -267,6 +301,11 @@ namespace Model
      * <p>The duration allowed for model compilation.</p>
      */
     inline const StoppingCondition& GetStoppingCondition() const{ return m_stoppingCondition; }
+
+    /**
+     * <p>The duration allowed for model compilation.</p>
+     */
+    inline bool StoppingConditionHasBeenSet() const { return m_stoppingConditionHasBeenSet; }
 
     /**
      * <p>The duration allowed for model compilation.</p>

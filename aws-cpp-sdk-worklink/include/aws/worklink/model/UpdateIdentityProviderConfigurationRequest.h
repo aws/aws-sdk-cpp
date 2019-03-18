@@ -51,6 +51,11 @@ namespace Model
     /**
      * <p>The ARN of the fleet.</p>
      */
+    inline bool FleetArnHasBeenSet() const { return m_fleetArnHasBeenSet; }
+
+    /**
+     * <p>The ARN of the fleet.</p>
+     */
     inline void SetFleetArn(const Aws::String& value) { m_fleetArnHasBeenSet = true; m_fleetArn = value; }
 
     /**
@@ -87,6 +92,11 @@ namespace Model
     /**
      * <p>The type of identity provider.</p>
      */
+    inline bool IdentityProviderTypeHasBeenSet() const { return m_identityProviderTypeHasBeenSet; }
+
+    /**
+     * <p>The type of identity provider.</p>
+     */
     inline void SetIdentityProviderType(const IdentityProviderType& value) { m_identityProviderTypeHasBeenSet = true; m_identityProviderType = value; }
 
     /**
@@ -110,6 +120,12 @@ namespace Model
      * existing IdentityProviderSamlMetadata is unset if null is passed.</p>
      */
     inline const Aws::String& GetIdentityProviderSamlMetadata() const{ return m_identityProviderSamlMetadata; }
+
+    /**
+     * <p>The SAML metadata document provided by the customer’s identity provider. The
+     * existing IdentityProviderSamlMetadata is unset if null is passed.</p>
+     */
+    inline bool IdentityProviderSamlMetadataHasBeenSet() const { return m_identityProviderSamlMetadataHasBeenSet; }
 
     /**
      * <p>The SAML metadata document provided by the customer’s identity provider. The

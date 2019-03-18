@@ -57,6 +57,11 @@ namespace Model
     /**
      * The Amazon Resource Name (ARN) of the resource.
      */
+    inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
+
+    /**
+     * The Amazon Resource Name (ARN) of the resource.
+     */
     inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
 
     /**
@@ -89,6 +94,11 @@ namespace Model
      * The tags for the resource.
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
+
+    /**
+     * The tags for the resource.
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
      * The tags for the resource.

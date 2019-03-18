@@ -63,6 +63,13 @@ namespace Model
      * network interface or instance to be reassigned to the specified network
      * interface.</p>
      */
+    inline bool AllowReassignmentHasBeenSet() const { return m_allowReassignmentHasBeenSet; }
+
+    /**
+     * <p>Indicates whether to allow an IP address that is already assigned to another
+     * network interface or instance to be reassigned to the specified network
+     * interface.</p>
+     */
     inline void SetAllowReassignment(bool value) { m_allowReassignmentHasBeenSet = true; m_allowReassignment = value; }
 
     /**
@@ -77,6 +84,11 @@ namespace Model
      * <p>The ID of the network interface.</p>
      */
     inline const Aws::String& GetNetworkInterfaceId() const{ return m_networkInterfaceId; }
+
+    /**
+     * <p>The ID of the network interface.</p>
+     */
+    inline bool NetworkInterfaceIdHasBeenSet() const { return m_networkInterfaceIdHasBeenSet; }
 
     /**
      * <p>The ID of the network interface.</p>
@@ -116,6 +128,14 @@ namespace Model
      * Amazon EC2 automatically selects an IP address within the subnet range.</p>
      */
     inline const Aws::Vector<Aws::String>& GetPrivateIpAddresses() const{ return m_privateIpAddresses; }
+
+    /**
+     * <p>One or more IP addresses to be assigned as a secondary private IP address to
+     * the network interface. You can't specify this parameter when also specifying a
+     * number of secondary IP addresses.</p> <p>If you don't specify an IP address,
+     * Amazon EC2 automatically selects an IP address within the subnet range.</p>
+     */
+    inline bool PrivateIpAddressesHasBeenSet() const { return m_privateIpAddressesHasBeenSet; }
 
     /**
      * <p>One or more IP addresses to be assigned as a secondary private IP address to
@@ -179,6 +199,12 @@ namespace Model
      * can't specify this parameter when also specifying private IP addresses.</p>
      */
     inline int GetSecondaryPrivateIpAddressCount() const{ return m_secondaryPrivateIpAddressCount; }
+
+    /**
+     * <p>The number of secondary IP addresses to assign to the network interface. You
+     * can't specify this parameter when also specifying private IP addresses.</p>
+     */
+    inline bool SecondaryPrivateIpAddressCountHasBeenSet() const { return m_secondaryPrivateIpAddressCountHasBeenSet; }
 
     /**
      * <p>The number of secondary IP addresses to assign to the network interface. You

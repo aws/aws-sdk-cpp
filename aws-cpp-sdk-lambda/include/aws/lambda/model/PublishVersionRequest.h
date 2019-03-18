@@ -64,6 +64,18 @@ namespace Model
      * constraint applies only to the full ARN. If you specify only the function name,
      * it is limited to 64 characters in length.</p>
      */
+    inline bool FunctionNameHasBeenSet() const { return m_functionNameHasBeenSet; }
+
+    /**
+     * <p>The name of the Lambda function.</p> <p class="title"> <b>Name formats</b>
+     * </p> <ul> <li> <p> <b>Function name</b> - <code>MyFunction</code>.</p> </li>
+     * <li> <p> <b>Function ARN</b> -
+     * <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p>
+     * </li> <li> <p> <b>Partial ARN</b> -
+     * <code>123456789012:function:MyFunction</code>.</p> </li> </ul> <p>The length
+     * constraint applies only to the full ARN. If you specify only the function name,
+     * it is limited to 64 characters in length.</p>
+     */
     inline void SetFunctionName(const Aws::String& value) { m_functionNameHasBeenSet = true; m_functionName = value; }
 
     /**
@@ -141,6 +153,14 @@ namespace Model
      * since you last updated it. You can get the hash for the version that you
      * uploaded from the output of <a>UpdateFunctionCode</a>.</p>
      */
+    inline bool CodeSha256HasBeenSet() const { return m_codeSha256HasBeenSet; }
+
+    /**
+     * <p>Only publish a version if the hash value matches the value that's specified.
+     * Use this option to avoid publishing a version if the function code has changed
+     * since you last updated it. You can get the hash for the version that you
+     * uploaded from the output of <a>UpdateFunctionCode</a>.</p>
+     */
     inline void SetCodeSha256(const Aws::String& value) { m_codeSha256HasBeenSet = true; m_codeSha256 = value; }
 
     /**
@@ -194,6 +214,12 @@ namespace Model
      * <p>A description for the version to override the description in the function
      * configuration.</p>
      */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
+
+    /**
+     * <p>A description for the version to override the description in the function
+     * configuration.</p>
+     */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
@@ -233,6 +259,13 @@ namespace Model
      * changed since you last updated it.</p>
      */
     inline const Aws::String& GetRevisionId() const{ return m_revisionId; }
+
+    /**
+     * <p>Only update the function if the revision ID matches the ID that's specified.
+     * Use this option to avoid publishing a version if the function configuration has
+     * changed since you last updated it.</p>
+     */
+    inline bool RevisionIdHasBeenSet() const { return m_revisionIdHasBeenSet; }
 
     /**
      * <p>Only update the function if the revision ID matches the ID that's specified.

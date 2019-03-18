@@ -58,6 +58,12 @@ namespace Model
      * <p>Whether you want a recommendation for standard or convertible
      * reservations.</p>
      */
+    inline bool OfferingClassHasBeenSet() const { return m_offeringClassHasBeenSet; }
+
+    /**
+     * <p>Whether you want a recommendation for standard or convertible
+     * reservations.</p>
+     */
     inline void SetOfferingClass(const OfferingClass& value) { m_offeringClassHasBeenSet = true; m_offeringClass = value; }
 
     /**

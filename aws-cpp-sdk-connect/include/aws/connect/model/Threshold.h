@@ -59,6 +59,12 @@ namespace Model
      * <p>The Threshold to use to compare service level metrics to. Only "Less than"
      * (LT) comparisons are supported.</p>
      */
+    inline bool ComparisonHasBeenSet() const { return m_comparisonHasBeenSet; }
+
+    /**
+     * <p>The Threshold to use to compare service level metrics to. Only "Less than"
+     * (LT) comparisons are supported.</p>
+     */
     inline void SetComparison(const Comparison& value) { m_comparisonHasBeenSet = true; m_comparison = value; }
 
     /**
@@ -85,6 +91,12 @@ namespace Model
      * comparisons are supported.</p>
      */
     inline double GetThresholdValue() const{ return m_thresholdValue; }
+
+    /**
+     * <p>The value of the threshold to compare the metric to. Only "Less than" (LT)
+     * comparisons are supported.</p>
+     */
+    inline bool ThresholdValueHasBeenSet() const { return m_thresholdValueHasBeenSet; }
 
     /**
      * <p>The value of the threshold to compare the metric to. Only "Less than" (LT)

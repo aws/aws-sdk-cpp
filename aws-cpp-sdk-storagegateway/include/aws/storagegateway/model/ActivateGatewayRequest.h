@@ -81,6 +81,19 @@ namespace Model
      * https://docs.aws.amazon.com/storagegateway/latest/userguide/get-activation-key.html
      * in the Storage Gateway User Guide.</p>
      */
+    inline bool ActivationKeyHasBeenSet() const { return m_activationKeyHasBeenSet; }
+
+    /**
+     * <p>Your gateway activation key. You can obtain the activation key by sending an
+     * HTTP GET request with redirects enabled to the gateway IP address (port 80). The
+     * redirect URL returned in the response provides you the activation key for your
+     * gateway in the query string parameter <code>activationKey</code>. It may also
+     * include other activation-related parameters, however, these are merely defaults
+     * -- the arguments you pass to the <code>ActivateGateway</code> API call determine
+     * the actual configuration of your gateway. </p> <p>For more information, see
+     * https://docs.aws.amazon.com/storagegateway/latest/userguide/get-activation-key.html
+     * in the Storage Gateway User Guide.</p>
+     */
     inline void SetActivationKey(const Aws::String& value) { m_activationKeyHasBeenSet = true; m_activationKey = value; }
 
     /**
@@ -157,6 +170,11 @@ namespace Model
     /**
      * <p>The name you configured for your gateway.</p>
      */
+    inline bool GatewayNameHasBeenSet() const { return m_gatewayNameHasBeenSet; }
+
+    /**
+     * <p>The name you configured for your gateway.</p>
+     */
     inline void SetGatewayName(const Aws::String& value) { m_gatewayNameHasBeenSet = true; m_gatewayName = value; }
 
     /**
@@ -193,6 +211,15 @@ namespace Model
      * your gateway's maintenance schedule.</p>
      */
     inline const Aws::String& GetGatewayTimezone() const{ return m_gatewayTimezone; }
+
+    /**
+     * <p>A value that indicates the time zone you want to set for the gateway. The
+     * time zone is of the format "GMT-hr:mm" or "GMT+hr:mm". For example, GMT-4:00
+     * indicates the time is 4 hours behind GMT. GMT+2:00 indicates the time is 2 hours
+     * ahead of GMT. The time zone is used, for example, for scheduling snapshots and
+     * your gateway's maintenance schedule.</p>
+     */
+    inline bool GatewayTimezoneHasBeenSet() const { return m_gatewayTimezoneHasBeenSet; }
 
     /**
      * <p>A value that indicates the time zone you want to set for the gateway. The
@@ -261,6 +288,19 @@ namespace Model
      * Storage Gateway Regions and Endpoints</a> in the AWS General Reference. </p>
      */
     inline const Aws::String& GetGatewayRegion() const{ return m_gatewayRegion; }
+
+    /**
+     * <p>A value that indicates the region where you want to store your data. The
+     * gateway region specified must be the same region as the region in your
+     * <code>Host</code> header in the request. For more information about available
+     * regions and endpoints for AWS Storage Gateway, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/rande.html#sg_region">Regions
+     * and Endpoints</a> in the <i>Amazon Web Services Glossary</i>.</p> <p> Valid
+     * Values: See <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/rande.html#sg_region">AWS
+     * Storage Gateway Regions and Endpoints</a> in the AWS General Reference. </p>
+     */
+    inline bool GatewayRegionHasBeenSet() const { return m_gatewayRegionHasBeenSet; }
 
     /**
      * <p>A value that indicates the region where you want to store your data. The
@@ -355,6 +395,14 @@ namespace Model
      * activation. The default value is <code>CACHED</code>. </p> <p> Valid Values:
      * "STORED", "CACHED", "VTL", "FILE_S3"</p>
      */
+    inline bool GatewayTypeHasBeenSet() const { return m_gatewayTypeHasBeenSet; }
+
+    /**
+     * <p>A value that defines the type of gateway to activate. The type specified is
+     * critical to all later functions of the gateway and cannot be changed after
+     * activation. The default value is <code>CACHED</code>. </p> <p> Valid Values:
+     * "STORED", "CACHED", "VTL", "FILE_S3"</p>
+     */
     inline void SetGatewayType(const Aws::String& value) { m_gatewayTypeHasBeenSet = true; m_gatewayType = value; }
 
     /**
@@ -408,6 +456,12 @@ namespace Model
      * <p>The value that indicates the type of tape drive to use for tape gateway. This
      * field is optional.</p> <p> Valid Values: "IBM-ULT3580-TD5" </p>
      */
+    inline bool TapeDriveTypeHasBeenSet() const { return m_tapeDriveTypeHasBeenSet; }
+
+    /**
+     * <p>The value that indicates the type of tape drive to use for tape gateway. This
+     * field is optional.</p> <p> Valid Values: "IBM-ULT3580-TD5" </p>
+     */
     inline void SetTapeDriveType(const Aws::String& value) { m_tapeDriveTypeHasBeenSet = true; m_tapeDriveType = value; }
 
     /**
@@ -446,6 +500,12 @@ namespace Model
      * This field is optional.</p> <p> Valid Values: "STK-L700", "AWS-Gateway-VTL"</p>
      */
     inline const Aws::String& GetMediumChangerType() const{ return m_mediumChangerType; }
+
+    /**
+     * <p>The value that indicates the type of medium changer to use for tape gateway.
+     * This field is optional.</p> <p> Valid Values: "STK-L700", "AWS-Gateway-VTL"</p>
+     */
+    inline bool MediumChangerTypeHasBeenSet() const { return m_mediumChangerTypeHasBeenSet; }
 
     /**
      * <p>The value that indicates the type of medium changer to use for tape gateway.
@@ -492,6 +552,15 @@ namespace Model
      * characters, and the maximum length for a tag's value is 256.</p> </note>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>A list of up to ten (10) tags assigned to the gateway may be specified. Every
+     * tag is a key-value pair.</p> <note> <p>Valid characters for key and value are
+     * letters, spaces, and numbers representable in UTF-8 format, and the following
+     * special characters: + - = . _ : / @. The maximum length of a tag's key is 128
+     * characters, and the maximum length for a tag's value is 256.</p> </note>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
      * <p>A list of up to ten (10) tags assigned to the gateway may be specified. Every

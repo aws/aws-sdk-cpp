@@ -54,6 +54,11 @@ namespace Model
     /**
      * ConfigurationSetName
      */
+    inline bool ConfigurationSetNameHasBeenSet() const { return m_configurationSetNameHasBeenSet; }
+
+    /**
+     * ConfigurationSetName
+     */
     inline void SetConfigurationSetName(const Aws::String& value) { m_configurationSetNameHasBeenSet = true; m_configurationSetName = value; }
 
     /**
@@ -86,6 +91,9 @@ namespace Model
     inline const EventDestinationDefinition& GetEventDestination() const{ return m_eventDestination; }
 
     
+    inline bool EventDestinationHasBeenSet() const { return m_eventDestinationHasBeenSet; }
+
+    
     inline void SetEventDestination(const EventDestinationDefinition& value) { m_eventDestinationHasBeenSet = true; m_eventDestination = value; }
 
     
@@ -102,6 +110,11 @@ namespace Model
      * EventDestinationName
      */
     inline const Aws::String& GetEventDestinationName() const{ return m_eventDestinationName; }
+
+    /**
+     * EventDestinationName
+     */
+    inline bool EventDestinationNameHasBeenSet() const { return m_eventDestinationNameHasBeenSet; }
 
     /**
      * EventDestinationName

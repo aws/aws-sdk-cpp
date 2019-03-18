@@ -59,6 +59,11 @@ namespace Model
     /**
      * <p>The ARN of the business report schedule.</p>
      */
+    inline bool ScheduleArnHasBeenSet() const { return m_scheduleArnHasBeenSet; }
+
+    /**
+     * <p>The ARN of the business report schedule.</p>
+     */
     inline void SetScheduleArn(const Aws::String& value) { m_scheduleArnHasBeenSet = true; m_scheduleArn = value; }
 
     /**
@@ -91,6 +96,11 @@ namespace Model
      * <p>The name identifier of the schedule.</p>
      */
     inline const Aws::String& GetScheduleName() const{ return m_scheduleName; }
+
+    /**
+     * <p>The name identifier of the schedule.</p>
+     */
+    inline bool ScheduleNameHasBeenSet() const { return m_scheduleNameHasBeenSet; }
 
     /**
      * <p>The name identifier of the schedule.</p>
@@ -131,6 +141,11 @@ namespace Model
     /**
      * <p>The S3 bucket name of the output reports.</p>
      */
+    inline bool S3BucketNameHasBeenSet() const { return m_s3BucketNameHasBeenSet; }
+
+    /**
+     * <p>The S3 bucket name of the output reports.</p>
+     */
     inline void SetS3BucketName(const Aws::String& value) { m_s3BucketNameHasBeenSet = true; m_s3BucketName = value; }
 
     /**
@@ -163,6 +178,11 @@ namespace Model
      * <p>The S3 key where the report is delivered.</p>
      */
     inline const Aws::String& GetS3KeyPrefix() const{ return m_s3KeyPrefix; }
+
+    /**
+     * <p>The S3 key where the report is delivered.</p>
+     */
+    inline bool S3KeyPrefixHasBeenSet() const { return m_s3KeyPrefixHasBeenSet; }
 
     /**
      * <p>The S3 key where the report is delivered.</p>
@@ -205,6 +225,12 @@ namespace Model
      * <p>The format of the generated report (individual CSV files or zipped files of
      * individual files).</p>
      */
+    inline bool FormatHasBeenSet() const { return m_formatHasBeenSet; }
+
+    /**
+     * <p>The format of the generated report (individual CSV files or zipped files of
+     * individual files).</p>
+     */
     inline void SetFormat(const BusinessReportFormat& value) { m_formatHasBeenSet = true; m_format = value; }
 
     /**
@@ -230,6 +256,11 @@ namespace Model
      * <p>The content range of the reports.</p>
      */
     inline const BusinessReportContentRange& GetContentRange() const{ return m_contentRange; }
+
+    /**
+     * <p>The content range of the reports.</p>
+     */
+    inline bool ContentRangeHasBeenSet() const { return m_contentRangeHasBeenSet; }
 
     /**
      * <p>The content range of the reports.</p>
@@ -260,6 +291,11 @@ namespace Model
     /**
      * <p>The recurrence of the reports.</p>
      */
+    inline bool RecurrenceHasBeenSet() const { return m_recurrenceHasBeenSet; }
+
+    /**
+     * <p>The recurrence of the reports.</p>
+     */
     inline void SetRecurrence(const BusinessReportRecurrence& value) { m_recurrenceHasBeenSet = true; m_recurrence = value; }
 
     /**
@@ -283,6 +319,12 @@ namespace Model
      * interval.</p>
      */
     inline const BusinessReport& GetLastBusinessReport() const{ return m_lastBusinessReport; }
+
+    /**
+     * <p>The details of the last business report delivery for a specified time
+     * interval.</p>
+     */
+    inline bool LastBusinessReportHasBeenSet() const { return m_lastBusinessReportHasBeenSet; }
 
     /**
      * <p>The details of the last business report delivery for a specified time

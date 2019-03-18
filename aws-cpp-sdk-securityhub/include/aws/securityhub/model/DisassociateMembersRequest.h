@@ -53,6 +53,12 @@ namespace Model
      * <p>The account IDs of the member accounts that you want to disassociate from the
      * master account.</p>
      */
+    inline bool AccountIdsHasBeenSet() const { return m_accountIdsHasBeenSet; }
+
+    /**
+     * <p>The account IDs of the member accounts that you want to disassociate from the
+     * master account.</p>
+     */
     inline void SetAccountIds(const Aws::Vector<Aws::String>& value) { m_accountIdsHasBeenSet = true; m_accountIds = value; }
 
     /**

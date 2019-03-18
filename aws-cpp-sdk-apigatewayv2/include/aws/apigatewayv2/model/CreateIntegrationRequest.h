@@ -55,6 +55,11 @@ namespace Model
     /**
      * <p>The API identifier.</p>
      */
+    inline bool ApiIdHasBeenSet() const { return m_apiIdHasBeenSet; }
+
+    /**
+     * <p>The API identifier.</p>
+     */
     inline void SetApiId(const Aws::String& value) { m_apiIdHasBeenSet = true; m_apiId = value; }
 
     /**
@@ -87,6 +92,11 @@ namespace Model
      * <p>The connection ID.</p>
      */
     inline const Aws::String& GetConnectionId() const{ return m_connectionId; }
+
+    /**
+     * <p>The connection ID.</p>
+     */
+    inline bool ConnectionIdHasBeenSet() const { return m_connectionIdHasBeenSet; }
 
     /**
      * <p>The connection ID.</p>
@@ -127,6 +137,15 @@ namespace Model
      * internet.</p>
      */
     inline const ConnectionType& GetConnectionType() const{ return m_connectionType; }
+
+    /**
+     * <p>The type of the network connection to the integration endpoint. Currently the
+     * only
+ valid value is INTERNET, for connections through the public routable
+
+     * internet.</p>
+     */
+    inline bool ConnectionTypeHasBeenSet() const { return m_connectionTypeHasBeenSet; }
 
     /**
      * <p>The type of the network connection to the integration endpoint. Currently the
@@ -184,6 +203,26 @@ namespace Model
  modification.</p>
      */
     inline const ContentHandlingStrategy& GetContentHandlingStrategy() const{ return m_contentHandlingStrategy; }
+
+    /**
+     * <p>Specifies how to handle response payload content type conversions. Supported
+
+     * values are CONVERT_TO_BINARY and CONVERT_TO_TEXT, with the
+ following
+     * behaviors:</p><p>
+ CONVERT_TO_BINARY: Converts a response payload from a
+     * Base64-encoded
+ string to the corresponding binary blob.</p><p>
+
+     * CONVERT_TO_TEXT: Converts a response payload from a binary blob to a
+
+     * Base64-encoded string.</p><p>If this property is not defined, the response
+     * payload will be passed through from
+ the integration response to the route
+     * response or method response without
+ modification.</p>
+     */
+    inline bool ContentHandlingStrategyHasBeenSet() const { return m_contentHandlingStrategyHasBeenSet; }
 
     /**
      * <p>Specifies how to handle response payload content type conversions. Supported
@@ -294,6 +333,21 @@ namespace Model
  AWS
      * services, specify null.</p>
      */
+    inline bool CredentialsArnHasBeenSet() const { return m_credentialsArnHasBeenSet; }
+
+    /**
+     * <p>Specifies the credentials required for the integration, if any. For AWS
+
+     * integrations, three options are available. To specify an IAM Role for API
+     * Gateway to
+ assume, use the role's Amazon Resource Name (ARN). To require that
+     * the caller's
+ identity be passed through from the request, specify the string
+
+     * arn:aws:iam::*:user/ *. To use resource-based permissions on supported
+ AWS
+     * services, specify null.</p>
+     */
     inline void SetCredentialsArn(const Aws::String& value) { m_credentialsArnHasBeenSet = true; m_credentialsArn = value; }
 
     /**
@@ -380,6 +434,11 @@ namespace Model
     /**
      * <p>The description of the integration.</p>
      */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
+
+    /**
+     * <p>The description of the integration.</p>
+     */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
@@ -412,6 +471,11 @@ namespace Model
      * <p>Specifies the integration's HTTP method type.</p>
      */
     inline const Aws::String& GetIntegrationMethod() const{ return m_integrationMethod; }
+
+    /**
+     * <p>Specifies the integration's HTTP method type.</p>
+     */
+    inline bool IntegrationMethodHasBeenSet() const { return m_integrationMethodHasBeenSet; }
 
     /**
      * <p>Specifies the integration's HTTP method type.</p>
@@ -477,6 +541,40 @@ namespace Model
  "loopback" endpoint without invoking any backend.</p>
      */
     inline const IntegrationType& GetIntegrationType() const{ return m_integrationType; }
+
+    /**
+     * <p>The integration type of an integration. One of the following:</p><p>
+ AWS:
+     * for integrating the route or method request with an AWS service
+ action,
+     * including the Lambda function-invoking action. With the Lambda
+
+     * function-invoking action, this is referred to as the Lambda custom integration.
+     * With
+ any other AWS service action, this is known as AWS integration.</p><p>
+
+     * AWS_PROXY: for integrating the route or method request with the Lambda
+
+     * function-invoking action with the client request passed through as-is. This
+
+     * integration is also referred to as Lambda proxy integration.</p><p>
+ HTTP: for
+     * integrating the route or method request with an HTTP
+ endpoint. This
+
+     * integration is also referred to as HTTP custom integration.</p><p>
+ HTTP_PROXY:
+     * for integrating route or method request with an HTTP
+ endpoint, with the client
+
+     * request passed through as-is. This is also referred to as HTTP proxy
+
+     * integration.</p><p>
+ MOCK: for integrating the route or method request with API
+     * Gateway as a
+ "loopback" endpoint without invoking any backend.</p>
+     */
+    inline bool IntegrationTypeHasBeenSet() const { return m_integrationTypeHasBeenSet; }
 
     /**
      * <p>The integration type of an integration. One of the following:</p><p>
@@ -623,6 +721,11 @@ namespace Model
     /**
      * <p>For a Lambda proxy integration, this is the URI of the Lambda function.</p>
      */
+    inline bool IntegrationUriHasBeenSet() const { return m_integrationUriHasBeenSet; }
+
+    /**
+     * <p>For a Lambda proxy integration, this is the URI of the Lambda function.</p>
+     */
     inline void SetIntegrationUri(const Aws::String& value) { m_integrationUriHasBeenSet = true; m_integrationUri = value; }
 
     /**
@@ -678,6 +781,34 @@ namespace Model
      * Media Type response.</p>
      */
     inline const PassthroughBehavior& GetPassthroughBehavior() const{ return m_passthroughBehavior; }
+
+    /**
+     * <p>Specifies the pass-through behavior for incoming requests based on the
+
+     * Content-Type header in the request, and the available mapping
+ templates
+     * specified as the requestTemplates property on the
+ Integration resource. There
+     * are three valid values:
+ WHEN_NO_MATCH, WHEN_NO_TEMPLATES, and
+ NEVER.</p><p>
+
+     * WHEN_NO_MATCH passes the request body for unmapped content types through
+ to the
+     * integration backend without transformation.</p><p>
+ NEVER rejects unmapped
+     * content types with an HTTP 415 Unsupported
+ Media Type response.</p><p>
+
+     * WHEN_NO_TEMPLATES allows pass-through when the integration has no
+ content types
+     * mapped to templates. However, if there is at least one content type
+ defined,
+     * unmapped content types will be rejected with the same HTTP 415
+ Unsupported
+     * Media Type response.</p>
+     */
+    inline bool PassthroughBehaviorHasBeenSet() const { return m_passthroughBehaviorHasBeenSet; }
 
     /**
      * <p>Specifies the pass-through behavior for incoming requests based on the
@@ -813,6 +944,28 @@ namespace Model
      * name.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetRequestParameters() const{ return m_requestParameters; }
+
+    /**
+     * <p>A key-value map specifying request parameters that are passed from the
+     * method
+ request to the backend. The key is an integration request parameter name
+     * and the
+ associated value is a method request parameter value or static value
+     * that must be
+ enclosed within single quotes and pre-encoded as required by the
+     * backend. The method
+ request parameter value must match the pattern of
+
+     * method.request.{location}.{name}
+ , where 
+ {location}
+  is querystring, path,
+     * or header; and 
+ {name}
+  must be a valid and unique method request parameter
+     * name.</p>
+     */
+    inline bool RequestParametersHasBeenSet() const { return m_requestParametersHasBeenSet; }
 
     /**
      * <p>A key-value map specifying request parameters that are passed from the
@@ -1075,6 +1228,16 @@ namespace Model
  value is the key in this map, and the template (as a String) is
      * the value.</p>
      */
+    inline bool RequestTemplatesHasBeenSet() const { return m_requestTemplatesHasBeenSet; }
+
+    /**
+     * <p>Represents a map of Velocity templates that are applied on the request
+     * payload
+ based on the value of the Content-Type header sent by the client. The
+     * content type
+ value is the key in this map, and the template (as a String) is
+     * the value.</p>
+     */
     inline void SetRequestTemplates(const Aws::Map<Aws::String, Aws::String>& value) { m_requestTemplatesHasBeenSet = true; m_requestTemplates = value; }
 
     /**
@@ -1186,6 +1349,11 @@ namespace Model
     /**
      * <p>The template selection expression for the integration.</p>
      */
+    inline bool TemplateSelectionExpressionHasBeenSet() const { return m_templateSelectionExpressionHasBeenSet; }
+
+    /**
+     * <p>The template selection expression for the integration.</p>
+     */
     inline void SetTemplateSelectionExpression(const Aws::String& value) { m_templateSelectionExpressionHasBeenSet = true; m_templateSelectionExpression = value; }
 
     /**
@@ -1220,6 +1388,13 @@ namespace Model
  milliseconds or 29 seconds.</p>
      */
     inline int GetTimeoutInMillis() const{ return m_timeoutInMillis; }
+
+    /**
+     * <p>Custom timeout between 50 and 29,000 milliseconds. The default value is
+     * 29,000
+ milliseconds or 29 seconds.</p>
+     */
+    inline bool TimeoutInMillisHasBeenSet() const { return m_timeoutInMillisHasBeenSet; }
 
     /**
      * <p>Custom timeout between 50 and 29,000 milliseconds. The default value is

@@ -61,6 +61,13 @@ namespace Model
      * start your task. If you do not specify a cluster, the default cluster is
      * assumed.</p>
      */
+    inline bool ClusterHasBeenSet() const { return m_clusterHasBeenSet; }
+
+    /**
+     * <p>The short name or full Amazon Resource Name (ARN) of the cluster on which to
+     * start your task. If you do not specify a cluster, the default cluster is
+     * assumed.</p>
+     */
     inline void SetCluster(const Aws::String& value) { m_clusterHasBeenSet = true; m_cluster = value; }
 
     /**
@@ -106,6 +113,14 @@ namespace Model
      * is used.</p>
      */
     inline const Aws::String& GetTaskDefinition() const{ return m_taskDefinition; }
+
+    /**
+     * <p>The <code>family</code> and <code>revision</code>
+     * (<code>family:revision</code>) or full ARN of the task definition to start. If a
+     * <code>revision</code> is not specified, the latest <code>ACTIVE</code> revision
+     * is used.</p>
+     */
+    inline bool TaskDefinitionHasBeenSet() const { return m_taskDefinitionHasBeenSet; }
 
     /**
      * <p>The <code>family</code> and <code>revision</code>
@@ -180,6 +195,19 @@ namespace Model
      * characters are allowed for overrides. This limit includes the JSON formatting
      * characters of the override structure.</p> </note>
      */
+    inline bool OverridesHasBeenSet() const { return m_overridesHasBeenSet; }
+
+    /**
+     * <p>A list of container overrides in JSON format that specify the name of a
+     * container in the specified task definition and the overrides it should receive.
+     * You can override the default command for a container (that is specified in the
+     * task definition or Docker image) with a <code>command</code> override. You can
+     * also override existing environment variables (that are specified in the task
+     * definition or Docker image) on a container or add new environment variables to
+     * it with an <code>environment</code> override.</p> <note> <p>A total of 8192
+     * characters are allowed for overrides. This limit includes the JSON formatting
+     * characters of the override structure.</p> </note>
+     */
     inline void SetOverrides(const TaskOverride& value) { m_overridesHasBeenSet = true; m_overrides = value; }
 
     /**
@@ -228,6 +256,13 @@ namespace Model
      * instances.</p>
      */
     inline const Aws::Vector<Aws::String>& GetContainerInstances() const{ return m_containerInstances; }
+
+    /**
+     * <p>The container instance IDs or full ARN entries for the container instances on
+     * which you would like to place your task. You can specify up to 10 container
+     * instances.</p>
+     */
+    inline bool ContainerInstancesHasBeenSet() const { return m_containerInstancesHasBeenSet; }
 
     /**
      * <p>The container instance IDs or full ARN entries for the container instances on
@@ -291,6 +326,19 @@ namespace Model
      * starts it.</p>
      */
     inline const Aws::String& GetStartedBy() const{ return m_startedBy; }
+
+    /**
+     * <p>An optional tag specified when a task is started. For example, if you
+     * automatically trigger a task to run a batch process job, you could apply a
+     * unique identifier for that job to your task with the <code>startedBy</code>
+     * parameter. You can then identify which tasks belong to that job by filtering the
+     * results of a <a>ListTasks</a> call with the <code>startedBy</code> value. Up to
+     * 36 letters (uppercase and lowercase), numbers, hyphens, and underscores are
+     * allowed.</p> <p>If a task is started by an Amazon ECS service, then the
+     * <code>startedBy</code> parameter contains the deployment ID of the service that
+     * starts it.</p>
+     */
+    inline bool StartedByHasBeenSet() const { return m_startedByHasBeenSet; }
 
     /**
      * <p>An optional tag specified when a task is started. For example, if you
@@ -381,6 +429,12 @@ namespace Model
      * <p>The name of the task group to associate with the task. The default value is
      * the family name of the task definition (for example, family:my-family-name).</p>
      */
+    inline bool GroupHasBeenSet() const { return m_groupHasBeenSet; }
+
+    /**
+     * <p>The name of the task group to associate with the task. The default value is
+     * the family name of the task definition (for example, family:my-family-name).</p>
+     */
     inline void SetGroup(const Aws::String& value) { m_groupHasBeenSet = true; m_group = value; }
 
     /**
@@ -426,6 +480,13 @@ namespace Model
      * own elastic network interface by using the <code>awsvpc</code> networking
      * mode.</p>
      */
+    inline bool NetworkConfigurationHasBeenSet() const { return m_networkConfigurationHasBeenSet; }
+
+    /**
+     * <p>The VPC subnet and security group configuration for tasks that receive their
+     * own elastic network interface by using the <code>awsvpc</code> networking
+     * mode.</p>
+     */
     inline void SetNetworkConfiguration(const NetworkConfiguration& value) { m_networkConfigurationHasBeenSet = true; m_networkConfiguration = value; }
 
     /**
@@ -457,6 +518,14 @@ namespace Model
      * values can have a maximum length of 256 characters.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>The metadata that you apply to the task to help you categorize and organize
+     * them. Each tag consists of a key and an optional value, both of which you
+     * define. Tag keys can have a maximum character length of 128 characters, and tag
+     * values can have a maximum length of 256 characters.</p>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
      * <p>The metadata that you apply to the task to help you categorize and organize
@@ -523,6 +592,15 @@ namespace Model
      * Your Amazon ECS Resources</a> in the <i>Amazon Elastic Container Service
      * Developer Guide</i>.</p>
      */
+    inline bool EnableECSManagedTagsHasBeenSet() const { return m_enableECSManagedTagsHasBeenSet; }
+
+    /**
+     * <p>Specifies whether to enable Amazon ECS managed tags for the task. For more
+     * information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-using-tags.html">Tagging
+     * Your Amazon ECS Resources</a> in the <i>Amazon Elastic Container Service
+     * Developer Guide</i>.</p>
+     */
     inline void SetEnableECSManagedTags(bool value) { m_enableECSManagedTagsHasBeenSet = true; m_enableECSManagedTags = value; }
 
     /**
@@ -540,6 +618,12 @@ namespace Model
      * service to the task. If no value is specified, the tags are not propagated.</p>
      */
     inline const PropagateTags& GetPropagateTags() const{ return m_propagateTags; }
+
+    /**
+     * <p>Specifies whether to propagate the tags from the task definition or the
+     * service to the task. If no value is specified, the tags are not propagated.</p>
+     */
+    inline bool PropagateTagsHasBeenSet() const { return m_propagateTagsHasBeenSet; }
 
     /**
      * <p>Specifies whether to propagate the tags from the task definition or the

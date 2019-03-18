@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p> ID for public key information summary. </p>
      */
+    inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
+
+    /**
+     * <p> ID for public key information summary. </p>
+     */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
     /**
@@ -89,6 +94,11 @@ namespace Model
      * <p> Name for public key information summary. </p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
+
+    /**
+     * <p> Name for public key information summary. </p>
+     */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
      * <p> Name for public key information summary. </p>
@@ -129,6 +139,11 @@ namespace Model
     /**
      * <p> Creation time for public key information summary. </p>
      */
+    inline bool CreatedTimeHasBeenSet() const { return m_createdTimeHasBeenSet; }
+
+    /**
+     * <p> Creation time for public key information summary. </p>
+     */
     inline void SetCreatedTime(const Aws::Utils::DateTime& value) { m_createdTimeHasBeenSet = true; m_createdTime = value; }
 
     /**
@@ -151,6 +166,11 @@ namespace Model
      * <p> Encoded key for public key information summary. </p>
      */
     inline const Aws::String& GetEncodedKey() const{ return m_encodedKey; }
+
+    /**
+     * <p> Encoded key for public key information summary. </p>
+     */
+    inline bool EncodedKeyHasBeenSet() const { return m_encodedKeyHasBeenSet; }
 
     /**
      * <p> Encoded key for public key information summary. </p>
@@ -187,6 +207,11 @@ namespace Model
      * <p> Comment for public key information summary. </p>
      */
     inline const Aws::String& GetComment() const{ return m_comment; }
+
+    /**
+     * <p> Comment for public key information summary. </p>
+     */
+    inline bool CommentHasBeenSet() const { return m_commentHasBeenSet; }
 
     /**
      * <p> Comment for public key information summary. </p>

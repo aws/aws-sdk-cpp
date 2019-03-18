@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The state change reason code.</p>
      */
+    inline bool CodeHasBeenSet() const { return m_codeHasBeenSet; }
+
+    /**
+     * <p>The state change reason code.</p>
+     */
     inline void SetCode(const ImageStateChangeReasonCode& value) { m_codeHasBeenSet = true; m_code = value; }
 
     /**
@@ -79,6 +84,11 @@ namespace Model
      * <p>The state change reason message.</p>
      */
     inline const Aws::String& GetMessage() const{ return m_message; }
+
+    /**
+     * <p>The state change reason message.</p>
+     */
+    inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
 
     /**
      * <p>The state change reason message.</p>

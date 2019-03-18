@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p>The name of the option group that the instance belongs to.</p>
      */
+    inline bool OptionGroupNameHasBeenSet() const { return m_optionGroupNameHasBeenSet; }
+
+    /**
+     * <p>The name of the option group that the instance belongs to.</p>
+     */
     inline void SetOptionGroupName(const Aws::String& value) { m_optionGroupNameHasBeenSet = true; m_optionGroupName = value; }
 
     /**
@@ -94,6 +99,15 @@ namespace Model
      * <code>removing</code>, and <code>failed</code>. </p>
      */
     inline const Aws::String& GetStatus() const{ return m_status; }
+
+    /**
+     * <p>The status of the DB instance's option group membership. Valid values are:
+     * <code>in-sync</code>, <code>pending-apply</code>, <code>pending-removal</code>,
+     * <code>pending-maintenance-apply</code>,
+     * <code>pending-maintenance-removal</code>, <code>applying</code>,
+     * <code>removing</code>, and <code>failed</code>. </p>
+     */
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
     /**
      * <p>The status of the DB instance's option group membership. Valid values are:

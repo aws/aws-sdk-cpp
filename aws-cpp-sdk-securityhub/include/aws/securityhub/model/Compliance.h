@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>Indicates the result of a compliance check.</p>
      */
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
+
+    /**
+     * <p>Indicates the result of a compliance check.</p>
+     */
     inline void SetStatus(const ComplianceStatus& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**

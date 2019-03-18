@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p>The total number of documents that match the search request.</p>
      */
+    inline bool FoundHasBeenSet() const { return m_foundHasBeenSet; }
+
+    /**
+     * <p>The total number of documents that match the search request.</p>
+     */
     inline void SetFound(long long value) { m_foundHasBeenSet = true; m_found = value; }
 
     /**
@@ -70,6 +75,11 @@ namespace Model
      * <p>The index of the first matching document.</p>
      */
     inline long long GetStart() const{ return m_start; }
+
+    /**
+     * <p>The index of the first matching document.</p>
+     */
+    inline bool StartHasBeenSet() const { return m_startHasBeenSet; }
 
     /**
      * <p>The index of the first matching document.</p>
@@ -87,6 +97,12 @@ namespace Model
      * you want to page through a large result set.</p>
      */
     inline const Aws::String& GetCursor() const{ return m_cursor; }
+
+    /**
+     * <p>A cursor that can be used to retrieve the next set of matching documents when
+     * you want to page through a large result set.</p>
+     */
+    inline bool CursorHasBeenSet() const { return m_cursorHasBeenSet; }
 
     /**
      * <p>A cursor that can be used to retrieve the next set of matching documents when
@@ -129,6 +145,11 @@ namespace Model
      * <p>A document that matches the search request.</p>
      */
     inline const Aws::Vector<Hit>& GetHit() const{ return m_hit; }
+
+    /**
+     * <p>A document that matches the search request.</p>
+     */
+    inline bool HitHasBeenSet() const { return m_hitHasBeenSet; }
 
     /**
      * <p>A document that matches the search request.</p>

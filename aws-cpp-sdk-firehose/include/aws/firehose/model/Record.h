@@ -57,6 +57,12 @@ namespace Model
      * <p>The data blob, which is base64-encoded when the blob is serialized. The
      * maximum size of the data blob, before base64-encoding, is 1,000 KiB.</p>
      */
+    inline bool DataHasBeenSet() const { return m_dataHasBeenSet; }
+
+    /**
+     * <p>The data blob, which is base64-encoded when the blob is serialized. The
+     * maximum size of the data blob, before base64-encoding, is 1,000 KiB.</p>
+     */
     inline void SetData(const Aws::Utils::ByteBuffer& value) { m_dataHasBeenSet = true; m_data = value; }
 
     /**

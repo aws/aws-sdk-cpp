@@ -72,6 +72,19 @@ namespace Model
      * <code>use1-az1</code>).</p> </li> <li> <p> <code>zone-name</code> - The name of
      * the Availability Zone (for example, <code>us-east-1a</code>).</p> </li> </ul>
      */
+    inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
+
+    /**
+     * <p>One or more filters.</p> <ul> <li> <p> <code>message</code> - Information
+     * about the Availability Zone.</p> </li> <li> <p> <code>region-name</code> - The
+     * name of the region for the Availability Zone (for example,
+     * <code>us-east-1</code>).</p> </li> <li> <p> <code>state</code> - The state of
+     * the Availability Zone (<code>available</code> | <code>information</code> |
+     * <code>impaired</code> | <code>unavailable</code>).</p> </li> <li> <p>
+     * <code>zone-id</code> - The ID of the Availability Zone (for example,
+     * <code>use1-az1</code>).</p> </li> <li> <p> <code>zone-name</code> - The name of
+     * the Availability Zone (for example, <code>us-east-1a</code>).</p> </li> </ul>
+     */
     inline void SetFilters(const Aws::Vector<Filter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
 
     /**
@@ -148,6 +161,11 @@ namespace Model
     /**
      * <p>The names of one or more Availability Zones.</p>
      */
+    inline bool ZoneNamesHasBeenSet() const { return m_zoneNamesHasBeenSet; }
+
+    /**
+     * <p>The names of one or more Availability Zones.</p>
+     */
     inline void SetZoneNames(const Aws::Vector<Aws::String>& value) { m_zoneNamesHasBeenSet = true; m_zoneNames = value; }
 
     /**
@@ -185,6 +203,11 @@ namespace Model
      * <p>The IDs of one or more Availability Zones.</p>
      */
     inline const Aws::Vector<Aws::String>& GetZoneIds() const{ return m_zoneIds; }
+
+    /**
+     * <p>The IDs of one or more Availability Zones.</p>
+     */
+    inline bool ZoneIdsHasBeenSet() const { return m_zoneIdsHasBeenSet; }
 
     /**
      * <p>The IDs of one or more Availability Zones.</p>
@@ -229,6 +252,14 @@ namespace Model
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
     inline bool GetDryRun() const{ return m_dryRun; }
+
+    /**
+     * <p>Checks whether you have the required permissions for the action, without
+     * actually making the request, and provides an error response. If you have the
+     * required permissions, the error response is <code>DryRunOperation</code>.
+     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+     */
+    inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
 
     /**
      * <p>Checks whether you have the required permissions for the action, without

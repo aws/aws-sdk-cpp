@@ -66,6 +66,13 @@ namespace Model
      * of actions: <code>forward</code>, <code>fixed-response</code>, or
      * <code>redirect</code>.</p>
      */
+    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
+
+    /**
+     * <p>The type of action. Each rule must include exactly one of the following types
+     * of actions: <code>forward</code>, <code>fixed-response</code>, or
+     * <code>redirect</code>.</p>
+     */
     inline void SetType(const ActionTypeEnum& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
@@ -95,6 +102,12 @@ namespace Model
      * <code>Type</code> is <code>forward</code>.</p>
      */
     inline const Aws::String& GetTargetGroupArn() const{ return m_targetGroupArn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the target group. Specify only when
+     * <code>Type</code> is <code>forward</code>.</p>
+     */
+    inline bool TargetGroupArnHasBeenSet() const { return m_targetGroupArnHasBeenSet; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the target group. Specify only when
@@ -145,6 +158,13 @@ namespace Model
      * with OpenID Connect (OIDC). Specify only when <code>Type</code> is
      * <code>authenticate-oidc</code>.</p>
      */
+    inline bool AuthenticateOidcConfigHasBeenSet() const { return m_authenticateOidcConfigHasBeenSet; }
+
+    /**
+     * <p>[HTTPS listeners] Information about an identity provider that is compliant
+     * with OpenID Connect (OIDC). Specify only when <code>Type</code> is
+     * <code>authenticate-oidc</code>.</p>
+     */
     inline void SetAuthenticateOidcConfig(const AuthenticateOidcActionConfig& value) { m_authenticateOidcConfigHasBeenSet = true; m_authenticateOidcConfig = value; }
 
     /**
@@ -174,6 +194,12 @@ namespace Model
      * Specify only when <code>Type</code> is <code>authenticate-cognito</code>.</p>
      */
     inline const AuthenticateCognitoActionConfig& GetAuthenticateCognitoConfig() const{ return m_authenticateCognitoConfig; }
+
+    /**
+     * <p>[HTTPS listeners] Information for using Amazon Cognito to authenticate users.
+     * Specify only when <code>Type</code> is <code>authenticate-cognito</code>.</p>
+     */
+    inline bool AuthenticateCognitoConfigHasBeenSet() const { return m_authenticateCognitoConfigHasBeenSet; }
 
     /**
      * <p>[HTTPS listeners] Information for using Amazon Cognito to authenticate users.
@@ -214,6 +240,14 @@ namespace Model
      * final action to be performed must be a <code>forward</code> or a
      * <code>fixed-response</code> action.</p>
      */
+    inline bool OrderHasBeenSet() const { return m_orderHasBeenSet; }
+
+    /**
+     * <p>The order for the action. This value is required for rules with multiple
+     * actions. The action with the lowest value for order is performed first. The
+     * final action to be performed must be a <code>forward</code> or a
+     * <code>fixed-response</code> action.</p>
+     */
     inline void SetOrder(int value) { m_orderHasBeenSet = true; m_order = value; }
 
     /**
@@ -230,6 +264,12 @@ namespace Model
      * Specify only when <code>Type</code> is <code>redirect</code>.</p>
      */
     inline const RedirectActionConfig& GetRedirectConfig() const{ return m_redirectConfig; }
+
+    /**
+     * <p>[Application Load Balancer] Information for creating a redirect action.
+     * Specify only when <code>Type</code> is <code>redirect</code>.</p>
+     */
+    inline bool RedirectConfigHasBeenSet() const { return m_redirectConfigHasBeenSet; }
 
     /**
      * <p>[Application Load Balancer] Information for creating a redirect action.
@@ -262,6 +302,13 @@ namespace Model
      * <code>fixed-response</code>.</p>
      */
     inline const FixedResponseActionConfig& GetFixedResponseConfig() const{ return m_fixedResponseConfig; }
+
+    /**
+     * <p>[Application Load Balancer] Information for creating an action that returns a
+     * custom HTTP response. Specify only when <code>Type</code> is
+     * <code>fixed-response</code>.</p>
+     */
+    inline bool FixedResponseConfigHasBeenSet() const { return m_fixedResponseConfigHasBeenSet; }
 
     /**
      * <p>[Application Load Balancer] Information for creating an action that returns a

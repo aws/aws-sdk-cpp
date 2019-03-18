@@ -54,6 +54,11 @@ namespace Model
     /**
      * <p>A <code>GrokClassifier</code> object with updated fields.</p>
      */
+    inline bool GrokClassifierHasBeenSet() const { return m_grokClassifierHasBeenSet; }
+
+    /**
+     * <p>A <code>GrokClassifier</code> object with updated fields.</p>
+     */
     inline void SetGrokClassifier(const UpdateGrokClassifierRequest& value) { m_grokClassifierHasBeenSet = true; m_grokClassifier = value; }
 
     /**
@@ -80,6 +85,11 @@ namespace Model
     /**
      * <p>An <code>XMLClassifier</code> object with updated fields.</p>
      */
+    inline bool XMLClassifierHasBeenSet() const { return m_xMLClassifierHasBeenSet; }
+
+    /**
+     * <p>An <code>XMLClassifier</code> object with updated fields.</p>
+     */
     inline void SetXMLClassifier(const UpdateXMLClassifierRequest& value) { m_xMLClassifierHasBeenSet = true; m_xMLClassifier = value; }
 
     /**
@@ -102,6 +112,11 @@ namespace Model
      * <p>A <code>JsonClassifier</code> object with updated fields.</p>
      */
     inline const UpdateJsonClassifierRequest& GetJsonClassifier() const{ return m_jsonClassifier; }
+
+    /**
+     * <p>A <code>JsonClassifier</code> object with updated fields.</p>
+     */
+    inline bool JsonClassifierHasBeenSet() const { return m_jsonClassifierHasBeenSet; }
 
     /**
      * <p>A <code>JsonClassifier</code> object with updated fields.</p>

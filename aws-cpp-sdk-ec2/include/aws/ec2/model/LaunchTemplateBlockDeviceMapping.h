@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p>The device name.</p>
      */
+    inline bool DeviceNameHasBeenSet() const { return m_deviceNameHasBeenSet; }
+
+    /**
+     * <p>The device name.</p>
+     */
     inline void SetDeviceName(const Aws::String& value) { m_deviceNameHasBeenSet = true; m_deviceName = value; }
 
     /**
@@ -90,6 +95,11 @@ namespace Model
      * <p>The virtual device name (ephemeralN).</p>
      */
     inline const Aws::String& GetVirtualName() const{ return m_virtualName; }
+
+    /**
+     * <p>The virtual device name (ephemeralN).</p>
+     */
+    inline bool VirtualNameHasBeenSet() const { return m_virtualNameHasBeenSet; }
 
     /**
      * <p>The virtual device name (ephemeralN).</p>
@@ -130,6 +140,11 @@ namespace Model
     /**
      * <p>Information about the block device for an EBS volume.</p>
      */
+    inline bool EbsHasBeenSet() const { return m_ebsHasBeenSet; }
+
+    /**
+     * <p>Information about the block device for an EBS volume.</p>
+     */
     inline void SetEbs(const LaunchTemplateEbsBlockDevice& value) { m_ebsHasBeenSet = true; m_ebs = value; }
 
     /**
@@ -153,6 +168,12 @@ namespace Model
      * AMI.</p>
      */
     inline const Aws::String& GetNoDevice() const{ return m_noDevice; }
+
+    /**
+     * <p>Suppresses the specified device included in the block device mapping of the
+     * AMI.</p>
+     */
+    inline bool NoDeviceHasBeenSet() const { return m_noDeviceHasBeenSet; }
 
     /**
      * <p>Suppresses the specified device included in the block device mapping of the

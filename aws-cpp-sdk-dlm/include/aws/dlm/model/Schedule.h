@@ -59,6 +59,11 @@ namespace Model
     /**
      * <p>The name of the schedule.</p>
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>The name of the schedule.</p>
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
@@ -91,6 +96,9 @@ namespace Model
     inline bool GetCopyTags() const{ return m_copyTags; }
 
     
+    inline bool CopyTagsHasBeenSet() const { return m_copyTagsHasBeenSet; }
+
+    
     inline void SetCopyTags(bool value) { m_copyTagsHasBeenSet = true; m_copyTags = value; }
 
     
@@ -102,6 +110,12 @@ namespace Model
      * addition to the AWS-added lifecycle tags.</p>
      */
     inline const Aws::Vector<Tag>& GetTagsToAdd() const{ return m_tagsToAdd; }
+
+    /**
+     * <p>The tags to apply to policy-created resources. These user-defined tags are in
+     * addition to the AWS-added lifecycle tags.</p>
+     */
+    inline bool TagsToAddHasBeenSet() const { return m_tagsToAddHasBeenSet; }
 
     /**
      * <p>The tags to apply to policy-created resources. These user-defined tags are in
@@ -148,6 +162,11 @@ namespace Model
     /**
      * <p>The create rule.</p>
      */
+    inline bool CreateRuleHasBeenSet() const { return m_createRuleHasBeenSet; }
+
+    /**
+     * <p>The create rule.</p>
+     */
     inline void SetCreateRule(const CreateRule& value) { m_createRuleHasBeenSet = true; m_createRule = value; }
 
     /**
@@ -170,6 +189,11 @@ namespace Model
      * <p>The retain rule.</p>
      */
     inline const RetainRule& GetRetainRule() const{ return m_retainRule; }
+
+    /**
+     * <p>The retain rule.</p>
+     */
+    inline bool RetainRuleHasBeenSet() const { return m_retainRuleHasBeenSet; }
 
     /**
      * <p>The retain rule.</p>

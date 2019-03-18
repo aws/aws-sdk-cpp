@@ -55,6 +55,11 @@ namespace Model
     /**
      * <p>The application information for the simulation application.</p>
      */
+    inline bool ApplicationHasBeenSet() const { return m_applicationHasBeenSet; }
+
+    /**
+     * <p>The application information for the simulation application.</p>
+     */
     inline void SetApplication(const Aws::String& value) { m_applicationHasBeenSet = true; m_application = value; }
 
     /**
@@ -87,6 +92,11 @@ namespace Model
      * <p>The sources of the simulation application.</p>
      */
     inline const Aws::Vector<SourceConfig>& GetSources() const{ return m_sources; }
+
+    /**
+     * <p>The sources of the simulation application.</p>
+     */
+    inline bool SourcesHasBeenSet() const { return m_sourcesHasBeenSet; }
 
     /**
      * <p>The sources of the simulation application.</p>
@@ -127,6 +137,11 @@ namespace Model
     /**
      * <p>The simulation software suite used by the simulation application.</p>
      */
+    inline bool SimulationSoftwareSuiteHasBeenSet() const { return m_simulationSoftwareSuiteHasBeenSet; }
+
+    /**
+     * <p>The simulation software suite used by the simulation application.</p>
+     */
     inline void SetSimulationSoftwareSuite(const SimulationSoftwareSuite& value) { m_simulationSoftwareSuiteHasBeenSet = true; m_simulationSoftwareSuite = value; }
 
     /**
@@ -149,6 +164,11 @@ namespace Model
      * <p>Information about the robot software suite.</p>
      */
     inline const RobotSoftwareSuite& GetRobotSoftwareSuite() const{ return m_robotSoftwareSuite; }
+
+    /**
+     * <p>Information about the robot software suite.</p>
+     */
+    inline bool RobotSoftwareSuiteHasBeenSet() const { return m_robotSoftwareSuiteHasBeenSet; }
 
     /**
      * <p>Information about the robot software suite.</p>
@@ -179,6 +199,11 @@ namespace Model
     /**
      * <p>The rendering engine for the simulation application.</p>
      */
+    inline bool RenderingEngineHasBeenSet() const { return m_renderingEngineHasBeenSet; }
+
+    /**
+     * <p>The rendering engine for the simulation application.</p>
+     */
     inline void SetRenderingEngine(const RenderingEngine& value) { m_renderingEngineHasBeenSet = true; m_renderingEngine = value; }
 
     /**
@@ -201,6 +226,11 @@ namespace Model
      * <p>The revision id for the robot application.</p>
      */
     inline const Aws::String& GetCurrentRevisionId() const{ return m_currentRevisionId; }
+
+    /**
+     * <p>The revision id for the robot application.</p>
+     */
+    inline bool CurrentRevisionIdHasBeenSet() const { return m_currentRevisionIdHasBeenSet; }
 
     /**
      * <p>The revision id for the robot application.</p>

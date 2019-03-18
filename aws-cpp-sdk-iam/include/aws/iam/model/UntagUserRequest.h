@@ -63,6 +63,15 @@ namespace Model
      * alphanumeric characters with no spaces. You can also include any of the
      * following characters: =,.@-</p>
      */
+    inline bool UserNameHasBeenSet() const { return m_userNameHasBeenSet; }
+
+    /**
+     * <p>The name of the IAM user from which you want to remove tags.</p> <p>This
+     * parameter accepts (through its <a href="http://wikipedia.org/wiki/regex">regex
+     * pattern</a>) a string of characters that consist of upper and lowercase
+     * alphanumeric characters with no spaces. You can also include any of the
+     * following characters: =,.@-</p>
+     */
     inline void SetUserName(const Aws::String& value) { m_userNameHasBeenSet = true; m_userName = value; }
 
     /**
@@ -116,6 +125,12 @@ namespace Model
      * are removed from the specified user.</p>
      */
     inline const Aws::Vector<Aws::String>& GetTagKeys() const{ return m_tagKeys; }
+
+    /**
+     * <p>A list of key names as a simple array of strings. The tags with matching keys
+     * are removed from the specified user.</p>
+     */
+    inline bool TagKeysHasBeenSet() const { return m_tagKeysHasBeenSet; }
 
     /**
      * <p>A list of key names as a simple array of strings. The tags with matching keys

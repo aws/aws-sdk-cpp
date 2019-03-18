@@ -55,6 +55,12 @@ namespace Model
      * <p>The ID of the certificate to delete. (The last part of the certificate ARN
      * contains the certificate ID.)</p>
      */
+    inline bool CertificateIdHasBeenSet() const { return m_certificateIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the certificate to delete. (The last part of the certificate ARN
+     * contains the certificate ID.)</p>
+     */
     inline void SetCertificateId(const Aws::String& value) { m_certificateIdHasBeenSet = true; m_certificateId = value; }
 
     /**

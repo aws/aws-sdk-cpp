@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The type of the resource.</p>
      */
+    inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
+
+    /**
+     * <p>The type of the resource.</p>
+     */
     inline void SetResourceType(const ResourceType& value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
 
     /**
@@ -78,6 +83,11 @@ namespace Model
      * <p>The URI for accessing the resource.</p>
      */
     inline const Aws::String& GetUri() const{ return m_uri; }
+
+    /**
+     * <p>The URI for accessing the resource.</p>
+     */
+    inline bool UriHasBeenSet() const { return m_uriHasBeenSet; }
 
     /**
      * <p>The URI for accessing the resource.</p>

@@ -61,6 +61,14 @@ namespace Model
      * required permissions, the error response is <code>DryRunOperation</code>.
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
+    inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
+
+    /**
+     * <p>Checks whether you have the required permissions for the action, without
+     * actually making the request, and provides an error response. If you have the
+     * required permissions, the error response is <code>DryRunOperation</code>.
+     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+     */
     inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
 
     /**
@@ -79,6 +87,14 @@ namespace Model
      * Idempotency</a>.</p> <p>Constraint: Maximum 128 ASCII characters.</p>
      */
     inline const Aws::String& GetClientToken() const{ return m_clientToken; }
+
+    /**
+     * <p>Unique, case-sensitive identifier you provide to ensure the idempotency of
+     * the request. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
+     * Idempotency</a>.</p> <p>Constraint: Maximum 128 ASCII characters.</p>
+     */
+    inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
 
     /**
      * <p>Unique, case-sensitive identifier you provide to ensure the idempotency of
@@ -139,6 +155,12 @@ namespace Model
      * <p>The ID of the launch template. You must specify either the launch template ID
      * or launch template name in the request.</p>
      */
+    inline bool LaunchTemplateIdHasBeenSet() const { return m_launchTemplateIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the launch template. You must specify either the launch template ID
+     * or launch template name in the request.</p>
+     */
     inline void SetLaunchTemplateId(const Aws::String& value) { m_launchTemplateIdHasBeenSet = true; m_launchTemplateId = value; }
 
     /**
@@ -177,6 +199,12 @@ namespace Model
      * ID or launch template name in the request.</p>
      */
     inline const Aws::String& GetLaunchTemplateName() const{ return m_launchTemplateName; }
+
+    /**
+     * <p>The name of the launch template. You must specify either the launch template
+     * ID or launch template name in the request.</p>
+     */
+    inline bool LaunchTemplateNameHasBeenSet() const { return m_launchTemplateNameHasBeenSet; }
 
     /**
      * <p>The name of the launch template. You must specify either the launch template
@@ -221,6 +249,13 @@ namespace Model
      * version, except for parameters that you specify in LaunchTemplateData.</p>
      */
     inline const Aws::String& GetSourceVersion() const{ return m_sourceVersion; }
+
+    /**
+     * <p>The version number of the launch template version on which to base the new
+     * version. The new version inherits the same launch parameters as the source
+     * version, except for parameters that you specify in LaunchTemplateData.</p>
+     */
+    inline bool SourceVersionHasBeenSet() const { return m_sourceVersionHasBeenSet; }
 
     /**
      * <p>The version number of the launch template version on which to base the new
@@ -273,6 +308,11 @@ namespace Model
     /**
      * <p>A description for the version of the launch template.</p>
      */
+    inline bool VersionDescriptionHasBeenSet() const { return m_versionDescriptionHasBeenSet; }
+
+    /**
+     * <p>A description for the version of the launch template.</p>
+     */
     inline void SetVersionDescription(const Aws::String& value) { m_versionDescriptionHasBeenSet = true; m_versionDescription = value; }
 
     /**
@@ -305,6 +345,11 @@ namespace Model
      * <p>The information for the launch template.</p>
      */
     inline const RequestLaunchTemplateData& GetLaunchTemplateData() const{ return m_launchTemplateData; }
+
+    /**
+     * <p>The information for the launch template.</p>
+     */
+    inline bool LaunchTemplateDataHasBeenSet() const { return m_launchTemplateDataHasBeenSet; }
 
     /**
      * <p>The information for the launch template.</p>

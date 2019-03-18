@@ -1,0 +1,149 @@
+﻿/*
+* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+*
+* Licensed under the Apache License, Version 2.0 (the "License").
+* You may not use this file except in compliance with the License.
+* A copy of the License is located at
+*
+*  http://aws.amazon.com/apache2.0
+*
+* or in the "license" file accompanying this file. This file is distributed
+* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+* express or implied. See the License for the specific language governing
+* permissions and limitations under the License.
+*/
+
+#include <aws/chime/model/Termination.h>
+#include <aws/core/utils/json/JsonSerializer.h>
+
+#include <utility>
+
+using namespace Aws::Utils::Json;
+using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace Chime
+{
+namespace Model
+{
+
+Termination::Termination() : 
+    m_cpsLimit(0),
+    m_cpsLimitHasBeenSet(false),
+    m_defaultPhoneNumberHasBeenSet(false),
+    m_callingRegionsHasBeenSet(false),
+    m_cidrAllowedListHasBeenSet(false),
+    m_disabled(false),
+    m_disabledHasBeenSet(false)
+{
+}
+
+Termination::Termination(JsonView jsonValue) : 
+    m_cpsLimit(0),
+    m_cpsLimitHasBeenSet(false),
+    m_defaultPhoneNumberHasBeenSet(false),
+    m_callingRegionsHasBeenSet(false),
+    m_cidrAllowedListHasBeenSet(false),
+    m_disabled(false),
+    m_disabledHasBeenSet(false)
+{
+  *this = jsonValue;
+}
+
+Termination& Termination::operator =(JsonView jsonValue)
+{
+  if(jsonValue.ValueExists("CpsLimit"))
+  {
+    m_cpsLimit = jsonValue.GetInteger("CpsLimit");
+
+    m_cpsLimitHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("DefaultPhoneNumber"))
+  {
+    m_defaultPhoneNumber = jsonValue.GetString("DefaultPhoneNumber");
+
+    m_defaultPhoneNumberHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("CallingRegions"))
+  {
+    Array<JsonView> callingRegionsJsonList = jsonValue.GetArray("CallingRegions");
+    for(unsigned callingRegionsIndex = 0; callingRegionsIndex < callingRegionsJsonList.GetLength(); ++callingRegionsIndex)
+    {
+      m_callingRegions.push_back(callingRegionsJsonList[callingRegionsIndex].AsString());
+    }
+    m_callingRegionsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("CidrAllowedList"))
+  {
+    Array<JsonView> cidrAllowedListJsonList = jsonValue.GetArray("CidrAllowedList");
+    for(unsigned cidrAllowedListIndex = 0; cidrAllowedListIndex < cidrAllowedListJsonList.GetLength(); ++cidrAllowedListIndex)
+    {
+      m_cidrAllowedList.push_back(cidrAllowedListJsonList[cidrAllowedListIndex].AsString());
+    }
+    m_cidrAllowedListHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("Disabled"))
+  {
+    m_disabled = jsonValue.GetBool("Disabled");
+
+    m_disabledHasBeenSet = true;
+  }
+
+  return *this;
+}
+
+JsonValue Termination::Jsonize() const
+{
+  JsonValue payload;
+
+  if(m_cpsLimitHasBeenSet)
+  {
+   payload.WithInteger("CpsLimit", m_cpsLimit);
+
+  }
+
+  if(m_defaultPhoneNumberHasBeenSet)
+  {
+   payload.WithString("DefaultPhoneNumber", m_defaultPhoneNumber);
+
+  }
+
+  if(m_callingRegionsHasBeenSet)
+  {
+   Array<JsonValue> callingRegionsJsonList(m_callingRegions.size());
+   for(unsigned callingRegionsIndex = 0; callingRegionsIndex < callingRegionsJsonList.GetLength(); ++callingRegionsIndex)
+   {
+     callingRegionsJsonList[callingRegionsIndex].AsString(m_callingRegions[callingRegionsIndex]);
+   }
+   payload.WithArray("CallingRegions", std::move(callingRegionsJsonList));
+
+  }
+
+  if(m_cidrAllowedListHasBeenSet)
+  {
+   Array<JsonValue> cidrAllowedListJsonList(m_cidrAllowedList.size());
+   for(unsigned cidrAllowedListIndex = 0; cidrAllowedListIndex < cidrAllowedListJsonList.GetLength(); ++cidrAllowedListIndex)
+   {
+     cidrAllowedListJsonList[cidrAllowedListIndex].AsString(m_cidrAllowedList[cidrAllowedListIndex]);
+   }
+   payload.WithArray("CidrAllowedList", std::move(cidrAllowedListJsonList));
+
+  }
+
+  if(m_disabledHasBeenSet)
+  {
+   payload.WithBool("Disabled", m_disabled);
+
+  }
+
+  return payload;
+}
+
+} // namespace Model
+} // namespace Chime
+} // namespace Aws

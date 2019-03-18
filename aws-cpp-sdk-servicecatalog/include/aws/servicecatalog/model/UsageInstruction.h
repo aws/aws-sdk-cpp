@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The usage instruction type for the value.</p>
      */
+    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
+
+    /**
+     * <p>The usage instruction type for the value.</p>
+     */
     inline void SetType(const Aws::String& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
@@ -88,6 +93,11 @@ namespace Model
      * <p>The usage instruction value for this type.</p>
      */
     inline const Aws::String& GetValue() const{ return m_value; }
+
+    /**
+     * <p>The usage instruction value for this type.</p>
+     */
+    inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
 
     /**
      * <p>The usage instruction value for this type.</p>

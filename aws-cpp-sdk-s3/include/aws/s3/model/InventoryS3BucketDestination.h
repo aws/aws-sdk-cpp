@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The ID of the account that owns the destination bucket.</p>
      */
+    inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the account that owns the destination bucket.</p>
+     */
     inline void SetAccountId(const Aws::String& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
 
     /**
@@ -90,6 +95,12 @@ namespace Model
      * published.</p>
      */
     inline const Aws::String& GetBucket() const{ return m_bucket; }
+
+    /**
+     * <p>The Amazon resource name (ARN) of the bucket where inventory results will be
+     * published.</p>
+     */
+    inline bool BucketHasBeenSet() const { return m_bucketHasBeenSet; }
 
     /**
      * <p>The Amazon resource name (ARN) of the bucket where inventory results will be
@@ -136,6 +147,11 @@ namespace Model
     /**
      * <p>Specifies the output format of the inventory results.</p>
      */
+    inline bool FormatHasBeenSet() const { return m_formatHasBeenSet; }
+
+    /**
+     * <p>Specifies the output format of the inventory results.</p>
+     */
     inline void SetFormat(const InventoryFormat& value) { m_formatHasBeenSet = true; m_format = value; }
 
     /**
@@ -158,6 +174,11 @@ namespace Model
      * <p>The prefix that is prepended to all inventory results.</p>
      */
     inline const Aws::String& GetPrefix() const{ return m_prefix; }
+
+    /**
+     * <p>The prefix that is prepended to all inventory results.</p>
+     */
+    inline bool PrefixHasBeenSet() const { return m_prefixHasBeenSet; }
 
     /**
      * <p>The prefix that is prepended to all inventory results.</p>
@@ -195,6 +216,12 @@ namespace Model
      * results.</p>
      */
     inline const InventoryEncryption& GetEncryption() const{ return m_encryption; }
+
+    /**
+     * <p>Contains the type of server-side encryption used to encrypt the inventory
+     * results.</p>
+     */
+    inline bool EncryptionHasBeenSet() const { return m_encryptionHasBeenSet; }
 
     /**
      * <p>Contains the type of server-side encryption used to encrypt the inventory

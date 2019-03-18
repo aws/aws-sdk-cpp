@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The instance ID.</p>
      */
+    inline bool InstanceIdHasBeenSet() const { return m_instanceIdHasBeenSet; }
+
+    /**
+     * <p>The instance ID.</p>
+     */
     inline void SetInstanceId(const Aws::String& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
 
     /**
@@ -90,6 +95,12 @@ namespace Model
      * schedule.</p>
      */
     inline const WeeklyAutoScalingSchedule& GetAutoScalingSchedule() const{ return m_autoScalingSchedule; }
+
+    /**
+     * <p>A <code>WeeklyAutoScalingSchedule</code> object with the instance
+     * schedule.</p>
+     */
+    inline bool AutoScalingScheduleHasBeenSet() const { return m_autoScalingScheduleHasBeenSet; }
 
     /**
      * <p>A <code>WeeklyAutoScalingSchedule</code> object with the instance

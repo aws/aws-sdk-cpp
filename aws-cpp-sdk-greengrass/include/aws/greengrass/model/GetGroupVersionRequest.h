@@ -50,6 +50,11 @@ namespace Model
     /**
      * The ID of the Greengrass group.
      */
+    inline bool GroupIdHasBeenSet() const { return m_groupIdHasBeenSet; }
+
+    /**
+     * The ID of the Greengrass group.
+     */
     inline void SetGroupId(const Aws::String& value) { m_groupIdHasBeenSet = true; m_groupId = value; }
 
     /**
@@ -82,6 +87,11 @@ namespace Model
      * The ID of the group version.
      */
     inline const Aws::String& GetGroupVersionId() const{ return m_groupVersionId; }
+
+    /**
+     * The ID of the group version.
+     */
+    inline bool GroupVersionIdHasBeenSet() const { return m_groupVersionIdHasBeenSet; }
 
     /**
      * The ID of the group version.

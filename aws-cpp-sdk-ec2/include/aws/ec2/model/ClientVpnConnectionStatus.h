@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p>The state of the client connection.</p>
      */
+    inline bool CodeHasBeenSet() const { return m_codeHasBeenSet; }
+
+    /**
+     * <p>The state of the client connection.</p>
+     */
     inline void SetCode(const ClientVpnConnectionStatusCode& value) { m_codeHasBeenSet = true; m_code = value; }
 
     /**
@@ -80,6 +85,11 @@ namespace Model
      * <p>A message about the status of the client connection, if applicable.</p>
      */
     inline const Aws::String& GetMessage() const{ return m_message; }
+
+    /**
+     * <p>A message about the status of the client connection, if applicable.</p>
+     */
+    inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
 
     /**
      * <p>A message about the status of the client connection, if applicable.</p>

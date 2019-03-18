@@ -61,6 +61,13 @@ namespace Model
      * the value that you can use for the <code>Marker</code> request parameter to
      * continue listing your profiles where you left off.</p>
      */
+    inline bool NextMarkerHasBeenSet() const { return m_nextMarkerHasBeenSet; }
+
+    /**
+     * <p>If there are more elements to be listed, this element is present and contains
+     * the value that you can use for the <code>Marker</code> request parameter to
+     * continue listing your profiles where you left off.</p>
+     */
     inline void SetNextMarker(const Aws::String& value) { m_nextMarkerHasBeenSet = true; m_nextMarker = value; }
 
     /**
@@ -109,6 +116,12 @@ namespace Model
      * <p>The maximum number of field-level encryption profiles you want in the
      * response body. </p>
      */
+    inline bool MaxItemsHasBeenSet() const { return m_maxItemsHasBeenSet; }
+
+    /**
+     * <p>The maximum number of field-level encryption profiles you want in the
+     * response body. </p>
+     */
     inline void SetMaxItems(int value) { m_maxItemsHasBeenSet = true; m_maxItems = value; }
 
     /**
@@ -126,6 +139,11 @@ namespace Model
     /**
      * <p>The number of field-level encryption profiles.</p>
      */
+    inline bool QuantityHasBeenSet() const { return m_quantityHasBeenSet; }
+
+    /**
+     * <p>The number of field-level encryption profiles.</p>
+     */
     inline void SetQuantity(int value) { m_quantityHasBeenSet = true; m_quantity = value; }
 
     /**
@@ -138,6 +156,11 @@ namespace Model
      * <p>The field-level encryption profile items.</p>
      */
     inline const Aws::Vector<FieldLevelEncryptionProfileSummary>& GetItems() const{ return m_items; }
+
+    /**
+     * <p>The field-level encryption profile items.</p>
+     */
+    inline bool ItemsHasBeenSet() const { return m_itemsHasBeenSet; }
 
     /**
      * <p>The field-level encryption profile items.</p>

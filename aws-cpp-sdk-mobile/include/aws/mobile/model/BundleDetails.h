@@ -53,6 +53,9 @@ namespace Model
     inline const Aws::String& GetBundleId() const{ return m_bundleId; }
 
     
+    inline bool BundleIdHasBeenSet() const { return m_bundleIdHasBeenSet; }
+
+    
     inline void SetBundleId(const Aws::String& value) { m_bundleIdHasBeenSet = true; m_bundleId = value; }
 
     
@@ -73,6 +76,9 @@ namespace Model
 
     
     inline const Aws::String& GetTitle() const{ return m_title; }
+
+    
+    inline bool TitleHasBeenSet() const { return m_titleHasBeenSet; }
 
     
     inline void SetTitle(const Aws::String& value) { m_titleHasBeenSet = true; m_title = value; }
@@ -97,6 +103,9 @@ namespace Model
     inline const Aws::String& GetVersion() const{ return m_version; }
 
     
+    inline bool VersionHasBeenSet() const { return m_versionHasBeenSet; }
+
+    
     inline void SetVersion(const Aws::String& value) { m_versionHasBeenSet = true; m_version = value; }
 
     
@@ -117,6 +126,9 @@ namespace Model
 
     
     inline const Aws::String& GetDescription() const{ return m_description; }
+
+    
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
 
     
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
@@ -141,6 +153,9 @@ namespace Model
     inline const Aws::String& GetIconUrl() const{ return m_iconUrl; }
 
     
+    inline bool IconUrlHasBeenSet() const { return m_iconUrlHasBeenSet; }
+
+    
     inline void SetIconUrl(const Aws::String& value) { m_iconUrlHasBeenSet = true; m_iconUrl = value; }
 
     
@@ -161,6 +176,9 @@ namespace Model
 
     
     inline const Aws::Vector<Platform>& GetAvailablePlatforms() const{ return m_availablePlatforms; }
+
+    
+    inline bool AvailablePlatformsHasBeenSet() const { return m_availablePlatformsHasBeenSet; }
 
     
     inline void SetAvailablePlatforms(const Aws::Vector<Platform>& value) { m_availablePlatformsHasBeenSet = true; m_availablePlatforms = value; }

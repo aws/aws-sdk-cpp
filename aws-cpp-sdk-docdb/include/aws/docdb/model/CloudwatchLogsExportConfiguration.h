@@ -63,6 +63,11 @@ namespace Model
     /**
      * <p>The list of log types to enable.</p>
      */
+    inline bool EnableLogTypesHasBeenSet() const { return m_enableLogTypesHasBeenSet; }
+
+    /**
+     * <p>The list of log types to enable.</p>
+     */
     inline void SetEnableLogTypes(const Aws::Vector<Aws::String>& value) { m_enableLogTypesHasBeenSet = true; m_enableLogTypes = value; }
 
     /**
@@ -100,6 +105,11 @@ namespace Model
      * <p>The list of log types to disable.</p>
      */
     inline const Aws::Vector<Aws::String>& GetDisableLogTypes() const{ return m_disableLogTypes; }
+
+    /**
+     * <p>The list of log types to disable.</p>
+     */
+    inline bool DisableLogTypesHasBeenSet() const { return m_disableLogTypesHasBeenSet; }
 
     /**
      * <p>The list of log types to disable.</p>

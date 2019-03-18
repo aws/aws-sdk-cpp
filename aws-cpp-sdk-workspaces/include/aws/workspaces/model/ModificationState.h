@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The resource.</p>
      */
+    inline bool ResourceHasBeenSet() const { return m_resourceHasBeenSet; }
+
+    /**
+     * <p>The resource.</p>
+     */
     inline void SetResource(const ModificationResourceEnum& value) { m_resourceHasBeenSet = true; m_resource = value; }
 
     /**
@@ -78,6 +83,11 @@ namespace Model
      * <p>The modification state.</p>
      */
     inline const ModificationStateEnum& GetState() const{ return m_state; }
+
+    /**
+     * <p>The modification state.</p>
+     */
+    inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
 
     /**
      * <p>The modification state.</p>

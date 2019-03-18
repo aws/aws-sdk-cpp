@@ -54,6 +54,11 @@ namespace Model
     /**
      * <p>The whole number of dollars in the amount.</p>
      */
+    inline bool DollarsHasBeenSet() const { return m_dollarsHasBeenSet; }
+
+    /**
+     * <p>The whole number of dollars in the amount.</p>
+     */
     inline void SetDollars(int value) { m_dollarsHasBeenSet = true; m_dollars = value; }
 
     /**
@@ -70,6 +75,11 @@ namespace Model
     /**
      * <p>The fractional portion, in cents, of the amount. </p>
      */
+    inline bool CentsHasBeenSet() const { return m_centsHasBeenSet; }
+
+    /**
+     * <p>The fractional portion, in cents, of the amount. </p>
+     */
     inline void SetCents(int value) { m_centsHasBeenSet = true; m_cents = value; }
 
     /**
@@ -82,6 +92,11 @@ namespace Model
      * <p>Fractions of a cent, in tenths.</p>
      */
     inline int GetTenthFractionsOfACent() const{ return m_tenthFractionsOfACent; }
+
+    /**
+     * <p>Fractions of a cent, in tenths.</p>
+     */
+    inline bool TenthFractionsOfACentHasBeenSet() const { return m_tenthFractionsOfACentHasBeenSet; }
 
     /**
      * <p>Fractions of a cent, in tenths.</p>

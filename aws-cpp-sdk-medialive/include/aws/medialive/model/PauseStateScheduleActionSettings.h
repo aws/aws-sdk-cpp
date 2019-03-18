@@ -53,6 +53,9 @@ namespace Model
     inline const Aws::Vector<PipelinePauseStateSettings>& GetPipelines() const{ return m_pipelines; }
 
     
+    inline bool PipelinesHasBeenSet() const { return m_pipelinesHasBeenSet; }
+
+    
     inline void SetPipelines(const Aws::Vector<PipelinePauseStateSettings>& value) { m_pipelinesHasBeenSet = true; m_pipelines = value; }
 
     

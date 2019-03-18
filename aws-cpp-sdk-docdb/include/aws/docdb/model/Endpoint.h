@@ -59,6 +59,11 @@ namespace Model
     /**
      * <p>Specifies the DNS address of the DB instance.</p>
      */
+    inline bool AddressHasBeenSet() const { return m_addressHasBeenSet; }
+
+    /**
+     * <p>Specifies the DNS address of the DB instance.</p>
+     */
     inline void SetAddress(const Aws::String& value) { m_addressHasBeenSet = true; m_address = value; }
 
     /**
@@ -95,6 +100,11 @@ namespace Model
     /**
      * <p>Specifies the port that the database engine is listening on.</p>
      */
+    inline bool PortHasBeenSet() const { return m_portHasBeenSet; }
+
+    /**
+     * <p>Specifies the port that the database engine is listening on.</p>
+     */
     inline void SetPort(int value) { m_portHasBeenSet = true; m_port = value; }
 
     /**
@@ -108,6 +118,12 @@ namespace Model
      * zone.</p>
      */
     inline const Aws::String& GetHostedZoneId() const{ return m_hostedZoneId; }
+
+    /**
+     * <p>Specifies the ID that Amazon Route 53 assigns when you create a hosted
+     * zone.</p>
+     */
+    inline bool HostedZoneIdHasBeenSet() const { return m_hostedZoneIdHasBeenSet; }
 
     /**
      * <p>Specifies the ID that Amazon Route 53 assigns when you create a hosted

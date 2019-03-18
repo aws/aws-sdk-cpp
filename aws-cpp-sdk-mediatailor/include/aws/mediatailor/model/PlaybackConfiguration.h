@@ -67,6 +67,15 @@ namespace Model
      * needed when calling the ADS. Alternately, for testing, you can provide a static
      * VAST URL. The maximum length is 25,000 characters.</p>
      */
+    inline bool AdDecisionServerUrlHasBeenSet() const { return m_adDecisionServerUrlHasBeenSet; }
+
+    /**
+     * <p>The URL for the ad decision server (ADS). This includes the specification of
+     * static parameters and placeholders for dynamic parameters. AWS Elemental
+     * MediaTailor substitutes player-specific and session-specific parameters as
+     * needed when calling the ADS. Alternately, for testing, you can provide a static
+     * VAST URL. The maximum length is 25,000 characters.</p>
+     */
     inline void SetAdDecisionServerUrl(const Aws::String& value) { m_adDecisionServerUrlHasBeenSet = true; m_adDecisionServerUrl = value; }
 
     /**
@@ -125,6 +134,12 @@ namespace Model
      * <p>The configuration for using a content delivery network (CDN), like Amazon
      * CloudFront, for content and ad segment management. </p>
      */
+    inline bool CdnConfigurationHasBeenSet() const { return m_cdnConfigurationHasBeenSet; }
+
+    /**
+     * <p>The configuration for using a content delivery network (CDN), like Amazon
+     * CloudFront, for content and ad segment management. </p>
+     */
     inline void SetCdnConfiguration(const CdnConfiguration& value) { m_cdnConfigurationHasBeenSet = true; m_cdnConfiguration = value; }
 
     /**
@@ -150,6 +165,11 @@ namespace Model
      * <p>The configuration for DASH content. </p>
      */
     inline const DashConfiguration& GetDashConfiguration() const{ return m_dashConfiguration; }
+
+    /**
+     * <p>The configuration for DASH content. </p>
+     */
+    inline bool DashConfigurationHasBeenSet() const { return m_dashConfigurationHasBeenSet; }
 
     /**
      * <p>The configuration for DASH content. </p>
@@ -180,6 +200,11 @@ namespace Model
     /**
      * <p>The configuration for HLS content. </p>
      */
+    inline bool HlsConfigurationHasBeenSet() const { return m_hlsConfigurationHasBeenSet; }
+
+    /**
+     * <p>The configuration for HLS content. </p>
+     */
     inline void SetHlsConfiguration(const HlsConfiguration& value) { m_hlsConfigurationHasBeenSet = true; m_hlsConfiguration = value; }
 
     /**
@@ -202,6 +227,11 @@ namespace Model
      * <p>The identifier for the playback configuration.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
+
+    /**
+     * <p>The identifier for the playback configuration.</p>
+     */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
      * <p>The identifier for the playback configuration.</p>
@@ -242,6 +272,11 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) for the playback configuration. </p>
      */
+    inline bool PlaybackConfigurationArnHasBeenSet() const { return m_playbackConfigurationArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) for the playback configuration. </p>
+     */
     inline void SetPlaybackConfigurationArn(const Aws::String& value) { m_playbackConfigurationArnHasBeenSet = true; m_playbackConfigurationArn = value; }
 
     /**
@@ -275,6 +310,12 @@ namespace Model
      * MediaTailor. This session will use server-side reporting. </p>
      */
     inline const Aws::String& GetPlaybackEndpointPrefix() const{ return m_playbackEndpointPrefix; }
+
+    /**
+     * <p>The URL that the player accesses to get a manifest from AWS Elemental
+     * MediaTailor. This session will use server-side reporting. </p>
+     */
+    inline bool PlaybackEndpointPrefixHasBeenSet() const { return m_playbackEndpointPrefixHasBeenSet; }
 
     /**
      * <p>The URL that the player accesses to get a manifest from AWS Elemental
@@ -323,6 +364,12 @@ namespace Model
      * <p>The URL that the player uses to initialize a session that uses client-side
      * reporting. </p>
      */
+    inline bool SessionInitializationEndpointPrefixHasBeenSet() const { return m_sessionInitializationEndpointPrefixHasBeenSet; }
+
+    /**
+     * <p>The URL that the player uses to initialize a session that uses client-side
+     * reporting. </p>
+     */
     inline void SetSessionInitializationEndpointPrefix(const Aws::String& value) { m_sessionInitializationEndpointPrefixHasBeenSet = true; m_sessionInitializationEndpointPrefix = value; }
 
     /**
@@ -365,6 +412,16 @@ namespace Model
      * asset that contains both audio and video. </p>
      */
     inline const Aws::String& GetSlateAdUrl() const{ return m_slateAdUrl; }
+
+    /**
+     * <p>The URL for a high-quality video asset to transcode and use to fill in time
+     * that's not used by ads. AWS Elemental MediaTailor shows the slate to fill in
+     * gaps in media content. Configuring the slate is optional for non-VPAID playback
+     * configurations. For VPAID, the slate is required because MediaTailor provides it
+     * in the slots designated for dynamic ad content. The slate must be a high-quality
+     * asset that contains both audio and video. </p>
+     */
+    inline bool SlateAdUrlHasBeenSet() const { return m_slateAdUrlHasBeenSet; }
 
     /**
      * <p>The URL for a high-quality video asset to transcode and use to fill in time
@@ -431,6 +488,11 @@ namespace Model
      * <p>The tags assigned to the playback configuration. </p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>The tags assigned to the playback configuration. </p>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
      * <p>The tags assigned to the playback configuration. </p>
@@ -502,6 +564,14 @@ namespace Model
      * MediaTailor. Use this only if you have already set up custom profiles with the
      * help of AWS Support.</p>
      */
+    inline bool TranscodeProfileNameHasBeenSet() const { return m_transcodeProfileNameHasBeenSet; }
+
+    /**
+     * <p>The name that is used to associate this playback configuration with a custom
+     * transcode profile. This overrides the dynamic transcoding defaults of
+     * MediaTailor. Use this only if you have already set up custom profiles with the
+     * help of AWS Support.</p>
+     */
     inline void SetTranscodeProfileName(const Aws::String& value) { m_transcodeProfileNameHasBeenSet = true; m_transcodeProfileName = value; }
 
     /**
@@ -550,6 +620,12 @@ namespace Model
      * The maximum length is 512 characters.</p>
      */
     inline const Aws::String& GetVideoContentSourceUrl() const{ return m_videoContentSourceUrl; }
+
+    /**
+     * <p>The URL prefix for the master playlist for the stream, minus the asset ID.
+     * The maximum length is 512 characters.</p>
+     */
+    inline bool VideoContentSourceUrlHasBeenSet() const { return m_videoContentSourceUrlHasBeenSet; }
 
     /**
      * <p>The URL prefix for the master playlist for the stream, minus the asset ID.

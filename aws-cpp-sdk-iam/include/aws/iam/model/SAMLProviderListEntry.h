@@ -59,6 +59,11 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the SAML provider.</p>
      */
+    inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the SAML provider.</p>
+     */
     inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
 
     /**
@@ -95,6 +100,11 @@ namespace Model
     /**
      * <p>The expiration date and time for the SAML provider.</p>
      */
+    inline bool ValidUntilHasBeenSet() const { return m_validUntilHasBeenSet; }
+
+    /**
+     * <p>The expiration date and time for the SAML provider.</p>
+     */
     inline void SetValidUntil(const Aws::Utils::DateTime& value) { m_validUntilHasBeenSet = true; m_validUntil = value; }
 
     /**
@@ -117,6 +127,11 @@ namespace Model
      * <p>The date and time when the SAML provider was created.</p>
      */
     inline const Aws::Utils::DateTime& GetCreateDate() const{ return m_createDate; }
+
+    /**
+     * <p>The date and time when the SAML provider was created.</p>
+     */
+    inline bool CreateDateHasBeenSet() const { return m_createDateHasBeenSet; }
 
     /**
      * <p>The date and time when the SAML provider was created.</p>

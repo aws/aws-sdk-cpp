@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p>The name of the service mesh.</p>
      */
+    inline bool MeshNameHasBeenSet() const { return m_meshNameHasBeenSet; }
+
+    /**
+     * <p>The name of the service mesh.</p>
+     */
     inline void SetMeshName(const Aws::String& value) { m_meshNameHasBeenSet = true; m_meshName = value; }
 
     /**
@@ -94,6 +99,11 @@ namespace Model
     /**
      * <p>The associated metadata for the service mesh.</p>
      */
+    inline bool MetadataHasBeenSet() const { return m_metadataHasBeenSet; }
+
+    /**
+     * <p>The associated metadata for the service mesh.</p>
+     */
     inline void SetMetadata(const ResourceMetadata& value) { m_metadataHasBeenSet = true; m_metadata = value; }
 
     /**
@@ -116,6 +126,11 @@ namespace Model
      * <p>The status of the service mesh.</p>
      */
     inline const MeshStatus& GetStatus() const{ return m_status; }
+
+    /**
+     * <p>The status of the service mesh.</p>
+     */
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
     /**
      * <p>The status of the service mesh.</p>

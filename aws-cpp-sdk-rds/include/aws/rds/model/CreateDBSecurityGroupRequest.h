@@ -69,6 +69,16 @@ namespace Model
      * <p>Must not be "Default"</p> </li> </ul> <p>Example:
      * <code>mysecuritygroup</code> </p>
      */
+    inline bool DBSecurityGroupNameHasBeenSet() const { return m_dBSecurityGroupNameHasBeenSet; }
+
+    /**
+     * <p>The name for the DB security group. This value is stored as a lowercase
+     * string.</p> <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255 letters, numbers,
+     * or hyphens.</p> </li> <li> <p>First character must be a letter</p> </li> <li>
+     * <p>Can't end with a hyphen or contain two consecutive hyphens</p> </li> <li>
+     * <p>Must not be "Default"</p> </li> </ul> <p>Example:
+     * <code>mysecuritygroup</code> </p>
+     */
     inline void SetDBSecurityGroupName(const Aws::String& value) { m_dBSecurityGroupNameHasBeenSet = true; m_dBSecurityGroupName = value; }
 
     /**
@@ -130,6 +140,11 @@ namespace Model
     /**
      * <p>The description for the DB security group.</p>
      */
+    inline bool DBSecurityGroupDescriptionHasBeenSet() const { return m_dBSecurityGroupDescriptionHasBeenSet; }
+
+    /**
+     * <p>The description for the DB security group.</p>
+     */
     inline void SetDBSecurityGroupDescription(const Aws::String& value) { m_dBSecurityGroupDescriptionHasBeenSet = true; m_dBSecurityGroupDescription = value; }
 
     /**
@@ -160,6 +175,9 @@ namespace Model
 
     
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+
+    
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }

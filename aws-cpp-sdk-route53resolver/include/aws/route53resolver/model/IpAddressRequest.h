@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The subnet that contains the IP address.</p>
      */
+    inline bool SubnetIdHasBeenSet() const { return m_subnetIdHasBeenSet; }
+
+    /**
+     * <p>The subnet that contains the IP address.</p>
+     */
     inline void SetSubnetId(const Aws::String& value) { m_subnetIdHasBeenSet = true; m_subnetId = value; }
 
     /**
@@ -88,6 +93,11 @@ namespace Model
      * <p>The IP address that you want to use for DNS queries.</p>
      */
     inline const Aws::String& GetIp() const{ return m_ip; }
+
+    /**
+     * <p>The IP address that you want to use for DNS queries.</p>
+     */
+    inline bool IpHasBeenSet() const { return m_ipHasBeenSet; }
 
     /**
      * <p>The IP address that you want to use for DNS queries.</p>

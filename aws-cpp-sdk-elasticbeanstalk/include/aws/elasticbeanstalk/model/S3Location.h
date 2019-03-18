@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p>The Amazon S3 bucket where the data is located.</p>
      */
+    inline bool S3BucketHasBeenSet() const { return m_s3BucketHasBeenSet; }
+
+    /**
+     * <p>The Amazon S3 bucket where the data is located.</p>
+     */
     inline void SetS3Bucket(const Aws::String& value) { m_s3BucketHasBeenSet = true; m_s3Bucket = value; }
 
     /**
@@ -90,6 +95,11 @@ namespace Model
      * <p>The Amazon S3 key where the data is located.</p>
      */
     inline const Aws::String& GetS3Key() const{ return m_s3Key; }
+
+    /**
+     * <p>The Amazon S3 key where the data is located.</p>
+     */
+    inline bool S3KeyHasBeenSet() const { return m_s3KeyHasBeenSet; }
 
     /**
      * <p>The Amazon S3 key where the data is located.</p>

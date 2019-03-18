@@ -63,6 +63,15 @@ namespace Model
      * </p> <p> Valid Values: 50 to 500 lowercase letters, numbers, periods (.), and
      * hyphens (-).</p>
      */
+    inline bool VolumeARNHasBeenSet() const { return m_volumeARNHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) for the storage volume. For example, the
+     * following is a valid ARN:</p> <p>
+     * <code>arn:aws:storagegateway:us-east-2:111122223333:gateway/sgw-12A3456B/volume/vol-1122AABB</code>
+     * </p> <p> Valid Values: 50 to 500 lowercase letters, numbers, periods (.), and
+     * hyphens (-).</p>
+     */
     inline void SetVolumeARN(const Aws::String& value) { m_volumeARNHasBeenSet = true; m_volumeARN = value; }
 
     /**
@@ -125,6 +134,14 @@ namespace Model
      * operations.</p> <p> Valid Values: 50 to 500 lowercase letters, numbers, periods
      * (.), and hyphens (-).</p>
      */
+    inline bool VolumeIdHasBeenSet() const { return m_volumeIdHasBeenSet; }
+
+    /**
+     * <p>The unique identifier assigned to the volume. This ID becomes part of the
+     * volume Amazon Resource Name (ARN), which you use as input for other
+     * operations.</p> <p> Valid Values: 50 to 500 lowercase letters, numbers, periods
+     * (.), and hyphens (-).</p>
+     */
     inline void SetVolumeId(const Aws::String& value) { m_volumeIdHasBeenSet = true; m_volumeId = value; }
 
     /**
@@ -172,6 +189,9 @@ namespace Model
     inline const Aws::String& GetGatewayARN() const{ return m_gatewayARN; }
 
     
+    inline bool GatewayARNHasBeenSet() const { return m_gatewayARNHasBeenSet; }
+
+    
     inline void SetGatewayARN(const Aws::String& value) { m_gatewayARNHasBeenSet = true; m_gatewayARN = value; }
 
     
@@ -197,6 +217,14 @@ namespace Model
      * numbers, periods (.), and hyphens (-).</p>
      */
     inline const Aws::String& GetGatewayId() const{ return m_gatewayId; }
+
+    /**
+     * <p>The unique identifier assigned to your gateway during activation. This ID
+     * becomes part of the gateway Amazon Resource Name (ARN), which you use as input
+     * for other operations.</p> <p> Valid Values: 50 to 500 lowercase letters,
+     * numbers, periods (.), and hyphens (-).</p>
+     */
+    inline bool GatewayIdHasBeenSet() const { return m_gatewayIdHasBeenSet; }
 
     /**
      * <p>The unique identifier assigned to your gateway during activation. This ID
@@ -257,6 +285,12 @@ namespace Model
      * <p>One of the VolumeType enumeration values describing the type of the
      * volume.</p>
      */
+    inline bool VolumeTypeHasBeenSet() const { return m_volumeTypeHasBeenSet; }
+
+    /**
+     * <p>One of the VolumeType enumeration values describing the type of the
+     * volume.</p>
+     */
     inline void SetVolumeType(const Aws::String& value) { m_volumeTypeHasBeenSet = true; m_volumeType = value; }
 
     /**
@@ -300,6 +334,12 @@ namespace Model
      * <p>The size of the volume in bytes.</p> <p>Valid Values: 50 to 500 lowercase
      * letters, numbers, periods (.), and hyphens (-).</p>
      */
+    inline bool VolumeSizeInBytesHasBeenSet() const { return m_volumeSizeInBytesHasBeenSet; }
+
+    /**
+     * <p>The size of the volume in bytes.</p> <p>Valid Values: 50 to 500 lowercase
+     * letters, numbers, periods (.), and hyphens (-).</p>
+     */
     inline void SetVolumeSizeInBytes(long long value) { m_volumeSizeInBytesHasBeenSet = true; m_volumeSizeInBytes = value; }
 
     /**
@@ -314,6 +354,12 @@ namespace Model
      * volume. </p>
      */
     inline const Aws::String& GetVolumeAttachmentStatus() const{ return m_volumeAttachmentStatus; }
+
+    /**
+     * <p>One of the VolumeStatus values that indicates the state of the storage
+     * volume. </p>
+     */
+    inline bool VolumeAttachmentStatusHasBeenSet() const { return m_volumeAttachmentStatusHasBeenSet; }
 
     /**
      * <p>One of the VolumeStatus values that indicates the state of the storage

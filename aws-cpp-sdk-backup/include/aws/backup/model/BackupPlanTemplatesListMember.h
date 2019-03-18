@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>Uniquely identifies a stored backup plan template.</p>
      */
+    inline bool BackupPlanTemplateIdHasBeenSet() const { return m_backupPlanTemplateIdHasBeenSet; }
+
+    /**
+     * <p>Uniquely identifies a stored backup plan template.</p>
+     */
     inline void SetBackupPlanTemplateId(const Aws::String& value) { m_backupPlanTemplateIdHasBeenSet = true; m_backupPlanTemplateId = value; }
 
     /**
@@ -88,6 +93,11 @@ namespace Model
      * <p>The optional display name of a backup plan template.</p>
      */
     inline const Aws::String& GetBackupPlanTemplateName() const{ return m_backupPlanTemplateName; }
+
+    /**
+     * <p>The optional display name of a backup plan template.</p>
+     */
+    inline bool BackupPlanTemplateNameHasBeenSet() const { return m_backupPlanTemplateNameHasBeenSet; }
 
     /**
      * <p>The optional display name of a backup plan template.</p>

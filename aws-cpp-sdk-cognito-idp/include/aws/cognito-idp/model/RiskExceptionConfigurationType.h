@@ -61,6 +61,13 @@ namespace Model
      * The IP range is in CIDR notation: a compact representation of an IP address and
      * its associated routing prefix.</p>
      */
+    inline bool BlockedIPRangeListHasBeenSet() const { return m_blockedIPRangeListHasBeenSet; }
+
+    /**
+     * <p>Overrides the risk decision to always block the pre-authentication requests.
+     * The IP range is in CIDR notation: a compact representation of an IP address and
+     * its associated routing prefix.</p>
+     */
     inline void SetBlockedIPRangeList(const Aws::Vector<Aws::String>& value) { m_blockedIPRangeListHasBeenSet = true; m_blockedIPRangeList = value; }
 
     /**
@@ -111,6 +118,12 @@ namespace Model
      * range is in CIDR notation.</p>
      */
     inline const Aws::Vector<Aws::String>& GetSkippedIPRangeList() const{ return m_skippedIPRangeList; }
+
+    /**
+     * <p>Risk detection is not performed on the IP addresses in the range list. The IP
+     * range is in CIDR notation.</p>
+     */
+    inline bool SkippedIPRangeListHasBeenSet() const { return m_skippedIPRangeListHasBeenSet; }
 
     /**
      * <p>Risk detection is not performed on the IP addresses in the range list. The IP

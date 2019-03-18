@@ -69,6 +69,16 @@ namespace Model
      * must be a letter</p> </li> <li> <p>Cannot end with a hyphen or contain two
      * consecutive hyphens</p> </li> </ul> <p>Example: <code>my-snapshot-id</code> </p>
      */
+    inline bool SnapshotIdentifierHasBeenSet() const { return m_snapshotIdentifierHasBeenSet; }
+
+    /**
+     * <p>A unique identifier for the snapshot that you are requesting. This identifier
+     * must be unique for all snapshots within the AWS account.</p> <p>Constraints:</p>
+     * <ul> <li> <p>Cannot be null, empty, or blank</p> </li> <li> <p>Must contain from
+     * 1 to 255 alphanumeric characters or hyphens</p> </li> <li> <p>First character
+     * must be a letter</p> </li> <li> <p>Cannot end with a hyphen or contain two
+     * consecutive hyphens</p> </li> </ul> <p>Example: <code>my-snapshot-id</code> </p>
+     */
     inline void SetSnapshotIdentifier(const Aws::String& value) { m_snapshotIdentifierHasBeenSet = true; m_snapshotIdentifier = value; }
 
     /**
@@ -130,6 +140,11 @@ namespace Model
     /**
      * <p>The cluster identifier for which you want a snapshot.</p>
      */
+    inline bool ClusterIdentifierHasBeenSet() const { return m_clusterIdentifierHasBeenSet; }
+
+    /**
+     * <p>The cluster identifier for which you want a snapshot.</p>
+     */
     inline void SetClusterIdentifier(const Aws::String& value) { m_clusterIdentifierHasBeenSet = true; m_clusterIdentifier = value; }
 
     /**
@@ -170,6 +185,13 @@ namespace Model
      * the manual snapshot is retained indefinitely. </p> <p>The value must be either
      * -1 or an integer between 1 and 3,653.</p> <p>The default value is -1.</p>
      */
+    inline bool ManualSnapshotRetentionPeriodHasBeenSet() const { return m_manualSnapshotRetentionPeriodHasBeenSet; }
+
+    /**
+     * <p>The number of days that a manual snapshot is retained. If the value is -1,
+     * the manual snapshot is retained indefinitely. </p> <p>The value must be either
+     * -1 or an integer between 1 and 3,653.</p> <p>The default value is -1.</p>
+     */
     inline void SetManualSnapshotRetentionPeriod(int value) { m_manualSnapshotRetentionPeriodHasBeenSet = true; m_manualSnapshotRetentionPeriod = value; }
 
     /**
@@ -184,6 +206,11 @@ namespace Model
      * <p>A list of tag instances.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>A list of tag instances.</p>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
      * <p>A list of tag instances.</p>

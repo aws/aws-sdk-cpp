@@ -60,6 +60,12 @@ namespace Model
      * <p>The Amazon EMR resource identifier to which tags will be added. This value
      * must be a cluster identifier.</p>
      */
+    inline bool ResourceIdHasBeenSet() const { return m_resourceIdHasBeenSet; }
+
+    /**
+     * <p>The Amazon EMR resource identifier to which tags will be added. This value
+     * must be a cluster identifier.</p>
+     */
     inline void SetResourceId(const Aws::String& value) { m_resourceIdHasBeenSet = true; m_resourceId = value; }
 
     /**
@@ -100,6 +106,14 @@ namespace Model
      * characters.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>A list of tags to associate with a cluster and propagate to EC2 instances.
+     * Tags are user-defined key/value pairs that consist of a required key string with
+     * a maximum of 128 characters, and an optional value string with a maximum of 256
+     * characters.</p>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
      * <p>A list of tags to associate with a cluster and propagate to EC2 instances.

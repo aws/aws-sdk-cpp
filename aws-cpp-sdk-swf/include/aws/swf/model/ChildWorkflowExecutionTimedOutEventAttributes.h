@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p>The child workflow execution that timed out.</p>
      */
+    inline bool WorkflowExecutionHasBeenSet() const { return m_workflowExecutionHasBeenSet; }
+
+    /**
+     * <p>The child workflow execution that timed out.</p>
+     */
     inline void SetWorkflowExecution(const WorkflowExecution& value) { m_workflowExecutionHasBeenSet = true; m_workflowExecution = value; }
 
     /**
@@ -80,6 +85,11 @@ namespace Model
      * <p>The type of the child workflow execution.</p>
      */
     inline const WorkflowType& GetWorkflowType() const{ return m_workflowType; }
+
+    /**
+     * <p>The type of the child workflow execution.</p>
+     */
+    inline bool WorkflowTypeHasBeenSet() const { return m_workflowTypeHasBeenSet; }
 
     /**
      * <p>The type of the child workflow execution.</p>
@@ -107,6 +117,12 @@ namespace Model
      * out.</p>
      */
     inline const WorkflowExecutionTimeoutType& GetTimeoutType() const{ return m_timeoutType; }
+
+    /**
+     * <p>The type of the timeout that caused the child workflow execution to time
+     * out.</p>
+     */
+    inline bool TimeoutTypeHasBeenSet() const { return m_timeoutTypeHasBeenSet; }
 
     /**
      * <p>The type of the timeout that caused the child workflow execution to time
@@ -149,6 +165,15 @@ namespace Model
      * diagnosing problems by tracing back the chain of events leading up to this
      * event.</p>
      */
+    inline bool InitiatedEventIdHasBeenSet() const { return m_initiatedEventIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the <code>StartChildWorkflowExecutionInitiated</code> event
+     * corresponding to the <code>StartChildWorkflowExecution</code> <a>Decision</a> to
+     * start this child workflow execution. This information can be useful for
+     * diagnosing problems by tracing back the chain of events leading up to this
+     * event.</p>
+     */
     inline void SetInitiatedEventId(long long value) { m_initiatedEventIdHasBeenSet = true; m_initiatedEventId = value; }
 
     /**
@@ -168,6 +193,14 @@ namespace Model
      * event.</p>
      */
     inline long long GetStartedEventId() const{ return m_startedEventId; }
+
+    /**
+     * <p>The ID of the <code>ChildWorkflowExecutionStarted</code> event recorded when
+     * this child workflow execution was started. This information can be useful for
+     * diagnosing problems by tracing back the chain of events leading up to this
+     * event.</p>
+     */
+    inline bool StartedEventIdHasBeenSet() const { return m_startedEventIdHasBeenSet; }
 
     /**
      * <p>The ID of the <code>ChildWorkflowExecutionStarted</code> event recorded when

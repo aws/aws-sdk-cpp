@@ -50,6 +50,11 @@ namespace Model
     /**
      * <p>The name of the billing group.</p>
      */
+    inline bool BillingGroupNameHasBeenSet() const { return m_billingGroupNameHasBeenSet; }
+
+    /**
+     * <p>The name of the billing group.</p>
+     */
     inline void SetBillingGroupName(const Aws::String& value) { m_billingGroupNameHasBeenSet = true; m_billingGroupName = value; }
 
     /**
@@ -82,6 +87,11 @@ namespace Model
      * <p>The ARN of the billing group.</p>
      */
     inline const Aws::String& GetBillingGroupArn() const{ return m_billingGroupArn; }
+
+    /**
+     * <p>The ARN of the billing group.</p>
+     */
+    inline bool BillingGroupArnHasBeenSet() const { return m_billingGroupArnHasBeenSet; }
 
     /**
      * <p>The ARN of the billing group.</p>
@@ -122,6 +132,11 @@ namespace Model
     /**
      * <p>The name of the thing to be removed from the billing group.</p>
      */
+    inline bool ThingNameHasBeenSet() const { return m_thingNameHasBeenSet; }
+
+    /**
+     * <p>The name of the thing to be removed from the billing group.</p>
+     */
     inline void SetThingName(const Aws::String& value) { m_thingNameHasBeenSet = true; m_thingName = value; }
 
     /**
@@ -154,6 +169,11 @@ namespace Model
      * <p>The ARN of the thing to be removed from the billing group.</p>
      */
     inline const Aws::String& GetThingArn() const{ return m_thingArn; }
+
+    /**
+     * <p>The ARN of the thing to be removed from the billing group.</p>
+     */
+    inline bool ThingArnHasBeenSet() const { return m_thingArnHasBeenSet; }
 
     /**
      * <p>The ARN of the thing to be removed from the billing group.</p>

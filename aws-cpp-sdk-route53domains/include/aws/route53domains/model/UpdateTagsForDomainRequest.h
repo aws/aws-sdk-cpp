@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p>The domain for which you want to add or update tags.</p>
      */
+    inline bool DomainNameHasBeenSet() const { return m_domainNameHasBeenSet; }
+
+    /**
+     * <p>The domain for which you want to add or update tags.</p>
+     */
     inline void SetDomainName(const Aws::String& value) { m_domainNameHasBeenSet = true; m_domainName = value; }
 
     /**
@@ -91,6 +96,12 @@ namespace Model
      * specify a key that already exists, the corresponding value will be replaced.</p>
      */
     inline const Aws::Vector<Tag>& GetTagsToUpdate() const{ return m_tagsToUpdate; }
+
+    /**
+     * <p>A list of the tag keys and values that you want to add or update. If you
+     * specify a key that already exists, the corresponding value will be replaced.</p>
+     */
+    inline bool TagsToUpdateHasBeenSet() const { return m_tagsToUpdateHasBeenSet; }
 
     /**
      * <p>A list of the tag keys and values that you want to add or update. If you

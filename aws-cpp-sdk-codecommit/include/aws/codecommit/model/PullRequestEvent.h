@@ -61,6 +61,11 @@ namespace Model
     /**
      * <p>The system-generated ID of the pull request.</p>
      */
+    inline bool PullRequestIdHasBeenSet() const { return m_pullRequestIdHasBeenSet; }
+
+    /**
+     * <p>The system-generated ID of the pull request.</p>
+     */
     inline void SetPullRequestId(const Aws::String& value) { m_pullRequestIdHasBeenSet = true; m_pullRequestId = value; }
 
     /**
@@ -97,6 +102,11 @@ namespace Model
     /**
      * <p>The day and time of the pull request event, in timestamp format.</p>
      */
+    inline bool EventDateHasBeenSet() const { return m_eventDateHasBeenSet; }
+
+    /**
+     * <p>The day and time of the pull request event, in timestamp format.</p>
+     */
     inline void SetEventDate(const Aws::Utils::DateTime& value) { m_eventDateHasBeenSet = true; m_eventDate = value; }
 
     /**
@@ -121,6 +131,13 @@ namespace Model
      * (PULL_REQUEST_SOURCE_REFERENCE_UPDATED).</p>
      */
     inline const PullRequestEventType& GetPullRequestEventType() const{ return m_pullRequestEventType; }
+
+    /**
+     * <p>The type of the pull request event, for example a status change event
+     * (PULL_REQUEST_STATUS_CHANGED) or update event
+     * (PULL_REQUEST_SOURCE_REFERENCE_UPDATED).</p>
+     */
+    inline bool PullRequestEventTypeHasBeenSet() const { return m_pullRequestEventTypeHasBeenSet; }
 
     /**
      * <p>The type of the pull request event, for example a status change event
@@ -157,6 +174,13 @@ namespace Model
      * changing the status of a pull request.</p>
      */
     inline const Aws::String& GetActorArn() const{ return m_actorArn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the user whose actions resulted in the
+     * event. Examples include updating the pull request with additional commits or
+     * changing the status of a pull request.</p>
+     */
+    inline bool ActorArnHasBeenSet() const { return m_actorArnHasBeenSet; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the user whose actions resulted in the
@@ -211,6 +235,12 @@ namespace Model
      * <p>Information about the source and destination branches for the pull
      * request.</p>
      */
+    inline bool PullRequestCreatedEventMetadataHasBeenSet() const { return m_pullRequestCreatedEventMetadataHasBeenSet; }
+
+    /**
+     * <p>Information about the source and destination branches for the pull
+     * request.</p>
+     */
     inline void SetPullRequestCreatedEventMetadata(const PullRequestCreatedEventMetadata& value) { m_pullRequestCreatedEventMetadataHasBeenSet = true; m_pullRequestCreatedEventMetadata = value; }
 
     /**
@@ -236,6 +266,11 @@ namespace Model
      * <p>Information about the change in status for the pull request event.</p>
      */
     inline const PullRequestStatusChangedEventMetadata& GetPullRequestStatusChangedEventMetadata() const{ return m_pullRequestStatusChangedEventMetadata; }
+
+    /**
+     * <p>Information about the change in status for the pull request event.</p>
+     */
+    inline bool PullRequestStatusChangedEventMetadataHasBeenSet() const { return m_pullRequestStatusChangedEventMetadataHasBeenSet; }
 
     /**
      * <p>Information about the change in status for the pull request event.</p>
@@ -266,6 +301,11 @@ namespace Model
     /**
      * <p>Information about the updated source branch for the pull request event. </p>
      */
+    inline bool PullRequestSourceReferenceUpdatedEventMetadataHasBeenSet() const { return m_pullRequestSourceReferenceUpdatedEventMetadataHasBeenSet; }
+
+    /**
+     * <p>Information about the updated source branch for the pull request event. </p>
+     */
     inline void SetPullRequestSourceReferenceUpdatedEventMetadata(const PullRequestSourceReferenceUpdatedEventMetadata& value) { m_pullRequestSourceReferenceUpdatedEventMetadataHasBeenSet = true; m_pullRequestSourceReferenceUpdatedEventMetadata = value; }
 
     /**
@@ -289,6 +329,12 @@ namespace Model
      * event.</p>
      */
     inline const PullRequestMergedStateChangedEventMetadata& GetPullRequestMergedStateChangedEventMetadata() const{ return m_pullRequestMergedStateChangedEventMetadata; }
+
+    /**
+     * <p>Information about the change in mergability state for the pull request
+     * event.</p>
+     */
+    inline bool PullRequestMergedStateChangedEventMetadataHasBeenSet() const { return m_pullRequestMergedStateChangedEventMetadataHasBeenSet; }
 
     /**
      * <p>Information about the change in mergability state for the pull request

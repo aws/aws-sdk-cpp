@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>A pre-registration AWS Lambda trigger.</p>
      */
+    inline bool PreSignUpHasBeenSet() const { return m_preSignUpHasBeenSet; }
+
+    /**
+     * <p>A pre-registration AWS Lambda trigger.</p>
+     */
     inline void SetPreSignUp(const Aws::String& value) { m_preSignUpHasBeenSet = true; m_preSignUp = value; }
 
     /**
@@ -88,6 +93,11 @@ namespace Model
      * <p>A custom Message AWS Lambda trigger.</p>
      */
     inline const Aws::String& GetCustomMessage() const{ return m_customMessage; }
+
+    /**
+     * <p>A custom Message AWS Lambda trigger.</p>
+     */
+    inline bool CustomMessageHasBeenSet() const { return m_customMessageHasBeenSet; }
 
     /**
      * <p>A custom Message AWS Lambda trigger.</p>
@@ -128,6 +138,11 @@ namespace Model
     /**
      * <p>A post-confirmation AWS Lambda trigger.</p>
      */
+    inline bool PostConfirmationHasBeenSet() const { return m_postConfirmationHasBeenSet; }
+
+    /**
+     * <p>A post-confirmation AWS Lambda trigger.</p>
+     */
     inline void SetPostConfirmation(const Aws::String& value) { m_postConfirmationHasBeenSet = true; m_postConfirmation = value; }
 
     /**
@@ -160,6 +175,11 @@ namespace Model
      * <p>A pre-authentication AWS Lambda trigger.</p>
      */
     inline const Aws::String& GetPreAuthentication() const{ return m_preAuthentication; }
+
+    /**
+     * <p>A pre-authentication AWS Lambda trigger.</p>
+     */
+    inline bool PreAuthenticationHasBeenSet() const { return m_preAuthenticationHasBeenSet; }
 
     /**
      * <p>A pre-authentication AWS Lambda trigger.</p>
@@ -200,6 +220,11 @@ namespace Model
     /**
      * <p>A post-authentication AWS Lambda trigger.</p>
      */
+    inline bool PostAuthenticationHasBeenSet() const { return m_postAuthenticationHasBeenSet; }
+
+    /**
+     * <p>A post-authentication AWS Lambda trigger.</p>
+     */
     inline void SetPostAuthentication(const Aws::String& value) { m_postAuthenticationHasBeenSet = true; m_postAuthentication = value; }
 
     /**
@@ -232,6 +257,11 @@ namespace Model
      * <p>Defines the authentication challenge.</p>
      */
     inline const Aws::String& GetDefineAuthChallenge() const{ return m_defineAuthChallenge; }
+
+    /**
+     * <p>Defines the authentication challenge.</p>
+     */
+    inline bool DefineAuthChallengeHasBeenSet() const { return m_defineAuthChallengeHasBeenSet; }
 
     /**
      * <p>Defines the authentication challenge.</p>
@@ -272,6 +302,11 @@ namespace Model
     /**
      * <p>Creates an authentication challenge.</p>
      */
+    inline bool CreateAuthChallengeHasBeenSet() const { return m_createAuthChallengeHasBeenSet; }
+
+    /**
+     * <p>Creates an authentication challenge.</p>
+     */
     inline void SetCreateAuthChallenge(const Aws::String& value) { m_createAuthChallengeHasBeenSet = true; m_createAuthChallenge = value; }
 
     /**
@@ -304,6 +339,11 @@ namespace Model
      * <p>Verifies the authentication challenge response.</p>
      */
     inline const Aws::String& GetVerifyAuthChallengeResponse() const{ return m_verifyAuthChallengeResponse; }
+
+    /**
+     * <p>Verifies the authentication challenge response.</p>
+     */
+    inline bool VerifyAuthChallengeResponseHasBeenSet() const { return m_verifyAuthChallengeResponseHasBeenSet; }
 
     /**
      * <p>Verifies the authentication challenge response.</p>
@@ -344,6 +384,11 @@ namespace Model
     /**
      * <p>A Lambda trigger that is invoked before token generation.</p>
      */
+    inline bool PreTokenGenerationHasBeenSet() const { return m_preTokenGenerationHasBeenSet; }
+
+    /**
+     * <p>A Lambda trigger that is invoked before token generation.</p>
+     */
     inline void SetPreTokenGeneration(const Aws::String& value) { m_preTokenGenerationHasBeenSet = true; m_preTokenGeneration = value; }
 
     /**
@@ -376,6 +421,11 @@ namespace Model
      * <p>The user migration Lambda config type.</p>
      */
     inline const Aws::String& GetUserMigration() const{ return m_userMigration; }
+
+    /**
+     * <p>The user migration Lambda config type.</p>
+     */
+    inline bool UserMigrationHasBeenSet() const { return m_userMigrationHasBeenSet; }
 
     /**
      * <p>The user migration Lambda config type.</p>

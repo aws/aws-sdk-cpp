@@ -55,6 +55,11 @@ namespace Model
     /**
      * <p>The name of the container related to a finding.</p>
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>The name of the container related to a finding.</p>
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
@@ -87,6 +92,11 @@ namespace Model
      * <p>The identifier of the image related to a finding.</p>
      */
     inline const Aws::String& GetImageId() const{ return m_imageId; }
+
+    /**
+     * <p>The identifier of the image related to a finding.</p>
+     */
+    inline bool ImageIdHasBeenSet() const { return m_imageIdHasBeenSet; }
 
     /**
      * <p>The identifier of the image related to a finding.</p>
@@ -127,6 +137,11 @@ namespace Model
     /**
      * <p>The name of the image related to a finding.</p>
      */
+    inline bool ImageNameHasBeenSet() const { return m_imageNameHasBeenSet; }
+
+    /**
+     * <p>The name of the image related to a finding.</p>
+     */
     inline void SetImageName(const Aws::String& value) { m_imageNameHasBeenSet = true; m_imageName = value; }
 
     /**
@@ -159,6 +174,11 @@ namespace Model
      * <p>The date/time that the container was started.</p>
      */
     inline const Aws::String& GetLaunchedAt() const{ return m_launchedAt; }
+
+    /**
+     * <p>The date/time that the container was started.</p>
+     */
+    inline bool LaunchedAtHasBeenSet() const { return m_launchedAtHasBeenSet; }
 
     /**
      * <p>The date/time that the container was started.</p>

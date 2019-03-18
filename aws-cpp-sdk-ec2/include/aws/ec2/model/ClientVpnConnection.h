@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p>The ID of the Client VPN endpoint to which the client is connected.</p>
      */
+    inline bool ClientVpnEndpointIdHasBeenSet() const { return m_clientVpnEndpointIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the Client VPN endpoint to which the client is connected.</p>
+     */
     inline void SetClientVpnEndpointId(const Aws::String& value) { m_clientVpnEndpointIdHasBeenSet = true; m_clientVpnEndpointId = value; }
 
     /**
@@ -90,6 +95,11 @@ namespace Model
      * <p>The current date and time.</p>
      */
     inline const Aws::String& GetTimestamp() const{ return m_timestamp; }
+
+    /**
+     * <p>The current date and time.</p>
+     */
+    inline bool TimestampHasBeenSet() const { return m_timestampHasBeenSet; }
 
     /**
      * <p>The current date and time.</p>
@@ -130,6 +140,11 @@ namespace Model
     /**
      * <p>The ID of the client connection.</p>
      */
+    inline bool ConnectionIdHasBeenSet() const { return m_connectionIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the client connection.</p>
+     */
     inline void SetConnectionId(const Aws::String& value) { m_connectionIdHasBeenSet = true; m_connectionId = value; }
 
     /**
@@ -164,6 +179,13 @@ namespace Model
      * used.</p>
      */
     inline const Aws::String& GetUsername() const{ return m_username; }
+
+    /**
+     * <p>The username of the client who established the client connection. This
+     * information is only provided if Active Directory client authentication is
+     * used.</p>
+     */
+    inline bool UsernameHasBeenSet() const { return m_usernameHasBeenSet; }
 
     /**
      * <p>The username of the client who established the client connection. This
@@ -216,6 +238,11 @@ namespace Model
     /**
      * <p>The date and time the client connection was established.</p>
      */
+    inline bool ConnectionEstablishedTimeHasBeenSet() const { return m_connectionEstablishedTimeHasBeenSet; }
+
+    /**
+     * <p>The date and time the client connection was established.</p>
+     */
     inline void SetConnectionEstablishedTime(const Aws::String& value) { m_connectionEstablishedTimeHasBeenSet = true; m_connectionEstablishedTime = value; }
 
     /**
@@ -248,6 +275,11 @@ namespace Model
      * <p>The number of bytes sent by the client.</p>
      */
     inline const Aws::String& GetIngressBytes() const{ return m_ingressBytes; }
+
+    /**
+     * <p>The number of bytes sent by the client.</p>
+     */
+    inline bool IngressBytesHasBeenSet() const { return m_ingressBytesHasBeenSet; }
 
     /**
      * <p>The number of bytes sent by the client.</p>
@@ -288,6 +320,11 @@ namespace Model
     /**
      * <p>The number of bytes received by the client.</p>
      */
+    inline bool EgressBytesHasBeenSet() const { return m_egressBytesHasBeenSet; }
+
+    /**
+     * <p>The number of bytes received by the client.</p>
+     */
     inline void SetEgressBytes(const Aws::String& value) { m_egressBytesHasBeenSet = true; m_egressBytes = value; }
 
     /**
@@ -320,6 +357,11 @@ namespace Model
      * <p>The number of packets sent by the client.</p>
      */
     inline const Aws::String& GetIngressPackets() const{ return m_ingressPackets; }
+
+    /**
+     * <p>The number of packets sent by the client.</p>
+     */
+    inline bool IngressPacketsHasBeenSet() const { return m_ingressPacketsHasBeenSet; }
 
     /**
      * <p>The number of packets sent by the client.</p>
@@ -360,6 +402,11 @@ namespace Model
     /**
      * <p>The number of packets received by the client.</p>
      */
+    inline bool EgressPacketsHasBeenSet() const { return m_egressPacketsHasBeenSet; }
+
+    /**
+     * <p>The number of packets received by the client.</p>
+     */
     inline void SetEgressPackets(const Aws::String& value) { m_egressPacketsHasBeenSet = true; m_egressPackets = value; }
 
     /**
@@ -392,6 +439,11 @@ namespace Model
      * <p>The IP address of the client.</p>
      */
     inline const Aws::String& GetClientIp() const{ return m_clientIp; }
+
+    /**
+     * <p>The IP address of the client.</p>
+     */
+    inline bool ClientIpHasBeenSet() const { return m_clientIpHasBeenSet; }
 
     /**
      * <p>The IP address of the client.</p>
@@ -429,6 +481,12 @@ namespace Model
      * client certificate, or the Active Directory user name.</p>
      */
     inline const Aws::String& GetCommonName() const{ return m_commonName; }
+
+    /**
+     * <p>The common name associated with the client. This is either the name of the
+     * client certificate, or the Active Directory user name.</p>
+     */
+    inline bool CommonNameHasBeenSet() const { return m_commonNameHasBeenSet; }
 
     /**
      * <p>The common name associated with the client. This is either the name of the
@@ -475,6 +533,11 @@ namespace Model
     /**
      * <p>The current state of the client connection.</p>
      */
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
+
+    /**
+     * <p>The current state of the client connection.</p>
+     */
     inline void SetStatus(const ClientVpnConnectionStatus& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
@@ -497,6 +560,11 @@ namespace Model
      * <p>The date and time the client connection was terminated.</p>
      */
     inline const Aws::String& GetConnectionEndTime() const{ return m_connectionEndTime; }
+
+    /**
+     * <p>The date and time the client connection was terminated.</p>
+     */
+    inline bool ConnectionEndTimeHasBeenSet() const { return m_connectionEndTimeHasBeenSet; }
 
     /**
      * <p>The date and time the client connection was terminated.</p>

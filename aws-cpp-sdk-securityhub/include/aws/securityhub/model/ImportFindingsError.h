@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The id of the error made during the BatchImportFindings operation.</p>
      */
+    inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
+
+    /**
+     * <p>The id of the error made during the BatchImportFindings operation.</p>
+     */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
     /**
@@ -92,6 +97,11 @@ namespace Model
     /**
      * <p>The code of the error made during the BatchImportFindings operation. </p>
      */
+    inline bool ErrorCodeHasBeenSet() const { return m_errorCodeHasBeenSet; }
+
+    /**
+     * <p>The code of the error made during the BatchImportFindings operation. </p>
+     */
     inline void SetErrorCode(const Aws::String& value) { m_errorCodeHasBeenSet = true; m_errorCode = value; }
 
     /**
@@ -124,6 +134,11 @@ namespace Model
      * <p>The message of the error made during the BatchImportFindings operation. </p>
      */
     inline const Aws::String& GetErrorMessage() const{ return m_errorMessage; }
+
+    /**
+     * <p>The message of the error made during the BatchImportFindings operation. </p>
+     */
+    inline bool ErrorMessageHasBeenSet() const { return m_errorMessageHasBeenSet; }
 
     /**
      * <p>The message of the error made during the BatchImportFindings operation. </p>

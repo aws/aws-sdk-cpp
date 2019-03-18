@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The key associated with the output.</p>
      */
+    inline bool OutputKeyHasBeenSet() const { return m_outputKeyHasBeenSet; }
+
+    /**
+     * <p>The key associated with the output.</p>
+     */
     inline void SetOutputKey(const Aws::String& value) { m_outputKeyHasBeenSet = true; m_outputKey = value; }
 
     /**
@@ -89,6 +94,11 @@ namespace Model
      * <p>The value associated with the output.</p>
      */
     inline const Aws::String& GetOutputValue() const{ return m_outputValue; }
+
+    /**
+     * <p>The value associated with the output.</p>
+     */
+    inline bool OutputValueHasBeenSet() const { return m_outputValueHasBeenSet; }
 
     /**
      * <p>The value associated with the output.</p>
@@ -129,6 +139,11 @@ namespace Model
     /**
      * <p>User defined description associated with the output.</p>
      */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
+
+    /**
+     * <p>User defined description associated with the output.</p>
+     */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
@@ -161,6 +176,11 @@ namespace Model
      * <p>The name of the export associated with the output.</p>
      */
     inline const Aws::String& GetExportName() const{ return m_exportName; }
+
+    /**
+     * <p>The name of the export associated with the output.</p>
+     */
+    inline bool ExportNameHasBeenSet() const { return m_exportNameHasBeenSet; }
 
     /**
      * <p>The name of the export associated with the output.</p>

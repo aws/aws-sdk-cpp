@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The token for the next set of results.</p>
      */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
+
+    /**
+     * <p>The token for the next set of results.</p>
+     */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
     /**
@@ -92,6 +97,11 @@ namespace Model
     /**
      * <p>The maximum number of results to return at one time.</p>
      */
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
+
+    /**
+     * <p>The maximum number of results to return at one time.</p>
+     */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
@@ -104,6 +114,11 @@ namespace Model
      * <p>If true, return child groups as well.</p>
      */
     inline bool GetRecursive() const{ return m_recursive; }
+
+    /**
+     * <p>If true, return child groups as well.</p>
+     */
+    inline bool RecursiveHasBeenSet() const { return m_recursiveHasBeenSet; }
 
     /**
      * <p>If true, return child groups as well.</p>
@@ -121,6 +136,12 @@ namespace Model
      * to get.</p>
      */
     inline const Aws::String& GetSecurityProfileTargetArn() const{ return m_securityProfileTargetArn; }
+
+    /**
+     * <p>The ARN of the target (thing group) whose attached security profiles you want
+     * to get.</p>
+     */
+    inline bool SecurityProfileTargetArnHasBeenSet() const { return m_securityProfileTargetArnHasBeenSet; }
 
     /**
      * <p>The ARN of the target (thing group) whose attached security profiles you want

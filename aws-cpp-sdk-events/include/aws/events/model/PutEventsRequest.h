@@ -57,6 +57,13 @@ namespace Model
      * parameters for the entry such as the source and type of the event, resources
      * associated with the event, and so on.</p>
      */
+    inline bool EntriesHasBeenSet() const { return m_entriesHasBeenSet; }
+
+    /**
+     * <p>The entry that defines an event in your system. You can specify several
+     * parameters for the entry such as the source and type of the event, resources
+     * associated with the event, and so on.</p>
+     */
     inline void SetEntries(const Aws::Vector<PutEventsRequestEntry>& value) { m_entriesHasBeenSet = true; m_entries = value; }
 
     /**

@@ -55,6 +55,11 @@ namespace Model
     /**
      * <p>Describes the location in S3 of the updated firmware.</p>
      */
+    inline bool S3DestinationHasBeenSet() const { return m_s3DestinationHasBeenSet; }
+
+    /**
+     * <p>Describes the location in S3 of the updated firmware.</p>
+     */
     inline void SetS3Destination(const S3Destination& value) { m_s3DestinationHasBeenSet = true; m_s3Destination = value; }
 
     /**

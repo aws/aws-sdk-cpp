@@ -60,6 +60,11 @@ namespace Model
     /**
      * <p>The name of the AWS Signer profile.</p>
      */
+    inline bool ProfileNameHasBeenSet() const { return m_profileNameHasBeenSet; }
+
+    /**
+     * <p>The name of the AWS Signer profile.</p>
+     */
     inline void SetProfileName(const Aws::String& value) { m_profileNameHasBeenSet = true; m_profileName = value; }
 
     /**
@@ -96,6 +101,11 @@ namespace Model
     /**
      * <p>The ACM certificate that is available for use by a signing profile.</p>
      */
+    inline bool SigningMaterialHasBeenSet() const { return m_signingMaterialHasBeenSet; }
+
+    /**
+     * <p>The ACM certificate that is available for use by a signing profile.</p>
+     */
     inline void SetSigningMaterial(const SigningMaterial& value) { m_signingMaterialHasBeenSet = true; m_signingMaterial = value; }
 
     /**
@@ -118,6 +128,11 @@ namespace Model
      * <p>The ID of a platform that is available for use by a signing profile.</p>
      */
     inline const Aws::String& GetPlatformId() const{ return m_platformId; }
+
+    /**
+     * <p>The ID of a platform that is available for use by a signing profile.</p>
+     */
+    inline bool PlatformIdHasBeenSet() const { return m_platformIdHasBeenSet; }
 
     /**
      * <p>The ID of a platform that is available for use by a signing profile.</p>
@@ -154,6 +169,11 @@ namespace Model
      * <p>The parameters that are available for use by an AWS Signer user.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetSigningParameters() const{ return m_signingParameters; }
+
+    /**
+     * <p>The parameters that are available for use by an AWS Signer user.</p>
+     */
+    inline bool SigningParametersHasBeenSet() const { return m_signingParametersHasBeenSet; }
 
     /**
      * <p>The parameters that are available for use by an AWS Signer user.</p>
@@ -215,6 +235,11 @@ namespace Model
      * <p>The status of an AWS Signer profile.</p>
      */
     inline const SigningProfileStatus& GetStatus() const{ return m_status; }
+
+    /**
+     * <p>The status of an AWS Signer profile.</p>
+     */
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
     /**
      * <p>The status of an AWS Signer profile.</p>

@@ -66,6 +66,13 @@ namespace Model
      * href="https://docs.aws.amazon.com/acm/latest/userguide/acm-renewal.html">managed
      * renewal</a> of the certificate.</p>
      */
+    inline bool RenewalStatusHasBeenSet() const { return m_renewalStatusHasBeenSet; }
+
+    /**
+     * <p>The status of ACM's <a
+     * href="https://docs.aws.amazon.com/acm/latest/userguide/acm-renewal.html">managed
+     * renewal</a> of the certificate.</p>
+     */
     inline void SetRenewalStatus(const RenewalStatus& value) { m_renewalStatusHasBeenSet = true; m_renewalStatus = value; }
 
     /**
@@ -99,6 +106,16 @@ namespace Model
      * certificate type is <code>AMAZON_ISSUED</code>.</p>
      */
     inline const Aws::Vector<DomainValidation>& GetDomainValidationOptions() const{ return m_domainValidationOptions; }
+
+    /**
+     * <p>Contains information about the validation of each domain name in the
+     * certificate, as it pertains to ACM's <a
+     * href="https://docs.aws.amazon.com/acm/latest/userguide/acm-renewal.html">managed
+     * renewal</a>. This is different from the initial validation that occurs as a
+     * result of the <a>RequestCertificate</a> request. This field exists only when the
+     * certificate type is <code>AMAZON_ISSUED</code>.</p>
+     */
+    inline bool DomainValidationOptionsHasBeenSet() const { return m_domainValidationOptionsHasBeenSet; }
 
     /**
      * <p>Contains information about the validation of each domain name in the
@@ -169,6 +186,11 @@ namespace Model
     /**
      * <p>The reason that a renewal request was unsuccessful.</p>
      */
+    inline bool RenewalStatusReasonHasBeenSet() const { return m_renewalStatusReasonHasBeenSet; }
+
+    /**
+     * <p>The reason that a renewal request was unsuccessful.</p>
+     */
     inline void SetRenewalStatusReason(const FailureReason& value) { m_renewalStatusReasonHasBeenSet = true; m_renewalStatusReason = value; }
 
     /**
@@ -191,6 +213,11 @@ namespace Model
      * <p>The time at which the renewal summary was last updated.</p>
      */
     inline const Aws::Utils::DateTime& GetUpdatedAt() const{ return m_updatedAt; }
+
+    /**
+     * <p>The time at which the renewal summary was last updated.</p>
+     */
+    inline bool UpdatedAtHasBeenSet() const { return m_updatedAtHasBeenSet; }
 
     /**
      * <p>The time at which the renewal summary was last updated.</p>

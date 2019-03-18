@@ -56,6 +56,12 @@ namespace Model
      * <p>The ARN of the principal, which can be an IAM role, IAM user, or the root
      * user.</p>
      */
+    inline bool PrincipalArnHasBeenSet() const { return m_principalArnHasBeenSet; }
+
+    /**
+     * <p>The ARN of the principal, which can be an IAM role, IAM user, or the root
+     * user.</p>
+     */
     inline void SetPrincipalArn(const Aws::String& value) { m_principalArnHasBeenSet = true; m_principalArn = value; }
 
     /**
@@ -106,6 +112,24 @@ namespace Model
      * <code>vpn-connection</code> | <code>vpn-gateway</code> </p>
      */
     inline const Aws::String& GetResource() const{ return m_resource; }
+
+    /**
+     * <p>The type of resource: <code>bundle</code> | <code>conversion-task</code> |
+     * <code>customer-gateway</code> | <code>dhcp-options</code> |
+     * <code>elastic-ip-allocation</code> | <code>elastic-ip-association</code> |
+     * <code>export-task</code> | <code>flow-log</code> | <code>image</code> |
+     * <code>import-task</code> | <code>instance</code> | <code>internet-gateway</code>
+     * | <code>network-acl</code> | <code>network-acl-association</code> |
+     * <code>network-interface</code> | <code>network-interface-attachment</code> |
+     * <code>prefix-list</code> | <code>reservation</code> | <code>route-table</code> |
+     * <code>route-table-association</code> | <code>security-group</code> |
+     * <code>snapshot</code> | <code>subnet</code> |
+     * <code>subnet-cidr-block-association</code> | <code>volume</code> |
+     * <code>vpc</code> | <code>vpc-cidr-block-association</code> |
+     * <code>vpc-endpoint</code> | <code>vpc-peering-connection</code> |
+     * <code>vpn-connection</code> | <code>vpn-gateway</code> </p>
+     */
+    inline bool ResourceHasBeenSet() const { return m_resourceHasBeenSet; }
 
     /**
      * <p>The type of resource: <code>bundle</code> | <code>conversion-task</code> |

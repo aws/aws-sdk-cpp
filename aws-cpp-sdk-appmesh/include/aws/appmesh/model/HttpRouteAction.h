@@ -64,6 +64,14 @@ namespace Model
          one or more targets and their relative weights to
      * distribute traffic with.</p>
      */
+    inline bool WeightedTargetsHasBeenSet() const { return m_weightedTargetsHasBeenSet; }
+
+    /**
+     * <p>The targets that traffic is routed to when a request matches the route. You
+     * can specify
+         one or more targets and their relative weights to
+     * distribute traffic with.</p>
+     */
     inline void SetWeightedTargets(const Aws::Vector<WeightedTarget>& value) { m_weightedTargetsHasBeenSet = true; m_weightedTargets = value; }
 
     /**

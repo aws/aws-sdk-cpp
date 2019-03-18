@@ -63,6 +63,15 @@ namespace Model
  Amazon CloudWatch
      * Logs.</p>
      */
+    inline bool DataTraceEnabledHasBeenSet() const { return m_dataTraceEnabledHasBeenSet; }
+
+    /**
+     * <p>Specifies whether (true) or not (false) data trace
+ logging is enabled for
+     * this route. This property affects the log entries pushed to
+ Amazon CloudWatch
+     * Logs.</p>
+     */
     inline void SetDataTraceEnabled(bool value) { m_dataTraceEnabledHasBeenSet = true; m_dataTraceEnabled = value; }
 
     /**
@@ -83,6 +92,11 @@ namespace Model
     /**
      * <p>Specifies whether detailed metrics are enabled.</p>
      */
+    inline bool DetailedMetricsEnabledHasBeenSet() const { return m_detailedMetricsEnabledHasBeenSet; }
+
+    /**
+     * <p>Specifies whether detailed metrics are enabled.</p>
+     */
     inline void SetDetailedMetricsEnabled(bool value) { m_detailedMetricsEnabledHasBeenSet = true; m_detailedMetricsEnabled = value; }
 
     /**
@@ -98,6 +112,14 @@ namespace Model
  CloudWatch Logs.</p>
      */
     inline const LoggingLevel& GetLoggingLevel() const{ return m_loggingLevel; }
+
+    /**
+     * <p>Specifies the logging level for this route: DEBUG, INFO,
+ or WARN. This
+     * property affects the log entries pushed to Amazon
+ CloudWatch Logs.</p>
+     */
+    inline bool LoggingLevelHasBeenSet() const { return m_loggingLevelHasBeenSet; }
 
     /**
      * <p>Specifies the logging level for this route: DEBUG, INFO,
@@ -140,6 +162,11 @@ namespace Model
     /**
      * <p>Specifies the throttling burst limit.</p>
      */
+    inline bool ThrottlingBurstLimitHasBeenSet() const { return m_throttlingBurstLimitHasBeenSet; }
+
+    /**
+     * <p>Specifies the throttling burst limit.</p>
+     */
     inline void SetThrottlingBurstLimit(int value) { m_throttlingBurstLimitHasBeenSet = true; m_throttlingBurstLimit = value; }
 
     /**
@@ -152,6 +179,11 @@ namespace Model
      * <p>Specifies the throttling rate limit.</p>
      */
     inline double GetThrottlingRateLimit() const{ return m_throttlingRateLimit; }
+
+    /**
+     * <p>Specifies the throttling rate limit.</p>
+     */
+    inline bool ThrottlingRateLimitHasBeenSet() const { return m_throttlingRateLimitHasBeenSet; }
 
     /**
      * <p>Specifies the throttling rate limit.</p>

@@ -54,6 +54,12 @@ namespace Model
      * <p>The AWS account ID associated with the registry that contains the repository.
      * If you do not specify a registry, the default registry is assumed.</p>
      */
+    inline bool RegistryIdHasBeenSet() const { return m_registryIdHasBeenSet; }
+
+    /**
+     * <p>The AWS account ID associated with the registry that contains the repository.
+     * If you do not specify a registry, the default registry is assumed.</p>
+     */
     inline void SetRegistryId(const Aws::String& value) { m_registryIdHasBeenSet = true; m_registryId = value; }
 
     /**
@@ -95,6 +101,11 @@ namespace Model
     /**
      * <p>The name of the repository to receive the policy.</p>
      */
+    inline bool RepositoryNameHasBeenSet() const { return m_repositoryNameHasBeenSet; }
+
+    /**
+     * <p>The name of the repository to receive the policy.</p>
+     */
     inline void SetRepositoryName(const Aws::String& value) { m_repositoryNameHasBeenSet = true; m_repositoryName = value; }
 
     /**
@@ -127,6 +138,11 @@ namespace Model
      * <p>The JSON repository policy text to apply to the repository.</p>
      */
     inline const Aws::String& GetPolicyText() const{ return m_policyText; }
+
+    /**
+     * <p>The JSON repository policy text to apply to the repository.</p>
+     */
+    inline bool PolicyTextHasBeenSet() const { return m_policyTextHasBeenSet; }
 
     /**
      * <p>The JSON repository policy text to apply to the repository.</p>
@@ -166,6 +182,14 @@ namespace Model
      * repository lock outs.</p>
      */
     inline bool GetForce() const{ return m_force; }
+
+    /**
+     * <p>If the policy you are attempting to set on a repository policy would prevent
+     * you from setting another policy in the future, you must force the
+     * <a>SetRepositoryPolicy</a> operation. This is intended to prevent accidental
+     * repository lock outs.</p>
+     */
+    inline bool ForceHasBeenSet() const { return m_forceHasBeenSet; }
 
     /**
      * <p>If the policy you are attempting to set on a repository policy would prevent

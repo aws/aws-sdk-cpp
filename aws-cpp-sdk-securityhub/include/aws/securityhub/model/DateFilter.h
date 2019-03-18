@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>A start date for the date filter.</p>
      */
+    inline bool StartHasBeenSet() const { return m_startHasBeenSet; }
+
+    /**
+     * <p>A start date for the date filter.</p>
+     */
     inline void SetStart(const Aws::String& value) { m_startHasBeenSet = true; m_start = value; }
 
     /**
@@ -92,6 +97,11 @@ namespace Model
     /**
      * <p>An end date for the date filter.</p>
      */
+    inline bool EndHasBeenSet() const { return m_endHasBeenSet; }
+
+    /**
+     * <p>An end date for the date filter.</p>
+     */
     inline void SetEnd(const Aws::String& value) { m_endHasBeenSet = true; m_end = value; }
 
     /**
@@ -124,6 +134,11 @@ namespace Model
      * <p>A date range for the date filter.</p>
      */
     inline const DateRange& GetDateRange() const{ return m_dateRange; }
+
+    /**
+     * <p>A date range for the date filter.</p>
+     */
+    inline bool DateRangeHasBeenSet() const { return m_dateRangeHasBeenSet; }
 
     /**
      * <p>A date range for the date filter.</p>

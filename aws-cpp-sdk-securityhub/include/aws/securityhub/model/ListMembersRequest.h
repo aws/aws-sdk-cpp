@@ -66,6 +66,16 @@ namespace Model
      * onlyAssociated is set to FALSE, the response includes all existing member
      * accounts. </p>
      */
+    inline bool OnlyAssociatedHasBeenSet() const { return m_onlyAssociatedHasBeenSet; }
+
+    /**
+     * <p>Specifies what member accounts the response includes based on their
+     * relationship status with the master account. The default value is TRUE. If
+     * onlyAssociated is set to TRUE, the response includes member accounts whose
+     * relationship status with the master is set to ENABLED or DISABLED. If
+     * onlyAssociated is set to FALSE, the response includes all existing member
+     * accounts. </p>
+     */
     inline void SetOnlyAssociated(bool value) { m_onlyAssociatedHasBeenSet = true; m_onlyAssociated = value; }
 
     /**
@@ -87,6 +97,11 @@ namespace Model
     /**
      * <p>Indicates the maximum number of items that you want in the response. </p>
      */
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
+
+    /**
+     * <p>Indicates the maximum number of items that you want in the response. </p>
+     */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
@@ -102,6 +117,14 @@ namespace Model
      * to continue listing data. </p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
+    /**
+     * <p>Paginates results. Set the value of this parameter to NULL on your first call
+     * to the ListMembers operation. For subsequent calls to the operation, fill
+     * nextToken in the request with the value of NextToken from the previous response
+     * to continue listing data. </p>
+     */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
      * <p>Paginates results. Set the value of this parameter to NULL on your first call

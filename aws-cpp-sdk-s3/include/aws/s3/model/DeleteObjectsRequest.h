@@ -63,6 +63,11 @@ namespace Model
     /**
      * <p/>
      */
+    inline bool BucketHasBeenSet() const { return m_bucketHasBeenSet; }
+
+    /**
+     * <p/>
+     */
     inline void SetBucket(const Aws::String& value) { m_bucketHasBeenSet = true; m_bucket = value; }
 
     /**
@@ -99,6 +104,11 @@ namespace Model
     /**
      * <p/>
      */
+    inline bool DeleteHasBeenSet() const { return m_deleteHasBeenSet; }
+
+    /**
+     * <p/>
+     */
     inline void SetDelete(const Delete& value) { m_deleteHasBeenSet = true; m_delete = value; }
 
     /**
@@ -122,6 +132,12 @@ namespace Model
      * the value that is displayed on your authentication device.</p>
      */
     inline const Aws::String& GetMFA() const{ return m_mFA; }
+
+    /**
+     * <p>The concatenation of the authentication device's serial number, a space, and
+     * the value that is displayed on your authentication device.</p>
+     */
+    inline bool MFAHasBeenSet() const { return m_mFAHasBeenSet; }
 
     /**
      * <p>The concatenation of the authentication device's serial number, a space, and
@@ -164,6 +180,9 @@ namespace Model
     inline const RequestPayer& GetRequestPayer() const{ return m_requestPayer; }
 
     
+    inline bool RequestPayerHasBeenSet() const { return m_requestPayerHasBeenSet; }
+
+    
     inline void SetRequestPayer(const RequestPayer& value) { m_requestPayerHasBeenSet = true; m_requestPayer = value; }
 
     
@@ -188,6 +207,13 @@ namespace Model
      * Governance-type Object Lock in place. You must have sufficient permissions to
      * perform this operation.</p>
      */
+    inline bool BypassGovernanceRetentionHasBeenSet() const { return m_bypassGovernanceRetentionHasBeenSet; }
+
+    /**
+     * <p>Specifies whether you want to delete this object even if it has a
+     * Governance-type Object Lock in place. You must have sufficient permissions to
+     * perform this operation.</p>
+     */
     inline void SetBypassGovernanceRetention(bool value) { m_bypassGovernanceRetentionHasBeenSet = true; m_bypassGovernanceRetention = value; }
 
     /**
@@ -200,6 +226,9 @@ namespace Model
 
     
     inline const Aws::Map<Aws::String, Aws::String>& GetCustomizedAccessLogTag() const{ return m_customizedAccessLogTag; }
+
+    
+    inline bool CustomizedAccessLogTagHasBeenSet() const { return m_customizedAccessLogTagHasBeenSet; }
 
     
     inline void SetCustomizedAccessLogTag(const Aws::Map<Aws::String, Aws::String>& value) { m_customizedAccessLogTagHasBeenSet = true; m_customizedAccessLogTag = value; }

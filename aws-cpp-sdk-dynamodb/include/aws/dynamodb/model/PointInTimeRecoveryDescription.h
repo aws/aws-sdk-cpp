@@ -63,6 +63,14 @@ namespace Model
      * <p> <code>ENABLED</code> - Point in time recovery is enabled.</p> </li> <li> <p>
      * <code>DISABLED</code> - Point in time recovery is disabled.</p> </li> </ul>
      */
+    inline bool PointInTimeRecoveryStatusHasBeenSet() const { return m_pointInTimeRecoveryStatusHasBeenSet; }
+
+    /**
+     * <p>The current state of point in time recovery:</p> <ul> <li> <p>
+     * <code>ENABLING</code> - Point in time recovery is being enabled.</p> </li> <li>
+     * <p> <code>ENABLED</code> - Point in time recovery is enabled.</p> </li> <li> <p>
+     * <code>DISABLED</code> - Point in time recovery is disabled.</p> </li> </ul>
+     */
     inline void SetPointInTimeRecoveryStatus(const PointInTimeRecoveryStatus& value) { m_pointInTimeRecoveryStatusHasBeenSet = true; m_pointInTimeRecoveryStatus = value; }
 
     /**
@@ -100,6 +108,12 @@ namespace Model
      * <p>Specifies the earliest point in time you can restore your table to. It You
      * can restore your table to any point in time during the last 35 days. </p>
      */
+    inline bool EarliestRestorableDateTimeHasBeenSet() const { return m_earliestRestorableDateTimeHasBeenSet; }
+
+    /**
+     * <p>Specifies the earliest point in time you can restore your table to. It You
+     * can restore your table to any point in time during the last 35 days. </p>
+     */
     inline void SetEarliestRestorableDateTime(const Aws::Utils::DateTime& value) { m_earliestRestorableDateTimeHasBeenSet = true; m_earliestRestorableDateTime = value; }
 
     /**
@@ -126,6 +140,12 @@ namespace Model
      * current time. </p>
      */
     inline const Aws::Utils::DateTime& GetLatestRestorableDateTime() const{ return m_latestRestorableDateTime; }
+
+    /**
+     * <p> <code>LatestRestorableDateTime</code> is typically 5 minutes before the
+     * current time. </p>
+     */
+    inline bool LatestRestorableDateTimeHasBeenSet() const { return m_latestRestorableDateTimeHasBeenSet; }
 
     /**
      * <p> <code>LatestRestorableDateTime</code> is typically 5 minutes before the

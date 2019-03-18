@@ -61,6 +61,12 @@ namespace Model
      * <p>The attribute to reset (currently you can only reset the launch permission
      * attribute).</p>
      */
+    inline bool AttributeHasBeenSet() const { return m_attributeHasBeenSet; }
+
+    /**
+     * <p>The attribute to reset (currently you can only reset the launch permission
+     * attribute).</p>
+     */
     inline void SetAttribute(const ResetImageAttributeName& value) { m_attributeHasBeenSet = true; m_attribute = value; }
 
     /**
@@ -86,6 +92,11 @@ namespace Model
      * <p>The ID of the AMI.</p>
      */
     inline const Aws::String& GetImageId() const{ return m_imageId; }
+
+    /**
+     * <p>The ID of the AMI.</p>
+     */
+    inline bool ImageIdHasBeenSet() const { return m_imageIdHasBeenSet; }
 
     /**
      * <p>The ID of the AMI.</p>
@@ -125,6 +136,14 @@ namespace Model
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
     inline bool GetDryRun() const{ return m_dryRun; }
+
+    /**
+     * <p>Checks whether you have the required permissions for the action, without
+     * actually making the request, and provides an error response. If you have the
+     * required permissions, the error response is <code>DryRunOperation</code>.
+     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+     */
+    inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
 
     /**
      * <p>Checks whether you have the required permissions for the action, without

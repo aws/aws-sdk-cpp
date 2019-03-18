@@ -61,6 +61,12 @@ namespace Model
      * <p>The type of entity that AWS CloudFormation changes. Currently, the only
      * entity type is <code>Resource</code>.</p>
      */
+    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
+
+    /**
+     * <p>The type of entity that AWS CloudFormation changes. Currently, the only
+     * entity type is <code>Resource</code>.</p>
+     */
     inline void SetType(const ChangeType& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
@@ -87,6 +93,12 @@ namespace Model
      * action that AWS CloudFormation will perform.</p>
      */
     inline const ResourceChange& GetResourceChange() const{ return m_resourceChange; }
+
+    /**
+     * <p>A <code>ResourceChange</code> structure that describes the resource and
+     * action that AWS CloudFormation will perform.</p>
+     */
+    inline bool ResourceChangeHasBeenSet() const { return m_resourceChangeHasBeenSet; }
 
     /**
      * <p>A <code>ResourceChange</code> structure that describes the resource and

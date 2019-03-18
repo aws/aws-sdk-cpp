@@ -54,6 +54,11 @@ namespace Model
     /**
      * <p>The name of the vault.</p>
      */
+    inline bool VaultNameHasBeenSet() const { return m_vaultNameHasBeenSet; }
+
+    /**
+     * <p>The name of the vault.</p>
+     */
     inline void SetVaultName(const Aws::String& value) { m_vaultNameHasBeenSet = true; m_vaultName = value; }
 
     /**
@@ -90,6 +95,15 @@ namespace Model
      * ID, do not include any hyphens ('-') in the ID. </p>
      */
     inline const Aws::String& GetAccountId() const{ return m_accountId; }
+
+    /**
+     * <p>The <code>AccountId</code> value is the AWS account ID of the account that
+     * owns the vault. You can either specify an AWS account ID or optionally a single
+     * '<code>-</code>' (hyphen), in which case Amazon Glacier uses the AWS account ID
+     * associated with the credentials used to sign the request. If you use an account
+     * ID, do not include any hyphens ('-') in the ID. </p>
+     */
+    inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
 
     /**
      * <p>The <code>AccountId</code> value is the AWS account ID of the account that
@@ -154,6 +168,11 @@ namespace Model
     /**
      * <p>The optional description of the archive you are uploading.</p>
      */
+    inline bool ArchiveDescriptionHasBeenSet() const { return m_archiveDescriptionHasBeenSet; }
+
+    /**
+     * <p>The optional description of the archive you are uploading.</p>
+     */
     inline void SetArchiveDescription(const Aws::String& value) { m_archiveDescriptionHasBeenSet = true; m_archiveDescription = value; }
 
     /**
@@ -186,6 +205,11 @@ namespace Model
      * <p>The SHA256 tree hash of the data being uploaded.</p>
      */
     inline const Aws::String& GetChecksum() const{ return m_checksum; }
+
+    /**
+     * <p>The SHA256 tree hash of the data being uploaded.</p>
+     */
+    inline bool ChecksumHasBeenSet() const { return m_checksumHasBeenSet; }
 
     /**
      * <p>The SHA256 tree hash of the data being uploaded.</p>

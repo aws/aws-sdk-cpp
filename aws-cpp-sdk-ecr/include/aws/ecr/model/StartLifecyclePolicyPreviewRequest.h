@@ -54,6 +54,12 @@ namespace Model
      * <p>The AWS account ID associated with the registry that contains the repository.
      * If you do not specify a registry, the default registry is assumed.</p>
      */
+    inline bool RegistryIdHasBeenSet() const { return m_registryIdHasBeenSet; }
+
+    /**
+     * <p>The AWS account ID associated with the registry that contains the repository.
+     * If you do not specify a registry, the default registry is assumed.</p>
+     */
     inline void SetRegistryId(const Aws::String& value) { m_registryIdHasBeenSet = true; m_registryId = value; }
 
     /**
@@ -95,6 +101,11 @@ namespace Model
     /**
      * <p>The name of the repository to be evaluated.</p>
      */
+    inline bool RepositoryNameHasBeenSet() const { return m_repositoryNameHasBeenSet; }
+
+    /**
+     * <p>The name of the repository to be evaluated.</p>
+     */
     inline void SetRepositoryName(const Aws::String& value) { m_repositoryNameHasBeenSet = true; m_repositoryName = value; }
 
     /**
@@ -128,6 +139,12 @@ namespace Model
      * current policy for the repository is used.</p>
      */
     inline const Aws::String& GetLifecyclePolicyText() const{ return m_lifecyclePolicyText; }
+
+    /**
+     * <p>The policy to be evaluated against. If you do not specify a policy, the
+     * current policy for the repository is used.</p>
+     */
+    inline bool LifecyclePolicyTextHasBeenSet() const { return m_lifecyclePolicyTextHasBeenSet; }
 
     /**
      * <p>The policy to be evaluated against. If you do not specify a policy, the

@@ -60,6 +60,13 @@ namespace Model
      * activities are not allowed to shrink. Scale-in activities will not terminate
      * instances below this boundary.</p>
      */
+    inline bool MinCapacityHasBeenSet() const { return m_minCapacityHasBeenSet; }
+
+    /**
+     * <p>The lower boundary of EC2 instances in an instance group below which scaling
+     * activities are not allowed to shrink. Scale-in activities will not terminate
+     * instances below this boundary.</p>
+     */
     inline void SetMinCapacity(int value) { m_minCapacityHasBeenSet = true; m_minCapacity = value; }
 
     /**
@@ -76,6 +83,13 @@ namespace Model
      * beyond this boundary.</p>
      */
     inline int GetMaxCapacity() const{ return m_maxCapacity; }
+
+    /**
+     * <p>The upper boundary of EC2 instances in an instance group beyond which scaling
+     * activities are not allowed to grow. Scale-out activities will not add instances
+     * beyond this boundary.</p>
+     */
+    inline bool MaxCapacityHasBeenSet() const { return m_maxCapacityHasBeenSet; }
 
     /**
      * <p>The upper boundary of EC2 instances in an instance group beyond which scaling

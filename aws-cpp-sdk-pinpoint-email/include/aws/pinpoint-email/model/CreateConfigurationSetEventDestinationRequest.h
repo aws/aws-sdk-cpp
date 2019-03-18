@@ -59,6 +59,12 @@ namespace Model
      * <p>The name of the configuration set that you want to add an event destination
      * to.</p>
      */
+    inline bool ConfigurationSetNameHasBeenSet() const { return m_configurationSetNameHasBeenSet; }
+
+    /**
+     * <p>The name of the configuration set that you want to add an event destination
+     * to.</p>
+     */
     inline void SetConfigurationSetName(const Aws::String& value) { m_configurationSetNameHasBeenSet = true; m_configurationSetName = value; }
 
     /**
@@ -102,6 +108,12 @@ namespace Model
      * <p>A name that identifies the event destination within the configuration
      * set.</p>
      */
+    inline bool EventDestinationNameHasBeenSet() const { return m_eventDestinationNameHasBeenSet; }
+
+    /**
+     * <p>A name that identifies the event destination within the configuration
+     * set.</p>
+     */
     inline void SetEventDestinationName(const Aws::String& value) { m_eventDestinationNameHasBeenSet = true; m_eventDestinationName = value; }
 
     /**
@@ -139,6 +151,11 @@ namespace Model
      * <p>An object that defines the event destination.</p>
      */
     inline const EventDestinationDefinition& GetEventDestination() const{ return m_eventDestination; }
+
+    /**
+     * <p>An object that defines the event destination.</p>
+     */
+    inline bool EventDestinationHasBeenSet() const { return m_eventDestinationHasBeenSet; }
 
     /**
      * <p>An object that defines the event destination.</p>

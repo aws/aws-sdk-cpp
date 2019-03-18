@@ -51,6 +51,11 @@ namespace Model
     /**
      * The new category for the preset, if you are changing it.
      */
+    inline bool CategoryHasBeenSet() const { return m_categoryHasBeenSet; }
+
+    /**
+     * The new category for the preset, if you are changing it.
+     */
     inline void SetCategory(const Aws::String& value) { m_categoryHasBeenSet = true; m_category = value; }
 
     /**
@@ -83,6 +88,11 @@ namespace Model
      * The new description for the preset, if you are changing it.
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
+
+    /**
+     * The new description for the preset, if you are changing it.
+     */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
 
     /**
      * The new description for the preset, if you are changing it.
@@ -123,6 +133,11 @@ namespace Model
     /**
      * The name of the preset you are modifying.
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * The name of the preset you are modifying.
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
@@ -153,6 +168,9 @@ namespace Model
 
     
     inline const PresetSettings& GetSettings() const{ return m_settings; }
+
+    
+    inline bool SettingsHasBeenSet() const { return m_settingsHasBeenSet; }
 
     
     inline void SetSettings(const PresetSettings& value) { m_settingsHasBeenSet = true; m_settings = value; }

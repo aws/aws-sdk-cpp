@@ -56,6 +56,11 @@ namespace Model
     /**
      * The URL of the license server used for protecting content.
      */
+    inline bool KeyProviderServerHasBeenSet() const { return m_keyProviderServerHasBeenSet; }
+
+    /**
+     * The URL of the license server used for protecting content.
+     */
     inline void SetKeyProviderServer(const InputLocation& value) { m_keyProviderServerHasBeenSet = true; m_keyProviderServer = value; }
 
     /**
@@ -78,6 +83,11 @@ namespace Model
      * Static key value as a 32 character hexadecimal string.
      */
     inline const Aws::String& GetStaticKeyValue() const{ return m_staticKeyValue; }
+
+    /**
+     * Static key value as a 32 character hexadecimal string.
+     */
+    inline bool StaticKeyValueHasBeenSet() const { return m_staticKeyValueHasBeenSet; }
 
     /**
      * Static key value as a 32 character hexadecimal string.

@@ -56,6 +56,9 @@ namespace Model
     inline const Aws::String& GetResourceArn() const{ return m_resourceArn; }
 
     
+    inline bool ResourceArnHasBeenSet() const { return m_resourceArnHasBeenSet; }
+
+    
     inline void SetResourceArn(const Aws::String& value) { m_resourceArnHasBeenSet = true; m_resourceArn = value; }
 
     
@@ -78,6 +81,11 @@ namespace Model
      * An array of tag keys to delete
      */
     inline const Aws::Vector<Aws::String>& GetTagKeys() const{ return m_tagKeys; }
+
+    /**
+     * An array of tag keys to delete
+     */
+    inline bool TagKeysHasBeenSet() const { return m_tagKeysHasBeenSet; }
 
     /**
      * An array of tag keys to delete

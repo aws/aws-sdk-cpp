@@ -54,6 +54,11 @@ namespace Model
     /**
      * <p>The first port in the range of ports, inclusive.</p>
      */
+    inline bool FromPortHasBeenSet() const { return m_fromPortHasBeenSet; }
+
+    /**
+     * <p>The first port in the range of ports, inclusive.</p>
+     */
     inline void SetFromPort(int value) { m_fromPortHasBeenSet = true; m_fromPort = value; }
 
     /**
@@ -66,6 +71,11 @@ namespace Model
      * <p>The last port in the range of ports, inclusive.</p>
      */
     inline int GetToPort() const{ return m_toPort; }
+
+    /**
+     * <p>The last port in the range of ports, inclusive.</p>
+     */
+    inline bool ToPortHasBeenSet() const { return m_toPortHasBeenSet; }
 
     /**
      * <p>The last port in the range of ports, inclusive.</p>

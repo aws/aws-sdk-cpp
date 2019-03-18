@@ -59,6 +59,11 @@ namespace Model
     /**
      * <p/>
      */
+    inline bool PrefixHasBeenSet() const { return m_prefixHasBeenSet; }
+
+    /**
+     * <p/>
+     */
     inline void SetPrefix(const Aws::String& value) { m_prefixHasBeenSet = true; m_prefix = value; }
 
     /**
@@ -92,6 +97,12 @@ namespace Model
      * apply.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>All of these tags must exist in the object's tag set in order for the rule to
+     * apply.</p>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
      * <p>All of these tags must exist in the object's tag set in order for the rule to

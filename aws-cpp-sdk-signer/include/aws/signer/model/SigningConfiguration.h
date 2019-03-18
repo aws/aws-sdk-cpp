@@ -58,6 +58,12 @@ namespace Model
      * <p>The encryption algorithm options that are available for an AWS Signer
      * job.</p>
      */
+    inline bool EncryptionAlgorithmOptionsHasBeenSet() const { return m_encryptionAlgorithmOptionsHasBeenSet; }
+
+    /**
+     * <p>The encryption algorithm options that are available for an AWS Signer
+     * job.</p>
+     */
     inline void SetEncryptionAlgorithmOptions(const EncryptionAlgorithmOptions& value) { m_encryptionAlgorithmOptionsHasBeenSet = true; m_encryptionAlgorithmOptions = value; }
 
     /**
@@ -83,6 +89,11 @@ namespace Model
      * <p>The hash algorithm options that are available for an AWS Signer job.</p>
      */
     inline const HashAlgorithmOptions& GetHashAlgorithmOptions() const{ return m_hashAlgorithmOptions; }
+
+    /**
+     * <p>The hash algorithm options that are available for an AWS Signer job.</p>
+     */
+    inline bool HashAlgorithmOptionsHasBeenSet() const { return m_hashAlgorithmOptionsHasBeenSet; }
 
     /**
      * <p>The hash algorithm options that are available for an AWS Signer job.</p>

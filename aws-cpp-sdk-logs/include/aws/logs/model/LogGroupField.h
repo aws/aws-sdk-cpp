@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The name of a log field.</p>
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>The name of a log field.</p>
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
@@ -89,6 +94,11 @@ namespace Model
      * <p>The percentage of log events queried that contained the field.</p>
      */
     inline int GetPercent() const{ return m_percent; }
+
+    /**
+     * <p>The percentage of log events queried that contained the field.</p>
+     */
+    inline bool PercentHasBeenSet() const { return m_percentHasBeenSet; }
 
     /**
      * <p>The percentage of log events queried that contained the field.</p>

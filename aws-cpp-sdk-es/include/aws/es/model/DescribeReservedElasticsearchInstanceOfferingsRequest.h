@@ -63,6 +63,12 @@ namespace Model
      * <p>The offering identifier filter value. Use this parameter to show only the
      * available offering that matches the specified reservation identifier.</p>
      */
+    inline bool ReservedElasticsearchInstanceOfferingIdHasBeenSet() const { return m_reservedElasticsearchInstanceOfferingIdHasBeenSet; }
+
+    /**
+     * <p>The offering identifier filter value. Use this parameter to show only the
+     * available offering that matches the specified reservation identifier.</p>
+     */
     inline void SetReservedElasticsearchInstanceOfferingId(const Aws::String& value) { m_reservedElasticsearchInstanceOfferingIdHasBeenSet = true; m_reservedElasticsearchInstanceOfferingId = value; }
 
     /**
@@ -106,6 +112,12 @@ namespace Model
      * <p>Set this value to limit the number of results returned. If not specified,
      * defaults to 100.</p>
      */
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
+
+    /**
+     * <p>Set this value to limit the number of results returned. If not specified,
+     * defaults to 100.</p>
+     */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
@@ -120,6 +132,12 @@ namespace Model
      * containing NextToken. It is used for pagination.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
+    /**
+     * <p>NextToken should be sent in case if earlier API call produced result
+     * containing NextToken. It is used for pagination.</p>
+     */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
      * <p>NextToken should be sent in case if earlier API call produced result

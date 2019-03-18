@@ -53,6 +53,11 @@ namespace Model
     /**
      * <p>The ID of a connection, LAG, or interconnect.</p>
      */
+    inline bool ConnectionIdHasBeenSet() const { return m_connectionIdHasBeenSet; }
+
+    /**
+     * <p>The ID of a connection, LAG, or interconnect.</p>
+     */
     inline void SetConnectionId(const Aws::String& value) { m_connectionIdHasBeenSet = true; m_connectionId = value; }
 
     /**
@@ -87,6 +92,13 @@ namespace Model
      * your company name as the requester of the cross connect.</p>
      */
     inline const Aws::String& GetProviderName() const{ return m_providerName; }
+
+    /**
+     * <p>The name of the service provider who establishes connectivity on your behalf.
+     * If you specify this parameter, the LOA-CFA lists the provider name alongside
+     * your company name as the requester of the cross connect.</p>
+     */
+    inline bool ProviderNameHasBeenSet() const { return m_providerNameHasBeenSet; }
 
     /**
      * <p>The name of the service provider who establishes connectivity on your behalf.
@@ -136,6 +148,12 @@ namespace Model
      * application/pdf.</p>
      */
     inline const LoaContentType& GetLoaContentType() const{ return m_loaContentType; }
+
+    /**
+     * <p>The standard media type for the LOA-CFA document. The only supported value is
+     * application/pdf.</p>
+     */
+    inline bool LoaContentTypeHasBeenSet() const { return m_loaContentTypeHasBeenSet; }
 
     /**
      * <p>The standard media type for the LOA-CFA document. The only supported value is

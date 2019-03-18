@@ -53,6 +53,11 @@ namespace Model
     /**
      * <p>The stack ID.</p>
      */
+    inline bool StackIdHasBeenSet() const { return m_stackIdHasBeenSet; }
+
+    /**
+     * <p>The stack ID.</p>
+     */
     inline void SetStackId(const Aws::String& value) { m_stackIdHasBeenSet = true; m_stackId = value; }
 
     /**
@@ -87,6 +92,13 @@ namespace Model
      * in the specified stack.</p>
      */
     inline const Aws::Vector<Aws::String>& GetLayerIds() const{ return m_layerIds; }
+
+    /**
+     * <p>An array of layer IDs that specify the layers to be described. If you omit
+     * this parameter, <code>DescribeLayers</code> returns a description of every layer
+     * in the specified stack.</p>
+     */
+    inline bool LayerIdsHasBeenSet() const { return m_layerIdsHasBeenSet; }
 
     /**
      * <p>An array of layer IDs that specify the layers to be described. If you omit

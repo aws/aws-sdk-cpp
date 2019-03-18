@@ -52,6 +52,11 @@ namespace Model
     /**
      * <p>Name of the crawler whose schedule state to set.</p>
      */
+    inline bool CrawlerNameHasBeenSet() const { return m_crawlerNameHasBeenSet; }
+
+    /**
+     * <p>Name of the crawler whose schedule state to set.</p>
+     */
     inline void SetCrawlerName(const Aws::String& value) { m_crawlerNameHasBeenSet = true; m_crawlerName = value; }
 
     /**

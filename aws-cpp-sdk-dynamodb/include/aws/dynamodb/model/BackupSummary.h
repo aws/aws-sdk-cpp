@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p>Name of the table.</p>
      */
+    inline bool TableNameHasBeenSet() const { return m_tableNameHasBeenSet; }
+
+    /**
+     * <p>Name of the table.</p>
+     */
     inline void SetTableName(const Aws::String& value) { m_tableNameHasBeenSet = true; m_tableName = value; }
 
     /**
@@ -90,6 +95,11 @@ namespace Model
      * <p>Unique identifier for the table.</p>
      */
     inline const Aws::String& GetTableId() const{ return m_tableId; }
+
+    /**
+     * <p>Unique identifier for the table.</p>
+     */
+    inline bool TableIdHasBeenSet() const { return m_tableIdHasBeenSet; }
 
     /**
      * <p>Unique identifier for the table.</p>
@@ -130,6 +140,11 @@ namespace Model
     /**
      * <p>ARN associated with the table.</p>
      */
+    inline bool TableArnHasBeenSet() const { return m_tableArnHasBeenSet; }
+
+    /**
+     * <p>ARN associated with the table.</p>
+     */
     inline void SetTableArn(const Aws::String& value) { m_tableArnHasBeenSet = true; m_tableArn = value; }
 
     /**
@@ -162,6 +177,11 @@ namespace Model
      * <p>ARN associated with the backup.</p>
      */
     inline const Aws::String& GetBackupArn() const{ return m_backupArn; }
+
+    /**
+     * <p>ARN associated with the backup.</p>
+     */
+    inline bool BackupArnHasBeenSet() const { return m_backupArnHasBeenSet; }
 
     /**
      * <p>ARN associated with the backup.</p>
@@ -202,6 +222,11 @@ namespace Model
     /**
      * <p>Name of the specified backup.</p>
      */
+    inline bool BackupNameHasBeenSet() const { return m_backupNameHasBeenSet; }
+
+    /**
+     * <p>Name of the specified backup.</p>
+     */
     inline void SetBackupName(const Aws::String& value) { m_backupNameHasBeenSet = true; m_backupName = value; }
 
     /**
@@ -238,6 +263,11 @@ namespace Model
     /**
      * <p>Time at which the backup was created.</p>
      */
+    inline bool BackupCreationDateTimeHasBeenSet() const { return m_backupCreationDateTimeHasBeenSet; }
+
+    /**
+     * <p>Time at which the backup was created.</p>
+     */
     inline void SetBackupCreationDateTime(const Aws::Utils::DateTime& value) { m_backupCreationDateTimeHasBeenSet = true; m_backupCreationDateTime = value; }
 
     /**
@@ -262,6 +292,13 @@ namespace Model
      * its creation.</p>
      */
     inline const Aws::Utils::DateTime& GetBackupExpiryDateTime() const{ return m_backupExpiryDateTime; }
+
+    /**
+     * <p>Time at which the automatic on-demand backup created by DynamoDB will expire.
+     * This <code>SYSTEM</code> on-demand backup expires automatically 35 days after
+     * its creation.</p>
+     */
+    inline bool BackupExpiryDateTimeHasBeenSet() const { return m_backupExpiryDateTimeHasBeenSet; }
 
     /**
      * <p>Time at which the automatic on-demand backup created by DynamoDB will expire.
@@ -300,6 +337,11 @@ namespace Model
     /**
      * <p>Backup can be in one of the following states: CREATING, ACTIVE, DELETED.</p>
      */
+    inline bool BackupStatusHasBeenSet() const { return m_backupStatusHasBeenSet; }
+
+    /**
+     * <p>Backup can be in one of the following states: CREATING, ACTIVE, DELETED.</p>
+     */
     inline void SetBackupStatus(const BackupStatus& value) { m_backupStatusHasBeenSet = true; m_backupStatus = value; }
 
     /**
@@ -329,6 +371,18 @@ namespace Model
      * service.</p> </li> </ul>
      */
     inline const BackupType& GetBackupType() const{ return m_backupType; }
+
+    /**
+     * <p>BackupType:</p> <ul> <li> <p> <code>USER</code> - You create and manage these
+     * using the on-demand backup feature.</p> </li> <li> <p> <code>SYSTEM</code> - If
+     * you delete a table with point-in-time recovery enabled, a <code>SYSTEM</code>
+     * backup is automatically created and is retained for 35 days (at no additional
+     * cost). System backups allow you to restore the deleted table to the state it was
+     * in just before the point of deletion. </p> </li> <li> <p>
+     * <code>AWS_BACKUP</code> - On-demand backup created by you from AWS Backup
+     * service.</p> </li> </ul>
+     */
+    inline bool BackupTypeHasBeenSet() const { return m_backupTypeHasBeenSet; }
 
     /**
      * <p>BackupType:</p> <ul> <li> <p> <code>USER</code> - You create and manage these
@@ -383,6 +437,11 @@ namespace Model
      * <p>Size of the backup in bytes.</p>
      */
     inline long long GetBackupSizeBytes() const{ return m_backupSizeBytes; }
+
+    /**
+     * <p>Size of the backup in bytes.</p>
+     */
+    inline bool BackupSizeBytesHasBeenSet() const { return m_backupSizeBytesHasBeenSet; }
 
     /**
      * <p>Size of the backup in bytes.</p>

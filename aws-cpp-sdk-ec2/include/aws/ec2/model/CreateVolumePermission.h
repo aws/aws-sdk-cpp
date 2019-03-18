@@ -59,6 +59,11 @@ namespace Model
     /**
      * <p>The group to be added or removed. The possible value is <code>all</code>.</p>
      */
+    inline bool GroupHasBeenSet() const { return m_groupHasBeenSet; }
+
+    /**
+     * <p>The group to be added or removed. The possible value is <code>all</code>.</p>
+     */
     inline void SetGroup(const PermissionGroup& value) { m_groupHasBeenSet = true; m_group = value; }
 
     /**
@@ -81,6 +86,11 @@ namespace Model
      * <p>The AWS account ID to be added or removed.</p>
      */
     inline const Aws::String& GetUserId() const{ return m_userId; }
+
+    /**
+     * <p>The AWS account ID to be added or removed.</p>
+     */
+    inline bool UserIdHasBeenSet() const { return m_userIdHasBeenSet; }
 
     /**
      * <p>The AWS account ID to be added or removed.</p>

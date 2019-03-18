@@ -62,6 +62,15 @@ namespace Model
      * alphanumeric characters with no spaces. You can also include any of the
      * following characters: _+=,.@-</p>
      */
+    inline bool UserNameHasBeenSet() const { return m_userNameHasBeenSet; }
+
+    /**
+     * <p>The name of the IAM user associated with the SSH public key.</p> <p>This
+     * parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex
+     * pattern</a>) a string of characters consisting of upper and lowercase
+     * alphanumeric characters with no spaces. You can also include any of the
+     * following characters: _+=,.@-</p>
+     */
     inline void SetUserName(const Aws::String& value) { m_userNameHasBeenSet = true; m_userName = value; }
 
     /**
@@ -117,6 +126,14 @@ namespace Model
      * digit.</p>
      */
     inline const Aws::String& GetSSHPublicKeyId() const{ return m_sSHPublicKeyId; }
+
+    /**
+     * <p>The unique identifier for the SSH public key.</p> <p>This parameter allows
+     * (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a
+     * string of characters that can consist of any upper or lowercased letter or
+     * digit.</p>
+     */
+    inline bool SSHPublicKeyIdHasBeenSet() const { return m_sSHPublicKeyIdHasBeenSet; }
 
     /**
      * <p>The unique identifier for the SSH public key.</p> <p>This parameter allows

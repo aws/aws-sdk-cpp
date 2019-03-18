@@ -52,6 +52,11 @@ namespace Model
     /**
      * <p>The name of the training job to stop.</p>
      */
+    inline bool TrainingJobNameHasBeenSet() const { return m_trainingJobNameHasBeenSet; }
+
+    /**
+     * <p>The name of the training job to stop.</p>
+     */
     inline void SetTrainingJobName(const Aws::String& value) { m_trainingJobNameHasBeenSet = true; m_trainingJobName = value; }
 
     /**

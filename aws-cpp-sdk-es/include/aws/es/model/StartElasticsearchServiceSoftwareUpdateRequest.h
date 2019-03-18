@@ -58,6 +58,12 @@ namespace Model
      * <p>The name of the domain that you want to update to the latest service
      * software.</p>
      */
+    inline bool DomainNameHasBeenSet() const { return m_domainNameHasBeenSet; }
+
+    /**
+     * <p>The name of the domain that you want to update to the latest service
+     * software.</p>
+     */
     inline void SetDomainName(const Aws::String& value) { m_domainNameHasBeenSet = true; m_domainName = value; }
 
     /**

@@ -54,6 +54,11 @@ namespace Model
     /**
      * <p>The instance to connect to for the session.</p>
      */
+    inline bool TargetHasBeenSet() const { return m_targetHasBeenSet; }
+
+    /**
+     * <p>The instance to connect to for the session.</p>
+     */
     inline void SetTarget(const Aws::String& value) { m_targetHasBeenSet = true; m_target = value; }
 
     /**
@@ -88,6 +93,13 @@ namespace Model
      * document name is provided, a shell to the instance is launched by default.</p>
      */
     inline const Aws::String& GetDocumentName() const{ return m_documentName; }
+
+    /**
+     * <p>The name of the SSM document to define the parameters and plugin settings for
+     * the session. For example, <code>SSM-SessionManagerRunShell</code>. If no
+     * document name is provided, a shell to the instance is launched by default.</p>
+     */
+    inline bool DocumentNameHasBeenSet() const { return m_documentNameHasBeenSet; }
 
     /**
      * <p>The name of the SSM document to define the parameters and plugin settings for
@@ -136,6 +148,11 @@ namespace Model
      * <p>Reserved for future use.</p>
      */
     inline const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& GetParameters() const{ return m_parameters; }
+
+    /**
+     * <p>Reserved for future use.</p>
+     */
+    inline bool ParametersHasBeenSet() const { return m_parametersHasBeenSet; }
 
     /**
      * <p>Reserved for future use.</p>

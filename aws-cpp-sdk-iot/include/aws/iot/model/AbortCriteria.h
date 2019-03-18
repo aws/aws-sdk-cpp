@@ -59,6 +59,12 @@ namespace Model
      * <p>The type of job execution failure to define a rule to initiate a job
      * abort.</p>
      */
+    inline bool FailureTypeHasBeenSet() const { return m_failureTypeHasBeenSet; }
+
+    /**
+     * <p>The type of job execution failure to define a rule to initiate a job
+     * abort.</p>
+     */
     inline void SetFailureType(const JobExecutionFailureType& value) { m_failureTypeHasBeenSet = true; m_failureType = value; }
 
     /**
@@ -84,6 +90,11 @@ namespace Model
      * <p>The type of abort action to initiate a job abort.</p>
      */
     inline const AbortAction& GetAction() const{ return m_action; }
+
+    /**
+     * <p>The type of abort action to initiate a job abort.</p>
+     */
+    inline bool ActionHasBeenSet() const { return m_actionHasBeenSet; }
 
     /**
      * <p>The type of abort action to initiate a job abort.</p>
@@ -118,6 +129,13 @@ namespace Model
      * will initiate a job abort.</p> <p>AWS IoT supports up to two digits after the
      * decimal (for example, 10.9 and 10.99, but not 10.999).</p>
      */
+    inline bool ThresholdPercentageHasBeenSet() const { return m_thresholdPercentageHasBeenSet; }
+
+    /**
+     * <p>The threshold as a percentage of the total number of executed things that
+     * will initiate a job abort.</p> <p>AWS IoT supports up to two digits after the
+     * decimal (for example, 10.9 and 10.99, but not 10.999).</p>
+     */
     inline void SetThresholdPercentage(double value) { m_thresholdPercentageHasBeenSet = true; m_thresholdPercentage = value; }
 
     /**
@@ -132,6 +150,11 @@ namespace Model
      * <p>Minimum number of executed things before evaluating an abort rule.</p>
      */
     inline int GetMinNumberOfExecutedThings() const{ return m_minNumberOfExecutedThings; }
+
+    /**
+     * <p>Minimum number of executed things before evaluating an abort rule.</p>
+     */
+    inline bool MinNumberOfExecutedThingsHasBeenSet() const { return m_minNumberOfExecutedThingsHasBeenSet; }
 
     /**
      * <p>Minimum number of executed things before evaluating an abort rule.</p>

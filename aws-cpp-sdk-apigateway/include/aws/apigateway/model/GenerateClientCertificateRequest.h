@@ -54,6 +54,11 @@ namespace Model
     /**
      * <p>The description of the <a>ClientCertificate</a>.</p>
      */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
+
+    /**
+     * <p>The description of the <a>ClientCertificate</a>.</p>
+     */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**

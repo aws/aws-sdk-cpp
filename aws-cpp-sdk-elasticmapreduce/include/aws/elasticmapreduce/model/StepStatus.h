@@ -59,6 +59,11 @@ namespace Model
     /**
      * <p>The execution state of the cluster step.</p>
      */
+    inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
+
+    /**
+     * <p>The execution state of the cluster step.</p>
+     */
     inline void SetState(const StepState& value) { m_stateHasBeenSet = true; m_state = value; }
 
     /**
@@ -81,6 +86,11 @@ namespace Model
      * <p>The reason for the step execution status change.</p>
      */
     inline const StepStateChangeReason& GetStateChangeReason() const{ return m_stateChangeReason; }
+
+    /**
+     * <p>The reason for the step execution status change.</p>
+     */
+    inline bool StateChangeReasonHasBeenSet() const { return m_stateChangeReasonHasBeenSet; }
 
     /**
      * <p>The reason for the step execution status change.</p>
@@ -113,6 +123,12 @@ namespace Model
      * <p>The details for the step failure including reason, message, and log file path
      * where the root cause was identified.</p>
      */
+    inline bool FailureDetailsHasBeenSet() const { return m_failureDetailsHasBeenSet; }
+
+    /**
+     * <p>The details for the step failure including reason, message, and log file path
+     * where the root cause was identified.</p>
+     */
     inline void SetFailureDetails(const FailureDetails& value) { m_failureDetailsHasBeenSet = true; m_failureDetails = value; }
 
     /**
@@ -138,6 +154,11 @@ namespace Model
      * <p>The timeline of the cluster step status over time.</p>
      */
     inline const StepTimeline& GetTimeline() const{ return m_timeline; }
+
+    /**
+     * <p>The timeline of the cluster step status over time.</p>
+     */
+    inline bool TimelineHasBeenSet() const { return m_timelineHasBeenSet; }
 
     /**
      * <p>The timeline of the cluster step status over time.</p>

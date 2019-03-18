@@ -61,6 +61,12 @@ namespace Model
      * <p>The backends that the virtual node is expected to send outbound traffic
      * to.</p>
      */
+    inline bool BackendsHasBeenSet() const { return m_backendsHasBeenSet; }
+
+    /**
+     * <p>The backends that the virtual node is expected to send outbound traffic
+     * to.</p>
+     */
     inline void SetBackends(const Aws::Vector<Backend>& value) { m_backendsHasBeenSet = true; m_backends = value; }
 
     /**
@@ -104,6 +110,12 @@ namespace Model
      * <p>The listeners that the virtual node is expected to receive inbound traffic
      * from. Currently only one listener is supported per virtual node.</p>
      */
+    inline bool ListenersHasBeenSet() const { return m_listenersHasBeenSet; }
+
+    /**
+     * <p>The listeners that the virtual node is expected to receive inbound traffic
+     * from. Currently only one listener is supported per virtual node.</p>
+     */
     inline void SetListeners(const Aws::Vector<Listener>& value) { m_listenersHasBeenSet = true; m_listeners = value; }
 
     /**
@@ -141,6 +153,11 @@ namespace Model
      * <p>The service discovery information for the virtual node.</p>
      */
     inline const ServiceDiscovery& GetServiceDiscovery() const{ return m_serviceDiscovery; }
+
+    /**
+     * <p>The service discovery information for the virtual node.</p>
+     */
+    inline bool ServiceDiscoveryHasBeenSet() const { return m_serviceDiscoveryHasBeenSet; }
 
     /**
      * <p>The service discovery information for the virtual node.</p>

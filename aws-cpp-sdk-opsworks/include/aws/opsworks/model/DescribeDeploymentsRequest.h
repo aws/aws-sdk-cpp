@@ -55,6 +55,12 @@ namespace Model
      * <p>The stack ID. If you include this parameter, the command returns a
      * description of the commands associated with the specified stack.</p>
      */
+    inline bool StackIdHasBeenSet() const { return m_stackIdHasBeenSet; }
+
+    /**
+     * <p>The stack ID. If you include this parameter, the command returns a
+     * description of the commands associated with the specified stack.</p>
+     */
     inline void SetStackId(const Aws::String& value) { m_stackIdHasBeenSet = true; m_stackId = value; }
 
     /**
@@ -93,6 +99,12 @@ namespace Model
      * of the commands associated with the specified app.</p>
      */
     inline const Aws::String& GetAppId() const{ return m_appId; }
+
+    /**
+     * <p>The app ID. If you include this parameter, the command returns a description
+     * of the commands associated with the specified app.</p>
+     */
+    inline bool AppIdHasBeenSet() const { return m_appIdHasBeenSet; }
 
     /**
      * <p>The app ID. If you include this parameter, the command returns a description
@@ -137,6 +149,13 @@ namespace Model
      * returns a description of every deployment.</p>
      */
     inline const Aws::Vector<Aws::String>& GetDeploymentIds() const{ return m_deploymentIds; }
+
+    /**
+     * <p>An array of deployment IDs to be described. If you include this parameter,
+     * the command returns a description of the specified deployments. Otherwise, it
+     * returns a description of every deployment.</p>
+     */
+    inline bool DeploymentIdsHasBeenSet() const { return m_deploymentIdsHasBeenSet; }
 
     /**
      * <p>An array of deployment IDs to be described. If you include this parameter,

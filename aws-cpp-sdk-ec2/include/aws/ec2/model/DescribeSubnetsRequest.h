@@ -118,6 +118,42 @@ namespace Model
      * specific key, regardless of the tag value.</p> </li> <li> <p>
      * <code>vpc-id</code> - The ID of the VPC for the subnet.</p> </li> </ul>
      */
+    inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
+
+    /**
+     * <p>One or more filters.</p> <ul> <li> <p> <code>availability-zone</code> - The
+     * Availability Zone for the subnet. You can also use <code>availabilityZone</code>
+     * as the filter name.</p> </li> <li> <p> <code>availability-zone-id</code> - The
+     * ID of the Availability Zone for the subnet. You can also use
+     * <code>availabilityZoneId</code> as the filter name.</p> </li> <li> <p>
+     * <code>available-ip-address-count</code> - The number of IPv4 addresses in the
+     * subnet that are available.</p> </li> <li> <p> <code>cidr-block</code> - The IPv4
+     * CIDR block of the subnet. The CIDR block you specify must exactly match the
+     * subnet's CIDR block for information to be returned for the subnet. You can also
+     * use <code>cidr</code> or <code>cidrBlock</code> as the filter names.</p> </li>
+     * <li> <p> <code>default-for-az</code> - Indicates whether this is the default
+     * subnet for the Availability Zone. You can also use <code>defaultForAz</code> as
+     * the filter name.</p> </li> <li> <p>
+     * <code>ipv6-cidr-block-association.ipv6-cidr-block</code> - An IPv6 CIDR block
+     * associated with the subnet.</p> </li> <li> <p>
+     * <code>ipv6-cidr-block-association.association-id</code> - An association ID for
+     * an IPv6 CIDR block associated with the subnet.</p> </li> <li> <p>
+     * <code>ipv6-cidr-block-association.state</code> - The state of an IPv6 CIDR block
+     * associated with the subnet.</p> </li> <li> <p> <code>owner-id</code> - The ID of
+     * the AWS account that owns the subnet.</p> </li> <li> <p> <code>state</code> -
+     * The state of the subnet (<code>pending</code> | <code>available</code>).</p>
+     * </li> <li> <p> <code>subnet-arn</code> - The Amazon Resource Name (ARN) of the
+     * subnet.</p> </li> <li> <p> <code>subnet-id</code> - The ID of the subnet.</p>
+     * </li> <li> <p> <code>tag</code>:&lt;key&gt; - The key/value combination of a tag
+     * assigned to the resource. Use the tag key in the filter name and the tag value
+     * as the filter value. For example, to find all resources that have a tag with the
+     * key <code>Owner</code> and the value <code>TeamA</code>, specify
+     * <code>tag:Owner</code> for the filter name and <code>TeamA</code> for the filter
+     * value.</p> </li> <li> <p> <code>tag-key</code> - The key of a tag assigned to
+     * the resource. Use this filter to find all resources assigned a tag with a
+     * specific key, regardless of the tag value.</p> </li> <li> <p>
+     * <code>vpc-id</code> - The ID of the VPC for the subnet.</p> </li> </ul>
+     */
     inline void SetFilters(const Aws::Vector<Filter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
 
     /**
@@ -309,6 +345,11 @@ namespace Model
     /**
      * <p>One or more subnet IDs.</p> <p>Default: Describes all your subnets.</p>
      */
+    inline bool SubnetIdsHasBeenSet() const { return m_subnetIdsHasBeenSet; }
+
+    /**
+     * <p>One or more subnet IDs.</p> <p>Default: Describes all your subnets.</p>
+     */
     inline void SetSubnetIds(const Aws::Vector<Aws::String>& value) { m_subnetIdsHasBeenSet = true; m_subnetIds = value; }
 
     /**
@@ -349,6 +390,14 @@ namespace Model
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
     inline bool GetDryRun() const{ return m_dryRun; }
+
+    /**
+     * <p>Checks whether you have the required permissions for the action, without
+     * actually making the request, and provides an error response. If you have the
+     * required permissions, the error response is <code>DryRunOperation</code>.
+     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+     */
+    inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
 
     /**
      * <p>Checks whether you have the required permissions for the action, without

@@ -62,6 +62,12 @@ namespace Model
      * <p>The user pool ID for the user pool where you want to update the user pool
      * client.</p>
      */
+    inline bool UserPoolIdHasBeenSet() const { return m_userPoolIdHasBeenSet; }
+
+    /**
+     * <p>The user pool ID for the user pool where you want to update the user pool
+     * client.</p>
+     */
     inline void SetUserPoolId(const Aws::String& value) { m_userPoolIdHasBeenSet = true; m_userPoolId = value; }
 
     /**
@@ -103,6 +109,11 @@ namespace Model
     /**
      * <p>The ID of the client associated with the user pool.</p>
      */
+    inline bool ClientIdHasBeenSet() const { return m_clientIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the client associated with the user pool.</p>
+     */
     inline void SetClientId(const Aws::String& value) { m_clientIdHasBeenSet = true; m_clientId = value; }
 
     /**
@@ -135,6 +146,11 @@ namespace Model
      * <p>The client name from the update user pool client request.</p>
      */
     inline const Aws::String& GetClientName() const{ return m_clientName; }
+
+    /**
+     * <p>The client name from the update user pool client request.</p>
+     */
+    inline bool ClientNameHasBeenSet() const { return m_clientNameHasBeenSet; }
 
     /**
      * <p>The client name from the update user pool client request.</p>
@@ -177,6 +193,12 @@ namespace Model
      * <p>The time limit, in days, after which the refresh token is no longer valid and
      * cannot be used.</p>
      */
+    inline bool RefreshTokenValidityHasBeenSet() const { return m_refreshTokenValidityHasBeenSet; }
+
+    /**
+     * <p>The time limit, in days, after which the refresh token is no longer valid and
+     * cannot be used.</p>
+     */
     inline void SetRefreshTokenValidity(int value) { m_refreshTokenValidityHasBeenSet = true; m_refreshTokenValidity = value; }
 
     /**
@@ -190,6 +212,11 @@ namespace Model
      * <p>The read-only attributes of the user pool.</p>
      */
     inline const Aws::Vector<Aws::String>& GetReadAttributes() const{ return m_readAttributes; }
+
+    /**
+     * <p>The read-only attributes of the user pool.</p>
+     */
+    inline bool ReadAttributesHasBeenSet() const { return m_readAttributesHasBeenSet; }
 
     /**
      * <p>The read-only attributes of the user pool.</p>
@@ -235,6 +262,11 @@ namespace Model
     /**
      * <p>The writeable attributes of the user pool.</p>
      */
+    inline bool WriteAttributesHasBeenSet() const { return m_writeAttributesHasBeenSet; }
+
+    /**
+     * <p>The writeable attributes of the user pool.</p>
+     */
     inline void SetWriteAttributes(const Aws::Vector<Aws::String>& value) { m_writeAttributesHasBeenSet = true; m_writeAttributes = value; }
 
     /**
@@ -276,6 +308,11 @@ namespace Model
     /**
      * <p>Explicit authentication flows.</p>
      */
+    inline bool ExplicitAuthFlowsHasBeenSet() const { return m_explicitAuthFlowsHasBeenSet; }
+
+    /**
+     * <p>Explicit authentication flows.</p>
+     */
     inline void SetExplicitAuthFlows(const Aws::Vector<ExplicitAuthFlowsType>& value) { m_explicitAuthFlowsHasBeenSet = true; m_explicitAuthFlows = value; }
 
     /**
@@ -309,6 +346,12 @@ namespace Model
      * this client.</p>
      */
     inline const Aws::Vector<Aws::String>& GetSupportedIdentityProviders() const{ return m_supportedIdentityProviders; }
+
+    /**
+     * <p>A list of provider names for the identity providers that are supported on
+     * this client.</p>
+     */
+    inline bool SupportedIdentityProvidersHasBeenSet() const { return m_supportedIdentityProvidersHasBeenSet; }
 
     /**
      * <p>A list of provider names for the identity providers that are supported on
@@ -364,6 +407,18 @@ namespace Model
      * myapp://example are also supported.</p>
      */
     inline const Aws::Vector<Aws::String>& GetCallbackURLs() const{ return m_callbackURLs; }
+
+    /**
+     * <p>A list of allowed redirect (callback) URLs for the identity providers.</p>
+     * <p>A redirect URI must:</p> <ul> <li> <p>Be an absolute URI.</p> </li> <li>
+     * <p>Be registered with the authorization server.</p> </li> <li> <p>Not include a
+     * fragment component.</p> </li> </ul> <p>See <a
+     * href="https://tools.ietf.org/html/rfc6749#section-3.1.2">OAuth 2.0 - Redirection
+     * Endpoint</a>.</p> <p>Amazon Cognito requires HTTPS over HTTP except for
+     * http://localhost for testing purposes only.</p> <p>App callback URLs such as
+     * myapp://example are also supported.</p>
+     */
+    inline bool CallbackURLsHasBeenSet() const { return m_callbackURLsHasBeenSet; }
 
     /**
      * <p>A list of allowed redirect (callback) URLs for the identity providers.</p>
@@ -458,6 +513,11 @@ namespace Model
     /**
      * <p>A list of allowed logout URLs for the identity providers.</p>
      */
+    inline bool LogoutURLsHasBeenSet() const { return m_logoutURLsHasBeenSet; }
+
+    /**
+     * <p>A list of allowed logout URLs for the identity providers.</p>
+     */
     inline void SetLogoutURLs(const Aws::Vector<Aws::String>& value) { m_logoutURLsHasBeenSet = true; m_logoutURLs = value; }
 
     /**
@@ -502,6 +562,18 @@ namespace Model
      * myapp://example are also supported.</p>
      */
     inline const Aws::String& GetDefaultRedirectURI() const{ return m_defaultRedirectURI; }
+
+    /**
+     * <p>The default redirect URI. Must be in the <code>CallbackURLs</code> list.</p>
+     * <p>A redirect URI must:</p> <ul> <li> <p>Be an absolute URI.</p> </li> <li>
+     * <p>Be registered with the authorization server.</p> </li> <li> <p>Not include a
+     * fragment component.</p> </li> </ul> <p>See <a
+     * href="https://tools.ietf.org/html/rfc6749#section-3.1.2">OAuth 2.0 - Redirection
+     * Endpoint</a>.</p> <p>Amazon Cognito requires HTTPS over HTTP except for
+     * http://localhost for testing purposes only.</p> <p>App callback URLs such as
+     * myapp://example are also supported.</p>
+     */
+    inline bool DefaultRedirectURIHasBeenSet() const { return m_defaultRedirectURIHasBeenSet; }
 
     /**
      * <p>The default redirect URI. Must be in the <code>CallbackURLs</code> list.</p>
@@ -592,6 +664,15 @@ namespace Model
      * client should get the access token (and, optionally, ID token, based on scopes)
      * directly.</p>
      */
+    inline bool AllowedOAuthFlowsHasBeenSet() const { return m_allowedOAuthFlowsHasBeenSet; }
+
+    /**
+     * <p>Set to <code>code</code> to initiate a code grant flow, which provides an
+     * authorization code as the response. This code can be exchanged for access tokens
+     * with the token endpoint.</p> <p>Set to <code>token</code> to specify that the
+     * client should get the access token (and, optionally, ID token, based on scopes)
+     * directly.</p>
+     */
     inline void SetAllowedOAuthFlows(const Aws::Vector<OAuthFlowType>& value) { m_allowedOAuthFlowsHasBeenSet = true; m_allowedOAuthFlows = value; }
 
     /**
@@ -646,6 +727,13 @@ namespace Model
      * <code>"Cognito"</code>.</p>
      */
     inline const Aws::Vector<Aws::String>& GetAllowedOAuthScopes() const{ return m_allowedOAuthScopes; }
+
+    /**
+     * <p>A list of allowed <code>OAuth</code> scopes. Currently supported values are
+     * <code>"phone"</code>, <code>"email"</code>, <code>"openid"</code>, and
+     * <code>"Cognito"</code>.</p>
+     */
+    inline bool AllowedOAuthScopesHasBeenSet() const { return m_allowedOAuthScopesHasBeenSet; }
 
     /**
      * <p>A list of allowed <code>OAuth</code> scopes. Currently supported values are
@@ -707,6 +795,12 @@ namespace Model
      * <p>Set to TRUE if the client is allowed to follow the OAuth protocol when
      * interacting with Cognito user pools.</p>
      */
+    inline bool AllowedOAuthFlowsUserPoolClientHasBeenSet() const { return m_allowedOAuthFlowsUserPoolClientHasBeenSet; }
+
+    /**
+     * <p>Set to TRUE if the client is allowed to follow the OAuth protocol when
+     * interacting with Cognito user pools.</p>
+     */
     inline void SetAllowedOAuthFlowsUserPoolClient(bool value) { m_allowedOAuthFlowsUserPoolClientHasBeenSet = true; m_allowedOAuthFlowsUserPoolClient = value; }
 
     /**
@@ -721,6 +815,12 @@ namespace Model
      * user pool.</p>
      */
     inline const AnalyticsConfigurationType& GetAnalyticsConfiguration() const{ return m_analyticsConfiguration; }
+
+    /**
+     * <p>The Amazon Pinpoint analytics configuration for collecting metrics for this
+     * user pool.</p>
+     */
+    inline bool AnalyticsConfigurationHasBeenSet() const { return m_analyticsConfigurationHasBeenSet; }
 
     /**
      * <p>The Amazon Pinpoint analytics configuration for collecting metrics for this

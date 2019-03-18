@@ -59,6 +59,11 @@ namespace Model
     /**
      * <p>The ID of the event.</p>
      */
+    inline bool InstanceEventIdHasBeenSet() const { return m_instanceEventIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the event.</p>
+     */
     inline void SetInstanceEventId(const Aws::String& value) { m_instanceEventIdHasBeenSet = true; m_instanceEventId = value; }
 
     /**
@@ -95,6 +100,11 @@ namespace Model
     /**
      * <p>The event code.</p>
      */
+    inline bool CodeHasBeenSet() const { return m_codeHasBeenSet; }
+
+    /**
+     * <p>The event code.</p>
+     */
     inline void SetCode(const EventCode& value) { m_codeHasBeenSet = true; m_code = value; }
 
     /**
@@ -119,6 +129,13 @@ namespace Model
      * description starts with the following text: [Completed].</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
+
+    /**
+     * <p>A description of the event.</p> <p>After a scheduled event is completed, it
+     * can still be described for up to a week. If the event has been completed, this
+     * description starts with the following text: [Completed].</p>
+     */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
 
     /**
      * <p>A description of the event.</p> <p>After a scheduled event is completed, it
@@ -171,6 +188,11 @@ namespace Model
     /**
      * <p>The latest scheduled end time for the event.</p>
      */
+    inline bool NotAfterHasBeenSet() const { return m_notAfterHasBeenSet; }
+
+    /**
+     * <p>The latest scheduled end time for the event.</p>
+     */
     inline void SetNotAfter(const Aws::Utils::DateTime& value) { m_notAfterHasBeenSet = true; m_notAfter = value; }
 
     /**
@@ -197,6 +219,11 @@ namespace Model
     /**
      * <p>The earliest scheduled start time for the event.</p>
      */
+    inline bool NotBeforeHasBeenSet() const { return m_notBeforeHasBeenSet; }
+
+    /**
+     * <p>The earliest scheduled start time for the event.</p>
+     */
     inline void SetNotBefore(const Aws::Utils::DateTime& value) { m_notBeforeHasBeenSet = true; m_notBefore = value; }
 
     /**
@@ -219,6 +246,11 @@ namespace Model
      * <p>The deadline for starting the event.</p>
      */
     inline const Aws::Utils::DateTime& GetNotBeforeDeadline() const{ return m_notBeforeDeadline; }
+
+    /**
+     * <p>The deadline for starting the event.</p>
+     */
+    inline bool NotBeforeDeadlineHasBeenSet() const { return m_notBeforeDeadlineHasBeenSet; }
 
     /**
      * <p>The deadline for starting the event.</p>

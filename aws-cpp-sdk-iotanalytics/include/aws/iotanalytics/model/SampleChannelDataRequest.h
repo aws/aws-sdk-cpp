@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The name of the channel whose message samples are retrieved.</p>
      */
+    inline bool ChannelNameHasBeenSet() const { return m_channelNameHasBeenSet; }
+
+    /**
+     * <p>The name of the channel whose message samples are retrieved.</p>
+     */
     inline void SetChannelName(const Aws::String& value) { m_channelNameHasBeenSet = true; m_channelName = value; }
 
     /**
@@ -95,6 +100,12 @@ namespace Model
      * <p>The number of sample messages to be retrieved. The limit is 10, the default
      * is also 10.</p>
      */
+    inline bool MaxMessagesHasBeenSet() const { return m_maxMessagesHasBeenSet; }
+
+    /**
+     * <p>The number of sample messages to be retrieved. The limit is 10, the default
+     * is also 10.</p>
+     */
     inline void SetMaxMessages(int value) { m_maxMessagesHasBeenSet = true; m_maxMessages = value; }
 
     /**
@@ -108,6 +119,11 @@ namespace Model
      * <p>The start of the time window from which sample messages are retrieved.</p>
      */
     inline const Aws::Utils::DateTime& GetStartTime() const{ return m_startTime; }
+
+    /**
+     * <p>The start of the time window from which sample messages are retrieved.</p>
+     */
+    inline bool StartTimeHasBeenSet() const { return m_startTimeHasBeenSet; }
 
     /**
      * <p>The start of the time window from which sample messages are retrieved.</p>
@@ -134,6 +150,11 @@ namespace Model
      * <p>The end of the time window from which sample messages are retrieved.</p>
      */
     inline const Aws::Utils::DateTime& GetEndTime() const{ return m_endTime; }
+
+    /**
+     * <p>The end of the time window from which sample messages are retrieved.</p>
+     */
+    inline bool EndTimeHasBeenSet() const { return m_endTimeHasBeenSet; }
 
     /**
      * <p>The end of the time window from which sample messages are retrieved.</p>

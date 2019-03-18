@@ -52,6 +52,11 @@ namespace Model
     /**
      * <p>The identifier assigned by the user to the detection job.</p>
      */
+    inline bool JobIdHasBeenSet() const { return m_jobIdHasBeenSet; }
+
+    /**
+     * <p>The identifier assigned by the user to the detection job.</p>
+     */
     inline void SetJobId(const Aws::String& value) { m_jobIdHasBeenSet = true; m_jobId = value; }
 
     /**

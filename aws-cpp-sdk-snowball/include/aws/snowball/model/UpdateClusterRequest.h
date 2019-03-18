@@ -57,6 +57,12 @@ namespace Model
      * <p>The cluster ID of the cluster that you want to update, for example
      * <code>CID123e4567-e89b-12d3-a456-426655440000</code>.</p>
      */
+    inline bool ClusterIdHasBeenSet() const { return m_clusterIdHasBeenSet; }
+
+    /**
+     * <p>The cluster ID of the cluster that you want to update, for example
+     * <code>CID123e4567-e89b-12d3-a456-426655440000</code>.</p>
+     */
     inline void SetClusterId(const Aws::String& value) { m_clusterIdHasBeenSet = true; m_clusterId = value; }
 
     /**
@@ -97,6 +103,14 @@ namespace Model
      * API action in AWS Identity and Access Management (IAM).</p>
      */
     inline const Aws::String& GetRoleARN() const{ return m_roleARN; }
+
+    /**
+     * <p>The new role Amazon Resource Name (ARN) that you want to associate with this
+     * cluster. To create a role ARN, use the <a
+     * href="http://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a>
+     * API action in AWS Identity and Access Management (IAM).</p>
+     */
+    inline bool RoleARNHasBeenSet() const { return m_roleARNHasBeenSet; }
 
     /**
      * <p>The new role Amazon Resource Name (ARN) that you want to associate with this
@@ -155,6 +169,11 @@ namespace Model
     /**
      * <p>The updated description of this cluster.</p>
      */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
+
+    /**
+     * <p>The updated description of this cluster.</p>
+     */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
@@ -193,6 +212,12 @@ namespace Model
      * <p>The updated arrays of <a>JobResource</a> objects that can include updated
      * <a>S3Resource</a> objects or <a>LambdaResource</a> objects.</p>
      */
+    inline bool ResourcesHasBeenSet() const { return m_resourcesHasBeenSet; }
+
+    /**
+     * <p>The updated arrays of <a>JobResource</a> objects that can include updated
+     * <a>S3Resource</a> objects or <a>LambdaResource</a> objects.</p>
+     */
     inline void SetResources(const JobResource& value) { m_resourcesHasBeenSet = true; m_resources = value; }
 
     /**
@@ -218,6 +243,11 @@ namespace Model
      * <p>The ID of the updated <a>Address</a> object.</p>
      */
     inline const Aws::String& GetAddressId() const{ return m_addressId; }
+
+    /**
+     * <p>The ID of the updated <a>Address</a> object.</p>
+     */
+    inline bool AddressIdHasBeenSet() const { return m_addressIdHasBeenSet; }
 
     /**
      * <p>The ID of the updated <a>Address</a> object.</p>
@@ -260,6 +290,12 @@ namespace Model
      * <p>The updated shipping option value of this cluster's <a>ShippingDetails</a>
      * object.</p>
      */
+    inline bool ShippingOptionHasBeenSet() const { return m_shippingOptionHasBeenSet; }
+
+    /**
+     * <p>The updated shipping option value of this cluster's <a>ShippingDetails</a>
+     * object.</p>
+     */
     inline void SetShippingOption(const ShippingOption& value) { m_shippingOptionHasBeenSet = true; m_shippingOption = value; }
 
     /**
@@ -289,6 +325,11 @@ namespace Model
     /**
      * <p>The new or updated <a>Notification</a> object.</p>
      */
+    inline bool NotificationHasBeenSet() const { return m_notificationHasBeenSet; }
+
+    /**
+     * <p>The new or updated <a>Notification</a> object.</p>
+     */
     inline void SetNotification(const Notification& value) { m_notificationHasBeenSet = true; m_notification = value; }
 
     /**
@@ -312,6 +353,12 @@ namespace Model
      * supported in most regions.</p>
      */
     inline const Aws::String& GetForwardingAddressId() const{ return m_forwardingAddressId; }
+
+    /**
+     * <p>The updated ID for the forwarding address for a cluster. This field is not
+     * supported in most regions.</p>
+     */
+    inline bool ForwardingAddressIdHasBeenSet() const { return m_forwardingAddressIdHasBeenSet; }
 
     /**
      * <p>The updated ID for the forwarding address for a cluster. This field is not

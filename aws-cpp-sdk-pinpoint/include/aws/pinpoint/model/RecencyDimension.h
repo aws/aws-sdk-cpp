@@ -62,6 +62,14 @@ Valid values: HR_24, DAY_7, DAY_14, DAY_30
 
 Valid values: HR_24, DAY_7, DAY_14, DAY_30
      */
+    inline bool DurationHasBeenSet() const { return m_durationHasBeenSet; }
+
+    /**
+     * The length of time during which users have been active or inactive with your
+     * app.
+
+Valid values: HR_24, DAY_7, DAY_14, DAY_30
+     */
     inline void SetDuration(const Duration& value) { m_durationHasBeenSet = true; m_duration = value; }
 
     /**
@@ -99,6 +107,17 @@ INACTIVE - Users who have not
      * used your app within the specified duration are included in the segment.
      */
     inline const RecencyType& GetRecencyType() const{ return m_recencyType; }
+
+    /**
+     * The recency dimension type:
+
+ACTIVE - Users who have used your app within the
+     * specified duration are included in the segment.
+
+INACTIVE - Users who have not
+     * used your app within the specified duration are included in the segment.
+     */
+    inline bool RecencyTypeHasBeenSet() const { return m_recencyTypeHasBeenSet; }
 
     /**
      * The recency dimension type:

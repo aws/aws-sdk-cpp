@@ -57,6 +57,12 @@ namespace Model
      * The ID of the detector that specifies the GuardDuty service whose findings you
      * want to retrieve.
      */
+    inline bool DetectorIdHasBeenSet() const { return m_detectorIdHasBeenSet; }
+
+    /**
+     * The ID of the detector that specifies the GuardDuty service whose findings you
+     * want to retrieve.
+     */
     inline void SetDetectorId(const Aws::String& value) { m_detectorIdHasBeenSet = true; m_detectorId = value; }
 
     /**
@@ -98,6 +104,11 @@ namespace Model
     /**
      * IDs of the findings that you want to retrieve.
      */
+    inline bool FindingIdsHasBeenSet() const { return m_findingIdsHasBeenSet; }
+
+    /**
+     * IDs of the findings that you want to retrieve.
+     */
     inline void SetFindingIds(const Aws::Vector<Aws::String>& value) { m_findingIdsHasBeenSet = true; m_findingIds = value; }
 
     /**
@@ -135,6 +146,11 @@ namespace Model
      * Represents the criteria used for sorting findings.
      */
     inline const SortCriteria& GetSortCriteria() const{ return m_sortCriteria; }
+
+    /**
+     * Represents the criteria used for sorting findings.
+     */
+    inline bool SortCriteriaHasBeenSet() const { return m_sortCriteriaHasBeenSet; }
 
     /**
      * Represents the criteria used for sorting findings.

@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The specific value of an <code>attributeName</code>.</p>
      */
+    inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
+
+    /**
+     * <p>The specific value of an <code>attributeName</code>.</p>
+     */
     inline void SetValue(const Aws::String& value) { m_valueHasBeenSet = true; m_value = value; }
 
     /**

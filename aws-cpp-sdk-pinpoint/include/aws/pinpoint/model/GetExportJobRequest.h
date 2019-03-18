@@ -50,6 +50,11 @@ namespace Model
     /**
      * The unique ID of your Amazon Pinpoint application.
      */
+    inline bool ApplicationIdHasBeenSet() const { return m_applicationIdHasBeenSet; }
+
+    /**
+     * The unique ID of your Amazon Pinpoint application.
+     */
     inline void SetApplicationId(const Aws::String& value) { m_applicationIdHasBeenSet = true; m_applicationId = value; }
 
     /**
@@ -82,6 +87,11 @@ namespace Model
      * The unique ID of the job.
      */
     inline const Aws::String& GetJobId() const{ return m_jobId; }
+
+    /**
+     * The unique ID of the job.
+     */
+    inline bool JobIdHasBeenSet() const { return m_jobIdHasBeenSet; }
 
     /**
      * The unique ID of the job.

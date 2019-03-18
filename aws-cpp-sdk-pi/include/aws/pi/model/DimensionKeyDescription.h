@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p>A map of name-value pairs for the dimensions in the group.</p>
      */
+    inline bool DimensionsHasBeenSet() const { return m_dimensionsHasBeenSet; }
+
+    /**
+     * <p>A map of name-value pairs for the dimensions in the group.</p>
+     */
     inline void SetDimensions(const Aws::Map<Aws::String, Aws::String>& value) { m_dimensionsHasBeenSet = true; m_dimensions = value; }
 
     /**
@@ -121,6 +126,12 @@ namespace Model
      * <p>The aggregated metric value for the dimension(s), over the requested time
      * range.</p>
      */
+    inline bool TotalHasBeenSet() const { return m_totalHasBeenSet; }
+
+    /**
+     * <p>The aggregated metric value for the dimension(s), over the requested time
+     * range.</p>
+     */
     inline void SetTotal(double value) { m_totalHasBeenSet = true; m_total = value; }
 
     /**
@@ -135,6 +146,12 @@ namespace Model
      * contains the dimensions that were.</p>
      */
     inline const Aws::Vector<double>& GetPartitions() const{ return m_partitions; }
+
+    /**
+     * <p>If <code>PartitionBy</code> was specified, <code>PartitionKeys</code>
+     * contains the dimensions that were.</p>
+     */
+    inline bool PartitionsHasBeenSet() const { return m_partitionsHasBeenSet; }
 
     /**
      * <p>If <code>PartitionBy</code> was specified, <code>PartitionKeys</code>

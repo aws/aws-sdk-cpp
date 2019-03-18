@@ -52,6 +52,12 @@ namespace Model
      * The detectorID that specifies the GuardDuty service whose ThreatIntelSet you
      * want to delete.
      */
+    inline bool DetectorIdHasBeenSet() const { return m_detectorIdHasBeenSet; }
+
+    /**
+     * The detectorID that specifies the GuardDuty service whose ThreatIntelSet you
+     * want to delete.
+     */
     inline void SetDetectorId(const Aws::String& value) { m_detectorIdHasBeenSet = true; m_detectorId = value; }
 
     /**
@@ -89,6 +95,11 @@ namespace Model
      * The unique ID that specifies the ThreatIntelSet that you want to delete.
      */
     inline const Aws::String& GetThreatIntelSetId() const{ return m_threatIntelSetId; }
+
+    /**
+     * The unique ID that specifies the ThreatIntelSet that you want to delete.
+     */
+    inline bool ThreatIntelSetIdHasBeenSet() const { return m_threatIntelSetIdHasBeenSet; }
 
     /**
      * The unique ID that specifies the ThreatIntelSet that you want to delete.

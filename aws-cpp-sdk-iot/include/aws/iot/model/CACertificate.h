@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The ARN of the CA certificate.</p>
      */
+    inline bool CertificateArnHasBeenSet() const { return m_certificateArnHasBeenSet; }
+
+    /**
+     * <p>The ARN of the CA certificate.</p>
+     */
     inline void SetCertificateArn(const Aws::String& value) { m_certificateArnHasBeenSet = true; m_certificateArn = value; }
 
     /**
@@ -89,6 +94,11 @@ namespace Model
      * <p>The ID of the CA certificate.</p>
      */
     inline const Aws::String& GetCertificateId() const{ return m_certificateId; }
+
+    /**
+     * <p>The ID of the CA certificate.</p>
+     */
+    inline bool CertificateIdHasBeenSet() const { return m_certificateIdHasBeenSet; }
 
     /**
      * <p>The ID of the CA certificate.</p>
@@ -131,6 +141,12 @@ namespace Model
      * <p>The status of the CA certificate.</p> <p>The status value REGISTER_INACTIVE
      * is deprecated and should not be used.</p>
      */
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
+
+    /**
+     * <p>The status of the CA certificate.</p> <p>The status value REGISTER_INACTIVE
+     * is deprecated and should not be used.</p>
+     */
     inline void SetStatus(const CACertificateStatus& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
@@ -156,6 +172,11 @@ namespace Model
      * <p>The date the CA certificate was created.</p>
      */
     inline const Aws::Utils::DateTime& GetCreationDate() const{ return m_creationDate; }
+
+    /**
+     * <p>The date the CA certificate was created.</p>
+     */
+    inline bool CreationDateHasBeenSet() const { return m_creationDateHasBeenSet; }
 
     /**
      * <p>The date the CA certificate was created.</p>

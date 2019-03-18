@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>Specifies the format of the records on the output stream.</p>
      */
+    inline bool RecordFormatTypeHasBeenSet() const { return m_recordFormatTypeHasBeenSet; }
+
+    /**
+     * <p>Specifies the format of the records on the output stream.</p>
+     */
     inline void SetRecordFormatType(const RecordFormatType& value) { m_recordFormatTypeHasBeenSet = true; m_recordFormatType = value; }
 
     /**

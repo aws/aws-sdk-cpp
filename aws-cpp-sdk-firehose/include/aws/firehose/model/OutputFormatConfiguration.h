@@ -59,6 +59,12 @@ namespace Model
      * <p>Specifies which serializer to use. You can choose either the ORC SerDe or the
      * Parquet SerDe. If both are non-null, the server rejects the request.</p>
      */
+    inline bool SerializerHasBeenSet() const { return m_serializerHasBeenSet; }
+
+    /**
+     * <p>Specifies which serializer to use. You can choose either the ORC SerDe or the
+     * Parquet SerDe. If both are non-null, the server rejects the request.</p>
+     */
     inline void SetSerializer(const Serializer& value) { m_serializerHasBeenSet = true; m_serializer = value; }
 
     /**

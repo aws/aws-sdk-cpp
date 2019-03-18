@@ -59,6 +59,11 @@ namespace Model
     /**
      * <p>The CA certificate ARN.</p>
      */
+    inline bool CertificateArnHasBeenSet() const { return m_certificateArnHasBeenSet; }
+
+    /**
+     * <p>The CA certificate ARN.</p>
+     */
     inline void SetCertificateArn(const Aws::String& value) { m_certificateArnHasBeenSet = true; m_certificateArn = value; }
 
     /**
@@ -91,6 +96,11 @@ namespace Model
      * <p>The CA certificate ID.</p>
      */
     inline const Aws::String& GetCertificateId() const{ return m_certificateId; }
+
+    /**
+     * <p>The CA certificate ID.</p>
+     */
+    inline bool CertificateIdHasBeenSet() const { return m_certificateIdHasBeenSet; }
 
     /**
      * <p>The CA certificate ID.</p>
@@ -131,6 +141,11 @@ namespace Model
     /**
      * <p>The status of a CA certificate.</p>
      */
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
+
+    /**
+     * <p>The status of a CA certificate.</p>
+     */
     inline void SetStatus(const CACertificateStatus& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
@@ -153,6 +168,11 @@ namespace Model
      * <p>The CA certificate data, in PEM format.</p>
      */
     inline const Aws::String& GetCertificatePem() const{ return m_certificatePem; }
+
+    /**
+     * <p>The CA certificate data, in PEM format.</p>
+     */
+    inline bool CertificatePemHasBeenSet() const { return m_certificatePemHasBeenSet; }
 
     /**
      * <p>The CA certificate data, in PEM format.</p>
@@ -193,6 +213,11 @@ namespace Model
     /**
      * <p>The owner of the CA certificate.</p>
      */
+    inline bool OwnedByHasBeenSet() const { return m_ownedByHasBeenSet; }
+
+    /**
+     * <p>The owner of the CA certificate.</p>
+     */
     inline void SetOwnedBy(const Aws::String& value) { m_ownedByHasBeenSet = true; m_ownedBy = value; }
 
     /**
@@ -229,6 +254,11 @@ namespace Model
     /**
      * <p>The date the CA certificate was created.</p>
      */
+    inline bool CreationDateHasBeenSet() const { return m_creationDateHasBeenSet; }
+
+    /**
+     * <p>The date the CA certificate was created.</p>
+     */
     inline void SetCreationDate(const Aws::Utils::DateTime& value) { m_creationDateHasBeenSet = true; m_creationDate = value; }
 
     /**
@@ -252,6 +282,12 @@ namespace Model
      * certificates. Valid values are "ENABLE" and "DISABLE"</p>
      */
     inline const AutoRegistrationStatus& GetAutoRegistrationStatus() const{ return m_autoRegistrationStatus; }
+
+    /**
+     * <p>Whether the CA certificate configured for auto registration of device
+     * certificates. Valid values are "ENABLE" and "DISABLE"</p>
+     */
+    inline bool AutoRegistrationStatusHasBeenSet() const { return m_autoRegistrationStatusHasBeenSet; }
 
     /**
      * <p>Whether the CA certificate configured for auto registration of device
@@ -286,6 +322,11 @@ namespace Model
     /**
      * <p>The date the CA certificate was last modified.</p>
      */
+    inline bool LastModifiedDateHasBeenSet() const { return m_lastModifiedDateHasBeenSet; }
+
+    /**
+     * <p>The date the CA certificate was last modified.</p>
+     */
     inline void SetLastModifiedDate(const Aws::Utils::DateTime& value) { m_lastModifiedDateHasBeenSet = true; m_lastModifiedDate = value; }
 
     /**
@@ -312,6 +353,11 @@ namespace Model
     /**
      * <p>The customer version of the CA certificate.</p>
      */
+    inline bool CustomerVersionHasBeenSet() const { return m_customerVersionHasBeenSet; }
+
+    /**
+     * <p>The customer version of the CA certificate.</p>
+     */
     inline void SetCustomerVersion(int value) { m_customerVersionHasBeenSet = true; m_customerVersion = value; }
 
     /**
@@ -324,6 +370,11 @@ namespace Model
      * <p>The generation ID of the CA certificate.</p>
      */
     inline const Aws::String& GetGenerationId() const{ return m_generationId; }
+
+    /**
+     * <p>The generation ID of the CA certificate.</p>
+     */
+    inline bool GenerationIdHasBeenSet() const { return m_generationIdHasBeenSet; }
 
     /**
      * <p>The generation ID of the CA certificate.</p>
@@ -360,6 +411,11 @@ namespace Model
      * <p>When the CA certificate is valid.</p>
      */
     inline const CertificateValidity& GetValidity() const{ return m_validity; }
+
+    /**
+     * <p>When the CA certificate is valid.</p>
+     */
+    inline bool ValidityHasBeenSet() const { return m_validityHasBeenSet; }
 
     /**
      * <p>When the CA certificate is valid.</p>

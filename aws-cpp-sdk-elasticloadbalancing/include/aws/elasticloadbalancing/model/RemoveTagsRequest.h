@@ -61,6 +61,12 @@ namespace Model
      * <p>The name of the load balancer. You can specify a maximum of one load balancer
      * name.</p>
      */
+    inline bool LoadBalancerNamesHasBeenSet() const { return m_loadBalancerNamesHasBeenSet; }
+
+    /**
+     * <p>The name of the load balancer. You can specify a maximum of one load balancer
+     * name.</p>
+     */
     inline void SetLoadBalancerNames(const Aws::Vector<Aws::String>& value) { m_loadBalancerNamesHasBeenSet = true; m_loadBalancerNames = value; }
 
     /**
@@ -104,6 +110,11 @@ namespace Model
      * <p>The list of tag keys to remove.</p>
      */
     inline const Aws::Vector<TagKeyOnly>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>The list of tag keys to remove.</p>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
      * <p>The list of tag keys to remove.</p>

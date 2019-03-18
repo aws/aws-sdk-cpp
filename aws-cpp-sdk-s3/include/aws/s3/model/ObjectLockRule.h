@@ -57,6 +57,12 @@ namespace Model
      * <p>The default retention period that you want to apply to new objects placed in
      * the specified bucket.</p>
      */
+    inline bool DefaultRetentionHasBeenSet() const { return m_defaultRetentionHasBeenSet; }
+
+    /**
+     * <p>The default retention period that you want to apply to new objects placed in
+     * the specified bucket.</p>
+     */
     inline void SetDefaultRetention(const DefaultRetention& value) { m_defaultRetentionHasBeenSet = true; m_defaultRetention = value; }
 
     /**

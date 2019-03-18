@@ -60,6 +60,11 @@ namespace Model
     /**
      * <p>The app client ID.</p>
      */
+    inline bool ClientIdHasBeenSet() const { return m_clientIdHasBeenSet; }
+
+    /**
+     * <p>The app client ID.</p>
+     */
     inline void SetClientId(const Aws::String& value) { m_clientIdHasBeenSet = true; m_clientId = value; }
 
     /**
@@ -98,6 +103,12 @@ namespace Model
      * <p>The challenge name. For more information, see .</p> <p>
      * <code>ADMIN_NO_SRP_AUTH</code> is not a valid value.</p>
      */
+    inline bool ChallengeNameHasBeenSet() const { return m_challengeNameHasBeenSet; }
+
+    /**
+     * <p>The challenge name. For more information, see .</p> <p>
+     * <code>ADMIN_NO_SRP_AUTH</code> is not a valid value.</p>
+     */
     inline void SetChallengeName(const ChallengeNameType& value) { m_challengeNameHasBeenSet = true; m_challengeName = value; }
 
     /**
@@ -127,6 +138,15 @@ namespace Model
      * as it is to the next <code>RespondToAuthChallenge</code> API call.</p>
      */
     inline const Aws::String& GetSession() const{ return m_session; }
+
+    /**
+     * <p>The session which should be passed both ways in challenge-response calls to
+     * the service. If <code>InitiateAuth</code> or <code>RespondToAuthChallenge</code>
+     * API call determines that the caller needs to go through another challenge, they
+     * return a session with other challenge parameters. This session should be passed
+     * as it is to the next <code>RespondToAuthChallenge</code> API call.</p>
+     */
+    inline bool SessionHasBeenSet() const { return m_sessionHasBeenSet; }
 
     /**
      * <p>The session which should be passed both ways in challenge-response calls to
@@ -197,6 +217,21 @@ namespace Model
      * </li> </ul>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetChallengeResponses() const{ return m_challengeResponses; }
+
+    /**
+     * <p>The challenge responses. These are inputs corresponding to the value of
+     * <code>ChallengeName</code>, for example:</p> <ul> <li> <p> <code>SMS_MFA</code>:
+     * <code>SMS_MFA_CODE</code>, <code>USERNAME</code>, <code>SECRET_HASH</code> (if
+     * app client is configured with client secret).</p> </li> <li> <p>
+     * <code>PASSWORD_VERIFIER</code>: <code>PASSWORD_CLAIM_SIGNATURE</code>,
+     * <code>PASSWORD_CLAIM_SECRET_BLOCK</code>, <code>TIMESTAMP</code>,
+     * <code>USERNAME</code>, <code>SECRET_HASH</code> (if app client is configured
+     * with client secret).</p> </li> <li> <p> <code>NEW_PASSWORD_REQUIRED</code>:
+     * <code>NEW_PASSWORD</code>, any other required attributes, <code>USERNAME</code>,
+     * <code>SECRET_HASH</code> (if app client is configured with client secret). </p>
+     * </li> </ul>
+     */
+    inline bool ChallengeResponsesHasBeenSet() const { return m_challengeResponsesHasBeenSet; }
 
     /**
      * <p>The challenge responses. These are inputs corresponding to the value of
@@ -374,6 +409,12 @@ namespace Model
      * <p>The Amazon Pinpoint analytics metadata for collecting metrics for
      * <code>RespondToAuthChallenge</code> calls.</p>
      */
+    inline bool AnalyticsMetadataHasBeenSet() const { return m_analyticsMetadataHasBeenSet; }
+
+    /**
+     * <p>The Amazon Pinpoint analytics metadata for collecting metrics for
+     * <code>RespondToAuthChallenge</code> calls.</p>
+     */
     inline void SetAnalyticsMetadata(const AnalyticsMetadataType& value) { m_analyticsMetadataHasBeenSet = true; m_analyticsMetadata = value; }
 
     /**
@@ -401,6 +442,13 @@ namespace Model
      * advanced security.</p>
      */
     inline const UserContextDataType& GetUserContextData() const{ return m_userContextData; }
+
+    /**
+     * <p>Contextual data such as the user's device fingerprint, IP address, or
+     * location used for evaluating the risk of an unexpected event by Amazon Cognito
+     * advanced security.</p>
+     */
+    inline bool UserContextDataHasBeenSet() const { return m_userContextDataHasBeenSet; }
 
     /**
      * <p>Contextual data such as the user's device fingerprint, IP address, or

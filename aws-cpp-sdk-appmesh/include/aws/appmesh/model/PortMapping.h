@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The port used for the port mapping.</p>
      */
+    inline bool PortHasBeenSet() const { return m_portHasBeenSet; }
+
+    /**
+     * <p>The port used for the port mapping.</p>
+     */
     inline void SetPort(int value) { m_portHasBeenSet = true; m_port = value; }
 
     /**
@@ -68,6 +73,11 @@ namespace Model
      * <p>The protocol used for the port mapping.</p>
      */
     inline const PortProtocol& GetProtocol() const{ return m_protocol; }
+
+    /**
+     * <p>The protocol used for the port mapping.</p>
+     */
+    inline bool ProtocolHasBeenSet() const { return m_protocolHasBeenSet; }
 
     /**
      * <p>The protocol used for the port mapping.</p>

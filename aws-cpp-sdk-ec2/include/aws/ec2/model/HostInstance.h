@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>the IDs of instances that are running on the Dedicated Host.</p>
      */
+    inline bool InstanceIdHasBeenSet() const { return m_instanceIdHasBeenSet; }
+
+    /**
+     * <p>the IDs of instances that are running on the Dedicated Host.</p>
+     */
     inline void SetInstanceId(const Aws::String& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
 
     /**
@@ -90,6 +95,12 @@ namespace Model
      * instance.</p>
      */
     inline const Aws::String& GetInstanceType() const{ return m_instanceType; }
+
+    /**
+     * <p>The instance type size (for example, <code>m3.medium</code>) of the running
+     * instance.</p>
+     */
+    inline bool InstanceTypeHasBeenSet() const { return m_instanceTypeHasBeenSet; }
 
     /**
      * <p>The instance type size (for example, <code>m3.medium</code>) of the running

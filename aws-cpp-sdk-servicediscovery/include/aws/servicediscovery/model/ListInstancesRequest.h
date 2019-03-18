@@ -52,6 +52,11 @@ namespace Model
     /**
      * <p>The ID of the service that you want to list instances for.</p>
      */
+    inline bool ServiceIdHasBeenSet() const { return m_serviceIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the service that you want to list instances for.</p>
+     */
     inline void SetServiceId(const Aws::String& value) { m_serviceIdHasBeenSet = true; m_serviceId = value; }
 
     /**
@@ -88,6 +93,15 @@ namespace Model
      * in the next request.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
+    /**
+     * <p>For the first <code>ListInstances</code> request, omit this value.</p> <p>If
+     * more than <code>MaxResults</code> instances match the specified criteria, you
+     * can submit another <code>ListInstances</code> request to get the next group of
+     * results. Specify the value of <code>NextToken</code> from the previous response
+     * in the next request.</p>
+     */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
      * <p>For the first <code>ListInstances</code> request, omit this value.</p> <p>If
@@ -150,6 +164,13 @@ namespace Model
      * for <code>MaxResults</code>, AWS Cloud Map returns up to 100 instances.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
+
+    /**
+     * <p>The maximum number of instances that you want AWS Cloud Map to return in the
+     * response to a <code>ListInstances</code> request. If you don't specify a value
+     * for <code>MaxResults</code>, AWS Cloud Map returns up to 100 instances.</p>
+     */
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
 
     /**
      * <p>The maximum number of instances that you want AWS Cloud Map to return in the

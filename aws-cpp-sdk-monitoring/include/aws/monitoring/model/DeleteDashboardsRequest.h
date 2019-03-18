@@ -55,6 +55,11 @@ namespace Model
     /**
      * <p>The dashboards to be deleted. This parameter is required.</p>
      */
+    inline bool DashboardNamesHasBeenSet() const { return m_dashboardNamesHasBeenSet; }
+
+    /**
+     * <p>The dashboards to be deleted. This parameter is required.</p>
+     */
     inline void SetDashboardNames(const Aws::Vector<Aws::String>& value) { m_dashboardNamesHasBeenSet = true; m_dashboardNames = value; }
 
     /**

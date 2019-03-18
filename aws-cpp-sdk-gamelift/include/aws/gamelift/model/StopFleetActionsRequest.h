@@ -54,6 +54,11 @@ namespace Model
     /**
      * <p>Unique identifier for a fleet</p>
      */
+    inline bool FleetIdHasBeenSet() const { return m_fleetIdHasBeenSet; }
+
+    /**
+     * <p>Unique identifier for a fleet</p>
+     */
     inline void SetFleetId(const Aws::String& value) { m_fleetIdHasBeenSet = true; m_fleetId = value; }
 
     /**
@@ -86,6 +91,11 @@ namespace Model
      * <p>List of actions to suspend on the fleet. </p>
      */
     inline const Aws::Vector<FleetAction>& GetActions() const{ return m_actions; }
+
+    /**
+     * <p>List of actions to suspend on the fleet. </p>
+     */
+    inline bool ActionsHasBeenSet() const { return m_actionsHasBeenSet; }
 
     /**
      * <p>List of actions to suspend on the fleet. </p>

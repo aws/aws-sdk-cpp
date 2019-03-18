@@ -52,6 +52,11 @@ namespace Model
     /**
      * <p>The name of the directory configuration.</p>
      */
+    inline bool DirectoryNameHasBeenSet() const { return m_directoryNameHasBeenSet; }
+
+    /**
+     * <p>The name of the directory configuration.</p>
+     */
     inline void SetDirectoryName(const Aws::String& value) { m_directoryNameHasBeenSet = true; m_directoryName = value; }
 
     /**

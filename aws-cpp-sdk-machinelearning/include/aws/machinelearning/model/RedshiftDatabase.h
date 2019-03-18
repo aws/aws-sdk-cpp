@@ -52,6 +52,9 @@ namespace Model
     inline const Aws::String& GetDatabaseName() const{ return m_databaseName; }
 
     
+    inline bool DatabaseNameHasBeenSet() const { return m_databaseNameHasBeenSet; }
+
+    
     inline void SetDatabaseName(const Aws::String& value) { m_databaseNameHasBeenSet = true; m_databaseName = value; }
 
     
@@ -72,6 +75,9 @@ namespace Model
 
     
     inline const Aws::String& GetClusterIdentifier() const{ return m_clusterIdentifier; }
+
+    
+    inline bool ClusterIdentifierHasBeenSet() const { return m_clusterIdentifierHasBeenSet; }
 
     
     inline void SetClusterIdentifier(const Aws::String& value) { m_clusterIdentifierHasBeenSet = true; m_clusterIdentifier = value; }

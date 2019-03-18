@@ -59,6 +59,11 @@ namespace Model
     /**
      * <p>Specify <code>TYPE</code>.</p>
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>Specify <code>TYPE</code>.</p>
+     */
     inline void SetName(const NamespaceFilterName& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
@@ -84,6 +89,14 @@ namespace Model
      * <code>DNS_PUBLIC</code>, <code>DNS_PRIVATE</code>, or both.</p>
      */
     inline const Aws::Vector<Aws::String>& GetValues() const{ return m_values; }
+
+    /**
+     * <p>If you specify <code>EQ</code> for <code>Condition</code>, specify either
+     * <code>DNS_PUBLIC</code> or <code>DNS_PRIVATE</code>.</p> <p>If you specify
+     * <code>IN</code> for <code>Condition</code>, you can specify
+     * <code>DNS_PUBLIC</code>, <code>DNS_PRIVATE</code>, or both.</p>
+     */
+    inline bool ValuesHasBeenSet() const { return m_valuesHasBeenSet; }
 
     /**
      * <p>If you specify <code>EQ</code> for <code>Condition</code>, specify either
@@ -154,6 +167,19 @@ namespace Model
      * <code>BETWEEN</code>: Not applicable</p> </li> </ul>
      */
     inline const FilterCondition& GetCondition() const{ return m_condition; }
+
+    /**
+     * <p>The operator that you want to use to determine whether
+     * <code>ListNamespaces</code> returns a namespace. Valid values for
+     * <code>condition</code> include:</p> <ul> <li> <p> <code>EQ</code>: When you
+     * specify <code>EQ</code> for the condition, you can choose to list only public
+     * namespaces or private namespaces, but not both. <code>EQ</code> is the default
+     * condition and can be omitted.</p> </li> <li> <p> <code>IN</code>: When you
+     * specify <code>IN</code> for the condition, you can choose to list public
+     * namespaces, private namespaces, or both. </p> </li> <li> <p>
+     * <code>BETWEEN</code>: Not applicable</p> </li> </ul>
+     */
+    inline bool ConditionHasBeenSet() const { return m_conditionHasBeenSet; }
 
     /**
      * <p>The operator that you want to use to determine whether

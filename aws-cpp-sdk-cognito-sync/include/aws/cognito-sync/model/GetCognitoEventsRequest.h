@@ -54,6 +54,11 @@ namespace Model
     /**
      * <p>The Cognito Identity Pool ID for the request</p>
      */
+    inline bool IdentityPoolIdHasBeenSet() const { return m_identityPoolIdHasBeenSet; }
+
+    /**
+     * <p>The Cognito Identity Pool ID for the request</p>
+     */
     inline void SetIdentityPoolId(const Aws::String& value) { m_identityPoolIdHasBeenSet = true; m_identityPoolId = value; }
 
     /**

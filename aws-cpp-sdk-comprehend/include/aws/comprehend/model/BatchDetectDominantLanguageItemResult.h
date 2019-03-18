@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p>The zero-based index of the document in the input list.</p>
      */
+    inline bool IndexHasBeenSet() const { return m_indexHasBeenSet; }
+
+    /**
+     * <p>The zero-based index of the document in the input list.</p>
+     */
     inline void SetIndex(int value) { m_indexHasBeenSet = true; m_index = value; }
 
     /**
@@ -71,6 +76,12 @@ namespace Model
      * in the document.</p>
      */
     inline const Aws::Vector<DominantLanguage>& GetLanguages() const{ return m_languages; }
+
+    /**
+     * <p>One or more <a>DominantLanguage</a> objects describing the dominant languages
+     * in the document.</p>
+     */
+    inline bool LanguagesHasBeenSet() const { return m_languagesHasBeenSet; }
 
     /**
      * <p>One or more <a>DominantLanguage</a> objects describing the dominant languages

@@ -56,6 +56,11 @@ namespace Model
     /**
      * A list of errors that might have been generated from processes on this flow.
      */
+    inline bool ErrorsHasBeenSet() const { return m_errorsHasBeenSet; }
+
+    /**
+     * A list of errors that might have been generated from processes on this flow.
+     */
     inline void SetErrors(const Aws::Vector<Aws::String>& value) { m_errorsHasBeenSet = true; m_errors = value; }
 
     /**

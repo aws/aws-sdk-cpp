@@ -70,6 +70,16 @@ namespace Model
      * <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li>
      * <li> <p>Must be unique for all clusters within an AWS account.</p> </li> </ul>
      */
+    inline bool SnapshotCopyGrantNameHasBeenSet() const { return m_snapshotCopyGrantNameHasBeenSet; }
+
+    /**
+     * <p>The name of the snapshot copy grant. This name must be unique in the region
+     * for the AWS account.</p> <p>Constraints:</p> <ul> <li> <p>Must contain from 1 to
+     * 63 alphanumeric characters or hyphens.</p> </li> <li> <p>Alphabetic characters
+     * must be lowercase.</p> </li> <li> <p>First character must be a letter.</p> </li>
+     * <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li>
+     * <li> <p>Must be unique for all clusters within an AWS account.</p> </li> </ul>
+     */
     inline void SetSnapshotCopyGrantName(const Aws::String& value) { m_snapshotCopyGrantNameHasBeenSet = true; m_snapshotCopyGrantName = value; }
 
     /**
@@ -133,6 +143,12 @@ namespace Model
      * <p>The unique identifier of the customer master key (CMK) to which to grant
      * Amazon Redshift permission. If no key is specified, the default key is used.</p>
      */
+    inline bool KmsKeyIdHasBeenSet() const { return m_kmsKeyIdHasBeenSet; }
+
+    /**
+     * <p>The unique identifier of the customer master key (CMK) to which to grant
+     * Amazon Redshift permission. If no key is specified, the default key is used.</p>
+     */
     inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = value; }
 
     /**
@@ -170,6 +186,11 @@ namespace Model
      * <p>A list of tag instances.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>A list of tag instances.</p>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
      * <p>A list of tag instances.</p>

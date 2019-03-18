@@ -65,6 +65,18 @@ namespace Model
      * constraint applies only to the full ARN. If you specify only the function name,
      * it is limited to 64 characters in length.</p>
      */
+    inline bool FunctionNameHasBeenSet() const { return m_functionNameHasBeenSet; }
+
+    /**
+     * <p>The name of the Lambda function.</p> <p class="title"> <b>Name formats</b>
+     * </p> <ul> <li> <p> <b>Function name</b> - <code>my-function</code>.</p> </li>
+     * <li> <p> <b>Function ARN</b> -
+     * <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p>
+     * </li> <li> <p> <b>Partial ARN</b> -
+     * <code>123456789012:function:my-function</code>.</p> </li> </ul> <p>The length
+     * constraint applies only to the full ARN. If you specify only the function name,
+     * it is limited to 64 characters in length.</p>
+     */
     inline void SetFunctionName(const Aws::String& value) { m_functionNameHasBeenSet = true; m_functionName = value; }
 
     /**
@@ -138,6 +150,12 @@ namespace Model
      * <p>The base64-encoded contents of the deployment package. AWS SDK and AWS CLI
      * clients handle the encoding for you.</p>
      */
+    inline bool ZipFileHasBeenSet() const { return m_zipFileHasBeenSet; }
+
+    /**
+     * <p>The base64-encoded contents of the deployment package. AWS SDK and AWS CLI
+     * clients handle the encoding for you.</p>
+     */
     inline void SetZipFile(const Aws::Utils::CryptoBuffer& value) { m_zipFileHasBeenSet = true; m_zipFile = value; }
 
     /**
@@ -164,6 +182,12 @@ namespace Model
      * be in a different AWS account.</p>
      */
     inline const Aws::String& GetS3Bucket() const{ return m_s3Bucket; }
+
+    /**
+     * <p>An Amazon S3 bucket in the same AWS Region as your function. The bucket can
+     * be in a different AWS account.</p>
+     */
+    inline bool S3BucketHasBeenSet() const { return m_s3BucketHasBeenSet; }
 
     /**
      * <p>An Amazon S3 bucket in the same AWS Region as your function. The bucket can
@@ -210,6 +234,11 @@ namespace Model
     /**
      * <p>The Amazon S3 key of the deployment package.</p>
      */
+    inline bool S3KeyHasBeenSet() const { return m_s3KeyHasBeenSet; }
+
+    /**
+     * <p>The Amazon S3 key of the deployment package.</p>
+     */
     inline void SetS3Key(const Aws::String& value) { m_s3KeyHasBeenSet = true; m_s3Key = value; }
 
     /**
@@ -243,6 +272,12 @@ namespace Model
      * use.</p>
      */
     inline const Aws::String& GetS3ObjectVersion() const{ return m_s3ObjectVersion; }
+
+    /**
+     * <p>For versioned objects, the version of the deployment package object to
+     * use.</p>
+     */
+    inline bool S3ObjectVersionHasBeenSet() const { return m_s3ObjectVersionHasBeenSet; }
 
     /**
      * <p>For versioned objects, the version of the deployment package object to
@@ -291,6 +326,12 @@ namespace Model
      * <p>Set to true to publish a new version of the function after updating the code.
      * This has the same effect as calling <a>PublishVersion</a> separately.</p>
      */
+    inline bool PublishHasBeenSet() const { return m_publishHasBeenSet; }
+
+    /**
+     * <p>Set to true to publish a new version of the function after updating the code.
+     * This has the same effect as calling <a>PublishVersion</a> separately.</p>
+     */
     inline void SetPublish(bool value) { m_publishHasBeenSet = true; m_publish = value; }
 
     /**
@@ -305,6 +346,12 @@ namespace Model
      * modifying the function code.</p>
      */
     inline bool GetDryRun() const{ return m_dryRun; }
+
+    /**
+     * <p>Set to true to validate the request parameters and access permissions without
+     * modifying the function code.</p>
+     */
+    inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
 
     /**
      * <p>Set to true to validate the request parameters and access permissions without
@@ -325,6 +372,13 @@ namespace Model
      * read it.</p>
      */
     inline const Aws::String& GetRevisionId() const{ return m_revisionId; }
+
+    /**
+     * <p>Only update the function if the revision ID matches the ID that's specified.
+     * Use this option to avoid modifying a function that has changed since you last
+     * read it.</p>
+     */
+    inline bool RevisionIdHasBeenSet() const { return m_revisionIdHasBeenSet; }
 
     /**
      * <p>Only update the function if the revision ID matches the ID that's specified.

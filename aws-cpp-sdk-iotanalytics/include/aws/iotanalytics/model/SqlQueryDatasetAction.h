@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>A SQL query string.</p>
      */
+    inline bool SqlQueryHasBeenSet() const { return m_sqlQueryHasBeenSet; }
+
+    /**
+     * <p>A SQL query string.</p>
+     */
     inline void SetSqlQuery(const Aws::String& value) { m_sqlQueryHasBeenSet = true; m_sqlQuery = value; }
 
     /**
@@ -89,6 +94,11 @@ namespace Model
      * <p>Pre-filters applied to message data.</p>
      */
     inline const Aws::Vector<QueryFilter>& GetFilters() const{ return m_filters; }
+
+    /**
+     * <p>Pre-filters applied to message data.</p>
+     */
+    inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
 
     /**
      * <p>Pre-filters applied to message data.</p>

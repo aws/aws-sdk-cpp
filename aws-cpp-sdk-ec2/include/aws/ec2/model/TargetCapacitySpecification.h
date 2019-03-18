@@ -63,6 +63,12 @@ namespace Model
      * <p>The number of units to request, filled using
      * <code>DefaultTargetCapacityType</code>.</p>
      */
+    inline bool TotalTargetCapacityHasBeenSet() const { return m_totalTargetCapacityHasBeenSet; }
+
+    /**
+     * <p>The number of units to request, filled using
+     * <code>DefaultTargetCapacityType</code>.</p>
+     */
     inline void SetTotalTargetCapacity(int value) { m_totalTargetCapacityHasBeenSet = true; m_totalTargetCapacity = value; }
 
     /**
@@ -76,6 +82,11 @@ namespace Model
      * <p>The number of On-Demand units to request.</p>
      */
     inline int GetOnDemandTargetCapacity() const{ return m_onDemandTargetCapacity; }
+
+    /**
+     * <p>The number of On-Demand units to request.</p>
+     */
+    inline bool OnDemandTargetCapacityHasBeenSet() const { return m_onDemandTargetCapacityHasBeenSet; }
 
     /**
      * <p>The number of On-Demand units to request.</p>
@@ -96,6 +107,11 @@ namespace Model
     /**
      * <p>The maximum number of Spot units to launch.</p>
      */
+    inline bool SpotTargetCapacityHasBeenSet() const { return m_spotTargetCapacityHasBeenSet; }
+
+    /**
+     * <p>The maximum number of Spot units to launch.</p>
+     */
     inline void SetSpotTargetCapacity(int value) { m_spotTargetCapacityHasBeenSet = true; m_spotTargetCapacity = value; }
 
     /**
@@ -109,6 +125,12 @@ namespace Model
      * <code>Spot</code> or <code>On-Demand</code>.</p>
      */
     inline const DefaultTargetCapacityType& GetDefaultTargetCapacityType() const{ return m_defaultTargetCapacityType; }
+
+    /**
+     * <p>The default <code>TotalTargetCapacity</code>, which is either
+     * <code>Spot</code> or <code>On-Demand</code>.</p>
+     */
+    inline bool DefaultTargetCapacityTypeHasBeenSet() const { return m_defaultTargetCapacityTypeHasBeenSet; }
 
     /**
      * <p>The default <code>TotalTargetCapacity</code>, which is either

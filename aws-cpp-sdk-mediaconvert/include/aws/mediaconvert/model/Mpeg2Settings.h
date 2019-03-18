@@ -69,6 +69,9 @@ namespace Model
     inline const Mpeg2AdaptiveQuantization& GetAdaptiveQuantization() const{ return m_adaptiveQuantization; }
 
     
+    inline bool AdaptiveQuantizationHasBeenSet() const { return m_adaptiveQuantizationHasBeenSet; }
+
+    
     inline void SetAdaptiveQuantization(const Mpeg2AdaptiveQuantization& value) { m_adaptiveQuantizationHasBeenSet = true; m_adaptiveQuantization = value; }
 
     
@@ -91,6 +94,12 @@ namespace Model
      * Average bitrate in bits/second. Required for VBR and CBR. For MS Smooth outputs,
      * bitrates must be unique when rounded down to the nearest multiple of 1000.
      */
+    inline bool BitrateHasBeenSet() const { return m_bitrateHasBeenSet; }
+
+    /**
+     * Average bitrate in bits/second. Required for VBR and CBR. For MS Smooth outputs,
+     * bitrates must be unique when rounded down to the nearest multiple of 1000.
+     */
     inline void SetBitrate(int value) { m_bitrateHasBeenSet = true; m_bitrate = value; }
 
     /**
@@ -102,6 +111,9 @@ namespace Model
 
     
     inline const Mpeg2CodecLevel& GetCodecLevel() const{ return m_codecLevel; }
+
+    
+    inline bool CodecLevelHasBeenSet() const { return m_codecLevelHasBeenSet; }
 
     
     inline void SetCodecLevel(const Mpeg2CodecLevel& value) { m_codecLevelHasBeenSet = true; m_codecLevel = value; }
@@ -118,6 +130,9 @@ namespace Model
 
     
     inline const Mpeg2CodecProfile& GetCodecProfile() const{ return m_codecProfile; }
+
+    
+    inline bool CodecProfileHasBeenSet() const { return m_codecProfileHasBeenSet; }
 
     
     inline void SetCodecProfile(const Mpeg2CodecProfile& value) { m_codecProfileHasBeenSet = true; m_codecProfile = value; }
@@ -141,6 +156,16 @@ namespace Model
      * (numberBFramesBetweenReferenceFrames).
      */
     inline const Mpeg2DynamicSubGop& GetDynamicSubGop() const{ return m_dynamicSubGop; }
+
+    /**
+     * Choose Adaptive to improve subjective video quality for high-motion content.
+     * This will cause the service to use fewer B-frames (which infer information based
+     * on other frames) for high-motion portions of the video and more B-frames for
+     * low-motion portions. The maximum number of B-frames is limited by the value you
+     * provide for the setting B frames between reference frames
+     * (numberBFramesBetweenReferenceFrames).
+     */
+    inline bool DynamicSubGopHasBeenSet() const { return m_dynamicSubGopHasBeenSet; }
 
     /**
      * Choose Adaptive to improve subjective video quality for high-motion content.
@@ -187,6 +212,9 @@ namespace Model
     inline const Mpeg2FramerateControl& GetFramerateControl() const{ return m_framerateControl; }
 
     
+    inline bool FramerateControlHasBeenSet() const { return m_framerateControlHasBeenSet; }
+
+    
     inline void SetFramerateControl(const Mpeg2FramerateControl& value) { m_framerateControlHasBeenSet = true; m_framerateControl = value; }
 
     
@@ -201,6 +229,9 @@ namespace Model
 
     
     inline const Mpeg2FramerateConversionAlgorithm& GetFramerateConversionAlgorithm() const{ return m_framerateConversionAlgorithm; }
+
+    
+    inline bool FramerateConversionAlgorithmHasBeenSet() const { return m_framerateConversionAlgorithmHasBeenSet; }
 
     
     inline void SetFramerateConversionAlgorithm(const Mpeg2FramerateConversionAlgorithm& value) { m_framerateConversionAlgorithmHasBeenSet = true; m_framerateConversionAlgorithm = value; }
@@ -223,6 +254,11 @@ namespace Model
     /**
      * Frame rate denominator.
      */
+    inline bool FramerateDenominatorHasBeenSet() const { return m_framerateDenominatorHasBeenSet; }
+
+    /**
+     * Frame rate denominator.
+     */
     inline void SetFramerateDenominator(int value) { m_framerateDenominatorHasBeenSet = true; m_framerateDenominator = value; }
 
     /**
@@ -235,6 +271,11 @@ namespace Model
      * Frame rate numerator - frame rate is a fraction, e.g. 24000 / 1001 = 23.976 fps.
      */
     inline int GetFramerateNumerator() const{ return m_framerateNumerator; }
+
+    /**
+     * Frame rate numerator - frame rate is a fraction, e.g. 24000 / 1001 = 23.976 fps.
+     */
+    inline bool FramerateNumeratorHasBeenSet() const { return m_framerateNumeratorHasBeenSet; }
 
     /**
      * Frame rate numerator - frame rate is a fraction, e.g. 24000 / 1001 = 23.976 fps.
@@ -259,6 +300,13 @@ namespace Model
      * be set to 1 so a decoder joining mid-stream will receive an IDR frame as quickly
      * as possible. Setting this value to 0 will break output segmenting.
      */
+    inline bool GopClosedCadenceHasBeenSet() const { return m_gopClosedCadenceHasBeenSet; }
+
+    /**
+     * Frequency of closed GOPs. In streaming applications, it is recommended that this
+     * be set to 1 so a decoder joining mid-stream will receive an IDR frame as quickly
+     * as possible. Setting this value to 0 will break output segmenting.
+     */
     inline void SetGopClosedCadence(int value) { m_gopClosedCadenceHasBeenSet = true; m_gopClosedCadence = value; }
 
     /**
@@ -277,6 +325,11 @@ namespace Model
     /**
      * GOP Length (keyframe interval) in frames or seconds. Must be greater than zero.
      */
+    inline bool GopSizeHasBeenSet() const { return m_gopSizeHasBeenSet; }
+
+    /**
+     * GOP Length (keyframe interval) in frames or seconds. Must be greater than zero.
+     */
     inline void SetGopSize(double value) { m_gopSizeHasBeenSet = true; m_gopSize = value; }
 
     /**
@@ -287,6 +340,9 @@ namespace Model
 
     
     inline const Mpeg2GopSizeUnits& GetGopSizeUnits() const{ return m_gopSizeUnits; }
+
+    
+    inline bool GopSizeUnitsHasBeenSet() const { return m_gopSizeUnitsHasBeenSet; }
 
     
     inline void SetGopSizeUnits(const Mpeg2GopSizeUnits& value) { m_gopSizeUnitsHasBeenSet = true; m_gopSizeUnits = value; }
@@ -309,6 +365,11 @@ namespace Model
     /**
      * Percentage of the buffer that should initially be filled (HRD buffer model).
      */
+    inline bool HrdBufferInitialFillPercentageHasBeenSet() const { return m_hrdBufferInitialFillPercentageHasBeenSet; }
+
+    /**
+     * Percentage of the buffer that should initially be filled (HRD buffer model).
+     */
     inline void SetHrdBufferInitialFillPercentage(int value) { m_hrdBufferInitialFillPercentageHasBeenSet = true; m_hrdBufferInitialFillPercentage = value; }
 
     /**
@@ -327,6 +388,12 @@ namespace Model
      * Size of buffer (HRD buffer model) in bits. For example, enter five megabits as
      * 5000000.
      */
+    inline bool HrdBufferSizeHasBeenSet() const { return m_hrdBufferSizeHasBeenSet; }
+
+    /**
+     * Size of buffer (HRD buffer model) in bits. For example, enter five megabits as
+     * 5000000.
+     */
     inline void SetHrdBufferSize(int value) { m_hrdBufferSizeHasBeenSet = true; m_hrdBufferSize = value; }
 
     /**
@@ -338,6 +405,9 @@ namespace Model
 
     
     inline const Mpeg2InterlaceMode& GetInterlaceMode() const{ return m_interlaceMode; }
+
+    
+    inline bool InterlaceModeHasBeenSet() const { return m_interlaceModeHasBeenSet; }
 
     
     inline void SetInterlaceMode(const Mpeg2InterlaceMode& value) { m_interlaceModeHasBeenSet = true; m_interlaceMode = value; }
@@ -354,6 +424,9 @@ namespace Model
 
     
     inline const Mpeg2IntraDcPrecision& GetIntraDcPrecision() const{ return m_intraDcPrecision; }
+
+    
+    inline bool IntraDcPrecisionHasBeenSet() const { return m_intraDcPrecisionHasBeenSet; }
 
     
     inline void SetIntraDcPrecision(const Mpeg2IntraDcPrecision& value) { m_intraDcPrecisionHasBeenSet = true; m_intraDcPrecision = value; }
@@ -373,6 +446,12 @@ namespace Model
      * 5000000.
      */
     inline int GetMaxBitrate() const{ return m_maxBitrate; }
+
+    /**
+     * Maximum bitrate in bits/second. For example, enter five megabits per second as
+     * 5000000.
+     */
+    inline bool MaxBitrateHasBeenSet() const { return m_maxBitrateHasBeenSet; }
 
     /**
      * Maximum bitrate in bits/second. For example, enter five megabits per second as
@@ -407,6 +486,17 @@ namespace Model
      * Scene Change Detect is enabled. Note: Maximum GOP stretch = GOP size +
      * Min-I-interval - 1
      */
+    inline bool MinIIntervalHasBeenSet() const { return m_minIIntervalHasBeenSet; }
+
+    /**
+     * Enforces separation between repeated (cadence) I-frames and I-frames inserted by
+     * Scene Change Detection. If a scene change I-frame is within I-interval frames of
+     * a cadence I-frame, the GOP is shrunk and/or stretched to the scene change
+     * I-frame. GOP stretch requires enabling lookahead as well as setting I-interval.
+     * The normal cadence resumes for the next GOP. This setting is only used when
+     * Scene Change Detect is enabled. Note: Maximum GOP stretch = GOP size +
+     * Min-I-interval - 1
+     */
     inline void SetMinIInterval(int value) { m_minIIntervalHasBeenSet = true; m_minIInterval = value; }
 
     /**
@@ -429,6 +519,11 @@ namespace Model
     /**
      * Number of B-frames between reference frames.
      */
+    inline bool NumberBFramesBetweenReferenceFramesHasBeenSet() const { return m_numberBFramesBetweenReferenceFramesHasBeenSet; }
+
+    /**
+     * Number of B-frames between reference frames.
+     */
     inline void SetNumberBFramesBetweenReferenceFrames(int value) { m_numberBFramesBetweenReferenceFramesHasBeenSet = true; m_numberBFramesBetweenReferenceFrames = value; }
 
     /**
@@ -439,6 +534,9 @@ namespace Model
 
     
     inline const Mpeg2ParControl& GetParControl() const{ return m_parControl; }
+
+    
+    inline bool ParControlHasBeenSet() const { return m_parControlHasBeenSet; }
 
     
     inline void SetParControl(const Mpeg2ParControl& value) { m_parControlHasBeenSet = true; m_parControl = value; }
@@ -461,6 +559,11 @@ namespace Model
     /**
      * Pixel Aspect Ratio denominator.
      */
+    inline bool ParDenominatorHasBeenSet() const { return m_parDenominatorHasBeenSet; }
+
+    /**
+     * Pixel Aspect Ratio denominator.
+     */
     inline void SetParDenominator(int value) { m_parDenominatorHasBeenSet = true; m_parDenominator = value; }
 
     /**
@@ -477,6 +580,11 @@ namespace Model
     /**
      * Pixel Aspect Ratio numerator.
      */
+    inline bool ParNumeratorHasBeenSet() const { return m_parNumeratorHasBeenSet; }
+
+    /**
+     * Pixel Aspect Ratio numerator.
+     */
     inline void SetParNumerator(int value) { m_parNumeratorHasBeenSet = true; m_parNumerator = value; }
 
     /**
@@ -487,6 +595,9 @@ namespace Model
 
     
     inline const Mpeg2QualityTuningLevel& GetQualityTuningLevel() const{ return m_qualityTuningLevel; }
+
+    
+    inline bool QualityTuningLevelHasBeenSet() const { return m_qualityTuningLevelHasBeenSet; }
 
     
     inline void SetQualityTuningLevel(const Mpeg2QualityTuningLevel& value) { m_qualityTuningLevelHasBeenSet = true; m_qualityTuningLevel = value; }
@@ -505,6 +616,9 @@ namespace Model
     inline const Mpeg2RateControlMode& GetRateControlMode() const{ return m_rateControlMode; }
 
     
+    inline bool RateControlModeHasBeenSet() const { return m_rateControlModeHasBeenSet; }
+
+    
     inline void SetRateControlMode(const Mpeg2RateControlMode& value) { m_rateControlModeHasBeenSet = true; m_rateControlMode = value; }
 
     
@@ -521,6 +635,9 @@ namespace Model
     inline const Mpeg2SceneChangeDetect& GetSceneChangeDetect() const{ return m_sceneChangeDetect; }
 
     
+    inline bool SceneChangeDetectHasBeenSet() const { return m_sceneChangeDetectHasBeenSet; }
+
+    
     inline void SetSceneChangeDetect(const Mpeg2SceneChangeDetect& value) { m_sceneChangeDetectHasBeenSet = true; m_sceneChangeDetect = value; }
 
     
@@ -535,6 +652,9 @@ namespace Model
 
     
     inline const Mpeg2SlowPal& GetSlowPal() const{ return m_slowPal; }
+
+    
+    inline bool SlowPalHasBeenSet() const { return m_slowPalHasBeenSet; }
 
     
     inline void SetSlowPal(const Mpeg2SlowPal& value) { m_slowPalHasBeenSet = true; m_slowPal = value; }
@@ -559,6 +679,12 @@ namespace Model
      * Softness. Selects quantizer matrix, larger values reduce high-frequency content
      * in the encoded image.
      */
+    inline bool SoftnessHasBeenSet() const { return m_softnessHasBeenSet; }
+
+    /**
+     * Softness. Selects quantizer matrix, larger values reduce high-frequency content
+     * in the encoded image.
+     */
     inline void SetSoftness(int value) { m_softnessHasBeenSet = true; m_softness = value; }
 
     /**
@@ -570,6 +696,9 @@ namespace Model
 
     
     inline const Mpeg2SpatialAdaptiveQuantization& GetSpatialAdaptiveQuantization() const{ return m_spatialAdaptiveQuantization; }
+
+    
+    inline bool SpatialAdaptiveQuantizationHasBeenSet() const { return m_spatialAdaptiveQuantizationHasBeenSet; }
 
     
     inline void SetSpatialAdaptiveQuantization(const Mpeg2SpatialAdaptiveQuantization& value) { m_spatialAdaptiveQuantizationHasBeenSet = true; m_spatialAdaptiveQuantization = value; }
@@ -588,6 +717,9 @@ namespace Model
     inline const Mpeg2Syntax& GetSyntax() const{ return m_syntax; }
 
     
+    inline bool SyntaxHasBeenSet() const { return m_syntaxHasBeenSet; }
+
+    
     inline void SetSyntax(const Mpeg2Syntax& value) { m_syntaxHasBeenSet = true; m_syntax = value; }
 
     
@@ -604,6 +736,9 @@ namespace Model
     inline const Mpeg2Telecine& GetTelecine() const{ return m_telecine; }
 
     
+    inline bool TelecineHasBeenSet() const { return m_telecineHasBeenSet; }
+
+    
     inline void SetTelecine(const Mpeg2Telecine& value) { m_telecineHasBeenSet = true; m_telecine = value; }
 
     
@@ -618,6 +753,9 @@ namespace Model
 
     
     inline const Mpeg2TemporalAdaptiveQuantization& GetTemporalAdaptiveQuantization() const{ return m_temporalAdaptiveQuantization; }
+
+    
+    inline bool TemporalAdaptiveQuantizationHasBeenSet() const { return m_temporalAdaptiveQuantizationHasBeenSet; }
 
     
     inline void SetTemporalAdaptiveQuantization(const Mpeg2TemporalAdaptiveQuantization& value) { m_temporalAdaptiveQuantizationHasBeenSet = true; m_temporalAdaptiveQuantization = value; }

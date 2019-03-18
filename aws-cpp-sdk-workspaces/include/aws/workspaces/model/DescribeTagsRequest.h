@@ -54,6 +54,12 @@ namespace Model
      * <p>The identifier of the WorkSpace. To find this ID, use
      * <a>DescribeWorkspaces</a>.</p>
      */
+    inline bool ResourceIdHasBeenSet() const { return m_resourceIdHasBeenSet; }
+
+    /**
+     * <p>The identifier of the WorkSpace. To find this ID, use
+     * <a>DescribeWorkspaces</a>.</p>
+     */
     inline void SetResourceId(const Aws::String& value) { m_resourceIdHasBeenSet = true; m_resourceId = value; }
 
     /**

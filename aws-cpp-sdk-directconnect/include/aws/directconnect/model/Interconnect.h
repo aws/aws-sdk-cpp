@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p>The ID of the interconnect.</p>
      */
+    inline bool InterconnectIdHasBeenSet() const { return m_interconnectIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the interconnect.</p>
+     */
     inline void SetInterconnectId(const Aws::String& value) { m_interconnectIdHasBeenSet = true; m_interconnectId = value; }
 
     /**
@@ -90,6 +95,11 @@ namespace Model
      * <p>The name of the interconnect.</p>
      */
     inline const Aws::String& GetInterconnectName() const{ return m_interconnectName; }
+
+    /**
+     * <p>The name of the interconnect.</p>
+     */
+    inline bool InterconnectNameHasBeenSet() const { return m_interconnectNameHasBeenSet; }
 
     /**
      * <p>The name of the interconnect.</p>
@@ -136,6 +146,21 @@ namespace Model
      * </li> </ul>
      */
     inline const InterconnectState& GetInterconnectState() const{ return m_interconnectState; }
+
+    /**
+     * <p>The state of the interconnect. The following are the possible values:</p>
+     * <ul> <li> <p> <code>requested</code>: The initial state of an interconnect. The
+     * interconnect stays in the requested state until the Letter of Authorization
+     * (LOA) is sent to the customer.</p> </li> <li> <p> <code>pending</code>: The
+     * interconnect is approved, and is being initialized.</p> </li> <li> <p>
+     * <code>available</code>: The network link is up, and the interconnect is ready
+     * for use.</p> </li> <li> <p> <code>down</code>: The network link is down.</p>
+     * </li> <li> <p> <code>deleting</code>: The interconnect is being deleted.</p>
+     * </li> <li> <p> <code>deleted</code>: The interconnect is deleted.</p> </li> <li>
+     * <p> <code>unknown</code>: The state of the interconnect is not available.</p>
+     * </li> </ul>
+     */
+    inline bool InterconnectStateHasBeenSet() const { return m_interconnectStateHasBeenSet; }
 
     /**
      * <p>The state of the interconnect. The following are the possible values:</p>
@@ -206,6 +231,11 @@ namespace Model
     /**
      * <p>The AWS Region where the connection is located.</p>
      */
+    inline bool RegionHasBeenSet() const { return m_regionHasBeenSet; }
+
+    /**
+     * <p>The AWS Region where the connection is located.</p>
+     */
     inline void SetRegion(const Aws::String& value) { m_regionHasBeenSet = true; m_region = value; }
 
     /**
@@ -242,6 +272,11 @@ namespace Model
     /**
      * <p>The location of the connection.</p>
      */
+    inline bool LocationHasBeenSet() const { return m_locationHasBeenSet; }
+
+    /**
+     * <p>The location of the connection.</p>
+     */
     inline void SetLocation(const Aws::String& value) { m_locationHasBeenSet = true; m_location = value; }
 
     /**
@@ -274,6 +309,11 @@ namespace Model
      * <p>The bandwidth of the connection.</p>
      */
     inline const Aws::String& GetBandwidth() const{ return m_bandwidth; }
+
+    /**
+     * <p>The bandwidth of the connection.</p>
+     */
+    inline bool BandwidthHasBeenSet() const { return m_bandwidthHasBeenSet; }
 
     /**
      * <p>The bandwidth of the connection.</p>
@@ -316,6 +356,12 @@ namespace Model
      * <p>The time of the most recent call to <a>DescribeLoa</a> for this
      * connection.</p>
      */
+    inline bool LoaIssueTimeHasBeenSet() const { return m_loaIssueTimeHasBeenSet; }
+
+    /**
+     * <p>The time of the most recent call to <a>DescribeLoa</a> for this
+     * connection.</p>
+     */
     inline void SetLoaIssueTime(const Aws::Utils::DateTime& value) { m_loaIssueTimeHasBeenSet = true; m_loaIssueTime = value; }
 
     /**
@@ -341,6 +387,11 @@ namespace Model
      * <p>The ID of the LAG.</p>
      */
     inline const Aws::String& GetLagId() const{ return m_lagId; }
+
+    /**
+     * <p>The ID of the LAG.</p>
+     */
+    inline bool LagIdHasBeenSet() const { return m_lagIdHasBeenSet; }
 
     /**
      * <p>The ID of the LAG.</p>
@@ -381,6 +432,11 @@ namespace Model
     /**
      * <p>The Direct Connect endpoint on which the physical connection terminates.</p>
      */
+    inline bool AwsDeviceHasBeenSet() const { return m_awsDeviceHasBeenSet; }
+
+    /**
+     * <p>The Direct Connect endpoint on which the physical connection terminates.</p>
+     */
     inline void SetAwsDevice(const Aws::String& value) { m_awsDeviceHasBeenSet = true; m_awsDevice = value; }
 
     /**
@@ -417,6 +473,11 @@ namespace Model
     /**
      * <p>Indicates whether jumbo frames (9001 MTU) are supported.</p>
      */
+    inline bool JumboFrameCapableHasBeenSet() const { return m_jumboFrameCapableHasBeenSet; }
+
+    /**
+     * <p>Indicates whether jumbo frames (9001 MTU) are supported.</p>
+     */
     inline void SetJumboFrameCapable(bool value) { m_jumboFrameCapableHasBeenSet = true; m_jumboFrameCapable = value; }
 
     /**
@@ -429,6 +490,11 @@ namespace Model
      * <p>The Direct Connect endpoint on which the physical connection terminates.</p>
      */
     inline const Aws::String& GetAwsDeviceV2() const{ return m_awsDeviceV2; }
+
+    /**
+     * <p>The Direct Connect endpoint on which the physical connection terminates.</p>
+     */
+    inline bool AwsDeviceV2HasBeenSet() const { return m_awsDeviceV2HasBeenSet; }
 
     /**
      * <p>The Direct Connect endpoint on which the physical connection terminates.</p>
@@ -466,6 +532,12 @@ namespace Model
      * address family (IPv4/IPv6).</p>
      */
     inline const HasLogicalRedundancy& GetHasLogicalRedundancy() const{ return m_hasLogicalRedundancy; }
+
+    /**
+     * <p>Indicates whether the interconnect supports a secondary BGP in the same
+     * address family (IPv4/IPv6).</p>
+     */
+    inline bool HasLogicalRedundancyHasBeenSet() const { return m_hasLogicalRedundancyHasBeenSet; }
 
     /**
      * <p>Indicates whether the interconnect supports a secondary BGP in the same

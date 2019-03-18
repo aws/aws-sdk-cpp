@@ -70,6 +70,14 @@ namespace Model
      * (<code>mta-name-type; mta-name</code>). The default value is <code>dns;
      * inbound-smtp.[region].amazonaws.com</code>.</p>
      */
+    inline bool ReportingMtaHasBeenSet() const { return m_reportingMtaHasBeenSet; }
+
+    /**
+     * <p>The reporting MTA that attempted to deliver the message, formatted as
+     * specified in <a href="https://tools.ietf.org/html/rfc3464">RFC 3464</a>
+     * (<code>mta-name-type; mta-name</code>). The default value is <code>dns;
+     * inbound-smtp.[region].amazonaws.com</code>.</p>
+     */
     inline void SetReportingMta(const Aws::String& value) { m_reportingMtaHasBeenSet = true; m_reportingMta = value; }
 
     /**
@@ -123,6 +131,12 @@ namespace Model
      * <p>When the message was received by the reporting mail transfer agent (MTA), in
      * <a href="https://www.ietf.org/rfc/rfc0822.txt">RFC 822</a> date-time format.</p>
      */
+    inline bool ArrivalDateHasBeenSet() const { return m_arrivalDateHasBeenSet; }
+
+    /**
+     * <p>When the message was received by the reporting mail transfer agent (MTA), in
+     * <a href="https://www.ietf.org/rfc/rfc0822.txt">RFC 822</a> date-time format.</p>
+     */
     inline void SetArrivalDate(const Aws::Utils::DateTime& value) { m_arrivalDateHasBeenSet = true; m_arrivalDate = value; }
 
     /**
@@ -148,6 +162,11 @@ namespace Model
      * <p>Additional X-headers to include in the DSN.</p>
      */
     inline const Aws::Vector<ExtensionField>& GetExtensionFields() const{ return m_extensionFields; }
+
+    /**
+     * <p>Additional X-headers to include in the DSN.</p>
+     */
+    inline bool ExtensionFieldsHasBeenSet() const { return m_extensionFieldsHasBeenSet; }
 
     /**
      * <p>Additional X-headers to include in the DSN.</p>

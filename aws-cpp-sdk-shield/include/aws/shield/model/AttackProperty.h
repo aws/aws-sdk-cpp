@@ -63,6 +63,13 @@ namespace Model
      * layer 3 and layer 4 events and <code>APPLICATION</code> indicates layer 7
      * events.</p>
      */
+    inline bool AttackLayerHasBeenSet() const { return m_attackLayerHasBeenSet; }
+
+    /**
+     * <p>The type of DDoS event that was observed. <code>NETWORK</code> indicates
+     * layer 3 and layer 4 events and <code>APPLICATION</code> indicates layer 7
+     * events.</p>
+     */
     inline void SetAttackLayer(const AttackLayer& value) { m_attackLayerHasBeenSet = true; m_attackLayer = value; }
 
     /**
@@ -95,6 +102,11 @@ namespace Model
     /**
      * <p>Defines the DDoS attack property information that is provided.</p>
      */
+    inline bool AttackPropertyIdentifierHasBeenSet() const { return m_attackPropertyIdentifierHasBeenSet; }
+
+    /**
+     * <p>Defines the DDoS attack property information that is provided.</p>
+     */
     inline void SetAttackPropertyIdentifier(const AttackPropertyIdentifier& value) { m_attackPropertyIdentifierHasBeenSet = true; m_attackPropertyIdentifier = value; }
 
     /**
@@ -118,6 +130,12 @@ namespace Model
      * contributors to an attack. </p>
      */
     inline const Aws::Vector<Contributor>& GetTopContributors() const{ return m_topContributors; }
+
+    /**
+     * <p>The array of <a>Contributor</a> objects that includes the top five
+     * contributors to an attack. </p>
+     */
+    inline bool TopContributorsHasBeenSet() const { return m_topContributorsHasBeenSet; }
 
     /**
      * <p>The array of <a>Contributor</a> objects that includes the top five
@@ -164,6 +182,11 @@ namespace Model
     /**
      * <p>The unit of the <code>Value</code> of the contributions.</p>
      */
+    inline bool UnitHasBeenSet() const { return m_unitHasBeenSet; }
+
+    /**
+     * <p>The unit of the <code>Value</code> of the contributions.</p>
+     */
     inline void SetUnit(const Unit& value) { m_unitHasBeenSet = true; m_unit = value; }
 
     /**
@@ -187,6 +210,12 @@ namespace Model
      * five listed in the <code>TopContributors</code> list.</p>
      */
     inline long long GetTotal() const{ return m_total; }
+
+    /**
+     * <p>The total contributions made to this attack by all contributors, not just the
+     * five listed in the <code>TopContributors</code> list.</p>
+     */
+    inline bool TotalHasBeenSet() const { return m_totalHasBeenSet; }
 
     /**
      * <p>The total contributions made to this attack by all contributors, not just the

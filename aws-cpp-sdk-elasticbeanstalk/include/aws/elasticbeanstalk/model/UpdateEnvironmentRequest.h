@@ -61,6 +61,11 @@ namespace Model
     /**
      * <p>The name of the application with which the environment is associated.</p>
      */
+    inline bool ApplicationNameHasBeenSet() const { return m_applicationNameHasBeenSet; }
+
+    /**
+     * <p>The name of the application with which the environment is associated.</p>
+     */
     inline void SetApplicationName(const Aws::String& value) { m_applicationNameHasBeenSet = true; m_applicationName = value; }
 
     /**
@@ -97,6 +102,15 @@ namespace Model
      * <code>MissingRequiredParameter</code> error. </p>
      */
     inline const Aws::String& GetEnvironmentId() const{ return m_environmentId; }
+
+    /**
+     * <p>The ID of the environment to update.</p> <p>If no environment with this ID
+     * exists, AWS Elastic Beanstalk returns an <code>InvalidParameterValue</code>
+     * error.</p> <p>Condition: You must specify either this or an EnvironmentName, or
+     * both. If you do not specify either, AWS Elastic Beanstalk returns
+     * <code>MissingRequiredParameter</code> error. </p>
+     */
+    inline bool EnvironmentIdHasBeenSet() const { return m_environmentIdHasBeenSet; }
 
     /**
      * <p>The ID of the environment to update.</p> <p>If no environment with this ID
@@ -169,6 +183,15 @@ namespace Model
      * both. If you do not specify either, AWS Elastic Beanstalk returns
      * <code>MissingRequiredParameter</code> error. </p>
      */
+    inline bool EnvironmentNameHasBeenSet() const { return m_environmentNameHasBeenSet; }
+
+    /**
+     * <p>The name of the environment to update. If no environment with this name
+     * exists, AWS Elastic Beanstalk returns an <code>InvalidParameterValue</code>
+     * error. </p> <p>Condition: You must specify either this or an EnvironmentId, or
+     * both. If you do not specify either, AWS Elastic Beanstalk returns
+     * <code>MissingRequiredParameter</code> error. </p>
+     */
     inline void SetEnvironmentName(const Aws::String& value) { m_environmentNameHasBeenSet = true; m_environmentName = value; }
 
     /**
@@ -225,6 +248,15 @@ namespace Model
      * Manifest (env.yaml)</a> for details.</p>
      */
     inline const Aws::String& GetGroupName() const{ return m_groupName; }
+
+    /**
+     * <p>The name of the group to which the target environment belongs. Specify a
+     * group name only if the environment's name is specified in an environment
+     * manifest and not with the environment name or environment ID parameters. See <a
+     * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-cfg-manifest.html">Environment
+     * Manifest (env.yaml)</a> for details.</p>
+     */
+    inline bool GroupNameHasBeenSet() const { return m_groupNameHasBeenSet; }
 
     /**
      * <p>The name of the group to which the target environment belongs. Specify a
@@ -291,6 +323,12 @@ namespace Model
      * <p>If this parameter is specified, AWS Elastic Beanstalk updates the description
      * of this environment.</p>
      */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
+
+    /**
+     * <p>If this parameter is specified, AWS Elastic Beanstalk updates the description
+     * of this environment.</p>
+     */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
@@ -336,6 +374,13 @@ namespace Model
      * At this time, if you change the tier version, name, or type, AWS Elastic
      * Beanstalk returns <code>InvalidParameterValue</code> error. </p>
      */
+    inline bool TierHasBeenSet() const { return m_tierHasBeenSet; }
+
+    /**
+     * <p>This specifies the tier to use to update the environment.</p> <p>Condition:
+     * At this time, if you change the tier version, name, or type, AWS Elastic
+     * Beanstalk returns <code>InvalidParameterValue</code> error. </p>
+     */
     inline void SetTier(const EnvironmentTier& value) { m_tierHasBeenSet = true; m_tier = value; }
 
     /**
@@ -366,6 +411,13 @@ namespace Model
      * returns an <code>InvalidParameterValue</code> error. </p>
      */
     inline const Aws::String& GetVersionLabel() const{ return m_versionLabel; }
+
+    /**
+     * <p>If this parameter is specified, AWS Elastic Beanstalk deploys the named
+     * application version to the environment. If no such application version is found,
+     * returns an <code>InvalidParameterValue</code> error. </p>
+     */
+    inline bool VersionLabelHasBeenSet() const { return m_versionLabelHasBeenSet; }
 
     /**
      * <p>If this parameter is specified, AWS Elastic Beanstalk deploys the named
@@ -417,6 +469,14 @@ namespace Model
      * error. </p>
      */
     inline const Aws::String& GetTemplateName() const{ return m_templateName; }
+
+    /**
+     * <p>If this parameter is specified, AWS Elastic Beanstalk deploys this
+     * configuration template to the environment. If no such configuration template is
+     * found, AWS Elastic Beanstalk returns an <code>InvalidParameterValue</code>
+     * error. </p>
+     */
+    inline bool TemplateNameHasBeenSet() const { return m_templateNameHasBeenSet; }
 
     /**
      * <p>If this parameter is specified, AWS Elastic Beanstalk deploys this
@@ -477,6 +537,12 @@ namespace Model
      * <p>This specifies the platform version that the environment will run after the
      * environment is updated.</p>
      */
+    inline bool SolutionStackNameHasBeenSet() const { return m_solutionStackNameHasBeenSet; }
+
+    /**
+     * <p>This specifies the platform version that the environment will run after the
+     * environment is updated.</p>
+     */
     inline void SetSolutionStackName(const Aws::String& value) { m_solutionStackNameHasBeenSet = true; m_solutionStackName = value; }
 
     /**
@@ -518,6 +584,11 @@ namespace Model
     /**
      * <p>The ARN of the platform, if used.</p>
      */
+    inline bool PlatformArnHasBeenSet() const { return m_platformArnHasBeenSet; }
+
+    /**
+     * <p>The ARN of the platform, if used.</p>
+     */
     inline void SetPlatformArn(const Aws::String& value) { m_platformArnHasBeenSet = true; m_platformArn = value; }
 
     /**
@@ -552,6 +623,13 @@ namespace Model
      * requested value.</p>
      */
     inline const Aws::Vector<ConfigurationOptionSetting>& GetOptionSettings() const{ return m_optionSettings; }
+
+    /**
+     * <p>If specified, AWS Elastic Beanstalk updates the configuration set associated
+     * with the running environment and sets the specified configuration options to the
+     * requested value.</p>
+     */
+    inline bool OptionSettingsHasBeenSet() const { return m_optionSettingsHasBeenSet; }
 
     /**
      * <p>If specified, AWS Elastic Beanstalk updates the configuration set associated
@@ -601,6 +679,12 @@ namespace Model
      * configuration set for this environment.</p>
      */
     inline const Aws::Vector<OptionSpecification>& GetOptionsToRemove() const{ return m_optionsToRemove; }
+
+    /**
+     * <p>A list of custom user-defined configuration options to remove from the
+     * configuration set for this environment.</p>
+     */
+    inline bool OptionsToRemoveHasBeenSet() const { return m_optionsToRemoveHasBeenSet; }
 
     /**
      * <p>A list of custom user-defined configuration options to remove from the

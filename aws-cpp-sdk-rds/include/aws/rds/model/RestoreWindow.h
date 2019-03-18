@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p>The earliest time you can restore an instance to.</p>
      */
+    inline bool EarliestTimeHasBeenSet() const { return m_earliestTimeHasBeenSet; }
+
+    /**
+     * <p>The earliest time you can restore an instance to.</p>
+     */
     inline void SetEarliestTime(const Aws::Utils::DateTime& value) { m_earliestTimeHasBeenSet = true; m_earliestTime = value; }
 
     /**
@@ -80,6 +85,11 @@ namespace Model
      * <p>The latest time you can restore an instance to.</p>
      */
     inline const Aws::Utils::DateTime& GetLatestTime() const{ return m_latestTime; }
+
+    /**
+     * <p>The latest time you can restore an instance to.</p>
+     */
+    inline bool LatestTimeHasBeenSet() const { return m_latestTimeHasBeenSet; }
 
     /**
      * <p>The latest time you can restore an instance to.</p>

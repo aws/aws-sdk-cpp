@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p>The name of the pipeline.</p>
      */
+    inline bool PipelineNameHasBeenSet() const { return m_pipelineNameHasBeenSet; }
+
+    /**
+     * <p>The name of the pipeline.</p>
+     */
     inline void SetPipelineName(const Aws::String& value) { m_pipelineNameHasBeenSet = true; m_pipelineName = value; }
 
     /**
@@ -90,6 +95,11 @@ namespace Model
      * <p>A summary of information about the pipeline reprocessing.</p>
      */
     inline const Aws::Vector<ReprocessingSummary>& GetReprocessingSummaries() const{ return m_reprocessingSummaries; }
+
+    /**
+     * <p>A summary of information about the pipeline reprocessing.</p>
+     */
+    inline bool ReprocessingSummariesHasBeenSet() const { return m_reprocessingSummariesHasBeenSet; }
 
     /**
      * <p>A summary of information about the pipeline reprocessing.</p>
@@ -130,6 +140,11 @@ namespace Model
     /**
      * <p>When the pipeline was created.</p>
      */
+    inline bool CreationTimeHasBeenSet() const { return m_creationTimeHasBeenSet; }
+
+    /**
+     * <p>When the pipeline was created.</p>
+     */
     inline void SetCreationTime(const Aws::Utils::DateTime& value) { m_creationTimeHasBeenSet = true; m_creationTime = value; }
 
     /**
@@ -152,6 +167,11 @@ namespace Model
      * <p>When the pipeline was last updated.</p>
      */
     inline const Aws::Utils::DateTime& GetLastUpdateTime() const{ return m_lastUpdateTime; }
+
+    /**
+     * <p>When the pipeline was last updated.</p>
+     */
+    inline bool LastUpdateTimeHasBeenSet() const { return m_lastUpdateTimeHasBeenSet; }
 
     /**
      * <p>When the pipeline was last updated.</p>

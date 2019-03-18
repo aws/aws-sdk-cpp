@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p> The Amazon Resource Name (ARN) of the token. </p>
      */
+    inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
+
+    /**
+     * <p> The Amazon Resource Name (ARN) of the token. </p>
+     */
     inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
 
     /**
@@ -96,6 +101,12 @@ namespace Model
      * <p> The type of source provider. The valid options are GITHUB,
      * GITHUB_ENTERPRISE, or BITBUCKET. </p>
      */
+    inline bool ServerTypeHasBeenSet() const { return m_serverTypeHasBeenSet; }
+
+    /**
+     * <p> The type of source provider. The valid options are GITHUB,
+     * GITHUB_ENTERPRISE, or BITBUCKET. </p>
+     */
     inline void SetServerType(const ServerType& value) { m_serverTypeHasBeenSet = true; m_serverType = value; }
 
     /**
@@ -122,6 +133,12 @@ namespace Model
      * BASIC_AUTH, or PERSONAL_ACCESS_TOKEN. </p>
      */
     inline const AuthType& GetAuthType() const{ return m_authType; }
+
+    /**
+     * <p> The type of authentication used by the credentials. Valid options are OAUTH,
+     * BASIC_AUTH, or PERSONAL_ACCESS_TOKEN. </p>
+     */
+    inline bool AuthTypeHasBeenSet() const { return m_authTypeHasBeenSet; }
 
     /**
      * <p> The type of authentication used by the credentials. Valid options are OAUTH,

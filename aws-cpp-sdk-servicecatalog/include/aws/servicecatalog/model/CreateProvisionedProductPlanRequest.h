@@ -61,6 +61,13 @@ namespace Model
      * </li> <li> <p> <code>jp</code> - Japanese</p> </li> <li> <p> <code>zh</code> -
      * Chinese</p> </li> </ul>
      */
+    inline bool AcceptLanguageHasBeenSet() const { return m_acceptLanguageHasBeenSet; }
+
+    /**
+     * <p>The language code.</p> <ul> <li> <p> <code>en</code> - English (default)</p>
+     * </li> <li> <p> <code>jp</code> - Japanese</p> </li> <li> <p> <code>zh</code> -
+     * Chinese</p> </li> </ul>
+     */
     inline void SetAcceptLanguage(const Aws::String& value) { m_acceptLanguageHasBeenSet = true; m_acceptLanguage = value; }
 
     /**
@@ -107,6 +114,11 @@ namespace Model
     /**
      * <p>The name of the plan.</p>
      */
+    inline bool PlanNameHasBeenSet() const { return m_planNameHasBeenSet; }
+
+    /**
+     * <p>The name of the plan.</p>
+     */
     inline void SetPlanName(const Aws::String& value) { m_planNameHasBeenSet = true; m_planName = value; }
 
     /**
@@ -143,6 +155,11 @@ namespace Model
     /**
      * <p>The plan type.</p>
      */
+    inline bool PlanTypeHasBeenSet() const { return m_planTypeHasBeenSet; }
+
+    /**
+     * <p>The plan type.</p>
+     */
     inline void SetPlanType(const ProvisionedProductPlanType& value) { m_planTypeHasBeenSet = true; m_planType = value; }
 
     /**
@@ -166,6 +183,12 @@ namespace Model
      * stack-related events.</p>
      */
     inline const Aws::Vector<Aws::String>& GetNotificationArns() const{ return m_notificationArns; }
+
+    /**
+     * <p>Passed to CloudFormation. The SNS topic ARNs to which to publish
+     * stack-related events.</p>
+     */
+    inline bool NotificationArnsHasBeenSet() const { return m_notificationArnsHasBeenSet; }
 
     /**
      * <p>Passed to CloudFormation. The SNS topic ARNs to which to publish
@@ -222,6 +245,13 @@ namespace Model
      * a default path, and required if the product has more than one path. To list the
      * paths for a product, use <a>ListLaunchPaths</a>.</p>
      */
+    inline bool PathIdHasBeenSet() const { return m_pathIdHasBeenSet; }
+
+    /**
+     * <p>The path identifier of the product. This value is optional if the product has
+     * a default path, and required if the product has more than one path. To list the
+     * paths for a product, use <a>ListLaunchPaths</a>.</p>
+     */
     inline void SetPathId(const Aws::String& value) { m_pathIdHasBeenSet = true; m_pathId = value; }
 
     /**
@@ -268,6 +298,11 @@ namespace Model
     /**
      * <p>The product identifier.</p>
      */
+    inline bool ProductIdHasBeenSet() const { return m_productIdHasBeenSet; }
+
+    /**
+     * <p>The product identifier.</p>
+     */
     inline void SetProductId(const Aws::String& value) { m_productIdHasBeenSet = true; m_productId = value; }
 
     /**
@@ -301,6 +336,12 @@ namespace Model
      * for the AWS account and cannot be updated after the product is provisioned.</p>
      */
     inline const Aws::String& GetProvisionedProductName() const{ return m_provisionedProductName; }
+
+    /**
+     * <p>A user-friendly name for the provisioned product. This value must be unique
+     * for the AWS account and cannot be updated after the product is provisioned.</p>
+     */
+    inline bool ProvisionedProductNameHasBeenSet() const { return m_provisionedProductNameHasBeenSet; }
 
     /**
      * <p>A user-friendly name for the provisioned product. This value must be unique
@@ -347,6 +388,11 @@ namespace Model
     /**
      * <p>The identifier of the provisioning artifact.</p>
      */
+    inline bool ProvisioningArtifactIdHasBeenSet() const { return m_provisioningArtifactIdHasBeenSet; }
+
+    /**
+     * <p>The identifier of the provisioning artifact.</p>
+     */
     inline void SetProvisioningArtifactId(const Aws::String& value) { m_provisioningArtifactIdHasBeenSet = true; m_provisioningArtifactId = value; }
 
     /**
@@ -380,6 +426,12 @@ namespace Model
      * the product.</p>
      */
     inline const Aws::Vector<UpdateProvisioningParameter>& GetProvisioningParameters() const{ return m_provisioningParameters; }
+
+    /**
+     * <p>Parameters specified by the administrator that are required for provisioning
+     * the product.</p>
+     */
+    inline bool ProvisioningParametersHasBeenSet() const { return m_provisioningParametersHasBeenSet; }
 
     /**
      * <p>Parameters specified by the administrator that are required for provisioning
@@ -430,6 +482,13 @@ namespace Model
      * requests differ only by the idempotency token, the same response is returned for
      * each repeated request.</p>
      */
+    inline bool IdempotencyTokenHasBeenSet() const { return m_idempotencyTokenHasBeenSet; }
+
+    /**
+     * <p>A unique identifier that you provide to ensure idempotency. If multiple
+     * requests differ only by the idempotency token, the same response is returned for
+     * each repeated request.</p>
+     */
     inline void SetIdempotencyToken(const Aws::String& value) { m_idempotencyTokenHasBeenSet = true; m_idempotencyToken = value; }
 
     /**
@@ -472,6 +531,11 @@ namespace Model
      * <p>One or more tags.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>One or more tags.</p>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
      * <p>One or more tags.</p>

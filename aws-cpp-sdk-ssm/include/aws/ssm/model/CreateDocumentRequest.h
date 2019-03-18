@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>A valid JSON or YAML string.</p>
      */
+    inline bool ContentHasBeenSet() const { return m_contentHasBeenSet; }
+
+    /**
+     * <p>A valid JSON or YAML string.</p>
+     */
     inline void SetContent(const Aws::String& value) { m_contentHasBeenSet = true; m_content = value; }
 
     /**
@@ -90,6 +95,12 @@ namespace Model
      * document.</p>
      */
     inline const Aws::Vector<AttachmentsSource>& GetAttachments() const{ return m_attachments; }
+
+    /**
+     * <p>A list of key and value pairs that describe attachments to a version of a
+     * document.</p>
+     */
+    inline bool AttachmentsHasBeenSet() const { return m_attachmentsHasBeenSet; }
 
     /**
      * <p>A list of key and value pairs that describe attachments to a version of a
@@ -136,6 +147,15 @@ namespace Model
      * </important>
      */
     inline const Aws::String& GetName() const{ return m_name; }
+
+    /**
+     * <p>A name for the Systems Manager document.</p> <important> <p>Do not use the
+     * following to begin the names of documents you create. They are reserved by AWS
+     * for use as document prefixes:</p> <ul> <li> <p> <code>aws</code> </p> </li> <li>
+     * <p> <code>amazon</code> </p> </li> <li> <p> <code>amzn</code> </p> </li> </ul>
+     * </important>
+     */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
      * <p>A name for the Systems Manager document.</p> <important> <p>Do not use the
@@ -204,6 +224,13 @@ namespace Model
      * with the document. For example, "Release 12, Update 6". This value is unique
      * across all versions of a document, and cannot be changed.</p>
      */
+    inline bool VersionNameHasBeenSet() const { return m_versionNameHasBeenSet; }
+
+    /**
+     * <p>An optional field specifying the version of the artifact you are creating
+     * with the document. For example, "Release 12, Update 6". This value is unique
+     * across all versions of a document, and cannot be changed.</p>
+     */
     inline void SetVersionName(const Aws::String& value) { m_versionNameHasBeenSet = true; m_versionName = value; }
 
     /**
@@ -254,6 +281,13 @@ namespace Model
      * <code>Command</code>, <code>Policy</code>, <code>Automation</code>,
      * <code>Session</code>, and <code>Package</code>.</p>
      */
+    inline bool DocumentTypeHasBeenSet() const { return m_documentTypeHasBeenSet; }
+
+    /**
+     * <p>The type of document to create. Valid document types include:
+     * <code>Command</code>, <code>Policy</code>, <code>Automation</code>,
+     * <code>Session</code>, and <code>Package</code>.</p>
+     */
     inline void SetDocumentType(const DocumentType& value) { m_documentTypeHasBeenSet = true; m_documentType = value; }
 
     /**
@@ -283,6 +317,12 @@ namespace Model
      * either JSON or YAML. JSON is the default format.</p>
      */
     inline const DocumentFormat& GetDocumentFormat() const{ return m_documentFormat; }
+
+    /**
+     * <p>Specify the document format for the request. The document format can be
+     * either JSON or YAML. JSON is the default format.</p>
+     */
+    inline bool DocumentFormatHasBeenSet() const { return m_documentFormatHasBeenSet; }
 
     /**
      * <p>Specify the document format for the request. The document format can be
@@ -319,6 +359,17 @@ namespace Model
      * Resource Types Reference</a> in the <i>AWS CloudFormation User Guide</i>. </p>
      */
     inline const Aws::String& GetTargetType() const{ return m_targetType; }
+
+    /**
+     * <p>Specify a target type to define the kinds of resources the document can run
+     * on. For example, to run a document on EC2 instances, specify the following
+     * value: /AWS::EC2::Instance. If you specify a value of '/' the document can run
+     * on all types of resources. If you don't specify a value, the document can't run
+     * on any resources. For a list of valid resource types, see <a
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
+     * Resource Types Reference</a> in the <i>AWS CloudFormation User Guide</i>. </p>
+     */
+    inline bool TargetTypeHasBeenSet() const { return m_targetTypeHasBeenSet; }
 
     /**
      * <p>Specify a target type to define the kinds of resources the document can run
@@ -399,6 +450,19 @@ namespace Model
      * </note>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>Optional metadata that you assign to a resource. Tags enable you to
+     * categorize a resource in different ways, such as by purpose, owner, or
+     * environment. For example, you might want to tag an SSM document to identify the
+     * types of targets or the environment where it will run. In this case, you could
+     * specify the following key name/value pairs:</p> <ul> <li> <p>
+     * <code>Key=OS,Value=Windows</code> </p> </li> <li> <p>
+     * <code>Key=Environment,Value=Production</code> </p> </li> </ul> <note> <p>To add
+     * tags to an existing SSM document, use the <a>AddTagsToResource</a> action.</p>
+     * </note>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
      * <p>Optional metadata that you assign to a resource. Tags enable you to

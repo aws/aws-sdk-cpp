@@ -121,6 +121,11 @@ void MediaConnectClient::OverrideEndpoint(const Aws::String& endpoint)
 }
 AddFlowOutputsOutcome MediaConnectClient::AddFlowOutputs(const AddFlowOutputsRequest& request) const
 {
+  if (!request.FlowArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("AddFlowOutputs", "Required field: FlowArn, is not set");
+    return AddFlowOutputsOutcome(Aws::Client::AWSError<MediaConnectErrors>(MediaConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [FlowArn]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/v1/flows/";
@@ -193,6 +198,11 @@ void MediaConnectClient::CreateFlowAsyncHelper(const CreateFlowRequest& request,
 
 DeleteFlowOutcome MediaConnectClient::DeleteFlow(const DeleteFlowRequest& request) const
 {
+  if (!request.FlowArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteFlow", "Required field: FlowArn, is not set");
+    return DeleteFlowOutcome(Aws::Client::AWSError<MediaConnectErrors>(MediaConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [FlowArn]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/v1/flows/";
@@ -229,6 +239,11 @@ void MediaConnectClient::DeleteFlowAsyncHelper(const DeleteFlowRequest& request,
 
 DescribeFlowOutcome MediaConnectClient::DescribeFlow(const DescribeFlowRequest& request) const
 {
+  if (!request.FlowArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DescribeFlow", "Required field: FlowArn, is not set");
+    return DescribeFlowOutcome(Aws::Client::AWSError<MediaConnectErrors>(MediaConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [FlowArn]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/v1/flows/";
@@ -265,6 +280,11 @@ void MediaConnectClient::DescribeFlowAsyncHelper(const DescribeFlowRequest& requ
 
 GrantFlowEntitlementsOutcome MediaConnectClient::GrantFlowEntitlements(const GrantFlowEntitlementsRequest& request) const
 {
+  if (!request.FlowArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GrantFlowEntitlements", "Required field: FlowArn, is not set");
+    return GrantFlowEntitlementsOutcome(Aws::Client::AWSError<MediaConnectErrors>(MediaConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [FlowArn]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/v1/flows/";
@@ -372,6 +392,11 @@ void MediaConnectClient::ListFlowsAsyncHelper(const ListFlowsRequest& request, c
 
 ListTagsForResourceOutcome MediaConnectClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
 {
+  if (!request.ResourceArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListTagsForResource", "Required field: ResourceArn, is not set");
+    return ListTagsForResourceOutcome(Aws::Client::AWSError<MediaConnectErrors>(MediaConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceArn]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/tags/";
@@ -408,6 +433,16 @@ void MediaConnectClient::ListTagsForResourceAsyncHelper(const ListTagsForResourc
 
 RemoveFlowOutputOutcome MediaConnectClient::RemoveFlowOutput(const RemoveFlowOutputRequest& request) const
 {
+  if (!request.FlowArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("RemoveFlowOutput", "Required field: FlowArn, is not set");
+    return RemoveFlowOutputOutcome(Aws::Client::AWSError<MediaConnectErrors>(MediaConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [FlowArn]", false));
+  }
+  if (!request.OutputArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("RemoveFlowOutput", "Required field: OutputArn, is not set");
+    return RemoveFlowOutputOutcome(Aws::Client::AWSError<MediaConnectErrors>(MediaConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [OutputArn]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/v1/flows/";
@@ -446,6 +481,16 @@ void MediaConnectClient::RemoveFlowOutputAsyncHelper(const RemoveFlowOutputReque
 
 RevokeFlowEntitlementOutcome MediaConnectClient::RevokeFlowEntitlement(const RevokeFlowEntitlementRequest& request) const
 {
+  if (!request.EntitlementArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("RevokeFlowEntitlement", "Required field: EntitlementArn, is not set");
+    return RevokeFlowEntitlementOutcome(Aws::Client::AWSError<MediaConnectErrors>(MediaConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [EntitlementArn]", false));
+  }
+  if (!request.FlowArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("RevokeFlowEntitlement", "Required field: FlowArn, is not set");
+    return RevokeFlowEntitlementOutcome(Aws::Client::AWSError<MediaConnectErrors>(MediaConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [FlowArn]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/v1/flows/";
@@ -484,6 +529,11 @@ void MediaConnectClient::RevokeFlowEntitlementAsyncHelper(const RevokeFlowEntitl
 
 StartFlowOutcome MediaConnectClient::StartFlow(const StartFlowRequest& request) const
 {
+  if (!request.FlowArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("StartFlow", "Required field: FlowArn, is not set");
+    return StartFlowOutcome(Aws::Client::AWSError<MediaConnectErrors>(MediaConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [FlowArn]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/v1/flows/start/";
@@ -520,6 +570,11 @@ void MediaConnectClient::StartFlowAsyncHelper(const StartFlowRequest& request, c
 
 StopFlowOutcome MediaConnectClient::StopFlow(const StopFlowRequest& request) const
 {
+  if (!request.FlowArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("StopFlow", "Required field: FlowArn, is not set");
+    return StopFlowOutcome(Aws::Client::AWSError<MediaConnectErrors>(MediaConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [FlowArn]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/v1/flows/stop/";
@@ -556,6 +611,11 @@ void MediaConnectClient::StopFlowAsyncHelper(const StopFlowRequest& request, con
 
 TagResourceOutcome MediaConnectClient::TagResource(const TagResourceRequest& request) const
 {
+  if (!request.ResourceArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("TagResource", "Required field: ResourceArn, is not set");
+    return TagResourceOutcome(Aws::Client::AWSError<MediaConnectErrors>(MediaConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceArn]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/tags/";
@@ -592,6 +652,16 @@ void MediaConnectClient::TagResourceAsyncHelper(const TagResourceRequest& reques
 
 UntagResourceOutcome MediaConnectClient::UntagResource(const UntagResourceRequest& request) const
 {
+  if (!request.ResourceArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UntagResource", "Required field: ResourceArn, is not set");
+    return UntagResourceOutcome(Aws::Client::AWSError<MediaConnectErrors>(MediaConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceArn]", false));
+  }
+  if (!request.TagKeysHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UntagResource", "Required field: TagKeys, is not set");
+    return UntagResourceOutcome(Aws::Client::AWSError<MediaConnectErrors>(MediaConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [TagKeys]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/tags/";
@@ -628,6 +698,16 @@ void MediaConnectClient::UntagResourceAsyncHelper(const UntagResourceRequest& re
 
 UpdateFlowEntitlementOutcome MediaConnectClient::UpdateFlowEntitlement(const UpdateFlowEntitlementRequest& request) const
 {
+  if (!request.EntitlementArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateFlowEntitlement", "Required field: EntitlementArn, is not set");
+    return UpdateFlowEntitlementOutcome(Aws::Client::AWSError<MediaConnectErrors>(MediaConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [EntitlementArn]", false));
+  }
+  if (!request.FlowArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateFlowEntitlement", "Required field: FlowArn, is not set");
+    return UpdateFlowEntitlementOutcome(Aws::Client::AWSError<MediaConnectErrors>(MediaConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [FlowArn]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/v1/flows/";
@@ -666,6 +746,16 @@ void MediaConnectClient::UpdateFlowEntitlementAsyncHelper(const UpdateFlowEntitl
 
 UpdateFlowOutputOutcome MediaConnectClient::UpdateFlowOutput(const UpdateFlowOutputRequest& request) const
 {
+  if (!request.FlowArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateFlowOutput", "Required field: FlowArn, is not set");
+    return UpdateFlowOutputOutcome(Aws::Client::AWSError<MediaConnectErrors>(MediaConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [FlowArn]", false));
+  }
+  if (!request.OutputArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateFlowOutput", "Required field: OutputArn, is not set");
+    return UpdateFlowOutputOutcome(Aws::Client::AWSError<MediaConnectErrors>(MediaConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [OutputArn]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/v1/flows/";
@@ -704,6 +794,16 @@ void MediaConnectClient::UpdateFlowOutputAsyncHelper(const UpdateFlowOutputReque
 
 UpdateFlowSourceOutcome MediaConnectClient::UpdateFlowSource(const UpdateFlowSourceRequest& request) const
 {
+  if (!request.FlowArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateFlowSource", "Required field: FlowArn, is not set");
+    return UpdateFlowSourceOutcome(Aws::Client::AWSError<MediaConnectErrors>(MediaConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [FlowArn]", false));
+  }
+  if (!request.SourceArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateFlowSource", "Required field: SourceArn, is not set");
+    return UpdateFlowSourceOutcome(Aws::Client::AWSError<MediaConnectErrors>(MediaConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [SourceArn]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/v1/flows/";

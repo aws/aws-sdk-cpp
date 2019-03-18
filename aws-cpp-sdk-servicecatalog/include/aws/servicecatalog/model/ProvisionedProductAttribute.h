@@ -59,6 +59,11 @@ namespace Model
     /**
      * <p>The user-friendly name of the provisioned product.</p>
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>The user-friendly name of the provisioned product.</p>
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
@@ -91,6 +96,11 @@ namespace Model
      * <p>The ARN of the provisioned product.</p>
      */
     inline const Aws::String& GetArn() const{ return m_arn; }
+
+    /**
+     * <p>The ARN of the provisioned product.</p>
+     */
+    inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
 
     /**
      * <p>The ARN of the provisioned product.</p>
@@ -133,6 +143,12 @@ namespace Model
      * <p>The type of provisioned product. The supported values are
      * <code>CFN_STACK</code> and <code>CFN_STACKSET</code>.</p>
      */
+    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
+
+    /**
+     * <p>The type of provisioned product. The supported values are
+     * <code>CFN_STACK</code> and <code>CFN_STACKSET</code>.</p>
+     */
     inline void SetType(const Aws::String& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
@@ -170,6 +186,11 @@ namespace Model
      * <p>The identifier of the provisioned product.</p>
      */
     inline const Aws::String& GetId() const{ return m_id; }
+
+    /**
+     * <p>The identifier of the provisioned product.</p>
+     */
+    inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
 
     /**
      * <p>The identifier of the provisioned product.</p>
@@ -222,6 +243,27 @@ namespace Model
      * </li> </ul>
      */
     inline const ProvisionedProductStatus& GetStatus() const{ return m_status; }
+
+    /**
+     * <p>The current status of the provisioned product.</p> <ul> <li> <p>
+     * <code>AVAILABLE</code> - Stable state, ready to perform any operation. The most
+     * recent operation succeeded and completed.</p> </li> <li> <p>
+     * <code>UNDER_CHANGE</code> - Transitive state. Operations performed might not
+     * have valid results. Wait for an <code>AVAILABLE</code> status before performing
+     * operations.</p> </li> <li> <p> <code>TAINTED</code> - Stable state, ready to
+     * perform any operation. The stack has completed the requested operation but is
+     * not exactly what was requested. For example, a request to update to a new
+     * version failed and the stack rolled back to the current version.</p> </li> <li>
+     * <p> <code>ERROR</code> - An unexpected error occurred. The provisioned product
+     * exists but the stack is not running. For example, CloudFormation received a
+     * parameter value that was not valid and could not launch the stack.</p> </li>
+     * <li> <p> <code>PLAN_IN_PROGRESS</code> - Transitive state. The plan operations
+     * were performed to provision a new product, but resources have not yet been
+     * created. After reviewing the list of resources to be created, execute the plan.
+     * Wait for an <code>AVAILABLE</code> status before performing operations.</p>
+     * </li> </ul>
+     */
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
     /**
      * <p>The current status of the provisioned product.</p> <ul> <li> <p>
@@ -316,6 +358,11 @@ namespace Model
     /**
      * <p>The current status message of the provisioned product.</p>
      */
+    inline bool StatusMessageHasBeenSet() const { return m_statusMessageHasBeenSet; }
+
+    /**
+     * <p>The current status message of the provisioned product.</p>
+     */
     inline void SetStatusMessage(const Aws::String& value) { m_statusMessageHasBeenSet = true; m_statusMessage = value; }
 
     /**
@@ -352,6 +399,11 @@ namespace Model
     /**
      * <p>The UTC time stamp of the creation time.</p>
      */
+    inline bool CreatedTimeHasBeenSet() const { return m_createdTimeHasBeenSet; }
+
+    /**
+     * <p>The UTC time stamp of the creation time.</p>
+     */
     inline void SetCreatedTime(const Aws::Utils::DateTime& value) { m_createdTimeHasBeenSet = true; m_createdTime = value; }
 
     /**
@@ -376,6 +428,13 @@ namespace Model
      * each repeated request.</p>
      */
     inline const Aws::String& GetIdempotencyToken() const{ return m_idempotencyToken; }
+
+    /**
+     * <p>A unique identifier that you provide to ensure idempotency. If multiple
+     * requests differ only by the idempotency token, the same response is returned for
+     * each repeated request.</p>
+     */
+    inline bool IdempotencyTokenHasBeenSet() const { return m_idempotencyTokenHasBeenSet; }
 
     /**
      * <p>A unique identifier that you provide to ensure idempotency. If multiple
@@ -430,6 +489,12 @@ namespace Model
      * <p>The record identifier of the last request performed on this provisioned
      * product.</p>
      */
+    inline bool LastRecordIdHasBeenSet() const { return m_lastRecordIdHasBeenSet; }
+
+    /**
+     * <p>The record identifier of the last request performed on this provisioned
+     * product.</p>
+     */
     inline void SetLastRecordId(const Aws::String& value) { m_lastRecordIdHasBeenSet = true; m_lastRecordId = value; }
 
     /**
@@ -471,6 +536,11 @@ namespace Model
     /**
      * <p>One or more tags.</p>
      */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
+
+    /**
+     * <p>One or more tags.</p>
+     */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     /**
@@ -504,6 +574,12 @@ namespace Model
      * bucket name.</p>
      */
     inline const Aws::String& GetPhysicalId() const{ return m_physicalId; }
+
+    /**
+     * <p>The assigned identifier for the resource, such as an EC2 instance ID or an S3
+     * bucket name.</p>
+     */
+    inline bool PhysicalIdHasBeenSet() const { return m_physicalIdHasBeenSet; }
 
     /**
      * <p>The assigned identifier for the resource, such as an EC2 instance ID or an S3
@@ -550,6 +626,11 @@ namespace Model
     /**
      * <p>The product identifier.</p>
      */
+    inline bool ProductIdHasBeenSet() const { return m_productIdHasBeenSet; }
+
+    /**
+     * <p>The product identifier.</p>
+     */
     inline void SetProductId(const Aws::String& value) { m_productIdHasBeenSet = true; m_productId = value; }
 
     /**
@@ -582,6 +663,11 @@ namespace Model
      * <p>The identifier of the provisioning artifact.</p>
      */
     inline const Aws::String& GetProvisioningArtifactId() const{ return m_provisioningArtifactId; }
+
+    /**
+     * <p>The identifier of the provisioning artifact.</p>
+     */
+    inline bool ProvisioningArtifactIdHasBeenSet() const { return m_provisioningArtifactIdHasBeenSet; }
 
     /**
      * <p>The identifier of the provisioning artifact.</p>
@@ -622,6 +708,11 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the IAM user.</p>
      */
+    inline bool UserArnHasBeenSet() const { return m_userArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the IAM user.</p>
+     */
     inline void SetUserArn(const Aws::String& value) { m_userArnHasBeenSet = true; m_userArn = value; }
 
     /**
@@ -655,6 +746,12 @@ namespace Model
      * ID.</p>
      */
     inline const Aws::String& GetUserArnSession() const{ return m_userArnSession; }
+
+    /**
+     * <p>The ARN of the IAM user in the session. This ARN might contain a session
+     * ID.</p>
+     */
+    inline bool UserArnSessionHasBeenSet() const { return m_userArnSessionHasBeenSet; }
 
     /**
      * <p>The ARN of the IAM user in the session. This ARN might contain a session

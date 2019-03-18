@@ -67,6 +67,13 @@ namespace Model
      * For example, you can purchase this reservation for an entire organization in AWS
      * Organizations.</p>
      */
+    inline bool AccountScopeHasBeenSet() const { return m_accountScopeHasBeenSet; }
+
+    /**
+     * <p>The account scope that AWS recommends that you purchase this instance for.
+     * For example, you can purchase this reservation for an entire organization in AWS
+     * Organizations.</p>
+     */
     inline void SetAccountScope(const AccountScope& value) { m_accountScopeHasBeenSet = true; m_accountScope = value; }
 
     /**
@@ -101,6 +108,12 @@ namespace Model
      * <p>How many days of previous usage that AWS considers when making this
      * recommendation.</p>
      */
+    inline bool LookbackPeriodInDaysHasBeenSet() const { return m_lookbackPeriodInDaysHasBeenSet; }
+
+    /**
+     * <p>How many days of previous usage that AWS considers when making this
+     * recommendation.</p>
+     */
     inline void SetLookbackPeriodInDays(const LookbackPeriodInDays& value) { m_lookbackPeriodInDaysHasBeenSet = true; m_lookbackPeriodInDays = value; }
 
     /**
@@ -130,6 +143,11 @@ namespace Model
     /**
      * <p>The term of the reservation that you want recommendations for, in years.</p>
      */
+    inline bool TermInYearsHasBeenSet() const { return m_termInYearsHasBeenSet; }
+
+    /**
+     * <p>The term of the reservation that you want recommendations for, in years.</p>
+     */
     inline void SetTermInYears(const TermInYears& value) { m_termInYearsHasBeenSet = true; m_termInYears = value; }
 
     /**
@@ -153,6 +171,12 @@ namespace Model
      * or <code>NoUpfront</code>.</p>
      */
     inline const PaymentOption& GetPaymentOption() const{ return m_paymentOption; }
+
+    /**
+     * <p>The payment option for the reservation. For example, <code>AllUpfront</code>
+     * or <code>NoUpfront</code>.</p>
+     */
+    inline bool PaymentOptionHasBeenSet() const { return m_paymentOptionHasBeenSet; }
 
     /**
      * <p>The payment option for the reservation. For example, <code>AllUpfront</code>
@@ -189,6 +213,12 @@ namespace Model
      * <p>Hardware specifications for the service that you want recommendations
      * for.</p>
      */
+    inline bool ServiceSpecificationHasBeenSet() const { return m_serviceSpecificationHasBeenSet; }
+
+    /**
+     * <p>Hardware specifications for the service that you want recommendations
+     * for.</p>
+     */
     inline void SetServiceSpecification(const ServiceSpecification& value) { m_serviceSpecificationHasBeenSet = true; m_serviceSpecification = value; }
 
     /**
@@ -214,6 +244,11 @@ namespace Model
      * <p>Details about the recommended purchases.</p>
      */
     inline const Aws::Vector<ReservationPurchaseRecommendationDetail>& GetRecommendationDetails() const{ return m_recommendationDetails; }
+
+    /**
+     * <p>Details about the recommended purchases.</p>
+     */
+    inline bool RecommendationDetailsHasBeenSet() const { return m_recommendationDetailsHasBeenSet; }
 
     /**
      * <p>Details about the recommended purchases.</p>
@@ -250,6 +285,11 @@ namespace Model
      * <p>A summary about the recommended purchase.</p>
      */
     inline const ReservationPurchaseRecommendationSummary& GetRecommendationSummary() const{ return m_recommendationSummary; }
+
+    /**
+     * <p>A summary about the recommended purchase.</p>
+     */
+    inline bool RecommendationSummaryHasBeenSet() const { return m_recommendationSummaryHasBeenSet; }
 
     /**
      * <p>A summary about the recommended purchase.</p>

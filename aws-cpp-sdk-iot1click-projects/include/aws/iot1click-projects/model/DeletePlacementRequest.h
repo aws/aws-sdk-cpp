@@ -50,6 +50,11 @@ namespace Model
     /**
      * <p>The name of the empty placement to delete.</p>
      */
+    inline bool PlacementNameHasBeenSet() const { return m_placementNameHasBeenSet; }
+
+    /**
+     * <p>The name of the empty placement to delete.</p>
+     */
     inline void SetPlacementName(const Aws::String& value) { m_placementNameHasBeenSet = true; m_placementName = value; }
 
     /**
@@ -82,6 +87,11 @@ namespace Model
      * <p>The project containing the empty placement to delete.</p>
      */
     inline const Aws::String& GetProjectName() const{ return m_projectName; }
+
+    /**
+     * <p>The project containing the empty placement to delete.</p>
+     */
+    inline bool ProjectNameHasBeenSet() const { return m_projectNameHasBeenSet; }
 
     /**
      * <p>The project containing the empty placement to delete.</p>

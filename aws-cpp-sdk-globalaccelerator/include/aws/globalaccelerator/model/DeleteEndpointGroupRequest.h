@@ -52,6 +52,11 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the endpoint group to delete.</p>
      */
+    inline bool EndpointGroupArnHasBeenSet() const { return m_endpointGroupArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the endpoint group to delete.</p>
+     */
     inline void SetEndpointGroupArn(const Aws::String& value) { m_endpointGroupArnHasBeenSet = true; m_endpointGroupArn = value; }
 
     /**

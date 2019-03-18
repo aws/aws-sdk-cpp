@@ -53,6 +53,11 @@ namespace Model
     /**
      * <p>The name of your instance profile.</p>
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>The name of your instance profile.</p>
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
@@ -85,6 +90,11 @@ namespace Model
      * <p>The description of your instance profile.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
+
+    /**
+     * <p>The description of your instance profile.</p>
+     */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
 
     /**
      * <p>The description of your instance profile.</p>
@@ -127,6 +137,12 @@ namespace Model
      * <p>When set to <code>true</code>, Device Farm will remove app packages after a
      * test run. The default value is <code>false</code> for private devices.</p>
      */
+    inline bool PackageCleanupHasBeenSet() const { return m_packageCleanupHasBeenSet; }
+
+    /**
+     * <p>When set to <code>true</code>, Device Farm will remove app packages after a
+     * test run. The default value is <code>false</code> for private devices.</p>
+     */
     inline void SetPackageCleanup(bool value) { m_packageCleanupHasBeenSet = true; m_packageCleanup = value; }
 
     /**
@@ -143,6 +159,14 @@ namespace Model
      * <code>true</code>.</p>
      */
     inline const Aws::Vector<Aws::String>& GetExcludeAppPackagesFromCleanup() const{ return m_excludeAppPackagesFromCleanup; }
+
+    /**
+     * <p>An array of strings specifying the list of app packages that should not be
+     * cleaned up from the device after a test run is over.</p> <p>The list of packages
+     * is only considered if you set <code>packageCleanup</code> to
+     * <code>true</code>.</p>
+     */
+    inline bool ExcludeAppPackagesFromCleanupHasBeenSet() const { return m_excludeAppPackagesFromCleanupHasBeenSet; }
 
     /**
      * <p>An array of strings specifying the list of app packages that should not be
@@ -206,6 +230,12 @@ namespace Model
      * test run. The default value is <code>true</code>.</p>
      */
     inline bool GetRebootAfterUse() const{ return m_rebootAfterUse; }
+
+    /**
+     * <p>When set to <code>true</code>, Device Farm will reboot the instance after a
+     * test run. The default value is <code>true</code>.</p>
+     */
+    inline bool RebootAfterUseHasBeenSet() const { return m_rebootAfterUseHasBeenSet; }
 
     /**
      * <p>When set to <code>true</code>, Device Farm will reboot the instance after a

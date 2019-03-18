@@ -60,6 +60,12 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the Amazon Pinpoint project that you want
      * to send email events to.</p>
      */
+    inline bool ApplicationArnHasBeenSet() const { return m_applicationArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the Amazon Pinpoint project that you want
+     * to send email events to.</p>
+     */
     inline void SetApplicationArn(const Aws::String& value) { m_applicationArnHasBeenSet = true; m_applicationArn = value; }
 
     /**

@@ -63,6 +63,14 @@ namespace Model
      * AWS Region where they are created. They consist of lowercase letters, numbers,
      * and hyphens.</p>
      */
+    inline bool BackupVaultNameHasBeenSet() const { return m_backupVaultNameHasBeenSet; }
+
+    /**
+     * <p>The name of a logical container where backups are stored. Backup vaults are
+     * identified by names that are unique to the account used to create them and the
+     * AWS Region where they are created. They consist of lowercase letters, numbers,
+     * and hyphens.</p>
+     */
     inline void SetBackupVaultName(const Aws::String& value) { m_backupVaultNameHasBeenSet = true; m_backupVaultName = value; }
 
     /**
@@ -113,6 +121,14 @@ namespace Model
      * the location pointed to by the next token.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
+    /**
+     * <p>The next item following a partial list of returned items. For example, if a
+     * request is made to return <code>maxResults</code> number of items,
+     * <code>NextToken</code> allows you to return more items in your list starting at
+     * the location pointed to by the next token.</p>
+     */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
      * <p>The next item following a partial list of returned items. For example, if a
@@ -171,6 +187,11 @@ namespace Model
     /**
      * <p>The maximum number of items to be returned.</p>
      */
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
+
+    /**
+     * <p>The maximum number of items to be returned.</p>
+     */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
@@ -184,6 +205,12 @@ namespace Model
      * Resource Name (ARN).</p>
      */
     inline const Aws::String& GetByResourceArn() const{ return m_byResourceArn; }
+
+    /**
+     * <p>Returns only recovery points that match the specified resource Amazon
+     * Resource Name (ARN).</p>
+     */
+    inline bool ByResourceArnHasBeenSet() const { return m_byResourceArnHasBeenSet; }
 
     /**
      * <p>Returns only recovery points that match the specified resource Amazon
@@ -230,6 +257,11 @@ namespace Model
     /**
      * <p>Returns only recovery points that match the specified resource type.</p>
      */
+    inline bool ByResourceTypeHasBeenSet() const { return m_byResourceTypeHasBeenSet; }
+
+    /**
+     * <p>Returns only recovery points that match the specified resource type.</p>
+     */
     inline void SetByResourceType(const Aws::String& value) { m_byResourceTypeHasBeenSet = true; m_byResourceType = value; }
 
     /**
@@ -262,6 +294,11 @@ namespace Model
      * <p>Returns only recovery points that match the specified backup plan ID.</p>
      */
     inline const Aws::String& GetByBackupPlanId() const{ return m_byBackupPlanId; }
+
+    /**
+     * <p>Returns only recovery points that match the specified backup plan ID.</p>
+     */
+    inline bool ByBackupPlanIdHasBeenSet() const { return m_byBackupPlanIdHasBeenSet; }
 
     /**
      * <p>Returns only recovery points that match the specified backup plan ID.</p>
@@ -304,6 +341,12 @@ namespace Model
      * <p>Returns only recovery points that were created before the specified
      * timestamp.</p>
      */
+    inline bool ByCreatedBeforeHasBeenSet() const { return m_byCreatedBeforeHasBeenSet; }
+
+    /**
+     * <p>Returns only recovery points that were created before the specified
+     * timestamp.</p>
+     */
     inline void SetByCreatedBefore(const Aws::Utils::DateTime& value) { m_byCreatedBeforeHasBeenSet = true; m_byCreatedBefore = value; }
 
     /**
@@ -330,6 +373,12 @@ namespace Model
      * timestamp.</p>
      */
     inline const Aws::Utils::DateTime& GetByCreatedAfter() const{ return m_byCreatedAfter; }
+
+    /**
+     * <p>Returns only recovery points that were created after the specified
+     * timestamp.</p>
+     */
+    inline bool ByCreatedAfterHasBeenSet() const { return m_byCreatedAfterHasBeenSet; }
 
     /**
      * <p>Returns only recovery points that were created after the specified

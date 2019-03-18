@@ -52,6 +52,11 @@ namespace Model
     /**
      * <p>The name of the database that you are deleting.</p>
      */
+    inline bool RelationalDatabaseNameHasBeenSet() const { return m_relationalDatabaseNameHasBeenSet; }
+
+    /**
+     * <p>The name of the database that you are deleting.</p>
+     */
     inline void SetRelationalDatabaseName(const Aws::String& value) { m_relationalDatabaseNameHasBeenSet = true; m_relationalDatabaseName = value; }
 
     /**
@@ -98,6 +103,16 @@ namespace Model
      * snapshot name</code> parameter if the <code>skip final snapshot</code> parameter
      * is <code>false</code>.</p> <p>Default: <code>false</code> </p>
      */
+    inline bool SkipFinalSnapshotHasBeenSet() const { return m_skipFinalSnapshotHasBeenSet; }
+
+    /**
+     * <p>Determines whether a final database snapshot is created before your database
+     * is deleted. If <code>true</code> is specified, no database snapshot is created.
+     * If <code>false</code> is specified, a database snapshot is created before your
+     * database is deleted.</p> <p>You must specify the <code>final relational database
+     * snapshot name</code> parameter if the <code>skip final snapshot</code> parameter
+     * is <code>false</code>.</p> <p>Default: <code>false</code> </p>
+     */
     inline void SetSkipFinalSnapshot(bool value) { m_skipFinalSnapshotHasBeenSet = true; m_skipFinalSnapshot = value; }
 
     /**
@@ -121,6 +136,17 @@ namespace Model
      * letter or number.</p> </li> </ul>
      */
     inline const Aws::String& GetFinalRelationalDatabaseSnapshotName() const{ return m_finalRelationalDatabaseSnapshotName; }
+
+    /**
+     * <p>The name of the database snapshot created if <code>skip final snapshot</code>
+     * is <code>false</code>, which is the default value for that parameter.</p> <note>
+     * <p>Specifying this parameter and also specifying the <code>skip final
+     * snapshot</code> parameter to <code>true</code> results in an error.</p> </note>
+     * <p>Constraints:</p> <ul> <li> <p>Must contain from 2 to 255 alphanumeric
+     * characters, or hyphens.</p> </li> <li> <p>The first and last character must be a
+     * letter or number.</p> </li> </ul>
+     */
+    inline bool FinalRelationalDatabaseSnapshotNameHasBeenSet() const { return m_finalRelationalDatabaseSnapshotNameHasBeenSet; }
 
     /**
      * <p>The name of the database snapshot created if <code>skip final snapshot</code>

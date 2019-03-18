@@ -61,6 +61,11 @@ namespace Model
     /**
      * <p>The type of service.</p>
      */
+    inline bool ServiceTypeHasBeenSet() const { return m_serviceTypeHasBeenSet; }
+
+    /**
+     * <p>The type of service.</p>
+     */
     inline void SetServiceType(const Aws::Vector<ServiceTypeDetail>& value) { m_serviceTypeHasBeenSet = true; m_serviceType = value; }
 
     /**
@@ -93,6 +98,11 @@ namespace Model
      * <p>The ID of the service.</p>
      */
     inline const Aws::String& GetServiceId() const{ return m_serviceId; }
+
+    /**
+     * <p>The ID of the service.</p>
+     */
+    inline bool ServiceIdHasBeenSet() const { return m_serviceIdHasBeenSet; }
 
     /**
      * <p>The ID of the service.</p>
@@ -133,6 +143,11 @@ namespace Model
     /**
      * <p>The name of the service.</p>
      */
+    inline bool ServiceNameHasBeenSet() const { return m_serviceNameHasBeenSet; }
+
+    /**
+     * <p>The name of the service.</p>
+     */
     inline void SetServiceName(const Aws::String& value) { m_serviceNameHasBeenSet = true; m_serviceName = value; }
 
     /**
@@ -169,6 +184,11 @@ namespace Model
     /**
      * <p>The service state.</p>
      */
+    inline bool ServiceStateHasBeenSet() const { return m_serviceStateHasBeenSet; }
+
+    /**
+     * <p>The service state.</p>
+     */
     inline void SetServiceState(const ServiceState& value) { m_serviceStateHasBeenSet = true; m_serviceState = value; }
 
     /**
@@ -191,6 +211,11 @@ namespace Model
      * <p>In the Availability Zones in which the service is available.</p>
      */
     inline const Aws::Vector<Aws::String>& GetAvailabilityZones() const{ return m_availabilityZones; }
+
+    /**
+     * <p>In the Availability Zones in which the service is available.</p>
+     */
+    inline bool AvailabilityZonesHasBeenSet() const { return m_availabilityZonesHasBeenSet; }
 
     /**
      * <p>In the Availability Zones in which the service is available.</p>
@@ -238,6 +263,12 @@ namespace Model
      * <p>Indicates whether requests from other AWS accounts to create an endpoint to
      * the service must first be accepted.</p>
      */
+    inline bool AcceptanceRequiredHasBeenSet() const { return m_acceptanceRequiredHasBeenSet; }
+
+    /**
+     * <p>Indicates whether requests from other AWS accounts to create an endpoint to
+     * the service must first be accepted.</p>
+     */
     inline void SetAcceptanceRequired(bool value) { m_acceptanceRequiredHasBeenSet = true; m_acceptanceRequired = value; }
 
     /**
@@ -252,6 +283,12 @@ namespace Model
      * service.</p>
      */
     inline const Aws::Vector<Aws::String>& GetNetworkLoadBalancerArns() const{ return m_networkLoadBalancerArns; }
+
+    /**
+     * <p>The Amazon Resource Names (ARNs) of the Network Load Balancers for the
+     * service.</p>
+     */
+    inline bool NetworkLoadBalancerArnsHasBeenSet() const { return m_networkLoadBalancerArnsHasBeenSet; }
 
     /**
      * <p>The Amazon Resource Names (ARNs) of the Network Load Balancers for the
@@ -304,6 +341,11 @@ namespace Model
     /**
      * <p>The DNS names for the service.</p>
      */
+    inline bool BaseEndpointDnsNamesHasBeenSet() const { return m_baseEndpointDnsNamesHasBeenSet; }
+
+    /**
+     * <p>The DNS names for the service.</p>
+     */
     inline void SetBaseEndpointDnsNames(const Aws::Vector<Aws::String>& value) { m_baseEndpointDnsNamesHasBeenSet = true; m_baseEndpointDnsNames = value; }
 
     /**
@@ -341,6 +383,11 @@ namespace Model
      * <p>The private DNS name for the service.</p>
      */
     inline const Aws::String& GetPrivateDnsName() const{ return m_privateDnsName; }
+
+    /**
+     * <p>The private DNS name for the service.</p>
+     */
+    inline bool PrivateDnsNameHasBeenSet() const { return m_privateDnsNameHasBeenSet; }
 
     /**
      * <p>The private DNS name for the service.</p>

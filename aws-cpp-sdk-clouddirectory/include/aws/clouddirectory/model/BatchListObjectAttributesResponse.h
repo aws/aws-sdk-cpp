@@ -60,6 +60,12 @@ namespace Model
      * <p>The attributes map that is associated with the object.
      * <code>AttributeArn</code> is the key; attribute value is the value.</p>
      */
+    inline bool AttributesHasBeenSet() const { return m_attributesHasBeenSet; }
+
+    /**
+     * <p>The attributes map that is associated with the object.
+     * <code>AttributeArn</code> is the key; attribute value is the value.</p>
+     */
     inline void SetAttributes(const Aws::Vector<AttributeKeyAndValue>& value) { m_attributesHasBeenSet = true; m_attributes = value; }
 
     /**
@@ -97,6 +103,11 @@ namespace Model
      * <p>The pagination token.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
+    /**
+     * <p>The pagination token.</p>
+     */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
      * <p>The pagination token.</p>

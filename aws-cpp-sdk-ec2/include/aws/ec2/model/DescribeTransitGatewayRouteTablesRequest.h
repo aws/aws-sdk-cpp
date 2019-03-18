@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The IDs of the transit gateway route tables.</p>
      */
+    inline bool TransitGatewayRouteTableIdsHasBeenSet() const { return m_transitGatewayRouteTableIdsHasBeenSet; }
+
+    /**
+     * <p>The IDs of the transit gateway route tables.</p>
+     */
     inline void SetTransitGatewayRouteTableIds(const Aws::Vector<Aws::String>& value) { m_transitGatewayRouteTableIdsHasBeenSet = true; m_transitGatewayRouteTableIds = value; }
 
     /**
@@ -106,6 +111,24 @@ namespace Model
      * route table.</p> </li> </ul>
      */
     inline const Aws::Vector<Filter>& GetFilters() const{ return m_filters; }
+
+    /**
+     * <p>One or more filters. The possible values are:</p> <ul> <li> <p>
+     * <code>default-association-route-table</code> - Indicates whether this is the
+     * default association route table for the transit gateway (<code>true</code> |
+     * <code>false</code>).</p> </li> <li> <p>
+     * <code>default-propagation-route-table</code> - Indicates whether this is the
+     * default propagation route table for the transit gateway (<code>true</code> |
+     * <code>false</code>).</p> </li> <li> <p> <code>state</code> - The state of the
+     * attachment (<code>available</code> | <code>deleted</code> |
+     * <code>deleting</code> | <code>failed</code> | <code>modifying</code> |
+     * <code>pendingAcceptance</code> | <code>pending</code> | <code>rollingBack</code>
+     * | <code>rejected</code> | <code>rejecting</code>).</p> </li> <li> <p>
+     * <code>transit-gateway-id</code> - The ID of the transit gateway.</p> </li> <li>
+     * <p> <code>transit-gateway-route-table-id</code> - The ID of the transit gateway
+     * route table.</p> </li> </ul>
+     */
+    inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
 
     /**
      * <p>One or more filters. The possible values are:</p> <ul> <li> <p>
@@ -228,6 +251,13 @@ namespace Model
      * remaining results, make another call with the returned <code>nextToken</code>
      * value.</p>
      */
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
+
+    /**
+     * <p>The maximum number of results to return with a single call. To retrieve the
+     * remaining results, make another call with the returned <code>nextToken</code>
+     * value.</p>
+     */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
@@ -242,6 +272,11 @@ namespace Model
      * <p>The token for the next page of results.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
+    /**
+     * <p>The token for the next page of results.</p>
+     */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
      * <p>The token for the next page of results.</p>
@@ -281,6 +316,14 @@ namespace Model
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
     inline bool GetDryRun() const{ return m_dryRun; }
+
+    /**
+     * <p>Checks whether you have the required permissions for the action, without
+     * actually making the request, and provides an error response. If you have the
+     * required permissions, the error response is <code>DryRunOperation</code>.
+     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+     */
+    inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
 
     /**
      * <p>Checks whether you have the required permissions for the action, without

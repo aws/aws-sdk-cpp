@@ -54,6 +54,11 @@ namespace Model
     /**
      * <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
      */
+    inline bool RestApiIdHasBeenSet() const { return m_restApiIdHasBeenSet; }
+
+    /**
+     * <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
+     */
     inline void SetRestApiId(const Aws::String& value) { m_restApiIdHasBeenSet = true; m_restApiId = value; }
 
     /**
@@ -86,6 +91,11 @@ namespace Model
      * <p>[Required] The name of the model for which to generate a template.</p>
      */
     inline const Aws::String& GetModelName() const{ return m_modelName; }
+
+    /**
+     * <p>[Required] The name of the model for which to generate a template.</p>
+     */
+    inline bool ModelNameHasBeenSet() const { return m_modelNameHasBeenSet; }
 
     /**
      * <p>[Required] The name of the model for which to generate a template.</p>

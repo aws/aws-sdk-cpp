@@ -58,6 +58,12 @@ namespace Model
      * <p>The starting timestamp in the range of timestamps for which to return
      * fragments.</p>
      */
+    inline bool StartTimestampHasBeenSet() const { return m_startTimestampHasBeenSet; }
+
+    /**
+     * <p>The starting timestamp in the range of timestamps for which to return
+     * fragments.</p>
+     */
     inline void SetStartTimestamp(const Aws::Utils::DateTime& value) { m_startTimestampHasBeenSet = true; m_startTimestamp = value; }
 
     /**
@@ -84,6 +90,12 @@ namespace Model
      * fragments.</p>
      */
     inline const Aws::Utils::DateTime& GetEndTimestamp() const{ return m_endTimestamp; }
+
+    /**
+     * <p>The ending timestamp in the range of timestamps for which to return
+     * fragments.</p>
+     */
+    inline bool EndTimestampHasBeenSet() const { return m_endTimestampHasBeenSet; }
 
     /**
      * <p>The ending timestamp in the range of timestamps for which to return

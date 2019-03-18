@@ -60,6 +60,12 @@ namespace Model
      * <p>The <code>accountId</code> that is associated with the budget that you want
      * to create a notification for.</p>
      */
+    inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
+
+    /**
+     * <p>The <code>accountId</code> that is associated with the budget that you want
+     * to create a notification for.</p>
+     */
     inline void SetAccountId(const Aws::String& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
 
     /**
@@ -98,6 +104,12 @@ namespace Model
      * must be unique within an account.</p>
      */
     inline const Aws::String& GetBudgetName() const{ return m_budgetName; }
+
+    /**
+     * <p>The name of the budget that you want AWS to notify you about. Budget names
+     * must be unique within an account.</p>
+     */
+    inline bool BudgetNameHasBeenSet() const { return m_budgetNameHasBeenSet; }
 
     /**
      * <p>The name of the budget that you want AWS to notify you about. Budget names
@@ -144,6 +156,11 @@ namespace Model
     /**
      * <p>The notification that you want to create.</p>
      */
+    inline bool NotificationHasBeenSet() const { return m_notificationHasBeenSet; }
+
+    /**
+     * <p>The notification that you want to create.</p>
+     */
     inline void SetNotification(const Notification& value) { m_notificationHasBeenSet = true; m_notification = value; }
 
     /**
@@ -167,6 +184,12 @@ namespace Model
      * notification can have one SNS subscriber and up to 10 email subscribers.</p>
      */
     inline const Aws::Vector<Subscriber>& GetSubscribers() const{ return m_subscribers; }
+
+    /**
+     * <p>A list of subscribers that you want to associate with the notification. Each
+     * notification can have one SNS subscriber and up to 10 email subscribers.</p>
+     */
+    inline bool SubscribersHasBeenSet() const { return m_subscribersHasBeenSet; }
 
     /**
      * <p>A list of subscribers that you want to associate with the notification. Each

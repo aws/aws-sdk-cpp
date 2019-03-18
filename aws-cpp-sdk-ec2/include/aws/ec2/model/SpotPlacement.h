@@ -62,6 +62,13 @@ namespace Model
      * Availability Zones, separate them using commas; for example, "us-west-2a,
      * us-west-2b".</p>
      */
+    inline bool AvailabilityZoneHasBeenSet() const { return m_availabilityZoneHasBeenSet; }
+
+    /**
+     * <p>The Availability Zone.</p> <p>[Spot Fleet only] To specify multiple
+     * Availability Zones, separate them using commas; for example, "us-west-2a,
+     * us-west-2b".</p>
+     */
     inline void SetAvailabilityZone(const Aws::String& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = value; }
 
     /**
@@ -108,6 +115,11 @@ namespace Model
     /**
      * <p>The name of the placement group.</p>
      */
+    inline bool GroupNameHasBeenSet() const { return m_groupNameHasBeenSet; }
+
+    /**
+     * <p>The name of the placement group.</p>
+     */
     inline void SetGroupName(const Aws::String& value) { m_groupNameHasBeenSet = true; m_groupName = value; }
 
     /**
@@ -142,6 +154,13 @@ namespace Model
      * hardware. The <code>host</code> tenancy is not supported for Spot Instances.</p>
      */
     inline const Tenancy& GetTenancy() const{ return m_tenancy; }
+
+    /**
+     * <p>The tenancy of the instance (if the instance is running in a VPC). An
+     * instance with a tenancy of <code>dedicated</code> runs on single-tenant
+     * hardware. The <code>host</code> tenancy is not supported for Spot Instances.</p>
+     */
+    inline bool TenancyHasBeenSet() const { return m_tenancyHasBeenSet; }
 
     /**
      * <p>The tenancy of the instance (if the instance is running in a VPC). An

@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>Whether CloudWatch Logs is enabled for a layer.</p>
      */
+    inline bool EnabledHasBeenSet() const { return m_enabledHasBeenSet; }
+
+    /**
+     * <p>Whether CloudWatch Logs is enabled for a layer.</p>
+     */
     inline void SetEnabled(bool value) { m_enabledHasBeenSet = true; m_enabled = value; }
 
     /**
@@ -69,6 +74,11 @@ namespace Model
      * <p>A list of configuration options for CloudWatch Logs.</p>
      */
     inline const Aws::Vector<CloudWatchLogsLogStream>& GetLogStreams() const{ return m_logStreams; }
+
+    /**
+     * <p>A list of configuration options for CloudWatch Logs.</p>
+     */
+    inline bool LogStreamsHasBeenSet() const { return m_logStreamsHasBeenSet; }
 
     /**
      * <p>A list of configuration options for CloudWatch Logs.</p>

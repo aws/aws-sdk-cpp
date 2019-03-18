@@ -65,6 +65,18 @@ namespace Model
      * constraint applies only to the full ARN. If you specify only the function name,
      * it is limited to 64 characters in length.</p>
      */
+    inline bool FunctionNameHasBeenSet() const { return m_functionNameHasBeenSet; }
+
+    /**
+     * <p>The name of the Lambda function.</p> <p class="title"> <b>Name formats</b>
+     * </p> <ul> <li> <p> <b>Function name</b> - <code>MyFunction</code>.</p> </li>
+     * <li> <p> <b>Function ARN</b> -
+     * <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p>
+     * </li> <li> <p> <b>Partial ARN</b> -
+     * <code>123456789012:function:MyFunction</code>.</p> </li> </ul> <p>The length
+     * constraint applies only to the full ARN. If you specify only the function name,
+     * it is limited to 64 characters in length.</p>
+     */
     inline void SetFunctionName(const Aws::String& value) { m_functionNameHasBeenSet = true; m_functionName = value; }
 
     /**
@@ -136,6 +148,11 @@ namespace Model
     /**
      * <p>The name of the alias.</p>
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>The name of the alias.</p>
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
@@ -172,6 +189,11 @@ namespace Model
     /**
      * <p>The function version that the alias invokes.</p>
      */
+    inline bool FunctionVersionHasBeenSet() const { return m_functionVersionHasBeenSet; }
+
+    /**
+     * <p>The function version that the alias invokes.</p>
+     */
     inline void SetFunctionVersion(const Aws::String& value) { m_functionVersionHasBeenSet = true; m_functionVersion = value; }
 
     /**
@@ -204,6 +226,11 @@ namespace Model
      * <p>A description of the alias.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
+
+    /**
+     * <p>A description of the alias.</p>
+     */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
 
     /**
      * <p>A description of the alias.</p>
@@ -248,6 +275,13 @@ namespace Model
      * href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-traffic-shifting-using-aliases.html">routing
      * configuration</a> of the alias.</p>
      */
+    inline bool RoutingConfigHasBeenSet() const { return m_routingConfigHasBeenSet; }
+
+    /**
+     * <p>The <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-traffic-shifting-using-aliases.html">routing
+     * configuration</a> of the alias.</p>
+     */
     inline void SetRoutingConfig(const AliasRoutingConfiguration& value) { m_routingConfigHasBeenSet = true; m_routingConfig = value; }
 
     /**
@@ -278,6 +312,13 @@ namespace Model
      * it.</p>
      */
     inline const Aws::String& GetRevisionId() const{ return m_revisionId; }
+
+    /**
+     * <p>Only update the alias if the revision ID matches the ID that's specified. Use
+     * this option to avoid modifying an alias that has changed since you last read
+     * it.</p>
+     */
+    inline bool RevisionIdHasBeenSet() const { return m_revisionIdHasBeenSet; }
 
     /**
      * <p>Only update the alias if the revision ID matches the ID that's specified. Use

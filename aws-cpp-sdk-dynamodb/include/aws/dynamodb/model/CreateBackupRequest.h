@@ -52,6 +52,11 @@ namespace Model
     /**
      * <p>The name of the table.</p>
      */
+    inline bool TableNameHasBeenSet() const { return m_tableNameHasBeenSet; }
+
+    /**
+     * <p>The name of the table.</p>
+     */
     inline void SetTableName(const Aws::String& value) { m_tableNameHasBeenSet = true; m_tableName = value; }
 
     /**
@@ -84,6 +89,11 @@ namespace Model
      * <p>Specified name for the backup.</p>
      */
     inline const Aws::String& GetBackupName() const{ return m_backupName; }
+
+    /**
+     * <p>Specified name for the backup.</p>
+     */
+    inline bool BackupNameHasBeenSet() const { return m_backupNameHasBeenSet; }
 
     /**
      * <p>Specified name for the backup.</p>

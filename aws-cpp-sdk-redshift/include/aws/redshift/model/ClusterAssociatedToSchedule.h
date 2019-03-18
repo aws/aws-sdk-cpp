@@ -49,6 +49,9 @@ namespace Model
     inline const Aws::String& GetClusterIdentifier() const{ return m_clusterIdentifier; }
 
     
+    inline bool ClusterIdentifierHasBeenSet() const { return m_clusterIdentifierHasBeenSet; }
+
+    
     inline void SetClusterIdentifier(const Aws::String& value) { m_clusterIdentifierHasBeenSet = true; m_clusterIdentifier = value; }
 
     
@@ -69,6 +72,9 @@ namespace Model
 
     
     inline const ScheduleState& GetScheduleAssociationState() const{ return m_scheduleAssociationState; }
+
+    
+    inline bool ScheduleAssociationStateHasBeenSet() const { return m_scheduleAssociationStateHasBeenSet; }
 
     
     inline void SetScheduleAssociationState(const ScheduleState& value) { m_scheduleAssociationStateHasBeenSet = true; m_scheduleAssociationState = value; }

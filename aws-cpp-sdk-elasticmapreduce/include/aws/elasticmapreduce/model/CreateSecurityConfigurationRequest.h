@@ -52,6 +52,11 @@ namespace Model
     /**
      * <p>The name of the security configuration.</p>
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>The name of the security configuration.</p>
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
@@ -88,6 +93,15 @@ namespace Model
      * Management Guide</i>.</p>
      */
     inline const Aws::String& GetSecurityConfiguration() const{ return m_securityConfiguration; }
+
+    /**
+     * <p>The security configuration details in JSON format. For JSON parameters and
+     * examples, see <a
+     * href="http://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-security-configurations.html">Use
+     * Security Configurations to Set Up Cluster Security</a> in the <i>Amazon EMR
+     * Management Guide</i>.</p>
+     */
+    inline bool SecurityConfigurationHasBeenSet() const { return m_securityConfigurationHasBeenSet; }
 
     /**
      * <p>The security configuration details in JSON format. For JSON parameters and

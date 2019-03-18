@@ -66,6 +66,15 @@ namespace Model
 
      * </i> Data Type.</p>
      */
+    inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
+
+    /**
+     * <p>This property corresponds to the content of the same name for the <i>AWS
+     * CloudFormation <a
+     * href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/RollbackTrigger">RollbackTrigger</a>
+
+     * </i> Data Type.</p>
+     */
     inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
 
     /**
@@ -122,6 +131,15 @@ namespace Model
      * </i> Data Type.</p>
      */
     inline const Aws::String& GetType() const{ return m_type; }
+
+    /**
+     * <p>This property corresponds to the content of the same name for the <i>AWS
+     * CloudFormation <a
+     * href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/RollbackTrigger">RollbackTrigger</a>
+
+     * </i> Data Type.</p>
+     */
+    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
 
     /**
      * <p>This property corresponds to the content of the same name for the <i>AWS

@@ -65,6 +65,11 @@ namespace Model
     /**
      * <p>The name of the snapshot copy grant.</p>
      */
+    inline bool SnapshotCopyGrantNameHasBeenSet() const { return m_snapshotCopyGrantNameHasBeenSet; }
+
+    /**
+     * <p>The name of the snapshot copy grant.</p>
+     */
     inline void SetSnapshotCopyGrantName(const Aws::String& value) { m_snapshotCopyGrantNameHasBeenSet = true; m_snapshotCopyGrantName = value; }
 
     /**
@@ -98,6 +103,12 @@ namespace Model
      * Amazon Redshift is granted permission.</p>
      */
     inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
+
+    /**
+     * <p>The unique identifier of the customer master key (CMK) in AWS KMS to which
+     * Amazon Redshift is granted permission.</p>
+     */
+    inline bool KmsKeyIdHasBeenSet() const { return m_kmsKeyIdHasBeenSet; }
 
     /**
      * <p>The unique identifier of the customer master key (CMK) in AWS KMS to which
@@ -140,6 +151,11 @@ namespace Model
      * <p>A list of tag instances.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>A list of tag instances.</p>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
      * <p>A list of tag instances.</p>

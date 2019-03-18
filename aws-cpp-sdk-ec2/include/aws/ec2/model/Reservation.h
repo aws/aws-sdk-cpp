@@ -61,6 +61,11 @@ namespace Model
     /**
      * <p>[EC2-Classic only] One or more security groups.</p>
      */
+    inline bool GroupsHasBeenSet() const { return m_groupsHasBeenSet; }
+
+    /**
+     * <p>[EC2-Classic only] One or more security groups.</p>
+     */
     inline void SetGroups(const Aws::Vector<GroupIdentifier>& value) { m_groupsHasBeenSet = true; m_groups = value; }
 
     /**
@@ -93,6 +98,11 @@ namespace Model
      * <p>One or more instances.</p>
      */
     inline const Aws::Vector<Instance>& GetInstances() const{ return m_instances; }
+
+    /**
+     * <p>One or more instances.</p>
+     */
+    inline bool InstancesHasBeenSet() const { return m_instancesHasBeenSet; }
 
     /**
      * <p>One or more instances.</p>
@@ -133,6 +143,11 @@ namespace Model
     /**
      * <p>The ID of the AWS account that owns the reservation.</p>
      */
+    inline bool OwnerIdHasBeenSet() const { return m_ownerIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the AWS account that owns the reservation.</p>
+     */
     inline void SetOwnerId(const Aws::String& value) { m_ownerIdHasBeenSet = true; m_ownerId = value; }
 
     /**
@@ -166,6 +181,12 @@ namespace Model
      * example, AWS Management Console or Auto Scaling).</p>
      */
     inline const Aws::String& GetRequesterId() const{ return m_requesterId; }
+
+    /**
+     * <p>The ID of the requester that launched the instances on your behalf (for
+     * example, AWS Management Console or Auto Scaling).</p>
+     */
+    inline bool RequesterIdHasBeenSet() const { return m_requesterIdHasBeenSet; }
 
     /**
      * <p>The ID of the requester that launched the instances on your behalf (for
@@ -212,6 +233,11 @@ namespace Model
     /**
      * <p>The ID of the reservation.</p>
      */
+    inline bool ReservationIdHasBeenSet() const { return m_reservationIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the reservation.</p>
+     */
     inline void SetReservationId(const Aws::String& value) { m_reservationIdHasBeenSet = true; m_reservationId = value; }
 
     /**
@@ -242,6 +268,9 @@ namespace Model
 
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
+
+    
+    inline bool ResponseMetadataHasBeenSet() const { return m_responseMetadataHasBeenSet; }
 
     
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = value; }

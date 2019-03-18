@@ -63,6 +63,15 @@ namespace Model
      * alphanumeric characters with no spaces. You can also include any of the
      * following characters: _+=,.@-</p>
      */
+    inline bool RoleNameHasBeenSet() const { return m_roleNameHasBeenSet; }
+
+    /**
+     * <p>The name of the IAM role from which you want to remove tags.</p> <p>This
+     * parameter accepts (through its <a href="http://wikipedia.org/wiki/regex">regex
+     * pattern</a>) a string of characters that consist of upper and lowercase
+     * alphanumeric characters with no spaces. You can also include any of the
+     * following characters: _+=,.@-</p>
+     */
     inline void SetRoleName(const Aws::String& value) { m_roleNameHasBeenSet = true; m_roleName = value; }
 
     /**
@@ -116,6 +125,12 @@ namespace Model
      * are removed from the specified role.</p>
      */
     inline const Aws::Vector<Aws::String>& GetTagKeys() const{ return m_tagKeys; }
+
+    /**
+     * <p>A list of key names as a simple array of strings. The tags with matching keys
+     * are removed from the specified role.</p>
+     */
+    inline bool TagKeysHasBeenSet() const { return m_tagKeysHasBeenSet; }
 
     /**
      * <p>A list of key names as a simple array of strings. The tags with matching keys

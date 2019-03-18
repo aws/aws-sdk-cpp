@@ -60,6 +60,12 @@ namespace Model
      * <p>The ID of the Client VPN endpoint with which the authorization rule is
      * associated.</p>
      */
+    inline bool ClientVpnEndpointIdHasBeenSet() const { return m_clientVpnEndpointIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the Client VPN endpoint with which the authorization rule is
+     * associated.</p>
+     */
     inline void SetClientVpnEndpointId(const Aws::String& value) { m_clientVpnEndpointIdHasBeenSet = true; m_clientVpnEndpointId = value; }
 
     /**
@@ -101,6 +107,11 @@ namespace Model
     /**
      * <p>A brief description of the authorization rule.</p>
      */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
+
+    /**
+     * <p>A brief description of the authorization rule.</p>
+     */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
@@ -134,6 +145,12 @@ namespace Model
      * access.</p>
      */
     inline const Aws::String& GetGroupId() const{ return m_groupId; }
+
+    /**
+     * <p>The ID of the Active Directory group to which the authorization rule grants
+     * access.</p>
+     */
+    inline bool GroupIdHasBeenSet() const { return m_groupIdHasBeenSet; }
 
     /**
      * <p>The ID of the Active Directory group to which the authorization rule grants
@@ -180,6 +197,11 @@ namespace Model
     /**
      * <p>Indicates whether the authorization rule grants access to all clients.</p>
      */
+    inline bool AccessAllHasBeenSet() const { return m_accessAllHasBeenSet; }
+
+    /**
+     * <p>Indicates whether the authorization rule grants access to all clients.</p>
+     */
     inline void SetAccessAll(bool value) { m_accessAllHasBeenSet = true; m_accessAll = value; }
 
     /**
@@ -193,6 +215,12 @@ namespace Model
      * authorization rule applies.</p>
      */
     inline const Aws::String& GetDestinationCidr() const{ return m_destinationCidr; }
+
+    /**
+     * <p>The IPv4 address range, in CIDR notation, of the network to which the
+     * authorization rule applies.</p>
+     */
+    inline bool DestinationCidrHasBeenSet() const { return m_destinationCidrHasBeenSet; }
 
     /**
      * <p>The IPv4 address range, in CIDR notation, of the network to which the
@@ -235,6 +263,11 @@ namespace Model
      * <p>The current state of the authorization rule.</p>
      */
     inline const ClientVpnAuthorizationRuleStatus& GetStatus() const{ return m_status; }
+
+    /**
+     * <p>The current state of the authorization rule.</p>
+     */
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
     /**
      * <p>The current state of the authorization rule.</p>

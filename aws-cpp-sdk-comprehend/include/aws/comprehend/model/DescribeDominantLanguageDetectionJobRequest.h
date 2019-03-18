@@ -54,6 +54,12 @@ namespace Model
      * <p>The identifier that Amazon Comprehend generated for the job. The operation
      * returns this identifier in its response.</p>
      */
+    inline bool JobIdHasBeenSet() const { return m_jobIdHasBeenSet; }
+
+    /**
+     * <p>The identifier that Amazon Comprehend generated for the job. The operation
+     * returns this identifier in its response.</p>
+     */
     inline void SetJobId(const Aws::String& value) { m_jobIdHasBeenSet = true; m_jobId = value; }
 
     /**

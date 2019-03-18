@@ -84,6 +84,12 @@ namespace Model
      * <p>The AMI launch index, which can be used to find this instance in the launch
      * group.</p>
      */
+    inline bool AmiLaunchIndexHasBeenSet() const { return m_amiLaunchIndexHasBeenSet; }
+
+    /**
+     * <p>The AMI launch index, which can be used to find this instance in the launch
+     * group.</p>
+     */
     inline void SetAmiLaunchIndex(int value) { m_amiLaunchIndexHasBeenSet = true; m_amiLaunchIndex = value; }
 
     /**
@@ -97,6 +103,11 @@ namespace Model
      * <p>The ID of the AMI used to launch the instance.</p>
      */
     inline const Aws::String& GetImageId() const{ return m_imageId; }
+
+    /**
+     * <p>The ID of the AMI used to launch the instance.</p>
+     */
+    inline bool ImageIdHasBeenSet() const { return m_imageIdHasBeenSet; }
 
     /**
      * <p>The ID of the AMI used to launch the instance.</p>
@@ -137,6 +148,11 @@ namespace Model
     /**
      * <p>The ID of the instance.</p>
      */
+    inline bool InstanceIdHasBeenSet() const { return m_instanceIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the instance.</p>
+     */
     inline void SetInstanceId(const Aws::String& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
 
     /**
@@ -173,6 +189,11 @@ namespace Model
     /**
      * <p>The instance type.</p>
      */
+    inline bool InstanceTypeHasBeenSet() const { return m_instanceTypeHasBeenSet; }
+
+    /**
+     * <p>The instance type.</p>
+     */
     inline void SetInstanceType(const InstanceType& value) { m_instanceTypeHasBeenSet = true; m_instanceType = value; }
 
     /**
@@ -195,6 +216,11 @@ namespace Model
      * <p>The kernel associated with this instance, if applicable.</p>
      */
     inline const Aws::String& GetKernelId() const{ return m_kernelId; }
+
+    /**
+     * <p>The kernel associated with this instance, if applicable.</p>
+     */
+    inline bool KernelIdHasBeenSet() const { return m_kernelIdHasBeenSet; }
 
     /**
      * <p>The kernel associated with this instance, if applicable.</p>
@@ -232,6 +258,12 @@ namespace Model
      * key pair.</p>
      */
     inline const Aws::String& GetKeyName() const{ return m_keyName; }
+
+    /**
+     * <p>The name of the key pair, if this instance was launched with an associated
+     * key pair.</p>
+     */
+    inline bool KeyNameHasBeenSet() const { return m_keyNameHasBeenSet; }
 
     /**
      * <p>The name of the key pair, if this instance was launched with an associated
@@ -278,6 +310,11 @@ namespace Model
     /**
      * <p>The time the instance was launched.</p>
      */
+    inline bool LaunchTimeHasBeenSet() const { return m_launchTimeHasBeenSet; }
+
+    /**
+     * <p>The time the instance was launched.</p>
+     */
     inline void SetLaunchTime(const Aws::Utils::DateTime& value) { m_launchTimeHasBeenSet = true; m_launchTime = value; }
 
     /**
@@ -300,6 +337,11 @@ namespace Model
      * <p>The monitoring for the instance.</p>
      */
     inline const Monitoring& GetMonitoring() const{ return m_monitoring; }
+
+    /**
+     * <p>The monitoring for the instance.</p>
+     */
+    inline bool MonitoringHasBeenSet() const { return m_monitoringHasBeenSet; }
 
     /**
      * <p>The monitoring for the instance.</p>
@@ -330,6 +372,11 @@ namespace Model
     /**
      * <p>The location where the instance launched, if applicable.</p>
      */
+    inline bool PlacementHasBeenSet() const { return m_placementHasBeenSet; }
+
+    /**
+     * <p>The location where the instance launched, if applicable.</p>
+     */
     inline void SetPlacement(const Placement& value) { m_placementHasBeenSet = true; m_placement = value; }
 
     /**
@@ -352,6 +399,11 @@ namespace Model
      * <p>The value is <code>Windows</code> for Windows instances; otherwise blank.</p>
      */
     inline const PlatformValues& GetPlatform() const{ return m_platform; }
+
+    /**
+     * <p>The value is <code>Windows</code> for Windows instances; otherwise blank.</p>
+     */
+    inline bool PlatformHasBeenSet() const { return m_platformHasBeenSet; }
 
     /**
      * <p>The value is <code>Windows</code> for Windows instances; otherwise blank.</p>
@@ -384,6 +436,17 @@ namespace Model
      * name servers must resolve the hostname as appropriate.</p>
      */
     inline const Aws::String& GetPrivateDnsName() const{ return m_privateDnsName; }
+
+    /**
+     * <p>(IPv4 only) The private DNS hostname name assigned to the instance. This DNS
+     * hostname can only be used inside the Amazon EC2 network. This name is not
+     * available until the instance enters the <code>running</code> state. </p>
+     * <p>[EC2-VPC] The Amazon-provided DNS server resolves Amazon-provided private DNS
+     * hostnames if you've enabled DNS resolution and DNS hostnames in your VPC. If you
+     * are not using the Amazon-provided DNS server in your VPC, your custom domain
+     * name servers must resolve the hostname as appropriate.</p>
+     */
+    inline bool PrivateDnsNameHasBeenSet() const { return m_privateDnsNameHasBeenSet; }
 
     /**
      * <p>(IPv4 only) The private DNS hostname name assigned to the instance. This DNS
@@ -460,6 +523,11 @@ namespace Model
     /**
      * <p>The private IPv4 address assigned to the instance.</p>
      */
+    inline bool PrivateIpAddressHasBeenSet() const { return m_privateIpAddressHasBeenSet; }
+
+    /**
+     * <p>The private IPv4 address assigned to the instance.</p>
+     */
     inline void SetPrivateIpAddress(const Aws::String& value) { m_privateIpAddressHasBeenSet = true; m_privateIpAddress = value; }
 
     /**
@@ -492,6 +560,11 @@ namespace Model
      * <p>The product codes attached to this instance, if applicable.</p>
      */
     inline const Aws::Vector<ProductCode>& GetProductCodes() const{ return m_productCodes; }
+
+    /**
+     * <p>The product codes attached to this instance, if applicable.</p>
+     */
+    inline bool ProductCodesHasBeenSet() const { return m_productCodesHasBeenSet; }
 
     /**
      * <p>The product codes attached to this instance, if applicable.</p>
@@ -530,6 +603,13 @@ namespace Model
      * this name is only available if you've enabled DNS hostnames for your VPC.</p>
      */
     inline const Aws::String& GetPublicDnsName() const{ return m_publicDnsName; }
+
+    /**
+     * <p>(IPv4 only) The public DNS name assigned to the instance. This name is not
+     * available until the instance enters the <code>running</code> state. For EC2-VPC,
+     * this name is only available if you've enabled DNS hostnames for your VPC.</p>
+     */
+    inline bool PublicDnsNameHasBeenSet() const { return m_publicDnsNameHasBeenSet; }
 
     /**
      * <p>(IPv4 only) The public DNS name assigned to the instance. This name is not
@@ -582,6 +662,11 @@ namespace Model
     /**
      * <p>The public IPv4 address assigned to the instance, if applicable.</p>
      */
+    inline bool PublicIpAddressHasBeenSet() const { return m_publicIpAddressHasBeenSet; }
+
+    /**
+     * <p>The public IPv4 address assigned to the instance, if applicable.</p>
+     */
     inline void SetPublicIpAddress(const Aws::String& value) { m_publicIpAddressHasBeenSet = true; m_publicIpAddress = value; }
 
     /**
@@ -614,6 +699,11 @@ namespace Model
      * <p>The RAM disk associated with this instance, if applicable.</p>
      */
     inline const Aws::String& GetRamdiskId() const{ return m_ramdiskId; }
+
+    /**
+     * <p>The RAM disk associated with this instance, if applicable.</p>
+     */
+    inline bool RamdiskIdHasBeenSet() const { return m_ramdiskIdHasBeenSet; }
 
     /**
      * <p>The RAM disk associated with this instance, if applicable.</p>
@@ -654,6 +744,11 @@ namespace Model
     /**
      * <p>The current state of the instance.</p>
      */
+    inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
+
+    /**
+     * <p>The current state of the instance.</p>
+     */
     inline void SetState(const InstanceState& value) { m_stateHasBeenSet = true; m_state = value; }
 
     /**
@@ -677,6 +772,12 @@ namespace Model
      * string.</p>
      */
     inline const Aws::String& GetStateTransitionReason() const{ return m_stateTransitionReason; }
+
+    /**
+     * <p>The reason for the most recent state transition. This might be an empty
+     * string.</p>
+     */
+    inline bool StateTransitionReasonHasBeenSet() const { return m_stateTransitionReasonHasBeenSet; }
 
     /**
      * <p>The reason for the most recent state transition. This might be an empty
@@ -723,6 +824,11 @@ namespace Model
     /**
      * <p>[EC2-VPC] The ID of the subnet in which the instance is running.</p>
      */
+    inline bool SubnetIdHasBeenSet() const { return m_subnetIdHasBeenSet; }
+
+    /**
+     * <p>[EC2-VPC] The ID of the subnet in which the instance is running.</p>
+     */
     inline void SetSubnetId(const Aws::String& value) { m_subnetIdHasBeenSet = true; m_subnetId = value; }
 
     /**
@@ -755,6 +861,11 @@ namespace Model
      * <p>[EC2-VPC] The ID of the VPC in which the instance is running.</p>
      */
     inline const Aws::String& GetVpcId() const{ return m_vpcId; }
+
+    /**
+     * <p>[EC2-VPC] The ID of the VPC in which the instance is running.</p>
+     */
+    inline bool VpcIdHasBeenSet() const { return m_vpcIdHasBeenSet; }
 
     /**
      * <p>[EC2-VPC] The ID of the VPC in which the instance is running.</p>
@@ -795,6 +906,11 @@ namespace Model
     /**
      * <p>The architecture of the image.</p>
      */
+    inline bool ArchitectureHasBeenSet() const { return m_architectureHasBeenSet; }
+
+    /**
+     * <p>The architecture of the image.</p>
+     */
     inline void SetArchitecture(const ArchitectureValues& value) { m_architectureHasBeenSet = true; m_architecture = value; }
 
     /**
@@ -817,6 +933,11 @@ namespace Model
      * <p>Any block device mapping entries for the instance.</p>
      */
     inline const Aws::Vector<InstanceBlockDeviceMapping>& GetBlockDeviceMappings() const{ return m_blockDeviceMappings; }
+
+    /**
+     * <p>Any block device mapping entries for the instance.</p>
+     */
+    inline bool BlockDeviceMappingsHasBeenSet() const { return m_blockDeviceMappingsHasBeenSet; }
 
     /**
      * <p>Any block device mapping entries for the instance.</p>
@@ -854,6 +975,12 @@ namespace Model
      * applicable.</p>
      */
     inline const Aws::String& GetClientToken() const{ return m_clientToken; }
+
+    /**
+     * <p>The idempotency token you provided when you launched the instance, if
+     * applicable.</p>
+     */
+    inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
 
     /**
      * <p>The idempotency token you provided when you launched the instance, if
@@ -908,6 +1035,15 @@ namespace Model
      * available with all instance types. Additional usage charges apply when using an
      * EBS Optimized instance.</p>
      */
+    inline bool EbsOptimizedHasBeenSet() const { return m_ebsOptimizedHasBeenSet; }
+
+    /**
+     * <p>Indicates whether the instance is optimized for Amazon EBS I/O. This
+     * optimization provides dedicated throughput to Amazon EBS and an optimized
+     * configuration stack to provide optimal I/O performance. This optimization isn't
+     * available with all instance types. Additional usage charges apply when using an
+     * EBS Optimized instance.</p>
+     */
     inline void SetEbsOptimized(bool value) { m_ebsOptimizedHasBeenSet = true; m_ebsOptimized = value; }
 
     /**
@@ -928,6 +1064,11 @@ namespace Model
     /**
      * <p>Specifies whether enhanced networking with ENA is enabled.</p>
      */
+    inline bool EnaSupportHasBeenSet() const { return m_enaSupportHasBeenSet; }
+
+    /**
+     * <p>Specifies whether enhanced networking with ENA is enabled.</p>
+     */
     inline void SetEnaSupport(bool value) { m_enaSupportHasBeenSet = true; m_enaSupport = value; }
 
     /**
@@ -940,6 +1081,11 @@ namespace Model
      * <p>The hypervisor type of the instance.</p>
      */
     inline const HypervisorType& GetHypervisor() const{ return m_hypervisor; }
+
+    /**
+     * <p>The hypervisor type of the instance.</p>
+     */
+    inline bool HypervisorHasBeenSet() const { return m_hypervisorHasBeenSet; }
 
     /**
      * <p>The hypervisor type of the instance.</p>
@@ -970,6 +1116,11 @@ namespace Model
     /**
      * <p>The IAM instance profile associated with the instance, if applicable.</p>
      */
+    inline bool IamInstanceProfileHasBeenSet() const { return m_iamInstanceProfileHasBeenSet; }
+
+    /**
+     * <p>The IAM instance profile associated with the instance, if applicable.</p>
+     */
     inline void SetIamInstanceProfile(const IamInstanceProfile& value) { m_iamInstanceProfileHasBeenSet = true; m_iamInstanceProfile = value; }
 
     /**
@@ -996,6 +1147,11 @@ namespace Model
     /**
      * <p>Indicates whether this is a Spot Instance or a Scheduled Instance.</p>
      */
+    inline bool InstanceLifecycleHasBeenSet() const { return m_instanceLifecycleHasBeenSet; }
+
+    /**
+     * <p>Indicates whether this is a Spot Instance or a Scheduled Instance.</p>
+     */
     inline void SetInstanceLifecycle(const InstanceLifecycleType& value) { m_instanceLifecycleHasBeenSet = true; m_instanceLifecycle = value; }
 
     /**
@@ -1018,6 +1174,11 @@ namespace Model
      * <p>The Elastic GPU associated with the instance.</p>
      */
     inline const Aws::Vector<ElasticGpuAssociation>& GetElasticGpuAssociations() const{ return m_elasticGpuAssociations; }
+
+    /**
+     * <p>The Elastic GPU associated with the instance.</p>
+     */
+    inline bool ElasticGpuAssociationsHasBeenSet() const { return m_elasticGpuAssociationsHasBeenSet; }
 
     /**
      * <p>The Elastic GPU associated with the instance.</p>
@@ -1058,6 +1219,11 @@ namespace Model
     /**
      * <p> The elastic inference accelerator associated with the instance. </p>
      */
+    inline bool ElasticInferenceAcceleratorAssociationsHasBeenSet() const { return m_elasticInferenceAcceleratorAssociationsHasBeenSet; }
+
+    /**
+     * <p> The elastic inference accelerator associated with the instance. </p>
+     */
     inline void SetElasticInferenceAcceleratorAssociations(const Aws::Vector<ElasticInferenceAcceleratorAssociation>& value) { m_elasticInferenceAcceleratorAssociationsHasBeenSet = true; m_elasticInferenceAcceleratorAssociations = value; }
 
     /**
@@ -1090,6 +1256,11 @@ namespace Model
      * <p>[EC2-VPC] One or more network interfaces for the instance.</p>
      */
     inline const Aws::Vector<InstanceNetworkInterface>& GetNetworkInterfaces() const{ return m_networkInterfaces; }
+
+    /**
+     * <p>[EC2-VPC] One or more network interfaces for the instance.</p>
+     */
+    inline bool NetworkInterfacesHasBeenSet() const { return m_networkInterfacesHasBeenSet; }
 
     /**
      * <p>[EC2-VPC] One or more network interfaces for the instance.</p>
@@ -1127,6 +1298,12 @@ namespace Model
      * <code>/dev/sda1</code>).</p>
      */
     inline const Aws::String& GetRootDeviceName() const{ return m_rootDeviceName; }
+
+    /**
+     * <p>The device name of the root device volume (for example,
+     * <code>/dev/sda1</code>).</p>
+     */
+    inline bool RootDeviceNameHasBeenSet() const { return m_rootDeviceNameHasBeenSet; }
 
     /**
      * <p>The device name of the root device volume (for example,
@@ -1175,6 +1352,12 @@ namespace Model
      * <p>The root device type used by the AMI. The AMI can use an EBS volume or an
      * instance store volume.</p>
      */
+    inline bool RootDeviceTypeHasBeenSet() const { return m_rootDeviceTypeHasBeenSet; }
+
+    /**
+     * <p>The root device type used by the AMI. The AMI can use an EBS volume or an
+     * instance store volume.</p>
+     */
     inline void SetRootDeviceType(const DeviceType& value) { m_rootDeviceTypeHasBeenSet = true; m_rootDeviceType = value; }
 
     /**
@@ -1200,6 +1383,11 @@ namespace Model
      * <p>One or more security groups for the instance.</p>
      */
     inline const Aws::Vector<GroupIdentifier>& GetSecurityGroups() const{ return m_securityGroups; }
+
+    /**
+     * <p>One or more security groups for the instance.</p>
+     */
+    inline bool SecurityGroupsHasBeenSet() const { return m_securityGroupsHasBeenSet; }
 
     /**
      * <p>One or more security groups for the instance.</p>
@@ -1252,6 +1440,17 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_NAT_Instance.html">NAT
      * Instances</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p>
      */
+    inline bool SourceDestCheckHasBeenSet() const { return m_sourceDestCheckHasBeenSet; }
+
+    /**
+     * <p>Specifies whether to enable an instance launched in a VPC to perform NAT.
+     * This controls whether source/destination checking is enabled on the instance. A
+     * value of <code>true</code> means that checking is enabled, and
+     * <code>false</code> means that checking is disabled. The value must be
+     * <code>false</code> for the instance to perform NAT. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_NAT_Instance.html">NAT
+     * Instances</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p>
+     */
     inline void SetSourceDestCheck(bool value) { m_sourceDestCheckHasBeenSet = true; m_sourceDestCheck = value; }
 
     /**
@@ -1270,6 +1469,11 @@ namespace Model
      * <p>If the request is a Spot Instance request, the ID of the request.</p>
      */
     inline const Aws::String& GetSpotInstanceRequestId() const{ return m_spotInstanceRequestId; }
+
+    /**
+     * <p>If the request is a Spot Instance request, the ID of the request.</p>
+     */
+    inline bool SpotInstanceRequestIdHasBeenSet() const { return m_spotInstanceRequestIdHasBeenSet; }
 
     /**
      * <p>If the request is a Spot Instance request, the ID of the request.</p>
@@ -1307,6 +1511,12 @@ namespace Model
      * interface is enabled.</p>
      */
     inline const Aws::String& GetSriovNetSupport() const{ return m_sriovNetSupport; }
+
+    /**
+     * <p>Specifies whether enhanced networking with the Intel 82599 Virtual Function
+     * interface is enabled.</p>
+     */
+    inline bool SriovNetSupportHasBeenSet() const { return m_sriovNetSupportHasBeenSet; }
 
     /**
      * <p>Specifies whether enhanced networking with the Intel 82599 Virtual Function
@@ -1353,6 +1563,11 @@ namespace Model
     /**
      * <p>The reason for the most recent state transition.</p>
      */
+    inline bool StateReasonHasBeenSet() const { return m_stateReasonHasBeenSet; }
+
+    /**
+     * <p>The reason for the most recent state transition.</p>
+     */
     inline void SetStateReason(const StateReason& value) { m_stateReasonHasBeenSet = true; m_stateReason = value; }
 
     /**
@@ -1375,6 +1590,11 @@ namespace Model
      * <p>Any tags assigned to the instance.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>Any tags assigned to the instance.</p>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
      * <p>Any tags assigned to the instance.</p>
@@ -1415,6 +1635,11 @@ namespace Model
     /**
      * <p>The virtualization type of the instance.</p>
      */
+    inline bool VirtualizationTypeHasBeenSet() const { return m_virtualizationTypeHasBeenSet; }
+
+    /**
+     * <p>The virtualization type of the instance.</p>
+     */
     inline void SetVirtualizationType(const VirtualizationType& value) { m_virtualizationTypeHasBeenSet = true; m_virtualizationType = value; }
 
     /**
@@ -1441,6 +1666,11 @@ namespace Model
     /**
      * <p>The CPU options for the instance.</p>
      */
+    inline bool CpuOptionsHasBeenSet() const { return m_cpuOptionsHasBeenSet; }
+
+    /**
+     * <p>The CPU options for the instance.</p>
+     */
     inline void SetCpuOptions(const CpuOptions& value) { m_cpuOptionsHasBeenSet = true; m_cpuOptions = value; }
 
     /**
@@ -1463,6 +1693,11 @@ namespace Model
      * <p>The ID of the Capacity Reservation.</p>
      */
     inline const Aws::String& GetCapacityReservationId() const{ return m_capacityReservationId; }
+
+    /**
+     * <p>The ID of the Capacity Reservation.</p>
+     */
+    inline bool CapacityReservationIdHasBeenSet() const { return m_capacityReservationIdHasBeenSet; }
 
     /**
      * <p>The ID of the Capacity Reservation.</p>
@@ -1503,6 +1738,11 @@ namespace Model
     /**
      * <p>Information about the Capacity Reservation targeting option.</p>
      */
+    inline bool CapacityReservationSpecificationHasBeenSet() const { return m_capacityReservationSpecificationHasBeenSet; }
+
+    /**
+     * <p>Information about the Capacity Reservation targeting option.</p>
+     */
     inline void SetCapacityReservationSpecification(const CapacityReservationSpecificationResponse& value) { m_capacityReservationSpecificationHasBeenSet = true; m_capacityReservationSpecification = value; }
 
     /**
@@ -1529,6 +1769,11 @@ namespace Model
     /**
      * <p>Indicates whether the instance is enabled for hibernation.</p>
      */
+    inline bool HibernationOptionsHasBeenSet() const { return m_hibernationOptionsHasBeenSet; }
+
+    /**
+     * <p>Indicates whether the instance is enabled for hibernation.</p>
+     */
     inline void SetHibernationOptions(const HibernationOptions& value) { m_hibernationOptionsHasBeenSet = true; m_hibernationOptions = value; }
 
     /**
@@ -1551,6 +1796,11 @@ namespace Model
      * <p>The license configurations.</p>
      */
     inline const Aws::Vector<LicenseConfiguration>& GetLicenses() const{ return m_licenses; }
+
+    /**
+     * <p>The license configurations.</p>
+     */
+    inline bool LicensesHasBeenSet() const { return m_licensesHasBeenSet; }
 
     /**
      * <p>The license configurations.</p>

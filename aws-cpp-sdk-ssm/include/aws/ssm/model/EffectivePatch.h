@@ -64,6 +64,13 @@ namespace Model
      * severity, classification and a URL for where more information can be obtained
      * about the patch.</p>
      */
+    inline bool PatchHasBeenSet() const { return m_patchHasBeenSet; }
+
+    /**
+     * <p>Provides metadata for a patch, including information such as the KB ID,
+     * severity, classification and a URL for where more information can be obtained
+     * about the patch.</p>
+     */
     inline void SetPatch(const Patch& value) { m_patchHasBeenSet = true; m_patch = value; }
 
     /**
@@ -95,6 +102,14 @@ namespace Model
      * be approved.</p>
      */
     inline const PatchStatus& GetPatchStatus() const{ return m_patchStatus; }
+
+    /**
+     * <p>The status of the patch in a patch baseline. This includes information about
+     * whether the patch is currently approved, due to be approved by a rule,
+     * explicitly approved, or explicitly rejected and the date the patch was or will
+     * be approved.</p>
+     */
+    inline bool PatchStatusHasBeenSet() const { return m_patchStatusHasBeenSet; }
 
     /**
      * <p>The status of the patch in a patch baseline. This includes information about

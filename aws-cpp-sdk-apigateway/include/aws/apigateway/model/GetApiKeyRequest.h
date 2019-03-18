@@ -60,6 +60,11 @@ namespace Model
     /**
      * <p>[Required] The identifier of the <a>ApiKey</a> resource.</p>
      */
+    inline bool ApiKeyHasBeenSet() const { return m_apiKeyHasBeenSet; }
+
+    /**
+     * <p>[Required] The identifier of the <a>ApiKey</a> resource.</p>
+     */
     inline void SetApiKey(const Aws::String& value) { m_apiKeyHasBeenSet = true; m_apiKey = value; }
 
     /**
@@ -93,6 +98,12 @@ namespace Model
      * (<code>false</code>) the result contains the key value.</p>
      */
     inline bool GetIncludeValue() const{ return m_includeValue; }
+
+    /**
+     * <p>A boolean flag to specify whether (<code>true</code>) or not
+     * (<code>false</code>) the result contains the key value.</p>
+     */
+    inline bool IncludeValueHasBeenSet() const { return m_includeValueHasBeenSet; }
 
     /**
      * <p>A boolean flag to specify whether (<code>true</code>) or not

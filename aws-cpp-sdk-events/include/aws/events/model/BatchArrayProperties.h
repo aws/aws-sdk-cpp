@@ -58,6 +58,12 @@ namespace Model
      * <p>The size of the array, if this is an array batch job. Valid values are
      * integers between 2 and 10,000.</p>
      */
+    inline bool SizeHasBeenSet() const { return m_sizeHasBeenSet; }
+
+    /**
+     * <p>The size of the array, if this is an array batch job. Valid values are
+     * integers between 2 and 10,000.</p>
+     */
     inline void SetSize(int value) { m_sizeHasBeenSet = true; m_size = value; }
 
     /**

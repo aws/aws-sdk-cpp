@@ -54,6 +54,12 @@ namespace Model
      * <p>Published schema Amazon Resource Name (ARN) that needs to be copied. For more
      * information, see <a>arns</a>.</p>
      */
+    inline bool PublishedSchemaArnHasBeenSet() const { return m_publishedSchemaArnHasBeenSet; }
+
+    /**
+     * <p>Published schema Amazon Resource Name (ARN) that needs to be copied. For more
+     * information, see <a>arns</a>.</p>
+     */
     inline void SetPublishedSchemaArn(const Aws::String& value) { m_publishedSchemaArnHasBeenSet = true; m_publishedSchemaArn = value; }
 
     /**
@@ -92,6 +98,12 @@ namespace Model
      * into which the schema is copied. For more information, see <a>arns</a>.</p>
      */
     inline const Aws::String& GetDirectoryArn() const{ return m_directoryArn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) that is associated with the <a>Directory</a>
+     * into which the schema is copied. For more information, see <a>arns</a>.</p>
+     */
+    inline bool DirectoryArnHasBeenSet() const { return m_directoryArnHasBeenSet; }
 
     /**
      * <p>The Amazon Resource Name (ARN) that is associated with the <a>Directory</a>

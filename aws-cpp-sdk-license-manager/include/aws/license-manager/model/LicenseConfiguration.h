@@ -65,6 +65,11 @@ namespace Model
     /**
      * <p>Unique ID of the <code>LicenseConfiguration</code> object.</p>
      */
+    inline bool LicenseConfigurationIdHasBeenSet() const { return m_licenseConfigurationIdHasBeenSet; }
+
+    /**
+     * <p>Unique ID of the <code>LicenseConfiguration</code> object.</p>
+     */
     inline void SetLicenseConfigurationId(const Aws::String& value) { m_licenseConfigurationIdHasBeenSet = true; m_licenseConfigurationId = value; }
 
     /**
@@ -97,6 +102,11 @@ namespace Model
      * <p>ARN of the <code>LicenseConfiguration</code> object.</p>
      */
     inline const Aws::String& GetLicenseConfigurationArn() const{ return m_licenseConfigurationArn; }
+
+    /**
+     * <p>ARN of the <code>LicenseConfiguration</code> object.</p>
+     */
+    inline bool LicenseConfigurationArnHasBeenSet() const { return m_licenseConfigurationArnHasBeenSet; }
 
     /**
      * <p>ARN of the <code>LicenseConfiguration</code> object.</p>
@@ -137,6 +147,11 @@ namespace Model
     /**
      * <p>Name of the license configuration.</p>
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>Name of the license configuration.</p>
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
@@ -169,6 +184,11 @@ namespace Model
      * <p>Description of the license configuration.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
+
+    /**
+     * <p>Description of the license configuration.</p>
+     */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
 
     /**
      * <p>Description of the license configuration.</p>
@@ -209,6 +229,11 @@ namespace Model
     /**
      * <p>Dimension to use to track license inventory.</p>
      */
+    inline bool LicenseCountingTypeHasBeenSet() const { return m_licenseCountingTypeHasBeenSet; }
+
+    /**
+     * <p>Dimension to use to track license inventory.</p>
+     */
     inline void SetLicenseCountingType(const LicenseCountingType& value) { m_licenseCountingTypeHasBeenSet = true; m_licenseCountingType = value; }
 
     /**
@@ -231,6 +256,11 @@ namespace Model
      * <p>Array of configured License Manager rules.</p>
      */
     inline const Aws::Vector<Aws::String>& GetLicenseRules() const{ return m_licenseRules; }
+
+    /**
+     * <p>Array of configured License Manager rules.</p>
+     */
+    inline bool LicenseRulesHasBeenSet() const { return m_licenseRulesHasBeenSet; }
 
     /**
      * <p>Array of configured License Manager rules.</p>
@@ -276,6 +306,11 @@ namespace Model
     /**
      * <p>Number of licenses managed by the license configuration.</p>
      */
+    inline bool LicenseCountHasBeenSet() const { return m_licenseCountHasBeenSet; }
+
+    /**
+     * <p>Number of licenses managed by the license configuration.</p>
+     */
     inline void SetLicenseCount(long long value) { m_licenseCountHasBeenSet = true; m_licenseCount = value; }
 
     /**
@@ -288,6 +323,11 @@ namespace Model
      * <p>Sets the number of available licenses as a hard limit.</p>
      */
     inline bool GetLicenseCountHardLimit() const{ return m_licenseCountHardLimit; }
+
+    /**
+     * <p>Sets the number of available licenses as a hard limit.</p>
+     */
+    inline bool LicenseCountHardLimitHasBeenSet() const { return m_licenseCountHardLimitHasBeenSet; }
 
     /**
      * <p>Sets the number of available licenses as a hard limit.</p>
@@ -308,6 +348,11 @@ namespace Model
     /**
      * <p>Number of licenses consumed. </p>
      */
+    inline bool ConsumedLicensesHasBeenSet() const { return m_consumedLicensesHasBeenSet; }
+
+    /**
+     * <p>Number of licenses consumed. </p>
+     */
     inline void SetConsumedLicenses(long long value) { m_consumedLicensesHasBeenSet = true; m_consumedLicenses = value; }
 
     /**
@@ -320,6 +365,11 @@ namespace Model
      * <p>Status of the license configuration.</p>
      */
     inline const Aws::String& GetStatus() const{ return m_status; }
+
+    /**
+     * <p>Status of the license configuration.</p>
+     */
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
     /**
      * <p>Status of the license configuration.</p>
@@ -360,6 +410,11 @@ namespace Model
     /**
      * <p>Account ID of the license configuration's owner.</p>
      */
+    inline bool OwnerAccountIdHasBeenSet() const { return m_ownerAccountIdHasBeenSet; }
+
+    /**
+     * <p>Account ID of the license configuration's owner.</p>
+     */
     inline void SetOwnerAccountId(const Aws::String& value) { m_ownerAccountIdHasBeenSet = true; m_ownerAccountId = value; }
 
     /**
@@ -396,6 +451,11 @@ namespace Model
     /**
      * <p>List of summaries for licenses consumed by various resources.</p>
      */
+    inline bool ConsumedLicenseSummaryListHasBeenSet() const { return m_consumedLicenseSummaryListHasBeenSet; }
+
+    /**
+     * <p>List of summaries for licenses consumed by various resources.</p>
+     */
     inline void SetConsumedLicenseSummaryList(const Aws::Vector<ConsumedLicenseSummary>& value) { m_consumedLicenseSummaryListHasBeenSet = true; m_consumedLicenseSummaryList = value; }
 
     /**
@@ -428,6 +488,11 @@ namespace Model
      * <p>List of summaries for managed resources.</p>
      */
     inline const Aws::Vector<ManagedResourceSummary>& GetManagedResourceSummaryList() const{ return m_managedResourceSummaryList; }
+
+    /**
+     * <p>List of summaries for managed resources.</p>
+     */
+    inline bool ManagedResourceSummaryListHasBeenSet() const { return m_managedResourceSummaryListHasBeenSet; }
 
     /**
      * <p>List of summaries for managed resources.</p>

@@ -55,6 +55,11 @@ namespace Model
     /**
      * <p>The VPC security group Id.</p>
      */
+    inline bool VpcSecurityGroupIdHasBeenSet() const { return m_vpcSecurityGroupIdHasBeenSet; }
+
+    /**
+     * <p>The VPC security group Id.</p>
+     */
     inline void SetVpcSecurityGroupId(const Aws::String& value) { m_vpcSecurityGroupIdHasBeenSet = true; m_vpcSecurityGroupId = value; }
 
     /**
@@ -87,6 +92,11 @@ namespace Model
      * <p>The status of the VPC security group.</p>
      */
     inline const Aws::String& GetStatus() const{ return m_status; }
+
+    /**
+     * <p>The status of the VPC security group.</p>
+     */
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
     /**
      * <p>The status of the VPC security group.</p>

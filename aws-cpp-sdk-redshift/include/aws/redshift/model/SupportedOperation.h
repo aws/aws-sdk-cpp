@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p>A list of the supported operations.</p>
      */
+    inline bool OperationNameHasBeenSet() const { return m_operationNameHasBeenSet; }
+
+    /**
+     * <p>A list of the supported operations.</p>
+     */
     inline void SetOperationName(const Aws::String& value) { m_operationNameHasBeenSet = true; m_operationName = value; }
 
     /**

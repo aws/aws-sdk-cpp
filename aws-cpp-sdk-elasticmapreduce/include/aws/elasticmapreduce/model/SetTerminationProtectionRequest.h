@@ -61,6 +61,13 @@ namespace Model
      * identifier is returned by <a>RunJobFlow</a> and can also be obtained from
      * <a>DescribeJobFlows</a> . </p>
      */
+    inline bool JobFlowIdsHasBeenSet() const { return m_jobFlowIdsHasBeenSet; }
+
+    /**
+     * <p> A list of strings that uniquely identify the clusters to protect. This
+     * identifier is returned by <a>RunJobFlow</a> and can also be obtained from
+     * <a>DescribeJobFlows</a> . </p>
+     */
     inline void SetJobFlowIds(const Aws::Vector<Aws::String>& value) { m_jobFlowIdsHasBeenSet = true; m_jobFlowIds = value; }
 
     /**
@@ -112,6 +119,13 @@ namespace Model
      * intervention, or job-flow error.</p>
      */
     inline bool GetTerminationProtected() const{ return m_terminationProtected; }
+
+    /**
+     * <p>A Boolean that indicates whether to protect the cluster and prevent the
+     * Amazon EC2 instances in the cluster from shutting down due to API calls, user
+     * intervention, or job-flow error.</p>
+     */
+    inline bool TerminationProtectedHasBeenSet() const { return m_terminationProtectedHasBeenSet; }
 
     /**
      * <p>A Boolean that indicates whether to protect the cluster and prevent the

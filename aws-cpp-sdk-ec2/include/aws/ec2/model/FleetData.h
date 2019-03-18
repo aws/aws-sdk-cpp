@@ -80,6 +80,16 @@ namespace Model
      * size of the EC2 Fleet is decreased, the status is
      * <code>pending_termination</code> while instances are terminating.</p>
      */
+    inline bool ActivityStatusHasBeenSet() const { return m_activityStatusHasBeenSet; }
+
+    /**
+     * <p>The progress of the EC2 Fleet. If there is an error, the status is
+     * <code>error</code>. After all requests are placed, the status is
+     * <code>pending_fulfillment</code>. If the size of the EC2 Fleet is equal to or
+     * greater than its target capacity, the status is <code>fulfilled</code>. If the
+     * size of the EC2 Fleet is decreased, the status is
+     * <code>pending_termination</code> while instances are terminating.</p>
+     */
     inline void SetActivityStatus(const FleetActivityStatus& value) { m_activityStatusHasBeenSet = true; m_activityStatus = value; }
 
     /**
@@ -121,6 +131,11 @@ namespace Model
     /**
      * <p>The creation date and time of the EC2 Fleet.</p>
      */
+    inline bool CreateTimeHasBeenSet() const { return m_createTimeHasBeenSet; }
+
+    /**
+     * <p>The creation date and time of the EC2 Fleet.</p>
+     */
     inline void SetCreateTime(const Aws::Utils::DateTime& value) { m_createTimeHasBeenSet = true; m_createTime = value; }
 
     /**
@@ -143,6 +158,11 @@ namespace Model
      * <p>The ID of the EC2 Fleet.</p>
      */
     inline const Aws::String& GetFleetId() const{ return m_fleetId; }
+
+    /**
+     * <p>The ID of the EC2 Fleet.</p>
+     */
+    inline bool FleetIdHasBeenSet() const { return m_fleetIdHasBeenSet; }
 
     /**
      * <p>The ID of the EC2 Fleet.</p>
@@ -183,6 +203,11 @@ namespace Model
     /**
      * <p>The state of the EC2 Fleet.</p>
      */
+    inline bool FleetStateHasBeenSet() const { return m_fleetStateHasBeenSet; }
+
+    /**
+     * <p>The state of the EC2 Fleet.</p>
+     */
     inline void SetFleetState(const FleetStateCode& value) { m_fleetStateHasBeenSet = true; m_fleetState = value; }
 
     /**
@@ -208,6 +233,14 @@ namespace Model
      * Idempotency</a>.</p> <p>Constraints: Maximum 64 ASCII characters</p>
      */
     inline const Aws::String& GetClientToken() const{ return m_clientToken; }
+
+    /**
+     * <p>Unique, case-sensitive identifier you provide to ensure the idempotency of
+     * the request. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
+     * Idempotency</a>.</p> <p>Constraints: Maximum 64 ASCII characters</p>
+     */
+    inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
 
     /**
      * <p>Unique, case-sensitive identifier you provide to ensure the idempotency of
@@ -270,6 +303,13 @@ namespace Model
      * capacity of the EC2 Fleet is decreased below the current size of the EC2
      * Fleet.</p>
      */
+    inline bool ExcessCapacityTerminationPolicyHasBeenSet() const { return m_excessCapacityTerminationPolicyHasBeenSet; }
+
+    /**
+     * <p>Indicates whether running instances should be terminated if the target
+     * capacity of the EC2 Fleet is decreased below the current size of the EC2
+     * Fleet.</p>
+     */
     inline void SetExcessCapacityTerminationPolicy(const FleetExcessCapacityTerminationPolicy& value) { m_excessCapacityTerminationPolicyHasBeenSet = true; m_excessCapacityTerminationPolicy = value; }
 
     /**
@@ -304,6 +344,12 @@ namespace Model
      * <p>The number of units fulfilled by this request compared to the set target
      * capacity.</p>
      */
+    inline bool FulfilledCapacityHasBeenSet() const { return m_fulfilledCapacityHasBeenSet; }
+
+    /**
+     * <p>The number of units fulfilled by this request compared to the set target
+     * capacity.</p>
+     */
     inline void SetFulfilledCapacity(double value) { m_fulfilledCapacityHasBeenSet = true; m_fulfilledCapacity = value; }
 
     /**
@@ -323,6 +369,12 @@ namespace Model
      * <p>The number of units fulfilled by this request compared to the set target
      * On-Demand capacity.</p>
      */
+    inline bool FulfilledOnDemandCapacityHasBeenSet() const { return m_fulfilledOnDemandCapacityHasBeenSet; }
+
+    /**
+     * <p>The number of units fulfilled by this request compared to the set target
+     * On-Demand capacity.</p>
+     */
     inline void SetFulfilledOnDemandCapacity(double value) { m_fulfilledOnDemandCapacityHasBeenSet = true; m_fulfilledOnDemandCapacity = value; }
 
     /**
@@ -336,6 +388,11 @@ namespace Model
      * <p>The launch template and overrides.</p>
      */
     inline const Aws::Vector<FleetLaunchTemplateConfig>& GetLaunchTemplateConfigs() const{ return m_launchTemplateConfigs; }
+
+    /**
+     * <p>The launch template and overrides.</p>
+     */
+    inline bool LaunchTemplateConfigsHasBeenSet() const { return m_launchTemplateConfigsHasBeenSet; }
 
     /**
      * <p>The launch template and overrides.</p>
@@ -384,6 +441,15 @@ namespace Model
      * <code>maintain</code>, you can specify a target capacity of 0 and add capacity
      * later.</p>
      */
+    inline bool TargetCapacitySpecificationHasBeenSet() const { return m_targetCapacitySpecificationHasBeenSet; }
+
+    /**
+     * <p>The number of units to request. You can choose to set the target capacity in
+     * terms of instances or a performance characteristic that is important to your
+     * application workload, such as vCPUs, memory, or I/O. If the request type is
+     * <code>maintain</code>, you can specify a target capacity of 0 and add capacity
+     * later.</p>
+     */
     inline void SetTargetCapacitySpecification(const TargetCapacitySpecification& value) { m_targetCapacitySpecificationHasBeenSet = true; m_targetCapacitySpecification = value; }
 
     /**
@@ -424,6 +490,12 @@ namespace Model
      * <p>Indicates whether running instances should be terminated when the EC2 Fleet
      * expires. </p>
      */
+    inline bool TerminateInstancesWithExpirationHasBeenSet() const { return m_terminateInstancesWithExpirationHasBeenSet; }
+
+    /**
+     * <p>Indicates whether running instances should be terminated when the EC2 Fleet
+     * expires. </p>
+     */
     inline void SetTerminateInstancesWithExpiration(bool value) { m_terminateInstancesWithExpirationHasBeenSet = true; m_terminateInstancesWithExpiration = value; }
 
     /**
@@ -445,6 +517,19 @@ namespace Model
      * <code>maintain</code>.</p>
      */
     inline const FleetType& GetType() const{ return m_type; }
+
+    /**
+     * <p>The type of request. Indicates whether the EC2 Fleet only
+     * <code>requests</code> the target capacity, or also attempts to
+     * <code>maintain</code> it. If you request a certain target capacity, EC2 Fleet
+     * only places the required requests; it does not attempt to replenish instances if
+     * capacity is diminished, and does not submit requests in alternative capacity
+     * pools if capacity is unavailable. To maintain a certain target capacity, EC2
+     * Fleet places the required requests to meet this target capacity. It also
+     * automatically replenishes any interrupted Spot Instances. Default:
+     * <code>maintain</code>.</p>
+     */
+    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
 
     /**
      * <p>The type of request. Indicates whether the EC2 Fleet only
@@ -511,6 +596,13 @@ namespace Model
      * <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z). The default is
      * to start fulfilling the request immediately. </p>
      */
+    inline bool ValidFromHasBeenSet() const { return m_validFromHasBeenSet; }
+
+    /**
+     * <p>The start date and time of the request, in UTC format (for example,
+     * <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z). The default is
+     * to start fulfilling the request immediately. </p>
+     */
     inline void SetValidFrom(const Aws::Utils::DateTime& value) { m_validFromHasBeenSet = true; m_validFrom = value; }
 
     /**
@@ -542,6 +634,14 @@ namespace Model
      * end date is 7 days from the current date. </p>
      */
     inline const Aws::Utils::DateTime& GetValidUntil() const{ return m_validUntil; }
+
+    /**
+     * <p>The end date and time of the request, in UTC format (for example,
+     * <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z). At this point,
+     * no new instance requests are placed or able to fulfill the request. The default
+     * end date is 7 days from the current date. </p>
+     */
+    inline bool ValidUntilHasBeenSet() const { return m_validUntilHasBeenSet; }
 
     /**
      * <p>The end date and time of the request, in UTC format (for example,
@@ -584,6 +684,11 @@ namespace Model
     /**
      * <p>Indicates whether EC2 Fleet should replace unhealthy instances.</p>
      */
+    inline bool ReplaceUnhealthyInstancesHasBeenSet() const { return m_replaceUnhealthyInstancesHasBeenSet; }
+
+    /**
+     * <p>Indicates whether EC2 Fleet should replace unhealthy instances.</p>
+     */
     inline void SetReplaceUnhealthyInstances(bool value) { m_replaceUnhealthyInstancesHasBeenSet = true; m_replaceUnhealthyInstances = value; }
 
     /**
@@ -596,6 +701,11 @@ namespace Model
      * <p>The configuration of Spot Instances in an EC2 Fleet.</p>
      */
     inline const SpotOptions& GetSpotOptions() const{ return m_spotOptions; }
+
+    /**
+     * <p>The configuration of Spot Instances in an EC2 Fleet.</p>
+     */
+    inline bool SpotOptionsHasBeenSet() const { return m_spotOptionsHasBeenSet; }
 
     /**
      * <p>The configuration of Spot Instances in an EC2 Fleet.</p>
@@ -626,6 +736,11 @@ namespace Model
     /**
      * <p>The allocation strategy of On-Demand Instances in an EC2 Fleet.</p>
      */
+    inline bool OnDemandOptionsHasBeenSet() const { return m_onDemandOptionsHasBeenSet; }
+
+    /**
+     * <p>The allocation strategy of On-Demand Instances in an EC2 Fleet.</p>
+     */
     inline void SetOnDemandOptions(const OnDemandOptions& value) { m_onDemandOptionsHasBeenSet = true; m_onDemandOptions = value; }
 
     /**
@@ -648,6 +763,11 @@ namespace Model
      * <p>The tags for an EC2 Fleet resource.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>The tags for an EC2 Fleet resource.</p>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
      * <p>The tags for an EC2 Fleet resource.</p>
@@ -685,6 +805,12 @@ namespace Model
      * Valid only when <b>Type</b> is set to <code>instant</code>.</p>
      */
     inline const Aws::Vector<DescribeFleetError>& GetErrors() const{ return m_errors; }
+
+    /**
+     * <p>Information about the instances that could not be launched by the fleet.
+     * Valid only when <b>Type</b> is set to <code>instant</code>.</p>
+     */
+    inline bool ErrorsHasBeenSet() const { return m_errorsHasBeenSet; }
 
     /**
      * <p>Information about the instances that could not be launched by the fleet.
@@ -728,6 +854,12 @@ namespace Model
      * when <b>Type</b> is set to <code>instant</code>.</p>
      */
     inline const Aws::Vector<DescribeFleetsInstances>& GetInstances() const{ return m_instances; }
+
+    /**
+     * <p>Information about the instances that were launched by the fleet. Valid only
+     * when <b>Type</b> is set to <code>instant</code>.</p>
+     */
+    inline bool InstancesHasBeenSet() const { return m_instancesHasBeenSet; }
 
     /**
      * <p>Information about the instances that were launched by the fleet. Valid only

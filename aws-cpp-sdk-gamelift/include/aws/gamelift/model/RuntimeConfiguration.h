@@ -88,6 +88,12 @@ namespace Model
      * <p>Collection of server process configurations that describe which server
      * processes to run on each instance in a fleet.</p>
      */
+    inline bool ServerProcessesHasBeenSet() const { return m_serverProcessesHasBeenSet; }
+
+    /**
+     * <p>Collection of server process configurations that describe which server
+     * processes to run on each instance in a fleet.</p>
+     */
     inline void SetServerProcesses(const Aws::Vector<ServerProcess>& value) { m_serverProcessesHasBeenSet = true; m_serverProcesses = value; }
 
     /**
@@ -133,6 +139,13 @@ namespace Model
      * on an instance simultaneously. This setting limits the amount of instance
      * resources that can be used for new game activations at any one time.</p>
      */
+    inline bool MaxConcurrentGameSessionActivationsHasBeenSet() const { return m_maxConcurrentGameSessionActivationsHasBeenSet; }
+
+    /**
+     * <p>Maximum number of game sessions with status <code>ACTIVATING</code> to allow
+     * on an instance simultaneously. This setting limits the amount of instance
+     * resources that can be used for new game activations at any one time.</p>
+     */
     inline void SetMaxConcurrentGameSessionActivations(int value) { m_maxConcurrentGameSessionActivationsHasBeenSet = true; m_maxConcurrentGameSessionActivations = value; }
 
     /**
@@ -150,6 +163,14 @@ namespace Model
      * <code>TERMINATED</code>.</p>
      */
     inline int GetGameSessionActivationTimeoutSeconds() const{ return m_gameSessionActivationTimeoutSeconds; }
+
+    /**
+     * <p>Maximum amount of time (in seconds) that a game session can remain in status
+     * <code>ACTIVATING</code>. If the game session is not active before the timeout,
+     * activation is terminated and the game session status is changed to
+     * <code>TERMINATED</code>.</p>
+     */
+    inline bool GameSessionActivationTimeoutSecondsHasBeenSet() const { return m_gameSessionActivationTimeoutSecondsHasBeenSet; }
 
     /**
      * <p>Maximum amount of time (in seconds) that a game session can remain in status

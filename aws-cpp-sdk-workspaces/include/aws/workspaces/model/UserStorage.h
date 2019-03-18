@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The size of the user storage.</p>
      */
+    inline bool CapacityHasBeenSet() const { return m_capacityHasBeenSet; }
+
+    /**
+     * <p>The size of the user storage.</p>
+     */
     inline void SetCapacity(const Aws::String& value) { m_capacityHasBeenSet = true; m_capacity = value; }
 
     /**

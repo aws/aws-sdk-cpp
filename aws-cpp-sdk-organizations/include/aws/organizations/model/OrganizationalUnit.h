@@ -66,6 +66,15 @@ namespace Model
      * digits (the ID of the root that contains the OU) followed by a second "-" dash
      * and from 8 to 32 additional lower-case letters or digits.</p>
      */
+    inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
+
+    /**
+     * <p>The unique identifier (ID) associated with this OU.</p> <p>The <a
+     * href="http://wikipedia.org/wiki/regex">regex pattern</a> for an organizational
+     * unit ID string requires "ou-" followed by from 4 to 32 lower-case letters or
+     * digits (the ID of the root that contains the OU) followed by a second "-" dash
+     * and from 8 to 32 additional lower-case letters or digits.</p>
+     */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
     /**
@@ -130,6 +139,15 @@ namespace Model
      * Formats Supported by Organizations</a> in the <i>AWS Organizations User
      * Guide</i>.</p>
      */
+    inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of this OU.</p> <p>For more information about
+     * ARNs in Organizations, see <a
+     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_permissions.html#orgs-permissions-arns">ARN
+     * Formats Supported by Organizations</a> in the <i>AWS Organizations User
+     * Guide</i>.</p>
+     */
     inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
 
     /**
@@ -185,6 +203,14 @@ namespace Model
      * character range.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
+
+    /**
+     * <p>The friendly name of this OU.</p> <p>The <a
+     * href="http://wikipedia.org/wiki/regex">regex pattern</a> that is used to
+     * validate this parameter is a string of any of the characters in the ASCII
+     * character range.</p>
+     */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
      * <p>The friendly name of this OU.</p> <p>The <a

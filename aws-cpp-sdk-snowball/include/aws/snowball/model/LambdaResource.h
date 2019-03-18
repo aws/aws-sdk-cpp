@@ -59,6 +59,12 @@ namespace Model
      * <p>An Amazon Resource Name (ARN) that represents an AWS Lambda function to be
      * triggered by PUT object actions on the associated local Amazon S3 resource.</p>
      */
+    inline bool LambdaArnHasBeenSet() const { return m_lambdaArnHasBeenSet; }
+
+    /**
+     * <p>An Amazon Resource Name (ARN) that represents an AWS Lambda function to be
+     * triggered by PUT object actions on the associated local Amazon S3 resource.</p>
+     */
     inline void SetLambdaArn(const Aws::String& value) { m_lambdaArnHasBeenSet = true; m_lambdaArn = value; }
 
     /**
@@ -97,6 +103,12 @@ namespace Model
      * <a>LambdaResource</a> objects associated with this job.</p>
      */
     inline const Aws::Vector<EventTriggerDefinition>& GetEventTriggers() const{ return m_eventTriggers; }
+
+    /**
+     * <p>The array of ARNs for <a>S3Resource</a> objects to trigger the
+     * <a>LambdaResource</a> objects associated with this job.</p>
+     */
+    inline bool EventTriggersHasBeenSet() const { return m_eventTriggersHasBeenSet; }
 
     /**
      * <p>The array of ARNs for <a>S3Resource</a> objects to trigger the

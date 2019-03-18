@@ -50,6 +50,11 @@ namespace Model
     /**
      * <p>The name of the alias to delete. The name is case sensitive. </p>
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>The name of the alias to delete. The name is case sensitive. </p>
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
@@ -82,6 +87,11 @@ namespace Model
      * <p>The name of the bot that the alias points to.</p>
      */
     inline const Aws::String& GetBotName() const{ return m_botName; }
+
+    /**
+     * <p>The name of the bot that the alias points to.</p>
+     */
+    inline bool BotNameHasBeenSet() const { return m_botNameHasBeenSet; }
 
     /**
      * <p>The name of the bot that the alias points to.</p>

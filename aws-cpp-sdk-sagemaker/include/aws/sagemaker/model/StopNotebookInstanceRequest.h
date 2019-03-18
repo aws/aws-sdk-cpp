@@ -52,6 +52,11 @@ namespace Model
     /**
      * <p>The name of the notebook instance to terminate.</p>
      */
+    inline bool NotebookInstanceNameHasBeenSet() const { return m_notebookInstanceNameHasBeenSet; }
+
+    /**
+     * <p>The name of the notebook instance to terminate.</p>
+     */
     inline void SetNotebookInstanceName(const Aws::String& value) { m_notebookInstanceNameHasBeenSet = true; m_notebookInstanceName = value; }
 
     /**

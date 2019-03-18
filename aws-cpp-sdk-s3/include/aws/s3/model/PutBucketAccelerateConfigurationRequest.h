@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p>Name of the bucket for which the accelerate configuration is set.</p>
      */
+    inline bool BucketHasBeenSet() const { return m_bucketHasBeenSet; }
+
+    /**
+     * <p>Name of the bucket for which the accelerate configuration is set.</p>
+     */
     inline void SetBucket(const Aws::String& value) { m_bucketHasBeenSet = true; m_bucket = value; }
 
     /**
@@ -94,6 +99,11 @@ namespace Model
     /**
      * <p>Specifies the Accelerate Configuration you want to set for the bucket.</p>
      */
+    inline bool AccelerateConfigurationHasBeenSet() const { return m_accelerateConfigurationHasBeenSet; }
+
+    /**
+     * <p>Specifies the Accelerate Configuration you want to set for the bucket.</p>
+     */
     inline void SetAccelerateConfiguration(const AccelerateConfiguration& value) { m_accelerateConfigurationHasBeenSet = true; m_accelerateConfiguration = value; }
 
     /**
@@ -114,6 +124,9 @@ namespace Model
 
     
     inline const Aws::Map<Aws::String, Aws::String>& GetCustomizedAccessLogTag() const{ return m_customizedAccessLogTag; }
+
+    
+    inline bool CustomizedAccessLogTagHasBeenSet() const { return m_customizedAccessLogTagHasBeenSet; }
 
     
     inline void SetCustomizedAccessLogTag(const Aws::Map<Aws::String, Aws::String>& value) { m_customizedAccessLogTagHasBeenSet = true; m_customizedAccessLogTag = value; }

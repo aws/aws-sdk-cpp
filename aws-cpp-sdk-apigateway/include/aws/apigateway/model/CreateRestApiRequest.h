@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>[Required] The name of the <a>RestApi</a>.</p>
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>[Required] The name of the <a>RestApi</a>.</p>
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
@@ -89,6 +94,11 @@ namespace Model
      * <p>The description of the <a>RestApi</a>.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
+
+    /**
+     * <p>The description of the <a>RestApi</a>.</p>
+     */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
 
     /**
      * <p>The description of the <a>RestApi</a>.</p>
@@ -129,6 +139,11 @@ namespace Model
     /**
      * <p>A version identifier for the API.</p>
      */
+    inline bool VersionHasBeenSet() const { return m_versionHasBeenSet; }
+
+    /**
+     * <p>A version identifier for the API.</p>
+     */
     inline void SetVersion(const Aws::String& value) { m_versionHasBeenSet = true; m_version = value; }
 
     /**
@@ -161,6 +176,11 @@ namespace Model
      * <p>The ID of the <a>RestApi</a> that you want to clone from.</p>
      */
     inline const Aws::String& GetCloneFrom() const{ return m_cloneFrom; }
+
+    /**
+     * <p>The ID of the <a>RestApi</a> that you want to clone from.</p>
+     */
+    inline bool CloneFromHasBeenSet() const { return m_cloneFromHasBeenSet; }
 
     /**
      * <p>The ID of the <a>RestApi</a> that you want to clone from.</p>
@@ -198,6 +218,12 @@ namespace Model
      * the <a>RestApi</a> supports only UTF-8-encoded text payloads.</p>
      */
     inline const Aws::Vector<Aws::String>& GetBinaryMediaTypes() const{ return m_binaryMediaTypes; }
+
+    /**
+     * <p>The list of binary media types supported by the <a>RestApi</a>. By default,
+     * the <a>RestApi</a> supports only UTF-8-encoded text payloads.</p>
+     */
+    inline bool BinaryMediaTypesHasBeenSet() const { return m_binaryMediaTypesHasBeenSet; }
 
     /**
      * <p>The list of binary media types supported by the <a>RestApi</a>. By default,
@@ -258,6 +284,15 @@ namespace Model
      * is not applied on the payload if the payload size is smaller than this value.
      * Setting it to zero allows compression for any payload size.</p>
      */
+    inline bool MinimumCompressionSizeHasBeenSet() const { return m_minimumCompressionSizeHasBeenSet; }
+
+    /**
+     * <p>A nullable integer that is used to enable compression (with non-negative
+     * between 0 and 10485760 (10M) bytes, inclusive) or disable compression (with a
+     * null value) on an API. When compression is enabled, compression or decompression
+     * is not applied on the payload if the payload size is smaller than this value.
+     * Setting it to zero allows compression for any payload size.</p>
+     */
     inline void SetMinimumCompressionSize(int value) { m_minimumCompressionSizeHasBeenSet = true; m_minimumCompressionSize = value; }
 
     /**
@@ -278,6 +313,15 @@ namespace Model
      * authorizer.</li></ul> </p>
      */
     inline const ApiKeySourceType& GetApiKeySource() const{ return m_apiKeySource; }
+
+    /**
+     * <p>The source of the API key for metering requests according to a usage plan.
+     * Valid values are: <ul><li><code>HEADER</code> to read the API key from the
+     * <code>X-API-Key</code> header of a request. </li><li><code>AUTHORIZER</code> to
+     * read the API key from the <code>UsageIdentifierKey</code> from a custom
+     * authorizer.</li></ul> </p>
+     */
+    inline bool ApiKeySourceHasBeenSet() const { return m_apiKeySourceHasBeenSet; }
 
     /**
      * <p>The source of the API key for metering requests according to a usage plan.
@@ -326,6 +370,12 @@ namespace Model
      * <p>The endpoint configuration of this <a>RestApi</a> showing the endpoint types
      * of the API. </p>
      */
+    inline bool EndpointConfigurationHasBeenSet() const { return m_endpointConfigurationHasBeenSet; }
+
+    /**
+     * <p>The endpoint configuration of this <a>RestApi</a> showing the endpoint types
+     * of the API. </p>
+     */
     inline void SetEndpointConfiguration(const EndpointConfiguration& value) { m_endpointConfigurationHasBeenSet = true; m_endpointConfiguration = value; }
 
     /**
@@ -352,6 +402,12 @@ namespace Model
      * the caller and <a>Method</a> configuration.
      */
     inline const Aws::String& GetPolicy() const{ return m_policy; }
+
+    /**
+     * A stringified JSON policy document that applies to this RestApi regardless of
+     * the caller and <a>Method</a> configuration.
+     */
+    inline bool PolicyHasBeenSet() const { return m_policyHasBeenSet; }
 
     /**
      * A stringified JSON policy document that applies to this RestApi regardless of

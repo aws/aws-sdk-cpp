@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The name of the domain that you want to renew.</p>
      */
+    inline bool DomainNameHasBeenSet() const { return m_domainNameHasBeenSet; }
+
+    /**
+     * <p>The name of the domain that you want to renew.</p>
+     */
     inline void SetDomainName(const Aws::String& value) { m_domainNameHasBeenSet = true; m_domainName = value; }
 
     /**
@@ -102,6 +107,16 @@ namespace Model
      * that You Can Register with Amazon Route 53</a> in the <i>Amazon Route 53
      * Developer Guide</i>.</p> <p>Default: 1</p>
      */
+    inline bool DurationInYearsHasBeenSet() const { return m_durationInYearsHasBeenSet; }
+
+    /**
+     * <p>The number of years that you want to renew the domain for. The maximum number
+     * of years depends on the top-level domain. For the range of valid values for your
+     * domain, see <a
+     * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html">Domains
+     * that You Can Register with Amazon Route 53</a> in the <i>Amazon Route 53
+     * Developer Guide</i>.</p> <p>Default: 1</p>
+     */
     inline void SetDurationInYears(int value) { m_durationInYearsHasBeenSet = true; m_durationInYears = value; }
 
     /**
@@ -120,6 +135,12 @@ namespace Model
      * must match the current expiration date for the domain.</p>
      */
     inline int GetCurrentExpiryYear() const{ return m_currentExpiryYear; }
+
+    /**
+     * <p>The year when the registration for the domain is set to expire. This value
+     * must match the current expiration date for the domain.</p>
+     */
+    inline bool CurrentExpiryYearHasBeenSet() const { return m_currentExpiryYearHasBeenSet; }
 
     /**
      * <p>The year when the registration for the domain is set to expire. This value

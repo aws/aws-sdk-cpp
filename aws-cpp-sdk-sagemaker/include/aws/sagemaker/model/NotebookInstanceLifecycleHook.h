@@ -69,6 +69,12 @@ namespace Model
      * <p>A base64-encoded string that contains a shell script for a notebook instance
      * lifecycle configuration.</p>
      */
+    inline bool ContentHasBeenSet() const { return m_contentHasBeenSet; }
+
+    /**
+     * <p>A base64-encoded string that contains a shell script for a notebook instance
+     * lifecycle configuration.</p>
+     */
     inline void SetContent(const Aws::String& value) { m_contentHasBeenSet = true; m_content = value; }
 
     /**

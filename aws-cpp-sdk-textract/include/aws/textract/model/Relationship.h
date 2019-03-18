@@ -65,6 +65,13 @@ namespace Model
      * current block. The relationship can be <code>VALUE</code> or
      * <code>CHILD</code>.</p>
      */
+    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
+
+    /**
+     * <p>The type of relationship that the blocks in the IDs array have with the
+     * current block. The relationship can be <code>VALUE</code> or
+     * <code>CHILD</code>.</p>
+     */
     inline void SetType(const RelationshipType& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
@@ -94,6 +101,12 @@ namespace Model
      * from the <code>Type</code> element.</p>
      */
     inline const Aws::Vector<Aws::String>& GetIds() const{ return m_ids; }
+
+    /**
+     * <p>An array of IDs for related blocks. You can get the type of the relationship
+     * from the <code>Type</code> element.</p>
+     */
+    inline bool IdsHasBeenSet() const { return m_idsHasBeenSet; }
 
     /**
      * <p>An array of IDs for related blocks. You can get the type of the relationship

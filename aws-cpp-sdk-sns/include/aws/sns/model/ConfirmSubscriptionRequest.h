@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The ARN of the topic for which you wish to confirm a subscription.</p>
      */
+    inline bool TopicArnHasBeenSet() const { return m_topicArnHasBeenSet; }
+
+    /**
+     * <p>The ARN of the topic for which you wish to confirm a subscription.</p>
+     */
     inline void SetTopicArn(const Aws::String& value) { m_topicArnHasBeenSet = true; m_topicArn = value; }
 
     /**
@@ -90,6 +95,12 @@ namespace Model
      * action.</p>
      */
     inline const Aws::String& GetToken() const{ return m_token; }
+
+    /**
+     * <p>Short-lived token sent to an endpoint during the <code>Subscribe</code>
+     * action.</p>
+     */
+    inline bool TokenHasBeenSet() const { return m_tokenHasBeenSet; }
 
     /**
      * <p>Short-lived token sent to an endpoint during the <code>Subscribe</code>
@@ -135,6 +146,14 @@ namespace Model
      * The unsubscribe action requires AWS authentication. </p>
      */
     inline const Aws::String& GetAuthenticateOnUnsubscribe() const{ return m_authenticateOnUnsubscribe; }
+
+    /**
+     * <p>Disallows unauthenticated unsubscribes of the subscription. If the value of
+     * this parameter is <code>true</code> and the request has an AWS signature, then
+     * only the topic owner and the subscription owner can unsubscribe the endpoint.
+     * The unsubscribe action requires AWS authentication. </p>
+     */
+    inline bool AuthenticateOnUnsubscribeHasBeenSet() const { return m_authenticateOnUnsubscribeHasBeenSet; }
 
     /**
      * <p>Disallows unauthenticated unsubscribes of the subscription. If the value of

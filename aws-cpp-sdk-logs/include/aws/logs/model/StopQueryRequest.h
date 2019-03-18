@@ -54,6 +54,12 @@ namespace Model
      * <p>The ID number of the query to stop. If necessary, you can use
      * <code>DescribeQueries</code> to find this ID number.</p>
      */
+    inline bool QueryIdHasBeenSet() const { return m_queryIdHasBeenSet; }
+
+    /**
+     * <p>The ID number of the query to stop. If necessary, you can use
+     * <code>DescribeQueries</code> to find this ID number.</p>
+     */
     inline void SetQueryId(const Aws::String& value) { m_queryIdHasBeenSet = true; m_queryId = value; }
 
     /**

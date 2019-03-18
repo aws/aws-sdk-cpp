@@ -56,6 +56,12 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) that is associated with the <a>Directory</a>
      * where objects reside. For more information, see <a>arns</a>.</p>
      */
+    inline bool DirectoryArnHasBeenSet() const { return m_directoryArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) that is associated with the <a>Directory</a>
+     * where objects reside. For more information, see <a>arns</a>.</p>
+     */
     inline void SetDirectoryArn(const Aws::String& value) { m_directoryArnHasBeenSet = true; m_directoryArn = value; }
 
     /**
@@ -97,6 +103,11 @@ namespace Model
     /**
      * <p>Reference that identifies the object for which policies will be listed.</p>
      */
+    inline bool ObjectReferenceHasBeenSet() const { return m_objectReferenceHasBeenSet; }
+
+    /**
+     * <p>Reference that identifies the object for which policies will be listed.</p>
+     */
     inline void SetObjectReference(const ObjectReference& value) { m_objectReferenceHasBeenSet = true; m_objectReference = value; }
 
     /**
@@ -119,6 +130,11 @@ namespace Model
      * <p>The pagination token.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
+    /**
+     * <p>The pagination token.</p>
+     */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
      * <p>The pagination token.</p>
@@ -161,6 +177,12 @@ namespace Model
      * <p>The maximum number of items to be retrieved in a single call. This is an
      * approximate number.</p>
      */
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
+
+    /**
+     * <p>The maximum number of items to be retrieved in a single call. This is an
+     * approximate number.</p>
+     */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
@@ -175,6 +197,12 @@ namespace Model
      * an object is reflected in a subsequent read operation of that same object.</p>
      */
     inline const ConsistencyLevel& GetConsistencyLevel() const{ return m_consistencyLevel; }
+
+    /**
+     * <p>Represents the manner and timing in which the successful write or update of
+     * an object is reflected in a subsequent read operation of that same object.</p>
+     */
+    inline bool ConsistencyLevelHasBeenSet() const { return m_consistencyLevelHasBeenSet; }
 
     /**
      * <p>Represents the manner and timing in which the successful write or update of

@@ -55,6 +55,11 @@ namespace Model
     /**
      * <p>The Amazon Resource Names (ARN) of the resources.</p>
      */
+    inline bool ResourceArnsHasBeenSet() const { return m_resourceArnsHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Names (ARN) of the resources.</p>
+     */
     inline void SetResourceArns(const Aws::Vector<Aws::String>& value) { m_resourceArnsHasBeenSet = true; m_resourceArns = value; }
 
     /**

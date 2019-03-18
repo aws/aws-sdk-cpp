@@ -56,6 +56,9 @@ namespace Model
     inline const Aws::String& GetDomainName() const{ return m_domainName; }
 
     
+    inline bool DomainNameHasBeenSet() const { return m_domainNameHasBeenSet; }
+
+    
     inline void SetDomainName(const Aws::String& value) { m_domainNameHasBeenSet = true; m_domainName = value; }
 
     
@@ -76,6 +79,9 @@ namespace Model
 
     
     inline const AnalysisScheme& GetAnalysisScheme() const{ return m_analysisScheme; }
+
+    
+    inline bool AnalysisSchemeHasBeenSet() const { return m_analysisSchemeHasBeenSet; }
 
     
     inline void SetAnalysisScheme(const AnalysisScheme& value) { m_analysisSchemeHasBeenSet = true; m_analysisScheme = value; }

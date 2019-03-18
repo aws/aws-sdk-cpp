@@ -59,6 +59,11 @@ namespace Model
     /**
      * The group ID whose permissions are used to run a Lambda function.
      */
+    inline bool GidHasBeenSet() const { return m_gidHasBeenSet; }
+
+    /**
+     * The group ID whose permissions are used to run a Lambda function.
+     */
     inline void SetGid(int value) { m_gidHasBeenSet = true; m_gid = value; }
 
     /**
@@ -71,6 +76,11 @@ namespace Model
      * The user ID whose permissions are used to run a Lambda function.
      */
     inline int GetUid() const{ return m_uid; }
+
+    /**
+     * The user ID whose permissions are used to run a Lambda function.
+     */
+    inline bool UidHasBeenSet() const { return m_uidHasBeenSet; }
 
     /**
      * The user ID whose permissions are used to run a Lambda function.

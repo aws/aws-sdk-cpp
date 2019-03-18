@@ -62,6 +62,12 @@ namespace Model
      * <p>Describes updates to an SQL-based Kinesis Data Analytics application's
      * configuration.</p>
      */
+    inline bool SqlApplicationConfigurationUpdateHasBeenSet() const { return m_sqlApplicationConfigurationUpdateHasBeenSet; }
+
+    /**
+     * <p>Describes updates to an SQL-based Kinesis Data Analytics application's
+     * configuration.</p>
+     */
     inline void SetSqlApplicationConfigurationUpdate(const SqlApplicationConfigurationUpdate& value) { m_sqlApplicationConfigurationUpdateHasBeenSet = true; m_sqlApplicationConfigurationUpdate = value; }
 
     /**
@@ -88,6 +94,12 @@ namespace Model
      * configuration.</p>
      */
     inline const ApplicationCodeConfigurationUpdate& GetApplicationCodeConfigurationUpdate() const{ return m_applicationCodeConfigurationUpdate; }
+
+    /**
+     * <p>Describes updates to a Java-based Kinesis Data Analytics application's code
+     * configuration.</p>
+     */
+    inline bool ApplicationCodeConfigurationUpdateHasBeenSet() const { return m_applicationCodeConfigurationUpdateHasBeenSet; }
 
     /**
      * <p>Describes updates to a Java-based Kinesis Data Analytics application's code
@@ -124,6 +136,12 @@ namespace Model
      * <p>Describes updates to a Java-based Kinesis Data Analytics application's
      * configuration.</p>
      */
+    inline bool FlinkApplicationConfigurationUpdateHasBeenSet() const { return m_flinkApplicationConfigurationUpdateHasBeenSet; }
+
+    /**
+     * <p>Describes updates to a Java-based Kinesis Data Analytics application's
+     * configuration.</p>
+     */
     inline void SetFlinkApplicationConfigurationUpdate(const FlinkApplicationConfigurationUpdate& value) { m_flinkApplicationConfigurationUpdateHasBeenSet = true; m_flinkApplicationConfigurationUpdate = value; }
 
     /**
@@ -155,6 +173,12 @@ namespace Model
      * <p>Describes updates to the environment properties for a Java-based Kinesis Data
      * Analytics application.</p>
      */
+    inline bool EnvironmentPropertyUpdatesHasBeenSet() const { return m_environmentPropertyUpdatesHasBeenSet; }
+
+    /**
+     * <p>Describes updates to the environment properties for a Java-based Kinesis Data
+     * Analytics application.</p>
+     */
     inline void SetEnvironmentPropertyUpdates(const EnvironmentPropertyUpdates& value) { m_environmentPropertyUpdatesHasBeenSet = true; m_environmentPropertyUpdates = value; }
 
     /**
@@ -181,6 +205,12 @@ namespace Model
      * Analytics application.</p>
      */
     inline const ApplicationSnapshotConfigurationUpdate& GetApplicationSnapshotConfigurationUpdate() const{ return m_applicationSnapshotConfigurationUpdate; }
+
+    /**
+     * <p>Describes whether snapshots are enabled for a Java-based Kinesis Data
+     * Analytics application.</p>
+     */
+    inline bool ApplicationSnapshotConfigurationUpdateHasBeenSet() const { return m_applicationSnapshotConfigurationUpdateHasBeenSet; }
 
     /**
      * <p>Describes whether snapshots are enabled for a Java-based Kinesis Data

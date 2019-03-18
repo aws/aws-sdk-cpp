@@ -63,6 +63,11 @@ namespace Model
     /**
      * <p>The valid storage types for your DB instance. For example, gp2, io1. </p>
      */
+    inline bool StorageTypeHasBeenSet() const { return m_storageTypeHasBeenSet; }
+
+    /**
+     * <p>The valid storage types for your DB instance. For example, gp2, io1. </p>
+     */
     inline void SetStorageType(const Aws::String& value) { m_storageTypeHasBeenSet = true; m_storageType = value; }
 
     /**
@@ -95,6 +100,11 @@ namespace Model
      * <p>The valid range of storage in gibibytes. For example, 100 to 16384. </p>
      */
     inline const Aws::Vector<Range>& GetStorageSize() const{ return m_storageSize; }
+
+    /**
+     * <p>The valid range of storage in gibibytes. For example, 100 to 16384. </p>
+     */
+    inline bool StorageSizeHasBeenSet() const { return m_storageSizeHasBeenSet; }
 
     /**
      * <p>The valid range of storage in gibibytes. For example, 100 to 16384. </p>
@@ -135,6 +145,11 @@ namespace Model
     /**
      * <p>The valid range of provisioned IOPS. For example, 1000-20000. </p>
      */
+    inline bool ProvisionedIopsHasBeenSet() const { return m_provisionedIopsHasBeenSet; }
+
+    /**
+     * <p>The valid range of provisioned IOPS. For example, 1000-20000. </p>
+     */
     inline void SetProvisionedIops(const Aws::Vector<Range>& value) { m_provisionedIopsHasBeenSet = true; m_provisionedIops = value; }
 
     /**
@@ -169,6 +184,13 @@ namespace Model
      * storage. </p>
      */
     inline const Aws::Vector<DoubleRange>& GetIopsToStorageRatio() const{ return m_iopsToStorageRatio; }
+
+    /**
+     * <p>The valid range of Provisioned IOPS to gibibytes of storage multiplier. For
+     * example, 3-10, which means that provisioned IOPS can be between 3 and 10 times
+     * storage. </p>
+     */
+    inline bool IopsToStorageRatioHasBeenSet() const { return m_iopsToStorageRatioHasBeenSet; }
 
     /**
      * <p>The valid range of Provisioned IOPS to gibibytes of storage multiplier. For

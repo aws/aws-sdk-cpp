@@ -63,6 +63,14 @@ namespace Model
      * returned.</p> <p>An empty list results in an
      * <code>InvalidParameterException</code> being thrown.</p>
      */
+    inline bool DirectoryIdsHasBeenSet() const { return m_directoryIdsHasBeenSet; }
+
+    /**
+     * <p>A list of identifiers of the directories for which to obtain the information.
+     * If this member is null, all directories that belong to the current account are
+     * returned.</p> <p>An empty list results in an
+     * <code>InvalidParameterException</code> being thrown.</p>
+     */
     inline void SetDirectoryIds(const Aws::Vector<Aws::String>& value) { m_directoryIdsHasBeenSet = true; m_directoryIds = value; }
 
     /**
@@ -124,6 +132,12 @@ namespace Model
      * <p>The <code>DescribeDirectoriesResult.NextToken</code> value from a previous
      * call to <a>DescribeDirectories</a>. Pass null if this is the first call.</p>
      */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
+
+    /**
+     * <p>The <code>DescribeDirectoriesResult.NextToken</code> value from a previous
+     * call to <a>DescribeDirectories</a>. Pass null if this is the first call.</p>
+     */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
     /**
@@ -162,6 +176,12 @@ namespace Model
      * number of items is specified by the limitations of the operation.</p>
      */
     inline int GetLimit() const{ return m_limit; }
+
+    /**
+     * <p>The maximum number of items to return. If this value is zero, the maximum
+     * number of items is specified by the limitations of the operation.</p>
+     */
+    inline bool LimitHasBeenSet() const { return m_limitHasBeenSet; }
 
     /**
      * <p>The maximum number of items to return. If this value is zero, the maximum

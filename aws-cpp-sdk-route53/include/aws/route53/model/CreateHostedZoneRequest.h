@@ -72,6 +72,19 @@ namespace Model
      * servers for your domain to the set of <code>NameServers</code> that
      * <code>CreateHostedZone</code> returns in <code>DelegationSet</code>.</p>
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>The name of the domain. Specify a fully qualified domain name, for example,
+     * <i>www.example.com</i>. The trailing dot is optional; Amazon Route 53 assumes
+     * that the domain name is fully qualified. This means that Route 53 treats
+     * <i>www.example.com</i> (without a trailing dot) and <i>www.example.com.</i>
+     * (with a trailing dot) as identical.</p> <p>If you're creating a public hosted
+     * zone, this is the name you have registered with your DNS registrar. If your
+     * domain name is registered with a registrar other than Route 53, change the name
+     * servers for your domain to the set of <code>NameServers</code> that
+     * <code>CreateHostedZone</code> returns in <code>DelegationSet</code>.</p>
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
@@ -156,6 +169,15 @@ namespace Model
      * additional Amazon VPCs with the hosted zone, use
      * <a>AssociateVPCWithHostedZone</a> after you create a hosted zone.</p>
      */
+    inline bool VPCHasBeenSet() const { return m_vPCHasBeenSet; }
+
+    /**
+     * <p>(Private hosted zones only) A complex type that contains information about
+     * the Amazon VPC that you're associating with this hosted zone.</p> <p>You can
+     * specify only one Amazon VPC when you create a private hosted zone. To associate
+     * additional Amazon VPCs with the hosted zone, use
+     * <a>AssociateVPCWithHostedZone</a> after you create a hosted zone.</p>
+     */
     inline void SetVPC(const VPC& value) { m_vPCHasBeenSet = true; m_vPC = value; }
 
     /**
@@ -195,6 +217,16 @@ namespace Model
      * unique string, for example, a date/time stamp.</p>
      */
     inline const Aws::String& GetCallerReference() const{ return m_callerReference; }
+
+    /**
+     * <p>A unique string that identifies the request and that allows failed
+     * <code>CreateHostedZone</code> requests to be retried without the risk of
+     * executing the operation twice. You must use a unique
+     * <code>CallerReference</code> string every time you submit a
+     * <code>CreateHostedZone</code> request. <code>CallerReference</code> can be any
+     * unique string, for example, a date/time stamp.</p>
+     */
+    inline bool CallerReferenceHasBeenSet() const { return m_callerReferenceHasBeenSet; }
 
     /**
      * <p>A unique string that identifies the request and that allows failed
@@ -275,6 +307,16 @@ namespace Model
      * <code>PrivateZone</code> element, omit <code>HostedZoneConfig</code> and the
      * other elements.</p>
      */
+    inline bool HostedZoneConfigHasBeenSet() const { return m_hostedZoneConfigHasBeenSet; }
+
+    /**
+     * <p>(Optional) A complex type that contains the following optional values:</p>
+     * <ul> <li> <p>For public and private hosted zones, an optional comment</p> </li>
+     * <li> <p>For private hosted zones, an optional <code>PrivateZone</code>
+     * element</p> </li> </ul> <p>If you don't specify a comment or the
+     * <code>PrivateZone</code> element, omit <code>HostedZoneConfig</code> and the
+     * other elements.</p>
+     */
     inline void SetHostedZoneConfig(const HostedZoneConfig& value) { m_hostedZoneConfigHasBeenSet = true; m_hostedZoneConfig = value; }
 
     /**
@@ -315,6 +357,14 @@ namespace Model
      * <a>CreateReusableDelegationSet</a>.</p>
      */
     inline const Aws::String& GetDelegationSetId() const{ return m_delegationSetId; }
+
+    /**
+     * <p>If you want to associate a reusable delegation set with this hosted zone, the
+     * ID that Amazon Route 53 assigned to the reusable delegation set when you created
+     * it. For more information about reusable delegation sets, see
+     * <a>CreateReusableDelegationSet</a>.</p>
+     */
+    inline bool DelegationSetIdHasBeenSet() const { return m_delegationSetIdHasBeenSet; }
 
     /**
      * <p>If you want to associate a reusable delegation set with this hosted zone, the

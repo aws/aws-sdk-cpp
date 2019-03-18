@@ -73,6 +73,11 @@ namespace Model
     /**
      * <p>A list of filter objects.</p>
      */
+    inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
+
+    /**
+     * <p>A list of filter objects.</p>
+     */
     inline void SetFilters(const Aws::Vector<Filter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
 
     /**
@@ -105,6 +110,11 @@ namespace Model
      * <p>A list of nested filter objects.</p>
      */
     inline const Aws::Vector<NestedFilters>& GetNestedFilters() const{ return m_nestedFilters; }
+
+    /**
+     * <p>A list of nested filter objects.</p>
+     */
+    inline bool NestedFiltersHasBeenSet() const { return m_nestedFiltersHasBeenSet; }
 
     /**
      * <p>A list of nested filter objects.</p>
@@ -145,6 +155,11 @@ namespace Model
     /**
      * <p>A list of search expression objects.</p>
      */
+    inline bool SubExpressionsHasBeenSet() const { return m_subExpressionsHasBeenSet; }
+
+    /**
+     * <p>A list of search expression objects.</p>
+     */
     inline void SetSubExpressions(const Aws::Vector<SearchExpression>& value) { m_subExpressionsHasBeenSet = true; m_subExpressions = value; }
 
     /**
@@ -181,6 +196,15 @@ namespace Model
      * <code>Or</code>. The default value is <code>And</code>.</p>
      */
     inline const BooleanOperator& GetOperator() const{ return m_operator; }
+
+    /**
+     * <p>A Boolean operator used to evaluate the search expression. If you want every
+     * conditional statement in all lists to be satisfied for the entire search
+     * expression to be true, specify <code>And</code>. If only a single conditional
+     * statement needs to be true for the entire search expression to be true, specify
+     * <code>Or</code>. The default value is <code>And</code>.</p>
+     */
+    inline bool OperatorHasBeenSet() const { return m_operatorHasBeenSet; }
 
     /**
      * <p>A Boolean operator used to evaluate the search expression. If you want every

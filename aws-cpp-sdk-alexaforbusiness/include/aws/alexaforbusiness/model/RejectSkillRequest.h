@@ -52,6 +52,11 @@ namespace Model
     /**
      * <p>The unique identifier of the skill.</p>
      */
+    inline bool SkillIdHasBeenSet() const { return m_skillIdHasBeenSet; }
+
+    /**
+     * <p>The unique identifier of the skill.</p>
+     */
     inline void SetSkillId(const Aws::String& value) { m_skillIdHasBeenSet = true; m_skillId = value; }
 
     /**

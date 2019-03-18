@@ -55,6 +55,11 @@ namespace Model
     /**
      * <p>The name of the data set to update.</p>
      */
+    inline bool DatasetNameHasBeenSet() const { return m_datasetNameHasBeenSet; }
+
+    /**
+     * <p>The name of the data set to update.</p>
+     */
     inline void SetDatasetName(const Aws::String& value) { m_datasetNameHasBeenSet = true; m_datasetName = value; }
 
     /**
@@ -87,6 +92,11 @@ namespace Model
      * <p>A list of "DatasetAction" objects.</p>
      */
     inline const Aws::Vector<DatasetAction>& GetActions() const{ return m_actions; }
+
+    /**
+     * <p>A list of "DatasetAction" objects.</p>
+     */
+    inline bool ActionsHasBeenSet() const { return m_actionsHasBeenSet; }
 
     /**
      * <p>A list of "DatasetAction" objects.</p>
@@ -124,6 +134,12 @@ namespace Model
      * to five <b>DataSetTrigger</b> objects.</p>
      */
     inline const Aws::Vector<DatasetTrigger>& GetTriggers() const{ return m_triggers; }
+
+    /**
+     * <p>A list of "DatasetTrigger" objects. The list can be empty or can contain up
+     * to five <b>DataSetTrigger</b> objects.</p>
+     */
+    inline bool TriggersHasBeenSet() const { return m_triggersHasBeenSet; }
 
     /**
      * <p>A list of "DatasetTrigger" objects. The list can be empty or can contain up
@@ -172,6 +188,12 @@ namespace Model
      * <p>When data set contents are created they are delivered to destinations
      * specified here.</p>
      */
+    inline bool ContentDeliveryRulesHasBeenSet() const { return m_contentDeliveryRulesHasBeenSet; }
+
+    /**
+     * <p>When data set contents are created they are delivered to destinations
+     * specified here.</p>
+     */
     inline void SetContentDeliveryRules(const Aws::Vector<DatasetContentDeliveryRule>& value) { m_contentDeliveryRulesHasBeenSet = true; m_contentDeliveryRules = value; }
 
     /**
@@ -209,6 +231,11 @@ namespace Model
      * <p>How long, in days, message data is kept for the data set.</p>
      */
     inline const RetentionPeriod& GetRetentionPeriod() const{ return m_retentionPeriod; }
+
+    /**
+     * <p>How long, in days, message data is kept for the data set.</p>
+     */
+    inline bool RetentionPeriodHasBeenSet() const { return m_retentionPeriodHasBeenSet; }
 
     /**
      * <p>How long, in days, message data is kept for the data set.</p>

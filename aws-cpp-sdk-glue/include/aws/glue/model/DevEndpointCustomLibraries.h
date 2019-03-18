@@ -66,6 +66,16 @@ namespace Model
      * href="http://pandas.pydata.org/">pandas</a> Python data analysis library, are
      * not yet supported.</p>
      */
+    inline bool ExtraPythonLibsS3PathHasBeenSet() const { return m_extraPythonLibsS3PathHasBeenSet; }
+
+    /**
+     * <p>Path(s) to one or more Python libraries in an S3 bucket that should be loaded
+     * in your DevEndpoint. Multiple values must be complete paths separated by a
+     * comma.</p> <p>Please note that only pure Python libraries can currently be used
+     * on a DevEndpoint. Libraries that rely on C extensions, such as the <a
+     * href="http://pandas.pydata.org/">pandas</a> Python data analysis library, are
+     * not yet supported.</p>
+     */
     inline void SetExtraPythonLibsS3Path(const Aws::String& value) { m_extraPythonLibsS3PathHasBeenSet = true; m_extraPythonLibsS3Path = value; }
 
     /**
@@ -125,6 +135,13 @@ namespace Model
      * currently be used on a DevEndpoint.</p>
      */
     inline const Aws::String& GetExtraJarsS3Path() const{ return m_extraJarsS3Path; }
+
+    /**
+     * <p>Path to one or more Java Jars in an S3 bucket that should be loaded in your
+     * DevEndpoint.</p> <p>Please note that only pure Java/Scala libraries can
+     * currently be used on a DevEndpoint.</p>
+     */
+    inline bool ExtraJarsS3PathHasBeenSet() const { return m_extraJarsS3PathHasBeenSet; }
 
     /**
      * <p>Path to one or more Java Jars in an S3 bucket that should be loaded in your

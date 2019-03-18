@@ -51,6 +51,11 @@ namespace Model
     /**
      * <p>The name of the placement to be created.</p>
      */
+    inline bool PlacementNameHasBeenSet() const { return m_placementNameHasBeenSet; }
+
+    /**
+     * <p>The name of the placement to be created.</p>
+     */
     inline void SetPlacementName(const Aws::String& value) { m_placementNameHasBeenSet = true; m_placementName = value; }
 
     /**
@@ -83,6 +88,11 @@ namespace Model
      * <p>The name of the project in which to create the placement.</p>
      */
     inline const Aws::String& GetProjectName() const{ return m_projectName; }
+
+    /**
+     * <p>The name of the project in which to create the placement.</p>
+     */
+    inline bool ProjectNameHasBeenSet() const { return m_projectNameHasBeenSet; }
 
     /**
      * <p>The name of the project in which to create the placement.</p>
@@ -120,6 +130,12 @@ namespace Model
      * location or function) for the placement.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetAttributes() const{ return m_attributes; }
+
+    /**
+     * <p>Optional user-defined key/value pairs providing contextual data (such as
+     * location or function) for the placement.</p>
+     */
+    inline bool AttributesHasBeenSet() const { return m_attributesHasBeenSet; }
 
     /**
      * <p>Optional user-defined key/value pairs providing contextual data (such as

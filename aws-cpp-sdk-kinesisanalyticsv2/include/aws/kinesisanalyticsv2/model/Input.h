@@ -73,6 +73,16 @@ namespace Model
      * "<code>MyInApplicationStream_001</code>,"
      * "<code>MyInApplicationStream_002</code>," and so on. </p>
      */
+    inline bool NamePrefixHasBeenSet() const { return m_namePrefixHasBeenSet; }
+
+    /**
+     * <p>The name prefix to use when creating an in-application stream. Suppose that
+     * you specify a prefix "<code>MyInApplicationStream</code>." Kinesis Data
+     * Analytics then creates one or more (as per the <code>InputParallelism</code>
+     * count you specified) in-application streams with the names
+     * "<code>MyInApplicationStream_001</code>,"
+     * "<code>MyInApplicationStream_002</code>," and so on. </p>
+     */
     inline void SetNamePrefix(const Aws::String& value) { m_namePrefixHasBeenSet = true; m_namePrefix = value; }
 
     /**
@@ -140,6 +150,14 @@ namespace Model
      * application's SQL code executes. Currently, the only input processing
      * configuration available is <a>InputLambdaProcessor</a>. </p>
      */
+    inline bool InputProcessingConfigurationHasBeenSet() const { return m_inputProcessingConfigurationHasBeenSet; }
+
+    /**
+     * <p>The <a>InputProcessingConfiguration</a> for the input. An input processor
+     * transforms records as they are received from the stream, before the
+     * application's SQL code executes. Currently, the only input processing
+     * configuration available is <a>InputLambdaProcessor</a>. </p>
+     */
     inline void SetInputProcessingConfiguration(const InputProcessingConfiguration& value) { m_inputProcessingConfigurationHasBeenSet = true; m_inputProcessingConfiguration = value; }
 
     /**
@@ -177,6 +195,12 @@ namespace Model
      * <p>If the streaming source is an Amazon Kinesis data stream, identifies the
      * stream's Amazon Resource Name (ARN). </p>
      */
+    inline bool KinesisStreamsInputHasBeenSet() const { return m_kinesisStreamsInputHasBeenSet; }
+
+    /**
+     * <p>If the streaming source is an Amazon Kinesis data stream, identifies the
+     * stream's Amazon Resource Name (ARN). </p>
+     */
     inline void SetKinesisStreamsInput(const KinesisStreamsInput& value) { m_kinesisStreamsInputHasBeenSet = true; m_kinesisStreamsInput = value; }
 
     /**
@@ -203,6 +227,12 @@ namespace Model
      * identifies the delivery stream's ARN.</p>
      */
     inline const KinesisFirehoseInput& GetKinesisFirehoseInput() const{ return m_kinesisFirehoseInput; }
+
+    /**
+     * <p>If the streaming source is an Amazon Kinesis Data Firehose delivery stream,
+     * identifies the delivery stream's ARN.</p>
+     */
+    inline bool KinesisFirehoseInputHasBeenSet() const { return m_kinesisFirehoseInputHasBeenSet; }
 
     /**
      * <p>If the streaming source is an Amazon Kinesis Data Firehose delivery stream,
@@ -237,6 +267,11 @@ namespace Model
     /**
      * <p>Describes the number of in-application streams to create. </p>
      */
+    inline bool InputParallelismHasBeenSet() const { return m_inputParallelismHasBeenSet; }
+
+    /**
+     * <p>Describes the number of in-application streams to create. </p>
+     */
     inline void SetInputParallelism(const InputParallelism& value) { m_inputParallelismHasBeenSet = true; m_inputParallelism = value; }
 
     /**
@@ -262,6 +297,14 @@ namespace Model
      * source.</p>
      */
     inline const SourceSchema& GetInputSchema() const{ return m_inputSchema; }
+
+    /**
+     * <p>Describes the format of the data in the streaming source, and how each data
+     * element maps to corresponding columns in the in-application stream that is being
+     * created.</p> <p>Also used to describe the format of the reference data
+     * source.</p>
+     */
+    inline bool InputSchemaHasBeenSet() const { return m_inputSchemaHasBeenSet; }
 
     /**
      * <p>Describes the format of the data in the streaming source, and how each data

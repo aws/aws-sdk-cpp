@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p>The name of the custom verification email template.</p>
      */
+    inline bool TemplateNameHasBeenSet() const { return m_templateNameHasBeenSet; }
+
+    /**
+     * <p>The name of the custom verification email template.</p>
+     */
     inline void SetTemplateName(const Aws::String& value) { m_templateNameHasBeenSet = true; m_templateName = value; }
 
     /**
@@ -90,6 +95,11 @@ namespace Model
      * <p>The email address that the custom verification email is sent from.</p>
      */
     inline const Aws::String& GetFromEmailAddress() const{ return m_fromEmailAddress; }
+
+    /**
+     * <p>The email address that the custom verification email is sent from.</p>
+     */
+    inline bool FromEmailAddressHasBeenSet() const { return m_fromEmailAddressHasBeenSet; }
 
     /**
      * <p>The email address that the custom verification email is sent from.</p>
@@ -130,6 +140,11 @@ namespace Model
     /**
      * <p>The subject line of the custom verification email.</p>
      */
+    inline bool TemplateSubjectHasBeenSet() const { return m_templateSubjectHasBeenSet; }
+
+    /**
+     * <p>The subject line of the custom verification email.</p>
+     */
     inline void SetTemplateSubject(const Aws::String& value) { m_templateSubjectHasBeenSet = true; m_templateSubject = value; }
 
     /**
@@ -163,6 +178,12 @@ namespace Model
      * address is successfully verified.</p>
      */
     inline const Aws::String& GetSuccessRedirectionURL() const{ return m_successRedirectionURL; }
+
+    /**
+     * <p>The URL that the recipient of the verification email is sent to if his or her
+     * address is successfully verified.</p>
+     */
+    inline bool SuccessRedirectionURLHasBeenSet() const { return m_successRedirectionURLHasBeenSet; }
 
     /**
      * <p>The URL that the recipient of the verification email is sent to if his or her
@@ -206,6 +227,12 @@ namespace Model
      * address is not successfully verified.</p>
      */
     inline const Aws::String& GetFailureRedirectionURL() const{ return m_failureRedirectionURL; }
+
+    /**
+     * <p>The URL that the recipient of the verification email is sent to if his or her
+     * address is not successfully verified.</p>
+     */
+    inline bool FailureRedirectionURLHasBeenSet() const { return m_failureRedirectionURLHasBeenSet; }
 
     /**
      * <p>The URL that the recipient of the verification email is sent to if his or her

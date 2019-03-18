@@ -66,6 +66,15 @@ namespace Model
      * for AWS Config is optional. If the SNS delivery is turned off, the last status
      * will be <b>Not_Applicable</b>.</p>
      */
+    inline bool LastStatusHasBeenSet() const { return m_lastStatusHasBeenSet; }
+
+    /**
+     * <p>Status of the last attempted delivery.</p> <p> <b>Note</b> Providing an SNS
+     * topic on a <a
+     * href="https://docs.aws.amazon.com/config/latest/APIReference/API_DeliveryChannel.html">DeliveryChannel</a>
+     * for AWS Config is optional. If the SNS delivery is turned off, the last status
+     * will be <b>Not_Applicable</b>.</p>
+     */
     inline void SetLastStatus(const DeliveryStatus& value) { m_lastStatusHasBeenSet = true; m_lastStatus = value; }
 
     /**
@@ -100,6 +109,11 @@ namespace Model
      * <p>The error code from the last attempted delivery.</p>
      */
     inline const Aws::String& GetLastErrorCode() const{ return m_lastErrorCode; }
+
+    /**
+     * <p>The error code from the last attempted delivery.</p>
+     */
+    inline bool LastErrorCodeHasBeenSet() const { return m_lastErrorCodeHasBeenSet; }
 
     /**
      * <p>The error code from the last attempted delivery.</p>
@@ -140,6 +154,11 @@ namespace Model
     /**
      * <p>The error message from the last attempted delivery.</p>
      */
+    inline bool LastErrorMessageHasBeenSet() const { return m_lastErrorMessageHasBeenSet; }
+
+    /**
+     * <p>The error message from the last attempted delivery.</p>
+     */
     inline void SetLastErrorMessage(const Aws::String& value) { m_lastErrorMessageHasBeenSet = true; m_lastErrorMessage = value; }
 
     /**
@@ -172,6 +191,11 @@ namespace Model
      * <p>The time from the last status change.</p>
      */
     inline const Aws::Utils::DateTime& GetLastStatusChangeTime() const{ return m_lastStatusChangeTime; }
+
+    /**
+     * <p>The time from the last status change.</p>
+     */
+    inline bool LastStatusChangeTimeHasBeenSet() const { return m_lastStatusChangeTimeHasBeenSet; }
 
     /**
      * <p>The time from the last status change.</p>

@@ -56,6 +56,12 @@ namespace Model
      * <p> Set to true to fetch Git submodules for your AWS CodeBuild build project.
      * </p>
      */
+    inline bool FetchSubmodulesHasBeenSet() const { return m_fetchSubmodulesHasBeenSet; }
+
+    /**
+     * <p> Set to true to fetch Git submodules for your AWS CodeBuild build project.
+     * </p>
+     */
     inline void SetFetchSubmodules(bool value) { m_fetchSubmodulesHasBeenSet = true; m_fetchSubmodules = value; }
 
     /**

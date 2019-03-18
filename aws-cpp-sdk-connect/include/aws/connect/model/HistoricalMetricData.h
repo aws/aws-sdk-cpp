@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>A <code>HistoricalMetric</code> object.</p>
      */
+    inline bool MetricHasBeenSet() const { return m_metricHasBeenSet; }
+
+    /**
+     * <p>A <code>HistoricalMetric</code> object.</p>
+     */
     inline void SetMetric(const HistoricalMetric& value) { m_metricHasBeenSet = true; m_metric = value; }
 
     /**
@@ -78,6 +83,11 @@ namespace Model
      * <p>The <code>Value</code> of the metric.</p>
      */
     inline double GetValue() const{ return m_value; }
+
+    /**
+     * <p>The <code>Value</code> of the metric.</p>
+     */
+    inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
 
     /**
      * <p>The <code>Value</code> of the metric.</p>

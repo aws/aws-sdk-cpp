@@ -62,6 +62,12 @@ namespace Model
      * <p>The name of the profile for the algorithm. The name must have 1 to 63
      * characters. Valid characters are a-z, A-Z, 0-9, and - (hyphen).</p>
      */
+    inline bool ProfileNameHasBeenSet() const { return m_profileNameHasBeenSet; }
+
+    /**
+     * <p>The name of the profile for the algorithm. The name must have 1 to 63
+     * characters. Valid characters are a-z, A-Z, 0-9, and - (hyphen).</p>
+     */
     inline void SetProfileName(const Aws::String& value) { m_profileNameHasBeenSet = true; m_profileName = value; }
 
     /**
@@ -105,6 +111,12 @@ namespace Model
      * <p>The <code>TrainingJobDefinition</code> object that describes the training job
      * that Amazon SageMaker runs to validate your algorithm.</p>
      */
+    inline bool TrainingJobDefinitionHasBeenSet() const { return m_trainingJobDefinitionHasBeenSet; }
+
+    /**
+     * <p>The <code>TrainingJobDefinition</code> object that describes the training job
+     * that Amazon SageMaker runs to validate your algorithm.</p>
+     */
     inline void SetTrainingJobDefinition(const TrainingJobDefinition& value) { m_trainingJobDefinitionHasBeenSet = true; m_trainingJobDefinition = value; }
 
     /**
@@ -131,6 +143,12 @@ namespace Model
      * job that Amazon SageMaker runs to validate your algorithm.</p>
      */
     inline const TransformJobDefinition& GetTransformJobDefinition() const{ return m_transformJobDefinition; }
+
+    /**
+     * <p>The <code>TransformJobDefinition</code> object that describes the transform
+     * job that Amazon SageMaker runs to validate your algorithm.</p>
+     */
+    inline bool TransformJobDefinitionHasBeenSet() const { return m_transformJobDefinitionHasBeenSet; }
 
     /**
      * <p>The <code>TransformJobDefinition</code> object that describes the transform

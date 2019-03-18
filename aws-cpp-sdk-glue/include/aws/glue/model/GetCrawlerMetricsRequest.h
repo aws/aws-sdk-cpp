@@ -53,6 +53,11 @@ namespace Model
     /**
      * <p>A list of the names of crawlers about which to retrieve metrics.</p>
      */
+    inline bool CrawlerNameListHasBeenSet() const { return m_crawlerNameListHasBeenSet; }
+
+    /**
+     * <p>A list of the names of crawlers about which to retrieve metrics.</p>
+     */
     inline void SetCrawlerNameList(const Aws::Vector<Aws::String>& value) { m_crawlerNameListHasBeenSet = true; m_crawlerNameList = value; }
 
     /**
@@ -94,6 +99,11 @@ namespace Model
     /**
      * <p>The maximum size of a list to return.</p>
      */
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
+
+    /**
+     * <p>The maximum size of a list to return.</p>
+     */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
@@ -106,6 +116,11 @@ namespace Model
      * <p>A continuation token, if this is a continuation call.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
+    /**
+     * <p>A continuation token, if this is a continuation call.</p>
+     */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
      * <p>A continuation token, if this is a continuation call.</p>

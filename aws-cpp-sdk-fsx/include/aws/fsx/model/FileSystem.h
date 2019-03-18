@@ -65,6 +65,12 @@ namespace Model
      * <p>The AWS account that created the file system. If the file system was created
      * by an IAM user, the AWS account to which the IAM user belongs is the owner.</p>
      */
+    inline bool OwnerIdHasBeenSet() const { return m_ownerIdHasBeenSet; }
+
+    /**
+     * <p>The AWS account that created the file system. If the file system was created
+     * by an IAM user, the AWS account to which the IAM user belongs is the owner.</p>
+     */
     inline void SetOwnerId(const Aws::String& value) { m_ownerIdHasBeenSet = true; m_ownerId = value; }
 
     /**
@@ -108,6 +114,12 @@ namespace Model
      * <p>The time that the file system was created, in seconds (since
      * 1970-01-01T00:00:00Z), also known as Unix time.</p>
      */
+    inline bool CreationTimeHasBeenSet() const { return m_creationTimeHasBeenSet; }
+
+    /**
+     * <p>The time that the file system was created, in seconds (since
+     * 1970-01-01T00:00:00Z), also known as Unix time.</p>
+     */
     inline void SetCreationTime(const Aws::Utils::DateTime& value) { m_creationTimeHasBeenSet = true; m_creationTime = value; }
 
     /**
@@ -134,6 +146,12 @@ namespace Model
      * Amazon FSx.</p>
      */
     inline const Aws::String& GetFileSystemId() const{ return m_fileSystemId; }
+
+    /**
+     * <p>The eight-digit ID of the file system that was automatically assigned by
+     * Amazon FSx.</p>
+     */
+    inline bool FileSystemIdHasBeenSet() const { return m_fileSystemIdHasBeenSet; }
 
     /**
      * <p>The eight-digit ID of the file system that was automatically assigned by
@@ -180,6 +198,11 @@ namespace Model
     /**
      * <p>Type of file system. Currently the only supported type is WINDOWS.</p>
      */
+    inline bool FileSystemTypeHasBeenSet() const { return m_fileSystemTypeHasBeenSet; }
+
+    /**
+     * <p>Type of file system. Currently the only supported type is WINDOWS.</p>
+     */
     inline void SetFileSystemType(const FileSystemType& value) { m_fileSystemTypeHasBeenSet = true; m_fileSystemType = value; }
 
     /**
@@ -206,6 +229,11 @@ namespace Model
     /**
      * <p>The lifecycle status of the file system.</p>
      */
+    inline bool LifecycleHasBeenSet() const { return m_lifecycleHasBeenSet; }
+
+    /**
+     * <p>The lifecycle status of the file system.</p>
+     */
     inline void SetLifecycle(const FileSystemLifecycle& value) { m_lifecycleHasBeenSet = true; m_lifecycle = value; }
 
     /**
@@ -228,6 +256,9 @@ namespace Model
     inline const FileSystemFailureDetails& GetFailureDetails() const{ return m_failureDetails; }
 
     
+    inline bool FailureDetailsHasBeenSet() const { return m_failureDetailsHasBeenSet; }
+
+    
     inline void SetFailureDetails(const FileSystemFailureDetails& value) { m_failureDetailsHasBeenSet = true; m_failureDetails = value; }
 
     
@@ -248,6 +279,11 @@ namespace Model
     /**
      * <p>The storage capacity of the file system in gigabytes.</p>
      */
+    inline bool StorageCapacityHasBeenSet() const { return m_storageCapacityHasBeenSet; }
+
+    /**
+     * <p>The storage capacity of the file system in gigabytes.</p>
+     */
     inline void SetStorageCapacity(int value) { m_storageCapacityHasBeenSet = true; m_storageCapacity = value; }
 
     /**
@@ -260,6 +296,11 @@ namespace Model
      * <p>The ID of the primary VPC for the file system.</p>
      */
     inline const Aws::String& GetVpcId() const{ return m_vpcId; }
+
+    /**
+     * <p>The ID of the primary VPC for the file system.</p>
+     */
+    inline bool VpcIdHasBeenSet() const { return m_vpcIdHasBeenSet; }
 
     /**
      * <p>The ID of the primary VPC for the file system.</p>
@@ -298,6 +339,13 @@ namespace Model
      * associated with this subnet.</p>
      */
     inline const Aws::Vector<Aws::String>& GetSubnetIds() const{ return m_subnetIds; }
+
+    /**
+     * <p>The IDs of the subnets to contain the endpoint for the file system. One and
+     * only one is supported. The file system is launched in the Availability Zone
+     * associated with this subnet.</p>
+     */
+    inline bool SubnetIdsHasBeenSet() const { return m_subnetIdsHasBeenSet; }
 
     /**
      * <p>The IDs of the subnets to contain the endpoint for the file system. One and
@@ -360,6 +408,18 @@ namespace Model
      * one.</p>
      */
     inline const Aws::Vector<Aws::String>& GetNetworkInterfaceIds() const{ return m_networkInterfaceIds; }
+
+    /**
+     * <p>The IDs of the elastic network interface from which a specific file system is
+     * accessible. The elastic network interface is automatically created in the same
+     * VPC that the Amazon FSx file system was created in. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-eni.html">Elastic
+     * Network Interfaces</a> in the <i>Amazon EC2 User Guide.</i> </p> <p>For an
+     * Amazon FSx for Windows File Server file system, you can have one network
+     * interface Id. For an Amazon FSx for Lustre file system, you can have more than
+     * one.</p>
+     */
+    inline bool NetworkInterfaceIdsHasBeenSet() const { return m_networkInterfaceIdsHasBeenSet; }
 
     /**
      * <p>The IDs of the elastic network interface from which a specific file system is
@@ -454,6 +514,11 @@ namespace Model
     /**
      * <p>The DNS name for the file system.</p>
      */
+    inline bool DNSNameHasBeenSet() const { return m_dNSNameHasBeenSet; }
+
+    /**
+     * <p>The DNS name for the file system.</p>
+     */
     inline void SetDNSName(const Aws::String& value) { m_dNSNameHasBeenSet = true; m_dNSName = value; }
 
     /**
@@ -487,6 +552,12 @@ namespace Model
      * file system's data for an Amazon FSx for Windows File Server file system.</p>
      */
     inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
+
+    /**
+     * <p>The ID of the AWS Key Management Service (AWS KMS) key used to encrypt the
+     * file system's data for an Amazon FSx for Windows File Server file system.</p>
+     */
+    inline bool KmsKeyIdHasBeenSet() const { return m_kmsKeyIdHasBeenSet; }
 
     /**
      * <p>The ID of the AWS Key Management Service (AWS KMS) key used to encrypt the
@@ -533,6 +604,11 @@ namespace Model
     /**
      * <p>The resource ARN of the file system.</p>
      */
+    inline bool ResourceARNHasBeenSet() const { return m_resourceARNHasBeenSet; }
+
+    /**
+     * <p>The resource ARN of the file system.</p>
+     */
     inline void SetResourceARN(const Aws::String& value) { m_resourceARNHasBeenSet = true; m_resourceARN = value; }
 
     /**
@@ -567,6 +643,13 @@ namespace Model
      * Your Amazon EC2 Resources</a> in the <i>Amazon EC2 User Guide</i>.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>The tags to associate with the file system. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">Tagging
+     * Your Amazon EC2 Resources</a> in the <i>Amazon EC2 User Guide</i>.</p>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
      * <p>The tags to associate with the file system. For more information, see <a
@@ -619,6 +702,11 @@ namespace Model
     /**
      * <p>The configuration for this Microsoft Windows file system.</p>
      */
+    inline bool WindowsConfigurationHasBeenSet() const { return m_windowsConfigurationHasBeenSet; }
+
+    /**
+     * <p>The configuration for this Microsoft Windows file system.</p>
+     */
     inline void SetWindowsConfiguration(const WindowsFileSystemConfiguration& value) { m_windowsConfigurationHasBeenSet = true; m_windowsConfiguration = value; }
 
     /**
@@ -639,6 +727,9 @@ namespace Model
 
     
     inline const LustreFileSystemConfiguration& GetLustreConfiguration() const{ return m_lustreConfiguration; }
+
+    
+    inline bool LustreConfigurationHasBeenSet() const { return m_lustreConfigurationHasBeenSet; }
 
     
     inline void SetLustreConfiguration(const LustreFileSystemConfiguration& value) { m_lustreConfigurationHasBeenSet = true; m_lustreConfiguration = value; }

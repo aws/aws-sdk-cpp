@@ -57,6 +57,11 @@ namespace Model
     /**
      * The Amazon Resource Name (ARN) assigned to the Channel.
      */
+    inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
+
+    /**
+     * The Amazon Resource Name (ARN) assigned to the Channel.
+     */
     inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
 
     /**
@@ -93,6 +98,11 @@ namespace Model
     /**
      * A short text description of the Channel.
      */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
+
+    /**
+     * A short text description of the Channel.
+     */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
@@ -125,6 +135,9 @@ namespace Model
     inline const HlsIngest& GetHlsIngest() const{ return m_hlsIngest; }
 
     
+    inline bool HlsIngestHasBeenSet() const { return m_hlsIngestHasBeenSet; }
+
+    
     inline void SetHlsIngest(const HlsIngest& value) { m_hlsIngestHasBeenSet = true; m_hlsIngest = value; }
 
     
@@ -141,6 +154,11 @@ namespace Model
      * The ID of the Channel.
      */
     inline const Aws::String& GetId() const{ return m_id; }
+
+    /**
+     * The ID of the Channel.
+     */
+    inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
 
     /**
      * The ID of the Channel.
@@ -175,6 +193,9 @@ namespace Model
 
     
     inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
+
+    
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     
     inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }

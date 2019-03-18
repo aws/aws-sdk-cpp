@@ -56,6 +56,12 @@ namespace Model
      * <p>The name of the endpoint. The name must be unique within an AWS Region in
      * your AWS account.</p>
      */
+    inline bool EndpointNameHasBeenSet() const { return m_endpointNameHasBeenSet; }
+
+    /**
+     * <p>The name of the endpoint. The name must be unique within an AWS Region in
+     * your AWS account.</p>
+     */
     inline void SetEndpointName(const Aws::String& value) { m_endpointNameHasBeenSet = true; m_endpointName = value; }
 
     /**
@@ -95,6 +101,13 @@ namespace Model
      * </p>
      */
     inline const Aws::String& GetEndpointConfigName() const{ return m_endpointConfigName; }
+
+    /**
+     * <p>The name of an endpoint configuration. For more information, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateEndpointConfig.html">CreateEndpointConfig</a>.
+     * </p>
+     */
+    inline bool EndpointConfigNameHasBeenSet() const { return m_endpointConfigNameHasBeenSet; }
 
     /**
      * <p>The name of an endpoint configuration. For more information, see <a
@@ -146,6 +159,14 @@ namespace Model
      * Guide</i>. </p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>An array of key-value pairs. For more information, see <a
+     * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-what">Using
+     * Cost Allocation Tags</a>in the <i>AWS Billing and Cost Management User
+     * Guide</i>. </p>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
      * <p>An array of key-value pairs. For more information, see <a

@@ -60,6 +60,11 @@ namespace Model
     /**
      * <p>One or more network interface permission IDs.</p>
      */
+    inline bool NetworkInterfacePermissionIdsHasBeenSet() const { return m_networkInterfacePermissionIdsHasBeenSet; }
+
+    /**
+     * <p>One or more network interface permission IDs.</p>
+     */
     inline void SetNetworkInterfacePermissionIds(const Aws::Vector<Aws::String>& value) { m_networkInterfacePermissionIdsHasBeenSet = true; m_networkInterfacePermissionIds = value; }
 
     /**
@@ -106,6 +111,20 @@ namespace Model
      * (<code>INSTANCE-ATTACH</code> | <code>EIP-ASSOCIATE</code>).</p> </li> </ul>
      */
     inline const Aws::Vector<Filter>& GetFilters() const{ return m_filters; }
+
+    /**
+     * <p>One or more filters.</p> <ul> <li> <p>
+     * <code>network-interface-permission.network-interface-permission-id</code> - The
+     * ID of the permission.</p> </li> <li> <p>
+     * <code>network-interface-permission.network-interface-id</code> - The ID of the
+     * network interface.</p> </li> <li> <p>
+     * <code>network-interface-permission.aws-account-id</code> - The AWS account
+     * ID.</p> </li> <li> <p> <code>network-interface-permission.aws-service</code> -
+     * The AWS service.</p> </li> <li> <p>
+     * <code>network-interface-permission.permission</code> - The type of permission
+     * (<code>INSTANCE-ATTACH</code> | <code>EIP-ASSOCIATE</code>).</p> </li> </ul>
+     */
+    inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
 
     /**
      * <p>One or more filters.</p> <ul> <li> <p>
@@ -200,6 +219,11 @@ namespace Model
     /**
      * <p>The token to request the next page of results.</p>
      */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
+
+    /**
+     * <p>The token to request the next page of results.</p>
+     */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
     /**
@@ -235,6 +259,14 @@ namespace Model
      * default.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
+
+    /**
+     * <p>The maximum number of results to return in a single call. To retrieve the
+     * remaining results, make another call with the returned <code>NextToken</code>
+     * value. If this parameter is not specified, up to 50 results are returned by
+     * default.</p>
+     */
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
 
     /**
      * <p>The maximum number of results to return in a single call. To retrieve the

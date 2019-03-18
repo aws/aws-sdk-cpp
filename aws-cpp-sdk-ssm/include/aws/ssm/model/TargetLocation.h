@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The AWS accounts targeted by the current Automation execution.</p>
      */
+    inline bool AccountsHasBeenSet() const { return m_accountsHasBeenSet; }
+
+    /**
+     * <p>The AWS accounts targeted by the current Automation execution.</p>
+     */
     inline void SetAccounts(const Aws::Vector<Aws::String>& value) { m_accountsHasBeenSet = true; m_accounts = value; }
 
     /**
@@ -94,6 +99,11 @@ namespace Model
      * <p>The AWS Regions targeted by the current Automation execution.</p>
      */
     inline const Aws::Vector<Aws::String>& GetRegions() const{ return m_regions; }
+
+    /**
+     * <p>The AWS Regions targeted by the current Automation execution.</p>
+     */
+    inline bool RegionsHasBeenSet() const { return m_regionsHasBeenSet; }
 
     /**
      * <p>The AWS Regions targeted by the current Automation execution.</p>
@@ -136,6 +146,12 @@ namespace Model
      * Automation concurrently </p>
      */
     inline const Aws::String& GetTargetLocationMaxConcurrency() const{ return m_targetLocationMaxConcurrency; }
+
+    /**
+     * <p>The maxium number of AWS accounts and AWS regions allowed to run the
+     * Automation concurrently </p>
+     */
+    inline bool TargetLocationMaxConcurrencyHasBeenSet() const { return m_targetLocationMaxConcurrencyHasBeenSet; }
 
     /**
      * <p>The maxium number of AWS accounts and AWS regions allowed to run the
@@ -184,6 +200,12 @@ namespace Model
      * <p>The maxium number of errors allowed before the system stops queueing
      * additional Automation executions for the currently executing Automation. </p>
      */
+    inline bool TargetLocationMaxErrorsHasBeenSet() const { return m_targetLocationMaxErrorsHasBeenSet; }
+
+    /**
+     * <p>The maxium number of errors allowed before the system stops queueing
+     * additional Automation executions for the currently executing Automation. </p>
+     */
     inline void SetTargetLocationMaxErrors(const Aws::String& value) { m_targetLocationMaxErrorsHasBeenSet = true; m_targetLocationMaxErrors = value; }
 
     /**
@@ -221,6 +243,11 @@ namespace Model
      * <p>The Automation execution role used by the currently executing Automation.</p>
      */
     inline const Aws::String& GetExecutionRoleName() const{ return m_executionRoleName; }
+
+    /**
+     * <p>The Automation execution role used by the currently executing Automation.</p>
+     */
+    inline bool ExecutionRoleNameHasBeenSet() const { return m_executionRoleNameHasBeenSet; }
 
     /**
      * <p>The Automation execution role used by the currently executing Automation.</p>

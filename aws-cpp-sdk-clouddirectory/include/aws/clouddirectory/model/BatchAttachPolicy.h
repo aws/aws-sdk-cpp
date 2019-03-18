@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The reference that is associated with the policy object.</p>
      */
+    inline bool PolicyReferenceHasBeenSet() const { return m_policyReferenceHasBeenSet; }
+
+    /**
+     * <p>The reference that is associated with the policy object.</p>
+     */
     inline void SetPolicyReference(const ObjectReference& value) { m_policyReferenceHasBeenSet = true; m_policyReference = value; }
 
     /**
@@ -80,6 +85,12 @@ namespace Model
      * attached.</p>
      */
     inline const ObjectReference& GetObjectReference() const{ return m_objectReference; }
+
+    /**
+     * <p>The reference that identifies the object to which the policy will be
+     * attached.</p>
+     */
+    inline bool ObjectReferenceHasBeenSet() const { return m_objectReferenceHasBeenSet; }
 
     /**
      * <p>The reference that identifies the object to which the policy will be

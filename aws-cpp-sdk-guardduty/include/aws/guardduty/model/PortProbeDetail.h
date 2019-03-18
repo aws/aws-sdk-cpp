@@ -56,6 +56,11 @@ namespace Model
     /**
      * Local port information of the connection.
      */
+    inline bool LocalPortDetailsHasBeenSet() const { return m_localPortDetailsHasBeenSet; }
+
+    /**
+     * Local port information of the connection.
+     */
     inline void SetLocalPortDetails(const LocalPortDetails& value) { m_localPortDetailsHasBeenSet = true; m_localPortDetails = value; }
 
     /**
@@ -78,6 +83,11 @@ namespace Model
      * Remote IP information of the connection.
      */
     inline const RemoteIpDetails& GetRemoteIpDetails() const{ return m_remoteIpDetails; }
+
+    /**
+     * Remote IP information of the connection.
+     */
+    inline bool RemoteIpDetailsHasBeenSet() const { return m_remoteIpDetailsHasBeenSet; }
 
     /**
      * Remote IP information of the connection.

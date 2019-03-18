@@ -62,6 +62,11 @@ namespace Model
     /**
      * <p>The identifier of the policy that was provided as an input.</p>
      */
+    inline bool SourcePolicyIdHasBeenSet() const { return m_sourcePolicyIdHasBeenSet; }
+
+    /**
+     * <p>The identifier of the policy that was provided as an input.</p>
+     */
     inline void SetSourcePolicyId(const Aws::String& value) { m_sourcePolicyIdHasBeenSet = true; m_sourcePolicyId = value; }
 
     /**
@@ -98,6 +103,11 @@ namespace Model
     /**
      * <p>The type of the policy.</p>
      */
+    inline bool SourcePolicyTypeHasBeenSet() const { return m_sourcePolicyTypeHasBeenSet; }
+
+    /**
+     * <p>The type of the policy.</p>
+     */
     inline void SetSourcePolicyType(const PolicySourceType& value) { m_sourcePolicyTypeHasBeenSet = true; m_sourcePolicyType = value; }
 
     /**
@@ -121,6 +131,12 @@ namespace Model
      * policy.</p>
      */
     inline const Position& GetStartPosition() const{ return m_startPosition; }
+
+    /**
+     * <p>The row and column of the beginning of the <code>Statement</code> in an IAM
+     * policy.</p>
+     */
+    inline bool StartPositionHasBeenSet() const { return m_startPositionHasBeenSet; }
 
     /**
      * <p>The row and column of the beginning of the <code>Statement</code> in an IAM
@@ -152,6 +168,12 @@ namespace Model
      * policy.</p>
      */
     inline const Position& GetEndPosition() const{ return m_endPosition; }
+
+    /**
+     * <p>The row and column of the end of a <code>Statement</code> in an IAM
+     * policy.</p>
+     */
+    inline bool EndPositionHasBeenSet() const { return m_endPositionHasBeenSet; }
 
     /**
      * <p>The row and column of the end of a <code>Statement</code> in an IAM

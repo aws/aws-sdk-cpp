@@ -61,6 +61,12 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the IAM role, for example,
      * <code>arn:aws:iam::123456789012:role/RedshiftCopyUnload</code>. </p>
      */
+    inline bool IamRoleArnHasBeenSet() const { return m_iamRoleArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the IAM role, for example,
+     * <code>arn:aws:iam::123456789012:role/RedshiftCopyUnload</code>. </p>
+     */
     inline void SetIamRoleArn(const Aws::String& value) { m_iamRoleArnHasBeenSet = true; m_iamRoleArn = value; }
 
     /**
@@ -104,6 +110,17 @@ namespace Model
      * the cluster.</p> </li> </ul>
      */
     inline const Aws::String& GetApplyStatus() const{ return m_applyStatus; }
+
+    /**
+     * <p>A value that describes the status of the IAM role's association with an
+     * Amazon Redshift cluster.</p> <p>The following are possible statuses and
+     * descriptions.</p> <ul> <li> <p> <code>in-sync</code>: The role is available for
+     * use by the cluster.</p> </li> <li> <p> <code>adding</code>: The role is in the
+     * process of being associated with the cluster.</p> </li> <li> <p>
+     * <code>removing</code>: The role is in the process of being disassociated with
+     * the cluster.</p> </li> </ul>
+     */
+    inline bool ApplyStatusHasBeenSet() const { return m_applyStatusHasBeenSet; }
 
     /**
      * <p>A value that describes the status of the IAM role's association with an

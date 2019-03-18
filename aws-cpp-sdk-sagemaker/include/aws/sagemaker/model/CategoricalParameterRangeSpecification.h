@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The allowed categories for the hyperparameter.</p>
      */
+    inline bool ValuesHasBeenSet() const { return m_valuesHasBeenSet; }
+
+    /**
+     * <p>The allowed categories for the hyperparameter.</p>
+     */
     inline void SetValues(const Aws::Vector<Aws::String>& value) { m_valuesHasBeenSet = true; m_values = value; }
 
     /**

@@ -56,6 +56,13 @@ namespace Model
      * get. <code>GeoMatchSetId</code> is returned by <a>CreateGeoMatchSet</a> and by
      * <a>ListGeoMatchSets</a>.</p>
      */
+    inline bool GeoMatchSetIdHasBeenSet() const { return m_geoMatchSetIdHasBeenSet; }
+
+    /**
+     * <p>The <code>GeoMatchSetId</code> of the <a>GeoMatchSet</a> that you want to
+     * get. <code>GeoMatchSetId</code> is returned by <a>CreateGeoMatchSet</a> and by
+     * <a>ListGeoMatchSets</a>.</p>
+     */
     inline void SetGeoMatchSetId(const Aws::String& value) { m_geoMatchSetIdHasBeenSet = true; m_geoMatchSetId = value; }
 
     /**

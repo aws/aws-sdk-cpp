@@ -62,6 +62,12 @@ namespace Model
      * <p>The Lightsail resource type (e.g., <code>InstanceSnapshot</code> or
      * <code>DiskSnapshot</code>).</p>
      */
+    inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
+
+    /**
+     * <p>The Lightsail resource type (e.g., <code>InstanceSnapshot</code> or
+     * <code>DiskSnapshot</code>).</p>
+     */
     inline void SetResourceType(const ExportSnapshotRecordSourceType& value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
 
     /**
@@ -91,6 +97,11 @@ namespace Model
     /**
      * <p>The date when the source instance or disk snapshot was created.</p>
      */
+    inline bool CreatedAtHasBeenSet() const { return m_createdAtHasBeenSet; }
+
+    /**
+     * <p>The date when the source instance or disk snapshot was created.</p>
+     */
     inline void SetCreatedAt(const Aws::Utils::DateTime& value) { m_createdAtHasBeenSet = true; m_createdAt = value; }
 
     /**
@@ -113,6 +124,11 @@ namespace Model
      * <p>The name of the source instance or disk snapshot.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
+
+    /**
+     * <p>The name of the source instance or disk snapshot.</p>
+     */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
      * <p>The name of the source instance or disk snapshot.</p>
@@ -153,6 +169,11 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the source instance or disk snapshot.</p>
      */
+    inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the source instance or disk snapshot.</p>
+     */
     inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
 
     /**
@@ -185,6 +206,11 @@ namespace Model
      * <p>The name of the snapshot's source instance or disk.</p>
      */
     inline const Aws::String& GetFromResourceName() const{ return m_fromResourceName; }
+
+    /**
+     * <p>The name of the snapshot's source instance or disk.</p>
+     */
+    inline bool FromResourceNameHasBeenSet() const { return m_fromResourceNameHasBeenSet; }
 
     /**
      * <p>The name of the snapshot's source instance or disk.</p>
@@ -225,6 +251,11 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the snapshot's source instance or disk.</p>
      */
+    inline bool FromResourceArnHasBeenSet() const { return m_fromResourceArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the snapshot's source instance or disk.</p>
+     */
     inline void SetFromResourceArn(const Aws::String& value) { m_fromResourceArnHasBeenSet = true; m_fromResourceArn = value; }
 
     /**
@@ -261,6 +292,11 @@ namespace Model
     /**
      * <p>A list of objects describing an instance snapshot.</p>
      */
+    inline bool InstanceSnapshotInfoHasBeenSet() const { return m_instanceSnapshotInfoHasBeenSet; }
+
+    /**
+     * <p>A list of objects describing an instance snapshot.</p>
+     */
     inline void SetInstanceSnapshotInfo(const InstanceSnapshotInfo& value) { m_instanceSnapshotInfoHasBeenSet = true; m_instanceSnapshotInfo = value; }
 
     /**
@@ -283,6 +319,11 @@ namespace Model
      * <p>A list of objects describing a disk snapshot.</p>
      */
     inline const DiskSnapshotInfo& GetDiskSnapshotInfo() const{ return m_diskSnapshotInfo; }
+
+    /**
+     * <p>A list of objects describing a disk snapshot.</p>
+     */
+    inline bool DiskSnapshotInfoHasBeenSet() const { return m_diskSnapshotInfoHasBeenSet; }
 
     /**
      * <p>A list of objects describing a disk snapshot.</p>

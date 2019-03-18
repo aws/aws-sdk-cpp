@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p>The objects and indexed values attached to the index.</p>
      */
+    inline bool IndexAttachmentsHasBeenSet() const { return m_indexAttachmentsHasBeenSet; }
+
+    /**
+     * <p>The objects and indexed values attached to the index.</p>
+     */
     inline void SetIndexAttachments(const Aws::Vector<IndexAttachment>& value) { m_indexAttachmentsHasBeenSet = true; m_indexAttachments = value; }
 
     /**
@@ -90,6 +95,11 @@ namespace Model
      * <p>The pagination token.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
+    /**
+     * <p>The pagination token.</p>
+     */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
      * <p>The pagination token.</p>

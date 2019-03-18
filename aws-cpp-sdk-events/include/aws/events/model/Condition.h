@@ -64,6 +64,12 @@ namespace Model
      * <p>Specifies the type of condition. Currently the only supported value is
      * <code>StringEquals</code>.</p>
      */
+    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
+
+    /**
+     * <p>Specifies the type of condition. Currently the only supported value is
+     * <code>StringEquals</code>.</p>
+     */
     inline void SetType(const Aws::String& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
@@ -107,6 +113,12 @@ namespace Model
      * <p>Specifies the key for the condition. Currently the only supported key is
      * <code>aws:PrincipalOrgID</code>.</p>
      */
+    inline bool KeyHasBeenSet() const { return m_keyHasBeenSet; }
+
+    /**
+     * <p>Specifies the key for the condition. Currently the only supported key is
+     * <code>aws:PrincipalOrgID</code>.</p>
+     */
     inline void SetKey(const Aws::String& value) { m_keyHasBeenSet = true; m_key = value; }
 
     /**
@@ -145,6 +157,12 @@ namespace Model
      * organization.</p>
      */
     inline const Aws::String& GetValue() const{ return m_value; }
+
+    /**
+     * <p>Specifies the value for the key. Currently, this must be the ID of the
+     * organization.</p>
+     */
+    inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
 
     /**
      * <p>Specifies the value for the key. Currently, this must be the ID of the

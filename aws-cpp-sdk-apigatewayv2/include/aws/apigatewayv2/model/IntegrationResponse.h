@@ -87,6 +87,26 @@ namespace Model
      * response or method response without
  modification.</p>
      */
+    inline bool ContentHandlingStrategyHasBeenSet() const { return m_contentHandlingStrategyHasBeenSet; }
+
+    /**
+     * <p>Specifies how to handle response payload content type conversions. Supported
+
+     * values are CONVERT_TO_BINARY and CONVERT_TO_TEXT, with the
+ following
+     * behaviors:</p><p>
+ CONVERT_TO_BINARY: Converts a response payload from a
+     * Base64-encoded
+ string to the corresponding binary blob.</p><p>
+
+     * CONVERT_TO_TEXT: Converts a response payload from a binary blob to a
+
+     * Base64-encoded string.</p><p>If this property is not defined, the response
+     * payload will be passed through from
+ the integration response to the route
+     * response or method response without
+ modification.</p>
+     */
     inline void SetContentHandlingStrategy(const ContentHandlingStrategy& value) { m_contentHandlingStrategyHasBeenSet = true; m_contentHandlingStrategy = value; }
 
     /**
@@ -158,6 +178,11 @@ namespace Model
     /**
      * <p>The integration response ID.</p>
      */
+    inline bool IntegrationResponseIdHasBeenSet() const { return m_integrationResponseIdHasBeenSet; }
+
+    /**
+     * <p>The integration response ID.</p>
+     */
     inline void SetIntegrationResponseId(const Aws::String& value) { m_integrationResponseIdHasBeenSet = true; m_integrationResponseId = value; }
 
     /**
@@ -190,6 +215,11 @@ namespace Model
      * <p>The integration response key.</p>
      */
     inline const Aws::String& GetIntegrationResponseKey() const{ return m_integrationResponseKey; }
+
+    /**
+     * <p>The integration response key.</p>
+     */
+    inline bool IntegrationResponseKeyHasBeenSet() const { return m_integrationResponseKeyHasBeenSet; }
 
     /**
      * <p>The integration response key.</p>
@@ -244,6 +274,29 @@ namespace Model
      * $ prefix.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetResponseParameters() const{ return m_responseParameters; }
+
+    /**
+     * <p>A key-value map specifying response parameters that are passed to the method
+
+     * response from the backend. The key is a method response header parameter name
+     * and the
+ mapped value is an integration response header value, a static value
+     * enclosed within
+ a pair of single quotes, or a JSON expression from the
+     * integration response body. The
+ mapping key must match the pattern of
+     * method.response.header.{name}, where name is a
+ valid and unique header name.
+     * The mapped non-static value must match the pattern of
+
+     * integration.response.header.{name} or
+     * integration.response.body.{JSON-expression},
+ where name is a valid and unique
+     * response header name and JSON-expression is a valid
+ JSON expression without the
+     * $ prefix.</p>
+     */
+    inline bool ResponseParametersHasBeenSet() const { return m_responseParametersHasBeenSet; }
 
     /**
      * <p>A key-value map specifying response parameters that are passed to the method
@@ -517,6 +570,16 @@ namespace Model
  key/value map, with a content-type as the key and a template as the
      * value.</p>
      */
+    inline bool ResponseTemplatesHasBeenSet() const { return m_responseTemplatesHasBeenSet; }
+
+    /**
+     * <p>The collection of response templates for the integration response as a
+
+     * string-to-string map of key-value pairs. Response templates are represented as
+     * a
+ key/value map, with a content-type as the key and a template as the
+     * value.</p>
+     */
     inline void SetResponseTemplates(const Aws::Map<Aws::String, Aws::String>& value) { m_responseTemplatesHasBeenSet = true; m_responseTemplates = value; }
 
     /**
@@ -624,6 +687,11 @@ namespace Model
      * <p>The template selection expressions for the integration response.</p>
      */
     inline const Aws::String& GetTemplateSelectionExpression() const{ return m_templateSelectionExpression; }
+
+    /**
+     * <p>The template selection expressions for the integration response.</p>
+     */
+    inline bool TemplateSelectionExpressionHasBeenSet() const { return m_templateSelectionExpressionHasBeenSet; }
 
     /**
      * <p>The template selection expressions for the integration response.</p>

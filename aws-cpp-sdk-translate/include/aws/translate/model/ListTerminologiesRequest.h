@@ -54,6 +54,12 @@ namespace Model
      * <p>If the result of the request to ListTerminologies was truncated, include the
      * NextToken to fetch the next group of custom terminologies. </p>
      */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
+
+    /**
+     * <p>If the result of the request to ListTerminologies was truncated, include the
+     * NextToken to fetch the next group of custom terminologies. </p>
+     */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
     /**
@@ -91,6 +97,11 @@ namespace Model
      * <p>The maximum number of custom terminologies returned per list request.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
+
+    /**
+     * <p>The maximum number of custom terminologies returned per list request.</p>
+     */
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
 
     /**
      * <p>The maximum number of custom terminologies returned per list request.</p>

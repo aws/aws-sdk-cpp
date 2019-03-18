@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The name of the CloudWatch metric.</p>
      */
+    inline bool MetricNameHasBeenSet() const { return m_metricNameHasBeenSet; }
+
+    /**
+     * <p>The name of the CloudWatch metric.</p>
+     */
     inline void SetMetricName(const Aws::String& value) { m_metricNameHasBeenSet = true; m_metricName = value; }
 
     /**
@@ -88,6 +93,11 @@ namespace Model
      * <p>The namespace of the CloudWatch metric.</p>
      */
     inline const Aws::String& GetMetricNamespace() const{ return m_metricNamespace; }
+
+    /**
+     * <p>The namespace of the CloudWatch metric.</p>
+     */
+    inline bool MetricNamespaceHasBeenSet() const { return m_metricNamespaceHasBeenSet; }
 
     /**
      * <p>The namespace of the CloudWatch metric.</p>
@@ -125,6 +135,12 @@ namespace Model
      * log event.</p>
      */
     inline const Aws::String& GetMetricValue() const{ return m_metricValue; }
+
+    /**
+     * <p>The value to publish to the CloudWatch metric when a filter pattern matches a
+     * log event.</p>
+     */
+    inline bool MetricValueHasBeenSet() const { return m_metricValueHasBeenSet; }
 
     /**
      * <p>The value to publish to the CloudWatch metric when a filter pattern matches a
@@ -168,6 +184,12 @@ namespace Model
      * event. This value can be null.</p>
      */
     inline double GetDefaultValue() const{ return m_defaultValue; }
+
+    /**
+     * <p>(Optional) The value to emit when a filter pattern does not match a log
+     * event. This value can be null.</p>
+     */
+    inline bool DefaultValueHasBeenSet() const { return m_defaultValueHasBeenSet; }
 
     /**
      * <p>(Optional) The value to emit when a filter pattern does not match a log

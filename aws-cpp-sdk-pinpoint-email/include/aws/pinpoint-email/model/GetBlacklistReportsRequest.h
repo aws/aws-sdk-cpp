@@ -61,6 +61,13 @@ namespace Model
      * You can only specify the dedicated IP addresses that you use to send email using
      * Amazon Pinpoint or Amazon SES.</p>
      */
+    inline bool BlacklistItemNamesHasBeenSet() const { return m_blacklistItemNamesHasBeenSet; }
+
+    /**
+     * <p>A list of IP addresses that you want to retrieve blacklist information about.
+     * You can only specify the dedicated IP addresses that you use to send email using
+     * Amazon Pinpoint or Amazon SES.</p>
+     */
     inline void SetBlacklistItemNames(const Aws::Vector<Aws::String>& value) { m_blacklistItemNamesHasBeenSet = true; m_blacklistItemNames = value; }
 
     /**

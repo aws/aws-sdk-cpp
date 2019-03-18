@@ -64,6 +64,17 @@ namespace Model
      * https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_manage-attach-detach.html">Attaching
      * and Detaching IAM Policies</a>.</p>
      */
+    inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the role the DRT will use to access your
+     * AWS account.</p> <p>Prior to making the <code>AssociateDRTRole</code> request,
+     * you must attach the <a
+     * href="https://console.aws.amazon.com/iam/home?#/policies/arn:aws:iam::aws:policy/service-role/AWSShieldDRTAccessPolicy">AWSShieldDRTAccessPolicy</a>
+     * managed policy to this role. For more information see <a href="
+     * https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_manage-attach-detach.html">Attaching
+     * and Detaching IAM Policies</a>.</p>
+     */
     inline void SetRoleArn(const Aws::String& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
 
     /**

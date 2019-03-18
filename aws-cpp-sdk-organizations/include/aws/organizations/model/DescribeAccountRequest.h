@@ -60,6 +60,15 @@ namespace Model
      * href="http://wikipedia.org/wiki/regex">regex pattern</a> for an account ID
      * string requires exactly 12 digits.</p>
      */
+    inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
+
+    /**
+     * <p>The unique identifier (ID) of the AWS account that you want information
+     * about. You can get the ID from the <a>ListAccounts</a> or
+     * <a>ListAccountsForParent</a> operations.</p> <p>The <a
+     * href="http://wikipedia.org/wiki/regex">regex pattern</a> for an account ID
+     * string requires exactly 12 digits.</p>
+     */
     inline void SetAccountId(const Aws::String& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
 
     /**

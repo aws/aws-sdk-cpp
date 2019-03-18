@@ -58,6 +58,9 @@ namespace Model
     inline const Aws::String& GetBudgetName() const{ return m_budgetName; }
 
     
+    inline bool BudgetNameHasBeenSet() const { return m_budgetNameHasBeenSet; }
+
+    
     inline void SetBudgetName(const Aws::String& value) { m_budgetNameHasBeenSet = true; m_budgetName = value; }
 
     
@@ -80,6 +83,9 @@ namespace Model
     inline const BudgetType& GetBudgetType() const{ return m_budgetType; }
 
     
+    inline bool BudgetTypeHasBeenSet() const { return m_budgetTypeHasBeenSet; }
+
+    
     inline void SetBudgetType(const BudgetType& value) { m_budgetTypeHasBeenSet = true; m_budgetType = value; }
 
     
@@ -97,6 +103,12 @@ namespace Model
      * period.</p>
      */
     inline const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& GetCostFilters() const{ return m_costFilters; }
+
+    /**
+     * <p>The history of the cost filters for a budget during the specified time
+     * period.</p>
+     */
+    inline bool CostFiltersHasBeenSet() const { return m_costFiltersHasBeenSet; }
 
     /**
      * <p>The history of the cost filters for a budget during the specified time
@@ -169,6 +181,12 @@ namespace Model
      * <p>The history of the cost types for a budget during the specified time
      * period.</p>
      */
+    inline bool CostTypesHasBeenSet() const { return m_costTypesHasBeenSet; }
+
+    /**
+     * <p>The history of the cost types for a budget during the specified time
+     * period.</p>
+     */
     inline void SetCostTypes(const CostTypes& value) { m_costTypesHasBeenSet = true; m_costTypes = value; }
 
     /**
@@ -194,6 +212,9 @@ namespace Model
     inline const TimeUnit& GetTimeUnit() const{ return m_timeUnit; }
 
     
+    inline bool TimeUnitHasBeenSet() const { return m_timeUnitHasBeenSet; }
+
+    
     inline void SetTimeUnit(const TimeUnit& value) { m_timeUnitHasBeenSet = true; m_timeUnit = value; }
 
     
@@ -211,6 +232,12 @@ namespace Model
      * your actual costs or usage.</p>
      */
     inline const Aws::Vector<BudgetedAndActualAmounts>& GetBudgetedAndActualAmountsList() const{ return m_budgetedAndActualAmountsList; }
+
+    /**
+     * <p>A list of amounts of cost or usage that you created budgets for, compared to
+     * your actual costs or usage.</p>
+     */
+    inline bool BudgetedAndActualAmountsListHasBeenSet() const { return m_budgetedAndActualAmountsListHasBeenSet; }
 
     /**
      * <p>A list of amounts of cost or usage that you created budgets for, compared to

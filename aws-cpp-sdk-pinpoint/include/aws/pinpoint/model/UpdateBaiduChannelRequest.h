@@ -51,6 +51,11 @@ namespace Model
     /**
      * The unique ID of your Amazon Pinpoint application.
      */
+    inline bool ApplicationIdHasBeenSet() const { return m_applicationIdHasBeenSet; }
+
+    /**
+     * The unique ID of your Amazon Pinpoint application.
+     */
     inline void SetApplicationId(const Aws::String& value) { m_applicationIdHasBeenSet = true; m_applicationId = value; }
 
     /**
@@ -81,6 +86,9 @@ namespace Model
 
     
     inline const BaiduChannelRequest& GetBaiduChannelRequest() const{ return m_baiduChannelRequest; }
+
+    
+    inline bool BaiduChannelRequestHasBeenSet() const { return m_baiduChannelRequestHasBeenSet; }
 
     
     inline void SetBaiduChannelRequest(const BaiduChannelRequest& value) { m_baiduChannelRequestHasBeenSet = true; m_baiduChannelRequest = value; }

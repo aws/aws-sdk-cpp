@@ -61,6 +61,13 @@ namespace Model
      * group, not both. To specify a single IPv6 address, use the /128 prefix
      * length.</p>
      */
+    inline bool CidrIpv6HasBeenSet() const { return m_cidrIpv6HasBeenSet; }
+
+    /**
+     * <p>The IPv6 CIDR range. You can either specify a CIDR range or a source security
+     * group, not both. To specify a single IPv6 address, use the /128 prefix
+     * length.</p>
+     */
     inline void SetCidrIpv6(const Aws::String& value) { m_cidrIpv6HasBeenSet = true; m_cidrIpv6 = value; }
 
     /**
@@ -105,6 +112,13 @@ namespace Model
      * are a-z, A-Z, 0-9, spaces, and ._-:/()#,@[]+=;{}!$*</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
+
+    /**
+     * <p>A description for the security group rule that references this IPv6 address
+     * range.</p> <p>Constraints: Up to 255 characters in length. Allowed characters
+     * are a-z, A-Z, 0-9, spaces, and ._-:/()#,@[]+=;{}!$*</p>
+     */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
 
     /**
      * <p>A description for the security group rule that references this IPv6 address

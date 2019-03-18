@@ -55,6 +55,12 @@ namespace Model
      * <p>The identifier of the AWS Managed Microsoft AD directory that you want to
      * stop sharing.</p>
      */
+    inline bool DirectoryIdHasBeenSet() const { return m_directoryIdHasBeenSet; }
+
+    /**
+     * <p>The identifier of the AWS Managed Microsoft AD directory that you want to
+     * stop sharing.</p>
+     */
     inline void SetDirectoryId(const Aws::String& value) { m_directoryIdHasBeenSet = true; m_directoryId = value; }
 
     /**
@@ -93,6 +99,12 @@ namespace Model
      * be unshared.</p>
      */
     inline const UnshareTarget& GetUnshareTarget() const{ return m_unshareTarget; }
+
+    /**
+     * <p>Identifier for the directory consumer account with whom the directory has to
+     * be unshared.</p>
+     */
+    inline bool UnshareTargetHasBeenSet() const { return m_unshareTargetHasBeenSet; }
 
     /**
      * <p>Identifier for the directory consumer account with whom the directory has to

@@ -62,6 +62,11 @@ namespace Model
     /**
      * <p>The job's ARN.</p>
      */
+    inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
+
+    /**
+     * <p>The job's ARN.</p>
+     */
     inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
 
     /**
@@ -94,6 +99,11 @@ namespace Model
      * <p>The job's name.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
+
+    /**
+     * <p>The job's name.</p>
+     */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
      * <p>The job's name.</p>
@@ -147,6 +157,28 @@ namespace Model
      * </ul>
      */
     inline const TestType& GetType() const{ return m_type; }
+
+    /**
+     * <p>The job's type.</p> <p>Allowed values include the following:</p> <ul> <li>
+     * <p>BUILTIN_FUZZ: The built-in fuzz type.</p> </li> <li> <p>BUILTIN_EXPLORER: For
+     * Android, an app explorer that will traverse an Android app, interacting with it
+     * and capturing screenshots at the same time.</p> </li> <li> <p>APPIUM_JAVA_JUNIT:
+     * The Appium Java JUnit type.</p> </li> <li> <p>APPIUM_JAVA_TESTNG: The Appium
+     * Java TestNG type.</p> </li> <li> <p>APPIUM_PYTHON: The Appium Python type.</p>
+     * </li> <li> <p>APPIUM_NODE: The Appium Node.js type.</p> </li> <li>
+     * <p>APPIUM_RUBY: The Appium Ruby type.</p> </li> <li> <p>APPIUM_WEB_JAVA_JUNIT:
+     * The Appium Java JUnit type for web apps.</p> </li> <li>
+     * <p>APPIUM_WEB_JAVA_TESTNG: The Appium Java TestNG type for web apps.</p> </li>
+     * <li> <p>APPIUM_WEB_PYTHON: The Appium Python type for web apps.</p> </li> <li>
+     * <p>APPIUM_WEB_NODE: The Appium Node.js type for web apps.</p> </li> <li>
+     * <p>APPIUM_WEB_RUBY: The Appium Ruby test type for web apps.</p> </li> <li>
+     * <p>CALABASH: The Calabash type.</p> </li> <li> <p>INSTRUMENTATION: The
+     * Instrumentation type.</p> </li> <li> <p>UIAUTOMATION: The uiautomation type.</p>
+     * </li> <li> <p>UIAUTOMATOR: The uiautomator type.</p> </li> <li> <p>XCTEST: The
+     * XCode test type.</p> </li> <li> <p>XCTEST_UI: The XCode UI test type.</p> </li>
+     * </ul>
+     */
+    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
 
     /**
      * <p>The job's type.</p> <p>Allowed values include the following:</p> <ul> <li>
@@ -245,6 +277,11 @@ namespace Model
     /**
      * <p>When the job was created.</p>
      */
+    inline bool CreatedHasBeenSet() const { return m_createdHasBeenSet; }
+
+    /**
+     * <p>When the job was created.</p>
+     */
     inline void SetCreated(const Aws::Utils::DateTime& value) { m_createdHasBeenSet = true; m_created = value; }
 
     /**
@@ -273,6 +310,17 @@ namespace Model
      * status.</p> </li> <li> <p>STOPPING: A stopping status.</p> </li> </ul>
      */
     inline const ExecutionStatus& GetStatus() const{ return m_status; }
+
+    /**
+     * <p>The job's status.</p> <p>Allowed values include:</p> <ul> <li> <p>PENDING: A
+     * pending status.</p> </li> <li> <p>PENDING_CONCURRENCY: A pending concurrency
+     * status.</p> </li> <li> <p>PENDING_DEVICE: A pending device status.</p> </li>
+     * <li> <p>PROCESSING: A processing status.</p> </li> <li> <p>SCHEDULING: A
+     * scheduling status.</p> </li> <li> <p>PREPARING: A preparing status.</p> </li>
+     * <li> <p>RUNNING: A running status.</p> </li> <li> <p>COMPLETED: A completed
+     * status.</p> </li> <li> <p>STOPPING: A stopping status.</p> </li> </ul>
+     */
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
     /**
      * <p>The job's status.</p> <p>Allowed values include:</p> <ul> <li> <p>PENDING: A
@@ -337,6 +385,16 @@ namespace Model
      * <p>ERRORED: An error condition.</p> </li> <li> <p>STOPPED: A stopped
      * condition.</p> </li> </ul>
      */
+    inline bool ResultHasBeenSet() const { return m_resultHasBeenSet; }
+
+    /**
+     * <p>The job's result.</p> <p>Allowed values include:</p> <ul> <li> <p>PENDING: A
+     * pending condition.</p> </li> <li> <p>PASSED: A passing condition.</p> </li> <li>
+     * <p>WARNED: A warning condition.</p> </li> <li> <p>FAILED: A failed
+     * condition.</p> </li> <li> <p>SKIPPED: A skipped condition.</p> </li> <li>
+     * <p>ERRORED: An error condition.</p> </li> <li> <p>STOPPED: A stopped
+     * condition.</p> </li> </ul>
+     */
     inline void SetResult(const ExecutionResult& value) { m_resultHasBeenSet = true; m_result = value; }
 
     /**
@@ -378,6 +436,11 @@ namespace Model
     /**
      * <p>The job's start time.</p>
      */
+    inline bool StartedHasBeenSet() const { return m_startedHasBeenSet; }
+
+    /**
+     * <p>The job's start time.</p>
+     */
     inline void SetStarted(const Aws::Utils::DateTime& value) { m_startedHasBeenSet = true; m_started = value; }
 
     /**
@@ -400,6 +463,11 @@ namespace Model
      * <p>The job's stop time.</p>
      */
     inline const Aws::Utils::DateTime& GetStopped() const{ return m_stopped; }
+
+    /**
+     * <p>The job's stop time.</p>
+     */
+    inline bool StoppedHasBeenSet() const { return m_stoppedHasBeenSet; }
 
     /**
      * <p>The job's stop time.</p>
@@ -430,6 +498,11 @@ namespace Model
     /**
      * <p>The job's result counters.</p>
      */
+    inline bool CountersHasBeenSet() const { return m_countersHasBeenSet; }
+
+    /**
+     * <p>The job's result counters.</p>
+     */
     inline void SetCounters(const Counters& value) { m_countersHasBeenSet = true; m_counters = value; }
 
     /**
@@ -452,6 +525,11 @@ namespace Model
      * <p>A message about the job's result.</p>
      */
     inline const Aws::String& GetMessage() const{ return m_message; }
+
+    /**
+     * <p>A message about the job's result.</p>
+     */
+    inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
 
     /**
      * <p>A message about the job's result.</p>
@@ -492,6 +570,11 @@ namespace Model
     /**
      * <p>The device (phone or tablet).</p>
      */
+    inline bool DeviceHasBeenSet() const { return m_deviceHasBeenSet; }
+
+    /**
+     * <p>The device (phone or tablet).</p>
+     */
     inline void SetDevice(const Device& value) { m_deviceHasBeenSet = true; m_device = value; }
 
     /**
@@ -514,6 +597,11 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the instance.</p>
      */
     inline const Aws::String& GetInstanceArn() const{ return m_instanceArn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the instance.</p>
+     */
+    inline bool InstanceArnHasBeenSet() const { return m_instanceArnHasBeenSet; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the instance.</p>
@@ -554,6 +642,11 @@ namespace Model
     /**
      * <p>Represents the total (metered or unmetered) minutes used by the job.</p>
      */
+    inline bool DeviceMinutesHasBeenSet() const { return m_deviceMinutesHasBeenSet; }
+
+    /**
+     * <p>Represents the total (metered or unmetered) minutes used by the job.</p>
+     */
     inline void SetDeviceMinutes(const DeviceMinutes& value) { m_deviceMinutesHasBeenSet = true; m_deviceMinutes = value; }
 
     /**
@@ -576,6 +669,11 @@ namespace Model
      * <p>The endpoint for streaming device video.</p>
      */
     inline const Aws::String& GetVideoEndpoint() const{ return m_videoEndpoint; }
+
+    /**
+     * <p>The endpoint for streaming device video.</p>
+     */
+    inline bool VideoEndpointHasBeenSet() const { return m_videoEndpointHasBeenSet; }
 
     /**
      * <p>The endpoint for streaming device video.</p>
@@ -613,6 +711,12 @@ namespace Model
      * to false.</p>
      */
     inline bool GetVideoCapture() const{ return m_videoCapture; }
+
+    /**
+     * <p>This value is set to true if video capture is enabled; otherwise, it is set
+     * to false.</p>
+     */
+    inline bool VideoCaptureHasBeenSet() const { return m_videoCaptureHasBeenSet; }
 
     /**
      * <p>This value is set to true if video capture is enabled; otherwise, it is set

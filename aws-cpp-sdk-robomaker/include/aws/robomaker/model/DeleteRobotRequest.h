@@ -50,6 +50,11 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the robot.</p>
      */
+    inline bool RobotHasBeenSet() const { return m_robotHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the robot.</p>
+     */
     inline void SetRobot(const Aws::String& value) { m_robotHasBeenSet = true; m_robot = value; }
 
     /**

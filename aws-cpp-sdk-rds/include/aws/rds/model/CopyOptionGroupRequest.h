@@ -81,6 +81,22 @@ namespace Model
      * <code>arn:aws:rds:us-west-2:123456789012:og:special-options</code>.</p> </li>
      * </ul>
      */
+    inline bool SourceOptionGroupIdentifierHasBeenSet() const { return m_sourceOptionGroupIdentifierHasBeenSet; }
+
+    /**
+     * <p>The identifier or ARN for the source option group. For information about
+     * creating an ARN, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing">
+     * Constructing an ARN for Amazon RDS</a> in the <i>Amazon RDS User Guide</i>. </p>
+     * <p>Constraints:</p> <ul> <li> <p>Must specify a valid option group.</p> </li>
+     * <li> <p>If the source option group is in the same AWS Region as the copy,
+     * specify a valid option group identifier, for example
+     * <code>my-option-group</code>, or a valid ARN.</p> </li> <li> <p>If the source
+     * option group is in a different AWS Region than the copy, specify a valid option
+     * group ARN, for example
+     * <code>arn:aws:rds:us-west-2:123456789012:og:special-options</code>.</p> </li>
+     * </ul>
+     */
     inline void SetSourceOptionGroupIdentifier(const Aws::String& value) { m_sourceOptionGroupIdentifierHasBeenSet = true; m_sourceOptionGroupIdentifier = value; }
 
     /**
@@ -180,6 +196,15 @@ namespace Model
      * letter</p> </li> <li> <p>Can't end with a hyphen or contain two consecutive
      * hyphens</p> </li> </ul> <p>Example: <code>my-option-group</code> </p>
      */
+    inline bool TargetOptionGroupIdentifierHasBeenSet() const { return m_targetOptionGroupIdentifierHasBeenSet; }
+
+    /**
+     * <p>The identifier for the copied option group.</p> <p>Constraints:</p> <ul> <li>
+     * <p>Can't be null, empty, or blank</p> </li> <li> <p>Must contain from 1 to 255
+     * letters, numbers, or hyphens</p> </li> <li> <p>First character must be a
+     * letter</p> </li> <li> <p>Can't end with a hyphen or contain two consecutive
+     * hyphens</p> </li> </ul> <p>Example: <code>my-option-group</code> </p>
+     */
     inline void SetTargetOptionGroupIdentifier(const Aws::String& value) { m_targetOptionGroupIdentifierHasBeenSet = true; m_targetOptionGroupIdentifier = value; }
 
     /**
@@ -236,6 +261,11 @@ namespace Model
     /**
      * <p>The description for the copied option group.</p>
      */
+    inline bool TargetOptionGroupDescriptionHasBeenSet() const { return m_targetOptionGroupDescriptionHasBeenSet; }
+
+    /**
+     * <p>The description for the copied option group.</p>
+     */
     inline void SetTargetOptionGroupDescription(const Aws::String& value) { m_targetOptionGroupDescriptionHasBeenSet = true; m_targetOptionGroupDescription = value; }
 
     /**
@@ -266,6 +296,9 @@ namespace Model
 
     
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+
+    
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }

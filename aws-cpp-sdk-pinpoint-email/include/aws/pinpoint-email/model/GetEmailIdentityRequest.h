@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The email identity that you want to retrieve details for.</p>
      */
+    inline bool EmailIdentityHasBeenSet() const { return m_emailIdentityHasBeenSet; }
+
+    /**
+     * <p>The email identity that you want to retrieve details for.</p>
+     */
     inline void SetEmailIdentity(const Aws::String& value) { m_emailIdentityHasBeenSet = true; m_emailIdentity = value; }
 
     /**

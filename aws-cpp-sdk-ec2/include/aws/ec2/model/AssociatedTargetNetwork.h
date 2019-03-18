@@ -59,6 +59,11 @@ namespace Model
     /**
      * <p>The ID of the subnet.</p>
      */
+    inline bool NetworkIdHasBeenSet() const { return m_networkIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the subnet.</p>
+     */
     inline void SetNetworkId(const Aws::String& value) { m_networkIdHasBeenSet = true; m_networkId = value; }
 
     /**
@@ -91,6 +96,11 @@ namespace Model
      * <p>The target network type.</p>
      */
     inline const AssociatedNetworkType& GetNetworkType() const{ return m_networkType; }
+
+    /**
+     * <p>The target network type.</p>
+     */
+    inline bool NetworkTypeHasBeenSet() const { return m_networkTypeHasBeenSet; }
 
     /**
      * <p>The target network type.</p>

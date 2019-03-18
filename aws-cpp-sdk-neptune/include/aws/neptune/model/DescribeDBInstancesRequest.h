@@ -65,6 +65,14 @@ namespace Model
      * case-sensitive.</p> <p>Constraints:</p> <ul> <li> <p>If supplied, must match the
      * identifier of an existing DBInstance.</p> </li> </ul>
      */
+    inline bool DBInstanceIdentifierHasBeenSet() const { return m_dBInstanceIdentifierHasBeenSet; }
+
+    /**
+     * <p>The user-supplied instance identifier. If this parameter is specified,
+     * information from only the specific DB instance is returned. This parameter isn't
+     * case-sensitive.</p> <p>Constraints:</p> <ul> <li> <p>If supplied, must match the
+     * identifier of an existing DBInstance.</p> </li> </ul>
+     */
     inline void SetDBInstanceIdentifier(const Aws::String& value) { m_dBInstanceIdentifierHasBeenSet = true; m_dBInstanceIdentifier = value; }
 
     /**
@@ -119,6 +127,18 @@ namespace Model
      * about the DB instances identified by these ARNs.</p> </li> </ul>
      */
     inline const Aws::Vector<Filter>& GetFilters() const{ return m_filters; }
+
+    /**
+     * <p>A filter that specifies one or more DB instances to describe.</p>
+     * <p>Supported filters:</p> <ul> <li> <p> <code>db-cluster-id</code> - Accepts DB
+     * cluster identifiers and DB cluster Amazon Resource Names (ARNs). The results
+     * list will only include information about the DB instances associated with the DB
+     * clusters identified by these ARNs.</p> </li> <li> <p>
+     * <code>db-instance-id</code> - Accepts DB instance identifiers and DB instance
+     * Amazon Resource Names (ARNs). The results list will only include information
+     * about the DB instances identified by these ARNs.</p> </li> </ul>
+     */
+    inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
 
     /**
      * <p>A filter that specifies one or more DB instances to describe.</p>
@@ -207,6 +227,14 @@ namespace Model
      * called a marker is included in the response so that the remaining results can be
      * retrieved. </p> <p>Default: 100</p> <p>Constraints: Minimum 20, maximum 100.</p>
      */
+    inline bool MaxRecordsHasBeenSet() const { return m_maxRecordsHasBeenSet; }
+
+    /**
+     * <p> The maximum number of records to include in the response. If more records
+     * exist than the specified <code>MaxRecords</code> value, a pagination token
+     * called a marker is included in the response so that the remaining results can be
+     * retrieved. </p> <p>Default: 100</p> <p>Constraints: Minimum 20, maximum 100.</p>
+     */
     inline void SetMaxRecords(int value) { m_maxRecordsHasBeenSet = true; m_maxRecords = value; }
 
     /**
@@ -225,6 +253,14 @@ namespace Model
      * <code>MaxRecords</code>. </p>
      */
     inline const Aws::String& GetMarker() const{ return m_marker; }
+
+    /**
+     * <p> An optional pagination token provided by a previous
+     * <code>DescribeDBInstances</code> request. If this parameter is specified, the
+     * response includes only records beyond the marker, up to the value specified by
+     * <code>MaxRecords</code>. </p>
+     */
+    inline bool MarkerHasBeenSet() const { return m_markerHasBeenSet; }
 
     /**
      * <p> An optional pagination token provided by a previous

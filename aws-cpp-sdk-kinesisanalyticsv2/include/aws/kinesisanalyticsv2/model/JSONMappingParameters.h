@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The path to the top-level parent that contains the records.</p>
      */
+    inline bool RecordRowPathHasBeenSet() const { return m_recordRowPathHasBeenSet; }
+
+    /**
+     * <p>The path to the top-level parent that contains the records.</p>
+     */
     inline void SetRecordRowPath(const Aws::String& value) { m_recordRowPathHasBeenSet = true; m_recordRowPath = value; }
 
     /**

@@ -55,6 +55,11 @@ namespace Model
     /**
      * <p>The ID of the deployment rollback.</p>
      */
+    inline bool RollbackDeploymentIdHasBeenSet() const { return m_rollbackDeploymentIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the deployment rollback.</p>
+     */
     inline void SetRollbackDeploymentId(const Aws::String& value) { m_rollbackDeploymentIdHasBeenSet = true; m_rollbackDeploymentId = value; }
 
     /**
@@ -88,6 +93,12 @@ namespace Model
      * rollback deployment because it failed or was stopped.</p>
      */
     inline const Aws::String& GetRollbackTriggeringDeploymentId() const{ return m_rollbackTriggeringDeploymentId; }
+
+    /**
+     * <p>The deployment ID of the deployment that was underway and triggered a
+     * rollback deployment because it failed or was stopped.</p>
+     */
+    inline bool RollbackTriggeringDeploymentIdHasBeenSet() const { return m_rollbackTriggeringDeploymentIdHasBeenSet; }
 
     /**
      * <p>The deployment ID of the deployment that was underway and triggered a
@@ -132,6 +143,13 @@ namespace Model
      * succeeded). </p>
      */
     inline const Aws::String& GetRollbackMessage() const{ return m_rollbackMessage; }
+
+    /**
+     * <p>Information that describes the status of a deployment rollback (for example,
+     * whether the deployment can't be rolled back, is in progress, failed, or
+     * succeeded). </p>
+     */
+    inline bool RollbackMessageHasBeenSet() const { return m_rollbackMessageHasBeenSet; }
 
     /**
      * <p>Information that describes the status of a deployment rollback (for example,

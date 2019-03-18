@@ -55,6 +55,11 @@ namespace Model
     /**
      * The name of the input attachment that should be switched to by this action.
      */
+    inline bool InputAttachmentNameReferenceHasBeenSet() const { return m_inputAttachmentNameReferenceHasBeenSet; }
+
+    /**
+     * The name of the input attachment that should be switched to by this action.
+     */
     inline void SetInputAttachmentNameReference(const Aws::String& value) { m_inputAttachmentNameReferenceHasBeenSet = true; m_inputAttachmentNameReference = value; }
 
     /**

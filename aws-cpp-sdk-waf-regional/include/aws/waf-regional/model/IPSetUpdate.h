@@ -59,6 +59,12 @@ namespace Model
      * <p>Specifies whether to insert or delete an IP address with
      * <a>UpdateIPSet</a>.</p>
      */
+    inline bool ActionHasBeenSet() const { return m_actionHasBeenSet; }
+
+    /**
+     * <p>Specifies whether to insert or delete an IP address with
+     * <a>UpdateIPSet</a>.</p>
+     */
     inline void SetAction(const ChangeAction& value) { m_actionHasBeenSet = true; m_action = value; }
 
     /**
@@ -85,6 +91,12 @@ namespace Model
      * address range (in CIDR notation) that web requests originate from.</p>
      */
     inline const IPSetDescriptor& GetIPSetDescriptor() const{ return m_iPSetDescriptor; }
+
+    /**
+     * <p>The IP address type (<code>IPV4</code> or <code>IPV6</code>) and the IP
+     * address range (in CIDR notation) that web requests originate from.</p>
+     */
+    inline bool IPSetDescriptorHasBeenSet() const { return m_iPSetDescriptorHasBeenSet; }
 
     /**
      * <p>The IP address type (<code>IPV4</code> or <code>IPV6</code>) and the IP

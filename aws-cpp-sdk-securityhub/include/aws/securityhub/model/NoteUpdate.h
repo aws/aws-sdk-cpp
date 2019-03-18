@@ -55,6 +55,11 @@ namespace Model
     /**
      * <p>The updated note text.</p>
      */
+    inline bool TextHasBeenSet() const { return m_textHasBeenSet; }
+
+    /**
+     * <p>The updated note text.</p>
+     */
     inline void SetText(const Aws::String& value) { m_textHasBeenSet = true; m_text = value; }
 
     /**
@@ -87,6 +92,11 @@ namespace Model
      * <p>The principal that updated the note.</p>
      */
     inline const Aws::String& GetUpdatedBy() const{ return m_updatedBy; }
+
+    /**
+     * <p>The principal that updated the note.</p>
+     */
+    inline bool UpdatedByHasBeenSet() const { return m_updatedByHasBeenSet; }
 
     /**
      * <p>The principal that updated the note.</p>

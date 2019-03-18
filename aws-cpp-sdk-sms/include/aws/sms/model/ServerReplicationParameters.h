@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p>Seed time for creating a replication job for the server.</p>
      */
+    inline bool SeedTimeHasBeenSet() const { return m_seedTimeHasBeenSet; }
+
+    /**
+     * <p>Seed time for creating a replication job for the server.</p>
+     */
     inline void SetSeedTime(const Aws::Utils::DateTime& value) { m_seedTimeHasBeenSet = true; m_seedTime = value; }
 
     /**
@@ -84,6 +89,11 @@ namespace Model
     /**
      * <p>Frequency of creating replication jobs for the server.</p>
      */
+    inline bool FrequencyHasBeenSet() const { return m_frequencyHasBeenSet; }
+
+    /**
+     * <p>Frequency of creating replication jobs for the server.</p>
+     */
     inline void SetFrequency(int value) { m_frequencyHasBeenSet = true; m_frequency = value; }
 
     /**
@@ -100,6 +110,11 @@ namespace Model
     /**
      * <p/>
      */
+    inline bool RunOnceHasBeenSet() const { return m_runOnceHasBeenSet; }
+
+    /**
+     * <p/>
+     */
     inline void SetRunOnce(bool value) { m_runOnceHasBeenSet = true; m_runOnce = value; }
 
     /**
@@ -112,6 +127,11 @@ namespace Model
      * <p>License type for creating a replication job for the server.</p>
      */
     inline const LicenseType& GetLicenseType() const{ return m_licenseType; }
+
+    /**
+     * <p>License type for creating a replication job for the server.</p>
+     */
+    inline bool LicenseTypeHasBeenSet() const { return m_licenseTypeHasBeenSet; }
 
     /**
      * <p>License type for creating a replication job for the server.</p>
@@ -144,6 +164,12 @@ namespace Model
      * <p>Number of recent AMIs to keep when creating a replication job for this
      * server.</p>
      */
+    inline bool NumberOfRecentAmisToKeepHasBeenSet() const { return m_numberOfRecentAmisToKeepHasBeenSet; }
+
+    /**
+     * <p>Number of recent AMIs to keep when creating a replication job for this
+     * server.</p>
+     */
     inline void SetNumberOfRecentAmisToKeep(int value) { m_numberOfRecentAmisToKeepHasBeenSet = true; m_numberOfRecentAmisToKeep = value; }
 
     /**
@@ -158,6 +184,12 @@ namespace Model
      * <code>KmsKeyId</code> below.</p>
      */
     inline bool GetEncrypted() const{ return m_encrypted; }
+
+    /**
+     * <p>When true, the replication job produces encrypted AMIs. See also
+     * <code>KmsKeyId</code> below.</p>
+     */
+    inline bool EncryptedHasBeenSet() const { return m_encryptedHasBeenSet; }
 
     /**
      * <p>When true, the replication job produces encrypted AMIs. See also
@@ -181,6 +213,16 @@ namespace Model
      * </p>
      */
     inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
+
+    /**
+     * <p/> <p>KMS key ID for replication jobs that produce encrypted AMIs. Can be any
+     * of the following: </p> <ul> <li> <p>KMS key ID</p> </li> <li> <p>KMS key
+     * alias</p> </li> <li> <p>ARN referring to KMS key ID</p> </li> <li> <p>ARN
+     * referring to KMS key alias</p> </li> </ul> <p> If encrypted is <i>true</i> but a
+     * KMS key id is not specified, the customer's default KMS key for EBS is used.
+     * </p>
+     */
+    inline bool KmsKeyIdHasBeenSet() const { return m_kmsKeyIdHasBeenSet; }
 
     /**
      * <p/> <p>KMS key ID for replication jobs that produce encrypted AMIs. Can be any

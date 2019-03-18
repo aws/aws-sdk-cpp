@@ -59,6 +59,11 @@ namespace Model
     /**
      * <p>The ID of the job.</p>
      */
+    inline bool JobIdHasBeenSet() const { return m_jobIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the job.</p>
+     */
     inline void SetJobId(const Aws::String& value) { m_jobIdHasBeenSet = true; m_jobId = value; }
 
     /**
@@ -91,6 +96,11 @@ namespace Model
      * <p>The name of the job.</p>
      */
     inline const Aws::String& GetJobName() const{ return m_jobName; }
+
+    /**
+     * <p>The name of the job.</p>
+     */
+    inline bool JobNameHasBeenSet() const { return m_jobNameHasBeenSet; }
 
     /**
      * <p>The name of the job.</p>
@@ -139,6 +149,15 @@ namespace Model
      * the child job was spawned by its parent and entered the <code>PENDING</code>
      * state.</p>
      */
+    inline bool CreatedAtHasBeenSet() const { return m_createdAtHasBeenSet; }
+
+    /**
+     * <p>The Unix timestamp for when the job was created. For non-array jobs and
+     * parent array jobs, this is when the job entered the <code>SUBMITTED</code> state
+     * (at the time <a>SubmitJob</a> was called). For array child jobs, this is when
+     * the child job was spawned by its parent and entered the <code>PENDING</code>
+     * state.</p>
+     */
     inline void SetCreatedAt(long long value) { m_createdAtHasBeenSet = true; m_createdAt = value; }
 
     /**
@@ -155,6 +174,11 @@ namespace Model
      * <p>The current status for the job.</p>
      */
     inline const JobStatus& GetStatus() const{ return m_status; }
+
+    /**
+     * <p>The current status for the job.</p>
+     */
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
     /**
      * <p>The current status for the job.</p>
@@ -182,6 +206,12 @@ namespace Model
      * current status of the job.</p>
      */
     inline const Aws::String& GetStatusReason() const{ return m_statusReason; }
+
+    /**
+     * <p>A short, human-readable string to provide additional details about the
+     * current status of the job.</p>
+     */
+    inline bool StatusReasonHasBeenSet() const { return m_statusReasonHasBeenSet; }
 
     /**
      * <p>A short, human-readable string to provide additional details about the
@@ -230,6 +260,12 @@ namespace Model
      * <p>The Unix timestamp for when the job was started (when the job transitioned
      * from the <code>STARTING</code> state to the <code>RUNNING</code> state).</p>
      */
+    inline bool StartedAtHasBeenSet() const { return m_startedAtHasBeenSet; }
+
+    /**
+     * <p>The Unix timestamp for when the job was started (when the job transitioned
+     * from the <code>STARTING</code> state to the <code>RUNNING</code> state).</p>
+     */
     inline void SetStartedAt(long long value) { m_startedAtHasBeenSet = true; m_startedAt = value; }
 
     /**
@@ -251,6 +287,13 @@ namespace Model
      * from the <code>RUNNING</code> state to a terminal state, such as
      * <code>SUCCEEDED</code> or <code>FAILED</code>).</p>
      */
+    inline bool StoppedAtHasBeenSet() const { return m_stoppedAtHasBeenSet; }
+
+    /**
+     * <p>The Unix timestamp for when the job was stopped (when the job transitioned
+     * from the <code>RUNNING</code> state to a terminal state, such as
+     * <code>SUCCEEDED</code> or <code>FAILED</code>).</p>
+     */
     inline void SetStoppedAt(long long value) { m_stoppedAtHasBeenSet = true; m_stoppedAt = value; }
 
     /**
@@ -266,6 +309,12 @@ namespace Model
      * the job.</p>
      */
     inline const ContainerSummary& GetContainer() const{ return m_container; }
+
+    /**
+     * <p>An object representing the details of the container that is associated with
+     * the job.</p>
+     */
+    inline bool ContainerHasBeenSet() const { return m_containerHasBeenSet; }
 
     /**
      * <p>An object representing the details of the container that is associated with
@@ -300,6 +349,11 @@ namespace Model
     /**
      * <p>The array properties of the job, if it is an array job.</p>
      */
+    inline bool ArrayPropertiesHasBeenSet() const { return m_arrayPropertiesHasBeenSet; }
+
+    /**
+     * <p>The array properties of the job, if it is an array job.</p>
+     */
     inline void SetArrayProperties(const ArrayPropertiesSummary& value) { m_arrayPropertiesHasBeenSet = true; m_arrayProperties = value; }
 
     /**
@@ -322,6 +376,11 @@ namespace Model
      * <p>The node properties for a single node in a job summary list.</p>
      */
     inline const NodePropertiesSummary& GetNodeProperties() const{ return m_nodeProperties; }
+
+    /**
+     * <p>The node properties for a single node in a job summary list.</p>
+     */
+    inline bool NodePropertiesHasBeenSet() const { return m_nodePropertiesHasBeenSet; }
 
     /**
      * <p>The node properties for a single node in a job summary list.</p>

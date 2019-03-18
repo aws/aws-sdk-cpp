@@ -59,6 +59,11 @@ namespace Model
     /**
      * <p>The log publishing options configured for the Elasticsearch domain.</p>
      */
+    inline bool OptionsHasBeenSet() const { return m_optionsHasBeenSet; }
+
+    /**
+     * <p>The log publishing options configured for the Elasticsearch domain.</p>
+     */
     inline void SetOptions(const Aws::Map<LogType, LogPublishingOption>& value) { m_optionsHasBeenSet = true; m_options = value; }
 
     /**
@@ -102,6 +107,12 @@ namespace Model
      * <code>OptionStatus</code> for the status information that's included. </p>
      */
     inline const OptionStatus& GetStatus() const{ return m_status; }
+
+    /**
+     * <p>The status of the log publishing options for the Elasticsearch domain. See
+     * <code>OptionStatus</code> for the status information that's included. </p>
+     */
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
     /**
      * <p>The status of the log publishing options for the Elasticsearch domain. See

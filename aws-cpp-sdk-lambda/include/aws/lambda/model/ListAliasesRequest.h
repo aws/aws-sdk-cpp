@@ -70,6 +70,18 @@ namespace Model
      * constraint applies only to the full ARN. If you specify only the function name,
      * it is limited to 64 characters in length.</p>
      */
+    inline bool FunctionNameHasBeenSet() const { return m_functionNameHasBeenSet; }
+
+    /**
+     * <p>The name of the Lambda function.</p> <p class="title"> <b>Name formats</b>
+     * </p> <ul> <li> <p> <b>Function name</b> - <code>MyFunction</code>.</p> </li>
+     * <li> <p> <b>Function ARN</b> -
+     * <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p>
+     * </li> <li> <p> <b>Partial ARN</b> -
+     * <code>123456789012:function:MyFunction</code>.</p> </li> </ul> <p>The length
+     * constraint applies only to the full ARN. If you specify only the function name,
+     * it is limited to 64 characters in length.</p>
+     */
     inline void SetFunctionName(const Aws::String& value) { m_functionNameHasBeenSet = true; m_functionName = value; }
 
     /**
@@ -141,6 +153,11 @@ namespace Model
     /**
      * <p>Specify a function version to only list aliases that invoke that version.</p>
      */
+    inline bool FunctionVersionHasBeenSet() const { return m_functionVersionHasBeenSet; }
+
+    /**
+     * <p>Specify a function version to only list aliases that invoke that version.</p>
+     */
     inline void SetFunctionVersion(const Aws::String& value) { m_functionVersionHasBeenSet = true; m_functionVersion = value; }
 
     /**
@@ -174,6 +191,12 @@ namespace Model
      * retrieve the next page of results.</p>
      */
     inline const Aws::String& GetMarker() const{ return m_marker; }
+
+    /**
+     * <p>Specify the pagination token that's returned by a previous request to
+     * retrieve the next page of results.</p>
+     */
+    inline bool MarkerHasBeenSet() const { return m_markerHasBeenSet; }
 
     /**
      * <p>Specify the pagination token that's returned by a previous request to
@@ -216,6 +239,11 @@ namespace Model
      * <p>Limit the number of aliases returned.</p>
      */
     inline int GetMaxItems() const{ return m_maxItems; }
+
+    /**
+     * <p>Limit the number of aliases returned.</p>
+     */
+    inline bool MaxItemsHasBeenSet() const { return m_maxItemsHasBeenSet; }
 
     /**
      * <p>Limit the number of aliases returned.</p>

@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p>The unique ID of a field-level encryption item.</p>
      */
+    inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
+
+    /**
+     * <p>The unique ID of a field-level encryption item.</p>
+     */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
     /**
@@ -96,6 +101,12 @@ namespace Model
      * <p>The last time that the summary of field-level encryption items was
      * modified.</p>
      */
+    inline bool LastModifiedTimeHasBeenSet() const { return m_lastModifiedTimeHasBeenSet; }
+
+    /**
+     * <p>The last time that the summary of field-level encryption items was
+     * modified.</p>
+     */
     inline void SetLastModifiedTime(const Aws::Utils::DateTime& value) { m_lastModifiedTimeHasBeenSet = true; m_lastModifiedTime = value; }
 
     /**
@@ -121,6 +132,11 @@ namespace Model
      * <p>An optional comment about the field-level encryption item.</p>
      */
     inline const Aws::String& GetComment() const{ return m_comment; }
+
+    /**
+     * <p>An optional comment about the field-level encryption item.</p>
+     */
+    inline bool CommentHasBeenSet() const { return m_commentHasBeenSet; }
 
     /**
      * <p>An optional comment about the field-level encryption item.</p>
@@ -161,6 +177,11 @@ namespace Model
     /**
      * <p> A summary of a query argument-profile mapping. </p>
      */
+    inline bool QueryArgProfileConfigHasBeenSet() const { return m_queryArgProfileConfigHasBeenSet; }
+
+    /**
+     * <p> A summary of a query argument-profile mapping. </p>
+     */
     inline void SetQueryArgProfileConfig(const QueryArgProfileConfig& value) { m_queryArgProfileConfigHasBeenSet = true; m_queryArgProfileConfig = value; }
 
     /**
@@ -183,6 +204,11 @@ namespace Model
      * <p> A summary of a content type-profile mapping. </p>
      */
     inline const ContentTypeProfileConfig& GetContentTypeProfileConfig() const{ return m_contentTypeProfileConfig; }
+
+    /**
+     * <p> A summary of a content type-profile mapping. </p>
+     */
+    inline bool ContentTypeProfileConfigHasBeenSet() const { return m_contentTypeProfileConfigHasBeenSet; }
 
     /**
      * <p> A summary of a content type-profile mapping. </p>

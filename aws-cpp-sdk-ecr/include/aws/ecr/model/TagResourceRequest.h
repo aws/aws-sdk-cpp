@@ -56,6 +56,12 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the the resource to which to add tags.
      * Currently, the only supported resource is an Amazon ECR repository.</p>
      */
+    inline bool ResourceArnHasBeenSet() const { return m_resourceArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the the resource to which to add tags.
+     * Currently, the only supported resource is an Amazon ECR repository.</p>
+     */
     inline void SetResourceArn(const Aws::String& value) { m_resourceArnHasBeenSet = true; m_resourceArn = value; }
 
     /**
@@ -95,6 +101,13 @@ namespace Model
      * have a maximum length of 256 characters.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>The tags to add to the resource. A tag is an array of key-value pairs. Tag
+     * keys can have a maximum character length of 128 characters, and tag values can
+     * have a maximum length of 256 characters.</p>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
      * <p>The tags to add to the resource. A tag is an array of key-value pairs. Tag

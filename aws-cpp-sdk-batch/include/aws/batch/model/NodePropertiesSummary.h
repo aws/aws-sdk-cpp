@@ -56,6 +56,12 @@ namespace Model
      * <p>Specifies whether the current node is the main node for a multi-node parallel
      * job.</p>
      */
+    inline bool IsMainNodeHasBeenSet() const { return m_isMainNodeHasBeenSet; }
+
+    /**
+     * <p>Specifies whether the current node is the main node for a multi-node parallel
+     * job.</p>
+     */
     inline void SetIsMainNode(bool value) { m_isMainNodeHasBeenSet = true; m_isMainNode = value; }
 
     /**
@@ -69,6 +75,11 @@ namespace Model
      * <p>The number of nodes associated with a multi-node parallel job.</p>
      */
     inline int GetNumNodes() const{ return m_numNodes; }
+
+    /**
+     * <p>The number of nodes associated with a multi-node parallel job.</p>
+     */
+    inline bool NumNodesHasBeenSet() const { return m_numNodesHasBeenSet; }
 
     /**
      * <p>The number of nodes associated with a multi-node parallel job.</p>
@@ -87,6 +98,13 @@ namespace Model
      * environment variable.</p>
      */
     inline int GetNodeIndex() const{ return m_nodeIndex; }
+
+    /**
+     * <p>The node index for the node. Node index numbering begins at zero. This index
+     * is also available on the node with the <code>AWS_BATCH_JOB_NODE_INDEX</code>
+     * environment variable.</p>
+     */
+    inline bool NodeIndexHasBeenSet() const { return m_nodeIndexHasBeenSet; }
 
     /**
      * <p>The node index for the node. Node index numbering begins at zero. This index

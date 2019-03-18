@@ -61,6 +61,13 @@ namespace Model
      * automatically placed onto available Dedicated Hosts, when you are launching
      * instances without specifying a host ID.</p> <p>Default: Enabled</p>
      */
+    inline bool AutoPlacementHasBeenSet() const { return m_autoPlacementHasBeenSet; }
+
+    /**
+     * <p>This is enabled by default. This property allows instances to be
+     * automatically placed onto available Dedicated Hosts, when you are launching
+     * instances without specifying a host ID.</p> <p>Default: Enabled</p>
+     */
     inline void SetAutoPlacement(const AutoPlacement& value) { m_autoPlacementHasBeenSet = true; m_autoPlacement = value; }
 
     /**
@@ -89,6 +96,11 @@ namespace Model
      * <p>The Availability Zone for the Dedicated Hosts.</p>
      */
     inline const Aws::String& GetAvailabilityZone() const{ return m_availabilityZone; }
+
+    /**
+     * <p>The Availability Zone for the Dedicated Hosts.</p>
+     */
+    inline bool AvailabilityZoneHasBeenSet() const { return m_availabilityZoneHasBeenSet; }
 
     /**
      * <p>The Availability Zone for the Dedicated Hosts.</p>
@@ -129,6 +141,15 @@ namespace Model
      * </p>
      */
     inline const Aws::String& GetClientToken() const{ return m_clientToken; }
+
+    /**
+     * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
+     * of the request. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How
+     * to Ensure Idempotency</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * </p>
+     */
+    inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
 
     /**
      * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
@@ -197,6 +218,13 @@ namespace Model
      * you specify the instance type, that is the only instance type that you can
      * launch onto that host.</p>
      */
+    inline bool InstanceTypeHasBeenSet() const { return m_instanceTypeHasBeenSet; }
+
+    /**
+     * <p>Specify the instance type for which to configure your Dedicated Hosts. When
+     * you specify the instance type, that is the only instance type that you can
+     * launch onto that host.</p>
+     */
     inline void SetInstanceType(const Aws::String& value) { m_instanceTypeHasBeenSet = true; m_instanceType = value; }
 
     /**
@@ -245,6 +273,12 @@ namespace Model
      * <p>The number of Dedicated Hosts to allocate to your account with these
      * parameters.</p>
      */
+    inline bool QuantityHasBeenSet() const { return m_quantityHasBeenSet; }
+
+    /**
+     * <p>The number of Dedicated Hosts to allocate to your account with these
+     * parameters.</p>
+     */
     inline void SetQuantity(int value) { m_quantityHasBeenSet = true; m_quantity = value; }
 
     /**
@@ -258,6 +292,11 @@ namespace Model
      * <p>The tags to apply to the Dedicated Host during creation.</p>
      */
     inline const Aws::Vector<TagSpecification>& GetTagSpecifications() const{ return m_tagSpecifications; }
+
+    /**
+     * <p>The tags to apply to the Dedicated Host during creation.</p>
+     */
+    inline bool TagSpecificationsHasBeenSet() const { return m_tagSpecificationsHasBeenSet; }
 
     /**
      * <p>The tags to apply to the Dedicated Host during creation.</p>

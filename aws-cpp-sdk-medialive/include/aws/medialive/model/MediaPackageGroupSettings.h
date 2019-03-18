@@ -55,6 +55,11 @@ namespace Model
     /**
      * MediaPackage channel destination.
      */
+    inline bool DestinationHasBeenSet() const { return m_destinationHasBeenSet; }
+
+    /**
+     * MediaPackage channel destination.
+     */
     inline void SetDestination(const OutputLocationRef& value) { m_destinationHasBeenSet = true; m_destination = value; }
 
     /**

@@ -50,6 +50,11 @@ namespace Model
     /**
      * <p>The API identifier.</p>
      */
+    inline bool ApiIdHasBeenSet() const { return m_apiIdHasBeenSet; }
+
+    /**
+     * <p>The API identifier.</p>
+     */
     inline void SetApiId(const Aws::String& value) { m_apiIdHasBeenSet = true; m_apiId = value; }
 
     /**
@@ -82,6 +87,11 @@ namespace Model
      * <p>The model ID.</p>
      */
     inline const Aws::String& GetModelId() const{ return m_modelId; }
+
+    /**
+     * <p>The model ID.</p>
+     */
+    inline bool ModelIdHasBeenSet() const { return m_modelIdHasBeenSet; }
 
     /**
      * <p>The model ID.</p>

@@ -54,6 +54,12 @@ namespace Model
      * <p>The identifier of the organization that contains the user for which the
      * password is reset.</p>
      */
+    inline bool OrganizationIdHasBeenSet() const { return m_organizationIdHasBeenSet; }
+
+    /**
+     * <p>The identifier of the organization that contains the user for which the
+     * password is reset.</p>
+     */
     inline void SetOrganizationId(const Aws::String& value) { m_organizationIdHasBeenSet = true; m_organizationId = value; }
 
     /**
@@ -95,6 +101,11 @@ namespace Model
     /**
      * <p>The identifier of the user for whom the password is reset.</p>
      */
+    inline bool UserIdHasBeenSet() const { return m_userIdHasBeenSet; }
+
+    /**
+     * <p>The identifier of the user for whom the password is reset.</p>
+     */
     inline void SetUserId(const Aws::String& value) { m_userIdHasBeenSet = true; m_userId = value; }
 
     /**
@@ -127,6 +138,11 @@ namespace Model
      * <p>The new password for the user.</p>
      */
     inline const Aws::String& GetPassword() const{ return m_password; }
+
+    /**
+     * <p>The new password for the user.</p>
+     */
+    inline bool PasswordHasBeenSet() const { return m_passwordHasBeenSet; }
 
     /**
      * <p>The new password for the user.</p>

@@ -61,6 +61,13 @@ namespace Model
      * This parameter is case-sensitive.</p> <p>By default, resize operations for all
      * clusters defined for an AWS account are returned.</p>
      */
+    inline bool ClusterIdentifierHasBeenSet() const { return m_clusterIdentifierHasBeenSet; }
+
+    /**
+     * <p>The unique identifier of a cluster whose resize progress you are requesting.
+     * This parameter is case-sensitive.</p> <p>By default, resize operations for all
+     * clusters defined for an AWS account are returned.</p>
+     */
     inline void SetClusterIdentifier(const Aws::String& value) { m_clusterIdentifierHasBeenSet = true; m_clusterIdentifier = value; }
 
     /**

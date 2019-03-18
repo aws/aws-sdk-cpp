@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The name of the cluster security group to be deleted.</p>
      */
+    inline bool ClusterSecurityGroupNameHasBeenSet() const { return m_clusterSecurityGroupNameHasBeenSet; }
+
+    /**
+     * <p>The name of the cluster security group to be deleted.</p>
+     */
     inline void SetClusterSecurityGroupName(const Aws::String& value) { m_clusterSecurityGroupNameHasBeenSet = true; m_clusterSecurityGroupName = value; }
 
     /**

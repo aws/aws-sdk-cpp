@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The names for your new instances.</p>
      */
+    inline bool InstanceNamesHasBeenSet() const { return m_instanceNamesHasBeenSet; }
+
+    /**
+     * <p>The names for your new instances.</p>
+     */
     inline void SetInstanceNames(const Aws::Vector<Aws::String>& value) { m_instanceNamesHasBeenSet = true; m_instanceNames = value; }
 
     /**
@@ -93,6 +98,11 @@ namespace Model
      * <p>An object containing information about one or more disk mappings.</p>
      */
     inline const Aws::Map<Aws::String, Aws::Vector<DiskMap>>& GetAttachedDiskMapping() const{ return m_attachedDiskMapping; }
+
+    /**
+     * <p>An object containing information about one or more disk mappings.</p>
+     */
+    inline bool AttachedDiskMappingHasBeenSet() const { return m_attachedDiskMappingHasBeenSet; }
 
     /**
      * <p>An object containing information about one or more disk mappings.</p>
@@ -154,6 +164,16 @@ namespace Model
      * Zones</code> parameter to your request.</p>
      */
     inline const Aws::String& GetAvailabilityZone() const{ return m_availabilityZone; }
+
+    /**
+     * <p>The Availability Zone where you want to create your instances. Use the
+     * following formatting: <code>us-east-2a</code> (case sensitive). You can get a
+     * list of Availability Zones by using the <a
+     * href="http://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetRegions.html">get
+     * regions</a> operation. Be sure to add the <code>include Availability
+     * Zones</code> parameter to your request.</p>
+     */
+    inline bool AvailabilityZoneHasBeenSet() const { return m_availabilityZoneHasBeenSet; }
 
     /**
      * <p>The Availability Zone where you want to create your instances. Use the
@@ -228,6 +248,13 @@ namespace Model
      * Use the get instance snapshots operation to return information about your
      * existing snapshots.</p>
      */
+    inline bool InstanceSnapshotNameHasBeenSet() const { return m_instanceSnapshotNameHasBeenSet; }
+
+    /**
+     * <p>The name of the instance snapshot on which you are basing your new instances.
+     * Use the get instance snapshots operation to return information about your
+     * existing snapshots.</p>
+     */
     inline void SetInstanceSnapshotName(const Aws::String& value) { m_instanceSnapshotNameHasBeenSet = true; m_instanceSnapshotName = value; }
 
     /**
@@ -271,6 +298,12 @@ namespace Model
      * <i>instance</i>), including the pricing plan (e.g., <code>micro_1_0</code>).</p>
      */
     inline const Aws::String& GetBundleId() const{ return m_bundleId; }
+
+    /**
+     * <p>The bundle of specification information for your virtual private server (or
+     * <i>instance</i>), including the pricing plan (e.g., <code>micro_1_0</code>).</p>
+     */
+    inline bool BundleIdHasBeenSet() const { return m_bundleIdHasBeenSet; }
 
     /**
      * <p>The bundle of specification information for your virtual private server (or
@@ -320,6 +353,18 @@ namespace Model
      * Guide</a>.</p> </note>
      */
     inline const Aws::String& GetUserData() const{ return m_userData; }
+
+    /**
+     * <p>You can create a launch script that configures a server with additional user
+     * data. For example, <code>apt-get -y update</code>.</p> <note> <p>Depending on
+     * the machine image you choose, the command to get software on your instance
+     * varies. Amazon Linux and CentOS use <code>yum</code>, Debian and Ubuntu use
+     * <code>apt-get</code>, and FreeBSD uses <code>pkg</code>. For a complete list,
+     * see the <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/getting-started/article/compare-options-choose-lightsail-instance-image">Dev
+     * Guide</a>.</p> </note>
+     */
+    inline bool UserDataHasBeenSet() const { return m_userDataHasBeenSet; }
 
     /**
      * <p>You can create a launch script that configures a server with additional user
@@ -402,6 +447,11 @@ namespace Model
     /**
      * <p>The name for your key pair.</p>
      */
+    inline bool KeyPairNameHasBeenSet() const { return m_keyPairNameHasBeenSet; }
+
+    /**
+     * <p>The name for your key pair.</p>
+     */
     inline void SetKeyPairName(const Aws::String& value) { m_keyPairNameHasBeenSet = true; m_keyPairName = value; }
 
     /**
@@ -436,6 +486,13 @@ namespace Model
      * resource</code> operation.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>The tag keys and optional values to add to the resource during create.</p>
+     * <p>To tag a resource after it has been created, see the <code>tag
+     * resource</code> operation.</p>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
      * <p>The tag keys and optional values to add to the resource during create.</p>

@@ -67,6 +67,11 @@ namespace Model
     /**
      * Acceleration settings for job execution.
      */
+    inline bool AccelerationSettingsHasBeenSet() const { return m_accelerationSettingsHasBeenSet; }
+
+    /**
+     * Acceleration settings for job execution.
+     */
     inline void SetAccelerationSettings(const AccelerationSettings& value) { m_accelerationSettingsHasBeenSet = true; m_accelerationSettings = value; }
 
     /**
@@ -89,6 +94,11 @@ namespace Model
      * An identifier for this resource that is unique within all of AWS.
      */
     inline const Aws::String& GetArn() const{ return m_arn; }
+
+    /**
+     * An identifier for this resource that is unique within all of AWS.
+     */
+    inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
 
     /**
      * An identifier for this resource that is unique within all of AWS.
@@ -125,6 +135,9 @@ namespace Model
     inline const BillingTagsSource& GetBillingTagsSource() const{ return m_billingTagsSource; }
 
     
+    inline bool BillingTagsSourceHasBeenSet() const { return m_billingTagsSourceHasBeenSet; }
+
+    
     inline void SetBillingTagsSource(const BillingTagsSource& value) { m_billingTagsSourceHasBeenSet = true; m_billingTagsSource = value; }
 
     
@@ -141,6 +154,11 @@ namespace Model
      * The time, in Unix epoch format in seconds, when the job got created.
      */
     inline const Aws::Utils::DateTime& GetCreatedAt() const{ return m_createdAt; }
+
+    /**
+     * The time, in Unix epoch format in seconds, when the job got created.
+     */
+    inline bool CreatedAtHasBeenSet() const { return m_createdAtHasBeenSet; }
 
     /**
      * The time, in Unix epoch format in seconds, when the job got created.
@@ -171,6 +189,11 @@ namespace Model
     /**
      * Error code for the job
      */
+    inline bool ErrorCodeHasBeenSet() const { return m_errorCodeHasBeenSet; }
+
+    /**
+     * Error code for the job
+     */
     inline void SetErrorCode(int value) { m_errorCodeHasBeenSet = true; m_errorCode = value; }
 
     /**
@@ -183,6 +206,11 @@ namespace Model
      * Error message of Job
      */
     inline const Aws::String& GetErrorMessage() const{ return m_errorMessage; }
+
+    /**
+     * Error message of Job
+     */
+    inline bool ErrorMessageHasBeenSet() const { return m_errorMessageHasBeenSet; }
 
     /**
      * Error message of Job
@@ -220,6 +248,12 @@ namespace Model
      * resources
      */
     inline const Aws::String& GetId() const{ return m_id; }
+
+    /**
+     * A portion of the job's ARN, unique within your AWS Elemental MediaConvert
+     * resources
+     */
+    inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
 
     /**
      * A portion of the job's ARN, unique within your AWS Elemental MediaConvert
@@ -268,6 +302,12 @@ namespace Model
      * The job template that the job is created from, if it is created from a job
      * template.
      */
+    inline bool JobTemplateHasBeenSet() const { return m_jobTemplateHasBeenSet; }
+
+    /**
+     * The job template that the job is created from, if it is created from a job
+     * template.
+     */
     inline void SetJobTemplate(const Aws::String& value) { m_jobTemplateHasBeenSet = true; m_jobTemplate = value; }
 
     /**
@@ -309,6 +349,11 @@ namespace Model
     /**
      * List of output group details
      */
+    inline bool OutputGroupDetailsHasBeenSet() const { return m_outputGroupDetailsHasBeenSet; }
+
+    /**
+     * List of output group details
+     */
     inline void SetOutputGroupDetails(const Aws::Vector<OutputGroupDetail>& value) { m_outputGroupDetailsHasBeenSet = true; m_outputGroupDetails = value; }
 
     /**
@@ -344,6 +389,14 @@ namespace Model
      * http://docs.aws.amazon.com/mediaconvert/latest/ug/what-is.html
      */
     inline const Aws::String& GetQueue() const{ return m_queue; }
+
+    /**
+     * Optional. When you create a job, you can specify a queue to send it to. If you
+     * don't specify, the job will go to the default queue. For more about queues, see
+     * the User Guide topic at
+     * http://docs.aws.amazon.com/mediaconvert/latest/ug/what-is.html
+     */
+    inline bool QueueHasBeenSet() const { return m_queueHasBeenSet; }
 
     /**
      * Optional. When you create a job, you can specify a queue to send it to. If you
@@ -406,6 +459,13 @@ namespace Model
      * the User Guide topic at the User Guide at
      * http://docs.aws.amazon.com/mediaconvert/latest/ug/iam-role.html
      */
+    inline bool RoleHasBeenSet() const { return m_roleHasBeenSet; }
+
+    /**
+     * The IAM role you use for creating this job. For details about permissions, see
+     * the User Guide topic at the User Guide at
+     * http://docs.aws.amazon.com/mediaconvert/latest/ug/iam-role.html
+     */
     inline void SetRole(const Aws::String& value) { m_roleHasBeenSet = true; m_role = value; }
 
     /**
@@ -448,6 +508,9 @@ namespace Model
     inline const JobSettings& GetSettings() const{ return m_settings; }
 
     
+    inline bool SettingsHasBeenSet() const { return m_settingsHasBeenSet; }
+
+    
     inline void SetSettings(const JobSettings& value) { m_settingsHasBeenSet = true; m_settings = value; }
 
     
@@ -462,6 +525,9 @@ namespace Model
 
     
     inline const JobStatus& GetStatus() const{ return m_status; }
+
+    
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
     
     inline void SetStatus(const JobStatus& value) { m_statusHasBeenSet = true; m_status = value; }
@@ -490,6 +556,14 @@ namespace Model
      * an update at this interval from the time the service begins processing your job
      * to the time it completes the transcode or encounters an error.
      */
+    inline bool StatusUpdateIntervalInSecsHasBeenSet() const { return m_statusUpdateIntervalInSecsHasBeenSet; }
+
+    /**
+     * Specify how often MediaConvert sends STATUS_UPDATE events to Amazon CloudWatch
+     * Events. Set the interval, in seconds, between status updates. MediaConvert sends
+     * an update at this interval from the time the service begins processing your job
+     * to the time it completes the transcode or encounters an error.
+     */
     inline void SetStatusUpdateIntervalInSecs(long long value) { m_statusUpdateIntervalInSecsHasBeenSet = true; m_statusUpdateIntervalInSecs = value; }
 
     /**
@@ -503,6 +577,9 @@ namespace Model
 
     
     inline const Timing& GetTiming() const{ return m_timing; }
+
+    
+    inline bool TimingHasBeenSet() const { return m_timingHasBeenSet; }
 
     
     inline void SetTiming(const Timing& value) { m_timingHasBeenSet = true; m_timing = value; }
@@ -522,6 +599,12 @@ namespace Model
      * specify metadata in key/value pairs.
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetUserMetadata() const{ return m_userMetadata; }
+
+    /**
+     * User-defined metadata that you want to associate with an MediaConvert job. You
+     * specify metadata in key/value pairs.
+     */
+    inline bool UserMetadataHasBeenSet() const { return m_userMetadataHasBeenSet; }
 
     /**
      * User-defined metadata that you want to associate with an MediaConvert job. You

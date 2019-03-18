@@ -58,6 +58,12 @@ namespace Model
      * <p>Identifies an AWS Config rule used to evaluate an AWS resource, and provides
      * the type and ID of the evaluated resource.</p>
      */
+    inline bool EvaluationResultQualifierHasBeenSet() const { return m_evaluationResultQualifierHasBeenSet; }
+
+    /**
+     * <p>Identifies an AWS Config rule used to evaluate an AWS resource, and provides
+     * the type and ID of the evaluated resource.</p>
+     */
     inline void SetEvaluationResultQualifier(const EvaluationResultQualifier& value) { m_evaluationResultQualifierHasBeenSet = true; m_evaluationResultQualifier = value; }
 
     /**
@@ -86,6 +92,14 @@ namespace Model
      * snapshot, depending on which event triggered the evaluation.</p>
      */
     inline const Aws::Utils::DateTime& GetOrderingTimestamp() const{ return m_orderingTimestamp; }
+
+    /**
+     * <p>The time of the event that triggered the evaluation of your AWS resources.
+     * The time can indicate when AWS Config delivered a configuration item change
+     * notification, or it can indicate when AWS Config delivered the configuration
+     * snapshot, depending on which event triggered the evaluation.</p>
+     */
+    inline bool OrderingTimestampHasBeenSet() const { return m_orderingTimestampHasBeenSet; }
 
     /**
      * <p>The time of the event that triggered the evaluation of your AWS resources.

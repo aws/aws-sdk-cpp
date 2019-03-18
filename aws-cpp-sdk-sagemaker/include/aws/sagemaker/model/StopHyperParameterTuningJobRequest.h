@@ -52,6 +52,11 @@ namespace Model
     /**
      * <p>The name of the tuning job to stop.</p>
      */
+    inline bool HyperParameterTuningJobNameHasBeenSet() const { return m_hyperParameterTuningJobNameHasBeenSet; }
+
+    /**
+     * <p>The name of the tuning job to stop.</p>
+     */
     inline void SetHyperParameterTuningJobName(const Aws::String& value) { m_hyperParameterTuningJobNameHasBeenSet = true; m_hyperParameterTuningJobName = value; }
 
     /**

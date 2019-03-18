@@ -52,6 +52,11 @@ namespace Model
     /**
      * <p>A system-assigned unique identifier for an SFTP server.</p>
      */
+    inline bool ServerIdHasBeenSet() const { return m_serverIdHasBeenSet; }
+
+    /**
+     * <p>A system-assigned unique identifier for an SFTP server.</p>
+     */
     inline void SetServerId(const Aws::String& value) { m_serverIdHasBeenSet = true; m_serverId = value; }
 
     /**

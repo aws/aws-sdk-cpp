@@ -70,6 +70,14 @@ namespace Model
      * characters: + - = . _ : / @. Tag keys are case-sensitive and must be unique per
      * resource. </p>
      */
+    inline bool KeyHasBeenSet() const { return m_keyHasBeenSet; }
+
+    /**
+     * <p>A tag key. The tag key length is from 1 to 128 Unicode characters in UTF-8.
+     * You can use letters and numbers representable in UTF-8, and the following
+     * characters: + - = . _ : / @. Tag keys are case-sensitive and must be unique per
+     * resource. </p>
+     */
     inline void SetKey(const Aws::String& value) { m_keyHasBeenSet = true; m_key = value; }
 
     /**
@@ -119,6 +127,13 @@ namespace Model
      * characters: + - = . _ : / @. Tag values are case-sensitive. </p>
      */
     inline const Aws::String& GetValue() const{ return m_value; }
+
+    /**
+     * <p>A tag value. The tag value length is from 0 to 256 Unicode characters in
+     * UTF-8. You can use letters and numbers representable in UTF-8, and the following
+     * characters: + - = . _ : / @. Tag values are case-sensitive. </p>
+     */
+    inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
 
     /**
      * <p>A tag value. The tag value length is from 0 to 256 Unicode characters in

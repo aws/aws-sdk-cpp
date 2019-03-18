@@ -56,6 +56,13 @@ namespace Model
      * results available. To retrieve the next page of results, make the call again
      * using the returned token in <code>NextToken</code>.</p>
      */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
+
+    /**
+     * <p>If a <code>NextToken</code> was returned by a previous call, there are more
+     * results available. To retrieve the next page of results, make the call again
+     * using the returned token in <code>NextToken</code>.</p>
+     */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
     /**
@@ -102,6 +109,11 @@ namespace Model
     /**
      * <p>Value to specify how many results are returned per page.</p>
      */
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
+
+    /**
+     * <p>Value to specify how many results are returned per page.</p>
+     */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
@@ -114,6 +126,11 @@ namespace Model
      * <p>Filter migration tasks by discovered resource name.</p>
      */
     inline const Aws::String& GetResourceName() const{ return m_resourceName; }
+
+    /**
+     * <p>Filter migration tasks by discovered resource name.</p>
+     */
+    inline bool ResourceNameHasBeenSet() const { return m_resourceNameHasBeenSet; }
 
     /**
      * <p>Filter migration tasks by discovered resource name.</p>

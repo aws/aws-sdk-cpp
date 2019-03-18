@@ -62,6 +62,16 @@ namespace Model
      * <code>Bytes</code> field. For more information, see Images in the Amazon
      * Rekognition developer guide.</p>
      */
+    inline bool SourceImageHasBeenSet() const { return m_sourceImageHasBeenSet; }
+
+    /**
+     * <p>The input image as base64-encoded bytes or an S3 object. If you use the AWS
+     * CLI to call Amazon Rekognition operations, passing base64-encoded image bytes is
+     * not supported. </p> <p>If you are using an AWS SDK to call Amazon Rekognition,
+     * you might not need to base64-encode image bytes passed using the
+     * <code>Bytes</code> field. For more information, see Images in the Amazon
+     * Rekognition developer guide.</p>
+     */
     inline void SetSourceImage(const Image& value) { m_sourceImageHasBeenSet = true; m_sourceImage = value; }
 
     /**
@@ -113,6 +123,16 @@ namespace Model
      * <code>Bytes</code> field. For more information, see Images in the Amazon
      * Rekognition developer guide.</p>
      */
+    inline bool TargetImageHasBeenSet() const { return m_targetImageHasBeenSet; }
+
+    /**
+     * <p>The target image as base64-encoded bytes or an S3 object. If you use the AWS
+     * CLI to call Amazon Rekognition operations, passing base64-encoded image bytes is
+     * not supported. </p> <p>If you are using an AWS SDK to call Amazon Rekognition,
+     * you might not need to base64-encode image bytes passed using the
+     * <code>Bytes</code> field. For more information, see Images in the Amazon
+     * Rekognition developer guide.</p>
+     */
     inline void SetTargetImage(const Image& value) { m_targetImageHasBeenSet = true; m_targetImage = value; }
 
     /**
@@ -151,6 +171,12 @@ namespace Model
      * be included in the <code>FaceMatches</code> array.</p>
      */
     inline double GetSimilarityThreshold() const{ return m_similarityThreshold; }
+
+    /**
+     * <p>The minimum level of confidence in the face matches that a match must meet to
+     * be included in the <code>FaceMatches</code> array.</p>
+     */
+    inline bool SimilarityThresholdHasBeenSet() const { return m_similarityThresholdHasBeenSet; }
 
     /**
      * <p>The minimum level of confidence in the face matches that a match must meet to

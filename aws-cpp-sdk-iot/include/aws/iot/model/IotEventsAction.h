@@ -55,6 +55,11 @@ namespace Model
     /**
      * <p>The name of the AWS IoT Events input.</p>
      */
+    inline bool InputNameHasBeenSet() const { return m_inputNameHasBeenSet; }
+
+    /**
+     * <p>The name of the AWS IoT Events input.</p>
+     */
     inline void SetInputName(const Aws::String& value) { m_inputNameHasBeenSet = true; m_inputName = value; }
 
     /**
@@ -88,6 +93,12 @@ namespace Model
      * messageId will be processed by an AWS IoT Events detector.</p>
      */
     inline const Aws::String& GetMessageId() const{ return m_messageId; }
+
+    /**
+     * <p>[Optional] Use this to ensure that only one input (message) with a given
+     * messageId will be processed by an AWS IoT Events detector.</p>
+     */
+    inline bool MessageIdHasBeenSet() const { return m_messageIdHasBeenSet; }
 
     /**
      * <p>[Optional] Use this to ensure that only one input (message) with a given
@@ -131,6 +142,12 @@ namespace Model
      * IoT Events detector. ("Action":"iotevents:BatchPutMessage").</p>
      */
     inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
+
+    /**
+     * <p>The ARN of the role that grants AWS IoT permission to send an input to an AWS
+     * IoT Events detector. ("Action":"iotevents:BatchPutMessage").</p>
+     */
+    inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
 
     /**
      * <p>The ARN of the role that grants AWS IoT permission to send an input to an AWS

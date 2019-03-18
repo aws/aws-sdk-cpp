@@ -60,6 +60,14 @@ namespace Model
      * required permissions, the error response is <code>DryRunOperation</code>.
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
+    inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
+
+    /**
+     * <p>Checks whether you have the required permissions for the action, without
+     * actually making the request, and provides an error response. If you have the
+     * required permissions, the error response is <code>DryRunOperation</code>.
+     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+     */
     inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
 
     /**
@@ -78,6 +86,14 @@ namespace Model
      * Idempotency</a>.</p> <p>Constraint: Maximum 128 ASCII characters.</p>
      */
     inline const Aws::String& GetClientToken() const{ return m_clientToken; }
+
+    /**
+     * <p>Unique, case-sensitive identifier you provide to ensure the idempotency of
+     * the request. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
+     * Idempotency</a>.</p> <p>Constraint: Maximum 128 ASCII characters.</p>
+     */
+    inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
 
     /**
      * <p>Unique, case-sensitive identifier you provide to ensure the idempotency of
@@ -138,6 +154,12 @@ namespace Model
      * <p>The ID of the launch template. You must specify either the launch template ID
      * or launch template name in the request.</p>
      */
+    inline bool LaunchTemplateIdHasBeenSet() const { return m_launchTemplateIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the launch template. You must specify either the launch template ID
+     * or launch template name in the request.</p>
+     */
     inline void SetLaunchTemplateId(const Aws::String& value) { m_launchTemplateIdHasBeenSet = true; m_launchTemplateId = value; }
 
     /**
@@ -181,6 +203,12 @@ namespace Model
      * <p>The name of the launch template. You must specify either the launch template
      * ID or launch template name in the request.</p>
      */
+    inline bool LaunchTemplateNameHasBeenSet() const { return m_launchTemplateNameHasBeenSet; }
+
+    /**
+     * <p>The name of the launch template. You must specify either the launch template
+     * ID or launch template name in the request.</p>
+     */
     inline void SetLaunchTemplateName(const Aws::String& value) { m_launchTemplateNameHasBeenSet = true; m_launchTemplateName = value; }
 
     /**
@@ -218,6 +246,11 @@ namespace Model
      * <p>The version number of the launch template to set as the default version.</p>
      */
     inline const Aws::String& GetDefaultVersion() const{ return m_defaultVersion; }
+
+    /**
+     * <p>The version number of the launch template to set as the default version.</p>
+     */
+    inline bool DefaultVersionHasBeenSet() const { return m_defaultVersionHasBeenSet; }
 
     /**
      * <p>The version number of the launch template to set as the default version.</p>

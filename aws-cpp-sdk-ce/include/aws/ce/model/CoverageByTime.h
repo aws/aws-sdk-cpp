@@ -59,6 +59,11 @@ namespace Model
     /**
      * <p>The period that this coverage was used over.</p>
      */
+    inline bool TimePeriodHasBeenSet() const { return m_timePeriodHasBeenSet; }
+
+    /**
+     * <p>The period that this coverage was used over.</p>
+     */
     inline void SetTimePeriod(const DateInterval& value) { m_timePeriodHasBeenSet = true; m_timePeriod = value; }
 
     /**
@@ -81,6 +86,11 @@ namespace Model
      * <p>The groups of instances that the reservation covered.</p>
      */
     inline const Aws::Vector<ReservationCoverageGroup>& GetGroups() const{ return m_groups; }
+
+    /**
+     * <p>The groups of instances that the reservation covered.</p>
+     */
+    inline bool GroupsHasBeenSet() const { return m_groupsHasBeenSet; }
 
     /**
      * <p>The groups of instances that the reservation covered.</p>
@@ -117,6 +127,11 @@ namespace Model
      * <p>The total reservation coverage, in hours.</p>
      */
     inline const Coverage& GetTotal() const{ return m_total; }
+
+    /**
+     * <p>The total reservation coverage, in hours.</p>
+     */
+    inline bool TotalHasBeenSet() const { return m_totalHasBeenSet; }
 
     /**
      * <p>The total reservation coverage, in hours.</p>

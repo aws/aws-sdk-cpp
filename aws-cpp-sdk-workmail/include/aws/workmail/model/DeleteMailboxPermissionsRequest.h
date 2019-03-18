@@ -54,6 +54,12 @@ namespace Model
      * <p>The identifier of the organization under which the entity (user or group)
      * exists.</p>
      */
+    inline bool OrganizationIdHasBeenSet() const { return m_organizationIdHasBeenSet; }
+
+    /**
+     * <p>The identifier of the organization under which the entity (user or group)
+     * exists.</p>
+     */
     inline void SetOrganizationId(const Aws::String& value) { m_organizationIdHasBeenSet = true; m_organizationId = value; }
 
     /**
@@ -97,6 +103,12 @@ namespace Model
      * <p>The identifier of the entity (user or group) for which to delete mailbox
      * permissions.</p>
      */
+    inline bool EntityIdHasBeenSet() const { return m_entityIdHasBeenSet; }
+
+    /**
+     * <p>The identifier of the entity (user or group) for which to delete mailbox
+     * permissions.</p>
+     */
     inline void SetEntityId(const Aws::String& value) { m_entityIdHasBeenSet = true; m_entityId = value; }
 
     /**
@@ -135,6 +147,12 @@ namespace Model
      * permissions.</p>
      */
     inline const Aws::String& GetGranteeId() const{ return m_granteeId; }
+
+    /**
+     * <p>The identifier of the entity (user or group) for which to delete granted
+     * permissions.</p>
+     */
+    inline bool GranteeIdHasBeenSet() const { return m_granteeIdHasBeenSet; }
 
     /**
      * <p>The identifier of the entity (user or group) for which to delete granted

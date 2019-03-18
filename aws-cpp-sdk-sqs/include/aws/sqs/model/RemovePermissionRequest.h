@@ -59,6 +59,12 @@ namespace Model
      * <p>The URL of the Amazon SQS queue from which permissions are removed.</p>
      * <p>Queue URLs and names are case-sensitive.</p>
      */
+    inline bool QueueUrlHasBeenSet() const { return m_queueUrlHasBeenSet; }
+
+    /**
+     * <p>The URL of the Amazon SQS queue from which permissions are removed.</p>
+     * <p>Queue URLs and names are case-sensitive.</p>
+     */
     inline void SetQueueUrl(const Aws::String& value) { m_queueUrlHasBeenSet = true; m_queueUrl = value; }
 
     /**
@@ -97,6 +103,12 @@ namespace Model
      * the <code> <a>AddPermission</a> </code> action.</p>
      */
     inline const Aws::String& GetLabel() const{ return m_label; }
+
+    /**
+     * <p>The identification of the permission to remove. This is the label added using
+     * the <code> <a>AddPermission</a> </code> action.</p>
+     */
+    inline bool LabelHasBeenSet() const { return m_labelHasBeenSet; }
 
     /**
      * <p>The identification of the permission to remove. This is the label added using

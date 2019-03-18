@@ -55,6 +55,12 @@ namespace Model
      * <p>The ID of the Data Catalog in which the connection resides. If none is
      * provided, the AWS account ID is used by default.</p>
      */
+    inline bool CatalogIdHasBeenSet() const { return m_catalogIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the Data Catalog in which the connection resides. If none is
+     * provided, the AWS account ID is used by default.</p>
+     */
     inline void SetCatalogId(const Aws::String& value) { m_catalogIdHasBeenSet = true; m_catalogId = value; }
 
     /**
@@ -96,6 +102,11 @@ namespace Model
     /**
      * <p>The name of the connection definition to update.</p>
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>The name of the connection definition to update.</p>
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
@@ -129,6 +140,12 @@ namespace Model
      * question.</p>
      */
     inline const ConnectionInput& GetConnectionInput() const{ return m_connectionInput; }
+
+    /**
+     * <p>A <code>ConnectionInput</code> object that redefines the connection in
+     * question.</p>
+     */
+    inline bool ConnectionInputHasBeenSet() const { return m_connectionInputHasBeenSet; }
 
     /**
      * <p>A <code>ConnectionInput</code> object that redefines the connection in

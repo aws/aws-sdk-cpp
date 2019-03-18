@@ -60,6 +60,12 @@ namespace Model
      * Optionally, specify a job template category to limit responses to only job
      * templates from that category.
      */
+    inline bool CategoryHasBeenSet() const { return m_categoryHasBeenSet; }
+
+    /**
+     * Optionally, specify a job template category to limit responses to only job
+     * templates from that category.
+     */
     inline void SetCategory(const Aws::String& value) { m_categoryHasBeenSet = true; m_category = value; }
 
     /**
@@ -97,6 +103,9 @@ namespace Model
     inline const JobTemplateListBy& GetListBy() const{ return m_listBy; }
 
     
+    inline bool ListByHasBeenSet() const { return m_listByHasBeenSet; }
+
+    
     inline void SetListBy(const JobTemplateListBy& value) { m_listByHasBeenSet = true; m_listBy = value; }
 
     
@@ -119,6 +128,12 @@ namespace Model
      * Optional. Number of job templates, up to twenty, that will be returned at one
      * time.
      */
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
+
+    /**
+     * Optional. Number of job templates, up to twenty, that will be returned at one
+     * time.
+     */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
@@ -133,6 +148,12 @@ namespace Model
      * the next batch of job templates.
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
+    /**
+     * Use this string, provided with the response to a previous request, to request
+     * the next batch of job templates.
+     */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
      * Use this string, provided with the response to a previous request, to request
@@ -173,6 +194,9 @@ namespace Model
 
     
     inline const Order& GetOrder() const{ return m_order; }
+
+    
+    inline bool OrderHasBeenSet() const { return m_orderHasBeenSet; }
 
     
     inline void SetOrder(const Order& value) { m_orderHasBeenSet = true; m_order = value; }

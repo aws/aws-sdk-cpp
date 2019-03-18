@@ -65,6 +65,12 @@ namespace Model
      * <p>You can opt out of certificate transparency logging by specifying the
      * <code>DISABLED</code> option. Opt in by specifying <code>ENABLED</code>. </p>
      */
+    inline bool CertificateTransparencyLoggingPreferenceHasBeenSet() const { return m_certificateTransparencyLoggingPreferenceHasBeenSet; }
+
+    /**
+     * <p>You can opt out of certificate transparency logging by specifying the
+     * <code>DISABLED</code> option. Opt in by specifying <code>ENABLED</code>. </p>
+     */
     inline void SetCertificateTransparencyLoggingPreference(const CertificateTransparencyLoggingPreference& value) { m_certificateTransparencyLoggingPreferenceHasBeenSet = true; m_certificateTransparencyLoggingPreference = value; }
 
     /**

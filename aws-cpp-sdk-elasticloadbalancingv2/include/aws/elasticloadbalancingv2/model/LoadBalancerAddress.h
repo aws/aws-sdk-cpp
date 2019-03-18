@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p>The static IP address.</p>
      */
+    inline bool IpAddressHasBeenSet() const { return m_ipAddressHasBeenSet; }
+
+    /**
+     * <p>The static IP address.</p>
+     */
     inline void SetIpAddress(const Aws::String& value) { m_ipAddressHasBeenSet = true; m_ipAddress = value; }
 
     /**
@@ -90,6 +95,11 @@ namespace Model
      * <p>[Network Load Balancers] The allocation ID of the Elastic IP address.</p>
      */
     inline const Aws::String& GetAllocationId() const{ return m_allocationId; }
+
+    /**
+     * <p>[Network Load Balancers] The allocation ID of the Elastic IP address.</p>
+     */
+    inline bool AllocationIdHasBeenSet() const { return m_allocationIdHasBeenSet; }
 
     /**
      * <p>[Network Load Balancers] The allocation ID of the Elastic IP address.</p>

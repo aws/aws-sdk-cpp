@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>True if the migration has completed, or False otherwise.</p>
      */
+    inline bool ImportCompletedHasBeenSet() const { return m_importCompletedHasBeenSet; }
+
+    /**
+     * <p>True if the migration has completed, or False otherwise.</p>
+     */
     inline void SetImportCompleted(bool value) { m_importCompletedHasBeenSet = true; m_importCompleted = value; }
 
     /**
@@ -69,6 +74,11 @@ namespace Model
      * <p>The time that the migration was started.</p>
      */
     inline const Aws::Utils::DateTime& GetImportTime() const{ return m_importTime; }
+
+    /**
+     * <p>The time that the migration was started.</p>
+     */
+    inline bool ImportTimeHasBeenSet() const { return m_importTimeHasBeenSet; }
 
     /**
      * <p>The time that the migration was started.</p>
@@ -95,6 +105,11 @@ namespace Model
      * <p>The name of the person who initiated the migration.</p>
      */
     inline const Aws::String& GetImportedBy() const{ return m_importedBy; }
+
+    /**
+     * <p>The name of the person who initiated the migration.</p>
+     */
+    inline bool ImportedByHasBeenSet() const { return m_importedByHasBeenSet; }
 
     /**
      * <p>The name of the person who initiated the migration.</p>

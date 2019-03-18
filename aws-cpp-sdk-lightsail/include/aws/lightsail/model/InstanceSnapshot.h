@@ -63,6 +63,11 @@ namespace Model
     /**
      * <p>The name of the snapshot.</p>
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>The name of the snapshot.</p>
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
@@ -96,6 +101,12 @@ namespace Model
      * <code>arn:aws:lightsail:us-east-2:123456789101:InstanceSnapshot/d23b5706-3322-4d83-81e5-12345EXAMPLE</code>).</p>
      */
     inline const Aws::String& GetArn() const{ return m_arn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the snapshot (e.g.,
+     * <code>arn:aws:lightsail:us-east-2:123456789101:InstanceSnapshot/d23b5706-3322-4d83-81e5-12345EXAMPLE</code>).</p>
+     */
+    inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the snapshot (e.g.,
@@ -140,6 +151,13 @@ namespace Model
      * our support team to look up your Lightsail information more easily.</p>
      */
     inline const Aws::String& GetSupportCode() const{ return m_supportCode; }
+
+    /**
+     * <p>The support code. Include this code in your email to support when you have
+     * questions about an instance or another resource in Lightsail. This code enables
+     * our support team to look up your Lightsail information more easily.</p>
+     */
+    inline bool SupportCodeHasBeenSet() const { return m_supportCodeHasBeenSet; }
 
     /**
      * <p>The support code. Include this code in your email to support when you have
@@ -194,6 +212,12 @@ namespace Model
      * <p>The timestamp when the snapshot was created (e.g.,
      * <code>1479907467.024</code>).</p>
      */
+    inline bool CreatedAtHasBeenSet() const { return m_createdAtHasBeenSet; }
+
+    /**
+     * <p>The timestamp when the snapshot was created (e.g.,
+     * <code>1479907467.024</code>).</p>
+     */
     inline void SetCreatedAt(const Aws::Utils::DateTime& value) { m_createdAtHasBeenSet = true; m_createdAt = value; }
 
     /**
@@ -219,6 +243,11 @@ namespace Model
      * <p>The region name and Availability Zone where you created the snapshot.</p>
      */
     inline const ResourceLocation& GetLocation() const{ return m_location; }
+
+    /**
+     * <p>The region name and Availability Zone where you created the snapshot.</p>
+     */
+    inline bool LocationHasBeenSet() const { return m_locationHasBeenSet; }
 
     /**
      * <p>The region name and Availability Zone where you created the snapshot.</p>
@@ -249,6 +278,11 @@ namespace Model
     /**
      * <p>The type of resource (usually <code>InstanceSnapshot</code>).</p>
      */
+    inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
+
+    /**
+     * <p>The type of resource (usually <code>InstanceSnapshot</code>).</p>
+     */
     inline void SetResourceType(const ResourceType& value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
 
     /**
@@ -274,6 +308,14 @@ namespace Model
      * Dev Guide</a>.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>The tag keys and optional values for the resource. For more information about
+     * tags in Lightsail, see the <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-tags">Lightsail
+     * Dev Guide</a>.</p>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
      * <p>The tag keys and optional values for the resource. For more information about
@@ -332,6 +374,11 @@ namespace Model
     /**
      * <p>The state the snapshot is in.</p>
      */
+    inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
+
+    /**
+     * <p>The state the snapshot is in.</p>
+     */
     inline void SetState(const InstanceSnapshotState& value) { m_stateHasBeenSet = true; m_state = value; }
 
     /**
@@ -354,6 +401,11 @@ namespace Model
      * <p>The progress of the snapshot.</p>
      */
     inline const Aws::String& GetProgress() const{ return m_progress; }
+
+    /**
+     * <p>The progress of the snapshot.</p>
+     */
+    inline bool ProgressHasBeenSet() const { return m_progressHasBeenSet; }
 
     /**
      * <p>The progress of the snapshot.</p>
@@ -391,6 +443,12 @@ namespace Model
      * disks.</p>
      */
     inline const Aws::Vector<Disk>& GetFromAttachedDisks() const{ return m_fromAttachedDisks; }
+
+    /**
+     * <p>An array of disk objects containing information about all block storage
+     * disks.</p>
+     */
+    inline bool FromAttachedDisksHasBeenSet() const { return m_fromAttachedDisksHasBeenSet; }
 
     /**
      * <p>An array of disk objects containing information about all block storage
@@ -437,6 +495,11 @@ namespace Model
     /**
      * <p>The instance from which the snapshot was created.</p>
      */
+    inline bool FromInstanceNameHasBeenSet() const { return m_fromInstanceNameHasBeenSet; }
+
+    /**
+     * <p>The instance from which the snapshot was created.</p>
+     */
     inline void SetFromInstanceName(const Aws::String& value) { m_fromInstanceNameHasBeenSet = true; m_fromInstanceName = value; }
 
     /**
@@ -471,6 +534,13 @@ namespace Model
      * <code>arn:aws:lightsail:us-east-2:123456789101:Instance/64b8404c-ccb1-430b-8daf-12345EXAMPLE</code>).</p>
      */
     inline const Aws::String& GetFromInstanceArn() const{ return m_fromInstanceArn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the instance from which the snapshot was
+     * created (e.g.,
+     * <code>arn:aws:lightsail:us-east-2:123456789101:Instance/64b8404c-ccb1-430b-8daf-12345EXAMPLE</code>).</p>
+     */
+    inline bool FromInstanceArnHasBeenSet() const { return m_fromInstanceArnHasBeenSet; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the instance from which the snapshot was
@@ -527,6 +597,13 @@ namespace Model
      * <code>os_debian_8_3</code>). A blueprint is a virtual private server (or
      * <i>instance</i>) image used to create instances quickly.</p>
      */
+    inline bool FromBlueprintIdHasBeenSet() const { return m_fromBlueprintIdHasBeenSet; }
+
+    /**
+     * <p>The blueprint ID from which you created the snapshot (e.g.,
+     * <code>os_debian_8_3</code>). A blueprint is a virtual private server (or
+     * <i>instance</i>) image used to create instances quickly.</p>
+     */
     inline void SetFromBlueprintId(const Aws::String& value) { m_fromBlueprintIdHasBeenSet = true; m_fromBlueprintId = value; }
 
     /**
@@ -575,6 +652,12 @@ namespace Model
      * <p>The bundle ID from which you created the snapshot (e.g.,
      * <code>micro_1_0</code>).</p>
      */
+    inline bool FromBundleIdHasBeenSet() const { return m_fromBundleIdHasBeenSet; }
+
+    /**
+     * <p>The bundle ID from which you created the snapshot (e.g.,
+     * <code>micro_1_0</code>).</p>
+     */
     inline void SetFromBundleId(const Aws::String& value) { m_fromBundleIdHasBeenSet = true; m_fromBundleId = value; }
 
     /**
@@ -612,6 +695,11 @@ namespace Model
      * <p>The size in GB of the SSD.</p>
      */
     inline int GetSizeInGb() const{ return m_sizeInGb; }
+
+    /**
+     * <p>The size in GB of the SSD.</p>
+     */
+    inline bool SizeInGbHasBeenSet() const { return m_sizeInGbHasBeenSet; }
 
     /**
      * <p>The size in GB of the SSD.</p>

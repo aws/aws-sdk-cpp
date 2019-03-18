@@ -58,6 +58,14 @@ namespace Model
      * <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i>
      * </code> </p>
      */
+    inline bool CertificateAuthorityArnHasBeenSet() const { return m_certificateAuthorityArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) that was returned when you called the
+     * <a>CreateCertificateAuthority</a> operation. This must be of the form: </p> <p>
+     * <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i>
+     * </code> </p>
+     */
     inline void SetCertificateAuthorityArn(const Aws::String& value) { m_certificateAuthorityArnHasBeenSet = true; m_certificateAuthorityArn = value; }
 
     /**
@@ -113,6 +121,13 @@ namespace Model
      * receive a response with truncated results. Set it to the value of
      * <b>NextToken</b> from the response you just received.</p>
      */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
+
+    /**
+     * <p>Use this parameter when paginating results in a subsequent request after you
+     * receive a response with truncated results. Set it to the value of
+     * <b>NextToken</b> from the response you just received.</p>
+     */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
     /**
@@ -158,6 +173,14 @@ namespace Model
      * <b>NextToken</b> value in a subsequent request to retrieve additional items.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
+
+    /**
+     * <p>Use this parameter when paginating results to specify the maximum number of
+     * items to return in the response. If additional items exist beyond the number you
+     * specify, the <b>NextToken</b> element is sent in the response. Use this
+     * <b>NextToken</b> value in a subsequent request to retrieve additional items.</p>
+     */
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
 
     /**
      * <p>Use this parameter when paginating results to specify the maximum number of

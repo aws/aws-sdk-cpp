@@ -51,6 +51,9 @@ namespace Model
     inline const Aws::String& GetGatewayARN() const{ return m_gatewayARN; }
 
     
+    inline bool GatewayARNHasBeenSet() const { return m_gatewayARNHasBeenSet; }
+
+    
     inline void SetGatewayARN(const Aws::String& value) { m_gatewayARNHasBeenSet = true; m_gatewayARN = value; }
 
     
@@ -74,6 +77,12 @@ namespace Model
      * archiving for.</p>
      */
     inline const Aws::String& GetTapeARN() const{ return m_tapeARN; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the virtual tape you want to cancel
+     * archiving for.</p>
+     */
+    inline bool TapeARNHasBeenSet() const { return m_tapeARNHasBeenSet; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the virtual tape you want to cancel

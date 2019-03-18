@@ -55,6 +55,11 @@ namespace Model
     /**
      * The ID of the application to which the channel applies.
      */
+    inline bool ApplicationIdHasBeenSet() const { return m_applicationIdHasBeenSet; }
+
+    /**
+     * The ID of the application to which the channel applies.
+     */
     inline void SetApplicationId(const Aws::String& value) { m_applicationIdHasBeenSet = true; m_applicationId = value; }
 
     /**
@@ -87,6 +92,11 @@ namespace Model
      * When was this segment created
      */
     inline const Aws::String& GetCreationDate() const{ return m_creationDate; }
+
+    /**
+     * When was this segment created
+     */
+    inline bool CreationDateHasBeenSet() const { return m_creationDateHasBeenSet; }
 
     /**
      * When was this segment created
@@ -127,6 +137,11 @@ namespace Model
     /**
      * The GCM API key from Google.
      */
+    inline bool CredentialHasBeenSet() const { return m_credentialHasBeenSet; }
+
+    /**
+     * The GCM API key from Google.
+     */
     inline void SetCredential(const Aws::String& value) { m_credentialHasBeenSet = true; m_credential = value; }
 
     /**
@@ -163,6 +178,11 @@ namespace Model
     /**
      * If the channel is enabled for sending messages.
      */
+    inline bool EnabledHasBeenSet() const { return m_enabledHasBeenSet; }
+
+    /**
+     * If the channel is enabled for sending messages.
+     */
     inline void SetEnabled(bool value) { m_enabledHasBeenSet = true; m_enabled = value; }
 
     /**
@@ -179,6 +199,11 @@ namespace Model
     /**
      * Not used. Retained for backwards compatibility.
      */
+    inline bool HasCredentialHasBeenSet() const { return m_hasCredentialHasBeenSet; }
+
+    /**
+     * Not used. Retained for backwards compatibility.
+     */
     inline void SetHasCredential(bool value) { m_hasCredentialHasBeenSet = true; m_hasCredential = value; }
 
     /**
@@ -191,6 +216,11 @@ namespace Model
      * Channel ID. Not used. Present only for backwards compatibility.
      */
     inline const Aws::String& GetId() const{ return m_id; }
+
+    /**
+     * Channel ID. Not used. Present only for backwards compatibility.
+     */
+    inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
 
     /**
      * Channel ID. Not used. Present only for backwards compatibility.
@@ -231,6 +261,11 @@ namespace Model
     /**
      * Is this channel archived
      */
+    inline bool IsArchivedHasBeenSet() const { return m_isArchivedHasBeenSet; }
+
+    /**
+     * Is this channel archived
+     */
     inline void SetIsArchived(bool value) { m_isArchivedHasBeenSet = true; m_isArchived = value; }
 
     /**
@@ -243,6 +278,11 @@ namespace Model
      * Who last updated this entry
      */
     inline const Aws::String& GetLastModifiedBy() const{ return m_lastModifiedBy; }
+
+    /**
+     * Who last updated this entry
+     */
+    inline bool LastModifiedByHasBeenSet() const { return m_lastModifiedByHasBeenSet; }
 
     /**
      * Who last updated this entry
@@ -283,6 +323,11 @@ namespace Model
     /**
      * Last date this was updated
      */
+    inline bool LastModifiedDateHasBeenSet() const { return m_lastModifiedDateHasBeenSet; }
+
+    /**
+     * Last date this was updated
+     */
     inline void SetLastModifiedDate(const Aws::String& value) { m_lastModifiedDateHasBeenSet = true; m_lastModifiedDate = value; }
 
     /**
@@ -319,6 +364,11 @@ namespace Model
     /**
      * The platform type. Will be GCM
      */
+    inline bool PlatformHasBeenSet() const { return m_platformHasBeenSet; }
+
+    /**
+     * The platform type. Will be GCM
+     */
     inline void SetPlatform(const Aws::String& value) { m_platformHasBeenSet = true; m_platform = value; }
 
     /**
@@ -351,6 +401,11 @@ namespace Model
      * Version of channel
      */
     inline int GetVersion() const{ return m_version; }
+
+    /**
+     * Version of channel
+     */
+    inline bool VersionHasBeenSet() const { return m_versionHasBeenSet; }
 
     /**
      * Version of channel

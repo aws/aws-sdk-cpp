@@ -59,6 +59,12 @@ namespace Model
      * <p>The authorization type required by the HTTP endpoint.</p> <ul> <li> <p>
      * <b>AWS_IAM</b>: The authorization type is Sigv4.</p> </li> </ul>
      */
+    inline bool AuthorizationTypeHasBeenSet() const { return m_authorizationTypeHasBeenSet; }
+
+    /**
+     * <p>The authorization type required by the HTTP endpoint.</p> <ul> <li> <p>
+     * <b>AWS_IAM</b>: The authorization type is Sigv4.</p> </li> </ul>
+     */
     inline void SetAuthorizationType(const AuthorizationType& value) { m_authorizationTypeHasBeenSet = true; m_authorizationType = value; }
 
     /**
@@ -84,6 +90,11 @@ namespace Model
      * <p>The AWS IAM settings.</p>
      */
     inline const AwsIamConfig& GetAwsIamConfig() const{ return m_awsIamConfig; }
+
+    /**
+     * <p>The AWS IAM settings.</p>
+     */
+    inline bool AwsIamConfigHasBeenSet() const { return m_awsIamConfigHasBeenSet; }
 
     /**
      * <p>The AWS IAM settings.</p>

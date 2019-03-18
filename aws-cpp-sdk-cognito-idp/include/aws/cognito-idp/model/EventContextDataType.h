@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The user's IP address.</p>
      */
+    inline bool IpAddressHasBeenSet() const { return m_ipAddressHasBeenSet; }
+
+    /**
+     * <p>The user's IP address.</p>
+     */
     inline void SetIpAddress(const Aws::String& value) { m_ipAddressHasBeenSet = true; m_ipAddress = value; }
 
     /**
@@ -88,6 +93,11 @@ namespace Model
      * <p>The user's device name.</p>
      */
     inline const Aws::String& GetDeviceName() const{ return m_deviceName; }
+
+    /**
+     * <p>The user's device name.</p>
+     */
+    inline bool DeviceNameHasBeenSet() const { return m_deviceNameHasBeenSet; }
 
     /**
      * <p>The user's device name.</p>
@@ -128,6 +138,11 @@ namespace Model
     /**
      * <p>The user's time zone.</p>
      */
+    inline bool TimezoneHasBeenSet() const { return m_timezoneHasBeenSet; }
+
+    /**
+     * <p>The user's time zone.</p>
+     */
     inline void SetTimezone(const Aws::String& value) { m_timezoneHasBeenSet = true; m_timezone = value; }
 
     /**
@@ -164,6 +179,11 @@ namespace Model
     /**
      * <p>The user's city.</p>
      */
+    inline bool CityHasBeenSet() const { return m_cityHasBeenSet; }
+
+    /**
+     * <p>The user's city.</p>
+     */
     inline void SetCity(const Aws::String& value) { m_cityHasBeenSet = true; m_city = value; }
 
     /**
@@ -196,6 +216,11 @@ namespace Model
      * <p>The user's country.</p>
      */
     inline const Aws::String& GetCountry() const{ return m_country; }
+
+    /**
+     * <p>The user's country.</p>
+     */
+    inline bool CountryHasBeenSet() const { return m_countryHasBeenSet; }
 
     /**
      * <p>The user's country.</p>

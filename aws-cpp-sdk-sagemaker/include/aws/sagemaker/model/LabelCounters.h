@@ -54,6 +54,11 @@ namespace Model
     /**
      * <p>The total number of objects labeled.</p>
      */
+    inline bool TotalLabeledHasBeenSet() const { return m_totalLabeledHasBeenSet; }
+
+    /**
+     * <p>The total number of objects labeled.</p>
+     */
     inline void SetTotalLabeled(int value) { m_totalLabeledHasBeenSet = true; m_totalLabeled = value; }
 
     /**
@@ -66,6 +71,11 @@ namespace Model
      * <p>The total number of objects labeled by a human worker.</p>
      */
     inline int GetHumanLabeled() const{ return m_humanLabeled; }
+
+    /**
+     * <p>The total number of objects labeled by a human worker.</p>
+     */
+    inline bool HumanLabeledHasBeenSet() const { return m_humanLabeledHasBeenSet; }
 
     /**
      * <p>The total number of objects labeled by a human worker.</p>
@@ -86,6 +96,11 @@ namespace Model
     /**
      * <p>The total number of objects labeled by automated data labeling.</p>
      */
+    inline bool MachineLabeledHasBeenSet() const { return m_machineLabeledHasBeenSet; }
+
+    /**
+     * <p>The total number of objects labeled by automated data labeling.</p>
+     */
     inline void SetMachineLabeled(int value) { m_machineLabeledHasBeenSet = true; m_machineLabeled = value; }
 
     /**
@@ -102,6 +117,11 @@ namespace Model
     /**
      * <p>The total number of objects that could not be labeled due to an error.</p>
      */
+    inline bool FailedNonRetryableErrorHasBeenSet() const { return m_failedNonRetryableErrorHasBeenSet; }
+
+    /**
+     * <p>The total number of objects that could not be labeled due to an error.</p>
+     */
     inline void SetFailedNonRetryableError(int value) { m_failedNonRetryableErrorHasBeenSet = true; m_failedNonRetryableError = value; }
 
     /**
@@ -114,6 +134,11 @@ namespace Model
      * <p>The total number of objects not yet labeled.</p>
      */
     inline int GetUnlabeled() const{ return m_unlabeled; }
+
+    /**
+     * <p>The total number of objects not yet labeled.</p>
+     */
+    inline bool UnlabeledHasBeenSet() const { return m_unlabeledHasBeenSet; }
 
     /**
      * <p>The total number of objects not yet labeled.</p>

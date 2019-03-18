@@ -60,6 +60,12 @@ namespace Model
      * <p>The minimum capacity units that a global table or global secondary index
      * should be scaled down to.</p>
      */
+    inline bool MinimumUnitsHasBeenSet() const { return m_minimumUnitsHasBeenSet; }
+
+    /**
+     * <p>The minimum capacity units that a global table or global secondary index
+     * should be scaled down to.</p>
+     */
     inline void SetMinimumUnits(long long value) { m_minimumUnitsHasBeenSet = true; m_minimumUnits = value; }
 
     /**
@@ -74,6 +80,12 @@ namespace Model
      * should be scaled up to.</p>
      */
     inline long long GetMaximumUnits() const{ return m_maximumUnits; }
+
+    /**
+     * <p>The maximum capacity units that a global table or global secondary index
+     * should be scaled up to.</p>
+     */
+    inline bool MaximumUnitsHasBeenSet() const { return m_maximumUnitsHasBeenSet; }
 
     /**
      * <p>The maximum capacity units that a global table or global secondary index
@@ -96,6 +108,11 @@ namespace Model
     /**
      * <p>Disabled autoscaling for this global table or global secondary index.</p>
      */
+    inline bool AutoScalingDisabledHasBeenSet() const { return m_autoScalingDisabledHasBeenSet; }
+
+    /**
+     * <p>Disabled autoscaling for this global table or global secondary index.</p>
+     */
     inline void SetAutoScalingDisabled(bool value) { m_autoScalingDisabledHasBeenSet = true; m_autoScalingDisabled = value; }
 
     /**
@@ -108,6 +125,11 @@ namespace Model
      * <p>Role ARN used for configuring autoScaling policy.</p>
      */
     inline const Aws::String& GetAutoScalingRoleArn() const{ return m_autoScalingRoleArn; }
+
+    /**
+     * <p>Role ARN used for configuring autoScaling policy.</p>
+     */
+    inline bool AutoScalingRoleArnHasBeenSet() const { return m_autoScalingRoleArnHasBeenSet; }
 
     /**
      * <p>Role ARN used for configuring autoScaling policy.</p>
@@ -144,6 +166,11 @@ namespace Model
      * <p>Information about the scaling policies.</p>
      */
     inline const Aws::Vector<AutoScalingPolicyDescription>& GetScalingPolicies() const{ return m_scalingPolicies; }
+
+    /**
+     * <p>Information about the scaling policies.</p>
+     */
+    inline bool ScalingPoliciesHasBeenSet() const { return m_scalingPoliciesHasBeenSet; }
 
     /**
      * <p>Information about the scaling policies.</p>

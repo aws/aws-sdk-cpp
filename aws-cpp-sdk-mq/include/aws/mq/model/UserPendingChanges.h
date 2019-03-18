@@ -58,6 +58,11 @@ namespace Model
     /**
      * Enables access to the the ActiveMQ Web Console for the ActiveMQ user.
      */
+    inline bool ConsoleAccessHasBeenSet() const { return m_consoleAccessHasBeenSet; }
+
+    /**
+     * Enables access to the the ActiveMQ Web Console for the ActiveMQ user.
+     */
     inline void SetConsoleAccess(bool value) { m_consoleAccessHasBeenSet = true; m_consoleAccess = value; }
 
     /**
@@ -72,6 +77,13 @@ namespace Model
      * tildes (- . _ ~). This value must be 2-100 characters long.
      */
     inline const Aws::Vector<Aws::String>& GetGroups() const{ return m_groups; }
+
+    /**
+     * The list of groups (20 maximum) to which the ActiveMQ user belongs. This value
+     * can contain only alphanumeric characters, dashes, periods, underscores, and
+     * tildes (- . _ ~). This value must be 2-100 characters long.
+     */
+    inline bool GroupsHasBeenSet() const { return m_groupsHasBeenSet; }
 
     /**
      * The list of groups (20 maximum) to which the ActiveMQ user belongs. This value
@@ -127,6 +139,11 @@ namespace Model
      * Required. The type of change pending for the ActiveMQ user.
      */
     inline const ChangeType& GetPendingChange() const{ return m_pendingChange; }
+
+    /**
+     * Required. The type of change pending for the ActiveMQ user.
+     */
+    inline bool PendingChangeHasBeenSet() const { return m_pendingChangeHasBeenSet; }
 
     /**
      * Required. The type of change pending for the ActiveMQ user.

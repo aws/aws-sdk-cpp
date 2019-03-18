@@ -60,6 +60,12 @@ namespace Model
      * <p>The Amazon Kinesis Data Streams stream to which the Amazon Rekognition stream
      * processor streams the analysis results.</p>
      */
+    inline bool KinesisDataStreamHasBeenSet() const { return m_kinesisDataStreamHasBeenSet; }
+
+    /**
+     * <p>The Amazon Kinesis Data Streams stream to which the Amazon Rekognition stream
+     * processor streams the analysis results.</p>
+     */
     inline void SetKinesisDataStream(const KinesisDataStream& value) { m_kinesisDataStreamHasBeenSet = true; m_kinesisDataStream = value; }
 
     /**

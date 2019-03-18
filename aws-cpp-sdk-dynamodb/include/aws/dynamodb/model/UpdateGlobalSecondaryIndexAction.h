@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The name of the global secondary index to be updated.</p>
      */
+    inline bool IndexNameHasBeenSet() const { return m_indexNameHasBeenSet; }
+
+    /**
+     * <p>The name of the global secondary index to be updated.</p>
+     */
     inline void SetIndexName(const Aws::String& value) { m_indexNameHasBeenSet = true; m_indexName = value; }
 
     /**
@@ -93,6 +98,15 @@ namespace Model
      * in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline const ProvisionedThroughput& GetProvisionedThroughput() const{ return m_provisionedThroughput; }
+
+    /**
+     * <p>Represents the provisioned throughput settings for the specified global
+     * secondary index.</p> <p>For current minimum and maximum provisioned throughput
+     * values, see <a
+     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Limits</a>
+     * in the <i>Amazon DynamoDB Developer Guide</i>.</p>
+     */
+    inline bool ProvisionedThroughputHasBeenSet() const { return m_provisionedThroughputHasBeenSet; }
 
     /**
      * <p>Represents the provisioned throughput settings for the specified global

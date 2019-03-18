@@ -54,6 +54,11 @@ namespace Model
     /**
      * <p>The ARN of the skill group for which to list enabled skills. Required.</p>
      */
+    inline bool SkillGroupArnHasBeenSet() const { return m_skillGroupArnHasBeenSet; }
+
+    /**
+     * <p>The ARN of the skill group for which to list enabled skills. Required.</p>
+     */
     inline void SetSkillGroupArn(const Aws::String& value) { m_skillGroupArnHasBeenSet = true; m_skillGroupArn = value; }
 
     /**
@@ -92,6 +97,12 @@ namespace Model
      * <p>Whether the skill is enabled under the user's account, or if it requires
      * linking to be used.</p>
      */
+    inline bool EnablementTypeHasBeenSet() const { return m_enablementTypeHasBeenSet; }
+
+    /**
+     * <p>Whether the skill is enabled under the user's account, or if it requires
+     * linking to be used.</p>
+     */
     inline void SetEnablementType(const EnablementTypeFilter& value) { m_enablementTypeHasBeenSet = true; m_enablementType = value; }
 
     /**
@@ -121,6 +132,11 @@ namespace Model
     /**
      * <p>Whether the skill is publicly available or is a private skill.</p>
      */
+    inline bool SkillTypeHasBeenSet() const { return m_skillTypeHasBeenSet; }
+
+    /**
+     * <p>Whether the skill is publicly available or is a private skill.</p>
+     */
     inline void SetSkillType(const SkillTypeFilter& value) { m_skillTypeHasBeenSet = true; m_skillType = value; }
 
     /**
@@ -146,6 +162,14 @@ namespace Model
      * <code>MaxResults</code>. Required.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
+    /**
+     * <p>An optional token returned from a prior request. Use this token for
+     * pagination of results from this action. If this parameter is specified, the
+     * response includes only results beyond the token, up to the value specified by
+     * <code>MaxResults</code>. Required.</p>
+     */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
      * <p>An optional token returned from a prior request. Use this token for
@@ -202,6 +226,13 @@ namespace Model
      * the response so that the remaining results can be retrieved. Required.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
+
+    /**
+     * <p>The maximum number of results to include in the response. If more results
+     * exist than the specified <code>MaxResults</code> value, a token is included in
+     * the response so that the remaining results can be retrieved. Required.</p>
+     */
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
 
     /**
      * <p>The maximum number of results to include in the response. If more results

@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The byte range of a part, inclusive of the upper value of the range.</p>
      */
+    inline bool RangeInBytesHasBeenSet() const { return m_rangeInBytesHasBeenSet; }
+
+    /**
+     * <p>The byte range of a part, inclusive of the upper value of the range.</p>
+     */
     inline void SetRangeInBytes(const Aws::String& value) { m_rangeInBytesHasBeenSet = true; m_rangeInBytes = value; }
 
     /**
@@ -89,6 +94,12 @@ namespace Model
      * field is never <code>null</code>.</p>
      */
     inline const Aws::String& GetSHA256TreeHash() const{ return m_sHA256TreeHash; }
+
+    /**
+     * <p>The SHA256 tree hash value that Amazon Glacier calculated for the part. This
+     * field is never <code>null</code>.</p>
+     */
+    inline bool SHA256TreeHashHasBeenSet() const { return m_sHA256TreeHashHasBeenSet; }
 
     /**
      * <p>The SHA256 tree hash value that Amazon Glacier calculated for the part. This

@@ -59,6 +59,11 @@ namespace Model
     /**
      * GuardDuty Finding activity type.
      */
+    inline bool ActionTypeHasBeenSet() const { return m_actionTypeHasBeenSet; }
+
+    /**
+     * GuardDuty Finding activity type.
+     */
     inline void SetActionType(const Aws::String& value) { m_actionTypeHasBeenSet = true; m_actionType = value; }
 
     /**
@@ -95,6 +100,11 @@ namespace Model
     /**
      * Information about the AWS_API_CALL action described in this finding.
      */
+    inline bool AwsApiCallActionHasBeenSet() const { return m_awsApiCallActionHasBeenSet; }
+
+    /**
+     * Information about the AWS_API_CALL action described in this finding.
+     */
     inline void SetAwsApiCallAction(const AwsApiCallAction& value) { m_awsApiCallActionHasBeenSet = true; m_awsApiCallAction = value; }
 
     /**
@@ -117,6 +127,11 @@ namespace Model
      * Information about the DNS_REQUEST action described in this finding.
      */
     inline const DnsRequestAction& GetDnsRequestAction() const{ return m_dnsRequestAction; }
+
+    /**
+     * Information about the DNS_REQUEST action described in this finding.
+     */
+    inline bool DnsRequestActionHasBeenSet() const { return m_dnsRequestActionHasBeenSet; }
 
     /**
      * Information about the DNS_REQUEST action described in this finding.
@@ -147,6 +162,11 @@ namespace Model
     /**
      * Information about the NETWORK_CONNECTION action described in this finding.
      */
+    inline bool NetworkConnectionActionHasBeenSet() const { return m_networkConnectionActionHasBeenSet; }
+
+    /**
+     * Information about the NETWORK_CONNECTION action described in this finding.
+     */
     inline void SetNetworkConnectionAction(const NetworkConnectionAction& value) { m_networkConnectionActionHasBeenSet = true; m_networkConnectionAction = value; }
 
     /**
@@ -169,6 +189,11 @@ namespace Model
      * Information about the PORT_PROBE action described in this finding.
      */
     inline const PortProbeAction& GetPortProbeAction() const{ return m_portProbeAction; }
+
+    /**
+     * Information about the PORT_PROBE action described in this finding.
+     */
+    inline bool PortProbeActionHasBeenSet() const { return m_portProbeActionHasBeenSet; }
 
     /**
      * Information about the PORT_PROBE action described in this finding.

@@ -55,6 +55,11 @@ namespace Model
     /**
      * <p>Maximum number of applications to list.</p>
      */
+    inline bool LimitHasBeenSet() const { return m_limitHasBeenSet; }
+
+    /**
+     * <p>Maximum number of applications to list.</p>
+     */
     inline void SetLimit(int value) { m_limitHasBeenSet = true; m_limit = value; }
 
     /**
@@ -70,6 +75,14 @@ namespace Model
      * the previous response to get the next page of applications.</p>
      */
     inline const Aws::String& GetExclusiveStartApplicationName() const{ return m_exclusiveStartApplicationName; }
+
+    /**
+     * <p>Name of the application to start the list with. When using pagination to
+     * retrieve the list, you don't need to specify this parameter in the first
+     * request. However, in subsequent requests, you add the last application name from
+     * the previous response to get the next page of applications.</p>
+     */
+    inline bool ExclusiveStartApplicationNameHasBeenSet() const { return m_exclusiveStartApplicationNameHasBeenSet; }
 
     /**
      * <p>Name of the application to start the list with. When using pagination to

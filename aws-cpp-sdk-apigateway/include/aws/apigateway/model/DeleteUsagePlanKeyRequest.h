@@ -58,6 +58,13 @@ namespace Model
      * plan containing the to-be-deleted <a>UsagePlanKey</a> resource representing a
      * plan customer.</p>
      */
+    inline bool UsagePlanIdHasBeenSet() const { return m_usagePlanIdHasBeenSet; }
+
+    /**
+     * <p>[Required] The Id of the <a>UsagePlan</a> resource representing the usage
+     * plan containing the to-be-deleted <a>UsagePlanKey</a> resource representing a
+     * plan customer.</p>
+     */
     inline void SetUsagePlanId(const Aws::String& value) { m_usagePlanIdHasBeenSet = true; m_usagePlanId = value; }
 
     /**
@@ -100,6 +107,11 @@ namespace Model
      * <p>[Required] The Id of the <a>UsagePlanKey</a> resource to be deleted.</p>
      */
     inline const Aws::String& GetKeyId() const{ return m_keyId; }
+
+    /**
+     * <p>[Required] The Id of the <a>UsagePlanKey</a> resource to be deleted.</p>
+     */
+    inline bool KeyIdHasBeenSet() const { return m_keyIdHasBeenSet; }
 
     /**
      * <p>[Required] The Id of the <a>UsagePlanKey</a> resource to be deleted.</p>

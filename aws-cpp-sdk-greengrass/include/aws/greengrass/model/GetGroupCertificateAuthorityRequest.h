@@ -50,6 +50,11 @@ namespace Model
     /**
      * The ID of the certificate authority.
      */
+    inline bool CertificateAuthorityIdHasBeenSet() const { return m_certificateAuthorityIdHasBeenSet; }
+
+    /**
+     * The ID of the certificate authority.
+     */
     inline void SetCertificateAuthorityId(const Aws::String& value) { m_certificateAuthorityIdHasBeenSet = true; m_certificateAuthorityId = value; }
 
     /**
@@ -82,6 +87,11 @@ namespace Model
      * The ID of the Greengrass group.
      */
     inline const Aws::String& GetGroupId() const{ return m_groupId; }
+
+    /**
+     * The ID of the Greengrass group.
+     */
+    inline bool GroupIdHasBeenSet() const { return m_groupIdHasBeenSet; }
 
     /**
      * The ID of the Greengrass group.

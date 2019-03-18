@@ -59,6 +59,11 @@ namespace Model
     /**
      * Required. The ARN of the configuration.
      */
+    inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
+
+    /**
+     * Required. The ARN of the configuration.
+     */
     inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
 
     /**
@@ -95,6 +100,11 @@ namespace Model
     /**
      * Required. The date and time of the configuration revision.
      */
+    inline bool CreatedHasBeenSet() const { return m_createdHasBeenSet; }
+
+    /**
+     * Required. The date and time of the configuration revision.
+     */
     inline void SetCreated(const Aws::Utils::DateTime& value) { m_createdHasBeenSet = true; m_created = value; }
 
     /**
@@ -117,6 +127,11 @@ namespace Model
      * Required. The description of the configuration.
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
+
+    /**
+     * Required. The description of the configuration.
+     */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
 
     /**
      * Required. The description of the configuration.
@@ -159,6 +174,12 @@ namespace Model
      * Required. The type of broker engine. Note: Currently, Amazon MQ supports only
      * ACTIVEMQ.
      */
+    inline bool EngineTypeHasBeenSet() const { return m_engineTypeHasBeenSet; }
+
+    /**
+     * Required. The type of broker engine. Note: Currently, Amazon MQ supports only
+     * ACTIVEMQ.
+     */
     inline void SetEngineType(const EngineType& value) { m_engineTypeHasBeenSet = true; m_engineType = value; }
 
     /**
@@ -186,6 +207,13 @@ namespace Model
      * https://docs.aws.amazon.com/amazon-mq/latest/developer-guide/broker-engine.html
      */
     inline const Aws::String& GetEngineVersion() const{ return m_engineVersion; }
+
+    /**
+     * Required. The version of the broker engine. For a list of supported engine
+     * versions, see
+     * https://docs.aws.amazon.com/amazon-mq/latest/developer-guide/broker-engine.html
+     */
+    inline bool EngineVersionHasBeenSet() const { return m_engineVersionHasBeenSet; }
 
     /**
      * Required. The version of the broker engine. For a list of supported engine
@@ -238,6 +266,11 @@ namespace Model
     /**
      * Required. The unique ID that Amazon MQ generates for the configuration.
      */
+    inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
+
+    /**
+     * Required. The unique ID that Amazon MQ generates for the configuration.
+     */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
     /**
@@ -274,6 +307,11 @@ namespace Model
     /**
      * Required. The latest revision of the configuration.
      */
+    inline bool LatestRevisionHasBeenSet() const { return m_latestRevisionHasBeenSet; }
+
+    /**
+     * Required. The latest revision of the configuration.
+     */
     inline void SetLatestRevision(const ConfigurationRevision& value) { m_latestRevisionHasBeenSet = true; m_latestRevision = value; }
 
     /**
@@ -298,6 +336,13 @@ namespace Model
      * This value must be 1-150 characters long.
      */
     inline const Aws::String& GetName() const{ return m_name; }
+
+    /**
+     * Required. The name of the configuration. This value can contain only
+     * alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~).
+     * This value must be 1-150 characters long.
+     */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
      * Required. The name of the configuration. This value can contain only
@@ -346,6 +391,11 @@ namespace Model
      * The list of all tags associated with this configuration.
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
+
+    /**
+     * The list of all tags associated with this configuration.
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
      * The list of all tags associated with this configuration.

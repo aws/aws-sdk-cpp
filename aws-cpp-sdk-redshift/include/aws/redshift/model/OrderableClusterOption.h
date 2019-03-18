@@ -59,6 +59,11 @@ namespace Model
     /**
      * <p>The version of the orderable cluster.</p>
      */
+    inline bool ClusterVersionHasBeenSet() const { return m_clusterVersionHasBeenSet; }
+
+    /**
+     * <p>The version of the orderable cluster.</p>
+     */
     inline void SetClusterVersion(const Aws::String& value) { m_clusterVersionHasBeenSet = true; m_clusterVersion = value; }
 
     /**
@@ -91,6 +96,11 @@ namespace Model
      * <p>The cluster type, for example <code>multi-node</code>. </p>
      */
     inline const Aws::String& GetClusterType() const{ return m_clusterType; }
+
+    /**
+     * <p>The cluster type, for example <code>multi-node</code>. </p>
+     */
+    inline bool ClusterTypeHasBeenSet() const { return m_clusterTypeHasBeenSet; }
 
     /**
      * <p>The cluster type, for example <code>multi-node</code>. </p>
@@ -131,6 +141,11 @@ namespace Model
     /**
      * <p>The node type for the orderable cluster.</p>
      */
+    inline bool NodeTypeHasBeenSet() const { return m_nodeTypeHasBeenSet; }
+
+    /**
+     * <p>The node type for the orderable cluster.</p>
+     */
     inline void SetNodeType(const Aws::String& value) { m_nodeTypeHasBeenSet = true; m_nodeType = value; }
 
     /**
@@ -163,6 +178,11 @@ namespace Model
      * <p>A list of availability zones for the orderable cluster.</p>
      */
     inline const Aws::Vector<AvailabilityZone>& GetAvailabilityZones() const{ return m_availabilityZones; }
+
+    /**
+     * <p>A list of availability zones for the orderable cluster.</p>
+     */
+    inline bool AvailabilityZonesHasBeenSet() const { return m_availabilityZonesHasBeenSet; }
 
     /**
      * <p>A list of availability zones for the orderable cluster.</p>

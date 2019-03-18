@@ -61,6 +61,12 @@ namespace Model
      * <p>Provides configuration information about the associated
      * <a>InputLambdaProcessorDescription</a> </p>
      */
+    inline bool InputLambdaProcessorDescriptionHasBeenSet() const { return m_inputLambdaProcessorDescriptionHasBeenSet; }
+
+    /**
+     * <p>Provides configuration information about the associated
+     * <a>InputLambdaProcessorDescription</a> </p>
+     */
     inline void SetInputLambdaProcessorDescription(const InputLambdaProcessorDescription& value) { m_inputLambdaProcessorDescriptionHasBeenSet = true; m_inputLambdaProcessorDescription = value; }
 
     /**

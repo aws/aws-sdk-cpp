@@ -64,6 +64,12 @@ namespace Model
      * <p>Possible values are <code>CLOUDFORMATION_STACK_INACTIVE</code> and
      * <code>CLOUDFORMATION_STACK_NOT_EXISTING</code>.</p>
      */
+    inline bool ErrorCodeHasBeenSet() const { return m_errorCodeHasBeenSet; }
+
+    /**
+     * <p>Possible values are <code>CLOUDFORMATION_STACK_INACTIVE</code> and
+     * <code>CLOUDFORMATION_STACK_NOT_EXISTING</code>.</p>
+     */
     inline void SetErrorCode(const QueryErrorCode& value) { m_errorCodeHasBeenSet = true; m_errorCode = value; }
 
     /**
@@ -93,6 +99,15 @@ namespace Model
      * active, such as <code>CREATE_FAILED</code>.</p>
      */
     inline const Aws::String& GetMessage() const{ return m_message; }
+
+    /**
+     * <p>A message that explains the <code>ErrorCode</code> value. Messages might
+     * state that the specified CloudFormation stack does not exist (or no longer
+     * exists). For <code>CLOUDFORMATION_STACK_INACTIVE</code>, the message typically
+     * states that the CloudFormation stack has a status that is not (or no longer)
+     * active, such as <code>CREATE_FAILED</code>.</p>
+     */
+    inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
 
     /**
      * <p>A message that explains the <code>ErrorCode</code> value. Messages might

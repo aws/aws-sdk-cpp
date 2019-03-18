@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The tag filter key.</p>
      */
+    inline bool KeyHasBeenSet() const { return m_keyHasBeenSet; }
+
+    /**
+     * <p>The tag filter key.</p>
+     */
     inline void SetKey(const Aws::String& value) { m_keyHasBeenSet = true; m_key = value; }
 
     /**
@@ -88,6 +93,11 @@ namespace Model
      * <p>The tag filter value.</p>
      */
     inline const Aws::String& GetValue() const{ return m_value; }
+
+    /**
+     * <p>The tag filter value.</p>
+     */
+    inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
 
     /**
      * <p>The tag filter value.</p>
@@ -126,6 +136,13 @@ namespace Model
      * </li> </ul>
      */
     inline const EC2TagFilterType& GetType() const{ return m_type; }
+
+    /**
+     * <p>The tag filter type:</p> <ul> <li> <p>KEY_ONLY: Key only.</p> </li> <li>
+     * <p>VALUE_ONLY: Value only.</p> </li> <li> <p>KEY_AND_VALUE: Key and value.</p>
+     * </li> </ul>
+     */
+    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
 
     /**
      * <p>The tag filter type:</p> <ul> <li> <p>KEY_ONLY: Key only.</p> </li> <li>

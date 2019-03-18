@@ -54,6 +54,11 @@ namespace Model
     /**
      * <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
      */
+    inline bool RestApiIdHasBeenSet() const { return m_restApiIdHasBeenSet; }
+
+    /**
+     * <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
+     */
     inline void SetRestApiId(const Aws::String& value) { m_restApiIdHasBeenSet = true; m_restApiId = value; }
 
     /**
@@ -90,6 +95,11 @@ namespace Model
     /**
      * <p>[Required] The <a>Resource</a> identifier for the <a>Method</a> resource.</p>
      */
+    inline bool ResourceIdHasBeenSet() const { return m_resourceIdHasBeenSet; }
+
+    /**
+     * <p>[Required] The <a>Resource</a> identifier for the <a>Method</a> resource.</p>
+     */
     inline void SetResourceId(const Aws::String& value) { m_resourceIdHasBeenSet = true; m_resourceId = value; }
 
     /**
@@ -122,6 +132,11 @@ namespace Model
      * <p>[Required] Specifies the method request's HTTP method type.</p>
      */
     inline const Aws::String& GetHttpMethod() const{ return m_httpMethod; }
+
+    /**
+     * <p>[Required] Specifies the method request's HTTP method type.</p>
+     */
+    inline bool HttpMethodHasBeenSet() const { return m_httpMethodHasBeenSet; }
 
     /**
      * <p>[Required] Specifies the method request's HTTP method type.</p>

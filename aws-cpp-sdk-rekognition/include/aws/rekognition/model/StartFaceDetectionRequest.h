@@ -57,6 +57,12 @@ namespace Model
      * <p>The video in which you want to detect faces. The video must be stored in an
      * Amazon S3 bucket.</p>
      */
+    inline bool VideoHasBeenSet() const { return m_videoHasBeenSet; }
+
+    /**
+     * <p>The video in which you want to detect faces. The video must be stored in an
+     * Amazon S3 bucket.</p>
+     */
     inline void SetVideo(const Video& value) { m_videoHasBeenSet = true; m_video = value; }
 
     /**
@@ -85,6 +91,14 @@ namespace Model
      * the same job from being accidently started more than once. </p>
      */
     inline const Aws::String& GetClientRequestToken() const{ return m_clientRequestToken; }
+
+    /**
+     * <p>Idempotent token used to identify the start request. If you use the same
+     * token with multiple <code>StartFaceDetection</code> requests, the same
+     * <code>JobId</code> is returned. Use <code>ClientRequestToken</code> to prevent
+     * the same job from being accidently started more than once. </p>
+     */
+    inline bool ClientRequestTokenHasBeenSet() const { return m_clientRequestTokenHasBeenSet; }
 
     /**
      * <p>Idempotent token used to identify the start request. If you use the same
@@ -145,6 +159,12 @@ namespace Model
      * <p>The ARN of the Amazon SNS topic to which you want Amazon Rekognition Video to
      * publish the completion status of the face detection operation.</p>
      */
+    inline bool NotificationChannelHasBeenSet() const { return m_notificationChannelHasBeenSet; }
+
+    /**
+     * <p>The ARN of the Amazon SNS topic to which you want Amazon Rekognition Video to
+     * publish the completion status of the face detection operation.</p>
+     */
     inline void SetNotificationChannel(const NotificationChannel& value) { m_notificationChannelHasBeenSet = true; m_notificationChannel = value; }
 
     /**
@@ -173,6 +193,14 @@ namespace Model
      * are returned.</p>
      */
     inline const FaceAttributes& GetFaceAttributes() const{ return m_faceAttributes; }
+
+    /**
+     * <p>The face attributes you want returned.</p> <p> <code>DEFAULT</code> - The
+     * following subset of facial attributes are returned: BoundingBox, Confidence,
+     * Pose, Quality and Landmarks. </p> <p> <code>ALL</code> - All facial attributes
+     * are returned.</p>
+     */
+    inline bool FaceAttributesHasBeenSet() const { return m_faceAttributesHasBeenSet; }
 
     /**
      * <p>The face attributes you want returned.</p> <p> <code>DEFAULT</code> - The
@@ -212,6 +240,12 @@ namespace Model
      * published to the Amazon Simple Notification Service topic. </p>
      */
     inline const Aws::String& GetJobTag() const{ return m_jobTag; }
+
+    /**
+     * <p>Unique identifier you specify to identify the job in the completion status
+     * published to the Amazon Simple Notification Service topic. </p>
+     */
+    inline bool JobTagHasBeenSet() const { return m_jobTagHasBeenSet; }
 
     /**
      * <p>Unique identifier you specify to identify the job in the completion status

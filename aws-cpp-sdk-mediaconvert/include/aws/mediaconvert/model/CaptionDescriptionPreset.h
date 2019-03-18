@@ -65,6 +65,15 @@ namespace Model
      * captions format is DVB-Sub or Burn in, the encoder uses this language
      * information to choose the font language for rendering the captions text.
      */
+    inline bool CustomLanguageCodeHasBeenSet() const { return m_customLanguageCodeHasBeenSet; }
+
+    /**
+     * Indicates the language of the caption output track, using the ISO 639-2 or ISO
+     * 639-3 three-letter language code. For most captions output formats, the encoder
+     * puts this language information in the output captions metadata. If your output
+     * captions format is DVB-Sub or Burn in, the encoder uses this language
+     * information to choose the font language for rendering the captions text.
+     */
     inline void SetCustomLanguageCode(const Aws::String& value) { m_customLanguageCodeHasBeenSet = true; m_customLanguageCode = value; }
 
     /**
@@ -117,6 +126,9 @@ namespace Model
     inline const CaptionDestinationSettings& GetDestinationSettings() const{ return m_destinationSettings; }
 
     
+    inline bool DestinationSettingsHasBeenSet() const { return m_destinationSettingsHasBeenSet; }
+
+    
     inline void SetDestinationSettings(const CaptionDestinationSettings& value) { m_destinationSettingsHasBeenSet = true; m_destinationSettings = value; }
 
     
@@ -137,6 +149,15 @@ namespace Model
      * text.
      */
     inline const LanguageCode& GetLanguageCode() const{ return m_languageCode; }
+
+    /**
+     * Specify the language of this captions output track. For most captions output
+     * formats, the encoder puts this language information in the output captions
+     * metadata. If your output captions format is DVB-Sub or Burn in, the encoder uses
+     * this language information to choose the font language for rendering the captions
+     * text.
+     */
+    inline bool LanguageCodeHasBeenSet() const { return m_languageCodeHasBeenSet; }
 
     /**
      * Specify the language of this captions output track. For most captions output
@@ -180,6 +201,12 @@ namespace Model
      * English, or Spanish). Alphanumeric characters, spaces, and underscore are legal.
      */
     inline const Aws::String& GetLanguageDescription() const{ return m_languageDescription; }
+
+    /**
+     * Human readable information to indicate captions available for players (eg.
+     * English, or Spanish). Alphanumeric characters, spaces, and underscore are legal.
+     */
+    inline bool LanguageDescriptionHasBeenSet() const { return m_languageDescriptionHasBeenSet; }
 
     /**
      * Human readable information to indicate captions available for players (eg.

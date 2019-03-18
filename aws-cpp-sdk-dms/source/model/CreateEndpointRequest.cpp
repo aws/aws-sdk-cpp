@@ -46,7 +46,8 @@ CreateEndpointRequest::CreateEndpointRequest() :
     m_dmsTransferSettingsHasBeenSet(false),
     m_mongoDbSettingsHasBeenSet(false),
     m_kinesisSettingsHasBeenSet(false),
-    m_elasticsearchSettingsHasBeenSet(false)
+    m_elasticsearchSettingsHasBeenSet(false),
+    m_redshiftSettingsHasBeenSet(false)
 {
 }
 
@@ -180,6 +181,12 @@ Aws::String CreateEndpointRequest::SerializePayload() const
   if(m_elasticsearchSettingsHasBeenSet)
   {
    payload.WithObject("ElasticsearchSettings", m_elasticsearchSettings.Jsonize());
+
+  }
+
+  if(m_redshiftSettingsHasBeenSet)
+  {
+   payload.WithObject("RedshiftSettings", m_redshiftSettings.Jsonize());
 
   }
 

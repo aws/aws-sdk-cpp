@@ -56,6 +56,12 @@ namespace Model
      * <p>[Required] The domain name of the <a>BasePathMapping</a> resource to
      * delete.</p>
      */
+    inline bool DomainNameHasBeenSet() const { return m_domainNameHasBeenSet; }
+
+    /**
+     * <p>[Required] The domain name of the <a>BasePathMapping</a> resource to
+     * delete.</p>
+     */
     inline void SetDomainName(const Aws::String& value) { m_domainNameHasBeenSet = true; m_domainName = value; }
 
     /**
@@ -94,6 +100,12 @@ namespace Model
      * delete.</p>
      */
     inline const Aws::String& GetBasePath() const{ return m_basePath; }
+
+    /**
+     * <p>[Required] The base path name of the <a>BasePathMapping</a> resource to
+     * delete.</p>
+     */
+    inline bool BasePathHasBeenSet() const { return m_basePathHasBeenSet; }
 
     /**
      * <p>[Required] The base path name of the <a>BasePathMapping</a> resource to

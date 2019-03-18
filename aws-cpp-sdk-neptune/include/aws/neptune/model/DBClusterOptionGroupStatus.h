@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p>Specifies the name of the DB cluster option group.</p>
      */
+    inline bool DBClusterOptionGroupNameHasBeenSet() const { return m_dBClusterOptionGroupNameHasBeenSet; }
+
+    /**
+     * <p>Specifies the name of the DB cluster option group.</p>
+     */
     inline void SetDBClusterOptionGroupName(const Aws::String& value) { m_dBClusterOptionGroupNameHasBeenSet = true; m_dBClusterOptionGroupName = value; }
 
     /**
@@ -90,6 +95,11 @@ namespace Model
      * <p>Specifies the status of the DB cluster option group.</p>
      */
     inline const Aws::String& GetStatus() const{ return m_status; }
+
+    /**
+     * <p>Specifies the status of the DB cluster option group.</p>
+     */
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
     /**
      * <p>Specifies the status of the DB cluster option group.</p>

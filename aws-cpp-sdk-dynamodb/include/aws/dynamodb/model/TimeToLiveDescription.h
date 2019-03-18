@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p> The Time to Live status for the table.</p>
      */
+    inline bool TimeToLiveStatusHasBeenSet() const { return m_timeToLiveStatusHasBeenSet; }
+
+    /**
+     * <p> The Time to Live status for the table.</p>
+     */
     inline void SetTimeToLiveStatus(const TimeToLiveStatus& value) { m_timeToLiveStatusHasBeenSet = true; m_timeToLiveStatus = value; }
 
     /**
@@ -79,6 +84,11 @@ namespace Model
      * <p> The name of the Time to Live attribute for items in the table.</p>
      */
     inline const Aws::String& GetAttributeName() const{ return m_attributeName; }
+
+    /**
+     * <p> The name of the Time to Live attribute for items in the table.</p>
+     */
+    inline bool AttributeNameHasBeenSet() const { return m_attributeNameHasBeenSet; }
 
     /**
      * <p> The name of the Time to Live attribute for items in the table.</p>

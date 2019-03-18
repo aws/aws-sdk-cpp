@@ -61,6 +61,11 @@ namespace Model
     /**
      * <p>The ID of the destination.</p>
      */
+    inline bool DestinationIdHasBeenSet() const { return m_destinationIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the destination.</p>
+     */
     inline void SetDestinationId(const Aws::String& value) { m_destinationIdHasBeenSet = true; m_destinationId = value; }
 
     /**
@@ -97,6 +102,11 @@ namespace Model
     /**
      * <p>[Deprecated] The destination in Amazon S3.</p>
      */
+    inline bool S3DestinationDescriptionHasBeenSet() const { return m_s3DestinationDescriptionHasBeenSet; }
+
+    /**
+     * <p>[Deprecated] The destination in Amazon S3.</p>
+     */
     inline void SetS3DestinationDescription(const S3DestinationDescription& value) { m_s3DestinationDescriptionHasBeenSet = true; m_s3DestinationDescription = value; }
 
     /**
@@ -119,6 +129,11 @@ namespace Model
      * <p>The destination in Amazon S3.</p>
      */
     inline const ExtendedS3DestinationDescription& GetExtendedS3DestinationDescription() const{ return m_extendedS3DestinationDescription; }
+
+    /**
+     * <p>The destination in Amazon S3.</p>
+     */
+    inline bool ExtendedS3DestinationDescriptionHasBeenSet() const { return m_extendedS3DestinationDescriptionHasBeenSet; }
 
     /**
      * <p>The destination in Amazon S3.</p>
@@ -149,6 +164,11 @@ namespace Model
     /**
      * <p>The destination in Amazon Redshift.</p>
      */
+    inline bool RedshiftDestinationDescriptionHasBeenSet() const { return m_redshiftDestinationDescriptionHasBeenSet; }
+
+    /**
+     * <p>The destination in Amazon Redshift.</p>
+     */
     inline void SetRedshiftDestinationDescription(const RedshiftDestinationDescription& value) { m_redshiftDestinationDescriptionHasBeenSet = true; m_redshiftDestinationDescription = value; }
 
     /**
@@ -175,6 +195,11 @@ namespace Model
     /**
      * <p>The destination in Amazon ES.</p>
      */
+    inline bool ElasticsearchDestinationDescriptionHasBeenSet() const { return m_elasticsearchDestinationDescriptionHasBeenSet; }
+
+    /**
+     * <p>The destination in Amazon ES.</p>
+     */
     inline void SetElasticsearchDestinationDescription(const ElasticsearchDestinationDescription& value) { m_elasticsearchDestinationDescriptionHasBeenSet = true; m_elasticsearchDestinationDescription = value; }
 
     /**
@@ -197,6 +222,11 @@ namespace Model
      * <p>The destination in Splunk.</p>
      */
     inline const SplunkDestinationDescription& GetSplunkDestinationDescription() const{ return m_splunkDestinationDescription; }
+
+    /**
+     * <p>The destination in Splunk.</p>
+     */
+    inline bool SplunkDestinationDescriptionHasBeenSet() const { return m_splunkDestinationDescriptionHasBeenSet; }
 
     /**
      * <p>The destination in Splunk.</p>

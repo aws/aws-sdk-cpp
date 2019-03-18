@@ -59,6 +59,12 @@ namespace Model
      * A batch of events to process. Each BatchItem consists of an endpoint ID as the
      * key, and an EventsBatch object as the value.
      */
+    inline bool BatchItemHasBeenSet() const { return m_batchItemHasBeenSet; }
+
+    /**
+     * A batch of events to process. Each BatchItem consists of an endpoint ID as the
+     * key, and an EventsBatch object as the value.
+     */
     inline void SetBatchItem(const Aws::Map<Aws::String, EventsBatch>& value) { m_batchItemHasBeenSet = true; m_batchItem = value; }
 
     /**

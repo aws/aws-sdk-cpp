@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The name of the data set whose contents information you want to list.</p>
      */
+    inline bool DatasetNameHasBeenSet() const { return m_datasetNameHasBeenSet; }
+
+    /**
+     * <p>The name of the data set whose contents information you want to list.</p>
+     */
     inline void SetDatasetName(const Aws::String& value) { m_datasetNameHasBeenSet = true; m_datasetName = value; }
 
     /**
@@ -89,6 +94,11 @@ namespace Model
      * <p>The token for the next set of results.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
+    /**
+     * <p>The token for the next set of results.</p>
+     */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
      * <p>The token for the next set of results.</p>
@@ -129,6 +139,11 @@ namespace Model
     /**
      * <p>The maximum number of results to return in this request.</p>
      */
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
+
+    /**
+     * <p>The maximum number of results to return in this request.</p>
+     */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
@@ -143,6 +158,13 @@ namespace Model
      * <code>triggers.schedule</code> in the CreateDataset request. (timestamp)</p>
      */
     inline const Aws::Utils::DateTime& GetScheduledOnOrAfter() const{ return m_scheduledOnOrAfter; }
+
+    /**
+     * <p>A filter to limit results to those data set contents whose creation is
+     * scheduled on or after the given time. See the field
+     * <code>triggers.schedule</code> in the CreateDataset request. (timestamp)</p>
+     */
+    inline bool ScheduledOnOrAfterHasBeenSet() const { return m_scheduledOnOrAfterHasBeenSet; }
 
     /**
      * <p>A filter to limit results to those data set contents whose creation is
@@ -179,6 +201,13 @@ namespace Model
      * the CreateDataset request. (timestamp)</p>
      */
     inline const Aws::Utils::DateTime& GetScheduledBefore() const{ return m_scheduledBefore; }
+
+    /**
+     * <p>A filter to limit results to those data set contents whose creation is
+     * scheduled before the given time. See the field <code>triggers.schedule</code> in
+     * the CreateDataset request. (timestamp)</p>
+     */
+    inline bool ScheduledBeforeHasBeenSet() const { return m_scheduledBeforeHasBeenSet; }
 
     /**
      * <p>A filter to limit results to those data set contents whose creation is

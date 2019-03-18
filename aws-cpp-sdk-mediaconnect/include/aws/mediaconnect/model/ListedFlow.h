@@ -58,6 +58,11 @@ namespace Model
     /**
      * The Availability Zone that the flow was created in.
      */
+    inline bool AvailabilityZoneHasBeenSet() const { return m_availabilityZoneHasBeenSet; }
+
+    /**
+     * The Availability Zone that the flow was created in.
+     */
     inline void SetAvailabilityZone(const Aws::String& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = value; }
 
     /**
@@ -90,6 +95,11 @@ namespace Model
      * A description of the flow.
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
+
+    /**
+     * A description of the flow.
+     */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
 
     /**
      * A description of the flow.
@@ -130,6 +140,11 @@ namespace Model
     /**
      * The ARN of the flow.
      */
+    inline bool FlowArnHasBeenSet() const { return m_flowArnHasBeenSet; }
+
+    /**
+     * The ARN of the flow.
+     */
     inline void SetFlowArn(const Aws::String& value) { m_flowArnHasBeenSet = true; m_flowArn = value; }
 
     /**
@@ -162,6 +177,11 @@ namespace Model
      * The name of the flow.
      */
     inline const Aws::String& GetName() const{ return m_name; }
+
+    /**
+     * The name of the flow.
+     */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
      * The name of the flow.
@@ -206,6 +226,13 @@ namespace Model
      * an AWS Elemental MediaConnect flow owned by another AWS account) or entitled
      * (originated at an AWS Elemental MediaConnect flow owned by another AWS account).
      */
+    inline bool SourceTypeHasBeenSet() const { return m_sourceTypeHasBeenSet; }
+
+    /**
+     * The type of source. This value is either owned (originated somewhere other than
+     * an AWS Elemental MediaConnect flow owned by another AWS account) or entitled
+     * (originated at an AWS Elemental MediaConnect flow owned by another AWS account).
+     */
     inline void SetSourceType(const SourceType& value) { m_sourceTypeHasBeenSet = true; m_sourceType = value; }
 
     /**
@@ -234,6 +261,11 @@ namespace Model
      * The current status of the flow.
      */
     inline const Status& GetStatus() const{ return m_status; }
+
+    /**
+     * The current status of the flow.
+     */
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
     /**
      * The current status of the flow.

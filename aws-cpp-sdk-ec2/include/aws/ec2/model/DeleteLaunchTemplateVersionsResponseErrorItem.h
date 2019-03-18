@@ -59,6 +59,11 @@ namespace Model
     /**
      * <p>The ID of the launch template.</p>
      */
+    inline bool LaunchTemplateIdHasBeenSet() const { return m_launchTemplateIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the launch template.</p>
+     */
     inline void SetLaunchTemplateId(const Aws::String& value) { m_launchTemplateIdHasBeenSet = true; m_launchTemplateId = value; }
 
     /**
@@ -91,6 +96,11 @@ namespace Model
      * <p>The name of the launch template.</p>
      */
     inline const Aws::String& GetLaunchTemplateName() const{ return m_launchTemplateName; }
+
+    /**
+     * <p>The name of the launch template.</p>
+     */
+    inline bool LaunchTemplateNameHasBeenSet() const { return m_launchTemplateNameHasBeenSet; }
 
     /**
      * <p>The name of the launch template.</p>
@@ -131,6 +141,11 @@ namespace Model
     /**
      * <p>The version number of the launch template.</p>
      */
+    inline bool VersionNumberHasBeenSet() const { return m_versionNumberHasBeenSet; }
+
+    /**
+     * <p>The version number of the launch template.</p>
+     */
     inline void SetVersionNumber(long long value) { m_versionNumberHasBeenSet = true; m_versionNumber = value; }
 
     /**
@@ -143,6 +158,11 @@ namespace Model
      * <p>Information about the error.</p>
      */
     inline const ResponseError& GetResponseError() const{ return m_responseError; }
+
+    /**
+     * <p>Information about the error.</p>
+     */
+    inline bool ResponseErrorHasBeenSet() const { return m_responseErrorHasBeenSet; }
 
     /**
      * <p>Information about the error.</p>

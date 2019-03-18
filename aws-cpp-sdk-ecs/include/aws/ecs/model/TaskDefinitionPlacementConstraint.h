@@ -67,6 +67,14 @@ namespace Model
      * instance. The <code>MemberOf</code> constraint restricts selection to be from a
      * group of valid candidates.</p>
      */
+    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
+
+    /**
+     * <p>The type of constraint. The <code>DistinctInstance</code> constraint ensures
+     * that each task in a particular group is running on a different container
+     * instance. The <code>MemberOf</code> constraint restricts selection to be from a
+     * group of valid candidates.</p>
+     */
     inline void SetType(const TaskDefinitionPlacementConstraintType& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
@@ -102,6 +110,15 @@ namespace Model
      * Guide</i>.</p>
      */
     inline const Aws::String& GetExpression() const{ return m_expression; }
+
+    /**
+     * <p>A cluster query language expression to apply to the constraint. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-query-language.html">Cluster
+     * Query Language</a> in the <i>Amazon Elastic Container Service Developer
+     * Guide</i>.</p>
+     */
+    inline bool ExpressionHasBeenSet() const { return m_expressionHasBeenSet; }
 
     /**
      * <p>A cluster query language expression to apply to the constraint. For more

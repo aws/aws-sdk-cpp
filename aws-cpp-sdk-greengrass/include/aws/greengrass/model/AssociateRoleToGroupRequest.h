@@ -50,6 +50,11 @@ namespace Model
     /**
      * The ID of the Greengrass group.
      */
+    inline bool GroupIdHasBeenSet() const { return m_groupIdHasBeenSet; }
+
+    /**
+     * The ID of the Greengrass group.
+     */
     inline void SetGroupId(const Aws::String& value) { m_groupIdHasBeenSet = true; m_groupId = value; }
 
     /**
@@ -82,6 +87,11 @@ namespace Model
      * The ARN of the role you wish to associate with this group.
      */
     inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
+
+    /**
+     * The ARN of the role you wish to associate with this group.
+     */
+    inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
 
     /**
      * The ARN of the role you wish to associate with this group.

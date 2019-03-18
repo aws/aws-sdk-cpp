@@ -55,6 +55,12 @@ namespace Model
      * <p>The identifier of the WorkSpace. To find this ID, use
      * <a>DescribeWorkspaces</a>.</p>
      */
+    inline bool ResourceIdHasBeenSet() const { return m_resourceIdHasBeenSet; }
+
+    /**
+     * <p>The identifier of the WorkSpace. To find this ID, use
+     * <a>DescribeWorkspaces</a>.</p>
+     */
     inline void SetResourceId(const Aws::String& value) { m_resourceIdHasBeenSet = true; m_resourceId = value; }
 
     /**
@@ -92,6 +98,11 @@ namespace Model
      * <p>The tag keys.</p>
      */
     inline const Aws::Vector<Aws::String>& GetTagKeys() const{ return m_tagKeys; }
+
+    /**
+     * <p>The tag keys.</p>
+     */
+    inline bool TagKeysHasBeenSet() const { return m_tagKeysHasBeenSet; }
 
     /**
      * <p>The tag keys.</p>

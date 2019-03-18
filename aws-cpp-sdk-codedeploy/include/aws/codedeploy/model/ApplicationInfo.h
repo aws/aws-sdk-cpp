@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The application ID.</p>
      */
+    inline bool ApplicationIdHasBeenSet() const { return m_applicationIdHasBeenSet; }
+
+    /**
+     * <p>The application ID.</p>
+     */
     inline void SetApplicationId(const Aws::String& value) { m_applicationIdHasBeenSet = true; m_applicationId = value; }
 
     /**
@@ -89,6 +94,11 @@ namespace Model
      * <p>The application name.</p>
      */
     inline const Aws::String& GetApplicationName() const{ return m_applicationName; }
+
+    /**
+     * <p>The application name.</p>
+     */
+    inline bool ApplicationNameHasBeenSet() const { return m_applicationNameHasBeenSet; }
 
     /**
      * <p>The application name.</p>
@@ -129,6 +139,11 @@ namespace Model
     /**
      * <p>The time at which the application was created.</p>
      */
+    inline bool CreateTimeHasBeenSet() const { return m_createTimeHasBeenSet; }
+
+    /**
+     * <p>The time at which the application was created.</p>
+     */
     inline void SetCreateTime(const Aws::Utils::DateTime& value) { m_createTimeHasBeenSet = true; m_createTime = value; }
 
     /**
@@ -157,6 +172,12 @@ namespace Model
      * <p>True if the user has authenticated with GitHub for the specified application.
      * Otherwise, false.</p>
      */
+    inline bool LinkedToGitHubHasBeenSet() const { return m_linkedToGitHubHasBeenSet; }
+
+    /**
+     * <p>True if the user has authenticated with GitHub for the specified application.
+     * Otherwise, false.</p>
+     */
     inline void SetLinkedToGitHub(bool value) { m_linkedToGitHubHasBeenSet = true; m_linkedToGitHub = value; }
 
     /**
@@ -170,6 +191,11 @@ namespace Model
      * <p>The name for a connection to a GitHub account.</p>
      */
     inline const Aws::String& GetGitHubAccountName() const{ return m_gitHubAccountName; }
+
+    /**
+     * <p>The name for a connection to a GitHub account.</p>
+     */
+    inline bool GitHubAccountNameHasBeenSet() const { return m_gitHubAccountNameHasBeenSet; }
 
     /**
      * <p>The name for a connection to a GitHub account.</p>
@@ -207,6 +233,12 @@ namespace Model
      * (<code>Lambda</code> or <code>Server</code>).</p>
      */
     inline const ComputePlatform& GetComputePlatform() const{ return m_computePlatform; }
+
+    /**
+     * <p>The destination platform type for deployment of the application
+     * (<code>Lambda</code> or <code>Server</code>).</p>
+     */
+    inline bool ComputePlatformHasBeenSet() const { return m_computePlatformHasBeenSet; }
 
     /**
      * <p>The destination platform type for deployment of the application

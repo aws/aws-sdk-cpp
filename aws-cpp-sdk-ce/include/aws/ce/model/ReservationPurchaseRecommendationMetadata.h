@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The ID for this specific recommendation.</p>
      */
+    inline bool RecommendationIdHasBeenSet() const { return m_recommendationIdHasBeenSet; }
+
+    /**
+     * <p>The ID for this specific recommendation.</p>
+     */
     inline void SetRecommendationId(const Aws::String& value) { m_recommendationIdHasBeenSet = true; m_recommendationId = value; }
 
     /**
@@ -88,6 +93,11 @@ namespace Model
      * <p>The time stamp for when AWS made this recommendation.</p>
      */
     inline const Aws::String& GetGenerationTimestamp() const{ return m_generationTimestamp; }
+
+    /**
+     * <p>The time stamp for when AWS made this recommendation.</p>
+     */
+    inline bool GenerationTimestampHasBeenSet() const { return m_generationTimestampHasBeenSet; }
 
     /**
      * <p>The time stamp for when AWS made this recommendation.</p>

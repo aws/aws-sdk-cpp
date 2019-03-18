@@ -66,6 +66,13 @@ namespace Model
      * contain ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes
      * (-).</p> </li> <li> <p>Contain less than 256 characters.</p> </li> </ul>
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>The name of the tag. The name must:</p> <ul> <li> <p>This value can only
+     * contain ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes
+     * (-).</p> </li> <li> <p>Contain less than 256 characters.</p> </li> </ul>
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
@@ -110,6 +117,13 @@ namespace Model
      * (-).</p> </li> <li> <p>Contain less than 256 characters.</p> </li> </ul>
      */
     inline const Aws::String& GetValue() const{ return m_value; }
+
+    /**
+     * <p>The value of the tag. The value must:</p> <ul> <li> <p>This value can only
+     * contain ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes
+     * (-).</p> </li> <li> <p>Contain less than 256 characters.</p> </li> </ul>
+     */
+    inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
 
     /**
      * <p>The value of the tag. The value must:</p> <ul> <li> <p>This value can only

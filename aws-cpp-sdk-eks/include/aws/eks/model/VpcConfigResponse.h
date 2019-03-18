@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The subnets associated with your cluster.</p>
      */
+    inline bool SubnetIdsHasBeenSet() const { return m_subnetIdsHasBeenSet; }
+
+    /**
+     * <p>The subnets associated with your cluster.</p>
+     */
     inline void SetSubnetIds(const Aws::Vector<Aws::String>& value) { m_subnetIdsHasBeenSet = true; m_subnetIds = value; }
 
     /**
@@ -96,6 +101,13 @@ namespace Model
      * the Kubernetes control plane.</p>
      */
     inline const Aws::Vector<Aws::String>& GetSecurityGroupIds() const{ return m_securityGroupIds; }
+
+    /**
+     * <p>The security groups associated with the cross-account elastic network
+     * interfaces that are used to allow communication between your worker nodes and
+     * the Kubernetes control plane.</p>
+     */
+    inline bool SecurityGroupIdsHasBeenSet() const { return m_securityGroupIdsHasBeenSet; }
 
     /**
      * <p>The security groups associated with the cross-account elastic network
@@ -151,6 +163,11 @@ namespace Model
      * <p>The VPC associated with your cluster.</p>
      */
     inline const Aws::String& GetVpcId() const{ return m_vpcId; }
+
+    /**
+     * <p>The VPC associated with your cluster.</p>
+     */
+    inline bool VpcIdHasBeenSet() const { return m_vpcIdHasBeenSet; }
 
     /**
      * <p>The VPC associated with your cluster.</p>

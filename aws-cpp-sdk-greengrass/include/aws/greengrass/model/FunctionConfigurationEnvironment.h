@@ -63,6 +63,13 @@ namespace Model
      * this when the Lambda function needs to read device information from /sys. This
      * setting applies only when you run the Lambda function in a Greengrass container.
      */
+    inline bool AccessSysfsHasBeenSet() const { return m_accessSysfsHasBeenSet; }
+
+    /**
+     * If true, the Lambda function is allowed to access the host's /sys folder. Use
+     * this when the Lambda function needs to read device information from /sys. This
+     * setting applies only when you run the Lambda function in a Greengrass container.
+     */
     inline void SetAccessSysfs(bool value) { m_accessSysfsHasBeenSet = true; m_accessSysfs = value; }
 
     /**
@@ -77,6 +84,11 @@ namespace Model
      * Configuration related to executing the Lambda function
      */
     inline const FunctionExecutionConfig& GetExecution() const{ return m_execution; }
+
+    /**
+     * Configuration related to executing the Lambda function
+     */
+    inline bool ExecutionHasBeenSet() const { return m_executionHasBeenSet; }
 
     /**
      * Configuration related to executing the Lambda function
@@ -106,6 +118,14 @@ namespace Model
      * Greengrass container.
      */
     inline const Aws::Vector<ResourceAccessPolicy>& GetResourceAccessPolicies() const{ return m_resourceAccessPolicies; }
+
+    /**
+     * A list of the resources, with their permissions, to which the Lambda function
+     * will be granted access. A Lambda function can have at most 10 resources.
+     * ResourceAccessPolicies apply only when you run the Lambda function in a
+     * Greengrass container.
+     */
+    inline bool ResourceAccessPoliciesHasBeenSet() const { return m_resourceAccessPoliciesHasBeenSet; }
 
     /**
      * A list of the resources, with their permissions, to which the Lambda function
@@ -160,6 +180,11 @@ namespace Model
      * Environment variables for the Lambda function's configuration.
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetVariables() const{ return m_variables; }
+
+    /**
+     * Environment variables for the Lambda function's configuration.
+     */
+    inline bool VariablesHasBeenSet() const { return m_variablesHasBeenSet; }
 
     /**
      * Environment variables for the Lambda function's configuration.

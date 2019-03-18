@@ -59,6 +59,11 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) that identifies the topic.</p>
      */
+    inline bool TopicArnHasBeenSet() const { return m_topicArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) that identifies the topic.</p>
+     */
     inline void SetTopicArn(const Aws::String& value) { m_topicArnHasBeenSet = true; m_topicArn = value; }
 
     /**
@@ -91,6 +96,11 @@ namespace Model
      * <p>The current state of the topic.</p>
      */
     inline const Aws::String& GetTopicStatus() const{ return m_topicStatus; }
+
+    /**
+     * <p>The current state of the topic.</p>
+     */
+    inline bool TopicStatusHasBeenSet() const { return m_topicStatusHasBeenSet; }
 
     /**
      * <p>The current state of the topic.</p>

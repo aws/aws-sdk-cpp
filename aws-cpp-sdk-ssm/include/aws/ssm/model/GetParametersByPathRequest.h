@@ -60,6 +60,14 @@ namespace Model
      * of 15 levels. Here is an example of a hierarchy:
      * <code>/Finance/Prod/IAD/WinServ2016/license33</code> </p>
      */
+    inline bool PathHasBeenSet() const { return m_pathHasBeenSet; }
+
+    /**
+     * <p>The hierarchy for the parameter. Hierarchies start with a forward slash (/)
+     * and end with the parameter name. A parameter name hierarchy can have a maximum
+     * of 15 levels. Here is an example of a hierarchy:
+     * <code>/Finance/Prod/IAD/WinServ2016/license33</code> </p>
+     */
     inline void SetPath(const Aws::String& value) { m_pathHasBeenSet = true; m_path = value; }
 
     /**
@@ -121,6 +129,16 @@ namespace Model
      * can still call the GetParametersByPath API action recursively and view /a/b.</p>
      * </important>
      */
+    inline bool RecursiveHasBeenSet() const { return m_recursiveHasBeenSet; }
+
+    /**
+     * <p>Retrieve all parameters within a hierarchy.</p> <important> <p>If a user has
+     * access to a path, then the user can access all levels of that path. For example,
+     * if a user has permission to access path /a, then the user can also access /a/b.
+     * Even if a user has explicitly been denied access in IAM for parameter /a, they
+     * can still call the GetParametersByPath API action recursively and view /a/b.</p>
+     * </important>
+     */
     inline void SetRecursive(bool value) { m_recursiveHasBeenSet = true; m_recursive = value; }
 
     /**
@@ -139,6 +157,12 @@ namespace Model
      * the parameter name.</p> </note>
      */
     inline const Aws::Vector<ParameterStringFilter>& GetParameterFilters() const{ return m_parameterFilters; }
+
+    /**
+     * <p>Filters to limit the request results.</p> <note> <p>You can't filter using
+     * the parameter name.</p> </note>
+     */
+    inline bool ParameterFiltersHasBeenSet() const { return m_parameterFiltersHasBeenSet; }
 
     /**
      * <p>Filters to limit the request results.</p> <note> <p>You can't filter using
@@ -185,6 +209,11 @@ namespace Model
     /**
      * <p>Retrieve all parameters in a hierarchy with their value decrypted.</p>
      */
+    inline bool WithDecryptionHasBeenSet() const { return m_withDecryptionHasBeenSet; }
+
+    /**
+     * <p>Retrieve all parameters in a hierarchy with their value decrypted.</p>
+     */
     inline void SetWithDecryption(bool value) { m_withDecryptionHasBeenSet = true; m_withDecryption = value; }
 
     /**
@@ -199,6 +228,13 @@ namespace Model
      * results.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
+
+    /**
+     * <p>The maximum number of items to return for this call. The call also returns a
+     * token that you can specify in a subsequent call to get the next set of
+     * results.</p>
+     */
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
 
     /**
      * <p>The maximum number of items to return for this call. The call also returns a
@@ -220,6 +256,12 @@ namespace Model
      * </p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
+    /**
+     * <p>A token to start the list. Use this token to get the next set of results.
+     * </p>
+     */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
      * <p>A token to start the list. Use this token to get the next set of results.

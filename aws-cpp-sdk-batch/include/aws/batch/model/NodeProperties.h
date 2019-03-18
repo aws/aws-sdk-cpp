@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The number of nodes associated with a multi-node parallel job.</p>
      */
+    inline bool NumNodesHasBeenSet() const { return m_numNodesHasBeenSet; }
+
+    /**
+     * <p>The number of nodes associated with a multi-node parallel job.</p>
+     */
     inline void SetNumNodes(int value) { m_numNodesHasBeenSet = true; m_numNodes = value; }
 
     /**
@@ -69,6 +74,11 @@ namespace Model
      * <p>Specifies the node index for the main node of a multi-node parallel job.</p>
      */
     inline int GetMainNode() const{ return m_mainNode; }
+
+    /**
+     * <p>Specifies the node index for the main node of a multi-node parallel job.</p>
+     */
+    inline bool MainNodeHasBeenSet() const { return m_mainNodeHasBeenSet; }
 
     /**
      * <p>Specifies the node index for the main node of a multi-node parallel job.</p>
@@ -86,6 +96,12 @@ namespace Model
      * parallel job.</p>
      */
     inline const Aws::Vector<NodeRangeProperty>& GetNodeRangeProperties() const{ return m_nodeRangeProperties; }
+
+    /**
+     * <p>A list of node ranges and their properties associated with a multi-node
+     * parallel job.</p>
+     */
+    inline bool NodeRangePropertiesHasBeenSet() const { return m_nodeRangePropertiesHasBeenSet; }
 
     /**
      * <p>A list of node ranges and their properties associated with a multi-node

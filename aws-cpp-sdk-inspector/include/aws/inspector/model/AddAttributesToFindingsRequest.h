@@ -54,6 +54,11 @@ namespace Model
     /**
      * <p>The ARNs that specify the findings that you want to assign attributes to.</p>
      */
+    inline bool FindingArnsHasBeenSet() const { return m_findingArnsHasBeenSet; }
+
+    /**
+     * <p>The ARNs that specify the findings that you want to assign attributes to.</p>
+     */
     inline void SetFindingArns(const Aws::Vector<Aws::String>& value) { m_findingArnsHasBeenSet = true; m_findingArns = value; }
 
     /**
@@ -91,6 +96,11 @@ namespace Model
      * <p>The array of attributes that you want to assign to specified findings.</p>
      */
     inline const Aws::Vector<Attribute>& GetAttributes() const{ return m_attributes; }
+
+    /**
+     * <p>The array of attributes that you want to assign to specified findings.</p>
+     */
+    inline bool AttributesHasBeenSet() const { return m_attributesHasBeenSet; }
 
     /**
      * <p>The array of attributes that you want to assign to specified findings.</p>

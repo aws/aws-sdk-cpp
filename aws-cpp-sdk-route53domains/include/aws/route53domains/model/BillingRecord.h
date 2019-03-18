@@ -67,6 +67,16 @@ namespace Model
      * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DomainNameFormat.html">DNS
      * Domain Name Format</a> in the <i>Amazon Route 53 Developer Guidezzz</i>.</p>
      */
+    inline bool DomainNameHasBeenSet() const { return m_domainNameHasBeenSet; }
+
+    /**
+     * <p>The name of the domain that the billing record applies to. If the domain name
+     * contains characters other than a-z, 0-9, and - (hyphen), such as an
+     * internationalized domain name, then this value is in Punycode. For more
+     * information, see <a
+     * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DomainNameFormat.html">DNS
+     * Domain Name Format</a> in the <i>Amazon Route 53 Developer Guidezzz</i>.</p>
+     */
     inline void SetDomainName(const Aws::String& value) { m_domainNameHasBeenSet = true; m_domainName = value; }
 
     /**
@@ -128,6 +138,11 @@ namespace Model
     /**
      * <p>The operation that you were charged for.</p>
      */
+    inline bool OperationHasBeenSet() const { return m_operationHasBeenSet; }
+
+    /**
+     * <p>The operation that you were charged for.</p>
+     */
     inline void SetOperation(const OperationType& value) { m_operationHasBeenSet = true; m_operation = value; }
 
     /**
@@ -150,6 +165,11 @@ namespace Model
      * <p>The ID of the invoice that is associated with the billing record.</p>
      */
     inline const Aws::String& GetInvoiceId() const{ return m_invoiceId; }
+
+    /**
+     * <p>The ID of the invoice that is associated with the billing record.</p>
+     */
+    inline bool InvoiceIdHasBeenSet() const { return m_invoiceIdHasBeenSet; }
 
     /**
      * <p>The ID of the invoice that is associated with the billing record.</p>
@@ -190,6 +210,11 @@ namespace Model
     /**
      * <p>The date that the operation was billed, in Unix format.</p>
      */
+    inline bool BillDateHasBeenSet() const { return m_billDateHasBeenSet; }
+
+    /**
+     * <p>The date that the operation was billed, in Unix format.</p>
+     */
     inline void SetBillDate(const Aws::Utils::DateTime& value) { m_billDateHasBeenSet = true; m_billDate = value; }
 
     /**
@@ -213,6 +238,12 @@ namespace Model
      * <p>Example value: 12.0</p>
      */
     inline double GetPrice() const{ return m_price; }
+
+    /**
+     * <p>The price that you were charged for the operation, in US dollars.</p>
+     * <p>Example value: 12.0</p>
+     */
+    inline bool PriceHasBeenSet() const { return m_priceHasBeenSet; }
 
     /**
      * <p>The price that you were charged for the operation, in US dollars.</p>

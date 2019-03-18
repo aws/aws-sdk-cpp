@@ -60,6 +60,11 @@ namespace Model
     /**
      * <p>The type of compute environment.</p>
      */
+    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
+
+    /**
+     * <p>The type of compute environment.</p>
+     */
     inline void SetType(const CRType& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
@@ -88,6 +93,12 @@ namespace Model
      * <p>The minimum number of EC2 vCPUs that an environment should maintain (even if
      * the compute environment is <code>DISABLED</code>). </p>
      */
+    inline bool MinvCpusHasBeenSet() const { return m_minvCpusHasBeenSet; }
+
+    /**
+     * <p>The minimum number of EC2 vCPUs that an environment should maintain (even if
+     * the compute environment is <code>DISABLED</code>). </p>
+     */
     inline void SetMinvCpus(int value) { m_minvCpusHasBeenSet = true; m_minvCpus = value; }
 
     /**
@@ -105,6 +116,11 @@ namespace Model
     /**
      * <p>The maximum number of EC2 vCPUs that an environment can reach. </p>
      */
+    inline bool MaxvCpusHasBeenSet() const { return m_maxvCpusHasBeenSet; }
+
+    /**
+     * <p>The maximum number of EC2 vCPUs that an environment can reach. </p>
+     */
     inline void SetMaxvCpus(int value) { m_maxvCpusHasBeenSet = true; m_maxvCpus = value; }
 
     /**
@@ -117,6 +133,11 @@ namespace Model
      * <p>The desired number of EC2 vCPUS in the compute environment. </p>
      */
     inline int GetDesiredvCpus() const{ return m_desiredvCpus; }
+
+    /**
+     * <p>The desired number of EC2 vCPUS in the compute environment. </p>
+     */
+    inline bool DesiredvCpusHasBeenSet() const { return m_desiredvCpusHasBeenSet; }
 
     /**
      * <p>The desired number of EC2 vCPUS in the compute environment. </p>
@@ -138,6 +159,16 @@ namespace Model
      * match the demand of your job queues.</p>
      */
     inline const Aws::Vector<Aws::String>& GetInstanceTypes() const{ return m_instanceTypes; }
+
+    /**
+     * <p>The instances types that may be launched. You can specify instance families
+     * to launch any instance type within those families (for example, <code>c4</code>
+     * or <code>p3</code>), or you can specify specific sizes within a family (such as
+     * <code>c4.8xlarge</code>). You can also choose <code>optimal</code> to pick
+     * instance types (from the latest C, M, and R instance families) on the fly that
+     * match the demand of your job queues.</p>
+     */
+    inline bool InstanceTypesHasBeenSet() const { return m_instanceTypesHasBeenSet; }
 
     /**
      * <p>The instances types that may be launched. You can specify instance families
@@ -220,6 +251,12 @@ namespace Model
      * <p>The Amazon Machine Image (AMI) ID used for instances launched in the compute
      * environment.</p>
      */
+    inline bool ImageIdHasBeenSet() const { return m_imageIdHasBeenSet; }
+
+    /**
+     * <p>The Amazon Machine Image (AMI) ID used for instances launched in the compute
+     * environment.</p>
+     */
     inline void SetImageId(const Aws::String& value) { m_imageIdHasBeenSet = true; m_imageId = value; }
 
     /**
@@ -257,6 +294,11 @@ namespace Model
      * <p>The VPC subnets into which the compute resources are launched. </p>
      */
     inline const Aws::Vector<Aws::String>& GetSubnets() const{ return m_subnets; }
+
+    /**
+     * <p>The VPC subnets into which the compute resources are launched. </p>
+     */
+    inline bool SubnetsHasBeenSet() const { return m_subnetsHasBeenSet; }
 
     /**
      * <p>The VPC subnets into which the compute resources are launched. </p>
@@ -299,6 +341,12 @@ namespace Model
      * compute environment. </p>
      */
     inline const Aws::Vector<Aws::String>& GetSecurityGroupIds() const{ return m_securityGroupIds; }
+
+    /**
+     * <p>The EC2 security group that is associated with instances launched in the
+     * compute environment. </p>
+     */
+    inline bool SecurityGroupIdsHasBeenSet() const { return m_securityGroupIdsHasBeenSet; }
 
     /**
      * <p>The EC2 security group that is associated with instances launched in the
@@ -353,6 +401,12 @@ namespace Model
      * <p>The EC2 key pair that is used for instances launched in the compute
      * environment.</p>
      */
+    inline bool Ec2KeyPairHasBeenSet() const { return m_ec2KeyPairHasBeenSet; }
+
+    /**
+     * <p>The EC2 key pair that is used for instances launched in the compute
+     * environment.</p>
+     */
     inline void SetEc2KeyPair(const Aws::String& value) { m_ec2KeyPairHasBeenSet = true; m_ec2KeyPair = value; }
 
     /**
@@ -396,6 +450,17 @@ namespace Model
      * ECS Instance Role</a> in the <i>AWS Batch User Guide</i>.</p>
      */
     inline const Aws::String& GetInstanceRole() const{ return m_instanceRole; }
+
+    /**
+     * <p>The Amazon ECS instance profile applied to Amazon EC2 instances in a compute
+     * environment. You can specify the short name or full Amazon Resource Name (ARN)
+     * of an instance profile. For example, <code>ecsInstanceRole</code> or
+     * <code>arn:aws:iam::&lt;aws_account_id&gt;:instance-profile/ecsInstanceRole</code>.
+     * For more information, see <a
+     * href="http://docs.aws.amazon.com/batch/latest/userguide/instance_IAM_role.html">Amazon
+     * ECS Instance Role</a> in the <i>AWS Batch User Guide</i>.</p>
+     */
+    inline bool InstanceRoleHasBeenSet() const { return m_instanceRoleHasBeenSet; }
 
     /**
      * <p>The Amazon ECS instance profile applied to Amazon EC2 instances in a compute
@@ -469,6 +534,12 @@ namespace Model
      * compute environment. </p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>Key-value pair tags to be applied to resources that are launched in the
+     * compute environment. </p>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
      * <p>Key-value pair tags to be applied to resources that are launched in the
@@ -548,6 +619,18 @@ namespace Model
      * Groups</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
      */
     inline const Aws::String& GetPlacementGroup() const{ return m_placementGroup; }
+
+    /**
+     * <p>The Amazon EC2 placement group to associate with your compute resources. If
+     * you intend to submit multi-node parallel jobs to your compute environment, you
+     * should consider creating a cluster placement group and associate it with your
+     * compute resources. This keeps your multi-node parallel job on a logical grouping
+     * of instances within a single Availability Zone with high network flow potential.
+     * For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement
+     * Groups</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
+     */
+    inline bool PlacementGroupHasBeenSet() const { return m_placementGroupHasBeenSet; }
 
     /**
      * <p>The Amazon EC2 placement group to associate with your compute resources. If
@@ -640,6 +723,16 @@ namespace Model
      * lowest (market) price and never more than your maximum percentage. If you leave
      * this field empty, the default value is 100% of the On-Demand price.</p>
      */
+    inline bool BidPercentageHasBeenSet() const { return m_bidPercentageHasBeenSet; }
+
+    /**
+     * <p>The maximum percentage that a Spot Instance price can be when compared with
+     * the On-Demand price for that instance type before instances are launched. For
+     * example, if your maximum percentage is 20%, then the Spot price must be below
+     * 20% of the current On-Demand price for that EC2 instance. You always pay the
+     * lowest (market) price and never more than your maximum percentage. If you leave
+     * this field empty, the default value is 100% of the On-Demand price.</p>
+     */
     inline void SetBidPercentage(int value) { m_bidPercentageHasBeenSet = true; m_bidPercentage = value; }
 
     /**
@@ -658,6 +751,12 @@ namespace Model
      * to a <code>SPOT</code> compute environment.</p>
      */
     inline const Aws::String& GetSpotIamFleetRole() const{ return m_spotIamFleetRole; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the Amazon EC2 Spot Fleet IAM role applied
+     * to a <code>SPOT</code> compute environment.</p>
+     */
+    inline bool SpotIamFleetRoleHasBeenSet() const { return m_spotIamFleetRoleHasBeenSet; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the Amazon EC2 Spot Fleet IAM role applied
@@ -704,6 +803,15 @@ namespace Model
      * both. </p>
      */
     inline const LaunchTemplateSpecification& GetLaunchTemplate() const{ return m_launchTemplate; }
+
+    /**
+     * <p>The launch template to use for your compute resources. Any other compute
+     * resource parameters that you specify in a <a>CreateComputeEnvironment</a> API
+     * operation override the same parameters in the launch template. You must specify
+     * either the launch template ID or launch template name in the request, but not
+     * both. </p>
+     */
+    inline bool LaunchTemplateHasBeenSet() const { return m_launchTemplateHasBeenSet; }
 
     /**
      * <p>The launch template to use for your compute resources. Any other compute

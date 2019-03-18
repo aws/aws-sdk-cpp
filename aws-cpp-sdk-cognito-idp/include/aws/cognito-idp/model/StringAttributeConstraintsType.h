@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The minimum length.</p>
      */
+    inline bool MinLengthHasBeenSet() const { return m_minLengthHasBeenSet; }
+
+    /**
+     * <p>The minimum length.</p>
+     */
     inline void SetMinLength(const Aws::String& value) { m_minLengthHasBeenSet = true; m_minLength = value; }
 
     /**
@@ -88,6 +93,11 @@ namespace Model
      * <p>The maximum length.</p>
      */
     inline const Aws::String& GetMaxLength() const{ return m_maxLength; }
+
+    /**
+     * <p>The maximum length.</p>
+     */
+    inline bool MaxLengthHasBeenSet() const { return m_maxLengthHasBeenSet; }
 
     /**
      * <p>The maximum length.</p>

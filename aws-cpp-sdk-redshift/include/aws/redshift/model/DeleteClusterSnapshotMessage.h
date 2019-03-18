@@ -63,6 +63,14 @@ namespace Model
      * <code>available</code>, <code>failed</code>, or <code>cancelled</code>
      * state.</p>
      */
+    inline bool SnapshotIdentifierHasBeenSet() const { return m_snapshotIdentifierHasBeenSet; }
+
+    /**
+     * <p>The unique identifier of the manual snapshot to be deleted.</p>
+     * <p>Constraints: Must be the name of an existing snapshot that is in the
+     * <code>available</code>, <code>failed</code>, or <code>cancelled</code>
+     * state.</p>
+     */
     inline void SetSnapshotIdentifier(const Aws::String& value) { m_snapshotIdentifierHasBeenSet = true; m_snapshotIdentifier = value; }
 
     /**
@@ -113,6 +121,14 @@ namespace Model
      * <p>Constraints: Must be the name of valid cluster.</p>
      */
     inline const Aws::String& GetSnapshotClusterIdentifier() const{ return m_snapshotClusterIdentifier; }
+
+    /**
+     * <p>The unique identifier of the cluster the snapshot was created from. This
+     * parameter is required if your IAM user has a policy containing a snapshot
+     * resource element that specifies anything other than * for the cluster name.</p>
+     * <p>Constraints: Must be the name of valid cluster.</p>
+     */
+    inline bool SnapshotClusterIdentifierHasBeenSet() const { return m_snapshotClusterIdentifierHasBeenSet; }
 
     /**
      * <p>The unique identifier of the cluster the snapshot was created from. This

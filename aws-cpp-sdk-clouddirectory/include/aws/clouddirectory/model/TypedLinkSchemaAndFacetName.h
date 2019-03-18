@@ -58,6 +58,12 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) that is associated with the schema. For more
      * information, see <a>arns</a>.</p>
      */
+    inline bool SchemaArnHasBeenSet() const { return m_schemaArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) that is associated with the schema. For more
+     * information, see <a>arns</a>.</p>
+     */
     inline void SetSchemaArn(const Aws::String& value) { m_schemaArnHasBeenSet = true; m_schemaArn = value; }
 
     /**
@@ -95,6 +101,11 @@ namespace Model
      * <p>The unique name of the typed link facet.</p>
      */
     inline const Aws::String& GetTypedLinkName() const{ return m_typedLinkName; }
+
+    /**
+     * <p>The unique name of the typed link facet.</p>
+     */
+    inline bool TypedLinkNameHasBeenSet() const { return m_typedLinkNameHasBeenSet; }
 
     /**
      * <p>The unique name of the typed link facet.</p>

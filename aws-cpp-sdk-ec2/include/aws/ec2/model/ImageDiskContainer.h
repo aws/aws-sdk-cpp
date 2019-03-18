@@ -59,6 +59,11 @@ namespace Model
     /**
      * <p>The description of the disk image.</p>
      */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
+
+    /**
+     * <p>The description of the disk image.</p>
+     */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
@@ -91,6 +96,11 @@ namespace Model
      * <p>The block device mapping for the disk.</p>
      */
     inline const Aws::String& GetDeviceName() const{ return m_deviceName; }
+
+    /**
+     * <p>The block device mapping for the disk.</p>
+     */
+    inline bool DeviceNameHasBeenSet() const { return m_deviceNameHasBeenSet; }
 
     /**
      * <p>The block device mapping for the disk.</p>
@@ -128,6 +138,12 @@ namespace Model
      * <code>VHD</code> | <code>VMDK</code> | <code>OVA</code> </p>
      */
     inline const Aws::String& GetFormat() const{ return m_format; }
+
+    /**
+     * <p>The format of the disk image being imported.</p> <p>Valid values:
+     * <code>VHD</code> | <code>VMDK</code> | <code>OVA</code> </p>
+     */
+    inline bool FormatHasBeenSet() const { return m_formatHasBeenSet; }
 
     /**
      * <p>The format of the disk image being imported.</p> <p>Valid values:
@@ -174,6 +190,11 @@ namespace Model
     /**
      * <p>The ID of the EBS snapshot to be used for importing the snapshot.</p>
      */
+    inline bool SnapshotIdHasBeenSet() const { return m_snapshotIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the EBS snapshot to be used for importing the snapshot.</p>
+     */
     inline void SetSnapshotId(const Aws::String& value) { m_snapshotIdHasBeenSet = true; m_snapshotId = value; }
 
     /**
@@ -207,6 +228,12 @@ namespace Model
      * be a https URL (https://..) or an Amazon S3 URL (s3://..)</p>
      */
     inline const Aws::String& GetUrl() const{ return m_url; }
+
+    /**
+     * <p>The URL to the Amazon S3-based disk image being imported. The URL can either
+     * be a https URL (https://..) or an Amazon S3 URL (s3://..)</p>
+     */
+    inline bool UrlHasBeenSet() const { return m_urlHasBeenSet; }
 
     /**
      * <p>The URL to the Amazon S3-based disk image being imported. The URL can either
@@ -249,6 +276,11 @@ namespace Model
      * <p>The S3 bucket for the disk image.</p>
      */
     inline const UserBucket& GetUserBucket() const{ return m_userBucket; }
+
+    /**
+     * <p>The S3 bucket for the disk image.</p>
+     */
+    inline bool UserBucketHasBeenSet() const { return m_userBucketHasBeenSet; }
 
     /**
      * <p>The S3 bucket for the disk image.</p>

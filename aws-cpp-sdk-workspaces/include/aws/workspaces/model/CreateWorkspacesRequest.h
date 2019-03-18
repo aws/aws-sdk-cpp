@@ -53,6 +53,11 @@ namespace Model
     /**
      * <p>The WorkSpaces to create. You can specify up to 25 WorkSpaces.</p>
      */
+    inline bool WorkspacesHasBeenSet() const { return m_workspacesHasBeenSet; }
+
+    /**
+     * <p>The WorkSpaces to create. You can specify up to 25 WorkSpaces.</p>
+     */
     inline void SetWorkspaces(const Aws::Vector<WorkspaceRequest>& value) { m_workspacesHasBeenSet = true; m_workspaces = value; }
 
     /**

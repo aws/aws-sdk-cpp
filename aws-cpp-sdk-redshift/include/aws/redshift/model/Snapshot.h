@@ -61,6 +61,11 @@ namespace Model
     /**
      * <p>The snapshot identifier that is provided in the request.</p>
      */
+    inline bool SnapshotIdentifierHasBeenSet() const { return m_snapshotIdentifierHasBeenSet; }
+
+    /**
+     * <p>The snapshot identifier that is provided in the request.</p>
+     */
     inline void SetSnapshotIdentifier(const Aws::String& value) { m_snapshotIdentifierHasBeenSet = true; m_snapshotIdentifier = value; }
 
     /**
@@ -93,6 +98,11 @@ namespace Model
      * <p>The identifier of the cluster for which the snapshot was taken.</p>
      */
     inline const Aws::String& GetClusterIdentifier() const{ return m_clusterIdentifier; }
+
+    /**
+     * <p>The identifier of the cluster for which the snapshot was taken.</p>
+     */
+    inline bool ClusterIdentifierHasBeenSet() const { return m_clusterIdentifierHasBeenSet; }
 
     /**
      * <p>The identifier of the cluster for which the snapshot was taken.</p>
@@ -135,6 +145,12 @@ namespace Model
      * <p>The time (in UTC format) when Amazon Redshift began the snapshot. A snapshot
      * contains a copy of the cluster data as of this exact time.</p>
      */
+    inline bool SnapshotCreateTimeHasBeenSet() const { return m_snapshotCreateTimeHasBeenSet; }
+
+    /**
+     * <p>The time (in UTC format) when Amazon Redshift began the snapshot. A snapshot
+     * contains a copy of the cluster data as of this exact time.</p>
+     */
     inline void SetSnapshotCreateTime(const Aws::Utils::DateTime& value) { m_snapshotCreateTimeHasBeenSet = true; m_snapshotCreateTime = value; }
 
     /**
@@ -165,6 +181,16 @@ namespace Model
      * returns status as "deleted".</p> </li> </ul>
      */
     inline const Aws::String& GetStatus() const{ return m_status; }
+
+    /**
+     * <p>The snapshot status. The value of the status depends on the API operation
+     * used: </p> <ul> <li> <p> <a>CreateClusterSnapshot</a> and
+     * <a>CopyClusterSnapshot</a> returns status as "creating". </p> </li> <li> <p>
+     * <a>DescribeClusterSnapshots</a> returns status as "creating", "available",
+     * "final snapshot", or "failed".</p> </li> <li> <p> <a>DeleteClusterSnapshot</a>
+     * returns status as "deleted".</p> </li> </ul>
+     */
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
     /**
      * <p>The snapshot status. The value of the status depends on the API operation
@@ -235,6 +261,11 @@ namespace Model
     /**
      * <p>The port that the cluster is listening on.</p>
      */
+    inline bool PortHasBeenSet() const { return m_portHasBeenSet; }
+
+    /**
+     * <p>The port that the cluster is listening on.</p>
+     */
     inline void SetPort(int value) { m_portHasBeenSet = true; m_port = value; }
 
     /**
@@ -247,6 +278,11 @@ namespace Model
      * <p>The Availability Zone in which the cluster was created.</p>
      */
     inline const Aws::String& GetAvailabilityZone() const{ return m_availabilityZone; }
+
+    /**
+     * <p>The Availability Zone in which the cluster was created.</p>
+     */
+    inline bool AvailabilityZoneHasBeenSet() const { return m_availabilityZoneHasBeenSet; }
 
     /**
      * <p>The Availability Zone in which the cluster was created.</p>
@@ -287,6 +323,11 @@ namespace Model
     /**
      * <p>The time (UTC) when the cluster was originally created.</p>
      */
+    inline bool ClusterCreateTimeHasBeenSet() const { return m_clusterCreateTimeHasBeenSet; }
+
+    /**
+     * <p>The time (UTC) when the cluster was originally created.</p>
+     */
     inline void SetClusterCreateTime(const Aws::Utils::DateTime& value) { m_clusterCreateTimeHasBeenSet = true; m_clusterCreateTime = value; }
 
     /**
@@ -309,6 +350,11 @@ namespace Model
      * <p>The master user name for the cluster.</p>
      */
     inline const Aws::String& GetMasterUsername() const{ return m_masterUsername; }
+
+    /**
+     * <p>The master user name for the cluster.</p>
+     */
+    inline bool MasterUsernameHasBeenSet() const { return m_masterUsernameHasBeenSet; }
 
     /**
      * <p>The master user name for the cluster.</p>
@@ -346,6 +392,12 @@ namespace Model
      * cluster.</p>
      */
     inline const Aws::String& GetClusterVersion() const{ return m_clusterVersion; }
+
+    /**
+     * <p>The version ID of the Amazon Redshift engine that is running on the
+     * cluster.</p>
+     */
+    inline bool ClusterVersionHasBeenSet() const { return m_clusterVersionHasBeenSet; }
 
     /**
      * <p>The version ID of the Amazon Redshift engine that is running on the
@@ -394,6 +446,12 @@ namespace Model
      * <p>The snapshot type. Snapshots created using <a>CreateClusterSnapshot</a> and
      * <a>CopyClusterSnapshot</a> are of type "manual". </p>
      */
+    inline bool SnapshotTypeHasBeenSet() const { return m_snapshotTypeHasBeenSet; }
+
+    /**
+     * <p>The snapshot type. Snapshots created using <a>CreateClusterSnapshot</a> and
+     * <a>CopyClusterSnapshot</a> are of type "manual". </p>
+     */
     inline void SetSnapshotType(const Aws::String& value) { m_snapshotTypeHasBeenSet = true; m_snapshotType = value; }
 
     /**
@@ -435,6 +493,11 @@ namespace Model
     /**
      * <p>The node type of the nodes in the cluster.</p>
      */
+    inline bool NodeTypeHasBeenSet() const { return m_nodeTypeHasBeenSet; }
+
+    /**
+     * <p>The node type of the nodes in the cluster.</p>
+     */
     inline void SetNodeType(const Aws::String& value) { m_nodeTypeHasBeenSet = true; m_nodeType = value; }
 
     /**
@@ -471,6 +534,11 @@ namespace Model
     /**
      * <p>The number of nodes in the cluster.</p>
      */
+    inline bool NumberOfNodesHasBeenSet() const { return m_numberOfNodesHasBeenSet; }
+
+    /**
+     * <p>The number of nodes in the cluster.</p>
+     */
     inline void SetNumberOfNodes(int value) { m_numberOfNodesHasBeenSet = true; m_numberOfNodes = value; }
 
     /**
@@ -483,6 +551,11 @@ namespace Model
      * <p>The name of the database that was created when the cluster was created.</p>
      */
     inline const Aws::String& GetDBName() const{ return m_dBName; }
+
+    /**
+     * <p>The name of the database that was created when the cluster was created.</p>
+     */
+    inline bool DBNameHasBeenSet() const { return m_dBNameHasBeenSet; }
 
     /**
      * <p>The name of the database that was created when the cluster was created.</p>
@@ -520,6 +593,12 @@ namespace Model
      * Otherwise, this field is not in the output.</p>
      */
     inline const Aws::String& GetVpcId() const{ return m_vpcId; }
+
+    /**
+     * <p>The VPC identifier of the cluster if the snapshot is from a cluster in a VPC.
+     * Otherwise, this field is not in the output.</p>
+     */
+    inline bool VpcIdHasBeenSet() const { return m_vpcIdHasBeenSet; }
 
     /**
      * <p>The VPC identifier of the cluster if the snapshot is from a cluster in a VPC.
@@ -566,6 +645,11 @@ namespace Model
     /**
      * <p>If <code>true</code>, the data in the snapshot is encrypted at rest.</p>
      */
+    inline bool EncryptedHasBeenSet() const { return m_encryptedHasBeenSet; }
+
+    /**
+     * <p>If <code>true</code>, the data in the snapshot is encrypted at rest.</p>
+     */
     inline void SetEncrypted(bool value) { m_encryptedHasBeenSet = true; m_encrypted = value; }
 
     /**
@@ -579,6 +663,12 @@ namespace Model
      * used to encrypt data in the cluster from which the snapshot was taken.</p>
      */
     inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
+
+    /**
+     * <p>The AWS Key Management Service (KMS) key ID of the encryption key that was
+     * used to encrypt data in the cluster from which the snapshot was taken.</p>
+     */
+    inline bool KmsKeyIdHasBeenSet() const { return m_kmsKeyIdHasBeenSet; }
 
     /**
      * <p>The AWS Key Management Service (KMS) key ID of the encryption key that was
@@ -629,6 +719,13 @@ namespace Model
      * keys of the source cluster. <code>true</code> indicates that the data is
      * encrypted using HSM keys.</p>
      */
+    inline bool EncryptedWithHSMHasBeenSet() const { return m_encryptedWithHSMHasBeenSet; }
+
+    /**
+     * <p>A boolean that indicates whether the snapshot data is encrypted using the HSM
+     * keys of the source cluster. <code>true</code> indicates that the data is
+     * encrypted using HSM keys.</p>
+     */
     inline void SetEncryptedWithHSM(bool value) { m_encryptedWithHSMHasBeenSet = true; m_encryptedWithHSM = value; }
 
     /**
@@ -645,6 +742,13 @@ namespace Model
      * snapshot owner. </p>
      */
     inline const Aws::Vector<AccountWithRestoreAccess>& GetAccountsWithRestoreAccess() const{ return m_accountsWithRestoreAccess; }
+
+    /**
+     * <p>A list of the AWS customer accounts authorized to restore the snapshot.
+     * Returns <code>null</code> if no accounts are authorized. Visible only to the
+     * snapshot owner. </p>
+     */
+    inline bool AccountsWithRestoreAccessHasBeenSet() const { return m_accountsWithRestoreAccessHasBeenSet; }
 
     /**
      * <p>A list of the AWS customer accounts authorized to restore the snapshot.
@@ -701,6 +805,13 @@ namespace Model
      * snapshot. For automatic snapshots, the owner of the cluster. The owner can
      * perform all snapshot actions, such as sharing a manual snapshot.</p>
      */
+    inline bool OwnerAccountHasBeenSet() const { return m_ownerAccountHasBeenSet; }
+
+    /**
+     * <p>For manual snapshots, the AWS customer account used to create or copy the
+     * snapshot. For automatic snapshots, the owner of the cluster. The owner can
+     * perform all snapshot actions, such as sharing a manual snapshot.</p>
+     */
     inline void SetOwnerAccount(const Aws::String& value) { m_ownerAccountHasBeenSet = true; m_ownerAccount = value; }
 
     /**
@@ -749,6 +860,12 @@ namespace Model
      * <p>The size of the complete set of backup data that would be used to restore the
      * cluster.</p>
      */
+    inline bool TotalBackupSizeInMegaBytesHasBeenSet() const { return m_totalBackupSizeInMegaBytesHasBeenSet; }
+
+    /**
+     * <p>The size of the complete set of backup data that would be used to restore the
+     * cluster.</p>
+     */
     inline void SetTotalBackupSizeInMegaBytes(double value) { m_totalBackupSizeInMegaBytesHasBeenSet = true; m_totalBackupSizeInMegaBytes = value; }
 
     /**
@@ -766,6 +883,11 @@ namespace Model
     /**
      * <p>The size of the incremental backup.</p>
      */
+    inline bool ActualIncrementalBackupSizeInMegaBytesHasBeenSet() const { return m_actualIncrementalBackupSizeInMegaBytesHasBeenSet; }
+
+    /**
+     * <p>The size of the incremental backup.</p>
+     */
     inline void SetActualIncrementalBackupSizeInMegaBytes(double value) { m_actualIncrementalBackupSizeInMegaBytesHasBeenSet = true; m_actualIncrementalBackupSizeInMegaBytes = value; }
 
     /**
@@ -779,6 +901,12 @@ namespace Model
      * backup.</p>
      */
     inline double GetBackupProgressInMegaBytes() const{ return m_backupProgressInMegaBytes; }
+
+    /**
+     * <p>The number of megabytes that have been transferred to the snapshot
+     * backup.</p>
+     */
+    inline bool BackupProgressInMegaBytesHasBeenSet() const { return m_backupProgressInMegaBytesHasBeenSet; }
 
     /**
      * <p>The number of megabytes that have been transferred to the snapshot
@@ -803,6 +931,12 @@ namespace Model
      * <p>The number of megabytes per second being transferred to the snapshot backup.
      * Returns <code>0</code> for a completed backup. </p>
      */
+    inline bool CurrentBackupRateInMegaBytesPerSecondHasBeenSet() const { return m_currentBackupRateInMegaBytesPerSecondHasBeenSet; }
+
+    /**
+     * <p>The number of megabytes per second being transferred to the snapshot backup.
+     * Returns <code>0</code> for a completed backup. </p>
+     */
     inline void SetCurrentBackupRateInMegaBytesPerSecond(double value) { m_currentBackupRateInMegaBytesPerSecondHasBeenSet = true; m_currentBackupRateInMegaBytesPerSecond = value; }
 
     /**
@@ -817,6 +951,12 @@ namespace Model
      * Returns <code>0</code> for a completed backup. </p>
      */
     inline long long GetEstimatedSecondsToCompletion() const{ return m_estimatedSecondsToCompletion; }
+
+    /**
+     * <p>The estimate of the time remaining before the snapshot backup will complete.
+     * Returns <code>0</code> for a completed backup. </p>
+     */
+    inline bool EstimatedSecondsToCompletionHasBeenSet() const { return m_estimatedSecondsToCompletionHasBeenSet; }
 
     /**
      * <p>The estimate of the time remaining before the snapshot backup will complete.
@@ -841,6 +981,12 @@ namespace Model
      * <p>The amount of time an in-progress snapshot backup has been running, or the
      * amount of time it took a completed backup to finish.</p>
      */
+    inline bool ElapsedTimeInSecondsHasBeenSet() const { return m_elapsedTimeInSecondsHasBeenSet; }
+
+    /**
+     * <p>The amount of time an in-progress snapshot backup has been running, or the
+     * amount of time it took a completed backup to finish.</p>
+     */
     inline void SetElapsedTimeInSeconds(long long value) { m_elapsedTimeInSecondsHasBeenSet = true; m_elapsedTimeInSeconds = value; }
 
     /**
@@ -854,6 +1000,11 @@ namespace Model
      * <p>The source region from which the snapshot was copied.</p>
      */
     inline const Aws::String& GetSourceRegion() const{ return m_sourceRegion; }
+
+    /**
+     * <p>The source region from which the snapshot was copied.</p>
+     */
+    inline bool SourceRegionHasBeenSet() const { return m_sourceRegionHasBeenSet; }
 
     /**
      * <p>The source region from which the snapshot was copied.</p>
@@ -894,6 +1045,11 @@ namespace Model
     /**
      * <p>The list of tags for the cluster snapshot.</p>
      */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
+
+    /**
+     * <p>The list of tags for the cluster snapshot.</p>
+     */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     /**
@@ -927,6 +1083,12 @@ namespace Model
      * into.</p>
      */
     inline const Aws::Vector<Aws::String>& GetRestorableNodeTypes() const{ return m_restorableNodeTypes; }
+
+    /**
+     * <p>The list of node types that this cluster snapshot is able to restore
+     * into.</p>
+     */
+    inline bool RestorableNodeTypesHasBeenSet() const { return m_restorableNodeTypesHasBeenSet; }
 
     /**
      * <p>The list of node types that this cluster snapshot is able to restore
@@ -991,6 +1153,17 @@ namespace Model
      * option is <code>true</code>, enhanced VPC routing is enabled. </p> <p>Default:
      * false</p>
      */
+    inline bool EnhancedVpcRoutingHasBeenSet() const { return m_enhancedVpcRoutingHasBeenSet; }
+
+    /**
+     * <p>An option that specifies whether to create the cluster with enhanced VPC
+     * routing enabled. To create a cluster that uses enhanced VPC routing, the cluster
+     * must be in a VPC. For more information, see <a
+     * href="http://docs.aws.amazon.com/redshift/latest/mgmt/enhanced-vpc-routing.html">Enhanced
+     * VPC Routing</a> in the Amazon Redshift Cluster Management Guide.</p> <p>If this
+     * option is <code>true</code>, enhanced VPC routing is enabled. </p> <p>Default:
+     * false</p>
+     */
     inline void SetEnhancedVpcRouting(bool value) { m_enhancedVpcRoutingHasBeenSet = true; m_enhancedVpcRouting = value; }
 
     /**
@@ -1009,6 +1182,11 @@ namespace Model
      * <p>The name of the maintenance track for the snapshot.</p>
      */
     inline const Aws::String& GetMaintenanceTrackName() const{ return m_maintenanceTrackName; }
+
+    /**
+     * <p>The name of the maintenance track for the snapshot.</p>
+     */
+    inline bool MaintenanceTrackNameHasBeenSet() const { return m_maintenanceTrackNameHasBeenSet; }
 
     /**
      * <p>The name of the maintenance track for the snapshot.</p>
@@ -1053,6 +1231,13 @@ namespace Model
      * the manual snapshot is retained indefinitely. </p> <p>The value must be either
      * -1 or an integer between 1 and 3,653.</p>
      */
+    inline bool ManualSnapshotRetentionPeriodHasBeenSet() const { return m_manualSnapshotRetentionPeriodHasBeenSet; }
+
+    /**
+     * <p>The number of days that a manual snapshot is retained. If the value is -1,
+     * the manual snapshot is retained indefinitely. </p> <p>The value must be either
+     * -1 or an integer between 1 and 3,653.</p>
+     */
     inline void SetManualSnapshotRetentionPeriod(int value) { m_manualSnapshotRetentionPeriodHasBeenSet = true; m_manualSnapshotRetentionPeriod = value; }
 
     /**
@@ -1073,6 +1258,12 @@ namespace Model
      * <p>The number of days until a manual snapshot will pass its retention
      * period.</p>
      */
+    inline bool ManualSnapshotRemainingDaysHasBeenSet() const { return m_manualSnapshotRemainingDaysHasBeenSet; }
+
+    /**
+     * <p>The number of days until a manual snapshot will pass its retention
+     * period.</p>
+     */
     inline void SetManualSnapshotRemainingDays(int value) { m_manualSnapshotRemainingDaysHasBeenSet = true; m_manualSnapshotRemainingDays = value; }
 
     /**
@@ -1087,6 +1278,12 @@ namespace Model
      * snapshot.</p>
      */
     inline const Aws::Utils::DateTime& GetSnapshotRetentionStartTime() const{ return m_snapshotRetentionStartTime; }
+
+    /**
+     * <p>A timestamp representing the start of the retention period for the
+     * snapshot.</p>
+     */
+    inline bool SnapshotRetentionStartTimeHasBeenSet() const { return m_snapshotRetentionStartTimeHasBeenSet; }
 
     /**
      * <p>A timestamp representing the start of the retention period for the

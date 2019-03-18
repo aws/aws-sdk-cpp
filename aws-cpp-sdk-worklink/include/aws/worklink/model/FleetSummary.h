@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The ARN of the fleet.</p>
      */
+    inline bool FleetArnHasBeenSet() const { return m_fleetArnHasBeenSet; }
+
+    /**
+     * <p>The ARN of the fleet.</p>
+     */
     inline void SetFleetArn(const Aws::String& value) { m_fleetArnHasBeenSet = true; m_fleetArn = value; }
 
     /**
@@ -93,6 +98,11 @@ namespace Model
     /**
      * <p>The time when the fleet was created.</p>
      */
+    inline bool CreatedTimeHasBeenSet() const { return m_createdTimeHasBeenSet; }
+
+    /**
+     * <p>The time when the fleet was created.</p>
+     */
     inline void SetCreatedTime(const Aws::Utils::DateTime& value) { m_createdTimeHasBeenSet = true; m_createdTime = value; }
 
     /**
@@ -119,6 +129,11 @@ namespace Model
     /**
      * <p>The time when the fleet was last updated.</p>
      */
+    inline bool LastUpdatedTimeHasBeenSet() const { return m_lastUpdatedTimeHasBeenSet; }
+
+    /**
+     * <p>The time when the fleet was last updated.</p>
+     */
     inline void SetLastUpdatedTime(const Aws::Utils::DateTime& value) { m_lastUpdatedTimeHasBeenSet = true; m_lastUpdatedTime = value; }
 
     /**
@@ -141,6 +156,11 @@ namespace Model
      * <p>The name of the fleet.</p>
      */
     inline const Aws::String& GetFleetName() const{ return m_fleetName; }
+
+    /**
+     * <p>The name of the fleet.</p>
+     */
+    inline bool FleetNameHasBeenSet() const { return m_fleetNameHasBeenSet; }
 
     /**
      * <p>The name of the fleet.</p>
@@ -181,6 +201,11 @@ namespace Model
     /**
      * <p>The name to display.</p>
      */
+    inline bool DisplayNameHasBeenSet() const { return m_displayNameHasBeenSet; }
+
+    /**
+     * <p>The name to display.</p>
+     */
     inline void SetDisplayName(const Aws::String& value) { m_displayNameHasBeenSet = true; m_displayName = value; }
 
     /**
@@ -217,6 +242,11 @@ namespace Model
     /**
      * <p>The identifier used by users to sign into the Amazon WorkLink app.</p>
      */
+    inline bool CompanyCodeHasBeenSet() const { return m_companyCodeHasBeenSet; }
+
+    /**
+     * <p>The identifier used by users to sign into the Amazon WorkLink app.</p>
+     */
     inline void SetCompanyCode(const Aws::String& value) { m_companyCodeHasBeenSet = true; m_companyCode = value; }
 
     /**
@@ -249,6 +279,11 @@ namespace Model
      * <p>The status of the fleet.</p>
      */
     inline const FleetStatus& GetFleetStatus() const{ return m_fleetStatus; }
+
+    /**
+     * <p>The status of the fleet.</p>
+     */
+    inline bool FleetStatusHasBeenSet() const { return m_fleetStatusHasBeenSet; }
 
     /**
      * <p>The status of the fleet.</p>

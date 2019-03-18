@@ -64,6 +64,11 @@ namespace Model
     /**
      * <p>The ID of the attachment.</p>
      */
+    inline bool TransitGatewayAttachmentIdHasBeenSet() const { return m_transitGatewayAttachmentIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the attachment.</p>
+     */
     inline void SetTransitGatewayAttachmentId(const Aws::String& value) { m_transitGatewayAttachmentIdHasBeenSet = true; m_transitGatewayAttachmentId = value; }
 
     /**
@@ -96,6 +101,11 @@ namespace Model
      * <p>The ID of the transit gateway.</p>
      */
     inline const Aws::String& GetTransitGatewayId() const{ return m_transitGatewayId; }
+
+    /**
+     * <p>The ID of the transit gateway.</p>
+     */
+    inline bool TransitGatewayIdHasBeenSet() const { return m_transitGatewayIdHasBeenSet; }
 
     /**
      * <p>The ID of the transit gateway.</p>
@@ -136,6 +146,11 @@ namespace Model
     /**
      * <p>The ID of the AWS account that owns the transit gateway.</p>
      */
+    inline bool TransitGatewayOwnerIdHasBeenSet() const { return m_transitGatewayOwnerIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the AWS account that owns the transit gateway.</p>
+     */
     inline void SetTransitGatewayOwnerId(const Aws::String& value) { m_transitGatewayOwnerIdHasBeenSet = true; m_transitGatewayOwnerId = value; }
 
     /**
@@ -168,6 +183,11 @@ namespace Model
      * <p>The ID of the AWS account that owns the resource.</p>
      */
     inline const Aws::String& GetResourceOwnerId() const{ return m_resourceOwnerId; }
+
+    /**
+     * <p>The ID of the AWS account that owns the resource.</p>
+     */
+    inline bool ResourceOwnerIdHasBeenSet() const { return m_resourceOwnerIdHasBeenSet; }
 
     /**
      * <p>The ID of the AWS account that owns the resource.</p>
@@ -208,6 +228,11 @@ namespace Model
     /**
      * <p>The resource type.</p>
      */
+    inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
+
+    /**
+     * <p>The resource type.</p>
+     */
     inline void SetResourceType(const TransitGatewayAttachmentResourceType& value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
 
     /**
@@ -230,6 +255,11 @@ namespace Model
      * <p>The ID of the resource.</p>
      */
     inline const Aws::String& GetResourceId() const{ return m_resourceId; }
+
+    /**
+     * <p>The ID of the resource.</p>
+     */
+    inline bool ResourceIdHasBeenSet() const { return m_resourceIdHasBeenSet; }
 
     /**
      * <p>The ID of the resource.</p>
@@ -270,6 +300,11 @@ namespace Model
     /**
      * <p>The attachment state.</p>
      */
+    inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
+
+    /**
+     * <p>The attachment state.</p>
+     */
     inline void SetState(const TransitGatewayAttachmentState& value) { m_stateHasBeenSet = true; m_state = value; }
 
     /**
@@ -292,6 +327,11 @@ namespace Model
      * <p>The association.</p>
      */
     inline const TransitGatewayAttachmentAssociation& GetAssociation() const{ return m_association; }
+
+    /**
+     * <p>The association.</p>
+     */
+    inline bool AssociationHasBeenSet() const { return m_associationHasBeenSet; }
 
     /**
      * <p>The association.</p>
@@ -322,6 +362,11 @@ namespace Model
     /**
      * <p>The creation time.</p>
      */
+    inline bool CreationTimeHasBeenSet() const { return m_creationTimeHasBeenSet; }
+
+    /**
+     * <p>The creation time.</p>
+     */
     inline void SetCreationTime(const Aws::Utils::DateTime& value) { m_creationTimeHasBeenSet = true; m_creationTime = value; }
 
     /**
@@ -344,6 +389,11 @@ namespace Model
      * <p>The tags for the attachment.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>The tags for the attachment.</p>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
      * <p>The tags for the attachment.</p>

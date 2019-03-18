@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p>The description of the thing type.</p>
      */
+    inline bool ThingTypeDescriptionHasBeenSet() const { return m_thingTypeDescriptionHasBeenSet; }
+
+    /**
+     * <p>The description of the thing type.</p>
+     */
     inline void SetThingTypeDescription(const Aws::String& value) { m_thingTypeDescriptionHasBeenSet = true; m_thingTypeDescription = value; }
 
     /**
@@ -90,6 +95,11 @@ namespace Model
      * <p>A list of searchable thing attribute names.</p>
      */
     inline const Aws::Vector<Aws::String>& GetSearchableAttributes() const{ return m_searchableAttributes; }
+
+    /**
+     * <p>A list of searchable thing attribute names.</p>
+     */
+    inline bool SearchableAttributesHasBeenSet() const { return m_searchableAttributesHasBeenSet; }
 
     /**
      * <p>A list of searchable thing attribute names.</p>

@@ -55,6 +55,11 @@ namespace Model
     /**
      * The key used to extract the password from EC2 Parameter store.
      */
+    inline bool PasswordParamHasBeenSet() const { return m_passwordParamHasBeenSet; }
+
+    /**
+     * The key used to extract the password from EC2 Parameter store.
+     */
     inline void SetPasswordParam(const Aws::String& value) { m_passwordParamHasBeenSet = true; m_passwordParam = value; }
 
     /**
@@ -89,6 +94,13 @@ pulled from.
 
      */
     inline const Aws::String& GetUrl() const{ return m_url; }
+
+    /**
+     * This represents the customer's source URL where stream is
+pulled from.
+
+     */
+    inline bool UrlHasBeenSet() const { return m_urlHasBeenSet; }
 
     /**
      * This represents the customer's source URL where stream is
@@ -137,6 +149,11 @@ pulled from.
      * The username for the input source.
      */
     inline const Aws::String& GetUsername() const{ return m_username; }
+
+    /**
+     * The username for the input source.
+     */
+    inline bool UsernameHasBeenSet() const { return m_usernameHasBeenSet; }
 
     /**
      * The username for the input source.

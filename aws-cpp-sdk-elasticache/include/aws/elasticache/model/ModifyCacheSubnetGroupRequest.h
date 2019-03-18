@@ -63,6 +63,13 @@ namespace Model
      * string.</p> <p>Constraints: Must contain no more than 255 alphanumeric
      * characters or hyphens.</p> <p>Example: <code>mysubnetgroup</code> </p>
      */
+    inline bool CacheSubnetGroupNameHasBeenSet() const { return m_cacheSubnetGroupNameHasBeenSet; }
+
+    /**
+     * <p>The name for the cache subnet group. This value is stored as a lowercase
+     * string.</p> <p>Constraints: Must contain no more than 255 alphanumeric
+     * characters or hyphens.</p> <p>Example: <code>mysubnetgroup</code> </p>
+     */
     inline void SetCacheSubnetGroupName(const Aws::String& value) { m_cacheSubnetGroupNameHasBeenSet = true; m_cacheSubnetGroupName = value; }
 
     /**
@@ -109,6 +116,11 @@ namespace Model
     /**
      * <p>A description of the cache subnet group.</p>
      */
+    inline bool CacheSubnetGroupDescriptionHasBeenSet() const { return m_cacheSubnetGroupDescriptionHasBeenSet; }
+
+    /**
+     * <p>A description of the cache subnet group.</p>
+     */
     inline void SetCacheSubnetGroupDescription(const Aws::String& value) { m_cacheSubnetGroupDescriptionHasBeenSet = true; m_cacheSubnetGroupDescription = value; }
 
     /**
@@ -141,6 +153,11 @@ namespace Model
      * <p>The EC2 subnet IDs for the cache subnet group.</p>
      */
     inline const Aws::Vector<Aws::String>& GetSubnetIds() const{ return m_subnetIds; }
+
+    /**
+     * <p>The EC2 subnet IDs for the cache subnet group.</p>
+     */
+    inline bool SubnetIdsHasBeenSet() const { return m_subnetIdsHasBeenSet; }
 
     /**
      * <p>The EC2 subnet IDs for the cache subnet group.</p>

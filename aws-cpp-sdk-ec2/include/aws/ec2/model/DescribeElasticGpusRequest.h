@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>One or more Elastic Graphics accelerator IDs.</p>
      */
+    inline bool ElasticGpuIdsHasBeenSet() const { return m_elasticGpuIdsHasBeenSet; }
+
+    /**
+     * <p>One or more Elastic Graphics accelerator IDs.</p>
+     */
     inline void SetElasticGpuIds(const Aws::Vector<Aws::String>& value) { m_elasticGpuIdsHasBeenSet = true; m_elasticGpuIds = value; }
 
     /**
@@ -103,6 +108,14 @@ namespace Model
      * required permissions, the error response is <code>DryRunOperation</code>.
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
+    inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
+
+    /**
+     * <p>Checks whether you have the required permissions for the action, without
+     * actually making the request, and provides an error response. If you have the
+     * required permissions, the error response is <code>DryRunOperation</code>.
+     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+     */
     inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
 
     /**
@@ -126,6 +139,19 @@ namespace Model
      * Elastic Graphics accelerator is associated.</p> </li> </ul>
      */
     inline const Aws::Vector<Filter>& GetFilters() const{ return m_filters; }
+
+    /**
+     * <p>One or more filters.</p> <ul> <li> <p> <code>availability-zone</code> - The
+     * Availability Zone in which the Elastic Graphics accelerator resides.</p> </li>
+     * <li> <p> <code>elastic-gpu-health</code> - The status of the Elastic Graphics
+     * accelerator (<code>OK</code> | <code>IMPAIRED</code>).</p> </li> <li> <p>
+     * <code>elastic-gpu-state</code> - The state of the Elastic Graphics accelerator
+     * (<code>ATTACHED</code>).</p> </li> <li> <p> <code>elastic-gpu-type</code> - The
+     * type of Elastic Graphics accelerator; for example, <code>eg1.medium</code>.</p>
+     * </li> <li> <p> <code>instance-id</code> - The ID of the instance to which the
+     * Elastic Graphics accelerator is associated.</p> </li> </ul>
+     */
+    inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
 
     /**
      * <p>One or more filters.</p> <ul> <li> <p> <code>availability-zone</code> - The
@@ -218,6 +244,13 @@ namespace Model
      * remaining results, make another call with the returned <code>NextToken</code>
      * value. This value can be between 5 and 1000.</p>
      */
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
+
+    /**
+     * <p>The maximum number of results to return in a single call. To retrieve the
+     * remaining results, make another call with the returned <code>NextToken</code>
+     * value. This value can be between 5 and 1000.</p>
+     */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
@@ -232,6 +265,11 @@ namespace Model
      * <p>The token to request the next page of results.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
+    /**
+     * <p>The token to request the next page of results.</p>
+     */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
      * <p>The token to request the next page of results.</p>

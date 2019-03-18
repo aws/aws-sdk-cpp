@@ -55,6 +55,12 @@ namespace Model
      * <p>Amazon WorkDocs authentication token. Do not set this field when using
      * administrative API actions, as in accessing the API using AWS credentials.</p>
      */
+    inline bool AuthenticationTokenHasBeenSet() const { return m_authenticationTokenHasBeenSet; }
+
+    /**
+     * <p>Amazon WorkDocs authentication token. Do not set this field when using
+     * administrative API actions, as in accessing the API using AWS credentials.</p>
+     */
     inline void SetAuthenticationToken(const Aws::String& value) { m_authenticationTokenHasBeenSet = true; m_authenticationToken = value; }
 
     /**
@@ -96,6 +102,11 @@ namespace Model
     /**
      * <p>The ID of the document.</p>
      */
+    inline bool DocumentIdHasBeenSet() const { return m_documentIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the document.</p>
+     */
     inline void SetDocumentId(const Aws::String& value) { m_documentIdHasBeenSet = true; m_documentId = value; }
 
     /**
@@ -128,6 +139,11 @@ namespace Model
      * <p>The name of the document.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
+
+    /**
+     * <p>The name of the document.</p>
+     */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
      * <p>The name of the document.</p>
@@ -168,6 +184,11 @@ namespace Model
     /**
      * <p>The ID of the parent folder.</p>
      */
+    inline bool ParentFolderIdHasBeenSet() const { return m_parentFolderIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the parent folder.</p>
+     */
     inline void SetParentFolderId(const Aws::String& value) { m_parentFolderIdHasBeenSet = true; m_parentFolderId = value; }
 
     /**
@@ -201,6 +222,12 @@ namespace Model
      * supported.</p>
      */
     inline const ResourceStateType& GetResourceState() const{ return m_resourceState; }
+
+    /**
+     * <p>The resource state of the document. Only ACTIVE and RECYCLED are
+     * supported.</p>
+     */
+    inline bool ResourceStateHasBeenSet() const { return m_resourceStateHasBeenSet; }
 
     /**
      * <p>The resource state of the document. Only ACTIVE and RECYCLED are

@@ -52,6 +52,11 @@ namespace Model
     /**
      * <p>The name of the application.</p>
      */
+    inline bool ApplicationNameHasBeenSet() const { return m_applicationNameHasBeenSet; }
+
+    /**
+     * <p>The name of the application.</p>
+     */
     inline void SetApplicationName(const Aws::String& value) { m_applicationNameHasBeenSet = true; m_applicationName = value; }
 
     /**
@@ -94,6 +99,14 @@ namespace Model
      * current version, the <code>ConcurrentModificationException</code> is returned.
      * </p>
      */
+    inline bool CurrentApplicationVersionIdHasBeenSet() const { return m_currentApplicationVersionIdHasBeenSet; }
+
+    /**
+     * <p>The application version. You can use the <a>DescribeApplication</a> operation
+     * to get the current application version. If the version specified is not the
+     * current version, the <code>ConcurrentModificationException</code> is returned.
+     * </p>
+     */
     inline void SetCurrentApplicationVersionId(long long value) { m_currentApplicationVersionIdHasBeenSet = true; m_currentApplicationVersionId = value; }
 
     /**
@@ -111,6 +124,13 @@ namespace Model
      * the <a>DescribeApplication</a> operation.</p>
      */
     inline const Aws::String& GetInputId() const{ return m_inputId; }
+
+    /**
+     * <p>The ID of the input configuration from which to delete the input processing
+     * configuration. You can get a list of the input IDs for an application by using
+     * the <a>DescribeApplication</a> operation.</p>
+     */
+    inline bool InputIdHasBeenSet() const { return m_inputIdHasBeenSet; }
 
     /**
      * <p>The ID of the input configuration from which to delete the input processing

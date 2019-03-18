@@ -56,6 +56,11 @@ namespace Model
     /**
      * Address that endpoint message was delivered to.
      */
+    inline bool AddressHasBeenSet() const { return m_addressHasBeenSet; }
+
+    /**
+     * Address that endpoint message was delivered to.
+     */
     inline void SetAddress(const Aws::String& value) { m_addressHasBeenSet = true; m_address = value; }
 
     /**
@@ -125,6 +130,48 @@ SERVICE_FAILURE - A service-level failure prevented Amazon Pinpoint
 UNKNOWN - An unknown error occurred.
      */
     inline const DeliveryStatus& GetDeliveryStatus() const{ return m_deliveryStatus; }
+
+    /**
+     * The delivery status of the message. Possible values:
+
+SUCCESS - The message was
+     * successfully delivered to the endpoint.
+
+TRANSIENT_FAILURE - A temporary error
+     * occurred. Amazon Pinpoint will attempt to deliver the message again
+     * later.
+
+FAILURE_PERMANENT - An error occurred when delivering the message to the
+     * endpoint. Amazon Pinpoint won't attempt to send the message again.
+
+TIMEOUT -
+     * The message couldn't be sent within the timeout period.
+
+QUIET_TIME - The local
+     * time for the endpoint was within the QuietTime for the campaign or
+     * app.
+
+DAILY_CAP - The endpoint has received the maximum number of messages it
+     * can receive within a 24-hour period.
+
+HOLDOUT - The endpoint was in a hold out
+     * treatment for the campaign.
+
+THROTTLED - Amazon Pinpoint throttled sending to
+     * this endpoint.
+
+EXPIRED - The endpoint address is expired.
+
+CAMPAIGN_CAP - The
+     * endpoint received the maximum number of messages allowed by the
+     * campaign.
+
+SERVICE_FAILURE - A service-level failure prevented Amazon Pinpoint
+     * from delivering the message.
+
+UNKNOWN - An unknown error occurred.
+     */
+    inline bool DeliveryStatusHasBeenSet() const { return m_deliveryStatusHasBeenSet; }
 
     /**
      * The delivery status of the message. Possible values:
@@ -303,6 +350,11 @@ UNKNOWN - An unknown error occurred.
     /**
      * Unique message identifier associated with the message that was sent.
      */
+    inline bool MessageIdHasBeenSet() const { return m_messageIdHasBeenSet; }
+
+    /**
+     * Unique message identifier associated with the message that was sent.
+     */
     inline void SetMessageId(const Aws::String& value) { m_messageIdHasBeenSet = true; m_messageId = value; }
 
     /**
@@ -339,6 +391,11 @@ UNKNOWN - An unknown error occurred.
     /**
      * Downstream service status code.
      */
+    inline bool StatusCodeHasBeenSet() const { return m_statusCodeHasBeenSet; }
+
+    /**
+     * Downstream service status code.
+     */
     inline void SetStatusCode(int value) { m_statusCodeHasBeenSet = true; m_statusCode = value; }
 
     /**
@@ -351,6 +408,11 @@ UNKNOWN - An unknown error occurred.
      * Status message for message delivery.
      */
     inline const Aws::String& GetStatusMessage() const{ return m_statusMessage; }
+
+    /**
+     * Status message for message delivery.
+     */
+    inline bool StatusMessageHasBeenSet() const { return m_statusMessageHasBeenSet; }
 
     /**
      * Status message for message delivery.
@@ -387,6 +449,11 @@ UNKNOWN - An unknown error occurred.
      * If token was updated as part of delivery. (This is GCM Specific)
      */
     inline const Aws::String& GetUpdatedToken() const{ return m_updatedToken; }
+
+    /**
+     * If token was updated as part of delivery. (This is GCM Specific)
+     */
+    inline bool UpdatedTokenHasBeenSet() const { return m_updatedTokenHasBeenSet; }
 
     /**
      * If token was updated as part of delivery. (This is GCM Specific)

@@ -69,6 +69,16 @@ namespace Model
      * created by your AWS account.</p> </li> </ul> <p>Example:
      * <code>examplesubnetgroup</code> </p>
      */
+    inline bool ClusterSubnetGroupNameHasBeenSet() const { return m_clusterSubnetGroupNameHasBeenSet; }
+
+    /**
+     * <p>The name for the subnet group. Amazon Redshift stores the value as a
+     * lowercase string.</p> <p>Constraints:</p> <ul> <li> <p>Must contain no more than
+     * 255 alphanumeric characters or hyphens.</p> </li> <li> <p>Must not be
+     * "Default".</p> </li> <li> <p>Must be unique for all subnet groups that are
+     * created by your AWS account.</p> </li> </ul> <p>Example:
+     * <code>examplesubnetgroup</code> </p>
+     */
     inline void SetClusterSubnetGroupName(const Aws::String& value) { m_clusterSubnetGroupNameHasBeenSet = true; m_clusterSubnetGroupName = value; }
 
     /**
@@ -130,6 +140,11 @@ namespace Model
     /**
      * <p>A description for the subnet group.</p>
      */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
+
+    /**
+     * <p>A description for the subnet group.</p>
+     */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
@@ -163,6 +178,12 @@ namespace Model
      * single request.</p>
      */
     inline const Aws::Vector<Aws::String>& GetSubnetIds() const{ return m_subnetIds; }
+
+    /**
+     * <p>An array of VPC subnet IDs. A maximum of 20 subnets can be modified in a
+     * single request.</p>
+     */
+    inline bool SubnetIdsHasBeenSet() const { return m_subnetIdsHasBeenSet; }
 
     /**
      * <p>An array of VPC subnet IDs. A maximum of 20 subnets can be modified in a
@@ -211,6 +232,11 @@ namespace Model
      * <p>A list of tag instances.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>A list of tag instances.</p>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
      * <p>A list of tag instances.</p>

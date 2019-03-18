@@ -60,6 +60,11 @@ namespace Model
     /**
      * <p>The IPv4 network range to allow or deny, in CIDR notation.</p>
      */
+    inline bool CidrBlockHasBeenSet() const { return m_cidrBlockHasBeenSet; }
+
+    /**
+     * <p>The IPv4 network range to allow or deny, in CIDR notation.</p>
+     */
     inline void SetCidrBlock(const Aws::String& value) { m_cidrBlockHasBeenSet = true; m_cidrBlock = value; }
 
     /**
@@ -98,6 +103,12 @@ namespace Model
      * <p>Indicates whether the rule is an egress rule (applied to traffic leaving the
      * subnet).</p>
      */
+    inline bool EgressHasBeenSet() const { return m_egressHasBeenSet; }
+
+    /**
+     * <p>Indicates whether the rule is an egress rule (applied to traffic leaving the
+     * subnet).</p>
+     */
     inline void SetEgress(bool value) { m_egressHasBeenSet = true; m_egress = value; }
 
     /**
@@ -111,6 +122,11 @@ namespace Model
      * <p>ICMP protocol: The ICMP type and code.</p>
      */
     inline const IcmpTypeCode& GetIcmpTypeCode() const{ return m_icmpTypeCode; }
+
+    /**
+     * <p>ICMP protocol: The ICMP type and code.</p>
+     */
+    inline bool IcmpTypeCodeHasBeenSet() const { return m_icmpTypeCodeHasBeenSet; }
 
     /**
      * <p>ICMP protocol: The ICMP type and code.</p>
@@ -137,6 +153,11 @@ namespace Model
      * <p>The IPv6 network range to allow or deny, in CIDR notation.</p>
      */
     inline const Aws::String& GetIpv6CidrBlock() const{ return m_ipv6CidrBlock; }
+
+    /**
+     * <p>The IPv6 network range to allow or deny, in CIDR notation.</p>
+     */
+    inline bool Ipv6CidrBlockHasBeenSet() const { return m_ipv6CidrBlockHasBeenSet; }
 
     /**
      * <p>The IPv6 network range to allow or deny, in CIDR notation.</p>
@@ -177,6 +198,11 @@ namespace Model
     /**
      * <p>TCP or UDP protocols: The range of ports the rule applies to.</p>
      */
+    inline bool PortRangeHasBeenSet() const { return m_portRangeHasBeenSet; }
+
+    /**
+     * <p>TCP or UDP protocols: The range of ports the rule applies to.</p>
+     */
     inline void SetPortRange(const PortRange& value) { m_portRangeHasBeenSet = true; m_portRange = value; }
 
     /**
@@ -199,6 +225,11 @@ namespace Model
      * <p>The protocol number. A value of "-1" means all protocols.</p>
      */
     inline const Aws::String& GetProtocol() const{ return m_protocol; }
+
+    /**
+     * <p>The protocol number. A value of "-1" means all protocols.</p>
+     */
+    inline bool ProtocolHasBeenSet() const { return m_protocolHasBeenSet; }
 
     /**
      * <p>The protocol number. A value of "-1" means all protocols.</p>
@@ -239,6 +270,11 @@ namespace Model
     /**
      * <p>Indicates whether to allow or deny the traffic that matches the rule.</p>
      */
+    inline bool RuleActionHasBeenSet() const { return m_ruleActionHasBeenSet; }
+
+    /**
+     * <p>Indicates whether to allow or deny the traffic that matches the rule.</p>
+     */
     inline void SetRuleAction(const RuleAction& value) { m_ruleActionHasBeenSet = true; m_ruleAction = value; }
 
     /**
@@ -262,6 +298,12 @@ namespace Model
      * by rule number.</p>
      */
     inline int GetRuleNumber() const{ return m_ruleNumber; }
+
+    /**
+     * <p>The rule number for the entry. ACL entries are processed in ascending order
+     * by rule number.</p>
+     */
+    inline bool RuleNumberHasBeenSet() const { return m_ruleNumberHasBeenSet; }
 
     /**
      * <p>The rule number for the entry. ACL entries are processed in ascending order

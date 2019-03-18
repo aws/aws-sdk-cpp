@@ -63,6 +63,12 @@ namespace Model
      * The unique identifier for the recipient. For example, an address could be a
      * device token, email address, or mobile phone number.
      */
+    inline bool AddressHasBeenSet() const { return m_addressHasBeenSet; }
+
+    /**
+     * The unique identifier for the recipient. For example, an address could be a
+     * device token, email address, or mobile phone number.
+     */
     inline void SetAddress(const Aws::String& value) { m_addressHasBeenSet = true; m_address = value; }
 
     /**
@@ -101,6 +107,12 @@ namespace Model
      * attributes as selection criteria when you create a segment.
      */
     inline const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& GetAttributes() const{ return m_attributes; }
+
+    /**
+     * Custom attributes that your app reports to Amazon Pinpoint. You can use these
+     * attributes as selection criteria when you create a segment.
+     */
+    inline bool AttributesHasBeenSet() const { return m_attributesHasBeenSet; }
 
     /**
      * Custom attributes that your app reports to Amazon Pinpoint. You can use these
@@ -175,6 +187,13 @@ Valid values: APNS, GCM
 
 Valid values: APNS, GCM
      */
+    inline bool ChannelTypeHasBeenSet() const { return m_channelTypeHasBeenSet; }
+
+    /**
+     * The channel type.
+
+Valid values: APNS, GCM
+     */
     inline void SetChannelType(const ChannelType& value) { m_channelTypeHasBeenSet = true; m_channelType = value; }
 
     /**
@@ -207,6 +226,11 @@ Valid values: APNS, GCM
     /**
      * The endpoint demographic attributes.
      */
+    inline bool DemographicHasBeenSet() const { return m_demographicHasBeenSet; }
+
+    /**
+     * The endpoint demographic attributes.
+     */
     inline void SetDemographic(const EndpointDemographic& value) { m_demographicHasBeenSet = true; m_demographic = value; }
 
     /**
@@ -229,6 +253,11 @@ Valid values: APNS, GCM
      * The date and time when the endpoint was last updated, in  ISO 8601 format.
      */
     inline const Aws::String& GetEffectiveDate() const{ return m_effectiveDate; }
+
+    /**
+     * The date and time when the endpoint was last updated, in  ISO 8601 format.
+     */
+    inline bool EffectiveDateHasBeenSet() const { return m_effectiveDateHasBeenSet; }
 
     /**
      * The date and time when the endpoint was last updated, in  ISO 8601 format.
@@ -266,6 +295,12 @@ Valid values: APNS, GCM
      * endpoint is updated successfully, the value is ACTIVE.
      */
     inline const Aws::String& GetEndpointStatus() const{ return m_endpointStatus; }
+
+    /**
+     * The status of the endpoint. If the update fails, the value is INACTIVE. If the
+     * endpoint is updated successfully, the value is ACTIVE.
+     */
+    inline bool EndpointStatusHasBeenSet() const { return m_endpointStatusHasBeenSet; }
 
     /**
      * The status of the endpoint. If the update fails, the value is INACTIVE. If the
@@ -312,6 +347,11 @@ Valid values: APNS, GCM
     /**
      * The endpoint location attributes.
      */
+    inline bool LocationHasBeenSet() const { return m_locationHasBeenSet; }
+
+    /**
+     * The endpoint location attributes.
+     */
     inline void SetLocation(const EndpointLocation& value) { m_locationHasBeenSet = true; m_location = value; }
 
     /**
@@ -334,6 +374,11 @@ Valid values: APNS, GCM
      * Custom metrics that your app reports to Amazon Pinpoint.
      */
     inline const Aws::Map<Aws::String, double>& GetMetrics() const{ return m_metrics; }
+
+    /**
+     * Custom metrics that your app reports to Amazon Pinpoint.
+     */
+    inline bool MetricsHasBeenSet() const { return m_metricsHasBeenSet; }
 
     /**
      * Custom metrics that your app reports to Amazon Pinpoint.
@@ -381,6 +426,17 @@ NONE - Users has
      * not opted out and receives all messages.
      */
     inline const Aws::String& GetOptOut() const{ return m_optOut; }
+
+    /**
+     * Indicates whether a user has opted out of receiving messages with one of the
+     * following values:
+
+ALL - User has opted out of all messages.
+
+NONE - Users has
+     * not opted out and receives all messages.
+     */
+    inline bool OptOutHasBeenSet() const { return m_optOutHasBeenSet; }
 
     /**
      * Indicates whether a user has opted out of receiving messages with one of the
@@ -457,6 +513,11 @@ NONE - Users has
     /**
      * A unique identifier that is generated each time the endpoint is updated.
      */
+    inline bool RequestIdHasBeenSet() const { return m_requestIdHasBeenSet; }
+
+    /**
+     * A unique identifier that is generated each time the endpoint is updated.
+     */
     inline void SetRequestId(const Aws::String& value) { m_requestIdHasBeenSet = true; m_requestId = value; }
 
     /**
@@ -489,6 +550,11 @@ NONE - Users has
      * Custom user-specific attributes that your app reports to Amazon Pinpoint.
      */
     inline const EndpointUser& GetUser() const{ return m_user; }
+
+    /**
+     * Custom user-specific attributes that your app reports to Amazon Pinpoint.
+     */
+    inline bool UserHasBeenSet() const { return m_userHasBeenSet; }
 
     /**
      * Custom user-specific attributes that your app reports to Amazon Pinpoint.

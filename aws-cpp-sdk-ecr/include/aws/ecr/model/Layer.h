@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The <code>sha256</code> digest of the image layer.</p>
      */
+    inline bool LayerDigestHasBeenSet() const { return m_layerDigestHasBeenSet; }
+
+    /**
+     * <p>The <code>sha256</code> digest of the image layer.</p>
+     */
     inline void SetLayerDigest(const Aws::String& value) { m_layerDigestHasBeenSet = true; m_layerDigest = value; }
 
     /**
@@ -92,6 +97,11 @@ namespace Model
     /**
      * <p>The availability status of the image layer.</p>
      */
+    inline bool LayerAvailabilityHasBeenSet() const { return m_layerAvailabilityHasBeenSet; }
+
+    /**
+     * <p>The availability status of the image layer.</p>
+     */
     inline void SetLayerAvailability(const LayerAvailability& value) { m_layerAvailabilityHasBeenSet = true; m_layerAvailability = value; }
 
     /**
@@ -118,6 +128,11 @@ namespace Model
     /**
      * <p>The size, in bytes, of the image layer.</p>
      */
+    inline bool LayerSizeHasBeenSet() const { return m_layerSizeHasBeenSet; }
+
+    /**
+     * <p>The size, in bytes, of the image layer.</p>
+     */
     inline void SetLayerSize(long long value) { m_layerSizeHasBeenSet = true; m_layerSize = value; }
 
     /**
@@ -132,6 +147,13 @@ namespace Model
      * <code>application/vnd.oci.image.layer.v1.tar+gzip</code>.</p>
      */
     inline const Aws::String& GetMediaType() const{ return m_mediaType; }
+
+    /**
+     * <p>The media type of the layer, such as
+     * <code>application/vnd.docker.image.rootfs.diff.tar.gzip</code> or
+     * <code>application/vnd.oci.image.layer.v1.tar+gzip</code>.</p>
+     */
+    inline bool MediaTypeHasBeenSet() const { return m_mediaTypeHasBeenSet; }
 
     /**
      * <p>The media type of the layer, such as

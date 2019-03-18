@@ -54,6 +54,9 @@ namespace Model
     inline const Mp4CslgAtom& GetCslgAtom() const{ return m_cslgAtom; }
 
     
+    inline bool CslgAtomHasBeenSet() const { return m_cslgAtomHasBeenSet; }
+
+    
     inline void SetCslgAtom(const Mp4CslgAtom& value) { m_cslgAtomHasBeenSet = true; m_cslgAtom = value; }
 
     
@@ -70,6 +73,9 @@ namespace Model
     inline const Mp4FreeSpaceBox& GetFreeSpaceBox() const{ return m_freeSpaceBox; }
 
     
+    inline bool FreeSpaceBoxHasBeenSet() const { return m_freeSpaceBoxHasBeenSet; }
+
+    
     inline void SetFreeSpaceBox(const Mp4FreeSpaceBox& value) { m_freeSpaceBoxHasBeenSet = true; m_freeSpaceBox = value; }
 
     
@@ -84,6 +90,9 @@ namespace Model
 
     
     inline const Mp4MoovPlacement& GetMoovPlacement() const{ return m_moovPlacement; }
+
+    
+    inline bool MoovPlacementHasBeenSet() const { return m_moovPlacementHasBeenSet; }
 
     
     inline void SetMoovPlacement(const Mp4MoovPlacement& value) { m_moovPlacementHasBeenSet = true; m_moovPlacement = value; }
@@ -103,6 +112,12 @@ namespace Model
      * specify.
      */
     inline const Aws::String& GetMp4MajorBrand() const{ return m_mp4MajorBrand; }
+
+    /**
+     * Overrides the "Major Brand" field in the output file. Usually not necessary to
+     * specify.
+     */
+    inline bool Mp4MajorBrandHasBeenSet() const { return m_mp4MajorBrandHasBeenSet; }
 
     /**
      * Overrides the "Major Brand" field in the output file. Usually not necessary to

@@ -59,6 +59,12 @@ namespace Model
      * <p>The identifier for the DB cluster snapshot to describe the attributes
      * for.</p>
      */
+    inline bool DBClusterSnapshotIdentifierHasBeenSet() const { return m_dBClusterSnapshotIdentifierHasBeenSet; }
+
+    /**
+     * <p>The identifier for the DB cluster snapshot to describe the attributes
+     * for.</p>
+     */
     inline void SetDBClusterSnapshotIdentifier(const Aws::String& value) { m_dBClusterSnapshotIdentifierHasBeenSet = true; m_dBClusterSnapshotIdentifier = value; }
 
     /**

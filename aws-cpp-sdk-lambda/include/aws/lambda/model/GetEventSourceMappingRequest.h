@@ -50,6 +50,11 @@ namespace Model
     /**
      * <p>The identifier of the event source mapping.</p>
      */
+    inline bool UUIDHasBeenSet() const { return m_uUIDHasBeenSet; }
+
+    /**
+     * <p>The identifier of the event source mapping.</p>
+     */
     inline void SetUUID(const Aws::String& value) { m_uUIDHasBeenSet = true; m_uUID = value; }
 
     /**

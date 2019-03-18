@@ -59,6 +59,11 @@ namespace Model
     /**
      * <p>The name for this filter.</p>
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>The name for this filter.</p>
+     */
     inline void SetName(const FilterName& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
@@ -82,6 +87,12 @@ namespace Model
      * filters.</p>
      */
     inline const Aws::Vector<Aws::String>& GetValues() const{ return m_values; }
+
+    /**
+     * <p>The values of the filter. These are all the values for any of the applied
+     * filters.</p>
+     */
+    inline bool ValuesHasBeenSet() const { return m_valuesHasBeenSet; }
 
     /**
      * <p>The values of the filter. These are all the values for any of the applied

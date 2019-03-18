@@ -58,6 +58,11 @@ namespace Model
     /**
      * The number of audio frames to insert for each PES packet.
      */
+    inline bool AudioFramesPerPesHasBeenSet() const { return m_audioFramesPerPesHasBeenSet; }
+
+    /**
+     * The number of audio frames to insert for each PES packet.
+     */
     inline void SetAudioFramesPerPes(int value) { m_audioFramesPerPesHasBeenSet = true; m_audioFramesPerPes = value; }
 
     /**
@@ -72,6 +77,13 @@ namespace Model
      * comma separation. Can be entered as decimal or hexadecimal values.
      */
     inline const Aws::String& GetAudioPids() const{ return m_audioPids; }
+
+    /**
+     * Packet Identifier (PID) of the elementary audio stream(s) in the transport
+     * stream. Multiple values are accepted, and can be entered in ranges and/or by
+     * comma separation. Can be entered as decimal or hexadecimal values.
+     */
+    inline bool AudioPidsHasBeenSet() const { return m_audioPidsHasBeenSet; }
 
     /**
      * Packet Identifier (PID) of the elementary audio stream(s) in the transport
@@ -124,6 +136,11 @@ namespace Model
     /**
      * This parameter is unused and deprecated.
      */
+    inline bool EcmPidHasBeenSet() const { return m_ecmPidHasBeenSet; }
+
+    /**
+     * This parameter is unused and deprecated.
+     */
     inline void SetEcmPid(const Aws::String& value) { m_ecmPidHasBeenSet = true; m_ecmPid = value; }
 
     /**
@@ -162,6 +179,12 @@ namespace Model
      * The number of milliseconds between instances of this table in the output
      * transport stream. A value of \"0\" writes out the PMT once per segment file.
      */
+    inline bool PatIntervalHasBeenSet() const { return m_patIntervalHasBeenSet; }
+
+    /**
+     * The number of milliseconds between instances of this table in the output
+     * transport stream. A value of \"0\" writes out the PMT once per segment file.
+     */
     inline void SetPatInterval(int value) { m_patIntervalHasBeenSet = true; m_patInterval = value; }
 
     /**
@@ -177,6 +200,13 @@ namespace Model
      * only when the PCR PID is the same as the video or audio elementary stream.
      */
     inline const M3u8PcrControl& GetPcrControl() const{ return m_pcrControl; }
+
+    /**
+     * When set to pcrEveryPesPacket, a Program Clock Reference value is inserted for
+     * every Packetized Elementary Stream (PES) header. This parameter is effective
+     * only when the PCR PID is the same as the video or audio elementary stream.
+     */
+    inline bool PcrControlHasBeenSet() const { return m_pcrControlHasBeenSet; }
 
     /**
      * When set to pcrEveryPesPacket, a Program Clock Reference value is inserted for
@@ -217,6 +247,12 @@ namespace Model
      * Maximum time in milliseconds between Program Clock References (PCRs) inserted
      * into the transport stream.
      */
+    inline bool PcrPeriodHasBeenSet() const { return m_pcrPeriodHasBeenSet; }
+
+    /**
+     * Maximum time in milliseconds between Program Clock References (PCRs) inserted
+     * into the transport stream.
+     */
     inline void SetPcrPeriod(int value) { m_pcrPeriodHasBeenSet = true; m_pcrPeriod = value; }
 
     /**
@@ -232,6 +268,13 @@ namespace Model
      * Video PID. Can be entered as a decimal or hexadecimal value.
      */
     inline const Aws::String& GetPcrPid() const{ return m_pcrPid; }
+
+    /**
+     * Packet Identifier (PID) of the Program Clock Reference (PCR) in the transport
+     * stream. When no value is given, the encoder will assign the same value as the
+     * Video PID. Can be entered as a decimal or hexadecimal value.
+     */
+    inline bool PcrPidHasBeenSet() const { return m_pcrPidHasBeenSet; }
 
     /**
      * Packet Identifier (PID) of the Program Clock Reference (PCR) in the transport
@@ -286,6 +329,12 @@ namespace Model
      * The number of milliseconds between instances of this table in the output
      * transport stream. A value of \"0\" writes out the PMT once per segment file.
      */
+    inline bool PmtIntervalHasBeenSet() const { return m_pmtIntervalHasBeenSet; }
+
+    /**
+     * The number of milliseconds between instances of this table in the output
+     * transport stream. A value of \"0\" writes out the PMT once per segment file.
+     */
     inline void SetPmtInterval(int value) { m_pmtIntervalHasBeenSet = true; m_pmtInterval = value; }
 
     /**
@@ -300,6 +349,12 @@ namespace Model
      * Can be entered as a decimal or hexadecimal value.
      */
     inline const Aws::String& GetPmtPid() const{ return m_pmtPid; }
+
+    /**
+     * Packet Identifier (PID) for the Program Map Table (PMT) in the transport stream.
+     * Can be entered as a decimal or hexadecimal value.
+     */
+    inline bool PmtPidHasBeenSet() const { return m_pmtPidHasBeenSet; }
 
     /**
      * Packet Identifier (PID) for the Program Map Table (PMT) in the transport stream.
@@ -346,6 +401,11 @@ namespace Model
     /**
      * The value of the program number field in the Program Map Table.
      */
+    inline bool ProgramNumHasBeenSet() const { return m_programNumHasBeenSet; }
+
+    /**
+     * The value of the program number field in the Program Map Table.
+     */
     inline void SetProgramNum(int value) { m_programNumHasBeenSet = true; m_programNum = value; }
 
     /**
@@ -359,6 +419,12 @@ namespace Model
      * output.
      */
     inline const M3u8Scte35Behavior& GetScte35Behavior() const{ return m_scte35Behavior; }
+
+    /**
+     * If set to passthrough, passes any SCTE-35 signals from the input source to this
+     * output.
+     */
+    inline bool Scte35BehaviorHasBeenSet() const { return m_scte35BehaviorHasBeenSet; }
 
     /**
      * If set to passthrough, passes any SCTE-35 signals from the input source to this
@@ -390,6 +456,12 @@ namespace Model
      * entered as a decimal or hexadecimal value.
      */
     inline const Aws::String& GetScte35Pid() const{ return m_scte35Pid; }
+
+    /**
+     * Packet Identifier (PID) of the SCTE-35 stream in the transport stream. Can be
+     * entered as a decimal or hexadecimal value.
+     */
+    inline bool Scte35PidHasBeenSet() const { return m_scte35PidHasBeenSet; }
 
     /**
      * Packet Identifier (PID) of the SCTE-35 stream in the transport stream. Can be
@@ -436,6 +508,11 @@ namespace Model
     /**
      * When set to passthrough, timed metadata is passed through from input to output.
      */
+    inline bool TimedMetadataBehaviorHasBeenSet() const { return m_timedMetadataBehaviorHasBeenSet; }
+
+    /**
+     * When set to passthrough, timed metadata is passed through from input to output.
+     */
     inline void SetTimedMetadataBehavior(const M3u8TimedMetadataBehavior& value) { m_timedMetadataBehaviorHasBeenSet = true; m_timedMetadataBehavior = value; }
 
     /**
@@ -460,6 +537,13 @@ namespace Model
      * 0x20)..8182 (or 0x1ff6).
      */
     inline const Aws::String& GetTimedMetadataPid() const{ return m_timedMetadataPid; }
+
+    /**
+     * Packet Identifier (PID) of the timed metadata stream in the transport stream.
+     * Can be entered as a decimal or hexadecimal value.  Valid values are 32 (or
+     * 0x20)..8182 (or 0x1ff6).
+     */
+    inline bool TimedMetadataPidHasBeenSet() const { return m_timedMetadataPidHasBeenSet; }
 
     /**
      * Packet Identifier (PID) of the timed metadata stream in the transport stream.
@@ -512,6 +596,11 @@ namespace Model
     /**
      * The value of the transport stream ID field in the Program Map Table.
      */
+    inline bool TransportStreamIdHasBeenSet() const { return m_transportStreamIdHasBeenSet; }
+
+    /**
+     * The value of the transport stream ID field in the Program Map Table.
+     */
     inline void SetTransportStreamId(int value) { m_transportStreamIdHasBeenSet = true; m_transportStreamId = value; }
 
     /**
@@ -525,6 +614,12 @@ namespace Model
      * Can be entered as a decimal or hexadecimal value.
      */
     inline const Aws::String& GetVideoPid() const{ return m_videoPid; }
+
+    /**
+     * Packet Identifier (PID) of the elementary video stream in the transport stream.
+     * Can be entered as a decimal or hexadecimal value.
+     */
+    inline bool VideoPidHasBeenSet() const { return m_videoPidHasBeenSet; }
 
     /**
      * Packet Identifier (PID) of the elementary video stream in the transport stream.

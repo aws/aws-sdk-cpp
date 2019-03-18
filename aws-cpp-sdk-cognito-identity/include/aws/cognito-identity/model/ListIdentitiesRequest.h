@@ -55,6 +55,11 @@ namespace Model
     /**
      * <p>An identity pool ID in the format REGION:GUID.</p>
      */
+    inline bool IdentityPoolIdHasBeenSet() const { return m_identityPoolIdHasBeenSet; }
+
+    /**
+     * <p>An identity pool ID in the format REGION:GUID.</p>
+     */
     inline void SetIdentityPoolId(const Aws::String& value) { m_identityPoolIdHasBeenSet = true; m_identityPoolId = value; }
 
     /**
@@ -91,6 +96,11 @@ namespace Model
     /**
      * <p>The maximum number of identities to return.</p>
      */
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
+
+    /**
+     * <p>The maximum number of identities to return.</p>
+     */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
@@ -103,6 +113,11 @@ namespace Model
      * <p>A pagination token.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
+    /**
+     * <p>A pagination token.</p>
+     */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
      * <p>A pagination token.</p>
@@ -141,6 +156,13 @@ namespace Model
      * response.</p>
      */
     inline bool GetHideDisabled() const{ return m_hideDisabled; }
+
+    /**
+     * <p>An optional boolean parameter that allows you to hide disabled identities. If
+     * omitted, the ListIdentities API will include disabled identities in the
+     * response.</p>
+     */
+    inline bool HideDisabledHasBeenSet() const { return m_hideDisabledHasBeenSet; }
 
     /**
      * <p>An optional boolean parameter that allows you to hide disabled identities. If

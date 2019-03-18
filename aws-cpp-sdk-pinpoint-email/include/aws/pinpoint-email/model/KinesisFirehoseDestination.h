@@ -59,6 +59,12 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the IAM role that Amazon Pinpoint uses when
      * sending email events to the Amazon Kinesis Data Firehose stream.</p>
      */
+    inline bool IamRoleArnHasBeenSet() const { return m_iamRoleArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the IAM role that Amazon Pinpoint uses when
+     * sending email events to the Amazon Kinesis Data Firehose stream.</p>
+     */
     inline void SetIamRoleArn(const Aws::String& value) { m_iamRoleArnHasBeenSet = true; m_iamRoleArn = value; }
 
     /**
@@ -97,6 +103,12 @@ namespace Model
      * that Amazon Pinpoint sends email events to.</p>
      */
     inline const Aws::String& GetDeliveryStreamArn() const{ return m_deliveryStreamArn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the Amazon Kinesis Data Firehose stream
+     * that Amazon Pinpoint sends email events to.</p>
+     */
+    inline bool DeliveryStreamArnHasBeenSet() const { return m_deliveryStreamArnHasBeenSet; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the Amazon Kinesis Data Firehose stream

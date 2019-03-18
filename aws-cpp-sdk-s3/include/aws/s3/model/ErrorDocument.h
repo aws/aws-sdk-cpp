@@ -55,6 +55,11 @@ namespace Model
     /**
      * <p>The object key name to use when a 4XX class error occurs.</p>
      */
+    inline bool KeyHasBeenSet() const { return m_keyHasBeenSet; }
+
+    /**
+     * <p>The object key name to use when a 4XX class error occurs.</p>
+     */
     inline void SetKey(const Aws::String& value) { m_keyHasBeenSet = true; m_key = value; }
 
     /**

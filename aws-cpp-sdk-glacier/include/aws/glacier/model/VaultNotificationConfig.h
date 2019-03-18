@@ -59,6 +59,12 @@ namespace Model
      * <p>The Amazon Simple Notification Service (Amazon SNS) topic Amazon Resource
      * Name (ARN).</p>
      */
+    inline bool SNSTopicHasBeenSet() const { return m_sNSTopicHasBeenSet; }
+
+    /**
+     * <p>The Amazon Simple Notification Service (Amazon SNS) topic Amazon Resource
+     * Name (ARN).</p>
+     */
     inline void SetSNSTopic(const Aws::String& value) { m_sNSTopicHasBeenSet = true; m_sNSTopic = value; }
 
     /**
@@ -97,6 +103,12 @@ namespace Model
      * notification to the specified Amazon SNS topic.</p>
      */
     inline const Aws::Vector<Aws::String>& GetEvents() const{ return m_events; }
+
+    /**
+     * <p>A list of one or more events for which Amazon Glacier will send a
+     * notification to the specified Amazon SNS topic.</p>
+     */
+    inline bool EventsHasBeenSet() const { return m_eventsHasBeenSet; }
 
     /**
      * <p>A list of one or more events for which Amazon Glacier will send a

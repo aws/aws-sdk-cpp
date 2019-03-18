@@ -52,6 +52,11 @@ namespace Model
     /**
      * <p>The ID of the operation that you want to get more information about.</p>
      */
+    inline bool OperationIdHasBeenSet() const { return m_operationIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the operation that you want to get more information about.</p>
+     */
     inline void SetOperationId(const Aws::String& value) { m_operationIdHasBeenSet = true; m_operationId = value; }
 
     /**

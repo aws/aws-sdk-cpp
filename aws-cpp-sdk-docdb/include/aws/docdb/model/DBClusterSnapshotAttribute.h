@@ -64,6 +64,13 @@ namespace Model
      * named <code>restore</code> refers to the list of AWS accounts that have
      * permission to copy or restore the manual DB cluster snapshot.</p>
      */
+    inline bool AttributeNameHasBeenSet() const { return m_attributeNameHasBeenSet; }
+
+    /**
+     * <p>The name of the manual DB cluster snapshot attribute.</p> <p>The attribute
+     * named <code>restore</code> refers to the list of AWS accounts that have
+     * permission to copy or restore the manual DB cluster snapshot.</p>
+     */
     inline void SetAttributeName(const Aws::String& value) { m_attributeNameHasBeenSet = true; m_attributeName = value; }
 
     /**
@@ -111,6 +118,16 @@ namespace Model
      * account to copy or restore.</p>
      */
     inline const Aws::Vector<Aws::String>& GetAttributeValues() const{ return m_attributeValues; }
+
+    /**
+     * <p>The values for the manual DB cluster snapshot attribute.</p> <p>If the
+     * <code>AttributeName</code> field is set to <code>restore</code>, then this
+     * element returns a list of IDs of the AWS accounts that are authorized to copy or
+     * restore the manual DB cluster snapshot. If a value of <code>all</code> is in the
+     * list, then the manual DB cluster snapshot is public and available for any AWS
+     * account to copy or restore.</p>
+     */
+    inline bool AttributeValuesHasBeenSet() const { return m_attributeValuesHasBeenSet; }
 
     /**
      * <p>The values for the manual DB cluster snapshot attribute.</p> <p>If the

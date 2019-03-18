@@ -60,6 +60,12 @@ namespace Model
      * <p>Policies that don't contain a matching allow or deny statement for the
      * specified action on the specified resource. </p>
      */
+    inline bool PoliciesHasBeenSet() const { return m_policiesHasBeenSet; }
+
+    /**
+     * <p>Policies that don't contain a matching allow or deny statement for the
+     * specified action on the specified resource. </p>
+     */
     inline void SetPolicies(const Aws::Vector<Policy>& value) { m_policiesHasBeenSet = true; m_policies = value; }
 
     /**

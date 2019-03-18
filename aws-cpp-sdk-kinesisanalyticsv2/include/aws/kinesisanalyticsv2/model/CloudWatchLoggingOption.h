@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The ARN of the CloudWatch log to receive application messages.</p>
      */
+    inline bool LogStreamARNHasBeenSet() const { return m_logStreamARNHasBeenSet; }
+
+    /**
+     * <p>The ARN of the CloudWatch log to receive application messages.</p>
+     */
     inline void SetLogStreamARN(const Aws::String& value) { m_logStreamARNHasBeenSet = true; m_logStreamARN = value; }
 
     /**

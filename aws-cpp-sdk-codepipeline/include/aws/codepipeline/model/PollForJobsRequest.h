@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>Represents information about an action type.</p>
      */
+    inline bool ActionTypeIdHasBeenSet() const { return m_actionTypeIdHasBeenSet; }
+
+    /**
+     * <p>Represents information about an action type.</p>
+     */
     inline void SetActionTypeId(const ActionTypeId& value) { m_actionTypeIdHasBeenSet = true; m_actionTypeId = value; }
 
     /**
@@ -83,6 +88,11 @@ namespace Model
     /**
      * <p>The maximum number of jobs to return in a poll for jobs call.</p>
      */
+    inline bool MaxBatchSizeHasBeenSet() const { return m_maxBatchSizeHasBeenSet; }
+
+    /**
+     * <p>The maximum number of jobs to return in a poll for jobs call.</p>
+     */
     inline void SetMaxBatchSize(int value) { m_maxBatchSizeHasBeenSet = true; m_maxBatchSize = value; }
 
     /**
@@ -98,6 +108,14 @@ namespace Model
      * whose action configuration matches the mapped value will be returned.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetQueryParam() const{ return m_queryParam; }
+
+    /**
+     * <p>A map of property names and values. For an action type with no queryable
+     * properties, this value must be null or an empty map. For an action type with a
+     * queryable property, you must supply that property as a key in the map. Only jobs
+     * whose action configuration matches the mapped value will be returned.</p>
+     */
+    inline bool QueryParamHasBeenSet() const { return m_queryParamHasBeenSet; }
 
     /**
      * <p>A map of property names and values. For an action type with no queryable

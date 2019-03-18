@@ -54,6 +54,12 @@ namespace Model
      * <p>Specifies a friendly name for the custom key store. The name must be unique
      * in your AWS account.</p>
      */
+    inline bool CustomKeyStoreNameHasBeenSet() const { return m_customKeyStoreNameHasBeenSet; }
+
+    /**
+     * <p>Specifies a friendly name for the custom key store. The name must be unique
+     * in your AWS account.</p>
+     */
     inline void SetCustomKeyStoreName(const Aws::String& value) { m_customKeyStoreNameHasBeenSet = true; m_customKeyStoreName = value; }
 
     /**
@@ -95,6 +101,15 @@ namespace Model
      * operation.</p>
      */
     inline const Aws::String& GetCloudHsmClusterId() const{ return m_cloudHsmClusterId; }
+
+    /**
+     * <p>Identifies the AWS CloudHSM cluster for the custom key store. Enter the
+     * cluster ID of any active AWS CloudHSM cluster that is not already associated
+     * with a custom key store. To find the cluster ID, use the <a
+     * href="http://docs.aws.amazon.com/cloudhsm/latest/APIReference/API_DescribeClusters.html">DescribeClusters</a>
+     * operation.</p>
+     */
+    inline bool CloudHsmClusterIdHasBeenSet() const { return m_cloudHsmClusterIdHasBeenSet; }
 
     /**
      * <p>Identifies the AWS CloudHSM cluster for the custom key store. Enter the
@@ -165,6 +180,14 @@ namespace Model
      * href="http://docs.aws.amazon.com/cloudhsm/latest/userguide/initialize-cluster.html">initialized
      * the cluster</a>.</p>
      */
+    inline bool TrustAnchorCertificateHasBeenSet() const { return m_trustAnchorCertificateHasBeenSet; }
+
+    /**
+     * <p>Enter the content of the trust anchor certificate for the cluster. This is
+     * the content of the <code>customerCA.crt</code> file that you created when you <a
+     * href="http://docs.aws.amazon.com/cloudhsm/latest/userguide/initialize-cluster.html">initialized
+     * the cluster</a>.</p>
+     */
     inline void SetTrustAnchorCertificate(const Aws::String& value) { m_trustAnchorCertificateHasBeenSet = true; m_trustAnchorCertificate = value; }
 
     /**
@@ -218,6 +241,17 @@ namespace Model
      * cluster.</p>
      */
     inline const Aws::String& GetKeyStorePassword() const{ return m_keyStorePassword; }
+
+    /**
+     * <p>Enter the password of the <a
+     * href="http://docs.aws.amazon.com/kms/latest/developerguide/key-store-concepts.html#concept-kmsuser">
+     * <code>kmsuser</code> crypto user (CU) account</a> in the specified AWS CloudHSM
+     * cluster. AWS KMS logs into the cluster as this user to manage key material on
+     * your behalf.</p> <p>This parameter tells AWS KMS the <code>kmsuser</code>
+     * account password; it does not change the password in the AWS CloudHSM
+     * cluster.</p>
+     */
+    inline bool KeyStorePasswordHasBeenSet() const { return m_keyStorePasswordHasBeenSet; }
 
     /**
      * <p>Enter the password of the <a

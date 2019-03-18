@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The absolute file path where the tmpfs volume is to be mounted.</p>
      */
+    inline bool ContainerPathHasBeenSet() const { return m_containerPathHasBeenSet; }
+
+    /**
+     * <p>The absolute file path where the tmpfs volume is to be mounted.</p>
+     */
     inline void SetContainerPath(const Aws::String& value) { m_containerPathHasBeenSet = true; m_containerPath = value; }
 
     /**
@@ -93,6 +98,11 @@ namespace Model
     /**
      * <p>The size (in MiB) of the tmpfs volume.</p>
      */
+    inline bool SizeHasBeenSet() const { return m_sizeHasBeenSet; }
+
+    /**
+     * <p>The size (in MiB) of the tmpfs volume.</p>
+     */
     inline void SetSize(int value) { m_sizeHasBeenSet = true; m_size = value; }
 
     /**
@@ -111,6 +121,17 @@ namespace Model
      * "nr_inodes" | "nr_blocks" | "mpol"</code> </p>
      */
     inline const Aws::Vector<Aws::String>& GetMountOptions() const{ return m_mountOptions; }
+
+    /**
+     * <p>The list of tmpfs volume mount options.</p> <p>Valid values: <code>"defaults"
+     * | "ro" | "rw" | "suid" | "nosuid" | "dev" | "nodev" | "exec" | "noexec" | "sync"
+     * | "async" | "dirsync" | "remount" | "mand" | "nomand" | "atime" | "noatime" |
+     * "diratime" | "nodiratime" | "bind" | "rbind" | "unbindable" | "runbindable" |
+     * "private" | "rprivate" | "shared" | "rshared" | "slave" | "rslave" | "relatime"
+     * | "norelatime" | "strictatime" | "nostrictatime" | "mode" | "uid" | "gid" |
+     * "nr_inodes" | "nr_blocks" | "mpol"</code> </p>
+     */
+    inline bool MountOptionsHasBeenSet() const { return m_mountOptionsHasBeenSet; }
 
     /**
      * <p>The list of tmpfs volume mount options.</p> <p>Valid values: <code>"defaults"

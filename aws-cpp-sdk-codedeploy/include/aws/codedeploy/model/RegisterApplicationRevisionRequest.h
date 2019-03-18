@@ -59,6 +59,12 @@ namespace Model
      * <p>The name of an AWS CodeDeploy application associated with the IAM user or AWS
      * account.</p>
      */
+    inline bool ApplicationNameHasBeenSet() const { return m_applicationNameHasBeenSet; }
+
+    /**
+     * <p>The name of an AWS CodeDeploy application associated with the IAM user or AWS
+     * account.</p>
+     */
     inline void SetApplicationName(const Aws::String& value) { m_applicationNameHasBeenSet = true; m_applicationName = value; }
 
     /**
@@ -100,6 +106,11 @@ namespace Model
     /**
      * <p>A comment about the revision.</p>
      */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
+
+    /**
+     * <p>A comment about the revision.</p>
+     */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
@@ -133,6 +144,12 @@ namespace Model
      * location.</p>
      */
     inline const RevisionLocation& GetRevision() const{ return m_revision; }
+
+    /**
+     * <p>Information about the application revision to register, including type and
+     * location.</p>
+     */
+    inline bool RevisionHasBeenSet() const { return m_revisionHasBeenSet; }
 
     /**
      * <p>Information about the application revision to register, including type and

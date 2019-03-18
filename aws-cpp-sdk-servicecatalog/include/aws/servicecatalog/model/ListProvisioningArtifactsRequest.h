@@ -56,6 +56,13 @@ namespace Model
      * </li> <li> <p> <code>jp</code> - Japanese</p> </li> <li> <p> <code>zh</code> -
      * Chinese</p> </li> </ul>
      */
+    inline bool AcceptLanguageHasBeenSet() const { return m_acceptLanguageHasBeenSet; }
+
+    /**
+     * <p>The language code.</p> <ul> <li> <p> <code>en</code> - English (default)</p>
+     * </li> <li> <p> <code>jp</code> - Japanese</p> </li> <li> <p> <code>zh</code> -
+     * Chinese</p> </li> </ul>
+     */
     inline void SetAcceptLanguage(const Aws::String& value) { m_acceptLanguageHasBeenSet = true; m_acceptLanguage = value; }
 
     /**
@@ -98,6 +105,11 @@ namespace Model
      * <p>The product identifier.</p>
      */
     inline const Aws::String& GetProductId() const{ return m_productId; }
+
+    /**
+     * <p>The product identifier.</p>
+     */
+    inline bool ProductIdHasBeenSet() const { return m_productIdHasBeenSet; }
 
     /**
      * <p>The product identifier.</p>

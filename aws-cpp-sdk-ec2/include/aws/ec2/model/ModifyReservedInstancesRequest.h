@@ -60,6 +60,11 @@ namespace Model
     /**
      * <p>The IDs of the Reserved Instances to modify.</p>
      */
+    inline bool ReservedInstancesIdsHasBeenSet() const { return m_reservedInstancesIdsHasBeenSet; }
+
+    /**
+     * <p>The IDs of the Reserved Instances to modify.</p>
+     */
     inline void SetReservedInstancesIds(const Aws::Vector<Aws::String>& value) { m_reservedInstancesIdsHasBeenSet = true; m_reservedInstancesIds = value; }
 
     /**
@@ -100,6 +105,14 @@ namespace Model
      * Idempotency</a>.</p>
      */
     inline const Aws::String& GetClientToken() const{ return m_clientToken; }
+
+    /**
+     * <p>A unique, case-sensitive token you provide to ensure idempotency of your
+     * modification request. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
+     * Idempotency</a>.</p>
+     */
+    inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
 
     /**
      * <p>A unique, case-sensitive token you provide to ensure idempotency of your
@@ -154,6 +167,11 @@ namespace Model
      * <p>The configuration settings for the Reserved Instances to modify.</p>
      */
     inline const Aws::Vector<ReservedInstancesConfiguration>& GetTargetConfigurations() const{ return m_targetConfigurations; }
+
+    /**
+     * <p>The configuration settings for the Reserved Instances to modify.</p>
+     */
+    inline bool TargetConfigurationsHasBeenSet() const { return m_targetConfigurationsHasBeenSet; }
 
     /**
      * <p>The configuration settings for the Reserved Instances to modify.</p>

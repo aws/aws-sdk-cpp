@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The zip code.</p>
      */
+    inline bool CountryCodeHasBeenSet() const { return m_countryCodeHasBeenSet; }
+
+    /**
+     * <p>The zip code.</p>
+     */
     inline void SetCountryCode(const Aws::String& value) { m_countryCodeHasBeenSet = true; m_countryCode = value; }
 
     /**
@@ -88,6 +93,11 @@ namespace Model
      * <p>The phone number to call to join the conference.</p>
      */
     inline const Aws::String& GetPhoneNumber() const{ return m_phoneNumber; }
+
+    /**
+     * <p>The phone number to call to join the conference.</p>
+     */
+    inline bool PhoneNumberHasBeenSet() const { return m_phoneNumberHasBeenSet; }
 
     /**
      * <p>The phone number to call to join the conference.</p>
@@ -126,6 +136,13 @@ namespace Model
      * which is how we send data over the telephone network.</p>
      */
     inline const Aws::String& GetOneClickIdDelay() const{ return m_oneClickIdDelay; }
+
+    /**
+     * <p>The delay duration before Alexa enters the conference ID with dual-tone
+     * multi-frequency (DTMF). Each number on the dial pad corresponds to a DTMF tone,
+     * which is how we send data over the telephone network.</p>
+     */
+    inline bool OneClickIdDelayHasBeenSet() const { return m_oneClickIdDelayHasBeenSet; }
 
     /**
      * <p>The delay duration before Alexa enters the conference ID with dual-tone
@@ -176,6 +193,13 @@ namespace Model
      * which is how we send data over the telephone network.</p>
      */
     inline const Aws::String& GetOneClickPinDelay() const{ return m_oneClickPinDelay; }
+
+    /**
+     * <p>The delay duration before Alexa enters the conference pin with dual-tone
+     * multi-frequency (DTMF). Each number on the dial pad corresponds to a DTMF tone,
+     * which is how we send data over the telephone network.</p>
+     */
+    inline bool OneClickPinDelayHasBeenSet() const { return m_oneClickPinDelayHasBeenSet; }
 
     /**
      * <p>The delay duration before Alexa enters the conference pin with dual-tone

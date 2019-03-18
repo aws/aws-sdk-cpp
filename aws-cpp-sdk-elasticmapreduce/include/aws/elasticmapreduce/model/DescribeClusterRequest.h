@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The identifier of the cluster to describe.</p>
      */
+    inline bool ClusterIdHasBeenSet() const { return m_clusterIdHasBeenSet; }
+
+    /**
+     * <p>The identifier of the cluster to describe.</p>
+     */
     inline void SetClusterId(const Aws::String& value) { m_clusterIdHasBeenSet = true; m_clusterId = value; }
 
     /**

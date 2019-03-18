@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>Amazon S3 bucket name.</p>
      */
+    inline bool BucketHasBeenSet() const { return m_bucketHasBeenSet; }
+
+    /**
+     * <p>Amazon S3 bucket name.</p>
+     */
     inline void SetBucket(const Aws::String& value) { m_bucketHasBeenSet = true; m_bucket = value; }
 
     /**
@@ -88,6 +93,11 @@ namespace Model
      * <p>Amazon S3 bucket key.</p>
      */
     inline const Aws::String& GetKey() const{ return m_key; }
+
+    /**
+     * <p>Amazon S3 bucket key.</p>
+     */
+    inline bool KeyHasBeenSet() const { return m_keyHasBeenSet; }
 
     /**
      * <p>Amazon S3 bucket key.</p>

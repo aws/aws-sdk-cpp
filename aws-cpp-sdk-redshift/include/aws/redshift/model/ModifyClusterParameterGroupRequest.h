@@ -59,6 +59,11 @@ namespace Model
     /**
      * <p>The name of the parameter group to be modified.</p>
      */
+    inline bool ParameterGroupNameHasBeenSet() const { return m_parameterGroupNameHasBeenSet; }
+
+    /**
+     * <p>The name of the parameter group to be modified.</p>
+     */
     inline void SetParameterGroupName(const Aws::String& value) { m_parameterGroupNameHasBeenSet = true; m_parameterGroupName = value; }
 
     /**
@@ -96,6 +101,16 @@ namespace Model
      * wlm_json_configuration parameter.</p>
      */
     inline const Aws::Vector<Parameter>& GetParameters() const{ return m_parameters; }
+
+    /**
+     * <p>An array of parameters to be modified. A maximum of 20 parameters can be
+     * modified in a single request.</p> <p>For each parameter to be modified, you must
+     * supply at least the parameter name and parameter value; other name-value pairs
+     * of the parameter are optional.</p> <p>For the workload management (WLM)
+     * configuration, you must supply all the name-value pairs in the
+     * wlm_json_configuration parameter.</p>
+     */
+    inline bool ParametersHasBeenSet() const { return m_parametersHasBeenSet; }
 
     /**
      * <p>An array of parameters to be modified. A maximum of 20 parameters can be

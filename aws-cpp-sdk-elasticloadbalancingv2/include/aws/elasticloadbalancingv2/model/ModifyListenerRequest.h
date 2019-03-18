@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the listener.</p>
      */
+    inline bool ListenerArnHasBeenSet() const { return m_listenerArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the listener.</p>
+     */
     inline void SetListenerArn(const Aws::String& value) { m_listenerArnHasBeenSet = true; m_listenerArn = value; }
 
     /**
@@ -94,6 +99,11 @@ namespace Model
     /**
      * <p>The port for connections from clients to the load balancer.</p>
      */
+    inline bool PortHasBeenSet() const { return m_portHasBeenSet; }
+
+    /**
+     * <p>The port for connections from clients to the load balancer.</p>
+     */
     inline void SetPort(int value) { m_portHasBeenSet = true; m_port = value; }
 
     /**
@@ -108,6 +118,13 @@ namespace Model
      * support the TCP and TLS protocols.</p>
      */
     inline const ProtocolEnum& GetProtocol() const{ return m_protocol; }
+
+    /**
+     * <p>The protocol for connections from clients to the load balancer. Application
+     * Load Balancers support the HTTP and HTTPS protocols. Network Load Balancers
+     * support the TCP and TLS protocols.</p>
+     */
+    inline bool ProtocolHasBeenSet() const { return m_protocolHasBeenSet; }
 
     /**
      * <p>The protocol for connections from clients to the load balancer. Application
@@ -145,6 +162,14 @@ namespace Model
      * Policies</a> in the <i>Application Load Balancers Guide</i>.</p>
      */
     inline const Aws::String& GetSslPolicy() const{ return m_sslPolicy; }
+
+    /**
+     * <p>[HTTPS and TLS listeners] The security policy that defines which protocols
+     * and ciphers are supported. For more information, see <a
+     * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/create-https-listener.html#describe-ssl-policies">Security
+     * Policies</a> in the <i>Application Load Balancers Guide</i>.</p>
+     */
+    inline bool SslPolicyHasBeenSet() const { return m_sslPolicyHasBeenSet; }
 
     /**
      * <p>[HTTPS and TLS listeners] The security policy that defines which protocols
@@ -202,6 +227,14 @@ namespace Model
      * certificate list, use <a>AddListenerCertificates</a>.</p>
      */
     inline const Aws::Vector<Certificate>& GetCertificates() const{ return m_certificates; }
+
+    /**
+     * <p>[HTTPS and TLS listeners] The default SSL server certificate. You must
+     * provide exactly one certificate. Set <code>CertificateArn</code> to the
+     * certificate ARN but do not set <code>IsDefault</code>.</p> <p>To create a
+     * certificate list, use <a>AddListenerCertificates</a>.</p>
+     */
+    inline bool CertificatesHasBeenSet() const { return m_certificatesHasBeenSet; }
 
     /**
      * <p>[HTTPS and TLS listeners] The default SSL server certificate. You must
@@ -269,6 +302,24 @@ namespace Model
      * custom HTTP response.</p>
      */
     inline const Aws::Vector<Action>& GetDefaultActions() const{ return m_defaultActions; }
+
+    /**
+     * <p>The actions for the default rule. The rule must include one forward action or
+     * one or more fixed-response actions.</p> <p>If the action type is
+     * <code>forward</code>, you specify a target group. The protocol of the target
+     * group must be HTTP or HTTPS for an Application Load Balancer. The protocol of
+     * the target group must be TCP or TLS for a Network Load Balancer.</p> <p>[HTTPS
+     * listeners] If the action type is <code>authenticate-oidc</code>, you
+     * authenticate users through an identity provider that is OpenID Connect (OIDC)
+     * compliant.</p> <p>[HTTPS listeners] If the action type is
+     * <code>authenticate-cognito</code>, you authenticate users through the user pools
+     * supported by Amazon Cognito.</p> <p>[Application Load Balancer] If the action
+     * type is <code>redirect</code>, you redirect specified client requests from one
+     * URL to another.</p> <p>[Application Load Balancer] If the action type is
+     * <code>fixed-response</code>, you drop specified client requests and return a
+     * custom HTTP response.</p>
+     */
+    inline bool DefaultActionsHasBeenSet() const { return m_defaultActionsHasBeenSet; }
 
     /**
      * <p>The actions for the default rule. The rule must include one forward action or

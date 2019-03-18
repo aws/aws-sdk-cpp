@@ -57,6 +57,11 @@ namespace Model
     /**
      * Details about the output
      */
+    inline bool OutputDetailsHasBeenSet() const { return m_outputDetailsHasBeenSet; }
+
+    /**
+     * Details about the output
+     */
     inline void SetOutputDetails(const Aws::Vector<OutputDetail>& value) { m_outputDetailsHasBeenSet = true; m_outputDetails = value; }
 
     /**

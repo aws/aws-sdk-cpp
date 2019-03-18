@@ -60,6 +60,11 @@ namespace Model
     /**
      * <p>The custom MAIL FROM domain that the identity is configured to use.</p>
      */
+    inline bool MailFromDomainHasBeenSet() const { return m_mailFromDomainHasBeenSet; }
+
+    /**
+     * <p>The custom MAIL FROM domain that the identity is configured to use.</p>
+     */
     inline void SetMailFromDomain(const Aws::String& value) { m_mailFromDomainHasBeenSet = true; m_mailFromDomain = value; }
 
     /**
@@ -96,6 +101,15 @@ namespace Model
      * takes the action described by <code>BehaviorOnMXFailure</code>.</p>
      */
     inline const CustomMailFromStatus& GetMailFromDomainStatus() const{ return m_mailFromDomainStatus; }
+
+    /**
+     * <p>The state that indicates whether Amazon SES has successfully read the MX
+     * record required for custom MAIL FROM domain setup. If the state is
+     * <code>Success</code>, Amazon SES uses the specified custom MAIL FROM domain when
+     * the verified identity sends an email. All other states indicate that Amazon SES
+     * takes the action described by <code>BehaviorOnMXFailure</code>.</p>
+     */
+    inline bool MailFromDomainStatusHasBeenSet() const { return m_mailFromDomainStatusHasBeenSet; }
 
     /**
      * <p>The state that indicates whether Amazon SES has successfully read the MX
@@ -146,6 +160,19 @@ namespace Model
      * <code>TemporaryFailure</code>.</p>
      */
     inline const BehaviorOnMXFailure& GetBehaviorOnMXFailure() const{ return m_behaviorOnMXFailure; }
+
+    /**
+     * <p>The action that Amazon SES takes if it cannot successfully read the required
+     * MX record when you send an email. A value of <code>UseDefaultValue</code>
+     * indicates that if Amazon SES cannot read the required MX record, it uses
+     * amazonses.com (or a subdomain of that) as the MAIL FROM domain. A value of
+     * <code>RejectMessage</code> indicates that if Amazon SES cannot read the required
+     * MX record, Amazon SES returns a <code>MailFromDomainNotVerified</code> error and
+     * does not send the email.</p> <p>The custom MAIL FROM setup states that result in
+     * this behavior are <code>Pending</code>, <code>Failed</code>, and
+     * <code>TemporaryFailure</code>.</p>
+     */
+    inline bool BehaviorOnMXFailureHasBeenSet() const { return m_behaviorOnMXFailureHasBeenSet; }
 
     /**
      * <p>The action that Amazon SES takes if it cannot successfully read the required

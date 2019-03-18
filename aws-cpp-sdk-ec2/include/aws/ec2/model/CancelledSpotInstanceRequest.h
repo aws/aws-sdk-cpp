@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p>The ID of the Spot Instance request.</p>
      */
+    inline bool SpotInstanceRequestIdHasBeenSet() const { return m_spotInstanceRequestIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the Spot Instance request.</p>
+     */
     inline void SetSpotInstanceRequestId(const Aws::String& value) { m_spotInstanceRequestIdHasBeenSet = true; m_spotInstanceRequestId = value; }
 
     /**
@@ -90,6 +95,11 @@ namespace Model
      * <p>The state of the Spot Instance request.</p>
      */
     inline const CancelSpotInstanceRequestState& GetState() const{ return m_state; }
+
+    /**
+     * <p>The state of the Spot Instance request.</p>
+     */
+    inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
 
     /**
      * <p>The state of the Spot Instance request.</p>

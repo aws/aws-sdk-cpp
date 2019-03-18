@@ -61,6 +61,13 @@ namespace Model
      * </li> <li> <p> <code>jp</code> - Japanese</p> </li> <li> <p> <code>zh</code> -
      * Chinese</p> </li> </ul>
      */
+    inline bool AcceptLanguageHasBeenSet() const { return m_acceptLanguageHasBeenSet; }
+
+    /**
+     * <p>The language code.</p> <ul> <li> <p> <code>en</code> - English (default)</p>
+     * </li> <li> <p> <code>jp</code> - Japanese</p> </li> <li> <p> <code>zh</code> -
+     * Chinese</p> </li> </ul>
+     */
     inline void SetAcceptLanguage(const Aws::String& value) { m_acceptLanguageHasBeenSet = true; m_acceptLanguage = value; }
 
     /**
@@ -104,6 +111,12 @@ namespace Model
      * all products to which the caller has access.</p>
      */
     inline const Aws::Map<ProductViewFilterBy, Aws::Vector<Aws::String>>& GetFilters() const{ return m_filters; }
+
+    /**
+     * <p>The search filters. If no search filters are specified, the output includes
+     * all products to which the caller has access.</p>
+     */
+    inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
 
     /**
      * <p>The search filters. If no search filters are specified, the output includes
@@ -162,6 +175,11 @@ namespace Model
     /**
      * <p>The maximum number of items to return with this call.</p>
      */
+    inline bool PageSizeHasBeenSet() const { return m_pageSizeHasBeenSet; }
+
+    /**
+     * <p>The maximum number of items to return with this call.</p>
+     */
     inline void SetPageSize(int value) { m_pageSizeHasBeenSet = true; m_pageSize = value; }
 
     /**
@@ -174,6 +192,11 @@ namespace Model
      * <p>The sort field. If no value is specified, the results are not sorted.</p>
      */
     inline const ProductViewSortBy& GetSortBy() const{ return m_sortBy; }
+
+    /**
+     * <p>The sort field. If no value is specified, the results are not sorted.</p>
+     */
+    inline bool SortByHasBeenSet() const { return m_sortByHasBeenSet; }
 
     /**
      * <p>The sort field. If no value is specified, the results are not sorted.</p>
@@ -204,6 +227,11 @@ namespace Model
     /**
      * <p>The sort order. If no value is specified, the results are not sorted.</p>
      */
+    inline bool SortOrderHasBeenSet() const { return m_sortOrderHasBeenSet; }
+
+    /**
+     * <p>The sort order. If no value is specified, the results are not sorted.</p>
+     */
     inline void SetSortOrder(const SortOrder& value) { m_sortOrderHasBeenSet = true; m_sortOrder = value; }
 
     /**
@@ -227,6 +255,12 @@ namespace Model
      * results, use null.</p>
      */
     inline const Aws::String& GetPageToken() const{ return m_pageToken; }
+
+    /**
+     * <p>The page token for the next set of results. To retrieve the first set of
+     * results, use null.</p>
+     */
+    inline bool PageTokenHasBeenSet() const { return m_pageTokenHasBeenSet; }
 
     /**
      * <p>The page token for the next set of results. To retrieve the first set of

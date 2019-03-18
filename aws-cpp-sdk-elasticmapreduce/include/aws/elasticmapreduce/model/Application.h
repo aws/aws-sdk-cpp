@@ -67,6 +67,11 @@ namespace Model
     /**
      * <p>The name of the application.</p>
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>The name of the application.</p>
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
@@ -103,6 +108,11 @@ namespace Model
     /**
      * <p>The version of the application.</p>
      */
+    inline bool VersionHasBeenSet() const { return m_versionHasBeenSet; }
+
+    /**
+     * <p>The version of the application.</p>
+     */
     inline void SetVersion(const Aws::String& value) { m_versionHasBeenSet = true; m_version = value; }
 
     /**
@@ -135,6 +145,11 @@ namespace Model
      * <p>Arguments for Amazon EMR to pass to the application.</p>
      */
     inline const Aws::Vector<Aws::String>& GetArgs() const{ return m_args; }
+
+    /**
+     * <p>Arguments for Amazon EMR to pass to the application.</p>
+     */
+    inline bool ArgsHasBeenSet() const { return m_argsHasBeenSet; }
 
     /**
      * <p>Arguments for Amazon EMR to pass to the application.</p>
@@ -177,6 +192,12 @@ namespace Model
      * third-party applications that third-party vendors use for testing purposes.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetAdditionalInfo() const{ return m_additionalInfo; }
+
+    /**
+     * <p>This option is for advanced users only. This is meta information about
+     * third-party applications that third-party vendors use for testing purposes.</p>
+     */
+    inline bool AdditionalInfoHasBeenSet() const { return m_additionalInfoHasBeenSet; }
 
     /**
      * <p>This option is for advanced users only. This is meta information about

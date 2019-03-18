@@ -53,6 +53,11 @@ namespace Model
     /**
      * <p>The name of the DAX resource from which the tags should be removed.</p>
      */
+    inline bool ResourceNameHasBeenSet() const { return m_resourceNameHasBeenSet; }
+
+    /**
+     * <p>The name of the DAX resource from which the tags should be removed.</p>
+     */
     inline void SetResourceName(const Aws::String& value) { m_resourceNameHasBeenSet = true; m_resourceName = value; }
 
     /**
@@ -86,6 +91,12 @@ namespace Model
      * tags are removed from the cluster.</p>
      */
     inline const Aws::Vector<Aws::String>& GetTagKeys() const{ return m_tagKeys; }
+
+    /**
+     * <p>A list of tag keys. If the DAX cluster has any tags with these keys, then the
+     * tags are removed from the cluster.</p>
+     */
+    inline bool TagKeysHasBeenSet() const { return m_tagKeysHasBeenSet; }
 
     /**
      * <p>A list of tag keys. If the DAX cluster has any tags with these keys, then the

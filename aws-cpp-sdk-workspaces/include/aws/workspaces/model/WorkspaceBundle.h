@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p>The bundle identifier.</p>
      */
+    inline bool BundleIdHasBeenSet() const { return m_bundleIdHasBeenSet; }
+
+    /**
+     * <p>The bundle identifier.</p>
+     */
     inline void SetBundleId(const Aws::String& value) { m_bundleIdHasBeenSet = true; m_bundleId = value; }
 
     /**
@@ -90,6 +95,11 @@ namespace Model
      * <p>The name of the bundle.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
+
+    /**
+     * <p>The name of the bundle.</p>
+     */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
      * <p>The name of the bundle.</p>
@@ -127,6 +137,12 @@ namespace Model
      * <code>AMAZON</code> if the bundle is provided by AWS.</p>
      */
     inline const Aws::String& GetOwner() const{ return m_owner; }
+
+    /**
+     * <p>The owner of the bundle. This is the account identifier of the owner, or
+     * <code>AMAZON</code> if the bundle is provided by AWS.</p>
+     */
+    inline bool OwnerHasBeenSet() const { return m_ownerHasBeenSet; }
 
     /**
      * <p>The owner of the bundle. This is the account identifier of the owner, or
@@ -173,6 +189,11 @@ namespace Model
     /**
      * <p>A description.</p>
      */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
+
+    /**
+     * <p>A description.</p>
+     */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
@@ -209,6 +230,11 @@ namespace Model
     /**
      * <p>The size of the root volume.</p>
      */
+    inline bool RootStorageHasBeenSet() const { return m_rootStorageHasBeenSet; }
+
+    /**
+     * <p>The size of the root volume.</p>
+     */
     inline void SetRootStorage(const RootStorage& value) { m_rootStorageHasBeenSet = true; m_rootStorage = value; }
 
     /**
@@ -231,6 +257,11 @@ namespace Model
      * <p>The size of the user storage.</p>
      */
     inline const UserStorage& GetUserStorage() const{ return m_userStorage; }
+
+    /**
+     * <p>The size of the user storage.</p>
+     */
+    inline bool UserStorageHasBeenSet() const { return m_userStorageHasBeenSet; }
 
     /**
      * <p>The size of the user storage.</p>
@@ -259,6 +290,13 @@ namespace Model
      * WorkSpaces Bundles</a>.</p>
      */
     inline const ComputeType& GetComputeType() const{ return m_computeType; }
+
+    /**
+     * <p>The compute type. For more information, see <a
+     * href="http://aws.amazon.com/workspaces/details/#Amazon_WorkSpaces_Bundles">Amazon
+     * WorkSpaces Bundles</a>.</p>
+     */
+    inline bool ComputeTypeHasBeenSet() const { return m_computeTypeHasBeenSet; }
 
     /**
      * <p>The compute type. For more information, see <a

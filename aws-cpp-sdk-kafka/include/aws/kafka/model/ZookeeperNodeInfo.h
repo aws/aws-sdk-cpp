@@ -55,6 +55,11 @@ namespace Model
     /**
      * <p>The attached elastic network interface of the broker.</p>
      */
+    inline bool AttachedENIIdHasBeenSet() const { return m_attachedENIIdHasBeenSet; }
+
+    /**
+     * <p>The attached elastic network interface of the broker.</p>
+     */
     inline void SetAttachedENIId(const Aws::String& value) { m_attachedENIIdHasBeenSet = true; m_attachedENIId = value; }
 
     /**
@@ -87,6 +92,11 @@ namespace Model
      * <p>The virtual private cloud (VPC) IP address of the client.</p>
      */
     inline const Aws::String& GetClientVpcIpAddress() const{ return m_clientVpcIpAddress; }
+
+    /**
+     * <p>The virtual private cloud (VPC) IP address of the client.</p>
+     */
+    inline bool ClientVpcIpAddressHasBeenSet() const { return m_clientVpcIpAddressHasBeenSet; }
 
     /**
      * <p>The virtual private cloud (VPC) IP address of the client.</p>
@@ -127,6 +137,11 @@ namespace Model
     /**
      * <p>The role-specific ID for Zookeeper.</p>
      */
+    inline bool ZookeeperIdHasBeenSet() const { return m_zookeeperIdHasBeenSet; }
+
+    /**
+     * <p>The role-specific ID for Zookeeper.</p>
+     */
     inline void SetZookeeperId(double value) { m_zookeeperIdHasBeenSet = true; m_zookeeperId = value; }
 
     /**
@@ -139,6 +154,11 @@ namespace Model
      * <p>The version of Zookeeper.</p>
      */
     inline const Aws::String& GetZookeeperVersion() const{ return m_zookeeperVersion; }
+
+    /**
+     * <p>The version of Zookeeper.</p>
+     */
+    inline bool ZookeeperVersionHasBeenSet() const { return m_zookeeperVersionHasBeenSet; }
 
     /**
      * <p>The version of Zookeeper.</p>

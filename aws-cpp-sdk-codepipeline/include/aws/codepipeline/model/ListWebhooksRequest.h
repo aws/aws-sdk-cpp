@@ -54,6 +54,12 @@ namespace Model
      * <p>The token that was returned from the previous ListWebhooks call, which can be
      * used to return the next set of webhooks in the list.</p>
      */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
+
+    /**
+     * <p>The token that was returned from the previous ListWebhooks call, which can be
+     * used to return the next set of webhooks in the list.</p>
+     */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
     /**
@@ -92,6 +98,12 @@ namespace Model
      * remaining results, make another call with the returned nextToken value.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
+
+    /**
+     * <p>The maximum number of results to return in a single call. To retrieve the
+     * remaining results, make another call with the returned nextToken value.</p>
+     */
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
 
     /**
      * <p>The maximum number of results to return in a single call. To retrieve the

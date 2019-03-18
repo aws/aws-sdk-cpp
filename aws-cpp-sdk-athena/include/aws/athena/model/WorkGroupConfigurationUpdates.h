@@ -68,6 +68,15 @@ namespace Model
      * href="https://docs.aws.amazon.com/athena/latest/ug/workgroups-settings-override.html">Workgroup
      * Settings Override Client-Side Settings</a>.</p>
      */
+    inline bool EnforceWorkGroupConfigurationHasBeenSet() const { return m_enforceWorkGroupConfigurationHasBeenSet; }
+
+    /**
+     * <p>If set to "true", the settings for the workgroup override client-side
+     * settings. If set to "false" client-side settings are used. For more information,
+     * see <a
+     * href="https://docs.aws.amazon.com/athena/latest/ug/workgroups-settings-override.html">Workgroup
+     * Settings Override Client-Side Settings</a>.</p>
+     */
     inline void SetEnforceWorkGroupConfiguration(bool value) { m_enforceWorkGroupConfigurationHasBeenSet = true; m_enforceWorkGroupConfiguration = value; }
 
     /**
@@ -86,6 +95,13 @@ namespace Model
      * encrypting query results.</p>
      */
     inline const ResultConfigurationUpdates& GetResultConfigurationUpdates() const{ return m_resultConfigurationUpdates; }
+
+    /**
+     * <p>The result configuration information about the queries in this workgroup that
+     * will be updated. Includes the updated results location and an updated option for
+     * encrypting query results.</p>
+     */
+    inline bool ResultConfigurationUpdatesHasBeenSet() const { return m_resultConfigurationUpdatesHasBeenSet; }
 
     /**
      * <p>The result configuration information about the queries in this workgroup that
@@ -126,6 +142,12 @@ namespace Model
      * <p>Indicates whether this workgroup enables publishing metrics to Amazon
      * CloudWatch.</p>
      */
+    inline bool PublishCloudWatchMetricsEnabledHasBeenSet() const { return m_publishCloudWatchMetricsEnabledHasBeenSet; }
+
+    /**
+     * <p>Indicates whether this workgroup enables publishing metrics to Amazon
+     * CloudWatch.</p>
+     */
     inline void SetPublishCloudWatchMetricsEnabled(bool value) { m_publishCloudWatchMetricsEnabledHasBeenSet = true; m_publishCloudWatchMetricsEnabled = value; }
 
     /**
@@ -145,6 +167,12 @@ namespace Model
      * <p>The upper limit (cutoff) for the amount of bytes a single query in a
      * workgroup is allowed to scan.</p>
      */
+    inline bool BytesScannedCutoffPerQueryHasBeenSet() const { return m_bytesScannedCutoffPerQueryHasBeenSet; }
+
+    /**
+     * <p>The upper limit (cutoff) for the amount of bytes a single query in a
+     * workgroup is allowed to scan.</p>
+     */
     inline void SetBytesScannedCutoffPerQuery(long long value) { m_bytesScannedCutoffPerQueryHasBeenSet = true; m_bytesScannedCutoffPerQuery = value; }
 
     /**
@@ -159,6 +187,12 @@ namespace Model
      * <a>WorkGroupConfiguration$BytesScannedCutoffPerQuery</a> </p>
      */
     inline bool GetRemoveBytesScannedCutoffPerQuery() const{ return m_removeBytesScannedCutoffPerQuery; }
+
+    /**
+     * <p>Indicates that the data usage control limit per query is removed.
+     * <a>WorkGroupConfiguration$BytesScannedCutoffPerQuery</a> </p>
+     */
+    inline bool RemoveBytesScannedCutoffPerQueryHasBeenSet() const { return m_removeBytesScannedCutoffPerQueryHasBeenSet; }
 
     /**
      * <p>Indicates that the data usage control limit per query is removed.

@@ -62,6 +62,15 @@ namespace Model
      * Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General
      * Reference</i>.</p>
      */
+    inline bool PolicyArnHasBeenSet() const { return m_policyArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the IAM policy from which you want to
+     * delete a version.</p> <p>For more information about ARNs, see <a
+     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General
+     * Reference</i>.</p>
+     */
     inline void SetPolicyArn(const Aws::String& value) { m_policyArnHasBeenSet = true; m_policyArn = value; }
 
     /**
@@ -120,6 +129,17 @@ namespace Model
      * for Managed Policies</a> in the <i>IAM User Guide</i>.</p>
      */
     inline const Aws::String& GetVersionId() const{ return m_versionId; }
+
+    /**
+     * <p>The policy version to delete.</p> <p>This parameter allows (through its <a
+     * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
+     * that consists of the lowercase letter 'v' followed by one or two digits, and
+     * optionally followed by a period '.' and a string of letters and digits.</p>
+     * <p>For more information about managed policy versions, see <a
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html">Versioning
+     * for Managed Policies</a> in the <i>IAM User Guide</i>.</p>
+     */
+    inline bool VersionIdHasBeenSet() const { return m_versionIdHasBeenSet; }
 
     /**
      * <p>The policy version to delete.</p> <p>This parameter allows (through its <a

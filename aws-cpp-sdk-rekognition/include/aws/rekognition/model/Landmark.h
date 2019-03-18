@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>Type of landmark.</p>
      */
+    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
+
+    /**
+     * <p>Type of landmark.</p>
+     */
     inline void SetType(const LandmarkType& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
@@ -86,6 +91,13 @@ namespace Model
      * the width of the image. For example, if the image is 700 x 200 and the
      * x-coordinate of the landmark is at 350 pixels, this value is 0.5. </p>
      */
+    inline bool XHasBeenSet() const { return m_xHasBeenSet; }
+
+    /**
+     * <p>The x-coordinate from the top left of the landmark expressed as the ratio of
+     * the width of the image. For example, if the image is 700 x 200 and the
+     * x-coordinate of the landmark is at 350 pixels, this value is 0.5. </p>
+     */
     inline void SetX(double value) { m_xHasBeenSet = true; m_x = value; }
 
     /**
@@ -102,6 +114,13 @@ namespace Model
      * y-coordinate of the landmark is at 100 pixels, this value is 0.5.</p>
      */
     inline double GetY() const{ return m_y; }
+
+    /**
+     * <p>The y-coordinate from the top left of the landmark expressed as the ratio of
+     * the height of the image. For example, if the image is 700 x 200 and the
+     * y-coordinate of the landmark is at 100 pixels, this value is 0.5.</p>
+     */
+    inline bool YHasBeenSet() const { return m_yHasBeenSet; }
 
     /**
      * <p>The y-coordinate from the top left of the landmark expressed as the ratio of

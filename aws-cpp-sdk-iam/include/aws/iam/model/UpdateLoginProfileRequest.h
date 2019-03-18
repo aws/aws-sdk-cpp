@@ -62,6 +62,15 @@ namespace Model
      * with no spaces. You can also include any of the following characters:
      * _+=,.@-</p>
      */
+    inline bool UserNameHasBeenSet() const { return m_userNameHasBeenSet; }
+
+    /**
+     * <p>The name of the user whose password you want to update.</p> <p>This parameter
+     * allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>)
+     * a string of characters consisting of upper and lowercase alphanumeric characters
+     * with no spaces. You can also include any of the following characters:
+     * _+=,.@-</p>
+     */
     inline void SetUserName(const Aws::String& value) { m_userNameHasBeenSet = true; m_userName = value; }
 
     /**
@@ -124,6 +133,21 @@ namespace Model
      * <a>UpdateAccountPasswordPolicy</a>.</p>
      */
     inline const Aws::String& GetPassword() const{ return m_password; }
+
+    /**
+     * <p>The new password for the specified IAM user.</p> <p>The <a
+     * href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this
+     * parameter is a string of characters consisting of the following:</p> <ul> <li>
+     * <p>Any printable ASCII character ranging from the space character (\u0020)
+     * through the end of the ASCII character range</p> </li> <li> <p>The printable
+     * characters in the Basic Latin and Latin-1 Supplement character set (through
+     * \u00FF)</p> </li> <li> <p>The special characters tab (\u0009), line feed
+     * (\u000A), and carriage return (\u000D)</p> </li> </ul> <p>However, the format
+     * can be further restricted by the account administrator by setting a password
+     * policy on the AWS account. For more information, see
+     * <a>UpdateAccountPasswordPolicy</a>.</p>
+     */
+    inline bool PasswordHasBeenSet() const { return m_passwordHasBeenSet; }
 
     /**
      * <p>The new password for the specified IAM user.</p> <p>The <a
@@ -221,6 +245,12 @@ namespace Model
      * user to set a new password on next sign-in.</p>
      */
     inline bool GetPasswordResetRequired() const{ return m_passwordResetRequired; }
+
+    /**
+     * <p>Allows this new password to be used only once by requiring the specified IAM
+     * user to set a new password on next sign-in.</p>
+     */
+    inline bool PasswordResetRequiredHasBeenSet() const { return m_passwordResetRequiredHasBeenSet; }
 
     /**
      * <p>Allows this new password to be used only once by requiring the specified IAM

@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p>The name of the workgroup.</p>
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>The name of the workgroup.</p>
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
@@ -94,6 +99,11 @@ namespace Model
     /**
      * <p>The state of the workgroup.</p>
      */
+    inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
+
+    /**
+     * <p>The state of the workgroup.</p>
+     */
     inline void SetState(const WorkGroupState& value) { m_stateHasBeenSet = true; m_state = value; }
 
     /**
@@ -116,6 +126,11 @@ namespace Model
      * <p>The workgroup description.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
+
+    /**
+     * <p>The workgroup description.</p>
+     */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
 
     /**
      * <p>The workgroup description.</p>
@@ -152,6 +167,11 @@ namespace Model
      * <p>The workgroup creation date and time.</p>
      */
     inline const Aws::Utils::DateTime& GetCreationTime() const{ return m_creationTime; }
+
+    /**
+     * <p>The workgroup creation date and time.</p>
+     */
+    inline bool CreationTimeHasBeenSet() const { return m_creationTimeHasBeenSet; }
 
     /**
      * <p>The workgroup creation date and time.</p>

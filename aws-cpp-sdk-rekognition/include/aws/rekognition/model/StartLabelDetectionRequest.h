@@ -56,6 +56,12 @@ namespace Model
      * <p>The video in which you want to detect labels. The video must be stored in an
      * Amazon S3 bucket.</p>
      */
+    inline bool VideoHasBeenSet() const { return m_videoHasBeenSet; }
+
+    /**
+     * <p>The video in which you want to detect labels. The video must be stored in an
+     * Amazon S3 bucket.</p>
+     */
     inline void SetVideo(const Video& value) { m_videoHasBeenSet = true; m_video = value; }
 
     /**
@@ -84,6 +90,14 @@ namespace Model
      * the same job from being accidently started more than once. </p>
      */
     inline const Aws::String& GetClientRequestToken() const{ return m_clientRequestToken; }
+
+    /**
+     * <p>Idempotent token used to identify the start request. If you use the same
+     * token with multiple <code>StartLabelDetection</code> requests, the same
+     * <code>JobId</code> is returned. Use <code>ClientRequestToken</code> to prevent
+     * the same job from being accidently started more than once. </p>
+     */
+    inline bool ClientRequestTokenHasBeenSet() const { return m_clientRequestTokenHasBeenSet; }
 
     /**
      * <p>Idempotent token used to identify the start request. If you use the same
@@ -154,6 +168,17 @@ namespace Model
      * don't specify <code>MinConfidence</code>, the operation returns labels with
      * confidence values greater than or equal to 50 percent.</p>
      */
+    inline bool MinConfidenceHasBeenSet() const { return m_minConfidenceHasBeenSet; }
+
+    /**
+     * <p>Specifies the minimum confidence that Amazon Rekognition Video must have in
+     * order to return a detected label. Confidence represents how certain Amazon
+     * Rekognition is that a label is correctly identified.0 is the lowest confidence.
+     * 100 is the highest confidence. Amazon Rekognition Video doesn't return any
+     * labels with a confidence level lower than this specified value.</p> <p>If you
+     * don't specify <code>MinConfidence</code>, the operation returns labels with
+     * confidence values greater than or equal to 50 percent.</p>
+     */
     inline void SetMinConfidence(double value) { m_minConfidenceHasBeenSet = true; m_minConfidence = value; }
 
     /**
@@ -173,6 +198,12 @@ namespace Model
      * completion status of the label detection operation to. </p>
      */
     inline const NotificationChannel& GetNotificationChannel() const{ return m_notificationChannel; }
+
+    /**
+     * <p>The Amazon SNS topic ARN you want Amazon Rekognition Video to publish the
+     * completion status of the label detection operation to. </p>
+     */
+    inline bool NotificationChannelHasBeenSet() const { return m_notificationChannelHasBeenSet; }
 
     /**
      * <p>The Amazon SNS topic ARN you want Amazon Rekognition Video to publish the
@@ -204,6 +235,12 @@ namespace Model
      * published to the Amazon Simple Notification Service topic. </p>
      */
     inline const Aws::String& GetJobTag() const{ return m_jobTag; }
+
+    /**
+     * <p>Unique identifier you specify to identify the job in the completion status
+     * published to the Amazon Simple Notification Service topic. </p>
+     */
+    inline bool JobTagHasBeenSet() const { return m_jobTagHasBeenSet; }
 
     /**
      * <p>Unique identifier you specify to identify the job in the completion status

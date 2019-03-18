@@ -58,6 +58,12 @@ namespace Model
      * <p>The name of the AWS IoT Events input to which data set contents are
      * delivered.</p>
      */
+    inline bool InputNameHasBeenSet() const { return m_inputNameHasBeenSet; }
+
+    /**
+     * <p>The name of the AWS IoT Events input to which data set contents are
+     * delivered.</p>
+     */
     inline void SetInputName(const Aws::String& value) { m_inputNameHasBeenSet = true; m_inputName = value; }
 
     /**
@@ -96,6 +102,12 @@ namespace Model
      * set contents to an AWS IoT Events input.</p>
      */
     inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
+
+    /**
+     * <p>The ARN of the role which grants AWS IoT Analytics permission to deliver data
+     * set contents to an AWS IoT Events input.</p>
+     */
+    inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
 
     /**
      * <p>The ARN of the role which grants AWS IoT Analytics permission to deliver data

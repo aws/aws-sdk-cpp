@@ -55,6 +55,11 @@ namespace Model
     /**
      * <p>AWS Region for RDS HTTP endpoint.</p>
      */
+    inline bool AwsRegionHasBeenSet() const { return m_awsRegionHasBeenSet; }
+
+    /**
+     * <p>AWS Region for RDS HTTP endpoint.</p>
+     */
     inline void SetAwsRegion(const Aws::String& value) { m_awsRegionHasBeenSet = true; m_awsRegion = value; }
 
     /**
@@ -87,6 +92,11 @@ namespace Model
      * <p>Amazon RDS cluster identifier.</p>
      */
     inline const Aws::String& GetDbClusterIdentifier() const{ return m_dbClusterIdentifier; }
+
+    /**
+     * <p>Amazon RDS cluster identifier.</p>
+     */
+    inline bool DbClusterIdentifierHasBeenSet() const { return m_dbClusterIdentifierHasBeenSet; }
 
     /**
      * <p>Amazon RDS cluster identifier.</p>
@@ -127,6 +137,11 @@ namespace Model
     /**
      * <p>Logical database name.</p>
      */
+    inline bool DatabaseNameHasBeenSet() const { return m_databaseNameHasBeenSet; }
+
+    /**
+     * <p>Logical database name.</p>
+     */
     inline void SetDatabaseName(const Aws::String& value) { m_databaseNameHasBeenSet = true; m_databaseName = value; }
 
     /**
@@ -163,6 +178,11 @@ namespace Model
     /**
      * <p>Logical schema name.</p>
      */
+    inline bool SchemaHasBeenSet() const { return m_schemaHasBeenSet; }
+
+    /**
+     * <p>Logical schema name.</p>
+     */
     inline void SetSchema(const Aws::String& value) { m_schemaHasBeenSet = true; m_schema = value; }
 
     /**
@@ -195,6 +215,11 @@ namespace Model
      * <p>AWS secret store ARN for database credentials.</p>
      */
     inline const Aws::String& GetAwsSecretStoreArn() const{ return m_awsSecretStoreArn; }
+
+    /**
+     * <p>AWS secret store ARN for database credentials.</p>
+     */
+    inline bool AwsSecretStoreArnHasBeenSet() const { return m_awsSecretStoreArnHasBeenSet; }
 
     /**
      * <p>AWS secret store ARN for database credentials.</p>

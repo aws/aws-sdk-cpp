@@ -62,6 +62,14 @@ namespace Model
      * <code>2017-01-01</code>, AWS retrieves cost and usage data starting at
      * <code>2017-01-01</code> up to the end date.</p>
      */
+    inline bool StartHasBeenSet() const { return m_startHasBeenSet; }
+
+    /**
+     * <p>The beginning of the time period that you want the usage and costs for. The
+     * start date is inclusive. For example, if <code>start</code> is
+     * <code>2017-01-01</code>, AWS retrieves cost and usage data starting at
+     * <code>2017-01-01</code> up to the end date.</p>
+     */
     inline void SetStart(const Aws::String& value) { m_startHasBeenSet = true; m_start = value; }
 
     /**
@@ -112,6 +120,14 @@ namespace Model
      * <code>2017-05-01</code>.</p>
      */
     inline const Aws::String& GetEnd() const{ return m_end; }
+
+    /**
+     * <p>The end of the time period that you want the usage and costs for. The end
+     * date is exclusive. For example, if <code>end</code> is <code>2017-05-01</code>,
+     * AWS retrieves cost and usage data from the start date up to, but not including,
+     * <code>2017-05-01</code>.</p>
+     */
+    inline bool EndHasBeenSet() const { return m_endHasBeenSet; }
 
     /**
      * <p>The end of the time period that you want the usage and costs for. The end

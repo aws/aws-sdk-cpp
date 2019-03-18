@@ -170,6 +170,11 @@ void CloudDirectoryClient::OverrideEndpoint(const Aws::String& endpoint)
 }
 AddFacetToObjectOutcome CloudDirectoryClient::AddFacetToObject(const AddFacetToObjectRequest& request) const
 {
+  if (!request.DirectoryArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("AddFacetToObject", "Required field: DirectoryArn, is not set");
+    return AddFacetToObjectOutcome(Aws::Client::AWSError<CloudDirectoryErrors>(CloudDirectoryErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DirectoryArn]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/amazonclouddirectory/2017-01-11/object/facets";
@@ -205,6 +210,11 @@ void CloudDirectoryClient::AddFacetToObjectAsyncHelper(const AddFacetToObjectReq
 
 ApplySchemaOutcome CloudDirectoryClient::ApplySchema(const ApplySchemaRequest& request) const
 {
+  if (!request.DirectoryArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ApplySchema", "Required field: DirectoryArn, is not set");
+    return ApplySchemaOutcome(Aws::Client::AWSError<CloudDirectoryErrors>(CloudDirectoryErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DirectoryArn]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/amazonclouddirectory/2017-01-11/schema/apply";
@@ -240,6 +250,11 @@ void CloudDirectoryClient::ApplySchemaAsyncHelper(const ApplySchemaRequest& requ
 
 AttachObjectOutcome CloudDirectoryClient::AttachObject(const AttachObjectRequest& request) const
 {
+  if (!request.DirectoryArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("AttachObject", "Required field: DirectoryArn, is not set");
+    return AttachObjectOutcome(Aws::Client::AWSError<CloudDirectoryErrors>(CloudDirectoryErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DirectoryArn]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/amazonclouddirectory/2017-01-11/object/attach";
@@ -275,6 +290,11 @@ void CloudDirectoryClient::AttachObjectAsyncHelper(const AttachObjectRequest& re
 
 AttachPolicyOutcome CloudDirectoryClient::AttachPolicy(const AttachPolicyRequest& request) const
 {
+  if (!request.DirectoryArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("AttachPolicy", "Required field: DirectoryArn, is not set");
+    return AttachPolicyOutcome(Aws::Client::AWSError<CloudDirectoryErrors>(CloudDirectoryErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DirectoryArn]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/amazonclouddirectory/2017-01-11/policy/attach";
@@ -310,6 +330,11 @@ void CloudDirectoryClient::AttachPolicyAsyncHelper(const AttachPolicyRequest& re
 
 AttachToIndexOutcome CloudDirectoryClient::AttachToIndex(const AttachToIndexRequest& request) const
 {
+  if (!request.DirectoryArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("AttachToIndex", "Required field: DirectoryArn, is not set");
+    return AttachToIndexOutcome(Aws::Client::AWSError<CloudDirectoryErrors>(CloudDirectoryErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DirectoryArn]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/amazonclouddirectory/2017-01-11/index/attach";
@@ -345,6 +370,11 @@ void CloudDirectoryClient::AttachToIndexAsyncHelper(const AttachToIndexRequest& 
 
 AttachTypedLinkOutcome CloudDirectoryClient::AttachTypedLink(const AttachTypedLinkRequest& request) const
 {
+  if (!request.DirectoryArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("AttachTypedLink", "Required field: DirectoryArn, is not set");
+    return AttachTypedLinkOutcome(Aws::Client::AWSError<CloudDirectoryErrors>(CloudDirectoryErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DirectoryArn]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/amazonclouddirectory/2017-01-11/typedlink/attach";
@@ -380,6 +410,11 @@ void CloudDirectoryClient::AttachTypedLinkAsyncHelper(const AttachTypedLinkReque
 
 BatchReadOutcome CloudDirectoryClient::BatchRead(const BatchReadRequest& request) const
 {
+  if (!request.DirectoryArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("BatchRead", "Required field: DirectoryArn, is not set");
+    return BatchReadOutcome(Aws::Client::AWSError<CloudDirectoryErrors>(CloudDirectoryErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DirectoryArn]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/amazonclouddirectory/2017-01-11/batchread";
@@ -415,6 +450,11 @@ void CloudDirectoryClient::BatchReadAsyncHelper(const BatchReadRequest& request,
 
 BatchWriteOutcome CloudDirectoryClient::BatchWrite(const BatchWriteRequest& request) const
 {
+  if (!request.DirectoryArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("BatchWrite", "Required field: DirectoryArn, is not set");
+    return BatchWriteOutcome(Aws::Client::AWSError<CloudDirectoryErrors>(CloudDirectoryErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DirectoryArn]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/amazonclouddirectory/2017-01-11/batchwrite";
@@ -450,6 +490,11 @@ void CloudDirectoryClient::BatchWriteAsyncHelper(const BatchWriteRequest& reques
 
 CreateDirectoryOutcome CloudDirectoryClient::CreateDirectory(const CreateDirectoryRequest& request) const
 {
+  if (!request.SchemaArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("CreateDirectory", "Required field: SchemaArn, is not set");
+    return CreateDirectoryOutcome(Aws::Client::AWSError<CloudDirectoryErrors>(CloudDirectoryErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [SchemaArn]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/amazonclouddirectory/2017-01-11/directory/create";
@@ -485,6 +530,11 @@ void CloudDirectoryClient::CreateDirectoryAsyncHelper(const CreateDirectoryReque
 
 CreateFacetOutcome CloudDirectoryClient::CreateFacet(const CreateFacetRequest& request) const
 {
+  if (!request.SchemaArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("CreateFacet", "Required field: SchemaArn, is not set");
+    return CreateFacetOutcome(Aws::Client::AWSError<CloudDirectoryErrors>(CloudDirectoryErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [SchemaArn]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/amazonclouddirectory/2017-01-11/facet/create";
@@ -520,6 +570,11 @@ void CloudDirectoryClient::CreateFacetAsyncHelper(const CreateFacetRequest& requ
 
 CreateIndexOutcome CloudDirectoryClient::CreateIndex(const CreateIndexRequest& request) const
 {
+  if (!request.DirectoryArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("CreateIndex", "Required field: DirectoryArn, is not set");
+    return CreateIndexOutcome(Aws::Client::AWSError<CloudDirectoryErrors>(CloudDirectoryErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DirectoryArn]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/amazonclouddirectory/2017-01-11/index";
@@ -555,6 +610,11 @@ void CloudDirectoryClient::CreateIndexAsyncHelper(const CreateIndexRequest& requ
 
 CreateObjectOutcome CloudDirectoryClient::CreateObject(const CreateObjectRequest& request) const
 {
+  if (!request.DirectoryArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("CreateObject", "Required field: DirectoryArn, is not set");
+    return CreateObjectOutcome(Aws::Client::AWSError<CloudDirectoryErrors>(CloudDirectoryErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DirectoryArn]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/amazonclouddirectory/2017-01-11/object";
@@ -625,6 +685,11 @@ void CloudDirectoryClient::CreateSchemaAsyncHelper(const CreateSchemaRequest& re
 
 CreateTypedLinkFacetOutcome CloudDirectoryClient::CreateTypedLinkFacet(const CreateTypedLinkFacetRequest& request) const
 {
+  if (!request.SchemaArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("CreateTypedLinkFacet", "Required field: SchemaArn, is not set");
+    return CreateTypedLinkFacetOutcome(Aws::Client::AWSError<CloudDirectoryErrors>(CloudDirectoryErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [SchemaArn]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/amazonclouddirectory/2017-01-11/typedlink/facet/create";
@@ -660,6 +725,11 @@ void CloudDirectoryClient::CreateTypedLinkFacetAsyncHelper(const CreateTypedLink
 
 DeleteDirectoryOutcome CloudDirectoryClient::DeleteDirectory(const DeleteDirectoryRequest& request) const
 {
+  if (!request.DirectoryArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteDirectory", "Required field: DirectoryArn, is not set");
+    return DeleteDirectoryOutcome(Aws::Client::AWSError<CloudDirectoryErrors>(CloudDirectoryErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DirectoryArn]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/amazonclouddirectory/2017-01-11/directory";
@@ -695,6 +765,11 @@ void CloudDirectoryClient::DeleteDirectoryAsyncHelper(const DeleteDirectoryReque
 
 DeleteFacetOutcome CloudDirectoryClient::DeleteFacet(const DeleteFacetRequest& request) const
 {
+  if (!request.SchemaArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteFacet", "Required field: SchemaArn, is not set");
+    return DeleteFacetOutcome(Aws::Client::AWSError<CloudDirectoryErrors>(CloudDirectoryErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [SchemaArn]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/amazonclouddirectory/2017-01-11/facet/delete";
@@ -730,6 +805,11 @@ void CloudDirectoryClient::DeleteFacetAsyncHelper(const DeleteFacetRequest& requ
 
 DeleteObjectOutcome CloudDirectoryClient::DeleteObject(const DeleteObjectRequest& request) const
 {
+  if (!request.DirectoryArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteObject", "Required field: DirectoryArn, is not set");
+    return DeleteObjectOutcome(Aws::Client::AWSError<CloudDirectoryErrors>(CloudDirectoryErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DirectoryArn]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/amazonclouddirectory/2017-01-11/object/delete";
@@ -765,6 +845,11 @@ void CloudDirectoryClient::DeleteObjectAsyncHelper(const DeleteObjectRequest& re
 
 DeleteSchemaOutcome CloudDirectoryClient::DeleteSchema(const DeleteSchemaRequest& request) const
 {
+  if (!request.SchemaArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteSchema", "Required field: SchemaArn, is not set");
+    return DeleteSchemaOutcome(Aws::Client::AWSError<CloudDirectoryErrors>(CloudDirectoryErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [SchemaArn]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/amazonclouddirectory/2017-01-11/schema";
@@ -800,6 +885,11 @@ void CloudDirectoryClient::DeleteSchemaAsyncHelper(const DeleteSchemaRequest& re
 
 DeleteTypedLinkFacetOutcome CloudDirectoryClient::DeleteTypedLinkFacet(const DeleteTypedLinkFacetRequest& request) const
 {
+  if (!request.SchemaArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteTypedLinkFacet", "Required field: SchemaArn, is not set");
+    return DeleteTypedLinkFacetOutcome(Aws::Client::AWSError<CloudDirectoryErrors>(CloudDirectoryErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [SchemaArn]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/amazonclouddirectory/2017-01-11/typedlink/facet/delete";
@@ -835,6 +925,11 @@ void CloudDirectoryClient::DeleteTypedLinkFacetAsyncHelper(const DeleteTypedLink
 
 DetachFromIndexOutcome CloudDirectoryClient::DetachFromIndex(const DetachFromIndexRequest& request) const
 {
+  if (!request.DirectoryArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DetachFromIndex", "Required field: DirectoryArn, is not set");
+    return DetachFromIndexOutcome(Aws::Client::AWSError<CloudDirectoryErrors>(CloudDirectoryErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DirectoryArn]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/amazonclouddirectory/2017-01-11/index/detach";
@@ -870,6 +965,11 @@ void CloudDirectoryClient::DetachFromIndexAsyncHelper(const DetachFromIndexReque
 
 DetachObjectOutcome CloudDirectoryClient::DetachObject(const DetachObjectRequest& request) const
 {
+  if (!request.DirectoryArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DetachObject", "Required field: DirectoryArn, is not set");
+    return DetachObjectOutcome(Aws::Client::AWSError<CloudDirectoryErrors>(CloudDirectoryErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DirectoryArn]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/amazonclouddirectory/2017-01-11/object/detach";
@@ -905,6 +1005,11 @@ void CloudDirectoryClient::DetachObjectAsyncHelper(const DetachObjectRequest& re
 
 DetachPolicyOutcome CloudDirectoryClient::DetachPolicy(const DetachPolicyRequest& request) const
 {
+  if (!request.DirectoryArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DetachPolicy", "Required field: DirectoryArn, is not set");
+    return DetachPolicyOutcome(Aws::Client::AWSError<CloudDirectoryErrors>(CloudDirectoryErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DirectoryArn]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/amazonclouddirectory/2017-01-11/policy/detach";
@@ -940,6 +1045,11 @@ void CloudDirectoryClient::DetachPolicyAsyncHelper(const DetachPolicyRequest& re
 
 DetachTypedLinkOutcome CloudDirectoryClient::DetachTypedLink(const DetachTypedLinkRequest& request) const
 {
+  if (!request.DirectoryArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DetachTypedLink", "Required field: DirectoryArn, is not set");
+    return DetachTypedLinkOutcome(Aws::Client::AWSError<CloudDirectoryErrors>(CloudDirectoryErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DirectoryArn]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/amazonclouddirectory/2017-01-11/typedlink/detach";
@@ -975,6 +1085,11 @@ void CloudDirectoryClient::DetachTypedLinkAsyncHelper(const DetachTypedLinkReque
 
 DisableDirectoryOutcome CloudDirectoryClient::DisableDirectory(const DisableDirectoryRequest& request) const
 {
+  if (!request.DirectoryArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DisableDirectory", "Required field: DirectoryArn, is not set");
+    return DisableDirectoryOutcome(Aws::Client::AWSError<CloudDirectoryErrors>(CloudDirectoryErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DirectoryArn]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/amazonclouddirectory/2017-01-11/directory/disable";
@@ -1010,6 +1125,11 @@ void CloudDirectoryClient::DisableDirectoryAsyncHelper(const DisableDirectoryReq
 
 EnableDirectoryOutcome CloudDirectoryClient::EnableDirectory(const EnableDirectoryRequest& request) const
 {
+  if (!request.DirectoryArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("EnableDirectory", "Required field: DirectoryArn, is not set");
+    return EnableDirectoryOutcome(Aws::Client::AWSError<CloudDirectoryErrors>(CloudDirectoryErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DirectoryArn]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/amazonclouddirectory/2017-01-11/directory/enable";
@@ -1080,6 +1200,11 @@ void CloudDirectoryClient::GetAppliedSchemaVersionAsyncHelper(const GetAppliedSc
 
 GetDirectoryOutcome CloudDirectoryClient::GetDirectory(const GetDirectoryRequest& request) const
 {
+  if (!request.DirectoryArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetDirectory", "Required field: DirectoryArn, is not set");
+    return GetDirectoryOutcome(Aws::Client::AWSError<CloudDirectoryErrors>(CloudDirectoryErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DirectoryArn]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/amazonclouddirectory/2017-01-11/directory/get";
@@ -1115,6 +1240,11 @@ void CloudDirectoryClient::GetDirectoryAsyncHelper(const GetDirectoryRequest& re
 
 GetFacetOutcome CloudDirectoryClient::GetFacet(const GetFacetRequest& request) const
 {
+  if (!request.SchemaArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetFacet", "Required field: SchemaArn, is not set");
+    return GetFacetOutcome(Aws::Client::AWSError<CloudDirectoryErrors>(CloudDirectoryErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [SchemaArn]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/amazonclouddirectory/2017-01-11/facet";
@@ -1150,6 +1280,11 @@ void CloudDirectoryClient::GetFacetAsyncHelper(const GetFacetRequest& request, c
 
 GetLinkAttributesOutcome CloudDirectoryClient::GetLinkAttributes(const GetLinkAttributesRequest& request) const
 {
+  if (!request.DirectoryArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetLinkAttributes", "Required field: DirectoryArn, is not set");
+    return GetLinkAttributesOutcome(Aws::Client::AWSError<CloudDirectoryErrors>(CloudDirectoryErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DirectoryArn]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/amazonclouddirectory/2017-01-11/typedlink/attributes/get";
@@ -1185,6 +1320,11 @@ void CloudDirectoryClient::GetLinkAttributesAsyncHelper(const GetLinkAttributesR
 
 GetObjectAttributesOutcome CloudDirectoryClient::GetObjectAttributes(const GetObjectAttributesRequest& request) const
 {
+  if (!request.DirectoryArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetObjectAttributes", "Required field: DirectoryArn, is not set");
+    return GetObjectAttributesOutcome(Aws::Client::AWSError<CloudDirectoryErrors>(CloudDirectoryErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DirectoryArn]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/amazonclouddirectory/2017-01-11/object/attributes/get";
@@ -1220,6 +1360,11 @@ void CloudDirectoryClient::GetObjectAttributesAsyncHelper(const GetObjectAttribu
 
 GetObjectInformationOutcome CloudDirectoryClient::GetObjectInformation(const GetObjectInformationRequest& request) const
 {
+  if (!request.DirectoryArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetObjectInformation", "Required field: DirectoryArn, is not set");
+    return GetObjectInformationOutcome(Aws::Client::AWSError<CloudDirectoryErrors>(CloudDirectoryErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DirectoryArn]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/amazonclouddirectory/2017-01-11/object/information";
@@ -1255,6 +1400,11 @@ void CloudDirectoryClient::GetObjectInformationAsyncHelper(const GetObjectInform
 
 GetSchemaAsJsonOutcome CloudDirectoryClient::GetSchemaAsJson(const GetSchemaAsJsonRequest& request) const
 {
+  if (!request.SchemaArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetSchemaAsJson", "Required field: SchemaArn, is not set");
+    return GetSchemaAsJsonOutcome(Aws::Client::AWSError<CloudDirectoryErrors>(CloudDirectoryErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [SchemaArn]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/amazonclouddirectory/2017-01-11/schema/json";
@@ -1290,6 +1440,11 @@ void CloudDirectoryClient::GetSchemaAsJsonAsyncHelper(const GetSchemaAsJsonReque
 
 GetTypedLinkFacetInformationOutcome CloudDirectoryClient::GetTypedLinkFacetInformation(const GetTypedLinkFacetInformationRequest& request) const
 {
+  if (!request.SchemaArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetTypedLinkFacetInformation", "Required field: SchemaArn, is not set");
+    return GetTypedLinkFacetInformationOutcome(Aws::Client::AWSError<CloudDirectoryErrors>(CloudDirectoryErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [SchemaArn]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/amazonclouddirectory/2017-01-11/typedlink/facet/get";
@@ -1360,6 +1515,11 @@ void CloudDirectoryClient::ListAppliedSchemaArnsAsyncHelper(const ListAppliedSch
 
 ListAttachedIndicesOutcome CloudDirectoryClient::ListAttachedIndices(const ListAttachedIndicesRequest& request) const
 {
+  if (!request.DirectoryArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListAttachedIndices", "Required field: DirectoryArn, is not set");
+    return ListAttachedIndicesOutcome(Aws::Client::AWSError<CloudDirectoryErrors>(CloudDirectoryErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DirectoryArn]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/amazonclouddirectory/2017-01-11/object/indices";
@@ -1465,6 +1625,11 @@ void CloudDirectoryClient::ListDirectoriesAsyncHelper(const ListDirectoriesReque
 
 ListFacetAttributesOutcome CloudDirectoryClient::ListFacetAttributes(const ListFacetAttributesRequest& request) const
 {
+  if (!request.SchemaArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListFacetAttributes", "Required field: SchemaArn, is not set");
+    return ListFacetAttributesOutcome(Aws::Client::AWSError<CloudDirectoryErrors>(CloudDirectoryErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [SchemaArn]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/amazonclouddirectory/2017-01-11/facet/attributes";
@@ -1500,6 +1665,11 @@ void CloudDirectoryClient::ListFacetAttributesAsyncHelper(const ListFacetAttribu
 
 ListFacetNamesOutcome CloudDirectoryClient::ListFacetNames(const ListFacetNamesRequest& request) const
 {
+  if (!request.SchemaArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListFacetNames", "Required field: SchemaArn, is not set");
+    return ListFacetNamesOutcome(Aws::Client::AWSError<CloudDirectoryErrors>(CloudDirectoryErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [SchemaArn]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/amazonclouddirectory/2017-01-11/facet/list";
@@ -1535,6 +1705,11 @@ void CloudDirectoryClient::ListFacetNamesAsyncHelper(const ListFacetNamesRequest
 
 ListIncomingTypedLinksOutcome CloudDirectoryClient::ListIncomingTypedLinks(const ListIncomingTypedLinksRequest& request) const
 {
+  if (!request.DirectoryArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListIncomingTypedLinks", "Required field: DirectoryArn, is not set");
+    return ListIncomingTypedLinksOutcome(Aws::Client::AWSError<CloudDirectoryErrors>(CloudDirectoryErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DirectoryArn]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/amazonclouddirectory/2017-01-11/typedlink/incoming";
@@ -1570,6 +1745,11 @@ void CloudDirectoryClient::ListIncomingTypedLinksAsyncHelper(const ListIncomingT
 
 ListIndexOutcome CloudDirectoryClient::ListIndex(const ListIndexRequest& request) const
 {
+  if (!request.DirectoryArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListIndex", "Required field: DirectoryArn, is not set");
+    return ListIndexOutcome(Aws::Client::AWSError<CloudDirectoryErrors>(CloudDirectoryErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DirectoryArn]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/amazonclouddirectory/2017-01-11/index/targets";
@@ -1640,6 +1820,11 @@ void CloudDirectoryClient::ListManagedSchemaArnsAsyncHelper(const ListManagedSch
 
 ListObjectAttributesOutcome CloudDirectoryClient::ListObjectAttributes(const ListObjectAttributesRequest& request) const
 {
+  if (!request.DirectoryArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListObjectAttributes", "Required field: DirectoryArn, is not set");
+    return ListObjectAttributesOutcome(Aws::Client::AWSError<CloudDirectoryErrors>(CloudDirectoryErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DirectoryArn]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/amazonclouddirectory/2017-01-11/object/attributes";
@@ -1675,6 +1860,11 @@ void CloudDirectoryClient::ListObjectAttributesAsyncHelper(const ListObjectAttri
 
 ListObjectChildrenOutcome CloudDirectoryClient::ListObjectChildren(const ListObjectChildrenRequest& request) const
 {
+  if (!request.DirectoryArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListObjectChildren", "Required field: DirectoryArn, is not set");
+    return ListObjectChildrenOutcome(Aws::Client::AWSError<CloudDirectoryErrors>(CloudDirectoryErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DirectoryArn]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/amazonclouddirectory/2017-01-11/object/children";
@@ -1710,6 +1900,11 @@ void CloudDirectoryClient::ListObjectChildrenAsyncHelper(const ListObjectChildre
 
 ListObjectParentPathsOutcome CloudDirectoryClient::ListObjectParentPaths(const ListObjectParentPathsRequest& request) const
 {
+  if (!request.DirectoryArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListObjectParentPaths", "Required field: DirectoryArn, is not set");
+    return ListObjectParentPathsOutcome(Aws::Client::AWSError<CloudDirectoryErrors>(CloudDirectoryErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DirectoryArn]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/amazonclouddirectory/2017-01-11/object/parentpaths";
@@ -1745,6 +1940,11 @@ void CloudDirectoryClient::ListObjectParentPathsAsyncHelper(const ListObjectPare
 
 ListObjectParentsOutcome CloudDirectoryClient::ListObjectParents(const ListObjectParentsRequest& request) const
 {
+  if (!request.DirectoryArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListObjectParents", "Required field: DirectoryArn, is not set");
+    return ListObjectParentsOutcome(Aws::Client::AWSError<CloudDirectoryErrors>(CloudDirectoryErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DirectoryArn]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/amazonclouddirectory/2017-01-11/object/parent";
@@ -1780,6 +1980,11 @@ void CloudDirectoryClient::ListObjectParentsAsyncHelper(const ListObjectParentsR
 
 ListObjectPoliciesOutcome CloudDirectoryClient::ListObjectPolicies(const ListObjectPoliciesRequest& request) const
 {
+  if (!request.DirectoryArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListObjectPolicies", "Required field: DirectoryArn, is not set");
+    return ListObjectPoliciesOutcome(Aws::Client::AWSError<CloudDirectoryErrors>(CloudDirectoryErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DirectoryArn]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/amazonclouddirectory/2017-01-11/object/policy";
@@ -1815,6 +2020,11 @@ void CloudDirectoryClient::ListObjectPoliciesAsyncHelper(const ListObjectPolicie
 
 ListOutgoingTypedLinksOutcome CloudDirectoryClient::ListOutgoingTypedLinks(const ListOutgoingTypedLinksRequest& request) const
 {
+  if (!request.DirectoryArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListOutgoingTypedLinks", "Required field: DirectoryArn, is not set");
+    return ListOutgoingTypedLinksOutcome(Aws::Client::AWSError<CloudDirectoryErrors>(CloudDirectoryErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DirectoryArn]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/amazonclouddirectory/2017-01-11/typedlink/outgoing";
@@ -1850,6 +2060,11 @@ void CloudDirectoryClient::ListOutgoingTypedLinksAsyncHelper(const ListOutgoingT
 
 ListPolicyAttachmentsOutcome CloudDirectoryClient::ListPolicyAttachments(const ListPolicyAttachmentsRequest& request) const
 {
+  if (!request.DirectoryArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListPolicyAttachments", "Required field: DirectoryArn, is not set");
+    return ListPolicyAttachmentsOutcome(Aws::Client::AWSError<CloudDirectoryErrors>(CloudDirectoryErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DirectoryArn]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/amazonclouddirectory/2017-01-11/policy/attachment";
@@ -1955,6 +2170,11 @@ void CloudDirectoryClient::ListTagsForResourceAsyncHelper(const ListTagsForResou
 
 ListTypedLinkFacetAttributesOutcome CloudDirectoryClient::ListTypedLinkFacetAttributes(const ListTypedLinkFacetAttributesRequest& request) const
 {
+  if (!request.SchemaArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListTypedLinkFacetAttributes", "Required field: SchemaArn, is not set");
+    return ListTypedLinkFacetAttributesOutcome(Aws::Client::AWSError<CloudDirectoryErrors>(CloudDirectoryErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [SchemaArn]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/amazonclouddirectory/2017-01-11/typedlink/facet/attributes";
@@ -1990,6 +2210,11 @@ void CloudDirectoryClient::ListTypedLinkFacetAttributesAsyncHelper(const ListTyp
 
 ListTypedLinkFacetNamesOutcome CloudDirectoryClient::ListTypedLinkFacetNames(const ListTypedLinkFacetNamesRequest& request) const
 {
+  if (!request.SchemaArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListTypedLinkFacetNames", "Required field: SchemaArn, is not set");
+    return ListTypedLinkFacetNamesOutcome(Aws::Client::AWSError<CloudDirectoryErrors>(CloudDirectoryErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [SchemaArn]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/amazonclouddirectory/2017-01-11/typedlink/facet/list";
@@ -2025,6 +2250,11 @@ void CloudDirectoryClient::ListTypedLinkFacetNamesAsyncHelper(const ListTypedLin
 
 LookupPolicyOutcome CloudDirectoryClient::LookupPolicy(const LookupPolicyRequest& request) const
 {
+  if (!request.DirectoryArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("LookupPolicy", "Required field: DirectoryArn, is not set");
+    return LookupPolicyOutcome(Aws::Client::AWSError<CloudDirectoryErrors>(CloudDirectoryErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DirectoryArn]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/amazonclouddirectory/2017-01-11/policy/lookup";
@@ -2060,6 +2290,11 @@ void CloudDirectoryClient::LookupPolicyAsyncHelper(const LookupPolicyRequest& re
 
 PublishSchemaOutcome CloudDirectoryClient::PublishSchema(const PublishSchemaRequest& request) const
 {
+  if (!request.DevelopmentSchemaArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("PublishSchema", "Required field: DevelopmentSchemaArn, is not set");
+    return PublishSchemaOutcome(Aws::Client::AWSError<CloudDirectoryErrors>(CloudDirectoryErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DevelopmentSchemaArn]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/amazonclouddirectory/2017-01-11/schema/publish";
@@ -2095,6 +2330,11 @@ void CloudDirectoryClient::PublishSchemaAsyncHelper(const PublishSchemaRequest& 
 
 PutSchemaFromJsonOutcome CloudDirectoryClient::PutSchemaFromJson(const PutSchemaFromJsonRequest& request) const
 {
+  if (!request.SchemaArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("PutSchemaFromJson", "Required field: SchemaArn, is not set");
+    return PutSchemaFromJsonOutcome(Aws::Client::AWSError<CloudDirectoryErrors>(CloudDirectoryErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [SchemaArn]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/amazonclouddirectory/2017-01-11/schema/json";
@@ -2130,6 +2370,11 @@ void CloudDirectoryClient::PutSchemaFromJsonAsyncHelper(const PutSchemaFromJsonR
 
 RemoveFacetFromObjectOutcome CloudDirectoryClient::RemoveFacetFromObject(const RemoveFacetFromObjectRequest& request) const
 {
+  if (!request.DirectoryArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("RemoveFacetFromObject", "Required field: DirectoryArn, is not set");
+    return RemoveFacetFromObjectOutcome(Aws::Client::AWSError<CloudDirectoryErrors>(CloudDirectoryErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DirectoryArn]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/amazonclouddirectory/2017-01-11/object/facets/delete";
@@ -2235,6 +2480,11 @@ void CloudDirectoryClient::UntagResourceAsyncHelper(const UntagResourceRequest& 
 
 UpdateFacetOutcome CloudDirectoryClient::UpdateFacet(const UpdateFacetRequest& request) const
 {
+  if (!request.SchemaArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateFacet", "Required field: SchemaArn, is not set");
+    return UpdateFacetOutcome(Aws::Client::AWSError<CloudDirectoryErrors>(CloudDirectoryErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [SchemaArn]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/amazonclouddirectory/2017-01-11/facet";
@@ -2270,6 +2520,11 @@ void CloudDirectoryClient::UpdateFacetAsyncHelper(const UpdateFacetRequest& requ
 
 UpdateLinkAttributesOutcome CloudDirectoryClient::UpdateLinkAttributes(const UpdateLinkAttributesRequest& request) const
 {
+  if (!request.DirectoryArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateLinkAttributes", "Required field: DirectoryArn, is not set");
+    return UpdateLinkAttributesOutcome(Aws::Client::AWSError<CloudDirectoryErrors>(CloudDirectoryErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DirectoryArn]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/amazonclouddirectory/2017-01-11/typedlink/attributes/update";
@@ -2305,6 +2560,11 @@ void CloudDirectoryClient::UpdateLinkAttributesAsyncHelper(const UpdateLinkAttri
 
 UpdateObjectAttributesOutcome CloudDirectoryClient::UpdateObjectAttributes(const UpdateObjectAttributesRequest& request) const
 {
+  if (!request.DirectoryArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateObjectAttributes", "Required field: DirectoryArn, is not set");
+    return UpdateObjectAttributesOutcome(Aws::Client::AWSError<CloudDirectoryErrors>(CloudDirectoryErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DirectoryArn]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/amazonclouddirectory/2017-01-11/object/update";
@@ -2340,6 +2600,11 @@ void CloudDirectoryClient::UpdateObjectAttributesAsyncHelper(const UpdateObjectA
 
 UpdateSchemaOutcome CloudDirectoryClient::UpdateSchema(const UpdateSchemaRequest& request) const
 {
+  if (!request.SchemaArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateSchema", "Required field: SchemaArn, is not set");
+    return UpdateSchemaOutcome(Aws::Client::AWSError<CloudDirectoryErrors>(CloudDirectoryErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [SchemaArn]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/amazonclouddirectory/2017-01-11/schema/update";
@@ -2375,6 +2640,11 @@ void CloudDirectoryClient::UpdateSchemaAsyncHelper(const UpdateSchemaRequest& re
 
 UpdateTypedLinkFacetOutcome CloudDirectoryClient::UpdateTypedLinkFacet(const UpdateTypedLinkFacetRequest& request) const
 {
+  if (!request.SchemaArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateTypedLinkFacet", "Required field: SchemaArn, is not set");
+    return UpdateTypedLinkFacetOutcome(Aws::Client::AWSError<CloudDirectoryErrors>(CloudDirectoryErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [SchemaArn]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/amazonclouddirectory/2017-01-11/typedlink/facet";

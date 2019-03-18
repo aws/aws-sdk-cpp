@@ -79,6 +79,14 @@ namespace Model
      * on creation. If a snapshot is the basis for a volume, it is not blank and its
      * encryption status is used for the volume encryption status.</p>
      */
+    inline bool BlockDeviceMappingsHasBeenSet() const { return m_blockDeviceMappingsHasBeenSet; }
+
+    /**
+     * <p>One or more block device mapping entries. You can't specify both a snapshot
+     * ID and an encryption value. This is because only blank volumes can be encrypted
+     * on creation. If a snapshot is the basis for a volume, it is not blank and its
+     * encryption status is used for the volume encryption status.</p>
+     */
     inline void SetBlockDeviceMappings(const Aws::Vector<BlockDeviceMapping>& value) { m_blockDeviceMappingsHasBeenSet = true; m_blockDeviceMappings = value; }
 
     /**
@@ -128,6 +136,13 @@ namespace Model
      * template.</p>
      */
     inline const Aws::String& GetImageId() const{ return m_imageId; }
+
+    /**
+     * <p>The ID of the AMI, which you can get by calling <a>DescribeImages</a>. An AMI
+     * is required to launch an instance and must be specified here or in a launch
+     * template.</p>
+     */
+    inline bool ImageIdHasBeenSet() const { return m_imageIdHasBeenSet; }
 
     /**
      * <p>The ID of the AMI, which you can get by calling <a>DescribeImages</a>. An AMI
@@ -186,6 +201,14 @@ namespace Model
      * Types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p> <p>Default:
      * <code>m1.small</code> </p>
      */
+    inline bool InstanceTypeHasBeenSet() const { return m_instanceTypeHasBeenSet; }
+
+    /**
+     * <p>The instance type. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
+     * Types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p> <p>Default:
+     * <code>m1.small</code> </p>
+     */
     inline void SetInstanceType(const InstanceType& value) { m_instanceTypeHasBeenSet = true; m_instanceType = value; }
 
     /**
@@ -231,6 +254,16 @@ namespace Model
      * number of instances to launch.</p> <p>You cannot specify this option and the
      * network interfaces option in the same request.</p>
      */
+    inline bool Ipv6AddressCountHasBeenSet() const { return m_ipv6AddressCountHasBeenSet; }
+
+    /**
+     * <p>[EC2-VPC] A number of IPv6 addresses to associate with the primary network
+     * interface. Amazon EC2 chooses the IPv6 addresses from the range of your subnet.
+     * You cannot specify this option and the option to assign specific IPv6 addresses
+     * in the same request. You can specify this option if you've specified a minimum
+     * number of instances to launch.</p> <p>You cannot specify this option and the
+     * network interfaces option in the same request.</p>
+     */
     inline void SetIpv6AddressCount(int value) { m_ipv6AddressCountHasBeenSet = true; m_ipv6AddressCount = value; }
 
     /**
@@ -253,6 +286,16 @@ namespace Model
      * in the same request.</p>
      */
     inline const Aws::Vector<InstanceIpv6Address>& GetIpv6Addresses() const{ return m_ipv6Addresses; }
+
+    /**
+     * <p>[EC2-VPC] Specify one or more IPv6 addresses from the range of the subnet to
+     * associate with the primary network interface. You cannot specify this option and
+     * the option to assign a number of IPv6 addresses in the same request. You cannot
+     * specify this option if you've specified a minimum number of instances to
+     * launch.</p> <p>You cannot specify this option and the network interfaces option
+     * in the same request.</p>
+     */
+    inline bool Ipv6AddressesHasBeenSet() const { return m_ipv6AddressesHasBeenSet; }
 
     /**
      * <p>[EC2-VPC] Specify one or more IPv6 addresses from the range of the subnet to
@@ -331,6 +374,15 @@ namespace Model
      * PV-GRUB</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
      * </important>
      */
+    inline bool KernelIdHasBeenSet() const { return m_kernelIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the kernel.</p> <important> <p>We recommend that you use PV-GRUB
+     * instead of kernels and RAM disks. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UserProvidedkernels.html">
+     * PV-GRUB</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     * </important>
+     */
     inline void SetKernelId(const Aws::String& value) { m_kernelIdHasBeenSet = true; m_kernelId = value; }
 
     /**
@@ -386,6 +438,14 @@ namespace Model
      * that is configured to allow users another way to log in.</p> </important>
      */
     inline const Aws::String& GetKeyName() const{ return m_keyName; }
+
+    /**
+     * <p>The name of the key pair. You can create a key pair using
+     * <a>CreateKeyPair</a> or <a>ImportKeyPair</a>.</p> <important> <p>If you do not
+     * specify a key pair, you can't connect to the instance unless you choose an AMI
+     * that is configured to allow users another way to log in.</p> </important>
+     */
+    inline bool KeyNameHasBeenSet() const { return m_keyNameHasBeenSet; }
 
     /**
      * <p>The name of the key pair. You can create a key pair using
@@ -458,6 +518,18 @@ namespace Model
      * href="http://aws.amazon.com/ec2/faqs/#How_many_instances_can_I_run_in_Amazon_EC2">How
      * many instances can I run in Amazon EC2</a> in the Amazon EC2 FAQ.</p>
      */
+    inline bool MaxCountHasBeenSet() const { return m_maxCountHasBeenSet; }
+
+    /**
+     * <p>The maximum number of instances to launch. If you specify more instances than
+     * Amazon EC2 can launch in the target Availability Zone, Amazon EC2 launches the
+     * largest possible number of instances above <code>MinCount</code>.</p>
+     * <p>Constraints: Between 1 and the maximum number you're allowed for the
+     * specified instance type. For more information about the default limits, and how
+     * to request an increase, see <a
+     * href="http://aws.amazon.com/ec2/faqs/#How_many_instances_can_I_run_in_Amazon_EC2">How
+     * many instances can I run in Amazon EC2</a> in the Amazon EC2 FAQ.</p>
+     */
     inline void SetMaxCount(int value) { m_maxCountHasBeenSet = true; m_maxCount = value; }
 
     /**
@@ -493,6 +565,17 @@ namespace Model
      * href="http://aws.amazon.com/ec2/faqs/#How_many_instances_can_I_run_in_Amazon_EC2">How
      * many instances can I run in Amazon EC2</a> in the Amazon EC2 General FAQ.</p>
      */
+    inline bool MinCountHasBeenSet() const { return m_minCountHasBeenSet; }
+
+    /**
+     * <p>The minimum number of instances to launch. If you specify a minimum that is
+     * more instances than Amazon EC2 can launch in the target Availability Zone,
+     * Amazon EC2 launches no instances.</p> <p>Constraints: Between 1 and the maximum
+     * number you're allowed for the specified instance type. For more information
+     * about the default limits, and how to request an increase, see <a
+     * href="http://aws.amazon.com/ec2/faqs/#How_many_instances_can_I_run_in_Amazon_EC2">How
+     * many instances can I run in Amazon EC2</a> in the Amazon EC2 General FAQ.</p>
+     */
     inline void SetMinCount(int value) { m_minCountHasBeenSet = true; m_minCount = value; }
 
     /**
@@ -511,6 +594,11 @@ namespace Model
      * <p>The monitoring for the instance.</p>
      */
     inline const RunInstancesMonitoringEnabled& GetMonitoring() const{ return m_monitoring; }
+
+    /**
+     * <p>The monitoring for the instance.</p>
+     */
+    inline bool MonitoringHasBeenSet() const { return m_monitoringHasBeenSet; }
 
     /**
      * <p>The monitoring for the instance.</p>
@@ -541,6 +629,11 @@ namespace Model
     /**
      * <p>The placement for the instance.</p>
      */
+    inline bool PlacementHasBeenSet() const { return m_placementHasBeenSet; }
+
+    /**
+     * <p>The placement for the instance.</p>
+     */
     inline void SetPlacement(const Placement& value) { m_placementHasBeenSet = true; m_placement = value; }
 
     /**
@@ -567,6 +660,15 @@ namespace Model
      * </important>
      */
     inline const Aws::String& GetRamdiskId() const{ return m_ramdiskId; }
+
+    /**
+     * <p>The ID of the RAM disk.</p> <important> <p>We recommend that you use PV-GRUB
+     * instead of kernels and RAM disks. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UserProvidedkernels.html">
+     * PV-GRUB</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     * </important>
+     */
+    inline bool RamdiskIdHasBeenSet() const { return m_ramdiskIdHasBeenSet; }
 
     /**
      * <p>The ID of the RAM disk.</p> <important> <p>We recommend that you use PV-GRUB
@@ -630,6 +732,14 @@ namespace Model
      * in the same request.</p>
      */
     inline const Aws::Vector<Aws::String>& GetSecurityGroupIds() const{ return m_securityGroupIds; }
+
+    /**
+     * <p>One or more security group IDs. You can create a security group using
+     * <a>CreateSecurityGroup</a>.</p> <p>Default: Amazon EC2 uses the default security
+     * group.</p> <p>You cannot specify this option and the network interfaces option
+     * in the same request.</p>
+     */
+    inline bool SecurityGroupIdsHasBeenSet() const { return m_securityGroupIdsHasBeenSet; }
 
     /**
      * <p>One or more security group IDs. You can create a security group using
@@ -702,6 +812,14 @@ namespace Model
      * option and the network interfaces option in the same request.</p> <p>Default:
      * Amazon EC2 uses the default security group.</p>
      */
+    inline bool SecurityGroupsHasBeenSet() const { return m_securityGroupsHasBeenSet; }
+
+    /**
+     * <p>[EC2-Classic, default VPC] One or more security group names. For a nondefault
+     * VPC, you must use security group IDs instead.</p> <p>You cannot specify this
+     * option and the network interfaces option in the same request.</p> <p>Default:
+     * Amazon EC2 uses the default security group.</p>
+     */
     inline void SetSecurityGroups(const Aws::Vector<Aws::String>& value) { m_securityGroupsHasBeenSet = true; m_securityGroups = value; }
 
     /**
@@ -763,6 +881,12 @@ namespace Model
      * <p>[EC2-VPC] The ID of the subnet to launch the instance into.</p> <p>You cannot
      * specify this option and the network interfaces option in the same request.</p>
      */
+    inline bool SubnetIdHasBeenSet() const { return m_subnetIdHasBeenSet; }
+
+    /**
+     * <p>[EC2-VPC] The ID of the subnet to launch the instance into.</p> <p>You cannot
+     * specify this option and the network interfaces option in the same request.</p>
+     */
     inline void SetSubnetId(const Aws::String& value) { m_subnetIdHasBeenSet = true; m_subnetId = value; }
 
     /**
@@ -806,6 +930,17 @@ namespace Model
      * provide base64-encoded text.</p>
      */
     inline const Aws::String& GetUserData() const{ return m_userData; }
+
+    /**
+     * <p>The user data to make available to the instance. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/user-data.html">Running
+     * Commands on Your Linux Instance at Launch</a> (Linux) and <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ec2-instance-metadata.html#instancedata-add-user-data">Adding
+     * User Data</a> (Windows). If you are using a command line tool, base64-encoding
+     * is performed for you, and you can load the text from a file. Otherwise, you must
+     * provide base64-encoded text.</p>
+     */
+    inline bool UserDataHasBeenSet() const { return m_userDataHasBeenSet; }
 
     /**
      * <p>The user data to make available to the instance. For more information, see <a
@@ -882,6 +1017,11 @@ namespace Model
     /**
      * <p>Reserved.</p>
      */
+    inline bool AdditionalInfoHasBeenSet() const { return m_additionalInfoHasBeenSet; }
+
+    /**
+     * <p>Reserved.</p>
+     */
     inline void SetAdditionalInfo(const Aws::String& value) { m_additionalInfoHasBeenSet = true; m_additionalInfo = value; }
 
     /**
@@ -917,6 +1057,14 @@ namespace Model
      * Idempotency</a>.</p> <p>Constraints: Maximum 64 ASCII characters</p>
      */
     inline const Aws::String& GetClientToken() const{ return m_clientToken; }
+
+    /**
+     * <p>Unique, case-sensitive identifier you provide to ensure the idempotency of
+     * the request. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
+     * Idempotency</a>.</p> <p>Constraints: Maximum 64 ASCII characters</p>
+     */
+    inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
 
     /**
      * <p>Unique, case-sensitive identifier you provide to ensure the idempotency of
@@ -987,6 +1135,17 @@ namespace Model
      * can terminate the instance by running the shutdown command from the
      * instance.</p> <p>Default: <code>false</code> </p>
      */
+    inline bool DisableApiTerminationHasBeenSet() const { return m_disableApiTerminationHasBeenSet; }
+
+    /**
+     * <p>If you set this parameter to <code>true</code>, you can't terminate the
+     * instance using the Amazon EC2 console, CLI, or API; otherwise, you can. To
+     * change this attribute to <code>false</code> after launch, use
+     * <a>ModifyInstanceAttribute</a>. Alternatively, if you set
+     * <code>InstanceInitiatedShutdownBehavior</code> to <code>terminate</code>, you
+     * can terminate the instance by running the shutdown command from the
+     * instance.</p> <p>Default: <code>false</code> </p>
+     */
     inline void SetDisableApiTermination(bool value) { m_disableApiTerminationHasBeenSet = true; m_disableApiTermination = value; }
 
     /**
@@ -1008,6 +1167,14 @@ namespace Model
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
     inline bool GetDryRun() const{ return m_dryRun; }
+
+    /**
+     * <p>Checks whether you have the required permissions for the action, without
+     * actually making the request, and provides an error response. If you have the
+     * required permissions, the error response is <code>DryRunOperation</code>.
+     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+     */
+    inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
 
     /**
      * <p>Checks whether you have the required permissions for the action, without
@@ -1044,6 +1211,16 @@ namespace Model
      * apply when using an EBS-optimized instance.</p> <p>Default: <code>false</code>
      * </p>
      */
+    inline bool EbsOptimizedHasBeenSet() const { return m_ebsOptimizedHasBeenSet; }
+
+    /**
+     * <p>Indicates whether the instance is optimized for Amazon EBS I/O. This
+     * optimization provides dedicated throughput to Amazon EBS and an optimized
+     * configuration stack to provide optimal Amazon EBS I/O performance. This
+     * optimization isn't available with all instance types. Additional usage charges
+     * apply when using an EBS-optimized instance.</p> <p>Default: <code>false</code>
+     * </p>
+     */
     inline void SetEbsOptimized(bool value) { m_ebsOptimizedHasBeenSet = true; m_ebsOptimized = value; }
 
     /**
@@ -1061,6 +1238,11 @@ namespace Model
      * <p>The IAM instance profile.</p>
      */
     inline const IamInstanceProfileSpecification& GetIamInstanceProfile() const{ return m_iamInstanceProfile; }
+
+    /**
+     * <p>The IAM instance profile.</p>
+     */
+    inline bool IamInstanceProfileHasBeenSet() const { return m_iamInstanceProfileHasBeenSet; }
 
     /**
      * <p>The IAM instance profile.</p>
@@ -1089,6 +1271,13 @@ namespace Model
      * <p>Default: <code>stop</code> </p>
      */
     inline const ShutdownBehavior& GetInstanceInitiatedShutdownBehavior() const{ return m_instanceInitiatedShutdownBehavior; }
+
+    /**
+     * <p>Indicates whether an instance stops or terminates when you initiate shutdown
+     * from the instance (using the operating system command for system shutdown).</p>
+     * <p>Default: <code>stop</code> </p>
+     */
+    inline bool InstanceInitiatedShutdownBehaviorHasBeenSet() const { return m_instanceInitiatedShutdownBehaviorHasBeenSet; }
 
     /**
      * <p>Indicates whether an instance stops or terminates when you initiate shutdown
@@ -1124,6 +1313,12 @@ namespace Model
      * network interfaces option in the same request.</p>
      */
     inline const Aws::Vector<InstanceNetworkInterfaceSpecification>& GetNetworkInterfaces() const{ return m_networkInterfaces; }
+
+    /**
+     * <p>One or more network interfaces.</p> <p>You cannot specify this option and the
+     * network interfaces option in the same request.</p>
+     */
+    inline bool NetworkInterfacesHasBeenSet() const { return m_networkInterfacesHasBeenSet; }
 
     /**
      * <p>One or more network interfaces.</p> <p>You cannot specify this option and the
@@ -1172,6 +1367,17 @@ namespace Model
      * network interfaces option in the same request.</p>
      */
     inline const Aws::String& GetPrivateIpAddress() const{ return m_privateIpAddress; }
+
+    /**
+     * <p>[EC2-VPC] The primary IPv4 address. You must specify a value from the IPv4
+     * address range of the subnet.</p> <p>Only one private IP address can be
+     * designated as primary. You can't specify this option if you've specified the
+     * option to designate a private IP address as the primary IP address in a network
+     * interface specification. You cannot specify this option if you're launching more
+     * than one instance in the request.</p> <p>You cannot specify this option and the
+     * network interfaces option in the same request.</p>
+     */
+    inline bool PrivateIpAddressHasBeenSet() const { return m_privateIpAddressHasBeenSet; }
 
     /**
      * <p>[EC2-VPC] The primary IPv4 address. You must specify a value from the IPv4
@@ -1248,6 +1454,11 @@ namespace Model
     /**
      * <p>An elastic GPU to associate with the instance.</p>
      */
+    inline bool ElasticGpuSpecificationHasBeenSet() const { return m_elasticGpuSpecificationHasBeenSet; }
+
+    /**
+     * <p>An elastic GPU to associate with the instance.</p>
+     */
     inline void SetElasticGpuSpecification(const Aws::Vector<ElasticGpuSpecification>& value) { m_elasticGpuSpecificationHasBeenSet = true; m_elasticGpuSpecification = value; }
 
     /**
@@ -1280,6 +1491,11 @@ namespace Model
      * <p> An elastic inference accelerator. </p>
      */
     inline const Aws::Vector<ElasticInferenceAccelerator>& GetElasticInferenceAccelerators() const{ return m_elasticInferenceAccelerators; }
+
+    /**
+     * <p> An elastic inference accelerator. </p>
+     */
+    inline bool ElasticInferenceAcceleratorsHasBeenSet() const { return m_elasticInferenceAcceleratorsHasBeenSet; }
 
     /**
      * <p> An elastic inference accelerator. </p>
@@ -1319,6 +1535,14 @@ namespace Model
      * created, see <a>CreateTags</a>.</p>
      */
     inline const Aws::Vector<TagSpecification>& GetTagSpecifications() const{ return m_tagSpecifications; }
+
+    /**
+     * <p>The tags to apply to the resources during launch. You can only tag instances
+     * and volumes on launch. The specified tags are applied to all instances or
+     * volumes that are created during launch. To tag a resource after it has been
+     * created, see <a>CreateTags</a>.</p>
+     */
+    inline bool TagSpecificationsHasBeenSet() const { return m_tagSpecificationsHasBeenSet; }
 
     /**
      * <p>The tags to apply to the resources during launch. You can only tag instances
@@ -1383,6 +1607,14 @@ namespace Model
      * template. You can specify either the name or ID of a launch template, but not
      * both.</p>
      */
+    inline bool LaunchTemplateHasBeenSet() const { return m_launchTemplateHasBeenSet; }
+
+    /**
+     * <p>The launch template to use to launch the instances. Any parameters that you
+     * specify in <a>RunInstances</a> override the same parameters in the launch
+     * template. You can specify either the name or ID of a launch template, but not
+     * both.</p>
+     */
     inline void SetLaunchTemplate(const LaunchTemplateSpecification& value) { m_launchTemplateHasBeenSet = true; m_launchTemplate = value; }
 
     /**
@@ -1417,6 +1649,14 @@ namespace Model
      * <code>stop</code>.</p>
      */
     inline const InstanceMarketOptionsRequest& GetInstanceMarketOptions() const{ return m_instanceMarketOptions; }
+
+    /**
+     * <p>The market (purchasing) option for the instances.</p> <p>For
+     * <a>RunInstances</a>, persistent Spot Instance requests are only supported when
+     * <b>InstanceInterruptionBehavior</b> is set to either <code>hibernate</code> or
+     * <code>stop</code>.</p>
+     */
+    inline bool InstanceMarketOptionsHasBeenSet() const { return m_instanceMarketOptionsHasBeenSet; }
 
     /**
      * <p>The market (purchasing) option for the instances.</p> <p>For
@@ -1462,6 +1702,18 @@ namespace Model
      * <code>unlimited</code> (T3 instances)</p>
      */
     inline const CreditSpecificationRequest& GetCreditSpecification() const{ return m_creditSpecification; }
+
+    /**
+     * <p>The credit option for CPU usage of the instance. Valid values are
+     * <code>standard</code> and <code>unlimited</code>. To change this attribute after
+     * launch, use <a>ModifyInstanceCreditSpecification</a>. For more information, see
+     * <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-performance-instances.html">Burstable
+     * Performance Instances</a> in the <i>Amazon Elastic Compute Cloud User
+     * Guide</i>.</p> <p>Default: <code>standard</code> (T2 instances) or
+     * <code>unlimited</code> (T3 instances)</p>
+     */
+    inline bool CreditSpecificationHasBeenSet() const { return m_creditSpecificationHasBeenSet; }
 
     /**
      * <p>The credit option for CPU usage of the instance. Valid values are
@@ -1524,6 +1776,13 @@ namespace Model
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-optimize-cpu.html">Optimizing
      * CPU Options</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
      */
+    inline bool CpuOptionsHasBeenSet() const { return m_cpuOptionsHasBeenSet; }
+
+    /**
+     * <p>The CPU options for the instance. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-optimize-cpu.html">Optimizing
+     * CPU Options</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     */
     inline void SetCpuOptions(const CpuOptionsRequest& value) { m_cpuOptionsHasBeenSet = true; m_cpuOptions = value; }
 
     /**
@@ -1555,6 +1814,14 @@ namespace Model
      * that has matching attributes (instance type, platform, Availability Zone).</p>
      */
     inline const CapacityReservationSpecification& GetCapacityReservationSpecification() const{ return m_capacityReservationSpecification; }
+
+    /**
+     * <p>Information about the Capacity Reservation targeting option. If you do not
+     * specify this parameter, the instance's Capacity Reservation preference defaults
+     * to <code>open</code>, which enables it to run in any open Capacity Reservation
+     * that has matching attributes (instance type, platform, Availability Zone).</p>
+     */
+    inline bool CapacityReservationSpecificationHasBeenSet() const { return m_capacityReservationSpecificationHasBeenSet; }
 
     /**
      * <p>Information about the Capacity Reservation targeting option. If you do not
@@ -1603,6 +1870,14 @@ namespace Model
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html">Hibernate
      * Your Instance</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
      */
+    inline bool HibernationOptionsHasBeenSet() const { return m_hibernationOptionsHasBeenSet; }
+
+    /**
+     * <p>Indicates whether an instance is enabled for hibernation. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html">Hibernate
+     * Your Instance</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     */
     inline void SetHibernationOptions(const HibernationOptionsRequest& value) { m_hibernationOptionsHasBeenSet = true; m_hibernationOptions = value; }
 
     /**
@@ -1634,6 +1909,11 @@ namespace Model
      * <p>The license configurations.</p>
      */
     inline const Aws::Vector<LicenseConfigurationRequest>& GetLicenseSpecifications() const{ return m_licenseSpecifications; }
+
+    /**
+     * <p>The license configurations.</p>
+     */
+    inline bool LicenseSpecificationsHasBeenSet() const { return m_licenseSpecificationsHasBeenSet; }
 
     /**
      * <p>The license configurations.</p>

@@ -54,6 +54,11 @@ namespace Model
     /**
      * <p>The name of the AWS CodeBuild project.</p>
      */
+    inline bool ProjectNameHasBeenSet() const { return m_projectNameHasBeenSet; }
+
+    /**
+     * <p>The name of the AWS CodeBuild project.</p>
+     */
     inline void SetProjectName(const Aws::String& value) { m_projectNameHasBeenSet = true; m_projectName = value; }
 
     /**
@@ -90,6 +95,15 @@ namespace Model
      * <code>filterGroups</code> instead of <code>branchFilter</code>. </p> </note>
      */
     inline const Aws::String& GetBranchFilter() const{ return m_branchFilter; }
+
+    /**
+     * <p>A regular expression used to determine which repository branches are built
+     * when a webhook is triggered. If the name of a branch matches the regular
+     * expression, then it is built. If <code>branchFilter</code> is empty, then all
+     * branches are built.</p> <note> <p> It is recommended that you use
+     * <code>filterGroups</code> instead of <code>branchFilter</code>. </p> </note>
+     */
+    inline bool BranchFilterHasBeenSet() const { return m_branchFilterHasBeenSet; }
 
     /**
      * <p>A regular expression used to determine which repository branches are built
@@ -158,6 +172,13 @@ namespace Model
      * secret token should be updated. If you use Bitbucket for your repository,
      * <code>rotateSecret</code> is ignored. </p>
      */
+    inline bool RotateSecretHasBeenSet() const { return m_rotateSecretHasBeenSet; }
+
+    /**
+     * <p> A boolean value that specifies whether the associated GitHub repository's
+     * secret token should be updated. If you use Bitbucket for your repository,
+     * <code>rotateSecret</code> is ignored. </p>
+     */
     inline void SetRotateSecret(bool value) { m_rotateSecretHasBeenSet = true; m_rotateSecret = value; }
 
     /**
@@ -174,6 +195,13 @@ namespace Model
      * one <code>EVENT</code> <code>WebhookFilter</code>. </p>
      */
     inline const Aws::Vector<Aws::Vector<WebhookFilter>>& GetFilterGroups() const{ return m_filterGroups; }
+
+    /**
+     * <p> An array of arrays of <code>WebhookFilter</code> objects used to determine
+     * if a webhook event can trigger a build. A filter group must pcontain at least
+     * one <code>EVENT</code> <code>WebhookFilter</code>. </p>
+     */
+    inline bool FilterGroupsHasBeenSet() const { return m_filterGroupsHasBeenSet; }
 
     /**
      * <p> An array of arrays of <code>WebhookFilter</code> objects used to determine

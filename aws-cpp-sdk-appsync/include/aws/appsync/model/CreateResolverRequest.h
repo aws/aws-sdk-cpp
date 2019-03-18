@@ -52,6 +52,11 @@ namespace Model
     /**
      * <p>The ID for the GraphQL API for which the resolver is being created.</p>
      */
+    inline bool ApiIdHasBeenSet() const { return m_apiIdHasBeenSet; }
+
+    /**
+     * <p>The ID for the GraphQL API for which the resolver is being created.</p>
+     */
     inline void SetApiId(const Aws::String& value) { m_apiIdHasBeenSet = true; m_apiId = value; }
 
     /**
@@ -84,6 +89,11 @@ namespace Model
      * <p>The name of the <code>Type</code>.</p>
      */
     inline const Aws::String& GetTypeName() const{ return m_typeName; }
+
+    /**
+     * <p>The name of the <code>Type</code>.</p>
+     */
+    inline bool TypeNameHasBeenSet() const { return m_typeNameHasBeenSet; }
 
     /**
      * <p>The name of the <code>Type</code>.</p>
@@ -124,6 +134,11 @@ namespace Model
     /**
      * <p>The name of the field to attach the resolver to.</p>
      */
+    inline bool FieldNameHasBeenSet() const { return m_fieldNameHasBeenSet; }
+
+    /**
+     * <p>The name of the field to attach the resolver to.</p>
+     */
     inline void SetFieldName(const Aws::String& value) { m_fieldNameHasBeenSet = true; m_fieldName = value; }
 
     /**
@@ -156,6 +171,11 @@ namespace Model
      * <p>The name of the data source for which the resolver is being created.</p>
      */
     inline const Aws::String& GetDataSourceName() const{ return m_dataSourceName; }
+
+    /**
+     * <p>The name of the data source for which the resolver is being created.</p>
+     */
+    inline bool DataSourceNameHasBeenSet() const { return m_dataSourceNameHasBeenSet; }
 
     /**
      * <p>The name of the data source for which the resolver is being created.</p>
@@ -195,6 +215,14 @@ namespace Model
      * Template Language (VTL).</p>
      */
     inline const Aws::String& GetRequestMappingTemplate() const{ return m_requestMappingTemplate; }
+
+    /**
+     * <p>The mapping template to be used for requests.</p> <p>A resolver uses a
+     * request mapping template to convert a GraphQL expression into a format that a
+     * data source can understand. Mapping templates are written in Apache Velocity
+     * Template Language (VTL).</p>
+     */
+    inline bool RequestMappingTemplateHasBeenSet() const { return m_requestMappingTemplateHasBeenSet; }
 
     /**
      * <p>The mapping template to be used for requests.</p> <p>A resolver uses a
@@ -253,6 +281,11 @@ namespace Model
     /**
      * <p>The mapping template to be used for responses from the data source.</p>
      */
+    inline bool ResponseMappingTemplateHasBeenSet() const { return m_responseMappingTemplateHasBeenSet; }
+
+    /**
+     * <p>The mapping template to be used for responses from the data source.</p>
+     */
     inline void SetResponseMappingTemplate(const Aws::String& value) { m_responseMappingTemplateHasBeenSet = true; m_responseMappingTemplate = value; }
 
     /**
@@ -291,6 +324,17 @@ namespace Model
      * </li> </ul>
      */
     inline const ResolverKind& GetKind() const{ return m_kind; }
+
+    /**
+     * <p>The resolver type.</p> <ul> <li> <p> <b>UNIT</b>: A UNIT resolver type. A
+     * UNIT resolver is the default resolver type. A UNIT resolver enables you to
+     * execute a GraphQL query against a single data source.</p> </li> <li> <p>
+     * <b>PIPELINE</b>: A PIPELINE resolver type. A PIPELINE resolver enables you to
+     * execute a series of <code>Function</code> in a serial manner. You can use a
+     * pipeline resolver to execute a GraphQL query against multiple data sources.</p>
+     * </li> </ul>
+     */
+    inline bool KindHasBeenSet() const { return m_kindHasBeenSet; }
 
     /**
      * <p>The resolver type.</p> <ul> <li> <p> <b>UNIT</b>: A UNIT resolver type. A
@@ -341,6 +385,11 @@ namespace Model
      * <p>The <code>PipelineConfig</code>.</p>
      */
     inline const PipelineConfig& GetPipelineConfig() const{ return m_pipelineConfig; }
+
+    /**
+     * <p>The <code>PipelineConfig</code>.</p>
+     */
+    inline bool PipelineConfigHasBeenSet() const { return m_pipelineConfigHasBeenSet; }
 
     /**
      * <p>The <code>PipelineConfig</code>.</p>

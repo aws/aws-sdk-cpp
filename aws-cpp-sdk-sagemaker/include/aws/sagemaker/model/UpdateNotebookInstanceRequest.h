@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The name of the notebook instance to update.</p>
      */
+    inline bool NotebookInstanceNameHasBeenSet() const { return m_notebookInstanceNameHasBeenSet; }
+
+    /**
+     * <p>The name of the notebook instance to update.</p>
+     */
     inline void SetNotebookInstanceName(const Aws::String& value) { m_notebookInstanceNameHasBeenSet = true; m_notebookInstanceName = value; }
 
     /**
@@ -92,6 +97,11 @@ namespace Model
     /**
      * <p>The Amazon ML compute instance type.</p>
      */
+    inline bool InstanceTypeHasBeenSet() const { return m_instanceTypeHasBeenSet; }
+
+    /**
+     * <p>The Amazon ML compute instance type.</p>
+     */
     inline void SetInstanceType(const InstanceType& value) { m_instanceTypeHasBeenSet = true; m_instanceType = value; }
 
     /**
@@ -119,6 +129,16 @@ namespace Model
      * permission.</p> </note>
      */
     inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the IAM role that Amazon SageMaker can
+     * assume to access the notebook instance. For more information, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon
+     * SageMaker Roles</a>. </p> <note> <p>To be able to pass this role to Amazon
+     * SageMaker, the caller of this API must have the <code>iam:PassRole</code>
+     * permission.</p> </note>
+     */
+    inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the IAM role that Amazon SageMaker can
@@ -195,6 +215,14 @@ namespace Model
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/notebook-lifecycle-config.html">Step
      * 2.1: (Optional) Customize a Notebook Instance</a>.</p>
      */
+    inline bool LifecycleConfigNameHasBeenSet() const { return m_lifecycleConfigNameHasBeenSet; }
+
+    /**
+     * <p>The name of a lifecycle configuration to associate with the notebook
+     * instance. For information about lifestyle configurations, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/notebook-lifecycle-config.html">Step
+     * 2.1: (Optional) Customize a Notebook Instance</a>.</p>
+     */
     inline void SetLifecycleConfigName(const Aws::String& value) { m_lifecycleConfigNameHasBeenSet = true; m_lifecycleConfigName = value; }
 
     /**
@@ -248,6 +276,12 @@ namespace Model
      * <p>Set to <code>true</code> to remove the notebook instance lifecycle
      * configuration currently associated with the notebook instance.</p>
      */
+    inline bool DisassociateLifecycleConfigHasBeenSet() const { return m_disassociateLifecycleConfigHasBeenSet; }
+
+    /**
+     * <p>Set to <code>true</code> to remove the notebook instance lifecycle
+     * configuration currently associated with the notebook instance.</p>
+     */
     inline void SetDisassociateLifecycleConfig(bool value) { m_disassociateLifecycleConfigHasBeenSet = true; m_disassociateLifecycleConfig = value; }
 
     /**
@@ -262,6 +296,12 @@ namespace Model
      * The default value is 5 GB.</p>
      */
     inline int GetVolumeSizeInGB() const{ return m_volumeSizeInGB; }
+
+    /**
+     * <p>The size, in GB, of the ML storage volume to attach to the notebook instance.
+     * The default value is 5 GB.</p>
+     */
+    inline bool VolumeSizeInGBHasBeenSet() const { return m_volumeSizeInGBHasBeenSet; }
 
     /**
      * <p>The size, in GB, of the ML storage volume to attach to the notebook instance.
@@ -288,6 +328,19 @@ namespace Model
      * Git Repositories with Amazon SageMaker Notebook Instances</a>.</p>
      */
     inline const Aws::String& GetDefaultCodeRepository() const{ return m_defaultCodeRepository; }
+
+    /**
+     * <p>The Git repository to associate with the notebook instance as its default
+     * code repository. This can be either the name of a Git repository stored as a
+     * resource in your account, or the URL of a Git repository in <a
+     * href="http://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">AWS
+     * CodeCommit</a> or in any other Git repository. When you open a notebook
+     * instance, it opens in the directory that contains this repository. For more
+     * information, see <a
+     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating
+     * Git Repositories with Amazon SageMaker Notebook Instances</a>.</p>
+     */
+    inline bool DefaultCodeRepositoryHasBeenSet() const { return m_defaultCodeRepositoryHasBeenSet; }
 
     /**
      * <p>The Git repository to associate with the notebook instance as its default
@@ -380,6 +433,19 @@ namespace Model
      * Git Repositories with Amazon SageMaker Notebook Instances</a>.</p>
      */
     inline const Aws::Vector<Aws::String>& GetAdditionalCodeRepositories() const{ return m_additionalCodeRepositories; }
+
+    /**
+     * <p>An array of up to three Git repositories to associate with the notebook
+     * instance. These can be either the names of Git repositories stored as resources
+     * in your account, or the URL of Git repositories in <a
+     * href="http://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">AWS
+     * CodeCommit</a> or in any other Git repository. These repositories are cloned at
+     * the same level as the default repository of your notebook instance. For more
+     * information, see <a
+     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating
+     * Git Repositories with Amazon SageMaker Notebook Instances</a>.</p>
+     */
+    inline bool AdditionalCodeRepositoriesHasBeenSet() const { return m_additionalCodeRepositoriesHasBeenSet; }
 
     /**
      * <p>An array of up to three Git repositories to associate with the notebook
@@ -489,6 +555,15 @@ namespace Model
      * href="http://docs.aws.amazon.com/sagemaker/latest/dg/ei.html">Using Elastic
      * Inference in Amazon SageMaker</a>.</p>
      */
+    inline bool AcceleratorTypesHasBeenSet() const { return m_acceleratorTypesHasBeenSet; }
+
+    /**
+     * <p>A list of the Elastic Inference (EI) instance types to associate with this
+     * notebook instance. Currently only one EI instance type can be associated with a
+     * notebook instance. For more information, see <a
+     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/ei.html">Using Elastic
+     * Inference in Amazon SageMaker</a>.</p>
+     */
     inline void SetAcceleratorTypes(const Aws::Vector<NotebookInstanceAcceleratorType>& value) { m_acceleratorTypesHasBeenSet = true; m_acceleratorTypes = value; }
 
     /**
@@ -547,6 +622,12 @@ namespace Model
      * <p>A list of the Elastic Inference (EI) instance types to remove from this
      * notebook instance.</p>
      */
+    inline bool DisassociateAcceleratorTypesHasBeenSet() const { return m_disassociateAcceleratorTypesHasBeenSet; }
+
+    /**
+     * <p>A list of the Elastic Inference (EI) instance types to remove from this
+     * notebook instance.</p>
+     */
     inline void SetDisassociateAcceleratorTypes(bool value) { m_disassociateAcceleratorTypesHasBeenSet = true; m_disassociateAcceleratorTypes = value; }
 
     /**
@@ -561,6 +642,12 @@ namespace Model
      * instance.</p>
      */
     inline bool GetDisassociateDefaultCodeRepository() const{ return m_disassociateDefaultCodeRepository; }
+
+    /**
+     * <p>The name or URL of the default Git repository to remove from this notebook
+     * instance.</p>
+     */
+    inline bool DisassociateDefaultCodeRepositoryHasBeenSet() const { return m_disassociateDefaultCodeRepositoryHasBeenSet; }
 
     /**
      * <p>The name or URL of the default Git repository to remove from this notebook
@@ -585,6 +672,12 @@ namespace Model
      * <p>A list of names or URLs of the default Git repositories to remove from this
      * notebook instance.</p>
      */
+    inline bool DisassociateAdditionalCodeRepositoriesHasBeenSet() const { return m_disassociateAdditionalCodeRepositoriesHasBeenSet; }
+
+    /**
+     * <p>A list of names or URLs of the default Git repositories to remove from this
+     * notebook instance.</p>
+     */
     inline void SetDisassociateAdditionalCodeRepositories(bool value) { m_disassociateAdditionalCodeRepositoriesHasBeenSet = true; m_disassociateAdditionalCodeRepositories = value; }
 
     /**
@@ -602,6 +695,15 @@ namespace Model
      * permissions.</p> </note>
      */
     inline const RootAccess& GetRootAccess() const{ return m_rootAccess; }
+
+    /**
+     * <p>Whether root access is enabled or disabled for users of the notebook
+     * instance. The default value is <code>Enabled</code>.</p> <note> <p>If you set
+     * this to <code>Disabled</code>, users don't have root access on the notebook
+     * instance, but lifecycle configuration scripts still run with root
+     * permissions.</p> </note>
+     */
+    inline bool RootAccessHasBeenSet() const { return m_rootAccessHasBeenSet; }
 
     /**
      * <p>Whether root access is enabled or disabled for users of the notebook

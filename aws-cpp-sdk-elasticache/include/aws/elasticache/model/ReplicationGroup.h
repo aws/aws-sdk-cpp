@@ -63,6 +63,11 @@ namespace Model
     /**
      * <p>The identifier for the replication group.</p>
      */
+    inline bool ReplicationGroupIdHasBeenSet() const { return m_replicationGroupIdHasBeenSet; }
+
+    /**
+     * <p>The identifier for the replication group.</p>
+     */
     inline void SetReplicationGroupId(const Aws::String& value) { m_replicationGroupIdHasBeenSet = true; m_replicationGroupId = value; }
 
     /**
@@ -95,6 +100,11 @@ namespace Model
      * <p>The user supplied description of the replication group.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
+
+    /**
+     * <p>The user supplied description of the replication group.</p>
+     */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
 
     /**
      * <p>The user supplied description of the replication group.</p>
@@ -133,6 +143,13 @@ namespace Model
      * <code>create-failed</code>, <code>snapshotting</code>.</p>
      */
     inline const Aws::String& GetStatus() const{ return m_status; }
+
+    /**
+     * <p>The current state of this replication group - <code>creating</code>,
+     * <code>available</code>, <code>modifying</code>, <code>deleting</code>,
+     * <code>create-failed</code>, <code>snapshotting</code>.</p>
+     */
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
     /**
      * <p>The current state of this replication group - <code>creating</code>,
@@ -187,6 +204,12 @@ namespace Model
      * <p>A group of settings to be applied to the replication group, either
      * immediately or during the next maintenance window.</p>
      */
+    inline bool PendingModifiedValuesHasBeenSet() const { return m_pendingModifiedValuesHasBeenSet; }
+
+    /**
+     * <p>A group of settings to be applied to the replication group, either
+     * immediately or during the next maintenance window.</p>
+     */
     inline void SetPendingModifiedValues(const ReplicationGroupPendingModifiedValues& value) { m_pendingModifiedValuesHasBeenSet = true; m_pendingModifiedValues = value; }
 
     /**
@@ -213,6 +236,12 @@ namespace Model
      * group.</p>
      */
     inline const Aws::Vector<Aws::String>& GetMemberClusters() const{ return m_memberClusters; }
+
+    /**
+     * <p>The names of all the cache clusters that are part of this replication
+     * group.</p>
+     */
+    inline bool MemberClustersHasBeenSet() const { return m_memberClustersHasBeenSet; }
 
     /**
      * <p>The names of all the cache clusters that are part of this replication
@@ -264,6 +293,14 @@ namespace Model
      * (shard).</p>
      */
     inline const Aws::Vector<NodeGroup>& GetNodeGroups() const{ return m_nodeGroups; }
+
+    /**
+     * <p>A list of node groups in this replication group. For Redis (cluster mode
+     * disabled) replication groups, this is a single-element list. For Redis (cluster
+     * mode enabled) replication groups, the list contains an entry for each node group
+     * (shard).</p>
+     */
+    inline bool NodeGroupsHasBeenSet() const { return m_nodeGroupsHasBeenSet; }
 
     /**
      * <p>A list of node groups in this replication group. For Redis (cluster mode
@@ -324,6 +361,12 @@ namespace Model
      * <p>The cluster ID that is used as the daily snapshot source for the replication
      * group.</p>
      */
+    inline bool SnapshottingClusterIdHasBeenSet() const { return m_snapshottingClusterIdHasBeenSet; }
+
+    /**
+     * <p>The cluster ID that is used as the daily snapshot source for the replication
+     * group.</p>
+     */
     inline void SetSnapshottingClusterId(const Aws::String& value) { m_snapshottingClusterIdHasBeenSet = true; m_snapshottingClusterId = value; }
 
     /**
@@ -366,6 +409,16 @@ namespace Model
      * </ul>
      */
     inline const AutomaticFailoverStatus& GetAutomaticFailover() const{ return m_automaticFailover; }
+
+    /**
+     * <p>Indicates the status of Multi-AZ with automatic failover for this Redis
+     * replication group.</p> <p>Amazon ElastiCache for Redis does not support Multi-AZ
+     * with automatic failover on:</p> <ul> <li> <p>Redis versions earlier than
+     * 2.8.6.</p> </li> <li> <p>Redis (cluster mode disabled): T1 and T2 cache node
+     * types.</p> </li> <li> <p>Redis (cluster mode enabled): T1 node types.</p> </li>
+     * </ul>
+     */
+    inline bool AutomaticFailoverHasBeenSet() const { return m_automaticFailoverHasBeenSet; }
 
     /**
      * <p>Indicates the status of Multi-AZ with automatic failover for this Redis
@@ -418,6 +471,12 @@ namespace Model
      * <p>The configuration endpoint for this replication group. Use the configuration
      * endpoint to connect to this replication group.</p>
      */
+    inline bool ConfigurationEndpointHasBeenSet() const { return m_configurationEndpointHasBeenSet; }
+
+    /**
+     * <p>The configuration endpoint for this replication group. Use the configuration
+     * endpoint to connect to this replication group.</p>
+     */
     inline void SetConfigurationEndpoint(const Endpoint& value) { m_configurationEndpointHasBeenSet = true; m_configurationEndpoint = value; }
 
     /**
@@ -457,6 +516,16 @@ namespace Model
      * <code>SnapshotRetentionLimit</code> is set to zero (0), backups are turned
      * off.</p> </important>
      */
+    inline bool SnapshotRetentionLimitHasBeenSet() const { return m_snapshotRetentionLimitHasBeenSet; }
+
+    /**
+     * <p>The number of days for which ElastiCache retains automatic cluster snapshots
+     * before deleting them. For example, if you set
+     * <code>SnapshotRetentionLimit</code> to 5, a snapshot that was taken today is
+     * retained for 5 days before being deleted.</p> <important> <p> If the value of
+     * <code>SnapshotRetentionLimit</code> is set to zero (0), backups are turned
+     * off.</p> </important>
+     */
     inline void SetSnapshotRetentionLimit(int value) { m_snapshotRetentionLimitHasBeenSet = true; m_snapshotRetentionLimit = value; }
 
     /**
@@ -478,6 +547,15 @@ namespace Model
      * <code>Engine</code> parameter is <code>redis</code>.</p> </note>
      */
     inline const Aws::String& GetSnapshotWindow() const{ return m_snapshotWindow; }
+
+    /**
+     * <p>The daily time range (in UTC) during which ElastiCache begins taking a daily
+     * snapshot of your node group (shard).</p> <p>Example: <code>05:00-09:00</code>
+     * </p> <p>If you do not specify this parameter, ElastiCache automatically chooses
+     * an appropriate time range.</p> <note> <p>This parameter is only valid if the
+     * <code>Engine</code> parameter is <code>redis</code>.</p> </note>
+     */
+    inline bool SnapshotWindowHasBeenSet() const { return m_snapshotWindowHasBeenSet; }
 
     /**
      * <p>The daily time range (in UTC) during which ElastiCache begins taking a daily
@@ -546,6 +624,13 @@ namespace Model
      * i.e., whether its data can be partitioned across multiple shards (API/CLI: node
      * groups).</p> <p>Valid values: <code>true</code> | <code>false</code> </p>
      */
+    inline bool ClusterEnabledHasBeenSet() const { return m_clusterEnabledHasBeenSet; }
+
+    /**
+     * <p>A flag indicating whether or not this replication group is cluster enabled;
+     * i.e., whether its data can be partitioned across multiple shards (API/CLI: node
+     * groups).</p> <p>Valid values: <code>true</code> | <code>false</code> </p>
+     */
     inline void SetClusterEnabled(bool value) { m_clusterEnabledHasBeenSet = true; m_clusterEnabled = value; }
 
     /**
@@ -561,6 +646,12 @@ namespace Model
      * replication group.</p>
      */
     inline const Aws::String& GetCacheNodeType() const{ return m_cacheNodeType; }
+
+    /**
+     * <p>The name of the compute and memory capacity node type for each node in the
+     * replication group.</p>
+     */
+    inline bool CacheNodeTypeHasBeenSet() const { return m_cacheNodeTypeHasBeenSet; }
 
     /**
      * <p>The name of the compute and memory capacity node type for each node in the
@@ -609,6 +700,12 @@ namespace Model
      * <p>A flag that enables using an <code>AuthToken</code> (password) when issuing
      * Redis commands.</p> <p>Default: <code>false</code> </p>
      */
+    inline bool AuthTokenEnabledHasBeenSet() const { return m_authTokenEnabledHasBeenSet; }
+
+    /**
+     * <p>A flag that enables using an <code>AuthToken</code> (password) when issuing
+     * Redis commands.</p> <p>Default: <code>false</code> </p>
+     */
     inline void SetAuthTokenEnabled(bool value) { m_authTokenEnabledHasBeenSet = true; m_authTokenEnabled = value; }
 
     /**
@@ -628,6 +725,17 @@ namespace Model
      * <code>4.x</code>.</p> <p>Default: <code>false</code> </p>
      */
     inline bool GetTransitEncryptionEnabled() const{ return m_transitEncryptionEnabled; }
+
+    /**
+     * <p>A flag that enables in-transit encryption when set to <code>true</code>.</p>
+     * <p>You cannot modify the value of <code>TransitEncryptionEnabled</code> after
+     * the cluster is created. To enable in-transit encryption on a cluster you must
+     * set <code>TransitEncryptionEnabled</code> to <code>true</code> when you create a
+     * cluster.</p> <p> <b>Required:</b> Only available when creating a replication
+     * group in an Amazon VPC using redis version <code>3.2.6</code> or
+     * <code>4.x</code>.</p> <p>Default: <code>false</code> </p>
+     */
+    inline bool TransitEncryptionEnabledHasBeenSet() const { return m_transitEncryptionEnabledHasBeenSet; }
 
     /**
      * <p>A flag that enables in-transit encryption when set to <code>true</code>.</p>
@@ -662,6 +770,17 @@ namespace Model
      * <code>4.x</code>.</p> <p>Default: <code>false</code> </p>
      */
     inline bool GetAtRestEncryptionEnabled() const{ return m_atRestEncryptionEnabled; }
+
+    /**
+     * <p>A flag that enables encryption at-rest when set to <code>true</code>.</p>
+     * <p>You cannot modify the value of <code>AtRestEncryptionEnabled</code> after the
+     * cluster is created. To enable encryption at-rest on a cluster you must set
+     * <code>AtRestEncryptionEnabled</code> to <code>true</code> when you create a
+     * cluster.</p> <p> <b>Required:</b> Only available when creating a replication
+     * group in an Amazon VPC using redis version <code>3.2.6</code> or
+     * <code>4.x</code>.</p> <p>Default: <code>false</code> </p>
+     */
+    inline bool AtRestEncryptionEnabledHasBeenSet() const { return m_atRestEncryptionEnabledHasBeenSet; }
 
     /**
      * <p>A flag that enables encryption at-rest when set to <code>true</code>.</p>

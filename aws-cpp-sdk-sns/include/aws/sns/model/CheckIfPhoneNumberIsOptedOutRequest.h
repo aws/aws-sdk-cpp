@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p>The phone number for which you want to check the opt out status.</p>
      */
+    inline bool PhoneNumberHasBeenSet() const { return m_phoneNumberHasBeenSet; }
+
+    /**
+     * <p>The phone number for which you want to check the opt out status.</p>
+     */
     inline void SetPhoneNumber(const Aws::String& value) { m_phoneNumberHasBeenSet = true; m_phoneNumber = value; }
 
     /**

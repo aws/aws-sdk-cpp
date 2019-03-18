@@ -61,6 +61,12 @@ namespace Model
      * <p>The identifier to be assigned to the new Amazon Redshift HSM
      * configuration.</p>
      */
+    inline bool HsmConfigurationIdentifierHasBeenSet() const { return m_hsmConfigurationIdentifierHasBeenSet; }
+
+    /**
+     * <p>The identifier to be assigned to the new Amazon Redshift HSM
+     * configuration.</p>
+     */
     inline void SetHsmConfigurationIdentifier(const Aws::String& value) { m_hsmConfigurationIdentifierHasBeenSet = true; m_hsmConfigurationIdentifier = value; }
 
     /**
@@ -102,6 +108,11 @@ namespace Model
     /**
      * <p>A text description of the HSM configuration to be created.</p>
      */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
+
+    /**
+     * <p>A text description of the HSM configuration to be created.</p>
+     */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
@@ -135,6 +146,12 @@ namespace Model
      * HSM.</p>
      */
     inline const Aws::String& GetHsmIpAddress() const{ return m_hsmIpAddress; }
+
+    /**
+     * <p>The IP address that the Amazon Redshift cluster must use to access the
+     * HSM.</p>
+     */
+    inline bool HsmIpAddressHasBeenSet() const { return m_hsmIpAddressHasBeenSet; }
 
     /**
      * <p>The IP address that the Amazon Redshift cluster must use to access the
@@ -183,6 +200,12 @@ namespace Model
      * <p>The name of the partition in the HSM where the Amazon Redshift clusters will
      * store their database encryption keys.</p>
      */
+    inline bool HsmPartitionNameHasBeenSet() const { return m_hsmPartitionNameHasBeenSet; }
+
+    /**
+     * <p>The name of the partition in the HSM where the Amazon Redshift clusters will
+     * store their database encryption keys.</p>
+     */
     inline void SetHsmPartitionName(const Aws::String& value) { m_hsmPartitionNameHasBeenSet = true; m_hsmPartitionName = value; }
 
     /**
@@ -220,6 +243,11 @@ namespace Model
      * <p>The password required to access the HSM partition.</p>
      */
     inline const Aws::String& GetHsmPartitionPassword() const{ return m_hsmPartitionPassword; }
+
+    /**
+     * <p>The password required to access the HSM partition.</p>
+     */
+    inline bool HsmPartitionPasswordHasBeenSet() const { return m_hsmPartitionPasswordHasBeenSet; }
 
     /**
      * <p>The password required to access the HSM partition.</p>
@@ -262,6 +290,12 @@ namespace Model
      * <p>The HSMs public certificate file. When using Cloud HSM, the file name is
      * server.pem.</p>
      */
+    inline bool HsmServerPublicCertificateHasBeenSet() const { return m_hsmServerPublicCertificateHasBeenSet; }
+
+    /**
+     * <p>The HSMs public certificate file. When using Cloud HSM, the file name is
+     * server.pem.</p>
+     */
     inline void SetHsmServerPublicCertificate(const Aws::String& value) { m_hsmServerPublicCertificateHasBeenSet = true; m_hsmServerPublicCertificate = value; }
 
     /**
@@ -299,6 +333,11 @@ namespace Model
      * <p>A list of tag instances.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>A list of tag instances.</p>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
      * <p>A list of tag instances.</p>

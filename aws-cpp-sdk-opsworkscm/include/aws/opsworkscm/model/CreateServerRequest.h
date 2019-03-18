@@ -58,6 +58,13 @@ namespace Model
      * values are <code>true</code> or <code>false</code>. The default value is
      * <code>true</code>. </p>
      */
+    inline bool AssociatePublicIpAddressHasBeenSet() const { return m_associatePublicIpAddressHasBeenSet; }
+
+    /**
+     * <p> Associate a public IP address with a server that you are launching. Valid
+     * values are <code>true</code> or <code>false</code>. The default value is
+     * <code>true</code>. </p>
+     */
     inline void SetAssociatePublicIpAddress(bool value) { m_associatePublicIpAddressHasBeenSet = true; m_associatePublicIpAddress = value; }
 
     /**
@@ -78,6 +85,12 @@ namespace Model
      * <p> Enable or disable scheduled backups. Valid values are <code>true</code> or
      * <code>false</code>. The default value is <code>true</code>. </p>
      */
+    inline bool DisableAutomatedBackupHasBeenSet() const { return m_disableAutomatedBackupHasBeenSet; }
+
+    /**
+     * <p> Enable or disable scheduled backups. Valid values are <code>true</code> or
+     * <code>false</code>. The default value is <code>true</code>. </p>
+     */
     inline void SetDisableAutomatedBackup(bool value) { m_disableAutomatedBackupHasBeenSet = true; m_disableAutomatedBackup = value; }
 
     /**
@@ -92,6 +105,12 @@ namespace Model
      * <code>Chef</code> and <code>Puppet</code>. </p>
      */
     inline const Aws::String& GetEngine() const{ return m_engine; }
+
+    /**
+     * <p> The configuration management engine to use. Valid values include
+     * <code>Chef</code> and <code>Puppet</code>. </p>
+     */
+    inline bool EngineHasBeenSet() const { return m_engineHasBeenSet; }
 
     /**
      * <p> The configuration management engine to use. Valid values include
@@ -140,6 +159,12 @@ namespace Model
      * <p> The engine model of the server. Valid values in this release include
      * <code>Monolithic</code> for Puppet and <code>Single</code> for Chef. </p>
      */
+    inline bool EngineModelHasBeenSet() const { return m_engineModelHasBeenSet; }
+
+    /**
+     * <p> The engine model of the server. Valid values in this release include
+     * <code>Monolithic</code> for Puppet and <code>Single</code> for Chef. </p>
+     */
     inline void SetEngineModel(const Aws::String& value) { m_engineModelHasBeenSet = true; m_engineModel = value; }
 
     /**
@@ -179,6 +204,13 @@ namespace Model
      * Puppet server, the valid value is <code>2017</code>. </p>
      */
     inline const Aws::String& GetEngineVersion() const{ return m_engineVersion; }
+
+    /**
+     * <p> The major release version of the engine that you want to use. For a Chef
+     * server, the valid value for EngineVersion is currently <code>12</code>. For a
+     * Puppet server, the valid value is <code>2017</code>. </p>
+     */
+    inline bool EngineVersionHasBeenSet() const { return m_engineVersionHasBeenSet; }
 
     /**
      * <p> The major release version of the engine that you want to use. For a Chef
@@ -247,6 +279,31 @@ namespace Model
      * key.</p> </li> </ul>
      */
     inline const Aws::Vector<EngineAttribute>& GetEngineAttributes() const{ return m_engineAttributes; }
+
+    /**
+     * <p>Optional engine attributes on a specified server. </p> <p class="title">
+     * <b>Attributes accepted in a Chef createServer request:</b> </p> <ul> <li> <p>
+     * <code>CHEF_PIVOTAL_KEY</code>: A base64-encoded RSA public key. The
+     * corresponding private key is required to access the Chef API. When no
+     * CHEF_PIVOTAL_KEY is set, a private key is generated and returned in the
+     * response. </p> </li> <li> <p> <code>CHEF_DELIVERY_ADMIN_PASSWORD</code>: The
+     * password for the administrative user in the Chef Automate GUI. The password
+     * length is a minimum of eight characters, and a maximum of 32. The password can
+     * contain letters, numbers, and special characters (!/@#$%^&amp;+=_). The password
+     * must contain at least one lower case letter, one upper case letter, one number,
+     * and one special character. When no CHEF_DELIVERY_ADMIN_PASSWORD is set, one is
+     * generated and returned in the response.</p> </li> </ul> <p class="title">
+     * <b>Attributes accepted in a Puppet createServer request:</b> </p> <ul> <li> <p>
+     * <code>PUPPET_ADMIN_PASSWORD</code>: To work with the Puppet Enterprise console,
+     * a password must use ASCII characters.</p> </li> <li> <p>
+     * <code>PUPPET_R10K_REMOTE</code>: The r10k remote is the URL of your control
+     * repository (for example, ssh://git@your.git-repo.com:user/control-repo.git).
+     * Specifying an r10k remote opens TCP port 8170.</p> </li> <li> <p>
+     * <code>PUPPET_R10K_PRIVATE_KEY</code>: If you are using a private Git repository,
+     * add PUPPET_R10K_PRIVATE_KEY to specify an SSH URL and a PEM-encoded private SSH
+     * key.</p> </li> </ul>
+     */
+    inline bool EngineAttributesHasBeenSet() const { return m_engineAttributesHasBeenSet; }
 
     /**
      * <p>Optional engine attributes on a specified server. </p> <p class="title">
@@ -411,6 +468,13 @@ namespace Model
      * is created, AWS OpsWorks CM deletes the oldest backups if this number is
      * exceeded. The default value is <code>1</code>. </p>
      */
+    inline bool BackupRetentionCountHasBeenSet() const { return m_backupRetentionCountHasBeenSet; }
+
+    /**
+     * <p> The number of automated backups that you want to keep. Whenever a new backup
+     * is created, AWS OpsWorks CM deletes the oldest backups if this number is
+     * exceeded. The default value is <code>1</code>. </p>
+     */
     inline void SetBackupRetentionCount(int value) { m_backupRetentionCountHasBeenSet = true; m_backupRetentionCount = value; }
 
     /**
@@ -428,6 +492,14 @@ namespace Model
      * </p>
      */
     inline const Aws::String& GetServerName() const{ return m_serverName; }
+
+    /**
+     * <p> The name of the server. The server name must be unique within your AWS
+     * account, within each region. Server names must start with a letter; then
+     * letters, numbers, or hyphens (-) are allowed, up to a maximum of 40 characters.
+     * </p>
+     */
+    inline bool ServerNameHasBeenSet() const { return m_serverNameHasBeenSet; }
 
     /**
      * <p> The name of the server. The server name must be unique within your AWS
@@ -488,6 +560,17 @@ namespace Model
      * you need. </p>
      */
     inline const Aws::String& GetInstanceProfileArn() const{ return m_instanceProfileArn; }
+
+    /**
+     * <p> The ARN of the instance profile that your Amazon EC2 instances use. Although
+     * the AWS OpsWorks console typically creates the instance profile for you, if you
+     * are using API commands instead, run the service-role-creation.yaml AWS
+     * CloudFormation template, located at
+     * https://s3.amazonaws.com/opsworks-cm-us-east-1-prod-default-assets/misc/opsworks-cm-roles.yaml.
+     * This template creates a CloudFormation stack that includes the instance profile
+     * you need. </p>
+     */
+    inline bool InstanceProfileArnHasBeenSet() const { return m_instanceProfileArnHasBeenSet; }
 
     /**
      * <p> The ARN of the instance profile that your Amazon EC2 instances use. Although
@@ -568,6 +651,13 @@ namespace Model
      * Recommended instance types include <code>t2.medium</code> and greater,
      * <code>m4.*</code>, or <code>c4.xlarge</code> and greater. </p>
      */
+    inline bool InstanceTypeHasBeenSet() const { return m_instanceTypeHasBeenSet; }
+
+    /**
+     * <p> The Amazon EC2 instance type to use. For example, <code>m4.large</code>.
+     * Recommended instance types include <code>t2.medium</code> and greater,
+     * <code>m4.*</code>, or <code>c4.xlarge</code> and greater. </p>
+     */
     inline void SetInstanceType(const Aws::String& value) { m_instanceTypeHasBeenSet = true; m_instanceType = value; }
 
     /**
@@ -612,6 +702,13 @@ namespace Model
      * SSH. </p>
      */
     inline const Aws::String& GetKeyPair() const{ return m_keyPair; }
+
+    /**
+     * <p> The Amazon EC2 key pair to set for the instance. This parameter is optional;
+     * if desired, you may specify this parameter to connect to your instances by using
+     * SSH. </p>
+     */
+    inline bool KeyPairHasBeenSet() const { return m_keyPairHasBeenSet; }
 
     /**
      * <p> The Amazon EC2 key pair to set for the instance. This parameter is optional;
@@ -666,6 +763,17 @@ namespace Model
      * start time of every Monday at 08:00 UTC. (8:00 a.m.) </p>
      */
     inline const Aws::String& GetPreferredMaintenanceWindow() const{ return m_preferredMaintenanceWindow; }
+
+    /**
+     * <p> The start time for a one-hour period each week during which AWS OpsWorks CM
+     * performs maintenance on the instance. Valid values must be specified in the
+     * following format: <code>DDD:HH:MM</code>. The specified time is in coordinated
+     * universal time (UTC). The default value is a random one-hour period on Tuesday,
+     * Wednesday, or Friday. See <code>TimeWindowDefinition</code> for more
+     * information. </p> <p> <b>Example:</b> <code>Mon:08:00</code>, which represents a
+     * start time of every Monday at 08:00 UTC. (8:00 a.m.) </p>
+     */
+    inline bool PreferredMaintenanceWindowHasBeenSet() const { return m_preferredMaintenanceWindowHasBeenSet; }
 
     /**
      * <p> The start time for a one-hour period each week during which AWS OpsWorks CM
@@ -746,6 +854,19 @@ namespace Model
      * time of every Monday at 08:00 UTC. (8:00 a.m.)</p>
      */
     inline const Aws::String& GetPreferredBackupWindow() const{ return m_preferredBackupWindow; }
+
+    /**
+     * <p> The start time for a one-hour period during which AWS OpsWorks CM backs up
+     * application-level data on your server if automated backups are enabled. Valid
+     * values must be specified in one of the following formats: </p> <ul> <li> <p>
+     * <code>HH:MM</code> for daily backups</p> </li> <li> <p> <code>DDD:HH:MM</code>
+     * for weekly backups</p> </li> </ul> <p>The specified time is in coordinated
+     * universal time (UTC). The default value is a random, daily start time.</p> <p>
+     * <b>Example:</b> <code>08:00</code>, which represents a daily start time of 08:00
+     * UTC.</p> <p> <b>Example:</b> <code>Mon:08:00</code>, which represents a start
+     * time of every Monday at 08:00 UTC. (8:00 a.m.)</p>
+     */
+    inline bool PreferredBackupWindowHasBeenSet() const { return m_preferredBackupWindowHasBeenSet; }
 
     /**
      * <p> The start time for a one-hour period during which AWS OpsWorks CM backs up
@@ -842,6 +963,15 @@ namespace Model
      * parameter, AWS OpsWorks CM creates one new security group that uses TCP ports 22
      * and 443, open to 0.0.0.0/0 (everyone). </p>
      */
+    inline bool SecurityGroupIdsHasBeenSet() const { return m_securityGroupIdsHasBeenSet; }
+
+    /**
+     * <p> A list of security group IDs to attach to the Amazon EC2 instance. If you
+     * add this parameter, the specified security groups must be within the VPC that is
+     * specified by <code>SubnetIds</code>. </p> <p> If you do not specify this
+     * parameter, AWS OpsWorks CM creates one new security group that uses TCP ports 22
+     * and 443, open to 0.0.0.0/0 (everyone). </p>
+     */
     inline void SetSecurityGroupIds(const Aws::Vector<Aws::String>& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds = value; }
 
     /**
@@ -909,6 +1039,17 @@ namespace Model
      * instance profile that you need. </p>
      */
     inline const Aws::String& GetServiceRoleArn() const{ return m_serviceRoleArn; }
+
+    /**
+     * <p> The service role that the AWS OpsWorks CM service backend uses to work with
+     * your account. Although the AWS OpsWorks management console typically creates the
+     * service role for you, if you are using the AWS CLI or API commands, run the
+     * service-role-creation.yaml AWS CloudFormation template, located at
+     * https://s3.amazonaws.com/opsworks-cm-us-east-1-prod-default-assets/misc/opsworks-cm-roles.yaml.
+     * This template creates a CloudFormation stack that includes the service role and
+     * instance profile that you need. </p>
+     */
+    inline bool ServiceRoleArnHasBeenSet() const { return m_serviceRoleArnHasBeenSet; }
 
     /**
      * <p> The service role that the AWS OpsWorks CM service backend uses to work with
@@ -990,6 +1131,20 @@ namespace Model
      * Platforms</a>.</p>
      */
     inline const Aws::Vector<Aws::String>& GetSubnetIds() const{ return m_subnetIds; }
+
+    /**
+     * <p> The IDs of subnets in which to launch the server EC2 instance. </p> <p>
+     * Amazon EC2-Classic customers: This field is required. All servers must run
+     * within a VPC. The VPC must have "Auto Assign Public IP" enabled. </p> <p>
+     * EC2-VPC customers: This field is optional. If you do not specify subnet IDs,
+     * your EC2 instances are created in a default subnet that is selected by Amazon
+     * EC2. If you specify subnet IDs, the VPC must have "Auto Assign Public IP"
+     * enabled. </p> <p>For more information about supported Amazon EC2 platforms, see
+     * <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported
+     * Platforms</a>.</p>
+     */
+    inline bool SubnetIdsHasBeenSet() const { return m_subnetIdsHasBeenSet; }
 
     /**
      * <p> The IDs of subnets in which to launch the server EC2 instance. </p> <p>
@@ -1095,6 +1250,12 @@ namespace Model
      * backup represented by BackupId. </p>
      */
     inline const Aws::String& GetBackupId() const{ return m_backupId; }
+
+    /**
+     * <p> If you specify this field, AWS OpsWorks CM creates the server by using the
+     * backup represented by BackupId. </p>
+     */
+    inline bool BackupIdHasBeenSet() const { return m_backupIdHasBeenSet; }
 
     /**
      * <p> If you specify this field, AWS OpsWorks CM creates the server by using the

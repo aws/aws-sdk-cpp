@@ -66,6 +66,14 @@ namespace Model
      * required permissions, the error response is <code>DryRunOperation</code>.
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
+    inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
+
+    /**
+     * <p>Checks whether you have the required permissions for the action, without
+     * actually making the request, and provides an error response. If you have the
+     * required permissions, the error response is <code>DryRunOperation</code>.
+     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+     */
     inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
 
     /**
@@ -81,6 +89,11 @@ namespace Model
      * <p>One or more endpoint IDs.</p>
      */
     inline const Aws::Vector<Aws::String>& GetVpcEndpointIds() const{ return m_vpcEndpointIds; }
+
+    /**
+     * <p>One or more endpoint IDs.</p>
+     */
+    inline bool VpcEndpointIdsHasBeenSet() const { return m_vpcEndpointIdsHasBeenSet; }
 
     /**
      * <p>One or more endpoint IDs.</p>
@@ -127,6 +140,16 @@ namespace Model
      * <code>deleting</code> | <code>deleted</code>)</p> </li> </ul>
      */
     inline const Aws::Vector<Filter>& GetFilters() const{ return m_filters; }
+
+    /**
+     * <p>One or more filters.</p> <ul> <li> <p> <code>service-name</code>: The name of
+     * the service.</p> </li> <li> <p> <code>vpc-id</code>: The ID of the VPC in which
+     * the endpoint resides.</p> </li> <li> <p> <code>vpc-endpoint-id</code>: The ID of
+     * the endpoint.</p> </li> <li> <p> <code>vpc-endpoint-state</code>: The state of
+     * the endpoint. (<code>pending</code> | <code>available</code> |
+     * <code>deleting</code> | <code>deleted</code>)</p> </li> </ul>
+     */
+    inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
 
     /**
      * <p>One or more filters.</p> <ul> <li> <p> <code>service-name</code>: The name of
@@ -203,6 +226,14 @@ namespace Model
      * results.</p> <p>Constraint: If the value is greater than 1000, we return only
      * 1000 items.</p>
      */
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
+
+    /**
+     * <p>The maximum number of items to return for this request. The request returns a
+     * token that you can specify in a subsequent call to get the next set of
+     * results.</p> <p>Constraint: If the value is greater than 1000, we return only
+     * 1000 items.</p>
+     */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
@@ -219,6 +250,12 @@ namespace Model
      * a prior call.)</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
+    /**
+     * <p>The token for the next set of items to return. (You received this token from
+     * a prior call.)</p>
+     */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
      * <p>The token for the next set of items to return. (You received this token from

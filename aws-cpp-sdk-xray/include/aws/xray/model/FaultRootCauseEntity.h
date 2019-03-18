@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p>The name of the entity.</p>
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>The name of the entity.</p>
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
@@ -94,6 +99,11 @@ namespace Model
     /**
      * <p>The types and messages of the exceptions.</p>
      */
+    inline bool ExceptionsHasBeenSet() const { return m_exceptionsHasBeenSet; }
+
+    /**
+     * <p>The types and messages of the exceptions.</p>
+     */
     inline void SetExceptions(const Aws::Vector<RootCauseException>& value) { m_exceptionsHasBeenSet = true; m_exceptions = value; }
 
     /**
@@ -126,6 +136,11 @@ namespace Model
      * <p>A flag that denotes a remote subsegment.</p>
      */
     inline bool GetRemote() const{ return m_remote; }
+
+    /**
+     * <p>A flag that denotes a remote subsegment.</p>
+     */
+    inline bool RemoteHasBeenSet() const { return m_remoteHasBeenSet; }
 
     /**
      * <p>A flag that denotes a remote subsegment.</p>

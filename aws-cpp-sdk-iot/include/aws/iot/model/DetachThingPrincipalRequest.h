@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The name of the thing.</p>
      */
+    inline bool ThingNameHasBeenSet() const { return m_thingNameHasBeenSet; }
+
+    /**
+     * <p>The name of the thing.</p>
+     */
     inline void SetThingName(const Aws::String& value) { m_thingNameHasBeenSet = true; m_thingName = value; }
 
     /**
@@ -90,6 +95,13 @@ namespace Model
      * Amazon Cognito identity.</p>
      */
     inline const Aws::String& GetPrincipal() const{ return m_principal; }
+
+    /**
+     * <p>If the principal is a certificate, this value must be ARN of the certificate.
+     * If the principal is an Amazon Cognito identity, this value must be the ID of the
+     * Amazon Cognito identity.</p>
+     */
+    inline bool PrincipalHasBeenSet() const { return m_principalHasBeenSet; }
 
     /**
      * <p>If the principal is a certificate, this value must be ARN of the certificate.

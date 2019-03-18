@@ -56,6 +56,11 @@ namespace Model
     /**
      * Enables access to the the ActiveMQ Web Console for the ActiveMQ user.
      */
+    inline bool ConsoleAccessHasBeenSet() const { return m_consoleAccessHasBeenSet; }
+
+    /**
+     * Enables access to the the ActiveMQ Web Console for the ActiveMQ user.
+     */
     inline void SetConsoleAccess(bool value) { m_consoleAccessHasBeenSet = true; m_consoleAccess = value; }
 
     /**
@@ -70,6 +75,13 @@ namespace Model
      * tildes (- . _ ~). This value must be 2-100 characters long.
      */
     inline const Aws::Vector<Aws::String>& GetGroups() const{ return m_groups; }
+
+    /**
+     * The list of groups (20 maximum) to which the ActiveMQ user belongs. This value
+     * can contain only alphanumeric characters, dashes, periods, underscores, and
+     * tildes (- . _ ~). This value must be 2-100 characters long.
+     */
+    inline bool GroupsHasBeenSet() const { return m_groupsHasBeenSet; }
 
     /**
      * The list of groups (20 maximum) to which the ActiveMQ user belongs. This value
@@ -133,6 +145,13 @@ namespace Model
      * characters long, must contain at least 4 unique characters, and must not contain
      * commas.
      */
+    inline bool PasswordHasBeenSet() const { return m_passwordHasBeenSet; }
+
+    /**
+     * Required. The password of the ActiveMQ user. This value must be at least 12
+     * characters long, must contain at least 4 unique characters, and must not contain
+     * commas.
+     */
     inline void SetPassword(const Aws::String& value) { m_passwordHasBeenSet = true; m_password = value; }
 
     /**
@@ -177,6 +196,13 @@ namespace Model
      * This value must be 2-100 characters long.
      */
     inline const Aws::String& GetUsername() const{ return m_username; }
+
+    /**
+     * Required. The username of the ActiveMQ user. This value can contain only
+     * alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~).
+     * This value must be 2-100 characters long.
+     */
+    inline bool UsernameHasBeenSet() const { return m_usernameHasBeenSet; }
 
     /**
      * Required. The username of the ActiveMQ user. This value can contain only

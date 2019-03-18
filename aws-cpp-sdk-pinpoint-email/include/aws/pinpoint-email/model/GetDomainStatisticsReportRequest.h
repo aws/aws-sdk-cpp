@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The domain that you want to obtain deliverability metrics for.</p>
      */
+    inline bool DomainHasBeenSet() const { return m_domainHasBeenSet; }
+
+    /**
+     * <p>The domain that you want to obtain deliverability metrics for.</p>
+     */
     inline void SetDomain(const Aws::String& value) { m_domainHasBeenSet = true; m_domain = value; }
 
     /**
@@ -95,6 +100,12 @@ namespace Model
      * <p>The first day (in Unix time) that you want to obtain domain deliverability
      * metrics for.</p>
      */
+    inline bool StartDateHasBeenSet() const { return m_startDateHasBeenSet; }
+
+    /**
+     * <p>The first day (in Unix time) that you want to obtain domain deliverability
+     * metrics for.</p>
+     */
     inline void SetStartDate(const Aws::Utils::DateTime& value) { m_startDateHasBeenSet = true; m_startDate = value; }
 
     /**
@@ -122,6 +133,13 @@ namespace Model
      * equal to 30 days after the <code>StartDate</code>.</p>
      */
     inline const Aws::Utils::DateTime& GetEndDate() const{ return m_endDate; }
+
+    /**
+     * <p>The last day (in Unix time) that you want to obtain domain deliverability
+     * metrics for. The <code>EndDate</code> that you specify has to be less than or
+     * equal to 30 days after the <code>StartDate</code>.</p>
+     */
+    inline bool EndDateHasBeenSet() const { return m_endDateHasBeenSet; }
 
     /**
      * <p>The last day (in Unix time) that you want to obtain domain deliverability

@@ -58,6 +58,11 @@ namespace Model
     /**
      * Authentication scheme to use when connecting with CDN
      */
+    inline bool AuthenticationSchemeHasBeenSet() const { return m_authenticationSchemeHasBeenSet; }
+
+    /**
+     * Authentication scheme to use when connecting with CDN
+     */
     inline void SetAuthenticationScheme(const AuthenticationScheme& value) { m_authenticationSchemeHasBeenSet = true; m_authenticationScheme = value; }
 
     /**
@@ -86,6 +91,17 @@ namespace Model
      * minutes to allow the origin server to begin accepting data again.
      */
     inline const RtmpCacheFullBehavior& GetCacheFullBehavior() const{ return m_cacheFullBehavior; }
+
+    /**
+     * Controls behavior when content cache fills up. If remote origin server stalls
+     * the RTMP connection and does not accept content fast enough the 'Media Cache'
+     * will fill up. When the cache reaches the duration specified by cacheLength the
+     * cache will stop accepting new content. If set to disconnectImmediately, the RTMP
+     * output will force a disconnect. Clear the media cache, and reconnect after
+     * restartDelay seconds. If set to waitForServer, the RTMP output will wait up to 5
+     * minutes to allow the origin server to begin accepting data again.
+     */
+    inline bool CacheFullBehaviorHasBeenSet() const { return m_cacheFullBehaviorHasBeenSet; }
 
     /**
      * Controls behavior when content cache fills up. If remote origin server stalls
@@ -140,6 +156,11 @@ namespace Model
     /**
      * Cache length, in seconds, is used to calculate buffer size.
      */
+    inline bool CacheLengthHasBeenSet() const { return m_cacheLengthHasBeenSet; }
+
+    /**
+     * Cache length, in seconds, is used to calculate buffer size.
+     */
     inline void SetCacheLength(int value) { m_cacheLengthHasBeenSet = true; m_cacheLength = value; }
 
     /**
@@ -156,6 +177,15 @@ namespace Model
      * 608 from field 1 video will be passed.
      */
     inline const RtmpCaptionData& GetCaptionData() const{ return m_captionData; }
+
+    /**
+     * Controls the types of data that passes to onCaptionInfo outputs.  If set to
+     * 'all' then 608 and 708 carried DTVCC data will be passed.  If set to
+     * 'field1AndField2608' then DTVCC data will be stripped out, but 608 data from
+     * both fields will be passed. If set to 'field1608' then only the data carried in
+     * 608 from field 1 video will be passed.
+     */
+    inline bool CaptionDataHasBeenSet() const { return m_captionDataHasBeenSet; }
 
     /**
      * Controls the types of data that passes to onCaptionInfo outputs.  If set to
@@ -212,6 +242,16 @@ namespace Model
 - pauseOutput: Stop transmitting
      * data until input returns. This does not close the underlying RTMP connection.
      */
+    inline bool InputLossActionHasBeenSet() const { return m_inputLossActionHasBeenSet; }
+
+    /**
+     * Controls the behavior of this RTMP group if input becomes unavailable.
+
+-
+     * emitOutput: Emit a slate until input returns.
+- pauseOutput: Stop transmitting
+     * data until input returns. This does not close the underlying RTMP connection.
+     */
     inline void SetInputLossAction(const InputLossActionForRtmpOut& value) { m_inputLossActionHasBeenSet = true; m_inputLossAction = value; }
 
     /**
@@ -250,6 +290,12 @@ namespace Model
      * initiated. A value of 0 means never restart.
      */
     inline int GetRestartDelay() const{ return m_restartDelay; }
+
+    /**
+     * If a streaming output fails, number of seconds to wait until a restart is
+     * initiated. A value of 0 means never restart.
+     */
+    inline bool RestartDelayHasBeenSet() const { return m_restartDelayHasBeenSet; }
 
     /**
      * If a streaming output fails, number of seconds to wait until a restart is

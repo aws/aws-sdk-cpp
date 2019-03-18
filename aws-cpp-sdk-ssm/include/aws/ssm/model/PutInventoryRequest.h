@@ -54,6 +54,11 @@ namespace Model
     /**
      * <p>One or more instance IDs where you want to add or update inventory items.</p>
      */
+    inline bool InstanceIdHasBeenSet() const { return m_instanceIdHasBeenSet; }
+
+    /**
+     * <p>One or more instance IDs where you want to add or update inventory items.</p>
+     */
     inline void SetInstanceId(const Aws::String& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
 
     /**
@@ -86,6 +91,11 @@ namespace Model
      * <p>The inventory items that you want to add or update on instances.</p>
      */
     inline const Aws::Vector<InventoryItem>& GetItems() const{ return m_items; }
+
+    /**
+     * <p>The inventory items that you want to add or update on instances.</p>
+     */
+    inline bool ItemsHasBeenSet() const { return m_itemsHasBeenSet; }
 
     /**
      * <p>The inventory items that you want to add or update on instances.</p>

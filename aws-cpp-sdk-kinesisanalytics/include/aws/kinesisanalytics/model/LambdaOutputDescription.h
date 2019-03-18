@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>Amazon Resource Name (ARN) of the destination Lambda function.</p>
      */
+    inline bool ResourceARNHasBeenSet() const { return m_resourceARNHasBeenSet; }
+
+    /**
+     * <p>Amazon Resource Name (ARN) of the destination Lambda function.</p>
+     */
     inline void SetResourceARN(const Aws::String& value) { m_resourceARNHasBeenSet = true; m_resourceARN = value; }
 
     /**
@@ -89,6 +94,12 @@ namespace Model
      * destination function.</p>
      */
     inline const Aws::String& GetRoleARN() const{ return m_roleARN; }
+
+    /**
+     * <p>ARN of the IAM role that Amazon Kinesis Analytics can assume to write to the
+     * destination function.</p>
+     */
+    inline bool RoleARNHasBeenSet() const { return m_roleARNHasBeenSet; }
 
     /**
      * <p>ARN of the IAM role that Amazon Kinesis Analytics can assume to write to the

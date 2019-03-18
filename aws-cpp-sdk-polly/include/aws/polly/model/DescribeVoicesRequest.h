@@ -61,6 +61,13 @@ namespace Model
      * country code) for filtering the list of voices returned. If you don't specify
      * this optional parameter, all available voices are returned. </p>
      */
+    inline bool LanguageCodeHasBeenSet() const { return m_languageCodeHasBeenSet; }
+
+    /**
+     * <p> The language identification tag (ISO 639 code for the language name-ISO 3166
+     * country code) for filtering the list of voices returned. If you don't specify
+     * this optional parameter, all available voices are returned. </p>
+     */
     inline void SetLanguageCode(const LanguageCode& value) { m_languageCodeHasBeenSet = true; m_languageCode = value; }
 
     /**
@@ -101,6 +108,15 @@ namespace Model
      * both Italian (it-IT) and US English, that voice will be included if you specify
      * <code>yes</code> but not if you specify <code>no</code>.</p>
      */
+    inline bool IncludeAdditionalLanguageCodesHasBeenSet() const { return m_includeAdditionalLanguageCodesHasBeenSet; }
+
+    /**
+     * <p>Boolean value indicating whether to return any bilingual voices that use the
+     * specified language as an additional language. For instance, if you request all
+     * languages that use US English (es-US), and there is an Italian voice that speaks
+     * both Italian (it-IT) and US English, that voice will be included if you specify
+     * <code>yes</code> but not if you specify <code>no</code>.</p>
+     */
     inline void SetIncludeAdditionalLanguageCodes(bool value) { m_includeAdditionalLanguageCodesHasBeenSet = true; m_includeAdditionalLanguageCodes = value; }
 
     /**
@@ -119,6 +135,13 @@ namespace Model
      * continue the listing.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
+    /**
+     * <p>An opaque pagination token returned from the previous
+     * <code>DescribeVoices</code> operation. If present, this indicates where to
+     * continue the listing.</p>
+     */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
      * <p>An opaque pagination token returned from the previous

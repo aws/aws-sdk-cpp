@@ -53,6 +53,11 @@ namespace Model
     /**
      * <p>The name of the custom terminology being retrieved.</p>
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>The name of the custom terminology being retrieved.</p>
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
@@ -86,6 +91,12 @@ namespace Model
      * TMX.</p>
      */
     inline const TerminologyDataFormat& GetTerminologyDataFormat() const{ return m_terminologyDataFormat; }
+
+    /**
+     * <p>The data format of the custom terminology being retrieved, either CSV or
+     * TMX.</p>
+     */
+    inline bool TerminologyDataFormatHasBeenSet() const { return m_terminologyDataFormatHasBeenSet; }
 
     /**
      * <p>The data format of the custom terminology being retrieved, either CSV or

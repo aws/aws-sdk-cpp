@@ -54,6 +54,11 @@ namespace Model
     /**
      * <p>The name of the maintenance track. </p>
      */
+    inline bool MaintenanceTrackNameHasBeenSet() const { return m_maintenanceTrackNameHasBeenSet; }
+
+    /**
+     * <p>The name of the maintenance track. </p>
+     */
     inline void SetMaintenanceTrackName(const Aws::String& value) { m_maintenanceTrackNameHasBeenSet = true; m_maintenanceTrackName = value; }
 
     /**
@@ -90,6 +95,11 @@ namespace Model
     /**
      * <p>An integer value for the maximum number of maintenance tracks to return.</p>
      */
+    inline bool MaxRecordsHasBeenSet() const { return m_maxRecordsHasBeenSet; }
+
+    /**
+     * <p>An integer value for the maximum number of maintenance tracks to return.</p>
+     */
     inline void SetMaxRecords(int value) { m_maxRecordsHasBeenSet = true; m_maxRecords = value; }
 
     /**
@@ -107,6 +117,16 @@ namespace Model
      * in the <code>Marker</code> parameter and retrying the request. </p>
      */
     inline const Aws::String& GetMarker() const{ return m_marker; }
+
+    /**
+     * <p>An optional parameter that specifies the starting point to return a set of
+     * response records. When the results of a <code>DescribeClusterTracks</code>
+     * request exceed the value specified in <code>MaxRecords</code>, Amazon Redshift
+     * returns a value in the <code>Marker</code> field of the response. You can
+     * retrieve the next set of response records by providing the returned marker value
+     * in the <code>Marker</code> parameter and retrying the request. </p>
+     */
+    inline bool MarkerHasBeenSet() const { return m_markerHasBeenSet; }
 
     /**
      * <p>An optional parameter that specifies the starting point to return a set of

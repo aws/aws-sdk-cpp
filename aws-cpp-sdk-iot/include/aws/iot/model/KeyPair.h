@@ -55,6 +55,11 @@ namespace Model
     /**
      * <p>The public key.</p>
      */
+    inline bool PublicKeyHasBeenSet() const { return m_publicKeyHasBeenSet; }
+
+    /**
+     * <p>The public key.</p>
+     */
     inline void SetPublicKey(const Aws::String& value) { m_publicKeyHasBeenSet = true; m_publicKey = value; }
 
     /**
@@ -87,6 +92,11 @@ namespace Model
      * <p>The private key.</p>
      */
     inline const Aws::String& GetPrivateKey() const{ return m_privateKey; }
+
+    /**
+     * <p>The private key.</p>
+     */
+    inline bool PrivateKeyHasBeenSet() const { return m_privateKeyHasBeenSet; }
 
     /**
      * <p>The private key.</p>

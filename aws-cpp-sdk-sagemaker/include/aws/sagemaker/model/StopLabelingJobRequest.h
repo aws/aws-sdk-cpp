@@ -52,6 +52,11 @@ namespace Model
     /**
      * <p>The name of the labeling job to stop.</p>
      */
+    inline bool LabelingJobNameHasBeenSet() const { return m_labelingJobNameHasBeenSet; }
+
+    /**
+     * <p>The name of the labeling job to stop.</p>
+     */
     inline void SetLabelingJobName(const Aws::String& value) { m_labelingJobNameHasBeenSet = true; m_labelingJobName = value; }
 
     /**

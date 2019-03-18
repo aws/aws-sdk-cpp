@@ -55,6 +55,11 @@ namespace Model
     /**
      * <p>The service that's hosting the file.</p>
      */
+    inline bool RepositoryTypeHasBeenSet() const { return m_repositoryTypeHasBeenSet; }
+
+    /**
+     * <p>The service that's hosting the file.</p>
+     */
     inline void SetRepositoryType(const Aws::String& value) { m_repositoryTypeHasBeenSet = true; m_repositoryType = value; }
 
     /**
@@ -87,6 +92,11 @@ namespace Model
      * <p>A presigned URL that you can use to download the deployment package.</p>
      */
     inline const Aws::String& GetLocation() const{ return m_location; }
+
+    /**
+     * <p>A presigned URL that you can use to download the deployment package.</p>
+     */
+    inline bool LocationHasBeenSet() const { return m_locationHasBeenSet; }
 
     /**
      * <p>A presigned URL that you can use to download the deployment package.</p>

@@ -60,6 +60,13 @@ namespace Model
      * verified with Amazon SES, or from a domain that has been verified with Amazon
      * SES.</p>
      */
+    inline bool FromHasBeenSet() const { return m_fromHasBeenSet; }
+
+    /**
+     * <p>The email address that is sending the email. It must be either individually
+     * verified with Amazon SES, or from a domain that has been verified with Amazon
+     * SES.</p>
+     */
     inline void SetFrom(const Aws::String& value) { m_fromHasBeenSet = true; m_from = value; }
 
     /**
@@ -106,6 +113,11 @@ namespace Model
     /**
      * <p>The destination to which the receiver of an email should reply to.</p>
      */
+    inline bool ReplyToHasBeenSet() const { return m_replyToHasBeenSet; }
+
+    /**
+     * <p>The destination to which the receiver of an email should reply to.</p>
+     */
     inline void SetReplyTo(const Aws::String& value) { m_replyToHasBeenSet = true; m_replyTo = value; }
 
     /**
@@ -140,6 +152,13 @@ namespace Model
      * address specified in the <code>From</code> parameter.</p>
      */
     inline const Aws::String& GetSourceArn() const{ return m_sourceArn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the identity that is associated with the
+     * sending authorization policy. It permits Amazon Cognito to send for the email
+     * address specified in the <code>From</code> parameter.</p>
+     */
+    inline bool SourceArnHasBeenSet() const { return m_sourceArnHasBeenSet; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the identity that is associated with the
@@ -192,6 +211,11 @@ namespace Model
     /**
      * <p>Email template used when a detected risk event is blocked.</p>
      */
+    inline bool BlockEmailHasBeenSet() const { return m_blockEmailHasBeenSet; }
+
+    /**
+     * <p>Email template used when a detected risk event is blocked.</p>
+     */
     inline void SetBlockEmail(const NotifyEmailType& value) { m_blockEmailHasBeenSet = true; m_blockEmail = value; }
 
     /**
@@ -214,6 +238,11 @@ namespace Model
      * <p>The email template used when a detected risk event is allowed.</p>
      */
     inline const NotifyEmailType& GetNoActionEmail() const{ return m_noActionEmail; }
+
+    /**
+     * <p>The email template used when a detected risk event is allowed.</p>
+     */
+    inline bool NoActionEmailHasBeenSet() const { return m_noActionEmailHasBeenSet; }
 
     /**
      * <p>The email template used when a detected risk event is allowed.</p>
@@ -241,6 +270,12 @@ namespace Model
      * risk.</p>
      */
     inline const NotifyEmailType& GetMfaEmail() const{ return m_mfaEmail; }
+
+    /**
+     * <p>The MFA email template used when MFA is challenged as part of a detected
+     * risk.</p>
+     */
+    inline bool MfaEmailHasBeenSet() const { return m_mfaEmailHasBeenSet; }
 
     /**
      * <p>The MFA email template used when MFA is challenged as part of a detected

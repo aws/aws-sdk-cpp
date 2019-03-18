@@ -55,6 +55,11 @@ namespace Model
     /**
      * <p>An array of Event JSON objects</p>
      */
+    inline bool EventsHasBeenSet() const { return m_eventsHasBeenSet; }
+
+    /**
+     * <p>An array of Event JSON objects</p>
+     */
     inline void SetEvents(const Aws::Vector<Event>& value) { m_eventsHasBeenSet = true; m_events = value; }
 
     /**
@@ -88,6 +93,12 @@ namespace Model
      * package name.</p>
      */
     inline const Aws::String& GetClientContext() const{ return m_clientContext; }
+
+    /**
+     * <p>The client context including the client ID, app title, app version and
+     * package name.</p>
+     */
+    inline bool ClientContextHasBeenSet() const { return m_clientContextHasBeenSet; }
 
     /**
      * <p>The client context including the client ID, app title, app version and
@@ -130,6 +141,11 @@ namespace Model
      * <p>The encoding used for the client context.</p>
      */
     inline const Aws::String& GetClientContextEncoding() const{ return m_clientContextEncoding; }
+
+    /**
+     * <p>The encoding used for the client context.</p>
+     */
+    inline bool ClientContextEncodingHasBeenSet() const { return m_clientContextEncodingHasBeenSet; }
 
     /**
      * <p>The encoding used for the client context.</p>

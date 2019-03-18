@@ -56,6 +56,11 @@ namespace Model
     /**
      * The country or region, in ISO 3166-1 alpha-2 format.
      */
+    inline bool CountryHasBeenSet() const { return m_countryHasBeenSet; }
+
+    /**
+     * The country or region, in ISO 3166-1 alpha-2 format.
+     */
     inline void SetCountry(const SetDimension& value) { m_countryHasBeenSet = true; m_country = value; }
 
     /**
@@ -78,6 +83,11 @@ namespace Model
      * The GPS Point dimension.
      */
     inline const GPSPointDimension& GetGPSPoint() const{ return m_gPSPoint; }
+
+    /**
+     * The GPS Point dimension.
+     */
+    inline bool GPSPointHasBeenSet() const { return m_gPSPointHasBeenSet; }
 
     /**
      * The GPS Point dimension.

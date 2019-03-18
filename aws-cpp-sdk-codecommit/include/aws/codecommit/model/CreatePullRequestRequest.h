@@ -57,6 +57,12 @@ namespace Model
      * <p>The title of the pull request. This title will be used to identify the pull
      * request to other users in the repository.</p>
      */
+    inline bool TitleHasBeenSet() const { return m_titleHasBeenSet; }
+
+    /**
+     * <p>The title of the pull request. This title will be used to identify the pull
+     * request to other users in the repository.</p>
+     */
     inline void SetTitle(const Aws::String& value) { m_titleHasBeenSet = true; m_title = value; }
 
     /**
@@ -98,6 +104,11 @@ namespace Model
     /**
      * <p>A description of the pull request.</p>
      */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
+
+    /**
+     * <p>A description of the pull request.</p>
+     */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
@@ -133,6 +144,14 @@ namespace Model
      * destination branch).</p>
      */
     inline const Aws::Vector<Target>& GetTargets() const{ return m_targets; }
+
+    /**
+     * <p>The targets for the pull request, including the source of the code to be
+     * reviewed (the source branch), and the destination where the creator of the pull
+     * request intends the code to be merged after the pull request is closed (the
+     * destination branch).</p>
+     */
+    inline bool TargetsHasBeenSet() const { return m_targetsHasBeenSet; }
 
     /**
      * <p>The targets for the pull request, including the source of the code to be
@@ -193,6 +212,17 @@ namespace Model
      * </note>
      */
     inline const Aws::String& GetClientRequestToken() const{ return m_clientRequestToken; }
+
+    /**
+     * <p>A unique, client-generated idempotency token that when provided in a request,
+     * ensures the request cannot be repeated with a changed parameter. If a request is
+     * received with the same parameters and a token is included, the request will
+     * return information about the initial request that used that token.</p> <note>
+     * <p>The AWS SDKs prepopulate client request tokens. If using an AWS SDK, you do
+     * not have to generate an idempotency token, as this will be done for you.</p>
+     * </note>
+     */
+    inline bool ClientRequestTokenHasBeenSet() const { return m_clientRequestTokenHasBeenSet; }
 
     /**
      * <p>A unique, client-generated idempotency token that when provided in a request,

@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>An ID of the AWS account that could not be processed. </p>
      */
+    inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
+
+    /**
+     * <p>An ID of the AWS account that could not be processed. </p>
+     */
     inline void SetAccountId(const Aws::String& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
 
     /**
@@ -88,6 +93,11 @@ namespace Model
      * <p>The reason for why an account could not be processed.</p>
      */
     inline const Aws::String& GetProcessingResult() const{ return m_processingResult; }
+
+    /**
+     * <p>The reason for why an account could not be processed.</p>
+     */
+    inline bool ProcessingResultHasBeenSet() const { return m_processingResultHasBeenSet; }
 
     /**
      * <p>The reason for why an account could not be processed.</p>

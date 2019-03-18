@@ -52,6 +52,11 @@ namespace Model
     /**
      * <p>The volume which snapshot schedule to delete.</p>
      */
+    inline bool VolumeARNHasBeenSet() const { return m_volumeARNHasBeenSet; }
+
+    /**
+     * <p>The volume which snapshot schedule to delete.</p>
+     */
     inline void SetVolumeARN(const Aws::String& value) { m_volumeARNHasBeenSet = true; m_volumeARN = value; }
 
     /**

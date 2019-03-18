@@ -66,6 +66,12 @@ namespace Model
      * <p>The full name of a condition context key, including the service prefix. For
      * example, <code>aws:SourceIp</code> or <code>s3:VersionId</code>.</p>
      */
+    inline bool ContextKeyNameHasBeenSet() const { return m_contextKeyNameHasBeenSet; }
+
+    /**
+     * <p>The full name of a condition context key, including the service prefix. For
+     * example, <code>aws:SourceIp</code> or <code>s3:VersionId</code>.</p>
+     */
     inline void SetContextKeyName(const Aws::String& value) { m_contextKeyNameHasBeenSet = true; m_contextKeyName = value; }
 
     /**
@@ -105,6 +111,13 @@ namespace Model
      * <code>Condition</code> element in an input policy.</p>
      */
     inline const Aws::Vector<Aws::String>& GetContextKeyValues() const{ return m_contextKeyValues; }
+
+    /**
+     * <p>The value (or values, if the condition context key supports multiple values)
+     * to provide to the simulation when the key is referenced by a
+     * <code>Condition</code> element in an input policy.</p>
+     */
+    inline bool ContextKeyValuesHasBeenSet() const { return m_contextKeyValuesHasBeenSet; }
 
     /**
      * <p>The value (or values, if the condition context key supports multiple values)
@@ -161,6 +174,12 @@ namespace Model
      * <code>ContextKeyValues</code> parameter.</p>
      */
     inline const ContextKeyTypeEnum& GetContextKeyType() const{ return m_contextKeyType; }
+
+    /**
+     * <p>The data type of the value (or values) specified in the
+     * <code>ContextKeyValues</code> parameter.</p>
+     */
+    inline bool ContextKeyTypeHasBeenSet() const { return m_contextKeyTypeHasBeenSet; }
 
     /**
      * <p>The data type of the value (or values) specified in the

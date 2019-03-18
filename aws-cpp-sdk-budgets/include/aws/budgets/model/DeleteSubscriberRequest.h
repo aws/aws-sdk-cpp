@@ -59,6 +59,12 @@ namespace Model
      * <p>The <code>accountId</code> that is associated with the budget whose
      * subscriber you want to delete.</p>
      */
+    inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
+
+    /**
+     * <p>The <code>accountId</code> that is associated with the budget whose
+     * subscriber you want to delete.</p>
+     */
     inline void SetAccountId(const Aws::String& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
 
     /**
@@ -100,6 +106,11 @@ namespace Model
     /**
      * <p>The name of the budget whose subscriber you want to delete.</p>
      */
+    inline bool BudgetNameHasBeenSet() const { return m_budgetNameHasBeenSet; }
+
+    /**
+     * <p>The name of the budget whose subscriber you want to delete.</p>
+     */
     inline void SetBudgetName(const Aws::String& value) { m_budgetNameHasBeenSet = true; m_budgetName = value; }
 
     /**
@@ -136,6 +147,11 @@ namespace Model
     /**
      * <p>The notification whose subscriber you want to delete.</p>
      */
+    inline bool NotificationHasBeenSet() const { return m_notificationHasBeenSet; }
+
+    /**
+     * <p>The notification whose subscriber you want to delete.</p>
+     */
     inline void SetNotification(const Notification& value) { m_notificationHasBeenSet = true; m_notification = value; }
 
     /**
@@ -158,6 +174,11 @@ namespace Model
      * <p>The subscriber that you want to delete.</p>
      */
     inline const Subscriber& GetSubscriber() const{ return m_subscriber; }
+
+    /**
+     * <p>The subscriber that you want to delete.</p>
+     */
+    inline bool SubscriberHasBeenSet() const { return m_subscriberHasBeenSet; }
 
     /**
      * <p>The subscriber that you want to delete.</p>

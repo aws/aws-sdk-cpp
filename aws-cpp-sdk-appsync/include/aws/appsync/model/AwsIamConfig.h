@@ -55,6 +55,11 @@ namespace Model
     /**
      * <p>The signing region for AWS IAM authorization.</p>
      */
+    inline bool SigningRegionHasBeenSet() const { return m_signingRegionHasBeenSet; }
+
+    /**
+     * <p>The signing region for AWS IAM authorization.</p>
+     */
     inline void SetSigningRegion(const Aws::String& value) { m_signingRegionHasBeenSet = true; m_signingRegion = value; }
 
     /**
@@ -87,6 +92,11 @@ namespace Model
      * <p>The signing service name for AWS IAM authorization.</p>
      */
     inline const Aws::String& GetSigningServiceName() const{ return m_signingServiceName; }
+
+    /**
+     * <p>The signing service name for AWS IAM authorization.</p>
+     */
+    inline bool SigningServiceNameHasBeenSet() const { return m_signingServiceNameHasBeenSet; }
 
     /**
      * <p>The signing service name for AWS IAM authorization.</p>

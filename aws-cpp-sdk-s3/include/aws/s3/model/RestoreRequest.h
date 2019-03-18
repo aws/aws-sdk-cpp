@@ -62,6 +62,12 @@ namespace Model
      * <p>Lifetime of the active copy in days. Do not use with restores that specify
      * OutputLocation.</p>
      */
+    inline bool DaysHasBeenSet() const { return m_daysHasBeenSet; }
+
+    /**
+     * <p>Lifetime of the active copy in days. Do not use with restores that specify
+     * OutputLocation.</p>
+     */
     inline void SetDays(int value) { m_daysHasBeenSet = true; m_days = value; }
 
     /**
@@ -76,6 +82,12 @@ namespace Model
      * that specify OutputLocation.</p>
      */
     inline const GlacierJobParameters& GetGlacierJobParameters() const{ return m_glacierJobParameters; }
+
+    /**
+     * <p>Glacier related parameters pertaining to this job. Do not use with restores
+     * that specify OutputLocation.</p>
+     */
+    inline bool GlacierJobParametersHasBeenSet() const { return m_glacierJobParametersHasBeenSet; }
 
     /**
      * <p>Glacier related parameters pertaining to this job. Do not use with restores
@@ -110,6 +122,11 @@ namespace Model
     /**
      * <p>Type of restore request.</p>
      */
+    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
+
+    /**
+     * <p>Type of restore request.</p>
+     */
     inline void SetType(const RestoreRequestType& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
@@ -136,6 +153,11 @@ namespace Model
     /**
      * <p>Glacier retrieval tier at which the restore will be processed.</p>
      */
+    inline bool TierHasBeenSet() const { return m_tierHasBeenSet; }
+
+    /**
+     * <p>Glacier retrieval tier at which the restore will be processed.</p>
+     */
     inline void SetTier(const Tier& value) { m_tierHasBeenSet = true; m_tier = value; }
 
     /**
@@ -158,6 +180,11 @@ namespace Model
      * <p>The optional description for the job.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
+
+    /**
+     * <p>The optional description for the job.</p>
+     */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
 
     /**
      * <p>The optional description for the job.</p>
@@ -198,6 +225,11 @@ namespace Model
     /**
      * <p>Describes the parameters for Select job types.</p>
      */
+    inline bool SelectParametersHasBeenSet() const { return m_selectParametersHasBeenSet; }
+
+    /**
+     * <p>Describes the parameters for Select job types.</p>
+     */
     inline void SetSelectParameters(const SelectParameters& value) { m_selectParametersHasBeenSet = true; m_selectParameters = value; }
 
     /**
@@ -220,6 +252,11 @@ namespace Model
      * <p>Describes the location where the restore job's output is stored.</p>
      */
     inline const OutputLocation& GetOutputLocation() const{ return m_outputLocation; }
+
+    /**
+     * <p>Describes the location where the restore job's output is stored.</p>
+     */
+    inline bool OutputLocationHasBeenSet() const { return m_outputLocationHasBeenSet; }
 
     /**
      * <p>Describes the location where the restore job's output is stored.</p>

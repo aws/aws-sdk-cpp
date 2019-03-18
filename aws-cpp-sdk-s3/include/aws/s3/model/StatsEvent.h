@@ -55,6 +55,11 @@ namespace Model
     /**
      * <p>The Stats event details.</p>
      */
+    inline bool DetailsHasBeenSet() const { return m_detailsHasBeenSet; }
+
+    /**
+     * <p>The Stats event details.</p>
+     */
     inline void SetDetails(const Stats& value) { m_detailsHasBeenSet = true; m_details = value; }
 
     /**

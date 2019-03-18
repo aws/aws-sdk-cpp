@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The HTTP routing information for the route.</p>
      */
+    inline bool HttpRouteHasBeenSet() const { return m_httpRouteHasBeenSet; }
+
+    /**
+     * <p>The HTTP routing information for the route.</p>
+     */
     inline void SetHttpRoute(const HttpRoute& value) { m_httpRouteHasBeenSet = true; m_httpRoute = value; }
 
     /**

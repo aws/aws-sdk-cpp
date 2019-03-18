@@ -62,6 +62,14 @@ namespace Model
      * required permissions, the error response is <code>DryRunOperation</code>.
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
+    inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
+
+    /**
+     * <p>Checks whether you have the required permissions for the action, without
+     * actually making the request, and provides an error response. If you have the
+     * required permissions, the error response is <code>DryRunOperation</code>.
+     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+     */
     inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
 
     /**
@@ -86,6 +94,20 @@ namespace Model
      * (<code>ACCEPT</code> | <code>REJECT</code> | <code>ALL</code>).</p> </li> </ul>
      */
     inline const Aws::Vector<Filter>& GetFilter() const{ return m_filter; }
+
+    /**
+     * <p>One or more filters.</p> <ul> <li> <p> <code>deliver-log-status</code> - The
+     * status of the logs delivery (<code>SUCCESS</code> | <code>FAILED</code>).</p>
+     * </li> <li> <p> <code>log-destination-type</code> - The type of destination to
+     * which the flow log publishes data. Possible destination types include
+     * <code>cloud-watch-logs</code> and <code>S3</code>.</p> </li> <li> <p>
+     * <code>flow-log-id</code> - The ID of the flow log.</p> </li> <li> <p>
+     * <code>log-group-name</code> - The name of the log group.</p> </li> <li> <p>
+     * <code>resource-id</code> - The ID of the VPC, subnet, or network interface.</p>
+     * </li> <li> <p> <code>traffic-type</code> - The type of traffic
+     * (<code>ACCEPT</code> | <code>REJECT</code> | <code>ALL</code>).</p> </li> </ul>
+     */
+    inline bool FilterHasBeenSet() const { return m_filterHasBeenSet; }
 
     /**
      * <p>One or more filters.</p> <ul> <li> <p> <code>deliver-log-status</code> - The
@@ -180,6 +202,11 @@ namespace Model
     /**
      * <p>One or more flow log IDs.</p>
      */
+    inline bool FlowLogIdsHasBeenSet() const { return m_flowLogIdsHasBeenSet; }
+
+    /**
+     * <p>One or more flow log IDs.</p>
+     */
     inline void SetFlowLogIds(const Aws::Vector<Aws::String>& value) { m_flowLogIdsHasBeenSet = true; m_flowLogIds = value; }
 
     /**
@@ -225,6 +252,13 @@ namespace Model
      * remaining results, make another call with the returned <code>nextToken</code>
      * value.</p>
      */
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
+
+    /**
+     * <p>The maximum number of results to return with a single call. To retrieve the
+     * remaining results, make another call with the returned <code>nextToken</code>
+     * value.</p>
+     */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
@@ -239,6 +273,11 @@ namespace Model
      * <p>The token for the next page of results.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
+    /**
+     * <p>The token for the next page of results.</p>
+     */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
      * <p>The token for the next page of results.</p>

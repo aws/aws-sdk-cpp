@@ -55,6 +55,11 @@ namespace Model
     /**
      * <p>The IDs of the instances. You can specify up to 20 instances.</p>
      */
+    inline bool InstanceIdsHasBeenSet() const { return m_instanceIdsHasBeenSet; }
+
+    /**
+     * <p>The IDs of the instances. You can specify up to 20 instances.</p>
+     */
     inline void SetInstanceIds(const Aws::Vector<Aws::String>& value) { m_instanceIdsHasBeenSet = true; m_instanceIds = value; }
 
     /**
@@ -96,6 +101,11 @@ namespace Model
     /**
      * <p>The name of the Auto Scaling group.</p>
      */
+    inline bool AutoScalingGroupNameHasBeenSet() const { return m_autoScalingGroupNameHasBeenSet; }
+
+    /**
+     * <p>The name of the Auto Scaling group.</p>
+     */
     inline void SetAutoScalingGroupName(const Aws::String& value) { m_autoScalingGroupNameHasBeenSet = true; m_autoScalingGroupName = value; }
 
     /**
@@ -129,6 +139,12 @@ namespace Model
      * by the number of instances moved to <code>Standby</code> mode.</p>
      */
     inline bool GetShouldDecrementDesiredCapacity() const{ return m_shouldDecrementDesiredCapacity; }
+
+    /**
+     * <p>Indicates whether to decrement the desired capacity of the Auto Scaling group
+     * by the number of instances moved to <code>Standby</code> mode.</p>
+     */
+    inline bool ShouldDecrementDesiredCapacityHasBeenSet() const { return m_shouldDecrementDesiredCapacityHasBeenSet; }
 
     /**
      * <p>Indicates whether to decrement the desired capacity of the Auto Scaling group

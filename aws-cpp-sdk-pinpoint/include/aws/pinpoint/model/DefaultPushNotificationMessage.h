@@ -70,6 +70,17 @@ namespace Model
      * the user's device launches and opens a web page at the URL you specify. Possible
      * values include: OPEN_APP | DEEP_LINK | URL
      */
+    inline bool ActionHasBeenSet() const { return m_actionHasBeenSet; }
+
+    /**
+     * The action that occurs if the user taps a push notification delivered by the
+     * campaign: OPEN_APP - Your app launches, or it becomes the foreground app if it
+     * has been sent to the background. This is the default action. DEEP_LINK - Uses
+     * deep linking features in iOS and Android to open your app and display a
+     * designated user interface within the app. URL - The default mobile browser on
+     * the user's device launches and opens a web page at the URL you specify. Possible
+     * values include: OPEN_APP | DEEP_LINK | URL
+     */
     inline void SetAction(const Action& value) { m_actionHasBeenSet = true; m_action = value; }
 
     /**
@@ -114,6 +125,11 @@ namespace Model
     /**
      * The message body of the notification.
      */
+    inline bool BodyHasBeenSet() const { return m_bodyHasBeenSet; }
+
+    /**
+     * The message body of the notification.
+     */
     inline void SetBody(const Aws::String& value) { m_bodyHasBeenSet = true; m_body = value; }
 
     /**
@@ -147,6 +163,12 @@ namespace Model
      * notifications' data.pinpoint.jsonBody' object
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetData() const{ return m_data; }
+
+    /**
+     * The data payload used for a silent push. This payload is added to the
+     * notifications' data.pinpoint.jsonBody' object
+     */
+    inline bool DataHasBeenSet() const { return m_dataHasBeenSet; }
 
     /**
      * The data payload used for a silent push. This payload is added to the
@@ -227,6 +249,13 @@ namespace Model
      * silent pushes for remote configuration or to deliver messages to in-app
      * notification centers.
      */
+    inline bool SilentPushHasBeenSet() const { return m_silentPushHasBeenSet; }
+
+    /**
+     * Indicates if the message should display on the recipient's device. You can use
+     * silent pushes for remote configuration or to deliver messages to in-app
+     * notification centers.
+     */
     inline void SetSilentPush(bool value) { m_silentPushHasBeenSet = true; m_silentPush = value; }
 
     /**
@@ -242,6 +271,12 @@ namespace Model
      * substitutions.
      */
     inline const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& GetSubstitutions() const{ return m_substitutions; }
+
+    /**
+     * Default message substitutions. Can be overridden by individual address
+     * substitutions.
+     */
+    inline bool SubstitutionsHasBeenSet() const { return m_substitutionsHasBeenSet; }
 
     /**
      * Default message substitutions. Can be overridden by individual address
@@ -312,6 +347,11 @@ namespace Model
     /**
      * The message title that displays above the message on the user's device.
      */
+    inline bool TitleHasBeenSet() const { return m_titleHasBeenSet; }
+
+    /**
+     * The message title that displays above the message on the user's device.
+     */
     inline void SetTitle(const Aws::String& value) { m_titleHasBeenSet = true; m_title = value; }
 
     /**
@@ -345,6 +385,12 @@ namespace Model
      * URL.
      */
     inline const Aws::String& GetUrl() const{ return m_url; }
+
+    /**
+     * The URL to open in the user's mobile browser. Used if the value for Action is
+     * URL.
+     */
+    inline bool UrlHasBeenSet() const { return m_urlHasBeenSet; }
 
     /**
      * The URL to open in the user's mobile browser. Used if the value for Action is

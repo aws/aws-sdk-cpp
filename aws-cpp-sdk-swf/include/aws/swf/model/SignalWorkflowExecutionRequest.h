@@ -52,6 +52,11 @@ namespace Model
     /**
      * <p>The name of the domain containing the workflow execution to signal.</p>
      */
+    inline bool DomainHasBeenSet() const { return m_domainHasBeenSet; }
+
+    /**
+     * <p>The name of the domain containing the workflow execution to signal.</p>
+     */
     inline void SetDomain(const Aws::String& value) { m_domainHasBeenSet = true; m_domain = value; }
 
     /**
@@ -84,6 +89,11 @@ namespace Model
      * <p>The workflowId of the workflow execution to signal.</p>
      */
     inline const Aws::String& GetWorkflowId() const{ return m_workflowId; }
+
+    /**
+     * <p>The workflowId of the workflow execution to signal.</p>
+     */
+    inline bool WorkflowIdHasBeenSet() const { return m_workflowIdHasBeenSet; }
 
     /**
      * <p>The workflowId of the workflow execution to signal.</p>
@@ -124,6 +134,11 @@ namespace Model
     /**
      * <p>The runId of the workflow execution to signal.</p>
      */
+    inline bool RunIdHasBeenSet() const { return m_runIdHasBeenSet; }
+
+    /**
+     * <p>The runId of the workflow execution to signal.</p>
+     */
     inline void SetRunId(const Aws::String& value) { m_runIdHasBeenSet = true; m_runId = value; }
 
     /**
@@ -157,6 +172,12 @@ namespace Model
      * workflow.</p>
      */
     inline const Aws::String& GetSignalName() const{ return m_signalName; }
+
+    /**
+     * <p>The name of the signal. This name must be meaningful to the target
+     * workflow.</p>
+     */
+    inline bool SignalNameHasBeenSet() const { return m_signalNameHasBeenSet; }
 
     /**
      * <p>The name of the signal. This name must be meaningful to the target
@@ -200,6 +221,12 @@ namespace Model
      * target workflow execution's history.</p>
      */
     inline const Aws::String& GetInput() const{ return m_input; }
+
+    /**
+     * <p>Data to attach to the <code>WorkflowExecutionSignaled</code> event in the
+     * target workflow execution's history.</p>
+     */
+    inline bool InputHasBeenSet() const { return m_inputHasBeenSet; }
 
     /**
      * <p>Data to attach to the <code>WorkflowExecutionSignaled</code> event in the

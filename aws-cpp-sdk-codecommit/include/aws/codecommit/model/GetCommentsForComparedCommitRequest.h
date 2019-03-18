@@ -52,6 +52,11 @@ namespace Model
     /**
      * <p>The name of the repository where you want to compare commits.</p>
      */
+    inline bool RepositoryNameHasBeenSet() const { return m_repositoryNameHasBeenSet; }
+
+    /**
+     * <p>The name of the repository where you want to compare commits.</p>
+     */
     inline void SetRepositoryName(const Aws::String& value) { m_repositoryNameHasBeenSet = true; m_repositoryName = value; }
 
     /**
@@ -85,6 +90,12 @@ namespace Model
      * 'before' commit.</p>
      */
     inline const Aws::String& GetBeforeCommitId() const{ return m_beforeCommitId; }
+
+    /**
+     * <p>To establish the directionality of the comparison, the full commit ID of the
+     * 'before' commit.</p>
+     */
+    inline bool BeforeCommitIdHasBeenSet() const { return m_beforeCommitIdHasBeenSet; }
 
     /**
      * <p>To establish the directionality of the comparison, the full commit ID of the
@@ -133,6 +144,12 @@ namespace Model
      * <p>To establish the directionality of the comparison, the full commit ID of the
      * 'after' commit.</p>
      */
+    inline bool AfterCommitIdHasBeenSet() const { return m_afterCommitIdHasBeenSet; }
+
+    /**
+     * <p>To establish the directionality of the comparison, the full commit ID of the
+     * 'after' commit.</p>
+     */
     inline void SetAfterCommitId(const Aws::String& value) { m_afterCommitIdHasBeenSet = true; m_afterCommitId = value; }
 
     /**
@@ -176,6 +193,12 @@ namespace Model
      * <p>An enumeration token that when provided in a request, returns the next batch
      * of the results. </p>
      */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
+
+    /**
+     * <p>An enumeration token that when provided in a request, returns the next batch
+     * of the results. </p>
+     */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
     /**
@@ -214,6 +237,12 @@ namespace Model
      * default is 100 comments, and is configurable up to 500.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
+
+    /**
+     * <p>A non-negative integer used to limit the number of returned results. The
+     * default is 100 comments, and is configurable up to 500.</p>
+     */
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
 
     /**
      * <p>A non-negative integer used to limit the number of returned results. The

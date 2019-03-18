@@ -59,6 +59,11 @@ namespace Model
     /**
      * <p>Unique identifier for the instance group.</p>
      */
+    inline bool InstanceGroupIdHasBeenSet() const { return m_instanceGroupIdHasBeenSet; }
+
+    /**
+     * <p>Unique identifier for the instance group.</p>
+     */
     inline void SetInstanceGroupId(const Aws::String& value) { m_instanceGroupIdHasBeenSet = true; m_instanceGroupId = value; }
 
     /**
@@ -91,6 +96,11 @@ namespace Model
      * <p>Friendly name for the instance group.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
+
+    /**
+     * <p>Friendly name for the instance group.</p>
+     */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
      * <p>Friendly name for the instance group.</p>
@@ -131,6 +141,11 @@ namespace Model
     /**
      * <p>Market type of the EC2 instances used to create a cluster node.</p>
      */
+    inline bool MarketHasBeenSet() const { return m_marketHasBeenSet; }
+
+    /**
+     * <p>Market type of the EC2 instances used to create a cluster node.</p>
+     */
     inline void SetMarket(const MarketType& value) { m_marketHasBeenSet = true; m_market = value; }
 
     /**
@@ -153,6 +168,11 @@ namespace Model
      * <p>Instance group role in the cluster</p>
      */
     inline const InstanceRoleType& GetInstanceRole() const{ return m_instanceRole; }
+
+    /**
+     * <p>Instance group role in the cluster</p>
+     */
+    inline bool InstanceRoleHasBeenSet() const { return m_instanceRoleHasBeenSet; }
 
     /**
      * <p>Instance group role in the cluster</p>
@@ -183,6 +203,15 @@ namespace Model
      * to the On-Demand price.</p>
      */
     inline const Aws::String& GetBidPrice() const{ return m_bidPrice; }
+
+    /**
+     * <p>The maximum Spot price your are willing to pay for EC2 instances.</p> <p>An
+     * optional, nullable field that applies if the <code>MarketType</code> for the
+     * instance group is specified as <code>SPOT</code>. Specified in USD. If the value
+     * is NULL and <code>SPOT</code> is specified, the maximum Spot price is set equal
+     * to the On-Demand price.</p>
+     */
+    inline bool BidPriceHasBeenSet() const { return m_bidPriceHasBeenSet; }
 
     /**
      * <p>The maximum Spot price your are willing to pay for EC2 instances.</p> <p>An
@@ -247,6 +276,11 @@ namespace Model
     /**
      * <p>EC2 instance type.</p>
      */
+    inline bool InstanceTypeHasBeenSet() const { return m_instanceTypeHasBeenSet; }
+
+    /**
+     * <p>EC2 instance type.</p>
+     */
     inline void SetInstanceType(const Aws::String& value) { m_instanceTypeHasBeenSet = true; m_instanceType = value; }
 
     /**
@@ -283,6 +317,11 @@ namespace Model
     /**
      * <p>Target number of instances to run in the instance group.</p>
      */
+    inline bool InstanceRequestCountHasBeenSet() const { return m_instanceRequestCountHasBeenSet; }
+
+    /**
+     * <p>Target number of instances to run in the instance group.</p>
+     */
     inline void SetInstanceRequestCount(int value) { m_instanceRequestCountHasBeenSet = true; m_instanceRequestCount = value; }
 
     /**
@@ -295,6 +334,11 @@ namespace Model
      * <p>Actual count of running instances.</p>
      */
     inline int GetInstanceRunningCount() const{ return m_instanceRunningCount; }
+
+    /**
+     * <p>Actual count of running instances.</p>
+     */
+    inline bool InstanceRunningCountHasBeenSet() const { return m_instanceRunningCountHasBeenSet; }
 
     /**
      * <p>Actual count of running instances.</p>
@@ -312,6 +356,12 @@ namespace Model
      * TERMINATED, and FAILED.</p>
      */
     inline const InstanceGroupState& GetState() const{ return m_state; }
+
+    /**
+     * <p>State of instance group. The following values are deprecated: STARTING,
+     * TERMINATED, and FAILED.</p>
+     */
+    inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
 
     /**
      * <p>State of instance group. The following values are deprecated: STARTING,
@@ -342,6 +392,11 @@ namespace Model
      * <p>Details regarding the state of the instance group.</p>
      */
     inline const Aws::String& GetLastStateChangeReason() const{ return m_lastStateChangeReason; }
+
+    /**
+     * <p>Details regarding the state of the instance group.</p>
+     */
+    inline bool LastStateChangeReasonHasBeenSet() const { return m_lastStateChangeReasonHasBeenSet; }
 
     /**
      * <p>Details regarding the state of the instance group.</p>
@@ -382,6 +437,11 @@ namespace Model
     /**
      * <p>The date/time the instance group was created.</p>
      */
+    inline bool CreationDateTimeHasBeenSet() const { return m_creationDateTimeHasBeenSet; }
+
+    /**
+     * <p>The date/time the instance group was created.</p>
+     */
     inline void SetCreationDateTime(const Aws::Utils::DateTime& value) { m_creationDateTimeHasBeenSet = true; m_creationDateTime = value; }
 
     /**
@@ -404,6 +464,11 @@ namespace Model
      * <p>The date/time the instance group was started.</p>
      */
     inline const Aws::Utils::DateTime& GetStartDateTime() const{ return m_startDateTime; }
+
+    /**
+     * <p>The date/time the instance group was started.</p>
+     */
+    inline bool StartDateTimeHasBeenSet() const { return m_startDateTimeHasBeenSet; }
 
     /**
      * <p>The date/time the instance group was started.</p>
@@ -434,6 +499,11 @@ namespace Model
     /**
      * <p>The date/time the instance group was available to the cluster.</p>
      */
+    inline bool ReadyDateTimeHasBeenSet() const { return m_readyDateTimeHasBeenSet; }
+
+    /**
+     * <p>The date/time the instance group was available to the cluster.</p>
+     */
     inline void SetReadyDateTime(const Aws::Utils::DateTime& value) { m_readyDateTimeHasBeenSet = true; m_readyDateTime = value; }
 
     /**
@@ -456,6 +526,11 @@ namespace Model
      * <p>The date/time the instance group was terminated.</p>
      */
     inline const Aws::Utils::DateTime& GetEndDateTime() const{ return m_endDateTime; }
+
+    /**
+     * <p>The date/time the instance group was terminated.</p>
+     */
+    inline bool EndDateTimeHasBeenSet() const { return m_endDateTimeHasBeenSet; }
 
     /**
      * <p>The date/time the instance group was terminated.</p>

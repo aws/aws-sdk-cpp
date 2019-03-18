@@ -55,6 +55,11 @@ namespace Model
     /**
      * <p>The device key.</p>
      */
+    inline bool DeviceKeyHasBeenSet() const { return m_deviceKeyHasBeenSet; }
+
+    /**
+     * <p>The device key.</p>
+     */
     inline void SetDeviceKey(const Aws::String& value) { m_deviceKeyHasBeenSet = true; m_deviceKey = value; }
 
     /**
@@ -87,6 +92,11 @@ namespace Model
      * <p>The access token.</p>
      */
     inline const Aws::String& GetAccessToken() const{ return m_accessToken; }
+
+    /**
+     * <p>The access token.</p>
+     */
+    inline bool AccessTokenHasBeenSet() const { return m_accessTokenHasBeenSet; }
 
     /**
      * <p>The access token.</p>

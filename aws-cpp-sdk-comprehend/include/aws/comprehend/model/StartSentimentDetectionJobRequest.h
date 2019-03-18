@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>Specifies the format and location of the input data for the job.</p>
      */
+    inline bool InputDataConfigHasBeenSet() const { return m_inputDataConfigHasBeenSet; }
+
+    /**
+     * <p>Specifies the format and location of the input data for the job.</p>
+     */
     inline void SetInputDataConfig(const InputDataConfig& value) { m_inputDataConfigHasBeenSet = true; m_inputDataConfig = value; }
 
     /**
@@ -78,6 +83,11 @@ namespace Model
      * <p>Specifies where to send the output files. </p>
      */
     inline const OutputDataConfig& GetOutputDataConfig() const{ return m_outputDataConfig; }
+
+    /**
+     * <p>Specifies where to send the output files. </p>
+     */
+    inline bool OutputDataConfigHasBeenSet() const { return m_outputDataConfigHasBeenSet; }
 
     /**
      * <p>Specifies where to send the output files. </p>
@@ -107,6 +117,14 @@ namespace Model
      * href="https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions.html#auth-role-permissions">https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions.html#auth-role-permissions</a>.</p>
      */
     inline const Aws::String& GetDataAccessRoleArn() const{ return m_dataAccessRoleArn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management
+     * (IAM) role that grants Amazon Comprehend read access to your input data. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions.html#auth-role-permissions">https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions.html#auth-role-permissions</a>.</p>
+     */
+    inline bool DataAccessRoleArnHasBeenSet() const { return m_dataAccessRoleArnHasBeenSet; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management
@@ -165,6 +183,11 @@ namespace Model
     /**
      * <p>The identifier of the job.</p>
      */
+    inline bool JobNameHasBeenSet() const { return m_jobNameHasBeenSet; }
+
+    /**
+     * <p>The identifier of the job.</p>
+     */
     inline void SetJobName(const Aws::String& value) { m_jobNameHasBeenSet = true; m_jobName = value; }
 
     /**
@@ -203,6 +226,12 @@ namespace Model
      * <p>The language of the input documents. You can specify English ("en") or
      * Spanish ("es"). All documents must be in the same language.</p>
      */
+    inline bool LanguageCodeHasBeenSet() const { return m_languageCodeHasBeenSet; }
+
+    /**
+     * <p>The language of the input documents. You can specify English ("en") or
+     * Spanish ("es"). All documents must be in the same language.</p>
+     */
     inline void SetLanguageCode(const LanguageCode& value) { m_languageCodeHasBeenSet = true; m_languageCode = value; }
 
     /**
@@ -229,6 +258,12 @@ namespace Model
      * token, Amazon Comprehend generates one.</p>
      */
     inline const Aws::String& GetClientRequestToken() const{ return m_clientRequestToken; }
+
+    /**
+     * <p>A unique identifier for the request. If you don't set the client request
+     * token, Amazon Comprehend generates one.</p>
+     */
+    inline bool ClientRequestTokenHasBeenSet() const { return m_clientRequestTokenHasBeenSet; }
 
     /**
      * <p>A unique identifier for the request. If you don't set the client request

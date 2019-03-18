@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>Specifies how the application should be restored.</p>
      */
+    inline bool ApplicationRestoreTypeHasBeenSet() const { return m_applicationRestoreTypeHasBeenSet; }
+
+    /**
+     * <p>Specifies how the application should be restored.</p>
+     */
     inline void SetApplicationRestoreType(const ApplicationRestoreType& value) { m_applicationRestoreTypeHasBeenSet = true; m_applicationRestoreType = value; }
 
     /**
@@ -82,6 +87,14 @@ namespace Model
      * <code>ApplicationRestoreType</code>.</p>
      */
     inline const Aws::String& GetSnapshotName() const{ return m_snapshotName; }
+
+    /**
+     * <p>The identifier of an existing snapshot of application state to use to restart
+     * an application. The application uses this value if
+     * <code>RESTORE_FROM_CUSTOM_SNAPSHOT</code> is specified for the
+     * <code>ApplicationRestoreType</code>.</p>
+     */
+    inline bool SnapshotNameHasBeenSet() const { return m_snapshotNameHasBeenSet; }
 
     /**
      * <p>The identifier of an existing snapshot of application state to use to restart

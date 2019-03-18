@@ -51,6 +51,11 @@ namespace Model
     /**
      * <p>The ARNS of the standards subscriptions that you want to disable.</p>
      */
+    inline bool StandardsSubscriptionArnsHasBeenSet() const { return m_standardsSubscriptionArnsHasBeenSet; }
+
+    /**
+     * <p>The ARNS of the standards subscriptions that you want to disable.</p>
+     */
     inline void SetStandardsSubscriptionArns(const Aws::Vector<Aws::String>& value) { m_standardsSubscriptionArnsHasBeenSet = true; m_standardsSubscriptionArns = value; }
 
     /**

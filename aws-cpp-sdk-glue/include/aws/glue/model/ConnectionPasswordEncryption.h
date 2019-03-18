@@ -71,6 +71,14 @@ namespace Model
      * <code>GetConnection</code> and <code>GetConnections</code>. This encryption
      * takes effect independently from catalog encryption. </p>
      */
+    inline bool ReturnConnectionPasswordEncryptedHasBeenSet() const { return m_returnConnectionPasswordEncryptedHasBeenSet; }
+
+    /**
+     * <p>When the <code>ReturnConnectionPasswordEncrypted</code> flag is set to
+     * "true", passwords remain encrypted in the responses of
+     * <code>GetConnection</code> and <code>GetConnections</code>. This encryption
+     * takes effect independently from catalog encryption. </p>
+     */
     inline void SetReturnConnectionPasswordEncrypted(bool value) { m_returnConnectionPasswordEncryptedHasBeenSet = true; m_returnConnectionPasswordEncrypted = value; }
 
     /**
@@ -92,6 +100,17 @@ namespace Model
      * your security requirements.</p>
      */
     inline const Aws::String& GetAwsKmsKeyId() const{ return m_awsKmsKeyId; }
+
+    /**
+     * <p>An AWS KMS key that is used to encrypt the connection password. </p> <p>If
+     * connection password protection is enabled, the caller of
+     * <code>CreateConnection</code> and <code>UpdateConnection</code> needs at least
+     * <code>kms:Encrypt</code> permission on the specified AWS KMS key, to encrypt
+     * passwords before storing them in the Data Catalog. </p> <p>You can set the
+     * decrypt permission to enable or restrict access on the password key according to
+     * your security requirements.</p>
+     */
+    inline bool AwsKmsKeyIdHasBeenSet() const { return m_awsKmsKeyIdHasBeenSet; }
 
     /**
      * <p>An AWS KMS key that is used to encrypt the connection password. </p> <p>If

@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p>The inclusive or exclusive range start.</p>
      */
+    inline bool StartModeHasBeenSet() const { return m_startModeHasBeenSet; }
+
+    /**
+     * <p>The inclusive or exclusive range start.</p>
+     */
     inline void SetStartMode(const RangeMode& value) { m_startModeHasBeenSet = true; m_startMode = value; }
 
     /**
@@ -80,6 +85,11 @@ namespace Model
      * <p>The value to start the range at.</p>
      */
     inline const TypedAttributeValue& GetStartValue() const{ return m_startValue; }
+
+    /**
+     * <p>The value to start the range at.</p>
+     */
+    inline bool StartValueHasBeenSet() const { return m_startValueHasBeenSet; }
 
     /**
      * <p>The value to start the range at.</p>
@@ -110,6 +120,11 @@ namespace Model
     /**
      * <p>The inclusive or exclusive range end.</p>
      */
+    inline bool EndModeHasBeenSet() const { return m_endModeHasBeenSet; }
+
+    /**
+     * <p>The inclusive or exclusive range end.</p>
+     */
     inline void SetEndMode(const RangeMode& value) { m_endModeHasBeenSet = true; m_endMode = value; }
 
     /**
@@ -132,6 +147,11 @@ namespace Model
      * <p>The attribute value to terminate the range at.</p>
      */
     inline const TypedAttributeValue& GetEndValue() const{ return m_endValue; }
+
+    /**
+     * <p>The attribute value to terminate the range at.</p>
+     */
+    inline bool EndValueHasBeenSet() const { return m_endValueHasBeenSet; }
 
     /**
      * <p>The attribute value to terminate the range at.</p>

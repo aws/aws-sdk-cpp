@@ -61,6 +61,11 @@ namespace Model
     /**
      * <p>The name of the region where the service-linked role is being used.</p>
      */
+    inline bool RegionHasBeenSet() const { return m_regionHasBeenSet; }
+
+    /**
+     * <p>The name of the region where the service-linked role is being used.</p>
+     */
     inline void SetRegion(const Aws::String& value) { m_regionHasBeenSet = true; m_region = value; }
 
     /**
@@ -93,6 +98,11 @@ namespace Model
      * <p>The name of the resource that is using the service-linked role.</p>
      */
     inline const Aws::Vector<Aws::String>& GetResources() const{ return m_resources; }
+
+    /**
+     * <p>The name of the resource that is using the service-linked role.</p>
+     */
+    inline bool ResourcesHasBeenSet() const { return m_resourcesHasBeenSet; }
 
     /**
      * <p>The name of the resource that is using the service-linked role.</p>

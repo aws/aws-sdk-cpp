@@ -70,6 +70,17 @@ namespace Model
      * <li> <p> <code>UPDATING</code> - Server-side encryption is being updated.</p>
      * </li> </ul>
      */
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
+
+    /**
+     * <p>The current state of server-side encryption:</p> <ul> <li> <p>
+     * <code>ENABLING</code> - Server-side encryption is being enabled.</p> </li> <li>
+     * <p> <code>ENABLED</code> - Server-side encryption is enabled.</p> </li> <li> <p>
+     * <code>DISABLING</code> - Server-side encryption is being disabled.</p> </li>
+     * <li> <p> <code>DISABLED</code> - Server-side encryption is disabled.</p> </li>
+     * <li> <p> <code>UPDATING</code> - Server-side encryption is being updated.</p>
+     * </li> </ul>
+     */
     inline void SetStatus(const SSEStatus& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
@@ -122,6 +133,15 @@ namespace Model
      * Management Service. Key is stored in your account and is managed by AWS KMS (KMS
      * charges apply).</p> </li> </ul>
      */
+    inline bool SSETypeHasBeenSet() const { return m_sSETypeHasBeenSet; }
+
+    /**
+     * <p>Server-side encryption type:</p> <ul> <li> <p> <code>AES256</code> -
+     * Server-side encryption which uses the AES256 algorithm (not applicable).</p>
+     * </li> <li> <p> <code>KMS</code> - Server-side encryption which uses AWS Key
+     * Management Service. Key is stored in your account and is managed by AWS KMS (KMS
+     * charges apply).</p> </li> </ul>
+     */
     inline void SetSSEType(const SSEType& value) { m_sSETypeHasBeenSet = true; m_sSEType = value; }
 
     /**
@@ -156,6 +176,11 @@ namespace Model
      * <p>The KMS master key ARN used for the KMS encryption.</p>
      */
     inline const Aws::String& GetKMSMasterKeyArn() const{ return m_kMSMasterKeyArn; }
+
+    /**
+     * <p>The KMS master key ARN used for the KMS encryption.</p>
+     */
+    inline bool KMSMasterKeyArnHasBeenSet() const { return m_kMSMasterKeyArnHasBeenSet; }
 
     /**
      * <p>The KMS master key ARN used for the KMS encryption.</p>

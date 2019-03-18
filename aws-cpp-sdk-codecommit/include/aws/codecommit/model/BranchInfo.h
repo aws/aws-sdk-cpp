@@ -55,6 +55,11 @@ namespace Model
     /**
      * <p>The name of the branch.</p>
      */
+    inline bool BranchNameHasBeenSet() const { return m_branchNameHasBeenSet; }
+
+    /**
+     * <p>The name of the branch.</p>
+     */
     inline void SetBranchName(const Aws::String& value) { m_branchNameHasBeenSet = true; m_branchName = value; }
 
     /**
@@ -87,6 +92,11 @@ namespace Model
      * <p>The ID of the last commit made to the branch.</p>
      */
     inline const Aws::String& GetCommitId() const{ return m_commitId; }
+
+    /**
+     * <p>The ID of the last commit made to the branch.</p>
+     */
+    inline bool CommitIdHasBeenSet() const { return m_commitIdHasBeenSet; }
 
     /**
      * <p>The ID of the last commit made to the branch.</p>

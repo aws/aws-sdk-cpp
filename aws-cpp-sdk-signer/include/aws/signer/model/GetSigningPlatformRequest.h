@@ -50,6 +50,11 @@ namespace Model
     /**
      * <p>The ID of the target signing platform.</p>
      */
+    inline bool PlatformIdHasBeenSet() const { return m_platformIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the target signing platform.</p>
+     */
     inline void SetPlatformId(const Aws::String& value) { m_platformIdHasBeenSet = true; m_platformId = value; }
 
     /**

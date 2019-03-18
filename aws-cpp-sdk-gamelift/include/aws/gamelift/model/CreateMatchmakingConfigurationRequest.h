@@ -59,6 +59,12 @@ namespace Model
      * <p>Unique identifier for a matchmaking configuration. This name is used to
      * identify the configuration associated with a matchmaking request or ticket.</p>
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>Unique identifier for a matchmaking configuration. This name is used to
+     * identify the configuration associated with a matchmaking request or ticket.</p>
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
@@ -100,6 +106,11 @@ namespace Model
     /**
      * <p>Meaningful description of the matchmaking configuration. </p>
      */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
+
+    /**
+     * <p>Meaningful description of the matchmaking configuration. </p>
+     */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
@@ -137,6 +148,16 @@ namespace Model
      * with this matchmaking configuration. Queues can be located in any region.</p>
      */
     inline const Aws::Vector<Aws::String>& GetGameSessionQueueArns() const{ return m_gameSessionQueueArns; }
+
+    /**
+     * <p>Amazon Resource Name (<a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
+     * that is assigned to a game session queue and uniquely identifies it. Format is
+     * <code>arn:aws:gamelift:&lt;region&gt;::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>.
+     * These queues are used when placing game sessions for matches that are created
+     * with this matchmaking configuration. Queues can be located in any region.</p>
+     */
+    inline bool GameSessionQueueArnsHasBeenSet() const { return m_gameSessionQueueArnsHasBeenSet; }
 
     /**
      * <p>Amazon Resource Name (<a
@@ -219,6 +240,12 @@ namespace Model
      * <p>Maximum duration, in seconds, that a matchmaking ticket can remain in process
      * before timing out. Requests that time out can be resubmitted as needed.</p>
      */
+    inline bool RequestTimeoutSecondsHasBeenSet() const { return m_requestTimeoutSecondsHasBeenSet; }
+
+    /**
+     * <p>Maximum duration, in seconds, that a matchmaking ticket can remain in process
+     * before timing out. Requests that time out can be resubmitted as needed.</p>
+     */
     inline void SetRequestTimeoutSeconds(int value) { m_requestTimeoutSecondsHasBeenSet = true; m_requestTimeoutSeconds = value; }
 
     /**
@@ -234,6 +261,13 @@ namespace Model
      * ticket continues to look for an acceptable match.</p>
      */
     inline int GetAcceptanceTimeoutSeconds() const{ return m_acceptanceTimeoutSeconds; }
+
+    /**
+     * <p>Length of time (in seconds) to wait for players to accept a proposed match.
+     * If any player rejects the match or fails to accept before the timeout, the
+     * ticket continues to look for an acceptable match.</p>
+     */
+    inline bool AcceptanceTimeoutSecondsHasBeenSet() const { return m_acceptanceTimeoutSecondsHasBeenSet; }
 
     /**
      * <p>Length of time (in seconds) to wait for players to accept a proposed match.
@@ -262,6 +296,13 @@ namespace Model
      * configuration must be accepted by the matched players. To require acceptance,
      * set to TRUE.</p>
      */
+    inline bool AcceptanceRequiredHasBeenSet() const { return m_acceptanceRequiredHasBeenSet; }
+
+    /**
+     * <p>Flag that determines whether or not a match that was created with this
+     * configuration must be accepted by the matched players. To require acceptance,
+     * set to TRUE.</p>
+     */
     inline void SetAcceptanceRequired(bool value) { m_acceptanceRequiredHasBeenSet = true; m_acceptanceRequired = value; }
 
     /**
@@ -278,6 +319,13 @@ namespace Model
      * region.</p>
      */
     inline const Aws::String& GetRuleSetName() const{ return m_ruleSetName; }
+
+    /**
+     * <p>Unique identifier for a matchmaking rule set to use with this configuration.
+     * A matchmaking configuration can only use rule sets that are defined in the same
+     * region.</p>
+     */
+    inline bool RuleSetNameHasBeenSet() const { return m_ruleSetNameHasBeenSet; }
 
     /**
      * <p>Unique identifier for a matchmaking rule set to use with this configuration.
@@ -330,6 +378,11 @@ namespace Model
     /**
      * <p>SNS topic ARN that is set up to receive matchmaking notifications.</p>
      */
+    inline bool NotificationTargetHasBeenSet() const { return m_notificationTargetHasBeenSet; }
+
+    /**
+     * <p>SNS topic ARN that is set up to receive matchmaking notifications.</p>
+     */
     inline void SetNotificationTarget(const Aws::String& value) { m_notificationTargetHasBeenSet = true; m_notificationTarget = value; }
 
     /**
@@ -372,6 +425,14 @@ namespace Model
      * 12-person team, and the additional player count is set to 2, only 10 players are
      * selected for the match.</p>
      */
+    inline bool AdditionalPlayerCountHasBeenSet() const { return m_additionalPlayerCountHasBeenSet; }
+
+    /**
+     * <p>Number of player slots in a match to keep open for future players. For
+     * example, if the configuration's rule set specifies a match for a single
+     * 12-person team, and the additional player count is set to 2, only 10 players are
+     * selected for the match.</p>
+     */
     inline void SetAdditionalPlayerCount(int value) { m_additionalPlayerCountHasBeenSet = true; m_additionalPlayerCount = value; }
 
     /**
@@ -388,6 +449,12 @@ namespace Model
      * configuration. </p>
      */
     inline const Aws::String& GetCustomEventData() const{ return m_customEventData; }
+
+    /**
+     * <p>Information to attached to all events related to the matchmaking
+     * configuration. </p>
+     */
+    inline bool CustomEventDataHasBeenSet() const { return m_customEventDataHasBeenSet; }
 
     /**
      * <p>Information to attached to all events related to the matchmaking
@@ -435,6 +502,16 @@ namespace Model
      * object that is created for a successful match. </p>
      */
     inline const Aws::Vector<GameProperty>& GetGameProperties() const{ return m_gameProperties; }
+
+    /**
+     * <p>Set of custom properties for a game session, formatted as key:value pairs.
+     * These properties are passed to a game server process in the <a>GameSession</a>
+     * object with a request to start a new game session (see <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start
+     * a Game Session</a>). This information is added to the new <a>GameSession</a>
+     * object that is created for a successful match. </p>
+     */
+    inline bool GamePropertiesHasBeenSet() const { return m_gamePropertiesHasBeenSet; }
 
     /**
      * <p>Set of custom properties for a game session, formatted as key:value pairs.
@@ -506,6 +583,16 @@ namespace Model
      * object that is created for a successful match.</p>
      */
     inline const Aws::String& GetGameSessionData() const{ return m_gameSessionData; }
+
+    /**
+     * <p>Set of custom game session properties, formatted as a single string value.
+     * This data is passed to a game server process in the <a>GameSession</a> object
+     * with a request to start a new game session (see <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start
+     * a Game Session</a>). This information is added to the new <a>GameSession</a>
+     * object that is created for a successful match.</p>
+     */
+    inline bool GameSessionDataHasBeenSet() const { return m_gameSessionDataHasBeenSet; }
 
     /**
      * <p>Set of custom game session properties, formatted as a single string value.

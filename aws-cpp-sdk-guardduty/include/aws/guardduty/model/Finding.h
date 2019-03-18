@@ -59,6 +59,12 @@ namespace Model
      * AWS account ID where the activity occurred that prompted GuardDuty to generate a
      * finding.
      */
+    inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
+
+    /**
+     * AWS account ID where the activity occurred that prompted GuardDuty to generate a
+     * finding.
+     */
     inline void SetAccountId(const Aws::String& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
 
     /**
@@ -100,6 +106,11 @@ namespace Model
     /**
      * The ARN of a finding described by the action.
      */
+    inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
+
+    /**
+     * The ARN of a finding described by the action.
+     */
     inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
 
     /**
@@ -136,6 +147,11 @@ namespace Model
     /**
      * The confidence level of a finding.
      */
+    inline bool ConfidenceHasBeenSet() const { return m_confidenceHasBeenSet; }
+
+    /**
+     * The confidence level of a finding.
+     */
     inline void SetConfidence(double value) { m_confidenceHasBeenSet = true; m_confidence = value; }
 
     /**
@@ -148,6 +164,11 @@ namespace Model
      * The time stamp at which a finding was generated.
      */
     inline const Aws::String& GetCreatedAt() const{ return m_createdAt; }
+
+    /**
+     * The time stamp at which a finding was generated.
+     */
+    inline bool CreatedAtHasBeenSet() const { return m_createdAtHasBeenSet; }
 
     /**
      * The time stamp at which a finding was generated.
@@ -188,6 +209,11 @@ namespace Model
     /**
      * The description of a finding.
      */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
+
+    /**
+     * The description of a finding.
+     */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
@@ -220,6 +246,11 @@ namespace Model
      * The identifier that corresponds to a finding described by the action.
      */
     inline const Aws::String& GetId() const{ return m_id; }
+
+    /**
+     * The identifier that corresponds to a finding described by the action.
+     */
+    inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
 
     /**
      * The identifier that corresponds to a finding described by the action.
@@ -260,6 +291,11 @@ namespace Model
     /**
      * The AWS resource partition.
      */
+    inline bool PartitionHasBeenSet() const { return m_partitionHasBeenSet; }
+
+    /**
+     * The AWS resource partition.
+     */
     inline void SetPartition(const Aws::String& value) { m_partitionHasBeenSet = true; m_partition = value; }
 
     /**
@@ -293,6 +329,12 @@ namespace Model
      * finding.
      */
     inline const Aws::String& GetRegion() const{ return m_region; }
+
+    /**
+     * The AWS region where the activity occurred that prompted GuardDuty to generate a
+     * finding.
+     */
+    inline bool RegionHasBeenSet() const { return m_regionHasBeenSet; }
 
     /**
      * The AWS region where the activity occurred that prompted GuardDuty to generate a
@@ -341,6 +383,12 @@ namespace Model
      * The AWS resource associated with the activity that prompted GuardDuty to
      * generate a finding.
      */
+    inline bool ResourceHasBeenSet() const { return m_resourceHasBeenSet; }
+
+    /**
+     * The AWS resource associated with the activity that prompted GuardDuty to
+     * generate a finding.
+     */
     inline void SetResource(const Resource& value) { m_resourceHasBeenSet = true; m_resource = value; }
 
     /**
@@ -366,6 +414,11 @@ namespace Model
      * Findings' schema version.
      */
     inline const Aws::String& GetSchemaVersion() const{ return m_schemaVersion; }
+
+    /**
+     * Findings' schema version.
+     */
+    inline bool SchemaVersionHasBeenSet() const { return m_schemaVersionHasBeenSet; }
 
     /**
      * Findings' schema version.
@@ -406,6 +459,11 @@ namespace Model
     /**
      * Additional information assigned to the generated finding by GuardDuty.
      */
+    inline bool ServiceHasBeenSet() const { return m_serviceHasBeenSet; }
+
+    /**
+     * Additional information assigned to the generated finding by GuardDuty.
+     */
     inline void SetService(const Service& value) { m_serviceHasBeenSet = true; m_service = value; }
 
     /**
@@ -432,6 +490,11 @@ namespace Model
     /**
      * The severity of a finding.
      */
+    inline bool SeverityHasBeenSet() const { return m_severityHasBeenSet; }
+
+    /**
+     * The severity of a finding.
+     */
     inline void SetSeverity(double value) { m_severityHasBeenSet = true; m_severity = value; }
 
     /**
@@ -444,6 +507,11 @@ namespace Model
      * The title of a finding.
      */
     inline const Aws::String& GetTitle() const{ return m_title; }
+
+    /**
+     * The title of a finding.
+     */
+    inline bool TitleHasBeenSet() const { return m_titleHasBeenSet; }
 
     /**
      * The title of a finding.
@@ -484,6 +552,11 @@ namespace Model
     /**
      * The type of a finding described by the action.
      */
+    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
+
+    /**
+     * The type of a finding described by the action.
+     */
     inline void SetType(const Aws::String& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
@@ -516,6 +589,11 @@ namespace Model
      * The time stamp at which a finding was last updated.
      */
     inline const Aws::String& GetUpdatedAt() const{ return m_updatedAt; }
+
+    /**
+     * The time stamp at which a finding was last updated.
+     */
+    inline bool UpdatedAtHasBeenSet() const { return m_updatedAtHasBeenSet; }
 
     /**
      * The time stamp at which a finding was last updated.

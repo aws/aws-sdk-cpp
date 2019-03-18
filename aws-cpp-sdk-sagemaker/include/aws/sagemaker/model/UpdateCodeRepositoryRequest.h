@@ -53,6 +53,11 @@ namespace Model
     /**
      * <p>The name of the Git repository to update.</p>
      */
+    inline bool CodeRepositoryNameHasBeenSet() const { return m_codeRepositoryNameHasBeenSet; }
+
+    /**
+     * <p>The name of the Git repository to update.</p>
+     */
     inline void SetCodeRepositoryName(const Aws::String& value) { m_codeRepositoryNameHasBeenSet = true; m_codeRepositoryName = value; }
 
     /**
@@ -89,6 +94,15 @@ namespace Model
      * <code>{"username": <i>UserName</i>, "password": <i>Password</i>}</code> </p>
      */
     inline const GitConfigForUpdate& GetGitConfig() const{ return m_gitConfig; }
+
+    /**
+     * <p>The configuration of the git repository, including the URL and the Amazon
+     * Resource Name (ARN) of the AWS Secrets Manager secret that contains the
+     * credentials used to access the repository. The secret must have a staging label
+     * of <code>AWSCURRENT</code> and must be in the following format:</p> <p>
+     * <code>{"username": <i>UserName</i>, "password": <i>Password</i>}</code> </p>
+     */
+    inline bool GitConfigHasBeenSet() const { return m_gitConfigHasBeenSet; }
 
     /**
      * <p>The configuration of the git repository, including the URL and the Amazon

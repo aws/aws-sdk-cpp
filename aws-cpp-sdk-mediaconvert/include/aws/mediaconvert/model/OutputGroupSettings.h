@@ -56,6 +56,9 @@ namespace Model
     inline const CmafGroupSettings& GetCmafGroupSettings() const{ return m_cmafGroupSettings; }
 
     
+    inline bool CmafGroupSettingsHasBeenSet() const { return m_cmafGroupSettingsHasBeenSet; }
+
+    
     inline void SetCmafGroupSettings(const CmafGroupSettings& value) { m_cmafGroupSettingsHasBeenSet = true; m_cmafGroupSettings = value; }
 
     
@@ -70,6 +73,9 @@ namespace Model
 
     
     inline const DashIsoGroupSettings& GetDashIsoGroupSettings() const{ return m_dashIsoGroupSettings; }
+
+    
+    inline bool DashIsoGroupSettingsHasBeenSet() const { return m_dashIsoGroupSettingsHasBeenSet; }
 
     
     inline void SetDashIsoGroupSettings(const DashIsoGroupSettings& value) { m_dashIsoGroupSettingsHasBeenSet = true; m_dashIsoGroupSettings = value; }
@@ -88,6 +94,9 @@ namespace Model
     inline const FileGroupSettings& GetFileGroupSettings() const{ return m_fileGroupSettings; }
 
     
+    inline bool FileGroupSettingsHasBeenSet() const { return m_fileGroupSettingsHasBeenSet; }
+
+    
     inline void SetFileGroupSettings(const FileGroupSettings& value) { m_fileGroupSettingsHasBeenSet = true; m_fileGroupSettings = value; }
 
     
@@ -102,6 +111,9 @@ namespace Model
 
     
     inline const HlsGroupSettings& GetHlsGroupSettings() const{ return m_hlsGroupSettings; }
+
+    
+    inline bool HlsGroupSettingsHasBeenSet() const { return m_hlsGroupSettingsHasBeenSet; }
 
     
     inline void SetHlsGroupSettings(const HlsGroupSettings& value) { m_hlsGroupSettingsHasBeenSet = true; m_hlsGroupSettings = value; }
@@ -120,6 +132,9 @@ namespace Model
     inline const MsSmoothGroupSettings& GetMsSmoothGroupSettings() const{ return m_msSmoothGroupSettings; }
 
     
+    inline bool MsSmoothGroupSettingsHasBeenSet() const { return m_msSmoothGroupSettingsHasBeenSet; }
+
+    
     inline void SetMsSmoothGroupSettings(const MsSmoothGroupSettings& value) { m_msSmoothGroupSettingsHasBeenSet = true; m_msSmoothGroupSettings = value; }
 
     
@@ -134,6 +149,9 @@ namespace Model
 
     
     inline const OutputGroupType& GetType() const{ return m_type; }
+
+    
+    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
 
     
     inline void SetType(const OutputGroupType& value) { m_typeHasBeenSet = true; m_type = value; }

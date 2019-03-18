@@ -60,6 +60,11 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the invitation.</p>
      */
+    inline bool ResourceShareInvitationArnHasBeenSet() const { return m_resourceShareInvitationArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the invitation.</p>
+     */
     inline void SetResourceShareInvitationArn(const Aws::String& value) { m_resourceShareInvitationArnHasBeenSet = true; m_resourceShareInvitationArn = value; }
 
     /**
@@ -92,6 +97,11 @@ namespace Model
      * <p>The name of the resource share.</p>
      */
     inline const Aws::String& GetResourceShareName() const{ return m_resourceShareName; }
+
+    /**
+     * <p>The name of the resource share.</p>
+     */
+    inline bool ResourceShareNameHasBeenSet() const { return m_resourceShareNameHasBeenSet; }
 
     /**
      * <p>The name of the resource share.</p>
@@ -132,6 +142,11 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the resource share.</p>
      */
+    inline bool ResourceShareArnHasBeenSet() const { return m_resourceShareArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the resource share.</p>
+     */
     inline void SetResourceShareArn(const Aws::String& value) { m_resourceShareArnHasBeenSet = true; m_resourceShareArn = value; }
 
     /**
@@ -164,6 +179,11 @@ namespace Model
      * <p>The ID of the AWS account that sent the invitation.</p>
      */
     inline const Aws::String& GetSenderAccountId() const{ return m_senderAccountId; }
+
+    /**
+     * <p>The ID of the AWS account that sent the invitation.</p>
+     */
+    inline bool SenderAccountIdHasBeenSet() const { return m_senderAccountIdHasBeenSet; }
 
     /**
      * <p>The ID of the AWS account that sent the invitation.</p>
@@ -204,6 +224,11 @@ namespace Model
     /**
      * <p>The ID of the AWS account that received the invitation.</p>
      */
+    inline bool ReceiverAccountIdHasBeenSet() const { return m_receiverAccountIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the AWS account that received the invitation.</p>
+     */
     inline void SetReceiverAccountId(const Aws::String& value) { m_receiverAccountIdHasBeenSet = true; m_receiverAccountId = value; }
 
     /**
@@ -240,6 +265,11 @@ namespace Model
     /**
      * <p>The date and time when the invitation was sent.</p>
      */
+    inline bool InvitationTimestampHasBeenSet() const { return m_invitationTimestampHasBeenSet; }
+
+    /**
+     * <p>The date and time when the invitation was sent.</p>
+     */
     inline void SetInvitationTimestamp(const Aws::Utils::DateTime& value) { m_invitationTimestampHasBeenSet = true; m_invitationTimestamp = value; }
 
     /**
@@ -266,6 +296,11 @@ namespace Model
     /**
      * <p>The status of the invitation.</p>
      */
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
+
+    /**
+     * <p>The status of the invitation.</p>
+     */
     inline void SetStatus(const ResourceShareInvitationStatus& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
@@ -288,6 +323,11 @@ namespace Model
      * <p>The resources associated with the resource share.</p>
      */
     inline const Aws::Vector<ResourceShareAssociation>& GetResourceShareAssociations() const{ return m_resourceShareAssociations; }
+
+    /**
+     * <p>The resources associated with the resource share.</p>
+     */
+    inline bool ResourceShareAssociationsHasBeenSet() const { return m_resourceShareAssociationsHasBeenSet; }
 
     /**
      * <p>The resources associated with the resource share.</p>

@@ -51,6 +51,9 @@ namespace Model
     inline const M2tsSettings& GetM2tsSettings() const{ return m_m2tsSettings; }
 
     
+    inline bool M2tsSettingsHasBeenSet() const { return m_m2tsSettingsHasBeenSet; }
+
+    
     inline void SetM2tsSettings(const M2tsSettings& value) { m_m2tsSettingsHasBeenSet = true; m_m2tsSettings = value; }
 
     

@@ -60,6 +60,11 @@ namespace Model
     /**
      * <p>The ID that is assigned to the <code>Evaluation</code> at creation.</p>
      */
+    inline bool EvaluationIdHasBeenSet() const { return m_evaluationIdHasBeenSet; }
+
+    /**
+     * <p>The ID that is assigned to the <code>Evaluation</code> at creation.</p>
+     */
     inline void SetEvaluationId(const Aws::String& value) { m_evaluationIdHasBeenSet = true; m_evaluationId = value; }
 
     /**
@@ -92,6 +97,11 @@ namespace Model
      * <p>The ID of the <code>MLModel</code> that is the focus of the evaluation.</p>
      */
     inline const Aws::String& GetMLModelId() const{ return m_mLModelId; }
+
+    /**
+     * <p>The ID of the <code>MLModel</code> that is the focus of the evaluation.</p>
+     */
+    inline bool MLModelIdHasBeenSet() const { return m_mLModelIdHasBeenSet; }
 
     /**
      * <p>The ID of the <code>MLModel</code> that is the focus of the evaluation.</p>
@@ -129,6 +139,12 @@ namespace Model
      * <code>MLModel</code>.</p>
      */
     inline const Aws::String& GetEvaluationDataSourceId() const{ return m_evaluationDataSourceId; }
+
+    /**
+     * <p>The ID of the <code>DataSource</code> that is used to evaluate the
+     * <code>MLModel</code>.</p>
+     */
+    inline bool EvaluationDataSourceIdHasBeenSet() const { return m_evaluationDataSourceIdHasBeenSet; }
 
     /**
      * <p>The ID of the <code>DataSource</code> that is used to evaluate the
@@ -177,6 +193,12 @@ namespace Model
      * <p>The location and name of the data in Amazon Simple Storage Server (Amazon S3)
      * that is used in the evaluation.</p>
      */
+    inline bool InputDataLocationS3HasBeenSet() const { return m_inputDataLocationS3HasBeenSet; }
+
+    /**
+     * <p>The location and name of the data in Amazon Simple Storage Server (Amazon S3)
+     * that is used in the evaluation.</p>
+     */
     inline void SetInputDataLocationS3(const Aws::String& value) { m_inputDataLocationS3HasBeenSet = true; m_inputDataLocationS3 = value; }
 
     /**
@@ -216,6 +238,13 @@ namespace Model
      * account.</p>
      */
     inline const Aws::String& GetCreatedByIamUser() const{ return m_createdByIamUser; }
+
+    /**
+     * <p>The AWS user account that invoked the evaluation. The account type can be
+     * either an AWS root account or an AWS Identity and Access Management (IAM) user
+     * account.</p>
+     */
+    inline bool CreatedByIamUserHasBeenSet() const { return m_createdByIamUserHasBeenSet; }
 
     /**
      * <p>The AWS user account that invoked the evaluation. The account type can be
@@ -270,6 +299,12 @@ namespace Model
      * <p>The time that the <code>Evaluation</code> was created. The time is expressed
      * in epoch time.</p>
      */
+    inline bool CreatedAtHasBeenSet() const { return m_createdAtHasBeenSet; }
+
+    /**
+     * <p>The time that the <code>Evaluation</code> was created. The time is expressed
+     * in epoch time.</p>
+     */
     inline void SetCreatedAt(const Aws::Utils::DateTime& value) { m_createdAtHasBeenSet = true; m_createdAt = value; }
 
     /**
@@ -301,6 +336,12 @@ namespace Model
      * <p>The time of the most recent edit to the <code>Evaluation</code>. The time is
      * expressed in epoch time.</p>
      */
+    inline bool LastUpdatedAtHasBeenSet() const { return m_lastUpdatedAtHasBeenSet; }
+
+    /**
+     * <p>The time of the most recent edit to the <code>Evaluation</code>. The time is
+     * expressed in epoch time.</p>
+     */
     inline void SetLastUpdatedAt(const Aws::Utils::DateTime& value) { m_lastUpdatedAtHasBeenSet = true; m_lastUpdatedAt = value; }
 
     /**
@@ -326,6 +367,11 @@ namespace Model
      * <p>A user-supplied name or description of the <code>Evaluation</code>. </p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
+
+    /**
+     * <p>A user-supplied name or description of the <code>Evaluation</code>. </p>
+     */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
      * <p>A user-supplied name or description of the <code>Evaluation</code>. </p>
@@ -369,6 +415,18 @@ namespace Model
      * <code>Evaluation</code> is marked as deleted. It is not usable.</li> </ul>
      */
     inline const EntityStatus& GetStatus() const{ return m_status; }
+
+    /**
+     * <p>The status of the evaluation. This element can have one of the following
+     * values:</p> <ul> <li> <code>PENDING</code> - Amazon Machine Learning (Amazon ML)
+     * submitted a request to evaluate an <code>MLModel</code>.</li> <li>
+     * <code>INPROGRESS</code> - The evaluation is underway.</li> <li>
+     * <code>FAILED</code> - The request to evaluate an <code>MLModel</code> did not
+     * run to completion. It is not usable.</li> <li> <code>COMPLETED</code> - The
+     * evaluation process completed successfully.</li> <li> <code>DELETED</code> - The
+     * <code>Evaluation</code> is marked as deleted. It is not usable.</li> </ul>
+     */
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
     /**
      * <p>The status of the evaluation. This element can have one of the following
@@ -451,6 +509,23 @@ namespace Model
      * href="http://docs.aws.amazon.com/machine-learning/latest/dg">Amazon Machine
      * Learning Developer Guide</a>. </p>
      */
+    inline bool PerformanceMetricsHasBeenSet() const { return m_performanceMetricsHasBeenSet; }
+
+    /**
+     * <p>Measurements of how well the <code>MLModel</code> performed, using
+     * observations referenced by the <code>DataSource</code>. One of the following
+     * metrics is returned, based on the type of the <code>MLModel</code>: </p> <ul>
+     * <li> <p>BinaryAUC: A binary <code>MLModel</code> uses the Area Under the Curve
+     * (AUC) technique to measure performance. </p> </li> <li> <p>RegressionRMSE: A
+     * regression <code>MLModel</code> uses the Root Mean Square Error (RMSE) technique
+     * to measure performance. RMSE measures the difference between predicted and
+     * actual values for a single variable.</p> </li> <li> <p>MulticlassAvgFScore: A
+     * multiclass <code>MLModel</code> uses the F1 score technique to measure
+     * performance. </p> </li> </ul> <p> For more information about performance
+     * metrics, please see the <a
+     * href="http://docs.aws.amazon.com/machine-learning/latest/dg">Amazon Machine
+     * Learning Developer Guide</a>. </p>
+     */
     inline void SetPerformanceMetrics(const PerformanceMetrics& value) { m_performanceMetricsHasBeenSet = true; m_performanceMetrics = value; }
 
     /**
@@ -515,6 +590,12 @@ namespace Model
      * <p>A description of the most recent details about evaluating the
      * <code>MLModel</code>.</p>
      */
+    inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
+
+    /**
+     * <p>A description of the most recent details about evaluating the
+     * <code>MLModel</code>.</p>
+     */
     inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
 
     /**
@@ -552,6 +633,9 @@ namespace Model
     inline long long GetComputeTime() const{ return m_computeTime; }
 
     
+    inline bool ComputeTimeHasBeenSet() const { return m_computeTimeHasBeenSet; }
+
+    
     inline void SetComputeTime(long long value) { m_computeTimeHasBeenSet = true; m_computeTime = value; }
 
     
@@ -560,6 +644,9 @@ namespace Model
 
     
     inline const Aws::Utils::DateTime& GetFinishedAt() const{ return m_finishedAt; }
+
+    
+    inline bool FinishedAtHasBeenSet() const { return m_finishedAtHasBeenSet; }
 
     
     inline void SetFinishedAt(const Aws::Utils::DateTime& value) { m_finishedAtHasBeenSet = true; m_finishedAt = value; }
@@ -576,6 +663,9 @@ namespace Model
 
     
     inline const Aws::Utils::DateTime& GetStartedAt() const{ return m_startedAt; }
+
+    
+    inline bool StartedAtHasBeenSet() const { return m_startedAtHasBeenSet; }
 
     
     inline void SetStartedAt(const Aws::Utils::DateTime& value) { m_startedAtHasBeenSet = true; m_startedAt = value; }

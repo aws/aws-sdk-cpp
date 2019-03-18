@@ -60,6 +60,12 @@ namespace Model
      * <p>The name of the field. The possible values are <code>host-header</code> and
      * <code>path-pattern</code>.</p>
      */
+    inline bool FieldHasBeenSet() const { return m_fieldHasBeenSet; }
+
+    /**
+     * <p>The name of the field. The possible values are <code>host-header</code> and
+     * <code>path-pattern</code>.</p>
+     */
     inline void SetField(const Aws::String& value) { m_fieldHasBeenSet = true; m_field = value; }
 
     /**
@@ -109,6 +115,23 @@ namespace Model
      * <li> <p>? (matches exactly 1 character)</p> </li> </ul>
      */
     inline const Aws::Vector<Aws::String>& GetValues() const{ return m_values; }
+
+    /**
+     * <p>The condition value.</p> <p>If the field name is <code>host-header</code>,
+     * you can specify a single host name (for example, my.example.com). A host name is
+     * case insensitive, can be up to 128 characters in length, and can contain any of
+     * the following characters. You can include up to three wildcard characters.</p>
+     * <ul> <li> <p>A-Z, a-z, 0-9</p> </li> <li> <p>- .</p> </li> <li> <p>* (matches 0
+     * or more characters)</p> </li> <li> <p>? (matches exactly 1 character)</p> </li>
+     * </ul> <p>If the field name is <code>path-pattern</code>, you can specify a
+     * single path pattern (for example, /img/ *). A path pattern is case-sensitive, can
+     * be up to 128 characters in length, and can contain any of the following
+     * characters. You can include up to three wildcard characters.</p> <ul> <li>
+     * <p>A-Z, a-z, 0-9</p> </li> <li> <p>_ - . $ / ~ " ' @ : +</p> </li> <li> <p>&amp;
+     * (using &amp;amp;)</p> </li> <li> <p>* (matches 0 or more characters)</p> </li>
+     * <li> <p>? (matches exactly 1 character)</p> </li> </ul>
+     */
+    inline bool ValuesHasBeenSet() const { return m_valuesHasBeenSet; }
 
     /**
      * <p>The condition value.</p> <p>If the field name is <code>host-header</code>,

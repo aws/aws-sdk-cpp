@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>Maximum number of speech synthesis tasks returned in a List operation.</p>
      */
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
+
+    /**
+     * <p>Maximum number of speech synthesis tasks returned in a List operation.</p>
+     */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
@@ -70,6 +75,12 @@ namespace Model
      * speech synthesis tasks. </p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
+    /**
+     * <p>The pagination token to use in the next request to continue the listing of
+     * speech synthesis tasks. </p>
+     */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
      * <p>The pagination token to use in the next request to continue the listing of
@@ -112,6 +123,11 @@ namespace Model
      * <p>Status of the speech synthesis tasks returned in a List operation</p>
      */
     inline const TaskStatus& GetStatus() const{ return m_status; }
+
+    /**
+     * <p>Status of the speech synthesis tasks returned in a List operation</p>
+     */
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
     /**
      * <p>Status of the speech synthesis tasks returned in a List operation</p>

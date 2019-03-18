@@ -51,6 +51,11 @@ namespace Model
     /**
      * <p>The pagination token.</p>
      */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
+
+    /**
+     * <p>The pagination token.</p>
+     */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
     /**
@@ -87,6 +92,11 @@ namespace Model
     /**
      * <p>The maximum number of results to retrieve.</p>
      */
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
+
+    /**
+     * <p>The maximum number of results to retrieve.</p>
+     */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
@@ -100,6 +110,12 @@ namespace Model
      * Deleted.</p>
      */
     inline const DirectoryState& GetState() const{ return m_state; }
+
+    /**
+     * <p>The state of the directories in the list. Can be either Enabled, Disabled, or
+     * Deleted.</p>
+     */
+    inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
 
     /**
      * <p>The state of the directories in the list. Can be either Enabled, Disabled, or

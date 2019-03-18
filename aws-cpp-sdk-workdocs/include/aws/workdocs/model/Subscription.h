@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The ID of the subscription.</p>
      */
+    inline bool SubscriptionIdHasBeenSet() const { return m_subscriptionIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the subscription.</p>
+     */
     inline void SetSubscriptionId(const Aws::String& value) { m_subscriptionIdHasBeenSet = true; m_subscriptionId = value; }
 
     /**
@@ -92,6 +97,11 @@ namespace Model
     /**
      * <p>The endpoint of the subscription.</p>
      */
+    inline bool EndPointHasBeenSet() const { return m_endPointHasBeenSet; }
+
+    /**
+     * <p>The endpoint of the subscription.</p>
+     */
     inline void SetEndPoint(const Aws::String& value) { m_endPointHasBeenSet = true; m_endPoint = value; }
 
     /**
@@ -124,6 +134,11 @@ namespace Model
      * <p>The protocol of the subscription.</p>
      */
     inline const SubscriptionProtocolType& GetProtocol() const{ return m_protocol; }
+
+    /**
+     * <p>The protocol of the subscription.</p>
+     */
+    inline bool ProtocolHasBeenSet() const { return m_protocolHasBeenSet; }
 
     /**
      * <p>The protocol of the subscription.</p>

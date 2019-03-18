@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p>The display name of a resource selection document.</p>
      */
+    inline bool SelectionNameHasBeenSet() const { return m_selectionNameHasBeenSet; }
+
+    /**
+     * <p>The display name of a resource selection document.</p>
+     */
     inline void SetSelectionName(const Aws::String& value) { m_selectionNameHasBeenSet = true; m_selectionName = value; }
 
     /**
@@ -92,6 +97,13 @@ namespace Model
      * <code>arn:aws:iam::123456789012:role/S3Access</code>.</p>
      */
     inline const Aws::String& GetIamRoleArn() const{ return m_iamRoleArn; }
+
+    /**
+     * <p>The ARN of the IAM role that AWS Backup uses to authenticate when restoring
+     * the target resource; for example,
+     * <code>arn:aws:iam::123456789012:role/S3Access</code>.</p>
+     */
+    inline bool IamRoleArnHasBeenSet() const { return m_iamRoleArnHasBeenSet; }
 
     /**
      * <p>The ARN of the IAM role that AWS Backup uses to authenticate when restoring
@@ -142,6 +154,13 @@ namespace Model
      * resources to assign to a backup plan.</p>
      */
     inline const Aws::Vector<Aws::String>& GetResources() const{ return m_resources; }
+
+    /**
+     * <p>An array of strings that either contain Amazon Resource Names (ARNs) or match
+     * patterns such as "<code>arn:aws:ec2:us-east-1:123456789012:volume/ *</code>" of
+     * resources to assign to a backup plan.</p>
+     */
+    inline bool ResourcesHasBeenSet() const { return m_resourcesHasBeenSet; }
 
     /**
      * <p>An array of strings that either contain Amazon Resource Names (ARNs) or match
@@ -199,6 +218,13 @@ namespace Model
      * "accounting"</code>.</p>
      */
     inline const Aws::Vector<Condition>& GetListOfTags() const{ return m_listOfTags; }
+
+    /**
+     * <p>An array of conditions used to specify a set of resources to assign to a
+     * backup plan; for example, <code>"StringEquals": {"ec2:ResourceTag/Department":
+     * "accounting"</code>.</p>
+     */
+    inline bool ListOfTagsHasBeenSet() const { return m_listOfTagsHasBeenSet; }
 
     /**
      * <p>An array of conditions used to specify a set of resources to assign to a

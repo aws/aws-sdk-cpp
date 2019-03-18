@@ -50,6 +50,11 @@ namespace Model
     /**
      * <p>The principal ID of the user.</p>
      */
+    inline bool PrincipalIdHasBeenSet() const { return m_principalIdHasBeenSet; }
+
+    /**
+     * <p>The principal ID of the user.</p>
+     */
     inline void SetPrincipalId(const Aws::String& value) { m_principalIdHasBeenSet = true; m_principalId = value; }
 
     /**
@@ -83,6 +88,12 @@ namespace Model
      * the AWS account that contains your Amazon QuickSight account.</p>
      */
     inline const Aws::String& GetAwsAccountId() const{ return m_awsAccountId; }
+
+    /**
+     * <p>The ID for the AWS account that the user is in. Currently, you use the ID for
+     * the AWS account that contains your Amazon QuickSight account.</p>
+     */
+    inline bool AwsAccountIdHasBeenSet() const { return m_awsAccountIdHasBeenSet; }
 
     /**
      * <p>The ID for the AWS account that the user is in. Currently, you use the ID for
@@ -125,6 +136,11 @@ namespace Model
      * <p>The namespace. Currently, you should set this to <code>default</code>.</p>
      */
     inline const Aws::String& GetNamespace() const{ return m_namespace; }
+
+    /**
+     * <p>The namespace. Currently, you should set this to <code>default</code>.</p>
+     */
+    inline bool NamespaceHasBeenSet() const { return m_namespaceHasBeenSet; }
 
     /**
      * <p>The namespace. Currently, you should set this to <code>default</code>.</p>

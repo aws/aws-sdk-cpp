@@ -76,6 +76,11 @@ namespace Model
     /**
      * <p> The type of the activity task to schedule.</p>
      */
+    inline bool ActivityTypeHasBeenSet() const { return m_activityTypeHasBeenSet; }
+
+    /**
+     * <p> The type of the activity task to schedule.</p>
+     */
     inline void SetActivityType(const ActivityType& value) { m_activityTypeHasBeenSet = true; m_activityType = value; }
 
     /**
@@ -103,6 +108,16 @@ namespace Model
      * <code>arn</code>.</p>
      */
     inline const Aws::String& GetActivityId() const{ return m_activityId; }
+
+    /**
+     * <p> The <code>activityId</code> of the activity task.</p> <p>The specified
+     * string must not start or end with whitespace. It must not contain a
+     * <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar),
+     * or any control characters (<code>\u0000-\u001f</code> |
+     * <code>\u007f-\u009f</code>). Also, it must not contain the literal string
+     * <code>arn</code>.</p>
+     */
+    inline bool ActivityIdHasBeenSet() const { return m_activityIdHasBeenSet; }
 
     /**
      * <p> The <code>activityId</code> of the activity task.</p> <p>The specified
@@ -175,6 +190,12 @@ namespace Model
      * <p>Data attached to the event that can be used by the decider in subsequent
      * workflow tasks. This data isn't sent to the activity.</p>
      */
+    inline bool ControlHasBeenSet() const { return m_controlHasBeenSet; }
+
+    /**
+     * <p>Data attached to the event that can be used by the decider in subsequent
+     * workflow tasks. This data isn't sent to the activity.</p>
+     */
     inline void SetControl(const Aws::String& value) { m_controlHasBeenSet = true; m_control = value; }
 
     /**
@@ -212,6 +233,11 @@ namespace Model
      * <p>The input provided to the activity task.</p>
      */
     inline const Aws::String& GetInput() const{ return m_input; }
+
+    /**
+     * <p>The input provided to the activity task.</p>
+     */
+    inline bool InputHasBeenSet() const { return m_inputHasBeenSet; }
 
     /**
      * <p>The input provided to the activity task.</p>
@@ -254,6 +280,17 @@ namespace Model
      * then a fault is returned.</p> </note>
      */
     inline const Aws::String& GetScheduleToCloseTimeout() const{ return m_scheduleToCloseTimeout; }
+
+    /**
+     * <p>The maximum duration for this activity task.</p> <p>The duration is specified
+     * in seconds, an integer greater than or equal to <code>0</code>. You can use
+     * <code>NONE</code> to specify unlimited duration.</p> <note> <p>A
+     * schedule-to-close timeout for this activity task must be specified either as a
+     * default for the activity type or through this field. If neither this field is
+     * set nor a default schedule-to-close timeout was specified at registration time
+     * then a fault is returned.</p> </note>
+     */
+    inline bool ScheduleToCloseTimeoutHasBeenSet() const { return m_scheduleToCloseTimeoutHasBeenSet; }
 
     /**
      * <p>The maximum duration for this activity task.</p> <p>The duration is specified
@@ -348,6 +385,20 @@ namespace Model
      * (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not
      * contain the literal string <code>arn</code>.</p>
      */
+    inline bool TaskListHasBeenSet() const { return m_taskListHasBeenSet; }
+
+    /**
+     * <p>If set, specifies the name of the task list in which to schedule the activity
+     * task. If not specified, the <code>defaultTaskList</code> registered with the
+     * activity type is used.</p> <note> <p>A task list for this activity task must be
+     * specified either as a default for the activity type or through this field. If
+     * neither this field is set nor a default task list was specified at registration
+     * time then a fault is returned.</p> </note> <p>The specified string must not
+     * start or end with whitespace. It must not contain a <code>:</code> (colon),
+     * <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters
+     * (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not
+     * contain the literal string <code>arn</code>.</p>
+     */
     inline void SetTaskList(const TaskList& value) { m_taskListHasBeenSet = true; m_taskList = value; }
 
     /**
@@ -404,6 +455,18 @@ namespace Model
      * Task Priority</a> in the <i>Amazon SWF Developer Guide</i>.</p>
      */
     inline const Aws::String& GetTaskPriority() const{ return m_taskPriority; }
+
+    /**
+     * <p> If set, specifies the priority with which the activity task is to be
+     * assigned to a worker. This overrides the defaultTaskPriority specified when
+     * registering the activity type using <a>RegisterActivityType</a>. Valid values
+     * are integers that range from Java's <code>Integer.MIN_VALUE</code> (-2147483648)
+     * to <code>Integer.MAX_VALUE</code> (2147483647). Higher numbers indicate higher
+     * priority.</p> <p>For more information about setting task priority, see <a
+     * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting
+     * Task Priority</a> in the <i>Amazon SWF Developer Guide</i>.</p>
+     */
+    inline bool TaskPriorityHasBeenSet() const { return m_taskPriorityHasBeenSet; }
 
     /**
      * <p> If set, specifies the priority with which the activity task is to be
@@ -491,6 +554,20 @@ namespace Model
      * returned.</p> </note>
      */
     inline const Aws::String& GetScheduleToStartTimeout() const{ return m_scheduleToStartTimeout; }
+
+    /**
+     * <p> If set, specifies the maximum duration the activity task can wait to be
+     * assigned to a worker. This overrides the default schedule-to-start timeout
+     * specified when registering the activity type using
+     * <a>RegisterActivityType</a>.</p> <p>The duration is specified in seconds, an
+     * integer greater than or equal to <code>0</code>. You can use <code>NONE</code>
+     * to specify unlimited duration.</p> <note> <p>A schedule-to-start timeout for
+     * this activity task must be specified either as a default for the activity type
+     * or through this field. If neither this field is set nor a default
+     * schedule-to-start timeout was specified at registration time then a fault is
+     * returned.</p> </note>
+     */
+    inline bool ScheduleToStartTimeoutHasBeenSet() const { return m_scheduleToStartTimeoutHasBeenSet; }
 
     /**
      * <p> If set, specifies the maximum duration the activity task can wait to be
@@ -601,6 +678,19 @@ namespace Model
      * field is set nor a default start-to-close timeout was specified at registration
      * time then a fault is returned.</p> </note>
      */
+    inline bool StartToCloseTimeoutHasBeenSet() const { return m_startToCloseTimeoutHasBeenSet; }
+
+    /**
+     * <p>If set, specifies the maximum duration a worker may take to process this
+     * activity task. This overrides the default start-to-close timeout specified when
+     * registering the activity type using <a>RegisterActivityType</a>.</p> <p>The
+     * duration is specified in seconds, an integer greater than or equal to
+     * <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p>
+     * <note> <p>A start-to-close timeout for this activity task must be specified
+     * either as a default for the activity type or through this field. If neither this
+     * field is set nor a default start-to-close timeout was specified at registration
+     * time then a fault is returned.</p> </note>
+     */
     inline void SetStartToCloseTimeout(const Aws::String& value) { m_startToCloseTimeoutHasBeenSet = true; m_startToCloseTimeout = value; }
 
     /**
@@ -680,6 +770,18 @@ namespace Model
      * can use <code>NONE</code> to specify unlimited duration.</p>
      */
     inline const Aws::String& GetHeartbeatTimeout() const{ return m_heartbeatTimeout; }
+
+    /**
+     * <p>If set, specifies the maximum time before which a worker processing a task of
+     * this type must report progress by calling <a>RecordActivityTaskHeartbeat</a>. If
+     * the timeout is exceeded, the activity task is automatically timed out. If the
+     * worker subsequently attempts to record a heartbeat or returns a result, it is
+     * ignored. This overrides the default heartbeat timeout specified when registering
+     * the activity type using <a>RegisterActivityType</a>.</p> <p>The duration is
+     * specified in seconds, an integer greater than or equal to <code>0</code>. You
+     * can use <code>NONE</code> to specify unlimited duration.</p>
+     */
+    inline bool HeartbeatTimeoutHasBeenSet() const { return m_heartbeatTimeoutHasBeenSet; }
 
     /**
      * <p>If set, specifies the maximum time before which a worker processing a task of

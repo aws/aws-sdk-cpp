@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The index value of the fragment.</p>
      */
+    inline bool FragmentNumberHasBeenSet() const { return m_fragmentNumberHasBeenSet; }
+
+    /**
+     * <p>The index value of the fragment.</p>
+     */
     inline void SetFragmentNumber(const Aws::String& value) { m_fragmentNumberHasBeenSet = true; m_fragmentNumber = value; }
 
     /**
@@ -95,6 +100,12 @@ namespace Model
      * <p>The total fragment size, including information about the fragment and
      * contained media data.</p>
      */
+    inline bool FragmentSizeInBytesHasBeenSet() const { return m_fragmentSizeInBytesHasBeenSet; }
+
+    /**
+     * <p>The total fragment size, including information about the fragment and
+     * contained media data.</p>
+     */
     inline void SetFragmentSizeInBytes(long long value) { m_fragmentSizeInBytesHasBeenSet = true; m_fragmentSizeInBytes = value; }
 
     /**
@@ -108,6 +119,11 @@ namespace Model
      * <p>The timestamp from the producer corresponding to the fragment.</p>
      */
     inline const Aws::Utils::DateTime& GetProducerTimestamp() const{ return m_producerTimestamp; }
+
+    /**
+     * <p>The timestamp from the producer corresponding to the fragment.</p>
+     */
+    inline bool ProducerTimestampHasBeenSet() const { return m_producerTimestampHasBeenSet; }
 
     /**
      * <p>The timestamp from the producer corresponding to the fragment.</p>
@@ -138,6 +154,11 @@ namespace Model
     /**
      * <p>The timestamp from the AWS server corresponding to the fragment.</p>
      */
+    inline bool ServerTimestampHasBeenSet() const { return m_serverTimestampHasBeenSet; }
+
+    /**
+     * <p>The timestamp from the AWS server corresponding to the fragment.</p>
+     */
     inline void SetServerTimestamp(const Aws::Utils::DateTime& value) { m_serverTimestampHasBeenSet = true; m_serverTimestamp = value; }
 
     /**
@@ -160,6 +181,11 @@ namespace Model
      * <p>The playback duration or other time value associated with the fragment.</p>
      */
     inline long long GetFragmentLengthInMilliseconds() const{ return m_fragmentLengthInMilliseconds; }
+
+    /**
+     * <p>The playback duration or other time value associated with the fragment.</p>
+     */
+    inline bool FragmentLengthInMillisecondsHasBeenSet() const { return m_fragmentLengthInMillisecondsHasBeenSet; }
 
     /**
      * <p>The playback duration or other time value associated with the fragment.</p>

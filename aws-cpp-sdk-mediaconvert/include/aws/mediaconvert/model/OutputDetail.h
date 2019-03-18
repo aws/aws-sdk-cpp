@@ -55,6 +55,11 @@ namespace Model
     /**
      * Duration in milliseconds
      */
+    inline bool DurationInMsHasBeenSet() const { return m_durationInMsHasBeenSet; }
+
+    /**
+     * Duration in milliseconds
+     */
     inline void SetDurationInMs(int value) { m_durationInMsHasBeenSet = true; m_durationInMs = value; }
 
     /**
@@ -65,6 +70,9 @@ namespace Model
 
     
     inline const VideoDetail& GetVideoDetails() const{ return m_videoDetails; }
+
+    
+    inline bool VideoDetailsHasBeenSet() const { return m_videoDetailsHasBeenSet; }
 
     
     inline void SetVideoDetails(const VideoDetail& value) { m_videoDetailsHasBeenSet = true; m_videoDetails = value; }

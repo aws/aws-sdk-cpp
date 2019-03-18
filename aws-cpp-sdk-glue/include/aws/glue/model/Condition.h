@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>A logical operator.</p>
      */
+    inline bool LogicalOperatorHasBeenSet() const { return m_logicalOperatorHasBeenSet; }
+
+    /**
+     * <p>A logical operator.</p>
+     */
     inline void SetLogicalOperator(const LogicalOperator& value) { m_logicalOperatorHasBeenSet = true; m_logicalOperator = value; }
 
     /**
@@ -80,6 +85,12 @@ namespace Model
      * trigger waits.</p>
      */
     inline const Aws::String& GetJobName() const{ return m_jobName; }
+
+    /**
+     * <p>The name of the Job to whose JobRuns this condition applies and on which this
+     * trigger waits.</p>
+     */
+    inline bool JobNameHasBeenSet() const { return m_jobNameHasBeenSet; }
 
     /**
      * <p>The name of the Job to whose JobRuns this condition applies and on which this
@@ -123,6 +134,12 @@ namespace Model
      * TIMEOUT and FAILED.</p>
      */
     inline const JobRunState& GetState() const{ return m_state; }
+
+    /**
+     * <p>The condition state. Currently, the values supported are SUCCEEDED, STOPPED,
+     * TIMEOUT and FAILED.</p>
+     */
+    inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
 
     /**
      * <p>The condition state. Currently, the values supported are SUCCEEDED, STOPPED,

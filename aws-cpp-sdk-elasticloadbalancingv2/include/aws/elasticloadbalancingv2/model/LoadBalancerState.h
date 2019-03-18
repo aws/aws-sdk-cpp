@@ -65,6 +65,14 @@ namespace Model
      * route traffic, its state is <code>active</code>. If the load balancer could not
      * be set up, its state is <code>failed</code>.</p>
      */
+    inline bool CodeHasBeenSet() const { return m_codeHasBeenSet; }
+
+    /**
+     * <p>The state code. The initial state of the load balancer is
+     * <code>provisioning</code>. After the load balancer is fully set up and ready to
+     * route traffic, its state is <code>active</code>. If the load balancer could not
+     * be set up, its state is <code>failed</code>.</p>
+     */
     inline void SetCode(const LoadBalancerStateEnum& value) { m_codeHasBeenSet = true; m_code = value; }
 
     /**
@@ -96,6 +104,11 @@ namespace Model
      * <p>A description of the state.</p>
      */
     inline const Aws::String& GetReason() const{ return m_reason; }
+
+    /**
+     * <p>A description of the state.</p>
+     */
+    inline bool ReasonHasBeenSet() const { return m_reasonHasBeenSet; }
 
     /**
      * <p>A description of the state.</p>

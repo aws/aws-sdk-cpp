@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p/>
      */
+    inline bool KeyHasBeenSet() const { return m_keyHasBeenSet; }
+
+    /**
+     * <p/>
+     */
     inline void SetKey(const Aws::String& value) { m_keyHasBeenSet = true; m_key = value; }
 
     /**
@@ -94,6 +99,11 @@ namespace Model
     /**
      * <p/>
      */
+    inline bool LastModifiedHasBeenSet() const { return m_lastModifiedHasBeenSet; }
+
+    /**
+     * <p/>
+     */
     inline void SetLastModified(const Aws::Utils::DateTime& value) { m_lastModifiedHasBeenSet = true; m_lastModified = value; }
 
     /**
@@ -116,6 +126,11 @@ namespace Model
      * <p/>
      */
     inline const Aws::String& GetETag() const{ return m_eTag; }
+
+    /**
+     * <p/>
+     */
+    inline bool ETagHasBeenSet() const { return m_eTagHasBeenSet; }
 
     /**
      * <p/>
@@ -156,6 +171,11 @@ namespace Model
     /**
      * <p/>
      */
+    inline bool SizeHasBeenSet() const { return m_sizeHasBeenSet; }
+
+    /**
+     * <p/>
+     */
     inline void SetSize(long long value) { m_sizeHasBeenSet = true; m_size = value; }
 
     /**
@@ -168,6 +188,11 @@ namespace Model
      * <p>The class of storage used to store the object.</p>
      */
     inline const ObjectStorageClass& GetStorageClass() const{ return m_storageClass; }
+
+    /**
+     * <p>The class of storage used to store the object.</p>
+     */
+    inline bool StorageClassHasBeenSet() const { return m_storageClassHasBeenSet; }
 
     /**
      * <p>The class of storage used to store the object.</p>
@@ -194,6 +219,11 @@ namespace Model
      * <p/>
      */
     inline const Owner& GetOwner() const{ return m_owner; }
+
+    /**
+     * <p/>
+     */
+    inline bool OwnerHasBeenSet() const { return m_ownerHasBeenSet; }
 
     /**
      * <p/>

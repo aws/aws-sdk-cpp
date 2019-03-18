@@ -54,6 +54,11 @@ namespace Model
     /**
      * <p>The total number of emails that arrived in recipients' inboxes.</p>
      */
+    inline bool InboxRawCountHasBeenSet() const { return m_inboxRawCountHasBeenSet; }
+
+    /**
+     * <p>The total number of emails that arrived in recipients' inboxes.</p>
+     */
     inline void SetInboxRawCount(long long value) { m_inboxRawCountHasBeenSet = true; m_inboxRawCount = value; }
 
     /**
@@ -67,6 +72,12 @@ namespace Model
      * folders.</p>
      */
     inline long long GetSpamRawCount() const{ return m_spamRawCount; }
+
+    /**
+     * <p>The total number of emails that arrived in recipients' spam or junk mail
+     * folders.</p>
+     */
+    inline bool SpamRawCountHasBeenSet() const { return m_spamRawCountHasBeenSet; }
 
     /**
      * <p>The total number of emails that arrived in recipients' spam or junk mail
@@ -91,6 +102,12 @@ namespace Model
      * <p>An estimate of the percentage of emails sent from the current domain that
      * will arrive in recipients' inboxes.</p>
      */
+    inline bool ProjectedInboxHasBeenSet() const { return m_projectedInboxHasBeenSet; }
+
+    /**
+     * <p>An estimate of the percentage of emails sent from the current domain that
+     * will arrive in recipients' inboxes.</p>
+     */
     inline void SetProjectedInbox(long long value) { m_projectedInboxHasBeenSet = true; m_projectedInbox = value; }
 
     /**
@@ -105,6 +122,12 @@ namespace Model
      * will arrive in recipients' spam or junk mail folders.</p>
      */
     inline long long GetProjectedSpam() const{ return m_projectedSpam; }
+
+    /**
+     * <p>An estimate of the percentage of emails sent from the current domain that
+     * will arrive in recipients' spam or junk mail folders.</p>
+     */
+    inline bool ProjectedSpamHasBeenSet() const { return m_projectedSpamHasBeenSet; }
 
     /**
      * <p>An estimate of the percentage of emails sent from the current domain that

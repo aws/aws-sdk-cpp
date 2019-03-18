@@ -60,6 +60,13 @@ namespace Model
      * metric, and tag key names that begin with the specified text in the
      * <code>PropertyNameHint</code>.</p>
      */
+    inline bool PropertyNameHintHasBeenSet() const { return m_propertyNameHintHasBeenSet; }
+
+    /**
+     * <p>Text that is part of a property's name. The property names of hyperparameter,
+     * metric, and tag key names that begin with the specified text in the
+     * <code>PropertyNameHint</code>.</p>
+     */
     inline void SetPropertyNameHint(const Aws::String& value) { m_propertyNameHintHasBeenSet = true; m_propertyNameHint = value; }
 
     /**

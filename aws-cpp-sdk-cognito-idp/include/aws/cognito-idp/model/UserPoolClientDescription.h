@@ -55,6 +55,11 @@ namespace Model
     /**
      * <p>The ID of the client associated with the user pool.</p>
      */
+    inline bool ClientIdHasBeenSet() const { return m_clientIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the client associated with the user pool.</p>
+     */
     inline void SetClientId(const Aws::String& value) { m_clientIdHasBeenSet = true; m_clientId = value; }
 
     /**
@@ -88,6 +93,12 @@ namespace Model
      * client.</p>
      */
     inline const Aws::String& GetUserPoolId() const{ return m_userPoolId; }
+
+    /**
+     * <p>The user pool ID for the user pool where you want to describe the user pool
+     * client.</p>
+     */
+    inline bool UserPoolIdHasBeenSet() const { return m_userPoolIdHasBeenSet; }
 
     /**
      * <p>The user pool ID for the user pool where you want to describe the user pool
@@ -130,6 +141,11 @@ namespace Model
      * <p>The client name from the user pool client description.</p>
      */
     inline const Aws::String& GetClientName() const{ return m_clientName; }
+
+    /**
+     * <p>The client name from the user pool client description.</p>
+     */
+    inline bool ClientNameHasBeenSet() const { return m_clientNameHasBeenSet; }
 
     /**
      * <p>The client name from the user pool client description.</p>

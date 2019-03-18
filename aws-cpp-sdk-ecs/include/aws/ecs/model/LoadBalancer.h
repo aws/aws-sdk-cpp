@@ -89,6 +89,20 @@ namespace Model
      * <code>awsvpc</code> network mode are associated with an elastic network
      * interface, not an Amazon EC2 instance.</p> </important>
      */
+    inline bool TargetGroupArnHasBeenSet() const { return m_targetGroupArnHasBeenSet; }
+
+    /**
+     * <p>The full Amazon Resource Name (ARN) of the Elastic Load Balancing target
+     * group or groups associated with a service. For services using the
+     * <code>ECS</code> deployment controller, you are limited to one target group. For
+     * services using the <code>CODE_DEPLOY</code> deployment controller, you are
+     * required to define two target groups for the load balancer.</p> <important>
+     * <p>If your service's task definition uses the <code>awsvpc</code> network mode
+     * (which is required for the Fargate launch type), you must choose <code>ip</code>
+     * as the target type, not <code>instance</code>, because tasks that use the
+     * <code>awsvpc</code> network mode are associated with an elastic network
+     * interface, not an Amazon EC2 instance.</p> </important>
+     */
     inline void SetTargetGroupArn(const Aws::String& value) { m_targetGroupArnHasBeenSet = true; m_targetGroupArn = value; }
 
     /**
@@ -170,6 +184,11 @@ namespace Model
     /**
      * <p>The name of a load balancer.</p>
      */
+    inline bool LoadBalancerNameHasBeenSet() const { return m_loadBalancerNameHasBeenSet; }
+
+    /**
+     * <p>The name of a load balancer.</p>
+     */
     inline void SetLoadBalancerName(const Aws::String& value) { m_loadBalancerNameHasBeenSet = true; m_loadBalancerName = value; }
 
     /**
@@ -203,6 +222,12 @@ namespace Model
      * associate with the load balancer.</p>
      */
     inline const Aws::String& GetContainerName() const{ return m_containerName; }
+
+    /**
+     * <p>The name of the container (as it appears in a container definition) to
+     * associate with the load balancer.</p>
+     */
+    inline bool ContainerNameHasBeenSet() const { return m_containerNameHasBeenSet; }
 
     /**
      * <p>The name of the container (as it appears in a container definition) to
@@ -248,6 +273,14 @@ namespace Model
      * of the port mapping.</p>
      */
     inline int GetContainerPort() const{ return m_containerPort; }
+
+    /**
+     * <p>The port on the container to associate with the load balancer. This port must
+     * correspond to a <code>containerPort</code> in the service's task definition.
+     * Your container instances must allow ingress traffic on the <code>hostPort</code>
+     * of the port mapping.</p>
+     */
+    inline bool ContainerPortHasBeenSet() const { return m_containerPortHasBeenSet; }
 
     /**
      * <p>The port on the container to associate with the load balancer. This port must

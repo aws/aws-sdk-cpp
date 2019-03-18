@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>Reserved.</p>
      */
+    inline bool LocationHasBeenSet() const { return m_locationHasBeenSet; }
+
+    /**
+     * <p>Reserved.</p>
+     */
     inline void SetLocation(const QueryCompileErrorLocation& value) { m_locationHasBeenSet = true; m_location = value; }
 
     /**
@@ -78,6 +83,11 @@ namespace Model
      * <p>Reserved.</p>
      */
     inline const Aws::String& GetMessage() const{ return m_message; }
+
+    /**
+     * <p>Reserved.</p>
+     */
+    inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
 
     /**
      * <p>Reserved.</p>

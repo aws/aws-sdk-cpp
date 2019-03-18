@@ -60,6 +60,11 @@ namespace Model
     /**
      * <p>A request to perform a check item operation.</p>
      */
+    inline bool ConditionCheckHasBeenSet() const { return m_conditionCheckHasBeenSet; }
+
+    /**
+     * <p>A request to perform a check item operation.</p>
+     */
     inline void SetConditionCheck(const ConditionCheck& value) { m_conditionCheckHasBeenSet = true; m_conditionCheck = value; }
 
     /**
@@ -82,6 +87,11 @@ namespace Model
      * <p>A request to perform a <code>PutItem</code> operation.</p>
      */
     inline const Put& GetPut() const{ return m_put; }
+
+    /**
+     * <p>A request to perform a <code>PutItem</code> operation.</p>
+     */
+    inline bool PutHasBeenSet() const { return m_putHasBeenSet; }
 
     /**
      * <p>A request to perform a <code>PutItem</code> operation.</p>
@@ -112,6 +122,11 @@ namespace Model
     /**
      * <p>A request to perform a <code>DeleteItem</code> operation.</p>
      */
+    inline bool DeleteHasBeenSet() const { return m_deleteHasBeenSet; }
+
+    /**
+     * <p>A request to perform a <code>DeleteItem</code> operation.</p>
+     */
     inline void SetDelete(const Delete& value) { m_deleteHasBeenSet = true; m_delete = value; }
 
     /**
@@ -134,6 +149,11 @@ namespace Model
      * <p>A request to perform an <code>UpdateItem</code> operation.</p>
      */
     inline const Update& GetUpdate() const{ return m_update; }
+
+    /**
+     * <p>A request to perform an <code>UpdateItem</code> operation.</p>
+     */
+    inline bool UpdateHasBeenSet() const { return m_updateHasBeenSet; }
 
     /**
      * <p>A request to perform an <code>UpdateItem</code> operation.</p>

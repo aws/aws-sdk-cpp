@@ -58,6 +58,12 @@ namespace Model
      * <p>The name of another container within the same task definition from which to
      * mount volumes.</p>
      */
+    inline bool SourceContainerHasBeenSet() const { return m_sourceContainerHasBeenSet; }
+
+    /**
+     * <p>The name of another container within the same task definition from which to
+     * mount volumes.</p>
+     */
     inline void SetSourceContainer(const Aws::String& value) { m_sourceContainerHasBeenSet = true; m_sourceContainer = value; }
 
     /**
@@ -97,6 +103,13 @@ namespace Model
      * volume. The default value is <code>false</code>.</p>
      */
     inline bool GetReadOnly() const{ return m_readOnly; }
+
+    /**
+     * <p>If this value is <code>true</code>, the container has read-only access to the
+     * volume. If this value is <code>false</code>, then the container can write to the
+     * volume. The default value is <code>false</code>.</p>
+     */
+    inline bool ReadOnlyHasBeenSet() const { return m_readOnlyHasBeenSet; }
 
     /**
      * <p>If this value is <code>true</code>, the container has read-only access to the

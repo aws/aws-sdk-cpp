@@ -55,6 +55,11 @@ namespace Model
     /**
      * <p>The schema name of the table to be reloaded.</p>
      */
+    inline bool SchemaNameHasBeenSet() const { return m_schemaNameHasBeenSet; }
+
+    /**
+     * <p>The schema name of the table to be reloaded.</p>
+     */
     inline void SetSchemaName(const Aws::String& value) { m_schemaNameHasBeenSet = true; m_schemaName = value; }
 
     /**
@@ -87,6 +92,11 @@ namespace Model
      * <p>The table name of the table to be reloaded.</p>
      */
     inline const Aws::String& GetTableName() const{ return m_tableName; }
+
+    /**
+     * <p>The table name of the table to be reloaded.</p>
+     */
+    inline bool TableNameHasBeenSet() const { return m_tableNameHasBeenSet; }
 
     /**
      * <p>The table name of the table to be reloaded.</p>

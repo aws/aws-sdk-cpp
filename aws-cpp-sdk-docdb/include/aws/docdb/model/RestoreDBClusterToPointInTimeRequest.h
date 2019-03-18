@@ -67,6 +67,14 @@ namespace Model
      * <p>The first character must be a letter.</p> </li> <li> <p>Cannot end with a
      * hyphen or contain two consecutive hyphens.</p> </li> </ul>
      */
+    inline bool DBClusterIdentifierHasBeenSet() const { return m_dBClusterIdentifierHasBeenSet; }
+
+    /**
+     * <p>The name of the new DB cluster to be created.</p> <p>Constraints:</p> <ul>
+     * <li> <p>Must contain from 1 to 63 letters, numbers, or hyphens.</p> </li> <li>
+     * <p>The first character must be a letter.</p> </li> <li> <p>Cannot end with a
+     * hyphen or contain two consecutive hyphens.</p> </li> </ul>
+     */
     inline void SetDBClusterIdentifier(const Aws::String& value) { m_dBClusterIdentifierHasBeenSet = true; m_dBClusterIdentifier = value; }
 
     /**
@@ -116,6 +124,13 @@ namespace Model
      * <code>DBCluster</code>.</p> </li> </ul>
      */
     inline const Aws::String& GetSourceDBClusterIdentifier() const{ return m_sourceDBClusterIdentifier; }
+
+    /**
+     * <p>The identifier of the source DB cluster from which to restore.</p>
+     * <p>Constraints:</p> <ul> <li> <p>Must match the identifier of an existing
+     * <code>DBCluster</code>.</p> </li> </ul>
+     */
+    inline bool SourceDBClusterIdentifierHasBeenSet() const { return m_sourceDBClusterIdentifierHasBeenSet; }
 
     /**
      * <p>The identifier of the source DB cluster from which to restore.</p>
@@ -184,6 +199,19 @@ namespace Model
      * <code>copy-on-write</code>.</p> </li> </ul> <p>Example:
      * <code>2015-03-07T23:45:00Z</code> </p>
      */
+    inline bool RestoreToTimeHasBeenSet() const { return m_restoreToTimeHasBeenSet; }
+
+    /**
+     * <p>The date and time to restore the DB cluster to.</p> <p>Valid values: A time
+     * in Universal Coordinated Time (UTC) format.</p> <p>Constraints:</p> <ul> <li>
+     * <p>Must be before the latest restorable time for the DB instance.</p> </li> <li>
+     * <p>Must be specified if the <code>UseLatestRestorableTime</code> parameter is
+     * not provided.</p> </li> <li> <p>Cannot be specified if the
+     * <code>UseLatestRestorableTime</code> parameter is <code>true</code>.</p> </li>
+     * <li> <p>Cannot be specified if the <code>RestoreType</code> parameter is
+     * <code>copy-on-write</code>.</p> </li> </ul> <p>Example:
+     * <code>2015-03-07T23:45:00Z</code> </p>
+     */
     inline void SetRestoreToTime(const Aws::Utils::DateTime& value) { m_restoreToTimeHasBeenSet = true; m_restoreToTime = value; }
 
     /**
@@ -240,6 +268,14 @@ namespace Model
      * <p>Default: <code>false</code> </p> <p>Constraints: Cannot be specified if the
      * <code>RestoreToTime</code> parameter is provided.</p>
      */
+    inline bool UseLatestRestorableTimeHasBeenSet() const { return m_useLatestRestorableTimeHasBeenSet; }
+
+    /**
+     * <p>A value that is set to <code>true</code> to restore the DB cluster to the
+     * latest restorable backup time, and <code>false</code> otherwise. </p>
+     * <p>Default: <code>false</code> </p> <p>Constraints: Cannot be specified if the
+     * <code>RestoreToTime</code> parameter is provided.</p>
+     */
     inline void SetUseLatestRestorableTime(bool value) { m_useLatestRestorableTimeHasBeenSet = true; m_useLatestRestorableTime = value; }
 
     /**
@@ -263,6 +299,13 @@ namespace Model
      * <p>Constraints: Must be a value from <code>1150</code> to <code>65535</code>.
      * </p> <p>Default: The default port for the engine.</p>
      */
+    inline bool PortHasBeenSet() const { return m_portHasBeenSet; }
+
+    /**
+     * <p>The port number on which the new DB cluster accepts connections.</p>
+     * <p>Constraints: Must be a value from <code>1150</code> to <code>65535</code>.
+     * </p> <p>Default: The default port for the engine.</p>
+     */
     inline void SetPort(int value) { m_portHasBeenSet = true; m_port = value; }
 
     /**
@@ -279,6 +322,13 @@ namespace Model
      * <p>Example: <code>mySubnetgroup</code> </p>
      */
     inline const Aws::String& GetDBSubnetGroupName() const{ return m_dBSubnetGroupName; }
+
+    /**
+     * <p>The DB subnet group name to use for the new DB cluster.</p> <p>Constraints:
+     * If provided, must match the name of an existing <code>DBSubnetGroup</code>.</p>
+     * <p>Example: <code>mySubnetgroup</code> </p>
+     */
+    inline bool DBSubnetGroupNameHasBeenSet() const { return m_dBSubnetGroupNameHasBeenSet; }
 
     /**
      * <p>The DB subnet group name to use for the new DB cluster.</p> <p>Constraints:
@@ -331,6 +381,11 @@ namespace Model
     /**
      * <p>A list of VPC security groups that the new DB cluster belongs to.</p>
      */
+    inline bool VpcSecurityGroupIdsHasBeenSet() const { return m_vpcSecurityGroupIdsHasBeenSet; }
+
+    /**
+     * <p>A list of VPC security groups that the new DB cluster belongs to.</p>
+     */
     inline void SetVpcSecurityGroupIds(const Aws::Vector<Aws::String>& value) { m_vpcSecurityGroupIdsHasBeenSet = true; m_vpcSecurityGroupIds = value; }
 
     /**
@@ -368,6 +423,11 @@ namespace Model
      * <p>The tags to be assigned to the restored DB cluster.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>The tags to be assigned to the restored DB cluster.</p>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
      * <p>The tags to be assigned to the restored DB cluster.</p>
@@ -419,6 +479,26 @@ namespace Model
      * encrypted, then the restore request is rejected.</p>
      */
     inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
+
+    /**
+     * <p>The AWS KMS key identifier to use when restoring an encrypted DB cluster from
+     * an encrypted DB cluster.</p> <p>The AWS KMS key identifier is the Amazon
+     * Resource Name (ARN) for the AWS KMS encryption key. If you are restoring a DB
+     * cluster with the same AWS account that owns the AWS KMS encryption key used to
+     * encrypt the new DB cluster, then you can use the AWS KMS key alias instead of
+     * the ARN for the AWS KMS encryption key.</p> <p>You can restore to a new DB
+     * cluster and encrypt the new DB cluster with an AWS KMS key that is different
+     * from the AWS KMS key used to encrypt the source DB cluster. The new DB cluster
+     * is encrypted with the AWS KMS key identified by the <code>KmsKeyId</code>
+     * parameter.</p> <p>If you do not specify a value for the <code>KmsKeyId</code>
+     * parameter, then the following occurs:</p> <ul> <li> <p>If the DB cluster is
+     * encrypted, then the restored DB cluster is encrypted using the AWS KMS key that
+     * was used to encrypt the source DB cluster.</p> </li> <li> <p>If the DB cluster
+     * is not encrypted, then the restored DB cluster is not encrypted.</p> </li> </ul>
+     * <p>If <code>DBClusterIdentifier</code> refers to a DB cluster that is not
+     * encrypted, then the restore request is rejected.</p>
+     */
+    inline bool KmsKeyIdHasBeenSet() const { return m_kmsKeyIdHasBeenSet; }
 
     /**
      * <p>The AWS KMS key identifier to use when restoring an encrypted DB cluster from
@@ -546,6 +626,12 @@ namespace Model
      * Logs.</p>
      */
     inline const Aws::Vector<Aws::String>& GetEnableCloudwatchLogsExports() const{ return m_enableCloudwatchLogsExports; }
+
+    /**
+     * <p>A list of log types that must be enabled for exporting to Amazon CloudWatch
+     * Logs.</p>
+     */
+    inline bool EnableCloudwatchLogsExportsHasBeenSet() const { return m_enableCloudwatchLogsExportsHasBeenSet; }
 
     /**
      * <p>A list of log types that must be enabled for exporting to Amazon CloudWatch

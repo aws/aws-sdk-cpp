@@ -55,6 +55,12 @@ namespace Model
      * <p>The time the job was submitted to Elastic Transcoder, in epoch
      * milliseconds.</p>
      */
+    inline bool SubmitTimeMillisHasBeenSet() const { return m_submitTimeMillisHasBeenSet; }
+
+    /**
+     * <p>The time the job was submitted to Elastic Transcoder, in epoch
+     * milliseconds.</p>
+     */
     inline void SetSubmitTimeMillis(long long value) { m_submitTimeMillisHasBeenSet = true; m_submitTimeMillis = value; }
 
     /**
@@ -72,6 +78,11 @@ namespace Model
     /**
      * <p>The time the job began transcoding, in epoch milliseconds.</p>
      */
+    inline bool StartTimeMillisHasBeenSet() const { return m_startTimeMillisHasBeenSet; }
+
+    /**
+     * <p>The time the job began transcoding, in epoch milliseconds.</p>
+     */
     inline void SetStartTimeMillis(long long value) { m_startTimeMillisHasBeenSet = true; m_startTimeMillis = value; }
 
     /**
@@ -84,6 +95,11 @@ namespace Model
      * <p>The time the job finished transcoding, in epoch milliseconds.</p>
      */
     inline long long GetFinishTimeMillis() const{ return m_finishTimeMillis; }
+
+    /**
+     * <p>The time the job finished transcoding, in epoch milliseconds.</p>
+     */
+    inline bool FinishTimeMillisHasBeenSet() const { return m_finishTimeMillisHasBeenSet; }
 
     /**
      * <p>The time the job finished transcoding, in epoch milliseconds.</p>

@@ -51,6 +51,9 @@ namespace Model
     inline const StaticKeySettings& GetStaticKeySettings() const{ return m_staticKeySettings; }
 
     
+    inline bool StaticKeySettingsHasBeenSet() const { return m_staticKeySettingsHasBeenSet; }
+
+    
     inline void SetStaticKeySettings(const StaticKeySettings& value) { m_staticKeySettingsHasBeenSet = true; m_staticKeySettings = value; }
 
     

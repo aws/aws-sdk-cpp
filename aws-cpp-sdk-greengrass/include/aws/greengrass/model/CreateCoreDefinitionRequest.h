@@ -56,6 +56,11 @@ namespace Model
     /**
      * A client token used to correlate requests and responses.
      */
+    inline bool AmznClientTokenHasBeenSet() const { return m_amznClientTokenHasBeenSet; }
+
+    /**
+     * A client token used to correlate requests and responses.
+     */
     inline void SetAmznClientToken(const Aws::String& value) { m_amznClientTokenHasBeenSet = true; m_amznClientToken = value; }
 
     /**
@@ -92,6 +97,11 @@ namespace Model
     /**
      * Information about the initial version of the core definition.
      */
+    inline bool InitialVersionHasBeenSet() const { return m_initialVersionHasBeenSet; }
+
+    /**
+     * Information about the initial version of the core definition.
+     */
     inline void SetInitialVersion(const CoreDefinitionVersion& value) { m_initialVersionHasBeenSet = true; m_initialVersion = value; }
 
     /**
@@ -114,6 +124,11 @@ namespace Model
      * The name of the core definition.
      */
     inline const Aws::String& GetName() const{ return m_name; }
+
+    /**
+     * The name of the core definition.
+     */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
      * The name of the core definition.

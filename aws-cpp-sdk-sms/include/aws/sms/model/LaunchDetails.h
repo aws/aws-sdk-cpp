@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>Latest time this application was launched successfully.</p>
      */
+    inline bool LatestLaunchTimeHasBeenSet() const { return m_latestLaunchTimeHasBeenSet; }
+
+    /**
+     * <p>Latest time this application was launched successfully.</p>
+     */
     inline void SetLatestLaunchTime(const Aws::Utils::DateTime& value) { m_latestLaunchTimeHasBeenSet = true; m_latestLaunchTime = value; }
 
     /**
@@ -79,6 +84,11 @@ namespace Model
      * <p>Name of the latest stack launched for this application.</p>
      */
     inline const Aws::String& GetStackName() const{ return m_stackName; }
+
+    /**
+     * <p>Name of the latest stack launched for this application.</p>
+     */
+    inline bool StackNameHasBeenSet() const { return m_stackNameHasBeenSet; }
 
     /**
      * <p>Name of the latest stack launched for this application.</p>
@@ -115,6 +125,11 @@ namespace Model
      * <p>Identifier of the latest stack launched for this application.</p>
      */
     inline const Aws::String& GetStackId() const{ return m_stackId; }
+
+    /**
+     * <p>Identifier of the latest stack launched for this application.</p>
+     */
+    inline bool StackIdHasBeenSet() const { return m_stackIdHasBeenSet; }
 
     /**
      * <p>Identifier of the latest stack launched for this application.</p>

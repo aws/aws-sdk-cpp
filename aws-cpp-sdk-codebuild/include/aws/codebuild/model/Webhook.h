@@ -59,6 +59,11 @@ namespace Model
     /**
      * <p>The URL to the webhook.</p>
      */
+    inline bool UrlHasBeenSet() const { return m_urlHasBeenSet; }
+
+    /**
+     * <p>The URL to the webhook.</p>
+     */
     inline void SetUrl(const Aws::String& value) { m_urlHasBeenSet = true; m_url = value; }
 
     /**
@@ -91,6 +96,11 @@ namespace Model
      * <p> The AWS CodeBuild endpoint where webhook events are sent.</p>
      */
     inline const Aws::String& GetPayloadUrl() const{ return m_payloadUrl; }
+
+    /**
+     * <p> The AWS CodeBuild endpoint where webhook events are sent.</p>
+     */
+    inline bool PayloadUrlHasBeenSet() const { return m_payloadUrlHasBeenSet; }
 
     /**
      * <p> The AWS CodeBuild endpoint where webhook events are sent.</p>
@@ -128,6 +138,12 @@ namespace Model
      * webhook does not support <code>secret</code>. </p> </note>
      */
     inline const Aws::String& GetSecret() const{ return m_secret; }
+
+    /**
+     * <p> The secret token of the associated repository. </p> <note> <p> A Bitbucket
+     * webhook does not support <code>secret</code>. </p> </note>
+     */
+    inline bool SecretHasBeenSet() const { return m_secretHasBeenSet; }
 
     /**
      * <p> The secret token of the associated repository. </p> <note> <p> A Bitbucket
@@ -174,6 +190,15 @@ namespace Model
      * <code>filterGroups</code> instead of <code>branchFilter</code>. </p> </note>
      */
     inline const Aws::String& GetBranchFilter() const{ return m_branchFilter; }
+
+    /**
+     * <p>A regular expression used to determine which repository branches are built
+     * when a webhook is triggered. If the name of a branch matches the regular
+     * expression, then it is built. If <code>branchFilter</code> is empty, then all
+     * branches are built.</p> <note> <p> It is recommended that you use
+     * <code>filterGroups</code> instead of <code>branchFilter</code>. </p> </note>
+     */
+    inline bool BranchFilterHasBeenSet() const { return m_branchFilterHasBeenSet; }
 
     /**
      * <p>A regular expression used to determine which repository branches are built
@@ -248,6 +273,16 @@ namespace Model
      * <code>filterGroups</code> array must pass. For a filter group to pass, each of
      * its filters must pass. </p>
      */
+    inline bool FilterGroupsHasBeenSet() const { return m_filterGroupsHasBeenSet; }
+
+    /**
+     * <p> An array of arrays of <code>WebhookFilter</code> objects used to determine
+     * which webhooks are triggered. At least one <code>WebhookFilter</code> in the
+     * array must specify <code>EVENT</code> as its <code>type</code>. </p> <p> For a
+     * build to be triggered, at least one filter group in the
+     * <code>filterGroups</code> array must pass. For a filter group to pass, each of
+     * its filters must pass. </p>
+     */
     inline void SetFilterGroups(const Aws::Vector<Aws::Vector<WebhookFilter>>& value) { m_filterGroupsHasBeenSet = true; m_filterGroups = value; }
 
     /**
@@ -306,6 +341,12 @@ namespace Model
      * modified. </p>
      */
     inline const Aws::Utils::DateTime& GetLastModifiedSecret() const{ return m_lastModifiedSecret; }
+
+    /**
+     * <p> A timestamp that indicates the last time a repository's secret token was
+     * modified. </p>
+     */
+    inline bool LastModifiedSecretHasBeenSet() const { return m_lastModifiedSecretHasBeenSet; }
 
     /**
      * <p> A timestamp that indicates the last time a repository's secret token was

@@ -58,6 +58,12 @@ namespace Model
      * The language to use when delivering the message. For a complete list of
      * supported languages, see the Amazon Polly Developer Guide.
      */
+    inline bool LanguageCodeHasBeenSet() const { return m_languageCodeHasBeenSet; }
+
+    /**
+     * The language to use when delivering the message. For a complete list of
+     * supported languages, see the Amazon Polly Developer Guide.
+     */
     inline void SetLanguageCode(const Aws::String& value) { m_languageCodeHasBeenSet = true; m_languageCode = value; }
 
     /**
@@ -99,6 +105,11 @@ namespace Model
     /**
      * The SSML-formatted text to deliver to the recipient.
      */
+    inline bool TextHasBeenSet() const { return m_textHasBeenSet; }
+
+    /**
+     * The SSML-formatted text to deliver to the recipient.
+     */
     inline void SetText(const Aws::String& value) { m_textHasBeenSet = true; m_text = value; }
 
     /**
@@ -132,6 +143,12 @@ namespace Model
      * complete list of supported voices, see the Amazon Polly Developer Guide.
      */
     inline const Aws::String& GetVoiceId() const{ return m_voiceId; }
+
+    /**
+     * The name of the voice that you want to use to deliver the message. For a
+     * complete list of supported voices, see the Amazon Polly Developer Guide.
+     */
+    inline bool VoiceIdHasBeenSet() const { return m_voiceIdHasBeenSet; }
 
     /**
      * The name of the voice that you want to use to deliver the message. For a

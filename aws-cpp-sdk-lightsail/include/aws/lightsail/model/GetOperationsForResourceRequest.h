@@ -52,6 +52,11 @@ namespace Model
     /**
      * <p>The name of the resource for which you are requesting information.</p>
      */
+    inline bool ResourceNameHasBeenSet() const { return m_resourceNameHasBeenSet; }
+
+    /**
+     * <p>The name of the resource for which you are requesting information.</p>
+     */
     inline void SetResourceName(const Aws::String& value) { m_resourceNameHasBeenSet = true; m_resourceName = value; }
 
     /**
@@ -85,6 +90,12 @@ namespace Model
      * operations for resource request.</p>
      */
     inline const Aws::String& GetPageToken() const{ return m_pageToken; }
+
+    /**
+     * <p>A token used for advancing to the next page of results from your get
+     * operations for resource request.</p>
+     */
+    inline bool PageTokenHasBeenSet() const { return m_pageTokenHasBeenSet; }
 
     /**
      * <p>A token used for advancing to the next page of results from your get

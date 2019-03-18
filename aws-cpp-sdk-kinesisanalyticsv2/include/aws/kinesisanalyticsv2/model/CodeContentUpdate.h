@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p>Describes an update to the text code for an application.</p>
      */
+    inline bool TextContentUpdateHasBeenSet() const { return m_textContentUpdateHasBeenSet; }
+
+    /**
+     * <p>Describes an update to the text code for an application.</p>
+     */
     inline void SetTextContentUpdate(const Aws::String& value) { m_textContentUpdateHasBeenSet = true; m_textContentUpdate = value; }
 
     /**
@@ -94,6 +99,11 @@ namespace Model
     /**
      * <p>Describes an update to the zipped code for an application.</p>
      */
+    inline bool ZipFileContentUpdateHasBeenSet() const { return m_zipFileContentUpdateHasBeenSet; }
+
+    /**
+     * <p>Describes an update to the zipped code for an application.</p>
+     */
     inline void SetZipFileContentUpdate(const Aws::Utils::ByteBuffer& value) { m_zipFileContentUpdateHasBeenSet = true; m_zipFileContentUpdate = value; }
 
     /**
@@ -116,6 +126,11 @@ namespace Model
      * <p>Describes an update to the location of code for an application.</p>
      */
     inline const S3ContentLocationUpdate& GetS3ContentLocationUpdate() const{ return m_s3ContentLocationUpdate; }
+
+    /**
+     * <p>Describes an update to the location of code for an application.</p>
+     */
+    inline bool S3ContentLocationUpdateHasBeenSet() const { return m_s3ContentLocationUpdateHasBeenSet; }
 
     /**
      * <p>Describes an update to the location of code for an application.</p>

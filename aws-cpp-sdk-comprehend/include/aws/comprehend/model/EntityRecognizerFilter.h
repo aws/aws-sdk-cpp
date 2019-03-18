@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p>The status of an entity recognizer.</p>
      */
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
+
+    /**
+     * <p>The status of an entity recognizer.</p>
+     */
     inline void SetStatus(const ModelStatus& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
@@ -82,6 +87,13 @@ namespace Model
      * returned in descending order, newest to oldest.</p>
      */
     inline const Aws::Utils::DateTime& GetSubmitTimeBefore() const{ return m_submitTimeBefore; }
+
+    /**
+     * <p>Filters the list of entities based on the time that the list was submitted
+     * for processing. Returns only jobs submitted before the specified time. Jobs are
+     * returned in descending order, newest to oldest.</p>
+     */
+    inline bool SubmitTimeBeforeHasBeenSet() const { return m_submitTimeBeforeHasBeenSet; }
 
     /**
      * <p>Filters the list of entities based on the time that the list was submitted
@@ -118,6 +130,13 @@ namespace Model
      * returned in ascending order, oldest to newest.</p>
      */
     inline const Aws::Utils::DateTime& GetSubmitTimeAfter() const{ return m_submitTimeAfter; }
+
+    /**
+     * <p>Filters the list of entities based on the time that the list was submitted
+     * for processing. Returns only jobs submitted after the specified time. Jobs are
+     * returned in ascending order, oldest to newest.</p>
+     */
+    inline bool SubmitTimeAfterHasBeenSet() const { return m_submitTimeAfterHasBeenSet; }
 
     /**
      * <p>Filters the list of entities based on the time that the list was submitted

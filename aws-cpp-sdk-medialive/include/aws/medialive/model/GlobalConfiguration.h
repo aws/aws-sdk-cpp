@@ -58,6 +58,11 @@ namespace Model
     /**
      * Value to set the initial audio gain for the Live Event.
      */
+    inline bool InitialAudioGainHasBeenSet() const { return m_initialAudioGainHasBeenSet; }
+
+    /**
+     * Value to set the initial audio gain for the Live Event.
+     */
     inline void SetInitialAudioGain(int value) { m_initialAudioGainHasBeenSet = true; m_initialAudioGain = value; }
 
     /**
@@ -75,6 +80,16 @@ namespace Model
      * controlled through the Channel Schedule API).
      */
     inline const GlobalConfigurationInputEndAction& GetInputEndAction() const{ return m_inputEndAction; }
+
+    /**
+     * Indicates the action to take when the current input completes (e.g.
+     * end-of-file). When switchAndLoopInputs is configured the encoder will restart at
+     * the beginning of the first input.  When "none" is configured the encoder will
+     * transcode either black, a solid color, or a user specified slate images per the
+     * "Input Loss Behavior" configuration until the next input switch occurs (which is
+     * controlled through the Channel Schedule API).
+     */
+    inline bool InputEndActionHasBeenSet() const { return m_inputEndActionHasBeenSet; }
 
     /**
      * Indicates the action to take when the current input completes (e.g.
@@ -125,6 +140,11 @@ namespace Model
     /**
      * Settings for system actions when input is lost.
      */
+    inline bool InputLossBehaviorHasBeenSet() const { return m_inputLossBehaviorHasBeenSet; }
+
+    /**
+     * Settings for system actions when input is lost.
+     */
     inline void SetInputLossBehavior(const InputLossBehavior& value) { m_inputLossBehaviorHasBeenSet = true; m_inputLossBehavior = value; }
 
     /**
@@ -150,6 +170,14 @@ namespace Model
      * stream.
      */
     inline const GlobalConfigurationOutputTimingSource& GetOutputTimingSource() const{ return m_outputTimingSource; }
+
+    /**
+     * Indicates whether the rate of frames emitted by the Live encoder should be paced
+     * by its system clock (which optionally may be locked to another source via NTP)
+     * or should be locked to the clock of the source that is providing the input
+     * stream.
+     */
+    inline bool OutputTimingSourceHasBeenSet() const { return m_outputTimingSourceHasBeenSet; }
 
     /**
      * Indicates whether the rate of frames emitted by the Live encoder should be paced
@@ -190,6 +218,13 @@ namespace Model
      * second.
      */
     inline const GlobalConfigurationLowFramerateInputs& GetSupportLowFramerateInputs() const{ return m_supportLowFramerateInputs; }
+
+    /**
+     * Adjusts video input buffer for streams with very low video framerates. This is
+     * commonly set to enabled for music channels with less than one video frame per
+     * second.
+     */
+    inline bool SupportLowFramerateInputsHasBeenSet() const { return m_supportLowFramerateInputsHasBeenSet; }
 
     /**
      * Adjusts video input buffer for streams with very low video framerates. This is

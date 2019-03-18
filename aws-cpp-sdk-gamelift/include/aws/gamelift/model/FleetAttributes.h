@@ -77,6 +77,11 @@ namespace Model
     /**
      * <p>Unique identifier for a fleet.</p>
      */
+    inline bool FleetIdHasBeenSet() const { return m_fleetIdHasBeenSet; }
+
+    /**
+     * <p>Unique identifier for a fleet.</p>
+     */
     inline void SetFleetId(const Aws::String& value) { m_fleetIdHasBeenSet = true; m_fleetId = value; }
 
     /**
@@ -109,6 +114,11 @@ namespace Model
      * <p>Identifier for a fleet that is unique across all regions.</p>
      */
     inline const Aws::String& GetFleetArn() const{ return m_fleetArn; }
+
+    /**
+     * <p>Identifier for a fleet that is unique across all regions.</p>
+     */
+    inline bool FleetArnHasBeenSet() const { return m_fleetArnHasBeenSet; }
 
     /**
      * <p>Identifier for a fleet that is unique across all regions.</p>
@@ -151,6 +161,12 @@ namespace Model
      * <p>Indicates whether the fleet uses on-demand or spot instances. A spot instance
      * in use may be interrupted with a two-minute notification.</p>
      */
+    inline bool FleetTypeHasBeenSet() const { return m_fleetTypeHasBeenSet; }
+
+    /**
+     * <p>Indicates whether the fleet uses on-demand or spot instances. A spot instance
+     * in use may be interrupted with a two-minute notification.</p>
+     */
     inline void SetFleetType(const FleetType& value) { m_fleetTypeHasBeenSet = true; m_fleetType = value; }
 
     /**
@@ -179,6 +195,14 @@ namespace Model
      * for detailed descriptions.</p>
      */
     inline const EC2InstanceType& GetInstanceType() const{ return m_instanceType; }
+
+    /**
+     * <p>EC2 instance type indicating the computing resources of each instance in the
+     * fleet, including CPU, memory, storage, and networking capacity. See <a
+     * href="http://aws.amazon.com/ec2/instance-types/">Amazon EC2 Instance Types</a>
+     * for detailed descriptions.</p>
+     */
+    inline bool InstanceTypeHasBeenSet() const { return m_instanceTypeHasBeenSet; }
 
     /**
      * <p>EC2 instance type indicating the computing resources of each instance in the
@@ -221,6 +245,11 @@ namespace Model
     /**
      * <p>Human-readable description of the fleet.</p>
      */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
+
+    /**
+     * <p>Human-readable description of the fleet.</p>
+     */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
@@ -254,6 +283,12 @@ namespace Model
      * be unique.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
+
+    /**
+     * <p>Descriptive label that is associated with a fleet. Fleet names do not need to
+     * be unique.</p>
+     */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
      * <p>Descriptive label that is associated with a fleet. Fleet names do not need to
@@ -302,6 +337,12 @@ namespace Model
      * <p>Time stamp indicating when this data object was created. Format is a number
      * expressed in Unix time as milliseconds (for example "1469498468.057").</p>
      */
+    inline bool CreationTimeHasBeenSet() const { return m_creationTimeHasBeenSet; }
+
+    /**
+     * <p>Time stamp indicating when this data object was created. Format is a number
+     * expressed in Unix time as milliseconds (for example "1469498468.057").</p>
+     */
     inline void SetCreationTime(const Aws::Utils::DateTime& value) { m_creationTimeHasBeenSet = true; m_creationTime = value; }
 
     /**
@@ -329,6 +370,13 @@ namespace Model
      * "1469498468.057").</p>
      */
     inline const Aws::Utils::DateTime& GetTerminationTime() const{ return m_terminationTime; }
+
+    /**
+     * <p>Time stamp indicating when this data object was terminated. Format is a
+     * number expressed in Unix time as milliseconds (for example
+     * "1469498468.057").</p>
+     */
+    inline bool TerminationTimeHasBeenSet() const { return m_terminationTimeHasBeenSet; }
 
     /**
      * <p>Time stamp indicating when this data object was terminated. Format is a
@@ -372,6 +420,20 @@ namespace Model
      * <li> <p> <b>TERMINATED</b> -- The fleet no longer exists.</p> </li> </ul>
      */
     inline const FleetStatus& GetStatus() const{ return m_status; }
+
+    /**
+     * <p>Current status of the fleet.</p> <p>Possible fleet statuses include the
+     * following:</p> <ul> <li> <p> <b>NEW</b> -- A new fleet has been defined and
+     * desired instances is set to 1. </p> </li> <li> <p>
+     * <b>DOWNLOADING/VALIDATING/BUILDING/ACTIVATING</b> -- Amazon GameLift is setting
+     * up the new fleet, creating new instances with the game build and starting server
+     * processes.</p> </li> <li> <p> <b>ACTIVE</b> -- Hosts can now accept game
+     * sessions.</p> </li> <li> <p> <b>ERROR</b> -- An error occurred when downloading,
+     * validating, building, or activating the fleet.</p> </li> <li> <p>
+     * <b>DELETING</b> -- Hosts are responding to a delete fleet request.</p> </li>
+     * <li> <p> <b>TERMINATED</b> -- The fleet no longer exists.</p> </li> </ul>
+     */
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
     /**
      * <p>Current status of the fleet.</p> <p>Possible fleet statuses include the
@@ -438,6 +500,11 @@ namespace Model
     /**
      * <p>Unique identifier for a build.</p>
      */
+    inline bool BuildIdHasBeenSet() const { return m_buildIdHasBeenSet; }
+
+    /**
+     * <p>Unique identifier for a build.</p>
+     */
     inline void SetBuildId(const Aws::String& value) { m_buildIdHasBeenSet = true; m_buildId = value; }
 
     /**
@@ -473,6 +540,14 @@ namespace Model
      * <a>RuntimeConfiguration</a>.</p>
      */
     inline const Aws::String& GetServerLaunchPath() const{ return m_serverLaunchPath; }
+
+    /**
+     * <p>Path to a game server executable in the fleet's build, specified for fleets
+     * created before 2016-08-04 (or AWS SDK v. 0.12.16). Server launch paths for
+     * fleets created after this date are specified in the fleet's
+     * <a>RuntimeConfiguration</a>.</p>
+     */
+    inline bool ServerLaunchPathHasBeenSet() const { return m_serverLaunchPathHasBeenSet; }
 
     /**
      * <p>Path to a game server executable in the fleet's build, specified for fleets
@@ -535,6 +610,13 @@ namespace Model
      * (or AWS SDK v. 0.12.16). Server launch parameters for fleets created after this
      * date are specified in the fleet's <a>RuntimeConfiguration</a>.</p>
      */
+    inline bool ServerLaunchParametersHasBeenSet() const { return m_serverLaunchParametersHasBeenSet; }
+
+    /**
+     * <p>Game server launch parameters specified for fleets created before 2016-08-04
+     * (or AWS SDK v. 0.12.16). Server launch parameters for fleets created after this
+     * date are specified in the fleet's <a>RuntimeConfiguration</a>.</p>
+     */
     inline void SetServerLaunchParameters(const Aws::String& value) { m_serverLaunchParametersHasBeenSet = true; m_serverLaunchParameters = value; }
 
     /**
@@ -584,6 +666,18 @@ namespace Model
      * Linux). Use the Amazon GameLift console to access stored logs. </p>
      */
     inline const Aws::Vector<Aws::String>& GetLogPaths() const{ return m_logPaths; }
+
+    /**
+     * <p>Location of default log files. When a server process is shut down, Amazon
+     * GameLift captures and stores any log files in this location. These logs are in
+     * addition to game session logs; see more on game session logs in the <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-api-server-code">Amazon
+     * GameLift Developer Guide</a>. If no default log path for a fleet is specified,
+     * Amazon GameLift automatically uploads logs that are stored on each instance at
+     * <code>C:\game\logs</code> (for Windows) or <code>/local/game/logs</code> (for
+     * Linux). Use the Amazon GameLift console to access stored logs. </p>
+     */
+    inline bool LogPathsHasBeenSet() const { return m_logPathsHasBeenSet; }
 
     /**
      * <p>Location of default log files. When a server process is shut down, Amazon
@@ -686,6 +780,15 @@ namespace Model
      * -- If the game session is in an <code>ACTIVE</code> status, it cannot be
      * terminated during a scale-down event.</p> </li> </ul>
      */
+    inline bool NewGameSessionProtectionPolicyHasBeenSet() const { return m_newGameSessionProtectionPolicyHasBeenSet; }
+
+    /**
+     * <p>Type of game session protection to set for all new instances started in the
+     * fleet.</p> <ul> <li> <p> <b>NoProtection</b> -- The game session can be
+     * terminated during a scale-down event.</p> </li> <li> <p> <b>FullProtection</b>
+     * -- If the game session is in an <code>ACTIVE</code> status, it cannot be
+     * terminated during a scale-down event.</p> </li> </ul>
+     */
     inline void SetNewGameSessionProtectionPolicy(const ProtectionPolicy& value) { m_newGameSessionProtectionPolicyHasBeenSet = true; m_newGameSessionProtectionPolicy = value; }
 
     /**
@@ -728,6 +831,13 @@ namespace Model
      * system depends on the OS specified for the build that is deployed on this
      * fleet.</p>
      */
+    inline bool OperatingSystemHasBeenSet() const { return m_operatingSystemHasBeenSet; }
+
+    /**
+     * <p>Operating system of the fleet's computing resources. A fleet's operating
+     * system depends on the OS specified for the build that is deployed on this
+     * fleet.</p>
+     */
     inline void SetOperatingSystem(const OperatingSystem& value) { m_operatingSystemHasBeenSet = true; m_operatingSystem = value; }
 
     /**
@@ -762,6 +872,12 @@ namespace Model
      * <p>Fleet policy to limit the number of game sessions an individual player can
      * create over a span of time.</p>
      */
+    inline bool ResourceCreationLimitPolicyHasBeenSet() const { return m_resourceCreationLimitPolicyHasBeenSet; }
+
+    /**
+     * <p>Fleet policy to limit the number of game sessions an individual player can
+     * create over a span of time.</p>
+     */
     inline void SetResourceCreationLimitPolicy(const ResourceCreationLimitPolicy& value) { m_resourceCreationLimitPolicyHasBeenSet = true; m_resourceCreationLimitPolicy = value; }
 
     /**
@@ -790,6 +906,14 @@ namespace Model
      * group at a time.</p>
      */
     inline const Aws::Vector<Aws::String>& GetMetricGroups() const{ return m_metricGroups; }
+
+    /**
+     * <p>Names of metric groups that this fleet is included in. In Amazon CloudWatch,
+     * you can view metrics for an individual fleet or aggregated metrics for fleets
+     * that are in a fleet metric group. A fleet can be included in only one metric
+     * group at a time.</p>
+     */
+    inline bool MetricGroupsHasBeenSet() const { return m_metricGroupsHasBeenSet; }
 
     /**
      * <p>Names of metric groups that this fleet is included in. In Amazon CloudWatch,
@@ -858,6 +982,12 @@ namespace Model
      * <p>List of fleet actions that have been suspended using <a>StopFleetActions</a>.
      * This includes auto-scaling.</p>
      */
+    inline bool StoppedActionsHasBeenSet() const { return m_stoppedActionsHasBeenSet; }
+
+    /**
+     * <p>List of fleet actions that have been suspended using <a>StopFleetActions</a>.
+     * This includes auto-scaling.</p>
+     */
     inline void SetStoppedActions(const Aws::Vector<FleetAction>& value) { m_stoppedActionsHasBeenSet = true; m_stoppedActions = value; }
 
     /**
@@ -903,6 +1033,19 @@ namespace Model
      * Access external resources from a game server</a>.</p>
      */
     inline const Aws::String& GetInstanceRoleArn() const{ return m_instanceRoleArn; }
+
+    /**
+     * <p>Unique identifier for an AWS IAM role that manages access to your AWS
+     * services. Any application that runs on an instance in this fleet can assume the
+     * role, including install scripts, server processs, daemons (background
+     * processes). Create a role or look up a role's ARN using the <a
+     * href="https://console.aws.amazon.com/iam/">IAM dashboard</a> in the AWS
+     * Management Console. Learn more about using on-box credentials for your game
+     * servers at <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-resources.html">
+     * Access external resources from a game server</a>.</p>
+     */
+    inline bool InstanceRoleArnHasBeenSet() const { return m_instanceRoleArnHasBeenSet; }
 
     /**
      * <p>Unique identifier for an AWS IAM role that manages access to your AWS

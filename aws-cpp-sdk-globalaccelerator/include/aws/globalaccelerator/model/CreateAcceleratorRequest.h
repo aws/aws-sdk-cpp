@@ -57,6 +57,13 @@ namespace Model
      * must contain only alphanumeric characters or hyphens (-), and must not begin or
      * end with a hyphen.</p>
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>The name of an accelerator. The name can have a maximum of 32 characters,
+     * must contain only alphanumeric characters or hyphens (-), and must not begin or
+     * end with a hyphen.</p>
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
@@ -103,6 +110,11 @@ namespace Model
     /**
      * <p>The value for the address type must be IPv4. </p>
      */
+    inline bool IpAddressTypeHasBeenSet() const { return m_ipAddressTypeHasBeenSet; }
+
+    /**
+     * <p>The value for the address type must be IPv4. </p>
+     */
     inline void SetIpAddressType(const IpAddressType& value) { m_ipAddressTypeHasBeenSet = true; m_ipAddressType = value; }
 
     /**
@@ -133,6 +145,13 @@ namespace Model
      * default value is true. </p> <p>If the value is set to true, an accelerator
      * cannot be deleted. If set to false, the accelerator can be deleted.</p>
      */
+    inline bool EnabledHasBeenSet() const { return m_enabledHasBeenSet; }
+
+    /**
+     * <p>Indicates whether an accelerator is enabled. The value is true or false. The
+     * default value is true. </p> <p>If the value is set to true, an accelerator
+     * cannot be deleted. If set to false, the accelerator can be deleted.</p>
+     */
     inline void SetEnabled(bool value) { m_enabledHasBeenSet = true; m_enabled = value; }
 
     /**
@@ -148,6 +167,12 @@ namespace Model
      * idempotency—that is, the uniqueness—of an accelerator.</p>
      */
     inline const Aws::String& GetIdempotencyToken() const{ return m_idempotencyToken; }
+
+    /**
+     * <p>A unique, case-sensitive identifier that you provide to ensure the
+     * idempotency—that is, the uniqueness—of an accelerator.</p>
+     */
+    inline bool IdempotencyTokenHasBeenSet() const { return m_idempotencyTokenHasBeenSet; }
 
     /**
      * <p>A unique, case-sensitive identifier that you provide to ensure the

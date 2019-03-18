@@ -61,6 +61,11 @@ namespace Model
     /**
      * <p>The name of the attribute involved in the condition.</p>
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>The name of the attribute involved in the condition.</p>
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
@@ -94,6 +99,12 @@ namespace Model
      * <code>Exists</code> parameter is equal to <code>true</code>.</p>
      */
     inline const Aws::String& GetValue() const{ return m_value; }
+
+    /**
+     * <p>The value of an attribute. This value can only be specified when the
+     * <code>Exists</code> parameter is equal to <code>true</code>.</p>
+     */
+    inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
 
     /**
      * <p>The value of an attribute. This value can only be specified when the
@@ -140,6 +151,15 @@ namespace Model
      * for the update condition to be satisfied.</p>
      */
     inline bool GetExists() const{ return m_exists; }
+
+    /**
+     * <p>A value specifying whether or not the specified attribute must exist with the
+     * specified value in order for the update condition to be satisfied. Specify
+     * <code>true</code> if the attribute must exist for the update condition to be
+     * satisfied. Specify <code>false</code> if the attribute should not exist in order
+     * for the update condition to be satisfied.</p>
+     */
+    inline bool ExistsHasBeenSet() const { return m_existsHasBeenSet; }
 
     /**
      * <p>A value specifying whether or not the specified attribute must exist with the

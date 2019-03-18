@@ -58,6 +58,12 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) that is associated with the <a>Directory</a>
      * where the object resides. For more information, see <a>arns</a>.</p>
      */
+    inline bool DirectoryArnHasBeenSet() const { return m_directoryArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) that is associated with the <a>Directory</a>
+     * where the object resides. For more information, see <a>arns</a>.</p>
+     */
     inline void SetDirectoryArn(const Aws::String& value) { m_directoryArnHasBeenSet = true; m_directoryArn = value; }
 
     /**
@@ -101,6 +107,12 @@ namespace Model
      * <p>Identifiers for the facet that you are adding to the object. See
      * <a>SchemaFacet</a> for details.</p>
      */
+    inline bool SchemaFacetHasBeenSet() const { return m_schemaFacetHasBeenSet; }
+
+    /**
+     * <p>Identifiers for the facet that you are adding to the object. See
+     * <a>SchemaFacet</a> for details.</p>
+     */
     inline void SetSchemaFacet(const SchemaFacet& value) { m_schemaFacetHasBeenSet = true; m_schemaFacet = value; }
 
     /**
@@ -126,6 +138,11 @@ namespace Model
      * <p>Attributes on the facet that you are adding to the object.</p>
      */
     inline const Aws::Vector<AttributeKeyAndValue>& GetObjectAttributeList() const{ return m_objectAttributeList; }
+
+    /**
+     * <p>Attributes on the facet that you are adding to the object.</p>
+     */
+    inline bool ObjectAttributeListHasBeenSet() const { return m_objectAttributeListHasBeenSet; }
 
     /**
      * <p>Attributes on the facet that you are adding to the object.</p>
@@ -162,6 +179,11 @@ namespace Model
      * <p>A reference to the object you are adding the specified facet to.</p>
      */
     inline const ObjectReference& GetObjectReference() const{ return m_objectReference; }
+
+    /**
+     * <p>A reference to the object you are adding the specified facet to.</p>
+     */
+    inline bool ObjectReferenceHasBeenSet() const { return m_objectReferenceHasBeenSet; }
 
     /**
      * <p>A reference to the object you are adding the specified facet to.</p>

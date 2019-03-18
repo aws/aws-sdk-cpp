@@ -58,6 +58,12 @@ namespace Model
      * Blanking image to be used. Leave empty for solid black. Only bmp and png images
      * are supported.
      */
+    inline bool AvailBlankingImageHasBeenSet() const { return m_availBlankingImageHasBeenSet; }
+
+    /**
+     * Blanking image to be used. Leave empty for solid black. Only bmp and png images
+     * are supported.
+     */
     inline void SetAvailBlankingImage(const InputLocation& value) { m_availBlankingImageHasBeenSet = true; m_availBlankingImage = value; }
 
     /**
@@ -84,6 +90,12 @@ namespace Model
      * insertion metadata is added.
      */
     inline const AvailBlankingState& GetState() const{ return m_state; }
+
+    /**
+     * When set to enabled, causes video, audio and captions to be blanked when
+     * insertion metadata is added.
+     */
+    inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
 
     /**
      * When set to enabled, causes video, audio and captions to be blanked when

@@ -50,6 +50,11 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the application.</p>
      */
+    inline bool ApplicationIdHasBeenSet() const { return m_applicationIdHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the application.</p>
+     */
     inline void SetApplicationId(const Aws::String& value) { m_applicationIdHasBeenSet = true; m_applicationId = value; }
 
     /**
@@ -83,6 +88,12 @@ namespace Model
      * [0-9a-fA-F]{8}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{12}</p>
      */
     inline const Aws::String& GetTemplateId() const{ return m_templateId; }
+
+    /**
+     * <p>The UUID returned by CreateCloudFormationTemplate.</p><p>Pattern:
+     * [0-9a-fA-F]{8}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{12}</p>
+     */
+    inline bool TemplateIdHasBeenSet() const { return m_templateIdHasBeenSet; }
 
     /**
      * <p>The UUID returned by CreateCloudFormationTemplate.</p><p>Pattern:

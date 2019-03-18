@@ -56,6 +56,11 @@ namespace Model
     /**
      * Inviter account ID
      */
+    inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
+
+    /**
+     * Inviter account ID
+     */
     inline void SetAccountId(const Aws::String& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
 
     /**
@@ -88,6 +93,11 @@ namespace Model
      * This value is used to validate the inviter account to the member account.
      */
     inline const Aws::String& GetInvitationId() const{ return m_invitationId; }
+
+    /**
+     * This value is used to validate the inviter account to the member account.
+     */
+    inline bool InvitationIdHasBeenSet() const { return m_invitationIdHasBeenSet; }
 
     /**
      * This value is used to validate the inviter account to the member account.
@@ -128,6 +138,11 @@ namespace Model
     /**
      * Timestamp at which the invitation was sent
      */
+    inline bool InvitedAtHasBeenSet() const { return m_invitedAtHasBeenSet; }
+
+    /**
+     * Timestamp at which the invitation was sent
+     */
     inline void SetInvitedAt(const Aws::String& value) { m_invitedAtHasBeenSet = true; m_invitedAt = value; }
 
     /**
@@ -160,6 +175,11 @@ namespace Model
      * The status of the relationship between the inviter and invitee accounts.
      */
     inline const Aws::String& GetRelationshipStatus() const{ return m_relationshipStatus; }
+
+    /**
+     * The status of the relationship between the inviter and invitee accounts.
+     */
+    inline bool RelationshipStatusHasBeenSet() const { return m_relationshipStatusHasBeenSet; }
 
     /**
      * The status of the relationship between the inviter and invitee accounts.

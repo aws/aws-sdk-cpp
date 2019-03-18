@@ -61,6 +61,14 @@ namespace Model
      * required permissions, the error response is <code>DryRunOperation</code>.
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
+    inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
+
+    /**
+     * <p>Checks whether you have the required permissions for the action, without
+     * actually making the request, and provides an error response. If you have the
+     * required permissions, the error response is <code>DryRunOperation</code>.
+     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+     */
     inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
 
     /**
@@ -76,6 +84,11 @@ namespace Model
      * <p>The ID of the service.</p>
      */
     inline const Aws::String& GetServiceId() const{ return m_serviceId; }
+
+    /**
+     * <p>The ID of the service.</p>
+     */
+    inline bool ServiceIdHasBeenSet() const { return m_serviceIdHasBeenSet; }
 
     /**
      * <p>The ID of the service.</p>
@@ -118,6 +131,12 @@ namespace Model
      * <p>Indicate whether requests to create an endpoint to your service must be
      * accepted.</p>
      */
+    inline bool AcceptanceRequiredHasBeenSet() const { return m_acceptanceRequiredHasBeenSet; }
+
+    /**
+     * <p>Indicate whether requests to create an endpoint to your service must be
+     * accepted.</p>
+     */
     inline void SetAcceptanceRequired(bool value) { m_acceptanceRequiredHasBeenSet = true; m_acceptanceRequired = value; }
 
     /**
@@ -132,6 +151,12 @@ namespace Model
      * service configuration.</p>
      */
     inline const Aws::Vector<Aws::String>& GetAddNetworkLoadBalancerArns() const{ return m_addNetworkLoadBalancerArns; }
+
+    /**
+     * <p>The Amazon Resource Names (ARNs) of Network Load Balancers to add to your
+     * service configuration.</p>
+     */
+    inline bool AddNetworkLoadBalancerArnsHasBeenSet() const { return m_addNetworkLoadBalancerArnsHasBeenSet; }
 
     /**
      * <p>The Amazon Resource Names (ARNs) of Network Load Balancers to add to your
@@ -181,6 +206,12 @@ namespace Model
      * your service configuration.</p>
      */
     inline const Aws::Vector<Aws::String>& GetRemoveNetworkLoadBalancerArns() const{ return m_removeNetworkLoadBalancerArns; }
+
+    /**
+     * <p>The Amazon Resource Names (ARNs) of Network Load Balancers to remove from
+     * your service configuration.</p>
+     */
+    inline bool RemoveNetworkLoadBalancerArnsHasBeenSet() const { return m_removeNetworkLoadBalancerArnsHasBeenSet; }
 
     /**
      * <p>The Amazon Resource Names (ARNs) of Network Load Balancers to remove from

@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the simulation job.</p>
      */
+    inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the simulation job.</p>
+     */
     inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
 
     /**
@@ -96,6 +101,12 @@ namespace Model
      * <p>The time, in milliseconds since the epoch, when the simulation job was last
      * updated.</p>
      */
+    inline bool LastUpdatedAtHasBeenSet() const { return m_lastUpdatedAtHasBeenSet; }
+
+    /**
+     * <p>The time, in milliseconds since the epoch, when the simulation job was last
+     * updated.</p>
+     */
     inline void SetLastUpdatedAt(const Aws::Utils::DateTime& value) { m_lastUpdatedAtHasBeenSet = true; m_lastUpdatedAt = value; }
 
     /**
@@ -121,6 +132,11 @@ namespace Model
      * <p>The name of the simulation job.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
+
+    /**
+     * <p>The name of the simulation job.</p>
+     */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
      * <p>The name of the simulation job.</p>
@@ -161,6 +177,11 @@ namespace Model
     /**
      * <p>The status of the simulation job.</p>
      */
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
+
+    /**
+     * <p>The status of the simulation job.</p>
+     */
     inline void SetStatus(const SimulationJobStatus& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
@@ -183,6 +204,11 @@ namespace Model
      * <p>A list of simulation job simulation application names.</p>
      */
     inline const Aws::Vector<Aws::String>& GetSimulationApplicationNames() const{ return m_simulationApplicationNames; }
+
+    /**
+     * <p>A list of simulation job simulation application names.</p>
+     */
+    inline bool SimulationApplicationNamesHasBeenSet() const { return m_simulationApplicationNamesHasBeenSet; }
 
     /**
      * <p>A list of simulation job simulation application names.</p>
@@ -224,6 +250,11 @@ namespace Model
      * <p>A list of simulation job robot application names.</p>
      */
     inline const Aws::Vector<Aws::String>& GetRobotApplicationNames() const{ return m_robotApplicationNames; }
+
+    /**
+     * <p>A list of simulation job robot application names.</p>
+     */
+    inline bool RobotApplicationNamesHasBeenSet() const { return m_robotApplicationNamesHasBeenSet; }
 
     /**
      * <p>A list of simulation job robot application names.</p>

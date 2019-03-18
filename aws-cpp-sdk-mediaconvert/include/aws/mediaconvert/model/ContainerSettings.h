@@ -56,6 +56,9 @@ namespace Model
     inline const ContainerType& GetContainer() const{ return m_container; }
 
     
+    inline bool ContainerHasBeenSet() const { return m_containerHasBeenSet; }
+
+    
     inline void SetContainer(const ContainerType& value) { m_containerHasBeenSet = true; m_container = value; }
 
     
@@ -70,6 +73,9 @@ namespace Model
 
     
     inline const F4vSettings& GetF4vSettings() const{ return m_f4vSettings; }
+
+    
+    inline bool F4vSettingsHasBeenSet() const { return m_f4vSettingsHasBeenSet; }
 
     
     inline void SetF4vSettings(const F4vSettings& value) { m_f4vSettingsHasBeenSet = true; m_f4vSettings = value; }
@@ -88,6 +94,9 @@ namespace Model
     inline const M2tsSettings& GetM2tsSettings() const{ return m_m2tsSettings; }
 
     
+    inline bool M2tsSettingsHasBeenSet() const { return m_m2tsSettingsHasBeenSet; }
+
+    
     inline void SetM2tsSettings(const M2tsSettings& value) { m_m2tsSettingsHasBeenSet = true; m_m2tsSettings = value; }
 
     
@@ -102,6 +111,9 @@ namespace Model
 
     
     inline const M3u8Settings& GetM3u8Settings() const{ return m_m3u8Settings; }
+
+    
+    inline bool M3u8SettingsHasBeenSet() const { return m_m3u8SettingsHasBeenSet; }
 
     
     inline void SetM3u8Settings(const M3u8Settings& value) { m_m3u8SettingsHasBeenSet = true; m_m3u8Settings = value; }
@@ -120,6 +132,9 @@ namespace Model
     inline const MovSettings& GetMovSettings() const{ return m_movSettings; }
 
     
+    inline bool MovSettingsHasBeenSet() const { return m_movSettingsHasBeenSet; }
+
+    
     inline void SetMovSettings(const MovSettings& value) { m_movSettingsHasBeenSet = true; m_movSettings = value; }
 
     
@@ -134,6 +149,9 @@ namespace Model
 
     
     inline const Mp4Settings& GetMp4Settings() const{ return m_mp4Settings; }
+
+    
+    inline bool Mp4SettingsHasBeenSet() const { return m_mp4SettingsHasBeenSet; }
 
     
     inline void SetMp4Settings(const Mp4Settings& value) { m_mp4SettingsHasBeenSet = true; m_mp4Settings = value; }

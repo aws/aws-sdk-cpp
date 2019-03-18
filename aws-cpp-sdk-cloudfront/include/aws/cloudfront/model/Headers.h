@@ -110,6 +110,32 @@ namespace Model
      * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/RequestAndResponseBehaviorCustomOrigin.html#request-custom-headers-behavior">HTTP
      * Request Headers and CloudFront Behavior</a> </p> </li> </ul>
      */
+    inline bool QuantityHasBeenSet() const { return m_quantityHasBeenSet; }
+
+    /**
+     * <p>The number of different headers that you want CloudFront to base caching on
+     * for this cache behavior. You can configure each cache behavior in a web
+     * distribution to do one of the following:</p> <ul> <li> <p> <b>Forward all
+     * headers to your origin</b>: Specify <code>1</code> for <code>Quantity</code> and
+     * <code>*</code> for <code>Name</code>.</p> <important> <p>CloudFront doesn't
+     * cache the objects that are associated with this cache behavior. Instead,
+     * CloudFront sends every request to the origin. </p> </important> </li> <li> <p>
+     * <b>Forward a whitelist of headers you specify</b>: Specify the number of headers
+     * that you want CloudFront to base caching on. Then specify the header names in
+     * <code>Name</code> elements. CloudFront caches your objects based on the values
+     * in the specified headers.</p> </li> <li> <p> <b>Forward only the default
+     * headers</b>: Specify <code>0</code> for <code>Quantity</code> and omit
+     * <code>Items</code>. In this configuration, CloudFront doesn't cache based on the
+     * values in the request headers.</p> </li> </ul> <p>Regardless of which option you
+     * choose, CloudFront forwards headers to your origin based on whether the origin
+     * is an S3 bucket or a custom origin. See the following documentation:</p> <ul>
+     * <li> <p> <b>S3 bucket</b>: See <a
+     * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/RequestAndResponseBehaviorS3Origin.html#request-s3-removed-headers">HTTP
+     * Request Headers That CloudFront Removes or Updates</a> </p> </li> <li> <p>
+     * <b>Custom origin</b>: See <a
+     * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/RequestAndResponseBehaviorCustomOrigin.html#request-custom-headers-behavior">HTTP
+     * Request Headers and CloudFront Behavior</a> </p> </li> </ul>
+     */
     inline void SetQuantity(int value) { m_quantityHasBeenSet = true; m_quantity = value; }
 
     /**
@@ -145,6 +171,13 @@ namespace Model
      * <code>Quantity</code> is <code>0</code>, omit <code>Items</code>.</p>
      */
     inline const Aws::Vector<Aws::String>& GetItems() const{ return m_items; }
+
+    /**
+     * <p>A list that contains one <code>Name</code> element for each header that you
+     * want CloudFront to use for caching in this cache behavior. If
+     * <code>Quantity</code> is <code>0</code>, omit <code>Items</code>.</p>
+     */
+    inline bool ItemsHasBeenSet() const { return m_itemsHasBeenSet; }
 
     /**
      * <p>A list that contains one <code>Name</code> element for each header that you

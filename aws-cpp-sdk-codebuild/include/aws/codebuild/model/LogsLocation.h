@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p>The name of the Amazon CloudWatch Logs group for the build logs.</p>
      */
+    inline bool GroupNameHasBeenSet() const { return m_groupNameHasBeenSet; }
+
+    /**
+     * <p>The name of the Amazon CloudWatch Logs group for the build logs.</p>
+     */
     inline void SetGroupName(const Aws::String& value) { m_groupNameHasBeenSet = true; m_groupName = value; }
 
     /**
@@ -90,6 +95,11 @@ namespace Model
      * <p>The name of the Amazon CloudWatch Logs stream for the build logs.</p>
      */
     inline const Aws::String& GetStreamName() const{ return m_streamName; }
+
+    /**
+     * <p>The name of the Amazon CloudWatch Logs stream for the build logs.</p>
+     */
+    inline bool StreamNameHasBeenSet() const { return m_streamNameHasBeenSet; }
 
     /**
      * <p>The name of the Amazon CloudWatch Logs stream for the build logs.</p>
@@ -130,6 +140,11 @@ namespace Model
     /**
      * <p>The URL to an individual build log in Amazon CloudWatch Logs.</p>
      */
+    inline bool DeepLinkHasBeenSet() const { return m_deepLinkHasBeenSet; }
+
+    /**
+     * <p>The URL to an individual build log in Amazon CloudWatch Logs.</p>
+     */
     inline void SetDeepLink(const Aws::String& value) { m_deepLinkHasBeenSet = true; m_deepLink = value; }
 
     /**
@@ -162,6 +177,11 @@ namespace Model
      * <p> The URL to a build log in an S3 bucket. </p>
      */
     inline const Aws::String& GetS3DeepLink() const{ return m_s3DeepLink; }
+
+    /**
+     * <p> The URL to a build log in an S3 bucket. </p>
+     */
+    inline bool S3DeepLinkHasBeenSet() const { return m_s3DeepLinkHasBeenSet; }
 
     /**
      * <p> The URL to a build log in an S3 bucket. </p>
@@ -202,6 +222,11 @@ namespace Model
     /**
      * <p> Information about Amazon CloudWatch Logs for a build project. </p>
      */
+    inline bool CloudWatchLogsHasBeenSet() const { return m_cloudWatchLogsHasBeenSet; }
+
+    /**
+     * <p> Information about Amazon CloudWatch Logs for a build project. </p>
+     */
     inline void SetCloudWatchLogs(const CloudWatchLogsConfig& value) { m_cloudWatchLogsHasBeenSet = true; m_cloudWatchLogs = value; }
 
     /**
@@ -224,6 +249,11 @@ namespace Model
      * <p> Information about S3 logs for a build project. </p>
      */
     inline const S3LogsConfig& GetS3Logs() const{ return m_s3Logs; }
+
+    /**
+     * <p> Information about S3 logs for a build project. </p>
+     */
+    inline bool S3LogsHasBeenSet() const { return m_s3LogsHasBeenSet; }
 
     /**
      * <p> Information about S3 logs for a build project. </p>

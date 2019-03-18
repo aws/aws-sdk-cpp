@@ -56,6 +56,11 @@ namespace Model
     /**
      * The ARN of the entitlement.
      */
+    inline bool EntitlementArnHasBeenSet() const { return m_entitlementArnHasBeenSet; }
+
+    /**
+     * The ARN of the entitlement.
+     */
     inline void SetEntitlementArn(const Aws::String& value) { m_entitlementArnHasBeenSet = true; m_entitlementArn = value; }
 
     /**
@@ -88,6 +93,11 @@ namespace Model
      * The name of the entitlement.
      */
     inline const Aws::String& GetEntitlementName() const{ return m_entitlementName; }
+
+    /**
+     * The name of the entitlement.
+     */
+    inline bool EntitlementNameHasBeenSet() const { return m_entitlementNameHasBeenSet; }
 
     /**
      * The name of the entitlement.

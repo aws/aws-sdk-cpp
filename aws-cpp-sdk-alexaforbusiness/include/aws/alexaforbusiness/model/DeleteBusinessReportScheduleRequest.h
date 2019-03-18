@@ -52,6 +52,11 @@ namespace Model
     /**
      * <p>The ARN of the business report schedule.</p>
      */
+    inline bool ScheduleArnHasBeenSet() const { return m_scheduleArnHasBeenSet; }
+
+    /**
+     * <p>The ARN of the business report schedule.</p>
+     */
     inline void SetScheduleArn(const Aws::String& value) { m_scheduleArnHasBeenSet = true; m_scheduleArn = value; }
 
     /**

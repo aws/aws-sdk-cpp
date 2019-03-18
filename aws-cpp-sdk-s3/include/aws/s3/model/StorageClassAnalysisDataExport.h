@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The version of the output schema to use when exporting data. Must be V_1.</p>
      */
+    inline bool OutputSchemaVersionHasBeenSet() const { return m_outputSchemaVersionHasBeenSet; }
+
+    /**
+     * <p>The version of the output schema to use when exporting data. Must be V_1.</p>
+     */
     inline void SetOutputSchemaVersion(const StorageClassAnalysisSchemaVersion& value) { m_outputSchemaVersionHasBeenSet = true; m_outputSchemaVersion = value; }
 
     /**
@@ -78,6 +83,11 @@ namespace Model
      * <p>The place to store the data for an analysis.</p>
      */
     inline const AnalyticsExportDestination& GetDestination() const{ return m_destination; }
+
+    /**
+     * <p>The place to store the data for an analysis.</p>
+     */
+    inline bool DestinationHasBeenSet() const { return m_destinationHasBeenSet; }
 
     /**
      * <p>The place to store the data for an analysis.</p>

@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The name of the virtual service that is acting as a virtual node backend.</p>
      */
+    inline bool VirtualServiceNameHasBeenSet() const { return m_virtualServiceNameHasBeenSet; }
+
+    /**
+     * <p>The name of the virtual service that is acting as a virtual node backend.</p>
+     */
     inline void SetVirtualServiceName(const Aws::String& value) { m_virtualServiceNameHasBeenSet = true; m_virtualServiceName = value; }
 
     /**

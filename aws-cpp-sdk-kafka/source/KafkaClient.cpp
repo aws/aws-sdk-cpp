@@ -145,6 +145,11 @@ void KafkaClient::CreateClusterAsyncHelper(const CreateClusterRequest& request, 
 
 DeleteClusterOutcome KafkaClient::DeleteCluster(const DeleteClusterRequest& request) const
 {
+  if (!request.ClusterArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteCluster", "Required field: ClusterArn, is not set");
+    return DeleteClusterOutcome(Aws::Client::AWSError<KafkaErrors>(KafkaErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ClusterArn]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/v1/clusters/";
@@ -181,6 +186,11 @@ void KafkaClient::DeleteClusterAsyncHelper(const DeleteClusterRequest& request, 
 
 DescribeClusterOutcome KafkaClient::DescribeCluster(const DescribeClusterRequest& request) const
 {
+  if (!request.ClusterArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DescribeCluster", "Required field: ClusterArn, is not set");
+    return DescribeClusterOutcome(Aws::Client::AWSError<KafkaErrors>(KafkaErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ClusterArn]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/v1/clusters/";
@@ -217,6 +227,11 @@ void KafkaClient::DescribeClusterAsyncHelper(const DescribeClusterRequest& reque
 
 GetBootstrapBrokersOutcome KafkaClient::GetBootstrapBrokers(const GetBootstrapBrokersRequest& request) const
 {
+  if (!request.ClusterArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetBootstrapBrokers", "Required field: ClusterArn, is not set");
+    return GetBootstrapBrokersOutcome(Aws::Client::AWSError<KafkaErrors>(KafkaErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ClusterArn]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/v1/clusters/";
@@ -289,6 +304,11 @@ void KafkaClient::ListClustersAsyncHelper(const ListClustersRequest& request, co
 
 ListNodesOutcome KafkaClient::ListNodes(const ListNodesRequest& request) const
 {
+  if (!request.ClusterArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListNodes", "Required field: ClusterArn, is not set");
+    return ListNodesOutcome(Aws::Client::AWSError<KafkaErrors>(KafkaErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ClusterArn]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/v1/clusters/";

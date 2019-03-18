@@ -58,6 +58,12 @@ namespace Model
      * The Amazon Resource Name (ARN) of an Amazon Identity and Access Management (IAM)
      * role that is able to write event data to an Amazon CloudWatch destination.
      */
+    inline bool IamRoleArnHasBeenSet() const { return m_iamRoleArnHasBeenSet; }
+
+    /**
+     * The Amazon Resource Name (ARN) of an Amazon Identity and Access Management (IAM)
+     * role that is able to write event data to an Amazon CloudWatch destination.
+     */
     inline void SetIamRoleArn(const Aws::String& value) { m_iamRoleArnHasBeenSet = true; m_iamRoleArn = value; }
 
     /**
@@ -95,6 +101,11 @@ namespace Model
      * The name of the Amazon CloudWatch Log Group that you want to record events in.
      */
     inline const Aws::String& GetLogGroupArn() const{ return m_logGroupArn; }
+
+    /**
+     * The name of the Amazon CloudWatch Log Group that you want to record events in.
+     */
+    inline bool LogGroupArnHasBeenSet() const { return m_logGroupArnHasBeenSet; }
 
     /**
      * The name of the Amazon CloudWatch Log Group that you want to record events in.

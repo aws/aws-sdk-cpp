@@ -61,6 +61,11 @@ namespace Model
     /**
      * <p>The Availability Zone.</p>
      */
+    inline bool AvailabilityZoneHasBeenSet() const { return m_availabilityZoneHasBeenSet; }
+
+    /**
+     * <p>The Availability Zone.</p>
+     */
     inline void SetAvailabilityZone(const Aws::String& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = value; }
 
     /**
@@ -97,6 +102,11 @@ namespace Model
     /**
      * <p>The instance type.</p>
      */
+    inline bool InstanceTypeHasBeenSet() const { return m_instanceTypeHasBeenSet; }
+
+    /**
+     * <p>The instance type.</p>
+     */
     inline void SetInstanceType(const InstanceType& value) { m_instanceTypeHasBeenSet = true; m_instanceType = value; }
 
     /**
@@ -119,6 +129,11 @@ namespace Model
      * <p>A general description of the AMI.</p>
      */
     inline const RIProductDescription& GetProductDescription() const{ return m_productDescription; }
+
+    /**
+     * <p>A general description of the AMI.</p>
+     */
+    inline bool ProductDescriptionHasBeenSet() const { return m_productDescriptionHasBeenSet; }
 
     /**
      * <p>A general description of the AMI.</p>
@@ -146,6 +161,12 @@ namespace Model
      * Instance.</p>
      */
     inline const Aws::String& GetSpotPrice() const{ return m_spotPrice; }
+
+    /**
+     * <p>The maximum price per hour that you are willing to pay for a Spot
+     * Instance.</p>
+     */
+    inline bool SpotPriceHasBeenSet() const { return m_spotPriceHasBeenSet; }
 
     /**
      * <p>The maximum price per hour that you are willing to pay for a Spot
@@ -189,6 +210,12 @@ namespace Model
      * <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).</p>
      */
     inline const Aws::Utils::DateTime& GetTimestamp() const{ return m_timestamp; }
+
+    /**
+     * <p>The date and time the request was created, in UTC format (for example,
+     * <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).</p>
+     */
+    inline bool TimestampHasBeenSet() const { return m_timestampHasBeenSet; }
 
     /**
      * <p>The date and time the request was created, in UTC format (for example,

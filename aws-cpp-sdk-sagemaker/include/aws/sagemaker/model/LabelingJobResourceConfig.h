@@ -58,6 +58,12 @@ namespace Model
      * <p>The AWS Key Management Service key ID for the key used to encrypt the output
      * data, if any.</p>
      */
+    inline bool VolumeKmsKeyIdHasBeenSet() const { return m_volumeKmsKeyIdHasBeenSet; }
+
+    /**
+     * <p>The AWS Key Management Service key ID for the key used to encrypt the output
+     * data, if any.</p>
+     */
     inline void SetVolumeKmsKeyId(const Aws::String& value) { m_volumeKmsKeyIdHasBeenSet = true; m_volumeKmsKeyId = value; }
 
     /**

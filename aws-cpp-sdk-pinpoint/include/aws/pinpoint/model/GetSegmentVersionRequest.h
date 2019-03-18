@@ -50,6 +50,11 @@ namespace Model
     /**
      * The unique ID of your Amazon Pinpoint application.
      */
+    inline bool ApplicationIdHasBeenSet() const { return m_applicationIdHasBeenSet; }
+
+    /**
+     * The unique ID of your Amazon Pinpoint application.
+     */
     inline void SetApplicationId(const Aws::String& value) { m_applicationIdHasBeenSet = true; m_applicationId = value; }
 
     /**
@@ -86,6 +91,11 @@ namespace Model
     /**
      * The unique ID of the segment.
      */
+    inline bool SegmentIdHasBeenSet() const { return m_segmentIdHasBeenSet; }
+
+    /**
+     * The unique ID of the segment.
+     */
     inline void SetSegmentId(const Aws::String& value) { m_segmentIdHasBeenSet = true; m_segmentId = value; }
 
     /**
@@ -118,6 +128,11 @@ namespace Model
      * The segment version.
      */
     inline const Aws::String& GetVersion() const{ return m_version; }
+
+    /**
+     * The segment version.
+     */
+    inline bool VersionHasBeenSet() const { return m_versionHasBeenSet; }
 
     /**
      * The segment version.

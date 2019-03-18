@@ -61,6 +61,13 @@ namespace Model
      * also be obtained on the container instance in the
      * <code>/var/lib/ecs/gpu/nvidia_gpu_info.json</code> file.</p>
      */
+    inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
+
+    /**
+     * <p>The ID for the GPU(s) on the container instance. The available GPU IDs can
+     * also be obtained on the container instance in the
+     * <code>/var/lib/ecs/gpu/nvidia_gpu_info.json</code> file.</p>
+     */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
     /**
@@ -104,6 +111,12 @@ namespace Model
      * supported value is <code>GPU</code>.</p>
      */
     inline const PlatformDeviceType& GetType() const{ return m_type; }
+
+    /**
+     * <p>The type of device that is available on the container instance. The only
+     * supported value is <code>GPU</code>.</p>
+     */
+    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
 
     /**
      * <p>The type of device that is available on the container instance. The only

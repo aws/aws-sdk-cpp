@@ -69,6 +69,17 @@ namespace Model
      * Event Notifications</a> in the <i>Amazon Simple Storage Service Developer
      * Guide</i>.</p>
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>The object key name prefix or suffix identifying one or more objects to which
+     * the filtering rule applies. The maximum prefix length is 1,024 characters.
+     * Overlapping prefixes and suffixes are not supported. For more information, see
+     * <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/NotificationHowTo.html">Configuring
+     * Event Notifications</a> in the <i>Amazon Simple Storage Service Developer
+     * Guide</i>.</p>
+     */
     inline void SetName(const FilterRuleName& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
@@ -109,6 +120,11 @@ namespace Model
      * <p/>
      */
     inline const Aws::String& GetValue() const{ return m_value; }
+
+    /**
+     * <p/>
+     */
+    inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
 
     /**
      * <p/>

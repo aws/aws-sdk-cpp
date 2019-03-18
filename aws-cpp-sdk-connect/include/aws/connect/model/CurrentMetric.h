@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The name of the metric.</p>
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>The name of the metric.</p>
+     */
     inline void SetName(const CurrentMetricName& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
@@ -79,6 +84,11 @@ namespace Model
      * <p>The unit for the metric.</p>
      */
     inline const Unit& GetUnit() const{ return m_unit; }
+
+    /**
+     * <p>The unit for the metric.</p>
+     */
+    inline bool UnitHasBeenSet() const { return m_unitHasBeenSet; }
 
     /**
      * <p>The unit for the metric.</p>

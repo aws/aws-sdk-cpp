@@ -62,6 +62,12 @@ namespace Model
      * <p>The type of the identities to list. Possible values are "EmailAddress" and
      * "Domain". If this parameter is omitted, then all identities will be listed.</p>
      */
+    inline bool IdentityTypeHasBeenSet() const { return m_identityTypeHasBeenSet; }
+
+    /**
+     * <p>The type of the identities to list. Possible values are "EmailAddress" and
+     * "Domain". If this parameter is omitted, then all identities will be listed.</p>
+     */
     inline void SetIdentityType(const IdentityType& value) { m_identityTypeHasBeenSet = true; m_identityType = value; }
 
     /**
@@ -87,6 +93,11 @@ namespace Model
      * <p>The token to use for pagination.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
+    /**
+     * <p>The token to use for pagination.</p>
+     */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
      * <p>The token to use for pagination.</p>
@@ -124,6 +135,12 @@ namespace Model
      * inclusive.</p>
      */
     inline int GetMaxItems() const{ return m_maxItems; }
+
+    /**
+     * <p>The maximum number of identities per page. Possible values are 1-1000
+     * inclusive.</p>
+     */
+    inline bool MaxItemsHasBeenSet() const { return m_maxItemsHasBeenSet; }
 
     /**
      * <p>The maximum number of identities per page. Possible values are 1-1000

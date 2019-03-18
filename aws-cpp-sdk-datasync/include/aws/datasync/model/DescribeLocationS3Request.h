@@ -57,6 +57,12 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the Amazon S3 bucket location to
      * describe.</p>
      */
+    inline bool LocationArnHasBeenSet() const { return m_locationArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the Amazon S3 bucket location to
+     * describe.</p>
+     */
     inline void SetLocationArn(const Aws::String& value) { m_locationArnHasBeenSet = true; m_locationArn = value; }
 
     /**

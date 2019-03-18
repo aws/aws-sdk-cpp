@@ -58,6 +58,12 @@ namespace Model
      * <p>The name of the volume to mount. Must be a volume name referenced in the
      * <code>name</code> parameter of task definition <code>volume</code>.</p>
      */
+    inline bool SourceVolumeHasBeenSet() const { return m_sourceVolumeHasBeenSet; }
+
+    /**
+     * <p>The name of the volume to mount. Must be a volume name referenced in the
+     * <code>name</code> parameter of task definition <code>volume</code>.</p>
+     */
     inline void SetSourceVolume(const Aws::String& value) { m_sourceVolumeHasBeenSet = true; m_sourceVolume = value; }
 
     /**
@@ -99,6 +105,11 @@ namespace Model
     /**
      * <p>The path on the container to mount the host volume at.</p>
      */
+    inline bool ContainerPathHasBeenSet() const { return m_containerPathHasBeenSet; }
+
+    /**
+     * <p>The path on the container to mount the host volume at.</p>
+     */
     inline void SetContainerPath(const Aws::String& value) { m_containerPathHasBeenSet = true; m_containerPath = value; }
 
     /**
@@ -133,6 +144,13 @@ namespace Model
      * volume. The default value is <code>false</code>.</p>
      */
     inline bool GetReadOnly() const{ return m_readOnly; }
+
+    /**
+     * <p>If this value is <code>true</code>, the container has read-only access to the
+     * volume. If this value is <code>false</code>, then the container can write to the
+     * volume. The default value is <code>false</code>.</p>
+     */
+    inline bool ReadOnlyHasBeenSet() const { return m_readOnlyHasBeenSet; }
 
     /**
      * <p>If this value is <code>true</code>, the container has read-only access to the

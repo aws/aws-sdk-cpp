@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>Indicates the Retention mode for the specified object.</p>
      */
+    inline bool ModeHasBeenSet() const { return m_modeHasBeenSet; }
+
+    /**
+     * <p>Indicates the Retention mode for the specified object.</p>
+     */
     inline void SetMode(const ObjectLockRetentionMode& value) { m_modeHasBeenSet = true; m_mode = value; }
 
     /**
@@ -78,6 +83,11 @@ namespace Model
      * <p>The date on which this Object Lock Retention will expire.</p>
      */
     inline const Aws::Utils::DateTime& GetRetainUntilDate() const{ return m_retainUntilDate; }
+
+    /**
+     * <p>The date on which this Object Lock Retention will expire.</p>
+     */
+    inline bool RetainUntilDateHasBeenSet() const { return m_retainUntilDateHasBeenSet; }
 
     /**
      * <p>The date on which this Object Lock Retention will expire.</p>

@@ -66,6 +66,14 @@ This
      * cannot be changed after the OriginEndpoint is created.
 
      */
+    inline bool ChannelIdHasBeenSet() const { return m_channelIdHasBeenSet; }
+
+    /**
+     * The ID of the Channel that the OriginEndpoint will be associated with.
+This
+     * cannot be changed after the OriginEndpoint is created.
+
+     */
     inline void SetChannelId(const Aws::String& value) { m_channelIdHasBeenSet = true; m_channelId = value; }
 
     /**
@@ -113,6 +121,9 @@ This
     inline const CmafPackageCreateOrUpdateParameters& GetCmafPackage() const{ return m_cmafPackage; }
 
     
+    inline bool CmafPackageHasBeenSet() const { return m_cmafPackageHasBeenSet; }
+
+    
     inline void SetCmafPackage(const CmafPackageCreateOrUpdateParameters& value) { m_cmafPackageHasBeenSet = true; m_cmafPackage = value; }
 
     
@@ -127,6 +138,9 @@ This
 
     
     inline const DashPackage& GetDashPackage() const{ return m_dashPackage; }
+
+    
+    inline bool DashPackageHasBeenSet() const { return m_dashPackageHasBeenSet; }
 
     
     inline void SetDashPackage(const DashPackage& value) { m_dashPackageHasBeenSet = true; m_dashPackage = value; }
@@ -145,6 +159,11 @@ This
      * A short text description of the OriginEndpoint.
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
+
+    /**
+     * A short text description of the OriginEndpoint.
+     */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
 
     /**
      * A short text description of the OriginEndpoint.
@@ -181,6 +200,9 @@ This
     inline const HlsPackage& GetHlsPackage() const{ return m_hlsPackage; }
 
     
+    inline bool HlsPackageHasBeenSet() const { return m_hlsPackageHasBeenSet; }
+
+    
     inline void SetHlsPackage(const HlsPackage& value) { m_hlsPackageHasBeenSet = true; m_hlsPackage = value; }
 
     
@@ -200,6 +222,14 @@ and it
 
      */
     inline const Aws::String& GetId() const{ return m_id; }
+
+    /**
+     * The ID of the OriginEndpoint.  The ID must be unique within the region
+and it
+     * cannot be changed after the OriginEndpoint is created.
+
+     */
+    inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
 
     /**
      * The ID of the OriginEndpoint.  The ID must be unique within the region
@@ -260,6 +290,12 @@ and it
      * A short string that will be used as the filename of the OriginEndpoint URL
      * (defaults to "index").
      */
+    inline bool ManifestNameHasBeenSet() const { return m_manifestNameHasBeenSet; }
+
+    /**
+     * A short string that will be used as the filename of the OriginEndpoint URL
+     * (defaults to "index").
+     */
     inline void SetManifestName(const Aws::String& value) { m_manifestNameHasBeenSet = true; m_manifestName = value; }
 
     /**
@@ -297,6 +333,9 @@ and it
     inline const MssPackage& GetMssPackage() const{ return m_mssPackage; }
 
     
+    inline bool MssPackageHasBeenSet() const { return m_mssPackageHasBeenSet; }
+
+    
     inline void SetMssPackage(const MssPackage& value) { m_mssPackageHasBeenSet = true; m_mssPackage = value; }
 
     
@@ -323,6 +362,14 @@ If not
      * specified, startover playback will be disabled for the OriginEndpoint.
 
      */
+    inline bool StartoverWindowSecondsHasBeenSet() const { return m_startoverWindowSecondsHasBeenSet; }
+
+    /**
+     * Maximum duration (seconds) of content to retain for startover playback.
+If not
+     * specified, startover playback will be disabled for the OriginEndpoint.
+
+     */
     inline void SetStartoverWindowSeconds(int value) { m_startoverWindowSecondsHasBeenSet = true; m_startoverWindowSeconds = value; }
 
     /**
@@ -336,6 +383,9 @@ If not
 
     
     inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
+
+    
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     
     inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
@@ -385,6 +435,14 @@ If not
      * specified, there will be no time delay in effect for the OriginEndpoint.
 
      */
+    inline bool TimeDelaySecondsHasBeenSet() const { return m_timeDelaySecondsHasBeenSet; }
+
+    /**
+     * Amount of delay (seconds) to enforce on the playback of live content.
+If not
+     * specified, there will be no time delay in effect for the OriginEndpoint.
+
+     */
     inline void SetTimeDelaySeconds(int value) { m_timeDelaySecondsHasBeenSet = true; m_timeDelaySeconds = value; }
 
     /**
@@ -401,6 +459,12 @@ If not
      * OriginEndpoint.
      */
     inline const Aws::Vector<Aws::String>& GetWhitelist() const{ return m_whitelist; }
+
+    /**
+     * A list of source IP CIDR blocks that will be allowed to access the
+     * OriginEndpoint.
+     */
+    inline bool WhitelistHasBeenSet() const { return m_whitelistHasBeenSet; }
 
     /**
      * A list of source IP CIDR blocks that will be allowed to access the

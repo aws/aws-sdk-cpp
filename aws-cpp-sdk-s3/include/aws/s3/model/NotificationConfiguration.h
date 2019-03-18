@@ -60,6 +60,11 @@ namespace Model
     /**
      * <p/>
      */
+    inline bool TopicConfigurationsHasBeenSet() const { return m_topicConfigurationsHasBeenSet; }
+
+    /**
+     * <p/>
+     */
     inline void SetTopicConfigurations(const Aws::Vector<TopicConfiguration>& value) { m_topicConfigurationsHasBeenSet = true; m_topicConfigurations = value; }
 
     /**
@@ -96,6 +101,11 @@ namespace Model
     /**
      * <p/>
      */
+    inline bool QueueConfigurationsHasBeenSet() const { return m_queueConfigurationsHasBeenSet; }
+
+    /**
+     * <p/>
+     */
     inline void SetQueueConfigurations(const Aws::Vector<QueueConfiguration>& value) { m_queueConfigurationsHasBeenSet = true; m_queueConfigurations = value; }
 
     /**
@@ -128,6 +138,11 @@ namespace Model
      * <p/>
      */
     inline const Aws::Vector<LambdaFunctionConfiguration>& GetLambdaFunctionConfigurations() const{ return m_lambdaFunctionConfigurations; }
+
+    /**
+     * <p/>
+     */
+    inline bool LambdaFunctionConfigurationsHasBeenSet() const { return m_lambdaFunctionConfigurationsHasBeenSet; }
 
     /**
      * <p/>

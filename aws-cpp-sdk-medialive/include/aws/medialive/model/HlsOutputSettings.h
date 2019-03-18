@@ -58,6 +58,12 @@ namespace Model
      * Settings regarding the underlying stream. These settings are different for
      * audio-only outputs.
      */
+    inline bool HlsSettingsHasBeenSet() const { return m_hlsSettingsHasBeenSet; }
+
+    /**
+     * Settings regarding the underlying stream. These settings are different for
+     * audio-only outputs.
+     */
     inline void SetHlsSettings(const HlsSettings& value) { m_hlsSettingsHasBeenSet = true; m_hlsSettings = value; }
 
     /**
@@ -84,6 +90,12 @@ namespace Model
      * Identifiers\":#formatIdentifierParameters.
      */
     inline const Aws::String& GetNameModifier() const{ return m_nameModifier; }
+
+    /**
+     * String concatenated to the end of the destination filename. Accepts \"Format
+     * Identifiers\":#formatIdentifierParameters.
+     */
+    inline bool NameModifierHasBeenSet() const { return m_nameModifierHasBeenSet; }
 
     /**
      * String concatenated to the end of the destination filename. Accepts \"Format
@@ -126,6 +138,11 @@ namespace Model
      * String concatenated to end of segment filenames.
      */
     inline const Aws::String& GetSegmentModifier() const{ return m_segmentModifier; }
+
+    /**
+     * String concatenated to end of segment filenames.
+     */
+    inline bool SegmentModifierHasBeenSet() const { return m_segmentModifierHasBeenSet; }
 
     /**
      * String concatenated to end of segment filenames.

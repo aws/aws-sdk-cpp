@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p>The ARN of the project for the device pool.</p>
      */
+    inline bool ProjectArnHasBeenSet() const { return m_projectArnHasBeenSet; }
+
+    /**
+     * <p>The ARN of the project for the device pool.</p>
+     */
     inline void SetProjectArn(const Aws::String& value) { m_projectArnHasBeenSet = true; m_projectArn = value; }
 
     /**
@@ -90,6 +95,11 @@ namespace Model
      * <p>The device pool's name.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
+
+    /**
+     * <p>The device pool's name.</p>
+     */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
      * <p>The device pool's name.</p>
@@ -130,6 +140,11 @@ namespace Model
     /**
      * <p>The device pool's description.</p>
      */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
+
+    /**
+     * <p>The device pool's description.</p>
+     */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
@@ -162,6 +177,11 @@ namespace Model
      * <p>The device pool's rules.</p>
      */
     inline const Aws::Vector<Rule>& GetRules() const{ return m_rules; }
+
+    /**
+     * <p>The device pool's rules.</p>
+     */
+    inline bool RulesHasBeenSet() const { return m_rulesHasBeenSet; }
 
     /**
      * <p>The device pool's rules.</p>
@@ -203,6 +223,16 @@ namespace Model
      * control the costs that you incur by running tests.</p>
      */
     inline int GetMaxDevices() const{ return m_maxDevices; }
+
+    /**
+     * <p>The number of devices that Device Farm can add to your device pool. Device
+     * Farm adds devices that are available and that meet the criteria that you assign
+     * for the <code>rules</code> parameter. Depending on how many devices meet these
+     * constraints, your device pool might contain fewer devices than the value for
+     * this parameter.</p> <p>By specifying the maximum number of devices, you can
+     * control the costs that you incur by running tests.</p>
+     */
+    inline bool MaxDevicesHasBeenSet() const { return m_maxDevicesHasBeenSet; }
 
     /**
      * <p>The number of devices that Device Farm can add to your device pool. Device

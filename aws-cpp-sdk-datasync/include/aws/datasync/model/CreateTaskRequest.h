@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the source location for the task.</p>
      */
+    inline bool SourceLocationArnHasBeenSet() const { return m_sourceLocationArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the source location for the task.</p>
+     */
     inline void SetSourceLocationArn(const Aws::String& value) { m_sourceLocationArnHasBeenSet = true; m_sourceLocationArn = value; }
 
     /**
@@ -90,6 +95,11 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of an AWS storage resource's location. </p>
      */
     inline const Aws::String& GetDestinationLocationArn() const{ return m_destinationLocationArn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of an AWS storage resource's location. </p>
+     */
+    inline bool DestinationLocationArnHasBeenSet() const { return m_destinationLocationArnHasBeenSet; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of an AWS storage resource's location. </p>
@@ -134,6 +144,19 @@ namespace Model
      * Your Task</a>.</p>
      */
     inline const Aws::String& GetCloudWatchLogGroupArn() const{ return m_cloudWatchLogGroupArn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the Amazon CloudWatch log group that is
+     * used to monitor and log events in the task. For more information on these
+     * groups, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/Working-with-log-groups-and-streams.html">Working
+     * with Log Groups and Log Streams</a> in the <i>Amazon CloudWatch User Guide. </i>
+     * </p> <p>For more information about how to useCloudWatchLogs with DataSync, see
+     * <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/monitor-datasync.html">Monitoring
+     * Your Task</a>.</p>
+     */
+    inline bool CloudWatchLogGroupArnHasBeenSet() const { return m_cloudWatchLogGroupArnHasBeenSet; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the Amazon CloudWatch log group that is
@@ -224,6 +247,12 @@ namespace Model
      * <p>The name of a task. This value is a text reference that is used to identify
      * the task in the console. </p>
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>The name of a task. This value is a text reference that is used to identify
+     * the task in the console. </p>
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
@@ -277,6 +306,17 @@ namespace Model
      * specifying the <code>OverrideOptions</code> before starting a the task
      * execution. For more information, see the operation. </p>
      */
+    inline bool OptionsHasBeenSet() const { return m_optionsHasBeenSet; }
+
+    /**
+     * <p>The set of configuration options that control the behavior of a single
+     * execution of the task that occurs when you call <code>StartTaskExecution</code>.
+     * You can configure these options to preserve metadata such as user ID (UID) and
+     * group ID (GID), file permissions, data integrity verification, and so on.</p>
+     * <p>For each individual task execution, you can override these options by
+     * specifying the <code>OverrideOptions</code> before starting a the task
+     * execution. For more information, see the operation. </p>
+     */
     inline void SetOptions(const Options& value) { m_optionsHasBeenSet = true; m_options = value; }
 
     /**
@@ -318,6 +358,12 @@ namespace Model
      * resource. The value can be an empty string. </p>
      */
     inline const Aws::Vector<TagListEntry>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>The key-value pair that represents the tag that you want to add to the
+     * resource. The value can be an empty string. </p>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
      * <p>The key-value pair that represents the tag that you want to add to the

@@ -57,6 +57,11 @@ namespace Model
     /**
      * Required. The day of the week.
      */
+    inline bool DayOfWeekHasBeenSet() const { return m_dayOfWeekHasBeenSet; }
+
+    /**
+     * Required. The day of the week.
+     */
     inline void SetDayOfWeek(const DayOfWeek& value) { m_dayOfWeekHasBeenSet = true; m_dayOfWeek = value; }
 
     /**
@@ -79,6 +84,11 @@ namespace Model
      * Required. The time, in 24-hour format.
      */
     inline const Aws::String& GetTimeOfDay() const{ return m_timeOfDay; }
+
+    /**
+     * Required. The time, in 24-hour format.
+     */
+    inline bool TimeOfDayHasBeenSet() const { return m_timeOfDayHasBeenSet; }
 
     /**
      * Required. The time, in 24-hour format.
@@ -116,6 +126,12 @@ namespace Model
      * offset format.
      */
     inline const Aws::String& GetTimeZone() const{ return m_timeZone; }
+
+    /**
+     * The time zone, UTC by default, in either the Country/City format, or the UTC
+     * offset format.
+     */
+    inline bool TimeZoneHasBeenSet() const { return m_timeZoneHasBeenSet; }
 
     /**
      * The time zone, UTC by default, in either the Country/City format, or the UTC

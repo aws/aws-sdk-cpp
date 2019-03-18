@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The security profile that is detached.</p>
      */
+    inline bool SecurityProfileNameHasBeenSet() const { return m_securityProfileNameHasBeenSet; }
+
+    /**
+     * <p>The security profile that is detached.</p>
+     */
     inline void SetSecurityProfileName(const Aws::String& value) { m_securityProfileNameHasBeenSet = true; m_securityProfileName = value; }
 
     /**
@@ -88,6 +93,11 @@ namespace Model
      * <p>The ARN of the thing group from which the security profile is detached.</p>
      */
     inline const Aws::String& GetSecurityProfileTargetArn() const{ return m_securityProfileTargetArn; }
+
+    /**
+     * <p>The ARN of the thing group from which the security profile is detached.</p>
+     */
+    inline bool SecurityProfileTargetArnHasBeenSet() const { return m_securityProfileTargetArnHasBeenSet; }
 
     /**
      * <p>The ARN of the thing group from which the security profile is detached.</p>

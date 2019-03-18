@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The <code>ObjectIdentifier</code> of the index created by this operation.</p>
      */
+    inline bool ObjectIdentifierHasBeenSet() const { return m_objectIdentifierHasBeenSet; }
+
+    /**
+     * <p>The <code>ObjectIdentifier</code> of the index created by this operation.</p>
+     */
     inline void SetObjectIdentifier(const Aws::String& value) { m_objectIdentifierHasBeenSet = true; m_objectIdentifier = value; }
 
     /**

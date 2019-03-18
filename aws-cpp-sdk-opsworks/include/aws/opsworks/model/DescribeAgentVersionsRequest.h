@@ -53,6 +53,11 @@ namespace Model
     /**
      * <p>The stack ID.</p>
      */
+    inline bool StackIdHasBeenSet() const { return m_stackIdHasBeenSet; }
+
+    /**
+     * <p>The stack ID.</p>
+     */
     inline void SetStackId(const Aws::String& value) { m_stackIdHasBeenSet = true; m_stackId = value; }
 
     /**
@@ -85,6 +90,11 @@ namespace Model
      * <p>The configuration manager.</p>
      */
     inline const StackConfigurationManager& GetConfigurationManager() const{ return m_configurationManager; }
+
+    /**
+     * <p>The configuration manager.</p>
+     */
+    inline bool ConfigurationManagerHasBeenSet() const { return m_configurationManagerHasBeenSet; }
 
     /**
      * <p>The configuration manager.</p>

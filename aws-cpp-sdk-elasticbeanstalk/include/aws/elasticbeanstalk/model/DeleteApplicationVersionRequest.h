@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The name of the application to which the version belongs.</p>
      */
+    inline bool ApplicationNameHasBeenSet() const { return m_applicationNameHasBeenSet; }
+
+    /**
+     * <p>The name of the application to which the version belongs.</p>
+     */
     inline void SetApplicationName(const Aws::String& value) { m_applicationNameHasBeenSet = true; m_applicationName = value; }
 
     /**
@@ -89,6 +94,11 @@ namespace Model
      * <p>The label of the version to delete.</p>
      */
     inline const Aws::String& GetVersionLabel() const{ return m_versionLabel; }
+
+    /**
+     * <p>The label of the version to delete.</p>
+     */
+    inline bool VersionLabelHasBeenSet() const { return m_versionLabelHasBeenSet; }
 
     /**
      * <p>The label of the version to delete.</p>
@@ -127,6 +137,13 @@ namespace Model
      * Beanstalk and the source bundle remains in Amazon S3.</p>
      */
     inline bool GetDeleteSourceBundle() const{ return m_deleteSourceBundle; }
+
+    /**
+     * <p>Set to <code>true</code> to delete the source bundle from your storage
+     * bucket. Otherwise, the application version is deleted only from Elastic
+     * Beanstalk and the source bundle remains in Amazon S3.</p>
+     */
+    inline bool DeleteSourceBundleHasBeenSet() const { return m_deleteSourceBundleHasBeenSet; }
 
     /**
      * <p>Set to <code>true</code> to delete the source bundle from your storage

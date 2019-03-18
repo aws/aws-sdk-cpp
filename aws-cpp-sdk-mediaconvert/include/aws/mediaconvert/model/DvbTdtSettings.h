@@ -56,6 +56,12 @@ namespace Model
      * The number of milliseconds between instances of this table in the output
      * transport stream.
      */
+    inline bool TdtIntervalHasBeenSet() const { return m_tdtIntervalHasBeenSet; }
+
+    /**
+     * The number of milliseconds between instances of this table in the output
+     * transport stream.
+     */
     inline void SetTdtInterval(int value) { m_tdtIntervalHasBeenSet = true; m_tdtInterval = value; }
 
     /**

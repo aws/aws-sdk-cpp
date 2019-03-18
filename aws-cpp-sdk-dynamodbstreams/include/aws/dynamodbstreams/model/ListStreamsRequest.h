@@ -55,6 +55,12 @@ namespace Model
      * <p>If this parameter is provided, then only the streams associated with this
      * table name are returned.</p>
      */
+    inline bool TableNameHasBeenSet() const { return m_tableNameHasBeenSet; }
+
+    /**
+     * <p>If this parameter is provided, then only the streams associated with this
+     * table name are returned.</p>
+     */
     inline void SetTableName(const Aws::String& value) { m_tableNameHasBeenSet = true; m_tableName = value; }
 
     /**
@@ -96,6 +102,11 @@ namespace Model
     /**
      * <p>The maximum number of streams to return. The upper limit is 100.</p>
      */
+    inline bool LimitHasBeenSet() const { return m_limitHasBeenSet; }
+
+    /**
+     * <p>The maximum number of streams to return. The upper limit is 100.</p>
+     */
     inline void SetLimit(int value) { m_limitHasBeenSet = true; m_limit = value; }
 
     /**
@@ -110,6 +121,13 @@ namespace Model
      * <code>LastEvaluatedStreamArn</code> in the previous operation. </p>
      */
     inline const Aws::String& GetExclusiveStartStreamArn() const{ return m_exclusiveStartStreamArn; }
+
+    /**
+     * <p>The ARN (Amazon Resource Name) of the first item that this operation will
+     * evaluate. Use the value that was returned for
+     * <code>LastEvaluatedStreamArn</code> in the previous operation. </p>
+     */
+    inline bool ExclusiveStartStreamArnHasBeenSet() const { return m_exclusiveStartStreamArnHasBeenSet; }
 
     /**
      * <p>The ARN (Amazon Resource Name) of the first item that this operation will

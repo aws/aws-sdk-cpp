@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p>The name of the configuration recorder.</p>
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>The name of the configuration recorder.</p>
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
@@ -94,6 +99,11 @@ namespace Model
     /**
      * <p>The time the recorder was last started.</p>
      */
+    inline bool LastStartTimeHasBeenSet() const { return m_lastStartTimeHasBeenSet; }
+
+    /**
+     * <p>The time the recorder was last started.</p>
+     */
     inline void SetLastStartTime(const Aws::Utils::DateTime& value) { m_lastStartTimeHasBeenSet = true; m_lastStartTime = value; }
 
     /**
@@ -116,6 +126,11 @@ namespace Model
      * <p>The time the recorder was last stopped.</p>
      */
     inline const Aws::Utils::DateTime& GetLastStopTime() const{ return m_lastStopTime; }
+
+    /**
+     * <p>The time the recorder was last stopped.</p>
+     */
+    inline bool LastStopTimeHasBeenSet() const { return m_lastStopTimeHasBeenSet; }
 
     /**
      * <p>The time the recorder was last stopped.</p>
@@ -146,6 +161,11 @@ namespace Model
     /**
      * <p>Specifies whether or not the recorder is currently recording.</p>
      */
+    inline bool RecordingHasBeenSet() const { return m_recordingHasBeenSet; }
+
+    /**
+     * <p>Specifies whether or not the recorder is currently recording.</p>
+     */
     inline void SetRecording(bool value) { m_recordingHasBeenSet = true; m_recording = value; }
 
     /**
@@ -158,6 +178,11 @@ namespace Model
      * <p>The last (previous) status of the recorder.</p>
      */
     inline const RecorderStatus& GetLastStatus() const{ return m_lastStatus; }
+
+    /**
+     * <p>The last (previous) status of the recorder.</p>
+     */
+    inline bool LastStatusHasBeenSet() const { return m_lastStatusHasBeenSet; }
 
     /**
      * <p>The last (previous) status of the recorder.</p>
@@ -184,6 +209,11 @@ namespace Model
      * <p>The error code indicating that the recording failed.</p>
      */
     inline const Aws::String& GetLastErrorCode() const{ return m_lastErrorCode; }
+
+    /**
+     * <p>The error code indicating that the recording failed.</p>
+     */
+    inline bool LastErrorCodeHasBeenSet() const { return m_lastErrorCodeHasBeenSet; }
 
     /**
      * <p>The error code indicating that the recording failed.</p>
@@ -224,6 +254,11 @@ namespace Model
     /**
      * <p>The message indicating that the recording failed due to an error.</p>
      */
+    inline bool LastErrorMessageHasBeenSet() const { return m_lastErrorMessageHasBeenSet; }
+
+    /**
+     * <p>The message indicating that the recording failed due to an error.</p>
+     */
     inline void SetLastErrorMessage(const Aws::String& value) { m_lastErrorMessageHasBeenSet = true; m_lastErrorMessage = value; }
 
     /**
@@ -256,6 +291,11 @@ namespace Model
      * <p>The time when the status was last changed.</p>
      */
     inline const Aws::Utils::DateTime& GetLastStatusChangeTime() const{ return m_lastStatusChangeTime; }
+
+    /**
+     * <p>The time when the status was last changed.</p>
+     */
+    inline bool LastStatusChangeTimeHasBeenSet() const { return m_lastStatusChangeTimeHasBeenSet; }
 
     /**
      * <p>The time when the status was last changed.</p>

@@ -54,6 +54,11 @@ namespace Model
     /**
      * <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
      */
+    inline bool RestApiIdHasBeenSet() const { return m_restApiIdHasBeenSet; }
+
+    /**
+     * <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
+     */
     inline void SetRestApiId(const Aws::String& value) { m_restApiIdHasBeenSet = true; m_restApiId = value; }
 
     /**
@@ -90,6 +95,11 @@ namespace Model
     /**
      * <p>[Required] The parent resource's identifier.</p>
      */
+    inline bool ParentIdHasBeenSet() const { return m_parentIdHasBeenSet; }
+
+    /**
+     * <p>[Required] The parent resource's identifier.</p>
+     */
     inline void SetParentId(const Aws::String& value) { m_parentIdHasBeenSet = true; m_parentId = value; }
 
     /**
@@ -122,6 +132,11 @@ namespace Model
      * <p>The last path segment for this resource.</p>
      */
     inline const Aws::String& GetPathPart() const{ return m_pathPart; }
+
+    /**
+     * <p>The last path segment for this resource.</p>
+     */
+    inline bool PathPartHasBeenSet() const { return m_pathPartHasBeenSet; }
 
     /**
      * <p>The last path segment for this resource.</p>

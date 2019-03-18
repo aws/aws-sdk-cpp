@@ -61,6 +61,13 @@ namespace Model
      * begins with the specified string are returned.</p> <p>Queue URLs and names are
      * case-sensitive.</p>
      */
+    inline bool QueueNamePrefixHasBeenSet() const { return m_queueNamePrefixHasBeenSet; }
+
+    /**
+     * <p>A string to use for filtering the list results. Only those queues whose name
+     * begins with the specified string are returned.</p> <p>Queue URLs and names are
+     * case-sensitive.</p>
+     */
     inline void SetQueueNamePrefix(const Aws::String& value) { m_queueNamePrefixHasBeenSet = true; m_queueNamePrefix = value; }
 
     /**

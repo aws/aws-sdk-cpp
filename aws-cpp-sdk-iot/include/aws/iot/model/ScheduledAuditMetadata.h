@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The name of the scheduled audit.</p>
      */
+    inline bool ScheduledAuditNameHasBeenSet() const { return m_scheduledAuditNameHasBeenSet; }
+
+    /**
+     * <p>The name of the scheduled audit.</p>
+     */
     inline void SetScheduledAuditName(const Aws::String& value) { m_scheduledAuditNameHasBeenSet = true; m_scheduledAuditName = value; }
 
     /**
@@ -89,6 +94,11 @@ namespace Model
      * <p>The ARN of the scheduled audit.</p>
      */
     inline const Aws::String& GetScheduledAuditArn() const{ return m_scheduledAuditArn; }
+
+    /**
+     * <p>The ARN of the scheduled audit.</p>
+     */
+    inline bool ScheduledAuditArnHasBeenSet() const { return m_scheduledAuditArnHasBeenSet; }
 
     /**
      * <p>The ARN of the scheduled audit.</p>
@@ -129,6 +139,11 @@ namespace Model
     /**
      * <p>How often the scheduled audit takes place.</p>
      */
+    inline bool FrequencyHasBeenSet() const { return m_frequencyHasBeenSet; }
+
+    /**
+     * <p>How often the scheduled audit takes place.</p>
+     */
     inline void SetFrequency(const AuditFrequency& value) { m_frequencyHasBeenSet = true; m_frequency = value; }
 
     /**
@@ -154,6 +169,14 @@ namespace Model
      * month.</p>
      */
     inline const Aws::String& GetDayOfMonth() const{ return m_dayOfMonth; }
+
+    /**
+     * <p>The day of the month on which the scheduled audit is run (if the
+     * <code>frequency</code> is "MONTHLY"). If days 29-31 are specified, and the month
+     * does not have that many days, the audit takes place on the "LAST" day of the
+     * month.</p>
+     */
+    inline bool DayOfMonthHasBeenSet() const { return m_dayOfMonthHasBeenSet; }
 
     /**
      * <p>The day of the month on which the scheduled audit is run (if the
@@ -209,6 +232,12 @@ namespace Model
      * <code>frequency</code> is "WEEKLY" or "BIWEEKLY").</p>
      */
     inline const DayOfWeek& GetDayOfWeek() const{ return m_dayOfWeek; }
+
+    /**
+     * <p>The day of the week on which the scheduled audit is run (if the
+     * <code>frequency</code> is "WEEKLY" or "BIWEEKLY").</p>
+     */
+    inline bool DayOfWeekHasBeenSet() const { return m_dayOfWeekHasBeenSet; }
 
     /**
      * <p>The day of the week on which the scheduled audit is run (if the

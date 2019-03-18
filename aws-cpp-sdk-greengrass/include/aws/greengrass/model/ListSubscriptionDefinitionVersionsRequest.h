@@ -56,6 +56,11 @@ namespace Model
     /**
      * The maximum number of results to be returned per request.
      */
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
+
+    /**
+     * The maximum number of results to be returned per request.
+     */
     inline void SetMaxResults(const Aws::String& value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
@@ -89,6 +94,12 @@ namespace Model
      * results.
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
+    /**
+     * The token for the next set of results, or ''null'' if there are no additional
+     * results.
+     */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
      * The token for the next set of results, or ''null'' if there are no additional
@@ -131,6 +142,11 @@ namespace Model
      * The ID of the subscription definition.
      */
     inline const Aws::String& GetSubscriptionDefinitionId() const{ return m_subscriptionDefinitionId; }
+
+    /**
+     * The ID of the subscription definition.
+     */
+    inline bool SubscriptionDefinitionIdHasBeenSet() const { return m_subscriptionDefinitionIdHasBeenSet; }
 
     /**
      * The ID of the subscription definition.

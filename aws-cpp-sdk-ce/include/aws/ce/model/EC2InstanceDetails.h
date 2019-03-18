@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The instance family of the recommended reservation.</p>
      */
+    inline bool FamilyHasBeenSet() const { return m_familyHasBeenSet; }
+
+    /**
+     * <p>The instance family of the recommended reservation.</p>
+     */
     inline void SetFamily(const Aws::String& value) { m_familyHasBeenSet = true; m_family = value; }
 
     /**
@@ -88,6 +93,11 @@ namespace Model
      * <p>The type of instance that AWS recommends.</p>
      */
     inline const Aws::String& GetInstanceType() const{ return m_instanceType; }
+
+    /**
+     * <p>The type of instance that AWS recommends.</p>
+     */
+    inline bool InstanceTypeHasBeenSet() const { return m_instanceTypeHasBeenSet; }
 
     /**
      * <p>The type of instance that AWS recommends.</p>
@@ -128,6 +138,11 @@ namespace Model
     /**
      * <p>The AWS Region of the recommended reservation.</p>
      */
+    inline bool RegionHasBeenSet() const { return m_regionHasBeenSet; }
+
+    /**
+     * <p>The AWS Region of the recommended reservation.</p>
+     */
     inline void SetRegion(const Aws::String& value) { m_regionHasBeenSet = true; m_region = value; }
 
     /**
@@ -160,6 +175,11 @@ namespace Model
      * <p>The Availability Zone of the recommended reservation.</p>
      */
     inline const Aws::String& GetAvailabilityZone() const{ return m_availabilityZone; }
+
+    /**
+     * <p>The Availability Zone of the recommended reservation.</p>
+     */
+    inline bool AvailabilityZoneHasBeenSet() const { return m_availabilityZoneHasBeenSet; }
 
     /**
      * <p>The Availability Zone of the recommended reservation.</p>
@@ -197,6 +217,12 @@ namespace Model
      * combination of operating system, license model, and software on an instance.</p>
      */
     inline const Aws::String& GetPlatform() const{ return m_platform; }
+
+    /**
+     * <p>The platform of the recommended reservation. The platform is the specific
+     * combination of operating system, license model, and software on an instance.</p>
+     */
+    inline bool PlatformHasBeenSet() const { return m_platformHasBeenSet; }
 
     /**
      * <p>The platform of the recommended reservation. The platform is the specific
@@ -243,6 +269,11 @@ namespace Model
     /**
      * <p>Whether the recommended reservation is dedicated or shared.</p>
      */
+    inline bool TenancyHasBeenSet() const { return m_tenancyHasBeenSet; }
+
+    /**
+     * <p>Whether the recommended reservation is dedicated or shared.</p>
+     */
     inline void SetTenancy(const Aws::String& value) { m_tenancyHasBeenSet = true; m_tenancy = value; }
 
     /**
@@ -279,6 +310,11 @@ namespace Model
     /**
      * <p>Whether the recommendation is for a current-generation instance. </p>
      */
+    inline bool CurrentGenerationHasBeenSet() const { return m_currentGenerationHasBeenSet; }
+
+    /**
+     * <p>Whether the recommendation is for a current-generation instance. </p>
+     */
     inline void SetCurrentGeneration(bool value) { m_currentGenerationHasBeenSet = true; m_currentGeneration = value; }
 
     /**
@@ -291,6 +327,11 @@ namespace Model
      * <p>Whether the recommended reservation is size flexible.</p>
      */
     inline bool GetSizeFlexEligible() const{ return m_sizeFlexEligible; }
+
+    /**
+     * <p>Whether the recommended reservation is size flexible.</p>
+     */
+    inline bool SizeFlexEligibleHasBeenSet() const { return m_sizeFlexEligibleHasBeenSet; }
 
     /**
      * <p>Whether the recommended reservation is size flexible.</p>

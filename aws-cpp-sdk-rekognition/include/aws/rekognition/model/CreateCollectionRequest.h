@@ -52,6 +52,11 @@ namespace Model
     /**
      * <p>ID for the collection that you are creating.</p>
      */
+    inline bool CollectionIdHasBeenSet() const { return m_collectionIdHasBeenSet; }
+
+    /**
+     * <p>ID for the collection that you are creating.</p>
+     */
     inline void SetCollectionId(const Aws::String& value) { m_collectionIdHasBeenSet = true; m_collectionId = value; }
 
     /**

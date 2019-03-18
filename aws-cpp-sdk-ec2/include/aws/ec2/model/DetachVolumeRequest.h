@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The device name.</p>
      */
+    inline bool DeviceHasBeenSet() const { return m_deviceHasBeenSet; }
+
+    /**
+     * <p>The device name.</p>
+     */
     inline void SetDevice(const Aws::String& value) { m_deviceHasBeenSet = true; m_device = value; }
 
     /**
@@ -105,6 +110,17 @@ namespace Model
      * metadata. If you use this option, you must perform file system check and repair
      * procedures.</p>
      */
+    inline bool ForceHasBeenSet() const { return m_forceHasBeenSet; }
+
+    /**
+     * <p>Forces detachment if the previous detachment attempt did not occur cleanly
+     * (for example, logging into an instance, unmounting the volume, and detaching
+     * normally). This option can lead to data loss or a corrupted file system. Use
+     * this option only as a last resort to detach a volume from a failed instance. The
+     * instance won't have an opportunity to flush file system caches or file system
+     * metadata. If you use this option, you must perform file system check and repair
+     * procedures.</p>
+     */
     inline void SetForce(bool value) { m_forceHasBeenSet = true; m_force = value; }
 
     /**
@@ -123,6 +139,11 @@ namespace Model
      * <p>The ID of the instance.</p>
      */
     inline const Aws::String& GetInstanceId() const{ return m_instanceId; }
+
+    /**
+     * <p>The ID of the instance.</p>
+     */
+    inline bool InstanceIdHasBeenSet() const { return m_instanceIdHasBeenSet; }
 
     /**
      * <p>The ID of the instance.</p>
@@ -163,6 +184,11 @@ namespace Model
     /**
      * <p>The ID of the volume.</p>
      */
+    inline bool VolumeIdHasBeenSet() const { return m_volumeIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the volume.</p>
+     */
     inline void SetVolumeId(const Aws::String& value) { m_volumeIdHasBeenSet = true; m_volumeId = value; }
 
     /**
@@ -198,6 +224,14 @@ namespace Model
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
     inline bool GetDryRun() const{ return m_dryRun; }
+
+    /**
+     * <p>Checks whether you have the required permissions for the action, without
+     * actually making the request, and provides an error response. If you have the
+     * required permissions, the error response is <code>DryRunOperation</code>.
+     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+     */
+    inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
 
     /**
      * <p>Checks whether you have the required permissions for the action, without

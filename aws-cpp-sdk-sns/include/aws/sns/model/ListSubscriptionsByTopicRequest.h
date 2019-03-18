@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The ARN of the topic for which you wish to find subscriptions.</p>
      */
+    inline bool TopicArnHasBeenSet() const { return m_topicArnHasBeenSet; }
+
+    /**
+     * <p>The ARN of the topic for which you wish to find subscriptions.</p>
+     */
     inline void SetTopicArn(const Aws::String& value) { m_topicArnHasBeenSet = true; m_topicArn = value; }
 
     /**
@@ -90,6 +95,12 @@ namespace Model
      * request.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
+    /**
+     * <p>Token returned by the previous <code>ListSubscriptionsByTopic</code>
+     * request.</p>
+     */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
      * <p>Token returned by the previous <code>ListSubscriptionsByTopic</code>

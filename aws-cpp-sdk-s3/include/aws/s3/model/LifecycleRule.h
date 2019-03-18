@@ -63,6 +63,11 @@ namespace Model
     /**
      * <p/>
      */
+    inline bool ExpirationHasBeenSet() const { return m_expirationHasBeenSet; }
+
+    /**
+     * <p/>
+     */
     inline void SetExpiration(const LifecycleExpiration& value) { m_expirationHasBeenSet = true; m_expiration = value; }
 
     /**
@@ -86,6 +91,12 @@ namespace Model
      * characters.</p>
      */
     inline const Aws::String& GetID() const{ return m_iD; }
+
+    /**
+     * <p>Unique identifier for the rule. The value cannot be longer than 255
+     * characters.</p>
+     */
+    inline bool IDHasBeenSet() const { return m_iDHasBeenSet; }
 
     /**
      * <p>Unique identifier for the rule. The value cannot be longer than 255
@@ -128,6 +139,9 @@ namespace Model
     inline const LifecycleRuleFilter& GetFilter() const{ return m_filter; }
 
     
+    inline bool FilterHasBeenSet() const { return m_filterHasBeenSet; }
+
+    
     inline void SetFilter(const LifecycleRuleFilter& value) { m_filterHasBeenSet = true; m_filter = value; }
 
     
@@ -145,6 +159,12 @@ namespace Model
      * not currently being applied.</p>
      */
     inline const ExpirationStatus& GetStatus() const{ return m_status; }
+
+    /**
+     * <p>If 'Enabled', the rule is currently being applied. If 'Disabled', the rule is
+     * not currently being applied.</p>
+     */
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
     /**
      * <p>If 'Enabled', the rule is currently being applied. If 'Disabled', the rule is
@@ -175,6 +195,11 @@ namespace Model
      * <p/>
      */
     inline const Aws::Vector<Transition>& GetTransitions() const{ return m_transitions; }
+
+    /**
+     * <p/>
+     */
+    inline bool TransitionsHasBeenSet() const { return m_transitionsHasBeenSet; }
 
     /**
      * <p/>
@@ -215,6 +240,11 @@ namespace Model
     /**
      * <p/>
      */
+    inline bool NoncurrentVersionTransitionsHasBeenSet() const { return m_noncurrentVersionTransitionsHasBeenSet; }
+
+    /**
+     * <p/>
+     */
     inline void SetNoncurrentVersionTransitions(const Aws::Vector<NoncurrentVersionTransition>& value) { m_noncurrentVersionTransitionsHasBeenSet = true; m_noncurrentVersionTransitions = value; }
 
     /**
@@ -247,6 +277,9 @@ namespace Model
     inline const NoncurrentVersionExpiration& GetNoncurrentVersionExpiration() const{ return m_noncurrentVersionExpiration; }
 
     
+    inline bool NoncurrentVersionExpirationHasBeenSet() const { return m_noncurrentVersionExpirationHasBeenSet; }
+
+    
     inline void SetNoncurrentVersionExpiration(const NoncurrentVersionExpiration& value) { m_noncurrentVersionExpirationHasBeenSet = true; m_noncurrentVersionExpiration = value; }
 
     
@@ -261,6 +294,9 @@ namespace Model
 
     
     inline const AbortIncompleteMultipartUpload& GetAbortIncompleteMultipartUpload() const{ return m_abortIncompleteMultipartUpload; }
+
+    
+    inline bool AbortIncompleteMultipartUploadHasBeenSet() const { return m_abortIncompleteMultipartUploadHasBeenSet; }
 
     
     inline void SetAbortIncompleteMultipartUpload(const AbortIncompleteMultipartUpload& value) { m_abortIncompleteMultipartUploadHasBeenSet = true; m_abortIncompleteMultipartUpload = value; }

@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The resource identifier, in the form of a directory ID.</p>
      */
+    inline bool ResourceIdHasBeenSet() const { return m_resourceIdHasBeenSet; }
+
+    /**
+     * <p>The resource identifier, in the form of a directory ID.</p>
+     */
     inline void SetResourceId(const Aws::String& value) { m_resourceIdHasBeenSet = true; m_resourceId = value; }
 
     /**
@@ -88,6 +93,11 @@ namespace Model
      * <p>Information about the Amazon WorkSpaces client.</p>
      */
     inline const ClientProperties& GetClientProperties() const{ return m_clientProperties; }
+
+    /**
+     * <p>Information about the Amazon WorkSpaces client.</p>
+     */
+    inline bool ClientPropertiesHasBeenSet() const { return m_clientPropertiesHasBeenSet; }
 
     /**
      * <p>Information about the Amazon WorkSpaces client.</p>

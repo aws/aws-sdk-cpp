@@ -59,6 +59,11 @@ namespace Model
     /**
      * <p>The identifier for the DB cluster snapshot to modify the attributes for.</p>
      */
+    inline bool DBClusterSnapshotIdentifierHasBeenSet() const { return m_dBClusterSnapshotIdentifierHasBeenSet; }
+
+    /**
+     * <p>The identifier for the DB cluster snapshot to modify the attributes for.</p>
+     */
     inline void SetDBClusterSnapshotIdentifier(const Aws::String& value) { m_dBClusterSnapshotIdentifierHasBeenSet = true; m_dBClusterSnapshotIdentifier = value; }
 
     /**
@@ -93,6 +98,13 @@ namespace Model
      * snapshot, set this value to <code>restore</code>.</p>
      */
     inline const Aws::String& GetAttributeName() const{ return m_attributeName; }
+
+    /**
+     * <p>The name of the DB cluster snapshot attribute to modify.</p> <p>To manage
+     * authorization for other AWS accounts to copy or restore a manual DB cluster
+     * snapshot, set this value to <code>restore</code>.</p>
+     */
+    inline bool AttributeNameHasBeenSet() const { return m_attributeNameHasBeenSet; }
 
     /**
      * <p>The name of the DB cluster snapshot attribute to modify.</p> <p>To manage
@@ -147,6 +159,17 @@ namespace Model
      * want to be available to all AWS accounts.</p>
      */
     inline const Aws::Vector<Aws::String>& GetValuesToAdd() const{ return m_valuesToAdd; }
+
+    /**
+     * <p>A list of DB cluster snapshot attributes to add to the attribute specified by
+     * <code>AttributeName</code>.</p> <p>To authorize other AWS accounts to copy or
+     * restore a manual DB cluster snapshot, set this list to include one or more AWS
+     * account IDs. To make the manual DB cluster snapshot restorable by any AWS
+     * account, set it to <code>all</code>. Do not add the <code>all</code> value for
+     * any manual DB cluster snapshots that contain private information that you don't
+     * want to be available to all AWS accounts.</p>
+     */
+    inline bool ValuesToAddHasBeenSet() const { return m_valuesToAddHasBeenSet; }
 
     /**
      * <p>A list of DB cluster snapshot attributes to add to the attribute specified by
@@ -237,6 +260,18 @@ namespace Model
      * restore a manual DB cluster snapshot.</p>
      */
     inline const Aws::Vector<Aws::String>& GetValuesToRemove() const{ return m_valuesToRemove; }
+
+    /**
+     * <p>A list of DB cluster snapshot attributes to remove from the attribute
+     * specified by <code>AttributeName</code>.</p> <p>To remove authorization for
+     * other AWS accounts to copy or restore a manual DB cluster snapshot, set this
+     * list to include one or more AWS account identifiers. To remove authorization for
+     * any AWS account to copy or restore the DB cluster snapshot, set it to
+     * <code>all</code> . If you specify <code>all</code>, an AWS account whose account
+     * ID is explicitly added to the <code>restore</code> attribute can still copy or
+     * restore a manual DB cluster snapshot.</p>
+     */
+    inline bool ValuesToRemoveHasBeenSet() const { return m_valuesToRemoveHasBeenSet; }
 
     /**
      * <p>A list of DB cluster snapshot attributes to remove from the attribute

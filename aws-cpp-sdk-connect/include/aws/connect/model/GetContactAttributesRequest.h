@@ -52,6 +52,12 @@ namespace Model
      * <p>The instance ID for the instance from which to retrieve contact
      * attributes.</p>
      */
+    inline bool InstanceIdHasBeenSet() const { return m_instanceIdHasBeenSet; }
+
+    /**
+     * <p>The instance ID for the instance from which to retrieve contact
+     * attributes.</p>
+     */
     inline void SetInstanceId(const Aws::String& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
 
     /**
@@ -90,6 +96,12 @@ namespace Model
      * attributes to update.</p>
      */
     inline const Aws::String& GetInitialContactId() const{ return m_initialContactId; }
+
+    /**
+     * <p>The ID for the initial contact in Amazon Connect associated with the
+     * attributes to update.</p>
+     */
+    inline bool InitialContactIdHasBeenSet() const { return m_initialContactIdHasBeenSet; }
 
     /**
      * <p>The ID for the initial contact in Amazon Connect associated with the

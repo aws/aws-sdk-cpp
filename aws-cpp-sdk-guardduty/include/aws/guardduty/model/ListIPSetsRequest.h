@@ -56,6 +56,11 @@ namespace Model
     /**
      * The unique ID of the detector that you want to retrieve.
      */
+    inline bool DetectorIdHasBeenSet() const { return m_detectorIdHasBeenSet; }
+
+    /**
+     * The unique ID of the detector that you want to retrieve.
+     */
     inline void SetDetectorId(const Aws::String& value) { m_detectorIdHasBeenSet = true; m_detectorId = value; }
 
     /**
@@ -94,6 +99,12 @@ namespace Model
      * You can use this parameter to indicate the maximum number of items that you want
      * in the response. The default value is 7. The maximum value is 7.
      */
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
+
+    /**
+     * You can use this parameter to indicate the maximum number of items that you want
+     * in the response. The default value is 7. The maximum value is 7.
+     */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
@@ -110,6 +121,14 @@ namespace Model
      * from the previous response to continue listing data.
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
+    /**
+     * You can use this parameter when paginating results. Set the value of this
+     * parameter to null on your first call to the ListIPSet action. For subsequent
+     * calls to the action fill nextToken in the request with the value of NextToken
+     * from the previous response to continue listing data.
+     */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
      * You can use this parameter when paginating results. Set the value of this

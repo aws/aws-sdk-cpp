@@ -60,6 +60,13 @@ namespace Model
      * fingerprint of the key pair.</p> </li> <li> <p> <code>key-name</code> - The name
      * of the key pair.</p> </li> </ul>
      */
+    inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
+
+    /**
+     * <p>One or more filters.</p> <ul> <li> <p> <code>fingerprint</code> - The
+     * fingerprint of the key pair.</p> </li> <li> <p> <code>key-name</code> - The name
+     * of the key pair.</p> </li> </ul>
+     */
     inline void SetFilters(const Aws::Vector<Filter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
 
     /**
@@ -106,6 +113,11 @@ namespace Model
     /**
      * <p>One or more key pair names.</p> <p>Default: Describes all your key pairs.</p>
      */
+    inline bool KeyNamesHasBeenSet() const { return m_keyNamesHasBeenSet; }
+
+    /**
+     * <p>One or more key pair names.</p> <p>Default: Describes all your key pairs.</p>
+     */
     inline void SetKeyNames(const Aws::Vector<Aws::String>& value) { m_keyNamesHasBeenSet = true; m_keyNames = value; }
 
     /**
@@ -146,6 +158,14 @@ namespace Model
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
     inline bool GetDryRun() const{ return m_dryRun; }
+
+    /**
+     * <p>Checks whether you have the required permissions for the action, without
+     * actually making the request, and provides an error response. If you have the
+     * required permissions, the error response is <code>DryRunOperation</code>.
+     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+     */
+    inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
 
     /**
      * <p>Checks whether you have the required permissions for the action, without

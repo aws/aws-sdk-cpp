@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the resource to remove the tag from.</p>
      */
+    inline bool ResourceArnHasBeenSet() const { return m_resourceArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the resource to remove the tag from.</p>
+     */
     inline void SetResourceArn(const Aws::String& value) { m_resourceArnHasBeenSet = true; m_resourceArn = value; }
 
     /**
@@ -88,6 +93,11 @@ namespace Model
      * <p>The keys in the key-value pair in the tag to remove.</p>
      */
     inline const Aws::Vector<Aws::String>& GetKeys() const{ return m_keys; }
+
+    /**
+     * <p>The keys in the key-value pair in the tag to remove.</p>
+     */
+    inline bool KeysHasBeenSet() const { return m_keysHasBeenSet; }
 
     /**
      * <p>The keys in the key-value pair in the tag to remove.</p>

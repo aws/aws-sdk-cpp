@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p>The name of the blacklist that the IP address appears on.</p>
      */
+    inline bool RblNameHasBeenSet() const { return m_rblNameHasBeenSet; }
+
+    /**
+     * <p>The name of the blacklist that the IP address appears on.</p>
+     */
     inline void SetRblName(const Aws::String& value) { m_rblNameHasBeenSet = true; m_rblName = value; }
 
     /**
@@ -94,6 +99,11 @@ namespace Model
     /**
      * <p>The time when the blacklisting event occurred, shown in Unix time format.</p>
      */
+    inline bool ListingTimeHasBeenSet() const { return m_listingTimeHasBeenSet; }
+
+    /**
+     * <p>The time when the blacklisting event occurred, shown in Unix time format.</p>
+     */
     inline void SetListingTime(const Aws::Utils::DateTime& value) { m_listingTimeHasBeenSet = true; m_listingTime = value; }
 
     /**
@@ -117,6 +127,12 @@ namespace Model
      * blacklist maintainer.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
+
+    /**
+     * <p>Additional information about the blacklisting event, as provided by the
+     * blacklist maintainer.</p>
+     */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
 
     /**
      * <p>Additional information about the blacklisting event, as provided by the

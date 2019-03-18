@@ -58,6 +58,12 @@ namespace Model
      * <p>The average latency for the slowest 0.1 percent of requests over the last 10
      * seconds.</p>
      */
+    inline bool P999HasBeenSet() const { return m_p999HasBeenSet; }
+
+    /**
+     * <p>The average latency for the slowest 0.1 percent of requests over the last 10
+     * seconds.</p>
+     */
     inline void SetP999(double value) { m_p999HasBeenSet = true; m_p999 = value; }
 
     /**
@@ -72,6 +78,12 @@ namespace Model
      * seconds.</p>
      */
     inline double GetP99() const{ return m_p99; }
+
+    /**
+     * <p>The average latency for the slowest 1 percent of requests over the last 10
+     * seconds.</p>
+     */
+    inline bool P99HasBeenSet() const { return m_p99HasBeenSet; }
 
     /**
      * <p>The average latency for the slowest 1 percent of requests over the last 10
@@ -96,6 +108,12 @@ namespace Model
      * <p>The average latency for the slowest 5 percent of requests over the last 10
      * seconds.</p>
      */
+    inline bool P95HasBeenSet() const { return m_p95HasBeenSet; }
+
+    /**
+     * <p>The average latency for the slowest 5 percent of requests over the last 10
+     * seconds.</p>
+     */
     inline void SetP95(double value) { m_p95HasBeenSet = true; m_p95 = value; }
 
     /**
@@ -110,6 +128,12 @@ namespace Model
      * seconds.</p>
      */
     inline double GetP90() const{ return m_p90; }
+
+    /**
+     * <p>The average latency for the slowest 10 percent of requests over the last 10
+     * seconds.</p>
+     */
+    inline bool P90HasBeenSet() const { return m_p90HasBeenSet; }
 
     /**
      * <p>The average latency for the slowest 10 percent of requests over the last 10
@@ -134,6 +158,12 @@ namespace Model
      * <p>The average latency for the slowest 15 percent of requests over the last 10
      * seconds.</p>
      */
+    inline bool P85HasBeenSet() const { return m_p85HasBeenSet; }
+
+    /**
+     * <p>The average latency for the slowest 15 percent of requests over the last 10
+     * seconds.</p>
+     */
     inline void SetP85(double value) { m_p85HasBeenSet = true; m_p85 = value; }
 
     /**
@@ -148,6 +178,12 @@ namespace Model
      * seconds.</p>
      */
     inline double GetP75() const{ return m_p75; }
+
+    /**
+     * <p>The average latency for the slowest 25 percent of requests over the last 10
+     * seconds.</p>
+     */
+    inline bool P75HasBeenSet() const { return m_p75HasBeenSet; }
 
     /**
      * <p>The average latency for the slowest 25 percent of requests over the last 10
@@ -172,6 +208,12 @@ namespace Model
      * <p>The average latency for the slowest 50 percent of requests over the last 10
      * seconds.</p>
      */
+    inline bool P50HasBeenSet() const { return m_p50HasBeenSet; }
+
+    /**
+     * <p>The average latency for the slowest 50 percent of requests over the last 10
+     * seconds.</p>
+     */
     inline void SetP50(double value) { m_p50HasBeenSet = true; m_p50 = value; }
 
     /**
@@ -186,6 +228,12 @@ namespace Model
      * seconds.</p>
      */
     inline double GetP10() const{ return m_p10; }
+
+    /**
+     * <p>The average latency for the slowest 90 percent of requests over the last 10
+     * seconds.</p>
+     */
+    inline bool P10HasBeenSet() const { return m_p10HasBeenSet; }
 
     /**
      * <p>The average latency for the slowest 90 percent of requests over the last 10

@@ -56,6 +56,13 @@ namespace Model
      * <code>RuleId</code> is returned by <a>CreateRule</a> and by
      * <a>ListRules</a>.</p>
      */
+    inline bool RuleIdHasBeenSet() const { return m_ruleIdHasBeenSet; }
+
+    /**
+     * <p>The <code>RuleId</code> of the <a>Rule</a> that you want to delete.
+     * <code>RuleId</code> is returned by <a>CreateRule</a> and by
+     * <a>ListRules</a>.</p>
+     */
     inline void SetRuleId(const Aws::String& value) { m_ruleIdHasBeenSet = true; m_ruleId = value; }
 
     /**
@@ -98,6 +105,11 @@ namespace Model
      * <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
      */
     inline const Aws::String& GetChangeToken() const{ return m_changeToken; }
+
+    /**
+     * <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
+     */
+    inline bool ChangeTokenHasBeenSet() const { return m_changeTokenHasBeenSet; }
 
     /**
      * <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>

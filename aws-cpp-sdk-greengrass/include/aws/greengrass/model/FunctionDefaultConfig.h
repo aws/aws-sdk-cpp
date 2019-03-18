@@ -53,6 +53,9 @@ namespace Model
     inline const FunctionDefaultExecutionConfig& GetExecution() const{ return m_execution; }
 
     
+    inline bool ExecutionHasBeenSet() const { return m_executionHasBeenSet; }
+
+    
     inline void SetExecution(const FunctionDefaultExecutionConfig& value) { m_executionHasBeenSet = true; m_execution = value; }
 
     

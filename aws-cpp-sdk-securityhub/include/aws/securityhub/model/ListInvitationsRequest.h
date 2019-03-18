@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>Indicates the maximum number of items that you want in the response. </p>
      */
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
+
+    /**
+     * <p>Indicates the maximum number of items that you want in the response. </p>
+     */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
@@ -71,6 +76,14 @@ namespace Model
      * to continue listing data. </p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
+    /**
+     * <p>Paginates results. Set the value of this parameter to NULL on your first call
+     * to the ListInvitations operation. For subsequent calls to the operation, fill
+     * nextToken in the request with the value of NextToken from the previous response
+     * to continue listing data. </p>
+     */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
      * <p>Paginates results. Set the value of this parameter to NULL on your first call

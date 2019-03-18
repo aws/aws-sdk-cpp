@@ -66,6 +66,14 @@ namespace Model
      * href="http://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-plan-tags.html">Tag
      * </a>. </p>
      */
+    inline bool KeyHasBeenSet() const { return m_keyHasBeenSet; }
+
+    /**
+     * <p>A user-defined key, which is the minimum required information for a valid
+     * tag. For more information, see <a
+     * href="http://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-plan-tags.html">Tag
+     * </a>. </p>
+     */
     inline void SetKey(const Aws::String& value) { m_keyHasBeenSet = true; m_key = value; }
 
     /**
@@ -116,6 +124,14 @@ namespace Model
      * Clusters</a>. </p>
      */
     inline const Aws::String& GetValue() const{ return m_value; }
+
+    /**
+     * <p>A user-defined value, which is optional in a tag. For more information, see
+     * <a
+     * href="http://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-plan-tags.html">Tag
+     * Clusters</a>. </p>
+     */
+    inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
 
     /**
      * <p>A user-defined value, which is optional in a tag. For more information, see

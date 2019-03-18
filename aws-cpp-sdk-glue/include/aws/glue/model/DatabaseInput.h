@@ -59,6 +59,12 @@ namespace Model
      * <p>Name of the database. For Hive compatibility, this is folded to lowercase
      * when it is stored.</p>
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>Name of the database. For Hive compatibility, this is folded to lowercase
+     * when it is stored.</p>
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
@@ -100,6 +106,11 @@ namespace Model
     /**
      * <p>Description of the database</p>
      */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
+
+    /**
+     * <p>Description of the database</p>
+     */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
@@ -136,6 +147,11 @@ namespace Model
     /**
      * <p>The location of the database (for example, an HDFS path).</p>
      */
+    inline bool LocationUriHasBeenSet() const { return m_locationUriHasBeenSet; }
+
+    /**
+     * <p>The location of the database (for example, an HDFS path).</p>
+     */
     inline void SetLocationUri(const Aws::String& value) { m_locationUriHasBeenSet = true; m_locationUri = value; }
 
     /**
@@ -168,6 +184,11 @@ namespace Model
      * <p>Thes key-value pairs define parameters and properties of the database.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetParameters() const{ return m_parameters; }
+
+    /**
+     * <p>Thes key-value pairs define parameters and properties of the database.</p>
+     */
+    inline bool ParametersHasBeenSet() const { return m_parametersHasBeenSet; }
 
     /**
      * <p>Thes key-value pairs define parameters and properties of the database.</p>

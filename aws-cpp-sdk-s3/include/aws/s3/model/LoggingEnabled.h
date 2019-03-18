@@ -69,6 +69,16 @@ namespace Model
      * TargetPrefix for each source bucket so that the delivered log files can be
      * distinguished by key.</p>
      */
+    inline bool TargetBucketHasBeenSet() const { return m_targetBucketHasBeenSet; }
+
+    /**
+     * <p>Specifies the bucket where you want Amazon S3 to store server access logs.
+     * You can have your logs delivered to any bucket that you own, including the same
+     * bucket that is being logged. You can also configure multiple buckets to deliver
+     * their logs to the same target bucket. In this case you should choose a different
+     * TargetPrefix for each source bucket so that the delivered log files can be
+     * distinguished by key.</p>
+     */
     inline void SetTargetBucket(const Aws::String& value) { m_targetBucketHasBeenSet = true; m_targetBucket = value; }
 
     /**
@@ -130,6 +140,11 @@ namespace Model
     /**
      * <p/>
      */
+    inline bool TargetGrantsHasBeenSet() const { return m_targetGrantsHasBeenSet; }
+
+    /**
+     * <p/>
+     */
     inline void SetTargetGrants(const Aws::Vector<TargetGrant>& value) { m_targetGrantsHasBeenSet = true; m_targetGrants = value; }
 
     /**
@@ -163,6 +178,12 @@ namespace Model
      * be stored under.</p>
      */
     inline const Aws::String& GetTargetPrefix() const{ return m_targetPrefix; }
+
+    /**
+     * <p>This element lets you specify a prefix for the keys that the log files will
+     * be stored under.</p>
+     */
+    inline bool TargetPrefixHasBeenSet() const { return m_targetPrefixHasBeenSet; }
 
     /**
      * <p>This element lets you specify a prefix for the keys that the log files will

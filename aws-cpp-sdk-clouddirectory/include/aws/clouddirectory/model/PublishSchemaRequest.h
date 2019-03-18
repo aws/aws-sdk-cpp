@@ -54,6 +54,12 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) that is associated with the development
      * schema. For more information, see <a>arns</a>.</p>
      */
+    inline bool DevelopmentSchemaArnHasBeenSet() const { return m_developmentSchemaArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) that is associated with the development
+     * schema. For more information, see <a>arns</a>.</p>
+     */
     inline void SetDevelopmentSchemaArn(const Aws::String& value) { m_developmentSchemaArnHasBeenSet = true; m_developmentSchemaArn = value; }
 
     /**
@@ -92,6 +98,12 @@ namespace Model
      * a major and minor version associated with them.</p>
      */
     inline const Aws::String& GetVersion() const{ return m_version; }
+
+    /**
+     * <p>The major version under which the schema will be published. Schemas have both
+     * a major and minor version associated with them.</p>
+     */
+    inline bool VersionHasBeenSet() const { return m_versionHasBeenSet; }
 
     /**
      * <p>The major version under which the schema will be published. Schemas have both
@@ -142,6 +154,13 @@ namespace Model
      * recommended. Schemas have both a major and minor version associated with
      * them.</p>
      */
+    inline bool MinorVersionHasBeenSet() const { return m_minorVersionHasBeenSet; }
+
+    /**
+     * <p>The minor version under which the schema will be published. This parameter is
+     * recommended. Schemas have both a major and minor version associated with
+     * them.</p>
+     */
     inline void SetMinorVersion(const Aws::String& value) { m_minorVersionHasBeenSet = true; m_minorVersion = value; }
 
     /**
@@ -185,6 +204,12 @@ namespace Model
      * provided, the development schema is considered.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
+
+    /**
+     * <p>The new name under which the schema will be published. If this is not
+     * provided, the development schema is considered.</p>
+     */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
      * <p>The new name under which the schema will be published. If this is not

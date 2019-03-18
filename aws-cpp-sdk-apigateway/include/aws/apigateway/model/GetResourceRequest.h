@@ -60,6 +60,11 @@ namespace Model
     /**
      * <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
      */
+    inline bool RestApiIdHasBeenSet() const { return m_restApiIdHasBeenSet; }
+
+    /**
+     * <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
+     */
     inline void SetRestApiId(const Aws::String& value) { m_restApiIdHasBeenSet = true; m_restApiId = value; }
 
     /**
@@ -92,6 +97,11 @@ namespace Model
      * <p>[Required] The identifier for the <a>Resource</a> resource.</p>
      */
     inline const Aws::String& GetResourceId() const{ return m_resourceId; }
+
+    /**
+     * <p>[Required] The identifier for the <a>Resource</a> resource.</p>
+     */
+    inline bool ResourceIdHasBeenSet() const { return m_resourceIdHasBeenSet; }
 
     /**
      * <p>[Required] The identifier for the <a>Resource</a> resource.</p>
@@ -134,6 +144,17 @@ namespace Model
      * /restapis/{restapi_id}/resources/{resource_id}?embed=methods</code>.</p>
      */
     inline const Aws::Vector<Aws::String>& GetEmbed() const{ return m_embed; }
+
+    /**
+     * <p>A query parameter to retrieve the specified resources embedded in the
+     * returned <a>Resource</a> representation in the response. This <code>embed</code>
+     * parameter value is a list of comma-separated strings. Currently, the request
+     * supports only retrieval of the embedded <a>Method</a> resources this way. The
+     * query parameter value must be a single-valued list and contain the
+     * <code>"methods"</code> string. For example, <code>GET
+     * /restapis/{restapi_id}/resources/{resource_id}?embed=methods</code>.</p>
+     */
+    inline bool EmbedHasBeenSet() const { return m_embedHasBeenSet; }
 
     /**
      * <p>A query parameter to retrieve the specified resources embedded in the

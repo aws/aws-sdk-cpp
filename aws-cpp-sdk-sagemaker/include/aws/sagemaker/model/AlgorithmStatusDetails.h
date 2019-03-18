@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The status of algorithm validation.</p>
      */
+    inline bool ValidationStatusesHasBeenSet() const { return m_validationStatusesHasBeenSet; }
+
+    /**
+     * <p>The status of algorithm validation.</p>
+     */
     inline void SetValidationStatuses(const Aws::Vector<AlgorithmStatusItem>& value) { m_validationStatusesHasBeenSet = true; m_validationStatuses = value; }
 
     /**
@@ -89,6 +94,11 @@ namespace Model
      * <p>The status of the scan of the algorithm's Docker image container.</p>
      */
     inline const Aws::Vector<AlgorithmStatusItem>& GetImageScanStatuses() const{ return m_imageScanStatuses; }
+
+    /**
+     * <p>The status of the scan of the algorithm's Docker image container.</p>
+     */
+    inline bool ImageScanStatusesHasBeenSet() const { return m_imageScanStatusesHasBeenSet; }
 
     /**
      * <p>The status of the scan of the algorithm's Docker image container.</p>

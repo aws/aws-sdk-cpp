@@ -55,6 +55,11 @@ namespace Model
     /**
      * <p>Entity tag returned when the part was uploaded.</p>
      */
+    inline bool ETagHasBeenSet() const { return m_eTagHasBeenSet; }
+
+    /**
+     * <p>Entity tag returned when the part was uploaded.</p>
+     */
     inline void SetETag(const Aws::String& value) { m_eTagHasBeenSet = true; m_eTag = value; }
 
     /**
@@ -88,6 +93,12 @@ namespace Model
      * and 10,000.</p>
      */
     inline int GetPartNumber() const{ return m_partNumber; }
+
+    /**
+     * <p>Part number that identifies the part. This is a positive integer between 1
+     * and 10,000.</p>
+     */
+    inline bool PartNumberHasBeenSet() const { return m_partNumberHasBeenSet; }
 
     /**
      * <p>Part number that identifies the part. This is a positive integer between 1

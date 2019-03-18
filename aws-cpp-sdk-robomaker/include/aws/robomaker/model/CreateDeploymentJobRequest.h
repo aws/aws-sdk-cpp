@@ -55,6 +55,11 @@ namespace Model
     /**
      * <p>The requested deployment configuration.</p>
      */
+    inline bool DeploymentConfigHasBeenSet() const { return m_deploymentConfigHasBeenSet; }
+
+    /**
+     * <p>The requested deployment configuration.</p>
+     */
     inline void SetDeploymentConfig(const DeploymentConfig& value) { m_deploymentConfigHasBeenSet = true; m_deploymentConfig = value; }
 
     /**
@@ -78,6 +83,12 @@ namespace Model
      * of the request.</p>
      */
     inline const Aws::String& GetClientRequestToken() const{ return m_clientRequestToken; }
+
+    /**
+     * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
+     * of the request.</p>
+     */
+    inline bool ClientRequestTokenHasBeenSet() const { return m_clientRequestTokenHasBeenSet; }
 
     /**
      * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
@@ -124,6 +135,11 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the fleet to deploy.</p>
      */
+    inline bool FleetHasBeenSet() const { return m_fleetHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the fleet to deploy.</p>
+     */
     inline void SetFleet(const Aws::String& value) { m_fleetHasBeenSet = true; m_fleet = value; }
 
     /**
@@ -156,6 +172,11 @@ namespace Model
      * <p>The deployment application configuration.</p>
      */
     inline const Aws::Vector<DeploymentApplicationConfig>& GetDeploymentApplicationConfigs() const{ return m_deploymentApplicationConfigs; }
+
+    /**
+     * <p>The deployment application configuration.</p>
+     */
+    inline bool DeploymentApplicationConfigsHasBeenSet() const { return m_deploymentApplicationConfigsHasBeenSet; }
 
     /**
      * <p>The deployment application configuration.</p>
@@ -193,6 +214,12 @@ namespace Model
      * deployment job.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>A map that contains tag keys and tag values that are attached to the
+     * deployment job.</p>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
      * <p>A map that contains tag keys and tag values that are attached to the

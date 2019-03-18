@@ -56,6 +56,13 @@ namespace Model
      * delete. <code>RegexMatchSetId</code> is returned by <a>CreateRegexMatchSet</a>
      * and by <a>ListRegexMatchSets</a>.</p>
      */
+    inline bool RegexMatchSetIdHasBeenSet() const { return m_regexMatchSetIdHasBeenSet; }
+
+    /**
+     * <p>The <code>RegexMatchSetId</code> of the <a>RegexMatchSet</a> that you want to
+     * delete. <code>RegexMatchSetId</code> is returned by <a>CreateRegexMatchSet</a>
+     * and by <a>ListRegexMatchSets</a>.</p>
+     */
     inline void SetRegexMatchSetId(const Aws::String& value) { m_regexMatchSetIdHasBeenSet = true; m_regexMatchSetId = value; }
 
     /**
@@ -98,6 +105,11 @@ namespace Model
      * <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
      */
     inline const Aws::String& GetChangeToken() const{ return m_changeToken; }
+
+    /**
+     * <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
+     */
+    inline bool ChangeTokenHasBeenSet() const { return m_changeTokenHasBeenSet; }
 
     /**
      * <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>

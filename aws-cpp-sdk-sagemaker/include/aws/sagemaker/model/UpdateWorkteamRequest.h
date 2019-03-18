@@ -54,6 +54,11 @@ namespace Model
     /**
      * <p>The name of the work team to update.</p>
      */
+    inline bool WorkteamNameHasBeenSet() const { return m_workteamNameHasBeenSet; }
+
+    /**
+     * <p>The name of the work team to update.</p>
+     */
     inline void SetWorkteamName(const Aws::String& value) { m_workteamNameHasBeenSet = true; m_workteamName = value; }
 
     /**
@@ -87,6 +92,12 @@ namespace Model
      * team members.</p>
      */
     inline const Aws::Vector<MemberDefinition>& GetMemberDefinitions() const{ return m_memberDefinitions; }
+
+    /**
+     * <p>A list of <code>MemberDefinition</code> objects that contain the updated work
+     * team members.</p>
+     */
+    inline bool MemberDefinitionsHasBeenSet() const { return m_memberDefinitionsHasBeenSet; }
 
     /**
      * <p>A list of <code>MemberDefinition</code> objects that contain the updated work
@@ -129,6 +140,11 @@ namespace Model
      * <p>An updated description for the work team.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
+
+    /**
+     * <p>An updated description for the work team.</p>
+     */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
 
     /**
      * <p>An updated description for the work team.</p>

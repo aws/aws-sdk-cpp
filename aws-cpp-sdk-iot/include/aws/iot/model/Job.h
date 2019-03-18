@@ -67,6 +67,12 @@ namespace Model
      * <p>An ARN identifying the job with format
      * "arn:aws:iot:region:account:job/jobId".</p>
      */
+    inline bool JobArnHasBeenSet() const { return m_jobArnHasBeenSet; }
+
+    /**
+     * <p>An ARN identifying the job with format
+     * "arn:aws:iot:region:account:job/jobId".</p>
+     */
     inline void SetJobArn(const Aws::String& value) { m_jobArnHasBeenSet = true; m_jobArn = value; }
 
     /**
@@ -108,6 +114,11 @@ namespace Model
     /**
      * <p>The unique identifier you assigned to this job when it was created.</p>
      */
+    inline bool JobIdHasBeenSet() const { return m_jobIdHasBeenSet; }
+
+    /**
+     * <p>The unique identifier you assigned to this job when it was created.</p>
+     */
     inline void SetJobId(const Aws::String& value) { m_jobIdHasBeenSet = true; m_jobId = value; }
 
     /**
@@ -145,6 +156,16 @@ namespace Model
      * completed by all things originally in the group. </p>
      */
     inline const TargetSelection& GetTargetSelection() const{ return m_targetSelection; }
+
+    /**
+     * <p>Specifies whether the job will continue to run (CONTINUOUS), or will be
+     * complete after all those things specified as targets have completed the job
+     * (SNAPSHOT). If continuous, the job may also be run on a thing when a change is
+     * detected in a target. For example, a job will run on a device when the thing
+     * representing the device is added to a target group, even after the job was
+     * completed by all things originally in the group. </p>
+     */
+    inline bool TargetSelectionHasBeenSet() const { return m_targetSelectionHasBeenSet; }
 
     /**
      * <p>Specifies whether the job will continue to run (CONTINUOUS), or will be
@@ -199,6 +220,13 @@ namespace Model
      * <code>CANCELED</code>, <code>DELETION_IN_PROGRESS</code> or
      * <code>COMPLETED</code>. </p>
      */
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
+
+    /**
+     * <p>The status of the job, one of <code>IN_PROGRESS</code>,
+     * <code>CANCELED</code>, <code>DELETION_IN_PROGRESS</code> or
+     * <code>COMPLETED</code>. </p>
+     */
     inline void SetStatus(const JobStatus& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
@@ -233,6 +261,12 @@ namespace Model
      * <p>Will be <code>true</code> if the job was canceled with the optional
      * <code>force</code> parameter set to <code>true</code>.</p>
      */
+    inline bool ForceCanceledHasBeenSet() const { return m_forceCanceledHasBeenSet; }
+
+    /**
+     * <p>Will be <code>true</code> if the job was canceled with the optional
+     * <code>force</code> parameter set to <code>true</code>.</p>
+     */
     inline void SetForceCanceled(bool value) { m_forceCanceledHasBeenSet = true; m_forceCanceled = value; }
 
     /**
@@ -246,6 +280,11 @@ namespace Model
      * <p>If the job was updated, provides the reason code for the update.</p>
      */
     inline const Aws::String& GetReasonCode() const{ return m_reasonCode; }
+
+    /**
+     * <p>If the job was updated, provides the reason code for the update.</p>
+     */
+    inline bool ReasonCodeHasBeenSet() const { return m_reasonCodeHasBeenSet; }
 
     /**
      * <p>If the job was updated, provides the reason code for the update.</p>
@@ -286,6 +325,11 @@ namespace Model
     /**
      * <p>If the job was updated, describes the reason for the update.</p>
      */
+    inline bool CommentHasBeenSet() const { return m_commentHasBeenSet; }
+
+    /**
+     * <p>If the job was updated, describes the reason for the update.</p>
+     */
     inline void SetComment(const Aws::String& value) { m_commentHasBeenSet = true; m_comment = value; }
 
     /**
@@ -318,6 +362,11 @@ namespace Model
      * <p>A list of IoT things and thing groups to which the job should be sent.</p>
      */
     inline const Aws::Vector<Aws::String>& GetTargets() const{ return m_targets; }
+
+    /**
+     * <p>A list of IoT things and thing groups to which the job should be sent.</p>
+     */
+    inline bool TargetsHasBeenSet() const { return m_targetsHasBeenSet; }
 
     /**
      * <p>A list of IoT things and thing groups to which the job should be sent.</p>
@@ -363,6 +412,11 @@ namespace Model
     /**
      * <p>A short text description of the job.</p>
      */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
+
+    /**
+     * <p>A short text description of the job.</p>
+     */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
@@ -399,6 +453,11 @@ namespace Model
     /**
      * <p>Configuration for pre-signed S3 URLs.</p>
      */
+    inline bool PresignedUrlConfigHasBeenSet() const { return m_presignedUrlConfigHasBeenSet; }
+
+    /**
+     * <p>Configuration for pre-signed S3 URLs.</p>
+     */
     inline void SetPresignedUrlConfig(const PresignedUrlConfig& value) { m_presignedUrlConfigHasBeenSet = true; m_presignedUrlConfig = value; }
 
     /**
@@ -421,6 +480,11 @@ namespace Model
      * <p>Allows you to create a staged rollout of a job.</p>
      */
     inline const JobExecutionsRolloutConfig& GetJobExecutionsRolloutConfig() const{ return m_jobExecutionsRolloutConfig; }
+
+    /**
+     * <p>Allows you to create a staged rollout of a job.</p>
+     */
+    inline bool JobExecutionsRolloutConfigHasBeenSet() const { return m_jobExecutionsRolloutConfigHasBeenSet; }
 
     /**
      * <p>Allows you to create a staged rollout of a job.</p>
@@ -451,6 +515,11 @@ namespace Model
     /**
      * <p>Configuration for criteria to abort the job.</p>
      */
+    inline bool AbortConfigHasBeenSet() const { return m_abortConfigHasBeenSet; }
+
+    /**
+     * <p>Configuration for criteria to abort the job.</p>
+     */
     inline void SetAbortConfig(const AbortConfig& value) { m_abortConfigHasBeenSet = true; m_abortConfig = value; }
 
     /**
@@ -473,6 +542,11 @@ namespace Model
      * <p>The time, in seconds since the epoch, when the job was created.</p>
      */
     inline const Aws::Utils::DateTime& GetCreatedAt() const{ return m_createdAt; }
+
+    /**
+     * <p>The time, in seconds since the epoch, when the job was created.</p>
+     */
+    inline bool CreatedAtHasBeenSet() const { return m_createdAtHasBeenSet; }
 
     /**
      * <p>The time, in seconds since the epoch, when the job was created.</p>
@@ -503,6 +577,11 @@ namespace Model
     /**
      * <p>The time, in seconds since the epoch, when the job was last updated.</p>
      */
+    inline bool LastUpdatedAtHasBeenSet() const { return m_lastUpdatedAtHasBeenSet; }
+
+    /**
+     * <p>The time, in seconds since the epoch, when the job was last updated.</p>
+     */
     inline void SetLastUpdatedAt(const Aws::Utils::DateTime& value) { m_lastUpdatedAtHasBeenSet = true; m_lastUpdatedAt = value; }
 
     /**
@@ -525,6 +604,11 @@ namespace Model
      * <p>The time, in seconds since the epoch, when the job was completed.</p>
      */
     inline const Aws::Utils::DateTime& GetCompletedAt() const{ return m_completedAt; }
+
+    /**
+     * <p>The time, in seconds since the epoch, when the job was completed.</p>
+     */
+    inline bool CompletedAtHasBeenSet() const { return m_completedAtHasBeenSet; }
 
     /**
      * <p>The time, in seconds since the epoch, when the job was completed.</p>
@@ -555,6 +639,11 @@ namespace Model
     /**
      * <p>Details about the job process.</p>
      */
+    inline bool JobProcessDetailsHasBeenSet() const { return m_jobProcessDetailsHasBeenSet; }
+
+    /**
+     * <p>Details about the job process.</p>
+     */
     inline void SetJobProcessDetails(const JobProcessDetails& value) { m_jobProcessDetailsHasBeenSet = true; m_jobProcessDetails = value; }
 
     /**
@@ -581,6 +670,15 @@ namespace Model
      * <code>TIMED_OUT</code>.</p>
      */
     inline const TimeoutConfig& GetTimeoutConfig() const{ return m_timeoutConfig; }
+
+    /**
+     * <p>Specifies the amount of time each device has to finish its execution of the
+     * job. A timer is started when the job execution status is set to
+     * <code>IN_PROGRESS</code>. If the job execution status is not set to another
+     * terminal state before the timer expires, it will be automatically set to
+     * <code>TIMED_OUT</code>.</p>
+     */
+    inline bool TimeoutConfigHasBeenSet() const { return m_timeoutConfigHasBeenSet; }
 
     /**
      * <p>Specifies the amount of time each device has to finish its execution of the

@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The schema version of this data type.</p>
      */
+    inline bool SchemaVersionHasBeenSet() const { return m_schemaVersionHasBeenSet; }
+
+    /**
+     * <p>The schema version of this data type.</p>
+     */
     inline void SetSchemaVersion(int value) { m_schemaVersionHasBeenSet = true; m_schemaVersion = value; }
 
     /**
@@ -68,6 +73,11 @@ namespace Model
      * <p>The ARN of the assessment run during which the finding is generated.</p>
      */
     inline const Aws::String& GetAssessmentRunArn() const{ return m_assessmentRunArn; }
+
+    /**
+     * <p>The ARN of the assessment run during which the finding is generated.</p>
+     */
+    inline bool AssessmentRunArnHasBeenSet() const { return m_assessmentRunArnHasBeenSet; }
 
     /**
      * <p>The ARN of the assessment run during which the finding is generated.</p>
@@ -104,6 +114,11 @@ namespace Model
      * <p>The ARN of the rules package that is used to generate the finding.</p>
      */
     inline const Aws::String& GetRulesPackageArn() const{ return m_rulesPackageArn; }
+
+    /**
+     * <p>The ARN of the rules package that is used to generate the finding.</p>
+     */
+    inline bool RulesPackageArnHasBeenSet() const { return m_rulesPackageArnHasBeenSet; }
 
     /**
      * <p>The ARN of the rules package that is used to generate the finding.</p>

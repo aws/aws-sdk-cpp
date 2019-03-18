@@ -52,6 +52,11 @@ namespace Model
     /**
      * <p>The name of the private image.</p>
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>The name of the private image.</p>
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
@@ -85,6 +90,12 @@ namespace Model
      * permissions.</p>
      */
     inline const Aws::String& GetSharedAccountId() const{ return m_sharedAccountId; }
+
+    /**
+     * <p>The 12-digit identifier of the AWS account for which to delete image
+     * permissions.</p>
+     */
+    inline bool SharedAccountIdHasBeenSet() const { return m_sharedAccountIdHasBeenSet; }
 
     /**
      * <p>The 12-digit identifier of the AWS account for which to delete image

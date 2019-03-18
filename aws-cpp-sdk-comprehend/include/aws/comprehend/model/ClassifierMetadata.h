@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The number of labels in the input data. </p>
      */
+    inline bool NumberOfLabelsHasBeenSet() const { return m_numberOfLabelsHasBeenSet; }
+
+    /**
+     * <p>The number of labels in the input data. </p>
+     */
     inline void SetNumberOfLabels(int value) { m_numberOfLabelsHasBeenSet = true; m_numberOfLabels = value; }
 
     /**
@@ -69,6 +74,12 @@ namespace Model
      * classifier. Typically this is 80 to 90 percent of the input documents.</p>
      */
     inline int GetNumberOfTrainedDocuments() const{ return m_numberOfTrainedDocuments; }
+
+    /**
+     * <p>The number of documents in the input data that were used to train the
+     * classifier. Typically this is 80 to 90 percent of the input documents.</p>
+     */
+    inline bool NumberOfTrainedDocumentsHasBeenSet() const { return m_numberOfTrainedDocumentsHasBeenSet; }
 
     /**
      * <p>The number of documents in the input data that were used to train the
@@ -93,6 +104,12 @@ namespace Model
      * <p>The number of documents in the input data that were used to test the
      * classifier. Typically this is 10 to 20 percent of the input documents.</p>
      */
+    inline bool NumberOfTestDocumentsHasBeenSet() const { return m_numberOfTestDocumentsHasBeenSet; }
+
+    /**
+     * <p>The number of documents in the input data that were used to test the
+     * classifier. Typically this is 10 to 20 percent of the input documents.</p>
+     */
     inline void SetNumberOfTestDocuments(int value) { m_numberOfTestDocumentsHasBeenSet = true; m_numberOfTestDocuments = value; }
 
     /**
@@ -107,6 +124,12 @@ namespace Model
      * documentation classifier.</p>
      */
     inline const ClassifierEvaluationMetrics& GetEvaluationMetrics() const{ return m_evaluationMetrics; }
+
+    /**
+     * <p> Describes the result metrics for the test data associated with an
+     * documentation classifier.</p>
+     */
+    inline bool EvaluationMetricsHasBeenSet() const { return m_evaluationMetricsHasBeenSet; }
 
     /**
      * <p> Describes the result metrics for the test data associated with an

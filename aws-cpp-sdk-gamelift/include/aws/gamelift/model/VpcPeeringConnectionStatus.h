@@ -60,6 +60,11 @@ namespace Model
     /**
      * <p>Code indicating the status of a VPC peering connection.</p>
      */
+    inline bool CodeHasBeenSet() const { return m_codeHasBeenSet; }
+
+    /**
+     * <p>Code indicating the status of a VPC peering connection.</p>
+     */
     inline void SetCode(const Aws::String& value) { m_codeHasBeenSet = true; m_code = value; }
 
     /**
@@ -92,6 +97,11 @@ namespace Model
      * <p>Additional messaging associated with the connection status. </p>
      */
     inline const Aws::String& GetMessage() const{ return m_message; }
+
+    /**
+     * <p>Additional messaging associated with the connection status. </p>
+     */
+    inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
 
     /**
      * <p>Additional messaging associated with the connection status. </p>

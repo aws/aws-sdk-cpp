@@ -58,6 +58,12 @@ namespace Model
      * <p>The name of the provider, for example, Facebook, Google, or Login with
      * Amazon.</p>
      */
+    inline bool ProviderNameHasBeenSet() const { return m_providerNameHasBeenSet; }
+
+    /**
+     * <p>The name of the provider, for example, Facebook, Google, or Login with
+     * Amazon.</p>
+     */
     inline void SetProviderName(const Aws::String& value) { m_providerNameHasBeenSet = true; m_providerName = value; }
 
     /**
@@ -101,6 +107,12 @@ namespace Model
      * <p>The name of the provider attribute to link to, for example,
      * <code>NameID</code>.</p>
      */
+    inline bool ProviderAttributeNameHasBeenSet() const { return m_providerAttributeNameHasBeenSet; }
+
+    /**
+     * <p>The name of the provider attribute to link to, for example,
+     * <code>NameID</code>.</p>
+     */
     inline void SetProviderAttributeName(const Aws::String& value) { m_providerAttributeNameHasBeenSet = true; m_providerAttributeName = value; }
 
     /**
@@ -139,6 +151,12 @@ namespace Model
      * <code>xxxxx_account</code>.</p>
      */
     inline const Aws::String& GetProviderAttributeValue() const{ return m_providerAttributeValue; }
+
+    /**
+     * <p>The value of the provider attribute to link to, for example,
+     * <code>xxxxx_account</code>.</p>
+     */
+    inline bool ProviderAttributeValueHasBeenSet() const { return m_providerAttributeValueHasBeenSet; }
 
     /**
      * <p>The value of the provider attribute to link to, for example,

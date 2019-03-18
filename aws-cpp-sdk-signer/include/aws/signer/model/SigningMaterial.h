@@ -58,6 +58,12 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the certificates that is used to sign your
      * code.</p>
      */
+    inline bool CertificateArnHasBeenSet() const { return m_certificateArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the certificates that is used to sign your
+     * code.</p>
+     */
     inline void SetCertificateArn(const Aws::String& value) { m_certificateArnHasBeenSet = true; m_certificateArn = value; }
 
     /**

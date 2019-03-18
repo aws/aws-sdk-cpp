@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The log event field.</p>
      */
+    inline bool FieldHasBeenSet() const { return m_fieldHasBeenSet; }
+
+    /**
+     * <p>The log event field.</p>
+     */
     inline void SetField(const Aws::String& value) { m_fieldHasBeenSet = true; m_field = value; }
 
     /**
@@ -88,6 +93,11 @@ namespace Model
      * <p>The value of this field.</p>
      */
     inline const Aws::String& GetValue() const{ return m_value; }
+
+    /**
+     * <p>The value of this field.</p>
+     */
+    inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
 
     /**
      * <p>The value of this field.</p>

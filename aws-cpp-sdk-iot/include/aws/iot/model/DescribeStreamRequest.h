@@ -50,6 +50,11 @@ namespace Model
     /**
      * <p>The stream ID.</p>
      */
+    inline bool StreamIdHasBeenSet() const { return m_streamIdHasBeenSet; }
+
+    /**
+     * <p>The stream ID.</p>
+     */
     inline void SetStreamId(const Aws::String& value) { m_streamIdHasBeenSet = true; m_streamId = value; }
 
     /**

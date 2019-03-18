@@ -55,6 +55,11 @@ namespace Model
     /**
      * <p>Unique identifier for a build to update.</p>
      */
+    inline bool BuildIdHasBeenSet() const { return m_buildIdHasBeenSet; }
+
+    /**
+     * <p>Unique identifier for a build to update.</p>
+     */
     inline void SetBuildId(const Aws::String& value) { m_buildIdHasBeenSet = true; m_buildId = value; }
 
     /**
@@ -88,6 +93,12 @@ namespace Model
      * be unique. </p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
+
+    /**
+     * <p>Descriptive label that is associated with a build. Build names do not need to
+     * be unique. </p>
+     */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
      * <p>Descriptive label that is associated with a build. Build names do not need to
@@ -131,6 +142,12 @@ namespace Model
      * unique.</p>
      */
     inline const Aws::String& GetVersion() const{ return m_version; }
+
+    /**
+     * <p>Version that is associated with this build. Version strings do not need to be
+     * unique.</p>
+     */
+    inline bool VersionHasBeenSet() const { return m_versionHasBeenSet; }
 
     /**
      * <p>Version that is associated with this build. Version strings do not need to be

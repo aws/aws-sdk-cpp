@@ -62,6 +62,11 @@ namespace Model
     /**
      * <p>Description of the job being defined.</p>
      */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
+
+    /**
+     * <p>Description of the job being defined.</p>
+     */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
@@ -98,6 +103,11 @@ namespace Model
     /**
      * <p>This field is reserved for future use.</p>
      */
+    inline bool LogUriHasBeenSet() const { return m_logUriHasBeenSet; }
+
+    /**
+     * <p>This field is reserved for future use.</p>
+     */
     inline void SetLogUri(const Aws::String& value) { m_logUriHasBeenSet = true; m_logUri = value; }
 
     /**
@@ -130,6 +140,11 @@ namespace Model
      * <p>The name or ARN of the IAM role associated with this job (required).</p>
      */
     inline const Aws::String& GetRole() const{ return m_role; }
+
+    /**
+     * <p>The name or ARN of the IAM role associated with this job (required).</p>
+     */
+    inline bool RoleHasBeenSet() const { return m_roleHasBeenSet; }
 
     /**
      * <p>The name or ARN of the IAM role associated with this job (required).</p>
@@ -172,6 +187,12 @@ namespace Model
      * <p>An ExecutionProperty specifying the maximum number of concurrent runs allowed
      * for this job.</p>
      */
+    inline bool ExecutionPropertyHasBeenSet() const { return m_executionPropertyHasBeenSet; }
+
+    /**
+     * <p>An ExecutionProperty specifying the maximum number of concurrent runs allowed
+     * for this job.</p>
+     */
     inline void SetExecutionProperty(const ExecutionProperty& value) { m_executionPropertyHasBeenSet = true; m_executionProperty = value; }
 
     /**
@@ -197,6 +218,11 @@ namespace Model
      * <p>The JobCommand that executes this job (required).</p>
      */
     inline const JobCommand& GetCommand() const{ return m_command; }
+
+    /**
+     * <p>The JobCommand that executes this job (required).</p>
+     */
+    inline bool CommandHasBeenSet() const { return m_commandHasBeenSet; }
 
     /**
      * <p>The JobCommand that executes this job (required).</p>
@@ -231,6 +257,19 @@ namespace Model
      * Parameters Used by AWS Glue</a> topic in the developer guide.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetDefaultArguments() const{ return m_defaultArguments; }
+
+    /**
+     * <p>The default arguments for this job.</p> <p>You can specify arguments here
+     * that your own job-execution script consumes, as well as arguments that AWS Glue
+     * itself consumes.</p> <p>For information about how to specify and consume your
+     * own Job arguments, see the <a
+     * href="http://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-calling.html">Calling
+     * AWS Glue APIs in Python</a> topic in the developer guide.</p> <p>For information
+     * about the key-value pairs that AWS Glue consumes to set up your job, see the <a
+     * href="http://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-etl-glue-arguments.html">Special
+     * Parameters Used by AWS Glue</a> topic in the developer guide.</p>
+     */
+    inline bool DefaultArgumentsHasBeenSet() const { return m_defaultArgumentsHasBeenSet; }
 
     /**
      * <p>The default arguments for this job.</p> <p>You can specify arguments here
@@ -384,6 +423,11 @@ namespace Model
     /**
      * <p>The connections used for this job.</p>
      */
+    inline bool ConnectionsHasBeenSet() const { return m_connectionsHasBeenSet; }
+
+    /**
+     * <p>The connections used for this job.</p>
+     */
     inline void SetConnections(const ConnectionsList& value) { m_connectionsHasBeenSet = true; m_connections = value; }
 
     /**
@@ -410,6 +454,11 @@ namespace Model
     /**
      * <p>The maximum number of times to retry this job if it fails.</p>
      */
+    inline bool MaxRetriesHasBeenSet() const { return m_maxRetriesHasBeenSet; }
+
+    /**
+     * <p>The maximum number of times to retry this job if it fails.</p>
+     */
     inline void SetMaxRetries(int value) { m_maxRetriesHasBeenSet = true; m_maxRetries = value; }
 
     /**
@@ -424,6 +473,13 @@ namespace Model
      * status. The default is 2,880 minutes (48 hours).</p>
      */
     inline int GetTimeout() const{ return m_timeout; }
+
+    /**
+     * <p>The job timeout in minutes. This is the maximum time that a job run can
+     * consume resources before it is terminated and enters <code>TIMEOUT</code>
+     * status. The default is 2,880 minutes (48 hours).</p>
+     */
+    inline bool TimeoutHasBeenSet() const { return m_timeoutHasBeenSet; }
 
     /**
      * <p>The job timeout in minutes. This is the maximum time that a job run can
@@ -470,6 +526,22 @@ namespace Model
      * to 100 DPUs. The default is 10 DPUs. This job type cannot have a fractional DPU
      * allocation.</p> </li> </ul>
      */
+    inline bool MaxCapacityHasBeenSet() const { return m_maxCapacityHasBeenSet; }
+
+    /**
+     * <p>The number of AWS Glue data processing units (DPUs) that can be allocated
+     * when this job runs. A DPU is a relative measure of processing power that
+     * consists of 4 vCPUs of compute capacity and 16 GB of memory. For more
+     * information, see the <a href="https://aws.amazon.com/glue/pricing/">AWS Glue
+     * pricing page</a>.</p> <p>The value that can be allocated for
+     * <code>MaxCapacity</code> depends on whether you are running a python shell job,
+     * or an Apache Spark ETL job:</p> <ul> <li> <p>When you specify a python shell job
+     * (<code>JobCommand.Name</code>="pythonshell"), you can allocate either 0.0625 or
+     * 1 DPU. The default is 0.0625 DPU.</p> </li> <li> <p>When you specify an Apache
+     * Spark ETL job (<code>JobCommand.Name</code>="glueetl"), you can allocate from 2
+     * to 100 DPUs. The default is 10 DPUs. This job type cannot have a fractional DPU
+     * allocation.</p> </li> </ul>
+     */
     inline void SetMaxCapacity(double value) { m_maxCapacityHasBeenSet = true; m_maxCapacity = value; }
 
     /**
@@ -497,6 +569,11 @@ namespace Model
     /**
      * <p>Specifies configuration properties of a job notification.</p>
      */
+    inline bool NotificationPropertyHasBeenSet() const { return m_notificationPropertyHasBeenSet; }
+
+    /**
+     * <p>Specifies configuration properties of a job notification.</p>
+     */
     inline void SetNotificationProperty(const NotificationProperty& value) { m_notificationPropertyHasBeenSet = true; m_notificationProperty = value; }
 
     /**
@@ -519,6 +596,11 @@ namespace Model
      * <p>The name of the SecurityConfiguration structure to be used with this job.</p>
      */
     inline const Aws::String& GetSecurityConfiguration() const{ return m_securityConfiguration; }
+
+    /**
+     * <p>The name of the SecurityConfiguration structure to be used with this job.</p>
+     */
+    inline bool SecurityConfigurationHasBeenSet() const { return m_securityConfigurationHasBeenSet; }
 
     /**
      * <p>The name of the SecurityConfiguration structure to be used with this job.</p>

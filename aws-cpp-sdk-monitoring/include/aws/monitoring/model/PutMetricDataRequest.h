@@ -60,6 +60,13 @@ namespace Model
      * begins with "AWS/". Namespaces that begin with "AWS/" are reserved for use by
      * Amazon Web Services products.</p>
      */
+    inline bool NamespaceHasBeenSet() const { return m_namespaceHasBeenSet; }
+
+    /**
+     * <p>The namespace for the metric data.</p> <p>You cannot specify a namespace that
+     * begins with "AWS/". Namespaces that begin with "AWS/" are reserved for use by
+     * Amazon Web Services products.</p>
+     */
     inline void SetNamespace(const Aws::String& value) { m_namespaceHasBeenSet = true; m_namespace = value; }
 
     /**
@@ -103,6 +110,12 @@ namespace Model
      * call.</p>
      */
     inline const Aws::Vector<MetricDatum>& GetMetricData() const{ return m_metricData; }
+
+    /**
+     * <p>The data for the metric. The array can include no more than 20 metrics per
+     * call.</p>
+     */
+    inline bool MetricDataHasBeenSet() const { return m_metricDataHasBeenSet; }
 
     /**
      * <p>The data for the metric. The array can include no more than 20 metrics per

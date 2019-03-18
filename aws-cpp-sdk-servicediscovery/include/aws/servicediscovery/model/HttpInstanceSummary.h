@@ -62,6 +62,12 @@ namespace Model
      * <p>The ID of an instance that matches the values that you specified in the
      * request.</p>
      */
+    inline bool InstanceIdHasBeenSet() const { return m_instanceIdHasBeenSet; }
+
+    /**
+     * <p>The ID of an instance that matches the values that you specified in the
+     * request.</p>
+     */
     inline void SetInstanceId(const Aws::String& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
 
     /**
@@ -100,6 +106,12 @@ namespace Model
      * instance.</p>
      */
     inline const Aws::String& GetNamespaceName() const{ return m_namespaceName; }
+
+    /**
+     * <p>The name of the namespace that you specified when you registered the
+     * instance.</p>
+     */
+    inline bool NamespaceNameHasBeenSet() const { return m_namespaceNameHasBeenSet; }
 
     /**
      * <p>The name of the namespace that you specified when you registered the
@@ -148,6 +160,12 @@ namespace Model
      * <p>The name of the service that you specified when you registered the
      * instance.</p>
      */
+    inline bool ServiceNameHasBeenSet() const { return m_serviceNameHasBeenSet; }
+
+    /**
+     * <p>The name of the service that you specified when you registered the
+     * instance.</p>
+     */
     inline void SetServiceName(const Aws::String& value) { m_serviceNameHasBeenSet = true; m_serviceName = value; }
 
     /**
@@ -191,6 +209,12 @@ namespace Model
      * <p>If you configured health checking in the service, the current health status
      * of the service instance.</p>
      */
+    inline bool HealthStatusHasBeenSet() const { return m_healthStatusHasBeenSet; }
+
+    /**
+     * <p>If you configured health checking in the service, the current health status
+     * of the service instance.</p>
+     */
     inline void SetHealthStatus(const HealthStatus& value) { m_healthStatusHasBeenSet = true; m_healthStatus = value; }
 
     /**
@@ -217,6 +241,12 @@ namespace Model
      * of those attributes.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetAttributes() const{ return m_attributes; }
+
+    /**
+     * <p>If you included any attributes when you registered the instance, the values
+     * of those attributes.</p>
+     */
+    inline bool AttributesHasBeenSet() const { return m_attributesHasBeenSet; }
 
     /**
      * <p>If you included any attributes when you registered the instance, the values

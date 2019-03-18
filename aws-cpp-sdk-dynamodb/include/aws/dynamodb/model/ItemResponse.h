@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>Map of attribute data consisting of the data type and attribute value.</p>
      */
+    inline bool ItemHasBeenSet() const { return m_itemHasBeenSet; }
+
+    /**
+     * <p>Map of attribute data consisting of the data type and attribute value.</p>
+     */
     inline void SetItem(const Aws::Map<Aws::String, AttributeValue>& value) { m_itemHasBeenSet = true; m_item = value; }
 
     /**

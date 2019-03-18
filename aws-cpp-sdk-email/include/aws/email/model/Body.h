@@ -61,6 +61,12 @@ namespace Model
      * <p>The content of the message, in text format. Use this for text-based email
      * clients, or clients on high-latency networks (such as mobile devices).</p>
      */
+    inline bool TextHasBeenSet() const { return m_textHasBeenSet; }
+
+    /**
+     * <p>The content of the message, in text format. Use this for text-based email
+     * clients, or clients on high-latency networks (such as mobile devices).</p>
+     */
     inline void SetText(const Content& value) { m_textHasBeenSet = true; m_text = value; }
 
     /**
@@ -88,6 +94,13 @@ namespace Model
      * in an HTML message.</p>
      */
     inline const Content& GetHtml() const{ return m_html; }
+
+    /**
+     * <p>The content of the message, in HTML format. Use this for email clients that
+     * can process HTML. You can include clickable links, formatted text, and much more
+     * in an HTML message.</p>
+     */
+    inline bool HtmlHasBeenSet() const { return m_htmlHasBeenSet; }
 
     /**
      * <p>The content of the message, in HTML format. Use this for email clients that

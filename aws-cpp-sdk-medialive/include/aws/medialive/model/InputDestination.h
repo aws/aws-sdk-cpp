@@ -62,6 +62,14 @@ It remains fixed for the
      * lifetime of the input.
 
      */
+    inline bool IpHasBeenSet() const { return m_ipHasBeenSet; }
+
+    /**
+     * The system-generated static IP address of endpoint.
+It remains fixed for the
+     * lifetime of the input.
+
+     */
     inline void SetIp(const Aws::String& value) { m_ipHasBeenSet = true; m_ip = value; }
 
     /**
@@ -113,6 +121,11 @@ It remains fixed for the
     /**
      * The port number for the input.
      */
+    inline bool PortHasBeenSet() const { return m_portHasBeenSet; }
+
+    /**
+     * The port number for the input.
+     */
     inline void SetPort(const Aws::String& value) { m_portHasBeenSet = true; m_port = value; }
 
     /**
@@ -147,6 +160,13 @@ pushed to.
 
      */
     inline const Aws::String& GetUrl() const{ return m_url; }
+
+    /**
+     * This represents the endpoint that the customer stream will be
+pushed to.
+
+     */
+    inline bool UrlHasBeenSet() const { return m_urlHasBeenSet; }
 
     /**
      * This represents the endpoint that the customer stream will be
@@ -193,6 +213,9 @@ pushed to.
 
     
     inline const InputDestinationVpc& GetVpc() const{ return m_vpc; }
+
+    
+    inline bool VpcHasBeenSet() const { return m_vpcHasBeenSet; }
 
     
     inline void SetVpc(const InputDestinationVpc& value) { m_vpcHasBeenSet = true; m_vpc = value; }

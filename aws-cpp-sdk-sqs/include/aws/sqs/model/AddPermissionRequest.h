@@ -60,6 +60,12 @@ namespace Model
      * <p>The URL of the Amazon SQS queue to which permissions are added.</p> <p>Queue
      * URLs and names are case-sensitive.</p>
      */
+    inline bool QueueUrlHasBeenSet() const { return m_queueUrlHasBeenSet; }
+
+    /**
+     * <p>The URL of the Amazon SQS queue to which permissions are added.</p> <p>Queue
+     * URLs and names are case-sensitive.</p>
+     */
     inline void SetQueueUrl(const Aws::String& value) { m_queueUrlHasBeenSet = true; m_queueUrl = value; }
 
     /**
@@ -100,6 +106,14 @@ namespace Model
      * (<code>_</code>).</p>
      */
     inline const Aws::String& GetLabel() const{ return m_label; }
+
+    /**
+     * <p>The unique identification of the permission you're setting (for example,
+     * <code>AliceSendMessage</code>). Maximum 80 characters. Allowed characters
+     * include alphanumeric characters, hyphens (<code>-</code>), and underscores
+     * (<code>_</code>).</p>
+     */
+    inline bool LabelHasBeenSet() const { return m_labelHasBeenSet; }
 
     /**
      * <p>The unique identification of the permission you're setting (for example,
@@ -161,6 +175,18 @@ namespace Model
      * Guide</i>.</p>
      */
     inline const Aws::Vector<Aws::String>& GetAWSAccountIds() const{ return m_aWSAccountIds; }
+
+    /**
+     * <p>The AWS account number of the <a
+     * href="http://docs.aws.amazon.com/general/latest/gr/glos-chap.html#P">principal</a>
+     * who is given permission. The principal must have an AWS account, but does not
+     * need to be signed up for Amazon SQS. For information about locating the AWS
+     * account identification, see <a
+     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-making-api-requests.html#sqs-api-request-authentication">Your
+     * AWS Identifiers</a> in the <i>Amazon Simple Queue Service Developer
+     * Guide</i>.</p>
+     */
+    inline bool AWSAccountIdsHasBeenSet() const { return m_aWSAccountIdsHasBeenSet; }
 
     /**
      * <p>The AWS account number of the <a
@@ -261,6 +287,21 @@ namespace Model
      * <code>ChangeMessageVisibilityBatch</code>.</p>
      */
     inline const Aws::Vector<Aws::String>& GetActions() const{ return m_actions; }
+
+    /**
+     * <p>The action the client wants to allow for the specified principal. Valid
+     * values: the name of any action or <code>*</code>.</p> <p>For more information
+     * about these actions, see <a
+     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-overview-of-managing-access.html">Overview
+     * of Managing Access Permissions to Your Amazon Simple Queue Service Resource</a>
+     * in the <i>Amazon Simple Queue Service Developer Guide</i>.</p> <p>Specifying
+     * <code>SendMessage</code>, <code>DeleteMessage</code>, or
+     * <code>ChangeMessageVisibility</code> for <code>ActionName.n</code> also grants
+     * permissions for the corresponding batch versions of those actions:
+     * <code>SendMessageBatch</code>, <code>DeleteMessageBatch</code>, and
+     * <code>ChangeMessageVisibilityBatch</code>.</p>
+     */
+    inline bool ActionsHasBeenSet() const { return m_actionsHasBeenSet; }
 
     /**
      * <p>The action the client wants to allow for the specified principal. Valid

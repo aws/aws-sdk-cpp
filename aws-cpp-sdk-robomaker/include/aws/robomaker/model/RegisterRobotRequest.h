@@ -50,6 +50,11 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the fleet.</p>
      */
+    inline bool FleetHasBeenSet() const { return m_fleetHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the fleet.</p>
+     */
     inline void SetFleet(const Aws::String& value) { m_fleetHasBeenSet = true; m_fleet = value; }
 
     /**
@@ -82,6 +87,11 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the robot.</p>
      */
     inline const Aws::String& GetRobot() const{ return m_robot; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the robot.</p>
+     */
+    inline bool RobotHasBeenSet() const { return m_robotHasBeenSet; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the robot.</p>

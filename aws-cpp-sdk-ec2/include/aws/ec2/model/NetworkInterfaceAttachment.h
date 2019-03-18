@@ -59,6 +59,11 @@ namespace Model
     /**
      * <p>The timestamp indicating when the attachment initiated.</p>
      */
+    inline bool AttachTimeHasBeenSet() const { return m_attachTimeHasBeenSet; }
+
+    /**
+     * <p>The timestamp indicating when the attachment initiated.</p>
+     */
     inline void SetAttachTime(const Aws::Utils::DateTime& value) { m_attachTimeHasBeenSet = true; m_attachTime = value; }
 
     /**
@@ -81,6 +86,11 @@ namespace Model
      * <p>The ID of the network interface attachment.</p>
      */
     inline const Aws::String& GetAttachmentId() const{ return m_attachmentId; }
+
+    /**
+     * <p>The ID of the network interface attachment.</p>
+     */
+    inline bool AttachmentIdHasBeenSet() const { return m_attachmentIdHasBeenSet; }
 
     /**
      * <p>The ID of the network interface attachment.</p>
@@ -123,6 +133,12 @@ namespace Model
      * <p>Indicates whether the network interface is deleted when the instance is
      * terminated.</p>
      */
+    inline bool DeleteOnTerminationHasBeenSet() const { return m_deleteOnTerminationHasBeenSet; }
+
+    /**
+     * <p>Indicates whether the network interface is deleted when the instance is
+     * terminated.</p>
+     */
     inline void SetDeleteOnTermination(bool value) { m_deleteOnTerminationHasBeenSet = true; m_deleteOnTermination = value; }
 
     /**
@@ -140,6 +156,11 @@ namespace Model
     /**
      * <p>The device index of the network interface attachment on the instance.</p>
      */
+    inline bool DeviceIndexHasBeenSet() const { return m_deviceIndexHasBeenSet; }
+
+    /**
+     * <p>The device index of the network interface attachment on the instance.</p>
+     */
     inline void SetDeviceIndex(int value) { m_deviceIndexHasBeenSet = true; m_deviceIndex = value; }
 
     /**
@@ -152,6 +173,11 @@ namespace Model
      * <p>The ID of the instance.</p>
      */
     inline const Aws::String& GetInstanceId() const{ return m_instanceId; }
+
+    /**
+     * <p>The ID of the instance.</p>
+     */
+    inline bool InstanceIdHasBeenSet() const { return m_instanceIdHasBeenSet; }
 
     /**
      * <p>The ID of the instance.</p>
@@ -192,6 +218,11 @@ namespace Model
     /**
      * <p>The AWS account ID of the owner of the instance.</p>
      */
+    inline bool InstanceOwnerIdHasBeenSet() const { return m_instanceOwnerIdHasBeenSet; }
+
+    /**
+     * <p>The AWS account ID of the owner of the instance.</p>
+     */
     inline void SetInstanceOwnerId(const Aws::String& value) { m_instanceOwnerIdHasBeenSet = true; m_instanceOwnerId = value; }
 
     /**
@@ -224,6 +255,11 @@ namespace Model
      * <p>The attachment state.</p>
      */
     inline const AttachmentStatus& GetStatus() const{ return m_status; }
+
+    /**
+     * <p>The attachment state.</p>
+     */
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
     /**
      * <p>The attachment state.</p>

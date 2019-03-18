@@ -50,6 +50,11 @@ namespace Model
     /**
      * The unique ID that specifies the detector where you want to delete a filter.
      */
+    inline bool DetectorIdHasBeenSet() const { return m_detectorIdHasBeenSet; }
+
+    /**
+     * The unique ID that specifies the detector where you want to delete a filter.
+     */
     inline void SetDetectorId(const Aws::String& value) { m_detectorIdHasBeenSet = true; m_detectorId = value; }
 
     /**
@@ -82,6 +87,11 @@ namespace Model
      * The name of the filter.
      */
     inline const Aws::String& GetFilterName() const{ return m_filterName; }
+
+    /**
+     * The name of the filter.
+     */
+    inline bool FilterNameHasBeenSet() const { return m_filterNameHasBeenSet; }
 
     /**
      * The name of the filter.

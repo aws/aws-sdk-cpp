@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The DNS host name for the Docker container.</p>
      */
+    inline bool ContainerHostnameHasBeenSet() const { return m_containerHostnameHasBeenSet; }
+
+    /**
+     * <p>The DNS host name for the Docker container.</p>
+     */
     inline void SetContainerHostname(const Aws::String& value) { m_containerHostnameHasBeenSet = true; m_containerHostname = value; }
 
     /**
@@ -96,6 +101,19 @@ namespace Model
      * Your Own Algorithms with Amazon SageMaker</a>.</p>
      */
     inline const Aws::String& GetImage() const{ return m_image; }
+
+    /**
+     * <p>The Amazon EC2 Container Registry (Amazon ECR) path where inference code is
+     * stored.</p> <p>If you are using your own custom algorithm instead of an
+     * algorithm provided by Amazon SageMaker, the inference code must meet Amazon
+     * SageMaker requirements. Amazon SageMaker supports both
+     * <code>registry/repository[:tag]</code> and
+     * <code>registry/repository[@digest]</code> image path formats. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms.html">Using
+     * Your Own Algorithms with Amazon SageMaker</a>.</p>
+     */
+    inline bool ImageHasBeenSet() const { return m_imageHasBeenSet; }
 
     /**
      * <p>The Amazon EC2 Container Registry (Amazon ECR) path where inference code is
@@ -186,6 +204,12 @@ namespace Model
      * <p>An MD5 hash of the training algorithm that identifies the Docker image used
      * for training.</p>
      */
+    inline bool ImageDigestHasBeenSet() const { return m_imageDigestHasBeenSet; }
+
+    /**
+     * <p>An MD5 hash of the training algorithm that identifies the Docker image used
+     * for training.</p>
+     */
     inline void SetImageDigest(const Aws::String& value) { m_imageDigestHasBeenSet = true; m_imageDigest = value; }
 
     /**
@@ -225,6 +249,13 @@ namespace Model
      * compressed tar archive (<code>.tar.gz</code> suffix).</p>
      */
     inline const Aws::String& GetModelDataUrl() const{ return m_modelDataUrl; }
+
+    /**
+     * <p>The Amazon S3 path where the model artifacts, which result from model
+     * training, are stored. This path must point to a single <code>gzip</code>
+     * compressed tar archive (<code>.tar.gz</code> suffix).</p>
+     */
+    inline bool ModelDataUrlHasBeenSet() const { return m_modelDataUrlHasBeenSet; }
 
     /**
      * <p>The Amazon S3 path where the model artifacts, which result from model
@@ -273,6 +304,11 @@ namespace Model
      * <p>The AWS Marketplace product ID of the model package.</p>
      */
     inline const Aws::String& GetProductId() const{ return m_productId; }
+
+    /**
+     * <p>The AWS Marketplace product ID of the model package.</p>
+     */
+    inline bool ProductIdHasBeenSet() const { return m_productIdHasBeenSet; }
 
     /**
      * <p>The AWS Marketplace product ID of the model package.</p>

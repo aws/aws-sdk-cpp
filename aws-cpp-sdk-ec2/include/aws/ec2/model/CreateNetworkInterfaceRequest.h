@@ -61,6 +61,11 @@ namespace Model
     /**
      * <p>A description for the network interface.</p>
      */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
+
+    /**
+     * <p>A description for the network interface.</p>
+     */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
@@ -103,6 +108,14 @@ namespace Model
      * required permissions, the error response is <code>DryRunOperation</code>.
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
+    inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
+
+    /**
+     * <p>Checks whether you have the required permissions for the action, without
+     * actually making the request, and provides an error response. If you have the
+     * required permissions, the error response is <code>DryRunOperation</code>.
+     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+     */
     inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
 
     /**
@@ -118,6 +131,11 @@ namespace Model
      * <p>The IDs of one or more security groups.</p>
      */
     inline const Aws::Vector<Aws::String>& GetGroups() const{ return m_groups; }
+
+    /**
+     * <p>The IDs of one or more security groups.</p>
+     */
+    inline bool GroupsHasBeenSet() const { return m_groupsHasBeenSet; }
 
     /**
      * <p>The IDs of one or more security groups.</p>
@@ -171,6 +189,15 @@ namespace Model
      * <code>AssignIpv6AddressOnCreation</code> attribute set to <code>true</code>, you
      * can specify <code>0</code> to override this setting.</p>
      */
+    inline bool Ipv6AddressCountHasBeenSet() const { return m_ipv6AddressCountHasBeenSet; }
+
+    /**
+     * <p>The number of IPv6 addresses to assign to a network interface. Amazon EC2
+     * automatically selects the IPv6 addresses from the subnet range. You can't use
+     * this option if specifying specific IPv6 addresses. If your subnet has the
+     * <code>AssignIpv6AddressOnCreation</code> attribute set to <code>true</code>, you
+     * can specify <code>0</code> to override this setting.</p>
+     */
     inline void SetIpv6AddressCount(int value) { m_ipv6AddressCountHasBeenSet = true; m_ipv6AddressCount = value; }
 
     /**
@@ -189,6 +216,13 @@ namespace Model
      * addresses.</p>
      */
     inline const Aws::Vector<InstanceIpv6Address>& GetIpv6Addresses() const{ return m_ipv6Addresses; }
+
+    /**
+     * <p>One or more specific IPv6 addresses from the IPv6 CIDR block range of your
+     * subnet. You can't use this option if you're specifying a number of IPv6
+     * addresses.</p>
+     */
+    inline bool Ipv6AddressesHasBeenSet() const { return m_ipv6AddressesHasBeenSet; }
 
     /**
      * <p>One or more specific IPv6 addresses from the IPv6 CIDR block range of your
@@ -241,6 +275,15 @@ namespace Model
      * be designated as primary).</p>
      */
     inline const Aws::String& GetPrivateIpAddress() const{ return m_privateIpAddress; }
+
+    /**
+     * <p>The primary private IPv4 address of the network interface. If you don't
+     * specify an IPv4 address, Amazon EC2 selects one for you from the subnet's IPv4
+     * CIDR range. If you specify an IP address, you cannot indicate any IP addresses
+     * specified in <code>privateIpAddresses</code> as primary (only one IP address can
+     * be designated as primary).</p>
+     */
+    inline bool PrivateIpAddressHasBeenSet() const { return m_privateIpAddressHasBeenSet; }
 
     /**
      * <p>The primary private IPv4 address of the network interface. If you don't
@@ -305,6 +348,11 @@ namespace Model
     /**
      * <p>One or more private IPv4 addresses.</p>
      */
+    inline bool PrivateIpAddressesHasBeenSet() const { return m_privateIpAddressesHasBeenSet; }
+
+    /**
+     * <p>One or more private IPv4 addresses.</p>
+     */
     inline void SetPrivateIpAddresses(const Aws::Vector<PrivateIpAddressSpecification>& value) { m_privateIpAddressesHasBeenSet = true; m_privateIpAddresses = value; }
 
     /**
@@ -359,6 +407,20 @@ namespace Model
      * Addresses Per ENI Per Instance Type</a> in the <i>Amazon Virtual Private Cloud
      * User Guide</i>.</p>
      */
+    inline bool SecondaryPrivateIpAddressCountHasBeenSet() const { return m_secondaryPrivateIpAddressCountHasBeenSet; }
+
+    /**
+     * <p>The number of secondary private IPv4 addresses to assign to a network
+     * interface. When you specify a number of secondary IPv4 addresses, Amazon EC2
+     * selects these IP addresses within the subnet's IPv4 CIDR range. You can't
+     * specify this option and specify more than one private IP address using
+     * <code>privateIpAddresses</code>.</p> <p>The number of IP addresses you can
+     * assign to a network interface varies by instance type. For more information, see
+     * <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-eni.html#AvailableIpPerENI">IP
+     * Addresses Per ENI Per Instance Type</a> in the <i>Amazon Virtual Private Cloud
+     * User Guide</i>.</p>
+     */
     inline void SetSecondaryPrivateIpAddressCount(int value) { m_secondaryPrivateIpAddressCountHasBeenSet = true; m_secondaryPrivateIpAddressCount = value; }
 
     /**
@@ -380,6 +442,11 @@ namespace Model
      * <p>The ID of the subnet to associate with the network interface.</p>
      */
     inline const Aws::String& GetSubnetId() const{ return m_subnetId; }
+
+    /**
+     * <p>The ID of the subnet to associate with the network interface.</p>
+     */
+    inline bool SubnetIdHasBeenSet() const { return m_subnetIdHasBeenSet; }
 
     /**
      * <p>The ID of the subnet to associate with the network interface.</p>

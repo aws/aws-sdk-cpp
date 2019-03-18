@@ -56,6 +56,13 @@ namespace Model
      * the AWS CLI to call Amazon Textract operations, you can't pass image bytes. The
      * document must be an image in JPG or PNG format.</p>
      */
+    inline bool DocumentHasBeenSet() const { return m_documentHasBeenSet; }
+
+    /**
+     * <p>The input document as base64-encoded bytes or an Amazon S3 object. If you use
+     * the AWS CLI to call Amazon Textract operations, you can't pass image bytes. The
+     * document must be an image in JPG or PNG format.</p>
+     */
     inline void SetDocument(const Document& value) { m_documentHasBeenSet = true; m_document = value; }
 
     /**

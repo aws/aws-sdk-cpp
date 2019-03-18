@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The instance type of the instance. </p>
      */
+    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
+
+    /**
+     * <p>The instance type of the instance. </p>
+     */
     inline void SetType(const Aws::String& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
@@ -92,6 +97,11 @@ namespace Model
     /**
      * <p>The Amazon Machine Image (AMI) ID of the instance.</p>
      */
+    inline bool ImageIdHasBeenSet() const { return m_imageIdHasBeenSet; }
+
+    /**
+     * <p>The Amazon Machine Image (AMI) ID of the instance.</p>
+     */
     inline void SetImageId(const Aws::String& value) { m_imageIdHasBeenSet = true; m_imageId = value; }
 
     /**
@@ -124,6 +134,11 @@ namespace Model
      * <p>The IPv4 addresses associated with the instance.</p>
      */
     inline const Aws::Vector<Aws::String>& GetIpV4Addresses() const{ return m_ipV4Addresses; }
+
+    /**
+     * <p>The IPv4 addresses associated with the instance.</p>
+     */
+    inline bool IpV4AddressesHasBeenSet() const { return m_ipV4AddressesHasBeenSet; }
 
     /**
      * <p>The IPv4 addresses associated with the instance.</p>
@@ -169,6 +184,11 @@ namespace Model
     /**
      * <p>The IPv6 addresses associated with the instance.</p>
      */
+    inline bool IpV6AddressesHasBeenSet() const { return m_ipV6AddressesHasBeenSet; }
+
+    /**
+     * <p>The IPv6 addresses associated with the instance.</p>
+     */
     inline void SetIpV6Addresses(const Aws::Vector<Aws::String>& value) { m_ipV6AddressesHasBeenSet = true; m_ipV6Addresses = value; }
 
     /**
@@ -210,6 +230,11 @@ namespace Model
     /**
      * <p>The key name associated with the instance.</p>
      */
+    inline bool KeyNameHasBeenSet() const { return m_keyNameHasBeenSet; }
+
+    /**
+     * <p>The key name associated with the instance.</p>
+     */
     inline void SetKeyName(const Aws::String& value) { m_keyNameHasBeenSet = true; m_keyName = value; }
 
     /**
@@ -242,6 +267,11 @@ namespace Model
      * <p>The IAM profile ARN of the instance.</p>
      */
     inline const Aws::String& GetIamInstanceProfileArn() const{ return m_iamInstanceProfileArn; }
+
+    /**
+     * <p>The IAM profile ARN of the instance.</p>
+     */
+    inline bool IamInstanceProfileArnHasBeenSet() const { return m_iamInstanceProfileArnHasBeenSet; }
 
     /**
      * <p>The IAM profile ARN of the instance.</p>
@@ -282,6 +312,11 @@ namespace Model
     /**
      * <p>The identifier of the VPC in which the instance was launched.</p>
      */
+    inline bool VpcIdHasBeenSet() const { return m_vpcIdHasBeenSet; }
+
+    /**
+     * <p>The identifier of the VPC in which the instance was launched.</p>
+     */
     inline void SetVpcId(const Aws::String& value) { m_vpcIdHasBeenSet = true; m_vpcId = value; }
 
     /**
@@ -318,6 +353,11 @@ namespace Model
     /**
      * <p>The identifier of the subnet in which the instance was launched.</p>
      */
+    inline bool SubnetIdHasBeenSet() const { return m_subnetIdHasBeenSet; }
+
+    /**
+     * <p>The identifier of the subnet in which the instance was launched.</p>
+     */
     inline void SetSubnetId(const Aws::String& value) { m_subnetIdHasBeenSet = true; m_subnetId = value; }
 
     /**
@@ -350,6 +390,11 @@ namespace Model
      * <p>The date/time the instance was launched.</p>
      */
     inline const Aws::String& GetLaunchedAt() const{ return m_launchedAt; }
+
+    /**
+     * <p>The date/time the instance was launched.</p>
+     */
+    inline bool LaunchedAtHasBeenSet() const { return m_launchedAtHasBeenSet; }
 
     /**
      * <p>The date/time the instance was launched.</p>

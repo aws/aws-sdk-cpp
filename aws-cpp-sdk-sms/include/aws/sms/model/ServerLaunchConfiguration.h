@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>Identifier of the server the launch configuration is associated with.</p>
      */
+    inline bool ServerHasBeenSet() const { return m_serverHasBeenSet; }
+
+    /**
+     * <p>Identifier of the server the launch configuration is associated with.</p>
+     */
     inline void SetServer(const Server& value) { m_serverHasBeenSet = true; m_server = value; }
 
     /**
@@ -79,6 +84,11 @@ namespace Model
      * <p>Logical ID of the server in the Amazon CloudFormation template.</p>
      */
     inline const Aws::String& GetLogicalId() const{ return m_logicalId; }
+
+    /**
+     * <p>Logical ID of the server in the Amazon CloudFormation template.</p>
+     */
+    inline bool LogicalIdHasBeenSet() const { return m_logicalIdHasBeenSet; }
 
     /**
      * <p>Logical ID of the server in the Amazon CloudFormation template.</p>
@@ -119,6 +129,11 @@ namespace Model
     /**
      * <p>Identifier of the VPC the server should be launched into.</p>
      */
+    inline bool VpcHasBeenSet() const { return m_vpcHasBeenSet; }
+
+    /**
+     * <p>Identifier of the VPC the server should be launched into.</p>
+     */
     inline void SetVpc(const Aws::String& value) { m_vpcHasBeenSet = true; m_vpc = value; }
 
     /**
@@ -151,6 +166,11 @@ namespace Model
      * <p>Identifier of the subnet the server should be launched into.</p>
      */
     inline const Aws::String& GetSubnet() const{ return m_subnet; }
+
+    /**
+     * <p>Identifier of the subnet the server should be launched into.</p>
+     */
+    inline bool SubnetHasBeenSet() const { return m_subnetHasBeenSet; }
 
     /**
      * <p>Identifier of the subnet the server should be launched into.</p>
@@ -191,6 +211,11 @@ namespace Model
     /**
      * <p>Identifier of the security group that applies to the launched server.</p>
      */
+    inline bool SecurityGroupHasBeenSet() const { return m_securityGroupHasBeenSet; }
+
+    /**
+     * <p>Identifier of the security group that applies to the launched server.</p>
+     */
     inline void SetSecurityGroup(const Aws::String& value) { m_securityGroupHasBeenSet = true; m_securityGroup = value; }
 
     /**
@@ -223,6 +248,11 @@ namespace Model
      * <p>Name of the EC2 SSH Key to be used for connecting to the launched server.</p>
      */
     inline const Aws::String& GetEc2KeyName() const{ return m_ec2KeyName; }
+
+    /**
+     * <p>Name of the EC2 SSH Key to be used for connecting to the launched server.</p>
+     */
+    inline bool Ec2KeyNameHasBeenSet() const { return m_ec2KeyNameHasBeenSet; }
 
     /**
      * <p>Name of the EC2 SSH Key to be used for connecting to the launched server.</p>
@@ -265,6 +295,12 @@ namespace Model
      * <p>Location of the user-data script to be executed when launching the
      * server.</p>
      */
+    inline bool UserDataHasBeenSet() const { return m_userDataHasBeenSet; }
+
+    /**
+     * <p>Location of the user-data script to be executed when launching the
+     * server.</p>
+     */
     inline void SetUserData(const UserData& value) { m_userDataHasBeenSet = true; m_userData = value; }
 
     /**
@@ -290,6 +326,11 @@ namespace Model
      * <p>Instance type to be used for launching the server.</p>
      */
     inline const Aws::String& GetInstanceType() const{ return m_instanceType; }
+
+    /**
+     * <p>Instance type to be used for launching the server.</p>
+     */
+    inline bool InstanceTypeHasBeenSet() const { return m_instanceTypeHasBeenSet; }
 
     /**
      * <p>Instance type to be used for launching the server.</p>
@@ -327,6 +368,12 @@ namespace Model
      * server.</p>
      */
     inline bool GetAssociatePublicIpAddress() const{ return m_associatePublicIpAddress; }
+
+    /**
+     * <p>If true, a publicly accessible IP address is created when launching the
+     * server.</p>
+     */
+    inline bool AssociatePublicIpAddressHasBeenSet() const { return m_associatePublicIpAddressHasBeenSet; }
 
     /**
      * <p>If true, a publicly accessible IP address is created when launching the

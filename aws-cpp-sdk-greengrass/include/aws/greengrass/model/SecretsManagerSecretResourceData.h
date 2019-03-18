@@ -63,6 +63,13 @@ namespace Model
      * of the secret's latest version (represented by the ''AWSCURRENT'' staging label)
      * is included by default.
      */
+    inline bool ARNHasBeenSet() const { return m_aRNHasBeenSet; }
+
+    /**
+     * The ARN of the Secrets Manager secret to make available on the core. The value
+     * of the secret's latest version (represented by the ''AWSCURRENT'' staging label)
+     * is included by default.
+     */
     inline void SetARN(const Aws::String& value) { m_aRNHasBeenSet = true; m_aRN = value; }
 
     /**
@@ -106,6 +113,12 @@ namespace Model
      * core, in addition to ''AWSCURRENT''.
      */
     inline const Aws::Vector<Aws::String>& GetAdditionalStagingLabelsToDownload() const{ return m_additionalStagingLabelsToDownload; }
+
+    /**
+     * Optional. The staging labels whose values you want to make available on the
+     * core, in addition to ''AWSCURRENT''.
+     */
+    inline bool AdditionalStagingLabelsToDownloadHasBeenSet() const { return m_additionalStagingLabelsToDownloadHasBeenSet; }
 
     /**
      * Optional. The staging labels whose values you want to make available on the

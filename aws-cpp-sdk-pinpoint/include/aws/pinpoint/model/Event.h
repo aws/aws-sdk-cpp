@@ -57,6 +57,11 @@ namespace Model
     /**
      * The package name associated with the app that's recording the event.
      */
+    inline bool AppPackageNameHasBeenSet() const { return m_appPackageNameHasBeenSet; }
+
+    /**
+     * The package name associated with the app that's recording the event.
+     */
     inline void SetAppPackageName(const Aws::String& value) { m_appPackageNameHasBeenSet = true; m_appPackageName = value; }
 
     /**
@@ -89,6 +94,11 @@ namespace Model
      * The title of the app that's recording the event.
      */
     inline const Aws::String& GetAppTitle() const{ return m_appTitle; }
+
+    /**
+     * The title of the app that's recording the event.
+     */
+    inline bool AppTitleHasBeenSet() const { return m_appTitleHasBeenSet; }
 
     /**
      * The title of the app that's recording the event.
@@ -129,6 +139,11 @@ namespace Model
     /**
      * The version number of the app that's recording the event.
      */
+    inline bool AppVersionCodeHasBeenSet() const { return m_appVersionCodeHasBeenSet; }
+
+    /**
+     * The version number of the app that's recording the event.
+     */
     inline void SetAppVersionCode(const Aws::String& value) { m_appVersionCodeHasBeenSet = true; m_appVersionCode = value; }
 
     /**
@@ -161,6 +176,11 @@ namespace Model
      * Custom attributes that are associated with the event you're adding or updating.
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetAttributes() const{ return m_attributes; }
+
+    /**
+     * Custom attributes that are associated with the event you're adding or updating.
+     */
+    inline bool AttributesHasBeenSet() const { return m_attributesHasBeenSet; }
 
     /**
      * Custom attributes that are associated with the event you're adding or updating.
@@ -226,6 +246,11 @@ namespace Model
     /**
      * The version of the SDK that's running on the client device.
      */
+    inline bool ClientSdkVersionHasBeenSet() const { return m_clientSdkVersionHasBeenSet; }
+
+    /**
+     * The version of the SDK that's running on the client device.
+     */
     inline void SetClientSdkVersion(const Aws::String& value) { m_clientSdkVersionHasBeenSet = true; m_clientSdkVersion = value; }
 
     /**
@@ -262,6 +287,11 @@ namespace Model
     /**
      * The name of the custom event that you're recording.
      */
+    inline bool EventTypeHasBeenSet() const { return m_eventTypeHasBeenSet; }
+
+    /**
+     * The name of the custom event that you're recording.
+     */
     inline void SetEventType(const Aws::String& value) { m_eventTypeHasBeenSet = true; m_eventType = value; }
 
     /**
@@ -294,6 +324,11 @@ namespace Model
      * Custom metrics related to the event.
      */
     inline const Aws::Map<Aws::String, double>& GetMetrics() const{ return m_metrics; }
+
+    /**
+     * Custom metrics related to the event.
+     */
+    inline bool MetricsHasBeenSet() const { return m_metricsHasBeenSet; }
 
     /**
      * Custom metrics related to the event.
@@ -339,6 +374,11 @@ namespace Model
     /**
      * The name of the SDK that's being used to record the event.
      */
+    inline bool SdkNameHasBeenSet() const { return m_sdkNameHasBeenSet; }
+
+    /**
+     * The name of the SDK that's being used to record the event.
+     */
     inline void SetSdkName(const Aws::String& value) { m_sdkNameHasBeenSet = true; m_sdkName = value; }
 
     /**
@@ -375,6 +415,11 @@ namespace Model
     /**
      * Information about the session in which the event occurred.
      */
+    inline bool SessionHasBeenSet() const { return m_sessionHasBeenSet; }
+
+    /**
+     * Information about the session in which the event occurred.
+     */
     inline void SetSession(const Session& value) { m_sessionHasBeenSet = true; m_session = value; }
 
     /**
@@ -397,6 +442,11 @@ namespace Model
      * The date and time when the event occurred, in ISO 8601 format.
      */
     inline const Aws::String& GetTimestamp() const{ return m_timestamp; }
+
+    /**
+     * The date and time when the event occurred, in ISO 8601 format.
+     */
+    inline bool TimestampHasBeenSet() const { return m_timestampHasBeenSet; }
 
     /**
      * The date and time when the event occurred, in ISO 8601 format.

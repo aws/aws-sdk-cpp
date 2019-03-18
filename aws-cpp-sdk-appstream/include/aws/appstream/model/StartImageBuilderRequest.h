@@ -52,6 +52,11 @@ namespace Model
     /**
      * <p>The name of the image builder.</p>
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>The name of the image builder.</p>
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
@@ -85,6 +90,12 @@ namespace Model
      * the latest version of the AppStream 2.0 agent, specify [LATEST]. </p>
      */
     inline const Aws::String& GetAppstreamAgentVersion() const{ return m_appstreamAgentVersion; }
+
+    /**
+     * <p>The version of the AppStream 2.0 agent to use for this image builder. To use
+     * the latest version of the AppStream 2.0 agent, specify [LATEST]. </p>
+     */
+    inline bool AppstreamAgentVersionHasBeenSet() const { return m_appstreamAgentVersionHasBeenSet; }
 
     /**
      * <p>The version of the AppStream 2.0 agent to use for this image builder. To use

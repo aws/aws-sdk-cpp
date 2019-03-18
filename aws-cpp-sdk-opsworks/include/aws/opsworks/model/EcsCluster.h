@@ -55,6 +55,11 @@ namespace Model
     /**
      * <p>The cluster's ARN.</p>
      */
+    inline bool EcsClusterArnHasBeenSet() const { return m_ecsClusterArnHasBeenSet; }
+
+    /**
+     * <p>The cluster's ARN.</p>
+     */
     inline void SetEcsClusterArn(const Aws::String& value) { m_ecsClusterArnHasBeenSet = true; m_ecsClusterArn = value; }
 
     /**
@@ -87,6 +92,11 @@ namespace Model
      * <p>The cluster name.</p>
      */
     inline const Aws::String& GetEcsClusterName() const{ return m_ecsClusterName; }
+
+    /**
+     * <p>The cluster name.</p>
+     */
+    inline bool EcsClusterNameHasBeenSet() const { return m_ecsClusterNameHasBeenSet; }
 
     /**
      * <p>The cluster name.</p>
@@ -127,6 +137,11 @@ namespace Model
     /**
      * <p>The stack ID.</p>
      */
+    inline bool StackIdHasBeenSet() const { return m_stackIdHasBeenSet; }
+
+    /**
+     * <p>The stack ID.</p>
+     */
     inline void SetStackId(const Aws::String& value) { m_stackIdHasBeenSet = true; m_stackId = value; }
 
     /**
@@ -159,6 +174,11 @@ namespace Model
      * <p>The time and date that the cluster was registered with the stack.</p>
      */
     inline const Aws::String& GetRegisteredAt() const{ return m_registeredAt; }
+
+    /**
+     * <p>The time and date that the cluster was registered with the stack.</p>
+     */
+    inline bool RegisteredAtHasBeenSet() const { return m_registeredAtHasBeenSet; }
 
     /**
      * <p>The time and date that the cluster was registered with the stack.</p>

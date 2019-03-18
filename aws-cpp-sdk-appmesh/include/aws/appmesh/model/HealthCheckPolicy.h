@@ -61,6 +61,13 @@ namespace Model
      * declaring
          listener healthy.</p>
      */
+    inline bool HealthyThresholdHasBeenSet() const { return m_healthyThresholdHasBeenSet; }
+
+    /**
+     * <p>The number of consecutive successful health checks that must occur before
+     * declaring
+         listener healthy.</p>
+     */
     inline void SetHealthyThreshold(int value) { m_healthyThresholdHasBeenSet = true; m_healthyThreshold = value; }
 
     /**
@@ -75,6 +82,11 @@ namespace Model
      * <p>The time period in milliseconds between each health check execution.</p>
      */
     inline long long GetIntervalMillis() const{ return m_intervalMillis; }
+
+    /**
+     * <p>The time period in milliseconds between each health check execution.</p>
+     */
+    inline bool IntervalMillisHasBeenSet() const { return m_intervalMillisHasBeenSet; }
 
     /**
      * <p>The time period in milliseconds between each health check execution.</p>
@@ -94,6 +106,14 @@ namespace Model
      * is ignored.</p>
      */
     inline const Aws::String& GetPath() const{ return m_path; }
+
+    /**
+     * <p>The destination path for the health check request. This is required only if
+     * the
+         specified protocol is HTTP. If the protocol is TCP, this parameter
+     * is ignored.</p>
+     */
+    inline bool PathHasBeenSet() const { return m_pathHasBeenSet; }
 
     /**
      * <p>The destination path for the health check request. This is required only if
@@ -156,6 +176,13 @@ namespace Model
      * port defined
          in the <a>PortMapping</a> for the listener.</p>
      */
+    inline bool PortHasBeenSet() const { return m_portHasBeenSet; }
+
+    /**
+     * <p>The destination port for the health check request. This port must match the
+     * port defined
+         in the <a>PortMapping</a> for the listener.</p>
+     */
     inline void SetPort(int value) { m_portHasBeenSet = true; m_port = value; }
 
     /**
@@ -170,6 +197,11 @@ namespace Model
      * <p>The protocol for the health check request.</p>
      */
     inline const PortProtocol& GetProtocol() const{ return m_protocol; }
+
+    /**
+     * <p>The protocol for the health check request.</p>
+     */
+    inline bool ProtocolHasBeenSet() const { return m_protocolHasBeenSet; }
 
     /**
      * <p>The protocol for the health check request.</p>
@@ -204,6 +236,13 @@ namespace Model
      * in
          milliseconds.</p>
      */
+    inline bool TimeoutMillisHasBeenSet() const { return m_timeoutMillisHasBeenSet; }
+
+    /**
+     * <p>The amount of time to wait when receiving a response from the health check,
+     * in
+         milliseconds.</p>
+     */
     inline void SetTimeoutMillis(long long value) { m_timeoutMillisHasBeenSet = true; m_timeoutMillis = value; }
 
     /**
@@ -220,6 +259,13 @@ namespace Model
          virtual node unhealthy. </p>
      */
     inline int GetUnhealthyThreshold() const{ return m_unhealthyThreshold; }
+
+    /**
+     * <p>The number of consecutive failed health checks that must occur before
+     * declaring a
+         virtual node unhealthy. </p>
+     */
+    inline bool UnhealthyThresholdHasBeenSet() const { return m_unhealthyThresholdHasBeenSet; }
 
     /**
      * <p>The number of consecutive failed health checks that must occur before

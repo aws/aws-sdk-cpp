@@ -63,6 +63,12 @@ namespace Model
      * <p>The name of the custom terminology applied to the input text by Amazon
      * Translate for the translated text response.</p>
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>The name of the custom terminology applied to the input text by Amazon
+     * Translate for the translated text response.</p>
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
@@ -103,6 +109,14 @@ namespace Model
      * source text. </p>
      */
     inline const Aws::Vector<Term>& GetTerms() const{ return m_terms; }
+
+    /**
+     * <p>The specific terms of the custom terminology applied to the input text by
+     * Amazon Translate for the translated text response. A maximum of 250 terms will
+     * be returned, and the specific terms applied will be the first 250 terms in the
+     * source text. </p>
+     */
+    inline bool TermsHasBeenSet() const { return m_termsHasBeenSet; }
 
     /**
      * <p>The specific terms of the custom terminology applied to the input text by

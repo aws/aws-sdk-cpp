@@ -56,6 +56,13 @@ namespace Model
      * want to delete. <code>SizeConstraintSetId</code> is returned by
      * <a>CreateSizeConstraintSet</a> and by <a>ListSizeConstraintSets</a>.</p>
      */
+    inline bool SizeConstraintSetIdHasBeenSet() const { return m_sizeConstraintSetIdHasBeenSet; }
+
+    /**
+     * <p>The <code>SizeConstraintSetId</code> of the <a>SizeConstraintSet</a> that you
+     * want to delete. <code>SizeConstraintSetId</code> is returned by
+     * <a>CreateSizeConstraintSet</a> and by <a>ListSizeConstraintSets</a>.</p>
+     */
     inline void SetSizeConstraintSetId(const Aws::String& value) { m_sizeConstraintSetIdHasBeenSet = true; m_sizeConstraintSetId = value; }
 
     /**
@@ -98,6 +105,11 @@ namespace Model
      * <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
      */
     inline const Aws::String& GetChangeToken() const{ return m_changeToken; }
+
+    /**
+     * <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
+     */
+    inline bool ChangeTokenHasBeenSet() const { return m_changeTokenHasBeenSet; }
 
     /**
      * <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>

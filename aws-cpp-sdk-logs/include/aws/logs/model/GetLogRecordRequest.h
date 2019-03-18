@@ -60,6 +60,15 @@ namespace Model
      * to use as <code>logRecordPointer</code> to retrieve that complete log event
      * record.</p>
      */
+    inline bool LogRecordPointerHasBeenSet() const { return m_logRecordPointerHasBeenSet; }
+
+    /**
+     * <p>The pointer corresponding to the log event record you want to retrieve. You
+     * get this from the response of a <code>GetQueryResults</code> operation. In that
+     * response, the value of the <code>@ptr</code> field for a log event is the value
+     * to use as <code>logRecordPointer</code> to retrieve that complete log event
+     * record.</p>
+     */
     inline void SetLogRecordPointer(const Aws::String& value) { m_logRecordPointerHasBeenSet = true; m_logRecordPointer = value; }
 
     /**

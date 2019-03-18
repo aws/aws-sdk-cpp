@@ -60,6 +60,11 @@ namespace Model
     /**
      * <p>The date and time the flow log was created.</p>
      */
+    inline bool CreationTimeHasBeenSet() const { return m_creationTimeHasBeenSet; }
+
+    /**
+     * <p>The date and time the flow log was created.</p>
+     */
     inline void SetCreationTime(const Aws::Utils::DateTime& value) { m_creationTimeHasBeenSet = true; m_creationTime = value; }
 
     /**
@@ -87,6 +92,16 @@ namespace Model
      * CloudWatch Logs. <code>Unknown error</code> indicates an internal error.</p>
      */
     inline const Aws::String& GetDeliverLogsErrorMessage() const{ return m_deliverLogsErrorMessage; }
+
+    /**
+     * <p>Information about the error that occurred. <code>Rate limited</code>
+     * indicates that CloudWatch Logs throttling has been applied for one or more
+     * network interfaces, or that you've reached the limit on the number of log groups
+     * that you can create. <code>Access error</code> indicates that the IAM role
+     * associated with the flow log does not have sufficient permissions to publish to
+     * CloudWatch Logs. <code>Unknown error</code> indicates an internal error.</p>
+     */
+    inline bool DeliverLogsErrorMessageHasBeenSet() const { return m_deliverLogsErrorMessageHasBeenSet; }
 
     /**
      * <p>Information about the error that occurred. <code>Rate limited</code>
@@ -157,6 +172,11 @@ namespace Model
     /**
      * <p>The ARN of the IAM role that posts logs to CloudWatch Logs.</p>
      */
+    inline bool DeliverLogsPermissionArnHasBeenSet() const { return m_deliverLogsPermissionArnHasBeenSet; }
+
+    /**
+     * <p>The ARN of the IAM role that posts logs to CloudWatch Logs.</p>
+     */
     inline void SetDeliverLogsPermissionArn(const Aws::String& value) { m_deliverLogsPermissionArnHasBeenSet = true; m_deliverLogsPermissionArn = value; }
 
     /**
@@ -190,6 +210,12 @@ namespace Model
      * <code>FAILED</code>).</p>
      */
     inline const Aws::String& GetDeliverLogsStatus() const{ return m_deliverLogsStatus; }
+
+    /**
+     * <p>The status of the logs delivery (<code>SUCCESS</code> |
+     * <code>FAILED</code>).</p>
+     */
+    inline bool DeliverLogsStatusHasBeenSet() const { return m_deliverLogsStatusHasBeenSet; }
 
     /**
      * <p>The status of the logs delivery (<code>SUCCESS</code> |
@@ -236,6 +262,11 @@ namespace Model
     /**
      * <p>The flow log ID.</p>
      */
+    inline bool FlowLogIdHasBeenSet() const { return m_flowLogIdHasBeenSet; }
+
+    /**
+     * <p>The flow log ID.</p>
+     */
     inline void SetFlowLogId(const Aws::String& value) { m_flowLogIdHasBeenSet = true; m_flowLogId = value; }
 
     /**
@@ -268,6 +299,11 @@ namespace Model
      * <p>The status of the flow log (<code>ACTIVE</code>).</p>
      */
     inline const Aws::String& GetFlowLogStatus() const{ return m_flowLogStatus; }
+
+    /**
+     * <p>The status of the flow log (<code>ACTIVE</code>).</p>
+     */
+    inline bool FlowLogStatusHasBeenSet() const { return m_flowLogStatusHasBeenSet; }
 
     /**
      * <p>The status of the flow log (<code>ACTIVE</code>).</p>
@@ -308,6 +344,11 @@ namespace Model
     /**
      * <p>The name of the flow log group.</p>
      */
+    inline bool LogGroupNameHasBeenSet() const { return m_logGroupNameHasBeenSet; }
+
+    /**
+     * <p>The name of the flow log group.</p>
+     */
     inline void SetLogGroupName(const Aws::String& value) { m_logGroupNameHasBeenSet = true; m_logGroupName = value; }
 
     /**
@@ -340,6 +381,11 @@ namespace Model
      * <p>The ID of the resource on which the flow log was created.</p>
      */
     inline const Aws::String& GetResourceId() const{ return m_resourceId; }
+
+    /**
+     * <p>The ID of the resource on which the flow log was created.</p>
+     */
+    inline bool ResourceIdHasBeenSet() const { return m_resourceIdHasBeenSet; }
 
     /**
      * <p>The ID of the resource on which the flow log was created.</p>
@@ -380,6 +426,11 @@ namespace Model
     /**
      * <p>The type of traffic captured for the flow log.</p>
      */
+    inline bool TrafficTypeHasBeenSet() const { return m_trafficTypeHasBeenSet; }
+
+    /**
+     * <p>The type of traffic captured for the flow log.</p>
+     */
     inline void SetTrafficType(const TrafficType& value) { m_trafficTypeHasBeenSet = true; m_trafficType = value; }
 
     /**
@@ -403,6 +454,12 @@ namespace Model
      * Flow log data can be published to CloudWatch Logs or Amazon S3.</p>
      */
     inline const LogDestinationType& GetLogDestinationType() const{ return m_logDestinationType; }
+
+    /**
+     * <p>Specifies the type of destination to which the flow log data is published.
+     * Flow log data can be published to CloudWatch Logs or Amazon S3.</p>
+     */
+    inline bool LogDestinationTypeHasBeenSet() const { return m_logDestinationTypeHasBeenSet; }
 
     /**
      * <p>Specifies the type of destination to which the flow log data is published.
@@ -438,6 +495,16 @@ namespace Model
      * ARN of the Amazon S3 bucket to which the data is published.</p>
      */
     inline const Aws::String& GetLogDestination() const{ return m_logDestination; }
+
+    /**
+     * <p>Specifies the destination to which the flow log data is published. Flow log
+     * data can be published to an CloudWatch Logs log group or an Amazon S3 bucket. If
+     * the flow log publishes to CloudWatch Logs, this element indicates the Amazon
+     * Resource Name (ARN) of the CloudWatch Logs log group to which the data is
+     * published. If the flow log publishes to Amazon S3, this element indicates the
+     * ARN of the Amazon S3 bucket to which the data is published.</p>
+     */
+    inline bool LogDestinationHasBeenSet() const { return m_logDestinationHasBeenSet; }
 
     /**
      * <p>Specifies the destination to which the flow log data is published. Flow log

@@ -60,6 +60,11 @@ namespace Model
     /**
      * <p>The key of the tag.</p>
      */
+    inline bool TagKeyHasBeenSet() const { return m_tagKeyHasBeenSet; }
+
+    /**
+     * <p>The key of the tag.</p>
+     */
     inline void SetTagKey(const Aws::String& value) { m_tagKeyHasBeenSet = true; m_tagKey = value; }
 
     /**
@@ -92,6 +97,11 @@ namespace Model
      * <p>The value of the tag.</p>
      */
     inline const Aws::String& GetTagValue() const{ return m_tagValue; }
+
+    /**
+     * <p>The value of the tag.</p>
+     */
+    inline bool TagValueHasBeenSet() const { return m_tagValueHasBeenSet; }
 
     /**
      * <p>The value of the tag.</p>

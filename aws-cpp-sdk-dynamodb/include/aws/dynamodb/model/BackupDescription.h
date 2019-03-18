@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p>Contains the details of the backup created for the table. </p>
      */
+    inline bool BackupDetailsHasBeenSet() const { return m_backupDetailsHasBeenSet; }
+
+    /**
+     * <p>Contains the details of the backup created for the table. </p>
+     */
     inline void SetBackupDetails(const BackupDetails& value) { m_backupDetailsHasBeenSet = true; m_backupDetails = value; }
 
     /**
@@ -80,6 +85,11 @@ namespace Model
      * <p>Contains the details of the table when the backup was created. </p>
      */
     inline const SourceTableDetails& GetSourceTableDetails() const{ return m_sourceTableDetails; }
+
+    /**
+     * <p>Contains the details of the table when the backup was created. </p>
+     */
+    inline bool SourceTableDetailsHasBeenSet() const { return m_sourceTableDetailsHasBeenSet; }
 
     /**
      * <p>Contains the details of the table when the backup was created. </p>
@@ -107,6 +117,12 @@ namespace Model
      * created. For example, LSIs, GSIs, streams, TTL.</p>
      */
     inline const SourceTableFeatureDetails& GetSourceTableFeatureDetails() const{ return m_sourceTableFeatureDetails; }
+
+    /**
+     * <p>Contains the details of the features enabled on the table when the backup was
+     * created. For example, LSIs, GSIs, streams, TTL.</p>
+     */
+    inline bool SourceTableFeatureDetailsHasBeenSet() const { return m_sourceTableFeatureDetailsHasBeenSet; }
 
     /**
      * <p>Contains the details of the features enabled on the table when the backup was

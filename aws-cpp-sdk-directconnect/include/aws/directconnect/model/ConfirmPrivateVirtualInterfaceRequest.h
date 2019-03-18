@@ -52,6 +52,11 @@ namespace Model
     /**
      * <p>The ID of the virtual interface.</p>
      */
+    inline bool VirtualInterfaceIdHasBeenSet() const { return m_virtualInterfaceIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the virtual interface.</p>
+     */
     inline void SetVirtualInterfaceId(const Aws::String& value) { m_virtualInterfaceIdHasBeenSet = true; m_virtualInterfaceId = value; }
 
     /**
@@ -88,6 +93,11 @@ namespace Model
     /**
      * <p>The ID of the virtual private gateway.</p>
      */
+    inline bool VirtualGatewayIdHasBeenSet() const { return m_virtualGatewayIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the virtual private gateway.</p>
+     */
     inline void SetVirtualGatewayId(const Aws::String& value) { m_virtualGatewayIdHasBeenSet = true; m_virtualGatewayId = value; }
 
     /**
@@ -120,6 +130,11 @@ namespace Model
      * <p>The ID of the Direct Connect gateway.</p>
      */
     inline const Aws::String& GetDirectConnectGatewayId() const{ return m_directConnectGatewayId; }
+
+    /**
+     * <p>The ID of the Direct Connect gateway.</p>
+     */
+    inline bool DirectConnectGatewayIdHasBeenSet() const { return m_directConnectGatewayIdHasBeenSet; }
 
     /**
      * <p>The ID of the Direct Connect gateway.</p>

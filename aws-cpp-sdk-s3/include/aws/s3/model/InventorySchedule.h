@@ -55,6 +55,11 @@ namespace Model
     /**
      * <p>Specifies how frequently inventory results are produced.</p>
      */
+    inline bool FrequencyHasBeenSet() const { return m_frequencyHasBeenSet; }
+
+    /**
+     * <p>Specifies how frequently inventory results are produced.</p>
+     */
     inline void SetFrequency(const InventoryFrequency& value) { m_frequencyHasBeenSet = true; m_frequency = value; }
 
     /**

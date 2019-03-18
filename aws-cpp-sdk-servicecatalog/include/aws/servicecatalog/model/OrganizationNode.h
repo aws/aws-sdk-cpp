@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The organization node type.</p>
      */
+    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
+
+    /**
+     * <p>The organization node type.</p>
+     */
     inline void SetType(const OrganizationNodeType& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
@@ -78,6 +83,11 @@ namespace Model
      * <p>The identifier of the organization node.</p>
      */
     inline const Aws::String& GetValue() const{ return m_value; }
+
+    /**
+     * <p>The identifier of the organization node.</p>
+     */
+    inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
 
     /**
      * <p>The identifier of the organization node.</p>

@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The identifier of the VPC that the directory is in.</p>
      */
+    inline bool VpcIdHasBeenSet() const { return m_vpcIdHasBeenSet; }
+
+    /**
+     * <p>The identifier of the VPC that the directory is in.</p>
+     */
     inline void SetVpcId(const Aws::String& value) { m_vpcIdHasBeenSet = true; m_vpcId = value; }
 
     /**
@@ -88,6 +93,11 @@ namespace Model
      * <p>The identifiers of the subnets for the directory servers.</p>
      */
     inline const Aws::Vector<Aws::String>& GetSubnetIds() const{ return m_subnetIds; }
+
+    /**
+     * <p>The identifiers of the subnets for the directory servers.</p>
+     */
+    inline bool SubnetIdsHasBeenSet() const { return m_subnetIdsHasBeenSet; }
 
     /**
      * <p>The identifiers of the subnets for the directory servers.</p>
@@ -133,6 +143,11 @@ namespace Model
     /**
      * <p>The domain controller security group identifier for the directory.</p>
      */
+    inline bool SecurityGroupIdHasBeenSet() const { return m_securityGroupIdHasBeenSet; }
+
+    /**
+     * <p>The domain controller security group identifier for the directory.</p>
+     */
     inline void SetSecurityGroupId(const Aws::String& value) { m_securityGroupIdHasBeenSet = true; m_securityGroupId = value; }
 
     /**
@@ -165,6 +180,11 @@ namespace Model
      * <p>The list of Availability Zones that the directory is in.</p>
      */
     inline const Aws::Vector<Aws::String>& GetAvailabilityZones() const{ return m_availabilityZones; }
+
+    /**
+     * <p>The list of Availability Zones that the directory is in.</p>
+     */
+    inline bool AvailabilityZonesHasBeenSet() const { return m_availabilityZonesHasBeenSet; }
 
     /**
      * <p>The list of Availability Zones that the directory is in.</p>

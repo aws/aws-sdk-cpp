@@ -55,6 +55,12 @@ namespace Model
      * <p>A UTF-8 string. Each string must contain fewer that 5,000 bytes of UTF
      * encoded characters.</p>
      */
+    inline bool TextHasBeenSet() const { return m_textHasBeenSet; }
+
+    /**
+     * <p>A UTF-8 string. Each string must contain fewer that 5,000 bytes of UTF
+     * encoded characters.</p>
+     */
     inline void SetText(const Aws::String& value) { m_textHasBeenSet = true; m_text = value; }
 
     /**
@@ -93,6 +99,12 @@ namespace Model
      * Spanish ("es").</p>
      */
     inline const SyntaxLanguageCode& GetLanguageCode() const{ return m_languageCode; }
+
+    /**
+     * <p>The language code of the input documents. You can specify English ("en") or
+     * Spanish ("es").</p>
+     */
+    inline bool LanguageCodeHasBeenSet() const { return m_languageCodeHasBeenSet; }
 
     /**
      * <p>The language code of the input documents. You can specify English ("en") or

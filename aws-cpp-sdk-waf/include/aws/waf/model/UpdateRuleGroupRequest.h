@@ -58,6 +58,13 @@ namespace Model
      * <code>RuleGroupId</code> is returned by <a>CreateRuleGroup</a> and by
      * <a>ListRuleGroups</a>.</p>
      */
+    inline bool RuleGroupIdHasBeenSet() const { return m_ruleGroupIdHasBeenSet; }
+
+    /**
+     * <p>The <code>RuleGroupId</code> of the <a>RuleGroup</a> that you want to update.
+     * <code>RuleGroupId</code> is returned by <a>CreateRuleGroup</a> and by
+     * <a>ListRuleGroups</a>.</p>
+     */
     inline void SetRuleGroupId(const Aws::String& value) { m_ruleGroupIdHasBeenSet = true; m_ruleGroupId = value; }
 
     /**
@@ -107,6 +114,18 @@ namespace Model
      * <code>ActivatedRule|OverrideAction</code>.</p>
      */
     inline const Aws::Vector<RuleGroupUpdate>& GetUpdates() const{ return m_updates; }
+
+    /**
+     * <p>An array of <code>RuleGroupUpdate</code> objects that you want to insert into
+     * or delete from a <a>RuleGroup</a>.</p> <p>You can only insert
+     * <code>REGULAR</code> rules into a rule group.</p> <p>
+     * <code>ActivatedRule|OverrideAction</code> applies only when updating or adding a
+     * <code>RuleGroup</code> to a <code>WebACL</code>. In this case you do not use
+     * <code>ActivatedRule|Action</code>. For all other update requests,
+     * <code>ActivatedRule|Action</code> is used instead of
+     * <code>ActivatedRule|OverrideAction</code>.</p>
+     */
+    inline bool UpdatesHasBeenSet() const { return m_updatesHasBeenSet; }
 
     /**
      * <p>An array of <code>RuleGroupUpdate</code> objects that you want to insert into
@@ -185,6 +204,11 @@ namespace Model
      * <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
      */
     inline const Aws::String& GetChangeToken() const{ return m_changeToken; }
+
+    /**
+     * <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
+     */
+    inline bool ChangeTokenHasBeenSet() const { return m_changeTokenHasBeenSet; }
 
     /**
      * <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>

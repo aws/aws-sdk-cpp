@@ -57,6 +57,13 @@ namespace Model
      * <code>SubmitTimeBefore</code>, or <code>SubmitTimeAfter</code>. You can only set
      * one filter at a time.</p>
      */
+    inline bool FilterHasBeenSet() const { return m_filterHasBeenSet; }
+
+    /**
+     * <p>Filters the list of entities returned. You can filter on <code>Status</code>,
+     * <code>SubmitTimeBefore</code>, or <code>SubmitTimeAfter</code>. You can only set
+     * one filter at a time.</p>
+     */
     inline void SetFilter(const EntityRecognizerFilter& value) { m_filterHasBeenSet = true; m_filter = value; }
 
     /**
@@ -85,6 +92,11 @@ namespace Model
      * <p>Identifies the next page of results to return.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
+    /**
+     * <p>Identifies the next page of results to return.</p>
+     */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
      * <p>Identifies the next page of results to return.</p>
@@ -122,6 +134,12 @@ namespace Model
      * 100.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
+
+    /**
+     * <p> The maximum number of results to return on each page. The default is
+     * 100.</p>
+     */
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
 
     /**
      * <p> The maximum number of results to return on each page. The default is

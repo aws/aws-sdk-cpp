@@ -64,6 +64,12 @@ namespace Model
      * <p>Type of the public key algorithm and size, in bits, of the key pair that your
      * key pair creates when it issues a certificate.</p>
      */
+    inline bool KeyAlgorithmHasBeenSet() const { return m_keyAlgorithmHasBeenSet; }
+
+    /**
+     * <p>Type of the public key algorithm and size, in bits, of the key pair that your
+     * key pair creates when it issues a certificate.</p>
+     */
     inline void SetKeyAlgorithm(const KeyAlgorithm& value) { m_keyAlgorithmHasBeenSet = true; m_keyAlgorithm = value; }
 
     /**
@@ -93,6 +99,11 @@ namespace Model
     /**
      * <p>Name of the algorithm your private CA uses to sign certificate requests.</p>
      */
+    inline bool SigningAlgorithmHasBeenSet() const { return m_signingAlgorithmHasBeenSet; }
+
+    /**
+     * <p>Name of the algorithm your private CA uses to sign certificate requests.</p>
+     */
     inline void SetSigningAlgorithm(const SigningAlgorithm& value) { m_signingAlgorithmHasBeenSet = true; m_signingAlgorithm = value; }
 
     /**
@@ -116,6 +127,12 @@ namespace Model
      * CA.</p>
      */
     inline const ASN1Subject& GetSubject() const{ return m_subject; }
+
+    /**
+     * <p>Structure that contains X.500 distinguished name information for your private
+     * CA.</p>
+     */
+    inline bool SubjectHasBeenSet() const { return m_subjectHasBeenSet; }
 
     /**
      * <p>Structure that contains X.500 distinguished name information for your private

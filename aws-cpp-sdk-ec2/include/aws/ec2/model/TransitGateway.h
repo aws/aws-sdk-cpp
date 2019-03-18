@@ -62,6 +62,11 @@ namespace Model
     /**
      * <p>The ID of the transit gateway.</p>
      */
+    inline bool TransitGatewayIdHasBeenSet() const { return m_transitGatewayIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the transit gateway.</p>
+     */
     inline void SetTransitGatewayId(const Aws::String& value) { m_transitGatewayIdHasBeenSet = true; m_transitGatewayId = value; }
 
     /**
@@ -94,6 +99,11 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the transit gateway.</p>
      */
     inline const Aws::String& GetTransitGatewayArn() const{ return m_transitGatewayArn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the transit gateway.</p>
+     */
+    inline bool TransitGatewayArnHasBeenSet() const { return m_transitGatewayArnHasBeenSet; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the transit gateway.</p>
@@ -134,6 +144,11 @@ namespace Model
     /**
      * <p>The state of the transit gateway.</p>
      */
+    inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
+
+    /**
+     * <p>The state of the transit gateway.</p>
+     */
     inline void SetState(const TransitGatewayState& value) { m_stateHasBeenSet = true; m_state = value; }
 
     /**
@@ -156,6 +171,11 @@ namespace Model
      * <p>The ID of the AWS account ID that owns the transit gateway.</p>
      */
     inline const Aws::String& GetOwnerId() const{ return m_ownerId; }
+
+    /**
+     * <p>The ID of the AWS account ID that owns the transit gateway.</p>
+     */
+    inline bool OwnerIdHasBeenSet() const { return m_ownerIdHasBeenSet; }
 
     /**
      * <p>The ID of the AWS account ID that owns the transit gateway.</p>
@@ -196,6 +216,11 @@ namespace Model
     /**
      * <p>The description of the transit gateway.</p>
      */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
+
+    /**
+     * <p>The description of the transit gateway.</p>
+     */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
@@ -232,6 +257,11 @@ namespace Model
     /**
      * <p>The creation time.</p>
      */
+    inline bool CreationTimeHasBeenSet() const { return m_creationTimeHasBeenSet; }
+
+    /**
+     * <p>The creation time.</p>
+     */
     inline void SetCreationTime(const Aws::Utils::DateTime& value) { m_creationTimeHasBeenSet = true; m_creationTime = value; }
 
     /**
@@ -258,6 +288,11 @@ namespace Model
     /**
      * <p>The transit gateway options.</p>
      */
+    inline bool OptionsHasBeenSet() const { return m_optionsHasBeenSet; }
+
+    /**
+     * <p>The transit gateway options.</p>
+     */
     inline void SetOptions(const TransitGatewayOptions& value) { m_optionsHasBeenSet = true; m_options = value; }
 
     /**
@@ -280,6 +315,11 @@ namespace Model
      * <p>The tags for the transit gateway.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>The tags for the transit gateway.</p>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
      * <p>The tags for the transit gateway.</p>

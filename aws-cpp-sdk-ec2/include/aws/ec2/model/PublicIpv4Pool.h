@@ -59,6 +59,11 @@ namespace Model
     /**
      * <p>The ID of the IPv4 address pool.</p>
      */
+    inline bool PoolIdHasBeenSet() const { return m_poolIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the IPv4 address pool.</p>
+     */
     inline void SetPoolId(const Aws::String& value) { m_poolIdHasBeenSet = true; m_poolId = value; }
 
     /**
@@ -91,6 +96,11 @@ namespace Model
      * <p>A description of the address pool.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
+
+    /**
+     * <p>A description of the address pool.</p>
+     */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
 
     /**
      * <p>A description of the address pool.</p>
@@ -131,6 +141,11 @@ namespace Model
     /**
      * <p>The address ranges.</p>
      */
+    inline bool PoolAddressRangesHasBeenSet() const { return m_poolAddressRangesHasBeenSet; }
+
+    /**
+     * <p>The address ranges.</p>
+     */
     inline void SetPoolAddressRanges(const Aws::Vector<PublicIpv4PoolRange>& value) { m_poolAddressRangesHasBeenSet = true; m_poolAddressRanges = value; }
 
     /**
@@ -167,6 +182,11 @@ namespace Model
     /**
      * <p>The total number of addresses.</p>
      */
+    inline bool TotalAddressCountHasBeenSet() const { return m_totalAddressCountHasBeenSet; }
+
+    /**
+     * <p>The total number of addresses.</p>
+     */
     inline void SetTotalAddressCount(int value) { m_totalAddressCountHasBeenSet = true; m_totalAddressCount = value; }
 
     /**
@@ -179,6 +199,11 @@ namespace Model
      * <p>The total number of available addresses.</p>
      */
     inline int GetTotalAvailableAddressCount() const{ return m_totalAvailableAddressCount; }
+
+    /**
+     * <p>The total number of available addresses.</p>
+     */
+    inline bool TotalAvailableAddressCountHasBeenSet() const { return m_totalAvailableAddressCountHasBeenSet; }
 
     /**
      * <p>The total number of available addresses.</p>

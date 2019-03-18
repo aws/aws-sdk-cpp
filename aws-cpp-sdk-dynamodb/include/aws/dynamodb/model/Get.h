@@ -60,6 +60,12 @@ namespace Model
      * <p>A map of attribute names to <code>AttributeValue</code> objects that
      * specifies the primary key of the item to retrieve.</p>
      */
+    inline bool KeyHasBeenSet() const { return m_keyHasBeenSet; }
+
+    /**
+     * <p>A map of attribute names to <code>AttributeValue</code> objects that
+     * specifies the primary key of the item to retrieve.</p>
+     */
     inline void SetKey(const Aws::Map<Aws::String, AttributeValue>& value) { m_keyHasBeenSet = true; m_key = value; }
 
     /**
@@ -125,6 +131,11 @@ namespace Model
     /**
      * <p>The name of the table from which to retrieve the specified item.</p>
      */
+    inline bool TableNameHasBeenSet() const { return m_tableNameHasBeenSet; }
+
+    /**
+     * <p>The name of the table from which to retrieve the specified item.</p>
+     */
     inline void SetTableName(const Aws::String& value) { m_tableNameHasBeenSet = true; m_tableName = value; }
 
     /**
@@ -161,6 +172,15 @@ namespace Model
      * they do not appear in the result.</p>
      */
     inline const Aws::String& GetProjectionExpression() const{ return m_projectionExpression; }
+
+    /**
+     * <p>A string that identifies one or more attributes of the specified item to
+     * retrieve from the table. The attributes in the expression must be separated by
+     * commas. If no attribute names are specified, then all attributes of the
+     * specified item are returned. If any of the requested attributes are not found,
+     * they do not appear in the result.</p>
+     */
+    inline bool ProjectionExpressionHasBeenSet() const { return m_projectionExpressionHasBeenSet; }
 
     /**
      * <p>A string that identifies one or more attributes of the specified item to
@@ -222,6 +242,12 @@ namespace Model
      * ProjectionExpression parameter.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetExpressionAttributeNames() const{ return m_expressionAttributeNames; }
+
+    /**
+     * <p>One or more substitution tokens for attribute names in the
+     * ProjectionExpression parameter.</p>
+     */
+    inline bool ExpressionAttributeNamesHasBeenSet() const { return m_expressionAttributeNamesHasBeenSet; }
 
     /**
      * <p>One or more substitution tokens for attribute names in the

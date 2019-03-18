@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The percent (0-100) of traffic diverted to a canary deployment.</p>
      */
+    inline bool PercentTrafficHasBeenSet() const { return m_percentTrafficHasBeenSet; }
+
+    /**
+     * <p>The percent (0-100) of traffic diverted to a canary deployment.</p>
+     */
     inline void SetPercentTraffic(double value) { m_percentTrafficHasBeenSet = true; m_percentTraffic = value; }
 
     /**
@@ -68,6 +73,11 @@ namespace Model
      * <p>The ID of the canary deployment.</p>
      */
     inline const Aws::String& GetDeploymentId() const{ return m_deploymentId; }
+
+    /**
+     * <p>The ID of the canary deployment.</p>
+     */
+    inline bool DeploymentIdHasBeenSet() const { return m_deploymentIdHasBeenSet; }
 
     /**
      * <p>The ID of the canary deployment.</p>
@@ -106,6 +116,13 @@ namespace Model
      * as a string-to-string map between stage variable names and their values.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetStageVariableOverrides() const{ return m_stageVariableOverrides; }
+
+    /**
+     * <p>Stage variables overridden for a canary release deployment, including new
+     * stage variables introduced in the canary. These stage variables are represented
+     * as a string-to-string map between stage variable names and their values.</p>
+     */
+    inline bool StageVariableOverridesHasBeenSet() const { return m_stageVariableOverridesHasBeenSet; }
 
     /**
      * <p>Stage variables overridden for a canary release deployment, including new
@@ -190,6 +207,12 @@ namespace Model
      * or not.</p>
      */
     inline bool GetUseStageCache() const{ return m_useStageCache; }
+
+    /**
+     * <p>A Boolean flag to indicate whether the canary deployment uses the stage cache
+     * or not.</p>
+     */
+    inline bool UseStageCacheHasBeenSet() const { return m_useStageCacheHasBeenSet; }
 
     /**
      * <p>A Boolean flag to indicate whether the canary deployment uses the stage cache

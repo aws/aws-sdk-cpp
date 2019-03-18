@@ -50,6 +50,11 @@ namespace Model
     /**
      * <p>The policy to detach.</p>
      */
+    inline bool PolicyNameHasBeenSet() const { return m_policyNameHasBeenSet; }
+
+    /**
+     * <p>The policy to detach.</p>
+     */
     inline void SetPolicyName(const Aws::String& value) { m_policyNameHasBeenSet = true; m_policyName = value; }
 
     /**
@@ -82,6 +87,11 @@ namespace Model
      * <p>The target from which the policy will be detached.</p>
      */
     inline const Aws::String& GetTarget() const{ return m_target; }
+
+    /**
+     * <p>The target from which the policy will be detached.</p>
+     */
+    inline bool TargetHasBeenSet() const { return m_targetHasBeenSet; }
 
     /**
      * <p>The target from which the policy will be detached.</p>

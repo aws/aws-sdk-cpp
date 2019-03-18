@@ -62,6 +62,12 @@ namespace Model
      * <p>Indicates whether AWS or the customer owns and manages the AWS Config
      * rule.</p>
      */
+    inline bool OwnerHasBeenSet() const { return m_ownerHasBeenSet; }
+
+    /**
+     * <p>Indicates whether AWS or the customer owns and manages the AWS Config
+     * rule.</p>
+     */
     inline void SetOwner(const Owner& value) { m_ownerHasBeenSet = true; m_owner = value; }
 
     /**
@@ -93,6 +99,17 @@ namespace Model
      * <code>arn:aws:lambda:us-east-2:123456789012:function:custom_rule_name</code>.</p>
      */
     inline const Aws::String& GetSourceIdentifier() const{ return m_sourceIdentifier; }
+
+    /**
+     * <p>For AWS Config managed rules, a predefined identifier from a list. For
+     * example, <code>IAM_PASSWORD_POLICY</code> is a managed rule. To reference a
+     * managed rule, see <a
+     * href="https://docs.aws.amazon.com/config/latest/developerguide/evaluate-config_use-managed-rules.html">Using
+     * AWS Managed Config Rules</a>.</p> <p>For custom rules, the identifier is the
+     * Amazon Resource Name (ARN) of the rule's AWS Lambda function, such as
+     * <code>arn:aws:lambda:us-east-2:123456789012:function:custom_rule_name</code>.</p>
+     */
+    inline bool SourceIdentifierHasBeenSet() const { return m_sourceIdentifierHasBeenSet; }
 
     /**
      * <p>For AWS Config managed rules, a predefined identifier from a list. For
@@ -166,6 +183,12 @@ namespace Model
      * your AWS resources.</p>
      */
     inline const Aws::Vector<SourceDetail>& GetSourceDetails() const{ return m_sourceDetails; }
+
+    /**
+     * <p>Provides the source and type of the event that causes AWS Config to evaluate
+     * your AWS resources.</p>
+     */
+    inline bool SourceDetailsHasBeenSet() const { return m_sourceDetailsHasBeenSet; }
 
     /**
      * <p>Provides the source and type of the event that causes AWS Config to evaluate

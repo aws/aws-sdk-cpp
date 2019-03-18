@@ -55,6 +55,11 @@ namespace Model
     /**
      * Coordinate to measure distance from.
      */
+    inline bool CoordinatesHasBeenSet() const { return m_coordinatesHasBeenSet; }
+
+    /**
+     * Coordinate to measure distance from.
+     */
     inline void SetCoordinates(const GPSCoordinates& value) { m_coordinatesHasBeenSet = true; m_coordinates = value; }
 
     /**
@@ -77,6 +82,11 @@ namespace Model
      * Range in kilometers from the coordinate.
      */
     inline double GetRangeInKilometers() const{ return m_rangeInKilometers; }
+
+    /**
+     * Range in kilometers from the coordinate.
+     */
+    inline bool RangeInKilometersHasBeenSet() const { return m_rangeInKilometersHasBeenSet; }
 
     /**
      * Range in kilometers from the coordinate.

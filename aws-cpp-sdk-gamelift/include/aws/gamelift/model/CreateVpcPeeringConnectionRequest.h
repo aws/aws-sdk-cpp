@@ -57,6 +57,12 @@ namespace Model
      * <p>Unique identifier for a fleet. This tells Amazon GameLift which GameLift VPC
      * to peer with. </p>
      */
+    inline bool FleetIdHasBeenSet() const { return m_fleetIdHasBeenSet; }
+
+    /**
+     * <p>Unique identifier for a fleet. This tells Amazon GameLift which GameLift VPC
+     * to peer with. </p>
+     */
     inline void SetFleetId(const Aws::String& value) { m_fleetIdHasBeenSet = true; m_fleetId = value; }
 
     /**
@@ -96,6 +102,13 @@ namespace Model
      * Console under account settings.</p>
      */
     inline const Aws::String& GetPeerVpcAwsAccountId() const{ return m_peerVpcAwsAccountId; }
+
+    /**
+     * <p>Unique identifier for the AWS account with the VPC that you want to peer your
+     * Amazon GameLift fleet with. You can find your Account ID in the AWS Management
+     * Console under account settings.</p>
+     */
+    inline bool PeerVpcAwsAccountIdHasBeenSet() const { return m_peerVpcAwsAccountIdHasBeenSet; }
 
     /**
      * <p>Unique identifier for the AWS account with the VPC that you want to peer your
@@ -149,6 +162,16 @@ namespace Model
      * Peering with Amazon GameLift Fleets</a>.</p>
      */
     inline const Aws::String& GetPeerVpcId() const{ return m_peerVpcId; }
+
+    /**
+     * <p>Unique identifier for a VPC with resources to be accessed by your Amazon
+     * GameLift fleet. The VPC must be in the same region where your fleet is deployed.
+     * Look up a VPC ID using the <a href="https://console.aws.amazon.com/vpc/">VPC
+     * Dashboard</a> in the AWS Management Console. Learn more about VPC peering in <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/vpc-peering.html">VPC
+     * Peering with Amazon GameLift Fleets</a>.</p>
+     */
+    inline bool PeerVpcIdHasBeenSet() const { return m_peerVpcIdHasBeenSet; }
 
     /**
      * <p>Unique identifier for a VPC with resources to be accessed by your Amazon

@@ -60,6 +60,11 @@ namespace Model
     /**
      * <p>Indicates whether the VPC is enabled for ClassicLink.</p>
      */
+    inline bool ClassicLinkEnabledHasBeenSet() const { return m_classicLinkEnabledHasBeenSet; }
+
+    /**
+     * <p>Indicates whether the VPC is enabled for ClassicLink.</p>
+     */
     inline void SetClassicLinkEnabled(bool value) { m_classicLinkEnabledHasBeenSet = true; m_classicLinkEnabled = value; }
 
     /**
@@ -72,6 +77,11 @@ namespace Model
      * <p>Any tags assigned to the VPC.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>Any tags assigned to the VPC.</p>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
      * <p>Any tags assigned to the VPC.</p>
@@ -108,6 +118,11 @@ namespace Model
      * <p>The ID of the VPC.</p>
      */
     inline const Aws::String& GetVpcId() const{ return m_vpcId; }
+
+    /**
+     * <p>The ID of the VPC.</p>
+     */
+    inline bool VpcIdHasBeenSet() const { return m_vpcIdHasBeenSet; }
 
     /**
      * <p>The ID of the VPC.</p>

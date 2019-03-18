@@ -61,6 +61,11 @@ namespace Model
     /**
      * <p>Any associations between the network ACL and one or more subnets</p>
      */
+    inline bool AssociationsHasBeenSet() const { return m_associationsHasBeenSet; }
+
+    /**
+     * <p>Any associations between the network ACL and one or more subnets</p>
+     */
     inline void SetAssociations(const Aws::Vector<NetworkAclAssociation>& value) { m_associationsHasBeenSet = true; m_associations = value; }
 
     /**
@@ -93,6 +98,11 @@ namespace Model
      * <p>One or more entries (rules) in the network ACL.</p>
      */
     inline const Aws::Vector<NetworkAclEntry>& GetEntries() const{ return m_entries; }
+
+    /**
+     * <p>One or more entries (rules) in the network ACL.</p>
+     */
+    inline bool EntriesHasBeenSet() const { return m_entriesHasBeenSet; }
 
     /**
      * <p>One or more entries (rules) in the network ACL.</p>
@@ -133,6 +143,11 @@ namespace Model
     /**
      * <p>Indicates whether this is the default network ACL for the VPC.</p>
      */
+    inline bool IsDefaultHasBeenSet() const { return m_isDefaultHasBeenSet; }
+
+    /**
+     * <p>Indicates whether this is the default network ACL for the VPC.</p>
+     */
     inline void SetIsDefault(bool value) { m_isDefaultHasBeenSet = true; m_isDefault = value; }
 
     /**
@@ -145,6 +160,11 @@ namespace Model
      * <p>The ID of the network ACL.</p>
      */
     inline const Aws::String& GetNetworkAclId() const{ return m_networkAclId; }
+
+    /**
+     * <p>The ID of the network ACL.</p>
+     */
+    inline bool NetworkAclIdHasBeenSet() const { return m_networkAclIdHasBeenSet; }
 
     /**
      * <p>The ID of the network ACL.</p>
@@ -185,6 +205,11 @@ namespace Model
     /**
      * <p>Any tags assigned to the network ACL.</p>
      */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
+
+    /**
+     * <p>Any tags assigned to the network ACL.</p>
+     */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     /**
@@ -221,6 +246,11 @@ namespace Model
     /**
      * <p>The ID of the VPC for the network ACL.</p>
      */
+    inline bool VpcIdHasBeenSet() const { return m_vpcIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the VPC for the network ACL.</p>
+     */
     inline void SetVpcId(const Aws::String& value) { m_vpcIdHasBeenSet = true; m_vpcId = value; }
 
     /**
@@ -253,6 +283,11 @@ namespace Model
      * <p>The ID of the AWS account that owns the network ACL.</p>
      */
     inline const Aws::String& GetOwnerId() const{ return m_ownerId; }
+
+    /**
+     * <p>The ID of the AWS account that owns the network ACL.</p>
+     */
+    inline bool OwnerIdHasBeenSet() const { return m_ownerIdHasBeenSet; }
 
     /**
      * <p>The ID of the AWS account that owns the network ACL.</p>

@@ -61,6 +61,13 @@ namespace Model
      * of a trail ARN is:</p> <p>
      * <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
      */
+    inline bool ResourceIdHasBeenSet() const { return m_resourceIdHasBeenSet; }
+
+    /**
+     * <p>Specifies the ARN of the trail from which tags should be removed. The format
+     * of a trail ARN is:</p> <p>
+     * <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
+     */
     inline void SetResourceId(const Aws::String& value) { m_resourceIdHasBeenSet = true; m_resourceId = value; }
 
     /**
@@ -103,6 +110,11 @@ namespace Model
      * <p>Specifies a list of tags to be removed.</p>
      */
     inline const Aws::Vector<Tag>& GetTagsList() const{ return m_tagsList; }
+
+    /**
+     * <p>Specifies a list of tags to be removed.</p>
+     */
+    inline bool TagsListHasBeenSet() const { return m_tagsListHasBeenSet; }
 
     /**
      * <p>Specifies a list of tags to be removed.</p>

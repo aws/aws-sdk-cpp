@@ -54,6 +54,11 @@ namespace Model
     /**
      * <p>ID of the application associated with the launch configuration.</p>
      */
+    inline bool AppIdHasBeenSet() const { return m_appIdHasBeenSet; }
+
+    /**
+     * <p>ID of the application associated with the launch configuration.</p>
+     */
     inline void SetAppId(const Aws::String& value) { m_appIdHasBeenSet = true; m_appId = value; }
 
     /**
@@ -87,6 +92,12 @@ namespace Model
      * uses to launch the application.</p>
      */
     inline const Aws::String& GetRoleName() const{ return m_roleName; }
+
+    /**
+     * <p>Name of service role in the customer's account that Amazon CloudFormation
+     * uses to launch the application.</p>
+     */
+    inline bool RoleNameHasBeenSet() const { return m_roleNameHasBeenSet; }
 
     /**
      * <p>Name of service role in the customer's account that Amazon CloudFormation
@@ -129,6 +140,11 @@ namespace Model
      * <p>Launch configurations for server groups in the application.</p>
      */
     inline const Aws::Vector<ServerGroupLaunchConfiguration>& GetServerGroupLaunchConfigurations() const{ return m_serverGroupLaunchConfigurations; }
+
+    /**
+     * <p>Launch configurations for server groups in the application.</p>
+     */
+    inline bool ServerGroupLaunchConfigurationsHasBeenSet() const { return m_serverGroupLaunchConfigurationsHasBeenSet; }
 
     /**
      * <p>Launch configurations for server groups in the application.</p>

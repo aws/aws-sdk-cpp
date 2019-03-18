@@ -60,6 +60,12 @@ namespace Model
      * <p>The number of instances the Convertible Reserved Instance offering can be
      * applied to. This parameter is reserved and cannot be specified in a request</p>
      */
+    inline bool InstanceCountHasBeenSet() const { return m_instanceCountHasBeenSet; }
+
+    /**
+     * <p>The number of instances the Convertible Reserved Instance offering can be
+     * applied to. This parameter is reserved and cannot be specified in a request</p>
+     */
     inline void SetInstanceCount(int value) { m_instanceCountHasBeenSet = true; m_instanceCount = value; }
 
     /**
@@ -73,6 +79,11 @@ namespace Model
      * <p>The ID of the Convertible Reserved Instance offering.</p>
      */
     inline const Aws::String& GetOfferingId() const{ return m_offeringId; }
+
+    /**
+     * <p>The ID of the Convertible Reserved Instance offering.</p>
+     */
+    inline bool OfferingIdHasBeenSet() const { return m_offeringIdHasBeenSet; }
 
     /**
      * <p>The ID of the Convertible Reserved Instance offering.</p>

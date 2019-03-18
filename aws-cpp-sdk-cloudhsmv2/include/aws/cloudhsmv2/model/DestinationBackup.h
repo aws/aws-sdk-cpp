@@ -47,6 +47,9 @@ namespace Model
     inline const Aws::Utils::DateTime& GetCreateTimestamp() const{ return m_createTimestamp; }
 
     
+    inline bool CreateTimestampHasBeenSet() const { return m_createTimestampHasBeenSet; }
+
+    
     inline void SetCreateTimestamp(const Aws::Utils::DateTime& value) { m_createTimestampHasBeenSet = true; m_createTimestamp = value; }
 
     
@@ -61,6 +64,9 @@ namespace Model
 
     
     inline const Aws::String& GetSourceRegion() const{ return m_sourceRegion; }
+
+    
+    inline bool SourceRegionHasBeenSet() const { return m_sourceRegionHasBeenSet; }
 
     
     inline void SetSourceRegion(const Aws::String& value) { m_sourceRegionHasBeenSet = true; m_sourceRegion = value; }
@@ -85,6 +91,9 @@ namespace Model
     inline const Aws::String& GetSourceBackup() const{ return m_sourceBackup; }
 
     
+    inline bool SourceBackupHasBeenSet() const { return m_sourceBackupHasBeenSet; }
+
+    
     inline void SetSourceBackup(const Aws::String& value) { m_sourceBackupHasBeenSet = true; m_sourceBackup = value; }
 
     
@@ -105,6 +114,9 @@ namespace Model
 
     
     inline const Aws::String& GetSourceCluster() const{ return m_sourceCluster; }
+
+    
+    inline bool SourceClusterHasBeenSet() const { return m_sourceClusterHasBeenSet; }
 
     
     inline void SetSourceCluster(const Aws::String& value) { m_sourceClusterHasBeenSet = true; m_sourceCluster = value; }

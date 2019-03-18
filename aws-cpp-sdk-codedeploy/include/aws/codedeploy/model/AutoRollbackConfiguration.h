@@ -60,6 +60,12 @@ namespace Model
      * <p>Indicates whether a defined automatic rollback configuration is currently
      * enabled.</p>
      */
+    inline bool EnabledHasBeenSet() const { return m_enabledHasBeenSet; }
+
+    /**
+     * <p>Indicates whether a defined automatic rollback configuration is currently
+     * enabled.</p>
+     */
     inline void SetEnabled(bool value) { m_enabledHasBeenSet = true; m_enabled = value; }
 
     /**
@@ -73,6 +79,11 @@ namespace Model
      * <p>The event type or types that trigger a rollback.</p>
      */
     inline const Aws::Vector<AutoRollbackEvent>& GetEvents() const{ return m_events; }
+
+    /**
+     * <p>The event type or types that trigger a rollback.</p>
+     */
+    inline bool EventsHasBeenSet() const { return m_eventsHasBeenSet; }
 
     /**
      * <p>The event type or types that trigger a rollback.</p>

@@ -62,6 +62,11 @@ namespace Model
     /**
      * Treatments that are defined in addition to the default treatment.
      */
+    inline bool AdditionalTreatmentsHasBeenSet() const { return m_additionalTreatmentsHasBeenSet; }
+
+    /**
+     * Treatments that are defined in addition to the default treatment.
+     */
     inline void SetAdditionalTreatments(const Aws::Vector<WriteTreatmentResource>& value) { m_additionalTreatmentsHasBeenSet = true; m_additionalTreatments = value; }
 
     /**
@@ -94,6 +99,11 @@ namespace Model
      * A description of the campaign.
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
+
+    /**
+     * A description of the campaign.
+     */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
 
     /**
      * A description of the campaign.
@@ -136,6 +146,12 @@ namespace Model
      * The allocated percentage of end users who will not receive messages from this
      * campaign.
      */
+    inline bool HoldoutPercentHasBeenSet() const { return m_holdoutPercentHasBeenSet; }
+
+    /**
+     * The allocated percentage of end users who will not receive messages from this
+     * campaign.
+     */
     inline void SetHoldoutPercent(int value) { m_holdoutPercentHasBeenSet = true; m_holdoutPercent = value; }
 
     /**
@@ -149,6 +165,11 @@ namespace Model
      * Campaign hook information.
      */
     inline const CampaignHook& GetHook() const{ return m_hook; }
+
+    /**
+     * Campaign hook information.
+     */
+    inline bool HookHasBeenSet() const { return m_hookHasBeenSet; }
 
     /**
      * Campaign hook information.
@@ -181,6 +202,12 @@ namespace Model
      * Indicates whether the campaign is paused. A paused campaign does not send
      * messages unless you resume it by setting IsPaused to false.
      */
+    inline bool IsPausedHasBeenSet() const { return m_isPausedHasBeenSet; }
+
+    /**
+     * Indicates whether the campaign is paused. A paused campaign does not send
+     * messages unless you resume it by setting IsPaused to false.
+     */
     inline void SetIsPaused(bool value) { m_isPausedHasBeenSet = true; m_isPaused = value; }
 
     /**
@@ -194,6 +221,11 @@ namespace Model
      * The campaign limits settings.
      */
     inline const CampaignLimits& GetLimits() const{ return m_limits; }
+
+    /**
+     * The campaign limits settings.
+     */
+    inline bool LimitsHasBeenSet() const { return m_limitsHasBeenSet; }
 
     /**
      * The campaign limits settings.
@@ -224,6 +256,11 @@ namespace Model
     /**
      * The message configuration settings.
      */
+    inline bool MessageConfigurationHasBeenSet() const { return m_messageConfigurationHasBeenSet; }
+
+    /**
+     * The message configuration settings.
+     */
     inline void SetMessageConfiguration(const MessageConfiguration& value) { m_messageConfigurationHasBeenSet = true; m_messageConfiguration = value; }
 
     /**
@@ -246,6 +283,11 @@ namespace Model
      * The custom name of the campaign.
      */
     inline const Aws::String& GetName() const{ return m_name; }
+
+    /**
+     * The custom name of the campaign.
+     */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
      * The custom name of the campaign.
@@ -286,6 +328,11 @@ namespace Model
     /**
      * The campaign schedule.
      */
+    inline bool ScheduleHasBeenSet() const { return m_scheduleHasBeenSet; }
+
+    /**
+     * The campaign schedule.
+     */
     inline void SetSchedule(const Schedule& value) { m_scheduleHasBeenSet = true; m_schedule = value; }
 
     /**
@@ -308,6 +355,11 @@ namespace Model
      * The ID of the segment to which the campaign sends messages.
      */
     inline const Aws::String& GetSegmentId() const{ return m_segmentId; }
+
+    /**
+     * The ID of the segment to which the campaign sends messages.
+     */
+    inline bool SegmentIdHasBeenSet() const { return m_segmentIdHasBeenSet; }
 
     /**
      * The ID of the segment to which the campaign sends messages.
@@ -348,6 +400,11 @@ namespace Model
     /**
      * The version of the segment to which the campaign sends messages.
      */
+    inline bool SegmentVersionHasBeenSet() const { return m_segmentVersionHasBeenSet; }
+
+    /**
+     * The version of the segment to which the campaign sends messages.
+     */
     inline void SetSegmentVersion(int value) { m_segmentVersionHasBeenSet = true; m_segmentVersion = value; }
 
     /**
@@ -360,6 +417,11 @@ namespace Model
      * The Tags for the campaign.
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
+
+    /**
+     * The Tags for the campaign.
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
      * The Tags for the campaign.
@@ -425,6 +487,11 @@ namespace Model
     /**
      * A custom description for the treatment.
      */
+    inline bool TreatmentDescriptionHasBeenSet() const { return m_treatmentDescriptionHasBeenSet; }
+
+    /**
+     * A custom description for the treatment.
+     */
     inline void SetTreatmentDescription(const Aws::String& value) { m_treatmentDescriptionHasBeenSet = true; m_treatmentDescription = value; }
 
     /**
@@ -457,6 +524,11 @@ namespace Model
      * The custom name of a variation of the campaign used for A/B testing.
      */
     inline const Aws::String& GetTreatmentName() const{ return m_treatmentName; }
+
+    /**
+     * The custom name of a variation of the campaign used for A/B testing.
+     */
+    inline bool TreatmentNameHasBeenSet() const { return m_treatmentNameHasBeenSet; }
 
     /**
      * The custom name of a variation of the campaign used for A/B testing.

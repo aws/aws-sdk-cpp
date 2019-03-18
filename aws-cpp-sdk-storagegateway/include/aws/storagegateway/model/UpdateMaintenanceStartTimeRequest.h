@@ -55,6 +55,9 @@ namespace Model
     inline const Aws::String& GetGatewayARN() const{ return m_gatewayARN; }
 
     
+    inline bool GatewayARNHasBeenSet() const { return m_gatewayARNHasBeenSet; }
+
+    
     inline void SetGatewayARN(const Aws::String& value) { m_gatewayARNHasBeenSet = true; m_gatewayARN = value; }
 
     
@@ -85,6 +88,13 @@ namespace Model
      * where <i>hh</i> is the hour (00 to 23). The hour of the day is in the time zone
      * of the gateway.</p>
      */
+    inline bool HourOfDayHasBeenSet() const { return m_hourOfDayHasBeenSet; }
+
+    /**
+     * <p>The hour component of the maintenance start time represented as <i>hh</i>,
+     * where <i>hh</i> is the hour (00 to 23). The hour of the day is in the time zone
+     * of the gateway.</p>
+     */
     inline void SetHourOfDay(int value) { m_hourOfDayHasBeenSet = true; m_hourOfDay = value; }
 
     /**
@@ -107,6 +117,13 @@ namespace Model
      * where <i>mm</i> is the minute (00 to 59). The minute of the hour is in the time
      * zone of the gateway.</p>
      */
+    inline bool MinuteOfHourHasBeenSet() const { return m_minuteOfHourHasBeenSet; }
+
+    /**
+     * <p>The minute component of the maintenance start time represented as <i>mm</i>,
+     * where <i>mm</i> is the minute (00 to 59). The minute of the hour is in the time
+     * zone of the gateway.</p>
+     */
     inline void SetMinuteOfHour(int value) { m_minuteOfHourHasBeenSet = true; m_minuteOfHour = value; }
 
     /**
@@ -122,6 +139,12 @@ namespace Model
      * from 0 to 6, where 0 represents Sunday and 6 Saturday.</p>
      */
     inline int GetDayOfWeek() const{ return m_dayOfWeek; }
+
+    /**
+     * <p>The maintenance start time day of the week represented as an ordinal number
+     * from 0 to 6, where 0 represents Sunday and 6 Saturday.</p>
+     */
+    inline bool DayOfWeekHasBeenSet() const { return m_dayOfWeekHasBeenSet; }
 
     /**
      * <p>The maintenance start time day of the week represented as an ordinal number

@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>String describing the current stage of a replication run.</p>
      */
+    inline bool StageHasBeenSet() const { return m_stageHasBeenSet; }
+
+    /**
+     * <p>String describing the current stage of a replication run.</p>
+     */
     inline void SetStage(const Aws::String& value) { m_stageHasBeenSet = true; m_stage = value; }
 
     /**
@@ -88,6 +93,11 @@ namespace Model
      * <p>String describing the progress of the current stage of a replication run.</p>
      */
     inline const Aws::String& GetStageProgress() const{ return m_stageProgress; }
+
+    /**
+     * <p>String describing the progress of the current stage of a replication run.</p>
+     */
+    inline bool StageProgressHasBeenSet() const { return m_stageProgressHasBeenSet; }
 
     /**
      * <p>String describing the progress of the current stage of a replication run.</p>

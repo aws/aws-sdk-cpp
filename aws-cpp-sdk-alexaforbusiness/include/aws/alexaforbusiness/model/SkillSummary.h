@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The ARN of the skill summary.</p>
      */
+    inline bool SkillIdHasBeenSet() const { return m_skillIdHasBeenSet; }
+
+    /**
+     * <p>The ARN of the skill summary.</p>
+     */
     inline void SetSkillId(const Aws::String& value) { m_skillIdHasBeenSet = true; m_skillId = value; }
 
     /**
@@ -89,6 +94,11 @@ namespace Model
      * <p>The name of the skill.</p>
      */
     inline const Aws::String& GetSkillName() const{ return m_skillName; }
+
+    /**
+     * <p>The name of the skill.</p>
+     */
+    inline bool SkillNameHasBeenSet() const { return m_skillNameHasBeenSet; }
 
     /**
      * <p>The name of the skill.</p>
@@ -129,6 +139,11 @@ namespace Model
     /**
      * <p>Linking support for a skill.</p>
      */
+    inline bool SupportsLinkingHasBeenSet() const { return m_supportsLinkingHasBeenSet; }
+
+    /**
+     * <p>Linking support for a skill.</p>
+     */
     inline void SetSupportsLinking(bool value) { m_supportsLinkingHasBeenSet = true; m_supportsLinking = value; }
 
     /**
@@ -142,6 +157,12 @@ namespace Model
      * linking to be used.</p>
      */
     inline const EnablementType& GetEnablementType() const{ return m_enablementType; }
+
+    /**
+     * <p>Whether the skill is enabled under the user's account, or if it requires
+     * linking to be used.</p>
+     */
+    inline bool EnablementTypeHasBeenSet() const { return m_enablementTypeHasBeenSet; }
 
     /**
      * <p>Whether the skill is enabled under the user's account, or if it requires
@@ -172,6 +193,11 @@ namespace Model
      * <p>Whether the skill is publicly available or is a private skill.</p>
      */
     inline const SkillType& GetSkillType() const{ return m_skillType; }
+
+    /**
+     * <p>Whether the skill is publicly available or is a private skill.</p>
+     */
+    inline bool SkillTypeHasBeenSet() const { return m_skillTypeHasBeenSet; }
 
     /**
      * <p>Whether the skill is publicly available or is a private skill.</p>

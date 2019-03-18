@@ -52,6 +52,11 @@ namespace Model
     /**
      * <p>The name of the Git repository to describe.</p>
      */
+    inline bool CodeRepositoryNameHasBeenSet() const { return m_codeRepositoryNameHasBeenSet; }
+
+    /**
+     * <p>The name of the Git repository to describe.</p>
+     */
     inline void SetCodeRepositoryName(const Aws::String& value) { m_codeRepositoryNameHasBeenSet = true; m_codeRepositoryName = value; }
 
     /**

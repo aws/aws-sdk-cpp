@@ -67,6 +67,15 @@ namespace Model
      * contain two consecutive hyphens</p> </li> </ul> <p>Example:
      * <code>myoptiongroup</code> </p>
      */
+    inline bool OptionGroupNameHasBeenSet() const { return m_optionGroupNameHasBeenSet; }
+
+    /**
+     * <p>Specifies the name of the option group to be created.</p> <p>Constraints:</p>
+     * <ul> <li> <p>Must be 1 to 255 letters, numbers, or hyphens</p> </li> <li>
+     * <p>First character must be a letter</p> </li> <li> <p>Can't end with a hyphen or
+     * contain two consecutive hyphens</p> </li> </ul> <p>Example:
+     * <code>myoptiongroup</code> </p>
+     */
     inline void SetOptionGroupName(const Aws::String& value) { m_optionGroupNameHasBeenSet = true; m_optionGroupName = value; }
 
     /**
@@ -125,6 +134,12 @@ namespace Model
      * <p>Specifies the name of the engine that this option group should be associated
      * with.</p>
      */
+    inline bool EngineNameHasBeenSet() const { return m_engineNameHasBeenSet; }
+
+    /**
+     * <p>Specifies the name of the engine that this option group should be associated
+     * with.</p>
+     */
     inline void SetEngineName(const Aws::String& value) { m_engineNameHasBeenSet = true; m_engineName = value; }
 
     /**
@@ -163,6 +178,12 @@ namespace Model
      * associated with.</p>
      */
     inline const Aws::String& GetMajorEngineVersion() const{ return m_majorEngineVersion; }
+
+    /**
+     * <p>Specifies the major version of the engine that this option group should be
+     * associated with.</p>
+     */
+    inline bool MajorEngineVersionHasBeenSet() const { return m_majorEngineVersionHasBeenSet; }
 
     /**
      * <p>Specifies the major version of the engine that this option group should be
@@ -209,6 +230,11 @@ namespace Model
     /**
      * <p>The description of the option group.</p>
      */
+    inline bool OptionGroupDescriptionHasBeenSet() const { return m_optionGroupDescriptionHasBeenSet; }
+
+    /**
+     * <p>The description of the option group.</p>
+     */
     inline void SetOptionGroupDescription(const Aws::String& value) { m_optionGroupDescriptionHasBeenSet = true; m_optionGroupDescription = value; }
 
     /**
@@ -239,6 +265,9 @@ namespace Model
 
     
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+
+    
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }

@@ -50,6 +50,11 @@ namespace Model
     /**
      * The Amazon Resource Name (ARN) of the resource that you want to view tags for.
      */
+    inline bool ResourceArnHasBeenSet() const { return m_resourceArnHasBeenSet; }
+
+    /**
+     * The Amazon Resource Name (ARN) of the resource that you want to view tags for.
+     */
     inline void SetResourceArn(const Aws::String& value) { m_resourceArnHasBeenSet = true; m_resourceArn = value; }
 
     /**

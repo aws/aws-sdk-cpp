@@ -50,6 +50,11 @@ namespace Model
     /**
      * <p>The name of the Amazon EKS cluster to update.</p>
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>The name of the Amazon EKS cluster to update.</p>
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
@@ -82,6 +87,11 @@ namespace Model
      * <p>The ID of the update to describe.</p>
      */
     inline const Aws::String& GetUpdateId() const{ return m_updateId; }
+
+    /**
+     * <p>The ID of the update to describe.</p>
+     */
+    inline bool UpdateIdHasBeenSet() const { return m_updateIdHasBeenSet; }
 
     /**
      * <p>The ID of the update to describe.</p>

@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The name of the domain that you want to update contact information for.</p>
      */
+    inline bool DomainNameHasBeenSet() const { return m_domainNameHasBeenSet; }
+
+    /**
+     * <p>The name of the domain that you want to update contact information for.</p>
+     */
     inline void SetDomainName(const Aws::String& value) { m_domainNameHasBeenSet = true; m_domainName = value; }
 
     /**
@@ -93,6 +98,11 @@ namespace Model
     /**
      * <p>Provides detailed contact information.</p>
      */
+    inline bool AdminContactHasBeenSet() const { return m_adminContactHasBeenSet; }
+
+    /**
+     * <p>Provides detailed contact information.</p>
+     */
     inline void SetAdminContact(const ContactDetail& value) { m_adminContactHasBeenSet = true; m_adminContact = value; }
 
     /**
@@ -119,6 +129,11 @@ namespace Model
     /**
      * <p>Provides detailed contact information.</p>
      */
+    inline bool RegistrantContactHasBeenSet() const { return m_registrantContactHasBeenSet; }
+
+    /**
+     * <p>Provides detailed contact information.</p>
+     */
     inline void SetRegistrantContact(const ContactDetail& value) { m_registrantContactHasBeenSet = true; m_registrantContact = value; }
 
     /**
@@ -141,6 +156,11 @@ namespace Model
      * <p>Provides detailed contact information.</p>
      */
     inline const ContactDetail& GetTechContact() const{ return m_techContact; }
+
+    /**
+     * <p>Provides detailed contact information.</p>
+     */
+    inline bool TechContactHasBeenSet() const { return m_techContactHasBeenSet; }
 
     /**
      * <p>Provides detailed contact information.</p>

@@ -59,6 +59,11 @@ namespace Model
     /**
      * <p>The error.</p>
      */
+    inline bool ErrorHasBeenSet() const { return m_errorHasBeenSet; }
+
+    /**
+     * <p>The error.</p>
+     */
     inline void SetError(const DeleteFleetError& value) { m_errorHasBeenSet = true; m_error = value; }
 
     /**
@@ -81,6 +86,11 @@ namespace Model
      * <p>The ID of the EC2 Fleet.</p>
      */
     inline const Aws::String& GetFleetId() const{ return m_fleetId; }
+
+    /**
+     * <p>The ID of the EC2 Fleet.</p>
+     */
+    inline bool FleetIdHasBeenSet() const { return m_fleetIdHasBeenSet; }
 
     /**
      * <p>The ID of the EC2 Fleet.</p>

@@ -53,6 +53,11 @@ namespace Model
     /**
      * <p>Request to update a field-level encryption configuration. </p>
      */
+    inline bool FieldLevelEncryptionConfigHasBeenSet() const { return m_fieldLevelEncryptionConfigHasBeenSet; }
+
+    /**
+     * <p>Request to update a field-level encryption configuration. </p>
+     */
     inline void SetFieldLevelEncryptionConfig(const FieldLevelEncryptionConfig& value) { m_fieldLevelEncryptionConfigHasBeenSet = true; m_fieldLevelEncryptionConfig = value; }
 
     /**
@@ -75,6 +80,11 @@ namespace Model
      * <p>The ID of the configuration you want to update.</p>
      */
     inline const Aws::String& GetId() const{ return m_id; }
+
+    /**
+     * <p>The ID of the configuration you want to update.</p>
+     */
+    inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
 
     /**
      * <p>The ID of the configuration you want to update.</p>
@@ -113,6 +123,13 @@ namespace Model
      * <code>E2QWRUHAPOMQZL</code>.</p>
      */
     inline const Aws::String& GetIfMatch() const{ return m_ifMatch; }
+
+    /**
+     * <p>The value of the <code>ETag</code> header that you received when retrieving
+     * the configuration identity to update. For example:
+     * <code>E2QWRUHAPOMQZL</code>.</p>
+     */
+    inline bool IfMatchHasBeenSet() const { return m_ifMatchHasBeenSet; }
 
     /**
      * <p>The value of the <code>ETag</code> header that you received when retrieving

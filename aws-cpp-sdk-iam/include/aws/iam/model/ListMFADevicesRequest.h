@@ -62,6 +62,15 @@ namespace Model
      * alphanumeric characters with no spaces. You can also include any of the
      * following characters: _+=,.@-</p>
      */
+    inline bool UserNameHasBeenSet() const { return m_userNameHasBeenSet; }
+
+    /**
+     * <p>The name of the user whose MFA devices you want to list.</p> <p>This
+     * parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex
+     * pattern</a>) a string of characters consisting of upper and lowercase
+     * alphanumeric characters with no spaces. You can also include any of the
+     * following characters: _+=,.@-</p>
+     */
     inline void SetUserName(const Aws::String& value) { m_userNameHasBeenSet = true; m_userName = value; }
 
     /**
@@ -124,6 +133,14 @@ namespace Model
      * <code>Marker</code> element in the response that you received to indicate where
      * the next call should start.</p>
      */
+    inline bool MarkerHasBeenSet() const { return m_markerHasBeenSet; }
+
+    /**
+     * <p>Use this parameter only when paginating results and only after you receive a
+     * response indicating that the results are truncated. Set it to the value of the
+     * <code>Marker</code> element in the response that you received to indicate where
+     * the next call should start.</p>
+     */
     inline void SetMarker(const Aws::String& value) { m_markerHasBeenSet = true; m_marker = value; }
 
     /**
@@ -178,6 +195,18 @@ namespace Model
      * subsequent call that tells the service where to continue from.</p>
      */
     inline int GetMaxItems() const{ return m_maxItems; }
+
+    /**
+     * <p>Use this only when paginating results to indicate the maximum number of items
+     * you want in the response. If additional items exist beyond the maximum you
+     * specify, the <code>IsTruncated</code> response element is <code>true</code>.</p>
+     * <p>If you do not include this parameter, the number of items defaults to 100.
+     * Note that IAM might return fewer results, even when there are more results
+     * available. In that case, the <code>IsTruncated</code> response element returns
+     * <code>true</code>, and <code>Marker</code> contains a value to include in the
+     * subsequent call that tells the service where to continue from.</p>
+     */
+    inline bool MaxItemsHasBeenSet() const { return m_maxItemsHasBeenSet; }
 
     /**
      * <p>Use this only when paginating results to indicate the maximum number of items

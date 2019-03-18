@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>How long it took to process the request, in milliseconds.</p>
      */
+    inline bool TimemsHasBeenSet() const { return m_timemsHasBeenSet; }
+
+    /**
+     * <p>How long it took to process the request, in milliseconds.</p>
+     */
     inline void SetTimems(long long value) { m_timemsHasBeenSet = true; m_timems = value; }
 
     /**
@@ -68,6 +73,11 @@ namespace Model
      * <p>The encrypted resource ID for the request.</p>
      */
     inline const Aws::String& GetRid() const{ return m_rid; }
+
+    /**
+     * <p>The encrypted resource ID for the request.</p>
+     */
+    inline bool RidHasBeenSet() const { return m_ridHasBeenSet; }
 
     /**
      * <p>The encrypted resource ID for the request.</p>

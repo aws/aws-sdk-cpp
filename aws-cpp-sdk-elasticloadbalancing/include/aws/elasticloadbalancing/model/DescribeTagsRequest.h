@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p>The names of the load balancers.</p>
      */
+    inline bool LoadBalancerNamesHasBeenSet() const { return m_loadBalancerNamesHasBeenSet; }
+
+    /**
+     * <p>The names of the load balancers.</p>
+     */
     inline void SetLoadBalancerNames(const Aws::Vector<Aws::String>& value) { m_loadBalancerNamesHasBeenSet = true; m_loadBalancerNames = value; }
 
     /**

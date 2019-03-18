@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>A unique identifier for the snapshot returning the error.</p>
      */
+    inline bool SnapshotIdentifierHasBeenSet() const { return m_snapshotIdentifierHasBeenSet; }
+
+    /**
+     * <p>A unique identifier for the snapshot returning the error.</p>
+     */
     inline void SetSnapshotIdentifier(const Aws::String& value) { m_snapshotIdentifierHasBeenSet = true; m_snapshotIdentifier = value; }
 
     /**
@@ -89,6 +94,11 @@ namespace Model
      * <p>A unique identifier for the cluster.</p>
      */
     inline const Aws::String& GetSnapshotClusterIdentifier() const{ return m_snapshotClusterIdentifier; }
+
+    /**
+     * <p>A unique identifier for the cluster.</p>
+     */
+    inline bool SnapshotClusterIdentifierHasBeenSet() const { return m_snapshotClusterIdentifierHasBeenSet; }
 
     /**
      * <p>A unique identifier for the cluster.</p>
@@ -129,6 +139,11 @@ namespace Model
     /**
      * <p>The failure code for the error.</p>
      */
+    inline bool FailureCodeHasBeenSet() const { return m_failureCodeHasBeenSet; }
+
+    /**
+     * <p>The failure code for the error.</p>
+     */
     inline void SetFailureCode(const Aws::String& value) { m_failureCodeHasBeenSet = true; m_failureCode = value; }
 
     /**
@@ -161,6 +176,11 @@ namespace Model
      * <p>The text message describing the error.</p>
      */
     inline const Aws::String& GetFailureReason() const{ return m_failureReason; }
+
+    /**
+     * <p>The text message describing the error.</p>
+     */
+    inline bool FailureReasonHasBeenSet() const { return m_failureReasonHasBeenSet; }
 
     /**
      * <p>The text message describing the error.</p>

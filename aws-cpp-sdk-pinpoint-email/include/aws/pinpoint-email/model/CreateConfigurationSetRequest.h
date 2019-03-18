@@ -59,6 +59,11 @@ namespace Model
     /**
      * <p>The name of the configuration set.</p>
      */
+    inline bool ConfigurationSetNameHasBeenSet() const { return m_configurationSetNameHasBeenSet; }
+
+    /**
+     * <p>The name of the configuration set.</p>
+     */
     inline void SetConfigurationSetName(const Aws::String& value) { m_configurationSetNameHasBeenSet = true; m_configurationSetName = value; }
 
     /**
@@ -97,6 +102,12 @@ namespace Model
      * <p>An object that defines the open and click tracking options for emails that
      * you send using the configuration set.</p>
      */
+    inline bool TrackingOptionsHasBeenSet() const { return m_trackingOptionsHasBeenSet; }
+
+    /**
+     * <p>An object that defines the open and click tracking options for emails that
+     * you send using the configuration set.</p>
+     */
     inline void SetTrackingOptions(const TrackingOptions& value) { m_trackingOptionsHasBeenSet = true; m_trackingOptions = value; }
 
     /**
@@ -123,6 +134,12 @@ namespace Model
      * you send using the configuration set.</p>
      */
     inline const DeliveryOptions& GetDeliveryOptions() const{ return m_deliveryOptions; }
+
+    /**
+     * <p>An object that defines the dedicated IP pool that is used to send emails that
+     * you send using the configuration set.</p>
+     */
+    inline bool DeliveryOptionsHasBeenSet() const { return m_deliveryOptionsHasBeenSet; }
 
     /**
      * <p>An object that defines the dedicated IP pool that is used to send emails that
@@ -159,6 +176,12 @@ namespace Model
      * <p>An object that defines whether or not Amazon Pinpoint collects reputation
      * metrics for the emails that you send that use the configuration set.</p>
      */
+    inline bool ReputationOptionsHasBeenSet() const { return m_reputationOptionsHasBeenSet; }
+
+    /**
+     * <p>An object that defines whether or not Amazon Pinpoint collects reputation
+     * metrics for the emails that you send that use the configuration set.</p>
+     */
     inline void SetReputationOptions(const ReputationOptions& value) { m_reputationOptionsHasBeenSet = true; m_reputationOptions = value; }
 
     /**
@@ -185,6 +208,12 @@ namespace Model
      * send using the configuration set.</p>
      */
     inline const SendingOptions& GetSendingOptions() const{ return m_sendingOptions; }
+
+    /**
+     * <p>An object that defines whether or not Amazon Pinpoint can send email that you
+     * send using the configuration set.</p>
+     */
+    inline bool SendingOptionsHasBeenSet() const { return m_sendingOptionsHasBeenSet; }
 
     /**
      * <p>An object that defines whether or not Amazon Pinpoint can send email that you

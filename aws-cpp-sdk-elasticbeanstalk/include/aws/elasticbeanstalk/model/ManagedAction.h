@@ -61,6 +61,11 @@ namespace Model
     /**
      * <p>A unique identifier for the managed action.</p>
      */
+    inline bool ActionIdHasBeenSet() const { return m_actionIdHasBeenSet; }
+
+    /**
+     * <p>A unique identifier for the managed action.</p>
+     */
     inline void SetActionId(const Aws::String& value) { m_actionIdHasBeenSet = true; m_actionId = value; }
 
     /**
@@ -93,6 +98,11 @@ namespace Model
      * <p>A description of the managed action.</p>
      */
     inline const Aws::String& GetActionDescription() const{ return m_actionDescription; }
+
+    /**
+     * <p>A description of the managed action.</p>
+     */
+    inline bool ActionDescriptionHasBeenSet() const { return m_actionDescriptionHasBeenSet; }
 
     /**
      * <p>A description of the managed action.</p>
@@ -133,6 +143,11 @@ namespace Model
     /**
      * <p>The type of managed action.</p>
      */
+    inline bool ActionTypeHasBeenSet() const { return m_actionTypeHasBeenSet; }
+
+    /**
+     * <p>The type of managed action.</p>
+     */
     inline void SetActionType(const ActionType& value) { m_actionTypeHasBeenSet = true; m_actionType = value; }
 
     /**
@@ -156,6 +171,12 @@ namespace Model
      * you can apply it immediately with <a>ApplyEnvironmentManagedAction</a>.</p>
      */
     inline const ActionStatus& GetStatus() const{ return m_status; }
+
+    /**
+     * <p>The status of the managed action. If the action is <code>Scheduled</code>,
+     * you can apply it immediately with <a>ApplyEnvironmentManagedAction</a>.</p>
+     */
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
     /**
      * <p>The status of the managed action. If the action is <code>Scheduled</code>,
@@ -187,6 +208,12 @@ namespace Model
      * execute.</p>
      */
     inline const Aws::Utils::DateTime& GetWindowStartTime() const{ return m_windowStartTime; }
+
+    /**
+     * <p>The start time of the maintenance window in which the managed action will
+     * execute.</p>
+     */
+    inline bool WindowStartTimeHasBeenSet() const { return m_windowStartTimeHasBeenSet; }
 
     /**
      * <p>The start time of the maintenance window in which the managed action will

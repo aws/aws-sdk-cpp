@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The two-letter code for the continent.</p>
      */
+    inline bool ContinentCodeHasBeenSet() const { return m_continentCodeHasBeenSet; }
+
+    /**
+     * <p>The two-letter code for the continent.</p>
+     */
     inline void SetContinentCode(const Aws::String& value) { m_continentCodeHasBeenSet = true; m_continentCode = value; }
 
     /**
@@ -89,6 +94,11 @@ namespace Model
      * <p>The full name of the continent.</p>
      */
     inline const Aws::String& GetContinentName() const{ return m_continentName; }
+
+    /**
+     * <p>The full name of the continent.</p>
+     */
+    inline bool ContinentNameHasBeenSet() const { return m_continentNameHasBeenSet; }
 
     /**
      * <p>The full name of the continent.</p>
@@ -129,6 +139,11 @@ namespace Model
     /**
      * <p>The two-letter code for the country.</p>
      */
+    inline bool CountryCodeHasBeenSet() const { return m_countryCodeHasBeenSet; }
+
+    /**
+     * <p>The two-letter code for the country.</p>
+     */
     inline void SetCountryCode(const Aws::String& value) { m_countryCodeHasBeenSet = true; m_countryCode = value; }
 
     /**
@@ -161,6 +176,11 @@ namespace Model
      * <p>The name of the country.</p>
      */
     inline const Aws::String& GetCountryName() const{ return m_countryName; }
+
+    /**
+     * <p>The name of the country.</p>
+     */
+    inline bool CountryNameHasBeenSet() const { return m_countryNameHasBeenSet; }
 
     /**
      * <p>The name of the country.</p>
@@ -198,6 +218,12 @@ namespace Model
      * United States.</p>
      */
     inline const Aws::String& GetSubdivisionCode() const{ return m_subdivisionCode; }
+
+    /**
+     * <p>The code for the subdivision. Route 53 currently supports only states in the
+     * United States.</p>
+     */
+    inline bool SubdivisionCodeHasBeenSet() const { return m_subdivisionCodeHasBeenSet; }
 
     /**
      * <p>The code for the subdivision. Route 53 currently supports only states in the
@@ -241,6 +267,12 @@ namespace Model
      * the United States.</p>
      */
     inline const Aws::String& GetSubdivisionName() const{ return m_subdivisionName; }
+
+    /**
+     * <p>The full name of the subdivision. Route 53 currently supports only states in
+     * the United States.</p>
+     */
+    inline bool SubdivisionNameHasBeenSet() const { return m_subdivisionNameHasBeenSet; }
 
     /**
      * <p>The full name of the subdivision. Route 53 currently supports only states in

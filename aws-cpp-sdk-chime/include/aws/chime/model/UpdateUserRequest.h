@@ -51,6 +51,11 @@ namespace Model
     /**
      * <p>The Amazon Chime account ID.</p>
      */
+    inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
+
+    /**
+     * <p>The Amazon Chime account ID.</p>
+     */
     inline void SetAccountId(const Aws::String& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
 
     /**
@@ -83,6 +88,11 @@ namespace Model
      * <p>The user ID.</p>
      */
     inline const Aws::String& GetUserId() const{ return m_userId; }
+
+    /**
+     * <p>The user ID.</p>
+     */
+    inline bool UserIdHasBeenSet() const { return m_userIdHasBeenSet; }
 
     /**
      * <p>The user ID.</p>
@@ -120,6 +130,12 @@ namespace Model
      * the Amazon Chime account that the user belongs to.</p>
      */
     inline const License& GetLicenseType() const{ return m_licenseType; }
+
+    /**
+     * <p>The user license type to update. This must be a supported license type for
+     * the Amazon Chime account that the user belongs to.</p>
+     */
+    inline bool LicenseTypeHasBeenSet() const { return m_licenseTypeHasBeenSet; }
 
     /**
      * <p>The user license type to update. This must be a supported license type for

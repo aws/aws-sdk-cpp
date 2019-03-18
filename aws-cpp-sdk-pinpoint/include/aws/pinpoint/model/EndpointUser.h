@@ -75,6 +75,20 @@ The Amazon Pinpoint console can't
      * this reason, you should avoid using these characters in the names of custom
      * attributes.
      */
+    inline bool UserAttributesHasBeenSet() const { return m_userAttributesHasBeenSet; }
+
+    /**
+     * Custom attributes that describe the user by associating a name with an array of
+     * values. For example, an attribute named "interests" might have the following
+     * values: ["science", "politics", "travel"]. You can use these attributes as
+     * selection criteria when you create segments.
+
+The Amazon Pinpoint console can't
+     * display attribute names that include the following characters: hash/pound sign
+     * (#), colon (:), question mark (?), backslash (\), and forward slash (/). For
+     * this reason, you should avoid using these characters in the names of custom
+     * attributes.
+     */
     inline void SetUserAttributes(const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& value) { m_userAttributesHasBeenSet = true; m_userAttributes = value; }
 
     /**
@@ -208,6 +222,11 @@ The Amazon Pinpoint console can't
      * The unique ID of the user.
      */
     inline const Aws::String& GetUserId() const{ return m_userId; }
+
+    /**
+     * The unique ID of the user.
+     */
+    inline bool UserIdHasBeenSet() const { return m_userIdHasBeenSet; }
 
     /**
      * The unique ID of the user.

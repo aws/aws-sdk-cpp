@@ -59,6 +59,12 @@ namespace Model
      * <p>The identifier for the user or group is associated as the resource's
      * delegate.</p>
      */
+    inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
+
+    /**
+     * <p>The identifier for the user or group is associated as the resource's
+     * delegate.</p>
+     */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
     /**
@@ -96,6 +102,11 @@ namespace Model
      * <p>The type of the delegate: user or group.</p>
      */
     inline const MemberType& GetType() const{ return m_type; }
+
+    /**
+     * <p>The type of the delegate: user or group.</p>
+     */
+    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
 
     /**
      * <p>The type of the delegate: user or group.</p>

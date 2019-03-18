@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p>The start time.</p>
      */
+    inline bool AddedToClusterTimeHasBeenSet() const { return m_addedToClusterTimeHasBeenSet; }
+
+    /**
+     * <p>The start time.</p>
+     */
     inline void SetAddedToClusterTime(const Aws::String& value) { m_addedToClusterTimeHasBeenSet = true; m_addedToClusterTime = value; }
 
     /**
@@ -94,6 +99,11 @@ namespace Model
     /**
      * <p>The broker node info.</p>
      */
+    inline bool BrokerNodeInfoHasBeenSet() const { return m_brokerNodeInfoHasBeenSet; }
+
+    /**
+     * <p>The broker node info.</p>
+     */
     inline void SetBrokerNodeInfo(const BrokerNodeInfo& value) { m_brokerNodeInfoHasBeenSet = true; m_brokerNodeInfo = value; }
 
     /**
@@ -116,6 +126,11 @@ namespace Model
      * <p>The instance type.</p>
      */
     inline const Aws::String& GetInstanceType() const{ return m_instanceType; }
+
+    /**
+     * <p>The instance type.</p>
+     */
+    inline bool InstanceTypeHasBeenSet() const { return m_instanceTypeHasBeenSet; }
 
     /**
      * <p>The instance type.</p>
@@ -156,6 +171,11 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the node.</p>
      */
+    inline bool NodeARNHasBeenSet() const { return m_nodeARNHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the node.</p>
+     */
     inline void SetNodeARN(const Aws::String& value) { m_nodeARNHasBeenSet = true; m_nodeARN = value; }
 
     /**
@@ -192,6 +212,11 @@ namespace Model
     /**
      * <p>The node type.</p>
      */
+    inline bool NodeTypeHasBeenSet() const { return m_nodeTypeHasBeenSet; }
+
+    /**
+     * <p>The node type.</p>
+     */
     inline void SetNodeType(const NodeType& value) { m_nodeTypeHasBeenSet = true; m_nodeType = value; }
 
     /**
@@ -214,6 +239,11 @@ namespace Model
      * <p>The ZookeeperNodeInfo.</p>
      */
     inline const ZookeeperNodeInfo& GetZookeeperNodeInfo() const{ return m_zookeeperNodeInfo; }
+
+    /**
+     * <p>The ZookeeperNodeInfo.</p>
+     */
+    inline bool ZookeeperNodeInfoHasBeenSet() const { return m_zookeeperNodeInfoHasBeenSet; }
 
     /**
      * <p>The ZookeeperNodeInfo.</p>

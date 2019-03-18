@@ -56,6 +56,12 @@ namespace Model
      * <p>The identifier of the WorkSpace. To find this ID, use
      * <a>DescribeWorkspaces</a>.</p>
      */
+    inline bool ResourceIdHasBeenSet() const { return m_resourceIdHasBeenSet; }
+
+    /**
+     * <p>The identifier of the WorkSpace. To find this ID, use
+     * <a>DescribeWorkspaces</a>.</p>
+     */
     inline void SetResourceId(const Aws::String& value) { m_resourceIdHasBeenSet = true; m_resourceId = value; }
 
     /**
@@ -93,6 +99,11 @@ namespace Model
      * <p>The tags. Each WorkSpace can have a maximum of 50 tags.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>The tags. Each WorkSpace can have a maximum of 50 tags.</p>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
      * <p>The tags. Each WorkSpace can have a maximum of 50 tags.</p>

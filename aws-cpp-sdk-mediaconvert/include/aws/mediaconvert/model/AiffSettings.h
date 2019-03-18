@@ -56,6 +56,12 @@ namespace Model
      * Specify Bit depth (BitDepth), in bits per sample, to choose the encoding quality
      * for this audio track.
      */
+    inline bool BitDepthHasBeenSet() const { return m_bitDepthHasBeenSet; }
+
+    /**
+     * Specify Bit depth (BitDepth), in bits per sample, to choose the encoding quality
+     * for this audio track.
+     */
     inline void SetBitDepth(int value) { m_bitDepthHasBeenSet = true; m_bitDepth = value; }
 
     /**
@@ -77,6 +83,13 @@ namespace Model
      * Choosing Mono in the console will give you 1 output channel; choosing Stereo
      * will give you 2. In the API, valid values are 1 and 2.
      */
+    inline bool ChannelsHasBeenSet() const { return m_channelsHasBeenSet; }
+
+    /**
+     * Set Channels to specify the number of channels in this output audio track.
+     * Choosing Mono in the console will give you 1 output channel; choosing Stereo
+     * will give you 2. In the API, valid values are 1 and 2.
+     */
     inline void SetChannels(int value) { m_channelsHasBeenSet = true; m_channels = value; }
 
     /**
@@ -91,6 +104,11 @@ namespace Model
      * Sample rate in hz.
      */
     inline int GetSampleRate() const{ return m_sampleRate; }
+
+    /**
+     * Sample rate in hz.
+     */
+    inline bool SampleRateHasBeenSet() const { return m_sampleRateHasBeenSet; }
 
     /**
      * Sample rate in hz.

@@ -52,6 +52,11 @@ namespace Model
     /**
      * <p>The ID of the managed instance where you want to update the role.</p>
      */
+    inline bool InstanceIdHasBeenSet() const { return m_instanceIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the managed instance where you want to update the role.</p>
+     */
     inline void SetInstanceId(const Aws::String& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
 
     /**
@@ -84,6 +89,11 @@ namespace Model
      * <p>The IAM role you want to assign or change.</p>
      */
     inline const Aws::String& GetIamRole() const{ return m_iamRole; }
+
+    /**
+     * <p>The IAM role you want to assign or change.</p>
+     */
+    inline bool IamRoleHasBeenSet() const { return m_iamRoleHasBeenSet; }
 
     /**
      * <p>The IAM role you want to assign or change.</p>

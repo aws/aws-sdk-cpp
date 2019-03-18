@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The streaming distribution's configuration information.</p>
      */
+    inline bool StreamingDistributionConfigHasBeenSet() const { return m_streamingDistributionConfigHasBeenSet; }
+
+    /**
+     * <p>The streaming distribution's configuration information.</p>
+     */
     inline void SetStreamingDistributionConfig(const StreamingDistributionConfig& value) { m_streamingDistributionConfigHasBeenSet = true; m_streamingDistributionConfig = value; }
 
     /**
@@ -78,6 +83,11 @@ namespace Model
      * <p>The streaming distribution's id.</p>
      */
     inline const Aws::String& GetId() const{ return m_id; }
+
+    /**
+     * <p>The streaming distribution's id.</p>
+     */
+    inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
 
     /**
      * <p>The streaming distribution's id.</p>
@@ -116,6 +126,13 @@ namespace Model
      * <code>E2QWRUHAPOMQZL</code>.</p>
      */
     inline const Aws::String& GetIfMatch() const{ return m_ifMatch; }
+
+    /**
+     * <p>The value of the <code>ETag</code> header that you received when retrieving
+     * the streaming distribution's configuration. For example:
+     * <code>E2QWRUHAPOMQZL</code>.</p>
+     */
+    inline bool IfMatchHasBeenSet() const { return m_ifMatchHasBeenSet; }
 
     /**
      * <p>The value of the <code>ETag</code> header that you received when retrieving

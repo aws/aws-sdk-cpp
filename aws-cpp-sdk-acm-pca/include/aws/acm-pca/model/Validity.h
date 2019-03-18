@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p>Time period.</p>
      */
+    inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
+
+    /**
+     * <p>Time period.</p>
+     */
     inline void SetValue(long long value) { m_valueHasBeenSet = true; m_value = value; }
 
     /**
@@ -71,6 +76,12 @@ namespace Model
      * or years.</p>
      */
     inline const ValidityPeriodType& GetType() const{ return m_type; }
+
+    /**
+     * <p>Specifies whether the <code>Value</code> parameter represents days, months,
+     * or years.</p>
+     */
+    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
 
     /**
      * <p>Specifies whether the <code>Value</code> parameter represents days, months,

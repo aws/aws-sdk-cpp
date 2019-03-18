@@ -56,6 +56,13 @@ namespace Model
      * of backup IDs. Backup IDs are in the format
      * <code>ServerName-yyyyMMddHHmmssSSS</code>. </p>
      */
+    inline bool BackupIdHasBeenSet() const { return m_backupIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the backup to delete. Run the DescribeBackups command to get a list
+     * of backup IDs. Backup IDs are in the format
+     * <code>ServerName-yyyyMMddHHmmssSSS</code>. </p>
+     */
     inline void SetBackupId(const Aws::String& value) { m_backupIdHasBeenSet = true; m_backupId = value; }
 
     /**

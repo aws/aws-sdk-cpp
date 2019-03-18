@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p>Temporary key allowing access to the Amazon GameLift S3 account.</p>
      */
+    inline bool AccessKeyIdHasBeenSet() const { return m_accessKeyIdHasBeenSet; }
+
+    /**
+     * <p>Temporary key allowing access to the Amazon GameLift S3 account.</p>
+     */
     inline void SetAccessKeyId(const Aws::String& value) { m_accessKeyIdHasBeenSet = true; m_accessKeyId = value; }
 
     /**
@@ -90,6 +95,11 @@ namespace Model
      * <p>Temporary secret key allowing access to the Amazon GameLift S3 account.</p>
      */
     inline const Aws::String& GetSecretAccessKey() const{ return m_secretAccessKey; }
+
+    /**
+     * <p>Temporary secret key allowing access to the Amazon GameLift S3 account.</p>
+     */
+    inline bool SecretAccessKeyHasBeenSet() const { return m_secretAccessKeyHasBeenSet; }
 
     /**
      * <p>Temporary secret key allowing access to the Amazon GameLift S3 account.</p>
@@ -127,6 +137,12 @@ namespace Model
      * these credentials.</p>
      */
     inline const Aws::String& GetSessionToken() const{ return m_sessionToken; }
+
+    /**
+     * <p>Token used to associate a specific build ID with the files uploaded using
+     * these credentials.</p>
+     */
+    inline bool SessionTokenHasBeenSet() const { return m_sessionTokenHasBeenSet; }
 
     /**
      * <p>Token used to associate a specific build ID with the files uploaded using

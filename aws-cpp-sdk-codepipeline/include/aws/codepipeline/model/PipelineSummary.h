@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The name of the pipeline.</p>
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>The name of the pipeline.</p>
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
@@ -92,6 +97,11 @@ namespace Model
     /**
      * <p>The version number of the pipeline.</p>
      */
+    inline bool VersionHasBeenSet() const { return m_versionHasBeenSet; }
+
+    /**
+     * <p>The version number of the pipeline.</p>
+     */
     inline void SetVersion(int value) { m_versionHasBeenSet = true; m_version = value; }
 
     /**
@@ -104,6 +114,11 @@ namespace Model
      * <p>The date and time the pipeline was created, in timestamp format.</p>
      */
     inline const Aws::Utils::DateTime& GetCreated() const{ return m_created; }
+
+    /**
+     * <p>The date and time the pipeline was created, in timestamp format.</p>
+     */
+    inline bool CreatedHasBeenSet() const { return m_createdHasBeenSet; }
 
     /**
      * <p>The date and time the pipeline was created, in timestamp format.</p>
@@ -131,6 +146,12 @@ namespace Model
      * format.</p>
      */
     inline const Aws::Utils::DateTime& GetUpdated() const{ return m_updated; }
+
+    /**
+     * <p>The date and time of the last update to the pipeline, in timestamp
+     * format.</p>
+     */
+    inline bool UpdatedHasBeenSet() const { return m_updatedHasBeenSet; }
 
     /**
      * <p>The date and time of the last update to the pipeline, in timestamp

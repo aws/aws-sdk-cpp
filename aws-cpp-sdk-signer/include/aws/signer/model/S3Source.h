@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>Name of the S3 bucket.</p>
      */
+    inline bool BucketNameHasBeenSet() const { return m_bucketNameHasBeenSet; }
+
+    /**
+     * <p>Name of the S3 bucket.</p>
+     */
     inline void SetBucketName(const Aws::String& value) { m_bucketNameHasBeenSet = true; m_bucketName = value; }
 
     /**
@@ -92,6 +97,11 @@ namespace Model
     /**
      * <p>Key name of the bucket object that contains your unsigned code.</p>
      */
+    inline bool KeyHasBeenSet() const { return m_keyHasBeenSet; }
+
+    /**
+     * <p>Key name of the bucket object that contains your unsigned code.</p>
+     */
     inline void SetKey(const Aws::String& value) { m_keyHasBeenSet = true; m_key = value; }
 
     /**
@@ -124,6 +134,11 @@ namespace Model
      * <p>Version of your source image in your version enabled S3 bucket.</p>
      */
     inline const Aws::String& GetVersion() const{ return m_version; }
+
+    /**
+     * <p>Version of your source image in your version enabled S3 bucket.</p>
+     */
+    inline bool VersionHasBeenSet() const { return m_versionHasBeenSet; }
 
     /**
      * <p>Version of your source image in your version enabled S3 bucket.</p>

@@ -58,6 +58,12 @@ namespace Model
      * <p>Identifier of the server this replication configuration is associated
      * with.</p>
      */
+    inline bool ServerHasBeenSet() const { return m_serverHasBeenSet; }
+
+    /**
+     * <p>Identifier of the server this replication configuration is associated
+     * with.</p>
+     */
     inline void SetServer(const Server& value) { m_serverHasBeenSet = true; m_server = value; }
 
     /**
@@ -83,6 +89,11 @@ namespace Model
      * <p>Parameters for replicating the server.</p>
      */
     inline const ServerReplicationParameters& GetServerReplicationParameters() const{ return m_serverReplicationParameters; }
+
+    /**
+     * <p>Parameters for replicating the server.</p>
+     */
+    inline bool ServerReplicationParametersHasBeenSet() const { return m_serverReplicationParametersHasBeenSet; }
 
     /**
      * <p>Parameters for replicating the server.</p>

@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The ARN of the topic whose access control policy you wish to modify.</p>
      */
+    inline bool TopicArnHasBeenSet() const { return m_topicArnHasBeenSet; }
+
+    /**
+     * <p>The ARN of the topic whose access control policy you wish to modify.</p>
+     */
     inline void SetTopicArn(const Aws::String& value) { m_topicArnHasBeenSet = true; m_topicArn = value; }
 
     /**
@@ -89,6 +94,11 @@ namespace Model
      * <p>The unique label of the statement you want to remove.</p>
      */
     inline const Aws::String& GetLabel() const{ return m_label; }
+
+    /**
+     * <p>The unique label of the statement you want to remove.</p>
+     */
+    inline bool LabelHasBeenSet() const { return m_labelHasBeenSet; }
 
     /**
      * <p>The unique label of the statement you want to remove.</p>

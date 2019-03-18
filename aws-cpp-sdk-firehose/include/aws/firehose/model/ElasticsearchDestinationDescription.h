@@ -68,6 +68,14 @@ namespace Model
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
      * Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
      */
+    inline bool RoleARNHasBeenSet() const { return m_roleARNHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the AWS credentials. For more information,
+     * see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
+     */
     inline void SetRoleARN(const Aws::String& value) { m_roleARNHasBeenSet = true; m_roleARN = value; }
 
     /**
@@ -123,6 +131,13 @@ namespace Model
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
      * Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
      */
+    inline bool DomainARNHasBeenSet() const { return m_domainARNHasBeenSet; }
+
+    /**
+     * <p>The ARN of the Amazon ES domain. For more information, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
+     */
     inline void SetDomainARN(const Aws::String& value) { m_domainARNHasBeenSet = true; m_domainARN = value; }
 
     /**
@@ -169,6 +184,11 @@ namespace Model
     /**
      * <p>The Elasticsearch index name.</p>
      */
+    inline bool IndexNameHasBeenSet() const { return m_indexNameHasBeenSet; }
+
+    /**
+     * <p>The Elasticsearch index name.</p>
+     */
     inline void SetIndexName(const Aws::String& value) { m_indexNameHasBeenSet = true; m_indexName = value; }
 
     /**
@@ -201,6 +221,11 @@ namespace Model
      * <p>The Elasticsearch type name.</p>
      */
     inline const Aws::String& GetTypeName() const{ return m_typeName; }
+
+    /**
+     * <p>The Elasticsearch type name.</p>
+     */
+    inline bool TypeNameHasBeenSet() const { return m_typeNameHasBeenSet; }
 
     /**
      * <p>The Elasticsearch type name.</p>
@@ -241,6 +266,11 @@ namespace Model
     /**
      * <p>The Elasticsearch index rotation period</p>
      */
+    inline bool IndexRotationPeriodHasBeenSet() const { return m_indexRotationPeriodHasBeenSet; }
+
+    /**
+     * <p>The Elasticsearch index rotation period</p>
+     */
     inline void SetIndexRotationPeriod(const ElasticsearchIndexRotationPeriod& value) { m_indexRotationPeriodHasBeenSet = true; m_indexRotationPeriod = value; }
 
     /**
@@ -263,6 +293,11 @@ namespace Model
      * <p>The buffering options.</p>
      */
     inline const ElasticsearchBufferingHints& GetBufferingHints() const{ return m_bufferingHints; }
+
+    /**
+     * <p>The buffering options.</p>
+     */
+    inline bool BufferingHintsHasBeenSet() const { return m_bufferingHintsHasBeenSet; }
 
     /**
      * <p>The buffering options.</p>
@@ -293,6 +328,11 @@ namespace Model
     /**
      * <p>The Amazon ES retry options.</p>
      */
+    inline bool RetryOptionsHasBeenSet() const { return m_retryOptionsHasBeenSet; }
+
+    /**
+     * <p>The Amazon ES retry options.</p>
+     */
     inline void SetRetryOptions(const ElasticsearchRetryOptions& value) { m_retryOptionsHasBeenSet = true; m_retryOptions = value; }
 
     /**
@@ -315,6 +355,11 @@ namespace Model
      * <p>The Amazon S3 backup mode.</p>
      */
     inline const ElasticsearchS3BackupMode& GetS3BackupMode() const{ return m_s3BackupMode; }
+
+    /**
+     * <p>The Amazon S3 backup mode.</p>
+     */
+    inline bool S3BackupModeHasBeenSet() const { return m_s3BackupModeHasBeenSet; }
 
     /**
      * <p>The Amazon S3 backup mode.</p>
@@ -345,6 +390,11 @@ namespace Model
     /**
      * <p>The Amazon S3 destination.</p>
      */
+    inline bool S3DestinationDescriptionHasBeenSet() const { return m_s3DestinationDescriptionHasBeenSet; }
+
+    /**
+     * <p>The Amazon S3 destination.</p>
+     */
     inline void SetS3DestinationDescription(const S3DestinationDescription& value) { m_s3DestinationDescriptionHasBeenSet = true; m_s3DestinationDescription = value; }
 
     /**
@@ -371,6 +421,11 @@ namespace Model
     /**
      * <p>The data processing configuration.</p>
      */
+    inline bool ProcessingConfigurationHasBeenSet() const { return m_processingConfigurationHasBeenSet; }
+
+    /**
+     * <p>The data processing configuration.</p>
+     */
     inline void SetProcessingConfiguration(const ProcessingConfiguration& value) { m_processingConfigurationHasBeenSet = true; m_processingConfiguration = value; }
 
     /**
@@ -393,6 +448,11 @@ namespace Model
      * <p>The Amazon CloudWatch logging options.</p>
      */
     inline const CloudWatchLoggingOptions& GetCloudWatchLoggingOptions() const{ return m_cloudWatchLoggingOptions; }
+
+    /**
+     * <p>The Amazon CloudWatch logging options.</p>
+     */
+    inline bool CloudWatchLoggingOptionsHasBeenSet() const { return m_cloudWatchLoggingOptionsHasBeenSet; }
 
     /**
      * <p>The Amazon CloudWatch logging options.</p>

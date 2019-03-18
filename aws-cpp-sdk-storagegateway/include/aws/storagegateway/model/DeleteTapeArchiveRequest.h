@@ -57,6 +57,12 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the virtual tape to delete from the virtual
      * tape shelf (VTS).</p>
      */
+    inline bool TapeARNHasBeenSet() const { return m_tapeARNHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the virtual tape to delete from the virtual
+     * tape shelf (VTS).</p>
+     */
     inline void SetTapeARN(const Aws::String& value) { m_tapeARNHasBeenSet = true; m_tapeARN = value; }
 
     /**

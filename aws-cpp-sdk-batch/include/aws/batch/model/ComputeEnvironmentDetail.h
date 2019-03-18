@@ -60,6 +60,11 @@ namespace Model
     /**
      * <p>The name of the compute environment. </p>
      */
+    inline bool ComputeEnvironmentNameHasBeenSet() const { return m_computeEnvironmentNameHasBeenSet; }
+
+    /**
+     * <p>The name of the compute environment. </p>
+     */
     inline void SetComputeEnvironmentName(const Aws::String& value) { m_computeEnvironmentNameHasBeenSet = true; m_computeEnvironmentName = value; }
 
     /**
@@ -92,6 +97,11 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the compute environment. </p>
      */
     inline const Aws::String& GetComputeEnvironmentArn() const{ return m_computeEnvironmentArn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the compute environment. </p>
+     */
+    inline bool ComputeEnvironmentArnHasBeenSet() const { return m_computeEnvironmentArnHasBeenSet; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the compute environment. </p>
@@ -129,6 +139,12 @@ namespace Model
      * the compute environment. </p>
      */
     inline const Aws::String& GetEcsClusterArn() const{ return m_ecsClusterArn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the underlying Amazon ECS cluster used by
+     * the compute environment. </p>
+     */
+    inline bool EcsClusterArnHasBeenSet() const { return m_ecsClusterArnHasBeenSet; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the underlying Amazon ECS cluster used by
@@ -175,6 +191,11 @@ namespace Model
     /**
      * <p>The type of the compute environment.</p>
      */
+    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
+
+    /**
+     * <p>The type of the compute environment.</p>
+     */
     inline void SetType(const CEType& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
@@ -207,6 +228,21 @@ namespace Model
      * scale in to <code>minvCpus</code> value after instances become idle.</p>
      */
     inline const CEState& GetState() const{ return m_state; }
+
+    /**
+     * <p>The state of the compute environment. The valid values are
+     * <code>ENABLED</code> or <code>DISABLED</code>. </p> <p>If the state is
+     * <code>ENABLED</code>, then the AWS Batch scheduler can attempt to place jobs
+     * from an associated job queue on the compute resources within the environment. If
+     * the compute environment is managed, then it can scale its instances out or in
+     * automatically, based on the job queue demand.</p> <p>If the state is
+     * <code>DISABLED</code>, then the AWS Batch scheduler does not attempt to place
+     * jobs within the environment. Jobs in a <code>STARTING</code> or
+     * <code>RUNNING</code> state continue to progress normally. Managed compute
+     * environments in the <code>DISABLED</code> state do not scale out. However, they
+     * scale in to <code>minvCpus</code> value after instances become idle.</p>
+     */
+    inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
 
     /**
      * <p>The state of the compute environment. The valid values are
@@ -279,6 +315,12 @@ namespace Model
      * <p>The current status of the compute environment (for example,
      * <code>CREATING</code> or <code>VALID</code>).</p>
      */
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
+
+    /**
+     * <p>The current status of the compute environment (for example,
+     * <code>CREATING</code> or <code>VALID</code>).</p>
+     */
     inline void SetStatus(const CEStatus& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
@@ -305,6 +347,12 @@ namespace Model
      * current status of the compute environment.</p>
      */
     inline const Aws::String& GetStatusReason() const{ return m_statusReason; }
+
+    /**
+     * <p>A short, human-readable string to provide additional details about the
+     * current status of the compute environment.</p>
+     */
+    inline bool StatusReasonHasBeenSet() const { return m_statusReasonHasBeenSet; }
 
     /**
      * <p>A short, human-readable string to provide additional details about the
@@ -351,6 +399,11 @@ namespace Model
     /**
      * <p>The compute resources defined for the compute environment. </p>
      */
+    inline bool ComputeResourcesHasBeenSet() const { return m_computeResourcesHasBeenSet; }
+
+    /**
+     * <p>The compute resources defined for the compute environment. </p>
+     */
     inline void SetComputeResources(const ComputeResource& value) { m_computeResourcesHasBeenSet = true; m_computeResources = value; }
 
     /**
@@ -374,6 +427,12 @@ namespace Model
      * Batch to make calls to AWS API operations on your behalf.</p>
      */
     inline const Aws::String& GetServiceRole() const{ return m_serviceRole; }
+
+    /**
+     * <p>The service role associated with the compute environment that allows AWS
+     * Batch to make calls to AWS API operations on your behalf.</p>
+     */
+    inline bool ServiceRoleHasBeenSet() const { return m_serviceRoleHasBeenSet; }
 
     /**
      * <p>The service role associated with the compute environment that allows AWS

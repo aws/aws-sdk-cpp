@@ -56,6 +56,13 @@ namespace Model
      * integration with your organization. This is typically in the form of a URL, such
      * as <code> <i>service-abbreviation</i>.amazonaws.com</code>.</p>
      */
+    inline bool ServicePrincipalHasBeenSet() const { return m_servicePrincipalHasBeenSet; }
+
+    /**
+     * <p>The service principal name of the AWS service for which you want to enable
+     * integration with your organization. This is typically in the form of a URL, such
+     * as <code> <i>service-abbreviation</i>.amazonaws.com</code>.</p>
+     */
     inline void SetServicePrincipal(const Aws::String& value) { m_servicePrincipalHasBeenSet = true; m_servicePrincipal = value; }
 
     /**

@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>A unique identifier for the CA.</p>
      */
+    inline bool WebsiteCaIdHasBeenSet() const { return m_websiteCaIdHasBeenSet; }
+
+    /**
+     * <p>A unique identifier for the CA.</p>
+     */
     inline void SetWebsiteCaId(const Aws::String& value) { m_websiteCaIdHasBeenSet = true; m_websiteCaId = value; }
 
     /**
@@ -92,6 +97,11 @@ namespace Model
     /**
      * <p>The time when the CA was added.</p>
      */
+    inline bool CreatedTimeHasBeenSet() const { return m_createdTimeHasBeenSet; }
+
+    /**
+     * <p>The time when the CA was added.</p>
+     */
     inline void SetCreatedTime(const Aws::Utils::DateTime& value) { m_createdTimeHasBeenSet = true; m_createdTime = value; }
 
     /**
@@ -114,6 +124,11 @@ namespace Model
      * <p>The name to display.</p>
      */
     inline const Aws::String& GetDisplayName() const{ return m_displayName; }
+
+    /**
+     * <p>The name to display.</p>
+     */
+    inline bool DisplayNameHasBeenSet() const { return m_displayNameHasBeenSet; }
 
     /**
      * <p>The name to display.</p>

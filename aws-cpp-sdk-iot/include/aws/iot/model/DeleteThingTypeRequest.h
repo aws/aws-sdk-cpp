@@ -53,6 +53,11 @@ namespace Model
     /**
      * <p>The name of the thing type.</p>
      */
+    inline bool ThingTypeNameHasBeenSet() const { return m_thingTypeNameHasBeenSet; }
+
+    /**
+     * <p>The name of the thing type.</p>
+     */
     inline void SetThingTypeName(const Aws::String& value) { m_thingTypeNameHasBeenSet = true; m_thingTypeName = value; }
 
     /**

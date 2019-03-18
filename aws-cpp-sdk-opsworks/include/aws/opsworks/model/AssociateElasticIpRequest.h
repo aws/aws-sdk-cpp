@@ -52,6 +52,11 @@ namespace Model
     /**
      * <p>The Elastic IP address.</p>
      */
+    inline bool ElasticIpHasBeenSet() const { return m_elasticIpHasBeenSet; }
+
+    /**
+     * <p>The Elastic IP address.</p>
+     */
     inline void SetElasticIp(const Aws::String& value) { m_elasticIpHasBeenSet = true; m_elasticIp = value; }
 
     /**
@@ -84,6 +89,11 @@ namespace Model
      * <p>The instance ID.</p>
      */
     inline const Aws::String& GetInstanceId() const{ return m_instanceId; }
+
+    /**
+     * <p>The instance ID.</p>
+     */
+    inline bool InstanceIdHasBeenSet() const { return m_instanceIdHasBeenSet; }
 
     /**
      * <p>The instance ID.</p>

@@ -52,6 +52,11 @@ namespace Model
     /**
      * <p>The name of the work team to return a description of.</p>
      */
+    inline bool WorkteamNameHasBeenSet() const { return m_workteamNameHasBeenSet; }
+
+    /**
+     * <p>The name of the work team to return a description of.</p>
+     */
     inline void SetWorkteamName(const Aws::String& value) { m_workteamNameHasBeenSet = true; m_workteamName = value; }
 
     /**

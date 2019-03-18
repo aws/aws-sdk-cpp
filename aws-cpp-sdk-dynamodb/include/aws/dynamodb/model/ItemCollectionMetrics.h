@@ -63,6 +63,12 @@ namespace Model
      * <p>The partition key value of the item collection. This value is the same as the
      * partition key value of the item.</p>
      */
+    inline bool ItemCollectionKeyHasBeenSet() const { return m_itemCollectionKeyHasBeenSet; }
+
+    /**
+     * <p>The partition key value of the item collection. This value is the same as the
+     * partition key value of the item.</p>
+     */
     inline void SetItemCollectionKey(const Aws::Map<Aws::String, AttributeValue>& value) { m_itemCollectionKeyHasBeenSet = true; m_itemCollectionKey = value; }
 
     /**
@@ -130,6 +136,17 @@ namespace Model
      * not rely on the precision or accuracy of the estimate.</p>
      */
     inline const Aws::Vector<double>& GetSizeEstimateRangeGB() const{ return m_sizeEstimateRangeGB; }
+
+    /**
+     * <p>An estimate of item collection size, in gigabytes. This value is a
+     * two-element array containing a lower bound and an upper bound for the estimate.
+     * The estimate includes the size of all the items in the table, plus the size of
+     * all attributes projected into all of the local secondary indexes on that table.
+     * Use this estimate to measure whether a local secondary index is approaching its
+     * size limit.</p> <p>The estimate is subject to change over time; therefore, do
+     * not rely on the precision or accuracy of the estimate.</p>
+     */
+    inline bool SizeEstimateRangeGBHasBeenSet() const { return m_sizeEstimateRangeGBHasBeenSet; }
 
     /**
      * <p>An estimate of item collection size, in gigabytes. This value is a

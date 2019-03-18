@@ -90,6 +90,16 @@ namespace Model
      * you set this option to <code>true</code>, you cannot enumerate a list of
      * <code>resourceTypes</code>.</p>
      */
+    inline bool AllSupportedHasBeenSet() const { return m_allSupportedHasBeenSet; }
+
+    /**
+     * <p>Specifies whether AWS Config records configuration changes for every
+     * supported type of regional resource.</p> <p>If you set this option to
+     * <code>true</code>, when AWS Config adds support for a new type of regional
+     * resource, it starts recording resources of that type automatically.</p> <p>If
+     * you set this option to <code>true</code>, you cannot enumerate a list of
+     * <code>resourceTypes</code>.</p>
+     */
     inline void SetAllSupported(bool value) { m_allSupportedHasBeenSet = true; m_allSupported = value; }
 
     /**
@@ -115,6 +125,19 @@ namespace Model
      * customizing AWS Config in only one region to record global resources.</p>
      */
     inline bool GetIncludeGlobalResourceTypes() const{ return m_includeGlobalResourceTypes; }
+
+    /**
+     * <p>Specifies whether AWS Config includes all supported types of global resources
+     * (for example, IAM resources) with the resources that it records.</p> <p>Before
+     * you can set this option to <code>true</code>, you must set the
+     * <code>allSupported</code> option to <code>true</code>.</p> <p>If you set this
+     * option to <code>true</code>, when AWS Config adds support for a new type of
+     * global resource, it starts recording resources of that type automatically.</p>
+     * <p>The configuration details for any global resource are the same in all
+     * regions. To prevent duplicate configuration items, you should consider
+     * customizing AWS Config in only one region to record global resources.</p>
+     */
+    inline bool IncludeGlobalResourceTypesHasBeenSet() const { return m_includeGlobalResourceTypesHasBeenSet; }
 
     /**
      * <p>Specifies whether AWS Config includes all supported types of global resources
@@ -158,6 +181,22 @@ namespace Model
      * AWS Resource Types</a>.</p>
      */
     inline const Aws::Vector<ResourceType>& GetResourceTypes() const{ return m_resourceTypes; }
+
+    /**
+     * <p>A comma-separated list that specifies the types of AWS resources for which
+     * AWS Config records configuration changes (for example,
+     * <code>AWS::EC2::Instance</code> or <code>AWS::CloudTrail::Trail</code>).</p>
+     * <p>Before you can set this option to <code>true</code>, you must set the
+     * <code>allSupported</code> option to <code>false</code>.</p> <p>If you set this
+     * option to <code>true</code>, when AWS Config adds support for a new type of
+     * resource, it will not record resources of that type unless you manually add that
+     * type to your recording group.</p> <p>For a list of valid
+     * <code>resourceTypes</code> values, see the <b>resourceType Value</b> column in
+     * <a
+     * href="https://docs.aws.amazon.com/config/latest/developerguide/resource-config-reference.html#supported-resources">Supported
+     * AWS Resource Types</a>.</p>
+     */
+    inline bool ResourceTypesHasBeenSet() const { return m_resourceTypesHasBeenSet; }
 
     /**
      * <p>A comma-separated list that specifies the types of AWS resources for which

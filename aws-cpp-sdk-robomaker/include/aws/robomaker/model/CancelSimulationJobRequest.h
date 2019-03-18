@@ -50,6 +50,11 @@ namespace Model
     /**
      * <p>The simulation job ARN to cancel.</p>
      */
+    inline bool JobHasBeenSet() const { return m_jobHasBeenSet; }
+
+    /**
+     * <p>The simulation job ARN to cancel.</p>
+     */
     inline void SetJob(const Aws::String& value) { m_jobHasBeenSet = true; m_job = value; }
 
     /**

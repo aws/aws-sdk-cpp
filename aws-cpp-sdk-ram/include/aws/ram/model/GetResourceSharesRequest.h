@@ -54,6 +54,11 @@ namespace Model
     /**
      * <p>The Amazon Resource Names (ARN) of the resource shares.</p>
      */
+    inline bool ResourceShareArnsHasBeenSet() const { return m_resourceShareArnsHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Names (ARN) of the resource shares.</p>
+     */
     inline void SetResourceShareArns(const Aws::Vector<Aws::String>& value) { m_resourceShareArnsHasBeenSet = true; m_resourceShareArns = value; }
 
     /**
@@ -95,6 +100,11 @@ namespace Model
     /**
      * <p>The status of the resource share.</p>
      */
+    inline bool ResourceShareStatusHasBeenSet() const { return m_resourceShareStatusHasBeenSet; }
+
+    /**
+     * <p>The status of the resource share.</p>
+     */
     inline void SetResourceShareStatus(const ResourceShareStatus& value) { m_resourceShareStatusHasBeenSet = true; m_resourceShareStatus = value; }
 
     /**
@@ -121,6 +131,11 @@ namespace Model
     /**
      * <p>The type of owner.</p>
      */
+    inline bool ResourceOwnerHasBeenSet() const { return m_resourceOwnerHasBeenSet; }
+
+    /**
+     * <p>The type of owner.</p>
+     */
     inline void SetResourceOwner(const ResourceOwner& value) { m_resourceOwnerHasBeenSet = true; m_resourceOwner = value; }
 
     /**
@@ -143,6 +158,11 @@ namespace Model
      * <p>The name of the resource share.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
+
+    /**
+     * <p>The name of the resource share.</p>
+     */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
      * <p>The name of the resource share.</p>
@@ -183,6 +203,11 @@ namespace Model
     /**
      * <p>One or more tag filters.</p>
      */
+    inline bool TagFiltersHasBeenSet() const { return m_tagFiltersHasBeenSet; }
+
+    /**
+     * <p>One or more tag filters.</p>
+     */
     inline void SetTagFilters(const Aws::Vector<TagFilter>& value) { m_tagFiltersHasBeenSet = true; m_tagFilters = value; }
 
     /**
@@ -215,6 +240,11 @@ namespace Model
      * <p>The token for the next page of results.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
+    /**
+     * <p>The token for the next page of results.</p>
+     */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
      * <p>The token for the next page of results.</p>
@@ -253,6 +283,13 @@ namespace Model
      * value.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
+
+    /**
+     * <p>The maximum number of results to return with a single call. To retrieve the
+     * remaining results, make another call with the returned <code>nextToken</code>
+     * value.</p>
+     */
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
 
     /**
      * <p>The maximum number of results to return with a single call. To retrieve the

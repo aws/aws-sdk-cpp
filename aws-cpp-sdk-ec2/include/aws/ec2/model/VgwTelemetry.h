@@ -59,6 +59,11 @@ namespace Model
     /**
      * <p>The number of accepted routes.</p>
      */
+    inline bool AcceptedRouteCountHasBeenSet() const { return m_acceptedRouteCountHasBeenSet; }
+
+    /**
+     * <p>The number of accepted routes.</p>
+     */
     inline void SetAcceptedRouteCount(int value) { m_acceptedRouteCountHasBeenSet = true; m_acceptedRouteCount = value; }
 
     /**
@@ -71,6 +76,11 @@ namespace Model
      * <p>The date and time of the last change in status.</p>
      */
     inline const Aws::Utils::DateTime& GetLastStatusChange() const{ return m_lastStatusChange; }
+
+    /**
+     * <p>The date and time of the last change in status.</p>
+     */
+    inline bool LastStatusChangeHasBeenSet() const { return m_lastStatusChangeHasBeenSet; }
 
     /**
      * <p>The date and time of the last change in status.</p>
@@ -98,6 +108,12 @@ namespace Model
      * interface.</p>
      */
     inline const Aws::String& GetOutsideIpAddress() const{ return m_outsideIpAddress; }
+
+    /**
+     * <p>The Internet-routable IP address of the virtual private gateway's outside
+     * interface.</p>
+     */
+    inline bool OutsideIpAddressHasBeenSet() const { return m_outsideIpAddressHasBeenSet; }
 
     /**
      * <p>The Internet-routable IP address of the virtual private gateway's outside
@@ -144,6 +160,11 @@ namespace Model
     /**
      * <p>The status of the VPN tunnel.</p>
      */
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
+
+    /**
+     * <p>The status of the VPN tunnel.</p>
+     */
     inline void SetStatus(const TelemetryStatus& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
@@ -166,6 +187,11 @@ namespace Model
      * <p>If an error occurs, a description of the error.</p>
      */
     inline const Aws::String& GetStatusMessage() const{ return m_statusMessage; }
+
+    /**
+     * <p>If an error occurs, a description of the error.</p>
+     */
+    inline bool StatusMessageHasBeenSet() const { return m_statusMessageHasBeenSet; }
 
     /**
      * <p>If an error occurs, a description of the error.</p>

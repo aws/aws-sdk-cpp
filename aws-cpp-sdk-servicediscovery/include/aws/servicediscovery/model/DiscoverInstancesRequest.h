@@ -56,6 +56,12 @@ namespace Model
      * <p>The name of the namespace that you specified when you registered the
      * instance.</p>
      */
+    inline bool NamespaceNameHasBeenSet() const { return m_namespaceNameHasBeenSet; }
+
+    /**
+     * <p>The name of the namespace that you specified when you registered the
+     * instance.</p>
+     */
     inline void SetNamespaceName(const Aws::String& value) { m_namespaceNameHasBeenSet = true; m_namespaceName = value; }
 
     /**
@@ -94,6 +100,12 @@ namespace Model
      * instance.</p>
      */
     inline const Aws::String& GetServiceName() const{ return m_serviceName; }
+
+    /**
+     * <p>The name of the service that you specified when you registered the
+     * instance.</p>
+     */
+    inline bool ServiceNameHasBeenSet() const { return m_serviceNameHasBeenSet; }
 
     /**
      * <p>The name of the service that you specified when you registered the
@@ -144,6 +156,13 @@ namespace Model
      * response to a <code>DiscoverInstances</code> request. If you don't specify a
      * value for <code>MaxResults</code>, Cloud Map returns up to 100 instances.</p>
      */
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
+
+    /**
+     * <p>The maximum number of instances that you want Cloud Map to return in the
+     * response to a <code>DiscoverInstances</code> request. If you don't specify a
+     * value for <code>MaxResults</code>, Cloud Map returns up to 100 instances.</p>
+     */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
@@ -161,6 +180,14 @@ namespace Model
      * returned.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetQueryParameters() const{ return m_queryParameters; }
+
+    /**
+     * <p>A string map that contains attributes with values that you can use to filter
+     * instances by any custom attribute that you specified when you registered the
+     * instance. Only instances that match all the specified key/value pairs will be
+     * returned.</p>
+     */
+    inline bool QueryParametersHasBeenSet() const { return m_queryParametersHasBeenSet; }
 
     /**
      * <p>A string map that contains attributes with values that you can use to filter
@@ -255,6 +282,11 @@ namespace Model
      * <p>The health status of the instances that you want to discover.</p>
      */
     inline const HealthStatusFilter& GetHealthStatus() const{ return m_healthStatus; }
+
+    /**
+     * <p>The health status of the instances that you want to discover.</p>
+     */
+    inline bool HealthStatusHasBeenSet() const { return m_healthStatusHasBeenSet; }
 
     /**
      * <p>The health status of the instances that you want to discover.</p>

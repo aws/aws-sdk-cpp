@@ -55,6 +55,11 @@ namespace Model
     /**
      * <p>The workgroup name.</p>
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>The workgroup name.</p>
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
@@ -94,6 +99,18 @@ namespace Model
      * <a>WorkGroupConfiguration$EnforceWorkGroupConfiguration</a>.</p>
      */
     inline const WorkGroupConfiguration& GetConfiguration() const{ return m_configuration; }
+
+    /**
+     * <p>The configuration for the workgroup, which includes the location in Amazon S3
+     * where query results are stored, the encryption configuration, if any, used for
+     * encrypting query results, whether the Amazon CloudWatch Metrics are enabled for
+     * the workgroup, the limit for the amount of bytes scanned (cutoff) per query, if
+     * it is specified, and whether workgroup's settings (specified with
+     * EnforceWorkGroupConfiguration) in the WorkGroupConfiguration override
+     * client-side settings. See
+     * <a>WorkGroupConfiguration$EnforceWorkGroupConfiguration</a>.</p>
+     */
+    inline bool ConfigurationHasBeenSet() const { return m_configurationHasBeenSet; }
 
     /**
      * <p>The configuration for the workgroup, which includes the location in Amazon S3
@@ -152,6 +169,11 @@ namespace Model
     /**
      * <p>The workgroup description.</p>
      */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
+
+    /**
+     * <p>The workgroup description.</p>
+     */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
@@ -185,6 +207,12 @@ namespace Model
      * workgroup as you create it.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>One or more tags, separated by commas, that you want to attach to the
+     * workgroup as you create it.</p>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
      * <p>One or more tags, separated by commas, that you want to attach to the

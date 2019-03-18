@@ -55,6 +55,12 @@ namespace Model
      * Number of seconds to wait before retrying connection to the CDN if the
      * connection is lost.
      */
+    inline bool ConnectionRetryIntervalHasBeenSet() const { return m_connectionRetryIntervalHasBeenSet; }
+
+    /**
+     * Number of seconds to wait before retrying connection to the CDN if the
+     * connection is lost.
+     */
     inline void SetConnectionRetryInterval(int value) { m_connectionRetryIntervalHasBeenSet = true; m_connectionRetryInterval = value; }
 
     /**
@@ -68,6 +74,11 @@ namespace Model
      * Size in seconds of file cache for streaming outputs.
      */
     inline int GetFilecacheDuration() const{ return m_filecacheDuration; }
+
+    /**
+     * Size in seconds of file cache for streaming outputs.
+     */
+    inline bool FilecacheDurationHasBeenSet() const { return m_filecacheDurationHasBeenSet; }
 
     /**
      * Size in seconds of file cache for streaming outputs.
@@ -90,6 +101,12 @@ namespace Model
      * Number of retry attempts that will be made before the Live Event is put into an
      * error state.
      */
+    inline bool NumRetriesHasBeenSet() const { return m_numRetriesHasBeenSet; }
+
+    /**
+     * Number of retry attempts that will be made before the Live Event is put into an
+     * error state.
+     */
     inline void SetNumRetries(int value) { m_numRetriesHasBeenSet = true; m_numRetries = value; }
 
     /**
@@ -104,6 +121,12 @@ namespace Model
      * initiated. A value of 0 means never restart.
      */
     inline int GetRestartDelay() const{ return m_restartDelay; }
+
+    /**
+     * If a streaming output fails, number of seconds to wait until a restart is
+     * initiated. A value of 0 means never restart.
+     */
+    inline bool RestartDelayHasBeenSet() const { return m_restartDelayHasBeenSet; }
 
     /**
      * If a streaming output fails, number of seconds to wait until a restart is

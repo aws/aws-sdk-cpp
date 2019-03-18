@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The data volume encryption details.</p>
      */
+    inline bool EncryptionAtRestHasBeenSet() const { return m_encryptionAtRestHasBeenSet; }
+
+    /**
+     * <p>The data volume encryption details.</p>
+     */
     inline void SetEncryptionAtRest(const EncryptionAtRest& value) { m_encryptionAtRestHasBeenSet = true; m_encryptionAtRest = value; }
 
     /**

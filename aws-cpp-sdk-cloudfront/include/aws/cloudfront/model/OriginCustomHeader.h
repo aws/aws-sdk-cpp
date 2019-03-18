@@ -65,6 +65,15 @@ namespace Model
      * Custom Headers to Your Origin (Web Distributions Only)</a> in the <i>Amazon
      * Amazon CloudFront Developer Guide</i>.</p>
      */
+    inline bool HeaderNameHasBeenSet() const { return m_headerNameHasBeenSet; }
+
+    /**
+     * <p>The name of a header that you want CloudFront to forward to your origin. For
+     * more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/forward-custom-headers.html">Forwarding
+     * Custom Headers to Your Origin (Web Distributions Only)</a> in the <i>Amazon
+     * Amazon CloudFront Developer Guide</i>.</p>
+     */
     inline void SetHeaderName(const Aws::String& value) { m_headerNameHasBeenSet = true; m_headerName = value; }
 
     /**
@@ -118,6 +127,12 @@ namespace Model
      * field.</p>
      */
     inline const Aws::String& GetHeaderValue() const{ return m_headerValue; }
+
+    /**
+     * <p>The value for the header that you specified in the <code>HeaderName</code>
+     * field.</p>
+     */
+    inline bool HeaderValueHasBeenSet() const { return m_headerValueHasBeenSet; }
 
     /**
      * <p>The value for the header that you specified in the <code>HeaderName</code>

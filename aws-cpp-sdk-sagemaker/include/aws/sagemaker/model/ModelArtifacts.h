@@ -58,6 +58,12 @@ namespace Model
      * <p>The path of the S3 object that contains the model artifacts. For example,
      * <code>s3://bucket-name/keynameprefix/model.tar.gz</code>.</p>
      */
+    inline bool S3ModelArtifactsHasBeenSet() const { return m_s3ModelArtifactsHasBeenSet; }
+
+    /**
+     * <p>The path of the S3 object that contains the model artifacts. For example,
+     * <code>s3://bucket-name/keynameprefix/model.tar.gz</code>.</p>
+     */
     inline void SetS3ModelArtifacts(const Aws::String& value) { m_s3ModelArtifactsHasBeenSet = true; m_s3ModelArtifacts = value; }
 
     /**

@@ -60,6 +60,11 @@ namespace Model
     /**
      * <p>The identifier of the connector.</p>
      */
+    inline bool ConnectorIdHasBeenSet() const { return m_connectorIdHasBeenSet; }
+
+    /**
+     * <p>The identifier of the connector.</p>
+     */
     inline void SetConnectorId(const Aws::String& value) { m_connectorIdHasBeenSet = true; m_connectorId = value; }
 
     /**
@@ -92,6 +97,11 @@ namespace Model
      * <p>The connector version.</p>
      */
     inline const Aws::String& GetVersion() const{ return m_version; }
+
+    /**
+     * <p>The connector version.</p>
+     */
+    inline bool VersionHasBeenSet() const { return m_versionHasBeenSet; }
 
     /**
      * <p>The connector version.</p>
@@ -132,6 +142,11 @@ namespace Model
     /**
      * <p>The status of the connector.</p>
      */
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
+
+    /**
+     * <p>The status of the connector.</p>
+     */
     inline void SetStatus(const ConnectorStatus& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
@@ -154,6 +169,11 @@ namespace Model
      * <p>The capabilities of the connector.</p>
      */
     inline const Aws::Vector<ConnectorCapability>& GetCapabilityList() const{ return m_capabilityList; }
+
+    /**
+     * <p>The capabilities of the connector.</p>
+     */
+    inline bool CapabilityListHasBeenSet() const { return m_capabilityListHasBeenSet; }
 
     /**
      * <p>The capabilities of the connector.</p>
@@ -194,6 +214,11 @@ namespace Model
     /**
      * <p>The name of the VM manager.</p>
      */
+    inline bool VmManagerNameHasBeenSet() const { return m_vmManagerNameHasBeenSet; }
+
+    /**
+     * <p>The name of the VM manager.</p>
+     */
     inline void SetVmManagerName(const Aws::String& value) { m_vmManagerNameHasBeenSet = true; m_vmManagerName = value; }
 
     /**
@@ -230,6 +255,11 @@ namespace Model
     /**
      * <p>The VM management product.</p>
      */
+    inline bool VmManagerTypeHasBeenSet() const { return m_vmManagerTypeHasBeenSet; }
+
+    /**
+     * <p>The VM management product.</p>
+     */
     inline void SetVmManagerType(const VmManagerType& value) { m_vmManagerTypeHasBeenSet = true; m_vmManagerType = value; }
 
     /**
@@ -252,6 +282,11 @@ namespace Model
      * <p>The identifier of the VM manager.</p>
      */
     inline const Aws::String& GetVmManagerId() const{ return m_vmManagerId; }
+
+    /**
+     * <p>The identifier of the VM manager.</p>
+     */
+    inline bool VmManagerIdHasBeenSet() const { return m_vmManagerIdHasBeenSet; }
 
     /**
      * <p>The identifier of the VM manager.</p>
@@ -292,6 +327,11 @@ namespace Model
     /**
      * <p>The IP address of the connector.</p>
      */
+    inline bool IpAddressHasBeenSet() const { return m_ipAddressHasBeenSet; }
+
+    /**
+     * <p>The IP address of the connector.</p>
+     */
     inline void SetIpAddress(const Aws::String& value) { m_ipAddressHasBeenSet = true; m_ipAddress = value; }
 
     /**
@@ -328,6 +368,11 @@ namespace Model
     /**
      * <p>The MAC address of the connector.</p>
      */
+    inline bool MacAddressHasBeenSet() const { return m_macAddressHasBeenSet; }
+
+    /**
+     * <p>The MAC address of the connector.</p>
+     */
     inline void SetMacAddress(const Aws::String& value) { m_macAddressHasBeenSet = true; m_macAddress = value; }
 
     /**
@@ -360,6 +405,11 @@ namespace Model
      * <p>The time the connector was associated.</p>
      */
     inline const Aws::Utils::DateTime& GetAssociatedOn() const{ return m_associatedOn; }
+
+    /**
+     * <p>The time the connector was associated.</p>
+     */
+    inline bool AssociatedOnHasBeenSet() const { return m_associatedOnHasBeenSet; }
 
     /**
      * <p>The time the connector was associated.</p>

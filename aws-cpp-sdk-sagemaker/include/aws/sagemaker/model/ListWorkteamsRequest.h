@@ -54,6 +54,11 @@ namespace Model
     /**
      * <p>The field to sort results by. The default is <code>CreationTime</code>.</p>
      */
+    inline bool SortByHasBeenSet() const { return m_sortByHasBeenSet; }
+
+    /**
+     * <p>The field to sort results by. The default is <code>CreationTime</code>.</p>
+     */
     inline void SetSortBy(const ListWorkteamsSortByOptions& value) { m_sortByHasBeenSet = true; m_sortBy = value; }
 
     /**
@@ -76,6 +81,11 @@ namespace Model
      * <p>The sort order for results. The default is <code>Ascending</code>.</p>
      */
     inline const SortOrder& GetSortOrder() const{ return m_sortOrder; }
+
+    /**
+     * <p>The sort order for results. The default is <code>Ascending</code>.</p>
+     */
+    inline bool SortOrderHasBeenSet() const { return m_sortOrderHasBeenSet; }
 
     /**
      * <p>The sort order for results. The default is <code>Ascending</code>.</p>
@@ -103,6 +113,12 @@ namespace Model
      * name contains the specified string.</p>
      */
     inline const Aws::String& GetNameContains() const{ return m_nameContains; }
+
+    /**
+     * <p>A string in the work team's name. This filter returns only work teams whose
+     * name contains the specified string.</p>
+     */
+    inline bool NameContainsHasBeenSet() const { return m_nameContainsHasBeenSet; }
 
     /**
      * <p>A string in the work team's name. This filter returns only work teams whose
@@ -153,6 +169,13 @@ namespace Model
      * truncated, the response includes a <code>NextToken</code>. To retrieve the next
      * set of labeling jobs, use the token in the next request.</p>
      */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
+
+    /**
+     * <p>If the result of the previous <code>ListWorkteams</code> request was
+     * truncated, the response includes a <code>NextToken</code>. To retrieve the next
+     * set of labeling jobs, use the token in the next request.</p>
+     */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
     /**
@@ -195,6 +218,11 @@ namespace Model
      * <p>The maximum number of work teams to return in each page of the response.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
+
+    /**
+     * <p>The maximum number of work teams to return in each page of the response.</p>
+     */
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
 
     /**
      * <p>The maximum number of work teams to return in each page of the response.</p>

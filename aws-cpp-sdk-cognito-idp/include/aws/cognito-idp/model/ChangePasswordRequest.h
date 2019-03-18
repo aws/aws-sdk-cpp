@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The old password.</p>
      */
+    inline bool PreviousPasswordHasBeenSet() const { return m_previousPasswordHasBeenSet; }
+
+    /**
+     * <p>The old password.</p>
+     */
     inline void SetPreviousPassword(const Aws::String& value) { m_previousPasswordHasBeenSet = true; m_previousPassword = value; }
 
     /**
@@ -92,6 +97,11 @@ namespace Model
     /**
      * <p>The new password.</p>
      */
+    inline bool ProposedPasswordHasBeenSet() const { return m_proposedPasswordHasBeenSet; }
+
+    /**
+     * <p>The new password.</p>
+     */
     inline void SetProposedPassword(const Aws::String& value) { m_proposedPasswordHasBeenSet = true; m_proposedPassword = value; }
 
     /**
@@ -124,6 +134,11 @@ namespace Model
      * <p>The access token.</p>
      */
     inline const Aws::String& GetAccessToken() const{ return m_accessToken; }
+
+    /**
+     * <p>The access token.</p>
+     */
+    inline bool AccessTokenHasBeenSet() const { return m_accessTokenHasBeenSet; }
 
     /**
      * <p>The access token.</p>

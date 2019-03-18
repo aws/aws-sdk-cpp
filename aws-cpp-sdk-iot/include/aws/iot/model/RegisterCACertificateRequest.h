@@ -61,6 +61,11 @@ namespace Model
     /**
      * <p>The CA certificate.</p>
      */
+    inline bool CaCertificateHasBeenSet() const { return m_caCertificateHasBeenSet; }
+
+    /**
+     * <p>The CA certificate.</p>
+     */
     inline void SetCaCertificate(const Aws::String& value) { m_caCertificateHasBeenSet = true; m_caCertificate = value; }
 
     /**
@@ -93,6 +98,11 @@ namespace Model
      * <p>The private key verification certificate.</p>
      */
     inline const Aws::String& GetVerificationCertificate() const{ return m_verificationCertificate; }
+
+    /**
+     * <p>The private key verification certificate.</p>
+     */
+    inline bool VerificationCertificateHasBeenSet() const { return m_verificationCertificateHasBeenSet; }
 
     /**
      * <p>The private key verification certificate.</p>
@@ -133,6 +143,11 @@ namespace Model
     /**
      * <p>A boolean value that specifies if the CA certificate is set to active.</p>
      */
+    inline bool SetAsActiveHasBeenSet() const { return m_setAsActiveHasBeenSet; }
+
+    /**
+     * <p>A boolean value that specifies if the CA certificate is set to active.</p>
+     */
     inline void SetSetAsActive(bool value) { m_setAsActiveHasBeenSet = true; m_setAsActive = value; }
 
     /**
@@ -151,6 +166,12 @@ namespace Model
      * <p>Allows this CA certificate to be used for auto registration of device
      * certificates.</p>
      */
+    inline bool AllowAutoRegistrationHasBeenSet() const { return m_allowAutoRegistrationHasBeenSet; }
+
+    /**
+     * <p>Allows this CA certificate to be used for auto registration of device
+     * certificates.</p>
+     */
     inline void SetAllowAutoRegistration(bool value) { m_allowAutoRegistrationHasBeenSet = true; m_allowAutoRegistration = value; }
 
     /**
@@ -164,6 +185,11 @@ namespace Model
      * <p>Information about the registration configuration.</p>
      */
     inline const RegistrationConfig& GetRegistrationConfig() const{ return m_registrationConfig; }
+
+    /**
+     * <p>Information about the registration configuration.</p>
+     */
+    inline bool RegistrationConfigHasBeenSet() const { return m_registrationConfigHasBeenSet; }
 
     /**
      * <p>Information about the registration configuration.</p>

@@ -61,6 +61,11 @@ namespace Model
     /**
      * <p>The repository type.</p>
      */
+    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
+
+    /**
+     * <p>The repository type.</p>
+     */
     inline void SetType(const SourceType& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
@@ -84,6 +89,12 @@ namespace Model
      * <code>https://s3.amazonaws.com/opsworks-demo-bucket/opsworks_cookbook_demo.tar.gz</code>.</p>
      */
     inline const Aws::String& GetUrl() const{ return m_url; }
+
+    /**
+     * <p>The source URL. The following is an example of an Amazon S3 source URL:
+     * <code>https://s3.amazonaws.com/opsworks-demo-bucket/opsworks_cookbook_demo.tar.gz</code>.</p>
+     */
+    inline bool UrlHasBeenSet() const { return m_urlHasBeenSet; }
 
     /**
      * <p>The source URL. The following is an example of an Amazon S3 source URL:
@@ -129,6 +140,14 @@ namespace Model
      * set <code>Username</code> to the user name.</p> </li> </ul>
      */
     inline const Aws::String& GetUsername() const{ return m_username; }
+
+    /**
+     * <p>This parameter depends on the repository type.</p> <ul> <li> <p>For Amazon S3
+     * bundles, set <code>Username</code> to the appropriate IAM access key ID.</p>
+     * </li> <li> <p>For HTTP bundles, Git repositories, and Subversion repositories,
+     * set <code>Username</code> to the user name.</p> </li> </ul>
+     */
+    inline bool UsernameHasBeenSet() const { return m_usernameHasBeenSet; }
 
     /**
      * <p>This parameter depends on the repository type.</p> <ul> <li> <p>For Amazon S3
@@ -190,6 +209,18 @@ namespace Model
      * instead of the actual value.</p>
      */
     inline const Aws::String& GetPassword() const{ return m_password; }
+
+    /**
+     * <p>When included in a request, the parameter depends on the repository type.</p>
+     * <ul> <li> <p>For Amazon S3 bundles, set <code>Password</code> to the appropriate
+     * IAM secret access key.</p> </li> <li> <p>For HTTP bundles and Subversion
+     * repositories, set <code>Password</code> to the password.</p> </li> </ul> <p>For
+     * more information on how to safely handle IAM credentials, see <a
+     * href="http://docs.aws.amazon.com/general/latest/gr/aws-access-keys-best-practices.html">http://docs.aws.amazon.com/general/latest/gr/aws-access-keys-best-practices.html</a>.</p>
+     * <p>In responses, AWS OpsWorks Stacks returns <code>*****FILTERED*****</code>
+     * instead of the actual value.</p>
+     */
+    inline bool PasswordHasBeenSet() const { return m_passwordHasBeenSet; }
 
     /**
      * <p>When included in a request, the parameter depends on the repository type.</p>
@@ -274,6 +305,12 @@ namespace Model
      * <p>In requests, the repository's SSH key.</p> <p>In responses, AWS OpsWorks
      * Stacks returns <code>*****FILTERED*****</code> instead of the actual value.</p>
      */
+    inline bool SshKeyHasBeenSet() const { return m_sshKeyHasBeenSet; }
+
+    /**
+     * <p>In requests, the repository's SSH key.</p> <p>In responses, AWS OpsWorks
+     * Stacks returns <code>*****FILTERED*****</code> instead of the actual value.</p>
+     */
     inline void SetSshKey(const Aws::String& value) { m_sshKeyHasBeenSet = true; m_sshKey = value; }
 
     /**
@@ -314,6 +351,14 @@ namespace Model
      * can potentially be deployed.</p>
      */
     inline const Aws::String& GetRevision() const{ return m_revision; }
+
+    /**
+     * <p>The application's version. AWS OpsWorks Stacks enables you to easily deploy
+     * new versions of an application. One of the simplest approaches is to have
+     * branches or revisions in your repository that represent different versions that
+     * can potentially be deployed.</p>
+     */
+    inline bool RevisionHasBeenSet() const { return m_revisionHasBeenSet; }
 
     /**
      * <p>The application's version. AWS OpsWorks Stacks enables you to easily deploy

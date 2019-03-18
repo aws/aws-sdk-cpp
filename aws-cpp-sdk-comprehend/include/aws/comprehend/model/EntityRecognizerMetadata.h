@@ -60,6 +60,12 @@ namespace Model
      * <p> The number of documents in the input data that were used to train the entity
      * recognizer. Typically this is 80 to 90 percent of the input documents.</p>
      */
+    inline bool NumberOfTrainedDocumentsHasBeenSet() const { return m_numberOfTrainedDocumentsHasBeenSet; }
+
+    /**
+     * <p> The number of documents in the input data that were used to train the entity
+     * recognizer. Typically this is 80 to 90 percent of the input documents.</p>
+     */
     inline void SetNumberOfTrainedDocuments(int value) { m_numberOfTrainedDocumentsHasBeenSet = true; m_numberOfTrainedDocuments = value; }
 
     /**
@@ -79,6 +85,12 @@ namespace Model
      * <p> The number of documents in the input data that were used to test the entity
      * recognizer. Typically this is 10 to 20 percent of the input documents.</p>
      */
+    inline bool NumberOfTestDocumentsHasBeenSet() const { return m_numberOfTestDocumentsHasBeenSet; }
+
+    /**
+     * <p> The number of documents in the input data that were used to test the entity
+     * recognizer. Typically this is 10 to 20 percent of the input documents.</p>
+     */
     inline void SetNumberOfTestDocuments(int value) { m_numberOfTestDocumentsHasBeenSet = true; m_numberOfTestDocuments = value; }
 
     /**
@@ -92,6 +104,11 @@ namespace Model
      * <p> Detailed information about the accuracy of an entity recognizer.</p>
      */
     inline const EntityRecognizerEvaluationMetrics& GetEvaluationMetrics() const{ return m_evaluationMetrics; }
+
+    /**
+     * <p> Detailed information about the accuracy of an entity recognizer.</p>
+     */
+    inline bool EvaluationMetricsHasBeenSet() const { return m_evaluationMetricsHasBeenSet; }
 
     /**
      * <p> Detailed information about the accuracy of an entity recognizer.</p>
@@ -118,6 +135,11 @@ namespace Model
      * <p>Entity types from the metadata of an entity recognizer.</p>
      */
     inline const Aws::Vector<EntityRecognizerMetadataEntityTypesListItem>& GetEntityTypes() const{ return m_entityTypes; }
+
+    /**
+     * <p>Entity types from the metadata of an entity recognizer.</p>
+     */
+    inline bool EntityTypesHasBeenSet() const { return m_entityTypesHasBeenSet; }
 
     /**
      * <p>Entity types from the metadata of an entity recognizer.</p>

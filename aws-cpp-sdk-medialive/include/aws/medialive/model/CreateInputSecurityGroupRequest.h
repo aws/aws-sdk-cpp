@@ -57,6 +57,11 @@ namespace Model
     /**
      * A collection of key-value pairs.
      */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
+
+    /**
+     * A collection of key-value pairs.
+     */
     inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     /**
@@ -114,6 +119,11 @@ namespace Model
      * List of IPv4 CIDR addresses to whitelist
      */
     inline const Aws::Vector<InputWhitelistRuleCidr>& GetWhitelistRules() const{ return m_whitelistRules; }
+
+    /**
+     * List of IPv4 CIDR addresses to whitelist
+     */
+    inline bool WhitelistRulesHasBeenSet() const { return m_whitelistRulesHasBeenSet; }
 
     /**
      * List of IPv4 CIDR addresses to whitelist

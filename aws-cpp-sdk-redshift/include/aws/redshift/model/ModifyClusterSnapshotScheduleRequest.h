@@ -56,6 +56,12 @@ namespace Model
      * <p>A unique identifier for the cluster whose snapshot schedule you want to
      * modify. </p>
      */
+    inline bool ClusterIdentifierHasBeenSet() const { return m_clusterIdentifierHasBeenSet; }
+
+    /**
+     * <p>A unique identifier for the cluster whose snapshot schedule you want to
+     * modify. </p>
+     */
     inline void SetClusterIdentifier(const Aws::String& value) { m_clusterIdentifierHasBeenSet = true; m_clusterIdentifier = value; }
 
     /**
@@ -99,6 +105,12 @@ namespace Model
      * <p>A unique alphanumeric identifier for the schedule that you want to associate
      * with the cluster.</p>
      */
+    inline bool ScheduleIdentifierHasBeenSet() const { return m_scheduleIdentifierHasBeenSet; }
+
+    /**
+     * <p>A unique alphanumeric identifier for the schedule that you want to associate
+     * with the cluster.</p>
+     */
     inline void SetScheduleIdentifier(const Aws::String& value) { m_scheduleIdentifierHasBeenSet = true; m_scheduleIdentifier = value; }
 
     /**
@@ -137,6 +149,12 @@ namespace Model
      * and the schedule.</p>
      */
     inline bool GetDisassociateSchedule() const{ return m_disassociateSchedule; }
+
+    /**
+     * <p>A boolean to indicate whether to remove the assoiciation between the cluster
+     * and the schedule.</p>
+     */
+    inline bool DisassociateScheduleHasBeenSet() const { return m_disassociateScheduleHasBeenSet; }
 
     /**
      * <p>A boolean to indicate whether to remove the assoiciation between the cluster

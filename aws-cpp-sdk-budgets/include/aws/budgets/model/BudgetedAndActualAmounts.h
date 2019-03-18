@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The amount of cost or usage that you created the budget for.</p>
      */
+    inline bool BudgetedAmountHasBeenSet() const { return m_budgetedAmountHasBeenSet; }
+
+    /**
+     * <p>The amount of cost or usage that you created the budget for.</p>
+     */
     inline void SetBudgetedAmount(const Spend& value) { m_budgetedAmountHasBeenSet = true; m_budgetedAmount = value; }
 
     /**
@@ -83,6 +88,11 @@ namespace Model
     /**
      * <p>Your actual costs or usage for a budget period.</p>
      */
+    inline bool ActualAmountHasBeenSet() const { return m_actualAmountHasBeenSet; }
+
+    /**
+     * <p>Your actual costs or usage for a budget period.</p>
+     */
     inline void SetActualAmount(const Spend& value) { m_actualAmountHasBeenSet = true; m_actualAmount = value; }
 
     /**
@@ -105,6 +115,11 @@ namespace Model
      * <p>The time period covered by this budget comparison.</p>
      */
     inline const TimePeriod& GetTimePeriod() const{ return m_timePeriod; }
+
+    /**
+     * <p>The time period covered by this budget comparison.</p>
+     */
+    inline bool TimePeriodHasBeenSet() const { return m_timePeriodHasBeenSet; }
 
     /**
      * <p>The time period covered by this budget comparison.</p>

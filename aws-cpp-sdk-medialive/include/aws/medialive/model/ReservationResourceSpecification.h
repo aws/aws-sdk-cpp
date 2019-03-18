@@ -62,6 +62,11 @@ namespace Model
     /**
      * Codec, e.g. 'AVC'
      */
+    inline bool CodecHasBeenSet() const { return m_codecHasBeenSet; }
+
+    /**
+     * Codec, e.g. 'AVC'
+     */
     inline void SetCodec(const ReservationCodec& value) { m_codecHasBeenSet = true; m_codec = value; }
 
     /**
@@ -84,6 +89,11 @@ namespace Model
      * Maximum bitrate, e.g. 'MAX_20_MBPS'
      */
     inline const ReservationMaximumBitrate& GetMaximumBitrate() const{ return m_maximumBitrate; }
+
+    /**
+     * Maximum bitrate, e.g. 'MAX_20_MBPS'
+     */
+    inline bool MaximumBitrateHasBeenSet() const { return m_maximumBitrateHasBeenSet; }
 
     /**
      * Maximum bitrate, e.g. 'MAX_20_MBPS'
@@ -114,6 +124,11 @@ namespace Model
     /**
      * Maximum framerate, e.g. 'MAX_30_FPS' (Outputs only)
      */
+    inline bool MaximumFramerateHasBeenSet() const { return m_maximumFramerateHasBeenSet; }
+
+    /**
+     * Maximum framerate, e.g. 'MAX_30_FPS' (Outputs only)
+     */
     inline void SetMaximumFramerate(const ReservationMaximumFramerate& value) { m_maximumFramerateHasBeenSet = true; m_maximumFramerate = value; }
 
     /**
@@ -136,6 +151,11 @@ namespace Model
      * Resolution, e.g. 'HD'
      */
     inline const ReservationResolution& GetResolution() const{ return m_resolution; }
+
+    /**
+     * Resolution, e.g. 'HD'
+     */
+    inline bool ResolutionHasBeenSet() const { return m_resolutionHasBeenSet; }
 
     /**
      * Resolution, e.g. 'HD'
@@ -166,6 +186,11 @@ namespace Model
     /**
      * Resource type, 'INPUT', 'OUTPUT', or 'CHANNEL'
      */
+    inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
+
+    /**
+     * Resource type, 'INPUT', 'OUTPUT', or 'CHANNEL'
+     */
     inline void SetResourceType(const ReservationResourceType& value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
 
     /**
@@ -192,6 +217,11 @@ namespace Model
     /**
      * Special feature, e.g. 'AUDIO_NORMALIZATION' (Channels only)
      */
+    inline bool SpecialFeatureHasBeenSet() const { return m_specialFeatureHasBeenSet; }
+
+    /**
+     * Special feature, e.g. 'AUDIO_NORMALIZATION' (Channels only)
+     */
     inline void SetSpecialFeature(const ReservationSpecialFeature& value) { m_specialFeatureHasBeenSet = true; m_specialFeature = value; }
 
     /**
@@ -214,6 +244,11 @@ namespace Model
      * Video quality, e.g. 'STANDARD' (Outputs only)
      */
     inline const ReservationVideoQuality& GetVideoQuality() const{ return m_videoQuality; }
+
+    /**
+     * Video quality, e.g. 'STANDARD' (Outputs only)
+     */
+    inline bool VideoQualityHasBeenSet() const { return m_videoQualityHasBeenSet; }
 
     /**
      * Video quality, e.g. 'STANDARD' (Outputs only)

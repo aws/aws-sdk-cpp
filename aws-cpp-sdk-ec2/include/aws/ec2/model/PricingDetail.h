@@ -55,6 +55,11 @@ namespace Model
     /**
      * <p>The number of reservations available for the price.</p>
      */
+    inline bool CountHasBeenSet() const { return m_countHasBeenSet; }
+
+    /**
+     * <p>The number of reservations available for the price.</p>
+     */
     inline void SetCount(int value) { m_countHasBeenSet = true; m_count = value; }
 
     /**
@@ -67,6 +72,11 @@ namespace Model
      * <p>The price per instance.</p>
      */
     inline double GetPrice() const{ return m_price; }
+
+    /**
+     * <p>The price per instance.</p>
+     */
+    inline bool PriceHasBeenSet() const { return m_priceHasBeenSet; }
 
     /**
      * <p>The price per instance.</p>

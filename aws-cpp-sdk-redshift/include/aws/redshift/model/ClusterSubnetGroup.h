@@ -60,6 +60,11 @@ namespace Model
     /**
      * <p>The name of the cluster subnet group.</p>
      */
+    inline bool ClusterSubnetGroupNameHasBeenSet() const { return m_clusterSubnetGroupNameHasBeenSet; }
+
+    /**
+     * <p>The name of the cluster subnet group.</p>
+     */
     inline void SetClusterSubnetGroupName(const Aws::String& value) { m_clusterSubnetGroupNameHasBeenSet = true; m_clusterSubnetGroupName = value; }
 
     /**
@@ -92,6 +97,11 @@ namespace Model
      * <p>The description of the cluster subnet group.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
+
+    /**
+     * <p>The description of the cluster subnet group.</p>
+     */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
 
     /**
      * <p>The description of the cluster subnet group.</p>
@@ -132,6 +142,11 @@ namespace Model
     /**
      * <p>The VPC ID of the cluster subnet group.</p>
      */
+    inline bool VpcIdHasBeenSet() const { return m_vpcIdHasBeenSet; }
+
+    /**
+     * <p>The VPC ID of the cluster subnet group.</p>
+     */
     inline void SetVpcId(const Aws::String& value) { m_vpcIdHasBeenSet = true; m_vpcId = value; }
 
     /**
@@ -165,6 +180,12 @@ namespace Model
      * <code>Complete</code>, <code>Incomplete</code> and <code>Invalid</code>. </p>
      */
     inline const Aws::String& GetSubnetGroupStatus() const{ return m_subnetGroupStatus; }
+
+    /**
+     * <p>The status of the cluster subnet group. Possible values are
+     * <code>Complete</code>, <code>Incomplete</code> and <code>Invalid</code>. </p>
+     */
+    inline bool SubnetGroupStatusHasBeenSet() const { return m_subnetGroupStatusHasBeenSet; }
 
     /**
      * <p>The status of the cluster subnet group. Possible values are
@@ -211,6 +232,11 @@ namespace Model
     /**
      * <p>A list of the VPC <a>Subnet</a> elements. </p>
      */
+    inline bool SubnetsHasBeenSet() const { return m_subnetsHasBeenSet; }
+
+    /**
+     * <p>A list of the VPC <a>Subnet</a> elements. </p>
+     */
     inline void SetSubnets(const Aws::Vector<Subnet>& value) { m_subnetsHasBeenSet = true; m_subnets = value; }
 
     /**
@@ -243,6 +269,11 @@ namespace Model
      * <p>The list of tags for the cluster subnet group.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>The list of tags for the cluster subnet group.</p>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
      * <p>The list of tags for the cluster subnet group.</p>

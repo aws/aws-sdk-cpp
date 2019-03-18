@@ -54,6 +54,11 @@ namespace Model
     /**
      * <p>The name of the Directory Config object.</p>
      */
+    inline bool DirectoryNameHasBeenSet() const { return m_directoryNameHasBeenSet; }
+
+    /**
+     * <p>The name of the Directory Config object.</p>
+     */
     inline void SetDirectoryName(const Aws::String& value) { m_directoryNameHasBeenSet = true; m_directoryName = value; }
 
     /**
@@ -87,6 +92,12 @@ namespace Model
      * accounts.</p>
      */
     inline const Aws::Vector<Aws::String>& GetOrganizationalUnitDistinguishedNames() const{ return m_organizationalUnitDistinguishedNames; }
+
+    /**
+     * <p>The distinguished names of the organizational units for computer
+     * accounts.</p>
+     */
+    inline bool OrganizationalUnitDistinguishedNamesHasBeenSet() const { return m_organizationalUnitDistinguishedNamesHasBeenSet; }
 
     /**
      * <p>The distinguished names of the organizational units for computer
@@ -136,6 +147,12 @@ namespace Model
      * connect to the directory.</p>
      */
     inline const ServiceAccountCredentials& GetServiceAccountCredentials() const{ return m_serviceAccountCredentials; }
+
+    /**
+     * <p>The credentials for the service account used by the streaming instance to
+     * connect to the directory.</p>
+     */
+    inline bool ServiceAccountCredentialsHasBeenSet() const { return m_serviceAccountCredentialsHasBeenSet; }
 
     /**
      * <p>The credentials for the service account used by the streaming instance to

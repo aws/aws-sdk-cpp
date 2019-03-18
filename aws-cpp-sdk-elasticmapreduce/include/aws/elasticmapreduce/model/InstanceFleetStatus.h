@@ -85,6 +85,24 @@ namespace Model
      * <code>TERMINATED</code>—The instance fleet is no longer active, and all EC2
      * instances have been terminated.</p> </li> </ul>
      */
+    inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
+
+    /**
+     * <p>A code representing the instance fleet status.</p> <ul> <li> <p>
+     * <code>PROVISIONING</code>—The instance fleet is provisioning EC2 resources and
+     * is not yet ready to run jobs.</p> </li> <li> <p> <code>BOOTSTRAPPING</code>—EC2
+     * instances and other resources have been provisioned and the bootstrap actions
+     * specified for the instances are underway.</p> </li> <li> <p>
+     * <code>RUNNING</code>—EC2 instances and other resources are running. They are
+     * either executing jobs or waiting to execute jobs.</p> </li> <li> <p>
+     * <code>RESIZING</code>—A resize operation is underway. EC2 instances are either
+     * being added or removed.</p> </li> <li> <p> <code>SUSPENDED</code>—A resize
+     * operation could not complete. Existing EC2 instances are running, but instances
+     * can't be added or removed.</p> </li> <li> <p> <code>TERMINATING</code>—The
+     * instance fleet is terminating EC2 instances.</p> </li> <li> <p>
+     * <code>TERMINATED</code>—The instance fleet is no longer active, and all EC2
+     * instances have been terminated.</p> </li> </ul>
+     */
     inline void SetState(const InstanceFleetState& value) { m_stateHasBeenSet = true; m_state = value; }
 
     /**
@@ -150,6 +168,11 @@ namespace Model
     /**
      * <p>Provides status change reason details for the instance fleet.</p>
      */
+    inline bool StateChangeReasonHasBeenSet() const { return m_stateChangeReasonHasBeenSet; }
+
+    /**
+     * <p>Provides status change reason details for the instance fleet.</p>
+     */
     inline void SetStateChangeReason(const InstanceFleetStateChangeReason& value) { m_stateChangeReasonHasBeenSet = true; m_stateChangeReason = value; }
 
     /**
@@ -173,6 +196,12 @@ namespace Model
      * creation, the time it became ready to run jobs, and the time of termination.</p>
      */
     inline const InstanceFleetTimeline& GetTimeline() const{ return m_timeline; }
+
+    /**
+     * <p>Provides historical timestamps for the instance fleet, including the time of
+     * creation, the time it became ready to run jobs, and the time of termination.</p>
+     */
+    inline bool TimelineHasBeenSet() const { return m_timelineHasBeenSet; }
 
     /**
      * <p>Provides historical timestamps for the instance fleet, including the time of

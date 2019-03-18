@@ -55,6 +55,12 @@ namespace Model
      * <p>The text to translate. The text string can be a maximum of 5,000 bytes long.
      * Depending on your character set, this may be fewer than 5,000 characters.</p>
      */
+    inline bool TextHasBeenSet() const { return m_textHasBeenSet; }
+
+    /**
+     * <p>The text to translate. The text string can be a maximum of 5,000 bytes long.
+     * Depending on your character set, this may be fewer than 5,000 characters.</p>
+     */
     inline void SetText(const Aws::String& value) { m_textHasBeenSet = true; m_text = value; }
 
     /**
@@ -93,6 +99,12 @@ namespace Model
      * request. This has a minimum length of 0 and a maximum length of 1.</p>
      */
     inline const Aws::Vector<Aws::String>& GetTerminologyNames() const{ return m_terminologyNames; }
+
+    /**
+     * <p>The TerminologyNames list that is taken as input to the TranslateText
+     * request. This has a minimum length of 0 and a maximum length of 1.</p>
+     */
+    inline bool TerminologyNamesHasBeenSet() const { return m_terminologyNamesHasBeenSet; }
 
     /**
      * <p>The TerminologyNames list that is taken as input to the TranslateText
@@ -146,6 +158,16 @@ namespace Model
      * language.</p>
      */
     inline const Aws::String& GetSourceLanguageCode() const{ return m_sourceLanguageCode; }
+
+    /**
+     * <p>The language code for the language of the source text. The language must be a
+     * language supported by Amazon Translate. </p> <p>To have Amazon Translate
+     * determine the source language of your text, you can specify <code>auto</code> in
+     * the <code>SourceLanguageCode</code> field. If you specify <code>auto</code>,
+     * Amazon Translate will call Amazon Comprehend to determine the source
+     * language.</p>
+     */
+    inline bool SourceLanguageCodeHasBeenSet() const { return m_sourceLanguageCodeHasBeenSet; }
 
     /**
      * <p>The language code for the language of the source text. The language must be a
@@ -213,6 +235,12 @@ namespace Model
      * must be a language supported by Amazon Translate.</p>
      */
     inline const Aws::String& GetTargetLanguageCode() const{ return m_targetLanguageCode; }
+
+    /**
+     * <p>The language code requested for the language of the target text. The language
+     * must be a language supported by Amazon Translate.</p>
+     */
+    inline bool TargetLanguageCodeHasBeenSet() const { return m_targetLanguageCodeHasBeenSet; }
 
     /**
      * <p>The language code requested for the language of the target text. The language
