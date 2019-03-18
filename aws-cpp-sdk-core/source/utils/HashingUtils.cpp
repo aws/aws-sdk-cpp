@@ -149,15 +149,16 @@ ByteBuffer HashingUtils::CalculateSHA256TreeHash(Aws::IOStream& stream)
 
 Aws::String HashingUtils::HexEncode(const ByteBuffer& message)
 {
-    Aws::StringStream ss;
+    Aws::String encoded;
+    encoded.reserve(2 * message.GetLength());
 
     for (unsigned i = 0; i < message.GetLength(); ++i)
     {
-        ss << std::hex << std::setw(2) << std::setfill('0')
-            << (unsigned int) message[i];
+        encoded.push_back("0123456789abcdef"[message[i] >> 4]);
+        encoded.push_back("0123456789abcdef"[message[i] & 0x0f]);
     }
 
-    return ss.str();
+    return encoded;
 }
 
 ByteBuffer HashingUtils::HexDecode(const Aws::String& str)

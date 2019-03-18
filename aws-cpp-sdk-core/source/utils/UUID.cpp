@@ -24,6 +24,7 @@ namespace Aws
 {
     namespace Utils
     {
+        static const size_t UUID_STR_SIZE = 0x24u; // 36 characters
         static const size_t VERSION_LOCATION = 0x06u;
         static const size_t VARIANT_LOCATION = 0x08u;
         static const unsigned char VERSION = 0x40u;
@@ -31,12 +32,12 @@ namespace Aws
         static const unsigned char VARIANT = 0x80u;
         static const unsigned char VARIANT_MASK = 0x3Fu;
 
-        static void WriteRangeOutToStream(Aws::StringStream& ss, const unsigned char* toWrite, size_t min, size_t max)
+        static void hexify(Aws::String& ss, const unsigned char* toWrite, size_t min, size_t max)
         {
             for (size_t i = min; i < max; ++i)
             {
-                ss << std::uppercase << std::hex << std::setfill('0') << std::setw(2)
-                    << (unsigned int)toWrite[i];
+                ss.push_back("0123456789ABCDEF"[toWrite[i] >> 4]);
+                ss.push_back("0123456789ABCDEF"[toWrite[i] & 0x0F]);
             }
         }
 
@@ -59,22 +60,23 @@ namespace Aws
 
         UUID::operator Aws::String() const
         {
-            Aws::StringStream ss;
-            WriteRangeOutToStream(ss, m_uuid, 0, 4);
-            ss << "-";
+            Aws::String ss;
+            ss.reserve(UUID_STR_SIZE);
+            hexify(ss, m_uuid, 0, 4);
+            ss.push_back('-');
 
-            WriteRangeOutToStream(ss, m_uuid, 4, 6);
-            ss << "-";
+            hexify(ss, m_uuid, 4, 6);
+            ss.push_back('-');
 
-            WriteRangeOutToStream(ss, m_uuid, 6, 8);
-            ss << "-";
+            hexify(ss, m_uuid, 6, 8);
+            ss.push_back('-');
 
-            WriteRangeOutToStream(ss, m_uuid, 8, 10);
-            ss << "-";
+            hexify(ss, m_uuid, 8, 10);
+            ss.push_back('-');
 
-            WriteRangeOutToStream(ss, m_uuid, 10, 16);
+            hexify(ss, m_uuid, 10, 16);
 
-            return ss.str();
+            return ss;
         }
 
         UUID UUID::RandomUUID()
