@@ -31,6 +31,7 @@ namespace ConfigServiceErrorMapper
 static const int NO_SUCH_DELIVERY_CHANNEL_HASH = HashingUtils::HashString("NoSuchDeliveryChannelException");
 static const int NO_SUCH_CONFIG_RULE_HASH = HashingUtils::HashString("NoSuchConfigRuleException");
 static const int NO_AVAILABLE_CONFIGURATION_RECORDER_HASH = HashingUtils::HashString("NoAvailableConfigurationRecorderException");
+static const int INVALID_EXPRESSION_HASH = HashingUtils::HashString("InvalidExpressionException");
 static const int NO_AVAILABLE_ORGANIZATION_HASH = HashingUtils::HashString("NoAvailableOrganizationException");
 static const int NO_SUCH_RETENTION_CONFIGURATION_HASH = HashingUtils::HashString("NoSuchRetentionConfigurationException");
 static const int INVALID_LIMIT_HASH = HashingUtils::HashString("InvalidLimitException");
@@ -80,6 +81,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == NO_AVAILABLE_CONFIGURATION_RECORDER_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ConfigServiceErrors::NO_AVAILABLE_CONFIGURATION_RECORDER), false);
+  }
+  else if (hashCode == INVALID_EXPRESSION_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ConfigServiceErrors::INVALID_EXPRESSION), false);
   }
   else if (hashCode == NO_AVAILABLE_ORGANIZATION_HASH)
   {

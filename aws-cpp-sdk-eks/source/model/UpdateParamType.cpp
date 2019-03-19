@@ -32,6 +32,8 @@ namespace Aws
 
         static const int Version_HASH = HashingUtils::HashString("Version");
         static const int PlatformVersion_HASH = HashingUtils::HashString("PlatformVersion");
+        static const int EndpointPrivateAccess_HASH = HashingUtils::HashString("EndpointPrivateAccess");
+        static const int EndpointPublicAccess_HASH = HashingUtils::HashString("EndpointPublicAccess");
 
 
         UpdateParamType GetUpdateParamTypeForName(const Aws::String& name)
@@ -44,6 +46,14 @@ namespace Aws
           else if (hashCode == PlatformVersion_HASH)
           {
             return UpdateParamType::PlatformVersion;
+          }
+          else if (hashCode == EndpointPrivateAccess_HASH)
+          {
+            return UpdateParamType::EndpointPrivateAccess;
+          }
+          else if (hashCode == EndpointPublicAccess_HASH)
+          {
+            return UpdateParamType::EndpointPublicAccess;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -63,6 +73,10 @@ namespace Aws
             return "Version";
           case UpdateParamType::PlatformVersion:
             return "PlatformVersion";
+          case UpdateParamType::EndpointPrivateAccess:
+            return "EndpointPrivateAccess";
+          case UpdateParamType::EndpointPublicAccess:
+            return "EndpointPublicAccess";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

@@ -78,6 +78,7 @@
 #include <aws/config/model/PutEvaluationsRequest.h>
 #include <aws/config/model/PutRemediationConfigurationsRequest.h>
 #include <aws/config/model/PutRetentionConfigurationRequest.h>
+#include <aws/config/model/SelectResourceConfigRequest.h>
 #include <aws/config/model/StartConfigRulesEvaluationRequest.h>
 #include <aws/config/model/StartConfigurationRecorderRequest.h>
 #include <aws/config/model/StartRemediationExecutionRequest.h>
@@ -1867,6 +1868,41 @@ void ConfigServiceClient::PutRetentionConfigurationAsync(const PutRetentionConfi
 void ConfigServiceClient::PutRetentionConfigurationAsyncHelper(const PutRetentionConfigurationRequest& request, const PutRetentionConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, PutRetentionConfiguration(request), context);
+}
+
+SelectResourceConfigOutcome ConfigServiceClient::SelectResourceConfig(const SelectResourceConfigRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return SelectResourceConfigOutcome(SelectResourceConfigResult(outcome.GetResult()));
+  }
+  else
+  {
+    return SelectResourceConfigOutcome(outcome.GetError());
+  }
+}
+
+SelectResourceConfigOutcomeCallable ConfigServiceClient::SelectResourceConfigCallable(const SelectResourceConfigRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< SelectResourceConfigOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->SelectResourceConfig(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ConfigServiceClient::SelectResourceConfigAsync(const SelectResourceConfigRequest& request, const SelectResourceConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->SelectResourceConfigAsyncHelper( request, handler, context ); } );
+}
+
+void ConfigServiceClient::SelectResourceConfigAsyncHelper(const SelectResourceConfigRequest& request, const SelectResourceConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, SelectResourceConfig(request), context);
 }
 
 StartConfigRulesEvaluationOutcome ConfigServiceClient::StartConfigRulesEvaluation(const StartConfigRulesEvaluationRequest& request) const

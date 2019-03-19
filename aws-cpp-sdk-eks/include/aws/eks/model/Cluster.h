@@ -304,67 +304,67 @@ namespace Model
 
 
     /**
-     * <p>The VPC subnets and security groups used by the cluster control plane. Amazon
-     * EKS VPC resources have specific requirements to work properly with Kubernetes.
-     * For more information, see <a
-     * href="http://docs.aws.amazon.com/eks/latest/userguide/network_reqs.html">Cluster
+     * <p>The VPC configuration used by the cluster control plane. Amazon EKS VPC
+     * resources have specific requirements to work properly with Kubernetes. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/network_reqs.html">Cluster
      * VPC Considerations</a> and <a
-     * href="http://docs.aws.amazon.com/eks/latest/userguide/sec-group-reqs.html">Cluster
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/sec-group-reqs.html">Cluster
      * Security Group Considerations</a> in the <i>Amazon EKS User Guide</i>.</p>
      */
     inline const VpcConfigResponse& GetResourcesVpcConfig() const{ return m_resourcesVpcConfig; }
 
     /**
-     * <p>The VPC subnets and security groups used by the cluster control plane. Amazon
-     * EKS VPC resources have specific requirements to work properly with Kubernetes.
-     * For more information, see <a
-     * href="http://docs.aws.amazon.com/eks/latest/userguide/network_reqs.html">Cluster
+     * <p>The VPC configuration used by the cluster control plane. Amazon EKS VPC
+     * resources have specific requirements to work properly with Kubernetes. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/network_reqs.html">Cluster
      * VPC Considerations</a> and <a
-     * href="http://docs.aws.amazon.com/eks/latest/userguide/sec-group-reqs.html">Cluster
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/sec-group-reqs.html">Cluster
      * Security Group Considerations</a> in the <i>Amazon EKS User Guide</i>.</p>
      */
     inline bool ResourcesVpcConfigHasBeenSet() const { return m_resourcesVpcConfigHasBeenSet; }
 
     /**
-     * <p>The VPC subnets and security groups used by the cluster control plane. Amazon
-     * EKS VPC resources have specific requirements to work properly with Kubernetes.
-     * For more information, see <a
-     * href="http://docs.aws.amazon.com/eks/latest/userguide/network_reqs.html">Cluster
+     * <p>The VPC configuration used by the cluster control plane. Amazon EKS VPC
+     * resources have specific requirements to work properly with Kubernetes. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/network_reqs.html">Cluster
      * VPC Considerations</a> and <a
-     * href="http://docs.aws.amazon.com/eks/latest/userguide/sec-group-reqs.html">Cluster
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/sec-group-reqs.html">Cluster
      * Security Group Considerations</a> in the <i>Amazon EKS User Guide</i>.</p>
      */
     inline void SetResourcesVpcConfig(const VpcConfigResponse& value) { m_resourcesVpcConfigHasBeenSet = true; m_resourcesVpcConfig = value; }
 
     /**
-     * <p>The VPC subnets and security groups used by the cluster control plane. Amazon
-     * EKS VPC resources have specific requirements to work properly with Kubernetes.
-     * For more information, see <a
-     * href="http://docs.aws.amazon.com/eks/latest/userguide/network_reqs.html">Cluster
+     * <p>The VPC configuration used by the cluster control plane. Amazon EKS VPC
+     * resources have specific requirements to work properly with Kubernetes. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/network_reqs.html">Cluster
      * VPC Considerations</a> and <a
-     * href="http://docs.aws.amazon.com/eks/latest/userguide/sec-group-reqs.html">Cluster
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/sec-group-reqs.html">Cluster
      * Security Group Considerations</a> in the <i>Amazon EKS User Guide</i>.</p>
      */
     inline void SetResourcesVpcConfig(VpcConfigResponse&& value) { m_resourcesVpcConfigHasBeenSet = true; m_resourcesVpcConfig = std::move(value); }
 
     /**
-     * <p>The VPC subnets and security groups used by the cluster control plane. Amazon
-     * EKS VPC resources have specific requirements to work properly with Kubernetes.
-     * For more information, see <a
-     * href="http://docs.aws.amazon.com/eks/latest/userguide/network_reqs.html">Cluster
+     * <p>The VPC configuration used by the cluster control plane. Amazon EKS VPC
+     * resources have specific requirements to work properly with Kubernetes. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/network_reqs.html">Cluster
      * VPC Considerations</a> and <a
-     * href="http://docs.aws.amazon.com/eks/latest/userguide/sec-group-reqs.html">Cluster
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/sec-group-reqs.html">Cluster
      * Security Group Considerations</a> in the <i>Amazon EKS User Guide</i>.</p>
      */
     inline Cluster& WithResourcesVpcConfig(const VpcConfigResponse& value) { SetResourcesVpcConfig(value); return *this;}
 
     /**
-     * <p>The VPC subnets and security groups used by the cluster control plane. Amazon
-     * EKS VPC resources have specific requirements to work properly with Kubernetes.
-     * For more information, see <a
-     * href="http://docs.aws.amazon.com/eks/latest/userguide/network_reqs.html">Cluster
+     * <p>The VPC configuration used by the cluster control plane. Amazon EKS VPC
+     * resources have specific requirements to work properly with Kubernetes. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/network_reqs.html">Cluster
      * VPC Considerations</a> and <a
-     * href="http://docs.aws.amazon.com/eks/latest/userguide/sec-group-reqs.html">Cluster
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/sec-group-reqs.html">Cluster
      * Security Group Considerations</a> in the <i>Amazon EKS User Guide</i>.</p>
      */
     inline Cluster& WithResourcesVpcConfig(VpcConfigResponse&& value) { SetResourcesVpcConfig(std::move(value)); return *this;}
@@ -483,56 +483,56 @@ namespace Model
 
     /**
      * <p>The platform version of your Amazon EKS cluster. For more information, see <a
-     * href="http://docs.aws.amazon.com/eks/latest/userguide/platform-versions.html">Platform
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/platform-versions.html">Platform
      * Versions</a> in the <i> <i>Amazon EKS User Guide</i> </i>.</p>
      */
     inline const Aws::String& GetPlatformVersion() const{ return m_platformVersion; }
 
     /**
      * <p>The platform version of your Amazon EKS cluster. For more information, see <a
-     * href="http://docs.aws.amazon.com/eks/latest/userguide/platform-versions.html">Platform
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/platform-versions.html">Platform
      * Versions</a> in the <i> <i>Amazon EKS User Guide</i> </i>.</p>
      */
     inline bool PlatformVersionHasBeenSet() const { return m_platformVersionHasBeenSet; }
 
     /**
      * <p>The platform version of your Amazon EKS cluster. For more information, see <a
-     * href="http://docs.aws.amazon.com/eks/latest/userguide/platform-versions.html">Platform
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/platform-versions.html">Platform
      * Versions</a> in the <i> <i>Amazon EKS User Guide</i> </i>.</p>
      */
     inline void SetPlatformVersion(const Aws::String& value) { m_platformVersionHasBeenSet = true; m_platformVersion = value; }
 
     /**
      * <p>The platform version of your Amazon EKS cluster. For more information, see <a
-     * href="http://docs.aws.amazon.com/eks/latest/userguide/platform-versions.html">Platform
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/platform-versions.html">Platform
      * Versions</a> in the <i> <i>Amazon EKS User Guide</i> </i>.</p>
      */
     inline void SetPlatformVersion(Aws::String&& value) { m_platformVersionHasBeenSet = true; m_platformVersion = std::move(value); }
 
     /**
      * <p>The platform version of your Amazon EKS cluster. For more information, see <a
-     * href="http://docs.aws.amazon.com/eks/latest/userguide/platform-versions.html">Platform
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/platform-versions.html">Platform
      * Versions</a> in the <i> <i>Amazon EKS User Guide</i> </i>.</p>
      */
     inline void SetPlatformVersion(const char* value) { m_platformVersionHasBeenSet = true; m_platformVersion.assign(value); }
 
     /**
      * <p>The platform version of your Amazon EKS cluster. For more information, see <a
-     * href="http://docs.aws.amazon.com/eks/latest/userguide/platform-versions.html">Platform
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/platform-versions.html">Platform
      * Versions</a> in the <i> <i>Amazon EKS User Guide</i> </i>.</p>
      */
     inline Cluster& WithPlatformVersion(const Aws::String& value) { SetPlatformVersion(value); return *this;}
 
     /**
      * <p>The platform version of your Amazon EKS cluster. For more information, see <a
-     * href="http://docs.aws.amazon.com/eks/latest/userguide/platform-versions.html">Platform
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/platform-versions.html">Platform
      * Versions</a> in the <i> <i>Amazon EKS User Guide</i> </i>.</p>
      */
     inline Cluster& WithPlatformVersion(Aws::String&& value) { SetPlatformVersion(std::move(value)); return *this;}
 
     /**
      * <p>The platform version of your Amazon EKS cluster. For more information, see <a
-     * href="http://docs.aws.amazon.com/eks/latest/userguide/platform-versions.html">Platform
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/platform-versions.html">Platform
      * Versions</a> in the <i> <i>Amazon EKS User Guide</i> </i>.</p>
      */
     inline Cluster& WithPlatformVersion(const char* value) { SetPlatformVersion(value); return *this;}

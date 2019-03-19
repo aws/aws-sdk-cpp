@@ -36,6 +36,7 @@
 #include <aws/eks/model/DescribeUpdateRequest.h>
 #include <aws/eks/model/ListClustersRequest.h>
 #include <aws/eks/model/ListUpdatesRequest.h>
+#include <aws/eks/model/UpdateClusterConfigRequest.h>
 #include <aws/eks/model/UpdateClusterVersionRequest.h>
 
 using namespace Aws;
@@ -349,6 +350,48 @@ void EKSClient::ListUpdatesAsync(const ListUpdatesRequest& request, const ListUp
 void EKSClient::ListUpdatesAsyncHelper(const ListUpdatesRequest& request, const ListUpdatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ListUpdates(request), context);
+}
+
+UpdateClusterConfigOutcome EKSClient::UpdateClusterConfig(const UpdateClusterConfigRequest& request) const
+{
+  if (!request.NameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateClusterConfig", "Required field: Name, is not set");
+    return UpdateClusterConfigOutcome(Aws::Client::AWSError<EKSErrors>(EKSErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Name]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/clusters/";
+  ss << request.GetName();
+  ss << "/update-config";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return UpdateClusterConfigOutcome(UpdateClusterConfigResult(outcome.GetResult()));
+  }
+  else
+  {
+    return UpdateClusterConfigOutcome(outcome.GetError());
+  }
+}
+
+UpdateClusterConfigOutcomeCallable EKSClient::UpdateClusterConfigCallable(const UpdateClusterConfigRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateClusterConfigOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateClusterConfig(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void EKSClient::UpdateClusterConfigAsync(const UpdateClusterConfigRequest& request, const UpdateClusterConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateClusterConfigAsyncHelper( request, handler, context ); } );
+}
+
+void EKSClient::UpdateClusterConfigAsyncHelper(const UpdateClusterConfigRequest& request, const UpdateClusterConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateClusterConfig(request), context);
 }
 
 UpdateClusterVersionOutcome EKSClient::UpdateClusterVersion(const UpdateClusterVersionRequest& request) const

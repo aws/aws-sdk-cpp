@@ -60,6 +60,7 @@
 #include <aws/config/model/PutEvaluationsResult.h>
 #include <aws/config/model/PutRemediationConfigurationsResult.h>
 #include <aws/config/model/PutRetentionConfigurationResult.h>
+#include <aws/config/model/SelectResourceConfigResult.h>
 #include <aws/config/model/StartConfigRulesEvaluationResult.h>
 #include <aws/config/model/StartRemediationExecutionResult.h>
 #include <aws/core/NoResult.h>
@@ -151,6 +152,7 @@ namespace Model
         class PutEvaluationsRequest;
         class PutRemediationConfigurationsRequest;
         class PutRetentionConfigurationRequest;
+        class SelectResourceConfigRequest;
         class StartConfigRulesEvaluationRequest;
         class StartConfigurationRecorderRequest;
         class StartRemediationExecutionRequest;
@@ -207,6 +209,7 @@ namespace Model
         typedef Aws::Utils::Outcome<PutEvaluationsResult, Aws::Client::AWSError<ConfigServiceErrors>> PutEvaluationsOutcome;
         typedef Aws::Utils::Outcome<PutRemediationConfigurationsResult, Aws::Client::AWSError<ConfigServiceErrors>> PutRemediationConfigurationsOutcome;
         typedef Aws::Utils::Outcome<PutRetentionConfigurationResult, Aws::Client::AWSError<ConfigServiceErrors>> PutRetentionConfigurationOutcome;
+        typedef Aws::Utils::Outcome<SelectResourceConfigResult, Aws::Client::AWSError<ConfigServiceErrors>> SelectResourceConfigOutcome;
         typedef Aws::Utils::Outcome<StartConfigRulesEvaluationResult, Aws::Client::AWSError<ConfigServiceErrors>> StartConfigRulesEvaluationOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<ConfigServiceErrors>> StartConfigurationRecorderOutcome;
         typedef Aws::Utils::Outcome<StartRemediationExecutionResult, Aws::Client::AWSError<ConfigServiceErrors>> StartRemediationExecutionOutcome;
@@ -263,6 +266,7 @@ namespace Model
         typedef std::future<PutEvaluationsOutcome> PutEvaluationsOutcomeCallable;
         typedef std::future<PutRemediationConfigurationsOutcome> PutRemediationConfigurationsOutcomeCallable;
         typedef std::future<PutRetentionConfigurationOutcome> PutRetentionConfigurationOutcomeCallable;
+        typedef std::future<SelectResourceConfigOutcome> SelectResourceConfigOutcomeCallable;
         typedef std::future<StartConfigRulesEvaluationOutcome> StartConfigRulesEvaluationOutcomeCallable;
         typedef std::future<StartConfigurationRecorderOutcome> StartConfigurationRecorderOutcomeCallable;
         typedef std::future<StartRemediationExecutionOutcome> StartRemediationExecutionOutcomeCallable;
@@ -322,6 +326,7 @@ namespace Model
     typedef std::function<void(const ConfigServiceClient*, const Model::PutEvaluationsRequest&, const Model::PutEvaluationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutEvaluationsResponseReceivedHandler;
     typedef std::function<void(const ConfigServiceClient*, const Model::PutRemediationConfigurationsRequest&, const Model::PutRemediationConfigurationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutRemediationConfigurationsResponseReceivedHandler;
     typedef std::function<void(const ConfigServiceClient*, const Model::PutRetentionConfigurationRequest&, const Model::PutRetentionConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutRetentionConfigurationResponseReceivedHandler;
+    typedef std::function<void(const ConfigServiceClient*, const Model::SelectResourceConfigRequest&, const Model::SelectResourceConfigOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SelectResourceConfigResponseReceivedHandler;
     typedef std::function<void(const ConfigServiceClient*, const Model::StartConfigRulesEvaluationRequest&, const Model::StartConfigRulesEvaluationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartConfigRulesEvaluationResponseReceivedHandler;
     typedef std::function<void(const ConfigServiceClient*, const Model::StartConfigurationRecorderRequest&, const Model::StartConfigurationRecorderOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartConfigurationRecorderResponseReceivedHandler;
     typedef std::function<void(const ConfigServiceClient*, const Model::StartRemediationExecutionRequest&, const Model::StartRemediationExecutionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartRemediationExecutionResponseReceivedHandler;
@@ -1085,7 +1090,7 @@ namespace Model
         virtual void DescribeConfigRulesAsync(const Model::DescribeConfigRulesRequest& request, const DescribeConfigRulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p> Returns status information for sources within an aggregator. The status
+         * <p>Returns status information for sources within an aggregator. The status
          * includes information about the last time AWS Config verified authorization
          * between the source account and an aggregator account. In case of a failure, the
          * status contains the related error code or message. </p><p><h3>See Also:</h3>  
@@ -1096,7 +1101,7 @@ namespace Model
         virtual Model::DescribeConfigurationAggregatorSourcesStatusOutcome DescribeConfigurationAggregatorSourcesStatus(const Model::DescribeConfigurationAggregatorSourcesStatusRequest& request) const;
 
         /**
-         * <p> Returns status information for sources within an aggregator. The status
+         * <p>Returns status information for sources within an aggregator. The status
          * includes information about the last time AWS Config verified authorization
          * between the source account and an aggregator account. In case of a failure, the
          * status contains the related error code or message. </p><p><h3>See Also:</h3>  
@@ -1109,7 +1114,7 @@ namespace Model
         virtual Model::DescribeConfigurationAggregatorSourcesStatusOutcomeCallable DescribeConfigurationAggregatorSourcesStatusCallable(const Model::DescribeConfigurationAggregatorSourcesStatusRequest& request) const;
 
         /**
-         * <p> Returns status information for sources within an aggregator. The status
+         * <p>Returns status information for sources within an aggregator. The status
          * includes information about the last time AWS Config verified authorization
          * between the source account and an aggregator account. In case of a failure, the
          * status contains the related error code or message. </p><p><h3>See Also:</h3>  
@@ -2396,6 +2401,46 @@ namespace Model
         virtual void PutRetentionConfigurationAsync(const Model::PutRetentionConfigurationRequest& request, const PutRetentionConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Accepts a structured query language (SQL) <code>SELECT</code> command,
+         * performs the corresponding search, and returns resource configurations matching
+         * the properties.</p> <p>For more information about query components, see the <a
+         * href="https://docs.aws.amazon.com/config/latest/developerguide/query-components.html">
+         * <b>Query Components</b> </a> section in the AWS Config Developer
+         * Guide.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/SelectResourceConfig">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::SelectResourceConfigOutcome SelectResourceConfig(const Model::SelectResourceConfigRequest& request) const;
+
+        /**
+         * <p>Accepts a structured query language (SQL) <code>SELECT</code> command,
+         * performs the corresponding search, and returns resource configurations matching
+         * the properties.</p> <p>For more information about query components, see the <a
+         * href="https://docs.aws.amazon.com/config/latest/developerguide/query-components.html">
+         * <b>Query Components</b> </a> section in the AWS Config Developer
+         * Guide.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/SelectResourceConfig">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::SelectResourceConfigOutcomeCallable SelectResourceConfigCallable(const Model::SelectResourceConfigRequest& request) const;
+
+        /**
+         * <p>Accepts a structured query language (SQL) <code>SELECT</code> command,
+         * performs the corresponding search, and returns resource configurations matching
+         * the properties.</p> <p>For more information about query components, see the <a
+         * href="https://docs.aws.amazon.com/config/latest/developerguide/query-components.html">
+         * <b>Query Components</b> </a> section in the AWS Config Developer
+         * Guide.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/SelectResourceConfig">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void SelectResourceConfigAsync(const Model::SelectResourceConfigRequest& request, const SelectResourceConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Runs an on-demand evaluation for the specified AWS Config rules against the
          * last known configuration state of the resources. Use
          * <code>StartConfigRulesEvaluation</code> when you want to test that a rule you
@@ -2704,6 +2749,7 @@ namespace Model
         void PutEvaluationsAsyncHelper(const Model::PutEvaluationsRequest& request, const PutEvaluationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutRemediationConfigurationsAsyncHelper(const Model::PutRemediationConfigurationsRequest& request, const PutRemediationConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutRetentionConfigurationAsyncHelper(const Model::PutRetentionConfigurationRequest& request, const PutRetentionConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void SelectResourceConfigAsyncHelper(const Model::SelectResourceConfigRequest& request, const SelectResourceConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void StartConfigRulesEvaluationAsyncHelper(const Model::StartConfigRulesEvaluationRequest& request, const StartConfigRulesEvaluationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void StartConfigurationRecorderAsyncHelper(const Model::StartConfigurationRecorderRequest& request, const StartConfigurationRecorderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void StartRemediationExecutionAsyncHelper(const Model::StartRemediationExecutionRequest& request, const StartRemediationExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

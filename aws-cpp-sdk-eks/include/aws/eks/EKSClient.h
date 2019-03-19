@@ -27,6 +27,7 @@
 #include <aws/eks/model/DescribeUpdateResult.h>
 #include <aws/eks/model/ListClustersResult.h>
 #include <aws/eks/model/ListUpdatesResult.h>
+#include <aws/eks/model/UpdateClusterConfigResult.h>
 #include <aws/eks/model/UpdateClusterVersionResult.h>
 #include <aws/core/client/AsyncCallerContext.h>
 #include <aws/core/http/HttpTypes.h>
@@ -74,6 +75,7 @@ namespace Model
         class DescribeUpdateRequest;
         class ListClustersRequest;
         class ListUpdatesRequest;
+        class UpdateClusterConfigRequest;
         class UpdateClusterVersionRequest;
 
         typedef Aws::Utils::Outcome<CreateClusterResult, Aws::Client::AWSError<EKSErrors>> CreateClusterOutcome;
@@ -82,6 +84,7 @@ namespace Model
         typedef Aws::Utils::Outcome<DescribeUpdateResult, Aws::Client::AWSError<EKSErrors>> DescribeUpdateOutcome;
         typedef Aws::Utils::Outcome<ListClustersResult, Aws::Client::AWSError<EKSErrors>> ListClustersOutcome;
         typedef Aws::Utils::Outcome<ListUpdatesResult, Aws::Client::AWSError<EKSErrors>> ListUpdatesOutcome;
+        typedef Aws::Utils::Outcome<UpdateClusterConfigResult, Aws::Client::AWSError<EKSErrors>> UpdateClusterConfigOutcome;
         typedef Aws::Utils::Outcome<UpdateClusterVersionResult, Aws::Client::AWSError<EKSErrors>> UpdateClusterVersionOutcome;
 
         typedef std::future<CreateClusterOutcome> CreateClusterOutcomeCallable;
@@ -90,6 +93,7 @@ namespace Model
         typedef std::future<DescribeUpdateOutcome> DescribeUpdateOutcomeCallable;
         typedef std::future<ListClustersOutcome> ListClustersOutcomeCallable;
         typedef std::future<ListUpdatesOutcome> ListUpdatesOutcomeCallable;
+        typedef std::future<UpdateClusterConfigOutcome> UpdateClusterConfigOutcomeCallable;
         typedef std::future<UpdateClusterVersionOutcome> UpdateClusterVersionOutcomeCallable;
 } // namespace Model
 
@@ -101,6 +105,7 @@ namespace Model
     typedef std::function<void(const EKSClient*, const Model::DescribeUpdateRequest&, const Model::DescribeUpdateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeUpdateResponseReceivedHandler;
     typedef std::function<void(const EKSClient*, const Model::ListClustersRequest&, const Model::ListClustersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListClustersResponseReceivedHandler;
     typedef std::function<void(const EKSClient*, const Model::ListUpdatesRequest&, const Model::ListUpdatesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListUpdatesResponseReceivedHandler;
+    typedef std::function<void(const EKSClient*, const Model::UpdateClusterConfigRequest&, const Model::UpdateClusterConfigOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateClusterConfigResponseReceivedHandler;
     typedef std::function<void(const EKSClient*, const Model::UpdateClusterVersionRequest&, const Model::UpdateClusterVersionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateClusterVersionResponseReceivedHandler;
 
   /**
@@ -161,9 +166,9 @@ namespace Model
          * you create an Amazon EKS cluster, you must configure your Kubernetes tooling to
          * communicate with the API server and launch worker nodes into your cluster. For
          * more information, see <a
-         * href="http://docs.aws.amazon.com/eks/latest/userguide/managing-auth.html">Managing
+         * href="https://docs.aws.amazon.com/eks/latest/userguide/managing-auth.html">Managing
          * Cluster Authentication</a> and <a
-         * href="http://docs.aws.amazon.com/eks/latest/userguide/launch-workers.html">Launching
+         * href="https://docs.aws.amazon.com/eks/latest/userguide/launch-workers.html">Launching
          * Amazon EKS Worker Nodes</a>in the <i>Amazon EKS User Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/CreateCluster">AWS
@@ -187,9 +192,9 @@ namespace Model
          * you create an Amazon EKS cluster, you must configure your Kubernetes tooling to
          * communicate with the API server and launch worker nodes into your cluster. For
          * more information, see <a
-         * href="http://docs.aws.amazon.com/eks/latest/userguide/managing-auth.html">Managing
+         * href="https://docs.aws.amazon.com/eks/latest/userguide/managing-auth.html">Managing
          * Cluster Authentication</a> and <a
-         * href="http://docs.aws.amazon.com/eks/latest/userguide/launch-workers.html">Launching
+         * href="https://docs.aws.amazon.com/eks/latest/userguide/launch-workers.html">Launching
          * Amazon EKS Worker Nodes</a>in the <i>Amazon EKS User Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/CreateCluster">AWS
@@ -215,9 +220,9 @@ namespace Model
          * you create an Amazon EKS cluster, you must configure your Kubernetes tooling to
          * communicate with the API server and launch worker nodes into your cluster. For
          * more information, see <a
-         * href="http://docs.aws.amazon.com/eks/latest/userguide/managing-auth.html">Managing
+         * href="https://docs.aws.amazon.com/eks/latest/userguide/managing-auth.html">Managing
          * Cluster Authentication</a> and <a
-         * href="http://docs.aws.amazon.com/eks/latest/userguide/launch-workers.html">Launching
+         * href="https://docs.aws.amazon.com/eks/latest/userguide/launch-workers.html">Launching
          * Amazon EKS Worker Nodes</a>in the <i>Amazon EKS User Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/CreateCluster">AWS
@@ -234,7 +239,7 @@ namespace Model
          * balancers are deleted properly. Otherwise, you can have orphaned resources in
          * your VPC that prevent you from being able to delete the VPC. For more
          * information, see <a
-         * href="http://docs.aws.amazon.com/eks/latest/userguide/delete-cluster.html">Deleting
+         * href="https://docs.aws.amazon.com/eks/latest/userguide/delete-cluster.html">Deleting
          * a Cluster</a> in the <i>Amazon EKS User Guide</i>.</p> </note><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/DeleteCluster">AWS
@@ -249,7 +254,7 @@ namespace Model
          * balancers are deleted properly. Otherwise, you can have orphaned resources in
          * your VPC that prevent you from being able to delete the VPC. For more
          * information, see <a
-         * href="http://docs.aws.amazon.com/eks/latest/userguide/delete-cluster.html">Deleting
+         * href="https://docs.aws.amazon.com/eks/latest/userguide/delete-cluster.html">Deleting
          * a Cluster</a> in the <i>Amazon EKS User Guide</i>.</p> </note><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/DeleteCluster">AWS
@@ -266,7 +271,7 @@ namespace Model
          * balancers are deleted properly. Otherwise, you can have orphaned resources in
          * your VPC that prevent you from being able to delete the VPC. For more
          * information, see <a
-         * href="http://docs.aws.amazon.com/eks/latest/userguide/delete-cluster.html">Deleting
+         * href="https://docs.aws.amazon.com/eks/latest/userguide/delete-cluster.html">Deleting
          * a Cluster</a> in the <i>Amazon EKS User Guide</i>.</p> </note><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/DeleteCluster">AWS
@@ -281,7 +286,7 @@ namespace Model
          * server endpoint and certificate authority data returned by this operation are
          * required for <code>kubelet</code> and <code>kubectl</code> to communicate with
          * your Kubernetes API server. For more information, see <a
-         * href="http://docs.aws.amazon.com/eks/latest/userguide/create-kubeconfig.html">Create
+         * href="https://docs.aws.amazon.com/eks/latest/userguide/create-kubeconfig.html">Create
          * a kubeconfig for Amazon EKS</a>.</p> <note> <p>The API server endpoint and
          * certificate authority data are not available until the cluster reaches the
          * <code>ACTIVE</code> state.</p> </note><p><h3>See Also:</h3>   <a
@@ -295,7 +300,7 @@ namespace Model
          * server endpoint and certificate authority data returned by this operation are
          * required for <code>kubelet</code> and <code>kubectl</code> to communicate with
          * your Kubernetes API server. For more information, see <a
-         * href="http://docs.aws.amazon.com/eks/latest/userguide/create-kubeconfig.html">Create
+         * href="https://docs.aws.amazon.com/eks/latest/userguide/create-kubeconfig.html">Create
          * a kubeconfig for Amazon EKS</a>.</p> <note> <p>The API server endpoint and
          * certificate authority data are not available until the cluster reaches the
          * <code>ACTIVE</code> state.</p> </note><p><h3>See Also:</h3>   <a
@@ -311,7 +316,7 @@ namespace Model
          * server endpoint and certificate authority data returned by this operation are
          * required for <code>kubelet</code> and <code>kubectl</code> to communicate with
          * your Kubernetes API server. For more information, see <a
-         * href="http://docs.aws.amazon.com/eks/latest/userguide/create-kubeconfig.html">Create
+         * href="https://docs.aws.amazon.com/eks/latest/userguide/create-kubeconfig.html">Create
          * a kubeconfig for Amazon EKS</a>.</p> <note> <p>The API server endpoint and
          * certificate authority data are not available until the cluster reaches the
          * <code>ACTIVE</code> state.</p> </note><p><h3>See Also:</h3>   <a
@@ -416,6 +421,67 @@ namespace Model
         virtual void ListUpdatesAsync(const Model::ListUpdatesRequest& request, const ListUpdatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Updates an Amazon EKS cluster configuration. Your cluster continues to
+         * function during the update. The response output includes an update ID that you
+         * can use to track the status of your cluster update with the
+         * <a>DescribeUpdate</a> API operation.</p> <p>Currently, the only cluster
+         * configuration changes supported are to enable or disable Amazon EKS public and
+         * private API server endpoints. For more information, see <a
+         * href="https://docs.aws.amazon.com/eks/latest/userguide/cluster-endpoint.html">Amazon
+         * EKS Cluster Endpoint Access Control</a> in the <i> <i>Amazon EKS User Guide</i>
+         * </i>.</p> <p>Cluster updates are asynchronous, and they should finish within a
+         * few minutes. During an update, the cluster status moves to <code>UPDATING</code>
+         * (this status transition is eventually consistent). When the update is complete
+         * (either <code>Failed</code> or <code>Successful</code>), the cluster status
+         * moves to <code>Active</code>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/UpdateClusterConfig">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateClusterConfigOutcome UpdateClusterConfig(const Model::UpdateClusterConfigRequest& request) const;
+
+        /**
+         * <p>Updates an Amazon EKS cluster configuration. Your cluster continues to
+         * function during the update. The response output includes an update ID that you
+         * can use to track the status of your cluster update with the
+         * <a>DescribeUpdate</a> API operation.</p> <p>Currently, the only cluster
+         * configuration changes supported are to enable or disable Amazon EKS public and
+         * private API server endpoints. For more information, see <a
+         * href="https://docs.aws.amazon.com/eks/latest/userguide/cluster-endpoint.html">Amazon
+         * EKS Cluster Endpoint Access Control</a> in the <i> <i>Amazon EKS User Guide</i>
+         * </i>.</p> <p>Cluster updates are asynchronous, and they should finish within a
+         * few minutes. During an update, the cluster status moves to <code>UPDATING</code>
+         * (this status transition is eventually consistent). When the update is complete
+         * (either <code>Failed</code> or <code>Successful</code>), the cluster status
+         * moves to <code>Active</code>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/UpdateClusterConfig">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UpdateClusterConfigOutcomeCallable UpdateClusterConfigCallable(const Model::UpdateClusterConfigRequest& request) const;
+
+        /**
+         * <p>Updates an Amazon EKS cluster configuration. Your cluster continues to
+         * function during the update. The response output includes an update ID that you
+         * can use to track the status of your cluster update with the
+         * <a>DescribeUpdate</a> API operation.</p> <p>Currently, the only cluster
+         * configuration changes supported are to enable or disable Amazon EKS public and
+         * private API server endpoints. For more information, see <a
+         * href="https://docs.aws.amazon.com/eks/latest/userguide/cluster-endpoint.html">Amazon
+         * EKS Cluster Endpoint Access Control</a> in the <i> <i>Amazon EKS User Guide</i>
+         * </i>.</p> <p>Cluster updates are asynchronous, and they should finish within a
+         * few minutes. During an update, the cluster status moves to <code>UPDATING</code>
+         * (this status transition is eventually consistent). When the update is complete
+         * (either <code>Failed</code> or <code>Successful</code>), the cluster status
+         * moves to <code>Active</code>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/UpdateClusterConfig">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UpdateClusterConfigAsync(const Model::UpdateClusterConfigRequest& request, const UpdateClusterConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Updates an Amazon EKS cluster to the specified Kubernetes version. Your
          * cluster continues to function during the update. The response output includes an
          * update ID that you can use to track the status of your cluster update with the
@@ -475,6 +541,7 @@ namespace Model
         void DescribeUpdateAsyncHelper(const Model::DescribeUpdateRequest& request, const DescribeUpdateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListClustersAsyncHelper(const Model::ListClustersRequest& request, const ListClustersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListUpdatesAsyncHelper(const Model::ListUpdatesRequest& request, const ListUpdatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UpdateClusterConfigAsyncHelper(const Model::UpdateClusterConfigRequest& request, const UpdateClusterConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateClusterVersionAsyncHelper(const Model::UpdateClusterVersionRequest& request, const UpdateClusterVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
 
       Aws::String m_uri;

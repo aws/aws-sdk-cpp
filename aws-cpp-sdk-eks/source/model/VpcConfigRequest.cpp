@@ -30,13 +30,21 @@ namespace Model
 
 VpcConfigRequest::VpcConfigRequest() : 
     m_subnetIdsHasBeenSet(false),
-    m_securityGroupIdsHasBeenSet(false)
+    m_securityGroupIdsHasBeenSet(false),
+    m_endpointPublicAccess(false),
+    m_endpointPublicAccessHasBeenSet(false),
+    m_endpointPrivateAccess(false),
+    m_endpointPrivateAccessHasBeenSet(false)
 {
 }
 
 VpcConfigRequest::VpcConfigRequest(JsonView jsonValue) : 
     m_subnetIdsHasBeenSet(false),
-    m_securityGroupIdsHasBeenSet(false)
+    m_securityGroupIdsHasBeenSet(false),
+    m_endpointPublicAccess(false),
+    m_endpointPublicAccessHasBeenSet(false),
+    m_endpointPrivateAccess(false),
+    m_endpointPrivateAccessHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -61,6 +69,20 @@ VpcConfigRequest& VpcConfigRequest::operator =(JsonView jsonValue)
       m_securityGroupIds.push_back(securityGroupIdsJsonList[securityGroupIdsIndex].AsString());
     }
     m_securityGroupIdsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("endpointPublicAccess"))
+  {
+    m_endpointPublicAccess = jsonValue.GetBool("endpointPublicAccess");
+
+    m_endpointPublicAccessHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("endpointPrivateAccess"))
+  {
+    m_endpointPrivateAccess = jsonValue.GetBool("endpointPrivateAccess");
+
+    m_endpointPrivateAccessHasBeenSet = true;
   }
 
   return *this;
@@ -89,6 +111,18 @@ JsonValue VpcConfigRequest::Jsonize() const
      securityGroupIdsJsonList[securityGroupIdsIndex].AsString(m_securityGroupIds[securityGroupIdsIndex]);
    }
    payload.WithArray("securityGroupIds", std::move(securityGroupIdsJsonList));
+
+  }
+
+  if(m_endpointPublicAccessHasBeenSet)
+  {
+   payload.WithBool("endpointPublicAccess", m_endpointPublicAccess);
+
+  }
+
+  if(m_endpointPrivateAccessHasBeenSet)
+  {
+   payload.WithBool("endpointPrivateAccess", m_endpointPrivateAccess);
 
   }
 
