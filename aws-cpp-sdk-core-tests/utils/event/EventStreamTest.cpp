@@ -69,7 +69,7 @@ namespace
             ASSERT_EQ(AWS_OP_SUCCESS, aws_event_stream_message_init(&eventStreamMessage, aws_default_allocator(), &eventStreamHeaders, &payloadBuf));
         }
 
-        static void TestDownTestCase()
+        static void TearDownTestCase()
         {
             aws_event_stream_message_clean_up(&eventStreamMessage);
             aws_event_stream_headers_list_cleanup(&eventStreamHeaders);
