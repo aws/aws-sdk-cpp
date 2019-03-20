@@ -466,7 +466,30 @@ static Aws::String WrapEchoStringWithSingleQuoteForUnixShell(Aws::String str)
     return str;
 }
 
-TEST(ProcessCredentialsProviderTest, TestProcessCredentialsProviderExpiredThenRefreshed)
+class ProcessCredentialsProviderTest : public ::testing::Test
+{
+public:
+    void SetUp()
+    {
+        m_storedAwsConfigFileEnvVar = Aws::Environment::GetEnv("AWS_CONFIG_FILE");
+    }
+
+    void TearDown()
+    {
+        if(m_storedAwsConfigFileEnvVar.empty())
+        {
+            Aws::Environment::UnSetEnv("AWS_CONFIG_FILE");
+        }
+        else
+        {
+            Aws::Environment::SetEnv("AWS_CONFIG_FILE", m_storedAwsConfigFileEnvVar.c_str(), 1/*override*/);
+        }
+    }
+
+    Aws::String m_storedAwsConfigFileEnvVar;
+};
+
+TEST_F(ProcessCredentialsProviderTest, TestProcessCredentialsProviderExpiredThenRefreshed)
 {
     Aws::String configFileName = Aws::Auth::GetConfigProfileFilename() + "_blah";
     Aws::Environment::SetEnv("AWS_CONFIG_FILE", configFileName.c_str(), 1);
@@ -499,7 +522,7 @@ TEST(ProcessCredentialsProviderTest, TestProcessCredentialsProviderExpiredThenRe
     Aws::FileSystem::RemoveFileIfExists(configFileName.c_str());
 }
 
-TEST(ProcessCredentialsProviderTest, TestProcessCredentialsProviderNonSupportedVersion)
+TEST_F(ProcessCredentialsProviderTest, TestProcessCredentialsProviderNonSupportedVersion)
 {
     Aws::String configFileName = Aws::Auth::GetConfigProfileFilename() + "_blah";
     Aws::Environment::SetEnv("AWS_CONFIG_FILE", configFileName.c_str(), 1);
@@ -517,7 +540,7 @@ TEST(ProcessCredentialsProviderTest, TestProcessCredentialsProviderNonSupportedV
     Aws::FileSystem::RemoveFileIfExists(configFileName.c_str());
 }
 
-TEST(ProcessCredentialsProviderTest, TestProcessCredentialsProviderDoNotRefresh)
+TEST_F(ProcessCredentialsProviderTest, TestProcessCredentialsProviderDoNotRefresh)
 {
     Aws::String configFileName = Aws::Auth::GetConfigProfileFilename() + "_blah";
     Aws::Environment::SetEnv("AWS_CONFIG_FILE", configFileName.c_str(), 1);
@@ -550,7 +573,7 @@ TEST(ProcessCredentialsProviderTest, TestProcessCredentialsProviderDoNotRefresh)
     Aws::FileSystem::RemoveFileIfExists(configFileName.c_str());
 }
 
-TEST(ProcessCredentialsProviderTest, TestProcessCredentialsProviderCaptureInvalidOutput)
+TEST_F(ProcessCredentialsProviderTest, TestProcessCredentialsProviderCaptureInvalidOutput)
 {
     Aws::String configFileName = Aws::Auth::GetConfigProfileFilename();
     Aws::OFStream configFile(configFileName.c_str(), Aws::OFStream::out | Aws::OFStream::trunc);
