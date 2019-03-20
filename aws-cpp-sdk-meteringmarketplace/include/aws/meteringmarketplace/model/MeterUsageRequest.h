@@ -189,22 +189,26 @@ namespace Model
 
 
     /**
-     * <p>Consumption value for the hour.</p>
+     * <p>Consumption value for the hour. Defaults to <code>0</code> if not
+     * specified.</p>
      */
     inline int GetUsageQuantity() const{ return m_usageQuantity; }
 
     /**
-     * <p>Consumption value for the hour.</p>
+     * <p>Consumption value for the hour. Defaults to <code>0</code> if not
+     * specified.</p>
      */
     inline bool UsageQuantityHasBeenSet() const { return m_usageQuantityHasBeenSet; }
 
     /**
-     * <p>Consumption value for the hour.</p>
+     * <p>Consumption value for the hour. Defaults to <code>0</code> if not
+     * specified.</p>
      */
     inline void SetUsageQuantity(int value) { m_usageQuantityHasBeenSet = true; m_usageQuantity = value; }
 
     /**
-     * <p>Consumption value for the hour.</p>
+     * <p>Consumption value for the hour. Defaults to <code>0</code> if not
+     * specified.</p>
      */
     inline MeterUsageRequest& WithUsageQuantity(int value) { SetUsageQuantity(value); return *this;}
 
@@ -212,28 +216,32 @@ namespace Model
     /**
      * <p>Checks whether you have the permissions required for the action, but does not
      * make the request. If you have the permissions, the request returns
-     * DryRunOperation; otherwise, it returns UnauthorizedException.</p>
+     * DryRunOperation; otherwise, it returns UnauthorizedException. Defaults to
+     * <code>false</code> if not specified.</p>
      */
     inline bool GetDryRun() const{ return m_dryRun; }
 
     /**
      * <p>Checks whether you have the permissions required for the action, but does not
      * make the request. If you have the permissions, the request returns
-     * DryRunOperation; otherwise, it returns UnauthorizedException.</p>
+     * DryRunOperation; otherwise, it returns UnauthorizedException. Defaults to
+     * <code>false</code> if not specified.</p>
      */
     inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
 
     /**
      * <p>Checks whether you have the permissions required for the action, but does not
      * make the request. If you have the permissions, the request returns
-     * DryRunOperation; otherwise, it returns UnauthorizedException.</p>
+     * DryRunOperation; otherwise, it returns UnauthorizedException. Defaults to
+     * <code>false</code> if not specified.</p>
      */
     inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
 
     /**
      * <p>Checks whether you have the permissions required for the action, but does not
      * make the request. If you have the permissions, the request returns
-     * DryRunOperation; otherwise, it returns UnauthorizedException.</p>
+     * DryRunOperation; otherwise, it returns UnauthorizedException. Defaults to
+     * <code>false</code> if not specified.</p>
      */
     inline MeterUsageRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
 

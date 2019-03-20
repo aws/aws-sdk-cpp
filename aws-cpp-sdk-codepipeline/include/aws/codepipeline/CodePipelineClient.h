@@ -32,6 +32,7 @@
 #include <aws/codepipeline/model/GetPipelineExecutionResult.h>
 #include <aws/codepipeline/model/GetPipelineStateResult.h>
 #include <aws/codepipeline/model/GetThirdPartyJobDetailsResult.h>
+#include <aws/codepipeline/model/ListActionExecutionsResult.h>
 #include <aws/codepipeline/model/ListActionTypesResult.h>
 #include <aws/codepipeline/model/ListPipelineExecutionsResult.h>
 #include <aws/codepipeline/model/ListPipelinesResult.h>
@@ -101,6 +102,7 @@ namespace Model
         class GetPipelineExecutionRequest;
         class GetPipelineStateRequest;
         class GetThirdPartyJobDetailsRequest;
+        class ListActionExecutionsRequest;
         class ListActionTypesRequest;
         class ListPipelineExecutionsRequest;
         class ListPipelinesRequest;
@@ -134,6 +136,7 @@ namespace Model
         typedef Aws::Utils::Outcome<GetPipelineExecutionResult, Aws::Client::AWSError<CodePipelineErrors>> GetPipelineExecutionOutcome;
         typedef Aws::Utils::Outcome<GetPipelineStateResult, Aws::Client::AWSError<CodePipelineErrors>> GetPipelineStateOutcome;
         typedef Aws::Utils::Outcome<GetThirdPartyJobDetailsResult, Aws::Client::AWSError<CodePipelineErrors>> GetThirdPartyJobDetailsOutcome;
+        typedef Aws::Utils::Outcome<ListActionExecutionsResult, Aws::Client::AWSError<CodePipelineErrors>> ListActionExecutionsOutcome;
         typedef Aws::Utils::Outcome<ListActionTypesResult, Aws::Client::AWSError<CodePipelineErrors>> ListActionTypesOutcome;
         typedef Aws::Utils::Outcome<ListPipelineExecutionsResult, Aws::Client::AWSError<CodePipelineErrors>> ListPipelineExecutionsOutcome;
         typedef Aws::Utils::Outcome<ListPipelinesResult, Aws::Client::AWSError<CodePipelineErrors>> ListPipelinesOutcome;
@@ -167,6 +170,7 @@ namespace Model
         typedef std::future<GetPipelineExecutionOutcome> GetPipelineExecutionOutcomeCallable;
         typedef std::future<GetPipelineStateOutcome> GetPipelineStateOutcomeCallable;
         typedef std::future<GetThirdPartyJobDetailsOutcome> GetThirdPartyJobDetailsOutcomeCallable;
+        typedef std::future<ListActionExecutionsOutcome> ListActionExecutionsOutcomeCallable;
         typedef std::future<ListActionTypesOutcome> ListActionTypesOutcomeCallable;
         typedef std::future<ListPipelineExecutionsOutcome> ListPipelineExecutionsOutcomeCallable;
         typedef std::future<ListPipelinesOutcome> ListPipelinesOutcomeCallable;
@@ -203,6 +207,7 @@ namespace Model
     typedef std::function<void(const CodePipelineClient*, const Model::GetPipelineExecutionRequest&, const Model::GetPipelineExecutionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetPipelineExecutionResponseReceivedHandler;
     typedef std::function<void(const CodePipelineClient*, const Model::GetPipelineStateRequest&, const Model::GetPipelineStateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetPipelineStateResponseReceivedHandler;
     typedef std::function<void(const CodePipelineClient*, const Model::GetThirdPartyJobDetailsRequest&, const Model::GetThirdPartyJobDetailsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetThirdPartyJobDetailsResponseReceivedHandler;
+    typedef std::function<void(const CodePipelineClient*, const Model::ListActionExecutionsRequest&, const Model::ListActionExecutionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListActionExecutionsResponseReceivedHandler;
     typedef std::function<void(const CodePipelineClient*, const Model::ListActionTypesRequest&, const Model::ListActionTypesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListActionTypesResponseReceivedHandler;
     typedef std::function<void(const CodePipelineClient*, const Model::ListPipelineExecutionsRequest&, const Model::ListPipelineExecutionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListPipelineExecutionsResponseReceivedHandler;
     typedef std::function<void(const CodePipelineClient*, const Model::ListPipelinesRequest&, const Model::ListPipelinesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListPipelinesResponseReceivedHandler;
@@ -226,7 +231,7 @@ namespace Model
    * AWS CodePipeline API Reference. This guide provides descriptions of the actions
    * and data types for AWS CodePipeline. Some functionality for your pipeline is
    * only configurable through the API. For additional information, see the <a
-   * href="http://docs.aws.amazon.com/codepipeline/latest/userguide/welcome.html">AWS
+   * href="https://docs.aws.amazon.com/codepipeline/latest/userguide/welcome.html">AWS
    * CodePipeline User Guide</a>.</p> <p>You can use the AWS CodePipeline API to work
    * with pipelines, stages, actions, and transitions, as described below.</p> <p>
    * <i>Pipelines</i> are models of automated release processes. Each pipeline is
@@ -255,7 +260,7 @@ namespace Model
    * the status of stages in the pipeline, or <a>GetPipeline</a>, which returns the
    * entire structure of the pipeline, including the stages of that pipeline. For
    * more information about the structure of stages and actions, also refer to the <a
-   * href="http://docs.aws.amazon.com/codepipeline/latest/userguide/pipeline-structure.html">AWS
+   * href="https://docs.aws.amazon.com/codepipeline/latest/userguide/pipeline-structure.html">AWS
    * CodePipeline Pipeline Structure Reference</a>.</p> <p>Pipeline stages include
    * <i>actions</i>, which are categorized into categories such as source or build
    * actions performed within a stage of a pipeline. For example, you can use a
@@ -737,7 +742,9 @@ namespace Model
 
         /**
          * <p>Returns information about the state of a pipeline, including the stages and
-         * actions.</p><p><h3>See Also:</h3>   <a
+         * actions.</p> <note> <p>Values returned in the revisionId and revisionUrl fields
+         * indicate the source revision information, such as the commit ID, for the current
+         * state.</p> </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/GetPipelineState">AWS
          * API Reference</a></p>
          */
@@ -745,7 +752,9 @@ namespace Model
 
         /**
          * <p>Returns information about the state of a pipeline, including the stages and
-         * actions.</p><p><h3>See Also:</h3>   <a
+         * actions.</p> <note> <p>Values returned in the revisionId and revisionUrl fields
+         * indicate the source revision information, such as the commit ID, for the current
+         * state.</p> </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/GetPipelineState">AWS
          * API Reference</a></p>
          *
@@ -755,7 +764,9 @@ namespace Model
 
         /**
          * <p>Returns information about the state of a pipeline, including the stages and
-         * actions.</p><p><h3>See Also:</h3>   <a
+         * actions.</p> <note> <p>Values returned in the revisionId and revisionUrl fields
+         * indicate the source revision information, such as the commit ID, for the current
+         * state.</p> </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/GetPipelineState">AWS
          * API Reference</a></p>
          *
@@ -802,6 +813,34 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetThirdPartyJobDetailsAsync(const Model::GetThirdPartyJobDetailsRequest& request, const GetThirdPartyJobDetailsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Lists the action executions that have occurred in a pipeline.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/ListActionExecutions">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListActionExecutionsOutcome ListActionExecutions(const Model::ListActionExecutionsRequest& request) const;
+
+        /**
+         * <p>Lists the action executions that have occurred in a pipeline.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/ListActionExecutions">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListActionExecutionsOutcomeCallable ListActionExecutionsCallable(const Model::ListActionExecutionsRequest& request) const;
+
+        /**
+         * <p>Lists the action executions that have occurred in a pipeline.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/ListActionExecutions">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListActionExecutionsAsync(const Model::ListActionExecutionsRequest& request, const ListActionExecutionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets a summary of all AWS CodePipeline action types associated with your
@@ -1359,6 +1398,7 @@ namespace Model
         void GetPipelineExecutionAsyncHelper(const Model::GetPipelineExecutionRequest& request, const GetPipelineExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetPipelineStateAsyncHelper(const Model::GetPipelineStateRequest& request, const GetPipelineStateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetThirdPartyJobDetailsAsyncHelper(const Model::GetThirdPartyJobDetailsRequest& request, const GetThirdPartyJobDetailsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListActionExecutionsAsyncHelper(const Model::ListActionExecutionsRequest& request, const ListActionExecutionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListActionTypesAsyncHelper(const Model::ListActionTypesRequest& request, const ListActionTypesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListPipelineExecutionsAsyncHelper(const Model::ListPipelineExecutionsRequest& request, const ListPipelineExecutionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListPipelinesAsyncHelper(const Model::ListPipelinesRequest& request, const ListPipelinesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

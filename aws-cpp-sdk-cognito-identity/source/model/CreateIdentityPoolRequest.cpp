@@ -30,7 +30,8 @@ CreateIdentityPoolRequest::CreateIdentityPoolRequest() :
     m_developerProviderNameHasBeenSet(false),
     m_openIdConnectProviderARNsHasBeenSet(false),
     m_cognitoIdentityProvidersHasBeenSet(false),
-    m_samlProviderARNsHasBeenSet(false)
+    m_samlProviderARNsHasBeenSet(false),
+    m_identityPoolTagsHasBeenSet(false)
 {
 }
 
@@ -97,6 +98,17 @@ Aws::String CreateIdentityPoolRequest::SerializePayload() const
      samlProviderARNsJsonList[samlProviderARNsIndex].AsString(m_samlProviderARNs[samlProviderARNsIndex]);
    }
    payload.WithArray("SamlProviderARNs", std::move(samlProviderARNsJsonList));
+
+  }
+
+  if(m_identityPoolTagsHasBeenSet)
+  {
+   JsonValue identityPoolTagsJsonMap;
+   for(auto& identityPoolTagsItem : m_identityPoolTags)
+   {
+     identityPoolTagsJsonMap.WithString(identityPoolTagsItem.first, identityPoolTagsItem.second);
+   }
+   payload.WithObject("IdentityPoolTags", std::move(identityPoolTagsJsonMap));
 
   }
 

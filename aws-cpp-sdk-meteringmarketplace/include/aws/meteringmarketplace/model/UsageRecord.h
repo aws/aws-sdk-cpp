@@ -201,25 +201,25 @@ namespace Model
 
     /**
      * <p>The quantity of usage consumed by the customer for the given dimension and
-     * time.</p>
+     * time. Defaults to <code>0</code> if not specified.</p>
      */
     inline int GetQuantity() const{ return m_quantity; }
 
     /**
      * <p>The quantity of usage consumed by the customer for the given dimension and
-     * time.</p>
+     * time. Defaults to <code>0</code> if not specified.</p>
      */
     inline bool QuantityHasBeenSet() const { return m_quantityHasBeenSet; }
 
     /**
      * <p>The quantity of usage consumed by the customer for the given dimension and
-     * time.</p>
+     * time. Defaults to <code>0</code> if not specified.</p>
      */
     inline void SetQuantity(int value) { m_quantityHasBeenSet = true; m_quantity = value; }
 
     /**
      * <p>The quantity of usage consumed by the customer for the given dimension and
-     * time.</p>
+     * time. Defaults to <code>0</code> if not specified.</p>
      */
     inline UsageRecord& WithQuantity(int value) { SetQuantity(value); return *this;}
 

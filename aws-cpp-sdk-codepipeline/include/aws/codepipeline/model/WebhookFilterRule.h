@@ -130,7 +130,7 @@ namespace Model
      * configuration property called "Branch" with a value of "master", the MatchEquals
      * value will be evaluated as "refs/heads/master". A list of action configuration
      * properties for built-in action types can be found here: <a
-     * href="http://docs.aws.amazon.com/codepipeline/latest/userguide/reference-pipeline-structure.html#action-requirements">Pipeline
+     * href="https://docs.aws.amazon.com/codepipeline/latest/userguide/reference-pipeline-structure.html#action-requirements">Pipeline
      * Structure Reference Action Requirements</a>.</p>
      */
     inline const Aws::String& GetMatchEquals() const{ return m_matchEquals; }
@@ -144,7 +144,7 @@ namespace Model
      * configuration property called "Branch" with a value of "master", the MatchEquals
      * value will be evaluated as "refs/heads/master". A list of action configuration
      * properties for built-in action types can be found here: <a
-     * href="http://docs.aws.amazon.com/codepipeline/latest/userguide/reference-pipeline-structure.html#action-requirements">Pipeline
+     * href="https://docs.aws.amazon.com/codepipeline/latest/userguide/reference-pipeline-structure.html#action-requirements">Pipeline
      * Structure Reference Action Requirements</a>.</p>
      */
     inline bool MatchEqualsHasBeenSet() const { return m_matchEqualsHasBeenSet; }
@@ -158,7 +158,7 @@ namespace Model
      * configuration property called "Branch" with a value of "master", the MatchEquals
      * value will be evaluated as "refs/heads/master". A list of action configuration
      * properties for built-in action types can be found here: <a
-     * href="http://docs.aws.amazon.com/codepipeline/latest/userguide/reference-pipeline-structure.html#action-requirements">Pipeline
+     * href="https://docs.aws.amazon.com/codepipeline/latest/userguide/reference-pipeline-structure.html#action-requirements">Pipeline
      * Structure Reference Action Requirements</a>.</p>
      */
     inline void SetMatchEquals(const Aws::String& value) { m_matchEqualsHasBeenSet = true; m_matchEquals = value; }
@@ -172,7 +172,7 @@ namespace Model
      * configuration property called "Branch" with a value of "master", the MatchEquals
      * value will be evaluated as "refs/heads/master". A list of action configuration
      * properties for built-in action types can be found here: <a
-     * href="http://docs.aws.amazon.com/codepipeline/latest/userguide/reference-pipeline-structure.html#action-requirements">Pipeline
+     * href="https://docs.aws.amazon.com/codepipeline/latest/userguide/reference-pipeline-structure.html#action-requirements">Pipeline
      * Structure Reference Action Requirements</a>.</p>
      */
     inline void SetMatchEquals(Aws::String&& value) { m_matchEqualsHasBeenSet = true; m_matchEquals = std::move(value); }
@@ -186,7 +186,7 @@ namespace Model
      * configuration property called "Branch" with a value of "master", the MatchEquals
      * value will be evaluated as "refs/heads/master". A list of action configuration
      * properties for built-in action types can be found here: <a
-     * href="http://docs.aws.amazon.com/codepipeline/latest/userguide/reference-pipeline-structure.html#action-requirements">Pipeline
+     * href="https://docs.aws.amazon.com/codepipeline/latest/userguide/reference-pipeline-structure.html#action-requirements">Pipeline
      * Structure Reference Action Requirements</a>.</p>
      */
     inline void SetMatchEquals(const char* value) { m_matchEqualsHasBeenSet = true; m_matchEquals.assign(value); }
@@ -200,7 +200,7 @@ namespace Model
      * configuration property called "Branch" with a value of "master", the MatchEquals
      * value will be evaluated as "refs/heads/master". A list of action configuration
      * properties for built-in action types can be found here: <a
-     * href="http://docs.aws.amazon.com/codepipeline/latest/userguide/reference-pipeline-structure.html#action-requirements">Pipeline
+     * href="https://docs.aws.amazon.com/codepipeline/latest/userguide/reference-pipeline-structure.html#action-requirements">Pipeline
      * Structure Reference Action Requirements</a>.</p>
      */
     inline WebhookFilterRule& WithMatchEquals(const Aws::String& value) { SetMatchEquals(value); return *this;}
@@ -214,7 +214,7 @@ namespace Model
      * configuration property called "Branch" with a value of "master", the MatchEquals
      * value will be evaluated as "refs/heads/master". A list of action configuration
      * properties for built-in action types can be found here: <a
-     * href="http://docs.aws.amazon.com/codepipeline/latest/userguide/reference-pipeline-structure.html#action-requirements">Pipeline
+     * href="https://docs.aws.amazon.com/codepipeline/latest/userguide/reference-pipeline-structure.html#action-requirements">Pipeline
      * Structure Reference Action Requirements</a>.</p>
      */
     inline WebhookFilterRule& WithMatchEquals(Aws::String&& value) { SetMatchEquals(std::move(value)); return *this;}
@@ -228,7 +228,7 @@ namespace Model
      * configuration property called "Branch" with a value of "master", the MatchEquals
      * value will be evaluated as "refs/heads/master". A list of action configuration
      * properties for built-in action types can be found here: <a
-     * href="http://docs.aws.amazon.com/codepipeline/latest/userguide/reference-pipeline-structure.html#action-requirements">Pipeline
+     * href="https://docs.aws.amazon.com/codepipeline/latest/userguide/reference-pipeline-structure.html#action-requirements">Pipeline
      * Structure Reference Action Requirements</a>.</p>
      */
     inline WebhookFilterRule& WithMatchEquals(const char* value) { SetMatchEquals(value); return *this;}

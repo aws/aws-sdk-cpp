@@ -229,7 +229,7 @@ namespace Model
      * URL templates by following the format of {Config:name}, as long as the
      * configuration property is both required and not secret. For more information,
      * see <a
-     * href="http://docs.aws.amazon.com/codepipeline/latest/userguide/how-to-create-custom-action.html">Create
+     * href="https://docs.aws.amazon.com/codepipeline/latest/userguide/how-to-create-custom-action.html">Create
      * a Custom Action for a Pipeline</a>.</p> </note>
      */
     inline const Aws::Vector<ActionConfigurationProperty>& GetConfigurationProperties() const{ return m_configurationProperties; }
@@ -240,7 +240,7 @@ namespace Model
      * URL templates by following the format of {Config:name}, as long as the
      * configuration property is both required and not secret. For more information,
      * see <a
-     * href="http://docs.aws.amazon.com/codepipeline/latest/userguide/how-to-create-custom-action.html">Create
+     * href="https://docs.aws.amazon.com/codepipeline/latest/userguide/how-to-create-custom-action.html">Create
      * a Custom Action for a Pipeline</a>.</p> </note>
      */
     inline bool ConfigurationPropertiesHasBeenSet() const { return m_configurationPropertiesHasBeenSet; }
@@ -251,7 +251,7 @@ namespace Model
      * URL templates by following the format of {Config:name}, as long as the
      * configuration property is both required and not secret. For more information,
      * see <a
-     * href="http://docs.aws.amazon.com/codepipeline/latest/userguide/how-to-create-custom-action.html">Create
+     * href="https://docs.aws.amazon.com/codepipeline/latest/userguide/how-to-create-custom-action.html">Create
      * a Custom Action for a Pipeline</a>.</p> </note>
      */
     inline void SetConfigurationProperties(const Aws::Vector<ActionConfigurationProperty>& value) { m_configurationPropertiesHasBeenSet = true; m_configurationProperties = value; }
@@ -262,7 +262,7 @@ namespace Model
      * URL templates by following the format of {Config:name}, as long as the
      * configuration property is both required and not secret. For more information,
      * see <a
-     * href="http://docs.aws.amazon.com/codepipeline/latest/userguide/how-to-create-custom-action.html">Create
+     * href="https://docs.aws.amazon.com/codepipeline/latest/userguide/how-to-create-custom-action.html">Create
      * a Custom Action for a Pipeline</a>.</p> </note>
      */
     inline void SetConfigurationProperties(Aws::Vector<ActionConfigurationProperty>&& value) { m_configurationPropertiesHasBeenSet = true; m_configurationProperties = std::move(value); }
@@ -273,7 +273,7 @@ namespace Model
      * URL templates by following the format of {Config:name}, as long as the
      * configuration property is both required and not secret. For more information,
      * see <a
-     * href="http://docs.aws.amazon.com/codepipeline/latest/userguide/how-to-create-custom-action.html">Create
+     * href="https://docs.aws.amazon.com/codepipeline/latest/userguide/how-to-create-custom-action.html">Create
      * a Custom Action for a Pipeline</a>.</p> </note>
      */
     inline CreateCustomActionTypeRequest& WithConfigurationProperties(const Aws::Vector<ActionConfigurationProperty>& value) { SetConfigurationProperties(value); return *this;}
@@ -284,7 +284,7 @@ namespace Model
      * URL templates by following the format of {Config:name}, as long as the
      * configuration property is both required and not secret. For more information,
      * see <a
-     * href="http://docs.aws.amazon.com/codepipeline/latest/userguide/how-to-create-custom-action.html">Create
+     * href="https://docs.aws.amazon.com/codepipeline/latest/userguide/how-to-create-custom-action.html">Create
      * a Custom Action for a Pipeline</a>.</p> </note>
      */
     inline CreateCustomActionTypeRequest& WithConfigurationProperties(Aws::Vector<ActionConfigurationProperty>&& value) { SetConfigurationProperties(std::move(value)); return *this;}
@@ -295,7 +295,7 @@ namespace Model
      * URL templates by following the format of {Config:name}, as long as the
      * configuration property is both required and not secret. For more information,
      * see <a
-     * href="http://docs.aws.amazon.com/codepipeline/latest/userguide/how-to-create-custom-action.html">Create
+     * href="https://docs.aws.amazon.com/codepipeline/latest/userguide/how-to-create-custom-action.html">Create
      * a Custom Action for a Pipeline</a>.</p> </note>
      */
     inline CreateCustomActionTypeRequest& AddConfigurationProperties(const ActionConfigurationProperty& value) { m_configurationPropertiesHasBeenSet = true; m_configurationProperties.push_back(value); return *this; }
@@ -306,7 +306,7 @@ namespace Model
      * URL templates by following the format of {Config:name}, as long as the
      * configuration property is both required and not secret. For more information,
      * see <a
-     * href="http://docs.aws.amazon.com/codepipeline/latest/userguide/how-to-create-custom-action.html">Create
+     * href="https://docs.aws.amazon.com/codepipeline/latest/userguide/how-to-create-custom-action.html">Create
      * a Custom Action for a Pipeline</a>.</p> </note>
      */
     inline CreateCustomActionTypeRequest& AddConfigurationProperties(ActionConfigurationProperty&& value) { m_configurationPropertiesHasBeenSet = true; m_configurationProperties.push_back(std::move(value)); return *this; }

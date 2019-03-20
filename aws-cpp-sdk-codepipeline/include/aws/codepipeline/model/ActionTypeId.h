@@ -127,7 +127,9 @@ namespace Model
      * <p>The provider of the service being called by the action. Valid providers are
      * determined by the action category. For example, an action in the Deploy category
      * type might have a provider of AWS CodeDeploy, which would be specified as
-     * CodeDeploy.</p>
+     * CodeDeploy. To reference a list of action providers by action type, see <a
+     * href="https://docs.aws.amazon.com/codepipeline/latest/userguide/reference-pipeline-structure.html#actions-valid-providers">Valid
+     * Action Types and Providers in CodePipeline</a>.</p>
      */
     inline const Aws::String& GetProvider() const{ return m_provider; }
 
@@ -135,7 +137,9 @@ namespace Model
      * <p>The provider of the service being called by the action. Valid providers are
      * determined by the action category. For example, an action in the Deploy category
      * type might have a provider of AWS CodeDeploy, which would be specified as
-     * CodeDeploy.</p>
+     * CodeDeploy. To reference a list of action providers by action type, see <a
+     * href="https://docs.aws.amazon.com/codepipeline/latest/userguide/reference-pipeline-structure.html#actions-valid-providers">Valid
+     * Action Types and Providers in CodePipeline</a>.</p>
      */
     inline bool ProviderHasBeenSet() const { return m_providerHasBeenSet; }
 
@@ -143,7 +147,9 @@ namespace Model
      * <p>The provider of the service being called by the action. Valid providers are
      * determined by the action category. For example, an action in the Deploy category
      * type might have a provider of AWS CodeDeploy, which would be specified as
-     * CodeDeploy.</p>
+     * CodeDeploy. To reference a list of action providers by action type, see <a
+     * href="https://docs.aws.amazon.com/codepipeline/latest/userguide/reference-pipeline-structure.html#actions-valid-providers">Valid
+     * Action Types and Providers in CodePipeline</a>.</p>
      */
     inline void SetProvider(const Aws::String& value) { m_providerHasBeenSet = true; m_provider = value; }
 
@@ -151,7 +157,9 @@ namespace Model
      * <p>The provider of the service being called by the action. Valid providers are
      * determined by the action category. For example, an action in the Deploy category
      * type might have a provider of AWS CodeDeploy, which would be specified as
-     * CodeDeploy.</p>
+     * CodeDeploy. To reference a list of action providers by action type, see <a
+     * href="https://docs.aws.amazon.com/codepipeline/latest/userguide/reference-pipeline-structure.html#actions-valid-providers">Valid
+     * Action Types and Providers in CodePipeline</a>.</p>
      */
     inline void SetProvider(Aws::String&& value) { m_providerHasBeenSet = true; m_provider = std::move(value); }
 
@@ -159,7 +167,9 @@ namespace Model
      * <p>The provider of the service being called by the action. Valid providers are
      * determined by the action category. For example, an action in the Deploy category
      * type might have a provider of AWS CodeDeploy, which would be specified as
-     * CodeDeploy.</p>
+     * CodeDeploy. To reference a list of action providers by action type, see <a
+     * href="https://docs.aws.amazon.com/codepipeline/latest/userguide/reference-pipeline-structure.html#actions-valid-providers">Valid
+     * Action Types and Providers in CodePipeline</a>.</p>
      */
     inline void SetProvider(const char* value) { m_providerHasBeenSet = true; m_provider.assign(value); }
 
@@ -167,7 +177,9 @@ namespace Model
      * <p>The provider of the service being called by the action. Valid providers are
      * determined by the action category. For example, an action in the Deploy category
      * type might have a provider of AWS CodeDeploy, which would be specified as
-     * CodeDeploy.</p>
+     * CodeDeploy. To reference a list of action providers by action type, see <a
+     * href="https://docs.aws.amazon.com/codepipeline/latest/userguide/reference-pipeline-structure.html#actions-valid-providers">Valid
+     * Action Types and Providers in CodePipeline</a>.</p>
      */
     inline ActionTypeId& WithProvider(const Aws::String& value) { SetProvider(value); return *this;}
 
@@ -175,7 +187,9 @@ namespace Model
      * <p>The provider of the service being called by the action. Valid providers are
      * determined by the action category. For example, an action in the Deploy category
      * type might have a provider of AWS CodeDeploy, which would be specified as
-     * CodeDeploy.</p>
+     * CodeDeploy. To reference a list of action providers by action type, see <a
+     * href="https://docs.aws.amazon.com/codepipeline/latest/userguide/reference-pipeline-structure.html#actions-valid-providers">Valid
+     * Action Types and Providers in CodePipeline</a>.</p>
      */
     inline ActionTypeId& WithProvider(Aws::String&& value) { SetProvider(std::move(value)); return *this;}
 
@@ -183,7 +197,9 @@ namespace Model
      * <p>The provider of the service being called by the action. Valid providers are
      * determined by the action category. For example, an action in the Deploy category
      * type might have a provider of AWS CodeDeploy, which would be specified as
-     * CodeDeploy.</p>
+     * CodeDeploy. To reference a list of action providers by action type, see <a
+     * href="https://docs.aws.amazon.com/codepipeline/latest/userguide/reference-pipeline-structure.html#actions-valid-providers">Valid
+     * Action Types and Providers in CodePipeline</a>.</p>
      */
     inline ActionTypeId& WithProvider(const char* value) { SetProvider(value); return *this;}
 
