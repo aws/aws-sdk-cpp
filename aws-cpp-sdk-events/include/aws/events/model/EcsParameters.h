@@ -129,7 +129,7 @@ namespace Model
      * you specify here must match one of the launch type (compatibilities) of the
      * target task. The <code>FARGATE</code> value is supported only in the Regions
      * where AWS Fargate with Amazon ECS is supported. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/AWS-Fargate.html">AWS
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/AWS-Fargate.html">AWS
      * Fargate on Amazon ECS</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p>
      */
@@ -140,7 +140,7 @@ namespace Model
      * you specify here must match one of the launch type (compatibilities) of the
      * target task. The <code>FARGATE</code> value is supported only in the Regions
      * where AWS Fargate with Amazon ECS is supported. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/AWS-Fargate.html">AWS
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/AWS-Fargate.html">AWS
      * Fargate on Amazon ECS</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p>
      */
@@ -151,7 +151,7 @@ namespace Model
      * you specify here must match one of the launch type (compatibilities) of the
      * target task. The <code>FARGATE</code> value is supported only in the Regions
      * where AWS Fargate with Amazon ECS is supported. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/AWS-Fargate.html">AWS
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/AWS-Fargate.html">AWS
      * Fargate on Amazon ECS</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p>
      */
@@ -162,7 +162,7 @@ namespace Model
      * you specify here must match one of the launch type (compatibilities) of the
      * target task. The <code>FARGATE</code> value is supported only in the Regions
      * where AWS Fargate with Amazon ECS is supported. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/AWS-Fargate.html">AWS
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/AWS-Fargate.html">AWS
      * Fargate on Amazon ECS</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p>
      */
@@ -173,7 +173,7 @@ namespace Model
      * you specify here must match one of the launch type (compatibilities) of the
      * target task. The <code>FARGATE</code> value is supported only in the Regions
      * where AWS Fargate with Amazon ECS is supported. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/AWS-Fargate.html">AWS
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/AWS-Fargate.html">AWS
      * Fargate on Amazon ECS</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p>
      */
@@ -184,7 +184,7 @@ namespace Model
      * you specify here must match one of the launch type (compatibilities) of the
      * target task. The <code>FARGATE</code> value is supported only in the Regions
      * where AWS Fargate with Amazon ECS is supported. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/AWS-Fargate.html">AWS
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/AWS-Fargate.html">AWS
      * Fargate on Amazon ECS</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p>
      */
@@ -263,7 +263,7 @@ namespace Model
      * of the platform version, such as <code>1.1.0</code>.</p> <p>This structure is
      * used only if <code>LaunchType</code> is <code>FARGATE</code>. For more
      * information about valid platform versions, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS
      * Fargate Platform Versions</a> in the <i>Amazon Elastic Container Service
      * Developer Guide</i>.</p>
      */
@@ -274,7 +274,7 @@ namespace Model
      * of the platform version, such as <code>1.1.0</code>.</p> <p>This structure is
      * used only if <code>LaunchType</code> is <code>FARGATE</code>. For more
      * information about valid platform versions, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS
      * Fargate Platform Versions</a> in the <i>Amazon Elastic Container Service
      * Developer Guide</i>.</p>
      */
@@ -285,7 +285,7 @@ namespace Model
      * of the platform version, such as <code>1.1.0</code>.</p> <p>This structure is
      * used only if <code>LaunchType</code> is <code>FARGATE</code>. For more
      * information about valid platform versions, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS
      * Fargate Platform Versions</a> in the <i>Amazon Elastic Container Service
      * Developer Guide</i>.</p>
      */
@@ -296,7 +296,7 @@ namespace Model
      * of the platform version, such as <code>1.1.0</code>.</p> <p>This structure is
      * used only if <code>LaunchType</code> is <code>FARGATE</code>. For more
      * information about valid platform versions, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS
      * Fargate Platform Versions</a> in the <i>Amazon Elastic Container Service
      * Developer Guide</i>.</p>
      */
@@ -307,7 +307,7 @@ namespace Model
      * of the platform version, such as <code>1.1.0</code>.</p> <p>This structure is
      * used only if <code>LaunchType</code> is <code>FARGATE</code>. For more
      * information about valid platform versions, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS
      * Fargate Platform Versions</a> in the <i>Amazon Elastic Container Service
      * Developer Guide</i>.</p>
      */
@@ -318,7 +318,7 @@ namespace Model
      * of the platform version, such as <code>1.1.0</code>.</p> <p>This structure is
      * used only if <code>LaunchType</code> is <code>FARGATE</code>. For more
      * information about valid platform versions, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS
      * Fargate Platform Versions</a> in the <i>Amazon Elastic Container Service
      * Developer Guide</i>.</p>
      */
@@ -329,7 +329,7 @@ namespace Model
      * of the platform version, such as <code>1.1.0</code>.</p> <p>This structure is
      * used only if <code>LaunchType</code> is <code>FARGATE</code>. For more
      * information about valid platform versions, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS
      * Fargate Platform Versions</a> in the <i>Amazon Elastic Container Service
      * Developer Guide</i>.</p>
      */
@@ -340,7 +340,7 @@ namespace Model
      * of the platform version, such as <code>1.1.0</code>.</p> <p>This structure is
      * used only if <code>LaunchType</code> is <code>FARGATE</code>. For more
      * information about valid platform versions, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS
      * Fargate Platform Versions</a> in the <i>Amazon Elastic Container Service
      * Developer Guide</i>.</p>
      */

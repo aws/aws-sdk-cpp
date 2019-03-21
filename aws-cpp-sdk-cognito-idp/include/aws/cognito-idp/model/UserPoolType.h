@@ -845,93 +845,93 @@ namespace Model
 
 
     /**
-     * <p>The cost allocation tags for the user pool. For more information, see <a
-     * href="http://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-cost-allocation-tagging.html">Adding
-     * Cost Allocation Tags to Your User Pool</a> </p>
+     * <p>The tags that are assigned to the user pool. A tag is a label that you can
+     * apply to user pools to categorize and manage them in different ways, such as by
+     * purpose, owner, environment, or other criteria.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetUserPoolTags() const{ return m_userPoolTags; }
 
     /**
-     * <p>The cost allocation tags for the user pool. For more information, see <a
-     * href="http://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-cost-allocation-tagging.html">Adding
-     * Cost Allocation Tags to Your User Pool</a> </p>
+     * <p>The tags that are assigned to the user pool. A tag is a label that you can
+     * apply to user pools to categorize and manage them in different ways, such as by
+     * purpose, owner, environment, or other criteria.</p>
      */
     inline bool UserPoolTagsHasBeenSet() const { return m_userPoolTagsHasBeenSet; }
 
     /**
-     * <p>The cost allocation tags for the user pool. For more information, see <a
-     * href="http://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-cost-allocation-tagging.html">Adding
-     * Cost Allocation Tags to Your User Pool</a> </p>
+     * <p>The tags that are assigned to the user pool. A tag is a label that you can
+     * apply to user pools to categorize and manage them in different ways, such as by
+     * purpose, owner, environment, or other criteria.</p>
      */
     inline void SetUserPoolTags(const Aws::Map<Aws::String, Aws::String>& value) { m_userPoolTagsHasBeenSet = true; m_userPoolTags = value; }
 
     /**
-     * <p>The cost allocation tags for the user pool. For more information, see <a
-     * href="http://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-cost-allocation-tagging.html">Adding
-     * Cost Allocation Tags to Your User Pool</a> </p>
+     * <p>The tags that are assigned to the user pool. A tag is a label that you can
+     * apply to user pools to categorize and manage them in different ways, such as by
+     * purpose, owner, environment, or other criteria.</p>
      */
     inline void SetUserPoolTags(Aws::Map<Aws::String, Aws::String>&& value) { m_userPoolTagsHasBeenSet = true; m_userPoolTags = std::move(value); }
 
     /**
-     * <p>The cost allocation tags for the user pool. For more information, see <a
-     * href="http://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-cost-allocation-tagging.html">Adding
-     * Cost Allocation Tags to Your User Pool</a> </p>
+     * <p>The tags that are assigned to the user pool. A tag is a label that you can
+     * apply to user pools to categorize and manage them in different ways, such as by
+     * purpose, owner, environment, or other criteria.</p>
      */
     inline UserPoolType& WithUserPoolTags(const Aws::Map<Aws::String, Aws::String>& value) { SetUserPoolTags(value); return *this;}
 
     /**
-     * <p>The cost allocation tags for the user pool. For more information, see <a
-     * href="http://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-cost-allocation-tagging.html">Adding
-     * Cost Allocation Tags to Your User Pool</a> </p>
+     * <p>The tags that are assigned to the user pool. A tag is a label that you can
+     * apply to user pools to categorize and manage them in different ways, such as by
+     * purpose, owner, environment, or other criteria.</p>
      */
     inline UserPoolType& WithUserPoolTags(Aws::Map<Aws::String, Aws::String>&& value) { SetUserPoolTags(std::move(value)); return *this;}
 
     /**
-     * <p>The cost allocation tags for the user pool. For more information, see <a
-     * href="http://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-cost-allocation-tagging.html">Adding
-     * Cost Allocation Tags to Your User Pool</a> </p>
+     * <p>The tags that are assigned to the user pool. A tag is a label that you can
+     * apply to user pools to categorize and manage them in different ways, such as by
+     * purpose, owner, environment, or other criteria.</p>
      */
     inline UserPoolType& AddUserPoolTags(const Aws::String& key, const Aws::String& value) { m_userPoolTagsHasBeenSet = true; m_userPoolTags.emplace(key, value); return *this; }
 
     /**
-     * <p>The cost allocation tags for the user pool. For more information, see <a
-     * href="http://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-cost-allocation-tagging.html">Adding
-     * Cost Allocation Tags to Your User Pool</a> </p>
+     * <p>The tags that are assigned to the user pool. A tag is a label that you can
+     * apply to user pools to categorize and manage them in different ways, such as by
+     * purpose, owner, environment, or other criteria.</p>
      */
     inline UserPoolType& AddUserPoolTags(Aws::String&& key, const Aws::String& value) { m_userPoolTagsHasBeenSet = true; m_userPoolTags.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>The cost allocation tags for the user pool. For more information, see <a
-     * href="http://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-cost-allocation-tagging.html">Adding
-     * Cost Allocation Tags to Your User Pool</a> </p>
+     * <p>The tags that are assigned to the user pool. A tag is a label that you can
+     * apply to user pools to categorize and manage them in different ways, such as by
+     * purpose, owner, environment, or other criteria.</p>
      */
     inline UserPoolType& AddUserPoolTags(const Aws::String& key, Aws::String&& value) { m_userPoolTagsHasBeenSet = true; m_userPoolTags.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>The cost allocation tags for the user pool. For more information, see <a
-     * href="http://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-cost-allocation-tagging.html">Adding
-     * Cost Allocation Tags to Your User Pool</a> </p>
+     * <p>The tags that are assigned to the user pool. A tag is a label that you can
+     * apply to user pools to categorize and manage them in different ways, such as by
+     * purpose, owner, environment, or other criteria.</p>
      */
     inline UserPoolType& AddUserPoolTags(Aws::String&& key, Aws::String&& value) { m_userPoolTagsHasBeenSet = true; m_userPoolTags.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
-     * <p>The cost allocation tags for the user pool. For more information, see <a
-     * href="http://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-cost-allocation-tagging.html">Adding
-     * Cost Allocation Tags to Your User Pool</a> </p>
+     * <p>The tags that are assigned to the user pool. A tag is a label that you can
+     * apply to user pools to categorize and manage them in different ways, such as by
+     * purpose, owner, environment, or other criteria.</p>
      */
     inline UserPoolType& AddUserPoolTags(const char* key, Aws::String&& value) { m_userPoolTagsHasBeenSet = true; m_userPoolTags.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>The cost allocation tags for the user pool. For more information, see <a
-     * href="http://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-cost-allocation-tagging.html">Adding
-     * Cost Allocation Tags to Your User Pool</a> </p>
+     * <p>The tags that are assigned to the user pool. A tag is a label that you can
+     * apply to user pools to categorize and manage them in different ways, such as by
+     * purpose, owner, environment, or other criteria.</p>
      */
     inline UserPoolType& AddUserPoolTags(Aws::String&& key, const char* value) { m_userPoolTagsHasBeenSet = true; m_userPoolTags.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>The cost allocation tags for the user pool. For more information, see <a
-     * href="http://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-cost-allocation-tagging.html">Adding
-     * Cost Allocation Tags to Your User Pool</a> </p>
+     * <p>The tags that are assigned to the user pool. A tag is a label that you can
+     * apply to user pools to categorize and manage them in different ways, such as by
+     * purpose, owner, environment, or other criteria.</p>
      */
     inline UserPoolType& AddUserPoolTags(const char* key, const char* value) { m_userPoolTagsHasBeenSet = true; m_userPoolTags.emplace(key, value); return *this; }
 
@@ -1075,28 +1075,84 @@ namespace Model
     inline UserPoolType& WithDomain(const char* value) { SetDomain(value); return *this;}
 
 
-    
+    /**
+     * <p>A custom domain name that you provide to Amazon Cognito. This parameter
+     * applies only if you use a custom domain to host the sign-up and sign-in pages
+     * for your application. For example: <code>auth.example.com</code>.</p> <p>For
+     * more information about adding a custom domain to your user pool, see <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-add-custom-domain.html">Using
+     * Your Own Domain for the Hosted UI</a>.</p>
+     */
     inline const Aws::String& GetCustomDomain() const{ return m_customDomain; }
 
-    
+    /**
+     * <p>A custom domain name that you provide to Amazon Cognito. This parameter
+     * applies only if you use a custom domain to host the sign-up and sign-in pages
+     * for your application. For example: <code>auth.example.com</code>.</p> <p>For
+     * more information about adding a custom domain to your user pool, see <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-add-custom-domain.html">Using
+     * Your Own Domain for the Hosted UI</a>.</p>
+     */
     inline bool CustomDomainHasBeenSet() const { return m_customDomainHasBeenSet; }
 
-    
+    /**
+     * <p>A custom domain name that you provide to Amazon Cognito. This parameter
+     * applies only if you use a custom domain to host the sign-up and sign-in pages
+     * for your application. For example: <code>auth.example.com</code>.</p> <p>For
+     * more information about adding a custom domain to your user pool, see <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-add-custom-domain.html">Using
+     * Your Own Domain for the Hosted UI</a>.</p>
+     */
     inline void SetCustomDomain(const Aws::String& value) { m_customDomainHasBeenSet = true; m_customDomain = value; }
 
-    
+    /**
+     * <p>A custom domain name that you provide to Amazon Cognito. This parameter
+     * applies only if you use a custom domain to host the sign-up and sign-in pages
+     * for your application. For example: <code>auth.example.com</code>.</p> <p>For
+     * more information about adding a custom domain to your user pool, see <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-add-custom-domain.html">Using
+     * Your Own Domain for the Hosted UI</a>.</p>
+     */
     inline void SetCustomDomain(Aws::String&& value) { m_customDomainHasBeenSet = true; m_customDomain = std::move(value); }
 
-    
+    /**
+     * <p>A custom domain name that you provide to Amazon Cognito. This parameter
+     * applies only if you use a custom domain to host the sign-up and sign-in pages
+     * for your application. For example: <code>auth.example.com</code>.</p> <p>For
+     * more information about adding a custom domain to your user pool, see <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-add-custom-domain.html">Using
+     * Your Own Domain for the Hosted UI</a>.</p>
+     */
     inline void SetCustomDomain(const char* value) { m_customDomainHasBeenSet = true; m_customDomain.assign(value); }
 
-    
+    /**
+     * <p>A custom domain name that you provide to Amazon Cognito. This parameter
+     * applies only if you use a custom domain to host the sign-up and sign-in pages
+     * for your application. For example: <code>auth.example.com</code>.</p> <p>For
+     * more information about adding a custom domain to your user pool, see <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-add-custom-domain.html">Using
+     * Your Own Domain for the Hosted UI</a>.</p>
+     */
     inline UserPoolType& WithCustomDomain(const Aws::String& value) { SetCustomDomain(value); return *this;}
 
-    
+    /**
+     * <p>A custom domain name that you provide to Amazon Cognito. This parameter
+     * applies only if you use a custom domain to host the sign-up and sign-in pages
+     * for your application. For example: <code>auth.example.com</code>.</p> <p>For
+     * more information about adding a custom domain to your user pool, see <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-add-custom-domain.html">Using
+     * Your Own Domain for the Hosted UI</a>.</p>
+     */
     inline UserPoolType& WithCustomDomain(Aws::String&& value) { SetCustomDomain(std::move(value)); return *this;}
 
-    
+    /**
+     * <p>A custom domain name that you provide to Amazon Cognito. This parameter
+     * applies only if you use a custom domain to host the sign-up and sign-in pages
+     * for your application. For example: <code>auth.example.com</code>.</p> <p>For
+     * more information about adding a custom domain to your user pool, see <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-add-custom-domain.html">Using
+     * Your Own Domain for the Hosted UI</a>.</p>
+     */
     inline UserPoolType& WithCustomDomain(const char* value) { SetCustomDomain(value); return *this;}
 
 

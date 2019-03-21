@@ -46,25 +46,25 @@ namespace Model
 
 
     /**
-     * <p>True if the thing is connected to the AWS IoT service, false if it is not
+     * <p>True if the thing is connected to the AWS IoT service; false if it is not
      * connected.</p>
      */
     inline bool GetConnected() const{ return m_connected; }
 
     /**
-     * <p>True if the thing is connected to the AWS IoT service, false if it is not
+     * <p>True if the thing is connected to the AWS IoT service; false if it is not
      * connected.</p>
      */
     inline bool ConnectedHasBeenSet() const { return m_connectedHasBeenSet; }
 
     /**
-     * <p>True if the thing is connected to the AWS IoT service, false if it is not
+     * <p>True if the thing is connected to the AWS IoT service; false if it is not
      * connected.</p>
      */
     inline void SetConnected(bool value) { m_connectedHasBeenSet = true; m_connected = value; }
 
     /**
-     * <p>True if the thing is connected to the AWS IoT service, false if it is not
+     * <p>True if the thing is connected to the AWS IoT service; false if it is not
      * connected.</p>
      */
     inline ThingConnectivity& WithConnected(bool value) { SetConnected(value); return *this;}
@@ -72,29 +72,29 @@ namespace Model
 
     /**
      * <p>The epoch time (in milliseconds) when the thing last connected or
-     * disconnected. Note that if the thing has been disconnected for more than a few
-     * weeks, the time value can be missing.</p>
+     * disconnected. If the thing has been disconnected for more than a few weeks, the
+     * time value might be missing.</p>
      */
     inline long long GetTimestamp() const{ return m_timestamp; }
 
     /**
      * <p>The epoch time (in milliseconds) when the thing last connected or
-     * disconnected. Note that if the thing has been disconnected for more than a few
-     * weeks, the time value can be missing.</p>
+     * disconnected. If the thing has been disconnected for more than a few weeks, the
+     * time value might be missing.</p>
      */
     inline bool TimestampHasBeenSet() const { return m_timestampHasBeenSet; }
 
     /**
      * <p>The epoch time (in milliseconds) when the thing last connected or
-     * disconnected. Note that if the thing has been disconnected for more than a few
-     * weeks, the time value can be missing.</p>
+     * disconnected. If the thing has been disconnected for more than a few weeks, the
+     * time value might be missing.</p>
      */
     inline void SetTimestamp(long long value) { m_timestampHasBeenSet = true; m_timestamp = value; }
 
     /**
      * <p>The epoch time (in milliseconds) when the thing last connected or
-     * disconnected. Note that if the thing has been disconnected for more than a few
-     * weeks, the time value can be missing.</p>
+     * disconnected. If the thing has been disconnected for more than a few weeks, the
+     * time value might be missing.</p>
      */
     inline ThingConnectivity& WithTimestamp(long long value) { SetTimestamp(value); return *this;}
 

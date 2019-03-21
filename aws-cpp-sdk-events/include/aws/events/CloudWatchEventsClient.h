@@ -25,12 +25,15 @@
 #include <aws/events/model/DescribeRuleResult.h>
 #include <aws/events/model/ListRuleNamesByTargetResult.h>
 #include <aws/events/model/ListRulesResult.h>
+#include <aws/events/model/ListTagsForResourceResult.h>
 #include <aws/events/model/ListTargetsByRuleResult.h>
 #include <aws/events/model/PutEventsResult.h>
 #include <aws/events/model/PutRuleResult.h>
 #include <aws/events/model/PutTargetsResult.h>
 #include <aws/events/model/RemoveTargetsResult.h>
+#include <aws/events/model/TagResourceResult.h>
 #include <aws/events/model/TestEventPatternResult.h>
+#include <aws/events/model/UntagResourceResult.h>
 #include <aws/core/NoResult.h>
 #include <aws/core/client/AsyncCallerContext.h>
 #include <aws/core/http/HttpTypes.h>
@@ -79,6 +82,7 @@ namespace Model
         class EnableRuleRequest;
         class ListRuleNamesByTargetRequest;
         class ListRulesRequest;
+        class ListTagsForResourceRequest;
         class ListTargetsByRuleRequest;
         class PutEventsRequest;
         class PutPermissionRequest;
@@ -86,7 +90,9 @@ namespace Model
         class PutTargetsRequest;
         class RemovePermissionRequest;
         class RemoveTargetsRequest;
+        class TagResourceRequest;
         class TestEventPatternRequest;
+        class UntagResourceRequest;
 
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<CloudWatchEventsErrors>> DeleteRuleOutcome;
         typedef Aws::Utils::Outcome<DescribeEventBusResult, Aws::Client::AWSError<CloudWatchEventsErrors>> DescribeEventBusOutcome;
@@ -95,6 +101,7 @@ namespace Model
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<CloudWatchEventsErrors>> EnableRuleOutcome;
         typedef Aws::Utils::Outcome<ListRuleNamesByTargetResult, Aws::Client::AWSError<CloudWatchEventsErrors>> ListRuleNamesByTargetOutcome;
         typedef Aws::Utils::Outcome<ListRulesResult, Aws::Client::AWSError<CloudWatchEventsErrors>> ListRulesOutcome;
+        typedef Aws::Utils::Outcome<ListTagsForResourceResult, Aws::Client::AWSError<CloudWatchEventsErrors>> ListTagsForResourceOutcome;
         typedef Aws::Utils::Outcome<ListTargetsByRuleResult, Aws::Client::AWSError<CloudWatchEventsErrors>> ListTargetsByRuleOutcome;
         typedef Aws::Utils::Outcome<PutEventsResult, Aws::Client::AWSError<CloudWatchEventsErrors>> PutEventsOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<CloudWatchEventsErrors>> PutPermissionOutcome;
@@ -102,7 +109,9 @@ namespace Model
         typedef Aws::Utils::Outcome<PutTargetsResult, Aws::Client::AWSError<CloudWatchEventsErrors>> PutTargetsOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<CloudWatchEventsErrors>> RemovePermissionOutcome;
         typedef Aws::Utils::Outcome<RemoveTargetsResult, Aws::Client::AWSError<CloudWatchEventsErrors>> RemoveTargetsOutcome;
+        typedef Aws::Utils::Outcome<TagResourceResult, Aws::Client::AWSError<CloudWatchEventsErrors>> TagResourceOutcome;
         typedef Aws::Utils::Outcome<TestEventPatternResult, Aws::Client::AWSError<CloudWatchEventsErrors>> TestEventPatternOutcome;
+        typedef Aws::Utils::Outcome<UntagResourceResult, Aws::Client::AWSError<CloudWatchEventsErrors>> UntagResourceOutcome;
 
         typedef std::future<DeleteRuleOutcome> DeleteRuleOutcomeCallable;
         typedef std::future<DescribeEventBusOutcome> DescribeEventBusOutcomeCallable;
@@ -111,6 +120,7 @@ namespace Model
         typedef std::future<EnableRuleOutcome> EnableRuleOutcomeCallable;
         typedef std::future<ListRuleNamesByTargetOutcome> ListRuleNamesByTargetOutcomeCallable;
         typedef std::future<ListRulesOutcome> ListRulesOutcomeCallable;
+        typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
         typedef std::future<ListTargetsByRuleOutcome> ListTargetsByRuleOutcomeCallable;
         typedef std::future<PutEventsOutcome> PutEventsOutcomeCallable;
         typedef std::future<PutPermissionOutcome> PutPermissionOutcomeCallable;
@@ -118,7 +128,9 @@ namespace Model
         typedef std::future<PutTargetsOutcome> PutTargetsOutcomeCallable;
         typedef std::future<RemovePermissionOutcome> RemovePermissionOutcomeCallable;
         typedef std::future<RemoveTargetsOutcome> RemoveTargetsOutcomeCallable;
+        typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
         typedef std::future<TestEventPatternOutcome> TestEventPatternOutcomeCallable;
+        typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
 } // namespace Model
 
   class CloudWatchEventsClient;
@@ -130,6 +142,7 @@ namespace Model
     typedef std::function<void(const CloudWatchEventsClient*, const Model::EnableRuleRequest&, const Model::EnableRuleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > EnableRuleResponseReceivedHandler;
     typedef std::function<void(const CloudWatchEventsClient*, const Model::ListRuleNamesByTargetRequest&, const Model::ListRuleNamesByTargetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListRuleNamesByTargetResponseReceivedHandler;
     typedef std::function<void(const CloudWatchEventsClient*, const Model::ListRulesRequest&, const Model::ListRulesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListRulesResponseReceivedHandler;
+    typedef std::function<void(const CloudWatchEventsClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
     typedef std::function<void(const CloudWatchEventsClient*, const Model::ListTargetsByRuleRequest&, const Model::ListTargetsByRuleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTargetsByRuleResponseReceivedHandler;
     typedef std::function<void(const CloudWatchEventsClient*, const Model::PutEventsRequest&, const Model::PutEventsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutEventsResponseReceivedHandler;
     typedef std::function<void(const CloudWatchEventsClient*, const Model::PutPermissionRequest&, const Model::PutPermissionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutPermissionResponseReceivedHandler;
@@ -137,7 +150,9 @@ namespace Model
     typedef std::function<void(const CloudWatchEventsClient*, const Model::PutTargetsRequest&, const Model::PutTargetsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutTargetsResponseReceivedHandler;
     typedef std::function<void(const CloudWatchEventsClient*, const Model::RemovePermissionRequest&, const Model::RemovePermissionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RemovePermissionResponseReceivedHandler;
     typedef std::function<void(const CloudWatchEventsClient*, const Model::RemoveTargetsRequest&, const Model::RemoveTargetsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RemoveTargetsResponseReceivedHandler;
+    typedef std::function<void(const CloudWatchEventsClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
     typedef std::function<void(const CloudWatchEventsClient*, const Model::TestEventPatternRequest&, const Model::TestEventPatternOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TestEventPatternResponseReceivedHandler;
+    typedef std::function<void(const CloudWatchEventsClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
 
   /**
    * <p>Amazon CloudWatch Events helps you to respond to state changes in your AWS
@@ -152,7 +167,7 @@ namespace Model
    * risks.</p> </li> <li> <p>Periodically invoke a built-in target to create a
    * snapshot of an Amazon EBS volume.</p> </li> </ul> <p>For more information about
    * the features of Amazon CloudWatch Events, see the <a
-   * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/events">Amazon
+   * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events">Amazon
    * CloudWatch Events User Guide</a>.</p>
    */
   class AWS_CLOUDWATCHEVENTS_API CloudWatchEventsClient : public Aws::Client::AWSJsonClient
@@ -432,6 +447,34 @@ namespace Model
         virtual void ListRulesAsync(const Model::ListRulesRequest& request, const ListRulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Displays the tags associated with a CloudWatch Events resource. In CloudWatch
+         * Events, rules can be tagged.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/ListTagsForResource">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListTagsForResourceOutcome ListTagsForResource(const Model::ListTagsForResourceRequest& request) const;
+
+        /**
+         * <p>Displays the tags associated with a CloudWatch Events resource. In CloudWatch
+         * Events, rules can be tagged.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/ListTagsForResource">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListTagsForResourceOutcomeCallable ListTagsForResourceCallable(const Model::ListTagsForResourceRequest& request) const;
+
+        /**
+         * <p>Displays the tags associated with a CloudWatch Events resource. In CloudWatch
+         * Events, rules can be tagged.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/ListTagsForResource">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListTagsForResourceAsync(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Lists the targets assigned to the specified rule.</p><p><h3>See Also:</h3>  
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/ListTargetsByRule">AWS
@@ -503,7 +546,7 @@ namespace Model
          * accounts in that organization must specify a <code>RoleArn</code> with proper
          * permissions when they use <code>PutTarget</code> to add your account's event bus
          * as a target. For more information, see <a
-         * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/events/CloudWatchEvents-CrossAccountEventDelivery.html">Sending
+         * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/CloudWatchEvents-CrossAccountEventDelivery.html">Sending
          * and Receiving Events Between AWS Accounts</a> in the <i>Amazon CloudWatch Events
          * User Guide</i>.</p> <p>The permission policy on the default event bus cannot
          * exceed 10 KB in size.</p><p><h3>See Also:</h3>   <a
@@ -528,7 +571,7 @@ namespace Model
          * accounts in that organization must specify a <code>RoleArn</code> with proper
          * permissions when they use <code>PutTarget</code> to add your account's event bus
          * as a target. For more information, see <a
-         * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/events/CloudWatchEvents-CrossAccountEventDelivery.html">Sending
+         * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/CloudWatchEvents-CrossAccountEventDelivery.html">Sending
          * and Receiving Events Between AWS Accounts</a> in the <i>Amazon CloudWatch Events
          * User Guide</i>.</p> <p>The permission policy on the default event bus cannot
          * exceed 10 KB in size.</p><p><h3>See Also:</h3>   <a
@@ -555,7 +598,7 @@ namespace Model
          * accounts in that organization must specify a <code>RoleArn</code> with proper
          * permissions when they use <code>PutTarget</code> to add your account's event bus
          * as a target. For more information, see <a
-         * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/events/CloudWatchEvents-CrossAccountEventDelivery.html">Sending
+         * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/CloudWatchEvents-CrossAccountEventDelivery.html">Sending
          * and Receiving Events Between AWS Accounts</a> in the <i>Amazon CloudWatch Events
          * User Guide</i>.</p> <p>The permission policy on the default event bus cannot
          * exceed 10 KB in size.</p><p><h3>See Also:</h3>   <a
@@ -579,22 +622,30 @@ namespace Model
          * are triggered when a matching event is observed. Rules with ScheduleExpressions
          * self-trigger based on the given schedule. A rule can have both an EventPattern
          * and a ScheduleExpression, in which case the rule triggers on matching events as
-         * well as on a schedule.</p> <p>Most services in AWS treat : or / as the same
-         * character in Amazon Resource Names (ARNs). However, CloudWatch Events uses an
-         * exact match in event patterns and rules. Be sure to use the correct ARN
-         * characters when creating event patterns so that they match the ARN syntax in the
-         * event you want to match.</p> <p>In CloudWatch Events, it is possible to create
-         * rules that lead to infinite loops, where a rule is fired repeatedly. For
-         * example, a rule might detect that ACLs have changed on an S3 bucket, and trigger
-         * software to change them to the desired state. If the rule is not written
-         * carefully, the subsequent change to the ACLs fires the rule again, creating an
-         * infinite loop.</p> <p>To prevent this, write the rules so that the triggered
-         * actions do not re-fire the same rule. For example, your rule could fire only if
-         * ACLs are found to be in a bad state, instead of after any change. </p> <p>An
-         * infinite loop can quickly cause higher than expected charges. We recommend that
-         * you use budgeting, which alerts you when charges exceed your specified limit.
-         * For more information, see <a
-         * href="http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/budgets-managing-costs.html">Managing
+         * well as on a schedule.</p> <p>When you initially create a rule, you can
+         * optionally assign one or more tags to the rule. Tags can help you organize and
+         * categorize your resources. You can also use them to scope user permissions, by
+         * granting a user permission to access or change only rules with certain tag
+         * values. To use the <code>PutRule</code> operation and assign tags, you must have
+         * both the <code>events:PutRule</code> and <code>events:TagResource</code>
+         * permissions.</p> <p>If you are updating an existing rule, any tags you specify
+         * in the <code>PutRule</code> operation are ignored. To update the tags of an
+         * existing rule, use <a>TagResource</a> and <a>UntagResource</a>.</p> <p>Most
+         * services in AWS treat : or / as the same character in Amazon Resource Names
+         * (ARNs). However, CloudWatch Events uses an exact match in event patterns and
+         * rules. Be sure to use the correct ARN characters when creating event patterns so
+         * that they match the ARN syntax in the event you want to match.</p> <p>In
+         * CloudWatch Events, it is possible to create rules that lead to infinite loops,
+         * where a rule is fired repeatedly. For example, a rule might detect that ACLs
+         * have changed on an S3 bucket, and trigger software to change them to the desired
+         * state. If the rule is not written carefully, the subsequent change to the ACLs
+         * fires the rule again, creating an infinite loop.</p> <p>To prevent this, write
+         * the rules so that the triggered actions do not re-fire the same rule. For
+         * example, your rule could fire only if ACLs are found to be in a bad state,
+         * instead of after any change. </p> <p>An infinite loop can quickly cause higher
+         * than expected charges. We recommend that you use budgeting, which alerts you
+         * when charges exceed your specified limit. For more information, see <a
+         * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/budgets-managing-costs.html">Managing
          * Your Costs with Budgets</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/PutRule">AWS API
          * Reference</a></p>
@@ -614,22 +665,30 @@ namespace Model
          * are triggered when a matching event is observed. Rules with ScheduleExpressions
          * self-trigger based on the given schedule. A rule can have both an EventPattern
          * and a ScheduleExpression, in which case the rule triggers on matching events as
-         * well as on a schedule.</p> <p>Most services in AWS treat : or / as the same
-         * character in Amazon Resource Names (ARNs). However, CloudWatch Events uses an
-         * exact match in event patterns and rules. Be sure to use the correct ARN
-         * characters when creating event patterns so that they match the ARN syntax in the
-         * event you want to match.</p> <p>In CloudWatch Events, it is possible to create
-         * rules that lead to infinite loops, where a rule is fired repeatedly. For
-         * example, a rule might detect that ACLs have changed on an S3 bucket, and trigger
-         * software to change them to the desired state. If the rule is not written
-         * carefully, the subsequent change to the ACLs fires the rule again, creating an
-         * infinite loop.</p> <p>To prevent this, write the rules so that the triggered
-         * actions do not re-fire the same rule. For example, your rule could fire only if
-         * ACLs are found to be in a bad state, instead of after any change. </p> <p>An
-         * infinite loop can quickly cause higher than expected charges. We recommend that
-         * you use budgeting, which alerts you when charges exceed your specified limit.
-         * For more information, see <a
-         * href="http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/budgets-managing-costs.html">Managing
+         * well as on a schedule.</p> <p>When you initially create a rule, you can
+         * optionally assign one or more tags to the rule. Tags can help you organize and
+         * categorize your resources. You can also use them to scope user permissions, by
+         * granting a user permission to access or change only rules with certain tag
+         * values. To use the <code>PutRule</code> operation and assign tags, you must have
+         * both the <code>events:PutRule</code> and <code>events:TagResource</code>
+         * permissions.</p> <p>If you are updating an existing rule, any tags you specify
+         * in the <code>PutRule</code> operation are ignored. To update the tags of an
+         * existing rule, use <a>TagResource</a> and <a>UntagResource</a>.</p> <p>Most
+         * services in AWS treat : or / as the same character in Amazon Resource Names
+         * (ARNs). However, CloudWatch Events uses an exact match in event patterns and
+         * rules. Be sure to use the correct ARN characters when creating event patterns so
+         * that they match the ARN syntax in the event you want to match.</p> <p>In
+         * CloudWatch Events, it is possible to create rules that lead to infinite loops,
+         * where a rule is fired repeatedly. For example, a rule might detect that ACLs
+         * have changed on an S3 bucket, and trigger software to change them to the desired
+         * state. If the rule is not written carefully, the subsequent change to the ACLs
+         * fires the rule again, creating an infinite loop.</p> <p>To prevent this, write
+         * the rules so that the triggered actions do not re-fire the same rule. For
+         * example, your rule could fire only if ACLs are found to be in a bad state,
+         * instead of after any change. </p> <p>An infinite loop can quickly cause higher
+         * than expected charges. We recommend that you use budgeting, which alerts you
+         * when charges exceed your specified limit. For more information, see <a
+         * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/budgets-managing-costs.html">Managing
          * Your Costs with Budgets</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/PutRule">AWS API
          * Reference</a></p>
@@ -651,22 +710,30 @@ namespace Model
          * are triggered when a matching event is observed. Rules with ScheduleExpressions
          * self-trigger based on the given schedule. A rule can have both an EventPattern
          * and a ScheduleExpression, in which case the rule triggers on matching events as
-         * well as on a schedule.</p> <p>Most services in AWS treat : or / as the same
-         * character in Amazon Resource Names (ARNs). However, CloudWatch Events uses an
-         * exact match in event patterns and rules. Be sure to use the correct ARN
-         * characters when creating event patterns so that they match the ARN syntax in the
-         * event you want to match.</p> <p>In CloudWatch Events, it is possible to create
-         * rules that lead to infinite loops, where a rule is fired repeatedly. For
-         * example, a rule might detect that ACLs have changed on an S3 bucket, and trigger
-         * software to change them to the desired state. If the rule is not written
-         * carefully, the subsequent change to the ACLs fires the rule again, creating an
-         * infinite loop.</p> <p>To prevent this, write the rules so that the triggered
-         * actions do not re-fire the same rule. For example, your rule could fire only if
-         * ACLs are found to be in a bad state, instead of after any change. </p> <p>An
-         * infinite loop can quickly cause higher than expected charges. We recommend that
-         * you use budgeting, which alerts you when charges exceed your specified limit.
-         * For more information, see <a
-         * href="http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/budgets-managing-costs.html">Managing
+         * well as on a schedule.</p> <p>When you initially create a rule, you can
+         * optionally assign one or more tags to the rule. Tags can help you organize and
+         * categorize your resources. You can also use them to scope user permissions, by
+         * granting a user permission to access or change only rules with certain tag
+         * values. To use the <code>PutRule</code> operation and assign tags, you must have
+         * both the <code>events:PutRule</code> and <code>events:TagResource</code>
+         * permissions.</p> <p>If you are updating an existing rule, any tags you specify
+         * in the <code>PutRule</code> operation are ignored. To update the tags of an
+         * existing rule, use <a>TagResource</a> and <a>UntagResource</a>.</p> <p>Most
+         * services in AWS treat : or / as the same character in Amazon Resource Names
+         * (ARNs). However, CloudWatch Events uses an exact match in event patterns and
+         * rules. Be sure to use the correct ARN characters when creating event patterns so
+         * that they match the ARN syntax in the event you want to match.</p> <p>In
+         * CloudWatch Events, it is possible to create rules that lead to infinite loops,
+         * where a rule is fired repeatedly. For example, a rule might detect that ACLs
+         * have changed on an S3 bucket, and trigger software to change them to the desired
+         * state. If the rule is not written carefully, the subsequent change to the ACLs
+         * fires the rule again, creating an infinite loop.</p> <p>To prevent this, write
+         * the rules so that the triggered actions do not re-fire the same rule. For
+         * example, your rule could fire only if ACLs are found to be in a bad state,
+         * instead of after any change. </p> <p>An infinite loop can quickly cause higher
+         * than expected charges. We recommend that you use budgeting, which alerts you
+         * when charges exceed your specified limit. For more information, see <a
+         * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/budgets-managing-costs.html">Managing
          * Your Costs with Budgets</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/PutRule">AWS API
          * Reference</a></p>
@@ -704,7 +771,7 @@ namespace Model
          * streams, and AWS Step Functions state machines, CloudWatch Events relies on IAM
          * roles that you specify in the <code>RoleARN</code> argument in
          * <code>PutTargets</code>. For more information, see <a
-         * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/events/auth-and-access-control-cwe.html">Authentication
+         * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/auth-and-access-control-cwe.html">Authentication
          * and Access Control</a> in the <i>Amazon CloudWatch Events User Guide</i>.</p>
          * <p>If another AWS account is in the same region and has granted you permission
          * (using <code>PutPermission</code>), you can send events to that account. Set
@@ -720,7 +787,7 @@ namespace Model
          * organization instead of directly by the account ID, then you must specify a
          * <code>RoleArn</code> with proper permissions in the <code>Target</code>
          * structure. For more information, see <a
-         * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/events/CloudWatchEvents-CrossAccountEventDelivery.html">Sending
+         * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/CloudWatchEvents-CrossAccountEventDelivery.html">Sending
          * and Receiving Events Between AWS Accounts</a> in the <i>Amazon CloudWatch Events
          * User Guide</i>.</p> <p>For more information about enabling cross-account events,
          * see <a>PutPermission</a>.</p> <p> <b>Input</b>, <b>InputPath</b>, and
@@ -779,7 +846,7 @@ namespace Model
          * streams, and AWS Step Functions state machines, CloudWatch Events relies on IAM
          * roles that you specify in the <code>RoleARN</code> argument in
          * <code>PutTargets</code>. For more information, see <a
-         * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/events/auth-and-access-control-cwe.html">Authentication
+         * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/auth-and-access-control-cwe.html">Authentication
          * and Access Control</a> in the <i>Amazon CloudWatch Events User Guide</i>.</p>
          * <p>If another AWS account is in the same region and has granted you permission
          * (using <code>PutPermission</code>), you can send events to that account. Set
@@ -795,7 +862,7 @@ namespace Model
          * organization instead of directly by the account ID, then you must specify a
          * <code>RoleArn</code> with proper permissions in the <code>Target</code>
          * structure. For more information, see <a
-         * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/events/CloudWatchEvents-CrossAccountEventDelivery.html">Sending
+         * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/CloudWatchEvents-CrossAccountEventDelivery.html">Sending
          * and Receiving Events Between AWS Accounts</a> in the <i>Amazon CloudWatch Events
          * User Guide</i>.</p> <p>For more information about enabling cross-account events,
          * see <a>PutPermission</a>.</p> <p> <b>Input</b>, <b>InputPath</b>, and
@@ -856,7 +923,7 @@ namespace Model
          * streams, and AWS Step Functions state machines, CloudWatch Events relies on IAM
          * roles that you specify in the <code>RoleARN</code> argument in
          * <code>PutTargets</code>. For more information, see <a
-         * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/events/auth-and-access-control-cwe.html">Authentication
+         * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/auth-and-access-control-cwe.html">Authentication
          * and Access Control</a> in the <i>Amazon CloudWatch Events User Guide</i>.</p>
          * <p>If another AWS account is in the same region and has granted you permission
          * (using <code>PutPermission</code>), you can send events to that account. Set
@@ -872,7 +939,7 @@ namespace Model
          * organization instead of directly by the account ID, then you must specify a
          * <code>RoleArn</code> with proper permissions in the <code>Target</code>
          * structure. For more information, see <a
-         * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/events/CloudWatchEvents-CrossAccountEventDelivery.html">Sending
+         * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/CloudWatchEvents-CrossAccountEventDelivery.html">Sending
          * and Receiving Events Between AWS Accounts</a> in the <i>Amazon CloudWatch Events
          * User Guide</i>.</p> <p>For more information about enabling cross-account events,
          * see <a>PutPermission</a>.</p> <p> <b>Input</b>, <b>InputPath</b>, and
@@ -991,6 +1058,64 @@ namespace Model
         virtual void RemoveTargetsAsync(const Model::RemoveTargetsRequest& request, const RemoveTargetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Assigns one or more tags (key-value pairs) to the specified CloudWatch Events
+         * resource. Tags can help you organize and categorize your resources. You can also
+         * use them to scope user permissions by granting a user permission to access or
+         * change only resources with certain tag values. In CloudWatch Events, rules can
+         * be tagged.</p> <p>Tags don't have any semantic meaning to AWS and are
+         * interpreted strictly as strings of characters.</p> <p>You can use the
+         * <code>TagResource</code> action with a rule that already has tags. If you
+         * specify a new tag key for the rule, this tag is appended to the list of tags
+         * associated with the rule. If you specify a tag key that is already associated
+         * with the rule, the new tag value that you specify replaces the previous value
+         * for that tag.</p> <p>You can associate as many as 50 tags with a
+         * resource.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/TagResource">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::TagResourceOutcome TagResource(const Model::TagResourceRequest& request) const;
+
+        /**
+         * <p>Assigns one or more tags (key-value pairs) to the specified CloudWatch Events
+         * resource. Tags can help you organize and categorize your resources. You can also
+         * use them to scope user permissions by granting a user permission to access or
+         * change only resources with certain tag values. In CloudWatch Events, rules can
+         * be tagged.</p> <p>Tags don't have any semantic meaning to AWS and are
+         * interpreted strictly as strings of characters.</p> <p>You can use the
+         * <code>TagResource</code> action with a rule that already has tags. If you
+         * specify a new tag key for the rule, this tag is appended to the list of tags
+         * associated with the rule. If you specify a tag key that is already associated
+         * with the rule, the new tag value that you specify replaces the previous value
+         * for that tag.</p> <p>You can associate as many as 50 tags with a
+         * resource.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/TagResource">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::TagResourceOutcomeCallable TagResourceCallable(const Model::TagResourceRequest& request) const;
+
+        /**
+         * <p>Assigns one or more tags (key-value pairs) to the specified CloudWatch Events
+         * resource. Tags can help you organize and categorize your resources. You can also
+         * use them to scope user permissions by granting a user permission to access or
+         * change only resources with certain tag values. In CloudWatch Events, rules can
+         * be tagged.</p> <p>Tags don't have any semantic meaning to AWS and are
+         * interpreted strictly as strings of characters.</p> <p>You can use the
+         * <code>TagResource</code> action with a rule that already has tags. If you
+         * specify a new tag key for the rule, this tag is appended to the list of tags
+         * associated with the rule. If you specify a tag key that is already associated
+         * with the rule, the new tag value that you specify replaces the previous value
+         * for that tag.</p> <p>You can associate as many as 50 tags with a
+         * resource.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/TagResource">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void TagResourceAsync(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Tests whether the specified event pattern matches the provided event.</p>
          * <p>Most services in AWS treat : or / as the same character in Amazon Resource
          * Names (ARNs). However, CloudWatch Events uses an exact match in event patterns
@@ -1030,6 +1155,34 @@ namespace Model
          */
         virtual void TestEventPatternAsync(const Model::TestEventPatternRequest& request, const TestEventPatternResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
+        /**
+         * <p>Removes one or more tags from the specified CloudWatch Events resource. In
+         * CloudWatch Events, rules can be tagged.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/UntagResource">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UntagResourceOutcome UntagResource(const Model::UntagResourceRequest& request) const;
+
+        /**
+         * <p>Removes one or more tags from the specified CloudWatch Events resource. In
+         * CloudWatch Events, rules can be tagged.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/UntagResource">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UntagResourceOutcomeCallable UntagResourceCallable(const Model::UntagResourceRequest& request) const;
+
+        /**
+         * <p>Removes one or more tags from the specified CloudWatch Events resource. In
+         * CloudWatch Events, rules can be tagged.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/UntagResource">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UntagResourceAsync(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
       
       void OverrideEndpoint(const Aws::String& endpoint);
     private:
@@ -1042,6 +1195,7 @@ namespace Model
         void EnableRuleAsyncHelper(const Model::EnableRuleRequest& request, const EnableRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListRuleNamesByTargetAsyncHelper(const Model::ListRuleNamesByTargetRequest& request, const ListRuleNamesByTargetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListRulesAsyncHelper(const Model::ListRulesRequest& request, const ListRulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListTagsForResourceAsyncHelper(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListTargetsByRuleAsyncHelper(const Model::ListTargetsByRuleRequest& request, const ListTargetsByRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutEventsAsyncHelper(const Model::PutEventsRequest& request, const PutEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutPermissionAsyncHelper(const Model::PutPermissionRequest& request, const PutPermissionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -1049,7 +1203,9 @@ namespace Model
         void PutTargetsAsyncHelper(const Model::PutTargetsRequest& request, const PutTargetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void RemovePermissionAsyncHelper(const Model::RemovePermissionRequest& request, const RemovePermissionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void RemoveTargetsAsyncHelper(const Model::RemoveTargetsRequest& request, const RemoveTargetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void TagResourceAsyncHelper(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void TestEventPatternAsyncHelper(const Model::TestEventPatternRequest& request, const TestEventPatternResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UntagResourceAsyncHelper(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
 
       Aws::String m_uri;
       Aws::String m_configScheme;

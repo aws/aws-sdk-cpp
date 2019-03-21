@@ -114,6 +114,7 @@
 #include <aws/iot/model/GetPolicyRequest.h>
 #include <aws/iot/model/GetPolicyVersionRequest.h>
 #include <aws/iot/model/GetRegistrationCodeRequest.h>
+#include <aws/iot/model/GetStatisticsRequest.h>
 #include <aws/iot/model/GetTopicRuleRequest.h>
 #include <aws/iot/model/GetV2LoggingOptionsRequest.h>
 #include <aws/iot/model/ListActiveViolationsRequest.h>
@@ -3695,6 +3696,41 @@ void IoTClient::GetRegistrationCodeAsync(const GetRegistrationCodeRequest& reque
 void IoTClient::GetRegistrationCodeAsyncHelper(const GetRegistrationCodeRequest& request, const GetRegistrationCodeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, GetRegistrationCode(request), context);
+}
+
+GetStatisticsOutcome IoTClient::GetStatistics(const GetStatisticsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/indices/statistics";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return GetStatisticsOutcome(GetStatisticsResult(outcome.GetResult()));
+  }
+  else
+  {
+    return GetStatisticsOutcome(outcome.GetError());
+  }
+}
+
+GetStatisticsOutcomeCallable IoTClient::GetStatisticsCallable(const GetStatisticsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetStatisticsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetStatistics(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void IoTClient::GetStatisticsAsync(const GetStatisticsRequest& request, const GetStatisticsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetStatisticsAsyncHelper( request, handler, context ); } );
+}
+
+void IoTClient::GetStatisticsAsyncHelper(const GetStatisticsRequest& request, const GetStatisticsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetStatistics(request), context);
 }
 
 GetTopicRuleOutcome IoTClient::GetTopicRule(const GetTopicRuleRequest& request) const

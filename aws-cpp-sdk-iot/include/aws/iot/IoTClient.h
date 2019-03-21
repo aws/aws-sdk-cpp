@@ -90,6 +90,7 @@
 #include <aws/iot/model/GetPolicyResult.h>
 #include <aws/iot/model/GetPolicyVersionResult.h>
 #include <aws/iot/model/GetRegistrationCodeResult.h>
+#include <aws/iot/model/GetStatisticsResult.h>
 #include <aws/iot/model/GetTopicRuleResult.h>
 #include <aws/iot/model/GetV2LoggingOptionsResult.h>
 #include <aws/iot/model/ListActiveViolationsResult.h>
@@ -284,6 +285,7 @@ namespace Model
         class GetPolicyRequest;
         class GetPolicyVersionRequest;
         class GetRegistrationCodeRequest;
+        class GetStatisticsRequest;
         class GetTopicRuleRequest;
         class GetV2LoggingOptionsRequest;
         class ListActiveViolationsRequest;
@@ -447,6 +449,7 @@ namespace Model
         typedef Aws::Utils::Outcome<GetPolicyResult, Aws::Client::AWSError<IoTErrors>> GetPolicyOutcome;
         typedef Aws::Utils::Outcome<GetPolicyVersionResult, Aws::Client::AWSError<IoTErrors>> GetPolicyVersionOutcome;
         typedef Aws::Utils::Outcome<GetRegistrationCodeResult, Aws::Client::AWSError<IoTErrors>> GetRegistrationCodeOutcome;
+        typedef Aws::Utils::Outcome<GetStatisticsResult, Aws::Client::AWSError<IoTErrors>> GetStatisticsOutcome;
         typedef Aws::Utils::Outcome<GetTopicRuleResult, Aws::Client::AWSError<IoTErrors>> GetTopicRuleOutcome;
         typedef Aws::Utils::Outcome<GetV2LoggingOptionsResult, Aws::Client::AWSError<IoTErrors>> GetV2LoggingOptionsOutcome;
         typedef Aws::Utils::Outcome<ListActiveViolationsResult, Aws::Client::AWSError<IoTErrors>> ListActiveViolationsOutcome;
@@ -610,6 +613,7 @@ namespace Model
         typedef std::future<GetPolicyOutcome> GetPolicyOutcomeCallable;
         typedef std::future<GetPolicyVersionOutcome> GetPolicyVersionOutcomeCallable;
         typedef std::future<GetRegistrationCodeOutcome> GetRegistrationCodeOutcomeCallable;
+        typedef std::future<GetStatisticsOutcome> GetStatisticsOutcomeCallable;
         typedef std::future<GetTopicRuleOutcome> GetTopicRuleOutcomeCallable;
         typedef std::future<GetV2LoggingOptionsOutcome> GetV2LoggingOptionsOutcomeCallable;
         typedef std::future<ListActiveViolationsOutcome> ListActiveViolationsOutcomeCallable;
@@ -776,6 +780,7 @@ namespace Model
     typedef std::function<void(const IoTClient*, const Model::GetPolicyRequest&, const Model::GetPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetPolicyResponseReceivedHandler;
     typedef std::function<void(const IoTClient*, const Model::GetPolicyVersionRequest&, const Model::GetPolicyVersionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetPolicyVersionResponseReceivedHandler;
     typedef std::function<void(const IoTClient*, const Model::GetRegistrationCodeRequest&, const Model::GetRegistrationCodeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetRegistrationCodeResponseReceivedHandler;
+    typedef std::function<void(const IoTClient*, const Model::GetStatisticsRequest&, const Model::GetStatisticsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetStatisticsResponseReceivedHandler;
     typedef std::function<void(const IoTClient*, const Model::GetTopicRuleRequest&, const Model::GetTopicRuleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetTopicRuleResponseReceivedHandler;
     typedef std::function<void(const IoTClient*, const Model::GetV2LoggingOptionsRequest&, const Model::GetV2LoggingOptionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetV2LoggingOptionsResponseReceivedHandler;
     typedef std::function<void(const IoTClient*, const Model::ListActiveViolationsRequest&, const Model::ListActiveViolationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListActiveViolationsResponseReceivedHandler;
@@ -1729,8 +1734,11 @@ namespace Model
         virtual void CreateStreamAsync(const Model::CreateStreamRequest& request, const CreateStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates a thing record in the registry.</p> <note> <p>This is a control plane
-         * operation. See <a
+         * <p>Creates a thing record in the registry. If this call is made multiple times
+         * using the same thing name and configuration, the call will succeed. If this call
+         * is made with the same thing name but different configuration a
+         * <code>ResourceAlreadyExistsException</code> is thrown.</p> <note> <p>This is a
+         * control plane operation. See <a
          * href="https://docs.aws.amazon.com/iot/latest/developerguide/authorization.html">Authorization</a>
          * for information about authorizing control plane actions.</p> </note><p><h3>See
          * Also:</h3>   <a
@@ -1740,8 +1748,11 @@ namespace Model
         virtual Model::CreateThingOutcome CreateThing(const Model::CreateThingRequest& request) const;
 
         /**
-         * <p>Creates a thing record in the registry.</p> <note> <p>This is a control plane
-         * operation. See <a
+         * <p>Creates a thing record in the registry. If this call is made multiple times
+         * using the same thing name and configuration, the call will succeed. If this call
+         * is made with the same thing name but different configuration a
+         * <code>ResourceAlreadyExistsException</code> is thrown.</p> <note> <p>This is a
+         * control plane operation. See <a
          * href="https://docs.aws.amazon.com/iot/latest/developerguide/authorization.html">Authorization</a>
          * for information about authorizing control plane actions.</p> </note><p><h3>See
          * Also:</h3>   <a
@@ -1753,8 +1764,11 @@ namespace Model
         virtual Model::CreateThingOutcomeCallable CreateThingCallable(const Model::CreateThingRequest& request) const;
 
         /**
-         * <p>Creates a thing record in the registry.</p> <note> <p>This is a control plane
-         * operation. See <a
+         * <p>Creates a thing record in the registry. If this call is made multiple times
+         * using the same thing name and configuration, the call will succeed. If this call
+         * is made with the same thing name but different configuration a
+         * <code>ResourceAlreadyExistsException</code> is thrown.</p> <note> <p>This is a
+         * control plane operation. See <a
          * href="https://docs.aws.amazon.com/iot/latest/developerguide/authorization.html">Authorization</a>
          * for information about authorizing control plane actions.</p> </note><p><h3>See
          * Also:</h3>   <a
@@ -3370,6 +3384,34 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetRegistrationCodeAsync(const Model::GetRegistrationCodeRequest& request, const GetRegistrationCodeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Gets statistics about things that match the specified query.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/GetStatistics">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetStatisticsOutcome GetStatistics(const Model::GetStatisticsRequest& request) const;
+
+        /**
+         * <p>Gets statistics about things that match the specified query.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/GetStatistics">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetStatisticsOutcomeCallable GetStatisticsCallable(const Model::GetStatisticsRequest& request) const;
+
+        /**
+         * <p>Gets statistics about things that match the specified query.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/GetStatistics">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetStatisticsAsync(const Model::GetStatisticsRequest& request, const GetStatisticsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets information about the rule.</p><p><h3>See Also:</h3>   <a
@@ -5659,6 +5701,7 @@ namespace Model
         void GetPolicyAsyncHelper(const Model::GetPolicyRequest& request, const GetPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetPolicyVersionAsyncHelper(const Model::GetPolicyVersionRequest& request, const GetPolicyVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetRegistrationCodeAsyncHelper(const Model::GetRegistrationCodeRequest& request, const GetRegistrationCodeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetStatisticsAsyncHelper(const Model::GetStatisticsRequest& request, const GetStatisticsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetTopicRuleAsyncHelper(const Model::GetTopicRuleRequest& request, const GetTopicRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetV2LoggingOptionsAsyncHelper(const Model::GetV2LoggingOptionsRequest& request, const GetV2LoggingOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListActiveViolationsAsyncHelper(const Model::ListActiveViolationsRequest& request, const ListActiveViolationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

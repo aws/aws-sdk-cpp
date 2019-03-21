@@ -49,9 +49,7 @@ namespace Model
      * <code>OldestInstance</code>, <code>OldestLaunchConfiguration</code>,
      * <code>NewestInstance</code>, <code>ClosestToNextInstanceHour</code>,
      * <code>Default</code>, <code>OldestLaunchTemplate</code>, and
-     * <code>AllocationStrategy</code>. Currently, the
-     * <code>OldestLaunchTemplate</code> and <code>AllocationStrategy</code> policies
-     * are only supported for Auto Scaling groups with <a>MixedInstancesPolicy</a>.</p>
+     * <code>AllocationStrategy</code>.</p>
      */
     inline const Aws::Vector<Aws::String>& GetTerminationPolicyTypes() const{ return m_terminationPolicyTypes; }
 
@@ -60,9 +58,7 @@ namespace Model
      * <code>OldestInstance</code>, <code>OldestLaunchConfiguration</code>,
      * <code>NewestInstance</code>, <code>ClosestToNextInstanceHour</code>,
      * <code>Default</code>, <code>OldestLaunchTemplate</code>, and
-     * <code>AllocationStrategy</code>. Currently, the
-     * <code>OldestLaunchTemplate</code> and <code>AllocationStrategy</code> policies
-     * are only supported for Auto Scaling groups with <a>MixedInstancesPolicy</a>.</p>
+     * <code>AllocationStrategy</code>.</p>
      */
     inline void SetTerminationPolicyTypes(const Aws::Vector<Aws::String>& value) { m_terminationPolicyTypes = value; }
 
@@ -71,9 +67,7 @@ namespace Model
      * <code>OldestInstance</code>, <code>OldestLaunchConfiguration</code>,
      * <code>NewestInstance</code>, <code>ClosestToNextInstanceHour</code>,
      * <code>Default</code>, <code>OldestLaunchTemplate</code>, and
-     * <code>AllocationStrategy</code>. Currently, the
-     * <code>OldestLaunchTemplate</code> and <code>AllocationStrategy</code> policies
-     * are only supported for Auto Scaling groups with <a>MixedInstancesPolicy</a>.</p>
+     * <code>AllocationStrategy</code>.</p>
      */
     inline void SetTerminationPolicyTypes(Aws::Vector<Aws::String>&& value) { m_terminationPolicyTypes = std::move(value); }
 
@@ -82,9 +76,7 @@ namespace Model
      * <code>OldestInstance</code>, <code>OldestLaunchConfiguration</code>,
      * <code>NewestInstance</code>, <code>ClosestToNextInstanceHour</code>,
      * <code>Default</code>, <code>OldestLaunchTemplate</code>, and
-     * <code>AllocationStrategy</code>. Currently, the
-     * <code>OldestLaunchTemplate</code> and <code>AllocationStrategy</code> policies
-     * are only supported for Auto Scaling groups with <a>MixedInstancesPolicy</a>.</p>
+     * <code>AllocationStrategy</code>.</p>
      */
     inline DescribeTerminationPolicyTypesResult& WithTerminationPolicyTypes(const Aws::Vector<Aws::String>& value) { SetTerminationPolicyTypes(value); return *this;}
 
@@ -93,9 +85,7 @@ namespace Model
      * <code>OldestInstance</code>, <code>OldestLaunchConfiguration</code>,
      * <code>NewestInstance</code>, <code>ClosestToNextInstanceHour</code>,
      * <code>Default</code>, <code>OldestLaunchTemplate</code>, and
-     * <code>AllocationStrategy</code>. Currently, the
-     * <code>OldestLaunchTemplate</code> and <code>AllocationStrategy</code> policies
-     * are only supported for Auto Scaling groups with <a>MixedInstancesPolicy</a>.</p>
+     * <code>AllocationStrategy</code>.</p>
      */
     inline DescribeTerminationPolicyTypesResult& WithTerminationPolicyTypes(Aws::Vector<Aws::String>&& value) { SetTerminationPolicyTypes(std::move(value)); return *this;}
 
@@ -104,9 +94,7 @@ namespace Model
      * <code>OldestInstance</code>, <code>OldestLaunchConfiguration</code>,
      * <code>NewestInstance</code>, <code>ClosestToNextInstanceHour</code>,
      * <code>Default</code>, <code>OldestLaunchTemplate</code>, and
-     * <code>AllocationStrategy</code>. Currently, the
-     * <code>OldestLaunchTemplate</code> and <code>AllocationStrategy</code> policies
-     * are only supported for Auto Scaling groups with <a>MixedInstancesPolicy</a>.</p>
+     * <code>AllocationStrategy</code>.</p>
      */
     inline DescribeTerminationPolicyTypesResult& AddTerminationPolicyTypes(const Aws::String& value) { m_terminationPolicyTypes.push_back(value); return *this; }
 
@@ -115,9 +103,7 @@ namespace Model
      * <code>OldestInstance</code>, <code>OldestLaunchConfiguration</code>,
      * <code>NewestInstance</code>, <code>ClosestToNextInstanceHour</code>,
      * <code>Default</code>, <code>OldestLaunchTemplate</code>, and
-     * <code>AllocationStrategy</code>. Currently, the
-     * <code>OldestLaunchTemplate</code> and <code>AllocationStrategy</code> policies
-     * are only supported for Auto Scaling groups with <a>MixedInstancesPolicy</a>.</p>
+     * <code>AllocationStrategy</code>.</p>
      */
     inline DescribeTerminationPolicyTypesResult& AddTerminationPolicyTypes(Aws::String&& value) { m_terminationPolicyTypes.push_back(std::move(value)); return *this; }
 
@@ -126,9 +112,7 @@ namespace Model
      * <code>OldestInstance</code>, <code>OldestLaunchConfiguration</code>,
      * <code>NewestInstance</code>, <code>ClosestToNextInstanceHour</code>,
      * <code>Default</code>, <code>OldestLaunchTemplate</code>, and
-     * <code>AllocationStrategy</code>. Currently, the
-     * <code>OldestLaunchTemplate</code> and <code>AllocationStrategy</code> policies
-     * are only supported for Auto Scaling groups with <a>MixedInstancesPolicy</a>.</p>
+     * <code>AllocationStrategy</code>.</p>
      */
     inline DescribeTerminationPolicyTypesResult& AddTerminationPolicyTypes(const char* value) { m_terminationPolicyTypes.push_back(value); return *this; }
 

@@ -50,6 +50,7 @@
 #include <aws/lightsail/model/DeleteInstanceResult.h>
 #include <aws/lightsail/model/DeleteInstanceSnapshotResult.h>
 #include <aws/lightsail/model/DeleteKeyPairResult.h>
+#include <aws/lightsail/model/DeleteKnownHostKeysResult.h>
 #include <aws/lightsail/model/DeleteLoadBalancerResult.h>
 #include <aws/lightsail/model/DeleteLoadBalancerTlsCertificateResult.h>
 #include <aws/lightsail/model/DeleteRelationalDatabaseResult.h>
@@ -190,6 +191,7 @@ namespace Model
         class DeleteInstanceRequest;
         class DeleteInstanceSnapshotRequest;
         class DeleteKeyPairRequest;
+        class DeleteKnownHostKeysRequest;
         class DeleteLoadBalancerRequest;
         class DeleteLoadBalancerTlsCertificateRequest;
         class DeleteRelationalDatabaseRequest;
@@ -291,6 +293,7 @@ namespace Model
         typedef Aws::Utils::Outcome<DeleteInstanceResult, Aws::Client::AWSError<LightsailErrors>> DeleteInstanceOutcome;
         typedef Aws::Utils::Outcome<DeleteInstanceSnapshotResult, Aws::Client::AWSError<LightsailErrors>> DeleteInstanceSnapshotOutcome;
         typedef Aws::Utils::Outcome<DeleteKeyPairResult, Aws::Client::AWSError<LightsailErrors>> DeleteKeyPairOutcome;
+        typedef Aws::Utils::Outcome<DeleteKnownHostKeysResult, Aws::Client::AWSError<LightsailErrors>> DeleteKnownHostKeysOutcome;
         typedef Aws::Utils::Outcome<DeleteLoadBalancerResult, Aws::Client::AWSError<LightsailErrors>> DeleteLoadBalancerOutcome;
         typedef Aws::Utils::Outcome<DeleteLoadBalancerTlsCertificateResult, Aws::Client::AWSError<LightsailErrors>> DeleteLoadBalancerTlsCertificateOutcome;
         typedef Aws::Utils::Outcome<DeleteRelationalDatabaseResult, Aws::Client::AWSError<LightsailErrors>> DeleteRelationalDatabaseOutcome;
@@ -392,6 +395,7 @@ namespace Model
         typedef std::future<DeleteInstanceOutcome> DeleteInstanceOutcomeCallable;
         typedef std::future<DeleteInstanceSnapshotOutcome> DeleteInstanceSnapshotOutcomeCallable;
         typedef std::future<DeleteKeyPairOutcome> DeleteKeyPairOutcomeCallable;
+        typedef std::future<DeleteKnownHostKeysOutcome> DeleteKnownHostKeysOutcomeCallable;
         typedef std::future<DeleteLoadBalancerOutcome> DeleteLoadBalancerOutcomeCallable;
         typedef std::future<DeleteLoadBalancerTlsCertificateOutcome> DeleteLoadBalancerTlsCertificateOutcomeCallable;
         typedef std::future<DeleteRelationalDatabaseOutcome> DeleteRelationalDatabaseOutcomeCallable;
@@ -496,6 +500,7 @@ namespace Model
     typedef std::function<void(const LightsailClient*, const Model::DeleteInstanceRequest&, const Model::DeleteInstanceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteInstanceResponseReceivedHandler;
     typedef std::function<void(const LightsailClient*, const Model::DeleteInstanceSnapshotRequest&, const Model::DeleteInstanceSnapshotOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteInstanceSnapshotResponseReceivedHandler;
     typedef std::function<void(const LightsailClient*, const Model::DeleteKeyPairRequest&, const Model::DeleteKeyPairOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteKeyPairResponseReceivedHandler;
+    typedef std::function<void(const LightsailClient*, const Model::DeleteKnownHostKeysRequest&, const Model::DeleteKnownHostKeysOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteKnownHostKeysResponseReceivedHandler;
     typedef std::function<void(const LightsailClient*, const Model::DeleteLoadBalancerRequest&, const Model::DeleteLoadBalancerOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteLoadBalancerResponseReceivedHandler;
     typedef std::function<void(const LightsailClient*, const Model::DeleteLoadBalancerTlsCertificateRequest&, const Model::DeleteLoadBalancerTlsCertificateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteLoadBalancerTlsCertificateResponseReceivedHandler;
     typedef std::function<void(const LightsailClient*, const Model::DeleteRelationalDatabaseRequest&, const Model::DeleteRelationalDatabaseOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteRelationalDatabaseResponseReceivedHandler;
@@ -571,11 +576,11 @@ namespace Model
   /**
    * <p>Amazon Lightsail is the easiest way to get started with AWS for developers
    * who just need virtual private servers. Lightsail includes everything you need to
-   * launch your project quickly - a virtual machine, SSD-based storage, data
-   * transfer, DNS management, and a static IP - for a low, predictable price. You
-   * manage those Lightsail servers through the Lightsail console or by using the API
-   * or command-line interface (CLI).</p> <p>For more information about Lightsail
-   * concepts and tasks, see the <a
+   * launch your project quickly - a virtual machine, a managed database, SSD-based
+   * storage, data transfer, DNS management, and a static IP - for a low, predictable
+   * price. You manage those Lightsail servers through the Lightsail console or by
+   * using the API or command-line interface (CLI).</p> <p>For more information about
+   * Lightsail concepts and tasks, see the <a
    * href="https://lightsail.aws.amazon.com/ls/docs/all">Lightsail Dev Guide</a>.</p>
    * <p>To use the Lightsail API or the CLI, you will need to use AWS Identity and
    * Access Management (IAM) to generate access keys. For details about how to set
@@ -1156,11 +1161,12 @@ namespace Model
         virtual void CreateDomainAsync(const Model::CreateDomainRequest& request, const CreateDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates one of the following entry records associated with the domain: A
-         * record, CNAME record, TXT record, or MX record.</p> <p>The <code>create domain
-         * entry</code> operation supports tag-based access control via resource tags
-         * applied to the resource identified by domainName. For more information, see the
-         * <a
+         * <p>Creates one of the following entry records associated with the domain:
+         * Address (A), canonical name (CNAME), mail exchanger (MX), name server (NS),
+         * start of authority (SOA), service locator (SRV), or text (TXT).</p> <p>The
+         * <code>create domain entry</code> operation supports tag-based access control via
+         * resource tags applied to the resource identified by domainName. For more
+         * information, see the <a
          * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
          * Dev Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateDomainEntry">AWS
@@ -1169,11 +1175,12 @@ namespace Model
         virtual Model::CreateDomainEntryOutcome CreateDomainEntry(const Model::CreateDomainEntryRequest& request) const;
 
         /**
-         * <p>Creates one of the following entry records associated with the domain: A
-         * record, CNAME record, TXT record, or MX record.</p> <p>The <code>create domain
-         * entry</code> operation supports tag-based access control via resource tags
-         * applied to the resource identified by domainName. For more information, see the
-         * <a
+         * <p>Creates one of the following entry records associated with the domain:
+         * Address (A), canonical name (CNAME), mail exchanger (MX), name server (NS),
+         * start of authority (SOA), service locator (SRV), or text (TXT).</p> <p>The
+         * <code>create domain entry</code> operation supports tag-based access control via
+         * resource tags applied to the resource identified by domainName. For more
+         * information, see the <a
          * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
          * Dev Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateDomainEntry">AWS
@@ -1184,11 +1191,12 @@ namespace Model
         virtual Model::CreateDomainEntryOutcomeCallable CreateDomainEntryCallable(const Model::CreateDomainEntryRequest& request) const;
 
         /**
-         * <p>Creates one of the following entry records associated with the domain: A
-         * record, CNAME record, TXT record, or MX record.</p> <p>The <code>create domain
-         * entry</code> operation supports tag-based access control via resource tags
-         * applied to the resource identified by domainName. For more information, see the
-         * <a
+         * <p>Creates one of the following entry records associated with the domain:
+         * Address (A), canonical name (CNAME), mail exchanger (MX), name server (NS),
+         * start of authority (SOA), service locator (SRV), or text (TXT).</p> <p>The
+         * <code>create domain entry</code> operation supports tag-based access control via
+         * resource tags applied to the resource identified by domainName. For more
+         * information, see the <a
          * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
          * Dev Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateDomainEntry">AWS
@@ -1891,6 +1899,58 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteKeyPairAsync(const Model::DeleteKeyPairRequest& request, const DeleteKeyPairResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Deletes the known host key or certificate used by the Amazon Lightsail
+         * browser-based SSH or RDP clients to authenticate an instance. This operation
+         * enables the Lightsail browser-based SSH or RDP clients to connect to the
+         * instance after a host key mismatch.</p> <important> <p>Perform this operation
+         * only if you were expecting the host key or certificate mismatch or if you are
+         * familiar with the new host key or certificate on the instance. For more
+         * information, see <a
+         * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-troubleshooting-browser-based-ssh-rdp-client-connection">Troubleshooting
+         * connection issues when using the Amazon Lightsail browser-based SSH or RDP
+         * client</a>.</p> </important><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DeleteKnownHostKeys">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteKnownHostKeysOutcome DeleteKnownHostKeys(const Model::DeleteKnownHostKeysRequest& request) const;
+
+        /**
+         * <p>Deletes the known host key or certificate used by the Amazon Lightsail
+         * browser-based SSH or RDP clients to authenticate an instance. This operation
+         * enables the Lightsail browser-based SSH or RDP clients to connect to the
+         * instance after a host key mismatch.</p> <important> <p>Perform this operation
+         * only if you were expecting the host key or certificate mismatch or if you are
+         * familiar with the new host key or certificate on the instance. For more
+         * information, see <a
+         * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-troubleshooting-browser-based-ssh-rdp-client-connection">Troubleshooting
+         * connection issues when using the Amazon Lightsail browser-based SSH or RDP
+         * client</a>.</p> </important><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DeleteKnownHostKeys">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteKnownHostKeysOutcomeCallable DeleteKnownHostKeysCallable(const Model::DeleteKnownHostKeysRequest& request) const;
+
+        /**
+         * <p>Deletes the known host key or certificate used by the Amazon Lightsail
+         * browser-based SSH or RDP clients to authenticate an instance. This operation
+         * enables the Lightsail browser-based SSH or RDP clients to connect to the
+         * instance after a host key mismatch.</p> <important> <p>Perform this operation
+         * only if you were expecting the host key or certificate mismatch or if you are
+         * familiar with the new host key or certificate on the instance. For more
+         * information, see <a
+         * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-troubleshooting-browser-based-ssh-rdp-client-connection">Troubleshooting
+         * connection issues when using the Amazon Lightsail browser-based SSH or RDP
+         * client</a>.</p> </important><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DeleteKnownHostKeys">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteKnownHostKeysAsync(const Model::DeleteKnownHostKeysRequest& request, const DeleteKnownHostKeysResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes a Lightsail load balancer and all its associated SSL/TLS
@@ -4394,6 +4454,7 @@ namespace Model
         void DeleteInstanceAsyncHelper(const Model::DeleteInstanceRequest& request, const DeleteInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteInstanceSnapshotAsyncHelper(const Model::DeleteInstanceSnapshotRequest& request, const DeleteInstanceSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteKeyPairAsyncHelper(const Model::DeleteKeyPairRequest& request, const DeleteKeyPairResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeleteKnownHostKeysAsyncHelper(const Model::DeleteKnownHostKeysRequest& request, const DeleteKnownHostKeysResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteLoadBalancerAsyncHelper(const Model::DeleteLoadBalancerRequest& request, const DeleteLoadBalancerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteLoadBalancerTlsCertificateAsyncHelper(const Model::DeleteLoadBalancerTlsCertificateRequest& request, const DeleteLoadBalancerTlsCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteRelationalDatabaseAsyncHelper(const Model::DeleteRelationalDatabaseRequest& request, const DeleteRelationalDatabaseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

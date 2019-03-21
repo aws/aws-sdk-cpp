@@ -47,7 +47,7 @@ namespace Model
    * organization instead of directly by the account ID, then you must specify a
    * <code>RoleArn</code> with proper permissions in the <code>Target</code>
    * structure. For more information, see <a
-   * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/events/CloudWatchEvents-CrossAccountEventDelivery.html">Sending
+   * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/CloudWatchEvents-CrossAccountEventDelivery.html">Sending
    * and Receiving Events Between AWS Accounts</a> in the <i>Amazon CloudWatch Events
    * User Guide</i>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/Target">AWS API
@@ -458,7 +458,7 @@ namespace Model
      * <p>Contains the Amazon ECS task definition and task count to be used, if the
      * event target is an Amazon ECS task. For more information about Amazon ECS tasks,
      * see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_defintions.html">Task
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_defintions.html">Task
      * Definitions </a> in the <i>Amazon EC2 Container Service Developer Guide</i>.</p>
      */
     inline const EcsParameters& GetEcsParameters() const{ return m_ecsParameters; }
@@ -467,7 +467,7 @@ namespace Model
      * <p>Contains the Amazon ECS task definition and task count to be used, if the
      * event target is an Amazon ECS task. For more information about Amazon ECS tasks,
      * see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_defintions.html">Task
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_defintions.html">Task
      * Definitions </a> in the <i>Amazon EC2 Container Service Developer Guide</i>.</p>
      */
     inline bool EcsParametersHasBeenSet() const { return m_ecsParametersHasBeenSet; }
@@ -476,7 +476,7 @@ namespace Model
      * <p>Contains the Amazon ECS task definition and task count to be used, if the
      * event target is an Amazon ECS task. For more information about Amazon ECS tasks,
      * see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_defintions.html">Task
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_defintions.html">Task
      * Definitions </a> in the <i>Amazon EC2 Container Service Developer Guide</i>.</p>
      */
     inline void SetEcsParameters(const EcsParameters& value) { m_ecsParametersHasBeenSet = true; m_ecsParameters = value; }
@@ -485,7 +485,7 @@ namespace Model
      * <p>Contains the Amazon ECS task definition and task count to be used, if the
      * event target is an Amazon ECS task. For more information about Amazon ECS tasks,
      * see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_defintions.html">Task
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_defintions.html">Task
      * Definitions </a> in the <i>Amazon EC2 Container Service Developer Guide</i>.</p>
      */
     inline void SetEcsParameters(EcsParameters&& value) { m_ecsParametersHasBeenSet = true; m_ecsParameters = std::move(value); }
@@ -494,7 +494,7 @@ namespace Model
      * <p>Contains the Amazon ECS task definition and task count to be used, if the
      * event target is an Amazon ECS task. For more information about Amazon ECS tasks,
      * see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_defintions.html">Task
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_defintions.html">Task
      * Definitions </a> in the <i>Amazon EC2 Container Service Developer Guide</i>.</p>
      */
     inline Target& WithEcsParameters(const EcsParameters& value) { SetEcsParameters(value); return *this;}
@@ -503,7 +503,7 @@ namespace Model
      * <p>Contains the Amazon ECS task definition and task count to be used, if the
      * event target is an Amazon ECS task. For more information about Amazon ECS tasks,
      * see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_defintions.html">Task
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_defintions.html">Task
      * Definitions </a> in the <i>Amazon EC2 Container Service Developer Guide</i>.</p>
      */
     inline Target& WithEcsParameters(EcsParameters&& value) { SetEcsParameters(std::move(value)); return *this;}
@@ -512,7 +512,7 @@ namespace Model
     /**
      * <p>If the event target is an AWS Batch job, this contains the job definition,
      * job name, and other parameters. For more information, see <a
-     * href="http://docs.aws.amazon.com/batch/latest/userguide/jobs.html">Jobs</a> in
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/jobs.html">Jobs</a> in
      * the <i>AWS Batch User Guide</i>.</p>
      */
     inline const BatchParameters& GetBatchParameters() const{ return m_batchParameters; }
@@ -520,7 +520,7 @@ namespace Model
     /**
      * <p>If the event target is an AWS Batch job, this contains the job definition,
      * job name, and other parameters. For more information, see <a
-     * href="http://docs.aws.amazon.com/batch/latest/userguide/jobs.html">Jobs</a> in
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/jobs.html">Jobs</a> in
      * the <i>AWS Batch User Guide</i>.</p>
      */
     inline bool BatchParametersHasBeenSet() const { return m_batchParametersHasBeenSet; }
@@ -528,7 +528,7 @@ namespace Model
     /**
      * <p>If the event target is an AWS Batch job, this contains the job definition,
      * job name, and other parameters. For more information, see <a
-     * href="http://docs.aws.amazon.com/batch/latest/userguide/jobs.html">Jobs</a> in
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/jobs.html">Jobs</a> in
      * the <i>AWS Batch User Guide</i>.</p>
      */
     inline void SetBatchParameters(const BatchParameters& value) { m_batchParametersHasBeenSet = true; m_batchParameters = value; }
@@ -536,7 +536,7 @@ namespace Model
     /**
      * <p>If the event target is an AWS Batch job, this contains the job definition,
      * job name, and other parameters. For more information, see <a
-     * href="http://docs.aws.amazon.com/batch/latest/userguide/jobs.html">Jobs</a> in
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/jobs.html">Jobs</a> in
      * the <i>AWS Batch User Guide</i>.</p>
      */
     inline void SetBatchParameters(BatchParameters&& value) { m_batchParametersHasBeenSet = true; m_batchParameters = std::move(value); }
@@ -544,7 +544,7 @@ namespace Model
     /**
      * <p>If the event target is an AWS Batch job, this contains the job definition,
      * job name, and other parameters. For more information, see <a
-     * href="http://docs.aws.amazon.com/batch/latest/userguide/jobs.html">Jobs</a> in
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/jobs.html">Jobs</a> in
      * the <i>AWS Batch User Guide</i>.</p>
      */
     inline Target& WithBatchParameters(const BatchParameters& value) { SetBatchParameters(value); return *this;}
@@ -552,7 +552,7 @@ namespace Model
     /**
      * <p>If the event target is an AWS Batch job, this contains the job definition,
      * job name, and other parameters. For more information, see <a
-     * href="http://docs.aws.amazon.com/batch/latest/userguide/jobs.html">Jobs</a> in
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/jobs.html">Jobs</a> in
      * the <i>AWS Batch User Guide</i>.</p>
      */
     inline Target& WithBatchParameters(BatchParameters&& value) { SetBatchParameters(std::move(value)); return *this;}

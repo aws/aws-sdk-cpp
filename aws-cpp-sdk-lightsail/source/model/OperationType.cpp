@@ -30,6 +30,7 @@ namespace Aws
       namespace OperationTypeMapper
       {
 
+        static const int DeleteKnownHostKeys_HASH = HashingUtils::HashString("DeleteKnownHostKeys");
         static const int DeleteInstance_HASH = HashingUtils::HashString("DeleteInstance");
         static const int CreateInstance_HASH = HashingUtils::HashString("CreateInstance");
         static const int StopInstance_HASH = HashingUtils::HashString("StopInstance");
@@ -79,7 +80,11 @@ namespace Aws
         OperationType GetOperationTypeForName(const Aws::String& name)
         {
           int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == DeleteInstance_HASH)
+          if (hashCode == DeleteKnownHostKeys_HASH)
+          {
+            return OperationType::DeleteKnownHostKeys;
+          }
+          else if (hashCode == DeleteInstance_HASH)
           {
             return OperationType::DeleteInstance;
           }
@@ -269,6 +274,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case OperationType::DeleteKnownHostKeys:
+            return "DeleteKnownHostKeys";
           case OperationType::DeleteInstance:
             return "DeleteInstance";
           case OperationType::CreateInstance:

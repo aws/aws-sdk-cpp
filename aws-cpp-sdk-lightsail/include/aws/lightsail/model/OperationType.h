@@ -26,6 +26,7 @@ namespace Model
   enum class OperationType
   {
     NOT_SET,
+    DeleteKnownHostKeys,
     DeleteInstance,
     CreateInstance,
     StopInstance,

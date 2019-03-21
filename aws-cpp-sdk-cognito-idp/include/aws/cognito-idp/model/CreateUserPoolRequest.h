@@ -692,93 +692,93 @@ namespace Model
 
 
     /**
-     * <p>The cost allocation tags for the user pool. For more information, see <a
-     * href="http://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-cost-allocation-tagging.html">Adding
-     * Cost Allocation Tags to Your User Pool</a> </p>
+     * <p>The tag keys and values to assign to the user pool. A tag is a label that you
+     * can use to categorize and manage user pools in different ways, such as by
+     * purpose, owner, environment, or other criteria.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetUserPoolTags() const{ return m_userPoolTags; }
 
     /**
-     * <p>The cost allocation tags for the user pool. For more information, see <a
-     * href="http://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-cost-allocation-tagging.html">Adding
-     * Cost Allocation Tags to Your User Pool</a> </p>
+     * <p>The tag keys and values to assign to the user pool. A tag is a label that you
+     * can use to categorize and manage user pools in different ways, such as by
+     * purpose, owner, environment, or other criteria.</p>
      */
     inline bool UserPoolTagsHasBeenSet() const { return m_userPoolTagsHasBeenSet; }
 
     /**
-     * <p>The cost allocation tags for the user pool. For more information, see <a
-     * href="http://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-cost-allocation-tagging.html">Adding
-     * Cost Allocation Tags to Your User Pool</a> </p>
+     * <p>The tag keys and values to assign to the user pool. A tag is a label that you
+     * can use to categorize and manage user pools in different ways, such as by
+     * purpose, owner, environment, or other criteria.</p>
      */
     inline void SetUserPoolTags(const Aws::Map<Aws::String, Aws::String>& value) { m_userPoolTagsHasBeenSet = true; m_userPoolTags = value; }
 
     /**
-     * <p>The cost allocation tags for the user pool. For more information, see <a
-     * href="http://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-cost-allocation-tagging.html">Adding
-     * Cost Allocation Tags to Your User Pool</a> </p>
+     * <p>The tag keys and values to assign to the user pool. A tag is a label that you
+     * can use to categorize and manage user pools in different ways, such as by
+     * purpose, owner, environment, or other criteria.</p>
      */
     inline void SetUserPoolTags(Aws::Map<Aws::String, Aws::String>&& value) { m_userPoolTagsHasBeenSet = true; m_userPoolTags = std::move(value); }
 
     /**
-     * <p>The cost allocation tags for the user pool. For more information, see <a
-     * href="http://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-cost-allocation-tagging.html">Adding
-     * Cost Allocation Tags to Your User Pool</a> </p>
+     * <p>The tag keys and values to assign to the user pool. A tag is a label that you
+     * can use to categorize and manage user pools in different ways, such as by
+     * purpose, owner, environment, or other criteria.</p>
      */
     inline CreateUserPoolRequest& WithUserPoolTags(const Aws::Map<Aws::String, Aws::String>& value) { SetUserPoolTags(value); return *this;}
 
     /**
-     * <p>The cost allocation tags for the user pool. For more information, see <a
-     * href="http://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-cost-allocation-tagging.html">Adding
-     * Cost Allocation Tags to Your User Pool</a> </p>
+     * <p>The tag keys and values to assign to the user pool. A tag is a label that you
+     * can use to categorize and manage user pools in different ways, such as by
+     * purpose, owner, environment, or other criteria.</p>
      */
     inline CreateUserPoolRequest& WithUserPoolTags(Aws::Map<Aws::String, Aws::String>&& value) { SetUserPoolTags(std::move(value)); return *this;}
 
     /**
-     * <p>The cost allocation tags for the user pool. For more information, see <a
-     * href="http://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-cost-allocation-tagging.html">Adding
-     * Cost Allocation Tags to Your User Pool</a> </p>
+     * <p>The tag keys and values to assign to the user pool. A tag is a label that you
+     * can use to categorize and manage user pools in different ways, such as by
+     * purpose, owner, environment, or other criteria.</p>
      */
     inline CreateUserPoolRequest& AddUserPoolTags(const Aws::String& key, const Aws::String& value) { m_userPoolTagsHasBeenSet = true; m_userPoolTags.emplace(key, value); return *this; }
 
     /**
-     * <p>The cost allocation tags for the user pool. For more information, see <a
-     * href="http://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-cost-allocation-tagging.html">Adding
-     * Cost Allocation Tags to Your User Pool</a> </p>
+     * <p>The tag keys and values to assign to the user pool. A tag is a label that you
+     * can use to categorize and manage user pools in different ways, such as by
+     * purpose, owner, environment, or other criteria.</p>
      */
     inline CreateUserPoolRequest& AddUserPoolTags(Aws::String&& key, const Aws::String& value) { m_userPoolTagsHasBeenSet = true; m_userPoolTags.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>The cost allocation tags for the user pool. For more information, see <a
-     * href="http://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-cost-allocation-tagging.html">Adding
-     * Cost Allocation Tags to Your User Pool</a> </p>
+     * <p>The tag keys and values to assign to the user pool. A tag is a label that you
+     * can use to categorize and manage user pools in different ways, such as by
+     * purpose, owner, environment, or other criteria.</p>
      */
     inline CreateUserPoolRequest& AddUserPoolTags(const Aws::String& key, Aws::String&& value) { m_userPoolTagsHasBeenSet = true; m_userPoolTags.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>The cost allocation tags for the user pool. For more information, see <a
-     * href="http://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-cost-allocation-tagging.html">Adding
-     * Cost Allocation Tags to Your User Pool</a> </p>
+     * <p>The tag keys and values to assign to the user pool. A tag is a label that you
+     * can use to categorize and manage user pools in different ways, such as by
+     * purpose, owner, environment, or other criteria.</p>
      */
     inline CreateUserPoolRequest& AddUserPoolTags(Aws::String&& key, Aws::String&& value) { m_userPoolTagsHasBeenSet = true; m_userPoolTags.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
-     * <p>The cost allocation tags for the user pool. For more information, see <a
-     * href="http://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-cost-allocation-tagging.html">Adding
-     * Cost Allocation Tags to Your User Pool</a> </p>
+     * <p>The tag keys and values to assign to the user pool. A tag is a label that you
+     * can use to categorize and manage user pools in different ways, such as by
+     * purpose, owner, environment, or other criteria.</p>
      */
     inline CreateUserPoolRequest& AddUserPoolTags(const char* key, Aws::String&& value) { m_userPoolTagsHasBeenSet = true; m_userPoolTags.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>The cost allocation tags for the user pool. For more information, see <a
-     * href="http://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-cost-allocation-tagging.html">Adding
-     * Cost Allocation Tags to Your User Pool</a> </p>
+     * <p>The tag keys and values to assign to the user pool. A tag is a label that you
+     * can use to categorize and manage user pools in different ways, such as by
+     * purpose, owner, environment, or other criteria.</p>
      */
     inline CreateUserPoolRequest& AddUserPoolTags(Aws::String&& key, const char* value) { m_userPoolTagsHasBeenSet = true; m_userPoolTags.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>The cost allocation tags for the user pool. For more information, see <a
-     * href="http://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-cost-allocation-tagging.html">Adding
-     * Cost Allocation Tags to Your User Pool</a> </p>
+     * <p>The tag keys and values to assign to the user pool. A tag is a label that you
+     * can use to categorize and manage user pools in different ways, such as by
+     * purpose, owner, environment, or other criteria.</p>
      */
     inline CreateUserPoolRequest& AddUserPoolTags(const char* key, const char* value) { m_userPoolTagsHasBeenSet = true; m_userPoolTags.emplace(key, value); return *this; }
 

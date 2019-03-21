@@ -19,6 +19,8 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/lightsail/model/PasswordData.h>
 #include <aws/lightsail/model/InstanceAccessProtocol.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/lightsail/model/HostKeyAttributes.h>
 #include <utility>
 
 namespace Aws
@@ -501,6 +503,47 @@ namespace Model
      */
     inline InstanceAccessDetails& WithUsername(const char* value) { SetUsername(value); return *this;}
 
+
+    /**
+     * <p>Describes the public SSH host keys or the RDP certificate.</p>
+     */
+    inline const Aws::Vector<HostKeyAttributes>& GetHostKeys() const{ return m_hostKeys; }
+
+    /**
+     * <p>Describes the public SSH host keys or the RDP certificate.</p>
+     */
+    inline bool HostKeysHasBeenSet() const { return m_hostKeysHasBeenSet; }
+
+    /**
+     * <p>Describes the public SSH host keys or the RDP certificate.</p>
+     */
+    inline void SetHostKeys(const Aws::Vector<HostKeyAttributes>& value) { m_hostKeysHasBeenSet = true; m_hostKeys = value; }
+
+    /**
+     * <p>Describes the public SSH host keys or the RDP certificate.</p>
+     */
+    inline void SetHostKeys(Aws::Vector<HostKeyAttributes>&& value) { m_hostKeysHasBeenSet = true; m_hostKeys = std::move(value); }
+
+    /**
+     * <p>Describes the public SSH host keys or the RDP certificate.</p>
+     */
+    inline InstanceAccessDetails& WithHostKeys(const Aws::Vector<HostKeyAttributes>& value) { SetHostKeys(value); return *this;}
+
+    /**
+     * <p>Describes the public SSH host keys or the RDP certificate.</p>
+     */
+    inline InstanceAccessDetails& WithHostKeys(Aws::Vector<HostKeyAttributes>&& value) { SetHostKeys(std::move(value)); return *this;}
+
+    /**
+     * <p>Describes the public SSH host keys or the RDP certificate.</p>
+     */
+    inline InstanceAccessDetails& AddHostKeys(const HostKeyAttributes& value) { m_hostKeysHasBeenSet = true; m_hostKeys.push_back(value); return *this; }
+
+    /**
+     * <p>Describes the public SSH host keys or the RDP certificate.</p>
+     */
+    inline InstanceAccessDetails& AddHostKeys(HostKeyAttributes&& value) { m_hostKeysHasBeenSet = true; m_hostKeys.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_certKey;
@@ -529,6 +572,9 @@ namespace Model
 
     Aws::String m_username;
     bool m_usernameHasBeenSet;
+
+    Aws::Vector<HostKeyAttributes> m_hostKeys;
+    bool m_hostKeysHasBeenSet;
   };
 
 } // namespace Model

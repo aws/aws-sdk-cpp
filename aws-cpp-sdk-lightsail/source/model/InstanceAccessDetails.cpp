@@ -38,7 +38,8 @@ InstanceAccessDetails::InstanceAccessDetails() :
     m_protocol(InstanceAccessProtocol::NOT_SET),
     m_protocolHasBeenSet(false),
     m_instanceNameHasBeenSet(false),
-    m_usernameHasBeenSet(false)
+    m_usernameHasBeenSet(false),
+    m_hostKeysHasBeenSet(false)
 {
 }
 
@@ -52,7 +53,8 @@ InstanceAccessDetails::InstanceAccessDetails(JsonView jsonValue) :
     m_protocol(InstanceAccessProtocol::NOT_SET),
     m_protocolHasBeenSet(false),
     m_instanceNameHasBeenSet(false),
-    m_usernameHasBeenSet(false)
+    m_usernameHasBeenSet(false),
+    m_hostKeysHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -122,6 +124,16 @@ InstanceAccessDetails& InstanceAccessDetails::operator =(JsonView jsonValue)
     m_usernameHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("hostKeys"))
+  {
+    Array<JsonView> hostKeysJsonList = jsonValue.GetArray("hostKeys");
+    for(unsigned hostKeysIndex = 0; hostKeysIndex < hostKeysJsonList.GetLength(); ++hostKeysIndex)
+    {
+      m_hostKeys.push_back(hostKeysJsonList[hostKeysIndex].AsObject());
+    }
+    m_hostKeysHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -178,6 +190,17 @@ JsonValue InstanceAccessDetails::Jsonize() const
   if(m_usernameHasBeenSet)
   {
    payload.WithString("username", m_username);
+
+  }
+
+  if(m_hostKeysHasBeenSet)
+  {
+   Array<JsonValue> hostKeysJsonList(m_hostKeys.size());
+   for(unsigned hostKeysIndex = 0; hostKeysIndex < hostKeysJsonList.GetLength(); ++hostKeysIndex)
+   {
+     hostKeysJsonList[hostKeysIndex].AsObject(m_hostKeys[hostKeysIndex].Jsonize());
+   }
+   payload.WithArray("hostKeys", std::move(hostKeysJsonList));
 
   }
 

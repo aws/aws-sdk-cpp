@@ -260,7 +260,7 @@ namespace Model
      * <p>This parameter enables you to limit the permission to accounts that fulfill a
      * certain condition, such as being a member of a certain AWS organization. For
      * more information about AWS Organizations, see <a
-     * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_introduction.html">What
+     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_introduction.html">What
      * Is AWS Organizations</a> in the <i>AWS Organizations User Guide</i>.</p> <p>If
      * you specify <code>Condition</code> with an AWS organization ID, and specify "*"
      * as the value for <code>Principal</code>, you grant permission to all the
@@ -274,7 +274,7 @@ namespace Model
      * <p>This parameter enables you to limit the permission to accounts that fulfill a
      * certain condition, such as being a member of a certain AWS organization. For
      * more information about AWS Organizations, see <a
-     * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_introduction.html">What
+     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_introduction.html">What
      * Is AWS Organizations</a> in the <i>AWS Organizations User Guide</i>.</p> <p>If
      * you specify <code>Condition</code> with an AWS organization ID, and specify "*"
      * as the value for <code>Principal</code>, you grant permission to all the
@@ -288,7 +288,7 @@ namespace Model
      * <p>This parameter enables you to limit the permission to accounts that fulfill a
      * certain condition, such as being a member of a certain AWS organization. For
      * more information about AWS Organizations, see <a
-     * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_introduction.html">What
+     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_introduction.html">What
      * Is AWS Organizations</a> in the <i>AWS Organizations User Guide</i>.</p> <p>If
      * you specify <code>Condition</code> with an AWS organization ID, and specify "*"
      * as the value for <code>Principal</code>, you grant permission to all the
@@ -302,7 +302,7 @@ namespace Model
      * <p>This parameter enables you to limit the permission to accounts that fulfill a
      * certain condition, such as being a member of a certain AWS organization. For
      * more information about AWS Organizations, see <a
-     * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_introduction.html">What
+     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_introduction.html">What
      * Is AWS Organizations</a> in the <i>AWS Organizations User Guide</i>.</p> <p>If
      * you specify <code>Condition</code> with an AWS organization ID, and specify "*"
      * as the value for <code>Principal</code>, you grant permission to all the
@@ -316,7 +316,7 @@ namespace Model
      * <p>This parameter enables you to limit the permission to accounts that fulfill a
      * certain condition, such as being a member of a certain AWS organization. For
      * more information about AWS Organizations, see <a
-     * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_introduction.html">What
+     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_introduction.html">What
      * Is AWS Organizations</a> in the <i>AWS Organizations User Guide</i>.</p> <p>If
      * you specify <code>Condition</code> with an AWS organization ID, and specify "*"
      * as the value for <code>Principal</code>, you grant permission to all the
@@ -330,7 +330,7 @@ namespace Model
      * <p>This parameter enables you to limit the permission to accounts that fulfill a
      * certain condition, such as being a member of a certain AWS organization. For
      * more information about AWS Organizations, see <a
-     * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_introduction.html">What
+     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_introduction.html">What
      * Is AWS Organizations</a> in the <i>AWS Organizations User Guide</i>.</p> <p>If
      * you specify <code>Condition</code> with an AWS organization ID, and specify "*"
      * as the value for <code>Principal</code>, you grant permission to all the

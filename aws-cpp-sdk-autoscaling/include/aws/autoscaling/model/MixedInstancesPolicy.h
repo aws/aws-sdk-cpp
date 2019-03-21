@@ -39,12 +39,12 @@ namespace Model
    * instances, your Auto Scaling group can provision a combination of On-Demand
    * Instances and Spot Instances across multiple instance types. Used in combination
    * with <a>CreateAutoScalingGroup</a>. For more information, see <a
-   * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/AutoScalingGroup.html#asg-purchase-options">Using
-   * Multiple Instance Types and Purchase Options</a> in the <i>Amazon EC2 Auto
-   * Scaling User Guide</i>.</p> <p>When you create your Auto Scaling group, you can
-   * specify a launch configuration or template as a parameter for the top-level
-   * object, or you can specify a mixed instances policy, but not both at the same
-   * time.</p><p><h3>See Also:</h3>   <a
+   * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-purchase-options.html">Auto
+   * Scaling Groups with Multiple Instance Types and Purchase Options</a> in the
+   * <i>Amazon EC2 Auto Scaling User Guide</i>.</p> <p>When you create your Auto
+   * Scaling group, you can specify a launch configuration or template as a parameter
+   * for the top-level object, or you can specify a mixed instances policy, but not
+   * both at the same time.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/MixedInstancesPolicy">AWS
    * API Reference</a></p>
    */

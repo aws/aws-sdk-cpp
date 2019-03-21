@@ -59,6 +59,7 @@
 #include <aws/lightsail/model/DeleteInstanceRequest.h>
 #include <aws/lightsail/model/DeleteInstanceSnapshotRequest.h>
 #include <aws/lightsail/model/DeleteKeyPairRequest.h>
+#include <aws/lightsail/model/DeleteKnownHostKeysRequest.h>
 #include <aws/lightsail/model/DeleteLoadBalancerRequest.h>
 #include <aws/lightsail/model/DeleteLoadBalancerTlsCertificateRequest.h>
 #include <aws/lightsail/model/DeleteRelationalDatabaseRequest.h>
@@ -1215,6 +1216,41 @@ void LightsailClient::DeleteKeyPairAsync(const DeleteKeyPairRequest& request, co
 void LightsailClient::DeleteKeyPairAsyncHelper(const DeleteKeyPairRequest& request, const DeleteKeyPairResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DeleteKeyPair(request), context);
+}
+
+DeleteKnownHostKeysOutcome LightsailClient::DeleteKnownHostKeys(const DeleteKnownHostKeysRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return DeleteKnownHostKeysOutcome(DeleteKnownHostKeysResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DeleteKnownHostKeysOutcome(outcome.GetError());
+  }
+}
+
+DeleteKnownHostKeysOutcomeCallable LightsailClient::DeleteKnownHostKeysCallable(const DeleteKnownHostKeysRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteKnownHostKeysOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteKnownHostKeys(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void LightsailClient::DeleteKnownHostKeysAsync(const DeleteKnownHostKeysRequest& request, const DeleteKnownHostKeysResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteKnownHostKeysAsyncHelper( request, handler, context ); } );
+}
+
+void LightsailClient::DeleteKnownHostKeysAsyncHelper(const DeleteKnownHostKeysRequest& request, const DeleteKnownHostKeysResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteKnownHostKeys(request), context);
 }
 
 DeleteLoadBalancerOutcome LightsailClient::DeleteLoadBalancer(const DeleteLoadBalancerRequest& request) const

@@ -37,6 +37,7 @@ static const int RESOURCE_ALREADY_EXISTS_HASH = HashingUtils::HashString("Resour
 static const int REGISTRATION_CODE_VALIDATION_HASH = HashingUtils::HashString("RegistrationCodeValidationException");
 static const int CERTIFICATE_CONFLICT_HASH = HashingUtils::HashString("CertificateConflictException");
 static const int INTERNAL_HASH = HashingUtils::HashString("InternalException");
+static const int INVALID_AGGREGATION_HASH = HashingUtils::HashString("InvalidAggregationException");
 static const int MALFORMED_POLICY_HASH = HashingUtils::HashString("MalformedPolicyException");
 static const int VERSIONS_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("VersionsLimitExceededException");
 static const int TRANSFER_CONFLICT_HASH = HashingUtils::HashString("TransferConflictException");
@@ -92,6 +93,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == INTERNAL_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(IoTErrors::INTERNAL), false);
+  }
+  else if (hashCode == INVALID_AGGREGATION_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(IoTErrors::INVALID_AGGREGATION), false);
   }
   else if (hashCode == MALFORMED_POLICY_HASH)
   {

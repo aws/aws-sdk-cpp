@@ -186,9 +186,9 @@ namespace Model
      * <p>The mixed instances policy to use to specify the updates. If you specify this
      * parameter, you can't specify a launch configuration or a launch template. </p>
      * <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/AutoScalingGroup.html#asg-purchase-options">Using
-     * Multiple Instance Types and Purchase Options</a> in the <i>Amazon EC2 Auto
-     * Scaling User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-purchase-options.html">Auto
+     * Scaling Groups with Multiple Instance Types and Purchase Options</a> in the
+     * <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
      */
     inline const MixedInstancesPolicy& GetMixedInstancesPolicy() const{ return m_mixedInstancesPolicy; }
 
@@ -196,9 +196,9 @@ namespace Model
      * <p>The mixed instances policy to use to specify the updates. If you specify this
      * parameter, you can't specify a launch configuration or a launch template. </p>
      * <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/AutoScalingGroup.html#asg-purchase-options">Using
-     * Multiple Instance Types and Purchase Options</a> in the <i>Amazon EC2 Auto
-     * Scaling User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-purchase-options.html">Auto
+     * Scaling Groups with Multiple Instance Types and Purchase Options</a> in the
+     * <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
      */
     inline bool MixedInstancesPolicyHasBeenSet() const { return m_mixedInstancesPolicyHasBeenSet; }
 
@@ -206,9 +206,9 @@ namespace Model
      * <p>The mixed instances policy to use to specify the updates. If you specify this
      * parameter, you can't specify a launch configuration or a launch template. </p>
      * <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/AutoScalingGroup.html#asg-purchase-options">Using
-     * Multiple Instance Types and Purchase Options</a> in the <i>Amazon EC2 Auto
-     * Scaling User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-purchase-options.html">Auto
+     * Scaling Groups with Multiple Instance Types and Purchase Options</a> in the
+     * <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
      */
     inline void SetMixedInstancesPolicy(const MixedInstancesPolicy& value) { m_mixedInstancesPolicyHasBeenSet = true; m_mixedInstancesPolicy = value; }
 
@@ -216,9 +216,9 @@ namespace Model
      * <p>The mixed instances policy to use to specify the updates. If you specify this
      * parameter, you can't specify a launch configuration or a launch template. </p>
      * <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/AutoScalingGroup.html#asg-purchase-options">Using
-     * Multiple Instance Types and Purchase Options</a> in the <i>Amazon EC2 Auto
-     * Scaling User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-purchase-options.html">Auto
+     * Scaling Groups with Multiple Instance Types and Purchase Options</a> in the
+     * <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
      */
     inline void SetMixedInstancesPolicy(MixedInstancesPolicy&& value) { m_mixedInstancesPolicyHasBeenSet = true; m_mixedInstancesPolicy = std::move(value); }
 
@@ -226,9 +226,9 @@ namespace Model
      * <p>The mixed instances policy to use to specify the updates. If you specify this
      * parameter, you can't specify a launch configuration or a launch template. </p>
      * <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/AutoScalingGroup.html#asg-purchase-options">Using
-     * Multiple Instance Types and Purchase Options</a> in the <i>Amazon EC2 Auto
-     * Scaling User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-purchase-options.html">Auto
+     * Scaling Groups with Multiple Instance Types and Purchase Options</a> in the
+     * <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
      */
     inline UpdateAutoScalingGroupRequest& WithMixedInstancesPolicy(const MixedInstancesPolicy& value) { SetMixedInstancesPolicy(value); return *this;}
 
@@ -236,9 +236,9 @@ namespace Model
      * <p>The mixed instances policy to use to specify the updates. If you specify this
      * parameter, you can't specify a launch configuration or a launch template. </p>
      * <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/AutoScalingGroup.html#asg-purchase-options">Using
-     * Multiple Instance Types and Purchase Options</a> in the <i>Amazon EC2 Auto
-     * Scaling User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-purchase-options.html">Auto
+     * Scaling Groups with Multiple Instance Types and Purchase Options</a> in the
+     * <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
      */
     inline UpdateAutoScalingGroupRequest& WithMixedInstancesPolicy(MixedInstancesPolicy&& value) { SetMixedInstancesPolicy(std::move(value)); return *this;}
 
@@ -399,49 +399,65 @@ namespace Model
 
     /**
      * <p>The service to use for the health checks. The valid values are
-     * <code>EC2</code> and <code>ELB</code>.</p>
+     * <code>EC2</code> and <code>ELB</code>. If you configure an Auto Scaling group to
+     * use ELB health checks, it considers the instance unhealthy if it fails either
+     * the EC2 status checks or the load balancer health checks.</p>
      */
     inline const Aws::String& GetHealthCheckType() const{ return m_healthCheckType; }
 
     /**
      * <p>The service to use for the health checks. The valid values are
-     * <code>EC2</code> and <code>ELB</code>.</p>
+     * <code>EC2</code> and <code>ELB</code>. If you configure an Auto Scaling group to
+     * use ELB health checks, it considers the instance unhealthy if it fails either
+     * the EC2 status checks or the load balancer health checks.</p>
      */
     inline bool HealthCheckTypeHasBeenSet() const { return m_healthCheckTypeHasBeenSet; }
 
     /**
      * <p>The service to use for the health checks. The valid values are
-     * <code>EC2</code> and <code>ELB</code>.</p>
+     * <code>EC2</code> and <code>ELB</code>. If you configure an Auto Scaling group to
+     * use ELB health checks, it considers the instance unhealthy if it fails either
+     * the EC2 status checks or the load balancer health checks.</p>
      */
     inline void SetHealthCheckType(const Aws::String& value) { m_healthCheckTypeHasBeenSet = true; m_healthCheckType = value; }
 
     /**
      * <p>The service to use for the health checks. The valid values are
-     * <code>EC2</code> and <code>ELB</code>.</p>
+     * <code>EC2</code> and <code>ELB</code>. If you configure an Auto Scaling group to
+     * use ELB health checks, it considers the instance unhealthy if it fails either
+     * the EC2 status checks or the load balancer health checks.</p>
      */
     inline void SetHealthCheckType(Aws::String&& value) { m_healthCheckTypeHasBeenSet = true; m_healthCheckType = std::move(value); }
 
     /**
      * <p>The service to use for the health checks. The valid values are
-     * <code>EC2</code> and <code>ELB</code>.</p>
+     * <code>EC2</code> and <code>ELB</code>. If you configure an Auto Scaling group to
+     * use ELB health checks, it considers the instance unhealthy if it fails either
+     * the EC2 status checks or the load balancer health checks.</p>
      */
     inline void SetHealthCheckType(const char* value) { m_healthCheckTypeHasBeenSet = true; m_healthCheckType.assign(value); }
 
     /**
      * <p>The service to use for the health checks. The valid values are
-     * <code>EC2</code> and <code>ELB</code>.</p>
+     * <code>EC2</code> and <code>ELB</code>. If you configure an Auto Scaling group to
+     * use ELB health checks, it considers the instance unhealthy if it fails either
+     * the EC2 status checks or the load balancer health checks.</p>
      */
     inline UpdateAutoScalingGroupRequest& WithHealthCheckType(const Aws::String& value) { SetHealthCheckType(value); return *this;}
 
     /**
      * <p>The service to use for the health checks. The valid values are
-     * <code>EC2</code> and <code>ELB</code>.</p>
+     * <code>EC2</code> and <code>ELB</code>. If you configure an Auto Scaling group to
+     * use ELB health checks, it considers the instance unhealthy if it fails either
+     * the EC2 status checks or the load balancer health checks.</p>
      */
     inline UpdateAutoScalingGroupRequest& WithHealthCheckType(Aws::String&& value) { SetHealthCheckType(std::move(value)); return *this;}
 
     /**
      * <p>The service to use for the health checks. The valid values are
-     * <code>EC2</code> and <code>ELB</code>.</p>
+     * <code>EC2</code> and <code>ELB</code>. If you configure an Auto Scaling group to
+     * use ELB health checks, it considers the instance unhealthy if it fails either
+     * the EC2 status checks or the load balancer health checks.</p>
      */
     inline UpdateAutoScalingGroupRequest& WithHealthCheckType(const char* value) { SetHealthCheckType(value); return *this;}
 

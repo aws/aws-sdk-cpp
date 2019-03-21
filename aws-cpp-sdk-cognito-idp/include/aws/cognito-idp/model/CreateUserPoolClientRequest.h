@@ -246,7 +246,7 @@ namespace Model
      * an identity provider. If your app client lacks write access to a mapped
      * attribute, Amazon Cognito throws an error when it attempts to update the
      * attribute. For more information, see <a
-     * href="http://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-specifying-attribute-mapping.html">Specifying
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-specifying-attribute-mapping.html">Specifying
      * Identity Provider Attribute Mappings for Your User Pool</a>.</p>
      */
     inline const Aws::Vector<Aws::String>& GetWriteAttributes() const{ return m_writeAttributes; }
@@ -259,7 +259,7 @@ namespace Model
      * an identity provider. If your app client lacks write access to a mapped
      * attribute, Amazon Cognito throws an error when it attempts to update the
      * attribute. For more information, see <a
-     * href="http://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-specifying-attribute-mapping.html">Specifying
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-specifying-attribute-mapping.html">Specifying
      * Identity Provider Attribute Mappings for Your User Pool</a>.</p>
      */
     inline bool WriteAttributesHasBeenSet() const { return m_writeAttributesHasBeenSet; }
@@ -272,7 +272,7 @@ namespace Model
      * an identity provider. If your app client lacks write access to a mapped
      * attribute, Amazon Cognito throws an error when it attempts to update the
      * attribute. For more information, see <a
-     * href="http://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-specifying-attribute-mapping.html">Specifying
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-specifying-attribute-mapping.html">Specifying
      * Identity Provider Attribute Mappings for Your User Pool</a>.</p>
      */
     inline void SetWriteAttributes(const Aws::Vector<Aws::String>& value) { m_writeAttributesHasBeenSet = true; m_writeAttributes = value; }
@@ -285,7 +285,7 @@ namespace Model
      * an identity provider. If your app client lacks write access to a mapped
      * attribute, Amazon Cognito throws an error when it attempts to update the
      * attribute. For more information, see <a
-     * href="http://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-specifying-attribute-mapping.html">Specifying
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-specifying-attribute-mapping.html">Specifying
      * Identity Provider Attribute Mappings for Your User Pool</a>.</p>
      */
     inline void SetWriteAttributes(Aws::Vector<Aws::String>&& value) { m_writeAttributesHasBeenSet = true; m_writeAttributes = std::move(value); }
@@ -298,7 +298,7 @@ namespace Model
      * an identity provider. If your app client lacks write access to a mapped
      * attribute, Amazon Cognito throws an error when it attempts to update the
      * attribute. For more information, see <a
-     * href="http://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-specifying-attribute-mapping.html">Specifying
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-specifying-attribute-mapping.html">Specifying
      * Identity Provider Attribute Mappings for Your User Pool</a>.</p>
      */
     inline CreateUserPoolClientRequest& WithWriteAttributes(const Aws::Vector<Aws::String>& value) { SetWriteAttributes(value); return *this;}
@@ -311,7 +311,7 @@ namespace Model
      * an identity provider. If your app client lacks write access to a mapped
      * attribute, Amazon Cognito throws an error when it attempts to update the
      * attribute. For more information, see <a
-     * href="http://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-specifying-attribute-mapping.html">Specifying
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-specifying-attribute-mapping.html">Specifying
      * Identity Provider Attribute Mappings for Your User Pool</a>.</p>
      */
     inline CreateUserPoolClientRequest& WithWriteAttributes(Aws::Vector<Aws::String>&& value) { SetWriteAttributes(std::move(value)); return *this;}
@@ -324,7 +324,7 @@ namespace Model
      * an identity provider. If your app client lacks write access to a mapped
      * attribute, Amazon Cognito throws an error when it attempts to update the
      * attribute. For more information, see <a
-     * href="http://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-specifying-attribute-mapping.html">Specifying
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-specifying-attribute-mapping.html">Specifying
      * Identity Provider Attribute Mappings for Your User Pool</a>.</p>
      */
     inline CreateUserPoolClientRequest& AddWriteAttributes(const Aws::String& value) { m_writeAttributesHasBeenSet = true; m_writeAttributes.push_back(value); return *this; }
@@ -337,7 +337,7 @@ namespace Model
      * an identity provider. If your app client lacks write access to a mapped
      * attribute, Amazon Cognito throws an error when it attempts to update the
      * attribute. For more information, see <a
-     * href="http://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-specifying-attribute-mapping.html">Specifying
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-specifying-attribute-mapping.html">Specifying
      * Identity Provider Attribute Mappings for Your User Pool</a>.</p>
      */
     inline CreateUserPoolClientRequest& AddWriteAttributes(Aws::String&& value) { m_writeAttributesHasBeenSet = true; m_writeAttributes.push_back(std::move(value)); return *this; }
@@ -350,7 +350,7 @@ namespace Model
      * an identity provider. If your app client lacks write access to a mapped
      * attribute, Amazon Cognito throws an error when it attempts to update the
      * attribute. For more information, see <a
-     * href="http://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-specifying-attribute-mapping.html">Specifying
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-specifying-attribute-mapping.html">Specifying
      * Identity Provider Attribute Mappings for Your User Pool</a>.</p>
      */
     inline CreateUserPoolClientRequest& AddWriteAttributes(const char* value) { m_writeAttributesHasBeenSet = true; m_writeAttributes.push_back(value); return *this; }
