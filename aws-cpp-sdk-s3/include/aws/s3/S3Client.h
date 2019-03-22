@@ -3055,6 +3055,7 @@ namespace Aws
         Aws::String m_configScheme;
         std::shared_ptr<Utils::Threading::Executor> m_executor;
         bool m_useVirtualAdressing;
+        bool m_multipartUploadSupported;
     };
 
   } // namespace S3

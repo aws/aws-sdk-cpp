@@ -21,6 +21,7 @@
 #include <aws/core/http/HttpResponse.h>
 #include <aws/core/http/HttpClientFactory.h>
 #include <aws/core/auth/AWSCredentialsProviderChain.h>
+#include <aws/core/platform/Environment.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
 #include <aws/core/utils/threading/Executor.h>
@@ -126,7 +127,7 @@ using namespace Aws::Utils::Xml;
 
 static const char* SERVICE_NAME = "s3";
 static const char* ALLOCATION_TAG = "S3Client";
-
+static const char* DISABLE_MULTIPART_SUPPORT_ENV_VAR = "AWS_DISABLE_MULTIPART";
 
 S3Client::S3Client(const Client::ClientConfiguration& clientConfiguration, Aws::Client::AWSAuthV4Signer::PayloadSigningPolicy signPayloads, bool useVirtualAdressing) :
   BASECLASS(clientConfiguration,
@@ -175,6 +176,7 @@ void S3Client::init(const ClientConfiguration& config)
   {
       OverrideEndpoint(config.endpointOverride);
   }
+  m_multipartUploadSupported = Aws::Environment::GetEnv(DISABLE_MULTIPART_SUPPORT_ENV_VAR).empty();
 }
 
 void S3Client::OverrideEndpoint(const Aws::String& endpoint)
@@ -3916,5 +3918,5 @@ Aws::String S3Client::ComputeEndpointString() const
 
 bool S3Client::MultipartUploadSupported() const
 {
-    return true;
+    return m_multipartUploadSupported;
 }
