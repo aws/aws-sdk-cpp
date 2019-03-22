@@ -29,22 +29,33 @@ namespace Model
 {
 
 ProjectSummary::ProjectSummary() : 
+    m_arnHasBeenSet(false),
     m_projectNameHasBeenSet(false),
     m_createdDateHasBeenSet(false),
-    m_updatedDateHasBeenSet(false)
+    m_updatedDateHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
 ProjectSummary::ProjectSummary(JsonView jsonValue) : 
+    m_arnHasBeenSet(false),
     m_projectNameHasBeenSet(false),
     m_createdDateHasBeenSet(false),
-    m_updatedDateHasBeenSet(false)
+    m_updatedDateHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
 ProjectSummary& ProjectSummary::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("arn"))
+  {
+    m_arn = jsonValue.GetString("arn");
+
+    m_arnHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("projectName"))
   {
     m_projectName = jsonValue.GetString("projectName");
@@ -66,12 +77,28 @@ ProjectSummary& ProjectSummary::operator =(JsonView jsonValue)
     m_updatedDateHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("tags"))
+  {
+    Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("tags").GetAllObjects();
+    for(auto& tagsItem : tagsJsonMap)
+    {
+      m_tags[tagsItem.first] = tagsItem.second.AsString();
+    }
+    m_tagsHasBeenSet = true;
+  }
+
   return *this;
 }
 
 JsonValue ProjectSummary::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_arnHasBeenSet)
+  {
+   payload.WithString("arn", m_arn);
+
+  }
 
   if(m_projectNameHasBeenSet)
   {
@@ -87,6 +114,17 @@ JsonValue ProjectSummary::Jsonize() const
   if(m_updatedDateHasBeenSet)
   {
    payload.WithDouble("updatedDate", m_updatedDate.SecondsWithMSPrecision());
+  }
+
+  if(m_tagsHasBeenSet)
+  {
+   JsonValue tagsJsonMap;
+   for(auto& tagsItem : m_tags)
+   {
+     tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
+   }
+   payload.WithObject("tags", std::move(tagsJsonMap));
+
   }
 
   return payload;

@@ -25,7 +25,8 @@ using namespace Aws::Utils;
 CreateProjectRequest::CreateProjectRequest() : 
     m_projectNameHasBeenSet(false),
     m_descriptionHasBeenSet(false),
-    m_placementTemplateHasBeenSet(false)
+    m_placementTemplateHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -48,6 +49,17 @@ Aws::String CreateProjectRequest::SerializePayload() const
   if(m_placementTemplateHasBeenSet)
   {
    payload.WithObject("placementTemplate", m_placementTemplate.Jsonize());
+
+  }
+
+  if(m_tagsHasBeenSet)
+  {
+   JsonValue tagsJsonMap;
+   for(auto& tagsItem : m_tags)
+   {
+     tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
+   }
+   payload.WithObject("tags", std::move(tagsJsonMap));
 
   }
 

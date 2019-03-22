@@ -32,6 +32,9 @@
 #include <aws/iot1click-projects/model/GetDevicesInPlacementResult.h>
 #include <aws/iot1click-projects/model/ListPlacementsResult.h>
 #include <aws/iot1click-projects/model/ListProjectsResult.h>
+#include <aws/iot1click-projects/model/ListTagsForResourceResult.h>
+#include <aws/iot1click-projects/model/TagResourceResult.h>
+#include <aws/iot1click-projects/model/UntagResourceResult.h>
 #include <aws/iot1click-projects/model/UpdatePlacementResult.h>
 #include <aws/iot1click-projects/model/UpdateProjectResult.h>
 #include <aws/core/client/AsyncCallerContext.h>
@@ -85,6 +88,9 @@ namespace Model
         class GetDevicesInPlacementRequest;
         class ListPlacementsRequest;
         class ListProjectsRequest;
+        class ListTagsForResourceRequest;
+        class TagResourceRequest;
+        class UntagResourceRequest;
         class UpdatePlacementRequest;
         class UpdateProjectRequest;
 
@@ -99,6 +105,9 @@ namespace Model
         typedef Aws::Utils::Outcome<GetDevicesInPlacementResult, Aws::Client::AWSError<IoT1ClickProjectsErrors>> GetDevicesInPlacementOutcome;
         typedef Aws::Utils::Outcome<ListPlacementsResult, Aws::Client::AWSError<IoT1ClickProjectsErrors>> ListPlacementsOutcome;
         typedef Aws::Utils::Outcome<ListProjectsResult, Aws::Client::AWSError<IoT1ClickProjectsErrors>> ListProjectsOutcome;
+        typedef Aws::Utils::Outcome<ListTagsForResourceResult, Aws::Client::AWSError<IoT1ClickProjectsErrors>> ListTagsForResourceOutcome;
+        typedef Aws::Utils::Outcome<TagResourceResult, Aws::Client::AWSError<IoT1ClickProjectsErrors>> TagResourceOutcome;
+        typedef Aws::Utils::Outcome<UntagResourceResult, Aws::Client::AWSError<IoT1ClickProjectsErrors>> UntagResourceOutcome;
         typedef Aws::Utils::Outcome<UpdatePlacementResult, Aws::Client::AWSError<IoT1ClickProjectsErrors>> UpdatePlacementOutcome;
         typedef Aws::Utils::Outcome<UpdateProjectResult, Aws::Client::AWSError<IoT1ClickProjectsErrors>> UpdateProjectOutcome;
 
@@ -113,6 +122,9 @@ namespace Model
         typedef std::future<GetDevicesInPlacementOutcome> GetDevicesInPlacementOutcomeCallable;
         typedef std::future<ListPlacementsOutcome> ListPlacementsOutcomeCallable;
         typedef std::future<ListProjectsOutcome> ListProjectsOutcomeCallable;
+        typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
+        typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
+        typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
         typedef std::future<UpdatePlacementOutcome> UpdatePlacementOutcomeCallable;
         typedef std::future<UpdateProjectOutcome> UpdateProjectOutcomeCallable;
 } // namespace Model
@@ -130,11 +142,14 @@ namespace Model
     typedef std::function<void(const IoT1ClickProjectsClient*, const Model::GetDevicesInPlacementRequest&, const Model::GetDevicesInPlacementOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetDevicesInPlacementResponseReceivedHandler;
     typedef std::function<void(const IoT1ClickProjectsClient*, const Model::ListPlacementsRequest&, const Model::ListPlacementsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListPlacementsResponseReceivedHandler;
     typedef std::function<void(const IoT1ClickProjectsClient*, const Model::ListProjectsRequest&, const Model::ListProjectsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListProjectsResponseReceivedHandler;
+    typedef std::function<void(const IoT1ClickProjectsClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
+    typedef std::function<void(const IoT1ClickProjectsClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
+    typedef std::function<void(const IoT1ClickProjectsClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
     typedef std::function<void(const IoT1ClickProjectsClient*, const Model::UpdatePlacementRequest&, const Model::UpdatePlacementOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdatePlacementResponseReceivedHandler;
     typedef std::function<void(const IoT1ClickProjectsClient*, const Model::UpdateProjectRequest&, const Model::UpdateProjectOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateProjectResponseReceivedHandler;
 
   /**
-   * <p>The AWS IoT 1-Click Project API Reference</p>
+   * <p>The AWS IoT 1-Click Projects API Reference</p>
    */
   class AWS_IOT1CLICKPROJECTS_API IoT1ClickProjectsClient : public Aws::Client::AWSJsonClient
   {
@@ -465,6 +480,96 @@ namespace Model
         virtual void ListProjectsAsync(const Model::ListProjectsRequest& request, const ListProjectsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Lists the tags (metadata key/value pairs) which you have assigned to the
+         * resource.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iot1click-projects-2018-05-14/ListTagsForResource">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListTagsForResourceOutcome ListTagsForResource(const Model::ListTagsForResourceRequest& request) const;
+
+        /**
+         * <p>Lists the tags (metadata key/value pairs) which you have assigned to the
+         * resource.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iot1click-projects-2018-05-14/ListTagsForResource">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListTagsForResourceOutcomeCallable ListTagsForResourceCallable(const Model::ListTagsForResourceRequest& request) const;
+
+        /**
+         * <p>Lists the tags (metadata key/value pairs) which you have assigned to the
+         * resource.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iot1click-projects-2018-05-14/ListTagsForResource">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListTagsForResourceAsync(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Creates or modifies tags for a resource. Tags are key/value pairs (metadata)
+         * that can be used to manage a resource. For more information, see <a
+         * href="https://aws.amazon.com/answers/account-management/aws-tagging-strategies/">AWS
+         * Tagging Strategies</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iot1click-projects-2018-05-14/TagResource">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::TagResourceOutcome TagResource(const Model::TagResourceRequest& request) const;
+
+        /**
+         * <p>Creates or modifies tags for a resource. Tags are key/value pairs (metadata)
+         * that can be used to manage a resource. For more information, see <a
+         * href="https://aws.amazon.com/answers/account-management/aws-tagging-strategies/">AWS
+         * Tagging Strategies</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iot1click-projects-2018-05-14/TagResource">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::TagResourceOutcomeCallable TagResourceCallable(const Model::TagResourceRequest& request) const;
+
+        /**
+         * <p>Creates or modifies tags for a resource. Tags are key/value pairs (metadata)
+         * that can be used to manage a resource. For more information, see <a
+         * href="https://aws.amazon.com/answers/account-management/aws-tagging-strategies/">AWS
+         * Tagging Strategies</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iot1click-projects-2018-05-14/TagResource">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void TagResourceAsync(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Removes one or more tags (metadata key/value pairs) from a
+         * resource.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iot1click-projects-2018-05-14/UntagResource">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UntagResourceOutcome UntagResource(const Model::UntagResourceRequest& request) const;
+
+        /**
+         * <p>Removes one or more tags (metadata key/value pairs) from a
+         * resource.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iot1click-projects-2018-05-14/UntagResource">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UntagResourceOutcomeCallable UntagResourceCallable(const Model::UntagResourceRequest& request) const;
+
+        /**
+         * <p>Removes one or more tags (metadata key/value pairs) from a
+         * resource.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iot1click-projects-2018-05-14/UntagResource">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UntagResourceAsync(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Updates a placement with the given attributes. To clear an attribute, pass an
          * empty value (i.e., "").</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot1click-projects-2018-05-14/UpdatePlacement">AWS
@@ -545,6 +650,9 @@ namespace Model
         void GetDevicesInPlacementAsyncHelper(const Model::GetDevicesInPlacementRequest& request, const GetDevicesInPlacementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListPlacementsAsyncHelper(const Model::ListPlacementsRequest& request, const ListPlacementsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListProjectsAsyncHelper(const Model::ListProjectsRequest& request, const ListProjectsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListTagsForResourceAsyncHelper(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void TagResourceAsyncHelper(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UntagResourceAsyncHelper(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdatePlacementAsyncHelper(const Model::UpdatePlacementRequest& request, const UpdatePlacementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateProjectAsyncHelper(const Model::UpdateProjectRequest& request, const UpdateProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
 

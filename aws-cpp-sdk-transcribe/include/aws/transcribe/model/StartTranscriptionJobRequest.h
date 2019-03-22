@@ -227,10 +227,12 @@ namespace Model
      * S3 bucket must have permissions that allow Amazon Transcribe to put files in the
      * bucket. For more information, see <a
      * href="https://docs.aws.amazon.com/transcribe/latest/dg/access-control-managing-permissions.html#auth-role-iam-user">Permissions
-     * Required for IAM User Roles</a>.</p> <p>If you don't set the
-     * <code>OutputBucketName</code>, Amazon Transcribe generates a pre-signed URL, a
-     * shareable URL that provides secure access to your transcription, and returns it
-     * in the <code>TranscriptFileUri</code> field. Use this URL to download the
+     * Required for IAM User Roles</a>.</p> <p>Amazon Transcribe uses the default
+     * Amazon S3 key for server-side encryption of transcripts that are placed in your
+     * S3 bucket. You can't specify your own encryption key.</p> <p>If you don't set
+     * the <code>OutputBucketName</code>, Amazon Transcribe generates a pre-signed URL,
+     * a shareable URL that provides secure access to your transcription, and returns
+     * it in the <code>TranscriptFileUri</code> field. Use this URL to download the
      * transcription.</p>
      */
     inline const Aws::String& GetOutputBucketName() const{ return m_outputBucketName; }
@@ -243,10 +245,12 @@ namespace Model
      * S3 bucket must have permissions that allow Amazon Transcribe to put files in the
      * bucket. For more information, see <a
      * href="https://docs.aws.amazon.com/transcribe/latest/dg/access-control-managing-permissions.html#auth-role-iam-user">Permissions
-     * Required for IAM User Roles</a>.</p> <p>If you don't set the
-     * <code>OutputBucketName</code>, Amazon Transcribe generates a pre-signed URL, a
-     * shareable URL that provides secure access to your transcription, and returns it
-     * in the <code>TranscriptFileUri</code> field. Use this URL to download the
+     * Required for IAM User Roles</a>.</p> <p>Amazon Transcribe uses the default
+     * Amazon S3 key for server-side encryption of transcripts that are placed in your
+     * S3 bucket. You can't specify your own encryption key.</p> <p>If you don't set
+     * the <code>OutputBucketName</code>, Amazon Transcribe generates a pre-signed URL,
+     * a shareable URL that provides secure access to your transcription, and returns
+     * it in the <code>TranscriptFileUri</code> field. Use this URL to download the
      * transcription.</p>
      */
     inline bool OutputBucketNameHasBeenSet() const { return m_outputBucketNameHasBeenSet; }
@@ -259,10 +263,12 @@ namespace Model
      * S3 bucket must have permissions that allow Amazon Transcribe to put files in the
      * bucket. For more information, see <a
      * href="https://docs.aws.amazon.com/transcribe/latest/dg/access-control-managing-permissions.html#auth-role-iam-user">Permissions
-     * Required for IAM User Roles</a>.</p> <p>If you don't set the
-     * <code>OutputBucketName</code>, Amazon Transcribe generates a pre-signed URL, a
-     * shareable URL that provides secure access to your transcription, and returns it
-     * in the <code>TranscriptFileUri</code> field. Use this URL to download the
+     * Required for IAM User Roles</a>.</p> <p>Amazon Transcribe uses the default
+     * Amazon S3 key for server-side encryption of transcripts that are placed in your
+     * S3 bucket. You can't specify your own encryption key.</p> <p>If you don't set
+     * the <code>OutputBucketName</code>, Amazon Transcribe generates a pre-signed URL,
+     * a shareable URL that provides secure access to your transcription, and returns
+     * it in the <code>TranscriptFileUri</code> field. Use this URL to download the
      * transcription.</p>
      */
     inline void SetOutputBucketName(const Aws::String& value) { m_outputBucketNameHasBeenSet = true; m_outputBucketName = value; }
@@ -275,10 +281,12 @@ namespace Model
      * S3 bucket must have permissions that allow Amazon Transcribe to put files in the
      * bucket. For more information, see <a
      * href="https://docs.aws.amazon.com/transcribe/latest/dg/access-control-managing-permissions.html#auth-role-iam-user">Permissions
-     * Required for IAM User Roles</a>.</p> <p>If you don't set the
-     * <code>OutputBucketName</code>, Amazon Transcribe generates a pre-signed URL, a
-     * shareable URL that provides secure access to your transcription, and returns it
-     * in the <code>TranscriptFileUri</code> field. Use this URL to download the
+     * Required for IAM User Roles</a>.</p> <p>Amazon Transcribe uses the default
+     * Amazon S3 key for server-side encryption of transcripts that are placed in your
+     * S3 bucket. You can't specify your own encryption key.</p> <p>If you don't set
+     * the <code>OutputBucketName</code>, Amazon Transcribe generates a pre-signed URL,
+     * a shareable URL that provides secure access to your transcription, and returns
+     * it in the <code>TranscriptFileUri</code> field. Use this URL to download the
      * transcription.</p>
      */
     inline void SetOutputBucketName(Aws::String&& value) { m_outputBucketNameHasBeenSet = true; m_outputBucketName = std::move(value); }
@@ -291,10 +299,12 @@ namespace Model
      * S3 bucket must have permissions that allow Amazon Transcribe to put files in the
      * bucket. For more information, see <a
      * href="https://docs.aws.amazon.com/transcribe/latest/dg/access-control-managing-permissions.html#auth-role-iam-user">Permissions
-     * Required for IAM User Roles</a>.</p> <p>If you don't set the
-     * <code>OutputBucketName</code>, Amazon Transcribe generates a pre-signed URL, a
-     * shareable URL that provides secure access to your transcription, and returns it
-     * in the <code>TranscriptFileUri</code> field. Use this URL to download the
+     * Required for IAM User Roles</a>.</p> <p>Amazon Transcribe uses the default
+     * Amazon S3 key for server-side encryption of transcripts that are placed in your
+     * S3 bucket. You can't specify your own encryption key.</p> <p>If you don't set
+     * the <code>OutputBucketName</code>, Amazon Transcribe generates a pre-signed URL,
+     * a shareable URL that provides secure access to your transcription, and returns
+     * it in the <code>TranscriptFileUri</code> field. Use this URL to download the
      * transcription.</p>
      */
     inline void SetOutputBucketName(const char* value) { m_outputBucketNameHasBeenSet = true; m_outputBucketName.assign(value); }
@@ -307,10 +317,12 @@ namespace Model
      * S3 bucket must have permissions that allow Amazon Transcribe to put files in the
      * bucket. For more information, see <a
      * href="https://docs.aws.amazon.com/transcribe/latest/dg/access-control-managing-permissions.html#auth-role-iam-user">Permissions
-     * Required for IAM User Roles</a>.</p> <p>If you don't set the
-     * <code>OutputBucketName</code>, Amazon Transcribe generates a pre-signed URL, a
-     * shareable URL that provides secure access to your transcription, and returns it
-     * in the <code>TranscriptFileUri</code> field. Use this URL to download the
+     * Required for IAM User Roles</a>.</p> <p>Amazon Transcribe uses the default
+     * Amazon S3 key for server-side encryption of transcripts that are placed in your
+     * S3 bucket. You can't specify your own encryption key.</p> <p>If you don't set
+     * the <code>OutputBucketName</code>, Amazon Transcribe generates a pre-signed URL,
+     * a shareable URL that provides secure access to your transcription, and returns
+     * it in the <code>TranscriptFileUri</code> field. Use this URL to download the
      * transcription.</p>
      */
     inline StartTranscriptionJobRequest& WithOutputBucketName(const Aws::String& value) { SetOutputBucketName(value); return *this;}
@@ -323,10 +335,12 @@ namespace Model
      * S3 bucket must have permissions that allow Amazon Transcribe to put files in the
      * bucket. For more information, see <a
      * href="https://docs.aws.amazon.com/transcribe/latest/dg/access-control-managing-permissions.html#auth-role-iam-user">Permissions
-     * Required for IAM User Roles</a>.</p> <p>If you don't set the
-     * <code>OutputBucketName</code>, Amazon Transcribe generates a pre-signed URL, a
-     * shareable URL that provides secure access to your transcription, and returns it
-     * in the <code>TranscriptFileUri</code> field. Use this URL to download the
+     * Required for IAM User Roles</a>.</p> <p>Amazon Transcribe uses the default
+     * Amazon S3 key for server-side encryption of transcripts that are placed in your
+     * S3 bucket. You can't specify your own encryption key.</p> <p>If you don't set
+     * the <code>OutputBucketName</code>, Amazon Transcribe generates a pre-signed URL,
+     * a shareable URL that provides secure access to your transcription, and returns
+     * it in the <code>TranscriptFileUri</code> field. Use this URL to download the
      * transcription.</p>
      */
     inline StartTranscriptionJobRequest& WithOutputBucketName(Aws::String&& value) { SetOutputBucketName(std::move(value)); return *this;}
@@ -339,10 +353,12 @@ namespace Model
      * S3 bucket must have permissions that allow Amazon Transcribe to put files in the
      * bucket. For more information, see <a
      * href="https://docs.aws.amazon.com/transcribe/latest/dg/access-control-managing-permissions.html#auth-role-iam-user">Permissions
-     * Required for IAM User Roles</a>.</p> <p>If you don't set the
-     * <code>OutputBucketName</code>, Amazon Transcribe generates a pre-signed URL, a
-     * shareable URL that provides secure access to your transcription, and returns it
-     * in the <code>TranscriptFileUri</code> field. Use this URL to download the
+     * Required for IAM User Roles</a>.</p> <p>Amazon Transcribe uses the default
+     * Amazon S3 key for server-side encryption of transcripts that are placed in your
+     * S3 bucket. You can't specify your own encryption key.</p> <p>If you don't set
+     * the <code>OutputBucketName</code>, Amazon Transcribe generates a pre-signed URL,
+     * a shareable URL that provides secure access to your transcription, and returns
+     * it in the <code>TranscriptFileUri</code> field. Use this URL to download the
      * transcription.</p>
      */
     inline StartTranscriptionJobRequest& WithOutputBucketName(const char* value) { SetOutputBucketName(value); return *this;}
