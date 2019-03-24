@@ -59,7 +59,6 @@ public:
 
     virtual Aws::Utils::Json::JsonValue Jsonize() const = 0;
 
-    enum class ValueType {STRING, NUMBER, BYTEBUFFER, STRING_SET, NUMBER_SET, BYTEBUFFER_SET, ATTRIBUTE_MAP, ATTRIBUTE_LIST, BOOL, NULLVALUE};
     virtual ValueType GetType() const = 0;
 };
 
