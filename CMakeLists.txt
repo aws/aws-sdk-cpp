@@ -70,9 +70,12 @@ option(ENABLE_ADDRESS_SANITIZER "Flags to enable/disable Address Sanitizer for g
 option(BYPASS_DEFAULT_PROXY "Bypass the machine's default proxy settings when using IXmlHttpRequest2" ON)
 option(BUILD_DEPS "Build third-party dependencies" ON)
 
-
 set(BUILD_ONLY "" CACHE STRING "A semi-colon delimited list of the projects to build")
 set(CPP_STANDARD "11" CACHE STRING "Flag to upgrade the C++ standard used. The default is 11. The minimum is 11.")
+
+if(NOT CMAKE_BUILD_TYPE)
+    set(CMAKE_BUILD_TYPE Release)
+endif()
 
 # backwards compatibility with old command line params
 if("${STATIC_LINKING}" STREQUAL "1")
@@ -106,6 +109,11 @@ endif()
 
 include(initialize_project_version)
 
+if (BUILD_SHARED_LIBS OR FORCE_SHARED_CRT)
+    set(STATIC_CRT OFF)
+else()
+    set(STATIC_CRT ON)
+endif()
 
 # build third-party targets
 if (BUILD_DEPS)
@@ -163,6 +171,7 @@ if (BUILD_DEPS)
             -DCMAKE_TOOLCHAIN_FILE=${CMAKE_TOOLCHAIN_FILE}
             -DCMAKE_BUILD_TYPE=${CMAKE_BUILD_TYPE}
             -DBUILD_SHARED_LIBS=${BUILD_SHARED_LIBS}
+            -DSTATIC_CRT=${STATIC_CRT}
             -DCMAKE_INSTALL_PREFIX=${AWS_DEPS_INSTALL_DIR}
             -DCMAKE_RUNTIME_OUTPUT_DIRECTORY=${CMAKE_CURRENT_BINARY_DIR}/bin
             ${CMAKE_CURRENT_SOURCE_DIR}/third-party

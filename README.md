@@ -52,10 +52,10 @@ You can use the following variations to create your build directory:
 * For Visual Studio:
 `msbuild ALL_BUILD.vcxproj`
 
-##### To create a **release build**, do one of the following:
+##### The default build type is Release, to create a **Debug build**, do one of the following:
 * For Auto Make build systems:
 ```
-cmake -DCMAKE_BUILD_TYPE=Release  <path-to-root-of-this-source-code>
+cmake -DCMAKE_BUILD_TYPE=Debug  <path-to-root-of-this-source-code>
 make
 sudo make install
 ```
