@@ -19,6 +19,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/mediaconvert/model/JobTemplateSettings.h>
+#include <aws/mediaconvert/model/StatusUpdateInterval.h>
 #include <aws/mediaconvert/model/Type.h>
 #include <utility>
 
@@ -53,32 +54,38 @@ namespace Model
 
 
     /**
-     * Acceleration settings for job execution.
+     * Accelerated transcoding is currently in private preview. Contact AWS for more
+     * information.
      */
     inline const AccelerationSettings& GetAccelerationSettings() const{ return m_accelerationSettings; }
 
     /**
-     * Acceleration settings for job execution.
+     * Accelerated transcoding is currently in private preview. Contact AWS for more
+     * information.
      */
     inline bool AccelerationSettingsHasBeenSet() const { return m_accelerationSettingsHasBeenSet; }
 
     /**
-     * Acceleration settings for job execution.
+     * Accelerated transcoding is currently in private preview. Contact AWS for more
+     * information.
      */
     inline void SetAccelerationSettings(const AccelerationSettings& value) { m_accelerationSettingsHasBeenSet = true; m_accelerationSettings = value; }
 
     /**
-     * Acceleration settings for job execution.
+     * Accelerated transcoding is currently in private preview. Contact AWS for more
+     * information.
      */
     inline void SetAccelerationSettings(AccelerationSettings&& value) { m_accelerationSettingsHasBeenSet = true; m_accelerationSettings = std::move(value); }
 
     /**
-     * Acceleration settings for job execution.
+     * Accelerated transcoding is currently in private preview. Contact AWS for more
+     * information.
      */
     inline JobTemplate& WithAccelerationSettings(const AccelerationSettings& value) { SetAccelerationSettings(value); return *this;}
 
     /**
-     * Acceleration settings for job execution.
+     * Accelerated transcoding is currently in private preview. Contact AWS for more
+     * information.
      */
     inline JobTemplate& WithAccelerationSettings(AccelerationSettings&& value) { SetAccelerationSettings(std::move(value)); return *this;}
 
@@ -366,22 +373,40 @@ namespace Model
     inline JobTemplate& WithQueue(const char* value) { SetQueue(value); return *this;}
 
 
-    
+    /**
+     * JobTemplateSettings contains all the transcode settings saved in the template
+     * that will be applied to jobs created from it.
+     */
     inline const JobTemplateSettings& GetSettings() const{ return m_settings; }
 
-    
+    /**
+     * JobTemplateSettings contains all the transcode settings saved in the template
+     * that will be applied to jobs created from it.
+     */
     inline bool SettingsHasBeenSet() const { return m_settingsHasBeenSet; }
 
-    
+    /**
+     * JobTemplateSettings contains all the transcode settings saved in the template
+     * that will be applied to jobs created from it.
+     */
     inline void SetSettings(const JobTemplateSettings& value) { m_settingsHasBeenSet = true; m_settings = value; }
 
-    
+    /**
+     * JobTemplateSettings contains all the transcode settings saved in the template
+     * that will be applied to jobs created from it.
+     */
     inline void SetSettings(JobTemplateSettings&& value) { m_settingsHasBeenSet = true; m_settings = std::move(value); }
 
-    
+    /**
+     * JobTemplateSettings contains all the transcode settings saved in the template
+     * that will be applied to jobs created from it.
+     */
     inline JobTemplate& WithSettings(const JobTemplateSettings& value) { SetSettings(value); return *this;}
 
-    
+    /**
+     * JobTemplateSettings contains all the transcode settings saved in the template
+     * that will be applied to jobs created from it.
+     */
     inline JobTemplate& WithSettings(JobTemplateSettings&& value) { SetSettings(std::move(value)); return *this;}
 
 
@@ -391,7 +416,7 @@ namespace Model
      * an update at this interval from the time the service begins processing your job
      * to the time it completes the transcode or encounters an error.
      */
-    inline long long GetStatusUpdateIntervalInSecs() const{ return m_statusUpdateIntervalInSecs; }
+    inline const StatusUpdateInterval& GetStatusUpdateInterval() const{ return m_statusUpdateInterval; }
 
     /**
      * Specify how often MediaConvert sends STATUS_UPDATE events to Amazon CloudWatch
@@ -399,7 +424,7 @@ namespace Model
      * an update at this interval from the time the service begins processing your job
      * to the time it completes the transcode or encounters an error.
      */
-    inline bool StatusUpdateIntervalInSecsHasBeenSet() const { return m_statusUpdateIntervalInSecsHasBeenSet; }
+    inline bool StatusUpdateIntervalHasBeenSet() const { return m_statusUpdateIntervalHasBeenSet; }
 
     /**
      * Specify how often MediaConvert sends STATUS_UPDATE events to Amazon CloudWatch
@@ -407,7 +432,7 @@ namespace Model
      * an update at this interval from the time the service begins processing your job
      * to the time it completes the transcode or encounters an error.
      */
-    inline void SetStatusUpdateIntervalInSecs(long long value) { m_statusUpdateIntervalInSecsHasBeenSet = true; m_statusUpdateIntervalInSecs = value; }
+    inline void SetStatusUpdateInterval(const StatusUpdateInterval& value) { m_statusUpdateIntervalHasBeenSet = true; m_statusUpdateInterval = value; }
 
     /**
      * Specify how often MediaConvert sends STATUS_UPDATE events to Amazon CloudWatch
@@ -415,7 +440,23 @@ namespace Model
      * an update at this interval from the time the service begins processing your job
      * to the time it completes the transcode or encounters an error.
      */
-    inline JobTemplate& WithStatusUpdateIntervalInSecs(long long value) { SetStatusUpdateIntervalInSecs(value); return *this;}
+    inline void SetStatusUpdateInterval(StatusUpdateInterval&& value) { m_statusUpdateIntervalHasBeenSet = true; m_statusUpdateInterval = std::move(value); }
+
+    /**
+     * Specify how often MediaConvert sends STATUS_UPDATE events to Amazon CloudWatch
+     * Events. Set the interval, in seconds, between status updates. MediaConvert sends
+     * an update at this interval from the time the service begins processing your job
+     * to the time it completes the transcode or encounters an error.
+     */
+    inline JobTemplate& WithStatusUpdateInterval(const StatusUpdateInterval& value) { SetStatusUpdateInterval(value); return *this;}
+
+    /**
+     * Specify how often MediaConvert sends STATUS_UPDATE events to Amazon CloudWatch
+     * Events. Set the interval, in seconds, between status updates. MediaConvert sends
+     * an update at this interval from the time the service begins processing your job
+     * to the time it completes the transcode or encounters an error.
+     */
+    inline JobTemplate& WithStatusUpdateInterval(StatusUpdateInterval&& value) { SetStatusUpdateInterval(std::move(value)); return *this;}
 
 
     /**
@@ -483,8 +524,8 @@ namespace Model
     JobTemplateSettings m_settings;
     bool m_settingsHasBeenSet;
 
-    long long m_statusUpdateIntervalInSecs;
-    bool m_statusUpdateIntervalInSecsHasBeenSet;
+    StatusUpdateInterval m_statusUpdateInterval;
+    bool m_statusUpdateIntervalHasBeenSet;
 
     Type m_type;
     bool m_typeHasBeenSet;

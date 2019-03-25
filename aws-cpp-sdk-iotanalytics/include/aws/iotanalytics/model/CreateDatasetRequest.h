@@ -19,6 +19,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/iotanalytics/model/RetentionPeriod.h>
+#include <aws/iotanalytics/model/VersioningConfiguration.h>
 #include <aws/iotanalytics/model/DatasetAction.h>
 #include <aws/iotanalytics/model/DatasetTrigger.h>
 #include <aws/iotanalytics/model/DatasetContentDeliveryRule.h>
@@ -245,46 +246,119 @@ namespace Model
 
 
     /**
-     * <p>[Optional] How long, in days, message data is kept for the data set. If not
-     * given or set to null, the latest version of the dataset content plus the latest
-     * succeeded version (if they are different) are retained for at most 90 days.</p>
+     * <p>[Optional] How long, in days, versions of data set contents are kept for the
+     * data set. If not specified or set to null, versions of data set contents are
+     * retained for at most 90 days. The number of versions of data set contents
+     * retained is determined by the <code>versioningConfiguration</code> parameter.
+     * (For more information, see
+     * https://docs.aws.amazon.com/iotanalytics/latest/userguide/getting-started.html#aws-iot-analytics-dataset-versions)</p>
      */
     inline const RetentionPeriod& GetRetentionPeriod() const{ return m_retentionPeriod; }
 
     /**
-     * <p>[Optional] How long, in days, message data is kept for the data set. If not
-     * given or set to null, the latest version of the dataset content plus the latest
-     * succeeded version (if they are different) are retained for at most 90 days.</p>
+     * <p>[Optional] How long, in days, versions of data set contents are kept for the
+     * data set. If not specified or set to null, versions of data set contents are
+     * retained for at most 90 days. The number of versions of data set contents
+     * retained is determined by the <code>versioningConfiguration</code> parameter.
+     * (For more information, see
+     * https://docs.aws.amazon.com/iotanalytics/latest/userguide/getting-started.html#aws-iot-analytics-dataset-versions)</p>
      */
     inline bool RetentionPeriodHasBeenSet() const { return m_retentionPeriodHasBeenSet; }
 
     /**
-     * <p>[Optional] How long, in days, message data is kept for the data set. If not
-     * given or set to null, the latest version of the dataset content plus the latest
-     * succeeded version (if they are different) are retained for at most 90 days.</p>
+     * <p>[Optional] How long, in days, versions of data set contents are kept for the
+     * data set. If not specified or set to null, versions of data set contents are
+     * retained for at most 90 days. The number of versions of data set contents
+     * retained is determined by the <code>versioningConfiguration</code> parameter.
+     * (For more information, see
+     * https://docs.aws.amazon.com/iotanalytics/latest/userguide/getting-started.html#aws-iot-analytics-dataset-versions)</p>
      */
     inline void SetRetentionPeriod(const RetentionPeriod& value) { m_retentionPeriodHasBeenSet = true; m_retentionPeriod = value; }
 
     /**
-     * <p>[Optional] How long, in days, message data is kept for the data set. If not
-     * given or set to null, the latest version of the dataset content plus the latest
-     * succeeded version (if they are different) are retained for at most 90 days.</p>
+     * <p>[Optional] How long, in days, versions of data set contents are kept for the
+     * data set. If not specified or set to null, versions of data set contents are
+     * retained for at most 90 days. The number of versions of data set contents
+     * retained is determined by the <code>versioningConfiguration</code> parameter.
+     * (For more information, see
+     * https://docs.aws.amazon.com/iotanalytics/latest/userguide/getting-started.html#aws-iot-analytics-dataset-versions)</p>
      */
     inline void SetRetentionPeriod(RetentionPeriod&& value) { m_retentionPeriodHasBeenSet = true; m_retentionPeriod = std::move(value); }
 
     /**
-     * <p>[Optional] How long, in days, message data is kept for the data set. If not
-     * given or set to null, the latest version of the dataset content plus the latest
-     * succeeded version (if they are different) are retained for at most 90 days.</p>
+     * <p>[Optional] How long, in days, versions of data set contents are kept for the
+     * data set. If not specified or set to null, versions of data set contents are
+     * retained for at most 90 days. The number of versions of data set contents
+     * retained is determined by the <code>versioningConfiguration</code> parameter.
+     * (For more information, see
+     * https://docs.aws.amazon.com/iotanalytics/latest/userguide/getting-started.html#aws-iot-analytics-dataset-versions)</p>
      */
     inline CreateDatasetRequest& WithRetentionPeriod(const RetentionPeriod& value) { SetRetentionPeriod(value); return *this;}
 
     /**
-     * <p>[Optional] How long, in days, message data is kept for the data set. If not
-     * given or set to null, the latest version of the dataset content plus the latest
-     * succeeded version (if they are different) are retained for at most 90 days.</p>
+     * <p>[Optional] How long, in days, versions of data set contents are kept for the
+     * data set. If not specified or set to null, versions of data set contents are
+     * retained for at most 90 days. The number of versions of data set contents
+     * retained is determined by the <code>versioningConfiguration</code> parameter.
+     * (For more information, see
+     * https://docs.aws.amazon.com/iotanalytics/latest/userguide/getting-started.html#aws-iot-analytics-dataset-versions)</p>
      */
     inline CreateDatasetRequest& WithRetentionPeriod(RetentionPeriod&& value) { SetRetentionPeriod(std::move(value)); return *this;}
+
+
+    /**
+     * <p>[Optional] How many versions of data set contents are kept. If not specified
+     * or set to null, only the latest version plus the latest succeeded version (if
+     * they are different) are kept for the time period specified by the
+     * "retentionPeriod" parameter. (For more information, see
+     * https://docs.aws.amazon.com/iotanalytics/latest/userguide/getting-started.html#aws-iot-analytics-dataset-versions)</p>
+     */
+    inline const VersioningConfiguration& GetVersioningConfiguration() const{ return m_versioningConfiguration; }
+
+    /**
+     * <p>[Optional] How many versions of data set contents are kept. If not specified
+     * or set to null, only the latest version plus the latest succeeded version (if
+     * they are different) are kept for the time period specified by the
+     * "retentionPeriod" parameter. (For more information, see
+     * https://docs.aws.amazon.com/iotanalytics/latest/userguide/getting-started.html#aws-iot-analytics-dataset-versions)</p>
+     */
+    inline bool VersioningConfigurationHasBeenSet() const { return m_versioningConfigurationHasBeenSet; }
+
+    /**
+     * <p>[Optional] How many versions of data set contents are kept. If not specified
+     * or set to null, only the latest version plus the latest succeeded version (if
+     * they are different) are kept for the time period specified by the
+     * "retentionPeriod" parameter. (For more information, see
+     * https://docs.aws.amazon.com/iotanalytics/latest/userguide/getting-started.html#aws-iot-analytics-dataset-versions)</p>
+     */
+    inline void SetVersioningConfiguration(const VersioningConfiguration& value) { m_versioningConfigurationHasBeenSet = true; m_versioningConfiguration = value; }
+
+    /**
+     * <p>[Optional] How many versions of data set contents are kept. If not specified
+     * or set to null, only the latest version plus the latest succeeded version (if
+     * they are different) are kept for the time period specified by the
+     * "retentionPeriod" parameter. (For more information, see
+     * https://docs.aws.amazon.com/iotanalytics/latest/userguide/getting-started.html#aws-iot-analytics-dataset-versions)</p>
+     */
+    inline void SetVersioningConfiguration(VersioningConfiguration&& value) { m_versioningConfigurationHasBeenSet = true; m_versioningConfiguration = std::move(value); }
+
+    /**
+     * <p>[Optional] How many versions of data set contents are kept. If not specified
+     * or set to null, only the latest version plus the latest succeeded version (if
+     * they are different) are kept for the time period specified by the
+     * "retentionPeriod" parameter. (For more information, see
+     * https://docs.aws.amazon.com/iotanalytics/latest/userguide/getting-started.html#aws-iot-analytics-dataset-versions)</p>
+     */
+    inline CreateDatasetRequest& WithVersioningConfiguration(const VersioningConfiguration& value) { SetVersioningConfiguration(value); return *this;}
+
+    /**
+     * <p>[Optional] How many versions of data set contents are kept. If not specified
+     * or set to null, only the latest version plus the latest succeeded version (if
+     * they are different) are kept for the time period specified by the
+     * "retentionPeriod" parameter. (For more information, see
+     * https://docs.aws.amazon.com/iotanalytics/latest/userguide/getting-started.html#aws-iot-analytics-dataset-versions)</p>
+     */
+    inline CreateDatasetRequest& WithVersioningConfiguration(VersioningConfiguration&& value) { SetVersioningConfiguration(std::move(value)); return *this;}
 
 
     /**
@@ -343,6 +417,9 @@ namespace Model
 
     RetentionPeriod m_retentionPeriod;
     bool m_retentionPeriodHasBeenSet;
+
+    VersioningConfiguration m_versioningConfiguration;
+    bool m_versioningConfigurationHasBeenSet;
 
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet;

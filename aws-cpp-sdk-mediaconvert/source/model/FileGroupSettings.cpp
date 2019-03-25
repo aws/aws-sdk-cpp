@@ -29,12 +29,14 @@ namespace Model
 {
 
 FileGroupSettings::FileGroupSettings() : 
-    m_destinationHasBeenSet(false)
+    m_destinationHasBeenSet(false),
+    m_destinationSettingsHasBeenSet(false)
 {
 }
 
 FileGroupSettings::FileGroupSettings(JsonView jsonValue) : 
-    m_destinationHasBeenSet(false)
+    m_destinationHasBeenSet(false),
+    m_destinationSettingsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -48,6 +50,13 @@ FileGroupSettings& FileGroupSettings::operator =(JsonView jsonValue)
     m_destinationHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("destinationSettings"))
+  {
+    m_destinationSettings = jsonValue.GetObject("destinationSettings");
+
+    m_destinationSettingsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -58,6 +67,12 @@ JsonValue FileGroupSettings::Jsonize() const
   if(m_destinationHasBeenSet)
   {
    payload.WithString("destination", m_destination);
+
+  }
+
+  if(m_destinationSettingsHasBeenSet)
+  {
+   payload.WithObject("destinationSettings", m_destinationSettings.Jsonize());
 
   }
 

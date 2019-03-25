@@ -68,22 +68,34 @@ namespace Model
     inline OutputDetail& WithDurationInMs(int value) { SetDurationInMs(value); return *this;}
 
 
-    
+    /**
+     * Contains details about the output's video stream
+     */
     inline const VideoDetail& GetVideoDetails() const{ return m_videoDetails; }
 
-    
+    /**
+     * Contains details about the output's video stream
+     */
     inline bool VideoDetailsHasBeenSet() const { return m_videoDetailsHasBeenSet; }
 
-    
+    /**
+     * Contains details about the output's video stream
+     */
     inline void SetVideoDetails(const VideoDetail& value) { m_videoDetailsHasBeenSet = true; m_videoDetails = value; }
 
-    
+    /**
+     * Contains details about the output's video stream
+     */
     inline void SetVideoDetails(VideoDetail&& value) { m_videoDetailsHasBeenSet = true; m_videoDetails = std::move(value); }
 
-    
+    /**
+     * Contains details about the output's video stream
+     */
     inline OutputDetail& WithVideoDetails(const VideoDetail& value) { SetVideoDetails(value); return *this;}
 
-    
+    /**
+     * Contains details about the output's video stream
+     */
     inline OutputDetail& WithVideoDetails(VideoDetail&& value) { SetVideoDetails(std::move(value)); return *this;}
 
   private:

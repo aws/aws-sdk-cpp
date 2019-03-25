@@ -99,22 +99,46 @@ namespace Model
     inline ListPresetsRequest& WithCategory(const char* value) { SetCategory(value); return *this;}
 
 
-    
+    /**
+     * Optional. When you request a list of presets, you can choose to list them
+     * alphabetically by NAME or chronologically by CREATION_DATE. If you don't
+     * specify, the service will list them by name.
+     */
     inline const PresetListBy& GetListBy() const{ return m_listBy; }
 
-    
+    /**
+     * Optional. When you request a list of presets, you can choose to list them
+     * alphabetically by NAME or chronologically by CREATION_DATE. If you don't
+     * specify, the service will list them by name.
+     */
     inline bool ListByHasBeenSet() const { return m_listByHasBeenSet; }
 
-    
+    /**
+     * Optional. When you request a list of presets, you can choose to list them
+     * alphabetically by NAME or chronologically by CREATION_DATE. If you don't
+     * specify, the service will list them by name.
+     */
     inline void SetListBy(const PresetListBy& value) { m_listByHasBeenSet = true; m_listBy = value; }
 
-    
+    /**
+     * Optional. When you request a list of presets, you can choose to list them
+     * alphabetically by NAME or chronologically by CREATION_DATE. If you don't
+     * specify, the service will list them by name.
+     */
     inline void SetListBy(PresetListBy&& value) { m_listByHasBeenSet = true; m_listBy = std::move(value); }
 
-    
+    /**
+     * Optional. When you request a list of presets, you can choose to list them
+     * alphabetically by NAME or chronologically by CREATION_DATE. If you don't
+     * specify, the service will list them by name.
+     */
     inline ListPresetsRequest& WithListBy(const PresetListBy& value) { SetListBy(value); return *this;}
 
-    
+    /**
+     * Optional. When you request a list of presets, you can choose to list them
+     * alphabetically by NAME or chronologically by CREATION_DATE. If you don't
+     * specify, the service will list them by name.
+     */
     inline ListPresetsRequest& WithListBy(PresetListBy&& value) { SetListBy(std::move(value)); return *this;}
 
 
@@ -188,22 +212,40 @@ namespace Model
     inline ListPresetsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
 
-    
+    /**
+     * When you request lists of resources, you can optionally specify whether they are
+     * sorted in ASCENDING or DESCENDING order. Default varies by resource.
+     */
     inline const Order& GetOrder() const{ return m_order; }
 
-    
+    /**
+     * When you request lists of resources, you can optionally specify whether they are
+     * sorted in ASCENDING or DESCENDING order. Default varies by resource.
+     */
     inline bool OrderHasBeenSet() const { return m_orderHasBeenSet; }
 
-    
+    /**
+     * When you request lists of resources, you can optionally specify whether they are
+     * sorted in ASCENDING or DESCENDING order. Default varies by resource.
+     */
     inline void SetOrder(const Order& value) { m_orderHasBeenSet = true; m_order = value; }
 
-    
+    /**
+     * When you request lists of resources, you can optionally specify whether they are
+     * sorted in ASCENDING or DESCENDING order. Default varies by resource.
+     */
     inline void SetOrder(Order&& value) { m_orderHasBeenSet = true; m_order = std::move(value); }
 
-    
+    /**
+     * When you request lists of resources, you can optionally specify whether they are
+     * sorted in ASCENDING or DESCENDING order. Default varies by resource.
+     */
     inline ListPresetsRequest& WithOrder(const Order& value) { SetOrder(value); return *this;}
 
-    
+    /**
+     * When you request lists of resources, you can optionally specify whether they are
+     * sorted in ASCENDING or DESCENDING order. Default varies by resource.
+     */
     inline ListPresetsRequest& WithOrder(Order&& value) { SetOrder(std::move(value)); return *this;}
 
   private:

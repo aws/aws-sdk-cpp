@@ -116,27 +116,27 @@ namespace Model
 
 
     /**
-     * <p>How long, in days, message data is kept for the data set.</p>
+     * <p>How long, in days, data set contents are kept for the data set.</p>
      */
     inline const RetentionPeriod& GetRetentionPeriod() const{ return m_retentionPeriod; }
 
     /**
-     * <p>How long, in days, message data is kept for the data set.</p>
+     * <p>How long, in days, data set contents are kept for the data set.</p>
      */
     inline void SetRetentionPeriod(const RetentionPeriod& value) { m_retentionPeriod = value; }
 
     /**
-     * <p>How long, in days, message data is kept for the data set.</p>
+     * <p>How long, in days, data set contents are kept for the data set.</p>
      */
     inline void SetRetentionPeriod(RetentionPeriod&& value) { m_retentionPeriod = std::move(value); }
 
     /**
-     * <p>How long, in days, message data is kept for the data set.</p>
+     * <p>How long, in days, data set contents are kept for the data set.</p>
      */
     inline CreateDatasetResult& WithRetentionPeriod(const RetentionPeriod& value) { SetRetentionPeriod(value); return *this;}
 
     /**
-     * <p>How long, in days, message data is kept for the data set.</p>
+     * <p>How long, in days, data set contents are kept for the data set.</p>
      */
     inline CreateDatasetResult& WithRetentionPeriod(RetentionPeriod&& value) { SetRetentionPeriod(std::move(value)); return *this;}
 

@@ -27,8 +27,11 @@ namespace Model
   {
     NOT_SET,
     ResourceNotFound,
+    EnvironmentSetupError,
+    EtagMismatch,
     FailureThresholdBreached,
     RobotDeploymentNoResponse,
+    RobotAgentConnectionTimeout,
     GreengrassDeploymentFailed,
     MissingRobotArchitecture,
     MissingRobotApplicationArchitecture,

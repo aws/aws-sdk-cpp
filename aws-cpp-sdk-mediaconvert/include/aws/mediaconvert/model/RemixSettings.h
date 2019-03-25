@@ -50,22 +50,52 @@ namespace Model
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 
-    
+    /**
+     * Channel mapping (ChannelMapping) contains the group of fields that hold the
+     * remixing value for each channel. Units are in dB. Acceptable values are within
+     * the range from -60 (mute) through 6. A setting of 0 passes the input channel
+     * unchanged to the output channel (no attenuation or amplification).
+     */
     inline const ChannelMapping& GetChannelMapping() const{ return m_channelMapping; }
 
-    
+    /**
+     * Channel mapping (ChannelMapping) contains the group of fields that hold the
+     * remixing value for each channel. Units are in dB. Acceptable values are within
+     * the range from -60 (mute) through 6. A setting of 0 passes the input channel
+     * unchanged to the output channel (no attenuation or amplification).
+     */
     inline bool ChannelMappingHasBeenSet() const { return m_channelMappingHasBeenSet; }
 
-    
+    /**
+     * Channel mapping (ChannelMapping) contains the group of fields that hold the
+     * remixing value for each channel. Units are in dB. Acceptable values are within
+     * the range from -60 (mute) through 6. A setting of 0 passes the input channel
+     * unchanged to the output channel (no attenuation or amplification).
+     */
     inline void SetChannelMapping(const ChannelMapping& value) { m_channelMappingHasBeenSet = true; m_channelMapping = value; }
 
-    
+    /**
+     * Channel mapping (ChannelMapping) contains the group of fields that hold the
+     * remixing value for each channel. Units are in dB. Acceptable values are within
+     * the range from -60 (mute) through 6. A setting of 0 passes the input channel
+     * unchanged to the output channel (no attenuation or amplification).
+     */
     inline void SetChannelMapping(ChannelMapping&& value) { m_channelMappingHasBeenSet = true; m_channelMapping = std::move(value); }
 
-    
+    /**
+     * Channel mapping (ChannelMapping) contains the group of fields that hold the
+     * remixing value for each channel. Units are in dB. Acceptable values are within
+     * the range from -60 (mute) through 6. A setting of 0 passes the input channel
+     * unchanged to the output channel (no attenuation or amplification).
+     */
     inline RemixSettings& WithChannelMapping(const ChannelMapping& value) { SetChannelMapping(value); return *this;}
 
-    
+    /**
+     * Channel mapping (ChannelMapping) contains the group of fields that hold the
+     * remixing value for each channel. Units are in dB. Acceptable values are within
+     * the range from -60 (mute) through 6. A setting of 0 passes the input channel
+     * unchanged to the output channel (no attenuation or amplification).
+     */
     inline RemixSettings& WithChannelMapping(ChannelMapping&& value) { SetChannelMapping(std::move(value)); return *this;}
 
 

@@ -31,8 +31,11 @@ namespace Aws
       {
 
         static const int ResourceNotFound_HASH = HashingUtils::HashString("ResourceNotFound");
+        static const int EnvironmentSetupError_HASH = HashingUtils::HashString("EnvironmentSetupError");
+        static const int EtagMismatch_HASH = HashingUtils::HashString("EtagMismatch");
         static const int FailureThresholdBreached_HASH = HashingUtils::HashString("FailureThresholdBreached");
         static const int RobotDeploymentNoResponse_HASH = HashingUtils::HashString("RobotDeploymentNoResponse");
+        static const int RobotAgentConnectionTimeout_HASH = HashingUtils::HashString("RobotAgentConnectionTimeout");
         static const int GreengrassDeploymentFailed_HASH = HashingUtils::HashString("GreengrassDeploymentFailed");
         static const int MissingRobotArchitecture_HASH = HashingUtils::HashString("MissingRobotArchitecture");
         static const int MissingRobotApplicationArchitecture_HASH = HashingUtils::HashString("MissingRobotApplicationArchitecture");
@@ -52,6 +55,14 @@ namespace Aws
           {
             return DeploymentJobErrorCode::ResourceNotFound;
           }
+          else if (hashCode == EnvironmentSetupError_HASH)
+          {
+            return DeploymentJobErrorCode::EnvironmentSetupError;
+          }
+          else if (hashCode == EtagMismatch_HASH)
+          {
+            return DeploymentJobErrorCode::EtagMismatch;
+          }
           else if (hashCode == FailureThresholdBreached_HASH)
           {
             return DeploymentJobErrorCode::FailureThresholdBreached;
@@ -59,6 +70,10 @@ namespace Aws
           else if (hashCode == RobotDeploymentNoResponse_HASH)
           {
             return DeploymentJobErrorCode::RobotDeploymentNoResponse;
+          }
+          else if (hashCode == RobotAgentConnectionTimeout_HASH)
+          {
+            return DeploymentJobErrorCode::RobotAgentConnectionTimeout;
           }
           else if (hashCode == GreengrassDeploymentFailed_HASH)
           {
@@ -116,10 +131,16 @@ namespace Aws
           {
           case DeploymentJobErrorCode::ResourceNotFound:
             return "ResourceNotFound";
+          case DeploymentJobErrorCode::EnvironmentSetupError:
+            return "EnvironmentSetupError";
+          case DeploymentJobErrorCode::EtagMismatch:
+            return "EtagMismatch";
           case DeploymentJobErrorCode::FailureThresholdBreached:
             return "FailureThresholdBreached";
           case DeploymentJobErrorCode::RobotDeploymentNoResponse:
             return "RobotDeploymentNoResponse";
+          case DeploymentJobErrorCode::RobotAgentConnectionTimeout:
+            return "RobotAgentConnectionTimeout";
           case DeploymentJobErrorCode::GreengrassDeploymentFailed:
             return "GreengrassDeploymentFailed";
           case DeploymentJobErrorCode::MissingRobotArchitecture:

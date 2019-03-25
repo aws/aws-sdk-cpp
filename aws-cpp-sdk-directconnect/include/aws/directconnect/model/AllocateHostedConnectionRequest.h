@@ -127,50 +127,66 @@ namespace Model
 
 
     /**
-     * <p>The bandwidth of the hosted connection, in Mbps. The possible values are
-     * 50Mbps, 100Mbps, 200Mbps, 300Mbps, 400Mbps, and 500Mbps.</p>
+     * <p>The bandwidth of the connection. The possible values are 50Mbps, 100Mbps,
+     * 200Mbps, 300Mbps, 400Mbps, 500Mbps, 1Gbps, 2Gbps, 5Gbps, and 10Gbps. Note that
+     * only those AWS Direct Connect Partners who have met specific requirements are
+     * allowed to create a 1Gbps, 2Gbps, 5Gbps or 10Gbps hosted connection. </p>
      */
     inline const Aws::String& GetBandwidth() const{ return m_bandwidth; }
 
     /**
-     * <p>The bandwidth of the hosted connection, in Mbps. The possible values are
-     * 50Mbps, 100Mbps, 200Mbps, 300Mbps, 400Mbps, and 500Mbps.</p>
+     * <p>The bandwidth of the connection. The possible values are 50Mbps, 100Mbps,
+     * 200Mbps, 300Mbps, 400Mbps, 500Mbps, 1Gbps, 2Gbps, 5Gbps, and 10Gbps. Note that
+     * only those AWS Direct Connect Partners who have met specific requirements are
+     * allowed to create a 1Gbps, 2Gbps, 5Gbps or 10Gbps hosted connection. </p>
      */
     inline bool BandwidthHasBeenSet() const { return m_bandwidthHasBeenSet; }
 
     /**
-     * <p>The bandwidth of the hosted connection, in Mbps. The possible values are
-     * 50Mbps, 100Mbps, 200Mbps, 300Mbps, 400Mbps, and 500Mbps.</p>
+     * <p>The bandwidth of the connection. The possible values are 50Mbps, 100Mbps,
+     * 200Mbps, 300Mbps, 400Mbps, 500Mbps, 1Gbps, 2Gbps, 5Gbps, and 10Gbps. Note that
+     * only those AWS Direct Connect Partners who have met specific requirements are
+     * allowed to create a 1Gbps, 2Gbps, 5Gbps or 10Gbps hosted connection. </p>
      */
     inline void SetBandwidth(const Aws::String& value) { m_bandwidthHasBeenSet = true; m_bandwidth = value; }
 
     /**
-     * <p>The bandwidth of the hosted connection, in Mbps. The possible values are
-     * 50Mbps, 100Mbps, 200Mbps, 300Mbps, 400Mbps, and 500Mbps.</p>
+     * <p>The bandwidth of the connection. The possible values are 50Mbps, 100Mbps,
+     * 200Mbps, 300Mbps, 400Mbps, 500Mbps, 1Gbps, 2Gbps, 5Gbps, and 10Gbps. Note that
+     * only those AWS Direct Connect Partners who have met specific requirements are
+     * allowed to create a 1Gbps, 2Gbps, 5Gbps or 10Gbps hosted connection. </p>
      */
     inline void SetBandwidth(Aws::String&& value) { m_bandwidthHasBeenSet = true; m_bandwidth = std::move(value); }
 
     /**
-     * <p>The bandwidth of the hosted connection, in Mbps. The possible values are
-     * 50Mbps, 100Mbps, 200Mbps, 300Mbps, 400Mbps, and 500Mbps.</p>
+     * <p>The bandwidth of the connection. The possible values are 50Mbps, 100Mbps,
+     * 200Mbps, 300Mbps, 400Mbps, 500Mbps, 1Gbps, 2Gbps, 5Gbps, and 10Gbps. Note that
+     * only those AWS Direct Connect Partners who have met specific requirements are
+     * allowed to create a 1Gbps, 2Gbps, 5Gbps or 10Gbps hosted connection. </p>
      */
     inline void SetBandwidth(const char* value) { m_bandwidthHasBeenSet = true; m_bandwidth.assign(value); }
 
     /**
-     * <p>The bandwidth of the hosted connection, in Mbps. The possible values are
-     * 50Mbps, 100Mbps, 200Mbps, 300Mbps, 400Mbps, and 500Mbps.</p>
+     * <p>The bandwidth of the connection. The possible values are 50Mbps, 100Mbps,
+     * 200Mbps, 300Mbps, 400Mbps, 500Mbps, 1Gbps, 2Gbps, 5Gbps, and 10Gbps. Note that
+     * only those AWS Direct Connect Partners who have met specific requirements are
+     * allowed to create a 1Gbps, 2Gbps, 5Gbps or 10Gbps hosted connection. </p>
      */
     inline AllocateHostedConnectionRequest& WithBandwidth(const Aws::String& value) { SetBandwidth(value); return *this;}
 
     /**
-     * <p>The bandwidth of the hosted connection, in Mbps. The possible values are
-     * 50Mbps, 100Mbps, 200Mbps, 300Mbps, 400Mbps, and 500Mbps.</p>
+     * <p>The bandwidth of the connection. The possible values are 50Mbps, 100Mbps,
+     * 200Mbps, 300Mbps, 400Mbps, 500Mbps, 1Gbps, 2Gbps, 5Gbps, and 10Gbps. Note that
+     * only those AWS Direct Connect Partners who have met specific requirements are
+     * allowed to create a 1Gbps, 2Gbps, 5Gbps or 10Gbps hosted connection. </p>
      */
     inline AllocateHostedConnectionRequest& WithBandwidth(Aws::String&& value) { SetBandwidth(std::move(value)); return *this;}
 
     /**
-     * <p>The bandwidth of the hosted connection, in Mbps. The possible values are
-     * 50Mbps, 100Mbps, 200Mbps, 300Mbps, 400Mbps, and 500Mbps.</p>
+     * <p>The bandwidth of the connection. The possible values are 50Mbps, 100Mbps,
+     * 200Mbps, 300Mbps, 400Mbps, 500Mbps, 1Gbps, 2Gbps, 5Gbps, and 10Gbps. Note that
+     * only those AWS Direct Connect Partners who have met specific requirements are
+     * allowed to create a 1Gbps, 2Gbps, 5Gbps or 10Gbps hosted connection. </p>
      */
     inline AllocateHostedConnectionRequest& WithBandwidth(const char* value) { SetBandwidth(value); return *this;}
 

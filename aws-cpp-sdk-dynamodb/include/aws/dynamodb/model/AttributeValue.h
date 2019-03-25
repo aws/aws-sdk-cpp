@@ -29,6 +29,8 @@ namespace Model
 {
 class AttributeValueValue;
 
+enum class ValueType {STRING, NUMBER, BYTEBUFFER, STRING_SET, NUMBER_SET, BYTEBUFFER_SET, ATTRIBUTE_MAP, ATTRIBUTE_LIST, BOOL, NULLVALUE};
+
 /// http://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_AttributeValue.html
 class AWS_DYNAMODB_API AttributeValue
 {
@@ -158,6 +160,7 @@ public:
 
     Aws::String SerializeAttribute() const;
     Aws::Utils::Json::JsonValue Jsonize() const;
+    ValueType GetType() const;
 
 private:
     std::shared_ptr<AttributeValueValue> m_value;

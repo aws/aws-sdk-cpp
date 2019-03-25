@@ -38,6 +38,7 @@
 #include <aws/fms/model/GetComplianceDetailRequest.h>
 #include <aws/fms/model/GetNotificationChannelRequest.h>
 #include <aws/fms/model/GetPolicyRequest.h>
+#include <aws/fms/model/GetProtectionStatusRequest.h>
 #include <aws/fms/model/ListComplianceStatusRequest.h>
 #include <aws/fms/model/ListMemberAccountsRequest.h>
 #include <aws/fms/model/ListPoliciesRequest.h>
@@ -393,6 +394,41 @@ void FMSClient::GetPolicyAsync(const GetPolicyRequest& request, const GetPolicyR
 void FMSClient::GetPolicyAsyncHelper(const GetPolicyRequest& request, const GetPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, GetPolicy(request), context);
+}
+
+GetProtectionStatusOutcome FMSClient::GetProtectionStatus(const GetProtectionStatusRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return GetProtectionStatusOutcome(GetProtectionStatusResult(outcome.GetResult()));
+  }
+  else
+  {
+    return GetProtectionStatusOutcome(outcome.GetError());
+  }
+}
+
+GetProtectionStatusOutcomeCallable FMSClient::GetProtectionStatusCallable(const GetProtectionStatusRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetProtectionStatusOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetProtectionStatus(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void FMSClient::GetProtectionStatusAsync(const GetProtectionStatusRequest& request, const GetProtectionStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetProtectionStatusAsyncHelper( request, handler, context ); } );
+}
+
+void FMSClient::GetProtectionStatusAsyncHelper(const GetProtectionStatusRequest& request, const GetProtectionStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetProtectionStatus(request), context);
 }
 
 ListComplianceStatusOutcome FMSClient::ListComplianceStatus(const ListComplianceStatusRequest& request) const

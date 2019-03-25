@@ -156,22 +156,34 @@ namespace Model
     inline OutputGroup& WithName(const char* value) { SetName(value); return *this;}
 
 
-    
+    /**
+     * Output Group settings, including type
+     */
     inline const OutputGroupSettings& GetOutputGroupSettings() const{ return m_outputGroupSettings; }
 
-    
+    /**
+     * Output Group settings, including type
+     */
     inline bool OutputGroupSettingsHasBeenSet() const { return m_outputGroupSettingsHasBeenSet; }
 
-    
+    /**
+     * Output Group settings, including type
+     */
     inline void SetOutputGroupSettings(const OutputGroupSettings& value) { m_outputGroupSettingsHasBeenSet = true; m_outputGroupSettings = value; }
 
-    
+    /**
+     * Output Group settings, including type
+     */
     inline void SetOutputGroupSettings(OutputGroupSettings&& value) { m_outputGroupSettingsHasBeenSet = true; m_outputGroupSettings = std::move(value); }
 
-    
+    /**
+     * Output Group settings, including type
+     */
     inline OutputGroup& WithOutputGroupSettings(const OutputGroupSettings& value) { SetOutputGroupSettings(value); return *this;}
 
-    
+    /**
+     * Output Group settings, including type
+     */
     inline OutputGroup& WithOutputGroupSettings(OutputGroupSettings&& value) { SetOutputGroupSettings(std::move(value)); return *this;}
 
 

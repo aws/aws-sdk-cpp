@@ -33,6 +33,7 @@ namespace Aws
         static const int WEB_ACL_MISSING_RULE_GROUP_HASH = HashingUtils::HashString("WEB_ACL_MISSING_RULE_GROUP");
         static const int RESOURCE_MISSING_WEB_ACL_HASH = HashingUtils::HashString("RESOURCE_MISSING_WEB_ACL");
         static const int RESOURCE_INCORRECT_WEB_ACL_HASH = HashingUtils::HashString("RESOURCE_INCORRECT_WEB_ACL");
+        static const int RESOURCE_MISSING_SHIELD_PROTECTION_HASH = HashingUtils::HashString("RESOURCE_MISSING_SHIELD_PROTECTION");
 
 
         ViolationReason GetViolationReasonForName(const Aws::String& name)
@@ -49,6 +50,10 @@ namespace Aws
           else if (hashCode == RESOURCE_INCORRECT_WEB_ACL_HASH)
           {
             return ViolationReason::RESOURCE_INCORRECT_WEB_ACL;
+          }
+          else if (hashCode == RESOURCE_MISSING_SHIELD_PROTECTION_HASH)
+          {
+            return ViolationReason::RESOURCE_MISSING_SHIELD_PROTECTION;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -70,6 +75,8 @@ namespace Aws
             return "RESOURCE_MISSING_WEB_ACL";
           case ViolationReason::RESOURCE_INCORRECT_WEB_ACL:
             return "RESOURCE_INCORRECT_WEB_ACL";
+          case ViolationReason::RESOURCE_MISSING_SHIELD_PROTECTION:
+            return "RESOURCE_MISSING_SHIELD_PROTECTION";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

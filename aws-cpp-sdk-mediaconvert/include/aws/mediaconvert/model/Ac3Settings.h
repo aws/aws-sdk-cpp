@@ -73,41 +73,71 @@ namespace Model
     inline Ac3Settings& WithBitrate(int value) { SetBitrate(value); return *this;}
 
 
-    
+    /**
+     * Specifies the "Bitstream Mode" (bsmod) for the emitted AC-3 stream. See ATSC
+     * A/52-2012 for background on these values.
+     */
     inline const Ac3BitstreamMode& GetBitstreamMode() const{ return m_bitstreamMode; }
 
-    
+    /**
+     * Specifies the "Bitstream Mode" (bsmod) for the emitted AC-3 stream. See ATSC
+     * A/52-2012 for background on these values.
+     */
     inline bool BitstreamModeHasBeenSet() const { return m_bitstreamModeHasBeenSet; }
 
-    
+    /**
+     * Specifies the "Bitstream Mode" (bsmod) for the emitted AC-3 stream. See ATSC
+     * A/52-2012 for background on these values.
+     */
     inline void SetBitstreamMode(const Ac3BitstreamMode& value) { m_bitstreamModeHasBeenSet = true; m_bitstreamMode = value; }
 
-    
+    /**
+     * Specifies the "Bitstream Mode" (bsmod) for the emitted AC-3 stream. See ATSC
+     * A/52-2012 for background on these values.
+     */
     inline void SetBitstreamMode(Ac3BitstreamMode&& value) { m_bitstreamModeHasBeenSet = true; m_bitstreamMode = std::move(value); }
 
-    
+    /**
+     * Specifies the "Bitstream Mode" (bsmod) for the emitted AC-3 stream. See ATSC
+     * A/52-2012 for background on these values.
+     */
     inline Ac3Settings& WithBitstreamMode(const Ac3BitstreamMode& value) { SetBitstreamMode(value); return *this;}
 
-    
+    /**
+     * Specifies the "Bitstream Mode" (bsmod) for the emitted AC-3 stream. See ATSC
+     * A/52-2012 for background on these values.
+     */
     inline Ac3Settings& WithBitstreamMode(Ac3BitstreamMode&& value) { SetBitstreamMode(std::move(value)); return *this;}
 
 
-    
+    /**
+     * Dolby Digital coding mode. Determines number of channels.
+     */
     inline const Ac3CodingMode& GetCodingMode() const{ return m_codingMode; }
 
-    
+    /**
+     * Dolby Digital coding mode. Determines number of channels.
+     */
     inline bool CodingModeHasBeenSet() const { return m_codingModeHasBeenSet; }
 
-    
+    /**
+     * Dolby Digital coding mode. Determines number of channels.
+     */
     inline void SetCodingMode(const Ac3CodingMode& value) { m_codingModeHasBeenSet = true; m_codingMode = value; }
 
-    
+    /**
+     * Dolby Digital coding mode. Determines number of channels.
+     */
     inline void SetCodingMode(Ac3CodingMode&& value) { m_codingModeHasBeenSet = true; m_codingMode = std::move(value); }
 
-    
+    /**
+     * Dolby Digital coding mode. Determines number of channels.
+     */
     inline Ac3Settings& WithCodingMode(const Ac3CodingMode& value) { SetCodingMode(value); return *this;}
 
-    
+    /**
+     * Dolby Digital coding mode. Determines number of channels.
+     */
     inline Ac3Settings& WithCodingMode(Ac3CodingMode&& value) { SetCodingMode(std::move(value)); return *this;}
 
 
@@ -136,60 +166,120 @@ namespace Model
     inline Ac3Settings& WithDialnorm(int value) { SetDialnorm(value); return *this;}
 
 
-    
+    /**
+     * If set to FILM_STANDARD, adds dynamic range compression signaling to the output
+     * bitstream as defined in the Dolby Digital specification.
+     */
     inline const Ac3DynamicRangeCompressionProfile& GetDynamicRangeCompressionProfile() const{ return m_dynamicRangeCompressionProfile; }
 
-    
+    /**
+     * If set to FILM_STANDARD, adds dynamic range compression signaling to the output
+     * bitstream as defined in the Dolby Digital specification.
+     */
     inline bool DynamicRangeCompressionProfileHasBeenSet() const { return m_dynamicRangeCompressionProfileHasBeenSet; }
 
-    
+    /**
+     * If set to FILM_STANDARD, adds dynamic range compression signaling to the output
+     * bitstream as defined in the Dolby Digital specification.
+     */
     inline void SetDynamicRangeCompressionProfile(const Ac3DynamicRangeCompressionProfile& value) { m_dynamicRangeCompressionProfileHasBeenSet = true; m_dynamicRangeCompressionProfile = value; }
 
-    
+    /**
+     * If set to FILM_STANDARD, adds dynamic range compression signaling to the output
+     * bitstream as defined in the Dolby Digital specification.
+     */
     inline void SetDynamicRangeCompressionProfile(Ac3DynamicRangeCompressionProfile&& value) { m_dynamicRangeCompressionProfileHasBeenSet = true; m_dynamicRangeCompressionProfile = std::move(value); }
 
-    
+    /**
+     * If set to FILM_STANDARD, adds dynamic range compression signaling to the output
+     * bitstream as defined in the Dolby Digital specification.
+     */
     inline Ac3Settings& WithDynamicRangeCompressionProfile(const Ac3DynamicRangeCompressionProfile& value) { SetDynamicRangeCompressionProfile(value); return *this;}
 
-    
+    /**
+     * If set to FILM_STANDARD, adds dynamic range compression signaling to the output
+     * bitstream as defined in the Dolby Digital specification.
+     */
     inline Ac3Settings& WithDynamicRangeCompressionProfile(Ac3DynamicRangeCompressionProfile&& value) { SetDynamicRangeCompressionProfile(std::move(value)); return *this;}
 
 
-    
+    /**
+     * Applies a 120Hz lowpass filter to the LFE channel prior to encoding. Only valid
+     * with 3_2_LFE coding mode.
+     */
     inline const Ac3LfeFilter& GetLfeFilter() const{ return m_lfeFilter; }
 
-    
+    /**
+     * Applies a 120Hz lowpass filter to the LFE channel prior to encoding. Only valid
+     * with 3_2_LFE coding mode.
+     */
     inline bool LfeFilterHasBeenSet() const { return m_lfeFilterHasBeenSet; }
 
-    
+    /**
+     * Applies a 120Hz lowpass filter to the LFE channel prior to encoding. Only valid
+     * with 3_2_LFE coding mode.
+     */
     inline void SetLfeFilter(const Ac3LfeFilter& value) { m_lfeFilterHasBeenSet = true; m_lfeFilter = value; }
 
-    
+    /**
+     * Applies a 120Hz lowpass filter to the LFE channel prior to encoding. Only valid
+     * with 3_2_LFE coding mode.
+     */
     inline void SetLfeFilter(Ac3LfeFilter&& value) { m_lfeFilterHasBeenSet = true; m_lfeFilter = std::move(value); }
 
-    
+    /**
+     * Applies a 120Hz lowpass filter to the LFE channel prior to encoding. Only valid
+     * with 3_2_LFE coding mode.
+     */
     inline Ac3Settings& WithLfeFilter(const Ac3LfeFilter& value) { SetLfeFilter(value); return *this;}
 
-    
+    /**
+     * Applies a 120Hz lowpass filter to the LFE channel prior to encoding. Only valid
+     * with 3_2_LFE coding mode.
+     */
     inline Ac3Settings& WithLfeFilter(Ac3LfeFilter&& value) { SetLfeFilter(std::move(value)); return *this;}
 
 
-    
+    /**
+     * When set to FOLLOW_INPUT, encoder metadata will be sourced from the DD, DD+, or
+     * DolbyE decoder that supplied this audio data. If audio was not supplied from one
+     * of these streams, then the static metadata settings will be used.
+     */
     inline const Ac3MetadataControl& GetMetadataControl() const{ return m_metadataControl; }
 
-    
+    /**
+     * When set to FOLLOW_INPUT, encoder metadata will be sourced from the DD, DD+, or
+     * DolbyE decoder that supplied this audio data. If audio was not supplied from one
+     * of these streams, then the static metadata settings will be used.
+     */
     inline bool MetadataControlHasBeenSet() const { return m_metadataControlHasBeenSet; }
 
-    
+    /**
+     * When set to FOLLOW_INPUT, encoder metadata will be sourced from the DD, DD+, or
+     * DolbyE decoder that supplied this audio data. If audio was not supplied from one
+     * of these streams, then the static metadata settings will be used.
+     */
     inline void SetMetadataControl(const Ac3MetadataControl& value) { m_metadataControlHasBeenSet = true; m_metadataControl = value; }
 
-    
+    /**
+     * When set to FOLLOW_INPUT, encoder metadata will be sourced from the DD, DD+, or
+     * DolbyE decoder that supplied this audio data. If audio was not supplied from one
+     * of these streams, then the static metadata settings will be used.
+     */
     inline void SetMetadataControl(Ac3MetadataControl&& value) { m_metadataControlHasBeenSet = true; m_metadataControl = std::move(value); }
 
-    
+    /**
+     * When set to FOLLOW_INPUT, encoder metadata will be sourced from the DD, DD+, or
+     * DolbyE decoder that supplied this audio data. If audio was not supplied from one
+     * of these streams, then the static metadata settings will be used.
+     */
     inline Ac3Settings& WithMetadataControl(const Ac3MetadataControl& value) { SetMetadataControl(value); return *this;}
 
-    
+    /**
+     * When set to FOLLOW_INPUT, encoder metadata will be sourced from the DD, DD+, or
+     * DolbyE decoder that supplied this audio data. If audio was not supplied from one
+     * of these streams, then the static metadata settings will be used.
+     */
     inline Ac3Settings& WithMetadataControl(Ac3MetadataControl&& value) { SetMetadataControl(std::move(value)); return *this;}
 
 

@@ -27,7 +27,8 @@ UpdateDatasetRequest::UpdateDatasetRequest() :
     m_actionsHasBeenSet(false),
     m_triggersHasBeenSet(false),
     m_contentDeliveryRulesHasBeenSet(false),
-    m_retentionPeriodHasBeenSet(false)
+    m_retentionPeriodHasBeenSet(false),
+    m_versioningConfigurationHasBeenSet(false)
 {
 }
 
@@ -71,6 +72,12 @@ Aws::String UpdateDatasetRequest::SerializePayload() const
   if(m_retentionPeriodHasBeenSet)
   {
    payload.WithObject("retentionPeriod", m_retentionPeriod.Jsonize());
+
+  }
+
+  if(m_versioningConfigurationHasBeenSet)
+  {
+   payload.WithObject("versioningConfiguration", m_versioningConfiguration.Jsonize());
 
   }
 

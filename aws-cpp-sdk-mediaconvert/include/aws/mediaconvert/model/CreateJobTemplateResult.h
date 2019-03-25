@@ -42,19 +42,34 @@ namespace Model
     CreateJobTemplateResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
-    
+    /**
+     * A job template is a pre-made set of encoding instructions that you can use to
+     * quickly create a job.
+     */
     inline const JobTemplate& GetJobTemplate() const{ return m_jobTemplate; }
 
-    
+    /**
+     * A job template is a pre-made set of encoding instructions that you can use to
+     * quickly create a job.
+     */
     inline void SetJobTemplate(const JobTemplate& value) { m_jobTemplate = value; }
 
-    
+    /**
+     * A job template is a pre-made set of encoding instructions that you can use to
+     * quickly create a job.
+     */
     inline void SetJobTemplate(JobTemplate&& value) { m_jobTemplate = std::move(value); }
 
-    
+    /**
+     * A job template is a pre-made set of encoding instructions that you can use to
+     * quickly create a job.
+     */
     inline CreateJobTemplateResult& WithJobTemplate(const JobTemplate& value) { SetJobTemplate(value); return *this;}
 
-    
+    /**
+     * A job template is a pre-made set of encoding instructions that you can use to
+     * quickly create a job.
+     */
     inline CreateJobTemplateResult& WithJobTemplate(JobTemplate&& value) { SetJobTemplate(std::move(value)); return *this;}
 
   private:

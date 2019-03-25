@@ -200,22 +200,40 @@ namespace Model
     inline CaptionSelector& WithLanguageCode(LanguageCode&& value) { SetLanguageCode(std::move(value)); return *this;}
 
 
-    
+    /**
+     * Source settings (SourceSettings) contains the group of settings for captions in
+     * the input.
+     */
     inline const CaptionSourceSettings& GetSourceSettings() const{ return m_sourceSettings; }
 
-    
+    /**
+     * Source settings (SourceSettings) contains the group of settings for captions in
+     * the input.
+     */
     inline bool SourceSettingsHasBeenSet() const { return m_sourceSettingsHasBeenSet; }
 
-    
+    /**
+     * Source settings (SourceSettings) contains the group of settings for captions in
+     * the input.
+     */
     inline void SetSourceSettings(const CaptionSourceSettings& value) { m_sourceSettingsHasBeenSet = true; m_sourceSettings = value; }
 
-    
+    /**
+     * Source settings (SourceSettings) contains the group of settings for captions in
+     * the input.
+     */
     inline void SetSourceSettings(CaptionSourceSettings&& value) { m_sourceSettingsHasBeenSet = true; m_sourceSettings = std::move(value); }
 
-    
+    /**
+     * Source settings (SourceSettings) contains the group of settings for captions in
+     * the input.
+     */
     inline CaptionSelector& WithSourceSettings(const CaptionSourceSettings& value) { SetSourceSettings(value); return *this;}
 
-    
+    /**
+     * Source settings (SourceSettings) contains the group of settings for captions in
+     * the input.
+     */
     inline CaptionSelector& WithSourceSettings(CaptionSourceSettings&& value) { SetSourceSettings(std::move(value)); return *this;}
 
   private:

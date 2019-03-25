@@ -166,22 +166,34 @@ namespace Model
     inline UpdatePresetRequest& WithName(const char* value) { SetName(value); return *this;}
 
 
-    
+    /**
+     * Settings for preset
+     */
     inline const PresetSettings& GetSettings() const{ return m_settings; }
 
-    
+    /**
+     * Settings for preset
+     */
     inline bool SettingsHasBeenSet() const { return m_settingsHasBeenSet; }
 
-    
+    /**
+     * Settings for preset
+     */
     inline void SetSettings(const PresetSettings& value) { m_settingsHasBeenSet = true; m_settings = value; }
 
-    
+    /**
+     * Settings for preset
+     */
     inline void SetSettings(PresetSettings&& value) { m_settingsHasBeenSet = true; m_settings = std::move(value); }
 
-    
+    /**
+     * Settings for preset
+     */
     inline UpdatePresetRequest& WithSettings(const PresetSettings& value) { SetSettings(value); return *this;}
 
-    
+    /**
+     * Settings for preset
+     */
     inline UpdatePresetRequest& WithSettings(PresetSettings&& value) { SetSettings(std::move(value)); return *this;}
 
   private:

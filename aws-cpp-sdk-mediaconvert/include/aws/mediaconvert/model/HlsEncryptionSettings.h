@@ -110,117 +110,213 @@ namespace Model
     inline HlsEncryptionSettings& WithConstantInitializationVector(const char* value) { SetConstantInitializationVector(value); return *this;}
 
 
-    
+    /**
+     * Encrypts the segments with the given encryption scheme. Leave blank to disable.
+     * Selecting 'Disabled' in the web interface also disables encryption.
+     */
     inline const HlsEncryptionType& GetEncryptionMethod() const{ return m_encryptionMethod; }
 
-    
+    /**
+     * Encrypts the segments with the given encryption scheme. Leave blank to disable.
+     * Selecting 'Disabled' in the web interface also disables encryption.
+     */
     inline bool EncryptionMethodHasBeenSet() const { return m_encryptionMethodHasBeenSet; }
 
-    
+    /**
+     * Encrypts the segments with the given encryption scheme. Leave blank to disable.
+     * Selecting 'Disabled' in the web interface also disables encryption.
+     */
     inline void SetEncryptionMethod(const HlsEncryptionType& value) { m_encryptionMethodHasBeenSet = true; m_encryptionMethod = value; }
 
-    
+    /**
+     * Encrypts the segments with the given encryption scheme. Leave blank to disable.
+     * Selecting 'Disabled' in the web interface also disables encryption.
+     */
     inline void SetEncryptionMethod(HlsEncryptionType&& value) { m_encryptionMethodHasBeenSet = true; m_encryptionMethod = std::move(value); }
 
-    
+    /**
+     * Encrypts the segments with the given encryption scheme. Leave blank to disable.
+     * Selecting 'Disabled' in the web interface also disables encryption.
+     */
     inline HlsEncryptionSettings& WithEncryptionMethod(const HlsEncryptionType& value) { SetEncryptionMethod(value); return *this;}
 
-    
+    /**
+     * Encrypts the segments with the given encryption scheme. Leave blank to disable.
+     * Selecting 'Disabled' in the web interface also disables encryption.
+     */
     inline HlsEncryptionSettings& WithEncryptionMethod(HlsEncryptionType&& value) { SetEncryptionMethod(std::move(value)); return *this;}
 
 
-    
+    /**
+     * The Initialization Vector is a 128-bit number used in conjunction with the key
+     * for encrypting blocks. If set to INCLUDE, Initialization Vector is listed in the
+     * manifest. Otherwise Initialization Vector is not in the manifest.
+     */
     inline const HlsInitializationVectorInManifest& GetInitializationVectorInManifest() const{ return m_initializationVectorInManifest; }
 
-    
+    /**
+     * The Initialization Vector is a 128-bit number used in conjunction with the key
+     * for encrypting blocks. If set to INCLUDE, Initialization Vector is listed in the
+     * manifest. Otherwise Initialization Vector is not in the manifest.
+     */
     inline bool InitializationVectorInManifestHasBeenSet() const { return m_initializationVectorInManifestHasBeenSet; }
 
-    
+    /**
+     * The Initialization Vector is a 128-bit number used in conjunction with the key
+     * for encrypting blocks. If set to INCLUDE, Initialization Vector is listed in the
+     * manifest. Otherwise Initialization Vector is not in the manifest.
+     */
     inline void SetInitializationVectorInManifest(const HlsInitializationVectorInManifest& value) { m_initializationVectorInManifestHasBeenSet = true; m_initializationVectorInManifest = value; }
 
-    
+    /**
+     * The Initialization Vector is a 128-bit number used in conjunction with the key
+     * for encrypting blocks. If set to INCLUDE, Initialization Vector is listed in the
+     * manifest. Otherwise Initialization Vector is not in the manifest.
+     */
     inline void SetInitializationVectorInManifest(HlsInitializationVectorInManifest&& value) { m_initializationVectorInManifestHasBeenSet = true; m_initializationVectorInManifest = std::move(value); }
 
-    
+    /**
+     * The Initialization Vector is a 128-bit number used in conjunction with the key
+     * for encrypting blocks. If set to INCLUDE, Initialization Vector is listed in the
+     * manifest. Otherwise Initialization Vector is not in the manifest.
+     */
     inline HlsEncryptionSettings& WithInitializationVectorInManifest(const HlsInitializationVectorInManifest& value) { SetInitializationVectorInManifest(value); return *this;}
 
-    
+    /**
+     * The Initialization Vector is a 128-bit number used in conjunction with the key
+     * for encrypting blocks. If set to INCLUDE, Initialization Vector is listed in the
+     * manifest. Otherwise Initialization Vector is not in the manifest.
+     */
     inline HlsEncryptionSettings& WithInitializationVectorInManifest(HlsInitializationVectorInManifest&& value) { SetInitializationVectorInManifest(std::move(value)); return *this;}
 
 
-    
+    /**
+     * Enable this setting to insert the EXT-X-SESSION-KEY element into the master
+     * playlist. This allows for offline Apple HLS FairPlay content protection.
+     */
     inline const HlsOfflineEncrypted& GetOfflineEncrypted() const{ return m_offlineEncrypted; }
 
-    
+    /**
+     * Enable this setting to insert the EXT-X-SESSION-KEY element into the master
+     * playlist. This allows for offline Apple HLS FairPlay content protection.
+     */
     inline bool OfflineEncryptedHasBeenSet() const { return m_offlineEncryptedHasBeenSet; }
 
-    
+    /**
+     * Enable this setting to insert the EXT-X-SESSION-KEY element into the master
+     * playlist. This allows for offline Apple HLS FairPlay content protection.
+     */
     inline void SetOfflineEncrypted(const HlsOfflineEncrypted& value) { m_offlineEncryptedHasBeenSet = true; m_offlineEncrypted = value; }
 
-    
+    /**
+     * Enable this setting to insert the EXT-X-SESSION-KEY element into the master
+     * playlist. This allows for offline Apple HLS FairPlay content protection.
+     */
     inline void SetOfflineEncrypted(HlsOfflineEncrypted&& value) { m_offlineEncryptedHasBeenSet = true; m_offlineEncrypted = std::move(value); }
 
-    
+    /**
+     * Enable this setting to insert the EXT-X-SESSION-KEY element into the master
+     * playlist. This allows for offline Apple HLS FairPlay content protection.
+     */
     inline HlsEncryptionSettings& WithOfflineEncrypted(const HlsOfflineEncrypted& value) { SetOfflineEncrypted(value); return *this;}
 
-    
+    /**
+     * Enable this setting to insert the EXT-X-SESSION-KEY element into the master
+     * playlist. This allows for offline Apple HLS FairPlay content protection.
+     */
     inline HlsEncryptionSettings& WithOfflineEncrypted(HlsOfflineEncrypted&& value) { SetOfflineEncrypted(std::move(value)); return *this;}
 
 
-    
+    /**
+     * Settings for use with a SPEKE key provider
+     */
     inline const SpekeKeyProvider& GetSpekeKeyProvider() const{ return m_spekeKeyProvider; }
 
-    
+    /**
+     * Settings for use with a SPEKE key provider
+     */
     inline bool SpekeKeyProviderHasBeenSet() const { return m_spekeKeyProviderHasBeenSet; }
 
-    
+    /**
+     * Settings for use with a SPEKE key provider
+     */
     inline void SetSpekeKeyProvider(const SpekeKeyProvider& value) { m_spekeKeyProviderHasBeenSet = true; m_spekeKeyProvider = value; }
 
-    
+    /**
+     * Settings for use with a SPEKE key provider
+     */
     inline void SetSpekeKeyProvider(SpekeKeyProvider&& value) { m_spekeKeyProviderHasBeenSet = true; m_spekeKeyProvider = std::move(value); }
 
-    
+    /**
+     * Settings for use with a SPEKE key provider
+     */
     inline HlsEncryptionSettings& WithSpekeKeyProvider(const SpekeKeyProvider& value) { SetSpekeKeyProvider(value); return *this;}
 
-    
+    /**
+     * Settings for use with a SPEKE key provider
+     */
     inline HlsEncryptionSettings& WithSpekeKeyProvider(SpekeKeyProvider&& value) { SetSpekeKeyProvider(std::move(value)); return *this;}
 
 
-    
+    /**
+     * Use these settings to set up encryption with a static key provider.
+     */
     inline const StaticKeyProvider& GetStaticKeyProvider() const{ return m_staticKeyProvider; }
 
-    
+    /**
+     * Use these settings to set up encryption with a static key provider.
+     */
     inline bool StaticKeyProviderHasBeenSet() const { return m_staticKeyProviderHasBeenSet; }
 
-    
+    /**
+     * Use these settings to set up encryption with a static key provider.
+     */
     inline void SetStaticKeyProvider(const StaticKeyProvider& value) { m_staticKeyProviderHasBeenSet = true; m_staticKeyProvider = value; }
 
-    
+    /**
+     * Use these settings to set up encryption with a static key provider.
+     */
     inline void SetStaticKeyProvider(StaticKeyProvider&& value) { m_staticKeyProviderHasBeenSet = true; m_staticKeyProvider = std::move(value); }
 
-    
+    /**
+     * Use these settings to set up encryption with a static key provider.
+     */
     inline HlsEncryptionSettings& WithStaticKeyProvider(const StaticKeyProvider& value) { SetStaticKeyProvider(value); return *this;}
 
-    
+    /**
+     * Use these settings to set up encryption with a static key provider.
+     */
     inline HlsEncryptionSettings& WithStaticKeyProvider(StaticKeyProvider&& value) { SetStaticKeyProvider(std::move(value)); return *this;}
 
 
-    
+    /**
+     * Indicates which type of key provider is used for encryption.
+     */
     inline const HlsKeyProviderType& GetType() const{ return m_type; }
 
-    
+    /**
+     * Indicates which type of key provider is used for encryption.
+     */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
 
-    
+    /**
+     * Indicates which type of key provider is used for encryption.
+     */
     inline void SetType(const HlsKeyProviderType& value) { m_typeHasBeenSet = true; m_type = value; }
 
-    
+    /**
+     * Indicates which type of key provider is used for encryption.
+     */
     inline void SetType(HlsKeyProviderType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
-    
+    /**
+     * Indicates which type of key provider is used for encryption.
+     */
     inline HlsEncryptionSettings& WithType(const HlsKeyProviderType& value) { SetType(value); return *this;}
 
-    
+    /**
+     * Indicates which type of key provider is used for encryption.
+     */
     inline HlsEncryptionSettings& WithType(HlsKeyProviderType&& value) { SetType(std::move(value)); return *this;}
 
   private:

@@ -377,20 +377,17 @@ namespace Model
 
 
     /**
-     * <p>The maximum simulation job duration in seconds. The value must be 8 days
-     * (691,200 seconds) or less. </p>
+     * <p>The maximum simulation job duration in seconds. </p>
      */
     inline long long GetMaxJobDurationInSeconds() const{ return m_maxJobDurationInSeconds; }
 
     /**
-     * <p>The maximum simulation job duration in seconds. The value must be 8 days
-     * (691,200 seconds) or less. </p>
+     * <p>The maximum simulation job duration in seconds. </p>
      */
     inline void SetMaxJobDurationInSeconds(long long value) { m_maxJobDurationInSeconds = value; }
 
     /**
-     * <p>The maximum simulation job duration in seconds. The value must be 8 days
-     * (691,200 seconds) or less. </p>
+     * <p>The maximum simulation job duration in seconds. </p>
      */
     inline CreateSimulationJobResult& WithMaxJobDurationInSeconds(long long value) { SetMaxJobDurationInSeconds(value); return *this;}
 

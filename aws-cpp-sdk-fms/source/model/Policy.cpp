@@ -34,6 +34,7 @@ Policy::Policy() :
     m_policyUpdateTokenHasBeenSet(false),
     m_securityServicePolicyDataHasBeenSet(false),
     m_resourceTypeHasBeenSet(false),
+    m_resourceTypeListHasBeenSet(false),
     m_resourceTagsHasBeenSet(false),
     m_excludeResourceTags(false),
     m_excludeResourceTagsHasBeenSet(false),
@@ -50,6 +51,7 @@ Policy::Policy(JsonView jsonValue) :
     m_policyUpdateTokenHasBeenSet(false),
     m_securityServicePolicyDataHasBeenSet(false),
     m_resourceTypeHasBeenSet(false),
+    m_resourceTypeListHasBeenSet(false),
     m_resourceTagsHasBeenSet(false),
     m_excludeResourceTags(false),
     m_excludeResourceTagsHasBeenSet(false),
@@ -96,6 +98,16 @@ Policy& Policy::operator =(JsonView jsonValue)
     m_resourceType = jsonValue.GetString("ResourceType");
 
     m_resourceTypeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ResourceTypeList"))
+  {
+    Array<JsonView> resourceTypeListJsonList = jsonValue.GetArray("ResourceTypeList");
+    for(unsigned resourceTypeListIndex = 0; resourceTypeListIndex < resourceTypeListJsonList.GetLength(); ++resourceTypeListIndex)
+    {
+      m_resourceTypeList.push_back(resourceTypeListJsonList[resourceTypeListIndex].AsString());
+    }
+    m_resourceTypeListHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("ResourceTags"))
@@ -190,6 +202,17 @@ JsonValue Policy::Jsonize() const
   if(m_resourceTypeHasBeenSet)
   {
    payload.WithString("ResourceType", m_resourceType);
+
+  }
+
+  if(m_resourceTypeListHasBeenSet)
+  {
+   Array<JsonValue> resourceTypeListJsonList(m_resourceTypeList.size());
+   for(unsigned resourceTypeListIndex = 0; resourceTypeListIndex < resourceTypeListJsonList.GetLength(); ++resourceTypeListIndex)
+   {
+     resourceTypeListJsonList[resourceTypeListIndex].AsString(m_resourceTypeList[resourceTypeListIndex]);
+   }
+   payload.WithArray("ResourceTypeList", std::move(resourceTypeListJsonList));
 
   }
 

@@ -54,49 +54,49 @@ namespace Model
 
     /**
      * <p>The individual bandwidth of the physical connections bundled by the LAG. The
-     * possible values are 1Gbps and 10Gbps.</p>
+     * possible values are 1Gbps and 10Gbps. </p>
      */
     inline const Aws::String& GetConnectionsBandwidth() const{ return m_connectionsBandwidth; }
 
     /**
      * <p>The individual bandwidth of the physical connections bundled by the LAG. The
-     * possible values are 1Gbps and 10Gbps.</p>
+     * possible values are 1Gbps and 10Gbps. </p>
      */
     inline bool ConnectionsBandwidthHasBeenSet() const { return m_connectionsBandwidthHasBeenSet; }
 
     /**
      * <p>The individual bandwidth of the physical connections bundled by the LAG. The
-     * possible values are 1Gbps and 10Gbps.</p>
+     * possible values are 1Gbps and 10Gbps. </p>
      */
     inline void SetConnectionsBandwidth(const Aws::String& value) { m_connectionsBandwidthHasBeenSet = true; m_connectionsBandwidth = value; }
 
     /**
      * <p>The individual bandwidth of the physical connections bundled by the LAG. The
-     * possible values are 1Gbps and 10Gbps.</p>
+     * possible values are 1Gbps and 10Gbps. </p>
      */
     inline void SetConnectionsBandwidth(Aws::String&& value) { m_connectionsBandwidthHasBeenSet = true; m_connectionsBandwidth = std::move(value); }
 
     /**
      * <p>The individual bandwidth of the physical connections bundled by the LAG. The
-     * possible values are 1Gbps and 10Gbps.</p>
+     * possible values are 1Gbps and 10Gbps. </p>
      */
     inline void SetConnectionsBandwidth(const char* value) { m_connectionsBandwidthHasBeenSet = true; m_connectionsBandwidth.assign(value); }
 
     /**
      * <p>The individual bandwidth of the physical connections bundled by the LAG. The
-     * possible values are 1Gbps and 10Gbps.</p>
+     * possible values are 1Gbps and 10Gbps. </p>
      */
     inline Lag& WithConnectionsBandwidth(const Aws::String& value) { SetConnectionsBandwidth(value); return *this;}
 
     /**
      * <p>The individual bandwidth of the physical connections bundled by the LAG. The
-     * possible values are 1Gbps and 10Gbps.</p>
+     * possible values are 1Gbps and 10Gbps. </p>
      */
     inline Lag& WithConnectionsBandwidth(Aws::String&& value) { SetConnectionsBandwidth(std::move(value)); return *this;}
 
     /**
      * <p>The individual bandwidth of the physical connections bundled by the LAG. The
-     * possible values are 1Gbps and 10Gbps.</p>
+     * possible values are 1Gbps and 10Gbps. </p>
      */
     inline Lag& WithConnectionsBandwidth(const char* value) { SetConnectionsBandwidth(value); return *this;}
 
@@ -442,83 +442,83 @@ namespace Model
 
 
     /**
-     * <p>The Direct Connect endpoint that hosts the LAG.</p>
+     * <p>The AWS Direct Connect endpoint that hosts the LAG.</p>
      */
     inline const Aws::String& GetAwsDevice() const{ return m_awsDevice; }
 
     /**
-     * <p>The Direct Connect endpoint that hosts the LAG.</p>
+     * <p>The AWS Direct Connect endpoint that hosts the LAG.</p>
      */
     inline bool AwsDeviceHasBeenSet() const { return m_awsDeviceHasBeenSet; }
 
     /**
-     * <p>The Direct Connect endpoint that hosts the LAG.</p>
+     * <p>The AWS Direct Connect endpoint that hosts the LAG.</p>
      */
     inline void SetAwsDevice(const Aws::String& value) { m_awsDeviceHasBeenSet = true; m_awsDevice = value; }
 
     /**
-     * <p>The Direct Connect endpoint that hosts the LAG.</p>
+     * <p>The AWS Direct Connect endpoint that hosts the LAG.</p>
      */
     inline void SetAwsDevice(Aws::String&& value) { m_awsDeviceHasBeenSet = true; m_awsDevice = std::move(value); }
 
     /**
-     * <p>The Direct Connect endpoint that hosts the LAG.</p>
+     * <p>The AWS Direct Connect endpoint that hosts the LAG.</p>
      */
     inline void SetAwsDevice(const char* value) { m_awsDeviceHasBeenSet = true; m_awsDevice.assign(value); }
 
     /**
-     * <p>The Direct Connect endpoint that hosts the LAG.</p>
+     * <p>The AWS Direct Connect endpoint that hosts the LAG.</p>
      */
     inline Lag& WithAwsDevice(const Aws::String& value) { SetAwsDevice(value); return *this;}
 
     /**
-     * <p>The Direct Connect endpoint that hosts the LAG.</p>
+     * <p>The AWS Direct Connect endpoint that hosts the LAG.</p>
      */
     inline Lag& WithAwsDevice(Aws::String&& value) { SetAwsDevice(std::move(value)); return *this;}
 
     /**
-     * <p>The Direct Connect endpoint that hosts the LAG.</p>
+     * <p>The AWS Direct Connect endpoint that hosts the LAG.</p>
      */
     inline Lag& WithAwsDevice(const char* value) { SetAwsDevice(value); return *this;}
 
 
     /**
-     * <p>The Direct Connect endpoint that hosts the LAG.</p>
+     * <p>The AWS Direct Connect endpoint that hosts the LAG.</p>
      */
     inline const Aws::String& GetAwsDeviceV2() const{ return m_awsDeviceV2; }
 
     /**
-     * <p>The Direct Connect endpoint that hosts the LAG.</p>
+     * <p>The AWS Direct Connect endpoint that hosts the LAG.</p>
      */
     inline bool AwsDeviceV2HasBeenSet() const { return m_awsDeviceV2HasBeenSet; }
 
     /**
-     * <p>The Direct Connect endpoint that hosts the LAG.</p>
+     * <p>The AWS Direct Connect endpoint that hosts the LAG.</p>
      */
     inline void SetAwsDeviceV2(const Aws::String& value) { m_awsDeviceV2HasBeenSet = true; m_awsDeviceV2 = value; }
 
     /**
-     * <p>The Direct Connect endpoint that hosts the LAG.</p>
+     * <p>The AWS Direct Connect endpoint that hosts the LAG.</p>
      */
     inline void SetAwsDeviceV2(Aws::String&& value) { m_awsDeviceV2HasBeenSet = true; m_awsDeviceV2 = std::move(value); }
 
     /**
-     * <p>The Direct Connect endpoint that hosts the LAG.</p>
+     * <p>The AWS Direct Connect endpoint that hosts the LAG.</p>
      */
     inline void SetAwsDeviceV2(const char* value) { m_awsDeviceV2HasBeenSet = true; m_awsDeviceV2.assign(value); }
 
     /**
-     * <p>The Direct Connect endpoint that hosts the LAG.</p>
+     * <p>The AWS Direct Connect endpoint that hosts the LAG.</p>
      */
     inline Lag& WithAwsDeviceV2(const Aws::String& value) { SetAwsDeviceV2(value); return *this;}
 
     /**
-     * <p>The Direct Connect endpoint that hosts the LAG.</p>
+     * <p>The AWS Direct Connect endpoint that hosts the LAG.</p>
      */
     inline Lag& WithAwsDeviceV2(Aws::String&& value) { SetAwsDeviceV2(std::move(value)); return *this;}
 
     /**
-     * <p>The Direct Connect endpoint that hosts the LAG.</p>
+     * <p>The AWS Direct Connect endpoint that hosts the LAG.</p>
      */
     inline Lag& WithAwsDeviceV2(const char* value) { SetAwsDeviceV2(value); return *this;}
 

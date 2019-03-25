@@ -180,10 +180,10 @@ namespace Model
      * used, <code>ListRobotApplications</code> only returns <code>maxResults</code>
      * results in a single page along with a <code>nextToken</code> response element.
      * The remaining results of the initial request can be seen by sending another
-     * <code>ListFleets</code> request with the returned <code>nextToken</code> value.
-     * This value can be between 1 and 100. If this parameter is not used, then
-     * <code>ListRobotApplications</code> returns up to 100 results and a
-     * <code>nextToken</code> value if applicable. </p>
+     * <code>ListRobotApplications</code> request with the returned
+     * <code>nextToken</code> value. This value can be between 1 and 100. If this
+     * parameter is not used, then <code>ListRobotApplications</code> returns up to 100
+     * results and a <code>nextToken</code> value if applicable. </p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
 
@@ -193,10 +193,10 @@ namespace Model
      * used, <code>ListRobotApplications</code> only returns <code>maxResults</code>
      * results in a single page along with a <code>nextToken</code> response element.
      * The remaining results of the initial request can be seen by sending another
-     * <code>ListFleets</code> request with the returned <code>nextToken</code> value.
-     * This value can be between 1 and 100. If this parameter is not used, then
-     * <code>ListRobotApplications</code> returns up to 100 results and a
-     * <code>nextToken</code> value if applicable. </p>
+     * <code>ListRobotApplications</code> request with the returned
+     * <code>nextToken</code> value. This value can be between 1 and 100. If this
+     * parameter is not used, then <code>ListRobotApplications</code> returns up to 100
+     * results and a <code>nextToken</code> value if applicable. </p>
      */
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
 
@@ -206,10 +206,10 @@ namespace Model
      * used, <code>ListRobotApplications</code> only returns <code>maxResults</code>
      * results in a single page along with a <code>nextToken</code> response element.
      * The remaining results of the initial request can be seen by sending another
-     * <code>ListFleets</code> request with the returned <code>nextToken</code> value.
-     * This value can be between 1 and 100. If this parameter is not used, then
-     * <code>ListRobotApplications</code> returns up to 100 results and a
-     * <code>nextToken</code> value if applicable. </p>
+     * <code>ListRobotApplications</code> request with the returned
+     * <code>nextToken</code> value. This value can be between 1 and 100. If this
+     * parameter is not used, then <code>ListRobotApplications</code> returns up to 100
+     * results and a <code>nextToken</code> value if applicable. </p>
      */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
@@ -219,51 +219,67 @@ namespace Model
      * used, <code>ListRobotApplications</code> only returns <code>maxResults</code>
      * results in a single page along with a <code>nextToken</code> response element.
      * The remaining results of the initial request can be seen by sending another
-     * <code>ListFleets</code> request with the returned <code>nextToken</code> value.
-     * This value can be between 1 and 100. If this parameter is not used, then
-     * <code>ListRobotApplications</code> returns up to 100 results and a
-     * <code>nextToken</code> value if applicable. </p>
+     * <code>ListRobotApplications</code> request with the returned
+     * <code>nextToken</code> value. This value can be between 1 and 100. If this
+     * parameter is not used, then <code>ListRobotApplications</code> returns up to 100
+     * results and a <code>nextToken</code> value if applicable. </p>
      */
     inline ListRobotApplicationsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 
 
     /**
-     * <p>Optional filters to limit results.</p>
+     * <p>Optional filters to limit results.</p> <p>The filter name <code>name</code>
+     * is supported. When filtering, you must use the complete value of the filtered
+     * item. You can use up to three filters.</p>
      */
     inline const Aws::Vector<Filter>& GetFilters() const{ return m_filters; }
 
     /**
-     * <p>Optional filters to limit results.</p>
+     * <p>Optional filters to limit results.</p> <p>The filter name <code>name</code>
+     * is supported. When filtering, you must use the complete value of the filtered
+     * item. You can use up to three filters.</p>
      */
     inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
 
     /**
-     * <p>Optional filters to limit results.</p>
+     * <p>Optional filters to limit results.</p> <p>The filter name <code>name</code>
+     * is supported. When filtering, you must use the complete value of the filtered
+     * item. You can use up to three filters.</p>
      */
     inline void SetFilters(const Aws::Vector<Filter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
 
     /**
-     * <p>Optional filters to limit results.</p>
+     * <p>Optional filters to limit results.</p> <p>The filter name <code>name</code>
+     * is supported. When filtering, you must use the complete value of the filtered
+     * item. You can use up to three filters.</p>
      */
     inline void SetFilters(Aws::Vector<Filter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
 
     /**
-     * <p>Optional filters to limit results.</p>
+     * <p>Optional filters to limit results.</p> <p>The filter name <code>name</code>
+     * is supported. When filtering, you must use the complete value of the filtered
+     * item. You can use up to three filters.</p>
      */
     inline ListRobotApplicationsRequest& WithFilters(const Aws::Vector<Filter>& value) { SetFilters(value); return *this;}
 
     /**
-     * <p>Optional filters to limit results.</p>
+     * <p>Optional filters to limit results.</p> <p>The filter name <code>name</code>
+     * is supported. When filtering, you must use the complete value of the filtered
+     * item. You can use up to three filters.</p>
      */
     inline ListRobotApplicationsRequest& WithFilters(Aws::Vector<Filter>&& value) { SetFilters(std::move(value)); return *this;}
 
     /**
-     * <p>Optional filters to limit results.</p>
+     * <p>Optional filters to limit results.</p> <p>The filter name <code>name</code>
+     * is supported. When filtering, you must use the complete value of the filtered
+     * item. You can use up to three filters.</p>
      */
     inline ListRobotApplicationsRequest& AddFilters(const Filter& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
 
     /**
-     * <p>Optional filters to limit results.</p>
+     * <p>Optional filters to limit results.</p> <p>The filter name <code>name</code>
+     * is supported. When filtering, you must use the complete value of the filtered
+     * item. You can use up to three filters.</p>
      */
     inline ListRobotApplicationsRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
 

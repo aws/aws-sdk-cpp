@@ -170,22 +170,88 @@ namespace Model
     inline TimecodeConfig& WithAnchor(const char* value) { SetAnchor(value); return *this;}
 
 
-    
+    /**
+     * Use Source (TimecodeSource) to set how timecodes are handled within this job. To
+     * make sure that your video, audio, captions, and markers are synchronized and
+     * that time-based features, such as image inserter, work correctly, choose the
+     * Timecode source option that matches your assets. All timecodes are in a 24-hour
+     * format with frame number (HH:MM:SS:FF). * Embedded (EMBEDDED) - Use the timecode
+     * that is in the input video. If no embedded timecode is in the source, the
+     * service will use Start at 0 (ZEROBASED) instead. * Start at 0 (ZEROBASED) - Set
+     * the timecode of the initial frame to 00:00:00:00. * Specified Start
+     * (SPECIFIEDSTART) - Set the timecode of the initial frame to a value other than
+     * zero. You use Start timecode (Start) to provide this value.
+     */
     inline const TimecodeSource& GetSource() const{ return m_source; }
 
-    
+    /**
+     * Use Source (TimecodeSource) to set how timecodes are handled within this job. To
+     * make sure that your video, audio, captions, and markers are synchronized and
+     * that time-based features, such as image inserter, work correctly, choose the
+     * Timecode source option that matches your assets. All timecodes are in a 24-hour
+     * format with frame number (HH:MM:SS:FF). * Embedded (EMBEDDED) - Use the timecode
+     * that is in the input video. If no embedded timecode is in the source, the
+     * service will use Start at 0 (ZEROBASED) instead. * Start at 0 (ZEROBASED) - Set
+     * the timecode of the initial frame to 00:00:00:00. * Specified Start
+     * (SPECIFIEDSTART) - Set the timecode of the initial frame to a value other than
+     * zero. You use Start timecode (Start) to provide this value.
+     */
     inline bool SourceHasBeenSet() const { return m_sourceHasBeenSet; }
 
-    
+    /**
+     * Use Source (TimecodeSource) to set how timecodes are handled within this job. To
+     * make sure that your video, audio, captions, and markers are synchronized and
+     * that time-based features, such as image inserter, work correctly, choose the
+     * Timecode source option that matches your assets. All timecodes are in a 24-hour
+     * format with frame number (HH:MM:SS:FF). * Embedded (EMBEDDED) - Use the timecode
+     * that is in the input video. If no embedded timecode is in the source, the
+     * service will use Start at 0 (ZEROBASED) instead. * Start at 0 (ZEROBASED) - Set
+     * the timecode of the initial frame to 00:00:00:00. * Specified Start
+     * (SPECIFIEDSTART) - Set the timecode of the initial frame to a value other than
+     * zero. You use Start timecode (Start) to provide this value.
+     */
     inline void SetSource(const TimecodeSource& value) { m_sourceHasBeenSet = true; m_source = value; }
 
-    
+    /**
+     * Use Source (TimecodeSource) to set how timecodes are handled within this job. To
+     * make sure that your video, audio, captions, and markers are synchronized and
+     * that time-based features, such as image inserter, work correctly, choose the
+     * Timecode source option that matches your assets. All timecodes are in a 24-hour
+     * format with frame number (HH:MM:SS:FF). * Embedded (EMBEDDED) - Use the timecode
+     * that is in the input video. If no embedded timecode is in the source, the
+     * service will use Start at 0 (ZEROBASED) instead. * Start at 0 (ZEROBASED) - Set
+     * the timecode of the initial frame to 00:00:00:00. * Specified Start
+     * (SPECIFIEDSTART) - Set the timecode of the initial frame to a value other than
+     * zero. You use Start timecode (Start) to provide this value.
+     */
     inline void SetSource(TimecodeSource&& value) { m_sourceHasBeenSet = true; m_source = std::move(value); }
 
-    
+    /**
+     * Use Source (TimecodeSource) to set how timecodes are handled within this job. To
+     * make sure that your video, audio, captions, and markers are synchronized and
+     * that time-based features, such as image inserter, work correctly, choose the
+     * Timecode source option that matches your assets. All timecodes are in a 24-hour
+     * format with frame number (HH:MM:SS:FF). * Embedded (EMBEDDED) - Use the timecode
+     * that is in the input video. If no embedded timecode is in the source, the
+     * service will use Start at 0 (ZEROBASED) instead. * Start at 0 (ZEROBASED) - Set
+     * the timecode of the initial frame to 00:00:00:00. * Specified Start
+     * (SPECIFIEDSTART) - Set the timecode of the initial frame to a value other than
+     * zero. You use Start timecode (Start) to provide this value.
+     */
     inline TimecodeConfig& WithSource(const TimecodeSource& value) { SetSource(value); return *this;}
 
-    
+    /**
+     * Use Source (TimecodeSource) to set how timecodes are handled within this job. To
+     * make sure that your video, audio, captions, and markers are synchronized and
+     * that time-based features, such as image inserter, work correctly, choose the
+     * Timecode source option that matches your assets. All timecodes are in a 24-hour
+     * format with frame number (HH:MM:SS:FF). * Embedded (EMBEDDED) - Use the timecode
+     * that is in the input video. If no embedded timecode is in the source, the
+     * service will use Start at 0 (ZEROBASED) instead. * Start at 0 (ZEROBASED) - Set
+     * the timecode of the initial frame to 00:00:00:00. * Specified Start
+     * (SPECIFIEDSTART) - Set the timecode of the initial frame to a value other than
+     * zero. You use Start timecode (Start) to provide this value.
+     */
     inline TimecodeConfig& WithSource(TimecodeSource&& value) { SetSource(std::move(value)); return *this;}
 
 

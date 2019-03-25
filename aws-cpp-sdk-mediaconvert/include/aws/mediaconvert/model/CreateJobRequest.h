@@ -20,6 +20,7 @@
 #include <aws/mediaconvert/model/BillingTagsSource.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/mediaconvert/model/JobSettings.h>
+#include <aws/mediaconvert/model/StatusUpdateInterval.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <utility>
 #include <aws/core/utils/UUID.h>
@@ -84,22 +85,58 @@ namespace Model
     inline CreateJobRequest& WithAccelerationSettings(AccelerationSettings&& value) { SetAccelerationSettings(std::move(value)); return *this;}
 
 
-    
+    /**
+     * Optional. Choose a tag type that AWS Billing and Cost Management will use to
+     * sort your AWS Elemental MediaConvert costs on any billing report that you set
+     * up. Any transcoding outputs that don't have an associated tag will appear in
+     * your billing report unsorted. If you don't choose a valid value for this field,
+     * your job outputs will appear on the billing report unsorted.
+     */
     inline const BillingTagsSource& GetBillingTagsSource() const{ return m_billingTagsSource; }
 
-    
+    /**
+     * Optional. Choose a tag type that AWS Billing and Cost Management will use to
+     * sort your AWS Elemental MediaConvert costs on any billing report that you set
+     * up. Any transcoding outputs that don't have an associated tag will appear in
+     * your billing report unsorted. If you don't choose a valid value for this field,
+     * your job outputs will appear on the billing report unsorted.
+     */
     inline bool BillingTagsSourceHasBeenSet() const { return m_billingTagsSourceHasBeenSet; }
 
-    
+    /**
+     * Optional. Choose a tag type that AWS Billing and Cost Management will use to
+     * sort your AWS Elemental MediaConvert costs on any billing report that you set
+     * up. Any transcoding outputs that don't have an associated tag will appear in
+     * your billing report unsorted. If you don't choose a valid value for this field,
+     * your job outputs will appear on the billing report unsorted.
+     */
     inline void SetBillingTagsSource(const BillingTagsSource& value) { m_billingTagsSourceHasBeenSet = true; m_billingTagsSource = value; }
 
-    
+    /**
+     * Optional. Choose a tag type that AWS Billing and Cost Management will use to
+     * sort your AWS Elemental MediaConvert costs on any billing report that you set
+     * up. Any transcoding outputs that don't have an associated tag will appear in
+     * your billing report unsorted. If you don't choose a valid value for this field,
+     * your job outputs will appear on the billing report unsorted.
+     */
     inline void SetBillingTagsSource(BillingTagsSource&& value) { m_billingTagsSourceHasBeenSet = true; m_billingTagsSource = std::move(value); }
 
-    
+    /**
+     * Optional. Choose a tag type that AWS Billing and Cost Management will use to
+     * sort your AWS Elemental MediaConvert costs on any billing report that you set
+     * up. Any transcoding outputs that don't have an associated tag will appear in
+     * your billing report unsorted. If you don't choose a valid value for this field,
+     * your job outputs will appear on the billing report unsorted.
+     */
     inline CreateJobRequest& WithBillingTagsSource(const BillingTagsSource& value) { SetBillingTagsSource(value); return *this;}
 
-    
+    /**
+     * Optional. Choose a tag type that AWS Billing and Cost Management will use to
+     * sort your AWS Elemental MediaConvert costs on any billing report that you set
+     * up. Any transcoding outputs that don't have an associated tag will appear in
+     * your billing report unsorted. If you don't choose a valid value for this field,
+     * your job outputs will appear on the billing report unsorted.
+     */
     inline CreateJobRequest& WithBillingTagsSource(BillingTagsSource&& value) { SetBillingTagsSource(std::move(value)); return *this;}
 
 
@@ -315,22 +352,34 @@ namespace Model
     inline CreateJobRequest& WithRole(const char* value) { SetRole(value); return *this;}
 
 
-    
+    /**
+     * JobSettings contains all the transcode settings for a job.
+     */
     inline const JobSettings& GetSettings() const{ return m_settings; }
 
-    
+    /**
+     * JobSettings contains all the transcode settings for a job.
+     */
     inline bool SettingsHasBeenSet() const { return m_settingsHasBeenSet; }
 
-    
+    /**
+     * JobSettings contains all the transcode settings for a job.
+     */
     inline void SetSettings(const JobSettings& value) { m_settingsHasBeenSet = true; m_settings = value; }
 
-    
+    /**
+     * JobSettings contains all the transcode settings for a job.
+     */
     inline void SetSettings(JobSettings&& value) { m_settingsHasBeenSet = true; m_settings = std::move(value); }
 
-    
+    /**
+     * JobSettings contains all the transcode settings for a job.
+     */
     inline CreateJobRequest& WithSettings(const JobSettings& value) { SetSettings(value); return *this;}
 
-    
+    /**
+     * JobSettings contains all the transcode settings for a job.
+     */
     inline CreateJobRequest& WithSettings(JobSettings&& value) { SetSettings(std::move(value)); return *this;}
 
 
@@ -340,7 +389,7 @@ namespace Model
      * an update at this interval from the time the service begins processing your job
      * to the time it completes the transcode or encounters an error.
      */
-    inline long long GetStatusUpdateIntervalInSecs() const{ return m_statusUpdateIntervalInSecs; }
+    inline const StatusUpdateInterval& GetStatusUpdateInterval() const{ return m_statusUpdateInterval; }
 
     /**
      * Specify how often MediaConvert sends STATUS_UPDATE events to Amazon CloudWatch
@@ -348,7 +397,7 @@ namespace Model
      * an update at this interval from the time the service begins processing your job
      * to the time it completes the transcode or encounters an error.
      */
-    inline bool StatusUpdateIntervalInSecsHasBeenSet() const { return m_statusUpdateIntervalInSecsHasBeenSet; }
+    inline bool StatusUpdateIntervalHasBeenSet() const { return m_statusUpdateIntervalHasBeenSet; }
 
     /**
      * Specify how often MediaConvert sends STATUS_UPDATE events to Amazon CloudWatch
@@ -356,7 +405,7 @@ namespace Model
      * an update at this interval from the time the service begins processing your job
      * to the time it completes the transcode or encounters an error.
      */
-    inline void SetStatusUpdateIntervalInSecs(long long value) { m_statusUpdateIntervalInSecsHasBeenSet = true; m_statusUpdateIntervalInSecs = value; }
+    inline void SetStatusUpdateInterval(const StatusUpdateInterval& value) { m_statusUpdateIntervalHasBeenSet = true; m_statusUpdateInterval = value; }
 
     /**
      * Specify how often MediaConvert sends STATUS_UPDATE events to Amazon CloudWatch
@@ -364,7 +413,23 @@ namespace Model
      * an update at this interval from the time the service begins processing your job
      * to the time it completes the transcode or encounters an error.
      */
-    inline CreateJobRequest& WithStatusUpdateIntervalInSecs(long long value) { SetStatusUpdateIntervalInSecs(value); return *this;}
+    inline void SetStatusUpdateInterval(StatusUpdateInterval&& value) { m_statusUpdateIntervalHasBeenSet = true; m_statusUpdateInterval = std::move(value); }
+
+    /**
+     * Specify how often MediaConvert sends STATUS_UPDATE events to Amazon CloudWatch
+     * Events. Set the interval, in seconds, between status updates. MediaConvert sends
+     * an update at this interval from the time the service begins processing your job
+     * to the time it completes the transcode or encounters an error.
+     */
+    inline CreateJobRequest& WithStatusUpdateInterval(const StatusUpdateInterval& value) { SetStatusUpdateInterval(value); return *this;}
+
+    /**
+     * Specify how often MediaConvert sends STATUS_UPDATE events to Amazon CloudWatch
+     * Events. Set the interval, in seconds, between status updates. MediaConvert sends
+     * an update at this interval from the time the service begins processing your job
+     * to the time it completes the transcode or encounters an error.
+     */
+    inline CreateJobRequest& WithStatusUpdateInterval(StatusUpdateInterval&& value) { SetStatusUpdateInterval(std::move(value)); return *this;}
 
 
     /**
@@ -468,8 +533,8 @@ namespace Model
     JobSettings m_settings;
     bool m_settingsHasBeenSet;
 
-    long long m_statusUpdateIntervalInSecs;
-    bool m_statusUpdateIntervalInSecsHasBeenSet;
+    StatusUpdateInterval m_statusUpdateInterval;
+    bool m_statusUpdateIntervalHasBeenSet;
 
     Aws::Map<Aws::String, Aws::String> m_userMetadata;
     bool m_userMetadataHasBeenSet;

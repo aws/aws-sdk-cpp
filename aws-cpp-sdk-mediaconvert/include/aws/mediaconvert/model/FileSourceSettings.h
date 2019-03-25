@@ -48,22 +48,46 @@ namespace Model
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 
-    
+    /**
+     * If set to UPCONVERT, 608 caption data is both passed through via the "608
+     * compatibility bytes" fields of the 708 wrapper as well as translated into 708.
+     * 708 data present in the source content will be discarded.
+     */
     inline const FileSourceConvert608To708& GetConvert608To708() const{ return m_convert608To708; }
 
-    
+    /**
+     * If set to UPCONVERT, 608 caption data is both passed through via the "608
+     * compatibility bytes" fields of the 708 wrapper as well as translated into 708.
+     * 708 data present in the source content will be discarded.
+     */
     inline bool Convert608To708HasBeenSet() const { return m_convert608To708HasBeenSet; }
 
-    
+    /**
+     * If set to UPCONVERT, 608 caption data is both passed through via the "608
+     * compatibility bytes" fields of the 708 wrapper as well as translated into 708.
+     * 708 data present in the source content will be discarded.
+     */
     inline void SetConvert608To708(const FileSourceConvert608To708& value) { m_convert608To708HasBeenSet = true; m_convert608To708 = value; }
 
-    
+    /**
+     * If set to UPCONVERT, 608 caption data is both passed through via the "608
+     * compatibility bytes" fields of the 708 wrapper as well as translated into 708.
+     * 708 data present in the source content will be discarded.
+     */
     inline void SetConvert608To708(FileSourceConvert608To708&& value) { m_convert608To708HasBeenSet = true; m_convert608To708 = std::move(value); }
 
-    
+    /**
+     * If set to UPCONVERT, 608 caption data is both passed through via the "608
+     * compatibility bytes" fields of the 708 wrapper as well as translated into 708.
+     * 708 data present in the source content will be discarded.
+     */
     inline FileSourceSettings& WithConvert608To708(const FileSourceConvert608To708& value) { SetConvert608To708(value); return *this;}
 
-    
+    /**
+     * If set to UPCONVERT, 608 caption data is both passed through via the "608
+     * compatibility bytes" fields of the 708 wrapper as well as translated into 708.
+     * 708 data present in the source content will be discarded.
+     */
     inline FileSourceSettings& WithConvert608To708(FileSourceConvert608To708&& value) { SetConvert608To708(std::move(value)); return *this;}
 
 

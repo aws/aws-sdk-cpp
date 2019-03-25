@@ -122,22 +122,40 @@ namespace Model
     inline M3u8Settings& AddAudioPids(int value) { m_audioPidsHasBeenSet = true; m_audioPids.push_back(value); return *this; }
 
 
-    
+    /**
+     * If INSERT, Nielsen inaudible tones for media tracking will be detected in the
+     * input audio and an equivalent ID3 tag will be inserted in the output.
+     */
     inline const M3u8NielsenId3& GetNielsenId3() const{ return m_nielsenId3; }
 
-    
+    /**
+     * If INSERT, Nielsen inaudible tones for media tracking will be detected in the
+     * input audio and an equivalent ID3 tag will be inserted in the output.
+     */
     inline bool NielsenId3HasBeenSet() const { return m_nielsenId3HasBeenSet; }
 
-    
+    /**
+     * If INSERT, Nielsen inaudible tones for media tracking will be detected in the
+     * input audio and an equivalent ID3 tag will be inserted in the output.
+     */
     inline void SetNielsenId3(const M3u8NielsenId3& value) { m_nielsenId3HasBeenSet = true; m_nielsenId3 = value; }
 
-    
+    /**
+     * If INSERT, Nielsen inaudible tones for media tracking will be detected in the
+     * input audio and an equivalent ID3 tag will be inserted in the output.
+     */
     inline void SetNielsenId3(M3u8NielsenId3&& value) { m_nielsenId3HasBeenSet = true; m_nielsenId3 = std::move(value); }
 
-    
+    /**
+     * If INSERT, Nielsen inaudible tones for media tracking will be detected in the
+     * input audio and an equivalent ID3 tag will be inserted in the output.
+     */
     inline M3u8Settings& WithNielsenId3(const M3u8NielsenId3& value) { SetNielsenId3(value); return *this;}
 
-    
+    /**
+     * If INSERT, Nielsen inaudible tones for media tracking will be detected in the
+     * input audio and an equivalent ID3 tag will be inserted in the output.
+     */
     inline M3u8Settings& WithNielsenId3(M3u8NielsenId3&& value) { SetNielsenId3(std::move(value)); return *this;}
 
 
@@ -166,22 +184,46 @@ namespace Model
     inline M3u8Settings& WithPatInterval(int value) { SetPatInterval(value); return *this;}
 
 
-    
+    /**
+     * When set to PCR_EVERY_PES_PACKET a Program Clock Reference value is inserted for
+     * every Packetized Elementary Stream (PES) header. This parameter is effective
+     * only when the PCR PID is the same as the video or audio elementary stream.
+     */
     inline const M3u8PcrControl& GetPcrControl() const{ return m_pcrControl; }
 
-    
+    /**
+     * When set to PCR_EVERY_PES_PACKET a Program Clock Reference value is inserted for
+     * every Packetized Elementary Stream (PES) header. This parameter is effective
+     * only when the PCR PID is the same as the video or audio elementary stream.
+     */
     inline bool PcrControlHasBeenSet() const { return m_pcrControlHasBeenSet; }
 
-    
+    /**
+     * When set to PCR_EVERY_PES_PACKET a Program Clock Reference value is inserted for
+     * every Packetized Elementary Stream (PES) header. This parameter is effective
+     * only when the PCR PID is the same as the video or audio elementary stream.
+     */
     inline void SetPcrControl(const M3u8PcrControl& value) { m_pcrControlHasBeenSet = true; m_pcrControl = value; }
 
-    
+    /**
+     * When set to PCR_EVERY_PES_PACKET a Program Clock Reference value is inserted for
+     * every Packetized Elementary Stream (PES) header. This parameter is effective
+     * only when the PCR PID is the same as the video or audio elementary stream.
+     */
     inline void SetPcrControl(M3u8PcrControl&& value) { m_pcrControlHasBeenSet = true; m_pcrControl = std::move(value); }
 
-    
+    /**
+     * When set to PCR_EVERY_PES_PACKET a Program Clock Reference value is inserted for
+     * every Packetized Elementary Stream (PES) header. This parameter is effective
+     * only when the PCR PID is the same as the video or audio elementary stream.
+     */
     inline M3u8Settings& WithPcrControl(const M3u8PcrControl& value) { SetPcrControl(value); return *this;}
 
-    
+    /**
+     * When set to PCR_EVERY_PES_PACKET a Program Clock Reference value is inserted for
+     * every Packetized Elementary Stream (PES) header. This parameter is effective
+     * only when the PCR PID is the same as the video or audio elementary stream.
+     */
     inline M3u8Settings& WithPcrControl(M3u8PcrControl&& value) { SetPcrControl(std::move(value)); return *this;}
 
 
@@ -323,41 +365,77 @@ namespace Model
     inline M3u8Settings& WithScte35Pid(int value) { SetScte35Pid(value); return *this;}
 
 
-    
+    /**
+     * Enables SCTE-35 passthrough (scte35Source) to pass any SCTE-35 signals from
+     * input to output.
+     */
     inline const M3u8Scte35Source& GetScte35Source() const{ return m_scte35Source; }
 
-    
+    /**
+     * Enables SCTE-35 passthrough (scte35Source) to pass any SCTE-35 signals from
+     * input to output.
+     */
     inline bool Scte35SourceHasBeenSet() const { return m_scte35SourceHasBeenSet; }
 
-    
+    /**
+     * Enables SCTE-35 passthrough (scte35Source) to pass any SCTE-35 signals from
+     * input to output.
+     */
     inline void SetScte35Source(const M3u8Scte35Source& value) { m_scte35SourceHasBeenSet = true; m_scte35Source = value; }
 
-    
+    /**
+     * Enables SCTE-35 passthrough (scte35Source) to pass any SCTE-35 signals from
+     * input to output.
+     */
     inline void SetScte35Source(M3u8Scte35Source&& value) { m_scte35SourceHasBeenSet = true; m_scte35Source = std::move(value); }
 
-    
+    /**
+     * Enables SCTE-35 passthrough (scte35Source) to pass any SCTE-35 signals from
+     * input to output.
+     */
     inline M3u8Settings& WithScte35Source(const M3u8Scte35Source& value) { SetScte35Source(value); return *this;}
 
-    
+    /**
+     * Enables SCTE-35 passthrough (scte35Source) to pass any SCTE-35 signals from
+     * input to output.
+     */
     inline M3u8Settings& WithScte35Source(M3u8Scte35Source&& value) { SetScte35Source(std::move(value)); return *this;}
 
 
-    
+    /**
+     * Applies only to HLS outputs. Use this setting to specify whether the service
+     * inserts the ID3 timed metadata from the input in this output.
+     */
     inline const TimedMetadata& GetTimedMetadata() const{ return m_timedMetadata; }
 
-    
+    /**
+     * Applies only to HLS outputs. Use this setting to specify whether the service
+     * inserts the ID3 timed metadata from the input in this output.
+     */
     inline bool TimedMetadataHasBeenSet() const { return m_timedMetadataHasBeenSet; }
 
-    
+    /**
+     * Applies only to HLS outputs. Use this setting to specify whether the service
+     * inserts the ID3 timed metadata from the input in this output.
+     */
     inline void SetTimedMetadata(const TimedMetadata& value) { m_timedMetadataHasBeenSet = true; m_timedMetadata = value; }
 
-    
+    /**
+     * Applies only to HLS outputs. Use this setting to specify whether the service
+     * inserts the ID3 timed metadata from the input in this output.
+     */
     inline void SetTimedMetadata(TimedMetadata&& value) { m_timedMetadataHasBeenSet = true; m_timedMetadata = std::move(value); }
 
-    
+    /**
+     * Applies only to HLS outputs. Use this setting to specify whether the service
+     * inserts the ID3 timed metadata from the input in this output.
+     */
     inline M3u8Settings& WithTimedMetadata(const TimedMetadata& value) { SetTimedMetadata(value); return *this;}
 
-    
+    /**
+     * Applies only to HLS outputs. Use this setting to specify whether the service
+     * inserts the ID3 timed metadata from the input in this output.
+     */
     inline M3u8Settings& WithTimedMetadata(TimedMetadata&& value) { SetTimedMetadata(std::move(value)); return *this;}
 
 

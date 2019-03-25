@@ -15,8 +15,8 @@
 
 #pragma once
 #include <aws/iot1click-devices/IoT1ClickDevicesService_EXPORTS.h>
-#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <utility>
 
 namespace Aws
@@ -41,6 +41,47 @@ namespace Model
     DeviceDescription(Aws::Utils::Json::JsonView jsonValue);
     DeviceDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
+
+
+    /**
+     * <p>The ARN of the device.</p>
+     */
+    inline const Aws::String& GetArn() const{ return m_arn; }
+
+    /**
+     * <p>The ARN of the device.</p>
+     */
+    inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
+
+    /**
+     * <p>The ARN of the device.</p>
+     */
+    inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
+
+    /**
+     * <p>The ARN of the device.</p>
+     */
+    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
+
+    /**
+     * <p>The ARN of the device.</p>
+     */
+    inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
+
+    /**
+     * <p>The ARN of the device.</p>
+     */
+    inline DeviceDescription& WithArn(const Aws::String& value) { SetArn(value); return *this;}
+
+    /**
+     * <p>The ARN of the device.</p>
+     */
+    inline DeviceDescription& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The ARN of the device.</p>
+     */
+    inline DeviceDescription& WithArn(const char* value) { SetArn(value); return *this;}
 
 
     /**
@@ -266,7 +307,76 @@ namespace Model
      */
     inline DeviceDescription& WithType(const char* value) { SetType(value); return *this;}
 
+
+    /**
+     * <p>The tags currently associated with the AWS IoT 1-Click device.</p>
+     */
+    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>The tags currently associated with the AWS IoT 1-Click device.</p>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
+
+    /**
+     * <p>The tags currently associated with the AWS IoT 1-Click device.</p>
+     */
+    inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
+
+    /**
+     * <p>The tags currently associated with the AWS IoT 1-Click device.</p>
+     */
+    inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
+
+    /**
+     * <p>The tags currently associated with the AWS IoT 1-Click device.</p>
+     */
+    inline DeviceDescription& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
+
+    /**
+     * <p>The tags currently associated with the AWS IoT 1-Click device.</p>
+     */
+    inline DeviceDescription& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
+
+    /**
+     * <p>The tags currently associated with the AWS IoT 1-Click device.</p>
+     */
+    inline DeviceDescription& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
+
+    /**
+     * <p>The tags currently associated with the AWS IoT 1-Click device.</p>
+     */
+    inline DeviceDescription& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>The tags currently associated with the AWS IoT 1-Click device.</p>
+     */
+    inline DeviceDescription& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>The tags currently associated with the AWS IoT 1-Click device.</p>
+     */
+    inline DeviceDescription& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
+
+    /**
+     * <p>The tags currently associated with the AWS IoT 1-Click device.</p>
+     */
+    inline DeviceDescription& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>The tags currently associated with the AWS IoT 1-Click device.</p>
+     */
+    inline DeviceDescription& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>The tags currently associated with the AWS IoT 1-Click device.</p>
+     */
+    inline DeviceDescription& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
+
   private:
+
+    Aws::String m_arn;
+    bool m_arnHasBeenSet;
 
     Aws::Map<Aws::String, Aws::String> m_attributes;
     bool m_attributesHasBeenSet;
@@ -282,6 +392,9 @@ namespace Model
 
     Aws::String m_type;
     bool m_typeHasBeenSet;
+
+    Aws::Map<Aws::String, Aws::String> m_tags;
+    bool m_tagsHasBeenSet;
   };
 
 } // namespace Model

@@ -50,60 +50,126 @@ namespace Model
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 
-    
+    /**
+     * When enabled, file composition times will start at zero, composition times in
+     * the 'ctts' (composition time to sample) box for B-frames will be negative, and a
+     * 'cslg' (composition shift least greatest) box will be included per 14496-1
+     * amendment 1. This improves compatibility with Apple players and tools.
+     */
     inline const Mp4CslgAtom& GetCslgAtom() const{ return m_cslgAtom; }
 
-    
+    /**
+     * When enabled, file composition times will start at zero, composition times in
+     * the 'ctts' (composition time to sample) box for B-frames will be negative, and a
+     * 'cslg' (composition shift least greatest) box will be included per 14496-1
+     * amendment 1. This improves compatibility with Apple players and tools.
+     */
     inline bool CslgAtomHasBeenSet() const { return m_cslgAtomHasBeenSet; }
 
-    
+    /**
+     * When enabled, file composition times will start at zero, composition times in
+     * the 'ctts' (composition time to sample) box for B-frames will be negative, and a
+     * 'cslg' (composition shift least greatest) box will be included per 14496-1
+     * amendment 1. This improves compatibility with Apple players and tools.
+     */
     inline void SetCslgAtom(const Mp4CslgAtom& value) { m_cslgAtomHasBeenSet = true; m_cslgAtom = value; }
 
-    
+    /**
+     * When enabled, file composition times will start at zero, composition times in
+     * the 'ctts' (composition time to sample) box for B-frames will be negative, and a
+     * 'cslg' (composition shift least greatest) box will be included per 14496-1
+     * amendment 1. This improves compatibility with Apple players and tools.
+     */
     inline void SetCslgAtom(Mp4CslgAtom&& value) { m_cslgAtomHasBeenSet = true; m_cslgAtom = std::move(value); }
 
-    
+    /**
+     * When enabled, file composition times will start at zero, composition times in
+     * the 'ctts' (composition time to sample) box for B-frames will be negative, and a
+     * 'cslg' (composition shift least greatest) box will be included per 14496-1
+     * amendment 1. This improves compatibility with Apple players and tools.
+     */
     inline Mp4Settings& WithCslgAtom(const Mp4CslgAtom& value) { SetCslgAtom(value); return *this;}
 
-    
+    /**
+     * When enabled, file composition times will start at zero, composition times in
+     * the 'ctts' (composition time to sample) box for B-frames will be negative, and a
+     * 'cslg' (composition shift least greatest) box will be included per 14496-1
+     * amendment 1. This improves compatibility with Apple players and tools.
+     */
     inline Mp4Settings& WithCslgAtom(Mp4CslgAtom&& value) { SetCslgAtom(std::move(value)); return *this;}
 
 
-    
+    /**
+     * Inserts a free-space box immediately after the moov box.
+     */
     inline const Mp4FreeSpaceBox& GetFreeSpaceBox() const{ return m_freeSpaceBox; }
 
-    
+    /**
+     * Inserts a free-space box immediately after the moov box.
+     */
     inline bool FreeSpaceBoxHasBeenSet() const { return m_freeSpaceBoxHasBeenSet; }
 
-    
+    /**
+     * Inserts a free-space box immediately after the moov box.
+     */
     inline void SetFreeSpaceBox(const Mp4FreeSpaceBox& value) { m_freeSpaceBoxHasBeenSet = true; m_freeSpaceBox = value; }
 
-    
+    /**
+     * Inserts a free-space box immediately after the moov box.
+     */
     inline void SetFreeSpaceBox(Mp4FreeSpaceBox&& value) { m_freeSpaceBoxHasBeenSet = true; m_freeSpaceBox = std::move(value); }
 
-    
+    /**
+     * Inserts a free-space box immediately after the moov box.
+     */
     inline Mp4Settings& WithFreeSpaceBox(const Mp4FreeSpaceBox& value) { SetFreeSpaceBox(value); return *this;}
 
-    
+    /**
+     * Inserts a free-space box immediately after the moov box.
+     */
     inline Mp4Settings& WithFreeSpaceBox(Mp4FreeSpaceBox&& value) { SetFreeSpaceBox(std::move(value)); return *this;}
 
 
-    
+    /**
+     * If set to PROGRESSIVE_DOWNLOAD, the MOOV atom is relocated to the beginning of
+     * the archive as required for progressive downloading. Otherwise it is placed
+     * normally at the end.
+     */
     inline const Mp4MoovPlacement& GetMoovPlacement() const{ return m_moovPlacement; }
 
-    
+    /**
+     * If set to PROGRESSIVE_DOWNLOAD, the MOOV atom is relocated to the beginning of
+     * the archive as required for progressive downloading. Otherwise it is placed
+     * normally at the end.
+     */
     inline bool MoovPlacementHasBeenSet() const { return m_moovPlacementHasBeenSet; }
 
-    
+    /**
+     * If set to PROGRESSIVE_DOWNLOAD, the MOOV atom is relocated to the beginning of
+     * the archive as required for progressive downloading. Otherwise it is placed
+     * normally at the end.
+     */
     inline void SetMoovPlacement(const Mp4MoovPlacement& value) { m_moovPlacementHasBeenSet = true; m_moovPlacement = value; }
 
-    
+    /**
+     * If set to PROGRESSIVE_DOWNLOAD, the MOOV atom is relocated to the beginning of
+     * the archive as required for progressive downloading. Otherwise it is placed
+     * normally at the end.
+     */
     inline void SetMoovPlacement(Mp4MoovPlacement&& value) { m_moovPlacementHasBeenSet = true; m_moovPlacement = std::move(value); }
 
-    
+    /**
+     * If set to PROGRESSIVE_DOWNLOAD, the MOOV atom is relocated to the beginning of
+     * the archive as required for progressive downloading. Otherwise it is placed
+     * normally at the end.
+     */
     inline Mp4Settings& WithMoovPlacement(const Mp4MoovPlacement& value) { SetMoovPlacement(value); return *this;}
 
-    
+    /**
+     * If set to PROGRESSIVE_DOWNLOAD, the MOOV atom is relocated to the beginning of
+     * the archive as required for progressive downloading. Otherwise it is placed
+     * normally at the end.
+     */
     inline Mp4Settings& WithMoovPlacement(Mp4MoovPlacement&& value) { SetMoovPlacement(std::move(value)); return *this;}
 
 

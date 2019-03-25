@@ -53,41 +53,119 @@ namespace Model
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 
-    
+    /**
+     * If no explicit x_position or y_position is provided, setting alignment to
+     * centered will place the captions at the bottom center of the output. Similarly,
+     * setting a left alignment will align captions to the bottom left of the output.
+     * If x and y positions are given in conjunction with the alignment parameter, the
+     * font will be justified (either left or centered) relative to those coordinates.
+     * This option is not valid for source captions that are STL, 608/embedded or
+     * teletext. These source settings are already pre-defined by the caption stream.
+     * All burn-in and DVB-Sub font settings must match.
+     */
     inline const BurninSubtitleAlignment& GetAlignment() const{ return m_alignment; }
 
-    
+    /**
+     * If no explicit x_position or y_position is provided, setting alignment to
+     * centered will place the captions at the bottom center of the output. Similarly,
+     * setting a left alignment will align captions to the bottom left of the output.
+     * If x and y positions are given in conjunction with the alignment parameter, the
+     * font will be justified (either left or centered) relative to those coordinates.
+     * This option is not valid for source captions that are STL, 608/embedded or
+     * teletext. These source settings are already pre-defined by the caption stream.
+     * All burn-in and DVB-Sub font settings must match.
+     */
     inline bool AlignmentHasBeenSet() const { return m_alignmentHasBeenSet; }
 
-    
+    /**
+     * If no explicit x_position or y_position is provided, setting alignment to
+     * centered will place the captions at the bottom center of the output. Similarly,
+     * setting a left alignment will align captions to the bottom left of the output.
+     * If x and y positions are given in conjunction with the alignment parameter, the
+     * font will be justified (either left or centered) relative to those coordinates.
+     * This option is not valid for source captions that are STL, 608/embedded or
+     * teletext. These source settings are already pre-defined by the caption stream.
+     * All burn-in and DVB-Sub font settings must match.
+     */
     inline void SetAlignment(const BurninSubtitleAlignment& value) { m_alignmentHasBeenSet = true; m_alignment = value; }
 
-    
+    /**
+     * If no explicit x_position or y_position is provided, setting alignment to
+     * centered will place the captions at the bottom center of the output. Similarly,
+     * setting a left alignment will align captions to the bottom left of the output.
+     * If x and y positions are given in conjunction with the alignment parameter, the
+     * font will be justified (either left or centered) relative to those coordinates.
+     * This option is not valid for source captions that are STL, 608/embedded or
+     * teletext. These source settings are already pre-defined by the caption stream.
+     * All burn-in and DVB-Sub font settings must match.
+     */
     inline void SetAlignment(BurninSubtitleAlignment&& value) { m_alignmentHasBeenSet = true; m_alignment = std::move(value); }
 
-    
+    /**
+     * If no explicit x_position or y_position is provided, setting alignment to
+     * centered will place the captions at the bottom center of the output. Similarly,
+     * setting a left alignment will align captions to the bottom left of the output.
+     * If x and y positions are given in conjunction with the alignment parameter, the
+     * font will be justified (either left or centered) relative to those coordinates.
+     * This option is not valid for source captions that are STL, 608/embedded or
+     * teletext. These source settings are already pre-defined by the caption stream.
+     * All burn-in and DVB-Sub font settings must match.
+     */
     inline BurninDestinationSettings& WithAlignment(const BurninSubtitleAlignment& value) { SetAlignment(value); return *this;}
 
-    
+    /**
+     * If no explicit x_position or y_position is provided, setting alignment to
+     * centered will place the captions at the bottom center of the output. Similarly,
+     * setting a left alignment will align captions to the bottom left of the output.
+     * If x and y positions are given in conjunction with the alignment parameter, the
+     * font will be justified (either left or centered) relative to those coordinates.
+     * This option is not valid for source captions that are STL, 608/embedded or
+     * teletext. These source settings are already pre-defined by the caption stream.
+     * All burn-in and DVB-Sub font settings must match.
+     */
     inline BurninDestinationSettings& WithAlignment(BurninSubtitleAlignment&& value) { SetAlignment(std::move(value)); return *this;}
 
 
-    
+    /**
+     * Specifies the color of the rectangle behind the captions.
+All burn-in and
+     * DVB-Sub font settings must match.
+     */
     inline const BurninSubtitleBackgroundColor& GetBackgroundColor() const{ return m_backgroundColor; }
 
-    
+    /**
+     * Specifies the color of the rectangle behind the captions.
+All burn-in and
+     * DVB-Sub font settings must match.
+     */
     inline bool BackgroundColorHasBeenSet() const { return m_backgroundColorHasBeenSet; }
 
-    
+    /**
+     * Specifies the color of the rectangle behind the captions.
+All burn-in and
+     * DVB-Sub font settings must match.
+     */
     inline void SetBackgroundColor(const BurninSubtitleBackgroundColor& value) { m_backgroundColorHasBeenSet = true; m_backgroundColor = value; }
 
-    
+    /**
+     * Specifies the color of the rectangle behind the captions.
+All burn-in and
+     * DVB-Sub font settings must match.
+     */
     inline void SetBackgroundColor(BurninSubtitleBackgroundColor&& value) { m_backgroundColorHasBeenSet = true; m_backgroundColor = std::move(value); }
 
-    
+    /**
+     * Specifies the color of the rectangle behind the captions.
+All burn-in and
+     * DVB-Sub font settings must match.
+     */
     inline BurninDestinationSettings& WithBackgroundColor(const BurninSubtitleBackgroundColor& value) { SetBackgroundColor(value); return *this;}
 
-    
+    /**
+     * Specifies the color of the rectangle behind the captions.
+All burn-in and
+     * DVB-Sub font settings must match.
+     */
     inline BurninDestinationSettings& WithBackgroundColor(BurninSubtitleBackgroundColor&& value) { SetBackgroundColor(std::move(value)); return *this;}
 
 
@@ -120,22 +198,52 @@ namespace Model
     inline BurninDestinationSettings& WithBackgroundOpacity(int value) { SetBackgroundOpacity(value); return *this;}
 
 
-    
+    /**
+     * Specifies the color of the burned-in captions. This option is not valid for
+     * source captions that are STL, 608/embedded or teletext. These source settings
+     * are already pre-defined by the caption stream. All burn-in and DVB-Sub font
+     * settings must match.
+     */
     inline const BurninSubtitleFontColor& GetFontColor() const{ return m_fontColor; }
 
-    
+    /**
+     * Specifies the color of the burned-in captions. This option is not valid for
+     * source captions that are STL, 608/embedded or teletext. These source settings
+     * are already pre-defined by the caption stream. All burn-in and DVB-Sub font
+     * settings must match.
+     */
     inline bool FontColorHasBeenSet() const { return m_fontColorHasBeenSet; }
 
-    
+    /**
+     * Specifies the color of the burned-in captions. This option is not valid for
+     * source captions that are STL, 608/embedded or teletext. These source settings
+     * are already pre-defined by the caption stream. All burn-in and DVB-Sub font
+     * settings must match.
+     */
     inline void SetFontColor(const BurninSubtitleFontColor& value) { m_fontColorHasBeenSet = true; m_fontColor = value; }
 
-    
+    /**
+     * Specifies the color of the burned-in captions. This option is not valid for
+     * source captions that are STL, 608/embedded or teletext. These source settings
+     * are already pre-defined by the caption stream. All burn-in and DVB-Sub font
+     * settings must match.
+     */
     inline void SetFontColor(BurninSubtitleFontColor&& value) { m_fontColorHasBeenSet = true; m_fontColor = std::move(value); }
 
-    
+    /**
+     * Specifies the color of the burned-in captions. This option is not valid for
+     * source captions that are STL, 608/embedded or teletext. These source settings
+     * are already pre-defined by the caption stream. All burn-in and DVB-Sub font
+     * settings must match.
+     */
     inline BurninDestinationSettings& WithFontColor(const BurninSubtitleFontColor& value) { SetFontColor(value); return *this;}
 
-    
+    /**
+     * Specifies the color of the burned-in captions. This option is not valid for
+     * source captions that are STL, 608/embedded or teletext. These source settings
+     * are already pre-defined by the caption stream. All burn-in and DVB-Sub font
+     * settings must match.
+     */
     inline BurninDestinationSettings& WithFontColor(BurninSubtitleFontColor&& value) { SetFontColor(std::move(value)); return *this;}
 
 
@@ -271,22 +379,52 @@ All burn-in and
     inline BurninDestinationSettings& WithFontSize(int value) { SetFontSize(value); return *this;}
 
 
-    
+    /**
+     * Specifies font outline color. This option is not valid for source captions that
+     * are either 608/embedded or teletext. These source settings are already
+     * pre-defined by the caption stream. All burn-in and DVB-Sub font settings must
+     * match.
+     */
     inline const BurninSubtitleOutlineColor& GetOutlineColor() const{ return m_outlineColor; }
 
-    
+    /**
+     * Specifies font outline color. This option is not valid for source captions that
+     * are either 608/embedded or teletext. These source settings are already
+     * pre-defined by the caption stream. All burn-in and DVB-Sub font settings must
+     * match.
+     */
     inline bool OutlineColorHasBeenSet() const { return m_outlineColorHasBeenSet; }
 
-    
+    /**
+     * Specifies font outline color. This option is not valid for source captions that
+     * are either 608/embedded or teletext. These source settings are already
+     * pre-defined by the caption stream. All burn-in and DVB-Sub font settings must
+     * match.
+     */
     inline void SetOutlineColor(const BurninSubtitleOutlineColor& value) { m_outlineColorHasBeenSet = true; m_outlineColor = value; }
 
-    
+    /**
+     * Specifies font outline color. This option is not valid for source captions that
+     * are either 608/embedded or teletext. These source settings are already
+     * pre-defined by the caption stream. All burn-in and DVB-Sub font settings must
+     * match.
+     */
     inline void SetOutlineColor(BurninSubtitleOutlineColor&& value) { m_outlineColorHasBeenSet = true; m_outlineColor = std::move(value); }
 
-    
+    /**
+     * Specifies font outline color. This option is not valid for source captions that
+     * are either 608/embedded or teletext. These source settings are already
+     * pre-defined by the caption stream. All burn-in and DVB-Sub font settings must
+     * match.
+     */
     inline BurninDestinationSettings& WithOutlineColor(const BurninSubtitleOutlineColor& value) { SetOutlineColor(value); return *this;}
 
-    
+    /**
+     * Specifies font outline color. This option is not valid for source captions that
+     * are either 608/embedded or teletext. These source settings are already
+     * pre-defined by the caption stream. All burn-in and DVB-Sub font settings must
+     * match.
+     */
     inline BurninDestinationSettings& WithOutlineColor(BurninSubtitleOutlineColor&& value) { SetOutlineColor(std::move(value)); return *this;}
 
 
@@ -323,22 +461,46 @@ All burn-in and
     inline BurninDestinationSettings& WithOutlineSize(int value) { SetOutlineSize(value); return *this;}
 
 
-    
+    /**
+     * Specifies the color of the shadow cast by the captions.
+All burn-in and DVB-Sub
+     * font settings must match.
+     */
     inline const BurninSubtitleShadowColor& GetShadowColor() const{ return m_shadowColor; }
 
-    
+    /**
+     * Specifies the color of the shadow cast by the captions.
+All burn-in and DVB-Sub
+     * font settings must match.
+     */
     inline bool ShadowColorHasBeenSet() const { return m_shadowColorHasBeenSet; }
 
-    
+    /**
+     * Specifies the color of the shadow cast by the captions.
+All burn-in and DVB-Sub
+     * font settings must match.
+     */
     inline void SetShadowColor(const BurninSubtitleShadowColor& value) { m_shadowColorHasBeenSet = true; m_shadowColor = value; }
 
-    
+    /**
+     * Specifies the color of the shadow cast by the captions.
+All burn-in and DVB-Sub
+     * font settings must match.
+     */
     inline void SetShadowColor(BurninSubtitleShadowColor&& value) { m_shadowColorHasBeenSet = true; m_shadowColor = std::move(value); }
 
-    
+    /**
+     * Specifies the color of the shadow cast by the captions.
+All burn-in and DVB-Sub
+     * font settings must match.
+     */
     inline BurninDestinationSettings& WithShadowColor(const BurninSubtitleShadowColor& value) { SetShadowColor(value); return *this;}
 
-    
+    /**
+     * Specifies the color of the shadow cast by the captions.
+All burn-in and DVB-Sub
+     * font settings must match.
+     */
     inline BurninDestinationSettings& WithShadowColor(BurninSubtitleShadowColor&& value) { SetShadowColor(std::move(value)); return *this;}
 
 
@@ -429,22 +591,58 @@ All burn-in and
     inline BurninDestinationSettings& WithShadowYOffset(int value) { SetShadowYOffset(value); return *this;}
 
 
-    
+    /**
+     * Only applies to jobs with input captions in Teletext or STL formats. Specify
+     * whether the spacing between letters in your captions is set by the captions grid
+     * or varies depending on letter width. Choose fixed grid to conform to the spacing
+     * specified in the captions file more accurately. Choose proportional to make the
+     * text easier to read if the captions are closed caption.
+     */
     inline const BurninSubtitleTeletextSpacing& GetTeletextSpacing() const{ return m_teletextSpacing; }
 
-    
+    /**
+     * Only applies to jobs with input captions in Teletext or STL formats. Specify
+     * whether the spacing between letters in your captions is set by the captions grid
+     * or varies depending on letter width. Choose fixed grid to conform to the spacing
+     * specified in the captions file more accurately. Choose proportional to make the
+     * text easier to read if the captions are closed caption.
+     */
     inline bool TeletextSpacingHasBeenSet() const { return m_teletextSpacingHasBeenSet; }
 
-    
+    /**
+     * Only applies to jobs with input captions in Teletext or STL formats. Specify
+     * whether the spacing between letters in your captions is set by the captions grid
+     * or varies depending on letter width. Choose fixed grid to conform to the spacing
+     * specified in the captions file more accurately. Choose proportional to make the
+     * text easier to read if the captions are closed caption.
+     */
     inline void SetTeletextSpacing(const BurninSubtitleTeletextSpacing& value) { m_teletextSpacingHasBeenSet = true; m_teletextSpacing = value; }
 
-    
+    /**
+     * Only applies to jobs with input captions in Teletext or STL formats. Specify
+     * whether the spacing between letters in your captions is set by the captions grid
+     * or varies depending on letter width. Choose fixed grid to conform to the spacing
+     * specified in the captions file more accurately. Choose proportional to make the
+     * text easier to read if the captions are closed caption.
+     */
     inline void SetTeletextSpacing(BurninSubtitleTeletextSpacing&& value) { m_teletextSpacingHasBeenSet = true; m_teletextSpacing = std::move(value); }
 
-    
+    /**
+     * Only applies to jobs with input captions in Teletext or STL formats. Specify
+     * whether the spacing between letters in your captions is set by the captions grid
+     * or varies depending on letter width. Choose fixed grid to conform to the spacing
+     * specified in the captions file more accurately. Choose proportional to make the
+     * text easier to read if the captions are closed caption.
+     */
     inline BurninDestinationSettings& WithTeletextSpacing(const BurninSubtitleTeletextSpacing& value) { SetTeletextSpacing(value); return *this;}
 
-    
+    /**
+     * Only applies to jobs with input captions in Teletext or STL formats. Specify
+     * whether the spacing between letters in your captions is set by the captions grid
+     * or varies depending on letter width. Choose fixed grid to conform to the spacing
+     * specified in the captions file more accurately. Choose proportional to make the
+     * text easier to read if the captions are closed caption.
+     */
     inline BurninDestinationSettings& WithTeletextSpacing(BurninSubtitleTeletextSpacing&& value) { SetTeletextSpacing(std::move(value)); return *this;}
 
 

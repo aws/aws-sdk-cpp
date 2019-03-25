@@ -101,22 +101,46 @@ namespace Model
     inline AudioSelector& WithCustomLanguageCode(const char* value) { SetCustomLanguageCode(value); return *this;}
 
 
-    
+    /**
+     * Enable this setting on one audio selector to set it as the default for the job.
+     * The service uses this default for outputs where it can't find the specified
+     * input audio. If you don't set a default, those outputs have no audio.
+     */
     inline const AudioDefaultSelection& GetDefaultSelection() const{ return m_defaultSelection; }
 
-    
+    /**
+     * Enable this setting on one audio selector to set it as the default for the job.
+     * The service uses this default for outputs where it can't find the specified
+     * input audio. If you don't set a default, those outputs have no audio.
+     */
     inline bool DefaultSelectionHasBeenSet() const { return m_defaultSelectionHasBeenSet; }
 
-    
+    /**
+     * Enable this setting on one audio selector to set it as the default for the job.
+     * The service uses this default for outputs where it can't find the specified
+     * input audio. If you don't set a default, those outputs have no audio.
+     */
     inline void SetDefaultSelection(const AudioDefaultSelection& value) { m_defaultSelectionHasBeenSet = true; m_defaultSelection = value; }
 
-    
+    /**
+     * Enable this setting on one audio selector to set it as the default for the job.
+     * The service uses this default for outputs where it can't find the specified
+     * input audio. If you don't set a default, those outputs have no audio.
+     */
     inline void SetDefaultSelection(AudioDefaultSelection&& value) { m_defaultSelectionHasBeenSet = true; m_defaultSelection = std::move(value); }
 
-    
+    /**
+     * Enable this setting on one audio selector to set it as the default for the job.
+     * The service uses this default for outputs where it can't find the specified
+     * input audio. If you don't set a default, those outputs have no audio.
+     */
     inline AudioSelector& WithDefaultSelection(const AudioDefaultSelection& value) { SetDefaultSelection(value); return *this;}
 
-    
+    /**
+     * Enable this setting on one audio selector to set it as the default for the job.
+     * The service uses this default for outputs where it can't find the specified
+     * input audio. If you don't set a default, those outputs have no audio.
+     */
     inline AudioSelector& WithDefaultSelection(AudioDefaultSelection&& value) { SetDefaultSelection(std::move(value)); return *this;}
 
 
@@ -345,22 +369,34 @@ namespace Model
     inline AudioSelector& WithRemixSettings(RemixSettings&& value) { SetRemixSettings(std::move(value)); return *this;}
 
 
-    
+    /**
+     * Specifies the type of the audio selector.
+     */
     inline const AudioSelectorType& GetSelectorType() const{ return m_selectorType; }
 
-    
+    /**
+     * Specifies the type of the audio selector.
+     */
     inline bool SelectorTypeHasBeenSet() const { return m_selectorTypeHasBeenSet; }
 
-    
+    /**
+     * Specifies the type of the audio selector.
+     */
     inline void SetSelectorType(const AudioSelectorType& value) { m_selectorTypeHasBeenSet = true; m_selectorType = value; }
 
-    
+    /**
+     * Specifies the type of the audio selector.
+     */
     inline void SetSelectorType(AudioSelectorType&& value) { m_selectorTypeHasBeenSet = true; m_selectorType = std::move(value); }
 
-    
+    /**
+     * Specifies the type of the audio selector.
+     */
     inline AudioSelector& WithSelectorType(const AudioSelectorType& value) { SetSelectorType(value); return *this;}
 
-    
+    /**
+     * Specifies the type of the audio selector.
+     */
     inline AudioSelector& WithSelectorType(AudioSelectorType&& value) { SetSelectorType(std::move(value)); return *this;}
 
 

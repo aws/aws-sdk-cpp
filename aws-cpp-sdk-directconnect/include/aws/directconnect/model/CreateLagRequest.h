@@ -112,49 +112,57 @@ namespace Model
 
     /**
      * <p>The bandwidth of the individual physical connections bundled by the LAG. The
-     * possible values are 1Gbps and 10Gbps.</p>
+     * possible values are 50Mbps, 100Mbps, 200Mbps, 300Mbps, 400Mbps, 500Mbps, 1Gbps,
+     * 2Gbps, 5Gbps, and 10Gbps. </p>
      */
     inline const Aws::String& GetConnectionsBandwidth() const{ return m_connectionsBandwidth; }
 
     /**
      * <p>The bandwidth of the individual physical connections bundled by the LAG. The
-     * possible values are 1Gbps and 10Gbps.</p>
+     * possible values are 50Mbps, 100Mbps, 200Mbps, 300Mbps, 400Mbps, 500Mbps, 1Gbps,
+     * 2Gbps, 5Gbps, and 10Gbps. </p>
      */
     inline bool ConnectionsBandwidthHasBeenSet() const { return m_connectionsBandwidthHasBeenSet; }
 
     /**
      * <p>The bandwidth of the individual physical connections bundled by the LAG. The
-     * possible values are 1Gbps and 10Gbps.</p>
+     * possible values are 50Mbps, 100Mbps, 200Mbps, 300Mbps, 400Mbps, 500Mbps, 1Gbps,
+     * 2Gbps, 5Gbps, and 10Gbps. </p>
      */
     inline void SetConnectionsBandwidth(const Aws::String& value) { m_connectionsBandwidthHasBeenSet = true; m_connectionsBandwidth = value; }
 
     /**
      * <p>The bandwidth of the individual physical connections bundled by the LAG. The
-     * possible values are 1Gbps and 10Gbps.</p>
+     * possible values are 50Mbps, 100Mbps, 200Mbps, 300Mbps, 400Mbps, 500Mbps, 1Gbps,
+     * 2Gbps, 5Gbps, and 10Gbps. </p>
      */
     inline void SetConnectionsBandwidth(Aws::String&& value) { m_connectionsBandwidthHasBeenSet = true; m_connectionsBandwidth = std::move(value); }
 
     /**
      * <p>The bandwidth of the individual physical connections bundled by the LAG. The
-     * possible values are 1Gbps and 10Gbps.</p>
+     * possible values are 50Mbps, 100Mbps, 200Mbps, 300Mbps, 400Mbps, 500Mbps, 1Gbps,
+     * 2Gbps, 5Gbps, and 10Gbps. </p>
      */
     inline void SetConnectionsBandwidth(const char* value) { m_connectionsBandwidthHasBeenSet = true; m_connectionsBandwidth.assign(value); }
 
     /**
      * <p>The bandwidth of the individual physical connections bundled by the LAG. The
-     * possible values are 1Gbps and 10Gbps.</p>
+     * possible values are 50Mbps, 100Mbps, 200Mbps, 300Mbps, 400Mbps, 500Mbps, 1Gbps,
+     * 2Gbps, 5Gbps, and 10Gbps. </p>
      */
     inline CreateLagRequest& WithConnectionsBandwidth(const Aws::String& value) { SetConnectionsBandwidth(value); return *this;}
 
     /**
      * <p>The bandwidth of the individual physical connections bundled by the LAG. The
-     * possible values are 1Gbps and 10Gbps.</p>
+     * possible values are 50Mbps, 100Mbps, 200Mbps, 300Mbps, 400Mbps, 500Mbps, 1Gbps,
+     * 2Gbps, 5Gbps, and 10Gbps. </p>
      */
     inline CreateLagRequest& WithConnectionsBandwidth(Aws::String&& value) { SetConnectionsBandwidth(std::move(value)); return *this;}
 
     /**
      * <p>The bandwidth of the individual physical connections bundled by the LAG. The
-     * possible values are 1Gbps and 10Gbps.</p>
+     * possible values are 50Mbps, 100Mbps, 200Mbps, 300Mbps, 400Mbps, 500Mbps, 1Gbps,
+     * 2Gbps, 5Gbps, and 10Gbps. </p>
      */
     inline CreateLagRequest& WithConnectionsBandwidth(const char* value) { SetConnectionsBandwidth(value); return *this;}
 

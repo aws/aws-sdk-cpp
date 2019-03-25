@@ -35,8 +35,10 @@ namespace Model
 {
 
   /**
-   * Specify the decryption settings used to decrypt encrypted input<p><h3>See
-   * Also:</h3>   <a
+   * Settings for decrypting any input files that you encrypt before you upload them
+   * to Amazon S3. MediaConvert can decrypt files only when you use AWS Key
+   * Management Service (KMS) to encrypt the data key that you use to encrypt your
+   * content.<p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/InputDecryptionSettings">AWS
    * API Reference</a></p>
    */
@@ -49,144 +51,236 @@ namespace Model
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 
-    
+    /**
+     * Specify the encryption mode that you used to encrypt your input files.
+     */
     inline const DecryptionMode& GetDecryptionMode() const{ return m_decryptionMode; }
 
-    
+    /**
+     * Specify the encryption mode that you used to encrypt your input files.
+     */
     inline bool DecryptionModeHasBeenSet() const { return m_decryptionModeHasBeenSet; }
 
-    
+    /**
+     * Specify the encryption mode that you used to encrypt your input files.
+     */
     inline void SetDecryptionMode(const DecryptionMode& value) { m_decryptionModeHasBeenSet = true; m_decryptionMode = value; }
 
-    
+    /**
+     * Specify the encryption mode that you used to encrypt your input files.
+     */
     inline void SetDecryptionMode(DecryptionMode&& value) { m_decryptionModeHasBeenSet = true; m_decryptionMode = std::move(value); }
 
-    
+    /**
+     * Specify the encryption mode that you used to encrypt your input files.
+     */
     inline InputDecryptionSettings& WithDecryptionMode(const DecryptionMode& value) { SetDecryptionMode(value); return *this;}
 
-    
+    /**
+     * Specify the encryption mode that you used to encrypt your input files.
+     */
     inline InputDecryptionSettings& WithDecryptionMode(DecryptionMode&& value) { SetDecryptionMode(std::move(value)); return *this;}
 
 
     /**
-     * Decryption key either 128 or 192 or 256 bits encrypted with KMS
+     * Warning! Don't provide your encryption key in plaintext. Your job settings could
+     * be intercepted, making your encrypted content vulnerable. Specify the encrypted
+     * version of the data key that you used to encrypt your content. The data key must
+     * be encrypted by AWS Key Management Service (KMS). The key can be 128, 192, or
+     * 256 bits.
      */
     inline const Aws::String& GetEncryptedDecryptionKey() const{ return m_encryptedDecryptionKey; }
 
     /**
-     * Decryption key either 128 or 192 or 256 bits encrypted with KMS
+     * Warning! Don't provide your encryption key in plaintext. Your job settings could
+     * be intercepted, making your encrypted content vulnerable. Specify the encrypted
+     * version of the data key that you used to encrypt your content. The data key must
+     * be encrypted by AWS Key Management Service (KMS). The key can be 128, 192, or
+     * 256 bits.
      */
     inline bool EncryptedDecryptionKeyHasBeenSet() const { return m_encryptedDecryptionKeyHasBeenSet; }
 
     /**
-     * Decryption key either 128 or 192 or 256 bits encrypted with KMS
+     * Warning! Don't provide your encryption key in plaintext. Your job settings could
+     * be intercepted, making your encrypted content vulnerable. Specify the encrypted
+     * version of the data key that you used to encrypt your content. The data key must
+     * be encrypted by AWS Key Management Service (KMS). The key can be 128, 192, or
+     * 256 bits.
      */
     inline void SetEncryptedDecryptionKey(const Aws::String& value) { m_encryptedDecryptionKeyHasBeenSet = true; m_encryptedDecryptionKey = value; }
 
     /**
-     * Decryption key either 128 or 192 or 256 bits encrypted with KMS
+     * Warning! Don't provide your encryption key in plaintext. Your job settings could
+     * be intercepted, making your encrypted content vulnerable. Specify the encrypted
+     * version of the data key that you used to encrypt your content. The data key must
+     * be encrypted by AWS Key Management Service (KMS). The key can be 128, 192, or
+     * 256 bits.
      */
     inline void SetEncryptedDecryptionKey(Aws::String&& value) { m_encryptedDecryptionKeyHasBeenSet = true; m_encryptedDecryptionKey = std::move(value); }
 
     /**
-     * Decryption key either 128 or 192 or 256 bits encrypted with KMS
+     * Warning! Don't provide your encryption key in plaintext. Your job settings could
+     * be intercepted, making your encrypted content vulnerable. Specify the encrypted
+     * version of the data key that you used to encrypt your content. The data key must
+     * be encrypted by AWS Key Management Service (KMS). The key can be 128, 192, or
+     * 256 bits.
      */
     inline void SetEncryptedDecryptionKey(const char* value) { m_encryptedDecryptionKeyHasBeenSet = true; m_encryptedDecryptionKey.assign(value); }
 
     /**
-     * Decryption key either 128 or 192 or 256 bits encrypted with KMS
+     * Warning! Don't provide your encryption key in plaintext. Your job settings could
+     * be intercepted, making your encrypted content vulnerable. Specify the encrypted
+     * version of the data key that you used to encrypt your content. The data key must
+     * be encrypted by AWS Key Management Service (KMS). The key can be 128, 192, or
+     * 256 bits.
      */
     inline InputDecryptionSettings& WithEncryptedDecryptionKey(const Aws::String& value) { SetEncryptedDecryptionKey(value); return *this;}
 
     /**
-     * Decryption key either 128 or 192 or 256 bits encrypted with KMS
+     * Warning! Don't provide your encryption key in plaintext. Your job settings could
+     * be intercepted, making your encrypted content vulnerable. Specify the encrypted
+     * version of the data key that you used to encrypt your content. The data key must
+     * be encrypted by AWS Key Management Service (KMS). The key can be 128, 192, or
+     * 256 bits.
      */
     inline InputDecryptionSettings& WithEncryptedDecryptionKey(Aws::String&& value) { SetEncryptedDecryptionKey(std::move(value)); return *this;}
 
     /**
-     * Decryption key either 128 or 192 or 256 bits encrypted with KMS
+     * Warning! Don't provide your encryption key in plaintext. Your job settings could
+     * be intercepted, making your encrypted content vulnerable. Specify the encrypted
+     * version of the data key that you used to encrypt your content. The data key must
+     * be encrypted by AWS Key Management Service (KMS). The key can be 128, 192, or
+     * 256 bits.
      */
     inline InputDecryptionSettings& WithEncryptedDecryptionKey(const char* value) { SetEncryptedDecryptionKey(value); return *this;}
 
 
     /**
-     * Initialization Vector 96 bits (CTR/GCM mode only) or 128 bits.
+     * Specify the initialization vector that you used when you encrypted your content
+     * before uploading it to Amazon S3. You can use a 16-byte initialization vector
+     * with any encryption mode. Or, you can use a 12-byte initialization vector with
+     * GCM or CTR. MediaConvert accepts only initialization vectors that are
+     * base64-encoded.
      */
     inline const Aws::String& GetInitializationVector() const{ return m_initializationVector; }
 
     /**
-     * Initialization Vector 96 bits (CTR/GCM mode only) or 128 bits.
+     * Specify the initialization vector that you used when you encrypted your content
+     * before uploading it to Amazon S3. You can use a 16-byte initialization vector
+     * with any encryption mode. Or, you can use a 12-byte initialization vector with
+     * GCM or CTR. MediaConvert accepts only initialization vectors that are
+     * base64-encoded.
      */
     inline bool InitializationVectorHasBeenSet() const { return m_initializationVectorHasBeenSet; }
 
     /**
-     * Initialization Vector 96 bits (CTR/GCM mode only) or 128 bits.
+     * Specify the initialization vector that you used when you encrypted your content
+     * before uploading it to Amazon S3. You can use a 16-byte initialization vector
+     * with any encryption mode. Or, you can use a 12-byte initialization vector with
+     * GCM or CTR. MediaConvert accepts only initialization vectors that are
+     * base64-encoded.
      */
     inline void SetInitializationVector(const Aws::String& value) { m_initializationVectorHasBeenSet = true; m_initializationVector = value; }
 
     /**
-     * Initialization Vector 96 bits (CTR/GCM mode only) or 128 bits.
+     * Specify the initialization vector that you used when you encrypted your content
+     * before uploading it to Amazon S3. You can use a 16-byte initialization vector
+     * with any encryption mode. Or, you can use a 12-byte initialization vector with
+     * GCM or CTR. MediaConvert accepts only initialization vectors that are
+     * base64-encoded.
      */
     inline void SetInitializationVector(Aws::String&& value) { m_initializationVectorHasBeenSet = true; m_initializationVector = std::move(value); }
 
     /**
-     * Initialization Vector 96 bits (CTR/GCM mode only) or 128 bits.
+     * Specify the initialization vector that you used when you encrypted your content
+     * before uploading it to Amazon S3. You can use a 16-byte initialization vector
+     * with any encryption mode. Or, you can use a 12-byte initialization vector with
+     * GCM or CTR. MediaConvert accepts only initialization vectors that are
+     * base64-encoded.
      */
     inline void SetInitializationVector(const char* value) { m_initializationVectorHasBeenSet = true; m_initializationVector.assign(value); }
 
     /**
-     * Initialization Vector 96 bits (CTR/GCM mode only) or 128 bits.
+     * Specify the initialization vector that you used when you encrypted your content
+     * before uploading it to Amazon S3. You can use a 16-byte initialization vector
+     * with any encryption mode. Or, you can use a 12-byte initialization vector with
+     * GCM or CTR. MediaConvert accepts only initialization vectors that are
+     * base64-encoded.
      */
     inline InputDecryptionSettings& WithInitializationVector(const Aws::String& value) { SetInitializationVector(value); return *this;}
 
     /**
-     * Initialization Vector 96 bits (CTR/GCM mode only) or 128 bits.
+     * Specify the initialization vector that you used when you encrypted your content
+     * before uploading it to Amazon S3. You can use a 16-byte initialization vector
+     * with any encryption mode. Or, you can use a 12-byte initialization vector with
+     * GCM or CTR. MediaConvert accepts only initialization vectors that are
+     * base64-encoded.
      */
     inline InputDecryptionSettings& WithInitializationVector(Aws::String&& value) { SetInitializationVector(std::move(value)); return *this;}
 
     /**
-     * Initialization Vector 96 bits (CTR/GCM mode only) or 128 bits.
+     * Specify the initialization vector that you used when you encrypted your content
+     * before uploading it to Amazon S3. You can use a 16-byte initialization vector
+     * with any encryption mode. Or, you can use a 12-byte initialization vector with
+     * GCM or CTR. MediaConvert accepts only initialization vectors that are
+     * base64-encoded.
      */
     inline InputDecryptionSettings& WithInitializationVector(const char* value) { SetInitializationVector(value); return *this;}
 
 
     /**
-     * The AWS region in which decryption key was encrypted with KMS
+     * Specify the AWS Region for AWS Key Management Service (KMS) that you used to
+     * encrypt your data key, if that Region is different from the one you are using
+     * for AWS Elemental MediaConvert.
      */
     inline const Aws::String& GetKmsKeyRegion() const{ return m_kmsKeyRegion; }
 
     /**
-     * The AWS region in which decryption key was encrypted with KMS
+     * Specify the AWS Region for AWS Key Management Service (KMS) that you used to
+     * encrypt your data key, if that Region is different from the one you are using
+     * for AWS Elemental MediaConvert.
      */
     inline bool KmsKeyRegionHasBeenSet() const { return m_kmsKeyRegionHasBeenSet; }
 
     /**
-     * The AWS region in which decryption key was encrypted with KMS
+     * Specify the AWS Region for AWS Key Management Service (KMS) that you used to
+     * encrypt your data key, if that Region is different from the one you are using
+     * for AWS Elemental MediaConvert.
      */
     inline void SetKmsKeyRegion(const Aws::String& value) { m_kmsKeyRegionHasBeenSet = true; m_kmsKeyRegion = value; }
 
     /**
-     * The AWS region in which decryption key was encrypted with KMS
+     * Specify the AWS Region for AWS Key Management Service (KMS) that you used to
+     * encrypt your data key, if that Region is different from the one you are using
+     * for AWS Elemental MediaConvert.
      */
     inline void SetKmsKeyRegion(Aws::String&& value) { m_kmsKeyRegionHasBeenSet = true; m_kmsKeyRegion = std::move(value); }
 
     /**
-     * The AWS region in which decryption key was encrypted with KMS
+     * Specify the AWS Region for AWS Key Management Service (KMS) that you used to
+     * encrypt your data key, if that Region is different from the one you are using
+     * for AWS Elemental MediaConvert.
      */
     inline void SetKmsKeyRegion(const char* value) { m_kmsKeyRegionHasBeenSet = true; m_kmsKeyRegion.assign(value); }
 
     /**
-     * The AWS region in which decryption key was encrypted with KMS
+     * Specify the AWS Region for AWS Key Management Service (KMS) that you used to
+     * encrypt your data key, if that Region is different from the one you are using
+     * for AWS Elemental MediaConvert.
      */
     inline InputDecryptionSettings& WithKmsKeyRegion(const Aws::String& value) { SetKmsKeyRegion(value); return *this;}
 
     /**
-     * The AWS region in which decryption key was encrypted with KMS
+     * Specify the AWS Region for AWS Key Management Service (KMS) that you used to
+     * encrypt your data key, if that Region is different from the one you are using
+     * for AWS Elemental MediaConvert.
      */
     inline InputDecryptionSettings& WithKmsKeyRegion(Aws::String&& value) { SetKmsKeyRegion(std::move(value)); return *this;}
 
     /**
-     * The AWS region in which decryption key was encrypted with KMS
+     * Specify the AWS Region for AWS Key Management Service (KMS) that you used to
+     * encrypt your data key, if that Region is different from the one you are using
+     * for AWS Elemental MediaConvert.
      */
     inline InputDecryptionSettings& WithKmsKeyRegion(const char* value) { SetKmsKeyRegion(value); return *this;}
 

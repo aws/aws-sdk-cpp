@@ -245,84 +245,130 @@ namespace Model
 
 
     /**
-     * <p>The type of resource to protect with the policy, either an Application Load
-     * Balancer or a CloudFront distribution. This is in the format shown in <a
+     * <p>The type of resource to protect with the policy. This is in the format shown
+     * in <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
-     * Resource Types Reference</a>. Valid values are
+     * Resource Types Reference</a>. For example:
      * <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code> or
      * <code>AWS::CloudFront::Distribution</code>.</p>
      */
     inline const Aws::String& GetResourceType() const{ return m_resourceType; }
 
     /**
-     * <p>The type of resource to protect with the policy, either an Application Load
-     * Balancer or a CloudFront distribution. This is in the format shown in <a
+     * <p>The type of resource to protect with the policy. This is in the format shown
+     * in <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
-     * Resource Types Reference</a>. Valid values are
+     * Resource Types Reference</a>. For example:
      * <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code> or
      * <code>AWS::CloudFront::Distribution</code>.</p>
      */
     inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
 
     /**
-     * <p>The type of resource to protect with the policy, either an Application Load
-     * Balancer or a CloudFront distribution. This is in the format shown in <a
+     * <p>The type of resource to protect with the policy. This is in the format shown
+     * in <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
-     * Resource Types Reference</a>. Valid values are
+     * Resource Types Reference</a>. For example:
      * <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code> or
      * <code>AWS::CloudFront::Distribution</code>.</p>
      */
     inline void SetResourceType(const Aws::String& value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
 
     /**
-     * <p>The type of resource to protect with the policy, either an Application Load
-     * Balancer or a CloudFront distribution. This is in the format shown in <a
+     * <p>The type of resource to protect with the policy. This is in the format shown
+     * in <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
-     * Resource Types Reference</a>. Valid values are
+     * Resource Types Reference</a>. For example:
      * <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code> or
      * <code>AWS::CloudFront::Distribution</code>.</p>
      */
     inline void SetResourceType(Aws::String&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = std::move(value); }
 
     /**
-     * <p>The type of resource to protect with the policy, either an Application Load
-     * Balancer or a CloudFront distribution. This is in the format shown in <a
+     * <p>The type of resource to protect with the policy. This is in the format shown
+     * in <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
-     * Resource Types Reference</a>. Valid values are
+     * Resource Types Reference</a>. For example:
      * <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code> or
      * <code>AWS::CloudFront::Distribution</code>.</p>
      */
     inline void SetResourceType(const char* value) { m_resourceTypeHasBeenSet = true; m_resourceType.assign(value); }
 
     /**
-     * <p>The type of resource to protect with the policy, either an Application Load
-     * Balancer or a CloudFront distribution. This is in the format shown in <a
+     * <p>The type of resource to protect with the policy. This is in the format shown
+     * in <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
-     * Resource Types Reference</a>. Valid values are
+     * Resource Types Reference</a>. For example:
      * <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code> or
      * <code>AWS::CloudFront::Distribution</code>.</p>
      */
     inline Policy& WithResourceType(const Aws::String& value) { SetResourceType(value); return *this;}
 
     /**
-     * <p>The type of resource to protect with the policy, either an Application Load
-     * Balancer or a CloudFront distribution. This is in the format shown in <a
+     * <p>The type of resource to protect with the policy. This is in the format shown
+     * in <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
-     * Resource Types Reference</a>. Valid values are
+     * Resource Types Reference</a>. For example:
      * <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code> or
      * <code>AWS::CloudFront::Distribution</code>.</p>
      */
     inline Policy& WithResourceType(Aws::String&& value) { SetResourceType(std::move(value)); return *this;}
 
     /**
-     * <p>The type of resource to protect with the policy, either an Application Load
-     * Balancer or a CloudFront distribution. This is in the format shown in <a
+     * <p>The type of resource to protect with the policy. This is in the format shown
+     * in <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
-     * Resource Types Reference</a>. Valid values are
+     * Resource Types Reference</a>. For example:
      * <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code> or
      * <code>AWS::CloudFront::Distribution</code>.</p>
      */
     inline Policy& WithResourceType(const char* value) { SetResourceType(value); return *this;}
+
+
+    /**
+     * <p>An array of <code>ResourceType</code>.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetResourceTypeList() const{ return m_resourceTypeList; }
+
+    /**
+     * <p>An array of <code>ResourceType</code>.</p>
+     */
+    inline bool ResourceTypeListHasBeenSet() const { return m_resourceTypeListHasBeenSet; }
+
+    /**
+     * <p>An array of <code>ResourceType</code>.</p>
+     */
+    inline void SetResourceTypeList(const Aws::Vector<Aws::String>& value) { m_resourceTypeListHasBeenSet = true; m_resourceTypeList = value; }
+
+    /**
+     * <p>An array of <code>ResourceType</code>.</p>
+     */
+    inline void SetResourceTypeList(Aws::Vector<Aws::String>&& value) { m_resourceTypeListHasBeenSet = true; m_resourceTypeList = std::move(value); }
+
+    /**
+     * <p>An array of <code>ResourceType</code>.</p>
+     */
+    inline Policy& WithResourceTypeList(const Aws::Vector<Aws::String>& value) { SetResourceTypeList(value); return *this;}
+
+    /**
+     * <p>An array of <code>ResourceType</code>.</p>
+     */
+    inline Policy& WithResourceTypeList(Aws::Vector<Aws::String>&& value) { SetResourceTypeList(std::move(value)); return *this;}
+
+    /**
+     * <p>An array of <code>ResourceType</code>.</p>
+     */
+    inline Policy& AddResourceTypeList(const Aws::String& value) { m_resourceTypeListHasBeenSet = true; m_resourceTypeList.push_back(value); return *this; }
+
+    /**
+     * <p>An array of <code>ResourceType</code>.</p>
+     */
+    inline Policy& AddResourceTypeList(Aws::String&& value) { m_resourceTypeListHasBeenSet = true; m_resourceTypeList.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>An array of <code>ResourceType</code>.</p>
+     */
+    inline Policy& AddResourceTypeList(const char* value) { m_resourceTypeListHasBeenSet = true; m_resourceTypeList.push_back(value); return *this; }
 
 
     /**
@@ -657,6 +703,9 @@ namespace Model
 
     Aws::String m_resourceType;
     bool m_resourceTypeHasBeenSet;
+
+    Aws::Vector<Aws::String> m_resourceTypeList;
+    bool m_resourceTypeListHasBeenSet;
 
     Aws::Vector<ResourceTag> m_resourceTags;
     bool m_resourceTagsHasBeenSet;

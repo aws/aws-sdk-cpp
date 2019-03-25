@@ -31,6 +31,7 @@ namespace Aws
       {
 
         static const int WAF_HASH = HashingUtils::HashString("WAF");
+        static const int SHIELD_ADVANCED_HASH = HashingUtils::HashString("SHIELD_ADVANCED");
 
 
         SecurityServiceType GetSecurityServiceTypeForName(const Aws::String& name)
@@ -39,6 +40,10 @@ namespace Aws
           if (hashCode == WAF_HASH)
           {
             return SecurityServiceType::WAF;
+          }
+          else if (hashCode == SHIELD_ADVANCED_HASH)
+          {
+            return SecurityServiceType::SHIELD_ADVANCED;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -56,6 +61,8 @@ namespace Aws
           {
           case SecurityServiceType::WAF:
             return "WAF";
+          case SecurityServiceType::SHIELD_ADVANCED:
+            return "SHIELD_ADVANCED";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

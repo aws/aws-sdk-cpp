@@ -45,37 +45,37 @@ namespace Model
 
 
     /**
-     * <p>The associations.</p>
+     * <p>Information about the associations.</p>
      */
     inline const Aws::Vector<DirectConnectGatewayAssociation>& GetDirectConnectGatewayAssociations() const{ return m_directConnectGatewayAssociations; }
 
     /**
-     * <p>The associations.</p>
+     * <p>Information about the associations.</p>
      */
     inline void SetDirectConnectGatewayAssociations(const Aws::Vector<DirectConnectGatewayAssociation>& value) { m_directConnectGatewayAssociations = value; }
 
     /**
-     * <p>The associations.</p>
+     * <p>Information about the associations.</p>
      */
     inline void SetDirectConnectGatewayAssociations(Aws::Vector<DirectConnectGatewayAssociation>&& value) { m_directConnectGatewayAssociations = std::move(value); }
 
     /**
-     * <p>The associations.</p>
+     * <p>Information about the associations.</p>
      */
     inline DescribeDirectConnectGatewayAssociationsResult& WithDirectConnectGatewayAssociations(const Aws::Vector<DirectConnectGatewayAssociation>& value) { SetDirectConnectGatewayAssociations(value); return *this;}
 
     /**
-     * <p>The associations.</p>
+     * <p>Information about the associations.</p>
      */
     inline DescribeDirectConnectGatewayAssociationsResult& WithDirectConnectGatewayAssociations(Aws::Vector<DirectConnectGatewayAssociation>&& value) { SetDirectConnectGatewayAssociations(std::move(value)); return *this;}
 
     /**
-     * <p>The associations.</p>
+     * <p>Information about the associations.</p>
      */
     inline DescribeDirectConnectGatewayAssociationsResult& AddDirectConnectGatewayAssociations(const DirectConnectGatewayAssociation& value) { m_directConnectGatewayAssociations.push_back(value); return *this; }
 
     /**
-     * <p>The associations.</p>
+     * <p>Information about the associations.</p>
      */
     inline DescribeDirectConnectGatewayAssociationsResult& AddDirectConnectGatewayAssociations(DirectConnectGatewayAssociation&& value) { m_directConnectGatewayAssociations.push_back(std::move(value)); return *this; }
 

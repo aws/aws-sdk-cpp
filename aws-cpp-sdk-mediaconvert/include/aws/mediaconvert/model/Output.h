@@ -168,22 +168,34 @@ namespace Model
     inline Output& AddCaptionDescriptions(CaptionDescription&& value) { m_captionDescriptionsHasBeenSet = true; m_captionDescriptions.push_back(std::move(value)); return *this; }
 
 
-    
+    /**
+     * Container specific settings.
+     */
     inline const ContainerSettings& GetContainerSettings() const{ return m_containerSettings; }
 
-    
+    /**
+     * Container specific settings.
+     */
     inline bool ContainerSettingsHasBeenSet() const { return m_containerSettingsHasBeenSet; }
 
-    
+    /**
+     * Container specific settings.
+     */
     inline void SetContainerSettings(const ContainerSettings& value) { m_containerSettingsHasBeenSet = true; m_containerSettings = value; }
 
-    
+    /**
+     * Container specific settings.
+     */
     inline void SetContainerSettings(ContainerSettings&& value) { m_containerSettingsHasBeenSet = true; m_containerSettings = std::move(value); }
 
-    
+    /**
+     * Container specific settings.
+     */
     inline Output& WithContainerSettings(const ContainerSettings& value) { SetContainerSettings(value); return *this;}
 
-    
+    /**
+     * Container specific settings.
+     */
     inline Output& WithContainerSettings(ContainerSettings&& value) { SetContainerSettings(std::move(value)); return *this;}
 
 
@@ -341,22 +353,34 @@ namespace Model
     inline Output& WithNameModifier(const char* value) { SetNameModifier(value); return *this;}
 
 
-    
+    /**
+     * Specific settings for this type of output.
+     */
     inline const OutputSettings& GetOutputSettings() const{ return m_outputSettings; }
 
-    
+    /**
+     * Specific settings for this type of output.
+     */
     inline bool OutputSettingsHasBeenSet() const { return m_outputSettingsHasBeenSet; }
 
-    
+    /**
+     * Specific settings for this type of output.
+     */
     inline void SetOutputSettings(const OutputSettings& value) { m_outputSettingsHasBeenSet = true; m_outputSettings = value; }
 
-    
+    /**
+     * Specific settings for this type of output.
+     */
     inline void SetOutputSettings(OutputSettings&& value) { m_outputSettingsHasBeenSet = true; m_outputSettings = std::move(value); }
 
-    
+    /**
+     * Specific settings for this type of output.
+     */
     inline Output& WithOutputSettings(const OutputSettings& value) { SetOutputSettings(value); return *this;}
 
-    
+    /**
+     * Specific settings for this type of output.
+     */
     inline Output& WithOutputSettings(OutputSettings&& value) { SetOutputSettings(std::move(value)); return *this;}
 
 

@@ -25,6 +25,7 @@
 #include <aws/fms/model/GetComplianceDetailResult.h>
 #include <aws/fms/model/GetNotificationChannelResult.h>
 #include <aws/fms/model/GetPolicyResult.h>
+#include <aws/fms/model/GetProtectionStatusResult.h>
 #include <aws/fms/model/ListComplianceStatusResult.h>
 #include <aws/fms/model/ListMemberAccountsResult.h>
 #include <aws/fms/model/ListPoliciesResult.h>
@@ -78,6 +79,7 @@ namespace Model
         class GetComplianceDetailRequest;
         class GetNotificationChannelRequest;
         class GetPolicyRequest;
+        class GetProtectionStatusRequest;
         class ListComplianceStatusRequest;
         class ListMemberAccountsRequest;
         class ListPoliciesRequest;
@@ -92,6 +94,7 @@ namespace Model
         typedef Aws::Utils::Outcome<GetComplianceDetailResult, Aws::Client::AWSError<FMSErrors>> GetComplianceDetailOutcome;
         typedef Aws::Utils::Outcome<GetNotificationChannelResult, Aws::Client::AWSError<FMSErrors>> GetNotificationChannelOutcome;
         typedef Aws::Utils::Outcome<GetPolicyResult, Aws::Client::AWSError<FMSErrors>> GetPolicyOutcome;
+        typedef Aws::Utils::Outcome<GetProtectionStatusResult, Aws::Client::AWSError<FMSErrors>> GetProtectionStatusOutcome;
         typedef Aws::Utils::Outcome<ListComplianceStatusResult, Aws::Client::AWSError<FMSErrors>> ListComplianceStatusOutcome;
         typedef Aws::Utils::Outcome<ListMemberAccountsResult, Aws::Client::AWSError<FMSErrors>> ListMemberAccountsOutcome;
         typedef Aws::Utils::Outcome<ListPoliciesResult, Aws::Client::AWSError<FMSErrors>> ListPoliciesOutcome;
@@ -106,6 +109,7 @@ namespace Model
         typedef std::future<GetComplianceDetailOutcome> GetComplianceDetailOutcomeCallable;
         typedef std::future<GetNotificationChannelOutcome> GetNotificationChannelOutcomeCallable;
         typedef std::future<GetPolicyOutcome> GetPolicyOutcomeCallable;
+        typedef std::future<GetProtectionStatusOutcome> GetProtectionStatusOutcomeCallable;
         typedef std::future<ListComplianceStatusOutcome> ListComplianceStatusOutcomeCallable;
         typedef std::future<ListMemberAccountsOutcome> ListMemberAccountsOutcomeCallable;
         typedef std::future<ListPoliciesOutcome> ListPoliciesOutcomeCallable;
@@ -123,6 +127,7 @@ namespace Model
     typedef std::function<void(const FMSClient*, const Model::GetComplianceDetailRequest&, const Model::GetComplianceDetailOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetComplianceDetailResponseReceivedHandler;
     typedef std::function<void(const FMSClient*, const Model::GetNotificationChannelRequest&, const Model::GetNotificationChannelOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetNotificationChannelResponseReceivedHandler;
     typedef std::function<void(const FMSClient*, const Model::GetPolicyRequest&, const Model::GetPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetPolicyResponseReceivedHandler;
+    typedef std::function<void(const FMSClient*, const Model::GetProtectionStatusRequest&, const Model::GetProtectionStatusOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetProtectionStatusResponseReceivedHandler;
     typedef std::function<void(const FMSClient*, const Model::ListComplianceStatusRequest&, const Model::ListComplianceStatusOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListComplianceStatusResponseReceivedHandler;
     typedef std::function<void(const FMSClient*, const Model::ListMemberAccountsRequest&, const Model::ListMemberAccountsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListMemberAccountsResponseReceivedHandler;
     typedef std::function<void(const FMSClient*, const Model::ListPoliciesRequest&, const Model::ListPoliciesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListPoliciesResponseReceivedHandler;
@@ -134,7 +139,7 @@ namespace Model
    * API Reference</i>. This guide is for developers who need detailed information
    * about the AWS Firewall Manager API actions, data types, and errors. For detailed
    * information about AWS Firewall Manager features, see the <a
-   * href="http://docs.aws.amazon.com/waf/latest/developerguide/fms-chapter.html">AWS
+   * href="https://docs.aws.amazon.com/waf/latest/developerguide/fms-chapter.html">AWS
    * Firewall Manager Developer Guide</a>.</p>
    */
   class AWS_FMS_API FMSClient : public Aws::Client::AWSJsonClient
@@ -424,6 +429,37 @@ namespace Model
         virtual void GetPolicyAsync(const Model::GetPolicyRequest& request, const GetPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>If you created a Shield Advanced policy, returns policy-level attack summary
+         * information in the event of a potential DDoS attack.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/GetProtectionStatus">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetProtectionStatusOutcome GetProtectionStatus(const Model::GetProtectionStatusRequest& request) const;
+
+        /**
+         * <p>If you created a Shield Advanced policy, returns policy-level attack summary
+         * information in the event of a potential DDoS attack.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/GetProtectionStatus">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetProtectionStatusOutcomeCallable GetProtectionStatusCallable(const Model::GetProtectionStatusRequest& request) const;
+
+        /**
+         * <p>If you created a Shield Advanced policy, returns policy-level attack summary
+         * information in the event of a potential DDoS attack.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/GetProtectionStatus">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetProtectionStatusAsync(const Model::GetProtectionStatusRequest& request, const GetProtectionStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Returns an array of <code>PolicyComplianceStatus</code> objects in the
          * response. Use <code>PolicyComplianceStatus</code> to get a summary of which
          * member accounts are protected by the specified policy. </p><p><h3>See Also:</h3>
@@ -548,14 +584,36 @@ namespace Model
         virtual void PutNotificationChannelAsync(const Model::PutNotificationChannelRequest& request, const PutNotificationChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates an AWS Firewall Manager policy.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates an AWS Firewall Manager policy.</p> <p>Firewall Manager provides two
+         * types of policies: A Shield Advanced policy, which applies Shield Advanced
+         * protection to specified accounts and resources, or a WAF policy, which contains
+         * a rule group and defines which resources are to be protected by that rule group.
+         * A policy is specific to either WAF or Shield Advanced. If you want to enforce
+         * both WAF rules and Shield Advanced protection across accounts, you can create
+         * multiple policies. You can create one or more policies for WAF rules, and one or
+         * more policies for Shield Advanced.</p> <p>You must be subscribed to Shield
+         * Advanced to create a Shield Advanced policy. For more information on subscribing
+         * to Shield Advanced, see <a
+         * href="https://docs.aws.amazon.com/waf/latest/DDOSAPIReference/API_CreateSubscription.html">CreateSubscription</a>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/PutPolicy">AWS API
          * Reference</a></p>
          */
         virtual Model::PutPolicyOutcome PutPolicy(const Model::PutPolicyRequest& request) const;
 
         /**
-         * <p>Creates an AWS Firewall Manager policy.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates an AWS Firewall Manager policy.</p> <p>Firewall Manager provides two
+         * types of policies: A Shield Advanced policy, which applies Shield Advanced
+         * protection to specified accounts and resources, or a WAF policy, which contains
+         * a rule group and defines which resources are to be protected by that rule group.
+         * A policy is specific to either WAF or Shield Advanced. If you want to enforce
+         * both WAF rules and Shield Advanced protection across accounts, you can create
+         * multiple policies. You can create one or more policies for WAF rules, and one or
+         * more policies for Shield Advanced.</p> <p>You must be subscribed to Shield
+         * Advanced to create a Shield Advanced policy. For more information on subscribing
+         * to Shield Advanced, see <a
+         * href="https://docs.aws.amazon.com/waf/latest/DDOSAPIReference/API_CreateSubscription.html">CreateSubscription</a>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/PutPolicy">AWS API
          * Reference</a></p>
          *
@@ -564,7 +622,18 @@ namespace Model
         virtual Model::PutPolicyOutcomeCallable PutPolicyCallable(const Model::PutPolicyRequest& request) const;
 
         /**
-         * <p>Creates an AWS Firewall Manager policy.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates an AWS Firewall Manager policy.</p> <p>Firewall Manager provides two
+         * types of policies: A Shield Advanced policy, which applies Shield Advanced
+         * protection to specified accounts and resources, or a WAF policy, which contains
+         * a rule group and defines which resources are to be protected by that rule group.
+         * A policy is specific to either WAF or Shield Advanced. If you want to enforce
+         * both WAF rules and Shield Advanced protection across accounts, you can create
+         * multiple policies. You can create one or more policies for WAF rules, and one or
+         * more policies for Shield Advanced.</p> <p>You must be subscribed to Shield
+         * Advanced to create a Shield Advanced policy. For more information on subscribing
+         * to Shield Advanced, see <a
+         * href="https://docs.aws.amazon.com/waf/latest/DDOSAPIReference/API_CreateSubscription.html">CreateSubscription</a>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/PutPolicy">AWS API
          * Reference</a></p>
          *
@@ -585,6 +654,7 @@ namespace Model
         void GetComplianceDetailAsyncHelper(const Model::GetComplianceDetailRequest& request, const GetComplianceDetailResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetNotificationChannelAsyncHelper(const Model::GetNotificationChannelRequest& request, const GetNotificationChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetPolicyAsyncHelper(const Model::GetPolicyRequest& request, const GetPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetProtectionStatusAsyncHelper(const Model::GetProtectionStatusRequest& request, const GetProtectionStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListComplianceStatusAsyncHelper(const Model::ListComplianceStatusRequest& request, const ListComplianceStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListMemberAccountsAsyncHelper(const Model::ListMemberAccountsRequest& request, const ListMemberAccountsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListPoliciesAsyncHelper(const Model::ListPoliciesRequest& request, const ListPoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

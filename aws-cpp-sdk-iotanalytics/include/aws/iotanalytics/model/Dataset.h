@@ -20,6 +20,7 @@
 #include <aws/iotanalytics/model/DatasetStatus.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/iotanalytics/model/RetentionPeriod.h>
+#include <aws/iotanalytics/model/VersioningConfiguration.h>
 #include <aws/iotanalytics/model/DatasetAction.h>
 #include <aws/iotanalytics/model/DatasetTrigger.h>
 #include <aws/iotanalytics/model/DatasetContentDeliveryRule.h>
@@ -406,6 +407,61 @@ namespace Model
      */
     inline Dataset& WithRetentionPeriod(RetentionPeriod&& value) { SetRetentionPeriod(std::move(value)); return *this;}
 
+
+    /**
+     * <p>[Optional] How many versions of data set contents are kept. If not specified
+     * or set to null, only the latest version plus the latest succeeded version (if
+     * they are different) are kept for the time period specified by the
+     * "retentionPeriod" parameter. (For more information, see
+     * https://docs.aws.amazon.com/iotanalytics/latest/userguide/getting-started.html#aws-iot-analytics-dataset-versions)</p>
+     */
+    inline const VersioningConfiguration& GetVersioningConfiguration() const{ return m_versioningConfiguration; }
+
+    /**
+     * <p>[Optional] How many versions of data set contents are kept. If not specified
+     * or set to null, only the latest version plus the latest succeeded version (if
+     * they are different) are kept for the time period specified by the
+     * "retentionPeriod" parameter. (For more information, see
+     * https://docs.aws.amazon.com/iotanalytics/latest/userguide/getting-started.html#aws-iot-analytics-dataset-versions)</p>
+     */
+    inline bool VersioningConfigurationHasBeenSet() const { return m_versioningConfigurationHasBeenSet; }
+
+    /**
+     * <p>[Optional] How many versions of data set contents are kept. If not specified
+     * or set to null, only the latest version plus the latest succeeded version (if
+     * they are different) are kept for the time period specified by the
+     * "retentionPeriod" parameter. (For more information, see
+     * https://docs.aws.amazon.com/iotanalytics/latest/userguide/getting-started.html#aws-iot-analytics-dataset-versions)</p>
+     */
+    inline void SetVersioningConfiguration(const VersioningConfiguration& value) { m_versioningConfigurationHasBeenSet = true; m_versioningConfiguration = value; }
+
+    /**
+     * <p>[Optional] How many versions of data set contents are kept. If not specified
+     * or set to null, only the latest version plus the latest succeeded version (if
+     * they are different) are kept for the time period specified by the
+     * "retentionPeriod" parameter. (For more information, see
+     * https://docs.aws.amazon.com/iotanalytics/latest/userguide/getting-started.html#aws-iot-analytics-dataset-versions)</p>
+     */
+    inline void SetVersioningConfiguration(VersioningConfiguration&& value) { m_versioningConfigurationHasBeenSet = true; m_versioningConfiguration = std::move(value); }
+
+    /**
+     * <p>[Optional] How many versions of data set contents are kept. If not specified
+     * or set to null, only the latest version plus the latest succeeded version (if
+     * they are different) are kept for the time period specified by the
+     * "retentionPeriod" parameter. (For more information, see
+     * https://docs.aws.amazon.com/iotanalytics/latest/userguide/getting-started.html#aws-iot-analytics-dataset-versions)</p>
+     */
+    inline Dataset& WithVersioningConfiguration(const VersioningConfiguration& value) { SetVersioningConfiguration(value); return *this;}
+
+    /**
+     * <p>[Optional] How many versions of data set contents are kept. If not specified
+     * or set to null, only the latest version plus the latest succeeded version (if
+     * they are different) are kept for the time period specified by the
+     * "retentionPeriod" parameter. (For more information, see
+     * https://docs.aws.amazon.com/iotanalytics/latest/userguide/getting-started.html#aws-iot-analytics-dataset-versions)</p>
+     */
+    inline Dataset& WithVersioningConfiguration(VersioningConfiguration&& value) { SetVersioningConfiguration(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_name;
@@ -434,6 +490,9 @@ namespace Model
 
     RetentionPeriod m_retentionPeriod;
     bool m_retentionPeriodHasBeenSet;
+
+    VersioningConfiguration m_versioningConfiguration;
+    bool m_versioningConfigurationHasBeenSet;
   };
 
 } // namespace Model

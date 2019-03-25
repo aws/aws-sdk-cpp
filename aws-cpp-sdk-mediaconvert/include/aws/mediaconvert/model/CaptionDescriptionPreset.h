@@ -122,22 +122,46 @@ namespace Model
     inline CaptionDescriptionPreset& WithCustomLanguageCode(const char* value) { SetCustomLanguageCode(value); return *this;}
 
 
-    
+    /**
+     * Specific settings required by destination type. Note that
+     * burnin_destination_settings are not available if the source of the caption data
+     * is Embedded or Teletext.
+     */
     inline const CaptionDestinationSettings& GetDestinationSettings() const{ return m_destinationSettings; }
 
-    
+    /**
+     * Specific settings required by destination type. Note that
+     * burnin_destination_settings are not available if the source of the caption data
+     * is Embedded or Teletext.
+     */
     inline bool DestinationSettingsHasBeenSet() const { return m_destinationSettingsHasBeenSet; }
 
-    
+    /**
+     * Specific settings required by destination type. Note that
+     * burnin_destination_settings are not available if the source of the caption data
+     * is Embedded or Teletext.
+     */
     inline void SetDestinationSettings(const CaptionDestinationSettings& value) { m_destinationSettingsHasBeenSet = true; m_destinationSettings = value; }
 
-    
+    /**
+     * Specific settings required by destination type. Note that
+     * burnin_destination_settings are not available if the source of the caption data
+     * is Embedded or Teletext.
+     */
     inline void SetDestinationSettings(CaptionDestinationSettings&& value) { m_destinationSettingsHasBeenSet = true; m_destinationSettings = std::move(value); }
 
-    
+    /**
+     * Specific settings required by destination type. Note that
+     * burnin_destination_settings are not available if the source of the caption data
+     * is Embedded or Teletext.
+     */
     inline CaptionDescriptionPreset& WithDestinationSettings(const CaptionDestinationSettings& value) { SetDestinationSettings(value); return *this;}
 
-    
+    /**
+     * Specific settings required by destination type. Note that
+     * burnin_destination_settings are not available if the source of the caption data
+     * is Embedded or Teletext.
+     */
     inline CaptionDescriptionPreset& WithDestinationSettings(CaptionDestinationSettings&& value) { SetDestinationSettings(std::move(value)); return *this;}
 
 

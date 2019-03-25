@@ -17,6 +17,7 @@
 #include <aws/mediaconvert/MediaConvert_EXPORTS.h>
 #include <aws/mediaconvert/model/MsSmoothAudioDeduplication.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/mediaconvert/model/DestinationSettings.h>
 #include <aws/mediaconvert/model/MsSmoothEncryptionSettings.h>
 #include <aws/mediaconvert/model/MsSmoothManifestEncoding.h>
 #include <utility>
@@ -51,22 +52,40 @@ namespace Model
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 
-    
+    /**
+     * COMBINE_DUPLICATE_STREAMS combines identical audio encoding settings across a
+     * Microsoft Smooth output group into a single audio stream.
+     */
     inline const MsSmoothAudioDeduplication& GetAudioDeduplication() const{ return m_audioDeduplication; }
 
-    
+    /**
+     * COMBINE_DUPLICATE_STREAMS combines identical audio encoding settings across a
+     * Microsoft Smooth output group into a single audio stream.
+     */
     inline bool AudioDeduplicationHasBeenSet() const { return m_audioDeduplicationHasBeenSet; }
 
-    
+    /**
+     * COMBINE_DUPLICATE_STREAMS combines identical audio encoding settings across a
+     * Microsoft Smooth output group into a single audio stream.
+     */
     inline void SetAudioDeduplication(const MsSmoothAudioDeduplication& value) { m_audioDeduplicationHasBeenSet = true; m_audioDeduplication = value; }
 
-    
+    /**
+     * COMBINE_DUPLICATE_STREAMS combines identical audio encoding settings across a
+     * Microsoft Smooth output group into a single audio stream.
+     */
     inline void SetAudioDeduplication(MsSmoothAudioDeduplication&& value) { m_audioDeduplicationHasBeenSet = true; m_audioDeduplication = std::move(value); }
 
-    
+    /**
+     * COMBINE_DUPLICATE_STREAMS combines identical audio encoding settings across a
+     * Microsoft Smooth output group into a single audio stream.
+     */
     inline MsSmoothGroupSettings& WithAudioDeduplication(const MsSmoothAudioDeduplication& value) { SetAudioDeduplication(value); return *this;}
 
-    
+    /**
+     * COMBINE_DUPLICATE_STREAMS combines identical audio encoding settings across a
+     * Microsoft Smooth output group into a single audio stream.
+     */
     inline MsSmoothGroupSettings& WithAudioDeduplication(MsSmoothAudioDeduplication&& value) { SetAudioDeduplication(std::move(value)); return *this;}
 
 
@@ -143,22 +162,77 @@ namespace Model
     inline MsSmoothGroupSettings& WithDestination(const char* value) { SetDestination(value); return *this;}
 
 
-    
+    /**
+     * Settings associated with the destination. Will vary based on the type of
+     * destination
+     */
+    inline const DestinationSettings& GetDestinationSettings() const{ return m_destinationSettings; }
+
+    /**
+     * Settings associated with the destination. Will vary based on the type of
+     * destination
+     */
+    inline bool DestinationSettingsHasBeenSet() const { return m_destinationSettingsHasBeenSet; }
+
+    /**
+     * Settings associated with the destination. Will vary based on the type of
+     * destination
+     */
+    inline void SetDestinationSettings(const DestinationSettings& value) { m_destinationSettingsHasBeenSet = true; m_destinationSettings = value; }
+
+    /**
+     * Settings associated with the destination. Will vary based on the type of
+     * destination
+     */
+    inline void SetDestinationSettings(DestinationSettings&& value) { m_destinationSettingsHasBeenSet = true; m_destinationSettings = std::move(value); }
+
+    /**
+     * Settings associated with the destination. Will vary based on the type of
+     * destination
+     */
+    inline MsSmoothGroupSettings& WithDestinationSettings(const DestinationSettings& value) { SetDestinationSettings(value); return *this;}
+
+    /**
+     * Settings associated with the destination. Will vary based on the type of
+     * destination
+     */
+    inline MsSmoothGroupSettings& WithDestinationSettings(DestinationSettings&& value) { SetDestinationSettings(std::move(value)); return *this;}
+
+
+    /**
+     * If you are using DRM, set DRM System (MsSmoothEncryptionSettings) to specify the
+     * value SpekeKeyProvider.
+     */
     inline const MsSmoothEncryptionSettings& GetEncryption() const{ return m_encryption; }
 
-    
+    /**
+     * If you are using DRM, set DRM System (MsSmoothEncryptionSettings) to specify the
+     * value SpekeKeyProvider.
+     */
     inline bool EncryptionHasBeenSet() const { return m_encryptionHasBeenSet; }
 
-    
+    /**
+     * If you are using DRM, set DRM System (MsSmoothEncryptionSettings) to specify the
+     * value SpekeKeyProvider.
+     */
     inline void SetEncryption(const MsSmoothEncryptionSettings& value) { m_encryptionHasBeenSet = true; m_encryption = value; }
 
-    
+    /**
+     * If you are using DRM, set DRM System (MsSmoothEncryptionSettings) to specify the
+     * value SpekeKeyProvider.
+     */
     inline void SetEncryption(MsSmoothEncryptionSettings&& value) { m_encryptionHasBeenSet = true; m_encryption = std::move(value); }
 
-    
+    /**
+     * If you are using DRM, set DRM System (MsSmoothEncryptionSettings) to specify the
+     * value SpekeKeyProvider.
+     */
     inline MsSmoothGroupSettings& WithEncryption(const MsSmoothEncryptionSettings& value) { SetEncryption(value); return *this;}
 
-    
+    /**
+     * If you are using DRM, set DRM System (MsSmoothEncryptionSettings) to specify the
+     * value SpekeKeyProvider.
+     */
     inline MsSmoothGroupSettings& WithEncryption(MsSmoothEncryptionSettings&& value) { SetEncryption(std::move(value)); return *this;}
 
 
@@ -187,22 +261,40 @@ namespace Model
     inline MsSmoothGroupSettings& WithFragmentLength(int value) { SetFragmentLength(value); return *this;}
 
 
-    
+    /**
+     * Use Manifest encoding (MsSmoothManifestEncoding) to specify the encoding format
+     * for the server and client manifest. Valid options are utf8 and utf16.
+     */
     inline const MsSmoothManifestEncoding& GetManifestEncoding() const{ return m_manifestEncoding; }
 
-    
+    /**
+     * Use Manifest encoding (MsSmoothManifestEncoding) to specify the encoding format
+     * for the server and client manifest. Valid options are utf8 and utf16.
+     */
     inline bool ManifestEncodingHasBeenSet() const { return m_manifestEncodingHasBeenSet; }
 
-    
+    /**
+     * Use Manifest encoding (MsSmoothManifestEncoding) to specify the encoding format
+     * for the server and client manifest. Valid options are utf8 and utf16.
+     */
     inline void SetManifestEncoding(const MsSmoothManifestEncoding& value) { m_manifestEncodingHasBeenSet = true; m_manifestEncoding = value; }
 
-    
+    /**
+     * Use Manifest encoding (MsSmoothManifestEncoding) to specify the encoding format
+     * for the server and client manifest. Valid options are utf8 and utf16.
+     */
     inline void SetManifestEncoding(MsSmoothManifestEncoding&& value) { m_manifestEncodingHasBeenSet = true; m_manifestEncoding = std::move(value); }
 
-    
+    /**
+     * Use Manifest encoding (MsSmoothManifestEncoding) to specify the encoding format
+     * for the server and client manifest. Valid options are utf8 and utf16.
+     */
     inline MsSmoothGroupSettings& WithManifestEncoding(const MsSmoothManifestEncoding& value) { SetManifestEncoding(value); return *this;}
 
-    
+    /**
+     * Use Manifest encoding (MsSmoothManifestEncoding) to specify the encoding format
+     * for the server and client manifest. Valid options are utf8 and utf16.
+     */
     inline MsSmoothGroupSettings& WithManifestEncoding(MsSmoothManifestEncoding&& value) { SetManifestEncoding(std::move(value)); return *this;}
 
   private:
@@ -212,6 +304,9 @@ namespace Model
 
     Aws::String m_destination;
     bool m_destinationHasBeenSet;
+
+    DestinationSettings m_destinationSettings;
+    bool m_destinationSettingsHasBeenSet;
 
     MsSmoothEncryptionSettings m_encryption;
     bool m_encryptionHasBeenSet;

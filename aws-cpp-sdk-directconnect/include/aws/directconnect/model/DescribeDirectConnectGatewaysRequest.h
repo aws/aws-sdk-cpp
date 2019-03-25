@@ -86,22 +86,34 @@ namespace Model
 
 
     /**
-     * <p>The maximum number of Direct Connect gateways to return per page.</p>
+     * <p>The maximum number of results to return with a single call. To retrieve the
+     * remaining results, make another call with the returned <code>nextToken</code>
+     * value.</p> <p>If <code>MaxResults</code> is given a value larger than 100, only
+     * 100 results are returned.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
 
     /**
-     * <p>The maximum number of Direct Connect gateways to return per page.</p>
+     * <p>The maximum number of results to return with a single call. To retrieve the
+     * remaining results, make another call with the returned <code>nextToken</code>
+     * value.</p> <p>If <code>MaxResults</code> is given a value larger than 100, only
+     * 100 results are returned.</p>
      */
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
 
     /**
-     * <p>The maximum number of Direct Connect gateways to return per page.</p>
+     * <p>The maximum number of results to return with a single call. To retrieve the
+     * remaining results, make another call with the returned <code>nextToken</code>
+     * value.</p> <p>If <code>MaxResults</code> is given a value larger than 100, only
+     * 100 results are returned.</p>
      */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
-     * <p>The maximum number of Direct Connect gateways to return per page.</p>
+     * <p>The maximum number of results to return with a single call. To retrieve the
+     * remaining results, make another call with the returned <code>nextToken</code>
+     * value.</p> <p>If <code>MaxResults</code> is given a value larger than 100, only
+     * 100 results are returned.</p>
      */
     inline DescribeDirectConnectGatewaysRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 

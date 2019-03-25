@@ -32,6 +32,7 @@ namespace Aws
 
         static const int AWSCONFIG_HASH = HashingUtils::HashString("AWSCONFIG");
         static const int AWSWAF_HASH = HashingUtils::HashString("AWSWAF");
+        static const int AWSSHIELD_ADVANCED_HASH = HashingUtils::HashString("AWSSHIELD_ADVANCED");
 
 
         DependentServiceName GetDependentServiceNameForName(const Aws::String& name)
@@ -44,6 +45,10 @@ namespace Aws
           else if (hashCode == AWSWAF_HASH)
           {
             return DependentServiceName::AWSWAF;
+          }
+          else if (hashCode == AWSSHIELD_ADVANCED_HASH)
+          {
+            return DependentServiceName::AWSSHIELD_ADVANCED;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -63,6 +68,8 @@ namespace Aws
             return "AWSCONFIG";
           case DependentServiceName::AWSWAF:
             return "AWSWAF";
+          case DependentServiceName::AWSSHIELD_ADVANCED:
+            return "AWSSHIELD_ADVANCED";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

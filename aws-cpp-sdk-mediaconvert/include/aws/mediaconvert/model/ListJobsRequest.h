@@ -120,22 +120,40 @@ namespace Model
     inline ListJobsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
 
-    
+    /**
+     * When you request lists of resources, you can optionally specify whether they are
+     * sorted in ASCENDING or DESCENDING order. Default varies by resource.
+     */
     inline const Order& GetOrder() const{ return m_order; }
 
-    
+    /**
+     * When you request lists of resources, you can optionally specify whether they are
+     * sorted in ASCENDING or DESCENDING order. Default varies by resource.
+     */
     inline bool OrderHasBeenSet() const { return m_orderHasBeenSet; }
 
-    
+    /**
+     * When you request lists of resources, you can optionally specify whether they are
+     * sorted in ASCENDING or DESCENDING order. Default varies by resource.
+     */
     inline void SetOrder(const Order& value) { m_orderHasBeenSet = true; m_order = value; }
 
-    
+    /**
+     * When you request lists of resources, you can optionally specify whether they are
+     * sorted in ASCENDING or DESCENDING order. Default varies by resource.
+     */
     inline void SetOrder(Order&& value) { m_orderHasBeenSet = true; m_order = std::move(value); }
 
-    
+    /**
+     * When you request lists of resources, you can optionally specify whether they are
+     * sorted in ASCENDING or DESCENDING order. Default varies by resource.
+     */
     inline ListJobsRequest& WithOrder(const Order& value) { SetOrder(value); return *this;}
 
-    
+    /**
+     * When you request lists of resources, you can optionally specify whether they are
+     * sorted in ASCENDING or DESCENDING order. Default varies by resource.
+     */
     inline ListJobsRequest& WithOrder(Order&& value) { SetOrder(std::move(value)); return *this;}
 
 
@@ -180,22 +198,34 @@ namespace Model
     inline ListJobsRequest& WithQueue(const char* value) { SetQueue(value); return *this;}
 
 
-    
+    /**
+     * A job's status can be SUBMITTED, PROGRESSING, COMPLETE, CANCELED, or ERROR.
+     */
     inline const JobStatus& GetStatus() const{ return m_status; }
 
-    
+    /**
+     * A job's status can be SUBMITTED, PROGRESSING, COMPLETE, CANCELED, or ERROR.
+     */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
-    
+    /**
+     * A job's status can be SUBMITTED, PROGRESSING, COMPLETE, CANCELED, or ERROR.
+     */
     inline void SetStatus(const JobStatus& value) { m_statusHasBeenSet = true; m_status = value; }
 
-    
+    /**
+     * A job's status can be SUBMITTED, PROGRESSING, COMPLETE, CANCELED, or ERROR.
+     */
     inline void SetStatus(JobStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
-    
+    /**
+     * A job's status can be SUBMITTED, PROGRESSING, COMPLETE, CANCELED, or ERROR.
+     */
     inline ListJobsRequest& WithStatus(const JobStatus& value) { SetStatus(value); return *this;}
 
-    
+    /**
+     * A job's status can be SUBMITTED, PROGRESSING, COMPLETE, CANCELED, or ERROR.
+     */
     inline ListJobsRequest& WithStatus(JobStatus&& value) { SetStatus(std::move(value)); return *this;}
 
   private:

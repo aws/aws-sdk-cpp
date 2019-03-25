@@ -29,8 +29,10 @@
 #include <aws/iot1click-devices/model/InvokeDeviceMethodResult.h>
 #include <aws/iot1click-devices/model/ListDeviceEventsResult.h>
 #include <aws/iot1click-devices/model/ListDevicesResult.h>
+#include <aws/iot1click-devices/model/ListTagsForResourceResult.h>
 #include <aws/iot1click-devices/model/UnclaimDeviceResult.h>
 #include <aws/iot1click-devices/model/UpdateDeviceStateResult.h>
+#include <aws/core/NoResult.h>
 #include <aws/core/client/AsyncCallerContext.h>
 #include <aws/core/http/HttpTypes.h>
 #include <future>
@@ -79,7 +81,10 @@ namespace Model
         class InvokeDeviceMethodRequest;
         class ListDeviceEventsRequest;
         class ListDevicesRequest;
+        class ListTagsForResourceRequest;
+        class TagResourceRequest;
         class UnclaimDeviceRequest;
+        class UntagResourceRequest;
         class UpdateDeviceStateRequest;
 
         typedef Aws::Utils::Outcome<ClaimDevicesByClaimCodeResult, Aws::Client::AWSError<IoT1ClickDevicesServiceErrors>> ClaimDevicesByClaimCodeOutcome;
@@ -90,7 +95,10 @@ namespace Model
         typedef Aws::Utils::Outcome<InvokeDeviceMethodResult, Aws::Client::AWSError<IoT1ClickDevicesServiceErrors>> InvokeDeviceMethodOutcome;
         typedef Aws::Utils::Outcome<ListDeviceEventsResult, Aws::Client::AWSError<IoT1ClickDevicesServiceErrors>> ListDeviceEventsOutcome;
         typedef Aws::Utils::Outcome<ListDevicesResult, Aws::Client::AWSError<IoT1ClickDevicesServiceErrors>> ListDevicesOutcome;
+        typedef Aws::Utils::Outcome<ListTagsForResourceResult, Aws::Client::AWSError<IoT1ClickDevicesServiceErrors>> ListTagsForResourceOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<IoT1ClickDevicesServiceErrors>> TagResourceOutcome;
         typedef Aws::Utils::Outcome<UnclaimDeviceResult, Aws::Client::AWSError<IoT1ClickDevicesServiceErrors>> UnclaimDeviceOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<IoT1ClickDevicesServiceErrors>> UntagResourceOutcome;
         typedef Aws::Utils::Outcome<UpdateDeviceStateResult, Aws::Client::AWSError<IoT1ClickDevicesServiceErrors>> UpdateDeviceStateOutcome;
 
         typedef std::future<ClaimDevicesByClaimCodeOutcome> ClaimDevicesByClaimCodeOutcomeCallable;
@@ -101,7 +109,10 @@ namespace Model
         typedef std::future<InvokeDeviceMethodOutcome> InvokeDeviceMethodOutcomeCallable;
         typedef std::future<ListDeviceEventsOutcome> ListDeviceEventsOutcomeCallable;
         typedef std::future<ListDevicesOutcome> ListDevicesOutcomeCallable;
+        typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
+        typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
         typedef std::future<UnclaimDeviceOutcome> UnclaimDeviceOutcomeCallable;
+        typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
         typedef std::future<UpdateDeviceStateOutcome> UpdateDeviceStateOutcomeCallable;
 } // namespace Model
 
@@ -115,7 +126,10 @@ namespace Model
     typedef std::function<void(const IoT1ClickDevicesServiceClient*, const Model::InvokeDeviceMethodRequest&, const Model::InvokeDeviceMethodOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > InvokeDeviceMethodResponseReceivedHandler;
     typedef std::function<void(const IoT1ClickDevicesServiceClient*, const Model::ListDeviceEventsRequest&, const Model::ListDeviceEventsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListDeviceEventsResponseReceivedHandler;
     typedef std::function<void(const IoT1ClickDevicesServiceClient*, const Model::ListDevicesRequest&, const Model::ListDevicesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListDevicesResponseReceivedHandler;
+    typedef std::function<void(const IoT1ClickDevicesServiceClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
+    typedef std::function<void(const IoT1ClickDevicesServiceClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
     typedef std::function<void(const IoT1ClickDevicesServiceClient*, const Model::UnclaimDeviceRequest&, const Model::UnclaimDeviceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UnclaimDeviceResponseReceivedHandler;
+    typedef std::function<void(const IoT1ClickDevicesServiceClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
     typedef std::function<void(const IoT1ClickDevicesServiceClient*, const Model::UpdateDeviceStateRequest&, const Model::UpdateDeviceStateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateDeviceStateResponseReceivedHandler;
 
   /**
@@ -435,6 +449,62 @@ namespace Model
         virtual void ListDevicesAsync(const Model::ListDevicesRequest& request, const ListDevicesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>List all tags on an AWS IoT 1-Click resource.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/devices-2018-05-14/ListTagsForResource">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListTagsForResourceOutcome ListTagsForResource(const Model::ListTagsForResourceRequest& request) const;
+
+        /**
+         * <p>List all tags on an AWS IoT 1-Click resource.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/devices-2018-05-14/ListTagsForResource">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListTagsForResourceOutcomeCallable ListTagsForResourceCallable(const Model::ListTagsForResourceRequest& request) const;
+
+        /**
+         * <p>List all tags on an AWS IoT 1-Click resource.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/devices-2018-05-14/ListTagsForResource">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListTagsForResourceAsync(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Associate a set of tags with an AWS IoT 1-Click resource. You can then
+         * activate these user-defined tags so that they appear on the Billing and Cost
+         * Management console for cost allocation tracking.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/devices-2018-05-14/TagResource">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::TagResourceOutcome TagResource(const Model::TagResourceRequest& request) const;
+
+        /**
+         * <p>Associate a set of tags with an AWS IoT 1-Click resource. You can then
+         * activate these user-defined tags so that they appear on the Billing and Cost
+         * Management console for cost allocation tracking.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/devices-2018-05-14/TagResource">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::TagResourceOutcomeCallable TagResourceCallable(const Model::TagResourceRequest& request) const;
+
+        /**
+         * <p>Associate a set of tags with an AWS IoT 1-Click resource. You can then
+         * activate these user-defined tags so that they appear on the Billing and Cost
+         * Management console for cost allocation tracking.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/devices-2018-05-14/TagResource">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void TagResourceAsync(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Disassociates a device from your AWS account using its device
          * ID.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/devices-2018-05-14/UnclaimDevice">AWS
@@ -461,6 +531,34 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void UnclaimDeviceAsync(const Model::UnclaimDeviceRequest& request, const UnclaimDeviceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Removes the association of tags from an AWS IoT 1-Click
+         * resource.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/devices-2018-05-14/UntagResource">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UntagResourceOutcome UntagResource(const Model::UntagResourceRequest& request) const;
+
+        /**
+         * <p>Removes the association of tags from an AWS IoT 1-Click
+         * resource.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/devices-2018-05-14/UntagResource">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UntagResourceOutcomeCallable UntagResourceCallable(const Model::UntagResourceRequest& request) const;
+
+        /**
+         * <p>Removes the association of tags from an AWS IoT 1-Click
+         * resource.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/devices-2018-05-14/UntagResource">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UntagResourceAsync(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Using a Boolean value (true or false), this operation
@@ -506,7 +604,10 @@ namespace Model
         void InvokeDeviceMethodAsyncHelper(const Model::InvokeDeviceMethodRequest& request, const InvokeDeviceMethodResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListDeviceEventsAsyncHelper(const Model::ListDeviceEventsRequest& request, const ListDeviceEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListDevicesAsyncHelper(const Model::ListDevicesRequest& request, const ListDevicesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListTagsForResourceAsyncHelper(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void TagResourceAsyncHelper(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UnclaimDeviceAsyncHelper(const Model::UnclaimDeviceRequest& request, const UnclaimDeviceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UntagResourceAsyncHelper(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateDeviceStateAsyncHelper(const Model::UpdateDeviceStateRequest& request, const UpdateDeviceStateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
 
       Aws::String m_uri;

@@ -20,6 +20,7 @@
 #include <aws/mediaconvert/model/HlsCaptionLanguageSetting.h>
 #include <aws/mediaconvert/model/HlsClientCache.h>
 #include <aws/mediaconvert/model/HlsCodecSpecification.h>
+#include <aws/mediaconvert/model/DestinationSettings.h>
 #include <aws/mediaconvert/model/HlsDirectoryStructure.h>
 #include <aws/mediaconvert/model/HlsEncryptionSettings.h>
 #include <aws/mediaconvert/model/HlsManifestCompression.h>
@@ -210,60 +211,156 @@ namespace Model
     inline HlsGroupSettings& AddCaptionLanguageMappings(HlsCaptionLanguageMapping&& value) { m_captionLanguageMappingsHasBeenSet = true; m_captionLanguageMappings.push_back(std::move(value)); return *this; }
 
 
-    
+    /**
+     * Applies only to 608 Embedded output captions. Insert: Include CLOSED-CAPTIONS
+     * lines in the manifest. Specify at least one language in the CC1 Language Code
+     * field. One CLOSED-CAPTION line is added for each Language Code you specify. Make
+     * sure to specify the languages in the order in which they appear in the original
+     * source (if the source is embedded format) or the order of the caption selectors
+     * (if the source is other than embedded). Otherwise, languages in the manifest
+     * will not match up properly with the output captions. None: Include
+     * CLOSED-CAPTIONS=NONE line in the manifest. Omit: Omit any CLOSED-CAPTIONS line
+     * from the manifest.
+     */
     inline const HlsCaptionLanguageSetting& GetCaptionLanguageSetting() const{ return m_captionLanguageSetting; }
 
-    
+    /**
+     * Applies only to 608 Embedded output captions. Insert: Include CLOSED-CAPTIONS
+     * lines in the manifest. Specify at least one language in the CC1 Language Code
+     * field. One CLOSED-CAPTION line is added for each Language Code you specify. Make
+     * sure to specify the languages in the order in which they appear in the original
+     * source (if the source is embedded format) or the order of the caption selectors
+     * (if the source is other than embedded). Otherwise, languages in the manifest
+     * will not match up properly with the output captions. None: Include
+     * CLOSED-CAPTIONS=NONE line in the manifest. Omit: Omit any CLOSED-CAPTIONS line
+     * from the manifest.
+     */
     inline bool CaptionLanguageSettingHasBeenSet() const { return m_captionLanguageSettingHasBeenSet; }
 
-    
+    /**
+     * Applies only to 608 Embedded output captions. Insert: Include CLOSED-CAPTIONS
+     * lines in the manifest. Specify at least one language in the CC1 Language Code
+     * field. One CLOSED-CAPTION line is added for each Language Code you specify. Make
+     * sure to specify the languages in the order in which they appear in the original
+     * source (if the source is embedded format) or the order of the caption selectors
+     * (if the source is other than embedded). Otherwise, languages in the manifest
+     * will not match up properly with the output captions. None: Include
+     * CLOSED-CAPTIONS=NONE line in the manifest. Omit: Omit any CLOSED-CAPTIONS line
+     * from the manifest.
+     */
     inline void SetCaptionLanguageSetting(const HlsCaptionLanguageSetting& value) { m_captionLanguageSettingHasBeenSet = true; m_captionLanguageSetting = value; }
 
-    
+    /**
+     * Applies only to 608 Embedded output captions. Insert: Include CLOSED-CAPTIONS
+     * lines in the manifest. Specify at least one language in the CC1 Language Code
+     * field. One CLOSED-CAPTION line is added for each Language Code you specify. Make
+     * sure to specify the languages in the order in which they appear in the original
+     * source (if the source is embedded format) or the order of the caption selectors
+     * (if the source is other than embedded). Otherwise, languages in the manifest
+     * will not match up properly with the output captions. None: Include
+     * CLOSED-CAPTIONS=NONE line in the manifest. Omit: Omit any CLOSED-CAPTIONS line
+     * from the manifest.
+     */
     inline void SetCaptionLanguageSetting(HlsCaptionLanguageSetting&& value) { m_captionLanguageSettingHasBeenSet = true; m_captionLanguageSetting = std::move(value); }
 
-    
+    /**
+     * Applies only to 608 Embedded output captions. Insert: Include CLOSED-CAPTIONS
+     * lines in the manifest. Specify at least one language in the CC1 Language Code
+     * field. One CLOSED-CAPTION line is added for each Language Code you specify. Make
+     * sure to specify the languages in the order in which they appear in the original
+     * source (if the source is embedded format) or the order of the caption selectors
+     * (if the source is other than embedded). Otherwise, languages in the manifest
+     * will not match up properly with the output captions. None: Include
+     * CLOSED-CAPTIONS=NONE line in the manifest. Omit: Omit any CLOSED-CAPTIONS line
+     * from the manifest.
+     */
     inline HlsGroupSettings& WithCaptionLanguageSetting(const HlsCaptionLanguageSetting& value) { SetCaptionLanguageSetting(value); return *this;}
 
-    
+    /**
+     * Applies only to 608 Embedded output captions. Insert: Include CLOSED-CAPTIONS
+     * lines in the manifest. Specify at least one language in the CC1 Language Code
+     * field. One CLOSED-CAPTION line is added for each Language Code you specify. Make
+     * sure to specify the languages in the order in which they appear in the original
+     * source (if the source is embedded format) or the order of the caption selectors
+     * (if the source is other than embedded). Otherwise, languages in the manifest
+     * will not match up properly with the output captions. None: Include
+     * CLOSED-CAPTIONS=NONE line in the manifest. Omit: Omit any CLOSED-CAPTIONS line
+     * from the manifest.
+     */
     inline HlsGroupSettings& WithCaptionLanguageSetting(HlsCaptionLanguageSetting&& value) { SetCaptionLanguageSetting(std::move(value)); return *this;}
 
 
-    
+    /**
+     * When set to ENABLED, sets #EXT-X-ALLOW-CACHE:no tag, which prevents client from
+     * saving media segments for later replay.
+     */
     inline const HlsClientCache& GetClientCache() const{ return m_clientCache; }
 
-    
+    /**
+     * When set to ENABLED, sets #EXT-X-ALLOW-CACHE:no tag, which prevents client from
+     * saving media segments for later replay.
+     */
     inline bool ClientCacheHasBeenSet() const { return m_clientCacheHasBeenSet; }
 
-    
+    /**
+     * When set to ENABLED, sets #EXT-X-ALLOW-CACHE:no tag, which prevents client from
+     * saving media segments for later replay.
+     */
     inline void SetClientCache(const HlsClientCache& value) { m_clientCacheHasBeenSet = true; m_clientCache = value; }
 
-    
+    /**
+     * When set to ENABLED, sets #EXT-X-ALLOW-CACHE:no tag, which prevents client from
+     * saving media segments for later replay.
+     */
     inline void SetClientCache(HlsClientCache&& value) { m_clientCacheHasBeenSet = true; m_clientCache = std::move(value); }
 
-    
+    /**
+     * When set to ENABLED, sets #EXT-X-ALLOW-CACHE:no tag, which prevents client from
+     * saving media segments for later replay.
+     */
     inline HlsGroupSettings& WithClientCache(const HlsClientCache& value) { SetClientCache(value); return *this;}
 
-    
+    /**
+     * When set to ENABLED, sets #EXT-X-ALLOW-CACHE:no tag, which prevents client from
+     * saving media segments for later replay.
+     */
     inline HlsGroupSettings& WithClientCache(HlsClientCache&& value) { SetClientCache(std::move(value)); return *this;}
 
 
-    
+    /**
+     * Specification to use (RFC-6381 or the default RFC-4281) during m3u8 playlist
+     * generation.
+     */
     inline const HlsCodecSpecification& GetCodecSpecification() const{ return m_codecSpecification; }
 
-    
+    /**
+     * Specification to use (RFC-6381 or the default RFC-4281) during m3u8 playlist
+     * generation.
+     */
     inline bool CodecSpecificationHasBeenSet() const { return m_codecSpecificationHasBeenSet; }
 
-    
+    /**
+     * Specification to use (RFC-6381 or the default RFC-4281) during m3u8 playlist
+     * generation.
+     */
     inline void SetCodecSpecification(const HlsCodecSpecification& value) { m_codecSpecificationHasBeenSet = true; m_codecSpecification = value; }
 
-    
+    /**
+     * Specification to use (RFC-6381 or the default RFC-4281) during m3u8 playlist
+     * generation.
+     */
     inline void SetCodecSpecification(HlsCodecSpecification&& value) { m_codecSpecificationHasBeenSet = true; m_codecSpecification = std::move(value); }
 
-    
+    /**
+     * Specification to use (RFC-6381 or the default RFC-4281) during m3u8 playlist
+     * generation.
+     */
     inline HlsGroupSettings& WithCodecSpecification(const HlsCodecSpecification& value) { SetCodecSpecification(value); return *this;}
 
-    
+    /**
+     * Specification to use (RFC-6381 or the default RFC-4281) during m3u8 playlist
+     * generation.
+     */
     inline HlsGroupSettings& WithCodecSpecification(HlsCodecSpecification&& value) { SetCodecSpecification(std::move(value)); return *this;}
 
 
@@ -340,22 +437,71 @@ namespace Model
     inline HlsGroupSettings& WithDestination(const char* value) { SetDestination(value); return *this;}
 
 
-    
+    /**
+     * Settings associated with the destination. Will vary based on the type of
+     * destination
+     */
+    inline const DestinationSettings& GetDestinationSettings() const{ return m_destinationSettings; }
+
+    /**
+     * Settings associated with the destination. Will vary based on the type of
+     * destination
+     */
+    inline bool DestinationSettingsHasBeenSet() const { return m_destinationSettingsHasBeenSet; }
+
+    /**
+     * Settings associated with the destination. Will vary based on the type of
+     * destination
+     */
+    inline void SetDestinationSettings(const DestinationSettings& value) { m_destinationSettingsHasBeenSet = true; m_destinationSettings = value; }
+
+    /**
+     * Settings associated with the destination. Will vary based on the type of
+     * destination
+     */
+    inline void SetDestinationSettings(DestinationSettings&& value) { m_destinationSettingsHasBeenSet = true; m_destinationSettings = std::move(value); }
+
+    /**
+     * Settings associated with the destination. Will vary based on the type of
+     * destination
+     */
+    inline HlsGroupSettings& WithDestinationSettings(const DestinationSettings& value) { SetDestinationSettings(value); return *this;}
+
+    /**
+     * Settings associated with the destination. Will vary based on the type of
+     * destination
+     */
+    inline HlsGroupSettings& WithDestinationSettings(DestinationSettings&& value) { SetDestinationSettings(std::move(value)); return *this;}
+
+
+    /**
+     * Indicates whether segments should be placed in subdirectories.
+     */
     inline const HlsDirectoryStructure& GetDirectoryStructure() const{ return m_directoryStructure; }
 
-    
+    /**
+     * Indicates whether segments should be placed in subdirectories.
+     */
     inline bool DirectoryStructureHasBeenSet() const { return m_directoryStructureHasBeenSet; }
 
-    
+    /**
+     * Indicates whether segments should be placed in subdirectories.
+     */
     inline void SetDirectoryStructure(const HlsDirectoryStructure& value) { m_directoryStructureHasBeenSet = true; m_directoryStructure = value; }
 
-    
+    /**
+     * Indicates whether segments should be placed in subdirectories.
+     */
     inline void SetDirectoryStructure(HlsDirectoryStructure&& value) { m_directoryStructureHasBeenSet = true; m_directoryStructure = std::move(value); }
 
-    
+    /**
+     * Indicates whether segments should be placed in subdirectories.
+     */
     inline HlsGroupSettings& WithDirectoryStructure(const HlsDirectoryStructure& value) { SetDirectoryStructure(value); return *this;}
 
-    
+    /**
+     * Indicates whether segments should be placed in subdirectories.
+     */
     inline HlsGroupSettings& WithDirectoryStructure(HlsDirectoryStructure&& value) { SetDirectoryStructure(std::move(value)); return *this;}
 
 
@@ -390,41 +536,71 @@ namespace Model
     inline HlsGroupSettings& WithEncryption(HlsEncryptionSettings&& value) { SetEncryption(std::move(value)); return *this;}
 
 
-    
+    /**
+     * When set to GZIP, compresses HLS playlist.
+     */
     inline const HlsManifestCompression& GetManifestCompression() const{ return m_manifestCompression; }
 
-    
+    /**
+     * When set to GZIP, compresses HLS playlist.
+     */
     inline bool ManifestCompressionHasBeenSet() const { return m_manifestCompressionHasBeenSet; }
 
-    
+    /**
+     * When set to GZIP, compresses HLS playlist.
+     */
     inline void SetManifestCompression(const HlsManifestCompression& value) { m_manifestCompressionHasBeenSet = true; m_manifestCompression = value; }
 
-    
+    /**
+     * When set to GZIP, compresses HLS playlist.
+     */
     inline void SetManifestCompression(HlsManifestCompression&& value) { m_manifestCompressionHasBeenSet = true; m_manifestCompression = std::move(value); }
 
-    
+    /**
+     * When set to GZIP, compresses HLS playlist.
+     */
     inline HlsGroupSettings& WithManifestCompression(const HlsManifestCompression& value) { SetManifestCompression(value); return *this;}
 
-    
+    /**
+     * When set to GZIP, compresses HLS playlist.
+     */
     inline HlsGroupSettings& WithManifestCompression(HlsManifestCompression&& value) { SetManifestCompression(std::move(value)); return *this;}
 
 
-    
+    /**
+     * Indicates whether the output manifest should use floating point values for
+     * segment duration.
+     */
     inline const HlsManifestDurationFormat& GetManifestDurationFormat() const{ return m_manifestDurationFormat; }
 
-    
+    /**
+     * Indicates whether the output manifest should use floating point values for
+     * segment duration.
+     */
     inline bool ManifestDurationFormatHasBeenSet() const { return m_manifestDurationFormatHasBeenSet; }
 
-    
+    /**
+     * Indicates whether the output manifest should use floating point values for
+     * segment duration.
+     */
     inline void SetManifestDurationFormat(const HlsManifestDurationFormat& value) { m_manifestDurationFormatHasBeenSet = true; m_manifestDurationFormat = value; }
 
-    
+    /**
+     * Indicates whether the output manifest should use floating point values for
+     * segment duration.
+     */
     inline void SetManifestDurationFormat(HlsManifestDurationFormat&& value) { m_manifestDurationFormatHasBeenSet = true; m_manifestDurationFormat = std::move(value); }
 
-    
+    /**
+     * Indicates whether the output manifest should use floating point values for
+     * segment duration.
+     */
     inline HlsGroupSettings& WithManifestDurationFormat(const HlsManifestDurationFormat& value) { SetManifestDurationFormat(value); return *this;}
 
-    
+    /**
+     * Indicates whether the output manifest should use floating point values for
+     * segment duration.
+     */
     inline HlsGroupSettings& WithManifestDurationFormat(HlsManifestDurationFormat&& value) { SetManifestDurationFormat(std::move(value)); return *this;}
 
 
@@ -514,41 +690,89 @@ namespace Model
     inline HlsGroupSettings& WithMinSegmentLength(int value) { SetMinSegmentLength(value); return *this;}
 
 
-    
+    /**
+     * Indicates whether the .m3u8 manifest file should be generated for this HLS
+     * output group.
+     */
     inline const HlsOutputSelection& GetOutputSelection() const{ return m_outputSelection; }
 
-    
+    /**
+     * Indicates whether the .m3u8 manifest file should be generated for this HLS
+     * output group.
+     */
     inline bool OutputSelectionHasBeenSet() const { return m_outputSelectionHasBeenSet; }
 
-    
+    /**
+     * Indicates whether the .m3u8 manifest file should be generated for this HLS
+     * output group.
+     */
     inline void SetOutputSelection(const HlsOutputSelection& value) { m_outputSelectionHasBeenSet = true; m_outputSelection = value; }
 
-    
+    /**
+     * Indicates whether the .m3u8 manifest file should be generated for this HLS
+     * output group.
+     */
     inline void SetOutputSelection(HlsOutputSelection&& value) { m_outputSelectionHasBeenSet = true; m_outputSelection = std::move(value); }
 
-    
+    /**
+     * Indicates whether the .m3u8 manifest file should be generated for this HLS
+     * output group.
+     */
     inline HlsGroupSettings& WithOutputSelection(const HlsOutputSelection& value) { SetOutputSelection(value); return *this;}
 
-    
+    /**
+     * Indicates whether the .m3u8 manifest file should be generated for this HLS
+     * output group.
+     */
     inline HlsGroupSettings& WithOutputSelection(HlsOutputSelection&& value) { SetOutputSelection(std::move(value)); return *this;}
 
 
-    
+    /**
+     * Includes or excludes EXT-X-PROGRAM-DATE-TIME tag in .m3u8 manifest files. The
+     * value is calculated as follows: either the program date and time are initialized
+     * using the input timecode source, or the time is initialized using the input
+     * timecode source and the date is initialized using the timestamp_offset.
+     */
     inline const HlsProgramDateTime& GetProgramDateTime() const{ return m_programDateTime; }
 
-    
+    /**
+     * Includes or excludes EXT-X-PROGRAM-DATE-TIME tag in .m3u8 manifest files. The
+     * value is calculated as follows: either the program date and time are initialized
+     * using the input timecode source, or the time is initialized using the input
+     * timecode source and the date is initialized using the timestamp_offset.
+     */
     inline bool ProgramDateTimeHasBeenSet() const { return m_programDateTimeHasBeenSet; }
 
-    
+    /**
+     * Includes or excludes EXT-X-PROGRAM-DATE-TIME tag in .m3u8 manifest files. The
+     * value is calculated as follows: either the program date and time are initialized
+     * using the input timecode source, or the time is initialized using the input
+     * timecode source and the date is initialized using the timestamp_offset.
+     */
     inline void SetProgramDateTime(const HlsProgramDateTime& value) { m_programDateTimeHasBeenSet = true; m_programDateTime = value; }
 
-    
+    /**
+     * Includes or excludes EXT-X-PROGRAM-DATE-TIME tag in .m3u8 manifest files. The
+     * value is calculated as follows: either the program date and time are initialized
+     * using the input timecode source, or the time is initialized using the input
+     * timecode source and the date is initialized using the timestamp_offset.
+     */
     inline void SetProgramDateTime(HlsProgramDateTime&& value) { m_programDateTimeHasBeenSet = true; m_programDateTime = std::move(value); }
 
-    
+    /**
+     * Includes or excludes EXT-X-PROGRAM-DATE-TIME tag in .m3u8 manifest files. The
+     * value is calculated as follows: either the program date and time are initialized
+     * using the input timecode source, or the time is initialized using the input
+     * timecode source and the date is initialized using the timestamp_offset.
+     */
     inline HlsGroupSettings& WithProgramDateTime(const HlsProgramDateTime& value) { SetProgramDateTime(value); return *this;}
 
-    
+    /**
+     * Includes or excludes EXT-X-PROGRAM-DATE-TIME tag in .m3u8 manifest files. The
+     * value is calculated as follows: either the program date and time are initialized
+     * using the input timecode source, or the time is initialized using the input
+     * timecode source and the date is initialized using the timestamp_offset.
+     */
     inline HlsGroupSettings& WithProgramDateTime(HlsProgramDateTime&& value) { SetProgramDateTime(std::move(value)); return *this;}
 
 
@@ -573,22 +797,40 @@ namespace Model
     inline HlsGroupSettings& WithProgramDateTimePeriod(int value) { SetProgramDateTimePeriod(value); return *this;}
 
 
-    
+    /**
+     * When set to SINGLE_FILE, emits program as a single media resource (.ts) file,
+     * uses #EXT-X-BYTERANGE tags to index segment for playback.
+     */
     inline const HlsSegmentControl& GetSegmentControl() const{ return m_segmentControl; }
 
-    
+    /**
+     * When set to SINGLE_FILE, emits program as a single media resource (.ts) file,
+     * uses #EXT-X-BYTERANGE tags to index segment for playback.
+     */
     inline bool SegmentControlHasBeenSet() const { return m_segmentControlHasBeenSet; }
 
-    
+    /**
+     * When set to SINGLE_FILE, emits program as a single media resource (.ts) file,
+     * uses #EXT-X-BYTERANGE tags to index segment for playback.
+     */
     inline void SetSegmentControl(const HlsSegmentControl& value) { m_segmentControlHasBeenSet = true; m_segmentControl = value; }
 
-    
+    /**
+     * When set to SINGLE_FILE, emits program as a single media resource (.ts) file,
+     * uses #EXT-X-BYTERANGE tags to index segment for playback.
+     */
     inline void SetSegmentControl(HlsSegmentControl&& value) { m_segmentControlHasBeenSet = true; m_segmentControl = std::move(value); }
 
-    
+    /**
+     * When set to SINGLE_FILE, emits program as a single media resource (.ts) file,
+     * uses #EXT-X-BYTERANGE tags to index segment for playback.
+     */
     inline HlsGroupSettings& WithSegmentControl(const HlsSegmentControl& value) { SetSegmentControl(value); return *this;}
 
-    
+    /**
+     * When set to SINGLE_FILE, emits program as a single media resource (.ts) file,
+     * uses #EXT-X-BYTERANGE tags to index segment for playback.
+     */
     inline HlsGroupSettings& WithSegmentControl(HlsSegmentControl&& value) { SetSegmentControl(std::move(value)); return *this;}
 
 
@@ -646,41 +888,71 @@ namespace Model
     inline HlsGroupSettings& WithSegmentsPerSubdirectory(int value) { SetSegmentsPerSubdirectory(value); return *this;}
 
 
-    
+    /**
+     * Include or exclude RESOLUTION attribute for video in EXT-X-STREAM-INF tag of
+     * variant manifest.
+     */
     inline const HlsStreamInfResolution& GetStreamInfResolution() const{ return m_streamInfResolution; }
 
-    
+    /**
+     * Include or exclude RESOLUTION attribute for video in EXT-X-STREAM-INF tag of
+     * variant manifest.
+     */
     inline bool StreamInfResolutionHasBeenSet() const { return m_streamInfResolutionHasBeenSet; }
 
-    
+    /**
+     * Include or exclude RESOLUTION attribute for video in EXT-X-STREAM-INF tag of
+     * variant manifest.
+     */
     inline void SetStreamInfResolution(const HlsStreamInfResolution& value) { m_streamInfResolutionHasBeenSet = true; m_streamInfResolution = value; }
 
-    
+    /**
+     * Include or exclude RESOLUTION attribute for video in EXT-X-STREAM-INF tag of
+     * variant manifest.
+     */
     inline void SetStreamInfResolution(HlsStreamInfResolution&& value) { m_streamInfResolutionHasBeenSet = true; m_streamInfResolution = std::move(value); }
 
-    
+    /**
+     * Include or exclude RESOLUTION attribute for video in EXT-X-STREAM-INF tag of
+     * variant manifest.
+     */
     inline HlsGroupSettings& WithStreamInfResolution(const HlsStreamInfResolution& value) { SetStreamInfResolution(value); return *this;}
 
-    
+    /**
+     * Include or exclude RESOLUTION attribute for video in EXT-X-STREAM-INF tag of
+     * variant manifest.
+     */
     inline HlsGroupSettings& WithStreamInfResolution(HlsStreamInfResolution&& value) { SetStreamInfResolution(std::move(value)); return *this;}
 
 
-    
+    /**
+     * Indicates ID3 frame that has the timecode.
+     */
     inline const HlsTimedMetadataId3Frame& GetTimedMetadataId3Frame() const{ return m_timedMetadataId3Frame; }
 
-    
+    /**
+     * Indicates ID3 frame that has the timecode.
+     */
     inline bool TimedMetadataId3FrameHasBeenSet() const { return m_timedMetadataId3FrameHasBeenSet; }
 
-    
+    /**
+     * Indicates ID3 frame that has the timecode.
+     */
     inline void SetTimedMetadataId3Frame(const HlsTimedMetadataId3Frame& value) { m_timedMetadataId3FrameHasBeenSet = true; m_timedMetadataId3Frame = value; }
 
-    
+    /**
+     * Indicates ID3 frame that has the timecode.
+     */
     inline void SetTimedMetadataId3Frame(HlsTimedMetadataId3Frame&& value) { m_timedMetadataId3FrameHasBeenSet = true; m_timedMetadataId3Frame = std::move(value); }
 
-    
+    /**
+     * Indicates ID3 frame that has the timecode.
+     */
     inline HlsGroupSettings& WithTimedMetadataId3Frame(const HlsTimedMetadataId3Frame& value) { SetTimedMetadataId3Frame(value); return *this;}
 
-    
+    /**
+     * Indicates ID3 frame that has the timecode.
+     */
     inline HlsGroupSettings& WithTimedMetadataId3Frame(HlsTimedMetadataId3Frame&& value) { SetTimedMetadataId3Frame(std::move(value)); return *this;}
 
 
@@ -747,6 +1019,9 @@ namespace Model
 
     Aws::String m_destination;
     bool m_destinationHasBeenSet;
+
+    DestinationSettings m_destinationSettings;
+    bool m_destinationSettingsHasBeenSet;
 
     HlsDirectoryStructure m_directoryStructure;
     bool m_directoryStructureHasBeenSet;

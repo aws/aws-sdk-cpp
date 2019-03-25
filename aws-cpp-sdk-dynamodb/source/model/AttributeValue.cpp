@@ -391,3 +391,8 @@ Aws::String AttributeValue::SerializeAttribute() const
     JsonValue value = Jsonize();
     return value.View().WriteReadable();
 }
+
+Aws::DynamoDB::Model::ValueType AttributeValue::GetType() const
+{
+    return m_value->GetType();
+}

@@ -71,41 +71,77 @@ namespace Model
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 
-    
+    /**
+     * Adaptive quantization. Allows intra-frame quantizers to vary to improve visual
+     * quality.
+     */
     inline const H265AdaptiveQuantization& GetAdaptiveQuantization() const{ return m_adaptiveQuantization; }
 
-    
+    /**
+     * Adaptive quantization. Allows intra-frame quantizers to vary to improve visual
+     * quality.
+     */
     inline bool AdaptiveQuantizationHasBeenSet() const { return m_adaptiveQuantizationHasBeenSet; }
 
-    
+    /**
+     * Adaptive quantization. Allows intra-frame quantizers to vary to improve visual
+     * quality.
+     */
     inline void SetAdaptiveQuantization(const H265AdaptiveQuantization& value) { m_adaptiveQuantizationHasBeenSet = true; m_adaptiveQuantization = value; }
 
-    
+    /**
+     * Adaptive quantization. Allows intra-frame quantizers to vary to improve visual
+     * quality.
+     */
     inline void SetAdaptiveQuantization(H265AdaptiveQuantization&& value) { m_adaptiveQuantizationHasBeenSet = true; m_adaptiveQuantization = std::move(value); }
 
-    
+    /**
+     * Adaptive quantization. Allows intra-frame quantizers to vary to improve visual
+     * quality.
+     */
     inline H265Settings& WithAdaptiveQuantization(const H265AdaptiveQuantization& value) { SetAdaptiveQuantization(value); return *this;}
 
-    
+    /**
+     * Adaptive quantization. Allows intra-frame quantizers to vary to improve visual
+     * quality.
+     */
     inline H265Settings& WithAdaptiveQuantization(H265AdaptiveQuantization&& value) { SetAdaptiveQuantization(std::move(value)); return *this;}
 
 
-    
+    /**
+     * Enables Alternate Transfer Function SEI message for outputs using Hybrid Log
+     * Gamma (HLG) Electro-Optical Transfer Function (EOTF).
+     */
     inline const H265AlternateTransferFunctionSei& GetAlternateTransferFunctionSei() const{ return m_alternateTransferFunctionSei; }
 
-    
+    /**
+     * Enables Alternate Transfer Function SEI message for outputs using Hybrid Log
+     * Gamma (HLG) Electro-Optical Transfer Function (EOTF).
+     */
     inline bool AlternateTransferFunctionSeiHasBeenSet() const { return m_alternateTransferFunctionSeiHasBeenSet; }
 
-    
+    /**
+     * Enables Alternate Transfer Function SEI message for outputs using Hybrid Log
+     * Gamma (HLG) Electro-Optical Transfer Function (EOTF).
+     */
     inline void SetAlternateTransferFunctionSei(const H265AlternateTransferFunctionSei& value) { m_alternateTransferFunctionSeiHasBeenSet = true; m_alternateTransferFunctionSei = value; }
 
-    
+    /**
+     * Enables Alternate Transfer Function SEI message for outputs using Hybrid Log
+     * Gamma (HLG) Electro-Optical Transfer Function (EOTF).
+     */
     inline void SetAlternateTransferFunctionSei(H265AlternateTransferFunctionSei&& value) { m_alternateTransferFunctionSeiHasBeenSet = true; m_alternateTransferFunctionSei = std::move(value); }
 
-    
+    /**
+     * Enables Alternate Transfer Function SEI message for outputs using Hybrid Log
+     * Gamma (HLG) Electro-Optical Transfer Function (EOTF).
+     */
     inline H265Settings& WithAlternateTransferFunctionSei(const H265AlternateTransferFunctionSei& value) { SetAlternateTransferFunctionSei(value); return *this;}
 
-    
+    /**
+     * Enables Alternate Transfer Function SEI message for outputs using Hybrid Log
+     * Gamma (HLG) Electro-Optical Transfer Function (EOTF).
+     */
     inline H265Settings& WithAlternateTransferFunctionSei(H265AlternateTransferFunctionSei&& value) { SetAlternateTransferFunctionSei(std::move(value)); return *this;}
 
 
@@ -134,41 +170,77 @@ namespace Model
     inline H265Settings& WithBitrate(int value) { SetBitrate(value); return *this;}
 
 
-    
+    /**
+     * H.265 Level.
+     */
     inline const H265CodecLevel& GetCodecLevel() const{ return m_codecLevel; }
 
-    
+    /**
+     * H.265 Level.
+     */
     inline bool CodecLevelHasBeenSet() const { return m_codecLevelHasBeenSet; }
 
-    
+    /**
+     * H.265 Level.
+     */
     inline void SetCodecLevel(const H265CodecLevel& value) { m_codecLevelHasBeenSet = true; m_codecLevel = value; }
 
-    
+    /**
+     * H.265 Level.
+     */
     inline void SetCodecLevel(H265CodecLevel&& value) { m_codecLevelHasBeenSet = true; m_codecLevel = std::move(value); }
 
-    
+    /**
+     * H.265 Level.
+     */
     inline H265Settings& WithCodecLevel(const H265CodecLevel& value) { SetCodecLevel(value); return *this;}
 
-    
+    /**
+     * H.265 Level.
+     */
     inline H265Settings& WithCodecLevel(H265CodecLevel&& value) { SetCodecLevel(std::move(value)); return *this;}
 
 
-    
+    /**
+     * Represents the Profile and Tier, per the HEVC (H.265) specification. Selections
+     * are grouped as [Profile] / [Tier], so "Main/High" represents Main Profile with
+     * High Tier. 4:2:2 profiles are only available with the HEVC 4:2:2 License.
+     */
     inline const H265CodecProfile& GetCodecProfile() const{ return m_codecProfile; }
 
-    
+    /**
+     * Represents the Profile and Tier, per the HEVC (H.265) specification. Selections
+     * are grouped as [Profile] / [Tier], so "Main/High" represents Main Profile with
+     * High Tier. 4:2:2 profiles are only available with the HEVC 4:2:2 License.
+     */
     inline bool CodecProfileHasBeenSet() const { return m_codecProfileHasBeenSet; }
 
-    
+    /**
+     * Represents the Profile and Tier, per the HEVC (H.265) specification. Selections
+     * are grouped as [Profile] / [Tier], so "Main/High" represents Main Profile with
+     * High Tier. 4:2:2 profiles are only available with the HEVC 4:2:2 License.
+     */
     inline void SetCodecProfile(const H265CodecProfile& value) { m_codecProfileHasBeenSet = true; m_codecProfile = value; }
 
-    
+    /**
+     * Represents the Profile and Tier, per the HEVC (H.265) specification. Selections
+     * are grouped as [Profile] / [Tier], so "Main/High" represents Main Profile with
+     * High Tier. 4:2:2 profiles are only available with the HEVC 4:2:2 License.
+     */
     inline void SetCodecProfile(H265CodecProfile&& value) { m_codecProfileHasBeenSet = true; m_codecProfile = std::move(value); }
 
-    
+    /**
+     * Represents the Profile and Tier, per the HEVC (H.265) specification. Selections
+     * are grouped as [Profile] / [Tier], so "Main/High" represents Main Profile with
+     * High Tier. 4:2:2 profiles are only available with the HEVC 4:2:2 License.
+     */
     inline H265Settings& WithCodecProfile(const H265CodecProfile& value) { SetCodecProfile(value); return *this;}
 
-    
+    /**
+     * Represents the Profile and Tier, per the HEVC (H.265) specification. Selections
+     * are grouped as [Profile] / [Tier], so "Main/High" represents Main Profile with
+     * High Tier. 4:2:2 profiles are only available with the HEVC 4:2:2 License.
+     */
     inline H265Settings& WithCodecProfile(H265CodecProfile&& value) { SetCodecProfile(std::move(value)); return *this;}
 
 
@@ -233,60 +305,156 @@ namespace Model
     inline H265Settings& WithDynamicSubGop(H265DynamicSubGop&& value) { SetDynamicSubGop(std::move(value)); return *this;}
 
 
-    
+    /**
+     * Adjust quantization within each frame to reduce flicker or 'pop' on I-frames.
+     */
     inline const H265FlickerAdaptiveQuantization& GetFlickerAdaptiveQuantization() const{ return m_flickerAdaptiveQuantization; }
 
-    
+    /**
+     * Adjust quantization within each frame to reduce flicker or 'pop' on I-frames.
+     */
     inline bool FlickerAdaptiveQuantizationHasBeenSet() const { return m_flickerAdaptiveQuantizationHasBeenSet; }
 
-    
+    /**
+     * Adjust quantization within each frame to reduce flicker or 'pop' on I-frames.
+     */
     inline void SetFlickerAdaptiveQuantization(const H265FlickerAdaptiveQuantization& value) { m_flickerAdaptiveQuantizationHasBeenSet = true; m_flickerAdaptiveQuantization = value; }
 
-    
+    /**
+     * Adjust quantization within each frame to reduce flicker or 'pop' on I-frames.
+     */
     inline void SetFlickerAdaptiveQuantization(H265FlickerAdaptiveQuantization&& value) { m_flickerAdaptiveQuantizationHasBeenSet = true; m_flickerAdaptiveQuantization = std::move(value); }
 
-    
+    /**
+     * Adjust quantization within each frame to reduce flicker or 'pop' on I-frames.
+     */
     inline H265Settings& WithFlickerAdaptiveQuantization(const H265FlickerAdaptiveQuantization& value) { SetFlickerAdaptiveQuantization(value); return *this;}
 
-    
+    /**
+     * Adjust quantization within each frame to reduce flicker or 'pop' on I-frames.
+     */
     inline H265Settings& WithFlickerAdaptiveQuantization(H265FlickerAdaptiveQuantization&& value) { SetFlickerAdaptiveQuantization(std::move(value)); return *this;}
 
 
-    
+    /**
+     * If you are using the console, use the Framerate setting to specify the frame
+     * rate for this output. If you want to keep the same frame rate as the input
+     * video, choose Follow source. If you want to do frame rate conversion, choose a
+     * frame rate from the dropdown list or choose Custom. The framerates shown in the
+     * dropdown list are decimal approximations of fractions. If you choose Custom,
+     * specify your frame rate as a fraction. If you are creating your transcoding job
+     * sepecification as a JSON file without the console, use FramerateControl to
+     * specify which value the service uses for the frame rate for this output. Choose
+     * INITIALIZE_FROM_SOURCE if you want the service to use the frame rate from the
+     * input. Choose SPECIFIED if you want the service to use the frame rate you
+     * specify in the settings FramerateNumerator and FramerateDenominator.
+     */
     inline const H265FramerateControl& GetFramerateControl() const{ return m_framerateControl; }
 
-    
+    /**
+     * If you are using the console, use the Framerate setting to specify the frame
+     * rate for this output. If you want to keep the same frame rate as the input
+     * video, choose Follow source. If you want to do frame rate conversion, choose a
+     * frame rate from the dropdown list or choose Custom. The framerates shown in the
+     * dropdown list are decimal approximations of fractions. If you choose Custom,
+     * specify your frame rate as a fraction. If you are creating your transcoding job
+     * sepecification as a JSON file without the console, use FramerateControl to
+     * specify which value the service uses for the frame rate for this output. Choose
+     * INITIALIZE_FROM_SOURCE if you want the service to use the frame rate from the
+     * input. Choose SPECIFIED if you want the service to use the frame rate you
+     * specify in the settings FramerateNumerator and FramerateDenominator.
+     */
     inline bool FramerateControlHasBeenSet() const { return m_framerateControlHasBeenSet; }
 
-    
+    /**
+     * If you are using the console, use the Framerate setting to specify the frame
+     * rate for this output. If you want to keep the same frame rate as the input
+     * video, choose Follow source. If you want to do frame rate conversion, choose a
+     * frame rate from the dropdown list or choose Custom. The framerates shown in the
+     * dropdown list are decimal approximations of fractions. If you choose Custom,
+     * specify your frame rate as a fraction. If you are creating your transcoding job
+     * sepecification as a JSON file without the console, use FramerateControl to
+     * specify which value the service uses for the frame rate for this output. Choose
+     * INITIALIZE_FROM_SOURCE if you want the service to use the frame rate from the
+     * input. Choose SPECIFIED if you want the service to use the frame rate you
+     * specify in the settings FramerateNumerator and FramerateDenominator.
+     */
     inline void SetFramerateControl(const H265FramerateControl& value) { m_framerateControlHasBeenSet = true; m_framerateControl = value; }
 
-    
+    /**
+     * If you are using the console, use the Framerate setting to specify the frame
+     * rate for this output. If you want to keep the same frame rate as the input
+     * video, choose Follow source. If you want to do frame rate conversion, choose a
+     * frame rate from the dropdown list or choose Custom. The framerates shown in the
+     * dropdown list are decimal approximations of fractions. If you choose Custom,
+     * specify your frame rate as a fraction. If you are creating your transcoding job
+     * sepecification as a JSON file without the console, use FramerateControl to
+     * specify which value the service uses for the frame rate for this output. Choose
+     * INITIALIZE_FROM_SOURCE if you want the service to use the frame rate from the
+     * input. Choose SPECIFIED if you want the service to use the frame rate you
+     * specify in the settings FramerateNumerator and FramerateDenominator.
+     */
     inline void SetFramerateControl(H265FramerateControl&& value) { m_framerateControlHasBeenSet = true; m_framerateControl = std::move(value); }
 
-    
+    /**
+     * If you are using the console, use the Framerate setting to specify the frame
+     * rate for this output. If you want to keep the same frame rate as the input
+     * video, choose Follow source. If you want to do frame rate conversion, choose a
+     * frame rate from the dropdown list or choose Custom. The framerates shown in the
+     * dropdown list are decimal approximations of fractions. If you choose Custom,
+     * specify your frame rate as a fraction. If you are creating your transcoding job
+     * sepecification as a JSON file without the console, use FramerateControl to
+     * specify which value the service uses for the frame rate for this output. Choose
+     * INITIALIZE_FROM_SOURCE if you want the service to use the frame rate from the
+     * input. Choose SPECIFIED if you want the service to use the frame rate you
+     * specify in the settings FramerateNumerator and FramerateDenominator.
+     */
     inline H265Settings& WithFramerateControl(const H265FramerateControl& value) { SetFramerateControl(value); return *this;}
 
-    
+    /**
+     * If you are using the console, use the Framerate setting to specify the frame
+     * rate for this output. If you want to keep the same frame rate as the input
+     * video, choose Follow source. If you want to do frame rate conversion, choose a
+     * frame rate from the dropdown list or choose Custom. The framerates shown in the
+     * dropdown list are decimal approximations of fractions. If you choose Custom,
+     * specify your frame rate as a fraction. If you are creating your transcoding job
+     * sepecification as a JSON file without the console, use FramerateControl to
+     * specify which value the service uses for the frame rate for this output. Choose
+     * INITIALIZE_FROM_SOURCE if you want the service to use the frame rate from the
+     * input. Choose SPECIFIED if you want the service to use the frame rate you
+     * specify in the settings FramerateNumerator and FramerateDenominator.
+     */
     inline H265Settings& WithFramerateControl(H265FramerateControl&& value) { SetFramerateControl(std::move(value)); return *this;}
 
 
-    
+    /**
+     * When set to INTERPOLATE, produces smoother motion during frame rate conversion.
+     */
     inline const H265FramerateConversionAlgorithm& GetFramerateConversionAlgorithm() const{ return m_framerateConversionAlgorithm; }
 
-    
+    /**
+     * When set to INTERPOLATE, produces smoother motion during frame rate conversion.
+     */
     inline bool FramerateConversionAlgorithmHasBeenSet() const { return m_framerateConversionAlgorithmHasBeenSet; }
 
-    
+    /**
+     * When set to INTERPOLATE, produces smoother motion during frame rate conversion.
+     */
     inline void SetFramerateConversionAlgorithm(const H265FramerateConversionAlgorithm& value) { m_framerateConversionAlgorithmHasBeenSet = true; m_framerateConversionAlgorithm = value; }
 
-    
+    /**
+     * When set to INTERPOLATE, produces smoother motion during frame rate conversion.
+     */
     inline void SetFramerateConversionAlgorithm(H265FramerateConversionAlgorithm&& value) { m_framerateConversionAlgorithmHasBeenSet = true; m_framerateConversionAlgorithm = std::move(value); }
 
-    
+    /**
+     * When set to INTERPOLATE, produces smoother motion during frame rate conversion.
+     */
     inline H265Settings& WithFramerateConversionAlgorithm(const H265FramerateConversionAlgorithm& value) { SetFramerateConversionAlgorithm(value); return *this;}
 
-    
+    /**
+     * When set to INTERPOLATE, produces smoother motion during frame rate conversion.
+     */
     inline H265Settings& WithFramerateConversionAlgorithm(H265FramerateConversionAlgorithm&& value) { SetFramerateConversionAlgorithm(std::move(value)); return *this;}
 
 
@@ -332,22 +500,34 @@ namespace Model
     inline H265Settings& WithFramerateNumerator(int value) { SetFramerateNumerator(value); return *this;}
 
 
-    
+    /**
+     * If enable, use reference B frames for GOP structures that have B frames > 1.
+     */
     inline const H265GopBReference& GetGopBReference() const{ return m_gopBReference; }
 
-    
+    /**
+     * If enable, use reference B frames for GOP structures that have B frames > 1.
+     */
     inline bool GopBReferenceHasBeenSet() const { return m_gopBReferenceHasBeenSet; }
 
-    
+    /**
+     * If enable, use reference B frames for GOP structures that have B frames > 1.
+     */
     inline void SetGopBReference(const H265GopBReference& value) { m_gopBReferenceHasBeenSet = true; m_gopBReference = value; }
 
-    
+    /**
+     * If enable, use reference B frames for GOP structures that have B frames > 1.
+     */
     inline void SetGopBReference(H265GopBReference&& value) { m_gopBReferenceHasBeenSet = true; m_gopBReference = std::move(value); }
 
-    
+    /**
+     * If enable, use reference B frames for GOP structures that have B frames > 1.
+     */
     inline H265Settings& WithGopBReference(const H265GopBReference& value) { SetGopBReference(value); return *this;}
 
-    
+    /**
+     * If enable, use reference B frames for GOP structures that have B frames > 1.
+     */
     inline H265Settings& WithGopBReference(H265GopBReference&& value) { SetGopBReference(std::move(value)); return *this;}
 
 
@@ -401,22 +581,40 @@ namespace Model
     inline H265Settings& WithGopSize(double value) { SetGopSize(value); return *this;}
 
 
-    
+    /**
+     * Indicates if the GOP Size in H265 is specified in frames or seconds. If seconds
+     * the system will convert the GOP Size into a frame count at run time.
+     */
     inline const H265GopSizeUnits& GetGopSizeUnits() const{ return m_gopSizeUnits; }
 
-    
+    /**
+     * Indicates if the GOP Size in H265 is specified in frames or seconds. If seconds
+     * the system will convert the GOP Size into a frame count at run time.
+     */
     inline bool GopSizeUnitsHasBeenSet() const { return m_gopSizeUnitsHasBeenSet; }
 
-    
+    /**
+     * Indicates if the GOP Size in H265 is specified in frames or seconds. If seconds
+     * the system will convert the GOP Size into a frame count at run time.
+     */
     inline void SetGopSizeUnits(const H265GopSizeUnits& value) { m_gopSizeUnitsHasBeenSet = true; m_gopSizeUnits = value; }
 
-    
+    /**
+     * Indicates if the GOP Size in H265 is specified in frames or seconds. If seconds
+     * the system will convert the GOP Size into a frame count at run time.
+     */
     inline void SetGopSizeUnits(H265GopSizeUnits&& value) { m_gopSizeUnitsHasBeenSet = true; m_gopSizeUnits = std::move(value); }
 
-    
+    /**
+     * Indicates if the GOP Size in H265 is specified in frames or seconds. If seconds
+     * the system will convert the GOP Size into a frame count at run time.
+     */
     inline H265Settings& WithGopSizeUnits(const H265GopSizeUnits& value) { SetGopSizeUnits(value); return *this;}
 
-    
+    /**
+     * Indicates if the GOP Size in H265 is specified in frames or seconds. If seconds
+     * the system will convert the GOP Size into a frame count at run time.
+     */
     inline H265Settings& WithGopSizeUnits(H265GopSizeUnits&& value) { SetGopSizeUnits(std::move(value)); return *this;}
 
 
@@ -466,22 +664,106 @@ namespace Model
     inline H265Settings& WithHrdBufferSize(int value) { SetHrdBufferSize(value); return *this;}
 
 
-    
+    /**
+     * Use Interlace mode (InterlaceMode) to choose the scan line type for the output.
+     * * Top Field First (TOP_FIELD) and Bottom Field First (BOTTOM_FIELD) produce
+     * interlaced output with the entire output having the same field polarity (top or
+     * bottom first). * Follow, Default Top (FOLLOW_TOP_FIELD) and Follow, Default
+     * Bottom (FOLLOW_BOTTOM_FIELD) use the same field polarity as the source.
+     * Therefore, behavior depends on the input scan type.
+  - If the source is
+     * interlaced, the output will be interlaced with the same polarity as the source
+     * (it will follow the source). The output could therefore be a mix of "top field
+     * first" and "bottom field first".
+  - If the source is progressive, the output
+     * will be interlaced with "top field first" or "bottom field first" polarity,
+     * depending on which of the Follow options you chose.
+     */
     inline const H265InterlaceMode& GetInterlaceMode() const{ return m_interlaceMode; }
 
-    
+    /**
+     * Use Interlace mode (InterlaceMode) to choose the scan line type for the output.
+     * * Top Field First (TOP_FIELD) and Bottom Field First (BOTTOM_FIELD) produce
+     * interlaced output with the entire output having the same field polarity (top or
+     * bottom first). * Follow, Default Top (FOLLOW_TOP_FIELD) and Follow, Default
+     * Bottom (FOLLOW_BOTTOM_FIELD) use the same field polarity as the source.
+     * Therefore, behavior depends on the input scan type.
+  - If the source is
+     * interlaced, the output will be interlaced with the same polarity as the source
+     * (it will follow the source). The output could therefore be a mix of "top field
+     * first" and "bottom field first".
+  - If the source is progressive, the output
+     * will be interlaced with "top field first" or "bottom field first" polarity,
+     * depending on which of the Follow options you chose.
+     */
     inline bool InterlaceModeHasBeenSet() const { return m_interlaceModeHasBeenSet; }
 
-    
+    /**
+     * Use Interlace mode (InterlaceMode) to choose the scan line type for the output.
+     * * Top Field First (TOP_FIELD) and Bottom Field First (BOTTOM_FIELD) produce
+     * interlaced output with the entire output having the same field polarity (top or
+     * bottom first). * Follow, Default Top (FOLLOW_TOP_FIELD) and Follow, Default
+     * Bottom (FOLLOW_BOTTOM_FIELD) use the same field polarity as the source.
+     * Therefore, behavior depends on the input scan type.
+  - If the source is
+     * interlaced, the output will be interlaced with the same polarity as the source
+     * (it will follow the source). The output could therefore be a mix of "top field
+     * first" and "bottom field first".
+  - If the source is progressive, the output
+     * will be interlaced with "top field first" or "bottom field first" polarity,
+     * depending on which of the Follow options you chose.
+     */
     inline void SetInterlaceMode(const H265InterlaceMode& value) { m_interlaceModeHasBeenSet = true; m_interlaceMode = value; }
 
-    
+    /**
+     * Use Interlace mode (InterlaceMode) to choose the scan line type for the output.
+     * * Top Field First (TOP_FIELD) and Bottom Field First (BOTTOM_FIELD) produce
+     * interlaced output with the entire output having the same field polarity (top or
+     * bottom first). * Follow, Default Top (FOLLOW_TOP_FIELD) and Follow, Default
+     * Bottom (FOLLOW_BOTTOM_FIELD) use the same field polarity as the source.
+     * Therefore, behavior depends on the input scan type.
+  - If the source is
+     * interlaced, the output will be interlaced with the same polarity as the source
+     * (it will follow the source). The output could therefore be a mix of "top field
+     * first" and "bottom field first".
+  - If the source is progressive, the output
+     * will be interlaced with "top field first" or "bottom field first" polarity,
+     * depending on which of the Follow options you chose.
+     */
     inline void SetInterlaceMode(H265InterlaceMode&& value) { m_interlaceModeHasBeenSet = true; m_interlaceMode = std::move(value); }
 
-    
+    /**
+     * Use Interlace mode (InterlaceMode) to choose the scan line type for the output.
+     * * Top Field First (TOP_FIELD) and Bottom Field First (BOTTOM_FIELD) produce
+     * interlaced output with the entire output having the same field polarity (top or
+     * bottom first). * Follow, Default Top (FOLLOW_TOP_FIELD) and Follow, Default
+     * Bottom (FOLLOW_BOTTOM_FIELD) use the same field polarity as the source.
+     * Therefore, behavior depends on the input scan type.
+  - If the source is
+     * interlaced, the output will be interlaced with the same polarity as the source
+     * (it will follow the source). The output could therefore be a mix of "top field
+     * first" and "bottom field first".
+  - If the source is progressive, the output
+     * will be interlaced with "top field first" or "bottom field first" polarity,
+     * depending on which of the Follow options you chose.
+     */
     inline H265Settings& WithInterlaceMode(const H265InterlaceMode& value) { SetInterlaceMode(value); return *this;}
 
-    
+    /**
+     * Use Interlace mode (InterlaceMode) to choose the scan line type for the output.
+     * * Top Field First (TOP_FIELD) and Bottom Field First (BOTTOM_FIELD) produce
+     * interlaced output with the entire output having the same field polarity (top or
+     * bottom first). * Follow, Default Top (FOLLOW_TOP_FIELD) and Follow, Default
+     * Bottom (FOLLOW_BOTTOM_FIELD) use the same field polarity as the source.
+     * Therefore, behavior depends on the input scan type.
+  - If the source is
+     * interlaced, the output will be interlaced with the same polarity as the source
+     * (it will follow the source). The output could therefore be a mix of "top field
+     * first" and "bottom field first".
+  - If the source is progressive, the output
+     * will be interlaced with "top field first" or "bottom field first" polarity,
+     * depending on which of the Follow options you chose.
+     */
     inline H265Settings& WithInterlaceMode(H265InterlaceMode&& value) { SetInterlaceMode(std::move(value)); return *this;}
 
 
@@ -601,22 +883,46 @@ namespace Model
     inline H265Settings& WithNumberReferenceFrames(int value) { SetNumberReferenceFrames(value); return *this;}
 
 
-    
+    /**
+     * Using the API, enable ParFollowSource if you want the service to use the pixel
+     * aspect ratio from the input. Using the console, do this by choosing Follow
+     * source for Pixel aspect ratio.
+     */
     inline const H265ParControl& GetParControl() const{ return m_parControl; }
 
-    
+    /**
+     * Using the API, enable ParFollowSource if you want the service to use the pixel
+     * aspect ratio from the input. Using the console, do this by choosing Follow
+     * source for Pixel aspect ratio.
+     */
     inline bool ParControlHasBeenSet() const { return m_parControlHasBeenSet; }
 
-    
+    /**
+     * Using the API, enable ParFollowSource if you want the service to use the pixel
+     * aspect ratio from the input. Using the console, do this by choosing Follow
+     * source for Pixel aspect ratio.
+     */
     inline void SetParControl(const H265ParControl& value) { m_parControlHasBeenSet = true; m_parControl = value; }
 
-    
+    /**
+     * Using the API, enable ParFollowSource if you want the service to use the pixel
+     * aspect ratio from the input. Using the console, do this by choosing Follow
+     * source for Pixel aspect ratio.
+     */
     inline void SetParControl(H265ParControl&& value) { m_parControlHasBeenSet = true; m_parControl = std::move(value); }
 
-    
+    /**
+     * Using the API, enable ParFollowSource if you want the service to use the pixel
+     * aspect ratio from the input. Using the console, do this by choosing Follow
+     * source for Pixel aspect ratio.
+     */
     inline H265Settings& WithParControl(const H265ParControl& value) { SetParControl(value); return *this;}
 
-    
+    /**
+     * Using the API, enable ParFollowSource if you want the service to use the pixel
+     * aspect ratio from the input. Using the console, do this by choosing Follow
+     * source for Pixel aspect ratio.
+     */
     inline H265Settings& WithParControl(H265ParControl&& value) { SetParControl(std::move(value)); return *this;}
 
 
@@ -662,22 +968,46 @@ namespace Model
     inline H265Settings& WithParNumerator(int value) { SetParNumerator(value); return *this;}
 
 
-    
+    /**
+     * Use Quality tuning level (H265QualityTuningLevel) to specifiy whether to use
+     * fast single-pass, high-quality singlepass, or high-quality multipass video
+     * encoding.
+     */
     inline const H265QualityTuningLevel& GetQualityTuningLevel() const{ return m_qualityTuningLevel; }
 
-    
+    /**
+     * Use Quality tuning level (H265QualityTuningLevel) to specifiy whether to use
+     * fast single-pass, high-quality singlepass, or high-quality multipass video
+     * encoding.
+     */
     inline bool QualityTuningLevelHasBeenSet() const { return m_qualityTuningLevelHasBeenSet; }
 
-    
+    /**
+     * Use Quality tuning level (H265QualityTuningLevel) to specifiy whether to use
+     * fast single-pass, high-quality singlepass, or high-quality multipass video
+     * encoding.
+     */
     inline void SetQualityTuningLevel(const H265QualityTuningLevel& value) { m_qualityTuningLevelHasBeenSet = true; m_qualityTuningLevel = value; }
 
-    
+    /**
+     * Use Quality tuning level (H265QualityTuningLevel) to specifiy whether to use
+     * fast single-pass, high-quality singlepass, or high-quality multipass video
+     * encoding.
+     */
     inline void SetQualityTuningLevel(H265QualityTuningLevel&& value) { m_qualityTuningLevelHasBeenSet = true; m_qualityTuningLevel = std::move(value); }
 
-    
+    /**
+     * Use Quality tuning level (H265QualityTuningLevel) to specifiy whether to use
+     * fast single-pass, high-quality singlepass, or high-quality multipass video
+     * encoding.
+     */
     inline H265Settings& WithQualityTuningLevel(const H265QualityTuningLevel& value) { SetQualityTuningLevel(value); return *this;}
 
-    
+    /**
+     * Use Quality tuning level (H265QualityTuningLevel) to specifiy whether to use
+     * fast single-pass, high-quality singlepass, or high-quality multipass video
+     * encoding.
+     */
     inline H265Settings& WithQualityTuningLevel(H265QualityTuningLevel&& value) { SetQualityTuningLevel(std::move(value)); return *this;}
 
 
@@ -730,60 +1060,108 @@ namespace Model
     inline H265Settings& WithQvbrSettings(H265QvbrSettings&& value) { SetQvbrSettings(std::move(value)); return *this;}
 
 
-    
+    /**
+     * Use this setting to specify whether this output has a variable bitrate (VBR),
+     * constant bitrate (CBR) or quality-defined variable bitrate (QVBR).
+     */
     inline const H265RateControlMode& GetRateControlMode() const{ return m_rateControlMode; }
 
-    
+    /**
+     * Use this setting to specify whether this output has a variable bitrate (VBR),
+     * constant bitrate (CBR) or quality-defined variable bitrate (QVBR).
+     */
     inline bool RateControlModeHasBeenSet() const { return m_rateControlModeHasBeenSet; }
 
-    
+    /**
+     * Use this setting to specify whether this output has a variable bitrate (VBR),
+     * constant bitrate (CBR) or quality-defined variable bitrate (QVBR).
+     */
     inline void SetRateControlMode(const H265RateControlMode& value) { m_rateControlModeHasBeenSet = true; m_rateControlMode = value; }
 
-    
+    /**
+     * Use this setting to specify whether this output has a variable bitrate (VBR),
+     * constant bitrate (CBR) or quality-defined variable bitrate (QVBR).
+     */
     inline void SetRateControlMode(H265RateControlMode&& value) { m_rateControlModeHasBeenSet = true; m_rateControlMode = std::move(value); }
 
-    
+    /**
+     * Use this setting to specify whether this output has a variable bitrate (VBR),
+     * constant bitrate (CBR) or quality-defined variable bitrate (QVBR).
+     */
     inline H265Settings& WithRateControlMode(const H265RateControlMode& value) { SetRateControlMode(value); return *this;}
 
-    
+    /**
+     * Use this setting to specify whether this output has a variable bitrate (VBR),
+     * constant bitrate (CBR) or quality-defined variable bitrate (QVBR).
+     */
     inline H265Settings& WithRateControlMode(H265RateControlMode&& value) { SetRateControlMode(std::move(value)); return *this;}
 
 
-    
+    /**
+     * Specify Sample Adaptive Offset (SAO) filter strength.  Adaptive mode dynamically
+     * selects best strength based on content
+     */
     inline const H265SampleAdaptiveOffsetFilterMode& GetSampleAdaptiveOffsetFilterMode() const{ return m_sampleAdaptiveOffsetFilterMode; }
 
-    
+    /**
+     * Specify Sample Adaptive Offset (SAO) filter strength.  Adaptive mode dynamically
+     * selects best strength based on content
+     */
     inline bool SampleAdaptiveOffsetFilterModeHasBeenSet() const { return m_sampleAdaptiveOffsetFilterModeHasBeenSet; }
 
-    
+    /**
+     * Specify Sample Adaptive Offset (SAO) filter strength.  Adaptive mode dynamically
+     * selects best strength based on content
+     */
     inline void SetSampleAdaptiveOffsetFilterMode(const H265SampleAdaptiveOffsetFilterMode& value) { m_sampleAdaptiveOffsetFilterModeHasBeenSet = true; m_sampleAdaptiveOffsetFilterMode = value; }
 
-    
+    /**
+     * Specify Sample Adaptive Offset (SAO) filter strength.  Adaptive mode dynamically
+     * selects best strength based on content
+     */
     inline void SetSampleAdaptiveOffsetFilterMode(H265SampleAdaptiveOffsetFilterMode&& value) { m_sampleAdaptiveOffsetFilterModeHasBeenSet = true; m_sampleAdaptiveOffsetFilterMode = std::move(value); }
 
-    
+    /**
+     * Specify Sample Adaptive Offset (SAO) filter strength.  Adaptive mode dynamically
+     * selects best strength based on content
+     */
     inline H265Settings& WithSampleAdaptiveOffsetFilterMode(const H265SampleAdaptiveOffsetFilterMode& value) { SetSampleAdaptiveOffsetFilterMode(value); return *this;}
 
-    
+    /**
+     * Specify Sample Adaptive Offset (SAO) filter strength.  Adaptive mode dynamically
+     * selects best strength based on content
+     */
     inline H265Settings& WithSampleAdaptiveOffsetFilterMode(H265SampleAdaptiveOffsetFilterMode&& value) { SetSampleAdaptiveOffsetFilterMode(std::move(value)); return *this;}
 
 
-    
+    /**
+     * Scene change detection (inserts I-frames on scene changes).
+     */
     inline const H265SceneChangeDetect& GetSceneChangeDetect() const{ return m_sceneChangeDetect; }
 
-    
+    /**
+     * Scene change detection (inserts I-frames on scene changes).
+     */
     inline bool SceneChangeDetectHasBeenSet() const { return m_sceneChangeDetectHasBeenSet; }
 
-    
+    /**
+     * Scene change detection (inserts I-frames on scene changes).
+     */
     inline void SetSceneChangeDetect(const H265SceneChangeDetect& value) { m_sceneChangeDetectHasBeenSet = true; m_sceneChangeDetect = value; }
 
-    
+    /**
+     * Scene change detection (inserts I-frames on scene changes).
+     */
     inline void SetSceneChangeDetect(H265SceneChangeDetect&& value) { m_sceneChangeDetectHasBeenSet = true; m_sceneChangeDetect = std::move(value); }
 
-    
+    /**
+     * Scene change detection (inserts I-frames on scene changes).
+     */
     inline H265Settings& WithSceneChangeDetect(const H265SceneChangeDetect& value) { SetSceneChangeDetect(value); return *this;}
 
-    
+    /**
+     * Scene change detection (inserts I-frames on scene changes).
+     */
     inline H265Settings& WithSceneChangeDetect(H265SceneChangeDetect&& value) { SetSceneChangeDetect(std::move(value)); return *this;}
 
 
@@ -816,136 +1194,322 @@ namespace Model
     inline H265Settings& WithSlices(int value) { SetSlices(value); return *this;}
 
 
-    
+    /**
+     * Enables Slow PAL rate conversion. 23.976fps and 24fps input is relabeled as
+     * 25fps, and audio is sped up correspondingly.
+     */
     inline const H265SlowPal& GetSlowPal() const{ return m_slowPal; }
 
-    
+    /**
+     * Enables Slow PAL rate conversion. 23.976fps and 24fps input is relabeled as
+     * 25fps, and audio is sped up correspondingly.
+     */
     inline bool SlowPalHasBeenSet() const { return m_slowPalHasBeenSet; }
 
-    
+    /**
+     * Enables Slow PAL rate conversion. 23.976fps and 24fps input is relabeled as
+     * 25fps, and audio is sped up correspondingly.
+     */
     inline void SetSlowPal(const H265SlowPal& value) { m_slowPalHasBeenSet = true; m_slowPal = value; }
 
-    
+    /**
+     * Enables Slow PAL rate conversion. 23.976fps and 24fps input is relabeled as
+     * 25fps, and audio is sped up correspondingly.
+     */
     inline void SetSlowPal(H265SlowPal&& value) { m_slowPalHasBeenSet = true; m_slowPal = std::move(value); }
 
-    
+    /**
+     * Enables Slow PAL rate conversion. 23.976fps and 24fps input is relabeled as
+     * 25fps, and audio is sped up correspondingly.
+     */
     inline H265Settings& WithSlowPal(const H265SlowPal& value) { SetSlowPal(value); return *this;}
 
-    
+    /**
+     * Enables Slow PAL rate conversion. 23.976fps and 24fps input is relabeled as
+     * 25fps, and audio is sped up correspondingly.
+     */
     inline H265Settings& WithSlowPal(H265SlowPal&& value) { SetSlowPal(std::move(value)); return *this;}
 
 
-    
+    /**
+     * Adjust quantization within each frame based on spatial variation of content
+     * complexity.
+     */
     inline const H265SpatialAdaptiveQuantization& GetSpatialAdaptiveQuantization() const{ return m_spatialAdaptiveQuantization; }
 
-    
+    /**
+     * Adjust quantization within each frame based on spatial variation of content
+     * complexity.
+     */
     inline bool SpatialAdaptiveQuantizationHasBeenSet() const { return m_spatialAdaptiveQuantizationHasBeenSet; }
 
-    
+    /**
+     * Adjust quantization within each frame based on spatial variation of content
+     * complexity.
+     */
     inline void SetSpatialAdaptiveQuantization(const H265SpatialAdaptiveQuantization& value) { m_spatialAdaptiveQuantizationHasBeenSet = true; m_spatialAdaptiveQuantization = value; }
 
-    
+    /**
+     * Adjust quantization within each frame based on spatial variation of content
+     * complexity.
+     */
     inline void SetSpatialAdaptiveQuantization(H265SpatialAdaptiveQuantization&& value) { m_spatialAdaptiveQuantizationHasBeenSet = true; m_spatialAdaptiveQuantization = std::move(value); }
 
-    
+    /**
+     * Adjust quantization within each frame based on spatial variation of content
+     * complexity.
+     */
     inline H265Settings& WithSpatialAdaptiveQuantization(const H265SpatialAdaptiveQuantization& value) { SetSpatialAdaptiveQuantization(value); return *this;}
 
-    
+    /**
+     * Adjust quantization within each frame based on spatial variation of content
+     * complexity.
+     */
     inline H265Settings& WithSpatialAdaptiveQuantization(H265SpatialAdaptiveQuantization&& value) { SetSpatialAdaptiveQuantization(std::move(value)); return *this;}
 
 
-    
+    /**
+     * This field applies only if the Streams > Advanced > Framerate (framerate) field 
+     * is set to 29.970. This field works with the Streams > Advanced > Preprocessors >
+     * Deinterlacer  field (deinterlace_mode) and the Streams > Advanced > Interlaced
+     * Mode field (interlace_mode)  to identify the scan type for the output:
+     * Progressive, Interlaced, Hard Telecine or Soft Telecine. - Hard: produces 29.97i
+     * output from 23.976 input. - Soft: produces 23.976; the player converts this
+     * output to 29.97i.
+     */
     inline const H265Telecine& GetTelecine() const{ return m_telecine; }
 
-    
+    /**
+     * This field applies only if the Streams > Advanced > Framerate (framerate) field 
+     * is set to 29.970. This field works with the Streams > Advanced > Preprocessors >
+     * Deinterlacer  field (deinterlace_mode) and the Streams > Advanced > Interlaced
+     * Mode field (interlace_mode)  to identify the scan type for the output:
+     * Progressive, Interlaced, Hard Telecine or Soft Telecine. - Hard: produces 29.97i
+     * output from 23.976 input. - Soft: produces 23.976; the player converts this
+     * output to 29.97i.
+     */
     inline bool TelecineHasBeenSet() const { return m_telecineHasBeenSet; }
 
-    
+    /**
+     * This field applies only if the Streams > Advanced > Framerate (framerate) field 
+     * is set to 29.970. This field works with the Streams > Advanced > Preprocessors >
+     * Deinterlacer  field (deinterlace_mode) and the Streams > Advanced > Interlaced
+     * Mode field (interlace_mode)  to identify the scan type for the output:
+     * Progressive, Interlaced, Hard Telecine or Soft Telecine. - Hard: produces 29.97i
+     * output from 23.976 input. - Soft: produces 23.976; the player converts this
+     * output to 29.97i.
+     */
     inline void SetTelecine(const H265Telecine& value) { m_telecineHasBeenSet = true; m_telecine = value; }
 
-    
+    /**
+     * This field applies only if the Streams > Advanced > Framerate (framerate) field 
+     * is set to 29.970. This field works with the Streams > Advanced > Preprocessors >
+     * Deinterlacer  field (deinterlace_mode) and the Streams > Advanced > Interlaced
+     * Mode field (interlace_mode)  to identify the scan type for the output:
+     * Progressive, Interlaced, Hard Telecine or Soft Telecine. - Hard: produces 29.97i
+     * output from 23.976 input. - Soft: produces 23.976; the player converts this
+     * output to 29.97i.
+     */
     inline void SetTelecine(H265Telecine&& value) { m_telecineHasBeenSet = true; m_telecine = std::move(value); }
 
-    
+    /**
+     * This field applies only if the Streams > Advanced > Framerate (framerate) field 
+     * is set to 29.970. This field works with the Streams > Advanced > Preprocessors >
+     * Deinterlacer  field (deinterlace_mode) and the Streams > Advanced > Interlaced
+     * Mode field (interlace_mode)  to identify the scan type for the output:
+     * Progressive, Interlaced, Hard Telecine or Soft Telecine. - Hard: produces 29.97i
+     * output from 23.976 input. - Soft: produces 23.976; the player converts this
+     * output to 29.97i.
+     */
     inline H265Settings& WithTelecine(const H265Telecine& value) { SetTelecine(value); return *this;}
 
-    
+    /**
+     * This field applies only if the Streams > Advanced > Framerate (framerate) field 
+     * is set to 29.970. This field works with the Streams > Advanced > Preprocessors >
+     * Deinterlacer  field (deinterlace_mode) and the Streams > Advanced > Interlaced
+     * Mode field (interlace_mode)  to identify the scan type for the output:
+     * Progressive, Interlaced, Hard Telecine or Soft Telecine. - Hard: produces 29.97i
+     * output from 23.976 input. - Soft: produces 23.976; the player converts this
+     * output to 29.97i.
+     */
     inline H265Settings& WithTelecine(H265Telecine&& value) { SetTelecine(std::move(value)); return *this;}
 
 
-    
+    /**
+     * Adjust quantization within each frame based on temporal variation of content
+     * complexity.
+     */
     inline const H265TemporalAdaptiveQuantization& GetTemporalAdaptiveQuantization() const{ return m_temporalAdaptiveQuantization; }
 
-    
+    /**
+     * Adjust quantization within each frame based on temporal variation of content
+     * complexity.
+     */
     inline bool TemporalAdaptiveQuantizationHasBeenSet() const { return m_temporalAdaptiveQuantizationHasBeenSet; }
 
-    
+    /**
+     * Adjust quantization within each frame based on temporal variation of content
+     * complexity.
+     */
     inline void SetTemporalAdaptiveQuantization(const H265TemporalAdaptiveQuantization& value) { m_temporalAdaptiveQuantizationHasBeenSet = true; m_temporalAdaptiveQuantization = value; }
 
-    
+    /**
+     * Adjust quantization within each frame based on temporal variation of content
+     * complexity.
+     */
     inline void SetTemporalAdaptiveQuantization(H265TemporalAdaptiveQuantization&& value) { m_temporalAdaptiveQuantizationHasBeenSet = true; m_temporalAdaptiveQuantization = std::move(value); }
 
-    
+    /**
+     * Adjust quantization within each frame based on temporal variation of content
+     * complexity.
+     */
     inline H265Settings& WithTemporalAdaptiveQuantization(const H265TemporalAdaptiveQuantization& value) { SetTemporalAdaptiveQuantization(value); return *this;}
 
-    
+    /**
+     * Adjust quantization within each frame based on temporal variation of content
+     * complexity.
+     */
     inline H265Settings& WithTemporalAdaptiveQuantization(H265TemporalAdaptiveQuantization&& value) { SetTemporalAdaptiveQuantization(std::move(value)); return *this;}
 
 
-    
+    /**
+     * Enables temporal layer identifiers in the encoded bitstream. Up to 3 layers are
+     * supported depending on GOP structure: I- and P-frames form one layer, reference
+     * B-frames can form a second layer and non-reference b-frames can form a third
+     * layer. Decoders can optionally decode only the lower temporal layers to generate
+     * a lower frame rate output. For example, given a bitstream with temporal IDs and
+     * with b-frames = 1 (i.e. IbPbPb display order), a decoder could decode all the
+     * frames for full frame rate output or only the I and P frames (lowest temporal
+     * layer) for a half frame rate output.
+     */
     inline const H265TemporalIds& GetTemporalIds() const{ return m_temporalIds; }
 
-    
+    /**
+     * Enables temporal layer identifiers in the encoded bitstream. Up to 3 layers are
+     * supported depending on GOP structure: I- and P-frames form one layer, reference
+     * B-frames can form a second layer and non-reference b-frames can form a third
+     * layer. Decoders can optionally decode only the lower temporal layers to generate
+     * a lower frame rate output. For example, given a bitstream with temporal IDs and
+     * with b-frames = 1 (i.e. IbPbPb display order), a decoder could decode all the
+     * frames for full frame rate output or only the I and P frames (lowest temporal
+     * layer) for a half frame rate output.
+     */
     inline bool TemporalIdsHasBeenSet() const { return m_temporalIdsHasBeenSet; }
 
-    
+    /**
+     * Enables temporal layer identifiers in the encoded bitstream. Up to 3 layers are
+     * supported depending on GOP structure: I- and P-frames form one layer, reference
+     * B-frames can form a second layer and non-reference b-frames can form a third
+     * layer. Decoders can optionally decode only the lower temporal layers to generate
+     * a lower frame rate output. For example, given a bitstream with temporal IDs and
+     * with b-frames = 1 (i.e. IbPbPb display order), a decoder could decode all the
+     * frames for full frame rate output or only the I and P frames (lowest temporal
+     * layer) for a half frame rate output.
+     */
     inline void SetTemporalIds(const H265TemporalIds& value) { m_temporalIdsHasBeenSet = true; m_temporalIds = value; }
 
-    
+    /**
+     * Enables temporal layer identifiers in the encoded bitstream. Up to 3 layers are
+     * supported depending on GOP structure: I- and P-frames form one layer, reference
+     * B-frames can form a second layer and non-reference b-frames can form a third
+     * layer. Decoders can optionally decode only the lower temporal layers to generate
+     * a lower frame rate output. For example, given a bitstream with temporal IDs and
+     * with b-frames = 1 (i.e. IbPbPb display order), a decoder could decode all the
+     * frames for full frame rate output or only the I and P frames (lowest temporal
+     * layer) for a half frame rate output.
+     */
     inline void SetTemporalIds(H265TemporalIds&& value) { m_temporalIdsHasBeenSet = true; m_temporalIds = std::move(value); }
 
-    
+    /**
+     * Enables temporal layer identifiers in the encoded bitstream. Up to 3 layers are
+     * supported depending on GOP structure: I- and P-frames form one layer, reference
+     * B-frames can form a second layer and non-reference b-frames can form a third
+     * layer. Decoders can optionally decode only the lower temporal layers to generate
+     * a lower frame rate output. For example, given a bitstream with temporal IDs and
+     * with b-frames = 1 (i.e. IbPbPb display order), a decoder could decode all the
+     * frames for full frame rate output or only the I and P frames (lowest temporal
+     * layer) for a half frame rate output.
+     */
     inline H265Settings& WithTemporalIds(const H265TemporalIds& value) { SetTemporalIds(value); return *this;}
 
-    
+    /**
+     * Enables temporal layer identifiers in the encoded bitstream. Up to 3 layers are
+     * supported depending on GOP structure: I- and P-frames form one layer, reference
+     * B-frames can form a second layer and non-reference b-frames can form a third
+     * layer. Decoders can optionally decode only the lower temporal layers to generate
+     * a lower frame rate output. For example, given a bitstream with temporal IDs and
+     * with b-frames = 1 (i.e. IbPbPb display order), a decoder could decode all the
+     * frames for full frame rate output or only the I and P frames (lowest temporal
+     * layer) for a half frame rate output.
+     */
     inline H265Settings& WithTemporalIds(H265TemporalIds&& value) { SetTemporalIds(std::move(value)); return *this;}
 
 
-    
+    /**
+     * Enable use of tiles, allowing horizontal as well as vertical subdivision of the
+     * encoded pictures.
+     */
     inline const H265Tiles& GetTiles() const{ return m_tiles; }
 
-    
+    /**
+     * Enable use of tiles, allowing horizontal as well as vertical subdivision of the
+     * encoded pictures.
+     */
     inline bool TilesHasBeenSet() const { return m_tilesHasBeenSet; }
 
-    
+    /**
+     * Enable use of tiles, allowing horizontal as well as vertical subdivision of the
+     * encoded pictures.
+     */
     inline void SetTiles(const H265Tiles& value) { m_tilesHasBeenSet = true; m_tiles = value; }
 
-    
+    /**
+     * Enable use of tiles, allowing horizontal as well as vertical subdivision of the
+     * encoded pictures.
+     */
     inline void SetTiles(H265Tiles&& value) { m_tilesHasBeenSet = true; m_tiles = std::move(value); }
 
-    
+    /**
+     * Enable use of tiles, allowing horizontal as well as vertical subdivision of the
+     * encoded pictures.
+     */
     inline H265Settings& WithTiles(const H265Tiles& value) { SetTiles(value); return *this;}
 
-    
+    /**
+     * Enable use of tiles, allowing horizontal as well as vertical subdivision of the
+     * encoded pictures.
+     */
     inline H265Settings& WithTiles(H265Tiles&& value) { SetTiles(std::move(value)); return *this;}
 
 
-    
+    /**
+     * Inserts timecode for each frame as 4 bytes of an unregistered SEI message.
+     */
     inline const H265UnregisteredSeiTimecode& GetUnregisteredSeiTimecode() const{ return m_unregisteredSeiTimecode; }
 
-    
+    /**
+     * Inserts timecode for each frame as 4 bytes of an unregistered SEI message.
+     */
     inline bool UnregisteredSeiTimecodeHasBeenSet() const { return m_unregisteredSeiTimecodeHasBeenSet; }
 
-    
+    /**
+     * Inserts timecode for each frame as 4 bytes of an unregistered SEI message.
+     */
     inline void SetUnregisteredSeiTimecode(const H265UnregisteredSeiTimecode& value) { m_unregisteredSeiTimecodeHasBeenSet = true; m_unregisteredSeiTimecode = value; }
 
-    
+    /**
+     * Inserts timecode for each frame as 4 bytes of an unregistered SEI message.
+     */
     inline void SetUnregisteredSeiTimecode(H265UnregisteredSeiTimecode&& value) { m_unregisteredSeiTimecodeHasBeenSet = true; m_unregisteredSeiTimecode = std::move(value); }
 
-    
+    /**
+     * Inserts timecode for each frame as 4 bytes of an unregistered SEI message.
+     */
     inline H265Settings& WithUnregisteredSeiTimecode(const H265UnregisteredSeiTimecode& value) { SetUnregisteredSeiTimecode(value); return *this;}
 
-    
+    /**
+     * Inserts timecode for each frame as 4 bytes of an unregistered SEI message.
+     */
     inline H265Settings& WithUnregisteredSeiTimecode(H265UnregisteredSeiTimecode&& value) { SetUnregisteredSeiTimecode(std::move(value)); return *this;}
 
 

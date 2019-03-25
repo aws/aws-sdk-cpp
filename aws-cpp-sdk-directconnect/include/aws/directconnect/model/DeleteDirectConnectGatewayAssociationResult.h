@@ -43,27 +43,27 @@ namespace Model
 
 
     /**
-     * <p>The association to be deleted.</p>
+     * <p>Information about the deleted association.</p>
      */
     inline const DirectConnectGatewayAssociation& GetDirectConnectGatewayAssociation() const{ return m_directConnectGatewayAssociation; }
 
     /**
-     * <p>The association to be deleted.</p>
+     * <p>Information about the deleted association.</p>
      */
     inline void SetDirectConnectGatewayAssociation(const DirectConnectGatewayAssociation& value) { m_directConnectGatewayAssociation = value; }
 
     /**
-     * <p>The association to be deleted.</p>
+     * <p>Information about the deleted association.</p>
      */
     inline void SetDirectConnectGatewayAssociation(DirectConnectGatewayAssociation&& value) { m_directConnectGatewayAssociation = std::move(value); }
 
     /**
-     * <p>The association to be deleted.</p>
+     * <p>Information about the deleted association.</p>
      */
     inline DeleteDirectConnectGatewayAssociationResult& WithDirectConnectGatewayAssociation(const DirectConnectGatewayAssociation& value) { SetDirectConnectGatewayAssociation(value); return *this;}
 
     /**
-     * <p>The association to be deleted.</p>
+     * <p>Information about the deleted association.</p>
      */
     inline DeleteDirectConnectGatewayAssociationResult& WithDirectConnectGatewayAssociation(DirectConnectGatewayAssociation&& value) { SetDirectConnectGatewayAssociation(std::move(value)); return *this;}
 

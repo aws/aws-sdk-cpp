@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/mediaconvert/model/CmafClientCache.h>
 #include <aws/mediaconvert/model/CmafCodecSpecification.h>
+#include <aws/mediaconvert/model/DestinationSettings.h>
 #include <aws/mediaconvert/model/CmafEncryptionSettings.h>
 #include <aws/mediaconvert/model/CmafManifestCompression.h>
 #include <aws/mediaconvert/model/CmafManifestDurationFormat.h>
@@ -115,41 +116,77 @@ namespace Model
     inline CmafGroupSettings& WithBaseUrl(const char* value) { SetBaseUrl(value); return *this;}
 
 
-    
+    /**
+     * When set to ENABLED, sets #EXT-X-ALLOW-CACHE:no tag, which prevents client from
+     * saving media segments for later replay.
+     */
     inline const CmafClientCache& GetClientCache() const{ return m_clientCache; }
 
-    
+    /**
+     * When set to ENABLED, sets #EXT-X-ALLOW-CACHE:no tag, which prevents client from
+     * saving media segments for later replay.
+     */
     inline bool ClientCacheHasBeenSet() const { return m_clientCacheHasBeenSet; }
 
-    
+    /**
+     * When set to ENABLED, sets #EXT-X-ALLOW-CACHE:no tag, which prevents client from
+     * saving media segments for later replay.
+     */
     inline void SetClientCache(const CmafClientCache& value) { m_clientCacheHasBeenSet = true; m_clientCache = value; }
 
-    
+    /**
+     * When set to ENABLED, sets #EXT-X-ALLOW-CACHE:no tag, which prevents client from
+     * saving media segments for later replay.
+     */
     inline void SetClientCache(CmafClientCache&& value) { m_clientCacheHasBeenSet = true; m_clientCache = std::move(value); }
 
-    
+    /**
+     * When set to ENABLED, sets #EXT-X-ALLOW-CACHE:no tag, which prevents client from
+     * saving media segments for later replay.
+     */
     inline CmafGroupSettings& WithClientCache(const CmafClientCache& value) { SetClientCache(value); return *this;}
 
-    
+    /**
+     * When set to ENABLED, sets #EXT-X-ALLOW-CACHE:no tag, which prevents client from
+     * saving media segments for later replay.
+     */
     inline CmafGroupSettings& WithClientCache(CmafClientCache&& value) { SetClientCache(std::move(value)); return *this;}
 
 
-    
+    /**
+     * Specification to use (RFC-6381 or the default RFC-4281) during m3u8 playlist
+     * generation.
+     */
     inline const CmafCodecSpecification& GetCodecSpecification() const{ return m_codecSpecification; }
 
-    
+    /**
+     * Specification to use (RFC-6381 or the default RFC-4281) during m3u8 playlist
+     * generation.
+     */
     inline bool CodecSpecificationHasBeenSet() const { return m_codecSpecificationHasBeenSet; }
 
-    
+    /**
+     * Specification to use (RFC-6381 or the default RFC-4281) during m3u8 playlist
+     * generation.
+     */
     inline void SetCodecSpecification(const CmafCodecSpecification& value) { m_codecSpecificationHasBeenSet = true; m_codecSpecification = value; }
 
-    
+    /**
+     * Specification to use (RFC-6381 or the default RFC-4281) during m3u8 playlist
+     * generation.
+     */
     inline void SetCodecSpecification(CmafCodecSpecification&& value) { m_codecSpecificationHasBeenSet = true; m_codecSpecification = std::move(value); }
 
-    
+    /**
+     * Specification to use (RFC-6381 or the default RFC-4281) during m3u8 playlist
+     * generation.
+     */
     inline CmafGroupSettings& WithCodecSpecification(const CmafCodecSpecification& value) { SetCodecSpecification(value); return *this;}
 
-    
+    /**
+     * Specification to use (RFC-6381 or the default RFC-4281) during m3u8 playlist
+     * generation.
+     */
     inline CmafGroupSettings& WithCodecSpecification(CmafCodecSpecification&& value) { SetCodecSpecification(std::move(value)); return *this;}
 
 
@@ -227,6 +264,43 @@ namespace Model
 
 
     /**
+     * Settings associated with the destination. Will vary based on the type of
+     * destination
+     */
+    inline const DestinationSettings& GetDestinationSettings() const{ return m_destinationSettings; }
+
+    /**
+     * Settings associated with the destination. Will vary based on the type of
+     * destination
+     */
+    inline bool DestinationSettingsHasBeenSet() const { return m_destinationSettingsHasBeenSet; }
+
+    /**
+     * Settings associated with the destination. Will vary based on the type of
+     * destination
+     */
+    inline void SetDestinationSettings(const DestinationSettings& value) { m_destinationSettingsHasBeenSet = true; m_destinationSettings = value; }
+
+    /**
+     * Settings associated with the destination. Will vary based on the type of
+     * destination
+     */
+    inline void SetDestinationSettings(DestinationSettings&& value) { m_destinationSettingsHasBeenSet = true; m_destinationSettings = std::move(value); }
+
+    /**
+     * Settings associated with the destination. Will vary based on the type of
+     * destination
+     */
+    inline CmafGroupSettings& WithDestinationSettings(const DestinationSettings& value) { SetDestinationSettings(value); return *this;}
+
+    /**
+     * Settings associated with the destination. Will vary based on the type of
+     * destination
+     */
+    inline CmafGroupSettings& WithDestinationSettings(DestinationSettings&& value) { SetDestinationSettings(std::move(value)); return *this;}
+
+
+    /**
      * DRM settings.
      */
     inline const CmafEncryptionSettings& GetEncryption() const{ return m_encryption; }
@@ -298,41 +372,71 @@ namespace Model
     inline CmafGroupSettings& WithFragmentLength(int value) { SetFragmentLength(value); return *this;}
 
 
-    
+    /**
+     * When set to GZIP, compresses HLS playlist.
+     */
     inline const CmafManifestCompression& GetManifestCompression() const{ return m_manifestCompression; }
 
-    
+    /**
+     * When set to GZIP, compresses HLS playlist.
+     */
     inline bool ManifestCompressionHasBeenSet() const { return m_manifestCompressionHasBeenSet; }
 
-    
+    /**
+     * When set to GZIP, compresses HLS playlist.
+     */
     inline void SetManifestCompression(const CmafManifestCompression& value) { m_manifestCompressionHasBeenSet = true; m_manifestCompression = value; }
 
-    
+    /**
+     * When set to GZIP, compresses HLS playlist.
+     */
     inline void SetManifestCompression(CmafManifestCompression&& value) { m_manifestCompressionHasBeenSet = true; m_manifestCompression = std::move(value); }
 
-    
+    /**
+     * When set to GZIP, compresses HLS playlist.
+     */
     inline CmafGroupSettings& WithManifestCompression(const CmafManifestCompression& value) { SetManifestCompression(value); return *this;}
 
-    
+    /**
+     * When set to GZIP, compresses HLS playlist.
+     */
     inline CmafGroupSettings& WithManifestCompression(CmafManifestCompression&& value) { SetManifestCompression(std::move(value)); return *this;}
 
 
-    
+    /**
+     * Indicates whether the output manifest should use floating point values for
+     * segment duration.
+     */
     inline const CmafManifestDurationFormat& GetManifestDurationFormat() const{ return m_manifestDurationFormat; }
 
-    
+    /**
+     * Indicates whether the output manifest should use floating point values for
+     * segment duration.
+     */
     inline bool ManifestDurationFormatHasBeenSet() const { return m_manifestDurationFormatHasBeenSet; }
 
-    
+    /**
+     * Indicates whether the output manifest should use floating point values for
+     * segment duration.
+     */
     inline void SetManifestDurationFormat(const CmafManifestDurationFormat& value) { m_manifestDurationFormatHasBeenSet = true; m_manifestDurationFormat = value; }
 
-    
+    /**
+     * Indicates whether the output manifest should use floating point values for
+     * segment duration.
+     */
     inline void SetManifestDurationFormat(CmafManifestDurationFormat&& value) { m_manifestDurationFormatHasBeenSet = true; m_manifestDurationFormat = std::move(value); }
 
-    
+    /**
+     * Indicates whether the output manifest should use floating point values for
+     * segment duration.
+     */
     inline CmafGroupSettings& WithManifestDurationFormat(const CmafManifestDurationFormat& value) { SetManifestDurationFormat(value); return *this;}
 
-    
+    /**
+     * Indicates whether the output manifest should use floating point values for
+     * segment duration.
+     */
     inline CmafGroupSettings& WithManifestDurationFormat(CmafManifestDurationFormat&& value) { SetManifestDurationFormat(std::move(value)); return *this;}
 
 
@@ -422,22 +526,46 @@ namespace Model
     inline CmafGroupSettings& WithMinFinalSegmentLength(double value) { SetMinFinalSegmentLength(value); return *this;}
 
 
-    
+    /**
+     * When set to SINGLE_FILE, a single output file is generated, which is internally
+     * segmented using the Fragment Length and Segment Length. When set to
+     * SEGMENTED_FILES, separate segment files will be created.
+     */
     inline const CmafSegmentControl& GetSegmentControl() const{ return m_segmentControl; }
 
-    
+    /**
+     * When set to SINGLE_FILE, a single output file is generated, which is internally
+     * segmented using the Fragment Length and Segment Length. When set to
+     * SEGMENTED_FILES, separate segment files will be created.
+     */
     inline bool SegmentControlHasBeenSet() const { return m_segmentControlHasBeenSet; }
 
-    
+    /**
+     * When set to SINGLE_FILE, a single output file is generated, which is internally
+     * segmented using the Fragment Length and Segment Length. When set to
+     * SEGMENTED_FILES, separate segment files will be created.
+     */
     inline void SetSegmentControl(const CmafSegmentControl& value) { m_segmentControlHasBeenSet = true; m_segmentControl = value; }
 
-    
+    /**
+     * When set to SINGLE_FILE, a single output file is generated, which is internally
+     * segmented using the Fragment Length and Segment Length. When set to
+     * SEGMENTED_FILES, separate segment files will be created.
+     */
     inline void SetSegmentControl(CmafSegmentControl&& value) { m_segmentControlHasBeenSet = true; m_segmentControl = std::move(value); }
 
-    
+    /**
+     * When set to SINGLE_FILE, a single output file is generated, which is internally
+     * segmented using the Fragment Length and Segment Length. When set to
+     * SEGMENTED_FILES, separate segment files will be created.
+     */
     inline CmafGroupSettings& WithSegmentControl(const CmafSegmentControl& value) { SetSegmentControl(value); return *this;}
 
-    
+    /**
+     * When set to SINGLE_FILE, a single output file is generated, which is internally
+     * segmented using the Fragment Length and Segment Length. When set to
+     * SEGMENTED_FILES, separate segment files will be created.
+     */
     inline CmafGroupSettings& WithSegmentControl(CmafSegmentControl&& value) { SetSegmentControl(std::move(value)); return *this;}
 
 
@@ -490,60 +618,102 @@ namespace Model
     inline CmafGroupSettings& WithSegmentLength(int value) { SetSegmentLength(value); return *this;}
 
 
-    
+    /**
+     * Include or exclude RESOLUTION attribute for video in EXT-X-STREAM-INF tag of
+     * variant manifest.
+     */
     inline const CmafStreamInfResolution& GetStreamInfResolution() const{ return m_streamInfResolution; }
 
-    
+    /**
+     * Include or exclude RESOLUTION attribute for video in EXT-X-STREAM-INF tag of
+     * variant manifest.
+     */
     inline bool StreamInfResolutionHasBeenSet() const { return m_streamInfResolutionHasBeenSet; }
 
-    
+    /**
+     * Include or exclude RESOLUTION attribute for video in EXT-X-STREAM-INF tag of
+     * variant manifest.
+     */
     inline void SetStreamInfResolution(const CmafStreamInfResolution& value) { m_streamInfResolutionHasBeenSet = true; m_streamInfResolution = value; }
 
-    
+    /**
+     * Include or exclude RESOLUTION attribute for video in EXT-X-STREAM-INF tag of
+     * variant manifest.
+     */
     inline void SetStreamInfResolution(CmafStreamInfResolution&& value) { m_streamInfResolutionHasBeenSet = true; m_streamInfResolution = std::move(value); }
 
-    
+    /**
+     * Include or exclude RESOLUTION attribute for video in EXT-X-STREAM-INF tag of
+     * variant manifest.
+     */
     inline CmafGroupSettings& WithStreamInfResolution(const CmafStreamInfResolution& value) { SetStreamInfResolution(value); return *this;}
 
-    
+    /**
+     * Include or exclude RESOLUTION attribute for video in EXT-X-STREAM-INF tag of
+     * variant manifest.
+     */
     inline CmafGroupSettings& WithStreamInfResolution(CmafStreamInfResolution&& value) { SetStreamInfResolution(std::move(value)); return *this;}
 
 
-    
+    /**
+     * When set to ENABLED, a DASH MPD manifest will be generated for this output.
+     */
     inline const CmafWriteDASHManifest& GetWriteDashManifest() const{ return m_writeDashManifest; }
 
-    
+    /**
+     * When set to ENABLED, a DASH MPD manifest will be generated for this output.
+     */
     inline bool WriteDashManifestHasBeenSet() const { return m_writeDashManifestHasBeenSet; }
 
-    
+    /**
+     * When set to ENABLED, a DASH MPD manifest will be generated for this output.
+     */
     inline void SetWriteDashManifest(const CmafWriteDASHManifest& value) { m_writeDashManifestHasBeenSet = true; m_writeDashManifest = value; }
 
-    
+    /**
+     * When set to ENABLED, a DASH MPD manifest will be generated for this output.
+     */
     inline void SetWriteDashManifest(CmafWriteDASHManifest&& value) { m_writeDashManifestHasBeenSet = true; m_writeDashManifest = std::move(value); }
 
-    
+    /**
+     * When set to ENABLED, a DASH MPD manifest will be generated for this output.
+     */
     inline CmafGroupSettings& WithWriteDashManifest(const CmafWriteDASHManifest& value) { SetWriteDashManifest(value); return *this;}
 
-    
+    /**
+     * When set to ENABLED, a DASH MPD manifest will be generated for this output.
+     */
     inline CmafGroupSettings& WithWriteDashManifest(CmafWriteDASHManifest&& value) { SetWriteDashManifest(std::move(value)); return *this;}
 
 
-    
+    /**
+     * When set to ENABLED, an Apple HLS manifest will be generated for this output.
+     */
     inline const CmafWriteHLSManifest& GetWriteHlsManifest() const{ return m_writeHlsManifest; }
 
-    
+    /**
+     * When set to ENABLED, an Apple HLS manifest will be generated for this output.
+     */
     inline bool WriteHlsManifestHasBeenSet() const { return m_writeHlsManifestHasBeenSet; }
 
-    
+    /**
+     * When set to ENABLED, an Apple HLS manifest will be generated for this output.
+     */
     inline void SetWriteHlsManifest(const CmafWriteHLSManifest& value) { m_writeHlsManifestHasBeenSet = true; m_writeHlsManifest = value; }
 
-    
+    /**
+     * When set to ENABLED, an Apple HLS manifest will be generated for this output.
+     */
     inline void SetWriteHlsManifest(CmafWriteHLSManifest&& value) { m_writeHlsManifestHasBeenSet = true; m_writeHlsManifest = std::move(value); }
 
-    
+    /**
+     * When set to ENABLED, an Apple HLS manifest will be generated for this output.
+     */
     inline CmafGroupSettings& WithWriteHlsManifest(const CmafWriteHLSManifest& value) { SetWriteHlsManifest(value); return *this;}
 
-    
+    /**
+     * When set to ENABLED, an Apple HLS manifest will be generated for this output.
+     */
     inline CmafGroupSettings& WithWriteHlsManifest(CmafWriteHLSManifest&& value) { SetWriteHlsManifest(std::move(value)); return *this;}
 
   private:
@@ -559,6 +729,9 @@ namespace Model
 
     Aws::String m_destination;
     bool m_destinationHasBeenSet;
+
+    DestinationSettings m_destinationSettings;
+    bool m_destinationSettingsHasBeenSet;
 
     CmafEncryptionSettings m_encryption;
     bool m_encryptionHasBeenSet;

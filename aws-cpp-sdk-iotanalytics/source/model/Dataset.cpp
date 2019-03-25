@@ -38,7 +38,8 @@ Dataset::Dataset() :
     m_statusHasBeenSet(false),
     m_creationTimeHasBeenSet(false),
     m_lastUpdateTimeHasBeenSet(false),
-    m_retentionPeriodHasBeenSet(false)
+    m_retentionPeriodHasBeenSet(false),
+    m_versioningConfigurationHasBeenSet(false)
 {
 }
 
@@ -52,7 +53,8 @@ Dataset::Dataset(JsonView jsonValue) :
     m_statusHasBeenSet(false),
     m_creationTimeHasBeenSet(false),
     m_lastUpdateTimeHasBeenSet(false),
-    m_retentionPeriodHasBeenSet(false)
+    m_retentionPeriodHasBeenSet(false),
+    m_versioningConfigurationHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -131,6 +133,13 @@ Dataset& Dataset::operator =(JsonView jsonValue)
     m_retentionPeriodHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("versioningConfiguration"))
+  {
+    m_versioningConfiguration = jsonValue.GetObject("versioningConfiguration");
+
+    m_versioningConfigurationHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -201,6 +210,12 @@ JsonValue Dataset::Jsonize() const
   if(m_retentionPeriodHasBeenSet)
   {
    payload.WithObject("retentionPeriod", m_retentionPeriod.Jsonize());
+
+  }
+
+  if(m_versioningConfigurationHasBeenSet)
+  {
+   payload.WithObject("versioningConfiguration", m_versioningConfiguration.Jsonize());
 
   }
 

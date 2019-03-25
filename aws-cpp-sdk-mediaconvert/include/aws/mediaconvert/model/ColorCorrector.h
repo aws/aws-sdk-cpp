@@ -69,22 +69,58 @@ namespace Model
     inline ColorCorrector& WithBrightness(int value) { SetBrightness(value); return *this;}
 
 
-    
+    /**
+     * Determines if colorspace conversion will be performed. If set to _None_, no
+     * conversion will be performed. If _Force 601_ or _Force 709_ are selected,
+     * conversion will be performed for inputs with differing colorspaces. An input's
+     * colorspace can be specified explicitly in the "Video
+     * Selector":#inputs-video_selector if necessary.
+     */
     inline const ColorSpaceConversion& GetColorSpaceConversion() const{ return m_colorSpaceConversion; }
 
-    
+    /**
+     * Determines if colorspace conversion will be performed. If set to _None_, no
+     * conversion will be performed. If _Force 601_ or _Force 709_ are selected,
+     * conversion will be performed for inputs with differing colorspaces. An input's
+     * colorspace can be specified explicitly in the "Video
+     * Selector":#inputs-video_selector if necessary.
+     */
     inline bool ColorSpaceConversionHasBeenSet() const { return m_colorSpaceConversionHasBeenSet; }
 
-    
+    /**
+     * Determines if colorspace conversion will be performed. If set to _None_, no
+     * conversion will be performed. If _Force 601_ or _Force 709_ are selected,
+     * conversion will be performed for inputs with differing colorspaces. An input's
+     * colorspace can be specified explicitly in the "Video
+     * Selector":#inputs-video_selector if necessary.
+     */
     inline void SetColorSpaceConversion(const ColorSpaceConversion& value) { m_colorSpaceConversionHasBeenSet = true; m_colorSpaceConversion = value; }
 
-    
+    /**
+     * Determines if colorspace conversion will be performed. If set to _None_, no
+     * conversion will be performed. If _Force 601_ or _Force 709_ are selected,
+     * conversion will be performed for inputs with differing colorspaces. An input's
+     * colorspace can be specified explicitly in the "Video
+     * Selector":#inputs-video_selector if necessary.
+     */
     inline void SetColorSpaceConversion(ColorSpaceConversion&& value) { m_colorSpaceConversionHasBeenSet = true; m_colorSpaceConversion = std::move(value); }
 
-    
+    /**
+     * Determines if colorspace conversion will be performed. If set to _None_, no
+     * conversion will be performed. If _Force 601_ or _Force 709_ are selected,
+     * conversion will be performed for inputs with differing colorspaces. An input's
+     * colorspace can be specified explicitly in the "Video
+     * Selector":#inputs-video_selector if necessary.
+     */
     inline ColorCorrector& WithColorSpaceConversion(const ColorSpaceConversion& value) { SetColorSpaceConversion(value); return *this;}
 
-    
+    /**
+     * Determines if colorspace conversion will be performed. If set to _None_, no
+     * conversion will be performed. If _Force 601_ or _Force 709_ are selected,
+     * conversion will be performed for inputs with differing colorspaces. An input's
+     * colorspace can be specified explicitly in the "Video
+     * Selector":#inputs-video_selector if necessary.
+     */
     inline ColorCorrector& WithColorSpaceConversion(ColorSpaceConversion&& value) { SetColorSpaceConversion(std::move(value)); return *this;}
 
 

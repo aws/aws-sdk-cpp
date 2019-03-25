@@ -47,22 +47,46 @@ namespace Model
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 
-    
+    /**
+     * When set to UPCONVERT, 608 data is both passed through via the "608
+     * compatibility bytes" fields of the 708 wrapper as well as translated into 708.
+     * 708 data present in the source content will be discarded.
+     */
     inline const EmbeddedConvert608To708& GetConvert608To708() const{ return m_convert608To708; }
 
-    
+    /**
+     * When set to UPCONVERT, 608 data is both passed through via the "608
+     * compatibility bytes" fields of the 708 wrapper as well as translated into 708.
+     * 708 data present in the source content will be discarded.
+     */
     inline bool Convert608To708HasBeenSet() const { return m_convert608To708HasBeenSet; }
 
-    
+    /**
+     * When set to UPCONVERT, 608 data is both passed through via the "608
+     * compatibility bytes" fields of the 708 wrapper as well as translated into 708.
+     * 708 data present in the source content will be discarded.
+     */
     inline void SetConvert608To708(const EmbeddedConvert608To708& value) { m_convert608To708HasBeenSet = true; m_convert608To708 = value; }
 
-    
+    /**
+     * When set to UPCONVERT, 608 data is both passed through via the "608
+     * compatibility bytes" fields of the 708 wrapper as well as translated into 708.
+     * 708 data present in the source content will be discarded.
+     */
     inline void SetConvert608To708(EmbeddedConvert608To708&& value) { m_convert608To708HasBeenSet = true; m_convert608To708 = std::move(value); }
 
-    
+    /**
+     * When set to UPCONVERT, 608 data is both passed through via the "608
+     * compatibility bytes" fields of the 708 wrapper as well as translated into 708.
+     * 708 data present in the source content will be discarded.
+     */
     inline EmbeddedSourceSettings& WithConvert608To708(const EmbeddedConvert608To708& value) { SetConvert608To708(value); return *this;}
 
-    
+    /**
+     * When set to UPCONVERT, 608 data is both passed through via the "608
+     * compatibility bytes" fields of the 708 wrapper as well as translated into 708.
+     * 708 data present in the source content will be discarded.
+     */
     inline EmbeddedSourceSettings& WithConvert608To708(EmbeddedConvert608To708&& value) { SetConvert608To708(std::move(value)); return *this;}
 
 

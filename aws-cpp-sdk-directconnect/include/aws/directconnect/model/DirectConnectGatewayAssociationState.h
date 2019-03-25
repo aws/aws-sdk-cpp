@@ -29,7 +29,8 @@ namespace Model
     associating,
     associated,
     disassociating,
-    disassociated
+    disassociated,
+    updating
   };
 
 namespace DirectConnectGatewayAssociationStateMapper

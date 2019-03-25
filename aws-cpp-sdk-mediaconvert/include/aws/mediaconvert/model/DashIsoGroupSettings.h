@@ -16,6 +16,7 @@
 #pragma once
 #include <aws/mediaconvert/MediaConvert_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/mediaconvert/model/DestinationSettings.h>
 #include <aws/mediaconvert/model/DashIsoEncryptionSettings.h>
 #include <aws/mediaconvert/model/DashIsoHbbtvCompliance.h>
 #include <aws/mediaconvert/model/DashIsoSegmentControl.h>
@@ -183,6 +184,43 @@ namespace Model
 
 
     /**
+     * Settings associated with the destination. Will vary based on the type of
+     * destination
+     */
+    inline const DestinationSettings& GetDestinationSettings() const{ return m_destinationSettings; }
+
+    /**
+     * Settings associated with the destination. Will vary based on the type of
+     * destination
+     */
+    inline bool DestinationSettingsHasBeenSet() const { return m_destinationSettingsHasBeenSet; }
+
+    /**
+     * Settings associated with the destination. Will vary based on the type of
+     * destination
+     */
+    inline void SetDestinationSettings(const DestinationSettings& value) { m_destinationSettingsHasBeenSet = true; m_destinationSettings = value; }
+
+    /**
+     * Settings associated with the destination. Will vary based on the type of
+     * destination
+     */
+    inline void SetDestinationSettings(DestinationSettings&& value) { m_destinationSettingsHasBeenSet = true; m_destinationSettings = std::move(value); }
+
+    /**
+     * Settings associated with the destination. Will vary based on the type of
+     * destination
+     */
+    inline DashIsoGroupSettings& WithDestinationSettings(const DestinationSettings& value) { SetDestinationSettings(value); return *this;}
+
+    /**
+     * Settings associated with the destination. Will vary based on the type of
+     * destination
+     */
+    inline DashIsoGroupSettings& WithDestinationSettings(DestinationSettings&& value) { SetDestinationSettings(std::move(value)); return *this;}
+
+
+    /**
      * DRM settings.
      */
     inline const DashIsoEncryptionSettings& GetEncryption() const{ return m_encryption; }
@@ -254,22 +292,34 @@ namespace Model
     inline DashIsoGroupSettings& WithFragmentLength(int value) { SetFragmentLength(value); return *this;}
 
 
-    
+    /**
+     * Supports HbbTV specification as indicated
+     */
     inline const DashIsoHbbtvCompliance& GetHbbtvCompliance() const{ return m_hbbtvCompliance; }
 
-    
+    /**
+     * Supports HbbTV specification as indicated
+     */
     inline bool HbbtvComplianceHasBeenSet() const { return m_hbbtvComplianceHasBeenSet; }
 
-    
+    /**
+     * Supports HbbTV specification as indicated
+     */
     inline void SetHbbtvCompliance(const DashIsoHbbtvCompliance& value) { m_hbbtvComplianceHasBeenSet = true; m_hbbtvCompliance = value; }
 
-    
+    /**
+     * Supports HbbTV specification as indicated
+     */
     inline void SetHbbtvCompliance(DashIsoHbbtvCompliance&& value) { m_hbbtvComplianceHasBeenSet = true; m_hbbtvCompliance = std::move(value); }
 
-    
+    /**
+     * Supports HbbTV specification as indicated
+     */
     inline DashIsoGroupSettings& WithHbbtvCompliance(const DashIsoHbbtvCompliance& value) { SetHbbtvCompliance(value); return *this;}
 
-    
+    /**
+     * Supports HbbTV specification as indicated
+     */
     inline DashIsoGroupSettings& WithHbbtvCompliance(DashIsoHbbtvCompliance&& value) { SetHbbtvCompliance(std::move(value)); return *this;}
 
 
@@ -298,22 +348,46 @@ namespace Model
     inline DashIsoGroupSettings& WithMinBufferTime(int value) { SetMinBufferTime(value); return *this;}
 
 
-    
+    /**
+     * When set to SINGLE_FILE, a single output file is generated, which is internally
+     * segmented using the Fragment Length and Segment Length. When set to
+     * SEGMENTED_FILES, separate segment files will be created.
+     */
     inline const DashIsoSegmentControl& GetSegmentControl() const{ return m_segmentControl; }
 
-    
+    /**
+     * When set to SINGLE_FILE, a single output file is generated, which is internally
+     * segmented using the Fragment Length and Segment Length. When set to
+     * SEGMENTED_FILES, separate segment files will be created.
+     */
     inline bool SegmentControlHasBeenSet() const { return m_segmentControlHasBeenSet; }
 
-    
+    /**
+     * When set to SINGLE_FILE, a single output file is generated, which is internally
+     * segmented using the Fragment Length and Segment Length. When set to
+     * SEGMENTED_FILES, separate segment files will be created.
+     */
     inline void SetSegmentControl(const DashIsoSegmentControl& value) { m_segmentControlHasBeenSet = true; m_segmentControl = value; }
 
-    
+    /**
+     * When set to SINGLE_FILE, a single output file is generated, which is internally
+     * segmented using the Fragment Length and Segment Length. When set to
+     * SEGMENTED_FILES, separate segment files will be created.
+     */
     inline void SetSegmentControl(DashIsoSegmentControl&& value) { m_segmentControlHasBeenSet = true; m_segmentControl = std::move(value); }
 
-    
+    /**
+     * When set to SINGLE_FILE, a single output file is generated, which is internally
+     * segmented using the Fragment Length and Segment Length. When set to
+     * SEGMENTED_FILES, separate segment files will be created.
+     */
     inline DashIsoGroupSettings& WithSegmentControl(const DashIsoSegmentControl& value) { SetSegmentControl(value); return *this;}
 
-    
+    /**
+     * When set to SINGLE_FILE, a single output file is generated, which is internally
+     * segmented using the Fragment Length and Segment Length. When set to
+     * SEGMENTED_FILES, separate segment files will be created.
+     */
     inline DashIsoGroupSettings& WithSegmentControl(DashIsoSegmentControl&& value) { SetSegmentControl(std::move(value)); return *this;}
 
 
@@ -427,6 +501,9 @@ namespace Model
 
     Aws::String m_destination;
     bool m_destinationHasBeenSet;
+
+    DestinationSettings m_destinationSettings;
+    bool m_destinationSettingsHasBeenSet;
 
     DashIsoEncryptionSettings m_encryption;
     bool m_encryptionHasBeenSet;

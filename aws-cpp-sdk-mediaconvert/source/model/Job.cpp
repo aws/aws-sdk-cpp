@@ -34,19 +34,25 @@ Job::Job() :
     m_billingTagsSource(BillingTagsSource::NOT_SET),
     m_billingTagsSourceHasBeenSet(false),
     m_createdAtHasBeenSet(false),
+    m_currentPhase(JobPhase::NOT_SET),
+    m_currentPhaseHasBeenSet(false),
     m_errorCode(0),
     m_errorCodeHasBeenSet(false),
     m_errorMessageHasBeenSet(false),
     m_idHasBeenSet(false),
+    m_jobPercentComplete(0),
+    m_jobPercentCompleteHasBeenSet(false),
     m_jobTemplateHasBeenSet(false),
     m_outputGroupDetailsHasBeenSet(false),
     m_queueHasBeenSet(false),
+    m_retryCount(0),
+    m_retryCountHasBeenSet(false),
     m_roleHasBeenSet(false),
     m_settingsHasBeenSet(false),
     m_status(JobStatus::NOT_SET),
     m_statusHasBeenSet(false),
-    m_statusUpdateIntervalInSecs(0),
-    m_statusUpdateIntervalInSecsHasBeenSet(false),
+    m_statusUpdateInterval(StatusUpdateInterval::NOT_SET),
+    m_statusUpdateIntervalHasBeenSet(false),
     m_timingHasBeenSet(false),
     m_userMetadataHasBeenSet(false)
 {
@@ -58,19 +64,25 @@ Job::Job(JsonView jsonValue) :
     m_billingTagsSource(BillingTagsSource::NOT_SET),
     m_billingTagsSourceHasBeenSet(false),
     m_createdAtHasBeenSet(false),
+    m_currentPhase(JobPhase::NOT_SET),
+    m_currentPhaseHasBeenSet(false),
     m_errorCode(0),
     m_errorCodeHasBeenSet(false),
     m_errorMessageHasBeenSet(false),
     m_idHasBeenSet(false),
+    m_jobPercentComplete(0),
+    m_jobPercentCompleteHasBeenSet(false),
     m_jobTemplateHasBeenSet(false),
     m_outputGroupDetailsHasBeenSet(false),
     m_queueHasBeenSet(false),
+    m_retryCount(0),
+    m_retryCountHasBeenSet(false),
     m_roleHasBeenSet(false),
     m_settingsHasBeenSet(false),
     m_status(JobStatus::NOT_SET),
     m_statusHasBeenSet(false),
-    m_statusUpdateIntervalInSecs(0),
-    m_statusUpdateIntervalInSecsHasBeenSet(false),
+    m_statusUpdateInterval(StatusUpdateInterval::NOT_SET),
+    m_statusUpdateIntervalHasBeenSet(false),
     m_timingHasBeenSet(false),
     m_userMetadataHasBeenSet(false)
 {
@@ -107,6 +119,13 @@ Job& Job::operator =(JsonView jsonValue)
     m_createdAtHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("currentPhase"))
+  {
+    m_currentPhase = JobPhaseMapper::GetJobPhaseForName(jsonValue.GetString("currentPhase"));
+
+    m_currentPhaseHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("errorCode"))
   {
     m_errorCode = jsonValue.GetInteger("errorCode");
@@ -126,6 +145,13 @@ Job& Job::operator =(JsonView jsonValue)
     m_id = jsonValue.GetString("id");
 
     m_idHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("jobPercentComplete"))
+  {
+    m_jobPercentComplete = jsonValue.GetInteger("jobPercentComplete");
+
+    m_jobPercentCompleteHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("jobTemplate"))
@@ -152,6 +178,13 @@ Job& Job::operator =(JsonView jsonValue)
     m_queueHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("retryCount"))
+  {
+    m_retryCount = jsonValue.GetInteger("retryCount");
+
+    m_retryCountHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("role"))
   {
     m_role = jsonValue.GetString("role");
@@ -173,11 +206,11 @@ Job& Job::operator =(JsonView jsonValue)
     m_statusHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("statusUpdateIntervalInSecs"))
+  if(jsonValue.ValueExists("statusUpdateInterval"))
   {
-    m_statusUpdateIntervalInSecs = jsonValue.GetInt64("statusUpdateIntervalInSecs");
+    m_statusUpdateInterval = StatusUpdateIntervalMapper::GetStatusUpdateIntervalForName(jsonValue.GetString("statusUpdateInterval"));
 
-    m_statusUpdateIntervalInSecsHasBeenSet = true;
+    m_statusUpdateIntervalHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("timing"))
@@ -226,6 +259,11 @@ JsonValue Job::Jsonize() const
    payload.WithDouble("createdAt", m_createdAt.SecondsWithMSPrecision());
   }
 
+  if(m_currentPhaseHasBeenSet)
+  {
+   payload.WithString("currentPhase", JobPhaseMapper::GetNameForJobPhase(m_currentPhase));
+  }
+
   if(m_errorCodeHasBeenSet)
   {
    payload.WithInteger("errorCode", m_errorCode);
@@ -241,6 +279,12 @@ JsonValue Job::Jsonize() const
   if(m_idHasBeenSet)
   {
    payload.WithString("id", m_id);
+
+  }
+
+  if(m_jobPercentCompleteHasBeenSet)
+  {
+   payload.WithInteger("jobPercentComplete", m_jobPercentComplete);
 
   }
 
@@ -267,6 +311,12 @@ JsonValue Job::Jsonize() const
 
   }
 
+  if(m_retryCountHasBeenSet)
+  {
+   payload.WithInteger("retryCount", m_retryCount);
+
+  }
+
   if(m_roleHasBeenSet)
   {
    payload.WithString("role", m_role);
@@ -284,10 +334,9 @@ JsonValue Job::Jsonize() const
    payload.WithString("status", JobStatusMapper::GetNameForJobStatus(m_status));
   }
 
-  if(m_statusUpdateIntervalInSecsHasBeenSet)
+  if(m_statusUpdateIntervalHasBeenSet)
   {
-   payload.WithInt64("statusUpdateIntervalInSecs", m_statusUpdateIntervalInSecs);
-
+   payload.WithString("statusUpdateInterval", StatusUpdateIntervalMapper::GetNameForStatusUpdateInterval(m_statusUpdateInterval));
   }
 
   if(m_timingHasBeenSet)

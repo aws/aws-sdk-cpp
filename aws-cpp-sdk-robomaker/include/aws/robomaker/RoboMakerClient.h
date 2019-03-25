@@ -244,7 +244,7 @@ namespace Model
     typedef std::function<void(const RoboMakerClient*, const Model::UpdateSimulationApplicationRequest&, const Model::UpdateSimulationApplicationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateSimulationApplicationResponseReceivedHandler;
 
   /**
-   * <p>his section provides documentation for the AWS RoboMaker API operations.</p>
+   * <p>This section provides documentation for the AWS RoboMaker API operations.</p>
    */
   class AWS_ROBOMAKER_API RoboMakerClient : public Aws::Client::AWSJsonClient
   {
@@ -331,7 +331,9 @@ namespace Model
          * for consistency reasons. To create a new version, use
          * <code>CreateRobotApplicationVersion</code> or see <a
          * href="https://docs.aws.amazon.com/robomaker/latest/dg/create-robot-application-version.html">Creating
-         * a Robot Application Version</a>. </p><p><h3>See Also:</h3>   <a
+         * a Robot Application Version</a>. </p> <note> <p>After 90 days, deployment jobs
+         * expire and will be deleted. They will no longer be accessible. </p>
+         * </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/CreateDeploymentJob">AWS
          * API Reference</a></p>
          */
@@ -343,7 +345,9 @@ namespace Model
          * for consistency reasons. To create a new version, use
          * <code>CreateRobotApplicationVersion</code> or see <a
          * href="https://docs.aws.amazon.com/robomaker/latest/dg/create-robot-application-version.html">Creating
-         * a Robot Application Version</a>. </p><p><h3>See Also:</h3>   <a
+         * a Robot Application Version</a>. </p> <note> <p>After 90 days, deployment jobs
+         * expire and will be deleted. They will no longer be accessible. </p>
+         * </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/CreateDeploymentJob">AWS
          * API Reference</a></p>
          *
@@ -357,7 +361,9 @@ namespace Model
          * for consistency reasons. To create a new version, use
          * <code>CreateRobotApplicationVersion</code> or see <a
          * href="https://docs.aws.amazon.com/robomaker/latest/dg/create-robot-application-version.html">Creating
-         * a Robot Application Version</a>. </p><p><h3>See Also:</h3>   <a
+         * a Robot Application Version</a>. </p> <note> <p>After 90 days, deployment jobs
+         * expire and will be deleted. They will no longer be accessible. </p>
+         * </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/CreateDeploymentJob">AWS
          * API Reference</a></p>
          *
@@ -522,14 +528,18 @@ namespace Model
         virtual void CreateSimulationApplicationVersionAsync(const Model::CreateSimulationApplicationVersionRequest& request, const CreateSimulationApplicationVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates a simulation job.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates a simulation job.</p> <note> <p>After 90 days, simulation jobs expire
+         * and will be deleted. They will no longer be accessible. </p> </note><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/CreateSimulationJob">AWS
          * API Reference</a></p>
          */
         virtual Model::CreateSimulationJobOutcome CreateSimulationJob(const Model::CreateSimulationJobRequest& request) const;
 
         /**
-         * <p>Creates a simulation job.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates a simulation job.</p> <note> <p>After 90 days, simulation jobs expire
+         * and will be deleted. They will no longer be accessible. </p> </note><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/CreateSimulationJob">AWS
          * API Reference</a></p>
          *
@@ -538,7 +548,9 @@ namespace Model
         virtual Model::CreateSimulationJobOutcomeCallable CreateSimulationJobCallable(const Model::CreateSimulationJobRequest& request) const;
 
         /**
-         * <p>Creates a simulation job.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates a simulation job.</p> <note> <p>After 90 days, simulation jobs expire
+         * and will be deleted. They will no longer be accessible. </p> </note><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/CreateSimulationJob">AWS
          * API Reference</a></p>
          *
@@ -826,7 +838,8 @@ namespace Model
 
         /**
          * <p>Returns a list of deployment jobs for a fleet. You can optionally provide
-         * filters to retrieve specific deployment jobs.</p><p><h3>See Also:</h3>   <a
+         * filters to retrieve specific deployment jobs. </p> <note> <p> </p>
+         * </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/ListDeploymentJobs">AWS
          * API Reference</a></p>
          */
@@ -834,7 +847,8 @@ namespace Model
 
         /**
          * <p>Returns a list of deployment jobs for a fleet. You can optionally provide
-         * filters to retrieve specific deployment jobs.</p><p><h3>See Also:</h3>   <a
+         * filters to retrieve specific deployment jobs. </p> <note> <p> </p>
+         * </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/ListDeploymentJobs">AWS
          * API Reference</a></p>
          *
@@ -844,7 +858,8 @@ namespace Model
 
         /**
          * <p>Returns a list of deployment jobs for a fleet. You can optionally provide
-         * filters to retrieve specific deployment jobs.</p><p><h3>See Also:</h3>   <a
+         * filters to retrieve specific deployment jobs. </p> <note> <p> </p>
+         * </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/ListDeploymentJobs">AWS
          * API Reference</a></p>
          *
@@ -854,7 +869,7 @@ namespace Model
 
         /**
          * <p>Returns a list of fleets. You can optionally provide filters to retrieve
-         * specific fleets.</p><p><h3>See Also:</h3>   <a
+         * specific fleets. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/ListFleets">AWS
          * API Reference</a></p>
          */
@@ -862,7 +877,7 @@ namespace Model
 
         /**
          * <p>Returns a list of fleets. You can optionally provide filters to retrieve
-         * specific fleets.</p><p><h3>See Also:</h3>   <a
+         * specific fleets. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/ListFleets">AWS
          * API Reference</a></p>
          *
@@ -872,7 +887,7 @@ namespace Model
 
         /**
          * <p>Returns a list of fleets. You can optionally provide filters to retrieve
-         * specific fleets.</p><p><h3>See Also:</h3>   <a
+         * specific fleets. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/ListFleets">AWS
          * API Reference</a></p>
          *
@@ -938,7 +953,7 @@ namespace Model
 
         /**
          * <p>Returns a list of simulation applications. You can optionally provide filters
-         * to retrieve specific simulation applications.</p><p><h3>See Also:</h3>   <a
+         * to retrieve specific simulation applications. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/ListSimulationApplications">AWS
          * API Reference</a></p>
          */
@@ -946,7 +961,7 @@ namespace Model
 
         /**
          * <p>Returns a list of simulation applications. You can optionally provide filters
-         * to retrieve specific simulation applications.</p><p><h3>See Also:</h3>   <a
+         * to retrieve specific simulation applications. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/ListSimulationApplications">AWS
          * API Reference</a></p>
          *
@@ -956,7 +971,7 @@ namespace Model
 
         /**
          * <p>Returns a list of simulation applications. You can optionally provide filters
-         * to retrieve specific simulation applications.</p><p><h3>See Also:</h3>   <a
+         * to retrieve specific simulation applications. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/ListSimulationApplications">AWS
          * API Reference</a></p>
          *
@@ -966,7 +981,7 @@ namespace Model
 
         /**
          * <p>Returns a list of simulation jobs. You can optionally provide filters to
-         * retrieve specific simulation jobs.</p><p><h3>See Also:</h3>   <a
+         * retrieve specific simulation jobs. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/ListSimulationJobs">AWS
          * API Reference</a></p>
          */
@@ -974,7 +989,7 @@ namespace Model
 
         /**
          * <p>Returns a list of simulation jobs. You can optionally provide filters to
-         * retrieve specific simulation jobs.</p><p><h3>See Also:</h3>   <a
+         * retrieve specific simulation jobs. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/ListSimulationJobs">AWS
          * API Reference</a></p>
          *
@@ -984,7 +999,7 @@ namespace Model
 
         /**
          * <p>Returns a list of simulation jobs. You can optionally provide filters to
-         * retrieve specific simulation jobs.</p><p><h3>See Also:</h3>   <a
+         * retrieve specific simulation jobs. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/ListSimulationJobs">AWS
          * API Reference</a></p>
          *
@@ -1142,7 +1157,7 @@ namespace Model
          * <p>Removes the specified tags from the specified AWS RoboMaker resource.</p>
          * <p>To remove a tag, specify the tag key. To change the tag value of an existing
          * tag key, use <a
-         * href="https://docs.aws.amazon.com/robomaker/latest/dg//API_Reference.htmlAPI_TagResource.html">
+         * href="https://docs.aws.amazon.com/robomaker/latest/dg/API_TagResource.html">
          * <code>TagResource</code> </a>. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/UntagResource">AWS
          * API Reference</a></p>
@@ -1153,7 +1168,7 @@ namespace Model
          * <p>Removes the specified tags from the specified AWS RoboMaker resource.</p>
          * <p>To remove a tag, specify the tag key. To change the tag value of an existing
          * tag key, use <a
-         * href="https://docs.aws.amazon.com/robomaker/latest/dg//API_Reference.htmlAPI_TagResource.html">
+         * href="https://docs.aws.amazon.com/robomaker/latest/dg/API_TagResource.html">
          * <code>TagResource</code> </a>. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/UntagResource">AWS
          * API Reference</a></p>
@@ -1166,7 +1181,7 @@ namespace Model
          * <p>Removes the specified tags from the specified AWS RoboMaker resource.</p>
          * <p>To remove a tag, specify the tag key. To change the tag value of an existing
          * tag key, use <a
-         * href="https://docs.aws.amazon.com/robomaker/latest/dg//API_Reference.htmlAPI_TagResource.html">
+         * href="https://docs.aws.amazon.com/robomaker/latest/dg/API_TagResource.html">
          * <code>TagResource</code> </a>. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/UntagResource">AWS
          * API Reference</a></p>

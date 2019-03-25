@@ -157,22 +157,34 @@ namespace Model
     inline PresetSettings& AddCaptionDescriptions(CaptionDescriptionPreset&& value) { m_captionDescriptionsHasBeenSet = true; m_captionDescriptions.push_back(std::move(value)); return *this; }
 
 
-    
+    /**
+     * Container specific settings.
+     */
     inline const ContainerSettings& GetContainerSettings() const{ return m_containerSettings; }
 
-    
+    /**
+     * Container specific settings.
+     */
     inline bool ContainerSettingsHasBeenSet() const { return m_containerSettingsHasBeenSet; }
 
-    
+    /**
+     * Container specific settings.
+     */
     inline void SetContainerSettings(const ContainerSettings& value) { m_containerSettingsHasBeenSet = true; m_containerSettings = value; }
 
-    
+    /**
+     * Container specific settings.
+     */
     inline void SetContainerSettings(ContainerSettings&& value) { m_containerSettingsHasBeenSet = true; m_containerSettings = std::move(value); }
 
-    
+    /**
+     * Container specific settings.
+     */
     inline PresetSettings& WithContainerSettings(const ContainerSettings& value) { SetContainerSettings(value); return *this;}
 
-    
+    /**
+     * Container specific settings.
+     */
     inline PresetSettings& WithContainerSettings(ContainerSettings&& value) { SetContainerSettings(std::move(value)); return *this;}
 
 

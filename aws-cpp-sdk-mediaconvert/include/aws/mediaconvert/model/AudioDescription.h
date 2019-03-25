@@ -53,22 +53,34 @@ namespace Model
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 
-    
+    /**
+     * Advanced audio normalization settings.
+     */
     inline const AudioNormalizationSettings& GetAudioNormalizationSettings() const{ return m_audioNormalizationSettings; }
 
-    
+    /**
+     * Advanced audio normalization settings.
+     */
     inline bool AudioNormalizationSettingsHasBeenSet() const { return m_audioNormalizationSettingsHasBeenSet; }
 
-    
+    /**
+     * Advanced audio normalization settings.
+     */
     inline void SetAudioNormalizationSettings(const AudioNormalizationSettings& value) { m_audioNormalizationSettingsHasBeenSet = true; m_audioNormalizationSettings = value; }
 
-    
+    /**
+     * Advanced audio normalization settings.
+     */
     inline void SetAudioNormalizationSettings(AudioNormalizationSettings&& value) { m_audioNormalizationSettingsHasBeenSet = true; m_audioNormalizationSettings = std::move(value); }
 
-    
+    /**
+     * Advanced audio normalization settings.
+     */
     inline AudioDescription& WithAudioNormalizationSettings(const AudioNormalizationSettings& value) { SetAudioNormalizationSettings(value); return *this;}
 
-    
+    /**
+     * Advanced audio normalization settings.
+     */
     inline AudioDescription& WithAudioNormalizationSettings(AudioNormalizationSettings&& value) { SetAudioNormalizationSettings(std::move(value)); return *this;}
 
 
@@ -218,41 +230,125 @@ namespace Model
     inline AudioDescription& WithAudioType(int value) { SetAudioType(value); return *this;}
 
 
-    
+    /**
+     * When set to FOLLOW_INPUT, if the input contains an ISO 639 audio_type, then that
+     * value is passed through to the output. If the input contains no ISO 639
+     * audio_type, the value in Audio Type is included in the output. Otherwise the
+     * value in Audio Type is included in the output. Note that this field and
+     * audioType are both ignored if audioDescriptionBroadcasterMix is set to
+     * BROADCASTER_MIXED_AD.
+     */
     inline const AudioTypeControl& GetAudioTypeControl() const{ return m_audioTypeControl; }
 
-    
+    /**
+     * When set to FOLLOW_INPUT, if the input contains an ISO 639 audio_type, then that
+     * value is passed through to the output. If the input contains no ISO 639
+     * audio_type, the value in Audio Type is included in the output. Otherwise the
+     * value in Audio Type is included in the output. Note that this field and
+     * audioType are both ignored if audioDescriptionBroadcasterMix is set to
+     * BROADCASTER_MIXED_AD.
+     */
     inline bool AudioTypeControlHasBeenSet() const { return m_audioTypeControlHasBeenSet; }
 
-    
+    /**
+     * When set to FOLLOW_INPUT, if the input contains an ISO 639 audio_type, then that
+     * value is passed through to the output. If the input contains no ISO 639
+     * audio_type, the value in Audio Type is included in the output. Otherwise the
+     * value in Audio Type is included in the output. Note that this field and
+     * audioType are both ignored if audioDescriptionBroadcasterMix is set to
+     * BROADCASTER_MIXED_AD.
+     */
     inline void SetAudioTypeControl(const AudioTypeControl& value) { m_audioTypeControlHasBeenSet = true; m_audioTypeControl = value; }
 
-    
+    /**
+     * When set to FOLLOW_INPUT, if the input contains an ISO 639 audio_type, then that
+     * value is passed through to the output. If the input contains no ISO 639
+     * audio_type, the value in Audio Type is included in the output. Otherwise the
+     * value in Audio Type is included in the output. Note that this field and
+     * audioType are both ignored if audioDescriptionBroadcasterMix is set to
+     * BROADCASTER_MIXED_AD.
+     */
     inline void SetAudioTypeControl(AudioTypeControl&& value) { m_audioTypeControlHasBeenSet = true; m_audioTypeControl = std::move(value); }
 
-    
+    /**
+     * When set to FOLLOW_INPUT, if the input contains an ISO 639 audio_type, then that
+     * value is passed through to the output. If the input contains no ISO 639
+     * audio_type, the value in Audio Type is included in the output. Otherwise the
+     * value in Audio Type is included in the output. Note that this field and
+     * audioType are both ignored if audioDescriptionBroadcasterMix is set to
+     * BROADCASTER_MIXED_AD.
+     */
     inline AudioDescription& WithAudioTypeControl(const AudioTypeControl& value) { SetAudioTypeControl(value); return *this;}
 
-    
+    /**
+     * When set to FOLLOW_INPUT, if the input contains an ISO 639 audio_type, then that
+     * value is passed through to the output. If the input contains no ISO 639
+     * audio_type, the value in Audio Type is included in the output. Otherwise the
+     * value in Audio Type is included in the output. Note that this field and
+     * audioType are both ignored if audioDescriptionBroadcasterMix is set to
+     * BROADCASTER_MIXED_AD.
+     */
     inline AudioDescription& WithAudioTypeControl(AudioTypeControl&& value) { SetAudioTypeControl(std::move(value)); return *this;}
 
 
-    
+    /**
+     * Audio codec settings (CodecSettings) under (AudioDescriptions) contains the
+     * group of settings related to audio encoding. The settings in this group vary
+     * depending on the value you choose for Audio codec (Codec). For each codec enum
+     * you choose, define the corresponding settings object. The following lists the
+     * codec enum, settings object pairs. * AAC, AacSettings * MP2, Mp2Settings * WAV,
+     * WavSettings * AIFF, AiffSettings * AC3, Ac3Settings * EAC3, Eac3Settings
+     */
     inline const AudioCodecSettings& GetCodecSettings() const{ return m_codecSettings; }
 
-    
+    /**
+     * Audio codec settings (CodecSettings) under (AudioDescriptions) contains the
+     * group of settings related to audio encoding. The settings in this group vary
+     * depending on the value you choose for Audio codec (Codec). For each codec enum
+     * you choose, define the corresponding settings object. The following lists the
+     * codec enum, settings object pairs. * AAC, AacSettings * MP2, Mp2Settings * WAV,
+     * WavSettings * AIFF, AiffSettings * AC3, Ac3Settings * EAC3, Eac3Settings
+     */
     inline bool CodecSettingsHasBeenSet() const { return m_codecSettingsHasBeenSet; }
 
-    
+    /**
+     * Audio codec settings (CodecSettings) under (AudioDescriptions) contains the
+     * group of settings related to audio encoding. The settings in this group vary
+     * depending on the value you choose for Audio codec (Codec). For each codec enum
+     * you choose, define the corresponding settings object. The following lists the
+     * codec enum, settings object pairs. * AAC, AacSettings * MP2, Mp2Settings * WAV,
+     * WavSettings * AIFF, AiffSettings * AC3, Ac3Settings * EAC3, Eac3Settings
+     */
     inline void SetCodecSettings(const AudioCodecSettings& value) { m_codecSettingsHasBeenSet = true; m_codecSettings = value; }
 
-    
+    /**
+     * Audio codec settings (CodecSettings) under (AudioDescriptions) contains the
+     * group of settings related to audio encoding. The settings in this group vary
+     * depending on the value you choose for Audio codec (Codec). For each codec enum
+     * you choose, define the corresponding settings object. The following lists the
+     * codec enum, settings object pairs. * AAC, AacSettings * MP2, Mp2Settings * WAV,
+     * WavSettings * AIFF, AiffSettings * AC3, Ac3Settings * EAC3, Eac3Settings
+     */
     inline void SetCodecSettings(AudioCodecSettings&& value) { m_codecSettingsHasBeenSet = true; m_codecSettings = std::move(value); }
 
-    
+    /**
+     * Audio codec settings (CodecSettings) under (AudioDescriptions) contains the
+     * group of settings related to audio encoding. The settings in this group vary
+     * depending on the value you choose for Audio codec (Codec). For each codec enum
+     * you choose, define the corresponding settings object. The following lists the
+     * codec enum, settings object pairs. * AAC, AacSettings * MP2, Mp2Settings * WAV,
+     * WavSettings * AIFF, AiffSettings * AC3, Ac3Settings * EAC3, Eac3Settings
+     */
     inline AudioDescription& WithCodecSettings(const AudioCodecSettings& value) { SetCodecSettings(value); return *this;}
 
-    
+    /**
+     * Audio codec settings (CodecSettings) under (AudioDescriptions) contains the
+     * group of settings related to audio encoding. The settings in this group vary
+     * depending on the value you choose for Audio codec (Codec). For each codec enum
+     * you choose, define the corresponding settings object. The following lists the
+     * codec enum, settings object pairs. * AAC, AacSettings * MP2, Mp2Settings * WAV,
+     * WavSettings * AIFF, AiffSettings * AC3, Ac3Settings * EAC3, Eac3Settings
+     */
     inline AudioDescription& WithCodecSettings(AudioCodecSettings&& value) { SetCodecSettings(std::move(value)); return *this;}
 
 
@@ -370,22 +466,52 @@ namespace Model
     inline AudioDescription& WithLanguageCode(LanguageCode&& value) { SetLanguageCode(std::move(value)); return *this;}
 
 
-    
+    /**
+     * Choosing FOLLOW_INPUT will cause the ISO 639 language code of the output to
+     * follow the ISO 639 language code of the input. The language specified for
+     * languageCode' will be used when USE_CONFIGURED is selected or when FOLLOW_INPUT
+     * is selected but there is no ISO 639 language code specified by the input.
+     */
     inline const AudioLanguageCodeControl& GetLanguageCodeControl() const{ return m_languageCodeControl; }
 
-    
+    /**
+     * Choosing FOLLOW_INPUT will cause the ISO 639 language code of the output to
+     * follow the ISO 639 language code of the input. The language specified for
+     * languageCode' will be used when USE_CONFIGURED is selected or when FOLLOW_INPUT
+     * is selected but there is no ISO 639 language code specified by the input.
+     */
     inline bool LanguageCodeControlHasBeenSet() const { return m_languageCodeControlHasBeenSet; }
 
-    
+    /**
+     * Choosing FOLLOW_INPUT will cause the ISO 639 language code of the output to
+     * follow the ISO 639 language code of the input. The language specified for
+     * languageCode' will be used when USE_CONFIGURED is selected or when FOLLOW_INPUT
+     * is selected but there is no ISO 639 language code specified by the input.
+     */
     inline void SetLanguageCodeControl(const AudioLanguageCodeControl& value) { m_languageCodeControlHasBeenSet = true; m_languageCodeControl = value; }
 
-    
+    /**
+     * Choosing FOLLOW_INPUT will cause the ISO 639 language code of the output to
+     * follow the ISO 639 language code of the input. The language specified for
+     * languageCode' will be used when USE_CONFIGURED is selected or when FOLLOW_INPUT
+     * is selected but there is no ISO 639 language code specified by the input.
+     */
     inline void SetLanguageCodeControl(AudioLanguageCodeControl&& value) { m_languageCodeControlHasBeenSet = true; m_languageCodeControl = std::move(value); }
 
-    
+    /**
+     * Choosing FOLLOW_INPUT will cause the ISO 639 language code of the output to
+     * follow the ISO 639 language code of the input. The language specified for
+     * languageCode' will be used when USE_CONFIGURED is selected or when FOLLOW_INPUT
+     * is selected but there is no ISO 639 language code specified by the input.
+     */
     inline AudioDescription& WithLanguageCodeControl(const AudioLanguageCodeControl& value) { SetLanguageCodeControl(value); return *this;}
 
-    
+    /**
+     * Choosing FOLLOW_INPUT will cause the ISO 639 language code of the output to
+     * follow the ISO 639 language code of the input. The language specified for
+     * languageCode' will be used when USE_CONFIGURED is selected or when FOLLOW_INPUT
+     * is selected but there is no ISO 639 language code specified by the input.
+     */
     inline AudioDescription& WithLanguageCodeControl(AudioLanguageCodeControl&& value) { SetLanguageCodeControl(std::move(value)); return *this;}
 
 

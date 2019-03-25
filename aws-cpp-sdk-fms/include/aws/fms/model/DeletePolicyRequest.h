@@ -94,30 +94,62 @@ namespace Model
 
 
     /**
-     * <p>If <code>True</code>, the request will also delete all web ACLs in this
-     * policy. Associated resources will no longer be protected by web ACLs in this
-     * policy.</p>
+     * <p>If <code>True</code>, the request will also perform a clean-up process that
+     * will:</p> <ul> <li> <p>Delete rule groups created by AWS Firewall Manager</p>
+     * </li> <li> <p>Remove web ACLs from in-scope resources</p> </li> <li> <p>Delete
+     * web ACLs that contain no rules or rule groups</p> </li> </ul> <p>After the
+     * cleanup, in-scope resources will no longer be protected by web ACLs in this
+     * policy. Protection of out-of-scope resources will remain unchanged. Scope is
+     * determined by tags and accounts associated with the policy. When creating the
+     * policy, if you specified that only resources in specific accounts or with
+     * specific tags be protected by the policy, those resources are in-scope. All
+     * others are out of scope. If you did not specify tags or accounts, all resources
+     * are in-scope. </p>
      */
     inline bool GetDeleteAllPolicyResources() const{ return m_deleteAllPolicyResources; }
 
     /**
-     * <p>If <code>True</code>, the request will also delete all web ACLs in this
-     * policy. Associated resources will no longer be protected by web ACLs in this
-     * policy.</p>
+     * <p>If <code>True</code>, the request will also perform a clean-up process that
+     * will:</p> <ul> <li> <p>Delete rule groups created by AWS Firewall Manager</p>
+     * </li> <li> <p>Remove web ACLs from in-scope resources</p> </li> <li> <p>Delete
+     * web ACLs that contain no rules or rule groups</p> </li> </ul> <p>After the
+     * cleanup, in-scope resources will no longer be protected by web ACLs in this
+     * policy. Protection of out-of-scope resources will remain unchanged. Scope is
+     * determined by tags and accounts associated with the policy. When creating the
+     * policy, if you specified that only resources in specific accounts or with
+     * specific tags be protected by the policy, those resources are in-scope. All
+     * others are out of scope. If you did not specify tags or accounts, all resources
+     * are in-scope. </p>
      */
     inline bool DeleteAllPolicyResourcesHasBeenSet() const { return m_deleteAllPolicyResourcesHasBeenSet; }
 
     /**
-     * <p>If <code>True</code>, the request will also delete all web ACLs in this
-     * policy. Associated resources will no longer be protected by web ACLs in this
-     * policy.</p>
+     * <p>If <code>True</code>, the request will also perform a clean-up process that
+     * will:</p> <ul> <li> <p>Delete rule groups created by AWS Firewall Manager</p>
+     * </li> <li> <p>Remove web ACLs from in-scope resources</p> </li> <li> <p>Delete
+     * web ACLs that contain no rules or rule groups</p> </li> </ul> <p>After the
+     * cleanup, in-scope resources will no longer be protected by web ACLs in this
+     * policy. Protection of out-of-scope resources will remain unchanged. Scope is
+     * determined by tags and accounts associated with the policy. When creating the
+     * policy, if you specified that only resources in specific accounts or with
+     * specific tags be protected by the policy, those resources are in-scope. All
+     * others are out of scope. If you did not specify tags or accounts, all resources
+     * are in-scope. </p>
      */
     inline void SetDeleteAllPolicyResources(bool value) { m_deleteAllPolicyResourcesHasBeenSet = true; m_deleteAllPolicyResources = value; }
 
     /**
-     * <p>If <code>True</code>, the request will also delete all web ACLs in this
-     * policy. Associated resources will no longer be protected by web ACLs in this
-     * policy.</p>
+     * <p>If <code>True</code>, the request will also perform a clean-up process that
+     * will:</p> <ul> <li> <p>Delete rule groups created by AWS Firewall Manager</p>
+     * </li> <li> <p>Remove web ACLs from in-scope resources</p> </li> <li> <p>Delete
+     * web ACLs that contain no rules or rule groups</p> </li> </ul> <p>After the
+     * cleanup, in-scope resources will no longer be protected by web ACLs in this
+     * policy. Protection of out-of-scope resources will remain unchanged. Scope is
+     * determined by tags and accounts associated with the policy. When creating the
+     * policy, if you specified that only resources in specific accounts or with
+     * specific tags be protected by the policy, those resources are in-scope. All
+     * others are out of scope. If you did not specify tags or accounts, all resources
+     * are in-scope. </p>
      */
     inline DeletePolicyRequest& WithDeleteAllPolicyResources(bool value) { SetDeleteAllPolicyResources(value); return *this;}
 

@@ -102,22 +102,46 @@ namespace Model
     inline WavSettings& WithChannels(int value) { SetChannels(value); return *this;}
 
 
-    
+    /**
+     * The service defaults to using RIFF for WAV outputs. If your output audio is
+     * likely to exceed 4 GB in file size, or if you otherwise need the extended
+     * support of the RF64 format, set your output WAV file format to RF64.
+     */
     inline const WavFormat& GetFormat() const{ return m_format; }
 
-    
+    /**
+     * The service defaults to using RIFF for WAV outputs. If your output audio is
+     * likely to exceed 4 GB in file size, or if you otherwise need the extended
+     * support of the RF64 format, set your output WAV file format to RF64.
+     */
     inline bool FormatHasBeenSet() const { return m_formatHasBeenSet; }
 
-    
+    /**
+     * The service defaults to using RIFF for WAV outputs. If your output audio is
+     * likely to exceed 4 GB in file size, or if you otherwise need the extended
+     * support of the RF64 format, set your output WAV file format to RF64.
+     */
     inline void SetFormat(const WavFormat& value) { m_formatHasBeenSet = true; m_format = value; }
 
-    
+    /**
+     * The service defaults to using RIFF for WAV outputs. If your output audio is
+     * likely to exceed 4 GB in file size, or if you otherwise need the extended
+     * support of the RF64 format, set your output WAV file format to RF64.
+     */
     inline void SetFormat(WavFormat&& value) { m_formatHasBeenSet = true; m_format = std::move(value); }
 
-    
+    /**
+     * The service defaults to using RIFF for WAV outputs. If your output audio is
+     * likely to exceed 4 GB in file size, or if you otherwise need the extended
+     * support of the RF64 format, set your output WAV file format to RF64.
+     */
     inline WavSettings& WithFormat(const WavFormat& value) { SetFormat(value); return *this;}
 
-    
+    /**
+     * The service defaults to using RIFF for WAV outputs. If your output audio is
+     * likely to exceed 4 GB in file size, or if you otherwise need the extended
+     * support of the RF64 format, set your output WAV file format to RF64.
+     */
     inline WavSettings& WithFormat(WavFormat&& value) { SetFormat(std::move(value)); return *this;}
 
 

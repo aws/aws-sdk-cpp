@@ -243,22 +243,34 @@ namespace Model
     inline JobSettings& WithMotionImageInserter(MotionImageInserter&& value) { SetMotionImageInserter(std::move(value)); return *this;}
 
 
-    
+    /**
+     * Settings for Nielsen Configuration
+     */
     inline const NielsenConfiguration& GetNielsenConfiguration() const{ return m_nielsenConfiguration; }
 
-    
+    /**
+     * Settings for Nielsen Configuration
+     */
     inline bool NielsenConfigurationHasBeenSet() const { return m_nielsenConfigurationHasBeenSet; }
 
-    
+    /**
+     * Settings for Nielsen Configuration
+     */
     inline void SetNielsenConfiguration(const NielsenConfiguration& value) { m_nielsenConfigurationHasBeenSet = true; m_nielsenConfiguration = value; }
 
-    
+    /**
+     * Settings for Nielsen Configuration
+     */
     inline void SetNielsenConfiguration(NielsenConfiguration&& value) { m_nielsenConfigurationHasBeenSet = true; m_nielsenConfiguration = std::move(value); }
 
-    
+    /**
+     * Settings for Nielsen Configuration
+     */
     inline JobSettings& WithNielsenConfiguration(const NielsenConfiguration& value) { SetNielsenConfiguration(value); return *this;}
 
-    
+    /**
+     * Settings for Nielsen Configuration
+     */
     inline JobSettings& WithNielsenConfiguration(NielsenConfiguration&& value) { SetNielsenConfiguration(std::move(value)); return *this;}
 
 
@@ -406,22 +418,52 @@ namespace Model
     inline JobSettings& WithTimecodeConfig(TimecodeConfig&& value) { SetTimecodeConfig(std::move(value)); return *this;}
 
 
-    
+    /**
+     * Enable Timed metadata insertion (TimedMetadataInsertion) to include ID3 tags in
+     * your job. To include timed metadata, you must enable it here, enable it in each
+     * output container, and specify tags and timecodes in ID3 insertion (Id3Insertion)
+     * objects.
+     */
     inline const TimedMetadataInsertion& GetTimedMetadataInsertion() const{ return m_timedMetadataInsertion; }
 
-    
+    /**
+     * Enable Timed metadata insertion (TimedMetadataInsertion) to include ID3 tags in
+     * your job. To include timed metadata, you must enable it here, enable it in each
+     * output container, and specify tags and timecodes in ID3 insertion (Id3Insertion)
+     * objects.
+     */
     inline bool TimedMetadataInsertionHasBeenSet() const { return m_timedMetadataInsertionHasBeenSet; }
 
-    
+    /**
+     * Enable Timed metadata insertion (TimedMetadataInsertion) to include ID3 tags in
+     * your job. To include timed metadata, you must enable it here, enable it in each
+     * output container, and specify tags and timecodes in ID3 insertion (Id3Insertion)
+     * objects.
+     */
     inline void SetTimedMetadataInsertion(const TimedMetadataInsertion& value) { m_timedMetadataInsertionHasBeenSet = true; m_timedMetadataInsertion = value; }
 
-    
+    /**
+     * Enable Timed metadata insertion (TimedMetadataInsertion) to include ID3 tags in
+     * your job. To include timed metadata, you must enable it here, enable it in each
+     * output container, and specify tags and timecodes in ID3 insertion (Id3Insertion)
+     * objects.
+     */
     inline void SetTimedMetadataInsertion(TimedMetadataInsertion&& value) { m_timedMetadataInsertionHasBeenSet = true; m_timedMetadataInsertion = std::move(value); }
 
-    
+    /**
+     * Enable Timed metadata insertion (TimedMetadataInsertion) to include ID3 tags in
+     * your job. To include timed metadata, you must enable it here, enable it in each
+     * output container, and specify tags and timecodes in ID3 insertion (Id3Insertion)
+     * objects.
+     */
     inline JobSettings& WithTimedMetadataInsertion(const TimedMetadataInsertion& value) { SetTimedMetadataInsertion(value); return *this;}
 
-    
+    /**
+     * Enable Timed metadata insertion (TimedMetadataInsertion) to include ID3 tags in
+     * your job. To include timed metadata, you must enable it here, enable it in each
+     * output container, and specify tags and timecodes in ID3 insertion (Id3Insertion)
+     * objects.
+     */
     inline JobSettings& WithTimedMetadataInsertion(TimedMetadataInsertion&& value) { SetTimedMetadataInsertion(std::move(value)); return *this;}
 
   private:

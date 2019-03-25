@@ -315,60 +315,150 @@ namespace Model
     inline InputTemplate& AddCaptionSelectors(const char* key, const CaptionSelector& value) { m_captionSelectorsHasBeenSet = true; m_captionSelectors.emplace(key, value); return *this; }
 
 
-    
+    /**
+     * Enable Deblock (InputDeblockFilter) to produce smoother motion in the output.
+     * Default is disabled. Only manaully controllable for MPEG2 and uncompressed video
+     * inputs.
+     */
     inline const InputDeblockFilter& GetDeblockFilter() const{ return m_deblockFilter; }
 
-    
+    /**
+     * Enable Deblock (InputDeblockFilter) to produce smoother motion in the output.
+     * Default is disabled. Only manaully controllable for MPEG2 and uncompressed video
+     * inputs.
+     */
     inline bool DeblockFilterHasBeenSet() const { return m_deblockFilterHasBeenSet; }
 
-    
+    /**
+     * Enable Deblock (InputDeblockFilter) to produce smoother motion in the output.
+     * Default is disabled. Only manaully controllable for MPEG2 and uncompressed video
+     * inputs.
+     */
     inline void SetDeblockFilter(const InputDeblockFilter& value) { m_deblockFilterHasBeenSet = true; m_deblockFilter = value; }
 
-    
+    /**
+     * Enable Deblock (InputDeblockFilter) to produce smoother motion in the output.
+     * Default is disabled. Only manaully controllable for MPEG2 and uncompressed video
+     * inputs.
+     */
     inline void SetDeblockFilter(InputDeblockFilter&& value) { m_deblockFilterHasBeenSet = true; m_deblockFilter = std::move(value); }
 
-    
+    /**
+     * Enable Deblock (InputDeblockFilter) to produce smoother motion in the output.
+     * Default is disabled. Only manaully controllable for MPEG2 and uncompressed video
+     * inputs.
+     */
     inline InputTemplate& WithDeblockFilter(const InputDeblockFilter& value) { SetDeblockFilter(value); return *this;}
 
-    
+    /**
+     * Enable Deblock (InputDeblockFilter) to produce smoother motion in the output.
+     * Default is disabled. Only manaully controllable for MPEG2 and uncompressed video
+     * inputs.
+     */
     inline InputTemplate& WithDeblockFilter(InputDeblockFilter&& value) { SetDeblockFilter(std::move(value)); return *this;}
 
 
-    
+    /**
+     * Enable Denoise (InputDenoiseFilter) to filter noise from the input.  Default is
+     * disabled. Only applicable to MPEG2, H.264, H.265, and uncompressed video inputs.
+     */
     inline const InputDenoiseFilter& GetDenoiseFilter() const{ return m_denoiseFilter; }
 
-    
+    /**
+     * Enable Denoise (InputDenoiseFilter) to filter noise from the input.  Default is
+     * disabled. Only applicable to MPEG2, H.264, H.265, and uncompressed video inputs.
+     */
     inline bool DenoiseFilterHasBeenSet() const { return m_denoiseFilterHasBeenSet; }
 
-    
+    /**
+     * Enable Denoise (InputDenoiseFilter) to filter noise from the input.  Default is
+     * disabled. Only applicable to MPEG2, H.264, H.265, and uncompressed video inputs.
+     */
     inline void SetDenoiseFilter(const InputDenoiseFilter& value) { m_denoiseFilterHasBeenSet = true; m_denoiseFilter = value; }
 
-    
+    /**
+     * Enable Denoise (InputDenoiseFilter) to filter noise from the input.  Default is
+     * disabled. Only applicable to MPEG2, H.264, H.265, and uncompressed video inputs.
+     */
     inline void SetDenoiseFilter(InputDenoiseFilter&& value) { m_denoiseFilterHasBeenSet = true; m_denoiseFilter = std::move(value); }
 
-    
+    /**
+     * Enable Denoise (InputDenoiseFilter) to filter noise from the input.  Default is
+     * disabled. Only applicable to MPEG2, H.264, H.265, and uncompressed video inputs.
+     */
     inline InputTemplate& WithDenoiseFilter(const InputDenoiseFilter& value) { SetDenoiseFilter(value); return *this;}
 
-    
+    /**
+     * Enable Denoise (InputDenoiseFilter) to filter noise from the input.  Default is
+     * disabled. Only applicable to MPEG2, H.264, H.265, and uncompressed video inputs.
+     */
     inline InputTemplate& WithDenoiseFilter(InputDenoiseFilter&& value) { SetDenoiseFilter(std::move(value)); return *this;}
 
 
-    
+    /**
+     * Use Filter enable (InputFilterEnable) to specify how the transcoding service
+     * applies the denoise and deblock filters. You must also enable the filters
+     * separately, with Denoise (InputDenoiseFilter) and Deblock (InputDeblockFilter).
+     * * Auto - The transcoding service determines whether to apply filtering,
+     * depending on input type and quality. * Disable - The input is not filtered. This
+     * is true even if you use the API to enable them in (InputDeblockFilter) and
+     * (InputDeblockFilter). * Force - The in put is filtered regardless of input type.
+     */
     inline const InputFilterEnable& GetFilterEnable() const{ return m_filterEnable; }
 
-    
+    /**
+     * Use Filter enable (InputFilterEnable) to specify how the transcoding service
+     * applies the denoise and deblock filters. You must also enable the filters
+     * separately, with Denoise (InputDenoiseFilter) and Deblock (InputDeblockFilter).
+     * * Auto - The transcoding service determines whether to apply filtering,
+     * depending on input type and quality. * Disable - The input is not filtered. This
+     * is true even if you use the API to enable them in (InputDeblockFilter) and
+     * (InputDeblockFilter). * Force - The in put is filtered regardless of input type.
+     */
     inline bool FilterEnableHasBeenSet() const { return m_filterEnableHasBeenSet; }
 
-    
+    /**
+     * Use Filter enable (InputFilterEnable) to specify how the transcoding service
+     * applies the denoise and deblock filters. You must also enable the filters
+     * separately, with Denoise (InputDenoiseFilter) and Deblock (InputDeblockFilter).
+     * * Auto - The transcoding service determines whether to apply filtering,
+     * depending on input type and quality. * Disable - The input is not filtered. This
+     * is true even if you use the API to enable them in (InputDeblockFilter) and
+     * (InputDeblockFilter). * Force - The in put is filtered regardless of input type.
+     */
     inline void SetFilterEnable(const InputFilterEnable& value) { m_filterEnableHasBeenSet = true; m_filterEnable = value; }
 
-    
+    /**
+     * Use Filter enable (InputFilterEnable) to specify how the transcoding service
+     * applies the denoise and deblock filters. You must also enable the filters
+     * separately, with Denoise (InputDenoiseFilter) and Deblock (InputDeblockFilter).
+     * * Auto - The transcoding service determines whether to apply filtering,
+     * depending on input type and quality. * Disable - The input is not filtered. This
+     * is true even if you use the API to enable them in (InputDeblockFilter) and
+     * (InputDeblockFilter). * Force - The in put is filtered regardless of input type.
+     */
     inline void SetFilterEnable(InputFilterEnable&& value) { m_filterEnableHasBeenSet = true; m_filterEnable = std::move(value); }
 
-    
+    /**
+     * Use Filter enable (InputFilterEnable) to specify how the transcoding service
+     * applies the denoise and deblock filters. You must also enable the filters
+     * separately, with Denoise (InputDenoiseFilter) and Deblock (InputDeblockFilter).
+     * * Auto - The transcoding service determines whether to apply filtering,
+     * depending on input type and quality. * Disable - The input is not filtered. This
+     * is true even if you use the API to enable them in (InputDeblockFilter) and
+     * (InputDeblockFilter). * Force - The in put is filtered regardless of input type.
+     */
     inline InputTemplate& WithFilterEnable(const InputFilterEnable& value) { SetFilterEnable(value); return *this;}
 
-    
+    /**
+     * Use Filter enable (InputFilterEnable) to specify how the transcoding service
+     * applies the denoise and deblock filters. You must also enable the filters
+     * separately, with Denoise (InputDenoiseFilter) and Deblock (InputDeblockFilter).
+     * * Auto - The transcoding service determines whether to apply filtering,
+     * depending on input type and quality. * Disable - The input is not filtered. This
+     * is true even if you use the API to enable them in (InputDeblockFilter) and
+     * (InputDeblockFilter). * Force - The in put is filtered regardless of input type.
+     */
     inline InputTemplate& WithFilterEnable(InputFilterEnable&& value) { SetFilterEnable(std::move(value)); return *this;}
 
 
@@ -554,60 +644,144 @@ namespace Model
     inline InputTemplate& WithProgramNumber(int value) { SetProgramNumber(value); return *this;}
 
 
-    
+    /**
+     * Set PSI control (InputPsiControl) for transport stream inputs to specify which
+     * data the demux process to scans. * Ignore PSI - Scan all PIDs for audio and
+     * video. * Use PSI - Scan only PSI data.
+     */
     inline const InputPsiControl& GetPsiControl() const{ return m_psiControl; }
 
-    
+    /**
+     * Set PSI control (InputPsiControl) for transport stream inputs to specify which
+     * data the demux process to scans. * Ignore PSI - Scan all PIDs for audio and
+     * video. * Use PSI - Scan only PSI data.
+     */
     inline bool PsiControlHasBeenSet() const { return m_psiControlHasBeenSet; }
 
-    
+    /**
+     * Set PSI control (InputPsiControl) for transport stream inputs to specify which
+     * data the demux process to scans. * Ignore PSI - Scan all PIDs for audio and
+     * video. * Use PSI - Scan only PSI data.
+     */
     inline void SetPsiControl(const InputPsiControl& value) { m_psiControlHasBeenSet = true; m_psiControl = value; }
 
-    
+    /**
+     * Set PSI control (InputPsiControl) for transport stream inputs to specify which
+     * data the demux process to scans. * Ignore PSI - Scan all PIDs for audio and
+     * video. * Use PSI - Scan only PSI data.
+     */
     inline void SetPsiControl(InputPsiControl&& value) { m_psiControlHasBeenSet = true; m_psiControl = std::move(value); }
 
-    
+    /**
+     * Set PSI control (InputPsiControl) for transport stream inputs to specify which
+     * data the demux process to scans. * Ignore PSI - Scan all PIDs for audio and
+     * video. * Use PSI - Scan only PSI data.
+     */
     inline InputTemplate& WithPsiControl(const InputPsiControl& value) { SetPsiControl(value); return *this;}
 
-    
+    /**
+     * Set PSI control (InputPsiControl) for transport stream inputs to specify which
+     * data the demux process to scans. * Ignore PSI - Scan all PIDs for audio and
+     * video. * Use PSI - Scan only PSI data.
+     */
     inline InputTemplate& WithPsiControl(InputPsiControl&& value) { SetPsiControl(std::move(value)); return *this;}
 
 
-    
+    /**
+     * Timecode source under input settings (InputTimecodeSource) only affects the
+     * behavior of features that apply to a single input at a time, such as input
+     * clipping and synchronizing some captions formats. Use this setting to specify
+     * whether the service counts frames by timecodes embedded in the video (EMBEDDED)
+     * or by starting the first frame at zero (ZEROBASED). In both cases, the timecode
+     * format is HH:MM:SS:FF or HH:MM:SS;FF, where FF is the frame number. Only set
+     * this to EMBEDDED if your source video has embedded timecodes.
+     */
     inline const InputTimecodeSource& GetTimecodeSource() const{ return m_timecodeSource; }
 
-    
+    /**
+     * Timecode source under input settings (InputTimecodeSource) only affects the
+     * behavior of features that apply to a single input at a time, such as input
+     * clipping and synchronizing some captions formats. Use this setting to specify
+     * whether the service counts frames by timecodes embedded in the video (EMBEDDED)
+     * or by starting the first frame at zero (ZEROBASED). In both cases, the timecode
+     * format is HH:MM:SS:FF or HH:MM:SS;FF, where FF is the frame number. Only set
+     * this to EMBEDDED if your source video has embedded timecodes.
+     */
     inline bool TimecodeSourceHasBeenSet() const { return m_timecodeSourceHasBeenSet; }
 
-    
+    /**
+     * Timecode source under input settings (InputTimecodeSource) only affects the
+     * behavior of features that apply to a single input at a time, such as input
+     * clipping and synchronizing some captions formats. Use this setting to specify
+     * whether the service counts frames by timecodes embedded in the video (EMBEDDED)
+     * or by starting the first frame at zero (ZEROBASED). In both cases, the timecode
+     * format is HH:MM:SS:FF or HH:MM:SS;FF, where FF is the frame number. Only set
+     * this to EMBEDDED if your source video has embedded timecodes.
+     */
     inline void SetTimecodeSource(const InputTimecodeSource& value) { m_timecodeSourceHasBeenSet = true; m_timecodeSource = value; }
 
-    
+    /**
+     * Timecode source under input settings (InputTimecodeSource) only affects the
+     * behavior of features that apply to a single input at a time, such as input
+     * clipping and synchronizing some captions formats. Use this setting to specify
+     * whether the service counts frames by timecodes embedded in the video (EMBEDDED)
+     * or by starting the first frame at zero (ZEROBASED). In both cases, the timecode
+     * format is HH:MM:SS:FF or HH:MM:SS;FF, where FF is the frame number. Only set
+     * this to EMBEDDED if your source video has embedded timecodes.
+     */
     inline void SetTimecodeSource(InputTimecodeSource&& value) { m_timecodeSourceHasBeenSet = true; m_timecodeSource = std::move(value); }
 
-    
+    /**
+     * Timecode source under input settings (InputTimecodeSource) only affects the
+     * behavior of features that apply to a single input at a time, such as input
+     * clipping and synchronizing some captions formats. Use this setting to specify
+     * whether the service counts frames by timecodes embedded in the video (EMBEDDED)
+     * or by starting the first frame at zero (ZEROBASED). In both cases, the timecode
+     * format is HH:MM:SS:FF or HH:MM:SS;FF, where FF is the frame number. Only set
+     * this to EMBEDDED if your source video has embedded timecodes.
+     */
     inline InputTemplate& WithTimecodeSource(const InputTimecodeSource& value) { SetTimecodeSource(value); return *this;}
 
-    
+    /**
+     * Timecode source under input settings (InputTimecodeSource) only affects the
+     * behavior of features that apply to a single input at a time, such as input
+     * clipping and synchronizing some captions formats. Use this setting to specify
+     * whether the service counts frames by timecodes embedded in the video (EMBEDDED)
+     * or by starting the first frame at zero (ZEROBASED). In both cases, the timecode
+     * format is HH:MM:SS:FF or HH:MM:SS;FF, where FF is the frame number. Only set
+     * this to EMBEDDED if your source video has embedded timecodes.
+     */
     inline InputTemplate& WithTimecodeSource(InputTimecodeSource&& value) { SetTimecodeSource(std::move(value)); return *this;}
 
 
-    
+    /**
+     * Selector for video.
+     */
     inline const VideoSelector& GetVideoSelector() const{ return m_videoSelector; }
 
-    
+    /**
+     * Selector for video.
+     */
     inline bool VideoSelectorHasBeenSet() const { return m_videoSelectorHasBeenSet; }
 
-    
+    /**
+     * Selector for video.
+     */
     inline void SetVideoSelector(const VideoSelector& value) { m_videoSelectorHasBeenSet = true; m_videoSelector = value; }
 
-    
+    /**
+     * Selector for video.
+     */
     inline void SetVideoSelector(VideoSelector&& value) { m_videoSelectorHasBeenSet = true; m_videoSelector = std::move(value); }
 
-    
+    /**
+     * Selector for video.
+     */
     inline InputTemplate& WithVideoSelector(const VideoSelector& value) { SetVideoSelector(value); return *this;}
 
-    
+    /**
+     * Selector for video.
+     */
     inline InputTemplate& WithVideoSelector(VideoSelector&& value) { SetVideoSelector(std::move(value)); return *this;}
 
   private:

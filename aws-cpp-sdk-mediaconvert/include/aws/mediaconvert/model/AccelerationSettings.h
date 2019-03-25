@@ -34,7 +34,8 @@ namespace Model
 {
 
   /**
-   * Acceleration settings for job execution.<p><h3>See Also:</h3>   <a
+   * Accelerated transcoding is currently in private preview. Contact AWS for more
+   * information.<p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/AccelerationSettings">AWS
    * API Reference</a></p>
    */

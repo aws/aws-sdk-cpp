@@ -38,7 +38,10 @@
 #include <aws/iot1click-devices/model/InvokeDeviceMethodRequest.h>
 #include <aws/iot1click-devices/model/ListDeviceEventsRequest.h>
 #include <aws/iot1click-devices/model/ListDevicesRequest.h>
+#include <aws/iot1click-devices/model/ListTagsForResourceRequest.h>
+#include <aws/iot1click-devices/model/TagResourceRequest.h>
 #include <aws/iot1click-devices/model/UnclaimDeviceRequest.h>
+#include <aws/iot1click-devices/model/UntagResourceRequest.h>
 #include <aws/iot1click-devices/model/UpdateDeviceStateRequest.h>
 
 using namespace Aws;
@@ -449,6 +452,88 @@ void IoT1ClickDevicesServiceClient::ListDevicesAsyncHelper(const ListDevicesRequ
   handler(this, request, ListDevices(request), context);
 }
 
+ListTagsForResourceOutcome IoT1ClickDevicesServiceClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
+{
+  if (!request.ResourceArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListTagsForResource", "Required field: ResourceArn, is not set");
+    return ListTagsForResourceOutcome(Aws::Client::AWSError<IoT1ClickDevicesServiceErrors>(IoT1ClickDevicesServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceArn]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/tags/";
+  ss << request.GetResourceArn();
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return ListTagsForResourceOutcome(ListTagsForResourceResult(outcome.GetResult()));
+  }
+  else
+  {
+    return ListTagsForResourceOutcome(outcome.GetError());
+  }
+}
+
+ListTagsForResourceOutcomeCallable IoT1ClickDevicesServiceClient::ListTagsForResourceCallable(const ListTagsForResourceRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListTagsForResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListTagsForResource(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void IoT1ClickDevicesServiceClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListTagsForResourceAsyncHelper( request, handler, context ); } );
+}
+
+void IoT1ClickDevicesServiceClient::ListTagsForResourceAsyncHelper(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListTagsForResource(request), context);
+}
+
+TagResourceOutcome IoT1ClickDevicesServiceClient::TagResource(const TagResourceRequest& request) const
+{
+  if (!request.ResourceArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("TagResource", "Required field: ResourceArn, is not set");
+    return TagResourceOutcome(Aws::Client::AWSError<IoT1ClickDevicesServiceErrors>(IoT1ClickDevicesServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceArn]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/tags/";
+  ss << request.GetResourceArn();
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return TagResourceOutcome(NoResult());
+  }
+  else
+  {
+    return TagResourceOutcome(outcome.GetError());
+  }
+}
+
+TagResourceOutcomeCallable IoT1ClickDevicesServiceClient::TagResourceCallable(const TagResourceRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< TagResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->TagResource(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void IoT1ClickDevicesServiceClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->TagResourceAsyncHelper( request, handler, context ); } );
+}
+
+void IoT1ClickDevicesServiceClient::TagResourceAsyncHelper(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, TagResource(request), context);
+}
+
 UnclaimDeviceOutcome IoT1ClickDevicesServiceClient::UnclaimDevice(const UnclaimDeviceRequest& request) const
 {
   if (!request.DeviceIdHasBeenSet())
@@ -489,6 +574,52 @@ void IoT1ClickDevicesServiceClient::UnclaimDeviceAsync(const UnclaimDeviceReques
 void IoT1ClickDevicesServiceClient::UnclaimDeviceAsyncHelper(const UnclaimDeviceRequest& request, const UnclaimDeviceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, UnclaimDevice(request), context);
+}
+
+UntagResourceOutcome IoT1ClickDevicesServiceClient::UntagResource(const UntagResourceRequest& request) const
+{
+  if (!request.ResourceArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UntagResource", "Required field: ResourceArn, is not set");
+    return UntagResourceOutcome(Aws::Client::AWSError<IoT1ClickDevicesServiceErrors>(IoT1ClickDevicesServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceArn]", false));
+  }
+  if (!request.TagKeysHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UntagResource", "Required field: TagKeys, is not set");
+    return UntagResourceOutcome(Aws::Client::AWSError<IoT1ClickDevicesServiceErrors>(IoT1ClickDevicesServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [TagKeys]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/tags/";
+  ss << request.GetResourceArn();
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return UntagResourceOutcome(NoResult());
+  }
+  else
+  {
+    return UntagResourceOutcome(outcome.GetError());
+  }
+}
+
+UntagResourceOutcomeCallable IoT1ClickDevicesServiceClient::UntagResourceCallable(const UntagResourceRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UntagResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UntagResource(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void IoT1ClickDevicesServiceClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UntagResourceAsyncHelper( request, handler, context ); } );
+}
+
+void IoT1ClickDevicesServiceClient::UntagResourceAsyncHelper(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UntagResource(request), context);
 }
 
 UpdateDeviceStateOutcome IoT1ClickDevicesServiceClient::UpdateDeviceState(const UpdateDeviceStateRequest& request) const

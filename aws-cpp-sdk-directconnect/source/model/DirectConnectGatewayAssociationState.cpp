@@ -34,6 +34,7 @@ namespace Aws
         static const int associated_HASH = HashingUtils::HashString("associated");
         static const int disassociating_HASH = HashingUtils::HashString("disassociating");
         static const int disassociated_HASH = HashingUtils::HashString("disassociated");
+        static const int updating_HASH = HashingUtils::HashString("updating");
 
 
         DirectConnectGatewayAssociationState GetDirectConnectGatewayAssociationStateForName(const Aws::String& name)
@@ -54,6 +55,10 @@ namespace Aws
           else if (hashCode == disassociated_HASH)
           {
             return DirectConnectGatewayAssociationState::disassociated;
+          }
+          else if (hashCode == updating_HASH)
+          {
+            return DirectConnectGatewayAssociationState::updating;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -77,6 +82,8 @@ namespace Aws
             return "disassociating";
           case DirectConnectGatewayAssociationState::disassociated:
             return "disassociated";
+          case DirectConnectGatewayAssociationState::updating:
+            return "updating";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

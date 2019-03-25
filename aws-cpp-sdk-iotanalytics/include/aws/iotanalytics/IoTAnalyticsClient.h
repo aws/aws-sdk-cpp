@@ -466,8 +466,10 @@ namespace Model
 
         /**
          * <p>Creates a pipeline. A pipeline consumes messages from one or more channels
-         * and allows you to process the messages before storing them in a data
-         * store.</p><p><h3>See Also:</h3>   <a
+         * and allows you to process the messages before storing them in a data store. You
+         * must specify both a <code>channel</code> and a <code>datastore</code> activity
+         * and, optionally, as many as 23 additional activities in the
+         * <code>pipelineActivities</code> array.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotanalytics-2017-11-27/CreatePipeline">AWS
          * API Reference</a></p>
          */
@@ -475,8 +477,10 @@ namespace Model
 
         /**
          * <p>Creates a pipeline. A pipeline consumes messages from one or more channels
-         * and allows you to process the messages before storing them in a data
-         * store.</p><p><h3>See Also:</h3>   <a
+         * and allows you to process the messages before storing them in a data store. You
+         * must specify both a <code>channel</code> and a <code>datastore</code> activity
+         * and, optionally, as many as 23 additional activities in the
+         * <code>pipelineActivities</code> array.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotanalytics-2017-11-27/CreatePipeline">AWS
          * API Reference</a></p>
          *
@@ -486,8 +490,10 @@ namespace Model
 
         /**
          * <p>Creates a pipeline. A pipeline consumes messages from one or more channels
-         * and allows you to process the messages before storing them in a data
-         * store.</p><p><h3>See Also:</h3>   <a
+         * and allows you to process the messages before storing them in a data store. You
+         * must specify both a <code>channel</code> and a <code>datastore</code> activity
+         * and, optionally, as many as 23 additional activities in the
+         * <code>pipelineActivities</code> array.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotanalytics-2017-11-27/CreatePipeline">AWS
          * API Reference</a></p>
          *
@@ -1194,14 +1200,20 @@ namespace Model
         virtual void UpdateDatastoreAsync(const Model::UpdateDatastoreRequest& request, const UpdateDatastoreResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Updates the settings of a pipeline.</p><p><h3>See Also:</h3>   <a
+         * <p>Updates the settings of a pipeline. You must specify both a
+         * <code>channel</code> and a <code>datastore</code> activity and, optionally, as
+         * many as 23 additional activities in the <code>pipelineActivities</code>
+         * array.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotanalytics-2017-11-27/UpdatePipeline">AWS
          * API Reference</a></p>
          */
         virtual Model::UpdatePipelineOutcome UpdatePipeline(const Model::UpdatePipelineRequest& request) const;
 
         /**
-         * <p>Updates the settings of a pipeline.</p><p><h3>See Also:</h3>   <a
+         * <p>Updates the settings of a pipeline. You must specify both a
+         * <code>channel</code> and a <code>datastore</code> activity and, optionally, as
+         * many as 23 additional activities in the <code>pipelineActivities</code>
+         * array.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotanalytics-2017-11-27/UpdatePipeline">AWS
          * API Reference</a></p>
          *
@@ -1210,7 +1222,10 @@ namespace Model
         virtual Model::UpdatePipelineOutcomeCallable UpdatePipelineCallable(const Model::UpdatePipelineRequest& request) const;
 
         /**
-         * <p>Updates the settings of a pipeline.</p><p><h3>See Also:</h3>   <a
+         * <p>Updates the settings of a pipeline. You must specify both a
+         * <code>channel</code> and a <code>datastore</code> activity and, optionally, as
+         * many as 23 additional activities in the <code>pipelineActivities</code>
+         * array.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotanalytics-2017-11-27/UpdatePipeline">AWS
          * API Reference</a></p>
          *

@@ -74,22 +74,40 @@ namespace Model
     inline TimecodeBurnin& WithFontSize(int value) { SetFontSize(value); return *this;}
 
 
-    
+    /**
+     * Use Position (Position) under under Timecode burn-in (TimecodeBurnIn) to specify
+     * the location the burned-in timecode on output video.
+     */
     inline const TimecodeBurninPosition& GetPosition() const{ return m_position; }
 
-    
+    /**
+     * Use Position (Position) under under Timecode burn-in (TimecodeBurnIn) to specify
+     * the location the burned-in timecode on output video.
+     */
     inline bool PositionHasBeenSet() const { return m_positionHasBeenSet; }
 
-    
+    /**
+     * Use Position (Position) under under Timecode burn-in (TimecodeBurnIn) to specify
+     * the location the burned-in timecode on output video.
+     */
     inline void SetPosition(const TimecodeBurninPosition& value) { m_positionHasBeenSet = true; m_position = value; }
 
-    
+    /**
+     * Use Position (Position) under under Timecode burn-in (TimecodeBurnIn) to specify
+     * the location the burned-in timecode on output video.
+     */
     inline void SetPosition(TimecodeBurninPosition&& value) { m_positionHasBeenSet = true; m_position = std::move(value); }
 
-    
+    /**
+     * Use Position (Position) under under Timecode burn-in (TimecodeBurnIn) to specify
+     * the location the burned-in timecode on output video.
+     */
     inline TimecodeBurnin& WithPosition(const TimecodeBurninPosition& value) { SetPosition(value); return *this;}
 
-    
+    /**
+     * Use Position (Position) under under Timecode burn-in (TimecodeBurnIn) to specify
+     * the location the burned-in timecode on output video.
+     */
     inline TimecodeBurnin& WithPosition(TimecodeBurninPosition&& value) { SetPosition(std::move(value)); return *this;}
 
 
