@@ -45,98 +45,98 @@ namespace Model
 
 
     /**
-     * <p>The identifier of the organization under which the entity (user or group)
+     * <p>The identifier of the organization under which the user, group, or resource
      * exists.</p>
      */
     inline const Aws::String& GetOrganizationId() const{ return m_organizationId; }
 
     /**
-     * <p>The identifier of the organization under which the entity (user or group)
+     * <p>The identifier of the organization under which the user, group, or resource
      * exists.</p>
      */
     inline bool OrganizationIdHasBeenSet() const { return m_organizationIdHasBeenSet; }
 
     /**
-     * <p>The identifier of the organization under which the entity (user or group)
+     * <p>The identifier of the organization under which the user, group, or resource
      * exists.</p>
      */
     inline void SetOrganizationId(const Aws::String& value) { m_organizationIdHasBeenSet = true; m_organizationId = value; }
 
     /**
-     * <p>The identifier of the organization under which the entity (user or group)
+     * <p>The identifier of the organization under which the user, group, or resource
      * exists.</p>
      */
     inline void SetOrganizationId(Aws::String&& value) { m_organizationIdHasBeenSet = true; m_organizationId = std::move(value); }
 
     /**
-     * <p>The identifier of the organization under which the entity (user or group)
+     * <p>The identifier of the organization under which the user, group, or resource
      * exists.</p>
      */
     inline void SetOrganizationId(const char* value) { m_organizationIdHasBeenSet = true; m_organizationId.assign(value); }
 
     /**
-     * <p>The identifier of the organization under which the entity (user or group)
+     * <p>The identifier of the organization under which the user, group, or resource
      * exists.</p>
      */
     inline ListMailboxPermissionsRequest& WithOrganizationId(const Aws::String& value) { SetOrganizationId(value); return *this;}
 
     /**
-     * <p>The identifier of the organization under which the entity (user or group)
+     * <p>The identifier of the organization under which the user, group, or resource
      * exists.</p>
      */
     inline ListMailboxPermissionsRequest& WithOrganizationId(Aws::String&& value) { SetOrganizationId(std::move(value)); return *this;}
 
     /**
-     * <p>The identifier of the organization under which the entity (user or group)
+     * <p>The identifier of the organization under which the user, group, or resource
      * exists.</p>
      */
     inline ListMailboxPermissionsRequest& WithOrganizationId(const char* value) { SetOrganizationId(value); return *this;}
 
 
     /**
-     * <p>The identifier of the entity (user or group) for which to list mailbox
+     * <p>The identifier of the user, group, or resource for which to list mailbox
      * permissions.</p>
      */
     inline const Aws::String& GetEntityId() const{ return m_entityId; }
 
     /**
-     * <p>The identifier of the entity (user or group) for which to list mailbox
+     * <p>The identifier of the user, group, or resource for which to list mailbox
      * permissions.</p>
      */
     inline bool EntityIdHasBeenSet() const { return m_entityIdHasBeenSet; }
 
     /**
-     * <p>The identifier of the entity (user or group) for which to list mailbox
+     * <p>The identifier of the user, group, or resource for which to list mailbox
      * permissions.</p>
      */
     inline void SetEntityId(const Aws::String& value) { m_entityIdHasBeenSet = true; m_entityId = value; }
 
     /**
-     * <p>The identifier of the entity (user or group) for which to list mailbox
+     * <p>The identifier of the user, group, or resource for which to list mailbox
      * permissions.</p>
      */
     inline void SetEntityId(Aws::String&& value) { m_entityIdHasBeenSet = true; m_entityId = std::move(value); }
 
     /**
-     * <p>The identifier of the entity (user or group) for which to list mailbox
+     * <p>The identifier of the user, group, or resource for which to list mailbox
      * permissions.</p>
      */
     inline void SetEntityId(const char* value) { m_entityIdHasBeenSet = true; m_entityId.assign(value); }
 
     /**
-     * <p>The identifier of the entity (user or group) for which to list mailbox
+     * <p>The identifier of the user, group, or resource for which to list mailbox
      * permissions.</p>
      */
     inline ListMailboxPermissionsRequest& WithEntityId(const Aws::String& value) { SetEntityId(value); return *this;}
 
     /**
-     * <p>The identifier of the entity (user or group) for which to list mailbox
+     * <p>The identifier of the user, group, or resource for which to list mailbox
      * permissions.</p>
      */
     inline ListMailboxPermissionsRequest& WithEntityId(Aws::String&& value) { SetEntityId(std::move(value)); return *this;}
 
     /**
-     * <p>The identifier of the entity (user or group) for which to list mailbox
+     * <p>The identifier of the user, group, or resource for which to list mailbox
      * permissions.</p>
      */
     inline ListMailboxPermissionsRequest& WithEntityId(const char* value) { SetEntityId(value); return *this;}

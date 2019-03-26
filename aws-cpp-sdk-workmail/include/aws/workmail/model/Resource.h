@@ -37,8 +37,7 @@ namespace Model
 {
 
   /**
-   * <p>The overview for a resource containing relevant data regarding
-   * it.</p><p><h3>See Also:</h3>   <a
+   * <p>The representation of a resource.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/Resource">AWS
    * API Reference</a></p>
    */

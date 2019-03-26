@@ -25,7 +25,8 @@ using namespace Aws::Utils;
 UpdateClassifierRequest::UpdateClassifierRequest() : 
     m_grokClassifierHasBeenSet(false),
     m_xMLClassifierHasBeenSet(false),
-    m_jsonClassifierHasBeenSet(false)
+    m_jsonClassifierHasBeenSet(false),
+    m_csvClassifierHasBeenSet(false)
 {
 }
 
@@ -48,6 +49,12 @@ Aws::String UpdateClassifierRequest::SerializePayload() const
   if(m_jsonClassifierHasBeenSet)
   {
    payload.WithObject("JsonClassifier", m_jsonClassifier.Jsonize());
+
+  }
+
+  if(m_csvClassifierHasBeenSet)
+  {
+   payload.WithObject("CsvClassifier", m_csvClassifier.Jsonize());
 
   }
 

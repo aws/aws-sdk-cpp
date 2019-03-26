@@ -18,6 +18,7 @@
 #include <aws/glue/model/GrokClassifier.h>
 #include <aws/glue/model/XMLClassifier.h>
 #include <aws/glue/model/JsonClassifier.h>
+#include <aws/glue/model/CsvClassifier.h>
 #include <utility>
 
 namespace Aws
@@ -42,9 +43,10 @@ namespace Model
    * format.</p> <p>You can use the standard classifiers that AWS Glue supplies, or
    * you can write your own classifiers to best categorize your data sources and
    * specify the appropriate schemas to use for them. A classifier can be a
-   * <code>grok</code> classifier, an <code>XML</code> classifier, or a
-   * <code>JSON</code> classifier, as specified in one of the fields in the
-   * <code>Classifier</code> object.</p><p><h3>See Also:</h3>   <a
+   * <code>grok</code> classifier, an <code>XML</code> classifier, a
+   * <code>JSON</code> classifier, or a custom <code>CSV</code> classifier as
+   * specified in one of the fields in the <code>Classifier</code>
+   * object.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/Classifier">AWS API
    * Reference</a></p>
    */
@@ -149,6 +151,37 @@ namespace Model
      */
     inline Classifier& WithJsonClassifier(JsonClassifier&& value) { SetJsonClassifier(std::move(value)); return *this;}
 
+
+    /**
+     * <p>A <code>CSVClassifier</code> object.</p>
+     */
+    inline const CsvClassifier& GetCsvClassifier() const{ return m_csvClassifier; }
+
+    /**
+     * <p>A <code>CSVClassifier</code> object.</p>
+     */
+    inline bool CsvClassifierHasBeenSet() const { return m_csvClassifierHasBeenSet; }
+
+    /**
+     * <p>A <code>CSVClassifier</code> object.</p>
+     */
+    inline void SetCsvClassifier(const CsvClassifier& value) { m_csvClassifierHasBeenSet = true; m_csvClassifier = value; }
+
+    /**
+     * <p>A <code>CSVClassifier</code> object.</p>
+     */
+    inline void SetCsvClassifier(CsvClassifier&& value) { m_csvClassifierHasBeenSet = true; m_csvClassifier = std::move(value); }
+
+    /**
+     * <p>A <code>CSVClassifier</code> object.</p>
+     */
+    inline Classifier& WithCsvClassifier(const CsvClassifier& value) { SetCsvClassifier(value); return *this;}
+
+    /**
+     * <p>A <code>CSVClassifier</code> object.</p>
+     */
+    inline Classifier& WithCsvClassifier(CsvClassifier&& value) { SetCsvClassifier(std::move(value)); return *this;}
+
   private:
 
     GrokClassifier m_grokClassifier;
@@ -159,6 +192,9 @@ namespace Model
 
     JsonClassifier m_jsonClassifier;
     bool m_jsonClassifierHasBeenSet;
+
+    CsvClassifier m_csvClassifier;
+    bool m_csvClassifierHasBeenSet;
   };
 
 } // namespace Model

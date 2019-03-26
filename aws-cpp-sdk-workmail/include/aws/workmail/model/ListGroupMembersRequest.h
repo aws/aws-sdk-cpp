@@ -86,42 +86,50 @@ namespace Model
 
 
     /**
-     * <p>The identifier for the group to which the members are associated.</p>
+     * <p>The identifier for the group to which the members (users or groups) are
+     * associated.</p>
      */
     inline const Aws::String& GetGroupId() const{ return m_groupId; }
 
     /**
-     * <p>The identifier for the group to which the members are associated.</p>
+     * <p>The identifier for the group to which the members (users or groups) are
+     * associated.</p>
      */
     inline bool GroupIdHasBeenSet() const { return m_groupIdHasBeenSet; }
 
     /**
-     * <p>The identifier for the group to which the members are associated.</p>
+     * <p>The identifier for the group to which the members (users or groups) are
+     * associated.</p>
      */
     inline void SetGroupId(const Aws::String& value) { m_groupIdHasBeenSet = true; m_groupId = value; }
 
     /**
-     * <p>The identifier for the group to which the members are associated.</p>
+     * <p>The identifier for the group to which the members (users or groups) are
+     * associated.</p>
      */
     inline void SetGroupId(Aws::String&& value) { m_groupIdHasBeenSet = true; m_groupId = std::move(value); }
 
     /**
-     * <p>The identifier for the group to which the members are associated.</p>
+     * <p>The identifier for the group to which the members (users or groups) are
+     * associated.</p>
      */
     inline void SetGroupId(const char* value) { m_groupIdHasBeenSet = true; m_groupId.assign(value); }
 
     /**
-     * <p>The identifier for the group to which the members are associated.</p>
+     * <p>The identifier for the group to which the members (users or groups) are
+     * associated.</p>
      */
     inline ListGroupMembersRequest& WithGroupId(const Aws::String& value) { SetGroupId(value); return *this;}
 
     /**
-     * <p>The identifier for the group to which the members are associated.</p>
+     * <p>The identifier for the group to which the members (users or groups) are
+     * associated.</p>
      */
     inline ListGroupMembersRequest& WithGroupId(Aws::String&& value) { SetGroupId(std::move(value)); return *this;}
 
     /**
-     * <p>The identifier for the group to which the members are associated.</p>
+     * <p>The identifier for the group to which the members (users or groups) are
+     * associated.</p>
      */
     inline ListGroupMembersRequest& WithGroupId(const char* value) { SetGroupId(value); return *this;}
 

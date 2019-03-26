@@ -95,73 +95,79 @@ namespace Model
 
 
     /**
-     * <p>The name of the created resource.</p>
+     * <p>The name of the new resource.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * <p>The name of the created resource.</p>
+     * <p>The name of the new resource.</p>
      */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
-     * <p>The name of the created resource.</p>
+     * <p>The name of the new resource.</p>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p>The name of the created resource.</p>
+     * <p>The name of the new resource.</p>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
-     * <p>The name of the created resource.</p>
+     * <p>The name of the new resource.</p>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
-     * <p>The name of the created resource.</p>
+     * <p>The name of the new resource.</p>
      */
     inline CreateResourceRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * <p>The name of the created resource.</p>
+     * <p>The name of the new resource.</p>
      */
     inline CreateResourceRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the created resource.</p>
+     * <p>The name of the new resource.</p>
      */
     inline CreateResourceRequest& WithName(const char* value) { SetName(value); return *this;}
 
 
     /**
-     * <p>The type of the created resource.</p>
+     * <p>The type of the new resource. The available types are <code>equipment</code>
+     * and <code>room</code>.</p>
      */
     inline const ResourceType& GetType() const{ return m_type; }
 
     /**
-     * <p>The type of the created resource.</p>
+     * <p>The type of the new resource. The available types are <code>equipment</code>
+     * and <code>room</code>.</p>
      */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
 
     /**
-     * <p>The type of the created resource.</p>
+     * <p>The type of the new resource. The available types are <code>equipment</code>
+     * and <code>room</code>.</p>
      */
     inline void SetType(const ResourceType& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
-     * <p>The type of the created resource.</p>
+     * <p>The type of the new resource. The available types are <code>equipment</code>
+     * and <code>room</code>.</p>
      */
     inline void SetType(ResourceType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
-     * <p>The type of the created resource.</p>
+     * <p>The type of the new resource. The available types are <code>equipment</code>
+     * and <code>room</code>.</p>
      */
     inline CreateResourceRequest& WithType(const ResourceType& value) { SetType(value); return *this;}
 
     /**
-     * <p>The type of the created resource.</p>
+     * <p>The type of the new resource. The available types are <code>equipment</code>
+     * and <code>room</code>.</p>
      */
     inline CreateResourceRequest& WithType(ResourceType&& value) { SetType(std::move(value)); return *this;}
 

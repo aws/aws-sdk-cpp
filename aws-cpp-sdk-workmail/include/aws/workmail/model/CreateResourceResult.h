@@ -43,37 +43,37 @@ namespace Model
 
 
     /**
-     * <p>The identifier of the created resource.</p>
+     * <p>The identifier of the new resource.</p>
      */
     inline const Aws::String& GetResourceId() const{ return m_resourceId; }
 
     /**
-     * <p>The identifier of the created resource.</p>
+     * <p>The identifier of the new resource.</p>
      */
     inline void SetResourceId(const Aws::String& value) { m_resourceId = value; }
 
     /**
-     * <p>The identifier of the created resource.</p>
+     * <p>The identifier of the new resource.</p>
      */
     inline void SetResourceId(Aws::String&& value) { m_resourceId = std::move(value); }
 
     /**
-     * <p>The identifier of the created resource.</p>
+     * <p>The identifier of the new resource.</p>
      */
     inline void SetResourceId(const char* value) { m_resourceId.assign(value); }
 
     /**
-     * <p>The identifier of the created resource.</p>
+     * <p>The identifier of the new resource.</p>
      */
     inline CreateResourceResult& WithResourceId(const Aws::String& value) { SetResourceId(value); return *this;}
 
     /**
-     * <p>The identifier of the created resource.</p>
+     * <p>The identifier of the new resource.</p>
      */
     inline CreateResourceResult& WithResourceId(Aws::String&& value) { SetResourceId(std::move(value)); return *this;}
 
     /**
-     * <p>The identifier of the created resource.</p>
+     * <p>The identifier of the new resource.</p>
      */
     inline CreateResourceResult& WithResourceId(const char* value) { SetResourceId(value); return *this;}
 

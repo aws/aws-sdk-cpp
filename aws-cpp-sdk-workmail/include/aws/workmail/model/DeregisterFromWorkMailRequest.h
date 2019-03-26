@@ -94,42 +94,42 @@ namespace Model
 
 
     /**
-     * <p>The identifier for the entity to be updated.</p>
+     * <p>The identifier for the member (user or group) to be updated.</p>
      */
     inline const Aws::String& GetEntityId() const{ return m_entityId; }
 
     /**
-     * <p>The identifier for the entity to be updated.</p>
+     * <p>The identifier for the member (user or group) to be updated.</p>
      */
     inline bool EntityIdHasBeenSet() const { return m_entityIdHasBeenSet; }
 
     /**
-     * <p>The identifier for the entity to be updated.</p>
+     * <p>The identifier for the member (user or group) to be updated.</p>
      */
     inline void SetEntityId(const Aws::String& value) { m_entityIdHasBeenSet = true; m_entityId = value; }
 
     /**
-     * <p>The identifier for the entity to be updated.</p>
+     * <p>The identifier for the member (user or group) to be updated.</p>
      */
     inline void SetEntityId(Aws::String&& value) { m_entityIdHasBeenSet = true; m_entityId = std::move(value); }
 
     /**
-     * <p>The identifier for the entity to be updated.</p>
+     * <p>The identifier for the member (user or group) to be updated.</p>
      */
     inline void SetEntityId(const char* value) { m_entityIdHasBeenSet = true; m_entityId.assign(value); }
 
     /**
-     * <p>The identifier for the entity to be updated.</p>
+     * <p>The identifier for the member (user or group) to be updated.</p>
      */
     inline DeregisterFromWorkMailRequest& WithEntityId(const Aws::String& value) { SetEntityId(value); return *this;}
 
     /**
-     * <p>The identifier for the entity to be updated.</p>
+     * <p>The identifier for the member (user or group) to be updated.</p>
      */
     inline DeregisterFromWorkMailRequest& WithEntityId(Aws::String&& value) { SetEntityId(std::move(value)); return *this;}
 
     /**
-     * <p>The identifier for the entity to be updated.</p>
+     * <p>The identifier for the member (user or group) to be updated.</p>
      */
     inline DeregisterFromWorkMailRequest& WithEntityId(const char* value) { SetEntityId(value); return *this;}
 

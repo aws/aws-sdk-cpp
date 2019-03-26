@@ -755,7 +755,8 @@ namespace Model
         /**
          * <p>Returns a list of resource metadata for a given list of crawler names. After
          * calling the <code>ListCrawlers</code> operation, you can call this operation to
-         * access the data to which you have been granted permissions to based on
+         * access the data to which you have been granted permissions. This operation
+         * supports all IAM permissions, including permission conditions that uses
          * tags.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/BatchGetCrawlers">AWS
          * API Reference</a></p>
@@ -765,7 +766,8 @@ namespace Model
         /**
          * <p>Returns a list of resource metadata for a given list of crawler names. After
          * calling the <code>ListCrawlers</code> operation, you can call this operation to
-         * access the data to which you have been granted permissions to based on
+         * access the data to which you have been granted permissions. This operation
+         * supports all IAM permissions, including permission conditions that uses
          * tags.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/BatchGetCrawlers">AWS
          * API Reference</a></p>
@@ -777,7 +779,8 @@ namespace Model
         /**
          * <p>Returns a list of resource metadata for a given list of crawler names. After
          * calling the <code>ListCrawlers</code> operation, you can call this operation to
-         * access the data to which you have been granted permissions to based on
+         * access the data to which you have been granted permissions. This operation
+         * supports all IAM permissions, including permission conditions that uses
          * tags.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/BatchGetCrawlers">AWS
          * API Reference</a></p>
@@ -952,9 +955,9 @@ namespace Model
 
         /**
          * <p>Creates a classifier in the user's account. This may be a
-         * <code>GrokClassifier</code>, an <code>XMLClassifier</code>, or abbrev
-         * <code>JsonClassifier</code>, depending on which field of the request is
-         * present.</p><p><h3>See Also:</h3>   <a
+         * <code>GrokClassifier</code>, an <code>XMLClassifier</code>, a
+         * <code>JsonClassifier</code>, or a <code>CsvClassifier</code>, depending on which
+         * field of the request is present.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/CreateClassifier">AWS
          * API Reference</a></p>
          */
@@ -962,9 +965,9 @@ namespace Model
 
         /**
          * <p>Creates a classifier in the user's account. This may be a
-         * <code>GrokClassifier</code>, an <code>XMLClassifier</code>, or abbrev
-         * <code>JsonClassifier</code>, depending on which field of the request is
-         * present.</p><p><h3>See Also:</h3>   <a
+         * <code>GrokClassifier</code>, an <code>XMLClassifier</code>, a
+         * <code>JsonClassifier</code>, or a <code>CsvClassifier</code>, depending on which
+         * field of the request is present.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/CreateClassifier">AWS
          * API Reference</a></p>
          *
@@ -974,9 +977,9 @@ namespace Model
 
         /**
          * <p>Creates a classifier in the user's account. This may be a
-         * <code>GrokClassifier</code>, an <code>XMLClassifier</code>, or abbrev
-         * <code>JsonClassifier</code>, depending on which field of the request is
-         * present.</p><p><h3>See Also:</h3>   <a
+         * <code>GrokClassifier</code>, an <code>XMLClassifier</code>, a
+         * <code>JsonClassifier</code>, or a <code>CsvClassifier</code>, depending on which
+         * field of the request is present.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/CreateClassifier">AWS
          * API Reference</a></p>
          *
@@ -3145,18 +3148,20 @@ namespace Model
         virtual void UntagResourceAsync(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Modifies an existing classifier (a <code>GrokClassifier</code>,
-         * <code>XMLClassifier</code>, or <code>JsonClassifier</code>, depending on which
-         * field is present).</p><p><h3>See Also:</h3>   <a
+         * <p>Modifies an existing classifier (a <code>GrokClassifier</code>, an
+         * <code>XMLClassifier</code>, a <code>JsonClassifier</code>, or a
+         * <code>CsvClassifier</code>, depending on which field is present).</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/UpdateClassifier">AWS
          * API Reference</a></p>
          */
         virtual Model::UpdateClassifierOutcome UpdateClassifier(const Model::UpdateClassifierRequest& request) const;
 
         /**
-         * <p>Modifies an existing classifier (a <code>GrokClassifier</code>,
-         * <code>XMLClassifier</code>, or <code>JsonClassifier</code>, depending on which
-         * field is present).</p><p><h3>See Also:</h3>   <a
+         * <p>Modifies an existing classifier (a <code>GrokClassifier</code>, an
+         * <code>XMLClassifier</code>, a <code>JsonClassifier</code>, or a
+         * <code>CsvClassifier</code>, depending on which field is present).</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/UpdateClassifier">AWS
          * API Reference</a></p>
          *
@@ -3165,9 +3170,10 @@ namespace Model
         virtual Model::UpdateClassifierOutcomeCallable UpdateClassifierCallable(const Model::UpdateClassifierRequest& request) const;
 
         /**
-         * <p>Modifies an existing classifier (a <code>GrokClassifier</code>,
-         * <code>XMLClassifier</code>, or <code>JsonClassifier</code>, depending on which
-         * field is present).</p><p><h3>See Also:</h3>   <a
+         * <p>Modifies an existing classifier (a <code>GrokClassifier</code>, an
+         * <code>XMLClassifier</code>, a <code>JsonClassifier</code>, or a
+         * <code>CsvClassifier</code>, depending on which field is present).</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/UpdateClassifier">AWS
          * API Reference</a></p>
          *

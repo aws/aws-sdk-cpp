@@ -86,42 +86,42 @@ namespace Model
 
 
     /**
-     * <p>The resource for which members are associated.</p>
+     * <p>The resource for which members (users or groups) are associated.</p>
      */
     inline const Aws::String& GetResourceId() const{ return m_resourceId; }
 
     /**
-     * <p>The resource for which members are associated.</p>
+     * <p>The resource for which members (users or groups) are associated.</p>
      */
     inline bool ResourceIdHasBeenSet() const { return m_resourceIdHasBeenSet; }
 
     /**
-     * <p>The resource for which members are associated.</p>
+     * <p>The resource for which members (users or groups) are associated.</p>
      */
     inline void SetResourceId(const Aws::String& value) { m_resourceIdHasBeenSet = true; m_resourceId = value; }
 
     /**
-     * <p>The resource for which members are associated.</p>
+     * <p>The resource for which members (users or groups) are associated.</p>
      */
     inline void SetResourceId(Aws::String&& value) { m_resourceIdHasBeenSet = true; m_resourceId = std::move(value); }
 
     /**
-     * <p>The resource for which members are associated.</p>
+     * <p>The resource for which members (users or groups) are associated.</p>
      */
     inline void SetResourceId(const char* value) { m_resourceIdHasBeenSet = true; m_resourceId.assign(value); }
 
     /**
-     * <p>The resource for which members are associated.</p>
+     * <p>The resource for which members (users or groups) are associated.</p>
      */
     inline AssociateDelegateToResourceRequest& WithResourceId(const Aws::String& value) { SetResourceId(value); return *this;}
 
     /**
-     * <p>The resource for which members are associated.</p>
+     * <p>The resource for which members (users or groups) are associated.</p>
      */
     inline AssociateDelegateToResourceRequest& WithResourceId(Aws::String&& value) { SetResourceId(std::move(value)); return *this;}
 
     /**
-     * <p>The resource for which members are associated.</p>
+     * <p>The resource for which members (users or groups) are associated.</p>
      */
     inline AssociateDelegateToResourceRequest& WithResourceId(const char* value) { SetResourceId(value); return *this;}
 

@@ -37,8 +37,7 @@ namespace Model
 {
 
   /**
-   * <p>The representation of a group member (user or group).</p><p><h3>See
-   * Also:</h3>   <a
+   * <p>The representation of a user or group.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/Member">AWS API
    * Reference</a></p>
    */
