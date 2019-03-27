@@ -16,6 +16,7 @@
 #pragma once
 #include <aws/appmesh/AppMesh_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/appmesh/model/Logging.h>
 #include <aws/appmesh/model/ServiceDiscovery.h>
 #include <aws/appmesh/model/Backend.h>
 #include <aws/appmesh/model/Listener.h>
@@ -150,32 +151,75 @@ namespace Model
 
 
     /**
-     * <p>The service discovery information for the virtual node.</p>
+     * <p>The inbound and outbound access logging information for the virtual node.</p>
+     */
+    inline const Logging& GetLogging() const{ return m_logging; }
+
+    /**
+     * <p>The inbound and outbound access logging information for the virtual node.</p>
+     */
+    inline bool LoggingHasBeenSet() const { return m_loggingHasBeenSet; }
+
+    /**
+     * <p>The inbound and outbound access logging information for the virtual node.</p>
+     */
+    inline void SetLogging(const Logging& value) { m_loggingHasBeenSet = true; m_logging = value; }
+
+    /**
+     * <p>The inbound and outbound access logging information for the virtual node.</p>
+     */
+    inline void SetLogging(Logging&& value) { m_loggingHasBeenSet = true; m_logging = std::move(value); }
+
+    /**
+     * <p>The inbound and outbound access logging information for the virtual node.</p>
+     */
+    inline VirtualNodeSpec& WithLogging(const Logging& value) { SetLogging(value); return *this;}
+
+    /**
+     * <p>The inbound and outbound access logging information for the virtual node.</p>
+     */
+    inline VirtualNodeSpec& WithLogging(Logging&& value) { SetLogging(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The service discovery information for the virtual node. If your virtual node
+     * does not
+         expect ingress traffic, you can omit this parameter.</p>
      */
     inline const ServiceDiscovery& GetServiceDiscovery() const{ return m_serviceDiscovery; }
 
     /**
-     * <p>The service discovery information for the virtual node.</p>
+     * <p>The service discovery information for the virtual node. If your virtual node
+     * does not
+         expect ingress traffic, you can omit this parameter.</p>
      */
     inline bool ServiceDiscoveryHasBeenSet() const { return m_serviceDiscoveryHasBeenSet; }
 
     /**
-     * <p>The service discovery information for the virtual node.</p>
+     * <p>The service discovery information for the virtual node. If your virtual node
+     * does not
+         expect ingress traffic, you can omit this parameter.</p>
      */
     inline void SetServiceDiscovery(const ServiceDiscovery& value) { m_serviceDiscoveryHasBeenSet = true; m_serviceDiscovery = value; }
 
     /**
-     * <p>The service discovery information for the virtual node.</p>
+     * <p>The service discovery information for the virtual node. If your virtual node
+     * does not
+         expect ingress traffic, you can omit this parameter.</p>
      */
     inline void SetServiceDiscovery(ServiceDiscovery&& value) { m_serviceDiscoveryHasBeenSet = true; m_serviceDiscovery = std::move(value); }
 
     /**
-     * <p>The service discovery information for the virtual node.</p>
+     * <p>The service discovery information for the virtual node. If your virtual node
+     * does not
+         expect ingress traffic, you can omit this parameter.</p>
      */
     inline VirtualNodeSpec& WithServiceDiscovery(const ServiceDiscovery& value) { SetServiceDiscovery(value); return *this;}
 
     /**
-     * <p>The service discovery information for the virtual node.</p>
+     * <p>The service discovery information for the virtual node. If your virtual node
+     * does not
+         expect ingress traffic, you can omit this parameter.</p>
      */
     inline VirtualNodeSpec& WithServiceDiscovery(ServiceDiscovery&& value) { SetServiceDiscovery(std::move(value)); return *this;}
 
@@ -186,6 +230,9 @@ namespace Model
 
     Aws::Vector<Listener> m_listeners;
     bool m_listenersHasBeenSet;
+
+    Logging m_logging;
+    bool m_loggingHasBeenSet;
 
     ServiceDiscovery m_serviceDiscovery;
     bool m_serviceDiscoveryHasBeenSet;

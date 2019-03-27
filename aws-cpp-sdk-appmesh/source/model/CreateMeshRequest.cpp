@@ -25,7 +25,9 @@ using namespace Aws::Utils;
 CreateMeshRequest::CreateMeshRequest() : 
     m_clientToken(Aws::Utils::UUID::RandomUUID()),
     m_clientTokenHasBeenSet(true),
-    m_meshNameHasBeenSet(false)
+    m_meshNameHasBeenSet(false),
+    m_specHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -42,6 +44,23 @@ Aws::String CreateMeshRequest::SerializePayload() const
   if(m_meshNameHasBeenSet)
   {
    payload.WithString("meshName", m_meshName);
+
+  }
+
+  if(m_specHasBeenSet)
+  {
+   payload.WithObject("spec", m_spec.Jsonize());
+
+  }
+
+  if(m_tagsHasBeenSet)
+  {
+   Array<JsonValue> tagsJsonList(m_tags.size());
+   for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
+   {
+     tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
+   }
+   payload.WithArray("tags", std::move(tagsJsonList));
 
   }
 

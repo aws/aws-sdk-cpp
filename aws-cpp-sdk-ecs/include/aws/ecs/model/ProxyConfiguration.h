@@ -37,8 +37,16 @@ namespace Model
 {
 
   /**
-   * <p>The configuration details for the App Mesh proxy.</p><p><h3>See Also:</h3>  
-   * <a
+   * <p>The configuration details for the App Mesh proxy.</p> <p>Your Amazon ECS
+   * container instances require at least version 1.26.0 of the container agent and
+   * at least version 1.26.0-1 of the <code>ecs-init</code> package to enable a proxy
+   * configuration. If your container instances are launched from the Amazon
+   * ECS-optimized AMI version <code>20190301</code> or later, then they contain the
+   * required versions of the container agent and <code>ecs-init</code>. For more
+   * information, see <a
+   * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html">Amazon
+   * ECS-optimized Linux AMI</a> in the <i>Amazon Elastic Container Service Developer
+   * Guide</i>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ProxyConfiguration">AWS
    * API Reference</a></p>
    */
@@ -134,18 +142,18 @@ namespace Model
      * <code>user</code> parameter in a container definition. This is used to ensure
      * the proxy ignores its own traffic. If <code>IgnoredGID</code> is specified, this
      * field can be empty.</p> </li> <li> <p> <code>AppPorts</code> - (Required) The
-     * list of ports that the application uses. Network traffic to these ports will be
+     * list of ports that the application uses. Network traffic to these ports is
      * forwarded to the <code>ProxyIngressPort</code> and
      * <code>ProxyEgressPort</code>.</p> </li> <li> <p> <code>ProxyIngressPort</code> -
      * (Required) Specifies the port that incoming traffic to the <code>AppPorts</code>
      * is directed to.</p> </li> <li> <p> <code>ProxyEgressPort</code> - (Required)
      * Specifies the port that outgoing traffic from the <code>AppPorts</code> is
      * directed to.</p> </li> <li> <p> <code>EgressIgnoredPorts</code> - (Required) The
-     * egress traffic going to these specified ports will be ignored and not redirected
-     * to the <code>ProxyEgressPort</code>. It can be empty list.</p> </li> <li> <p>
-     * <code>EgressIgnoredIPs</code> - (Required) The egress traffic going to these
-     * specified IP addresses will be ignored and not redirected to the
-     * <code>ProxyEgressPort</code>. It can be empty list.</p> </li> </ul>
+     * egress traffic going to the specified ports is ignored and not redirected to the
+     * <code>ProxyEgressPort</code>. It can be an empty list.</p> </li> <li> <p>
+     * <code>EgressIgnoredIPs</code> - (Required) The egress traffic going to the
+     * specified IP addresses is ignored and not redirected to the
+     * <code>ProxyEgressPort</code>. It can be an empty list.</p> </li> </ul>
      */
     inline const Aws::Vector<KeyValuePair>& GetProperties() const{ return m_properties; }
 
@@ -160,18 +168,18 @@ namespace Model
      * <code>user</code> parameter in a container definition. This is used to ensure
      * the proxy ignores its own traffic. If <code>IgnoredGID</code> is specified, this
      * field can be empty.</p> </li> <li> <p> <code>AppPorts</code> - (Required) The
-     * list of ports that the application uses. Network traffic to these ports will be
+     * list of ports that the application uses. Network traffic to these ports is
      * forwarded to the <code>ProxyIngressPort</code> and
      * <code>ProxyEgressPort</code>.</p> </li> <li> <p> <code>ProxyIngressPort</code> -
      * (Required) Specifies the port that incoming traffic to the <code>AppPorts</code>
      * is directed to.</p> </li> <li> <p> <code>ProxyEgressPort</code> - (Required)
      * Specifies the port that outgoing traffic from the <code>AppPorts</code> is
      * directed to.</p> </li> <li> <p> <code>EgressIgnoredPorts</code> - (Required) The
-     * egress traffic going to these specified ports will be ignored and not redirected
-     * to the <code>ProxyEgressPort</code>. It can be empty list.</p> </li> <li> <p>
-     * <code>EgressIgnoredIPs</code> - (Required) The egress traffic going to these
-     * specified IP addresses will be ignored and not redirected to the
-     * <code>ProxyEgressPort</code>. It can be empty list.</p> </li> </ul>
+     * egress traffic going to the specified ports is ignored and not redirected to the
+     * <code>ProxyEgressPort</code>. It can be an empty list.</p> </li> <li> <p>
+     * <code>EgressIgnoredIPs</code> - (Required) The egress traffic going to the
+     * specified IP addresses is ignored and not redirected to the
+     * <code>ProxyEgressPort</code>. It can be an empty list.</p> </li> </ul>
      */
     inline bool PropertiesHasBeenSet() const { return m_propertiesHasBeenSet; }
 
@@ -186,18 +194,18 @@ namespace Model
      * <code>user</code> parameter in a container definition. This is used to ensure
      * the proxy ignores its own traffic. If <code>IgnoredGID</code> is specified, this
      * field can be empty.</p> </li> <li> <p> <code>AppPorts</code> - (Required) The
-     * list of ports that the application uses. Network traffic to these ports will be
+     * list of ports that the application uses. Network traffic to these ports is
      * forwarded to the <code>ProxyIngressPort</code> and
      * <code>ProxyEgressPort</code>.</p> </li> <li> <p> <code>ProxyIngressPort</code> -
      * (Required) Specifies the port that incoming traffic to the <code>AppPorts</code>
      * is directed to.</p> </li> <li> <p> <code>ProxyEgressPort</code> - (Required)
      * Specifies the port that outgoing traffic from the <code>AppPorts</code> is
      * directed to.</p> </li> <li> <p> <code>EgressIgnoredPorts</code> - (Required) The
-     * egress traffic going to these specified ports will be ignored and not redirected
-     * to the <code>ProxyEgressPort</code>. It can be empty list.</p> </li> <li> <p>
-     * <code>EgressIgnoredIPs</code> - (Required) The egress traffic going to these
-     * specified IP addresses will be ignored and not redirected to the
-     * <code>ProxyEgressPort</code>. It can be empty list.</p> </li> </ul>
+     * egress traffic going to the specified ports is ignored and not redirected to the
+     * <code>ProxyEgressPort</code>. It can be an empty list.</p> </li> <li> <p>
+     * <code>EgressIgnoredIPs</code> - (Required) The egress traffic going to the
+     * specified IP addresses is ignored and not redirected to the
+     * <code>ProxyEgressPort</code>. It can be an empty list.</p> </li> </ul>
      */
     inline void SetProperties(const Aws::Vector<KeyValuePair>& value) { m_propertiesHasBeenSet = true; m_properties = value; }
 
@@ -212,18 +220,18 @@ namespace Model
      * <code>user</code> parameter in a container definition. This is used to ensure
      * the proxy ignores its own traffic. If <code>IgnoredGID</code> is specified, this
      * field can be empty.</p> </li> <li> <p> <code>AppPorts</code> - (Required) The
-     * list of ports that the application uses. Network traffic to these ports will be
+     * list of ports that the application uses. Network traffic to these ports is
      * forwarded to the <code>ProxyIngressPort</code> and
      * <code>ProxyEgressPort</code>.</p> </li> <li> <p> <code>ProxyIngressPort</code> -
      * (Required) Specifies the port that incoming traffic to the <code>AppPorts</code>
      * is directed to.</p> </li> <li> <p> <code>ProxyEgressPort</code> - (Required)
      * Specifies the port that outgoing traffic from the <code>AppPorts</code> is
      * directed to.</p> </li> <li> <p> <code>EgressIgnoredPorts</code> - (Required) The
-     * egress traffic going to these specified ports will be ignored and not redirected
-     * to the <code>ProxyEgressPort</code>. It can be empty list.</p> </li> <li> <p>
-     * <code>EgressIgnoredIPs</code> - (Required) The egress traffic going to these
-     * specified IP addresses will be ignored and not redirected to the
-     * <code>ProxyEgressPort</code>. It can be empty list.</p> </li> </ul>
+     * egress traffic going to the specified ports is ignored and not redirected to the
+     * <code>ProxyEgressPort</code>. It can be an empty list.</p> </li> <li> <p>
+     * <code>EgressIgnoredIPs</code> - (Required) The egress traffic going to the
+     * specified IP addresses is ignored and not redirected to the
+     * <code>ProxyEgressPort</code>. It can be an empty list.</p> </li> </ul>
      */
     inline void SetProperties(Aws::Vector<KeyValuePair>&& value) { m_propertiesHasBeenSet = true; m_properties = std::move(value); }
 
@@ -238,18 +246,18 @@ namespace Model
      * <code>user</code> parameter in a container definition. This is used to ensure
      * the proxy ignores its own traffic. If <code>IgnoredGID</code> is specified, this
      * field can be empty.</p> </li> <li> <p> <code>AppPorts</code> - (Required) The
-     * list of ports that the application uses. Network traffic to these ports will be
+     * list of ports that the application uses. Network traffic to these ports is
      * forwarded to the <code>ProxyIngressPort</code> and
      * <code>ProxyEgressPort</code>.</p> </li> <li> <p> <code>ProxyIngressPort</code> -
      * (Required) Specifies the port that incoming traffic to the <code>AppPorts</code>
      * is directed to.</p> </li> <li> <p> <code>ProxyEgressPort</code> - (Required)
      * Specifies the port that outgoing traffic from the <code>AppPorts</code> is
      * directed to.</p> </li> <li> <p> <code>EgressIgnoredPorts</code> - (Required) The
-     * egress traffic going to these specified ports will be ignored and not redirected
-     * to the <code>ProxyEgressPort</code>. It can be empty list.</p> </li> <li> <p>
-     * <code>EgressIgnoredIPs</code> - (Required) The egress traffic going to these
-     * specified IP addresses will be ignored and not redirected to the
-     * <code>ProxyEgressPort</code>. It can be empty list.</p> </li> </ul>
+     * egress traffic going to the specified ports is ignored and not redirected to the
+     * <code>ProxyEgressPort</code>. It can be an empty list.</p> </li> <li> <p>
+     * <code>EgressIgnoredIPs</code> - (Required) The egress traffic going to the
+     * specified IP addresses is ignored and not redirected to the
+     * <code>ProxyEgressPort</code>. It can be an empty list.</p> </li> </ul>
      */
     inline ProxyConfiguration& WithProperties(const Aws::Vector<KeyValuePair>& value) { SetProperties(value); return *this;}
 
@@ -264,18 +272,18 @@ namespace Model
      * <code>user</code> parameter in a container definition. This is used to ensure
      * the proxy ignores its own traffic. If <code>IgnoredGID</code> is specified, this
      * field can be empty.</p> </li> <li> <p> <code>AppPorts</code> - (Required) The
-     * list of ports that the application uses. Network traffic to these ports will be
+     * list of ports that the application uses. Network traffic to these ports is
      * forwarded to the <code>ProxyIngressPort</code> and
      * <code>ProxyEgressPort</code>.</p> </li> <li> <p> <code>ProxyIngressPort</code> -
      * (Required) Specifies the port that incoming traffic to the <code>AppPorts</code>
      * is directed to.</p> </li> <li> <p> <code>ProxyEgressPort</code> - (Required)
      * Specifies the port that outgoing traffic from the <code>AppPorts</code> is
      * directed to.</p> </li> <li> <p> <code>EgressIgnoredPorts</code> - (Required) The
-     * egress traffic going to these specified ports will be ignored and not redirected
-     * to the <code>ProxyEgressPort</code>. It can be empty list.</p> </li> <li> <p>
-     * <code>EgressIgnoredIPs</code> - (Required) The egress traffic going to these
-     * specified IP addresses will be ignored and not redirected to the
-     * <code>ProxyEgressPort</code>. It can be empty list.</p> </li> </ul>
+     * egress traffic going to the specified ports is ignored and not redirected to the
+     * <code>ProxyEgressPort</code>. It can be an empty list.</p> </li> <li> <p>
+     * <code>EgressIgnoredIPs</code> - (Required) The egress traffic going to the
+     * specified IP addresses is ignored and not redirected to the
+     * <code>ProxyEgressPort</code>. It can be an empty list.</p> </li> </ul>
      */
     inline ProxyConfiguration& WithProperties(Aws::Vector<KeyValuePair>&& value) { SetProperties(std::move(value)); return *this;}
 
@@ -290,18 +298,18 @@ namespace Model
      * <code>user</code> parameter in a container definition. This is used to ensure
      * the proxy ignores its own traffic. If <code>IgnoredGID</code> is specified, this
      * field can be empty.</p> </li> <li> <p> <code>AppPorts</code> - (Required) The
-     * list of ports that the application uses. Network traffic to these ports will be
+     * list of ports that the application uses. Network traffic to these ports is
      * forwarded to the <code>ProxyIngressPort</code> and
      * <code>ProxyEgressPort</code>.</p> </li> <li> <p> <code>ProxyIngressPort</code> -
      * (Required) Specifies the port that incoming traffic to the <code>AppPorts</code>
      * is directed to.</p> </li> <li> <p> <code>ProxyEgressPort</code> - (Required)
      * Specifies the port that outgoing traffic from the <code>AppPorts</code> is
      * directed to.</p> </li> <li> <p> <code>EgressIgnoredPorts</code> - (Required) The
-     * egress traffic going to these specified ports will be ignored and not redirected
-     * to the <code>ProxyEgressPort</code>. It can be empty list.</p> </li> <li> <p>
-     * <code>EgressIgnoredIPs</code> - (Required) The egress traffic going to these
-     * specified IP addresses will be ignored and not redirected to the
-     * <code>ProxyEgressPort</code>. It can be empty list.</p> </li> </ul>
+     * egress traffic going to the specified ports is ignored and not redirected to the
+     * <code>ProxyEgressPort</code>. It can be an empty list.</p> </li> <li> <p>
+     * <code>EgressIgnoredIPs</code> - (Required) The egress traffic going to the
+     * specified IP addresses is ignored and not redirected to the
+     * <code>ProxyEgressPort</code>. It can be an empty list.</p> </li> </ul>
      */
     inline ProxyConfiguration& AddProperties(const KeyValuePair& value) { m_propertiesHasBeenSet = true; m_properties.push_back(value); return *this; }
 
@@ -316,18 +324,18 @@ namespace Model
      * <code>user</code> parameter in a container definition. This is used to ensure
      * the proxy ignores its own traffic. If <code>IgnoredGID</code> is specified, this
      * field can be empty.</p> </li> <li> <p> <code>AppPorts</code> - (Required) The
-     * list of ports that the application uses. Network traffic to these ports will be
+     * list of ports that the application uses. Network traffic to these ports is
      * forwarded to the <code>ProxyIngressPort</code> and
      * <code>ProxyEgressPort</code>.</p> </li> <li> <p> <code>ProxyIngressPort</code> -
      * (Required) Specifies the port that incoming traffic to the <code>AppPorts</code>
      * is directed to.</p> </li> <li> <p> <code>ProxyEgressPort</code> - (Required)
      * Specifies the port that outgoing traffic from the <code>AppPorts</code> is
      * directed to.</p> </li> <li> <p> <code>EgressIgnoredPorts</code> - (Required) The
-     * egress traffic going to these specified ports will be ignored and not redirected
-     * to the <code>ProxyEgressPort</code>. It can be empty list.</p> </li> <li> <p>
-     * <code>EgressIgnoredIPs</code> - (Required) The egress traffic going to these
-     * specified IP addresses will be ignored and not redirected to the
-     * <code>ProxyEgressPort</code>. It can be empty list.</p> </li> </ul>
+     * egress traffic going to the specified ports is ignored and not redirected to the
+     * <code>ProxyEgressPort</code>. It can be an empty list.</p> </li> <li> <p>
+     * <code>EgressIgnoredIPs</code> - (Required) The egress traffic going to the
+     * specified IP addresses is ignored and not redirected to the
+     * <code>ProxyEgressPort</code>. It can be an empty list.</p> </li> </ul>
      */
     inline ProxyConfiguration& AddProperties(KeyValuePair&& value) { m_propertiesHasBeenSet = true; m_properties.push_back(std::move(value)); return *this; }
 

@@ -28,6 +28,7 @@ CreateRouteRequest::CreateRouteRequest() :
     m_meshNameHasBeenSet(false),
     m_routeNameHasBeenSet(false),
     m_specHasBeenSet(false),
+    m_tagsHasBeenSet(false),
     m_virtualRouterNameHasBeenSet(false)
 {
 }
@@ -51,6 +52,17 @@ Aws::String CreateRouteRequest::SerializePayload() const
   if(m_specHasBeenSet)
   {
    payload.WithObject("spec", m_spec.Jsonize());
+
+  }
+
+  if(m_tagsHasBeenSet)
+  {
+   Array<JsonValue> tagsJsonList(m_tags.size());
+   for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
+   {
+     tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
+   }
+   payload.WithArray("tags", std::move(tagsJsonList));
 
   }
 

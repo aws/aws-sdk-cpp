@@ -373,6 +373,63 @@ namespace Model
     
     inline TapeArchive& WithKMSKey(const char* value) { SetKMSKey(value); return *this;}
 
+
+    /**
+     * <p>The ID of the pool that was used to archive the tape. The tapes in this pool
+     * are archived in the S3 storage class that is associated with the pool.</p>
+     * <p>Valid values: "GLACIER", "DEEP_ARCHIVE"</p>
+     */
+    inline const Aws::String& GetPoolId() const{ return m_poolId; }
+
+    /**
+     * <p>The ID of the pool that was used to archive the tape. The tapes in this pool
+     * are archived in the S3 storage class that is associated with the pool.</p>
+     * <p>Valid values: "GLACIER", "DEEP_ARCHIVE"</p>
+     */
+    inline bool PoolIdHasBeenSet() const { return m_poolIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the pool that was used to archive the tape. The tapes in this pool
+     * are archived in the S3 storage class that is associated with the pool.</p>
+     * <p>Valid values: "GLACIER", "DEEP_ARCHIVE"</p>
+     */
+    inline void SetPoolId(const Aws::String& value) { m_poolIdHasBeenSet = true; m_poolId = value; }
+
+    /**
+     * <p>The ID of the pool that was used to archive the tape. The tapes in this pool
+     * are archived in the S3 storage class that is associated with the pool.</p>
+     * <p>Valid values: "GLACIER", "DEEP_ARCHIVE"</p>
+     */
+    inline void SetPoolId(Aws::String&& value) { m_poolIdHasBeenSet = true; m_poolId = std::move(value); }
+
+    /**
+     * <p>The ID of the pool that was used to archive the tape. The tapes in this pool
+     * are archived in the S3 storage class that is associated with the pool.</p>
+     * <p>Valid values: "GLACIER", "DEEP_ARCHIVE"</p>
+     */
+    inline void SetPoolId(const char* value) { m_poolIdHasBeenSet = true; m_poolId.assign(value); }
+
+    /**
+     * <p>The ID of the pool that was used to archive the tape. The tapes in this pool
+     * are archived in the S3 storage class that is associated with the pool.</p>
+     * <p>Valid values: "GLACIER", "DEEP_ARCHIVE"</p>
+     */
+    inline TapeArchive& WithPoolId(const Aws::String& value) { SetPoolId(value); return *this;}
+
+    /**
+     * <p>The ID of the pool that was used to archive the tape. The tapes in this pool
+     * are archived in the S3 storage class that is associated with the pool.</p>
+     * <p>Valid values: "GLACIER", "DEEP_ARCHIVE"</p>
+     */
+    inline TapeArchive& WithPoolId(Aws::String&& value) { SetPoolId(std::move(value)); return *this;}
+
+    /**
+     * <p>The ID of the pool that was used to archive the tape. The tapes in this pool
+     * are archived in the S3 storage class that is associated with the pool.</p>
+     * <p>Valid values: "GLACIER", "DEEP_ARCHIVE"</p>
+     */
+    inline TapeArchive& WithPoolId(const char* value) { SetPoolId(value); return *this;}
+
   private:
 
     Aws::String m_tapeARN;
@@ -401,6 +458,9 @@ namespace Model
 
     Aws::String m_kMSKey;
     bool m_kMSKeyHasBeenSet;
+
+    Aws::String m_poolId;
+    bool m_poolIdHasBeenSet;
   };
 
 } // namespace Model

@@ -29,12 +29,14 @@ namespace Model
 {
 
 RouteSpec::RouteSpec() : 
-    m_httpRouteHasBeenSet(false)
+    m_httpRouteHasBeenSet(false),
+    m_tcpRouteHasBeenSet(false)
 {
 }
 
 RouteSpec::RouteSpec(JsonView jsonValue) : 
-    m_httpRouteHasBeenSet(false)
+    m_httpRouteHasBeenSet(false),
+    m_tcpRouteHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -48,6 +50,13 @@ RouteSpec& RouteSpec::operator =(JsonView jsonValue)
     m_httpRouteHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("tcpRoute"))
+  {
+    m_tcpRoute = jsonValue.GetObject("tcpRoute");
+
+    m_tcpRouteHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -58,6 +67,12 @@ JsonValue RouteSpec::Jsonize() const
   if(m_httpRouteHasBeenSet)
   {
    payload.WithObject("httpRoute", m_httpRoute.Jsonize());
+
+  }
+
+  if(m_tcpRouteHasBeenSet)
+  {
+   payload.WithObject("tcpRoute", m_tcpRoute.Jsonize());
 
   }
 

@@ -16,6 +16,8 @@
 #pragma once
 #include <aws/awstransfer/Transfer_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/awstransfer/model/EndpointDetails.h>
+#include <aws/awstransfer/model/EndpointType.h>
 #include <aws/awstransfer/model/IdentityProviderDetails.h>
 #include <aws/awstransfer/model/IdentityProviderType.h>
 #include <aws/awstransfer/model/State.h>
@@ -102,6 +104,44 @@ namespace Model
      * described.</p>
      */
     inline DescribedServer& WithArn(const char* value) { SetArn(value); return *this;}
+
+
+    
+    inline const EndpointDetails& GetEndpointDetails() const{ return m_endpointDetails; }
+
+    
+    inline bool EndpointDetailsHasBeenSet() const { return m_endpointDetailsHasBeenSet; }
+
+    
+    inline void SetEndpointDetails(const EndpointDetails& value) { m_endpointDetailsHasBeenSet = true; m_endpointDetails = value; }
+
+    
+    inline void SetEndpointDetails(EndpointDetails&& value) { m_endpointDetailsHasBeenSet = true; m_endpointDetails = std::move(value); }
+
+    
+    inline DescribedServer& WithEndpointDetails(const EndpointDetails& value) { SetEndpointDetails(value); return *this;}
+
+    
+    inline DescribedServer& WithEndpointDetails(EndpointDetails&& value) { SetEndpointDetails(std::move(value)); return *this;}
+
+
+    
+    inline const EndpointType& GetEndpointType() const{ return m_endpointType; }
+
+    
+    inline bool EndpointTypeHasBeenSet() const { return m_endpointTypeHasBeenSet; }
+
+    
+    inline void SetEndpointType(const EndpointType& value) { m_endpointTypeHasBeenSet = true; m_endpointType = value; }
+
+    
+    inline void SetEndpointType(EndpointType&& value) { m_endpointTypeHasBeenSet = true; m_endpointType = std::move(value); }
+
+    
+    inline DescribedServer& WithEndpointType(const EndpointType& value) { SetEndpointType(value); return *this;}
+
+    
+    inline DescribedServer& WithEndpointType(EndpointType&& value) { SetEndpointType(std::move(value)); return *this;}
 
 
     /**
@@ -458,6 +498,12 @@ namespace Model
 
     Aws::String m_arn;
     bool m_arnHasBeenSet;
+
+    EndpointDetails m_endpointDetails;
+    bool m_endpointDetailsHasBeenSet;
+
+    EndpointType m_endpointType;
+    bool m_endpointTypeHasBeenSet;
 
     IdentityProviderDetails m_identityProviderDetails;
     bool m_identityProviderDetailsHasBeenSet;

@@ -182,7 +182,8 @@ namespace Model
      * <p>The <code>family</code> and <code>revision</code>
      * (<code>family:revision</code>) or full ARN of the task definition to run in your
      * service. If a <code>revision</code> is not specified, the latest
-     * <code>ACTIVE</code> revision is used.</p>
+     * <code>ACTIVE</code> revision is used.</p> <p>A task definition must be specified
+     * if the service is using the <code>ECS</code> deployment controller.</p>
      */
     inline const Aws::String& GetTaskDefinition() const{ return m_taskDefinition; }
 
@@ -190,7 +191,8 @@ namespace Model
      * <p>The <code>family</code> and <code>revision</code>
      * (<code>family:revision</code>) or full ARN of the task definition to run in your
      * service. If a <code>revision</code> is not specified, the latest
-     * <code>ACTIVE</code> revision is used.</p>
+     * <code>ACTIVE</code> revision is used.</p> <p>A task definition must be specified
+     * if the service is using the <code>ECS</code> deployment controller.</p>
      */
     inline bool TaskDefinitionHasBeenSet() const { return m_taskDefinitionHasBeenSet; }
 
@@ -198,7 +200,8 @@ namespace Model
      * <p>The <code>family</code> and <code>revision</code>
      * (<code>family:revision</code>) or full ARN of the task definition to run in your
      * service. If a <code>revision</code> is not specified, the latest
-     * <code>ACTIVE</code> revision is used.</p>
+     * <code>ACTIVE</code> revision is used.</p> <p>A task definition must be specified
+     * if the service is using the <code>ECS</code> deployment controller.</p>
      */
     inline void SetTaskDefinition(const Aws::String& value) { m_taskDefinitionHasBeenSet = true; m_taskDefinition = value; }
 
@@ -206,7 +209,8 @@ namespace Model
      * <p>The <code>family</code> and <code>revision</code>
      * (<code>family:revision</code>) or full ARN of the task definition to run in your
      * service. If a <code>revision</code> is not specified, the latest
-     * <code>ACTIVE</code> revision is used.</p>
+     * <code>ACTIVE</code> revision is used.</p> <p>A task definition must be specified
+     * if the service is using the <code>ECS</code> deployment controller.</p>
      */
     inline void SetTaskDefinition(Aws::String&& value) { m_taskDefinitionHasBeenSet = true; m_taskDefinition = std::move(value); }
 
@@ -214,7 +218,8 @@ namespace Model
      * <p>The <code>family</code> and <code>revision</code>
      * (<code>family:revision</code>) or full ARN of the task definition to run in your
      * service. If a <code>revision</code> is not specified, the latest
-     * <code>ACTIVE</code> revision is used.</p>
+     * <code>ACTIVE</code> revision is used.</p> <p>A task definition must be specified
+     * if the service is using the <code>ECS</code> deployment controller.</p>
      */
     inline void SetTaskDefinition(const char* value) { m_taskDefinitionHasBeenSet = true; m_taskDefinition.assign(value); }
 
@@ -222,7 +227,8 @@ namespace Model
      * <p>The <code>family</code> and <code>revision</code>
      * (<code>family:revision</code>) or full ARN of the task definition to run in your
      * service. If a <code>revision</code> is not specified, the latest
-     * <code>ACTIVE</code> revision is used.</p>
+     * <code>ACTIVE</code> revision is used.</p> <p>A task definition must be specified
+     * if the service is using the <code>ECS</code> deployment controller.</p>
      */
     inline CreateServiceRequest& WithTaskDefinition(const Aws::String& value) { SetTaskDefinition(value); return *this;}
 
@@ -230,7 +236,8 @@ namespace Model
      * <p>The <code>family</code> and <code>revision</code>
      * (<code>family:revision</code>) or full ARN of the task definition to run in your
      * service. If a <code>revision</code> is not specified, the latest
-     * <code>ACTIVE</code> revision is used.</p>
+     * <code>ACTIVE</code> revision is used.</p> <p>A task definition must be specified
+     * if the service is using the <code>ECS</code> deployment controller.</p>
      */
     inline CreateServiceRequest& WithTaskDefinition(Aws::String&& value) { SetTaskDefinition(std::move(value)); return *this;}
 
@@ -238,7 +245,8 @@ namespace Model
      * <p>The <code>family</code> and <code>revision</code>
      * (<code>family:revision</code>) or full ARN of the task definition to run in your
      * service. If a <code>revision</code> is not specified, the latest
-     * <code>ACTIVE</code> revision is used.</p>
+     * <code>ACTIVE</code> revision is used.</p> <p>A task definition must be specified
+     * if the service is using the <code>ECS</code> deployment controller.</p>
      */
     inline CreateServiceRequest& WithTaskDefinition(const char* value) { SetTaskDefinition(value); return *this;}
 
@@ -761,9 +769,9 @@ namespace Model
 
 
     /**
-     * <p>The platform version on which your tasks in the service are running. A
-     * platform version is only specified for tasks using the Fargate launch type. If
-     * one is not specified, the <code>LATEST</code> platform version is used by
+     * <p>The platform version that your tasks in the service are running on. A
+     * platform version is specified only for tasks using the Fargate launch type. If
+     * one isn't specified, the <code>LATEST</code> platform version is used by
      * default. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS
      * Fargate Platform Versions</a> in the <i>Amazon Elastic Container Service
@@ -772,9 +780,9 @@ namespace Model
     inline const Aws::String& GetPlatformVersion() const{ return m_platformVersion; }
 
     /**
-     * <p>The platform version on which your tasks in the service are running. A
-     * platform version is only specified for tasks using the Fargate launch type. If
-     * one is not specified, the <code>LATEST</code> platform version is used by
+     * <p>The platform version that your tasks in the service are running on. A
+     * platform version is specified only for tasks using the Fargate launch type. If
+     * one isn't specified, the <code>LATEST</code> platform version is used by
      * default. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS
      * Fargate Platform Versions</a> in the <i>Amazon Elastic Container Service
@@ -783,9 +791,9 @@ namespace Model
     inline bool PlatformVersionHasBeenSet() const { return m_platformVersionHasBeenSet; }
 
     /**
-     * <p>The platform version on which your tasks in the service are running. A
-     * platform version is only specified for tasks using the Fargate launch type. If
-     * one is not specified, the <code>LATEST</code> platform version is used by
+     * <p>The platform version that your tasks in the service are running on. A
+     * platform version is specified only for tasks using the Fargate launch type. If
+     * one isn't specified, the <code>LATEST</code> platform version is used by
      * default. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS
      * Fargate Platform Versions</a> in the <i>Amazon Elastic Container Service
@@ -794,9 +802,9 @@ namespace Model
     inline void SetPlatformVersion(const Aws::String& value) { m_platformVersionHasBeenSet = true; m_platformVersion = value; }
 
     /**
-     * <p>The platform version on which your tasks in the service are running. A
-     * platform version is only specified for tasks using the Fargate launch type. If
-     * one is not specified, the <code>LATEST</code> platform version is used by
+     * <p>The platform version that your tasks in the service are running on. A
+     * platform version is specified only for tasks using the Fargate launch type. If
+     * one isn't specified, the <code>LATEST</code> platform version is used by
      * default. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS
      * Fargate Platform Versions</a> in the <i>Amazon Elastic Container Service
@@ -805,9 +813,9 @@ namespace Model
     inline void SetPlatformVersion(Aws::String&& value) { m_platformVersionHasBeenSet = true; m_platformVersion = std::move(value); }
 
     /**
-     * <p>The platform version on which your tasks in the service are running. A
-     * platform version is only specified for tasks using the Fargate launch type. If
-     * one is not specified, the <code>LATEST</code> platform version is used by
+     * <p>The platform version that your tasks in the service are running on. A
+     * platform version is specified only for tasks using the Fargate launch type. If
+     * one isn't specified, the <code>LATEST</code> platform version is used by
      * default. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS
      * Fargate Platform Versions</a> in the <i>Amazon Elastic Container Service
@@ -816,9 +824,9 @@ namespace Model
     inline void SetPlatformVersion(const char* value) { m_platformVersionHasBeenSet = true; m_platformVersion.assign(value); }
 
     /**
-     * <p>The platform version on which your tasks in the service are running. A
-     * platform version is only specified for tasks using the Fargate launch type. If
-     * one is not specified, the <code>LATEST</code> platform version is used by
+     * <p>The platform version that your tasks in the service are running on. A
+     * platform version is specified only for tasks using the Fargate launch type. If
+     * one isn't specified, the <code>LATEST</code> platform version is used by
      * default. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS
      * Fargate Platform Versions</a> in the <i>Amazon Elastic Container Service
@@ -827,9 +835,9 @@ namespace Model
     inline CreateServiceRequest& WithPlatformVersion(const Aws::String& value) { SetPlatformVersion(value); return *this;}
 
     /**
-     * <p>The platform version on which your tasks in the service are running. A
-     * platform version is only specified for tasks using the Fargate launch type. If
-     * one is not specified, the <code>LATEST</code> platform version is used by
+     * <p>The platform version that your tasks in the service are running on. A
+     * platform version is specified only for tasks using the Fargate launch type. If
+     * one isn't specified, the <code>LATEST</code> platform version is used by
      * default. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS
      * Fargate Platform Versions</a> in the <i>Amazon Elastic Container Service
@@ -838,9 +846,9 @@ namespace Model
     inline CreateServiceRequest& WithPlatformVersion(Aws::String&& value) { SetPlatformVersion(std::move(value)); return *this;}
 
     /**
-     * <p>The platform version on which your tasks in the service are running. A
-     * platform version is only specified for tasks using the Fargate launch type. If
-     * one is not specified, the <code>LATEST</code> platform version is used by
+     * <p>The platform version that your tasks in the service are running on. A
+     * platform version is specified only for tasks using the Fargate launch type. If
+     * one isn't specified, the <code>LATEST</code> platform version is used by
      * default. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS
      * Fargate Platform Versions</a> in the <i>Amazon Elastic Container Service
@@ -1313,15 +1321,16 @@ namespace Model
      * desired number of tasks across your cluster. By default, the service scheduler
      * spreads tasks across Availability Zones. You can use task placement strategies
      * and constraints to customize task placement decisions. This scheduler strategy
-     * is required if using the <code>CODE_DEPLOY</code> deployment controller.</p>
-     * </li> <li> <p> <code>DAEMON</code>-The daemon scheduling strategy deploys
-     * exactly one task on each active container instance that meets all of the task
-     * placement constraints that you specify in your cluster. When you are using this
-     * strategy, there is no need to specify a desired number of tasks, a task
-     * placement strategy, or use Service Auto Scaling policies.</p> <note> <p>Tasks
-     * using the Fargate launch type or the <code>CODE_DEPLOY</code> deploymenet
-     * controller do not support the <code>DAEMON</code> scheduling strategy.</p>
-     * </note> </li> </ul>
+     * is required if the service is using the <code>CODE_DEPLOY</code> or
+     * <code>EXTERNAL</code> deployment controller types.</p> </li> <li> <p>
+     * <code>DAEMON</code>-The daemon scheduling strategy deploys exactly one task on
+     * each active container instance that meets all of the task placement constraints
+     * that you specify in your cluster. When you're using this strategy, you don't
+     * need to specify a desired number of tasks, a task placement strategy, or use
+     * Service Auto Scaling policies.</p> <note> <p>Tasks using the Fargate launch type
+     * or the <code>CODE_DEPLOY</code> or <code>EXTERNAL</code> deployment controller
+     * types don't support the <code>DAEMON</code> scheduling strategy.</p> </note>
+     * </li> </ul>
      */
     inline const SchedulingStrategy& GetSchedulingStrategy() const{ return m_schedulingStrategy; }
 
@@ -1333,15 +1342,16 @@ namespace Model
      * desired number of tasks across your cluster. By default, the service scheduler
      * spreads tasks across Availability Zones. You can use task placement strategies
      * and constraints to customize task placement decisions. This scheduler strategy
-     * is required if using the <code>CODE_DEPLOY</code> deployment controller.</p>
-     * </li> <li> <p> <code>DAEMON</code>-The daemon scheduling strategy deploys
-     * exactly one task on each active container instance that meets all of the task
-     * placement constraints that you specify in your cluster. When you are using this
-     * strategy, there is no need to specify a desired number of tasks, a task
-     * placement strategy, or use Service Auto Scaling policies.</p> <note> <p>Tasks
-     * using the Fargate launch type or the <code>CODE_DEPLOY</code> deploymenet
-     * controller do not support the <code>DAEMON</code> scheduling strategy.</p>
-     * </note> </li> </ul>
+     * is required if the service is using the <code>CODE_DEPLOY</code> or
+     * <code>EXTERNAL</code> deployment controller types.</p> </li> <li> <p>
+     * <code>DAEMON</code>-The daemon scheduling strategy deploys exactly one task on
+     * each active container instance that meets all of the task placement constraints
+     * that you specify in your cluster. When you're using this strategy, you don't
+     * need to specify a desired number of tasks, a task placement strategy, or use
+     * Service Auto Scaling policies.</p> <note> <p>Tasks using the Fargate launch type
+     * or the <code>CODE_DEPLOY</code> or <code>EXTERNAL</code> deployment controller
+     * types don't support the <code>DAEMON</code> scheduling strategy.</p> </note>
+     * </li> </ul>
      */
     inline bool SchedulingStrategyHasBeenSet() const { return m_schedulingStrategyHasBeenSet; }
 
@@ -1353,15 +1363,16 @@ namespace Model
      * desired number of tasks across your cluster. By default, the service scheduler
      * spreads tasks across Availability Zones. You can use task placement strategies
      * and constraints to customize task placement decisions. This scheduler strategy
-     * is required if using the <code>CODE_DEPLOY</code> deployment controller.</p>
-     * </li> <li> <p> <code>DAEMON</code>-The daemon scheduling strategy deploys
-     * exactly one task on each active container instance that meets all of the task
-     * placement constraints that you specify in your cluster. When you are using this
-     * strategy, there is no need to specify a desired number of tasks, a task
-     * placement strategy, or use Service Auto Scaling policies.</p> <note> <p>Tasks
-     * using the Fargate launch type or the <code>CODE_DEPLOY</code> deploymenet
-     * controller do not support the <code>DAEMON</code> scheduling strategy.</p>
-     * </note> </li> </ul>
+     * is required if the service is using the <code>CODE_DEPLOY</code> or
+     * <code>EXTERNAL</code> deployment controller types.</p> </li> <li> <p>
+     * <code>DAEMON</code>-The daemon scheduling strategy deploys exactly one task on
+     * each active container instance that meets all of the task placement constraints
+     * that you specify in your cluster. When you're using this strategy, you don't
+     * need to specify a desired number of tasks, a task placement strategy, or use
+     * Service Auto Scaling policies.</p> <note> <p>Tasks using the Fargate launch type
+     * or the <code>CODE_DEPLOY</code> or <code>EXTERNAL</code> deployment controller
+     * types don't support the <code>DAEMON</code> scheduling strategy.</p> </note>
+     * </li> </ul>
      */
     inline void SetSchedulingStrategy(const SchedulingStrategy& value) { m_schedulingStrategyHasBeenSet = true; m_schedulingStrategy = value; }
 
@@ -1373,15 +1384,16 @@ namespace Model
      * desired number of tasks across your cluster. By default, the service scheduler
      * spreads tasks across Availability Zones. You can use task placement strategies
      * and constraints to customize task placement decisions. This scheduler strategy
-     * is required if using the <code>CODE_DEPLOY</code> deployment controller.</p>
-     * </li> <li> <p> <code>DAEMON</code>-The daemon scheduling strategy deploys
-     * exactly one task on each active container instance that meets all of the task
-     * placement constraints that you specify in your cluster. When you are using this
-     * strategy, there is no need to specify a desired number of tasks, a task
-     * placement strategy, or use Service Auto Scaling policies.</p> <note> <p>Tasks
-     * using the Fargate launch type or the <code>CODE_DEPLOY</code> deploymenet
-     * controller do not support the <code>DAEMON</code> scheduling strategy.</p>
-     * </note> </li> </ul>
+     * is required if the service is using the <code>CODE_DEPLOY</code> or
+     * <code>EXTERNAL</code> deployment controller types.</p> </li> <li> <p>
+     * <code>DAEMON</code>-The daemon scheduling strategy deploys exactly one task on
+     * each active container instance that meets all of the task placement constraints
+     * that you specify in your cluster. When you're using this strategy, you don't
+     * need to specify a desired number of tasks, a task placement strategy, or use
+     * Service Auto Scaling policies.</p> <note> <p>Tasks using the Fargate launch type
+     * or the <code>CODE_DEPLOY</code> or <code>EXTERNAL</code> deployment controller
+     * types don't support the <code>DAEMON</code> scheduling strategy.</p> </note>
+     * </li> </ul>
      */
     inline void SetSchedulingStrategy(SchedulingStrategy&& value) { m_schedulingStrategyHasBeenSet = true; m_schedulingStrategy = std::move(value); }
 
@@ -1393,15 +1405,16 @@ namespace Model
      * desired number of tasks across your cluster. By default, the service scheduler
      * spreads tasks across Availability Zones. You can use task placement strategies
      * and constraints to customize task placement decisions. This scheduler strategy
-     * is required if using the <code>CODE_DEPLOY</code> deployment controller.</p>
-     * </li> <li> <p> <code>DAEMON</code>-The daemon scheduling strategy deploys
-     * exactly one task on each active container instance that meets all of the task
-     * placement constraints that you specify in your cluster. When you are using this
-     * strategy, there is no need to specify a desired number of tasks, a task
-     * placement strategy, or use Service Auto Scaling policies.</p> <note> <p>Tasks
-     * using the Fargate launch type or the <code>CODE_DEPLOY</code> deploymenet
-     * controller do not support the <code>DAEMON</code> scheduling strategy.</p>
-     * </note> </li> </ul>
+     * is required if the service is using the <code>CODE_DEPLOY</code> or
+     * <code>EXTERNAL</code> deployment controller types.</p> </li> <li> <p>
+     * <code>DAEMON</code>-The daemon scheduling strategy deploys exactly one task on
+     * each active container instance that meets all of the task placement constraints
+     * that you specify in your cluster. When you're using this strategy, you don't
+     * need to specify a desired number of tasks, a task placement strategy, or use
+     * Service Auto Scaling policies.</p> <note> <p>Tasks using the Fargate launch type
+     * or the <code>CODE_DEPLOY</code> or <code>EXTERNAL</code> deployment controller
+     * types don't support the <code>DAEMON</code> scheduling strategy.</p> </note>
+     * </li> </ul>
      */
     inline CreateServiceRequest& WithSchedulingStrategy(const SchedulingStrategy& value) { SetSchedulingStrategy(value); return *this;}
 
@@ -1413,15 +1426,16 @@ namespace Model
      * desired number of tasks across your cluster. By default, the service scheduler
      * spreads tasks across Availability Zones. You can use task placement strategies
      * and constraints to customize task placement decisions. This scheduler strategy
-     * is required if using the <code>CODE_DEPLOY</code> deployment controller.</p>
-     * </li> <li> <p> <code>DAEMON</code>-The daemon scheduling strategy deploys
-     * exactly one task on each active container instance that meets all of the task
-     * placement constraints that you specify in your cluster. When you are using this
-     * strategy, there is no need to specify a desired number of tasks, a task
-     * placement strategy, or use Service Auto Scaling policies.</p> <note> <p>Tasks
-     * using the Fargate launch type or the <code>CODE_DEPLOY</code> deploymenet
-     * controller do not support the <code>DAEMON</code> scheduling strategy.</p>
-     * </note> </li> </ul>
+     * is required if the service is using the <code>CODE_DEPLOY</code> or
+     * <code>EXTERNAL</code> deployment controller types.</p> </li> <li> <p>
+     * <code>DAEMON</code>-The daemon scheduling strategy deploys exactly one task on
+     * each active container instance that meets all of the task placement constraints
+     * that you specify in your cluster. When you're using this strategy, you don't
+     * need to specify a desired number of tasks, a task placement strategy, or use
+     * Service Auto Scaling policies.</p> <note> <p>Tasks using the Fargate launch type
+     * or the <code>CODE_DEPLOY</code> or <code>EXTERNAL</code> deployment controller
+     * types don't support the <code>DAEMON</code> scheduling strategy.</p> </note>
+     * </li> </ul>
      */
     inline CreateServiceRequest& WithSchedulingStrategy(SchedulingStrategy&& value) { SetSchedulingStrategy(std::move(value)); return *this;}
 

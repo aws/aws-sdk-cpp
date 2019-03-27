@@ -207,82 +207,82 @@ namespace Model
 
 
     /**
-     * <p>This property specifies the IAM role that controls your user’s access to your
+     * <p>This property specifies the IAM role that controls your user's access to your
      * Amazon S3 bucket. The policies attached to this role will determine the level of
      * access you want to provide your users when transferring files into and out of
      * your Amazon S3 bucket or buckets. The IAM role should also contain a trust
      * relationship that allows the SFTP server to access your resources when servicing
-     * your SFTP user’s transfer requests.</p>
+     * your SFTP user's transfer requests.</p>
      */
     inline const Aws::String& GetRole() const{ return m_role; }
 
     /**
-     * <p>This property specifies the IAM role that controls your user’s access to your
+     * <p>This property specifies the IAM role that controls your user's access to your
      * Amazon S3 bucket. The policies attached to this role will determine the level of
      * access you want to provide your users when transferring files into and out of
      * your Amazon S3 bucket or buckets. The IAM role should also contain a trust
      * relationship that allows the SFTP server to access your resources when servicing
-     * your SFTP user’s transfer requests.</p>
+     * your SFTP user's transfer requests.</p>
      */
     inline bool RoleHasBeenSet() const { return m_roleHasBeenSet; }
 
     /**
-     * <p>This property specifies the IAM role that controls your user’s access to your
+     * <p>This property specifies the IAM role that controls your user's access to your
      * Amazon S3 bucket. The policies attached to this role will determine the level of
      * access you want to provide your users when transferring files into and out of
      * your Amazon S3 bucket or buckets. The IAM role should also contain a trust
      * relationship that allows the SFTP server to access your resources when servicing
-     * your SFTP user’s transfer requests.</p>
+     * your SFTP user's transfer requests.</p>
      */
     inline void SetRole(const Aws::String& value) { m_roleHasBeenSet = true; m_role = value; }
 
     /**
-     * <p>This property specifies the IAM role that controls your user’s access to your
+     * <p>This property specifies the IAM role that controls your user's access to your
      * Amazon S3 bucket. The policies attached to this role will determine the level of
      * access you want to provide your users when transferring files into and out of
      * your Amazon S3 bucket or buckets. The IAM role should also contain a trust
      * relationship that allows the SFTP server to access your resources when servicing
-     * your SFTP user’s transfer requests.</p>
+     * your SFTP user's transfer requests.</p>
      */
     inline void SetRole(Aws::String&& value) { m_roleHasBeenSet = true; m_role = std::move(value); }
 
     /**
-     * <p>This property specifies the IAM role that controls your user’s access to your
+     * <p>This property specifies the IAM role that controls your user's access to your
      * Amazon S3 bucket. The policies attached to this role will determine the level of
      * access you want to provide your users when transferring files into and out of
      * your Amazon S3 bucket or buckets. The IAM role should also contain a trust
      * relationship that allows the SFTP server to access your resources when servicing
-     * your SFTP user’s transfer requests.</p>
+     * your SFTP user's transfer requests.</p>
      */
     inline void SetRole(const char* value) { m_roleHasBeenSet = true; m_role.assign(value); }
 
     /**
-     * <p>This property specifies the IAM role that controls your user’s access to your
+     * <p>This property specifies the IAM role that controls your user's access to your
      * Amazon S3 bucket. The policies attached to this role will determine the level of
      * access you want to provide your users when transferring files into and out of
      * your Amazon S3 bucket or buckets. The IAM role should also contain a trust
      * relationship that allows the SFTP server to access your resources when servicing
-     * your SFTP user’s transfer requests.</p>
+     * your SFTP user's transfer requests.</p>
      */
     inline DescribedUser& WithRole(const Aws::String& value) { SetRole(value); return *this;}
 
     /**
-     * <p>This property specifies the IAM role that controls your user’s access to your
+     * <p>This property specifies the IAM role that controls your user's access to your
      * Amazon S3 bucket. The policies attached to this role will determine the level of
      * access you want to provide your users when transferring files into and out of
      * your Amazon S3 bucket or buckets. The IAM role should also contain a trust
      * relationship that allows the SFTP server to access your resources when servicing
-     * your SFTP user’s transfer requests.</p>
+     * your SFTP user's transfer requests.</p>
      */
     inline DescribedUser& WithRole(Aws::String&& value) { SetRole(std::move(value)); return *this;}
 
     /**
-     * <p>This property specifies the IAM role that controls your user’s access to your
+     * <p>This property specifies the IAM role that controls your user's access to your
      * Amazon S3 bucket. The policies attached to this role will determine the level of
      * access you want to provide your users when transferring files into and out of
      * your Amazon S3 bucket or buckets. The IAM role should also contain a trust
      * relationship that allows the SFTP server to access your resources when servicing
-     * your SFTP user’s transfer requests.</p>
+     * your SFTP user's transfer requests.</p>
      */
     inline DescribedUser& WithRole(const char* value) { SetRole(value); return *this;}
 

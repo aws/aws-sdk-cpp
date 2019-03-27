@@ -34,6 +34,7 @@ namespace Aws
         static const int STANDARD_IA_HASH = HashingUtils::HashString("STANDARD_IA");
         static const int ONEZONE_IA_HASH = HashingUtils::HashString("ONEZONE_IA");
         static const int INTELLIGENT_TIERING_HASH = HashingUtils::HashString("INTELLIGENT_TIERING");
+        static const int DEEP_ARCHIVE_HASH = HashingUtils::HashString("DEEP_ARCHIVE");
 
 
         TransitionStorageClass GetTransitionStorageClassForName(const Aws::String& name)
@@ -54,6 +55,10 @@ namespace Aws
           else if (hashCode == INTELLIGENT_TIERING_HASH)
           {
             return TransitionStorageClass::INTELLIGENT_TIERING;
+          }
+          else if (hashCode == DEEP_ARCHIVE_HASH)
+          {
+            return TransitionStorageClass::DEEP_ARCHIVE;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -77,6 +82,8 @@ namespace Aws
             return "ONEZONE_IA";
           case TransitionStorageClass::INTELLIGENT_TIERING:
             return "INTELLIGENT_TIERING";
+          case TransitionStorageClass::DEEP_ARCHIVE:
+            return "DEEP_ARCHIVE";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

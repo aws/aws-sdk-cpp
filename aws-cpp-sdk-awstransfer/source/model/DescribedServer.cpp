@@ -30,6 +30,9 @@ namespace Model
 
 DescribedServer::DescribedServer() : 
     m_arnHasBeenSet(false),
+    m_endpointDetailsHasBeenSet(false),
+    m_endpointType(EndpointType::NOT_SET),
+    m_endpointTypeHasBeenSet(false),
     m_identityProviderDetailsHasBeenSet(false),
     m_identityProviderType(IdentityProviderType::NOT_SET),
     m_identityProviderTypeHasBeenSet(false),
@@ -45,6 +48,9 @@ DescribedServer::DescribedServer() :
 
 DescribedServer::DescribedServer(JsonView jsonValue) : 
     m_arnHasBeenSet(false),
+    m_endpointDetailsHasBeenSet(false),
+    m_endpointType(EndpointType::NOT_SET),
+    m_endpointTypeHasBeenSet(false),
     m_identityProviderDetailsHasBeenSet(false),
     m_identityProviderType(IdentityProviderType::NOT_SET),
     m_identityProviderTypeHasBeenSet(false),
@@ -66,6 +72,20 @@ DescribedServer& DescribedServer::operator =(JsonView jsonValue)
     m_arn = jsonValue.GetString("Arn");
 
     m_arnHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("EndpointDetails"))
+  {
+    m_endpointDetails = jsonValue.GetObject("EndpointDetails");
+
+    m_endpointDetailsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("EndpointType"))
+  {
+    m_endpointType = EndpointTypeMapper::GetEndpointTypeForName(jsonValue.GetString("EndpointType"));
+
+    m_endpointTypeHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("IdentityProviderDetails"))
@@ -131,6 +151,17 @@ JsonValue DescribedServer::Jsonize() const
   {
    payload.WithString("Arn", m_arn);
 
+  }
+
+  if(m_endpointDetailsHasBeenSet)
+  {
+   payload.WithObject("EndpointDetails", m_endpointDetails.Jsonize());
+
+  }
+
+  if(m_endpointTypeHasBeenSet)
+  {
+   payload.WithString("EndpointType", EndpointTypeMapper::GetNameForEndpointType(m_endpointType));
   }
 
   if(m_identityProviderDetailsHasBeenSet)

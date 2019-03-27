@@ -16,6 +16,7 @@
 #pragma once
 #include <aws/appmesh/AppMesh_EXPORTS.h>
 #include <aws/appmesh/model/HttpRoute.h>
+#include <aws/appmesh/model/TcpRoute.h>
 #include <utility>
 
 namespace Aws
@@ -78,10 +79,44 @@ namespace Model
      */
     inline RouteSpec& WithHttpRoute(HttpRoute&& value) { SetHttpRoute(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The TCP routing information for the route.</p>
+     */
+    inline const TcpRoute& GetTcpRoute() const{ return m_tcpRoute; }
+
+    /**
+     * <p>The TCP routing information for the route.</p>
+     */
+    inline bool TcpRouteHasBeenSet() const { return m_tcpRouteHasBeenSet; }
+
+    /**
+     * <p>The TCP routing information for the route.</p>
+     */
+    inline void SetTcpRoute(const TcpRoute& value) { m_tcpRouteHasBeenSet = true; m_tcpRoute = value; }
+
+    /**
+     * <p>The TCP routing information for the route.</p>
+     */
+    inline void SetTcpRoute(TcpRoute&& value) { m_tcpRouteHasBeenSet = true; m_tcpRoute = std::move(value); }
+
+    /**
+     * <p>The TCP routing information for the route.</p>
+     */
+    inline RouteSpec& WithTcpRoute(const TcpRoute& value) { SetTcpRoute(value); return *this;}
+
+    /**
+     * <p>The TCP routing information for the route.</p>
+     */
+    inline RouteSpec& WithTcpRoute(TcpRoute&& value) { SetTcpRoute(std::move(value)); return *this;}
+
   private:
 
     HttpRoute m_httpRoute;
     bool m_httpRouteHasBeenSet;
+
+    TcpRoute m_tcpRoute;
+    bool m_tcpRouteHasBeenSet;
   };
 
 } // namespace Model

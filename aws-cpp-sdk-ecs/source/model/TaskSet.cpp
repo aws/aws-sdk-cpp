@@ -31,6 +31,8 @@ namespace Model
 TaskSet::TaskSet() : 
     m_idHasBeenSet(false),
     m_taskSetArnHasBeenSet(false),
+    m_serviceArnHasBeenSet(false),
+    m_clusterArnHasBeenSet(false),
     m_startedByHasBeenSet(false),
     m_externalIdHasBeenSet(false),
     m_statusHasBeenSet(false),
@@ -48,6 +50,7 @@ TaskSet::TaskSet() :
     m_platformVersionHasBeenSet(false),
     m_networkConfigurationHasBeenSet(false),
     m_loadBalancersHasBeenSet(false),
+    m_serviceRegistriesHasBeenSet(false),
     m_scaleHasBeenSet(false),
     m_stabilityStatus(StabilityStatus::NOT_SET),
     m_stabilityStatusHasBeenSet(false),
@@ -58,6 +61,8 @@ TaskSet::TaskSet() :
 TaskSet::TaskSet(JsonView jsonValue) : 
     m_idHasBeenSet(false),
     m_taskSetArnHasBeenSet(false),
+    m_serviceArnHasBeenSet(false),
+    m_clusterArnHasBeenSet(false),
     m_startedByHasBeenSet(false),
     m_externalIdHasBeenSet(false),
     m_statusHasBeenSet(false),
@@ -75,6 +80,7 @@ TaskSet::TaskSet(JsonView jsonValue) :
     m_platformVersionHasBeenSet(false),
     m_networkConfigurationHasBeenSet(false),
     m_loadBalancersHasBeenSet(false),
+    m_serviceRegistriesHasBeenSet(false),
     m_scaleHasBeenSet(false),
     m_stabilityStatus(StabilityStatus::NOT_SET),
     m_stabilityStatusHasBeenSet(false),
@@ -97,6 +103,20 @@ TaskSet& TaskSet::operator =(JsonView jsonValue)
     m_taskSetArn = jsonValue.GetString("taskSetArn");
 
     m_taskSetArnHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("serviceArn"))
+  {
+    m_serviceArn = jsonValue.GetString("serviceArn");
+
+    m_serviceArnHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("clusterArn"))
+  {
+    m_clusterArn = jsonValue.GetString("clusterArn");
+
+    m_clusterArnHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("startedBy"))
@@ -193,6 +213,16 @@ TaskSet& TaskSet::operator =(JsonView jsonValue)
     m_loadBalancersHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("serviceRegistries"))
+  {
+    Array<JsonView> serviceRegistriesJsonList = jsonValue.GetArray("serviceRegistries");
+    for(unsigned serviceRegistriesIndex = 0; serviceRegistriesIndex < serviceRegistriesJsonList.GetLength(); ++serviceRegistriesIndex)
+    {
+      m_serviceRegistries.push_back(serviceRegistriesJsonList[serviceRegistriesIndex].AsObject());
+    }
+    m_serviceRegistriesHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("scale"))
   {
     m_scale = jsonValue.GetObject("scale");
@@ -230,6 +260,18 @@ JsonValue TaskSet::Jsonize() const
   if(m_taskSetArnHasBeenSet)
   {
    payload.WithString("taskSetArn", m_taskSetArn);
+
+  }
+
+  if(m_serviceArnHasBeenSet)
+  {
+   payload.WithString("serviceArn", m_serviceArn);
+
+  }
+
+  if(m_clusterArnHasBeenSet)
+  {
+   payload.WithString("clusterArn", m_clusterArn);
 
   }
 
@@ -310,6 +352,17 @@ JsonValue TaskSet::Jsonize() const
      loadBalancersJsonList[loadBalancersIndex].AsObject(m_loadBalancers[loadBalancersIndex].Jsonize());
    }
    payload.WithArray("loadBalancers", std::move(loadBalancersJsonList));
+
+  }
+
+  if(m_serviceRegistriesHasBeenSet)
+  {
+   Array<JsonValue> serviceRegistriesJsonList(m_serviceRegistries.size());
+   for(unsigned serviceRegistriesIndex = 0; serviceRegistriesIndex < serviceRegistriesJsonList.GetLength(); ++serviceRegistriesIndex)
+   {
+     serviceRegistriesJsonList[serviceRegistriesIndex].AsObject(m_serviceRegistries[serviceRegistriesIndex].Jsonize());
+   }
+   payload.WithArray("serviceRegistries", std::move(serviceRegistriesJsonList));
 
   }
 

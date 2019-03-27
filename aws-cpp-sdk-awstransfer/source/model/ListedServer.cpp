@@ -32,6 +32,8 @@ ListedServer::ListedServer() :
     m_arnHasBeenSet(false),
     m_identityProviderType(IdentityProviderType::NOT_SET),
     m_identityProviderTypeHasBeenSet(false),
+    m_endpointType(EndpointType::NOT_SET),
+    m_endpointTypeHasBeenSet(false),
     m_loggingRoleHasBeenSet(false),
     m_serverIdHasBeenSet(false),
     m_state(State::NOT_SET),
@@ -45,6 +47,8 @@ ListedServer::ListedServer(JsonView jsonValue) :
     m_arnHasBeenSet(false),
     m_identityProviderType(IdentityProviderType::NOT_SET),
     m_identityProviderTypeHasBeenSet(false),
+    m_endpointType(EndpointType::NOT_SET),
+    m_endpointTypeHasBeenSet(false),
     m_loggingRoleHasBeenSet(false),
     m_serverIdHasBeenSet(false),
     m_state(State::NOT_SET),
@@ -69,6 +73,13 @@ ListedServer& ListedServer::operator =(JsonView jsonValue)
     m_identityProviderType = IdentityProviderTypeMapper::GetIdentityProviderTypeForName(jsonValue.GetString("IdentityProviderType"));
 
     m_identityProviderTypeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("EndpointType"))
+  {
+    m_endpointType = EndpointTypeMapper::GetEndpointTypeForName(jsonValue.GetString("EndpointType"));
+
+    m_endpointTypeHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("LoggingRole"))
@@ -115,6 +126,11 @@ JsonValue ListedServer::Jsonize() const
   if(m_identityProviderTypeHasBeenSet)
   {
    payload.WithString("IdentityProviderType", IdentityProviderTypeMapper::GetNameForIdentityProviderType(m_identityProviderType));
+  }
+
+  if(m_endpointTypeHasBeenSet)
+  {
+   payload.WithString("EndpointType", EndpointTypeMapper::GetNameForEndpointType(m_endpointType));
   }
 
   if(m_loggingRoleHasBeenSet)

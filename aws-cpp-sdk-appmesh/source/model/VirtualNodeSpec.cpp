@@ -31,6 +31,7 @@ namespace Model
 VirtualNodeSpec::VirtualNodeSpec() : 
     m_backendsHasBeenSet(false),
     m_listenersHasBeenSet(false),
+    m_loggingHasBeenSet(false),
     m_serviceDiscoveryHasBeenSet(false)
 {
 }
@@ -38,6 +39,7 @@ VirtualNodeSpec::VirtualNodeSpec() :
 VirtualNodeSpec::VirtualNodeSpec(JsonView jsonValue) : 
     m_backendsHasBeenSet(false),
     m_listenersHasBeenSet(false),
+    m_loggingHasBeenSet(false),
     m_serviceDiscoveryHasBeenSet(false)
 {
   *this = jsonValue;
@@ -63,6 +65,13 @@ VirtualNodeSpec& VirtualNodeSpec::operator =(JsonView jsonValue)
       m_listeners.push_back(listenersJsonList[listenersIndex].AsObject());
     }
     m_listenersHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("logging"))
+  {
+    m_logging = jsonValue.GetObject("logging");
+
+    m_loggingHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("serviceDiscovery"))
@@ -98,6 +107,12 @@ JsonValue VirtualNodeSpec::Jsonize() const
      listenersJsonList[listenersIndex].AsObject(m_listeners[listenersIndex].Jsonize());
    }
    payload.WithArray("listeners", std::move(listenersJsonList));
+
+  }
+
+  if(m_loggingHasBeenSet)
+  {
+   payload.WithObject("logging", m_logging.Jsonize());
 
   }
 

@@ -590,8 +590,8 @@ namespace Model
          * can categorize resources by purpose, owner, environment, or team. Each tag
          * consists of a key and a value, which you define. You can add tags to the
          * following AWS Storage Gateway resources:</p> <ul> <li> <p>Storage gateways of
-         * all types</p> </li> <li> <p>Storage Volumes</p> </li> <li> <p>Virtual Tapes</p>
-         * </li> <li> <p>NFS and SMB File Shares</p> </li> </ul> <p>You can create a
+         * all types</p> </li> <li> <p>Storage volumes</p> </li> <li> <p>Virtual tapes</p>
+         * </li> <li> <p>NFS and SMB file shares</p> </li> </ul> <p>You can create a
          * maximum of 10 tags for each resource. Virtual tapes and storage volumes that are
          * recovered to a new gateway maintain their tags.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/AddTagsToResource">AWS
@@ -605,8 +605,8 @@ namespace Model
          * can categorize resources by purpose, owner, environment, or team. Each tag
          * consists of a key and a value, which you define. You can add tags to the
          * following AWS Storage Gateway resources:</p> <ul> <li> <p>Storage gateways of
-         * all types</p> </li> <li> <p>Storage Volumes</p> </li> <li> <p>Virtual Tapes</p>
-         * </li> <li> <p>NFS and SMB File Shares</p> </li> </ul> <p>You can create a
+         * all types</p> </li> <li> <p>Storage volumes</p> </li> <li> <p>Virtual tapes</p>
+         * </li> <li> <p>NFS and SMB file shares</p> </li> </ul> <p>You can create a
          * maximum of 10 tags for each resource. Virtual tapes and storage volumes that are
          * recovered to a new gateway maintain their tags.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/AddTagsToResource">AWS
@@ -622,8 +622,8 @@ namespace Model
          * can categorize resources by purpose, owner, environment, or team. Each tag
          * consists of a key and a value, which you define. You can add tags to the
          * following AWS Storage Gateway resources:</p> <ul> <li> <p>Storage gateways of
-         * all types</p> </li> <li> <p>Storage Volumes</p> </li> <li> <p>Virtual Tapes</p>
-         * </li> <li> <p>NFS and SMB File Shares</p> </li> </ul> <p>You can create a
+         * all types</p> </li> <li> <p>Storage volumes</p> </li> <li> <p>Virtual tapes</p>
+         * </li> <li> <p>NFS and SMB file shares</p> </li> </ul> <p>You can create a
          * maximum of 10 tags for each resource. Virtual tapes and storage volumes that are
          * recovered to a new gateway maintain their tags.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/AddTagsToResource">AWS

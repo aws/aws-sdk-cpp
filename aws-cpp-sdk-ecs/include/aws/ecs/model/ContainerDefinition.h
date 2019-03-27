@@ -2100,120 +2100,360 @@ namespace Model
 
 
     /**
-     * <p>The dependencies defined for container startup. A container can contain
-     * multiple dependencies.</p>
+     * <p>The dependencies defined for container startup and shutdown. A container can
+     * contain multiple dependencies. When a dependency is defined for container
+     * startup, for container shutdown it is reversed.</p> <p>Your Amazon ECS container
+     * instances require at least version 1.26.0 of the container agent to enable
+     * container dependencies. However, we recommend using the latest container agent
+     * version. For information about checking your agent version and updating to the
+     * latest version, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-update.html">Updating
+     * the Amazon ECS Container Agent</a> in the <i>Amazon Elastic Container Service
+     * Developer Guide</i>. If you are using an Amazon ECS-optimized Linux AMI, your
+     * instance needs at least version 1.26.0-1 of the <code>ecs-init</code> package.
+     * If your container instances are launched from version <code>20190301</code> or
+     * later, then they contain the required versions of the container agent and
+     * <code>ecs-init</code>. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html">Amazon
+     * ECS-optimized Linux AMI</a> in the <i>Amazon Elastic Container Service Developer
+     * Guide</i>.</p>
      */
     inline const Aws::Vector<ContainerDependency>& GetDependsOn() const{ return m_dependsOn; }
 
     /**
-     * <p>The dependencies defined for container startup. A container can contain
-     * multiple dependencies.</p>
+     * <p>The dependencies defined for container startup and shutdown. A container can
+     * contain multiple dependencies. When a dependency is defined for container
+     * startup, for container shutdown it is reversed.</p> <p>Your Amazon ECS container
+     * instances require at least version 1.26.0 of the container agent to enable
+     * container dependencies. However, we recommend using the latest container agent
+     * version. For information about checking your agent version and updating to the
+     * latest version, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-update.html">Updating
+     * the Amazon ECS Container Agent</a> in the <i>Amazon Elastic Container Service
+     * Developer Guide</i>. If you are using an Amazon ECS-optimized Linux AMI, your
+     * instance needs at least version 1.26.0-1 of the <code>ecs-init</code> package.
+     * If your container instances are launched from version <code>20190301</code> or
+     * later, then they contain the required versions of the container agent and
+     * <code>ecs-init</code>. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html">Amazon
+     * ECS-optimized Linux AMI</a> in the <i>Amazon Elastic Container Service Developer
+     * Guide</i>.</p>
      */
     inline bool DependsOnHasBeenSet() const { return m_dependsOnHasBeenSet; }
 
     /**
-     * <p>The dependencies defined for container startup. A container can contain
-     * multiple dependencies.</p>
+     * <p>The dependencies defined for container startup and shutdown. A container can
+     * contain multiple dependencies. When a dependency is defined for container
+     * startup, for container shutdown it is reversed.</p> <p>Your Amazon ECS container
+     * instances require at least version 1.26.0 of the container agent to enable
+     * container dependencies. However, we recommend using the latest container agent
+     * version. For information about checking your agent version and updating to the
+     * latest version, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-update.html">Updating
+     * the Amazon ECS Container Agent</a> in the <i>Amazon Elastic Container Service
+     * Developer Guide</i>. If you are using an Amazon ECS-optimized Linux AMI, your
+     * instance needs at least version 1.26.0-1 of the <code>ecs-init</code> package.
+     * If your container instances are launched from version <code>20190301</code> or
+     * later, then they contain the required versions of the container agent and
+     * <code>ecs-init</code>. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html">Amazon
+     * ECS-optimized Linux AMI</a> in the <i>Amazon Elastic Container Service Developer
+     * Guide</i>.</p>
      */
     inline void SetDependsOn(const Aws::Vector<ContainerDependency>& value) { m_dependsOnHasBeenSet = true; m_dependsOn = value; }
 
     /**
-     * <p>The dependencies defined for container startup. A container can contain
-     * multiple dependencies.</p>
+     * <p>The dependencies defined for container startup and shutdown. A container can
+     * contain multiple dependencies. When a dependency is defined for container
+     * startup, for container shutdown it is reversed.</p> <p>Your Amazon ECS container
+     * instances require at least version 1.26.0 of the container agent to enable
+     * container dependencies. However, we recommend using the latest container agent
+     * version. For information about checking your agent version and updating to the
+     * latest version, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-update.html">Updating
+     * the Amazon ECS Container Agent</a> in the <i>Amazon Elastic Container Service
+     * Developer Guide</i>. If you are using an Amazon ECS-optimized Linux AMI, your
+     * instance needs at least version 1.26.0-1 of the <code>ecs-init</code> package.
+     * If your container instances are launched from version <code>20190301</code> or
+     * later, then they contain the required versions of the container agent and
+     * <code>ecs-init</code>. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html">Amazon
+     * ECS-optimized Linux AMI</a> in the <i>Amazon Elastic Container Service Developer
+     * Guide</i>.</p>
      */
     inline void SetDependsOn(Aws::Vector<ContainerDependency>&& value) { m_dependsOnHasBeenSet = true; m_dependsOn = std::move(value); }
 
     /**
-     * <p>The dependencies defined for container startup. A container can contain
-     * multiple dependencies.</p>
+     * <p>The dependencies defined for container startup and shutdown. A container can
+     * contain multiple dependencies. When a dependency is defined for container
+     * startup, for container shutdown it is reversed.</p> <p>Your Amazon ECS container
+     * instances require at least version 1.26.0 of the container agent to enable
+     * container dependencies. However, we recommend using the latest container agent
+     * version. For information about checking your agent version and updating to the
+     * latest version, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-update.html">Updating
+     * the Amazon ECS Container Agent</a> in the <i>Amazon Elastic Container Service
+     * Developer Guide</i>. If you are using an Amazon ECS-optimized Linux AMI, your
+     * instance needs at least version 1.26.0-1 of the <code>ecs-init</code> package.
+     * If your container instances are launched from version <code>20190301</code> or
+     * later, then they contain the required versions of the container agent and
+     * <code>ecs-init</code>. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html">Amazon
+     * ECS-optimized Linux AMI</a> in the <i>Amazon Elastic Container Service Developer
+     * Guide</i>.</p>
      */
     inline ContainerDefinition& WithDependsOn(const Aws::Vector<ContainerDependency>& value) { SetDependsOn(value); return *this;}
 
     /**
-     * <p>The dependencies defined for container startup. A container can contain
-     * multiple dependencies.</p>
+     * <p>The dependencies defined for container startup and shutdown. A container can
+     * contain multiple dependencies. When a dependency is defined for container
+     * startup, for container shutdown it is reversed.</p> <p>Your Amazon ECS container
+     * instances require at least version 1.26.0 of the container agent to enable
+     * container dependencies. However, we recommend using the latest container agent
+     * version. For information about checking your agent version and updating to the
+     * latest version, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-update.html">Updating
+     * the Amazon ECS Container Agent</a> in the <i>Amazon Elastic Container Service
+     * Developer Guide</i>. If you are using an Amazon ECS-optimized Linux AMI, your
+     * instance needs at least version 1.26.0-1 of the <code>ecs-init</code> package.
+     * If your container instances are launched from version <code>20190301</code> or
+     * later, then they contain the required versions of the container agent and
+     * <code>ecs-init</code>. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html">Amazon
+     * ECS-optimized Linux AMI</a> in the <i>Amazon Elastic Container Service Developer
+     * Guide</i>.</p>
      */
     inline ContainerDefinition& WithDependsOn(Aws::Vector<ContainerDependency>&& value) { SetDependsOn(std::move(value)); return *this;}
 
     /**
-     * <p>The dependencies defined for container startup. A container can contain
-     * multiple dependencies.</p>
+     * <p>The dependencies defined for container startup and shutdown. A container can
+     * contain multiple dependencies. When a dependency is defined for container
+     * startup, for container shutdown it is reversed.</p> <p>Your Amazon ECS container
+     * instances require at least version 1.26.0 of the container agent to enable
+     * container dependencies. However, we recommend using the latest container agent
+     * version. For information about checking your agent version and updating to the
+     * latest version, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-update.html">Updating
+     * the Amazon ECS Container Agent</a> in the <i>Amazon Elastic Container Service
+     * Developer Guide</i>. If you are using an Amazon ECS-optimized Linux AMI, your
+     * instance needs at least version 1.26.0-1 of the <code>ecs-init</code> package.
+     * If your container instances are launched from version <code>20190301</code> or
+     * later, then they contain the required versions of the container agent and
+     * <code>ecs-init</code>. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html">Amazon
+     * ECS-optimized Linux AMI</a> in the <i>Amazon Elastic Container Service Developer
+     * Guide</i>.</p>
      */
     inline ContainerDefinition& AddDependsOn(const ContainerDependency& value) { m_dependsOnHasBeenSet = true; m_dependsOn.push_back(value); return *this; }
 
     /**
-     * <p>The dependencies defined for container startup. A container can contain
-     * multiple dependencies.</p>
+     * <p>The dependencies defined for container startup and shutdown. A container can
+     * contain multiple dependencies. When a dependency is defined for container
+     * startup, for container shutdown it is reversed.</p> <p>Your Amazon ECS container
+     * instances require at least version 1.26.0 of the container agent to enable
+     * container dependencies. However, we recommend using the latest container agent
+     * version. For information about checking your agent version and updating to the
+     * latest version, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-update.html">Updating
+     * the Amazon ECS Container Agent</a> in the <i>Amazon Elastic Container Service
+     * Developer Guide</i>. If you are using an Amazon ECS-optimized Linux AMI, your
+     * instance needs at least version 1.26.0-1 of the <code>ecs-init</code> package.
+     * If your container instances are launched from version <code>20190301</code> or
+     * later, then they contain the required versions of the container agent and
+     * <code>ecs-init</code>. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html">Amazon
+     * ECS-optimized Linux AMI</a> in the <i>Amazon Elastic Container Service Developer
+     * Guide</i>.</p>
      */
     inline ContainerDefinition& AddDependsOn(ContainerDependency&& value) { m_dependsOnHasBeenSet = true; m_dependsOn.push_back(std::move(value)); return *this; }
 
 
     /**
-     * <p>Time duration to wait before giving up on starting the container.</p> <note>
-     * <p>The <code>startTimeout</code> value for the container will take precedence
-     * over the <code>ECS_CONTAINER_START_TIMEOUT</code> container agent configuration
-     * parameter, if used.</p> </note>
+     * <p>Time duration to wait before giving up on resolving dependencies for a
+     * container. For example, you specify two containers in a task definition with
+     * containerA having a dependency on containerB reaching a <code>COMPLETE</code>,
+     * <code>SUCCESS</code>, or <code>HEALTHY</code> status. If a
+     * <code>startTimeout</code> value is specified for containerB and it does not
+     * reach the desired status within that time then containerA will give up and not
+     * start. This results in the task transitioning to a <code>STOPPED</code>
+     * state.</p> <p>Your Amazon ECS container instances require at least version
+     * 1.26.0 of the container agent to enable a container start timeout value.
+     * However, we recommend using the latest container agent version. For information
+     * about checking your agent version and updating to the latest version, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-update.html">Updating
+     * the Amazon ECS Container Agent</a> in the <i>Amazon Elastic Container Service
+     * Developer Guide</i>. If you are using an Amazon ECS-optimized Linux AMI, your
+     * instance needs at least version 1.26.0-1 of the <code>ecs-init</code> package.
+     * If your container instances are launched from version <code>20190301</code> or
+     * later, then they contain the required versions of the container agent and
+     * <code>ecs-init</code>. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html">Amazon
+     * ECS-optimized Linux AMI</a> in the <i>Amazon Elastic Container Service Developer
+     * Guide</i>.</p>
      */
     inline int GetStartTimeout() const{ return m_startTimeout; }
 
     /**
-     * <p>Time duration to wait before giving up on starting the container.</p> <note>
-     * <p>The <code>startTimeout</code> value for the container will take precedence
-     * over the <code>ECS_CONTAINER_START_TIMEOUT</code> container agent configuration
-     * parameter, if used.</p> </note>
+     * <p>Time duration to wait before giving up on resolving dependencies for a
+     * container. For example, you specify two containers in a task definition with
+     * containerA having a dependency on containerB reaching a <code>COMPLETE</code>,
+     * <code>SUCCESS</code>, or <code>HEALTHY</code> status. If a
+     * <code>startTimeout</code> value is specified for containerB and it does not
+     * reach the desired status within that time then containerA will give up and not
+     * start. This results in the task transitioning to a <code>STOPPED</code>
+     * state.</p> <p>Your Amazon ECS container instances require at least version
+     * 1.26.0 of the container agent to enable a container start timeout value.
+     * However, we recommend using the latest container agent version. For information
+     * about checking your agent version and updating to the latest version, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-update.html">Updating
+     * the Amazon ECS Container Agent</a> in the <i>Amazon Elastic Container Service
+     * Developer Guide</i>. If you are using an Amazon ECS-optimized Linux AMI, your
+     * instance needs at least version 1.26.0-1 of the <code>ecs-init</code> package.
+     * If your container instances are launched from version <code>20190301</code> or
+     * later, then they contain the required versions of the container agent and
+     * <code>ecs-init</code>. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html">Amazon
+     * ECS-optimized Linux AMI</a> in the <i>Amazon Elastic Container Service Developer
+     * Guide</i>.</p>
      */
     inline bool StartTimeoutHasBeenSet() const { return m_startTimeoutHasBeenSet; }
 
     /**
-     * <p>Time duration to wait before giving up on starting the container.</p> <note>
-     * <p>The <code>startTimeout</code> value for the container will take precedence
-     * over the <code>ECS_CONTAINER_START_TIMEOUT</code> container agent configuration
-     * parameter, if used.</p> </note>
+     * <p>Time duration to wait before giving up on resolving dependencies for a
+     * container. For example, you specify two containers in a task definition with
+     * containerA having a dependency on containerB reaching a <code>COMPLETE</code>,
+     * <code>SUCCESS</code>, or <code>HEALTHY</code> status. If a
+     * <code>startTimeout</code> value is specified for containerB and it does not
+     * reach the desired status within that time then containerA will give up and not
+     * start. This results in the task transitioning to a <code>STOPPED</code>
+     * state.</p> <p>Your Amazon ECS container instances require at least version
+     * 1.26.0 of the container agent to enable a container start timeout value.
+     * However, we recommend using the latest container agent version. For information
+     * about checking your agent version and updating to the latest version, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-update.html">Updating
+     * the Amazon ECS Container Agent</a> in the <i>Amazon Elastic Container Service
+     * Developer Guide</i>. If you are using an Amazon ECS-optimized Linux AMI, your
+     * instance needs at least version 1.26.0-1 of the <code>ecs-init</code> package.
+     * If your container instances are launched from version <code>20190301</code> or
+     * later, then they contain the required versions of the container agent and
+     * <code>ecs-init</code>. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html">Amazon
+     * ECS-optimized Linux AMI</a> in the <i>Amazon Elastic Container Service Developer
+     * Guide</i>.</p>
      */
     inline void SetStartTimeout(int value) { m_startTimeoutHasBeenSet = true; m_startTimeout = value; }
 
     /**
-     * <p>Time duration to wait before giving up on starting the container.</p> <note>
-     * <p>The <code>startTimeout</code> value for the container will take precedence
-     * over the <code>ECS_CONTAINER_START_TIMEOUT</code> container agent configuration
-     * parameter, if used.</p> </note>
+     * <p>Time duration to wait before giving up on resolving dependencies for a
+     * container. For example, you specify two containers in a task definition with
+     * containerA having a dependency on containerB reaching a <code>COMPLETE</code>,
+     * <code>SUCCESS</code>, or <code>HEALTHY</code> status. If a
+     * <code>startTimeout</code> value is specified for containerB and it does not
+     * reach the desired status within that time then containerA will give up and not
+     * start. This results in the task transitioning to a <code>STOPPED</code>
+     * state.</p> <p>Your Amazon ECS container instances require at least version
+     * 1.26.0 of the container agent to enable a container start timeout value.
+     * However, we recommend using the latest container agent version. For information
+     * about checking your agent version and updating to the latest version, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-update.html">Updating
+     * the Amazon ECS Container Agent</a> in the <i>Amazon Elastic Container Service
+     * Developer Guide</i>. If you are using an Amazon ECS-optimized Linux AMI, your
+     * instance needs at least version 1.26.0-1 of the <code>ecs-init</code> package.
+     * If your container instances are launched from version <code>20190301</code> or
+     * later, then they contain the required versions of the container agent and
+     * <code>ecs-init</code>. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html">Amazon
+     * ECS-optimized Linux AMI</a> in the <i>Amazon Elastic Container Service Developer
+     * Guide</i>.</p>
      */
     inline ContainerDefinition& WithStartTimeout(int value) { SetStartTimeout(value); return *this;}
 
 
     /**
-     * <p>Time duration to wait before the container is forcefully killed if it does
-     * not exit normally on its own.</p> <note> <p>The <code>stopTimeout</code> value
-     * for the container will take precedence over the
-     * <code>ECS_CONTAINER_STOP_TIMEOUT</code> container agent configuration parameter,
-     * if used.</p> </note>
+     * <p>Time duration to wait before the container is forcefully killed if it doesn't
+     * exit normally on its own. The stop timeout value for the container takes
+     * precedence over the <code>ECS_CONTAINER_STOP_TIMEOUT</code> container agent
+     * configuration parameter, if used.</p> <p>Your Amazon ECS container instances
+     * require at least version 1.26.0 of the container agent to enable a container
+     * stop timeout value. However, we recommend using the latest container agent
+     * version. For information about checking your agent version and updating to the
+     * latest version, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-update.html">Updating
+     * the Amazon ECS Container Agent</a> in the <i>Amazon Elastic Container Service
+     * Developer Guide</i>. If you are using an Amazon ECS-optimized Linux AMI, your
+     * instance needs at least version 1.26.0-1 of the <code>ecs-init</code> package.
+     * If your container instances are launched from version <code>20190301</code> or
+     * later, then they contain the required versions of the container agent and
+     * <code>ecs-init</code>. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html">Amazon
+     * ECS-optimized Linux AMI</a> in the <i>Amazon Elastic Container Service Developer
+     * Guide</i>.</p>
      */
     inline int GetStopTimeout() const{ return m_stopTimeout; }
 
     /**
-     * <p>Time duration to wait before the container is forcefully killed if it does
-     * not exit normally on its own.</p> <note> <p>The <code>stopTimeout</code> value
-     * for the container will take precedence over the
-     * <code>ECS_CONTAINER_STOP_TIMEOUT</code> container agent configuration parameter,
-     * if used.</p> </note>
+     * <p>Time duration to wait before the container is forcefully killed if it doesn't
+     * exit normally on its own. The stop timeout value for the container takes
+     * precedence over the <code>ECS_CONTAINER_STOP_TIMEOUT</code> container agent
+     * configuration parameter, if used.</p> <p>Your Amazon ECS container instances
+     * require at least version 1.26.0 of the container agent to enable a container
+     * stop timeout value. However, we recommend using the latest container agent
+     * version. For information about checking your agent version and updating to the
+     * latest version, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-update.html">Updating
+     * the Amazon ECS Container Agent</a> in the <i>Amazon Elastic Container Service
+     * Developer Guide</i>. If you are using an Amazon ECS-optimized Linux AMI, your
+     * instance needs at least version 1.26.0-1 of the <code>ecs-init</code> package.
+     * If your container instances are launched from version <code>20190301</code> or
+     * later, then they contain the required versions of the container agent and
+     * <code>ecs-init</code>. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html">Amazon
+     * ECS-optimized Linux AMI</a> in the <i>Amazon Elastic Container Service Developer
+     * Guide</i>.</p>
      */
     inline bool StopTimeoutHasBeenSet() const { return m_stopTimeoutHasBeenSet; }
 
     /**
-     * <p>Time duration to wait before the container is forcefully killed if it does
-     * not exit normally on its own.</p> <note> <p>The <code>stopTimeout</code> value
-     * for the container will take precedence over the
-     * <code>ECS_CONTAINER_STOP_TIMEOUT</code> container agent configuration parameter,
-     * if used.</p> </note>
+     * <p>Time duration to wait before the container is forcefully killed if it doesn't
+     * exit normally on its own. The stop timeout value for the container takes
+     * precedence over the <code>ECS_CONTAINER_STOP_TIMEOUT</code> container agent
+     * configuration parameter, if used.</p> <p>Your Amazon ECS container instances
+     * require at least version 1.26.0 of the container agent to enable a container
+     * stop timeout value. However, we recommend using the latest container agent
+     * version. For information about checking your agent version and updating to the
+     * latest version, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-update.html">Updating
+     * the Amazon ECS Container Agent</a> in the <i>Amazon Elastic Container Service
+     * Developer Guide</i>. If you are using an Amazon ECS-optimized Linux AMI, your
+     * instance needs at least version 1.26.0-1 of the <code>ecs-init</code> package.
+     * If your container instances are launched from version <code>20190301</code> or
+     * later, then they contain the required versions of the container agent and
+     * <code>ecs-init</code>. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html">Amazon
+     * ECS-optimized Linux AMI</a> in the <i>Amazon Elastic Container Service Developer
+     * Guide</i>.</p>
      */
     inline void SetStopTimeout(int value) { m_stopTimeoutHasBeenSet = true; m_stopTimeout = value; }
 
     /**
-     * <p>Time duration to wait before the container is forcefully killed if it does
-     * not exit normally on its own.</p> <note> <p>The <code>stopTimeout</code> value
-     * for the container will take precedence over the
-     * <code>ECS_CONTAINER_STOP_TIMEOUT</code> container agent configuration parameter,
-     * if used.</p> </note>
+     * <p>Time duration to wait before the container is forcefully killed if it doesn't
+     * exit normally on its own. The stop timeout value for the container takes
+     * precedence over the <code>ECS_CONTAINER_STOP_TIMEOUT</code> container agent
+     * configuration parameter, if used.</p> <p>Your Amazon ECS container instances
+     * require at least version 1.26.0 of the container agent to enable a container
+     * stop timeout value. However, we recommend using the latest container agent
+     * version. For information about checking your agent version and updating to the
+     * latest version, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-update.html">Updating
+     * the Amazon ECS Container Agent</a> in the <i>Amazon Elastic Container Service
+     * Developer Guide</i>. If you are using an Amazon ECS-optimized Linux AMI, your
+     * instance needs at least version 1.26.0-1 of the <code>ecs-init</code> package.
+     * If your container instances are launched from version <code>20190301</code> or
+     * later, then they contain the required versions of the container agent and
+     * <code>ecs-init</code>. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html">Amazon
+     * ECS-optimized Linux AMI</a> in the <i>Amazon Elastic Container Service Developer
+     * Guide</i>.</p>
      */
     inline ContainerDefinition& WithStopTimeout(int value) { SetStopTimeout(value); return *this;}
 
@@ -2324,14 +2564,14 @@ namespace Model
 
 
     /**
-     * <p>The username to use inside the container. This parameter maps to
+     * <p>The user name to use inside the container. This parameter maps to
      * <code>User</code> in the <a
      * href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create
      * a container</a> section of the <a
      * href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
      * <code>--user</code> option to <a
-     * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> <p>This
-     * following formats can be used. If specifying a UID or GID, it must be specified
+     * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> <p>You
+     * can use the following formats. If specifying a UID or GID, you must specify it
      * as a positive integer.</p> <ul> <li> <p> <code>user</code> </p> </li> <li> <p>
      * <code>user:group</code> </p> </li> <li> <p> <code>uid</code> </p> </li> <li> <p>
      * <code>uid:gid</code> </p> </li> <li> <p> <code>user:gid</code> </p> </li> <li>
@@ -2341,14 +2581,14 @@ namespace Model
     inline const Aws::String& GetUser() const{ return m_user; }
 
     /**
-     * <p>The username to use inside the container. This parameter maps to
+     * <p>The user name to use inside the container. This parameter maps to
      * <code>User</code> in the <a
      * href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create
      * a container</a> section of the <a
      * href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
      * <code>--user</code> option to <a
-     * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> <p>This
-     * following formats can be used. If specifying a UID or GID, it must be specified
+     * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> <p>You
+     * can use the following formats. If specifying a UID or GID, you must specify it
      * as a positive integer.</p> <ul> <li> <p> <code>user</code> </p> </li> <li> <p>
      * <code>user:group</code> </p> </li> <li> <p> <code>uid</code> </p> </li> <li> <p>
      * <code>uid:gid</code> </p> </li> <li> <p> <code>user:gid</code> </p> </li> <li>
@@ -2358,14 +2598,14 @@ namespace Model
     inline bool UserHasBeenSet() const { return m_userHasBeenSet; }
 
     /**
-     * <p>The username to use inside the container. This parameter maps to
+     * <p>The user name to use inside the container. This parameter maps to
      * <code>User</code> in the <a
      * href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create
      * a container</a> section of the <a
      * href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
      * <code>--user</code> option to <a
-     * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> <p>This
-     * following formats can be used. If specifying a UID or GID, it must be specified
+     * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> <p>You
+     * can use the following formats. If specifying a UID or GID, you must specify it
      * as a positive integer.</p> <ul> <li> <p> <code>user</code> </p> </li> <li> <p>
      * <code>user:group</code> </p> </li> <li> <p> <code>uid</code> </p> </li> <li> <p>
      * <code>uid:gid</code> </p> </li> <li> <p> <code>user:gid</code> </p> </li> <li>
@@ -2375,14 +2615,14 @@ namespace Model
     inline void SetUser(const Aws::String& value) { m_userHasBeenSet = true; m_user = value; }
 
     /**
-     * <p>The username to use inside the container. This parameter maps to
+     * <p>The user name to use inside the container. This parameter maps to
      * <code>User</code> in the <a
      * href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create
      * a container</a> section of the <a
      * href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
      * <code>--user</code> option to <a
-     * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> <p>This
-     * following formats can be used. If specifying a UID or GID, it must be specified
+     * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> <p>You
+     * can use the following formats. If specifying a UID or GID, you must specify it
      * as a positive integer.</p> <ul> <li> <p> <code>user</code> </p> </li> <li> <p>
      * <code>user:group</code> </p> </li> <li> <p> <code>uid</code> </p> </li> <li> <p>
      * <code>uid:gid</code> </p> </li> <li> <p> <code>user:gid</code> </p> </li> <li>
@@ -2392,14 +2632,14 @@ namespace Model
     inline void SetUser(Aws::String&& value) { m_userHasBeenSet = true; m_user = std::move(value); }
 
     /**
-     * <p>The username to use inside the container. This parameter maps to
+     * <p>The user name to use inside the container. This parameter maps to
      * <code>User</code> in the <a
      * href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create
      * a container</a> section of the <a
      * href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
      * <code>--user</code> option to <a
-     * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> <p>This
-     * following formats can be used. If specifying a UID or GID, it must be specified
+     * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> <p>You
+     * can use the following formats. If specifying a UID or GID, you must specify it
      * as a positive integer.</p> <ul> <li> <p> <code>user</code> </p> </li> <li> <p>
      * <code>user:group</code> </p> </li> <li> <p> <code>uid</code> </p> </li> <li> <p>
      * <code>uid:gid</code> </p> </li> <li> <p> <code>user:gid</code> </p> </li> <li>
@@ -2409,14 +2649,14 @@ namespace Model
     inline void SetUser(const char* value) { m_userHasBeenSet = true; m_user.assign(value); }
 
     /**
-     * <p>The username to use inside the container. This parameter maps to
+     * <p>The user name to use inside the container. This parameter maps to
      * <code>User</code> in the <a
      * href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create
      * a container</a> section of the <a
      * href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
      * <code>--user</code> option to <a
-     * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> <p>This
-     * following formats can be used. If specifying a UID or GID, it must be specified
+     * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> <p>You
+     * can use the following formats. If specifying a UID or GID, you must specify it
      * as a positive integer.</p> <ul> <li> <p> <code>user</code> </p> </li> <li> <p>
      * <code>user:group</code> </p> </li> <li> <p> <code>uid</code> </p> </li> <li> <p>
      * <code>uid:gid</code> </p> </li> <li> <p> <code>user:gid</code> </p> </li> <li>
@@ -2426,14 +2666,14 @@ namespace Model
     inline ContainerDefinition& WithUser(const Aws::String& value) { SetUser(value); return *this;}
 
     /**
-     * <p>The username to use inside the container. This parameter maps to
+     * <p>The user name to use inside the container. This parameter maps to
      * <code>User</code> in the <a
      * href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create
      * a container</a> section of the <a
      * href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
      * <code>--user</code> option to <a
-     * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> <p>This
-     * following formats can be used. If specifying a UID or GID, it must be specified
+     * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> <p>You
+     * can use the following formats. If specifying a UID or GID, you must specify it
      * as a positive integer.</p> <ul> <li> <p> <code>user</code> </p> </li> <li> <p>
      * <code>user:group</code> </p> </li> <li> <p> <code>uid</code> </p> </li> <li> <p>
      * <code>uid:gid</code> </p> </li> <li> <p> <code>user:gid</code> </p> </li> <li>
@@ -2443,14 +2683,14 @@ namespace Model
     inline ContainerDefinition& WithUser(Aws::String&& value) { SetUser(std::move(value)); return *this;}
 
     /**
-     * <p>The username to use inside the container. This parameter maps to
+     * <p>The user name to use inside the container. This parameter maps to
      * <code>User</code> in the <a
      * href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create
      * a container</a> section of the <a
      * href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
      * <code>--user</code> option to <a
-     * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> <p>This
-     * following formats can be used. If specifying a UID or GID, it must be specified
+     * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> <p>You
+     * can use the following formats. If specifying a UID or GID, you must specify it
      * as a positive integer.</p> <ul> <li> <p> <code>user</code> </p> </li> <li> <p>
      * <code>user:group</code> </p> </li> <li> <p> <code>uid</code> </p> </li> <li> <p>
      * <code>uid:gid</code> </p> </li> <li> <p> <code>user:gid</code> </p> </li> <li>

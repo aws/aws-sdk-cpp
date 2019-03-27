@@ -35,9 +35,8 @@ namespace Model
 
   /**
    * <p>A floating-point percentage of the desired number of tasks to place and keep
-   * running in the service. This is used when a service uses the
-   * <code>CODE_DEPLOY</code> deployment controller type.</p><p><h3>See Also:</h3>  
-   * <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/Scale">AWS API
+   * running in the task set.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/Scale">AWS API
    * Reference</a></p>
    */
   class AWS_ECS_API Scale
@@ -51,25 +50,29 @@ namespace Model
 
     /**
      * <p>The value, specified as a percent total of a service's
-     * <code>desiredCount</code>, to scale the task set.</p>
+     * <code>desiredCount</code>, to scale the task set. Accepted values are numbers
+     * between 0 and 100.</p>
      */
     inline double GetValue() const{ return m_value; }
 
     /**
      * <p>The value, specified as a percent total of a service's
-     * <code>desiredCount</code>, to scale the task set.</p>
+     * <code>desiredCount</code>, to scale the task set. Accepted values are numbers
+     * between 0 and 100.</p>
      */
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
 
     /**
      * <p>The value, specified as a percent total of a service's
-     * <code>desiredCount</code>, to scale the task set.</p>
+     * <code>desiredCount</code>, to scale the task set. Accepted values are numbers
+     * between 0 and 100.</p>
      */
     inline void SetValue(double value) { m_valueHasBeenSet = true; m_value = value; }
 
     /**
      * <p>The value, specified as a percent total of a service's
-     * <code>desiredCount</code>, to scale the task set.</p>
+     * <code>desiredCount</code>, to scale the task set. Accepted values are numbers
+     * between 0 and 100.</p>
      */
     inline Scale& WithValue(double value) { SetValue(value); return *this;}
 

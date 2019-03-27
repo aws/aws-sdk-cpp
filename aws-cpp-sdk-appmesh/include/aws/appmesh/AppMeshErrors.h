@@ -63,7 +63,8 @@ enum class AppMeshErrors
   LIMIT_EXCEEDED,
   NOT_FOUND,
   RESOURCE_IN_USE,
-  TOO_MANY_REQUESTS
+  TOO_MANY_REQUESTS,
+  TOO_MANY_TAGS
 };
 namespace AppMeshErrorMapper
 {

@@ -143,7 +143,7 @@ namespace Model
      * value.</p>
          <note>
             <p>This token should be treated as an
-     * opaque identifier that is only used to
+     * opaque identifier that is used only to
                 retrieve the next items
      * in a list and not for other programmatic purposes.</p>
         </note>
@@ -161,7 +161,7 @@ namespace Model
      * value.</p>
          <note>
             <p>This token should be treated as an
-     * opaque identifier that is only used to
+     * opaque identifier that is used only to
                 retrieve the next items
      * in a list and not for other programmatic purposes.</p>
         </note>
@@ -179,7 +179,7 @@ namespace Model
      * value.</p>
          <note>
             <p>This token should be treated as an
-     * opaque identifier that is only used to
+     * opaque identifier that is used only to
                 retrieve the next items
      * in a list and not for other programmatic purposes.</p>
         </note>
@@ -197,7 +197,7 @@ namespace Model
      * value.</p>
          <note>
             <p>This token should be treated as an
-     * opaque identifier that is only used to
+     * opaque identifier that is used only to
                 retrieve the next items
      * in a list and not for other programmatic purposes.</p>
         </note>
@@ -215,7 +215,7 @@ namespace Model
      * value.</p>
          <note>
             <p>This token should be treated as an
-     * opaque identifier that is only used to
+     * opaque identifier that is used only to
                 retrieve the next items
      * in a list and not for other programmatic purposes.</p>
         </note>
@@ -233,7 +233,7 @@ namespace Model
      * value.</p>
          <note>
             <p>This token should be treated as an
-     * opaque identifier that is only used to
+     * opaque identifier that is used only to
                 retrieve the next items
      * in a list and not for other programmatic purposes.</p>
         </note>
@@ -251,7 +251,7 @@ namespace Model
      * value.</p>
          <note>
             <p>This token should be treated as an
-     * opaque identifier that is only used to
+     * opaque identifier that is used only to
                 retrieve the next items
      * in a list and not for other programmatic purposes.</p>
         </note>
@@ -269,7 +269,7 @@ namespace Model
      * value.</p>
          <note>
             <p>This token should be treated as an
-     * opaque identifier that is only used to
+     * opaque identifier that is used only to
                 retrieve the next items
      * in a list and not for other programmatic purposes.</p>
         </note>

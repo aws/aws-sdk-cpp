@@ -53,10 +53,10 @@ namespace Model
      * <p>Specifies the path to match requests with. This parameter must always start
      * with
             <code>/</code>, which by itself matches all requests to the
-     * virtual router service name.
-         You can also match for path-based routing
-     * of requests. For example, if your virtual router
-         service name is
+     * virtual service name. You
+         can also match for path-based routing of
+     * requests. For example, if your virtual service
+         name is
      * <code>my-service.local</code> and you want the route to match requests to
       
      * <code>my-service.local/metrics</code>, your prefix should be
@@ -69,10 +69,10 @@ namespace Model
      * <p>Specifies the path to match requests with. This parameter must always start
      * with
             <code>/</code>, which by itself matches all requests to the
-     * virtual router service name.
-         You can also match for path-based routing
-     * of requests. For example, if your virtual router
-         service name is
+     * virtual service name. You
+         can also match for path-based routing of
+     * requests. For example, if your virtual service
+         name is
      * <code>my-service.local</code> and you want the route to match requests to
       
      * <code>my-service.local/metrics</code>, your prefix should be
@@ -85,10 +85,10 @@ namespace Model
      * <p>Specifies the path to match requests with. This parameter must always start
      * with
             <code>/</code>, which by itself matches all requests to the
-     * virtual router service name.
-         You can also match for path-based routing
-     * of requests. For example, if your virtual router
-         service name is
+     * virtual service name. You
+         can also match for path-based routing of
+     * requests. For example, if your virtual service
+         name is
      * <code>my-service.local</code> and you want the route to match requests to
       
      * <code>my-service.local/metrics</code>, your prefix should be
@@ -101,10 +101,10 @@ namespace Model
      * <p>Specifies the path to match requests with. This parameter must always start
      * with
             <code>/</code>, which by itself matches all requests to the
-     * virtual router service name.
-         You can also match for path-based routing
-     * of requests. For example, if your virtual router
-         service name is
+     * virtual service name. You
+         can also match for path-based routing of
+     * requests. For example, if your virtual service
+         name is
      * <code>my-service.local</code> and you want the route to match requests to
       
      * <code>my-service.local/metrics</code>, your prefix should be
@@ -117,10 +117,10 @@ namespace Model
      * <p>Specifies the path to match requests with. This parameter must always start
      * with
             <code>/</code>, which by itself matches all requests to the
-     * virtual router service name.
-         You can also match for path-based routing
-     * of requests. For example, if your virtual router
-         service name is
+     * virtual service name. You
+         can also match for path-based routing of
+     * requests. For example, if your virtual service
+         name is
      * <code>my-service.local</code> and you want the route to match requests to
       
      * <code>my-service.local/metrics</code>, your prefix should be
@@ -133,10 +133,10 @@ namespace Model
      * <p>Specifies the path to match requests with. This parameter must always start
      * with
             <code>/</code>, which by itself matches all requests to the
-     * virtual router service name.
-         You can also match for path-based routing
-     * of requests. For example, if your virtual router
-         service name is
+     * virtual service name. You
+         can also match for path-based routing of
+     * requests. For example, if your virtual service
+         name is
      * <code>my-service.local</code> and you want the route to match requests to
       
      * <code>my-service.local/metrics</code>, your prefix should be
@@ -149,10 +149,10 @@ namespace Model
      * <p>Specifies the path to match requests with. This parameter must always start
      * with
             <code>/</code>, which by itself matches all requests to the
-     * virtual router service name.
-         You can also match for path-based routing
-     * of requests. For example, if your virtual router
-         service name is
+     * virtual service name. You
+         can also match for path-based routing of
+     * requests. For example, if your virtual service
+         name is
      * <code>my-service.local</code> and you want the route to match requests to
       
      * <code>my-service.local/metrics</code>, your prefix should be
@@ -165,10 +165,10 @@ namespace Model
      * <p>Specifies the path to match requests with. This parameter must always start
      * with
             <code>/</code>, which by itself matches all requests to the
-     * virtual router service name.
-         You can also match for path-based routing
-     * of requests. For example, if your virtual router
-         service name is
+     * virtual service name. You
+         can also match for path-based routing of
+     * requests. For example, if your virtual service
+         name is
      * <code>my-service.local</code> and you want the route to match requests to
       
      * <code>my-service.local/metrics</code>, your prefix should be

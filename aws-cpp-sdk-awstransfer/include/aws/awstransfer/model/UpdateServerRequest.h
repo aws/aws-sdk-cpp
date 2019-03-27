@@ -16,6 +16,8 @@
 #pragma once
 #include <aws/awstransfer/Transfer_EXPORTS.h>
 #include <aws/awstransfer/TransferRequest.h>
+#include <aws/awstransfer/model/EndpointDetails.h>
+#include <aws/awstransfer/model/EndpointType.h>
 #include <aws/awstransfer/model/IdentityProviderDetails.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
@@ -43,6 +45,44 @@ namespace Model
     Aws::String SerializePayload() const override;
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+
+
+    
+    inline const EndpointDetails& GetEndpointDetails() const{ return m_endpointDetails; }
+
+    
+    inline bool EndpointDetailsHasBeenSet() const { return m_endpointDetailsHasBeenSet; }
+
+    
+    inline void SetEndpointDetails(const EndpointDetails& value) { m_endpointDetailsHasBeenSet = true; m_endpointDetails = value; }
+
+    
+    inline void SetEndpointDetails(EndpointDetails&& value) { m_endpointDetailsHasBeenSet = true; m_endpointDetails = std::move(value); }
+
+    
+    inline UpdateServerRequest& WithEndpointDetails(const EndpointDetails& value) { SetEndpointDetails(value); return *this;}
+
+    
+    inline UpdateServerRequest& WithEndpointDetails(EndpointDetails&& value) { SetEndpointDetails(std::move(value)); return *this;}
+
+
+    
+    inline const EndpointType& GetEndpointType() const{ return m_endpointType; }
+
+    
+    inline bool EndpointTypeHasBeenSet() const { return m_endpointTypeHasBeenSet; }
+
+    
+    inline void SetEndpointType(const EndpointType& value) { m_endpointTypeHasBeenSet = true; m_endpointType = value; }
+
+    
+    inline void SetEndpointType(EndpointType&& value) { m_endpointTypeHasBeenSet = true; m_endpointType = std::move(value); }
+
+    
+    inline UpdateServerRequest& WithEndpointType(const EndpointType& value) { SetEndpointType(value); return *this;}
+
+    
+    inline UpdateServerRequest& WithEndpointType(EndpointType&& value) { SetEndpointType(std::move(value)); return *this;}
 
 
     /**
@@ -180,6 +220,12 @@ namespace Model
     inline UpdateServerRequest& WithServerId(const char* value) { SetServerId(value); return *this;}
 
   private:
+
+    EndpointDetails m_endpointDetails;
+    bool m_endpointDetailsHasBeenSet;
+
+    EndpointType m_endpointType;
+    bool m_endpointTypeHasBeenSet;
 
     IdentityProviderDetails m_identityProviderDetails;
     bool m_identityProviderDetailsHasBeenSet;

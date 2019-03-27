@@ -38,9 +38,13 @@
 #include <aws/appmesh/model/DescribeVirtualServiceResult.h>
 #include <aws/appmesh/model/ListMeshesResult.h>
 #include <aws/appmesh/model/ListRoutesResult.h>
+#include <aws/appmesh/model/ListTagsForResourceResult.h>
 #include <aws/appmesh/model/ListVirtualNodesResult.h>
 #include <aws/appmesh/model/ListVirtualRoutersResult.h>
 #include <aws/appmesh/model/ListVirtualServicesResult.h>
+#include <aws/appmesh/model/TagResourceResult.h>
+#include <aws/appmesh/model/UntagResourceResult.h>
+#include <aws/appmesh/model/UpdateMeshResult.h>
 #include <aws/appmesh/model/UpdateRouteResult.h>
 #include <aws/appmesh/model/UpdateVirtualNodeResult.h>
 #include <aws/appmesh/model/UpdateVirtualRouterResult.h>
@@ -102,9 +106,13 @@ namespace Model
         class DescribeVirtualServiceRequest;
         class ListMeshesRequest;
         class ListRoutesRequest;
+        class ListTagsForResourceRequest;
         class ListVirtualNodesRequest;
         class ListVirtualRoutersRequest;
         class ListVirtualServicesRequest;
+        class TagResourceRequest;
+        class UntagResourceRequest;
+        class UpdateMeshRequest;
         class UpdateRouteRequest;
         class UpdateVirtualNodeRequest;
         class UpdateVirtualRouterRequest;
@@ -127,9 +135,13 @@ namespace Model
         typedef Aws::Utils::Outcome<DescribeVirtualServiceResult, Aws::Client::AWSError<AppMeshErrors>> DescribeVirtualServiceOutcome;
         typedef Aws::Utils::Outcome<ListMeshesResult, Aws::Client::AWSError<AppMeshErrors>> ListMeshesOutcome;
         typedef Aws::Utils::Outcome<ListRoutesResult, Aws::Client::AWSError<AppMeshErrors>> ListRoutesOutcome;
+        typedef Aws::Utils::Outcome<ListTagsForResourceResult, Aws::Client::AWSError<AppMeshErrors>> ListTagsForResourceOutcome;
         typedef Aws::Utils::Outcome<ListVirtualNodesResult, Aws::Client::AWSError<AppMeshErrors>> ListVirtualNodesOutcome;
         typedef Aws::Utils::Outcome<ListVirtualRoutersResult, Aws::Client::AWSError<AppMeshErrors>> ListVirtualRoutersOutcome;
         typedef Aws::Utils::Outcome<ListVirtualServicesResult, Aws::Client::AWSError<AppMeshErrors>> ListVirtualServicesOutcome;
+        typedef Aws::Utils::Outcome<TagResourceResult, Aws::Client::AWSError<AppMeshErrors>> TagResourceOutcome;
+        typedef Aws::Utils::Outcome<UntagResourceResult, Aws::Client::AWSError<AppMeshErrors>> UntagResourceOutcome;
+        typedef Aws::Utils::Outcome<UpdateMeshResult, Aws::Client::AWSError<AppMeshErrors>> UpdateMeshOutcome;
         typedef Aws::Utils::Outcome<UpdateRouteResult, Aws::Client::AWSError<AppMeshErrors>> UpdateRouteOutcome;
         typedef Aws::Utils::Outcome<UpdateVirtualNodeResult, Aws::Client::AWSError<AppMeshErrors>> UpdateVirtualNodeOutcome;
         typedef Aws::Utils::Outcome<UpdateVirtualRouterResult, Aws::Client::AWSError<AppMeshErrors>> UpdateVirtualRouterOutcome;
@@ -152,9 +164,13 @@ namespace Model
         typedef std::future<DescribeVirtualServiceOutcome> DescribeVirtualServiceOutcomeCallable;
         typedef std::future<ListMeshesOutcome> ListMeshesOutcomeCallable;
         typedef std::future<ListRoutesOutcome> ListRoutesOutcomeCallable;
+        typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
         typedef std::future<ListVirtualNodesOutcome> ListVirtualNodesOutcomeCallable;
         typedef std::future<ListVirtualRoutersOutcome> ListVirtualRoutersOutcomeCallable;
         typedef std::future<ListVirtualServicesOutcome> ListVirtualServicesOutcomeCallable;
+        typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
+        typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
+        typedef std::future<UpdateMeshOutcome> UpdateMeshOutcomeCallable;
         typedef std::future<UpdateRouteOutcome> UpdateRouteOutcomeCallable;
         typedef std::future<UpdateVirtualNodeOutcome> UpdateVirtualNodeOutcomeCallable;
         typedef std::future<UpdateVirtualRouterOutcome> UpdateVirtualRouterOutcomeCallable;
@@ -180,9 +196,13 @@ namespace Model
     typedef std::function<void(const AppMeshClient*, const Model::DescribeVirtualServiceRequest&, const Model::DescribeVirtualServiceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeVirtualServiceResponseReceivedHandler;
     typedef std::function<void(const AppMeshClient*, const Model::ListMeshesRequest&, const Model::ListMeshesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListMeshesResponseReceivedHandler;
     typedef std::function<void(const AppMeshClient*, const Model::ListRoutesRequest&, const Model::ListRoutesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListRoutesResponseReceivedHandler;
+    typedef std::function<void(const AppMeshClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
     typedef std::function<void(const AppMeshClient*, const Model::ListVirtualNodesRequest&, const Model::ListVirtualNodesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListVirtualNodesResponseReceivedHandler;
     typedef std::function<void(const AppMeshClient*, const Model::ListVirtualRoutersRequest&, const Model::ListVirtualRoutersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListVirtualRoutersResponseReceivedHandler;
     typedef std::function<void(const AppMeshClient*, const Model::ListVirtualServicesRequest&, const Model::ListVirtualServicesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListVirtualServicesResponseReceivedHandler;
+    typedef std::function<void(const AppMeshClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
+    typedef std::function<void(const AppMeshClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
+    typedef std::function<void(const AppMeshClient*, const Model::UpdateMeshRequest&, const Model::UpdateMeshOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateMeshResponseReceivedHandler;
     typedef std::function<void(const AppMeshClient*, const Model::UpdateRouteRequest&, const Model::UpdateRouteOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateRouteResponseReceivedHandler;
     typedef std::function<void(const AppMeshClient*, const Model::UpdateVirtualNodeRequest&, const Model::UpdateVirtualNodeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateVirtualNodeResponseReceivedHandler;
     typedef std::function<void(const AppMeshClient*, const Model::UpdateVirtualRouterRequest&, const Model::UpdateVirtualRouterOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateVirtualRouterResponseReceivedHandler;
@@ -191,34 +211,33 @@ namespace Model
   /**
    * <p>AWS App Mesh is a service mesh based on the Envoy proxy that makes it easy to
    * monitor and
-         control containerized microservices. App Mesh standardizes
-   * how your microservices
-         communicate, giving you end-to-end visibility
-   * and helping to ensure high-availability for
-         your applications.</p>
-    
-   * <p>App Mesh gives you consistent visibility and network traffic controls for
-   * every
-         microservice in an application. You can use App Mesh with Amazon
-   * ECS
-         (using the Amazon EC2 launch type), Amazon EKS, and Kubernetes on
-   * AWS.</p>
+         control microservices. App Mesh standardizes how your
+   * microservices communicate, giving you
+         end-to-end visibility and helping
+   * to ensure high availability for your applications.</p>
+         <p>App Mesh
+   * gives you consistent visibility and network traffic controls for every
+        
+   * microservice in an application. You can use App Mesh with AWS Fargate, Amazon
+   * ECS, Amazon EKS, and
+         Kubernetes on AWS.</p>
          <note>
-            <p>App Mesh supports containerized
-   * microservice applications that use service discovery
-            naming for
-   * their components. To use App Mesh, you must have a containerized application
-   
-   * running on Amazon EC2 instances, hosted in either Amazon ECS, Amazon EKS, or
-   * Kubernetes on AWS. For
-            more information about service discovery on
-   * Amazon ECS, see <a
+           
+   * <p>App Mesh supports microservice applications that use service discovery naming
+   * for their
+            components. To use App Mesh, you must have an application
+   * running on Amazon EC2 instances,
+            hosted in either Amazon ECS, Amazon
+   * EKS, or Kubernetes on AWS. For more information about
+            service
+   * discovery on Amazon ECS, see <a
    * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service
-   * Discovery</a> in the
-               <i>Amazon Elastic Container Service
-   * Developer Guide</i>. Kubernetes <code>kube-dns</code> and
-              
-   * <code>coredns</code> are supported. For more information, see <a
+
+   * Discovery</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+   * Kubernetes
+               <code>kube-dns</code> and <code>coredns</code> are
+   * supported. For more information,
+            see <a
    * href="https://kubernetes.io/docs/concepts/services-networking/dns-pod-service/">DNS
 
    *  for Services and Pods</a> in the Kubernetes documentation.</p>
@@ -254,7 +273,7 @@ namespace Model
 
 
         /**
-         * <p>Creates a new service mesh. A service mesh is a logical boundary for network
+         * <p>Creates a service mesh. A service mesh is a logical boundary for network
          * traffic
          between the services that reside within it.</p>
         
@@ -269,7 +288,7 @@ namespace Model
         virtual Model::CreateMeshOutcome CreateMesh(const Model::CreateMeshRequest& request) const;
 
         /**
-         * <p>Creates a new service mesh. A service mesh is a logical boundary for network
+         * <p>Creates a service mesh. A service mesh is a logical boundary for network
          * traffic
          between the services that reside within it.</p>
         
@@ -286,7 +305,7 @@ namespace Model
         virtual Model::CreateMeshOutcomeCallable CreateMeshCallable(const Model::CreateMeshRequest& request) const;
 
         /**
-         * <p>Creates a new service mesh. A service mesh is a logical boundary for network
+         * <p>Creates a service mesh. A service mesh is a logical boundary for network
          * traffic
          between the services that reside within it.</p>
         
@@ -303,42 +322,42 @@ namespace Model
         virtual void CreateMeshAsync(const Model::CreateMeshRequest& request, const CreateMeshResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates a new route that is associated with a virtual router.</p>
-        
-         * <p>You can use the <code>prefix</code> parameter in your route specification for
+         * <p>Creates a route that is associated with a virtual router.</p>
+         <p>You
+         * can use the <code>prefix</code> parameter in your route specification for
          * path-based
-         routing of requests. For example, if your virtual router
-         * service name is
-            <code>my-service.local</code>, and you want the
-         * route to match requests to
-            <code>my-service.local/metrics</code>,
-         * then your prefix should be
+         routing of requests. For example, if your virtual service
+         * name is
+            <code>my-service.local</code> and you want the route to
+         * match requests to
+            <code>my-service.local/metrics</code>, your prefix
+         * should be
          <code>/metrics</code>.</p>
-         <p>If
-         * your route matches a request, you can distribute traffic to one or more target
- 
-         * virtual nodes with relative weighting.</p><p><h3>See Also:</h3>   <a
+         <p>If your route matches
+         * a request, you can distribute traffic to one or more target
+         virtual
+         * nodes with relative weighting.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/CreateRoute">AWS
          * API Reference</a></p>
          */
         virtual Model::CreateRouteOutcome CreateRoute(const Model::CreateRouteRequest& request) const;
 
         /**
-         * <p>Creates a new route that is associated with a virtual router.</p>
-        
-         * <p>You can use the <code>prefix</code> parameter in your route specification for
+         * <p>Creates a route that is associated with a virtual router.</p>
+         <p>You
+         * can use the <code>prefix</code> parameter in your route specification for
          * path-based
-         routing of requests. For example, if your virtual router
-         * service name is
-            <code>my-service.local</code>, and you want the
-         * route to match requests to
-            <code>my-service.local/metrics</code>,
-         * then your prefix should be
+         routing of requests. For example, if your virtual service
+         * name is
+            <code>my-service.local</code> and you want the route to
+         * match requests to
+            <code>my-service.local/metrics</code>, your prefix
+         * should be
          <code>/metrics</code>.</p>
-         <p>If
-         * your route matches a request, you can distribute traffic to one or more target
- 
-         * virtual nodes with relative weighting.</p><p><h3>See Also:</h3>   <a
+         <p>If your route matches
+         * a request, you can distribute traffic to one or more target
+         virtual
+         * nodes with relative weighting.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/CreateRoute">AWS
          * API Reference</a></p>
          *
@@ -347,21 +366,21 @@ namespace Model
         virtual Model::CreateRouteOutcomeCallable CreateRouteCallable(const Model::CreateRouteRequest& request) const;
 
         /**
-         * <p>Creates a new route that is associated with a virtual router.</p>
-        
-         * <p>You can use the <code>prefix</code> parameter in your route specification for
+         * <p>Creates a route that is associated with a virtual router.</p>
+         <p>You
+         * can use the <code>prefix</code> parameter in your route specification for
          * path-based
-         routing of requests. For example, if your virtual router
-         * service name is
-            <code>my-service.local</code>, and you want the
-         * route to match requests to
-            <code>my-service.local/metrics</code>,
-         * then your prefix should be
+         routing of requests. For example, if your virtual service
+         * name is
+            <code>my-service.local</code> and you want the route to
+         * match requests to
+            <code>my-service.local/metrics</code>, your prefix
+         * should be
          <code>/metrics</code>.</p>
-         <p>If
-         * your route matches a request, you can distribute traffic to one or more target
- 
-         * virtual nodes with relative weighting.</p><p><h3>See Also:</h3>   <a
+         <p>If your route matches
+         * a request, you can distribute traffic to one or more target
+         virtual
+         * nodes with relative weighting.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/CreateRoute">AWS
          * API Reference</a></p>
          *
@@ -370,10 +389,10 @@ namespace Model
         virtual void CreateRouteAsync(const Model::CreateRouteRequest& request, const CreateRouteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates a new virtual node within a service mesh.</p>
-         <p>A virtual
-         * node acts as logical pointer to a particular task group, such as an Amazon ECS
- 
+         * <p>Creates a virtual node within a service mesh.</p>
+         <p>A virtual node
+         * acts as a logical pointer to a particular task group, such as an Amazon ECS
+    
          * service or a Kubernetes deployment. When you create a virtual node, you must
          * specify the
          DNS service discovery hostname for your task group.</p>
@@ -388,8 +407,8 @@ namespace Model
          * that is
          associated with the virtual node. Set this value (either the
          * full ARN or the truncated
-         resource name, for example,
-         * <code>mesh/default/virtualNode/simpleapp</code>, as the
+         resource name: for example,
+         * <code>mesh/default/virtualNode/simpleapp</code>) as the
            
          * <code>APPMESH_VIRTUAL_NODE_NAME</code> environment variable for your task
          * group's Envoy
@@ -414,10 +433,10 @@ namespace Model
         virtual Model::CreateVirtualNodeOutcome CreateVirtualNode(const Model::CreateVirtualNodeRequest& request) const;
 
         /**
-         * <p>Creates a new virtual node within a service mesh.</p>
-         <p>A virtual
-         * node acts as logical pointer to a particular task group, such as an Amazon ECS
- 
+         * <p>Creates a virtual node within a service mesh.</p>
+         <p>A virtual node
+         * acts as a logical pointer to a particular task group, such as an Amazon ECS
+    
          * service or a Kubernetes deployment. When you create a virtual node, you must
          * specify the
          DNS service discovery hostname for your task group.</p>
@@ -432,8 +451,8 @@ namespace Model
          * that is
          associated with the virtual node. Set this value (either the
          * full ARN or the truncated
-         resource name, for example,
-         * <code>mesh/default/virtualNode/simpleapp</code>, as the
+         resource name: for example,
+         * <code>mesh/default/virtualNode/simpleapp</code>) as the
            
          * <code>APPMESH_VIRTUAL_NODE_NAME</code> environment variable for your task
          * group's Envoy
@@ -460,10 +479,10 @@ namespace Model
         virtual Model::CreateVirtualNodeOutcomeCallable CreateVirtualNodeCallable(const Model::CreateVirtualNodeRequest& request) const;
 
         /**
-         * <p>Creates a new virtual node within a service mesh.</p>
-         <p>A virtual
-         * node acts as logical pointer to a particular task group, such as an Amazon ECS
- 
+         * <p>Creates a virtual node within a service mesh.</p>
+         <p>A virtual node
+         * acts as a logical pointer to a particular task group, such as an Amazon ECS
+    
          * service or a Kubernetes deployment. When you create a virtual node, you must
          * specify the
          DNS service discovery hostname for your task group.</p>
@@ -478,8 +497,8 @@ namespace Model
          * that is
          associated with the virtual node. Set this value (either the
          * full ARN or the truncated
-         resource name, for example,
-         * <code>mesh/default/virtualNode/simpleapp</code>, as the
+         resource name: for example,
+         * <code>mesh/default/virtualNode/simpleapp</code>) as the
            
          * <code>APPMESH_VIRTUAL_NODE_NAME</code> environment variable for your task
          * group's Envoy
@@ -506,34 +525,36 @@ namespace Model
         virtual void CreateVirtualNodeAsync(const Model::CreateVirtualNodeRequest& request, const CreateVirtualNodeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates a new virtual router within a service mesh.</p>
-         <p>Any
-         * inbound traffic that your virtual router expects should be specified as a
-      
+         * <p>Creates a virtual router within a service mesh.</p>
+         <p>Any inbound
+         * traffic that your virtual router expects should be specified as a
+           
          * <code>listener</code>. </p>
          <p>Virtual routers handle traffic for one
-         * or more service names within your mesh. After you
-         create your virtual
-         * router, create and associate routes for your virtual router that direct
-        
-         * incoming requests to different virtual nodes.</p><p><h3>See Also:</h3>   <a
+         * or more virtual services within your mesh. After
+         you create your
+         * virtual router, create and associate routes for your virtual router that
+       
+         * direct incoming requests to different virtual nodes.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/CreateVirtualRouter">AWS
          * API Reference</a></p>
          */
         virtual Model::CreateVirtualRouterOutcome CreateVirtualRouter(const Model::CreateVirtualRouterRequest& request) const;
 
         /**
-         * <p>Creates a new virtual router within a service mesh.</p>
-         <p>Any
-         * inbound traffic that your virtual router expects should be specified as a
-      
+         * <p>Creates a virtual router within a service mesh.</p>
+         <p>Any inbound
+         * traffic that your virtual router expects should be specified as a
+           
          * <code>listener</code>. </p>
          <p>Virtual routers handle traffic for one
-         * or more service names within your mesh. After you
-         create your virtual
-         * router, create and associate routes for your virtual router that direct
-        
-         * incoming requests to different virtual nodes.</p><p><h3>See Also:</h3>   <a
+         * or more virtual services within your mesh. After
+         you create your
+         * virtual router, create and associate routes for your virtual router that
+       
+         * direct incoming requests to different virtual nodes.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/CreateVirtualRouter">AWS
          * API Reference</a></p>
          *
@@ -542,17 +563,18 @@ namespace Model
         virtual Model::CreateVirtualRouterOutcomeCallable CreateVirtualRouterCallable(const Model::CreateVirtualRouterRequest& request) const;
 
         /**
-         * <p>Creates a new virtual router within a service mesh.</p>
-         <p>Any
-         * inbound traffic that your virtual router expects should be specified as a
-      
+         * <p>Creates a virtual router within a service mesh.</p>
+         <p>Any inbound
+         * traffic that your virtual router expects should be specified as a
+           
          * <code>listener</code>. </p>
          <p>Virtual routers handle traffic for one
-         * or more service names within your mesh. After you
-         create your virtual
-         * router, create and associate routes for your virtual router that direct
-        
-         * incoming requests to different virtual nodes.</p><p><h3>See Also:</h3>   <a
+         * or more virtual services within your mesh. After
+         you create your
+         * virtual router, create and associate routes for your virtual router that
+       
+         * direct incoming requests to different virtual nodes.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/CreateVirtualRouter">AWS
          * API Reference</a></p>
          *
@@ -563,9 +585,9 @@ namespace Model
         /**
          * <p>Creates a virtual service within a service mesh.</p>
          <p>A virtual
-         * service is an abstraction of a real service that is either provided by a
-       
-         * virtual node directly, or indirectly by means of a virtual router. Dependent
+         * service is an abstraction of a real service that is provided by a
+        
+         * virtual node directly or indirectly by means of a virtual router. Dependent
          * services call
          your virtual service by its
          * <code>virtualServiceName</code>, and those requests are routed
@@ -581,9 +603,9 @@ namespace Model
         /**
          * <p>Creates a virtual service within a service mesh.</p>
          <p>A virtual
-         * service is an abstraction of a real service that is either provided by a
-       
-         * virtual node directly, or indirectly by means of a virtual router. Dependent
+         * service is an abstraction of a real service that is provided by a
+        
+         * virtual node directly or indirectly by means of a virtual router. Dependent
          * services call
          your virtual service by its
          * <code>virtualServiceName</code>, and those requests are routed
@@ -601,9 +623,9 @@ namespace Model
         /**
          * <p>Creates a virtual service within a service mesh.</p>
          <p>A virtual
-         * service is an abstraction of a real service that is either provided by a
-       
-         * virtual node directly, or indirectly by means of a virtual router. Dependent
+         * service is an abstraction of a real service that is provided by a
+        
+         * virtual node directly or indirectly by means of a virtual router. Dependent
          * services call
          your virtual service by its
          * <code>virtualServiceName</code>, and those requests are routed
@@ -621,10 +643,10 @@ namespace Model
         /**
          * <p>Deletes an existing service mesh.</p>
          <p>You must delete all
-         * resources (virtual services, routes, virtual routers, virtual nodes)
-         in
-         * the service mesh before you can delete the mesh itself.</p><p><h3>See Also:</h3>
-         * <a
+         * resources (virtual services, routes, virtual routers, and virtual nodes)
+       
+         * in the service mesh before you can delete the mesh itself.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/DeleteMesh">AWS
          * API Reference</a></p>
          */
@@ -633,10 +655,10 @@ namespace Model
         /**
          * <p>Deletes an existing service mesh.</p>
          <p>You must delete all
-         * resources (virtual services, routes, virtual routers, virtual nodes)
-         in
-         * the service mesh before you can delete the mesh itself.</p><p><h3>See Also:</h3>
-         * <a
+         * resources (virtual services, routes, virtual routers, and virtual nodes)
+       
+         * in the service mesh before you can delete the mesh itself.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/DeleteMesh">AWS
          * API Reference</a></p>
          *
@@ -647,10 +669,10 @@ namespace Model
         /**
          * <p>Deletes an existing service mesh.</p>
          <p>You must delete all
-         * resources (virtual services, routes, virtual routers, virtual nodes)
-         in
-         * the service mesh before you can delete the mesh itself.</p><p><h3>See Also:</h3>
-         * <a
+         * resources (virtual services, routes, virtual routers, and virtual nodes)
+       
+         * in the service mesh before you can delete the mesh itself.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/DeleteMesh">AWS
          * API Reference</a></p>
          *
@@ -961,6 +983,31 @@ namespace Model
         virtual void ListRoutesAsync(const Model::ListRoutesRequest& request, const ListRoutesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>List the tags for an App Mesh resource.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/ListTagsForResource">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListTagsForResourceOutcome ListTagsForResource(const Model::ListTagsForResourceRequest& request) const;
+
+        /**
+         * <p>List the tags for an App Mesh resource.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/ListTagsForResource">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListTagsForResourceOutcomeCallable ListTagsForResourceCallable(const Model::ListTagsForResourceRequest& request) const;
+
+        /**
+         * <p>List the tags for an App Mesh resource.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/ListTagsForResource">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListTagsForResourceAsync(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Returns a list of existing virtual nodes.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/ListVirtualNodes">AWS
          * API Reference</a></p>
@@ -1040,6 +1087,102 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListVirtualServicesAsync(const Model::ListVirtualServicesRequest& request, const ListVirtualServicesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Associates the specified tags to a resource with the specified
+        
+         * <code>resourceArn</code>. If existing tags on a resource aren't specified in
+         * the
+         request parameters, they aren't changed. When a resource is
+         * deleted, the tags
+         associated with that resource are also
+         * deleted.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/TagResource">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::TagResourceOutcome TagResource(const Model::TagResourceRequest& request) const;
+
+        /**
+         * <p>Associates the specified tags to a resource with the specified
+        
+         * <code>resourceArn</code>. If existing tags on a resource aren't specified in
+         * the
+         request parameters, they aren't changed. When a resource is
+         * deleted, the tags
+         associated with that resource are also
+         * deleted.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/TagResource">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::TagResourceOutcomeCallable TagResourceCallable(const Model::TagResourceRequest& request) const;
+
+        /**
+         * <p>Associates the specified tags to a resource with the specified
+        
+         * <code>resourceArn</code>. If existing tags on a resource aren't specified in
+         * the
+         request parameters, they aren't changed. When a resource is
+         * deleted, the tags
+         associated with that resource are also
+         * deleted.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/TagResource">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void TagResourceAsync(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Deletes specified tags from a resource.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/UntagResource">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UntagResourceOutcome UntagResource(const Model::UntagResourceRequest& request) const;
+
+        /**
+         * <p>Deletes specified tags from a resource.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/UntagResource">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UntagResourceOutcomeCallable UntagResourceCallable(const Model::UntagResourceRequest& request) const;
+
+        /**
+         * <p>Deletes specified tags from a resource.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/UntagResource">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UntagResourceAsync(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Updates an existing service mesh.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/UpdateMesh">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateMeshOutcome UpdateMesh(const Model::UpdateMeshRequest& request) const;
+
+        /**
+         * <p>Updates an existing service mesh.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/UpdateMesh">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UpdateMeshOutcomeCallable UpdateMeshCallable(const Model::UpdateMeshRequest& request) const;
+
+        /**
+         * <p>Updates an existing service mesh.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/UpdateMesh">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UpdateMeshAsync(const Model::UpdateMeshRequest& request, const UpdateMeshResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates an existing route for a specified service mesh and virtual
@@ -1175,9 +1318,13 @@ namespace Model
         void DescribeVirtualServiceAsyncHelper(const Model::DescribeVirtualServiceRequest& request, const DescribeVirtualServiceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListMeshesAsyncHelper(const Model::ListMeshesRequest& request, const ListMeshesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListRoutesAsyncHelper(const Model::ListRoutesRequest& request, const ListRoutesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListTagsForResourceAsyncHelper(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListVirtualNodesAsyncHelper(const Model::ListVirtualNodesRequest& request, const ListVirtualNodesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListVirtualRoutersAsyncHelper(const Model::ListVirtualRoutersRequest& request, const ListVirtualRoutersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListVirtualServicesAsyncHelper(const Model::ListVirtualServicesRequest& request, const ListVirtualServicesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void TagResourceAsyncHelper(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UntagResourceAsyncHelper(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UpdateMeshAsyncHelper(const Model::UpdateMeshRequest& request, const UpdateMeshResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateRouteAsyncHelper(const Model::UpdateRouteRequest& request, const UpdateRouteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateVirtualNodeAsyncHelper(const Model::UpdateVirtualNodeRequest& request, const UpdateVirtualNodeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateVirtualRouterAsyncHelper(const Model::UpdateVirtualRouterRequest& request, const UpdateVirtualRouterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

@@ -16,6 +16,8 @@
 #pragma once
 #include <aws/awstransfer/Transfer_EXPORTS.h>
 #include <aws/awstransfer/TransferRequest.h>
+#include <aws/awstransfer/model/EndpointDetails.h>
+#include <aws/awstransfer/model/EndpointType.h>
 #include <aws/awstransfer/model/IdentityProviderDetails.h>
 #include <aws/awstransfer/model/IdentityProviderType.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
@@ -46,6 +48,44 @@ namespace Model
     Aws::String SerializePayload() const override;
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+
+
+    
+    inline const EndpointDetails& GetEndpointDetails() const{ return m_endpointDetails; }
+
+    
+    inline bool EndpointDetailsHasBeenSet() const { return m_endpointDetailsHasBeenSet; }
+
+    
+    inline void SetEndpointDetails(const EndpointDetails& value) { m_endpointDetailsHasBeenSet = true; m_endpointDetails = value; }
+
+    
+    inline void SetEndpointDetails(EndpointDetails&& value) { m_endpointDetailsHasBeenSet = true; m_endpointDetails = std::move(value); }
+
+    
+    inline CreateServerRequest& WithEndpointDetails(const EndpointDetails& value) { SetEndpointDetails(value); return *this;}
+
+    
+    inline CreateServerRequest& WithEndpointDetails(EndpointDetails&& value) { SetEndpointDetails(std::move(value)); return *this;}
+
+
+    
+    inline const EndpointType& GetEndpointType() const{ return m_endpointType; }
+
+    
+    inline bool EndpointTypeHasBeenSet() const { return m_endpointTypeHasBeenSet; }
+
+    
+    inline void SetEndpointType(const EndpointType& value) { m_endpointTypeHasBeenSet = true; m_endpointType = value; }
+
+    
+    inline void SetEndpointType(EndpointType&& value) { m_endpointTypeHasBeenSet = true; m_endpointType = std::move(value); }
+
+    
+    inline CreateServerRequest& WithEndpointType(const EndpointType& value) { SetEndpointType(value); return *this;}
+
+    
+    inline CreateServerRequest& WithEndpointType(EndpointType&& value) { SetEndpointType(std::move(value)); return *this;}
 
 
     /**
@@ -159,49 +199,49 @@ namespace Model
 
 
     /**
-     * <p>A value that allows the service to write your SFTP users’ activity to your
+     * <p>A value that allows the service to write your SFTP users' activity to your
      * Amazon CloudWatch logs for monitoring and auditing purposes.</p>
      */
     inline const Aws::String& GetLoggingRole() const{ return m_loggingRole; }
 
     /**
-     * <p>A value that allows the service to write your SFTP users’ activity to your
+     * <p>A value that allows the service to write your SFTP users' activity to your
      * Amazon CloudWatch logs for monitoring and auditing purposes.</p>
      */
     inline bool LoggingRoleHasBeenSet() const { return m_loggingRoleHasBeenSet; }
 
     /**
-     * <p>A value that allows the service to write your SFTP users’ activity to your
+     * <p>A value that allows the service to write your SFTP users' activity to your
      * Amazon CloudWatch logs for monitoring and auditing purposes.</p>
      */
     inline void SetLoggingRole(const Aws::String& value) { m_loggingRoleHasBeenSet = true; m_loggingRole = value; }
 
     /**
-     * <p>A value that allows the service to write your SFTP users’ activity to your
+     * <p>A value that allows the service to write your SFTP users' activity to your
      * Amazon CloudWatch logs for monitoring and auditing purposes.</p>
      */
     inline void SetLoggingRole(Aws::String&& value) { m_loggingRoleHasBeenSet = true; m_loggingRole = std::move(value); }
 
     /**
-     * <p>A value that allows the service to write your SFTP users’ activity to your
+     * <p>A value that allows the service to write your SFTP users' activity to your
      * Amazon CloudWatch logs for monitoring and auditing purposes.</p>
      */
     inline void SetLoggingRole(const char* value) { m_loggingRoleHasBeenSet = true; m_loggingRole.assign(value); }
 
     /**
-     * <p>A value that allows the service to write your SFTP users’ activity to your
+     * <p>A value that allows the service to write your SFTP users' activity to your
      * Amazon CloudWatch logs for monitoring and auditing purposes.</p>
      */
     inline CreateServerRequest& WithLoggingRole(const Aws::String& value) { SetLoggingRole(value); return *this;}
 
     /**
-     * <p>A value that allows the service to write your SFTP users’ activity to your
+     * <p>A value that allows the service to write your SFTP users' activity to your
      * Amazon CloudWatch logs for monitoring and auditing purposes.</p>
      */
     inline CreateServerRequest& WithLoggingRole(Aws::String&& value) { SetLoggingRole(std::move(value)); return *this;}
 
     /**
-     * <p>A value that allows the service to write your SFTP users’ activity to your
+     * <p>A value that allows the service to write your SFTP users' activity to your
      * Amazon CloudWatch logs for monitoring and auditing purposes.</p>
      */
     inline CreateServerRequest& WithLoggingRole(const char* value) { SetLoggingRole(value); return *this;}
@@ -248,6 +288,12 @@ namespace Model
     inline CreateServerRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
   private:
+
+    EndpointDetails m_endpointDetails;
+    bool m_endpointDetailsHasBeenSet;
+
+    EndpointType m_endpointType;
+    bool m_endpointTypeHasBeenSet;
 
     IdentityProviderDetails m_identityProviderDetails;
     bool m_identityProviderDetailsHasBeenSet;

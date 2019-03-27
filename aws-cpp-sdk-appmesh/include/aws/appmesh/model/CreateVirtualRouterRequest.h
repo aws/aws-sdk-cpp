@@ -18,6 +18,8 @@
 #include <aws/appmesh/AppMeshRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/appmesh/model/VirtualRouterSpec.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/appmesh/model/TagRef.h>
 #include <utility>
 #include <aws/core/utils/UUID.h>
 
@@ -185,6 +187,103 @@ request. Up to 36 letters, numbers, hyphens, and underscores are
 
 
     /**
+     * <p>Optional metadata that you can apply to the virtual router to assist with
+     * categorization and organization.
+         Each tag consists of a key and an
+     * optional value, both of which you define.
+         Tag keys can have a maximum
+     * character length of 128 characters, and tag values can have
+            a
+     * maximum length of 256 characters.</p>
+     */
+    inline const Aws::Vector<TagRef>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>Optional metadata that you can apply to the virtual router to assist with
+     * categorization and organization.
+         Each tag consists of a key and an
+     * optional value, both of which you define.
+         Tag keys can have a maximum
+     * character length of 128 characters, and tag values can have
+            a
+     * maximum length of 256 characters.</p>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
+
+    /**
+     * <p>Optional metadata that you can apply to the virtual router to assist with
+     * categorization and organization.
+         Each tag consists of a key and an
+     * optional value, both of which you define.
+         Tag keys can have a maximum
+     * character length of 128 characters, and tag values can have
+            a
+     * maximum length of 256 characters.</p>
+     */
+    inline void SetTags(const Aws::Vector<TagRef>& value) { m_tagsHasBeenSet = true; m_tags = value; }
+
+    /**
+     * <p>Optional metadata that you can apply to the virtual router to assist with
+     * categorization and organization.
+         Each tag consists of a key and an
+     * optional value, both of which you define.
+         Tag keys can have a maximum
+     * character length of 128 characters, and tag values can have
+            a
+     * maximum length of 256 characters.</p>
+     */
+    inline void SetTags(Aws::Vector<TagRef>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
+
+    /**
+     * <p>Optional metadata that you can apply to the virtual router to assist with
+     * categorization and organization.
+         Each tag consists of a key and an
+     * optional value, both of which you define.
+         Tag keys can have a maximum
+     * character length of 128 characters, and tag values can have
+            a
+     * maximum length of 256 characters.</p>
+     */
+    inline CreateVirtualRouterRequest& WithTags(const Aws::Vector<TagRef>& value) { SetTags(value); return *this;}
+
+    /**
+     * <p>Optional metadata that you can apply to the virtual router to assist with
+     * categorization and organization.
+         Each tag consists of a key and an
+     * optional value, both of which you define.
+         Tag keys can have a maximum
+     * character length of 128 characters, and tag values can have
+            a
+     * maximum length of 256 characters.</p>
+     */
+    inline CreateVirtualRouterRequest& WithTags(Aws::Vector<TagRef>&& value) { SetTags(std::move(value)); return *this;}
+
+    /**
+     * <p>Optional metadata that you can apply to the virtual router to assist with
+     * categorization and organization.
+         Each tag consists of a key and an
+     * optional value, both of which you define.
+         Tag keys can have a maximum
+     * character length of 128 characters, and tag values can have
+            a
+     * maximum length of 256 characters.</p>
+     */
+    inline CreateVirtualRouterRequest& AddTags(const TagRef& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
+
+    /**
+     * <p>Optional metadata that you can apply to the virtual router to assist with
+     * categorization and organization.
+         Each tag consists of a key and an
+     * optional value, both of which you define.
+         Tag keys can have a maximum
+     * character length of 128 characters, and tag values can have
+            a
+     * maximum length of 256 characters.</p>
+     */
+    inline CreateVirtualRouterRequest& AddTags(TagRef&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+
+
+    /**
      * <p>The name to use for the virtual router.</p>
      */
     inline const Aws::String& GetVirtualRouterName() const{ return m_virtualRouterName; }
@@ -234,6 +333,9 @@ request. Up to 36 letters, numbers, hyphens, and underscores are
 
     VirtualRouterSpec m_spec;
     bool m_specHasBeenSet;
+
+    Aws::Vector<TagRef> m_tags;
+    bool m_tagsHasBeenSet;
 
     Aws::String m_virtualRouterName;
     bool m_virtualRouterNameHasBeenSet;

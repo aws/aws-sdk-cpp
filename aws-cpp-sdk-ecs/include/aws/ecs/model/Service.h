@@ -364,42 +364,66 @@ namespace Model
 
 
     /**
-     * <p/>
+     * <p>The details of the service discovery registries to assign to this service.
+     * For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service
+     * Discovery</a>.</p>
      */
     inline const Aws::Vector<ServiceRegistry>& GetServiceRegistries() const{ return m_serviceRegistries; }
 
     /**
-     * <p/>
+     * <p>The details of the service discovery registries to assign to this service.
+     * For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service
+     * Discovery</a>.</p>
      */
     inline bool ServiceRegistriesHasBeenSet() const { return m_serviceRegistriesHasBeenSet; }
 
     /**
-     * <p/>
+     * <p>The details of the service discovery registries to assign to this service.
+     * For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service
+     * Discovery</a>.</p>
      */
     inline void SetServiceRegistries(const Aws::Vector<ServiceRegistry>& value) { m_serviceRegistriesHasBeenSet = true; m_serviceRegistries = value; }
 
     /**
-     * <p/>
+     * <p>The details of the service discovery registries to assign to this service.
+     * For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service
+     * Discovery</a>.</p>
      */
     inline void SetServiceRegistries(Aws::Vector<ServiceRegistry>&& value) { m_serviceRegistriesHasBeenSet = true; m_serviceRegistries = std::move(value); }
 
     /**
-     * <p/>
+     * <p>The details of the service discovery registries to assign to this service.
+     * For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service
+     * Discovery</a>.</p>
      */
     inline Service& WithServiceRegistries(const Aws::Vector<ServiceRegistry>& value) { SetServiceRegistries(value); return *this;}
 
     /**
-     * <p/>
+     * <p>The details of the service discovery registries to assign to this service.
+     * For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service
+     * Discovery</a>.</p>
      */
     inline Service& WithServiceRegistries(Aws::Vector<ServiceRegistry>&& value) { SetServiceRegistries(std::move(value)); return *this;}
 
     /**
-     * <p/>
+     * <p>The details of the service discovery registries to assign to this service.
+     * For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service
+     * Discovery</a>.</p>
      */
     inline Service& AddServiceRegistries(const ServiceRegistry& value) { m_serviceRegistriesHasBeenSet = true; m_serviceRegistries.push_back(value); return *this; }
 
     /**
-     * <p/>
+     * <p>The details of the service discovery registries to assign to this service.
+     * For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service
+     * Discovery</a>.</p>
      */
     inline Service& AddServiceRegistries(ServiceRegistry&& value) { m_serviceRegistriesHasBeenSet = true; m_serviceRegistries.push_back(std::move(value)); return *this; }
 
@@ -771,58 +795,66 @@ namespace Model
 
 
     /**
-     * <p>Information about a set of Amazon ECS tasks in an AWS CodeDeploy deployment.
-     * An Amazon ECS task set includes details such as the desired number of tasks, how
-     * many tasks are running, and whether the task set serves production traffic.</p>
+     * <p>Information about a set of Amazon ECS tasks in either an AWS CodeDeploy or an
+     * <code>EXTERNAL</code> deployment. An Amazon ECS task set includes details such
+     * as the desired number of tasks, how many tasks are running, and whether the task
+     * set serves production traffic.</p>
      */
     inline const Aws::Vector<TaskSet>& GetTaskSets() const{ return m_taskSets; }
 
     /**
-     * <p>Information about a set of Amazon ECS tasks in an AWS CodeDeploy deployment.
-     * An Amazon ECS task set includes details such as the desired number of tasks, how
-     * many tasks are running, and whether the task set serves production traffic.</p>
+     * <p>Information about a set of Amazon ECS tasks in either an AWS CodeDeploy or an
+     * <code>EXTERNAL</code> deployment. An Amazon ECS task set includes details such
+     * as the desired number of tasks, how many tasks are running, and whether the task
+     * set serves production traffic.</p>
      */
     inline bool TaskSetsHasBeenSet() const { return m_taskSetsHasBeenSet; }
 
     /**
-     * <p>Information about a set of Amazon ECS tasks in an AWS CodeDeploy deployment.
-     * An Amazon ECS task set includes details such as the desired number of tasks, how
-     * many tasks are running, and whether the task set serves production traffic.</p>
+     * <p>Information about a set of Amazon ECS tasks in either an AWS CodeDeploy or an
+     * <code>EXTERNAL</code> deployment. An Amazon ECS task set includes details such
+     * as the desired number of tasks, how many tasks are running, and whether the task
+     * set serves production traffic.</p>
      */
     inline void SetTaskSets(const Aws::Vector<TaskSet>& value) { m_taskSetsHasBeenSet = true; m_taskSets = value; }
 
     /**
-     * <p>Information about a set of Amazon ECS tasks in an AWS CodeDeploy deployment.
-     * An Amazon ECS task set includes details such as the desired number of tasks, how
-     * many tasks are running, and whether the task set serves production traffic.</p>
+     * <p>Information about a set of Amazon ECS tasks in either an AWS CodeDeploy or an
+     * <code>EXTERNAL</code> deployment. An Amazon ECS task set includes details such
+     * as the desired number of tasks, how many tasks are running, and whether the task
+     * set serves production traffic.</p>
      */
     inline void SetTaskSets(Aws::Vector<TaskSet>&& value) { m_taskSetsHasBeenSet = true; m_taskSets = std::move(value); }
 
     /**
-     * <p>Information about a set of Amazon ECS tasks in an AWS CodeDeploy deployment.
-     * An Amazon ECS task set includes details such as the desired number of tasks, how
-     * many tasks are running, and whether the task set serves production traffic.</p>
+     * <p>Information about a set of Amazon ECS tasks in either an AWS CodeDeploy or an
+     * <code>EXTERNAL</code> deployment. An Amazon ECS task set includes details such
+     * as the desired number of tasks, how many tasks are running, and whether the task
+     * set serves production traffic.</p>
      */
     inline Service& WithTaskSets(const Aws::Vector<TaskSet>& value) { SetTaskSets(value); return *this;}
 
     /**
-     * <p>Information about a set of Amazon ECS tasks in an AWS CodeDeploy deployment.
-     * An Amazon ECS task set includes details such as the desired number of tasks, how
-     * many tasks are running, and whether the task set serves production traffic.</p>
+     * <p>Information about a set of Amazon ECS tasks in either an AWS CodeDeploy or an
+     * <code>EXTERNAL</code> deployment. An Amazon ECS task set includes details such
+     * as the desired number of tasks, how many tasks are running, and whether the task
+     * set serves production traffic.</p>
      */
     inline Service& WithTaskSets(Aws::Vector<TaskSet>&& value) { SetTaskSets(std::move(value)); return *this;}
 
     /**
-     * <p>Information about a set of Amazon ECS tasks in an AWS CodeDeploy deployment.
-     * An Amazon ECS task set includes details such as the desired number of tasks, how
-     * many tasks are running, and whether the task set serves production traffic.</p>
+     * <p>Information about a set of Amazon ECS tasks in either an AWS CodeDeploy or an
+     * <code>EXTERNAL</code> deployment. An Amazon ECS task set includes details such
+     * as the desired number of tasks, how many tasks are running, and whether the task
+     * set serves production traffic.</p>
      */
     inline Service& AddTaskSets(const TaskSet& value) { m_taskSetsHasBeenSet = true; m_taskSets.push_back(value); return *this; }
 
     /**
-     * <p>Information about a set of Amazon ECS tasks in an AWS CodeDeploy deployment.
-     * An Amazon ECS task set includes details such as the desired number of tasks, how
-     * many tasks are running, and whether the task set serves production traffic.</p>
+     * <p>Information about a set of Amazon ECS tasks in either an AWS CodeDeploy or an
+     * <code>EXTERNAL</code> deployment. An Amazon ECS task set includes details such
+     * as the desired number of tasks, how many tasks are running, and whether the task
+     * set serves production traffic.</p>
      */
     inline Service& AddTaskSets(TaskSet&& value) { m_taskSetsHasBeenSet = true; m_taskSets.push_back(std::move(value)); return *this; }
 

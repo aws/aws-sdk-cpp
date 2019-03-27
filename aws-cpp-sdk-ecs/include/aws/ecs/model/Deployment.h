@@ -37,8 +37,8 @@ namespace Model
 {
 
   /**
-   * <p>The details of an Amazon ECS service deployment. This is used when a service
-   * uses the <code>CODE_DEPLOY</code> deployment controller type.</p><p><h3>See
+   * <p>The details of an Amazon ECS service deployment. This is used only when a
+   * service uses the <code>ECS</code> deployment controller type.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/Deployment">AWS API
    * Reference</a></p>

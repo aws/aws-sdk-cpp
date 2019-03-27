@@ -31,7 +31,8 @@ namespace Model
     STANDARD_IA,
     ONEZONE_IA,
     INTELLIGENT_TIERING,
-    GLACIER
+    GLACIER,
+    DEEP_ARCHIVE
   };
 
 namespace StorageClassMapper

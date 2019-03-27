@@ -545,73 +545,73 @@ namespace Model
 
 
     /**
-     * <p>A list of up to ten (10) tags assigned to the gateway may be specified. Every
-     * tag is a key-value pair.</p> <note> <p>Valid characters for key and value are
-     * letters, spaces, and numbers representable in UTF-8 format, and the following
-     * special characters: + - = . _ : / @. The maximum length of a tag's key is 128
+     * <p>A list of up to 10 tags that can be assigned to the gateway. Each tag is a
+     * key-value pair.</p> <note> <p>Valid characters for key and value are letters,
+     * spaces, and numbers representable in UTF-8 format, and the following special
+     * characters: + - = . _ : / @. The maximum length of a tag's key is 128
      * characters, and the maximum length for a tag's value is 256.</p> </note>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
 
     /**
-     * <p>A list of up to ten (10) tags assigned to the gateway may be specified. Every
-     * tag is a key-value pair.</p> <note> <p>Valid characters for key and value are
-     * letters, spaces, and numbers representable in UTF-8 format, and the following
-     * special characters: + - = . _ : / @. The maximum length of a tag's key is 128
+     * <p>A list of up to 10 tags that can be assigned to the gateway. Each tag is a
+     * key-value pair.</p> <note> <p>Valid characters for key and value are letters,
+     * spaces, and numbers representable in UTF-8 format, and the following special
+     * characters: + - = . _ : / @. The maximum length of a tag's key is 128
      * characters, and the maximum length for a tag's value is 256.</p> </note>
      */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
-     * <p>A list of up to ten (10) tags assigned to the gateway may be specified. Every
-     * tag is a key-value pair.</p> <note> <p>Valid characters for key and value are
-     * letters, spaces, and numbers representable in UTF-8 format, and the following
-     * special characters: + - = . _ : / @. The maximum length of a tag's key is 128
+     * <p>A list of up to 10 tags that can be assigned to the gateway. Each tag is a
+     * key-value pair.</p> <note> <p>Valid characters for key and value are letters,
+     * spaces, and numbers representable in UTF-8 format, and the following special
+     * characters: + - = . _ : / @. The maximum length of a tag's key is 128
      * characters, and the maximum length for a tag's value is 256.</p> </note>
      */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     /**
-     * <p>A list of up to ten (10) tags assigned to the gateway may be specified. Every
-     * tag is a key-value pair.</p> <note> <p>Valid characters for key and value are
-     * letters, spaces, and numbers representable in UTF-8 format, and the following
-     * special characters: + - = . _ : / @. The maximum length of a tag's key is 128
+     * <p>A list of up to 10 tags that can be assigned to the gateway. Each tag is a
+     * key-value pair.</p> <note> <p>Valid characters for key and value are letters,
+     * spaces, and numbers representable in UTF-8 format, and the following special
+     * characters: + - = . _ : / @. The maximum length of a tag's key is 128
      * characters, and the maximum length for a tag's value is 256.</p> </note>
      */
     inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
     /**
-     * <p>A list of up to ten (10) tags assigned to the gateway may be specified. Every
-     * tag is a key-value pair.</p> <note> <p>Valid characters for key and value are
-     * letters, spaces, and numbers representable in UTF-8 format, and the following
-     * special characters: + - = . _ : / @. The maximum length of a tag's key is 128
+     * <p>A list of up to 10 tags that can be assigned to the gateway. Each tag is a
+     * key-value pair.</p> <note> <p>Valid characters for key and value are letters,
+     * spaces, and numbers representable in UTF-8 format, and the following special
+     * characters: + - = . _ : / @. The maximum length of a tag's key is 128
      * characters, and the maximum length for a tag's value is 256.</p> </note>
      */
     inline ActivateGatewayRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
 
     /**
-     * <p>A list of up to ten (10) tags assigned to the gateway may be specified. Every
-     * tag is a key-value pair.</p> <note> <p>Valid characters for key and value are
-     * letters, spaces, and numbers representable in UTF-8 format, and the following
-     * special characters: + - = . _ : / @. The maximum length of a tag's key is 128
+     * <p>A list of up to 10 tags that can be assigned to the gateway. Each tag is a
+     * key-value pair.</p> <note> <p>Valid characters for key and value are letters,
+     * spaces, and numbers representable in UTF-8 format, and the following special
+     * characters: + - = . _ : / @. The maximum length of a tag's key is 128
      * characters, and the maximum length for a tag's value is 256.</p> </note>
      */
     inline ActivateGatewayRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
-     * <p>A list of up to ten (10) tags assigned to the gateway may be specified. Every
-     * tag is a key-value pair.</p> <note> <p>Valid characters for key and value are
-     * letters, spaces, and numbers representable in UTF-8 format, and the following
-     * special characters: + - = . _ : / @. The maximum length of a tag's key is 128
+     * <p>A list of up to 10 tags that can be assigned to the gateway. Each tag is a
+     * key-value pair.</p> <note> <p>Valid characters for key and value are letters,
+     * spaces, and numbers representable in UTF-8 format, and the following special
+     * characters: + - = . _ : / @. The maximum length of a tag's key is 128
      * characters, and the maximum length for a tag's value is 256.</p> </note>
      */
     inline ActivateGatewayRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
 
     /**
-     * <p>A list of up to ten (10) tags assigned to the gateway may be specified. Every
-     * tag is a key-value pair.</p> <note> <p>Valid characters for key and value are
-     * letters, spaces, and numbers representable in UTF-8 format, and the following
-     * special characters: + - = . _ : / @. The maximum length of a tag's key is 128
+     * <p>A list of up to 10 tags that can be assigned to the gateway. Each tag is a
+     * key-value pair.</p> <note> <p>Valid characters for key and value are letters,
+     * spaces, and numbers representable in UTF-8 format, and the following special
+     * characters: + - = . _ : / @. The maximum length of a tag's key is 128
      * characters, and the maximum length for a tag's value is 256.</p> </note>
      */
     inline ActivateGatewayRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }

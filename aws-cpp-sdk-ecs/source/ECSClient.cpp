@@ -32,16 +32,19 @@
 #include <aws/ecs/ECSErrorMarshaller.h>
 #include <aws/ecs/model/CreateClusterRequest.h>
 #include <aws/ecs/model/CreateServiceRequest.h>
+#include <aws/ecs/model/CreateTaskSetRequest.h>
 #include <aws/ecs/model/DeleteAccountSettingRequest.h>
 #include <aws/ecs/model/DeleteAttributesRequest.h>
 #include <aws/ecs/model/DeleteClusterRequest.h>
 #include <aws/ecs/model/DeleteServiceRequest.h>
+#include <aws/ecs/model/DeleteTaskSetRequest.h>
 #include <aws/ecs/model/DeregisterContainerInstanceRequest.h>
 #include <aws/ecs/model/DeregisterTaskDefinitionRequest.h>
 #include <aws/ecs/model/DescribeClustersRequest.h>
 #include <aws/ecs/model/DescribeContainerInstancesRequest.h>
 #include <aws/ecs/model/DescribeServicesRequest.h>
 #include <aws/ecs/model/DescribeTaskDefinitionRequest.h>
+#include <aws/ecs/model/DescribeTaskSetsRequest.h>
 #include <aws/ecs/model/DescribeTasksRequest.h>
 #include <aws/ecs/model/DiscoverPollEndpointRequest.h>
 #include <aws/ecs/model/ListAccountSettingsRequest.h>
@@ -68,6 +71,8 @@
 #include <aws/ecs/model/UpdateContainerAgentRequest.h>
 #include <aws/ecs/model/UpdateContainerInstancesStateRequest.h>
 #include <aws/ecs/model/UpdateServiceRequest.h>
+#include <aws/ecs/model/UpdateServicePrimaryTaskSetRequest.h>
+#include <aws/ecs/model/UpdateTaskSetRequest.h>
 
 using namespace Aws;
 using namespace Aws::Auth;
@@ -210,6 +215,41 @@ void ECSClient::CreateServiceAsyncHelper(const CreateServiceRequest& request, co
   handler(this, request, CreateService(request), context);
 }
 
+CreateTaskSetOutcome ECSClient::CreateTaskSet(const CreateTaskSetRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return CreateTaskSetOutcome(CreateTaskSetResult(outcome.GetResult()));
+  }
+  else
+  {
+    return CreateTaskSetOutcome(outcome.GetError());
+  }
+}
+
+CreateTaskSetOutcomeCallable ECSClient::CreateTaskSetCallable(const CreateTaskSetRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateTaskSetOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateTaskSet(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ECSClient::CreateTaskSetAsync(const CreateTaskSetRequest& request, const CreateTaskSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateTaskSetAsyncHelper( request, handler, context ); } );
+}
+
+void ECSClient::CreateTaskSetAsyncHelper(const CreateTaskSetRequest& request, const CreateTaskSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateTaskSet(request), context);
+}
+
 DeleteAccountSettingOutcome ECSClient::DeleteAccountSetting(const DeleteAccountSettingRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -348,6 +388,41 @@ void ECSClient::DeleteServiceAsync(const DeleteServiceRequest& request, const De
 void ECSClient::DeleteServiceAsyncHelper(const DeleteServiceRequest& request, const DeleteServiceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DeleteService(request), context);
+}
+
+DeleteTaskSetOutcome ECSClient::DeleteTaskSet(const DeleteTaskSetRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return DeleteTaskSetOutcome(DeleteTaskSetResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DeleteTaskSetOutcome(outcome.GetError());
+  }
+}
+
+DeleteTaskSetOutcomeCallable ECSClient::DeleteTaskSetCallable(const DeleteTaskSetRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteTaskSetOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteTaskSet(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ECSClient::DeleteTaskSetAsync(const DeleteTaskSetRequest& request, const DeleteTaskSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteTaskSetAsyncHelper( request, handler, context ); } );
+}
+
+void ECSClient::DeleteTaskSetAsyncHelper(const DeleteTaskSetRequest& request, const DeleteTaskSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteTaskSet(request), context);
 }
 
 DeregisterContainerInstanceOutcome ECSClient::DeregisterContainerInstance(const DeregisterContainerInstanceRequest& request) const
@@ -558,6 +633,41 @@ void ECSClient::DescribeTaskDefinitionAsync(const DescribeTaskDefinitionRequest&
 void ECSClient::DescribeTaskDefinitionAsyncHelper(const DescribeTaskDefinitionRequest& request, const DescribeTaskDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DescribeTaskDefinition(request), context);
+}
+
+DescribeTaskSetsOutcome ECSClient::DescribeTaskSets(const DescribeTaskSetsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return DescribeTaskSetsOutcome(DescribeTaskSetsResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DescribeTaskSetsOutcome(outcome.GetError());
+  }
+}
+
+DescribeTaskSetsOutcomeCallable ECSClient::DescribeTaskSetsCallable(const DescribeTaskSetsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeTaskSetsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeTaskSets(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ECSClient::DescribeTaskSetsAsync(const DescribeTaskSetsRequest& request, const DescribeTaskSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeTaskSetsAsyncHelper( request, handler, context ); } );
+}
+
+void ECSClient::DescribeTaskSetsAsyncHelper(const DescribeTaskSetsRequest& request, const DescribeTaskSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeTaskSets(request), context);
 }
 
 DescribeTasksOutcome ECSClient::DescribeTasks(const DescribeTasksRequest& request) const
@@ -1468,5 +1578,75 @@ void ECSClient::UpdateServiceAsync(const UpdateServiceRequest& request, const Up
 void ECSClient::UpdateServiceAsyncHelper(const UpdateServiceRequest& request, const UpdateServiceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, UpdateService(request), context);
+}
+
+UpdateServicePrimaryTaskSetOutcome ECSClient::UpdateServicePrimaryTaskSet(const UpdateServicePrimaryTaskSetRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return UpdateServicePrimaryTaskSetOutcome(UpdateServicePrimaryTaskSetResult(outcome.GetResult()));
+  }
+  else
+  {
+    return UpdateServicePrimaryTaskSetOutcome(outcome.GetError());
+  }
+}
+
+UpdateServicePrimaryTaskSetOutcomeCallable ECSClient::UpdateServicePrimaryTaskSetCallable(const UpdateServicePrimaryTaskSetRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateServicePrimaryTaskSetOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateServicePrimaryTaskSet(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ECSClient::UpdateServicePrimaryTaskSetAsync(const UpdateServicePrimaryTaskSetRequest& request, const UpdateServicePrimaryTaskSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateServicePrimaryTaskSetAsyncHelper( request, handler, context ); } );
+}
+
+void ECSClient::UpdateServicePrimaryTaskSetAsyncHelper(const UpdateServicePrimaryTaskSetRequest& request, const UpdateServicePrimaryTaskSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateServicePrimaryTaskSet(request), context);
+}
+
+UpdateTaskSetOutcome ECSClient::UpdateTaskSet(const UpdateTaskSetRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return UpdateTaskSetOutcome(UpdateTaskSetResult(outcome.GetResult()));
+  }
+  else
+  {
+    return UpdateTaskSetOutcome(outcome.GetError());
+  }
+}
+
+UpdateTaskSetOutcomeCallable ECSClient::UpdateTaskSetCallable(const UpdateTaskSetRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateTaskSetOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateTaskSet(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ECSClient::UpdateTaskSetAsync(const UpdateTaskSetRequest& request, const UpdateTaskSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateTaskSetAsyncHelper( request, handler, context ); } );
+}
+
+void ECSClient::UpdateTaskSetAsyncHelper(const UpdateTaskSetRequest& request, const UpdateTaskSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateTaskSet(request), context);
 }
 

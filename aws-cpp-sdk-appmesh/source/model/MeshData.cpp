@@ -31,6 +31,7 @@ namespace Model
 MeshData::MeshData() : 
     m_meshNameHasBeenSet(false),
     m_metadataHasBeenSet(false),
+    m_specHasBeenSet(false),
     m_statusHasBeenSet(false)
 {
 }
@@ -38,6 +39,7 @@ MeshData::MeshData() :
 MeshData::MeshData(JsonView jsonValue) : 
     m_meshNameHasBeenSet(false),
     m_metadataHasBeenSet(false),
+    m_specHasBeenSet(false),
     m_statusHasBeenSet(false)
 {
   *this = jsonValue;
@@ -57,6 +59,13 @@ MeshData& MeshData::operator =(JsonView jsonValue)
     m_metadata = jsonValue.GetObject("metadata");
 
     m_metadataHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("spec"))
+  {
+    m_spec = jsonValue.GetObject("spec");
+
+    m_specHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("status"))
@@ -82,6 +91,12 @@ JsonValue MeshData::Jsonize() const
   if(m_metadataHasBeenSet)
   {
    payload.WithObject("metadata", m_metadata.Jsonize());
+
+  }
+
+  if(m_specHasBeenSet)
+  {
+   payload.WithObject("spec", m_spec.Jsonize());
 
   }
 

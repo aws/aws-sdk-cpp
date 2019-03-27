@@ -31,6 +31,7 @@ namespace ECSErrorMapper
 static const int PLATFORM_TASK_DEFINITION_INCOMPATIBILITY_HASH = HashingUtils::HashString("PlatformTaskDefinitionIncompatibilityException");
 static const int MISSING_VERSION_HASH = HashingUtils::HashString("MissingVersionException");
 static const int SERVER_HASH = HashingUtils::HashString("ServerException");
+static const int TASK_SET_NOT_FOUND_HASH = HashingUtils::HashString("TaskSetNotFoundException");
 static const int NO_UPDATE_AVAILABLE_HASH = HashingUtils::HashString("NoUpdateAvailableException");
 static const int UNSUPPORTED_FEATURE_HASH = HashingUtils::HashString("UnsupportedFeatureException");
 static const int TARGET_NOT_FOUND_HASH = HashingUtils::HashString("TargetNotFoundException");
@@ -63,6 +64,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == SERVER_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ECSErrors::SERVER), false);
+  }
+  else if (hashCode == TASK_SET_NOT_FOUND_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ECSErrors::TASK_SET_NOT_FOUND), false);
   }
   else if (hashCode == NO_UPDATE_AVAILABLE_HASH)
   {

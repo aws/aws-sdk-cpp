@@ -410,58 +410,58 @@ namespace Model
 
 
     /**
-     * <p>A list of up to ten (10) tags assigned to the gateway are returned, sorted
-     * alphabetically by key name. Every tag is a key-value pair. For a gateway with
-     * more than 10 tags assigned, you can view all tags using the
-     * <code>ListTagsForResource</code> API.</p>
+     * <p>A list of up to 10 tags assigned to the gateway, sorted alphabetically by key
+     * name. Each tag is a key-value pair. For a gateway with more than 10 tags
+     * assigned, you can view all tags using the <code>ListTagsForResource</code> API
+     * operation.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
 
     /**
-     * <p>A list of up to ten (10) tags assigned to the gateway are returned, sorted
-     * alphabetically by key name. Every tag is a key-value pair. For a gateway with
-     * more than 10 tags assigned, you can view all tags using the
-     * <code>ListTagsForResource</code> API.</p>
+     * <p>A list of up to 10 tags assigned to the gateway, sorted alphabetically by key
+     * name. Each tag is a key-value pair. For a gateway with more than 10 tags
+     * assigned, you can view all tags using the <code>ListTagsForResource</code> API
+     * operation.</p>
      */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tags = value; }
 
     /**
-     * <p>A list of up to ten (10) tags assigned to the gateway are returned, sorted
-     * alphabetically by key name. Every tag is a key-value pair. For a gateway with
-     * more than 10 tags assigned, you can view all tags using the
-     * <code>ListTagsForResource</code> API.</p>
+     * <p>A list of up to 10 tags assigned to the gateway, sorted alphabetically by key
+     * name. Each tag is a key-value pair. For a gateway with more than 10 tags
+     * assigned, you can view all tags using the <code>ListTagsForResource</code> API
+     * operation.</p>
      */
     inline void SetTags(Aws::Vector<Tag>&& value) { m_tags = std::move(value); }
 
     /**
-     * <p>A list of up to ten (10) tags assigned to the gateway are returned, sorted
-     * alphabetically by key name. Every tag is a key-value pair. For a gateway with
-     * more than 10 tags assigned, you can view all tags using the
-     * <code>ListTagsForResource</code> API.</p>
+     * <p>A list of up to 10 tags assigned to the gateway, sorted alphabetically by key
+     * name. Each tag is a key-value pair. For a gateway with more than 10 tags
+     * assigned, you can view all tags using the <code>ListTagsForResource</code> API
+     * operation.</p>
      */
     inline DescribeGatewayInformationResult& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
 
     /**
-     * <p>A list of up to ten (10) tags assigned to the gateway are returned, sorted
-     * alphabetically by key name. Every tag is a key-value pair. For a gateway with
-     * more than 10 tags assigned, you can view all tags using the
-     * <code>ListTagsForResource</code> API.</p>
+     * <p>A list of up to 10 tags assigned to the gateway, sorted alphabetically by key
+     * name. Each tag is a key-value pair. For a gateway with more than 10 tags
+     * assigned, you can view all tags using the <code>ListTagsForResource</code> API
+     * operation.</p>
      */
     inline DescribeGatewayInformationResult& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
-     * <p>A list of up to ten (10) tags assigned to the gateway are returned, sorted
-     * alphabetically by key name. Every tag is a key-value pair. For a gateway with
-     * more than 10 tags assigned, you can view all tags using the
-     * <code>ListTagsForResource</code> API.</p>
+     * <p>A list of up to 10 tags assigned to the gateway, sorted alphabetically by key
+     * name. Each tag is a key-value pair. For a gateway with more than 10 tags
+     * assigned, you can view all tags using the <code>ListTagsForResource</code> API
+     * operation.</p>
      */
     inline DescribeGatewayInformationResult& AddTags(const Tag& value) { m_tags.push_back(value); return *this; }
 
     /**
-     * <p>A list of up to ten (10) tags assigned to the gateway are returned, sorted
-     * alphabetically by key name. Every tag is a key-value pair. For a gateway with
-     * more than 10 tags assigned, you can view all tags using the
-     * <code>ListTagsForResource</code> API.</p>
+     * <p>A list of up to 10 tags assigned to the gateway, sorted alphabetically by key
+     * name. Each tag is a key-value pair. For a gateway with more than 10 tags
+     * assigned, you can view all tags using the <code>ListTagsForResource</code> API
+     * operation.</p>
      */
     inline DescribeGatewayInformationResult& AddTags(Tag&& value) { m_tags.push_back(std::move(value)); return *this; }
 

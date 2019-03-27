@@ -23,6 +23,9 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 CreateServerRequest::CreateServerRequest() : 
+    m_endpointDetailsHasBeenSet(false),
+    m_endpointType(EndpointType::NOT_SET),
+    m_endpointTypeHasBeenSet(false),
     m_identityProviderDetailsHasBeenSet(false),
     m_identityProviderType(IdentityProviderType::NOT_SET),
     m_identityProviderTypeHasBeenSet(false),
@@ -34,6 +37,17 @@ CreateServerRequest::CreateServerRequest() :
 Aws::String CreateServerRequest::SerializePayload() const
 {
   JsonValue payload;
+
+  if(m_endpointDetailsHasBeenSet)
+  {
+   payload.WithObject("EndpointDetails", m_endpointDetails.Jsonize());
+
+  }
+
+  if(m_endpointTypeHasBeenSet)
+  {
+   payload.WithString("EndpointType", EndpointTypeMapper::GetNameForEndpointType(m_endpointType));
+  }
 
   if(m_identityProviderDetailsHasBeenSet)
   {

@@ -27,7 +27,8 @@ namespace Model
   {
     NOT_SET,
     ECS,
-    CODE_DEPLOY
+    CODE_DEPLOY,
+    EXTERNAL
   };
 
 namespace DeploymentControllerTypeMapper

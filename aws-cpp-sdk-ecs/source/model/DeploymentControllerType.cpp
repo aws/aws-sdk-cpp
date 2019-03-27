@@ -32,6 +32,7 @@ namespace Aws
 
         static const int ECS_HASH = HashingUtils::HashString("ECS");
         static const int CODE_DEPLOY_HASH = HashingUtils::HashString("CODE_DEPLOY");
+        static const int EXTERNAL_HASH = HashingUtils::HashString("EXTERNAL");
 
 
         DeploymentControllerType GetDeploymentControllerTypeForName(const Aws::String& name)
@@ -44,6 +45,10 @@ namespace Aws
           else if (hashCode == CODE_DEPLOY_HASH)
           {
             return DeploymentControllerType::CODE_DEPLOY;
+          }
+          else if (hashCode == EXTERNAL_HASH)
+          {
+            return DeploymentControllerType::EXTERNAL;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -63,6 +68,8 @@ namespace Aws
             return "ECS";
           case DeploymentControllerType::CODE_DEPLOY:
             return "CODE_DEPLOY";
+          case DeploymentControllerType::EXTERNAL:
+            return "EXTERNAL";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

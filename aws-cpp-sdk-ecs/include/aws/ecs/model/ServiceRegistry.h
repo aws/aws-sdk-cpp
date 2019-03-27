@@ -49,65 +49,57 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of the service registry. The currently
-     * supported service registry is Amazon Route 53 Auto Naming. For more information,
-     * see <a
-     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_autonaming_Service.html">Service</a>.</p>
+     * supported service registry is AWS Cloud Map. For more information, see <a
+     * href="https://docs.aws.amazon.com/cloud-map/latest/api/API_CreateService.html">CreateService</a>.</p>
      */
     inline const Aws::String& GetRegistryArn() const{ return m_registryArn; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the service registry. The currently
-     * supported service registry is Amazon Route 53 Auto Naming. For more information,
-     * see <a
-     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_autonaming_Service.html">Service</a>.</p>
+     * supported service registry is AWS Cloud Map. For more information, see <a
+     * href="https://docs.aws.amazon.com/cloud-map/latest/api/API_CreateService.html">CreateService</a>.</p>
      */
     inline bool RegistryArnHasBeenSet() const { return m_registryArnHasBeenSet; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the service registry. The currently
-     * supported service registry is Amazon Route 53 Auto Naming. For more information,
-     * see <a
-     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_autonaming_Service.html">Service</a>.</p>
+     * supported service registry is AWS Cloud Map. For more information, see <a
+     * href="https://docs.aws.amazon.com/cloud-map/latest/api/API_CreateService.html">CreateService</a>.</p>
      */
     inline void SetRegistryArn(const Aws::String& value) { m_registryArnHasBeenSet = true; m_registryArn = value; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the service registry. The currently
-     * supported service registry is Amazon Route 53 Auto Naming. For more information,
-     * see <a
-     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_autonaming_Service.html">Service</a>.</p>
+     * supported service registry is AWS Cloud Map. For more information, see <a
+     * href="https://docs.aws.amazon.com/cloud-map/latest/api/API_CreateService.html">CreateService</a>.</p>
      */
     inline void SetRegistryArn(Aws::String&& value) { m_registryArnHasBeenSet = true; m_registryArn = std::move(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the service registry. The currently
-     * supported service registry is Amazon Route 53 Auto Naming. For more information,
-     * see <a
-     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_autonaming_Service.html">Service</a>.</p>
+     * supported service registry is AWS Cloud Map. For more information, see <a
+     * href="https://docs.aws.amazon.com/cloud-map/latest/api/API_CreateService.html">CreateService</a>.</p>
      */
     inline void SetRegistryArn(const char* value) { m_registryArnHasBeenSet = true; m_registryArn.assign(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the service registry. The currently
-     * supported service registry is Amazon Route 53 Auto Naming. For more information,
-     * see <a
-     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_autonaming_Service.html">Service</a>.</p>
+     * supported service registry is AWS Cloud Map. For more information, see <a
+     * href="https://docs.aws.amazon.com/cloud-map/latest/api/API_CreateService.html">CreateService</a>.</p>
      */
     inline ServiceRegistry& WithRegistryArn(const Aws::String& value) { SetRegistryArn(value); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the service registry. The currently
-     * supported service registry is Amazon Route 53 Auto Naming. For more information,
-     * see <a
-     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_autonaming_Service.html">Service</a>.</p>
+     * supported service registry is AWS Cloud Map. For more information, see <a
+     * href="https://docs.aws.amazon.com/cloud-map/latest/api/API_CreateService.html">CreateService</a>.</p>
      */
     inline ServiceRegistry& WithRegistryArn(Aws::String&& value) { SetRegistryArn(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the service registry. The currently
-     * supported service registry is Amazon Route 53 Auto Naming. For more information,
-     * see <a
-     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_autonaming_Service.html">Service</a>.</p>
+     * supported service registry is AWS Cloud Map. For more information, see <a
+     * href="https://docs.aws.amazon.com/cloud-map/latest/api/API_CreateService.html">CreateService</a>.</p>
      */
     inline ServiceRegistry& WithRegistryArn(const char* value) { SetRegistryArn(value); return *this;}
 

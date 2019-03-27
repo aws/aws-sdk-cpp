@@ -59,7 +59,7 @@ namespace Model
             <code>limit</code>
      * results in a single page along with a <code>nextToken</code> response
         
-     * element. You can see the remaining results of the initial request  by sending
+     * element. You can see the remaining results of the initial request by sending
      * another
             <code>ListVirtualRouters</code> request with the returned
      * <code>nextToken</code> value.
@@ -79,7 +79,7 @@ namespace Model
             <code>limit</code>
      * results in a single page along with a <code>nextToken</code> response
         
-     * element. You can see the remaining results of the initial request  by sending
+     * element. You can see the remaining results of the initial request by sending
      * another
             <code>ListVirtualRouters</code> request with the returned
      * <code>nextToken</code> value.
@@ -99,7 +99,7 @@ namespace Model
             <code>limit</code>
      * results in a single page along with a <code>nextToken</code> response
         
-     * element. You can see the remaining results of the initial request  by sending
+     * element. You can see the remaining results of the initial request by sending
      * another
             <code>ListVirtualRouters</code> request with the returned
      * <code>nextToken</code> value.
@@ -119,7 +119,7 @@ namespace Model
             <code>limit</code>
      * results in a single page along with a <code>nextToken</code> response
         
-     * element. You can see the remaining results of the initial request  by sending
+     * element. You can see the remaining results of the initial request by sending
      * another
             <code>ListVirtualRouters</code> request with the returned
      * <code>nextToken</code> value.
