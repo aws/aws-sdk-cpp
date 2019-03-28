@@ -27,7 +27,8 @@ CreateConfigurationSetRequest::CreateConfigurationSetRequest() :
     m_trackingOptionsHasBeenSet(false),
     m_deliveryOptionsHasBeenSet(false),
     m_reputationOptionsHasBeenSet(false),
-    m_sendingOptionsHasBeenSet(false)
+    m_sendingOptionsHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -62,6 +63,17 @@ Aws::String CreateConfigurationSetRequest::SerializePayload() const
   if(m_sendingOptionsHasBeenSet)
   {
    payload.WithObject("SendingOptions", m_sendingOptions.Jsonize());
+
+  }
+
+  if(m_tagsHasBeenSet)
+  {
+   Array<JsonValue> tagsJsonList(m_tags.size());
+   for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
+   {
+     tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
+   }
+   payload.WithArray("Tags", std::move(tagsJsonList));
 
   }
 

@@ -47,7 +47,7 @@ namespace Model
 {
 
   /**
-   * Placeholder documentation for Eac3Settings<p><h3>See Also:</h3>   <a
+   * Eac3 Settings<p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/Eac3Settings">AWS
    * API Reference</a></p>
    */

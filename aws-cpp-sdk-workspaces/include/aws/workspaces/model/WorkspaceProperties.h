@@ -50,42 +50,42 @@ namespace Model
 
     /**
      * <p>The running mode. For more information, see <a
-     * href="http://docs.aws.amazon.com/workspaces/latest/adminguide/running-mode.html">Manage
+     * href="https://docs.aws.amazon.com/workspaces/latest/adminguide/running-mode.html">Manage
      * the WorkSpace Running Mode</a>.</p>
      */
     inline const RunningMode& GetRunningMode() const{ return m_runningMode; }
 
     /**
      * <p>The running mode. For more information, see <a
-     * href="http://docs.aws.amazon.com/workspaces/latest/adminguide/running-mode.html">Manage
+     * href="https://docs.aws.amazon.com/workspaces/latest/adminguide/running-mode.html">Manage
      * the WorkSpace Running Mode</a>.</p>
      */
     inline bool RunningModeHasBeenSet() const { return m_runningModeHasBeenSet; }
 
     /**
      * <p>The running mode. For more information, see <a
-     * href="http://docs.aws.amazon.com/workspaces/latest/adminguide/running-mode.html">Manage
+     * href="https://docs.aws.amazon.com/workspaces/latest/adminguide/running-mode.html">Manage
      * the WorkSpace Running Mode</a>.</p>
      */
     inline void SetRunningMode(const RunningMode& value) { m_runningModeHasBeenSet = true; m_runningMode = value; }
 
     /**
      * <p>The running mode. For more information, see <a
-     * href="http://docs.aws.amazon.com/workspaces/latest/adminguide/running-mode.html">Manage
+     * href="https://docs.aws.amazon.com/workspaces/latest/adminguide/running-mode.html">Manage
      * the WorkSpace Running Mode</a>.</p>
      */
     inline void SetRunningMode(RunningMode&& value) { m_runningModeHasBeenSet = true; m_runningMode = std::move(value); }
 
     /**
      * <p>The running mode. For more information, see <a
-     * href="http://docs.aws.amazon.com/workspaces/latest/adminguide/running-mode.html">Manage
+     * href="https://docs.aws.amazon.com/workspaces/latest/adminguide/running-mode.html">Manage
      * the WorkSpace Running Mode</a>.</p>
      */
     inline WorkspaceProperties& WithRunningMode(const RunningMode& value) { SetRunningMode(value); return *this;}
 
     /**
      * <p>The running mode. For more information, see <a
-     * href="http://docs.aws.amazon.com/workspaces/latest/adminguide/running-mode.html">Manage
+     * href="https://docs.aws.amazon.com/workspaces/latest/adminguide/running-mode.html">Manage
      * the WorkSpace Running Mode</a>.</p>
      */
     inline WorkspaceProperties& WithRunningMode(RunningMode&& value) { SetRunningMode(std::move(value)); return *this;}

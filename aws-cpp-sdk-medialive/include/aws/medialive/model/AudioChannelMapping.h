@@ -35,7 +35,7 @@ namespace Model
 {
 
   /**
-   * Placeholder documentation for AudioChannelMapping<p><h3>See Also:</h3>   <a
+   * Audio Channel Mapping<p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/AudioChannelMapping">AWS
    * API Reference</a></p>
    */

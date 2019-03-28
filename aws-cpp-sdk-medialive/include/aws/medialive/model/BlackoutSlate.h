@@ -37,7 +37,7 @@ namespace Model
 {
 
   /**
-   * Placeholder documentation for BlackoutSlate<p><h3>See Also:</h3>   <a
+   * Blackout Slate<p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/BlackoutSlate">AWS
    * API Reference</a></p>
    */

@@ -37,7 +37,7 @@ namespace Model
 {
 
   /**
-   * Placeholder documentation for RtmpGroupSettings<p><h3>See Also:</h3>   <a
+   * Rtmp Group Settings<p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/RtmpGroupSettings">AWS
    * API Reference</a></p>
    */

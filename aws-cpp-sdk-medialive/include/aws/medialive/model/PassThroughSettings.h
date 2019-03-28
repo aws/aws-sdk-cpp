@@ -32,7 +32,7 @@ namespace Model
 {
 
   /**
-   * Placeholder documentation for PassThroughSettings<p><h3>See Also:</h3>   <a
+   * Pass Through Settings<p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/PassThroughSettings">AWS
    * API Reference</a></p>
    */

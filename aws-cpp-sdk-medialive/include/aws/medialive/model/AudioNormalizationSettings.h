@@ -35,8 +35,7 @@ namespace Model
 {
 
   /**
-   * Placeholder documentation for AudioNormalizationSettings<p><h3>See Also:</h3>  
-   * <a
+   * Audio Normalization Settings<p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/AudioNormalizationSettings">AWS
    * API Reference</a></p>
    */

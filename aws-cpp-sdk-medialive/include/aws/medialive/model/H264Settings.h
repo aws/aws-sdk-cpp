@@ -54,7 +54,7 @@ namespace Model
 {
 
   /**
-   * Placeholder documentation for H264Settings<p><h3>See Also:</h3>   <a
+   * H264 Settings<p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/H264Settings">AWS
    * API Reference</a></p>
    */

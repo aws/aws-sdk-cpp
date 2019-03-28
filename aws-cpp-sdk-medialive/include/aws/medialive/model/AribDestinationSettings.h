@@ -32,7 +32,7 @@ namespace Model
 {
 
   /**
-   * Placeholder documentation for AribDestinationSettings<p><h3>See Also:</h3>   <a
+   * Arib Destination Settings<p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/AribDestinationSettings">AWS
    * API Reference</a></p>
    */

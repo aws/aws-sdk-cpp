@@ -27,7 +27,8 @@ ImportWorkspaceImageRequest::ImportWorkspaceImageRequest() :
     m_ingestionProcess(WorkspaceImageIngestionProcess::NOT_SET),
     m_ingestionProcessHasBeenSet(false),
     m_imageNameHasBeenSet(false),
-    m_imageDescriptionHasBeenSet(false)
+    m_imageDescriptionHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -55,6 +56,17 @@ Aws::String ImportWorkspaceImageRequest::SerializePayload() const
   if(m_imageDescriptionHasBeenSet)
   {
    payload.WithString("ImageDescription", m_imageDescription);
+
+  }
+
+  if(m_tagsHasBeenSet)
+  {
+   Array<JsonValue> tagsJsonList(m_tags.size());
+   for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
+   {
+     tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
+   }
+   payload.WithArray("Tags", std::move(tagsJsonList));
 
   }
 

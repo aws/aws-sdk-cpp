@@ -34,7 +34,7 @@ namespace Model
 {
 
   /**
-   * Placeholder documentation for Mp2Settings<p><h3>See Also:</h3>   <a
+   * Mp2 Settings<p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/Mp2Settings">AWS
    * API Reference</a></p>
    */

@@ -35,7 +35,7 @@ namespace Model
 {
 
   /**
-   * Placeholder documentation for Scte35TimeSignalApos<p><h3>See Also:</h3>   <a
+   * Scte35 Time Signal Apos<p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/Scte35TimeSignalApos">AWS
    * API Reference</a></p>
    */

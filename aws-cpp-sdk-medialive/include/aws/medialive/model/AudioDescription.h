@@ -40,7 +40,7 @@ namespace Model
 {
 
   /**
-   * Placeholder documentation for AudioDescription<p><h3>See Also:</h3>   <a
+   * Audio Description<p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/AudioDescription">AWS
    * API Reference</a></p>
    */

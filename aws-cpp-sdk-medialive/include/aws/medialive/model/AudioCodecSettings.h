@@ -38,7 +38,7 @@ namespace Model
 {
 
   /**
-   * Placeholder documentation for AudioCodecSettings<p><h3>See Also:</h3>   <a
+   * Audio Codec Settings<p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/AudioCodecSettings">AWS
    * API Reference</a></p>
    */

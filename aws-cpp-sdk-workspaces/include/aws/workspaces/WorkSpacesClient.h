@@ -943,7 +943,7 @@ namespace Model
 
         /**
          * <p>Modifies the properties of the specified Amazon WorkSpaces
-         * client.</p><p><h3>See Also:</h3>   <a
+         * clients.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/ModifyClientProperties">AWS
          * API Reference</a></p>
          */
@@ -951,7 +951,7 @@ namespace Model
 
         /**
          * <p>Modifies the properties of the specified Amazon WorkSpaces
-         * client.</p><p><h3>See Also:</h3>   <a
+         * clients.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/ModifyClientProperties">AWS
          * API Reference</a></p>
          *
@@ -961,7 +961,7 @@ namespace Model
 
         /**
          * <p>Modifies the properties of the specified Amazon WorkSpaces
-         * client.</p><p><h3>See Also:</h3>   <a
+         * clients.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/ModifyClientProperties">AWS
          * API Reference</a></p>
          *
@@ -1074,7 +1074,7 @@ namespace Model
          * <code>UNHEALTHY</code>.</p> <p>Rebuilding a WorkSpace is a potentially
          * destructive action that can result in the loss of data. For more information,
          * see <a
-         * href="http://docs.aws.amazon.com/workspaces/latest/adminguide/reset-workspace.html">Rebuild
+         * href="https://docs.aws.amazon.com/workspaces/latest/adminguide/reset-workspace.html">Rebuild
          * a WorkSpace</a>.</p> <p>This operation is asynchronous and returns before the
          * WorkSpaces have been completely rebuilt.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/RebuildWorkspaces">AWS
@@ -1088,7 +1088,7 @@ namespace Model
          * <code>UNHEALTHY</code>.</p> <p>Rebuilding a WorkSpace is a potentially
          * destructive action that can result in the loss of data. For more information,
          * see <a
-         * href="http://docs.aws.amazon.com/workspaces/latest/adminguide/reset-workspace.html">Rebuild
+         * href="https://docs.aws.amazon.com/workspaces/latest/adminguide/reset-workspace.html">Rebuild
          * a WorkSpace</a>.</p> <p>This operation is asynchronous and returns before the
          * WorkSpaces have been completely rebuilt.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/RebuildWorkspaces">AWS
@@ -1104,7 +1104,7 @@ namespace Model
          * <code>UNHEALTHY</code>.</p> <p>Rebuilding a WorkSpace is a potentially
          * destructive action that can result in the loss of data. For more information,
          * see <a
-         * href="http://docs.aws.amazon.com/workspaces/latest/adminguide/reset-workspace.html">Rebuild
+         * href="https://docs.aws.amazon.com/workspaces/latest/adminguide/reset-workspace.html">Rebuild
          * a WorkSpace</a>.</p> <p>This operation is asynchronous and returns before the
          * WorkSpaces have been completely rebuilt.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/RebuildWorkspaces">AWS

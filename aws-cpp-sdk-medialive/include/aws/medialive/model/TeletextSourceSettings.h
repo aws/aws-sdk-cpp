@@ -34,7 +34,7 @@ namespace Model
 {
 
   /**
-   * Placeholder documentation for TeletextSourceSettings<p><h3>See Also:</h3>   <a
+   * Teletext Source Settings<p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/TeletextSourceSettings">AWS
    * API Reference</a></p>
    */

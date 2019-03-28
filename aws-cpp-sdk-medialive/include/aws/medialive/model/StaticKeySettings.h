@@ -35,7 +35,7 @@ namespace Model
 {
 
   /**
-   * Placeholder documentation for StaticKeySettings<p><h3>See Also:</h3>   <a
+   * Static Key Settings<p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/StaticKeySettings">AWS
    * API Reference</a></p>
    */
