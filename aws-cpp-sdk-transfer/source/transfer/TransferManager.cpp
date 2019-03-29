@@ -71,7 +71,7 @@ namespace Aws
             assert(m_transferConfig.transferExecutor);
             for (uint64_t i = 0; i < m_transferConfig.transferBufferMaxHeapSize; i += m_transferConfig.bufferSize)
             {
-                m_bufferManager.PutResource(Aws::New<Aws::Utils::Array<uint8_t>>(CLASS_TAG, static_cast<size_t>(m_transferConfig.bufferSize)));
+                m_bufferManager.PutResource(Aws::NewArray<unsigned char>((m_transferConfig.bufferSize), CLASS_TAG));
             }
         }
 
@@ -343,7 +343,7 @@ namespace Aws
                 {
                     auto lengthToWrite = partsIter->second->GetSizeInBytes();
                     streamToPut->seekg((partsIter->first - 1) * m_transferConfig.bufferSize);
-                    streamToPut->read((char*)buffer->GetUnderlyingData(), lengthToWrite);
+                    streamToPut->read(reinterpret_cast<char*>(buffer), lengthToWrite);
 
                     auto streamBuf = Aws::New<Aws::Utils::Stream::PreallocatedStreamBuf>(CLASS_TAG, buffer, static_cast<size_t>(lengthToWrite));
                     auto preallocatedStreamReader = Aws::MakeShared<Aws::IOStream>(CLASS_TAG, streamBuf);
@@ -424,7 +424,7 @@ namespace Aws
             putObjectRequest.SetCustomizedAccessLogTag(m_transferConfig.customizedAccessLogTag);
             putObjectRequest.SetContinueRequestHandler([handle](const Aws::Http::HttpRequest*) { return handle->ShouldContinue(); });
             putObjectRequest.WithBucket(handle->GetBucketName())
-                .WithKey(handle->GetKey())                
+                .WithKey(handle->GetKey())
                 .WithContentLength(static_cast<long long>(handle->GetBytesTotalSize()))
                 .WithMetadata(handle->GetMetadata());
 
@@ -432,8 +432,8 @@ namespace Aws
 
             auto buffer = m_bufferManager.Acquire();
 
-            auto lengthToWrite = (std::min)(static_cast<uint64_t>(buffer->GetLength()), handle->GetBytesTotalSize());
-            streamToPut->read((char*)buffer->GetUnderlyingData(), lengthToWrite);
+            auto lengthToWrite = (std::min)(m_transferConfig.bufferSize, handle->GetBytesTotalSize());
+            streamToPut->read((char*)buffer, lengthToWrite);
             auto streamBuf = Aws::New<Aws::Utils::Stream::PreallocatedStreamBuf>(CLASS_TAG, buffer, static_cast<size_t>(lengthToWrite));
             auto preallocatedStreamReader = Aws::MakeShared<Aws::IOStream>(CLASS_TAG, streamBuf);
 
@@ -477,7 +477,6 @@ namespace Aws
             auto originalStreamBuffer = (Aws::Utils::Stream::PreallocatedStreamBuf*)request.GetBody()->rdbuf();
 
             m_bufferManager.Release(originalStreamBuffer->GetBuffer());
-            Aws::Delete(originalStreamBuffer);
             const auto& handle = transferContext->handle;
             const auto& partState = transferContext->partState;
 
@@ -581,10 +580,9 @@ namespace Aws
             std::shared_ptr<TransferHandleAsyncContext> transferContext =
                 std::const_pointer_cast<TransferHandleAsyncContext>(std::static_pointer_cast<const TransferHandleAsyncContext>(context));
 
-            auto originalStreamBuffer = (Aws::Utils::Stream::PreallocatedStreamBuf*)request.GetBody()->rdbuf();
+            auto originalStreamBuffer = static_cast<Aws::Utils::Stream::PreallocatedStreamBuf*>(request.GetBody()->rdbuf());
 
             m_bufferManager.Release(originalStreamBuffer->GetBuffer());
-            Aws::Delete(originalStreamBuffer);
 
             const auto& handle = transferContext->handle;
             const auto& partState = transferContext->partState;
@@ -791,7 +789,7 @@ namespace Aws
                 partState->SetDownloadBuffer(buffer);
 
                 CreateDownloadStreamCallback responseStreamFunction = [partState, buffer, rangeEnd, rangeStart]() 
-                {                    
+                {
                     auto bufferStream = Aws::New<Aws::Utils::Stream::DefaultUnderlyingStream>(CLASS_TAG, 
                             Aws::MakeUnique<Aws::Utils::Stream::PreallocatedStreamBuf>(CLASS_TAG, buffer, rangeEnd - rangeStart + 1));
                     partState->SetDownloadPartStream(bufferStream);

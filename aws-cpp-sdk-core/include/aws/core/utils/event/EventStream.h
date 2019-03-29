@@ -16,35 +16,82 @@
 
 #include <aws/core/Core_EXPORTS.h>
 #include <aws/core/utils/event/EventStreamBuf.h>
+#include <aws/core/utils/stream/ConcurrentStreamBuf.h>
+#include <aws/core/utils/event/EventMessage.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
+#include <aws/core/utils/event/EventStreamEncoder.h>
+#include <atomic>
 
 namespace Aws
 {
+    namespace Client
+    {
+        class AWSAuthSigner;
+    }
     namespace Utils
     {
         namespace Event
         {
             /**
-             * It's only used for output stream right now.
+             * A buffered I/O stream that binary-decodes the bits written to it according to the AWS event-stream spec.
+             * The decoding process will result in invoking callbacks on the handler assigned to the decoder parameter.
              */
             class AWS_CORE_API EventStream : public Aws::IOStream
             {
             public:
                 /**
+                 * Instantiates the stream in decoding mode
                  * @param decoder decodes the stream from server side, so as to invoke related callback functions.
                  * @param eventStreamBufLength The length of the underlying buffer.
                  */
-                EventStream(EventStreamDecoder& decoder, size_t eventStreamBufLength = Aws::Utils::Event::DEFAULT_BUF_SIZE);
+                EventStream(EventStreamDecoder& decoder, size_t bufferSize = Utils::Event::DEFAULT_BUF_SIZE);
 
+            private:
                 EventStream(const EventStream&) = delete;
                 EventStream(EventStream&&) = delete;
                 EventStream& operator=(const EventStream&) = delete;
                 EventStream& operator=(EventStream&&) = delete;
 
-                virtual ~EventStream() {}
+                EventStreamBuf m_eventStreamBuf;
+            };
+
+            /**
+             * A buffered I/O stream that binary-encodes the bits written to it according to the AWS event-stream spec.
+             */
+            class AWS_CORE_API EventEncoderStream : public Aws::IOStream
+            {
+            public:
+
+                EventEncoderStream(size_t bufferSize = Aws::Utils::Event::DEFAULT_BUF_SIZE);
+
+                /**
+                 * Sets the signature seed used by event-stream events.
+                 * Every event uses its previous event's signature to calculate its own signature.
+                 * Setting this value affects the signature calculation of the first event.
+                 */
+                void SetSignatureSeed(const Aws::String& seed) { m_encoder.SetSignatureSeed(seed); }
+
+                /**
+                 * Writes an event-stream message to the underlying buffer.
+                 */
+                EventEncoderStream& WriteEvent(const Aws::Utils::Event::Message& msg);
+
+                /**
+                 * Sets the signer implementation used for every event.
+                 */
+                void SetSigner(Aws::Client::AWSAuthSigner* signer) { m_encoder.SetSigner(signer); }
+
+                /**
+                 * Allows a stream writer to communicate the end of the stream to a stream reader.
+                 *
+                 * Any writes to the stream after this call are not guaranteed to be read by another concurrent
+                 * read thread.
+                 */
+                void Close() { m_streambuf.SetEof(); }
 
             private:
-                EventStreamBuf m_eventStreamBuf;
+                Stream::ConcurrentStreamBuf m_streambuf;
+                EventStreamEncoder m_encoder;
             };
         }
     }

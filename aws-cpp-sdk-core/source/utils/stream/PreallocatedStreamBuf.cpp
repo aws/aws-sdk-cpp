@@ -23,12 +23,11 @@ namespace Aws
     {
         namespace Stream
         {
-            PreallocatedStreamBuf::PreallocatedStreamBuf(Aws::Utils::Array<uint8_t>* buffer, std::size_t lengthToRead) :
+            PreallocatedStreamBuf::PreallocatedStreamBuf(unsigned char* buffer, std::size_t lengthToRead) :
                 m_underlyingBuffer(buffer), m_lengthToRead(lengthToRead)
             {
-                assert(m_lengthToRead <= m_underlyingBuffer->GetLength());
-                char* end = reinterpret_cast<char*>(m_underlyingBuffer->GetUnderlyingData() + m_lengthToRead);
-                char* begin = reinterpret_cast<char*>(m_underlyingBuffer->GetUnderlyingData());
+                char* end = reinterpret_cast<char*>(m_underlyingBuffer + m_lengthToRead);
+                char* begin = reinterpret_cast<char*>(m_underlyingBuffer);
                 setp(begin, end);
                 setg(begin, begin, end);
             }
@@ -47,11 +46,11 @@ namespace Aws
                 {
                     if(which == std::ios_base::in)
                     { 
-                        return seekpos((gptr() - (char*)m_underlyingBuffer->GetUnderlyingData()) + off, which);
+                        return seekpos((gptr() - (char*)m_underlyingBuffer) + off, which);
                     }
                     else
                     {
-                        return seekpos((pptr() - (char*)m_underlyingBuffer->GetUnderlyingData()) + off, which);
+                        return seekpos((pptr() - (char*)m_underlyingBuffer) + off, which);
                     }
                 }
 
@@ -66,12 +65,12 @@ namespace Aws
                     return pos_type(off_type(-1));
                 }
 
-                char* end = reinterpret_cast<char*>(m_underlyingBuffer->GetUnderlyingData() + m_lengthToRead);
-                char* begin = reinterpret_cast<char*>(m_underlyingBuffer->GetUnderlyingData());
+                char* end = reinterpret_cast<char*>(m_underlyingBuffer + m_lengthToRead);
+                char* begin = reinterpret_cast<char*>(m_underlyingBuffer);
 
                 if (which == std::ios_base::in)
                 {
-                    setg(begin, begin + static_cast<size_t>(pos), end);                    
+                    setg(begin, begin + static_cast<size_t>(pos), end);
                 }
 
                 if (which == std::ios_base::out)

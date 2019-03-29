@@ -15,6 +15,8 @@
 
 #include <aws/core/utils/event/EventMessage.h>
 #include <aws/core/utils/HashingUtils.h>
+#include <algorithm>
+#include <iterator>
 
 namespace Aws
 {
@@ -69,6 +71,11 @@ namespace Aws
 
                 m_eventHeaders.clear();
                 m_eventPayload.clear();
+            }
+
+            void Message::WriteEventPayload(const Aws::Vector<unsigned char>& bits)
+            {
+                std::copy(bits.cbegin(), bits.cend(), std::back_inserter(m_eventPayload));
             }
 
         } // namespace Event

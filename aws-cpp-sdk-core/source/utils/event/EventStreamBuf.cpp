@@ -13,6 +13,7 @@
  * permissions and limitations under the License.
  */
 #include <aws/core/utils/event/EventStreamBuf.h>
+#include <cassert>
 
 namespace Aws
 {
@@ -25,6 +26,7 @@ namespace Aws
                 m_bufferLength(bufferLength),
                 m_decoder(decoder)
             {
+                assert(decoder);
                 char* begin = reinterpret_cast<char*>(m_byteBuffer.GetUnderlyingData());
                 char* end = begin + bufferLength - 1;
 
@@ -46,7 +48,7 @@ namespace Aws
                 {
                     size_t length = static_cast<size_t>(pptr() - pbase());
                     m_decoder.Pump(m_byteBuffer, length);
-                    
+
                     if (!m_decoder)
                     {
                         m_err.write(reinterpret_cast<char*>(m_byteBuffer.GetUnderlyingData()), length);
@@ -123,7 +125,7 @@ namespace Aws
             int EventStreamBuf::overflow(int ch)
             {
                 auto eof = std::char_traits<char>::eof();
-                
+
                 if (m_decoder)
                 {
                     if (ch != eof)

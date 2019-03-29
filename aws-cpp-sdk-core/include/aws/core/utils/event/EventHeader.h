@@ -28,10 +28,9 @@ namespace Aws
 {
     namespace Utils
     {
-        static const char CLASS_TAG[] = "EventHeader";
-
         namespace Event
         {
+            static const char CLASS_TAG[] = "EventHeader";
             /**
              * Interface of the header value of a message in event stream.
              * Each type of header value should have it's own associated derived class based on this class.
@@ -96,6 +95,65 @@ namespace Aws
                         break;
                     }
                 };
+
+                EventHeaderValue(const Aws::String& s) :
+                    m_eventHeaderType(EventHeaderType::STRING),
+                    m_eventHeaderVariableLengthValue(reinterpret_cast<const uint8_t*>(s.data()), s.length())
+                {
+                }
+
+                EventHeaderValue(const ByteBuffer& bb) :
+                    m_eventHeaderType(EventHeaderType::BYTE_BUF),
+                    m_eventHeaderVariableLengthValue(bb)
+                {
+                }
+
+                EventHeaderValue(ByteBuffer&& bb) :
+                    m_eventHeaderType(EventHeaderType::BYTE_BUF),
+                    m_eventHeaderVariableLengthValue(std::move(bb))
+                {
+                }
+
+
+                explicit EventHeaderValue(unsigned char byte) :
+                    m_eventHeaderType(EventHeaderType::BYTE)
+                {
+                    m_eventHeaderStaticValue.byteValue = byte;
+                }
+
+                explicit EventHeaderValue(bool b) :
+                    m_eventHeaderType(b ? EventHeaderType::BOOL_TRUE : EventHeaderType::BOOL_FALSE)
+                {
+                    m_eventHeaderStaticValue.boolValue = b;
+                }
+
+                explicit EventHeaderValue(int16_t n) :
+                    m_eventHeaderType(EventHeaderType::INT16)
+                {
+                    m_eventHeaderStaticValue.int16Value = n;
+                }
+
+                explicit EventHeaderValue(int32_t n) :
+                    m_eventHeaderType(EventHeaderType::INT32)
+                {
+                    m_eventHeaderStaticValue.int32Value = n;
+                }
+
+                explicit EventHeaderValue(int64_t n, EventHeaderType type = EventHeaderType::INT64) :
+                    m_eventHeaderType(type)
+                {
+                    if (type == EventHeaderType::TIMESTAMP)
+                    {
+                        m_eventHeaderStaticValue.timestampValue = n;
+                    }
+                    else
+                    {
+                        m_eventHeaderStaticValue.int64Value = n;
+                    }
+                }
+
+                EventHeaderType GetType() const { return m_eventHeaderType; }
+
 
                 static EventHeaderType GetEventHeaderTypeForName(const Aws::String& name);
                 static Aws::String GetNameForEventHeaderType(EventHeaderType value);
@@ -235,6 +293,11 @@ namespace Aws
                         return Aws::Utils::UUID(uuid);
                     }
                     return Aws::Utils::UUID(m_eventHeaderVariableLengthValue.GetUnderlyingData());
+                }
+
+                inline const ByteBuffer& GetUnderlyingBuffer() const
+                {
+                    return m_eventHeaderVariableLengthValue;
                 }
 
             private:

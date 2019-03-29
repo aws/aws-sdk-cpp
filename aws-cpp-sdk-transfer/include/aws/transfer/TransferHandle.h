@@ -78,8 +78,8 @@ namespace Aws
                 Aws::IOStream *GetDownloadPartStream() const { return m_downloadPartStream; }
                 void SetDownloadPartStream(Aws::IOStream *downloadPartStream) { m_downloadPartStream = downloadPartStream; }
 
-                Aws::Utils::Array<unsigned char> *GetDownloadBuffer() const { return m_downloadBuffer; }
-                void SetDownloadBuffer(Aws::Utils::Array<unsigned char> *downloadBuffer) { m_downloadBuffer = downloadBuffer; }
+                unsigned char* GetDownloadBuffer() const { return m_downloadBuffer; }
+                void SetDownloadBuffer(unsigned char* downloadBuffer) { m_downloadBuffer = downloadBuffer; }
 
                 void SetRangeBegin(size_t rangeBegin) { m_rangeBegin = rangeBegin; }
                 size_t GetRangeBegin() const { return m_rangeBegin; }
@@ -98,7 +98,7 @@ namespace Aws
                 size_t m_rangeBegin;
 
                 std::atomic<Aws::IOStream *> m_downloadPartStream;
-                std::atomic<Aws::Utils::Array<unsigned char> *> m_downloadBuffer;
+                std::atomic<unsigned char*> m_downloadBuffer;
                 bool m_lastPart;
         };
 

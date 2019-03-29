@@ -52,11 +52,16 @@ namespace Aws
                  * Clean up the message, including the metadata, headers and payload received.
                  */
                 void Reset();
-                
+
                 /**
                  * Get/set the total length of this message: prelude(8 bytes) + prelude CRC(4 bytes) + Data(headers length + payload length) + message CRC(4 bytes).
                  */
-                inline void SetTotalLength(size_t length) { m_totalLength = length; }
+                inline void SetTotalLength(size_t length)
+                {
+                    m_totalLength = length;
+                    m_eventPayload.reserve(length);
+                }
+
                 inline size_t GetTotalLength() const { return m_totalLength; }
 
                 /**
@@ -79,16 +84,21 @@ namespace Aws
                 {
                     m_eventHeaders.emplace(Aws::Utils::Event::EventHeaderValuePair(headerName, eventHeaderValue));
                 }
+
                 inline const Aws::Utils::Event::EventHeaderValueCollection& GetEventHeaders() const { return m_eventHeaders; }
 
                 /**
                  * Set event payload.
                  */
                 inline void WriteEventPayload(const unsigned char* data, size_t length) { m_eventPayload.insert(m_eventPayload.end(), data, data + length); }
+
+                void WriteEventPayload(const Aws::Vector<unsigned char>& bits);
                 /**
                  * Get the byte array of the payload with transferring ownership.
                  */
-                inline Aws::Vector<unsigned char>&& GetEventPayloadWithOwnership() { return std::move(m_eventPayload); }
+                Aws::Vector<unsigned char>&& GetEventPayloadWithOwnership() { return std::move(m_eventPayload); }
+                const Aws::Vector<unsigned char>& GetEventPayload() const { return m_eventPayload; }
+                Aws::Vector<unsigned char>& GetEventPayload() { return m_eventPayload; }
                 /**
                  * Convert byte array of the payload to string without transferring ownership.
                  */
