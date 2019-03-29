@@ -55,6 +55,8 @@ public class CoreErrors
         VARIANTS.add("Throttling");
         VARIANTS.add("ThrottlingException");
         VARIANTS.add("ThrottledException");
+        VARIANTS.add("RequestThrottledException");
+        VARIANTS.add("RequestThrottled");
         VARIANTS.add("ValidationError");
         VARIANTS.add("ValidationErrorException");
         VARIANTS.add("ValidationException");
