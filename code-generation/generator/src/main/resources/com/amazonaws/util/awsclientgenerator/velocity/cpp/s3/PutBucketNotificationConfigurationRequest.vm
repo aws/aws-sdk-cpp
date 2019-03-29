@@ -36,7 +36,7 @@ Aws::String ${typeInfo.className}::SerializePayload() const
 #set($locationName = $shape.locationName)
 #else
 #set($payloadMember = $shape.members.get($shape.payload))
-#set($xmlNamespace = ${payloadMember.xmlnsUri})
+#set($xmlNamespace = ${payloadMember.xmlNamespace.uri})
 #set($locationName = $payloadMember.locationName)
 #end
 #if($locationName)

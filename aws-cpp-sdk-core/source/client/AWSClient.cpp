@@ -717,6 +717,7 @@ XmlOutcome AWSXMLClient::MakeRequest(const Aws::Http::URI& uri,
     if (httpOutcome.GetResult()->GetResponseBody().tellp() > 0)
     {
         XmlDocument xmlDoc = XmlDocument::CreateFromXmlStream(httpOutcome.GetResult()->GetResponseBody());
+        std::cout << "\n\n\nReponse:\n" << xmlDoc.ConvertToString() << "\n\n\n";
 
         if (!xmlDoc.WasParseSuccessful())
         {

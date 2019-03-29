@@ -13,12 +13,12 @@
 * permissions and limitations under the License.
 */
 
-package com.amazonaws.util.awsclientgenerator.domainmodels.c2j;
+package com.amazonaws.util.awsclientgenerator.domainmodels.codegeneration;
 
 import lombok.Data;
 
 @Data
-public class C2jXmlNamespace {
+public class XmlNamespace {
     private String prefix;
     private String uri;
 }

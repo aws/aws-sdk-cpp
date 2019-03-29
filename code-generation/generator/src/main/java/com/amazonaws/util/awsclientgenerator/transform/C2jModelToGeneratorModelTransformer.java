@@ -219,6 +219,13 @@ public class C2jModelToGeneratorModelTransformer {
         }
         shape.setEventStream(c2jShape.isEventstream());
         shape.setEvent(c2jShape.isEvent());
+
+        if (c2jShape.getXmlNamespace() != null) {
+            XmlNamespace xmlns = new XmlNamespace();
+            xmlns.setUri(c2jShape.getXmlNamespace().getUri());
+            xmlns.setPrefix(c2jShape.getXmlNamespace().getPrefix());
+            shape.setXmlNamespace(xmlns);
+        }
         return shape;
     }
 
@@ -284,6 +291,7 @@ public class C2jModelToGeneratorModelTransformer {
         shapeMember.setEventPayload(c2jShapeMember.isEventpayload());
         shapeMember.setHostLabel(c2jShapeMember.isHostLabel());
         shapeMember.setEndpointDiscoveryId(c2jShapeMember.isEndpointdiscoveryid());
+        shapeMember.setXmlAttribute(c2jShapeMember.isXmlAttribute());
         if(shapeMember.isStreaming()) {
             shapeMember.setRequired(true);
             shapeMember.setValidationNeeded(true);
@@ -294,7 +302,10 @@ public class C2jModelToGeneratorModelTransformer {
         }
 
         if(c2jShapeMember.getXmlNamespace() != null) {
-            shapeMember.setXmlnsUri(c2jShapeMember.getXmlNamespace().getUri());
+            XmlNamespace xmlns = new XmlNamespace();
+            xmlns.setPrefix(c2jShapeMember.getXmlNamespace().getPrefix());
+            xmlns.setUri(c2jShapeMember.getXmlNamespace().getUri());
+            shapeMember.setXmlNamespace(xmlns);
         }
 
         return shapeMember;
@@ -390,8 +401,12 @@ public class C2jModelToGeneratorModelTransformer {
             requestShape.setReferenced(true);
             requestShape.getReferencedBy().add(c2jOperation.getName());
             requestShape.setLocationName(c2jOperation.getInput().getLocationName());
-            requestShape.setXmlNamespace(c2jOperation.getInput().getXmlNamespace() != null ? c2jOperation.getInput().getXmlNamespace().getUri() : null);
-
+            if (c2jOperation.getInput().getXmlNamespace() != null) {
+                XmlNamespace xmlns = new XmlNamespace();
+                xmlns.setUri(c2jOperation.getInput().getXmlNamespace().getUri());
+                xmlns.setPrefix(c2jOperation.getInput().getXmlNamespace().getPrefix());
+                requestShape.setXmlNamespace(xmlns);
+            }
             if(requestShape.getLocationName() != null && requestShape.getLocationName().length() > 0 &&
                     (requestShape.getPayload() == null || requestShape.getPayload().length() == 0) ) {
                 requestShape.setPayload(requestName);
@@ -505,6 +520,7 @@ public class C2jModelToGeneratorModelTransformer {
         cloned.setSignerName(shape.getSignerName());
         cloned.setEventStream(shape.isEventStream());
         cloned.setEvent(shape.isEvent());
+        cloned.setXmlNamespace(shape.getXmlNamespace());
         return cloned;
     }
     void renameShapeMember(Shape parentShape, String originalName, String newName) {

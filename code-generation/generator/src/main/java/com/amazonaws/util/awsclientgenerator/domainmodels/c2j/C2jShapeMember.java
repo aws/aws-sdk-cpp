@@ -32,4 +32,5 @@ public class C2jShapeMember {
     boolean eventpayload;
     boolean hostLabel;
     boolean endpointdiscoveryid;
+    boolean xmlAttribute;
 }

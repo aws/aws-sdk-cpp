@@ -21,6 +21,7 @@ using namespace Aws;
 std::shared_ptr<Aws::IOStream> AmazonSerializableWebServiceRequest::GetBody() const
 {
     Aws::String&& payload = SerializePayload();
+    std::cout <<"\n\n\nRequest:\n" << payload << "\n\n\n";
     std::shared_ptr<Aws::IOStream> payloadBody;
 
     if (!payload.empty())

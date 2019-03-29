@@ -36,7 +36,7 @@ Aws::String ${typeInfo.className}::SerializePayload() const
 #set($locationName = $shape.locationName)
 #else
 #set($payloadMember = $shape.members.get($shape.payload))
-#set($xmlNamespace = ${payloadMember.xmlnsUri})
+#set($xmlNamespace = ${payloadMember.xmlNamespace})
 #set($locationName = $payloadMember.locationName)
 #end
 #if($locationName)
@@ -47,7 +47,12 @@ Aws::String ${typeInfo.className}::SerializePayload() const
 
   XmlNode parentNode = payloadDoc.GetRootElement();
 #if($xmlNamespace)
-  parentNode.SetAttributeValue("xmlns", "${xmlNamespace}");
+#if($xmlNamespace.prefix)
+#set($xmlnsKey = "xmlns:${xmlNamespace.prefix}")
+#else
+#set($xmlnsKey = "xmlns")
+#end
+  parentNode.SetAttributeValue("${xmlnsKey}", "${xmlNamespace.uri}");
 #end
 
 #if($payloadMember)
@@ -60,6 +65,7 @@ Aws::String ${typeInfo.className}::SerializePayload() const
   return {};
 #else
 #set($useRequiredField = true)
+#set($callFromRequestShape = true)
 #parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/xml/ModelClassMembersXmlizeSource.vm")
   return payloadDoc.ConvertToString();
 #end
