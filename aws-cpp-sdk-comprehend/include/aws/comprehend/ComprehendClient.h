@@ -316,7 +316,7 @@ namespace Model
         /**
          * <p>Determines the dominant language of the input text for a batch of documents.
          * For a list of languages that Amazon Comprehend can detect, see <a
-         * href="http://docs.aws.amazon.com/comprehend/latest/dg/how-languages.html">Amazon
+         * href="https://docs.aws.amazon.com/comprehend/latest/dg/how-languages.html">Amazon
          * Comprehend Supported Languages</a>. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/BatchDetectDominantLanguage">AWS
          * API Reference</a></p>
@@ -326,7 +326,7 @@ namespace Model
         /**
          * <p>Determines the dominant language of the input text for a batch of documents.
          * For a list of languages that Amazon Comprehend can detect, see <a
-         * href="http://docs.aws.amazon.com/comprehend/latest/dg/how-languages.html">Amazon
+         * href="https://docs.aws.amazon.com/comprehend/latest/dg/how-languages.html">Amazon
          * Comprehend Supported Languages</a>. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/BatchDetectDominantLanguage">AWS
          * API Reference</a></p>
@@ -338,7 +338,7 @@ namespace Model
         /**
          * <p>Determines the dominant language of the input text for a batch of documents.
          * For a list of languages that Amazon Comprehend can detect, see <a
-         * href="http://docs.aws.amazon.com/comprehend/latest/dg/how-languages.html">Amazon
+         * href="https://docs.aws.amazon.com/comprehend/latest/dg/how-languages.html">Amazon
          * Comprehend Supported Languages</a>. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/BatchDetectDominantLanguage">AWS
          * API Reference</a></p>
@@ -861,7 +861,7 @@ namespace Model
         /**
          * <p>Determines the dominant language of the input text. For a list of languages
          * that Amazon Comprehend can detect, see <a
-         * href="http://docs.aws.amazon.com/comprehend/latest/dg/how-languages.html">Amazon
+         * href="https://docs.aws.amazon.com/comprehend/latest/dg/how-languages.html">Amazon
          * Comprehend Supported Languages</a>. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/DetectDominantLanguage">AWS
          * API Reference</a></p>
@@ -871,7 +871,7 @@ namespace Model
         /**
          * <p>Determines the dominant language of the input text. For a list of languages
          * that Amazon Comprehend can detect, see <a
-         * href="http://docs.aws.amazon.com/comprehend/latest/dg/how-languages.html">Amazon
+         * href="https://docs.aws.amazon.com/comprehend/latest/dg/how-languages.html">Amazon
          * Comprehend Supported Languages</a>. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/DetectDominantLanguage">AWS
          * API Reference</a></p>
@@ -883,7 +883,7 @@ namespace Model
         /**
          * <p>Determines the dominant language of the input text. For a list of languages
          * that Amazon Comprehend can detect, see <a
-         * href="http://docs.aws.amazon.com/comprehend/latest/dg/how-languages.html">Amazon
+         * href="https://docs.aws.amazon.com/comprehend/latest/dg/how-languages.html">Amazon
          * Comprehend Supported Languages</a>. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/DetectDominantLanguage">AWS
          * API Reference</a></p>

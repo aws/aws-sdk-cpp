@@ -41,7 +41,8 @@ DocumentClassifierProperties::DocumentClassifierProperties() :
     m_trainingEndTimeHasBeenSet(false),
     m_inputDataConfigHasBeenSet(false),
     m_classifierMetadataHasBeenSet(false),
-    m_dataAccessRoleArnHasBeenSet(false)
+    m_dataAccessRoleArnHasBeenSet(false),
+    m_volumeKmsKeyIdHasBeenSet(false)
 {
 }
 
@@ -58,7 +59,8 @@ DocumentClassifierProperties::DocumentClassifierProperties(JsonView jsonValue) :
     m_trainingEndTimeHasBeenSet(false),
     m_inputDataConfigHasBeenSet(false),
     m_classifierMetadataHasBeenSet(false),
-    m_dataAccessRoleArnHasBeenSet(false)
+    m_dataAccessRoleArnHasBeenSet(false),
+    m_volumeKmsKeyIdHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -142,6 +144,13 @@ DocumentClassifierProperties& DocumentClassifierProperties::operator =(JsonView 
     m_dataAccessRoleArnHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("VolumeKmsKeyId"))
+  {
+    m_volumeKmsKeyId = jsonValue.GetString("VolumeKmsKeyId");
+
+    m_volumeKmsKeyIdHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -206,6 +215,12 @@ JsonValue DocumentClassifierProperties::Jsonize() const
   if(m_dataAccessRoleArnHasBeenSet)
   {
    payload.WithString("DataAccessRoleArn", m_dataAccessRoleArn);
+
+  }
+
+  if(m_volumeKmsKeyIdHasBeenSet)
+  {
+   payload.WithString("VolumeKmsKeyId", m_volumeKmsKeyId);
 
   }
 

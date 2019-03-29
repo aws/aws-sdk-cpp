@@ -48,7 +48,8 @@ PutMetricAlarmRequest::PutMetricAlarmRequest() :
     m_comparisonOperatorHasBeenSet(false),
     m_treatMissingDataHasBeenSet(false),
     m_evaluateLowSampleCountPercentileHasBeenSet(false),
-    m_metricsHasBeenSet(false)
+    m_metricsHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -181,6 +182,16 @@ Aws::String PutMetricAlarmRequest::SerializePayload() const
     {
       item.OutputToStream(ss, "Metrics.member.", metricsCount, "");
       metricsCount++;
+    }
+  }
+
+  if(m_tagsHasBeenSet)
+  {
+    unsigned tagsCount = 1;
+    for(auto& item : m_tags)
+    {
+      item.OutputToStream(ss, "Tags.member.", tagsCount, "");
+      tagsCount++;
     }
   }
 

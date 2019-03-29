@@ -32,7 +32,10 @@
 #include <aws/monitoring/model/GetMetricWidgetImageResult.h>
 #include <aws/monitoring/model/ListDashboardsResult.h>
 #include <aws/monitoring/model/ListMetricsResult.h>
+#include <aws/monitoring/model/ListTagsForResourceResult.h>
 #include <aws/monitoring/model/PutDashboardResult.h>
+#include <aws/monitoring/model/TagResourceResult.h>
+#include <aws/monitoring/model/UntagResourceResult.h>
 #include <aws/core/NoResult.h>
 #include <aws/core/client/AsyncCallerContext.h>
 #include <aws/core/http/HttpTypes.h>
@@ -92,10 +95,13 @@ namespace Model
         class GetMetricWidgetImageRequest;
         class ListDashboardsRequest;
         class ListMetricsRequest;
+        class ListTagsForResourceRequest;
         class PutDashboardRequest;
         class PutMetricAlarmRequest;
         class PutMetricDataRequest;
         class SetAlarmStateRequest;
+        class TagResourceRequest;
+        class UntagResourceRequest;
 
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<CloudWatchErrors>> DeleteAlarmsOutcome;
         typedef Aws::Utils::Outcome<DeleteDashboardsResult, Aws::Client::AWSError<CloudWatchErrors>> DeleteDashboardsOutcome;
@@ -110,10 +116,13 @@ namespace Model
         typedef Aws::Utils::Outcome<GetMetricWidgetImageResult, Aws::Client::AWSError<CloudWatchErrors>> GetMetricWidgetImageOutcome;
         typedef Aws::Utils::Outcome<ListDashboardsResult, Aws::Client::AWSError<CloudWatchErrors>> ListDashboardsOutcome;
         typedef Aws::Utils::Outcome<ListMetricsResult, Aws::Client::AWSError<CloudWatchErrors>> ListMetricsOutcome;
+        typedef Aws::Utils::Outcome<ListTagsForResourceResult, Aws::Client::AWSError<CloudWatchErrors>> ListTagsForResourceOutcome;
         typedef Aws::Utils::Outcome<PutDashboardResult, Aws::Client::AWSError<CloudWatchErrors>> PutDashboardOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<CloudWatchErrors>> PutMetricAlarmOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<CloudWatchErrors>> PutMetricDataOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<CloudWatchErrors>> SetAlarmStateOutcome;
+        typedef Aws::Utils::Outcome<TagResourceResult, Aws::Client::AWSError<CloudWatchErrors>> TagResourceOutcome;
+        typedef Aws::Utils::Outcome<UntagResourceResult, Aws::Client::AWSError<CloudWatchErrors>> UntagResourceOutcome;
 
         typedef std::future<DeleteAlarmsOutcome> DeleteAlarmsOutcomeCallable;
         typedef std::future<DeleteDashboardsOutcome> DeleteDashboardsOutcomeCallable;
@@ -128,10 +137,13 @@ namespace Model
         typedef std::future<GetMetricWidgetImageOutcome> GetMetricWidgetImageOutcomeCallable;
         typedef std::future<ListDashboardsOutcome> ListDashboardsOutcomeCallable;
         typedef std::future<ListMetricsOutcome> ListMetricsOutcomeCallable;
+        typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
         typedef std::future<PutDashboardOutcome> PutDashboardOutcomeCallable;
         typedef std::future<PutMetricAlarmOutcome> PutMetricAlarmOutcomeCallable;
         typedef std::future<PutMetricDataOutcome> PutMetricDataOutcomeCallable;
         typedef std::future<SetAlarmStateOutcome> SetAlarmStateOutcomeCallable;
+        typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
+        typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
 } // namespace Model
 
   class CloudWatchClient;
@@ -149,10 +161,13 @@ namespace Model
     typedef std::function<void(const CloudWatchClient*, const Model::GetMetricWidgetImageRequest&, const Model::GetMetricWidgetImageOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetMetricWidgetImageResponseReceivedHandler;
     typedef std::function<void(const CloudWatchClient*, const Model::ListDashboardsRequest&, const Model::ListDashboardsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListDashboardsResponseReceivedHandler;
     typedef std::function<void(const CloudWatchClient*, const Model::ListMetricsRequest&, const Model::ListMetricsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListMetricsResponseReceivedHandler;
+    typedef std::function<void(const CloudWatchClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
     typedef std::function<void(const CloudWatchClient*, const Model::PutDashboardRequest&, const Model::PutDashboardOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutDashboardResponseReceivedHandler;
     typedef std::function<void(const CloudWatchClient*, const Model::PutMetricAlarmRequest&, const Model::PutMetricAlarmOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutMetricAlarmResponseReceivedHandler;
     typedef std::function<void(const CloudWatchClient*, const Model::PutMetricDataRequest&, const Model::PutMetricDataOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutMetricDataResponseReceivedHandler;
     typedef std::function<void(const CloudWatchClient*, const Model::SetAlarmStateRequest&, const Model::SetAlarmStateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SetAlarmStateResponseReceivedHandler;
+    typedef std::function<void(const CloudWatchClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
+    typedef std::function<void(const CloudWatchClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
 
   /**
    * <p>Amazon CloudWatch monitors your Amazon Web Services (AWS) resources and the
@@ -826,6 +841,34 @@ namespace Model
         virtual void ListMetricsAsync(const Model::ListMetricsRequest& request, const ListMetricsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Displays the tags associated with a CloudWatch resource. Alarms support
+         * tagging.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/ListTagsForResource">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListTagsForResourceOutcome ListTagsForResource(const Model::ListTagsForResourceRequest& request) const;
+
+        /**
+         * <p>Displays the tags associated with a CloudWatch resource. Alarms support
+         * tagging.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/ListTagsForResource">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListTagsForResourceOutcomeCallable ListTagsForResourceCallable(const Model::ListTagsForResourceRequest& request) const;
+
+        /**
+         * <p>Displays the tags associated with a CloudWatch resource. Alarms support
+         * tagging.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/ListTagsForResource">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListTagsForResourceAsync(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Creates a dashboard if it does not already exist, or updates an existing
          * dashboard. If you update a dashboard, the entire contents are replaced with what
          * you specify here.</p> <p>There is no limit to the number of dashboards in your
@@ -909,21 +952,20 @@ namespace Model
          * <code>ec2:DescribeInstances</code> for all alarms on EC2 instance status
          * metrics</p> </li> <li> <p> <code>ec2:StopInstances</code> for alarms with stop
          * actions</p> </li> <li> <p> <code>ec2:TerminateInstances</code> for alarms with
-         * terminate actions</p> </li> <li> <p>
-         * <code>ec2:DescribeInstanceRecoveryAttribute</code> and
-         * <code>ec2:RecoverInstances</code> for alarms with recover actions</p> </li>
-         * </ul> <p>If you have read/write permissions for Amazon CloudWatch but not for
-         * Amazon EC2, you can still create an alarm, but the stop or terminate actions are
-         * not performed. However, if you are later granted the required permissions, the
-         * alarm actions that you created earlier are performed.</p> <p>If you are using an
-         * IAM role (for example, an EC2 instance profile), you cannot stop or terminate
-         * the instance using alarm actions. However, you can still see the alarm state and
-         * perform any other actions such as Amazon SNS notifications or Auto Scaling
-         * policies.</p> <p>If you are using temporary security credentials granted using
-         * AWS STS, you cannot stop or terminate an EC2 instance using alarm actions.</p>
-         * <p>The first time you create an alarm in the AWS Management Console, the CLI, or
-         * by using the PutMetricAlarm API, CloudWatch creates the necessary service-linked
-         * role for you. The service-linked role is called
+         * terminate actions</p> </li> <li> <p>No specific permissions are needed for
+         * alarms with recover actions</p> </li> </ul> <p>If you have read/write
+         * permissions for Amazon CloudWatch but not for Amazon EC2, you can still create
+         * an alarm, but the stop or terminate actions are not performed. However, if you
+         * are later granted the required permissions, the alarm actions that you created
+         * earlier are performed.</p> <p>If you are using an IAM role (for example, an EC2
+         * instance profile), you cannot stop or terminate the instance using alarm
+         * actions. However, you can still see the alarm state and perform any other
+         * actions such as Amazon SNS notifications or Auto Scaling policies.</p> <p>If you
+         * are using temporary security credentials granted using AWS STS, you cannot stop
+         * or terminate an EC2 instance using alarm actions.</p> <p>The first time you
+         * create an alarm in the AWS Management Console, the CLI, or by using the
+         * PutMetricAlarm API, CloudWatch creates the necessary service-linked role for
+         * you. The service-linked role is called
          * <code>AWSServiceRoleForCloudWatchEvents</code>. For more information, see <a
          * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_terms-and-concepts.html#iam-term-service-linked-role">AWS
          * service-linked role</a>.</p><p><h3>See Also:</h3>   <a
@@ -946,21 +988,20 @@ namespace Model
          * <code>ec2:DescribeInstances</code> for all alarms on EC2 instance status
          * metrics</p> </li> <li> <p> <code>ec2:StopInstances</code> for alarms with stop
          * actions</p> </li> <li> <p> <code>ec2:TerminateInstances</code> for alarms with
-         * terminate actions</p> </li> <li> <p>
-         * <code>ec2:DescribeInstanceRecoveryAttribute</code> and
-         * <code>ec2:RecoverInstances</code> for alarms with recover actions</p> </li>
-         * </ul> <p>If you have read/write permissions for Amazon CloudWatch but not for
-         * Amazon EC2, you can still create an alarm, but the stop or terminate actions are
-         * not performed. However, if you are later granted the required permissions, the
-         * alarm actions that you created earlier are performed.</p> <p>If you are using an
-         * IAM role (for example, an EC2 instance profile), you cannot stop or terminate
-         * the instance using alarm actions. However, you can still see the alarm state and
-         * perform any other actions such as Amazon SNS notifications or Auto Scaling
-         * policies.</p> <p>If you are using temporary security credentials granted using
-         * AWS STS, you cannot stop or terminate an EC2 instance using alarm actions.</p>
-         * <p>The first time you create an alarm in the AWS Management Console, the CLI, or
-         * by using the PutMetricAlarm API, CloudWatch creates the necessary service-linked
-         * role for you. The service-linked role is called
+         * terminate actions</p> </li> <li> <p>No specific permissions are needed for
+         * alarms with recover actions</p> </li> </ul> <p>If you have read/write
+         * permissions for Amazon CloudWatch but not for Amazon EC2, you can still create
+         * an alarm, but the stop or terminate actions are not performed. However, if you
+         * are later granted the required permissions, the alarm actions that you created
+         * earlier are performed.</p> <p>If you are using an IAM role (for example, an EC2
+         * instance profile), you cannot stop or terminate the instance using alarm
+         * actions. However, you can still see the alarm state and perform any other
+         * actions such as Amazon SNS notifications or Auto Scaling policies.</p> <p>If you
+         * are using temporary security credentials granted using AWS STS, you cannot stop
+         * or terminate an EC2 instance using alarm actions.</p> <p>The first time you
+         * create an alarm in the AWS Management Console, the CLI, or by using the
+         * PutMetricAlarm API, CloudWatch creates the necessary service-linked role for
+         * you. The service-linked role is called
          * <code>AWSServiceRoleForCloudWatchEvents</code>. For more information, see <a
          * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_terms-and-concepts.html#iam-term-service-linked-role">AWS
          * service-linked role</a>.</p><p><h3>See Also:</h3>   <a
@@ -985,21 +1026,20 @@ namespace Model
          * <code>ec2:DescribeInstances</code> for all alarms on EC2 instance status
          * metrics</p> </li> <li> <p> <code>ec2:StopInstances</code> for alarms with stop
          * actions</p> </li> <li> <p> <code>ec2:TerminateInstances</code> for alarms with
-         * terminate actions</p> </li> <li> <p>
-         * <code>ec2:DescribeInstanceRecoveryAttribute</code> and
-         * <code>ec2:RecoverInstances</code> for alarms with recover actions</p> </li>
-         * </ul> <p>If you have read/write permissions for Amazon CloudWatch but not for
-         * Amazon EC2, you can still create an alarm, but the stop or terminate actions are
-         * not performed. However, if you are later granted the required permissions, the
-         * alarm actions that you created earlier are performed.</p> <p>If you are using an
-         * IAM role (for example, an EC2 instance profile), you cannot stop or terminate
-         * the instance using alarm actions. However, you can still see the alarm state and
-         * perform any other actions such as Amazon SNS notifications or Auto Scaling
-         * policies.</p> <p>If you are using temporary security credentials granted using
-         * AWS STS, you cannot stop or terminate an EC2 instance using alarm actions.</p>
-         * <p>The first time you create an alarm in the AWS Management Console, the CLI, or
-         * by using the PutMetricAlarm API, CloudWatch creates the necessary service-linked
-         * role for you. The service-linked role is called
+         * terminate actions</p> </li> <li> <p>No specific permissions are needed for
+         * alarms with recover actions</p> </li> </ul> <p>If you have read/write
+         * permissions for Amazon CloudWatch but not for Amazon EC2, you can still create
+         * an alarm, but the stop or terminate actions are not performed. However, if you
+         * are later granted the required permissions, the alarm actions that you created
+         * earlier are performed.</p> <p>If you are using an IAM role (for example, an EC2
+         * instance profile), you cannot stop or terminate the instance using alarm
+         * actions. However, you can still see the alarm state and perform any other
+         * actions such as Amazon SNS notifications or Auto Scaling policies.</p> <p>If you
+         * are using temporary security credentials granted using AWS STS, you cannot stop
+         * or terminate an EC2 instance using alarm actions.</p> <p>The first time you
+         * create an alarm in the AWS Management Console, the CLI, or by using the
+         * PutMetricAlarm API, CloudWatch creates the necessary service-linked role for
+         * you. The service-linked role is called
          * <code>AWSServiceRoleForCloudWatchEvents</code>. For more information, see <a
          * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_terms-and-concepts.html#iam-term-service-linked-role">AWS
          * service-linked role</a>.</p><p><h3>See Also:</h3>   <a
@@ -1029,8 +1069,9 @@ namespace Model
          * too large. Values must be in the range of 8.515920e-109 to 1.174271e+108 (Base
          * 10) or 2e-360 to 2e360 (Base 2). In addition, special values (for example, NaN,
          * +Infinity, -Infinity) are not supported.</p> <p>You can use up to 10 dimensions
-         * per metric to further clarify what data the metric collects. For more
-         * information about specifying dimensions, see <a
+         * per metric to further clarify what data the metric collects. Each dimension
+         * consists of a Name and Value pair. For more information about specifying
+         * dimensions, see <a
          * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/publishingMetrics.html">Publishing
          * Metrics</a> in the <i>Amazon CloudWatch User Guide</i>.</p> <p>Data points with
          * time stamps from 24 hours ago or longer can take at least 48 hours to become
@@ -1067,8 +1108,9 @@ namespace Model
          * too large. Values must be in the range of 8.515920e-109 to 1.174271e+108 (Base
          * 10) or 2e-360 to 2e360 (Base 2). In addition, special values (for example, NaN,
          * +Infinity, -Infinity) are not supported.</p> <p>You can use up to 10 dimensions
-         * per metric to further clarify what data the metric collects. For more
-         * information about specifying dimensions, see <a
+         * per metric to further clarify what data the metric collects. Each dimension
+         * consists of a Name and Value pair. For more information about specifying
+         * dimensions, see <a
          * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/publishingMetrics.html">Publishing
          * Metrics</a> in the <i>Amazon CloudWatch User Guide</i>.</p> <p>Data points with
          * time stamps from 24 hours ago or longer can take at least 48 hours to become
@@ -1107,8 +1149,9 @@ namespace Model
          * too large. Values must be in the range of 8.515920e-109 to 1.174271e+108 (Base
          * 10) or 2e-360 to 2e360 (Base 2). In addition, special values (for example, NaN,
          * +Infinity, -Infinity) are not supported.</p> <p>You can use up to 10 dimensions
-         * per metric to further clarify what data the metric collects. For more
-         * information about specifying dimensions, see <a
+         * per metric to further clarify what data the metric collects. Each dimension
+         * consists of a Name and Value pair. For more information about specifying
+         * dimensions, see <a
          * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/publishingMetrics.html">Publishing
          * Metrics</a> in the <i>Amazon CloudWatch User Guide</i>.</p> <p>Data points with
          * time stamps from 24 hours ago or longer can take at least 48 hours to become
@@ -1177,6 +1220,92 @@ namespace Model
          */
         virtual void SetAlarmStateAsync(const Model::SetAlarmStateRequest& request, const SetAlarmStateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
+        /**
+         * <p>Assigns one or more tags (key-value pairs) to the specified CloudWatch
+         * resource. Tags can help you organize and categorize your resources. You can also
+         * use them to scope user permissions, by granting a user permission to access or
+         * change only resources with certain tag values. In CloudWatch, alarms can be
+         * tagged.</p> <p>Tags don't have any semantic meaning to AWS and are interpreted
+         * strictly as strings of characters.</p> <p>You can use the
+         * <code>TagResource</code> action with a resource that already has tags. If you
+         * specify a new tag key for the resource, this tag is appended to the list of tags
+         * associated with the resource. If you specify a tag key that is already
+         * associated with the resource, the new tag value that you specify replaces the
+         * previous value for that tag.</p> <p>You can associate as many as 50 tags with a
+         * resource.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/TagResource">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::TagResourceOutcome TagResource(const Model::TagResourceRequest& request) const;
+
+        /**
+         * <p>Assigns one or more tags (key-value pairs) to the specified CloudWatch
+         * resource. Tags can help you organize and categorize your resources. You can also
+         * use them to scope user permissions, by granting a user permission to access or
+         * change only resources with certain tag values. In CloudWatch, alarms can be
+         * tagged.</p> <p>Tags don't have any semantic meaning to AWS and are interpreted
+         * strictly as strings of characters.</p> <p>You can use the
+         * <code>TagResource</code> action with a resource that already has tags. If you
+         * specify a new tag key for the resource, this tag is appended to the list of tags
+         * associated with the resource. If you specify a tag key that is already
+         * associated with the resource, the new tag value that you specify replaces the
+         * previous value for that tag.</p> <p>You can associate as many as 50 tags with a
+         * resource.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/TagResource">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::TagResourceOutcomeCallable TagResourceCallable(const Model::TagResourceRequest& request) const;
+
+        /**
+         * <p>Assigns one or more tags (key-value pairs) to the specified CloudWatch
+         * resource. Tags can help you organize and categorize your resources. You can also
+         * use them to scope user permissions, by granting a user permission to access or
+         * change only resources with certain tag values. In CloudWatch, alarms can be
+         * tagged.</p> <p>Tags don't have any semantic meaning to AWS and are interpreted
+         * strictly as strings of characters.</p> <p>You can use the
+         * <code>TagResource</code> action with a resource that already has tags. If you
+         * specify a new tag key for the resource, this tag is appended to the list of tags
+         * associated with the resource. If you specify a tag key that is already
+         * associated with the resource, the new tag value that you specify replaces the
+         * previous value for that tag.</p> <p>You can associate as many as 50 tags with a
+         * resource.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/TagResource">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void TagResourceAsync(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Removes one or more tags from the specified resource.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/UntagResource">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UntagResourceOutcome UntagResource(const Model::UntagResourceRequest& request) const;
+
+        /**
+         * <p>Removes one or more tags from the specified resource.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/UntagResource">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UntagResourceOutcomeCallable UntagResourceCallable(const Model::UntagResourceRequest& request) const;
+
+        /**
+         * <p>Removes one or more tags from the specified resource.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/UntagResource">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UntagResourceAsync(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
       
         void OverrideEndpoint(const Aws::String& endpoint);
   private:
@@ -1195,10 +1324,13 @@ namespace Model
         void GetMetricWidgetImageAsyncHelper(const Model::GetMetricWidgetImageRequest& request, const GetMetricWidgetImageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListDashboardsAsyncHelper(const Model::ListDashboardsRequest& request, const ListDashboardsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListMetricsAsyncHelper(const Model::ListMetricsRequest& request, const ListMetricsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListTagsForResourceAsyncHelper(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutDashboardAsyncHelper(const Model::PutDashboardRequest& request, const PutDashboardResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutMetricAlarmAsyncHelper(const Model::PutMetricAlarmRequest& request, const PutMetricAlarmResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutMetricDataAsyncHelper(const Model::PutMetricDataRequest& request, const PutMetricDataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void SetAlarmStateAsyncHelper(const Model::SetAlarmStateRequest& request, const SetAlarmStateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void TagResourceAsyncHelper(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UntagResourceAsyncHelper(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
 
         Aws::String m_uri;
         Aws::String m_configScheme;

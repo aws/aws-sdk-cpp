@@ -23,6 +23,7 @@
 #include <aws/monitoring/model/ComparisonOperator.h>
 #include <aws/monitoring/model/Dimension.h>
 #include <aws/monitoring/model/MetricDataQuery.h>
+#include <aws/monitoring/model/Tag.h>
 #include <utility>
 
 namespace Aws
@@ -346,6 +347,7 @@ namespace Model
      * (ARN).</p> <p>Valid Values: <code>arn:aws:automate:<i>region</i>:ec2:stop</code>
      * | <code>arn:aws:automate:<i>region</i>:ec2:terminate</code> |
      * <code>arn:aws:automate:<i>region</i>:ec2:recover</code> |
+     * <code>arn:aws:automate:<i>region</i>:ec2:reboot</code> |
      * <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code>
      * |
      * <code>arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i>
@@ -365,6 +367,7 @@ namespace Model
      * (ARN).</p> <p>Valid Values: <code>arn:aws:automate:<i>region</i>:ec2:stop</code>
      * | <code>arn:aws:automate:<i>region</i>:ec2:terminate</code> |
      * <code>arn:aws:automate:<i>region</i>:ec2:recover</code> |
+     * <code>arn:aws:automate:<i>region</i>:ec2:reboot</code> |
      * <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code>
      * |
      * <code>arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i>
@@ -384,6 +387,7 @@ namespace Model
      * (ARN).</p> <p>Valid Values: <code>arn:aws:automate:<i>region</i>:ec2:stop</code>
      * | <code>arn:aws:automate:<i>region</i>:ec2:terminate</code> |
      * <code>arn:aws:automate:<i>region</i>:ec2:recover</code> |
+     * <code>arn:aws:automate:<i>region</i>:ec2:reboot</code> |
      * <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code>
      * |
      * <code>arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i>
@@ -403,6 +407,7 @@ namespace Model
      * (ARN).</p> <p>Valid Values: <code>arn:aws:automate:<i>region</i>:ec2:stop</code>
      * | <code>arn:aws:automate:<i>region</i>:ec2:terminate</code> |
      * <code>arn:aws:automate:<i>region</i>:ec2:recover</code> |
+     * <code>arn:aws:automate:<i>region</i>:ec2:reboot</code> |
      * <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code>
      * |
      * <code>arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i>
@@ -422,6 +427,7 @@ namespace Model
      * (ARN).</p> <p>Valid Values: <code>arn:aws:automate:<i>region</i>:ec2:stop</code>
      * | <code>arn:aws:automate:<i>region</i>:ec2:terminate</code> |
      * <code>arn:aws:automate:<i>region</i>:ec2:recover</code> |
+     * <code>arn:aws:automate:<i>region</i>:ec2:reboot</code> |
      * <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code>
      * |
      * <code>arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i>
@@ -441,6 +447,7 @@ namespace Model
      * (ARN).</p> <p>Valid Values: <code>arn:aws:automate:<i>region</i>:ec2:stop</code>
      * | <code>arn:aws:automate:<i>region</i>:ec2:terminate</code> |
      * <code>arn:aws:automate:<i>region</i>:ec2:recover</code> |
+     * <code>arn:aws:automate:<i>region</i>:ec2:reboot</code> |
      * <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code>
      * |
      * <code>arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i>
@@ -460,6 +467,7 @@ namespace Model
      * (ARN).</p> <p>Valid Values: <code>arn:aws:automate:<i>region</i>:ec2:stop</code>
      * | <code>arn:aws:automate:<i>region</i>:ec2:terminate</code> |
      * <code>arn:aws:automate:<i>region</i>:ec2:recover</code> |
+     * <code>arn:aws:automate:<i>region</i>:ec2:reboot</code> |
      * <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code>
      * |
      * <code>arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i>
@@ -479,6 +487,7 @@ namespace Model
      * (ARN).</p> <p>Valid Values: <code>arn:aws:automate:<i>region</i>:ec2:stop</code>
      * | <code>arn:aws:automate:<i>region</i>:ec2:terminate</code> |
      * <code>arn:aws:automate:<i>region</i>:ec2:recover</code> |
+     * <code>arn:aws:automate:<i>region</i>:ec2:reboot</code> |
      * <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code>
      * |
      * <code>arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i>
@@ -498,6 +507,7 @@ namespace Model
      * (ARN).</p> <p>Valid Values: <code>arn:aws:automate:<i>region</i>:ec2:stop</code>
      * | <code>arn:aws:automate:<i>region</i>:ec2:terminate</code> |
      * <code>arn:aws:automate:<i>region</i>:ec2:recover</code> |
+     * <code>arn:aws:automate:<i>region</i>:ec2:reboot</code> |
      * <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code>
      * |
      * <code>arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i>
@@ -519,6 +529,7 @@ namespace Model
      * <code>arn:aws:automate:<i>region</i>:ec2:stop</code> |
      * <code>arn:aws:automate:<i>region</i>:ec2:terminate</code> |
      * <code>arn:aws:automate:<i>region</i>:ec2:recover</code> |
+     * <code>arn:aws:automate:<i>region</i>:ec2:reboot</code> |
      * <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code>
      * |
      * <code>arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i>
@@ -539,6 +550,7 @@ namespace Model
      * <code>arn:aws:automate:<i>region</i>:ec2:stop</code> |
      * <code>arn:aws:automate:<i>region</i>:ec2:terminate</code> |
      * <code>arn:aws:automate:<i>region</i>:ec2:recover</code> |
+     * <code>arn:aws:automate:<i>region</i>:ec2:reboot</code> |
      * <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code>
      * |
      * <code>arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i>
@@ -559,6 +571,7 @@ namespace Model
      * <code>arn:aws:automate:<i>region</i>:ec2:stop</code> |
      * <code>arn:aws:automate:<i>region</i>:ec2:terminate</code> |
      * <code>arn:aws:automate:<i>region</i>:ec2:recover</code> |
+     * <code>arn:aws:automate:<i>region</i>:ec2:reboot</code> |
      * <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code>
      * |
      * <code>arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i>
@@ -579,6 +592,7 @@ namespace Model
      * <code>arn:aws:automate:<i>region</i>:ec2:stop</code> |
      * <code>arn:aws:automate:<i>region</i>:ec2:terminate</code> |
      * <code>arn:aws:automate:<i>region</i>:ec2:recover</code> |
+     * <code>arn:aws:automate:<i>region</i>:ec2:reboot</code> |
      * <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code>
      * |
      * <code>arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i>
@@ -599,6 +613,7 @@ namespace Model
      * <code>arn:aws:automate:<i>region</i>:ec2:stop</code> |
      * <code>arn:aws:automate:<i>region</i>:ec2:terminate</code> |
      * <code>arn:aws:automate:<i>region</i>:ec2:recover</code> |
+     * <code>arn:aws:automate:<i>region</i>:ec2:reboot</code> |
      * <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code>
      * |
      * <code>arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i>
@@ -619,6 +634,7 @@ namespace Model
      * <code>arn:aws:automate:<i>region</i>:ec2:stop</code> |
      * <code>arn:aws:automate:<i>region</i>:ec2:terminate</code> |
      * <code>arn:aws:automate:<i>region</i>:ec2:recover</code> |
+     * <code>arn:aws:automate:<i>region</i>:ec2:reboot</code> |
      * <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code>
      * |
      * <code>arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i>
@@ -639,6 +655,7 @@ namespace Model
      * <code>arn:aws:automate:<i>region</i>:ec2:stop</code> |
      * <code>arn:aws:automate:<i>region</i>:ec2:terminate</code> |
      * <code>arn:aws:automate:<i>region</i>:ec2:recover</code> |
+     * <code>arn:aws:automate:<i>region</i>:ec2:reboot</code> |
      * <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code>
      * |
      * <code>arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i>
@@ -659,6 +676,7 @@ namespace Model
      * <code>arn:aws:automate:<i>region</i>:ec2:stop</code> |
      * <code>arn:aws:automate:<i>region</i>:ec2:terminate</code> |
      * <code>arn:aws:automate:<i>region</i>:ec2:recover</code> |
+     * <code>arn:aws:automate:<i>region</i>:ec2:reboot</code> |
      * <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code>
      * |
      * <code>arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i>
@@ -679,6 +697,7 @@ namespace Model
      * <code>arn:aws:automate:<i>region</i>:ec2:stop</code> |
      * <code>arn:aws:automate:<i>region</i>:ec2:terminate</code> |
      * <code>arn:aws:automate:<i>region</i>:ec2:recover</code> |
+     * <code>arn:aws:automate:<i>region</i>:ec2:reboot</code> |
      * <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code>
      * |
      * <code>arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i>
@@ -1452,12 +1471,16 @@ namespace Model
      * <p>An array of <code>MetricDataQuery</code> structures that enable you to create
      * an alarm based on the result of a metric math expression. Each item in the
      * <code>Metrics</code> array either retrieves a metric or performs a math
-     * expression.</p> <p>If you use the <code>Metrics</code> parameter, you cannot
-     * include the <code>MetricName</code>, <code>Dimensions</code>,
-     * <code>Period</code>, <code>Namespace</code>, <code>Statistic</code>, or
-     * <code>ExtendedStatistic</code> parameters of <code>PutMetricAlarm</code> in the
-     * same operation. Instead, you retrieve the metrics you are using in your math
-     * expression as part of the <code>Metrics</code> array.</p>
+     * expression.</p> <p>One item in the <code>Metrics</code> array is the expression
+     * that the alarm watches. You designate this expression by setting
+     * <code>ReturnValue</code> to true for this object in the array. For more
+     * information, see <a>MetricDataQuery</a>.</p> <p>If you use the
+     * <code>Metrics</code> parameter, you cannot include the <code>MetricName</code>,
+     * <code>Dimensions</code>, <code>Period</code>, <code>Namespace</code>,
+     * <code>Statistic</code>, or <code>ExtendedStatistic</code> parameters of
+     * <code>PutMetricAlarm</code> in the same operation. Instead, you retrieve the
+     * metrics you are using in your math expression as part of the
+     * <code>Metrics</code> array.</p>
      */
     inline const Aws::Vector<MetricDataQuery>& GetMetrics() const{ return m_metrics; }
 
@@ -1465,12 +1488,16 @@ namespace Model
      * <p>An array of <code>MetricDataQuery</code> structures that enable you to create
      * an alarm based on the result of a metric math expression. Each item in the
      * <code>Metrics</code> array either retrieves a metric or performs a math
-     * expression.</p> <p>If you use the <code>Metrics</code> parameter, you cannot
-     * include the <code>MetricName</code>, <code>Dimensions</code>,
-     * <code>Period</code>, <code>Namespace</code>, <code>Statistic</code>, or
-     * <code>ExtendedStatistic</code> parameters of <code>PutMetricAlarm</code> in the
-     * same operation. Instead, you retrieve the metrics you are using in your math
-     * expression as part of the <code>Metrics</code> array.</p>
+     * expression.</p> <p>One item in the <code>Metrics</code> array is the expression
+     * that the alarm watches. You designate this expression by setting
+     * <code>ReturnValue</code> to true for this object in the array. For more
+     * information, see <a>MetricDataQuery</a>.</p> <p>If you use the
+     * <code>Metrics</code> parameter, you cannot include the <code>MetricName</code>,
+     * <code>Dimensions</code>, <code>Period</code>, <code>Namespace</code>,
+     * <code>Statistic</code>, or <code>ExtendedStatistic</code> parameters of
+     * <code>PutMetricAlarm</code> in the same operation. Instead, you retrieve the
+     * metrics you are using in your math expression as part of the
+     * <code>Metrics</code> array.</p>
      */
     inline bool MetricsHasBeenSet() const { return m_metricsHasBeenSet; }
 
@@ -1478,12 +1505,16 @@ namespace Model
      * <p>An array of <code>MetricDataQuery</code> structures that enable you to create
      * an alarm based on the result of a metric math expression. Each item in the
      * <code>Metrics</code> array either retrieves a metric or performs a math
-     * expression.</p> <p>If you use the <code>Metrics</code> parameter, you cannot
-     * include the <code>MetricName</code>, <code>Dimensions</code>,
-     * <code>Period</code>, <code>Namespace</code>, <code>Statistic</code>, or
-     * <code>ExtendedStatistic</code> parameters of <code>PutMetricAlarm</code> in the
-     * same operation. Instead, you retrieve the metrics you are using in your math
-     * expression as part of the <code>Metrics</code> array.</p>
+     * expression.</p> <p>One item in the <code>Metrics</code> array is the expression
+     * that the alarm watches. You designate this expression by setting
+     * <code>ReturnValue</code> to true for this object in the array. For more
+     * information, see <a>MetricDataQuery</a>.</p> <p>If you use the
+     * <code>Metrics</code> parameter, you cannot include the <code>MetricName</code>,
+     * <code>Dimensions</code>, <code>Period</code>, <code>Namespace</code>,
+     * <code>Statistic</code>, or <code>ExtendedStatistic</code> parameters of
+     * <code>PutMetricAlarm</code> in the same operation. Instead, you retrieve the
+     * metrics you are using in your math expression as part of the
+     * <code>Metrics</code> array.</p>
      */
     inline void SetMetrics(const Aws::Vector<MetricDataQuery>& value) { m_metricsHasBeenSet = true; m_metrics = value; }
 
@@ -1491,12 +1522,16 @@ namespace Model
      * <p>An array of <code>MetricDataQuery</code> structures that enable you to create
      * an alarm based on the result of a metric math expression. Each item in the
      * <code>Metrics</code> array either retrieves a metric or performs a math
-     * expression.</p> <p>If you use the <code>Metrics</code> parameter, you cannot
-     * include the <code>MetricName</code>, <code>Dimensions</code>,
-     * <code>Period</code>, <code>Namespace</code>, <code>Statistic</code>, or
-     * <code>ExtendedStatistic</code> parameters of <code>PutMetricAlarm</code> in the
-     * same operation. Instead, you retrieve the metrics you are using in your math
-     * expression as part of the <code>Metrics</code> array.</p>
+     * expression.</p> <p>One item in the <code>Metrics</code> array is the expression
+     * that the alarm watches. You designate this expression by setting
+     * <code>ReturnValue</code> to true for this object in the array. For more
+     * information, see <a>MetricDataQuery</a>.</p> <p>If you use the
+     * <code>Metrics</code> parameter, you cannot include the <code>MetricName</code>,
+     * <code>Dimensions</code>, <code>Period</code>, <code>Namespace</code>,
+     * <code>Statistic</code>, or <code>ExtendedStatistic</code> parameters of
+     * <code>PutMetricAlarm</code> in the same operation. Instead, you retrieve the
+     * metrics you are using in your math expression as part of the
+     * <code>Metrics</code> array.</p>
      */
     inline void SetMetrics(Aws::Vector<MetricDataQuery>&& value) { m_metricsHasBeenSet = true; m_metrics = std::move(value); }
 
@@ -1504,12 +1539,16 @@ namespace Model
      * <p>An array of <code>MetricDataQuery</code> structures that enable you to create
      * an alarm based on the result of a metric math expression. Each item in the
      * <code>Metrics</code> array either retrieves a metric or performs a math
-     * expression.</p> <p>If you use the <code>Metrics</code> parameter, you cannot
-     * include the <code>MetricName</code>, <code>Dimensions</code>,
-     * <code>Period</code>, <code>Namespace</code>, <code>Statistic</code>, or
-     * <code>ExtendedStatistic</code> parameters of <code>PutMetricAlarm</code> in the
-     * same operation. Instead, you retrieve the metrics you are using in your math
-     * expression as part of the <code>Metrics</code> array.</p>
+     * expression.</p> <p>One item in the <code>Metrics</code> array is the expression
+     * that the alarm watches. You designate this expression by setting
+     * <code>ReturnValue</code> to true for this object in the array. For more
+     * information, see <a>MetricDataQuery</a>.</p> <p>If you use the
+     * <code>Metrics</code> parameter, you cannot include the <code>MetricName</code>,
+     * <code>Dimensions</code>, <code>Period</code>, <code>Namespace</code>,
+     * <code>Statistic</code>, or <code>ExtendedStatistic</code> parameters of
+     * <code>PutMetricAlarm</code> in the same operation. Instead, you retrieve the
+     * metrics you are using in your math expression as part of the
+     * <code>Metrics</code> array.</p>
      */
     inline PutMetricAlarmRequest& WithMetrics(const Aws::Vector<MetricDataQuery>& value) { SetMetrics(value); return *this;}
 
@@ -1517,12 +1556,16 @@ namespace Model
      * <p>An array of <code>MetricDataQuery</code> structures that enable you to create
      * an alarm based on the result of a metric math expression. Each item in the
      * <code>Metrics</code> array either retrieves a metric or performs a math
-     * expression.</p> <p>If you use the <code>Metrics</code> parameter, you cannot
-     * include the <code>MetricName</code>, <code>Dimensions</code>,
-     * <code>Period</code>, <code>Namespace</code>, <code>Statistic</code>, or
-     * <code>ExtendedStatistic</code> parameters of <code>PutMetricAlarm</code> in the
-     * same operation. Instead, you retrieve the metrics you are using in your math
-     * expression as part of the <code>Metrics</code> array.</p>
+     * expression.</p> <p>One item in the <code>Metrics</code> array is the expression
+     * that the alarm watches. You designate this expression by setting
+     * <code>ReturnValue</code> to true for this object in the array. For more
+     * information, see <a>MetricDataQuery</a>.</p> <p>If you use the
+     * <code>Metrics</code> parameter, you cannot include the <code>MetricName</code>,
+     * <code>Dimensions</code>, <code>Period</code>, <code>Namespace</code>,
+     * <code>Statistic</code>, or <code>ExtendedStatistic</code> parameters of
+     * <code>PutMetricAlarm</code> in the same operation. Instead, you retrieve the
+     * metrics you are using in your math expression as part of the
+     * <code>Metrics</code> array.</p>
      */
     inline PutMetricAlarmRequest& WithMetrics(Aws::Vector<MetricDataQuery>&& value) { SetMetrics(std::move(value)); return *this;}
 
@@ -1530,12 +1573,16 @@ namespace Model
      * <p>An array of <code>MetricDataQuery</code> structures that enable you to create
      * an alarm based on the result of a metric math expression. Each item in the
      * <code>Metrics</code> array either retrieves a metric or performs a math
-     * expression.</p> <p>If you use the <code>Metrics</code> parameter, you cannot
-     * include the <code>MetricName</code>, <code>Dimensions</code>,
-     * <code>Period</code>, <code>Namespace</code>, <code>Statistic</code>, or
-     * <code>ExtendedStatistic</code> parameters of <code>PutMetricAlarm</code> in the
-     * same operation. Instead, you retrieve the metrics you are using in your math
-     * expression as part of the <code>Metrics</code> array.</p>
+     * expression.</p> <p>One item in the <code>Metrics</code> array is the expression
+     * that the alarm watches. You designate this expression by setting
+     * <code>ReturnValue</code> to true for this object in the array. For more
+     * information, see <a>MetricDataQuery</a>.</p> <p>If you use the
+     * <code>Metrics</code> parameter, you cannot include the <code>MetricName</code>,
+     * <code>Dimensions</code>, <code>Period</code>, <code>Namespace</code>,
+     * <code>Statistic</code>, or <code>ExtendedStatistic</code> parameters of
+     * <code>PutMetricAlarm</code> in the same operation. Instead, you retrieve the
+     * metrics you are using in your math expression as part of the
+     * <code>Metrics</code> array.</p>
      */
     inline PutMetricAlarmRequest& AddMetrics(const MetricDataQuery& value) { m_metricsHasBeenSet = true; m_metrics.push_back(value); return *this; }
 
@@ -1543,14 +1590,91 @@ namespace Model
      * <p>An array of <code>MetricDataQuery</code> structures that enable you to create
      * an alarm based on the result of a metric math expression. Each item in the
      * <code>Metrics</code> array either retrieves a metric or performs a math
-     * expression.</p> <p>If you use the <code>Metrics</code> parameter, you cannot
-     * include the <code>MetricName</code>, <code>Dimensions</code>,
-     * <code>Period</code>, <code>Namespace</code>, <code>Statistic</code>, or
-     * <code>ExtendedStatistic</code> parameters of <code>PutMetricAlarm</code> in the
-     * same operation. Instead, you retrieve the metrics you are using in your math
-     * expression as part of the <code>Metrics</code> array.</p>
+     * expression.</p> <p>One item in the <code>Metrics</code> array is the expression
+     * that the alarm watches. You designate this expression by setting
+     * <code>ReturnValue</code> to true for this object in the array. For more
+     * information, see <a>MetricDataQuery</a>.</p> <p>If you use the
+     * <code>Metrics</code> parameter, you cannot include the <code>MetricName</code>,
+     * <code>Dimensions</code>, <code>Period</code>, <code>Namespace</code>,
+     * <code>Statistic</code>, or <code>ExtendedStatistic</code> parameters of
+     * <code>PutMetricAlarm</code> in the same operation. Instead, you retrieve the
+     * metrics you are using in your math expression as part of the
+     * <code>Metrics</code> array.</p>
      */
     inline PutMetricAlarmRequest& AddMetrics(MetricDataQuery&& value) { m_metricsHasBeenSet = true; m_metrics.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p>A list of key-value pairs to associate with the alarm or dashboard. You can
+     * associate as many as 50 tags with an alarm.</p> <p>Tags can help you organize
+     * and categorize your resources. You can also use them to scope user permissions,
+     * by granting a user permission to access or change only resources with certain
+     * tag values.</p>
+     */
+    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>A list of key-value pairs to associate with the alarm or dashboard. You can
+     * associate as many as 50 tags with an alarm.</p> <p>Tags can help you organize
+     * and categorize your resources. You can also use them to scope user permissions,
+     * by granting a user permission to access or change only resources with certain
+     * tag values.</p>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
+
+    /**
+     * <p>A list of key-value pairs to associate with the alarm or dashboard. You can
+     * associate as many as 50 tags with an alarm.</p> <p>Tags can help you organize
+     * and categorize your resources. You can also use them to scope user permissions,
+     * by granting a user permission to access or change only resources with certain
+     * tag values.</p>
+     */
+    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
+
+    /**
+     * <p>A list of key-value pairs to associate with the alarm or dashboard. You can
+     * associate as many as 50 tags with an alarm.</p> <p>Tags can help you organize
+     * and categorize your resources. You can also use them to scope user permissions,
+     * by granting a user permission to access or change only resources with certain
+     * tag values.</p>
+     */
+    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
+
+    /**
+     * <p>A list of key-value pairs to associate with the alarm or dashboard. You can
+     * associate as many as 50 tags with an alarm.</p> <p>Tags can help you organize
+     * and categorize your resources. You can also use them to scope user permissions,
+     * by granting a user permission to access or change only resources with certain
+     * tag values.</p>
+     */
+    inline PutMetricAlarmRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
+
+    /**
+     * <p>A list of key-value pairs to associate with the alarm or dashboard. You can
+     * associate as many as 50 tags with an alarm.</p> <p>Tags can help you organize
+     * and categorize your resources. You can also use them to scope user permissions,
+     * by granting a user permission to access or change only resources with certain
+     * tag values.</p>
+     */
+    inline PutMetricAlarmRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
+
+    /**
+     * <p>A list of key-value pairs to associate with the alarm or dashboard. You can
+     * associate as many as 50 tags with an alarm.</p> <p>Tags can help you organize
+     * and categorize your resources. You can also use them to scope user permissions,
+     * by granting a user permission to access or change only resources with certain
+     * tag values.</p>
+     */
+    inline PutMetricAlarmRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
+
+    /**
+     * <p>A list of key-value pairs to associate with the alarm or dashboard. You can
+     * associate as many as 50 tags with an alarm.</p> <p>Tags can help you organize
+     * and categorize your resources. You can also use them to scope user permissions,
+     * by granting a user permission to access or change only resources with certain
+     * tag values.</p>
+     */
+    inline PutMetricAlarmRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
   private:
 
@@ -1613,6 +1737,9 @@ namespace Model
 
     Aws::Vector<MetricDataQuery> m_metrics;
     bool m_metricsHasBeenSet;
+
+    Aws::Vector<Tag> m_tags;
+    bool m_tagsHasBeenSet;
   };
 
 } // namespace Model

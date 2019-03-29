@@ -29,6 +29,7 @@ namespace CloudWatchErrorMapper
 {
 
 static const int DASHBOARD_NOT_FOUND_HASH = HashingUtils::HashString("ResourceNotFound");
+static const int CONCURRENT_MODIFICATION_HASH = HashingUtils::HashString("ConcurrentModificationException");
 static const int INVALID_FORMAT_FAULT_HASH = HashingUtils::HashString("InvalidFormat");
 static const int INTERNAL_SERVICE_FAULT_HASH = HashingUtils::HashString("InternalServiceError");
 static const int LIMIT_EXCEEDED_FAULT_HASH = HashingUtils::HashString("LimitExceeded");
@@ -44,6 +45,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   if (hashCode == DASHBOARD_NOT_FOUND_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudWatchErrors::DASHBOARD_NOT_FOUND), false);
+  }
+  else if (hashCode == CONCURRENT_MODIFICATION_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudWatchErrors::CONCURRENT_MODIFICATION), false);
   }
   else if (hashCode == INVALID_FORMAT_FAULT_HASH)
   {
