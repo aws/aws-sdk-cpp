@@ -175,42 +175,42 @@ namespace Model
 
 
     /**
-     * <p>The ARN of the task to execute </p>
+     * <p>The ARN of the task to run.</p>
      */
     inline const Aws::String& GetTaskArn() const{ return m_taskArn; }
 
     /**
-     * <p>The ARN of the task to execute </p>
+     * <p>The ARN of the task to run.</p>
      */
     inline bool TaskArnHasBeenSet() const { return m_taskArnHasBeenSet; }
 
     /**
-     * <p>The ARN of the task to execute </p>
+     * <p>The ARN of the task to run.</p>
      */
     inline void SetTaskArn(const Aws::String& value) { m_taskArnHasBeenSet = true; m_taskArn = value; }
 
     /**
-     * <p>The ARN of the task to execute </p>
+     * <p>The ARN of the task to run.</p>
      */
     inline void SetTaskArn(Aws::String&& value) { m_taskArnHasBeenSet = true; m_taskArn = std::move(value); }
 
     /**
-     * <p>The ARN of the task to execute </p>
+     * <p>The ARN of the task to run.</p>
      */
     inline void SetTaskArn(const char* value) { m_taskArnHasBeenSet = true; m_taskArn.assign(value); }
 
     /**
-     * <p>The ARN of the task to execute </p>
+     * <p>The ARN of the task to run.</p>
      */
     inline RegisterTaskWithMaintenanceWindowRequest& WithTaskArn(const Aws::String& value) { SetTaskArn(value); return *this;}
 
     /**
-     * <p>The ARN of the task to execute </p>
+     * <p>The ARN of the task to run.</p>
      */
     inline RegisterTaskWithMaintenanceWindowRequest& WithTaskArn(Aws::String&& value) { SetTaskArn(std::move(value)); return *this;}
 
     /**
-     * <p>The ARN of the task to execute </p>
+     * <p>The ARN of the task to run.</p>
      */
     inline RegisterTaskWithMaintenanceWindowRequest& WithTaskArn(const char* value) { SetTaskArn(value); return *this;}
 
@@ -368,134 +368,122 @@ namespace Model
 
 
     /**
-     * <p>The parameters that should be passed to the task when it is executed.</p>
-     * <note> <p> <code>TaskParameters</code> has been deprecated. To specify
-     * parameters to pass to a task when it runs, instead use the
-     * <code>Parameters</code> option in the <code>TaskInvocationParameters</code>
-     * structure. For information about how Systems Manager handles these options for
-     * the supported Maintenance Window task types, see
-     * <a>MaintenanceWindowTaskInvocationParameters</a>.</p> </note>
+     * <p>The parameters that should be passed to the task when it is run.</p> <note>
+     * <p> <code>TaskParameters</code> has been deprecated. To specify parameters to
+     * pass to a task when it runs, instead use the <code>Parameters</code> option in
+     * the <code>TaskInvocationParameters</code> structure. For information about how
+     * Systems Manager handles these options for the supported Maintenance Window task
+     * types, see <a>MaintenanceWindowTaskInvocationParameters</a>.</p> </note>
      */
     inline const Aws::Map<Aws::String, MaintenanceWindowTaskParameterValueExpression>& GetTaskParameters() const{ return m_taskParameters; }
 
     /**
-     * <p>The parameters that should be passed to the task when it is executed.</p>
-     * <note> <p> <code>TaskParameters</code> has been deprecated. To specify
-     * parameters to pass to a task when it runs, instead use the
-     * <code>Parameters</code> option in the <code>TaskInvocationParameters</code>
-     * structure. For information about how Systems Manager handles these options for
-     * the supported Maintenance Window task types, see
-     * <a>MaintenanceWindowTaskInvocationParameters</a>.</p> </note>
+     * <p>The parameters that should be passed to the task when it is run.</p> <note>
+     * <p> <code>TaskParameters</code> has been deprecated. To specify parameters to
+     * pass to a task when it runs, instead use the <code>Parameters</code> option in
+     * the <code>TaskInvocationParameters</code> structure. For information about how
+     * Systems Manager handles these options for the supported Maintenance Window task
+     * types, see <a>MaintenanceWindowTaskInvocationParameters</a>.</p> </note>
      */
     inline bool TaskParametersHasBeenSet() const { return m_taskParametersHasBeenSet; }
 
     /**
-     * <p>The parameters that should be passed to the task when it is executed.</p>
-     * <note> <p> <code>TaskParameters</code> has been deprecated. To specify
-     * parameters to pass to a task when it runs, instead use the
-     * <code>Parameters</code> option in the <code>TaskInvocationParameters</code>
-     * structure. For information about how Systems Manager handles these options for
-     * the supported Maintenance Window task types, see
-     * <a>MaintenanceWindowTaskInvocationParameters</a>.</p> </note>
+     * <p>The parameters that should be passed to the task when it is run.</p> <note>
+     * <p> <code>TaskParameters</code> has been deprecated. To specify parameters to
+     * pass to a task when it runs, instead use the <code>Parameters</code> option in
+     * the <code>TaskInvocationParameters</code> structure. For information about how
+     * Systems Manager handles these options for the supported Maintenance Window task
+     * types, see <a>MaintenanceWindowTaskInvocationParameters</a>.</p> </note>
      */
     inline void SetTaskParameters(const Aws::Map<Aws::String, MaintenanceWindowTaskParameterValueExpression>& value) { m_taskParametersHasBeenSet = true; m_taskParameters = value; }
 
     /**
-     * <p>The parameters that should be passed to the task when it is executed.</p>
-     * <note> <p> <code>TaskParameters</code> has been deprecated. To specify
-     * parameters to pass to a task when it runs, instead use the
-     * <code>Parameters</code> option in the <code>TaskInvocationParameters</code>
-     * structure. For information about how Systems Manager handles these options for
-     * the supported Maintenance Window task types, see
-     * <a>MaintenanceWindowTaskInvocationParameters</a>.</p> </note>
+     * <p>The parameters that should be passed to the task when it is run.</p> <note>
+     * <p> <code>TaskParameters</code> has been deprecated. To specify parameters to
+     * pass to a task when it runs, instead use the <code>Parameters</code> option in
+     * the <code>TaskInvocationParameters</code> structure. For information about how
+     * Systems Manager handles these options for the supported Maintenance Window task
+     * types, see <a>MaintenanceWindowTaskInvocationParameters</a>.</p> </note>
      */
     inline void SetTaskParameters(Aws::Map<Aws::String, MaintenanceWindowTaskParameterValueExpression>&& value) { m_taskParametersHasBeenSet = true; m_taskParameters = std::move(value); }
 
     /**
-     * <p>The parameters that should be passed to the task when it is executed.</p>
-     * <note> <p> <code>TaskParameters</code> has been deprecated. To specify
-     * parameters to pass to a task when it runs, instead use the
-     * <code>Parameters</code> option in the <code>TaskInvocationParameters</code>
-     * structure. For information about how Systems Manager handles these options for
-     * the supported Maintenance Window task types, see
-     * <a>MaintenanceWindowTaskInvocationParameters</a>.</p> </note>
+     * <p>The parameters that should be passed to the task when it is run.</p> <note>
+     * <p> <code>TaskParameters</code> has been deprecated. To specify parameters to
+     * pass to a task when it runs, instead use the <code>Parameters</code> option in
+     * the <code>TaskInvocationParameters</code> structure. For information about how
+     * Systems Manager handles these options for the supported Maintenance Window task
+     * types, see <a>MaintenanceWindowTaskInvocationParameters</a>.</p> </note>
      */
     inline RegisterTaskWithMaintenanceWindowRequest& WithTaskParameters(const Aws::Map<Aws::String, MaintenanceWindowTaskParameterValueExpression>& value) { SetTaskParameters(value); return *this;}
 
     /**
-     * <p>The parameters that should be passed to the task when it is executed.</p>
-     * <note> <p> <code>TaskParameters</code> has been deprecated. To specify
-     * parameters to pass to a task when it runs, instead use the
-     * <code>Parameters</code> option in the <code>TaskInvocationParameters</code>
-     * structure. For information about how Systems Manager handles these options for
-     * the supported Maintenance Window task types, see
-     * <a>MaintenanceWindowTaskInvocationParameters</a>.</p> </note>
+     * <p>The parameters that should be passed to the task when it is run.</p> <note>
+     * <p> <code>TaskParameters</code> has been deprecated. To specify parameters to
+     * pass to a task when it runs, instead use the <code>Parameters</code> option in
+     * the <code>TaskInvocationParameters</code> structure. For information about how
+     * Systems Manager handles these options for the supported Maintenance Window task
+     * types, see <a>MaintenanceWindowTaskInvocationParameters</a>.</p> </note>
      */
     inline RegisterTaskWithMaintenanceWindowRequest& WithTaskParameters(Aws::Map<Aws::String, MaintenanceWindowTaskParameterValueExpression>&& value) { SetTaskParameters(std::move(value)); return *this;}
 
     /**
-     * <p>The parameters that should be passed to the task when it is executed.</p>
-     * <note> <p> <code>TaskParameters</code> has been deprecated. To specify
-     * parameters to pass to a task when it runs, instead use the
-     * <code>Parameters</code> option in the <code>TaskInvocationParameters</code>
-     * structure. For information about how Systems Manager handles these options for
-     * the supported Maintenance Window task types, see
-     * <a>MaintenanceWindowTaskInvocationParameters</a>.</p> </note>
+     * <p>The parameters that should be passed to the task when it is run.</p> <note>
+     * <p> <code>TaskParameters</code> has been deprecated. To specify parameters to
+     * pass to a task when it runs, instead use the <code>Parameters</code> option in
+     * the <code>TaskInvocationParameters</code> structure. For information about how
+     * Systems Manager handles these options for the supported Maintenance Window task
+     * types, see <a>MaintenanceWindowTaskInvocationParameters</a>.</p> </note>
      */
     inline RegisterTaskWithMaintenanceWindowRequest& AddTaskParameters(const Aws::String& key, const MaintenanceWindowTaskParameterValueExpression& value) { m_taskParametersHasBeenSet = true; m_taskParameters.emplace(key, value); return *this; }
 
     /**
-     * <p>The parameters that should be passed to the task when it is executed.</p>
-     * <note> <p> <code>TaskParameters</code> has been deprecated. To specify
-     * parameters to pass to a task when it runs, instead use the
-     * <code>Parameters</code> option in the <code>TaskInvocationParameters</code>
-     * structure. For information about how Systems Manager handles these options for
-     * the supported Maintenance Window task types, see
-     * <a>MaintenanceWindowTaskInvocationParameters</a>.</p> </note>
+     * <p>The parameters that should be passed to the task when it is run.</p> <note>
+     * <p> <code>TaskParameters</code> has been deprecated. To specify parameters to
+     * pass to a task when it runs, instead use the <code>Parameters</code> option in
+     * the <code>TaskInvocationParameters</code> structure. For information about how
+     * Systems Manager handles these options for the supported Maintenance Window task
+     * types, see <a>MaintenanceWindowTaskInvocationParameters</a>.</p> </note>
      */
     inline RegisterTaskWithMaintenanceWindowRequest& AddTaskParameters(Aws::String&& key, const MaintenanceWindowTaskParameterValueExpression& value) { m_taskParametersHasBeenSet = true; m_taskParameters.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>The parameters that should be passed to the task when it is executed.</p>
-     * <note> <p> <code>TaskParameters</code> has been deprecated. To specify
-     * parameters to pass to a task when it runs, instead use the
-     * <code>Parameters</code> option in the <code>TaskInvocationParameters</code>
-     * structure. For information about how Systems Manager handles these options for
-     * the supported Maintenance Window task types, see
-     * <a>MaintenanceWindowTaskInvocationParameters</a>.</p> </note>
+     * <p>The parameters that should be passed to the task when it is run.</p> <note>
+     * <p> <code>TaskParameters</code> has been deprecated. To specify parameters to
+     * pass to a task when it runs, instead use the <code>Parameters</code> option in
+     * the <code>TaskInvocationParameters</code> structure. For information about how
+     * Systems Manager handles these options for the supported Maintenance Window task
+     * types, see <a>MaintenanceWindowTaskInvocationParameters</a>.</p> </note>
      */
     inline RegisterTaskWithMaintenanceWindowRequest& AddTaskParameters(const Aws::String& key, MaintenanceWindowTaskParameterValueExpression&& value) { m_taskParametersHasBeenSet = true; m_taskParameters.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>The parameters that should be passed to the task when it is executed.</p>
-     * <note> <p> <code>TaskParameters</code> has been deprecated. To specify
-     * parameters to pass to a task when it runs, instead use the
-     * <code>Parameters</code> option in the <code>TaskInvocationParameters</code>
-     * structure. For information about how Systems Manager handles these options for
-     * the supported Maintenance Window task types, see
-     * <a>MaintenanceWindowTaskInvocationParameters</a>.</p> </note>
+     * <p>The parameters that should be passed to the task when it is run.</p> <note>
+     * <p> <code>TaskParameters</code> has been deprecated. To specify parameters to
+     * pass to a task when it runs, instead use the <code>Parameters</code> option in
+     * the <code>TaskInvocationParameters</code> structure. For information about how
+     * Systems Manager handles these options for the supported Maintenance Window task
+     * types, see <a>MaintenanceWindowTaskInvocationParameters</a>.</p> </note>
      */
     inline RegisterTaskWithMaintenanceWindowRequest& AddTaskParameters(Aws::String&& key, MaintenanceWindowTaskParameterValueExpression&& value) { m_taskParametersHasBeenSet = true; m_taskParameters.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
-     * <p>The parameters that should be passed to the task when it is executed.</p>
-     * <note> <p> <code>TaskParameters</code> has been deprecated. To specify
-     * parameters to pass to a task when it runs, instead use the
-     * <code>Parameters</code> option in the <code>TaskInvocationParameters</code>
-     * structure. For information about how Systems Manager handles these options for
-     * the supported Maintenance Window task types, see
-     * <a>MaintenanceWindowTaskInvocationParameters</a>.</p> </note>
+     * <p>The parameters that should be passed to the task when it is run.</p> <note>
+     * <p> <code>TaskParameters</code> has been deprecated. To specify parameters to
+     * pass to a task when it runs, instead use the <code>Parameters</code> option in
+     * the <code>TaskInvocationParameters</code> structure. For information about how
+     * Systems Manager handles these options for the supported Maintenance Window task
+     * types, see <a>MaintenanceWindowTaskInvocationParameters</a>.</p> </note>
      */
     inline RegisterTaskWithMaintenanceWindowRequest& AddTaskParameters(const char* key, MaintenanceWindowTaskParameterValueExpression&& value) { m_taskParametersHasBeenSet = true; m_taskParameters.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>The parameters that should be passed to the task when it is executed.</p>
-     * <note> <p> <code>TaskParameters</code> has been deprecated. To specify
-     * parameters to pass to a task when it runs, instead use the
-     * <code>Parameters</code> option in the <code>TaskInvocationParameters</code>
-     * structure. For information about how Systems Manager handles these options for
-     * the supported Maintenance Window task types, see
-     * <a>MaintenanceWindowTaskInvocationParameters</a>.</p> </note>
+     * <p>The parameters that should be passed to the task when it is run.</p> <note>
+     * <p> <code>TaskParameters</code> has been deprecated. To specify parameters to
+     * pass to a task when it runs, instead use the <code>Parameters</code> option in
+     * the <code>TaskInvocationParameters</code> structure. For information about how
+     * Systems Manager handles these options for the supported Maintenance Window task
+     * types, see <a>MaintenanceWindowTaskInvocationParameters</a>.</p> </note>
      */
     inline RegisterTaskWithMaintenanceWindowRequest& AddTaskParameters(const char* key, const MaintenanceWindowTaskParameterValueExpression& value) { m_taskParametersHasBeenSet = true; m_taskParameters.emplace(key, value); return *this; }
 

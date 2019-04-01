@@ -682,32 +682,32 @@ namespace Model
 
 
     /**
-     * <p>The date the association was last executed.</p>
+     * <p>The date the association was last run.</p>
      */
     inline const Aws::Utils::DateTime& GetLastAssociationExecutionDate() const{ return m_lastAssociationExecutionDate; }
 
     /**
-     * <p>The date the association was last executed.</p>
+     * <p>The date the association was last run.</p>
      */
     inline bool LastAssociationExecutionDateHasBeenSet() const { return m_lastAssociationExecutionDateHasBeenSet; }
 
     /**
-     * <p>The date the association was last executed.</p>
+     * <p>The date the association was last run.</p>
      */
     inline void SetLastAssociationExecutionDate(const Aws::Utils::DateTime& value) { m_lastAssociationExecutionDateHasBeenSet = true; m_lastAssociationExecutionDate = value; }
 
     /**
-     * <p>The date the association was last executed.</p>
+     * <p>The date the association was last run.</p>
      */
     inline void SetLastAssociationExecutionDate(Aws::Utils::DateTime&& value) { m_lastAssociationExecutionDateHasBeenSet = true; m_lastAssociationExecutionDate = std::move(value); }
 
     /**
-     * <p>The date the association was last executed.</p>
+     * <p>The date the association was last run.</p>
      */
     inline InstanceInformation& WithLastAssociationExecutionDate(const Aws::Utils::DateTime& value) { SetLastAssociationExecutionDate(value); return *this;}
 
     /**
-     * <p>The date the association was last executed.</p>
+     * <p>The date the association was last run.</p>
      */
     inline InstanceInformation& WithLastAssociationExecutionDate(Aws::Utils::DateTime&& value) { SetLastAssociationExecutionDate(std::move(value)); return *this;}
 

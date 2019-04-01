@@ -284,42 +284,42 @@ namespace Model
 
 
     /**
-     * <p>The IAM role ARN of the user who executed the Automation.</p>
+     * <p>The IAM role ARN of the user who ran the Automation.</p>
      */
     inline const Aws::String& GetExecutedBy() const{ return m_executedBy; }
 
     /**
-     * <p>The IAM role ARN of the user who executed the Automation.</p>
+     * <p>The IAM role ARN of the user who ran the Automation.</p>
      */
     inline bool ExecutedByHasBeenSet() const { return m_executedByHasBeenSet; }
 
     /**
-     * <p>The IAM role ARN of the user who executed the Automation.</p>
+     * <p>The IAM role ARN of the user who ran the Automation.</p>
      */
     inline void SetExecutedBy(const Aws::String& value) { m_executedByHasBeenSet = true; m_executedBy = value; }
 
     /**
-     * <p>The IAM role ARN of the user who executed the Automation.</p>
+     * <p>The IAM role ARN of the user who ran the Automation.</p>
      */
     inline void SetExecutedBy(Aws::String&& value) { m_executedByHasBeenSet = true; m_executedBy = std::move(value); }
 
     /**
-     * <p>The IAM role ARN of the user who executed the Automation.</p>
+     * <p>The IAM role ARN of the user who ran the Automation.</p>
      */
     inline void SetExecutedBy(const char* value) { m_executedByHasBeenSet = true; m_executedBy.assign(value); }
 
     /**
-     * <p>The IAM role ARN of the user who executed the Automation.</p>
+     * <p>The IAM role ARN of the user who ran the Automation.</p>
      */
     inline AutomationExecutionMetadata& WithExecutedBy(const Aws::String& value) { SetExecutedBy(value); return *this;}
 
     /**
-     * <p>The IAM role ARN of the user who executed the Automation.</p>
+     * <p>The IAM role ARN of the user who ran the Automation.</p>
      */
     inline AutomationExecutionMetadata& WithExecutedBy(Aws::String&& value) { SetExecutedBy(std::move(value)); return *this;}
 
     /**
-     * <p>The IAM role ARN of the user who executed the Automation.</p>
+     * <p>The IAM role ARN of the user who ran the Automation.</p>
      */
     inline AutomationExecutionMetadata& WithExecutedBy(const char* value) { SetExecutedBy(value); return *this;}
 
@@ -499,83 +499,83 @@ namespace Model
 
 
     /**
-     * <p>The name of the currently executing step.</p>
+     * <p>The name of the step that is currently running.</p>
      */
     inline const Aws::String& GetCurrentStepName() const{ return m_currentStepName; }
 
     /**
-     * <p>The name of the currently executing step.</p>
+     * <p>The name of the step that is currently running.</p>
      */
     inline bool CurrentStepNameHasBeenSet() const { return m_currentStepNameHasBeenSet; }
 
     /**
-     * <p>The name of the currently executing step.</p>
+     * <p>The name of the step that is currently running.</p>
      */
     inline void SetCurrentStepName(const Aws::String& value) { m_currentStepNameHasBeenSet = true; m_currentStepName = value; }
 
     /**
-     * <p>The name of the currently executing step.</p>
+     * <p>The name of the step that is currently running.</p>
      */
     inline void SetCurrentStepName(Aws::String&& value) { m_currentStepNameHasBeenSet = true; m_currentStepName = std::move(value); }
 
     /**
-     * <p>The name of the currently executing step.</p>
+     * <p>The name of the step that is currently running.</p>
      */
     inline void SetCurrentStepName(const char* value) { m_currentStepNameHasBeenSet = true; m_currentStepName.assign(value); }
 
     /**
-     * <p>The name of the currently executing step.</p>
+     * <p>The name of the step that is currently running.</p>
      */
     inline AutomationExecutionMetadata& WithCurrentStepName(const Aws::String& value) { SetCurrentStepName(value); return *this;}
 
     /**
-     * <p>The name of the currently executing step.</p>
+     * <p>The name of the step that is currently running.</p>
      */
     inline AutomationExecutionMetadata& WithCurrentStepName(Aws::String&& value) { SetCurrentStepName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the currently executing step.</p>
+     * <p>The name of the step that is currently running.</p>
      */
     inline AutomationExecutionMetadata& WithCurrentStepName(const char* value) { SetCurrentStepName(value); return *this;}
 
 
     /**
-     * <p>The action of the currently executing step.</p>
+     * <p>The action of the step that is currently running.</p>
      */
     inline const Aws::String& GetCurrentAction() const{ return m_currentAction; }
 
     /**
-     * <p>The action of the currently executing step.</p>
+     * <p>The action of the step that is currently running.</p>
      */
     inline bool CurrentActionHasBeenSet() const { return m_currentActionHasBeenSet; }
 
     /**
-     * <p>The action of the currently executing step.</p>
+     * <p>The action of the step that is currently running.</p>
      */
     inline void SetCurrentAction(const Aws::String& value) { m_currentActionHasBeenSet = true; m_currentAction = value; }
 
     /**
-     * <p>The action of the currently executing step.</p>
+     * <p>The action of the step that is currently running.</p>
      */
     inline void SetCurrentAction(Aws::String&& value) { m_currentActionHasBeenSet = true; m_currentAction = std::move(value); }
 
     /**
-     * <p>The action of the currently executing step.</p>
+     * <p>The action of the step that is currently running.</p>
      */
     inline void SetCurrentAction(const char* value) { m_currentActionHasBeenSet = true; m_currentAction.assign(value); }
 
     /**
-     * <p>The action of the currently executing step.</p>
+     * <p>The action of the step that is currently running.</p>
      */
     inline AutomationExecutionMetadata& WithCurrentAction(const Aws::String& value) { SetCurrentAction(value); return *this;}
 
     /**
-     * <p>The action of the currently executing step.</p>
+     * <p>The action of the step that is currently running.</p>
      */
     inline AutomationExecutionMetadata& WithCurrentAction(Aws::String&& value) { SetCurrentAction(std::move(value)); return *this;}
 
     /**
-     * <p>The action of the currently executing step.</p>
+     * <p>The action of the step that is currently running.</p>
      */
     inline AutomationExecutionMetadata& WithCurrentAction(const char* value) { SetCurrentAction(value); return *this;}
 
@@ -916,61 +916,61 @@ namespace Model
 
     /**
      * <p>Use this filter with <a>DescribeAutomationExecutions</a>. Specify either
-     * Local or CrossAccount. CrossAccount is an Automation that executes in multiple
-     * AWS Regions and accounts. For more information, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-automation-multiple-accounts-and-regions.html">Concurrently
-     * Executing Automations in Multiple AWS Regions and Accounts</a> in the <i>AWS
-     * Systems Manager User Guide</i>. </p>
+     * Local or CrossAccount. CrossAccount is an Automation that runs in multiple AWS
+     * Regions and accounts. For more information, see <a
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-automation-multiple-accounts-and-regions.html">Executing
+     * Automations in Multiple AWS Regions and Accounts</a> in the <i>AWS Systems
+     * Manager User Guide</i>. </p>
      */
     inline const AutomationType& GetAutomationType() const{ return m_automationType; }
 
     /**
      * <p>Use this filter with <a>DescribeAutomationExecutions</a>. Specify either
-     * Local or CrossAccount. CrossAccount is an Automation that executes in multiple
-     * AWS Regions and accounts. For more information, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-automation-multiple-accounts-and-regions.html">Concurrently
-     * Executing Automations in Multiple AWS Regions and Accounts</a> in the <i>AWS
-     * Systems Manager User Guide</i>. </p>
+     * Local or CrossAccount. CrossAccount is an Automation that runs in multiple AWS
+     * Regions and accounts. For more information, see <a
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-automation-multiple-accounts-and-regions.html">Executing
+     * Automations in Multiple AWS Regions and Accounts</a> in the <i>AWS Systems
+     * Manager User Guide</i>. </p>
      */
     inline bool AutomationTypeHasBeenSet() const { return m_automationTypeHasBeenSet; }
 
     /**
      * <p>Use this filter with <a>DescribeAutomationExecutions</a>. Specify either
-     * Local or CrossAccount. CrossAccount is an Automation that executes in multiple
-     * AWS Regions and accounts. For more information, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-automation-multiple-accounts-and-regions.html">Concurrently
-     * Executing Automations in Multiple AWS Regions and Accounts</a> in the <i>AWS
-     * Systems Manager User Guide</i>. </p>
+     * Local or CrossAccount. CrossAccount is an Automation that runs in multiple AWS
+     * Regions and accounts. For more information, see <a
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-automation-multiple-accounts-and-regions.html">Executing
+     * Automations in Multiple AWS Regions and Accounts</a> in the <i>AWS Systems
+     * Manager User Guide</i>. </p>
      */
     inline void SetAutomationType(const AutomationType& value) { m_automationTypeHasBeenSet = true; m_automationType = value; }
 
     /**
      * <p>Use this filter with <a>DescribeAutomationExecutions</a>. Specify either
-     * Local or CrossAccount. CrossAccount is an Automation that executes in multiple
-     * AWS Regions and accounts. For more information, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-automation-multiple-accounts-and-regions.html">Concurrently
-     * Executing Automations in Multiple AWS Regions and Accounts</a> in the <i>AWS
-     * Systems Manager User Guide</i>. </p>
+     * Local or CrossAccount. CrossAccount is an Automation that runs in multiple AWS
+     * Regions and accounts. For more information, see <a
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-automation-multiple-accounts-and-regions.html">Executing
+     * Automations in Multiple AWS Regions and Accounts</a> in the <i>AWS Systems
+     * Manager User Guide</i>. </p>
      */
     inline void SetAutomationType(AutomationType&& value) { m_automationTypeHasBeenSet = true; m_automationType = std::move(value); }
 
     /**
      * <p>Use this filter with <a>DescribeAutomationExecutions</a>. Specify either
-     * Local or CrossAccount. CrossAccount is an Automation that executes in multiple
-     * AWS Regions and accounts. For more information, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-automation-multiple-accounts-and-regions.html">Concurrently
-     * Executing Automations in Multiple AWS Regions and Accounts</a> in the <i>AWS
-     * Systems Manager User Guide</i>. </p>
+     * Local or CrossAccount. CrossAccount is an Automation that runs in multiple AWS
+     * Regions and accounts. For more information, see <a
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-automation-multiple-accounts-and-regions.html">Executing
+     * Automations in Multiple AWS Regions and Accounts</a> in the <i>AWS Systems
+     * Manager User Guide</i>. </p>
      */
     inline AutomationExecutionMetadata& WithAutomationType(const AutomationType& value) { SetAutomationType(value); return *this;}
 
     /**
      * <p>Use this filter with <a>DescribeAutomationExecutions</a>. Specify either
-     * Local or CrossAccount. CrossAccount is an Automation that executes in multiple
-     * AWS Regions and accounts. For more information, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-automation-multiple-accounts-and-regions.html">Concurrently
-     * Executing Automations in Multiple AWS Regions and Accounts</a> in the <i>AWS
-     * Systems Manager User Guide</i>. </p>
+     * Local or CrossAccount. CrossAccount is an Automation that runs in multiple AWS
+     * Regions and accounts. For more information, see <a
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-automation-multiple-accounts-and-regions.html">Executing
+     * Automations in Multiple AWS Regions and Accounts</a> in the <i>AWS Systems
+     * Manager User Guide</i>. </p>
      */
     inline AutomationExecutionMetadata& WithAutomationType(AutomationType&& value) { SetAutomationType(std::move(value)); return *this;}
 

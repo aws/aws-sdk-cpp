@@ -264,50 +264,42 @@ namespace Model
 
 
     /**
-     * <p>The parameters that were provided for the invocation when it was
-     * executed.</p>
+     * <p>The parameters that were provided for the invocation when it was run.</p>
      */
     inline const Aws::String& GetParameters() const{ return m_parameters; }
 
     /**
-     * <p>The parameters that were provided for the invocation when it was
-     * executed.</p>
+     * <p>The parameters that were provided for the invocation when it was run.</p>
      */
     inline bool ParametersHasBeenSet() const { return m_parametersHasBeenSet; }
 
     /**
-     * <p>The parameters that were provided for the invocation when it was
-     * executed.</p>
+     * <p>The parameters that were provided for the invocation when it was run.</p>
      */
     inline void SetParameters(const Aws::String& value) { m_parametersHasBeenSet = true; m_parameters = value; }
 
     /**
-     * <p>The parameters that were provided for the invocation when it was
-     * executed.</p>
+     * <p>The parameters that were provided for the invocation when it was run.</p>
      */
     inline void SetParameters(Aws::String&& value) { m_parametersHasBeenSet = true; m_parameters = std::move(value); }
 
     /**
-     * <p>The parameters that were provided for the invocation when it was
-     * executed.</p>
+     * <p>The parameters that were provided for the invocation when it was run.</p>
      */
     inline void SetParameters(const char* value) { m_parametersHasBeenSet = true; m_parameters.assign(value); }
 
     /**
-     * <p>The parameters that were provided for the invocation when it was
-     * executed.</p>
+     * <p>The parameters that were provided for the invocation when it was run.</p>
      */
     inline MaintenanceWindowExecutionTaskInvocationIdentity& WithParameters(const Aws::String& value) { SetParameters(value); return *this;}
 
     /**
-     * <p>The parameters that were provided for the invocation when it was
-     * executed.</p>
+     * <p>The parameters that were provided for the invocation when it was run.</p>
      */
     inline MaintenanceWindowExecutionTaskInvocationIdentity& WithParameters(Aws::String&& value) { SetParameters(std::move(value)); return *this;}
 
     /**
-     * <p>The parameters that were provided for the invocation when it was
-     * executed.</p>
+     * <p>The parameters that were provided for the invocation when it was run.</p>
      */
     inline MaintenanceWindowExecutionTaskInvocationIdentity& WithParameters(const char* value) { SetParameters(value); return *this;}
 

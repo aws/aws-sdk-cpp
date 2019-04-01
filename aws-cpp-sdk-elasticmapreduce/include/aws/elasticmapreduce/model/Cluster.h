@@ -399,7 +399,7 @@ namespace Model
      * <code>emr-x.x.x</code>, where x.x.x is an Amazon EMR release version, for
      * example, <code>emr-5.14.0</code>. For more information about Amazon EMR release
      * versions and included application versions and features, see <a
-     * href="http://docs.aws.amazon.com/emr/latest/ReleaseGuide/">http://docs.aws.amazon.com/emr/latest/ReleaseGuide/</a>.
+     * href="https://docs.aws.amazon.com/emr/latest/ReleaseGuide/">https://docs.aws.amazon.com/emr/latest/ReleaseGuide/</a>.
      * The release label applies only to Amazon EMR releases versions 4.x and later.
      * Earlier versions use <code>AmiVersion</code>.</p>
      */
@@ -411,7 +411,7 @@ namespace Model
      * <code>emr-x.x.x</code>, where x.x.x is an Amazon EMR release version, for
      * example, <code>emr-5.14.0</code>. For more information about Amazon EMR release
      * versions and included application versions and features, see <a
-     * href="http://docs.aws.amazon.com/emr/latest/ReleaseGuide/">http://docs.aws.amazon.com/emr/latest/ReleaseGuide/</a>.
+     * href="https://docs.aws.amazon.com/emr/latest/ReleaseGuide/">https://docs.aws.amazon.com/emr/latest/ReleaseGuide/</a>.
      * The release label applies only to Amazon EMR releases versions 4.x and later.
      * Earlier versions use <code>AmiVersion</code>.</p>
      */
@@ -423,7 +423,7 @@ namespace Model
      * <code>emr-x.x.x</code>, where x.x.x is an Amazon EMR release version, for
      * example, <code>emr-5.14.0</code>. For more information about Amazon EMR release
      * versions and included application versions and features, see <a
-     * href="http://docs.aws.amazon.com/emr/latest/ReleaseGuide/">http://docs.aws.amazon.com/emr/latest/ReleaseGuide/</a>.
+     * href="https://docs.aws.amazon.com/emr/latest/ReleaseGuide/">https://docs.aws.amazon.com/emr/latest/ReleaseGuide/</a>.
      * The release label applies only to Amazon EMR releases versions 4.x and later.
      * Earlier versions use <code>AmiVersion</code>.</p>
      */
@@ -435,7 +435,7 @@ namespace Model
      * <code>emr-x.x.x</code>, where x.x.x is an Amazon EMR release version, for
      * example, <code>emr-5.14.0</code>. For more information about Amazon EMR release
      * versions and included application versions and features, see <a
-     * href="http://docs.aws.amazon.com/emr/latest/ReleaseGuide/">http://docs.aws.amazon.com/emr/latest/ReleaseGuide/</a>.
+     * href="https://docs.aws.amazon.com/emr/latest/ReleaseGuide/">https://docs.aws.amazon.com/emr/latest/ReleaseGuide/</a>.
      * The release label applies only to Amazon EMR releases versions 4.x and later.
      * Earlier versions use <code>AmiVersion</code>.</p>
      */
@@ -447,7 +447,7 @@ namespace Model
      * <code>emr-x.x.x</code>, where x.x.x is an Amazon EMR release version, for
      * example, <code>emr-5.14.0</code>. For more information about Amazon EMR release
      * versions and included application versions and features, see <a
-     * href="http://docs.aws.amazon.com/emr/latest/ReleaseGuide/">http://docs.aws.amazon.com/emr/latest/ReleaseGuide/</a>.
+     * href="https://docs.aws.amazon.com/emr/latest/ReleaseGuide/">https://docs.aws.amazon.com/emr/latest/ReleaseGuide/</a>.
      * The release label applies only to Amazon EMR releases versions 4.x and later.
      * Earlier versions use <code>AmiVersion</code>.</p>
      */
@@ -459,7 +459,7 @@ namespace Model
      * <code>emr-x.x.x</code>, where x.x.x is an Amazon EMR release version, for
      * example, <code>emr-5.14.0</code>. For more information about Amazon EMR release
      * versions and included application versions and features, see <a
-     * href="http://docs.aws.amazon.com/emr/latest/ReleaseGuide/">http://docs.aws.amazon.com/emr/latest/ReleaseGuide/</a>.
+     * href="https://docs.aws.amazon.com/emr/latest/ReleaseGuide/">https://docs.aws.amazon.com/emr/latest/ReleaseGuide/</a>.
      * The release label applies only to Amazon EMR releases versions 4.x and later.
      * Earlier versions use <code>AmiVersion</code>.</p>
      */
@@ -471,7 +471,7 @@ namespace Model
      * <code>emr-x.x.x</code>, where x.x.x is an Amazon EMR release version, for
      * example, <code>emr-5.14.0</code>. For more information about Amazon EMR release
      * versions and included application versions and features, see <a
-     * href="http://docs.aws.amazon.com/emr/latest/ReleaseGuide/">http://docs.aws.amazon.com/emr/latest/ReleaseGuide/</a>.
+     * href="https://docs.aws.amazon.com/emr/latest/ReleaseGuide/">https://docs.aws.amazon.com/emr/latest/ReleaseGuide/</a>.
      * The release label applies only to Amazon EMR releases versions 4.x and later.
      * Earlier versions use <code>AmiVersion</code>.</p>
      */
@@ -483,7 +483,7 @@ namespace Model
      * <code>emr-x.x.x</code>, where x.x.x is an Amazon EMR release version, for
      * example, <code>emr-5.14.0</code>. For more information about Amazon EMR release
      * versions and included application versions and features, see <a
-     * href="http://docs.aws.amazon.com/emr/latest/ReleaseGuide/">http://docs.aws.amazon.com/emr/latest/ReleaseGuide/</a>.
+     * href="https://docs.aws.amazon.com/emr/latest/ReleaseGuide/">https://docs.aws.amazon.com/emr/latest/ReleaseGuide/</a>.
      * The release label applies only to Amazon EMR releases versions 4.x and later.
      * Earlier versions use <code>AmiVersion</code>.</p>
      */
@@ -1184,7 +1184,7 @@ namespace Model
     /**
      * <p>Attributes for Kerberos configuration when Kerberos authentication is enabled
      * using a security configuration. For more information see <a
-     * href="http://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-kerberos.html">Use
+     * href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-kerberos.html">Use
      * Kerberos Authentication</a> in the <i>EMR Management Guide</i>.</p>
      */
     inline const KerberosAttributes& GetKerberosAttributes() const{ return m_kerberosAttributes; }
@@ -1192,7 +1192,7 @@ namespace Model
     /**
      * <p>Attributes for Kerberos configuration when Kerberos authentication is enabled
      * using a security configuration. For more information see <a
-     * href="http://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-kerberos.html">Use
+     * href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-kerberos.html">Use
      * Kerberos Authentication</a> in the <i>EMR Management Guide</i>.</p>
      */
     inline bool KerberosAttributesHasBeenSet() const { return m_kerberosAttributesHasBeenSet; }
@@ -1200,7 +1200,7 @@ namespace Model
     /**
      * <p>Attributes for Kerberos configuration when Kerberos authentication is enabled
      * using a security configuration. For more information see <a
-     * href="http://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-kerberos.html">Use
+     * href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-kerberos.html">Use
      * Kerberos Authentication</a> in the <i>EMR Management Guide</i>.</p>
      */
     inline void SetKerberosAttributes(const KerberosAttributes& value) { m_kerberosAttributesHasBeenSet = true; m_kerberosAttributes = value; }
@@ -1208,7 +1208,7 @@ namespace Model
     /**
      * <p>Attributes for Kerberos configuration when Kerberos authentication is enabled
      * using a security configuration. For more information see <a
-     * href="http://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-kerberos.html">Use
+     * href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-kerberos.html">Use
      * Kerberos Authentication</a> in the <i>EMR Management Guide</i>.</p>
      */
     inline void SetKerberosAttributes(KerberosAttributes&& value) { m_kerberosAttributesHasBeenSet = true; m_kerberosAttributes = std::move(value); }
@@ -1216,7 +1216,7 @@ namespace Model
     /**
      * <p>Attributes for Kerberos configuration when Kerberos authentication is enabled
      * using a security configuration. For more information see <a
-     * href="http://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-kerberos.html">Use
+     * href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-kerberos.html">Use
      * Kerberos Authentication</a> in the <i>EMR Management Guide</i>.</p>
      */
     inline Cluster& WithKerberosAttributes(const KerberosAttributes& value) { SetKerberosAttributes(value); return *this;}
@@ -1224,7 +1224,7 @@ namespace Model
     /**
      * <p>Attributes for Kerberos configuration when Kerberos authentication is enabled
      * using a security configuration. For more information see <a
-     * href="http://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-kerberos.html">Use
+     * href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-kerberos.html">Use
      * Kerberos Authentication</a> in the <i>EMR Management Guide</i>.</p>
      */
     inline Cluster& WithKerberosAttributes(KerberosAttributes&& value) { SetKerberosAttributes(std::move(value)); return *this;}

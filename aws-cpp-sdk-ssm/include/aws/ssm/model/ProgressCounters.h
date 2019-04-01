@@ -48,26 +48,26 @@ namespace Model
 
 
     /**
-     * <p>The total number of steps executed in all specified AWS Regions and accounts
-     * for the current Automation execution.</p>
+     * <p>The total number of steps run in all specified AWS Regions and accounts for
+     * the current Automation execution.</p>
      */
     inline int GetTotalSteps() const{ return m_totalSteps; }
 
     /**
-     * <p>The total number of steps executed in all specified AWS Regions and accounts
-     * for the current Automation execution.</p>
+     * <p>The total number of steps run in all specified AWS Regions and accounts for
+     * the current Automation execution.</p>
      */
     inline bool TotalStepsHasBeenSet() const { return m_totalStepsHasBeenSet; }
 
     /**
-     * <p>The total number of steps executed in all specified AWS Regions and accounts
-     * for the current Automation execution.</p>
+     * <p>The total number of steps run in all specified AWS Regions and accounts for
+     * the current Automation execution.</p>
      */
     inline void SetTotalSteps(int value) { m_totalStepsHasBeenSet = true; m_totalSteps = value; }
 
     /**
-     * <p>The total number of steps executed in all specified AWS Regions and accounts
-     * for the current Automation execution.</p>
+     * <p>The total number of steps run in all specified AWS Regions and accounts for
+     * the current Automation execution.</p>
      */
     inline ProgressCounters& WithTotalSteps(int value) { SetTotalSteps(value); return *this;}
 
@@ -98,26 +98,26 @@ namespace Model
 
 
     /**
-     * <p>The total number of steps that failed to execute in all specified AWS Regions
-     * and accounts for the current Automation execution.</p>
+     * <p>The total number of steps that failed to run in all specified AWS Regions and
+     * accounts for the current Automation execution.</p>
      */
     inline int GetFailedSteps() const{ return m_failedSteps; }
 
     /**
-     * <p>The total number of steps that failed to execute in all specified AWS Regions
-     * and accounts for the current Automation execution.</p>
+     * <p>The total number of steps that failed to run in all specified AWS Regions and
+     * accounts for the current Automation execution.</p>
      */
     inline bool FailedStepsHasBeenSet() const { return m_failedStepsHasBeenSet; }
 
     /**
-     * <p>The total number of steps that failed to execute in all specified AWS Regions
-     * and accounts for the current Automation execution.</p>
+     * <p>The total number of steps that failed to run in all specified AWS Regions and
+     * accounts for the current Automation execution.</p>
      */
     inline void SetFailedSteps(int value) { m_failedStepsHasBeenSet = true; m_failedSteps = value; }
 
     /**
-     * <p>The total number of steps that failed to execute in all specified AWS Regions
-     * and accounts for the current Automation execution.</p>
+     * <p>The total number of steps that failed to run in all specified AWS Regions and
+     * accounts for the current Automation execution.</p>
      */
     inline ProgressCounters& WithFailedSteps(int value) { SetFailedSteps(value); return *this;}
 

@@ -227,42 +227,42 @@ namespace Model
 
 
     /**
-     * <p>If this time is reached and the command has not already started executing, it
+     * <p>If this time is reached and the command has not already started running, it
      * will not run. Calculated based on the ExpiresAfter user input provided as part
      * of the SendCommand API.</p>
      */
     inline const Aws::Utils::DateTime& GetExpiresAfter() const{ return m_expiresAfter; }
 
     /**
-     * <p>If this time is reached and the command has not already started executing, it
+     * <p>If this time is reached and the command has not already started running, it
      * will not run. Calculated based on the ExpiresAfter user input provided as part
      * of the SendCommand API.</p>
      */
     inline bool ExpiresAfterHasBeenSet() const { return m_expiresAfterHasBeenSet; }
 
     /**
-     * <p>If this time is reached and the command has not already started executing, it
+     * <p>If this time is reached and the command has not already started running, it
      * will not run. Calculated based on the ExpiresAfter user input provided as part
      * of the SendCommand API.</p>
      */
     inline void SetExpiresAfter(const Aws::Utils::DateTime& value) { m_expiresAfterHasBeenSet = true; m_expiresAfter = value; }
 
     /**
-     * <p>If this time is reached and the command has not already started executing, it
+     * <p>If this time is reached and the command has not already started running, it
      * will not run. Calculated based on the ExpiresAfter user input provided as part
      * of the SendCommand API.</p>
      */
     inline void SetExpiresAfter(Aws::Utils::DateTime&& value) { m_expiresAfterHasBeenSet = true; m_expiresAfter = std::move(value); }
 
     /**
-     * <p>If this time is reached and the command has not already started executing, it
+     * <p>If this time is reached and the command has not already started running, it
      * will not run. Calculated based on the ExpiresAfter user input provided as part
      * of the SendCommand API.</p>
      */
     inline Command& WithExpiresAfter(const Aws::Utils::DateTime& value) { SetExpiresAfter(value); return *this;}
 
     /**
-     * <p>If this time is reached and the command has not already started executing, it
+     * <p>If this time is reached and the command has not already started running, it
      * will not run. Calculated based on the ExpiresAfter user input provided as part
      * of the SendCommand API.</p>
      */
@@ -270,73 +270,73 @@ namespace Model
 
 
     /**
-     * <p>The parameter values to be inserted in the document when executing the
+     * <p>The parameter values to be inserted in the document when running the
      * command.</p>
      */
     inline const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& GetParameters() const{ return m_parameters; }
 
     /**
-     * <p>The parameter values to be inserted in the document when executing the
+     * <p>The parameter values to be inserted in the document when running the
      * command.</p>
      */
     inline bool ParametersHasBeenSet() const { return m_parametersHasBeenSet; }
 
     /**
-     * <p>The parameter values to be inserted in the document when executing the
+     * <p>The parameter values to be inserted in the document when running the
      * command.</p>
      */
     inline void SetParameters(const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& value) { m_parametersHasBeenSet = true; m_parameters = value; }
 
     /**
-     * <p>The parameter values to be inserted in the document when executing the
+     * <p>The parameter values to be inserted in the document when running the
      * command.</p>
      */
     inline void SetParameters(Aws::Map<Aws::String, Aws::Vector<Aws::String>>&& value) { m_parametersHasBeenSet = true; m_parameters = std::move(value); }
 
     /**
-     * <p>The parameter values to be inserted in the document when executing the
+     * <p>The parameter values to be inserted in the document when running the
      * command.</p>
      */
     inline Command& WithParameters(const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& value) { SetParameters(value); return *this;}
 
     /**
-     * <p>The parameter values to be inserted in the document when executing the
+     * <p>The parameter values to be inserted in the document when running the
      * command.</p>
      */
     inline Command& WithParameters(Aws::Map<Aws::String, Aws::Vector<Aws::String>>&& value) { SetParameters(std::move(value)); return *this;}
 
     /**
-     * <p>The parameter values to be inserted in the document when executing the
+     * <p>The parameter values to be inserted in the document when running the
      * command.</p>
      */
     inline Command& AddParameters(const Aws::String& key, const Aws::Vector<Aws::String>& value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, value); return *this; }
 
     /**
-     * <p>The parameter values to be inserted in the document when executing the
+     * <p>The parameter values to be inserted in the document when running the
      * command.</p>
      */
     inline Command& AddParameters(Aws::String&& key, const Aws::Vector<Aws::String>& value) { m_parametersHasBeenSet = true; m_parameters.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>The parameter values to be inserted in the document when executing the
+     * <p>The parameter values to be inserted in the document when running the
      * command.</p>
      */
     inline Command& AddParameters(const Aws::String& key, Aws::Vector<Aws::String>&& value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>The parameter values to be inserted in the document when executing the
+     * <p>The parameter values to be inserted in the document when running the
      * command.</p>
      */
     inline Command& AddParameters(Aws::String&& key, Aws::Vector<Aws::String>&& value) { m_parametersHasBeenSet = true; m_parameters.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
-     * <p>The parameter values to be inserted in the document when executing the
+     * <p>The parameter values to be inserted in the document when running the
      * command.</p>
      */
     inline Command& AddParameters(const char* key, Aws::Vector<Aws::String>&& value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>The parameter values to be inserted in the document when executing the
+     * <p>The parameter values to be inserted in the document when running the
      * command.</p>
      */
     inline Command& AddParameters(const char* key, const Aws::Vector<Aws::String>& value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, value); return *this; }
@@ -517,7 +517,7 @@ namespace Model
      * can be one of the following values:</p> <ul> <li> <p>Pending: The command has
      * not been sent to any instances.</p> </li> <li> <p>In Progress: The command has
      * been sent to at least one instance but has not reached a final state on all
-     * instances.</p> </li> <li> <p>Success: The command successfully executed on all
+     * instances.</p> </li> <li> <p>Success: The command successfully ran on all
      * invocations. This is a terminal state.</p> </li> <li> <p>Delivery Timed Out: The
      * value of MaxErrors or more command invocations shows a status of Delivery Timed
      * Out. This is a terminal state.</p> </li> <li> <p>Execution Timed Out: The value
@@ -530,7 +530,7 @@ namespace Model
      * <p>Canceled: The command was terminated before it was completed. This is a
      * terminal state.</p> </li> <li> <p>Rate Exceeded: The number of instances
      * targeted by the command exceeded the account limit for pending invocations. The
-     * system has canceled the command before executing it on any instance. This is a
+     * system has canceled the command before running it on any instance. This is a
      * terminal state.</p> </li> </ul>
      */
     inline const Aws::String& GetStatusDetails() const{ return m_statusDetails; }
@@ -545,7 +545,7 @@ namespace Model
      * can be one of the following values:</p> <ul> <li> <p>Pending: The command has
      * not been sent to any instances.</p> </li> <li> <p>In Progress: The command has
      * been sent to at least one instance but has not reached a final state on all
-     * instances.</p> </li> <li> <p>Success: The command successfully executed on all
+     * instances.</p> </li> <li> <p>Success: The command successfully ran on all
      * invocations. This is a terminal state.</p> </li> <li> <p>Delivery Timed Out: The
      * value of MaxErrors or more command invocations shows a status of Delivery Timed
      * Out. This is a terminal state.</p> </li> <li> <p>Execution Timed Out: The value
@@ -558,7 +558,7 @@ namespace Model
      * <p>Canceled: The command was terminated before it was completed. This is a
      * terminal state.</p> </li> <li> <p>Rate Exceeded: The number of instances
      * targeted by the command exceeded the account limit for pending invocations. The
-     * system has canceled the command before executing it on any instance. This is a
+     * system has canceled the command before running it on any instance. This is a
      * terminal state.</p> </li> </ul>
      */
     inline bool StatusDetailsHasBeenSet() const { return m_statusDetailsHasBeenSet; }
@@ -573,7 +573,7 @@ namespace Model
      * can be one of the following values:</p> <ul> <li> <p>Pending: The command has
      * not been sent to any instances.</p> </li> <li> <p>In Progress: The command has
      * been sent to at least one instance but has not reached a final state on all
-     * instances.</p> </li> <li> <p>Success: The command successfully executed on all
+     * instances.</p> </li> <li> <p>Success: The command successfully ran on all
      * invocations. This is a terminal state.</p> </li> <li> <p>Delivery Timed Out: The
      * value of MaxErrors or more command invocations shows a status of Delivery Timed
      * Out. This is a terminal state.</p> </li> <li> <p>Execution Timed Out: The value
@@ -586,7 +586,7 @@ namespace Model
      * <p>Canceled: The command was terminated before it was completed. This is a
      * terminal state.</p> </li> <li> <p>Rate Exceeded: The number of instances
      * targeted by the command exceeded the account limit for pending invocations. The
-     * system has canceled the command before executing it on any instance. This is a
+     * system has canceled the command before running it on any instance. This is a
      * terminal state.</p> </li> </ul>
      */
     inline void SetStatusDetails(const Aws::String& value) { m_statusDetailsHasBeenSet = true; m_statusDetails = value; }
@@ -601,7 +601,7 @@ namespace Model
      * can be one of the following values:</p> <ul> <li> <p>Pending: The command has
      * not been sent to any instances.</p> </li> <li> <p>In Progress: The command has
      * been sent to at least one instance but has not reached a final state on all
-     * instances.</p> </li> <li> <p>Success: The command successfully executed on all
+     * instances.</p> </li> <li> <p>Success: The command successfully ran on all
      * invocations. This is a terminal state.</p> </li> <li> <p>Delivery Timed Out: The
      * value of MaxErrors or more command invocations shows a status of Delivery Timed
      * Out. This is a terminal state.</p> </li> <li> <p>Execution Timed Out: The value
@@ -614,7 +614,7 @@ namespace Model
      * <p>Canceled: The command was terminated before it was completed. This is a
      * terminal state.</p> </li> <li> <p>Rate Exceeded: The number of instances
      * targeted by the command exceeded the account limit for pending invocations. The
-     * system has canceled the command before executing it on any instance. This is a
+     * system has canceled the command before running it on any instance. This is a
      * terminal state.</p> </li> </ul>
      */
     inline void SetStatusDetails(Aws::String&& value) { m_statusDetailsHasBeenSet = true; m_statusDetails = std::move(value); }
@@ -629,7 +629,7 @@ namespace Model
      * can be one of the following values:</p> <ul> <li> <p>Pending: The command has
      * not been sent to any instances.</p> </li> <li> <p>In Progress: The command has
      * been sent to at least one instance but has not reached a final state on all
-     * instances.</p> </li> <li> <p>Success: The command successfully executed on all
+     * instances.</p> </li> <li> <p>Success: The command successfully ran on all
      * invocations. This is a terminal state.</p> </li> <li> <p>Delivery Timed Out: The
      * value of MaxErrors or more command invocations shows a status of Delivery Timed
      * Out. This is a terminal state.</p> </li> <li> <p>Execution Timed Out: The value
@@ -642,7 +642,7 @@ namespace Model
      * <p>Canceled: The command was terminated before it was completed. This is a
      * terminal state.</p> </li> <li> <p>Rate Exceeded: The number of instances
      * targeted by the command exceeded the account limit for pending invocations. The
-     * system has canceled the command before executing it on any instance. This is a
+     * system has canceled the command before running it on any instance. This is a
      * terminal state.</p> </li> </ul>
      */
     inline void SetStatusDetails(const char* value) { m_statusDetailsHasBeenSet = true; m_statusDetails.assign(value); }
@@ -657,7 +657,7 @@ namespace Model
      * can be one of the following values:</p> <ul> <li> <p>Pending: The command has
      * not been sent to any instances.</p> </li> <li> <p>In Progress: The command has
      * been sent to at least one instance but has not reached a final state on all
-     * instances.</p> </li> <li> <p>Success: The command successfully executed on all
+     * instances.</p> </li> <li> <p>Success: The command successfully ran on all
      * invocations. This is a terminal state.</p> </li> <li> <p>Delivery Timed Out: The
      * value of MaxErrors or more command invocations shows a status of Delivery Timed
      * Out. This is a terminal state.</p> </li> <li> <p>Execution Timed Out: The value
@@ -670,7 +670,7 @@ namespace Model
      * <p>Canceled: The command was terminated before it was completed. This is a
      * terminal state.</p> </li> <li> <p>Rate Exceeded: The number of instances
      * targeted by the command exceeded the account limit for pending invocations. The
-     * system has canceled the command before executing it on any instance. This is a
+     * system has canceled the command before running it on any instance. This is a
      * terminal state.</p> </li> </ul>
      */
     inline Command& WithStatusDetails(const Aws::String& value) { SetStatusDetails(value); return *this;}
@@ -685,7 +685,7 @@ namespace Model
      * can be one of the following values:</p> <ul> <li> <p>Pending: The command has
      * not been sent to any instances.</p> </li> <li> <p>In Progress: The command has
      * been sent to at least one instance but has not reached a final state on all
-     * instances.</p> </li> <li> <p>Success: The command successfully executed on all
+     * instances.</p> </li> <li> <p>Success: The command successfully ran on all
      * invocations. This is a terminal state.</p> </li> <li> <p>Delivery Timed Out: The
      * value of MaxErrors or more command invocations shows a status of Delivery Timed
      * Out. This is a terminal state.</p> </li> <li> <p>Execution Timed Out: The value
@@ -698,7 +698,7 @@ namespace Model
      * <p>Canceled: The command was terminated before it was completed. This is a
      * terminal state.</p> </li> <li> <p>Rate Exceeded: The number of instances
      * targeted by the command exceeded the account limit for pending invocations. The
-     * system has canceled the command before executing it on any instance. This is a
+     * system has canceled the command before running it on any instance. This is a
      * terminal state.</p> </li> </ul>
      */
     inline Command& WithStatusDetails(Aws::String&& value) { SetStatusDetails(std::move(value)); return *this;}
@@ -713,7 +713,7 @@ namespace Model
      * can be one of the following values:</p> <ul> <li> <p>Pending: The command has
      * not been sent to any instances.</p> </li> <li> <p>In Progress: The command has
      * been sent to at least one instance but has not reached a final state on all
-     * instances.</p> </li> <li> <p>Success: The command successfully executed on all
+     * instances.</p> </li> <li> <p>Success: The command successfully ran on all
      * invocations. This is a terminal state.</p> </li> <li> <p>Delivery Timed Out: The
      * value of MaxErrors or more command invocations shows a status of Delivery Timed
      * Out. This is a terminal state.</p> </li> <li> <p>Execution Timed Out: The value
@@ -726,7 +726,7 @@ namespace Model
      * <p>Canceled: The command was terminated before it was completed. This is a
      * terminal state.</p> </li> <li> <p>Rate Exceeded: The number of instances
      * targeted by the command exceeded the account limit for pending invocations. The
-     * system has canceled the command before executing it on any instance. This is a
+     * system has canceled the command before running it on any instance. This is a
      * terminal state.</p> </li> </ul>
      */
     inline Command& WithStatusDetails(const char* value) { SetStatusDetails(value); return *this;}
@@ -888,88 +888,88 @@ namespace Model
 
 
     /**
-     * <p>The maximum number of instances that are allowed to execute the command at
-     * the same time. You can specify a number of instances, such as 10, or a
-     * percentage of instances, such as 10%. The default value is 50. For more
-     * information about how to use MaxConcurrency, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Executing
+     * <p>The maximum number of instances that are allowed to run the command at the
+     * same time. You can specify a number of instances, such as 10, or a percentage of
+     * instances, such as 10%. The default value is 50. For more information about how
+     * to use MaxConcurrency, see <a
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Running
      * Commands Using Systems Manager Run Command</a> in the <i>AWS Systems Manager
      * User Guide</i>.</p>
      */
     inline const Aws::String& GetMaxConcurrency() const{ return m_maxConcurrency; }
 
     /**
-     * <p>The maximum number of instances that are allowed to execute the command at
-     * the same time. You can specify a number of instances, such as 10, or a
-     * percentage of instances, such as 10%. The default value is 50. For more
-     * information about how to use MaxConcurrency, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Executing
+     * <p>The maximum number of instances that are allowed to run the command at the
+     * same time. You can specify a number of instances, such as 10, or a percentage of
+     * instances, such as 10%. The default value is 50. For more information about how
+     * to use MaxConcurrency, see <a
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Running
      * Commands Using Systems Manager Run Command</a> in the <i>AWS Systems Manager
      * User Guide</i>.</p>
      */
     inline bool MaxConcurrencyHasBeenSet() const { return m_maxConcurrencyHasBeenSet; }
 
     /**
-     * <p>The maximum number of instances that are allowed to execute the command at
-     * the same time. You can specify a number of instances, such as 10, or a
-     * percentage of instances, such as 10%. The default value is 50. For more
-     * information about how to use MaxConcurrency, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Executing
+     * <p>The maximum number of instances that are allowed to run the command at the
+     * same time. You can specify a number of instances, such as 10, or a percentage of
+     * instances, such as 10%. The default value is 50. For more information about how
+     * to use MaxConcurrency, see <a
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Running
      * Commands Using Systems Manager Run Command</a> in the <i>AWS Systems Manager
      * User Guide</i>.</p>
      */
     inline void SetMaxConcurrency(const Aws::String& value) { m_maxConcurrencyHasBeenSet = true; m_maxConcurrency = value; }
 
     /**
-     * <p>The maximum number of instances that are allowed to execute the command at
-     * the same time. You can specify a number of instances, such as 10, or a
-     * percentage of instances, such as 10%. The default value is 50. For more
-     * information about how to use MaxConcurrency, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Executing
+     * <p>The maximum number of instances that are allowed to run the command at the
+     * same time. You can specify a number of instances, such as 10, or a percentage of
+     * instances, such as 10%. The default value is 50. For more information about how
+     * to use MaxConcurrency, see <a
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Running
      * Commands Using Systems Manager Run Command</a> in the <i>AWS Systems Manager
      * User Guide</i>.</p>
      */
     inline void SetMaxConcurrency(Aws::String&& value) { m_maxConcurrencyHasBeenSet = true; m_maxConcurrency = std::move(value); }
 
     /**
-     * <p>The maximum number of instances that are allowed to execute the command at
-     * the same time. You can specify a number of instances, such as 10, or a
-     * percentage of instances, such as 10%. The default value is 50. For more
-     * information about how to use MaxConcurrency, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Executing
+     * <p>The maximum number of instances that are allowed to run the command at the
+     * same time. You can specify a number of instances, such as 10, or a percentage of
+     * instances, such as 10%. The default value is 50. For more information about how
+     * to use MaxConcurrency, see <a
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Running
      * Commands Using Systems Manager Run Command</a> in the <i>AWS Systems Manager
      * User Guide</i>.</p>
      */
     inline void SetMaxConcurrency(const char* value) { m_maxConcurrencyHasBeenSet = true; m_maxConcurrency.assign(value); }
 
     /**
-     * <p>The maximum number of instances that are allowed to execute the command at
-     * the same time. You can specify a number of instances, such as 10, or a
-     * percentage of instances, such as 10%. The default value is 50. For more
-     * information about how to use MaxConcurrency, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Executing
+     * <p>The maximum number of instances that are allowed to run the command at the
+     * same time. You can specify a number of instances, such as 10, or a percentage of
+     * instances, such as 10%. The default value is 50. For more information about how
+     * to use MaxConcurrency, see <a
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Running
      * Commands Using Systems Manager Run Command</a> in the <i>AWS Systems Manager
      * User Guide</i>.</p>
      */
     inline Command& WithMaxConcurrency(const Aws::String& value) { SetMaxConcurrency(value); return *this;}
 
     /**
-     * <p>The maximum number of instances that are allowed to execute the command at
-     * the same time. You can specify a number of instances, such as 10, or a
-     * percentage of instances, such as 10%. The default value is 50. For more
-     * information about how to use MaxConcurrency, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Executing
+     * <p>The maximum number of instances that are allowed to run the command at the
+     * same time. You can specify a number of instances, such as 10, or a percentage of
+     * instances, such as 10%. The default value is 50. For more information about how
+     * to use MaxConcurrency, see <a
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Running
      * Commands Using Systems Manager Run Command</a> in the <i>AWS Systems Manager
      * User Guide</i>.</p>
      */
     inline Command& WithMaxConcurrency(Aws::String&& value) { SetMaxConcurrency(std::move(value)); return *this;}
 
     /**
-     * <p>The maximum number of instances that are allowed to execute the command at
-     * the same time. You can specify a number of instances, such as 10, or a
-     * percentage of instances, such as 10%. The default value is 50. For more
-     * information about how to use MaxConcurrency, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Executing
+     * <p>The maximum number of instances that are allowed to run the command at the
+     * same time. You can specify a number of instances, such as 10, or a percentage of
+     * instances, such as 10%. The default value is 50. For more information about how
+     * to use MaxConcurrency, see <a
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Running
      * Commands Using Systems Manager Run Command</a> in the <i>AWS Systems Manager
      * User Guide</i>.</p>
      */
@@ -981,7 +981,7 @@ namespace Model
      * command to additional targets. You can specify a number of errors, such as 10,
      * or a percentage or errors, such as 10%. The default value is 0. For more
      * information about how to use MaxErrors, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Executing
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Running
      * Commands Using Systems Manager Run Command</a> in the <i>AWS Systems Manager
      * User Guide</i>.</p>
      */
@@ -992,7 +992,7 @@ namespace Model
      * command to additional targets. You can specify a number of errors, such as 10,
      * or a percentage or errors, such as 10%. The default value is 0. For more
      * information about how to use MaxErrors, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Executing
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Running
      * Commands Using Systems Manager Run Command</a> in the <i>AWS Systems Manager
      * User Guide</i>.</p>
      */
@@ -1003,7 +1003,7 @@ namespace Model
      * command to additional targets. You can specify a number of errors, such as 10,
      * or a percentage or errors, such as 10%. The default value is 0. For more
      * information about how to use MaxErrors, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Executing
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Running
      * Commands Using Systems Manager Run Command</a> in the <i>AWS Systems Manager
      * User Guide</i>.</p>
      */
@@ -1014,7 +1014,7 @@ namespace Model
      * command to additional targets. You can specify a number of errors, such as 10,
      * or a percentage or errors, such as 10%. The default value is 0. For more
      * information about how to use MaxErrors, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Executing
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Running
      * Commands Using Systems Manager Run Command</a> in the <i>AWS Systems Manager
      * User Guide</i>.</p>
      */
@@ -1025,7 +1025,7 @@ namespace Model
      * command to additional targets. You can specify a number of errors, such as 10,
      * or a percentage or errors, such as 10%. The default value is 0. For more
      * information about how to use MaxErrors, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Executing
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Running
      * Commands Using Systems Manager Run Command</a> in the <i>AWS Systems Manager
      * User Guide</i>.</p>
      */
@@ -1036,7 +1036,7 @@ namespace Model
      * command to additional targets. You can specify a number of errors, such as 10,
      * or a percentage or errors, such as 10%. The default value is 0. For more
      * information about how to use MaxErrors, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Executing
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Running
      * Commands Using Systems Manager Run Command</a> in the <i>AWS Systems Manager
      * User Guide</i>.</p>
      */
@@ -1047,7 +1047,7 @@ namespace Model
      * command to additional targets. You can specify a number of errors, such as 10,
      * or a percentage or errors, such as 10%. The default value is 0. For more
      * information about how to use MaxErrors, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Executing
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Running
      * Commands Using Systems Manager Run Command</a> in the <i>AWS Systems Manager
      * User Guide</i>.</p>
      */
@@ -1058,7 +1058,7 @@ namespace Model
      * command to additional targets. You can specify a number of errors, such as 10,
      * or a percentage or errors, such as 10%. The default value is 0. For more
      * information about how to use MaxErrors, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Executing
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Running
      * Commands Using Systems Manager Run Command</a> in the <i>AWS Systems Manager
      * User Guide</i>.</p>
      */

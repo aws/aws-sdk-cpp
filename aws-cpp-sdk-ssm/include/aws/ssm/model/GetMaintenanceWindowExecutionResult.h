@@ -192,53 +192,53 @@ namespace Model
 
 
     /**
-     * <p>The time the Maintenance Window started executing.</p>
+     * <p>The time the Maintenance Window started running.</p>
      */
     inline const Aws::Utils::DateTime& GetStartTime() const{ return m_startTime; }
 
     /**
-     * <p>The time the Maintenance Window started executing.</p>
+     * <p>The time the Maintenance Window started running.</p>
      */
     inline void SetStartTime(const Aws::Utils::DateTime& value) { m_startTime = value; }
 
     /**
-     * <p>The time the Maintenance Window started executing.</p>
+     * <p>The time the Maintenance Window started running.</p>
      */
     inline void SetStartTime(Aws::Utils::DateTime&& value) { m_startTime = std::move(value); }
 
     /**
-     * <p>The time the Maintenance Window started executing.</p>
+     * <p>The time the Maintenance Window started running.</p>
      */
     inline GetMaintenanceWindowExecutionResult& WithStartTime(const Aws::Utils::DateTime& value) { SetStartTime(value); return *this;}
 
     /**
-     * <p>The time the Maintenance Window started executing.</p>
+     * <p>The time the Maintenance Window started running.</p>
      */
     inline GetMaintenanceWindowExecutionResult& WithStartTime(Aws::Utils::DateTime&& value) { SetStartTime(std::move(value)); return *this;}
 
 
     /**
-     * <p>The time the Maintenance Window finished executing.</p>
+     * <p>The time the Maintenance Window finished running.</p>
      */
     inline const Aws::Utils::DateTime& GetEndTime() const{ return m_endTime; }
 
     /**
-     * <p>The time the Maintenance Window finished executing.</p>
+     * <p>The time the Maintenance Window finished running.</p>
      */
     inline void SetEndTime(const Aws::Utils::DateTime& value) { m_endTime = value; }
 
     /**
-     * <p>The time the Maintenance Window finished executing.</p>
+     * <p>The time the Maintenance Window finished running.</p>
      */
     inline void SetEndTime(Aws::Utils::DateTime&& value) { m_endTime = std::move(value); }
 
     /**
-     * <p>The time the Maintenance Window finished executing.</p>
+     * <p>The time the Maintenance Window finished running.</p>
      */
     inline GetMaintenanceWindowExecutionResult& WithEndTime(const Aws::Utils::DateTime& value) { SetEndTime(value); return *this;}
 
     /**
-     * <p>The time the Maintenance Window finished executing.</p>
+     * <p>The time the Maintenance Window finished running.</p>
      */
     inline GetMaintenanceWindowExecutionResult& WithEndTime(Aws::Utils::DateTime&& value) { SetEndTime(std::move(value)); return *this;}
 

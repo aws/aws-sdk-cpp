@@ -858,10 +858,10 @@ namespace Model
      * time. You can specify a number, for example 10, or a percentage of the target
      * set, for example 10%. The default value is 100%, which means all targets run the
      * association at the same time.</p> <p>If a new instance starts and attempts to
-     * execute an association while Systems Manager is executing MaxConcurrency
-     * associations, the association is allowed to run. During the next association
-     * interval, the new instance will process its association within the limit
-     * specified for MaxConcurrency.</p>
+     * run an association while Systems Manager is running MaxConcurrency associations,
+     * the association is allowed to run. During the next association interval, the new
+     * instance will process its association within the limit specified for
+     * MaxConcurrency.</p>
      */
     inline const Aws::String& GetMaxConcurrency() const{ return m_maxConcurrency; }
 
@@ -870,10 +870,10 @@ namespace Model
      * time. You can specify a number, for example 10, or a percentage of the target
      * set, for example 10%. The default value is 100%, which means all targets run the
      * association at the same time.</p> <p>If a new instance starts and attempts to
-     * execute an association while Systems Manager is executing MaxConcurrency
-     * associations, the association is allowed to run. During the next association
-     * interval, the new instance will process its association within the limit
-     * specified for MaxConcurrency.</p>
+     * run an association while Systems Manager is running MaxConcurrency associations,
+     * the association is allowed to run. During the next association interval, the new
+     * instance will process its association within the limit specified for
+     * MaxConcurrency.</p>
      */
     inline bool MaxConcurrencyHasBeenSet() const { return m_maxConcurrencyHasBeenSet; }
 
@@ -882,10 +882,10 @@ namespace Model
      * time. You can specify a number, for example 10, or a percentage of the target
      * set, for example 10%. The default value is 100%, which means all targets run the
      * association at the same time.</p> <p>If a new instance starts and attempts to
-     * execute an association while Systems Manager is executing MaxConcurrency
-     * associations, the association is allowed to run. During the next association
-     * interval, the new instance will process its association within the limit
-     * specified for MaxConcurrency.</p>
+     * run an association while Systems Manager is running MaxConcurrency associations,
+     * the association is allowed to run. During the next association interval, the new
+     * instance will process its association within the limit specified for
+     * MaxConcurrency.</p>
      */
     inline void SetMaxConcurrency(const Aws::String& value) { m_maxConcurrencyHasBeenSet = true; m_maxConcurrency = value; }
 
@@ -894,10 +894,10 @@ namespace Model
      * time. You can specify a number, for example 10, or a percentage of the target
      * set, for example 10%. The default value is 100%, which means all targets run the
      * association at the same time.</p> <p>If a new instance starts and attempts to
-     * execute an association while Systems Manager is executing MaxConcurrency
-     * associations, the association is allowed to run. During the next association
-     * interval, the new instance will process its association within the limit
-     * specified for MaxConcurrency.</p>
+     * run an association while Systems Manager is running MaxConcurrency associations,
+     * the association is allowed to run. During the next association interval, the new
+     * instance will process its association within the limit specified for
+     * MaxConcurrency.</p>
      */
     inline void SetMaxConcurrency(Aws::String&& value) { m_maxConcurrencyHasBeenSet = true; m_maxConcurrency = std::move(value); }
 
@@ -906,10 +906,10 @@ namespace Model
      * time. You can specify a number, for example 10, or a percentage of the target
      * set, for example 10%. The default value is 100%, which means all targets run the
      * association at the same time.</p> <p>If a new instance starts and attempts to
-     * execute an association while Systems Manager is executing MaxConcurrency
-     * associations, the association is allowed to run. During the next association
-     * interval, the new instance will process its association within the limit
-     * specified for MaxConcurrency.</p>
+     * run an association while Systems Manager is running MaxConcurrency associations,
+     * the association is allowed to run. During the next association interval, the new
+     * instance will process its association within the limit specified for
+     * MaxConcurrency.</p>
      */
     inline void SetMaxConcurrency(const char* value) { m_maxConcurrencyHasBeenSet = true; m_maxConcurrency.assign(value); }
 
@@ -918,10 +918,10 @@ namespace Model
      * time. You can specify a number, for example 10, or a percentage of the target
      * set, for example 10%. The default value is 100%, which means all targets run the
      * association at the same time.</p> <p>If a new instance starts and attempts to
-     * execute an association while Systems Manager is executing MaxConcurrency
-     * associations, the association is allowed to run. During the next association
-     * interval, the new instance will process its association within the limit
-     * specified for MaxConcurrency.</p>
+     * run an association while Systems Manager is running MaxConcurrency associations,
+     * the association is allowed to run. During the next association interval, the new
+     * instance will process its association within the limit specified for
+     * MaxConcurrency.</p>
      */
     inline AssociationDescription& WithMaxConcurrency(const Aws::String& value) { SetMaxConcurrency(value); return *this;}
 
@@ -930,10 +930,10 @@ namespace Model
      * time. You can specify a number, for example 10, or a percentage of the target
      * set, for example 10%. The default value is 100%, which means all targets run the
      * association at the same time.</p> <p>If a new instance starts and attempts to
-     * execute an association while Systems Manager is executing MaxConcurrency
-     * associations, the association is allowed to run. During the next association
-     * interval, the new instance will process its association within the limit
-     * specified for MaxConcurrency.</p>
+     * run an association while Systems Manager is running MaxConcurrency associations,
+     * the association is allowed to run. During the next association interval, the new
+     * instance will process its association within the limit specified for
+     * MaxConcurrency.</p>
      */
     inline AssociationDescription& WithMaxConcurrency(Aws::String&& value) { SetMaxConcurrency(std::move(value)); return *this;}
 
@@ -942,10 +942,10 @@ namespace Model
      * time. You can specify a number, for example 10, or a percentage of the target
      * set, for example 10%. The default value is 100%, which means all targets run the
      * association at the same time.</p> <p>If a new instance starts and attempts to
-     * execute an association while Systems Manager is executing MaxConcurrency
-     * associations, the association is allowed to run. During the next association
-     * interval, the new instance will process its association within the limit
-     * specified for MaxConcurrency.</p>
+     * run an association while Systems Manager is running MaxConcurrency associations,
+     * the association is allowed to run. During the next association interval, the new
+     * instance will process its association within the limit specified for
+     * MaxConcurrency.</p>
      */
     inline AssociationDescription& WithMaxConcurrency(const char* value) { SetMaxConcurrency(value); return *this;}
 
