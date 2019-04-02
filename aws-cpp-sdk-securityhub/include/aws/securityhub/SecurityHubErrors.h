@@ -57,8 +57,10 @@ enum class SecurityHubErrors
   ///////////////////////////////////////////////////////////////////////////////////////////
 
   INTERNAL= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  INVALID_ACCESS,
   INVALID_INPUT,
-  LIMIT_EXCEEDED
+  LIMIT_EXCEEDED,
+  RESOURCE_CONFLICT
 };
 namespace SecurityHubErrorMapper
 {
