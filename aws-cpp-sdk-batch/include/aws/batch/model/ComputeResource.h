@@ -615,7 +615,7 @@ namespace Model
      * compute resources. This keeps your multi-node parallel job on a logical grouping
      * of instances within a single Availability Zone with high network flow potential.
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement
      * Groups</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
      */
     inline const Aws::String& GetPlacementGroup() const{ return m_placementGroup; }
@@ -627,7 +627,7 @@ namespace Model
      * compute resources. This keeps your multi-node parallel job on a logical grouping
      * of instances within a single Availability Zone with high network flow potential.
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement
      * Groups</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
      */
     inline bool PlacementGroupHasBeenSet() const { return m_placementGroupHasBeenSet; }
@@ -639,7 +639,7 @@ namespace Model
      * compute resources. This keeps your multi-node parallel job on a logical grouping
      * of instances within a single Availability Zone with high network flow potential.
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement
      * Groups</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
      */
     inline void SetPlacementGroup(const Aws::String& value) { m_placementGroupHasBeenSet = true; m_placementGroup = value; }
@@ -651,7 +651,7 @@ namespace Model
      * compute resources. This keeps your multi-node parallel job on a logical grouping
      * of instances within a single Availability Zone with high network flow potential.
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement
      * Groups</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
      */
     inline void SetPlacementGroup(Aws::String&& value) { m_placementGroupHasBeenSet = true; m_placementGroup = std::move(value); }
@@ -663,7 +663,7 @@ namespace Model
      * compute resources. This keeps your multi-node parallel job on a logical grouping
      * of instances within a single Availability Zone with high network flow potential.
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement
      * Groups</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
      */
     inline void SetPlacementGroup(const char* value) { m_placementGroupHasBeenSet = true; m_placementGroup.assign(value); }
@@ -675,7 +675,7 @@ namespace Model
      * compute resources. This keeps your multi-node parallel job on a logical grouping
      * of instances within a single Availability Zone with high network flow potential.
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement
      * Groups</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
      */
     inline ComputeResource& WithPlacementGroup(const Aws::String& value) { SetPlacementGroup(value); return *this;}
@@ -687,7 +687,7 @@ namespace Model
      * compute resources. This keeps your multi-node parallel job on a logical grouping
      * of instances within a single Availability Zone with high network flow potential.
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement
      * Groups</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
      */
     inline ComputeResource& WithPlacementGroup(Aws::String&& value) { SetPlacementGroup(std::move(value)); return *this;}
@@ -699,7 +699,7 @@ namespace Model
      * compute resources. This keeps your multi-node parallel job on a logical grouping
      * of instances within a single Availability Zone with high network flow potential.
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement
      * Groups</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
      */
     inline ComputeResource& WithPlacementGroup(const char* value) { SetPlacementGroup(value); return *this;}

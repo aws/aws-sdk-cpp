@@ -25,6 +25,7 @@ using namespace Aws::Utils;
 CreateDocumentClassifierRequest::CreateDocumentClassifierRequest() : 
     m_documentClassifierNameHasBeenSet(false),
     m_dataAccessRoleArnHasBeenSet(false),
+    m_tagsHasBeenSet(false),
     m_inputDataConfigHasBeenSet(false),
     m_clientRequestToken(Aws::Utils::UUID::RandomUUID()),
     m_clientRequestTokenHasBeenSet(true),
@@ -47,6 +48,17 @@ Aws::String CreateDocumentClassifierRequest::SerializePayload() const
   if(m_dataAccessRoleArnHasBeenSet)
   {
    payload.WithString("DataAccessRoleArn", m_dataAccessRoleArn);
+
+  }
+
+  if(m_tagsHasBeenSet)
+  {
+   Array<JsonValue> tagsJsonList(m_tags.size());
+   for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
+   {
+     tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
+   }
+   payload.WithArray("Tags", std::move(tagsJsonList));
 
   }
 

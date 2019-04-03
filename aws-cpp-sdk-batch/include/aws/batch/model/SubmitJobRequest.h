@@ -617,7 +617,7 @@ namespace Model
      * any timeout configuration specified in the job definition. For array jobs, child
      * jobs have the same timeout configuration as the parent job. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/job_timeouts.html">Job
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/job_timeouts.html">Job
      * Timeouts</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
      */
     inline const JobTimeout& GetTimeout() const{ return m_timeout; }
@@ -630,7 +630,7 @@ namespace Model
      * any timeout configuration specified in the job definition. For array jobs, child
      * jobs have the same timeout configuration as the parent job. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/job_timeouts.html">Job
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/job_timeouts.html">Job
      * Timeouts</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
      */
     inline bool TimeoutHasBeenSet() const { return m_timeoutHasBeenSet; }
@@ -643,7 +643,7 @@ namespace Model
      * any timeout configuration specified in the job definition. For array jobs, child
      * jobs have the same timeout configuration as the parent job. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/job_timeouts.html">Job
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/job_timeouts.html">Job
      * Timeouts</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
      */
     inline void SetTimeout(const JobTimeout& value) { m_timeoutHasBeenSet = true; m_timeout = value; }
@@ -656,7 +656,7 @@ namespace Model
      * any timeout configuration specified in the job definition. For array jobs, child
      * jobs have the same timeout configuration as the parent job. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/job_timeouts.html">Job
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/job_timeouts.html">Job
      * Timeouts</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
      */
     inline void SetTimeout(JobTimeout&& value) { m_timeoutHasBeenSet = true; m_timeout = std::move(value); }
@@ -669,7 +669,7 @@ namespace Model
      * any timeout configuration specified in the job definition. For array jobs, child
      * jobs have the same timeout configuration as the parent job. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/job_timeouts.html">Job
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/job_timeouts.html">Job
      * Timeouts</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
      */
     inline SubmitJobRequest& WithTimeout(const JobTimeout& value) { SetTimeout(value); return *this;}
@@ -682,7 +682,7 @@ namespace Model
      * any timeout configuration specified in the job definition. For array jobs, child
      * jobs have the same timeout configuration as the parent job. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/job_timeouts.html">Job
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/job_timeouts.html">Job
      * Timeouts</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
      */
     inline SubmitJobRequest& WithTimeout(JobTimeout&& value) { SetTimeout(std::move(value)); return *this;}

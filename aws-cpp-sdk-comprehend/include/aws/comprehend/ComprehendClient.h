@@ -50,6 +50,7 @@
 #include <aws/comprehend/model/ListEntityRecognizersResult.h>
 #include <aws/comprehend/model/ListKeyPhrasesDetectionJobsResult.h>
 #include <aws/comprehend/model/ListSentimentDetectionJobsResult.h>
+#include <aws/comprehend/model/ListTagsForResourceResult.h>
 #include <aws/comprehend/model/ListTopicsDetectionJobsResult.h>
 #include <aws/comprehend/model/StartDocumentClassificationJobResult.h>
 #include <aws/comprehend/model/StartDominantLanguageDetectionJobResult.h>
@@ -63,6 +64,8 @@
 #include <aws/comprehend/model/StopSentimentDetectionJobResult.h>
 #include <aws/comprehend/model/StopTrainingDocumentClassifierResult.h>
 #include <aws/comprehend/model/StopTrainingEntityRecognizerResult.h>
+#include <aws/comprehend/model/TagResourceResult.h>
+#include <aws/comprehend/model/UntagResourceResult.h>
 #include <aws/core/client/AsyncCallerContext.h>
 #include <aws/core/http/HttpTypes.h>
 #include <future>
@@ -132,6 +135,7 @@ namespace Model
         class ListEntityRecognizersRequest;
         class ListKeyPhrasesDetectionJobsRequest;
         class ListSentimentDetectionJobsRequest;
+        class ListTagsForResourceRequest;
         class ListTopicsDetectionJobsRequest;
         class StartDocumentClassificationJobRequest;
         class StartDominantLanguageDetectionJobRequest;
@@ -145,6 +149,8 @@ namespace Model
         class StopSentimentDetectionJobRequest;
         class StopTrainingDocumentClassifierRequest;
         class StopTrainingEntityRecognizerRequest;
+        class TagResourceRequest;
+        class UntagResourceRequest;
 
         typedef Aws::Utils::Outcome<BatchDetectDominantLanguageResult, Aws::Client::AWSError<ComprehendErrors>> BatchDetectDominantLanguageOutcome;
         typedef Aws::Utils::Outcome<BatchDetectEntitiesResult, Aws::Client::AWSError<ComprehendErrors>> BatchDetectEntitiesOutcome;
@@ -175,6 +181,7 @@ namespace Model
         typedef Aws::Utils::Outcome<ListEntityRecognizersResult, Aws::Client::AWSError<ComprehendErrors>> ListEntityRecognizersOutcome;
         typedef Aws::Utils::Outcome<ListKeyPhrasesDetectionJobsResult, Aws::Client::AWSError<ComprehendErrors>> ListKeyPhrasesDetectionJobsOutcome;
         typedef Aws::Utils::Outcome<ListSentimentDetectionJobsResult, Aws::Client::AWSError<ComprehendErrors>> ListSentimentDetectionJobsOutcome;
+        typedef Aws::Utils::Outcome<ListTagsForResourceResult, Aws::Client::AWSError<ComprehendErrors>> ListTagsForResourceOutcome;
         typedef Aws::Utils::Outcome<ListTopicsDetectionJobsResult, Aws::Client::AWSError<ComprehendErrors>> ListTopicsDetectionJobsOutcome;
         typedef Aws::Utils::Outcome<StartDocumentClassificationJobResult, Aws::Client::AWSError<ComprehendErrors>> StartDocumentClassificationJobOutcome;
         typedef Aws::Utils::Outcome<StartDominantLanguageDetectionJobResult, Aws::Client::AWSError<ComprehendErrors>> StartDominantLanguageDetectionJobOutcome;
@@ -188,6 +195,8 @@ namespace Model
         typedef Aws::Utils::Outcome<StopSentimentDetectionJobResult, Aws::Client::AWSError<ComprehendErrors>> StopSentimentDetectionJobOutcome;
         typedef Aws::Utils::Outcome<StopTrainingDocumentClassifierResult, Aws::Client::AWSError<ComprehendErrors>> StopTrainingDocumentClassifierOutcome;
         typedef Aws::Utils::Outcome<StopTrainingEntityRecognizerResult, Aws::Client::AWSError<ComprehendErrors>> StopTrainingEntityRecognizerOutcome;
+        typedef Aws::Utils::Outcome<TagResourceResult, Aws::Client::AWSError<ComprehendErrors>> TagResourceOutcome;
+        typedef Aws::Utils::Outcome<UntagResourceResult, Aws::Client::AWSError<ComprehendErrors>> UntagResourceOutcome;
 
         typedef std::future<BatchDetectDominantLanguageOutcome> BatchDetectDominantLanguageOutcomeCallable;
         typedef std::future<BatchDetectEntitiesOutcome> BatchDetectEntitiesOutcomeCallable;
@@ -218,6 +227,7 @@ namespace Model
         typedef std::future<ListEntityRecognizersOutcome> ListEntityRecognizersOutcomeCallable;
         typedef std::future<ListKeyPhrasesDetectionJobsOutcome> ListKeyPhrasesDetectionJobsOutcomeCallable;
         typedef std::future<ListSentimentDetectionJobsOutcome> ListSentimentDetectionJobsOutcomeCallable;
+        typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
         typedef std::future<ListTopicsDetectionJobsOutcome> ListTopicsDetectionJobsOutcomeCallable;
         typedef std::future<StartDocumentClassificationJobOutcome> StartDocumentClassificationJobOutcomeCallable;
         typedef std::future<StartDominantLanguageDetectionJobOutcome> StartDominantLanguageDetectionJobOutcomeCallable;
@@ -231,6 +241,8 @@ namespace Model
         typedef std::future<StopSentimentDetectionJobOutcome> StopSentimentDetectionJobOutcomeCallable;
         typedef std::future<StopTrainingDocumentClassifierOutcome> StopTrainingDocumentClassifierOutcomeCallable;
         typedef std::future<StopTrainingEntityRecognizerOutcome> StopTrainingEntityRecognizerOutcomeCallable;
+        typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
+        typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
 } // namespace Model
 
   class ComprehendClient;
@@ -264,6 +276,7 @@ namespace Model
     typedef std::function<void(const ComprehendClient*, const Model::ListEntityRecognizersRequest&, const Model::ListEntityRecognizersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListEntityRecognizersResponseReceivedHandler;
     typedef std::function<void(const ComprehendClient*, const Model::ListKeyPhrasesDetectionJobsRequest&, const Model::ListKeyPhrasesDetectionJobsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListKeyPhrasesDetectionJobsResponseReceivedHandler;
     typedef std::function<void(const ComprehendClient*, const Model::ListSentimentDetectionJobsRequest&, const Model::ListSentimentDetectionJobsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListSentimentDetectionJobsResponseReceivedHandler;
+    typedef std::function<void(const ComprehendClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
     typedef std::function<void(const ComprehendClient*, const Model::ListTopicsDetectionJobsRequest&, const Model::ListTopicsDetectionJobsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTopicsDetectionJobsResponseReceivedHandler;
     typedef std::function<void(const ComprehendClient*, const Model::StartDocumentClassificationJobRequest&, const Model::StartDocumentClassificationJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartDocumentClassificationJobResponseReceivedHandler;
     typedef std::function<void(const ComprehendClient*, const Model::StartDominantLanguageDetectionJobRequest&, const Model::StartDominantLanguageDetectionJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartDominantLanguageDetectionJobResponseReceivedHandler;
@@ -277,6 +290,8 @@ namespace Model
     typedef std::function<void(const ComprehendClient*, const Model::StopSentimentDetectionJobRequest&, const Model::StopSentimentDetectionJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopSentimentDetectionJobResponseReceivedHandler;
     typedef std::function<void(const ComprehendClient*, const Model::StopTrainingDocumentClassifierRequest&, const Model::StopTrainingDocumentClassifierOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopTrainingDocumentClassifierResponseReceivedHandler;
     typedef std::function<void(const ComprehendClient*, const Model::StopTrainingEntityRecognizerRequest&, const Model::StopTrainingEntityRecognizerOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopTrainingEntityRecognizerResponseReceivedHandler;
+    typedef std::function<void(const ComprehendClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
+    typedef std::function<void(const ComprehendClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
 
   /**
    * <p>Amazon Comprehend is an AWS service for gaining insight into the content of
@@ -1222,6 +1237,37 @@ namespace Model
         virtual void ListSentimentDetectionJobsAsync(const Model::ListSentimentDetectionJobsRequest& request, const ListSentimentDetectionJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Lists all tags associated with a given Amazon Comprehend resource. Up to the
+         * maximum number of tags allowed per resource will be displayed. </p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/ListTagsForResource">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListTagsForResourceOutcome ListTagsForResource(const Model::ListTagsForResourceRequest& request) const;
+
+        /**
+         * <p>Lists all tags associated with a given Amazon Comprehend resource. Up to the
+         * maximum number of tags allowed per resource will be displayed. </p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/ListTagsForResource">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListTagsForResourceOutcomeCallable ListTagsForResourceCallable(const Model::ListTagsForResourceRequest& request) const;
+
+        /**
+         * <p>Lists all tags associated with a given Amazon Comprehend resource. Up to the
+         * maximum number of tags allowed per resource will be displayed. </p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/ListTagsForResource">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListTagsForResourceAsync(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Gets a list of the topic detection jobs that you have
          * submitted.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/ListTopicsDetectionJobs">AWS
@@ -1732,6 +1778,71 @@ namespace Model
          */
         virtual void StopTrainingEntityRecognizerAsync(const Model::StopTrainingEntityRecognizerRequest& request, const StopTrainingEntityRecognizerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
+        /**
+         * <p>Associates a specific tag with an Amazon Comprehend resource. A tag is a
+         * key-value pair that adds as a metadata to a resource used by Amazon Comprehend.
+         * For example, a tag with the key-value pair ‘Department’:’Sales’ might be added
+         * to a resource to indicate its use by a particular department. </p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/TagResource">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::TagResourceOutcome TagResource(const Model::TagResourceRequest& request) const;
+
+        /**
+         * <p>Associates a specific tag with an Amazon Comprehend resource. A tag is a
+         * key-value pair that adds as a metadata to a resource used by Amazon Comprehend.
+         * For example, a tag with the key-value pair ‘Department’:’Sales’ might be added
+         * to a resource to indicate its use by a particular department. </p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/TagResource">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::TagResourceOutcomeCallable TagResourceCallable(const Model::TagResourceRequest& request) const;
+
+        /**
+         * <p>Associates a specific tag with an Amazon Comprehend resource. A tag is a
+         * key-value pair that adds as a metadata to a resource used by Amazon Comprehend.
+         * For example, a tag with the key-value pair ‘Department’:’Sales’ might be added
+         * to a resource to indicate its use by a particular department. </p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/TagResource">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void TagResourceAsync(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Removes a specific tag associated with an Amazon Comprehend resource.
+         * </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/UntagResource">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UntagResourceOutcome UntagResource(const Model::UntagResourceRequest& request) const;
+
+        /**
+         * <p>Removes a specific tag associated with an Amazon Comprehend resource.
+         * </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/UntagResource">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UntagResourceOutcomeCallable UntagResourceCallable(const Model::UntagResourceRequest& request) const;
+
+        /**
+         * <p>Removes a specific tag associated with an Amazon Comprehend resource.
+         * </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/UntagResource">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UntagResourceAsync(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
       
       void OverrideEndpoint(const Aws::String& endpoint);
     private:
@@ -1766,6 +1877,7 @@ namespace Model
         void ListEntityRecognizersAsyncHelper(const Model::ListEntityRecognizersRequest& request, const ListEntityRecognizersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListKeyPhrasesDetectionJobsAsyncHelper(const Model::ListKeyPhrasesDetectionJobsRequest& request, const ListKeyPhrasesDetectionJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListSentimentDetectionJobsAsyncHelper(const Model::ListSentimentDetectionJobsRequest& request, const ListSentimentDetectionJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListTagsForResourceAsyncHelper(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListTopicsDetectionJobsAsyncHelper(const Model::ListTopicsDetectionJobsRequest& request, const ListTopicsDetectionJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void StartDocumentClassificationJobAsyncHelper(const Model::StartDocumentClassificationJobRequest& request, const StartDocumentClassificationJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void StartDominantLanguageDetectionJobAsyncHelper(const Model::StartDominantLanguageDetectionJobRequest& request, const StartDominantLanguageDetectionJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -1779,6 +1891,8 @@ namespace Model
         void StopSentimentDetectionJobAsyncHelper(const Model::StopSentimentDetectionJobRequest& request, const StopSentimentDetectionJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void StopTrainingDocumentClassifierAsyncHelper(const Model::StopTrainingDocumentClassifierRequest& request, const StopTrainingDocumentClassifierResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void StopTrainingEntityRecognizerAsyncHelper(const Model::StopTrainingEntityRecognizerRequest& request, const StopTrainingEntityRecognizerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void TagResourceAsyncHelper(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UntagResourceAsyncHelper(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
 
       Aws::String m_uri;
       Aws::String m_configScheme;

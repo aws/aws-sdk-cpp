@@ -13,7 +13,7 @@ nuget {
         id = AWSSDKCPP-Kinesis;
 
         // Version number. Follows NuGet standards. (currently SemVer 1.0)
-        version : 1.7.20131202.82;
+        version : 1.7.20131202.83;
 
         // Display name for package.
         title: AWS SDK for C++ (Amazon Kinesis);
@@ -48,7 +48,7 @@ nuget {
 
     dependencies {
        packages: {
-            AWSSDKCPP-Core/1.7.82
+            AWSSDKCPP-Core/1.7.83
        }
     }
 
