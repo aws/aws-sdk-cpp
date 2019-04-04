@@ -99,12 +99,12 @@ namespace Model
      * <p>The service namespace for an AWS service. Provide the service namespace to
      * learn when the IAM entity last attempted to access the specified service.</p>
      * <p>To learn the service namespace for a service, go to <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_actions-resources-contextkeys.html">Actions,
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_actions-resources-contextkeys.html">Actions,
      * Resources, and Condition Keys for AWS Services</a> in the <i>IAM User Guide</i>
      * and choose the name of the service to view details for that service. In the
      * first paragraph, find the service prefix. For example, <code>(service prefix:
      * a4b)</code>. For more information about service namespaces, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces">AWS
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces">AWS
      * Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
      */
     inline const Aws::String& GetServiceNamespace() const{ return m_serviceNamespace; }
@@ -113,12 +113,12 @@ namespace Model
      * <p>The service namespace for an AWS service. Provide the service namespace to
      * learn when the IAM entity last attempted to access the specified service.</p>
      * <p>To learn the service namespace for a service, go to <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_actions-resources-contextkeys.html">Actions,
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_actions-resources-contextkeys.html">Actions,
      * Resources, and Condition Keys for AWS Services</a> in the <i>IAM User Guide</i>
      * and choose the name of the service to view details for that service. In the
      * first paragraph, find the service prefix. For example, <code>(service prefix:
      * a4b)</code>. For more information about service namespaces, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces">AWS
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces">AWS
      * Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
      */
     inline bool ServiceNamespaceHasBeenSet() const { return m_serviceNamespaceHasBeenSet; }
@@ -127,12 +127,12 @@ namespace Model
      * <p>The service namespace for an AWS service. Provide the service namespace to
      * learn when the IAM entity last attempted to access the specified service.</p>
      * <p>To learn the service namespace for a service, go to <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_actions-resources-contextkeys.html">Actions,
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_actions-resources-contextkeys.html">Actions,
      * Resources, and Condition Keys for AWS Services</a> in the <i>IAM User Guide</i>
      * and choose the name of the service to view details for that service. In the
      * first paragraph, find the service prefix. For example, <code>(service prefix:
      * a4b)</code>. For more information about service namespaces, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces">AWS
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces">AWS
      * Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
      */
     inline void SetServiceNamespace(const Aws::String& value) { m_serviceNamespaceHasBeenSet = true; m_serviceNamespace = value; }
@@ -141,12 +141,12 @@ namespace Model
      * <p>The service namespace for an AWS service. Provide the service namespace to
      * learn when the IAM entity last attempted to access the specified service.</p>
      * <p>To learn the service namespace for a service, go to <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_actions-resources-contextkeys.html">Actions,
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_actions-resources-contextkeys.html">Actions,
      * Resources, and Condition Keys for AWS Services</a> in the <i>IAM User Guide</i>
      * and choose the name of the service to view details for that service. In the
      * first paragraph, find the service prefix. For example, <code>(service prefix:
      * a4b)</code>. For more information about service namespaces, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces">AWS
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces">AWS
      * Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
      */
     inline void SetServiceNamespace(Aws::String&& value) { m_serviceNamespaceHasBeenSet = true; m_serviceNamespace = std::move(value); }
@@ -155,12 +155,12 @@ namespace Model
      * <p>The service namespace for an AWS service. Provide the service namespace to
      * learn when the IAM entity last attempted to access the specified service.</p>
      * <p>To learn the service namespace for a service, go to <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_actions-resources-contextkeys.html">Actions,
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_actions-resources-contextkeys.html">Actions,
      * Resources, and Condition Keys for AWS Services</a> in the <i>IAM User Guide</i>
      * and choose the name of the service to view details for that service. In the
      * first paragraph, find the service prefix. For example, <code>(service prefix:
      * a4b)</code>. For more information about service namespaces, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces">AWS
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces">AWS
      * Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
      */
     inline void SetServiceNamespace(const char* value) { m_serviceNamespaceHasBeenSet = true; m_serviceNamespace.assign(value); }
@@ -169,12 +169,12 @@ namespace Model
      * <p>The service namespace for an AWS service. Provide the service namespace to
      * learn when the IAM entity last attempted to access the specified service.</p>
      * <p>To learn the service namespace for a service, go to <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_actions-resources-contextkeys.html">Actions,
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_actions-resources-contextkeys.html">Actions,
      * Resources, and Condition Keys for AWS Services</a> in the <i>IAM User Guide</i>
      * and choose the name of the service to view details for that service. In the
      * first paragraph, find the service prefix. For example, <code>(service prefix:
      * a4b)</code>. For more information about service namespaces, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces">AWS
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces">AWS
      * Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
      */
     inline GetServiceLastAccessedDetailsWithEntitiesRequest& WithServiceNamespace(const Aws::String& value) { SetServiceNamespace(value); return *this;}
@@ -183,12 +183,12 @@ namespace Model
      * <p>The service namespace for an AWS service. Provide the service namespace to
      * learn when the IAM entity last attempted to access the specified service.</p>
      * <p>To learn the service namespace for a service, go to <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_actions-resources-contextkeys.html">Actions,
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_actions-resources-contextkeys.html">Actions,
      * Resources, and Condition Keys for AWS Services</a> in the <i>IAM User Guide</i>
      * and choose the name of the service to view details for that service. In the
      * first paragraph, find the service prefix. For example, <code>(service prefix:
      * a4b)</code>. For more information about service namespaces, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces">AWS
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces">AWS
      * Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
      */
     inline GetServiceLastAccessedDetailsWithEntitiesRequest& WithServiceNamespace(Aws::String&& value) { SetServiceNamespace(std::move(value)); return *this;}
@@ -197,12 +197,12 @@ namespace Model
      * <p>The service namespace for an AWS service. Provide the service namespace to
      * learn when the IAM entity last attempted to access the specified service.</p>
      * <p>To learn the service namespace for a service, go to <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_actions-resources-contextkeys.html">Actions,
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_actions-resources-contextkeys.html">Actions,
      * Resources, and Condition Keys for AWS Services</a> in the <i>IAM User Guide</i>
      * and choose the name of the service to view details for that service. In the
      * first paragraph, find the service prefix. For example, <code>(service prefix:
      * a4b)</code>. For more information about service namespaces, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces">AWS
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces">AWS
      * Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
      */
     inline GetServiceLastAccessedDetailsWithEntitiesRequest& WithServiceNamespace(const char* value) { SetServiceNamespace(value); return *this;}

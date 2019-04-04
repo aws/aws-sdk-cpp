@@ -36,6 +36,7 @@ Cluster::Cluster() :
     m_endpointHasBeenSet(false),
     m_roleArnHasBeenSet(false),
     m_resourcesVpcConfigHasBeenSet(false),
+    m_loggingHasBeenSet(false),
     m_status(ClusterStatus::NOT_SET),
     m_statusHasBeenSet(false),
     m_certificateAuthorityHasBeenSet(false),
@@ -52,6 +53,7 @@ Cluster::Cluster(JsonView jsonValue) :
     m_endpointHasBeenSet(false),
     m_roleArnHasBeenSet(false),
     m_resourcesVpcConfigHasBeenSet(false),
+    m_loggingHasBeenSet(false),
     m_status(ClusterStatus::NOT_SET),
     m_statusHasBeenSet(false),
     m_certificateAuthorityHasBeenSet(false),
@@ -110,6 +112,13 @@ Cluster& Cluster::operator =(JsonView jsonValue)
     m_resourcesVpcConfig = jsonValue.GetObject("resourcesVpcConfig");
 
     m_resourcesVpcConfigHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("logging"))
+  {
+    m_logging = jsonValue.GetObject("logging");
+
+    m_loggingHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("status"))
@@ -185,6 +194,12 @@ JsonValue Cluster::Jsonize() const
   if(m_resourcesVpcConfigHasBeenSet)
   {
    payload.WithObject("resourcesVpcConfig", m_resourcesVpcConfig.Jsonize());
+
+  }
+
+  if(m_loggingHasBeenSet)
+  {
+   payload.WithObject("logging", m_logging.Jsonize());
 
   }
 

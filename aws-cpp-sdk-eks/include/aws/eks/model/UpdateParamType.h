@@ -29,7 +29,8 @@ namespace Model
     Version,
     PlatformVersion,
     EndpointPrivateAccess,
-    EndpointPublicAccess
+    EndpointPublicAccess,
+    ClusterLogging
   };
 
 namespace UpdateParamTypeMapper

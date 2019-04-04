@@ -208,7 +208,7 @@ namespace Model
      * associates with the user but the MFA device becomes out of sync. This happens
      * because time-based one-time passwords (TOTP) expire after a short period of
      * time. If this happens, you can <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_mfa_sync.html">resync
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_mfa_sync.html">resync
      * the device</a>.</p> </important>
      */
     inline const Aws::String& GetAuthenticationCode1() const{ return m_authenticationCode1; }
@@ -221,7 +221,7 @@ namespace Model
      * associates with the user but the MFA device becomes out of sync. This happens
      * because time-based one-time passwords (TOTP) expire after a short period of
      * time. If this happens, you can <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_mfa_sync.html">resync
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_mfa_sync.html">resync
      * the device</a>.</p> </important>
      */
     inline bool AuthenticationCode1HasBeenSet() const { return m_authenticationCode1HasBeenSet; }
@@ -234,7 +234,7 @@ namespace Model
      * associates with the user but the MFA device becomes out of sync. This happens
      * because time-based one-time passwords (TOTP) expire after a short period of
      * time. If this happens, you can <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_mfa_sync.html">resync
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_mfa_sync.html">resync
      * the device</a>.</p> </important>
      */
     inline void SetAuthenticationCode1(const Aws::String& value) { m_authenticationCode1HasBeenSet = true; m_authenticationCode1 = value; }
@@ -247,7 +247,7 @@ namespace Model
      * associates with the user but the MFA device becomes out of sync. This happens
      * because time-based one-time passwords (TOTP) expire after a short period of
      * time. If this happens, you can <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_mfa_sync.html">resync
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_mfa_sync.html">resync
      * the device</a>.</p> </important>
      */
     inline void SetAuthenticationCode1(Aws::String&& value) { m_authenticationCode1HasBeenSet = true; m_authenticationCode1 = std::move(value); }
@@ -260,7 +260,7 @@ namespace Model
      * associates with the user but the MFA device becomes out of sync. This happens
      * because time-based one-time passwords (TOTP) expire after a short period of
      * time. If this happens, you can <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_mfa_sync.html">resync
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_mfa_sync.html">resync
      * the device</a>.</p> </important>
      */
     inline void SetAuthenticationCode1(const char* value) { m_authenticationCode1HasBeenSet = true; m_authenticationCode1.assign(value); }
@@ -273,7 +273,7 @@ namespace Model
      * associates with the user but the MFA device becomes out of sync. This happens
      * because time-based one-time passwords (TOTP) expire after a short period of
      * time. If this happens, you can <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_mfa_sync.html">resync
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_mfa_sync.html">resync
      * the device</a>.</p> </important>
      */
     inline EnableMFADeviceRequest& WithAuthenticationCode1(const Aws::String& value) { SetAuthenticationCode1(value); return *this;}
@@ -286,7 +286,7 @@ namespace Model
      * associates with the user but the MFA device becomes out of sync. This happens
      * because time-based one-time passwords (TOTP) expire after a short period of
      * time. If this happens, you can <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_mfa_sync.html">resync
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_mfa_sync.html">resync
      * the device</a>.</p> </important>
      */
     inline EnableMFADeviceRequest& WithAuthenticationCode1(Aws::String&& value) { SetAuthenticationCode1(std::move(value)); return *this;}
@@ -299,7 +299,7 @@ namespace Model
      * associates with the user but the MFA device becomes out of sync. This happens
      * because time-based one-time passwords (TOTP) expire after a short period of
      * time. If this happens, you can <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_mfa_sync.html">resync
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_mfa_sync.html">resync
      * the device</a>.</p> </important>
      */
     inline EnableMFADeviceRequest& WithAuthenticationCode1(const char* value) { SetAuthenticationCode1(value); return *this;}
@@ -313,7 +313,7 @@ namespace Model
      * associates with the user but the MFA device becomes out of sync. This happens
      * because time-based one-time passwords (TOTP) expire after a short period of
      * time. If this happens, you can <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_mfa_sync.html">resync
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_mfa_sync.html">resync
      * the device</a>.</p> </important>
      */
     inline const Aws::String& GetAuthenticationCode2() const{ return m_authenticationCode2; }
@@ -326,7 +326,7 @@ namespace Model
      * associates with the user but the MFA device becomes out of sync. This happens
      * because time-based one-time passwords (TOTP) expire after a short period of
      * time. If this happens, you can <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_mfa_sync.html">resync
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_mfa_sync.html">resync
      * the device</a>.</p> </important>
      */
     inline bool AuthenticationCode2HasBeenSet() const { return m_authenticationCode2HasBeenSet; }
@@ -339,7 +339,7 @@ namespace Model
      * associates with the user but the MFA device becomes out of sync. This happens
      * because time-based one-time passwords (TOTP) expire after a short period of
      * time. If this happens, you can <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_mfa_sync.html">resync
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_mfa_sync.html">resync
      * the device</a>.</p> </important>
      */
     inline void SetAuthenticationCode2(const Aws::String& value) { m_authenticationCode2HasBeenSet = true; m_authenticationCode2 = value; }
@@ -352,7 +352,7 @@ namespace Model
      * associates with the user but the MFA device becomes out of sync. This happens
      * because time-based one-time passwords (TOTP) expire after a short period of
      * time. If this happens, you can <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_mfa_sync.html">resync
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_mfa_sync.html">resync
      * the device</a>.</p> </important>
      */
     inline void SetAuthenticationCode2(Aws::String&& value) { m_authenticationCode2HasBeenSet = true; m_authenticationCode2 = std::move(value); }
@@ -365,7 +365,7 @@ namespace Model
      * associates with the user but the MFA device becomes out of sync. This happens
      * because time-based one-time passwords (TOTP) expire after a short period of
      * time. If this happens, you can <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_mfa_sync.html">resync
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_mfa_sync.html">resync
      * the device</a>.</p> </important>
      */
     inline void SetAuthenticationCode2(const char* value) { m_authenticationCode2HasBeenSet = true; m_authenticationCode2.assign(value); }
@@ -378,7 +378,7 @@ namespace Model
      * associates with the user but the MFA device becomes out of sync. This happens
      * because time-based one-time passwords (TOTP) expire after a short period of
      * time. If this happens, you can <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_mfa_sync.html">resync
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_mfa_sync.html">resync
      * the device</a>.</p> </important>
      */
     inline EnableMFADeviceRequest& WithAuthenticationCode2(const Aws::String& value) { SetAuthenticationCode2(value); return *this;}
@@ -391,7 +391,7 @@ namespace Model
      * associates with the user but the MFA device becomes out of sync. This happens
      * because time-based one-time passwords (TOTP) expire after a short period of
      * time. If this happens, you can <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_mfa_sync.html">resync
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_mfa_sync.html">resync
      * the device</a>.</p> </important>
      */
     inline EnableMFADeviceRequest& WithAuthenticationCode2(Aws::String&& value) { SetAuthenticationCode2(std::move(value)); return *this;}
@@ -404,7 +404,7 @@ namespace Model
      * associates with the user but the MFA device becomes out of sync. This happens
      * because time-based one-time passwords (TOTP) expire after a short period of
      * time. If this happens, you can <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_mfa_sync.html">resync
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_mfa_sync.html">resync
      * the device</a>.</p> </important>
      */
     inline EnableMFADeviceRequest& WithAuthenticationCode2(const char* value) { SetAuthenticationCode2(value); return *this;}

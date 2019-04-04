@@ -52,7 +52,7 @@ namespace Model
      * which you want to update the thumbprint. You can get a list of OIDC provider
      * ARNs by using the <a>ListOpenIDConnectProviders</a> operation.</p> <p>For more
      * information about ARNs, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
      * Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General
      * Reference</i>.</p>
      */
@@ -63,7 +63,7 @@ namespace Model
      * which you want to update the thumbprint. You can get a list of OIDC provider
      * ARNs by using the <a>ListOpenIDConnectProviders</a> operation.</p> <p>For more
      * information about ARNs, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
      * Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General
      * Reference</i>.</p>
      */
@@ -74,7 +74,7 @@ namespace Model
      * which you want to update the thumbprint. You can get a list of OIDC provider
      * ARNs by using the <a>ListOpenIDConnectProviders</a> operation.</p> <p>For more
      * information about ARNs, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
      * Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General
      * Reference</i>.</p>
      */
@@ -85,7 +85,7 @@ namespace Model
      * which you want to update the thumbprint. You can get a list of OIDC provider
      * ARNs by using the <a>ListOpenIDConnectProviders</a> operation.</p> <p>For more
      * information about ARNs, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
      * Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General
      * Reference</i>.</p>
      */
@@ -96,7 +96,7 @@ namespace Model
      * which you want to update the thumbprint. You can get a list of OIDC provider
      * ARNs by using the <a>ListOpenIDConnectProviders</a> operation.</p> <p>For more
      * information about ARNs, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
      * Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General
      * Reference</i>.</p>
      */
@@ -107,7 +107,7 @@ namespace Model
      * which you want to update the thumbprint. You can get a list of OIDC provider
      * ARNs by using the <a>ListOpenIDConnectProviders</a> operation.</p> <p>For more
      * information about ARNs, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
      * Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General
      * Reference</i>.</p>
      */
@@ -118,7 +118,7 @@ namespace Model
      * which you want to update the thumbprint. You can get a list of OIDC provider
      * ARNs by using the <a>ListOpenIDConnectProviders</a> operation.</p> <p>For more
      * information about ARNs, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
      * Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General
      * Reference</i>.</p>
      */
@@ -129,7 +129,7 @@ namespace Model
      * which you want to update the thumbprint. You can get a list of OIDC provider
      * ARNs by using the <a>ListOpenIDConnectProviders</a> operation.</p> <p>For more
      * information about ARNs, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
      * Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General
      * Reference</i>.</p>
      */

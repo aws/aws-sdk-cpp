@@ -56,7 +56,7 @@ namespace Model
      * entity. Note that all parameters are shown in unencoded form here for clarity,
      * but must be URL encoded to be included as a part of a real HTML request.</p>
      * <p>For more information about ARNs, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
      * Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General
      * Reference</i>.</p>
      */
@@ -71,7 +71,7 @@ namespace Model
      * entity. Note that all parameters are shown in unencoded form here for clarity,
      * but must be URL encoded to be included as a part of a real HTML request.</p>
      * <p>For more information about ARNs, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
      * Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General
      * Reference</i>.</p>
      */
@@ -86,7 +86,7 @@ namespace Model
      * entity. Note that all parameters are shown in unencoded form here for clarity,
      * but must be URL encoded to be included as a part of a real HTML request.</p>
      * <p>For more information about ARNs, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
      * Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General
      * Reference</i>.</p>
      */
@@ -101,7 +101,7 @@ namespace Model
      * entity. Note that all parameters are shown in unencoded form here for clarity,
      * but must be URL encoded to be included as a part of a real HTML request.</p>
      * <p>For more information about ARNs, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
      * Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General
      * Reference</i>.</p>
      */
@@ -116,7 +116,7 @@ namespace Model
      * entity. Note that all parameters are shown in unencoded form here for clarity,
      * but must be URL encoded to be included as a part of a real HTML request.</p>
      * <p>For more information about ARNs, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
      * Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General
      * Reference</i>.</p>
      */
@@ -131,7 +131,7 @@ namespace Model
      * entity. Note that all parameters are shown in unencoded form here for clarity,
      * but must be URL encoded to be included as a part of a real HTML request.</p>
      * <p>For more information about ARNs, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
      * Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General
      * Reference</i>.</p>
      */
@@ -146,7 +146,7 @@ namespace Model
      * entity. Note that all parameters are shown in unencoded form here for clarity,
      * but must be URL encoded to be included as a part of a real HTML request.</p>
      * <p>For more information about ARNs, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
      * Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General
      * Reference</i>.</p>
      */
@@ -161,7 +161,7 @@ namespace Model
      * entity. Note that all parameters are shown in unencoded form here for clarity,
      * but must be URL encoded to be included as a part of a real HTML request.</p>
      * <p>For more information about ARNs, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
      * Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General
      * Reference</i>.</p>
      */

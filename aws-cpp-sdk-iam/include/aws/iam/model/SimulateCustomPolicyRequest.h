@@ -55,9 +55,9 @@ namespace Model
      * policy must be submitted with the <code>ResourcePolicy</code> parameter. The
      * policies cannot be "scope-down" policies, such as you could include in a call to
      * <a
-     * href="http://docs.aws.amazon.com/IAM/latest/APIReference/API_GetFederationToken.html">GetFederationToken</a>
+     * href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetFederationToken.html">GetFederationToken</a>
      * or one of the <a
-     * href="http://docs.aws.amazon.com/IAM/latest/APIReference/API_AssumeRole.html">AssumeRole</a>
+     * href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_AssumeRole.html">AssumeRole</a>
      * API operations. In other words, do not use policies designed to restrict what a
      * user can do while using the temporary credentials.</p> <p>The <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this
@@ -77,9 +77,9 @@ namespace Model
      * policy must be submitted with the <code>ResourcePolicy</code> parameter. The
      * policies cannot be "scope-down" policies, such as you could include in a call to
      * <a
-     * href="http://docs.aws.amazon.com/IAM/latest/APIReference/API_GetFederationToken.html">GetFederationToken</a>
+     * href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetFederationToken.html">GetFederationToken</a>
      * or one of the <a
-     * href="http://docs.aws.amazon.com/IAM/latest/APIReference/API_AssumeRole.html">AssumeRole</a>
+     * href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_AssumeRole.html">AssumeRole</a>
      * API operations. In other words, do not use policies designed to restrict what a
      * user can do while using the temporary credentials.</p> <p>The <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this
@@ -99,9 +99,9 @@ namespace Model
      * policy must be submitted with the <code>ResourcePolicy</code> parameter. The
      * policies cannot be "scope-down" policies, such as you could include in a call to
      * <a
-     * href="http://docs.aws.amazon.com/IAM/latest/APIReference/API_GetFederationToken.html">GetFederationToken</a>
+     * href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetFederationToken.html">GetFederationToken</a>
      * or one of the <a
-     * href="http://docs.aws.amazon.com/IAM/latest/APIReference/API_AssumeRole.html">AssumeRole</a>
+     * href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_AssumeRole.html">AssumeRole</a>
      * API operations. In other words, do not use policies designed to restrict what a
      * user can do while using the temporary credentials.</p> <p>The <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this
@@ -121,9 +121,9 @@ namespace Model
      * policy must be submitted with the <code>ResourcePolicy</code> parameter. The
      * policies cannot be "scope-down" policies, such as you could include in a call to
      * <a
-     * href="http://docs.aws.amazon.com/IAM/latest/APIReference/API_GetFederationToken.html">GetFederationToken</a>
+     * href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetFederationToken.html">GetFederationToken</a>
      * or one of the <a
-     * href="http://docs.aws.amazon.com/IAM/latest/APIReference/API_AssumeRole.html">AssumeRole</a>
+     * href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_AssumeRole.html">AssumeRole</a>
      * API operations. In other words, do not use policies designed to restrict what a
      * user can do while using the temporary credentials.</p> <p>The <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this
@@ -143,9 +143,9 @@ namespace Model
      * policy must be submitted with the <code>ResourcePolicy</code> parameter. The
      * policies cannot be "scope-down" policies, such as you could include in a call to
      * <a
-     * href="http://docs.aws.amazon.com/IAM/latest/APIReference/API_GetFederationToken.html">GetFederationToken</a>
+     * href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetFederationToken.html">GetFederationToken</a>
      * or one of the <a
-     * href="http://docs.aws.amazon.com/IAM/latest/APIReference/API_AssumeRole.html">AssumeRole</a>
+     * href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_AssumeRole.html">AssumeRole</a>
      * API operations. In other words, do not use policies designed to restrict what a
      * user can do while using the temporary credentials.</p> <p>The <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this
@@ -165,9 +165,9 @@ namespace Model
      * policy must be submitted with the <code>ResourcePolicy</code> parameter. The
      * policies cannot be "scope-down" policies, such as you could include in a call to
      * <a
-     * href="http://docs.aws.amazon.com/IAM/latest/APIReference/API_GetFederationToken.html">GetFederationToken</a>
+     * href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetFederationToken.html">GetFederationToken</a>
      * or one of the <a
-     * href="http://docs.aws.amazon.com/IAM/latest/APIReference/API_AssumeRole.html">AssumeRole</a>
+     * href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_AssumeRole.html">AssumeRole</a>
      * API operations. In other words, do not use policies designed to restrict what a
      * user can do while using the temporary credentials.</p> <p>The <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this
@@ -187,9 +187,9 @@ namespace Model
      * policy must be submitted with the <code>ResourcePolicy</code> parameter. The
      * policies cannot be "scope-down" policies, such as you could include in a call to
      * <a
-     * href="http://docs.aws.amazon.com/IAM/latest/APIReference/API_GetFederationToken.html">GetFederationToken</a>
+     * href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetFederationToken.html">GetFederationToken</a>
      * or one of the <a
-     * href="http://docs.aws.amazon.com/IAM/latest/APIReference/API_AssumeRole.html">AssumeRole</a>
+     * href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_AssumeRole.html">AssumeRole</a>
      * API operations. In other words, do not use policies designed to restrict what a
      * user can do while using the temporary credentials.</p> <p>The <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this
@@ -209,9 +209,9 @@ namespace Model
      * policy must be submitted with the <code>ResourcePolicy</code> parameter. The
      * policies cannot be "scope-down" policies, such as you could include in a call to
      * <a
-     * href="http://docs.aws.amazon.com/IAM/latest/APIReference/API_GetFederationToken.html">GetFederationToken</a>
+     * href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetFederationToken.html">GetFederationToken</a>
      * or one of the <a
-     * href="http://docs.aws.amazon.com/IAM/latest/APIReference/API_AssumeRole.html">AssumeRole</a>
+     * href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_AssumeRole.html">AssumeRole</a>
      * API operations. In other words, do not use policies designed to restrict what a
      * user can do while using the temporary credentials.</p> <p>The <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this
@@ -231,9 +231,9 @@ namespace Model
      * policy must be submitted with the <code>ResourcePolicy</code> parameter. The
      * policies cannot be "scope-down" policies, such as you could include in a call to
      * <a
-     * href="http://docs.aws.amazon.com/IAM/latest/APIReference/API_GetFederationToken.html">GetFederationToken</a>
+     * href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetFederationToken.html">GetFederationToken</a>
      * or one of the <a
-     * href="http://docs.aws.amazon.com/IAM/latest/APIReference/API_AssumeRole.html">AssumeRole</a>
+     * href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_AssumeRole.html">AssumeRole</a>
      * API operations. In other words, do not use policies designed to restrict what a
      * user can do while using the temporary credentials.</p> <p>The <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this
@@ -323,7 +323,7 @@ namespace Model
      * <p>If you include a <code>ResourcePolicy</code>, then it must be applicable to
      * all of the resources included in the simulation or you receive an invalid input
      * error.</p> <p>For more information about ARNs, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
      * Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General
      * Reference</i>.</p>
      */
@@ -341,7 +341,7 @@ namespace Model
      * <p>If you include a <code>ResourcePolicy</code>, then it must be applicable to
      * all of the resources included in the simulation or you receive an invalid input
      * error.</p> <p>For more information about ARNs, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
      * Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General
      * Reference</i>.</p>
      */
@@ -359,7 +359,7 @@ namespace Model
      * <p>If you include a <code>ResourcePolicy</code>, then it must be applicable to
      * all of the resources included in the simulation or you receive an invalid input
      * error.</p> <p>For more information about ARNs, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
      * Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General
      * Reference</i>.</p>
      */
@@ -377,7 +377,7 @@ namespace Model
      * <p>If you include a <code>ResourcePolicy</code>, then it must be applicable to
      * all of the resources included in the simulation or you receive an invalid input
      * error.</p> <p>For more information about ARNs, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
      * Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General
      * Reference</i>.</p>
      */
@@ -395,7 +395,7 @@ namespace Model
      * <p>If you include a <code>ResourcePolicy</code>, then it must be applicable to
      * all of the resources included in the simulation or you receive an invalid input
      * error.</p> <p>For more information about ARNs, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
      * Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General
      * Reference</i>.</p>
      */
@@ -413,7 +413,7 @@ namespace Model
      * <p>If you include a <code>ResourcePolicy</code>, then it must be applicable to
      * all of the resources included in the simulation or you receive an invalid input
      * error.</p> <p>For more information about ARNs, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
      * Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General
      * Reference</i>.</p>
      */
@@ -431,7 +431,7 @@ namespace Model
      * <p>If you include a <code>ResourcePolicy</code>, then it must be applicable to
      * all of the resources included in the simulation or you receive an invalid input
      * error.</p> <p>For more information about ARNs, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
      * Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General
      * Reference</i>.</p>
      */
@@ -449,7 +449,7 @@ namespace Model
      * <p>If you include a <code>ResourcePolicy</code>, then it must be applicable to
      * all of the resources included in the simulation or you receive an invalid input
      * error.</p> <p>For more information about ARNs, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
      * Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General
      * Reference</i>.</p>
      */
@@ -467,7 +467,7 @@ namespace Model
      * <p>If you include a <code>ResourcePolicy</code>, then it must be applicable to
      * all of the resources included in the simulation or you receive an invalid input
      * error.</p> <p>For more information about ARNs, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
      * Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General
      * Reference</i>.</p>
      */
@@ -876,7 +876,7 @@ namespace Model
      * VPC, then you must supply the network-interface resource. If it includes an IP
      * subnet, then you must specify the subnet resource. For more information on the
      * EC2 scenario options, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported
      * Platforms</a> in the <i>Amazon EC2 User Guide</i>.</p> <ul> <li> <p>
      * <b>EC2-Classic-InstanceStore</b> </p> <p>instance, image, security-group</p>
      * </li> <li> <p> <b>EC2-Classic-EBS</b> </p> <p>instance, image, security-group,
@@ -904,7 +904,7 @@ namespace Model
      * VPC, then you must supply the network-interface resource. If it includes an IP
      * subnet, then you must specify the subnet resource. For more information on the
      * EC2 scenario options, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported
      * Platforms</a> in the <i>Amazon EC2 User Guide</i>.</p> <ul> <li> <p>
      * <b>EC2-Classic-InstanceStore</b> </p> <p>instance, image, security-group</p>
      * </li> <li> <p> <b>EC2-Classic-EBS</b> </p> <p>instance, image, security-group,
@@ -932,7 +932,7 @@ namespace Model
      * VPC, then you must supply the network-interface resource. If it includes an IP
      * subnet, then you must specify the subnet resource. For more information on the
      * EC2 scenario options, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported
      * Platforms</a> in the <i>Amazon EC2 User Guide</i>.</p> <ul> <li> <p>
      * <b>EC2-Classic-InstanceStore</b> </p> <p>instance, image, security-group</p>
      * </li> <li> <p> <b>EC2-Classic-EBS</b> </p> <p>instance, image, security-group,
@@ -960,7 +960,7 @@ namespace Model
      * VPC, then you must supply the network-interface resource. If it includes an IP
      * subnet, then you must specify the subnet resource. For more information on the
      * EC2 scenario options, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported
      * Platforms</a> in the <i>Amazon EC2 User Guide</i>.</p> <ul> <li> <p>
      * <b>EC2-Classic-InstanceStore</b> </p> <p>instance, image, security-group</p>
      * </li> <li> <p> <b>EC2-Classic-EBS</b> </p> <p>instance, image, security-group,
@@ -988,7 +988,7 @@ namespace Model
      * VPC, then you must supply the network-interface resource. If it includes an IP
      * subnet, then you must specify the subnet resource. For more information on the
      * EC2 scenario options, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported
      * Platforms</a> in the <i>Amazon EC2 User Guide</i>.</p> <ul> <li> <p>
      * <b>EC2-Classic-InstanceStore</b> </p> <p>instance, image, security-group</p>
      * </li> <li> <p> <b>EC2-Classic-EBS</b> </p> <p>instance, image, security-group,
@@ -1016,7 +1016,7 @@ namespace Model
      * VPC, then you must supply the network-interface resource. If it includes an IP
      * subnet, then you must specify the subnet resource. For more information on the
      * EC2 scenario options, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported
      * Platforms</a> in the <i>Amazon EC2 User Guide</i>.</p> <ul> <li> <p>
      * <b>EC2-Classic-InstanceStore</b> </p> <p>instance, image, security-group</p>
      * </li> <li> <p> <b>EC2-Classic-EBS</b> </p> <p>instance, image, security-group,
@@ -1044,7 +1044,7 @@ namespace Model
      * VPC, then you must supply the network-interface resource. If it includes an IP
      * subnet, then you must specify the subnet resource. For more information on the
      * EC2 scenario options, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported
      * Platforms</a> in the <i>Amazon EC2 User Guide</i>.</p> <ul> <li> <p>
      * <b>EC2-Classic-InstanceStore</b> </p> <p>instance, image, security-group</p>
      * </li> <li> <p> <b>EC2-Classic-EBS</b> </p> <p>instance, image, security-group,
@@ -1072,7 +1072,7 @@ namespace Model
      * VPC, then you must supply the network-interface resource. If it includes an IP
      * subnet, then you must specify the subnet resource. For more information on the
      * EC2 scenario options, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported
      * Platforms</a> in the <i>Amazon EC2 User Guide</i>.</p> <ul> <li> <p>
      * <b>EC2-Classic-InstanceStore</b> </p> <p>instance, image, security-group</p>
      * </li> <li> <p> <b>EC2-Classic-EBS</b> </p> <p>instance, image, security-group,

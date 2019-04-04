@@ -27,7 +27,8 @@ namespace Model
   {
     NOT_SET,
     VersionUpdate,
-    EndpointAccessUpdate
+    EndpointAccessUpdate,
+    LoggingUpdate
   };
 
 namespace UpdateTypeMapper

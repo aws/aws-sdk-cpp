@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/eks/model/VpcConfigResponse.h>
+#include <aws/eks/model/Logging.h>
 #include <aws/eks/model/ClusterStatus.h>
 #include <aws/eks/model/Certificate.h>
 #include <utility>
@@ -371,6 +372,37 @@ namespace Model
 
 
     /**
+     * <p>The logging configuration for your cluster.</p>
+     */
+    inline const Logging& GetLogging() const{ return m_logging; }
+
+    /**
+     * <p>The logging configuration for your cluster.</p>
+     */
+    inline bool LoggingHasBeenSet() const { return m_loggingHasBeenSet; }
+
+    /**
+     * <p>The logging configuration for your cluster.</p>
+     */
+    inline void SetLogging(const Logging& value) { m_loggingHasBeenSet = true; m_logging = value; }
+
+    /**
+     * <p>The logging configuration for your cluster.</p>
+     */
+    inline void SetLogging(Logging&& value) { m_loggingHasBeenSet = true; m_logging = std::move(value); }
+
+    /**
+     * <p>The logging configuration for your cluster.</p>
+     */
+    inline Cluster& WithLogging(const Logging& value) { SetLogging(value); return *this;}
+
+    /**
+     * <p>The logging configuration for your cluster.</p>
+     */
+    inline Cluster& WithLogging(Logging&& value) { SetLogging(std::move(value)); return *this;}
+
+
+    /**
      * <p>The current status of the cluster.</p>
      */
     inline const ClusterStatus& GetStatus() const{ return m_status; }
@@ -559,6 +591,9 @@ namespace Model
 
     VpcConfigResponse m_resourcesVpcConfig;
     bool m_resourcesVpcConfigHasBeenSet;
+
+    Logging m_logging;
+    bool m_loggingHasBeenSet;
 
     ClusterStatus m_status;
     bool m_statusHasBeenSet;

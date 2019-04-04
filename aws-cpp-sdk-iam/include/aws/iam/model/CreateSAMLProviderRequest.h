@@ -53,7 +53,7 @@ namespace Model
      * are received from the IdP. You must generate the metadata document using the
      * identity management software that is used as your organization's IdP.</p> <p>For
      * more information, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_saml.html">About
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_saml.html">About
      * SAML 2.0-based Federation</a> in the <i>IAM User Guide</i> </p>
      */
     inline const Aws::String& GetSAMLMetadataDocument() const{ return m_sAMLMetadataDocument; }
@@ -65,7 +65,7 @@ namespace Model
      * are received from the IdP. You must generate the metadata document using the
      * identity management software that is used as your organization's IdP.</p> <p>For
      * more information, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_saml.html">About
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_saml.html">About
      * SAML 2.0-based Federation</a> in the <i>IAM User Guide</i> </p>
      */
     inline bool SAMLMetadataDocumentHasBeenSet() const { return m_sAMLMetadataDocumentHasBeenSet; }
@@ -77,7 +77,7 @@ namespace Model
      * are received from the IdP. You must generate the metadata document using the
      * identity management software that is used as your organization's IdP.</p> <p>For
      * more information, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_saml.html">About
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_saml.html">About
      * SAML 2.0-based Federation</a> in the <i>IAM User Guide</i> </p>
      */
     inline void SetSAMLMetadataDocument(const Aws::String& value) { m_sAMLMetadataDocumentHasBeenSet = true; m_sAMLMetadataDocument = value; }
@@ -89,7 +89,7 @@ namespace Model
      * are received from the IdP. You must generate the metadata document using the
      * identity management software that is used as your organization's IdP.</p> <p>For
      * more information, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_saml.html">About
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_saml.html">About
      * SAML 2.0-based Federation</a> in the <i>IAM User Guide</i> </p>
      */
     inline void SetSAMLMetadataDocument(Aws::String&& value) { m_sAMLMetadataDocumentHasBeenSet = true; m_sAMLMetadataDocument = std::move(value); }
@@ -101,7 +101,7 @@ namespace Model
      * are received from the IdP. You must generate the metadata document using the
      * identity management software that is used as your organization's IdP.</p> <p>For
      * more information, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_saml.html">About
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_saml.html">About
      * SAML 2.0-based Federation</a> in the <i>IAM User Guide</i> </p>
      */
     inline void SetSAMLMetadataDocument(const char* value) { m_sAMLMetadataDocumentHasBeenSet = true; m_sAMLMetadataDocument.assign(value); }
@@ -113,7 +113,7 @@ namespace Model
      * are received from the IdP. You must generate the metadata document using the
      * identity management software that is used as your organization's IdP.</p> <p>For
      * more information, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_saml.html">About
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_saml.html">About
      * SAML 2.0-based Federation</a> in the <i>IAM User Guide</i> </p>
      */
     inline CreateSAMLProviderRequest& WithSAMLMetadataDocument(const Aws::String& value) { SetSAMLMetadataDocument(value); return *this;}
@@ -125,7 +125,7 @@ namespace Model
      * are received from the IdP. You must generate the metadata document using the
      * identity management software that is used as your organization's IdP.</p> <p>For
      * more information, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_saml.html">About
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_saml.html">About
      * SAML 2.0-based Federation</a> in the <i>IAM User Guide</i> </p>
      */
     inline CreateSAMLProviderRequest& WithSAMLMetadataDocument(Aws::String&& value) { SetSAMLMetadataDocument(std::move(value)); return *this;}
@@ -137,7 +137,7 @@ namespace Model
      * are received from the IdP. You must generate the metadata document using the
      * identity management software that is used as your organization's IdP.</p> <p>For
      * more information, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_saml.html">About
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_saml.html">About
      * SAML 2.0-based Federation</a> in the <i>IAM User Guide</i> </p>
      */
     inline CreateSAMLProviderRequest& WithSAMLMetadataDocument(const char* value) { SetSAMLMetadataDocument(value); return *this;}
