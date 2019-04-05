@@ -26,6 +26,7 @@ using namespace Aws::Utils;
 using namespace Aws::Http;
 
 ListOfferingsRequest::ListOfferingsRequest() : 
+    m_channelClassHasBeenSet(false),
     m_channelConfigurationHasBeenSet(false),
     m_codecHasBeenSet(false),
     m_maxResults(0),
@@ -48,6 +49,13 @@ Aws::String ListOfferingsRequest::SerializePayload() const
 void ListOfferingsRequest::AddQueryStringParameters(URI& uri) const
 {
     Aws::StringStream ss;
+    if(m_channelClassHasBeenSet)
+    {
+      ss << m_channelClass;
+      uri.AddQueryStringParameter("channelClass", ss.str());
+      ss.str("");
+    }
+
     if(m_channelConfigurationHasBeenSet)
     {
       ss << m_channelConfiguration;

@@ -29,15 +29,7 @@ DisassociateCertificateRequest::DisassociateCertificateRequest() :
 
 Aws::String DisassociateCertificateRequest::SerializePayload() const
 {
-  JsonValue payload;
-
-  if(m_arnHasBeenSet)
-  {
-   payload.WithString("arn", m_arn);
-
-  }
-
-  return payload.View().WriteReadable();
+  return {};
 }
 
 

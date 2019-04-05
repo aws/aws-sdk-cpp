@@ -40,6 +40,7 @@ DocumentClassifierProperties::DocumentClassifierProperties() :
     m_trainingStartTimeHasBeenSet(false),
     m_trainingEndTimeHasBeenSet(false),
     m_inputDataConfigHasBeenSet(false),
+    m_outputDataConfigHasBeenSet(false),
     m_classifierMetadataHasBeenSet(false),
     m_dataAccessRoleArnHasBeenSet(false),
     m_volumeKmsKeyIdHasBeenSet(false)
@@ -58,6 +59,7 @@ DocumentClassifierProperties::DocumentClassifierProperties(JsonView jsonValue) :
     m_trainingStartTimeHasBeenSet(false),
     m_trainingEndTimeHasBeenSet(false),
     m_inputDataConfigHasBeenSet(false),
+    m_outputDataConfigHasBeenSet(false),
     m_classifierMetadataHasBeenSet(false),
     m_dataAccessRoleArnHasBeenSet(false),
     m_volumeKmsKeyIdHasBeenSet(false)
@@ -128,6 +130,13 @@ DocumentClassifierProperties& DocumentClassifierProperties::operator =(JsonView 
     m_inputDataConfig = jsonValue.GetObject("InputDataConfig");
 
     m_inputDataConfigHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("OutputDataConfig"))
+  {
+    m_outputDataConfig = jsonValue.GetObject("OutputDataConfig");
+
+    m_outputDataConfigHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("ClassifierMetadata"))
@@ -203,6 +212,12 @@ JsonValue DocumentClassifierProperties::Jsonize() const
   if(m_inputDataConfigHasBeenSet)
   {
    payload.WithObject("InputDataConfig", m_inputDataConfig.Jsonize());
+
+  }
+
+  if(m_outputDataConfigHasBeenSet)
+  {
+   payload.WithObject("OutputDataConfig", m_outputDataConfig.Jsonize());
 
   }
 

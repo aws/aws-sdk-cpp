@@ -15,6 +15,7 @@
 
 #pragma once
 #include <aws/medialive/MediaLive_EXPORTS.h>
+#include <aws/medialive/model/ChannelClass.h>
 #include <aws/medialive/model/ReservationCodec.h>
 #include <aws/medialive/model/ReservationMaximumBitrate.h>
 #include <aws/medialive/model/ReservationMaximumFramerate.h>
@@ -52,6 +53,37 @@ namespace Model
     ReservationResourceSpecification(Aws::Utils::Json::JsonView jsonValue);
     ReservationResourceSpecification& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
+
+
+    /**
+     * Channel class, e.g. 'STANDARD'
+     */
+    inline const ChannelClass& GetChannelClass() const{ return m_channelClass; }
+
+    /**
+     * Channel class, e.g. 'STANDARD'
+     */
+    inline bool ChannelClassHasBeenSet() const { return m_channelClassHasBeenSet; }
+
+    /**
+     * Channel class, e.g. 'STANDARD'
+     */
+    inline void SetChannelClass(const ChannelClass& value) { m_channelClassHasBeenSet = true; m_channelClass = value; }
+
+    /**
+     * Channel class, e.g. 'STANDARD'
+     */
+    inline void SetChannelClass(ChannelClass&& value) { m_channelClassHasBeenSet = true; m_channelClass = std::move(value); }
+
+    /**
+     * Channel class, e.g. 'STANDARD'
+     */
+    inline ReservationResourceSpecification& WithChannelClass(const ChannelClass& value) { SetChannelClass(value); return *this;}
+
+    /**
+     * Channel class, e.g. 'STANDARD'
+     */
+    inline ReservationResourceSpecification& WithChannelClass(ChannelClass&& value) { SetChannelClass(std::move(value)); return *this;}
 
 
     /**
@@ -271,6 +303,9 @@ namespace Model
     inline ReservationResourceSpecification& WithVideoQuality(ReservationVideoQuality&& value) { SetVideoQuality(std::move(value)); return *this;}
 
   private:
+
+    ChannelClass m_channelClass;
+    bool m_channelClassHasBeenSet;
 
     ReservationCodec m_codec;
     bool m_codecHasBeenSet;

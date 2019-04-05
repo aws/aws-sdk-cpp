@@ -1237,18 +1237,16 @@ namespace Model
         virtual void ListSentimentDetectionJobsAsync(const Model::ListSentimentDetectionJobsRequest& request, const ListSentimentDetectionJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Lists all tags associated with a given Amazon Comprehend resource. Up to the
-         * maximum number of tags allowed per resource will be displayed. </p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Lists all tags associated with a given Amazon Comprehend resource.
+         * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/ListTagsForResource">AWS
          * API Reference</a></p>
          */
         virtual Model::ListTagsForResourceOutcome ListTagsForResource(const Model::ListTagsForResourceRequest& request) const;
 
         /**
-         * <p>Lists all tags associated with a given Amazon Comprehend resource. Up to the
-         * maximum number of tags allowed per resource will be displayed. </p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Lists all tags associated with a given Amazon Comprehend resource.
+         * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/ListTagsForResource">AWS
          * API Reference</a></p>
          *
@@ -1257,9 +1255,8 @@ namespace Model
         virtual Model::ListTagsForResourceOutcomeCallable ListTagsForResourceCallable(const Model::ListTagsForResourceRequest& request) const;
 
         /**
-         * <p>Lists all tags associated with a given Amazon Comprehend resource. Up to the
-         * maximum number of tags allowed per resource will be displayed. </p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Lists all tags associated with a given Amazon Comprehend resource.
+         * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/ListTagsForResource">AWS
          * API Reference</a></p>
          *
@@ -1781,9 +1778,8 @@ namespace Model
         /**
          * <p>Associates a specific tag with an Amazon Comprehend resource. A tag is a
          * key-value pair that adds as a metadata to a resource used by Amazon Comprehend.
-         * For example, a tag with the key-value pair ‘Department’:’Sales’ might be added
-         * to a resource to indicate its use by a particular department. </p><p><h3>See
-         * Also:</h3>   <a
+         * For example, a tag with "Sales" as the key might be added to a resource to
+         * indicate its use by the sales department. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/TagResource">AWS
          * API Reference</a></p>
          */
@@ -1792,9 +1788,8 @@ namespace Model
         /**
          * <p>Associates a specific tag with an Amazon Comprehend resource. A tag is a
          * key-value pair that adds as a metadata to a resource used by Amazon Comprehend.
-         * For example, a tag with the key-value pair ‘Department’:’Sales’ might be added
-         * to a resource to indicate its use by a particular department. </p><p><h3>See
-         * Also:</h3>   <a
+         * For example, a tag with "Sales" as the key might be added to a resource to
+         * indicate its use by the sales department. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/TagResource">AWS
          * API Reference</a></p>
          *
@@ -1805,9 +1800,8 @@ namespace Model
         /**
          * <p>Associates a specific tag with an Amazon Comprehend resource. A tag is a
          * key-value pair that adds as a metadata to a resource used by Amazon Comprehend.
-         * For example, a tag with the key-value pair ‘Department’:’Sales’ might be added
-         * to a resource to indicate its use by a particular department. </p><p><h3>See
-         * Also:</h3>   <a
+         * For example, a tag with "Sales" as the key might be added to a resource to
+         * indicate its use by the sales department. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/TagResource">AWS
          * API Reference</a></p>
          *

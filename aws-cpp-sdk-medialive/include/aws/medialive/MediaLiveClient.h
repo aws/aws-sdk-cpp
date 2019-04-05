@@ -47,6 +47,7 @@
 #include <aws/medialive/model/UpdateChannelResult.h>
 #include <aws/medialive/model/UpdateInputResult.h>
 #include <aws/medialive/model/UpdateInputSecurityGroupResult.h>
+#include <aws/medialive/model/UpdateReservationResult.h>
 #include <aws/core/NoResult.h>
 #include <aws/core/client/AsyncCallerContext.h>
 #include <aws/core/http/HttpTypes.h>
@@ -116,6 +117,7 @@ namespace Model
         class UpdateChannelRequest;
         class UpdateInputRequest;
         class UpdateInputSecurityGroupRequest;
+        class UpdateReservationRequest;
 
         typedef Aws::Utils::Outcome<BatchUpdateScheduleResult, Aws::Client::AWSError<MediaLiveErrors>> BatchUpdateScheduleOutcome;
         typedef Aws::Utils::Outcome<CreateChannelResult, Aws::Client::AWSError<MediaLiveErrors>> CreateChannelOutcome;
@@ -145,6 +147,7 @@ namespace Model
         typedef Aws::Utils::Outcome<UpdateChannelResult, Aws::Client::AWSError<MediaLiveErrors>> UpdateChannelOutcome;
         typedef Aws::Utils::Outcome<UpdateInputResult, Aws::Client::AWSError<MediaLiveErrors>> UpdateInputOutcome;
         typedef Aws::Utils::Outcome<UpdateInputSecurityGroupResult, Aws::Client::AWSError<MediaLiveErrors>> UpdateInputSecurityGroupOutcome;
+        typedef Aws::Utils::Outcome<UpdateReservationResult, Aws::Client::AWSError<MediaLiveErrors>> UpdateReservationOutcome;
 
         typedef std::future<BatchUpdateScheduleOutcome> BatchUpdateScheduleOutcomeCallable;
         typedef std::future<CreateChannelOutcome> CreateChannelOutcomeCallable;
@@ -174,6 +177,7 @@ namespace Model
         typedef std::future<UpdateChannelOutcome> UpdateChannelOutcomeCallable;
         typedef std::future<UpdateInputOutcome> UpdateInputOutcomeCallable;
         typedef std::future<UpdateInputSecurityGroupOutcome> UpdateInputSecurityGroupOutcomeCallable;
+        typedef std::future<UpdateReservationOutcome> UpdateReservationOutcomeCallable;
 } // namespace Model
 
   class MediaLiveClient;
@@ -206,6 +210,7 @@ namespace Model
     typedef std::function<void(const MediaLiveClient*, const Model::UpdateChannelRequest&, const Model::UpdateChannelOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateChannelResponseReceivedHandler;
     typedef std::function<void(const MediaLiveClient*, const Model::UpdateInputRequest&, const Model::UpdateInputOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateInputResponseReceivedHandler;
     typedef std::function<void(const MediaLiveClient*, const Model::UpdateInputSecurityGroupRequest&, const Model::UpdateInputSecurityGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateInputSecurityGroupResponseReceivedHandler;
+    typedef std::function<void(const MediaLiveClient*, const Model::UpdateReservationRequest&, const Model::UpdateReservationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateReservationResponseReceivedHandler;
 
   /**
    * API for AWS Elemental MediaLive
@@ -948,6 +953,31 @@ namespace Model
          */
         virtual void UpdateInputSecurityGroupAsync(const Model::UpdateInputSecurityGroupRequest& request, const UpdateInputSecurityGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
+        /**
+         * Update reservation.<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/UpdateReservation">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateReservationOutcome UpdateReservation(const Model::UpdateReservationRequest& request) const;
+
+        /**
+         * Update reservation.<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/UpdateReservation">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UpdateReservationOutcomeCallable UpdateReservationCallable(const Model::UpdateReservationRequest& request) const;
+
+        /**
+         * Update reservation.<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/UpdateReservation">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UpdateReservationAsync(const Model::UpdateReservationRequest& request, const UpdateReservationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
       
       void OverrideEndpoint(const Aws::String& endpoint);
     private:
@@ -981,6 +1011,7 @@ namespace Model
         void UpdateChannelAsyncHelper(const Model::UpdateChannelRequest& request, const UpdateChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateInputAsyncHelper(const Model::UpdateInputRequest& request, const UpdateInputResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateInputSecurityGroupAsyncHelper(const Model::UpdateInputSecurityGroupRequest& request, const UpdateInputSecurityGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UpdateReservationAsyncHelper(const Model::UpdateReservationRequest& request, const UpdateReservationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
 
       Aws::String m_uri;
       Aws::String m_configScheme;

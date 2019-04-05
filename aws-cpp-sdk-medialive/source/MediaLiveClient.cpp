@@ -58,6 +58,7 @@
 #include <aws/medialive/model/UpdateChannelRequest.h>
 #include <aws/medialive/model/UpdateInputRequest.h>
 #include <aws/medialive/model/UpdateInputSecurityGroupRequest.h>
+#include <aws/medialive/model/UpdateReservationRequest.h>
 
 using namespace Aws;
 using namespace Aws::Auth;
@@ -1238,5 +1239,46 @@ void MediaLiveClient::UpdateInputSecurityGroupAsync(const UpdateInputSecurityGro
 void MediaLiveClient::UpdateInputSecurityGroupAsyncHelper(const UpdateInputSecurityGroupRequest& request, const UpdateInputSecurityGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, UpdateInputSecurityGroup(request), context);
+}
+
+UpdateReservationOutcome MediaLiveClient::UpdateReservation(const UpdateReservationRequest& request) const
+{
+  if (!request.ReservationIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateReservation", "Required field: ReservationId, is not set");
+    return UpdateReservationOutcome(Aws::Client::AWSError<MediaLiveErrors>(MediaLiveErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ReservationId]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/prod/reservations/";
+  ss << request.GetReservationId();
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return UpdateReservationOutcome(UpdateReservationResult(outcome.GetResult()));
+  }
+  else
+  {
+    return UpdateReservationOutcome(outcome.GetError());
+  }
+}
+
+UpdateReservationOutcomeCallable MediaLiveClient::UpdateReservationCallable(const UpdateReservationRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateReservationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateReservation(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void MediaLiveClient::UpdateReservationAsync(const UpdateReservationRequest& request, const UpdateReservationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateReservationAsyncHelper( request, handler, context ); } );
+}
+
+void MediaLiveClient::UpdateReservationAsyncHelper(const UpdateReservationRequest& request, const UpdateReservationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateReservation(request), context);
 }
 

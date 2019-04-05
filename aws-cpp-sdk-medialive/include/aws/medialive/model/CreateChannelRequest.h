@@ -16,6 +16,7 @@
 #pragma once
 #include <aws/medialive/MediaLive_EXPORTS.h>
 #include <aws/medialive/MediaLiveRequest.h>
+#include <aws/medialive/model/ChannelClass.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/medialive/model/EncoderSettings.h>
 #include <aws/medialive/model/InputSpecification.h>
@@ -51,6 +52,43 @@ namespace Model
     inline virtual const char* GetServiceRequestName() const override { return "CreateChannel"; }
 
     Aws::String SerializePayload() const override;
+
+
+    /**
+     * The class for this channel. STANDARD for a channel with two pipelines or
+     * SINGLE_PIPELINE for a channel with one pipeline.
+     */
+    inline const ChannelClass& GetChannelClass() const{ return m_channelClass; }
+
+    /**
+     * The class for this channel. STANDARD for a channel with two pipelines or
+     * SINGLE_PIPELINE for a channel with one pipeline.
+     */
+    inline bool ChannelClassHasBeenSet() const { return m_channelClassHasBeenSet; }
+
+    /**
+     * The class for this channel. STANDARD for a channel with two pipelines or
+     * SINGLE_PIPELINE for a channel with one pipeline.
+     */
+    inline void SetChannelClass(const ChannelClass& value) { m_channelClassHasBeenSet = true; m_channelClass = value; }
+
+    /**
+     * The class for this channel. STANDARD for a channel with two pipelines or
+     * SINGLE_PIPELINE for a channel with one pipeline.
+     */
+    inline void SetChannelClass(ChannelClass&& value) { m_channelClassHasBeenSet = true; m_channelClass = std::move(value); }
+
+    /**
+     * The class for this channel. STANDARD for a channel with two pipelines or
+     * SINGLE_PIPELINE for a channel with one pipeline.
+     */
+    inline CreateChannelRequest& WithChannelClass(const ChannelClass& value) { SetChannelClass(value); return *this;}
+
+    /**
+     * The class for this channel. STANDARD for a channel with two pipelines or
+     * SINGLE_PIPELINE for a channel with one pipeline.
+     */
+    inline CreateChannelRequest& WithChannelClass(ChannelClass&& value) { SetChannelClass(std::move(value)); return *this;}
 
 
     
@@ -421,6 +459,9 @@ creating multiple resources.
     inline CreateChannelRequest& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 
   private:
+
+    ChannelClass m_channelClass;
+    bool m_channelClassHasBeenSet;
 
     Aws::Vector<OutputDestination> m_destinations;
     bool m_destinationsHasBeenSet;

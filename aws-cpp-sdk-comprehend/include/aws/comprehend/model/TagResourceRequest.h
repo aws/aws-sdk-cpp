@@ -96,42 +96,58 @@ namespace Model
 
 
     /**
-     * <p>Tags being associated with a specific Amazon Comprehend resource. </p>
+     * <p>Tags being associated with a specific Amazon Comprehend resource. There can
+     * be a maximum of 50 tags (both existing and pending) associated with a specific
+     * resource. </p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
 
     /**
-     * <p>Tags being associated with a specific Amazon Comprehend resource. </p>
+     * <p>Tags being associated with a specific Amazon Comprehend resource. There can
+     * be a maximum of 50 tags (both existing and pending) associated with a specific
+     * resource. </p>
      */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
-     * <p>Tags being associated with a specific Amazon Comprehend resource. </p>
+     * <p>Tags being associated with a specific Amazon Comprehend resource. There can
+     * be a maximum of 50 tags (both existing and pending) associated with a specific
+     * resource. </p>
      */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     /**
-     * <p>Tags being associated with a specific Amazon Comprehend resource. </p>
+     * <p>Tags being associated with a specific Amazon Comprehend resource. There can
+     * be a maximum of 50 tags (both existing and pending) associated with a specific
+     * resource. </p>
      */
     inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
     /**
-     * <p>Tags being associated with a specific Amazon Comprehend resource. </p>
+     * <p>Tags being associated with a specific Amazon Comprehend resource. There can
+     * be a maximum of 50 tags (both existing and pending) associated with a specific
+     * resource. </p>
      */
     inline TagResourceRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
 
     /**
-     * <p>Tags being associated with a specific Amazon Comprehend resource. </p>
+     * <p>Tags being associated with a specific Amazon Comprehend resource. There can
+     * be a maximum of 50 tags (both existing and pending) associated with a specific
+     * resource. </p>
      */
     inline TagResourceRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
-     * <p>Tags being associated with a specific Amazon Comprehend resource. </p>
+     * <p>Tags being associated with a specific Amazon Comprehend resource. There can
+     * be a maximum of 50 tags (both existing and pending) associated with a specific
+     * resource. </p>
      */
     inline TagResourceRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
 
     /**
-     * <p>Tags being associated with a specific Amazon Comprehend resource. </p>
+     * <p>Tags being associated with a specific Amazon Comprehend resource. There can
+     * be a maximum of 50 tags (both existing and pending) associated with a specific
+     * resource. </p>
      */
     inline TagResourceRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 

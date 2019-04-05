@@ -503,6 +503,11 @@ void MediaConvertClient::DescribeEndpointsAsyncHelper(const DescribeEndpointsReq
 
 DisassociateCertificateOutcome MediaConvertClient::DisassociateCertificate(const DisassociateCertificateRequest& request) const
 {
+  if (!request.ArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DisassociateCertificate", "Required field: Arn, is not set");
+    return DisassociateCertificateOutcome(Aws::Client::AWSError<MediaConvertErrors>(MediaConvertErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Arn]", false));
+  }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
   ss << "/2017-08-29/certificates/";

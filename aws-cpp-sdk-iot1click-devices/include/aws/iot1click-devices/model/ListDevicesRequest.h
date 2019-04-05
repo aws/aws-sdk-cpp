@@ -91,29 +91,29 @@ namespace Model
 
     /**
      * <p>The maximum number of results to return per request. If not set, a default
-     * value
- of 100 is used.</p>
+     * value of
+ 100 is used.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
 
     /**
      * <p>The maximum number of results to return per request. If not set, a default
-     * value
- of 100 is used.</p>
+     * value of
+ 100 is used.</p>
      */
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
 
     /**
      * <p>The maximum number of results to return per request. If not set, a default
-     * value
- of 100 is used.</p>
+     * value of
+ 100 is used.</p>
      */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
      * <p>The maximum number of results to return per request. If not set, a default
-     * value
- of 100 is used.</p>
+     * value of
+ 100 is used.</p>
      */
     inline ListDevicesRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 

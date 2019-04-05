@@ -16,6 +16,7 @@
 #pragma once
 #include <aws/medialive/MediaLive_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/medialive/model/ChannelClass.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/medialive/model/EncoderSettings.h>
 #include <aws/medialive/model/InputSpecification.h>
@@ -95,6 +96,43 @@ namespace Model
      * The unique arn of the channel.
      */
     inline Channel& WithArn(const char* value) { SetArn(value); return *this;}
+
+
+    /**
+     * The class for this channel. STANDARD for a channel with two pipelines or
+     * SINGLE_PIPELINE for a channel with one pipeline.
+     */
+    inline const ChannelClass& GetChannelClass() const{ return m_channelClass; }
+
+    /**
+     * The class for this channel. STANDARD for a channel with two pipelines or
+     * SINGLE_PIPELINE for a channel with one pipeline.
+     */
+    inline bool ChannelClassHasBeenSet() const { return m_channelClassHasBeenSet; }
+
+    /**
+     * The class for this channel. STANDARD for a channel with two pipelines or
+     * SINGLE_PIPELINE for a channel with one pipeline.
+     */
+    inline void SetChannelClass(const ChannelClass& value) { m_channelClassHasBeenSet = true; m_channelClass = value; }
+
+    /**
+     * The class for this channel. STANDARD for a channel with two pipelines or
+     * SINGLE_PIPELINE for a channel with one pipeline.
+     */
+    inline void SetChannelClass(ChannelClass&& value) { m_channelClassHasBeenSet = true; m_channelClass = std::move(value); }
+
+    /**
+     * The class for this channel. STANDARD for a channel with two pipelines or
+     * SINGLE_PIPELINE for a channel with one pipeline.
+     */
+    inline Channel& WithChannelClass(const ChannelClass& value) { SetChannelClass(value); return *this;}
+
+    /**
+     * The class for this channel. STANDARD for a channel with two pipelines or
+     * SINGLE_PIPELINE for a channel with one pipeline.
+     */
+    inline Channel& WithChannelClass(ChannelClass&& value) { SetChannelClass(std::move(value)); return *this;}
 
 
     /**
@@ -561,6 +599,9 @@ one destination per
 
     Aws::String m_arn;
     bool m_arnHasBeenSet;
+
+    ChannelClass m_channelClass;
+    bool m_channelClassHasBeenSet;
 
     Aws::Vector<OutputDestination> m_destinations;
     bool m_destinationsHasBeenSet;

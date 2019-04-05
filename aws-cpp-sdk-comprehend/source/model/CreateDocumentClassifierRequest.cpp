@@ -27,6 +27,7 @@ CreateDocumentClassifierRequest::CreateDocumentClassifierRequest() :
     m_dataAccessRoleArnHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_inputDataConfigHasBeenSet(false),
+    m_outputDataConfigHasBeenSet(false),
     m_clientRequestToken(Aws::Utils::UUID::RandomUUID()),
     m_clientRequestTokenHasBeenSet(true),
     m_languageCode(LanguageCode::NOT_SET),
@@ -65,6 +66,12 @@ Aws::String CreateDocumentClassifierRequest::SerializePayload() const
   if(m_inputDataConfigHasBeenSet)
   {
    payload.WithObject("InputDataConfig", m_inputDataConfig.Jsonize());
+
+  }
+
+  if(m_outputDataConfigHasBeenSet)
+  {
+   payload.WithObject("OutputDataConfig", m_outputDataConfig.Jsonize());
 
   }
 

@@ -23,6 +23,8 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 CreateChannelRequest::CreateChannelRequest() : 
+    m_channelClass(ChannelClass::NOT_SET),
+    m_channelClassHasBeenSet(false),
     m_destinationsHasBeenSet(false),
     m_encoderSettingsHasBeenSet(false),
     m_inputAttachmentsHasBeenSet(false),
@@ -40,6 +42,11 @@ CreateChannelRequest::CreateChannelRequest() :
 Aws::String CreateChannelRequest::SerializePayload() const
 {
   JsonValue payload;
+
+  if(m_channelClassHasBeenSet)
+  {
+   payload.WithString("channelClass", ChannelClassMapper::GetNameForChannelClass(m_channelClass));
+  }
 
   if(m_destinationsHasBeenSet)
   {

@@ -96,73 +96,73 @@ namespace Model
 
     /**
      * <p>The initial part of a key-value pair that forms a tag being removed from a
-     * given resource. For instance, “Department” might be used as the key portion of
-     * the pair, with multiple values such as “sales,” “legal,” and “administration.”
-     * </p>
+     * given resource. For example, a tag with "Sales" as the key might be added to a
+     * resource to indicate its use by the sales department. Keys must be unique and
+     * cannot be duplicated for a particular resource. </p>
      */
     inline const Aws::Vector<Aws::String>& GetTagKeys() const{ return m_tagKeys; }
 
     /**
      * <p>The initial part of a key-value pair that forms a tag being removed from a
-     * given resource. For instance, “Department” might be used as the key portion of
-     * the pair, with multiple values such as “sales,” “legal,” and “administration.”
-     * </p>
+     * given resource. For example, a tag with "Sales" as the key might be added to a
+     * resource to indicate its use by the sales department. Keys must be unique and
+     * cannot be duplicated for a particular resource. </p>
      */
     inline bool TagKeysHasBeenSet() const { return m_tagKeysHasBeenSet; }
 
     /**
      * <p>The initial part of a key-value pair that forms a tag being removed from a
-     * given resource. For instance, “Department” might be used as the key portion of
-     * the pair, with multiple values such as “sales,” “legal,” and “administration.”
-     * </p>
+     * given resource. For example, a tag with "Sales" as the key might be added to a
+     * resource to indicate its use by the sales department. Keys must be unique and
+     * cannot be duplicated for a particular resource. </p>
      */
     inline void SetTagKeys(const Aws::Vector<Aws::String>& value) { m_tagKeysHasBeenSet = true; m_tagKeys = value; }
 
     /**
      * <p>The initial part of a key-value pair that forms a tag being removed from a
-     * given resource. For instance, “Department” might be used as the key portion of
-     * the pair, with multiple values such as “sales,” “legal,” and “administration.”
-     * </p>
+     * given resource. For example, a tag with "Sales" as the key might be added to a
+     * resource to indicate its use by the sales department. Keys must be unique and
+     * cannot be duplicated for a particular resource. </p>
      */
     inline void SetTagKeys(Aws::Vector<Aws::String>&& value) { m_tagKeysHasBeenSet = true; m_tagKeys = std::move(value); }
 
     /**
      * <p>The initial part of a key-value pair that forms a tag being removed from a
-     * given resource. For instance, “Department” might be used as the key portion of
-     * the pair, with multiple values such as “sales,” “legal,” and “administration.”
-     * </p>
+     * given resource. For example, a tag with "Sales" as the key might be added to a
+     * resource to indicate its use by the sales department. Keys must be unique and
+     * cannot be duplicated for a particular resource. </p>
      */
     inline UntagResourceRequest& WithTagKeys(const Aws::Vector<Aws::String>& value) { SetTagKeys(value); return *this;}
 
     /**
      * <p>The initial part of a key-value pair that forms a tag being removed from a
-     * given resource. For instance, “Department” might be used as the key portion of
-     * the pair, with multiple values such as “sales,” “legal,” and “administration.”
-     * </p>
+     * given resource. For example, a tag with "Sales" as the key might be added to a
+     * resource to indicate its use by the sales department. Keys must be unique and
+     * cannot be duplicated for a particular resource. </p>
      */
     inline UntagResourceRequest& WithTagKeys(Aws::Vector<Aws::String>&& value) { SetTagKeys(std::move(value)); return *this;}
 
     /**
      * <p>The initial part of a key-value pair that forms a tag being removed from a
-     * given resource. For instance, “Department” might be used as the key portion of
-     * the pair, with multiple values such as “sales,” “legal,” and “administration.”
-     * </p>
+     * given resource. For example, a tag with "Sales" as the key might be added to a
+     * resource to indicate its use by the sales department. Keys must be unique and
+     * cannot be duplicated for a particular resource. </p>
      */
     inline UntagResourceRequest& AddTagKeys(const Aws::String& value) { m_tagKeysHasBeenSet = true; m_tagKeys.push_back(value); return *this; }
 
     /**
      * <p>The initial part of a key-value pair that forms a tag being removed from a
-     * given resource. For instance, “Department” might be used as the key portion of
-     * the pair, with multiple values such as “sales,” “legal,” and “administration.”
-     * </p>
+     * given resource. For example, a tag with "Sales" as the key might be added to a
+     * resource to indicate its use by the sales department. Keys must be unique and
+     * cannot be duplicated for a particular resource. </p>
      */
     inline UntagResourceRequest& AddTagKeys(Aws::String&& value) { m_tagKeysHasBeenSet = true; m_tagKeys.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The initial part of a key-value pair that forms a tag being removed from a
-     * given resource. For instance, “Department” might be used as the key portion of
-     * the pair, with multiple values such as “sales,” “legal,” and “administration.”
-     * </p>
+     * given resource. For example, a tag with "Sales" as the key might be added to a
+     * resource to indicate its use by the sales department. Keys must be unique and
+     * cannot be duplicated for a particular resource. </p>
      */
     inline UntagResourceRequest& AddTagKeys(const char* value) { m_tagKeysHasBeenSet = true; m_tagKeys.push_back(value); return *this; }
 

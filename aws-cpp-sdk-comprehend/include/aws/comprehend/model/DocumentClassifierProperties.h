@@ -20,6 +20,7 @@
 #include <aws/comprehend/model/ModelStatus.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/comprehend/model/DocumentClassifierInputDataConfig.h>
+#include <aws/comprehend/model/DocumentClassifierOutputDataConfig.h>
 #include <aws/comprehend/model/ClassifierMetadata.h>
 #include <utility>
 
@@ -413,6 +414,43 @@ namespace Model
 
 
     /**
+     * <p> Provides output results configuration parameters for custom classifier
+     * jobs.</p>
+     */
+    inline const DocumentClassifierOutputDataConfig& GetOutputDataConfig() const{ return m_outputDataConfig; }
+
+    /**
+     * <p> Provides output results configuration parameters for custom classifier
+     * jobs.</p>
+     */
+    inline bool OutputDataConfigHasBeenSet() const { return m_outputDataConfigHasBeenSet; }
+
+    /**
+     * <p> Provides output results configuration parameters for custom classifier
+     * jobs.</p>
+     */
+    inline void SetOutputDataConfig(const DocumentClassifierOutputDataConfig& value) { m_outputDataConfigHasBeenSet = true; m_outputDataConfig = value; }
+
+    /**
+     * <p> Provides output results configuration parameters for custom classifier
+     * jobs.</p>
+     */
+    inline void SetOutputDataConfig(DocumentClassifierOutputDataConfig&& value) { m_outputDataConfigHasBeenSet = true; m_outputDataConfig = std::move(value); }
+
+    /**
+     * <p> Provides output results configuration parameters for custom classifier
+     * jobs.</p>
+     */
+    inline DocumentClassifierProperties& WithOutputDataConfig(const DocumentClassifierOutputDataConfig& value) { SetOutputDataConfig(value); return *this;}
+
+    /**
+     * <p> Provides output results configuration parameters for custom classifier
+     * jobs.</p>
+     */
+    inline DocumentClassifierProperties& WithOutputDataConfig(DocumentClassifierOutputDataConfig&& value) { SetOutputDataConfig(std::move(value)); return *this;}
+
+
+    /**
      * <p>Information about the document classifier, including the number of documents
      * used for training the classifier, the number of documents used for test the
      * classifier, and an accuracy rating.</p>
@@ -628,6 +666,9 @@ namespace Model
 
     DocumentClassifierInputDataConfig m_inputDataConfig;
     bool m_inputDataConfigHasBeenSet;
+
+    DocumentClassifierOutputDataConfig m_outputDataConfig;
+    bool m_outputDataConfigHasBeenSet;
 
     ClassifierMetadata m_classifierMetadata;
     bool m_classifierMetadataHasBeenSet;

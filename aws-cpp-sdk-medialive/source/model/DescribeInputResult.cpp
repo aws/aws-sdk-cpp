@@ -27,12 +27,14 @@ using namespace Aws::Utils;
 using namespace Aws;
 
 DescribeInputResult::DescribeInputResult() : 
+    m_inputClass(InputClass::NOT_SET),
     m_state(InputState::NOT_SET),
     m_type(InputType::NOT_SET)
 {
 }
 
 DescribeInputResult::DescribeInputResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
+    m_inputClass(InputClass::NOT_SET),
     m_state(InputState::NOT_SET),
     m_type(InputType::NOT_SET)
 {
@@ -69,6 +71,12 @@ DescribeInputResult& DescribeInputResult::operator =(const Aws::AmazonWebService
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
+
+  }
+
+  if(jsonValue.ValueExists("inputClass"))
+  {
+    m_inputClass = InputClassMapper::GetInputClassForName(jsonValue.GetString("inputClass"));
 
   }
 

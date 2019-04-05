@@ -20,6 +20,7 @@
 #include <aws/glue/model/JobCommand.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/glue/model/ConnectionsList.h>
+#include <aws/glue/model/WorkerType.h>
 #include <aws/glue/model/NotificationProperty.h>
 #include <utility>
 
@@ -501,13 +502,15 @@ namespace Model
      * when this job runs. A DPU is a relative measure of processing power that
      * consists of 4 vCPUs of compute capacity and 16 GB of memory. For more
      * information, see the <a href="https://aws.amazon.com/glue/pricing/">AWS Glue
-     * pricing page</a>.</p> <p>The value that can be allocated for
-     * <code>MaxCapacity</code> depends on whether you are running a python shell job,
-     * or an Apache Spark ETL job:</p> <ul> <li> <p>When you specify a python shell job
-     * (<code>JobCommand.Name</code>="pythonshell"), you can allocate either 0.0625 or
-     * 1 DPU. The default is 0.0625 DPU.</p> </li> <li> <p>When you specify an Apache
-     * Spark ETL job (<code>JobCommand.Name</code>="glueetl"), you can allocate from 2
-     * to 100 DPUs. The default is 10 DPUs. This job type cannot have a fractional DPU
+     * pricing page</a>.</p> <p>Do not set <code>Max Capacity</code> if using
+     * <code>WorkerType</code> and <code>NumberOfWorkers</code>.</p> <p>The value that
+     * can be allocated for <code>MaxCapacity</code> depends on whether you are running
+     * a python shell job, or an Apache Spark ETL job:</p> <ul> <li> <p>When you
+     * specify a python shell job (<code>JobCommand.Name</code>="pythonshell"), you can
+     * allocate either 0.0625 or 1 DPU. The default is 0.0625 DPU.</p> </li> <li>
+     * <p>When you specify an Apache Spark ETL job
+     * (<code>JobCommand.Name</code>="glueetl"), you can allocate from 2 to 100 DPUs.
+     * The default is 10 DPUs. This job type cannot have a fractional DPU
      * allocation.</p> </li> </ul>
      */
     inline double GetMaxCapacity() const{ return m_maxCapacity; }
@@ -517,13 +520,15 @@ namespace Model
      * when this job runs. A DPU is a relative measure of processing power that
      * consists of 4 vCPUs of compute capacity and 16 GB of memory. For more
      * information, see the <a href="https://aws.amazon.com/glue/pricing/">AWS Glue
-     * pricing page</a>.</p> <p>The value that can be allocated for
-     * <code>MaxCapacity</code> depends on whether you are running a python shell job,
-     * or an Apache Spark ETL job:</p> <ul> <li> <p>When you specify a python shell job
-     * (<code>JobCommand.Name</code>="pythonshell"), you can allocate either 0.0625 or
-     * 1 DPU. The default is 0.0625 DPU.</p> </li> <li> <p>When you specify an Apache
-     * Spark ETL job (<code>JobCommand.Name</code>="glueetl"), you can allocate from 2
-     * to 100 DPUs. The default is 10 DPUs. This job type cannot have a fractional DPU
+     * pricing page</a>.</p> <p>Do not set <code>Max Capacity</code> if using
+     * <code>WorkerType</code> and <code>NumberOfWorkers</code>.</p> <p>The value that
+     * can be allocated for <code>MaxCapacity</code> depends on whether you are running
+     * a python shell job, or an Apache Spark ETL job:</p> <ul> <li> <p>When you
+     * specify a python shell job (<code>JobCommand.Name</code>="pythonshell"), you can
+     * allocate either 0.0625 or 1 DPU. The default is 0.0625 DPU.</p> </li> <li>
+     * <p>When you specify an Apache Spark ETL job
+     * (<code>JobCommand.Name</code>="glueetl"), you can allocate from 2 to 100 DPUs.
+     * The default is 10 DPUs. This job type cannot have a fractional DPU
      * allocation.</p> </li> </ul>
      */
     inline bool MaxCapacityHasBeenSet() const { return m_maxCapacityHasBeenSet; }
@@ -533,13 +538,15 @@ namespace Model
      * when this job runs. A DPU is a relative measure of processing power that
      * consists of 4 vCPUs of compute capacity and 16 GB of memory. For more
      * information, see the <a href="https://aws.amazon.com/glue/pricing/">AWS Glue
-     * pricing page</a>.</p> <p>The value that can be allocated for
-     * <code>MaxCapacity</code> depends on whether you are running a python shell job,
-     * or an Apache Spark ETL job:</p> <ul> <li> <p>When you specify a python shell job
-     * (<code>JobCommand.Name</code>="pythonshell"), you can allocate either 0.0625 or
-     * 1 DPU. The default is 0.0625 DPU.</p> </li> <li> <p>When you specify an Apache
-     * Spark ETL job (<code>JobCommand.Name</code>="glueetl"), you can allocate from 2
-     * to 100 DPUs. The default is 10 DPUs. This job type cannot have a fractional DPU
+     * pricing page</a>.</p> <p>Do not set <code>Max Capacity</code> if using
+     * <code>WorkerType</code> and <code>NumberOfWorkers</code>.</p> <p>The value that
+     * can be allocated for <code>MaxCapacity</code> depends on whether you are running
+     * a python shell job, or an Apache Spark ETL job:</p> <ul> <li> <p>When you
+     * specify a python shell job (<code>JobCommand.Name</code>="pythonshell"), you can
+     * allocate either 0.0625 or 1 DPU. The default is 0.0625 DPU.</p> </li> <li>
+     * <p>When you specify an Apache Spark ETL job
+     * (<code>JobCommand.Name</code>="glueetl"), you can allocate from 2 to 100 DPUs.
+     * The default is 10 DPUs. This job type cannot have a fractional DPU
      * allocation.</p> </li> </ul>
      */
     inline void SetMaxCapacity(double value) { m_maxCapacityHasBeenSet = true; m_maxCapacity = value; }
@@ -549,47 +556,120 @@ namespace Model
      * when this job runs. A DPU is a relative measure of processing power that
      * consists of 4 vCPUs of compute capacity and 16 GB of memory. For more
      * information, see the <a href="https://aws.amazon.com/glue/pricing/">AWS Glue
-     * pricing page</a>.</p> <p>The value that can be allocated for
-     * <code>MaxCapacity</code> depends on whether you are running a python shell job,
-     * or an Apache Spark ETL job:</p> <ul> <li> <p>When you specify a python shell job
-     * (<code>JobCommand.Name</code>="pythonshell"), you can allocate either 0.0625 or
-     * 1 DPU. The default is 0.0625 DPU.</p> </li> <li> <p>When you specify an Apache
-     * Spark ETL job (<code>JobCommand.Name</code>="glueetl"), you can allocate from 2
-     * to 100 DPUs. The default is 10 DPUs. This job type cannot have a fractional DPU
+     * pricing page</a>.</p> <p>Do not set <code>Max Capacity</code> if using
+     * <code>WorkerType</code> and <code>NumberOfWorkers</code>.</p> <p>The value that
+     * can be allocated for <code>MaxCapacity</code> depends on whether you are running
+     * a python shell job, or an Apache Spark ETL job:</p> <ul> <li> <p>When you
+     * specify a python shell job (<code>JobCommand.Name</code>="pythonshell"), you can
+     * allocate either 0.0625 or 1 DPU. The default is 0.0625 DPU.</p> </li> <li>
+     * <p>When you specify an Apache Spark ETL job
+     * (<code>JobCommand.Name</code>="glueetl"), you can allocate from 2 to 100 DPUs.
+     * The default is 10 DPUs. This job type cannot have a fractional DPU
      * allocation.</p> </li> </ul>
      */
     inline JobUpdate& WithMaxCapacity(double value) { SetMaxCapacity(value); return *this;}
 
 
     /**
-     * <p>Specifies configuration properties of a job notification.</p>
+     * <p>The type of predefined worker that is allocated when a job runs. Accepts a
+     * value of Standard, G.1X, or G.2X.</p> <ul> <li> <p>For the <code>Standard</code>
+     * worker type, each worker provides 4 vCPU, 16 GB of memory and a 50GB disk, and 2
+     * executors per worker.</p> </li> <li> <p>For the <code>G.1X</code> worker type,
+     * each worker provides 4 vCPU, 16 GB of memory and a 64GB disk, and 1 executor per
+     * worker.</p> </li> <li> <p>For the <code>G.2X</code> worker type, each worker
+     * provides 8 vCPU, 32 GB of memory and a 128GB disk, and 1 executor per
+     * worker.</p> </li> </ul>
      */
-    inline const NotificationProperty& GetNotificationProperty() const{ return m_notificationProperty; }
+    inline const WorkerType& GetWorkerType() const{ return m_workerType; }
 
     /**
-     * <p>Specifies configuration properties of a job notification.</p>
+     * <p>The type of predefined worker that is allocated when a job runs. Accepts a
+     * value of Standard, G.1X, or G.2X.</p> <ul> <li> <p>For the <code>Standard</code>
+     * worker type, each worker provides 4 vCPU, 16 GB of memory and a 50GB disk, and 2
+     * executors per worker.</p> </li> <li> <p>For the <code>G.1X</code> worker type,
+     * each worker provides 4 vCPU, 16 GB of memory and a 64GB disk, and 1 executor per
+     * worker.</p> </li> <li> <p>For the <code>G.2X</code> worker type, each worker
+     * provides 8 vCPU, 32 GB of memory and a 128GB disk, and 1 executor per
+     * worker.</p> </li> </ul>
      */
-    inline bool NotificationPropertyHasBeenSet() const { return m_notificationPropertyHasBeenSet; }
+    inline bool WorkerTypeHasBeenSet() const { return m_workerTypeHasBeenSet; }
 
     /**
-     * <p>Specifies configuration properties of a job notification.</p>
+     * <p>The type of predefined worker that is allocated when a job runs. Accepts a
+     * value of Standard, G.1X, or G.2X.</p> <ul> <li> <p>For the <code>Standard</code>
+     * worker type, each worker provides 4 vCPU, 16 GB of memory and a 50GB disk, and 2
+     * executors per worker.</p> </li> <li> <p>For the <code>G.1X</code> worker type,
+     * each worker provides 4 vCPU, 16 GB of memory and a 64GB disk, and 1 executor per
+     * worker.</p> </li> <li> <p>For the <code>G.2X</code> worker type, each worker
+     * provides 8 vCPU, 32 GB of memory and a 128GB disk, and 1 executor per
+     * worker.</p> </li> </ul>
      */
-    inline void SetNotificationProperty(const NotificationProperty& value) { m_notificationPropertyHasBeenSet = true; m_notificationProperty = value; }
+    inline void SetWorkerType(const WorkerType& value) { m_workerTypeHasBeenSet = true; m_workerType = value; }
 
     /**
-     * <p>Specifies configuration properties of a job notification.</p>
+     * <p>The type of predefined worker that is allocated when a job runs. Accepts a
+     * value of Standard, G.1X, or G.2X.</p> <ul> <li> <p>For the <code>Standard</code>
+     * worker type, each worker provides 4 vCPU, 16 GB of memory and a 50GB disk, and 2
+     * executors per worker.</p> </li> <li> <p>For the <code>G.1X</code> worker type,
+     * each worker provides 4 vCPU, 16 GB of memory and a 64GB disk, and 1 executor per
+     * worker.</p> </li> <li> <p>For the <code>G.2X</code> worker type, each worker
+     * provides 8 vCPU, 32 GB of memory and a 128GB disk, and 1 executor per
+     * worker.</p> </li> </ul>
      */
-    inline void SetNotificationProperty(NotificationProperty&& value) { m_notificationPropertyHasBeenSet = true; m_notificationProperty = std::move(value); }
+    inline void SetWorkerType(WorkerType&& value) { m_workerTypeHasBeenSet = true; m_workerType = std::move(value); }
 
     /**
-     * <p>Specifies configuration properties of a job notification.</p>
+     * <p>The type of predefined worker that is allocated when a job runs. Accepts a
+     * value of Standard, G.1X, or G.2X.</p> <ul> <li> <p>For the <code>Standard</code>
+     * worker type, each worker provides 4 vCPU, 16 GB of memory and a 50GB disk, and 2
+     * executors per worker.</p> </li> <li> <p>For the <code>G.1X</code> worker type,
+     * each worker provides 4 vCPU, 16 GB of memory and a 64GB disk, and 1 executor per
+     * worker.</p> </li> <li> <p>For the <code>G.2X</code> worker type, each worker
+     * provides 8 vCPU, 32 GB of memory and a 128GB disk, and 1 executor per
+     * worker.</p> </li> </ul>
      */
-    inline JobUpdate& WithNotificationProperty(const NotificationProperty& value) { SetNotificationProperty(value); return *this;}
+    inline JobUpdate& WithWorkerType(const WorkerType& value) { SetWorkerType(value); return *this;}
 
     /**
-     * <p>Specifies configuration properties of a job notification.</p>
+     * <p>The type of predefined worker that is allocated when a job runs. Accepts a
+     * value of Standard, G.1X, or G.2X.</p> <ul> <li> <p>For the <code>Standard</code>
+     * worker type, each worker provides 4 vCPU, 16 GB of memory and a 50GB disk, and 2
+     * executors per worker.</p> </li> <li> <p>For the <code>G.1X</code> worker type,
+     * each worker provides 4 vCPU, 16 GB of memory and a 64GB disk, and 1 executor per
+     * worker.</p> </li> <li> <p>For the <code>G.2X</code> worker type, each worker
+     * provides 8 vCPU, 32 GB of memory and a 128GB disk, and 1 executor per
+     * worker.</p> </li> </ul>
      */
-    inline JobUpdate& WithNotificationProperty(NotificationProperty&& value) { SetNotificationProperty(std::move(value)); return *this;}
+    inline JobUpdate& WithWorkerType(WorkerType&& value) { SetWorkerType(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The number of workers of a defined <code>workerType</code> that are allocated
+     * when a job runs.</p> <p>The maximum number of workers you can define are 299 for
+     * <code>G.1X</code>, and 149 for <code>G.2X</code>. </p>
+     */
+    inline int GetNumberOfWorkers() const{ return m_numberOfWorkers; }
+
+    /**
+     * <p>The number of workers of a defined <code>workerType</code> that are allocated
+     * when a job runs.</p> <p>The maximum number of workers you can define are 299 for
+     * <code>G.1X</code>, and 149 for <code>G.2X</code>. </p>
+     */
+    inline bool NumberOfWorkersHasBeenSet() const { return m_numberOfWorkersHasBeenSet; }
+
+    /**
+     * <p>The number of workers of a defined <code>workerType</code> that are allocated
+     * when a job runs.</p> <p>The maximum number of workers you can define are 299 for
+     * <code>G.1X</code>, and 149 for <code>G.2X</code>. </p>
+     */
+    inline void SetNumberOfWorkers(int value) { m_numberOfWorkersHasBeenSet = true; m_numberOfWorkers = value; }
+
+    /**
+     * <p>The number of workers of a defined <code>workerType</code> that are allocated
+     * when a job runs.</p> <p>The maximum number of workers you can define are 299 for
+     * <code>G.1X</code>, and 149 for <code>G.2X</code>. </p>
+     */
+    inline JobUpdate& WithNumberOfWorkers(int value) { SetNumberOfWorkers(value); return *this;}
 
 
     /**
@@ -632,6 +712,37 @@ namespace Model
      */
     inline JobUpdate& WithSecurityConfiguration(const char* value) { SetSecurityConfiguration(value); return *this;}
 
+
+    /**
+     * <p>Specifies configuration properties of a job notification.</p>
+     */
+    inline const NotificationProperty& GetNotificationProperty() const{ return m_notificationProperty; }
+
+    /**
+     * <p>Specifies configuration properties of a job notification.</p>
+     */
+    inline bool NotificationPropertyHasBeenSet() const { return m_notificationPropertyHasBeenSet; }
+
+    /**
+     * <p>Specifies configuration properties of a job notification.</p>
+     */
+    inline void SetNotificationProperty(const NotificationProperty& value) { m_notificationPropertyHasBeenSet = true; m_notificationProperty = value; }
+
+    /**
+     * <p>Specifies configuration properties of a job notification.</p>
+     */
+    inline void SetNotificationProperty(NotificationProperty&& value) { m_notificationPropertyHasBeenSet = true; m_notificationProperty = std::move(value); }
+
+    /**
+     * <p>Specifies configuration properties of a job notification.</p>
+     */
+    inline JobUpdate& WithNotificationProperty(const NotificationProperty& value) { SetNotificationProperty(value); return *this;}
+
+    /**
+     * <p>Specifies configuration properties of a job notification.</p>
+     */
+    inline JobUpdate& WithNotificationProperty(NotificationProperty&& value) { SetNotificationProperty(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_description;
@@ -664,11 +775,17 @@ namespace Model
     double m_maxCapacity;
     bool m_maxCapacityHasBeenSet;
 
-    NotificationProperty m_notificationProperty;
-    bool m_notificationPropertyHasBeenSet;
+    WorkerType m_workerType;
+    bool m_workerTypeHasBeenSet;
+
+    int m_numberOfWorkers;
+    bool m_numberOfWorkersHasBeenSet;
 
     Aws::String m_securityConfiguration;
     bool m_securityConfigurationHasBeenSet;
+
+    NotificationProperty m_notificationProperty;
+    bool m_notificationPropertyHasBeenSet;
   };
 
 } // namespace Model

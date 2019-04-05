@@ -90,56 +90,56 @@ namespace Model
     /**
      * <p>Tags associated with the Amazon Comprehend resource being queried. A tag is a
      * key-value pair that adds as a metadata to a resource used by Amazon Comprehend.
-     * For example, a tag with the key-value pair ‘Department’:’Sales’ might be added
-     * to a resource to indicate its use by a particular department. </p>
+     * For example, a tag with "Sales" as the key might be added to a resource to
+     * indicate its use by the sales department. </p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
 
     /**
      * <p>Tags associated with the Amazon Comprehend resource being queried. A tag is a
      * key-value pair that adds as a metadata to a resource used by Amazon Comprehend.
-     * For example, a tag with the key-value pair ‘Department’:’Sales’ might be added
-     * to a resource to indicate its use by a particular department. </p>
+     * For example, a tag with "Sales" as the key might be added to a resource to
+     * indicate its use by the sales department. </p>
      */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tags = value; }
 
     /**
      * <p>Tags associated with the Amazon Comprehend resource being queried. A tag is a
      * key-value pair that adds as a metadata to a resource used by Amazon Comprehend.
-     * For example, a tag with the key-value pair ‘Department’:’Sales’ might be added
-     * to a resource to indicate its use by a particular department. </p>
+     * For example, a tag with "Sales" as the key might be added to a resource to
+     * indicate its use by the sales department. </p>
      */
     inline void SetTags(Aws::Vector<Tag>&& value) { m_tags = std::move(value); }
 
     /**
      * <p>Tags associated with the Amazon Comprehend resource being queried. A tag is a
      * key-value pair that adds as a metadata to a resource used by Amazon Comprehend.
-     * For example, a tag with the key-value pair ‘Department’:’Sales’ might be added
-     * to a resource to indicate its use by a particular department. </p>
+     * For example, a tag with "Sales" as the key might be added to a resource to
+     * indicate its use by the sales department. </p>
      */
     inline ListTagsForResourceResult& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
 
     /**
      * <p>Tags associated with the Amazon Comprehend resource being queried. A tag is a
      * key-value pair that adds as a metadata to a resource used by Amazon Comprehend.
-     * For example, a tag with the key-value pair ‘Department’:’Sales’ might be added
-     * to a resource to indicate its use by a particular department. </p>
+     * For example, a tag with "Sales" as the key might be added to a resource to
+     * indicate its use by the sales department. </p>
      */
     inline ListTagsForResourceResult& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
      * <p>Tags associated with the Amazon Comprehend resource being queried. A tag is a
      * key-value pair that adds as a metadata to a resource used by Amazon Comprehend.
-     * For example, a tag with the key-value pair ‘Department’:’Sales’ might be added
-     * to a resource to indicate its use by a particular department. </p>
+     * For example, a tag with "Sales" as the key might be added to a resource to
+     * indicate its use by the sales department. </p>
      */
     inline ListTagsForResourceResult& AddTags(const Tag& value) { m_tags.push_back(value); return *this; }
 
     /**
      * <p>Tags associated with the Amazon Comprehend resource being queried. A tag is a
      * key-value pair that adds as a metadata to a resource used by Amazon Comprehend.
-     * For example, a tag with the key-value pair ‘Department’:’Sales’ might be added
-     * to a resource to indicate its use by a particular department. </p>
+     * For example, a tag with "Sales" as the key might be added to a resource to
+     * indicate its use by the sales department. </p>
      */
     inline ListTagsForResourceResult& AddTags(Tag&& value) { m_tags.push_back(std::move(value)); return *this; }
 

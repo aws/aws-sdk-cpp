@@ -80,22 +80,22 @@ namespace Model
 
     /**
      * <p>The total number of devices associated with the claim code that has been
-     * processed
- in the claim request.</p>
+     * processed in
+ the claim request.</p>
      */
     inline int GetTotal() const{ return m_total; }
 
     /**
      * <p>The total number of devices associated with the claim code that has been
-     * processed
- in the claim request.</p>
+     * processed in
+ the claim request.</p>
      */
     inline void SetTotal(int value) { m_total = value; }
 
     /**
      * <p>The total number of devices associated with the claim code that has been
-     * processed
- in the claim request.</p>
+     * processed in
+ the claim request.</p>
      */
     inline ClaimDevicesByClaimCodeResult& WithTotal(int value) { SetTotal(value); return *this;}
 
