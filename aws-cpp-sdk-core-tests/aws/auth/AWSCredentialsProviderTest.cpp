@@ -472,6 +472,8 @@ public:
     void SetUp()
     {
         m_storedAwsConfigFileEnvVar = Aws::Environment::GetEnv("AWS_CONFIG_FILE");
+        auto profileDirectory = ProfileConfigFileAWSCredentialsProvider::GetProfileDirectory();
+        Aws::FileSystem::CreateDirectoryIfNotExists(profileDirectory.c_str());
     }
 
     void TearDown()
