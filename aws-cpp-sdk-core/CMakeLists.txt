@@ -389,6 +389,11 @@ endif()
 
 set(PKG_CONFIG_LIB "-l${PROJECT_NAME}")
 
+if (ENABLE_CURL_LOGGING)
+    target_compile_definitions(${PROJECT_NAME} PRIVATE "ENABLE_CURL_LOGGING")
+endif()
+
+
 if(ENABLE_CURL_CLIENT AND BUILD_CURL)
     add_dependencies(${PROJECT_NAME} CURL)
 endif()
