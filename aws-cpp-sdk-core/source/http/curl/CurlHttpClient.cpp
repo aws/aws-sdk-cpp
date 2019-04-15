@@ -505,6 +505,13 @@ void CurlHttpClient::MakeRequestInternal(HttpRequest& request,
             request.AddRequestMetric(GetHttpClientMetricNameByType(HttpClientMetricsType::SslLatency), static_cast<int64_t>(timep * 1000));
         }
 
+        const char* ip = nullptr;
+        auto curlGetInfoResult = curl_easy_getinfo(connectionHandle, CURLINFO_PRIMARY_IP, &ip); // Get the IP address of the remote endpoint
+        if (curlGetInfoResult == CURLE_OK && ip)
+        {
+            request.SetResolvedRemoteHost(ip);
+        }
+
         m_curlHandleContainer.ReleaseCurlHandle(connectionHandle);
         //go ahead and flush the response body stream
         if(response)

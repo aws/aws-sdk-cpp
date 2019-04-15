@@ -303,7 +303,16 @@ HttpResponseOutcome AWSClient::AttemptOneRequest(const std::shared_ptr<HttpReque
     if (DoesResponseGenerateError(httpResponse))
     {
         AWS_LOGSTREAM_DEBUG(AWS_CLIENT_LOG_TAG, "Request returned error. Attempting to generate appropriate error codes from response");
-        return HttpResponseOutcome(BuildAWSError(httpResponse));
+        auto err = BuildAWSError(httpResponse);
+        if (err.GetErrorType() == CoreErrors::NETWORK_CONNECTION)
+        {
+            auto ip = httpRequest->GetResolvedRemoteHost();
+            if (!ip.empty())
+            {
+                err.SetMessage(err.GetMessage() + " with address : " + ip);
+            }
+        }
+        return HttpResponseOutcome(err);
     }
 
     AWS_LOGSTREAM_DEBUG(AWS_CLIENT_LOG_TAG, "Request returned successful response.");
@@ -761,8 +770,6 @@ AWSError<CoreErrors> AWSXMLClient::BuildAWSError(const std::shared_ptr<Http::Htt
         AWS_LOGSTREAM_ERROR(AWS_CLIENT_LOG_TAG, error);
         return error;
     }
-
-
 
     if (httpResponse->GetResponseBody().tellp() < 1)
     {
