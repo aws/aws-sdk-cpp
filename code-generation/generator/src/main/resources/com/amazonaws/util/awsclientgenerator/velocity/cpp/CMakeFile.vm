@@ -113,11 +113,6 @@ setup_install()
 install (FILES ${cmakeVarStart}AWS_${projectNameCaps}_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/${metadata.projectName})
 install (FILES ${cmakeVarStart}AWS_${projectNameCaps}_MODEL_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/${metadata.projectName}/model)
 
-if(PLATFORM_WINDOWS AND MSVC)
-    file(GLOB NUGET_FILES "nuget/${PROJECT_NAME}.*.autopkg")
-    install (FILES ${NUGET_FILES} DESTINATION nuget)
-endif()
-
 #if($metadata.standalone)
 write_basic_package_version_file(
     "${CMAKE_CURRENT_BINARY_DIR}/${PROJECT_NAME}-config-version.cmake"

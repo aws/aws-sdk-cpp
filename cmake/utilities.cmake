@@ -63,12 +63,6 @@ macro(setup_install)
 endmacro()
 
 macro(do_packaging)
-    if(PLATFORM_WINDOWS AND MSVC)
-        if (NOT (${PROJECT_NAME} STREQUAL "testing-resources"))
-            install (FILES nuget/${PROJECT_NAME}.autopkg DESTINATION nuget)
-        endif()
-    endif()
-
     if(SIMPLE_INSTALL)
         write_basic_package_version_file(
             "${CMAKE_CURRENT_BINARY_DIR}/${PROJECT_NAME}-config-version.cmake"

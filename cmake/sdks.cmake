@@ -98,25 +98,6 @@ if(REGENERATE_CLIENTS)
            message(STATUS "Directory for ${SDK} is either missing a service definition, is a custom client, or it is not a generated client. Skipping.")
         endif()
     endforeach()
-
-    foreach(SDK IN LISTS HIGH_LEVEL_SDK_LIST)
-        if (BUILD_ONLY) 
-            list(FIND BUILD_ONLY ${SDK} INDEX)
-            # when BUILD_ONLY is set only update high level sdks specified in it.
-            if ((INDEX GREATER 0) OR (INDEX EQUAL 0))
-                execute_process(
-                    COMMAND ${PYTHON_CMD} scripts/prepare_regenerate_high_level_sdks.py --highLevelSdkName ${SDK}
-                    WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
-                )
-            endif()
-        else()
-            execute_process(
-                COMMAND ${PYTHON_CMD} scripts/prepare_regenerate_high_level_sdks.py --highLevelSdkName ${SDK}
-                WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
-            )
-        endif()
-    endforeach()
-
 endif()
 
 #at this point, if user has specified some customized clients, generate them and add them to the build here.
