@@ -604,6 +604,22 @@ namespace Model
     inline DescribeResizeResult& WithTargetEncryptionType(const char* value) { SetTargetEncryptionType(value); return *this;}
 
 
+    /**
+     * <p>The percent of data transferred from source cluster to target cluster.</p>
+     */
+    inline double GetDataTransferProgressPercent() const{ return m_dataTransferProgressPercent; }
+
+    /**
+     * <p>The percent of data transferred from source cluster to target cluster.</p>
+     */
+    inline void SetDataTransferProgressPercent(double value) { m_dataTransferProgressPercent = value; }
+
+    /**
+     * <p>The percent of data transferred from source cluster to target cluster.</p>
+     */
+    inline DescribeResizeResult& WithDataTransferProgressPercent(double value) { SetDataTransferProgressPercent(value); return *this;}
+
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -650,6 +666,8 @@ namespace Model
     Aws::String m_message;
 
     Aws::String m_targetEncryptionType;
+
+    double m_dataTransferProgressPercent;
 
     ResponseMetadata m_responseMetadata;
   };

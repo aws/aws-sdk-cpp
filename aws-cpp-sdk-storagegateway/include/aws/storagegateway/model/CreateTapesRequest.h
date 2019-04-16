@@ -17,6 +17,8 @@
 #include <aws/storagegateway/StorageGateway_EXPORTS.h>
 #include <aws/storagegateway/StorageGatewayRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/storagegateway/model/Tag.h>
 #include <utility>
 
 namespace Aws
@@ -364,75 +366,148 @@ namespace Model
 
     /**
      * <p>The ID of the pool that you want to add your tape to for archiving. The tape
-     * in this pool is archived in the S3 storage class you chose when you created the
-     * tape. When you use your backup application to eject the tape, the tape is
-     * archived directly into the storage class (Glacier or Deep Archive).</p> <p>Valid
-     * values: "GLACIER", "DEEP_ARCHIVE"</p>
+     * in this pool is archived in the S3 storage class that is associated with the
+     * pool. When you use your backup application to eject the tape, the tape is
+     * archived directly into the storage class (Glacier or Deep Archive) that
+     * corresponds to the pool.</p> <p>Valid values: "GLACIER", "DEEP_ARCHIVE"</p>
      */
     inline const Aws::String& GetPoolId() const{ return m_poolId; }
 
     /**
      * <p>The ID of the pool that you want to add your tape to for archiving. The tape
-     * in this pool is archived in the S3 storage class you chose when you created the
-     * tape. When you use your backup application to eject the tape, the tape is
-     * archived directly into the storage class (Glacier or Deep Archive).</p> <p>Valid
-     * values: "GLACIER", "DEEP_ARCHIVE"</p>
+     * in this pool is archived in the S3 storage class that is associated with the
+     * pool. When you use your backup application to eject the tape, the tape is
+     * archived directly into the storage class (Glacier or Deep Archive) that
+     * corresponds to the pool.</p> <p>Valid values: "GLACIER", "DEEP_ARCHIVE"</p>
      */
     inline bool PoolIdHasBeenSet() const { return m_poolIdHasBeenSet; }
 
     /**
      * <p>The ID of the pool that you want to add your tape to for archiving. The tape
-     * in this pool is archived in the S3 storage class you chose when you created the
-     * tape. When you use your backup application to eject the tape, the tape is
-     * archived directly into the storage class (Glacier or Deep Archive).</p> <p>Valid
-     * values: "GLACIER", "DEEP_ARCHIVE"</p>
+     * in this pool is archived in the S3 storage class that is associated with the
+     * pool. When you use your backup application to eject the tape, the tape is
+     * archived directly into the storage class (Glacier or Deep Archive) that
+     * corresponds to the pool.</p> <p>Valid values: "GLACIER", "DEEP_ARCHIVE"</p>
      */
     inline void SetPoolId(const Aws::String& value) { m_poolIdHasBeenSet = true; m_poolId = value; }
 
     /**
      * <p>The ID of the pool that you want to add your tape to for archiving. The tape
-     * in this pool is archived in the S3 storage class you chose when you created the
-     * tape. When you use your backup application to eject the tape, the tape is
-     * archived directly into the storage class (Glacier or Deep Archive).</p> <p>Valid
-     * values: "GLACIER", "DEEP_ARCHIVE"</p>
+     * in this pool is archived in the S3 storage class that is associated with the
+     * pool. When you use your backup application to eject the tape, the tape is
+     * archived directly into the storage class (Glacier or Deep Archive) that
+     * corresponds to the pool.</p> <p>Valid values: "GLACIER", "DEEP_ARCHIVE"</p>
      */
     inline void SetPoolId(Aws::String&& value) { m_poolIdHasBeenSet = true; m_poolId = std::move(value); }
 
     /**
      * <p>The ID of the pool that you want to add your tape to for archiving. The tape
-     * in this pool is archived in the S3 storage class you chose when you created the
-     * tape. When you use your backup application to eject the tape, the tape is
-     * archived directly into the storage class (Glacier or Deep Archive).</p> <p>Valid
-     * values: "GLACIER", "DEEP_ARCHIVE"</p>
+     * in this pool is archived in the S3 storage class that is associated with the
+     * pool. When you use your backup application to eject the tape, the tape is
+     * archived directly into the storage class (Glacier or Deep Archive) that
+     * corresponds to the pool.</p> <p>Valid values: "GLACIER", "DEEP_ARCHIVE"</p>
      */
     inline void SetPoolId(const char* value) { m_poolIdHasBeenSet = true; m_poolId.assign(value); }
 
     /**
      * <p>The ID of the pool that you want to add your tape to for archiving. The tape
-     * in this pool is archived in the S3 storage class you chose when you created the
-     * tape. When you use your backup application to eject the tape, the tape is
-     * archived directly into the storage class (Glacier or Deep Archive).</p> <p>Valid
-     * values: "GLACIER", "DEEP_ARCHIVE"</p>
+     * in this pool is archived in the S3 storage class that is associated with the
+     * pool. When you use your backup application to eject the tape, the tape is
+     * archived directly into the storage class (Glacier or Deep Archive) that
+     * corresponds to the pool.</p> <p>Valid values: "GLACIER", "DEEP_ARCHIVE"</p>
      */
     inline CreateTapesRequest& WithPoolId(const Aws::String& value) { SetPoolId(value); return *this;}
 
     /**
      * <p>The ID of the pool that you want to add your tape to for archiving. The tape
-     * in this pool is archived in the S3 storage class you chose when you created the
-     * tape. When you use your backup application to eject the tape, the tape is
-     * archived directly into the storage class (Glacier or Deep Archive).</p> <p>Valid
-     * values: "GLACIER", "DEEP_ARCHIVE"</p>
+     * in this pool is archived in the S3 storage class that is associated with the
+     * pool. When you use your backup application to eject the tape, the tape is
+     * archived directly into the storage class (Glacier or Deep Archive) that
+     * corresponds to the pool.</p> <p>Valid values: "GLACIER", "DEEP_ARCHIVE"</p>
      */
     inline CreateTapesRequest& WithPoolId(Aws::String&& value) { SetPoolId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the pool that you want to add your tape to for archiving. The tape
-     * in this pool is archived in the S3 storage class you chose when you created the
-     * tape. When you use your backup application to eject the tape, the tape is
-     * archived directly into the storage class (Glacier or Deep Archive).</p> <p>Valid
-     * values: "GLACIER", "DEEP_ARCHIVE"</p>
+     * in this pool is archived in the S3 storage class that is associated with the
+     * pool. When you use your backup application to eject the tape, the tape is
+     * archived directly into the storage class (Glacier or Deep Archive) that
+     * corresponds to the pool.</p> <p>Valid values: "GLACIER", "DEEP_ARCHIVE"</p>
      */
     inline CreateTapesRequest& WithPoolId(const char* value) { SetPoolId(value); return *this;}
+
+
+    /**
+     * <p>A list of up to 50 tags that can be assigned to a virtual tape. Each tag is a
+     * key-value pair.</p> <note> <p>Valid characters for key and value are letters,
+     * spaces, and numbers representable in UTF-8 format, and the following special
+     * characters: + - = . _ : / @. The maximum length of a tag's key is 128
+     * characters, and the maximum length for a tag's value is 256.</p> </note>
+     */
+    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>A list of up to 50 tags that can be assigned to a virtual tape. Each tag is a
+     * key-value pair.</p> <note> <p>Valid characters for key and value are letters,
+     * spaces, and numbers representable in UTF-8 format, and the following special
+     * characters: + - = . _ : / @. The maximum length of a tag's key is 128
+     * characters, and the maximum length for a tag's value is 256.</p> </note>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
+
+    /**
+     * <p>A list of up to 50 tags that can be assigned to a virtual tape. Each tag is a
+     * key-value pair.</p> <note> <p>Valid characters for key and value are letters,
+     * spaces, and numbers representable in UTF-8 format, and the following special
+     * characters: + - = . _ : / @. The maximum length of a tag's key is 128
+     * characters, and the maximum length for a tag's value is 256.</p> </note>
+     */
+    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
+
+    /**
+     * <p>A list of up to 50 tags that can be assigned to a virtual tape. Each tag is a
+     * key-value pair.</p> <note> <p>Valid characters for key and value are letters,
+     * spaces, and numbers representable in UTF-8 format, and the following special
+     * characters: + - = . _ : / @. The maximum length of a tag's key is 128
+     * characters, and the maximum length for a tag's value is 256.</p> </note>
+     */
+    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
+
+    /**
+     * <p>A list of up to 50 tags that can be assigned to a virtual tape. Each tag is a
+     * key-value pair.</p> <note> <p>Valid characters for key and value are letters,
+     * spaces, and numbers representable in UTF-8 format, and the following special
+     * characters: + - = . _ : / @. The maximum length of a tag's key is 128
+     * characters, and the maximum length for a tag's value is 256.</p> </note>
+     */
+    inline CreateTapesRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
+
+    /**
+     * <p>A list of up to 50 tags that can be assigned to a virtual tape. Each tag is a
+     * key-value pair.</p> <note> <p>Valid characters for key and value are letters,
+     * spaces, and numbers representable in UTF-8 format, and the following special
+     * characters: + - = . _ : / @. The maximum length of a tag's key is 128
+     * characters, and the maximum length for a tag's value is 256.</p> </note>
+     */
+    inline CreateTapesRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
+
+    /**
+     * <p>A list of up to 50 tags that can be assigned to a virtual tape. Each tag is a
+     * key-value pair.</p> <note> <p>Valid characters for key and value are letters,
+     * spaces, and numbers representable in UTF-8 format, and the following special
+     * characters: + - = . _ : / @. The maximum length of a tag's key is 128
+     * characters, and the maximum length for a tag's value is 256.</p> </note>
+     */
+    inline CreateTapesRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
+
+    /**
+     * <p>A list of up to 50 tags that can be assigned to a virtual tape. Each tag is a
+     * key-value pair.</p> <note> <p>Valid characters for key and value are letters,
+     * spaces, and numbers representable in UTF-8 format, and the following special
+     * characters: + - = . _ : / @. The maximum length of a tag's key is 128
+     * characters, and the maximum length for a tag's value is 256.</p> </note>
+     */
+    inline CreateTapesRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
   private:
 
@@ -459,6 +534,9 @@ namespace Model
 
     Aws::String m_poolId;
     bool m_poolIdHasBeenSet;
+
+    Aws::Vector<Tag> m_tags;
+    bool m_tagsHasBeenSet;
   };
 
 } // namespace Model

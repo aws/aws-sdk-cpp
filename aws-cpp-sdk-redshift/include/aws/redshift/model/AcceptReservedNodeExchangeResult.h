@@ -43,19 +43,29 @@ namespace Model
     AcceptReservedNodeExchangeResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
-    
+    /**
+     * <p/>
+     */
     inline const ReservedNode& GetExchangedReservedNode() const{ return m_exchangedReservedNode; }
 
-    
+    /**
+     * <p/>
+     */
     inline void SetExchangedReservedNode(const ReservedNode& value) { m_exchangedReservedNode = value; }
 
-    
+    /**
+     * <p/>
+     */
     inline void SetExchangedReservedNode(ReservedNode&& value) { m_exchangedReservedNode = std::move(value); }
 
-    
+    /**
+     * <p/>
+     */
     inline AcceptReservedNodeExchangeResult& WithExchangedReservedNode(const ReservedNode& value) { SetExchangedReservedNode(value); return *this;}
 
-    
+    /**
+     * <p/>
+     */
     inline AcceptReservedNodeExchangeResult& WithExchangedReservedNode(ReservedNode&& value) { SetExchangedReservedNode(std::move(value)); return *this;}
 
 

@@ -1605,74 +1605,66 @@ namespace Model
 
 
     /**
-     * <p>A list of key-value pairs to associate with the alarm or dashboard. You can
-     * associate as many as 50 tags with an alarm.</p> <p>Tags can help you organize
-     * and categorize your resources. You can also use them to scope user permissions,
-     * by granting a user permission to access or change only resources with certain
-     * tag values.</p>
+     * <p>A list of key-value pairs to associate with the alarm. You can associate as
+     * many as 50 tags with an alarm.</p> <p>Tags can help you organize and categorize
+     * your resources. You can also use them to scope user permissions, by granting a
+     * user permission to access or change only resources with certain tag values.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
 
     /**
-     * <p>A list of key-value pairs to associate with the alarm or dashboard. You can
-     * associate as many as 50 tags with an alarm.</p> <p>Tags can help you organize
-     * and categorize your resources. You can also use them to scope user permissions,
-     * by granting a user permission to access or change only resources with certain
-     * tag values.</p>
+     * <p>A list of key-value pairs to associate with the alarm. You can associate as
+     * many as 50 tags with an alarm.</p> <p>Tags can help you organize and categorize
+     * your resources. You can also use them to scope user permissions, by granting a
+     * user permission to access or change only resources with certain tag values.</p>
      */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
-     * <p>A list of key-value pairs to associate with the alarm or dashboard. You can
-     * associate as many as 50 tags with an alarm.</p> <p>Tags can help you organize
-     * and categorize your resources. You can also use them to scope user permissions,
-     * by granting a user permission to access or change only resources with certain
-     * tag values.</p>
+     * <p>A list of key-value pairs to associate with the alarm. You can associate as
+     * many as 50 tags with an alarm.</p> <p>Tags can help you organize and categorize
+     * your resources. You can also use them to scope user permissions, by granting a
+     * user permission to access or change only resources with certain tag values.</p>
      */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     /**
-     * <p>A list of key-value pairs to associate with the alarm or dashboard. You can
-     * associate as many as 50 tags with an alarm.</p> <p>Tags can help you organize
-     * and categorize your resources. You can also use them to scope user permissions,
-     * by granting a user permission to access or change only resources with certain
-     * tag values.</p>
+     * <p>A list of key-value pairs to associate with the alarm. You can associate as
+     * many as 50 tags with an alarm.</p> <p>Tags can help you organize and categorize
+     * your resources. You can also use them to scope user permissions, by granting a
+     * user permission to access or change only resources with certain tag values.</p>
      */
     inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
     /**
-     * <p>A list of key-value pairs to associate with the alarm or dashboard. You can
-     * associate as many as 50 tags with an alarm.</p> <p>Tags can help you organize
-     * and categorize your resources. You can also use them to scope user permissions,
-     * by granting a user permission to access or change only resources with certain
-     * tag values.</p>
+     * <p>A list of key-value pairs to associate with the alarm. You can associate as
+     * many as 50 tags with an alarm.</p> <p>Tags can help you organize and categorize
+     * your resources. You can also use them to scope user permissions, by granting a
+     * user permission to access or change only resources with certain tag values.</p>
      */
     inline PutMetricAlarmRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
 
     /**
-     * <p>A list of key-value pairs to associate with the alarm or dashboard. You can
-     * associate as many as 50 tags with an alarm.</p> <p>Tags can help you organize
-     * and categorize your resources. You can also use them to scope user permissions,
-     * by granting a user permission to access or change only resources with certain
-     * tag values.</p>
+     * <p>A list of key-value pairs to associate with the alarm. You can associate as
+     * many as 50 tags with an alarm.</p> <p>Tags can help you organize and categorize
+     * your resources. You can also use them to scope user permissions, by granting a
+     * user permission to access or change only resources with certain tag values.</p>
      */
     inline PutMetricAlarmRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
-     * <p>A list of key-value pairs to associate with the alarm or dashboard. You can
-     * associate as many as 50 tags with an alarm.</p> <p>Tags can help you organize
-     * and categorize your resources. You can also use them to scope user permissions,
-     * by granting a user permission to access or change only resources with certain
-     * tag values.</p>
+     * <p>A list of key-value pairs to associate with the alarm. You can associate as
+     * many as 50 tags with an alarm.</p> <p>Tags can help you organize and categorize
+     * your resources. You can also use them to scope user permissions, by granting a
+     * user permission to access or change only resources with certain tag values.</p>
      */
     inline PutMetricAlarmRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
 
     /**
-     * <p>A list of key-value pairs to associate with the alarm or dashboard. You can
-     * associate as many as 50 tags with an alarm.</p> <p>Tags can help you organize
-     * and categorize your resources. You can also use them to scope user permissions,
-     * by granting a user permission to access or change only resources with certain
-     * tag values.</p>
+     * <p>A list of key-value pairs to associate with the alarm. You can associate as
+     * many as 50 tags with an alarm.</p> <p>Tags can help you organize and categorize
+     * your resources. You can also use them to scope user permissions, by granting a
+     * user permission to access or change only resources with certain tag values.</p>
      */
     inline PutMetricAlarmRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 

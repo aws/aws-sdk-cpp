@@ -410,7 +410,79 @@ namespace Model
 
 
     /**
-     * <p>A list of up to 10 tags assigned to the gateway, sorted alphabetically by key
+     * <p>The ID of the Amazon EC2 instance that was used to launch the gateway.</p>
+     */
+    inline const Aws::String& GetEc2InstanceId() const{ return m_ec2InstanceId; }
+
+    /**
+     * <p>The ID of the Amazon EC2 instance that was used to launch the gateway.</p>
+     */
+    inline void SetEc2InstanceId(const Aws::String& value) { m_ec2InstanceId = value; }
+
+    /**
+     * <p>The ID of the Amazon EC2 instance that was used to launch the gateway.</p>
+     */
+    inline void SetEc2InstanceId(Aws::String&& value) { m_ec2InstanceId = std::move(value); }
+
+    /**
+     * <p>The ID of the Amazon EC2 instance that was used to launch the gateway.</p>
+     */
+    inline void SetEc2InstanceId(const char* value) { m_ec2InstanceId.assign(value); }
+
+    /**
+     * <p>The ID of the Amazon EC2 instance that was used to launch the gateway.</p>
+     */
+    inline DescribeGatewayInformationResult& WithEc2InstanceId(const Aws::String& value) { SetEc2InstanceId(value); return *this;}
+
+    /**
+     * <p>The ID of the Amazon EC2 instance that was used to launch the gateway.</p>
+     */
+    inline DescribeGatewayInformationResult& WithEc2InstanceId(Aws::String&& value) { SetEc2InstanceId(std::move(value)); return *this;}
+
+    /**
+     * <p>The ID of the Amazon EC2 instance that was used to launch the gateway.</p>
+     */
+    inline DescribeGatewayInformationResult& WithEc2InstanceId(const char* value) { SetEc2InstanceId(value); return *this;}
+
+
+    /**
+     * <p>The AWS Region where the Amazon EC2 instance is located.</p>
+     */
+    inline const Aws::String& GetEc2InstanceRegion() const{ return m_ec2InstanceRegion; }
+
+    /**
+     * <p>The AWS Region where the Amazon EC2 instance is located.</p>
+     */
+    inline void SetEc2InstanceRegion(const Aws::String& value) { m_ec2InstanceRegion = value; }
+
+    /**
+     * <p>The AWS Region where the Amazon EC2 instance is located.</p>
+     */
+    inline void SetEc2InstanceRegion(Aws::String&& value) { m_ec2InstanceRegion = std::move(value); }
+
+    /**
+     * <p>The AWS Region where the Amazon EC2 instance is located.</p>
+     */
+    inline void SetEc2InstanceRegion(const char* value) { m_ec2InstanceRegion.assign(value); }
+
+    /**
+     * <p>The AWS Region where the Amazon EC2 instance is located.</p>
+     */
+    inline DescribeGatewayInformationResult& WithEc2InstanceRegion(const Aws::String& value) { SetEc2InstanceRegion(value); return *this;}
+
+    /**
+     * <p>The AWS Region where the Amazon EC2 instance is located.</p>
+     */
+    inline DescribeGatewayInformationResult& WithEc2InstanceRegion(Aws::String&& value) { SetEc2InstanceRegion(std::move(value)); return *this;}
+
+    /**
+     * <p>The AWS Region where the Amazon EC2 instance is located.</p>
+     */
+    inline DescribeGatewayInformationResult& WithEc2InstanceRegion(const char* value) { SetEc2InstanceRegion(value); return *this;}
+
+
+    /**
+     * <p>A list of up to 50 tags assigned to the gateway, sorted alphabetically by key
      * name. Each tag is a key-value pair. For a gateway with more than 10 tags
      * assigned, you can view all tags using the <code>ListTagsForResource</code> API
      * operation.</p>
@@ -418,7 +490,7 @@ namespace Model
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
 
     /**
-     * <p>A list of up to 10 tags assigned to the gateway, sorted alphabetically by key
+     * <p>A list of up to 50 tags assigned to the gateway, sorted alphabetically by key
      * name. Each tag is a key-value pair. For a gateway with more than 10 tags
      * assigned, you can view all tags using the <code>ListTagsForResource</code> API
      * operation.</p>
@@ -426,7 +498,7 @@ namespace Model
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tags = value; }
 
     /**
-     * <p>A list of up to 10 tags assigned to the gateway, sorted alphabetically by key
+     * <p>A list of up to 50 tags assigned to the gateway, sorted alphabetically by key
      * name. Each tag is a key-value pair. For a gateway with more than 10 tags
      * assigned, you can view all tags using the <code>ListTagsForResource</code> API
      * operation.</p>
@@ -434,7 +506,7 @@ namespace Model
     inline void SetTags(Aws::Vector<Tag>&& value) { m_tags = std::move(value); }
 
     /**
-     * <p>A list of up to 10 tags assigned to the gateway, sorted alphabetically by key
+     * <p>A list of up to 50 tags assigned to the gateway, sorted alphabetically by key
      * name. Each tag is a key-value pair. For a gateway with more than 10 tags
      * assigned, you can view all tags using the <code>ListTagsForResource</code> API
      * operation.</p>
@@ -442,7 +514,7 @@ namespace Model
     inline DescribeGatewayInformationResult& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
 
     /**
-     * <p>A list of up to 10 tags assigned to the gateway, sorted alphabetically by key
+     * <p>A list of up to 50 tags assigned to the gateway, sorted alphabetically by key
      * name. Each tag is a key-value pair. For a gateway with more than 10 tags
      * assigned, you can view all tags using the <code>ListTagsForResource</code> API
      * operation.</p>
@@ -450,7 +522,7 @@ namespace Model
     inline DescribeGatewayInformationResult& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
-     * <p>A list of up to 10 tags assigned to the gateway, sorted alphabetically by key
+     * <p>A list of up to 50 tags assigned to the gateway, sorted alphabetically by key
      * name. Each tag is a key-value pair. For a gateway with more than 10 tags
      * assigned, you can view all tags using the <code>ListTagsForResource</code> API
      * operation.</p>
@@ -458,7 +530,7 @@ namespace Model
     inline DescribeGatewayInformationResult& AddTags(const Tag& value) { m_tags.push_back(value); return *this; }
 
     /**
-     * <p>A list of up to 10 tags assigned to the gateway, sorted alphabetically by key
+     * <p>A list of up to 50 tags assigned to the gateway, sorted alphabetically by key
      * name. Each tag is a key-value pair. For a gateway with more than 10 tags
      * assigned, you can view all tags using the <code>ListTagsForResource</code> API
      * operation.</p>
@@ -484,6 +556,10 @@ namespace Model
     Aws::String m_nextUpdateAvailabilityDate;
 
     Aws::String m_lastSoftwareUpdate;
+
+    Aws::String m_ec2InstanceId;
+
+    Aws::String m_ec2InstanceRegion;
 
     Aws::Vector<Tag> m_tags;
   };

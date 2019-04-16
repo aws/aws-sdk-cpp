@@ -30,7 +30,8 @@ CreateTapeWithBarcodeRequest::CreateTapeWithBarcodeRequest() :
     m_kMSEncrypted(false),
     m_kMSEncryptedHasBeenSet(false),
     m_kMSKeyHasBeenSet(false),
-    m_poolIdHasBeenSet(false)
+    m_poolIdHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -71,6 +72,17 @@ Aws::String CreateTapeWithBarcodeRequest::SerializePayload() const
   if(m_poolIdHasBeenSet)
   {
    payload.WithString("PoolId", m_poolId);
+
+  }
+
+  if(m_tagsHasBeenSet)
+  {
+   Array<JsonValue> tagsJsonList(m_tags.size());
+   for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
+   {
+     tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
+   }
+   payload.WithArray("Tags", std::move(tagsJsonList));
 
   }
 

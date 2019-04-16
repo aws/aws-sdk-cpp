@@ -2610,7 +2610,7 @@ namespace Model
         virtual void ListRootsAsync(const Model::ListRootsRequest& request, const ListRootsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Lists all the roots, organizaitonal units (OUs), and accounts to which the
+         * <p>Lists all the roots, organizational units (OUs), and accounts to which the
          * specified policy is attached.</p> <note> <p>Always check the
          * <code>NextToken</code> response parameter for a <code>null</code> value when
          * calling a <code>List*</code> operation. These operations can occasionally return
@@ -2625,7 +2625,7 @@ namespace Model
         virtual Model::ListTargetsForPolicyOutcome ListTargetsForPolicy(const Model::ListTargetsForPolicyRequest& request) const;
 
         /**
-         * <p>Lists all the roots, organizaitonal units (OUs), and accounts to which the
+         * <p>Lists all the roots, organizational units (OUs), and accounts to which the
          * specified policy is attached.</p> <note> <p>Always check the
          * <code>NextToken</code> response parameter for a <code>null</code> value when
          * calling a <code>List*</code> operation. These operations can occasionally return
@@ -2642,7 +2642,7 @@ namespace Model
         virtual Model::ListTargetsForPolicyOutcomeCallable ListTargetsForPolicyCallable(const Model::ListTargetsForPolicyRequest& request) const;
 
         /**
-         * <p>Lists all the roots, organizaitonal units (OUs), and accounts to which the
+         * <p>Lists all the roots, organizational units (OUs), and accounts to which the
          * specified policy is attached.</p> <note> <p>Always check the
          * <code>NextToken</code> response parameter for a <code>null</code> value when
          * calling a <code>List*</code> operation. These operations can occasionally return

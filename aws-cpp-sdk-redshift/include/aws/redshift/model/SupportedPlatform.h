@@ -50,28 +50,44 @@ namespace Model
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
-    
+    /**
+     * <p/>
+     */
     inline const Aws::String& GetName() const{ return m_name; }
 
-    
+    /**
+     * <p/>
+     */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
-    
+    /**
+     * <p/>
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
-    
+    /**
+     * <p/>
+     */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
-    
+    /**
+     * <p/>
+     */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
-    
+    /**
+     * <p/>
+     */
     inline SupportedPlatform& WithName(const Aws::String& value) { SetName(value); return *this;}
 
-    
+    /**
+     * <p/>
+     */
     inline SupportedPlatform& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
-    
+    /**
+     * <p/>
+     */
     inline SupportedPlatform& WithName(const char* value) { SetName(value); return *this;}
 
   private:

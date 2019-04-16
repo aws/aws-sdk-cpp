@@ -13,7 +13,7 @@ nuget {
         id = AWSSDKCPP-Inspector;
 
         // Version number. Follows NuGet standards. (currently SemVer 1.0)
-        version : 1.7.20160216.85;
+        version : 1.7.20160216.86;
 
         // Display name for package.
         title: AWS SDK for C++ (Amazon Inspector);
@@ -48,7 +48,7 @@ nuget {
 
     dependencies {
        packages: {
-            AWSSDKCPP-Core/1.7.85
+            AWSSDKCPP-Core/1.7.86
        }
     }
 

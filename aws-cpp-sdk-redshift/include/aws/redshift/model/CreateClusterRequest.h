@@ -56,13 +56,13 @@ namespace Model
      * <p>To create additional databases after the cluster is created, connect to the
      * cluster with a SQL client and use SQL commands to create a database. For more
      * information, go to <a
-     * href="http://docs.aws.amazon.com/redshift/latest/dg/t_creating_database.html">Create
+     * href="https://docs.aws.amazon.com/redshift/latest/dg/t_creating_database.html">Create
      * a Database</a> in the Amazon Redshift Database Developer Guide. </p> <p>Default:
      * <code>dev</code> </p> <p>Constraints:</p> <ul> <li> <p>Must contain 1 to 64
      * alphanumeric characters.</p> </li> <li> <p>Must contain only lowercase
      * letters.</p> </li> <li> <p>Cannot be a word that is reserved by the service. A
      * list of reserved words can be found in <a
-     * href="http://docs.aws.amazon.com/redshift/latest/dg/r_pg_keywords.html">Reserved
+     * href="https://docs.aws.amazon.com/redshift/latest/dg/r_pg_keywords.html">Reserved
      * Words</a> in the Amazon Redshift Database Developer Guide. </p> </li> </ul>
      */
     inline const Aws::String& GetDBName() const{ return m_dBName; }
@@ -72,13 +72,13 @@ namespace Model
      * <p>To create additional databases after the cluster is created, connect to the
      * cluster with a SQL client and use SQL commands to create a database. For more
      * information, go to <a
-     * href="http://docs.aws.amazon.com/redshift/latest/dg/t_creating_database.html">Create
+     * href="https://docs.aws.amazon.com/redshift/latest/dg/t_creating_database.html">Create
      * a Database</a> in the Amazon Redshift Database Developer Guide. </p> <p>Default:
      * <code>dev</code> </p> <p>Constraints:</p> <ul> <li> <p>Must contain 1 to 64
      * alphanumeric characters.</p> </li> <li> <p>Must contain only lowercase
      * letters.</p> </li> <li> <p>Cannot be a word that is reserved by the service. A
      * list of reserved words can be found in <a
-     * href="http://docs.aws.amazon.com/redshift/latest/dg/r_pg_keywords.html">Reserved
+     * href="https://docs.aws.amazon.com/redshift/latest/dg/r_pg_keywords.html">Reserved
      * Words</a> in the Amazon Redshift Database Developer Guide. </p> </li> </ul>
      */
     inline bool DBNameHasBeenSet() const { return m_dBNameHasBeenSet; }
@@ -88,13 +88,13 @@ namespace Model
      * <p>To create additional databases after the cluster is created, connect to the
      * cluster with a SQL client and use SQL commands to create a database. For more
      * information, go to <a
-     * href="http://docs.aws.amazon.com/redshift/latest/dg/t_creating_database.html">Create
+     * href="https://docs.aws.amazon.com/redshift/latest/dg/t_creating_database.html">Create
      * a Database</a> in the Amazon Redshift Database Developer Guide. </p> <p>Default:
      * <code>dev</code> </p> <p>Constraints:</p> <ul> <li> <p>Must contain 1 to 64
      * alphanumeric characters.</p> </li> <li> <p>Must contain only lowercase
      * letters.</p> </li> <li> <p>Cannot be a word that is reserved by the service. A
      * list of reserved words can be found in <a
-     * href="http://docs.aws.amazon.com/redshift/latest/dg/r_pg_keywords.html">Reserved
+     * href="https://docs.aws.amazon.com/redshift/latest/dg/r_pg_keywords.html">Reserved
      * Words</a> in the Amazon Redshift Database Developer Guide. </p> </li> </ul>
      */
     inline void SetDBName(const Aws::String& value) { m_dBNameHasBeenSet = true; m_dBName = value; }
@@ -104,13 +104,13 @@ namespace Model
      * <p>To create additional databases after the cluster is created, connect to the
      * cluster with a SQL client and use SQL commands to create a database. For more
      * information, go to <a
-     * href="http://docs.aws.amazon.com/redshift/latest/dg/t_creating_database.html">Create
+     * href="https://docs.aws.amazon.com/redshift/latest/dg/t_creating_database.html">Create
      * a Database</a> in the Amazon Redshift Database Developer Guide. </p> <p>Default:
      * <code>dev</code> </p> <p>Constraints:</p> <ul> <li> <p>Must contain 1 to 64
      * alphanumeric characters.</p> </li> <li> <p>Must contain only lowercase
      * letters.</p> </li> <li> <p>Cannot be a word that is reserved by the service. A
      * list of reserved words can be found in <a
-     * href="http://docs.aws.amazon.com/redshift/latest/dg/r_pg_keywords.html">Reserved
+     * href="https://docs.aws.amazon.com/redshift/latest/dg/r_pg_keywords.html">Reserved
      * Words</a> in the Amazon Redshift Database Developer Guide. </p> </li> </ul>
      */
     inline void SetDBName(Aws::String&& value) { m_dBNameHasBeenSet = true; m_dBName = std::move(value); }
@@ -120,13 +120,13 @@ namespace Model
      * <p>To create additional databases after the cluster is created, connect to the
      * cluster with a SQL client and use SQL commands to create a database. For more
      * information, go to <a
-     * href="http://docs.aws.amazon.com/redshift/latest/dg/t_creating_database.html">Create
+     * href="https://docs.aws.amazon.com/redshift/latest/dg/t_creating_database.html">Create
      * a Database</a> in the Amazon Redshift Database Developer Guide. </p> <p>Default:
      * <code>dev</code> </p> <p>Constraints:</p> <ul> <li> <p>Must contain 1 to 64
      * alphanumeric characters.</p> </li> <li> <p>Must contain only lowercase
      * letters.</p> </li> <li> <p>Cannot be a word that is reserved by the service. A
      * list of reserved words can be found in <a
-     * href="http://docs.aws.amazon.com/redshift/latest/dg/r_pg_keywords.html">Reserved
+     * href="https://docs.aws.amazon.com/redshift/latest/dg/r_pg_keywords.html">Reserved
      * Words</a> in the Amazon Redshift Database Developer Guide. </p> </li> </ul>
      */
     inline void SetDBName(const char* value) { m_dBNameHasBeenSet = true; m_dBName.assign(value); }
@@ -136,13 +136,13 @@ namespace Model
      * <p>To create additional databases after the cluster is created, connect to the
      * cluster with a SQL client and use SQL commands to create a database. For more
      * information, go to <a
-     * href="http://docs.aws.amazon.com/redshift/latest/dg/t_creating_database.html">Create
+     * href="https://docs.aws.amazon.com/redshift/latest/dg/t_creating_database.html">Create
      * a Database</a> in the Amazon Redshift Database Developer Guide. </p> <p>Default:
      * <code>dev</code> </p> <p>Constraints:</p> <ul> <li> <p>Must contain 1 to 64
      * alphanumeric characters.</p> </li> <li> <p>Must contain only lowercase
      * letters.</p> </li> <li> <p>Cannot be a word that is reserved by the service. A
      * list of reserved words can be found in <a
-     * href="http://docs.aws.amazon.com/redshift/latest/dg/r_pg_keywords.html">Reserved
+     * href="https://docs.aws.amazon.com/redshift/latest/dg/r_pg_keywords.html">Reserved
      * Words</a> in the Amazon Redshift Database Developer Guide. </p> </li> </ul>
      */
     inline CreateClusterRequest& WithDBName(const Aws::String& value) { SetDBName(value); return *this;}
@@ -152,13 +152,13 @@ namespace Model
      * <p>To create additional databases after the cluster is created, connect to the
      * cluster with a SQL client and use SQL commands to create a database. For more
      * information, go to <a
-     * href="http://docs.aws.amazon.com/redshift/latest/dg/t_creating_database.html">Create
+     * href="https://docs.aws.amazon.com/redshift/latest/dg/t_creating_database.html">Create
      * a Database</a> in the Amazon Redshift Database Developer Guide. </p> <p>Default:
      * <code>dev</code> </p> <p>Constraints:</p> <ul> <li> <p>Must contain 1 to 64
      * alphanumeric characters.</p> </li> <li> <p>Must contain only lowercase
      * letters.</p> </li> <li> <p>Cannot be a word that is reserved by the service. A
      * list of reserved words can be found in <a
-     * href="http://docs.aws.amazon.com/redshift/latest/dg/r_pg_keywords.html">Reserved
+     * href="https://docs.aws.amazon.com/redshift/latest/dg/r_pg_keywords.html">Reserved
      * Words</a> in the Amazon Redshift Database Developer Guide. </p> </li> </ul>
      */
     inline CreateClusterRequest& WithDBName(Aws::String&& value) { SetDBName(std::move(value)); return *this;}
@@ -168,13 +168,13 @@ namespace Model
      * <p>To create additional databases after the cluster is created, connect to the
      * cluster with a SQL client and use SQL commands to create a database. For more
      * information, go to <a
-     * href="http://docs.aws.amazon.com/redshift/latest/dg/t_creating_database.html">Create
+     * href="https://docs.aws.amazon.com/redshift/latest/dg/t_creating_database.html">Create
      * a Database</a> in the Amazon Redshift Database Developer Guide. </p> <p>Default:
      * <code>dev</code> </p> <p>Constraints:</p> <ul> <li> <p>Must contain 1 to 64
      * alphanumeric characters.</p> </li> <li> <p>Must contain only lowercase
      * letters.</p> </li> <li> <p>Cannot be a word that is reserved by the service. A
      * list of reserved words can be found in <a
-     * href="http://docs.aws.amazon.com/redshift/latest/dg/r_pg_keywords.html">Reserved
+     * href="https://docs.aws.amazon.com/redshift/latest/dg/r_pg_keywords.html">Reserved
      * Words</a> in the Amazon Redshift Database Developer Guide. </p> </li> </ul>
      */
     inline CreateClusterRequest& WithDBName(const char* value) { SetDBName(value); return *this;}
@@ -361,7 +361,7 @@ namespace Model
     /**
      * <p>The node type to be provisioned for the cluster. For information about node
      * types, go to <a
-     * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#how-many-nodes">
+     * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#how-many-nodes">
      * Working with Clusters</a> in the <i>Amazon Redshift Cluster Management
      * Guide</i>. </p> <p>Valid Values: <code>ds2.xlarge</code> |
      * <code>ds2.8xlarge</code> | <code>ds2.xlarge</code> | <code>ds2.8xlarge</code> |
@@ -373,7 +373,7 @@ namespace Model
     /**
      * <p>The node type to be provisioned for the cluster. For information about node
      * types, go to <a
-     * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#how-many-nodes">
+     * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#how-many-nodes">
      * Working with Clusters</a> in the <i>Amazon Redshift Cluster Management
      * Guide</i>. </p> <p>Valid Values: <code>ds2.xlarge</code> |
      * <code>ds2.8xlarge</code> | <code>ds2.xlarge</code> | <code>ds2.8xlarge</code> |
@@ -385,7 +385,7 @@ namespace Model
     /**
      * <p>The node type to be provisioned for the cluster. For information about node
      * types, go to <a
-     * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#how-many-nodes">
+     * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#how-many-nodes">
      * Working with Clusters</a> in the <i>Amazon Redshift Cluster Management
      * Guide</i>. </p> <p>Valid Values: <code>ds2.xlarge</code> |
      * <code>ds2.8xlarge</code> | <code>ds2.xlarge</code> | <code>ds2.8xlarge</code> |
@@ -397,7 +397,7 @@ namespace Model
     /**
      * <p>The node type to be provisioned for the cluster. For information about node
      * types, go to <a
-     * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#how-many-nodes">
+     * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#how-many-nodes">
      * Working with Clusters</a> in the <i>Amazon Redshift Cluster Management
      * Guide</i>. </p> <p>Valid Values: <code>ds2.xlarge</code> |
      * <code>ds2.8xlarge</code> | <code>ds2.xlarge</code> | <code>ds2.8xlarge</code> |
@@ -409,7 +409,7 @@ namespace Model
     /**
      * <p>The node type to be provisioned for the cluster. For information about node
      * types, go to <a
-     * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#how-many-nodes">
+     * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#how-many-nodes">
      * Working with Clusters</a> in the <i>Amazon Redshift Cluster Management
      * Guide</i>. </p> <p>Valid Values: <code>ds2.xlarge</code> |
      * <code>ds2.8xlarge</code> | <code>ds2.xlarge</code> | <code>ds2.8xlarge</code> |
@@ -421,7 +421,7 @@ namespace Model
     /**
      * <p>The node type to be provisioned for the cluster. For information about node
      * types, go to <a
-     * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#how-many-nodes">
+     * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#how-many-nodes">
      * Working with Clusters</a> in the <i>Amazon Redshift Cluster Management
      * Guide</i>. </p> <p>Valid Values: <code>ds2.xlarge</code> |
      * <code>ds2.8xlarge</code> | <code>ds2.xlarge</code> | <code>ds2.8xlarge</code> |
@@ -433,7 +433,7 @@ namespace Model
     /**
      * <p>The node type to be provisioned for the cluster. For information about node
      * types, go to <a
-     * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#how-many-nodes">
+     * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#how-many-nodes">
      * Working with Clusters</a> in the <i>Amazon Redshift Cluster Management
      * Guide</i>. </p> <p>Valid Values: <code>ds2.xlarge</code> |
      * <code>ds2.8xlarge</code> | <code>ds2.xlarge</code> | <code>ds2.8xlarge</code> |
@@ -445,7 +445,7 @@ namespace Model
     /**
      * <p>The node type to be provisioned for the cluster. For information about node
      * types, go to <a
-     * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#how-many-nodes">
+     * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#how-many-nodes">
      * Working with Clusters</a> in the <i>Amazon Redshift Cluster Management
      * Guide</i>. </p> <p>Valid Values: <code>ds2.xlarge</code> |
      * <code>ds2.8xlarge</code> | <code>ds2.xlarge</code> | <code>ds2.8xlarge</code> |
@@ -461,7 +461,7 @@ namespace Model
      * characters. The user name can't be <code>PUBLIC</code>.</p> </li> <li> <p>First
      * character must be a letter.</p> </li> <li> <p>Cannot be a reserved word. A list
      * of reserved words can be found in <a
-     * href="http://docs.aws.amazon.com/redshift/latest/dg/r_pg_keywords.html">Reserved
+     * href="https://docs.aws.amazon.com/redshift/latest/dg/r_pg_keywords.html">Reserved
      * Words</a> in the Amazon Redshift Database Developer Guide. </p> </li> </ul>
      */
     inline const Aws::String& GetMasterUsername() const{ return m_masterUsername; }
@@ -472,7 +472,7 @@ namespace Model
      * characters. The user name can't be <code>PUBLIC</code>.</p> </li> <li> <p>First
      * character must be a letter.</p> </li> <li> <p>Cannot be a reserved word. A list
      * of reserved words can be found in <a
-     * href="http://docs.aws.amazon.com/redshift/latest/dg/r_pg_keywords.html">Reserved
+     * href="https://docs.aws.amazon.com/redshift/latest/dg/r_pg_keywords.html">Reserved
      * Words</a> in the Amazon Redshift Database Developer Guide. </p> </li> </ul>
      */
     inline bool MasterUsernameHasBeenSet() const { return m_masterUsernameHasBeenSet; }
@@ -483,7 +483,7 @@ namespace Model
      * characters. The user name can't be <code>PUBLIC</code>.</p> </li> <li> <p>First
      * character must be a letter.</p> </li> <li> <p>Cannot be a reserved word. A list
      * of reserved words can be found in <a
-     * href="http://docs.aws.amazon.com/redshift/latest/dg/r_pg_keywords.html">Reserved
+     * href="https://docs.aws.amazon.com/redshift/latest/dg/r_pg_keywords.html">Reserved
      * Words</a> in the Amazon Redshift Database Developer Guide. </p> </li> </ul>
      */
     inline void SetMasterUsername(const Aws::String& value) { m_masterUsernameHasBeenSet = true; m_masterUsername = value; }
@@ -494,7 +494,7 @@ namespace Model
      * characters. The user name can't be <code>PUBLIC</code>.</p> </li> <li> <p>First
      * character must be a letter.</p> </li> <li> <p>Cannot be a reserved word. A list
      * of reserved words can be found in <a
-     * href="http://docs.aws.amazon.com/redshift/latest/dg/r_pg_keywords.html">Reserved
+     * href="https://docs.aws.amazon.com/redshift/latest/dg/r_pg_keywords.html">Reserved
      * Words</a> in the Amazon Redshift Database Developer Guide. </p> </li> </ul>
      */
     inline void SetMasterUsername(Aws::String&& value) { m_masterUsernameHasBeenSet = true; m_masterUsername = std::move(value); }
@@ -505,7 +505,7 @@ namespace Model
      * characters. The user name can't be <code>PUBLIC</code>.</p> </li> <li> <p>First
      * character must be a letter.</p> </li> <li> <p>Cannot be a reserved word. A list
      * of reserved words can be found in <a
-     * href="http://docs.aws.amazon.com/redshift/latest/dg/r_pg_keywords.html">Reserved
+     * href="https://docs.aws.amazon.com/redshift/latest/dg/r_pg_keywords.html">Reserved
      * Words</a> in the Amazon Redshift Database Developer Guide. </p> </li> </ul>
      */
     inline void SetMasterUsername(const char* value) { m_masterUsernameHasBeenSet = true; m_masterUsername.assign(value); }
@@ -516,7 +516,7 @@ namespace Model
      * characters. The user name can't be <code>PUBLIC</code>.</p> </li> <li> <p>First
      * character must be a letter.</p> </li> <li> <p>Cannot be a reserved word. A list
      * of reserved words can be found in <a
-     * href="http://docs.aws.amazon.com/redshift/latest/dg/r_pg_keywords.html">Reserved
+     * href="https://docs.aws.amazon.com/redshift/latest/dg/r_pg_keywords.html">Reserved
      * Words</a> in the Amazon Redshift Database Developer Guide. </p> </li> </ul>
      */
     inline CreateClusterRequest& WithMasterUsername(const Aws::String& value) { SetMasterUsername(value); return *this;}
@@ -527,7 +527,7 @@ namespace Model
      * characters. The user name can't be <code>PUBLIC</code>.</p> </li> <li> <p>First
      * character must be a letter.</p> </li> <li> <p>Cannot be a reserved word. A list
      * of reserved words can be found in <a
-     * href="http://docs.aws.amazon.com/redshift/latest/dg/r_pg_keywords.html">Reserved
+     * href="https://docs.aws.amazon.com/redshift/latest/dg/r_pg_keywords.html">Reserved
      * Words</a> in the Amazon Redshift Database Developer Guide. </p> </li> </ul>
      */
     inline CreateClusterRequest& WithMasterUsername(Aws::String&& value) { SetMasterUsername(std::move(value)); return *this;}
@@ -538,7 +538,7 @@ namespace Model
      * characters. The user name can't be <code>PUBLIC</code>.</p> </li> <li> <p>First
      * character must be a letter.</p> </li> <li> <p>Cannot be a reserved word. A list
      * of reserved words can be found in <a
-     * href="http://docs.aws.amazon.com/redshift/latest/dg/r_pg_keywords.html">Reserved
+     * href="https://docs.aws.amazon.com/redshift/latest/dg/r_pg_keywords.html">Reserved
      * Words</a> in the Amazon Redshift Database Developer Guide. </p> </li> </ul>
      */
     inline CreateClusterRequest& WithMasterUsername(const char* value) { SetMasterUsername(value); return *this;}
@@ -912,7 +912,7 @@ namespace Model
      * 30-minute window selected at random from an 8-hour block of time per region,
      * occurring on a random day of the week. For more information about the time
      * blocks for each region, see <a
-     * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#rs-maintenance-windows">Maintenance
+     * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#rs-maintenance-windows">Maintenance
      * Windows</a> in Amazon Redshift Cluster Management Guide.</p> <p>Valid Days: Mon
      * | Tue | Wed | Thu | Fri | Sat | Sun</p> <p>Constraints: Minimum 30-minute
      * window.</p>
@@ -925,7 +925,7 @@ namespace Model
      * 30-minute window selected at random from an 8-hour block of time per region,
      * occurring on a random day of the week. For more information about the time
      * blocks for each region, see <a
-     * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#rs-maintenance-windows">Maintenance
+     * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#rs-maintenance-windows">Maintenance
      * Windows</a> in Amazon Redshift Cluster Management Guide.</p> <p>Valid Days: Mon
      * | Tue | Wed | Thu | Fri | Sat | Sun</p> <p>Constraints: Minimum 30-minute
      * window.</p>
@@ -938,7 +938,7 @@ namespace Model
      * 30-minute window selected at random from an 8-hour block of time per region,
      * occurring on a random day of the week. For more information about the time
      * blocks for each region, see <a
-     * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#rs-maintenance-windows">Maintenance
+     * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#rs-maintenance-windows">Maintenance
      * Windows</a> in Amazon Redshift Cluster Management Guide.</p> <p>Valid Days: Mon
      * | Tue | Wed | Thu | Fri | Sat | Sun</p> <p>Constraints: Minimum 30-minute
      * window.</p>
@@ -951,7 +951,7 @@ namespace Model
      * 30-minute window selected at random from an 8-hour block of time per region,
      * occurring on a random day of the week. For more information about the time
      * blocks for each region, see <a
-     * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#rs-maintenance-windows">Maintenance
+     * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#rs-maintenance-windows">Maintenance
      * Windows</a> in Amazon Redshift Cluster Management Guide.</p> <p>Valid Days: Mon
      * | Tue | Wed | Thu | Fri | Sat | Sun</p> <p>Constraints: Minimum 30-minute
      * window.</p>
@@ -964,7 +964,7 @@ namespace Model
      * 30-minute window selected at random from an 8-hour block of time per region,
      * occurring on a random day of the week. For more information about the time
      * blocks for each region, see <a
-     * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#rs-maintenance-windows">Maintenance
+     * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#rs-maintenance-windows">Maintenance
      * Windows</a> in Amazon Redshift Cluster Management Guide.</p> <p>Valid Days: Mon
      * | Tue | Wed | Thu | Fri | Sat | Sun</p> <p>Constraints: Minimum 30-minute
      * window.</p>
@@ -977,7 +977,7 @@ namespace Model
      * 30-minute window selected at random from an 8-hour block of time per region,
      * occurring on a random day of the week. For more information about the time
      * blocks for each region, see <a
-     * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#rs-maintenance-windows">Maintenance
+     * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#rs-maintenance-windows">Maintenance
      * Windows</a> in Amazon Redshift Cluster Management Guide.</p> <p>Valid Days: Mon
      * | Tue | Wed | Thu | Fri | Sat | Sun</p> <p>Constraints: Minimum 30-minute
      * window.</p>
@@ -990,7 +990,7 @@ namespace Model
      * 30-minute window selected at random from an 8-hour block of time per region,
      * occurring on a random day of the week. For more information about the time
      * blocks for each region, see <a
-     * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#rs-maintenance-windows">Maintenance
+     * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#rs-maintenance-windows">Maintenance
      * Windows</a> in Amazon Redshift Cluster Management Guide.</p> <p>Valid Days: Mon
      * | Tue | Wed | Thu | Fri | Sat | Sun</p> <p>Constraints: Minimum 30-minute
      * window.</p>
@@ -1003,7 +1003,7 @@ namespace Model
      * 30-minute window selected at random from an 8-hour block of time per region,
      * occurring on a random day of the week. For more information about the time
      * blocks for each region, see <a
-     * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#rs-maintenance-windows">Maintenance
+     * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#rs-maintenance-windows">Maintenance
      * Windows</a> in Amazon Redshift Cluster Management Guide.</p> <p>Valid Days: Mon
      * | Tue | Wed | Thu | Fri | Sat | Sun</p> <p>Constraints: Minimum 30-minute
      * window.</p>
@@ -1015,7 +1015,7 @@ namespace Model
      * <p>The name of the parameter group to be associated with this cluster.</p>
      * <p>Default: The default Amazon Redshift cluster parameter group. For information
      * about the default parameter group, go to <a
-     * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Working
+     * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Working
      * with Amazon Redshift Parameter Groups</a> </p> <p>Constraints:</p> <ul> <li>
      * <p>Must be 1 to 255 alphanumeric characters or hyphens.</p> </li> <li> <p>First
      * character must be a letter.</p> </li> <li> <p>Cannot end with a hyphen or
@@ -1027,7 +1027,7 @@ namespace Model
      * <p>The name of the parameter group to be associated with this cluster.</p>
      * <p>Default: The default Amazon Redshift cluster parameter group. For information
      * about the default parameter group, go to <a
-     * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Working
+     * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Working
      * with Amazon Redshift Parameter Groups</a> </p> <p>Constraints:</p> <ul> <li>
      * <p>Must be 1 to 255 alphanumeric characters or hyphens.</p> </li> <li> <p>First
      * character must be a letter.</p> </li> <li> <p>Cannot end with a hyphen or
@@ -1039,7 +1039,7 @@ namespace Model
      * <p>The name of the parameter group to be associated with this cluster.</p>
      * <p>Default: The default Amazon Redshift cluster parameter group. For information
      * about the default parameter group, go to <a
-     * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Working
+     * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Working
      * with Amazon Redshift Parameter Groups</a> </p> <p>Constraints:</p> <ul> <li>
      * <p>Must be 1 to 255 alphanumeric characters or hyphens.</p> </li> <li> <p>First
      * character must be a letter.</p> </li> <li> <p>Cannot end with a hyphen or
@@ -1051,7 +1051,7 @@ namespace Model
      * <p>The name of the parameter group to be associated with this cluster.</p>
      * <p>Default: The default Amazon Redshift cluster parameter group. For information
      * about the default parameter group, go to <a
-     * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Working
+     * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Working
      * with Amazon Redshift Parameter Groups</a> </p> <p>Constraints:</p> <ul> <li>
      * <p>Must be 1 to 255 alphanumeric characters or hyphens.</p> </li> <li> <p>First
      * character must be a letter.</p> </li> <li> <p>Cannot end with a hyphen or
@@ -1063,7 +1063,7 @@ namespace Model
      * <p>The name of the parameter group to be associated with this cluster.</p>
      * <p>Default: The default Amazon Redshift cluster parameter group. For information
      * about the default parameter group, go to <a
-     * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Working
+     * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Working
      * with Amazon Redshift Parameter Groups</a> </p> <p>Constraints:</p> <ul> <li>
      * <p>Must be 1 to 255 alphanumeric characters or hyphens.</p> </li> <li> <p>First
      * character must be a letter.</p> </li> <li> <p>Cannot end with a hyphen or
@@ -1075,7 +1075,7 @@ namespace Model
      * <p>The name of the parameter group to be associated with this cluster.</p>
      * <p>Default: The default Amazon Redshift cluster parameter group. For information
      * about the default parameter group, go to <a
-     * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Working
+     * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Working
      * with Amazon Redshift Parameter Groups</a> </p> <p>Constraints:</p> <ul> <li>
      * <p>Must be 1 to 255 alphanumeric characters or hyphens.</p> </li> <li> <p>First
      * character must be a letter.</p> </li> <li> <p>Cannot end with a hyphen or
@@ -1087,7 +1087,7 @@ namespace Model
      * <p>The name of the parameter group to be associated with this cluster.</p>
      * <p>Default: The default Amazon Redshift cluster parameter group. For information
      * about the default parameter group, go to <a
-     * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Working
+     * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Working
      * with Amazon Redshift Parameter Groups</a> </p> <p>Constraints:</p> <ul> <li>
      * <p>Must be 1 to 255 alphanumeric characters or hyphens.</p> </li> <li> <p>First
      * character must be a letter.</p> </li> <li> <p>Cannot end with a hyphen or
@@ -1099,7 +1099,7 @@ namespace Model
      * <p>The name of the parameter group to be associated with this cluster.</p>
      * <p>Default: The default Amazon Redshift cluster parameter group. For information
      * about the default parameter group, go to <a
-     * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Working
+     * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Working
      * with Amazon Redshift Parameter Groups</a> </p> <p>Constraints:</p> <ul> <li>
      * <p>Must be 1 to 255 alphanumeric characters or hyphens.</p> </li> <li> <p>First
      * character must be a letter.</p> </li> <li> <p>Cannot end with a hyphen or
@@ -1325,7 +1325,7 @@ namespace Model
      * <p>The number of compute nodes in the cluster. This parameter is required when
      * the <b>ClusterType</b> parameter is specified as <code>multi-node</code>. </p>
      * <p>For information about determining how many nodes you need, go to <a
-     * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#how-many-nodes">
+     * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#how-many-nodes">
      * Working with Clusters</a> in the <i>Amazon Redshift Cluster Management
      * Guide</i>. </p> <p>If you don't specify this parameter, you get a single-node
      * cluster. When requesting a multi-node cluster, you must specify the number of
@@ -1338,7 +1338,7 @@ namespace Model
      * <p>The number of compute nodes in the cluster. This parameter is required when
      * the <b>ClusterType</b> parameter is specified as <code>multi-node</code>. </p>
      * <p>For information about determining how many nodes you need, go to <a
-     * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#how-many-nodes">
+     * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#how-many-nodes">
      * Working with Clusters</a> in the <i>Amazon Redshift Cluster Management
      * Guide</i>. </p> <p>If you don't specify this parameter, you get a single-node
      * cluster. When requesting a multi-node cluster, you must specify the number of
@@ -1351,7 +1351,7 @@ namespace Model
      * <p>The number of compute nodes in the cluster. This parameter is required when
      * the <b>ClusterType</b> parameter is specified as <code>multi-node</code>. </p>
      * <p>For information about determining how many nodes you need, go to <a
-     * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#how-many-nodes">
+     * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#how-many-nodes">
      * Working with Clusters</a> in the <i>Amazon Redshift Cluster Management
      * Guide</i>. </p> <p>If you don't specify this parameter, you get a single-node
      * cluster. When requesting a multi-node cluster, you must specify the number of
@@ -1364,7 +1364,7 @@ namespace Model
      * <p>The number of compute nodes in the cluster. This parameter is required when
      * the <b>ClusterType</b> parameter is specified as <code>multi-node</code>. </p>
      * <p>For information about determining how many nodes you need, go to <a
-     * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#how-many-nodes">
+     * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#how-many-nodes">
      * Working with Clusters</a> in the <i>Amazon Redshift Cluster Management
      * Guide</i>. </p> <p>If you don't specify this parameter, you get a single-node
      * cluster. When requesting a multi-node cluster, you must specify the number of
@@ -1522,7 +1522,7 @@ namespace Model
      * <p>The Elastic IP (EIP) address for the cluster.</p> <p>Constraints: The cluster
      * must be provisioned in EC2-VPC and publicly-accessible through an Internet
      * gateway. For more information about provisioning clusters in EC2-VPC, go to <a
-     * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#cluster-platforms">Supported
+     * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#cluster-platforms">Supported
      * Platforms to Launch Your Cluster</a> in the Amazon Redshift Cluster Management
      * Guide.</p>
      */
@@ -1532,7 +1532,7 @@ namespace Model
      * <p>The Elastic IP (EIP) address for the cluster.</p> <p>Constraints: The cluster
      * must be provisioned in EC2-VPC and publicly-accessible through an Internet
      * gateway. For more information about provisioning clusters in EC2-VPC, go to <a
-     * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#cluster-platforms">Supported
+     * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#cluster-platforms">Supported
      * Platforms to Launch Your Cluster</a> in the Amazon Redshift Cluster Management
      * Guide.</p>
      */
@@ -1542,7 +1542,7 @@ namespace Model
      * <p>The Elastic IP (EIP) address for the cluster.</p> <p>Constraints: The cluster
      * must be provisioned in EC2-VPC and publicly-accessible through an Internet
      * gateway. For more information about provisioning clusters in EC2-VPC, go to <a
-     * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#cluster-platforms">Supported
+     * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#cluster-platforms">Supported
      * Platforms to Launch Your Cluster</a> in the Amazon Redshift Cluster Management
      * Guide.</p>
      */
@@ -1552,7 +1552,7 @@ namespace Model
      * <p>The Elastic IP (EIP) address for the cluster.</p> <p>Constraints: The cluster
      * must be provisioned in EC2-VPC and publicly-accessible through an Internet
      * gateway. For more information about provisioning clusters in EC2-VPC, go to <a
-     * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#cluster-platforms">Supported
+     * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#cluster-platforms">Supported
      * Platforms to Launch Your Cluster</a> in the Amazon Redshift Cluster Management
      * Guide.</p>
      */
@@ -1562,7 +1562,7 @@ namespace Model
      * <p>The Elastic IP (EIP) address for the cluster.</p> <p>Constraints: The cluster
      * must be provisioned in EC2-VPC and publicly-accessible through an Internet
      * gateway. For more information about provisioning clusters in EC2-VPC, go to <a
-     * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#cluster-platforms">Supported
+     * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#cluster-platforms">Supported
      * Platforms to Launch Your Cluster</a> in the Amazon Redshift Cluster Management
      * Guide.</p>
      */
@@ -1572,7 +1572,7 @@ namespace Model
      * <p>The Elastic IP (EIP) address for the cluster.</p> <p>Constraints: The cluster
      * must be provisioned in EC2-VPC and publicly-accessible through an Internet
      * gateway. For more information about provisioning clusters in EC2-VPC, go to <a
-     * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#cluster-platforms">Supported
+     * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#cluster-platforms">Supported
      * Platforms to Launch Your Cluster</a> in the Amazon Redshift Cluster Management
      * Guide.</p>
      */
@@ -1582,7 +1582,7 @@ namespace Model
      * <p>The Elastic IP (EIP) address for the cluster.</p> <p>Constraints: The cluster
      * must be provisioned in EC2-VPC and publicly-accessible through an Internet
      * gateway. For more information about provisioning clusters in EC2-VPC, go to <a
-     * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#cluster-platforms">Supported
+     * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#cluster-platforms">Supported
      * Platforms to Launch Your Cluster</a> in the Amazon Redshift Cluster Management
      * Guide.</p>
      */
@@ -1592,7 +1592,7 @@ namespace Model
      * <p>The Elastic IP (EIP) address for the cluster.</p> <p>Constraints: The cluster
      * must be provisioned in EC2-VPC and publicly-accessible through an Internet
      * gateway. For more information about provisioning clusters in EC2-VPC, go to <a
-     * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#cluster-platforms">Supported
+     * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#cluster-platforms">Supported
      * Platforms to Launch Your Cluster</a> in the Amazon Redshift Cluster Management
      * Guide.</p>
      */
@@ -1693,7 +1693,7 @@ namespace Model
      * <p>An option that specifies whether to create the cluster with enhanced VPC
      * routing enabled. To create a cluster that uses enhanced VPC routing, the cluster
      * must be in a VPC. For more information, see <a
-     * href="http://docs.aws.amazon.com/redshift/latest/mgmt/enhanced-vpc-routing.html">Enhanced
+     * href="https://docs.aws.amazon.com/redshift/latest/mgmt/enhanced-vpc-routing.html">Enhanced
      * VPC Routing</a> in the Amazon Redshift Cluster Management Guide.</p> <p>If this
      * option is <code>true</code>, enhanced VPC routing is enabled. </p> <p>Default:
      * false</p>
@@ -1704,7 +1704,7 @@ namespace Model
      * <p>An option that specifies whether to create the cluster with enhanced VPC
      * routing enabled. To create a cluster that uses enhanced VPC routing, the cluster
      * must be in a VPC. For more information, see <a
-     * href="http://docs.aws.amazon.com/redshift/latest/mgmt/enhanced-vpc-routing.html">Enhanced
+     * href="https://docs.aws.amazon.com/redshift/latest/mgmt/enhanced-vpc-routing.html">Enhanced
      * VPC Routing</a> in the Amazon Redshift Cluster Management Guide.</p> <p>If this
      * option is <code>true</code>, enhanced VPC routing is enabled. </p> <p>Default:
      * false</p>
@@ -1715,7 +1715,7 @@ namespace Model
      * <p>An option that specifies whether to create the cluster with enhanced VPC
      * routing enabled. To create a cluster that uses enhanced VPC routing, the cluster
      * must be in a VPC. For more information, see <a
-     * href="http://docs.aws.amazon.com/redshift/latest/mgmt/enhanced-vpc-routing.html">Enhanced
+     * href="https://docs.aws.amazon.com/redshift/latest/mgmt/enhanced-vpc-routing.html">Enhanced
      * VPC Routing</a> in the Amazon Redshift Cluster Management Guide.</p> <p>If this
      * option is <code>true</code>, enhanced VPC routing is enabled. </p> <p>Default:
      * false</p>
@@ -1726,7 +1726,7 @@ namespace Model
      * <p>An option that specifies whether to create the cluster with enhanced VPC
      * routing enabled. To create a cluster that uses enhanced VPC routing, the cluster
      * must be in a VPC. For more information, see <a
-     * href="http://docs.aws.amazon.com/redshift/latest/mgmt/enhanced-vpc-routing.html">Enhanced
+     * href="https://docs.aws.amazon.com/redshift/latest/mgmt/enhanced-vpc-routing.html">Enhanced
      * VPC Routing</a> in the Amazon Redshift Cluster Management Guide.</p> <p>If this
      * option is <code>true</code>, enhanced VPC routing is enabled. </p> <p>Default:
      * false</p>

@@ -53,50 +53,42 @@ namespace Model
   public:
 
     /**
-     * <p>The identifier of the cluster for which information about snapshots is
-     * requested.</p>
+     * <p>The identifier of the cluster which generated the requested snapshots.</p>
      */
     inline const Aws::String& GetClusterIdentifier() const{ return m_clusterIdentifier; }
 
     /**
-     * <p>The identifier of the cluster for which information about snapshots is
-     * requested.</p>
+     * <p>The identifier of the cluster which generated the requested snapshots.</p>
      */
     inline bool ClusterIdentifierHasBeenSet() const { return m_clusterIdentifierHasBeenSet; }
 
     /**
-     * <p>The identifier of the cluster for which information about snapshots is
-     * requested.</p>
+     * <p>The identifier of the cluster which generated the requested snapshots.</p>
      */
     inline void SetClusterIdentifier(const Aws::String& value) { m_clusterIdentifierHasBeenSet = true; m_clusterIdentifier = value; }
 
     /**
-     * <p>The identifier of the cluster for which information about snapshots is
-     * requested.</p>
+     * <p>The identifier of the cluster which generated the requested snapshots.</p>
      */
     inline void SetClusterIdentifier(Aws::String&& value) { m_clusterIdentifierHasBeenSet = true; m_clusterIdentifier = std::move(value); }
 
     /**
-     * <p>The identifier of the cluster for which information about snapshots is
-     * requested.</p>
+     * <p>The identifier of the cluster which generated the requested snapshots.</p>
      */
     inline void SetClusterIdentifier(const char* value) { m_clusterIdentifierHasBeenSet = true; m_clusterIdentifier.assign(value); }
 
     /**
-     * <p>The identifier of the cluster for which information about snapshots is
-     * requested.</p>
+     * <p>The identifier of the cluster which generated the requested snapshots.</p>
      */
     inline DescribeClusterSnapshotsRequest& WithClusterIdentifier(const Aws::String& value) { SetClusterIdentifier(value); return *this;}
 
     /**
-     * <p>The identifier of the cluster for which information about snapshots is
-     * requested.</p>
+     * <p>The identifier of the cluster which generated the requested snapshots.</p>
      */
     inline DescribeClusterSnapshotsRequest& WithClusterIdentifier(Aws::String&& value) { SetClusterIdentifier(std::move(value)); return *this;}
 
     /**
-     * <p>The identifier of the cluster for which information about snapshots is
-     * requested.</p>
+     * <p>The identifier of the cluster which generated the requested snapshots.</p>
      */
     inline DescribeClusterSnapshotsRequest& WithClusterIdentifier(const char* value) { SetClusterIdentifier(value); return *this;}
 
@@ -676,63 +668,115 @@ namespace Model
 
     /**
      * <p>A value that indicates whether to return snapshots only for an existing
-     * cluster. Table-level restore can be performed only using a snapshot of an
-     * existing cluster, that is, a cluster that has not been deleted. If
-     * <code>ClusterExists</code> is set to <code>true</code>,
-     * <code>ClusterIdentifier</code> is required.</p>
+     * cluster. You can perform table-level restore only by using a snapshot of an
+     * existing cluster, that is, a cluster that has not been deleted. Values for this
+     * parameter work as follows: </p> <ul> <li> <p>If <code>ClusterExists</code> is
+     * set to <code>true</code>, <code>ClusterIdentifier</code> is required.</p> </li>
+     * <li> <p>If <code>ClusterExists</code> is set to <code>false</code> and
+     * <code>ClusterIdentifier</code> isn't specified, all snapshots associated with
+     * deleted clusters (orphaned snapshots) are returned. </p> </li> <li> <p>If
+     * <code>ClusterExists</code> is set to <code>false</code> and
+     * <code>ClusterIdentifier</code> is specified for a deleted cluster, snapshots
+     * associated with that cluster are returned.</p> </li> <li> <p>If
+     * <code>ClusterExists</code> is set to <code>false</code> and
+     * <code>ClusterIdentifier</code> is specified for an existing cluster, no
+     * snapshots are returned. </p> </li> </ul>
      */
     inline bool GetClusterExists() const{ return m_clusterExists; }
 
     /**
      * <p>A value that indicates whether to return snapshots only for an existing
-     * cluster. Table-level restore can be performed only using a snapshot of an
-     * existing cluster, that is, a cluster that has not been deleted. If
-     * <code>ClusterExists</code> is set to <code>true</code>,
-     * <code>ClusterIdentifier</code> is required.</p>
+     * cluster. You can perform table-level restore only by using a snapshot of an
+     * existing cluster, that is, a cluster that has not been deleted. Values for this
+     * parameter work as follows: </p> <ul> <li> <p>If <code>ClusterExists</code> is
+     * set to <code>true</code>, <code>ClusterIdentifier</code> is required.</p> </li>
+     * <li> <p>If <code>ClusterExists</code> is set to <code>false</code> and
+     * <code>ClusterIdentifier</code> isn't specified, all snapshots associated with
+     * deleted clusters (orphaned snapshots) are returned. </p> </li> <li> <p>If
+     * <code>ClusterExists</code> is set to <code>false</code> and
+     * <code>ClusterIdentifier</code> is specified for a deleted cluster, snapshots
+     * associated with that cluster are returned.</p> </li> <li> <p>If
+     * <code>ClusterExists</code> is set to <code>false</code> and
+     * <code>ClusterIdentifier</code> is specified for an existing cluster, no
+     * snapshots are returned. </p> </li> </ul>
      */
     inline bool ClusterExistsHasBeenSet() const { return m_clusterExistsHasBeenSet; }
 
     /**
      * <p>A value that indicates whether to return snapshots only for an existing
-     * cluster. Table-level restore can be performed only using a snapshot of an
-     * existing cluster, that is, a cluster that has not been deleted. If
-     * <code>ClusterExists</code> is set to <code>true</code>,
-     * <code>ClusterIdentifier</code> is required.</p>
+     * cluster. You can perform table-level restore only by using a snapshot of an
+     * existing cluster, that is, a cluster that has not been deleted. Values for this
+     * parameter work as follows: </p> <ul> <li> <p>If <code>ClusterExists</code> is
+     * set to <code>true</code>, <code>ClusterIdentifier</code> is required.</p> </li>
+     * <li> <p>If <code>ClusterExists</code> is set to <code>false</code> and
+     * <code>ClusterIdentifier</code> isn't specified, all snapshots associated with
+     * deleted clusters (orphaned snapshots) are returned. </p> </li> <li> <p>If
+     * <code>ClusterExists</code> is set to <code>false</code> and
+     * <code>ClusterIdentifier</code> is specified for a deleted cluster, snapshots
+     * associated with that cluster are returned.</p> </li> <li> <p>If
+     * <code>ClusterExists</code> is set to <code>false</code> and
+     * <code>ClusterIdentifier</code> is specified for an existing cluster, no
+     * snapshots are returned. </p> </li> </ul>
      */
     inline void SetClusterExists(bool value) { m_clusterExistsHasBeenSet = true; m_clusterExists = value; }
 
     /**
      * <p>A value that indicates whether to return snapshots only for an existing
-     * cluster. Table-level restore can be performed only using a snapshot of an
-     * existing cluster, that is, a cluster that has not been deleted. If
-     * <code>ClusterExists</code> is set to <code>true</code>,
-     * <code>ClusterIdentifier</code> is required.</p>
+     * cluster. You can perform table-level restore only by using a snapshot of an
+     * existing cluster, that is, a cluster that has not been deleted. Values for this
+     * parameter work as follows: </p> <ul> <li> <p>If <code>ClusterExists</code> is
+     * set to <code>true</code>, <code>ClusterIdentifier</code> is required.</p> </li>
+     * <li> <p>If <code>ClusterExists</code> is set to <code>false</code> and
+     * <code>ClusterIdentifier</code> isn't specified, all snapshots associated with
+     * deleted clusters (orphaned snapshots) are returned. </p> </li> <li> <p>If
+     * <code>ClusterExists</code> is set to <code>false</code> and
+     * <code>ClusterIdentifier</code> is specified for a deleted cluster, snapshots
+     * associated with that cluster are returned.</p> </li> <li> <p>If
+     * <code>ClusterExists</code> is set to <code>false</code> and
+     * <code>ClusterIdentifier</code> is specified for an existing cluster, no
+     * snapshots are returned. </p> </li> </ul>
      */
     inline DescribeClusterSnapshotsRequest& WithClusterExists(bool value) { SetClusterExists(value); return *this;}
 
 
-    
+    /**
+     * <p/>
+     */
     inline const Aws::Vector<SnapshotSortingEntity>& GetSortingEntities() const{ return m_sortingEntities; }
 
-    
+    /**
+     * <p/>
+     */
     inline bool SortingEntitiesHasBeenSet() const { return m_sortingEntitiesHasBeenSet; }
 
-    
+    /**
+     * <p/>
+     */
     inline void SetSortingEntities(const Aws::Vector<SnapshotSortingEntity>& value) { m_sortingEntitiesHasBeenSet = true; m_sortingEntities = value; }
 
-    
+    /**
+     * <p/>
+     */
     inline void SetSortingEntities(Aws::Vector<SnapshotSortingEntity>&& value) { m_sortingEntitiesHasBeenSet = true; m_sortingEntities = std::move(value); }
 
-    
+    /**
+     * <p/>
+     */
     inline DescribeClusterSnapshotsRequest& WithSortingEntities(const Aws::Vector<SnapshotSortingEntity>& value) { SetSortingEntities(value); return *this;}
 
-    
+    /**
+     * <p/>
+     */
     inline DescribeClusterSnapshotsRequest& WithSortingEntities(Aws::Vector<SnapshotSortingEntity>&& value) { SetSortingEntities(std::move(value)); return *this;}
 
-    
+    /**
+     * <p/>
+     */
     inline DescribeClusterSnapshotsRequest& AddSortingEntities(const SnapshotSortingEntity& value) { m_sortingEntitiesHasBeenSet = true; m_sortingEntities.push_back(value); return *this; }
 
-    
+    /**
+     * <p/>
+     */
     inline DescribeClusterSnapshotsRequest& AddSortingEntities(SnapshotSortingEntity&& value) { m_sortingEntitiesHasBeenSet = true; m_sortingEntities.push_back(std::move(value)); return *this; }
 
   private:

@@ -226,28 +226,28 @@ namespace Model
 
     /**
      * <p>An integer indicating the duration of the maintenance window in days. If you
-     * specify a duration, you can't specify an end time. The duration must be 14 days
+     * specify a duration, you can't specify an end time. The duration must be 45 days
      * or less.</p>
      */
     inline int GetDeferMaintenanceDuration() const{ return m_deferMaintenanceDuration; }
 
     /**
      * <p>An integer indicating the duration of the maintenance window in days. If you
-     * specify a duration, you can't specify an end time. The duration must be 14 days
+     * specify a duration, you can't specify an end time. The duration must be 45 days
      * or less.</p>
      */
     inline bool DeferMaintenanceDurationHasBeenSet() const { return m_deferMaintenanceDurationHasBeenSet; }
 
     /**
      * <p>An integer indicating the duration of the maintenance window in days. If you
-     * specify a duration, you can't specify an end time. The duration must be 14 days
+     * specify a duration, you can't specify an end time. The duration must be 45 days
      * or less.</p>
      */
     inline void SetDeferMaintenanceDuration(int value) { m_deferMaintenanceDurationHasBeenSet = true; m_deferMaintenanceDuration = value; }
 
     /**
      * <p>An integer indicating the duration of the maintenance window in days. If you
-     * specify a duration, you can't specify an end time. The duration must be 14 days
+     * specify a duration, you can't specify an end time. The duration must be 45 days
      * or less.</p>
      */
     inline ModifyClusterMaintenanceRequest& WithDeferMaintenanceDuration(int value) { SetDeferMaintenanceDuration(value); return *this;}

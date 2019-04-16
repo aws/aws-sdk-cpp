@@ -57,47 +57,47 @@ namespace Model
 
 
     /**
-     * <p>A list of ScheduleDefinitions</p>
+     * <p>A list of ScheduleDefinitions.</p>
      */
     inline const Aws::Vector<Aws::String>& GetScheduleDefinitions() const{ return m_scheduleDefinitions; }
 
     /**
-     * <p>A list of ScheduleDefinitions</p>
+     * <p>A list of ScheduleDefinitions.</p>
      */
     inline bool ScheduleDefinitionsHasBeenSet() const { return m_scheduleDefinitionsHasBeenSet; }
 
     /**
-     * <p>A list of ScheduleDefinitions</p>
+     * <p>A list of ScheduleDefinitions.</p>
      */
     inline void SetScheduleDefinitions(const Aws::Vector<Aws::String>& value) { m_scheduleDefinitionsHasBeenSet = true; m_scheduleDefinitions = value; }
 
     /**
-     * <p>A list of ScheduleDefinitions</p>
+     * <p>A list of ScheduleDefinitions.</p>
      */
     inline void SetScheduleDefinitions(Aws::Vector<Aws::String>&& value) { m_scheduleDefinitionsHasBeenSet = true; m_scheduleDefinitions = std::move(value); }
 
     /**
-     * <p>A list of ScheduleDefinitions</p>
+     * <p>A list of ScheduleDefinitions.</p>
      */
     inline SnapshotSchedule& WithScheduleDefinitions(const Aws::Vector<Aws::String>& value) { SetScheduleDefinitions(value); return *this;}
 
     /**
-     * <p>A list of ScheduleDefinitions</p>
+     * <p>A list of ScheduleDefinitions.</p>
      */
     inline SnapshotSchedule& WithScheduleDefinitions(Aws::Vector<Aws::String>&& value) { SetScheduleDefinitions(std::move(value)); return *this;}
 
     /**
-     * <p>A list of ScheduleDefinitions</p>
+     * <p>A list of ScheduleDefinitions.</p>
      */
     inline SnapshotSchedule& AddScheduleDefinitions(const Aws::String& value) { m_scheduleDefinitionsHasBeenSet = true; m_scheduleDefinitions.push_back(value); return *this; }
 
     /**
-     * <p>A list of ScheduleDefinitions</p>
+     * <p>A list of ScheduleDefinitions.</p>
      */
     inline SnapshotSchedule& AddScheduleDefinitions(Aws::String&& value) { m_scheduleDefinitionsHasBeenSet = true; m_scheduleDefinitions.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>A list of ScheduleDefinitions</p>
+     * <p>A list of ScheduleDefinitions.</p>
      */
     inline SnapshotSchedule& AddScheduleDefinitions(const char* value) { m_scheduleDefinitionsHasBeenSet = true; m_scheduleDefinitions.push_back(value); return *this; }
 
@@ -225,66 +225,114 @@ namespace Model
     inline SnapshotSchedule& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
 
-    
+    /**
+     * <p/>
+     */
     inline const Aws::Vector<Aws::Utils::DateTime>& GetNextInvocations() const{ return m_nextInvocations; }
 
-    
+    /**
+     * <p/>
+     */
     inline bool NextInvocationsHasBeenSet() const { return m_nextInvocationsHasBeenSet; }
 
-    
+    /**
+     * <p/>
+     */
     inline void SetNextInvocations(const Aws::Vector<Aws::Utils::DateTime>& value) { m_nextInvocationsHasBeenSet = true; m_nextInvocations = value; }
 
-    
+    /**
+     * <p/>
+     */
     inline void SetNextInvocations(Aws::Vector<Aws::Utils::DateTime>&& value) { m_nextInvocationsHasBeenSet = true; m_nextInvocations = std::move(value); }
 
-    
+    /**
+     * <p/>
+     */
     inline SnapshotSchedule& WithNextInvocations(const Aws::Vector<Aws::Utils::DateTime>& value) { SetNextInvocations(value); return *this;}
 
-    
+    /**
+     * <p/>
+     */
     inline SnapshotSchedule& WithNextInvocations(Aws::Vector<Aws::Utils::DateTime>&& value) { SetNextInvocations(std::move(value)); return *this;}
 
-    
+    /**
+     * <p/>
+     */
     inline SnapshotSchedule& AddNextInvocations(const Aws::Utils::DateTime& value) { m_nextInvocationsHasBeenSet = true; m_nextInvocations.push_back(value); return *this; }
 
-    
+    /**
+     * <p/>
+     */
     inline SnapshotSchedule& AddNextInvocations(Aws::Utils::DateTime&& value) { m_nextInvocationsHasBeenSet = true; m_nextInvocations.push_back(std::move(value)); return *this; }
 
 
-    
+    /**
+     * <p>The number of clusters associated with the schedule.</p>
+     */
     inline int GetAssociatedClusterCount() const{ return m_associatedClusterCount; }
 
-    
+    /**
+     * <p>The number of clusters associated with the schedule.</p>
+     */
     inline bool AssociatedClusterCountHasBeenSet() const { return m_associatedClusterCountHasBeenSet; }
 
-    
+    /**
+     * <p>The number of clusters associated with the schedule.</p>
+     */
     inline void SetAssociatedClusterCount(int value) { m_associatedClusterCountHasBeenSet = true; m_associatedClusterCount = value; }
 
-    
+    /**
+     * <p>The number of clusters associated with the schedule.</p>
+     */
     inline SnapshotSchedule& WithAssociatedClusterCount(int value) { SetAssociatedClusterCount(value); return *this;}
 
 
-    
+    /**
+     * <p>A list of clusters associated with the schedule. A maximum of 100 clusters is
+     * returned.</p>
+     */
     inline const Aws::Vector<ClusterAssociatedToSchedule>& GetAssociatedClusters() const{ return m_associatedClusters; }
 
-    
+    /**
+     * <p>A list of clusters associated with the schedule. A maximum of 100 clusters is
+     * returned.</p>
+     */
     inline bool AssociatedClustersHasBeenSet() const { return m_associatedClustersHasBeenSet; }
 
-    
+    /**
+     * <p>A list of clusters associated with the schedule. A maximum of 100 clusters is
+     * returned.</p>
+     */
     inline void SetAssociatedClusters(const Aws::Vector<ClusterAssociatedToSchedule>& value) { m_associatedClustersHasBeenSet = true; m_associatedClusters = value; }
 
-    
+    /**
+     * <p>A list of clusters associated with the schedule. A maximum of 100 clusters is
+     * returned.</p>
+     */
     inline void SetAssociatedClusters(Aws::Vector<ClusterAssociatedToSchedule>&& value) { m_associatedClustersHasBeenSet = true; m_associatedClusters = std::move(value); }
 
-    
+    /**
+     * <p>A list of clusters associated with the schedule. A maximum of 100 clusters is
+     * returned.</p>
+     */
     inline SnapshotSchedule& WithAssociatedClusters(const Aws::Vector<ClusterAssociatedToSchedule>& value) { SetAssociatedClusters(value); return *this;}
 
-    
+    /**
+     * <p>A list of clusters associated with the schedule. A maximum of 100 clusters is
+     * returned.</p>
+     */
     inline SnapshotSchedule& WithAssociatedClusters(Aws::Vector<ClusterAssociatedToSchedule>&& value) { SetAssociatedClusters(std::move(value)); return *this;}
 
-    
+    /**
+     * <p>A list of clusters associated with the schedule. A maximum of 100 clusters is
+     * returned.</p>
+     */
     inline SnapshotSchedule& AddAssociatedClusters(const ClusterAssociatedToSchedule& value) { m_associatedClustersHasBeenSet = true; m_associatedClusters.push_back(value); return *this; }
 
-    
+    /**
+     * <p>A list of clusters associated with the schedule. A maximum of 100 clusters is
+     * returned.</p>
+     */
     inline SnapshotSchedule& AddAssociatedClusters(ClusterAssociatedToSchedule&& value) { m_associatedClustersHasBeenSet = true; m_associatedClusters.push_back(std::move(value)); return *this; }
 
 

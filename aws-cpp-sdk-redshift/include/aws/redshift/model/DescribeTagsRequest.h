@@ -115,7 +115,7 @@ namespace Model
      * <li> <p>HSM certificate</p> </li> <li> <p>Parameter group</p> </li> <li>
      * <p>Snapshot copy grant</p> </li> </ul> <p>For more information about Amazon
      * Redshift resource types and constructing ARNs, go to <a
-     * href="http://docs.aws.amazon.com/redshift/latest/mgmt/redshift-iam-access-control-overview.html#redshift-iam-access-control-specify-actions">Specifying
+     * href="https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-iam-access-control-overview.html#redshift-iam-access-control-specify-actions">Specifying
      * Policy Elements: Actions, Effects, Resources, and Principals</a> in the Amazon
      * Redshift Cluster Management Guide. </p>
      */
@@ -129,7 +129,7 @@ namespace Model
      * <li> <p>HSM certificate</p> </li> <li> <p>Parameter group</p> </li> <li>
      * <p>Snapshot copy grant</p> </li> </ul> <p>For more information about Amazon
      * Redshift resource types and constructing ARNs, go to <a
-     * href="http://docs.aws.amazon.com/redshift/latest/mgmt/redshift-iam-access-control-overview.html#redshift-iam-access-control-specify-actions">Specifying
+     * href="https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-iam-access-control-overview.html#redshift-iam-access-control-specify-actions">Specifying
      * Policy Elements: Actions, Effects, Resources, and Principals</a> in the Amazon
      * Redshift Cluster Management Guide. </p>
      */
@@ -143,7 +143,7 @@ namespace Model
      * <li> <p>HSM certificate</p> </li> <li> <p>Parameter group</p> </li> <li>
      * <p>Snapshot copy grant</p> </li> </ul> <p>For more information about Amazon
      * Redshift resource types and constructing ARNs, go to <a
-     * href="http://docs.aws.amazon.com/redshift/latest/mgmt/redshift-iam-access-control-overview.html#redshift-iam-access-control-specify-actions">Specifying
+     * href="https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-iam-access-control-overview.html#redshift-iam-access-control-specify-actions">Specifying
      * Policy Elements: Actions, Effects, Resources, and Principals</a> in the Amazon
      * Redshift Cluster Management Guide. </p>
      */
@@ -157,7 +157,7 @@ namespace Model
      * <li> <p>HSM certificate</p> </li> <li> <p>Parameter group</p> </li> <li>
      * <p>Snapshot copy grant</p> </li> </ul> <p>For more information about Amazon
      * Redshift resource types and constructing ARNs, go to <a
-     * href="http://docs.aws.amazon.com/redshift/latest/mgmt/redshift-iam-access-control-overview.html#redshift-iam-access-control-specify-actions">Specifying
+     * href="https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-iam-access-control-overview.html#redshift-iam-access-control-specify-actions">Specifying
      * Policy Elements: Actions, Effects, Resources, and Principals</a> in the Amazon
      * Redshift Cluster Management Guide. </p>
      */
@@ -171,7 +171,7 @@ namespace Model
      * <li> <p>HSM certificate</p> </li> <li> <p>Parameter group</p> </li> <li>
      * <p>Snapshot copy grant</p> </li> </ul> <p>For more information about Amazon
      * Redshift resource types and constructing ARNs, go to <a
-     * href="http://docs.aws.amazon.com/redshift/latest/mgmt/redshift-iam-access-control-overview.html#redshift-iam-access-control-specify-actions">Specifying
+     * href="https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-iam-access-control-overview.html#redshift-iam-access-control-specify-actions">Specifying
      * Policy Elements: Actions, Effects, Resources, and Principals</a> in the Amazon
      * Redshift Cluster Management Guide. </p>
      */
@@ -185,7 +185,7 @@ namespace Model
      * <li> <p>HSM certificate</p> </li> <li> <p>Parameter group</p> </li> <li>
      * <p>Snapshot copy grant</p> </li> </ul> <p>For more information about Amazon
      * Redshift resource types and constructing ARNs, go to <a
-     * href="http://docs.aws.amazon.com/redshift/latest/mgmt/redshift-iam-access-control-overview.html#redshift-iam-access-control-specify-actions">Specifying
+     * href="https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-iam-access-control-overview.html#redshift-iam-access-control-specify-actions">Specifying
      * Policy Elements: Actions, Effects, Resources, and Principals</a> in the Amazon
      * Redshift Cluster Management Guide. </p>
      */
@@ -199,7 +199,7 @@ namespace Model
      * <li> <p>HSM certificate</p> </li> <li> <p>Parameter group</p> </li> <li>
      * <p>Snapshot copy grant</p> </li> </ul> <p>For more information about Amazon
      * Redshift resource types and constructing ARNs, go to <a
-     * href="http://docs.aws.amazon.com/redshift/latest/mgmt/redshift-iam-access-control-overview.html#redshift-iam-access-control-specify-actions">Specifying
+     * href="https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-iam-access-control-overview.html#redshift-iam-access-control-specify-actions">Specifying
      * Policy Elements: Actions, Effects, Resources, and Principals</a> in the Amazon
      * Redshift Cluster Management Guide. </p>
      */
@@ -213,7 +213,7 @@ namespace Model
      * <li> <p>HSM certificate</p> </li> <li> <p>Parameter group</p> </li> <li>
      * <p>Snapshot copy grant</p> </li> </ul> <p>For more information about Amazon
      * Redshift resource types and constructing ARNs, go to <a
-     * href="http://docs.aws.amazon.com/redshift/latest/mgmt/redshift-iam-access-control-overview.html#redshift-iam-access-control-specify-actions">Specifying
+     * href="https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-iam-access-control-overview.html#redshift-iam-access-control-specify-actions">Specifying
      * Policy Elements: Actions, Effects, Resources, and Principals</a> in the Amazon
      * Redshift Cluster Management Guide. </p>
      */

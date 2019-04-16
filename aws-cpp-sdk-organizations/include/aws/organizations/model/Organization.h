@@ -188,7 +188,7 @@ namespace Model
      * If set to "ALL", then all features are enabled and policies can be applied to
      * accounts in the organization. If set to "CONSOLIDATED_BILLING", then only
      * consolidated billing functionality is available. For more information, see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/orgs_manage_org_support-all-features.html">Enabling
+     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_org_support-all-features.html">Enabling
      * All Features in Your Organization</a> in the <i>AWS Organizations User
      * Guide</i>.</p>
      */
@@ -199,7 +199,7 @@ namespace Model
      * If set to "ALL", then all features are enabled and policies can be applied to
      * accounts in the organization. If set to "CONSOLIDATED_BILLING", then only
      * consolidated billing functionality is available. For more information, see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/orgs_manage_org_support-all-features.html">Enabling
+     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_org_support-all-features.html">Enabling
      * All Features in Your Organization</a> in the <i>AWS Organizations User
      * Guide</i>.</p>
      */
@@ -210,7 +210,7 @@ namespace Model
      * If set to "ALL", then all features are enabled and policies can be applied to
      * accounts in the organization. If set to "CONSOLIDATED_BILLING", then only
      * consolidated billing functionality is available. For more information, see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/orgs_manage_org_support-all-features.html">Enabling
+     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_org_support-all-features.html">Enabling
      * All Features in Your Organization</a> in the <i>AWS Organizations User
      * Guide</i>.</p>
      */
@@ -221,7 +221,7 @@ namespace Model
      * If set to "ALL", then all features are enabled and policies can be applied to
      * accounts in the organization. If set to "CONSOLIDATED_BILLING", then only
      * consolidated billing functionality is available. For more information, see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/orgs_manage_org_support-all-features.html">Enabling
+     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_org_support-all-features.html">Enabling
      * All Features in Your Organization</a> in the <i>AWS Organizations User
      * Guide</i>.</p>
      */
@@ -232,7 +232,7 @@ namespace Model
      * If set to "ALL", then all features are enabled and policies can be applied to
      * accounts in the organization. If set to "CONSOLIDATED_BILLING", then only
      * consolidated billing functionality is available. For more information, see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/orgs_manage_org_support-all-features.html">Enabling
+     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_org_support-all-features.html">Enabling
      * All Features in Your Organization</a> in the <i>AWS Organizations User
      * Guide</i>.</p>
      */
@@ -243,7 +243,7 @@ namespace Model
      * If set to "ALL", then all features are enabled and policies can be applied to
      * accounts in the organization. If set to "CONSOLIDATED_BILLING", then only
      * consolidated billing functionality is available. For more information, see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/orgs_manage_org_support-all-features.html">Enabling
+     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_org_support-all-features.html">Enabling
      * All Features in Your Organization</a> in the <i>AWS Organizations User
      * Guide</i>.</p>
      */

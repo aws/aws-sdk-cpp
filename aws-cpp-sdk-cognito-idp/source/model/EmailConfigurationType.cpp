@@ -30,13 +30,17 @@ namespace Model
 
 EmailConfigurationType::EmailConfigurationType() : 
     m_sourceArnHasBeenSet(false),
-    m_replyToEmailAddressHasBeenSet(false)
+    m_replyToEmailAddressHasBeenSet(false),
+    m_emailSendingAccount(EmailSendingAccountType::NOT_SET),
+    m_emailSendingAccountHasBeenSet(false)
 {
 }
 
 EmailConfigurationType::EmailConfigurationType(JsonView jsonValue) : 
     m_sourceArnHasBeenSet(false),
-    m_replyToEmailAddressHasBeenSet(false)
+    m_replyToEmailAddressHasBeenSet(false),
+    m_emailSendingAccount(EmailSendingAccountType::NOT_SET),
+    m_emailSendingAccountHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -57,6 +61,13 @@ EmailConfigurationType& EmailConfigurationType::operator =(JsonView jsonValue)
     m_replyToEmailAddressHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("EmailSendingAccount"))
+  {
+    m_emailSendingAccount = EmailSendingAccountTypeMapper::GetEmailSendingAccountTypeForName(jsonValue.GetString("EmailSendingAccount"));
+
+    m_emailSendingAccountHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -74,6 +85,11 @@ JsonValue EmailConfigurationType::Jsonize() const
   {
    payload.WithString("ReplyToEmailAddress", m_replyToEmailAddress);
 
+  }
+
+  if(m_emailSendingAccountHasBeenSet)
+  {
+   payload.WithString("EmailSendingAccount", EmailSendingAccountTypeMapper::GetNameForEmailSendingAccountType(m_emailSendingAccount));
   }
 
   return payload;

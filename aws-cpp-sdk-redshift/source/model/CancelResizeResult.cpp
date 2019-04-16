@@ -33,7 +33,8 @@ CancelResizeResult::CancelResizeResult() :
     m_totalResizeDataInMegaBytes(0),
     m_progressInMegaBytes(0),
     m_elapsedTimeInSeconds(0),
-    m_estimatedTimeToCompletionInSeconds(0)
+    m_estimatedTimeToCompletionInSeconds(0),
+    m_dataTransferProgressPercent(0.0)
 {
 }
 
@@ -43,7 +44,8 @@ CancelResizeResult::CancelResizeResult(const Aws::AmazonWebServiceResult<XmlDocu
     m_totalResizeDataInMegaBytes(0),
     m_progressInMegaBytes(0),
     m_elapsedTimeInSeconds(0),
-    m_estimatedTimeToCompletionInSeconds(0)
+    m_estimatedTimeToCompletionInSeconds(0),
+    m_dataTransferProgressPercent(0.0)
 {
   *this = result;
 }
@@ -152,6 +154,11 @@ CancelResizeResult& CancelResizeResult::operator =(const Aws::AmazonWebServiceRe
     if(!targetEncryptionTypeNode.IsNull())
     {
       m_targetEncryptionType = StringUtils::Trim(targetEncryptionTypeNode.GetText().c_str());
+    }
+    XmlNode dataTransferProgressPercentNode = resultNode.FirstChild("DataTransferProgressPercent");
+    if(!dataTransferProgressPercentNode.IsNull())
+    {
+      m_dataTransferProgressPercent = StringUtils::ConvertToDouble(StringUtils::Trim(dataTransferProgressPercentNode.GetText().c_str()).c_str());
     }
   }
 
