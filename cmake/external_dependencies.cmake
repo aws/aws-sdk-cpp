@@ -1,5 +1,3 @@
-
-
 # Zlib
 if(PLATFORM_ANDROID AND ANDROID_BUILD_ZLIB)
     set(BUILD_ZLIB 1)
@@ -117,6 +115,7 @@ if(NOT NO_HTTP_CLIENT)
             set(CLIENT_LIBS_ABSTRACT_NAME Wininet winhttp)
             message(STATUS "Http client: WinHttp")
         endif()
+
     else()
         message(FATAL_ERROR "No http client available for target platform and client injection not enabled (-DNO_HTTP_CLIENT=ON)")
     endif()

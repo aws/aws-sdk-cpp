@@ -26,6 +26,10 @@ endif()
 if(POLICY CMP0056)
     cmake_policy(SET CMP0056 NEW)
 endif()
+if(POLICY CMP0057)
+    cmake_policy(SET CMP0057 NEW) # support IN_LIST
+endif()
+
 
 # 3.0 or higher is strongly suggested; build settings (target_compile_options/etc...) sometimes do not get propagated properly under certain conditions prior to this version
 # Making this a hard requirement is potentially disruptive to existing customers who aren't affected by the bad behavior though, so just warn for now
